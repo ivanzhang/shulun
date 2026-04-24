@@ -7,6 +7,7 @@
 | 文件 | 说明 |
 |---|---|
 | [`docs/prime-density-waves.md`](docs/prime-density-waves.md) | 素数密度波：CRT 周期场中的原始阶乘邻域定理（由"$15$ 附近四胞胎"与"$30$ 附近合数墙"观察提炼） |
+| [`docs/prime-density-waves-II.md`](docs/prime-density-waves-II.md) | 素数密度波 II：$k=3,4,5,6$ 的完整数据清单 + 相位唯一性定理（定理 D、E，证明"这种短区间只能在 $Q_k$、$P_k^\#$ 位置出现"） |
 
 ## 工作约定
 
