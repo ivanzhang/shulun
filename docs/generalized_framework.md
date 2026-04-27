@@ -22352,3 +22352,125 @@ worst_margin: 2
 
 §207 的发现告诉我们：所有反例 prefix 都共享类似的"骨干结构"（前 k_low 项中前几位 cap 较高的项），后续 r 选择微调。这暗示有"元结构原理"控制 N_{c, k_low}。
 
+
+## 208. 对角线方向局部非空刚性：元层面框架第二实例
+
+按 §206 的元层面框架，把列方向 R^j 的研究推广到主对角线 R = {(i, i)}。
+
+### 208.1 对角线几何
+
+主对角线 A_{i,i} = (i-1)P + i = 1 + t·M, t = i-1 ∈ [0, P-1], M = P+1。
+
+- M = P+1 一般是合数（P 素数除 2 外，P+1 偶）
+- 对每个素数 q ∤ M：q | A_t ⇔ t ≡ -M^{-1} (mod q)（单一残数刚性）
+- 对每个素数 q | M：A_t ≡ 1 (mod q)，q 永远不覆盖对角线（自动排除）
+
+### 208.2 对角线 holes 与 q-命中分布
+
+```text
+holes_diag(P, Y) = {t ∈ [0, P-1] : gcd(1 + t·M, ∏_{q≤Y} q) = 1}
+H_holes_diag(q, r) = #{t ∈ holes_diag : t ≡ r (mod q)}
+```
+
+新增脚本 `experiments/diagonal_certificate.py`、`experiments/diagonal_M_kill.py` 实现这些工具。
+
+### 208.3 实证结果：P ∈ (2, 1000] 全部含素数
+
+`python3 experiments/diagonal_certificate.py --maxP 1000`
+
+```text
+验证 P ∈ (2, 1000] 素数总数: 167
+反例数 (主对角线无素数): 0
+
+素数最少对角线（前 5）：
+  P     primes_full  in_holes  holes
+  3     1            0         0
+  7     2            2         2
+  5     3            2         2
+  13    5            5         6
+  11    6            6         6
+```
+
+P=2 边界情形（A_t ∈ {1, 4}）；P=3 含 5（被小素数自筛但仍是素数，证明小素数本身需单独保留）。
+
+### 208.4 跨 P 的 holes_diag 结构扫描
+
+`python3 experiments/diagonal_M_kill.py --maxP 200`
+
+| P | P+1 | holes_diag | q 数 | max_total_cap |
+|---|-----|-----------|------|---------------|
+| 47 | 48=2⁴·3 | 26 | 12 | 14 |
+| 79 | 80=2⁴·5 | 41 | 16 | 22 |
+| 89 | 90=2·3²·5 | 68 | 18 | 35 |
+| 149 | 150=2·3·5² | 115 | 29 | 72 |
+| 197 | 198=2·3²·11 | 135 | 39 | 95 |
+
+**关键观察**：
+
+- holes_diag 数量受 M 的素因子结构强烈影响。当 M = P+1 = 2·3·5·...（即 30 整除 P+1）时 holes 较多；当 M 仅有少数小素因子时 holes 较少。
+- 对 P=149（P+1=150 = 2·3·5²），holes_diag = 115，max_total_cap = 72；与列方向 W=100 时类似规模。
+
+### 208.5 对角线方向 r_unkill 公式（待精化）
+
+按 §200.12，列方向 r_unkill 公式为：
+
+```text
+r_unkill(q, P_w, A_old) ≡ -A_old · P_w^{-1} (mod q)
+```
+
+对角线方向的精确类比需要：
+
+1. **对角线 anchor 定义**：列方向 anchor = (-residue · P_w) mod modulus 是 t-空间坐标；对角线方向应有类似 t-空间公式。
+2. **modulus 主导引理在对角线方向的形式**：modulus_below 与 P_witness 的关系。
+3. **r_unkill 公式与 holes_diag 集合的兼容性**。
+
+初步推导：对角线方向，prefix 的 (residue, modulus) 表示"prefix 的合法 t 类"。对一个 witness t_w 满足 1 + t_w · M 是素数：
+
+- t_w 是合法 t ⇔ t_w ≡ residue (mod modulus)
+- 加新 (q, r_new)：t_w 仍合法 ⇔ t_w ≡ r_new (mod q)
+- 故 r_new = t_w mod q（如果 t_w 已固定）
+
+这给出**对角线版 r_unkill 公式**：
+
+```text
+r_unkill_diag(q, t_w) = t_w mod q
+```
+
+这比列方向更直接，因为对角线 anchor 直接是 t 坐标，不需要 P_w 的 inverse。
+
+### 208.6 对角线版 M_kill 公式
+
+```text
+M_kill_diag(prefix, t_w) = Σ_{q ∉ used} min(last_cap, max(0, H_holes_diag(q, t_w mod q) − 1))
+```
+
+完全对偶于列方向的 §201.1 公式，唯一差异是 r_unkill_q 的定义。
+
+### 208.7 (⋆) 不等式在对角线方向
+
+把 §201 (⋆) 推广为：
+
+> **(⋆_diag)** 对每 (P, prefix, t_w) 满足：
+> 1. P 素数，P > 5；
+> 2. prefix ∈ N_{P, k_low}（对角线 holes 上的反例骨架）；
+> 3. t_w ∈ Surv(prefix)（让 1 + t_w · M 是素数的 t 值）；
+>
+> 验证 `M_kill_diag(prefix, t_w) < S − prefix_saving`。
+
+若 (⋆_diag) 全 P 通过，加 modulus 主导引理与传递性引理，得：
+
+> 对角线方向 j ≥ k_low+1 强制定理在 W=P, X=P 范围内严格成立。
+
+由此 H_P 主对角线含素数（P > 5）。
+
+### 208.8 对角线方向证明的下一步
+
+把 (⋆_diag) 实施为可执行脚本，对小 P 验证。具体：
+
+1. 在 `diagonal_M_kill.py` 中补充 r_unkill_diag 与 M_kill_diag 的精确实施；
+2. 对 P ∈ {47, 79, 89, 149, 197} 等（holes 较多的样本）跑反例搜索 + (⋆_diag) 验证；
+3. 累积统计 worst margin 与 fail count；
+4. 推广到 P ≤ 5000 的全 P 验证。
+
+§208 给出的工具基础已经实现 (diagonal_certificate.py, diagonal_M_kill.py)；下一步是把 §200-§204 的束搜索 + 解析证书在对角线 holes 上重新实施。这是元层面框架推广的第二个具体闭合实例。
+
