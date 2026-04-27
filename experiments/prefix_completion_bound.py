@@ -153,7 +153,7 @@ def full_scan(c: int, W: int, S: int, k: int, X: int,
         'final_states': len(states),
         'elapsed_sec': round(elapsed, 2),
         'deadline_hit': deadline,
-        'nonzero_examples': nonzero_examples[:5],
+        'nonzero_examples': nonzero_examples,
         'verdict': (
             'budget_exhausted' if deadline else
             ('counterexample_found' if nonzero_count > 0 else 'all_zero_in_search')
