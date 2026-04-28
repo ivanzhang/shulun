@@ -150,3 +150,10 @@ python3 experiments/verify_finite_p_grid.py --max-p P_* --quiet
 本轮新增 `6.14.2b atlas 穷尽性`。证明采用反设：若存在 atlas 外坏机制，则它必须同时满足分母非零、导数/Jacobian 非零、无 ramification、rank 有效、步长非共振；在这些正常条件下，`LV => AE => 四点 rank/coarea/参数余量` 已给预算内估计，矛盾。因此不存在 atlas 外“第七类退化”。
 
 同时修正了 `6.14.3` 中重复的 resultant 高度公式。当前最后状态是：结构性坏层已压缩为 atlas 清单复核与有限生成高度账本复核。
+
+
+## 6.14.3a--6.14.4a FGH 高度与坏素权重补充
+
+本轮专攻有限生成高度账本：新增 `6.14.3a FGH 统一高度账本`，逐项列出 atlas 生成元的操作、次数与高度传播；新增 `6.14.4a 坏素权重闭合`，证明固定 skeleton 下所有坏层多项式的坏素因子权重仅为对数幂，并可并入 connected Rankin 账本和 `C_*` 参数余量。
+
+这把“有限生成高度账本复核”从结构性缺口降为标准高度/resultant 与 Rankin 常数核查。

@@ -2974,6 +2974,50 @@ H(\operatorname{Res}(P,Q))\le (2d)^{O(d)}H(P)^{O(d)}H(Q)^{O(d)}.
 
 由于操作次数固定，`C_\Gamma` 不随 `P` 增长。
 
+### 6.14.3a FGH 统一高度账本
+
+为了把 6.14.2a 的 atlas 完全接入 Rankin 账本，需逐项确认其生成元次数和高度不会失控。固定 connected skeleton `\Gamma`，设初始正规形满足
+
+\[
+\deg N,\,\deg D\le d_0(r),
+\qquad
+\log H(N,D)\le C_0(r)\log P.
+\]
+
+则 atlas 中所有生成元满足统一界
+
+\[
+\deg B\le d_1(r),
+\qquad
+\log H(B)
+\le C_1(r)\log P.
+\]
+
+逐项账本如下：
+
+| atlas 生成元 | 操作 | 次数/高度传播 |
+|---|---|---|
+| `D(x_i)`、`D_t(x_i)` | 平移、乘积、代入 | 次数固定，高度乘 `P^{O_r(1)}` |
+| `N'D-ND'` | 求导、乘法、减法 | 次数 `O_r(1)`，高度 `H^{O_r(1)}` |
+| `\partial_i\mathcal E\mathcal D-\mathcal E\partial_i\mathcal D` | 四点化、求导、乘法 | 四变量次数 `O_r(1)`，高度 `P^{O_r(1)}` |
+| `\operatorname{Disc}_x(N-cD)` | 判别式 resultant | 次数和高度按 resultant 标准界增长为 `P^{O_r(1)}` |
+| `\operatorname{Res}_x(N-cD,N'D-ND')` | 一变量 resultant | 同上 |
+| `\bar{\mathcal E}\equiv0` 系数集合 | 提取有限个系数 | 系数高度不超过 `H(\mathcal E)` |
+| `\operatorname{Res}(\mathcal E,\mathcal J_i)` | 多变量消元 resultant | 固定变量数和次数，Macauley resultant 高度 `P^{O_r(1)}` |
+| 步长/频率共振 | 因子 `h,t,mU,mT` | 高度至多 `P^{O_r(1)}` |
+
+**证明。** 使用标准高度规则
+
+\[
+H(PQ)\le H(P)H(Q){d_P+d_Q\choose d_P},
+\quad
+H(P')\le dH(P),
+\quad
+H(\operatorname{Res}(P,Q))\le (2d)^{O(d)}H(P)^{O(d)}H(Q)^{O(d)}.
+\]
+
+所有操作次数只依赖 moment 阶和 skeleton 大小，不随 `P` 增长；`U,m,t,h` 至多为 `P^{O(1)}` 或对数幂。因此每个生成元的对数高度均为 `O_r(\log P)`。这就是 FGH 的统一形式。
+
 ### 6.14.4 坏素因子权重
 
 由高度界，固定 `\Gamma` 下
@@ -2994,6 +3038,23 @@ H(\operatorname{Res}(P,Q))\le (2d)^{O(d)}H(P)^{O(d)}H(Q)^{O(d)}.
 \]
 
 这些损失均为对数幂级。
+
+**命题 6.14.4a（坏素权重闭合）。** 令 `\mathcal B_\Gamma` 为 6.14.2a atlas 对固定 skeleton 生成的全部坏层多项式集合。则对任意固定 `K`，
+
+\[
+\sum_{B\in\mathcal B_\Gamma}\sum_{q|B}{\log^K q\over q}
+\ll_{r,K}\log^{K+2}P.
+\]
+
+对所有 connected skeleton、Bell 局部选择和 Rankin 标签求和后，该损失仍可并入引理 2.7 的
+
+\[
+(Cr)^{Cr}\log^{Cr}P
+\]
+
+余量；在 `r\le c_0\log P` 的高矩范围内，经 6.15 的 `C_*` 定义统一吸收。
+
+**证明。** 由 6.14.3a，`|\mathcal B_\Gamma|=O_r(1)`，且每个 `B` 满足 `\log H(B)\ll_r\log P`。于是坏素因子倒数和至多为 `O_r(\log\log P)`，带 `\log^K q` 权后至多 `O_{r,K}(\log^{K+1}P)`。有限个生成元求和仍为对数幂。connected skeleton 与局部标签求和时，只是把该对数幂乘到已有 Rankin 账本上；`C_*` 被定义为所有这类固定对数损失的最大值，所以不会产生新的结构性损失。
 
 ### 6.14.5 与 connected Rankin 账本合并
 
@@ -3028,7 +3089,7 @@ O(A\log^{-B-20}P)
 
 级别，可并入 6.7.11 的差分相关误差。
 
-**证明。** 坏层由 6.14.1 的有限生成元覆盖；6.14.3 给出固定 skeleton 的高度界；6.14.4 把坏素因子权重化为对数幂损失；6.14.5 把该损失并入 connected Rankin 账本与步长平均余量。取 `B_1,B_2,B_4` 的对数参数足够大，即得所需 `O(A\log^{-B-20}P)` 级误差。
+**证明。** 坏层由 6.14.1 的有限生成元覆盖；6.14.3 给出固定 skeleton 的高度界；6.14.3a--6.14.4a 把坏素因子权重化为对数幂损失；6.14.5 把该损失并入 connected Rankin 账本与步长平均余量。取 `B_1,B_2,B_4` 的对数参数足够大，即得所需 `O(A\log^{-B-20}P)` 级误差。
 
 因此 DBA-closure 已被归约为两个可审查点：6.14.1 的生成元清单必须覆盖所有坏层，且 6.14.5 的对数损失必须被全文参数余量吸收。该覆盖来自 6.10--6.13 与 6.18 中每次退化判别式的显式列举；最终定稿仍需逐项核对无遗漏。
 
