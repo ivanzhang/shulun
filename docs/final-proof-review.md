@@ -97,3 +97,17 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 ## 6.16 最终闭合审查发现
 
 最终反向审查发现一个关键接口一致性问题：`UAS/DBA`、四点能量、离散 coarea 与坏层账本闭合的是几何端点 sawtooth 相消，适用于硬边界 `B.0.4*` 路线；它们并不自动推出带 `dπ(p)` 的素数权 `B.0.4S-short`。若选择平滑路线，仍需独立的素数权 Type-I/AP 双线性定理。若选择硬路线，则应统一主证明依赖为 `B.0.4*`，并复核其余局部容量估计。当前不能声称 `B.0.4S-short` 已由 UAS/DBA 无条件闭合。
+
+
+## 6.17 B.0.4* 硬路线覆盖矩阵审查补充
+
+新增 `6.17` 节后，主线从平滑素数权接口切回硬窗口 sawtooth 接口。文稿现在把 `B.0.4*` 明确表述为：所有行窗口端点、dyadic 盒端点、叶剥离端点与曲线边界端点，要么规范化为有限个 sawtooth 有理相位和，要么进入 `DBA-closure` 的六类坏层。覆盖矩阵逐项对应左端点、右端点、端点差分、盒截断、叶剥离分片、分母层、导数层、四点厚化层、Jacobian/ramification 层与步长共振层。
+
+审查结论更新为：若 `6.7--6.15` 的 UAS、四点能量、离散 coarea 与 DBA-closure 严格证明逐项通过，则 `B.0.4*` 可由硬路线闭合，行命题不再依赖 `B.0.4S-short`。平滑素数权路线仍作为备选，但不能由 UAS/DBA 自动推出。最终审稿的唯一核心核查变为：附录 B 产生的所有 `W(a),b(a),Q` 是否满足 `6.17` 的 admissibility，且非 admissible 分片是否全部落入 `6.14` 六类坏层。
+
+
+## 最终未处理事项决策
+
+新增 `docs/final-closure-obstacles.md` 作为最终硬障碍与文件处理清单。当前应纳入证明稿审查的是 `docs/final-proof-draft.md`、`docs/final-proof-review.md` 与 `docs/final-closure-obstacles.md`。`docs/rigid-patch-lemma-experiments.md`、`experiments/rigid_patch_lemma_scan.py` 以及 134 个未跟踪实验脚本暂不混入主证明提交；它们属于探索性实验资料，应后续按主题分批整理、补充用途说明后再提交。
+
+最终闭合不能靠实验日志替代证明。下一轮最优先任务是以 `6.17` 为索引，逐项反查附录 B 的 `W(a),b(a),Q` admissibility，并把所有失败分片映射到 `6.14` 六类坏层。
