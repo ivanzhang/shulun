@@ -67,3 +67,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 ## 6.12 JND/FGH 函数方程化审查补充
 
 新增 `6.12` 节把 `JND` 进一步转化为有理函数四点奇异分类 `JND-class`，并把 `FGH` 转化为有限次代数操作下的标准高度传播账本。当前最接近闭合的剩余点是严格证明 `JND-class`：非退化一维有理函数的四点 Jacobian 三维奇异分支只能来自仿射、一次分式或已列账退化。`FGH` 看起来可由标准高度/resultant 估计闭合，但仍需在附录中严写。
+
+## 6.12 JND 修正审查补充
+
+后续严查修正了 `JND-class` 的几何表述：普通四点水平面本来就是三维，不能被误判为退化。新的正确对象是临界纤维 `JND-crit`：只有 `F=0` 同时 Jacobian/投影 Jacobian 退化时，才会造成厚化层超出 coarea 预测。该修正把剩余核心改为离散 coarea 估计与 ramification/resultant 坏层吸收，而非分类所有三维水平面。
