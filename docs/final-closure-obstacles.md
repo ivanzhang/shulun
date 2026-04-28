@@ -87,3 +87,10 @@ python3 experiments/verify_finite_p_grid.py --max-p P_* --quiet
 ## 5. 数学诚实声明
 
 当前文稿已经把主线最终缺口压缩到有限清单审查：`B.0.4*` admissibility、`USC(log P)` 常数增长、四点能量退化覆盖、列坏列整数化与显式阈值。只有这些项目全部严写通过后，才能声明无条件完整证明闭合。
+
+
+## 6. 本轮新推进：admissibility 与相消分层
+
+已在 `docs/final-proof-draft.md` 的 `6.17.6--6.17.7` 增补核查：附录 B 生成的 `Q,b(a),W(a),N,Y` 均能映射到 `B.0.4*` 的 admissible sawtooth 接口；失败情形进入小筛剔除、低体积盒或 `DBA-closure` 坏层。
+
+但该核查只说明接口无遗漏，不等于自动证明 sawtooth 相消。真正硬解析核心仍是 6.7--6.15 的 UAS/FNL、四点能量、离散 coarea 与 DBA-closure 链条。后续若要无条件闭合，应继续严写该链条，而不是再扩大实验或平滑素数权路线。

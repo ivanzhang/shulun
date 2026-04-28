@@ -111,3 +111,10 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 新增 `docs/final-closure-obstacles.md` 作为最终硬障碍与文件处理清单。当前应纳入证明稿审查的是 `docs/final-proof-draft.md`、`docs/final-proof-review.md` 与 `docs/final-closure-obstacles.md`。`docs/rigid-patch-lemma-experiments.md`、`experiments/rigid_patch_lemma_scan.py` 以及 134 个未跟踪实验脚本暂不混入主证明提交；它们属于探索性实验资料，应后续按主题分批整理、补充用途说明后再提交。
 
 最终闭合不能靠实验日志替代证明。下一轮最优先任务是以 `6.17` 为索引，逐项反查附录 B 的 `W(a),b(a),Q` admissibility，并把所有失败分片映射到 `6.14` 六类坏层。
+
+
+## 6.17.6--6.17.7 admissibility 核查补充
+
+本轮继续反查附录 B：`Q` 来自小筛 squarefree CRT 模数，`b(a)` 来自可逆剩余类和叶剥离 CRT 合成，`W(a)` 来自 Stieltjes 卷积测度与 dyadic 截断。因此正常主盒满足 `6.17.1` 的 admissibility；失败情形进入小筛剔除、低体积盒或 `DBA-closure` 坏层。
+
+同时文稿明确区分两个层级：对象核查已闭合，但 sawtooth 相消仍需 6.7--6.15 的 UAS/FNL、四点能量、离散 coarea 与 DBA-closure 链条独立证明。该修正避免把接口规范化误写成无条件相消证明。
