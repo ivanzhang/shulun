@@ -79,3 +79,13 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 ## 6.14 DBA-closure 账本化审查补充
 
 新增 `6.14` 节列出 DBA-closure 的坏层生成元：分母层、导数层、ramification 层、四点 rank 失效层、Jacobian 层、步长共振层。文档给出有限生成高度界与 connected Rankin 账本吸收方案。当前剩余审查点是：逐项确认生成元清单覆盖 6.10--6.13 中所有退化，并核对 `B_1,B_2,B_4` 的参数余量大于全部高度传播和 Rankin 损失常数。
+
+## 6.15 参数余量核查表审查补充
+
+新增 `6.15` 节统一定义最大对数损失常数 `C_*`，并给出显式参数选择：
+
+- `B_4=4B+4C_*+100`
+- `B_2=6B+4C_*+120`
+- `B_1=8B+4C_*+160`
+
+该表覆盖 Fourier 截断、UAS 短弧少根密度、van der Corput 初项、步长共振、DBA 坏素因子、离散 coarea 厚化、dyadic/Fourier 并合与 Stieltjes 权转换。当前参数余量已不再是独立结构障碍；最后审查点是 6.14.1 坏层生成元清单是否覆盖所有退化。
