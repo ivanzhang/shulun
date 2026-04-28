@@ -71,3 +71,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 ## 6.12 JND 修正审查补充
 
 后续严查修正了 `JND-class` 的几何表述：普通四点水平面本来就是三维，不能被误判为退化。新的正确对象是临界纤维 `JND-crit`：只有 `F=0` 同时 Jacobian/投影 Jacobian 退化时，才会造成厚化层超出 coarea 预测。该修正把剩余核心改为离散 coarea 估计与 ramification/resultant 坏层吸收，而非分类所有三维水平面。
+
+## 6.13 离散 coarea 审查补充
+
+新增 `6.13` 节把 `4E-DISP` 的厚化离散转换归约为一变量有理函数分片估计：固定三个变量后，非临界单调段贡献 `O(1+nu A^{1+o(1)})`，对三变量求和得到 `O(nu A^{4+o(1)}+A^{3+o(1)})`。小导数、分母极点与 ramification 层交由 `DBA-closure` 吸收。当前最后障碍进一步集中到 DBA-closure 的完全严写。

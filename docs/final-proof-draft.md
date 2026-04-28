@@ -2760,6 +2760,93 @@ H(\operatorname{Res}(P,Q))
 
 因此当前真正硬核的剩余点变为：严写离散 coarea 估计，并证明所有 ramification/resultant 坏层均由 DBA-closure 吸收。这个版本比 JND-class 更接近可证，因为临界纤维分类已由梯度公式直接控制。
 
+
+## 6.13 离散 coarea 估计的严写
+
+本节把 6.12 中的离散 coarea 估计展开为可审查证明。核心是固定三个变量后，把四点场视为一变量有理函数，并用临界点分片控制薄层整数点数。
+
+### 6.13.1 一变量分片引理
+
+设
+
+\[
+f(x)=\frac{P(x)}{Q(x)}
+\]
+
+是次数 `\le C` 的实有理函数，在区间 `I=[A,2A]` 上无极点。设临界集合
+
+\[
+\mathcal C_f=\{x\in I:f'(x)=0\}
+\]
+
+大小为 `O_C(1)`。把 `I` 按 `\mathcal C_f` 分成 `O_C(1)` 个单调区间 `I_j`。若在 `I_j` 上 `|f'|\ge\lambda_j`，则
+
+\[
+\#\{n\in I_j\cap\mathbb Z: |f(n)|\le\nu\}
+\ll 1+\frac{\nu |I_j|}{\operatorname{osc}_{I_j} f}
+\ll 1+\frac{\nu}{\lambda_j}.
+\]
+
+若 `\lambda_j\ge A^{-1+o(1)}`，则贡献为 `O(1+\nu A^{1+o(1)})`。对固定三元组求和后得到 `O(A^3+\nu A^{4+o(1)})`。
+
+### 6.13.2 小导数区间进入 ramification 坏层
+
+仍固定 `(a_1,a_2,a_3)`，令
+
+\[
+f_{a_1,a_2,a_3}(x)=F(a_1,a_2,a_3,x).
+\]
+
+若某单调区间上 `|f'|<A^{-1-o(1)}`，则存在整数点附近满足
+
+\[
+|f(x)|\le\nu,
+\qquad
+|f'(x)|<A^{-1-o(1)}.
+\]
+
+清分母后得到
+
+\[
+|\mathcal E|\le\nu|\mathcal D|,
+\qquad
+|\mathcal J_4|\le A^{-1-o(1)}|\mathcal D|^2.
+\]
+
+这正是投影 Jacobian 坏层。由 JND-crit，它只能来自 `R'(x)=0`、分母极点或 ramification 判别式；这些由 DBA-closure 吸收。故非坏层中可假设所有相关单调段满足导数下界。
+
+### 6.13.3 离散 coarea 命题
+
+**命题 DC（Discrete Coarea）。** 在剔除对角、半对角、分母坏层、导数坏层和 ramification 坏层后，四点场满足
+
+\[
+\#\{a_i\asymp A: |F(a_1,a_2,a_3,a_4)|\le\nu\}
+\ll \nu A^{4+o(1)}+A^{3+o(1)}.
+\]
+
+**证明。** 固定 `(a_1,a_2,a_3)`。由 6.13.1 与 6.13.2，非坏层中一变量函数 `a_4\mapsto F(a_1,a_2,a_3,a_4)` 的每个单调段贡献 `O(1+\nu A^{1+o(1)})`，段数为 `O_C(1)`。对 `O(A^3)` 个三元组求和得到结论。坏层由 DBA-closure 计入 `A^{3+o(1)}` 或更小误差。
+
+这就是 4E-DISP 所需的厚化离散转换。
+
+### 6.13.4 与 4E-DISP 的闭合关系
+
+命题 DC 给出实厚化层总数 `O(\nu A^{4+o(1)}+A^{3+o(1)})`。结合 6.10 的模 `Q'` 局部 rank 界，可写成
+
+\[
+\#\{|\mathcal E|\le\nu|\mathcal D|\}
+\le
+\#\{\mathcal E\equiv0\pmod {Q'}\}
++O(\nu A^{4+o(1)}+A^{3+o(1)}),
+\]
+
+这正是 4E-DISP 的形式。于是，在 DBA-closure 吸收坏层后，4E-DISP 成立。
+
+### 6.13.5 当前闭合状态
+
+经过 6.13，离散 coarea 本身已归约为标准一变量有理函数分片估计；剩余任务集中到 DBA-closure：必须证明所有小导数、ramification、分母极点、resultant 坏层都在有限生成高度账本中可和。
+
+因此当前最后障碍不再是 coarea，而是 DBA-closure 的完全严写：把所有坏层逐项列入有限生成判别式集合，并证明其 Rankin 权总和小于误差预算。
+
 ## 7. 技术附录与定稿审查点
 
 前文已经给出主证明链。以下附录用于把正文中压缩使用的技术估计展开到可审查层级。附录不改变主证明结构，只补全估计细节，并标出仍需最终打磨的严写点。
