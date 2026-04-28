@@ -94,3 +94,10 @@ python3 experiments/verify_finite_p_grid.py --max-p P_* --quiet
 已在 `docs/final-proof-draft.md` 的 `6.17.6--6.17.7` 增补核查：附录 B 生成的 `Q,b(a),W(a),N,Y` 均能映射到 `B.0.4*` 的 admissible sawtooth 接口；失败情形进入小筛剔除、低体积盒或 `DBA-closure` 坏层。
 
 但该核查只说明接口无遗漏，不等于自动证明 sawtooth 相消。真正硬解析核心仍是 6.7--6.15 的 UAS/FNL、四点能量、离散 coarea 与 DBA-closure 链条。后续若要无条件闭合，应继续严写该链条，而不是再扩大实验或平滑素数权路线。
+
+
+## 6.18 sawtooth 相消链条严写补充
+
+新增 `6.18` 节把硬窗口 `B.0.4*` 的 sawtooth 相消拆成三段：`LV` 大 Fourier 值反推短弧集中，`AE` 短弧集中反推四点厚化能量异常，最后由四点 rank、离散 coarea 与 `DBA-closure` 排除异常。该节还把旧的 `FNL/NL => B.0.4S-short` 主线修正为 `FNL/NL => B.0.4*`，平滑素数权接口继续只作为备选路线。
+
+当前最后审稿点进一步缩小为：加权 van der Corput 常数、短弧可分辨层数 `L` 的上界、以及 coarea/DBA 坏层覆盖是否无遗漏。

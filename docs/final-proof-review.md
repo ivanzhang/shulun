@@ -118,3 +118,10 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 本轮继续反查附录 B：`Q` 来自小筛 squarefree CRT 模数，`b(a)` 来自可逆剩余类和叶剥离 CRT 合成，`W(a)` 来自 Stieltjes 卷积测度与 dyadic 截断。因此正常主盒满足 `6.17.1` 的 admissibility；失败情形进入小筛剔除、低体积盒或 `DBA-closure` 坏层。
 
 同时文稿明确区分两个层级：对象核查已闭合，但 sawtooth 相消仍需 6.7--6.15 的 UAS/FNL、四点能量、离散 coarea 与 DBA-closure 链条独立证明。该修正避免把接口规范化误写成无条件相消证明。
+
+
+## 6.18 sawtooth 相消链条严写补充
+
+新增 `6.18` 节把硬窗口 `B.0.4*` 的 sawtooth 相消拆成三段：`LV` 大 Fourier 值反推短弧集中，`AE` 短弧集中反推四点厚化能量异常，最后由四点 rank、离散 coarea 与 `DBA-closure` 排除异常。该节还把旧的 `FNL/NL => B.0.4S-short` 主线修正为 `FNL/NL => B.0.4*`，平滑素数权接口继续只作为备选路线。
+
+当前最后审稿点进一步缩小为：加权 van der Corput 常数、短弧可分辨层数 `L` 的上界、以及 coarea/DBA 坏层覆盖是否无遗漏。
