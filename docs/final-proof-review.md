@@ -59,3 +59,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 3. `DBA-closure`：统一吸收四点能量、导数、差分产生的判别式。
 
 因此四点路线进一步强化了归约，但仍未构成无条件证明。
+
+## 6.11 Jacobian/DBA-closure 审查补充
+
+新增 `6.11` 节把 `4E-DISP` 进一步归约为 Jacobian 非退化 `JND` 与有限生成高度账本 `FGH`。该节说明：厚化离散转换失败会迫使四点场与其梯度同时退化；若 Jacobian 退化簇仅来自 Möbius/仿射/常值及分母导数坏层，则可由 `DBA-closure` 吸收。当前仍需证明 `JND` 的代数几何分类和 `FGH` 的统一高度可和性，因此仍是条件归约。

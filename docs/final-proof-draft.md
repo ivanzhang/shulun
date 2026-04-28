@@ -2482,6 +2482,147 @@ M>A\theta(Q')+P^{o(1)}+\nu A,
 
 因此，四点路线的最后闭合目标应更精确地表述为：证明 `\mathcal E` 的有效局部 rank 为 `1`，把所有 rank 失效素因子纳入 DBA-closure，并证明 4E-DISP 的厚化离散转换。
 
+
+## 6.11 4E-DISP 与 DBA-closure 的 Jacobian 闭包攻坚
+
+本节继续下钻 4E-DISP。厚化离散转换的本质是：一个低次数有理函数的薄邻域不能在长整数盒中容纳远超 `\nu` 比例的点，除非其梯度或 Jacobian 在大集合上退化。
+
+### 6.11.1 厚化场的 coarea 直觉
+
+令
+
+\[
+F(a_1,a_2,a_3,a_4)=\frac{\mathcal E(a_1,a_2,a_3,a_4)}{\mathcal D(a_1,a_2,a_3,a_4)}.
+\]
+
+4E-DISP 要控制
+
+\[
+\mathcal N_\nu=\#\{a_i\asymp A: |F(a_1,a_2,a_3,a_4)|\le\nu\}.
+\]
+
+若 `\nabla F` 在真四点区域有下界，则离散 coarea 原理给
+
+\[
+\mathcal N_\nu
+\ll \nu A^4+A^3P^{o(1)},
+\]
+
+其中 `A^3` 是一条三维水平面的自然尺度。若该界失败，则存在大集合使
+
+\[
+|F|\le\nu,
+\qquad
+\|\nabla F\|\ll \nu/A
+\]
+
+同时成立。清分母后，这给出五个低次数多项式近零：
+
+\[
+\mathcal E\approx0,
+\qquad
+\partial_{a_i}\mathcal E\cdot \mathcal D-
+\mathcal E\partial_{a_i}\mathcal D\approx0
+\quad(1\le i\le4).
+\]
+
+因此 4E-DISP 失败会强迫四点场进入 Jacobian 退化簇。
+
+### 6.11.2 Jacobian 退化簇
+
+定义 Jacobian 判别式
+
+\[
+\mathfrak J_R=
+\operatorname{Res}_{a_1,a_2,a_3,a_4}
+\left(
+\mathcal E,
+\mathcal J_1,
+\mathcal J_2,
+\mathcal J_3,
+\mathcal J_4
+\right),
+\]
+
+其中
+
+\[
+\mathcal J_i=\partial_{a_i}\mathcal E\cdot\mathcal D-
+\mathcal E\partial_{a_i}\mathcal D.
+\]
+
+若 `\mathfrak J_R` 不消失，则公共近零集合维数至多 `2` 或更低，其整数点数为 `O(A^2P^{o(1)})`，可被 `A^3P^{o(1)}` 吸收。若 `\mathfrak J_R` 消失，则四点水平面具有奇异族；这意味着 `R` 的差分图像具有低维群结构。对一维低次数有理函数，该奇异族只能来自：
+
+1. `R` 常值或仿射；
+2. `R` 为 Möbius 变换且四点关系退化为 cross-ratio 恒等；
+3. 分母或导数在相关模因子上退化。
+
+第 1 类已由二阶场非恒等排除；第 2 类对应线性分式成比例判别式；第 3 类属于分母/导数坏层。因此 Jacobian 退化簇应全部进入 DBA-closure。
+
+### 6.11.3 4E-DISP 的条件证明
+
+在剔除 Jacobian 退化簇后，对每个固定三元组 `(a_1,a_2,a_3)`，函数
+
+\[
+a_4\mapsto F(a_1,a_2,a_3,a_4)
+\]
+
+具有有限个临界点，且在其余区间单调，导数下界由 `A^{-C}` 控制。于是每个单调段中 `|F|\le\nu` 的整数点数为
+
+\[
+O(\nu A+1).
+\]
+
+对 `O(A^3)` 个三元组求和，得到
+
+\[
+\mathcal N_\nu\ll \nu A^4+A^3P^{o(1)}
+\]
+
+加上模 `Q'` 零集项。这正是 4E-DISP。
+
+因此 4E-DISP 可由以下命题推出：
+
+**JND（Jacobian Non-Degeneracy）。** 四点场 `F=\mathcal E/\mathcal D` 的 Jacobian 退化簇，除对角、半对角和 DBA-closure 坏层外，不含三维以上的正密度整数族。
+
+### 6.11.4 DBA-closure 的有限生成高度账本
+
+所有新判别式来自有限次代数操作：加减乘、求导、差分、resultant。若初始 `N,D` 的次数与高度满足
+
+\[
+\deg N,\deg D\le C,
+\qquad
+\log H(N,D)\le C\log^C P,
+\]
+
+则经过固定次数操作后，所有判别式 `\mathfrak D` 仍满足
+
+\[
+\deg \mathfrak D\le C',
+\qquad
+\log H(\mathfrak D)\le C'\log^{C'}P.
+\]
+
+于是其坏素因子权重满足
+
+\[
+\sum_{q|\mathfrak D}\frac1q\ll \log\log H(\mathfrak D)
+\ll \log\log P+\log\log\log P.
+\]
+
+这只是对固定 skeleton 的估计。对所有 connected skeleton 求和时，再乘以引理 2.7 的 Rankin 权，仍应被既有 `\log^{Cr}P` 余量吸收。由此 DBA-closure 被压缩为一个有限生成高度命题：证明初始正规形的高度界在 connected 标签求和中统一成立。
+
+### 6.11.5 当前最终障碍
+
+至此，四点路线的最终障碍进一步缩小为两个命题：
+
+1. **JND。** 四点 Jacobian 退化簇除已知退化外没有三维正密度分支。
+2. **FGH（Finite Generated Height，有限生成高度）。** connected 正规形及其所有差分、导数、四点能量、Jacobian/resultant 判别式的高度在 Rankin 账本中统一可和。
+
+若 JND 与 FGH 成立，则 DBA-closure 与 4E-DISP 成立；结合 6.10 的局部 rank 界，四点能量定理成立，进而 UAS 闭合。
+
+这仍是条件闭合，而不是无条件证明。真正需要补完的是 JND 的代数几何分类：证明非退化低次数一维有理函数的四点 Jacobian 奇异族只能来自 Möbius/仿射/常值退化。
+
 ## 7. 技术附录与定稿审查点
 
 前文已经给出主证明链。以下附录用于把正文中压缩使用的技术估计展开到可审查层级。附录不改变主证明结构，只补全估计细节，并标出仍需最终打磨的严写点。
