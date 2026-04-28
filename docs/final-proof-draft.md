@@ -3298,39 +3298,92 @@ S_m(T)=\sum_{a\in A_{box}}W(a)e\left(m{T\over aQ}-m{b(a)\over Q}\right),
 
 ### 6.18.1 大值反推命题
 
-**命题 LV（large value to arc concentration）。** 若存在 admissible 主盒与频率 `m` 使
+本小节把 `LV` 拆成三个完全标准的步骤：加权 van der Corput、平均大相关、以及相关大值到短弧集中。这样可以把权重变差与步长常数全部放入显式账本。
+
+**引理 6.18.1a（加权 van der Corput）。** 设
 
 \[
-|S_m(T)|\ge A\log^{-B_0}P,
+S=\sum_{a\in I}W(a)e(\Phi(a)),
+\qquad |I|\asymp A,
 \]
 
-则存在步长集合 `\mathcal T\subset[1,T_0]`，其相对密度 `\gg1`，并且对每个 `t\in\mathcal T` 存在短弧 `J_t\subset\mathbb T`，长度
+其中 `0\le W(a)\le W_0`，且 `W` 在 dyadic 盒内总变差满足
 
 \[
-|J_t|\ll \log^{-B_1}P,
+\operatorname{Var}_I(W)\le W_0\log^{C_W}P.
 \]
 
-使差分相位
+对任意 `1\le H\le A/10`，有
 
 \[
-F_t(a)=m{T\over Q}\left({1\over a+t}-{1\over a}\right)-m{b(a+t)-b(a)\over Q}
+|S|^2
+\ll {A^2W_0^2\over H}
++{A W_0\over H}\sum_{1\le h\le H}
+\left|\sum_{a,a+h\in I}W_h(a)e(\Phi(a+h)-\Phi(a))\right|
++A W_0^2\log^{C_W}P,
 \]
 
-满足
+其中 `W_h(a)` 是由 `W(a+h)W(a)` 或其 Abel 分部等价权产生的非负权，满足同阶有界变差。
+
+**证明。** 先对常权情形使用 Hilbert 空间 van der Corput 不等式。对有界变差权，把 `W` 写成 dyadic 阶梯函数与总变差测度的 Stieltjes 积分；对每个阶梯区间应用常权不等式，再由 Abel 分部合并。边界项只发生在阶梯端点和 `I` 的两端，总量由 `\operatorname{Var}_I(W)` 控制。由于 `W` 来自 Stieltjes 卷积测度，在正常盒中 `\operatorname{Var}_I(W)` 至多为对数幂倍的主权重，故最后一项由 6.15 参数余量吸收。
+
+**引理 6.18.1b（大值给出大相关步长）。** 若
 
 \[
-\#\{a\asymp A:F_t(a)\in J_t\}
-\gg A\log^{-O_B(1)}P.
+|S|\ge A W_0\log^{-B_0}P
 \]
 
-**证明。** 对 `S_m(T)` 应用加权 van der Corput 不等式。若所有步长相关和均小于 `A\log^{-2B_0-O(1)}P`，则 `S_m(T)` 已小，矛盾。因此正密度步长使
+且取 `H=\log^{B_4}P`、`B_4` 大于 `2B_0+C_W+20`，则存在步长集合 `\mathcal H\subset[1,H]`，使
 
 \[
-\left|\sum_a W_t(a)e(F_t(a))\right|
-\gg A\log^{-O_B(1)}P.
+\sum_{h\in\mathcal H}1\gg H\log^{-O_{B_0}(1)}P
 \]
 
-将圆周分成 `\log^{B_1}P` 个短弧。若每个短弧中的命中数都小于右端阈值，则按 6.7.10a 的相位分层下降，相关和不可能大。于是存在短弧 `J_t` 承载异常多命中点。权重 `W_t` 的有界变差只产生 `\log^{-C}P` 级损失，由 6.15 的参数余量吸收。
+并且对每个 `h\in\mathcal H`，
+
+\[
+\left|\sum_{a,a+h\in I}W_h(a)e(\Phi(a+h)-\Phi(a))\right|
+\gg A W_0^2\log^{-O_{B_0}(1)}P.
+\]
+
+**证明。** 把引理 6.18.1a 右端移项。`A^2W_0^2/H` 与变差边界项因 `H` 和 `B_i` 的选择低于 `|S|^2/10`。因此步长相关和的平均值必须至少为 `AW_0^2\log^{-O(1)}P`。若达到该尺度的步长少于 `H\log^{-O(1)}P`，则总平均仍不足，矛盾。
+
+**引理 6.18.1c（相关大值反推短弧集中）。** 对固定大相关步长 `h`，令
+
+\[
+F_h(a)=\Phi(a+h)-\Phi(a).
+\]
+
+若
+
+\[
+\left|\sum_a W_h(a)e(F_h(a))\right|
+\ge A W_0^2\eta,
+\]
+
+则存在圆周短弧 `J_h`，长度 `\delta=\log^{-B_1}P`，使
+
+\[
+\#\{a\asymp A:F_h(a)\in J_h\}
+\gg A\eta-O(A\delta)-O(A\log^{-C}P).
+\]
+
+**证明。** 用 6.7.10a 的相位分层下降逆否命题。若每个长度 `\delta` 的短弧命中数都小于右端，则把圆周分成 `O(1/\delta)` 个弧并 Abel 分部，得到相关和 `\ll AW_0^2(\eta/2)`，矛盾。权重 `W_h` 的有界变差与非均匀密度只产生 `O(A\log^{-C}P)`，由 `B_1` 余量吸收。
+
+**命题 LV（large value to arc concentration，严写版）。** 对 admissible 主盒和频率 `m`，若
+
+\[
+|S_m(T)|\ge A W_0\log^{-B_0}P,
+\]
+
+则存在 `\gg H\log^{-O(1)}P` 个非共振步长 `h\le H`，并且对每个这样的 `h` 存在短弧 `J_h`，`|J_h|\le\log^{-B_1}P`，使
+
+\[
+\#\{a\asymp A:F_h(a)\in J_h\}
+\gg A\log^{-O(1)}P.
+\]
+
+共振步长 `q|h`、`q|mT` 或分母不可逆的部分由 6.14 的步长共振层和分母层吸收；剔除它们后仍剩非共振步长的对数幂正密度。于是大 Fourier 值必然产生 UAS 所禁止的短弧集中，除非落入 DBA 坏层。
 
 ### 6.18.2 短弧集中反推四点能量
 
