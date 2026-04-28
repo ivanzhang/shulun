@@ -124,7 +124,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 
 新增 `6.18` 节把硬窗口 `B.0.4*` 的 sawtooth 相消拆成三段：`LV` 大 Fourier 值反推短弧集中，`AE` 短弧集中反推四点厚化能量异常，最后由四点 rank、离散 coarea 与 `DBA-closure` 排除异常。该节还把旧的 `FNL/NL => B.0.4S-short` 主线修正为 `FNL/NL => B.0.4*`，平滑素数权接口继续只作为备选路线。
 
-当前最后审稿点进一步缩小为：coarea/DBA 坏层覆盖是否无遗漏，以及最终参数表是否吸收全部对数损失。
+当前最后审稿点进一步缩小为：coarea/Jacobian/ramification/resultants 坏层覆盖是否无遗漏。参数表已纳入 LV/AE 新增损失。
 
 
 ## 6.18.2 AE 层化能量严写补充
@@ -153,3 +153,10 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 本轮专攻 `AE` 的层数 `L`：新增“层数二分”引理，说明正常 dyadic 盒中 `F_t=N_t/D_t` 的短弧可分辨层数满足 `L≤log^{C_L}P`；若层数失控，则必然来自分母极点、小导数或 ramification/resultant 分支合并，分别进入 6.14 的分母层、导数层和 ramification 层。因此 `L^3` 损失在正常层中只是对数幂，可由 6.15 参数余量吸收。
 
 这一步把 `AE` 的层化损失从剩余硬点降为 DBA 覆盖矩阵的一项核查。
+
+
+## 6.14--6.15 最终覆盖矩阵与参数表补充
+
+本轮把 `6.18` 新增退化源纳入 `6.14.2` 覆盖矩阵：`W_h` 阶梯端点、非共振步长剔除、`L` 层数失控、层化四点厚化异常分别映射到 dyadic/低体积账本、步长共振/分母层、分母/导数/ramification 层、四点 rank/Jacobian/coarea 坏层。`6.15` 参数表同步加入 `C_LV` 与 `C_AE`，并把 `L^3`、`W_h` 变差、步长平均等损失纳入 `C_*`。
+
+至此 `LV` 与 `AE` 不再作为独立结构缺口；最后核心审查点集中到 `6.13--6.14` 的 coarea、Jacobian、ramification、resultants 坏层覆盖是否真的无遗漏。
