@@ -189,3 +189,16 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 ## 6.19 最终审稿级复核表补充
 
 新增 `6.19` 后，文稿给出最终审稿级状态表：`B.0.4*` admissibility、LV、AE、四点 rank、离散 coarea、resultant atlas、FGH、高度账本与参数余量均已结构化；剩余为 atlas/高度常数复核、列方向常数复核，以及显式阈值 `P_*` 与有限验证。因此当前严格结论应表述为“所有充分大奇素数”的硬路线证明框架；“所有奇素数”版本需等待显式阈值和有限验证。
+
+
+## 再次审稿级复核与扩展有限验证
+
+本轮复核确认：当前文稿尚未抽取显式理论阈值 `P_*`，因此无法在严格意义上完成“充分大之前所有奇素数”的有限验证。已执行更高范围的可复现实证验证：
+
+```bash
+/usr/bin/time -f 'elapsed=%E maxrss=%MKB' python3 experiments/verify_finite_p_grid.py --max-p 10000 --quiet
+```
+
+结果：`SUMMARY: all passed for 1228 odd primes P<= 10000`，耗时约 `0:29.98`，峰值内存约 `1566592KB`。
+
+审稿结论：该结果强化了小范围现象验证与脚本可信度，但不能替代定理 6.2 所要求的 `P≤P_*` 完整验证。最终无条件“所有奇素数”版本仍需先从理论证明中显式抽取 `P_*`，再运行 `--max-p P_*`。

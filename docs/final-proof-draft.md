@@ -5462,7 +5462,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 SUMMARY: all passed for 167 odd primes P<= 1000
 ```
 
-当前 `P≤1000` 的运行结果只是脚本正确性与小范围现象验证；它并不替代最终阈值验证。若最终渐近证明给出显式阈值 `P_*`，只需运行：
+当前已运行到 `P≤10000`，结果为 `SUMMARY: all passed for 1228 odd primes P<= 10000`。这只是脚本正确性与扩展小范围现象验证；它并不替代最终阈值验证。若最终渐近证明给出显式阈值 `P_*`，只需运行：
 
 ```bash
 python3 experiments/verify_finite_p_grid.py --max-p P_* --quiet
