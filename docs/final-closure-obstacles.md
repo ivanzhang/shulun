@@ -143,3 +143,10 @@ python3 experiments/verify_finite_p_grid.py --max-p P_* --quiet
 本轮新增 `6.14.2a resultant atlas`，把最后的 coarea、Jacobian、ramification、resultants 坏层写成有限生成清单：分母极点、一变量导数、四点投影 Jacobian、水平纤维判别式、分支合并 resultant、四点 rank 失效、Jacobian 公共分支、LV/AE 层化失控、步长/频率共振。
 
 文稿现在给出无遗漏审查原则：若某坏情形不在 atlas 中，则它同时满足分母非零、导数非零、投影 Jacobian 非零、无 ramification、局部 rank 有效、步长非共振；在这些条件下 coarea、局部 rank 与 LV/AE 链条已经给出预算内估计。因此最后核心审查被压缩为复核 atlas 清单本身。
+
+
+## 6.14.2b atlas 穷尽性补充
+
+本轮新增 `6.14.2b atlas 穷尽性`。证明采用反设：若存在 atlas 外坏机制，则它必须同时满足分母非零、导数/Jacobian 非零、无 ramification、rank 有效、步长非共振；在这些正常条件下，`LV => AE => 四点 rank/coarea/参数余量` 已给预算内估计，矛盾。因此不存在 atlas 外“第七类退化”。
+
+同时修正了 `6.14.3` 中重复的 resultant 高度公式。当前最后状态是：结构性坏层已压缩为 atlas 清单复核与有限生成高度账本复核。
