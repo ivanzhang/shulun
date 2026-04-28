@@ -63,3 +63,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 ## 6.11 Jacobian/DBA-closure 审查补充
 
 新增 `6.11` 节把 `4E-DISP` 进一步归约为 Jacobian 非退化 `JND` 与有限生成高度账本 `FGH`。该节说明：厚化离散转换失败会迫使四点场与其梯度同时退化；若 Jacobian 退化簇仅来自 Möbius/仿射/常值及分母导数坏层，则可由 `DBA-closure` 吸收。当前仍需证明 `JND` 的代数几何分类和 `FGH` 的统一高度可和性，因此仍是条件归约。
+
+## 6.12 JND/FGH 函数方程化审查补充
+
+新增 `6.12` 节把 `JND` 进一步转化为有理函数四点奇异分类 `JND-class`，并把 `FGH` 转化为有限次代数操作下的标准高度传播账本。当前最接近闭合的剩余点是严格证明 `JND-class`：非退化一维有理函数的四点 Jacobian 三维奇异分支只能来自仿射、一次分式或已列账退化。`FGH` 看起来可由标准高度/resultant 估计闭合，但仍需在附录中严写。
