@@ -75,3 +75,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 ## 6.13 离散 coarea 审查补充
 
 新增 `6.13` 节把 `4E-DISP` 的厚化离散转换归约为一变量有理函数分片估计：固定三个变量后，非临界单调段贡献 `O(1+nu A^{1+o(1)})`，对三变量求和得到 `O(nu A^{4+o(1)}+A^{3+o(1)})`。小导数、分母极点与 ramification 层交由 `DBA-closure` 吸收。当前最后障碍进一步集中到 DBA-closure 的完全严写。
+
+## 6.14 DBA-closure 账本化审查补充
+
+新增 `6.14` 节列出 DBA-closure 的坏层生成元：分母层、导数层、ramification 层、四点 rank 失效层、Jacobian 层、步长共振层。文档给出有限生成高度界与 connected Rankin 账本吸收方案。当前剩余审查点是：逐项确认生成元清单覆盖 6.10--6.13 中所有退化，并核对 `B_1,B_2,B_4` 的参数余量大于全部高度传播和 Rankin 损失常数。

@@ -2847,6 +2847,130 @@ f_{a_1,a_2,a_3}(x)=F(a_1,a_2,a_3,x).
 
 因此当前最后障碍不再是 coarea，而是 DBA-closure 的完全严写：把所有坏层逐项列入有限生成判别式集合，并证明其 Rankin 权总和小于误差预算。
 
+
+## 6.14 DBA-closure 的完全账本化
+
+本节把 DBA-closure 写成显式有限生成账本。目标是证明所有坏层都来自有限个低次数判别式族，且其坏素因子权重可由 Rankin/divisor 余量吸收。
+
+### 6.14.1 坏层生成元清单
+
+所有坏层由以下生成元产生：
+
+1. **分母层。** `D(a_i)=0`、`S(a_i)=0`、`a_i=0`、`a_i+t=0`、`a_i+jh=0`。
+2. **导数层。** `R'(a_i)=0`，等价于 `N'D-ND'=0`。
+3. **ramification 层。** 水平纤维 `N(x)-cD(x)` 出现重根，即
+
+\[
+\operatorname{Disc}_x(N(x)-cD(x))=0.
+\]
+
+4. **四点 rank 失效层。** `\bar{\mathcal E}\equiv0 mod q` 或 `\mathcal E` 在有效素因子上含大维因子簇。
+5. **Jacobian 层。** `\mathcal E` 与 `\mathcal J_i` 的公共高维分支，由 resultants
+
+\[
+\operatorname{Res}(\mathcal E,\mathcal J_1,\ldots,\mathcal J_4)
+\]
+
+控制。
+
+6. **步长共振层。** `q|t`、`q|h` 或 `q|mU`，使差分或 Fourier 频率失效。
+
+记这些生成元的乘积为
+
+\[
+\mathfrak B_{\Gamma}(U,m,t,h)=
+\prod_{B\in\mathcal B_\Gamma} B(U,m,t,h).
+\]
+
+DBA-closure 等价于证明所有坏素因子 `q|\mathfrak B_\Gamma` 的总权可吸收。
+
+### 6.14.2 有限生成高度界
+
+对固定 connected skeleton `\Gamma`，正规形 `R=N/D` 的次数只依赖 `|\Gamma|`，且其系数来自 CRT 局部参数、`U,m,t,h` 与固定小整数操作。因此存在常数 `C_\Gamma`，使
+
+\[
+\deg \mathfrak B_\Gamma\le C_\Gamma,
+\qquad
+\log H(\mathfrak B_\Gamma)
+\le C_\Gamma\log P.
+\]
+
+证明只用标准高度规则：
+
+\[
+H(PQ)\le H(P)H(Q){d_P+d_Q\choose d_P},
+\quad
+H(P')\le dH(P),
+\quad
+H(\operatorname{Res}(P,Q))\le (2d)^{O(d)}H(P)^{O(d)}H(Q)^{O(d)}.
+\]
+
+由于操作次数固定，`C_\Gamma` 不随 `P` 增长。
+
+### 6.14.3 坏素因子权重
+
+由高度界，固定 `\Gamma` 下
+
+\[
+\sum_{q|\mathfrak B_\Gamma}\frac1q
+\le
+\sum_{q|\mathfrak B_\Gamma, q\le P}\frac1q
+\ll \log\log H(\mathfrak B_\Gamma)+O(1)
+\ll_\Gamma \log\log P.
+\]
+
+若需要带幂权或多重标签，Rankin 形式给
+
+\[
+\sum_{q|\mathfrak B_\Gamma}\frac{\log^C q}{q}
+\ll_\Gamma \log^{C+1}P.
+\]
+
+这些损失均为对数幂级。
+
+### 6.14.4 与 connected Rankin 账本合并
+
+引理 2.7 已为 connected skeleton/polymer 的素数标签提供
+
+\[
+(Cr)^{Cr}\log^{Cr}P
+\]
+
+级余量。把 6.14.3 的坏素因子权重并入，只增加 `\log^{O_r}P` 因子。因此
+
+\[
+\sum_{\Gamma}\text{BadWeight}(\Gamma)
+\ll (Cr)^{Cr}\log^{C'r}P,
+\]
+
+仍处于 USC 与 B.0.4S 允许的对数账本内。步长共振层另外有平均因子
+
+\[
+\frac1T\#\{1\le t\le T:q|t\}\ll \frac1q+\frac1T,
+\]
+
+其中 `1/q` 并入上述坏素因子权重，`1/T` 由 `T=(\log P)^{B_4}` 的大余量吸收。
+
+### 6.14.5 DBA-closure 命题
+
+**命题 DBA-closure。** 对所有 connected 正规形、所有由差分、导数、四点能量、Jacobian 和 resultants 产生的坏层，其总贡献在 dyadic 盒、Fourier 频率、步长平均和 Rankin 标签求和后为
+
+\[
+O(A\log^{-B-20}P)
+\]
+
+级别，可并入 6.7.11 的差分相关误差。
+
+**证明。** 坏层由 6.14.1 的有限生成元覆盖；6.14.2 给出固定 skeleton 的高度界；6.14.3 把坏素因子权重化为对数幂损失；6.14.4 把该损失并入 connected Rankin 账本与步长平均余量。取 `B_1,B_2,B_4` 的对数参数足够大，即得所需 `O(A\log^{-B-20}P)` 级误差。
+
+因此 DBA-closure 已被归约为两个可审查点：6.14.1 的生成元清单必须覆盖所有坏层，且 6.14.4 的对数损失必须被全文参数余量吸收。该覆盖来自 6.10--6.13 中每次退化判别式的显式列举；最终定稿仍需逐项核对无遗漏。
+
+### 6.14.6 当前闭合状态
+
+结合 6.13 的离散 coarea 与本节 DBA-closure 账本，若坏层生成元覆盖无遗漏且参数余量核对通过，则 4E-DISP 成立。再结合 6.10 的局部 rank 界，可推出四点能量定理；由 6.9 推出 UAS；由 6.7--6.8 推出 FNL 与 NL，进而得到 B.0.4S-short。
+
+需要最后复核的是参数余量是否在全文所有并合中一致：`B_1,B_2,B_4` 必须大于所有高度传播和 Rankin 损失常数。该复核看起来是技术性常数选择，而非新的结构障碍；但在最终论文中仍必须完整列出。
+
 ## 7. 技术附录与定稿审查点
 
 前文已经给出主证明链。以下附录用于把正文中压缩使用的技术估计展开到可审查层级。附录不改变主证明结构，只补全估计细节，并标出仍需最终打磨的严写点。
