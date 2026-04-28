@@ -3385,6 +3385,51 @@ F_h(a)=\Phi(a+h)-\Phi(a).
 
 共振步长 `q|h`、`q|mT` 或分母不可逆的部分由 6.14 的步长共振层和分母层吸收；剔除它们后仍剩非共振步长的对数幂正密度。于是大 Fourier 值必然产生 UAS 所禁止的短弧集中，除非落入 DBA 坏层。
 
+**引理 6.18.1d（`W_h` 的变差继承）。** 若 `W` 在 dyadic 正常盒中满足
+
+\[
+0\le W\le W_0,
+\qquad \operatorname{Var}_I(W)\le W_0\log^{C_W}P,
+\]
+
+并定义 `W_h(a)=W(a+h)W(a)`，则在 `I_h=I\cap(I-h)` 上
+
+\[
+0\le W_h(a)\le W_0^2,
+\qquad
+\operatorname{Var}_{I_h}(W_h)
+\le 2W_0\operatorname{Var}_I(W)
+\ll W_0^2\log^{C_W}P.
+\]
+
+若 `W_h` 由 Abel 分部后的阶梯近似权产生，同一估计只多出端点个数 `O(\log^{C_W}P)` 的贡献。
+
+**证明。** 对有界变差函数使用乘积变差不等式
+
+\[
+\operatorname{Var}(fg)
+\le \|f\|_\infty\operatorname{Var}(g)
++\|g\|_\infty\operatorname{Var}(f).
+\]
+
+平移不改变总变差，限制到子区间只会降低变差，因此得到第一式。Stieltjes 卷积权在 dyadic 小盒中是有限个平滑密度与阶梯截断的和；阶梯端点来自 dyadic 边界、曲线带边界和有限分片，数量为对数幂，故也被同一账本吸收。
+
+**引理 6.18.1e（非共振步长密度）。** 设坏步长由有限个坏因子集合 `\mathcal Q_{bad}` 定义：`h` 坏当且仅当存在 `q\in\mathcal Q_{bad}` 使 `q|h`，或 `q|mT` 使该模因子不可检测。若
+
+\[
+\sum_{q\in\mathcal Q_{bad}}{1\over q}\ll \log^{C_{bad}}P
+\]
+
+并且 DBA-closure 给出坏因子加权贡献 `O(\log^{-B-20}P)`，则在 `1\le h\le H=\log^{B_4}P` 的步长平均中，坏步长相关和的总贡献为
+
+\[
+O(AW_0^2\log^{-B-20}P)+O(AW_0^2H^{-1}\log^{C_{bad}}P).
+\]
+
+取 `B_4` 足够大后，剔除坏步长仍保留引理 6.18.1b 中对数幂正密度的大相关非共振步长。
+
+**证明。** 对固定 `q`，满足 `q|h` 的步长数为 `O(H/q+1)`。在平均中贡献 `O(1/q+1/H)`。对 `q\in\mathcal Q_{bad}` 求和，`1/q` 部分正是 6.14 的步长共振/坏素因子 Rankin 权；`1/H` 部分由 `H=\log^{B_4}P` 吸收。若某坏因子还满足 `q|mT`，则它不依赖 `h`，但这类因子已进入 `q|mU` 型步长共振层或判别式坏层，其总权同样由 DBA-closure 控制。
+
 ### 6.18.2 短弧集中反推四点能量
 
 本小节把 `AE` 的组合部分从解析几何部分中剥离出来。要避免一个常见误写：仅由“所有值落在同一短弧”并不能直接推出 `M^4/|J|A` 个近零四点；需要先按可分辨层离散化，再用 Cauchy--Holder 能量下界。
