@@ -89,3 +89,7 @@ python3 experiments/verify_finite_p_grid.py --max-p 1000 --quiet
 - `B_1=8B+4C_*+160`
 
 该表覆盖 Fourier 截断、UAS 短弧少根密度、van der Corput 初项、步长共振、DBA 坏素因子、离散 coarea 厚化、dyadic/Fourier 并合与 Stieltjes 权转换。当前参数余量已不再是独立结构障碍；最后审查点是 6.14.1 坏层生成元清单是否覆盖所有退化。
+
+## 6.14.2 坏层覆盖矩阵审查补充
+
+新增 `6.14.2` 覆盖矩阵，逐项对照 `6.10--6.13` 的退化来源：四点分母、rank 失效、水平纤维厚化、导数消失、Jacobian 退化、临界纤维、ramification、步长共振等。除对角/半对角已单独计数外，所有退化均映射到 `6.14.1` 六类生成元。至此，坏层覆盖问题被压缩为有限清单审查。
