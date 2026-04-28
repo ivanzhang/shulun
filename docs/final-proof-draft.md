@@ -2909,6 +2909,41 @@ DBA-closure 等价于证明所有坏素因子 `q|\mathfrak B_\Gamma` 的总权�
 
 因此除对角/半对角这类已显式单独计数的结构外，所有退化均落入 6.14.1 的六类生成元。该矩阵把“覆盖无遗漏”化为有限审查。
 
+### 6.14.2a resultant atlas：coarea/Jacobian/ramification 有限清单
+
+为使“覆盖无遗漏”可审查，本小节把 6.13--6.18 中出现的所有 coarea、Jacobian、ramification 退化写成有限生成 resultant atlas。固定 connected skeleton 后，所有正规形均可写成
+
+\[
+R(x)=\frac{N(x)}{D(x)},
+\qquad F(x_1,x_2,x_3,x_4)=R(x_1)-R(x_2)-R(x_3)+R(x_4),
+\]
+
+其中 `N,D` 次数有界，高度为 `P^{O(1)}`。清分母记
+
+\[
+\mathcal E=\sum_{\epsilon_i=\pm1}\epsilon_i N(x_i)\prod_{j\ne i}D(x_j),
+\qquad
+\mathcal D=\prod_iD(x_i).
+\]
+
+有限清单如下：
+
+| atlas 项 | 生成多项式/resultant | 覆盖退化 |
+|---|---|---|
+| 分母极点 | `D(x_i)`、差分分母 `D_t(x_i)` | 极点、不可逆、切片无定义 |
+| 一变量导数 | `N'D-ND'` | `R'(x_i)=0`、单调段端点 |
+| 四点投影 Jacobian | `\partial_{x_i}\mathcal E\cdot\mathcal D-\mathcal E\partial_{x_i}\mathcal D` | coarea 小导数、投影临界 |
+| 水平纤维 ramification | `\operatorname{Disc}_x(N(x)-cD(x))` | 多前像合并、分支折叠 |
+| 分支合并 resultant | `\operatorname{Res}_x(N(x)-cD(x),N'D-ND')` | ramification fiber 与导数零点重合 |
+| 四点 rank 失效 | 全部系数 gcd 或 `\bar{\mathcal E}\equiv0\pmod q` 的系数集合 | 有效素因子上 rank 降为 0 |
+| Jacobian 公共分支 | `\operatorname{Res}(\mathcal E,\mathcal J_i)` 与多变量消元 resultants | `F` 与梯度/Jacobian 共维不足 |
+| LV/AE 层化失控 | `D_t`、`N_t'D_t-N_tD_t'`、相邻壳端点 resultants | `W_h`/`F_t` 分片数超对数幂 |
+| 步长/频率共振 | `q|h`、`q|t`、`q|mU`、`q|mT` | 差分或 Fourier 频率不可检测 |
+
+这些生成元覆盖了全部可能的失败方式：若不在分母层，则函数有定义；若不在导数/Jacobian 层，则 coarea 法向导数非零；若不在 ramification 层，则投影分支不会合并；若不在 rank 失效层，则每个有效素因子提供至少一个代数约束；若不在步长共振层，则 van der Corput 差分确实检测该模因子。因此不存在第七类独立坏层。
+
+**无遗漏审查原则。** 任一坏情形若不能列入上表，则它必须同时满足：分母非零、导数非零、投影 Jacobian 非零、无 ramification、局部 rank 有效、步长非共振。在这些条件下，一变量 coarea 给 `O(\nu A^{4+o(1)}+A^{3+o(1)})`，局部 rank 给模零集密度下降，LV/AE 给短弧异常到四点异常的反推，故该情形不可能造成超过预算的贡献。
+
 ### 6.14.3 有限生成高度界
 
 对固定 connected skeleton `\Gamma`，正规形 `R=N/D` 的次数只依赖 `|\Gamma|`，且其系数来自 CRT 局部参数、`U,m,t,h` 与固定小整数操作。因此存在常数 `C_\Gamma`，使
