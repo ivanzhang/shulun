@@ -23,10 +23,12 @@
 - `docs/rks-log-reference-audit.md`：RKS-log 与 Bourgain--Garaev 文献的引用匹配审查。
 - `docs/rks-bridge-partition.md`：RKS-bridge Type I/II 长度分区。
 - `docs/rks-parameter-audit.md`：RKS 对数损失账本，合计 `74<128`。
+- `docs/bg-rks-block-match.md`：BG/RKS 分区逐块匹配附录。
 
 ## D. Structured-EHPD / OMR 附录
 
 - `docs/ab-to-d-interface-match.md`：A/B 主体双粗坏配置到 D 标准形式的逐项匹配附录。
+- `docs/m5-explicit-gap-lemma.md`：Lemma M5 覆盖缺口显式化附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
 - `docs/d-structure-line-by-line-expansion.md`：D 组 OMR/CGTP/LSMP/FCT 压缩证明逐行展开附录。
 - `docs/omr-cgtp-lsmp-theoremization.md`：OMR/CGTP/LSMP 结构包定理化。
@@ -36,6 +38,7 @@
 ## E. 显式常数与证书附录
 
 - `docs/constants-absorption-final-audit.md`：常数吸收最终核对表。
+- `docs/constants-numbered-inequalities.md`：常数吸收编号不等式证明。
 - `docs/explicit-p0-constants.status.md`：显式常数状态，最终口径见第 90--97 节。
 - `docs/explicit-p0-constants.structured-conservative.json`：保守结构常数包。
 - `docs/explicit-p0-structured-conservative-result.json`：理论阈值抽取证书，`log_P0_upper=3.5`。
