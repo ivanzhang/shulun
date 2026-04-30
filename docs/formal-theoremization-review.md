@@ -36,12 +36,12 @@
 
 ## 待证数学输入 A/B（行列归约）
 
-`Column-Closure` 与 `Row-Closure` 的反例归约已在 `docs/row-column-reduction-theoremization.md` 中短定理化：
+`Column-Closure` 与 `Row-Closure` 的反例归约已在 `docs/row-column-reduction-formal-appendix.md` 中推进为正式附录证明稿，短定理化历史入口见 `docs/row-column-reduction-theoremization.md`：
 
 - Theorem A：列反例归约为 Structured-EHPD 坏配置；
 - Theorem B：行反例归约为 Structured-EHPD 坏配置。
 
-当前剩余主要是符号和分层核对：小因子锁定、双粗主体、尾部锚三层是否完全覆盖且不误计；Tail-log4 是否同时适配行列尾部；45 度斜线锁定是否只作为小因子锁定层处理。
+A/B 当前不再作为独立黑箱：三层分解、短窗大因子互斥、第 `P` 列排除、CRT 非零类均衡和 45 度斜线锁定归属已逐条写入附录。剩余审稿义务是把该附录中的 `Structured-EHPD` 坏配置定义与 D 组排斥定理逐项同名匹配。
 
 ## 待证数学输入 C（Tail-log4 定理）
 

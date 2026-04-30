@@ -10,7 +10,7 @@
 2. `docs/references-and-appendices.md`：审稿版引用与附录入口；
 3. `docs/bibliography.md`：统一参考文献标签；
 4. `docs/formal-theoremization-review.md`：最终定理化总览；
-5. `docs/row-column-reduction-theoremization.md`：A/B 行列归约；
+5. `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录；
 6. `docs/tail-log4-theoremization.md`：C Tail-log4；
 7. `docs/omr-cgtp-lsmp-theoremization.md`：D 结构包；
 8. `docs/nrc-theoremization.md` 与 `docs/fct-tree-wfe-theoremization.md`：D 的剩余子接口；
@@ -22,8 +22,8 @@
 
 | 接口 | 文件 | 当前状态 | 剩余审稿义务 |
 | --- | --- | --- | --- |
-| A Column-Closure 归约 | `docs/row-column-reduction-theoremization.md` | 已短定理化 | 核对三层分解不重不漏 |
-| B Row-Closure 归约 | `docs/row-column-reduction-theoremization.md` | 已短定理化 | 核对 45 度锁定只进入小因子层 |
+| A Column-Closure 归约 | `docs/row-column-reduction-formal-appendix.md` | 已形成正式归约附录稿 | 与 D 组 Structured-EHPD 定义逐项匹配 |
+| B Row-Closure 归约 | `docs/row-column-reduction-formal-appendix.md` | 已形成正式归约附录稿 | 与 D 组 Structured-EHPD 定义逐项匹配 |
 | C Tail-log4 | `docs/tail-log4-formal-appendix.md`, `docs/tail-log4-theoremization.md`, `docs/rks-parameter-audit.md` | 已形成正式附录证明稿 | 最终期刊引用格式化 |
 | D OMR/CGTP/LSMP | `docs/omr-cgtp-lsmp-theoremization.md` | 已拆成 OMR/CGTP/LSMP/NRC/FCT | 统一符号与常数，核对 Tree-WFE 终端定义 |
 | NRC | `docs/nrc-theoremization.md` | 已用完成法 + Weil/Kloosterman 定理化 | 核对允许窗口展开复杂度 |

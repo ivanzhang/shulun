@@ -12,7 +12,8 @@
 
 ## B. 行列归约附录
 
-- `docs/row-column-reduction-theoremization.md`：A/B 行列反例到 Structured-EHPD 的短定理化。
+- `docs/row-column-reduction-formal-appendix.md`：A/B 行列反例到 Structured-EHPD 的正式归约附录证明稿。
+- `docs/row-column-reduction-theoremization.md`：A/B 行列反例到 Structured-EHPD 的短定理化历史入口。
 
 ## C. Tail-log4 附录
 

@@ -7,6 +7,7 @@
 - `docs/final-archive-report.md`：最终归档报告。
 - `docs/references-and-appendices.md`：审稿版引用与附录入口。
 - `docs/final-interface-index.md`：最终接口索引与一致性口径。
+- `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/critical-bucket-single-hit-sieve-attack.md`：主论文/主证明文档。
 - `docs/explicit-p0-constants.status.md`：显式常数与阈值抽取状态记录。
 - `docs/explicit-p0-constants.structured-conservative.json`：最终保守结构常数包。
