@@ -29,6 +29,7 @@
 - `docs/rh-lv-low-volume-principle.md`：LV 低体积原则编号引理。
 - `docs/rh-pc3-ov2-bridge-theorem.md`：PC-3+OV-2 素数过疏桥接定理。
 - `docs/rh-pc1-offline-zero-smooth-window.md`：PC-1 离线零点到平滑素数异常窗口。
+- `docs/rh-pc2-li-crt-baseline-match.md`：PC-2 连续零频与 CRT 零频基线匹配。
 
 ## B. 行列归约附录
 
