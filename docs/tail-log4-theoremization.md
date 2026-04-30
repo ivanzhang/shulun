@@ -161,3 +161,69 @@ Selberg divisor 谱端点项由平方权能量控制：
 
 - TL4-L 的 BG/coherent reciprocal Kloosterman 对数节省；
 - TL4-M 的二维 Selberg 上筛模板与平均奇异级数账本，其中大模数层已由 Proposition TL4-M3 处理。
+
+## 7. TL4-L 的进一步拆解：BG/coherent 输入与 Type I/II 核验
+
+本节补强 TL4-L，目标是把“BG/coherent reciprocal Kloosterman 对数节省”拆成明确可引用定理模式和 Vaughan Type I/II 适用核验。
+
+### 7.1 可引用倒数和定理模式
+
+**Theorem RKS-log（reciprocal Kloosterman log-saving 模式）.** 设 `p=P` 为素数，`I,J⊂[1,p-1]` 为区间或 dyadic 集合，系数满足 `|α_m|,|β_n|<=τ_C(m),τ_C(n)`。若
+
+`|I||J| >= p/log^A p`,
+
+则对任意非零 `ξ mod p`，有
+
+`|Σ_{m∈I}Σ_{n∈J} α_m β_n e_p(ξ (mn)^{-1})|`
+
+`<= C_A |I||J|/log^{A_1}p`。
+
+其中 `A_1` 可按需要预先取大，只需相应增大输入定理中的 `A` 与分解阶数。该模式是 Bourgain--Garaev 型 prime-field multilinear reciprocal Kloosterman 估计在二线性/多线性分块后的对数节省版本；divisor-bounded 系数通过 dyadic 分层只损失 `log^{O(1)}p`。
+
+**审稿说明。** 最终论文应在参考文献中引用精确的 Bourgain--Garaev 或后续多线性倒数 Kloosterman 定理，并说明其 entropy/source 条件覆盖本文 dyadic 块。本文使用的只是任意固定对数节省，不需要固定幂节省的最优常数。
+
+### 7.2 从素数 q 和到 Vaughan Type I/II
+
+TL4-L 的非零 Fourier 模为
+
+`S=Σ_{q∈[τP,P], q prime} w(q)e(hkP/(rq))`,
+
+其中 `r<=log^8P`、`1<=|h|<=log^16P`，`w` 有 bounded variation。用部分求和可把 `w` 变成 dyadic 光滑权；再用 Vaughan 恒等式展开 `Λ(q)`。得到三类块：
+
+1. **Type I**：`Σ_{m<=U} a_m Σ_{n≈P/m} e(ξ/(mn))`；
+2. **Type II**：`Σ_{m≈M} a_m Σ_{n≈N} b_n e(ξ/(mn))`，`MN≈P`，且 `M,N` 均不太小；
+3. **低体积/端点块**：`MN<=P/log^A P` 或某变量长度短于 dyadic 阈值。
+
+这里 `ξ` 可写成非零模 `P` 频率；因 `r,h` 都小于 `P`，且 `h≠0`，频率非零。
+
+### 7.3 Type II 块核验
+
+若 `M N≈P` 且 `M,N>=log^C P`，则 `MN>=P/log^A P` 自动成立。系数由 Vaughan 恒等式给出，满足 divisor-bounded。于是 Theorem RKS-log 直接给
+
+`S_{II}(M,N) <= MN/log^{A_1}P`。
+
+对所有 dyadic `M,N` 和所有 `r,h` 求和损失至多 `log^{C_0}P`。取 `A_1>=44+C_0+10`，得到 TL4-L 所需 `log^{-44}` 余量。
+
+### 7.4 Type I 块核验
+
+Type I 中若内变量长度 `N=P/m` 满足 `N>=P/log^A P`，则对固定 `m` 的一维倒数和可用完成和/Kusmin--Landau 给对数节省；更统一地，把 `m` 保留为外系数，仍满足 `MN≈P`，若 `m` 范围长度 `M>=log^C P`，由 Theorem RKS-log 处理。
+
+若 `M<log^C P`，则外变量只有对数多个。对每个固定 `m`，相位在 `n≈P/m` 上为 `e_P(ξ m^{-1}n^{-1})`。区间长度 `N≈P/m>=P/log^C P`，完成和或分部加和给
+
+`Σ_{n≈N} e_P(ξ m^{-1}n^{-1}) <= N/log^{A_1}P`
+
+在任意固定对数节省意义下；这是 RKS-log 的一变量长区间退化形式。对 `m` 求和仍只损失对数幂。
+
+### 7.5 低体积块吸收
+
+低体积块满足总候选数 `<=P/log^A P`，或来自 Vaughan 分解端点。平凡估计给其贡献 `<=P/log^A P`。取 `A>=60`，经过 `r,h` 和 dyadic 求和后仍为 `O(P/log^44P)`。
+
+这解释了 TL4-L 中“低体积时由平凡估计吸收”的精确含义：低体积块的总长度已经小于目标余量，不需要任何相消。
+
+### 7.6 TL4-L 结论
+
+由 7.2--7.5，非零 Fourier 模总贡献满足
+
+`Σ_{r<=log^8P} r^{-1}|Σ_q(B_r(q)-P/(rq))|^2 <= C P^2/log^44P`。
+
+其中平方和来自 Cauchy 与 dyadic 正交化；`r,h` 的数量为 `log^{O(1)}P`，已由 `A_1` 余量覆盖。于是 TL4-L 的唯一剩余引用已经缩小为 Theorem RKS-log。最终审稿时，只需把 RKS-log 与所引用 BG/多线性倒数 Kloosterman 定理逐项匹配即可。
