@@ -55,7 +55,7 @@
 2. `TL4-S`：平滑与端点余项。该项已由 Vaaler 截断和 Selberg 权能量给出直接证明。
 3. `TL4-M`：中谱平均二元上筛。其大模数层已在 `docs/tail-log4-theoremization.md` 第 6 节拆成二维 Selberg 上筛模板、平均奇异级数账本和平均大模数命题。
 
-因此 Tail-log4 已不再作为单一黑箱；TL4-L 已在 `docs/tail-log4-theoremization.md` 第 7 节拆成 RKS-log 引用模式、Vaughan Type I/II 核验和低体积吸收。引用匹配审查见 `docs/rks-log-reference-audit.md`：BG 文献覆盖多线性大体积与部分双线性范围，但近临界 `p/log^A p` 双线性块仍需 RKS-bridge。
+因此 Tail-log4 已不再作为单一黑箱；TL4-L 已在 `docs/tail-log4-theoremization.md` 第 7 节拆成 RKS-log 引用模式、Vaughan Type I/II 核验和低体积吸收。引用匹配审查见 `docs/rks-log-reference-audit.md`，分区与参数账本见 `docs/rks-bridge-partition.md`、`docs/rks-parameter-audit.md`：近极端不平衡块已由逐短变量 Weil 吸收，当前剩余为最终引用文字和附录化核对。
 
 ## 待证数学输入 D（OMR/CGTP/LSMP 结构定理）
 

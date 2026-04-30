@@ -57,7 +57,7 @@
 
 ## 4. 下一轮真正补强优先级
 
-1. `Tail-log4` 三项已在 `docs/tail-log4-theoremization.md` 拆成 TL4-L/TL4-S/TL4-M；RKS 分区与参数账本见 `docs/rks-bridge-partition.md`、`docs/rks-parameter-audit.md`。下一步主要是最终引用文字与附录化。
-2. `OMR/CGTP/LSMP` 已在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成形式化组合定理；NRC 与 FCT/Tree-WFE 已分别在 `docs/nrc-theoremization.md`、`docs/fct-tree-wfe-theoremization.md` 定理化，下一步主要统一符号并审查行/列归约 A、B。
-3. 行命题与列命题的最终归约已在 `docs/row-column-reduction-theoremization.md` 写成 Theorem A/B；下一步核对三层分解与符号统一。
+1. `Tail-log4` 三项已在 `docs/tail-log4-theoremization.md` 拆成 TL4-L/TL4-S/TL4-M；RKS 分区与参数账本见 `docs/rks-bridge-partition.md`、`docs/rks-parameter-audit.md`。当前主要剩余是最终引用文字与附录化。
+2. `OMR/CGTP/LSMP` 已在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成形式化组合定理；NRC 与 FCT/Tree-WFE 已分别在 `docs/nrc-theoremization.md`、`docs/fct-tree-wfe-theoremization.md` 定理化，当前主要剩余是统一符号并审查行/列归约 A、B。
+3. 行命题与列命题的最终归约已在 `docs/row-column-reduction-theoremization.md` 写成 Theorem A/B；当前主要剩余是核对三层分解与符号统一。
 4. 保留有限验证作为附录证书，不让数值验证承担大素数理论义务。
