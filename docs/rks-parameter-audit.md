@@ -1,5 +1,6 @@
 # RKS-parameter-audit 对数损失账本
 
+统一参考文献标签见 `docs/bibliography.md`。
 本文件完成 `RKS-bridge` 降级后的参数核对：确认 TL4-L 中 Type I/II、端点块、`r,h` 求和、dyadic 分块与 Vaughan 系数的总对数损失可由保守常数 `K_sieve_log_saving=128` 吸收。
 
 ## 1. 覆盖分区核对

@@ -1,5 +1,6 @@
 # RKS-log 引用匹配审查
 
+统一参考文献标签见 `docs/bibliography.md`。
 本文件审查 `docs/tail-log4-theoremization.md` 中 RKS-log 输入与 Bourgain--Garaev 型文献定理的匹配程度。
 
 ## 1. 本地核验来源

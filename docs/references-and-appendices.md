@@ -37,6 +37,8 @@
 
 ## F. 外部引用待最终格式化
 
+统一 bibliography 草稿见 `docs/bibliography.md`。
+
 当前已核验的关键外部来源：
 
 - Bourgain--Garaev 型文献：arXiv:1211.4184，*Sumsets of reciprocals in prime fields and multilinear Kloosterman sums*，用于 BG 多线性/双线性倒数 Kloosterman 输入的引用匹配。

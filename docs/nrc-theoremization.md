@@ -1,5 +1,6 @@
 # NRC 非共振倒数完成和定理化
 
+统一参考文献标签见 `docs/bibliography.md`。
 本文件补强 `docs/omr-cgtp-lsmp-theoremization.md` 中剩余深层输入 NRC。目标是把“非共振倒数完成和相对均匀性”写成独立可审查定理，并把失败情形明确转入 FCT/Tree-WFE。
 
 ## 1. 允许窗口与复杂度
