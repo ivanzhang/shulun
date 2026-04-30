@@ -16,6 +16,7 @@
 - `docs/rh-double-contradiction-field.md`：RH 双重矛盾场严格路线草案。
 - `docs/rh1-weak-attack-plan.md`：RH-1 weak 到筛余空洞投影的专攻计划。
 - `docs/rh1c-sifted-hole-explicit-formula.md`：RH-1C 筛余空洞函数与显式公式桥接。
+- `docs/rh1c-buchstab-weight-construction.md`：RH-1C Buchstab 覆盖权构造。
 
 ## B. 行列归约附录
 
