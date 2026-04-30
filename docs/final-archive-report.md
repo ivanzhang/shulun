@@ -4,9 +4,9 @@
 
 本轮按顶级数学期刊审稿标准复核后，当前仓库归档稿的严格结论为：
 
-> 审稿包已经形成统一的条件化证明主链、定理化附录、显式阈值证书和有限验证证书；A/B 与 D 已推进为正式附录稿，C 已有 Tail-log4 正式附录稿；A/B 到 D 的定义匹配、EXT 外部定理精确引用表与常数吸收核对表均已补齐；两段覆盖推出全部奇素数成立的审稿包主链已归档。
+> 审稿包已经形成统一的条件化证明主链、定理化附录、显式阈值证书和有限验证证书；A/B 与 D 已推进为正式附录稿，C 已有 Tail-log4 正式附录稿；A/B 到 D 的定义匹配、EXT 外部定理精确引用表与常数吸收核对表均已补齐。但按顶刊无条件证明标准，仍需把 D 组压缩证明、BG/RKS 精确适配、Lemma M5 覆盖缺口和常数吸收不等式逐项展开后，才能宣称完全无条件闭合。
 
-当前稿件不应表述为“已经无需额外结构输入而完全无条件通过顶级期刊审稿”。最终入口文件已明确这一点。
+当前稿件不应表述为“已经无需额外结构输入而完全无条件通过顶级期刊审稿”。最终复核见 `docs/final-top-journal-unconditional-review.md`。
 
 ## 2. 本轮复核项目
 
@@ -27,6 +27,7 @@
 - `docs/formal-theoremization-review.md`
 - `docs/top-journal-proof-audit.md`
 - `docs/final-review-consistency-report.md`
+- `docs/final-top-journal-unconditional-review.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`

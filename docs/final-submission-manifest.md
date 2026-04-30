@@ -7,6 +7,7 @@
 - `docs/final-archive-report.md`：最终归档报告。
 - `docs/references-and-appendices.md`：审稿版引用与附录入口。
 - `docs/final-interface-index.md`：最终接口索引与一致性口径。
+- `docs/final-top-journal-unconditional-review.md`：顶刊无条件证明标准最终复核判定。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
