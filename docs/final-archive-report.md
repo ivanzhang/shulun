@@ -44,6 +44,8 @@
 - `docs/rh-ov2-admissible-anchor-interface.md`
 - `docs/rh-ov2-phase-pushforward-interface.md`
 - `docs/rh-ov2-main-layer-capacity-interface.md`
+- `docs/rh-lv-low-volume-principle.md`
+- `docs/rh-pc3-ov2-bridge-theorem.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`

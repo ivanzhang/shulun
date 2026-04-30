@@ -24,6 +24,8 @@
 - `docs/rh-ov2-admissible-anchor-interface.md`：OV-2 允许锚语义接口。
 - `docs/rh-ov2-phase-pushforward-interface.md`：OV-2 相位推送接口。
 - `docs/rh-ov2-main-layer-capacity-interface.md`：OV-2 主层容量接口与条件化闭合。
+- `docs/rh-lv-low-volume-principle.md`：LV 低体积原则编号引理。
+- `docs/rh-pc3-ov2-bridge-theorem.md`：PC-3+OV-2 素数过疏桥接定理。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
