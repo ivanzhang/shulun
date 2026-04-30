@@ -19,6 +19,7 @@
 - `docs/rh-offline-zero-prime-count-contradiction.md`：离线零点素数计数超界与方阵/CRT 矛盾场。
 - `docs/rh-pc3-prime-sparse-to-cover-excess.md`：PC-3 素数过疏到允许覆盖过剩。
 - `docs/rh-pc3-candidate-overlap-two-tasks.md`：PC-3 候选基线与 overlap-energy 两任务。
+- `docs/rh-pc3-formal-theoremization.md`：PC-3 正式定理化证明稿。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
