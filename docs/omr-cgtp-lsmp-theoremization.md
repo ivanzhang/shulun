@@ -116,9 +116,8 @@
 - CGTP 的 martingale 能量账本形式；
 - LSMP 的“coarea + DPI”组合逻辑。
 
-剩余真正外部/深层输入缩小为两类：
+剩余真正外部/深层输入原为两类。现 `NRC` 已在 `docs/nrc-theoremization.md` 中定理化为标准完成法加 Weil/Kloosterman 界；因此当前唯一主要剩余为：
 
-1. **NRC**：非共振倒数完成和的相对均匀性；
-2. **FCT/Tree-WFE 接口**：NRC 失败时的频率碰撞终端如何接入全局生成树容量矛盾。
+1. **FCT/Tree-WFE 接口**：NRC 失败时的频率碰撞终端如何接入全局生成树容量矛盾。
 
 这两项比原始 OMR/CGTP/LSMP 常数包更窄，适合下一轮继续单独定理化。

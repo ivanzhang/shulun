@@ -76,7 +76,7 @@
 
 本输入已在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成 OMR-1/2/3、CGTP、LSMP-1/2、FCT 等独立接口。已组合化的部分包括层蛋糕匹配、一维圆周模型、离散 coarea 和 martingale 能量账本。剩余深层输入缩小为：
 
-- NRC：非共振倒数完成和的相对均匀性；
+- NRC：已在 `docs/nrc-theoremization.md` 定理化为完成法 + Weil/Kloosterman 界；
 - FCT/Tree-WFE：频率碰撞终端接入全局生成树容量矛盾。
 
 ## 审稿结论

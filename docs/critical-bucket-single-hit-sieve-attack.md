@@ -22457,4 +22457,4 @@ OMR 的层数、方向扇区、平滑截断和父模型比较合计不超过 `lo
 
 但若按顶级数学期刊“完全无条件证明”标准，仍需逐项补充 A--D 的完整证明或精确引用来源。最重要的可修复缺口是：把第 1273 节的 OMR/CGTP/LSMP 常数来源从账本说明升级为逐引理证明；把 Tail-log4 三项从接口说明升级为独立定理证明。完成这两项后，本文的机械阈值与有限验证部分已经足够闭合全部奇素数范围。
 
-为避免主文档历史探索段干扰审稿，另见 `docs/formal-theoremization-review.md`。该文件把最终内容拆成三个已机械闭合定理与四个待证数学输入：有限验证段、机械阈值抽取段、两段覆盖闭合段，以及 Column-Closure、Row-Closure、Tail-log4、OMR/CGTP/LSMP 四类结构输入。当前版本不得把四类结构输入视为已由脚本证明；脚本只验证常数组合。Tail-log4 的进一步拆解见 `docs/tail-log4-theoremization.md`，其中平滑端点项已直接证明，剩余低谱与中谱分别归约到标准解析输入。OMR/CGTP/LSMP 的进一步拆解见 `docs/omr-cgtp-lsmp-theoremization.md`，其剩余深层接口已缩小为 NRC 与 FCT/Tree-WFE。
+为避免主文档历史探索段干扰审稿，另见 `docs/formal-theoremization-review.md`。该文件把最终内容拆成三个已机械闭合定理与四个待证数学输入：有限验证段、机械阈值抽取段、两段覆盖闭合段，以及 Column-Closure、Row-Closure、Tail-log4、OMR/CGTP/LSMP 四类结构输入。当前版本不得把四类结构输入视为已由脚本证明；脚本只验证常数组合。Tail-log4 的进一步拆解见 `docs/tail-log4-theoremization.md`，其中平滑端点项已直接证明，剩余低谱与中谱分别归约到标准解析输入。OMR/CGTP/LSMP 的进一步拆解见 `docs/omr-cgtp-lsmp-theoremization.md`；NRC 的进一步拆解见 `docs/nrc-theoremization.md`，当前剩余深层接口已缩小为 FCT/Tree-WFE。
