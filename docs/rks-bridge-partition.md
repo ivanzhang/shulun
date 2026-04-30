@@ -98,3 +98,7 @@ RKS-bridge 不再需要新的数论估计；剩余是 **RKS-parameter-audit**：
 - 核对逐短变量 Weil 的 `log^C` 损失被 `K_sieve_log_saving=128` 吸收；
 - 核对 Vaughan/divisor-bounded 系数只造成 `log^{O(1)}P` 损失；
 - 核对所有 dyadic 块与 `r<=log^8P`, `h<=log^16P` 求和后仍保留 `log^{-44}`。
+
+## 10. 参数账本闭合
+
+对数损失核算见 `docs/rks-parameter-audit.md`。该账本给出 TL4-L 内部 RKS 侧总损失指数 `74<128`，因此 RKS-bridge 已降为最终引用文字与附录化义务。
