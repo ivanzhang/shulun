@@ -22,6 +22,7 @@
 - `docs/rh-pc3-prime-sparse-to-cover-excess.md`：PC-3 素数过疏到允许覆盖过剩。
 - `docs/rh-pc3-candidate-overlap-two-tasks.md`：PC-3 候选基线与 overlap-energy 两任务。
 - `docs/rh-pc3-formal-theoremization.md`：PC-3 正式定理化证明稿。
+- `docs/rh-ov2-overlap-terminal-proof.md`：OV-2 overlap 大能量到 D 组终端接口。
 
 ## B. 行列归约附录
 
