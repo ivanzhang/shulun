@@ -57,5 +57,5 @@
 
 1. `Tail-log4` 三项已在 `docs/tail-log4-theoremization.md` 拆成 TL4-L/TL4-S/TL4-M；TL4-M 已拆到 TL4-M1/M2/M3，TL4-L 已拆到 RKS-log 与 Type I/II 核验。下一步主要是把 RKS-log 精确匹配到引用文献。
 2. `OMR/CGTP/LSMP` 已在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成形式化组合定理；NRC 与 FCT/Tree-WFE 已分别在 `docs/nrc-theoremization.md`、`docs/fct-tree-wfe-theoremization.md` 定理化，下一步主要统一符号并审查行/列归约 A、B。
-3. 把行命题与列命题的最终归约分别写成短定理，避免读者从历史探索段中重构。
+3. 行命题与列命题的最终归约已在 `docs/row-column-reduction-theoremization.md` 写成 Theorem A/B；下一步核对三层分解与符号统一。
 4. 保留有限验证作为附录证书，不让数值验证承担大素数理论义务。
