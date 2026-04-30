@@ -22,6 +22,7 @@
 - `docs/rh-pc3-formal-theoremization.md`：PC-3 正式定理化证明稿。
 - `docs/rh-ov2-overlap-terminal-proof.md`：OV-2 overlap 大能量到 D 组终端接口。
 - `docs/rh-ov2-admissible-anchor-interface.md`：OV-2 允许锚语义接口。
+- `docs/rh-ov2-phase-pushforward-interface.md`：OV-2 相位推送接口。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
