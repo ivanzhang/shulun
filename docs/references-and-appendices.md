@@ -14,6 +14,7 @@
 - `docs/concluding-perspective.md`：论文结语式总结评述。
 - `docs/rh-rigidity-exploration.md`：从局部刚性到 RH 全局波动控制的探索框架。
 - `docs/rh-double-contradiction-field.md`：RH 双重矛盾场严格路线草案。
+- `docs/rh1-weak-attack-plan.md`：RH-1 weak 到筛余空洞投影的专攻计划。
 
 ## B. 行列归约附录
 
