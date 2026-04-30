@@ -33,6 +33,7 @@
 
 ## E. 显式常数与证书附录
 
+- `docs/constants-absorption-final-audit.md`：常数吸收最终核对表。
 - `docs/explicit-p0-constants.status.md`：显式常数状态，最终口径见第 90--97 节。
 - `docs/explicit-p0-constants.structured-conservative.json`：保守结构常数包。
 - `docs/explicit-p0-structured-conservative-result.json`：理论阈值抽取证书，`log_P0_upper=3.5`。
@@ -42,9 +43,10 @@
 
 ## F. 外部定理包与引用格式
 
-统一 bibliography 草稿见 `docs/bibliography.md`；外部定理包见 `docs/external-theorem-package.md`。
+统一 bibliography 草稿见 `docs/bibliography.md`；外部定理包见 `docs/external-theorem-package.md`；最终 EXT 引用审查见 `docs/ext-citation-final-audit.md`。
 
 - `docs/external-theorem-package.md`：EXT-KL/EXT-BG/EXT-Vaaler/EXT-Selberg/EXT-Vaughan 的定理包引用模板。
+- `docs/ext-citation-final-audit.md`：EXT 外部定理精确引用最终审查表。
 
 当前已核验的关键外部来源：
 

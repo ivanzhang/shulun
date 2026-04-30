@@ -11,6 +11,8 @@
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
 - `docs/external-theorem-package.md`：外部定理包与精确引用模板。
+- `docs/ext-citation-final-audit.md`：EXT 外部定理精确引用最终审查表。
+- `docs/constants-absorption-final-audit.md`：常数吸收最终核对表。
 - `docs/critical-bucket-single-hit-sieve-attack.md`：主论文/主证明文档。
 - `docs/explicit-p0-constants.status.md`：显式常数与阈值抽取状态记录。
 - `docs/explicit-p0-constants.structured-conservative.json`：最终保守结构常数包。

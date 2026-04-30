@@ -86,3 +86,13 @@ Brun--Titchmarsh 型上界，仅作为背景安全上界；当前最终主链主
 ## [Rudnev-RNRS]
 
 Rudnev 点-平面 incidence 与 Roche-Newton--Rudnev--Shkredov sum-product 能量估计。当前最终接口索引中不作为主链必需引用；仅供历史探索段或后续增强版本使用。
+
+## 最终 BibTeX 候选条目
+
+- Henryk Iwaniec and Emmanuel Kowalski, *Analytic Number Theory*, American Mathematical Society Colloquium Publications, vol. 53, American Mathematical Society, Providence, RI, 2004.
+- Nicholas M. Katz, *Gauss Sums, Kloosterman Sums, and Monodromy Groups*, Annals of Mathematics Studies, Princeton University Press, 1988.
+- Jean Bourgain and M. Z. Garaev, *Sumsets of reciprocals in prime fields and multilinear Kloosterman sums*, arXiv:1211.4184.
+- Roger C. Baker, *Kloosterman sums with prime variable*, Acta Arithmetica 156 (2012), no. 4, 351--372.
+- Jeffrey D. Vaaler, *Some extremal functions in Fourier analysis*, Bulletin of the American Mathematical Society 12 (1985), no. 2, 183--216.
+- Heini Halberstam and Hans-Egon Richert, *Sieve Methods*, London Mathematical Society Monographs, no. 4, Academic Press, 1974.
+- R. C. Vaughan, *Sommes trigonométriques sur les nombres premiers*, C. R. Acad. Sci. Paris Sér. A-B 285 (1977), A981--A983.
