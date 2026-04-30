@@ -95,7 +95,7 @@ def record_for(P: int, a: int, y: int, flags: bytearray, root_primes: list[int])
     uncovered = set(composite_holes)
     greedy_cover = 0
     q_to_set = {q: set(rows) for q, rows in hit_rows_by_q.items()}
-    while uncovered:
+    while uncovered and q_to_set:
         q, rows = max(q_to_set.items(), key=lambda item: len(item[1] & uncovered))
         gain = rows & uncovered
         if not gain:
