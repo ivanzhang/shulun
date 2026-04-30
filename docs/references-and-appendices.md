@@ -20,6 +20,7 @@
 - `docs/rh1c-acc-desynchronization-lemma.md`：RH-1C ACC 不同步引理攻坚。
 - `docs/rh-offline-zero-prime-count-contradiction.md`：离线零点素数计数超界与方阵/CRT 矛盾场。
 - `docs/rh-pc3-prime-sparse-to-cover-excess.md`：PC-3 素数过疏到允许覆盖过剩。
+- `docs/rh-pc3-candidate-overlap-two-tasks.md`：PC-3 候选基线与 overlap-energy 两任务。
 
 ## B. 行列归约附录
 

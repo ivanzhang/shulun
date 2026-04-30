@@ -38,6 +38,7 @@
 - `docs/rh1c-acc-desynchronization-lemma.md`
 - `docs/rh-offline-zero-prime-count-contradiction.md`
 - `docs/rh-pc3-prime-sparse-to-cover-excess.md`
+- `docs/rh-pc3-candidate-overlap-two-tasks.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`
