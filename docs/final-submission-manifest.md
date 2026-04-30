@@ -1,0 +1,30 @@
+# 最终归档提交清单
+
+本次归档固定当前定稿主链：列命题闭合、行命题当前闭合稿、显式阈值抽取与小素数有限验证证书。
+
+## 纳入提交的文件
+
+- `docs/critical-bucket-single-hit-sieve-attack.md`：主论文/主证明文档。
+- `docs/explicit-p0-constants.status.md`：显式常数与阈值抽取状态记录。
+- `docs/explicit-p0-constants.structured-conservative.json`：最终保守结构常数包。
+- `docs/explicit-p0-structured-conservative-result.json`：理论阈值抽取证书，给出 `log_P0_upper=3.5`。
+- `docs/finite-verify-exp5.json`：`P<=floor(exp(5))=148` 的有限验证证书。
+- `experiments/extract_p0.py`：显式阈值抽取脚本。
+- `experiments/verify_small_prime_square.py`：小奇素数有限验证脚本。
+
+## 未纳入提交的文件
+
+当前工作树中仍有大量未跟踪探索性实验脚本、扫描输出和历史审查草稿。这些文件用于研究过程，不作为本次定稿主链证据提交，避免审稿入口被历史候选路线和临时数据干扰。
+
+## 最终覆盖口径
+
+- 理论证明覆盖：`P>exp(3.5)`。
+- 有限验证覆盖：`P<=exp(5)`。
+- 两段重叠，因此覆盖全部奇素数。
+
+## 提交前校验
+
+- `python3 experiments/extract_p0.py --constants docs/explicit-p0-constants.structured-conservative.json --max-log 100 --step 0.1`
+- `python3 experiments/verify_small_prime_square.py --max-log 5 --out docs/finite-verify-exp5.json`
+- `python3 -m py_compile experiments/extract_p0.py experiments/verify_small_prime_square.py`
+- `git diff --check` 针对本次归档文件通过。
