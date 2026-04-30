@@ -1,0 +1,41 @@
+# 最终归档报告
+
+## 1. 顶刊标准复核结论
+
+本轮按顶级数学期刊审稿标准复核后，当前仓库归档稿的严格结论为：
+
+> 审稿包已经形成统一的条件化证明主链、定理化附录、显式阈值证书和有限验证证书；若 A--D 结构输入均按对应附录完成为可引用定理或逐行证明，则两段覆盖推出全部奇素数成立。
+
+当前稿件不应表述为“已经无需额外结构输入而完全无条件通过顶级期刊审稿”。最终入口文件已明确这一点。
+
+## 2. 本轮复核项目
+
+- 最终入口文件存在性：通过；
+- 最终入口互链检查：通过；
+- 阈值抽取复现：通过，`log_P0_upper=3.5`；
+- 有限验证复现：通过，`P<=148` 的 33 个奇素数全部通过；
+- Python 语法检查：通过；
+- `git diff --check`：通过；
+- 旧口径修正：已修正 `docs/final-review-consistency-report.md` 中的占位符路径引用。
+
+## 3. 归档文件入口
+
+- `docs/final-submission-manifest.md`
+- `docs/final-interface-index.md`
+- `docs/references-and-appendices.md`
+- `docs/bibliography.md`
+- `docs/formal-theoremization-review.md`
+- `docs/top-journal-proof-audit.md`
+- `docs/final-review-consistency-report.md`
+
+## 4. 证书入口
+
+- `docs/explicit-p0-constants.structured-conservative.json`
+- `docs/explicit-p0-structured-conservative-result.json`
+- `docs/finite-verify-exp5.json`
+- `experiments/extract_p0.py`
+- `experiments/verify_small_prime_square.py`
+
+## 5. 未跟踪文件说明
+
+工作区仍有大量未跟踪探索性实验文件和历史草稿。它们未纳入本次归档提交，避免干扰最终审稿入口。正式审稿入口以第 3、4 节列出的文件为准。

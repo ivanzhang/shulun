@@ -4,6 +4,7 @@
 
 ## 纳入提交的文件
 
+- `docs/final-archive-report.md`：最终归档报告。
 - `docs/references-and-appendices.md`：审稿版引用与附录入口。
 - `docs/final-interface-index.md`：最终接口索引与一致性口径。
 - `docs/critical-bucket-single-hit-sieve-attack.md`：主论文/主证明文档。
