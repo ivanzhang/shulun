@@ -4,6 +4,7 @@
 
 ## 纳入提交的文件
 
+- `docs/final-interface-index.md`：最终接口索引与一致性口径。
 - `docs/critical-bucket-single-hit-sieve-attack.md`：主论文/主证明文档。
 - `docs/explicit-p0-constants.status.md`：显式常数与阈值抽取状态记录。
 - `docs/explicit-p0-constants.structured-conservative.json`：最终保守结构常数包。
