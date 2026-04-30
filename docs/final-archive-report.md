@@ -33,6 +33,7 @@
 - `docs/rh-rigidity-exploration.md`
 - `docs/rh-double-contradiction-field.md`
 - `docs/rh1-weak-attack-plan.md`
+- `docs/rh1c-sifted-hole-explicit-formula.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`
