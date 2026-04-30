@@ -74,12 +74,10 @@
 
 `16,16,16,16,16; 8,8,8,8; epsilon_OMR_power=64`。
 
-**必须证明的要点。**
+本输入已在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成 OMR-1/2/3、CGTP、LSMP-1/2、FCT 等独立接口。已组合化的部分包括层蛋糕匹配、一维圆周模型、离散 coarea 和 martingale 能量账本。剩余深层输入缩小为：
 
-- OMR 层逼近和投影抽取只产生 `C_OMR_layer=16`、`C_OMR_projection=16` 的常数损失。
-- CGTP 的 martingale 能量增量与 variance-to-density 转换不损失超过 `C_CGTP=16`、`A_CGTP_log=8`。
-- LSMP 的方向筛选、离散 coarea 与 DPI 只产生对数损失，不退化回 `Λ^{-2}` 损失。
-- frequency-collision terminal 可接入 Tree-WFE，并由 `C_collision_span=16`、`A_collision_span_log=8` 控制。
+- NRC：非共振倒数完成和的相对均匀性；
+- FCT/Tree-WFE：频率碰撞终端接入全局生成树容量矛盾。
 
 ## 审稿结论
 

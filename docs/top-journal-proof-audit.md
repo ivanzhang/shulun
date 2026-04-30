@@ -56,6 +56,6 @@
 ## 4. 下一轮真正补强优先级
 
 1. `Tail-log4` 三项已在 `docs/tail-log4-theoremization.md` 拆成 TL4-L/TL4-S/TL4-M；TL4-M 已拆到 TL4-M1/M2/M3，TL4-L 已拆到 RKS-log 与 Type I/II 核验。下一步主要是把 RKS-log 精确匹配到引用文献。
-2. 把 `OMR/CGTP/LSMP` 写成形式化组合定理，明确所有常数如何进入 `explicit-p0` 常数包。
+2. `OMR/CGTP/LSMP` 已在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成形式化组合定理；下一步主要补 NRC 与 FCT/Tree-WFE 两个窄接口。
 3. 把行命题与列命题的最终归约分别写成短定理，避免读者从历史探索段中重构。
 4. 保留有限验证作为附录证书，不让数值验证承担大素数理论义务。
