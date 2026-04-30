@@ -11,6 +11,7 @@
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
+- `docs/d-structure-line-by-line-expansion.md`：D 组压缩证明逐行展开附录。
 - `docs/external-theorem-package.md`：外部定理包与精确引用模板。
 - `docs/ext-citation-final-audit.md`：EXT 外部定理精确引用最终审查表。
 - `docs/constants-absorption-final-audit.md`：常数吸收最终核对表。
