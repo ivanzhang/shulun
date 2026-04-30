@@ -55,7 +55,7 @@
 
 ## 4. 下一轮真正补强优先级
 
-1. `Tail-log4` 三项已在 `docs/tail-log4-theoremization.md` 拆成 TL4-L/TL4-S/TL4-M；下一步只需补齐 TL4-L 的 BG/coherent 引用和 TL4-M 的平均二元上筛引用。
+1. `Tail-log4` 三项已在 `docs/tail-log4-theoremization.md` 拆成 TL4-L/TL4-S/TL4-M；TL4-M 的大模数层已进一步拆成 TL4-M1/M2/M3，下一步主要补齐 TL4-L 的 BG/coherent 引用。
 2. 把 `OMR/CGTP/LSMP` 写成形式化组合定理，明确所有常数如何进入 `explicit-p0` 常数包。
 3. 把行命题与列命题的最终归约分别写成短定理，避免读者从历史探索段中重构。
 4. 保留有限验证作为附录证书，不让数值验证承担大素数理论义务。
