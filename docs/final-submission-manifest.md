@@ -28,6 +28,7 @@
 - `docs/rh-pc3-ov2-bridge-theorem.md`：PC-3+OV-2 素数过疏桥接定理。
 - `docs/rh-pc1-offline-zero-smooth-window.md`：PC-1 离线零点到平滑素数异常窗口。
 - `docs/rh-pc2-li-crt-baseline-match.md`：PC-2 连续零频与 CRT 零频基线匹配。
+- `docs/rh-pc4-final-exclusion-framework.md`：PC-4 最终排斥框架与 RH 总攻地图。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
