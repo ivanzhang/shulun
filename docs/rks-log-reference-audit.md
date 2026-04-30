@@ -46,4 +46,4 @@ RKS-log 不能直接作为已由 Bourgain--Garaev 文献完全覆盖的黑箱。
 
 ## 5. RKS-bridge 分区补充
 
-近临界块的具体分区见 `docs/rks-bridge-partition.md`。该文件把 TL4-L 的 Type I/II 块分成 BG 已覆盖、Weil/平凡吸收和真正 RKS-bridge 区域，并把当前最小剩余定位为短侧低于 `P^{1/18}` 的近极端不平衡 Vaughan 系数块。
+近临界块的具体分区见 `docs/rks-bridge-partition.md`。进一步核验后，短侧低于 `P^{1/18}` 的近极端不平衡块可由逐短变量 Weil 吸收；当前最小剩余降为 RKS-parameter-audit，即核对 Vaughan 分解所有块均落入 BG 覆盖、Weil 吸收或平凡吸收区域，并核算总对数损失。
