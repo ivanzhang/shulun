@@ -60,11 +60,13 @@
 
 `T_tail <= C_tail V_D P/log^4 P`。
 
-该定理由三项组成：
+本输入已在 `docs/tail-log4-theoremization.md` 中拆成三条独立定理：
 
-1. `Reciprocal-window-large-sieve-log4`：低谱倒数窗口大筛，需由 Vaaler 截断、Vaughan 分解和 BG/coherent 倒数 Kloosterman 输入证明。
-2. `Selberg-smoothing-remainder-log4`：Fourier 截断与 Selberg divisor 谱端点平滑，需给出逐项 `log^{-44}` 余量。
-3. `Bilinear-prime-sieve-average-v2-log4`：中谱平均二元线性素数上筛，需证明大模数层平均余项和奇异级数平均有界。
+1. `TL4-L`：低谱倒数窗口大筛。剩余外部输入是 BG/coherent reciprocal Kloosterman 的任意固定对数节省版本。
+2. `TL4-S`：平滑与端点余项。该项已由 Vaaler 截断和 Selberg 权能量给出直接证明。
+3. `TL4-M`：中谱平均二元上筛。剩余外部输入是二维 Selberg 上筛与平均大模数二元上筛。
+
+因此 Tail-log4 已不再作为单一黑箱；它只剩两个标准解析输入需要引用或附录证明。
 
 ## 待证数学输入 D（OMR/CGTP/LSMP 结构定理）
 
