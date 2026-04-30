@@ -8,6 +8,7 @@
 - `docs/references-and-appendices.md`：审稿版引用与附录入口。
 - `docs/final-interface-index.md`：最终接口索引与一致性口径。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
+- `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
 - `docs/external-theorem-package.md`：外部定理包与精确引用模板。
 - `docs/critical-bucket-single-hit-sieve-attack.md`：主论文/主证明文档。

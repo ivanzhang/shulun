@@ -13,19 +13,20 @@
 5. `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录；
 6. `docs/tail-log4-theoremization.md`：C Tail-log4；
 7. `docs/d-structure-formal-appendix.md`：D 结构包正式附录；
-8. `docs/nrc-theoremization.md` 与 `docs/fct-tree-wfe-theoremization.md`：D 的剩余子接口；
-9. `docs/explicit-p0-constants.status.md` 第 90--97 节：显式阈值与有限验证状态。
+8. `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配；
+9. `docs/nrc-theoremization.md` 与 `docs/fct-tree-wfe-theoremization.md`：D 的剩余子接口；
+10. `docs/explicit-p0-constants.status.md` 第 90--97 节：显式阈值与有限验证状态。
 
 主文档 `docs/critical-bucket-single-hit-sieve-attack.md` 的早期章节保留探索历史；若与上述文件冲突，以上述最终接口文件为准。
 
 ## 2. A--D 当前状态
 
-| 接口 | 文件 | 当前状态 | 剩余审稿义务 |
+| 接口 | 文件 | 当前状态 | 最终排版义务 |
 | --- | --- | --- | --- |
-| A Column-Closure 归约 | `docs/row-column-reduction-formal-appendix.md` | 已形成正式归约附录稿 | 与 D 组 Structured-EHPD 定义逐项匹配 |
-| B Row-Closure 归约 | `docs/row-column-reduction-formal-appendix.md` | 已形成正式归约附录稿 | 与 D 组 Structured-EHPD 定义逐项匹配 |
+| A Column-Closure 归约 | `docs/row-column-reduction-formal-appendix.md`, `docs/ab-to-d-interface-match.md` | 已形成正式归约附录稿并完成 D 接口匹配 | EXT 引用页码/定理号格式化 |
+| B Row-Closure 归约 | `docs/row-column-reduction-formal-appendix.md`, `docs/ab-to-d-interface-match.md` | 已形成正式归约附录稿并完成 D 接口匹配 | EXT 引用页码/定理号格式化 |
 | C Tail-log4 | `docs/tail-log4-formal-appendix.md`, `docs/tail-log4-theoremization.md`, `docs/rks-parameter-audit.md` | 已形成正式附录证明稿 | 最终期刊引用格式化 |
-| D OMR/CGTP/LSMP | `docs/d-structure-formal-appendix.md` | 已形成正式附录证明稿 | A/B 坏配置标准形式与 D 五项定义逐项匹配 |
+| D OMR/CGTP/LSMP | `docs/d-structure-formal-appendix.md`, `docs/ab-to-d-interface-match.md` | 已形成正式附录证明稿并完成 A/B 接口匹配 | EXT 引用页码/定理号格式化 |
 | NRC | `docs/nrc-theoremization.md` | 已用完成法 + Weil/Kloosterman 定理化 | 核对允许窗口展开复杂度 |
 | FCT/Tree-WFE | `docs/fct-tree-wfe-theoremization.md` | 已定理化为 span 计数与树容量账本 | 核对 frequency-closure terminal 与主命题终端一致 |
 
@@ -40,4 +41,4 @@
 - `experiments/extract_p0.py` 只组合已证明的常数输入，不证明解析估计本身。
 - 早期章节中的“行命题未闭合”“下一步硬点”等是历史探索记录，不是最终接口状态。
 - 当前稿件不宣称理论入口已降到 `P=5`；全部奇素数成立依赖理论段 `P>exp(3.5)` 与有限验证段 `P<=exp(5)` 的重叠。
-- 若要达到顶级期刊完全无条件版本，需把表中“剩余审稿义务”逐项核对到可引用定理或附录证明。
+- 当前结构输入已附录化；投稿排版阶段需把 `EXT-*` 外部定理补成期刊格式的精确页码/定理号，并复核常数包吸收表。

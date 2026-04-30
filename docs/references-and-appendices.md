@@ -25,6 +25,7 @@
 
 ## D. Structured-EHPD / OMR 附录
 
+- `docs/ab-to-d-interface-match.md`：A/B 主体双粗坏配置到 D 标准形式的逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
 - `docs/omr-cgtp-lsmp-theoremization.md`：OMR/CGTP/LSMP 结构包定理化。
 - `docs/nrc-theoremization.md`：NRC 非共振完成和定理化。

@@ -34,16 +34,16 @@
 
 **证明。** 若 `P<=exp(5)`，由定理 1。若 `P>exp(3.5)`，由定理 2。由于 `exp(3.5)<exp(5)`，任意奇素数落在两段并集中。证毕。
 
-## 待证数学输入 A/B（行列归约）
+## 数学输入 A/B（行列归约，已附录化）
 
 `Column-Closure` 与 `Row-Closure` 的反例归约已在 `docs/row-column-reduction-formal-appendix.md` 中推进为正式附录证明稿，短定理化历史入口见 `docs/row-column-reduction-theoremization.md`：
 
 - Theorem A：列反例归约为 Structured-EHPD 坏配置；
 - Theorem B：行反例归约为 Structured-EHPD 坏配置。
 
-A/B 当前不再作为独立黑箱：三层分解、短窗大因子互斥、第 `P` 列排除、CRT 非零类均衡和 45 度斜线锁定归属已逐条写入附录。剩余审稿义务是把该附录中的 `Structured-EHPD` 坏配置定义与 D 组排斥定理逐项同名匹配。
+A/B 当前不再作为独立黑箱：三层分解、短窗大因子互斥、第 `P` 列排除、CRT 非零类均衡和 45 度斜线锁定归属已逐条写入附录；与 D 组五项标准形式的逐项匹配已在 `docs/ab-to-d-interface-match.md` 中补齐。
 
-## 待证数学输入 C（Tail-log4 定理）
+## 数学输入 C（Tail-log4 定理，已附录化）
 
 行/列归约中的尾部覆盖贡献满足
 
@@ -57,7 +57,7 @@ A/B 当前不再作为独立黑箱：三层分解、短窗大因子互斥、第 
 
 因此 Tail-log4 已不再作为单一黑箱；TL4-L 已在 `docs/tail-log4-theoremization.md` 第 7 节拆成 RKS-log 引用模式、Vaughan Type I/II 核验和低体积吸收。引用匹配审查见 `docs/rks-log-reference-audit.md`，分区与参数账本见 `docs/rks-bridge-partition.md`、`docs/rks-parameter-audit.md`：近极端不平衡块已由逐短变量 Weil 吸收；外部来源统一由 `docs/external-theorem-package.md` 的 `EXT-*` 标签承接，投稿版只需补页码/定理号。
 
-## 待证数学输入 D（OMR/CGTP/LSMP 结构定理）
+## 数学输入 D（OMR/CGTP/LSMP 结构定理，已附录化）
 
 若坏配置在 Tail-log4 削尾后仍存在，则 OMR 生成树、CGTP 投影增量和 LSMP 小质量 packing 给出 `Λ^2` 级矛盾，并可使用保守常数
 
@@ -67,8 +67,8 @@ A/B 当前不再作为独立黑箱：三层分解、短窗大因子互斥、第 
 
 - NRC：已在 `docs/nrc-theoremization.md` 定理化为完成法 + Weil/Kloosterman 界；
 - FCT/Tree-WFE：已在 `docs/fct-tree-wfe-theoremization.md` 与 D 正式附录中定理化为短深度 span 计数、频率闭包终端与树状容量账本；
-- A/B 到 D 的定义匹配：需核对 `docs/row-column-reduction-formal-appendix.md` 的主体双粗锚坏配置与 D 附录第 1 节五项标准形式完全同名。
+- A/B 到 D 的定义匹配：已由 `docs/ab-to-d-interface-match.md` 逐项给出覆盖性、非终端性、非共振背景、能量有界和一阶偏差。
 
 ## 审稿结论
 
-当前仓库已经具备定理 1--3 的机械闭合与证书闭合；A/B、C、D 均已有正式附录证明稿或外部定理包接口。要达到顶级数学期刊“完整无条件证明”，最后必须完成 A/B 标准坏配置与 D 五项定义的逐项匹配，并把 `EXT-*` 外部定理转换为投稿格式的精确页码/定理号引用。
+当前仓库已经具备定理 1--3 的机械闭合与证书闭合；A/B、C、D 均已有正式附录证明稿或外部定理包接口。要达到顶级数学期刊“完整无条件证明”，最后主要剩余是把 `EXT-*` 外部定理转换为投稿格式的精确页码/定理号引用，并对常数包吸收条件作最终排版核对。
