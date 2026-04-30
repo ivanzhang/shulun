@@ -30,6 +30,7 @@
 - `docs/final-review-consistency-report.md`
 - `docs/final-top-journal-unconditional-review.md`
 - `docs/concluding-perspective.md`
+- `docs/rh-rigidity-exploration.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`
