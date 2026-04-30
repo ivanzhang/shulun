@@ -34,19 +34,19 @@
 
 `docs/d-structure-line-by-line-expansion.md` 已对 OMR 几何误差归因、CGTP 平方能量增量、LSMP 方向筛选与薄层偏移、FCT 短深度 span 计数作逐行展开。D 组不再只是原先的证明草图。
 
-顶刊层面的剩余不再是“没有展开”，而是需要把该新增附录与主文档的窗口族、复杂度参数和停止时刻逐项交叉编号，确保所有符号完全一致。
+`docs/final-cross-reference-matrix.md` 已把该新增附录与主文档的窗口族、复杂度参数和停止时刻逐项交叉编号。D 组内部符号一致性已形成可审查矩阵。
 
 ### 3.2 Tail-log4 的 BG/RKS 输入已逐块匹配但需外部编号复核
 
-`docs/bg-rks-block-match.md` 已把 RKS 分区拆成短侧 Weil、BG 双线性、BG 多线性和端点低体积四类。顶刊审稿层面的剩余是把 `EXT-BG` 在原文中的定理编号、变量范围和区间条件逐条标注到该四类块上，形成最终 LaTeX 引用。
+`docs/bg-rks-block-match.md` 已把 RKS 分区拆成短侧 Weil、BG 双线性、BG 多线性和端点低体积四类。`docs/final-cross-reference-matrix.md` 已把四类块与 `EXT-BG/EXT-KL` 对应。剩余仅是投稿排版时按 BG 原文补具体定理号/页码，或在审稿要求全显式常数时另行抽取 BG/Baker 数值常数。
 
 ### 3.3 常数吸收表已编号化但需与抽取器逐行复核
 
-`docs/constants-numbered-inequalities.md` 已把 `32<128`、`tail_error_power=4>A_star=2`、`3.5<5` 等写成 I1--I7。顶刊审稿层面的剩余是把这些编号不等式逐条交叉引用到抽取器检查项。
+`docs/constants-numbered-inequalities.md` 已把 `32<128`、`tail_error_power=4>A_star=2`、`3.5<5` 等写成 I1--I7。`docs/final-cross-reference-matrix.md` 已把 I1--I7 与抽取器意义逐条对应。
 
 ### 3.4 A/B 到 D 的一阶偏差引理已显式化但需主文档接入复核
 
-`docs/m5-explicit-gap-lemma.md` 已把覆盖缺口定义为 `Gap=r-B_0`，并给出 `Gap>=γr/log^2P` 下的小 Fourier 偏差矛盾。顶刊审稿层面的剩余是把 `γ` 与主文档中的 CRT 均衡基线、Tail-log4 尾部削除和主体容量常数逐项交叉编号。
+`docs/m5-explicit-gap-lemma.md` 已把覆盖缺口定义为 `Gap=r-B_0`，并给出 `Gap>=γr/log^2P` 下的小 Fourier 偏差矛盾。`docs/final-cross-reference-matrix.md` 已把 `Gap=r-B_0`、`γr/log^2P`、CRT 基线、Tail-log4 尾部削除和 D 一阶偏差条件逐项交叉编号。
 
 ## 4. 当前可提交状态
 
@@ -66,11 +66,11 @@
 若继续向顶刊无条件标准推进，建议只攻以下四个最小义务：
 
 1. Lemma M5 已由 `docs/m5-explicit-gap-lemma.md` 写成覆盖缺口不等式；
-2. D 组逐行展开附录仍需与主文档符号逐项交叉编号；
+2. D 组逐行展开附录已由 `docs/final-cross-reference-matrix.md` 完成交叉编号；
 3. BG/RKS 分区已由 `docs/bg-rks-block-match.md` 逐块匹配；
 4. 常数吸收已由 `docs/constants-numbered-inequalities.md` 编号化。
 
-上述四项中的三项已经补充为独立附录；剩余工作集中于最终符号交叉编号、外部定理编号和 LaTeX 化引用。
+上述四项已补充为独立附录或交叉编号矩阵；剩余工作集中于外部原文定理号/页码和 LaTeX 化引用。
 
 ## 6. 本次复核结论
 

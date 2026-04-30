@@ -7,6 +7,7 @@
 - `docs/final-archive-report.md`：最终归档报告。
 - `docs/critical-bucket-single-hit-sieve-attack.md`：主文档；最终主链以第 1273--1275 节为准。
 - `docs/final-interface-index.md`：最终接口索引与一致性口径。
+- `docs/final-cross-reference-matrix.md`：最终符号交叉编号矩阵。
 - `docs/formal-theoremization-review.md`：最终定理化总览。
 - `docs/top-journal-proof-audit.md`：顶刊审稿级复核清单。
 - `docs/final-top-journal-unconditional-review.md`：顶刊无条件证明标准最终复核判定。
