@@ -55,7 +55,7 @@ A/B 当前不再作为独立黑箱：三层分解、短窗大因子互斥、第 
 2. `TL4-S`：平滑与端点余项。该项已由 Vaaler 截断和 Selberg 权能量给出直接证明。
 3. `TL4-M`：中谱平均二元上筛。其大模数层已在 `docs/tail-log4-theoremization.md` 第 6 节拆成二维 Selberg 上筛模板、平均奇异级数账本和平均大模数命题。
 
-因此 Tail-log4 已不再作为单一黑箱；TL4-L 已在 `docs/tail-log4-theoremization.md` 第 7 节拆成 RKS-log 引用模式、Vaughan Type I/II 核验和低体积吸收。引用匹配审查见 `docs/rks-log-reference-audit.md`，分区与参数账本见 `docs/rks-bridge-partition.md`、`docs/rks-parameter-audit.md`：近极端不平衡块已由逐短变量 Weil 吸收，当前剩余为最终引用文字和附录化核对。
+因此 Tail-log4 已不再作为单一黑箱；TL4-L 已在 `docs/tail-log4-theoremization.md` 第 7 节拆成 RKS-log 引用模式、Vaughan Type I/II 核验和低体积吸收。引用匹配审查见 `docs/rks-log-reference-audit.md`，分区与参数账本见 `docs/rks-bridge-partition.md`、`docs/rks-parameter-audit.md`：近极端不平衡块已由逐短变量 Weil 吸收；外部来源统一由 `docs/external-theorem-package.md` 的 `EXT-*` 标签承接，投稿版只需补页码/定理号。
 
 ## 待证数学输入 D（OMR/CGTP/LSMP 结构定理）
 
@@ -63,11 +63,12 @@ A/B 当前不再作为独立黑箱：三层分解、短窗大因子互斥、第 
 
 `16,16,16,16,16; 8,8,8,8; epsilon_OMR_power=64`。
 
-本输入已在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成 OMR-1/2/3、CGTP、LSMP-1/2、FCT 等独立接口。已组合化的部分包括层蛋糕匹配、一维圆周模型、离散 coarea 和 martingale 能量账本。剩余深层输入缩小为：
+本输入已在 `docs/d-structure-formal-appendix.md` 推进为正式附录证明稿，并在 `docs/omr-cgtp-lsmp-theoremization.md` 拆成 OMR-1/2/3、CGTP、LSMP-1/2、FCT 等独立接口。层蛋糕匹配、一维圆周模型、离散 coarea、martingale 能量账本和 frequency-closure 终端合法性已附录化。剩余接口缩小为：
 
 - NRC：已在 `docs/nrc-theoremization.md` 定理化为完成法 + Weil/Kloosterman 界；
-- FCT/Tree-WFE：已在 `docs/fct-tree-wfe-theoremization.md` 定理化为短深度 span 计数、频率闭包终端与树状容量账本。
+- FCT/Tree-WFE：已在 `docs/fct-tree-wfe-theoremization.md` 与 D 正式附录中定理化为短深度 span 计数、频率闭包终端与树状容量账本；
+- A/B 到 D 的定义匹配：需核对 `docs/row-column-reduction-formal-appendix.md` 的主体双粗锚坏配置与 D 附录第 1 节五项标准形式完全同名。
 
 ## 审稿结论
 
-当前仓库已经具备定理 1--3 的机械闭合与证书闭合；但要达到顶级数学期刊“完整无条件证明”，必须把待证输入 A--D 逐项升级为完整证明或明确引用的外部定理。任何最终摘要都应使用“在 A--D 已证前提下闭合”的严谨表述，直到这些输入被逐行证明。
+当前仓库已经具备定理 1--3 的机械闭合与证书闭合；A/B、C、D 均已有正式附录证明稿或外部定理包接口。要达到顶级数学期刊“完整无条件证明”，最后必须完成 A/B 标准坏配置与 D 五项定义的逐项匹配，并把 `EXT-*` 外部定理转换为投稿格式的精确页码/定理号引用。

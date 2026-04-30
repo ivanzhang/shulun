@@ -25,6 +25,7 @@
 
 ## D. Structured-EHPD / OMR 附录
 
+- `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
 - `docs/omr-cgtp-lsmp-theoremization.md`：OMR/CGTP/LSMP 结构包定理化。
 - `docs/nrc-theoremization.md`：NRC 非共振完成和定理化。
 - `docs/fct-tree-wfe-theoremization.md`：FCT/Tree-WFE 频率碰撞终端定理化。
@@ -38,9 +39,11 @@
 - `experiments/extract_p0.py`：阈值抽取脚本。
 - `experiments/verify_small_prime_square.py`：有限验证脚本。
 
-## F. 外部引用待最终格式化
+## F. 外部定理包与引用格式
 
-统一 bibliography 草稿见 `docs/bibliography.md`。
+统一 bibliography 草稿见 `docs/bibliography.md`；外部定理包见 `docs/external-theorem-package.md`。
+
+- `docs/external-theorem-package.md`：EXT-KL/EXT-BG/EXT-Vaaler/EXT-Selberg/EXT-Vaughan 的定理包引用模板。
 
 当前已核验的关键外部来源：
 

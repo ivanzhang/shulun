@@ -2,6 +2,18 @@
 
 本文件为审稿版附录使用的统一 bibliography 草稿。最终投稿时需转换为期刊要求的 BibTeX/LaTeX 格式。
 
+## EXT 标签映射
+
+投稿版正文统一引用以下标签，再由 BibTeX 展开为期刊格式：
+
+- `EXT-KL` -> [Weil-Kloosterman]。建议正式来源：Iwaniec--Kowalski, *Analytic Number Theory*, AMS Colloquium Publications 53, Chapter 12；或 Katz, *Gauss Sums, Kloosterman Sums, and Monodromy Groups* 的 Kloosterman 特例。
+- `EXT-BG` -> [BG2012]。arXiv:1211.4184，标题与作者已核对。
+- `EXT-Vaaler` -> [Vaaler-Beurling]。建议正式来源：Vaaler 的 Fourier extremal functions/Beurling--Selberg majorant-minorant 定理，或 Montgomery--Vaughan 中区间指标截断引理。
+- `EXT-Selberg` -> [Selberg-Sieve]。建议正式来源：Halberstam--Richert 或 Iwaniec--Kowalski 中 Selberg 上筛基本引理。
+- `EXT-Vaughan` -> [Vaughan]。建议正式来源：Vaughan 恒等式标准定理或 Iwaniec--Kowalski 的 Type I/II 分解。
+
+当前附录中的外部引用不得再写成“标准事实”而不带 `EXT-*` 标签。
+
 ## [BG2012] Bourgain--Garaev reciprocals and multilinear Kloosterman
 
 J. Bourgain and M. Z. Garaev, *Sumsets of reciprocals in prime fields and multilinear Kloosterman sums*, arXiv:1211.4184.

@@ -12,7 +12,7 @@
 4. `docs/formal-theoremization-review.md`：最终定理化总览；
 5. `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录；
 6. `docs/tail-log4-theoremization.md`：C Tail-log4；
-7. `docs/omr-cgtp-lsmp-theoremization.md`：D 结构包；
+7. `docs/d-structure-formal-appendix.md`：D 结构包正式附录；
 8. `docs/nrc-theoremization.md` 与 `docs/fct-tree-wfe-theoremization.md`：D 的剩余子接口；
 9. `docs/explicit-p0-constants.status.md` 第 90--97 节：显式阈值与有限验证状态。
 
@@ -25,7 +25,7 @@
 | A Column-Closure 归约 | `docs/row-column-reduction-formal-appendix.md` | 已形成正式归约附录稿 | 与 D 组 Structured-EHPD 定义逐项匹配 |
 | B Row-Closure 归约 | `docs/row-column-reduction-formal-appendix.md` | 已形成正式归约附录稿 | 与 D 组 Structured-EHPD 定义逐项匹配 |
 | C Tail-log4 | `docs/tail-log4-formal-appendix.md`, `docs/tail-log4-theoremization.md`, `docs/rks-parameter-audit.md` | 已形成正式附录证明稿 | 最终期刊引用格式化 |
-| D OMR/CGTP/LSMP | `docs/omr-cgtp-lsmp-theoremization.md` | 已拆成 OMR/CGTP/LSMP/NRC/FCT | 统一符号与常数，核对 Tree-WFE 终端定义 |
+| D OMR/CGTP/LSMP | `docs/d-structure-formal-appendix.md` | 已形成正式附录证明稿 | A/B 坏配置标准形式与 D 五项定义逐项匹配 |
 | NRC | `docs/nrc-theoremization.md` | 已用完成法 + Weil/Kloosterman 定理化 | 核对允许窗口展开复杂度 |
 | FCT/Tree-WFE | `docs/fct-tree-wfe-theoremization.md` | 已定理化为 span 计数与树容量账本 | 核对 frequency-closure terminal 与主命题终端一致 |
 
