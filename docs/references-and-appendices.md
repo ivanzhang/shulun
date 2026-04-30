@@ -16,6 +16,7 @@
 
 ## C. Tail-log4 附录
 
+- `docs/tail-log4-formal-appendix.md`：Tail-log4 正式附录证明稿。
 - `docs/tail-log4-theoremization.md`：TL4-L/TL4-S/TL4-M 主体定理化。
 - `docs/rks-log-reference-audit.md`：RKS-log 与 Bourgain--Garaev 文献的引用匹配审查。
 - `docs/rks-bridge-partition.md`：RKS-bridge Type I/II 长度分区。
