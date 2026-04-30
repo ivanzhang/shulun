@@ -198,7 +198,9 @@ TL4-L 的非零 Fourier 模为
 
 ### 7.3 Type II 块核验
 
-若 `M N≈P` 且 `M,N>=log^C P`，则 `MN>=P/log^A P` 自动成立。系数由 Vaughan 恒等式给出，满足 divisor-bounded。于是 Theorem RKS-log 直接给
+若 `M N≈P` 且 `M,N>=log^C P`，不能仅凭体积就直接引用 BG 文献。应按 `docs/rks-bridge-partition.md` 分区：BG 多线性/双线性覆盖区由引用定理给幂节省；短变量为对数级时由完成和吸收；剩余近极端不平衡区需要 RKS-bridge-minor。
+
+在完成该桥接后，可得
 
 `S_{II}(M,N) <= MN/log^{A_1}P`。
 

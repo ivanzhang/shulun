@@ -43,3 +43,7 @@ RKS-log 不能直接作为已由 Bourgain--Garaev 文献完全覆盖的黑箱。
 - `RKS-covered`：列出已被 BG 定理覆盖的 Type I/II 块范围；
 - `RKS-bridge`：处理 `MN≈p/log^A p` 但不满足现有 BG 定理阈值的近临界块；
 - `Coefficient audit`：核对 Vaughan 系数、divisor-bounded 系数和 dyadic 平滑权满足引用定理假设。
+
+## 5. RKS-bridge 分区补充
+
+近临界块的具体分区见 `docs/rks-bridge-partition.md`。该文件把 TL4-L 的 Type I/II 块分成 BG 已覆盖、Weil/平凡吸收和真正 RKS-bridge 区域，并把当前最小剩余定位为短侧低于 `P^{1/18}` 的近极端不平衡 Vaughan 系数块。
