@@ -1,6 +1,6 @@
 # 顶级数学期刊审稿级复核清单
 
-统一最终接口索引见 `docs/final-interface-index.md`。
+统一最终接口索引见 `docs/final-interface-index.md`；审稿版附录入口见 `docs/references-and-appendices.md`。
 
 本文档记录对行命题与列命题归档稿的审稿级复核。目标不是重复历史探索，而是明确最终主链、可接受证据、以及仍需顶刊级补强的接口。
 

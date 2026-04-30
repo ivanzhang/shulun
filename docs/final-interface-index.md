@@ -7,12 +7,13 @@
 审稿阅读顺序应为：
 
 1. `docs/final-submission-manifest.md`：归档文件与证书；
-2. `docs/formal-theoremization-review.md`：最终定理化总览；
-3. `docs/row-column-reduction-theoremization.md`：A/B 行列归约；
-4. `docs/tail-log4-theoremization.md`：C Tail-log4；
-5. `docs/omr-cgtp-lsmp-theoremization.md`：D 结构包；
-6. `docs/nrc-theoremization.md` 与 `docs/fct-tree-wfe-theoremization.md`：D 的剩余子接口；
-7. `docs/explicit-p0-constants.status.md` 第 90--97 节：显式阈值与有限验证状态。
+2. `docs/references-and-appendices.md`：审稿版引用与附录入口；
+3. `docs/formal-theoremization-review.md`：最终定理化总览；
+4. `docs/row-column-reduction-theoremization.md`：A/B 行列归约；
+5. `docs/tail-log4-theoremization.md`：C Tail-log4；
+6. `docs/omr-cgtp-lsmp-theoremization.md`：D 结构包；
+7. `docs/nrc-theoremization.md` 与 `docs/fct-tree-wfe-theoremization.md`：D 的剩余子接口；
+8. `docs/explicit-p0-constants.status.md` 第 90--97 节：显式阈值与有限验证状态。
 
 主文档 `docs/critical-bucket-single-hit-sieve-attack.md` 的早期章节保留探索历史；若与上述文件冲突，以上述最终接口文件为准。
 
