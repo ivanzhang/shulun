@@ -11,6 +11,7 @@
 - `docs/formal-theoremization-review.md`：最终定理化总览。
 - `docs/top-journal-proof-audit.md`：顶刊审稿级复核清单。
 - `docs/final-top-journal-unconditional-review.md`：顶刊无条件证明标准最终复核判定。
+- `docs/concluding-perspective.md`：论文结语式总结评述。
 
 ## B. 行列归约附录
 
