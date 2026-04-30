@@ -22,7 +22,7 @@
 | --- | --- | --- | --- |
 | A Column-Closure 归约 | `docs/row-column-reduction-theoremization.md` | 已短定理化 | 核对三层分解不重不漏 |
 | B Row-Closure 归约 | `docs/row-column-reduction-theoremization.md` | 已短定理化 | 核对 45 度锁定只进入小因子层 |
-| C Tail-log4 | `docs/tail-log4-theoremization.md` | 已拆成 TL4-L/S/M | RKS-log 与引用文献精确匹配 |
+| C Tail-log4 | `docs/tail-log4-theoremization.md`, `docs/rks-log-reference-audit.md` | 已拆成 TL4-L/S/M | RKS-bridge 近临界块与系数假设核对 |
 | D OMR/CGTP/LSMP | `docs/omr-cgtp-lsmp-theoremization.md` | 已拆成 OMR/CGTP/LSMP/NRC/FCT | 统一符号与常数，核对 Tree-WFE 终端定义 |
 | NRC | `docs/nrc-theoremization.md` | 已用完成法 + Weil/Kloosterman 定理化 | 核对允许窗口展开复杂度 |
 | FCT/Tree-WFE | `docs/fct-tree-wfe-theoremization.md` | 已定理化为 span 计数与树容量账本 | 核对 frequency-closure terminal 与主命题终端一致 |
