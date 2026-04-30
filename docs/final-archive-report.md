@@ -41,6 +41,7 @@
 - `docs/rh-pc3-candidate-overlap-two-tasks.md`
 - `docs/rh-pc3-formal-theoremization.md`
 - `docs/rh-ov2-overlap-terminal-proof.md`
+- `docs/rh-ov2-admissible-anchor-interface.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`
