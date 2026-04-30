@@ -15,6 +15,7 @@
 - `docs/rh1-weak-attack-plan.md`：RH-1 weak 到筛余空洞投影的专攻计划。
 - `docs/rh1c-sifted-hole-explicit-formula.md`：RH-1C 筛余空洞函数与显式公式桥接。
 - `docs/rh1c-buchstab-weight-construction.md`：RH-1C Buchstab 覆盖权构造。
+- `docs/rh1c-acc-desynchronization-lemma.md`：RH-1C ACC 不同步引理攻坚。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
