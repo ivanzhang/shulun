@@ -36,6 +36,7 @@
 - `docs/rh1c-sifted-hole-explicit-formula.md`
 - `docs/rh1c-buchstab-weight-construction.md`
 - `docs/rh1c-acc-desynchronization-lemma.md`
+- `docs/rh-offline-zero-prime-count-contradiction.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`

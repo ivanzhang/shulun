@@ -18,6 +18,7 @@
 - `docs/rh1c-sifted-hole-explicit-formula.md`：RH-1C 筛余空洞函数与显式公式桥接。
 - `docs/rh1c-buchstab-weight-construction.md`：RH-1C Buchstab 覆盖权构造。
 - `docs/rh1c-acc-desynchronization-lemma.md`：RH-1C ACC 不同步引理攻坚。
+- `docs/rh-offline-zero-prime-count-contradiction.md`：离线零点素数计数超界与方阵/CRT 矛盾场。
 
 ## B. 行列归约附录
 
