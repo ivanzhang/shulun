@@ -66,7 +66,7 @@ ACC 过剩表示允许合数覆盖容量相对零频基线同步增加。若这�
 
 FCT 表示频率落入祖先短深度 span。若无穷多尺度都由 FCT 吸收，则离线零点相位必须被有限复杂度频率 span 长期编码。
 
-**PC4-FCT（频率闭包跨尺度排斥，种子命题已写）。** zeta 离线零点的连续相位 `γ log X` 不能在无穷多增长尺度上被固定短深度 CRT 频率 span 完全吸收，除非产生可检测投影增量。当前种子稿见 `docs/rh-pc4-fct-seed.md`：若无穷多尺度由 FCT 吸收，则可抽取固定低维 span、固定证书类型与同相位子列。
+**PC4-FCT（频率闭包跨尺度排斥，条件化闭合）。** zeta 离线零点的连续相位 `γ log X` 不能在无穷多增长尺度上被固定短深度 CRT 频率 span 完全吸收，除非产生可检测投影增量。当前闭合稿见 `docs/rh-pc4-fct-closure-theorem.md`：它合并 FCT-Seed、FCT-Drift 与 FCT-Noether，失败分支转入 PC4-PI、短簇、LSMP/LV 或容量矛盾。
 
 ### 4.4 NRC 异常终端
 
@@ -95,7 +95,7 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 1. PC4-A：ACC 不同步排斥；
 2. PC4-SC：短簇跨尺度排斥；
 3. PC4-PI：投影能量跨尺度排斥（见 `docs/rh-pc4-pi-closure-theorem.md` 条件化闭合）；
-4. PC4-FCT：频率闭包跨尺度排斥；
+4. PC4-FCT：频率闭包跨尺度排斥（见 `docs/rh-pc4-fct-closure-theorem.md` 条件化闭合）；
 
 并采用 NRC 条件化闭合与必要时的 PC4-Dual。则 RH 反例不能通过 PC1+PC2+PC3-OV2 链条被吸收；从而离线零点不存在。
 
@@ -105,12 +105,11 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 为了真正向 RH 总攻推进，下一步不应再扩散，而应按可证性排序专攻：
 
-1. **PC4-FCT 频率闭包跨尺度排斥**：种子命题见 `docs/rh-pc4-fct-seed.md`，相位漂移压力见 `docs/rh-pc4-fct-phase-drift.md`，Noether 闭包链见 `docs/rh-pc4-fct-noether.md`；下一步合并 `PC4-FCT-Closure`；
-2. **PC4-A ACC 不同步排斥**：直接承接 PC3-OV2，是最核心但较难；
-3. **PC4-SC 短簇跨尺度排斥**：需要 CRT 周期均衡与短簇密度的跨尺度版本；
-4. **PC4-Dual 过密对偶**：若不能完全依赖反相位过疏，则必须补齐。
+1. **PC4-A ACC 不同步排斥**：直接承接 PC3-OV2，是当前最核心剩余主分支；
+2. **PC4-SC 短簇跨尺度排斥**：需要 CRT 周期均衡与短簇密度的跨尺度版本；
+3. **PC4-Dual 过密对偶**：若不能完全依赖反相位过疏，则必须补齐。
 
-本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-PI 已推进到条件化闭合形态；最优下一步是专攻 PC4-FCT，因为 PC4-PI、NRC 与 Complexity-Escape 的失败分支都汇入频率闭包。
+本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-PI 与 PC4-FCT 已推进到条件化闭合形态；最优下一步是专攻 PC4-A，因为它直接承接 PC3-OV2 的 ACC 过剩主分支。
 
 ## 8. PC4-PI 的最小可证接口
 
