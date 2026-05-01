@@ -307,3 +307,8 @@
 ## U2 AEX 接受性核验更新
 
 新增 `docs/rh-u2-aex-acceptance-review.md`。审查确认 AEX-1 已由 Baseline-Subtraction、PI-Lac、PI-Dense 支撑，PI-Dense 已归约到 DSO-SF/EXT-KL；AEX-2 由 DSO-SF 支撑；AEX-3 的单变量入口由 EXT-KL 支撑，Tail/RKS、双变量 PPI 与 DSO-E 均转入已命名出口或 DSO-SF。LaTeX 主稿已删除 “conditional exactly on AEX-1, AEX-2, AEX-3” 措辞，改为由前文 AEX propositions 与已记录输入支撑。主定理 warning 仍保留；下一步最优为 U3 EXT 页码/定理号表。
+
+
+## U3 EXT 精确引用表更新
+
+新增 `docs/rh-u3-ext-reference-table.md`。U3 已完成章节/论文级定位：Vaaler、Baker、Vaughan 给出卷期页码；Bourgain--Garaev 给出 arXiv/DOI；Iwaniec--Kowalski、Katz、Titchmarsh--Heath-Brown、Ingham、Halberstam--Richert 给出章节/定理定位与受限使用边界。专著具体页码仍可在最终排版时核对，但不再作为数学逻辑缺口。下一步最优转向 U1/U4：主定理前提和 review-draft 口径统一。

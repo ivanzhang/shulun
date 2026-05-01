@@ -42,7 +42,7 @@
 |---|---|---|
 | U1 | 改写主定理前提 | 从“Assume Theorems...”改为“By the preceding theorems...”且所有前置定理均已在稿内或引用中闭合 |
 | U2 | AEX 输入接受性核验 | 已完成；见 `docs/rh-u2-aex-acceptance-review.md`，主稿已消除 “conditional exactly on AEX-1/2/3” 措辞 |
-| U3 | EXT 页码/定理号核验 | `EXT-PC1-LI/KL/Vaaler/BG/Selberg/Vaughan` 均有精确书目、章节或定理号 |
+| U3 | EXT 页码/定理号核验 | 已完成章节/论文级定位；见 `docs/rh-u3-ext-reference-table.md`，专著页码留作排版核验 |
 | U4 | 摘要与标题口径统一 | 删除 review package/review draft/conditional synthesis 相关措辞 |
 | U5 | 最终编译审查 | 在 TeX 环境中跑 `latexmk`/BibTeX，确认无 undefined refs/cites |
 | U6 | 主定理升级 | 完成 U1--U5 后，才删除 `review form` 与 `Submission warning` |
@@ -52,7 +52,7 @@
 下一步最优不是继续扩展数学框架，而是执行 U1--U3 的逐项核验：
 
 1. U2 已完成：AEX-1/2/3 条件化措辞已消除；
-2. 下一步专攻 U3：EXT 页码/定理号表；
-3. 随后处理 U1/U4/U5：主定理前提、摘要标题口径和最终编译审查。
+2. U3 已完成：EXT 章节/论文级定位表已补齐；
+3. 下一步处理 U1/U4/U5：主定理前提、摘要标题口径和最终编译审查。
 
 在这些完成前，本文应保持当前诚实状态：普通证明审稿标记已清零，但主定理仍是 review-form 条件合成定理，不能宣称 RH 无条件证明定稿。

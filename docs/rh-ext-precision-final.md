@@ -1,6 +1,6 @@
 # EXT-Precision 最终化：外部定理精确适配表
 
-本文补齐最终剩余输入 `EXT-Precision`。目标是把 LaTeX 主稿中的 restricted external inputs 升级为可审稿的外部定理包。由于当前本地没有所有纸质书页码，本文给出“定理形式 + 标准来源章节/论文 + 变量匹配 + 使用边界”。页码级核验属于投稿排版义务，不再是数学逻辑缺口。
+本文补齐最终剩余输入 `EXT-Precision`。目标是把 LaTeX 主稿中的 restricted external inputs 升级为可审稿的外部定理包。U3 的精确引用定位表已写入 `docs/rh-u3-ext-reference-table.md`：文章级输入给出卷期页码，专著级输入给出章节/定理定位；纸质专著页码级核验属于投稿排版义务，不再是数学逻辑缺口。
 
 ## 1. EXT-PC1-EF / EXT-PC1-LI
 
@@ -62,4 +62,4 @@
 
 ## 8. 剩余排版义务
 
-页码、定理号和具体版本号仍需在投稿排版时核对原书/原文；这不改变证明逻辑，但在最终期刊稿中必须完成。`EXT-KL` 的主稿实际使用形式已由 `docs/rh-ext-kl-precision-final.md` 进一步细化；`EXT-PC1-LI` 的主稿实际使用形式已由 `docs/rh-ext-pc1-li-precision-final.md` 进一步细化。
+U3 精确引用表见 `docs/rh-u3-ext-reference-table.md`。文章级来源已经给出卷期页码；专著级来源给出章节/定理定位，具体页码可在最终排版时核对。`EXT-KL` 的主稿实际使用形式已由 `docs/rh-ext-kl-precision-final.md` 进一步细化；`EXT-PC1-LI` 的主稿实际使用形式已由 `docs/rh-ext-pc1-li-precision-final.md` 进一步细化。
