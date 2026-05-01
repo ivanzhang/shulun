@@ -51,6 +51,7 @@
 - `docs/rh-lv-low-volume-principle.md`
 - `docs/rh-pc3-ov2-bridge-theorem.md`
 - `docs/rh-pc3-ov2-unconditionalization-audit.md`
+- `docs/rh-pc3-ov2-upstream-unconditional-audit.md`
 - `docs/rh-pc1-offline-zero-smooth-window.md`
 - `docs/rh-pc1-analytic-input-theoremization.md`
 - `docs/rh-pc1-analytic-input-citation-audit.md`

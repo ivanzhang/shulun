@@ -29,6 +29,7 @@
 - `docs/rh-lv-low-volume-principle.md`：LV 低体积原则编号引理。
 - `docs/rh-pc3-ov2-bridge-theorem.md`：PC-3+OV-2 素数过疏桥接定理。
 - `docs/rh-pc3-ov2-unconditionalization-audit.md`：PC3-OV2 无条件化合并审查。
+- `docs/rh-pc3-ov2-upstream-unconditional-audit.md`：PC3-OV2 AAI/PPI/MLC 上游输入无条件化矩阵审查。
 - `docs/rh-pc1-offline-zero-smooth-window.md`：PC-1 离线零点到平滑素数异常窗口。
 - `docs/rh-pc1-analytic-input-theoremization.md`：PC1 解析输入无条件化定理化。
 - `docs/rh-pc1-analytic-input-citation-audit.md`：PC1 显式公式、Landau--Ingham 与权函数非湮灭引用级审查。

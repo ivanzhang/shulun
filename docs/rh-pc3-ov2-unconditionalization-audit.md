@@ -1,5 +1,8 @@
 # PC3-OV2 无条件化合并审查
 
+AAI/PPI/MLC 作为上游输入的最终矩阵审查见 `docs/rh-pc3-ov2-upstream-unconditional-audit.md`。
+
+
 本文审查 PC3-OV2 桥接定理中 AAI/PPI/MLC 三接口的无条件化进度，并明确剩余依赖已经从“OV2 黑箱”转移到 FCT、LV/LSMP、DSO/PI、NRC/EXT 与终端 closure。本文不宣称 RH 已证明；它说明 PC3-OV2 的内部结构接口已经拆开并定理化到当前可审查粒度。
 
 ## 1. PC3-OV2 目标
@@ -98,4 +101,4 @@ MLC 负责说明大 overlap 不能藏在尾层或不可检测均匀背景。当�
 3. 模板一致性与 Complexity-Escape 需检查是否仍有循环依赖；
 4. LV/LSMP 与 FCT/PI closure 作为终端输入继续排队无条件化。
 
-这意味着 RH 总攻骨架的压力点已经从 PC3-OV2 内部转移到 PC4 的正交和终端闭合输入。
+这意味着 RH 总攻骨架的压力点已经从 PC3-OV2 内部转移到 PC4 的正交、终端和外部容量输入；最终上游矩阵见 `docs/rh-pc3-ov2-upstream-unconditional-audit.md`。
