@@ -183,3 +183,11 @@
 | G1-G3合并补正 | 压缩为真实块协方差引理 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G2.1--G2.4。G1真实支撑与G2真实块下界可合并：若真实剩余避开Zero/低覆盖块，则它与下一层覆盖函数产生异常正协方差；该协方差应由SC2/CRTDefect控制。因此G1--G3最小共同硬点为“真实块协方差引理”。 |
 
 | 真实块协方差引理 | G1-G3实质闭合/需上界筛陈述 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G3.1--G3.5。若真实剩余避开 Zero 块，则至少 70% 质量在 `R_B>=1` 块，给 `sum U_B R_B>0.70|U|`；而下一薄层上界筛给 `sum U_B R_B <=(nu+o(1))|U|`，取 `nu=0.4` 矛盾。因此 Zero 块真实质量 `>=0.30|U|`。G1-G3压缩为标准上界筛输入。 |
+
+| 新模平均上界筛 | G1-G3闭合输入 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G3.6--G3.10。点态新模均衡过强，但薄层平均上界足够：`sum_{x in U_Y}D_j(x)<=(nu+o(1))|U_Y|`。通过换元 `x=pm` 归为二禁类上界筛，属于 Selberg/Brun 上界方向，不触及下界筛/parity barrier。接受该输入后 G1--G3 闭合。 |
+
+| G4三线退化补正 | 归约到45-Main与G5 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G4.1--G4.5。三线退化分解为 `T_rep=0`、`T_pair<E_sync*nu<0.008`、`T_tri<0.005`。G4 无独立新缺口，依赖 45-Main 同步残余 `<0.02` 与 G5 固定阶三线 `Q_eff<=polylog`。 |
+
+| G5固定阶Qeff补正 | 技术闭合 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G5.1--G5.3。固定阶矩只展开截断权重 `d<=R<=polylog(P)` 和局部测试，故 `Q_eff,k<=R^k L^{O(k)}<=polylog(P)`。真实 `U_Y` 不展开完整CRT，只作支持集合；新模命中用上界筛处理。G5 闭合。 |
+
+| G6-G7补正与G1-G7总表 | 缺口压缩完成 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G6.1--G7.2 与总表。G6 由平滑夹逼端点层 `O(Delta)+o(1)` 闭合；G7 通过固定偶数 `w` 量词闭合，不声称均匀 `w` 版本。G1--G7 现压缩为两个正式输入：新模平均上界筛与 45-Main 同步残余 `<0.02` 的正式证明。 |
