@@ -102,3 +102,7 @@ Dense 包不能靠支撑 disjoint。需要 martingale/Carleson 型平方函数�
 ## 8. Dense-Carleson 推进
 
 新增 `docs/rh-gee-dense-carleson-load-bridge.md`。审查结果：Dense-Carleson 的 Hilbert/martingale 核心已由 `PC4-PI-Dense` 条件化闭合；GEE 剩余不是正交估计，而是 `Baseline-Subtraction`：dense/lacunary 零频容量不能重复计入异常负担。
+
+## 9. Baseline-Subtraction 更新
+
+新增 `docs/rh-gee-baseline-subtraction-lemma.md`。`Lac-Baseline` 与 `Dense-Carleson` 的账本缺口合并为 Baseline-Subtraction，并已定理化为 PI/DSO 零频容量扣除引理。当前 `GEE-PI/DSO` 可标记为“基线扣除条件闭合”，剩余压力转入接收出口 `SC/LV/LSMP/CE/FCT/NRC` 的全局上界。

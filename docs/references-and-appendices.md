@@ -198,3 +198,5 @@
 - `docs/rh-gee-pi-dso-load-bound-target.md`：GEE-PI/DSO 负担上界目标，抽取 `Lac-Baseline/Dense-Carleson/Anomaly-L2-Control` 三项硬点。
 
 - `docs/rh-gee-dense-carleson-load-bridge.md`：Dense-Carleson 到 GEE 负担的桥接，剩余压缩为 `Baseline-Subtraction`。
+
+- `docs/rh-gee-baseline-subtraction-lemma.md`：PI/DSO 基线扣除引理，避免零频容量重复计入异常负担。

@@ -152,3 +152,5 @@
 - `docs/rh-gee-pi-dso-load-bound-target.md`：GEE-PI/DSO 仍未闭合；最小割集为 `Lac-Baseline/Dense-Carleson/Anomaly-L2-Control`。
 
 - `docs/rh-gee-dense-carleson-load-bridge.md`：Dense-Carleson 已桥接到 GEE；剩余 `Baseline-Subtraction`。
+
+- `docs/rh-gee-baseline-subtraction-lemma.md`：Baseline-Subtraction 已补齐；PI/DSO 剩余依赖接收出口上界。

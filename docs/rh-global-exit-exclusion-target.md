@@ -171,3 +171,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## Dense-Carleson 状态更新
 
 新增 `docs/rh-gee-dense-carleson-load-bridge.md`。`GEE-PI/DSO` 最硬点已从 dense 正交转为基线账本：需证明 `Baseline-Subtraction`，即 PI/DSO 的零频容量只作基线扣除，进入 `Load` 的仅为超额偏差。
+
+## GEE-PI/DSO 基线扣除更新
+
+新增 `docs/rh-gee-baseline-subtraction-lemma.md`。PI/DSO 的 lacunary/dense 零频容量不再重复计入异常负担；`Load(PI)+Load(DSO)` 只登记超额偏差。因此 `GEE-PI/DSO` 当前可作为条件闭合出口，依赖接收出口 `SC/LV/LSMP/CE/FCT/NRC` 的全局上界。

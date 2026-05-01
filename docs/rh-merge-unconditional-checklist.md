@@ -99,3 +99,8 @@
 
 - [x] `Dense-Carleson`：dense fixed-template 容量上界由 `PC4-PI-Dense` 接入 GEE。
 - [ ] `Baseline-Subtraction`：PI/DSO 零频容量不得重复计入异常负担；只登记超额偏差。
+
+## Baseline-Subtraction 更新
+
+- [x] `Baseline-Subtraction`：PI/DSO 零频容量只作基线扣除，进入 `Load` 的仅为超额偏差。
+- [ ] 接收出口上界：`SC/LSMP/CE/FCT/A` 等仍需证明 `o(Δ)`。

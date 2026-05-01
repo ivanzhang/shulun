@@ -56,4 +56,8 @@ GEE-0 中的 `Load(E;X)` 只应记录“相对零频基线的异常负担”，�
 - GEE 负担桥接：本文给出条件定理；
 - 剩余最小硬点：`Baseline-Subtraction`，统一处理 lacunary 与 dense 的零频容量扣除，避免重复计数。
 
-因此下一步最优攻坚应从 `Dense-Carleson` 转到 `Baseline-Subtraction`，把 PI/DSO 容量账本与 GEE-0 的 `Load` 定义严格对齐。
+因此 `Dense-Carleson` 与 `Baseline-Subtraction` 已在 GEE 账本中拼接；后续最优攻坚应转向接收出口 `SC/LSMP/CE/FCT/A` 的全局上界。
+
+## 6. Baseline-Subtraction 已补齐
+
+新增 `docs/rh-gee-baseline-subtraction-lemma.md`。该文把 PI/DSO 的零频容量从异常负担中扣除：`Load(PI/DSO)` 只登记超过 `μ^0/Cap` 基线与 Carleson 容量界的超额偏差。

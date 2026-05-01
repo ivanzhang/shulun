@@ -191,3 +191,5 @@
 - `docs/rh-gee-pi-dso-load-bound-target.md`：归档 PI/DSO 从桥接无回流到 GEE 负担上界的目标化。
 
 - `docs/rh-gee-dense-carleson-load-bridge.md`：归档 Dense-Carleson 负担桥接，标记剩余账本硬点。
+
+- `docs/rh-gee-baseline-subtraction-lemma.md`：归档 PI/DSO 零频容量扣除账本。
