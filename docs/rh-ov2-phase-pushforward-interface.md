@@ -120,3 +120,8 @@ D 组允许窗口族 `𝓦(K')` 取倒数环带、短弧、Bohr 切片及其有�
 `W_Q^{1/2}>=K_eff log^C X · X^{-ε/4}`
 
 在哪些 `Q,R` 主层成立，以及不成立的尾层如何被 Tail-log4 吸收。
+
+
+## 9. 无条件化入口
+
+PPI 中只依赖同余代数、有限窗口检测与 Fourier/Vaaler 展开的核心已抽成无条件定理，见 `docs/rh-ov2-ppi-unconditional-theorem.md`。NRC 上界与 MLC 主层容量仍需分别无条件化。

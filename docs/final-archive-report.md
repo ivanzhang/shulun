@@ -44,6 +44,7 @@
 - `docs/rh-ov2-admissible-anchor-interface.md`
 - `docs/rh-ov2-aai-unconditional-theorem.md`
 - `docs/rh-ov2-phase-pushforward-interface.md`
+- `docs/rh-ov2-ppi-unconditional-theorem.md`
 - `docs/rh-ov2-main-layer-capacity-interface.md`
 - `docs/rh-lv-low-volume-principle.md`
 - `docs/rh-pc3-ov2-bridge-theorem.md`
