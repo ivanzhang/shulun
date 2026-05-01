@@ -1,5 +1,8 @@
 # PC1：解析输入无条件化定理化
 
+显式公式、Landau--Ingham 振荡与权函数非湮灭的引用级审查见 `docs/rh-pc1-analytic-input-citation-audit.md`。
+
+
 本文把 `docs/rh-pc1-offline-zero-smooth-window.md` 中的解析输入拆成可引用的标准定理包：平滑显式公式、权函数非湮灭、Landau--Ingham 振荡，以及从 Chebyshev 权到素数窗口的转换。本文仍不证明 RH；它只把“离线零点推出平滑素数异常”这一环节从条件化口径提升为标准解析数论输入。
 
 ## 1. 平滑显式公式
@@ -70,4 +73,4 @@ Mellin 变换
 
 ## 6. 对总攻框架的影响
 
-本文把 `docs/rh-contradiction-field-final-assault.md` 第 7 节中的第一项“PC1 解析输入”升级为标准解析输入包。仍需在最终投稿中给出精确文献引用，建议引用 Ingham/Landau 振荡定理的现代教材表述，或在附录中保留上述 Mellin 变换证明。
+本文把 `docs/rh-contradiction-field-final-assault.md` 第 7 节中的第一项“PC1 解析输入”升级为标准解析输入包。最终投稿中的精确文献引用标签与审查口径见 `docs/rh-pc1-analytic-input-citation-audit.md`。

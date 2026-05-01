@@ -110,6 +110,6 @@ PC2 给
 
 接口一致性完成后，真正剩余硬点不再是分支遗漏，而是三个上游输入的无条件化强度：
 
-1. PC1 解析振荡输入的精确引用与权函数非湮灭；
+1. PC1 解析振荡输入的引用级审查见 `docs/rh-pc1-analytic-input-citation-audit.md`；
 2. PC2 CRT 基线已由 `docs/rh-pc2-baseline-unconditional-audit.md` 标记为无条件初等输入；
 3. PC3-OV2 中 AAI/PPI/MLC 三接口的定理化强度。

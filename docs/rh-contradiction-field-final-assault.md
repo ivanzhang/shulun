@@ -104,7 +104,7 @@
 
 当前总攻链条的剩余不是再寻找新分支，而是逐项降低条件化接口：
 
-1. **解析输入**：PC1 的 Landau--Ingham 平滑振荡和权函数非湮灭，定理化见 `docs/rh-pc1-analytic-input-theoremization.md`；
+1. **解析输入**：PC1 的 Landau--Ingham 平滑振荡和权函数非湮灭，引用级审查见 `docs/rh-pc1-analytic-input-citation-audit.md`；
 2. **基线输入**：PC2 的 CRT 候选边界误差与权重正规化，最终无条件化审查见 `docs/rh-pc2-baseline-unconditional-audit.md`；
 3. **覆盖输入**：AAI/PPI/MLC 内部接口已拆解，合并审查见 `docs/rh-pc3-ov2-unconditionalization-audit.md`；剩余依赖已转入 FCT、LV/LSMP、DSO/PI、NRC/EXT；
 4. **正交输入**：最终合并审查见 `docs/rh-pc4-orthogonality-final-closure-audit.md`；分散正交能量已转入 DSO 容量上界或 PI-Seed/FCT/LSMP/LV/NRC；
@@ -117,4 +117,4 @@
 
 本文可以作为 RH 总攻的条件化骨架：它说明离线零点异常一旦被投影到 CRT/覆盖动力系统，便只能进入有限个结构场，而这些结构场已被当前 closure 文档逐一围堵。
 
-但本文不能写成“RH 已证明”。真正的下一步是继续上游输入无条件化：PC2 已标记为初等无条件，优先核查 PC1 解析振荡与 PC3-OV2 的 AAI/PPI/MLC 三接口。
+但本文不能写成“RH 已证明”。真正的下一步是继续上游输入无条件化：PC1/PC2 已完成引用级或初等无条件审查，优先核查 PC3-OV2 的 AAI/PPI/MLC 三接口。

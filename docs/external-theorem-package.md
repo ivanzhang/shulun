@@ -48,6 +48,16 @@
 
 **使用位置。** Tail-log4 的素变量尾部锚求和与 RKS-log 桥接。
 
+## EXT-PC1-EF / EXT-PC1-LI：平滑显式公式与 Landau--Ingham 振荡
+
+**定理 EXT-PC1-EF。** 对 `W∈C_c^∞((0,∞))`，平滑 Chebyshev 和满足标准 ζ 显式公式：主项来自 `s=1`，非平凡零点贡献为 `-Σ_ρ X^ρ\widehat W(ρ)`，平凡零点与截线积分为低阶项。
+
+**定理 EXT-PC1-LI。** 若 ζ 存在离线零点 `ρ=β+iγ`, `β>1/2`，且平滑权不湮灭该零点，则平滑 Chebyshev 误差在无穷多尺度上有 `X^{β-o(1)}` 级振荡。
+
+**引用来源。** 可引用 Titchmarsh, *The Theory of the Riemann Zeta-function* 中显式公式与 Landau 振荡定理，或 Ingham 关于素数计数误差振荡的标准定理；平滑权版本也可由 Mellin 反演与 Landau--Ingham 奇点原理逐行推出。
+
+**使用位置。** `docs/rh-pc1-analytic-input-theoremization.md` 与 `docs/rh-pc1-analytic-input-citation-audit.md`。
+
 ## 审稿使用规则
 
 - 所有外部输入在正文中只按 `EXT-*` 标签引用；

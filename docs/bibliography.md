@@ -12,6 +12,8 @@
 - `EXT-Selberg` -> [Selberg-Sieve]。建议正式来源：Halberstam--Richert 或 Iwaniec--Kowalski 中 Selberg 上筛基本引理。
 - `EXT-Vaughan` -> [Vaughan]。建议正式来源：Vaughan 恒等式标准定理或 Iwaniec--Kowalski 的 Type I/II 分解。
 
+- `EXT-PC1-EF` / `EXT-PC1-LI` -> [Titchmarsh-Zeta] / [Ingham-Landau]。用于平滑显式公式与离线零点导致的 Landau--Ingham 振荡。
+
 当前附录中的外部引用不得再写成“标准事实”而不带 `EXT-*` 标签。
 
 ## [BG2012] Bourgain--Garaev reciprocals and multilinear Kloosterman
@@ -96,3 +98,9 @@ Rudnev 点-平面 incidence 与 Roche-Newton--Rudnev--Shkredov sum-product 能�
 - Jeffrey D. Vaaler, *Some extremal functions in Fourier analysis*, Bulletin of the American Mathematical Society 12 (1985), no. 2, 183--216.
 - Heini Halberstam and Hans-Egon Richert, *Sieve Methods*, London Mathematical Society Monographs, no. 4, Academic Press, 1974.
 - R. C. Vaughan, *Sommes trigonométriques sur les nombres premiers*, C. R. Acad. Sci. Paris Sér. A-B 285 (1977), A981--A983.
+- E. C. Titchmarsh, *The Theory of the Riemann Zeta-function*, 2nd ed., revised by D. R. Heath-Brown, Oxford University Press, 1986.
+- A. E. Ingham, classical papers or textbook statements on oscillation theorems for prime number theorem error terms.
+
+## [Titchmarsh-Zeta] / [Ingham-Landau]
+
+平滑显式公式、Landau 振荡定理与 Ingham 型素数误差振荡。最终投稿可引用 E. C. Titchmarsh, *The Theory of the Riemann Zeta-function*；也可引用 Ingham 关于 prime number theorem error term oscillation 的原始或教材化表述。本文使用位置：`docs/rh-pc1-analytic-input-citation-audit.md`。
