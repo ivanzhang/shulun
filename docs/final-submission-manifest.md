@@ -29,6 +29,7 @@
 - `docs/rh-pc3-ov2-bridge-theorem.md`：PC-3+OV-2 素数过疏桥接定理。
 - `docs/rh-pc3-ov2-unconditionalization-audit.md`：PC3-OV2 无条件化合并审查。
 - `docs/rh-pc3-ov2-maintext-proof-chain.md`：PC3/OV2 AAI-PPI-MLC 连续主文证明链。
+- `docs/rh-ppi-terminal-output-maintext-chain.md`：PPI 可检测偏差到命名终端的主文输出链。
 - `docs/rh-pc3-ov2-upstream-unconditional-audit.md`：PC3-OV2 AAI/PPI/MLC 上游输入无条件化矩阵审查。
 - `docs/rh-pc1-offline-zero-smooth-window.md`：PC-1 离线零点到平滑素数异常窗口。
 - `docs/rh-pc1-analytic-input-theoremization.md`：PC1 解析输入无条件化定理化。

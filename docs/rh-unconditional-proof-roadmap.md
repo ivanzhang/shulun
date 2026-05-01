@@ -152,3 +152,9 @@ PC2 CRT 基线主文证明附录已写入 `docs/rh-pc2-crt-baseline-maintext-app
 PC3/OV2 的连续主文证明链已写入 `docs/rh-pc3-ov2-maintext-proof-chain.md`。该补强把 AAI/PPI/MLC/OV2 从矩阵引用改写为一条可审稿追踪的链条：过疏账本先分流为 `ACC` 过剩或 overlap 大，overlap 大经 AAI 双锚正规形、MLC 主层定位与 Uniform 吸收、PPI 相位推送，最终进入 `PI/SC/FCT/NRC/LV/LSMP/CE/DSO` 命名终端。
 
 当前 PC3/OV2 剩余义务转为：把链中调用的 PPI、MLC、LV 与 D 组终端逐项并入最终主文，并与 PC4 终端排斥和容量常数层级做最终交叉引用。
+
+## 23. PPI 终端输出链推进记录
+
+PPI 输出端主文链已写入 `docs/rh-ppi-terminal-output-maintext-chain.md`。该补强把 PPI 可检测偏差的输出从终端列表细化为可审查分流：有限 Fourier 频率包或尾项；尾项进入 `CE/LSMP/LV/NRC`，非共振频率进入 `NRC/EXT`，共振频率进入 `FCT`，投影重复和短窗复用进入 `PI/SC/DSO`，失败边按既有无回流审查进入命名终端。
+
+当前 PC3/OV2 剩余义务进一步转为：优先把 `NRC/EXT` 完成和上界、`FCT` 无循环闭包、`PI/DSO` 容量桥接与 `SC` 局部乘积容量逐项主文化。
