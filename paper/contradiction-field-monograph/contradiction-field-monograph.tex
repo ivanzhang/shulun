@@ -111,19 +111,19 @@ Fix an even integer $w>0$.  A two-point secondary-sieve field is the structured 
 Assume the following four inputs hold with the constants recorded in the secondary-sieve research note:
 \begin{enumerate}
   \item fixed-order local crossing estimates have effective complexity $Q_{\mathrm{eff}}\le (\log P)^C$;
-  \item the SC2 second-correlation estimate controls the two-line near-crossing error and the $45^\circ$ main-synchronization peak;
-  \item the weighted Bonferroni zero-mass estimate gives a positive mass proportion for zero-hit short blocks;
-  \item smooth cutoffs can be returned to sharp short-block windows with the recorded endpoint loss.
+  \item the adaptive true-hit layer decomposition is used, with any single-prime concentration routed to a Single-Prime CRTDefect exit;
+  \item the SC2 second-correlation estimate controls the two-line near-crossing error and the $45^\circ$ main-synchronization peak, while the finite package for primes $q\le100$ is checked separately;
+  \item the weighted Bonferroni zero-mass estimate and smooth-to-sharp cutoff return hold with the recorded endpoint loss.
 \end{enumerate}
 Then the two-point secondary-sieve contradiction field has no remaining top-scale escape channel under the parameter choice
 \[
-  \alpha_0=0.75,\qquad c_0=1/2,\qquad \nu=0.4
+  \alpha_0=0.75,\qquad c_0=1/2,\qquad \nu_j^{\mathrm{real}}\le0.4
 \]
-subject to the same fixed-$w$ convention used in the research manuscript.
+for adaptive true-hit layers, subject to the same fixed-$w$ convention used in the research manuscript.
 \end{proposition}
 
 \begin{proof}[Proof sketch and status]
-The argument is a conditional synthesis, not a final unconditional theorem.  A top-scale covering excess is converted by a TCA linear bridge into a positive short-block load.  The block load is forced into the SMC/SC2 near-crossing ledger.  The $45^\circ$ main synchronization is split into large-factor reuse, shared-complement factors, and good synchronized pairs; reuse and shared factors are excluded by short-window rigidity, while good pairs are sent to an auxiliary-prime Fourier CRT-defect.  Directional balance excludes the Fourier defect unless the top-scale energy is already below the capacity threshold.  Finally, the weighted Bonferroni zero-mass estimate supplies enough zero-hit block mass to make the capacity comparison incompatible.
+The argument is a conditional synthesis, not a final unconditional theorem.  A top-scale covering excess is first decomposed into adaptive true-hit layers; any single-prime concentration is routed to the Single-Prime CRTDefect exit.  The remaining excess is converted by a TCA linear bridge into a positive short-block load.  The block load is forced into the SMC/SC2 near-crossing ledger.  The $45^\circ$ main synchronization is split into large-factor reuse, shared-complement factors, and good synchronized pairs; reuse and shared factors are excluded by short-window rigidity, while good pairs are sent to an auxiliary-prime Fourier CRT-defect.  Directional balance excludes the Fourier defect unless the top-scale energy is already below the capacity threshold.  Finally, the weighted Bonferroni zero-mass estimate supplies enough zero-hit block mass to make the capacity comparison incompatible.
 
 The current audit is archived under \path{docs/archive/monograph-reviews/} and classifies this as a research proposition conditional on the four inputs above.  Because an unconditional proof of the underlying two-point assertion would imply fixed-gap prime-pair consequences, including the twin-prime case when $w=2$, this monograph records the chain as a conditional research chapter rather than an established theorem.
 \end{proof}

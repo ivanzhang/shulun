@@ -197,3 +197,5 @@
 | H2同步残余逐行审查 | 中大q闭合/小q有限包 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 H2.1--H3。对中大 `q>Q0`，主同步 `q|h` 在辅助素 `r≈L` 上支撑仅 `O(L/q)` 类，辅助能量下界与均匀上界差距约 `q` 倍；取 `Q0=100` 后 Directional/Endpoint 误差可压到 `<0.02`。小 `q<=Q0` 进入有限包。最终只剩自适应分层单素数集中出口与小q有限包明细。 |
 
 | H4-H6最终补正 | 逻辑缺口压缩为文稿工程义务 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 H4--H6。自适应分层中的单素数大贡献定义为 Single-Prime CRTDefect，可由辅助投影能量处理；小 `q<=100` 作为有限包，`q=2` 归入奇数骨架，奇素 `q|w` 峰值更弱。G1--G7 当前不再有新的逻辑类型缺口，剩余为正式稿中添加该出口、有限包表和自适应分层表述。 |
+
+| 正式稿工程义务完成 | 已并入正式研究稿/合著条件章节 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 331--334 节：Single-Prime CRTDefect 出口、自适应真实命中分层、小 `q<=100` 有限包表。`paper/contradiction-field-monograph/contradiction-field-monograph.tex` 已同步更新条件命题四输入和参数为 `nu_j^real<=0.4`。LaTeX 编译通过。 |
