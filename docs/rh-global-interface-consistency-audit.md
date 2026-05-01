@@ -84,7 +84,7 @@ PC2 给
 - `CE`：固定模板失败的复杂度/尾项/旧坐标/边界四分；
 - `CapacityFail`：必须绑定具体容量定理，不作为自由事件。
 
-这些入口已分别由 `docs/rh-pc4-terminal-final-no-cycle-audit.md`、`docs/rh-pc4-external-event-absorption-audit.md` 与 `docs/rh-pc4-dual-dgap-event-match-audit.md` 接收；DGap 的投影、低维抽取、DSO/PI 桥接、FCT_seed 同型和尾项细节由 `docs/rh-dgap-projection-line-by-line-audit.md`、`docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`、`docs/rh-dso-pi-squarefunction-bridge-audit.md`、`docs/rh-fct-seed-isomorphism-audit.md`、`docs/rh-fourier-vaaler-tail-uniform-audit.md` 补强。
+这些入口已分别由 `docs/rh-pc4-terminal-final-no-cycle-audit.md`、`docs/rh-pc4-external-event-absorption-audit.md` 与 `docs/rh-pc4-dual-dgap-event-match-audit.md` 接收；DGap/FCT 的投影、低维抽取、DSO/PI 桥接、FCT_seed 同型、尾项和无循环细节由 `docs/rh-dgap-projection-line-by-line-audit.md`、`docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`、`docs/rh-dso-pi-squarefunction-bridge-audit.md`、`docs/rh-fct-seed-isomorphism-audit.md`、`docs/rh-fourier-vaaler-tail-uniform-audit.md`、`docs/rh-fct-closure-no-cycle-final-audit.md` 补强。
 
 ## 6. 发现并修正的格式问题
 

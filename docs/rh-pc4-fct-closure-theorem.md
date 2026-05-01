@@ -2,6 +2,8 @@
 
 本文合并 `FCT-Seed`、`FCT-Drift` 与 `FCT-Noether`，形成 RH 总攻框架中频率闭包分支的条件化闭合命题。本文不宣称证明 RH；它说明在既有终端分支与容量输入被接受时，FCT 不能作为 RH 反例链条的最终逃逸通道。
 
+最终无循环审查见 `docs/rh-fct-closure-no-cycle-final-audit.md`。
+
 ## 1. 输入与目标
 
 假设 PC1+PC2+PC3-OV2 链条在无穷多尺度上将离线零点异常推入 FCT 终端。FCT 表示当前频率落入祖先短深度 span，单尺度上由 `docs/fct-tree-wfe-theoremization.md` 记录为频率碰撞证书。
@@ -31,7 +33,7 @@
 
 ## 4. Noether：闭包链终止
 
-由 `docs/rh-pc4-fct-noether.md` 与 `docs/rh-pc4-fct-noether-descent-ledger.md`，在排除 PC4-PI、短簇、LSMP、LV 与 DSO/CE 容量失败后，FCT 闭包证书链不可能无限延续。其机制是：将 FCT 状态规范化为 Hermite/Smith 代表后，每个真闭包步都降低离散势函数；若势函数不降，则不是新闭包，而是同一 Bohr 交集反复承载偏差，触发 PC4-PI 或短簇。
+由 `docs/rh-pc4-fct-noether.md`、`docs/rh-pc4-fct-noether-descent-ledger.md` 与 `docs/rh-fct-closure-no-cycle-final-audit.md`，在排除 PC4-PI、短簇、LSMP、LV 与 DSO/CE 容量失败后，FCT 闭包证书链不可能无限延续。其机制是：将 FCT 状态规范化为 Hermite/Smith 代表后，每个真闭包步都降低离散势函数；若势函数不降，则不是新闭包，而是同一 Bohr 交集反复承载偏差，触发 PC4-PI 或短簇。
 
 ## 5. PC4-FCT 主闭合命题
 

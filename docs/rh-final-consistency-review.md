@@ -15,7 +15,7 @@
 3. PC3：`docs/rh-pc3-ov2-upstream-unconditional-audit.md`；
 4. PC4 内部终端：`docs/rh-pc4-terminal-final-no-cycle-audit.md`；
 5. PC4 外部事件：`docs/rh-pc4-external-event-absorption-audit.md`；
-6. PC4-Dual/DGap：`docs/rh-pc4-dual-dgap-event-match-audit.md`，并由 `docs/rh-dgap-projection-line-by-line-audit.md`、`docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`、`docs/rh-dso-pi-squarefunction-bridge-audit.md`、`docs/rh-fct-seed-isomorphism-audit.md` 与 `docs/rh-fourier-vaaler-tail-uniform-audit.md` 补强投影、低维抽取、DSO/PI 桥接、FCT_seed 同型和尾项接口；
+6. PC4-Dual/DGap：`docs/rh-pc4-dual-dgap-event-match-audit.md`，并由 `docs/rh-dgap-projection-line-by-line-audit.md`、`docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`、`docs/rh-dso-pi-squarefunction-bridge-audit.md`、`docs/rh-fct-seed-isomorphism-audit.md`、`docs/rh-fourier-vaaler-tail-uniform-audit.md` 与 `docs/rh-fct-closure-no-cycle-final-audit.md` 补强投影、低维抽取、DSO/PI 桥接、FCT_seed 同型、尾项和 FCT 无循环接口；
 7. 全局接口：`docs/rh-global-interface-consistency-audit.md`；
 8. NRC/EXT：`docs/rh-nrc-ext-final-citation-audit.md`；
 9. DSO/容量：`docs/rh-dso-capacity-final-audit.md`；

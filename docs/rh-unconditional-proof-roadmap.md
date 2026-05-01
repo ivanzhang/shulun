@@ -80,3 +80,9 @@
 Fourier/Vaaler 尾项在全部固定盒模板上的统一平方可和审查已写入 `docs/rh-fourier-vaaler-tail-uniform-audit.md`。该补强逐项覆盖物理窗、硬边界、倒数环带、Bohr 短弧、CRT 字符和有限布尔组合，并规定失败只能转入 `CE/LSMP/LV/SC/DSO-PI`。
 
 当前 DGap 外部接口主要剩下 `FCT phase drift/closure` 的无无限递归排除，以及总攻上游外部引用和容量常数的最终标准化。
+
+## 11. R4 第六轮推进记录
+
+`FCT phase drift/closure` 的无无限递归最终审查已写入 `docs/rh-fct-closure-no-cycle-final-audit.md`。该补强把 `Seed -> Drift -> NewClosure -> NoetherDescent/RepeatState -> terminal` 写成事件图，并确认每条边都进入已命名终端或离散势函数下降。
+
+至此，DGap/FCT 内部剩余跳步已压缩到全局外部义务：上游解析输入标准化、容量定理常数核验、PC4-A/SC/Dual 与外部吸收的无回流总审查。

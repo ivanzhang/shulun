@@ -106,6 +106,7 @@
 - `docs/rh-dso-pi-squarefunction-bridge-audit.md`
 - `docs/rh-fct-seed-isomorphism-audit.md`
 - `docs/rh-fourier-vaaler-tail-uniform-audit.md`
+- `docs/rh-fct-closure-no-cycle-final-audit.md`
 - `docs/rh-pc4-dual-dgap-event-match-audit.md`
 - `docs/rh-pc1-pc4-interface-closure-audit.md`
 - `docs/rh-global-interface-consistency-audit.md`
