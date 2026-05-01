@@ -107,6 +107,7 @@
 - `docs/rh-global-interface-consistency-audit.md`：RH 总攻 PC1--PC2--PC3--PC4--Dual 全文接口一致性审查。
 - `docs/rh-contradiction-field-final-assault.md`：RH 反例矛盾场总攻框架。
 - `docs/rh-final-paper-draft.md`：RH 反例矛盾场论文整合稿，条件化定稿版并列出无条件化义务。
+- `docs/rh-merged-proof-draft-v1.md`：RH 反例矛盾场单篇合并证明稿 v1。
 - `docs/rh-final-merge-status-and-gap-closure.md`：RH 总攻最终合并状态与剩余缺口判定。
 - `docs/rh-final-consistency-review.md`：RH 反例矛盾场全文最终一致性总审查。
 - `docs/rh-unconditional-proof-roadmap.md`：RH 无条件化攻坚路线图与剩余条件割集。
