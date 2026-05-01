@@ -49,7 +49,7 @@
 1. 它们对既有低维 span 的投影残差保持正比例；
 2. 在新增 CRT 坐标上形成 martingale difference 或近正交差分。
 
-于是若无穷多尺度上不断出现承载固定比例能量的新增独立包，则由 `docs/rh-pc4-dso-crt-martingale.md` 的 DSO square-function 产生可检测平方函数能量；再由 `docs/rh-pc4-pi-lacunary-capacity.md` 或 `docs/rh-pc4-pi-cap-carleson.md` 转成 `PC4-PI` 或 DSO 容量终端。当前分支排除 `PC4-PI/DSO`，所以新增独立包不能无限次承载固定比例能量。
+于是若无穷多尺度上不断出现承载固定比例能量的新增独立包，则由 `docs/rh-pc4-dso-crt-martingale.md` 的 DSO square-function 产生可检测平方函数能量；其到 `PC4-PI` 允许投影族的桥接见 `docs/rh-dso-pi-squarefunction-bridge-audit.md`，并由 `docs/rh-pc4-pi-lacunary-capacity.md` 或 `docs/rh-pc4-pi-cap-carleson.md` 转成 `PC4-PI` 或 DSO 容量终端。当前分支排除 `PC4-PI/DSO`，所以新增独立包不能无限次承载固定比例能量。
 
 ## 4. 固定低维族抽取
 
@@ -98,7 +98,7 @@
 本文不消除所有 RH 总攻条件，但把 `R4-DGap` 的第三接口从“低维抽取直觉”降为三项可审查义务：
 
 1. Fourier/Vaaler 尾项平方可和或进入 `CE/LSMP`；
-2. 新增独立频率包触发 `DSO/PI` 的 square-function；
+2. 新增独立频率包触发 `DSO/PI` 的 square-function，桥接审查见 `docs/rh-dso-pi-squarefunction-bridge-audit.md`；
 3. 固定低维相位同向性精确匹配 `FCT_seed`。
 
 因此，下一步最硬点应从 `DGap` 内部跳步转向这些外部接口的精确引用或逐行证明，尤其是 `DSO/PI` square-function 到允许投影族的定量常数，以及 `FCT_seed` 定义的完全同型匹配。

@@ -77,6 +77,7 @@
 - `docs/rh-dgap-projection-line-by-line-audit.md`：DGap 投影正交化 frame/逐步正交投影逐行强度审查。
 - `docs/rh-pc4-dual-lowdim-frequency-extraction.md`：PC4-Dual DGap 低维频率抽取接口。
 - `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`：DGap 低维频率抽取的尾项、独立频率、尺度漂移与 FCT_seed 逐行强度审查。
+- `docs/rh-dso-pi-squarefunction-bridge-audit.md`：新增独立频率包由 DSO square-function 反馈到 PC4-PI 允许投影族的桥接审查。
 - `docs/rh-pc4-dual-dgap-event-match-audit.md`：PC4-Dual/DGap 到终端事件图的匹配审查。
 - `docs/rh-pc2-crt-baseline-explicit.md`：PC2 CRT 候选基线与边界误差显式化。
 - `docs/rh-pc2-baseline-unconditional-audit.md`：PC2 CRT 基线 `C_z-C_z^0=o(Δ)` 的无条件初等误差审查。
