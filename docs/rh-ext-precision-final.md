@@ -20,7 +20,7 @@
 
 **来源。** Iwaniec--Kowalski, *Analytic Number Theory*, Chapter 12；Katz, *Gauss Sums, Kloosterman Sums, and Monodromy Groups*。
 
-**适配。** 本文只使用素数模、二项有理函数 `ax+b/x`、非退化情形。退化情形不调用 EXT-KL，而转入 FCT。
+**适配。** 本文只使用素数模、二项有理函数 `ax+b/x`、非退化情形。退化情形不调用 EXT-KL，而转入 FCT。单变量 NRC 入口的完整变量匹配、completion 对数损失和退化出口已在 `docs/rh-ext-kl-precision-final.md` 中单独固定。
 
 ## 3. EXT-Vaaler
 
@@ -62,4 +62,4 @@
 
 ## 8. 剩余排版义务
 
-页码、定理号和具体版本号仍需在投稿排版时核对原书/原文；这不改变证明逻辑，但在最终期刊稿中必须完成。
+页码、定理号和具体版本号仍需在投稿排版时核对原书/原文；这不改变证明逻辑，但在最终期刊稿中必须完成。`EXT-KL` 的主稿实际使用形式已由 `docs/rh-ext-kl-precision-final.md` 进一步细化。

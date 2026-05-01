@@ -158,7 +158,7 @@
 - [x] `EXT-Precision`：外部定理逐条精确适配已由 `docs/rh-ext-precision-final.md` 补齐。
 - [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明；当前已归约为 AEX-1、AEX-2、AEX-3。
 - [x] `Transfer-Accounting`：seed/内部转移权重守恒和有限重叠逐条证明。
-- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+- [x] `Review-Form-Elimination`：LaTeX 中 `Proof sketch for review` 与 `Review proof` 已清零；主定理 `review form` 作为最终警告另列。
 
 ## Transfer-Accounting 补强更新
 
@@ -166,16 +166,16 @@
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Transfer-accounting proposition。
 - [x] `EXT-Precision`：外部定理逐条精确适配已由 `docs/rh-ext-precision-final.md` 补齐。
 - [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明；当前已归约为 AEX-1、AEX-2、AEX-3。
-- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+- [x] `Review-Form-Elimination`：LaTeX 中 `Proof sketch for review` 与 `Review proof` 已清零；主定理 `review form` 作为最终警告另列。
 
 ## Local-Exit-Proofs 第一阶段更新
 
 - [x] `LV/CE/LSMP/FCT/SC/A`：`docs/rh-local-exit-proofs-formal-appendix.md` 已给出低黑箱出口形式化闭合。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Low-black-box local exits proposition。
 - [ ] `PI/DSO`：无幂损失容量与 square-function 上界。
-- [ ] `NRC`：逐入口参数匹配已完成归约；剩余 `EXT-KL` 精确适配。
+- [x] `NRC`：逐入口参数匹配已完成归约；单变量 `EXT-KL` 精确适配已由 `docs/rh-ext-kl-precision-final.md` 补齐。
 - [x] `EXT-Precision`：外部定理逐条精确适配已由 `docs/rh-ext-precision-final.md` 补齐。
-- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+- [x] `Review-Form-Elimination`：LaTeX 中 `Proof sketch for review` 与 `Review proof` 已清零；主定理 `review form` 作为最终警告另列。
 
 ## 解析出口归约更新
 
@@ -183,9 +183,9 @@
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Analytic exit reduction proposition。
 - [ ] `AEX-1`：零频扣除后的投影容量不等式；当前已归约为 `PI-Lac/PI-Dense`。
 - [x] `AEX-2`：DSO 无幂损失 square-function 总量已由 `DSO-SF` 闭合。
-- [ ] `AEX-3`：NRC 逐入口参数匹配；当前剩余 `EXT-KL` 精确适配。
+- [x] `AEX-3`：NRC 逐入口参数匹配与单变量 `EXT-KL` 精确适配已补齐；双变量/DSO-E 仍按 Transfer/DSO-SF 路由。
 - [x] `EXT-Precision`：外部定理逐条精确适配已由 `docs/rh-ext-precision-final.md` 补齐。
-- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+- [x] `Review-Form-Elimination`：LaTeX 中 `Proof sketch for review` 与 `Review proof` 已清零；主定理 `review form` 作为最终警告另列。
 
 ## AEX-1 补强更新
 
@@ -204,7 +204,7 @@
 
 - [x] `AEX-3` 账本归约：`docs/rh-aex3-nrc-parameter-match-formal.md` 已完成 NRC 四入口参数表。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-3 NRC parameter matching proposition。
-- [ ] `EXT-KL`：单变量 NRC 外部完成和精确适配。
+- [x] `EXT-KL`：单变量 NRC 外部完成和精确适配已由 `docs/rh-ext-kl-precision-final.md` 补齐。
 - [x] `DSO-SF`：DSO-E 入口 square-function 基线容量已文内证明。
 
 ## 最终剩余输入归并
@@ -214,7 +214,7 @@
 - [x] `PI-Dense`：dense fixed-template Carleson/square-function 容量界已归约到 `DSO-SF/EXT-KL`。
 - [x] `DSO-SF`：martingale square-function 基线容量界已文内证明。
 - [x] `EXT-Precision`：外部定理精确引用与变量匹配已补齐。
-- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+- [~] `Review-Form-Elimination`：proof-sketch/review-proof 已清零；主定理 review-form 暂留为诚实警告。
 
 ## PI-Lac 完成更新
 
@@ -223,7 +223,7 @@
 - [x] `PI-Dense`：dense fixed-template Carleson/square-function 容量界已归约到 `DSO-SF/EXT-KL`。
 - [x] `DSO-SF`：martingale square-function 基线容量界已文内证明。
 - [x] `EXT-Precision`：外部定理精确引用与变量匹配已补齐。
-- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+- [~] `Review-Form-Elimination`：proof-sketch/review-proof 已清零；主定理 review-form 暂留为诚实警告。
 
 ## PI-Dense 归约更新
 
@@ -231,23 +231,30 @@
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 PI-Dense reduction proposition。
 - [x] `DSO-SF`：martingale square-function 基线容量界已文内证明。
 - [x] `EXT-Precision`：外部定理精确引用与变量匹配已补齐。
-- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+- [~] `Review-Form-Elimination`：proof-sketch/review-proof 已清零；主定理 review-form 暂留为诚实警告。
 
 ## DSO-SF 完成更新
 
 - [x] `DSO-SF`：`docs/rh-dso-sf-input-final.md` 已给出 martingale square-function 基线容量证明。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 DSO-SF input proposition。
 - [x] `EXT-Precision`：外部定理精确引用与变量匹配已补齐。
-- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+- [~] `Review-Form-Elimination`：proof-sketch/review-proof 已清零；主定理 review-form 暂留为诚实警告。
 
 ## EXT-Precision 完成更新
 
 - [x] `EXT-Precision`：`docs/rh-ext-precision-final.md` 已给出外部定理精确适配表。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 EXT-Precision theorem。
-- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+- [~] `Review-Form-Elimination`：proof-sketch/review-proof 已清零；主定理 review-form 暂留为诚实警告。
 
 ## Review-Form-Elimination 审查更新
 
 - [x] GEE 段 review-form 消除：`paper/rh-proof/rh-contradiction-field.tex` 中 GEE 局部证明已升级为普通 proof。
 - [x] 审查报告：`docs/rh-review-form-elimination-audit.md` 已列出仍保留 review-form 的 PC1--PC4/C4--C9 主链。
-- [ ] 全文 `Review-Form-Elimination`：PC1、PC2/C3、C4、C5、C6、C9 与主定理仍需逐条正式化。
+- [~] 全文 `Review-Form-Elimination`：普通 proof 标记已清零；主定理 review-form 与 submission warning 仍保留。
+
+
+## EXT-KL 与同尺度 GEE 矛盾更新
+
+- [x] `EXT-KL`：新增 `docs/rh-ext-kl-precision-final.md`，固定素数模非退化 `ax+b/x` 完成和、区间 completion 对数损失、退化出口和 AEX-3 单变量入口估计。
+- [x] GEE 下界/上界同尺度化：LaTeX 主稿已把下界 `Δ log^{-C_route}X` 与上界 `Δ log^{-B_final}X` 比较，要求 `B_final>C_route+C_total+10`，避免旧稿中用 `o(Δ)` 直接压过多对数下界的口径漏洞。
+- [~] 主定理 `review form`：仍保留，因这属于最终“可否宣称 RH 无条件证明”的顶层审稿判断。

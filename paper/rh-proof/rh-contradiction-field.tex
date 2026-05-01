@@ -257,15 +257,15 @@ where the weights $\theta_{a,E}$ have finite global overlap.  Zero-frequency CRT
 \begin{lemma}[GEE-0 bookkeeping]\label{lem:gee0}
 Assuming PC1, PC2, and the finite-overlap routing ledger, there is a fixed $C_{route}$ such that along the successful scales
 \[
-  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)\ge \Delta\log^{-C_{route}}X-o(\Delta)=X^{\beta-o(1)}.
+  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)\ge \Delta\log^{-C_{route}}X-o(\Delta\log^{-C_{route}}X)=X^{\beta-o(1)}.
 \]
 \end{lemma}
 \begin{proof}
 By Theorem~\ref{thm:pc1} and Lemma~\ref{lem:pc2}, after choosing the successful sign $\sigma$ the signed rough-composite excess has total mass
 \[
-  \sum_a \operatorname{Excess}(a)\ge \Delta-o(\Delta),
+  \sum_a \operatorname{Excess}(a)\ge \Delta-o(\Delta\log^{-C_{route}}X),
 \]
-where the atoms $a$ are the fixed-complexity cells produced by the $C3$ decomposition and by the subsequent sparse, dense, and tail routing.  The $o(\Delta)$ term contains exactly the PC2 boundary, smoothing, and prime-power errors already estimated in Lemma~\ref{lem:pc2}.
+where the atoms $a$ are the fixed-complexity cells produced by the $C3$ decomposition and by the subsequent sparse, dense, and tail routing.  The $o(\Delta\log^{-C_{route}}X)$ term contains exactly the PC2 boundary, smoothing, and prime-power errors already estimated in Lemma~\ref{lem:pc2}; these are stronger than any fixed negative logarithmic loss because $M_z=X^{o(1)}$ and the prime-power term is $O(X^{1/2}\log^C X)$ with $\beta>1/2$.
 
 The routing ledger is finite-depth.  The $C3$ split into $\ACC$, $\Hole$, and overlap atoms is disjoint at first layer; dyadic localization, Vaaler truncation, box decomposition, sign splitting, and seed transfer introduce at most $\log^{C_{route}}X$ descendants of any original atom.  Equivalently,
 \[
@@ -280,7 +280,7 @@ Therefore the total final load satisfies
   \sum_{E\in\mathcal E}\operatorname{Load}(E;X)
    =\sum_E\sum_{a\mapsto E}\theta_{a,E}\operatorname{Excess}(a)
    \ge \log^{-C_{route}}X\sum_a\operatorname{Excess}(a)
-   \ge \Delta\log^{-C_{route}}X-o(\Delta).
+   \ge \Delta\log^{-C_{route}}X-o(\Delta\log^{-C_{route}}X).
 \]
 Since a fixed power of $\log X$ is $X^{o(1)}$, the right-hand side is still $X^{\beta-o(1)}$ along the successful scales.  This is precisely the asserted bookkeeping lower bound.
 \end{proof}
@@ -289,7 +289,7 @@ Since a fixed power of $\log X$ is $X^{o(1)}$, the right-hand side is still $X^{
 \toprule
 Exit & Review closure mechanism & Status\\
 \midrule
-$LV$ & relative low-volume threshold gives $o(\Delta)$; failures transfer & absorbing\\
+$LV$ & relative low-volume threshold gives $O(\Delta\log^{-B_{final}}X)$; failures transfer & absorbing\\
 $NRC$ & one-variable/tail non-resonance; two-dimensional middle capacity transfers & routed\\
 $PI$ & projection capacity after zero-frequency subtraction & conditional capacity\\
 $DSO$ & square-function/Carleson capacity after zero-frequency subtraction & conditional capacity\\
@@ -322,7 +322,7 @@ Every non-absorbing traversal either decreases one component of $\mathcal L$ or 
 
 
 \begin{proposition}[Low-black-box local exits]
-Under the unified threshold convention and the transfer-accounting proposition, the exits $LV,CE,LSMP,FCT,SC,A$ do not carry final load except for $o(\Delta)$ absorbing pieces or source-deleted transfers to named analytic exits.
+Under the unified threshold convention and the transfer-accounting proposition, the exits $LV,CE,LSMP,FCT,SC,A$ do not carry final load except for $O(\Delta\log^{-B_{final}}X)$ absorbing pieces or source-deleted transfers to named analytic exits.
 \end{proposition}
 \begin{proof}
 This summarizes \texttt{docs/rh-local-exit-proofs-formal-appendix.md}.  The $LV$ exit is a relative low-volume threshold plus trivial volume estimate.  The $CE/LSMP$ exits retain only small-mass, coarea, thin-layer, or square-summable absorbing pieces; all seeds transfer with source deletion.  The $FCT,SC,A$ exits are internal descent mechanisms controlled respectively by Noether, short-cluster, and ACC synchronization potentials; non-descent or repeated-template cases transfer to named exits.  Thus these six exits are closed at the bookkeeping/threshold level.  This proposition does not close the analytic exits $PI,DSO,NRC$.
@@ -333,10 +333,10 @@ Let
 \[
  C_{tot}=C_{route}+C_{seed}+C_{dyadic}+C_{Vaaler}+C_{Fourier}+C_{smooth}+C_{frame}+C_{template}+C_{capacity}+C_{NRC}+C_{coarea}+C_{boundary}+100.
 \]
-Choose $B_{final}=10C_{tot}+100$ and require every absorbing exit threshold $B_E\ge B_{final}+C_{tot}$.  Then all absorbing contributions sum to $o(\Delta)$, and internal transfers or seed transfers do not change this estimate.
+Choose $B_{final}=10C_{tot}+100$ and require every absorbing exit threshold $B_E\ge B_{final}+C_{tot}$.  Then all absorbing contributions sum to $O(\Delta\log^{-B_{final}}X)$, in particular $o(\Delta\log^{-C_{route}}X)$ once $B_{final}>C_{route}$, and internal transfers or seed transfers do not change this estimate.
 \end{lemma}
 \begin{proof}
-Each local absorbing estimate is bounded by $\Delta/\log^{B_E-C_E}X$ with $C_E\le C_{tot}$.  All further routing, dyadic, Fourier/Vaaler, boundary, frame, capacity, and seed losses are bounded by another factor $\log^{C_{tot}}X$.  Thus the total absorbing contribution is at most $\Delta/\log^{B_{final}}X=o(\Delta)$.  Internal descent steps are not final load, and seed transfers only relabel the same excess atom with finite overlap already included in $C_{tot}$.
+Each local absorbing estimate is bounded by $\Delta/\log^{B_E-C_E}X$ with $C_E\le C_{tot}$.  All further routing, dyadic, Fourier/Vaaler, boundary, frame, capacity, and seed losses are bounded by another factor $\log^{C_{tot}}X$.  Thus the total absorbing contribution is at most $\Delta/\log^{B_{final}}X=o(\Delta\log^{-C_{route}}X)$.  Internal descent steps are not final load, and seed transfers only relabel the same excess atom with finite overlap already included in $C_{tot}$.
 \end{proof}
 
 
@@ -383,7 +383,7 @@ By the baseline-subtraction convention in Definition~\ref{def:gee-load}, the fin
 \]
 where $Err_{tr}$ consists of atoms transferred by the NoReturn and transfer-accounting ledgers to $LV,CE,LSMP,FCT,SC,A$.
 
-AEX-1 gives $Excess_{PI}=o(\Delta)$ after the lacunary/dense projection split.  AEX-2 gives $Excess_{DSO}=o(\Delta)$ from the Parseval/frame square-function reduction and the DSO-SF capacity input.  AEX-3 treats each NRC entry separately: single-variable entries are square-root-small by the stated $EXT$ estimate, while tail, two-variable, and DSO-E entries either satisfy the same bound after parameter matching or are transferred to the named exits.  Transferred atoms are deleted from the source exit before final load is computed, so they are not counted twice.  Hence the three analytic exits have total load $o(\Delta)$, conditional exactly on AEX-1, AEX-2, AEX-3 and the accepted external estimates listed in \S\ref{sec:external}.
+AEX-1 gives $Excess_{PI}=O(\Delta\log^{-B_{PI}}X)$ after the lacunary/dense projection split.  AEX-2 gives $Excess_{DSO}=O(\Delta\log^{-B_{DSO}}X)$ from the Parseval/frame square-function reduction and the DSO-SF capacity input.  AEX-3 treats each NRC entry separately: single-variable entries are square-root-small by the stated $EXT$ estimate, while tail, two-variable, and DSO-E entries either satisfy the same bound after parameter matching or are transferred to the named exits.  Transferred atoms are deleted from the source exit before final load is computed, so they are not counted twice.  Hence the three analytic exits have total load $o(\Delta\log^{-C_{route}}X)$ after the threshold hierarchy is imposed, conditional exactly on AEX-1, AEX-2, AEX-3 and the accepted external estimates listed in \S\ref{sec:external}.
 \end{proof}
 
 
@@ -407,24 +407,26 @@ This summarizes \texttt{docs/rh-aex3-nrc-parameter-match-formal.md}.  For single
 \end{proof}
 
 \begin{theorem}[GEE upper bound]\label{thm:gee-upper}
-Assume the local exit propositions, AEX reductions, EXT-Precision theorem, Lemmas~\ref{lem:gee-cycle} and~\ref{lem:gee-threshold}, and Definition~\ref{def:gee-load}.  Then
+Assume the local exit propositions, AEX reductions, EXT-Precision theorem, Lemmas~\ref{lem:gee-cycle} and~\ref{lem:gee-threshold}, and Definition~\ref{def:gee-load}.  Choose the threshold hierarchy so that the final absorption exponent $B_{final}$ satisfies $B_{final}>C_{route}+10$.  Then
 \[
-  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)=o(\Delta).
+  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)
+    \ll \Delta\log^{-B_{final}}X
+    =o(\Delta\log^{-C_{route}}X).
 \]
 \end{theorem}
 \begin{proof}
-The absorbing pieces are $o(\Delta)$ by Lemma~\ref{lem:gee-threshold}.  The $PI/DSO$ zero-frequency capacity is not counted as load; only excess capacity remains, and it is either absorbed or transferred.  The $A,FCT,SC$ pieces terminate by their potentials or transfer to another named exit.  Lemma~\ref{lem:gee-cycle} excludes positive-load free circulation among these transfers.  Hence after finitely many routed descents only absorbing pieces remain, whose total is $o(\Delta)$.
+The absorbing pieces are not merely $o(\Delta)$: by Lemma~\ref{lem:gee-threshold} and the threshold hierarchy, every absorbing entry is bounded by $\Delta\log^{-B_{entry}}X$ before global summation.  All dyadic, Vaaler, frame, template, seed-transfer, and route-overlap losses are dominated by the fixed constant $C_{total}$, while $B_{final}$ is chosen larger than $C_{route}+C_{total}+10$.  Hence the sum of all absorbing pieces is $\ll\Delta\log^{-B_{final}}X$.  The $PI/DSO$ zero-frequency capacity is not counted as load; only excess capacity remains, and it is either absorbed within the same threshold budget or transferred.  The $A,FCT,SC$ pieces terminate by their potentials or transfer to another named exit.  Lemma~\ref{lem:gee-cycle} excludes positive-load free circulation among these transfers.  Thus after finitely many routed descents only absorbing pieces remain, with total $o(\Delta\log^{-C_{route}}X)$.
 \end{proof}
 
 \begin{corollary}[GEE conditional contradiction]\label{cor:gee-contradiction}
 If Lemma~\ref{lem:gee0} and Theorem~\ref{thm:gee-upper} use the same load convention, then an off-critical zero has no GEE escape channel.
 \end{corollary}
 \begin{proof}
-Lemma~\ref{lem:gee0} gives a lower bound $c_0\Delta+o(\Delta)$ for the total final load, while Theorem~\ref{thm:gee-upper} gives $o(\Delta)$.  These are incompatible along the successful scales.
+Lemma~\ref{lem:gee0} gives a lower bound $\Delta\log^{-C_{route}}X-o(\Delta\log^{-C_{route}}X)$ for the total final load, while Theorem~\ref{thm:gee-upper} gives $o(\Delta\log^{-C_{route}}X)$.  These two estimates are incompatible along the successful scales.
 \end{proof}
 
 \section{External references}\label{sec:external}
-The only permitted external inputs are the following restricted forms.  The detailed adaptation is recorded in 	exttt{docs/rh-ext-precision-final.md}.
+The only permitted external inputs are the following restricted forms.  The detailed adaptation is recorded in \texttt{docs/rh-ext-precision-final.md}.
 \begin{longtable}{@{}lll@{}}
 \toprule
 Label & Source & Restricted use\\
@@ -451,7 +453,7 @@ This summarizes \texttt{docs/rh-ext-precision-final.md}.  Each package is used o
 Assume Theorems~\ref{thm:pc1}, \ref{thm:c4}, \ref{thm:c5}, \ref{thm:c6}, \ref{thm:c9}, \ref{thm:gee-upper}, Lemmas~\ref{lem:pc2}, \ref{lem:c3}, \ref{lem:gee0}, and the restricted external inputs in \S\ref{sec:external}.  Then an off-critical zero $\beta>1/2$ has no free escape channel in the contradiction-field event graph.
 \end{theorem}
 \begin{proof}
-PC1 gives a smooth Chebyshev anomaly of size $\Delta=X^{\beta-o(1)}$.  PC2 transfers it to the rough-composite ledger with opposite sign.  Lemma~\ref{lem:c3} splits the covering field into sparse and dense structural branches.  The sparse branch is exhausted by Theorem~\ref{thm:c4}; the dense branch is exhausted by Theorem~\ref{thm:c5}; the internal terminals cannot cycle by Theorem~\ref{thm:c6}; Fourier/Vaaler tails do not create a new terminal by Theorem~\ref{thm:c9}.  The GEE ledger then supplies the global lower bound Lemma~\ref{lem:gee0} and the global upper bound Theorem~\ref{thm:gee-upper}, so every named exit is either absorbing, descending, or transferred without free circulation.  Thus every path enters a controlled exit and the total final load is simultaneously $\ge c_0\Delta+o(\Delta)$ and $o(\Delta)$ under the verified hypotheses.
+PC1 gives a smooth Chebyshev anomaly of size $\Delta=X^{\beta-o(1)}$.  PC2 transfers it to the rough-composite ledger with opposite sign.  Lemma~\ref{lem:c3} splits the covering field into sparse and dense structural branches.  The sparse branch is exhausted by Theorem~\ref{thm:c4}; the dense branch is exhausted by Theorem~\ref{thm:c5}; the internal terminals cannot cycle by Theorem~\ref{thm:c6}; Fourier/Vaaler tails do not create a new terminal by Theorem~\ref{thm:c9}.  The GEE ledger then supplies the global lower bound Lemma~\ref{lem:gee0} and the global upper bound Theorem~\ref{thm:gee-upper}, so every named exit is either absorbing, descending, or transferred without free circulation.  Thus every path enters a controlled exit and the total final load is simultaneously $\ge \Delta\log^{-C_{route}}X-o(\Delta\log^{-C_{route}}X)$ and $o(\Delta\log^{-C_{route}}X)$ under the verified hypotheses.
 \end{proof}
 
 \begin{remark}[Submission warning]

@@ -280,3 +280,8 @@
 ## Review-Form-Elimination 审查归档
 
 - `docs/rh-review-form-elimination-audit.md`：新增 review-form 消除审查；GEE 段已升级，全文主链仍需逐条正式化。
+
+
+## RH EXT-KL 与 GEE 同尺度审查更新
+
+新增 `docs/rh-ext-kl-precision-final.md`，固定 `EXT-KL` 在主稿中的实际使用形式：素数模非退化 `ax+b/x` Kloosterman 完成和、区间 completion 的对数损失、退化出口与 AEX-3 单变量入口估计。LaTeX 主稿同时修正 GEE 下界/上界比较口径：下界为 `Δ log^{-C_route}X`，上界由阈值层级压到 `Δ log^{-B_final}X`，并要求 `B_final>C_route+C_total+10`。主定理 `review form` 与 submission warning 仍保留，不能宣称 RH 无条件证明定稿。

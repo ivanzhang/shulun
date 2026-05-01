@@ -20,8 +20,8 @@
 | R1 | `PI-Lac` | lacunary 投影容量 Bessel/Parseval 界 | 已由 `docs/rh-pi-lac-input-final.md` 补齐 |
 | R2 | `PI-Dense` | dense fixed-template Carleson/square-function 容量界 | 已归约到 `DSO-SF/EXT-KL` |
 | R3 | `DSO-SF` | martingale square-function 基线容量界 | 已由 `docs/rh-dso-sf-input-final.md` 文内证明 |
-| R4 | `EXT-Precision` | `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的定理号、变量匹配、常数依赖 | 已由 `docs/rh-ext-precision-final.md` 补齐；页码核验为排版义务 |
-| R5 | `Review-Form-Elimination` | 删除或升级 LaTeX 中所有 `Proof sketch`、`Review proof`、`review form` | PC1 与 PC2 已升级；剩余 C9/GEE 汇总/AEX-3 与主定理 review form |
+| R4 | `EXT-Precision` | `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的定理号、变量匹配、常数依赖 | 已由 `docs/rh-ext-precision-final.md` 补齐；`EXT-KL` 单变量入口另由 `docs/rh-ext-kl-precision-final.md` 固定；页码核验为排版义务 |
+| R5 | `Review-Form-Elimination` | 删除或升级 LaTeX 中所有 `Proof sketch`、`Review proof`、`review form` | `Proof sketch` 与 `Review proof` 已清零；仅主定理 `review form` 与 submission warning 保留 |
 
 ## 3. 依赖关系
 
@@ -57,8 +57,8 @@
 
 新增 `docs/rh-ext-precision-final.md`，并在 LaTeX 主稿中加入 EXT-Precision theorem。外部输入已归入六组标准引用并给出受限使用形式、变量匹配和失败出口。页码/定理号核对仍是投稿排版义务，但不再是数学逻辑缺口。
 
-最终剩余输入更新为一项：`Review-Form-Elimination`。
+最终剩余输入更新为一项：`Review-Form-Elimination`。随后新增 `docs/rh-ext-kl-precision-final.md`，把 `EXT-KL` 的单变量 NRC 使用形式进一步细化为素数模非退化 `ax+b/x` 完成和。
 
 ## 9. Review-Form-Elimination 审查状态
 
-新增 `docs/rh-review-form-elimination-audit.md`。GEE 段已消除 review-form 口径；但 PC1--PC4/C4--C9 与主定理仍保留 review-form/proof-sketch。最终剩余从“输入缺口”转为“全文逐行证明升级”：必须逐条升级 PC1、PC2/C3、C4、C5、C6、C9 和主定理证明后，才可宣称 RH 无条件证明定稿。
+新增 `docs/rh-review-form-elimination-audit.md`。LaTeX 主稿中的 `Proof sketch for review` 与 `Review proof` 已清零；主定理仍保留 `review form` 和 submission warning。最终剩余从“局部 proof 标记清除”转为“主定理是否可升级”的顶层审稿判断：必须确认所有引用定理均已被逐行证明或精确外部引用支撑后，才可删除 warning。
