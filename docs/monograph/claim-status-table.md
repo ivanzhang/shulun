@@ -175,3 +175,9 @@
 | 二次筛三线退化估计 | C'闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 324--330 节。最终取 `nu=0.4`：重合退化通过互异线定义为 0；双同步退化由45-Main残余 `<0.02` 给 `<0.008`；三重共块由K=3局部交叉 polylog 复杂度给 `<0.005`。三阶总项 `<0.02567<0.03`，C' 得 `rho0>=0.57`，审稿义务 C' 闭合。 |
 
 | 二次筛A/B最终缺口审查 | 不可无条件并入 | `docs/archive/monograph-reviews/two-point-secondary-sieve-gap-audit-2026-05-01.md` 已新增。顶刊标准下仍有 G1--G7 缺口：真实剩余集支撑/下界筛、TCA线性桥接真实块下界、SC2二阶相关下界、三线退化常数、`Q_eff<=polylog`形式化、平滑回退、任意偶数w均匀性。可作为条件研究命题章节并入，不能作为无条件证明。 |
+
+| G1补正工作台 | 未闭合/压缩为局部条件均衡 | `docs/monograph/two-point-gap-closure-workbench.md` 已新增。G1 真实剩余支撑不能用普通低阶权重绕过；最直接权重 `1_U` 真实支持但难计算。当前最小硬点压缩为“局部条件均衡引理”：真实二次筛剩余集 `U_Y` 对固定阶局部测试函数保持均衡，误差不依赖完整 CRT 周期。 |
+
+| G1局部均衡强度审查 | 强下界不可直接闭合 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G1.6--G1.9。局部条件均衡的下界方向接近强筛余项/parity barrier，不能直接无条件宣称。可行补正是 G1-Dichotomy：若真实剩余质量避开 Zero/低覆盖块，则产生 SC2/CRTDefect 异常。G1 需与 G2 合并处理。 |
+
+| G1-G3合并补正 | 压缩为真实块协方差引理 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G2.1--G2.4。G1真实支撑与G2真实块下界可合并：若真实剩余避开Zero/低覆盖块，则它与下一层覆盖函数产生异常正协方差；该协方差应由SC2/CRTDefect控制。因此G1--G3最小共同硬点为“真实块协方差引理”。 |
