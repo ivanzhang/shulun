@@ -51,6 +51,7 @@
 - `docs/rh-pc4-final-exclusion-framework.md`
 - `docs/rh-pc4-pi-seed.md`
 - `docs/rh-pc4-pi-cap-carleson.md`
+- `docs/rh-pc4-dense-scale-orthogonality.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`

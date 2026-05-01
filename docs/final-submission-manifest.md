@@ -31,6 +31,7 @@
 - `docs/rh-pc4-final-exclusion-framework.md`：PC-4 最终排斥框架与 RH 总攻地图。
 - `docs/rh-pc4-pi-seed.md`：PC4-PI 跨尺度投影能量种子命题。
 - `docs/rh-pc4-pi-cap-carleson.md`：PC4-PI 跨尺度 Carleson 容量上界路线。
+- `docs/rh-pc4-dense-scale-orthogonality.md`：PC4-PI 密集尺度正交接口。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
