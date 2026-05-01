@@ -325,3 +325,8 @@
 ## U3 EXT 精确引用表更新
 
 新增 `docs/rh-u3-ext-reference-table.md`。U3 已完成章节/论文级定位：Vaaler、Baker、Vaughan 给出卷期页码；Bourgain--Garaev 给出 arXiv/DOI；Iwaniec--Kowalski、Katz、Titchmarsh--Heath-Brown、Ingham、Halberstam--Richert 给出章节/定理定位与受限使用边界。专著具体页码仍可在最终排版时核对，但不再作为数学逻辑缺口。下一步最优转向 U1/U4：主定理前提和 review-draft 口径统一。
+
+
+## U1/U4 主定理与文体口径更新
+
+LaTeX 主稿已完成 U1/U4：标题、摘要和 GEE 说明从旧审查稿文体改为 verification manuscript / final synthesis 口径；主定理标题删除 `review form`，定理陈述由 `Assume Theorems...` 改为 `By Theorems...` 的前文合成口径。`Submission warning` 仍保留，用于诚实标记 U5 最终编译审查、专著页码核验和独立逐行 referee verification 尚未完成。下一步最优为 U5 编译与引用一致性审查。

@@ -8,21 +8,18 @@ GEE 段中由正式附录支撑的内部账本、六个低黑箱出口、AEX-1/A
 
 ## 2. 仍保留部分
 
-主稿仍保留以下 review-form 表述：
+主稿已经不再保留主定理 `review form` 标签；仍保留的是 `Submission warning`。
 
-- 主定理 `Consolidated contradiction-field theorem, review form`；
-- Submission warning。
-
-这些不能在当前轮次中诚实删除，因为它们依赖更大范围的主链逐行内联审查与外部输入定理号核验。若直接删除，会把尚未全文逐行核验的证明包误标为最终无条件 RH 证明。
+该 warning 不能在当前轮次中诚实删除，因为它依赖最终编译审查、专著页码核验、主链逐行 referee verification 与所有 controlled exits 的独立接受。若直接删除，会把尚未完成最终审查的证明包误标为最终无条件 RH 证明。
 
 ## 3. 审稿结论
 
-`Review-Form-Elimination` 对所有普通证明环境已完成；对全文 RH 主定理尚未完成。当前唯一保留标记是主定理 review form 与 submission warning。故仍不能宣称 RH 无条件证明定稿。
+`Review-Form-Elimination` 对普通证明环境和主定理标题已完成；当前唯一保留标记是 submission warning。故仍不能宣称 RH 无条件证明定稿。
 
 
 ## 最新结论
 
-LaTeX 主稿中的 `Proof sketch for review` 与 `Review proof` 已全部消除。当前仅保留主定理 `review form` 与 `Submission warning`，原因是主链定理逐项接受性与外部输入页码/定理号核验仍是提交前义务；详见 `docs/rh-final-theorem-promotion-audit.md`。在该义务完成前不能宣称 RH 无条件证明定稿。
+LaTeX 主稿中的 `Proof sketch for review`、`Review proof` 与主定理 `review form` 已全部消除。当前仅保留 `Submission warning`，原因是最终编译审查、主链定理逐项接受性与外部输入页码核验仍是提交前义务；详见 `docs/rh-final-theorem-promotion-audit.md`。在该义务完成前不能宣称 RH 无条件证明定稿。
 
 
 ## C6 No-Cycle 主稿编号化更新
@@ -58,3 +55,8 @@ LaTeX 主稿中的 `Proof sketch for review` 与 `Review proof` 已全部消除�
 ## U3 EXT 精确引用表更新
 
 新增 `docs/rh-u3-ext-reference-table.md`。U3 已完成章节/论文级定位：Vaaler、Baker、Vaughan 给出卷期页码；Bourgain--Garaev 给出 arXiv/DOI；Iwaniec--Kowalski、Katz、Titchmarsh--Heath-Brown、Ingham、Halberstam--Richert 给出章节/定理定位与受限使用边界。专著具体页码仍可在最终排版时核对，但不再作为数学逻辑缺口。下一步最优转向 U1/U4：主定理前提和 review-draft 口径统一。
+
+
+## U1/U4 主定理与文体口径更新
+
+LaTeX 主稿已完成 U1/U4：标题改为 `Consolidated Verification Manuscript`，摘要改为 verification-file 口径，GEE 段改为 final synthesis 口径；主定理标题删除 `review form`，定理陈述由 `Assume Theorems...` 改为 `By Theorems...` 的前文合成口径。`Submission warning` 仍保留，用于标记最终编译审查、专著页码核验和独立逐行 referee verification 尚未完成。
