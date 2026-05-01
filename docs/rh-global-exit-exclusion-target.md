@@ -199,3 +199,9 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## Global GEE 合成审查
 
 新增 `docs/rh-gee-global-synthesis-audit.md`。该文给出九出口状态矩阵，并诚实标注当前为“GEE 条件合成闭合稿”：仍需事件图无循环总审查、阈值常数总表、Load 口径统一和单篇内联证明，不能直接宣称 RH 已无条件证明。
+
+## GEE 最终一致性补充
+
+新增 `docs/rh-gee-event-graph-no-cycle-audit.md`、`docs/rh-gee-threshold-constant-table.md` 与 `docs/rh-gee-load-convention-unification.md`。这三篇分别补齐：九出口 seed/内部转移事件图无循环审查、全局阈值常数层级选择、以及 `Load` 只登记超额偏差的统一约定。
+
+因此 Global-Exit-Exclusion 的当前状态为：出口矩阵、事件图、阈值和负担口径已经形成一致的条件合成证明包；剩余审稿义务集中在单篇内联化、外部定理精确引用、以及所有命名引理逐条转写为可独立核验的正式证明。

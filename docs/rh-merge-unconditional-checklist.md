@@ -133,7 +133,15 @@
 ## Global GEE 合成审查清单
 
 - [x] 九出口闭合口径矩阵。
-- [ ] 事件图无循环总审查：逐环标注下降量或容量消耗。
-- [ ] 阈值常数总表：统一所有 `Δ/log^B X` 与 `log^C X` 损失。
-- [ ] Load 口径统一：全文只登记超额偏差。
+- [x] 事件图无循环总审查：逐环标注下降量或容量消耗。
+- [x] 阈值常数总表：统一所有 `Δ/log^B X` 与 `log^C X` 损失。
+- [x] Load 口径统一：全文只登记超额偏差。
 - [ ] 单篇主稿内联化：将关键定义和定理整理成顶刊审稿稿。
+
+## GEE 最终一致性文件补充
+
+- `docs/rh-gee-event-graph-no-cycle-audit.md`：补齐九出口转移图与 Lyapunov 无循环审查。
+- `docs/rh-gee-threshold-constant-table.md`：补齐全局阈值常数包与 `B_final` 选择规则。
+- `docs/rh-gee-load-convention-unification.md`：补齐最终 `Load` 口径，统一为相对零频基线的超额偏差。
+
+审稿结论：这三项消除了 GEE 合成层面的主要口径不一致，但清单仍不得标记为“RH 无条件证明完成”；最终剩余为单篇主稿内联、外部输入精确引用与逐条证明核验。

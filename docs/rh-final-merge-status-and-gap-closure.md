@@ -166,3 +166,9 @@
 - `docs/rh-gee-a-load-bound-audit.md`：GEE-A 已转为容量吸收 + 内部同步转移；下一步为全局 GEE 合成审查。
 
 - `docs/rh-gee-global-synthesis-audit.md`：全局 GEE 合成审查完成；结论为条件合成闭合，仍需事件图、常数表、Load 统一和单篇内联。
+
+## 6.15 GEE 合成一致性审查补齐
+
+新增 `docs/rh-gee-event-graph-no-cycle-audit.md`、`docs/rh-gee-threshold-constant-table.md` 与 `docs/rh-gee-load-convention-unification.md`。三者分别补齐全局事件图无循环、阈值常数层级与 `Load` 超额偏差口径。由此，`docs/rh-gee-global-synthesis-audit.md` 中列出的前三项最终审稿义务已形成可审查文稿；剩余主要义务为单篇内联证明、外部输入精确引用和逐条命名引理核验。
+
+更新后的状态定理：当前包可称为 RH/GEE 条件合成闭合审稿包，而非 RH 无条件证明定稿。

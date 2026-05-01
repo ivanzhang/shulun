@@ -193,3 +193,13 @@
 - `docs/rh-gee-a-load-bound-audit.md`：新增 A/ACC 同步出口的 GEE 审查。
 
 - `docs/rh-gee-global-synthesis-audit.md`：新增全局 GEE 合成审查；当前仍是条件合成闭合稿。
+
+## RH/GEE 最新归档项
+
+本次新增归档：
+
+- `docs/rh-gee-event-graph-no-cycle-audit.md`
+- `docs/rh-gee-threshold-constant-table.md`
+- `docs/rh-gee-load-convention-unification.md`
+
+归档状态：三项均为 GEE 合成一致性审查文件，用于固定事件图、阈值常数和 `Load` 定义。提交口径为“条件合成审查补强”，不得在 manifest 中改写为“RH 已无条件证明”。

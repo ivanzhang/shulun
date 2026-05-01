@@ -212,3 +212,11 @@
 - `docs/rh-gee-a-load-bound-audit.md`：GEE-A 负担上界审查，把 ACC 同步改写为容量吸收与内部转移。
 
 - `docs/rh-gee-global-synthesis-audit.md`：Global GEE 九出口合成审查，列出条件合成定理与剩余审稿义务。
+
+## GEE 合成审查附录补充
+
+- `docs/rh-gee-event-graph-no-cycle-audit.md`：作为 GEE seed 转移与内部递归的无循环附录。
+- `docs/rh-gee-threshold-constant-table.md`：作为 GEE 全局对数损失和阈值常数附录。
+- `docs/rh-gee-load-convention-unification.md`：作为 GEE 负担定义与零频基线扣除附录。
+
+这些附录用于支撑 `docs/rh-gee-global-synthesis-audit.md` 的条件合成定理；若进入正式论文，需把定义、引理和依赖关系迁入主文或编号附录。
