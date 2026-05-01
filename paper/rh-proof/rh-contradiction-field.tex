@@ -210,8 +210,16 @@ $A$ & ACC synchronization potential descends; repeated templates transfer & inte
 \bottomrule
 \end{longtable}
 
+
+\begin{proposition}[Transfer-accounting appendix]
+The seed transfers, internal descents, absorbing stops, and finite refinements used in the GEE event graph can be normalized so that no excess atom is counted simultaneously at a source and a target exit, and the total final routing multiplicity for each atom is at most $\log^{C_{route}+C_{transfer}}X$.
+\end{proposition}
+\begin{proof}[Review proof]
+This is the LaTeX summary of \texttt{docs/rh-transfer-accounting-formal-appendix.md}.  The allowed operations are finite refinement, source-deleting relabelling, internal descent, and absorption.  Relabelling preserves mass and deletes the source copy; internal descent is not final load; absorption stops; refinement has fixed logarithmic overlap.  The $A,FCT,SC$ descents are bounded by their integer potentials.  Summing the logarithmic refinement losses gives $C_{transfer}$.
+\end{proof}
+
 \begin{lemma}[GEE event no-cycle]\label{lem:gee-cycle}
-Assume Seed-Transfer, Baseline-Subtraction, the three internal potentials for $A,FCT,SC$, the $PI/DSO$ capacity ledger, the $LV/LSMP/CE$ absorbing thresholds, and the $NRC$ routing alternatives.  Then the GEE event graph has no infinite directed cycle carrying positive final load.
+Assume the transfer-accounting proposition, Baseline-Subtraction, the three internal potentials for $A,FCT,SC$, the $PI/DSO$ capacity ledger, the $LV/LSMP/CE$ absorbing thresholds, and the $NRC$ routing alternatives.  Then the GEE event graph has no infinite directed cycle carrying positive final load.
 \end{lemma}
 \begin{proof}[Review proof]
 An $A$ self-return either decreases the ACC potential or is transferred; an $FCT$ self-return either decreases its Noether potential or is transferred; an $SC$ self-return either decreases its short-cluster potential or is transferred.  A $PI/DSO$ self-return consumes excess capacity after subtracting zero frequency.  The $CE/LSMP$ nodes do not retain transferred seeds, while $LV$ and $NRC$ are absorbing or routing nodes.  For mixed cycles use the lexicographic Lyapunov vector

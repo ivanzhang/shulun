@@ -219,3 +219,7 @@
 ## RH/GEE LaTeX 主稿迁移归档
 
 已将 GEE 合成层迁入 `paper/rh-proof/rh-contradiction-field.tex`，并新增 `docs/rh-unconditional-final-gap-audit.md`。当前归档明确：剩余障碍是四项最小割集，而非缺少更多分支框架。
+
+## Transfer-Accounting 审稿义务归档
+
+新增 `docs/rh-transfer-accounting-formal-appendix.md` 并接入 LaTeX 主稿。当前最小割集由四项缩为三项：外部精确引用、九出口局部证明、review-form 消除。

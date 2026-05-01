@@ -216,3 +216,10 @@
 - `docs/rh-unconditional-final-gap-audit.md`：新增 RH 无条件化最终剩余缺口审查，抽取 `EXT-Precision`、`Local-Exit-Proofs`、`Transfer-Accounting`、`Review-Form-Elimination` 四项最小割集。
 
 归档口径：本次完成的是主稿迁移和缺口定位，不是 RH 无条件证明定稿。
+
+## Transfer-Accounting 附录归档
+
+- `docs/rh-transfer-accounting-formal-appendix.md`：新增转移账本形式化附录，证明 seed 转出、内部下降、吸收停止和有限细分不重复计数且只造成多对数有限重叠。
+- `paper/rh-proof/rh-contradiction-field.tex`：GEE 节新增 Transfer-accounting proposition。
+
+归档口径：该项闭合的是内部账本义务，不等于闭合外部解析输入或九出口局部上界。

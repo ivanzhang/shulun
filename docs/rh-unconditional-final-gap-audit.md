@@ -41,7 +41,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 
 1. `EXT-Precision`：外部定理逐条精确适配；
 2. `Local-Exit-Proofs`：九出口局部命题逐条证明；
-3. `Transfer-Accounting`：所有 seed/内部转移权重守恒和有限重叠逐条证明；
+3. `Transfer-Accounting`：已由 `docs/rh-transfer-accounting-formal-appendix.md` 补齐；
 4. `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
 
 若四项任一未完成，则不能声称 RH 已无条件证明。
@@ -58,3 +58,9 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 ## 5. 审稿结论
 
 当前仓库已经形成 RH/GEE 条件合成的单篇审稿主稿和完整工程归档；但按顶刊标准，尚未完成 RH 无条件证明。任何最终稿必须保留这一结论，直到上述最小割集全部被逐行证明或精确引用替代。
+
+## 6. Transfer-Accounting 补强状态
+
+新增 `docs/rh-transfer-accounting-formal-appendix.md`，并在 `paper/rh-proof/rh-contradiction-field.tex` 的 GEE 节加入 Transfer-accounting proposition。该补强把 seed 转出、内部下降、吸收停止和有限细分统一为四类允许操作，证明质量不增、源目标不双计、最终路由重叠为 `log^{C_route+C_transfer}X`。
+
+因此最小剩余割集更新为三项：`EXT-Precision`、`Local-Exit-Proofs`、`Review-Form-Elimination`。其中 `Local-Exit-Proofs` 仍包含九出口局部上界本身，不能由本账本附录替代。

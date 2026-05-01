@@ -157,5 +157,13 @@
 - [x] 最终剩余缺口审查：`docs/rh-unconditional-final-gap-audit.md` 已抽取最小割集。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
 - [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明。
-- [ ] `Transfer-Accounting`：seed/内部转移权重守恒和有限重叠逐条证明。
+- [x] `Transfer-Accounting`：seed/内部转移权重守恒和有限重叠逐条证明。
+- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+
+## Transfer-Accounting 补强更新
+
+- [x] `Transfer-Accounting`：`docs/rh-transfer-accounting-formal-appendix.md` 已证明 seed/内部转移权重守恒、源目标去重与有限重叠。
+- [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Transfer-accounting proposition。
+- [ ] `EXT-Precision`：外部定理逐条精确适配。
+- [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
