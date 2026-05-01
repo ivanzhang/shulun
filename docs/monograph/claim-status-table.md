@@ -164,7 +164,7 @@
 
 | 二次筛中尺度K2全局复核 | 参数通过/I1已定理化 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 297--303 节。最终 `alpha0=0.75` 时，若使用薄层递推、固定阶局部交叉与硬骨架截断 `R<=polylog(P)`，则最坏层 `Y=P^0.75` 的 K=2 误差为 `P^-0.5 polylog(P)=o(1)`，层数累积仍 `o(1)`。第 340--344 节已把 `Q_eff<=polylog` 内联证明；剩余是 SC2误差、Zero Mass块分布、平滑回退正式定理化。 |
 
-| 二次筛剩余审稿义务A-D | I1/I2/I4已放电，剩 I3 | `docs/monograph/two-point-secondary-sieve-research.md` 第 340--344 节已内联证明 A/I1 固定阶局部交叉 `Q_eff,k<=polylog(P)`；第 345--349 节已把 I4 Zero Mass 与平滑回退放电为 I3 矩常数和端点 Directional Balance 的推论；第 350--353 节已把 I2 自适应分层放电为贪心分层/Single-Prime CRTDefect 二分。唯一剩余核心为 I3：`SC2` 二阶相关、45-Main、小 `q<=100` 有限包、Single-Prime CRTDefect、I4 所需矩常数和端点平衡。 |
+| 二次筛剩余审稿义务A-D | I1/I2/I4已放电，剩 I3-Core | `docs/monograph/two-point-secondary-sieve-research.md` 第 340--344 节已内联证明 A/I1 固定阶局部交叉 `Q_eff,k<=polylog(P)`；第 345--349 节已把 I4 Zero Mass 与平滑回退放电为 I3 矩常数和端点 Directional Balance 的推论；第 350--353 节已把 I2 自适应分层放电为贪心分层/Single-Prime CRTDefect 二分；第 354--359 节把小素包压缩为 `q=2` 奇数骨架，并将唯一剩余核心定理化为 I3-Core：真实剩余 SC2/CRTDefect 相关定理。当前未完成无条件化。 |
 
 | 二次筛Zero Mass义务修正 | 更稳路线 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 309--314 节。逐行审查发现用三阶矩直接证明 `M1>=0.58,M2>=0.28` 不够稳；改为 C'：加权 Bonferroni 直接证明 `sum X_B 1_{R=0}/sum X_B>=0.30`。模型值约 `0.604`，只需一阶命中、SC2二阶下界、三阶尾部三个矩估计，余量更大。 |
 
@@ -206,4 +206,4 @@
 
 | 正式稿工程义务完成 | 已并入正式研究稿/合著条件章节 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 331--334 节：Single-Prime CRTDefect 出口、自适应真实命中分层、小 `q<=100` 有限包表。`paper/contradiction-field-monograph/contradiction-field-monograph.tex` 已同步更新条件命题四输入和参数为 `nu_j^real<=0.4`。LaTeX 编译通过。 |
 
-| 二次筛窗口压缩版 | 条件加强/剩余I3核心包 | 新增 `docs/monograph/two-point-window-compression-and-unconditionality.md`，并在 `docs/monograph/two-point-secondary-sieve-research.md` 第 335--353 节写入窗口压缩审查、I1 内联证明、I4 放电证明和 I2 分层二分。当前方法在剩余 I3 核心包成立时，可把后半窗口从约 `P/2` 行压缩到 `H_min^cond(P;eps)=ceil((C_Q/eps)P^{1/2}(log P)^C)` 行；渐近写法为 `ceil(P^{1/2}(log P)^{C_*})`, `C_*>C`。固定行或纯对数行仍超出现有 SC2 误差控制。 |
+| 二次筛窗口压缩版 | 条件加强/剩余I3-Core | 新增 `docs/monograph/two-point-window-compression-and-unconditionality.md`，并在 `docs/monograph/two-point-secondary-sieve-research.md` 第 335--359 节写入窗口压缩审查、I1 内联证明、I4 放电证明、I2 分层二分和 I3-Core 定理化。当前方法在 I3-Core 成立时，可把后半窗口从约 `P/2` 行压缩到 `H_min^cond(P;eps)=ceil((C_Q/eps)P^{1/2}(log P)^C)` 行；渐近写法为 `ceil(P^{1/2}(log P)^{C_*})`, `C_*>C`。I3-Core 尚未逐行无条件证明。 |
