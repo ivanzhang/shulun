@@ -61,6 +61,7 @@
 - `docs/rh-pc4-acc-closure-theorem.md`：PC4-A ACC 不同步分支闭合命题。
 - `docs/rh-pc4-terminal-closure-audit.md`：PC4 终端输入依赖图与无循环审查。
 - `docs/rh-pc4-terminal-final-no-cycle-audit.md`：PC4 A/PI/FCT/SC 统一终端无循环事件图最终审查。
+- `docs/rh-pc4-external-event-absorption-audit.md`：PC4 LV/LSMP/NRC/CE/DSO/CapacityFail 外部事件吸收总审查。
 - `docs/rh-pc4-short-cluster-seed.md`：PC4-SC 短簇跨尺度排斥种子命题。
 - `docs/rh-pc4-short-cluster-mass-balance.md`：PC4-SC 短簇质量平衡命题。
 - `docs/rh-pc4-short-cluster-local-density.md`：PC4-SC 短窗锚复用局部密度命题。

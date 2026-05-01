@@ -98,6 +98,6 @@ lacunary 包只按 disjoint 容量记账；dense 包由正交闭合转 DSO/FCT/N
 
 本文仍保留清晰的数学诚实口径：它闭合的是 PC4 终端事件图的循环结构，不自动证明 RH。剩余义务集中在：
 
-1. 外部事件 `LV/LSMP/NRC/CE/DSO/CapacityFail` 的逐项无条件化；
+1. 外部事件 `LV/LSMP/NRC/CE/DSO/CapacityFail` 的逐项吸收审查见 `docs/rh-pc4-external-event-absorption-audit.md`；
 2. PC4-Dual 与 DGap 接口到 `A/PI/FCT/SC` 的精确匹配；
 3. PC1--PC3 到 PC4 输入的常数和尺度一致性审查。
