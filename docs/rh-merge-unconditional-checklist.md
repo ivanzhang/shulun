@@ -41,3 +41,7 @@
 ## 5. Global-Exit-Exclusion 核心硬点
 
 顶刊审查后，当前真正剩余不是新增结构分支，而是 `docs/rh-global-exit-exclusion-target.md` 中的全局出口排斥定理。必须证明 GEE-0 负担分配和九个出口上界 `GEE-A/PI/FCT/SC/LV/LSMP/CE/DSO/NRC`，才能把“无自由逃逸通道”升级为真正矛盾 `c_0Δ<=o(Δ)`。
+
+## 6. GEE-0 负担分配推进
+
+新增 `docs/rh-gee0-load-distribution.md`。该文定义统一 Chebyshev 权、异常原子集合、路由映射和 `Load(E;X)`，并证明在 PC1/PC2/C3/C4/C5/C9 成立且路由有限重叠时，`Σ_E Load(E;X)>=X^{β-o(1)}`。剩余审稿义务为 PC2 边界误差完全内联与路由重叠常数表。

@@ -123,7 +123,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 
 | 项 | 当前状态 | 是否顶刊闭合 |
 |---|---|---|
-| GEE-0 | 账本路线明确；需统一 Chebyshev 权和有限重叠 | 未闭合 |
+| GEE-0 | 已写入 `docs/rh-gee0-load-distribution.md`；剩 PC2 边界误差内联与路由重叠常数表 | 半闭合 |
 | GEE-LV | 最接近闭合；需逐入口 `Vol_eff` 表 | 半闭合 |
 | GEE-NRC | 有 `EXT-KL` 来源；缺参数匹配总和 | 未闭合 |
 | GEE-DSO | 有 square-function 思路；缺线性负担转换 | 未闭合 |
@@ -136,7 +136,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 
 ## 6. 下一步最优攻坚顺序
 
-1. **先证明 GEE-0**：没有负担分配不等式，所有出口上界无法合成矛盾。
+1. **补齐 GEE-0 两个审稿义务**：PC2 边界误差完全内联、路由有限重叠常数表。
 2. **再证明 GEE-LV 与 GEE-NRC**：一个体积型、一个外部解析型，最容易给出明确模板。
 3. **再攻 GEE-DSO/PI**：square-function 到线性负担转换是核心桥。
 4. **最后攻 GEE-A/FCT/SC/LSMP/CE**：这些高度依赖全局势函数和复杂度预算。
