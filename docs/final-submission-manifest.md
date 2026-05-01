@@ -261,3 +261,8 @@
 
 - `docs/rh-pi-lac-input-final.md`：新增 PI-Lac lacunary 投影容量最终输入。
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 PI-Lac input proposition。
+
+## PI-Dense 归档
+
+- `docs/rh-pi-dense-input-final.md`：新增 PI-Dense dense 投影容量归约，将其并入 `DSO-SF/EXT-KL`。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 PI-Dense reduction proposition。

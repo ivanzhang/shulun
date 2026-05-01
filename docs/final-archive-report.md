@@ -251,3 +251,7 @@
 ## PI-Lac 归档
 
 新增 `docs/rh-pi-lac-input-final.md` 并接入 LaTeX 主稿。当前剩余容量输入为 `PI-Dense` 与 `DSO-SF`。
+
+## PI-Dense 归档
+
+新增 `docs/rh-pi-dense-input-final.md` 并接入 LaTeX 主稿。当前容量剩余集中为 `DSO-SF`。

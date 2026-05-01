@@ -266,6 +266,14 @@ This summarizes \texttt{docs/rh-aex1-projection-capacity-formal.md}.  Baseline s
 \end{proof}
 
 
+
+\begin{proposition}[PI-Dense reduction]
+The dense fixed-template projection capacity input is not an independent final input: it reduces to the CRT martingale square-function ledger DSO-C/TC, the Euler local factor matching DSO-E/EXT-KL, and the remaining DSO-SF baseline capacity input.
+\end{proposition}
+\begin{proof}[Review proof]
+This summarizes \texttt{docs/rh-pi-dense-input-final.md}.  Fixed-template dense packs pull back to the CRT inverse-limit space.  DSO-C gives martingale orthogonality, while TC verifies natural refinement or transfers to named exits.  Euler local complexity is handled by DSO-E: non-resonant pieces use EXT-KL/NRC, resonant failures enter FCT, and small-mass pieces enter LSMP.  The only remaining quantitative dense capacity input is DSO-SF, which bounds the martingale square-function baseline after zero-frequency subtraction.
+\end{proof}
+
 \begin{proposition}[AEX-2 DSO square-function]
 The DSO square-function inequality reduces to a pure Parseval/frame ledger plus one remaining capacity input DSO-SF controlling the martingale square-function baseline.
 \end{proposition}

@@ -18,7 +18,7 @@
 | 编号 | 输入 | 作用 | 当前状态 |
 |---|---|---|---|
 | R1 | `PI-Lac` | lacunary 投影容量 Bessel/Parseval 界 | 已由 `docs/rh-pi-lac-input-final.md` 补齐 |
-| R2 | `PI-Dense` | dense fixed-template Carleson/square-function 容量界 | 需正式证明或精确引用 |
+| R2 | `PI-Dense` | dense fixed-template Carleson/square-function 容量界 | 已归约到 `DSO-SF/EXT-KL` |
 | R3 | `DSO-SF` | martingale square-function 基线容量界 | 需正式证明或精确引用 |
 | R4 | `EXT-Precision` | `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的定理号、变量匹配、常数依赖 | 需外部引用精确化 |
 | R5 | `Review-Form-Elimination` | 删除或升级 LaTeX 中所有 `Proof sketch`、`Review proof`、`review form` | 需在 R1--R4 完成后执行 |
@@ -40,3 +40,9 @@
 ## 5. PI-Lac 完成状态
 
 新增 `docs/rh-pi-lac-input-final.md`，并在 LaTeX 主稿中加入 PI-Lac input proposition。`PI-Lac` 已由强 lacunary Mellin 支撑有限重叠、单尺度非终端偏差有界和 Baseline-Subtraction 闭合。最终剩余输入从五项降为四项：`PI-Dense`、`DSO-SF`、`EXT-Precision`、`Review-Form-Elimination`。
+
+## 6. PI-Dense 归约状态
+
+新增 `docs/rh-pi-dense-input-final.md`，并在 LaTeX 主稿中加入 PI-Dense reduction proposition。`PI-Dense` 不再作为独立最终输入，而归约到 `DSO-SF` 与 `EXT-KL`：dense pack 的 CRT martingale 正交由 DSO-C/TC 处理，Euler 局部复杂度由 DSO-E/EXT-KL/FCT/LSMP 接收，剩余全局容量基线正是 `DSO-SF`。
+
+最终剩余输入更新为三项：`DSO-SF`、`EXT-Precision`、`Review-Form-Elimination`。

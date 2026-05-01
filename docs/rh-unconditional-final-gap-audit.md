@@ -100,3 +100,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 ## 13. PI-Lac 完成
 
 新增 `docs/rh-pi-lac-input-final.md`。该文把强 lacunary 投影包的容量界写成正式输入：Mellin 支撑有限重叠，零频容量由 Baseline-Subtraction 扣除，超容量失败进入命名出口。因此 `PI-Lac` 可视为完成，AEX-1 剩余集中到 `PI-Dense`。
+
+## 14. PI-Dense 归约完成
+
+新增 `docs/rh-pi-dense-input-final.md`。该文证明 PI-Dense 不是独立剩余输入，而归约到 `DSO-SF` 和 `EXT-KL`：DSO-C/TC 处理固定模板 dense pack，DSO-E/EXT-KL/FCT/LSMP 接收 Euler 局部复杂度，剩余容量基线为 `DSO-SF`。
