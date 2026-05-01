@@ -81,6 +81,7 @@
 - `docs/rh-pc1-pc4-interface-closure-audit.md`：RH 反例矛盾场 PC1-PC4 接口闭合审查。
 - `docs/rh-global-interface-consistency-audit.md`：RH 总攻 PC1--PC2--PC3--PC4--Dual 全文接口一致性审查。
 - `docs/rh-contradiction-field-final-assault.md`：RH 反例矛盾场总攻框架。
+- `docs/rh-final-consistency-review.md`：RH 反例矛盾场全文最终一致性总审查。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。

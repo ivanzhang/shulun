@@ -128,4 +128,4 @@ PC4 各 closure 文档的共同作用是排除前六类作为最终逃逸通道�
 
 ## 9. 总攻框架入口
 
-完整的全局反例矛盾场合并稿见 `docs/rh-contradiction-field-final-assault.md`。该文件把 PC1-PC4、PC4-Dual 与 DGap 三接口组织成一条条件化闭合链条，并列出后续无条件化清单。
+完整的全局反例矛盾场合并稿见 `docs/rh-contradiction-field-final-assault.md`；全文最终一致性总审查见 `docs/rh-final-consistency-review.md`。旧版后续无条件化清单已由后续审稿矩阵更新。

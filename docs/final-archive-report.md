@@ -105,6 +105,7 @@
 - `docs/rh-pc1-pc4-interface-closure-audit.md`
 - `docs/rh-global-interface-consistency-audit.md`
 - `docs/rh-contradiction-field-final-assault.md`
+- `docs/rh-final-consistency-review.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`
