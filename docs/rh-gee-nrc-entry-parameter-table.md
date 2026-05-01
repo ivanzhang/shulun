@@ -105,3 +105,7 @@ Tail/RKS 层若满足低体积阈值
 ## 8. NRC-2D 专项推进
 
 新增 `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`。该文修正了 BG 混用风险：加性分离相位 `e_P(a/q_1+b/q_2)` 应先走有限秩窗口与容量门槛路线；剩余义务压缩为 `PPI-Rank` 与 `Capacity-Match` 两项。
+
+## 9. PPI-Rank 状态更新
+
+`docs/rh-ppi-rank-finite-separation-lemma.md` 已补齐二维加性分离权重的有限秩引理。`NRC-2D` 当前剩余最小硬点为 `Capacity-Match`：证明承载固定比例 PPI 偏差的主层必须满足 `V_Q>=Plog^{B+C}X`，否则转入 `LV/LSMP`。

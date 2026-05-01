@@ -142,3 +142,5 @@
 `docs/rh-gee-nrc-entry-parameter-table.md` 将 NRC 出口拆成四个入口。当前只允许声明单变量 PPI 与 Tail/RKS 分流闭合；双变量 PPI 的 `NRC-2D` 和 DSO-E 的 `DSO-SF` 仍是无条件化缺口。
 
 - `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`：NRC-2D 双变量非共振入口硬点分解，修正 BG 混用风险，压缩为 `PPI-Rank` 有限秩与 `Capacity-Match` 容量门槛两项义务。
+
+- `docs/rh-ppi-rank-finite-separation-lemma.md`：PPI-Rank 已补齐；NRC-2D 当前剩 `Capacity-Match`。

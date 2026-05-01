@@ -151,3 +151,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## NRC-2D 专项状态
 
 新增 `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`。当前最小硬点已从“二维 NRC 泛泛未闭合”压缩为：证明加性分离相位的 `PPI-Rank` 有限秩窗口引理与 `Capacity-Match` 主层容量门槛；若出现乘积倒数相位，再单独调用 `EXT-BG` 支路。
+
+## PPI-Rank 状态更新
+
+新增 `docs/rh-ppi-rank-finite-separation-lemma.md`。`NRC-2D` 的有限秩义务已转为可审查引理；当前剩余为 `Capacity-Match` 容量门槛。

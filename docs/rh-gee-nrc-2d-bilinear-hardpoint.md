@@ -112,3 +112,7 @@ PPI-U3 在双锚主层产生的非零项可写成
 2. **Capacity Match Lemma：** 证明 PPI 主层若要承载固定比例可检测偏差，则 `V_Q>=Plog^{B+C}X`；否则它已经满足 `GEE-LV/LSMP` 的低容量阈值。
 
 完成这两项后，加性分离型 `NRC-2D` 可闭合。若后续发现 PPI 展开中存在乘积倒数相位 `e_P(c(q_1q_2)^{-1})`，则另建 `NRC-2D-BG` 引用支路，并用 Bourgain--Garaev/Baker 定理处理；但不能把该支路与当前加性分离支路混同。
+
+## 8. PPI-Rank 已补齐
+
+新增 `docs/rh-ppi-rank-finite-separation-lemma.md`，已把加性分离二维权重的有限秩来源定理化：固定复杂度窗口经 Vaaler 展开和有限布尔组合后具有 `log^C X` 分离秩；失败进入 `CE/SC/PI/LSMP/LV`。因此 `NRC-2D` 当前只剩 `Capacity-Match` 主层容量门槛。

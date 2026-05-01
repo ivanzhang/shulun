@@ -181,3 +181,5 @@
 - `docs/rh-gee-nrc-entry-parameter-table.md`：归档 GEE-NRC 参数核验，确认单变量与 Tail/RKS 分流，保留 NRC-2D 与 DSO-SF 为剩余硬点。
 
 - `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`：NRC-2D 双变量非共振入口硬点分解，修正 BG 混用风险，压缩为 `PPI-Rank` 有限秩与 `Capacity-Match` 容量门槛两项义务。
+
+- `docs/rh-ppi-rank-finite-separation-lemma.md`：归档 PPI-Rank 有限分离秩证明，当前 NRC-2D 剩余为容量门槛。
