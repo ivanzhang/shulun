@@ -2,6 +2,8 @@
 
 本文补齐 `docs/rh-ov2-mlc-unconditional-core.md` 中留下的 MLC 最后硬点：主层 overlap 质量若对 PPI 的所有允许窗口都不可检测，为什么它不能仍然承载 `E_ov>X^{1+ε}` 级异常。结论是：不可检测质量只有四个出口——FCT、短簇/LV、DSO/PI、零频均匀背景；排除前三者后，第四者受容量界控制，不能形成大能量。
 
+Uniform 零频容量的常数化审查见 `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md`。
+
 ## 1. 不可检测质量定义
 
 固定主层 `Q,R`。令 `μ_{Q,R}` 为该层 overlap 推送到 PPI 相位空间后的测度，`μ_{Q,R}^0` 为零频基线。称该层对 PPI 不可检测，若对所有允许窗口 `A∈𝓦(K')`，均有
@@ -22,6 +24,8 @@
 前三者是已列终端或接口；本文只需证明第 4 类不能承载大能量。
 
 ## 3. 均匀背景容量界
+
+本节的常数化版本见 `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md`。
 
 若属于 Uniform 类，则对固定复杂度相位 partition `𝓟` 的每个原子 `P` 有
 

@@ -104,3 +104,9 @@ PC1 外部解析输入标准化已写入 `docs/rh-pc1-external-input-standardiza
 SC 局部乘积容量的全 dyadic 层核验已写入 `docs/rh-sc-local-product-capacity-dyadic-audit.md`。该补强把 `Vol_eff(I;Q,R)` 拆成短窗比例项 `(L/X)RQlog^C X` 与端点薄壳项 `Rlog^C X`，并规定比例均衡、端点控制或低体积吸收失败时只能转入 `PI/A/FCT/LV/LSMP/SC`。
 
 当前容量剩余最弱项转向 `OV2/MLC Uniform` 零频容量最终常数化，以及所有 `log^C X` 常数层级的全局排序。
+
+## 15. OV2/MLC Uniform 容量推进记录
+
+OV2/MLC Uniform 零频容量常数化已写入 `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md`。该补强把不可检测 Uniform 分支量化为固定 partition 复杂度、PPI 反面阈值、零频有限重叠和小原子吸收，得到 `E_unif(Q,R)<=W_Qlog^{C_U}X`。
+
+当前容量剩余硬点转向 PI dense/Carleson 与 DSO bridge 适用条件的无回流审查，以及全局 `log^C X` 常数层级排序。

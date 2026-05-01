@@ -26,6 +26,7 @@
 - `docs/rh-ov2-admissible-anchor-interface.md`：OV-2 允许锚语义接口。
 - `docs/rh-ov2-phase-pushforward-interface.md`：OV-2 相位推送接口。
 - `docs/rh-ov2-main-layer-capacity-interface.md`：OV-2 主层容量接口与条件化闭合。
+- `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md`：OV2/MLC Uniform 零频容量与 PPI 阈值常数化审查。
 - `docs/rh-lv-low-volume-principle.md`：LV 低体积原则编号引理。
 - `docs/rh-pc3-ov2-bridge-theorem.md`：PC-3+OV-2 素数过疏桥接定理。
 - `docs/rh-pc3-ov2-unconditionalization-audit.md`：PC3-OV2 无条件化合并审查。
