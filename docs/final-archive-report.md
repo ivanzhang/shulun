@@ -47,6 +47,7 @@
 - `docs/rh-lv-low-volume-principle.md`
 - `docs/rh-pc3-ov2-bridge-theorem.md`
 - `docs/rh-pc1-offline-zero-smooth-window.md`
+- `docs/rh-pc1-analytic-input-theoremization.md`
 - `docs/rh-pc2-li-crt-baseline-match.md`
 - `docs/rh-pc4-final-exclusion-framework.md`
 - `docs/rh-pc4-pi-seed.md`

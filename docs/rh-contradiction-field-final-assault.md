@@ -85,7 +85,7 @@
 
 **Theorem RH-Contradiction-Field-Conditional-Closure（RH 反例矛盾场条件化闭合）。** 假设以下文档中的输入均无条件成立或已由精确外部定理引用：
 
-1. PC1：离线零点到平滑素数异常；
+1. PC1：离线零点到平滑素数异常（见 `docs/rh-pc1-analytic-input-theoremization.md`）；
 2. PC2：Li/CRT 零频基线匹配；
 3. PC3-OV2：过疏到 ACC 过剩或 D 组终端；
 4. PC4-A/SC/PI/FCT closure；
@@ -102,7 +102,7 @@
 
 当前总攻链条的剩余不是再寻找新分支，而是逐项降低条件化接口：
 
-1. **解析输入**：PC1 的 Landau--Ingham 平滑振荡和权函数非湮灭；
+1. **解析输入**：PC1 的 Landau--Ingham 平滑振荡和权函数非湮灭，定理化见 `docs/rh-pc1-analytic-input-theoremization.md`；
 2. **基线输入**：PC2 的 CRT 候选边界误差与权重正规化；
 3. **覆盖输入**：AAI/PPI/MLC 的双锚正规形、相位推送与主层容量；
 4. **正交输入**：DSO-C/DSO-E、模板一致性、复杂度逃逸；

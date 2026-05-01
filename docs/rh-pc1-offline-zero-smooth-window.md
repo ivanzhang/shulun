@@ -103,3 +103,8 @@ PC-1 依赖标准平滑显式公式与 Landau--Ingham 型振荡原理，数学�
 - PC-4：证明 PC3-OV2 的两个输出“覆盖容量过剩”或 “D 组终端”都与 RH 反例场不可相容。
 
 因此 PC-1 不是 RH 证明，只是把假想离线零点转换成可输入覆盖矛盾场的平滑素数异常窗口。
+
+
+## 8. 解析输入定理化入口
+
+本文所用平滑显式公式、权函数非湮灭、Landau--Ingham 振荡与 Chebyshev 权去除的定理化版本见 `docs/rh-pc1-analytic-input-theoremization.md`。
