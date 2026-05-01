@@ -191,3 +191,9 @@
 | G5固定阶Qeff补正 | 技术闭合 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G5.1--G5.3。固定阶矩只展开截断权重 `d<=R<=polylog(P)` 和局部测试，故 `Q_eff,k<=R^k L^{O(k)}<=polylog(P)`。真实 `U_Y` 不展开完整CRT，只作支持集合；新模命中用上界筛处理。G5 闭合。 |
 
 | G6-G7补正与G1-G7总表 | 缺口压缩完成 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G6.1--G7.2 与总表。G6 由平滑夹逼端点层 `O(Delta)+o(1)` 闭合；G7 通过固定偶数 `w` 量词闭合，不声称均匀 `w` 版本。G1--G7 现压缩为两个正式输入：新模平均上界筛与 45-Main 同步残余 `<0.02` 的正式证明。 |
+
+| H1新模平均上界筛逐行审查 | 修正为自适应分层 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 H1.1--H1.7。逐行审查发现预设薄层平均 `<=0.4` 不能仅由上界筛推出，否则隐含 `|U_Y|` 下界。修正为按真实命中量自适应切薄层，使每层真实平均 `<=0.4`；若单素数贡献过大，则作为大因子集中 CRTDefect 出口。H1 不再依赖下界筛。 |
+
+| H2同步残余逐行审查 | 中大q闭合/小q有限包 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 H2.1--H3。对中大 `q>Q0`，主同步 `q|h` 在辅助素 `r≈L` 上支撑仅 `O(L/q)` 类，辅助能量下界与均匀上界差距约 `q` 倍；取 `Q0=100` 后 Directional/Endpoint 误差可压到 `<0.02`。小 `q<=Q0` 进入有限包。最终只剩自适应分层单素数集中出口与小q有限包明细。 |
+
+| H4-H6最终补正 | 逻辑缺口压缩为文稿工程义务 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 H4--H6。自适应分层中的单素数大贡献定义为 Single-Prime CRTDefect，可由辅助投影能量处理；小 `q<=100` 作为有限包，`q=2` 归入奇数骨架，奇素 `q|w` 峰值更弱。G1--G7 当前不再有新的逻辑类型缺口，剩余为正式稿中添加该出口、有限包表和自适应分层表述。 |
