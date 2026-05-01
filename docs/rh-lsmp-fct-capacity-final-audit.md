@@ -47,6 +47,10 @@ FCT 分两层：
 
 **证明。** LSMP 由 coarea 与 DPI 二分，失败即 PI 或 FCT/NRC。FCT 由短深度 span 计数和 Tree-WFE 处理单尺度递推，再由 Noether 下降账本处理跨尺度闭包。CapacityFail 按第 4 节绑定到具体容量文档；若无绑定则不允许作为事件图边，若有绑定则由对应文档处理。证毕。
 
+## 无条件化攻坚续篇
+
+继续向 RH 无条件证明推进的剩余条件割集与优先顺序见 `docs/rh-unconditional-proof-roadmap.md`；CapacityFail 全局绑定表见 `docs/rh-capacityfail-binding-table.md`。
+
 ## 6. 剩余工作定位
 
 到此，PC1/PC2/PC3 上游、NRC/EXT、DSO/容量、LSMP/FCT/CapacityFail 均已有审稿矩阵。下一步最优任务是做全文最终一致性总审查：检查清单、索引、提交包、未跟踪文件说明与“不能宣称 RH 已证明”的口径是否一致。

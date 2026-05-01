@@ -84,6 +84,8 @@
 - `docs/rh-global-interface-consistency-audit.md`：RH 总攻 PC1--PC2--PC3--PC4--Dual 全文接口一致性审查。
 - `docs/rh-contradiction-field-final-assault.md`：RH 反例矛盾场总攻框架。
 - `docs/rh-final-consistency-review.md`：RH 反例矛盾场全文最终一致性总审查。
+- `docs/rh-unconditional-proof-roadmap.md`：RH 无条件化攻坚路线图与剩余条件割集。
+- `docs/rh-capacityfail-binding-table.md`：CapacityFail 全局绑定表。
 
 ## B. 行列归约附录
 
