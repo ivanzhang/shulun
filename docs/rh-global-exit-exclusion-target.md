@@ -159,3 +159,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## Capacity-Match 状态更新
 
 新增 `docs/rh-nrc-2d-capacity-match-audit.md`。`NRC-2D` 当前不再是解析估计问题，而是中间容量层结构问题：需证明 `MidCap-Structure`，把 `Δ/log^A X<V_Q<Plog^D X` 的偏差层送入 `LSMP/SC/PI/CE`。
+
+## NRC-2D 分流闭合状态
+
+新增 `docs/rh-nrc-2d-midcap-structure-route.md`。`GEE-NRC` 的二维加性分离入口已分流：高容量相对小、低体积转 LV、中间容量转 `LSMP/SC/PI/CE/DSO`。因此 `GEE-NRC` 的剩余压力主要回到 `GEE-PI/GEE-DSO/GEE-SC/GEE-LSMP/GEE-CE`，而非 NRC 解析估计。

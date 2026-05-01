@@ -146,3 +146,5 @@
 - `docs/rh-ppi-rank-finite-separation-lemma.md`：PPI-Rank 已补齐；NRC-2D 当前剩 `Capacity-Match`。
 
 - `docs/rh-nrc-2d-capacity-match-audit.md`：Capacity-Match 已安全分流；剩 `MidCap-Structure`。
+
+- `docs/rh-nrc-2d-midcap-structure-route.md`：MidCap-Structure 已分流；剩余回到 GEE 全局出口上界。

@@ -192,3 +192,5 @@
 - `docs/rh-ppi-rank-finite-separation-lemma.md`：PPI-Rank 有限分离秩引理，补齐 NRC-2D 的二维权重低秩来源。
 
 - `docs/rh-nrc-2d-capacity-match-audit.md`：NRC-2D Capacity-Match 审查，分离高容量、全局低体积与中间容量层硬点。
+
+- `docs/rh-nrc-2d-midcap-structure-route.md`：NRC-2D 中间容量层四触发分流路线。

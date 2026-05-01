@@ -83,3 +83,8 @@
 - [x] 高容量分支：`V_Q>=Plog^{B+C}X` 时二维 NRC 相对小。
 - [x] 全局低体积分支：`V_Qlog^C X<=Δ/log^B X` 时转 `GEE-LV`。
 - [ ] `MidCap-Structure`：中间容量层承载固定比例偏差时触发 `LSMP/SC/PI/CE`。
+
+## MidCap-Structure 更新
+
+- [x] `MidCap-Structure-Reduction`：中间容量层分流到 `LSMP/LV`、`SC`、`PI/DSO`、`CE` 或 Uniform 排斥。
+- [ ] `GEE-PI/DSO/SC/LSMP/CE`：接收中间容量分流后的全局出口上界仍需闭合。

@@ -185,3 +185,5 @@
 - `docs/rh-ppi-rank-finite-separation-lemma.md`：归档 PPI-Rank 有限分离秩证明，当前 NRC-2D 剩余为容量门槛。
 
 - `docs/rh-nrc-2d-capacity-match-audit.md`：归档 Capacity-Match 审查，避免把中间容量层误归为 LV。
+
+- `docs/rh-nrc-2d-midcap-structure-route.md`：归档中间容量层分流路线，避免把 NRC-2D 误列为独立解析硬点。

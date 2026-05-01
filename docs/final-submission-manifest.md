@@ -173,3 +173,5 @@
 - `docs/rh-ppi-rank-finite-separation-lemma.md`：新增 PPI-Rank 引理；用于把 NRC-2D 剩余义务压缩到 `Capacity-Match`。
 
 - `docs/rh-nrc-2d-capacity-match-audit.md`：新增容量门槛审查；当前 NRC-2D 剩余硬点为 `MidCap-Structure`。
+
+- `docs/rh-nrc-2d-midcap-structure-route.md`：新增 MidCap-Structure 分流；NRC-2D 剩余压力转入全局出口。

@@ -113,3 +113,7 @@ Tail/RKS 层若满足低体积阈值
 ## 10. Capacity-Match 状态更新
 
 `docs/rh-nrc-2d-capacity-match-audit.md` 已补充容量门槛审查。高容量分支和全局低体积分支闭合；剩余为 `MidCap-Structure` 中间容量结构证书。
+
+## 11. NRC-2D 当前状态
+
+`docs/rh-nrc-2d-midcap-structure-route.md` 将 `MidCap-Structure` 降为四出口分流。`NRC-2D` 可标记为“分流闭合”：本入口不再独立吸收异常，但仍依赖 `PI/DSO/SC/LSMP/CE` 的全局 GEE 上界。

@@ -93,3 +93,7 @@
 剩余唯一硬点进一步精确为：
 
 `MidCap-Structure`：中间容量层必须触发 `LSMP/SC/PI/CE`，否则 `NRC-2D` 尚不能无条件闭合。
+
+## 7. MidCap-Structure 推进
+
+新增 `docs/rh-nrc-2d-midcap-structure-route.md`。中间容量层已被分解为尾因子薄层、物理短簇、相位盒投影集中、复杂度逃逸四类触发；若四类均无，则由 Uniform 容量界排斥固定比例 PPI 偏差。当前压力转移到 `PI/DSO/SC/LSMP/CE` 全局出口上界。
