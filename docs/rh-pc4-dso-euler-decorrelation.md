@@ -78,7 +78,7 @@ DSO-E3 只处理 `m_p` 不太大的局部层。若 `m_p` 很大，不能直接�
 2. 系数质量分散到大量小原子，触发 LSMP；
 3. 可抽取子集 `Ω'_p`，满足 `|Ω'_p|<=c p^{1/4}` 且承载固定比例的 `l^2` 质量，返回 DSO-E3。
 
-**证明。** 按祖先 span 与系数 dyadic 大小分解 `Ω_p`。若某短深度 span 承载正比例质量，触发 FCT。若没有重 span，则质量分散在大量小块；若每个可控大小子集都承载极小质量，则 dyadic 层蛋糕与 coarea 给出 LSMP 小质量逃逸。剩余情形必有一个可控大小子集承载固定比例 `l^2` 质量，对该子集应用 DSO-E3。这里的最后一步依赖 LSMP 的离散 coarea 与有限重叠薄层选择，需在后续审稿包中和 `docs/omr-cgtp-lsmp-theoremization.md` 逐项对齐。证毕。
+**证明。** 按祖先 span 与系数 dyadic 大小分解 `Ω_p`。若某短深度 span 承载正比例质量，触发 FCT。若没有重 span，则质量分散在大量小块；若每个可控大小子集都承载极小质量，则 dyadic 层蛋糕与 coarea 给出 LSMP 小质量逃逸。剩余情形必有一个可控大小子集承载固定比例 `l^2` 质量，对该子集应用 DSO-E3。这里的最后一步由 `docs/rh-pc4-lsmp-frequency-corollary.md` 的 LSMP-Freq 推论逐行实现。证毕。
 
 ## 6. DSO-E 主命题
 
@@ -99,4 +99,4 @@ DSO-E 补上 `docs/rh-pc4-complexity-escape-interface.md` 中 CE-1 的独立新�
 - 固定复杂度模板：`docs/rh-pc4-dso-template-consistency.md` + DSO-C；
 - 复杂度逃逸：`docs/rh-pc4-complexity-escape-interface.md`；
 - 独立新频率正交：本文 DSO-E；
-- 投稿级核查：`docs/rh-pc4-dso-euler-match-audit.md` 已将 DSO-E2 对齐到初等字符正交、`EXT-KL` 与 NRC/FCT 口径，并将 DSO-E4 的剩余组合义务压缩为 `LSMP-Freq Corollary`。
+- 投稿级核查：`docs/rh-pc4-dso-euler-match-audit.md` 已将 DSO-E2 对齐到初等字符正交、`EXT-KL` 与 NRC/FCT 口径；`docs/rh-pc4-lsmp-frequency-corollary.md` 已将 DSO-E4 的剩余组合义务降为 LSMP 推论。

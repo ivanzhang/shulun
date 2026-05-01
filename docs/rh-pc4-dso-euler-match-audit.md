@@ -90,6 +90,6 @@ DSO-E 现在可分成三类状态：
 
 为继续向 RH 总攻推进，下一步最优不是再重写 DSO-E，而是补一个窄 corollary：
 
-**LSMP-Freq Corollary（待写）。** 对频率原子集合 `Ω_p`，若无短深度 span 重桶且无可控大小重子集，则 dyadic 层蛋糕产生 LSMP 小质量原子输入。
+**LSMP-Freq Corollary。** 已在 `docs/rh-pc4-lsmp-frequency-corollary.md` 中写出：对频率原子集合 `Ω_p`，若无短深度 span 重桶且无可控大小重子集，则 dyadic 层蛋糕产生 LSMP 小质量原子输入。
 
-该 corollary 将把 DSO-E4 最后一处“组合剥离接口”降为可逐行引用的 LSMP 推论。
+因此 DSO-E4 最后一处“组合剥离接口”已经降为可逐行引用的 LSMP 推论。
