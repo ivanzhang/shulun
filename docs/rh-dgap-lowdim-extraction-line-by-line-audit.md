@@ -83,7 +83,7 @@
 
 `θ_m(X) mod 1 ∈ I_*`
 
-并承载 `c_2E_X` 级能量。该数据正是 `docs/rh-pc4-fct-seed.md` 所需的低维编码种子：固定频率模板、固定相位短弧、固定同向异常符号。
+并承载 `c_2E_X` 级能量。该数据正是 `docs/rh-pc4-fct-seed.md` 所需的低维编码种子：固定频率模板、固定相位短弧、固定同向异常符号；逐项同型匹配见 `docs/rh-fct-seed-isomorphism-audit.md`。
 
 若相位不能固定在短弧中，则有限和发生抵消，不能长期承载 `E_X`；若通过不断换弧避免抵消，则进入 `docs/rh-pc4-fct-phase-drift.md` 的漂移压力分支。因此低维承载必然给出 `FCT_seed` 或回到已命名终端。
 
@@ -99,6 +99,6 @@
 
 1. Fourier/Vaaler 尾项平方可和或进入 `CE/LSMP`；
 2. 新增独立频率包触发 `DSO/PI` 的 square-function，桥接审查见 `docs/rh-dso-pi-squarefunction-bridge-audit.md`；
-3. 固定低维相位同向性精确匹配 `FCT_seed`。
+3. 固定低维相位同向性精确匹配 `FCT_seed`，同型审查见 `docs/rh-fct-seed-isomorphism-audit.md`。
 
 因此，下一步最硬点应从 `DGap` 内部跳步转向这些外部接口的精确引用或逐行证明，尤其是 `DSO/PI` square-function 到允许投影族的定量常数，以及 `FCT_seed` 定义的完全同型匹配。

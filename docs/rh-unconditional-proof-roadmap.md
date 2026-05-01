@@ -68,3 +68,9 @@
 `DSO/PI square-function` 到允许投影族的桥接已写入 `docs/rh-dso-pi-squarefunction-bridge-audit.md`。该补强把“新增独立频率包触发 PI”的跳步拆成：允许投影族有限交表示、martingale difference 拉回、lacunary/dense 尺度二分、非允许/误差/高重叠逃逸排除。
 
 当前 DGap 外部剩余硬点进一步缩小为两项：`FCT_seed` 与低维相位证书的逐字同型匹配；Fourier/Vaaler 尾项平方可和在全部固定盒模板上的统一证明。
+
+## 9. R4 第四轮推进记录
+
+`FCT_seed` 与 DGap 低维相位证书的逐字同型匹配已写入 `docs/rh-fct-seed-isomorphism-audit.md`。该补强用字段表统一 `Λ_*`、整数关系模板、自然缩放子列、短弧、同向符号和外部终端排除清单。
+
+当前 DGap 外部剩余进一步缩小为：Fourier/Vaaler 尾项平方可和在全部固定盒模板上的统一证明；以及 FCT phase drift/closure 的无无限递归排除。
