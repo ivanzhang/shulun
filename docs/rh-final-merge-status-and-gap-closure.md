@@ -172,3 +172,7 @@
 新增 `docs/rh-gee-event-graph-no-cycle-audit.md`、`docs/rh-gee-threshold-constant-table.md` 与 `docs/rh-gee-load-convention-unification.md`。三者分别补齐全局事件图无循环、阈值常数层级与 `Load` 超额偏差口径。由此，`docs/rh-gee-global-synthesis-audit.md` 中列出的前三项最终审稿义务已形成可审查文稿；剩余主要义务为单篇内联证明、外部输入精确引用和逐条命名引理核验。
 
 更新后的状态定理：当前包可称为 RH/GEE 条件合成闭合审稿包，而非 RH 无条件证明定稿。
+
+## 6.16 GEE 单篇内联审稿稿
+
+新增 `docs/rh-gee-single-paper-inline-draft.md`。该稿已把 GEE-0、统一 `Load`、九出口矩阵、事件图无循环、阈值常数层级、出口上界和合成矛盾定理写入同一文档。由此，单篇内联义务已完成第一版；剩余为正式 LaTeX 迁移、外部定理精确引用和命名引理逐条证明。

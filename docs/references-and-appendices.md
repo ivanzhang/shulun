@@ -220,3 +220,7 @@
 - `docs/rh-gee-load-convention-unification.md`：作为 GEE 负担定义与零频基线扣除附录。
 
 这些附录用于支撑 `docs/rh-gee-global-synthesis-audit.md` 的条件合成定理；若进入正式论文，需把定义、引理和依赖关系迁入主文或编号附录。
+
+## GEE 单篇内联主稿
+
+- `docs/rh-gee-single-paper-inline-draft.md`：GEE 合成层的单篇内联审稿稿。正式投稿版本应以该稿为底本，把各引用文档改写为编号定理、引理和附录证明。

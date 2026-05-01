@@ -203,3 +203,9 @@
 - `docs/rh-gee-load-convention-unification.md`
 
 归档状态：三项均为 GEE 合成一致性审查文件，用于固定事件图、阈值常数和 `Load` 定义。提交口径为“条件合成审查补强”，不得在 manifest 中改写为“RH 已无条件证明”。
+
+## RH/GEE 单篇内联稿归档
+
+- `docs/rh-gee-single-paper-inline-draft.md`：新增 GEE 单篇主稿内联审查稿，集中定义 `Load/Excess`、九出口矩阵、事件图、阈值常数、出口上界与 GEE 条件合成定理。
+
+归档口径：该稿完成单篇内联化第一版，但仍明确保留外部输入精确引用与命名引理逐条证明义务；不得标记为 RH 无条件证明定稿。
