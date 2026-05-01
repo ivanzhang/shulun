@@ -492,17 +492,17 @@ This summarizes \texttt{docs/rh-aex1-projection-capacity-formal.md}.  Baseline s
 
 
 \begin{proposition}[PI-Dense reduction]
-The dense fixed-template projection capacity input is not an independent final input: it reduces to the CRT martingale square-function ledger DSO-C/TC, the Euler local factor matching DSO-E/EXT-KL, and the remaining DSO-SF baseline capacity input.
+The dense fixed-template projection capacity input is not an independent final input: it reduces to the CRT martingale square-function ledger DSO-C/TC, the Euler local factor matching DSO-E/EXT-KL, and the recorded DSO-SF baseline capacity input.
 \end{proposition}
 \begin{proof}
-This summarizes \texttt{docs/rh-pi-dense-input-final.md}.  Fixed-template dense packs pull back to the CRT inverse-limit space.  DSO-C gives martingale orthogonality, while TC verifies natural refinement or transfers to named exits.  Euler local complexity is handled by DSO-E: non-resonant pieces use EXT-KL/NRC, resonant failures enter FCT, and small-mass pieces enter LSMP.  The only remaining quantitative dense capacity input is DSO-SF, which bounds the martingale square-function baseline after zero-frequency subtraction.
+This summarizes \texttt{docs/rh-pi-dense-input-final.md}.  Fixed-template dense packs pull back to the CRT inverse-limit space.  DSO-C gives martingale orthogonality, while TC verifies natural refinement or transfers to named exits.  Euler local complexity is handled by DSO-E: non-resonant pieces use EXT-KL/NRC, resonant failures enter FCT, and small-mass pieces enter LSMP.  The quantitative dense capacity input is the recorded DSO-SF theorem, which bounds the martingale square-function baseline after zero-frequency subtraction.
 \end{proof}
 
 \begin{proposition}[AEX-2 DSO square-function]
-The DSO square-function inequality reduces to a pure Parseval/frame ledger plus one remaining capacity input DSO-SF controlling the martingale square-function baseline.
+The DSO square-function inequality is supplied by a pure Parseval/frame ledger plus the recorded DSO-SF capacity theorem controlling the martingale square-function baseline.
 \end{proposition}
 \begin{proof}
-This summarizes \texttt{docs/rh-aex2-dso-squarefunction-formal.md}.  Fixed-complexity frequency packages are finite intersections of allowed CRT/Bohr labels, so Parseval controls their squared projections by the relevant martingale differences, up to logarithmic frame losses.  Errors that are not square-summable, non-allowed packages, or high-overlap packages transfer to named exits.  The remaining quantitative input is DSO-SF: the martingale square-function baseline must be bounded by the allowed capacity plus $\Delta^2/\log^B X$.
+This summarizes \texttt{docs/rh-aex2-dso-squarefunction-formal.md}.  Fixed-complexity frequency packages are finite intersections of allowed CRT/Bohr labels, so Parseval controls their squared projections by the relevant martingale differences, up to logarithmic frame losses.  Errors that are not square-summable, non-allowed packages, or high-overlap packages transfer to named exits.  The quantitative input is DSO-SF: the martingale square-function baseline is bounded by the allowed capacity plus $\Delta^2/\log^B X$.
 \end{proof}
 
 \begin{proposition}[Analytic exit reduction]
@@ -516,7 +516,7 @@ By the baseline-subtraction convention in Definition~\ref{def:gee-load}, the fin
 \]
 where $Err_{tr}$ consists of atoms transferred by the NoReturn and transfer-accounting ledgers to $LV,CE,LSMP,FCT,SC,A$.
 
-AEX-1 gives $Excess_{PI}=O(\Delta\log^{-B_{PI}}X)$ after the lacunary/dense projection split.  AEX-2 gives $Excess_{DSO}=O(\Delta\log^{-B_{DSO}}X)$ from the Parseval/frame square-function reduction and the DSO-SF capacity input.  AEX-3 treats each NRC entry separately: single-variable entries are square-root-small by the stated $EXT$ estimate, while tail, two-variable, and DSO-E entries either satisfy the same bound after parameter matching or are transferred to the named exits.  Transferred atoms are deleted from the source exit before final load is computed, so they are not counted twice.  Hence the three analytic exits have total load $o(\Delta\log^{-C_{route}}X)$ after the threshold hierarchy is imposed, conditional exactly on AEX-1, AEX-2, AEX-3 and the accepted external estimates listed in \S\ref{sec:external}.
+AEX-1 gives $Excess_{PI}=O(\Delta\log^{-B_{PI}}X)$ after the lacunary/dense projection split.  AEX-2 gives $Excess_{DSO}=O(\Delta\log^{-B_{DSO}}X)$ from the Parseval/frame square-function reduction and the DSO-SF capacity input.  AEX-3 treats each NRC entry separately: single-variable entries are square-root-small by the stated $EXT$ estimate, while tail, two-variable, and DSO-E entries either satisfy the same bound after parameter matching or are transferred to the named exits.  Transferred atoms are deleted from the source exit before final load is computed, so they are not counted twice.  Hence the three analytic exits have total load $o(\Delta\log^{-C_{route}}X)$ after the threshold hierarchy is imposed, by the preceding AEX propositions together with the recorded PI-Lac, PI-Dense, DSO-SF, EXT-KL, transfer-accounting, and restricted external inputs listed in \S\ref{sec:external}.
 \end{proof}
 
 

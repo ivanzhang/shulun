@@ -302,3 +302,8 @@
 ## 最终全文升级审查评审更新
 
 新增 `docs/rh-final-upgrade-review-2026-05-01.md`。自动扫描确认 `Consolidated proof`、`Proof sketch for review`、`Review proof` 均为 0，且 LaTeX `\ref` 未发现缺失标签。但审查结论是不应删除主定理 `review form` 与 `Submission warning`：主稿仍有条件合成口径、AEX 输入接受性和 EXT 页码/定理号核验义务。下一步最优为逐项处理 U1--U3：主定理前提改写、AEX 条件化措辞消除、EXT 精确定理号表。
+
+
+## U2 AEX 接受性核验更新
+
+新增 `docs/rh-u2-aex-acceptance-review.md`。审查确认 AEX-1 已由 Baseline-Subtraction、PI-Lac、PI-Dense 支撑，PI-Dense 已归约到 DSO-SF/EXT-KL；AEX-2 由 DSO-SF 支撑；AEX-3 的单变量入口由 EXT-KL 支撑，Tail/RKS、双变量 PPI 与 DSO-E 均转入已命名出口或 DSO-SF。LaTeX 主稿已删除 “conditional exactly on AEX-1, AEX-2, AEX-3” 措辞，改为由前文 AEX propositions 与已记录输入支撑。主定理 warning 仍保留；下一步最优为 U3 EXT 页码/定理号表。
