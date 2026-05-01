@@ -200,3 +200,9 @@ Fourier/Vaaler 尾项平方可和主文链已写入 `docs/rh-fourier-vaaler-tail
 `LV/LSMP/CE` 外部吸收总链已写入 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`。该补强把低体积、薄层小质量与复杂度逃逸三类出口统一处理：LV 用 `Vol_eff<=X/log^{B+C}X` 的平凡体积估计吸收；LSMP 用薄层 coarea、方向筛选与频率原子版小质量逃逸吸收；CE 被定义为频率复杂度、尾项能量、旧坐标重写、边界体积四分分类器。
 
 若三者不能吸收，只允许输出 `A/PI/FCT/SC` seed 或 `DSO/NRC/CapacityFail` 命名事件，不允许无标记回流。当前剩余压力集中到 PC1 一般 Landau--Ingham 输入、`EXT-*` 精确引用、容量常数层级与全文一致性审查。
+
+## 31. PC1 Landau--Ingham 主文链推进记录
+
+PC1 Landau--Ingham 振荡主文链已写入 `docs/rh-pc1-landau-ingham-maintext-chain.md`。该补强从平滑显式公式出发：有限边界零点情形用非零有限三角多项式均方平均文内证明；一般上确界或无限边界族情形精确归入经典 `EXT-PC1-LI` 奇点振荡定理。
+
+同时，固定符号子列、素数幂去除和 Chebyshev/无权口径转换均已写入主链。当前剩余压力集中到 `EXT-PC1-LI` 与其它 `EXT-*` 的精确书目章节/定理号，以及全文常数层级、符号、尺度和权重一致性审查。

@@ -52,7 +52,7 @@
 
 **定理 EXT-PC1-EF。** 对 `W∈C_c^∞((0,∞))`，平滑 Chebyshev 和满足标准 ζ 显式公式：主项来自 `s=1`，非平凡零点贡献为 `-Σ_ρ X^ρ\widehat W(ρ)`，平凡零点与截线积分为低阶项。文内证明版本见 `docs/rh-pc1-explicit-formula-proof-appendix.md`。
 
-**定理 EXT-PC1-LI。** 若 ζ 存在离线零点 `ρ=β+iγ`, `β>1/2`，且平滑权不湮灭该零点，则平滑 Chebyshev 误差在无穷多尺度上有 `X^{β-o(1)}` 级振荡。有限边界零点情形的文内证明与一般情形接口见 `docs/rh-pc1-landau-ingham-oscillation-appendix.md`。
+**定理 EXT-PC1-LI。** 若 ζ 存在离线零点 `ρ=β+iγ`, `β>1/2`，且平滑权不湮灭该零点，则平滑 Chebyshev 误差在无穷多尺度上有 `X^{β-o(1)}` 级振荡。有限边界零点情形的文内证明与一般情形接口见 `docs/rh-pc1-landau-ingham-oscillation-appendix.md`，主文链见 `docs/rh-pc1-landau-ingham-maintext-chain.md`。
 
 **引用来源。** 可引用 Titchmarsh, *The Theory of the Riemann Zeta-function* 中显式公式与 Landau 振荡定理，或 Ingham 关于素数计数误差振荡的标准定理；平滑权版本也可由 Mellin 反演与 Landau--Ingham 奇点原理逐行推出。
 

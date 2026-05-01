@@ -68,6 +68,7 @@
 - `docs/rh-pc1-external-input-standardization-audit.md`
 - `docs/rh-pc1-explicit-formula-proof-appendix.md`
 - `docs/rh-pc1-landau-ingham-oscillation-appendix.md`
+- `docs/rh-pc1-landau-ingham-maintext-chain.md`：PC1 Landau--Ingham 振荡主文链。
 - `docs/rh-pc2-li-crt-baseline-match.md`
 - `docs/rh-pc2-crt-baseline-explicit.md`
 - `docs/rh-pc2-crt-baseline-maintext-appendix.md`

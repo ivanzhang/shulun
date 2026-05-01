@@ -46,6 +46,7 @@
 - `docs/rh-pc1-external-input-standardization-audit.md`：PC1 外部解析输入标准化为显式公式、Landau--Ingham 与初等权重步骤。
 - `docs/rh-pc1-explicit-formula-proof-appendix.md`：PC1 平滑 Chebyshev 显式公式文内证明附录。
 - `docs/rh-pc1-landau-ingham-oscillation-appendix.md`：PC1 Landau--Ingham 振荡有限情形文内证明与一般情形接口。
+- `docs/rh-pc1-landau-ingham-maintext-chain.md`：PC1 Landau--Ingham 振荡主文链。
 - `docs/rh-pc2-li-crt-baseline-match.md`：PC-2 连续零频与 CRT 零频基线匹配。
 - `docs/rh-pc4-final-exclusion-framework.md`：PC-4 最终排斥框架与 RH 总攻地图。
 - `docs/rh-pc4-pi-seed.md`：PC4-PI 跨尺度投影能量种子命题。

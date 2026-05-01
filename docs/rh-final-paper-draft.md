@@ -16,6 +16,7 @@ PC1 的精确输入是：若存在 `ρ=β+iγ`，`β>1/2`，则存在平滑紧�
 
 - 文内平滑显式公式证明：`docs/rh-pc1-explicit-formula-proof-appendix.md`；
 - Landau--Ingham 振荡拆分：`docs/rh-pc1-landau-ingham-oscillation-appendix.md`；
+- Landau--Ingham 主文链：`docs/rh-pc1-landau-ingham-maintext-chain.md`；
 - 权函数非湮灭；
 - 素数幂去除；
 - Chebyshev 权到无权口径的对数损失。
@@ -137,7 +138,7 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 
 为达到真正“无条件 RH 证明”标准，仍必须完成以下工作：
 
-1. 将 `docs/rh-pc1-explicit-formula-proof-appendix.md` 合并入主文，并给一般情形 `LI-General` 补精确书目、章节或定理号；
+1. PC1 显式公式与 Landau--Ingham 主文链已新增 `docs/rh-pc1-explicit-formula-proof-appendix.md` 与 `docs/rh-pc1-landau-ingham-maintext-chain.md`；仍需给一般情形 `EXT-PC1-LI` 补精确书目、章节或定理号；
 2. 将 `docs/rh-pc2-crt-baseline-maintext-appendix.md` 合并入主文，并全文统一 Chebyshev 权或无权口径；
 3. AAI/PPI/MLC/OV2 已新增连续主文证明链 `docs/rh-pc3-ov2-maintext-proof-chain.md`，PPI 输出端已新增 `docs/rh-ppi-terminal-output-maintext-chain.md`；后续义务是把 MLC、LV 与 D 组终端逐项并入最终主文；
 4. 将 PC4-A/PI/FCT/SC 的无循环审查从文档矩阵合并为单篇定理链；
