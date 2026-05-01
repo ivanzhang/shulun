@@ -123,6 +123,10 @@
 
 新增 `docs/rh-gee0-pc2-boundary-and-route-overlap.md`。该文内联 PC2 边界误差、素数幂与平滑边界吸收，并给出 C3/C4/C5/C9 路由有限重叠常数表 `C_route`。因此 GEE-0 从“半闭合”推进为 bookkeeping 闭合；剩余 RH 总攻硬点集中到九个出口上界，优先为 `GEE-LV` 与 `GEE-NRC`。
 
+## 6.13 GEE-LV 低体积出口上界
+
+新增 `docs/rh-gee-lv-low-volume-exit-bound.md`。GEE-LV 采用相对主异常阈值 `Vol_eff log^C X<=Δ/log^{B_LV}X`，满足阈值的低体积原子由平凡估计给 `Load(LV;X)=o(Δ)`；阈值失败者转入 `SC/PI/A/FCT/LSMP/CE`，不再计入 LV。因此 LV 出口可标记为闭合，但其它转出出口仍需各自 GEE 上界。
+
 ## 7. 状态定理
 
 **Theorem Final-Merge-Status.** 当前仓库中的 RH 总攻文档包已经把主要条件接口压缩为主文链、外部定理标签和全局归一化账本；但在未完成单篇论文合并、正式引用替换、容量定理内联和交叉引用审查前，不能宣称 RH 已无条件证明。

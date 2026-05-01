@@ -49,3 +49,7 @@
 ## 7. GEE-0 bookkeeping 闭合
 
 新增 `docs/rh-gee0-pc2-boundary-and-route-overlap.md`。PC2 边界误差已内联为 `Err_PC2=o(Δ)`，路由有限重叠统一为 `log^{C_route}X`。GEE-0 现在可标记为 bookkeeping 闭合；下一步应攻 `GEE-LV` 与 `GEE-NRC` 两个出口上界。
+
+## 8. GEE-LV 低体积出口
+
+新增 `docs/rh-gee-lv-low-volume-exit-bound.md`。LV 只允许登记满足相对主异常阈值 `Vol_eff log^C X<=Δ/log^{B_LV}X` 的原子；这部分由平凡体积估计给 `Load(LV;X)=o(Δ)`。不满足阈值的原子必须转入 `SC/PI/A/FCT/LSMP/CE`，不再计入 LV。

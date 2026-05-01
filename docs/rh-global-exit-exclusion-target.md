@@ -124,7 +124,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 | 项 | 当前状态 | 是否顶刊闭合 |
 |---|---|---|
 | GEE-0 | `docs/rh-gee0-load-distribution.md` + `docs/rh-gee0-pc2-boundary-and-route-overlap.md` | bookkeeping 闭合 |
-| GEE-LV | 最接近闭合；需逐入口 `Vol_eff` 表 | 半闭合 |
+| GEE-LV | `docs/rh-gee-lv-low-volume-exit-bound.md` | 闭合：相对 `Δ` 低体积阈值下为 `o(Δ)`，失败转其它出口 |
 | GEE-NRC | 有 `EXT-KL` 来源；缺参数匹配总和 | 未闭合 |
 | GEE-DSO | 有 square-function 思路；缺线性负担转换 | 未闭合 |
 | GEE-PI | 有 lacunary/dense 分类；缺总容量到 `o(Δ)` | 未闭合 |
@@ -136,7 +136,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 
 ## 6. 下一步最优攻坚顺序
 
-1. **证明 GEE-LV 与 GEE-NRC**：一个体积型、一个外部解析型，最容易给出明确模板。
+1. **证明 GEE-NRC**：完成 `EXT-KL` 参数匹配，证明非共振倒数和负担为 `o(Δ)`。
 2. **再攻 GEE-DSO/PI**：square-function 到线性负担转换是核心桥。
 3. **最后攻 GEE-A/FCT/SC/LSMP/CE**：这些高度依赖全局势函数和复杂度预算.
 
