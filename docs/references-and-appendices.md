@@ -52,6 +52,7 @@
 - `docs/rh-pc4-short-cluster-seed.md`：PC4-SC 短簇跨尺度排斥种子命题。
 - `docs/rh-pc4-short-cluster-mass-balance.md`：PC4-SC 短簇质量平衡命题。
 - `docs/rh-pc4-short-cluster-local-density.md`：PC4-SC 短窗锚复用局部密度命题。
+- `docs/rh-pc4-short-cluster-closure-theorem.md`：PC4-SC 短簇分支闭合命题。
 
 ## B. 行列归约附录
 

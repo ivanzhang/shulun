@@ -54,7 +54,7 @@ ACC 过剩表示允许合数覆盖容量相对零频基线同步增加。若这�
 - 大锚乘积容量 `q_1q_2r` 在多个尺度重复压缩；
 - CRT 周期非零类均衡被破坏。
 
-**PC4-SC（短簇跨尺度排斥，种子命题已写）。** 离线零点级短簇不能在无穷多尺度保持相干；否则违反 CRT 周期均衡或 LV 低体积账本。当前种子稿见 `docs/rh-pc4-short-cluster-seed.md`：若短簇可作为最终通道，则可抽取固定短簇形状、固定锚层/相位类型与同相位子列。
+**PC4-SC（短簇跨尺度排斥，条件化闭合）。** 离线零点级短簇不能在无穷多尺度保持相干；否则转入 PC4-PI、PC4-A、PC4-FCT、LV/LSMP，或违反 AAI+LV 局部乘积容量。当前闭合稿见 `docs/rh-pc4-short-cluster-closure-theorem.md`：它合并短簇种子、质量平衡与局部密度命题，失败分支均回收到已列接口。
 
 ### 4.2 高投影增量终端
 
@@ -93,7 +93,7 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 **Theorem PC4-Framework（最终排斥框架）。** 假设以下四个跨尺度命题成立：
 
 1. PC4-A：ACC 不同步排斥（见 `docs/rh-pc4-acc-closure-theorem.md` 条件化闭合）；
-2. PC4-SC：短簇跨尺度排斥；
+2. PC4-SC：短簇跨尺度排斥（见 `docs/rh-pc4-short-cluster-closure-theorem.md` 条件化闭合）；
 3. PC4-PI：投影能量跨尺度排斥（见 `docs/rh-pc4-pi-closure-theorem.md` 条件化闭合）；
 4. PC4-FCT：频率闭包跨尺度排斥（见 `docs/rh-pc4-fct-closure-theorem.md` 条件化闭合）；
 
@@ -105,10 +105,10 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 为了真正向 RH 总攻推进，下一步不应再扩散，而应按可证性排序专攻：
 
-1. **PC4-SC 短簇跨尺度排斥**：种子命题见 `docs/rh-pc4-short-cluster-seed.md`，质量平衡见 `docs/rh-pc4-short-cluster-mass-balance.md`，局部密度见 `docs/rh-pc4-short-cluster-local-density.md`；下一步合并 `PC4-SC-Closure`；
-2. **PC4-Dual 过密对偶**：若不能完全依赖反相位过疏，则必须补齐。
+1. **PC4-Dual 过密对偶**：若不能完全依赖反相位过疏，则必须补齐；
+2. **全文接口一致性审查**：合并 PC1、PC2、PC3-OV2 与 PC4-A/SC/PI/FCT 的条件化闭合，逐项检查外部接口。
 
-本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-A、PC4-PI 与 PC4-FCT 已推进到条件化闭合形态；最优下一步是专攻 PC4-SC，因为多个失败分支仍汇入短簇。
+本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-A、PC4-SC、PC4-PI 与 PC4-FCT 已推进到条件化闭合形态；最优下一步是专攻 PC4-Dual 与全文接口一致性审查。
 
 ## 8. PC4-PI 的最小可证接口
 
