@@ -56,6 +56,7 @@
 - `docs/rh-pc4-dual-overdense-closure.md`：PC4-Dual 过密对偶分支闭合框架。
 - `docs/rh-pc4-dual-gap-ledger.md`：PC4-Dual 对偶缺口账本与非负分解。
 - `docs/rh-pc4-dual-dgap-decomposition.md`：PC4-Dual DGap 压缩异常结构分解定理。
+- `docs/rh-pc4-dual-box-overlap.md`：PC4-Dual DGap 盒分解有限重叠定理。
 - `docs/rh-pc1-pc4-interface-closure-audit.md`：RH 反例矛盾场 PC1-PC4 接口闭合审查。
 
 ## B. 行列归约附录
