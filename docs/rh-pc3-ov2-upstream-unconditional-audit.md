@@ -92,3 +92,9 @@ PPI 不直接证明 NRC 或 FCT；它只输出清晰事件边：
 - PC3-OV2：AAI/PPI/MLC 内部接口拆解完成，剩余均为已命名 PC4 终端或外部事件。
 
 因此总攻的剩余压力不再是“上游输入未拆”，而是：这些已命名事件中的外部定理引用与容量定理是否足够强，尤其是 NRC/EXT、DSO、LSMP/FCT 与 CapacityFail 对应文档的最终审稿级证明。
+
+## 8. 主文证明链补强
+
+`docs/rh-pc3-ov2-maintext-proof-chain.md` 已把本审查中的 AAI/PPI/MLC/OV2 矩阵式接口改写为连续证明链：PC2 过疏账本先分流为 `ACC` 过剩或 overlap 大；overlap 大由 AAI 转成双锚正规形；MLC 定位 dyadic 主层并排除不可检测零频自由吸收；PPI 将可检测主层推送到 `PI/SC/FCT/NRC/LV/LSMP/CE/DSO` 终端。
+
+因此，本文件的地位由“接口矩阵”降为“主文链审查表”：剩余无条件化不再是 AAI/PPI/MLC/OV2 之间的跳转缺口，而是链中所调用终端定理与容量常数的逐项并入。

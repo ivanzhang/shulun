@@ -146,3 +146,9 @@ PC1 Landau--Ingham 振荡附录已写入 `docs/rh-pc1-landau-ingham-oscillation-
 PC2 CRT 基线主文证明附录已写入 `docs/rh-pc2-crt-baseline-maintext-appendix.md`。该附录用初等 CRT 周期计数证明 `C_z-C_z^0=o(Δ)`，并逐行处理素数自动位于非零类、候选账本恒等式、素数幂边界误差和 Chebyshev/无权口径转换。
 
 当前 PC2 剩余主要是编辑义务：将该附录并入最终主文，并全文统一带权或无权符号。
+
+## 22. PC3/OV2 主文链推进记录
+
+PC3/OV2 的连续主文证明链已写入 `docs/rh-pc3-ov2-maintext-proof-chain.md`。该补强把 AAI/PPI/MLC/OV2 从矩阵引用改写为一条可审稿追踪的链条：过疏账本先分流为 `ACC` 过剩或 overlap 大，overlap 大经 AAI 双锚正规形、MLC 主层定位与 Uniform 吸收、PPI 相位推送，最终进入 `PI/SC/FCT/NRC/LV/LSMP/CE/DSO` 命名终端。
+
+当前 PC3/OV2 剩余义务转为：把链中调用的 PPI、MLC、LV 与 D 组终端逐项并入最终主文，并与 PC4 终端排斥和容量常数层级做最终交叉引用。

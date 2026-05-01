@@ -63,6 +63,7 @@ PC1 的精确输入是：若存在 `ρ=β+iγ`，`β>1/2`，则存在平滑紧�
 主要入口：
 
 - `docs/rh-pc3-ov2-bridge-theorem.md`；
+- `docs/rh-pc3-ov2-maintext-proof-chain.md`；
 - `docs/rh-pc3-ov2-upstream-unconditional-audit.md`；
 - `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md`。
 
@@ -130,7 +131,7 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 
 1. 将 `docs/rh-pc1-explicit-formula-proof-appendix.md` 合并入主文，并给一般情形 `LI-General` 补精确书目、章节或定理号；
 2. 将 `docs/rh-pc2-crt-baseline-maintext-appendix.md` 合并入主文，并全文统一 Chebyshev 权或无权口径；
-3. 将 AAI/PPI/MLC/OV2 中仍以矩阵引用形式出现的接口改写为连续主文证明；
+3. AAI/PPI/MLC/OV2 已新增连续主文证明链 `docs/rh-pc3-ov2-maintext-proof-chain.md`；后续义务是把链中引用的 PPI、MLC、LV 与 D 组终端逐项并入最终主文；
 4. 将 PC4-A/PI/FCT/SC 的无循环审查从文档矩阵合并为单篇定理链；
 5. 将 DGap 三接口、DSO/PI bridge、FCT_seed 同型、尾项平方可和写入主文；
 6. 将容量矩阵中的所有 `log^C X` 常数改成全局常数层级账本；
