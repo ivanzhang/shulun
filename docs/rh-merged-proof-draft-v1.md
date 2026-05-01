@@ -17,7 +17,7 @@
 | Proposition Dense | 过密 Dual/DGap 分支 | 内部三接口已定理化 | C5 已给 Lemma C5.1--C5.4；待 C6/C9/C10 放电 |
 | Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 条件主文化 | 将 Noether 势函数与容量引理逐条编号 |
 | Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口；C8 已排除自由 `CapacityFail` |
-| Lemma Tail | Fourier/Vaaler 尾项吸收 | 条件主文化 | 补 Vaaler 截断误差与平方可和证明 |
+| Lemma Tail | Fourier/Vaaler 尾项吸收 | 已内联证明 | C9 已给 C9.1--C9.4；待 C10 中 `EXT-Vaaler` 正式引用 |
 | Table EXT | 外部定理包 | 来源级闭合 | 补正式 BibTeX、章节、定理号或页码 |
 
 当前合并稿 v1 的逻辑用途是：把证明依赖压缩为上表 10 个可审查接口。只有当每一行的“待闭合义务”被内联证明或正式引用勾销后，主定理才可从条件版改为无条件版。
@@ -129,7 +129,7 @@ DGap 出口被穷尽为
 
 PPI/DGap/PC4 的固定复杂度模板由平滑窗、硬边界、CRT 字符、倒数环带、Bohr 短弧及有限布尔组合构成。平滑窗快速衰减；硬边界先平滑再截断；倒数环带和 Bohr 短弧用 `EXT-Vaaler`；CRT 字符无尾项。固定布尔组合保持平方可和。
 
-故尾项要么平方可和吸收，要么进入 `CE/LSMP/LV/SC/FCT/DSO/PI`。主文链见 `docs/rh-fourier-vaaler-tail-maintext-chain.md`。
+故尾项要么平方可和吸收，要么进入 `CE/LSMP/LV/SC/FCT/DSO/PI`。主文链见 `docs/rh-fourier-vaaler-tail-maintext-chain.md`；C9 内联证明见 `docs/rh-c9-fourier-vaaler-tail-inline-proof.md`。
 
 ## 10. 外部定理包
 

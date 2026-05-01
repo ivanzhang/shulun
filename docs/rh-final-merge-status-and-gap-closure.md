@@ -77,7 +77,7 @@
 
 ## 6.1 合并稿无条件化判据表
 
-新增 `docs/rh-merge-unconditional-checklist.md`，把合并稿条件接口拆为 C0--C11。当前最小闭合割集为 `{C1,C4,C6,C9,C10,C11}`。这意味着下一轮应优先补过疏 PC3/OV2、内部终端 C6、尾项 C9 与正式外部引用 C10，而不是继续增加新分支。
+新增 `docs/rh-merge-unconditional-checklist.md`，把合并稿条件接口拆为 C0--C11。当前最小闭合割集为 `{C1,C4,C6,C10,C11}`。这意味着下一轮应优先补过疏 PC3/OV2、内部终端 C6 与正式外部引用 C10，而不是继续增加新分支。
 
 ## 6.2 C3 覆盖场修正
 
@@ -85,11 +85,15 @@
 
 ## 6.3 C8 CapacityFail 升级审查
 
-新增 `docs/rh-c8-capacityfail-upgrade-audit.md`。结论是：自由 `CapacityFail` 已排除，但 C8 不能独立完全勾销；它随 C4/C6/C9/C10 的容量定理化与正式引用一起放电。当前最小闭合割集更新为 `{C1,C4,C6,C9,C10,C11}`。
+新增 `docs/rh-c8-capacityfail-upgrade-audit.md`。结论是：自由 `CapacityFail` 已排除，但 C8 不能独立完全勾销；它随 C4/C6/C10 的容量定理化与正式引用一起放电。当前最小闭合割集更新为 `{C1,C4,C6,C10,C11}`。
 
 ## 6.4 C5 DGap 内联证明链
 
-新增 `docs/rh-c5-dgap-inline-proof-chain.md`。DGap 过密分支已与 C3 修正版匹配，入口为 `DGap_z=Hole_z^0-Hole_z`；内部三接口被拆成 C5.1 盒局部化、C5.2 frame 投影能量、C5.3 正交投影分配、C5.4 低维频率抽取。当前最小闭合割集更新为 `{C1,C4,C6,C9,C10,C11}`。
+新增 `docs/rh-c5-dgap-inline-proof-chain.md`。DGap 过密分支已与 C3 修正版匹配，入口为 `DGap_z=Hole_z^0-Hole_z`；内部三接口被拆成 C5.1 盒局部化、C5.2 frame 投影能量、C5.3 正交投影分配、C5.4 低维频率抽取。当前最小闭合割集更新为 `{C1,C4,C6,C10,C11}`。
+
+## 6.5 C9 Fourier/Vaaler 尾项内联
+
+新增 `docs/rh-c9-fourier-vaaler-tail-inline-proof.md`。尾项处理被拆成 C9.1 单原子尾项、C9.2 固定布尔组合稳定、C9.3 有限重叠盒族求和、C9.4 高频异常命名出口。C9 已从“待内联”改为“已内联，待 C10 正式引用”。当前最小闭合割集更新为 `{C1,C4,C6,C10,C11}`。
 
 ## 7. 状态定理
 
