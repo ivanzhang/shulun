@@ -68,6 +68,7 @@ PC1 的精确输入是：若存在 `ρ=β+iγ`，`β>1/2`，则存在平滑紧�
 - `docs/rh-nrc-ext-maintext-closure.md`；
 - `docs/rh-fct-maintext-closure-chain.md`；
 - `docs/rh-pi-dso-maintext-bridge-chain.md`；
+- `docs/rh-sc-maintext-capacity-closure.md`；
 - `docs/rh-pc3-ov2-upstream-unconditional-audit.md`；
 - `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md`。
 
@@ -137,7 +138,7 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 2. 将 `docs/rh-pc2-crt-baseline-maintext-appendix.md` 合并入主文，并全文统一 Chebyshev 权或无权口径；
 3. AAI/PPI/MLC/OV2 已新增连续主文证明链 `docs/rh-pc3-ov2-maintext-proof-chain.md`，PPI 输出端已新增 `docs/rh-ppi-terminal-output-maintext-chain.md`；后续义务是把 MLC、LV 与 D 组终端逐项并入最终主文；
 4. 将 PC4-A/PI/FCT/SC 的无循环审查从文档矩阵合并为单篇定理链；
-5. NRC/EXT 非共振分支已新增 `docs/rh-nrc-ext-maintext-closure.md`，FCT 无循环闭包已新增 `docs/rh-fct-maintext-closure-chain.md`，PI/DSO 桥接已新增 `docs/rh-pi-dso-maintext-bridge-chain.md`；仍需将 DGap 三接口、SC 局部乘积容量、尾项平方可和写入主文；
+5. NRC/EXT 非共振分支已新增 `docs/rh-nrc-ext-maintext-closure.md`，FCT 无循环闭包已新增 `docs/rh-fct-maintext-closure-chain.md`，PI/DSO 桥接已新增 `docs/rh-pi-dso-maintext-bridge-chain.md`，SC 局部乘积容量已新增 `docs/rh-sc-maintext-capacity-closure.md`；仍需将 DGap 三接口与尾项平方可和写入主文；
 6. 将容量矩阵中的所有 `log^C X` 常数改成全局常数层级账本；
 7. 完成所有外部定理 `EXT-KL/BG/Vaaler/Selberg/Vaughan/PC1` 的精确引用，其中 `EXT-KL` 已由 `docs/rh-nrc-ext-maintext-closure.md` 定位为 NRC 的唯一深输入；
 8. 做全文符号、权重口径、尺度参数、归一化能量的一致性校对。

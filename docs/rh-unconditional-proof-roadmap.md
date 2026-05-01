@@ -176,3 +176,9 @@ FCT 无循环闭包主文链已写入 `docs/rh-fct-maintext-closure-chain.md`。
 PI/DSO 容量桥接主文链已写入 `docs/rh-pi-dso-maintext-bridge-chain.md`。该补强把 FCT 重复状态、PPI 投影重复和 DGap 新频率包共同流向的高投影/新增频率能量统一处理：DSO 新包由 martingale square-function 和 Parseval 反馈到允许投影族，尺度列再作 lacunary/dense 二分，分别进入 PI lacunary 容量或 dense Carleson/square-function 容量。
 
 同时，DSO-E 局部正交输入被整理为有限群 Parseval、NRC/EXT-KL、可控多频平方和、大复杂度剥离四类，失败只进入 `FCT/LSMP/NRC/PI-Seed/CE`，避免 DSO 与 PI 间循环依赖。当前剩余压力转向 `SC` 局部乘积容量、`LV/LSMP/CE` 外部吸收、DGap 三接口与尾项平方可和主文化。
+
+## 27. SC 主文闭合推进记录
+
+SC 短簇局部乘积容量与递归终止主文链已写入 `docs/rh-sc-maintext-capacity-closure.md`。该补强把短窗 `I` 与 dyadic 双锚层 `(Q,R)` 中的复用容量显式化为 `(L/X)RQlog^C X + Rlog^C X`：第一项来自物理零频比例，第二项来自乘积壳端点薄层。
+
+递归部分把短簇状态规范化为 `(I,𝓑,Q,R,κ,σ)`，并用势函数 `𝓥=B_1ℓ+B_2v+B_3a+B_4h` 排除无限 `shorter_SC`：真缩窗、Bohr 压缩、锚自由度固定或 dyadic 剥离均使势函数下降；重复模板触发 `A/PI/FCT/LV/LSMP/CE` 或局部容量矛盾。当前剩余压力转向 DGap 三接口、Fourier/Vaaler 尾项平方可和、`LV/LSMP/CE` 外部吸收和 PC1/EXT 精确引用。
