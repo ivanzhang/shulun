@@ -68,7 +68,7 @@
 
 该非零三角多项式在无穷多点有固定正实部，给 `X^β` 级振荡。
 
-若同实部零点无限或只取上确界，则用 Landau--Ingham 定理避免有限多项式不足。此处必须引用标准振荡定理，不能用有限三角多项式偷换。
+若同实部零点无限或只取上确界，则用 Landau--Ingham 定理避免有限多项式不足。该接口的有限边界零点文内证明与一般情形标准定理拆分见 `docs/rh-pc1-landau-ingham-oscillation-appendix.md`。此处必须引用标准振荡定理，不能用有限三角多项式偷换。
 
 ## 5. 素数幂与无权化接口
 
@@ -82,7 +82,7 @@
 
 ## 6. PC1 标准化定理
 
-**Theorem PC1-External-Input-Standardization。** PC1 所需外部解析输入可标准化为：文内证明的平滑显式公式 `docs/rh-pc1-explicit-formula-proof-appendix.md`、外部 `EXT-PC1-LI` Landau--Ingham 振荡，以及权函数非湮灭、素数幂去除和对数权转换三个初等步骤。接受这些标准输入后，离线零点 `β>1/2` 无条件推出 PC1 的平滑素数窗口异常。
+**Theorem PC1-External-Input-Standardization。** PC1 所需外部解析输入可标准化为：文内证明的平滑显式公式 `docs/rh-pc1-explicit-formula-proof-appendix.md`、拆分审查的 Landau--Ingham 振荡 `docs/rh-pc1-landau-ingham-oscillation-appendix.md`，以及权函数非湮灭、素数幂去除和对数权转换三个初等步骤。接受这些标准输入后，离线零点 `β>1/2` 无条件推出 PC1 的平滑素数窗口异常。
 
 **证明。** 由第 3 节选取不湮灭零点的权函数。第 2 节显式公式把该零点作为非零项写入 `Ψ_W(X)`。第 4 节 Landau--Ingham 振荡给无穷尺度上的 `X^{β-o(1)}` 异常。第 5 节处理素数幂和无权化。证毕。
 

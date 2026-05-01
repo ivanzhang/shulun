@@ -15,7 +15,7 @@ PC1 的精确输入是：若存在 `ρ=β+iγ`，`β>1/2`，则存在平滑紧�
 该输入被标准化为：
 
 - 文内平滑显式公式证明：`docs/rh-pc1-explicit-formula-proof-appendix.md`；
-- `EXT-PC1-LI`：Landau--Ingham 振荡；
+- Landau--Ingham 振荡拆分：`docs/rh-pc1-landau-ingham-oscillation-appendix.md`；
 - 权函数非湮灭；
 - 素数幂去除；
 - Chebyshev 权到无权口径的对数损失。
@@ -127,7 +127,7 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 
 为达到真正“无条件 RH 证明”标准，仍必须完成以下工作：
 
-1. 将 `docs/rh-pc1-explicit-formula-proof-appendix.md` 合并入主文，并给 `EXT-PC1-LI` 补精确书目、章节或定理号；
+1. 将 `docs/rh-pc1-explicit-formula-proof-appendix.md` 合并入主文，并给一般情形 `LI-General` 补精确书目、章节或定理号；
 2. 将 PC2 权重正规化与 CRT 边界误差纳入主文逐行证明；
 3. 将 AAI/PPI/MLC/OV2 中仍以矩阵引用形式出现的接口改写为连续主文证明；
 4. 将 PC4-A/PI/FCT/SC 的无循环审查从文档矩阵合并为单篇定理链；
