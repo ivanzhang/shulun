@@ -69,7 +69,7 @@
 
 1. `PC4-PI`：终端输入审查见 `docs/rh-pc4-pi-terminal-audit.md`；dense 包已由正交输入支撑，剩余硬点是 PI-Lacunary-Capacity；
 2. `PC4-FCT`：Noether 闭包链是否有明确离散下降量；
-3. `PC4-SC`：shorter_SC 递归是否有严格体积/长度下降；
+3. `PC4-SC`：shorter_SC 递归的严格体积/长度下降账本见 `docs/rh-pc4-short-cluster-descent-ledger.md`；
 4. `PC4-A`：ACC 同步压力是否只转事件图边而不引用最终 closure。
 
 完成这四项后，第 5 项终端输入可从“条件化 closure”升级为“无循环终端事件图闭合”。

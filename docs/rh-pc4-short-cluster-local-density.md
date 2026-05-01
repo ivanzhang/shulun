@@ -47,4 +47,4 @@
 
 ## 5. 对 PC4-SC 的影响
 
-结合 `docs/rh-pc4-short-cluster-seed.md` 与 `docs/rh-pc4-short-cluster-mass-balance.md`，SC-Local-Density 排除了最后的物理短窗锚复用过密独立通道。下一步可合并为 `PC4-SC-Closure`，把短簇分支推进为条件化闭合分支。
+结合 `docs/rh-pc4-short-cluster-seed.md` 与 `docs/rh-pc4-short-cluster-mass-balance.md`，SC-Local-Density 排除了最后的物理短窗锚复用过密独立通道。`docs/rh-pc4-short-cluster-descent-ledger.md` 进一步把更短簇递归写成离散下降账本，可合并为 `PC4-SC-Closure`，把短簇分支推进为条件化闭合分支。
