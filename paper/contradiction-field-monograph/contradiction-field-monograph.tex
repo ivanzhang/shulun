@@ -107,10 +107,32 @@ inside back-half matrix windows, and tries to exclude a two-point rough-pair cou
 Fix an even integer $w>0$.  A two-point secondary-sieve field is the structured ledger obtained from a hypothetical interval in which every candidate $x$ fails at least one of the two congruence conditions $p\nmid x$ or $p\nmid x-w$ for some prime $p\le P$.  Its named channels are small-prime double locks, top-scale large-factor coverage, short-block zero-mass loss, multiplicative near-crossings, Fourier CRT defects, and smoothing boundary terms.
 \end{definition}
 
+\begin{lemma}[Fixed-order local crossing complexity]
+In the secondary-sieve manuscript, every fixed-order local crossing test is expanded only through truncated hard-skeleton weights
+\[
+  d\le R,\qquad R\le(\log P)^{C_R},
+\]
+with coefficient mass $\sum_{d\le R}|\lambda_d|\le(\log P)^{C_\lambda}$ and short-block shifts $|h|<L\asymp(\log\log P)^2$.  For every fixed order $k$, the effective historical complexity satisfies
+\[
+  Q_{\mathrm{eff},k}
+  \ll_k
+  \left(\sum_{d\le R}|\lambda_d|\right)^kR^kL^{O(k)}
+  \le(\log P)^{C_k}.
+\]
+In particular the required $k=2,3$ local crossing tests have polylogarithmic effective complexity.
+\end{lemma}
+
+\begin{proof}
+After expanding the $k$ truncated weights, only moduli $d_1,\ldots,d_k\le R$ occur.  For fixed new-line primes $p_i$, phases, and block shifts, all conditions are one-variable linear congruences.  By the Chinese remainder theorem the local system is either inconsistent or occupies one residue class modulo a divisor of
+\[
+  \operatorname{lcm}(d_1,\ldots,d_k)\operatorname{lcm}(p_1,\ldots,p_k).
+\]
+The primes $p_i$ are the explicit variables being summed in the crossing estimate; they contribute the usual $Y^k$ scale, not hidden historical complexity.  The historical part is bounded by $\operatorname{lcm}(d_1,\ldots,d_k)\le R^k$, the block shifts contribute $L^{O(k)}$ patterns, and the coefficient expansion contributes $\left(\sum|\lambda_d|\right)^k$.  This proves the displayed bound.  The true residual set $U_Y$ is not expanded into a full primorial period.
+\end{proof}
+
 \begin{proposition}[Recorded conditional closure chain for the two-point secondary sieve]
-Assume the following four inputs hold with the constants recorded in the secondary-sieve research note:
+Using the fixed-order complexity lemma above, assume the following three remaining inputs hold with the constants recorded in the secondary-sieve research note:
 \begin{enumerate}
-  \item fixed-order local crossing estimates have effective complexity $Q_{\mathrm{eff}}\le (\log P)^C$;
   \item the adaptive true-hit layer decomposition is used, with any single-prime concentration routed to a Single-Prime CRTDefect exit;
   \item the SC2 second-correlation estimate controls the two-line near-crossing error and the $45^\circ$ main-synchronization peak, while the finite package for primes $q\le100$ is checked separately;
   \item the weighted Bonferroni zero-mass estimate and smooth-to-sharp cutoff return hold with the recorded endpoint loss.
@@ -125,11 +147,11 @@ for adaptive true-hit layers, subject to the same fixed-$w$ convention used in t
 \begin{proof}[Proof sketch and status]
 The argument is a conditional synthesis, not a final unconditional theorem.  A top-scale covering excess is first decomposed into adaptive true-hit layers; any single-prime concentration is routed to the Single-Prime CRTDefect exit.  The remaining excess is converted by a TCA linear bridge into a positive short-block load.  The block load is forced into the SMC/SC2 near-crossing ledger.  The $45^\circ$ main synchronization is split into large-factor reuse, shared-complement factors, and good synchronized pairs; reuse and shared factors are excluded by short-window rigidity, while good pairs are sent to an auxiliary-prime Fourier CRT-defect.  Directional balance excludes the Fourier defect unless the top-scale energy is already below the capacity threshold.  Finally, the weighted Bonferroni zero-mass estimate supplies enough zero-hit block mass to make the capacity comparison incompatible.
 
-The current audit is archived under \path{docs/archive/monograph-reviews/} and classifies this as a research proposition conditional on the four inputs above.  The fact that an unconditional proof would imply fixed-gap prime-pair consequences, including the twin-prime case when $w=2$, is not a logical obstruction.  It only marks the strength of the claim.  The reason this chapter remains conditional is that the four listed inputs have not yet all been inlined as independently verified unconditional proofs.
+The current audit is archived under \path{docs/archive/monograph-reviews/} and classifies this as a research proposition conditional on the three inputs above.  The fixed-order complexity input has been inlined as the preceding lemma.  The fact that an unconditional proof would imply fixed-gap prime-pair consequences, including the twin-prime case when $w=2$, is not a logical obstruction.  It only marks the strength of the claim.  The reason this chapter remains conditional is that the three remaining inputs have not yet all been inlined as independently verified unconditional proofs.
 \end{proof}
 
 \begin{proposition}[Window-compressed conditional variant]
-Keep the same fixed even integer $w>0$ and the same four inputs as in the preceding proposition.  Let $I$ be any consecutive back-half window of $H(P)$ rows in the $P\times P$ matrix, so that $|I|=H(P)P+O(P)$.  Assume
+Keep the same fixed even integer $w>0$ and the same three remaining inputs as in the preceding proposition.  Let $I$ be any consecutive back-half window of $H(P)$ rows in the $P\times P$ matrix, so that $|I|=H(P)P+O(P)$.  By the fixed-order complexity lemma, write
 \[
   Q_{\mathrm{eff}}\le C_Q(\log P)^C.
 \]
@@ -163,11 +185,11 @@ The only scale-sensitive term in the recorded chain is the middle/high-scale $K=
   \ll
   \frac{P^{1/2}(\log P)^C}{H(P)}.
 \]
-The displayed lower bound on $H(P)$ makes this at most $\varepsilon_{\mathrm{SC2}}$ in the explicit form, or $o(1)$ in the asymptotic form.  Hence the constants in the TCA, SC2, zero-mass, finite-package, and smoothing ledgers are unchanged.  The conclusion is therefore a conditional window-compressed version of the previous proposition.  It becomes an unconditional prime-pair theorem only if the four recorded inputs are independently proved and accepted.
+The displayed lower bound on $H(P)$ makes this at most $\varepsilon_{\mathrm{SC2}}$ in the explicit form, or $o(1)$ in the asymptotic form.  Hence the constants in the TCA, SC2, zero-mass, finite-package, and smoothing ledgers are unchanged.  The conclusion is therefore a conditional window-compressed version of the previous proposition.  It becomes an unconditional prime-pair theorem only if the three remaining inputs are independently proved and accepted.
 \end{proof}
 
 \begin{remark}[Referee boundary]
-The two-point secondary-sieve chapter is included to document the contradiction-field architecture and its parameter ledger.  The window-compression audit is recorded in \path{docs/monograph/two-point-window-compression-and-unconditionality.md}.  It must not be cited as an unconditional proof of prime pairs, the twin-prime conjecture, or Goldbach-type assertions unless the four listed inputs are independently proved and accepted.
+The two-point secondary-sieve chapter is included to document the contradiction-field architecture and its parameter ledger.  The window-compression audit is recorded in \path{docs/monograph/two-point-window-compression-and-unconditionality.md}.  It must not be cited as an unconditional proof of prime pairs, the twin-prime conjecture, or Goldbach-type assertions unless the three remaining inputs are independently proved and accepted.
 \end{remark}
 
 \chapter{Zeta-Zero Contradiction Fields}

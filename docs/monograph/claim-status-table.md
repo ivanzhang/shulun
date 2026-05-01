@@ -162,9 +162,9 @@
 
 | 二次筛Zero Mass引理严写 | 条件闭合/待中尺度复核 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 289--296 节。用 `X=1,2` 块和二阶 Bonferroni 给出保守 `rho0>=0.30`：取 `M1>=0.58, M2>=0.28`，零概率分别 `>=0.48, >=0.10` 得 `0.3064`。最终参数 `alpha0=0.75,c0=1/2,nu=1/2` 下 Zero 正部约 `0.127`，TCA 损失可控到约 `0.16`。剩余全局义务：复核中尺度到 `P^0.75` 的 K=2 近交叉条件。 |
 
-| 二次筛中尺度K2全局复核 | 参数通过/待定理化 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 297--303 节。最终 `alpha0=0.75` 时，若使用薄层递推、固定阶局部交叉与硬骨架截断 `R<=polylog(P)`，则最坏层 `Y=P^0.75` 的 K=2 误差为 `P^-0.5 polylog(P)=o(1)`，层数累积仍 `o(1)`。全局参数义务通过；剩余是把 `Q_eff<=polylog`、SC2误差、Zero Mass块分布、平滑回退正式定理化。 |
+| 二次筛中尺度K2全局复核 | 参数通过/I1已定理化 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 297--303 节。最终 `alpha0=0.75` 时，若使用薄层递推、固定阶局部交叉与硬骨架截断 `R<=polylog(P)`，则最坏层 `Y=P^0.75` 的 K=2 误差为 `P^-0.5 polylog(P)=o(1)`，层数累积仍 `o(1)`。第 340--344 节已把 `Q_eff<=polylog` 内联证明；剩余是 SC2误差、Zero Mass块分布、平滑回退正式定理化。 |
 
-| 二次筛剩余审稿义务A-D | 骨架完成/待逐行展开 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 304--308 节。四项义务定理化为：A 固定阶局部交叉 `Q_eff<=polylog(P)`；B `SC2` 二阶相关误差 `<=0.15`；C Zero块分布 `M1>=0.58,M2>=0.28`；D 平滑回退损失 `<0.03`。A/D 技术性可闭合，B 依赖45-Main链条，C 依赖硬骨架低阶矩。下一步优先逐行补 C。 |
+| 二次筛剩余审稿义务A-D | A/I1已闭合，余三项待攻克 | `docs/monograph/two-point-secondary-sieve-research.md` 第 340--344 节已内联证明 A/I1 固定阶局部交叉 `Q_eff,k<=polylog(P)`。剩余三项为：I2 自适应分层与 Single-Prime CRTDefect；I3 `SC2` 二阶相关、45-Main和小 `q<=100` 有限包；I4 Zero Mass 加权 Bonferroni 与平滑回退。 |
 
 | 二次筛Zero Mass义务修正 | 更稳路线 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 309--314 节。逐行审查发现用三阶矩直接证明 `M1>=0.58,M2>=0.28` 不够稳；改为 C'：加权 Bonferroni 直接证明 `sum X_B 1_{R=0}/sum X_B>=0.30`。模型值约 `0.604`，只需一阶命中、SC2二阶下界、三阶尾部三个矩估计，余量更大。 |
 
@@ -174,7 +174,7 @@
 
 | 二次筛三线退化估计 | C'闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 324--330 节。最终取 `nu=0.4`：重合退化通过互异线定义为 0；双同步退化由45-Main残余 `<0.02` 给 `<0.008`；三重共块由K=3局部交叉 polylog 复杂度给 `<0.005`。三阶总项 `<0.02567<0.03`，C' 得 `rho0>=0.57`，审稿义务 C' 闭合。 |
 
-| 二次筛A/B最终缺口审查 | 不可无条件并入 | `docs/archive/monograph-reviews/two-point-secondary-sieve-gap-audit-2026-05-01.md` 已新增。顶刊标准下仍有 G1--G7 缺口：真实剩余集支撑/下界筛、TCA线性桥接真实块下界、SC2二阶相关下界、三线退化常数、`Q_eff<=polylog`形式化、平滑回退、任意偶数w均匀性。可作为条件研究命题章节并入，不能作为无条件证明。 |
+| 二次筛A/B最终缺口审查 | 不可无条件并入/缺口缩减 | `docs/archive/monograph-reviews/two-point-secondary-sieve-gap-audit-2026-05-01.md` 已新增。顶刊标准下原有 G1--G7 缺口；其中 `Q_eff<=polylog` 形式化已由第 340--344 节闭合。剩余重点为真实剩余/分层出口、SC2二阶相关与45-Main、小素有限包、Zero Mass/平滑回退以及固定 `w` 量词边界。 |
 
 | G1补正工作台 | 未闭合/压缩为局部条件均衡 | `docs/monograph/two-point-gap-closure-workbench.md` 已新增。G1 真实剩余支撑不能用普通低阶权重绕过；最直接权重 `1_U` 真实支持但难计算。当前最小硬点压缩为“局部条件均衡引理”：真实二次筛剩余集 `U_Y` 对固定阶局部测试函数保持均衡，误差不依赖完整 CRT 周期。 |
 
@@ -190,6 +190,8 @@
 
 | G5固定阶Qeff补正 | 技术闭合 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G5.1--G5.3。固定阶矩只展开截断权重 `d<=R<=polylog(P)` 和局部测试，故 `Q_eff,k<=R^k L^{O(k)}<=polylog(P)`。真实 `U_Y` 不展开完整CRT，只作支持集合；新模命中用上界筛处理。G5 闭合。 |
 
+| I1固定阶局部交叉内联证明 | 已闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 第 340--344 节新增正式对象、局部 CRT 计数引理、有效复杂度定理和窗口阈值接口。结论：任意固定阶 `k` 的 `Q_eff,k <= (log P)^{C_k}`；特别 `k=2,3` 可直接用于窗口压缩与 Zero Mass 三线尾部。 |
+
 | G6-G7补正与G1-G7总表 | 缺口压缩完成 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G6.1--G7.2 与总表。G6 由平滑夹逼端点层 `O(Delta)+o(1)` 闭合；G7 通过固定偶数 `w` 量词闭合，不声称均匀 `w` 版本。G1--G7 现压缩为两个正式输入：新模平均上界筛与 45-Main 同步残余 `<0.02` 的正式证明。 |
 
 | H1新模平均上界筛逐行审查 | 修正为自适应分层 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 H1.1--H1.7。逐行审查发现预设薄层平均 `<=0.4` 不能仅由上界筛推出，否则隐含 `|U_Y|` 下界。修正为按真实命中量自适应切薄层，使每层真实平均 `<=0.4`；若单素数贡献过大，则作为大因子集中 CRTDefect 出口。H1 不再依赖下界筛。 |
@@ -200,4 +202,4 @@
 
 | 正式稿工程义务完成 | 已并入正式研究稿/合著条件章节 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 331--334 节：Single-Prime CRTDefect 出口、自适应真实命中分层、小 `q<=100` 有限包表。`paper/contradiction-field-monograph/contradiction-field-monograph.tex` 已同步更新条件命题四输入和参数为 `nu_j^real<=0.4`。LaTeX 编译通过。 |
 
-| 二次筛窗口压缩版 | 条件加强/非无条件定理 | 新增 `docs/monograph/two-point-window-compression-and-unconditionality.md`，并在 `docs/monograph/two-point-secondary-sieve-research.md` 第 335--339 节写入窗口压缩审查。当前方法在四项输入一致成立时，可把后半窗口从约 `P/2` 行压缩到 `H_min^cond(P;eps)=ceil((C_Q/eps)P^{1/2}(log P)^C)` 行；渐近写法为 `ceil(P^{1/2}(log P)^{C_*})`, `C_*>C`。固定行或纯对数行仍超出现有 SC2 误差控制。 |
+| 二次筛窗口压缩版 | 条件加强/剩余三输入 | 新增 `docs/monograph/two-point-window-compression-and-unconditionality.md`，并在 `docs/monograph/two-point-secondary-sieve-research.md` 第 335--344 节写入窗口压缩审查与 I1 内联证明。当前方法在 I1 和剩余三项输入一致成立时，可把后半窗口从约 `P/2` 行压缩到 `H_min^cond(P;eps)=ceil((C_Q/eps)P^{1/2}(log P)^C)` 行；渐近写法为 `ceil(P^{1/2}(log P)^{C_*})`, `C_*>C`。固定行或纯对数行仍超出现有 SC2 误差控制。 |
