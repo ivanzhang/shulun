@@ -229,6 +229,14 @@ An $A$ self-return either decreases the ACC potential or is transferred; an $FCT
 Every non-absorbing traversal either decreases one component of $\mathcal L$ or removes the atom from the current exit ledger.  Since the components are bounded below and the template complexity is finite, an infinite positive-load cycle is impossible.
 \end{proof}
 
+
+\begin{proposition}[Low-black-box local exits]
+Under the unified threshold convention and the transfer-accounting proposition, the exits $LV,CE,LSMP,FCT,SC,A$ do not carry final load except for $o(\Delta)$ absorbing pieces or source-deleted transfers to named analytic exits.
+\end{proposition}
+\begin{proof}[Review proof]
+This summarizes \texttt{docs/rh-local-exit-proofs-formal-appendix.md}.  The $LV$ exit is a relative low-volume threshold plus trivial volume estimate.  The $CE/LSMP$ exits retain only small-mass, coarea, thin-layer, or square-summable absorbing pieces; all seeds transfer with source deletion.  The $FCT,SC,A$ exits are internal descent mechanisms controlled respectively by Noether, short-cluster, and ACC synchronization potentials; non-descent or repeated-template cases transfer to named exits.  Thus these six exits are closed at the bookkeeping/threshold level.  This proposition does not close the analytic exits $PI,DSO,NRC$.
+\end{proof}
+
 \begin{lemma}[GEE threshold compatibility]\label{lem:gee-threshold}
 Let
 \[

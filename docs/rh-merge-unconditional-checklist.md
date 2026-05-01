@@ -167,3 +167,12 @@
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
 - [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+
+## Local-Exit-Proofs 第一阶段更新
+
+- [x] `LV/CE/LSMP/FCT/SC/A`：`docs/rh-local-exit-proofs-formal-appendix.md` 已给出低黑箱出口形式化闭合。
+- [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Low-black-box local exits proposition。
+- [ ] `PI/DSO`：无幂损失容量与 square-function 上界。
+- [ ] `NRC`：双变量 PPI 与 DSO-E 逐入口参数匹配。
+- [ ] `EXT-Precision`：外部定理逐条精确适配。
+- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。

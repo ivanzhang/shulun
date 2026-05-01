@@ -223,3 +223,7 @@
 ## Transfer-Accounting 审稿义务归档
 
 新增 `docs/rh-transfer-accounting-formal-appendix.md` 并接入 LaTeX 主稿。当前最小割集由四项缩为三项：外部精确引用、九出口局部证明、review-form 消除。
+
+## Local-Exit-Proofs 第一阶段归档
+
+新增 `docs/rh-local-exit-proofs-formal-appendix.md` 并接入 LaTeX 主稿。当前剩余出口硬点压缩为 `PI/DSO/NRC` 三个解析出口。

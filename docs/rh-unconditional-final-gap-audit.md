@@ -64,3 +64,9 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 新增 `docs/rh-transfer-accounting-formal-appendix.md`，并在 `paper/rh-proof/rh-contradiction-field.tex` 的 GEE 节加入 Transfer-accounting proposition。该补强把 seed 转出、内部下降、吸收停止和有限细分统一为四类允许操作，证明质量不增、源目标不双计、最终路由重叠为 `log^{C_route+C_transfer}X`。
 
 因此最小剩余割集更新为三项：`EXT-Precision`、`Local-Exit-Proofs`、`Review-Form-Elimination`。其中 `Local-Exit-Proofs` 仍包含九出口局部上界本身，不能由本账本附录替代。
+
+## 7. Local-Exit-Proofs 第一阶段补强
+
+新增 `docs/rh-local-exit-proofs-formal-appendix.md`，并在 LaTeX GEE 节加入 Low-black-box local exits proposition。该补强将 `LV/CE/LSMP/FCT/SC/A` 六个出口写成阈值吸收、内部势函数下降或源删除转出命题。
+
+剩余 `Local-Exit-Proofs` 不再是九出口整体，而压缩为三个解析硬出口：`PI/DSO/NRC`。其中 `PI/DSO` 需要无幂损失容量与 square-function 上界，`NRC` 需要双变量和 DSO-E 逐入口参数匹配。

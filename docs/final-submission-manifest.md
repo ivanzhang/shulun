@@ -223,3 +223,10 @@
 - `paper/rh-proof/rh-contradiction-field.tex`：GEE 节新增 Transfer-accounting proposition。
 
 归档口径：该项闭合的是内部账本义务，不等于闭合外部解析输入或九出口局部上界。
+
+## Local-Exit-Proofs 第一阶段归档
+
+- `docs/rh-local-exit-proofs-formal-appendix.md`：新增九出口局部证明拆分附录，闭合 `LV/CE/LSMP/FCT/SC/A` 六个低黑箱出口，并隔离 `PI/DSO/NRC` 三个解析硬出口。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 Low-black-box local exits proposition。
+
+归档口径：本次推进的是 Local-Exit-Proofs 的第一阶段，不能标记为全部九出口无条件闭合。
