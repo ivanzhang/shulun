@@ -1,5 +1,8 @@
 # PC2：CRT 候选基线与边界误差显式化
 
+最终无条件化审查与逐项误差账本见 `docs/rh-pc2-baseline-unconditional-audit.md`。
+
+
 本文把 `docs/rh-pc2-li-crt-baseline-match.md` 中的核心输入
 
 `C_z(X)=C_z^0(X)+o(Δ)`
