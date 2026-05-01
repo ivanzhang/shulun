@@ -67,3 +67,8 @@ PC3-OV2 完成的是 RH 路线中的一段局部-全局桥接：
 - PC-4：覆盖容量过剩或 D 组终端最终反推出 RH 反例矛盾。
 
 因此本文应作为 RH 探索论文的桥接定理，而不是最终 RH 证明。
+
+
+## 5. 无条件化合并审查入口
+
+AAI/PPI/MLC 三接口的无条件化进度与剩余依赖转移见 `docs/rh-pc3-ov2-unconditionalization-audit.md`。该审查表明 PC3-OV2 的内部结构接口已拆解完成，剩余依赖转入 FCT、LV/LSMP、DSO/PI、NRC/EXT 与 PC4 终端 closure。

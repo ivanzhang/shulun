@@ -50,6 +50,7 @@
 - `docs/rh-ov2-mlc-uniform-absorption.md`
 - `docs/rh-lv-low-volume-principle.md`
 - `docs/rh-pc3-ov2-bridge-theorem.md`
+- `docs/rh-pc3-ov2-unconditionalization-audit.md`
 - `docs/rh-pc1-offline-zero-smooth-window.md`
 - `docs/rh-pc1-analytic-input-theoremization.md`
 - `docs/rh-pc2-li-crt-baseline-match.md`
