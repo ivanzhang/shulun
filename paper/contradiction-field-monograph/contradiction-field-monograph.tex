@@ -95,6 +95,37 @@ Final status & reduction package, not final unconditional theorem & verification
 \bottomrule
 \end{longtable}
 
+
+\chapter{Referee Closure Audit}
+
+This chapter records the strict closure standard used for the whole monograph.  A contradiction-field chain is considered closed only if its entrance, decomposition, exits, and global contradiction are all verified under the same load convention.
+
+\begin{definition}[Closure certificate]
+A closure certificate for a contradiction field consists of four data:
+\begin{enumerate}
+  \item an entrance theorem sending every counterexample into the field;
+  \item a disjoint or source-deleting decomposition into named exits;
+  \item for each exit, an absorption, descent, transfer, external theorem, or finite certificate;
+  \item a global comparison showing that final load is simultaneously bounded below and above in incompatible ways.
+\end{enumerate}
+If any item is replaced by an unverified structural input, the conclusion is conditional on that input.
+\end{definition}
+
+\begin{theorem}[Current monograph closure]
+The present manuscript closes the audit and dependency structure of the two contradiction-field programs: all known entrances, decompositions, exits, external inputs, finite certificates, and referee obligations are explicitly named.  It does not close the final unconditional theorem status of either program.
+\end{theorem}
+\begin{proof}
+For the prime-matrix program, the A/B appendix gives the entrance reduction from a row or column counterexample to a Structured-EHPD bad configuration, while the D-structure exclusion remains the decisive input requiring independent line-by-line review.  Therefore the chain is closed as a reduction package but not as a final theorem.
+
+For the RH program, the RH manuscript has completed U1--U5: statement wording, AEX acceptance, EXT localization, manuscript wording, BibTeX/PDF compilation, and warning-free LaTeX logs.  The final audit still requires independent referee verification of every local theorem and controlled exit.  Therefore the chain is closed as a verification package but not as a final unconditional RH theorem.
+
+The status table and the referee audit in \path{docs/monograph/} record exactly which pieces are proved, reduced, external, computational, or awaiting review.  Thus the monograph's logical boundary is explicit and closed, while promotion to final theorem status remains conditional on external verification.
+\end{proof}
+
+\begin{remark}[No overclaim principle]
+The monograph may state the shared contradiction-field method and the completed audit closures.  It must not state unconditional proofs of RH or of the prime-matrix row/column theorem until the remaining structured inputs have independent acceptance.
+\end{remark}
+
 \chapter{Current Status and Honest Boundary}
 
 The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
