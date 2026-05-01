@@ -25,3 +25,7 @@
 ## 内部逐行复核更新
 
 新增 `docs/monograph/line-by-line-internal-referee-matrix.md`。作者侧逐行复核未发现新的 `BLOCK-MATH`，但 Prime Matrix 终局与 RH 终局仍为 `BLOCK-REFEREE`：必须由独立审稿接受 D-structure/Tail-log4/finite 接口与 RH controlled exits 后，才可升级为最终无条件定理。
+
+## 两点 P-rough 命题 A/B 状态
+
+新增 `docs/monograph/two-point-rough-pair-propositions.md`。审查结论：A 与 B 在同余条件上等价；由于 `P×P` 方阵内任意大于 1 的 `P`-rough 数必为素数，A/B 对固定偶数 `w` 的全体充分大 `P` 成立将推出固定偶差素数对无穷多，特别 `w=2` 推出孪生素数猜想。因此 A/B 不能作为当前论著的无条件定理，只能列为二点 rough Jacobsthal / prime-pair 级未来突破方向。

@@ -62,6 +62,34 @@ A nontrivial full-composite row or column, after small-factor and tail-anchor pe
 See \texttt{docs/row-column-reduction-formal-appendix.md}.  This theorem is a reduction statement; it does not by itself prove the Structured-EHPD exclusion theorem.
 \end{proof}
 
+
+\section{Two-Point Rough-Pair Propositions}
+
+A natural next strengthening asks for two simultaneous nonzero-residue constraints in the back half of the prime matrix.  Fix an even integer $w>0$ and ask whether there is an entry $x$ in the back half of the $P\times P$ matrix such that both $x$ and $x-w$ are nonzero modulo every prime $p\le P$, or equivalently both $x$ and $w-x$ are nonzero modulo every prime $p\le P$.
+
+\begin{proposition}[Equivalence and strength of the two-point rough-pair problem]
+For fixed even $w>0$, the two conditions
+\[
+  p\nmid x(x-w)\quad(p\le P)
+\]
+and
+\[
+  p\nmid x(w-x)\quad(p\le P)
+\]
+are identical.  In the region $1<x\le P^2$, any integer nonzero modulo every prime $p\le P$ is prime.  Consequently, a proof of this two-point assertion for every sufficiently large $P$ would imply infinitely many prime pairs of gap $w$; in particular $w=2$ would imply the twin-prime conjecture.
+\end{proposition}
+
+\begin{proof}
+For each $p\le P$, the condition $p\nmid x-w$ is $x\not\equiv w\pmod p$, and the condition $p\nmid w-x$ is the same congruence.  Both formulations therefore exclude exactly the two residue classes $0$ and $w$ modulo each $p$, with possible collision when $p\mid w$.
+
+If $1<x\le P^2$ is nonzero modulo every prime $p\le P$ and is composite, then it has a prime factor $q\le \sqrt{x}\le P$, contradicting the nonzero-residue condition.  Thus such an $x$ is prime.  If the two-point assertion holds for all sufficiently large $P>w$, then $x$ and $x-w$ are both prime in infinitely many growing back-half matrix intervals, giving infinitely many prime pairs of gap $w$.
+\end{proof}
+
+\begin{remark}[Status]
+This two-point problem is therefore not a routine corollary of the one-point row/column contradiction field.  It is a prime-pair-level strengthening, naturally expressible as a two-point rough Jacobsthal problem.  In this monograph it is recorded as a future contradiction-field direction, not as an unconditional theorem.
+\end{remark}
+
+
 \chapter{Zeta-Zero Contradiction Fields}
 
 Assume an off-critical zero $\rho=\beta+i\gamma$ with $\beta>1/2$.  The RH contradiction-field manuscript transfers the resulting smooth prime anomaly into a CRT rough-composite ledger, decomposes it into sparse/dense/tail/internal/global exits, and proves that no named escape channel remains under the recorded local theorems and restricted external inputs.
