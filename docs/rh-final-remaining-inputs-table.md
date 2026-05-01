@@ -19,7 +19,7 @@
 |---|---|---|---|
 | R1 | `PI-Lac` | lacunary 投影容量 Bessel/Parseval 界 | 已由 `docs/rh-pi-lac-input-final.md` 补齐 |
 | R2 | `PI-Dense` | dense fixed-template Carleson/square-function 容量界 | 已归约到 `DSO-SF/EXT-KL` |
-| R3 | `DSO-SF` | martingale square-function 基线容量界 | 需正式证明或精确引用 |
+| R3 | `DSO-SF` | martingale square-function 基线容量界 | 已由 `docs/rh-dso-sf-input-final.md` 文内证明 |
 | R4 | `EXT-Precision` | `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的定理号、变量匹配、常数依赖 | 需外部引用精确化 |
 | R5 | `Review-Form-Elimination` | 删除或升级 LaTeX 中所有 `Proof sketch`、`Review proof`、`review form` | 需在 R1--R4 完成后执行 |
 
@@ -46,3 +46,9 @@
 新增 `docs/rh-pi-dense-input-final.md`，并在 LaTeX 主稿中加入 PI-Dense reduction proposition。`PI-Dense` 不再作为独立最终输入，而归约到 `DSO-SF` 与 `EXT-KL`：dense pack 的 CRT martingale 正交由 DSO-C/TC 处理，Euler 局部复杂度由 DSO-E/EXT-KL/FCT/LSMP 接收，剩余全局容量基线正是 `DSO-SF`。
 
 最终剩余输入更新为三项：`DSO-SF`、`EXT-Precision`、`Review-Form-Elimination`。
+
+## 7. DSO-SF 完成状态
+
+新增 `docs/rh-dso-sf-input-final.md`，并在 LaTeX 主稿中加入 DSO-SF input proposition。`DSO-SF` 已化为 CRT filtration 上的 Hilbert martingale square-function 恒等式：`Σ||D_kF||_2^2<=||F-E_0F||_2^2`。固定复杂度 frame 只损失多对数；失败项转入命名出口。
+
+最终剩余输入更新为两项：`EXT-Precision` 与 `Review-Form-Elimination`。

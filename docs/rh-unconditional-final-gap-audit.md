@@ -104,3 +104,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 ## 14. PI-Dense 归约完成
 
 新增 `docs/rh-pi-dense-input-final.md`。该文证明 PI-Dense 不是独立剩余输入，而归约到 `DSO-SF` 和 `EXT-KL`：DSO-C/TC 处理固定模板 dense pack，DSO-E/EXT-KL/FCT/LSMP 接收 Euler 局部复杂度，剩余容量基线为 `DSO-SF`。
+
+## 15. DSO-SF 完成
+
+新增 `docs/rh-dso-sf-input-final.md`。该文将 DSO-SF 证明为 CRT 逆极限 filtration 上的 Hilbert martingale square-function 定理；模板错误和过高重叠均转命名出口。因此 AEX-2 的核心输入完成，AEX-3 中 DSO-E 对 DSO-SF 的依赖解除。

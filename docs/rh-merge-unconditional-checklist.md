@@ -63,7 +63,7 @@
 - [x] 单变量 PPI 非共振入口：由平方根完成和与 `β>1/2` 闭合。
 - [x] Tail/RKS NRC：由 `LV` 或主层回流分流闭合。
 - [x] `NRC-2D`：双变量倒数包不再作为独立 NRC 硬点，已由 MidCap 转出到命名出口；剩余依赖 PI/DSO 与 DSO-SF。
-- [ ] `DSO-SF`：DSO 非共振包 square-function 无幂损失总量；当前已有 AEX-2 账本归约。
+- [x] `DSO-SF`：DSO 非共振包 square-function 无幂损失总量已由 `docs/rh-dso-sf-input-final.md` 补齐。
 
 详见 `docs/rh-gee-nrc-entry-parameter-table.md`。
 
@@ -173,7 +173,7 @@
 - [x] `LV/CE/LSMP/FCT/SC/A`：`docs/rh-local-exit-proofs-formal-appendix.md` 已给出低黑箱出口形式化闭合。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Low-black-box local exits proposition。
 - [ ] `PI/DSO`：无幂损失容量与 square-function 上界。
-- [ ] `NRC`：逐入口参数匹配已完成归约；剩余 `EXT-KL` 与 `DSO-SF`。
+- [ ] `NRC`：逐入口参数匹配已完成归约；剩余 `EXT-KL` 精确适配。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
 
@@ -182,8 +182,8 @@
 - [x] `PI/DSO/NRC` 统一归约：`docs/rh-analytic-exit-reduction-table.md` 已抽取 AEX-1、AEX-2、AEX-3。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Analytic exit reduction proposition。
 - [ ] `AEX-1`：零频扣除后的投影容量不等式；当前已归约为 `PI-Lac/PI-Dense`。
-- [ ] `AEX-2`：DSO 无幂损失 square-function 总量；当前已归约为 `DSO-SF`。
-- [ ] `AEX-3`：NRC 逐入口参数匹配；当前已归约为 `EXT-KL/DSO-SF`。
+- [x] `AEX-2`：DSO 无幂损失 square-function 总量已由 `DSO-SF` 闭合。
+- [ ] `AEX-3`：NRC 逐入口参数匹配；当前剩余 `EXT-KL` 精确适配。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
 
@@ -198,21 +198,21 @@
 
 - [x] `AEX-2` 账本归约：`docs/rh-aex2-dso-squarefunction-formal.md` 已把 DSO square-function 总量压缩为 `DSO-SF` 输入。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-2 DSO square-function proposition。
-- [ ] `DSO-SF`：martingale square-function 基线容量正式证明或精确引用。
+- [x] `DSO-SF`：martingale square-function 基线容量已文内证明。
 
 ## AEX-3 补强更新
 
 - [x] `AEX-3` 账本归约：`docs/rh-aex3-nrc-parameter-match-formal.md` 已完成 NRC 四入口参数表。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-3 NRC parameter matching proposition。
 - [ ] `EXT-KL`：单变量 NRC 外部完成和精确适配。
-- [ ] `DSO-SF`：DSO-E 入口 square-function 基线容量。
+- [x] `DSO-SF`：DSO-E 入口 square-function 基线容量已文内证明。
 
 ## 最终剩余输入归并
 
 - [x] 旧未完成项归并：`docs/rh-final-remaining-inputs-table.md` 已把历史清单折叠为真实剩余输入。
 - [x] `PI-Lac`：lacunary 投影容量 Bessel/Parseval 界已补齐。
 - [x] `PI-Dense`：dense fixed-template Carleson/square-function 容量界已归约到 `DSO-SF/EXT-KL`。
-- [ ] `DSO-SF`：martingale square-function 基线容量界。
+- [x] `DSO-SF`：martingale square-function 基线容量界已文内证明。
 - [ ] `EXT-Precision`：外部定理精确引用与变量匹配。
 - [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
 
@@ -221,7 +221,7 @@
 - [x] `PI-Lac`：`docs/rh-pi-lac-input-final.md` 已给出 lacunary Bessel/Parseval/有限重叠容量证明。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 PI-Lac input proposition。
 - [x] `PI-Dense`：dense fixed-template Carleson/square-function 容量界已归约到 `DSO-SF/EXT-KL`。
-- [ ] `DSO-SF`：martingale square-function 基线容量界。
+- [x] `DSO-SF`：martingale square-function 基线容量界已文内证明。
 - [ ] `EXT-Precision`：外部定理精确引用与变量匹配。
 - [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
 
@@ -229,6 +229,13 @@
 
 - [x] `PI-Dense`：`docs/rh-pi-dense-input-final.md` 已将 dense Carleson/square-function 容量归约到 `DSO-SF` 与 `EXT-KL`。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 PI-Dense reduction proposition。
-- [ ] `DSO-SF`：martingale square-function 基线容量界。
+- [x] `DSO-SF`：martingale square-function 基线容量界已文内证明。
+- [ ] `EXT-Precision`：外部定理精确引用与变量匹配。
+- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+
+## DSO-SF 完成更新
+
+- [x] `DSO-SF`：`docs/rh-dso-sf-input-final.md` 已给出 martingale square-function 基线容量证明。
+- [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 DSO-SF input proposition。
 - [ ] `EXT-Precision`：外部定理精确引用与变量匹配。
 - [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。

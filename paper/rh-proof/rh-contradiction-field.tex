@@ -289,6 +289,18 @@ This is the LaTeX summary of \texttt{docs/rh-analytic-exit-reduction-table.md}. 
 \end{proof}
 
 
+
+\begin{proposition}[DSO-SF input]
+After fixed-template natural refinement and source-deleting transfer of all error/complexity failures, the DSO square-function baseline is the Hilbert martingale identity
+\[
+  \sum_k\|D_kF\|_2^2\le \|F-E_0F\|_2^2.
+\]
+Thus DSO-SF is a formal $L^2$ martingale capacity theorem, not an additional analytic black box.
+\end{proposition}
+\begin{proof}[Review proof]
+This summarizes \texttt{docs/rh-dso-sf-input-final.md}.  Conditional expectations onto the CRT filtration are orthogonal projections, so martingale differences are pairwise orthogonal.  Fixed-complexity DSO frequency packages are orthogonal subprojections of these differences, up to logarithmic frame overlap.  Non-square-summable template errors, non-allowed packets, or excessive overlap transfer to named exits.  Hence the remaining DSO square-function mass is bounded by the zero-frequency-subtracted $L^2$ capacity.
+\end{proof}
+
 \begin{proposition}[AEX-3 NRC parameter matching]
 The NRC entrywise parameter condition reduces to four cases: single-variable PPI is square-root-small, Tail/RKS transfers to $LV$ or the main layer, two-variable PPI transfers through MidCap, and DSO-E depends on DSO-SF.
 \end{proposition}

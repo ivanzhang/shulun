@@ -255,3 +255,7 @@
 ## PI-Dense 归档
 
 新增 `docs/rh-pi-dense-input-final.md` 并接入 LaTeX 主稿。当前容量剩余集中为 `DSO-SF`。
+
+## DSO-SF 归档
+
+新增 `docs/rh-dso-sf-input-final.md` 并接入 LaTeX 主稿。当前真实剩余为外部引用精确化与 review-form 消除。

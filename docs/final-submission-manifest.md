@@ -266,3 +266,8 @@
 
 - `docs/rh-pi-dense-input-final.md`：新增 PI-Dense dense 投影容量归约，将其并入 `DSO-SF/EXT-KL`。
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 PI-Dense reduction proposition。
+
+## DSO-SF 归档
+
+- `docs/rh-dso-sf-input-final.md`：新增 DSO-SF martingale square-function 基线容量最终输入。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 DSO-SF input proposition。
