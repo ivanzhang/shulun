@@ -88,7 +88,7 @@
 1. PC1：离线零点到平滑素数异常（见 `docs/rh-pc1-analytic-input-theoremization.md`）；
 2. PC2：Li/CRT 零频基线匹配（见 `docs/rh-pc2-crt-baseline-explicit.md`）；
 3. PC3-OV2：过疏到 ACC 过剩或 D 组终端；
-4. PC4-A/SC/PI/FCT closure；
+4. PC4-A/SC/PI/FCT closure，并由 `docs/rh-pc4-terminal-final-no-cycle-audit.md` 合并为 PC4 终端无循环事件图；
 5. PC4-Dual、Dual-Gap-Ledger 与 DGap 三接口；
 6. NRC/EXT、LV/LSMP、AAI/PPI/MLC、DSO/CE 等外部结构接口。
 
@@ -96,7 +96,7 @@
 
 **证明。** 反设存在离线零点。PC1 给无穷多尺度上的素数异常 `|E_z|>=Δ=X^{β-o(1)}`。PC2 把该异常投影为粗合数账本反向异常 `B_z-B_z^0=-E_z+o(Δ)`。由覆盖恒等式，异常必须进入 `ACC`、`O` 或 `Gap` 三个结构场。
 
-若 `E_z<0`，由 PC3-OV2 进入 ACC 正向过剩或 D 组终端，再由 PC4-A/SC/PI/FCT/NRC/LV 排斥。若 `E_z>0`，由 PC4-Dual 进入 ACC 负向同步、overlap 过剩或 `DGap` 压缩异常；前两者进入 PC4-A 或 OV2/D，第三者由 DGap-Decomposition 进入 SC/PI/FCT/LV 或 A/OV2。所有分支均由假设 closure 排斥，矛盾。证毕。
+若 `E_z<0`，由 PC3-OV2 进入 ACC 正向过剩或 D 组终端，再由 PC4 终端无循环事件图与 NRC/LV 等外部吸收排斥。若 `E_z>0`，由 PC4-Dual 进入 ACC 负向同步、overlap 过剩或 `DGap` 压缩异常；前两者进入 PC4-A 或 OV2/D，第三者由 DGap-Decomposition 进入 SC/PI/FCT/LV 或 A/OV2。所有内部分支由 `PC4-Terminal-No-Cycle` 排除，外部分支由假设 closure 吸收，矛盾。证毕。
 
 ## 7. 剩余无条件化清单
 

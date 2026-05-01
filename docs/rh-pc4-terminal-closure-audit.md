@@ -72,4 +72,4 @@
 3. `PC4-SC`：shorter_SC 递归的严格体积/长度下降账本见 `docs/rh-pc4-short-cluster-descent-ledger.md`；
 4. `PC4-A`：ACC 同步压力的无循环账本见 `docs/rh-pc4-acc-sync-ledger.md`，只输出 PI/FCT/SC/LV/LSMP/CE/DSO 事件边。
 
-完成这四项后，第 5 项终端输入可从“条件化 closure”升级为“无循环终端事件图闭合”。
+完成这四项后，第 5 项终端输入已在 `docs/rh-pc4-terminal-final-no-cycle-audit.md` 中升级为“无循环终端事件图闭合”。
