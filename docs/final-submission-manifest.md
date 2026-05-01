@@ -34,6 +34,7 @@
 - `docs/rh-pc4-dense-scale-orthogonality.md`：PC4-PI 密集尺度正交接口。
 - `docs/rh-pc4-dso-crt-martingale.md`：DSO-C 逆极限 CRT 鞅平方函数。
 - `docs/rh-pc4-dso-template-consistency.md`：DSO-C-TC 固定投影模板一致性定理。
+- `docs/rh-pc4-complexity-escape-interface.md`：PC4-PI Complexity-Escape 复杂度逃逸三分接口。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。

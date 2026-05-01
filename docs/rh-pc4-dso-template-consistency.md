@@ -93,4 +93,4 @@ dyadic 层标签 `Q,R` 在 CRT 逆极限中不是坐标条件，而是尺度外�
 - 若模板复杂度固定且误差平方可和，密集尺度正交成立；
 - 若复杂度无界或截断误差不可和，则转入 Complexity-Escape/LSMP/FCT，而不是留在 DSO-C。
 
-下一步最优专攻是 Complexity-Escape：证明复杂度无界逃逸必触发 FCT 或 LSMP 小质量逃逸。
+Complexity-Escape 已在 `docs/rh-pc4-complexity-escape-interface.md` 中定理化为条件化三分：复杂度、尾项、旧坐标或边界逃逸必须进入 FCT/LSMP/LV/PI-Seed；其唯一未闭合的核心输入是 DSO-E Euler 局部因子 decorrelation。
