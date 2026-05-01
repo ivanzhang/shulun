@@ -32,7 +32,7 @@
 
 `||P_{<=H}u||_2^2 >= c_0||u||_2^2`。
 
-这一步只使用 Parseval、Vaaler 截断余项的 `L^2` 可加性，以及 `docs/rh-capacityfail-binding-table.md` 中 `DGap 盒有限重叠` 的绑定；没有引入新的自由事件。
+这一步只使用 Parseval、Vaaler 截断余项的 `L^2` 可加性，以及 `docs/rh-capacityfail-binding-table.md` 中 `DGap 盒有限重叠` 的绑定；统一尾项证明见 `docs/rh-fourier-vaaler-tail-uniform-audit.md`，没有引入新的自由事件。
 
 ## 3. 频率包与新增独立性
 
@@ -97,7 +97,7 @@
 
 本文不消除所有 RH 总攻条件，但把 `R4-DGap` 的第三接口从“低维抽取直觉”降为三项可审查义务：
 
-1. Fourier/Vaaler 尾项平方可和或进入 `CE/LSMP`；
+1. Fourier/Vaaler 尾项平方可和或进入 `CE/LSMP`，统一审查见 `docs/rh-fourier-vaaler-tail-uniform-audit.md`；
 2. 新增独立频率包触发 `DSO/PI` 的 square-function，桥接审查见 `docs/rh-dso-pi-squarefunction-bridge-audit.md`；
 3. 固定低维相位同向性精确匹配 `FCT_seed`，同型审查见 `docs/rh-fct-seed-isomorphism-audit.md`。
 

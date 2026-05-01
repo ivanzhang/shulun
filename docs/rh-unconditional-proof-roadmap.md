@@ -74,3 +74,9 @@
 `FCT_seed` 与 DGap 低维相位证书的逐字同型匹配已写入 `docs/rh-fct-seed-isomorphism-audit.md`。该补强用字段表统一 `Λ_*`、整数关系模板、自然缩放子列、短弧、同向符号和外部终端排除清单。
 
 当前 DGap 外部剩余进一步缩小为：Fourier/Vaaler 尾项平方可和在全部固定盒模板上的统一证明；以及 FCT phase drift/closure 的无无限递归排除。
+
+## 10. R4 第五轮推进记录
+
+Fourier/Vaaler 尾项在全部固定盒模板上的统一平方可和审查已写入 `docs/rh-fourier-vaaler-tail-uniform-audit.md`。该补强逐项覆盖物理窗、硬边界、倒数环带、Bohr 短弧、CRT 字符和有限布尔组合，并规定失败只能转入 `CE/LSMP/LV/SC/DSO-PI`。
+
+当前 DGap 外部接口主要剩下 `FCT phase drift/closure` 的无无限递归排除，以及总攻上游外部引用和容量常数的最终标准化。

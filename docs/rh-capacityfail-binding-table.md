@@ -23,7 +23,7 @@
 
 从最需要继续逐行化的角度排序：
 
-1. **DGap 投影与低维抽取**：frame 上界与逐步正交投影补强见 `docs/rh-dgap-projection-line-by-line-audit.md`；低维抽取逐行补强见 `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`；DSO/PI 桥接见 `docs/rh-dso-pi-squarefunction-bridge-audit.md`；FCT_seed 同型匹配见 `docs/rh-fct-seed-isomorphism-audit.md`；剩余为盒模板尾项统一与 FCT closure 无无限递归；
+1. **DGap 投影与低维抽取**：frame 上界与逐步正交投影补强见 `docs/rh-dgap-projection-line-by-line-audit.md`；低维抽取逐行补强见 `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`；DSO/PI 桥接见 `docs/rh-dso-pi-squarefunction-bridge-audit.md`；FCT_seed 同型匹配见 `docs/rh-fct-seed-isomorphism-audit.md`；盒模板尾项统一见 `docs/rh-fourier-vaaler-tail-uniform-audit.md`；剩余为 FCT closure 无无限递归与上游常数标准化；
 2. **SC 局部乘积容量**：短窗内 `q_1q_2r` 自由度估计需保持对所有 dyadic 层一致；
 3. **PI lacunary/Carleson 容量**：当前主要解决 lacunary，dense 依赖 DSO；
 4. **OV2/MLC Uniform 容量**：已转多出口，但 Uniform 零频容量需最终常数化；
