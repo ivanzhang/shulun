@@ -105,7 +105,7 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 为了真正向 RH 总攻推进，下一步不应再扩散，而应按可证性排序专攻：
 
-1. **PC4-A ACC 不同步排斥**：种子命题见 `docs/rh-pc4-acc-seed.md`；下一步攻 `ACC-Sync-Pressure`；
+1. **PC4-A ACC 不同步排斥**：种子命题见 `docs/rh-pc4-acc-seed.md`，同步压力见 `docs/rh-pc4-acc-sync-pressure.md`；下一步合并 `PC4-A-Closure`；
 2. **PC4-SC 短簇跨尺度排斥**：需要 CRT 周期均衡与短簇密度的跨尺度版本；
 3. **PC4-Dual 过密对偶**：若不能完全依赖反相位过疏，则必须补齐。
 
