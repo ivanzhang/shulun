@@ -2,6 +2,8 @@
 
 本文补强 `docs/rh-capacityfail-binding-table.md`：不仅要求每个 `CapacityFail` 绑定到具体容量文档，还要求每个容量定理的适用条件、损失类型、常数余量和失败出口可审查。本文不宣称 RH 已证明；它把容量黑箱压缩为可逐项核验的接口矩阵。
 
+全局 `log^C X` 常数层级排序见 `docs/rh-global-log-constant-hierarchy-audit.md`。
+
 ## 1. 统一核验字段
 
 每个容量定理必须给出六个字段：
@@ -64,4 +66,4 @@ PC1 给出的离线零点异常为 `X^{β-o(1)}`，`β>1/2`。PC2/PC3/PC4 的容
 1. 对 SC 局部乘积容量与 AAI/LV 常数层级做最终排序；
 2. 对 OV2/MLC Uniform 与 PPI 阈值常数层级做最终排序；
 3. 对 PI dense/Carleson 与 DSO bridge 的适用条件同全局事件图做最终交叉引用；
-4. 在最终论文中把所有 `log^C X` 的常数层级统一排序。
+4. 在最终论文中按 `docs/rh-global-log-constant-hierarchy-audit.md` 改写匿名常数。

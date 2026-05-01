@@ -116,3 +116,9 @@ OV2/MLC Uniform 零频容量常数化已写入 `docs/rh-ov2-mlc-uniform-capacity
 PI dense/Carleson 与 DSO bridge 适用条件无回流审查已写入 `docs/rh-pi-dense-dso-bridge-no-return-audit.md`。该补强逐项登记 lacunary/dense 二分、固定模板、martingale 拉回、允许投影有限交、误差吞噬和高重叠失败的命名出口。
 
 当前容量链主要剩余为全局 `log^C X` 常数层级排序，以及最终论文中容量接口的交叉引用编辑化。
+
+## 17. 全局 log 常数层级推进记录
+
+全局 `log^C X` 常数层级排序已写入 `docs/rh-global-log-constant-hierarchy-audit.md`。该账本按 `C_struct << C_overlap << C_tail << C_frame << C_cap << C_trig << B_LV << C_0 << B_final` 的顺序选择常数，确认所有多对数损失均可吸收到 `X^{o(1)}`，且不产生循环依赖。
+
+当前容量链剩余主要转为编辑义务：在最终论文中把匿名 `C` 改写为该层级常数族，并完成交叉引用。

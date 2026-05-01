@@ -95,6 +95,7 @@
 - `docs/rh-unconditional-proof-roadmap.md`：RH 无条件化攻坚路线图与剩余条件割集。
 - `docs/rh-capacityfail-binding-table.md`：CapacityFail 全局绑定表。
 - `docs/rh-capacity-constants-applicability-audit.md`：容量定理常数余量、适用条件与失败出口统一核验表。
+- `docs/rh-global-log-constant-hierarchy-audit.md`：全局 `log^C X` 常数层级排序与无循环依赖审查。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
