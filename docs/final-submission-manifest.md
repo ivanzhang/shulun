@@ -36,6 +36,7 @@
 - `docs/rh-sc-maintext-capacity-closure.md`：SC 短簇局部乘积容量与递归终止主文闭合链。
 - `docs/rh-dgap-maintext-three-interface-chain.md`：DGap 盒重叠、投影正交化与低维抽取主文链。
 - `docs/rh-fourier-vaaler-tail-maintext-chain.md`：Fourier/Vaaler 尾项平方可和主文链。
+- `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`：LV/LSMP/CE 外部吸收主文链。
 - `docs/rh-pc3-ov2-upstream-unconditional-audit.md`：PC3-OV2 AAI/PPI/MLC 上游输入无条件化矩阵审查。
 - `docs/rh-pc1-offline-zero-smooth-window.md`：PC-1 离线零点到平滑素数异常窗口。
 - `docs/rh-pc1-analytic-input-theoremization.md`：PC1 解析输入无条件化定理化。

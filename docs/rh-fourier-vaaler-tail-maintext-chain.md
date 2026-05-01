@@ -95,7 +95,8 @@ DGap 盒形如
 
 本文把 `docs/rh-dgap-maintext-three-interface-chain.md` 和 `docs/rh-ppi-terminal-output-maintext-chain.md` 中的尾项接口主文化。当前剩余压力主要为：
 
-1. `LV/LSMP/CE` 外部吸收总链；
-2. PC1 一般 Landau--Ingham 输入；
-3. `EXT-Vaaler`、`EXT-KL`、`EXT-PC1` 等精确引用；
-4. 全文符号、尺度、权重与 `o(Δ)` 一致性审查。
+1. PC1 一般 Landau--Ingham 输入；
+2. `EXT-Vaaler`、`EXT-KL`、`EXT-PC1` 等精确引用；
+3. 全文符号、尺度、权重与 `o(Δ)` 一致性审查。
+
+`LV/LSMP/CE` 外部吸收总链见 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`。

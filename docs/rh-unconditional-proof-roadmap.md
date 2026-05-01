@@ -194,3 +194,9 @@ DGap 盒有限重叠、投影正交化与低维频率抽取三接口已合并写
 Fourier/Vaaler 尾项平方可和主文链已写入 `docs/rh-fourier-vaaler-tail-maintext-chain.md`。该补强覆盖 PPI、DGap 与 PC4 固定复杂度模板：平滑窗用快速衰减，硬边界先平滑再截断，倒数环带与 Bohr 短弧用 Vaaler 多项式，CRT 字符无尾项，固定布尔组合由 `L^∞` 界与 Cauchy 保持平方可和。
 
 若尾项不能平方可和，则失败不再作为误差通道，而是进入 `CE/LSMP/LV/SC/FCT/DSO/PI`。当前剩余压力转向 `LV/LSMP/CE` 外部吸收总链、PC1 一般 Landau--Ingham 输入、`EXT-*` 精确引用和全文一致性审查。
+
+## 30. LV/LSMP/CE 外部吸收主文链推进记录
+
+`LV/LSMP/CE` 外部吸收总链已写入 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`。该补强把低体积、薄层小质量与复杂度逃逸三类出口统一处理：LV 用 `Vol_eff<=X/log^{B+C}X` 的平凡体积估计吸收；LSMP 用薄层 coarea、方向筛选与频率原子版小质量逃逸吸收；CE 被定义为频率复杂度、尾项能量、旧坐标重写、边界体积四分分类器。
+
+若三者不能吸收，只允许输出 `A/PI/FCT/SC` seed 或 `DSO/NRC/CapacityFail` 命名事件，不允许无标记回流。当前剩余压力集中到 PC1 一般 Landau--Ingham 输入、`EXT-*` 精确引用、容量常数层级与全文一致性审查。
