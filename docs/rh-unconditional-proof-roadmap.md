@@ -92,3 +92,9 @@ Fourier/Vaaler 尾项在全部固定盒模板上的统一平方可和审查已�
 PC1 外部解析输入标准化已写入 `docs/rh-pc1-external-input-standardization-audit.md`。该补强把离线零点推出平滑素数窗口异常压缩为 `EXT-PC1-EF` 平滑显式公式、`EXT-PC1-LI` Landau--Ingham 振荡，以及权函数非湮灭、素数幂去除、对数权转换三个初等步骤。
 
 当前 PC1 剩余不再是数学接口黑箱，而是最终投稿编辑义务：给两个外部标签选择精确书目、章节或定理号，并全文统一 Chebyshev 权或无权素数口径。
+
+## 13. 容量常数与适用条件推进记录
+
+容量定理常数与适用条件统一核验已写入 `docs/rh-capacity-constants-applicability-audit.md`。该表把 DSO、PI、SC、OV2/MLC、AAI、DGap、FCT/LSMP、PC2 基线等容量接口逐项登记为：对象、适用条件、容量界、允许损失、常数余量和失败出口。
+
+当前容量剩余硬点不再是无绑定 `CapacityFail`，而是 SC 局部乘积容量、OV2/MLC Uniform 零频容量、PI dense/Carleson 与 DSO bridge 适用条件的逐行证明强度。

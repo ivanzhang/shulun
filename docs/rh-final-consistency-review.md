@@ -19,7 +19,7 @@
 7. 全局接口：`docs/rh-global-interface-consistency-audit.md`；
 8. NRC/EXT：`docs/rh-nrc-ext-final-citation-audit.md`；
 9. DSO/容量：`docs/rh-dso-capacity-final-audit.md`；
-10. LSMP/FCT/CapacityFail：`docs/rh-lsmp-fct-capacity-final-audit.md`。
+10. LSMP/FCT/CapacityFail：`docs/rh-lsmp-fct-capacity-final-audit.md`，并由 `docs/rh-capacityfail-binding-table.md` 与 `docs/rh-capacity-constants-applicability-audit.md` 统一核验容量绑定、适用条件和常数余量。
 
 ## 2. 口径审查
 

@@ -93,6 +93,7 @@
 - `docs/rh-final-consistency-review.md`：RH 反例矛盾场全文最终一致性总审查。
 - `docs/rh-unconditional-proof-roadmap.md`：RH 无条件化攻坚路线图与剩余条件割集。
 - `docs/rh-capacityfail-binding-table.md`：CapacityFail 全局绑定表。
+- `docs/rh-capacity-constants-applicability-audit.md`：容量定理常数余量、适用条件与失败出口统一核验表。
 
 ## B. 行列归约附录
 

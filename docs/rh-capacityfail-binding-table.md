@@ -2,6 +2,8 @@
 
 本文执行 `docs/rh-unconditional-proof-roadmap.md` 的第一硬点 `R2-CapacityBinding`：把当前正式审稿入口中的 `CapacityFail`、容量失败、容量界失败逐项绑定到具体容量文档。
 
+容量定理的适用条件、常数余量与失败出口统一核验见 `docs/rh-capacity-constants-applicability-audit.md`。
+
 ## 1. 绑定总表
 
 | 出现语境 | 绑定容量 | 文档 | 状态 |
@@ -17,7 +19,7 @@
 
 ## 2. 未绑定项扫描结论
 
-在当前正式入口中，`CapacityFail` 不再作为自由事件出现；它总是指向某个容量文档或接口失败文档。真正待攻的不是“找不到绑定”，而是各绑定文档的证明强度排序。
+在当前正式入口中，`CapacityFail` 不再作为自由事件出现；它总是指向某个容量文档或接口失败文档。真正待攻的不是“找不到绑定”，而是各绑定文档的证明强度排序；适用条件与常数余量已在 `docs/rh-capacity-constants-applicability-audit.md` 中统一登记。
 
 ## 3. 强度排序
 

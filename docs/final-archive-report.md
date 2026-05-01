@@ -115,6 +115,7 @@
 - `docs/rh-final-consistency-review.md`
 - `docs/rh-unconditional-proof-roadmap.md`
 - `docs/rh-capacityfail-binding-table.md`
+- `docs/rh-capacity-constants-applicability-audit.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`
