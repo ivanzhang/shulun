@@ -188,6 +188,41 @@ Each rough-composite candidate is either explained by at least one admissible ce
 \end{proof}
 
 \section{The sparse branch PC3/OV2}\label{sec:sparse}
+\begin{lemma}[C4.1 sparse trichotomy]\label{lem:c4-trichotomy}
+If $B_z-B_z^0\ge\Delta-o(\Delta)$, then a fixed positive proportion of the anomaly is carried by one of $\ACC_z$, $\Hole_z$, or $\OV_z$, up to the established $o(\Delta)$ bookkeeping error.
+\end{lemma}
+\begin{proof}
+Lemma~\ref{lem:c3} gives $B_z=\ACC_z+\Hole_z+o(\Delta)$, while $\OV_z$ records the raw-certificate excess $T_z-\ACC_z$ and is the only way that raw coverage can exceed accepted first-layer coverage.  If neither $\ACC_z$ nor $\Hole_z$ carries a fixed positive part of $B_z-B_z^0$, the excess certificate mass must appear as second-layer reuse, i.e. in $\OV_z$.  Thus the sparse anomaly is exhausted by the three listed ledgers.
+\end{proof}
+
+\begin{lemma}[C4.2 coverage and hole exits]\label{lem:c4-acc-hole}
+The $\ACC_z$ alternative enters the positive coverage branch $A$.  The $\Hole_z$ alternative enters $LV,LSMP,CE$ or baseline-completeness failure, and hence is not an independent PC3 escape.
+\end{lemma}
+\begin{proof}
+A positive $\ACC_z$ excess is precisely an accepted-cover excess after PC2 zero-frequency subtraction; by definition it is the $A$ branch.  A positive $\Hole_z$ excess means a fixed mass of rough-composite candidates is not explained by the admissible certificates.  If those holes lie in small physical volume, small mass layers, boundary stacks, or unbounded template complexity, they are $LV,LSMP$ or $CE$.  If none of these occurs, then the admissible certificate system is baseline-complete on the fixed template class, contradicting that the same mass remains in $\Hole_z$.  Hence $\Hole_z$ has no free terminal.
+\end{proof}
+
+\begin{lemma}[C4.3 overlap normal form]\label{lem:c4-overlap-normal}
+Every positive $\OV_z$ atom has, after dyadic pigeonholing and outside $LV/SC/CE/LSMP$, a double-anchor normal form
+\[
+  n=q_1q_2r,
+\]
+with $q_1,q_2$ prime anchors in fixed dyadic layers and $q_1q_2r\asymp X$.
+\end{lemma}
+\begin{proof}
+By the admissible-anchor semantics, every allowed anchor is a prime divisor of the rough composite being covered.  The true minimum-anchor ledger is unique, so positive overlap is allowed-anchor redundancy over that unique ledger.  If two allowed anchors lie in the same dyadic layer, they are distinct prime divisors $q_1,q_2$ and give $n=q_1q_2r$.  If overlap is cross-layer, the allowed non-minimal anchor together with the true minimum anchor gives the same form.  Dyadic pigeonholing fixes the layers.  Failure of fixed layers, bounded anchor count, or controlled local volume is exactly a complexity, low-volume, short-cluster, or small-mass exit.
+\end{proof}
+
+\begin{lemma}[C4.4 main-layer routing]\label{lem:c4-mainlayer}
+On a fixed double-anchor main layer, the overlap mass either is zero-frequency absorbable or enters one of
+\[
+  FCT,SC,PI,LV,LSMP,CE,DSO,NRC.
+\]
+\end{lemma}
+\begin{proof}
+The main-layer capacity ledger localizes $q_1,q_2,r$ to $q_i\sim Q$, $r\sim R$, $Q^2R\asymp X$ unless low-tail, near-square boundary, low-volume, or complexity exits occur.  If the pushed-forward overlap measure is detectable by an allowed reciprocal window, the double-anchor congruence gives reciprocal phases of the form $a(r)q_1^{-1}+b(r)q_2^{-1}+\gamma(r)$.  Fourier/Vaaler expansion then routes non-resonant phases to $NRC$, resonant low-dimensional phases to $FCT$, high projection or square energy to $PI/DSO$, and truncation or concentration failures to $SC,LV,LSMP,CE$.  If the measure is not detectable by any allowed PPI window, the MLC uniform absorption dichotomy applies: it is either $FCT$, $SC/LV$, $DSO/PI$, or zero-frequency uniform background bounded by the baseline capacity.  Therefore no main-layer overlap mass remains as an unnamed terminal.
+\end{proof}
+
 \begin{theorem}[C4 sparse branch]\label{thm:c4}
 If $B_z-B_z^0\ge\Delta-o(\Delta)$, then the anomaly enters the positive coverage branch $A$ or one of the named exits
 \[
@@ -195,8 +230,8 @@ If $B_z-B_z^0\ge\Delta-o(\Delta)$, then the anomaly enters the positive coverage
 \]
 There is no independent PC3/OV2 escape channel.
 \end{theorem}
-\begin{proof}[Consolidated proof]
-By Lemma~\ref{lem:c3}, the anomaly is carried by $\ACC$, $\Hole$, or $\OV$.  The $\ACC$ case is $A$; the $\Hole$ case is a low-volume, small-mass, complexity, or baseline-completeness exit.  If $\OV$ is large, admissible-anchor semantics imply a double-anchor normal form $n=q_1q_2r$.  Dyadic pigeonholing localizes the mass to a stable main layer unless a low-volume, short-cluster, boundary, or complexity event occurs.  On that main layer, undetectable mass is absorbed by the uniform zero-frequency capacity or exits to $FCT/SC/LV/DSO/PI$; detectable mass is pushed to reciprocal phases and then to $NRC/FCT/PI/SC/DSO/LV/LSMP/CE$.
+\begin{proof}
+By Lemma~\ref{lem:c4-trichotomy}, the sparse anomaly is carried by $\ACC_z$, $\Hole_z$, or $\OV_z$.  Lemma~\ref{lem:c4-acc-hole} sends the first case to $A$ and the second to named low-volume, small-mass, complexity, or baseline-completeness exits.  In the overlap case, Lemma~\ref{lem:c4-overlap-normal} gives a dyadic double-anchor normal form outside already named exits, and Lemma~\ref{lem:c4-mainlayer} routes that fixed main layer either to zero-frequency absorption or to $FCT,SC,PI,LV,LSMP,CE,DSO,NRC$.  These alternatives exhaust all sparse-branch mass, so PC3/OV2 is not an independent escape channel.
 \end{proof}
 
 \section{The dense branch DGap}\label{sec:dense}

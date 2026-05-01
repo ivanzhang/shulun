@@ -33,3 +33,8 @@ LaTeX 主稿中的 `Proof sketch for review` 与 `Review proof` 已全部消除�
 ## C9 Fourier--Vaaler Tail 主稿编号化更新
 
 新增 `docs/rh-c9-tail-maintext-final.md`。LaTeX 主稿已把 C9 从 consolidated proof 升级为固定复杂度模板定义、原子尾项、布尔稳定性、盒族求和和无自由高频尾项四个编号引理，再推出 `C9 tail closure`。主定理 warning 仍保留；剩余 consolidated proof 为 C4 sparse branch 与 C5 DGap branch。
+
+
+## C4 Sparse Branch 主稿编号化更新
+
+新增 `docs/rh-c4-sparse-maintext-final.md`。LaTeX 主稿已把 C4 从 consolidated proof 升级为稀疏三分、覆盖/空洞出口、overlap 双锚正规形和主层路由四个编号引理，再推出 `C4 sparse branch`。主定理 warning 仍保留；剩余 consolidated proof 只剩 C5 DGap branch。
