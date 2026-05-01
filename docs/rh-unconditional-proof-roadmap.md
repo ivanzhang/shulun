@@ -164,3 +164,9 @@ PPI 输出端主文链已写入 `docs/rh-ppi-terminal-output-maintext-chain.md`�
 NRC/EXT 非共振完成和主文闭合链已写入 `docs/rh-nrc-ext-maintext-closure.md`。该补强把 PPI 非共振频率包归约为允许窗口上的倒数指数和；窗口经有限复杂度展开后，每个原子由完成法和素数模 Kloosterman--Weil 界 `EXT-KL` 控制，得到 `P^{1/2}log^A P` 型上界。
 
 非共振条件失败不再被视为 NRC 估计失败，而是按定义进入 `FCT_seed`；尾项、复杂度和低体积失败进入 `CE/LSMP/LV`。因此 NRC/EXT 的剩余义务缩小为 `EXT-KL` 精确书目页码，以及下游 FCT/CE/LSMP/LV 的主文化闭合。
+
+## 25. FCT 主文闭合推进记录
+
+FCT 无循环闭包主文链已写入 `docs/rh-fct-maintext-closure-chain.md`。该补强接收 NRC 非共振失败产生的频率碰撞证书，并把 FCT 状态规范化为 `(Λ,R,𝓑,τ)`，用 Hermite/Smith 规范代表排除同一关系换写法。
+
+核心闭合机制是整数势函数 `𝓝(S)=A_1r_free+A_2q+A_3L-A_4τ`：非重复真闭包使势函数下降；旧 span 外频率转 `NRC/DSO/PI`；重复状态触发 `PI/SC/LV/LSMP/DSO/CE`。因此 FCT 不再是独立递归缺口，剩余压力转向 `PI/DSO` 容量桥接、`SC` 局部乘积容量与 DGap/尾项主文化。

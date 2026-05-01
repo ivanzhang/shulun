@@ -55,6 +55,7 @@
 - `docs/rh-pc3-ov2-maintext-proof-chain.md`：PC3/OV2 AAI-PPI-MLC 连续主文证明链。
 - `docs/rh-ppi-terminal-output-maintext-chain.md`：PPI 可检测偏差到命名终端的主文输出链。
 - `docs/rh-nrc-ext-maintext-closure.md`：NRC/EXT 非共振倒数完成和主文闭合链。
+- `docs/rh-fct-maintext-closure-chain.md`：FCT 频率碰撞与 Noether 无循环主文闭合链。
 - `docs/rh-pc3-ov2-upstream-unconditional-audit.md`
 - `docs/rh-pc1-offline-zero-smooth-window.md`
 - `docs/rh-pc1-analytic-input-theoremization.md`

@@ -28,7 +28,7 @@
 
 `ξ notin Span_H(Ξ(g))`。
 
-若该条件失败，则 `ξ` 被祖先短深度频率解释，按定义进入 `FCT_seed`。该分支由 FCT Noether 下降与无循环闭包文档接收。因此 NRC 只处理非共振情形。
+若该条件失败，则 `ξ` 被祖先短深度频率解释，按定义进入 `FCT_seed`。该分支由 `docs/rh-fct-maintext-closure-chain.md` 的 FCT Noether 下降与无循环闭包接收。因此 NRC 只处理非共振情形。
 
 ## 3. 单原子完成法
 
