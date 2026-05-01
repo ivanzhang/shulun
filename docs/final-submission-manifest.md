@@ -271,3 +271,8 @@
 
 - `docs/rh-dso-sf-input-final.md`：新增 DSO-SF martingale square-function 基线容量最终输入。
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 DSO-SF input proposition。
+
+## EXT-Precision 归档
+
+- `docs/rh-ext-precision-final.md`：新增外部定理精确适配最终表。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 EXT-Precision theorem。

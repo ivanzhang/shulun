@@ -259,3 +259,7 @@
 ## DSO-SF 归档
 
 新增 `docs/rh-dso-sf-input-final.md` 并接入 LaTeX 主稿。当前真实剩余为外部引用精确化与 review-form 消除。
+
+## EXT-Precision 归档
+
+新增 `docs/rh-ext-precision-final.md` 并接入 LaTeX 主稿。当前唯一剩余为 review-form 消除。

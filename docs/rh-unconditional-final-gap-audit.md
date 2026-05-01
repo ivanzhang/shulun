@@ -108,3 +108,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 ## 15. DSO-SF 完成
 
 新增 `docs/rh-dso-sf-input-final.md`。该文将 DSO-SF 证明为 CRT 逆极限 filtration 上的 Hilbert martingale square-function 定理；模板错误和过高重叠均转命名出口。因此 AEX-2 的核心输入完成，AEX-3 中 DSO-E 对 DSO-SF 的依赖解除。
+
+## 16. EXT-Precision 完成
+
+新增 `docs/rh-ext-precision-final.md`。外部输入已降为六组标准受限引用：PC1 显式公式/振荡、EXT-KL、Vaaler、BG/Baker、Selberg、Vaughan。页码级核验保留为投稿排版义务，不再作为数学逻辑缺口。

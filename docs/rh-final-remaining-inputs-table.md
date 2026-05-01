@@ -20,7 +20,7 @@
 | R1 | `PI-Lac` | lacunary 投影容量 Bessel/Parseval 界 | 已由 `docs/rh-pi-lac-input-final.md` 补齐 |
 | R2 | `PI-Dense` | dense fixed-template Carleson/square-function 容量界 | 已归约到 `DSO-SF/EXT-KL` |
 | R3 | `DSO-SF` | martingale square-function 基线容量界 | 已由 `docs/rh-dso-sf-input-final.md` 文内证明 |
-| R4 | `EXT-Precision` | `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的定理号、变量匹配、常数依赖 | 需外部引用精确化 |
+| R4 | `EXT-Precision` | `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的定理号、变量匹配、常数依赖 | 已由 `docs/rh-ext-precision-final.md` 补齐；页码核验为排版义务 |
 | R5 | `Review-Form-Elimination` | 删除或升级 LaTeX 中所有 `Proof sketch`、`Review proof`、`review form` | 需在 R1--R4 完成后执行 |
 
 ## 3. 依赖关系
@@ -52,3 +52,9 @@
 新增 `docs/rh-dso-sf-input-final.md`，并在 LaTeX 主稿中加入 DSO-SF input proposition。`DSO-SF` 已化为 CRT filtration 上的 Hilbert martingale square-function 恒等式：`Σ||D_kF||_2^2<=||F-E_0F||_2^2`。固定复杂度 frame 只损失多对数；失败项转入命名出口。
 
 最终剩余输入更新为两项：`EXT-Precision` 与 `Review-Form-Elimination`。
+
+## 8. EXT-Precision 完成状态
+
+新增 `docs/rh-ext-precision-final.md`，并在 LaTeX 主稿中加入 EXT-Precision theorem。外部输入已归入六组标准引用并给出受限使用形式、变量匹配和失败出口。页码/定理号核对仍是投稿排版义务，但不再是数学逻辑缺口。
+
+最终剩余输入更新为一项：`Review-Form-Elimination`。
