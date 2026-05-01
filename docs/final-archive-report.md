@@ -247,3 +247,7 @@
 ## 最终剩余输入表归档
 
 新增 `docs/rh-final-remaining-inputs-table.md`。当前真实剩余已从分散历史硬点压缩为三项容量输入、外部引用精确化和 review-form 消除。
+
+## PI-Lac 归档
+
+新增 `docs/rh-pi-lac-input-final.md` 并接入 LaTeX 主稿。当前剩余容量输入为 `PI-Dense` 与 `DSO-SF`。

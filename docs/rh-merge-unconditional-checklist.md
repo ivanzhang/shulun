@@ -191,7 +191,7 @@
 
 - [x] `AEX-1` 账本归约：`docs/rh-aex1-projection-capacity-formal.md` 已把投影容量不等式压缩为 `PI-Lac` 与 `PI-Dense` 两个容量输入。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-1 projection capacity proposition。
-- [ ] `PI-Lac`：lacunary Bessel/Parseval 容量正式证明或精确引用。
+- [x] `PI-Lac`：lacunary Bessel/Parseval 容量正式证明已由 `docs/rh-pi-lac-input-final.md` 补齐。
 - [ ] `PI-Dense`：dense fixed-template Carleson/square-function 容量正式证明或精确引用。
 
 ## AEX-2 补强更新
@@ -210,7 +210,16 @@
 ## 最终剩余输入归并
 
 - [x] 旧未完成项归并：`docs/rh-final-remaining-inputs-table.md` 已把历史清单折叠为真实剩余输入。
-- [ ] `PI-Lac`：lacunary 投影容量 Bessel/Parseval 界。
+- [x] `PI-Lac`：lacunary 投影容量 Bessel/Parseval 界已补齐。
+- [ ] `PI-Dense`：dense fixed-template Carleson/square-function 容量界。
+- [ ] `DSO-SF`：martingale square-function 基线容量界。
+- [ ] `EXT-Precision`：外部定理精确引用与变量匹配。
+- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+
+## PI-Lac 完成更新
+
+- [x] `PI-Lac`：`docs/rh-pi-lac-input-final.md` 已给出 lacunary Bessel/Parseval/有限重叠容量证明。
+- [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 PI-Lac input proposition。
 - [ ] `PI-Dense`：dense fixed-template Carleson/square-function 容量界。
 - [ ] `DSO-SF`：martingale square-function 基线容量界。
 - [ ] `EXT-Precision`：外部定理精确引用与变量匹配。

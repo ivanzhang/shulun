@@ -96,3 +96,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 新增 `docs/rh-final-remaining-inputs-table.md`。该文把旧清单中仍显示的历史未完成项归并为五个真实剩余输入：`PI-Lac`、`PI-Dense`、`DSO-SF`、`EXT-Precision`、`Review-Form-Elimination`。
 
 下一步最优顺序：先攻 `PI-Lac/PI-Dense/DSO-SF` 三个容量输入，再做外部引用精确化，最后消除 review-form 证明。
+
+## 13. PI-Lac 完成
+
+新增 `docs/rh-pi-lac-input-final.md`。该文把强 lacunary 投影包的容量界写成正式输入：Mellin 支撑有限重叠，零频容量由 Baseline-Subtraction 扣除，超容量失败进入命名出口。因此 `PI-Lac` 可视为完成，AEX-1 剩余集中到 `PI-Dense`。

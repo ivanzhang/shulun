@@ -256,3 +256,8 @@
 ## 最终剩余输入表归档
 
 - `docs/rh-final-remaining-inputs-table.md`：新增最终剩余输入归并表，将旧清单折叠为 `PI-Lac`、`PI-Dense`、`DSO-SF`、`EXT-Precision`、`Review-Form-Elimination` 五项。
+
+## PI-Lac 归档
+
+- `docs/rh-pi-lac-input-final.md`：新增 PI-Lac lacunary 投影容量最终输入。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 PI-Lac input proposition。

@@ -250,6 +250,14 @@ Each local absorbing estimate is bounded by $\Delta/\log^{B_E-C_E}X$ with $C_E\l
 
 
 
+
+\begin{proposition}[PI-Lac input]
+For strongly lacunary fixed-template projection packs, Mellin support has finite overlap; after zero-frequency baseline subtraction, the lacunary part contributes no positive final $PI$ load except through named terminal failures.
+\end{proposition}
+\begin{proof}[Review proof]
+This is the LaTeX summary of \texttt{docs/rh-pi-lac-input-final.md}.  In logarithmic coordinates the windows lie in intervals $[\log X_j-C,\log X_j+C]$.  Strong lacunarity makes these intervals finitely overlapping.  Fixed CRT/Bohr/reciprocal templates refine inside each interval and do not create cross-scale support.  Hence the lacunary energy is bounded by its disjoint zero-frequency capacity; after Baseline-Subtraction this capacity is not final load.  Failure of finite overlap or single-scale boundedness is a named $CE/LSMP/LV/SC$ or single-scale $PI$ terminal.
+\end{proof}
+
 \begin{proposition}[AEX-1 projection capacity]
 The PI projection-capacity inequality reduces to two capacity inputs: a lacunary Bessel/Parseval bound and a dense fixed-template Carleson/square-function bound, both after zero-frequency baseline subtraction.
 \end{proposition}
