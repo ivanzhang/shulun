@@ -60,6 +60,7 @@
 - `docs/rh-pc4-dual-projection-orthogonalization.md`：PC4-Dual DGap 投影正交化接口。
 - `docs/rh-pc4-dual-lowdim-frequency-extraction.md`：PC4-Dual DGap 低维频率抽取接口。
 - `docs/rh-pc1-pc4-interface-closure-audit.md`：RH 反例矛盾场 PC1-PC4 接口闭合审查。
+- `docs/rh-contradiction-field-final-assault.md`：RH 反例矛盾场总攻框架。
 
 ## B. 行列归约附录
 
