@@ -13,7 +13,7 @@
 | Proposition PC1 | 离线零点推出平滑素数异常 | 条件主文化 | 补 `EXT-PC1-LI` 精确定理号或完整文内证明 |
 | Lemma PC2 | CRT 零频候选基线 | 已主文化 | 内联边界误差证明 |
 | Proposition CF | 覆盖场方程与二分 | 已定义化修正 | 采用 `ACC/Hole/OV` 三账本并内联 C3 |
-| Proposition Sparse | 过疏 PC3/OV2 分支 | 条件主文化 | 内联 AAI/MLC/PPI 的容量阈值 |
+| Proposition Sparse | 过疏 PC3/OV2 分支 | 已内联结构链 | C4 已给 C4.1--C4.4；待 C10 非共振引用 |
 | Proposition Dense | 过密 Dual/DGap 分支 | 内部三接口已定理化 | C5 已给 Lemma C5.1--C5.4；C6/C9 已内联，待 C10 与 C2 放电 |
 | Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 已内联无循环证明 | C6 已给 C6.1--C6.4；待 C7/C10 外部出口放电 |
 | Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口；C8 已排除自由 `CapacityFail` |
@@ -78,13 +78,13 @@
 
 ## 5. 过疏分支：PC3/OV2
 
-过疏给 `B_z-B_z^0>=Δ-o(Δ)`。若 overlap 与缺口不能吸收，则 `ACC_z-ACC_z^0>=cΔ`，进入 `A`。若 overlap 大，AAI 把冗余解释为双锚正规形
+过疏给 `B_z-B_z^0>=Δ-o(Δ)`。按 C3 修正版，若 `ACC_z-ACC_z^0>=cΔ`，进入 `A`；若 `Hole_z-Hole_z^0` 承载异常，进入 `LV/LSMP/CE` 或基线/证书完备接口；若二层复用 `OV_z=T_z-ACC_z` 大，AAI 把冗余解释为双锚正规形
 
 `n=q_1q_2r`。
 
 MLC 定位 dyadic 主层并排除不可检测零频自由吸收；PPI 将可检测主层推送到倒数相位窗口。PPI 输出端进一步分流为：非共振进入 `NRC/EXT`，共振进入 `FCT`，投影重复进入 `PI/SC/DSO`，尾项或复杂度逃逸进入 `LV/LSMP/CE`。
 
-主文链见：`docs/rh-pc3-ov2-maintext-proof-chain.md`、`docs/rh-ppi-terminal-output-maintext-chain.md`、`docs/rh-nrc-ext-maintext-closure.md`。
+主文链见：`docs/rh-pc3-ov2-maintext-proof-chain.md`、`docs/rh-ppi-terminal-output-maintext-chain.md`、`docs/rh-nrc-ext-maintext-closure.md`；C4 内联证明见 `docs/rh-c4-sparse-pc3-ov2-inline-proof.md`。
 
 ## 6. 过密分支：Dual/DGap
 
