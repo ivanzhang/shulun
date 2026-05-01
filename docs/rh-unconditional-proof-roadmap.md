@@ -170,3 +170,9 @@ NRC/EXT 非共振完成和主文闭合链已写入 `docs/rh-nrc-ext-maintext-clo
 FCT 无循环闭包主文链已写入 `docs/rh-fct-maintext-closure-chain.md`。该补强接收 NRC 非共振失败产生的频率碰撞证书，并把 FCT 状态规范化为 `(Λ,R,𝓑,τ)`，用 Hermite/Smith 规范代表排除同一关系换写法。
 
 核心闭合机制是整数势函数 `𝓝(S)=A_1r_free+A_2q+A_3L-A_4τ`：非重复真闭包使势函数下降；旧 span 外频率转 `NRC/DSO/PI`；重复状态触发 `PI/SC/LV/LSMP/DSO/CE`。因此 FCT 不再是独立递归缺口，剩余压力转向 `PI/DSO` 容量桥接、`SC` 局部乘积容量与 DGap/尾项主文化。
+
+## 26. PI/DSO 主文桥接推进记录
+
+PI/DSO 容量桥接主文链已写入 `docs/rh-pi-dso-maintext-bridge-chain.md`。该补强把 FCT 重复状态、PPI 投影重复和 DGap 新频率包共同流向的高投影/新增频率能量统一处理：DSO 新包由 martingale square-function 和 Parseval 反馈到允许投影族，尺度列再作 lacunary/dense 二分，分别进入 PI lacunary 容量或 dense Carleson/square-function 容量。
+
+同时，DSO-E 局部正交输入被整理为有限群 Parseval、NRC/EXT-KL、可控多频平方和、大复杂度剥离四类，失败只进入 `FCT/LSMP/NRC/PI-Seed/CE`，避免 DSO 与 PI 间循环依赖。当前剩余压力转向 `SC` 局部乘积容量、`LV/LSMP/CE` 外部吸收、DGap 三接口与尾项平方可和主文化。

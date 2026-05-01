@@ -84,7 +84,7 @@
 
 ## 8. 与 RH 总攻链的接口
 
-本文接收 `docs/rh-nrc-ext-maintext-closure.md` 的 FCT 失败出口，并接收 PC4 相位漂移中的新闭包证书。其输出只可能是：
+本文接收 `docs/rh-nrc-ext-maintext-closure.md` 的 FCT 失败出口，并接收 PC4 相位漂移中的新闭包证书。输出到 `PI/DSO` 的桥接见 `docs/rh-pi-dso-maintext-bridge-chain.md`。其输出只可能是：
 
 `PI/SC/LV/LSMP/DSO/CE/NRC`。
 
