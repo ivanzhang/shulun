@@ -96,7 +96,7 @@
 
 ## 6. 剩余义务：模板一致性
 
-DSO-C 的 Hilbert 空间核心已经严格闭合；剩余不是 martingale 定理，而是几何接入：证明 PPI/OMR 的固定投影模板确实满足 DSO-C-TC。若模板在尺度变化时重写旧坐标或引入无界新复杂度，则本定理不适用，该情况必须转入 Complexity-Escape/FCT/LSMP 分支。
+DSO-C 的 Hilbert 空间核心已经严格闭合；模板接入义务已在 `docs/rh-pc4-dso-template-consistency.md` 中对固定复杂度、平方可和误差方案给出条件化闭合。若模板在尺度变化时重写旧坐标、引入无界新复杂度，或截断尾项不可平方求和，则本定理不适用，该情况必须转入 Complexity-Escape/FCT/LSMP 分支。
 
 该义务可拆成三项：
 
@@ -110,4 +110,4 @@ DSO-C 的 Hilbert 空间核心已经严格闭合；剩余不是 martingale 定�
 
 `固定 L^2 函数在 inverse-limit CRT 空间上的新增层偏差平方和有界`。
 
-因此密集尺度正交的剩余硬点从“证明某种跨尺度正交”缩小为具体的“模板一致性 DSO-C-TC”。下一步最优专攻就是逐项证明 PPI/OMR 固定模板满足自然细化、复杂度稳定与误差平方可和。
+因此密集尺度正交的剩余硬点从“证明某种跨尺度正交”缩小为两个明确接口：固定复杂度模板由 `docs/rh-pc4-dso-template-consistency.md` 接入；复杂度无界或误差不可和的逃逸由 Complexity-Escape/FCT/LSMP 接管。下一步最优专攻是 Complexity-Escape。

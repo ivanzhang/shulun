@@ -82,4 +82,4 @@ Euler product 视角给同一事实的乘法版本：新增素数层 `p` 的局�
 
 ## 7. 下一步最优攻坚
 
-DSO-C 的 inverse-limit CRT martingale 核心已在 `docs/rh-pc4-dso-crt-martingale.md` 中定理化。剩余最优专攻是模板一致性 DSO-C-TC：证明 PPI/OMR 固定模板在 CRT 细化中满足自然细化、复杂度稳定和误差平方可和。
+DSO-C 的 inverse-limit CRT martingale 核心已在 `docs/rh-pc4-dso-crt-martingale.md` 中定理化；固定复杂度模板一致性已在 `docs/rh-pc4-dso-template-consistency.md` 中条件化闭合。剩余最优专攻是 Complexity-Escape：证明复杂度无界、截断尾项不可和或模板重写旧坐标时，必触发 FCT 频率闭包、LSMP 小质量逃逸或 LV 低体积分支。

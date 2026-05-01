@@ -35,6 +35,7 @@
 - `docs/rh-pc4-pi-cap-carleson.md`：PC4-PI 跨尺度 Carleson 容量上界路线。
 - `docs/rh-pc4-dense-scale-orthogonality.md`：PC4-PI 密集尺度正交接口。
 - `docs/rh-pc4-dso-crt-martingale.md`：DSO-C 逆极限 CRT 鞅平方函数。
+- `docs/rh-pc4-dso-template-consistency.md`：DSO-C-TC 固定投影模板一致性定理。
 
 ## B. 行列归约附录
 
