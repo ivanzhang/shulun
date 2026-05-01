@@ -82,4 +82,4 @@ Euler product 视角给同一事实的乘法版本：新增素数层 `p` 的局�
 
 ## 7. 下一步最优攻坚
 
-三条路线中，最可操作的是 DSO-C：构造 inverse-limit CRT 概率空间，并把固定模板窗口拉回为一致复杂度函数族。它最贴近本文已有 CRT 非零类均衡与 D 组 martingale 能量账本。
+DSO-C 的 inverse-limit CRT martingale 核心已在 `docs/rh-pc4-dso-crt-martingale.md` 中定理化。剩余最优专攻是模板一致性 DSO-C-TC：证明 PPI/OMR 固定模板在 CRT 细化中满足自然细化、复杂度稳定和误差平方可和。
