@@ -84,3 +84,9 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 ## 10. AEX-2 DSO square-function 补强
 
 新增 `docs/rh-aex2-dso-squarefunction-formal.md`，并在 LaTeX GEE 节加入 AEX-2 DSO square-function proposition。该补强把 AEX-2 压缩为一个核心输入 `DSO-SF`：martingale square-function 基线必须由允许容量加 `Δ^2/log^B X` 控制。Parseval/frame、误差转出和有限重叠账本已形式化。
+
+## 11. AEX-3 NRC 参数匹配补强
+
+新增 `docs/rh-aex3-nrc-parameter-match-formal.md`，并在 LaTeX GEE 节加入 AEX-3 NRC parameter matching proposition。该补强把 NRC 入口分成四类：单变量 PPI 直接平方根闭合，Tail/RKS 分流，双变量 PPI 经 MidCap 转出，DSO-E 依赖 `DSO-SF`。
+
+因此 NRC 剩余不再是泛泛双变量硬点，而主要依赖 `EXT-KL` 精确适配与 `DSO-SF`。

@@ -247,3 +247,8 @@
 
 - `docs/rh-aex2-dso-squarefunction-formal.md`：新增 DSO square-function AEX-2 形式化审查，将剩余压缩为 `DSO-SF` 容量输入。
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 AEX-2 DSO square-function proposition。
+
+## AEX-3 归档
+
+- `docs/rh-aex3-nrc-parameter-match-formal.md`：新增 NRC 逐入口参数匹配审查，将剩余压缩为 `EXT-KL` 与 `DSO-SF`。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 AEX-3 NRC parameter matching proposition。

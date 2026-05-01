@@ -272,6 +272,14 @@ After the six low-black-box exits have been closed, the remaining analytic exits
 This is the LaTeX summary of \texttt{docs/rh-analytic-exit-reduction-table.md}.  Baseline subtraction removes zero-frequency capacity from $PI/DSO$ load.  The remaining $PI$ load is controlled by the projection-capacity inequality AEX-1; the remaining $DSO$ load is controlled by the square-function inequality AEX-2; and every $NRC$ entry is either square-root-small or routed out by AEX-3.  Hence these three inequalities would imply $Load(PI)+Load(DSO)+Load(NRC)=o(\Delta)$.
 \end{proof}
 
+
+\begin{proposition}[AEX-3 NRC parameter matching]
+The NRC entrywise parameter condition reduces to four cases: single-variable PPI is square-root-small, Tail/RKS transfers to $LV$ or the main layer, two-variable PPI transfers through MidCap, and DSO-E depends on DSO-SF.
+\end{proposition}
+\begin{proof}[Review proof]
+This summarizes \texttt{docs/rh-aex3-nrc-parameter-match-formal.md}.  For single-variable PPI, $P\le X$ and polylogarithmic complexity give $X^{1/2}\log^C X=o(\Delta)$ because $\beta>1/2$.  Tail/RKS is either low volume or returns to the main layer.  Two-variable PPI is not closed by a dangerous $Q P^{1/2}$ summation; instead PPI-Rank, Capacity-Match, and MidCap route it to named exits.  DSO-E is square-root-small only once DSO-SF is available.
+\end{proof}
+
 \begin{theorem}[GEE upper bound, review form]\label{thm:gee-upper}
 Assume the nine local exit mechanisms in the table above, Lemmas~\ref{lem:gee-cycle} and~\ref{lem:gee-threshold}, and Definition~\ref{def:gee-load}.  Then
 \[

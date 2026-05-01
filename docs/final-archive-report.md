@@ -239,3 +239,7 @@
 ## AEX-2 归档
 
 新增 `docs/rh-aex2-dso-squarefunction-formal.md` 并接入 LaTeX 主稿。AEX-2 已归约为 `DSO-SF` 一个容量输入，尚未完全无条件闭合。
+
+## AEX-3 归档
+
+新增 `docs/rh-aex3-nrc-parameter-match-formal.md` 并接入 LaTeX 主稿。AEX-3 已归约为 `EXT-KL` 精确适配与 `DSO-SF` 两项输入。
