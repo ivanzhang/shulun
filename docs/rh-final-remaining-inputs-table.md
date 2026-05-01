@@ -62,3 +62,8 @@
 ## 9. Review-Form-Elimination 审查状态
 
 新增 `docs/rh-review-form-elimination-audit.md`。LaTeX 主稿中的 `Proof sketch for review` 与 `Review proof` 已清零；主定理仍保留 `review form` 和 submission warning。最终剩余从“局部 proof 标记清除”转为“主定理是否可升级”的顶层审稿判断；详细阻断审查见 `docs/rh-final-theorem-promotion-audit.md`。必须确认所有引用定理均已被逐行证明或精确外部引用支撑后，才可删除 warning。
+
+
+## C6 No-Cycle 主稿编号化更新
+
+新增 `docs/rh-c6-no-cycle-maintext-final.md`。LaTeX 主稿已把 C6 从 consolidated proof 升级为 `Definition C6 internal state graph`、`Lemma C6 self-loop exclusion`、`Lemma C6 mixed-cycle exclusion` 与最终 `C6 internal terminal no-cycle` 的编号化证明链。主定理 warning 仍保留；下一步最优为 C9 Fourier--Vaaler tail closure 的编号化。

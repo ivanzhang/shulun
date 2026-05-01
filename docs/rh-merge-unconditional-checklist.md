@@ -259,3 +259,8 @@
 - [x] `EXT-PC1-LI`：新增 `docs/rh-ext-pc1-li-precision-final.md`，固定有限边界零点文内证明与无限边界/上确界的 Landau--Ingham 外部接口。
 - [x] GEE 下界/上界同尺度化：LaTeX 主稿已把下界 `Δ log^{-C_route}X` 与上界 `Δ log^{-B_final}X` 比较，要求 `B_final>C_route+C_total+10`，避免旧稿中用 `o(Δ)` 直接压过多对数下界的口径漏洞。
 - [~] 主定理 `review form`：仍保留；`docs/rh-final-theorem-promotion-audit.md` 明确当前不能删除 warning，下一步应编号化 C4/C5/C6/C9。
+
+
+## C6 No-Cycle 主稿编号化更新
+
+新增 `docs/rh-c6-no-cycle-maintext-final.md`。LaTeX 主稿已把 C6 从 consolidated proof 升级为 `Definition C6 internal state graph`、`Lemma C6 self-loop exclusion`、`Lemma C6 mixed-cycle exclusion` 与最终 `C6 internal terminal no-cycle` 的编号化证明链。主定理 warning 仍保留；下一步最优为 C9 Fourier--Vaaler tail closure 的编号化。

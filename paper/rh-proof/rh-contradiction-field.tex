@@ -212,6 +212,28 @@ The DGap mass is localized to a fixed-complexity box family with pointwise overl
 \end{proof}
 
 \section{Internal terminal no-cycle theorem}\label{sec:terminal}
+\begin{definition}[C6 internal state graph]\label{def:c6-graph}
+The C6 internal graph has nodes $A,PI,FCT,SC$.  An edge is called internal only if it keeps the same excess atom inside these four nodes without registering one of the named exits $LV,CE,LSMP,DSO,NRC$ or an already declared capacity failure.  The internal state carries the lexicographic Lyapunov vector
+\[
+  \mathcal L=(\mathcal A_{pot},\mathcal N,\mathcal V,\mathcal C_{PI},\mathcal R),
+\]
+where $\mathcal A_{pot}$ is the ACC synchronization potential, $\mathcal N$ the normalized FCT Noether potential, $\mathcal V$ the short-cluster potential, $\mathcal C_{PI}$ the zero-frequency-subtracted projection-capacity excess, and $\mathcal R$ the remaining finite template rank.  All components are non-negative integers or non-negative capacity ledgers after the fixed dyadic/template discretization.
+\end{definition}
+
+\begin{lemma}[C6 self-loop exclusion]\label{lem:c6-self}
+No node among $A,PI,FCT,SC$ admits an infinite positive-load self-loop once named exits and capacity failures are registered.
+\end{lemma}
+\begin{proof}
+For $A$, a genuine ACC synchronization step strictly decreases $\mathcal A_{pot}$; if the normalized ACC template does not change, the repeated-template pressure is routed to $PI,FCT,SC,LV,LSMP,CE$ or $DSO$, so it is not an $A$ self-loop.  For $FCT$, a genuine frequency-closure step strictly decreases the Noether potential $\mathcal N$ after normalization; if the same closure state repeats, it is routed to $NRC,DSO,PI,SC,LV,LSMP$ or $CE$.  For $SC$, a genuine shorter-cluster recursion strictly decreases $\mathcal V$; if the same short-cluster template repeats, it is routed to $A,PI,FCT,LV,LSMP$ or $CE$.  For $PI$, lacunary, dense, and boundary packages register only the excess over zero-frequency capacity; a repeated admissible package consumes $\mathcal C_{PI}$ by the projection-capacity ledger, while failure of the ledger is a named capacity exit.  Each decreasing component is bounded below, hence none of these self-loops can be infinite.
+\end{proof}
+
+\begin{lemma}[C6 mixed-cycle exclusion]\label{lem:c6-mixed}
+The internal graph of Definition~\ref{def:c6-graph} has no infinite mixed cycle carrying the same positive final load.
+\end{lemma}
+\begin{proof}
+Consider an infinite internal path and remove all finite initial segments.  If some node occurs in infinitely many consecutive same-type blocks of unbounded length, Lemma~\ref{lem:c6-self} applies.  Otherwise the path switches node type infinitely often.  A switch that changes ACC, FCT, or SC normalized template without leaving the internal graph strictly decreases the corresponding first available component of $\mathcal L$.  A switch through $PI$ either decreases the projection-capacity excess $\mathcal C_{PI}$ after baseline subtraction or triggers the registered capacity exit.  If no component of $\mathcal L$ decreases during a full return to a previous node, then every normalized template, dyadic layer, relation rank, and phase-depth label on that return is identical; by the fixed-template repetition alternatives for $A$, $FCT$, and $SC$, or by the $PI$ capacity ledger, the atom must be routed to a named exit rather than continue internally.  Thus every genuine internal return either decreases $\mathcal L$ lexicographically or removes the atom from the internal graph.  Since $\mathcal L$ is bounded below and the template rank is finite, an infinite positive-load mixed cycle is impossible.
+\end{proof}
+
 \begin{theorem}[C6 internal terminal no-cycle]\label{thm:c6}
 Assume the named external exits are registered and CapacityFail is not allowed as a free terminal.  Then the internal event graph
 \[
@@ -219,8 +241,8 @@ Assume the named external exits are registered and CapacityFail is not allowed a
 \]
 has no infinite final escape path.
 \end{theorem}
-\begin{proof}[Consolidated proof]
-The $A$ branch has an ACC synchronization potential; $PI$ splits into lacunary, dense, and boundary packages; $FCT$ has a Noether potential on normalized frequency-closure states; $SC$ has a short-cluster descent potential.  In an infinite path, either some maximal same-type segment is infinite, contradicting the relevant potential/repetition lemma, or event types switch infinitely often.  In the latter case, finitely many templates force a repeated same-type template, while infinitely many templates force complexity, volume, dyadic, relation, or phase-depth change and hence an external exit or potential descent.  Both alternatives contradict final internal escape.
+\begin{proof}
+Any infinite final escape path either eventually remains in one node or switches among at least two nodes infinitely often.  The first case is excluded by Lemma~\ref{lem:c6-self}; the second is excluded by Lemma~\ref{lem:c6-mixed}.  Therefore every positive-load path inside $A,PI,FCT,SC$ either terminates by a registered named exit, consumes zero-frequency-subtracted capacity, or descends finitely many times in the Lyapunov vector.  No infinite final internal escape path remains.
 \end{proof}
 
 \section{Fourier--Vaaler tails}\label{sec:tail}

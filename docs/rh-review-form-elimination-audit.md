@@ -23,3 +23,8 @@ GEE 段中由正式附录支撑的内部账本、六个低黑箱出口、AEX-1/A
 ## 最新结论
 
 LaTeX 主稿中的 `Proof sketch for review` 与 `Review proof` 已全部消除。当前仅保留主定理 `review form` 与 `Submission warning`，原因是主链定理逐项接受性与外部输入页码/定理号核验仍是提交前义务；详见 `docs/rh-final-theorem-promotion-audit.md`。在该义务完成前不能宣称 RH 无条件证明定稿。
+
+
+## C6 No-Cycle 主稿编号化更新
+
+新增 `docs/rh-c6-no-cycle-maintext-final.md`。LaTeX 主稿已把 C6 从 consolidated proof 升级为 `Definition C6 internal state graph`、`Lemma C6 self-loop exclusion`、`Lemma C6 mixed-cycle exclusion` 与最终 `C6 internal terminal no-cycle` 的编号化证明链。主定理 warning 仍保留；下一步最优为 C9 Fourier--Vaaler tail closure 的编号化。
