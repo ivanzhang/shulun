@@ -14,7 +14,7 @@
 | C5 | 过密 Dual/DGap | `docs/rh-dgap-maintext-three-interface-chain.md` | frame、投影、低维抽取三接口逐条内联 | 待定理化 |
 | C6 | 内部终端 `A/PI/FCT/SC` | FCT/PI/SC 主文链 | Noether 势函数、square-function、短簇容量均需可检查证明 | 待容量绑定 |
 | C7 | 外部事件 `LV/LSMP/CE/DSO/NRC` | LV/LSMP/CE、NRC、PI/DSO 主文链 | 每个失败出口必须回到已编号终端，不能产生新假设 | 待出口核验 |
-| C8 | `CapacityFail` | `docs/rh-capacityfail-binding-table.md` | 每个 CapacityFail 绑定到已证明容量引理或显式矛盾 | 待全量绑定 |
+| C8 | `CapacityFail` | `docs/rh-c8-capacityfail-upgrade-audit.md` | 自由黑箱已排除；剩余随 C4/C5/C6/C9/C10 的容量定理化放电 | 依赖型待闭合 |
 | C9 | Fourier/Vaaler 尾项 | `docs/rh-fourier-vaaler-tail-maintext-chain.md` | 固定复杂度尾项平方可和与截断误差写入主稿 | 待内联 |
 | C10 | `EXT-*` 外部定理 | `docs/rh-ext-maintext-citation-closure.md` | BibTeX、章节、定理号/页码、使用范围逐项匹配 | 待精确引用 |
 | C11 | LaTeX 审稿工程 | 尚未生成 | 定理编号、交叉引用、符号表、参考文献编译通过 | 待执行 |
@@ -23,15 +23,15 @@
 
 当前阻止“无条件证明稿”口径的最小割集为：
 
-`{C1, C4, C5, C6, C8, C10, C11}`。
+`{C1, C4, C5, C6, C9, C10, C11}`。
 
 其中 C2、C7、C9 虽已有主文链，但仍应在最终稿中内联；它们不是概念新假设，而是审稿可读性和可验证性义务。
 
 ## 3. 优先顺序
 
 1. C3 已完成定义化修正；最终主稿需内联 `ACC+Hole` 与 `OV` 二层账本。
-2. 下一步补 C8：把 `CapacityFail` 全部变成“已证明容量引理”或“显式矛盾”。
-3. 再补 C4/C5/C6：把过疏、过密和终端闭合变成编号定理链。
+2. C8 已从自由黑箱降级为依赖型义务；最终随 C4/C5/C6/C9/C10 放电。
+3. 下一步补 C5 或 C6：把过密 DGap 或内部终端闭合变成编号定理链。
 4. 再补 C1/C10：把外部解析输入替换为正式引用。
 5. 最后执行 C11：生成 LaTeX/PDF 并做交叉引用审查。
 

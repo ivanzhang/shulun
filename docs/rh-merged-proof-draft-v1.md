@@ -16,7 +16,7 @@
 | Proposition Sparse | 过疏 PC3/OV2 分支 | 条件主文化 | 内联 AAI/MLC/PPI 的容量阈值 |
 | Proposition Dense | 过密 Dual/DGap 分支 | 条件主文化 | 内联 DGap 三接口投影证明 |
 | Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 条件主文化 | 将 Noether 势函数与容量引理逐条编号 |
-| Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口 |
+| Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口；C8 已排除自由 `CapacityFail` |
 | Lemma Tail | Fourier/Vaaler 尾项吸收 | 条件主文化 | 补 Vaaler 截断误差与平方可和证明 |
 | Table EXT | 外部定理包 | 来源级闭合 | 补正式 BibTeX、章节、定理号或页码 |
 
@@ -121,9 +121,9 @@ DGap 出口被穷尽为
 - `CE`：复杂度逃逸分类器，分为频率复杂度、尾项能量、旧坐标重写、边界体积四类。
 - `NRC`：非共振倒数和由 `EXT-KL` Kloosterman--Weil 与完成法控制，失败为 `FCT`。
 - `DSO`：新增频率包由 square-function/Parseval 反馈到 PI 或命名事件。
-- `CapacityFail`：必须绑定具体容量定理，已证明则为矛盾，未证明则保留为编号义务。
+- `CapacityFail`：不再允许作为最终出口；按 C8 升级审查，它必须替换为具体容量引理成功上界，或替换为进入 `A/PI/FCT/SC/LV/LSMP/CE/DSO/NRC` 的命名失败出口。
 
-主文链见 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`、`docs/rh-nrc-ext-maintext-closure.md`、`docs/rh-pi-dso-maintext-bridge-chain.md`。
+主文链见 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`、`docs/rh-nrc-ext-maintext-closure.md`、`docs/rh-pi-dso-maintext-bridge-chain.md`；C8 审查见 `docs/rh-c8-capacityfail-upgrade-audit.md`。
 
 ## 9. Fourier/Vaaler 尾项
 

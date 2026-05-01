@@ -77,11 +77,15 @@
 
 ## 6.1 合并稿无条件化判据表
 
-新增 `docs/rh-merge-unconditional-checklist.md`，把合并稿条件接口拆为 C0--C11。当前最小闭合割集为 `{C1,C4,C5,C6,C8,C10,C11}`。这意味着下一轮应优先补覆盖场定义、CapacityFail 绑定、过疏/过密/终端容量定理化与正式外部引用，而不是继续增加新分支。
+新增 `docs/rh-merge-unconditional-checklist.md`，把合并稿条件接口拆为 C0--C11。当前最小闭合割集为 `{C1,C4,C5,C6,C9,C10,C11}`。这意味着下一轮应优先补覆盖场定义、CapacityFail 绑定、过疏/过密/终端容量定理化与正式外部引用，而不是继续增加新分支。
 
 ## 6.2 C3 覆盖场修正
 
 新增 `docs/rh-c3-covering-field-definition-closure.md`。审查中发现原 `B_z=ACC_z-O_z+Gap_z` 若按逐点集合账本理解存在恒等式风险；现改为一层严格划分 `B_z=ACC_z+Hole_z+o(Δ)`，并把 overlap 写成二层事件 `OV_z=T_z-ACC_z`。因此 C3 从最小割集中移出，但仍需最终主稿内联。
+
+## 6.3 C8 CapacityFail 升级审查
+
+新增 `docs/rh-c8-capacityfail-upgrade-audit.md`。结论是：自由 `CapacityFail` 已排除，但 C8 不能独立完全勾销；它随 C4/C5/C6/C9/C10 的容量定理化与正式引用一起放电。当前最小闭合割集更新为 `{C1,C4,C5,C6,C9,C10,C11}`。
 
 ## 7. 状态定理
 
