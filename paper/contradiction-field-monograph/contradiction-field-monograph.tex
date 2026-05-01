@@ -130,12 +130,61 @@ After expanding the $k$ truncated weights, only moduli $d_1,\ldots,d_k\le R$ occ
 The primes $p_i$ are the explicit variables being summed in the crossing estimate; they contribute the usual $Y^k$ scale, not hidden historical complexity.  The historical part is bounded by $\operatorname{lcm}(d_1,\ldots,d_k)\le R^k$, the block shifts contribute $L^{O(k)}$ patterns, and the coefficient expansion contributes $\left(\sum|\lambda_d|\right)^k$.  This proves the displayed bound.  The true residual set $U_Y$ is not expanded into a full primorial period.
 \end{proof}
 
+\begin{lemma}[Zero-mass and smoothing discharge]
+Assume the SC2/diagonal package supplies the moment bounds
+\[
+  M_1:=\frac{\sum_BX_BR_B}{\sum_BX_B}\le0.45,\qquad
+  M_2:=\frac{\sum_BX_B\binom{R_B}{2}}{\sum_BX_B}\ge0.05,
+\]
+and
+\[
+  M_3:=\frac{\sum_BX_B\binom{R_B}{3}_+}{\sum_BX_B}\le0.03.
+\]
+Then the weighted zero-hit mass satisfies
+\[
+  \frac{\sum_BX_B1_{R_B=0}}{\sum_BX_B}\ge0.57.
+\]
+Moreover, if the directional-balance endpoint estimate gives
+\[
+  N_{\mathrm{endpoint}}/N_{\mathrm{total}}\le C_{\mathrm{end}}\Delta+o(1),
+\]
+then choosing $\Delta\le0.01/C_{\mathrm{end}}$ gives a smooth-to-sharp loss $<0.03$ for all sufficiently large $P$.
+\end{lemma}
+
+\begin{proof}
+For every integer $R\ge0$,
+\[
+  1_{R=0}\ge 1-R+\binom R2-\binom R3_+ .
+\]
+Multiplying by $X_B\ge0$ and summing over blocks gives
+\[
+  \frac{\sum_BX_B1_{R_B=0}}{\sum_BX_B}
+  \ge 1-M_1+M_2-M_3
+  \ge 1-0.45+0.05-0.03=0.57.
+\]
+For smoothing, choose even smooth cutoffs $W_-\le1_{|t|<1}\le W_+$ whose difference is supported in $1-\Delta\le |t|\le1+\Delta$.  The sharp and smoothed counts differ only on this endpoint layer.  The displayed directional-balance bound therefore gives loss at most $C_{\mathrm{end}}\Delta+o(1)$, which is $<0.03$ after the stated choice of $\Delta$ and then taking $P$ large.
+\end{proof}
+
+\begin{lemma}[Adaptive true-hit layering dichotomy]
+Let $U_Y$ be the current true residual set and define, for each new prime $p>Y$,
+\[
+  a_p=\frac1{|U_Y|}\#\{x\in U_Y:x\equiv0\text{ or }w\pmod p\}.
+\]
+Fix $\eta=0.05$.  Either some $p$ has $a_p>\eta$, in which case the configuration is a Single-Prime CRTDefect, or the remaining primes can be greedily partitioned into consecutive layers $\mathcal P_j$ satisfying
+\[
+  \nu_j^{\mathrm{real}}:=\sum_{p\in\mathcal P_j}a_p\le0.4,
+\]
+and, except for the final layer, $\nu_j^{\mathrm{real}}>0.4-\eta\ge0.35$.
+\end{lemma}
+
+\begin{proof}
+If $a_p>\eta$ for some $p$, then a fixed positive proportion of $U_Y$ lies in the two residue classes $0,w$ modulo $p$.  This is exactly the Single-Prime CRTDefect exit, to be excluded by the CRTDefect/Directional Balance part of the SC2 package.  Otherwise all $a_p\le\eta$.  Starting from the smallest remaining prime, add primes to the current layer until adding the next one would make the partial sum exceed $0.4$.  The completed layer has sum at most $0.4$, and because the next summand is at most $\eta$, every non-final completed layer has sum greater than $0.4-\eta$.  This gives the claimed adaptive true-hit decomposition.
+\end{proof}
+
 \begin{proposition}[Recorded conditional closure chain for the two-point secondary sieve]
-Using the fixed-order complexity lemma above, assume the following three remaining inputs hold with the constants recorded in the secondary-sieve research note:
+Using the three lemmas above, assume the following remaining input holds with the constants recorded in the secondary-sieve research note:
 \begin{enumerate}
-  \item the adaptive true-hit layer decomposition is used, with any single-prime concentration routed to a Single-Prime CRTDefect exit;
-  \item the SC2 second-correlation estimate controls the two-line near-crossing error and the $45^\circ$ main-synchronization peak, while the finite package for primes $q\le100$ is checked separately;
-  \item the weighted Bonferroni zero-mass estimate and smooth-to-sharp cutoff return hold with the recorded endpoint loss.
+  \item the SC2/CRTDefect package controls the two-line near-crossing error, the $45^\circ$ main-synchronization peak, Single-Prime CRTDefect exits, the small-prime package for $q\le100$, the moment bounds $M_1,M_2,M_3$, and the endpoint Directional Balance used in the zero-mass and smoothing discharge lemma.
 \end{enumerate}
 Then the two-point secondary-sieve contradiction field has no remaining top-scale escape channel under the parameter choice
 \[
@@ -147,11 +196,11 @@ for adaptive true-hit layers, subject to the same fixed-$w$ convention used in t
 \begin{proof}[Proof sketch and status]
 The argument is a conditional synthesis, not a final unconditional theorem.  A top-scale covering excess is first decomposed into adaptive true-hit layers; any single-prime concentration is routed to the Single-Prime CRTDefect exit.  The remaining excess is converted by a TCA linear bridge into a positive short-block load.  The block load is forced into the SMC/SC2 near-crossing ledger.  The $45^\circ$ main synchronization is split into large-factor reuse, shared-complement factors, and good synchronized pairs; reuse and shared factors are excluded by short-window rigidity, while good pairs are sent to an auxiliary-prime Fourier CRT-defect.  Directional balance excludes the Fourier defect unless the top-scale energy is already below the capacity threshold.  Finally, the weighted Bonferroni zero-mass estimate supplies enough zero-hit block mass to make the capacity comparison incompatible.
 
-The current audit is archived under \path{docs/archive/monograph-reviews/} and classifies this as a research proposition conditional on the three inputs above.  The fixed-order complexity input has been inlined as the preceding lemma.  The fact that an unconditional proof would imply fixed-gap prime-pair consequences, including the twin-prime case when $w=2$, is not a logical obstruction.  It only marks the strength of the claim.  The reason this chapter remains conditional is that the three remaining inputs have not yet all been inlined as independently verified unconditional proofs.
+The current audit is archived under \path{docs/archive/monograph-reviews/} and classifies this as a research proposition conditional on the single SC2/CRTDefect package above.  The fixed-order complexity input, zero-mass/smoothing discharge, and adaptive layering dichotomy have been inlined as the preceding lemmas.  The fact that an unconditional proof would imply fixed-gap prime-pair consequences, including the twin-prime case when $w=2$, is not a logical obstruction.  It only marks the strength of the claim.  The reason this chapter remains conditional is that this remaining SC2/CRTDefect package has not yet been inlined as an independently verified unconditional proof.
 \end{proof}
 
 \begin{proposition}[Window-compressed conditional variant]
-Keep the same fixed even integer $w>0$ and the same three remaining inputs as in the preceding proposition.  Let $I$ be any consecutive back-half window of $H(P)$ rows in the $P\times P$ matrix, so that $|I|=H(P)P+O(P)$.  By the fixed-order complexity lemma, write
+Keep the same fixed even integer $w>0$ and the same remaining SC2/CRTDefect input as in the preceding proposition.  Let $I$ be any consecutive back-half window of $H(P)$ rows in the $P\times P$ matrix, so that $|I|=H(P)P+O(P)$.  By the fixed-order complexity lemma, write
 \[
   Q_{\mathrm{eff}}\le C_Q(\log P)^C.
 \]
@@ -185,11 +234,11 @@ The only scale-sensitive term in the recorded chain is the middle/high-scale $K=
   \ll
   \frac{P^{1/2}(\log P)^C}{H(P)}.
 \]
-The displayed lower bound on $H(P)$ makes this at most $\varepsilon_{\mathrm{SC2}}$ in the explicit form, or $o(1)$ in the asymptotic form.  Hence the constants in the TCA, SC2, zero-mass, finite-package, and smoothing ledgers are unchanged.  The conclusion is therefore a conditional window-compressed version of the previous proposition.  It becomes an unconditional prime-pair theorem only if the three remaining inputs are independently proved and accepted.
+The displayed lower bound on $H(P)$ makes this at most $\varepsilon_{\mathrm{SC2}}$ in the explicit form, or $o(1)$ in the asymptotic form.  Hence the constants in the TCA, SC2, zero-mass, finite-package, and smoothing ledgers are unchanged.  The conclusion is therefore a conditional window-compressed version of the previous proposition.  It becomes an unconditional prime-pair theorem only if the remaining SC2/CRTDefect package is independently proved and accepted.
 \end{proof}
 
 \begin{remark}[Referee boundary]
-The two-point secondary-sieve chapter is included to document the contradiction-field architecture and its parameter ledger.  The window-compression audit is recorded in \path{docs/monograph/two-point-window-compression-and-unconditionality.md}.  It must not be cited as an unconditional proof of prime pairs, the twin-prime conjecture, or Goldbach-type assertions unless the three remaining inputs are independently proved and accepted.
+The two-point secondary-sieve chapter is included to document the contradiction-field architecture and its parameter ledger.  The window-compression audit is recorded in \path{docs/monograph/two-point-window-compression-and-unconditionality.md}.  It must not be cited as an unconditional proof of prime pairs, the twin-prime conjecture, or Goldbach-type assertions unless the remaining SC2/CRTDefect package is independently proved and accepted.
 \end{remark}
 
 \chapter{Zeta-Zero Contradiction Fields}

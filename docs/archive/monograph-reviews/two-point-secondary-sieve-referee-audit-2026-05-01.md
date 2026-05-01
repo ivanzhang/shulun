@@ -34,9 +34,10 @@
 | 输入 | 当前状态 | 审稿要求 |
 |---|---|---|
 | A/I1. 固定阶局部交叉 `Q_eff <= polylog(P)` | 已内联证明 | 已在 `docs/monograph/two-point-secondary-sieve-research.md` 第 340--344 节逐项展开截断权重、局部同余系统与边界项；仍须注意它只闭合复杂度，不替代 SC2 常数证明 |
-| B. `SC2` 二阶相关误差 | 条件闭合 | 需将 45-Main/Fourier 削峰转成正式矩估计 |
-| C'. Zero Mass 加权 Bonferroni | 常数闭合 | 需正式证明一阶、二阶、三阶矩界，特别三线退化项 |
-| D. 平滑回退尖锐窗口 | 技术骨架完成 | 需给出平滑函数、夹逼宽度与端点层计数 |
+| I2. 自适应分层与 Single-Prime CRTDefect | 已放电为 I3 缺陷接口 | 第 350--353 节证明贪心分层；单素数大贡献即 CRTDefect，归入 I3 排除 |
+| B/I3. `SC2`/CRTDefect 核心包 | 唯一剩余核心 | 需将 45-Main/Fourier 削峰、Single-Prime CRTDefect、小素有限包、矩常数和端点 Directional Balance 转成正式矩估计 |
+| C'/I4-ZM. Zero Mass 加权 Bonferroni | 已放电为 I3 矩接口 | 第 345--349 节证明：若 I3 给出 `M1<=0.45`, `M2>=0.05`, `M3<=0.03`，则 `rho0>=0.57>0.30` |
+| D/I4-SR. 平滑回退尖锐窗口 | 已放电为 I3 端点接口 | 第 345--349 节证明：若 I3 给出端点 Directional Balance，则选 `Delta` 后 `E_smooth<0.03` |
 
 ## 4. 推荐并入合著稿的表述方式
 

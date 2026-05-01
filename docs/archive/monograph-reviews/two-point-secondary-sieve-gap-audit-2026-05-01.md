@@ -64,12 +64,13 @@ T_tri < 0.005 sum X_B
 - 补正状态：已在 `docs/monograph/two-point-secondary-sieve-research.md` 第 340--344 节正式展开截断权重、模数 lcm、边界项，证明每个固定阶矩只含 polylog 复杂度。
 - 边界：该补正只闭合复杂度账本，不替代 SC2 常数和 45-Main 同步削峰证明。
 
-## 必补缺口 G6：平滑回退尖锐窗口需证明
+## 已放电 G6/I4-SR：平滑回退尖锐窗口
 
 文档将尖锐窗口替换为对称平滑窗口，再通过 Directional Balance 回退。
 
-- 风险：端点层可能承载反例质量。
-- 需要补正：给出具体平滑函数、夹逼宽度、端点层计数上界。
+- 原风险：端点层可能承载反例质量。
+- 补正状态：已在 `docs/monograph/two-point-secondary-sieve-research.md` 第 345--349 节给出平滑夹逼。若 I3 的 Directional Balance 给出 `N_endpoint/N_total <= C_end Delta+o(1)`，选 `Delta<=0.01/C_end` 后得到 `E_smooth<0.03`。
+- 边界：端点 Directional Balance 本身归入 I3，不在 I4 中重复证明。
 
 ## 必补缺口 G7：任意偶数 w 的均匀性
 
