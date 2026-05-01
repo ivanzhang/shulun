@@ -53,3 +53,8 @@
 1. 对 Prime Matrix：逐行审查 D-structure exclusion、Tail-log4、M5 gap、常数吸收与有限验证阈值接口。
 2. 对 RH：组织外部 referee package，逐条审查 PC1/PC2/C3/C4/C5/C6/C9/AEX/GEE/EXT。
 3. 对合著书稿：把每个条件输入变成独立 appendix theorem 或明确外部 theorem；所有未接受项继续保留 warning。
+
+
+## 6. 内部逐行复核结果
+
+`docs/monograph/line-by-line-internal-referee-matrix.md` 已逐项复核 Prime Matrix 与 RH 两条链。结果：作者侧未发现新的明确数学缺口 `BLOCK-MATH`；但最终定理升级仍被 `BLOCK-REFEREE` 阻止。该阻止项不是工程缺口，而是独立审稿接受义务。
