@@ -14,7 +14,7 @@
 | Lemma PC2 | CRT 零频候选基线 | 已主文化 | 内联边界误差证明 |
 | Proposition CF | 覆盖场方程与二分 | 已定义化修正 | 采用 `ACC/Hole/OV` 三账本并内联 C3 |
 | Proposition Sparse | 过疏 PC3/OV2 分支 | 条件主文化 | 内联 AAI/MLC/PPI 的容量阈值 |
-| Proposition Dense | 过密 Dual/DGap 分支 | 条件主文化 | 内联 DGap 三接口投影证明 |
+| Proposition Dense | 过密 Dual/DGap 分支 | 内部三接口已定理化 | C5 已给 Lemma C5.1--C5.4；待 C6/C9/C10 放电 |
 | Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 条件主文化 | 将 Noether 势函数与容量引理逐条编号 |
 | Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口；C8 已排除自由 `CapacityFail` |
 | Lemma Tail | Fourier/Vaaler 尾项吸收 | 条件主文化 | 补 Vaaler 截断误差与平方可和证明 |
@@ -88,7 +88,7 @@ MLC 定位 dyadic 主层并排除不可检测零频自由吸收；PPI 将可检�
 
 ## 6. 过密分支：Dual/DGap
 
-过密由 Dual 分支给 `A/OV2/DGap/接口失败` 三分。`DGap_z>=cΔ` 时，DGap 三接口处理：
+过密由 Dual 分支给 `A/DGap/接口失败` 三分。采用 C3 修正版时，`DGap_z:=Hole_z^0-Hole_z`。当 `DGap_z>=cΔ` 时，DGap 三接口处理：
 
 1. 盒有限重叠给固定复杂度 frame 上界；
 2. PC2 常数方向剥离后得到 `||P_Vh||_2^2>=X^{2β-1-o(1)}`；
@@ -99,7 +99,7 @@ DGap 出口被穷尽为
 
 `A/OV2/PI/FCT/SC/LV/LSMP/CE/DSO/CapacityFail`。
 
-主文链见 `docs/rh-dgap-maintext-three-interface-chain.md`。
+主文链见 `docs/rh-dgap-maintext-three-interface-chain.md`；C5 内联定理化见 `docs/rh-c5-dgap-inline-proof-chain.md`。
 
 ## 7. 内部终端闭合
 

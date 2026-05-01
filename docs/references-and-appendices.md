@@ -111,6 +111,7 @@
 - `docs/rh-merge-unconditional-checklist.md`：RH 合并稿无条件化判据勾销表。
 - `docs/rh-c3-covering-field-definition-closure.md`：C3 覆盖场方程定义化闭合稿。
 - `docs/rh-c8-capacityfail-upgrade-audit.md`：C8 CapacityFail 升级审查与闭合判据。
+- `docs/rh-c5-dgap-inline-proof-chain.md`：C5 DGap 内联证明链。
 - `docs/rh-final-merge-status-and-gap-closure.md`：RH 总攻最终合并状态与剩余缺口判定。
 - `docs/rh-final-consistency-review.md`：RH 反例矛盾场全文最终一致性总审查。
 - `docs/rh-unconditional-proof-roadmap.md`：RH 无条件化攻坚路线图与剩余条件割集。
