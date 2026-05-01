@@ -105,7 +105,7 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 为了真正向 RH 总攻推进，下一步不应再扩散，而应按可证性排序专攻：
 
-1. **PC4-SC 短簇跨尺度排斥**：种子命题见 `docs/rh-pc4-short-cluster-seed.md`，质量平衡见 `docs/rh-pc4-short-cluster-mass-balance.md`；下一步攻 `SC-Local-Density`；
+1. **PC4-SC 短簇跨尺度排斥**：种子命题见 `docs/rh-pc4-short-cluster-seed.md`，质量平衡见 `docs/rh-pc4-short-cluster-mass-balance.md`，局部密度见 `docs/rh-pc4-short-cluster-local-density.md`；下一步合并 `PC4-SC-Closure`；
 2. **PC4-Dual 过密对偶**：若不能完全依赖反相位过疏，则必须补齐。
 
 本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-A、PC4-PI 与 PC4-FCT 已推进到条件化闭合形态；最优下一步是专攻 PC4-SC，因为多个失败分支仍汇入短簇。

@@ -55,4 +55,4 @@ SC-Seed 给出无穷子列，使
 
 由于 PC4-PI、PC4-A、PC4-FCT 已条件化闭合，SC-Mass-Balance 后只剩最后的短簇内部硬点：同一物理短窗内锚复用过密是否可能长期存在。
 
-下一步最优专攻是 `SC-Local-Density`：证明固定短窗内若反复承载离线零点级锚复用，则违反乘积容量 `q_1q_2r`、CRT 非零类均衡或 LV 体积账本；否则转入已闭合分支。
+`SC-Local-Density` 已在 `docs/rh-pc4-short-cluster-local-density.md` 中写出：固定短窗锚复用过密必须转入 LV/LSMP、PC4-PI、PC4-A、PC4-FCT 或违反局部乘积容量。下一步最优专攻是合并为 `PC4-SC-Closure`。

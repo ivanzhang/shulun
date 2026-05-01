@@ -69,6 +69,7 @@
 - `docs/rh-pc4-acc-closure-theorem.md`
 - `docs/rh-pc4-short-cluster-seed.md`
 - `docs/rh-pc4-short-cluster-mass-balance.md`
+- `docs/rh-pc4-short-cluster-local-density.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`
