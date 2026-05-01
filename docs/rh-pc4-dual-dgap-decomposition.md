@@ -54,7 +54,7 @@
 
 `Σ_B H(B)_+^2/μ^0(B) >= Δ^2 / Σ_B μ^0(B)`。
 
-在非低体积主层中，右侧给出超过零频噪声的投影平方能量压力。把盒指示函数正交化为允许投影族 `𝓦_B`，得到某个投影包满足
+在非低体积主层中，右侧给出超过零频噪声的投影平方能量压力。盒指示函数到允许投影族的正交化由 `docs/rh-pc4-dual-projection-orthogonalization.md` 给出，因此得到某个投影包满足
 
 `Σ_B |<h,𝓦_B>|^2 >= X^{2β-1-o(1)}`
 
@@ -84,7 +84,7 @@
 
 ## 6. DGap 分解定理
 
-**Theorem DGap-Decomposition（对偶缺口压缩结构分解，条件化）。** 假设 `docs/rh-pc4-dual-box-overlap.md` 的盒分解有限重叠、AAI 允许锚语义、LV/LSMP 低体积吸收、PC4-PI 投影能量接口与 PC4-FCT 频率闭包接口成立。若无穷多尺度上
+**Theorem DGap-Decomposition（对偶缺口压缩结构分解，条件化）。** 假设 `docs/rh-pc4-dual-box-overlap.md` 的盒分解有限重叠、`docs/rh-pc4-dual-projection-orthogonalization.md` 的投影正交化、AAI 允许锚语义、LV/LSMP 低体积吸收、PC4-PI 投影能量接口与 PC4-FCT 频率闭包接口成立。若无穷多尺度上
 
 `DGap_z(X)>=cX^{β-o(1)}`, `β>1/2`，
 
@@ -105,4 +105,4 @@ DGap-Decomposition 把过密对偶剩余黑箱缩小为五个已列分支：SC�
 
 `过密 => Dual-Gap-Ledger 三分 => ACC负向 / overlap过剩 / DGap压缩`
 
-其中 `DGap压缩` 再由本文转入 PC4 的既有 closure 分支。盒分解有限重叠已由 `docs/rh-pc4-dual-box-overlap.md` 定理化。下一步真正剩余不是再增加新分支，而是逐项无条件化投影正交化与低维频率抽取。
+其中 `DGap压缩` 再由本文转入 PC4 的既有 closure 分支。盒分解有限重叠已由 `docs/rh-pc4-dual-box-overlap.md` 定理化，投影正交化已由 `docs/rh-pc4-dual-projection-orthogonalization.md` 定理化。下一步真正剩余不是再增加新分支，而是无条件化低维频率抽取。
