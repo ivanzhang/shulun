@@ -75,7 +75,7 @@
 接口核查：
 
 - 过疏分支：PC3-OV2 输出由 PC4-A/SC/PI/FCT/NRC 吸收并排斥；
-- 过密分支：PC4-Dual 转成 ACC 负向同步、覆盖缺口、对偶短簇、对偶 PI 或对偶 FCT；
+- 过密分支：PC4-Dual 经 `Dual-Gap-Ledger` 转成 ACC 负向同步、overlap 过剩、`DGap` 压缩异常、对偶短簇、对偶 PI 或对偶 FCT；
 - 复杂度逃逸：由 CE/FCT/LSMP/LV 接口接收；
 - 非共振异常：由 NRC/EXT 外部包接收。
 
@@ -91,13 +91,13 @@ CRT 候选刚性给
 
 覆盖分解给
 
-`B_z-B_z^0=(ACC_z-ACC_z^0)-(O_z-O_z^0)+Gap_z+Err_z`。
+`B_z-B_z^0=(ACC_z-ACC_z^0)-(O_z-O_z^0)+(Gap_z-Gap_z^0)+Err_z`。
 
 因此
 
-`-E_z=(ACC_z-ACC_z^0)-(O_z-O_z^0)+Gap_z+o(Δ)`。
+`-E_z=(ACC_z-ACC_z^0)-(O_z-O_z^0)+(Gap_z-Gap_z^0)+o(Δ)`。
 
-若 `E_z<0`，主压力是 ACC 正向过剩或 D 组终端；若 `E_z>0`，主压力是 ACC 负向不足、Gap 过剩或对偶 D 组终端。无论符号如何，`X^{β-o(1)}` 级异常必须进入以下有限类型：
+若 `E_z<0`，主压力是 ACC 正向过剩或 D 组终端；若 `E_z>0`，主压力是 ACC 负向不足、overlap 过剩、`DGap=Gap_z^0-Gap_z` 压缩异常或对偶 D 组终端。无论符号如何，`X^{β-o(1)}` 级异常必须进入以下有限类型：
 
 `ACC / SC / PI / FCT / NRC / LV-LSMP / 接口失败`。
 
@@ -118,7 +118,7 @@ PC4 各 closure 文档的共同作用是排除前六类作为最终逃逸通道�
 1. 精确引用或逐行证明 PC1 的 Landau--Ingham 平滑振荡命题；
 2. 将 PC2 的 CRT 候选边界误差写成统一显式引理；
 3. 把 PC3-OV2 的 AAI/PPI/MLC 三接口从条件化接口降为定理；
-4. 把 PC4-Dual 的对偶覆盖恒等式形式化，明确 `Gap_z` 的定义与非负性；
+4. 把 PC4-Dual 中 `DGap` 的 SC/PI/FCT 分解完全无条件化；
 5. 对 PC4-A/SC/PI/FCT 的 closure 假设逐项回溯，消除循环依赖。
 
 完成以上五项后，RH 反例矛盾场才可能从“条件化闭合框架”升级为可审稿的无条件证明候选。
