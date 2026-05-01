@@ -155,3 +155,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## PPI-Rank 状态更新
 
 新增 `docs/rh-ppi-rank-finite-separation-lemma.md`。`NRC-2D` 的有限秩义务已转为可审查引理；当前剩余为 `Capacity-Match` 容量门槛。
+
+## Capacity-Match 状态更新
+
+新增 `docs/rh-nrc-2d-capacity-match-audit.md`。`NRC-2D` 当前不再是解析估计问题，而是中间容量层结构问题：需证明 `MidCap-Structure`，把 `Δ/log^A X<V_Q<Plog^D X` 的偏差层送入 `LSMP/SC/PI/CE`。

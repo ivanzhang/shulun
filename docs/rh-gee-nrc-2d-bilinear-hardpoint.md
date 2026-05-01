@@ -116,3 +116,7 @@ PPI-U3 在双锚主层产生的非零项可写成
 ## 8. PPI-Rank 已补齐
 
 新增 `docs/rh-ppi-rank-finite-separation-lemma.md`，已把加性分离二维权重的有限秩来源定理化：固定复杂度窗口经 Vaaler 展开和有限布尔组合后具有 `log^C X` 分离秩；失败进入 `CE/SC/PI/LSMP/LV`。因此 `NRC-2D` 当前只剩 `Capacity-Match` 主层容量门槛。
+
+## 9. Capacity-Match 审查更新
+
+新增 `docs/rh-nrc-2d-capacity-match-audit.md`。审查发现：`V_Q<Plog^C X` 不能自动视为全局 `LV=o(Δ)`；必须分为高容量相对小、全局低体积转 LV、以及中间容量层。当前 `NRC-2D` 的唯一剩余硬点精确为 `MidCap-Structure`：中间容量层若承载固定比例 PPI 偏差，必须触发 `LSMP/SC/PI/CE`。

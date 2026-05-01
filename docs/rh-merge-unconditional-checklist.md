@@ -70,10 +70,16 @@
 ## NRC-2D 后续清单
 
 - [x] `PPI-Rank`：证明加性分离二维权重有 `log^C X` 分离秩，失败转 `CE/SC/PI/LSMP/LV`。
-- [ ] `Capacity-Match`：证明 PPI 主层承载固定比例偏差时 `V_Q>=Plog^{B+C}X`，失败转 `LV/LSMP`。
+- [ ] `MidCap-Structure`：证明中间容量层承载固定比例偏差时触发 `LSMP/SC/PI/CE`。
 - [ ] `NRC-2D-Closure`：把 `docs/rh-gee-nrc-2d-bilinear-hardpoint.md` 的低秩容量定理并回 GEE-NRC。
 
 ## NRC-2D PPI-Rank 更新
 
 - [x] `PPI-Rank`：固定复杂度 PPI 窗口给 `log^C X` 分离秩；失败转 `CE/SC/PI/LSMP/LV`。
-- [ ] `Capacity-Match`：证明 PPI 主层承载固定比例偏差时 `V_Q>=Plog^{B+C}X`，失败转 `LV/LSMP`。
+- [ ] `MidCap-Structure`：证明中间容量层承载固定比例偏差时触发 `LSMP/SC/PI/CE`。
+
+## Capacity-Match 更新
+
+- [x] 高容量分支：`V_Q>=Plog^{B+C}X` 时二维 NRC 相对小。
+- [x] 全局低体积分支：`V_Qlog^C X<=Δ/log^B X` 时转 `GEE-LV`。
+- [ ] `MidCap-Structure`：中间容量层承载固定比例偏差时触发 `LSMP/SC/PI/CE`。

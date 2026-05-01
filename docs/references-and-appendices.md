@@ -190,3 +190,5 @@
 - `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`：NRC-2D 双变量非共振入口硬点分解，修正 BG 混用风险，压缩为 `PPI-Rank` 有限秩与 `Capacity-Match` 容量门槛两项义务。
 
 - `docs/rh-ppi-rank-finite-separation-lemma.md`：PPI-Rank 有限分离秩引理，补齐 NRC-2D 的二维权重低秩来源。
+
+- `docs/rh-nrc-2d-capacity-match-audit.md`：NRC-2D Capacity-Match 审查，分离高容量、全局低体积与中间容量层硬点。
