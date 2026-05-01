@@ -28,7 +28,7 @@
 | 项 | 需要动作 | 当前状态 |
 |---|---|---|
 | C4 sparse branch | 将 consolidated proof 展开为逐引理链，或列出精确定理号 | 已完成主稿编号化；见 `docs/rh-c4-sparse-maintext-final.md` |
-| C5 DGap branch | 将三接口链与投影/尾项归约逐条编号 | 未完全单篇内联 |
+| C5 DGap branch | 将三接口链与投影/尾项归约逐条编号 | 已完成主稿编号化；见 `docs/rh-c5-dgap-maintext-final.md` |
 | C6 no-cycle | 将事件图势函数下降写成形式化图论引理 | 已完成主稿编号化；见 `docs/rh-c6-no-cycle-maintext-final.md` |
 | C9 tail closure | 将 Vaaler/Fourier 尾项链逐项定理化 | 已完成主稿编号化；见 `docs/rh-c9-tail-maintext-final.md` |
 | EXT packages | 给 Titchmarsh/Ingham/IK/Katz/Vaaler/BG/Baker/Selberg/Vaughan 具体章节/定理号 | 使用形式已固定，页码未核验 |
@@ -38,4 +38,4 @@
 
 本轮可以标记完成的是：`EXT-PC1-LI` 精确适配、`EXT-KL` 精确适配、GEE 同尺度矛盾修补、普通 proof 标记清零。
 
-本轮不能完成的是：把主定理升级为最终无条件 RH 定理。下一步最优任务只剩 C5 DGap branch 的单篇内联编号化；C4、C6、C9 均已完成主稿编号化。
+本轮不能完成的是：把主定理升级为最终无条件 RH 定理。C4、C5、C6、C9 均已完成主稿编号化。下一步应进行主定理升级前的全文交叉引用、外部定理号和 warning 删除条件总审查。

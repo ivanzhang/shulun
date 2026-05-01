@@ -235,6 +235,42 @@ By Lemma~\ref{lem:c4-trichotomy}, the sparse anomaly is carried by $\ACC_z$, $\H
 \end{proof}
 
 \section{The dense branch DGap}\label{sec:dense}
+\begin{lemma}[C5.1 DGap box localization]\label{lem:c5-box}
+If $\DGap_z\ge c\Delta$, then outside $LV,SC,LSMP,CE$ the DGap mass localizes to a fixed-complexity box family $\mathcal B$ with pointwise overlap at most $\log^C X$.
+\end{lemma}
+\begin{proof}
+The DGap field is cut by physical windows, dyadic anchor layers, CRT/Bohr phase windows, reciprocal arcs, and smoothed boundaries.  These are fixed-complexity C9 templates.  Dyadic pigeonholing selects a box family carrying a fixed part of the DGap mass unless the mass lies in low physical volume, short clusters, small layers, or unbounded template complexity.  Those failures are precisely $LV,SC,LSMP$ or $CE$.  For the remaining fixed family, the construction gives $\sum_{B\in\mathcal B}1_B(n)\le\log^C X$; otherwise excessive overlap is again a short-cluster, low-volume, or complexity event.
+\end{proof}
+
+\begin{lemma}[C5.2 frame lower bound after baseline removal]\label{lem:c5-frame}
+For the localized box family, non-baseline DGap mass yields non-constant projection energy of size at least a fixed polylogarithmic fraction of the squared DGap load.
+\end{lemma}
+\begin{proof}
+Let $h$ denote the signed deviation after subtracting the PC2 zero-frequency baseline and set
+\[
+  \phi_B=\frac{1_B-E_0 1_B}{\|1_B-E_0 1_B\|_2}.
+\]
+The finite-overlap bound gives a Bessel/frame estimate
+\[
+  \Big\|\sum_B c_B\phi_B\Big\|_2^2\le \log^C X\sum_B|c_B|^2.
+\]
+By duality, large correlations $\langle h,\phi_B\rangle$ over the DGap boxes force $\|P_Vh\|_2^2\ge\log^{-C}X\sum_B|\langle h,\phi_B\rangle|^2$, where $V=\operatorname{span}\{\phi_B\}$.  Replacing $1_B$ by $1_B-E_0 1_B$ removes only the constant direction.  If the removed constant direction carried the DGap load, it would contradict the PC2 CRT zero-frequency baseline or trigger a registered baseline interface failure.  Hence, on the non-baseline branch, DGap produces non-constant projection energy.
+\end{proof}
+
+\begin{lemma}[C5.3 orthogonal projection allocation]\label{lem:c5-orthogonal}
+The non-constant DGap projection energy enters $PI$, $FCT/SC/LV/LSMP$, or $CE$/registered capacity failure.
+\end{lemma}
+\begin{proof}
+Decompose the box span by successive orthogonal projections, not by assuming a direct sum.  First project to the allowed projection space $V_{PI}$; if it carries a fixed fraction of the energy, the branch is $PI$.  On the orthogonal remainder, project to the low-dimensional, short-cluster, and low-volume space $V_{low}$; its components are, by definition, $FCT,SC,LV$ or $LSMP$.  The remaining orthogonal part is $V_{err}$.  If $V_{err}$ carries a fixed fraction, then the fixed-complexity box model, frame bound, or capacity ledger has failed, which is a registered $CE$ or capacity interface failure.  If none of the three projections carries a fixed fraction, their orthogonal sum cannot contain the energy supplied by Lemma~\ref{lem:c5-frame}, a contradiction.
+\end{proof}
+
+\begin{lemma}[C5.4 low-dimensional residual extraction]\label{lem:c5-lowdim}
+Any low-dimensional residual energy not already in $SC,LV,LSMP,CE$ enters $FCT$ or $DSO/PI$.
+\end{lemma}
+\begin{proof}
+Apply the C9 Fourier--Vaaler tail closure to the fixed box templates.  If the high-frequency tail carries fixed-proportion energy, Lemma~\ref{lem:c9-high} routes it to $CE,LSMP,LV,SC,FCT,DSO$ or $PI$.  Otherwise the low-frequency truncation keeps a fixed energy proportion.  Split the remaining spectrum into frequency packages.  A package containing new independent CRT or Bohr coordinates is an allowed projection/square-function package and enters $DSO/PI$.  If no new independent package remains, the spectrum lies in a fixed low-dimensional ancestor span; this is exactly an $FCT$ seed.  Therefore low-dimensional residual energy has no unnamed dense terminal.
+\end{proof}
+
 \begin{theorem}[C5 DGap branch]\label{thm:c5}
 If the dense branch satisfies $\DGap_z\ge c\Delta$, then the anomaly enters one of
 \[
@@ -242,8 +278,8 @@ If the dense branch satisfies $\DGap_z\ge c\Delta$, then the anomaly enters one 
 \]
 or triggers a named already-registered interface failure.
 \end{theorem}
-\begin{proof}[Consolidated proof]
-The DGap mass is localized to a fixed-complexity box family with pointwise overlap $\log^C X$ unless a named low-volume or complexity event occurs.  Frame/Bessel estimates transfer box correlations to non-constant projection energy after removing the PC2 constant direction.  Orthogonal projection onto $V_{PI}$, then $V_{low}$, then the residual space gives a fixed-proportion energy exit.  Low-dimensional residual energy is Fourier/Vaaler truncated; new independent frequency packages enter $DSO/PI$, while fixed low-dimensional resonant packages enter $FCT$.
+\begin{proof}
+Lemma~\ref{lem:c5-box} localizes the DGap mass to a finite-overlap fixed box family unless a named low-volume, short-cluster, small-mass, or complexity exit has already occurred.  Lemma~\ref{lem:c5-frame} converts the remaining DGap load, after PC2 baseline removal, into non-constant projection energy.  Lemma~\ref{lem:c5-orthogonal} allocates this energy by successive orthogonal projection to $PI$, low-dimensional/short-cluster/low-volume exits, or registered error/capacity failures.  Finally, Lemma~\ref{lem:c5-lowdim} routes any low-dimensional residual to $FCT$ or $DSO/PI$ after C9 tail closure.  The $A$ and $NRC$ exits may be reached through the already registered overlap/reciprocal routing interfaces.  Thus DGap creates no additional dense-branch escape channel.
 \end{proof}
 
 \section{Internal terminal no-cycle theorem}\label{sec:terminal}

@@ -292,3 +292,8 @@
 ## C4 Sparse Branch 主稿编号化更新
 
 新增 `docs/rh-c4-sparse-maintext-final.md`。LaTeX 主稿已把 C4 从 consolidated proof 升级为稀疏三分、覆盖/空洞出口、overlap 双锚正规形和主层路由四个编号引理，再推出 `C4 sparse branch`。主定理 warning 仍保留；剩余 consolidated proof 只剩 C5 DGap branch。
+
+
+## C5 DGap Branch 主稿编号化更新
+
+新增 `docs/rh-c5-dgap-maintext-final.md`。LaTeX 主稿已把 C5 从 consolidated proof 升级为盒局部化、baseline 后 frame 下界、正交投影分配和低维残余抽取四个编号引理，再推出 `C5 DGap branch`。至此 C4/C5/C6/C9 的 `Consolidated proof` 已全部消除；主定理 warning 仍保留，等待最终全文升级审查。
