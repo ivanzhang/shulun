@@ -83,4 +83,4 @@
 4. 对所有失败分支引用 FCT/LSMP/LV/OV2；
 5. 得到“高投影增量分支不能作为 RH 反例的最终逃逸通道”。
 
-这将把 RH 总攻的 PC4-PI 分支推进到可审查的闭合形态。
+`PC4-PI-Closure` 已在 `docs/rh-pc4-pi-closure-theorem.md` 中严写，作为 RH 总攻中高投影增量分支的条件化闭合入口。
