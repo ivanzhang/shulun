@@ -8,6 +8,9 @@
 \usepackage{enumitem}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{array}
+\emergencystretch=3em
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \geometry{margin=1in}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -410,17 +413,19 @@ for routed atoms not absorbed into the already-counted baseline.  Definition~\re
 
 Therefore the total final load satisfies
 \[
+\begin{aligned}
   \sum_{E\in\mathcal E}\operatorname{Load}(E;X)
-   =\sum_E\sum_{a\mapsto E}\theta_{a,E}\operatorname{Excess}(a)
-   \ge \log^{-C_{route}}X\sum_a\operatorname{Excess}(a)
-   \ge \Delta\log^{-C_{route}}X-o(\Delta\log^{-C_{route}}X).
+   &=\sum_E\sum_{a\mapsto E}\theta_{a,E}\operatorname{Excess}(a)\\
+   &\ge \log^{-C_{route}}X\sum_a\operatorname{Excess}(a)\\
+   &\ge \Delta\log^{-C_{route}}X-o(\Delta\log^{-C_{route}}X).
+\end{aligned}
 \]
 Since a fixed power of $\log X$ is $X^{o(1)}$, the right-hand side is still $X^{\beta-o(1)}$ along the successful scales.  This is precisely the asserted bookkeeping lower bound.
 \end{proof}
 
-\begin{longtable}{@{}lll@{}}
+\begin{longtable}{@{}L{0.12\textwidth}L{0.62\textwidth}L{0.18\textwidth}@{}}
 \toprule
-Exit & Review closure mechanism & Status\\
+Exit & Closure mechanism & Status\\
 \midrule
 $LV$ & relative low-volume threshold gives $O(\Delta\log^{-B_{final}}X)$; failures transfer & absorbing\\
 $NRC$ & one-variable/tail non-resonance; two-dimensional middle capacity transfers & routed\\
@@ -464,7 +469,10 @@ This summarizes \texttt{docs/rh-local-exit-proofs-formal-appendix.md}.  The $LV$
 \begin{lemma}[GEE threshold compatibility]\label{lem:gee-threshold}
 Let
 \[
- C_{tot}=C_{route}+C_{seed}+C_{dyadic}+C_{Vaaler}+C_{Fourier}+C_{smooth}+C_{frame}+C_{template}+C_{capacity}+C_{NRC}+C_{coarea}+C_{boundary}+100.
+\begin{aligned}
+ C_{tot}={}&C_{route}+C_{seed}+C_{dyadic}+C_{Vaaler}+C_{Fourier}+C_{smooth}\\
+ &+C_{frame}+C_{template}+C_{capacity}+C_{NRC}+C_{coarea}+C_{boundary}+100.
+\end{aligned}
 \]
 Choose $B_{final}=10C_{tot}+100$ and require every absorbing exit threshold $B_E\ge B_{final}+C_{tot}$.  Then all absorbing contributions sum to $O(\Delta\log^{-B_{final}}X)$, in particular $o(\Delta\log^{-C_{route}}X)$ once $B_{final}>C_{route}$, and internal transfers or seed transfers do not change this estimate.
 \end{lemma}
@@ -559,26 +567,26 @@ Lemma~\ref{lem:gee0} gives a lower bound $\Delta\log^{-C_{route}}X-o(\Delta\log^
 \end{proof}
 
 \section{External references}\label{sec:external}
-The only permitted external inputs are the following restricted forms.  The detailed adaptation is recorded in \texttt{docs/rh-ext-precision-final.md}, with citation locations in \texttt{docs/rh-u3-ext-reference-table.md}.
-\begin{longtable}{@{}lll@{}}
+The only permitted external inputs are the following restricted forms.  The detailed adaptation is recorded in \path{docs/rh-ext-precision-final.md}, with citation locations in \path{docs/rh-u3-ext-reference-table.md}.
+\begin{longtable}{@{}L{0.16\textwidth}L{0.34\textwidth}L{0.42\textwidth}@{}}
 \toprule
 Label & Source & Restricted use\\
 \midrule
-EXT-PC1-LI & Titchmarsh--Heath-Brown; Ingham; Landau oscillation & infinite oscillating subsequence\\
-EXT-KL & Iwaniec--Kowalski Ch.~12; Katz & prime-modulus $ax+b/x$ Weil/Kloosterman and completion\\
-EXT-Vaaler & Vaaler 1985 & one-dimensional interval trigonometric approximation\\
-EXT-BG & Bourgain--Garaev; Baker & appendix reciprocal-sum savings\\
-EXT-Selberg & Halberstam--Richert; Iwaniec--Kowalski & Selberg upper sieve only\\
-EXT-Vaughan & Vaughan; Iwaniec--Kowalski & Vaughan identity / Type I--II decomposition\\
+EXT-PC1-LI & Titchmarsh--Heath-Brown~\cite{Titchmarsh1986}; Ingham~\cite{Ingham1932} & infinite oscillating subsequence\\
+EXT-KL & Iwaniec--Kowalski Ch.~12~\cite{IwaniecKowalski2004}; Katz~\cite{Katz1988} & prime-modulus $ax+b/x$ Weil/Kloosterman and completion\\
+EXT-Vaaler & Vaaler~\cite{Vaaler1985} & one-dimensional interval trigonometric approximation\\
+EXT-BG & Bourgain--Garaev~\cite{BourgainGaraev2012}; Baker~\cite{Baker2012} & appendix reciprocal-sum savings\\
+EXT-Selberg & Halberstam--Richert~\cite{HalberstamRichert1974}; Iwaniec--Kowalski~\cite{IwaniecKowalski2004} & Selberg upper sieve only\\
+EXT-Vaughan & Vaughan~\cite{Vaughan1977}; Iwaniec--Kowalski~\cite{IwaniecKowalski2004} & Vaughan identity / Type I--II decomposition\\
 \bottomrule
 \end{longtable}
 
 
 \begin{proposition}[EXT-Precision theorem]
-All external analytic inputs used in this manuscript are confined to the six labelled packages in Table~\ref{sec:external}: PC1 explicit formula/Landau--Ingham oscillation, prime-modulus Kloosterman--Weil completion, one-dimensional Vaaler approximation, Bourgain--Garaev/Baker reciprocal-sum savings, Selberg upper sieve, and Vaughan Type I/II decomposition.
+All external analytic inputs used in this manuscript are confined to the six labelled packages in Section~\ref{sec:external}: PC1 explicit formula/Landau--Ingham oscillation, prime-modulus Kloosterman--Weil completion, one-dimensional Vaaler approximation, Bourgain--Garaev/Baker reciprocal-sum savings, Selberg upper sieve, and Vaughan Type I/II decomposition.
 \end{proposition}
 \begin{proof}
-This summarizes \texttt{docs/rh-ext-precision-final.md}, with the PC1 oscillation interface further fixed in \texttt{docs/rh-ext-pc1-li-precision-final.md}.  Each package is used only in the restricted form listed in the table: smooth PC1 oscillation, $ax+b/x$ modulo prime estimates, one-dimensional interval truncation, fixed logarithmic reciprocal-sum savings, upper-bound sieve, and fixed-loss Vaughan decomposition.  Degenerate or inapplicable cases are not left as analytic failures; they transfer to the named exits already present in the event graph.  The chapter/article-level citation locations are recorded in \texttt{docs/rh-u3-ext-reference-table.md}; any remaining monograph page-number check is a submission-format verification task, not a separate mathematical hypothesis.
+This summarizes \path{docs/rh-ext-precision-final.md}, with the PC1 oscillation interface further fixed in \texttt{docs/rh-ext-pc1-li-precision-final.md}.  Each package is used only in the restricted form listed in the table: smooth PC1 oscillation, $ax+b/x$ modulo prime estimates, one-dimensional interval truncation, fixed logarithmic reciprocal-sum savings, upper-bound sieve, and fixed-loss Vaughan decomposition.  Degenerate or inapplicable cases are not left as analytic failures; they transfer to the named exits already present in the event graph.  The chapter/article-level citation locations are recorded in \path{docs/rh-u3-ext-reference-table.md}; any remaining monograph page-number check is a submission-format verification task, not a separate mathematical hypothesis.
 \end{proof}
 
 \section{Consolidated contradiction theorem}\label{sec:main}

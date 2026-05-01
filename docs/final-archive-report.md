@@ -317,3 +317,8 @@
 ## U1/U4 主定理与文体口径更新
 
 LaTeX 主稿已完成 U1/U4：标题、摘要和 GEE 说明从旧审查稿文体改为 verification manuscript / final synthesis 口径；主定理标题删除 `review form`，定理陈述由 `Assume Theorems...` 改为 `By Theorems...` 的前文合成口径。`Submission warning` 仍保留，用于诚实标记 U5 最终编译审查、专著页码核验和独立逐行 referee verification 尚未完成。下一步最优为 U5 编译与引用一致性审查。
+
+
+## U5 最终编译与引用一致性审查更新
+
+新增 `docs/rh-u5-final-compile-audit.md`。已安装 TeX Live 工具链并真实运行 `latexmk -pdf -interaction=nonstopmode -halt-on-error rh-contradiction-field.tex`，生成 `paper/rh-proof/rh-contradiction-field.pdf`。40 个 label、57 个 ref 全匹配，11 个 cite 均有 BibTeX 条目，日志无 undefined refs/cites；`review form/review draft/Assume Theorems/conditional synthesis/exttt` 主稿残留为 0。本轮还把 EXT 外部来源表接入正式 `\cite{...}`，并修正 section/table 引用措辞。剩余为专著页码核验、独立逐行 referee verification 和少量版式 overfull/underfull 调整；`Submission warning` 仍需保留。

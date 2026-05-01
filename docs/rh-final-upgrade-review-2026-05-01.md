@@ -44,17 +44,22 @@
 | U2 | AEX 输入接受性核验 | 已完成；见 `docs/rh-u2-aex-acceptance-review.md`，主稿已消除 “conditional exactly on AEX-1/2/3” 措辞 |
 | U3 | EXT 页码/定理号核验 | 已完成章节/论文级定位；见 `docs/rh-u3-ext-reference-table.md`，专著页码留作排版核验 |
 | U4 | 摘要与标题口径统一 | 已完成：标题、摘要、GEE 段改为 verification manuscript / final synthesis 口径 |
-| U5 | 最终编译审查 | 在 TeX 环境中跑 `latexmk`/BibTeX，确认无 undefined refs/cites |
+| U5 | 最终编译审查 | 已完成：latexmk/PDF/BibTeX 通过，无 undefined refs/cites |
 | U6 | 主定理升级 | `review form` 已删除；`Submission warning` 需等 U5 与独立逐行审查完成后才可考虑删除 |
 
 ## 5. 推荐下一步
 
-下一步最优不是继续扩展数学框架，而是执行 U5 与最终一致性审查：
+下一步最优不是继续扩展数学框架，而是执行 U6 前的最终一致性审查：
 
 1. U1 已完成：主定理前提改为前文合成口径；
 2. U2 已完成：AEX-1/2/3 条件化措辞已消除；
 3. U3 已完成：EXT 章节/论文级定位表已补齐；
 4. U4 已完成：标题、摘要和 GEE 段口径已统一；
-5. 下一步处理 U5：在 TeX 环境中最终编译，核查 undefined refs/cites、BibTeX 和专著页码。
+5. U5 已完成：latexmk/PDF/BibTeX 通过，无 undefined refs/cites。
 
-在 U5 与独立逐行审查完成前，本文应保持当前诚实状态：主定理已不是 review-form 条件合成定理，但仍不能宣称 RH 无条件证明定稿。
+在专著页码核验与独立逐行审查完成前，本文应保持当前诚实状态：主定理已不是 review-form 条件合成定理，但仍不能宣称 RH 无条件证明定稿。
+
+
+## U5 最终编译与引用一致性审查更新
+
+新增 `docs/rh-u5-final-compile-audit.md`。已安装 TeX Live 工具链并真实运行 `latexmk -pdf -interaction=nonstopmode -halt-on-error rh-contradiction-field.tex`，生成 `paper/rh-proof/rh-contradiction-field.pdf`。40 个 label、57 个 ref 全匹配，11 个 cite 均有 BibTeX 条目，日志无 undefined refs/cites；`review form/review draft/Assume Theorems/conditional synthesis/exttt` 主稿残留为 0。本轮还把 EXT 外部来源表接入正式 `\cite{...}`，并修正 section/table 引用措辞。剩余为专著页码核验、独立逐行 referee verification 和少量版式 overfull/underfull 调整；`Submission warning` 仍需保留。
