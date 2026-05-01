@@ -111,6 +111,10 @@
 
 新增 `paper/rh-proof/rh-contradiction-field.tex`、`paper/rh-proof/rh-references.bib` 与 `paper/rh-proof/C11-REVIEW.md`。单篇 LaTeX review draft 已生成，包含符号表、PC1、PC2/C3、C4、C5、C6、C9、外部引用表和合并主定理。本机未安装 `pdflatex/latexmk/bibtex`，因此 PDF 编译与 undefined-reference 审查仍需在 TeX 环境执行；当前剩余割集记为 `{C11-PDF}`。
 
+## 6.10 Global-Exit-Exclusion 核心目标
+
+新增 `docs/rh-global-exit-exclusion-target.md`。顶刊审查表明，当前主链已把异常路由到有限出口集合，但尚未证明各出口总负担为 `o(Δ)`。最终闭合必须证明 GEE-0 负担分配和九个出口上界，合成 `c_0Δ<=o(Δ)` 的显式矛盾。该文件把剩余真正数学硬点从“文件合并”转为十个定量不等式。
+
 ## 7. 状态定理
 
 **Theorem Final-Merge-Status.** 当前仓库中的 RH 总攻文档包已经把主要条件接口压缩为主文链、外部定理标签和全局归一化账本；但在未完成单篇论文合并、正式引用替换、容量定理内联和交叉引用审查前，不能宣称 RH 已无条件证明。

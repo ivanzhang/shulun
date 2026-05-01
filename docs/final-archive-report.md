@@ -138,6 +138,7 @@
 - `docs/rh-c6-internal-terminal-inline-proof.md`：C6 内部终端 A/PI/FCT/SC 内联证明链。
 - `docs/rh-c4-sparse-pc3-ov2-inline-proof.md`：C4 过疏 PC3/OV2 内联证明链。
 - `docs/rh-c1-c10-c11-final-reference-and-submission-closure.md`：C1/C10/C11 最终引用与审稿工程闭合包。
+- `docs/rh-global-exit-exclusion-target.md`：Global-Exit-Exclusion 最终核心矛盾不等式目标。
 - `paper/rh-proof/rh-contradiction-field.tex`：RH 反例矛盾场单篇 LaTeX 审稿主稿。
 - `paper/rh-proof/rh-references.bib`：RH 审稿主稿 BibTeX 参考文献。
 - `paper/rh-proof/C11-REVIEW.md`：C11 LaTeX/PDF 审稿工程记录。
