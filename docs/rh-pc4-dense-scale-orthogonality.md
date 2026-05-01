@@ -82,4 +82,4 @@ Euler product 视角给同一事实的乘法版本：新增素数层 `p` 的局�
 
 ## 7. 下一步最优攻坚
 
-DSO-C 的 inverse-limit CRT martingale 核心已在 `docs/rh-pc4-dso-crt-martingale.md` 中定理化；固定复杂度模板一致性已在 `docs/rh-pc4-dso-template-consistency.md` 中条件化闭合；复杂度逃逸已在 `docs/rh-pc4-complexity-escape-interface.md` 中压入 FCT/LSMP/LV/PI-Seed。剩余最优专攻是 DSO-E：证明不进入 FCT 的新增 Euler 局部因子非主偏差平方可控。
+DSO-C 的 inverse-limit CRT martingale 核心已在 `docs/rh-pc4-dso-crt-martingale.md` 中定理化；固定复杂度模板一致性已在 `docs/rh-pc4-dso-template-consistency.md` 中条件化闭合；复杂度逃逸已在 `docs/rh-pc4-complexity-escape-interface.md` 中压入 FCT/LSMP/LV/PI-Seed；DSO-E 已在 `docs/rh-pc4-dso-euler-decorrelation.md` 中拆成局部正交、NRC/Weil 和 LSMP/FCT 二次剥离。下一步最优专攻是投稿级接口核查：把 DSO-E2 与 NRC/EXT 引用逐项匹配，并把 DSO-E4 与 LSMP 常数账本对齐。

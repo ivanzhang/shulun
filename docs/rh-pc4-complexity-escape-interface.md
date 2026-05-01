@@ -75,4 +75,4 @@ DSO-C-TC 覆盖的是上述四项都不发生的情形。
 1. 把 CE-1 中的“独立新频率近正交”与 DSO-E Euler factor decorrelation 逐项匹配；
 2. 把 CE-2/CE-3 中的 LSMP/LV 触发条件与既有 D 组常数账本逐项核对。
 
-下一步最优专攻是 DSO-E：证明新增 Euler 局部因子的非主偏差若不进入 FCT，就满足平方可控 decorrelation。这是把本文从条件化 CE 闭合升级为无条件 CE 闭合的唯一核心缺口。
+DSO-E 已在 `docs/rh-pc4-dso-euler-decorrelation.md` 中拆成单层字符正交、倒数/混合相位非共振界和大复杂度 LSMP/FCT 二次剥离。本文的剩余审稿义务随之转化为：逐项匹配 DSO-E2 的 NRC/Weil 引用与 DSO-E4 的 LSMP 接口。
