@@ -44,6 +44,7 @@
 - `docs/rh-pc4-fct-phase-drift.md`：PC4-FCT 新增 CRT 坐标相位漂移压力引理。
 - `docs/rh-pc4-fct-noether.md`：PC4-FCT Noether 闭包链终止命题。
 - `docs/rh-pc4-fct-closure-theorem.md`：PC4-FCT 频率闭包分支闭合命题。
+- `docs/rh-pc4-acc-seed.md`：PC4-A ACC 不同步排斥种子命题。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
