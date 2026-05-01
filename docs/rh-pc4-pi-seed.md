@@ -101,4 +101,4 @@ PC4-PI 现在拆成两个明确部分：
 2. **Complexity-Escape**：复杂度无界逃逸，需接入 FCT/LSMP 跨尺度账本；
 3. **PI-Cap**：固定模板的跨尺度全局容量上界，仍待攻克。
 
-下一步最优专攻应是 PI-Cap：寻找 Euler product、CRT 周期均衡或 Mellin/Carleson 嵌入形式的跨尺度能量上界。
+PI-Cap 的 Carleson 包版本已在 `docs/rh-pc4-pi-cap-carleson.md` 中展开。下一步最优专攻应是其中的 Dense-scale orthogonality：寻找 Mellin/CRT martingale 或 Euler product 形式的密集尺度包正交上界。
