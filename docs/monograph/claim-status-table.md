@@ -209,3 +209,5 @@
 | 二次筛窗口压缩版 | 条件加强/剩余I3-Core | 新增 `docs/monograph/two-point-window-compression-and-unconditionality.md`，并在 `docs/monograph/two-point-secondary-sieve-research.md` 第 335--359 节写入窗口压缩审查、I1 内联证明、I4 放电证明、I2 分层二分和 I3-Core 定理化。当前方法在 I3-Core 成立时，可把后半窗口从约 `P/2` 行压缩到 `H_min^cond(P;eps)=ceil((C_Q/eps)P^{1/2}(log P)^C)` 行；渐近写法为 `ceil(P^{1/2}(log P)^{C_*})`, `C_*>C`。I3-Core 尚未逐行无条件证明。 |
 
 | I3-Core 压力测试 | 未闭合/需 TRC 新定理 | `docs/monograph/two-point-secondary-sieve-research.md` 第 360--365 节新增局部 CRT 反例模型 `U^*`。该模型满足旧二禁类、短窗不可复用和局部 CRT 复杂度，却集中在新素数坏类上，说明现有刚性不能形式推出 I3-Core。剩余核心升级为 TRC（True Residual Correlation）：真实剩余集对新薄层的单素数坏类、二阶矩、三阶尾部和端点方向均衡。 |
+
+| TRC-1 单素数均衡攻坚 | 低尺度可证/最终尺度未闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 第 366--370 节新增筛余算术级数形式。若二维下界筛在尺度 `Y` 上可用，即 `Y<=N^{1/beta_2-o(1)}`，则 TRC-1 由分子上界筛与分母下界筛推出；但最终窗口 `N~P^{3/2}`、`Y=P^{3/4}` 给 `s=2+o(1)`，低于二维下界筛阈值，故最终仍需几何增强版 TRC-1G。 |
