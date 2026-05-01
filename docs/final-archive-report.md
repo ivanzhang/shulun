@@ -193,3 +193,5 @@
 - `docs/rh-gee-dense-carleson-load-bridge.md`：归档 Dense-Carleson 负担桥接，标记剩余账本硬点。
 
 - `docs/rh-gee-baseline-subtraction-lemma.md`：归档 PI/DSO 零频容量扣除账本。
+
+- `docs/rh-gee-ce-lsmp-load-bound-audit.md`：归档 CE/LSMP 可吸收项与 seed 转出账本。

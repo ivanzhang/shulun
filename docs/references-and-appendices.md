@@ -200,3 +200,5 @@
 - `docs/rh-gee-dense-carleson-load-bridge.md`：Dense-Carleson 到 GEE 负担的桥接，剩余压缩为 `Baseline-Subtraction`。
 
 - `docs/rh-gee-baseline-subtraction-lemma.md`：PI/DSO 基线扣除引理，避免零频容量重复计入异常负担。
+
+- `docs/rh-gee-ce-lsmp-load-bound-audit.md`：GEE-CE/LSMP 负担上界审查，拆分可吸收项与 seed 转出。

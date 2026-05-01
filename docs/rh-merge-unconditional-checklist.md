@@ -104,3 +104,8 @@
 
 - [x] `Baseline-Subtraction`：PI/DSO 零频容量只作基线扣除，进入 `Load` 的仅为超额偏差。
 - [ ] 接收出口上界：`SC/LSMP/CE/FCT/A` 等仍需证明 `o(Δ)`。
+
+## GEE-CE/LSMP 清单
+
+- [x] 可吸收项：低质量、coarea、平方可和尾项满足相对阈值时给 `o(Δ)`。
+- [ ] `Seed-Transfer Consistency`：CE/LSMP 输出 seed 必须有限重叠转入对应出口，且不重复计入 CE/LSMP。

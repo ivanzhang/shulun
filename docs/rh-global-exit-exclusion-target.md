@@ -175,3 +175,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## GEE-PI/DSO 基线扣除更新
 
 新增 `docs/rh-gee-baseline-subtraction-lemma.md`。PI/DSO 的 lacunary/dense 零频容量不再重复计入异常负担；`Load(PI)+Load(DSO)` 只登记超额偏差。因此 `GEE-PI/DSO` 当前可作为条件闭合出口，依赖接收出口 `SC/LV/LSMP/CE/FCT/NRC` 的全局上界。
+
+## GEE-CE/LSMP 负担审查
+
+新增 `docs/rh-gee-ce-lsmp-load-bound-audit.md`。CE/LSMP 被拆成可吸收项与 seed 转出项；可吸收项给 `o(Δ)`，seed 必须转入对应出口并从 CE/LSMP 删除。剩余硬点为 `Seed-Transfer Consistency`。

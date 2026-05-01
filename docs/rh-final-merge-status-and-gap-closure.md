@@ -154,3 +154,5 @@
 - `docs/rh-gee-dense-carleson-load-bridge.md`：Dense-Carleson 已桥接到 GEE；剩余 `Baseline-Subtraction`。
 
 - `docs/rh-gee-baseline-subtraction-lemma.md`：Baseline-Subtraction 已补齐；PI/DSO 剩余依赖接收出口上界。
+
+- `docs/rh-gee-ce-lsmp-load-bound-audit.md`：GEE-CE/LSMP 已拆分；剩余 `Seed-Transfer Consistency`。
