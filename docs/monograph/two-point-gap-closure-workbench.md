@@ -245,3 +245,143 @@ G2 已被压缩为协方差上界。该上界本质上就是 SC2 的一阶-二�
 > **真实块协方差引理。** 对真实剩余集 `U_Y` 与任一下一层薄覆盖函数 `R_B`，块级协方差满足固定阶 SC2 上界；否则产生可命名 CRTDefect。
 
 这是目前 G1--G3 的最小共同硬点。
+
+## G3.1 真实块协方差引理：精确定义
+
+设 `\mathcal B` 是极短块分解。对每个块定义：
+
+\[
+U_B=|U_Y\cap B|,
+\qquad
+R_B=\text{下一薄层在 }B\text{ 上的覆盖命中量},
+\qquad
+\bar R=\frac{\sum_BU_BR_B}{\sum_BU_B}
+\]
+
+或在无权模型下使用硬骨架均值归一。真实块协方差定义为
+
+\[
+\mathrm{Cov}_U(R,Z)
+=\frac1{|U_Y|}
+\sum_B U_B(R_B-\bar R)Z_B,
+\]
+
+其中 `Z_B` 是 Zero/低覆盖块指示。
+
+我们需要的形式更直接：若 `U_Y` 避开低覆盖块族 `\mathcal Z`，则
+
+\[
+\sum_{B\notin\mathcal Z}U_B
+\]
+
+过大，而 `B\notin\mathcal Z` 是 `R_B` 高值事件，于是
+
+\[
+\frac1{|U_Y|}\sum_BU_B(R_B-\mathbb E R_B)
+\ge c_{avoid}.
+\]
+
+这就是异常正协方差。
+
+## G3.2 避开 Zero 块推出正协方差
+
+设 `\mathcal Z={B:R_B=0, X_B>0}`。若真实质量在 `\mathcal Z` 中不足：
+
+\[
+\sum_{B\in\mathcal Z}U_B<\rho |U_Y|,
+\]
+
+则至少 `1-\rho` 的真实质量落在 `R_B\ge1` 的块中。因此
+
+\[
+\sum_BU_BR_B
+> (1-\rho)|U_Y|.
+\]
+
+若模型平均 `\mathbb E_U R_B\le\nu=0.4`，则协方差超标至少
+
+\[
+(1-\rho)-0.4.
+\]
+
+取需要的 `\rho=0.30`，得到超标 `0.30`。这是很大的常数，足以被 SC2 排除，前提是 SC2 能证明真实加权平均 `\mathbb E_U R_B\le0.4+o(1)`。
+
+这一步把 G1/G2 的真实质量问题转化为一阶覆盖均值上界，而不是二阶复杂问题。
+
+## G3.3 SC2/局部交叉给出的真实加权均值上界
+
+需要证明
+
+\[
+\sum_BU_BR_B
+\le (\nu+o(1))|U_Y|.
+\]
+
+展开：
+
+\[
+\sum_BU_BR_B
+=\sum_{x\in U_Y}\sum_{p\in\mathcal P_j}\sum_\epsilon1_{x\equiv\epsilon w\pmod p}+\text{block boundary}.
+\]
+
+因为 `U_Y` 已筛到 `Y_j<p` 的前层，而 `p\in\mathcal P_j` 是下一薄层，单个新同余条件在真实剩余集上的密度应为 `1/p`。这又是局部条件均衡，但现在只需上界方向：
+
+\[
+\#\{x\in U_Y:x\equiv\epsilon w\pmod p\}
+\le (1+o(1))\frac{|U_Y|}{p}.
+\]
+
+这是上界筛可提供的方向，比下界容易。于是
+
+\[
+\sum_BU_BR_B
+\le (1+o(1))2\sum_{p\in\mathcal P_j}\frac1p |U_Y|
+=(\nu+o(1))|U_Y|.
+\]
+
+因此真实块协方差引理的关键只需上界筛，而不是下界筛。
+
+## G3.4 真实块协方差引理：证明
+
+**引理（真实块协方差）.** 设下一薄层满足 `\nu=2\sum_{p\in\mathcal P_j}1/p=0.4+o(1)`。若上界筛给出对每个 `p\in\mathcal P_j`、`\epsilon\in{0,1}`：
+
+\[
+\#\{x\in U_Y:x\equiv\epsilon w\pmod p\}
+\le (1+o(1))|U_Y|/p,
+\]
+
+则真实剩余质量不能以比例大于 `0.70` 避开 Zero 块。更精确地，若
+
+\[
+\sum_{B\in\mathcal Z}U_B<0.30|U_Y|,
+\]
+
+则
+
+\[
+\sum_BU_BR_B>0.70|U_Y|,
+\]
+
+与上界
+
+\[
+\sum_BU_BR_B\le(0.4+o(1))|U_Y|
+\]
+
+矛盾。
+
+因此
+
+\[
+\sum_{B\in\mathcal Z}U_B\ge0.30|U_Y|.
+\]
+
+这正是 Zero Mass/TCA 需要的真实质量下界。
+
+## G3.5 审稿状态
+
+该证明非常重要：它显示 G1/G2/G3 不需要强下界筛，只需要下一薄层在真实剩余集上的上界筛。上界筛避开了 parity barrier。
+
+剩余需补的是标准上界筛陈述：对真实二次筛剩余 `U_Y`，再加一个新模 `p>Y` 的禁类，其密度至多 `(1+o(1))/p`。这是 Selberg/Brun 上界筛的常规方向，远弱于素数对下界。
+
+因此 G1--G3 可以视为实质闭合，条件是把该上界筛引理作为正式外部/内部输入写入正文。

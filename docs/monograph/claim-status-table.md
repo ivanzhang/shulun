@@ -181,3 +181,5 @@
 | G1局部均衡强度审查 | 强下界不可直接闭合 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G1.6--G1.9。局部条件均衡的下界方向接近强筛余项/parity barrier，不能直接无条件宣称。可行补正是 G1-Dichotomy：若真实剩余质量避开 Zero/低覆盖块，则产生 SC2/CRTDefect 异常。G1 需与 G2 合并处理。 |
 
 | G1-G3合并补正 | 压缩为真实块协方差引理 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G2.1--G2.4。G1真实支撑与G2真实块下界可合并：若真实剩余避开Zero/低覆盖块，则它与下一层覆盖函数产生异常正协方差；该协方差应由SC2/CRTDefect控制。因此G1--G3最小共同硬点为“真实块协方差引理”。 |
+
+| 真实块协方差引理 | G1-G3实质闭合/需上界筛陈述 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 G3.1--G3.5。若真实剩余避开 Zero 块，则至少 70% 质量在 `R_B>=1` 块，给 `sum U_B R_B>0.70|U|`；而下一薄层上界筛给 `sum U_B R_B <=(nu+o(1))|U|`，取 `nu=0.4` 矛盾。因此 Zero 块真实质量 `>=0.30|U|`。G1-G3压缩为标准上界筛输入。 |
