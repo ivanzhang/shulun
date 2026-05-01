@@ -50,7 +50,7 @@
 
 ## EXT-PC1-EF / EXT-PC1-LI：平滑显式公式与 Landau--Ingham 振荡
 
-**定理 EXT-PC1-EF。** 对 `W∈C_c^∞((0,∞))`，平滑 Chebyshev 和满足标准 ζ 显式公式：主项来自 `s=1`，非平凡零点贡献为 `-Σ_ρ X^ρ\widehat W(ρ)`，平凡零点与截线积分为低阶项。
+**定理 EXT-PC1-EF。** 对 `W∈C_c^∞((0,∞))`，平滑 Chebyshev 和满足标准 ζ 显式公式：主项来自 `s=1`，非平凡零点贡献为 `-Σ_ρ X^ρ\widehat W(ρ)`，平凡零点与截线积分为低阶项。文内证明版本见 `docs/rh-pc1-explicit-formula-proof-appendix.md`。
 
 **定理 EXT-PC1-LI。** 若 ζ 存在离线零点 `ρ=β+iγ`, `β>1/2`，且平滑权不湮灭该零点，则平滑 Chebyshev 误差在无穷多尺度上有 `X^{β-o(1)}` 级振荡。
 

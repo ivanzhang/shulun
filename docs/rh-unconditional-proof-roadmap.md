@@ -128,3 +128,9 @@ PI dense/Carleson 与 DSO bridge 适用条件无回流审查已写入 `docs/rh-p
 RH 反例矛盾场论文整合稿已写入 `docs/rh-final-paper-draft.md`。该稿把 PC1--PC4、Dual/DGap、容量矩阵与常数层级串成单篇论文结构，同时明确标注仍需无条件化或精确引用的接口。
 
 重要口径：该稿是条件化定稿版，不宣称 RH 已证明；若要升级为无条件证明，需要把第 9 节列出的接口逐项改写为标准定理证明或精确外部引用。
+
+## 19. PC1 显式公式文内化推进记录
+
+PC1 平滑显式公式的文内证明附录已写入 `docs/rh-pc1-explicit-formula-proof-appendix.md`。该附录用 Mellin 反演、移线和留数逐行推出平滑 Chebyshev 显式公式，并把 PC1 的外部解析输入进一步压缩为 Landau--Ingham 振荡 `EXT-PC1-LI`。
+
+当前 PC1 剩余主要是给 `EXT-PC1-LI` 选择精确引用，或进一步写出可覆盖上确界/无限同实部零点情形的文内振荡证明。

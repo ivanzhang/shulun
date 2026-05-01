@@ -2,6 +2,8 @@
 
 本文补强 `docs/rh-pc1-analytic-input-citation-audit.md` 的剩余投稿义务：将 PC1 使用的 `EXT-PC1-EF` 与 `EXT-PC1-LI` 从命名标签标准化为可替换的外部定理/文内证明接口。本文只处理“离线零点推出平滑素数窗口异常”的解析输入，不宣称 RH 已证明。
 
+其中 `EXT-PC1-EF` 的文内证明版本见 `docs/rh-pc1-explicit-formula-proof-appendix.md`。
+
 ## 1. PC1 要证明的精确输入
 
 若 ζ 存在零点 `ρ=β+iγ`，`β>1/2`，则存在平滑紧支撑权 `W`、符号 `σ∈{±1}` 与无穷尺度 `X_j`，使
@@ -80,10 +82,10 @@
 
 ## 6. PC1 标准化定理
 
-**Theorem PC1-External-Input-Standardization。** PC1 所需外部解析输入可完全标准化为 `EXT-PC1-EF` 与 `EXT-PC1-LI` 两个经典定理标签，加上权函数非湮灭、素数幂去除和对数权转换三个初等步骤。接受这些标准输入后，离线零点 `β>1/2` 无条件推出 PC1 的平滑素数窗口异常。
+**Theorem PC1-External-Input-Standardization。** PC1 所需外部解析输入可标准化为：文内证明的平滑显式公式 `docs/rh-pc1-explicit-formula-proof-appendix.md`、外部 `EXT-PC1-LI` Landau--Ingham 振荡，以及权函数非湮灭、素数幂去除和对数权转换三个初等步骤。接受这些标准输入后，离线零点 `β>1/2` 无条件推出 PC1 的平滑素数窗口异常。
 
 **证明。** 由第 3 节选取不湮灭零点的权函数。第 2 节显式公式把该零点作为非零项写入 `Ψ_W(X)`。第 4 节 Landau--Ingham 振荡给无穷尺度上的 `X^{β-o(1)}` 异常。第 5 节处理素数幂和无权化。证毕。
 
 ## 7. 对总攻割集的影响
 
-本文将 PC1 从“解析黑箱”降为两个外部经典标签和三个初等步骤。剩余编辑义务是给最终论文 bibliography 中的 `EXT-PC1-EF`、`EXT-PC1-LI` 选定具体书目、章节或定理号；这不改变当前逻辑链。
+本文将 PC1 从“解析黑箱”降为一个文内显式公式证明、一个外部 `EXT-PC1-LI` 振荡定理和三个初等步骤。剩余编辑义务主要是给 `EXT-PC1-LI` 选定具体书目、章节或定理号；这不改变当前逻辑链。
