@@ -227,3 +227,7 @@
 ## Local-Exit-Proofs 第一阶段归档
 
 新增 `docs/rh-local-exit-proofs-formal-appendix.md` 并接入 LaTeX 主稿。当前剩余出口硬点压缩为 `PI/DSO/NRC` 三个解析出口。
+
+## 解析出口归约归档
+
+新增 `docs/rh-analytic-exit-reduction-table.md` 并接入 LaTeX 主稿。当前 Local-Exit-Proofs 剩余压缩为 AEX-1、AEX-2、AEX-3 三个明确不等式。

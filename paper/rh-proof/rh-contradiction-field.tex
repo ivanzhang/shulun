@@ -248,6 +248,14 @@ Choose $B_{final}=10C_{tot}+100$ and require every absorbing exit threshold $B_E
 Each local absorbing estimate is bounded by $\Delta/\log^{B_E-C_E}X$ with $C_E\le C_{tot}$.  All further routing, dyadic, Fourier/Vaaler, boundary, frame, capacity, and seed losses are bounded by another factor $\log^{C_{tot}}X$.  Thus the total absorbing contribution is at most $\Delta/\log^{B_{final}}X=o(\Delta)$.  Internal descent steps are not final load, and seed transfers only relabel the same excess atom with finite overlap already included in $C_{tot}$.
 \end{proof}
 
+
+\begin{proposition}[Analytic exit reduction]
+After the six low-black-box exits have been closed, the remaining analytic exits $PI,DSO,NRC$ are reduced to three inequalities: a zero-frequency-subtracted projection-capacity bound, a no-power-loss DSO square-function bound, and an NRC entrywise parameter-matching bound.
+\end{proposition}
+\begin{proof}[Review proof]
+This is the LaTeX summary of \texttt{docs/rh-analytic-exit-reduction-table.md}.  Baseline subtraction removes zero-frequency capacity from $PI/DSO$ load.  The remaining $PI$ load is controlled by the projection-capacity inequality AEX-1; the remaining $DSO$ load is controlled by the square-function inequality AEX-2; and every $NRC$ entry is either square-root-small or routed out by AEX-3.  Hence these three inequalities would imply $Load(PI)+Load(DSO)+Load(NRC)=o(\Delta)$.
+\end{proof}
+
 \begin{theorem}[GEE upper bound, review form]\label{thm:gee-upper}
 Assume the nine local exit mechanisms in the table above, Lemmas~\ref{lem:gee-cycle} and~\ref{lem:gee-threshold}, and Definition~\ref{def:gee-load}.  Then
 \[

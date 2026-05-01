@@ -156,7 +156,7 @@
 - [x] GEE LaTeX 主稿迁移：`paper/rh-proof/rh-contradiction-field.tex` 已新增 `Global Exit Exclusion` 节。
 - [x] 最终剩余缺口审查：`docs/rh-unconditional-final-gap-audit.md` 已抽取最小割集。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
-- [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明。
+- [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明；当前已归约为 AEX-1、AEX-2、AEX-3。
 - [x] `Transfer-Accounting`：seed/内部转移权重守恒和有限重叠逐条证明。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
 
@@ -165,7 +165,7 @@
 - [x] `Transfer-Accounting`：`docs/rh-transfer-accounting-formal-appendix.md` 已证明 seed/内部转移权重守恒、源目标去重与有限重叠。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Transfer-accounting proposition。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
-- [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明。
+- [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明；当前已归约为 AEX-1、AEX-2、AEX-3。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
 
 ## Local-Exit-Proofs 第一阶段更新
@@ -174,5 +174,15 @@
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Low-black-box local exits proposition。
 - [ ] `PI/DSO`：无幂损失容量与 square-function 上界。
 - [ ] `NRC`：双变量 PPI 与 DSO-E 逐入口参数匹配。
+- [ ] `EXT-Precision`：外部定理逐条精确适配。
+- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+
+## 解析出口归约更新
+
+- [x] `PI/DSO/NRC` 统一归约：`docs/rh-analytic-exit-reduction-table.md` 已抽取 AEX-1、AEX-2、AEX-3。
+- [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Analytic exit reduction proposition。
+- [ ] `AEX-1`：零频扣除后的投影容量不等式。
+- [ ] `AEX-2`：DSO 无幂损失 square-function 总量。
+- [ ] `AEX-3`：NRC 逐入口参数匹配。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。

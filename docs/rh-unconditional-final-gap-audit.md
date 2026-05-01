@@ -70,3 +70,9 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 新增 `docs/rh-local-exit-proofs-formal-appendix.md`，并在 LaTeX GEE 节加入 Low-black-box local exits proposition。该补强将 `LV/CE/LSMP/FCT/SC/A` 六个出口写成阈值吸收、内部势函数下降或源删除转出命题。
 
 剩余 `Local-Exit-Proofs` 不再是九出口整体，而压缩为三个解析硬出口：`PI/DSO/NRC`。其中 `PI/DSO` 需要无幂损失容量与 square-function 上界，`NRC` 需要双变量和 DSO-E 逐入口参数匹配。
+
+## 8. 解析出口统一归约
+
+新增 `docs/rh-analytic-exit-reduction-table.md`，并在 LaTeX GEE 节加入 Analytic exit reduction proposition。该补强把剩余 `PI/DSO/NRC` 三出口压缩为三条不等式：AEX-1 投影容量、AEX-2 DSO square-function、AEX-3 NRC 逐入口参数匹配。
+
+因此 `Local-Exit-Proofs` 的剩余不再是泛泛九出口证明，而是 AEX-1--AEX-3 三个具体数学目标。

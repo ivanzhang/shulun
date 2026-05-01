@@ -230,3 +230,10 @@
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 Low-black-box local exits proposition。
 
 归档口径：本次推进的是 Local-Exit-Proofs 的第一阶段，不能标记为全部九出口无条件闭合。
+
+## 解析出口归约归档
+
+- `docs/rh-analytic-exit-reduction-table.md`：新增 PI/DSO/NRC 三解析出口归约表，抽取 AEX-1、AEX-2、AEX-3 三个剩余不等式。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 Analytic exit reduction proposition。
+
+归档口径：该文压缩了剩余硬点，但没有证明 AEX-1--AEX-3。
