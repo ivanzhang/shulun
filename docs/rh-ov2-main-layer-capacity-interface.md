@@ -126,3 +126,8 @@ PPI 接口中留下的“不可检测正交 σ-代数”是指：overlap 质量�
 ## 9. 无条件化入口
 
 MLC 中的 dyadic 主/尾层容量、低尾容量吸收、近平方边界吸收和主层门槛已抽成无条件核心定理，见 `docs/rh-ov2-mlc-unconditional-core.md`。不可检测均匀质量的最终吸收仍需联合 PPI/FCT/LV/DSO。
+
+
+## 10. 不可检测均匀质量入口
+
+MLC 中不可检测均匀质量的四分吸收见 `docs/rh-ov2-mlc-uniform-absorption.md`。它把该剩余转入 FCT、SC/LV、DSO/PI 或零频均匀背景。

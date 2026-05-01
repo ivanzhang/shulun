@@ -47,6 +47,7 @@
 - `docs/rh-ov2-ppi-unconditional-theorem.md`
 - `docs/rh-ov2-main-layer-capacity-interface.md`
 - `docs/rh-ov2-mlc-unconditional-core.md`
+- `docs/rh-ov2-mlc-uniform-absorption.md`
 - `docs/rh-lv-low-volume-principle.md`
 - `docs/rh-pc3-ov2-bridge-theorem.md`
 - `docs/rh-pc1-offline-zero-smooth-window.md`
