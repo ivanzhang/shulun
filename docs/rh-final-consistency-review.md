@@ -10,7 +10,7 @@
 
 对应最终审查入口：
 
-1. PC1：`docs/rh-pc1-analytic-input-citation-audit.md`；
+1. PC1：`docs/rh-pc1-analytic-input-citation-audit.md`，并由 `docs/rh-pc1-external-input-standardization-audit.md` 标准化外部解析输入；
 2. PC2：`docs/rh-pc2-baseline-unconditional-audit.md`；
 3. PC3：`docs/rh-pc3-ov2-upstream-unconditional-audit.md`；
 4. PC4 内部终端：`docs/rh-pc4-terminal-final-no-cycle-audit.md`；

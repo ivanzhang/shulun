@@ -33,6 +33,7 @@
 - `docs/rh-pc1-offline-zero-smooth-window.md`：PC-1 离线零点到平滑素数异常窗口。
 - `docs/rh-pc1-analytic-input-theoremization.md`：PC1 解析输入无条件化定理化。
 - `docs/rh-pc1-analytic-input-citation-audit.md`：PC1 显式公式、Landau--Ingham 与权函数非湮灭引用级审查。
+- `docs/rh-pc1-external-input-standardization-audit.md`：PC1 外部解析输入标准化为显式公式、Landau--Ingham 与初等权重步骤。
 - `docs/rh-pc2-li-crt-baseline-match.md`：PC-2 连续零频与 CRT 零频基线匹配。
 - `docs/rh-pc4-final-exclusion-framework.md`：PC-4 最终排斥框架与 RH 总攻地图。
 - `docs/rh-pc4-pi-seed.md`：PC4-PI 跨尺度投影能量种子命题。

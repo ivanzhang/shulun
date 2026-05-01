@@ -6,6 +6,8 @@
 
 本文把该任务拆成可引用的标准解析输入，并明确哪些部分是初等证明、哪些部分应在投稿版中引用外部定理。
 
+外部输入的投稿级标准化矩阵见 `docs/rh-pc1-external-input-standardization-audit.md`。
+
 ## 1. 输入矩阵
 
 | PC1 子命题 | 状态 | 引用/证明来源 | 输出 |
@@ -60,7 +62,7 @@
 
 ## 7. 剩余投稿义务
 
-PC1 现在不再是结构黑箱，但最终投稿仍需完成两项编辑义务：
+PC1 现在不再是结构黑箱；`docs/rh-pc1-external-input-standardization-audit.md` 已将其压缩为两个经典外部标签与三个初等步骤。但最终投稿仍需完成两项编辑义务：
 
 1. 在 bibliography 中加入 `EXT-PC1-EF` 与 `EXT-PC1-LI` 的正式文献条目；
 2. 决定主文保留 Chebyshev/Buchstab 权还是转无权素数计数，并在 PC2/PC3 中保持同一口径。

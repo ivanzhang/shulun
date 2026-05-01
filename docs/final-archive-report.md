@@ -55,6 +55,7 @@
 - `docs/rh-pc1-offline-zero-smooth-window.md`
 - `docs/rh-pc1-analytic-input-theoremization.md`
 - `docs/rh-pc1-analytic-input-citation-audit.md`
+- `docs/rh-pc1-external-input-standardization-audit.md`
 - `docs/rh-pc2-li-crt-baseline-match.md`
 - `docs/rh-pc2-crt-baseline-explicit.md`
 - `docs/rh-pc2-baseline-unconditional-audit.md`

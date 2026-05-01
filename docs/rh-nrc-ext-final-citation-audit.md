@@ -36,7 +36,7 @@ NRC 的非共振条件为
 | `EXT-Selberg` | 二维线性上筛 | Tail-log4-M | Halberstam--Richert/Iwaniec--Kowalski |
 | `EXT-Vaughan` | von Mangoldt Type I/II | Tail-log4/RKS | Vaughan/Iwaniec--Kowalski |
 | `EXT-PC1-EF` | 平滑 ζ 显式公式 | PC1 | Titchmarsh/Iwaniec--Kowalski |
-| `EXT-PC1-LI` | Landau--Ingham 振荡 | PC1 | Titchmarsh/Ingham |
+| `EXT-PC1-LI` | Landau--Ingham 振荡 | PC1 | Titchmarsh/Ingham；标准化见 `docs/rh-pc1-external-input-standardization-audit.md` |
 
 这覆盖了当前文档中所有非初等外部解析输入。
 
@@ -66,6 +66,6 @@ NRC 的非共振条件为
 
 数学逻辑上，NRC/EXT 已可作为命名外部定理包引用。投稿编辑阶段仍需：
 
-1. 给 `EXT-PC1-LI` 选择具体定理编号或教材章节；
+1. 给 `EXT-PC1-EF/LI` 按 `docs/rh-pc1-external-input-standardization-audit.md` 选择具体定理编号或教材章节；
 2. 给 `EXT-KL` 的不完全和完成法补页码；
 3. 若使用 Tail-log4/RKS，补 BG/Baker/Selberg/Vaughan 的精确定理编号。

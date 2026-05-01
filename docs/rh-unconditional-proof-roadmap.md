@@ -86,3 +86,9 @@ Fourier/Vaaler 尾项在全部固定盒模板上的统一平方可和审查已�
 `FCT phase drift/closure` 的无无限递归最终审查已写入 `docs/rh-fct-closure-no-cycle-final-audit.md`。该补强把 `Seed -> Drift -> NewClosure -> NoetherDescent/RepeatState -> terminal` 写成事件图，并确认每条边都进入已命名终端或离散势函数下降。
 
 至此，DGap/FCT 内部剩余跳步已压缩到全局外部义务：上游解析输入标准化、容量定理常数核验、PC4-A/SC/Dual 与外部吸收的无回流总审查。
+
+## 12. PC1 上游输入推进记录
+
+PC1 外部解析输入标准化已写入 `docs/rh-pc1-external-input-standardization-audit.md`。该补强把离线零点推出平滑素数窗口异常压缩为 `EXT-PC1-EF` 平滑显式公式、`EXT-PC1-LI` Landau--Ingham 振荡，以及权函数非湮灭、素数幂去除、对数权转换三个初等步骤。
+
+当前 PC1 剩余不再是数学接口黑箱，而是最终投稿编辑义务：给两个外部标签选择精确书目、章节或定理号，并全文统一 Chebyshev 权或无权素数口径。
