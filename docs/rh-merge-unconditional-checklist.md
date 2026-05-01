@@ -53,3 +53,7 @@
 ## 8. GEE-LV 低体积出口
 
 新增 `docs/rh-gee-lv-low-volume-exit-bound.md`。LV 只允许登记满足相对主异常阈值 `Vol_eff log^C X<=Δ/log^{B_LV}X` 的原子；这部分由平凡体积估计给 `Load(LV;X)=o(Δ)`。不满足阈值的原子必须转入 `SC/PI/A/FCT/LSMP/CE`，不再计入 LV。
+
+## 9. GEE-NRC 参数硬障碍
+
+新增 `docs/rh-gee-nrc-nonresonant-exit-bound.md`。`EXT-KL` 给出单包平方根上界，但要得到 `Load(NRC;X)=o(Δ)`，必须逐入口核验 `K_eff,total P_max^{1/2}log^A X=o(Δ)`，或证明 PPI 主层门槛压过 NRC 上界并把失败层转入其它出口。当前 GEE-NRC 是条件参数闭合，不是完全闭合。

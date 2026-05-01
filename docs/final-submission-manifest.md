@@ -118,6 +118,7 @@
 - `docs/rh-gee0-load-distribution.md`：GEE-0 负担分配不等式。
 - `docs/rh-gee0-pc2-boundary-and-route-overlap.md`：GEE-0 PC2 边界误差与路由有限重叠表。
 - `docs/rh-gee-lv-low-volume-exit-bound.md`：GEE-LV 低体积出口上界。
+- `docs/rh-gee-nrc-nonresonant-exit-bound.md`：GEE-NRC 非共振出口上界与参数硬障碍。
 - `paper/rh-proof/rh-contradiction-field.tex`：RH 反例矛盾场单篇 LaTeX 审稿主稿。
 - `paper/rh-proof/rh-references.bib`：RH 审稿主稿 BibTeX 参考文献。
 - `paper/rh-proof/C11-REVIEW.md`：C11 LaTeX/PDF 审稿工程记录。

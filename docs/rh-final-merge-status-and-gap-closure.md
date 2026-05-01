@@ -127,6 +127,10 @@
 
 新增 `docs/rh-gee-lv-low-volume-exit-bound.md`。GEE-LV 采用相对主异常阈值 `Vol_eff log^C X<=Δ/log^{B_LV}X`，满足阈值的低体积原子由平凡估计给 `Load(LV;X)=o(Δ)`；阈值失败者转入 `SC/PI/A/FCT/LSMP/CE`，不再计入 LV。因此 LV 出口可标记为闭合，但其它转出出口仍需各自 GEE 上界。
 
+## 6.14 GEE-NRC 参数硬障碍
+
+新增 `docs/rh-gee-nrc-nonresonant-exit-bound.md`。审查结论：`EXT-KL` 的平方根完成和上界本身可靠，但 GEE-NRC 是否给 `o(Δ)` 取决于逐入口参数匹配 `P_max/K_eff/Bias`。当前只能标记为条件参数闭合，需补完整入口表后才能升级为无条件出口上界。
+
 ## 7. 状态定理
 
 **Theorem Final-Merge-Status.** 当前仓库中的 RH 总攻文档包已经把主要条件接口压缩为主文链、外部定理标签和全局归一化账本；但在未完成单篇论文合并、正式引用替换、容量定理内联和交叉引用审查前，不能宣称 RH 已无条件证明。
