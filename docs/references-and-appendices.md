@@ -54,6 +54,7 @@
 - `docs/rh-pc4-acc-seed.md`：PC4-A ACC 不同步排斥种子命题。
 - `docs/rh-pc4-acc-sync-pressure.md`：PC4-A ACC 同步压力命题。
 - `docs/rh-pc4-acc-closure-theorem.md`：PC4-A ACC 不同步分支闭合命题。
+- `docs/rh-pc4-terminal-closure-audit.md`：PC4 终端输入依赖图与无循环审查。
 - `docs/rh-pc4-short-cluster-seed.md`：PC4-SC 短簇跨尺度排斥种子命题。
 - `docs/rh-pc4-short-cluster-mass-balance.md`：PC4-SC 短簇质量平衡命题。
 - `docs/rh-pc4-short-cluster-local-density.md`：PC4-SC 短窗锚复用局部密度命题。

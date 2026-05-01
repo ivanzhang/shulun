@@ -77,6 +77,7 @@
 - `docs/rh-pc4-acc-seed.md`
 - `docs/rh-pc4-acc-sync-pressure.md`
 - `docs/rh-pc4-acc-closure-theorem.md`
+- `docs/rh-pc4-terminal-closure-audit.md`
 - `docs/rh-pc4-short-cluster-seed.md`
 - `docs/rh-pc4-short-cluster-mass-balance.md`
 - `docs/rh-pc4-short-cluster-local-density.md`

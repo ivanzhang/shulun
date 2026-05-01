@@ -106,7 +106,7 @@
 2. **基线输入**：PC2 的 CRT 候选边界误差与权重正规化，定理化见 `docs/rh-pc2-crt-baseline-explicit.md`；
 3. **覆盖输入**：AAI/PPI/MLC 内部接口已拆解，合并审查见 `docs/rh-pc3-ov2-unconditionalization-audit.md`；剩余依赖已转入 FCT、LV/LSMP、DSO/PI、NRC/EXT；
 4. **正交输入**：最终合并审查见 `docs/rh-pc4-orthogonality-final-closure-audit.md`；分散正交能量已转入 DSO 容量上界或 PI-Seed/FCT/LSMP/LV/NRC；
-5. **终端输入**：PC4-A/SC/PI/FCT closure 中的容量账本与 Noether 终止；
+5. **终端输入**：PC4-A/SC/PI/FCT 依赖图与无循环审查见 `docs/rh-pc4-terminal-closure-audit.md`；下一步需逐项审查 PI 能量、FCT Noether、SC 体积下降、A 同步压力；
 6. **对偶输入**：DGap 三接口的外部依赖，目前已拆为盒有限重叠、投影正交化与低维频率抽取。
 
 ## 8. 诚实结论
