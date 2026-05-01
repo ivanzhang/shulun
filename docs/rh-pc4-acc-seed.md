@@ -65,4 +65,4 @@ PC4-A-Seed 把 ACC 不同步目标压缩为：
 2. **组件分层排斥**：Tail 由 Tail-log4，Overlap 由 multiplicity energy，Body 由 D 组终端；
 3. **同步压力路线**：同一 ACC 模板若反复同向过剩，则产生投影能量或频率闭包，转入已闭合的 PC4-PI/FCT。
 
-`ACC-Sync-Pressure` 已在 `docs/rh-pc4-acc-sync-pressure.md` 中写出：固定 ACC 模板同向过剩必须转入 PC4-PI、PC4-FCT、短簇、LSMP/LV 或容量矛盾。下一步最优专攻是合并为 `PC4-A-Closure`。
+`ACC-Sync-Pressure` 已在 `docs/rh-pc4-acc-sync-pressure.md` 中写出：固定 ACC 模板同向过剩必须转入 PC4-PI、PC4-FCT、短簇、LSMP/LV 或容量矛盾。`PC4-A-Closure` 已在 `docs/rh-pc4-acc-closure-theorem.md` 中严写，作为 RH 总攻中 ACC 过剩分支的条件化闭合入口。

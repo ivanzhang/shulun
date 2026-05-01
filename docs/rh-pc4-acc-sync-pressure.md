@@ -70,4 +70,4 @@ Tail 与低体积项若承载主偏差，则转入 LSMP/LV 或短簇。因此非
 2. 把 LSMP/LV 与容量矛盾引用到最终总框架；
 3. 合并 ACC-Seed 与 ACC-Sync-Pressure，写出 `PC4-A-Closure`。
 
-下一步最优专攻是 `PC4-A-Closure`，然后转向 PC4-SC。
+`PC4-A-Closure` 已在 `docs/rh-pc4-acc-closure-theorem.md` 中严写；下一步转向 PC4-SC。

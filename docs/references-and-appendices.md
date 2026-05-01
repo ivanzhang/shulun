@@ -48,6 +48,7 @@
 - `docs/rh-pc4-fct-closure-theorem.md`：PC4-FCT 频率闭包分支闭合命题。
 - `docs/rh-pc4-acc-seed.md`：PC4-A ACC 不同步排斥种子命题。
 - `docs/rh-pc4-acc-sync-pressure.md`：PC4-A ACC 同步压力命题。
+- `docs/rh-pc4-acc-closure-theorem.md`：PC4-A ACC 不同步分支闭合命题。
 
 ## B. 行列归约附录
 
