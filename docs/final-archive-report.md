@@ -100,6 +100,7 @@
 - `docs/rh-pc4-dual-dgap-decomposition.md`
 - `docs/rh-pc4-dual-box-overlap.md`
 - `docs/rh-pc4-dual-projection-orthogonalization.md`
+- `docs/rh-dgap-projection-line-by-line-audit.md`
 - `docs/rh-pc4-dual-lowdim-frequency-extraction.md`
 - `docs/rh-pc4-dual-dgap-event-match-audit.md`
 - `docs/rh-pc1-pc4-interface-closure-audit.md`

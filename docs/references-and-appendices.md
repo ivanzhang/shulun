@@ -76,6 +76,7 @@
 - `docs/rh-pc4-dual-dgap-decomposition.md`：PC4-Dual DGap 压缩异常结构分解定理。
 - `docs/rh-pc4-dual-box-overlap.md`：PC4-Dual DGap 盒分解有限重叠定理。
 - `docs/rh-pc4-dual-projection-orthogonalization.md`：PC4-Dual DGap 投影正交化接口。
+- `docs/rh-dgap-projection-line-by-line-audit.md`：DGap 投影正交化 frame/逐步正交投影逐行强度审查。
 - `docs/rh-pc4-dual-lowdim-frequency-extraction.md`：PC4-Dual DGap 低维频率抽取接口。
 - `docs/rh-pc4-dual-dgap-event-match-audit.md`：PC4-Dual/DGap 到终端事件图的匹配审查。
 - `docs/rh-pc2-crt-baseline-explicit.md`：PC2 CRT 候选基线与边界误差显式化。
