@@ -71,6 +71,8 @@
 - `docs/rh-pc4-short-cluster-mass-balance.md`
 - `docs/rh-pc4-short-cluster-local-density.md`
 - `docs/rh-pc4-short-cluster-closure-theorem.md`
+- `docs/rh-pc4-dual-overdense-closure.md`
+- `docs/rh-pc1-pc4-interface-closure-audit.md`
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`

@@ -51,6 +51,8 @@
 - `docs/rh-pc4-short-cluster-mass-balance.md`：PC4-SC 短簇质量平衡命题。
 - `docs/rh-pc4-short-cluster-local-density.md`：PC4-SC 短窗锚复用局部密度命题。
 - `docs/rh-pc4-short-cluster-closure-theorem.md`：PC4-SC 短簇分支闭合命题。
+- `docs/rh-pc4-dual-overdense-closure.md`：PC4-Dual 过密对偶分支闭合框架。
+- `docs/rh-pc1-pc4-interface-closure-audit.md`：RH 反例矛盾场 PC1-PC4 接口闭合审查。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
