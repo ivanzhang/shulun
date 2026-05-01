@@ -105,7 +105,7 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 为了真正向 RH 总攻推进，下一步不应再扩散，而应按可证性排序专攻：
 
-1. **PC4-FCT 频率闭包跨尺度排斥**：种子命题见 `docs/rh-pc4-fct-seed.md`，相位漂移压力见 `docs/rh-pc4-fct-phase-drift.md`；下一步攻 `FCT-Noether` 闭包链终止；
+1. **PC4-FCT 频率闭包跨尺度排斥**：种子命题见 `docs/rh-pc4-fct-seed.md`，相位漂移压力见 `docs/rh-pc4-fct-phase-drift.md`，Noether 闭包链见 `docs/rh-pc4-fct-noether.md`；下一步合并 `PC4-FCT-Closure`；
 2. **PC4-A ACC 不同步排斥**：直接承接 PC3-OV2，是最核心但较难；
 3. **PC4-SC 短簇跨尺度排斥**：需要 CRT 周期均衡与短簇密度的跨尺度版本；
 4. **PC4-Dual 过密对偶**：若不能完全依赖反相位过疏，则必须补齐。
