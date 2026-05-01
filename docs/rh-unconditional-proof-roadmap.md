@@ -212,3 +212,9 @@ PC1 Landau--Ingham 振荡主文链已写入 `docs/rh-pc1-landau-ingham-maintext-
 EXT 外部定理主文引用闭合链已写入 `docs/rh-ext-maintext-citation-closure.md`。该补强把所有非初等外部输入统一归入 `EXT-KL`, `EXT-Vaaler`, `EXT-PC1-EF`, `EXT-PC1-LI`, `EXT-BG`, `EXT-Selberg`, `EXT-Vaughan` 七类，并逐项写明使用命题、推荐文献和使用边界。
 
 其中 `EXT-PC1-EF` 已文内证明，`EXT-PC1-LI` 的有限边界情形已文内证明，一般情形保留为经典 Landau--Ingham 定理；`EXT-KL` 只用素数模 `ax+b/x` 特例，`EXT-Vaaler` 只用一维区间截断。当前剩余压力转向容量常数层级、全文符号/尺度/权重一致性和最终总稿合并。
+
+## 33. 全局归一化主文闭合推进记录
+
+全局常数、尺度、符号和权重归一化主文链已写入 `docs/rh-global-normalization-maintext-closure.md`。该补强统一 `X,z,M,Δ,E_z,B_z,ACC/O/Gap/DGap`，固定 PC2 反号关系 `B_z-B_z^0=-E_z+o(Δ)`，并把过疏入口送往 PC3/OV2、过密入口送往 Dual/DGap。
+
+同时，全文采用 Chebyshev 权为主、无权只作对数损失推论；对数常数按 `C_struct << C_overlap << C_tail << C_frame << C_cap << C_trig << B_LV << C_0 << B_final` 无循环选择；所有固定多对数损失吸收到 `X^{o(1)}`。当前剩余主要是最终单篇论文合并、BibTeX/页码/定理号与 LaTeX 交叉引用审查。

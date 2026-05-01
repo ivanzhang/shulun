@@ -112,6 +112,7 @@
 - `docs/rh-capacityfail-binding-table.md`：CapacityFail 全局绑定表。
 - `docs/rh-capacity-constants-applicability-audit.md`：容量定理常数余量、适用条件与失败出口统一核验表。
 - `docs/rh-global-log-constant-hierarchy-audit.md`：全局 `log^C X` 常数层级排序与无循环依赖审查。
+- `docs/rh-global-normalization-maintext-closure.md`：全局常数、尺度、符号和权重归一化主文闭合链。
 
 ## B. 行列归约附录
 

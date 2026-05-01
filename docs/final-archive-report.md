@@ -134,6 +134,7 @@
 - `docs/rh-capacityfail-binding-table.md`
 - `docs/rh-capacity-constants-applicability-audit.md`
 - `docs/rh-global-log-constant-hierarchy-audit.md`
+- `docs/rh-global-normalization-maintext-closure.md`：全局常数、尺度、符号和权重归一化主文闭合链。
 - `docs/row-column-reduction-formal-appendix.md`
 - `docs/ab-to-d-interface-match.md`
 - `docs/d-structure-formal-appendix.md`

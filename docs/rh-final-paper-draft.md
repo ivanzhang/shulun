@@ -127,7 +127,8 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 - `docs/rh-capacityfail-binding-table.md`；
 - `docs/rh-capacity-constants-applicability-audit.md`；
 - `docs/rh-global-log-constant-hierarchy-audit.md`；
-- `docs/rh-ext-maintext-citation-closure.md`。
+- `docs/rh-ext-maintext-citation-closure.md`；
+- `docs/rh-global-normalization-maintext-closure.md`。
 
 ## 8. 条件化主定理
 
@@ -144,9 +145,9 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 3. AAI/PPI/MLC/OV2 已新增连续主文证明链 `docs/rh-pc3-ov2-maintext-proof-chain.md`，PPI 输出端已新增 `docs/rh-ppi-terminal-output-maintext-chain.md`；后续义务是把 MLC、LV 与 D 组终端逐项并入最终主文；
 4. 将 PC4-A/PI/FCT/SC 的无循环审查从文档矩阵合并为单篇定理链；
 5. NRC/EXT 非共振分支已新增 `docs/rh-nrc-ext-maintext-closure.md`，FCT 无循环闭包已新增 `docs/rh-fct-maintext-closure-chain.md`，PI/DSO 桥接已新增 `docs/rh-pi-dso-maintext-bridge-chain.md`，SC 局部乘积容量已新增 `docs/rh-sc-maintext-capacity-closure.md`，DGap 三接口已新增 `docs/rh-dgap-maintext-three-interface-chain.md`，Fourier/Vaaler 尾项平方可和已新增 `docs/rh-fourier-vaaler-tail-maintext-chain.md`；
-6. `LV/LSMP/CE` 外部吸收已新增 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`；仍需将容量矩阵中的所有 `log^C X` 常数改成全局常数层级账本；
+6. `LV/LSMP/CE` 外部吸收已新增 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`，全局常数/尺度/符号归一化已新增 `docs/rh-global-normalization-maintext-closure.md`；
 7. 外部定理引用已新增 `docs/rh-ext-maintext-citation-closure.md`；最终编辑仍需把 `EXT-KL/BG/Vaaler/Selberg/Vaughan/PC1` 替换为正式 BibTeX、页码或定理号；
-8. 做全文符号、权重口径、尺度参数、归一化能量的一致性校对。
+8. 最终义务转为单篇论文合并、LaTeX 交叉引用、BibTeX 页码定理号和符号表编辑审查。
 
 ## 10. 结论
 
