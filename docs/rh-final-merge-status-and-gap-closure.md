@@ -148,3 +148,5 @@
 - `docs/rh-nrc-2d-capacity-match-audit.md`：Capacity-Match 已安全分流；剩 `MidCap-Structure`。
 
 - `docs/rh-nrc-2d-midcap-structure-route.md`：MidCap-Structure 已分流；剩余回到 GEE 全局出口上界。
+
+- `docs/rh-gee-pi-dso-load-bound-target.md`：GEE-PI/DSO 仍未闭合；最小割集为 `Lac-Baseline/Dense-Carleson/Anomaly-L2-Control`。

@@ -88,3 +88,9 @@
 
 - [x] `MidCap-Structure-Reduction`：中间容量层分流到 `LSMP/LV`、`SC`、`PI/DSO`、`CE` 或 Uniform 排斥。
 - [ ] `GEE-PI/DSO/SC/LSMP/CE`：接收中间容量分流后的全局出口上界仍需闭合。
+
+## GEE-PI/DSO 清单
+
+- [ ] `Lac-Baseline`：lacunary 零频容量与异常负担不重复计数。
+- [ ] `Dense-Carleson`：fixed-template dense pack 的 square-function/Carleson 容量上界。
+- [ ] `Anomaly-L2-Control`：非终端异常函数 `L^2` 质量小于 `Δ/log^B X`，失败转结构出口。

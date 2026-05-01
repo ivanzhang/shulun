@@ -194,3 +194,5 @@
 - `docs/rh-nrc-2d-capacity-match-audit.md`：NRC-2D Capacity-Match 审查，分离高容量、全局低体积与中间容量层硬点。
 
 - `docs/rh-nrc-2d-midcap-structure-route.md`：NRC-2D 中间容量层四触发分流路线。
+
+- `docs/rh-gee-pi-dso-load-bound-target.md`：GEE-PI/DSO 负担上界目标，抽取 `Lac-Baseline/Dense-Carleson/Anomaly-L2-Control` 三项硬点。

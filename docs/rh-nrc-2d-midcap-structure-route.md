@@ -98,3 +98,7 @@
 - 本文 `MidCap-Structure-Reduction`；
 
 二维加性分离 NRC 入口可以改写为：高容量相对小，低体积进 LV，中间容量必转 `LSMP/SC/PI/CE/DSO`。因此 `NRC-2D` 本身不再是独立解析出口；剩余压力转移到全局 `PI/DSO/SC/LSMP/CE` 出口上界。
+
+## 7. PI/DSO 接收目标
+
+新增 `docs/rh-gee-pi-dso-load-bound-target.md`。MidCap 转入 `PI/DSO` 后，不能只依赖“无回流”；必须证明 `Load(PI)+Load(DSO)=o(Δ)`。该目标已压缩为 `Lac-Baseline`、`Dense-Carleson` 与 `Anomaly-L2-Control`。

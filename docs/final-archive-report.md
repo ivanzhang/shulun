@@ -187,3 +187,5 @@
 - `docs/rh-nrc-2d-capacity-match-audit.md`：归档 Capacity-Match 审查，避免把中间容量层误归为 LV。
 
 - `docs/rh-nrc-2d-midcap-structure-route.md`：归档中间容量层分流路线，避免把 NRC-2D 误列为独立解析硬点。
+
+- `docs/rh-gee-pi-dso-load-bound-target.md`：归档 PI/DSO 从桥接无回流到 GEE 负担上界的目标化。

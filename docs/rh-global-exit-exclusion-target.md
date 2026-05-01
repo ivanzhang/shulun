@@ -163,3 +163,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## NRC-2D 分流闭合状态
 
 新增 `docs/rh-nrc-2d-midcap-structure-route.md`。`GEE-NRC` 的二维加性分离入口已分流：高容量相对小、低体积转 LV、中间容量转 `LSMP/SC/PI/CE/DSO`。因此 `GEE-NRC` 的剩余压力主要回到 `GEE-PI/GEE-DSO/GEE-SC/GEE-LSMP/GEE-CE`，而非 NRC 解析估计。
+
+## GEE-PI/DSO 负担目标
+
+新增 `docs/rh-gee-pi-dso-load-bound-target.md`。PI/DSO 当前从“桥接无回流”升级为明确负担目标：需证明 `Lac-Baseline`、`Dense-Carleson` 与 `Anomaly-L2-Control` 三项，才能推出 `Load(PI)+Load(DSO)=o(Δ)`。最硬点为 `Dense-Carleson`。
