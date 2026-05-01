@@ -129,6 +129,7 @@
 - `docs/rh-global-interface-consistency-audit.md`
 - `docs/rh-contradiction-field-final-assault.md`
 - `docs/rh-final-paper-draft.md`
+- `docs/rh-final-merge-status-and-gap-closure.md`：RH 总攻最终合并状态与剩余缺口判定。
 - `docs/rh-final-consistency-review.md`
 - `docs/rh-unconditional-proof-roadmap.md`
 - `docs/rh-capacityfail-binding-table.md`

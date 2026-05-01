@@ -218,3 +218,9 @@ EXT 外部定理主文引用闭合链已写入 `docs/rh-ext-maintext-citation-cl
 全局常数、尺度、符号和权重归一化主文链已写入 `docs/rh-global-normalization-maintext-closure.md`。该补强统一 `X,z,M,Δ,E_z,B_z,ACC/O/Gap/DGap`，固定 PC2 反号关系 `B_z-B_z^0=-E_z+o(Δ)`，并把过疏入口送往 PC3/OV2、过密入口送往 Dual/DGap。
 
 同时，全文采用 Chebyshev 权为主、无权只作对数损失推论；对数常数按 `C_struct << C_overlap << C_tail << C_frame << C_cap << C_trig << B_LV << C_0 << B_final` 无循环选择；所有固定多对数损失吸收到 `X^{o(1)}`。当前剩余主要是最终单篇论文合并、BibTeX/页码/定理号与 LaTeX 交叉引用审查。
+
+## 34. 最终合并状态审查记录
+
+最终合并状态与剩余缺口判定已写入 `docs/rh-final-merge-status-and-gap-closure.md`。该文列出当前已主文化的 13 条核心链，给出总链拼接，并明确当前不能宣称 RH 已无条件证明的原因：主文链仍分散、EXT 页码/定理号未最终替换、部分容量语句仍需单篇稿内联、LaTeX 交叉引用和符号表尚未完成。
+
+下一步最优工作转为最终论文合并工程：把主文链按证明顺序合并成单篇稿，并用该文第 4 节的无条件化完成判据逐项勾销。
