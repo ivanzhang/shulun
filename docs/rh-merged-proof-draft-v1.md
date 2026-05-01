@@ -2,6 +2,26 @@
 
 本文把当前分散的 RH 反例矛盾场主文链整合为单篇线性证明稿。严格口径：本文仍是“主文链整合版”，不是最终可投稿的无条件 RH 证明；升级为无条件证明稿还需完成正式 BibTeX/页码定理号、容量引理内联编号、LaTeX 交叉引用和最终审稿校对。
 
+
+## 0. 内部编号与依赖图
+
+为把多文档链条合并为单篇论文，本文采用以下内部编号。后续定稿时，所有 `docs/...` 跳转必须替换为这些编号或正式参考文献。
+
+| 编号 | 名称 | 当前状态 | 待闭合义务 |
+|---|---|---|---|
+| Lemma G0 | 全局归一化与常数层级 | 已主文化 | 移入第 1 节并消除外部跳转 |
+| Proposition PC1 | 离线零点推出平滑素数异常 | 条件主文化 | 补 `EXT-PC1-LI` 精确定理号或完整文内证明 |
+| Lemma PC2 | CRT 零频候选基线 | 已主文化 | 内联边界误差证明 |
+| Proposition CF | 覆盖场方程与二分 | 已定义化修正 | 采用 `ACC/Hole/OV` 三账本并内联 C3 |
+| Proposition Sparse | 过疏 PC3/OV2 分支 | 条件主文化 | 内联 AAI/MLC/PPI 的容量阈值 |
+| Proposition Dense | 过密 Dual/DGap 分支 | 条件主文化 | 内联 DGap 三接口投影证明 |
+| Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 条件主文化 | 将 Noether 势函数与容量引理逐条编号 |
+| Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口 |
+| Lemma Tail | Fourier/Vaaler 尾项吸收 | 条件主文化 | 补 Vaaler 截断误差与平方可和证明 |
+| Table EXT | 外部定理包 | 来源级闭合 | 补正式 BibTeX、章节、定理号或页码 |
+
+当前合并稿 v1 的逻辑用途是：把证明依赖压缩为上表 10 个可审查接口。只有当每一行的“待闭合义务”被内联证明或正式引用勾销后，主定理才可从条件版改为无条件版。
+
 ## 摘要
 
 反设 ζ 函数存在离线零点 `ρ=β+iγ`, `β>1/2`。PC1 给出平滑素数窗口异常 `Δ=X^{β-o(1)}`。PC2 将其经 CRT 零频刚性转为粗合数候选账本的反向异常。统一覆盖场方程把异常送入过疏 PC3/OV2 或过密 Dual/DGap。两路随后分别进入 `A/PI/FCT/SC` 内部终端或 `LV/LSMP/CE/DSO/NRC/CapacityFail` 外部事件；这些事件由当前主文链、容量账本与 `EXT-*` 标准外部定理标签接收。
@@ -46,19 +66,15 @@
 
 ## 4. 覆盖场方程
 
-允许覆盖容量、overlap 扣重与缺口账本满足
+采用 C3 定义化后的三账本。`ACC_z` 为至少被一个允许证书覆盖的粗合数候选数，`Hole_z` 为未被证书解释的粗合数候选数，`T_z` 为原始证书总数，`OV_z=T_z-ACC_z` 为二层重叠复用量。第一层集合划分给
 
-`B_z=ACC_z-O_z+Gap_z+o(Δ)`。
+`B_z=ACC_z+Hole_z+o(Δ)`。
 
 相减得
 
-`-E_z=(ACC_z-ACC_z^0)-(O_z-O_z^0)+(Gap_z-Gap_z^0)+o(Δ)`。
+`-E_z=(ACC_z-ACC_z^0)+(Hole_z-Hole_z^0)+o(Δ)`。
 
-若 `E_z<=-Δ`，粗合数候选过剩进入 PC3/OV2；若 `E_z>=Δ`，得到
-
-`(ACC_z^0-ACC_z)+(O_z-O_z^0)+DGap_z>=Δ-o(Δ)`，
-
-进入 Dual/DGap。
+若 `E_z<=-Δ`，则 `ACC`、`Hole` 或二层 `OV` 至少一项承载固定比例异常，进入 `A/LV-LSMP-CE/PC3-OV2`。若 `E_z>=Δ`，则 `ACC_z^0-ACC_z` 或 `DGap_z:=Hole_z^0-Hole_z` 承载固定比例异常，进入 `A` 或 Dual/DGap。C3 细节见 `docs/rh-c3-covering-field-definition-closure.md`。
 
 ## 5. 过疏分支：PC3/OV2
 
