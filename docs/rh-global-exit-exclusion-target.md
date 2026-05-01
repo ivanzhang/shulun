@@ -125,7 +125,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 |---|---|---|
 | GEE-0 | `docs/rh-gee0-load-distribution.md` + `docs/rh-gee0-pc2-boundary-and-route-overlap.md` | bookkeeping 闭合 |
 | GEE-LV | `docs/rh-gee-lv-low-volume-exit-bound.md` | 闭合：相对 `Δ` 低体积阈值下为 `o(Δ)`，失败转其它出口 |
-| GEE-NRC | `docs/rh-gee-nrc-nonresonant-exit-bound.md` | 条件参数闭合；待逐入口 `P_max/K_eff/Bias` 表 |
+| GEE-NRC | `docs/rh-gee-nrc-nonresonant-exit-bound.md` + `docs/rh-gee-nrc-entry-parameter-table.md` | 单变量与 Tail/RKS 分流闭合；剩 `NRC-2D` 与 `DSO-SF` |
 | GEE-DSO | 有 square-function 思路；缺线性负担转换 | 未闭合 |
 | GEE-PI | 有 lacunary/dense 分类；缺总容量到 `o(Δ)` | 未闭合 |
 | GEE-FCT | 有 no-cycle；缺有限状态负担上界 | 未闭合 |
@@ -136,10 +136,14 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 
 ## 6. 下一步最优攻坚顺序
 
-1. **补 GEE-NRC 逐入口参数表**：核验 `P_max/K_eff/Bias` 是否满足平方根上界压过条件。
-2. **再攻 GEE-DSO/PI**：square-function 到线性负担转换是核心桥。
-3. **最后攻 GEE-A/FCT/SC/LSMP/CE**：这些高度依赖全局势函数和复杂度预算.
+1. **专攻 `NRC-2D`**：双变量倒数包必须给无幂损失压缩，避免 `Q·P^{1/2}` 逃逸。
+2. **专攻 `DSO-SF`**：square-function 到线性负担转换必须无幂损失。
+3. **再攻 GEE-A/FCT/SC/LSMP/CE/PI**：这些依赖全局势函数和复杂度预算。
 
 ## 7. 审稿口径
 
 在 GEE-0 和九个 GEE-* 上界全部证明前，当前 RH 文档包不能称为无条件证明。正确表述是：结构分支已经压缩为有限出口集合；最终证明等价于 Global-Exit-Exclusion 的十个定量不等式。
+
+## GEE-NRC 入口参数核验补充
+
+详见 `docs/rh-gee-nrc-entry-parameter-table.md`。当前审查结论为：单变量 PPI 与 Tail/RKS 分流已可闭合；双变量 PPI 仍需 `NRC-2D` 无幂损失完成和；DSO-E 仍需 `DSO-SF` 无幂损失 square-function 总量。因此 `GEE-NRC` 不得标记为完全无条件闭合。

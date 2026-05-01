@@ -57,3 +57,12 @@
 ## 9. GEE-NRC 参数硬障碍
 
 新增 `docs/rh-gee-nrc-nonresonant-exit-bound.md`。`EXT-KL` 给出单包平方根上界，但要得到 `Load(NRC;X)=o(Δ)`，必须逐入口核验 `K_eff,total P_max^{1/2}log^A X=o(Δ)`，或证明 PPI 主层门槛压过 NRC 上界并把失败层转入其它出口。当前 GEE-NRC 是条件参数闭合，不是完全闭合。
+
+## GEE-NRC 参数入口补充
+
+- [x] 单变量 PPI 非共振入口：由平方根完成和与 `β>1/2` 闭合。
+- [x] Tail/RKS NRC：由 `LV` 或主层回流分流闭合。
+- [ ] `NRC-2D`：双变量倒数包无幂损失压缩。
+- [ ] `DSO-SF`：DSO 非共振包 square-function 无幂损失总量。
+
+详见 `docs/rh-gee-nrc-entry-parameter-table.md`。

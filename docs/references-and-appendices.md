@@ -184,3 +184,5 @@
 - Vaaler/Beurling--Selberg 截断：用于 TL4-L/TL4-S。
 
 最终投稿版应把这些来源转成正式 bibliography，并在对应附录中逐一定理编号引用。
+
+- `docs/rh-gee-nrc-entry-parameter-table.md`：GEE-NRC 逐入口参数核验表，分离单变量已闭合、双变量 NRC-2D 与 DSO-SF 剩余硬点。

@@ -165,3 +165,5 @@
 - `python3 experiments/verify_small_prime_square.py --max-log 5 --out docs/finite-verify-exp5.json`
 - `python3 -m py_compile experiments/extract_p0.py experiments/verify_small_prime_square.py`
 - `git diff --check` 针对本次归档文件通过。
+
+- `docs/rh-gee-nrc-entry-parameter-table.md`：新增 NRC 入口参数审查表；当前用于标记 GEE-NRC 的真实剩余障碍，不作为 RH 已闭合声明。
