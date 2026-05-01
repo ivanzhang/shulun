@@ -86,7 +86,7 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 这意味着允许覆盖容量不足、overlap 扣重过剩或对偶缺口压缩异常。若压缩集中，触发短簇/投影终端的对偶形式；若分散，则违反 CRT 非零类均衡。
 
-当前最省路线仍是通过 PC-1 的反相位子列获得过疏；若反相位选择因多零点相干变复杂，则使用 `docs/rh-pc4-dual-overdense-closure.md` 与 `docs/rh-pc4-dual-gap-ledger.md`，把 ACC 负向同步、overlap 过剩或 `DGap` 压缩异常转入 PC4-A/SC/PI/FCT/LV。
+当前最省路线仍是通过 PC-1 的反相位子列获得过疏；若反相位选择因多零点相干变复杂，则使用 `docs/rh-pc4-dual-overdense-closure.md`、`docs/rh-pc4-dual-gap-ledger.md` 与 `docs/rh-pc4-dual-dgap-decomposition.md`，把 ACC 负向同步、overlap 过剩或 `DGap` 压缩异常转入 PC4-A/SC/PI/FCT/LV。
 
 ## 6. PC-4 总框架定理
 
@@ -105,10 +105,10 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 为了真正向 RH 总攻推进，下一步不应再扩散，而应按可证性排序专攻：
 
-1. **PC4-Dual 过密对偶**：当前框架见 `docs/rh-pc4-dual-overdense-closure.md`，缺口账本见 `docs/rh-pc4-dual-gap-ledger.md`；下一步需把 `DGap` 的 SC/PI/FCT 分解完全无条件化；
+1. **PC4-Dual 过密对偶**：当前框架见 `docs/rh-pc4-dual-overdense-closure.md`，缺口账本见 `docs/rh-pc4-dual-gap-ledger.md`，`DGap` 分解见 `docs/rh-pc4-dual-dgap-decomposition.md`；下一步需无条件化盒分解有限重叠、投影正交化与低维频率抽取；
 2. **全文接口一致性审查**：当前审查见 `docs/rh-pc1-pc4-interface-closure-audit.md`，下一步需逐项无条件化 AAI/PPI/MLC/LV/NRC/EXT。
 
-本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-A、PC4-SC、PC4-PI、PC4-FCT 与 PC4-Dual 已推进到条件化闭合形态；最优下一步是消除对偶缺口账本和外部结构接口中的条件化假设。
+本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-A、PC4-SC、PC4-PI、PC4-FCT 与 PC4-Dual 已推进到条件化闭合形态；最优下一步是消除 `DGap` 分解、AAI/PPI/MLC/LV/NRC/EXT 中的条件化假设。
 
 ## 8. PC4-PI 的最小可证接口
 
