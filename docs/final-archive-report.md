@@ -235,3 +235,7 @@
 ## AEX-1 归档
 
 新增 `docs/rh-aex1-projection-capacity-formal.md` 并接入 LaTeX 主稿。AEX-1 已归约为 `PI-Lac/PI-Dense` 两个容量输入，尚未完全无条件闭合。
+
+## AEX-2 归档
+
+新增 `docs/rh-aex2-dso-squarefunction-formal.md` 并接入 LaTeX 主稿。AEX-2 已归约为 `DSO-SF` 一个容量输入，尚未完全无条件闭合。

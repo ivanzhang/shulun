@@ -63,7 +63,7 @@
 - [x] 单变量 PPI 非共振入口：由平方根完成和与 `β>1/2` 闭合。
 - [x] Tail/RKS NRC：由 `LV` 或主层回流分流闭合。
 - [ ] `NRC-2D`：双变量倒数包无幂损失压缩。
-- [ ] `DSO-SF`：DSO 非共振包 square-function 无幂损失总量。
+- [ ] `DSO-SF`：DSO 非共振包 square-function 无幂损失总量；当前已有 AEX-2 账本归约。
 
 详见 `docs/rh-gee-nrc-entry-parameter-table.md`。
 
@@ -182,7 +182,7 @@
 - [x] `PI/DSO/NRC` 统一归约：`docs/rh-analytic-exit-reduction-table.md` 已抽取 AEX-1、AEX-2、AEX-3。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Analytic exit reduction proposition。
 - [ ] `AEX-1`：零频扣除后的投影容量不等式；当前已归约为 `PI-Lac/PI-Dense`。
-- [ ] `AEX-2`：DSO 无幂损失 square-function 总量。
+- [ ] `AEX-2`：DSO 无幂损失 square-function 总量；当前已归约为 `DSO-SF`。
 - [ ] `AEX-3`：NRC 逐入口参数匹配。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
@@ -193,3 +193,9 @@
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-1 projection capacity proposition。
 - [ ] `PI-Lac`：lacunary Bessel/Parseval 容量正式证明或精确引用。
 - [ ] `PI-Dense`：dense fixed-template Carleson/square-function 容量正式证明或精确引用。
+
+## AEX-2 补强更新
+
+- [x] `AEX-2` 账本归约：`docs/rh-aex2-dso-squarefunction-formal.md` 已把 DSO square-function 总量压缩为 `DSO-SF` 输入。
+- [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-2 DSO square-function proposition。
+- [ ] `DSO-SF`：martingale square-function 基线容量正式证明或精确引用。

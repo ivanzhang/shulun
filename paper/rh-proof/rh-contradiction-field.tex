@@ -257,6 +257,14 @@ The PI projection-capacity inequality reduces to two capacity inputs: a lacunary
 This summarizes \texttt{docs/rh-aex1-projection-capacity-formal.md}.  Baseline subtraction changes the PI load into the positive part of $Energy-C_0Cap^0$.  The projection family is split into lacunary and dense scale packs.  The lacunary pack is controlled by finite-overlap Bessel/Parseval capacity, while the dense pack is controlled by the fixed-template Carleson/square-function capacity.  Applicability failures transfer to named exits by the NoReturn and transfer-accounting ledgers.  Thus AEX-1 is reduced to the formal inputs PI-Lac and PI-Dense.
 \end{proof}
 
+
+\begin{proposition}[AEX-2 DSO square-function]
+The DSO square-function inequality reduces to a pure Parseval/frame ledger plus one remaining capacity input DSO-SF controlling the martingale square-function baseline.
+\end{proposition}
+\begin{proof}[Review proof]
+This summarizes \texttt{docs/rh-aex2-dso-squarefunction-formal.md}.  Fixed-complexity frequency packages are finite intersections of allowed CRT/Bohr labels, so Parseval controls their squared projections by the relevant martingale differences, up to logarithmic frame losses.  Errors that are not square-summable, non-allowed packages, or high-overlap packages transfer to named exits.  The remaining quantitative input is DSO-SF: the martingale square-function baseline must be bounded by the allowed capacity plus $\Delta^2/\log^B X$.
+\end{proof}
+
 \begin{proposition}[Analytic exit reduction]
 After the six low-black-box exits have been closed, the remaining analytic exits $PI,DSO,NRC$ are reduced to three inequalities: a zero-frequency-subtracted projection-capacity bound, a no-power-loss DSO square-function bound, and an NRC entrywise parameter-matching bound.
 \end{proposition}

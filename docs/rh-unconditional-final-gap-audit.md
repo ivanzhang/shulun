@@ -80,3 +80,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 ## 9. AEX-1 投影容量补强
 
 新增 `docs/rh-aex1-projection-capacity-formal.md`，并在 LaTeX GEE 节加入 AEX-1 projection capacity proposition。该补强把 AEX-1 压缩为两个正式容量输入：`PI-Lac` 与 `PI-Dense`。其中基线扣除、失败转出和有限重叠账本已闭合；剩余是 dense/lacunary 容量定理在最终稿中的正式证明或精确引用。
+
+## 10. AEX-2 DSO square-function 补强
+
+新增 `docs/rh-aex2-dso-squarefunction-formal.md`，并在 LaTeX GEE 节加入 AEX-2 DSO square-function proposition。该补强把 AEX-2 压缩为一个核心输入 `DSO-SF`：martingale square-function 基线必须由允许容量加 `Δ^2/log^B X` 控制。Parseval/frame、误差转出和有限重叠账本已形式化。

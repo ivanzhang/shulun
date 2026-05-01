@@ -242,3 +242,8 @@
 
 - `docs/rh-aex1-projection-capacity-formal.md`：新增 PI 投影容量 AEX-1 形式化审查，将剩余压缩为 `PI-Lac` 与 `PI-Dense` 两个容量输入。
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 AEX-1 projection capacity proposition。
+
+## AEX-2 归档
+
+- `docs/rh-aex2-dso-squarefunction-formal.md`：新增 DSO square-function AEX-2 形式化审查，将剩余压缩为 `DSO-SF` 容量输入。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 AEX-2 DSO square-function proposition。
