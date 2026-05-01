@@ -100,3 +100,8 @@ DSO-E 补上 `docs/rh-pc4-complexity-escape-interface.md` 中 CE-1 的独立新�
 - 复杂度逃逸：`docs/rh-pc4-complexity-escape-interface.md`；
 - 独立新频率正交：本文 DSO-E；
 - 投稿级核查：`docs/rh-pc4-dso-euler-match-audit.md` 已将 DSO-E2 对齐到初等字符正交、`EXT-KL` 与 NRC/FCT 口径；`docs/rh-pc4-lsmp-frequency-corollary.md` 已将 DSO-E4 的剩余组合义务降为 LSMP 推论。
+
+
+## 8. 无条件化匹配入口
+
+DSO-E1--E4 与 NRC/EXT-KL、FCT、LSMP-Freq、PI-Seed 的逐项匹配审查见 `docs/rh-pc4-dso-e-unconditionalization-audit.md`。

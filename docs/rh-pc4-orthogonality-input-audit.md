@@ -92,3 +92,8 @@ PC4-PI、DGap 投影正交化、MLC 不可检测吸收都需要同一类输入�
 2. 将 DSO-E2 的非共振倒数/混合相位估计与 `docs/nrc-theoremization.md`、`docs/bibliography.md` 的 EXT-KL/Weil 引用精确匹配；
 3. 将 DSO-E4 的低支撑/大复杂度失败与 `docs/rh-pc4-lsmp-frequency-corollary.md`、LSMP/LV 接口匹配；
 4. 检查 DSO-E 是否循环依赖 PC4-PI closure；若有，改写为“DSO-E 失败触发 PI-Seed”，避免闭合循环。
+
+
+## 8. DSO-E 匹配审查入口
+
+DSO-E1--E4 与 NRC/EXT-KL、FCT、LSMP-Freq、PI-Seed 的逐项匹配见 `docs/rh-pc4-dso-e-unconditionalization-audit.md`。

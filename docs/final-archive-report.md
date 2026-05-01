@@ -64,6 +64,7 @@
 - `docs/rh-pc4-dso-template-consistency.md`
 - `docs/rh-pc4-complexity-escape-interface.md`
 - `docs/rh-pc4-dso-euler-decorrelation.md`
+- `docs/rh-pc4-dso-e-unconditionalization-audit.md`
 - `docs/rh-pc4-dso-euler-match-audit.md`
 - `docs/rh-pc4-lsmp-frequency-corollary.md`
 - `docs/rh-pc4-pi-dense-closure-theorem.md`
