@@ -38,6 +38,7 @@
 - `docs/rh-pc4-dso-template-consistency.md`：DSO-C-TC 固定投影模板一致性定理。
 - `docs/rh-pc4-complexity-escape-interface.md`：PC4-PI Complexity-Escape 复杂度逃逸三分接口。
 - `docs/rh-pc4-dso-euler-decorrelation.md`：DSO-E Euler 局部因子去相关接口。
+- `docs/rh-pc4-dso-euler-match-audit.md`：DSO-E 与 NRC/EXT/LSMP 的投稿级匹配审查。
 
 ## B. 行列归约附录
 

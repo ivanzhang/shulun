@@ -99,4 +99,4 @@ DSO-E 补上 `docs/rh-pc4-complexity-escape-interface.md` 中 CE-1 的独立新�
 - 固定复杂度模板：`docs/rh-pc4-dso-template-consistency.md` + DSO-C；
 - 复杂度逃逸：`docs/rh-pc4-complexity-escape-interface.md`；
 - 独立新频率正交：本文 DSO-E；
-- 剩余投稿级核查：把 DSO-E2 的 NRC/Weil 引用与 `docs/nrc-theoremization.md`、`docs/external-theorem-package.md` 逐项编号匹配，并把 DSO-E4 的 LSMP 触发条件与 `docs/omr-cgtp-lsmp-theoremization.md` 对齐。
+- 投稿级核查：`docs/rh-pc4-dso-euler-match-audit.md` 已将 DSO-E2 对齐到初等字符正交、`EXT-KL` 与 NRC/FCT 口径，并将 DSO-E4 的剩余组合义务压缩为 `LSMP-Freq Corollary`。
