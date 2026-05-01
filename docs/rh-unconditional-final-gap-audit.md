@@ -76,3 +76,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 新增 `docs/rh-analytic-exit-reduction-table.md`，并在 LaTeX GEE 节加入 Analytic exit reduction proposition。该补强把剩余 `PI/DSO/NRC` 三出口压缩为三条不等式：AEX-1 投影容量、AEX-2 DSO square-function、AEX-3 NRC 逐入口参数匹配。
 
 因此 `Local-Exit-Proofs` 的剩余不再是泛泛九出口证明，而是 AEX-1--AEX-3 三个具体数学目标。
+
+## 9. AEX-1 投影容量补强
+
+新增 `docs/rh-aex1-projection-capacity-formal.md`，并在 LaTeX GEE 节加入 AEX-1 projection capacity proposition。该补强把 AEX-1 压缩为两个正式容量输入：`PI-Lac` 与 `PI-Dense`。其中基线扣除、失败转出和有限重叠账本已闭合；剩余是 dense/lacunary 容量定理在最终稿中的正式证明或精确引用。

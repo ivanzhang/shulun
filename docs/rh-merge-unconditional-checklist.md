@@ -181,8 +181,15 @@
 
 - [x] `PI/DSO/NRC` 统一归约：`docs/rh-analytic-exit-reduction-table.md` 已抽取 AEX-1、AEX-2、AEX-3。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 Analytic exit reduction proposition。
-- [ ] `AEX-1`：零频扣除后的投影容量不等式。
+- [ ] `AEX-1`：零频扣除后的投影容量不等式；当前已归约为 `PI-Lac/PI-Dense`。
 - [ ] `AEX-2`：DSO 无幂损失 square-function 总量。
 - [ ] `AEX-3`：NRC 逐入口参数匹配。
 - [ ] `EXT-Precision`：外部定理逐条精确适配。
 - [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。
+
+## AEX-1 补强更新
+
+- [x] `AEX-1` 账本归约：`docs/rh-aex1-projection-capacity-formal.md` 已把投影容量不等式压缩为 `PI-Lac` 与 `PI-Dense` 两个容量输入。
+- [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-1 projection capacity proposition。
+- [ ] `PI-Lac`：lacunary Bessel/Parseval 容量正式证明或精确引用。
+- [ ] `PI-Dense`：dense fixed-template Carleson/square-function 容量正式证明或精确引用。

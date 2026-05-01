@@ -231,3 +231,7 @@
 ## 解析出口归约归档
 
 新增 `docs/rh-analytic-exit-reduction-table.md` 并接入 LaTeX 主稿。当前 Local-Exit-Proofs 剩余压缩为 AEX-1、AEX-2、AEX-3 三个明确不等式。
+
+## AEX-1 归档
+
+新增 `docs/rh-aex1-projection-capacity-formal.md` 并接入 LaTeX 主稿。AEX-1 已归约为 `PI-Lac/PI-Dense` 两个容量输入，尚未完全无条件闭合。

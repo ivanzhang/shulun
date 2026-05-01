@@ -237,3 +237,8 @@
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 Analytic exit reduction proposition。
 
 归档口径：该文压缩了剩余硬点，但没有证明 AEX-1--AEX-3。
+
+## AEX-1 归档
+
+- `docs/rh-aex1-projection-capacity-formal.md`：新增 PI 投影容量 AEX-1 形式化审查，将剩余压缩为 `PI-Lac` 与 `PI-Dense` 两个容量输入。
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 AEX-1 projection capacity proposition。
