@@ -82,4 +82,4 @@ PI-Cap 尚未完全证明，但已经从模糊的“全局容量界”压缩成�
 - 强 lacunary 包容量上界：可由 disjoint 支撑证明，但还需超容量下界才能矛盾；
 - 密集尺度包正交：需要 Mellin/CRT martingale 或 Euler product 新输入。
 
-Dense-scale orthogonality 已在 `docs/rh-pc4-dense-scale-orthogonality.md` 中拆成 DSO-M、DSO-C、DSO-E 三个接口。下一步最优专攻是 DSO-C：构造 inverse-limit CRT martingale square function。
+Dense-scale orthogonality 已从 `docs/rh-pc4-dense-scale-orthogonality.md` 的 DSO-M/DSO-C/DSO-E 接口推进到 `docs/rh-pc4-pi-dense-closure-theorem.md` 的 PC4-PI-Dense 闭合命题。下一步最优专攻是把 lacunary 分包与 dense 闭合合并为 PC4-PI-Closure。

@@ -40,6 +40,7 @@
 - `docs/rh-pc4-dso-euler-decorrelation.md`：DSO-E Euler 局部因子去相关接口。
 - `docs/rh-pc4-dso-euler-match-audit.md`：DSO-E 与 NRC/EXT/LSMP 的投稿级匹配审查。
 - `docs/rh-pc4-lsmp-frequency-corollary.md`：LSMP-Freq 频率原子版小质量逃逸推论。
+- `docs/rh-pc4-pi-dense-closure-theorem.md`：PC4-PI 密集尺度正交闭合命题。
 
 ## B. 行列归约附录
 

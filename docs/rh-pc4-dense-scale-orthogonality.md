@@ -82,4 +82,4 @@ Euler product 视角给同一事实的乘法版本：新增素数层 `p` 的局�
 
 ## 7. 下一步最优攻坚
 
-DSO-C 的 inverse-limit CRT martingale 核心已在 `docs/rh-pc4-dso-crt-martingale.md` 中定理化；固定复杂度模板一致性已在 `docs/rh-pc4-dso-template-consistency.md` 中条件化闭合；复杂度逃逸已在 `docs/rh-pc4-complexity-escape-interface.md` 中压入 FCT/LSMP/LV/PI-Seed；DSO-E 已在 `docs/rh-pc4-dso-euler-decorrelation.md` 中拆成局部正交、NRC/Weil 和 LSMP/FCT 二次剥离。DSO-E 的投稿级匹配已在 `docs/rh-pc4-dso-euler-match-audit.md` 中完成到当前精度。LSMP-Freq 已在 `docs/rh-pc4-lsmp-frequency-corollary.md` 中补写。下一步最优专攻是整理 DSO-C、CE、DSO-E、LSMP-Freq 的合并命题，形成 PC4-PI 的“密集尺度正交闭合命题”。
+DSO-C 的 inverse-limit CRT martingale 核心已在 `docs/rh-pc4-dso-crt-martingale.md` 中定理化；固定复杂度模板一致性已在 `docs/rh-pc4-dso-template-consistency.md` 中条件化闭合；复杂度逃逸已在 `docs/rh-pc4-complexity-escape-interface.md` 中压入 FCT/LSMP/LV/PI-Seed；DSO-E 已在 `docs/rh-pc4-dso-euler-decorrelation.md` 中拆成局部正交、NRC/Weil 和 LSMP/FCT 二次剥离。DSO-E 的投稿级匹配已在 `docs/rh-pc4-dso-euler-match-audit.md` 中完成到当前精度。LSMP-Freq 已在 `docs/rh-pc4-lsmp-frequency-corollary.md` 中补写；四个接口已经在 `docs/rh-pc4-pi-dense-closure-theorem.md` 中整合为 PC4-PI-Dense 密集尺度正交闭合命题。下一步最优专攻是 `PC4-PI-Closure`：把 dense 闭合与 PI-Cap lacunary 分包、PI-Seed 能量下界合并。
