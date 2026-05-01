@@ -40,6 +40,7 @@
 - `docs/rh-pc4-lsmp-frequency-corollary.md`：LSMP-Freq 频率原子版小质量逃逸推论。
 - `docs/rh-pc4-pi-dense-closure-theorem.md`：PC4-PI 密集尺度正交闭合命题。
 - `docs/rh-pc4-pi-closure-theorem.md`：PC4-PI 高投影增量分支闭合命题。
+- `docs/rh-pc4-fct-seed.md`：PC4-FCT 频率闭包跨尺度种子命题。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。
 - `docs/d-structure-formal-appendix.md`：D 组 Structured-EHPD 正式附录证明稿。
