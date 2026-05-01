@@ -209,3 +209,10 @@
 - `docs/rh-gee-single-paper-inline-draft.md`：新增 GEE 单篇主稿内联审查稿，集中定义 `Load/Excess`、九出口矩阵、事件图、阈值常数、出口上界与 GEE 条件合成定理。
 
 归档口径：该稿完成单篇内联化第一版，但仍明确保留外部输入精确引用与命名引理逐条证明义务；不得标记为 RH 无条件证明定稿。
+
+## RH/GEE LaTeX 与最终缺口审查归档
+
+- `paper/rh-proof/rh-contradiction-field.tex`：新增 `Global Exit Exclusion` 节，把 GEE 单篇内联稿迁入 LaTeX 主稿。
+- `docs/rh-unconditional-final-gap-audit.md`：新增 RH 无条件化最终剩余缺口审查，抽取 `EXT-Precision`、`Local-Exit-Proofs`、`Transfer-Accounting`、`Review-Form-Elimination` 四项最小割集。
+
+归档口径：本次完成的是主稿迁移和缺口定位，不是 RH 无条件证明定稿。

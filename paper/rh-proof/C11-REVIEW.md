@@ -37,3 +37,9 @@ latexmk -pdf rh-contradiction-field.tex
 3. 将外部引用补为期刊要求的页码或定理号。
 4. 对 C4--C9 的每个 review-form proof 做逐行数学审稿。
 5. 只有所有审稿项通过后，才可考虑将标题从 review draft 改为 final proof draft。
+
+## GEE LaTeX 迁移更新
+
+- 已将 `docs/rh-gee-single-paper-inline-draft.md` 的核心内容迁入 `paper/rh-proof/rh-contradiction-field.tex` 的 `Global Exit Exclusion` 节。
+- 新增 `Excess load` 定义、`GEE-0 bookkeeping`、GEE 事件无循环、阈值兼容、GEE 上界和条件矛盾 corollary。
+- 仍保留 review-form 口径：这些定理依赖九出口局部机制和外部输入逐条验证，不能改写为 RH 无条件证明定稿。

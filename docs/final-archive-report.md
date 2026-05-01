@@ -215,3 +215,7 @@
 ## RH/GEE 单篇内联稿归档
 
 新增 `docs/rh-gee-single-paper-inline-draft.md`。该文把 GEE 合成证明包从分散文档收束为单篇审稿稿，便于后续迁入 LaTeX 主稿。诚实状态仍为条件合成审稿稿，剩余为外部引用和逐条证明内联。
+
+## RH/GEE LaTeX 主稿迁移归档
+
+已将 GEE 合成层迁入 `paper/rh-proof/rh-contradiction-field.tex`，并新增 `docs/rh-unconditional-final-gap-audit.md`。当前归档明确：剩余障碍是四项最小割集，而非缺少更多分支框架。

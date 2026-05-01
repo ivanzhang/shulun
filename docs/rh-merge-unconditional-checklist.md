@@ -149,4 +149,13 @@
 ## 单篇主稿内联化更新
 
 - [x] GEE 单篇内联审稿稿：`docs/rh-gee-single-paper-inline-draft.md` 已集中写入统一定义、九出口矩阵、事件图无循环、阈值层级、出口上界与条件合成定理。
-- [ ] 正式 LaTeX 主稿迁移：仍需把该 Markdown 审稿稿迁入 `paper/rh-proof/rh-contradiction-field.tex`，并补齐外部定理精确编号与命名引理逐条证明。
+- [x] 正式 LaTeX 主稿迁移：已把 GEE Markdown 审稿稿迁入 `paper/rh-proof/rh-contradiction-field.tex`；外部定理精确编号与命名引理逐条证明仍列入下方最小割集。
+
+## 最终无条件化缺口审查更新
+
+- [x] GEE LaTeX 主稿迁移：`paper/rh-proof/rh-contradiction-field.tex` 已新增 `Global Exit Exclusion` 节。
+- [x] 最终剩余缺口审查：`docs/rh-unconditional-final-gap-audit.md` 已抽取最小割集。
+- [ ] `EXT-Precision`：外部定理逐条精确适配。
+- [ ] `Local-Exit-Proofs`：九出口局部命题逐条正式证明。
+- [ ] `Transfer-Accounting`：seed/内部转移权重守恒和有限重叠逐条证明。
+- [ ] `Review-Form-Elimination`：删除或升级所有 proof sketch/review proof。

@@ -165,6 +165,90 @@ unless the tail itself enters $CE/LSMP/LV/SC/FCT/DSO/PI$.
 Smooth windows have rapidly decaying coefficients; hard intervals are first smoothed; reciprocal arcs and Bohr intervals are approximated by Vaaler polynomials; CRT characters are exact Fourier atoms.  Fixed Boolean combinations preserve square summability by $L^\infty$ bounds and Cauchy's inequality.  Box-family summation costs only $\log^C X$ by finite overlap.  A high-frequency tail carrying fixed-proportion energy is, by definition, a complexity, low-volume, new-frequency, or resonant low-dimensional event.
 \end{proof}
 
+\section{Global Exit Exclusion}\label{sec:gee}
+This section inlines the current Global-Exit-Exclusion (GEE) ledger.  It is included to make the review draft self-contained at the level of definitions, routing, event graph, logarithmic thresholds, and the final conditional synthesis.  It does not replace the line-by-line verification of the named local lemmas.
+
+\begin{definition}[Excess load]\label{def:gee-load}
+Let
+\[
+  \mathcal E=\{A,PI,FCT,SC,LV,LSMP,CE,DSO,NRC\}
+\]
+be the set of GEE exits.  For a routed atom $a$ define
+\[
+  \operatorname{Excess}(a)=\max\left(0,\sigma\sum_{n\in a}(w_X(n)-w_X^0(n))\right).
+\]
+The final load of an exit $E\in\mathcal E$ is
+\[
+  \operatorname{Load}(E;X)=\sum_{a\mapsto E}\theta_{a,E}\operatorname{Excess}(a),
+\]
+where the weights $\theta_{a,E}$ have finite global overlap.  Zero-frequency CRT/MLC capacity, internal descent steps in $A,FCT,SC$, and seeds already transferred out of $CE/LSMP$ are not counted as final load.
+\end{definition}
+
+\begin{lemma}[GEE-0 bookkeeping]\label{lem:gee0}
+Assuming PC1, PC2, and the finite-overlap routing ledger, there is $c_0>0$ such that along the successful scales
+\[
+  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)\ge c_0\Delta+o(\Delta).
+\]
+\end{lemma}
+\begin{proof}[Review proof]
+PC1 supplies a signed anomaly of size $\Delta$.  PC2 subtracts the CRT zero-frequency baseline and places the anomaly in the rough-composite candidate ledger.  The GEE routing partitions each excess atom into one of the nine exits with only logarithmic finite overlap.  Since Definition~\ref{def:gee-load} records only $w_X-w_X^0$, no zero-frequency capacity is counted twice, and the routed ledger preserves a fixed positive proportion of the original anomaly up to $o(\Delta)$ boundary, prime-power, and smoothing errors.
+\end{proof}
+
+\begin{longtable}{@{}lll@{}}
+\toprule
+Exit & Review closure mechanism & Status\\
+\midrule
+$LV$ & relative low-volume threshold gives $o(\Delta)$; failures transfer & absorbing\\
+$NRC$ & one-variable/tail non-resonance; two-dimensional middle capacity transfers & routed\\
+$PI$ & projection capacity after zero-frequency subtraction & conditional capacity\\
+$DSO$ & square-function/Carleson capacity after zero-frequency subtraction & conditional capacity\\
+$CE$ & coarea, thin-layer, square-summable terms absorb; seeds transfer & absorb/transfer\\
+$LSMP$ & low-mass packages absorb; structural seeds transfer & absorb/transfer\\
+$FCT$ & Noether potential descends; non-descent transfers & internal descent\\
+$SC$ & short-cluster potential descends; low capacity absorbs & internal descent\\
+$A$ & ACC synchronization potential descends; repeated templates transfer & internal descent\\
+\bottomrule
+\end{longtable}
+
+\begin{lemma}[GEE event no-cycle]\label{lem:gee-cycle}
+Assume Seed-Transfer, Baseline-Subtraction, the three internal potentials for $A,FCT,SC$, the $PI/DSO$ capacity ledger, the $LV/LSMP/CE$ absorbing thresholds, and the $NRC$ routing alternatives.  Then the GEE event graph has no infinite directed cycle carrying positive final load.
+\end{lemma}
+\begin{proof}[Review proof]
+An $A$ self-return either decreases the ACC potential or is transferred; an $FCT$ self-return either decreases its Noether potential or is transferred; an $SC$ self-return either decreases its short-cluster potential or is transferred.  A $PI/DSO$ self-return consumes excess capacity after subtracting zero frequency.  The $CE/LSMP$ nodes do not retain transferred seeds, while $LV$ and $NRC$ are absorbing or routing nodes.  For mixed cycles use the lexicographic Lyapunov vector
+\[
+  \mathcal L=(\mathcal A_{pot},\mathcal N,\mathcal V,\operatorname{ExcessCap},\operatorname{ComplexityRank}).
+\]
+Every non-absorbing traversal either decreases one component of $\mathcal L$ or removes the atom from the current exit ledger.  Since the components are bounded below and the template complexity is finite, an infinite positive-load cycle is impossible.
+\end{proof}
+
+\begin{lemma}[GEE threshold compatibility]\label{lem:gee-threshold}
+Let
+\[
+ C_{tot}=C_{route}+C_{seed}+C_{dyadic}+C_{Vaaler}+C_{Fourier}+C_{smooth}+C_{frame}+C_{template}+C_{capacity}+C_{NRC}+C_{coarea}+C_{boundary}+100.
+\]
+Choose $B_{final}=10C_{tot}+100$ and require every absorbing exit threshold $B_E\ge B_{final}+C_{tot}$.  Then all absorbing contributions sum to $o(\Delta)$, and internal transfers or seed transfers do not change this estimate.
+\end{lemma}
+\begin{proof}[Review proof]
+Each local absorbing estimate is bounded by $\Delta/\log^{B_E-C_E}X$ with $C_E\le C_{tot}$.  All further routing, dyadic, Fourier/Vaaler, boundary, frame, capacity, and seed losses are bounded by another factor $\log^{C_{tot}}X$.  Thus the total absorbing contribution is at most $\Delta/\log^{B_{final}}X=o(\Delta)$.  Internal descent steps are not final load, and seed transfers only relabel the same excess atom with finite overlap already included in $C_{tot}$.
+\end{proof}
+
+\begin{theorem}[GEE upper bound, review form]\label{thm:gee-upper}
+Assume the nine local exit mechanisms in the table above, Lemmas~\ref{lem:gee-cycle} and~\ref{lem:gee-threshold}, and Definition~\ref{def:gee-load}.  Then
+\[
+  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)=o(\Delta).
+\]
+\end{theorem}
+\begin{proof}[Review proof]
+The absorbing pieces are $o(\Delta)$ by Lemma~\ref{lem:gee-threshold}.  The $PI/DSO$ zero-frequency capacity is not counted as load; only excess capacity remains, and it is either absorbed or transferred.  The $A,FCT,SC$ pieces terminate by their potentials or transfer to another named exit.  Lemma~\ref{lem:gee-cycle} excludes positive-load free circulation among these transfers.  Hence after finitely many routed descents only absorbing pieces remain, whose total is $o(\Delta)$.
+\end{proof}
+
+\begin{corollary}[GEE conditional contradiction]\label{cor:gee-contradiction}
+If Lemma~\ref{lem:gee0} and Theorem~\ref{thm:gee-upper} are both fully verified under the same load convention, then an off-critical zero has no GEE escape channel.
+\end{corollary}
+\begin{proof}
+Lemma~\ref{lem:gee0} gives a lower bound $c_0\Delta+o(\Delta)$ for the total final load, while Theorem~\ref{thm:gee-upper} gives $o(\Delta)$.  These are incompatible along the successful scales.
+\end{proof}
+
 \section{External references}\label{sec:external}
 The only permitted external inputs are the following restricted forms.
 \begin{longtable}{@{}lll@{}}
@@ -182,10 +266,10 @@ EXT-Vaughan & Vaughan; Iwaniec--Kowalski & Vaughan identity / Type I--II decompo
 
 \section{Consolidated contradiction theorem}\label{sec:main}
 \begin{theorem}[Consolidated contradiction-field theorem, review form]\label{thm:main}
-Assume Theorems~\ref{thm:pc1}, \ref{thm:c4}, \ref{thm:c5}, \ref{thm:c6}, \ref{thm:c9}, Lemmas~\ref{lem:pc2}, \ref{lem:c3}, and the restricted external inputs in \S\ref{sec:external}.  Then an off-critical zero $\beta>1/2$ has no free escape channel in the contradiction-field event graph.
+Assume Theorems~\ref{thm:pc1}, \ref{thm:c4}, \ref{thm:c5}, \ref{thm:c6}, \ref{thm:c9}, \ref{thm:gee-upper}, Lemmas~\ref{lem:pc2}, \ref{lem:c3}, \ref{lem:gee0}, and the restricted external inputs in \S\ref{sec:external}.  Then an off-critical zero $\beta>1/2$ has no free escape channel in the contradiction-field event graph.
 \end{theorem}
 \begin{proof}
-PC1 gives a smooth Chebyshev anomaly of size $\Delta=X^{\beta-o(1)}$.  PC2 transfers it to the rough-composite ledger with opposite sign.  Lemma~\ref{lem:c3} splits the covering field into sparse and dense structural branches.  The sparse branch is exhausted by Theorem~\ref{thm:c4}; the dense branch is exhausted by Theorem~\ref{thm:c5}; the internal terminals cannot cycle by Theorem~\ref{thm:c6}; Fourier/Vaaler tails do not create a new terminal by Theorem~\ref{thm:c9}.  Thus every path enters a named controlled exit or contradicts a registered capacity/reference input.
+PC1 gives a smooth Chebyshev anomaly of size $\Delta=X^{\beta-o(1)}$.  PC2 transfers it to the rough-composite ledger with opposite sign.  Lemma~\ref{lem:c3} splits the covering field into sparse and dense structural branches.  The sparse branch is exhausted by Theorem~\ref{thm:c4}; the dense branch is exhausted by Theorem~\ref{thm:c5}; the internal terminals cannot cycle by Theorem~\ref{thm:c6}; Fourier/Vaaler tails do not create a new terminal by Theorem~\ref{thm:c9}.  The GEE ledger then supplies the global lower bound Lemma~\ref{lem:gee0} and the global upper bound Theorem~\ref{thm:gee-upper}, so every named exit is either absorbing, descending, or transferred without free circulation.  Thus every path enters a controlled exit and the total final load is simultaneously $\ge c_0\Delta+o(\Delta)$ and $o(\Delta)$ under the verified hypotheses.
 \end{proof}
 
 \begin{remark}[Submission warning]
