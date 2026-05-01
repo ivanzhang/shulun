@@ -158,3 +158,5 @@
 - `docs/rh-gee-ce-lsmp-load-bound-audit.md`：GEE-CE/LSMP 已拆分；剩余 `Seed-Transfer Consistency`。
 
 - `docs/rh-gee-seed-transfer-consistency.md`：Seed-Transfer 已补齐；CE/LSMP 可标记为吸收项闭合、seed 转出一致。
+
+- `docs/rh-gee-fct-load-bound-audit.md`：GEE-FCT 已转为内部 Noether 化简器；最终无独立负担。

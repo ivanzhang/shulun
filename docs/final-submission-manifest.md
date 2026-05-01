@@ -185,3 +185,5 @@
 - `docs/rh-gee-ce-lsmp-load-bound-audit.md`：新增 CE/LSMP 出口负担量化审查。
 
 - `docs/rh-gee-seed-transfer-consistency.md`：新增 Seed-Transfer Consistency，闭合 CE/LSMP 输出 seed 的路由一致性。
+
+- `docs/rh-gee-fct-load-bound-audit.md`：新增 FCT 内部转移与最终负担为零的 GEE 审查。

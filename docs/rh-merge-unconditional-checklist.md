@@ -114,3 +114,8 @@
 
 - [x] `Seed-Transfer Consistency`：CE/LSMP seed 有限重叠转入目标出口并从 CE/LSMP 删除。
 - [ ] 剩余主出口：`GEE-FCT/GEE-SC/GEE-A` 仍需全局上界。
+
+## GEE-FCT 更新
+
+- [x] `GEE-FCT`：FCT 作为内部 Noether 转移闭合，最终无独立负担。
+- [ ] 剩余主出口：`GEE-SC/GEE-A` 仍需全局上界。

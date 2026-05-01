@@ -183,3 +183,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## GEE-CE/LSMP Seed-Transfer 更新
 
 新增 `docs/rh-gee-seed-transfer-consistency.md`。CE/LSMP 的 seed 转出账本已闭合：seed 不再计入 CE/LSMP，而有限重叠转入 `A/PI/FCT/SC/LV/DSO/NRC`。`GEE-CE/LSMP` 当前可标记为吸收项闭合、seed 转出一致。
+
+## GEE-FCT 内部转移更新
+
+新增 `docs/rh-gee-fct-load-bound-audit.md`。FCT 被重新定义为内部 Noether 化简器：真下降步不登记最终负担，重复状态和独立频率转入目标出口；因此最终 `Load(FCT)=0`。剩余压力转入 `GEE-SC/GEE-A` 及已接收出口。
