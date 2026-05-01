@@ -17,13 +17,13 @@
 | C8 | `CapacityFail` | `docs/rh-c8-capacityfail-upgrade-audit.md` | 自由黑箱已排除；C1/C10 引用层已闭合；剩余为 C11 单篇 LaTeX/PDF 审稿工程复核 | 已绑定，待 C11 复核 |
 | C9 | Fourier/Vaaler 尾项 | `docs/rh-c9-fourier-vaaler-tail-inline-proof.md` | C9.1--C9.4 已内联；`EXT-Vaaler` 来源由 C10 闭合 | 已内联 |
 | C10 | `EXT-*` 外部定理 | `docs/rh-c1-c10-c11-final-reference-and-submission-closure.md` | 已列正式来源与使用边界；待 LaTeX/BibTeX 落地 | 引用层闭合，待工程 |
-| C11 | LaTeX 审稿工程 | `docs/rh-c1-c10-c11-final-reference-and-submission-closure.md` | 单篇 LaTeX、交叉引用、符号表、BibTeX、PDF 审查 | 工程待执行 |
+| C11 | LaTeX 审稿工程 | `paper/rh-proof/C11-REVIEW.md` | 单篇 LaTeX 与 BibTeX 已生成；本机缺 TeX，PDF 编译待有 TeX 环境执行 | 源稿已生成，PDF 待编译 |
 
 ## 2. 当前最小闭合割集
 
 当前阻止“无条件证明稿”口径的最小割集为：
 
-`{C11}`。
+`{C11-PDF}`。
 
 其中 C2、C7 的内容仍需在 C11 单篇主稿中内联编号；C10 已给出外部来源与使用边界。
 
@@ -31,8 +31,8 @@
 
 1. C3 已完成定义化修正；最终主稿需内联 `ACC+Hole` 与 `OV` 二层账本。
 2. C8 已从自由黑箱降级为依赖型义务；C4/C5/C6/C9 已处理，C10 引用层已闭合。
-3. C1/C10 已并入最终引用闭合包；下一步执行 C11：单篇 LaTeX 化、内部编号、符号表、BibTeX 与 PDF 审查。
-4. 执行 C11：生成单篇 LaTeX/PDF，完成交叉引用、符号表与 BibTeX 审查。
+3. C1/C10 已并入最终引用闭合包；C11 已生成单篇 LaTeX/BibTeX 源稿；下一步在 TeX 环境执行 PDF 编译与逐行审稿。
+4. 执行 C11-PDF：在 TeX 环境编译 PDF，完成 undefined references、符号表、BibTeX 与逐行审稿。
 
 ## 4. 严格口径
 

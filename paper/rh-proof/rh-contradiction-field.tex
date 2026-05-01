@@ -1,0 +1,198 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Li}{\operatorname{Li}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\ACC}{\operatorname{ACC}}
+\newcommand{\Hole}{\operatorname{Hole}}
+\newcommand{\OV}{\operatorname{OV}}
+\newcommand{\DGap}{\operatorname{DGap}}
+
+\title{A Contradiction-Field Framework for an Off-Critical Zero of the Riemann Zeta Function\\\large Consolidated Review Draft}
+\author{Project draft}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This draft consolidates the current contradiction-field manuscript into a single LaTeX review package.  It records the internal proof chain PC1--PC4, the sparse and dense branches, the terminal no-cycle argument, and the remaining submission-engineering obligations.  This file is a review draft: the mathematical claim may only be promoted to a final unconditional proof after every numbered lemma below has been line-by-line verified and all external references in \S\ref{sec:external} have been checked against the cited sources.
+\end{abstract}
+
+\tableofcontents
+
+\section{Global notation and audit status}\label{sec:notation}
+Let $X$ be the main scale, let $z=(\log X)^A$ with $0<A<1$, and let
+\[
+  M_z=\prod_{p\le z}p=X^{o(1)}.
+\]
+If an off-critical zero $\rho=\beta+i\gamma$ with $\beta>1/2$ is assumed, write
+\[
+  \Delta=X^{\beta-o(1)}.
+\]
+The default weight is the Chebyshev/von Mangoldt weight.  Unweighted prime counts are used only after dividing by $\log X$, producing a logarithmic loss absorbed into $X^{o(1)}$.
+
+\begin{longtable}{@{}lll@{}}
+\toprule
+Symbol & Meaning & Status\\
+\midrule
+$C_z$ & CRT non-zero residue candidate ledger & PC2 baseline\\
+$P_z$ & prime Chebyshev ledger inside $C_z$ & PC1--PC2\\
+$B_z=C_z-P_z$ & rough-composite candidate ledger & PC2\\
+$E_z=P_z-P_z^0$ & prime-ledger deviation & PC1--PC2\\
+$\ACC_z$ & covered rough-composite candidates & C3/C4\\
+$\Hole_z$ & uncovered rough-composite candidates & C3\\
+$T_z$ & raw certificate count & C3\\
+$\OV_z=T_z-\ACC_z$ & second-layer overlap reuse & C3/C4\\
+$\DGap_z=\Hole_z^0-\Hole_z$ & dense-branch dual gap compression & C5\\
+\bottomrule
+\end{longtable}
+
+\begin{remark}[Review status]
+The current Markdown archive marks C4, C5, C6, and C9 as internally written; C1 and C10 are reduced to external-reference verification; C11 is the present LaTeX/PDF submission-engineering task.  This statement is an audit status, not a final journal acceptance verdict.
+\end{remark}
+
+\section{PC1: from an off-critical zero to a smooth prime anomaly}\label{sec:pc1}
+\begin{theorem}[PC1 Landau--Ingham input]\label{thm:pc1}
+Assume that $\zeta(s)$ has a zero $\rho_0=\beta+i\gamma$ with $\beta>1/2$.  Then there exist $W\in C_c^\infty((0,\infty))$, a sign $\sigma\in\{\pm1\}$, and scales $X_j\to\infty$ such that
+\[
+  \sigma\bigl(\Psi_W(X_j)-X_j\widehat W(1)\bigr)\ge X_j^{\beta-o(1)}.
+\]
+\end{theorem}
+\begin{proof}[Proof sketch for review]
+The smooth explicit formula follows by Mellin inversion and contour shift:
+\[
+\Psi_W(X)=X\widehat W(1)-\sum_\rho X^\rho\widehat W(\rho)+E_W(X).
+\]
+Choose $W$ with $\widehat W(\rho_0)\ne0$.  If the visible boundary zeros with real part $\beta$ are finite, the normalized error is a non-zero finite trigonometric polynomial plus $o(1)$; its mean square is positive, giving an infinite oscillating subsequence.  In the general boundary or supremum case one invokes the Landau--Ingham oscillation theorem, recorded as EXT-PC1-LI in \S\ref{sec:external}.  Prime powers contribute $O(X^{1/2}\log^C X)$ and are absorbed since $\beta>1/2$.
+\end{proof}
+
+\section{PC2 and the covering field}\label{sec:pc2-c3}
+\begin{lemma}[CRT zero-frequency baseline]\label{lem:pc2}
+For the CRT candidate ledger at scale $z=(\log X)^A$,
+\[
+  C_z-C_z^0=o(\Delta).
+\]
+Consequently
+\[
+  B_z-B_z^0=-E_z+o(\Delta).
+\]
+\end{lemma}
+\begin{proof}[Review proof]
+The primorial $M_z=X^{o(1)}$ and elementary CRT counting give the expected non-zero residue density in complete periods, while boundary periods contribute $X^{o(1)}$ relative loss on the present scale.  This proof is to be expanded from the PC2 appendix in the final text.
+\end{proof}
+
+\begin{lemma}[C3 covering-field decomposition]\label{lem:c3}
+The rough-composite ledger decomposes as
+\[
+  B_z=\ACC_z+\Hole_z+o(\Delta),
+\]
+with second-layer overlap reuse $\OV_z=T_z-\ACC_z$.
+\end{lemma}
+\begin{proof}
+Each rough-composite candidate is either explained by at least one admissible certificate or is not explained.  This gives the first-layer partition.  Raw certificate multiplicity is not part of this identity; it is recorded separately as $\OV_z$ and used only as a second-layer structural event.
+\end{proof}
+
+\section{The sparse branch PC3/OV2}\label{sec:sparse}
+\begin{theorem}[C4 sparse branch]\label{thm:c4}
+If $B_z-B_z^0\ge\Delta-o(\Delta)$, then the anomaly enters the positive coverage branch $A$ or one of the named exits
+\[
+  FCT,SC,PI,LV,LSMP,CE,DSO,NRC.
+\]
+There is no independent PC3/OV2 escape channel.
+\end{theorem}
+\begin{proof}[Consolidated proof]
+By Lemma~\ref{lem:c3}, the anomaly is carried by $\ACC$, $\Hole$, or $\OV$.  The $\ACC$ case is $A$; the $\Hole$ case is a low-volume, small-mass, complexity, or baseline-completeness exit.  If $\OV$ is large, admissible-anchor semantics imply a double-anchor normal form $n=q_1q_2r$.  Dyadic pigeonholing localizes the mass to a stable main layer unless a low-volume, short-cluster, boundary, or complexity event occurs.  On that main layer, undetectable mass is absorbed by the uniform zero-frequency capacity or exits to $FCT/SC/LV/DSO/PI$; detectable mass is pushed to reciprocal phases and then to $NRC/FCT/PI/SC/DSO/LV/LSMP/CE$.
+\end{proof}
+
+\section{The dense branch DGap}\label{sec:dense}
+\begin{theorem}[C5 DGap branch]\label{thm:c5}
+If the dense branch satisfies $\DGap_z\ge c\Delta$, then the anomaly enters one of
+\[
+  A,PI,FCT,SC,LV,LSMP,CE,DSO,NRC,
+\]
+or triggers a named already-registered interface failure.
+\end{theorem}
+\begin{proof}[Consolidated proof]
+The DGap mass is localized to a fixed-complexity box family with pointwise overlap $\log^C X$ unless a named low-volume or complexity event occurs.  Frame/Bessel estimates transfer box correlations to non-constant projection energy after removing the PC2 constant direction.  Orthogonal projection onto $V_{PI}$, then $V_{low}$, then the residual space gives a fixed-proportion energy exit.  Low-dimensional residual energy is Fourier/Vaaler truncated; new independent frequency packages enter $DSO/PI$, while fixed low-dimensional resonant packages enter $FCT$.
+\end{proof}
+
+\section{Internal terminal no-cycle theorem}\label{sec:terminal}
+\begin{theorem}[C6 internal terminal no-cycle]\label{thm:c6}
+Assume the named external exits are registered and CapacityFail is not allowed as a free terminal.  Then the internal event graph
+\[
+  \{A,PI,FCT,SC\}
+\]
+has no infinite final escape path.
+\end{theorem}
+\begin{proof}[Consolidated proof]
+The $A$ branch has an ACC synchronization potential; $PI$ splits into lacunary, dense, and boundary packages; $FCT$ has a Noether potential on normalized frequency-closure states; $SC$ has a short-cluster descent potential.  In an infinite path, either some maximal same-type segment is infinite, contradicting the relevant potential/repetition lemma, or event types switch infinitely often.  In the latter case, finitely many templates force a repeated same-type template, while infinitely many templates force complexity, volume, dyadic, relation, or phase-depth change and hence an external exit or potential descent.  Both alternatives contradict final internal escape.
+\end{proof}
+
+\section{Fourier--Vaaler tails}\label{sec:tail}
+\begin{theorem}[C9 tail closure]\label{thm:c9}
+Every fixed-complexity PPI/DGap/PC4 template admits
+\[
+  \psi_k=\psi_{k,main}+\psi_{k,tail},\qquad \sum_k\|\psi_{k,tail}\|_2^2<\infty,
+\]
+unless the tail itself enters $CE/LSMP/LV/SC/FCT/DSO/PI$.
+\end{theorem}
+\begin{proof}[Consolidated proof]
+Smooth windows have rapidly decaying coefficients; hard intervals are first smoothed; reciprocal arcs and Bohr intervals are approximated by Vaaler polynomials; CRT characters are exact Fourier atoms.  Fixed Boolean combinations preserve square summability by $L^\infty$ bounds and Cauchy's inequality.  Box-family summation costs only $\log^C X$ by finite overlap.  A high-frequency tail carrying fixed-proportion energy is, by definition, a complexity, low-volume, new-frequency, or resonant low-dimensional event.
+\end{proof}
+
+\section{External references}\label{sec:external}
+The only permitted external inputs are the following restricted forms.
+\begin{longtable}{@{}lll@{}}
+\toprule
+Label & Source & Restricted use\\
+\midrule
+EXT-PC1-LI & Titchmarsh; Ingham--Landau oscillation & infinite oscillating subsequence\\
+EXT-KL & Iwaniec--Kowalski Ch.~12; Katz & prime-modulus $ax+b/x$ Weil/Kloosterman and completion\\
+EXT-Vaaler & Vaaler 1985 & one-dimensional interval trigonometric approximation\\
+EXT-BG & Bourgain--Garaev; Baker & appendix reciprocal-sum savings\\
+EXT-Selberg & Halberstam--Richert; Iwaniec--Kowalski & Selberg upper sieve only\\
+EXT-Vaughan & Vaughan; Iwaniec--Kowalski & Vaughan identity / Type I--II decomposition\\
+\bottomrule
+\end{longtable}
+
+\section{Consolidated contradiction theorem}\label{sec:main}
+\begin{theorem}[Consolidated contradiction-field theorem, review form]\label{thm:main}
+Assume Theorems~\ref{thm:pc1}, \ref{thm:c4}, \ref{thm:c5}, \ref{thm:c6}, \ref{thm:c9}, Lemmas~\ref{lem:pc2}, \ref{lem:c3}, and the restricted external inputs in \S\ref{sec:external}.  Then an off-critical zero $\beta>1/2$ has no free escape channel in the contradiction-field event graph.
+\end{theorem}
+\begin{proof}
+PC1 gives a smooth Chebyshev anomaly of size $\Delta=X^{\beta-o(1)}$.  PC2 transfers it to the rough-composite ledger with opposite sign.  Lemma~\ref{lem:c3} splits the covering field into sparse and dense structural branches.  The sparse branch is exhausted by Theorem~\ref{thm:c4}; the dense branch is exhausted by Theorem~\ref{thm:c5}; the internal terminals cannot cycle by Theorem~\ref{thm:c6}; Fourier/Vaaler tails do not create a new terminal by Theorem~\ref{thm:c9}.  Thus every path enters a named controlled exit or contradicts a registered capacity/reference input.
+\end{proof}
+
+\begin{remark}[Submission warning]
+This theorem is intentionally labelled ``review form''.  To promote it to a final unconditional RH theorem, the reviewer must verify that each cited theorem has a fully accepted proof under the stated hypotheses and that no controlled exit hides an unproved positive-power loss.  This warning prevents the engineering draft from overstating the current mathematical status.
+\end{remark}
+
+\bibliographystyle{alpha}
+\bibliography{rh-references}
+
+\end{document}
