@@ -10,6 +10,8 @@
 
 对应最终审查入口：
 
+0. 论文整合稿：`docs/rh-final-paper-draft.md`（条件化定稿版，列出无条件化义务）；
+
 1. PC1：`docs/rh-pc1-analytic-input-citation-audit.md`，并由 `docs/rh-pc1-external-input-standardization-audit.md` 标准化外部解析输入；
 2. PC2：`docs/rh-pc2-baseline-unconditional-audit.md`；
 3. PC3：`docs/rh-pc3-ov2-upstream-unconditional-audit.md`；

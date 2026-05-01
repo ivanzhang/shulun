@@ -122,3 +122,9 @@ PI dense/Carleson 与 DSO bridge 适用条件无回流审查已写入 `docs/rh-p
 全局 `log^C X` 常数层级排序已写入 `docs/rh-global-log-constant-hierarchy-audit.md`。该账本按 `C_struct << C_overlap << C_tail << C_frame << C_cap << C_trig << B_LV << C_0 << B_final` 的顺序选择常数，确认所有多对数损失均可吸收到 `X^{o(1)}`，且不产生循环依赖。
 
 当前容量链剩余主要转为编辑义务：在最终论文中把匿名 `C` 改写为该层级常数族，并完成交叉引用。
+
+## 18. 最终论文编辑入口
+
+RH 反例矛盾场论文整合稿已写入 `docs/rh-final-paper-draft.md`。该稿把 PC1--PC4、Dual/DGap、容量矩阵与常数层级串成单篇论文结构，同时明确标注仍需无条件化或精确引用的接口。
+
+重要口径：该稿是条件化定稿版，不宣称 RH 已证明；若要升级为无条件证明，需要把第 9 节列出的接口逐项改写为标准定理证明或精确外部引用。

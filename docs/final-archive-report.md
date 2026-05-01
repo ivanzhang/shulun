@@ -115,6 +115,7 @@
 - `docs/rh-pc1-pc4-interface-closure-audit.md`
 - `docs/rh-global-interface-consistency-audit.md`
 - `docs/rh-contradiction-field-final-assault.md`
+- `docs/rh-final-paper-draft.md`
 - `docs/rh-final-consistency-review.md`
 - `docs/rh-unconditional-proof-roadmap.md`
 - `docs/rh-capacityfail-binding-table.md`
