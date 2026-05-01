@@ -56,3 +56,9 @@
 ## 6. R2 首轮推进记录
 
 `DGap 投影正交化` 的逐行强度补强已写入 `docs/rh-dgap-projection-line-by-line-audit.md`，将原先的直和分解口径替换为 frame 上界、常数方向剥离、Cauchy 下界与逐步正交投影。
+
+## 7. R4 第二轮推进记录
+
+`DGap 低维频率抽取` 的逐行强度补强已写入 `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`。该补强把原先“非 PI 则固定低维”的跳步拆成：有限频率截断、无界新增独立频率触发 DSO/PI、尺度漂移逃逸归入 CE/LSMP/FCT/SC、固定短弧同相位抽取为 FCT_seed。
+
+当前 R4 剩余不再是 DGap 内部分类，而是外部接口的定量化：`DSO/PI` square-function 到允许投影族的常数、`FCT_seed` 定义完全同型匹配、Fourier/Vaaler 尾项平方可和的统一模板证明。

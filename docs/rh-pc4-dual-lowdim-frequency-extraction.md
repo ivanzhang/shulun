@@ -2,6 +2,8 @@
 
 本文补强 `docs/rh-pc4-dual-projection-orthogonalization.md` 的最后剩余接口：若 `DGap` 的盒空间能量没有进入 PC4-PI 的可检测投影族，也没有落入短簇、低体积或误差逃逸，则它必须由固定低维 CRT/Bohr 频率 span 吸收，从而进入 PC4-FCT。
 
+逐行强度审查与漂移逃逸排除见 `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`。
+
 ## 1. 输入：PI 不可检测的盒能量
 
 设 `h=g_z^0-g_z`，盒空间投影满足
@@ -58,7 +60,7 @@
 
 ## 6. 对 DGap-Decomposition 的影响
 
-本文把“PI 不可检测”情形严格转入 PC4-FCT。至此，DGap 分解的三个基础接口已全部定理化为条件化文档：
+本文把“PI 不可检测”情形严格转入 PC4-FCT；其逐行化版本已在 `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md` 中把固定低维族抽取拆成尾项控制、新增独立频率包、尺度漂移排除与 FCT_seed 四个可审查环节。至此，DGap 分解的三个基础接口已全部定理化为条件化文档：
 
 1. 盒有限重叠：`docs/rh-pc4-dual-box-overlap.md`；
 2. 投影正交化：`docs/rh-pc4-dual-projection-orthogonalization.md`；

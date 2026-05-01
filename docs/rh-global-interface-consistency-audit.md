@@ -66,7 +66,7 @@ PC2 给
 | PC2 | `|E_z|>=Δ`，`z=(log X)^A` | `B_z-B_z^0=-E_z+o(Δ)` | `C_z-C_z^0=o(Δ)` | PC3/Dual |
 | PC3-OV2 | `E_z<0` | `A` 或 D 组终端 | AAI/PPI/MLC/LV 损失为 `X^{o(1)}` | PC4 内部/外部 |
 | PC4-Dual | `E_z>0` | `A/OV2/DGap/接口失败` | Dual-Gap-Ledger 误差为 `o(Δ)` | DGap 匹配 |
-| DGap | `DGap>=cΔ` | `SC/PI/FCT/A/LV/LSMP/CapacityFail` | 盒重叠、正交化损失为 `X^{o(1)}` | PC4 终端/外部 |
+| DGap | `DGap>=cΔ` | `SC/PI/FCT/A/LV/LSMP/CapacityFail` | 盒重叠、正交化、低维抽取损失为 `X^{o(1)}` | PC4 终端/外部 |
 | PC4 终端 | `A/PI/FCT/SC` seed | 无内部无限逃逸 | 离散账本下降或固定模板重复出口 | 外部吸收 |
 | 外部吸收 | `LV/LSMP/NRC/CE/DSO/CapacityFail` | 吸收或回到 seed/命名容量 | 不允许无标记回流 | 总闭合 |
 
@@ -84,7 +84,7 @@ PC2 给
 - `CE`：固定模板失败的复杂度/尾项/旧坐标/边界四分；
 - `CapacityFail`：必须绑定具体容量定理，不作为自由事件。
 
-这些入口已分别由 `docs/rh-pc4-terminal-final-no-cycle-audit.md`、`docs/rh-pc4-external-event-absorption-audit.md` 与 `docs/rh-pc4-dual-dgap-event-match-audit.md` 接收。
+这些入口已分别由 `docs/rh-pc4-terminal-final-no-cycle-audit.md`、`docs/rh-pc4-external-event-absorption-audit.md` 与 `docs/rh-pc4-dual-dgap-event-match-audit.md` 接收；DGap 的投影和低维抽取细节由 `docs/rh-dgap-projection-line-by-line-audit.md`、`docs/rh-dgap-lowdim-extraction-line-by-line-audit.md` 补强。
 
 ## 6. 发现并修正的格式问题
 
