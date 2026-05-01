@@ -90,7 +90,7 @@
 3. PC3-OV2：过疏到 ACC 过剩或 D 组终端；
 4. PC4-A/SC/PI/FCT closure，并由 `docs/rh-pc4-terminal-final-no-cycle-audit.md` 合并为 PC4 终端无循环事件图；
 5. PC4 外部事件吸收矩阵：`docs/rh-pc4-external-event-absorption-audit.md`。
-5. PC4-Dual、Dual-Gap-Ledger 与 DGap 三接口；
+5. PC4-Dual、Dual-Gap-Ledger 与 DGap 三接口，并由 `docs/rh-pc4-dual-dgap-event-match-audit.md` 匹配到 PC4 终端事件图；
 6. NRC/EXT、LV/LSMP、AAI/PPI/MLC、DSO/CE 等外部结构接口。
 
 则不存在离线零点 `β>1/2` 能被该 CRT/覆盖动力系统吸收。

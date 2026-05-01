@@ -96,4 +96,4 @@ DSO 的最终入口是 `docs/rh-pc4-orthogonality-final-closure-audit.md`。该�
 1. 内部层：`A/PI/FCT/SC` 无无限循环；
 2. 外部层：`LV/LSMP/NRC/CE/DSO/CapacityFail` 不产生无标记回流。
 
-剩余最优硬点因此转向 `PC4-Dual/DGap -> A/PI/FCT/SC/LV/CapacityFail` 的匹配审查，尤其是 DGap 压缩异常是否逐项落入已命名容量或内部 seed。
+`PC4-Dual/DGap -> A/PI/FCT/SC/LV/CapacityFail` 的匹配审查见 `docs/rh-pc4-dual-dgap-event-match-audit.md`；该文确认 DGap 压缩异常逐项落入已命名容量、内部 seed 或外部吸收矩阵。
