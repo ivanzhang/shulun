@@ -45,3 +45,7 @@
 ## 6. GEE-0 负担分配推进
 
 新增 `docs/rh-gee0-load-distribution.md`。该文定义统一 Chebyshev 权、异常原子集合、路由映射和 `Load(E;X)`，并证明在 PC1/PC2/C3/C4/C5/C9 成立且路由有限重叠时，`Σ_E Load(E;X)>=X^{β-o(1)}`。剩余审稿义务为 PC2 边界误差完全内联与路由重叠常数表。
+
+## 7. GEE-0 bookkeeping 闭合
+
+新增 `docs/rh-gee0-pc2-boundary-and-route-overlap.md`。PC2 边界误差已内联为 `Err_PC2=o(Δ)`，路由有限重叠统一为 `log^{C_route}X`。GEE-0 现在可标记为 bookkeeping 闭合；下一步应攻 `GEE-LV` 与 `GEE-NRC` 两个出口上界。

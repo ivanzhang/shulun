@@ -119,6 +119,10 @@
 
 新增 `docs/rh-gee0-load-distribution.md`。该文把 PC1--PC2--C3--C4/C5 后的异常原子路由到 `A/PI/FCT/SC/LV/LSMP/CE/DSO/NRC`，定义 `Load(E;X)` 并得到 `Σ_E Load(E;X)>=X^{β-o(1)}` 的 GEE-0 形式。GEE-0 仍需 PC2 边界误差内联和路由有限重叠常数表才能达到顶刊完全闭合。
 
+## 6.12 GEE-0 bookkeeping 闭合
+
+新增 `docs/rh-gee0-pc2-boundary-and-route-overlap.md`。该文内联 PC2 边界误差、素数幂与平滑边界吸收，并给出 C3/C4/C5/C9 路由有限重叠常数表 `C_route`。因此 GEE-0 从“半闭合”推进为 bookkeeping 闭合；剩余 RH 总攻硬点集中到九个出口上界，优先为 `GEE-LV` 与 `GEE-NRC`。
+
 ## 7. 状态定理
 
 **Theorem Final-Merge-Status.** 当前仓库中的 RH 总攻文档包已经把主要条件接口压缩为主文链、外部定理标签和全局归一化账本；但在未完成单篇论文合并、正式引用替换、容量定理内联和交叉引用审查前，不能宣称 RH 已无条件证明。
