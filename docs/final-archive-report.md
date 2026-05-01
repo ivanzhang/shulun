@@ -135,6 +135,7 @@
 - `docs/rh-c8-capacityfail-upgrade-audit.md`：C8 CapacityFail 升级审查与闭合判据。
 - `docs/rh-c5-dgap-inline-proof-chain.md`：C5 DGap 内联证明链。
 - `docs/rh-c9-fourier-vaaler-tail-inline-proof.md`：C9 Fourier/Vaaler 尾项内联证明。
+- `docs/rh-c6-internal-terminal-inline-proof.md`：C6 内部终端 A/PI/FCT/SC 内联证明链。
 - `docs/rh-final-merge-status-and-gap-closure.md`：RH 总攻最终合并状态与剩余缺口判定。
 - `docs/rh-final-consistency-review.md`
 - `docs/rh-unconditional-proof-roadmap.md`

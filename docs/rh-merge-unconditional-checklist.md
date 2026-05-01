@@ -11,10 +11,10 @@
 | C2 | PC2 CRT 零频基线 | `docs/rh-pc2-crt-baseline-maintext-appendix.md` | 逐行证明 `C_z-C_z^0=o(Δ)` 且说明边界项被 `X^{β-o(1)}` 吸收 | 待内联 |
 | C3 | 覆盖场方程 | `docs/rh-c3-covering-field-definition-closure.md` | 已发现原 `ACC-O+Gap` 写法逐点恒等式风险；改为 `ACC+Hole` 一层划分与 `OV` 二层事件 | 已修正，待内联 |
 | C4 | 过疏 PC3/OV2 | `docs/rh-pc3-ov2-maintext-proof-chain.md` | AAI、MLC、PPI 三段均需编号引理和常数余量 | 待定理化 |
-| C5 | 过密 Dual/DGap | `docs/rh-c5-dgap-inline-proof-chain.md` | Lemma C5.1--C5.4 已定理化；C9 已内联，剩余依赖 C2/C6/C10 | 内部已闭合，待依赖放电 |
-| C6 | 内部终端 `A/PI/FCT/SC` | FCT/PI/SC 主文链 | Noether 势函数、square-function、短簇容量均需可检查证明 | 待容量绑定 |
+| C5 | 过密 Dual/DGap | `docs/rh-c5-dgap-inline-proof-chain.md` | Lemma C5.1--C5.4 已定理化；C6/C9 已内联，剩余依赖 C2/C10 | 内部已闭合，待依赖放电 |
+| C6 | 内部终端 `A/PI/FCT/SC` | `docs/rh-c6-internal-terminal-inline-proof.md` | C6.1--C6.4 已内联为统一无循环定理；外部出口归 C7/C10 | 已内联，待外部出口 |
 | C7 | 外部事件 `LV/LSMP/CE/DSO/NRC` | LV/LSMP/CE、NRC、PI/DSO 主文链 | 每个失败出口必须回到已编号终端，不能产生新假设 | 待出口核验 |
-| C8 | `CapacityFail` | `docs/rh-c8-capacityfail-upgrade-audit.md` | 自由黑箱已排除；C5/C9 已处理，剩余随 C4/C6/C10 的容量定理化与引用放电 | 依赖型待闭合 |
+| C8 | `CapacityFail` | `docs/rh-c8-capacityfail-upgrade-audit.md` | 自由黑箱已排除；C5/C6/C9 已处理，剩余随 C4/C10 的容量定理化与引用放电 | 依赖型待闭合 |
 | C9 | Fourier/Vaaler 尾项 | `docs/rh-c9-fourier-vaaler-tail-inline-proof.md` | C9.1--C9.4 已内联；剩余 `EXT-Vaaler` 正式引用归 C10 | 已内联，待 C10 |
 | C10 | `EXT-*` 外部定理 | `docs/rh-ext-maintext-citation-closure.md` | BibTeX、章节、定理号/页码、使用范围逐项匹配 | 待精确引用 |
 | C11 | LaTeX 审稿工程 | 尚未生成 | 定理编号、交叉引用、符号表、参考文献编译通过 | 待执行 |
@@ -23,15 +23,15 @@
 
 当前阻止“无条件证明稿”口径的最小割集为：
 
-`{C1, C4, C6, C10, C11}`。
+`{C1, C4, C10, C11}`。
 
 其中 C2、C7 仍应在最终稿中内联；C9 已完成内联但其 Vaaler 来源仍归 C10 精确引用。
 
 ## 3. 优先顺序
 
 1. C3 已完成定义化修正；最终主稿需内联 `ACC+Hole` 与 `OV` 二层账本。
-2. C8 已从自由黑箱降级为依赖型义务；C5/C9 已处理，最终随 C4/C6/C10 放电。
-3. C5 已补为 DGap 三接口编号证明链；C9 尾项已内联，下一步优先补 C6 内部终端或 C4 过疏 PC3/OV2。
+2. C8 已从自由黑箱降级为依赖型义务；C5/C6/C9 已处理，最终随 C4/C10 放电。
+3. C5 已补为 DGap 三接口编号证明链；C6 内部终端与 C9 尾项已内联，下一步优先补 C4 过疏 PC3/OV2 或 C10 正式引用。
 4. 再补 C1/C10：把外部解析输入替换为正式引用。
 5. 最后执行 C11：生成 LaTeX/PDF 并做交叉引用审查。
 

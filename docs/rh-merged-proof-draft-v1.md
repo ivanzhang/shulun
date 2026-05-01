@@ -14,8 +14,8 @@
 | Lemma PC2 | CRT 零频候选基线 | 已主文化 | 内联边界误差证明 |
 | Proposition CF | 覆盖场方程与二分 | 已定义化修正 | 采用 `ACC/Hole/OV` 三账本并内联 C3 |
 | Proposition Sparse | 过疏 PC3/OV2 分支 | 条件主文化 | 内联 AAI/MLC/PPI 的容量阈值 |
-| Proposition Dense | 过密 Dual/DGap 分支 | 内部三接口已定理化 | C5 已给 Lemma C5.1--C5.4；待 C6/C9/C10 放电 |
-| Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 条件主文化 | 将 Noether 势函数与容量引理逐条编号 |
+| Proposition Dense | 过密 Dual/DGap 分支 | 内部三接口已定理化 | C5 已给 Lemma C5.1--C5.4；C6/C9 已内联，待 C10 与 C2 放电 |
+| Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 已内联无循环证明 | C6 已给 C6.1--C6.4；待 C7/C10 外部出口放电 |
 | Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口；C8 已排除自由 `CapacityFail` |
 | Lemma Tail | Fourier/Vaaler 尾项吸收 | 已内联证明 | C9 已给 C9.1--C9.4；待 C10 中 `EXT-Vaaler` 正式引用 |
 | Table EXT | 外部定理包 | 来源级闭合 | 补正式 BibTeX、章节、定理号或页码 |
@@ -110,7 +110,7 @@ DGap 出口被穷尽为
 - `FCT`：频率碰撞状态规范化为 `(Λ,R,𝓑,τ)`，Noether 势函数排除无限闭包；
 - `SC`：短簇状态规范化为 `(I,𝓑,Q,R,κ,σ)`，局部乘积容量与短簇势函数排除无限递归。
 
-主文链见 `docs/rh-fct-maintext-closure-chain.md`、`docs/rh-pi-dso-maintext-bridge-chain.md`、`docs/rh-sc-maintext-capacity-closure.md`。
+主文链见 `docs/rh-fct-maintext-closure-chain.md`、`docs/rh-pi-dso-maintext-bridge-chain.md`、`docs/rh-sc-maintext-capacity-closure.md`；C6 内联无循环证明见 `docs/rh-c6-internal-terminal-inline-proof.md`。
 
 ## 8. 外部事件吸收
 
