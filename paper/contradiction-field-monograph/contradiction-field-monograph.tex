@@ -1,0 +1,102 @@
+\documentclass[11pt]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{Contradiction Fields: CRT Rigidity, Prime Matrix Geometry, and Zeta-Zero Escape}
+\author{Project manuscript}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\chapter*{Abstract}
+This monograph draft unifies two contradiction-field research programs.  The first studies prime existence in CRT prime matrices through row, column, diagonal, anchor, and rough-composite rigidity.  The second studies an off-critical zero of the Riemann zeta function through a global contradiction-field ledger for prime anomalies.  The common method is to convert a hypothetical counterexample into a structured covering field, decompose it into local rigidity layers, and exclude all free escape channels by capacity, periodicity, and no-cycle bookkeeping.
+
+This is a synthesis and dependency manuscript.  It does not assert that the Riemann Hypothesis or the prime-matrix row/column theorem has already been accepted as a final unconditional theorem.  Each claim is marked by status in the accompanying status table: proved in manuscript, reduced to a structured input, external, computationally certified, or requiring independent referee verification.
+
+\tableofcontents
+
+\chapter{Guiding Principle: The Contradiction Field}
+
+A contradiction field is a structured ledger attached to a hypothetical counterexample.  Instead of estimating a single exceptional set, it records every possible explanation for the counterexample as a named channel.  A proof closes when every channel is either absorbed, forced to descend in a finite potential, transferred with source deletion, or contradicts a global capacity lower/upper bound.
+
+The common rigidities used throughout this manuscript are:
+\begin{enumerate}
+  \item CRT skeletons and nonzero-residue balance;
+  \item local short-window non-reuse of large prime factors;
+  \item small-prime shell migration and diagonal locking;
+  \item rough-composite and double-anchor decompositions;
+  \item capacity ledgers after baseline subtraction;
+  \item no-cycle potentials for internal escape mechanisms.
+\end{enumerate}
+
+\chapter{Prime-Matrix Contradiction Fields}
+
+Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
+\[
+  n(r,c)=(r-1)P+c,\qquad 1\le r,c\le P.
+\]
+The row and column programs attempt to show that every nontrivial row or column contains a prime.  The current formal appendix reduces a row or non-$P$ column counterexample to a structured bad configuration after removing small-factor locks and tail anchors.
+
+\begin{theorem}[A/B reduction, recorded form]
+A nontrivial full-composite row or column, after small-factor and tail-anchor peeling, induces a Structured-EHPD bad configuration satisfying CRT balance, large-factor non-reuse, and anchor-capacity constraints.
+\end{theorem}
+\begin{proof}[Reference]
+See \texttt{docs/row-column-reduction-formal-appendix.md}.  This theorem is a reduction statement; it does not by itself prove the Structured-EHPD exclusion theorem.
+\end{proof}
+
+\chapter{Zeta-Zero Contradiction Fields}
+
+Assume an off-critical zero $\rho=\beta+i\gamma$ with $\beta>1/2$.  The RH contradiction-field manuscript transfers the resulting smooth prime anomaly into a CRT rough-composite ledger, decomposes it into sparse/dense/tail/internal/global exits, and proves that no named escape channel remains under the recorded local theorems and restricted external inputs.
+
+\begin{theorem}[RH contradiction-field synthesis, recorded form]
+Under the numbered local theorems, controlled-exit lemmas, threshold hierarchy, and restricted external inputs recorded in \path{paper/rh-proof/rh-contradiction-field.tex}, an off-critical zero has no free escape channel in the contradiction-field event graph.
+\end{theorem}
+\begin{proof}[Reference]
+See the RH manuscript in \path{paper/rh-proof/} and the final audit in \path{docs/}.  The submission warning in the RH manuscript remains in force until independent line-by-line referee verification and final monograph page-number checks are completed.
+\end{proof}
+
+\chapter{Unified Dependency Map}
+
+The two programs share the same logic:
+\[
+  \text{counterexample}\Rightarrow \text{structured covering field}\Rightarrow
+  \text{named exits}\Rightarrow \text{capacity/no-cycle contradiction}.
+\]
+The prime-matrix program is more geometric and finite-CRT in nature; the zeta-zero program is analytic and scale-asymptotic.  The monograph treats both as projections of the same contradiction-field method.
+
+\begin{longtable}{@{}L{0.22\textwidth}L{0.34\textwidth}L{0.34\textwidth}@{}}
+\toprule
+Layer & Prime-matrix projection & RH projection\\
+\midrule
+Baseline & CRT nonzero class balance & smoothed CRT candidate baseline\\
+Local rigidity & large-factor non-reuse, diagonal locks & sparse/dense/tail routing\\
+Capacity & anchor coverage capacity & projection and square-function capacity\\
+No-cycle & recursive peeling and shell migration & GEE transfer/no-cycle ledger\\
+External inputs & finite verification and Structured-EHPD & explicit formula, KL, Vaaler, BG/Baker, sieve, Vaughan\\
+Final status & reduction package, not final unconditional theorem & verification package with submission warning\\
+\bottomrule
+\end{longtable}
+
+\chapter{Current Status and Honest Boundary}
+
+The purpose of this monograph draft is to make the shared structure visible and auditable.  It is not yet a final unconditional theorem manuscript.  The precise statuses are maintained in \texttt{docs/monograph/claim-status-table.md}.  Any future promotion to final theorem status requires independent verification of every reduced structured input and every controlled exit.
+
+\end{document}
