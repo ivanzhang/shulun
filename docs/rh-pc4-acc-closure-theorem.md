@@ -31,7 +31,7 @@ PC4-A 的目标是排除这种过剩在无穷多尺度上同相位模拟同一�
 4. `LSMP/LV` 低质量或低体积逃逸；
 5. DSO/CE 容量矛盾。
 
-该命题来自固定模板偏差分解 `low/osc/tail`：低体积或尾项转 LSMP/LV/短簇，振荡主项转 PI/FCT 或容量矛盾。
+该命题来自固定模板偏差分解 `low/osc/tail`：低体积或尾项转 LSMP/LV/短簇，振荡主项转 PI/FCT 或容量矛盾。无循环账本见 `docs/rh-pc4-acc-sync-ledger.md`，其中真模板变化导致离散势函数下降，固定模板重复则强制转入这些终端边。
 
 ## 4. PC4-A 主闭合命题
 
@@ -53,4 +53,4 @@ PC4-A 现在与 PC4-PI、PC4-FCT 一样，进入条件化闭合状态。PC-4 总
 1. `PC4-SC`：短簇跨尺度排斥；
 2. `PC4-Dual`：过密对偶或多零点相干补充。
 
-由于 PC4-A 的失败分支仍可能进入短簇，下一步最优专攻是 `PC4-SC`：证明离线零点级短簇不能在无穷多尺度保持相干，否则违反 CRT 周期均衡、LV 低体积账本或触发 PC4-PI/FCT。
+PC4-A 的失败分支进入短簇时，由 `docs/rh-pc4-short-cluster-descent-ledger.md` 的 `SC-Descent-Termination` 处理；进入 PI/FCT 时分别由对应终端归约和 Noether 下降账本处理。因此 A 分支已可作为总事件图中的无循环输出边。

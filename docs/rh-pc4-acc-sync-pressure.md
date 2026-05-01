@@ -70,4 +70,4 @@ Tail 与低体积项若承载主偏差，则转入 LSMP/LV 或短簇。因此非
 2. 把 LSMP/LV 与容量矛盾引用到最终总框架；
 3. 合并 ACC-Seed 与 ACC-Sync-Pressure，写出 `PC4-A-Closure`。
 
-`PC4-A-Closure` 已在 `docs/rh-pc4-acc-closure-theorem.md` 中严写；下一步转向 PC4-SC。
+`PC4-A-Closure` 已在 `docs/rh-pc4-acc-closure-theorem.md` 中严写。ACC 同步压力的无循环账本见 `docs/rh-pc4-acc-sync-ledger.md`：固定模板重复转 PI/FCT/SC/容量出口，真模板变化则由离散势函数下降或 CE/LV/LSMP 吸收。
