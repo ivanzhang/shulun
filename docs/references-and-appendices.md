@@ -210,3 +210,5 @@
 - `docs/rh-gee-sc-load-bound-audit.md`：GEE-SC 负担上界审查，把短簇改写为容量吸收与内部递归转移。
 
 - `docs/rh-gee-a-load-bound-audit.md`：GEE-A 负担上界审查，把 ACC 同步改写为容量吸收与内部转移。
+
+- `docs/rh-gee-global-synthesis-audit.md`：Global GEE 九出口合成审查，列出条件合成定理与剩余审稿义务。

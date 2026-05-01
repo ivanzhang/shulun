@@ -191,3 +191,5 @@
 - `docs/rh-gee-sc-load-bound-audit.md`：新增 SC 容量吸收和递归转移的 GEE 审查。
 
 - `docs/rh-gee-a-load-bound-audit.md`：新增 A/ACC 同步出口的 GEE 审查。
+
+- `docs/rh-gee-global-synthesis-audit.md`：新增全局 GEE 合成审查；当前仍是条件合成闭合稿。

@@ -164,3 +164,5 @@
 - `docs/rh-gee-sc-load-bound-audit.md`：GEE-SC 已转为容量吸收 + 内部递归转移；剩余主压力为 GEE-A 与最终合成。
 
 - `docs/rh-gee-a-load-bound-audit.md`：GEE-A 已转为容量吸收 + 内部同步转移；下一步为全局 GEE 合成审查。
+
+- `docs/rh-gee-global-synthesis-audit.md`：全局 GEE 合成审查完成；结论为条件合成闭合，仍需事件图、常数表、Load 统一和单篇内联。

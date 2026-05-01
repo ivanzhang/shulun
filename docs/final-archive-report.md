@@ -203,3 +203,5 @@
 - `docs/rh-gee-sc-load-bound-audit.md`：归档 GEE-SC 内部转移闭合。
 
 - `docs/rh-gee-a-load-bound-audit.md`：归档 GEE-A 内部转移闭合。
+
+- `docs/rh-gee-global-synthesis-audit.md`：归档九出口合成矩阵与剩余最终审稿义务。
