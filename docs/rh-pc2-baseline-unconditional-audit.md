@@ -1,6 +1,6 @@
 # PC2 CRT 基线无条件化审查：`C_z-C_z^0=o(Δ)`
 
-本文补强 `docs/rh-pc2-crt-baseline-explicit.md`，把 PC2 中唯一需要的基线输入
+本文补强 `docs/rh-pc2-crt-baseline-explicit.md`，主文证明附录见 `docs/rh-pc2-crt-baseline-maintext-appendix.md`。本文把 PC2 中唯一需要的基线输入
 
 `C_z(X)=C_z^0(X)+o(Δ)`
 

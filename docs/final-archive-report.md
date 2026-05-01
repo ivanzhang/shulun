@@ -61,6 +61,7 @@
 - `docs/rh-pc1-landau-ingham-oscillation-appendix.md`
 - `docs/rh-pc2-li-crt-baseline-match.md`
 - `docs/rh-pc2-crt-baseline-explicit.md`
+- `docs/rh-pc2-crt-baseline-maintext-appendix.md`
 - `docs/rh-pc2-baseline-unconditional-audit.md`
 - `docs/rh-pc4-final-exclusion-framework.md`
 - `docs/rh-pc4-pi-seed.md`

@@ -91,6 +91,7 @@
 - `docs/rh-fct-closure-no-cycle-final-audit.md`：PC4-FCT phase drift/closure 无无限递归与事件图无回流最终审查。
 - `docs/rh-pc4-dual-dgap-event-match-audit.md`：PC4-Dual/DGap 到终端事件图的匹配审查。
 - `docs/rh-pc2-crt-baseline-explicit.md`：PC2 CRT 候选基线与边界误差显式化。
+- `docs/rh-pc2-crt-baseline-maintext-appendix.md`：PC2 CRT 基线、候选账本与边界误差主文证明附录。
 - `docs/rh-pc2-baseline-unconditional-audit.md`：PC2 CRT 基线 `C_z-C_z^0=o(Δ)` 的无条件初等误差审查。
 - `docs/rh-pc1-pc4-interface-closure-audit.md`：RH 反例矛盾场 PC1-PC4 接口闭合审查。
 - `docs/rh-global-interface-consistency-audit.md`：RH 总攻 PC1--PC2--PC3--PC4--Dual 全文接口一致性审查。

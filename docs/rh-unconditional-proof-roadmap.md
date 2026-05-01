@@ -140,3 +140,9 @@ PC1 平滑显式公式的文内证明附录已写入 `docs/rh-pc1-explicit-formu
 PC1 Landau--Ingham 振荡附录已写入 `docs/rh-pc1-landau-ingham-oscillation-appendix.md`。该附录把有限同实部边界零点情形用三角多项式均方法文内证明，并把上确界/无限边界零点族情形明确为标准 `LI-General` 奇点振荡输入。
 
 当前 PC1 剩余外部输入进一步缩小为 `LI-General` 的精确引用或完整证明。
+
+## 21. PC2 主文证明附录推进记录
+
+PC2 CRT 基线主文证明附录已写入 `docs/rh-pc2-crt-baseline-maintext-appendix.md`。该附录用初等 CRT 周期计数证明 `C_z-C_z^0=o(Δ)`，并逐行处理素数自动位于非零类、候选账本恒等式、素数幂边界误差和 Chebyshev/无权口径转换。
+
+当前 PC2 剩余主要是编辑义务：将该附录并入最终主文，并全文统一带权或无权符号。
