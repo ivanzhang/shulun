@@ -18,9 +18,9 @@
 | 容量接口 | 对象 | 适用条件 | 容量界 | 允许损失 | 失败出口 |
 | --- | --- | --- | --- | --- | --- |
 | DSO-C | CRT martingale 差分 | 同一固定模板自然细化 | `Σ||D_kF||_2^2<=||F||_2^2` | 常数/有限重叠 | TC/CE/LSMP/FCT/LV |
-| DSO/PI bridge | 新增独立频率包 | 包是允许投影有限交 | square-function 反馈 PI | `log^C X` | PI 或 DSO 容量终端 |
+| DSO/PI bridge | 新增独立频率包 | 包是允许投影有限交；无回流审查见 `docs/rh-pi-dense-dso-bridge-no-return-audit.md` | square-function 反馈 PI | `log^C X` | PI 或 DSO 容量终端 |
 | PI-lacunary | lacunary 尺度投影包 | Mellin 支撑强分离 | 有限重叠/Carleson | `log^C X` | dense DSO/SC/LV/CE |
-| PI-dense/Carleson | dense 投影包 | 固定模板、可拉回 DSO | Carleson/平方函数 | `log^C X` | DSO/CE/LSMP/FCT |
+| PI-dense/Carleson | dense 投影包 | 固定模板、可拉回 DSO；无回流审查见 `docs/rh-pi-dense-dso-bridge-no-return-audit.md` | Carleson/平方函数 | `log^C X` | DSO/CE/LSMP/FCT |
 | SC 局部乘积 | 短窗 `q_1q_2r` 锚复用 | dyadic 层固定、非低体积；逐层核验见 `docs/rh-sc-local-product-capacity-dyadic-audit.md` | `Vol_eff(I;Q,R)` | `log^C X` | PI/A/FCT/LV/LSMP |
 | OV2/MLC | 主层双锚能量 | AAI 正规形、主层分离；Uniform 常数化见 `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md` | 主层容量/Uniform 零频 | `X^{o(1)}` | PPI/FCT/SC/LV/DSO/PI |
 | AAI | 允许锚上包络 | 整除正规形、dyadic 分层 | divisor/dyadic 上包络 | `log^C X` | MLC 或代数矛盾 |
@@ -63,5 +63,5 @@ PC1 给出的离线零点异常为 `X^{β-o(1)}`，`β>1/2`。PC2/PC3/PC4 的容
 
 1. 对 SC 局部乘积容量与 AAI/LV 常数层级做最终排序；
 2. 对 OV2/MLC Uniform 与 PPI 阈值常数层级做最终排序；
-3. 对 PI dense/Carleson 与 DSO bridge 的适用条件做最终无回流审查；
+3. 对 PI dense/Carleson 与 DSO bridge 的适用条件同全局事件图做最终交叉引用；
 4. 在最终论文中把所有 `log^C X` 的常数层级统一排序。

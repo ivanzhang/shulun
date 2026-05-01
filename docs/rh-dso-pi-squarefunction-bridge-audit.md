@@ -2,6 +2,8 @@
 
 本文补强 `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md` 的外部接口：当新增独立频率包在无穷多尺度上承载固定比例能量时，为什么它不能停留为一个未命名的 DSO 能量，而必须触发 `PC4-PI` 的允许投影族、或进入已命名外部容量终端。本文仍是 RH 反例矛盾场的无条件化推进文档，不宣称 RH 已证明。
 
+PI dense/Carleson 与 DSO bridge 的适用条件无回流审查见 `docs/rh-pi-dense-dso-bridge-no-return-audit.md`。
+
 ## 1. 输入：新增独立频率包
 
 从 DGap 低维抽取审查得到一列频率包 `Ω_j`，满足：

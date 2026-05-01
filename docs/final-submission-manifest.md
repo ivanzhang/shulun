@@ -81,6 +81,7 @@
 - `docs/rh-pc4-dual-lowdim-frequency-extraction.md`：PC4-Dual DGap 低维频率抽取接口。
 - `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`：DGap 低维频率抽取的尾项、独立频率、尺度漂移与 FCT_seed 逐行强度审查。
 - `docs/rh-dso-pi-squarefunction-bridge-audit.md`：新增独立频率包由 DSO square-function 反馈到 PC4-PI 允许投影族的桥接审查。
+- `docs/rh-pi-dense-dso-bridge-no-return-audit.md`：PI dense/Carleson 与 DSO bridge 适用条件无回流审查。
 - `docs/rh-fct-seed-isomorphism-audit.md`：DGap 低维相位证书与 PC4-FCT seed 的字段同型匹配审查。
 - `docs/rh-fourier-vaaler-tail-uniform-audit.md`：固定盒模板 Fourier/Vaaler 尾项平方可和与逃逸出口统一审查。
 - `docs/rh-fct-closure-no-cycle-final-audit.md`：PC4-FCT phase drift/closure 无无限递归与事件图无回流最终审查。

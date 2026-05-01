@@ -110,3 +110,9 @@ SC 局部乘积容量的全 dyadic 层核验已写入 `docs/rh-sc-local-product-
 OV2/MLC Uniform 零频容量常数化已写入 `docs/rh-ov2-mlc-uniform-capacity-constants-audit.md`。该补强把不可检测 Uniform 分支量化为固定 partition 复杂度、PPI 反面阈值、零频有限重叠和小原子吸收，得到 `E_unif(Q,R)<=W_Qlog^{C_U}X`。
 
 当前容量剩余硬点转向 PI dense/Carleson 与 DSO bridge 适用条件的无回流审查，以及全局 `log^C X` 常数层级排序。
+
+## 16. PI dense/DSO bridge 无回流推进记录
+
+PI dense/Carleson 与 DSO bridge 适用条件无回流审查已写入 `docs/rh-pi-dense-dso-bridge-no-return-audit.md`。该补强逐项登记 lacunary/dense 二分、固定模板、martingale 拉回、允许投影有限交、误差吞噬和高重叠失败的命名出口。
+
+当前容量链主要剩余为全局 `log^C X` 常数层级排序，以及最终论文中容量接口的交叉引用编辑化。

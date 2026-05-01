@@ -84,6 +84,8 @@ PI-Cap 尚未完全证明，但已经从模糊的“全局容量界”压缩成�
 
 Dense-scale orthogonality 已从 `docs/rh-pc4-dense-scale-orthogonality.md` 的 DSO-M/DSO-C/DSO-E 接口推进到 `docs/rh-pc4-pi-dense-closure-theorem.md` 的 PC4-PI-Dense 闭合命题。下一步最优专攻是把 lacunary 分包与 dense 闭合合并为 PC4-PI-Closure。
 
+PI dense/Carleson 与 DSO bridge 的适用条件无回流审查见 `docs/rh-pi-dense-dso-bridge-no-return-audit.md`。
+
 
 ## 8. Lacunary 容量定理入口
 

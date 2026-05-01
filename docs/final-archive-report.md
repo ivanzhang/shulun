@@ -107,6 +107,7 @@
 - `docs/rh-pc4-dual-lowdim-frequency-extraction.md`
 - `docs/rh-dgap-lowdim-extraction-line-by-line-audit.md`
 - `docs/rh-dso-pi-squarefunction-bridge-audit.md`
+- `docs/rh-pi-dense-dso-bridge-no-return-audit.md`
 - `docs/rh-fct-seed-isomorphism-audit.md`
 - `docs/rh-fourier-vaaler-tail-uniform-audit.md`
 - `docs/rh-fct-closure-no-cycle-final-audit.md`
