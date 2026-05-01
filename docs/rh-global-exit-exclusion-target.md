@@ -187,3 +187,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## GEE-FCT 内部转移更新
 
 新增 `docs/rh-gee-fct-load-bound-audit.md`。FCT 被重新定义为内部 Noether 化简器：真下降步不登记最终负担，重复状态和独立频率转入目标出口；因此最终 `Load(FCT)=0`。剩余压力转入 `GEE-SC/GEE-A` 及已接收出口。
+
+## GEE-SC 内部转移更新
+
+新增 `docs/rh-gee-sc-load-bound-audit.md`。SC 被改写为容量吸收与内部递归转移：低容量短簇给 `o(Δ)`，真 shorter_SC 步不作最终负担，重复模板转入 `A/PI/FCT/LV/LSMP/CE`。因此 `GEE-SC` 可标记为内部转移闭合。

@@ -206,3 +206,5 @@
 - `docs/rh-gee-seed-transfer-consistency.md`：CE/LSMP seed 转出与去重账本。
 
 - `docs/rh-gee-fct-load-bound-audit.md`：GEE-FCT 负担上界审查，把 FCT 改写为内部 Noether 转移。
+
+- `docs/rh-gee-sc-load-bound-audit.md`：GEE-SC 负担上界审查，把短簇改写为容量吸收与内部递归转移。

@@ -160,3 +160,5 @@
 - `docs/rh-gee-seed-transfer-consistency.md`：Seed-Transfer 已补齐；CE/LSMP 可标记为吸收项闭合、seed 转出一致。
 
 - `docs/rh-gee-fct-load-bound-audit.md`：GEE-FCT 已转为内部 Noether 化简器；最终无独立负担。
+
+- `docs/rh-gee-sc-load-bound-audit.md`：GEE-SC 已转为容量吸收 + 内部递归转移；剩余主压力为 GEE-A 与最终合成。
