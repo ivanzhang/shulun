@@ -245,6 +245,126 @@ The two-point secondary-sieve chapter is included to document the contradiction-
 The current hard attack reduces I3-Core to a true-residual correlation problem.  The local CRT and matrix rigidities do not by themselves exclude a model residual set concentrated on a new prime's bad residue class while still satisfying all previously imposed two-residue exclusions and short-window non-reuse constraints.  Thus the remaining task is not another bookkeeping step but a genuine lower-bound/correlation theorem for the true residual set in new prime moduli.
 \end{remark}
 
+\begin{remark}[Latest TRC-1G reduction]
+The single-prime part of the remaining TRC input has been sharpened to a heavy-atom prohibition.  If more than $40\%$ of the true residual mass lies in the two bad classes $0,w\pmod p$ for some new prime $p>Y$, then Parseval gives a non-zero Fourier coefficient modulo $p$ of size $>1/5$ after normalization.  Equivalently, the three long-direction difference families $0,\pm w\pmod p$ carry a fixed positive proportion of the true-residual pair energy.  The existing matrix rigidities remove the short-direction, $45^\circ$-locked, reuse/shared-complement, and endpoint pieces.  The remaining unproved input is therefore a new-modulus long-direction balance theorem for the true residual set, not a finite-template or local CRT bookkeeping issue.
+\end{remark}
+
+\begin{remark}[Total large-incidence reduction]
+The pointwise new-modulus balance can be weakened further.  It is enough to prove the total large-incidence inequality
+\[
+  \sum_{P^\alpha<p\le P}\#\{x\in U_{P^\alpha}(I):p\mid x(x-w)\}<|U_{P^\alpha}(I)|.
+\]
+Indeed, a point not counted on the left is unsieved by every prime up to $P$, and in the $P^2$ matrix range this forces both $x$ and $x-w$ to be prime.  The CRT model predicts the normalized left side to be $2\log(1/\alpha)+o(1)$; for $\alpha=3/4$ this is $2\log(4/3)=0.57536\ldots$, leaving margin $0.42463\ldots$.  The unproved part is the true-residual total-incidence estimate with an error below that margin.
+\end{remark}
+
+\begin{remark}[RB--TLI audit boundary]
+The direct attempt to prove the total large-incidence estimate separates cleanly into a numerator and a denominator.  The numerator is an upper-sieve problem: after writing $x=pm$ or $x=w+pm$, the variable $m$ again avoids two residue classes modulo each old prime, giving an upper bound of shape
+\[
+  A_p\le 2C_+ |I|V_2(P^\alpha)/p+R_p.
+\]
+The denominator requires a model-level lower bound $|U_{P^\alpha}(I)|\ge c_-|I|V_2(P^\alpha)$.  For $\alpha=3/4$, this route would need $C_+/c_-<1/(2\log(4/3))=1.738\ldots$.  This relative Buchstab total-incidence input is the remaining unproved prime-pair-strength statement.
+\end{remark}
+
+\begin{remark}[Local collapse when $q\mid w$]
+If an old odd prime $q$ divides the fixed even difference $w$, then the two forbidden classes $0,w\pmod q$ coalesce into a single forbidden class.  The local density is therefore $1-1/q$ instead of $1-2/q$, giving the singular local gain $(q-1)/(q-2)$.  This increases the absolute number of admissible residual points and weakens the small-prime synchronization peaks.  In the relative RB--TLI ratio, however, the same local factor multiplies both $|U_Y|$ and the model numerator $A_p\sim 2|I|V_w(Y)/p$ for all new primes $p>Y>|w|$.  Thus the main relative constant remains $2\log(1/\alpha)$; the collapse improves finite constants but does not by itself close the hardest case $w=2$.
+\end{remark}
+
+\begin{remark}[Buchstab semiprime transition for $w=2$]
+The latest numerical audit of the hardest case $w=2$ shows that the naive constant $2\log(1/\alpha)$ is not the correct conditional main term after the old primes have been sieved.  For $\alpha>2/3$, any new-prime hit $p\mid x$ or $p\mid x-2$ with $Y=P^\alpha<p\le P$ forces the complementary quotient to be prime, because it is $Y$-rough and smaller than $Y^2$.  Thus the large-incidence layer is a Buchstab semiprime transition.  The corresponding two-sided main constant is
+\[
+  K(\alpha)=
+  \frac{2\log((2-\alpha)/\alpha)}
+       {1+\log((2-\alpha)/\alpha)}.
+\]
+Exact scans recorded in \path{docs/rb-tli-w2-scan-large.md} give, for example, $E_U D=0.691696$ at $P=10007,\alpha=3/4$, compared with $K(3/4)=0.676220$.  The remaining target is therefore a two-point stability theorem for this Buchstab semiprime transition, not the earlier naive incidence model.
+\end{remark}
+
+\begin{remark}[BST error decomposition]
+The refined scan decomposes the remaining error.  At $P=10007,\alpha=3/4$, the shell contributions in the five exponent intervals between $0.75$ and $1$ track the Buchstab shell constants, and the covariance between the $x$-side and $(x-2)$-side large-incidence counts is approximately $-9.3\cdot10^{-5}$.  The zero-incidence set is independent of the intermediate cutoff $\alpha$, as it is exactly the set unsieved by all primes up to $P$.  Thus the remaining hard input has been reduced to a shifted biprime roughness estimate of the form
+\[
+  \#\{p,m:pm\in I,\; pm-2\in U_Y\}
+  \le (B(\alpha)+o(1))|U_Y|.
+\]
+This is the current BST--2 obstruction.
+\end{remark}
+
+\begin{remark}[BMD reduction]
+The BST--2 obstruction can be written as a one-dimensional multiplicative sieve on biprime variables.  After setting $x=pm$, the condition $pm-2$ is unsieved by old primes is, for each $q\le Y$,
+\[
+  pm\not\equiv2\pmod q.
+\]
+The prime $q=2$ is peeled off deterministically: for odd primes $p,m$, the integer $pm-2$ is odd.  Thus the multiplicative sieve is taken over odd $q$.  For each odd $q\le Y$, since $p,m>Y\ge q$, the forbidden curve has $(q-1)$ points inside $(\mathbb F_q^\times)^2$, out of $(q-1)^2$ possible non-zero pairs.  The local forbidden density is therefore $1/(q-1)$.  The remaining unproved estimate is a biprime multiplicative dispersion bound: weighted sums of the errors in the congruences $pm\equiv2\pmod d$, with odd squarefree $d$, must be $o(|U_Y|)$ for the Buchstab/Rosser weights used in the transition.  This is the current BMD input.
+\end{remark}
+
+\begin{remark}[Row-column input for BMD]
+If the prime-matrix row/column theorem is accepted as a conditional input, it can be used only to remove zero-section degeneracies in complete CRT blocks: entire empty rows, columns, or unit residue cells are then not allowed to masquerade as the main BMD error.  It does not by itself prove BMD, because BMD is a signed distribution statement.  For odd $d$, expanding
+\[
+  1_{pm\equiv2\pmod d}
+  =
+  \frac1{\varphi(d)}
+  +
+  \frac1{\varphi(d)}
+  \sum_{\chi\ne\chi_0}\overline{\chi}(2)\chi(p)\chi(m)
+\]
+shows that the remaining obstruction is a bilinear character-dispersion estimate
+\[
+  \sum_{d\le D}\frac{|\lambda_d|}{\varphi(d)}
+  \sum_{\chi\ne\chi_0}
+  \left|\sum_{Y<p\le P}\chi(p)
+  \sum_{\substack{m\in J_p\\m\ {\rm prime}}}\chi(m)\right|
+  =o(|U_Y|).
+\]
+Thus the row/column input gives a useful BMD-Zero exclusion, but the genuine remaining hard point is BMD-Char.
+\end{remark}
+
+\begin{remark}[Direct BMD attack via an $E_2$ Bombieri--Vinogradov input]
+Set $N\asymp P^2$ and
+\[
+  a_n=\#\{(p,m):Y<p\le P,\; m\ {\rm prime},\; n=pm,\; n\in I\}.
+\]
+For $\alpha>2/3$ the multiplicity of $a_n$ is bounded.  After the deterministic modulus $2$ has been peeled off, the BMD remainder for odd squarefree $d$ is exactly the arithmetic-progression discrepancy of this restricted two-prime convolution:
+\[
+  R_d=\sum_{\substack{n\in I\\n\equiv2\pmod d}}a_n
+  -\frac1{\varphi(d)}\sum_{\substack{n\in I\\(n,d)=1}}a_n.
+\]
+Thus BMD follows from the standard Bombieri--Vinogradov theorem for restricted $E_2$ sequences at level
+\[
+  d\le P(\log P)^{-B}=N^{1/2}(\log N)^{-B+O(1)}.
+\]
+Indeed, if
+\[
+  \sum_{d\le P/\log^B P}\max_{(a,d)=1}|R_d(a)|
+  \ll_A N(\log N)^{-A},
+\]
+then every Rosser/Buchstab weighted remainder is $o(|U_Y|)$ since $|U_Y|\asymp N/(\log P)^2$.  The condition $\alpha<1$ ensures $Y<P/\log^B P$ for large $P$, so all one-prime forbidden curves $q\le Y$ are included in the available distribution range.  Therefore BMD is closed if this standard $E_2$ BV input is cited; a fully self-contained manuscript must instead prove that input in an appendix.
+\end{remark}
+
+\begin{remark}[Self-contained BV--$E_2$ obligation]
+The local BV--$E_2$ appendix records the exact self-contained obligation.  A direct multiplicative large-sieve estimate is insufficient: in the balanced dyadic block $p\sim P_1$, $m\sim M_1$, with $P_1\asymp M_1\asymp P$ and $Q\asymp P/\log^B P$, Cauchy plus the large sieve gives size roughly $P^3/\log^{2B}P$, while the required Bombieri--Vinogradov error is $P^2/\log^A P$.  Thus the only genuinely deep remaining self-contained input is a Type-II dispersion/Kloosterman-cancellation estimate for the balanced convolution blocks.  If that standard dispersion theorem is cited, the BMD step is closed as an external-input theorem; if not, this is the next appendix that must be proved line by line.
+\end{remark}
+
+\begin{remark}[Weighted BE2--3K core]
+BMD does not require the full $\max_a$ Bombieri--Vinogradov statement.  It only needs the fixed class $2\bmod d$ against the well-factorable Rosser/Buchstab weights.  After Cauchy, the self-contained problem is a variance bound for
+\[
+  T_r=\sum_{d\le Q}\lambda_d\left(\sum_{s\equiv2r^{-1}\bmod d}\beta_s
+  -\frac1{\varphi(d)}\sum_{(s,d)=1}\beta_s\right).
+\]
+Opening $\sum_r|T_r|^2$, the off-diagonal conditions
+\[
+  rs_1\equiv2\pmod {d_1},\qquad rs_2\equiv2\pmod {d_2}
+\]
+give, by CRT and Fourier expansion of the interval condition, the Kloosterman phase
+\[
+  e\!\left(-\frac{2h\overline{s_1}\overline{d_2}}{d_1}
+          -\frac{2h\overline{s_2}\overline{d_1}}{d_2}\right).
+\]
+Thus the true no-black-box core is a weighted bilinear Kloosterman dispersion estimate, denoted BE2--3K in the notes.  Proving BE2--3K gives BE2--3, then weighted BV--$E_2$, then BMD.
+\end{remark}
+
+\begin{remark}[Referee status of the no-black-box claim]
+At the current stage the manuscript is not yet fully no-black-box.  The BMD obstruction has been reduced to the single deep BE2--3K Kloosterman-dispersion estimate.  If a BFI/Deshouillers--Iwaniec/Kuznetsov type mean-value theorem is cited, BMD is closed as an external-input theorem.  If no external input is allowed, BE2--3K remains the unique missing line-by-line proof obligation.
+\end{remark}
+
 \chapter{Zeta-Zero Contradiction Fields}
 
 Assume an off-critical zero $\rho=\beta+i\gamma$ with $\beta>1/2$.  The RH contradiction-field manuscript transfers the resulting smooth prime anomaly into a CRT rough-composite ledger, decomposes it into sparse/dense/tail/internal/global exits, and proves that no named escape channel remains under the recorded local theorems and restricted external inputs.

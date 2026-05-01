@@ -211,3 +211,27 @@
 | I3-Core 压力测试 | 未闭合/需 TRC 新定理 | `docs/monograph/two-point-secondary-sieve-research.md` 第 360--365 节新增局部 CRT 反例模型 `U^*`。该模型满足旧二禁类、短窗不可复用和局部 CRT 复杂度，却集中在新素数坏类上，说明现有刚性不能形式推出 I3-Core。剩余核心升级为 TRC（True Residual Correlation）：真实剩余集对新薄层的单素数坏类、二阶矩、三阶尾部和端点方向均衡。 |
 
 | TRC-1 单素数均衡攻坚 | 低尺度可证/最终尺度未闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 第 366--370 节新增筛余算术级数形式。若二维下界筛在尺度 `Y` 上可用，即 `Y<=N^{1/beta_2-o(1)}`，则 TRC-1 由分子上界筛与分母下界筛推出；但最终窗口 `N~P^{3/2}`、`Y=P^{3/4}` 给 `s=2+o(1)`，低于二维下界筛阈值，故最终仍需几何增强版 TRC-1G。 |
+
+| TRC-1G-H 重原子攻坚 | 压缩为 LDB/NMFB | `docs/monograph/two-point-secondary-sieve-research.md` 第 371--381 节已把原 `0.05` 单素数阈值放宽为足够的 `0.4` 重原子排除，并严格证明：若某新素数坏类承载 `>40%` 的真实剩余质量，则必产生非零新模 Fourier 系数 `>1/5`，等价地产生 `0,\pm w mod p` 三差值长方向能量超标。旧方阵刚性已剥离短方向、45度锁、Reuse/Shared 与端点层；唯一剩余压缩为 LDB(p)/NMFB：真实二次筛剩余集在每个新模 `p>Y` 的长方向族上没有常数级能量集中。该输入尚未无条件证明。 |
+
+| 二次筛总覆盖容量路线 | 最弱充分条件/未闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 第 382--387 节新增 TLI（Total Large-Incidence bound）。不再要求逐点排除每个新素数重原子，只需证明 `sum_{P^alpha<p<=P} A_p < |U_{P^alpha}|`。模型主常数为 `2log(1/alpha)`；取 `alpha=3/4` 时为 `2log(4/3)=0.57536...`，余量 `1-2log(4/3)=0.42463...`。若 TLI 证明成立，则直接存在不被任何 `p<=P` 命中的 `x`，从而 `x,x-w` 为素数。当前 TLI 仍需真实剩余集的大素数命中总均衡，尚未由普通筛法或旧局部刚性无条件推出。 |
+
+| TLI直接证明审查 | 压缩为 RB-TLI/未闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 第 388--394 节已逐行展开 TLI 直接证明尝试。分子 `sum A_p` 可由换元 `x=pm` 与二维上界筛控制，主项为 `2C_+ log(1/alpha)|I|V_2(Y)`；真正卡点是分母 `|U_Y|` 的模型级下界。取 `alpha=3/4` 时需常数门槛 `C_+/c_-<1/(2log(4/3))=1.738...`。最终最小新增输入命名为 RB-TLI：真实剩余集的大素数总命中平均不超过 `2log(4/3)+eta_RB`，且 `eta_RB<0.42463...`。RB-TLI 尚未无条件证明；当前不能宣称二次筛命题无条件闭合。 |
+
+| `q|w` 局部塌缩刚性 | 已纳入/不闭合RB-TLI | `docs/monograph/two-point-secondary-sieve-research.md` 第 395--400 节新增分析。若奇素 `q|w`，二禁类 `{0,w}` 合并为一禁类，局部密度由 `1-2/q` 改为 `1-1/q`，相对最硬情形增益 `(q-1)/(q-2)`；固定 `w` 后形成有限奇异因子。该刚性增大绝对候选密度、削弱小素同步峰、改善有限阈值。但对 TLI/RB-TLI 的相对主项，分子 `A_p` 与分母 `|U_Y|` 同乘正确的 `V_w(Y)`，故主常数仍为 `2log(1/alpha)`，取 `alpha=3/4` 仍是 `2log(4/3)`。最硬全称情形仍为 `w=2`，RB-TLI 尚未因此无条件闭合。 |
+
+| `w=2` RB-TLI数值刚性 | 新框架BST/未闭合 | 新增 `experiments/rb_tli_w2_scan.py`，并生成 `docs/rb-tli-w2-scan*.{json,md}`。`docs/monograph/two-point-secondary-sieve-research.md` 第 401--407 节记录实验与新刚性：当 `alpha>2/3` 时，任意大因子命中 `p|x` 或 `p|(x-2)` 都强制互补商为素数，故命中等价于素商半素数转移。真实均值不服从 naive `2log(1/alpha)`，而服从 Buchstab 条件主常数 `K(alpha)=2log((2-alpha)/alpha)/(1+log((2-alpha)/alpha))`。实验：`alpha=3/4, P=10007` 得 `E_U D=0.691696`, `K=0.676220`, `D=0` 比例 `0.458678`；`alpha=0.80` 得 `E_U D=0.589679`, `K=0.576984`；`alpha=0.85` 得 `E_U D=0.477321`, `K=0.464233`。最终硬点升级为 BST（二点 Buchstab 半素数转移稳定性），尚未无条件证明。 |
+
+| BST误差细分审查 | 压缩为BST-2/未闭合 | `experiments/rb_tli_w2_scan.py` 已增强壳层与两侧协方差指标，`docs/rb-tli-w2-scan-large.md` 更新结果。`docs/monograph/two-point-secondary-sieve-research.md` 第 408--413 节记录新刚性：`P=10007, alpha=3/4` 各壳层实际命中与 Buchstab 壳层期望接近；两侧协方差约 `-0.000093`；`D=0` 个数在 `alpha=0.75,0.80,0.85` 下均为 `201481`，说明最终幸存集与截断无关；端点类型在 `alpha>2/3` 下严格为“素数/单半素数/双半素数”三类。最后硬点进一步压缩为 BST-2：证明移位双素变量 `pm-2` 的 `Y`-rough 稳定性，即二点条件不造成 Buchstab 半素数主项常数级正放大。 |
+
+| BST-2最终改写 | 压缩为BMD/未闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 第 414--420 节新增直接攻坚。BST-2 被改写为双素变量 `(p,m)` 上的一维乘法筛：旧素数 `q<=Y` 的禁曲线为 `pm≡2 mod q`，在 `(F_q^*)^2` 中局部禁比例为 `1/(q-1)`。由此 Buchstab 主项来自乘法筛，而非 naive 独立模型。最后最小输入命名为 BMD（Biprime Multiplicative Dispersion）：双素变量在 `pm≡2 mod d` 乘法曲线上的 Rosser/Buchstab 加权分布误差为 `o(|U_Y|)`。若 BMD 成立，则 BST-2、BST、TLI 依次闭合；BMD 尚未无条件证明，属于双素 Type-II/dispersion 级估计。 |
+
+| BMD行列输入审查 | 压缩为BMD-Char/条件辅助 | `docs/monograph/two-point-secondary-sieve-research.md` 第 421--425 节补充审稿边界：若把前文行列素数命题作为条件输入，它只能排除完整 CRT 局部块中的零行/零列/零截面退化，形成 BMD-Zero；它不能控制非主乘法角色的有符号谱偏差。BMD 被进一步分解为 `BMD-Zero + BMD-Char`，其中 `BMD-Char` 是双素变量角色和 `sum_{d<=D} |lambda_d|/phi(d) sum_{chi!=chi0} |sum_p chi(p) S_p(chi)| = o(|U_Y|)`。因此行列输入可作为辅助刚性，但不能直接证明 BMD；当前真正剩余硬点是 BMD-Char。 |
+
+| BMD直接硬攻 | 归约到BV-E2/可标准引用闭合 | `docs/monograph/two-point-secondary-sieve-research.md` 第 426--431 节把 BMD 改写为受限二素数卷积 `a_n=#\{(p,m):Y<p<=P,m prime,n=pm\}` 在奇平方自由模算术级数中的 Bombieri--Vinogradov 平均分布；模 `2` 已确定剥离。若引用标准 BV-`E_2` 定理：`sum_{d<=P/log^B P} max_a |sum_{n≡a(d)}a_n - phi(d)^{-1}sum_{(n,d)=1}a_n| <<_A N/log^A N`，则对 Rosser/Buchstab 权重立即得 `sum lambda_d R_d=o(|U_Y|)`，因为 `|U_Y|~N/log^2 P`。参数窗口 `2/3<alpha<1` 同时保证商数素性刚性和 `Y<P/log^B P`。若不允许外部引用，则唯一剩余义务是内联证明 BV-`E_2` 附录。 |
+
+| BV-E2自足化附录 | 最小硬点BE2-3 | 新增 `docs/monograph/bv-e2-appendix.md`，并在 `docs/monograph/two-point-secondary-sieve-research.md` 第 432--435 节接入。附录证明 BV-E2 推出 BMD，并明确普通乘法大筛在平衡块 `P_1≈M_1≈P`, `Q≈P/log^B P` 只给 `P^3/log^{2B}P`，目标却是 `P^2/log^A P`，差一个 `P` 量级。因此自足版唯一真正深点是 `BE2-3`：平衡 Type-II dispersion / Kloosterman cancellation。引用版可用 BFI/Motohashi 型外部定理闭合；完全自足版需逐行证明 BE2-3。 |
+
+| BE2-3无黑箱化 | 压缩为BE2-3K | `docs/monograph/bv-e2-appendix.md` 第 7--9 节与 `docs/monograph/two-point-secondary-sieve-research.md` 第 436--439 节继续硬攻：BMD 不需完整 `max_a` BV-E2，只需固定剩余类 `2 mod d` 与 well-factorable Rosser/Buchstab 权重的 WBE2。对平衡 Type-II 块展开 dispersion，Cauchy 后归结为 `sum_r |T_r|^2` 方差界；非对角 CRT 条件 `rs1≡2(d1), rs2≡2(d2)` 产生双 Kloosterman 相位。最终最小无黑箱核命名为 `BE2-3K`：weighted bilinear Kloosterman dispersion。若 BE2-3K 成立，则 `BE2-3K=>BE2-3=>WBE2=>BMD`。 |
+
+| 顶刊审稿最终状态 | 尚未完全无黑箱 | `docs/monograph/two-point-secondary-sieve-research.md` 第 440 节新增最终审稿结论：BMD 已严格归约到唯一深核 `BE2-3K`，但本文尚未在文内证明该 Kloosterman 双线性平均定理。若引用 BFI/Deshouillers--Iwaniec/Kuznetsov 型工具，则 BMD 可作为外部输入版闭合；若坚持完全无黑箱，则剩余唯一任务是证明 `BE2-3K`。不得把当前稿标为“完全无黑箱证明”。 |
