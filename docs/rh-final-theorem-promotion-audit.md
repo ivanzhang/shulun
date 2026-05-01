@@ -39,3 +39,8 @@
 本轮可以标记完成的是：`EXT-PC1-LI` 精确适配、`EXT-KL` 精确适配、GEE 同尺度矛盾修补、普通 proof 标记清零。
 
 本轮不能完成的是：把主定理升级为最终无条件 RH 定理。C4、C5、C6、C9 均已完成主稿编号化。下一步应进行主定理升级前的全文交叉引用、外部定理号和 warning 删除条件总审查。
+
+
+## 最终全文升级审查评审更新
+
+新增 `docs/rh-final-upgrade-review-2026-05-01.md`。自动扫描确认 `Consolidated proof`、`Proof sketch for review`、`Review proof` 均为 0，且 LaTeX `\ref` 未发现缺失标签。但审查结论是不应删除主定理 `review form` 与 `Submission warning`：主稿仍有条件合成口径、AEX 输入接受性和 EXT 页码/定理号核验义务。下一步最优为逐项处理 U1--U3：主定理前提改写、AEX 条件化措辞消除、EXT 精确定理号表。

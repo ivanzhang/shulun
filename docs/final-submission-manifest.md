@@ -310,3 +310,8 @@
 ## C5 DGap Branch 主稿编号化更新
 
 新增 `docs/rh-c5-dgap-maintext-final.md`。LaTeX 主稿已把 C5 从 consolidated proof 升级为盒局部化、baseline 后 frame 下界、正交投影分配和低维残余抽取四个编号引理，再推出 `C5 DGap branch`。至此 C4/C5/C6/C9 的 `Consolidated proof` 已全部消除；主定理 warning 仍保留，等待最终全文升级审查。
+
+
+## 最终全文升级审查评审更新
+
+新增 `docs/rh-final-upgrade-review-2026-05-01.md`。自动扫描确认 `Consolidated proof`、`Proof sketch for review`、`Review proof` 均为 0，且 LaTeX `\ref` 未发现缺失标签。但审查结论是不应删除主定理 `review form` 与 `Submission warning`：主稿仍有条件合成口径、AEX 输入接受性和 EXT 页码/定理号核验义务。下一步最优为逐项处理 U1--U3：主定理前提改写、AEX 条件化措辞消除、EXT 精确定理号表。
