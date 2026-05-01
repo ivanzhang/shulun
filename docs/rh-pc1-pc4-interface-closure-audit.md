@@ -118,7 +118,7 @@ PC4 各 closure 文档的共同作用是排除前六类作为最终逃逸通道�
 1. 精确引用或逐行证明 PC1 的 Landau--Ingham 平滑振荡命题；
 2. 将 PC2 的 CRT 候选边界误差写成统一显式引理；
 3. 把 PC3-OV2 的 AAI/PPI/MLC 三接口从条件化接口降为定理；
-4. 把 `DGap-Decomposition` 的盒分解有限重叠（见 `docs/rh-pc4-dual-box-overlap.md`）、投影正交化（见 `docs/rh-pc4-dual-projection-orthogonalization.md`）与低维频率抽取完全无条件化；
+4. 把 `DGap-Decomposition` 的盒分解有限重叠（见 `docs/rh-pc4-dual-box-overlap.md`）、投影正交化（见 `docs/rh-pc4-dual-projection-orthogonalization.md`）与低维频率抽取（见 `docs/rh-pc4-dual-lowdim-frequency-extraction.md`）完全无条件化；
 5. 对 PC4-A/SC/PI/FCT 的 closure 假设逐项回溯，消除循环依赖。
 
 完成以上五项后，RH 反例矛盾场才可能从“条件化闭合框架”升级为可审稿的无条件证明候选。

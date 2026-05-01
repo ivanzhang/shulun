@@ -64,7 +64,7 @@
 2. `V_low` 是常数、低体积、短簇或固定低维频率部分；
 3. `V_err` 为平方可和截断误差或边界误差。
 
-若 `P_V h` 的主要能量落在 `V_PI`，则得到 PC4-PI 高投影增量。若落在 `V_low`，则分别转入 PC2 基线失败、LV/LSMP、SC 或 FCT。若落在 `V_err`，则进入 Complexity-Escape 或边界接口失败。
+若 `P_V h` 的主要能量落在 `V_PI`，则得到 PC4-PI 高投影增量。若落在 `V_low`，则分别转入 PC2 基线失败、LV/LSMP、SC，或由 `docs/rh-pc4-dual-lowdim-frequency-extraction.md` 抽取固定低维频率后进入 FCT。若落在 `V_err`，则进入 Complexity-Escape 或边界接口失败。
 
 ## 5. 投影正交化定理
 
@@ -81,7 +81,7 @@
 
    `||P_PI h||_2^2 >= X^{2β-1-o(1)}`；
 
-2. 能量落入固定低维频率 span，进入 PC4-FCT；
+2. 能量落入固定低维频率 span，按 `docs/rh-pc4-dual-lowdim-frequency-extraction.md` 进入 PC4-FCT；
 3. 能量落入低体积或短簇子空间，进入 LV/LSMP 或 PC4-SC；
 4. 模板复杂度或误差不可控，进入 Complexity-Escape/接口失败。
 
@@ -89,4 +89,4 @@
 
 ## 6. 对 DGap-Decomposition 的影响
 
-本文把 `DGap-Decomposition` 中“分散正质量产生投影能量”的步骤严写为 Hilbert 空间正交化：有限重叠给 Gram 上界，Cauchy 给能量下界，模板一致性把盒空间接入 PC4-PI。剩余硬点收缩为低维频率抽取，也就是 FCT 分支的入口。
+本文把 `DGap-Decomposition` 中“分散正质量产生投影能量”的步骤严写为 Hilbert 空间正交化：有限重叠给 Gram 上界，Cauchy 给能量下界，模板一致性把盒空间接入 PC4-PI。PI 不可检测时的低维频率抽取见 `docs/rh-pc4-dual-lowdim-frequency-extraction.md`。

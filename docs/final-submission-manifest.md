@@ -56,6 +56,7 @@
 - `docs/rh-pc4-dual-dgap-decomposition.md`：PC4-Dual DGap 压缩异常结构分解定理。
 - `docs/rh-pc4-dual-box-overlap.md`：PC4-Dual DGap 盒分解有限重叠定理。
 - `docs/rh-pc4-dual-projection-orthogonalization.md`：PC4-Dual DGap 投影正交化接口。
+- `docs/rh-pc4-dual-lowdim-frequency-extraction.md`：PC4-Dual DGap 低维频率抽取接口。
 - `docs/rh-pc1-pc4-interface-closure-audit.md`：RH 反例矛盾场 PC1-PC4 接口闭合审查。
 - `docs/row-column-reduction-formal-appendix.md`：A/B 行列归约正式附录证明稿。
 - `docs/ab-to-d-interface-match.md`：A/B 到 D 定义逐项匹配附录。

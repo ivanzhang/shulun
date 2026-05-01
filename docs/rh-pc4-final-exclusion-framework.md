@@ -105,7 +105,7 @@ PC-1/PC-2 可能给出过密而非过疏。过密表示素数空洞过多、合�
 
 为了真正向 RH 总攻推进，下一步不应再扩散，而应按可证性排序专攻：
 
-1. **PC4-Dual 过密对偶**：当前框架见 `docs/rh-pc4-dual-overdense-closure.md`，缺口账本见 `docs/rh-pc4-dual-gap-ledger.md`，`DGap` 分解见 `docs/rh-pc4-dual-dgap-decomposition.md`；下一步需无条件化盒分解有限重叠（见 `docs/rh-pc4-dual-box-overlap.md`）、投影正交化（见 `docs/rh-pc4-dual-projection-orthogonalization.md`）与低维频率抽取；
+1. **PC4-Dual 过密对偶**：当前框架见 `docs/rh-pc4-dual-overdense-closure.md`，缺口账本见 `docs/rh-pc4-dual-gap-ledger.md`，`DGap` 分解见 `docs/rh-pc4-dual-dgap-decomposition.md`；下一步需无条件化盒分解有限重叠（见 `docs/rh-pc4-dual-box-overlap.md`）、投影正交化（见 `docs/rh-pc4-dual-projection-orthogonalization.md`）与低维频率抽取（见 `docs/rh-pc4-dual-lowdim-frequency-extraction.md`）；
 2. **全文接口一致性审查**：当前审查见 `docs/rh-pc1-pc4-interface-closure-audit.md`，下一步需逐项无条件化 AAI/PPI/MLC/LV/NRC/EXT。
 
 本文完成的是 PC-4 的总攻地图和分支归约，不宣称已证明 RH。PC4-A、PC4-SC、PC4-PI、PC4-FCT 与 PC4-Dual 已推进到条件化闭合形态；最优下一步是消除 `DGap` 分解、AAI/PPI/MLC/LV/NRC/EXT 中的条件化假设。

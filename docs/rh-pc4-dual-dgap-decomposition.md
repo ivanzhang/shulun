@@ -62,7 +62,7 @@
 
 ## 4. 频率锁定分支
 
-若第 3 节的投影能量没有进入 PC4-PI，则只能是盒投影高度相关：多数 `H(B)_+` 落在固定低维 CRT/Bohr 频率 span 内。形式化地，存在固定维数 `d=O(1)` 的频率族 `Λ_*`，使正质量主要由
+若第 3 节的投影能量没有进入 PC4-PI，则由 `docs/rh-pc4-dual-lowdim-frequency-extraction.md` 抽取固定低维频率：多数 `H(B)_+` 落在固定低维 CRT/Bohr 频率 span 内。形式化地，存在固定维数 `d=O(1)` 的频率族 `Λ_*`，使正质量主要由
 
 `span{e(λ n/M): λ in Λ_*}`
 
@@ -105,4 +105,4 @@ DGap-Decomposition 把过密对偶剩余黑箱缩小为五个已列分支：SC�
 
 `过密 => Dual-Gap-Ledger 三分 => ACC负向 / overlap过剩 / DGap压缩`
 
-其中 `DGap压缩` 再由本文转入 PC4 的既有 closure 分支。盒分解有限重叠已由 `docs/rh-pc4-dual-box-overlap.md` 定理化，投影正交化已由 `docs/rh-pc4-dual-projection-orthogonalization.md` 定理化。下一步真正剩余不是再增加新分支，而是无条件化低维频率抽取。
+其中 `DGap压缩` 再由本文转入 PC4 的既有 closure 分支。盒分解有限重叠已由 `docs/rh-pc4-dual-box-overlap.md` 定理化，投影正交化已由 `docs/rh-pc4-dual-projection-orthogonalization.md` 定理化，低维频率抽取已由 `docs/rh-pc4-dual-lowdim-frequency-extraction.md` 定理化。下一步真正剩余不是再增加新分支，而是无条件化这些接口所依赖的 DSO/CE/FCT/LSMP 外部结构。
