@@ -58,7 +58,7 @@ CE 的入口是 `docs/rh-pc4-complexity-escape-interface.md`。它把固定模�
 
 ## 6. DSO 吸收
 
-DSO 的最终入口是 `docs/rh-pc4-orthogonality-final-closure-audit.md`。该文把分散正交能量归为：
+DSO 的最终入口是 `docs/rh-pc4-orthogonality-final-closure-audit.md`；最终 DSO/容量矩阵见 `docs/rh-dso-capacity-final-audit.md`。该文把分散正交能量归为：
 
 1. 固定模板平方可和：DSO-C/TC 控制；
 2. 频率复杂度逃逸：DSO-E + NRC/FCT/LSMP 控制；

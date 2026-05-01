@@ -1,5 +1,8 @@
 # PC4 正交输入最终合并审查
 
+DSO/容量定理的最终审稿矩阵见 `docs/rh-dso-capacity-final-audit.md`。
+
+
 本文合并 `DSO-C`、`TC`、`CE` 与 `DSO-E` 的审查结果，确认 RH 总攻框架第 4 项“正交输入”已经从单一黑箱降解为标准 Hilbert 正交、模板组合定理、复杂度逃逸三分和 DSO-E/NRC/LSMP/FCT 匹配。本文不证明 PC4 终端 closure；它只说明“分散正交能量”不再是独立逃逸通道。
 
 ## 1. 已闭合模块
@@ -40,4 +43,4 @@
 
 ## 5. 对总攻的影响
 
-第 4 项“正交输入”现在可以标记为内部合并完成。剩余 RH 总攻压力转入第 5 项：`PC4-A/SC/PI/FCT closure` 的容量账本、Noether 终止和相互无循环审查。
+第 4 项“正交输入”现在可以标记为内部合并完成；最终 DSO/容量出口矩阵见 `docs/rh-dso-capacity-final-audit.md`。

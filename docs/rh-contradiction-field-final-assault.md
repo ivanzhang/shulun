@@ -107,7 +107,7 @@
 1. **解析输入**：PC1 的 Landau--Ingham 平滑振荡和权函数非湮灭，引用级审查见 `docs/rh-pc1-analytic-input-citation-audit.md`；
 2. **基线输入**：PC2 的 CRT 候选边界误差与权重正规化，最终无条件化审查见 `docs/rh-pc2-baseline-unconditional-audit.md`；
 3. **覆盖输入**：AAI/PPI/MLC 内部接口已拆解，上游最终审查见 `docs/rh-pc3-ov2-upstream-unconditional-audit.md`；剩余依赖已转入 FCT、LV/LSMP、DSO/PI、NRC/EXT；
-4. **正交输入**：最终合并审查见 `docs/rh-pc4-orthogonality-final-closure-audit.md`；分散正交能量已转入 DSO 容量上界或 PI-Seed/FCT/LSMP/LV/NRC；
+4. **正交输入**：最终合并审查见 `docs/rh-pc4-orthogonality-final-closure-audit.md`，DSO/容量最终矩阵见 `docs/rh-dso-capacity-final-audit.md`；分散正交能量已转入 DSO 容量上界或 PI-Seed/FCT/LSMP/LV/NRC；
 5. **终端输入**：PC4-A/SC/PI/FCT 已由 `docs/rh-pc4-terminal-final-no-cycle-audit.md` 合并为无循环事件图；
 6. **外部吸收**：LV/LSMP/NRC/CE/DSO/CapacityFail 见 `docs/rh-pc4-external-event-absorption-audit.md`；
 7. **对偶输入**：DGap 三接口已由 `docs/rh-pc4-dual-dgap-event-match-audit.md` 匹配到终端事件图；
