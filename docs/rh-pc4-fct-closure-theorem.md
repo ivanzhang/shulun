@@ -31,7 +31,7 @@
 
 ## 4. Noether：闭包链终止
 
-由 `docs/rh-pc4-fct-noether.md`，在排除 PC4-PI、短簇、LSMP、LV 与 DSO/CE 容量失败后，FCT 闭包证书链不可能无限延续。其机制是：每一步要么严格降低剩余秩-体积预算，要么在同一 Bohr 交集上反复承载偏差；前者因预算有下界不能无限，后者触发 PC4-PI 或短簇。
+由 `docs/rh-pc4-fct-noether.md` 与 `docs/rh-pc4-fct-noether-descent-ledger.md`，在排除 PC4-PI、短簇、LSMP、LV 与 DSO/CE 容量失败后，FCT 闭包证书链不可能无限延续。其机制是：将 FCT 状态规范化为 Hermite/Smith 代表后，每个真闭包步都降低离散势函数；若势函数不降，则不是新闭包，而是同一 Bohr 交集反复承载偏差，触发 PC4-PI 或短簇。
 
 ## 5. PC4-FCT 主闭合命题
 

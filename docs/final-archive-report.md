@@ -76,6 +76,7 @@
 - `docs/rh-pc4-fct-seed.md`
 - `docs/rh-pc4-fct-phase-drift.md`
 - `docs/rh-pc4-fct-noether.md`
+- `docs/rh-pc4-fct-noether-descent-ledger.md`
 - `docs/rh-pc4-fct-closure-theorem.md`
 - `docs/rh-pc4-acc-seed.md`
 - `docs/rh-pc4-acc-sync-pressure.md`

@@ -69,3 +69,5 @@
 得到 PC4-FCT 的条件化闭合路线：若频率闭包试图作为 RH 反例的最终通道，则它最终必须转入 PC4-PI、短簇、LSMP/LV 或容量矛盾，而不能无限留在 FCT 内部。
 
 `PC4-FCT-Closure` 已在 `docs/rh-pc4-fct-closure-theorem.md` 中写出，作为 RH 总攻中频率闭包分支的条件化闭合入口。
+
+下降量账本与防循环的逐项审查版见 `docs/rh-pc4-fct-noether-descent-ledger.md`。

@@ -53,6 +53,7 @@
 - `docs/rh-pc4-fct-seed.md`：PC4-FCT 频率闭包跨尺度种子命题。
 - `docs/rh-pc4-fct-phase-drift.md`：PC4-FCT 新增 CRT 坐标相位漂移压力引理。
 - `docs/rh-pc4-fct-noether.md`：PC4-FCT Noether 闭包链终止命题。
+- `docs/rh-pc4-fct-noether-descent-ledger.md`：PC4-FCT Noether 离散下降量账本与防循环审查。
 - `docs/rh-pc4-fct-closure-theorem.md`：PC4-FCT 频率闭包分支闭合命题。
 - `docs/rh-pc4-acc-seed.md`：PC4-A ACC 不同步排斥种子命题。
 - `docs/rh-pc4-acc-sync-pressure.md`：PC4-A ACC 同步压力命题。
