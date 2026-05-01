@@ -104,6 +104,7 @@
 - `docs/d-structure-line-by-line-expansion.md`：D 组 OMR/CGTP/LSMP/FCT 压缩证明逐行展开附录。
 - `docs/omr-cgtp-lsmp-theoremization.md`：OMR/CGTP/LSMP 结构包定理化。
 - `docs/nrc-theoremization.md`：NRC 非共振完成和定理化。
+- `docs/rh-nrc-ext-final-citation-audit.md`：NRC/EXT 非共振完成和与外部定理包最终引用审查。
 - `docs/fct-tree-wfe-theoremization.md`：FCT/Tree-WFE 频率碰撞终端定理化。
 
 ## E. 显式常数与证书附录

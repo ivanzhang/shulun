@@ -62,6 +62,18 @@
 
 **审稿边界。** 本文不需要 Vaughan 恒等式的最优参数，只需固定分块与固定对数损失；该损失由 `C_vaughan_blocks=10` 与 RKS 账本吸收。
 
-## 6. 最终引用结论
+## 6. EXT-PC1-EF / EXT-PC1-LI
 
-五个 `EXT-*` 输入均已降为标准文献引用或明确论文引用。审稿版正文不再需要出现“标准事实”而无来源的表述；若期刊要求逐页定位，定稿阶段只需在上述首选引用中补页码或定理编号，不改变证明逻辑。
+**使用命题。** 平滑 ζ 显式公式；离线零点经 Landau--Ingham 振荡产生 `X^{β-o(1)}` 级平滑 Chebyshev 误差。
+
+**首选引用。** E. C. Titchmarsh, *The Theory of the Riemann Zeta-function*, 2nd ed., revised by D. R. Heath-Brown, Oxford University Press, 1986, explicit formula and Landau oscillation theorem sections.
+
+**可替换引用。** Ingham 关于 prime number theorem error term oscillation 的经典定理或现代解析数论教材中的 Landau--Ingham oscillation theorem。
+
+**本文使用位置。** `docs/rh-pc1-analytic-input-citation-audit.md`、`docs/rh-pc1-analytic-input-theoremization.md`。
+
+**审稿边界。** 本文只需要平滑权版本和存在无穷大振荡子列；若不直接引用，可由 Mellin 反演与奇点不可解析延拓原则逐行证明。
+
+## 7. 最终引用结论
+
+七类 `EXT-*` 输入均已降为标准文献引用或明确论文引用。审稿版正文不再需要出现“标准事实”而无来源的表述；若期刊要求逐页定位，定稿阶段只需在上述首选引用中补页码或定理编号，不改变证明逻辑。

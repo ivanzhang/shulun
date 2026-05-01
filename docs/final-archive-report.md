@@ -109,6 +109,7 @@
 - `docs/d-structure-line-by-line-expansion.md`
 - `docs/external-theorem-package.md`
 - `docs/ext-citation-final-audit.md`
+- `docs/rh-nrc-ext-final-citation-audit.md`
 - `docs/constants-absorption-final-audit.md`
 - `docs/constants-numbered-inequalities.md`
 - `docs/bg-rks-block-match.md`

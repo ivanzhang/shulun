@@ -92,7 +92,7 @@
 5. PC4 外部事件吸收矩阵：`docs/rh-pc4-external-event-absorption-audit.md`；
 6. PC4-Dual、Dual-Gap-Ledger 与 DGap 三接口，并由 `docs/rh-pc4-dual-dgap-event-match-audit.md` 匹配到 PC4 终端事件图；
 7. 全文接口一致性审查：`docs/rh-global-interface-consistency-audit.md`；
-8. NRC/EXT、LV/LSMP、AAI/PPI/MLC、DSO/CE 等外部结构接口。
+8. NRC/EXT、LV/LSMP、AAI/PPI/MLC、DSO/CE 等外部结构接口，其中 NRC/EXT 引用审查见 `docs/rh-nrc-ext-final-citation-audit.md`。
 
 则不存在离线零点 `β>1/2` 能被该 CRT/覆盖动力系统吸收。
 

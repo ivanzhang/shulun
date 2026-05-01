@@ -85,6 +85,7 @@
 - `docs/d-structure-line-by-line-expansion.md`：D 组压缩证明逐行展开附录。
 - `docs/external-theorem-package.md`：外部定理包与精确引用模板。
 - `docs/ext-citation-final-audit.md`：EXT 外部定理精确引用最终审查表。
+- `docs/rh-nrc-ext-final-citation-audit.md`：NRC/EXT 非共振完成和与外部定理包最终引用审查。
 - `docs/constants-absorption-final-audit.md`：常数吸收最终核对表。
 - `docs/constants-numbered-inequalities.md`：常数吸收编号不等式证明。
 - `docs/bg-rks-block-match.md`：BG/RKS 分区逐块匹配附录。
