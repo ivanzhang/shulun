@@ -282,3 +282,8 @@
 ## C6 No-Cycle 主稿编号化更新
 
 新增 `docs/rh-c6-no-cycle-maintext-final.md`。LaTeX 主稿已把 C6 从 consolidated proof 升级为 `Definition C6 internal state graph`、`Lemma C6 self-loop exclusion`、`Lemma C6 mixed-cycle exclusion` 与最终 `C6 internal terminal no-cycle` 的编号化证明链。主定理 warning 仍保留；下一步最优为 C9 Fourier--Vaaler tail closure 的编号化。
+
+
+## C9 Fourier--Vaaler Tail 主稿编号化更新
+
+新增 `docs/rh-c9-tail-maintext-final.md`。LaTeX 主稿已把 C9 从 consolidated proof 升级为固定复杂度模板定义、原子尾项、布尔稳定性、盒族求和和无自由高频尾项四个编号引理，再推出 `C9 tail closure`。主定理 warning 仍保留；剩余 consolidated proof 为 C4 sparse branch 与 C5 DGap branch。
