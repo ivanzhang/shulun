@@ -195,3 +195,5 @@
 - `docs/rh-gee-baseline-subtraction-lemma.md`：归档 PI/DSO 零频容量扣除账本。
 
 - `docs/rh-gee-ce-lsmp-load-bound-audit.md`：归档 CE/LSMP 可吸收项与 seed 转出账本。
+
+- `docs/rh-gee-seed-transfer-consistency.md`：归档 CE/LSMP seed 转出账本。

@@ -179,3 +179,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## GEE-CE/LSMP 负担审查
 
 新增 `docs/rh-gee-ce-lsmp-load-bound-audit.md`。CE/LSMP 被拆成可吸收项与 seed 转出项；可吸收项给 `o(Δ)`，seed 必须转入对应出口并从 CE/LSMP 删除。剩余硬点为 `Seed-Transfer Consistency`。
+
+## GEE-CE/LSMP Seed-Transfer 更新
+
+新增 `docs/rh-gee-seed-transfer-consistency.md`。CE/LSMP 的 seed 转出账本已闭合：seed 不再计入 CE/LSMP，而有限重叠转入 `A/PI/FCT/SC/LV/DSO/NRC`。`GEE-CE/LSMP` 当前可标记为吸收项闭合、seed 转出一致。

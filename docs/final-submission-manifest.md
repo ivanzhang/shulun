@@ -183,3 +183,5 @@
 - `docs/rh-gee-baseline-subtraction-lemma.md`：新增 Baseline-Subtraction，引入 PI/DSO 超额偏差账本。
 
 - `docs/rh-gee-ce-lsmp-load-bound-audit.md`：新增 CE/LSMP 出口负担量化审查。
+
+- `docs/rh-gee-seed-transfer-consistency.md`：新增 Seed-Transfer Consistency，闭合 CE/LSMP 输出 seed 的路由一致性。

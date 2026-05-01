@@ -202,3 +202,5 @@
 - `docs/rh-gee-baseline-subtraction-lemma.md`：PI/DSO 基线扣除引理，避免零频容量重复计入异常负担。
 
 - `docs/rh-gee-ce-lsmp-load-bound-audit.md`：GEE-CE/LSMP 负担上界审查，拆分可吸收项与 seed 转出。
+
+- `docs/rh-gee-seed-transfer-consistency.md`：CE/LSMP seed 转出与去重账本。

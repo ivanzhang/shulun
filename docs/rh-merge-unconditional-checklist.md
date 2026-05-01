@@ -109,3 +109,8 @@
 
 - [x] 可吸收项：低质量、coarea、平方可和尾项满足相对阈值时给 `o(Δ)`。
 - [ ] `Seed-Transfer Consistency`：CE/LSMP 输出 seed 必须有限重叠转入对应出口，且不重复计入 CE/LSMP。
+
+## Seed-Transfer 更新
+
+- [x] `Seed-Transfer Consistency`：CE/LSMP seed 有限重叠转入目标出口并从 CE/LSMP 删除。
+- [ ] 剩余主出口：`GEE-FCT/GEE-SC/GEE-A` 仍需全局上界。

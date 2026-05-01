@@ -71,3 +71,7 @@ CE 四类逃逸的 GEE 处理如下：
 **Seed-Transfer Consistency.** 所有从 CE/LSMP 输出的 seed 必须在 GEE-0 的路由表中重新登记到唯一或有限重叠的目标出口，且不再重复计入 CE/LSMP。
 
 若该一致性补齐，则 `GEE-CE/LSMP` 可标记为“吸收项闭合，seed 转出”。剩余压力转入 `GEE-FCT/GEE-SC/GEE-A` 以及已接收的 `PI/DSO/NRC/LV` 出口。
+
+## 6. Seed-Transfer 已补齐
+
+新增 `docs/rh-gee-seed-transfer-consistency.md`。CE/LSMP 输出 seed 的转出、去重和有限重叠继承已定理化；因此 CE/LSMP 可标记为“吸收项闭合，seed 转出一致性闭合”。

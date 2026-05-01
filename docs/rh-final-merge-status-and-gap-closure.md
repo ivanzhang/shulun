@@ -156,3 +156,5 @@
 - `docs/rh-gee-baseline-subtraction-lemma.md`：Baseline-Subtraction 已补齐；PI/DSO 剩余依赖接收出口上界。
 
 - `docs/rh-gee-ce-lsmp-load-bound-audit.md`：GEE-CE/LSMP 已拆分；剩余 `Seed-Transfer Consistency`。
+
+- `docs/rh-gee-seed-transfer-consistency.md`：Seed-Transfer 已补齐；CE/LSMP 可标记为吸收项闭合、seed 转出一致。
