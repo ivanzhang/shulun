@@ -2,7 +2,7 @@
 
 本文把 RH 反例矛盾场中 `PI/DSO` 相关接口合成为一条可并入主文的闭合链。它接收来自 PPI、FCT、DGap 和 PC4 事件图的高投影增量或新增独立频率包，并证明：在固定复杂度和已命名终端吸收口径下，这些能量不能停留为未命名的 DSO 或 PI 自由回流；它们必须进入 `PI` 容量账本、`DSO` 正交账本，或转入 `FCT/SC/LV/LSMP/CE/NRC`。
 
-本文不宣称 RH 已证明；它闭合的是 PI/DSO 互相引用的桥接疑点。下游 `SC` 局部乘积容量已主文化于 `docs/rh-sc-maintext-capacity-closure.md`；`LV/LSMP/CE` 与 DGap 尾项仍需继续主文化。
+本文不宣称 RH 已证明；它闭合的是 PI/DSO 互相引用的桥接疑点。下游 `SC` 局部乘积容量已主文化于 `docs/rh-sc-maintext-capacity-closure.md`；`LV/LSMP/CE` 与 DGap 尾项仍需继续主文化；DGap 三接口主链见 `docs/rh-dgap-maintext-three-interface-chain.md`。
 
 ## 1. 入口对象
 

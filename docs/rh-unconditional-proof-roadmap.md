@@ -182,3 +182,9 @@ PI/DSO 容量桥接主文链已写入 `docs/rh-pi-dso-maintext-bridge-chain.md`�
 SC 短簇局部乘积容量与递归终止主文链已写入 `docs/rh-sc-maintext-capacity-closure.md`。该补强把短窗 `I` 与 dyadic 双锚层 `(Q,R)` 中的复用容量显式化为 `(L/X)RQlog^C X + Rlog^C X`：第一项来自物理零频比例，第二项来自乘积壳端点薄层。
 
 递归部分把短簇状态规范化为 `(I,𝓑,Q,R,κ,σ)`，并用势函数 `𝓥=B_1ℓ+B_2v+B_3a+B_4h` 排除无限 `shorter_SC`：真缩窗、Bohr 压缩、锚自由度固定或 dyadic 剥离均使势函数下降；重复模板触发 `A/PI/FCT/LV/LSMP/CE` 或局部容量矛盾。当前剩余压力转向 DGap 三接口、Fourier/Vaaler 尾项平方可和、`LV/LSMP/CE` 外部吸收和 PC1/EXT 精确引用。
+
+## 28. DGap 三接口主文链推进记录
+
+DGap 盒有限重叠、投影正交化与低维频率抽取三接口已合并写入 `docs/rh-dgap-maintext-three-interface-chain.md`。该补强从过密分支 `DGap_z>=cΔ` 出发，先用固定复杂度盒有限重叠建立 frame 上界，再剥离 PC2 常数方向并得到 `||P_Vh||_2^2>=X^{2β-1-o(1)}` 的投影能量下界。
+
+随后用逐步正交投影替代非严格直和分解：`V_PI` 进入 PI，`V_low` 进入 FCT/SC/LV/LSMP，`V_err` 进入 CE/CapacityFail；低维抽取中若有新增独立频率包则由 PI/DSO 主链接收，若无新增独立频率则给 FCT seed。当前剩余压力转向 Fourier/Vaaler 尾项平方可和、`LV/LSMP/CE` 外部吸收、PC1/EXT 精确引用和全文一致性审查。
