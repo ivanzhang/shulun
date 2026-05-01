@@ -272,3 +272,8 @@
 ## RH EXT-KL 与 GEE 同尺度审查更新
 
 新增 `docs/rh-ext-kl-precision-final.md`，固定 `EXT-KL` 在主稿中的实际使用形式：素数模非退化 `ax+b/x` Kloosterman 完成和、区间 completion 的对数损失、退化出口与 AEX-3 单变量入口估计。LaTeX 主稿同时修正 GEE 下界/上界比较口径：下界为 `Δ log^{-C_route}X`，上界由阈值层级压到 `Δ log^{-B_final}X`，并要求 `B_final>C_route+C_total+10`。主定理 `review form` 与 submission warning 仍保留，不能宣称 RH 无条件证明定稿。
+
+
+## RH EXT-PC1-LI 与主定理升级审查更新
+
+新增 `docs/rh-ext-pc1-li-precision-final.md`，固定 PC1 中 Landau--Ingham 振荡输入：有限边界零点情形由主稿三角多项式均方证明，无限边界或上确界情形归入经典 Landau--Ingham 振荡原理。新增 `docs/rh-final-theorem-promotion-audit.md`，结论是当前不能诚实删除主定理 `review form` 与 submission warning；下一步最优应把 C4/C5/C6/C9 单篇内联编号化。

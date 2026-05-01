@@ -6,9 +6,9 @@
 
 **使用形式。** 平滑显式公式与 Landau--Ingham 振荡：若存在离线零点 `ρ=β+iγ`, `β>1/2`，则存在平滑权和无穷尺度使平滑 Chebyshev 误差为 `X^{β-o(1)}`。
 
-**来源。** Titchmarsh, *The Theory of the Riemann Zeta-function*, 2nd ed.；Ingham/Landau 振荡定理。有限边界零点情形已有文内证明链 `docs/rh-pc1-landau-ingham-maintext-chain.md`。
+**来源。** Titchmarsh--Heath-Brown, *The Theory of the Riemann Zeta-function*, 2nd ed.；Ingham, *The Distribution of Prime Numbers*；Landau oscillation theorem。有限边界零点情形已有文内证明链 `docs/rh-pc1-landau-ingham-maintext-chain.md`；无限边界或上确界情形的受限接口已由 `docs/rh-ext-pc1-li-precision-final.md` 固定。
 
-**适配。** 主稿只需平滑权版本；素数幂误差 `O(X^{1/2}log^C X)` 被 `β>1/2` 吸收。
+**适配。** 主稿只需平滑权版本；有限边界零点情形文内证明，外部 LI 只用于无限边界或上确界情形；素数幂误差 `O(X^{1/2}log^C X)` 被 `β>1/2` 吸收。
 
 ## 2. EXT-KL
 
@@ -62,4 +62,4 @@
 
 ## 8. 剩余排版义务
 
-页码、定理号和具体版本号仍需在投稿排版时核对原书/原文；这不改变证明逻辑，但在最终期刊稿中必须完成。`EXT-KL` 的主稿实际使用形式已由 `docs/rh-ext-kl-precision-final.md` 进一步细化。
+页码、定理号和具体版本号仍需在投稿排版时核对原书/原文；这不改变证明逻辑，但在最终期刊稿中必须完成。`EXT-KL` 的主稿实际使用形式已由 `docs/rh-ext-kl-precision-final.md` 进一步细化；`EXT-PC1-LI` 的主稿实际使用形式已由 `docs/rh-ext-pc1-li-precision-final.md` 进一步细化。
