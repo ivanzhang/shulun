@@ -138,8 +138,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 
 1. **证明 GEE-LV 与 GEE-NRC**：一个体积型、一个外部解析型，最容易给出明确模板。
 2. **再攻 GEE-DSO/PI**：square-function 到线性负担转换是核心桥。
-3. **再攻 GEE-DSO/PI**：square-function 到线性负担转换是核心桥。
-4. **最后攻 GEE-A/FCT/SC/LSMP/CE**：这些高度依赖全局势函数和复杂度预算。
+3. **最后攻 GEE-A/FCT/SC/LSMP/CE**：这些高度依赖全局势函数和复杂度预算.
 
 ## 7. 审稿口径
 
