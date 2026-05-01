@@ -62,4 +62,4 @@
 
 PC4-SC-Seed 把短簇分支压缩为：固定短窗/低维 Bohr 交集在无穷尺度上同向承载离线零点级偏差。
 
-下一步最优专攻是 `SC-Mass-Balance`：证明固定短簇若在无穷多尺度承载 `X^β` 级质量，则要么其零频体积可求和而由 LV/LSMP 吸收，要么不可求和并产生投影能量/ACC 同步/FCT 闭包，转入已闭合分支。
+`SC-Mass-Balance` 已在 `docs/rh-pc4-short-cluster-mass-balance.md` 中写出：固定短簇若承载 `X^β` 级质量，要么由 LV/LSMP 吸收，要么产生 PC4-PI/PC4-A/PC4-FCT 输入，或落入物理短窗锚复用密度矛盾。下一步最优专攻是 `SC-Local-Density`。
