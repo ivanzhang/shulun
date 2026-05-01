@@ -137,6 +137,7 @@
 - `docs/rh-c9-fourier-vaaler-tail-inline-proof.md`：C9 Fourier/Vaaler 尾项内联证明。
 - `docs/rh-c6-internal-terminal-inline-proof.md`：C6 内部终端 A/PI/FCT/SC 内联证明链。
 - `docs/rh-c4-sparse-pc3-ov2-inline-proof.md`：C4 过疏 PC3/OV2 内联证明链。
+- `docs/rh-c1-c10-c11-final-reference-and-submission-closure.md`：C1/C10/C11 最终引用与审稿工程闭合包。
 - `docs/rh-final-merge-status-and-gap-closure.md`：RH 总攻最终合并状态与剩余缺口判定。
 - `docs/rh-final-consistency-review.md`
 - `docs/rh-unconditional-proof-roadmap.md`

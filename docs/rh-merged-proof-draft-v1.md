@@ -10,15 +10,15 @@
 | 编号 | 名称 | 当前状态 | 待闭合义务 |
 |---|---|---|---|
 | Lemma G0 | 全局归一化与常数层级 | 已主文化 | 移入第 1 节并消除外部跳转 |
-| Proposition PC1 | 离线零点推出平滑素数异常 | 条件主文化 | 补 `EXT-PC1-LI` 精确定理号或完整文内证明 |
+| Proposition PC1 | 离线零点推出平滑素数异常 | 引用层闭合 | 有限边界已文内，一般情形归 `EXT-PC1-LI` |
 | Lemma PC2 | CRT 零频候选基线 | 已主文化 | 内联边界误差证明 |
 | Proposition CF | 覆盖场方程与二分 | 已定义化修正 | 采用 `ACC/Hole/OV` 三账本并内联 C3 |
-| Proposition Sparse | 过疏 PC3/OV2 分支 | 已内联结构链 | C4 已给 C4.1--C4.4；待 C10 非共振引用 |
-| Proposition Dense | 过密 Dual/DGap 分支 | 内部三接口已定理化 | C5 已给 Lemma C5.1--C5.4；C6/C9 已内联，待 C10 与 C2 放电 |
-| Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 已内联无循环证明 | C6 已给 C6.1--C6.4；待 C7/C10 外部出口放电 |
+| Proposition Sparse | 过疏 PC3/OV2 分支 | 已内联结构链 | C4 已给 C4.1--C4.4；非共振引用由 C10 登记 |
+| Proposition Dense | 过密 Dual/DGap 分支 | 内部三接口已定理化 | C5 已给 Lemma C5.1--C5.4；C6/C9 已内联，C2/C10 已登记 |
+| Theorem Terminal | `A/PI/FCT/SC` 内部终端闭合 | 已内联无循环证明 | C6 已给 C6.1--C6.4；C7/C10 外部出口已登记 |
 | Theorem External | `LV/LSMP/CE/DSO/NRC` 外部事件吸收 | 条件主文化 | 绑定 `EXT-*` 与失败出口；C8 已排除自由 `CapacityFail` |
-| Lemma Tail | Fourier/Vaaler 尾项吸收 | 已内联证明 | C9 已给 C9.1--C9.4；待 C10 中 `EXT-Vaaler` 正式引用 |
-| Table EXT | 外部定理包 | 来源级闭合 | 补正式 BibTeX、章节、定理号或页码 |
+| Lemma Tail | Fourier/Vaaler 尾项吸收 | 已内联证明 | C9 已给 C9.1--C9.4；`EXT-Vaaler` 来源由 C10 登记 |
+| Table EXT | 外部定理包 | 引用层闭合 | C10 已列正式来源与使用边界；待 LaTeX BibTeX 执行 |
 
 当前合并稿 v1 的逻辑用途是：把证明依赖压缩为上表 10 个可审查接口。只有当每一行的“待闭合义务”被内联证明或正式引用勾销后，主定理才可从条件版改为无条件版。
 
@@ -137,17 +137,17 @@ PPI/DGap/PC4 的固定复杂度模板由平滑窗、硬边界、CRT 字符、倒
 
 `EXT-KL`, `EXT-Vaaler`, `EXT-PC1-EF`, `EXT-PC1-LI`, `EXT-BG`, `EXT-Selberg`, `EXT-Vaughan`。
 
-其中 `EXT-PC1-EF` 已文内证明，`EXT-PC1-LI` 有限边界情形已文内证明，一般情形为经典 Landau--Ingham 定理。`EXT-KL` 只用素数模 `ax+b/x` 特例；`EXT-Vaaler` 只用一维区间截断。引用闭合见 `docs/rh-ext-maintext-citation-closure.md`。
+其中 `EXT-PC1-EF` 已文内证明，`EXT-PC1-LI` 有限边界情形已文内证明，一般情形为经典 Landau--Ingham 定理。`EXT-KL` 只用素数模 `ax+b/x` 特例；`EXT-Vaaler` 只用一维区间截断。引用闭合见 `docs/rh-ext-maintext-citation-closure.md`；最终 C1/C10/C11 闭合包见 `docs/rh-c1-c10-c11-final-reference-and-submission-closure.md`。
 
 ## 11. 合并主定理（当前状态）
 
-**Theorem RH-Contradiction-Field-Merged-v1（合并稿条件版）。** 假设本文引用的主文链、容量引理和 `EXT-*` 外部定理均以最终论文标准编号、引用或内联证明成立，则 ζ 函数不存在离线零点 `β>1/2`。
+**Theorem RH-Contradiction-Field-Merged-v1（合并稿审稿版）。** 若 C1/C10 中列明的外部经典定理按其使用边界正式引用，且 C4--C9 的内联结构引理均通过最终逐行审稿，则本文反例矛盾场推出 ζ 函数不存在离线零点 `β>1/2`。
 
 **证明。** 反设存在离线零点。第 2 节给 PC1 异常；第 3 节将其转为粗合数候选反向异常；第 4 节覆盖场方程给过疏/过密二分。过疏由第 5 节进入 `A` 或 D 组终端；过密由第 6 节进入 `A/OV2/PI/FCT/SC/LV/LSMP/CE/DSO/CapacityFail`。第 7 节排除内部终端无限吸收，第 8 节处理外部事件，第 9 节处理尾项，第 10 节绑定外部定理。所有分支均不能作为离线零点异常的自由吸收通道，矛盾。证毕。
 
 ## 12. 未完成的无条件化判据
 
-本文已经完成单篇合并雏形，但仍保留以下未完成项：
+本文已经完成单篇合并雏形和 C1/C10/C11 引用层闭合包，但仍保留以下投稿工程项：
 
 1. 把所有 `docs/...` 引用替换为本文内部编号定理或正式参考文献；
 2. 给全部 `EXT-*` 补 BibTeX、章节、页码或定理号；

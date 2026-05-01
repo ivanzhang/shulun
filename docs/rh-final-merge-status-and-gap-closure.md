@@ -77,7 +77,7 @@
 
 ## 6.1 合并稿无条件化判据表
 
-新增 `docs/rh-merge-unconditional-checklist.md`，把合并稿条件接口拆为 C0--C11。当前最小闭合割集为 `{C1,C10,C11}`。这意味着下一轮应优先补正式外部引用 C10 与 C1/PC1 引用闭合，而不是继续增加新分支。
+新增 `docs/rh-merge-unconditional-checklist.md`，把合并稿条件接口拆为 C0--C11。当前最小闭合割集为 `{C11}`。这意味着下一轮应优先补C11 单篇 LaTeX/PDF 审稿工程，而不是继续增加新分支。
 
 ## 6.2 C3 覆盖场修正
 
@@ -85,23 +85,27 @@
 
 ## 6.3 C8 CapacityFail 升级审查
 
-新增 `docs/rh-c8-capacityfail-upgrade-audit.md`。结论是：自由 `CapacityFail` 已排除，但 C8 不能独立完全勾销；它随 C10 的正式引用一起放电。当前最小闭合割集更新为 `{C1,C10,C11}`。
+新增 `docs/rh-c8-capacityfail-upgrade-audit.md`。结论是：自由 `CapacityFail` 已排除，但 C8 不能独立完全勾销；它随 C11 最终审稿工程一起复核。当前最小闭合割集更新为 `{C11}`。
 
 ## 6.4 C5 DGap 内联证明链
 
-新增 `docs/rh-c5-dgap-inline-proof-chain.md`。DGap 过密分支已与 C3 修正版匹配，入口为 `DGap_z=Hole_z^0-Hole_z`；内部三接口被拆成 C5.1 盒局部化、C5.2 frame 投影能量、C5.3 正交投影分配、C5.4 低维频率抽取。当前最小闭合割集更新为 `{C1,C10,C11}`。
+新增 `docs/rh-c5-dgap-inline-proof-chain.md`。DGap 过密分支已与 C3 修正版匹配，入口为 `DGap_z=Hole_z^0-Hole_z`；内部三接口被拆成 C5.1 盒局部化、C5.2 frame 投影能量、C5.3 正交投影分配、C5.4 低维频率抽取。当前最小闭合割集更新为 `{C11}`。
 
 ## 6.5 C9 Fourier/Vaaler 尾项内联
 
-新增 `docs/rh-c9-fourier-vaaler-tail-inline-proof.md`。尾项处理被拆成 C9.1 单原子尾项、C9.2 固定布尔组合稳定、C9.3 有限重叠盒族求和、C9.4 高频异常命名出口。C9 已从“待内联”改为“已内联，待 C10 正式引用”。当前最小闭合割集更新为 `{C1,C10,C11}`。
+新增 `docs/rh-c9-fourier-vaaler-tail-inline-proof.md`。尾项处理被拆成 C9.1 单原子尾项、C9.2 固定布尔组合稳定、C9.3 有限重叠盒族求和、C9.4 高频异常命名出口。C9 已从“待内联”改为“已内联，待 C10 正式引用”。当前最小闭合割集更新为 `{C11}`。
 
 ## 6.6 C6 内部终端无循环内联
 
-新增 `docs/rh-c6-internal-terminal-inline-proof.md`。内部终端 `A/PI/FCT/SC` 被拆成 C6.1 ACC no-cycle、C6.2 PI terminal reduction、C6.3 FCT Noether descent、C6.4 SC descent，并由 Theorem C6 统一排除内部无限逃逸路径。当前最小闭合割集更新为 `{C1,C10,C11}`。
+新增 `docs/rh-c6-internal-terminal-inline-proof.md`。内部终端 `A/PI/FCT/SC` 被拆成 C6.1 ACC no-cycle、C6.2 PI terminal reduction、C6.3 FCT Noether descent、C6.4 SC descent，并由 Theorem C6 统一排除内部无限逃逸路径。当前最小闭合割集更新为 `{C11}`。
 
 ## 6.7 C4 过疏 PC3/OV2 内联
 
-新增 `docs/rh-c4-sparse-pc3-ov2-inline-proof.md`。C4 与 C3 修正版账本对齐：过疏异常由 `ACC/Hole/OV` 三路承载；`OV` 大时经 C4.1 AAI 双锚正规形、C4.2 dyadic 主层定位、C4.3 不可检测均匀质量吸收、C4.4 PPI 相位推送，最终进入 `A/FCT/SC/PI/LV/LSMP/CE/DSO/NRC`。当前最小闭合割集更新为 `{C1,C10,C11}`。
+新增 `docs/rh-c4-sparse-pc3-ov2-inline-proof.md`。C4 与 C3 修正版账本对齐：过疏异常由 `ACC/Hole/OV` 三路承载；`OV` 大时经 C4.1 AAI 双锚正规形、C4.2 dyadic 主层定位、C4.3 不可检测均匀质量吸收、C4.4 PPI 相位推送，最终进入 `A/FCT/SC/PI/LV/LSMP/CE/DSO/NRC`。当前最小闭合割集更新为 `{C11}`。
+
+## 6.8 C1/C10/C11 最终引用闭合包
+
+新增 `docs/rh-c1-c10-c11-final-reference-and-submission-closure.md`。C1 的有限边界情形已文内证明，一般情形归 `EXT-PC1-LI`；C10 列出 `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的正式来源与使用边界；C11 被明确为单篇 LaTeX/PDF、交叉引用、符号表与 BibTeX 工程。当前割集保持为 `{C11}`，其含义是只剩单篇 LaTeX/PDF 与顶刊审稿工程，而非新的结构分支。
 
 ## 7. 状态定理
 
