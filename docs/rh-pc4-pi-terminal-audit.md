@@ -33,7 +33,7 @@ Lacunary 包来自尺度中心充分分离。`docs/rh-pc4-pi-cap-carleson.md` �
 
 还需说明 PI-Seed 的离线零点下界若无限发生，必无法全部躲进容量有限的 lacunary 包；否则必须抽取 dense 包或触发终端。
 
-因此 PC4-PI 的当前最小剩余硬点是：**PI-Lacunary-Capacity**。
+该硬点已写入 `docs/rh-pc4-pi-lacunary-capacity.md`。其结论是 lacunary 部分受 disjoint Mellin/Carleson 容量控制；若超容量失败则转入 SC/LV/CE/单尺度 PI 极端。
 
 ## 4. PI 事件图归约
 
@@ -41,7 +41,7 @@ Lacunary 包来自尺度中心充分分离。`docs/rh-pc4-pi-cap-carleson.md` �
 
 1. PI-Seed 的固定模板能量下界成立；
 2. dense 包由 `PC4-PI-Dense` 与正交输入最终审查归约；
-3. lacunary 包满足 PI-Lacunary-Capacity；
+3. lacunary 包满足 `docs/rh-pc4-pi-lacunary-capacity.md` 的 PI-Lacunary-Capacity；
 4. CE/LSMP/LV/FCT/SC/NRC 作为事件图终端处理。
 
 则 PI 不能作为最终逃逸通道。
@@ -50,11 +50,4 @@ Lacunary 包来自尺度中心充分分离。`docs/rh-pc4-pi-cap-carleson.md` �
 
 ## 5. 下一步硬点
 
-下一步应专攻 `PI-Lacunary-Capacity`：
-
-1. 定义 lacunary 包的尺度分离条件；
-2. 证明固定模板窗口在 lacunary 尺度上的物理/CRT 支撑有限重叠；
-3. 给出 Carleson 型容量上界；
-4. 将失败分支转入 dense 包、SC/LV 或 CE。
-
-完成该点后，PC4-PI 可作为无循环事件图输入接入第 5 项终端闭合。
+PI-Lacunary-Capacity 已补入 `docs/rh-pc4-pi-lacunary-capacity.md`。PI-Seed、dense 正交与 lacunary 容量三者的无循环事件图合并见 `docs/rh-pc4-pi-terminal-final-reduction.md`。下一步按 PC4 终端排序继续审查 FCT/SC/A 的剩余输入。

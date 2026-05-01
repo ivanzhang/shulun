@@ -58,6 +58,8 @@
 - `docs/rh-pc4-final-exclusion-framework.md`
 - `docs/rh-pc4-pi-seed.md`
 - `docs/rh-pc4-pi-cap-carleson.md`
+- `docs/rh-pc4-pi-lacunary-capacity.md`
+- `docs/rh-pc4-pi-terminal-final-reduction.md`
 - `docs/rh-pc4-dense-scale-orthogonality.md`
 - `docs/rh-pc4-dso-crt-martingale.md`
 - `docs/rh-pc4-orthogonality-input-audit.md`

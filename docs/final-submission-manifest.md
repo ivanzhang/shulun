@@ -46,6 +46,8 @@
 - `docs/rh-pc4-pi-dense-closure-theorem.md`：PC4-PI 密集尺度正交闭合命题。
 - `docs/rh-pc4-pi-closure-theorem.md`：PC4-PI 高投影增量分支闭合命题。
 - `docs/rh-pc4-pi-terminal-audit.md`：PC4-PI 终端输入审查。
+- `docs/rh-pc4-pi-lacunary-capacity.md`：PC4-PI Lacunary 容量上界。
+- `docs/rh-pc4-pi-terminal-final-reduction.md`：PC4-PI seed--dense--lacunary 三分终端最终归约。
 - `docs/rh-pc4-fct-seed.md`：PC4-FCT 频率闭包跨尺度种子命题。
 - `docs/rh-pc4-fct-phase-drift.md`：PC4-FCT 新增 CRT 坐标相位漂移压力引理。
 - `docs/rh-pc4-fct-noether.md`：PC4-FCT Noether 闭包链终止命题。
