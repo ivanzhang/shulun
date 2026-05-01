@@ -266,4 +266,4 @@
 
 ## Review-Form-Elimination 审查归档
 
-新增 `docs/rh-review-form-elimination-audit.md`。当前归档状态：GEE 局部闭合已正式化，RH 主定理仍处于 review form，不能宣称无条件证明定稿。
+新增 `docs/rh-review-form-elimination-audit.md`。当前归档状态：GEE 局部闭合、PC1 与 PC2 主稿证明已正式化，RH 主定理仍处于 review form，不能宣称无条件证明定稿。

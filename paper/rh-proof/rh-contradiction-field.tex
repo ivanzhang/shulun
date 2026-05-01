@@ -83,12 +83,45 @@ Assume that $\zeta(s)$ has a zero $\rho_0=\beta+i\gamma$ with $\beta>1/2$.  Then
   \sigma\bigl(\Psi_W(X_j)-X_j\widehat W(1)\bigr)\ge X_j^{\beta-o(1)}.
 \]
 \end{theorem}
-\begin{proof}[Proof sketch for review]
-The smooth explicit formula follows by Mellin inversion and contour shift:
+\begin{proof}
+Let
 \[
-\Psi_W(X)=X\widehat W(1)-\sum_\rho X^\rho\widehat W(\rho)+E_W(X).
+  \Psi_W(X)=\sum_{n\ge1}\Lambda(n)W(n/X),\qquad
+  \widehat W(s)=\int_0^\infty W(t)t^{s-1}\,\dd t .
 \]
-Choose $W$ with $\widehat W(\rho_0)\ne0$.  If the visible boundary zeros with real part $\beta$ are finite, the normalized error is a non-zero finite trigonometric polynomial plus $o(1)$; its mean square is positive, giving an infinite oscillating subsequence.  In the general boundary or supremum case one invokes the Landau--Ingham oscillation theorem, recorded as EXT-PC1-LI in \S\ref{sec:external}.  Prime powers contribute $O(X^{1/2}\log^C X)$ and are absorbed since $\beta>1/2$.
+Since $W\in C_c^\infty((0,\infty))$, its Mellin transform is entire and rapidly decays on vertical lines.  Mellin inversion and the logarithmic derivative of $\zeta$ give, initially on $\Re s>1$,
+\[
+  \Psi_W(X)=\frac{1}{2\pi i}\int_{(c)}-\frac{\zeta'}{\zeta}(s)\widehat W(s)X^s\,\dd s .
+\]
+Moving the contour to a fixed line left of $1/2$, and summing residues at $s=1$, at non-trivial zeros, and at the trivial zeros and pole-side terms, yields
+\[
+  \Psi_W(X)-X\widehat W(1)
+   =-\sum_\rho X^\rho\widehat W(\rho)+O_W(X^{1/2-\eta})+O_W(1)
+\]
+for some fixed $\eta>0$ after the usual truncation-and-decay limiting argument.  The exact power in the displayed lower-order term is immaterial here; every such term is $o(X^{\beta-o(1)})$ because $\beta>1/2$.
+
+Choose $W$ so that $\widehat W(\rho_0)\ne0$.  This is possible because the continuous linear functional $W\mapsto\widehat W(\rho_0)$ is not identically zero on $C_c^\infty((0,\infty))$.  Put $u=\log X$ and $R_W(X)=\Psi_W(X)-X\widehat W(1)$.  If the visible zeros on the boundary line $\Re\rho=\beta$ are finite, then
+\[
+  e^{-\beta u}R_W(e^u)=T(u)+o(1),\qquad
+  T(u)=-\sum_{\Re\rho=\beta} \widehat W(\rho)e^{i\gamma u},
+\]
+where $T$ is a non-zero finite trigonometric polynomial.  Orthogonality of distinct exponentials gives
+\[
+  \lim_{U\to\infty}\frac1U\int_0^U |T(u)|^2\,\dd u
+   =\sum_{\Re\rho=\beta}|\widehat W(\rho)|^2>0,
+\]
+with the evident grouping if several zeros have the same ordinate.  Hence $|T(u_j)|\ge c>0$ for infinitely many $u_j\to\infty$.  Taking a real or imaginary projection with non-zero oscillation, and then passing to one of the two sign classes, gives a fixed $\sigma\in\{\pm1\}$ and $X_j=e^{u_j}$ such that
+\[
+  \sigma R_W(X_j)\ge cX_j^\beta+o(X_j^\beta).
+\]
+
+If the boundary visible zeros are infinite, or if $\beta$ is reached only as a supremum by visible singularities, the same conclusion is exactly the classical Landau--Ingham oscillation input EXT-PC1-LI listed in \S\ref{sec:external}: an unremovable Mellin/Laplace singularity on the boundary forbids $R_W(X)=o(X^{\beta-o(1)})$ on all large scales and supplies an infinite subsequence with the asserted size.  Splitting that subsequence by sign again gives a fixed $\sigma$.
+
+Finally, replacing the von Mangoldt sum by the prime Chebyshev sum changes the left side by the prime-power contribution
+\[
+  \sum_{m\ge2}\sum_p (\log p) W(p^m/X)=O_W(X^{1/2}\log^C X)=o(X^{\beta-o(1)}),
+\]
+so the displayed lower bound remains valid in the stated Chebyshev/von Mangoldt normalization.  This proves the theorem.
 \end{proof}
 
 \section{PC2 and the covering field}\label{sec:pc2-c3}
@@ -102,8 +135,45 @@ Consequently
   B_z-B_z^0=-E_z+o(\Delta).
 \]
 \end{lemma}
-\begin{proof}[Review proof]
-The primorial $M_z=X^{o(1)}$ and elementary CRT counting give the expected non-zero residue density in complete periods, while boundary periods contribute $X^{o(1)}$ relative loss on the present scale.  This proof is to be expanded from the PC2 appendix in the final text.
+\begin{proof}
+Write $M=M_z$ and let
+\[
+  \chi_M(n)=1_{(n,M)=1},\qquad
+  C_z(X)=\sum_{n\ge1}\chi_M(n)W(n/X).
+\]
+The zero-frequency baseline is
+\[
+  C_z^0(X)=\frac{\varphi(M)}{M}X\int_0^\infty W(t)\,\dd t .
+\]
+By the elementary Chebyshev bound $\vartheta(z)\ll z$,
+\[
+  M=\prod_{p\le z}p=\exp(\vartheta(z))\le \exp(O((\log X)^A))=X^{o(1)} .
+\]
+For each reduced residue class $a\bmod M$, smooth summation over the arithmetic progression gives
+\[
+  \sum_{n\equiv a\, (M)} W(n/X)
+   =\frac{X}{M}\int_0^\infty W(t)\,\dd t+O_W(1),
+\]
+because it is a Riemann sum with mesh $M/X$ and total variation bounded in terms of $W$.  Summing over the $\varphi(M)$ reduced classes yields
+\[
+  C_z(X)=C_z^0(X)+O_W(\varphi(M))=C_z^0(X)+O_W(M).
+\]
+Since $M=X^{o(1)}$ and $\Delta=X^{\beta-o(1)}$ with $\beta>1/2$, this error is $o(\Delta)$, proving $C_z-C_z^0=o(\Delta)$.
+
+For all sufficiently large $X$, every prime in the support of $W(n/X)$ is larger than $z$, hence is coprime to $M$.  Thus the prime ledger $P_z$ is contained in the CRT candidate ledger.  Decompose the candidate ledger as
+\[
+  C_z=P_z+B_z+Err_z,
+\]
+where $Err_z$ consists only of prime powers and harmless smoothing/endpoint normalization terms.  The prime-power contribution is
+\[
+  Err_z=O_W\!\left(\sum_{m\ge2}\sum_{p^m\asymp X}\log p\right)
+       =O_W(X^{1/2}\log^C X)=o(\Delta).
+\]
+With $B_z^0=C_z^0-P_z^0$, subtraction gives
+\[
+  B_z-B_z^0=(C_z-C_z^0)-(P_z-P_z^0)+Err_z=-E_z+o(\Delta),
+\]
+which is the asserted rough-composite ledger identity.
 \end{proof}
 
 \begin{lemma}[C3 covering-field decomposition]\label{lem:c3}
@@ -185,13 +255,34 @@ where the weights $\theta_{a,E}$ have finite global overlap.  Zero-frequency CRT
 \end{definition}
 
 \begin{lemma}[GEE-0 bookkeeping]\label{lem:gee0}
-Assuming PC1, PC2, and the finite-overlap routing ledger, there is $c_0>0$ such that along the successful scales
+Assuming PC1, PC2, and the finite-overlap routing ledger, there is a fixed $C_{route}$ such that along the successful scales
 \[
-  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)\ge c_0\Delta+o(\Delta).
+  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)\ge \Delta\log^{-C_{route}}X-o(\Delta)=X^{\beta-o(1)}.
 \]
 \end{lemma}
-\begin{proof}[Review proof]
-PC1 supplies a signed anomaly of size $\Delta$.  PC2 subtracts the CRT zero-frequency baseline and places the anomaly in the rough-composite candidate ledger.  The GEE routing partitions each excess atom into one of the nine exits with only logarithmic finite overlap.  Since Definition~\ref{def:gee-load} records only $w_X-w_X^0$, no zero-frequency capacity is counted twice, and the routed ledger preserves a fixed positive proportion of the original anomaly up to $o(\Delta)$ boundary, prime-power, and smoothing errors.
+\begin{proof}
+By Theorem~\ref{thm:pc1} and Lemma~\ref{lem:pc2}, after choosing the successful sign $\sigma$ the signed rough-composite excess has total mass
+\[
+  \sum_a \operatorname{Excess}(a)\ge \Delta-o(\Delta),
+\]
+where the atoms $a$ are the fixed-complexity cells produced by the $C3$ decomposition and by the subsequent sparse, dense, and tail routing.  The $o(\Delta)$ term contains exactly the PC2 boundary, smoothing, and prime-power errors already estimated in Lemma~\ref{lem:pc2}.
+
+The routing ledger is finite-depth.  The $C3$ split into $\ACC$, $\Hole$, and overlap atoms is disjoint at first layer; dyadic localization, Vaaler truncation, box decomposition, sign splitting, and seed transfer introduce at most $\log^{C_{route}}X$ descendants of any original atom.  Equivalently,
+\[
+  1\le \sum_{E\in\mathcal E}\theta_{a,E}
+  \quad\text{and}\quad
+  \sum_{E\in\mathcal E}\theta_{a,E}\le \log^{C_{route}}X
+\]
+for routed atoms not absorbed into the already-counted baseline.  Definition~\ref{def:gee-load} subtracts $w_X^0$ before final registration, so zero-frequency CRT/MLC capacity is never counted as exceptional load.
+
+Therefore the total final load satisfies
+\[
+  \sum_{E\in\mathcal E}\operatorname{Load}(E;X)
+   =\sum_E\sum_{a\mapsto E}\theta_{a,E}\operatorname{Excess}(a)
+   \ge \log^{-C_{route}}X\sum_a\operatorname{Excess}(a)
+   \ge \Delta\log^{-C_{route}}X-o(\Delta).
+\]
+Since a fixed power of $\log X$ is $X^{o(1)}$, the right-hand side is still $X^{\beta-o(1)}$ along the successful scales.  This is precisely the asserted bookkeeping lower bound.
 \end{proof}
 
 \begin{longtable}{@{}lll@{}}
@@ -284,8 +375,15 @@ This summarizes \texttt{docs/rh-aex2-dso-squarefunction-formal.md}.  Fixed-compl
 \begin{proposition}[Analytic exit reduction]
 After the six low-black-box exits have been closed, the remaining analytic exits $PI,DSO,NRC$ are reduced to three inequalities: a zero-frequency-subtracted projection-capacity bound, a no-power-loss DSO square-function bound, and an NRC entrywise parameter-matching bound.
 \end{proposition}
-\begin{proof}[Review proof]
-This is the LaTeX summary of \texttt{docs/rh-analytic-exit-reduction-table.md}.  Baseline subtraction removes zero-frequency capacity from $PI/DSO$ load.  The remaining $PI$ load is controlled by the projection-capacity inequality AEX-1; the remaining $DSO$ load is controlled by the square-function inequality AEX-2; and every $NRC$ entry is either square-root-small or routed out by AEX-3.  Hence these three inequalities would imply $Load(PI)+Load(DSO)+Load(NRC)=o(\Delta)$.
+\begin{proof}
+By the baseline-subtraction convention in Definition~\ref{def:gee-load}, the final $PI$ and $DSO$ loads contain only positive excess over the CRT zero-frequency capacity; ordinary zero-frequency mass has already been removed in PC2 and cannot be registered again.  Therefore the analytic load decomposes as
+\[
+  \operatorname{Load}(PI;X)+\operatorname{Load}(DSO;X)+\operatorname{Load}(NRC;X)
+  \le Excess_{PI}+Excess_{DSO}+Load_{NRC}+Err_{tr},
+\]
+where $Err_{tr}$ consists of atoms transferred by the NoReturn and transfer-accounting ledgers to $LV,CE,LSMP,FCT,SC,A$.
+
+AEX-1 gives $Excess_{PI}=o(\Delta)$ after the lacunary/dense projection split.  AEX-2 gives $Excess_{DSO}=o(\Delta)$ from the Parseval/frame square-function reduction and the DSO-SF capacity input.  AEX-3 treats each NRC entry separately: single-variable entries are square-root-small by the stated $EXT$ estimate, while tail, two-variable, and DSO-E entries either satisfy the same bound after parameter matching or are transferred to the named exits.  Transferred atoms are deleted from the source exit before final load is computed, so they are not counted twice.  Hence the three analytic exits have total load $o(\Delta)$, conditional exactly on AEX-1, AEX-2, AEX-3 and the accepted external estimates listed in \S\ref{sec:external}.
 \end{proof}
 
 

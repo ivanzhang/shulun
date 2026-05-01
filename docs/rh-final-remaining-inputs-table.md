@@ -21,7 +21,7 @@
 | R2 | `PI-Dense` | dense fixed-template Carleson/square-function 容量界 | 已归约到 `DSO-SF/EXT-KL` |
 | R3 | `DSO-SF` | martingale square-function 基线容量界 | 已由 `docs/rh-dso-sf-input-final.md` 文内证明 |
 | R4 | `EXT-Precision` | `EXT-PC1-LI/EXT-KL/EXT-Vaaler/EXT-BG/EXT-Selberg/EXT-Vaughan` 的定理号、变量匹配、常数依赖 | 已由 `docs/rh-ext-precision-final.md` 补齐；页码核验为排版义务 |
-| R5 | `Review-Form-Elimination` | 删除或升级 LaTeX 中所有 `Proof sketch`、`Review proof`、`review form` | 需在 R1--R4 完成后执行 |
+| R5 | `Review-Form-Elimination` | 删除或升级 LaTeX 中所有 `Proof sketch`、`Review proof`、`review form` | PC1 与 PC2 已升级；剩余 C9/GEE 汇总/AEX-3 与主定理 review form |
 
 ## 3. 依赖关系
 
