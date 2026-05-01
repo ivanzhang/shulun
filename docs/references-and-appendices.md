@@ -43,6 +43,7 @@
 - `docs/rh-pc4-pi-dense-closure-theorem.md`：PC4-PI 密集尺度正交闭合命题。
 - `docs/rh-pc4-pi-closure-theorem.md`：PC4-PI 高投影增量分支闭合命题。
 - `docs/rh-pc4-fct-seed.md`：PC4-FCT 频率闭包跨尺度种子命题。
+- `docs/rh-pc4-fct-phase-drift.md`：PC4-FCT 新增 CRT 坐标相位漂移压力引理。
 
 ## B. 行列归约附录
 
