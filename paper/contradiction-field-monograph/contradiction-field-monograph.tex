@@ -125,11 +125,49 @@ for adaptive true-hit layers, subject to the same fixed-$w$ convention used in t
 \begin{proof}[Proof sketch and status]
 The argument is a conditional synthesis, not a final unconditional theorem.  A top-scale covering excess is first decomposed into adaptive true-hit layers; any single-prime concentration is routed to the Single-Prime CRTDefect exit.  The remaining excess is converted by a TCA linear bridge into a positive short-block load.  The block load is forced into the SMC/SC2 near-crossing ledger.  The $45^\circ$ main synchronization is split into large-factor reuse, shared-complement factors, and good synchronized pairs; reuse and shared factors are excluded by short-window rigidity, while good pairs are sent to an auxiliary-prime Fourier CRT-defect.  Directional balance excludes the Fourier defect unless the top-scale energy is already below the capacity threshold.  Finally, the weighted Bonferroni zero-mass estimate supplies enough zero-hit block mass to make the capacity comparison incompatible.
 
-The current audit is archived under \path{docs/archive/monograph-reviews/} and classifies this as a research proposition conditional on the four inputs above.  Because an unconditional proof of the underlying two-point assertion would imply fixed-gap prime-pair consequences, including the twin-prime case when $w=2$, this monograph records the chain as a conditional research chapter rather than an established theorem.
+The current audit is archived under \path{docs/archive/monograph-reviews/} and classifies this as a research proposition conditional on the four inputs above.  The fact that an unconditional proof would imply fixed-gap prime-pair consequences, including the twin-prime case when $w=2$, is not a logical obstruction.  It only marks the strength of the claim.  The reason this chapter remains conditional is that the four listed inputs have not yet all been inlined as independently verified unconditional proofs.
+\end{proof}
+
+\begin{proposition}[Window-compressed conditional variant]
+Keep the same fixed even integer $w>0$ and the same four inputs as in the preceding proposition.  Let $I$ be any consecutive back-half window of $H(P)$ rows in the $P\times P$ matrix, so that $|I|=H(P)P+O(P)$.  Assume
+\[
+  Q_{\mathrm{eff}}\le C_Q(\log P)^C.
+\]
+For a prescribed middle-scale error budget $\varepsilon_{\mathrm{SC2}}>0$, the conditional row threshold supplied by the current ledger is
+\[
+  H_{\min}^{\mathrm{cond}}(P;\varepsilon_{\mathrm{SC2}})
+  =
+  \left\lceil
+  \frac{C_Q}{\varepsilon_{\mathrm{SC2}}}
+  P^{1/2}(\log P)^C
+  \right\rceil.
+\]
+Equivalently, one may use the asymptotic form
+\[
+  H(P)\ge H_{\min}^{\mathrm{asym}}(P)
+  :=
+  \left\lceil P^{1/2}(\log P)^{C_*}\right\rceil,
+  \qquad C_*>C.
+\]
+Under either threshold, the same conditional contradiction-field chain gives an element
+\[
+  x\in I,\qquad p\nmid x(x-w)\quad(p\le P).
+\]
+When $x-w>1$, both $x$ and $x-w$ are primes.
+\end{proposition}
+
+\begin{proof}[Recorded scale check]
+The only scale-sensitive term in the recorded chain is the middle/high-scale $K=2$ near-crossing error.  With top layer $Y=P^{3/4}$ and $Q_{\mathrm{eff}}\le(\log P)^C$, replacing the original back-half length $\asymp P^2$ by $|I|\asymp H(P)P$ changes the normalized error to
+\[
+  \frac{Q_{\mathrm{eff}}Y^2}{|I|}
+  \ll
+  \frac{P^{1/2}(\log P)^C}{H(P)}.
+\]
+The displayed lower bound on $H(P)$ makes this at most $\varepsilon_{\mathrm{SC2}}$ in the explicit form, or $o(1)$ in the asymptotic form.  Hence the constants in the TCA, SC2, zero-mass, finite-package, and smoothing ledgers are unchanged.  The conclusion is therefore a conditional window-compressed version of the previous proposition.  It becomes an unconditional prime-pair theorem only if the four recorded inputs are independently proved and accepted.
 \end{proof}
 
 \begin{remark}[Referee boundary]
-The two-point secondary-sieve chapter is included to document the contradiction-field architecture and its parameter ledger.  It must not be cited as an unconditional proof of prime pairs, the twin-prime conjecture, or Goldbach-type assertions unless the four listed inputs are independently proved and accepted.
+The two-point secondary-sieve chapter is included to document the contradiction-field architecture and its parameter ledger.  The window-compression audit is recorded in \path{docs/monograph/two-point-window-compression-and-unconditionality.md}.  It must not be cited as an unconditional proof of prime pairs, the twin-prime conjecture, or Goldbach-type assertions unless the four listed inputs are independently proved and accepted.
 \end{remark}
 
 \chapter{Zeta-Zero Contradiction Fields}

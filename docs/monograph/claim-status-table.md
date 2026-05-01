@@ -28,7 +28,7 @@
 
 ## 两点 P-rough 命题 A/B 状态
 
-新增 `docs/monograph/two-point-rough-pair-propositions.md`。审查结论：A 与 B 在同余条件上等价；由于 `P×P` 方阵内任意大于 1 的 `P`-rough 数必为素数，A/B 对固定偶数 `w` 的全体充分大 `P` 成立将推出固定偶差素数对无穷多，特别 `w=2` 推出孪生素数猜想。因此 A/B 不能作为当前论著的无条件定理，只能列为二点 rough Jacobsthal / prime-pair 级未来突破方向。
+新增 `docs/monograph/two-point-rough-pair-propositions.md`。审查结论：A 与 B 在同余条件上等价；由于 `P×P` 方阵内任意大于 1 的 `P`-rough 数必为素数，A/B 对固定偶数 `w` 的全体充分大 `P` 成立将推出固定偶差素数对无穷多，特别 `w=2` 推出孪生素数猜想。这一强后果不是逻辑反驳；若证明链独立、逐行、无缺口，则可升级为无条件定理。当前不能升级的实际原因是关键输入仍以条件链或命名出口形式登记，尚未全部内联证明并通过独立审稿。
 
 ## 二次筛研究备忘录更新
 
@@ -199,3 +199,5 @@
 | H4-H6最终补正 | 逻辑缺口压缩为文稿工程义务 | `docs/monograph/two-point-gap-closure-workbench.md` 已补充 H4--H6。自适应分层中的单素数大贡献定义为 Single-Prime CRTDefect，可由辅助投影能量处理；小 `q<=100` 作为有限包，`q=2` 归入奇数骨架，奇素 `q|w` 峰值更弱。G1--G7 当前不再有新的逻辑类型缺口，剩余为正式稿中添加该出口、有限包表和自适应分层表述。 |
 
 | 正式稿工程义务完成 | 已并入正式研究稿/合著条件章节 | `docs/monograph/two-point-secondary-sieve-research.md` 已补充第 331--334 节：Single-Prime CRTDefect 出口、自适应真实命中分层、小 `q<=100` 有限包表。`paper/contradiction-field-monograph/contradiction-field-monograph.tex` 已同步更新条件命题四输入和参数为 `nu_j^real<=0.4`。LaTeX 编译通过。 |
+
+| 二次筛窗口压缩版 | 条件加强/非无条件定理 | 新增 `docs/monograph/two-point-window-compression-and-unconditionality.md`，并在 `docs/monograph/two-point-secondary-sieve-research.md` 第 335--339 节写入窗口压缩审查。当前方法在四项输入一致成立时，可把后半窗口从约 `P/2` 行压缩到 `H_min^cond(P;eps)=ceil((C_Q/eps)P^{1/2}(log P)^C)` 行；渐近写法为 `ceil(P^{1/2}(log P)^{C_*})`, `C_*>C`。固定行或纯对数行仍超出现有 SC2 误差控制。 |
