@@ -72,4 +72,4 @@ CE 不引用 PC4 最终 closure，只输出 seed 或外部事件，由 `docs/rh-
 
 ## 8. 下一步最优硬点
 
-DSO/容量审稿完成后，剩余最优硬点转向 `LSMP/FCT/CapacityFail` 的最终闭合强度：特别是 LSMP coarea/DPI、FCT Tree-WFE 与各容量定理的证明细节是否足够审稿级。
+DSO/容量审稿完成后，`LSMP/FCT/CapacityFail` 的最终闭合强度审查见 `docs/rh-lsmp-fct-capacity-final-audit.md`。
