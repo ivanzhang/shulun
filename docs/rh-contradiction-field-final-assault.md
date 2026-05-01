@@ -105,7 +105,7 @@
 1. **解析输入**：PC1 的 Landau--Ingham 平滑振荡和权函数非湮灭，定理化见 `docs/rh-pc1-analytic-input-theoremization.md`；
 2. **基线输入**：PC2 的 CRT 候选边界误差与权重正规化，定理化见 `docs/rh-pc2-crt-baseline-explicit.md`；
 3. **覆盖输入**：AAI/PPI/MLC 内部接口已拆解，合并审查见 `docs/rh-pc3-ov2-unconditionalization-audit.md`；剩余依赖已转入 FCT、LV/LSMP、DSO/PI、NRC/EXT；
-4. **正交输入**：DSO-C/TC/CE/DSO-E 审查见 `docs/rh-pc4-orthogonality-input-audit.md`；DSO-E 匹配闭合见 `docs/rh-pc4-dso-e-unconditionalization-audit.md`；
+4. **正交输入**：最终合并审查见 `docs/rh-pc4-orthogonality-final-closure-audit.md`；分散正交能量已转入 DSO 容量上界或 PI-Seed/FCT/LSMP/LV/NRC；
 5. **终端输入**：PC4-A/SC/PI/FCT closure 中的容量账本与 Noether 终止；
 6. **对偶输入**：DGap 三接口的外部依赖，目前已拆为盒有限重叠、投影正交化与低维频率抽取。
 
@@ -113,4 +113,4 @@
 
 本文可以作为 RH 总攻的条件化骨架：它说明离线零点异常一旦被投影到 CRT/覆盖动力系统，便只能进入有限个结构场，而这些结构场已被当前 closure 文档逐一围堵。
 
-但本文不能写成“RH 已证明”。真正的下一步是把第 7 节每个条件化输入替换为严格定理、精确引用或逐行证明，并检查所有 closure 之间不存在循环依赖。
+但本文不能写成“RH 已证明”。真正的下一步是继续第 5 项终端输入审查：逐项检查 PC4-A/SC/PI/FCT closure 的容量账本、Noether 终止和相互无循环依赖。

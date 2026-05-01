@@ -97,3 +97,8 @@ PC4-PI、DGap 投影正交化、MLC 不可检测吸收都需要同一类输入�
 ## 8. DSO-E 匹配审查入口
 
 DSO-E1--E4 与 NRC/EXT-KL、FCT、LSMP-Freq、PI-Seed 的逐项匹配见 `docs/rh-pc4-dso-e-unconditionalization-audit.md`。
+
+
+## 9. 最终合并审查入口
+
+DSO-C、TC、CE 与 DSO-E 的最终合并审查见 `docs/rh-pc4-orthogonality-final-closure-audit.md`。该文档确认分散正交能量不再作为独立逃逸通道，而是转入 DSO 容量上界或 PI-Seed/FCT/LSMP/LV/NRC。

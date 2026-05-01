@@ -61,6 +61,7 @@
 - `docs/rh-pc4-dense-scale-orthogonality.md`
 - `docs/rh-pc4-dso-crt-martingale.md`
 - `docs/rh-pc4-orthogonality-input-audit.md`
+- `docs/rh-pc4-orthogonality-final-closure-audit.md`
 - `docs/rh-pc4-dso-template-consistency.md`
 - `docs/rh-pc4-complexity-escape-interface.md`
 - `docs/rh-pc4-dso-euler-decorrelation.md`
