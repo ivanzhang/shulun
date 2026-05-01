@@ -94,6 +94,7 @@
 - `docs/rh-pc4-short-cluster-seed.md`
 - `docs/rh-pc4-short-cluster-mass-balance.md`
 - `docs/rh-pc4-short-cluster-local-density.md`
+- `docs/rh-sc-local-product-capacity-dyadic-audit.md`
 - `docs/rh-pc4-short-cluster-descent-ledger.md`
 - `docs/rh-pc4-short-cluster-closure-theorem.md`
 - `docs/rh-pc4-dual-overdense-closure.md`

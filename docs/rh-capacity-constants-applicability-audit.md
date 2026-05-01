@@ -21,7 +21,7 @@
 | DSO/PI bridge | 新增独立频率包 | 包是允许投影有限交 | square-function 反馈 PI | `log^C X` | PI 或 DSO 容量终端 |
 | PI-lacunary | lacunary 尺度投影包 | Mellin 支撑强分离 | 有限重叠/Carleson | `log^C X` | dense DSO/SC/LV/CE |
 | PI-dense/Carleson | dense 投影包 | 固定模板、可拉回 DSO | Carleson/平方函数 | `log^C X` | DSO/CE/LSMP/FCT |
-| SC 局部乘积 | 短窗 `q_1q_2r` 锚复用 | dyadic 层固定、非低体积 | `Vol_eff(I;Q,R)` | `log^C X` | PI/A/FCT/LV/LSMP |
+| SC 局部乘积 | 短窗 `q_1q_2r` 锚复用 | dyadic 层固定、非低体积；逐层核验见 `docs/rh-sc-local-product-capacity-dyadic-audit.md` | `Vol_eff(I;Q,R)` | `log^C X` | PI/A/FCT/LV/LSMP |
 | OV2/MLC | 主层双锚能量 | AAI 正规形、主层分离 | 主层容量/Uniform 零频 | `X^{o(1)}` | PPI/FCT/SC/LV/DSO/PI |
 | AAI | 允许锚上包络 | 整除正规形、dyadic 分层 | divisor/dyadic 上包络 | `log^C X` | MLC 或代数矛盾 |
 | DGap 盒重叠 | 物理窗×层×相位盒 | dyadic 网格、固定相位模板 | 点态重叠 `log^C X` | `log^C X` | LV/CE/LSMP/FCT |
@@ -61,7 +61,7 @@ PC1 给出的离线零点异常为 `X^{β-o(1)}`，`β>1/2`。PC2/PC3/PC4 的容
 
 本文不是逐个容量定理的完整外部证明。继续无条件化时，真正剩余是：
 
-1. 对 SC 局部乘积容量给出全 dyadic 层逐行证明；
+1. 对 SC 局部乘积容量与 AAI/LV 常数层级做最终排序；
 2. 对 OV2/MLC Uniform 零频容量做最终常数化；
 3. 对 PI dense/Carleson 与 DSO bridge 的适用条件做最终无回流审查；
 4. 在最终论文中把所有 `log^C X` 的常数层级统一排序。

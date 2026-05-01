@@ -98,3 +98,9 @@ PC1 外部解析输入标准化已写入 `docs/rh-pc1-external-input-standardiza
 容量定理常数与适用条件统一核验已写入 `docs/rh-capacity-constants-applicability-audit.md`。该表把 DSO、PI、SC、OV2/MLC、AAI、DGap、FCT/LSMP、PC2 基线等容量接口逐项登记为：对象、适用条件、容量界、允许损失、常数余量和失败出口。
 
 当前容量剩余硬点不再是无绑定 `CapacityFail`，而是 SC 局部乘积容量、OV2/MLC Uniform 零频容量、PI dense/Carleson 与 DSO bridge 适用条件的逐行证明强度。
+
+## 14. SC 局部乘积容量推进记录
+
+SC 局部乘积容量的全 dyadic 层核验已写入 `docs/rh-sc-local-product-capacity-dyadic-audit.md`。该补强把 `Vol_eff(I;Q,R)` 拆成短窗比例项 `(L/X)RQlog^C X` 与端点薄壳项 `Rlog^C X`，并规定比例均衡、端点控制或低体积吸收失败时只能转入 `PI/A/FCT/LV/LSMP/SC`。
+
+当前容量剩余最弱项转向 `OV2/MLC Uniform` 零频容量最终常数化，以及所有 `log^C X` 常数层级的全局排序。

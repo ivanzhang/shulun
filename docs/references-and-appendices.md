@@ -70,6 +70,7 @@
 - `docs/rh-pc4-short-cluster-seed.md`：PC4-SC 短簇跨尺度排斥种子命题。
 - `docs/rh-pc4-short-cluster-mass-balance.md`：PC4-SC 短簇质量平衡命题。
 - `docs/rh-pc4-short-cluster-local-density.md`：PC4-SC 短窗锚复用局部密度命题。
+- `docs/rh-sc-local-product-capacity-dyadic-audit.md`：SC 局部乘积容量 `Vol_eff(I;Q,R)` 全 dyadic 层核验。
 - `docs/rh-pc4-short-cluster-descent-ledger.md`：PC4-SC 短簇递归下降账本与防循环审查。
 - `docs/rh-pc4-short-cluster-closure-theorem.md`：PC4-SC 短簇分支闭合命题。
 - `docs/rh-pc4-dual-overdense-closure.md`：PC4-Dual 过密对偶分支闭合框架。

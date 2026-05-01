@@ -2,6 +2,8 @@
 
 本文接续 `docs/rh-pc4-short-cluster-mass-balance.md`。SC-Mass-Balance 后，短簇剩余硬点是：固定物理短窗内是否可能长期承载离线零点级锚复用过密。本文把该情形压回乘积容量 `q_1q_2r`、CRT 非零类均衡、LV 体积账本，或已闭合的 PC4-PI/PC4-A/PC4-FCT 分支。
 
+局部乘积容量的全 dyadic 层逐项核验见 `docs/rh-sc-local-product-capacity-dyadic-audit.md`。
+
 ## 1. 局部短窗模型
 
 设短窗 `I_X` 长度为 `L_X=o(X)`，其中存在允许锚复用过密。按 AAI 接口，任意双锚复用点有正规形
@@ -12,7 +14,7 @@
 
 ## 2. 局部乘积容量界
 
-**Lemma SC-LD1（短窗双锚容量）。** 在短窗 `I_X` 内，同层双锚复用点的有效体积满足
+**Lemma SC-LD1（短窗双锚容量；逐层证明见 `docs/rh-sc-local-product-capacity-dyadic-audit.md`）。** 在短窗 `I_X` 内，同层双锚复用点的有效体积满足
 
 `Vol_eff(I_X;Q,R) << (L_X/X) RQ log^C X + R log^C X`。
 
