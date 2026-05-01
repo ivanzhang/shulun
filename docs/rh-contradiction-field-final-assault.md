@@ -89,9 +89,10 @@
 2. PC2：Li/CRT 零频基线匹配（见 `docs/rh-pc2-crt-baseline-explicit.md`）；
 3. PC3-OV2：过疏到 ACC 过剩或 D 组终端；
 4. PC4-A/SC/PI/FCT closure，并由 `docs/rh-pc4-terminal-final-no-cycle-audit.md` 合并为 PC4 终端无循环事件图；
-5. PC4 外部事件吸收矩阵：`docs/rh-pc4-external-event-absorption-audit.md`。
-5. PC4-Dual、Dual-Gap-Ledger 与 DGap 三接口，并由 `docs/rh-pc4-dual-dgap-event-match-audit.md` 匹配到 PC4 终端事件图；
-6. NRC/EXT、LV/LSMP、AAI/PPI/MLC、DSO/CE 等外部结构接口。
+5. PC4 外部事件吸收矩阵：`docs/rh-pc4-external-event-absorption-audit.md`；
+6. PC4-Dual、Dual-Gap-Ledger 与 DGap 三接口，并由 `docs/rh-pc4-dual-dgap-event-match-audit.md` 匹配到 PC4 终端事件图；
+7. 全文接口一致性审查：`docs/rh-global-interface-consistency-audit.md`；
+8. NRC/EXT、LV/LSMP、AAI/PPI/MLC、DSO/CE 等外部结构接口。
 
 则不存在离线零点 `β>1/2` 能被该 CRT/覆盖动力系统吸收。
 
@@ -107,11 +108,13 @@
 2. **基线输入**：PC2 的 CRT 候选边界误差与权重正规化，定理化见 `docs/rh-pc2-crt-baseline-explicit.md`；
 3. **覆盖输入**：AAI/PPI/MLC 内部接口已拆解，合并审查见 `docs/rh-pc3-ov2-unconditionalization-audit.md`；剩余依赖已转入 FCT、LV/LSMP、DSO/PI、NRC/EXT；
 4. **正交输入**：最终合并审查见 `docs/rh-pc4-orthogonality-final-closure-audit.md`；分散正交能量已转入 DSO 容量上界或 PI-Seed/FCT/LSMP/LV/NRC；
-5. **终端输入**：PC4-A/SC/PI/FCT 依赖图与无循环审查见 `docs/rh-pc4-terminal-closure-audit.md`；下一步需逐项审查 PI 能量、FCT Noether、SC 体积下降、A 同步压力；
-6. **对偶输入**：DGap 三接口的外部依赖，目前已拆为盒有限重叠、投影正交化与低维频率抽取。
+5. **终端输入**：PC4-A/SC/PI/FCT 已由 `docs/rh-pc4-terminal-final-no-cycle-audit.md` 合并为无循环事件图；
+6. **外部吸收**：LV/LSMP/NRC/CE/DSO/CapacityFail 见 `docs/rh-pc4-external-event-absorption-audit.md`；
+7. **对偶输入**：DGap 三接口已由 `docs/rh-pc4-dual-dgap-event-match-audit.md` 匹配到终端事件图；
+8. **接口一致性**：尺度、符号与误差传递见 `docs/rh-global-interface-consistency-audit.md`。
 
 ## 8. 诚实结论
 
 本文可以作为 RH 总攻的条件化骨架：它说明离线零点异常一旦被投影到 CRT/覆盖动力系统，便只能进入有限个结构场，而这些结构场已被当前 closure 文档逐一围堵。
 
-但本文不能写成“RH 已证明”。真正的下一步是继续第 5 项终端输入审查：逐项检查 PC4-A/SC/PI/FCT closure 的容量账本、Noether 终止和相互无循环依赖。
+但本文不能写成“RH 已证明”。真正的下一步是继续上游输入无条件化：优先核查 PC1 解析振荡、PC2 CRT 基线显式误差与 PC3-OV2 的 AAI/PPI/MLC 三接口。
