@@ -100,3 +100,8 @@ Tail/RKS 层若满足低体积阈值
 - `DSO-SF`：DSO 非共振包的 Parseval/Carleson 二次总量上界。
 
 只有这两个入口补齐后，`GEE-NRC` 才能从“条件参数闭合”升级为“逐入口无条件闭合”。
+
+
+## 8. NRC-2D 专项推进
+
+新增 `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`。该文修正了 BG 混用风险：加性分离相位 `e_P(a/q_1+b/q_2)` 应先走有限秩窗口与容量门槛路线；剩余义务压缩为 `PPI-Rank` 与 `Capacity-Match` 两项。

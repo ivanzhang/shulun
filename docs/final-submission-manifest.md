@@ -167,3 +167,5 @@
 - `git diff --check` 针对本次归档文件通过。
 
 - `docs/rh-gee-nrc-entry-parameter-table.md`：新增 NRC 入口参数审查表；当前用于标记 GEE-NRC 的真实剩余障碍，不作为 RH 已闭合声明。
+
+- `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`：NRC-2D 双变量非共振入口硬点分解，修正 BG 混用风险，压缩为 `PPI-Rank` 有限秩与 `Capacity-Match` 容量门槛两项义务。

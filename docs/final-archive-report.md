@@ -179,3 +179,5 @@
 工作区仍有大量未跟踪探索性实验文件和历史草稿。它们未纳入本次归档提交，避免干扰最终审稿入口。正式审稿入口以第 3、4 节列出的文件为准。
 
 - `docs/rh-gee-nrc-entry-parameter-table.md`：归档 GEE-NRC 参数核验，确认单变量与 Tail/RKS 分流，保留 NRC-2D 与 DSO-SF 为剩余硬点。
+
+- `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`：NRC-2D 双变量非共振入口硬点分解，修正 BG 混用风险，压缩为 `PPI-Rank` 有限秩与 `Capacity-Match` 容量门槛两项义务。

@@ -147,3 +147,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## GEE-NRC 入口参数核验补充
 
 详见 `docs/rh-gee-nrc-entry-parameter-table.md`。当前审查结论为：单变量 PPI 与 Tail/RKS 分流已可闭合；双变量 PPI 仍需 `NRC-2D` 无幂损失完成和；DSO-E 仍需 `DSO-SF` 无幂损失 square-function 总量。因此 `GEE-NRC` 不得标记为完全无条件闭合。
+
+## NRC-2D 专项状态
+
+新增 `docs/rh-gee-nrc-2d-bilinear-hardpoint.md`。当前最小硬点已从“二维 NRC 泛泛未闭合”压缩为：证明加性分离相位的 `PPI-Rank` 有限秩窗口引理与 `Capacity-Match` 主层容量门槛；若出现乘积倒数相位，再单独调用 `EXT-BG` 支路。

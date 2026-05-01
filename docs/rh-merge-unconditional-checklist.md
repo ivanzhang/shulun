@@ -66,3 +66,9 @@
 - [ ] `DSO-SF`：DSO 非共振包 square-function 无幂损失总量。
 
 详见 `docs/rh-gee-nrc-entry-parameter-table.md`。
+
+## NRC-2D 后续清单
+
+- [ ] `PPI-Rank`：证明加性分离二维权重有 `log^C X` 分离秩，失败转 `CE/SC/PI/LSMP`。
+- [ ] `Capacity-Match`：证明 PPI 主层承载固定比例偏差时 `V_Q>=Plog^{B+C}X`，失败转 `LV/LSMP`。
+- [ ] `NRC-2D-Closure`：把 `docs/rh-gee-nrc-2d-bilinear-hardpoint.md` 的低秩容量定理并回 GEE-NRC。
