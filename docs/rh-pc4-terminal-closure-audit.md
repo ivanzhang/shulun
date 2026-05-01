@@ -67,7 +67,7 @@
 
 为了把第 5 项从事件图归约推进到可审稿闭合，建议依次审查：
 
-1. `PC4-PI`：固定模板能量上界是否已经由正交输入最终审查完全支撑；
+1. `PC4-PI`：终端输入审查见 `docs/rh-pc4-pi-terminal-audit.md`；dense 包已由正交输入支撑，剩余硬点是 PI-Lacunary-Capacity；
 2. `PC4-FCT`：Noether 闭包链是否有明确离散下降量；
 3. `PC4-SC`：shorter_SC 递归是否有严格体积/长度下降；
 4. `PC4-A`：ACC 同步压力是否只转事件图边而不引用最终 closure。

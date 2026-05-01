@@ -70,6 +70,7 @@
 - `docs/rh-pc4-lsmp-frequency-corollary.md`
 - `docs/rh-pc4-pi-dense-closure-theorem.md`
 - `docs/rh-pc4-pi-closure-theorem.md`
+- `docs/rh-pc4-pi-terminal-audit.md`
 - `docs/rh-pc4-fct-seed.md`
 - `docs/rh-pc4-fct-phase-drift.md`
 - `docs/rh-pc4-fct-noether.md`

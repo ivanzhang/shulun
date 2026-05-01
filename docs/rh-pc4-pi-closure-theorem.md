@@ -77,3 +77,8 @@ PC4-PI-Closure 的任何失败都不是新通道，而是转入既有分支：
 2. `PC4-A`：ACC 不同步排斥；
 3. `PC4-SC`：短簇跨尺度排斥；
 4. 必要时补 `PC4-Dual` 处理过密对偶。
+
+
+## 8. 终端输入审查入口
+
+PC4-PI 在事件图中的归约、dense 包状态与 lacunary 包剩余硬点见 `docs/rh-pc4-pi-terminal-audit.md`。
