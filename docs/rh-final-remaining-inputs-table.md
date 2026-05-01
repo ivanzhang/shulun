@@ -58,3 +58,7 @@
 新增 `docs/rh-ext-precision-final.md`，并在 LaTeX 主稿中加入 EXT-Precision theorem。外部输入已归入六组标准引用并给出受限使用形式、变量匹配和失败出口。页码/定理号核对仍是投稿排版义务，但不再是数学逻辑缺口。
 
 最终剩余输入更新为一项：`Review-Form-Elimination`。
+
+## 9. Review-Form-Elimination 审查状态
+
+新增 `docs/rh-review-form-elimination-audit.md`。GEE 段已消除 review-form 口径；但 PC1--PC4/C4--C9 与主定理仍保留 review-form/proof-sketch。最终剩余从“输入缺口”转为“全文逐行证明升级”：必须逐条升级 PC1、PC2/C3、C4、C5、C6、C9 和主定理证明后，才可宣称 RH 无条件证明定稿。

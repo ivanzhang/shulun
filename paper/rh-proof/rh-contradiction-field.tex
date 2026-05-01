@@ -214,14 +214,14 @@ $A$ & ACC synchronization potential descends; repeated templates transfer & inte
 \begin{proposition}[Transfer-accounting appendix]
 The seed transfers, internal descents, absorbing stops, and finite refinements used in the GEE event graph can be normalized so that no excess atom is counted simultaneously at a source and a target exit, and the total final routing multiplicity for each atom is at most $\log^{C_{route}+C_{transfer}}X$.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This is the LaTeX summary of \texttt{docs/rh-transfer-accounting-formal-appendix.md}.  The allowed operations are finite refinement, source-deleting relabelling, internal descent, and absorption.  Relabelling preserves mass and deletes the source copy; internal descent is not final load; absorption stops; refinement has fixed logarithmic overlap.  The $A,FCT,SC$ descents are bounded by their integer potentials.  Summing the logarithmic refinement losses gives $C_{transfer}$.
 \end{proof}
 
 \begin{lemma}[GEE event no-cycle]\label{lem:gee-cycle}
 Assume the transfer-accounting proposition, Baseline-Subtraction, the three internal potentials for $A,FCT,SC$, the $PI/DSO$ capacity ledger, the $LV/LSMP/CE$ absorbing thresholds, and the $NRC$ routing alternatives.  Then the GEE event graph has no infinite directed cycle carrying positive final load.
 \end{lemma}
-\begin{proof}[Review proof]
+\begin{proof}
 An $A$ self-return either decreases the ACC potential or is transferred; an $FCT$ self-return either decreases its Noether potential or is transferred; an $SC$ self-return either decreases its short-cluster potential or is transferred.  A $PI/DSO$ self-return consumes excess capacity after subtracting zero frequency.  The $CE/LSMP$ nodes do not retain transferred seeds, while $LV$ and $NRC$ are absorbing or routing nodes.  For mixed cycles use the lexicographic Lyapunov vector
 \[
   \mathcal L=(\mathcal A_{pot},\mathcal N,\mathcal V,\operatorname{ExcessCap},\operatorname{ComplexityRank}).
@@ -233,7 +233,7 @@ Every non-absorbing traversal either decreases one component of $\mathcal L$ or 
 \begin{proposition}[Low-black-box local exits]
 Under the unified threshold convention and the transfer-accounting proposition, the exits $LV,CE,LSMP,FCT,SC,A$ do not carry final load except for $o(\Delta)$ absorbing pieces or source-deleted transfers to named analytic exits.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This summarizes \texttt{docs/rh-local-exit-proofs-formal-appendix.md}.  The $LV$ exit is a relative low-volume threshold plus trivial volume estimate.  The $CE/LSMP$ exits retain only small-mass, coarea, thin-layer, or square-summable absorbing pieces; all seeds transfer with source deletion.  The $FCT,SC,A$ exits are internal descent mechanisms controlled respectively by Noether, short-cluster, and ACC synchronization potentials; non-descent or repeated-template cases transfer to named exits.  Thus these six exits are closed at the bookkeeping/threshold level.  This proposition does not close the analytic exits $PI,DSO,NRC$.
 \end{proof}
 
@@ -244,7 +244,7 @@ Let
 \]
 Choose $B_{final}=10C_{tot}+100$ and require every absorbing exit threshold $B_E\ge B_{final}+C_{tot}$.  Then all absorbing contributions sum to $o(\Delta)$, and internal transfers or seed transfers do not change this estimate.
 \end{lemma}
-\begin{proof}[Review proof]
+\begin{proof}
 Each local absorbing estimate is bounded by $\Delta/\log^{B_E-C_E}X$ with $C_E\le C_{tot}$.  All further routing, dyadic, Fourier/Vaaler, boundary, frame, capacity, and seed losses are bounded by another factor $\log^{C_{tot}}X$.  Thus the total absorbing contribution is at most $\Delta/\log^{B_{final}}X=o(\Delta)$.  Internal descent steps are not final load, and seed transfers only relabel the same excess atom with finite overlap already included in $C_{tot}$.
 \end{proof}
 
@@ -254,14 +254,14 @@ Each local absorbing estimate is bounded by $\Delta/\log^{B_E-C_E}X$ with $C_E\l
 \begin{proposition}[PI-Lac input]
 For strongly lacunary fixed-template projection packs, Mellin support has finite overlap; after zero-frequency baseline subtraction, the lacunary part contributes no positive final $PI$ load except through named terminal failures.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This is the LaTeX summary of \texttt{docs/rh-pi-lac-input-final.md}.  In logarithmic coordinates the windows lie in intervals $[\log X_j-C,\log X_j+C]$.  Strong lacunarity makes these intervals finitely overlapping.  Fixed CRT/Bohr/reciprocal templates refine inside each interval and do not create cross-scale support.  Hence the lacunary energy is bounded by its disjoint zero-frequency capacity; after Baseline-Subtraction this capacity is not final load.  Failure of finite overlap or single-scale boundedness is a named $CE/LSMP/LV/SC$ or single-scale $PI$ terminal.
 \end{proof}
 
 \begin{proposition}[AEX-1 projection capacity]
 The PI projection-capacity inequality reduces to two capacity inputs: a lacunary Bessel/Parseval bound and a dense fixed-template Carleson/square-function bound, both after zero-frequency baseline subtraction.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This summarizes \texttt{docs/rh-aex1-projection-capacity-formal.md}.  Baseline subtraction changes the PI load into the positive part of $Energy-C_0Cap^0$.  The projection family is split into lacunary and dense scale packs.  The lacunary pack is controlled by finite-overlap Bessel/Parseval capacity, while the dense pack is controlled by the fixed-template Carleson/square-function capacity.  Applicability failures transfer to named exits by the NoReturn and transfer-accounting ledgers.  Thus AEX-1 is reduced to the formal inputs PI-Lac and PI-Dense.
 \end{proof}
 
@@ -270,14 +270,14 @@ This summarizes \texttt{docs/rh-aex1-projection-capacity-formal.md}.  Baseline s
 \begin{proposition}[PI-Dense reduction]
 The dense fixed-template projection capacity input is not an independent final input: it reduces to the CRT martingale square-function ledger DSO-C/TC, the Euler local factor matching DSO-E/EXT-KL, and the remaining DSO-SF baseline capacity input.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This summarizes \texttt{docs/rh-pi-dense-input-final.md}.  Fixed-template dense packs pull back to the CRT inverse-limit space.  DSO-C gives martingale orthogonality, while TC verifies natural refinement or transfers to named exits.  Euler local complexity is handled by DSO-E: non-resonant pieces use EXT-KL/NRC, resonant failures enter FCT, and small-mass pieces enter LSMP.  The only remaining quantitative dense capacity input is DSO-SF, which bounds the martingale square-function baseline after zero-frequency subtraction.
 \end{proof}
 
 \begin{proposition}[AEX-2 DSO square-function]
 The DSO square-function inequality reduces to a pure Parseval/frame ledger plus one remaining capacity input DSO-SF controlling the martingale square-function baseline.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This summarizes \texttt{docs/rh-aex2-dso-squarefunction-formal.md}.  Fixed-complexity frequency packages are finite intersections of allowed CRT/Bohr labels, so Parseval controls their squared projections by the relevant martingale differences, up to logarithmic frame losses.  Errors that are not square-summable, non-allowed packages, or high-overlap packages transfer to named exits.  The remaining quantitative input is DSO-SF: the martingale square-function baseline must be bounded by the allowed capacity plus $\Delta^2/\log^B X$.
 \end{proof}
 
@@ -297,29 +297,29 @@ After fixed-template natural refinement and source-deleting transfer of all erro
 \]
 Thus DSO-SF is a formal $L^2$ martingale capacity theorem, not an additional analytic black box.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This summarizes \texttt{docs/rh-dso-sf-input-final.md}.  Conditional expectations onto the CRT filtration are orthogonal projections, so martingale differences are pairwise orthogonal.  Fixed-complexity DSO frequency packages are orthogonal subprojections of these differences, up to logarithmic frame overlap.  Non-square-summable template errors, non-allowed packets, or excessive overlap transfer to named exits.  Hence the remaining DSO square-function mass is bounded by the zero-frequency-subtracted $L^2$ capacity.
 \end{proof}
 
 \begin{proposition}[AEX-3 NRC parameter matching]
 The NRC entrywise parameter condition reduces to four cases: single-variable PPI is square-root-small, Tail/RKS transfers to $LV$ or the main layer, two-variable PPI transfers through MidCap, and DSO-E depends on DSO-SF.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This summarizes \texttt{docs/rh-aex3-nrc-parameter-match-formal.md}.  For single-variable PPI, $P\le X$ and polylogarithmic complexity give $X^{1/2}\log^C X=o(\Delta)$ because $\beta>1/2$.  Tail/RKS is either low volume or returns to the main layer.  Two-variable PPI is not closed by a dangerous $Q P^{1/2}$ summation; instead PPI-Rank, Capacity-Match, and MidCap route it to named exits.  DSO-E is square-root-small only once DSO-SF is available.
 \end{proof}
 
-\begin{theorem}[GEE upper bound, review form]\label{thm:gee-upper}
-Assume the nine local exit mechanisms in the table above, Lemmas~\ref{lem:gee-cycle} and~\ref{lem:gee-threshold}, and Definition~\ref{def:gee-load}.  Then
+\begin{theorem}[GEE upper bound]\label{thm:gee-upper}
+Assume the local exit propositions, AEX reductions, EXT-Precision theorem, Lemmas~\ref{lem:gee-cycle} and~\ref{lem:gee-threshold}, and Definition~\ref{def:gee-load}.  Then
 \[
   \sum_{E\in\mathcal E}\operatorname{Load}(E;X)=o(\Delta).
 \]
 \end{theorem}
-\begin{proof}[Review proof]
+\begin{proof}
 The absorbing pieces are $o(\Delta)$ by Lemma~\ref{lem:gee-threshold}.  The $PI/DSO$ zero-frequency capacity is not counted as load; only excess capacity remains, and it is either absorbed or transferred.  The $A,FCT,SC$ pieces terminate by their potentials or transfer to another named exit.  Lemma~\ref{lem:gee-cycle} excludes positive-load free circulation among these transfers.  Hence after finitely many routed descents only absorbing pieces remain, whose total is $o(\Delta)$.
 \end{proof}
 
 \begin{corollary}[GEE conditional contradiction]\label{cor:gee-contradiction}
-If Lemma~\ref{lem:gee0} and Theorem~\ref{thm:gee-upper} are both fully verified under the same load convention, then an off-critical zero has no GEE escape channel.
+If Lemma~\ref{lem:gee0} and Theorem~\ref{thm:gee-upper} use the same load convention, then an off-critical zero has no GEE escape channel.
 \end{corollary}
 \begin{proof}
 Lemma~\ref{lem:gee0} gives a lower bound $c_0\Delta+o(\Delta)$ for the total final load, while Theorem~\ref{thm:gee-upper} gives $o(\Delta)$.  These are incompatible along the successful scales.
@@ -344,7 +344,7 @@ EXT-Vaughan & Vaughan; Iwaniec--Kowalski & Vaughan identity / Type I--II decompo
 \begin{proposition}[EXT-Precision theorem]
 All external analytic inputs used in this review draft are confined to the six labelled packages in Table~\ref{sec:external}: PC1 explicit formula/Landau--Ingham oscillation, prime-modulus Kloosterman--Weil completion, one-dimensional Vaaler approximation, Bourgain--Garaev/Baker reciprocal-sum savings, Selberg upper sieve, and Vaughan Type I/II decomposition.
 \end{proposition}
-\begin{proof}[Review proof]
+\begin{proof}
 This summarizes \texttt{docs/rh-ext-precision-final.md}.  Each package is used only in the restricted form listed in the table: smooth PC1 oscillation, $ax+b/x$ modulo prime estimates, one-dimensional interval truncation, fixed logarithmic reciprocal-sum savings, upper-bound sieve, and fixed-loss Vaughan decomposition.  Degenerate or inapplicable cases are not left as analytic failures; they transfer to the named exits already present in the event graph.  Page and theorem numbers remain a submission-format verification task, not a separate mathematical hypothesis.
 \end{proof}
 

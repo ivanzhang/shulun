@@ -245,3 +245,9 @@
 - [x] `EXT-Precision`：`docs/rh-ext-precision-final.md` 已给出外部定理精确适配表。
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 EXT-Precision theorem。
 - [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
+
+## Review-Form-Elimination 审查更新
+
+- [x] GEE 段 review-form 消除：`paper/rh-proof/rh-contradiction-field.tex` 中 GEE 局部证明已升级为普通 proof。
+- [x] 审查报告：`docs/rh-review-form-elimination-audit.md` 已列出仍保留 review-form 的 PC1--PC4/C4--C9 主链。
+- [ ] 全文 `Review-Form-Elimination`：PC1、PC2/C3、C4、C5、C6、C9 与主定理仍需逐条正式化。

@@ -276,3 +276,7 @@
 
 - `docs/rh-ext-precision-final.md`：新增外部定理精确适配最终表。
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 EXT-Precision theorem。
+
+## Review-Form-Elimination 审查归档
+
+- `docs/rh-review-form-elimination-audit.md`：新增 review-form 消除审查；GEE 段已升级，全文主链仍需逐条正式化。

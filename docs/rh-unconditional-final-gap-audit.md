@@ -112,3 +112,7 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 ## 16. EXT-Precision 完成
 
 新增 `docs/rh-ext-precision-final.md`。外部输入已降为六组标准受限引用：PC1 显式公式/振荡、EXT-KL、Vaaler、BG/Baker、Selberg、Vaughan。页码级核验保留为投稿排版义务，不再作为数学逻辑缺口。
+
+## 17. Review-Form-Elimination 审查
+
+新增 `docs/rh-review-form-elimination-audit.md`。GEE 局部已完成 review-form 消除；全文仍保留 PC1--PC4/C4--C9 的 review proof 和主定理 review form。当前剩余不是 GEE 输入，而是全文主链逐行正式化。
