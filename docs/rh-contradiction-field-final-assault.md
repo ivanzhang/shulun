@@ -104,7 +104,7 @@
 
 1. **解析输入**：PC1 的 Landau--Ingham 平滑振荡和权函数非湮灭，定理化见 `docs/rh-pc1-analytic-input-theoremization.md`；
 2. **基线输入**：PC2 的 CRT 候选边界误差与权重正规化，定理化见 `docs/rh-pc2-crt-baseline-explicit.md`；
-3. **覆盖输入**：AAI/PPI/MLC 的双锚正规形、相位推送与主层容量；
+3. **覆盖输入**：AAI 已无条件化为 `docs/rh-ov2-aai-unconditional-theorem.md`；PPI/MLC 的相位推送与主层容量仍需继续无条件化；
 4. **正交输入**：DSO-C/DSO-E、模板一致性、复杂度逃逸；
 5. **终端输入**：PC4-A/SC/PI/FCT closure 中的容量账本与 Noether 终止；
 6. **对偶输入**：DGap 三接口的外部依赖，目前已拆为盒有限重叠、投影正交化与低维频率抽取。

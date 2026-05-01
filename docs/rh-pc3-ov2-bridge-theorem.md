@@ -5,7 +5,7 @@
 ## 1. 依赖文档
 
 - `docs/rh-pc3-formal-theoremization.md`：PC-3 无权核心与 Buchstab 加权提升；
-- `docs/rh-ov2-admissible-anchor-interface.md`：AAI，允许锚语义接口；
+- `docs/rh-ov2-admissible-anchor-interface.md` / `docs/rh-ov2-aai-unconditional-theorem.md`：AAI，允许锚语义接口及无条件代数定理；
 - `docs/rh-ov2-phase-pushforward-interface.md`：PPI，相位推送接口；
 - `docs/rh-ov2-main-layer-capacity-interface.md`：MLC，主层容量接口；
 - `docs/rh-lv-low-volume-principle.md`：LV，低体积原则；
