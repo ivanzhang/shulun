@@ -298,7 +298,7 @@ where $\mathcal A_{pot}$ is the ACC synchronization potential, $\mathcal N$ the 
 No node among $A,PI,FCT,SC$ admits an infinite positive-load self-loop once named exits and capacity failures are registered.
 \end{lemma}
 \begin{proof}
-For $A$, a genuine ACC synchronization step strictly decreases $\mathcal A_{pot}$; if the normalized ACC template does not change, the repeated-template pressure is routed to $PI,FCT,SC,LV,LSMP,CE$ or $DSO$, so it is not an $A$ self-loop.  For $FCT$, a genuine frequency-closure step strictly decreases the Noether potential $\mathcal N$ after normalization; if the same closure state repeats, it is routed to $NRC,DSO,PI,SC,LV,LSMP$ or $CE$.  For $SC$, a genuine shorter-cluster recursion strictly decreases $\mathcal V$; if the same short-cluster template repeats, it is routed to $A,PI,FCT,LV,LSMP$ or $CE$.  For $PI$, lacunary, dense, and boundary packages register only the excess over zero-frequency capacity; a repeated admissible package consumes $\mathcal C_{PI}$ by the projection-capacity ledger, while failure of the ledger is a named capacity exit.  Each decreasing component is bounded below, hence none of these self-loops can be infinite.
+For $A$, a genuine ACC synchronization step strictly decreases $\mathcal A_{pot}$; if the normalized ACC template does not change, the repeated-template pressure is routed to one of $PI$, $FCT$, $SC$, $LV$, $LSMP$, $CE$, or $DSO$, so it is not an $A$ self-loop.  For $FCT$, a genuine frequency-closure step strictly decreases the Noether potential $\mathcal N$ after normalization; if the same closure state repeats, it is routed to $NRC,DSO,PI,SC,LV,LSMP$ or $CE$.  For $SC$, a genuine shorter-cluster recursion strictly decreases $\mathcal V$; if the same short-cluster template repeats, it is routed to $A,PI,FCT,LV,LSMP$ or $CE$.  For $PI$, lacunary, dense, and boundary packages register only the excess over zero-frequency capacity; a repeated admissible package consumes $\mathcal C_{PI}$ by the projection-capacity ledger, while failure of the ledger is a named capacity exit.  Each decreasing component is bounded below, hence none of these self-loops can be infinite.
 \end{proof}
 
 \begin{lemma}[C6 mixed-cycle exclusion]\label{lem:c6-mixed}
@@ -448,7 +448,7 @@ This is the LaTeX summary of \texttt{docs/rh-transfer-accounting-formal-appendix
 \end{proof}
 
 \begin{lemma}[GEE event no-cycle]\label{lem:gee-cycle}
-Assume the transfer-accounting proposition, Baseline-Subtraction, the three internal potentials for $A,FCT,SC$, the $PI/DSO$ capacity ledger, the $LV/LSMP/CE$ absorbing thresholds, and the $NRC$ routing alternatives.  Then the GEE event graph has no infinite directed cycle carrying positive final load.
+Assume transfer accounting, Baseline-Subtraction, the three internal potentials for $A,FCT,SC$, the $PI/DSO$ capacity ledger, the $LV/LSMP/CE$ thresholds, and the $NRC$ routing alternatives.  Then the GEE event graph has no infinite directed cycle carrying positive final load.
 \end{lemma}
 \begin{proof}
 An $A$ self-return either decreases the ACC potential or is transferred; an $FCT$ self-return either decreases its Noether potential or is transferred; an $SC$ self-return either decreases its short-cluster potential or is transferred.  A $PI/DSO$ self-return consumes excess capacity after subtracting zero frequency.  The $CE/LSMP$ nodes do not retain transferred seeds, while $LV$ and $NRC$ are absorbing or routing nodes.  For mixed cycles use the lexicographic Lyapunov vector
@@ -567,7 +567,7 @@ Lemma~\ref{lem:gee0} gives a lower bound $\Delta\log^{-C_{route}}X-o(\Delta\log^
 \end{proof}
 
 \section{External references}\label{sec:external}
-The only permitted external inputs are the following restricted forms.  The detailed adaptation is recorded in \path{docs/rh-ext-precision-final.md}, with citation locations in \path{docs/rh-u3-ext-reference-table.md}.
+The only permitted external inputs are the restricted forms below.  Detailed adaptation: \path{docs/rh-ext-precision-final.md}; citation locations: \path{docs/rh-u3-ext-reference-table.md}.
 \begin{longtable}{@{}L{0.16\textwidth}L{0.34\textwidth}L{0.42\textwidth}@{}}
 \toprule
 Label & Source & Restricted use\\

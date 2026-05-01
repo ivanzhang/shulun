@@ -40,10 +40,10 @@ U5 静态审查发现主稿此前没有 `\cite{...}`，会导致 BibTeX 参考�
 
 ## 4. U5 结论
 
-U5 的本地工程审查已完成：PDF 可生成，BibTeX 可执行，未发现 undefined references/citations，也未发现 LaTeX fatal error。日志仅剩少量 overfull/underfull 版式提示，不影响引用闭合与数学文本结构。
+U5 的本地工程审查已完成：PDF 可生成，BibTeX 可执行，未发现 undefined references/citations，也未发现 LaTeX fatal error。进一步版式修补后，最新日志扫描未发现 undefined refs/cites、overfull/underfull、LaTeX warnings 或 fatal errors。
 
 不得据此删除 `Submission warning` 或宣称 RH 无条件证明定稿；剩余义务已精确收缩为：
 
 1. 最终核对专著页码/定理号；
 2. 进行独立逐行 referee verification；
-3. 若投稿前需要，可继续细调少量 overfull/underfull 版式提示。
+3. 若投稿前需要，可继续做美学层面的排版微调，但当前日志已无结构性 warning。

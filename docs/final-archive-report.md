@@ -321,4 +321,9 @@ LaTeX 主稿已完成 U1/U4：标题、摘要和 GEE 说明从旧审查稿文体
 
 ## U5 最终编译与引用一致性审查更新
 
-新增 `docs/rh-u5-final-compile-audit.md`。已安装 TeX Live 工具链并真实运行 `latexmk -pdf -interaction=nonstopmode -halt-on-error rh-contradiction-field.tex`，生成 `paper/rh-proof/rh-contradiction-field.pdf`。40 个 label、57 个 ref 全匹配，11 个 cite 均有 BibTeX 条目，日志无 undefined refs/cites；`review form/review draft/Assume Theorems/conditional synthesis/exttt` 主稿残留为 0。本轮还把 EXT 外部来源表接入正式 `\cite{...}`，并修正 section/table 引用措辞。剩余为专著页码核验、独立逐行 referee verification 和少量版式 overfull/underfull 调整；`Submission warning` 仍需保留。
+新增 `docs/rh-u5-final-compile-audit.md`。已安装 TeX Live 工具链并真实运行 `latexmk -pdf -interaction=nonstopmode -halt-on-error rh-contradiction-field.tex`，生成 `paper/rh-proof/rh-contradiction-field.pdf`。40 个 label、57 个 ref 全匹配，11 个 cite 均有 BibTeX 条目，日志无 undefined refs/cites；`review form/review draft/Assume Theorems/conditional synthesis/exttt` 主稿残留为 0。本轮还把 EXT 外部来源表接入正式 `\cite{...}`，并修正 section/table 引用措辞。剩余为专著页码核验和独立逐行 referee verification；版式日志已清零，`Submission warning` 仍需保留。
+
+
+## 最终审稿义务闭合账本更新
+
+新增 `docs/rh-final-referee-obligations-closure.md`。作者侧可执行义务已经完成：U1/U4 文体与主定理口径、U2 AEX、U3 EXT 定位、U5 latexmk/PDF/BibTeX、undefined refs/cites 与版式 warning 均已处理。剩余项被精确界定为外部审稿/排版义务：专著页码级核验与独立逐行 referee verification。由于这两项不能由作者自称完成，`Submission warning` 仍应保留，不能宣称 RH 无条件证明定稿。
