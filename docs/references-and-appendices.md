@@ -155,6 +155,7 @@
 
 - `docs/external-theorem-package.md`：EXT-KL/EXT-BG/EXT-Vaaler/EXT-Selberg/EXT-Vaughan 的定理包引用模板。
 - `docs/ext-citation-final-audit.md`：EXT 外部定理精确引用最终审查表。
+- `docs/rh-ext-maintext-citation-closure.md`：EXT 外部定理主文引用闭合链。
 
 当前已核验的关键外部来源：
 

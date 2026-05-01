@@ -126,7 +126,8 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 
 - `docs/rh-capacityfail-binding-table.md`；
 - `docs/rh-capacity-constants-applicability-audit.md`；
-- `docs/rh-global-log-constant-hierarchy-audit.md`。
+- `docs/rh-global-log-constant-hierarchy-audit.md`；
+- `docs/rh-ext-maintext-citation-closure.md`。
 
 ## 8. 条件化主定理
 
@@ -144,7 +145,7 @@ PC4 内部终端为 `A/PI/FCT/SC`。当前文档包已将这些分支写成条�
 4. 将 PC4-A/PI/FCT/SC 的无循环审查从文档矩阵合并为单篇定理链；
 5. NRC/EXT 非共振分支已新增 `docs/rh-nrc-ext-maintext-closure.md`，FCT 无循环闭包已新增 `docs/rh-fct-maintext-closure-chain.md`，PI/DSO 桥接已新增 `docs/rh-pi-dso-maintext-bridge-chain.md`，SC 局部乘积容量已新增 `docs/rh-sc-maintext-capacity-closure.md`，DGap 三接口已新增 `docs/rh-dgap-maintext-three-interface-chain.md`，Fourier/Vaaler 尾项平方可和已新增 `docs/rh-fourier-vaaler-tail-maintext-chain.md`；
 6. `LV/LSMP/CE` 外部吸收已新增 `docs/rh-lv-lsmp-ce-maintext-absorption-chain.md`；仍需将容量矩阵中的所有 `log^C X` 常数改成全局常数层级账本；
-7. 完成所有外部定理 `EXT-KL/BG/Vaaler/Selberg/Vaughan/PC1` 的精确引用，其中 `EXT-KL` 已由 `docs/rh-nrc-ext-maintext-closure.md` 定位为 NRC 的唯一深输入；
+7. 外部定理引用已新增 `docs/rh-ext-maintext-citation-closure.md`；最终编辑仍需把 `EXT-KL/BG/Vaaler/Selberg/Vaughan/PC1` 替换为正式 BibTeX、页码或定理号；
 8. 做全文符号、权重口径、尺度参数、归一化能量的一致性校对。
 
 ## 10. 结论

@@ -206,3 +206,9 @@ Fourier/Vaaler 尾项平方可和主文链已写入 `docs/rh-fourier-vaaler-tail
 PC1 Landau--Ingham 振荡主文链已写入 `docs/rh-pc1-landau-ingham-maintext-chain.md`。该补强从平滑显式公式出发：有限边界零点情形用非零有限三角多项式均方平均文内证明；一般上确界或无限边界族情形精确归入经典 `EXT-PC1-LI` 奇点振荡定理。
 
 同时，固定符号子列、素数幂去除和 Chebyshev/无权口径转换均已写入主链。当前剩余压力集中到 `EXT-PC1-LI` 与其它 `EXT-*` 的精确书目章节/定理号，以及全文常数层级、符号、尺度和权重一致性审查。
+
+## 32. EXT 外部引用主文闭合推进记录
+
+EXT 外部定理主文引用闭合链已写入 `docs/rh-ext-maintext-citation-closure.md`。该补强把所有非初等外部输入统一归入 `EXT-KL`, `EXT-Vaaler`, `EXT-PC1-EF`, `EXT-PC1-LI`, `EXT-BG`, `EXT-Selberg`, `EXT-Vaughan` 七类，并逐项写明使用命题、推荐文献和使用边界。
+
+其中 `EXT-PC1-EF` 已文内证明，`EXT-PC1-LI` 的有限边界情形已文内证明，一般情形保留为经典 Landau--Ingham 定理；`EXT-KL` 只用素数模 `ax+b/x` 特例，`EXT-Vaaler` 只用一维区间截断。当前剩余压力转向容量常数层级、全文符号/尺度/权重一致性和最终总稿合并。
