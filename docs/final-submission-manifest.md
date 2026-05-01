@@ -189,3 +189,5 @@
 - `docs/rh-gee-fct-load-bound-audit.md`：新增 FCT 内部转移与最终负担为零的 GEE 审查。
 
 - `docs/rh-gee-sc-load-bound-audit.md`：新增 SC 容量吸收和递归转移的 GEE 审查。
+
+- `docs/rh-gee-a-load-bound-audit.md`：新增 A/ACC 同步出口的 GEE 审查。

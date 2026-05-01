@@ -201,3 +201,5 @@
 - `docs/rh-gee-fct-load-bound-audit.md`：归档 GEE-FCT 内部转移闭合。
 
 - `docs/rh-gee-sc-load-bound-audit.md`：归档 GEE-SC 内部转移闭合。
+
+- `docs/rh-gee-a-load-bound-audit.md`：归档 GEE-A 内部转移闭合。

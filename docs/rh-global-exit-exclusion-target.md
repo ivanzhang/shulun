@@ -191,3 +191,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## GEE-SC 内部转移更新
 
 新增 `docs/rh-gee-sc-load-bound-audit.md`。SC 被改写为容量吸收与内部递归转移：低容量短簇给 `o(Δ)`，真 shorter_SC 步不作最终负担，重复模板转入 `A/PI/FCT/LV/LSMP/CE`。因此 `GEE-SC` 可标记为内部转移闭合。
+
+## GEE-A 内部转移更新
+
+新增 `docs/rh-gee-a-load-bound-audit.md`。A/ACC 同步出口被改写为容量吸收与内部同步转移：真 ACC 步不作最终负担，固定模板重复转入 `PI/FCT/SC/LV/LSMP/DSO/CE`。因此 `GEE-A` 可标记为内部转移闭合。
