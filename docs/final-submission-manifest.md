@@ -252,3 +252,7 @@
 
 - `docs/rh-aex3-nrc-parameter-match-formal.md`：新增 NRC 逐入口参数匹配审查，将剩余压缩为 `EXT-KL` 与 `DSO-SF`。
 - `paper/rh-proof/rh-contradiction-field.tex`：新增 AEX-3 NRC parameter matching proposition。
+
+## 最终剩余输入表归档
+
+- `docs/rh-final-remaining-inputs-table.md`：新增最终剩余输入归并表，将旧清单折叠为 `PI-Lac`、`PI-Dense`、`DSO-SF`、`EXT-Precision`、`Review-Form-Elimination` 五项。

@@ -90,3 +90,9 @@ PC1 的 Landau--Ingham 振荡、NRC 的 Kloosterman/Weil 完成和、Vaaler 逼�
 新增 `docs/rh-aex3-nrc-parameter-match-formal.md`，并在 LaTeX GEE 节加入 AEX-3 NRC parameter matching proposition。该补强把 NRC 入口分成四类：单变量 PPI 直接平方根闭合，Tail/RKS 分流，双变量 PPI 经 MidCap 转出，DSO-E 依赖 `DSO-SF`。
 
 因此 NRC 剩余不再是泛泛双变量硬点，而主要依赖 `EXT-KL` 精确适配与 `DSO-SF`。
+
+## 12. 最终剩余输入表
+
+新增 `docs/rh-final-remaining-inputs-table.md`。该文把旧清单中仍显示的历史未完成项归并为五个真实剩余输入：`PI-Lac`、`PI-Dense`、`DSO-SF`、`EXT-Precision`、`Review-Form-Elimination`。
+
+下一步最优顺序：先攻 `PI-Lac/PI-Dense/DSO-SF` 三个容量输入，再做外部引用精确化，最后消除 review-form 证明。

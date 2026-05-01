@@ -243,3 +243,7 @@
 ## AEX-3 归档
 
 新增 `docs/rh-aex3-nrc-parameter-match-formal.md` 并接入 LaTeX 主稿。AEX-3 已归约为 `EXT-KL` 精确适配与 `DSO-SF` 两项输入。
+
+## 最终剩余输入表归档
+
+新增 `docs/rh-final-remaining-inputs-table.md`。当前真实剩余已从分散历史硬点压缩为三项容量输入、外部引用精确化和 review-form 消除。

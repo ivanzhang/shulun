@@ -206,3 +206,12 @@
 - [x] LaTeX 接入：`paper/rh-proof/rh-contradiction-field.tex` 已加入 AEX-3 NRC parameter matching proposition。
 - [ ] `EXT-KL`：单变量 NRC 外部完成和精确适配。
 - [ ] `DSO-SF`：DSO-E 入口 square-function 基线容量。
+
+## 最终剩余输入归并
+
+- [x] 旧未完成项归并：`docs/rh-final-remaining-inputs-table.md` 已把历史清单折叠为真实剩余输入。
+- [ ] `PI-Lac`：lacunary 投影容量 Bessel/Parseval 界。
+- [ ] `PI-Dense`：dense fixed-template Carleson/square-function 容量界。
+- [ ] `DSO-SF`：martingale square-function 基线容量界。
+- [ ] `EXT-Precision`：外部定理精确引用与变量匹配。
+- [ ] `Review-Form-Elimination`：消除 LaTeX 中所有 review-form/proof-sketch 表述。
