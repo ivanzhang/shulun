@@ -150,3 +150,5 @@
 - `docs/rh-nrc-2d-midcap-structure-route.md`：MidCap-Structure 已分流；剩余回到 GEE 全局出口上界。
 
 - `docs/rh-gee-pi-dso-load-bound-target.md`：GEE-PI/DSO 仍未闭合；最小割集为 `Lac-Baseline/Dense-Carleson/Anomaly-L2-Control`。
+
+- `docs/rh-gee-dense-carleson-load-bridge.md`：Dense-Carleson 已桥接到 GEE；剩余 `Baseline-Subtraction`。

@@ -97,4 +97,8 @@ Dense 包不能靠支撑 disjoint。需要 martingale/Carleson 型平方函数�
 2. `Dense-Carleson`：dense 投影包 square-function 容量上界；
 3. `Anomaly-L2-Control`：非终端离线异常函数的 `L^2` 质量低于 `Δ/log^B X`，否则触发结构出口。
 
-其中最硬的是 `Dense-Carleson`。下一步最优专攻应证明 fixed-template dense pack 在 CRT martingale 细化下具有 Carleson 嵌入上界，或把失败明确转入 `SC/LSMP/CE`。
+其中 `Dense-Carleson` 的正交核心已由 `docs/rh-gee-dense-carleson-load-bridge.md` 接入；当前最硬点转为 `Baseline-Subtraction`：把 lacunary/dense 的零频容量与 GEE-0 异常负担严格分离。
+
+## 8. Dense-Carleson 推进
+
+新增 `docs/rh-gee-dense-carleson-load-bridge.md`。审查结果：Dense-Carleson 的 Hilbert/martingale 核心已由 `PC4-PI-Dense` 条件化闭合；GEE 剩余不是正交估计，而是 `Baseline-Subtraction`：dense/lacunary 零频容量不能重复计入异常负担。

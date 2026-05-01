@@ -196,3 +196,5 @@
 - `docs/rh-nrc-2d-midcap-structure-route.md`：NRC-2D 中间容量层四触发分流路线。
 
 - `docs/rh-gee-pi-dso-load-bound-target.md`：GEE-PI/DSO 负担上界目标，抽取 `Lac-Baseline/Dense-Carleson/Anomaly-L2-Control` 三项硬点。
+
+- `docs/rh-gee-dense-carleson-load-bridge.md`：Dense-Carleson 到 GEE 负担的桥接，剩余压缩为 `Baseline-Subtraction`。

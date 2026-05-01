@@ -94,3 +94,8 @@
 - [ ] `Lac-Baseline`：lacunary 零频容量与异常负担不重复计数。
 - [ ] `Dense-Carleson`：fixed-template dense pack 的 square-function/Carleson 容量上界。
 - [ ] `Anomaly-L2-Control`：非终端异常函数 `L^2` 质量小于 `Δ/log^B X`，失败转结构出口。
+
+## Dense-Carleson 状态更新
+
+- [x] `Dense-Carleson`：dense fixed-template 容量上界由 `PC4-PI-Dense` 接入 GEE。
+- [ ] `Baseline-Subtraction`：PI/DSO 零频容量不得重复计入异常负担；只登记超额偏差。

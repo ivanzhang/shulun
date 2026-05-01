@@ -167,3 +167,7 @@ GEE-0 是纯 bookkeeping 定理，依赖 PC1、PC2、C3、C4、C5。
 ## GEE-PI/DSO 负担目标
 
 新增 `docs/rh-gee-pi-dso-load-bound-target.md`。PI/DSO 当前从“桥接无回流”升级为明确负担目标：需证明 `Lac-Baseline`、`Dense-Carleson` 与 `Anomaly-L2-Control` 三项，才能推出 `Load(PI)+Load(DSO)=o(Δ)`。最硬点为 `Dense-Carleson`。
+
+## Dense-Carleson 状态更新
+
+新增 `docs/rh-gee-dense-carleson-load-bridge.md`。`GEE-PI/DSO` 最硬点已从 dense 正交转为基线账本：需证明 `Baseline-Subtraction`，即 PI/DSO 的零频容量只作基线扣除，进入 `Load` 的仅为超额偏差。

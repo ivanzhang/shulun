@@ -177,3 +177,5 @@
 - `docs/rh-nrc-2d-midcap-structure-route.md`：新增 MidCap-Structure 分流；NRC-2D 剩余压力转入全局出口。
 
 - `docs/rh-gee-pi-dso-load-bound-target.md`：新增 GEE-PI/DSO 负担目标；当前最硬点为 `Dense-Carleson`。
+
+- `docs/rh-gee-dense-carleson-load-bridge.md`：新增 dense PI/DSO 容量到 GEE 负担桥接。
