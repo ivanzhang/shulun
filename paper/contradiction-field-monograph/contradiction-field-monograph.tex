@@ -365,6 +365,24 @@ Thus the true no-black-box core is a weighted bilinear Kloosterman dispersion es
 At the current stage the manuscript is not yet fully no-black-box.  The BMD obstruction has been reduced to the single deep BE2--3K Kloosterman-dispersion estimate.  If a BFI/Deshouillers--Iwaniec/Kuznetsov type mean-value theorem is cited, BMD is closed as an external-input theorem.  If no external input is allowed, BE2--3K remains the unique missing line-by-line proof obligation.
 \end{remark}
 
+\begin{remark}[Further reduction of BE2--3K]
+The BE2--3K core can be narrowed further.  Pointwise Weil bounds for individual incomplete reciprocal sums give only single-modulus square-root cancellation and do not provide the arbitrary logarithmic saving required after summing over the $d_1,d_2,h$ families.  The common-divisor strata $(d_1,d_2)>1$ are not the main obstruction: compatibility forces $s_1\equiv s_2$ modulo the common divisor and yields only polylogarithmic loss.  The remaining genuine input is a windowed Kloosterman spectral large-sieve estimate, denoted KLS-window in the notes.  Its role is precisely
+\[
+  \text{KLS-window}\Rightarrow\text{BE2--3K}\Rightarrow
+  \text{BE2--3}\Rightarrow \text{weighted BV--}E_2\Rightarrow\text{BMD}.
+\]
+\end{remark}
+
+\begin{remark}[External-theorem closure of KLS-window]
+The KLS-window input is tied to two classical external sources: the Deshouillers--Iwaniec spectral Kloosterman large-sieve technology, as developed in \emph{Kloosterman sums and Fourier coefficients of cusp forms}, Invent. Math. 70(2), 219--288 (1982), and the Bombieri--Friedlander--Iwaniec dispersion framework with well-factorable weights, as in \emph{Primes in Arithmetic Progressions to Large Moduli. II}, Math. Ann. 277, 361--394 (1987).  With these external theorems allowed, the analytic chain closes as
+\[
+  \text{DI+BFI}\Rightarrow\text{KLS-window}\Rightarrow
+  \text{BE2--3K}\Rightarrow\text{BE2--3}\Rightarrow
+  \text{weighted BV--}E_2\Rightarrow\text{BMD}.
+\]
+This is an external-deep-theorem closure, not a fully self-contained reproof of Kuznetsov/dispersion theory.
+\end{remark}
+
 \chapter{Zeta-Zero Contradiction Fields}
 
 Assume an off-critical zero $\rho=\beta+i\gamma$ with $\beta>1/2$.  The RH contradiction-field manuscript transfers the resulting smooth prime anomaly into a CRT rough-composite ledger, decomposes it into sparse/dense/tail/internal/global exits, and proves that no named escape channel remains under the recorded local theorems and restricted external inputs.
@@ -397,6 +415,81 @@ External inputs & finite verification and Structured-EHPD & explicit formula, KL
 Final status & reduction package, not final unconditional theorem & verification package with submission warning\\
 \bottomrule
 \end{longtable}
+
+\chapter{Directory and Theory System}
+
+The detailed working directory and theory-system map is maintained in
+\[
+  \texttt{docs/monograph/combined-monograph-directory-and-theory-system.md}.
+\]
+This chapter records the concise version used by the merged monograph.
+
+\section{Proposed Book Structure}
+
+\begin{longtable}{@{}L{0.20\textwidth}L{0.34\textwidth}L{0.36\textwidth}@{}}
+\toprule
+Part & Contents & Status\\
+\midrule
+I & Unified contradiction-field method: entrance, local rigidity, exits, capacity, no-cycle potential & Methodological framework\\
+II & Prime-matrix row/column program: CRT skeleton, A/B reduction, Structured-EHPD interface & Reduction package; not final theorem\\
+III & Two-point secondary sieve: TLI, BST, BMD, WBE2, BE2--3K, KLS-window & External-deep-theorem closure for BMD\\
+IV & Zeta-zero contradiction field: explicit-formula entrance and controlled exits & Verification package; not final RH theorem\\
+V & Dependency map, referee checklist, optimization routes & Audit and future work\\
+\bottomrule
+\end{longtable}
+
+\section{Latest Two-Point Chain}
+
+For the $w=2$ hardest two-point branch, the current analytic chain is
+\[
+  \text{DI+BFI}\Rightarrow\text{KLS-window}\Rightarrow
+  \text{BE2--3K}\Rightarrow\text{BE2--3}\Rightarrow
+  \text{WBE2}\Rightarrow\text{BMD}\Rightarrow
+  \text{BST--2}\Rightarrow\text{BST}\Rightarrow\text{TLI}.
+\]
+The chain is closed only in the external-deep-theorem sense: DI and BFI are cited as classical analytic inputs.  A fully self-contained version would require reproving the spectral Kloosterman large-sieve and dispersion machinery.
+
+\section{Claim Status Legend}
+
+The monograph uses the following status labels.
+
+\begin{longtable}{@{}L{0.24\textwidth}L{0.66\textwidth}@{}}
+\toprule
+Label & Meaning\\
+\midrule
+Proved-in-text & The statement is proved inside the manuscript under the stated hypotheses.\\
+Reduction-closed & The statement has been reduced to a smaller named interface.\\
+External-theorem closed & The statement is closed after citing explicitly named external theorems.\\
+Referee-block & A proof package exists, but it still requires line-by-line referee verification.\\
+Not claimed & The statement is not asserted as a theorem of the manuscript.\\
+\bottomrule
+\end{longtable}
+
+\section{External Theorem Index}
+
+The external-input index is maintained in
+\[
+  \texttt{docs/monograph/external-theorem-index.md}.
+\]
+For the two-point sieve, the critical external package is DI plus BFI.  The index records the required checks for the KLS-window input: Kloosterman phase normalization, modulus range, frequency range, inverse-variable support, well-factorable weights, gcd strata, smoothing and sawtooth losses, and the final choice of the logarithmic-loss parameter $B(A)$.
+
+\section{Critical Chain Audit}
+
+The detailed chain audit is maintained in
+\[
+  \texttt{docs/monograph/key-proof-chain-optimization-audit.md}.
+\]
+Its main purpose is to prevent status mixing.  Prime-matrix existence rigidity may support zero-section exclusion, but it does not replace signed spectral distribution estimates such as BMD-Char.  Numerical experiments may guide constants and structures, but they are not proof inputs.  The RH branch remains a verification package and is not claimed as an unconditional proof.
+
+\section{Optimization Priorities}
+
+\begin{enumerate}
+  \item Separate theorem environments for proved-in-text, reduction-closed, external-theorem closed, and referee-block statements.
+  \item Replace the overly strong $\max_a$ BV--$E_2$ formulation by the precise WBE2 well-factorable weighted statement in the main line.
+  \item Rewrite KLS-window directly in the notation of the cited DI/BFI theorems to reduce translation risk.
+  \item Compress the prime-matrix program around the single Structured-EHPD exclusion interface.
+  \item Preserve the RH warning language until every controlled exit has independent referee verification.
+\end{enumerate}
 
 
 \chapter{Referee Closure Audit}

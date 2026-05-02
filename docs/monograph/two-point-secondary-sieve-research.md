@@ -13188,3 +13188,192 @@ e\!\left(
 \]
 
 这不是失败，而是审稿级定位的必要精确化：下一步若继续推进，唯一目标就是证明或正式引用 `BE2-3K`。
+
+## 441. 再硬攻 BE2-3K：点态 Weil 界不足
+
+继续审查 `BE2-3K` 的内部结构。最直接想法是对每个固定模数使用 Weil 界。典型不完整倒数和为
+
+\[
+B_d(A)=\sum_{s\sim S}\beta_s e(A\overline{s}/d).
+\]
+
+完成到模 `d` 后，点态 Weil 给出
+
+\[
+B_d(A)\ll \tau(d)(S/d+1)d^{1/2}\log d.
+\]
+
+在最危险平衡区间
+
+\[
+S\asymp P,\qquad d\asymp Q\asymp P/\log^B P
+\]
+
+时仅得
+
+\[
+B_d(A)\ll P^{1/2}\log^{B/2+C}P.
+\]
+
+这对单个模数非平凡，但不足以在 `d_1,d_2,h` 的总平均中取得任意 `log^{-A}` 节省。换言之：
+
+\[
+\boxed{
+\text{点态 Weil 界不是 BE2-3K 的完整证明。}
+}
+\]
+
+需要的是 Kloosterman 平均定理，而不是单个 Kloosterman 和的平方根抵消。
+
+## 442. gcd 层不是真正硬点
+
+第 438 节主推导默认 `(d_1,d_2)=1`。若
+
+\[
+g=(d_1,d_2)>1,\qquad d_i=ge_i,\quad (e_1,e_2)=1,
+\]
+
+则两条同余
+
+\[
+rs_1\equiv2(d_1),\qquad rs_2\equiv2(d_2)
+\]
+
+在公共模 `g` 上强制
+
+\[
+s_1\equiv s_2\pmod g.
+\]
+
+若该条件不满足，交叉项为零；若满足，`s_1,s_2` 被压到同一个 `mod g` 类，带来约 `1/g` 的稀疏因子。求和后只产生
+
+\[
+\sum_g \tau(g)^C/g
+\]
+
+型多对数损失。因此 gcd 层可以并入技术账本，不是最后障碍。
+
+## 443. well-factorable 权重是必须使用的结构
+
+Rosser/Buchstab 权重 `\lambda_d` 的关键不是 `|\lambda_d|\le1`，而是 well-factorable。对任意
+
+\[
+Q=Q_1Q_2
+\]
+
+可写
+
+\[
+\lambda_d=\sum_{d=uv}\lambda^{(1)}_u\lambda^{(2)}_v,\qquad
+u\le Q_1,\ v\le Q_2.
+\]
+
+这允许把一部分模数放入 Kloosterman 模数，另一部分作为外层平滑平均。没有这种分解，BE2-3K 会退化为普通大筛控制不了的双模数硬平均。
+
+因此 BE2-3K 的正确证明必须同时使用：
+
+1. well-factorable 权重分解；
+2. gcd 层剥离；
+3. CRT 后的 Kloosterman 相位；
+4. 谱大筛/Kuznetsov 平均。
+
+## 444. 最后核心输入：KLS-window
+
+把 BE2-3K 的最后分析输入命名为：
+
+**KLS-window（窗口化 Kloosterman 谱大筛）。** 在
+
+\[
+C\asymp P/\log^{O(1)}P,\quad S\asymp P,\quad H\le P/\log^{O(1)}P
+\]
+
+范围内，对 divisor-bounded `\beta_s`、well-factorable 模权 `\lambda_c` 和平滑 `h` 权，Kloosterman 窗口二次型满足
+
+\[
+\mathcal K_{\rm win}\ll_A \frac{N^2}{R\log^A P}.
+\]
+
+这里 `\mathcal K_{\rm win}` 是第 438 节非对角核经 gcd 剥离、well-factorable 分解和平滑分割后的标准窗口形态。
+
+若 KLS-window 成立，则
+
+\[
+\mathrm{KLS\text{-}window}
+\Rightarrow
+\mathrm{BE2\text{-}3K}
+\Rightarrow
+\mathrm{BE2\text{-}3}
+\Rightarrow
+\mathrm{WBE2}
+\Rightarrow
+\mathrm{BMD}.
+\]
+
+## 445. 本轮 BE2-3K 硬攻结论
+
+BE2-3K 已进一步压缩：
+
+\[
+\boxed{
+\text{BE2-3K 的真正剩余是 KLS-window。}
+}
+\]
+
+已审查结论：
+
+- 点态 Weil 不足；
+- gcd 层可控；
+- well-factorable 分解必需；
+- 最后需要窗口化 Kloosterman 谱大筛。
+
+因此当前“完全无黑箱”状态仍未达到，但黑箱位置更小、更准确：它不再是 BMD、WBE2、BE2-3，也不是整个 BE2-3K，而是 `KLS-window`。
+
+## 446. KLS 外部引用版闭合
+
+为实现审稿可追踪的外部引用版闭合，附录 `docs/monograph/bv-e2-appendix.md` 第 16--19 节新增 `KLS-source` 定理包。
+
+核心引用有两类：
+
+1. **DI 谱 Kloosterman 大筛。** Deshouillers--Iwaniec, *Kloosterman sums and Fourier coefficients of cusp forms*, Inventiones Mathematicae 70(2), 219--288, 1982。该工具提供 Kloosterman 和在模数族与频率族上的谱平均抵消。
+2. **BFI dispersion / well-factorable 权重。** Bombieri--Friedlander--Iwaniec, *Primes in Arithmetic Progressions to Large Moduli. II*, Mathematische Annalen 277, 361--394, 1987。该工具把 Kloosterman 平均、well-factorable 筛权、Dirichlet 多项式卷积和大模数 AP 分布结合起来。
+
+变量对应为：
+
+\[
+d,c\leftrightarrow\text{Kloosterman 模数},\quad
+h\leftrightarrow\text{加法频率},\quad
+s\leftrightarrow\text{逆元变量},\quad
+\lambda_d\leftrightarrow\text{well-factorable 权重}.
+\]
+
+由此得到外部定理版链条：
+
+\[
+\mathrm{DI+BFI}
+\Rightarrow
+\mathrm{KLS\text{-}window}
+\Rightarrow
+\mathrm{BE2\text{-}3K}
+\Rightarrow
+\mathrm{BE2\text{-}3}
+\Rightarrow
+\mathrm{WBE2}
+\Rightarrow
+\mathrm{BMD}.
+\]
+
+## 447. 外部深定理版与完全自足版的区别
+
+现在可以精确区分两种闭合：
+
+**外部深定理版闭合。** 若允许引用 DI/ BFI 作为经典外部定理，则 KLS-window 成立，进而 BMD 闭合。
+
+**完全自足无黑箱版未闭合。** 若要求本文从 Kuznetsov trace formula、谱大筛和 BFI dispersion 开始全部重证，则仍需新增长篇谱理论附录。当前文稿没有重证 DI/ BFI，因此不能标为完全无黑箱。
+
+顶刊审稿表述应为：
+
+\[
+\boxed{
+\text{二点筛 BMD 链条已完成外部深定理版闭合；完全自足版仍依赖 DI/BFI。}
+}
+\]

@@ -1,0 +1,139 @@
+# 外部定理引用索引
+
+## 0. 用途
+
+本索引用于把合著稿中所有外部深输入固定到可审稿对象，避免“引用某个标准定理”但未说明用途、变量和适用条件。
+
+状态等级：
+
+- `required`：当前主线必须使用；
+- `optional-strong`：强于必要条件，可作备选；
+- `legacy`：历史章节使用，主线不优先依赖；
+- `warning`：不能替代当前硬点。
+
+## 1. DI 谱 Kloosterman 大筛
+
+- **来源**：Deshouillers, J.-M.; Iwaniec, H., *Kloosterman sums and Fourier coefficients of cusp forms*, Inventiones Mathematicae 70(2), 219--288, 1982, DOI `10.1007/BF01390728`.
+- **状态**：`required` for external-theorem version.
+- **用于**：`KLS-window` 的 Kloosterman 模数族与频率族平均抵消。
+- **对应链条**：`DI => KLS-window => BE2-3K`.
+- **必须核对**：
+  - Kloosterman 相位与第 438 节相位一致；
+  - 模数范围 `C≈P/log^{O(1)}P`；
+  - 频率范围 `H<=P/log^{O(1)}P`；
+  - 平滑截断可由 dyadic partition 实现；
+  - 系数二范数/除数型界满足谱大筛假设。
+
+## 2. BFI dispersion 与 well-factorable 权重
+
+- **来源**：Bombieri, E.; Friedlander, J. B.; Iwaniec, H., *Primes in Arithmetic Progressions to Large Moduli. II*, Mathematische Annalen 277, 361--394, 1987.
+- **状态**：`required` for external-theorem version.
+- **用于**：把 DI Kloosterman 平均接入 well-factorable Rosser/Buchstab 权重和 Dirichlet 多项式卷积。
+- **对应链条**：`BFI + DI => KLS-window => WBE2`.
+- **必须核对**：
+  - `lambda_d` 的 well-factorable level；
+  - `E_2` 受限卷积是否落入 BFI 处理的 convolution/Dirichlet polynomial 框架；
+  - 端点与平滑权损失是否为多对数；
+  - `B(A)` 是否可吸收所有 dyadic、gcd、sawtooth 损失。
+
+## 3. BV-E2 强版本
+
+- **来源**：Bombieri--Vinogradov 型 `E_2` 序列平均分布，可由 BFI/dispersion 工具导出。
+- **状态**：`optional-strong`.
+- **用于**：直接推出 BMD 的充分条件。
+- **为什么非最优**：BMD 实际只需固定类 `2 mod d` 与 well-factorable 权重的 `WBE2`，不需要 `max_a`。
+- **必须核对**：
+  - level `Q<=N^{1/2}/log^B N`；
+  - 序列 `a_n` 为受限二素数卷积；
+  - 模 `2` 已确定剥离，只处理奇平方自由模；
+  - 误差强度 `N/log^A N` 足以除以 `|U_Y|≈N/log^2P`。
+
+## 4. Vaughan / Heath-Brown 恒等式
+
+- **来源**：标准解析数论素数权分解。
+- **状态**：`required` for self-contained expansion, but hidden inside BFI if cited.
+- **用于**：把素数权 `1_P(p)1_P(m)` 转换为 Type-I/Type-II 双线性形式。
+- **必须核对**：
+  - 截断参数；
+  - 系数 divisor-bounded；
+  - dyadic 分块数量；
+  - Type-II 平衡块 `R,S≈P` 被覆盖。
+
+## 5. Kuznetsov trace formula / spectral large sieve
+
+- **来源**：DI 工具的谱理论底层。
+- **状态**：`required only for fully self-contained no-black-box version`.
+- **用于**：若不引用 DI，必须从这里重证 KLS-window。
+- **必须核对**：
+  - cusp forms、Eisenstein spectrum、Bessel transform；
+  - Kloosterman sum normalization；
+  - 大筛常数和权重平滑性；
+  - 对本文窗口 `C,S,H` 的专门化。
+
+## 6. Explicit formula
+
+- **来源**：ζ 函数显式公式。
+- **状态**：`required` in RH branch.
+- **用于**：离线零点到素数计数异常入口。
+- **必须核对**：
+  - 平滑核；
+  - 零点贡献；
+  - 尾项；
+  - 阈值和误差项；
+  - controlled exits 是否真正覆盖异常。
+
+## 7. BG / Baker 类输入
+
+- **来源**：历史方阵/RH 局部估计中使用的解析数论输入。
+- **状态**：`legacy` unless in current main theorem statement.
+- **用于**：旧版本常数、阈值、局部指数和估计。
+- **必须核对**：
+  - 当前主线是否仍依赖；
+  - 若依赖，精确版本和常数；
+  - 若不依赖，移入历史注记。
+
+## 8. 不能误用的输入
+
+| 输入 | 不能替代什么 | 原因 |
+| --- | --- | --- |
+| RC-Prime | BMD/WBE2 | 只给非空性，不给有符号分布 |
+| 普通大筛 | BE2-3K/KLS-window | 平衡块差一个 `P` 量级 |
+| 点态 Weil | KLS-window | 只给单模抵消，不给总平均 `log^{-A}` |
+| 实验扫描 | 证明 | 只能作为常数与结构证据 |
+| 完整 CRT 周期均衡 | 短窗口真实分布 | 短窗口不等于完整周期 |
+
+## 9. 下一步核查任务
+
+1. 把 DI/BFI 的定理原文版本摘录成可引用的定理模板。
+2. 将 KLS-window 的变量逐项填入该模板。
+3. 对所有多对数损失建立 `B(A)` 吸收账本。
+4. 在主稿中把“引用版闭合”和“完全自足版未闭合”分开定理化。
+
+## 10. KLS-window 变量适配核查表
+
+这是当前二点筛链条最需要继续压实的审稿表。只有该表逐项完成后，`DI+BFI=>KLS-window` 才能从“方向正确”升级为“引用适配充分”。
+
+| 核查项 | 本文对象 | 外部定理对象 | 当前状态 | 补正动作 |
+| --- | --- | --- | --- | --- |
+| Kloosterman 相位 | `e(-2h \bar{s_1}\bar{d_2}/d_1-2h \bar{s_2}\bar{d_1}/d_2)` | DI/BFI 的逆元相位或 Kloosterman 和 | 待逐项归一化 | 写出从 CRT 相位到标准 `S(a,b;c)` 的换元 |
+| 模数族 | `d,c≈P/log^{O(1)}P` | Kloosterman 模数/level | 方向匹配 | 核对外部定理允许的 dyadic level 与 well-factorable level |
+| 频率族 | `0<|h|<=H`, `H<=P/log^{O(1)}P` | Fourier/Bessel 频率 | 方向匹配 | 给出 sawtooth 截断与 Bessel transform 的损失账本 |
+| 逆元变量 | `s≈P`, `(s,d)=1` | Kloosterman 分子中的可逆类 | 方向匹配 | 核对 `beta_s` 的 divisor-bounded 与平滑分割条件 |
+| 权重 | `lambda_d` Rosser/Buchstab well-factorable | BFI well-factorable weights | 方向匹配 | 明确 level 分解 `Q=Q_1Q_2` 后每层支持 |
+| gcd 层 | `(d_1,d_2)=g` 强迫 `s_1≡s_2 mod g` | 非互素模数处理 | 已有多对数账本草案 | 写入主稿为 lemma，损失记入 `log^C P` |
+| 端点和平滑 | dyadic、sawtooth、窗口边界 | 平滑权/partial summation | 待量化 | 建立 `B(A)` 吸收账本 |
+| 目标强度 | `K<<N^2/(R log^A P)` | 任意对数节省 | 依赖外部定理 | 明确选择 `B=B(A)` 的顺序 |
+
+## 11. 审稿级输出格式
+
+主稿中建议把外部输入写为两层。
+
+第一层是可引用定理：
+
+`Theorem KLS-ext (DI/BFI).` 在第 10 节变量条件全部满足时，`KLS-window` 成立。
+
+第二层是应用命题：
+
+`Proposition.` `KLS-window=>BE2-3K=>BE2-3=>WBE2=>BMD`。
+
+这样审稿人可以分别检查“外部定理是否可引用”和“引用后是否真的推出本文所需命题”，避免把两个问题混在一起。

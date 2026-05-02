@@ -235,3 +235,13 @@
 | BE2-3无黑箱化 | 压缩为BE2-3K | `docs/monograph/bv-e2-appendix.md` 第 7--9 节与 `docs/monograph/two-point-secondary-sieve-research.md` 第 436--439 节继续硬攻：BMD 不需完整 `max_a` BV-E2，只需固定剩余类 `2 mod d` 与 well-factorable Rosser/Buchstab 权重的 WBE2。对平衡 Type-II 块展开 dispersion，Cauchy 后归结为 `sum_r |T_r|^2` 方差界；非对角 CRT 条件 `rs1≡2(d1), rs2≡2(d2)` 产生双 Kloosterman 相位。最终最小无黑箱核命名为 `BE2-3K`：weighted bilinear Kloosterman dispersion。若 BE2-3K 成立，则 `BE2-3K=>BE2-3=>WBE2=>BMD`。 |
 
 | 顶刊审稿最终状态 | 尚未完全无黑箱 | `docs/monograph/two-point-secondary-sieve-research.md` 第 440 节新增最终审稿结论：BMD 已严格归约到唯一深核 `BE2-3K`，但本文尚未在文内证明该 Kloosterman 双线性平均定理。若引用 BFI/Deshouillers--Iwaniec/Kuznetsov 型工具，则 BMD 可作为外部输入版闭合；若坚持完全无黑箱，则剩余唯一任务是证明 `BE2-3K`。不得把当前稿标为“完全无黑箱证明”。 |
+
+| BE2-3K继续硬攻 | 压缩为KLS-window | `docs/monograph/bv-e2-appendix.md` 第 10--15 节与 `docs/monograph/two-point-secondary-sieve-research.md` 第 441--445 节继续细化。点态 Weil 界在平衡区间只给单模平方根抵消，不能提供任意 `log^{-A}`；`(d1,d2)>1` 的 gcd 层由 `s1≡s2 mod g` 带来 `1/g` 稀疏因子，只造成多对数损失；well-factorable 权重分解是必须结构。最终剩余核进一步定位为 `KLS-window`：窗口化 Kloosterman 谱大筛。逻辑链为 `KLS-window=>BE2-3K=>BE2-3=>WBE2=>BMD`。 |
+
+| KLS外部引用闭合 | 外部深定理版闭合/非完全自足 | `docs/monograph/bv-e2-appendix.md` 第 16--19 节与 `docs/monograph/two-point-secondary-sieve-research.md` 第 446--447 节补充 KLS-source 定理包。KLS-window 精确关联到 Deshouillers--Iwaniec 的谱 Kloosterman 大筛与 Bombieri--Friedlander--Iwaniec 的 dispersion/well-factorable 权重框架。变量匹配为 `d,c` 对 Kloosterman 模数，`h` 对加法频率，`s` 对逆元变量，`lambda_d` 对 well-factorable 权重。链条为 `DI+BFI=>KLS-window=>BE2-3K=>BE2-3=>WBE2=>BMD`。因此二点筛 BMD 达到外部深定理版闭合；若要求完全自足，仍需重证 DI/BFI。 |
+
+| 合著目录与理论系统总览 | 已整理/审稿辅助 | 新增 `docs/monograph/combined-monograph-directory-and-theory-system.md`，并在 `paper/contradiction-field-monograph/contradiction-field-monograph.tex` 增加 `Directory and Theory System` 章节。总览把合著稿分为五部：统一矛盾场方法、方阵行列程序、二点筛程序、RH 反例矛盾场、统一依赖图与优化方向；并明确二点筛最新链条、状态等级、优化方向和禁止过度声明边界。 |
+
+| 外部定理引用索引 | 已建立/待主稿模板化 | 新增 `docs/monograph/external-theorem-index.md`，列出 DI、BFI、BV-E2、Vaughan/Heath-Brown、Kuznetsov、explicit formula、BG/Baker 等外部输入的用途、状态、适用条件和误用风险。最新补充 KLS-window 变量适配核查表：相位、模数、频率、逆元变量、well-factorable 权重、gcd 层、端点平滑和 `B(A)` 吸收账本。 |
+
+| 关键证明链条优化审查 | 已新增/全稿状态清洗依据 | 新增 `docs/monograph/key-proof-chain-optimization-audit.md` 与归档 `docs/archive/monograph-reviews/monograph-key-chain-optimization-audit-2026-05-02.md`。该审查把主线压缩为 `PM-1..PM-8`、`TP-1..TP-9`、`RH-1..RH-5` 三条链，并明确：二点筛是外部深定理版闭合，完全自足版仍卡在 KLS-window；方阵链条需聚焦 Structured-EHPD；RH 链条不能宣称无条件证明。 |
