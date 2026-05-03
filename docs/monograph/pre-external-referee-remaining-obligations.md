@@ -432,6 +432,18 @@ Singleton Tail Exclusion:
 
 若该单点尾块排斥未证明，H3/行命题仍不能宣称无条件闭合。
 
+新增 `docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md` 后，外审义务进一步精确：
+孤立尾点的左右夹逼相位已可逐行审查。固定夹逼单元 `c=(delta_-,delta_+,r_-,r_+)` 后，
+所有点落入 `rho(c) mod lcm(r_-,r_+)`；再加尾标签 `ell>y` 后落入模
+`ell*lcm(r_-,r_+)` 的唯一类。因此大量孤立尾点必须满足三分支：
+
+```text
+Tail-label concentration / Clamp low-mod concentration / Distributed singleton capacity.
+```
+
+前两项是命名缺陷入口；外审前剩余是第三项，即分散容量中素数与双粗半素数的有符号分离。
+该项未证明前，不能把夹逼 CRT 容量误写成 Singleton Tail Exclusion 的无条件证明。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

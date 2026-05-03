@@ -226,3 +226,12 @@ docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md
 该文件证明尾块分解恒等式 `T=J+E`。二维上筛控制 `E` 后，剩余尾质量主要表现为孤立尾点；
 小骨架切割数量本身不足以构成 PDEC。统一缺陷排斥的最终局部硬核因此更新为
 `Singleton Tail Exclusion`。
+
+孤立尾点的三分支判据见：
+
+```text
+docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md
+```
+
+该文件证明：每个孤立尾点由尾标签与左右夹逼低模唯一定位；大量孤立尾点若存在，必进入
+尾标签集中、夹逼低模集中或分散容量三分支。前两者是命名缺陷入口，后者是当前最后硬核。

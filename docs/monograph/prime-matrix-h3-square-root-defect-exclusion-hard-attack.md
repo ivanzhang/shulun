@@ -267,3 +267,12 @@ docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md
 短块抽取满足精确恒等式 `T=J+E`。二维上筛只压小内部相邻尾边 `E`，于是坏行尾质量主要转成
 孤立尾点。由于小骨架自然是 `q` 级，不能把切割点数量直接当作 PDEC 缺陷。剩余硬核是孤立
 尾点的左右小骨架夹逼相位排斥。
+
+该夹逼相位的精确判据见：
+
+```text
+docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md
+```
+
+它把孤立尾点压成 `Tail-label concentration / Clamp concentration / Distributed capacity`
+三分支。真正未闭合的是分散容量中的有符号半素数过剩排斥。

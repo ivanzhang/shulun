@@ -1,6 +1,6 @@
 # H3 短尾块路由与单点尾块硬障碍
 
-**状态：** `shortblock_identities_proved_singleton_tail_barrier_open`
+**状态：** `shortblock_identities_proved_singleton_clamp_criterion_added`
 
 本文继续攻击同一个 H3/行命题闭合目标。上一层已经证明：
 
@@ -292,3 +292,23 @@ T-c{q\over\log y}
 5. 下一步必须证明单点尾块三重相位计数 `(SBB-26)` 不能达到满尾质量，或它必然触发命名缺陷。
 
 这不是退回平均尺度，也不是转换命题；它把原尾补洞障碍推进到最窄的孤立尾点层。
+
+## 9. 单点夹逼相位判据
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md
+```
+
+把孤立尾点的左右小骨架夹逼相位进一步写成 CRT 容量判据。固定左右小标签
+`r_-,r_+<=y` 与相邻差 `delta_-,delta_+ in {2,4}` 后，夹逼同余给出唯一低模类
+`rho mod lcm(r_-,r_+)`；再加尾标签 `ell>y` 后，在模 `ell*lcm(r_-,r_+)` 下给出唯一类。
+因此每个 `(ell,clamp)` 单元在一行中的容量至多
+
+\[
+1+\left\lfloor {q+O(1)\over \ell\,\operatorname{lcm}(r_-,r_+)}\right\rfloor .
+\]
+
+该判据证明：大量孤立尾点若存在，必进入尾标签集中、夹逼低模集中或分散容量三分支。
+未闭合的是分散容量分支中的有符号半素数过剩。

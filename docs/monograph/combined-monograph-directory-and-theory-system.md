@@ -1369,6 +1369,12 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 硬核改写为 `Singleton Tail Exclusion`：孤立尾点 `a_j=ell_j m_j` 被左右小骨架点夹住，
 满足 `a_j≡0 mod ell_j` 与 `a_j≡±delta mod r_\pm`；需证明大量此类夹逼相位不能无缺陷存在。
 
+新增 `docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md` 后，孤立尾点夹逼系统
+被三分支化：尾标签集中、夹逼低模集中、分散单点容量。前两项可并入
+`PDEC/ColumnCRT/endpoint/cofactor` 缺陷；第三项仍是最终硬核，因为分散容量在自然尺度上
+能容纳与素数余量同阶的双粗半素数。合著稿最新状态应写为：单点夹逼 CRT 判据已证，
+分散有符号半素数过剩排斥未证。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

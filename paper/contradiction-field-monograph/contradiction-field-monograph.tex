@@ -1276,6 +1276,21 @@ a point $a_j=\ell_jm_j$ with $\ell_j>y$ is isolated between two small-skeleton n
 so $a_j\equiv0\pmod{\ell_j}$ and simultaneously satisfies two non-zero congruences modulo
 small labels $r_-,r_+\le y$.  One must prove that many such squeezed singleton phases force
 PDEC, ColumnCRT, endpoint, or cofactor defects.
+The squeezed singleton phase is converted into a CRT capacity criterion in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md}.
+\]
+For a fixed clamp datum $c=(\delta_-,\delta_+,r_-,r_+)$, the two small-skeleton congruences
+are either incompatible or define one class $\rho(c)\pmod{\mathrm{lcm}(r_-,r_+)}$.  Adding
+the tail label $\ell>y$ gives one class modulo $\ell\,\mathrm{lcm}(r_-,r_+)$, hence one row
+contains at most
+\[
+  1+\left\lfloor \frac{q+O(1)}{\ell\,\mathrm{lcm}(r_-,r_+)}\right\rfloor
+\]
+points from that unit.  Consequently many singleton tails must enter one of three branches:
+tail-label concentration, clamp low-mod concentration, or distributed singleton capacity.
+The first two are named defect entrances.  The final unresolved branch is the distributed
+signed excess of double-rough semiprimes over the prime survivor channel.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

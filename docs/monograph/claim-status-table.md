@@ -392,6 +392,13 @@ H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量�
 `Singleton Tail Exclusion`：大量孤立尾点若全部为双粗合数，则其尾标签与左右小骨架夹逼相位
 必须触发 `PDEC/ColumnCRT/endpoint/cofactor`。
 
+新增 `docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md` 后，孤立尾点夹逼相位已
+CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标签 `ell>y` 后给模
+`ell*lcm(r_-,r_+)` 的唯一类，单元容量至多
+`1+floor((q+O(1))/(ell*lcm(r_-,r_+)))`。因此大量孤立尾点必进入尾标签集中、夹逼低模集中
+或分散容量三分支。当前未闭合的是分散容量分支：它仍能在自然量级容纳 `q/log y` 个孤立双粗点，
+需要有符号半素数过剩排斥或路由到 `PDEC/ColumnCRT/endpoint/cofactor`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为
