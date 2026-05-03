@@ -27,31 +27,46 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def route_formal_avoidance(lower_grid: dict[str, Any]) -> dict[str, Any]:
+def route_formal_avoidance(
+    lower_grid: dict[str, Any], automaton: dict[str, Any] | None
+) -> dict[str, Any]:
     """构造 formal-family 避开路线审计。"""
     summary = lower_grid["summary"]
     current_ledger_closed = summary["actual_grid_fail_nodes"] == 0
+    automaton_summary = (automaton or {}).get("summary", {})
+    automaton_ready = bool(automaton_summary)
+    current_starts = automaton_summary.get("current_start_count")
+    accepted_starts = automaton_summary.get("current_starts_accepted")
+    automaton_all_current = (
+        automaton_ready and current_starts == accepted_starts
+    )
     return {
         "route_id": "A_formal_family_avoidance",
         "current_status": (
-            "current_ledger_avoids_all_grid_fail"
-            if current_ledger_closed
-            else "current_ledger_has_grid_fail"
+            "current_ledger_and_current_starts_accepted_by_phase_automaton"
+            if current_ledger_closed and automaton_all_current
+            else (
+                "current_ledger_avoids_all_grid_fail"
+                if current_ledger_closed
+                else "current_ledger_has_grid_fail"
+            )
         ),
         "current_ledger_inputs": {
             "actual_transition_nodes": summary["actual_transition_nodes"],
             "actual_grid_fail_nodes": summary["actual_grid_fail_nodes"],
             "formula_count_mismatches": summary["formula_count_mismatches"],
             "formula_delta_mismatches": summary["formula_delta_mismatches"],
+            "automaton_current_start_count": current_starts,
+            "automaton_current_starts_accepted": accepted_starts,
         },
         "global_closed": False,
         "why_not_closed": [
-            "当前账本实际下降节点全部避开 grid_fail，但正式反例族尚未证明必须落入同一相位轨道。",
-            "需要把 formal counterexample family 的下降相位映射到已审计的 delta<=p-r 结构。",
+            "当前账本实际下降节点全部避开 grid_fail，且当前 BCB-Core 起始行全部被相位自动机接受。",
+            "仍需证明任意 formal counterexample family 的起始相位属于自动机接受集 A_p。",
         ],
-        "next_atomic_target": "prove formal-family phase inequality delta<=p-r or formal-family avoids unit endpoint gate rows",
+        "next_atomic_target": "prove formal-family start phases lie in the automaton accepted set A_p",
         "priority_rank": 1,
-        "priority_reason": "当前有限账本支持该路线，且没有被内禀负载障碍直接证伪。",
+        "priority_reason": "当前有限账本与自动机接受集均支持该路线，剩余缺口已变成起始相位准入定理。",
     }
 
 
@@ -127,14 +142,20 @@ def build(
     seam_path: Path,
     gate_path: Path,
     obstruction_path: Path,
+    automaton_path: Path | None = None,
 ) -> dict[str, Any]:
     """构造三路线统一审计。"""
     lower_grid = load_json(lower_grid_path)
     seam = load_json(seam_path)
     gate = load_json(gate_path)
     obstruction = load_json(obstruction_path)
+    automaton = (
+        load_json(automaton_path)
+        if automaton_path is not None and automaton_path.exists()
+        else None
+    )
     routes = [
-        route_formal_avoidance(lower_grid),
+        route_formal_avoidance(lower_grid, automaton),
         route_endpoint_pdec(seam),
         route_columncrt(gate, obstruction),
     ]
@@ -145,6 +166,9 @@ def build(
             "seam": str(seam_path),
             "unit_gate": str(gate_path),
             "columncrt_obstruction": str(obstruction_path),
+            "formal_phase_automaton": str(automaton_path)
+            if automaton_path is not None
+            else None,
         },
         "summary": {
             "route_count": len(routes),
@@ -157,7 +181,7 @@ def build(
         "routes": routes,
         "review_boundary": [
             "三条路线已同口径比较，但没有任何一条达到全局无条件闭合。",
-            "当前最优先继续攻击 formal-family avoidance。",
+            "当前最优先继续攻击 formal-family start-phase admission。",
             "endpoint-PDEC 与 ColumnCRTDefect 可并行保留，但不能替代 formal-family 缺口。",
         ],
     }
@@ -198,9 +222,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 路线 A：formal-family avoidance",
             "",
-            "当前有限下降账本中，`20` 个实际转换节点全部避开 `grid_fail`，闭式判据无计数或相位不一致。这说明避开路线与已有证据一致。未闭合点是：还没有证明正式反例族必须落入这些已审计相位轨道，或必须满足 `delta<=p-r`。",
+            "当前有限下降账本中，`20` 个实际转换节点全部避开 `grid_fail`，闭式判据无计数或相位不一致。新增相位自动机后，当前 BCB-Core 的 `6` 个起始行全部属于接受集 `A_p`。",
             "",
-            "因此路线 A 的最小目标是：证明 formal-family 的下降相位不命中 unit endpoint gate rows，或直接证明其每步满足 `delta<=p-r`。",
+            "因此路线 A 的最小目标已从泛泛的 `delta<=p-r` 压成：证明任意 formal-family 起始相位属于自动机接受集 `A_p`，或把 rejected set 命中送入 seam/PDEC/ColumnCRT。",
             "",
             "## 路线 B：endpoint-PDEC",
             "",
@@ -243,12 +267,23 @@ def main() -> None:
         default=Path("docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.json"),
     )
     parser.add_argument(
+        "--automaton",
+        type=Path,
+        default=Path("docs/monograph/prime-matrix-rpz-formal-phase-automaton.json"),
+    )
+    parser.add_argument(
         "--out-prefix",
         type=Path,
         default=Path("docs/monograph/prime-matrix-rpz-three-route-closure-audit"),
     )
     args = parser.parse_args()
-    result = build(args.lower_grid, args.seam, args.gate, args.obstruction)
+    result = build(
+        args.lower_grid,
+        args.seam,
+        args.gate,
+        args.obstruction,
+        args.automaton,
+    )
     args.out_prefix.with_suffix(".json").write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",

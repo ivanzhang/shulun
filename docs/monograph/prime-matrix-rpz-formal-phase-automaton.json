@@ -1,0 +1,412 @@
+{
+  "status": "rpz_formal_phase_automaton_certificate",
+  "source": "docs/monograph/prime-matrix-rpz-lower-zero-descent-audit.json",
+  "summary": {
+    "max_prime": 13,
+    "transition_row_count": 5,
+    "acceptance_row_count": 6,
+    "current_start_count": 6,
+    "current_starts_accepted": 6,
+    "global_formal_family_closed": false
+  },
+  "transition_rows": [
+    {
+      "p": 3,
+      "r": 2,
+      "gap": 1,
+      "modulus_p": 6,
+      "modulus_r": 2,
+      "success_phase_count": 6,
+      "fail_phase_count": 0,
+      "success_density": 1.0,
+      "fail_density": 0.0,
+      "fail_residues_mod_r": [],
+      "child_phase_image_size": 2,
+      "child_phase_min_preimage": 3,
+      "child_phase_max_preimage": 3,
+      "status": "transition_automaton_built"
+    },
+    {
+      "p": 5,
+      "r": 3,
+      "gap": 2,
+      "modulus_p": 30,
+      "modulus_r": 6,
+      "success_phase_count": 30,
+      "fail_phase_count": 0,
+      "success_density": 1.0,
+      "fail_density": 0.0,
+      "fail_residues_mod_r": [],
+      "child_phase_image_size": 6,
+      "child_phase_min_preimage": 4,
+      "child_phase_max_preimage": 6,
+      "status": "transition_automaton_built"
+    },
+    {
+      "p": 7,
+      "r": 5,
+      "gap": 2,
+      "modulus_p": 210,
+      "modulus_r": 30,
+      "success_phase_count": 126,
+      "fail_phase_count": 84,
+      "success_density": 0.6,
+      "fail_density": 0.4,
+      "fail_residues_mod_r": [
+        2,
+        4
+      ],
+      "child_phase_image_size": 30,
+      "child_phase_min_preimage": 3,
+      "child_phase_max_preimage": 5,
+      "status": "transition_automaton_built"
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "gap": 4,
+      "modulus_p": 2310,
+      "modulus_r": 210,
+      "success_phase_count": 1650,
+      "fail_phase_count": 660,
+      "success_density": 0.7142857142857143,
+      "fail_density": 0.2857142857142857,
+      "fail_residues_mod_r": [
+        3,
+        5
+      ],
+      "child_phase_image_size": 210,
+      "child_phase_min_preimage": 7,
+      "child_phase_max_preimage": 9,
+      "status": "transition_automaton_built"
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "modulus_p": 30030,
+      "modulus_r": 2310,
+      "success_phase_count": 8190,
+      "fail_phase_count": 21840,
+      "success_density": 0.2727272727272727,
+      "fail_density": 0.7272727272727273,
+      "fail_residues_mod_r": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10
+      ],
+      "child_phase_image_size": 2310,
+      "child_phase_min_preimage": 3,
+      "child_phase_max_preimage": 4,
+      "status": "transition_automaton_built"
+    }
+  ],
+  "acceptance_rows": [
+    {
+      "p": 2,
+      "modulus": 2,
+      "accepted_phase_count": 2,
+      "rejected_phase_count": 0,
+      "accepted_density": 1.0
+    },
+    {
+      "p": 3,
+      "modulus": 6,
+      "accepted_phase_count": 6,
+      "rejected_phase_count": 0,
+      "accepted_density": 1.0
+    },
+    {
+      "p": 5,
+      "modulus": 30,
+      "accepted_phase_count": 30,
+      "rejected_phase_count": 0,
+      "accepted_density": 1.0
+    },
+    {
+      "p": 7,
+      "modulus": 210,
+      "accepted_phase_count": 126,
+      "rejected_phase_count": 84,
+      "accepted_density": 0.6
+    },
+    {
+      "p": 11,
+      "modulus": 2310,
+      "accepted_phase_count": 990,
+      "rejected_phase_count": 1320,
+      "accepted_density": 0.42857142857142855
+    },
+    {
+      "p": 13,
+      "modulus": 30030,
+      "accepted_phase_count": 3510,
+      "rejected_phase_count": 26520,
+      "accepted_density": 0.11688311688311688
+    }
+  ],
+  "current_start_traces": [
+    {
+      "start_prime": 5,
+      "start_row": 439,
+      "start_phase_mod_primorial": 19,
+      "accepted_by_automaton": true,
+      "trace": [
+        {
+          "p": 5,
+          "r": 3,
+          "phase_mod_primorial_p": 19,
+          "row_mod_r": 1,
+          "delta": 0,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 1
+        },
+        {
+          "p": 3,
+          "r": 2,
+          "phase_mod_primorial_p": 1,
+          "row_mod_r": 1,
+          "delta": 0,
+          "gap": 1,
+          "success": true,
+          "child_phase_mod_primorial_r": 1
+        }
+      ]
+    },
+    {
+      "start_prime": 7,
+      "start_row": 2940,
+      "start_phase_mod_primorial": 0,
+      "accepted_by_automaton": true,
+      "trace": [
+        {
+          "p": 7,
+          "r": 5,
+          "phase_mod_primorial_p": 0,
+          "row_mod_r": 0,
+          "delta": 2,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 0
+        },
+        {
+          "p": 5,
+          "r": 3,
+          "phase_mod_primorial_p": 0,
+          "row_mod_r": 0,
+          "delta": 2,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 0
+        },
+        {
+          "p": 3,
+          "r": 2,
+          "phase_mod_primorial_p": 0,
+          "row_mod_r": 0,
+          "delta": 1,
+          "gap": 1,
+          "success": true,
+          "child_phase_mod_primorial_r": 0
+        }
+      ]
+    },
+    {
+      "start_prime": 7,
+      "start_row": 9930,
+      "start_phase_mod_primorial": 60,
+      "accepted_by_automaton": true,
+      "trace": [
+        {
+          "p": 7,
+          "r": 5,
+          "phase_mod_primorial_p": 60,
+          "row_mod_r": 0,
+          "delta": 2,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 24
+        },
+        {
+          "p": 5,
+          "r": 3,
+          "phase_mod_primorial_p": 24,
+          "row_mod_r": 0,
+          "delta": 2,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 4
+        },
+        {
+          "p": 3,
+          "r": 2,
+          "phase_mod_primorial_p": 4,
+          "row_mod_r": 0,
+          "delta": 1,
+          "gap": 1,
+          "success": true,
+          "child_phase_mod_primorial_r": 0
+        }
+      ]
+    },
+    {
+      "start_prime": 7,
+      "start_row": 9931,
+      "start_phase_mod_primorial": 61,
+      "accepted_by_automaton": true,
+      "trace": [
+        {
+          "p": 7,
+          "r": 5,
+          "phase_mod_primorial_p": 61,
+          "row_mod_r": 1,
+          "delta": 0,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 25
+        },
+        {
+          "p": 5,
+          "r": 3,
+          "phase_mod_primorial_p": 25,
+          "row_mod_r": 1,
+          "delta": 0,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 5
+        },
+        {
+          "p": 3,
+          "r": 2,
+          "phase_mod_primorial_p": 5,
+          "row_mod_r": 1,
+          "delta": 0,
+          "gap": 1,
+          "success": true,
+          "child_phase_mod_primorial_r": 1
+        }
+      ]
+    },
+    {
+      "start_prime": 11,
+      "start_row": 123,
+      "start_phase_mod_primorial": 123,
+      "accepted_by_automaton": true,
+      "trace": [
+        {
+          "p": 11,
+          "r": 7,
+          "phase_mod_primorial_p": 123,
+          "row_mod_r": 4,
+          "delta": 2,
+          "gap": 4,
+          "success": true,
+          "child_phase_mod_primorial_r": 193
+        },
+        {
+          "p": 7,
+          "r": 5,
+          "phase_mod_primorial_p": 193,
+          "row_mod_r": 3,
+          "delta": 1,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 0
+        },
+        {
+          "p": 5,
+          "r": 3,
+          "phase_mod_primorial_p": 0,
+          "row_mod_r": 0,
+          "delta": 2,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 0
+        },
+        {
+          "p": 3,
+          "r": 2,
+          "phase_mod_primorial_p": 0,
+          "row_mod_r": 0,
+          "delta": 1,
+          "gap": 1,
+          "success": true,
+          "child_phase_mod_primorial_r": 0
+        }
+      ]
+    },
+    {
+      "start_prime": 13,
+      "start_row": 11622,
+      "start_phase_mod_primorial": 11622,
+      "accepted_by_automaton": true,
+      "trace": [
+        {
+          "p": 13,
+          "r": 11,
+          "phase_mod_primorial_p": 11622,
+          "row_mod_r": 6,
+          "delta": 1,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 2185
+        },
+        {
+          "p": 11,
+          "r": 7,
+          "phase_mod_primorial_p": 2185,
+          "row_mod_r": 1,
+          "delta": 0,
+          "gap": 4,
+          "success": true,
+          "child_phase_mod_primorial_r": 73
+        },
+        {
+          "p": 7,
+          "r": 5,
+          "phase_mod_primorial_p": 73,
+          "row_mod_r": 3,
+          "delta": 1,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 12
+        },
+        {
+          "p": 5,
+          "r": 3,
+          "phase_mod_primorial_p": 12,
+          "row_mod_r": 0,
+          "delta": 2,
+          "gap": 2,
+          "success": true,
+          "child_phase_mod_primorial_r": 2
+        },
+        {
+          "p": 3,
+          "r": 2,
+          "phase_mod_primorial_p": 2,
+          "row_mod_r": 0,
+          "delta": 1,
+          "gap": 1,
+          "success": true,
+          "child_phase_mod_primorial_r": 1
+        }
+      ]
+    }
+  ],
+  "formal_route_theorem": [
+    "若 formal-family 的起始相位属于 accepted set A_p，则 canonical 下降路径到达 p=2。",
+    "若起始相位不属于 A_p，则第一失败必为 first-grid-fail seam，并回到 PDEC/ColumnCRT/SAE。",
+    "当前 BCB-Core 账本的全部起始相位都属于 accepted set。"
+  ],
+  "remaining_gap": [
+    "尚未证明任意正式反例族的起始相位都属于 A_p。",
+    "尚未给出 formal-family 起始相位避开 rejected set 的全局结构定理。"
+  ]
+}

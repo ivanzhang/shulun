@@ -608,6 +608,11 @@ endpoint-PDEC 上界、或独立 `ColumnCRTDefect` 排斥定理。
 `ColumnCRTDefect` 只作为深定理备选。下一步应把攻坚火力转到 formal-family 相位不等式
 `delta<=p-r` 或 unit gate 避开定理。
 
+新增 `docs/monograph/prime-matrix-rpz-formal-phase-automaton.md` 后，路线 A 进一步压缩为
+`A_p` 接受集准入定理。当前 BCB-Core 账本中 `6/6` 起始行被接受，且自动机给出每个
+`p<=13` 的接受/拒绝相位计数。当前最小硬点更新为：证明 formal-family 起始相位必在
+`A_p`，或把拒绝相位命中送入 seam/PDEC/ColumnCRT。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

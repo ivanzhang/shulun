@@ -966,3 +966,25 @@ rank 3: C_columnCRT_defect_exclusion
 排序依据是：路线 A 与当前有限下降账本完全一致，`20` 个实际转换节点中 `grid_fail=0`；
 路线 B 已完成支持行和测试函数，但没有 `U_CRT` 上界；路线 C 已完成固定非零位移入口，但
 阈值调参被内禀负载障碍阻断。因此下一步主攻应从路线 A 的 formal-family 相位避开定理开始。
+
+新增 `docs/monograph/prime-matrix-rpz-formal-phase-automaton.md` 后，路线 A 的目标被压成接受集准入。
+定义 `A_p` 为模 `P(p)` 的相位集合：相位在 `A_p` 中当且仅当 canonical 下降路径逐步满足
+`delta<=p-r` 并到达 `p=2`。当前自动机给出：
+
+```text
+max start prime = 13
+current starts = 6
+current starts accepted = 6
+global formal-family closed = false
+```
+
+接受密度在当前层为：
+
+```text
+p=7: 126/210
+p=11: 990/2310
+p=13: 3510/30030
+```
+
+这说明当前账本的 A 路线已闭合，但全局 formal-family 仍需证明起始相位总落入 `A_p`，或把
+`P(p)\setminus A_p` 的命中送入已物化的 seam/PDEC/ColumnCRT 链。

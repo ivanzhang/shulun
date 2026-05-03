@@ -13,15 +13,15 @@
 
 | rank | route | status | next atomic target |
 |---:|---|---|---|
-| 1 | `A_formal_family_avoidance` | `current_ledger_avoids_all_grid_fail` | prove formal-family phase inequality delta<=p-r or formal-family avoids unit endpoint gate rows |
+| 1 | `A_formal_family_avoidance` | `current_ledger_and_current_starts_accepted_by_phase_automaton` | prove formal-family start phases lie in the automaton accepted set A_p |
 | 2 | `B_endpoint_PDEC` | `support_and_test_function_materialized_upper_bound_missing` | derive admissible U_CRT upper bound for the same unit endpoint bad-window family |
 | 3 | `C_columnCRT_defect_exclusion` | `routes_to_defect_threshold_tuning_obstructed` | prove an independent ColumnCRTDefect exclusion theorem, not a smaller L_D threshold |
 
 ## 路线 A：formal-family avoidance
 
-当前有限下降账本中，`20` 个实际转换节点全部避开 `grid_fail`，闭式判据无计数或相位不一致。这说明避开路线与已有证据一致。未闭合点是：还没有证明正式反例族必须落入这些已审计相位轨道，或必须满足 `delta<=p-r`。
+当前有限下降账本中，`20` 个实际转换节点全部避开 `grid_fail`，闭式判据无计数或相位不一致。新增相位自动机后，当前 BCB-Core 的 `6` 个起始行全部属于接受集 `A_p`。
 
-因此路线 A 的最小目标是：证明 formal-family 的下降相位不命中 unit endpoint gate rows，或直接证明其每步满足 `delta<=p-r`。
+因此路线 A 的最小目标已从泛泛的 `delta<=p-r` 压成：证明任意 formal-family 起始相位属于自动机接受集 `A_p`，或把 rejected set 命中送入 seam/PDEC/ColumnCRT。
 
 ## 路线 B：endpoint-PDEC
 

@@ -241,6 +241,10 @@ endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬�
 formal-family 避开优先，其次 endpoint-PDEC，上述两者都失败时才转独立 `ColumnCRTDefect`
 排斥定理。当前没有路线已全局闭合。
 
+新增 `docs/monograph/prime-matrix-rpz-formal-phase-automaton.md` 后，formal-family 避开路线的外审义务
+具体化为起始相位准入：证明任意 formal-family 起始相位属于自动机接受集 `A_p`。当前账本
+`6/6` 起始行被接受，但这仍不是全局证明。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

@@ -873,6 +873,16 @@ formal-family avoidance first: the present lower-descent ledger has twenty actua
 nodes and no grid-failure node, while the endpoint-PDEC route still lacks an admissible
 $U_{\rm CRT}$ upper bound and the ColumnCRT route has been reduced to an independent
 defect-exclusion theorem.
+The formal phase automaton
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-formal-phase-automaton.md}
+\]
+turns the first route into an explicit start-phase admission problem.  For each prime level
+$p$ it defines an accepted set $A_p\bmod P(p)$: phases in $A_p$ descend canonically through
+successive prime levels to $p=2$, while phases outside $A_p$ hit a first-grid-fail seam and
+return to the already materialized exits.  In the current ledger all six BCB-Core start rows
+belong to their accepted sets.  The global missing theorem is that every formal
+counterexample-family start phase lies in $A_p$, or else is captured by the seam exits.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

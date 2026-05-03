@@ -153,6 +153,7 @@ first-grid-fail seam 的 PDEC/Fourier 支持包与端点 unit/killed 分裂。
 unit endpoint seam 的 ColumnCRT 固定非零位移门控证书。
 ColumnCRT 阈值调参不可闭合障碍证书。
 三路线闭合审计与优先级排序。
+formal-family 下降相位自动机证书。
 ```
 
 本文没有完成：
@@ -221,3 +222,20 @@ C ColumnCRTDefect：固定非零位移入口已物化，但阈值调参路线被
 
 因此当前优先级为 `A > B > C`。下一轮应直接攻 formal-family 相位避开定理；B 保留为并行上界路线，
 C 只能作为独立深定理路线，不能再靠 `L_D` 调参推进。
+
+新增 `prime-matrix-rpz-formal-phase-automaton.md` 后，路线 A 被进一步形式化。定义 `A_p` 为模
+`P(p)=prod_{ell<=p}ell` 的接受相位集合：起始相位属于 `A_p` 当且仅当 canonical 相邻素数下降
+每一步满足 `delta<=p-r` 并最终到达 `p=2`。当前账本：
+
+```text
+current starts = 6；
+current starts accepted by A_p = 6；
+global formal-family closed = false。
+```
+
+因此 A 路线的最小硬点已从泛泛的相位不等式变为：
+
+```text
+prove formal-family start phases lie in A_p；
+or route rejected start phases to first-grid-fail seam/PDEC/ColumnCRT。
+```

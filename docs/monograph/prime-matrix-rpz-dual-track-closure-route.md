@@ -241,12 +241,17 @@ R_{p,d} >= prod_{ell<r}(ell-1)。
 三路线并进审计
 
 ```text
+experiments/prime_matrix_rpz_formal_phase_automaton.py；
+docs/monograph/prime-matrix-rpz-formal-phase-automaton.json；
+docs/monograph/prime-matrix-rpz-formal-phase-automaton.md；
 experiments/prime_matrix_rpz_three_route_closure_audit.py；
 docs/monograph/prime-matrix-rpz-three-route-closure-audit.json；
 docs/monograph/prime-matrix-rpz-three-route-closure-audit.md
 ```
 
-进一步给出当前排序：`A_formal_family_avoidance` 第一，`B_endpoint_PDEC` 第二，
+先由相位自动机定义接受集 `A_p`：起始相位属于 `A_p` 当且仅当 canonical 下降逐步满足
+`delta<=p-r` 并到达 `p=2`。当前 BCB-Core 的 `6` 个起始行全部属于 `A_p`。随后三路线审计
+给出当前排序：`A_formal_family_avoidance` 第一，`B_endpoint_PDEC` 第二，
 `C_columnCRT_defect_exclusion` 第三。理由是当前有限下降账本 `20` 个实际转换节点全部避开
 `grid_fail`，而 PDEC 仍缺 `U_CRT`，ColumnCRT 则已被证明不能靠阈值调参闭合。
 
@@ -289,6 +294,7 @@ first-grid-fail seam 的单余类 PDEC/Fourier 支持包与端点分裂账本。
 unit endpoint seam 的固定非零 ColumnCRT 位移门控证书。
 ColumnCRT 阈值调参不可闭合障碍证书。
 三路线闭合审计与优先级排序。
+formal-family 下降相位自动机证书。
 ```
 
 本文没有完成：
