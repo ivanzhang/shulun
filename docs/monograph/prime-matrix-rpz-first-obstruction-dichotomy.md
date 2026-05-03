@@ -138,3 +138,16 @@ or first-grid-fail seam phase
 ```text
 first-grid-fail seam phase 的 PDEC/ColumnCRT 排斥证书。
 ```
+
+新增 `prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，该首阻断相位已经被材料化为
+双帽 seam 标准形：若 `g=p-r`、`delta=-(a-1)g mod r` 且 `g<delta<r`，则 `p` 行由相邻两条
+`r` 行的右帽和左帽组成，帽长分别为 `delta` 与 `r+g-delta`，缺口长度分别为 `r-delta`
+与 `delta-g`，缺口总量恒为 `r-g`。该 seam 内 `r`-筛幸存者至多为右端点 `ap`。
+
+这把首阻断证书义务进一步压缩为：
+
+```text
+first-grid-fail seam 双帽标准形
+=> PDEC if same delta/row residue persists；
+=> ColumnCRT if endpoint survivor carries stable displacement/label。
+```

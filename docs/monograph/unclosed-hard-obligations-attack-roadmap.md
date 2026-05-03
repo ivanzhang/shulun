@@ -576,6 +576,11 @@ lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行各 `3` 条。`puncture_block`
 完整下层行若含端点 `ap`，则必有 `r|a`，与端点复活所需的 `r∤a` 矛盾。因此首阻断唯一可能是
 `grid_fail` seam 相位。当前最小硬点收窄为 first-grid-fail seam 的 `PDEC/ColumnCRT` 排斥证书。
 
+新增 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_first_grid_fail_seam_certificate.py` 后，first-grid-fail 已压成双帽
+seam 标准形：`12` 个 seam 相位行覆盖完整 `Q` 中 `1752` 个 grid_fail 相位，计数不一致为 `0`。
+当前最小硬点更新为：对这些双帽 seam 标准形提交 `PDEC/ColumnCRT` 排斥证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

@@ -222,6 +222,11 @@ endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬�
 端点穿孔不可能阻断完整下层行，所以不存在 `puncture_block` 第三逃逸。外审前剩余压缩为：
 排除 first-grid-fail seam 相位的 `SAE/PDEC/ColumnCRT` 证书。
 
+新增 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_first_grid_fail_seam_certificate.py` 后，first-grid-fail seam 已有
+双帽标准形和机器账本：`12` 个 seam 相位行、完整 `Q` 中 `1752` 个相位、源计数不一致为 `0`。
+外审前剩余进一步变为排除这些双帽 seam 标准形的 `PDEC/ColumnCRT` 证书。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

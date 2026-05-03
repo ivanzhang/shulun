@@ -175,6 +175,11 @@ grid_success iff delta<=g。
 完整下层行。若完整 `r` 行包含端点 `ap`，则其右端点必须等于 `ap`，从而 `r|a`；但端点实际复活
 要求 `a` 避开所有 `<=r` 素数，矛盾。因此不下降分支的唯一首阻断是 `grid_fail` seam 相位。
 
+新增 `prime-matrix-rpz-first-grid-fail-seam-certificate.md` 与脚本
+`experiments/prime_matrix_rpz_first_grid_fail_seam_certificate.py` 后，该 seam 被材料化为双帽标准形：
+`g<delta<r`，左右帽长为 `delta` 与 `r+g-delta`，缺口总量恒为 `r-g`，且 `r`-筛幸存者至多为右端点
+`ap`。证书抽取 `12` 个 seam 相位行，覆盖完整 `Q` 中 `1752` 个 grid_fail 相位，源账本计数不一致为 `0`。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -209,13 +214,14 @@ RPZ 出口证书骨架包；
 当前 lower_descent_grid_fail 避开证书。
 正式下降路径相位不等式定理。
 首阻断 grid_fail 二分定理。
+first-grid-fail seam 标准形证书。
 ```
 
 本文没有完成：
 
 ```text
 全局下降网格条件；
-first-grid-fail seam 相位的 SAE/PDEC/ColumnCRT 证书排斥；
+first-grid-fail seam 标准形的 PDEC/ColumnCRT 证书排斥；
 最终 Prime Matrix 行命题无条件闭合。
 ```
 
@@ -223,5 +229,5 @@ first-grid-fail seam 相位的 SAE/PDEC/ColumnCRT 证书排斥；
 
 ```text
 LowerDescent-Grid persistence；
-排除 first-grid-fail seam 相位的 SAE/PDEC/ColumnCRT 证书。
+排除 first-grid-fail seam 标准形的 PDEC/ColumnCRT 证书。
 ```

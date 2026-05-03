@@ -1,0 +1,386 @@
+{
+  "status": "rpz_first_grid_fail_seam_normal_form_certificate",
+  "source": "docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.json",
+  "summary": {
+    "transition_count": 5,
+    "transitions_with_grid_fail": 3,
+    "seam_phase_row_count": 12,
+    "full_Q_grid_fail_cardinality": 1752,
+    "count_mismatches": 0
+  },
+  "transition_rows": [
+    {
+      "p": 3,
+      "r": 2,
+      "gap": 1,
+      "Q": 2,
+      "grid_fail_delta_count": 0,
+      "grid_fail_deltas": [],
+      "grid_fail_residues_mod_r": [],
+      "full_Q_grid_fail_cardinality": 0,
+      "source_grid_fail_count": 0,
+      "count_matches_source": true
+    },
+    {
+      "p": 5,
+      "r": 3,
+      "gap": 2,
+      "Q": 6,
+      "grid_fail_delta_count": 0,
+      "grid_fail_deltas": [],
+      "grid_fail_residues_mod_r": [],
+      "full_Q_grid_fail_cardinality": 0,
+      "source_grid_fail_count": 0,
+      "count_matches_source": true
+    },
+    {
+      "p": 7,
+      "r": 5,
+      "gap": 2,
+      "Q": 30,
+      "grid_fail_delta_count": 2,
+      "grid_fail_deltas": [
+        3,
+        4
+      ],
+      "grid_fail_residues_mod_r": [
+        2,
+        4
+      ],
+      "full_Q_grid_fail_cardinality": 12,
+      "source_grid_fail_count": 12,
+      "count_matches_source": true
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "gap": 4,
+      "Q": 210,
+      "grid_fail_delta_count": 2,
+      "grid_fail_deltas": [
+        5,
+        6
+      ],
+      "grid_fail_residues_mod_r": [
+        5,
+        3
+      ],
+      "full_Q_grid_fail_cardinality": 60,
+      "source_grid_fail_count": 60,
+      "count_matches_source": true
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "grid_fail_delta_count": 8,
+      "grid_fail_deltas": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "grid_fail_residues_mod_r": [
+        5,
+        10,
+        4,
+        9,
+        3,
+        8,
+        2,
+        7
+      ],
+      "full_Q_grid_fail_cardinality": 1680,
+      "source_grid_fail_count": 1680,
+      "count_matches_source": true
+    }
+  ],
+  "seam_phase_rows": [
+    {
+      "p": 7,
+      "r": 5,
+      "gap": 2,
+      "Q": 30,
+      "delta": 3,
+      "row_residue_mod_r": 2,
+      "full_phase_cardinality_in_Q": 6,
+      "left_cap_length": 3,
+      "right_cap_length": 4,
+      "total_seam_length": 7,
+      "left_missing_length": 2,
+      "right_missing_length": 1,
+      "missing_mass": 3,
+      "missing_mass_expected": 3,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 7,
+      "r": 5,
+      "gap": 2,
+      "Q": 30,
+      "delta": 4,
+      "row_residue_mod_r": 4,
+      "full_phase_cardinality_in_Q": 6,
+      "left_cap_length": 4,
+      "right_cap_length": 3,
+      "total_seam_length": 7,
+      "left_missing_length": 1,
+      "right_missing_length": 2,
+      "missing_mass": 3,
+      "missing_mass_expected": 3,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "gap": 4,
+      "Q": 210,
+      "delta": 5,
+      "row_residue_mod_r": 5,
+      "full_phase_cardinality_in_Q": 30,
+      "left_cap_length": 5,
+      "right_cap_length": 6,
+      "total_seam_length": 11,
+      "left_missing_length": 2,
+      "right_missing_length": 1,
+      "missing_mass": 3,
+      "missing_mass_expected": 3,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "gap": 4,
+      "Q": 210,
+      "delta": 6,
+      "row_residue_mod_r": 3,
+      "full_phase_cardinality_in_Q": 30,
+      "left_cap_length": 6,
+      "right_cap_length": 5,
+      "total_seam_length": 11,
+      "left_missing_length": 1,
+      "right_missing_length": 2,
+      "missing_mass": 3,
+      "missing_mass_expected": 3,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 3,
+      "row_residue_mod_r": 5,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 3,
+      "right_cap_length": 10,
+      "total_seam_length": 13,
+      "left_missing_length": 8,
+      "right_missing_length": 1,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 4,
+      "row_residue_mod_r": 10,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 4,
+      "right_cap_length": 9,
+      "total_seam_length": 13,
+      "left_missing_length": 7,
+      "right_missing_length": 2,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 5,
+      "row_residue_mod_r": 4,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 5,
+      "right_cap_length": 8,
+      "total_seam_length": 13,
+      "left_missing_length": 6,
+      "right_missing_length": 3,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 6,
+      "row_residue_mod_r": 9,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 6,
+      "right_cap_length": 7,
+      "total_seam_length": 13,
+      "left_missing_length": 5,
+      "right_missing_length": 4,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 7,
+      "row_residue_mod_r": 3,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 7,
+      "right_cap_length": 6,
+      "total_seam_length": 13,
+      "left_missing_length": 4,
+      "right_missing_length": 5,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 8,
+      "row_residue_mod_r": 8,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 8,
+      "right_cap_length": 5,
+      "total_seam_length": 13,
+      "left_missing_length": 3,
+      "right_missing_length": 6,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 9,
+      "row_residue_mod_r": 2,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 9,
+      "right_cap_length": 4,
+      "total_seam_length": 13,
+      "left_missing_length": 2,
+      "right_missing_length": 7,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "delta": 10,
+      "row_residue_mod_r": 7,
+      "full_phase_cardinality_in_Q": 210,
+      "left_cap_length": 10,
+      "right_cap_length": 3,
+      "total_seam_length": 13,
+      "left_missing_length": 1,
+      "right_missing_length": 8,
+      "missing_mass": 9,
+      "missing_mass_expected": 9,
+      "endpoint_survivor_position": "right_endpoint_ap_only",
+      "pdec_support_description": "row phases a mod Q with a mod r equal to row_residue_mod_r",
+      "columncrt_hook": [
+        "right endpoint ap is the only possible r-rough survivor",
+        "persistent seam fixes delta and adjacent lower-row cap lengths",
+        "any repeated endpoint/label displacement should enter ColumnCRT"
+      ]
+    }
+  ],
+  "review_boundary": [
+    "first-grid-fail 已压成双帽 seam 标准形",
+    "该证书不排除 seam 相位",
+    "后续仍需 PDEC/ColumnCRT 排斥或全局相位避开证明"
+  ]
+}
