@@ -842,6 +842,21 @@ dual residues = 19(2), 30(1), 24(1)
 纯质量上界只差约 `1.02%`，所以必须证明 `ell=199,h=95` 的长度 `11` 对偶短弧聚簇不能在
 正式反例链中持久存在，或把非持久实例送入 `SAE/Endpoint`。
 
+新增 `experiments/prime_matrix_wsh_fo_pdec_primitive_cluster_audit.py`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-primitive-cluster-audit.md/json` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-multiplicity-legitimacy.md` 后，最后阈值的集合口径被
+进一步审查。`ell=199,h=95` 投影在不同去重口径下为：
+
+```text
+equation/block-local: mass=4, Fourier=3.959247567099438
+layer-local:          mass=3, Fourier=2.9698366905785227
+physical:             mass=2, Fourier=1.9699193446802263
+```
+
+因此要使用强阈值 `3.959...`，必须证明正式 `PDEC` 坏窗集合允许 equation/block-local
+多重计数，并且 `U_CRT` 上界也按同一多重集合计算。否则必须使用 primitive 口径或把重复项
+送入 `SAE/Endpoint`。这是全局闭合前不可跳过的集合一致性义务。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

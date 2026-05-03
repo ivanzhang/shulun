@@ -479,3 +479,8 @@ RH-1 explicit-formula entrance
 `experiments/prime_matrix_wsh_fo_pdec_dual_cluster_audit.py` 后，`U_CRT,199` 上界的实际障碍已
 显现：最佳频率把支撑压到长度 `11` 的对偶短弧，Fourier 距离质量上界只差
 `0.04075243290056196`。下一步必须攻对偶短弧聚簇排斥，而不是继续泛泛提高能量下界。
+
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-multiplicity-legitimacy.md` 与
+`experiments/prime_matrix_wsh_fo_pdec_primitive_cluster_audit.py` 后，最后一步的集合口径风险被暴露：
+强阈值 `3.959...` 依赖 equation/block-local 多重计数；physical 去重后为 `1.9699...`。
+因此下一步必须先证明多重计数合法，或在 primitive 口径下重做 `U_CRT`/SAE 排斥。

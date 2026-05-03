@@ -303,6 +303,16 @@ DualCluster-Exclusion(199,95,arc length 11)
 2. 若它只在孤立端点出现，接入 `SAE/Endpoint` 排斥；
 3. 若尾因子或列见证复用，接入 `Tail-anchor/Column cap`。
 
+新增 primitive 去重审计后，先攻顺序应调整为：
+
+```text
+P0: Multiplicity-Legitimacy
+P1: DualCluster-Exclusion under accepted multiplicity
+P2: SAE/Endpoint absorption for non-persistent duplicates
+```
+
+若不能证明多重计数合法，`U_CRT,199<3.959...` 不是同一集合上的合法目标。
+
 ### 2.5 可行性
 
 评级：C。

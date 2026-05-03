@@ -142,3 +142,31 @@ DualCluster-Exclusion 或 SAE/Endpoint 吸收。
 
 因此当前仍不能宣称全局无条件闭合。下一步唯一合理硬攻是证明上述对偶短弧聚簇不可能在
 正式反例链中持久存在，或把非持久实例完全归入 `SAE/Endpoint`。
+
+## 6. 多重计数合法性更新
+
+新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_primitive_cluster_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-primitive-cluster-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-multiplicity-legitimacy.md
+```
+
+后，短弧聚簇的多重性已经查明。最佳投影的 `mass=4` 来自 equation/block-local 口径；
+若按物理候选去重，则只剩：
+
+```text
+physical mass = 2
+physical Fourier = 1.9699193446802263
+```
+
+因此最后硬点必须再加一个审稿条件：
+
+```text
+Multiplicity-Legitimacy:
+证明正式 PDEC 坏窗集合允许 equation/block-local 多重计数；
+否则改用 physical 阈值或把重复项送入 SAE/Endpoint。
+```
+
+这一步是必要的，否则 `PDEC` 下界和 `U_CRT` 上界可能作用于不同集合。

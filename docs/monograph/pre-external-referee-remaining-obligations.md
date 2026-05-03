@@ -168,6 +168,11 @@ dual arc length 11 cannot persist in the formal counterexample chain,
 or the non-persistent instance is SAE/Endpoint.
 ```
 
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-multiplicity-legitimacy.md` 后，外审前还必须核验
+同一集合口径：`ell=199,h=95` 的强阈值 `3.959...` 依赖 equation/block-local 多重计数；
+physical 去重后阈值为 `1.9699193446802263`。正式稿必须证明 `PDEC` 下界和 `U_CRT` 上界使用
+同一个多重集合，或降级到 primitive 阈值。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：
