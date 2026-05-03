@@ -233,3 +233,12 @@ docs/monograph/prime-matrix-h3-margin-growth-audit.md/json
 H3 全阻断不是普通局部波动，而是必须把自然增长的 `q/log q` 粗剩余尺度压为 `0`。若选择
 `y=p^theta`，小骨架不过载时，包络公式强制至少约 `y/log y` 个中尾标签同步活跃；这正是
 `H3-PDEC` 能量的全局来源。
+
+常数化候选公式见：
+
+```text
+docs/monograph/prime-matrix-h3-universal-scaling-inequality.md
+```
+
+有限账本支持 `M_H3(p,s)>=0.30*q/log q` 从 `p=113` 起成立，`0.40*q/log q` 从 `p=2011` 起成立。
+这些常数应作为缺陷版定理的目标阈值，而不是作为已证短区间素数定理引用。

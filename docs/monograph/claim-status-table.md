@@ -325,6 +325,12 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 `#A_s prod_{5<=ell<=p}(1-1/ell)` 同阶，随 `q/log q` 增长。全局反例若存在，必须把这个增长尺度
 压为 `0`，因此必定表现为小骨架 Tail/PDEC 过载、多中尾标签 PDEC 能量或端点 SAE/ColumnCRT。
 
+新增 `docs/monograph/prime-matrix-h3-universal-scaling-inequality.md`、
+`docs/monograph/prime-matrix-h3-scaling-formula-audit.md/json` 与脚本
+`experiments/prime_matrix_h3_scaling_formula_audit.py` 后，通用候选不等式被常数化：有限账本支持
+`M_H3(p,s)>=0.30*q/log q` 从 `p=113` 起成立，`0.40*q/log q` 从 `p=2011` 起成立。正式证明仍需
+缺陷版：若低于 `c*q/log q`，则触发 `SmallSkeletonOverload/ManyLabel-PDEC/Endpoint-SAE-ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

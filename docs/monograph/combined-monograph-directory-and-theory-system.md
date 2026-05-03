@@ -1306,6 +1306,10 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 脱离近失败区。故全局反例必须压灭一个增长尺度，只能通过小骨架过载、多标签低模能量或端点相位
 集中来实现。
 
+新增 `docs/monograph/prime-matrix-h3-universal-scaling-inequality.md` 后，尺度规律被写成可审稿公式：
+数据版为 `M_H3>=0.30*q/log q`（`p>=113`）和尾部 `0.40*q/log q`（`p>=2011`）；理论版为
+`M_H3<c*q/log q` 必触发三类命名缺陷。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

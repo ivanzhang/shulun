@@ -349,6 +349,10 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 Mertens 粗剩余尺度只能作为自然尺度和阈值设计依据，不能直接替代逐窗下界。正式稿需证明
 “压灭 `q/log q` 尺度”必触发 Tail/PDEC、H3-PDEC 或 SAE/ColumnCRT 三出口之一。
 
+新增 `docs/monograph/prime-matrix-h3-universal-scaling-inequality.md` 后，外审前必须避免把
+`0.30*q/log q` 有限公式写成已证全局下界。可接受写法是缺陷版不等式：低于该尺度时，给出
+SmallSkeletonOverload、ManyLabel-PDEC、Endpoint-SAE/ColumnCRT 的逐项证明。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -134,3 +134,23 @@ If H3-SWR fails for a q-row, then either
 4. 用同一阻断点集合和同一负载口径完成三出口不重不漏。
 
 下一步最优专攻是第 1 项：`SmallSkeletonOverload(y,K)=>Tail/PDEC` 的阈值化。
+
+## 6. 候选通用公式
+
+进一步的常数审计见：
+
+```text
+docs/monograph/prime-matrix-h3-universal-scaling-inequality.md
+experiments/prime_matrix_h3_scaling_formula_audit.py
+docs/monograph/prime-matrix-h3-scaling-formula-audit.md/json
+```
+
+有限账本中，候选不等式
+
+\[
+M_{H3}(p,s)\ge 0.30\,{q\over\log q}
+\]
+
+从 `p=113` 起全部成立；更强的 `0.40*q/log q` 从 `p=2011` 起成立。正式理论版本应写为缺陷不等式：
+若低于 `c*q/log q`，则必须触发 `SmallSkeletonOverload`、`ManyLabel-PDEC` 或
+`Endpoint-SAE/ColumnCRT`。
