@@ -338,8 +338,25 @@ phase_block support != capacity bound for g(t)。
 ```
 
 合法来源被限定为有限全集投影、资源不可复用单射、以及排除命名出口后的条件路由上界。
-因此 `WHOLEDEF/BRIDGED` 的剩余硬点进一步收窄为：生成并证明 `Q=2310` 的 `M(t)`，
+因此当时 `WHOLEDEF/BRIDGED` 的剩余硬点进一步收窄为：生成并证明 `Q=2310` 的 `M(t)`，
 而不是继续争论 `phase_block_size` 是否可作容量。
+
+### 4.2I 本轮进展：Q=2310 `M(t)` 有限证书
+
+新增脚本 `experiments/prime_matrix_bpn_lhb_multiplicity_cap_certificate.py`，并生成：
+
+```text
+docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.json；
+docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.md。
+```
+
+证书取 `M(t)` 为高层 CRT 补洞完成数 `C_P(t;Q)`。对
+`P=13,17,19,23,29,31,37,43,47`，`WHOLEDEF/BRIDGED` 支撑相位块全部满足
+`sum_{t in C}M(t)=0`。这把 LHB allowed-set 分支中的诊断支撑行升级为 `bound=0`
+容量行。
+
+审稿边界：该升级依赖 `S subset Z_LHB(p,Q)`。当前全局 PDEC 的最小硬点已从
+“生成 `M(t)`”变为“证明当前正式坏窗集合接入 LHB allowed-set，或失败回流到命名出口”。
 
 ### 4.3 SAE local escape exclusion
 

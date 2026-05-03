@@ -151,6 +151,17 @@ proof_ref: h4-pdec-lhb-multiplicity-cap-route.md + M(t) 来源文件
 
 `BRIDGED` 行同理。注意这里的 `bound` 是 `sum_C M(t)`，不是 `phase_block_size`。
 
+第一版有限证书已由 `experiments/prime_matrix_bpn_lhb_multiplicity_cap_certificate.py`
+生成：
+
+```text
+docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.json；
+docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.md。
+```
+
+该证书取 `M(t)` 为 LHB 允许全集 `Z_LHB(p,Q)` 在相位 `t` 上的高层 CRT 补洞完成数。
+因此它是 `H4-LHB-M2` 的有限全集投影实例。
+
 ## 6. 当前可审查结论
 
 当前仓库已经完成：
@@ -158,30 +169,39 @@ proof_ref: h4-pdec-lhb-multiplicity-cap-route.md + M(t) 来源文件
 ```text
 Q=2310 的 WHOLEDEF/BRIDGED 支撑相位块；
 空异常块 AFFINE/NEGDELTA/UNBRIDGED 的 bound=0 容量行；
-T3 多重度容量的正式引理与准入合同。
+T3 多重度容量的正式引理与准入合同；
+Q=2310、P=13,17,19,23,29,31,37,43,47 的 M(t) 有限投影证书。
 ```
 
 当前尚未完成：
 
 ```text
-Q=2310 的 M(t) 数组；
-每个 M(t) 的来源证明或有限全集投影证书；
-把 WHOLEDEF/BRIDGED 输出为 A-ready-after-M-vector 行。
+证明全局 PDEC 当前正式坏窗集合 S 一定满足 S subset Z_LHB；
+把该包含关系接入所有 PDEC 分支，而不只是在 LHB allowed-set 分支内使用；
+扩展到本有限 P 列表之外的符号化或分段证书。
 ```
 
-因此本轮推进把缺口从“支撑能否当容量”压缩为唯一可核验任务：
+因此本轮推进把缺口从“生成 M(t)”继续压缩为更窄的包含关系义务：
 
 \[
-\boxed{\text{物化并证明同一 }(p,Q,S,\tau)\text{ 下的 }M(t).}
+\boxed{\text{证明当前分支的正式 }S\subset Z_{\rm LHB}(p,Q).}
 }
 \]
 
 ## 7. 下一步最小硬点
 
-下一步应优先生成 `Q=2310` 的 `M(t)` 输入包。推荐顺序：
+下一步应优先证明 `S subset Z_LHB(p,Q)` 的接入引理。推荐顺序：
 
-1. **有限全集路线。** 定义 `Z_LHB(p,Q)`，证明 `S subset Z_LHB`，并枚举 `M_Z(t)`；
+1. **定义接入对象。** 固定 PDEC 分支中的坏窗 `S` 与 LHB 允许全集 `Z_LHB(p,Q)` 的同一窗口坐标；
+2. **证明包含关系。** 逐列说明一个 LHB 型坏窗若存在，必给出高层 CRT 补洞完成选择；
+3. **接入容量行。** 使用 `h4-pdec-lhb-multiplicity-cap-certificate.json` 的 `M(t)`，把 `WHOLEDEF/BRIDGED` 写成 `bound=0` 行；
+4. **失败回流。** 若坏窗不属于 `Z_LHB`，必须进入 `ColumnRadius/ColumnCRT/TailAnchor/SAE` 等命名出口。
+
+备选路线仍保留：
+
+1. **有限全集路线。** 扩展 `Z_LHB(p,Q)` 的 P 范围并枚举 `M_Z(t)`；
 2. **资源不可复用路线。** 对尾锚、列位移、短窗资源分别构造单射，取 `min` 或分支相加；
 3. **条件路由路线。** 先剥离 `ColumnRadius/ColumnCRT/TailAnchor` 出口，再在剩余分支给出 `M_E(t)`。
 
-只有上述任一路线完成后，`WHOLEDEF/BRIDGED` 才能从诊断支撑升级为正式容量行。
+在 LHB allowed-set 分支内，`WHOLEDEF/BRIDGED` 已有 `bound=0` 的有限容量行；在全局
+PDEC 中使用它们，还必须完成上述 `S subset Z_LHB` 接入引理。

@@ -108,7 +108,10 @@ CC-LHB-UNBRIDGED。
 `sum_{t in C}g(t)` 的上界。
 进一步新增 `h4-pdec-lhb-multiplicity-cap-route.md` 后，多重度路线已固定为正式合同：
 只要同一 `(p,Q,S,tau)` 下给出 `M(t)` 并证明 `g(t)<=M(t)`，`WHOLEDEF/BRIDGED`
-即可用 `bound=sum_{t in C}M(t)` 升级为容量行；当前缺的正是 `Q=2310` 的 `M(t)`。
+即可用 `bound=sum_{t in C}M(t)` 升级为容量行。
+新增 `h4-pdec-lhb-multiplicity-cap-certificate.json/md` 后，`Q=2310` 的第一版 `M(t)`
+已经物化为高层 CRT 补洞完成数，且 `WHOLEDEF/BRIDGED` 块全部给出 `bound=0`。
+这些行当前的使用范围是 LHB allowed-set 分支；进入全局 PDEC 还需证明当前 `S subset Z_LHB`。
 
 因此 V1 账本已经从“系数来源登记”推进到“部分相位块物化”。它仍不是最终
 `A,b,E,e`，因为有限列见证半径、RCI/CDB 摘要界值和条件路由行尚未物化相位块。

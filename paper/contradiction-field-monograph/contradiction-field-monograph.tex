@@ -610,8 +610,16 @@ The multiplicity route is made explicit in
 \]
 It states the precise acceptance contract: for the same $(p,Q,S,\tau)$ one must prove
 $g(t)\le M(t)$, and only then may a diagnostic block $C$ be promoted to the capacity row
-$\sum_{t\in C}g(t)\le\sum_{t\in C}M(t)$.  The present remaining task is to materialize and prove
-the $Q=2310$ vector or formula $M(t)$.
+$\sum_{t\in C}g(t)\le\sum_{t\in C}M(t)$.
+The first finite multiplicity-cap certificate is
+\[
+  \texttt{docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.json}.
+\]
+It takes $M(t)$ to be the high-layer CRT completion count $C_P(t;Q)$ and verifies, for
+$Q=2310$ and $p=13,17,19,23,29,31,37,43,47$, that the WHOLEDEF and BRIDGED support blocks
+have $\sum_{t\in C}M(t)=0$.  This is an allowed-set projection certificate: it can be used in
+the LHB branch after proving $S\subset Z_{\rm LHB}(p,Q)$, but it is not by itself a global
+PDEC exclusion theorem.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

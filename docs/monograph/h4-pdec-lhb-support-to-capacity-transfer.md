@@ -149,29 +149,32 @@ BRIDGED : bridged_critical_phases。
 2. **多重度路线：** 证明 `g(t)<=M(t)`，用 `sum_C M(t)` 作为界；
 3. **允许全集路线：** 证明 `S subset Z_LHB`，用 `# {x in Z_LHB: tau(x) in C}` 作为界。
 
-当前尚未完成的是第 2 或第 3 条路线所需的 `M(t)` 或 `Z_LHB`。因此：
+第一版有限证书已经完成第 2/3 条路线在 LHB allowed-set 分支中的交叉实例：
+`M(t)` 由 `Z_LHB` 的高层 CRT 补洞完成数给出。因此：
 
 ```text
 WHOLEDEF/BRIDGED phase_block 已物化；
-WHOLEDEF/BRIDGED capacity bound 尚未物化。
+WHOLEDEF/BRIDGED 在 LHB allowed-set 分支中的 bound=0 容量行已物化；
+全局 PDEC 使用仍需 S subset Z_LHB 接入引理。
 ```
 
 ## 7. 下一步最小任务
 
-下一步不应再把 `bound=phase_block_size` 当作容量界，而应选择以下更具体目标之一：
+下一步不应再把 `bound=phase_block_size` 当作容量界。第一版 `M(t)` 已完成后，最小任务变为：
 
 ```text
-T3-multiplicity:
-  从 phase_cap_t 或窗口互斥推出 M(t)，生成 bound=sum_C M(t)；
+LHB-attachment:
+  证明当前正式坏窗集合 S subset Z_LHB(p,Q)；
 
-T4-allowed-set:
-  定义 Z_LHB，并证明 S subset Z_LHB，再枚举 C_Z(C)；
+exit-routing:
+  若 S 不属于 Z_LHB，证明它进入 ColumnRadius/ColumnCRT/TailAnchor/SAE；
 
 phase-indicator fork:
   明确切换到相位级证书，声明该证书只验证相位集合，不验证 persistent 多重坏窗。
 ```
 
-对 H4-PDEC 最有价值的是 `T3-multiplicity`：它能直接与已有 `phase_cap_t` 和尾锚不可复用约束合并，形成真正可审计的 `A,b,E,e` 行。
+对 H4-PDEC 最有价值的是 `LHB-attachment`：它把已经物化的 `M(t)` 容量行接入全局
+PDEC 分支，而不是停留在 LHB allowed-set 子证书内。
 
 ## 8. T3 路线的正式化
 
@@ -191,5 +194,24 @@ phase-indicator fork:
 条件路由后的剩余分支上界。
 ```
 
-因此当前剩余不再是“支撑能否当容量”的逻辑问题，而是更窄的机器与证明义务：
-物化 `Q=2310`、同一正式坏窗集合 `S` 下的 `M(t)` 数组或公式，并逐项给出来源证明。
+因此该步骤把问题从“支撑能否当容量”压缩为更窄的机器与证明义务：
+物化同一正式坏窗集合 `S` 下的 `M(t)` 数组或公式，并逐项给出来源证明。第一版
+`Q=2310` 有限实例见下一节。
+
+## 9. 第一版 `M(t)` 有限证书
+
+新增 `h4-pdec-lhb-multiplicity-cap-certificate.json/md` 后，`Q=2310`、`P=13,17,19,23,29,31,37,43,47`
+的 LHB allowed-set 投影容量已经物化。该证书取
+
+\[
+M(t)=C_P(t;Q),
+\]
+
+即低相位 `t` 的高层 CRT 补洞完成数。对 `WHOLEDEF/BRIDGED` 支撑相位块，计算得到
+
+```text
+sum_{t in C} M(t)=0
+```
+
+全部通过。因此在已证明 `S subset Z_LHB(p,Q)` 的 LHB 分支中，这些支撑块已经可以作为
+`bound=0` 容量行使用。全局 PDEC 仍需补的是 `S subset Z_LHB` 接入引理。

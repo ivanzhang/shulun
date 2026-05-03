@@ -122,6 +122,11 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 同一 `(p,Q,S,tau)` 下证明 `g(t)<=M(t)`，再把 `WHOLEDEF/BRIDGED` 的容量界写成
 `sum_{t in C}M(t)`。当前仍缺 `Q=2310` 的 `M(t)` 数组或公式，因此该项仍是外审前硬义务。
 
+新增 `docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.json/md` 后，`Q=2310` 的
+`M(t)` 已由高层 CRT 补洞完成数物化；`WHOLEDEF/BRIDGED` 在 LHB allowed-set 分支给出
+`bound=0` 容量行。剩余外审硬义务改为证明当前全局 PDEC 坏窗集合满足 `S subset Z_LHB`，
+或把不满足者路由到 `ColumnRadius/ColumnCRT/TailAnchor/SAE` 等命名出口。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：

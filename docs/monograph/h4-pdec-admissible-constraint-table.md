@@ -36,7 +36,7 @@
 | block cap | `sum_{t in T}g(t)<=C_Z(T)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S2` | 有相位块容量定理时 | column、bucket、mirror-pair 都是特例 |
 | mirror equality | `g(t)=g(rho(t))` | `NeedsProof` | `H4-PDEC-S3` | 仅当证明 `m(S)=S` | 不能由完整周期镜像自动推出 |
 | mirror-pair cap | `g(t)+g(rho(t))<=B_mir(t)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S3` | 有 `S subset Z` 与成对容量时 | 当前比强镜像等式更安全 |
-| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `PartialFiniteAReady` / `NeedsPhaseBlock` / `NeedsMultiplicityCap` / `ConditionalRouting` | `h4-pdec-column-cap-source-lemma.md`; `h4-pdec-column-cap-coefficient-ledger.md`; `h4-pdec-lhb-column-phase-blocks.json`; `h4-pdec-lhb-multiplicity-cap-route.md` | `Q=2310` LHB 空异常块已物化；`WHOLEDEF/BRIDGED` 需 `M(t)` 后才能升级 | 不能由期望均匀性或支撑大小替代 |
+| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `PartialFiniteAReady` / `NeedsPhaseBlock` / `NeedsMultiplicityCap` / `ConditionalRouting` | `h4-pdec-column-cap-source-lemma.md`; `h4-pdec-column-cap-coefficient-ledger.md`; `h4-pdec-lhb-column-phase-blocks.json`; `h4-pdec-lhb-multiplicity-cap-route.md`; `h4-pdec-lhb-multiplicity-cap-certificate.json` | `Q=2310` LHB 空异常块已物化；`WHOLEDEF/BRIDGED` 在 LHB allowed-set 分支已有 `M(t)` 与 `bound=0`；全局使用仍需 `S subset Z_LHB` | 不能由期望均匀性或支撑大小替代 |
 | low-hole bucket | `sum_{h_Q(t)>=m}g(t)<=B_m` | `FiniteCert` / `NeedsProof` | `H4-PDEC-S4` | 有限样本可用；全局需 Hall/CRT 定理 | `P=23,Q=210,m>=5` 是有限证书行 |
 | tail-anchor cap | `sum_{t in A_a}g(t)<=B_tail(a)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 Tail-anchor 出口后的剩余分支 | 必须列出路由定理 |
 | core-overlap cap | `sum_{t in H_c}g(t)<=B_core(c)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 core/high-overlap 出口后的剩余分支 | 违反时回流 higher-defect |
@@ -97,7 +97,7 @@ low-hole >=5 的 bucket bound = 0。
 
 第一版准入表暴露出三个真正数学硬点：
 
-1. **Column cap 相位块物化与多重度界。** `Q=2310` LHB 空异常块已由 `h4-pdec-lhb-column-phase-blocks.json` 物化；`WHOLEDEF/BRIDGED` 转容量需按 `h4-pdec-lhb-support-to-capacity-transfer.md` 与 `h4-pdec-lhb-multiplicity-cap-route.md` 补同一 `(p,Q,S,tau)` 下的 `M(t)`，或走允许全集投影容量；仍需物化列见证半径/RCI-CDB/条件路由相位块。
+1. **Column cap 相位块物化与多重度界。** `Q=2310` LHB 空异常块已由 `h4-pdec-lhb-column-phase-blocks.json` 物化；`WHOLEDEF/BRIDGED` 在 LHB allowed-set 分支已由 `h4-pdec-lhb-multiplicity-cap-certificate.json` 给出 `M(t)` 与 `bound=0`，全局 PDEC 使用仍需 `S subset Z_LHB` 接入引理；仍需物化列见证半径/RCI-CDB/条件路由相位块。
 2. **Low-hole bucket 符号化。** 需要把有限 `B_m=0` 现象提升为 Hall/CRT 容量定理或给出可计算的分范围证书。
 3. **Conditional routing 元数据。** tail/core/Rankin/H5 行必须逐条绑定“违反即进入哪个出口”的定理编号，否则不能进入正式 `A`。
 

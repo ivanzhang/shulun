@@ -59,8 +59,14 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 
 新增 `docs/monograph/h4-pdec-lhb-multiplicity-cap-route.md`。该文件把 `T3-multiplicity`
 正式化为 `M(t)` 输入合同：若同一 `(p,Q,S,tau)` 下有 `g(t)<=M(t)`，则
-`WHOLEDEF/BRIDGED` 可用 `bound=sum_{t in C}M(t)` 升级为容量行。当前状态是路线闭合、
-`Q=2310` 的 `M(t)` 尚未物化；不能把 `phase_block_size` 当作 persistent 容量界。
+`WHOLEDEF/BRIDGED` 可用 `bound=sum_{t in C}M(t)` 升级为容量行。该路线防止把
+`phase_block_size` 误当作 persistent 容量界。
+
+新增 `experiments/prime_matrix_bpn_lhb_multiplicity_cap_certificate.py` 与
+`docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.json/md`。`Q=2310` 的 `M(t)`
+已按高层 CRT 补洞完成数物化；`P=13,17,19,23,29,31,37,43,47` 的 `WHOLEDEF/BRIDGED`
+支撑块均给出 `bound=0`。该结论只在已证明 `S subset Z_LHB` 的 LHB allowed-set 分支中
+可用；全局 PDEC 仍需接入包含关系或失败路由。
 
 
 ## 内部逐行复核更新
