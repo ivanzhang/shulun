@@ -48,11 +48,21 @@ remaining materialization task。
 | row_id | p_range | Q | phase block `C_j` | `B_col(j)` | source type | source file | A-ready | 剩余任务 |
 |---|---|---:|---|---:|---|---|---|---|
 | `CC-FIN-TIGHT-RCI-MARGIN` | `p<=1000` | variable | tight rows with `RCI margin<1` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 输出 tight-row 相位块 |
-| `CC-FIN-TIGHT-RADIUS` | `p<=1000` | variable | tight rows with `D_col>81` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 物化 `D_col>81` 的相位块 |
+| `CC-FIN-TIGHT-RADIUS` | `p<=1000` | variable | tight rows with `D_col>81` | `0` | `FiniteCert` | `h4-pdec-column-defect-weight-certificate.json` | 有限细化 `tau_fin` 下可用 | 全局使用仍需正式坏窗到 `tau_fin` 的抽取映射或解析阈值 |
 | `CC-FIN-TAILLOAD` | `p<=1000` | variable | tight rows with tail-label load `>2` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 物化尾标签负载相位块 |
-| `CC-FIN-DISPLOAD` | `p<=1000` | variable | tight rows with displacement residue load `>2` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 物化位移余类负载相位块 |
+| `CC-FIN-DISPLOAD` | `p<=1000` | variable | tight rows with displacement residue load `>2` | `0` | `FiniteCert` | `h4-pdec-column-defect-weight-certificate.json` | 有限细化 `tau_fin` 下可用 | 全局使用仍需正式坏窗到 `tau_fin` 的抽取映射或解析阈值 |
 
-这里 `B_col=0` 的含义是：有限扫描中没有超过该阈值的记录。它不能直接推广到全局，也不能代替 CDB 证明。
+这里 `B_col=0` 的含义是：有限扫描中没有超过该阈值的记录。新增
+`h4-pdec-column-defect-weight-certificate.json/md` 后，`CC-FIN-TIGHT-RADIUS`
+与 `CC-FIN-DISPLOAD` 已在有限相位
+
+```text
+tau_fin=(p,q,row)
+```
+
+下物化为空异常块：`phase_count=835`、最大列见证半径 `81`、最大位移余类负载 `2`。
+它不能直接推广到全局，也不能代替 CDB 证明；全局使用仍需正式坏窗抽取映射或
+`D_0,L_D` 解析阈值。
 
 ## 4. LHB 列残基刚性有限界值
 
@@ -94,8 +104,9 @@ ColumnCRTDefect:
   违反 R_{ell,a}(g)<=L_D 即回流 ColumnCRTDefect。
 ```
 
-因此条件路由行的“出口元数据”已闭合；仍未闭合的是 `D_0,L_D` 的全局解析阈值和
-有限摘要到机器可读相位兼容权重 `W_D,W_{ell,a}` 的物化。
+因此条件路由行的“出口元数据”已闭合；`p<=1000` 紧行的两条有限相位兼容权重已经物化。
+仍未闭合的是 `D_0,L_D` 的全局解析阈值、`CC-FIN-RADIUS-1000` 的全行权重物化，以及
+有限相位域到正式坏窗族的抽取映射。
 
 ## 6. 第一版已生成的机器输入
 

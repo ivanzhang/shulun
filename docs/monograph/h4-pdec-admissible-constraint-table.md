@@ -36,7 +36,7 @@
 | block cap | `sum_{t in T}g(t)<=C_Z(T)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S2` | 有相位块容量定理时 | column、bucket、mirror-pair 都是特例 |
 | mirror equality | `g(t)=g(rho(t))` | `NeedsProof` | `H4-PDEC-S3` | 仅当证明 `m(S)=S` | 不能由完整周期镜像自动推出 |
 | mirror-pair cap | `g(t)+g(rho(t))<=B_mir(t)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S3` | 有 `S subset Z` 与成对容量时 | 当前比强镜像等式更安全 |
-| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `PartialFiniteAReady` / `NeedsPhaseBlock` / `NeedsMultiplicityCap` / `ConditionalRouting` | `h4-pdec-column-cap-source-lemma.md`; `h4-pdec-column-cap-coefficient-ledger.md`; `h4-pdec-column-defect-routing-contract.md`; `h4-pdec-lhb-column-phase-blocks.json`; `h4-pdec-lhb-multiplicity-cap-route.md`; `h4-pdec-lhb-multiplicity-cap-certificate.json`; `h4-pdec-lhb-attachment-lemma.md`; `h4-pdec-bad-window-classification-lemma.md`; `h4-pdec-homogeneous-splitting-lemma.md` | `Q=2310` LHB 空异常块已物化；`WHOLEDEF/BRIDGED` 在 LHB 型分支已有接入证明、`M(t)` 与 `bound=0`；分类引理给出非 LHB 型失败出口，口径混合已降为拆分；`ColumnRadius/ColumnCRT` 条件路由合同已定式化 | 不能由期望均匀性或支撑大小替代；列缺陷合同仍不是出口排斥 |
+| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `PartialFiniteAReady` / `NeedsPhaseBlock` / `NeedsMultiplicityCap` / `ConditionalRouting` | `h4-pdec-column-cap-source-lemma.md`; `h4-pdec-column-cap-coefficient-ledger.md`; `h4-pdec-column-defect-routing-contract.md`; `h4-pdec-column-defect-weight-certificate.json`; `h4-pdec-lhb-column-phase-blocks.json`; `h4-pdec-lhb-multiplicity-cap-route.md`; `h4-pdec-lhb-multiplicity-cap-certificate.json`; `h4-pdec-lhb-attachment-lemma.md`; `h4-pdec-bad-window-classification-lemma.md`; `h4-pdec-homogeneous-splitting-lemma.md` | `Q=2310` LHB 空异常块已物化；`WHOLEDEF/BRIDGED` 在 LHB 型分支已有接入证明、`M(t)` 与 `bound=0`；分类引理给出非 LHB 型失败出口，口径混合已降为拆分；`ColumnRadius/ColumnCRT` 条件路由合同已定式化；`p<=1000` 紧行半径/位移负载空异常块已在 `tau_fin` 下物化 | 不能由期望均匀性或支撑大小替代；列缺陷合同和有限权重证书仍不是出口排斥 |
 | low-hole bucket | `sum_{h_Q(t)>=m}g(t)<=B_m` | `FiniteCert` / `NeedsProof` | `H4-PDEC-S4` | 有限样本可用；全局需 Hall/CRT 定理 | `P=23,Q=210,m>=5` 是有限证书行 |
 | tail-anchor cap | `sum_{t in A_a}g(t)<=B_tail(a)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 Tail-anchor 出口后的剩余分支 | 必须列出路由定理 |
 | core-overlap cap | `sum_{t in H_c}g(t)<=B_core(c)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 core/high-overlap 出口后的剩余分支 | 违反时回流 higher-defect |
@@ -97,7 +97,7 @@ low-hole >=5 的 bucket bound = 0。
 
 第一版准入表暴露出三个真正数学硬点：
 
-1. **Column cap 相位块物化与多重度界。** `Q=2310` LHB 空异常块已由 `h4-pdec-lhb-column-phase-blocks.json` 物化；`WHOLEDEF/BRIDGED` 在 LHB 型分支已由 `h4-pdec-lhb-attachment-lemma.md` 与 `h4-pdec-lhb-multiplicity-cap-certificate.json` 给出接入证明、`M(t)` 与 `bound=0`；`h4-pdec-bad-window-classification-lemma.md` 已把非 LHB 型失败归入命名出口；`h4-pdec-homogeneous-splitting-lemma.md` 已闭合口径混合拆分；`h4-pdec-column-defect-routing-contract.md` 已闭合 `ColumnRadius/ColumnCRT` 条件路由元数据；仍需物化列见证半径/RCI-CDB 相位权重并排除出口。
+1. **Column cap 相位块物化与多重度界。** `Q=2310` LHB 空异常块已由 `h4-pdec-lhb-column-phase-blocks.json` 物化；`WHOLEDEF/BRIDGED` 在 LHB 型分支已由 `h4-pdec-lhb-attachment-lemma.md` 与 `h4-pdec-lhb-multiplicity-cap-certificate.json` 给出接入证明、`M(t)` 与 `bound=0`；`h4-pdec-bad-window-classification-lemma.md` 已把非 LHB 型失败归入命名出口；`h4-pdec-homogeneous-splitting-lemma.md` 已闭合口径混合拆分；`h4-pdec-column-defect-routing-contract.md` 已闭合 `ColumnRadius/ColumnCRT` 条件路由元数据；`h4-pdec-column-defect-weight-certificate.json` 已物化 `p<=1000` 紧行半径/位移负载空异常块；仍需证明有限相位域抽取映射、物化全行半径权重并排除出口。
 2. **Low-hole bucket 符号化。** 需要把有限 `B_m=0` 现象提升为 Hall/CRT 容量定理或给出可计算的分范围证书。
 3. **Conditional routing 元数据。** tail/core/Rankin/H5 行必须逐条绑定“违反即进入哪个出口”的定理编号，否则不能进入正式 `A`。
 

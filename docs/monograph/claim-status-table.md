@@ -86,6 +86,12 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 `a`、阈值 `L_D` 和相位兼容权重 `W_{ell,a}(t)`。该项闭合的是 `CC-COND-RADIUS/CC-COND-DISPLOAD`
 的路由元数据，不是出口排斥；下一步仍需物化权重并证明阈值或排除这些出口。
 
+新增 `experiments/prime_matrix_h4_pdec_column_defect_weight_certificate.py` 与
+`docs/monograph/h4-pdec-column-defect-weight-certificate.json/md`。证书在有限细化相位
+`tau_fin=(p,q,row)` 上覆盖 `835` 条紧行相位，并物化两条空异常块：
+`CC-FIN-TIGHT-RADIUS-WEIGHT` 与 `CC-FIN-DISPLOAD-WEIGHT`。观测最大列见证半径为 `81`，
+最大位移余类负载为 `2`。该项只升级有限证书行，不升级全局 Prime Matrix 终局。
+
 
 ## 内部逐行复核更新
 

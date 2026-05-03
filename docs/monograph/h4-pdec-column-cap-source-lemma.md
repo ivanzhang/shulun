@@ -213,5 +213,9 @@ normalization used by PDEC-Dual-Cert。
 该 V1 账本登记了有限列见证半径、RCI/CDB 联合审计界值、LHB 列残基刚性有限界值和
 ColumnDefect 条件路由模板。新增 `h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 模板的路由合同已定式化为相位兼容权重
-`W_D(t),W_{\ell,a}(t)` 与阈值 `D_0,L_D`。它仍未把所有相位块或权重物化为机器可读数组；
-因此下一步是扩展审计脚本输出 `phase_block`、`weight`、`bound` 与 `source_hash`。
+`W_D(t),W_{\ell,a}(t)` 与阈值 `D_0,L_D`。新增
+`h4-pdec-column-defect-weight-certificate.json/md` 后，`p<=1000` 紧行域的
+`CC-FIN-TIGHT-RADIUS` 与 `CC-FIN-DISPLOAD` 已在细化相位
+`tau_fin=(p,q,row)` 下物化为空异常块。它仍未把所有相位块或权重物化为全局机器可读数组；
+因此下一步是证明正式坏窗到 `tau_fin` 的抽取映射，或输出全局
+`phase_block`、`weight`、`bound` 与 `source_hash`。

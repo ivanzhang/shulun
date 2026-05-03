@@ -237,13 +237,22 @@ prime-matrix-rci-cdb-joint-audit.md:
 | 行 | 条件形式 | 当前状态 |
 |---|---|---|
 | `CC-FIN-RADIUS-1000` | `D_col>107 => 0` | 缺相位兼容权重 `W_D(t)` |
-| `CC-FIN-TIGHT-RADIUS` | tight row 中 `D_col>81 => 0` | 缺 tight-row 相位兼容权重 |
-| `CC-FIN-DISPLOAD` | 位移余类负载 `>2 => 0` | 缺相位兼容权重 `W_{\ell,a}(t)` |
+| `CC-FIN-TIGHT-RADIUS` | tight row 中 `D_col>81 => 0` | 已由 `h4-pdec-column-defect-weight-certificate.json` 在 `tau_fin` 下物化为空块 |
+| `CC-FIN-DISPLOAD` | 位移余类负载 `>2 => 0` | 已由 `h4-pdec-column-defect-weight-certificate.json` 在 `tau_fin` 下物化为空块 |
 | `CC-COND-RADIUS` | `R_D(g)>0 => ColumnRadiusDefect` | 本文给出路由合同 |
 | `CC-COND-DISPLOAD` | `R_{\ell,a}(g)>L_D => ColumnCRTDefect` | 本文给出路由合同 |
 
-因此下一步不是修改准入逻辑，而是物化相位兼容的 `W_D(t)`、`W_{\ell,a}(t)` 并证明或证书化
-全局阈值 `D_0,L_D`。若兼容性失败，必须先细化 `tau`，再重新生成同口径证书。
+`h4-pdec-column-defect-weight-certificate.json/md` 已完成两条紧行有限权重物化：
+
+```text
+tau_fin=(p,q,row)；
+phase_count=835；
+D_col>81 的异常块为空；
+displacement residue load>2 的异常块为空。
+```
+
+因此下一步不是修改准入逻辑，而是证明或证书化全局阈值 `D_0,L_D`，并给出正式坏窗到
+`tau_fin` 或全局相位的抽取映射。若兼容性失败，必须先细化 `tau`，再重新生成同口径证书。
 
 ## 7. 合成接入定理
 
@@ -266,6 +275,7 @@ CD1 与 CD2 已分别证明每一行的违反都会进入已经剥离的命名�
 ColumnRadius/ColumnCRT 的证书对象定义；
 半径与位移余类的条件路由行；
 与有限审计常数 107、81、2 的准入关系；
+CC-FIN-TIGHT-RADIUS 与 CC-FIN-DISPLOAD 的有限紧行权重物化；
 同口径 PDEC-Dual-Cert 中的元数据要求。
 ```
 
@@ -275,13 +285,13 @@ ColumnRadius/ColumnCRT 的证书对象定义；
 ColumnRadiusDefect 排斥；
 ColumnCRTDefect 排斥；
 全局阈值 D_0,L_D 的解析证明；
-有限审计摘要到机器可读相位兼容权重 W_D,W_{ell,a} 的物化。
+CC-FIN-RADIUS-1000 全行权重物化。
 若旧 tau 不相位兼容，还需 tau 细化与重新归一化。
 ```
 
 下一步最小硬点因此变为：
 
 ```text
-优先物化 CC-FIN-TIGHT-RADIUS 与 CC-FIN-DISPLOAD 的相位兼容权重；
+优先证明正式坏窗抽取映射或全局 D_0,L_D 阈值；
 同时证明集中位移余类必进入持续 endpoint/PDEC，或给出有限证书排除。
 ```

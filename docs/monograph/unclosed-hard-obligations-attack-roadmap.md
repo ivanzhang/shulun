@@ -426,6 +426,40 @@ ColumnCRTDefect：
 相位兼容的 `W_D(t),W_{\ell,a}(t)`，并证明全局阈值 `D_0,L_D` 或把违反者继续送入
 `PDEC/TailAnchor/SAE`。
 
+### 4.2N 本轮进展：ColumnDefect 有限权重物化
+
+新增脚本 `experiments/prime_matrix_h4_pdec_column_defect_weight_certificate.py`，并生成：
+
+```text
+docs/monograph/h4-pdec-column-defect-weight-certificate.json；
+docs/monograph/h4-pdec-column-defect-weight-certificate.md。
+```
+
+证书使用有限细化相位
+
+```text
+tau_fin=(p,q,row)
+```
+
+覆盖 `p<=1000`、每个 `p` 的 `5` 条最紧 RCI 行，共 `835` 个有限相位。两条权重行通过：
+
+```text
+CC-FIN-TIGHT-RADIUS-WEIGHT：D_col>81 的异常块为空；
+CC-FIN-DISPLOAD-WEIGHT：displacement residue load>2 的异常块为空。
+```
+
+观测最大列见证半径为 `81`，最大位移余类负载为 `2`。这把上一节中的两个有限紧行
+权重从“摘要常数”升级为机器可读空相位块。
+
+审稿边界：该证书只在 `tau_fin` 有限域中相位兼容，不是全局
+`ColumnRadius/ColumnCRT` 排斥。当前最小硬点进一步收窄为：
+
+```text
+证明正式坏窗抽取过程落入 tau_fin 有限域；
+或给出全局 D_0,L_D 解析阈值；
+并补 CC-FIN-RADIUS-1000 的全行半径权重。
+```
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

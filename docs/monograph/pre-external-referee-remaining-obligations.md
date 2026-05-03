@@ -146,6 +146,12 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `R_D(g)<=0` 与 `R_{ell,a}(g)<=L_D`。它仍不排除这些出口；外审前还需物化权重并证明
 阈值或提交排斥证书。
 
+新增 `experiments/prime_matrix_h4_pdec_column_defect_weight_certificate.py` 与
+`docs/monograph/h4-pdec-column-defect-weight-certificate.json/md` 后，`p<=1000` 紧行域的
+两条有限权重已物化：`tau_fin=(p,q,row)` 上共有 `835` 个相位，`D_col>81` 与
+位移余类负载 `>2` 的异常块均为空。该项解决的是有限相位兼容权重物化，不是全局
+`D_0,L_D` 解析阈值或出口排斥。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：
