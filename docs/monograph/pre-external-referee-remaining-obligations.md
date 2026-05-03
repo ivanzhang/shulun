@@ -110,6 +110,10 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 已登记：有限列见证半径、RCI/CDB 联合审计、LHB 列残基刚性和条件 ColumnDefect 路由。
 当前仍缺机器可读相位块 `C_j`，所以这些行尚不能直接进入最终 `A,b,E,e`。
 
+新增 `docs/monograph/h4-pdec-lhb-column-phase-blocks.json` 与同名 Markdown 摘要后，
+`Q=2310` LHB column rows 的第一批相位块已物化。`AFFINE/NEGDELTA/UNBRIDGED`
+空异常块可作为有限 `A` 行；`WHOLEDEF/BRIDGED` 仍需投影容量证明。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：

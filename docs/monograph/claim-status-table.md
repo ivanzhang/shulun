@@ -50,6 +50,11 @@ NeedsProof / Rejected`。当前已经明确拒绝 full-cycle balance 直接作�
 系数源：有限列见证半径、RCI/CDB 联合审计界值、`Q=2310` LHB 列残基刚性界值和条件
 ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相位块仍未物化。
 
+新增 `experiments/prime_matrix_bpn_lhb_column_phase_blocks.py` 与
+`docs/monograph/h4-pdec-lhb-column-phase-blocks.json/md`。`Q=2310`、`13<=p<=47`
+的 LHB column rows 已物化为 `45` 条机器行，空异常块全部通过 `bound=0`；诊断支撑行
+仍需投影容量证明后才能进入最终 `A,b,E,e`。
+
 
 ## 内部逐行复核更新
 

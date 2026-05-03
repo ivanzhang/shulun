@@ -13,6 +13,7 @@
 | `Tautology` | 对任意 `S` 恒真 | 可进入 |
 | `FiniteCert` | 指定有限范围、指定 `Z`、指定输出文件可复核 | 可进入有限证书 |
 | `SymbolicReady` | 已有符号化定理给出容量或路由 | 可进入对应范围 |
+| `PartialFiniteAReady` | 部分有限行已有机器相位块与界值 | 仅对应有限行可进入 |
 | `ConditionalRouting` | 在排除某个命名出口后的剩余分支中成立 | 只能作为分支证书行 |
 | `NeedsCoefficients` | 来源规则已证明，但 `C_j,B_j` 或分支元数据未填 | 暂不可进入实际审计输入 |
 | `NeedsPhaseBlock` | 数值界值已登记，但缺机器可读相位块 `C_j` | 暂不可进入实际审计输入 |
@@ -34,7 +35,7 @@
 | block cap | `sum_{t in T}g(t)<=C_Z(T)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S2` | 有相位块容量定理时 | column、bucket、mirror-pair 都是特例 |
 | mirror equality | `g(t)=g(rho(t))` | `NeedsProof` | `H4-PDEC-S3` | 仅当证明 `m(S)=S` | 不能由完整周期镜像自动推出 |
 | mirror-pair cap | `g(t)+g(rho(t))<=B_mir(t)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S3` | 有 `S subset Z` 与成对容量时 | 当前比强镜像等式更安全 |
-| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `NeedsPhaseBlock` / `ConditionalRouting` | `h4-pdec-column-cap-source-lemma.md`; `h4-pdec-column-cap-coefficient-ledger.md` | 来源和 V1 系数账本已登记；相位块未完全物化 | 不能由期望均匀性替代 |
+| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `PartialFiniteAReady` / `NeedsPhaseBlock` / `ConditionalRouting` | `h4-pdec-column-cap-source-lemma.md`; `h4-pdec-column-cap-coefficient-ledger.md`; `h4-pdec-lhb-column-phase-blocks.json` | `Q=2310` LHB 空异常块已物化；其余相位块未完全物化 | 不能由期望均匀性替代 |
 | low-hole bucket | `sum_{h_Q(t)>=m}g(t)<=B_m` | `FiniteCert` / `NeedsProof` | `H4-PDEC-S4` | 有限样本可用；全局需 Hall/CRT 定理 | `P=23,Q=210,m>=5` 是有限证书行 |
 | tail-anchor cap | `sum_{t in A_a}g(t)<=B_tail(a)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 Tail-anchor 出口后的剩余分支 | 必须列出路由定理 |
 | core-overlap cap | `sum_{t in H_c}g(t)<=B_core(c)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 core/high-overlap 出口后的剩余分支 | 违反时回流 higher-defect |
@@ -95,7 +96,7 @@ low-hole >=5 的 bucket bound = 0。
 
 第一版准入表暴露出三个真正数学硬点：
 
-1. **Column cap 相位块物化。** V1 系数账本已由 `h4-pdec-column-cap-coefficient-ledger.md` 登记；仍需脚本输出 `phase_block, bound, source_hash`。
+1. **Column cap 相位块物化。** `Q=2310` LHB 空异常块已由 `h4-pdec-lhb-column-phase-blocks.json` 物化；仍需把诊断支撑行升级为容量行，并物化列见证半径/RCI-CDB/条件路由相位块。
 2. **Low-hole bucket 符号化。** 需要把有限 `B_m=0` 现象提升为 Hall/CRT 容量定理或给出可计算的分范围证书。
 3. **Conditional routing 元数据。** tail/core/Rankin/H5 行必须逐条绑定“违反即进入哪个出口”的定理编号，否则不能进入正式 `A`。
 

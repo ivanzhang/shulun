@@ -299,6 +299,20 @@ CC-COND-*：ColumnRadius/ColumnCRT/Tail-anchor 条件路由模板。
 `C_j=[t_1,...,t_k]`。下一步最小工程任务是优先把 `Q=2310` 的 LHB column rows
 物化为机器可读 `phase_block + bound + source_hash`。
 
+### 4.2F 本轮进展：Q=2310 相位块物化
+
+新增脚本 `experiments/prime_matrix_bpn_lhb_column_phase_blocks.py`，并生成：
+
+```text
+docs/monograph/h4-pdec-lhb-column-phase-blocks.json；
+docs/monograph/h4-pdec-lhb-column-phase-blocks.md。
+```
+
+结果覆盖 `Q=2310` 与 `p=13,17,19,23,29,31,37,43,47`，共 `45` 条机器行。
+其中 `AFFINE`、`NEGDELTA`、`UNBRIDGED` 三类空异常块均满足 `phase_block=[]`、
+`bound=0`，可作为有限空异常块 `A` 行。`WHOLEDEF` 与 `BRIDGED` 行已输出支撑相位，
+但仍需证明正式坏窗集合投影关系，暂不升级为最终容量行。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

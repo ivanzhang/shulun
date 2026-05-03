@@ -185,6 +185,10 @@ ColumnRadius/ColumnCRT/Tail-anchor 出口的条件路由行。该文件证明了
 `CC-FIN-*`、`CC-LHB-*` 与 `CC-COND-*` 三类行。当前状态是数值界值和条件出口已登记，
 但多数行仍缺机器可读 `phase_block`，所以尚不能直接作为 `A,b,E,e` 输入。
 
+补充证书 `h4-pdec-lhb-column-phase-blocks.json` 已把 `Q=2310`、`13<=p<=47` 的
+LHB column rows 物化为 `45` 条机器行。三类空异常块 `AFFINE/NEGDELTA/UNBRIDGED`
+均通过 `bound=0`；整洞集亏损与桥洞临界块保留为诊断支撑，尚需正式投影容量证明。
+
 ## 5. 第一批真实系数行
 
 脚本 `experiments/prime_matrix_bpn_pdec_real_constraint_rows.py` 已开始从完整 CRT 周期枚举中

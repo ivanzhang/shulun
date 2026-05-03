@@ -81,20 +81,35 @@ remaining materialization task。
 
 条件行进入 `A` 的规则是：先在证明树中剥离对应出口，再把剩余分支限制写成线性约束。没有出口排斥时，这些行不能作为无条件证书行。
 
-## 6. 第一版可生成的机器输入
+## 6. 第一版已生成的机器输入
 
-当前可以生成两类有限机器输入：
+新增 `h4-pdec-lhb-column-phase-blocks.json` 与 `h4-pdec-lhb-column-phase-blocks.md` 后，
+`Q=2310`、`13<=p<=47` 的 LHB column rows 已经物化为机器可读行：
 
-1. **空异常相位块输入。** 对 `CC-LHB-AFFINE-Q2310`、`CC-LHB-NEGDELTA-Q2310`、
-   `CC-LHB-UNBRIDGED-Q2310`，若脚本输出完整相位块，则可直接写成 `sum_{t in C}g(t)<=0`。
-2. **摘要常数输入。** 对 `CC-FIN-RADIUS-1000`、`CC-FIN-TIGHT-RADIUS`、`CC-FIN-TAILLOAD`、
-   `CC-FIN-DISPLOAD`，必须先补脚本输出相位块；否则只能作为审稿说明，不能作为 `A` 行。
+```text
+rows = 45；
+p_values = 13,17,19,23,29,31,37,43,47；
+all_empty_anomaly_rows_pass = true。
+```
 
-因此 V1 账本完成的是“系数来源登记”，还不是最终 `A,b,E,e`。
+其中三类空异常块已经有 `phase_block=[]` 与 `bound=0`：
+
+```text
+CC-LHB-AFFINE；
+CC-LHB-NEGDELTA；
+CC-LHB-UNBRIDGED。
+```
+
+这些行在有限 `Q=2310` 范围内可以作为空异常块 `A` 行。`CC-LHB-WHOLEDEF` 与
+`CC-LHB-BRIDGED` 已输出支撑相位块，但当前仍标为 `diagnostic-phase-support`：
+它们需要额外证明正式坏窗集合 `S` 的投影关系和容量含义，才能进入最终对偶证书。
+
+因此 V1 账本已经从“系数来源登记”推进到“部分相位块物化”。它仍不是最终
+`A,b,E,e`，因为有限列见证半径、RCI/CDB 摘要界值和条件路由行尚未物化相位块。
 
 ## 7. 下一步最小工程任务
 
-下一步应扩展审计脚本，输出以下机器可读对象：
+下一步应继续扩展审计脚本，为剩余 column rows 输出以下机器可读对象：
 
 ```text
 row_id；
@@ -107,4 +122,8 @@ admissibility: finite / conditional；
 excluded_exit。
 ```
 
-建议优先从 `Q=2310` 的 LHB 列残基刚性行开始，因为这些行已经有固定低模周期，最容易物化为 `A` 矩阵行。
+优先级更新为：
+
+1. 将 `diagnostic-phase-support` 行升级为有正式 `S subset Z` 证明的容量行；
+2. 为 `CC-FIN-RADIUS-1000` 与 `CC-FIN-TIGHT-*` 输出相位块；
+3. 为 `CC-COND-*` 写出实际出口路由定理编号与阈值函数。
