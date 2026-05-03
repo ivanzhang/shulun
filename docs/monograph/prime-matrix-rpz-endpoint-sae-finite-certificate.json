@@ -1,0 +1,103 @@
+{
+  "status": "rpz_endpoint_sae_finite_certificate_current_ledger",
+  "sources": {
+    "skeleton": "docs/monograph/prime-matrix-rpz-certificate-skeleton-package.json",
+    "endpoint": "docs/monograph/prime-matrix-rpz-bcb-endpoint-phase-ledger.json"
+  },
+  "summary": {
+    "candidate_count": 2,
+    "total_possible_load": 2,
+    "total_actual_load": 0,
+    "current_ledger_closed_count": 2,
+    "global_exclusion_closed": false
+  },
+  "certificates": [
+    {
+      "phase_key": [
+        11,
+        8,
+        2,
+        2
+      ],
+      "possible_load_in_current_ledger": 1,
+      "actual_load_in_current_ledger": 0,
+      "candidate_windows": [],
+      "possible_phase_examples": [
+        {
+          "top_prime": 23,
+          "top_zero_row": 59,
+          "half_prime": 11,
+          "forced_core_interval": [
+            1338,
+            1356
+          ],
+          "length": 19,
+          "phase": {
+            "h": 11,
+            "length": 19,
+            "left_residue_mod_h": 2,
+            "length_mod_h": 8,
+            "delta_to_next_row_start": 10,
+            "criterion_margin": -2,
+            "endpoint_deficit": 2,
+            "fails_grid": true
+          }
+        }
+      ],
+      "local_state_verdict": "vacuous_current_ledger_closed",
+      "current_ledger_closed": true,
+      "global_status": "not_global_exclusion",
+      "if_global_load_appears": [
+        "若负载低于 SAE 阈值，必须提交实际窗口 survivor/lift/higher-defect 证书",
+        "若同相位持久重复，进入 PDEC endpoint phase row",
+        "若携带列位移见证，进入 ColumnCRT endpoint displacement row"
+      ]
+    },
+    {
+      "phase_key": [
+        11,
+        8,
+        3,
+        1
+      ],
+      "possible_load_in_current_ledger": 1,
+      "actual_load_in_current_ledger": 0,
+      "candidate_windows": [],
+      "possible_phase_examples": [
+        {
+          "top_prime": 23,
+          "top_zero_row": 59,
+          "half_prime": 11,
+          "forced_core_interval": [
+            1338,
+            1356
+          ],
+          "length": 19,
+          "phase": {
+            "h": 11,
+            "length": 19,
+            "left_residue_mod_h": 3,
+            "length_mod_h": 8,
+            "delta_to_next_row_start": 9,
+            "criterion_margin": -1,
+            "endpoint_deficit": 1,
+            "fails_grid": true
+          }
+        }
+      ],
+      "local_state_verdict": "vacuous_current_ledger_closed",
+      "current_ledger_closed": true,
+      "global_status": "not_global_exclusion",
+      "if_global_load_appears": [
+        "若负载低于 SAE 阈值，必须提交实际窗口 survivor/lift/higher-defect 证书",
+        "若同相位持久重复，进入 PDEC endpoint phase row",
+        "若携带列位移见证，进入 ColumnCRT endpoint displacement row"
+      ]
+    }
+  ],
+  "review_boundary": [
+    "当前有限 BCB endpoint SAE 候选全部实际空载",
+    "这只闭合当前有限账本的 SAE-FIN 行",
+    "全局 SAE/PDEC/ColumnCRT 出口仍未排除"
+  ]
+}

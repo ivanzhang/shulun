@@ -14,7 +14,7 @@
 
 ## RPZ-SAE-FIN 候选
 
-| source | phase key | ledger load | status |
+| source | phase key | possible load | status |
 |---|---|---:|---|
 | bcb_endpoint_possible_failure | `[11, 8, 2, 2]` | 1 | candidate_not_closed |
 | bcb_endpoint_possible_failure | `[11, 8, 3, 1]` | 1 | candidate_not_closed |

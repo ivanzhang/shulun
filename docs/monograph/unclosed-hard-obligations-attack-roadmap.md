@@ -554,6 +554,12 @@ lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行各 `3` 条。`puncture_block`
 下一步最小硬点是先闭合两个 endpoint SAE 候选，再证明三条 lower-descent `grid_fail`
 相位行不会被正式下降路径命中，或为其提交 `U_CRT<L_PDEC` / `ColumnCRT` 证书。
 
+新增 `docs/monograph/prime-matrix-rpz-endpoint-sae-finite-certificate.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_endpoint_sae_finite_certificate.py` 后，两个 endpoint SAE 候选在
+当前账本中 possible load 为 `2`、actual load 为 `0`，因此当前有限账本层面的
+`RPZ-SAE-FIN` 真空闭合。该项不排除全局 SAE；当前最小硬点转为三条 lower-descent
+`grid_fail` 相位行的路径避开证明，或其 `PDEC/ColumnCRT` 证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

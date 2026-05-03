@@ -201,6 +201,12 @@ endpoint `RPZ-SAE-FIN` 候选、`2` 条 endpoint `PDEC/ColumnCRT` 行、`3` 条 
 `grid_fail` 的 `PDEC/ColumnCRT` 行。外审前作者仍需填写这些证书；当前文件只固定义务，
 不宣称排除。
 
+新增 `docs/monograph/prime-matrix-rpz-endpoint-sae-finite-certificate.md`、对应 JSON 与
+`experiments/prime_matrix_rpz_endpoint_sae_finite_certificate.py` 后，当前有限 BCB 账本中两个
+endpoint SAE 候选均无实际窗口：possible load 为 `2`，actual load 为 `0`。因此当前账本的
+endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬点转为 lower-descent
+`grid_fail` 三条相位行。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

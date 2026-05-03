@@ -69,7 +69,7 @@ def collect_endpoint_skeleton(endpoint: dict[str, Any]) -> dict[str, Any]:
             {
                 "source": "bcb_endpoint_possible_failure",
                 "phase_key": phase_key,
-                "formal_load_in_current_ledger": value,
+                "possible_load_in_current_ledger": value,
                 "example": examples[key],
                 "required_certificate": [
                     "列出 carrying this phase 的正式坏窗族",
@@ -267,7 +267,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "",
         "## RPZ-SAE-FIN 候选",
         "",
-        "| source | phase key | ledger load | status |",
+        "| source | phase key | possible load | status |",
         "|---|---|---:|---|",
     ]
     for item in result["rpz_sae_fin_candidates"]:
@@ -275,7 +275,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "| {source} | `{key}` | {load} | {status} |".format(
                 source=item["source"],
                 key=item["phase_key"],
-                load=item["formal_load_in_current_ledger"],
+                load=item["possible_load_in_current_ledger"],
                 status=item["status"],
             )
         )

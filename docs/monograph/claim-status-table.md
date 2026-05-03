@@ -247,6 +247,11 @@ endpoint SAE 候选 `2` 个；endpoint PDEC/ColumnCRT 行各 `2` 条；lower-des
 PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且全部为 `grid_fail`。
 该项仍为证书待填状态；下一步是填写两个 SAE 候选并压制三条 grid_fail 相位行。
 
+新增 `docs/monograph/prime-matrix-rpz-endpoint-sae-finite-certificate.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_endpoint_sae_finite_certificate.py` 后，两个 endpoint SAE 候选在
+当前有限账本中 actual load 为 `0`，所以 endpoint `RPZ-SAE-FIN` 当前账本真空闭合。该项不升级
+全局 SAE 排斥；当前剩余集中到三条 lower-descent `grid_fail` 相位行。
+
 新增 `docs/monograph/prime-matrix-gje-sae-terminal-band-decomposition.md` 后，`GJE-SAE` 又被拆成低行段与终端带：指数 `theta>1/2` 的普通短区间素数输入最多覆盖 `s<=q^{1/theta-1}` 量级低行段，不能覆盖 `s≈q` 的终端行。终端带经 `m=q^2-n` 镜像后成为“每个旧素数 `ell<=p` 只允许非零类 `q^2 mod ell`”的 CRT 覆盖问题。当前最小硬核更新为 `Terminal-SAE/PDEC`。
 
 新增 `docs/monograph/prime-matrix-terminal-sae-split-audit.md` 与 `docs/monograph/prime-matrix-terminal-sae-split-inequality.md` 后，终端带又被压成分层骨架/尾命中不等式。取 `y=max(2,floor(p/e))`，低筛骨架数 `G_y(h)` 若大于尾素数命中重数 `T_y(h)`，则尾素数无法覆盖骨架，终端行必有旧筛幸存者。审计到 `p<=1000` 的全部终端镜像块均满足正余量；当前最小硬点更新为 `TSI-or-PDEC`。
