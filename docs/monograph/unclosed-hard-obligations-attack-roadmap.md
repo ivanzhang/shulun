@@ -202,6 +202,28 @@ U_{\mathrm{CRT}}<L_{\mathrm{PDEC}}
 可行性：B/C。
 证书格式已经清楚，难点是无限族约束的结构来源证明。
 
+### 4.2A 本轮进展
+
+新增 `docs/monograph/h4-pdec-certificate-template.md`。该模板把 `PDEC exclusion`
+固定为可提交证书包：
+
+```text
+输入：Q, X, tau, S, g, F, kappa, ||F||_2；
+下界：L_PDEC=kappa |S|/(sqrt(Q-1)||F||_2)；
+上界：由 A g<=b, E g=e 的结构约束推出 U_CRT；
+验收：U_CRT<L_PDEC。
+```
+
+模板同时规定了两种合法提交形式：
+
+```text
+PDEC-Explicit-Cert：有限坏窗相位计数向量的精确 Fourier 审计；
+PDEC-Dual-Cert：覆盖无限族的线性对偶主控证书。
+```
+
+该进展不排除 `PDEC`；它把 H4 persistent 分支的最终义务压缩为“逐条证明约束来源、
+覆盖全部频率方向、核验严格余量”的三项可审稿任务。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

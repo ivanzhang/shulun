@@ -24,6 +24,14 @@
 
 新增 `docs/monograph/referee-review-and-closure-audit.md`。合著论著当前已经闭合的是“审稿结构、依赖边界、状态标注和统一矛盾场方法”；尚未闭合的是“RH 与方阵行列命题作为最终无条件定理”。后者必须等待 Prime Matrix D 组排斥与 RH controlled exits 的独立逐行 referee verification。
 
+## H4-PDEC 证书模板更新
+
+新增 `docs/monograph/h4-pdec-certificate-template.md`。Prime Matrix BPN-BK 的 persistent
+出口现在有固定验收格式：先由零均值测试函数得到
+`L_PDEC=kappa |S|/(sqrt(Q-1)||F||_2)`，再由同一坏窗集合的结构约束矩阵
+`A,b,E,e` 证明 `U_CRT<L_PDEC`。该文件只闭合证书格式；正式 `PDEC exclusion`
+仍需提交完整约束来源证明、全频率方向对偶或显式证书，以及严格余量核验。
+
 
 ## 内部逐行复核更新
 

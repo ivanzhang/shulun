@@ -85,6 +85,13 @@
 
 外审稿不能把 `PDEC-or-SAE` 当作已经排除的矛盾；必须写成最终待验收接口。
 
+新增 `docs/monograph/h4-pdec-certificate-template.md` 后，`PDEC exclusion` 的验收格式已固定为
+`PDEC-Explicit-Cert` 或 `PDEC-Dual-Cert`。该模板证明了 persistent 分支给出的
+`L_PDEC` 下界如何与同一坏窗集合的 `U_CRT` 上界相矛盾，并要求每条 `A,b,E,e`
+约束都回指到 mirror、column、tail-anchor、core-overlap、Rankin routing 或
+RRD/OSPC 吸收来源。当前仍未提交的是正式坏窗族的完整约束来源证明、全频率方向证书和
+严格余量核验。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：
@@ -230,7 +237,7 @@ RH 章节必须保持 verification package 状态。外审前应完成：
 | H1 | Prime Matrix A/B 入口 | 已新增 `prime-matrix-ab-entrance-theorem-list.md`，并将主稿 A/B reduction 改为 `Reduction-closed Statement` | 归约闭合；非终局排斥 |
 | H2 | Structured-EHPD / D 组 | 明确列为 Prime Matrix 终局第一硬门；要求直接证明或由 RHI 替代 | 未闭合定理级接口 |
 | H3 | BPN-LHB | 已确认五段证书/RS1962 外部定理版闭合边界，并新增可字节级复现的证书账本 | 子模块闭合；不推出全局行列命题 |
-| H4 | PDEC/SAE/Rankin | 拆成 `PDEC exclusion`、`SAE local escape exclusion`、Rankin certificates 三项 | 最终硬输入；未闭合 |
+| H4 | PDEC/SAE/Rankin | 拆成 `PDEC exclusion`、`SAE local escape exclusion`、Rankin certificates 三项；新增 H4-PDEC 证书模板，固定 `PDEC-Explicit-Cert/PDEC-Dual-Cert` 的输入、下界、上界和失败回流规则 | 最终硬输入；PDEC 格式闭合但证书未填 |
 | H5 | RRD/OSPC 常数账本 | 新增 `h5-4-ospc-weighted-crtdefect-absorption.md`，把 `OSPC* / weighted CRTDefect` 吸收到 `PDEC-or-SAE` | H5.1/H5.4 路由完成；最小硬点转为 H4 证书排斥 |
 | H6 | 二点筛 I3-Core | 拆成八个必须逐项证明的定理义务 | 条件核心；未闭合 |
 | H7 | DI/BFI 外部适配 | 已新增 `kls-window-di-bfi-adaptation-template.md`，完成 KLS-window 的相位、模数、频率、权重、gcd、平滑、`B(A)` 全表核验 | 外部深定理版闭合；完全自足版仍需重证 DI/BFI |
