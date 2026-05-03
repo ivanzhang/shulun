@@ -901,6 +901,15 @@ q 方阵边界零行
 有 `3456` 个周期零行；剥去 `19` 后仅 `912` 个仍为 `<=17` 筛零行，`2544` 个由 `19`
 这一层补齐，说明零行向下剥离不是单调传递。
 
+新增 `docs/monograph/prime-matrix-annulus-mirror-localization-audit.md` 后，用户提出的“环带零行经
+镜像落入更小方阵”被进一步拆开。第一，`Row(p)` 只排除包含完整 `p` 对齐行的 q 行；它不排除
+`p^2` 内跨两条 p 行的 q 缝合零窗，所以 q 零行不必先落入 `(p^2,q^2)` 环带。第二，保持零同余
+覆盖的 CRT 镜像是 `n -> -n mod M_p`，行坐标为 `r -> M_p-r+1`，落在周期尾部；落入早期小区间的
+是终端反射 `n -> q^2-n`，但覆盖类变为 `q^2 mod ell` 的非零类，不是零行。样本 `5<=p<=31`
+中，`p^2` 内未被 `Row(p)` 排除的 q 缝合行有 `97` 条，环带行有 `60` 条；虽然 CRT 镜像的行号
+有 `45` 次落入某些更小方阵早期行号，但实际成为更小方阵零行的次数为 `0`。因此可保留路线是
+`terminal nonzero-class block -> PDEC/SAE`，不是“小方阵零行递归矛盾”。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

@@ -694,6 +694,15 @@ peeling the largest base prime, and zero rows in an actual smaller-width matrix.
 do not imply one another.  In the finite audit, full-period zero rows occur for several
 adjacent pairs, but no early $q^2$ zero row and no actual smaller matrix zero row is forced.
 The next usable gate remains seam-window exclusion, not recursive parity.
+The annulus-mirror localization audit
+\[
+  \texttt{docs/monograph/prime-matrix-annulus-mirror-localization-audit.md}
+\]
+separates two reflections.  The CRT reflection preserving zero residue classes is
+$n\mapsto -n\pmod {M_p}$ and sends a small row to the tail of the CRT period.  The terminal
+reflection $n\mapsto q^2-n$ does land in an early interval, but it changes the forbidden
+classes from $0$ to $q^2\bmod \ell$.  It is therefore a terminal non-zero-class block, not a
+smaller prime-matrix zero row.
 The scaled-row and half-width version is audited in
 \[
   \texttt{docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md}.

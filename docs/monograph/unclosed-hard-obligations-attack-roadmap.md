@@ -699,6 +699,10 @@ q 零行确实给出旧 p-筛 q 零窗，但旧周期零行数已偶，q 倍提�
 也没有自动矛盾：剥层会复活洞，且固定宽度零行不能投影成小宽度方阵零行。下一最小硬点仍是
 早期 `q` 零窗的 seam-window 排斥，而不是全周期零行偶性。
 
+新增 `docs/monograph/prime-matrix-annulus-mirror-localization-audit.md` 后，环带镜像的可用版本应
+改写为终端非零类块：`q^2-n` 不是零同余 CRT 镜像，不能推出小方阵零行；它只能作为
+`PDEC/SAE/端点 CRT 缺陷` 的输入。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

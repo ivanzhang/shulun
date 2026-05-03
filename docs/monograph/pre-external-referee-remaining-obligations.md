@@ -329,6 +329,10 @@ formal BCB 平台长度增长定理，或把这些失败层路由到 TailAnchor/
 闭合证明：全周期零行、剥层后零行、实际小方阵早期零行是三种不同对象。外审前若使用该路线，
 必须把目标明确写成“早期缝合零窗排斥/端点 CRT 缺陷”，不能写成“镜像偶性递归推出小方阵零行”。
 
+新增 `docs/monograph/prime-matrix-annulus-mirror-localization-audit.md` 后，环带镜像路线还需避免
+混用两种镜像：`-n mod M_p` 保持零同余但落在 CRT 周期尾部；`q^2-n` 落到早期但变成非零类
+终端镜像块。外审前不能把后者写成更小素数方阵零行。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、
