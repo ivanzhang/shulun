@@ -175,6 +175,11 @@ R(c)>R_0        : high-lcm clamp branch.
 进一步按坏行集合做 persistent/sparse 二分：persistent 分支给出坏行指示函数的非零
 CRT/Fourier 缺陷，进入 `PDEC/ColumnCRT`；sparse 分支进入 `SAE` 单窗逃逸。
 因此 high-lcm 不再是 KLS-window 的未说明参数漏洞，而是一个已经路由到既有最终出口的分支。
+进一步的能量夹逼见
+`docs/monograph/prime-matrix-h3-dsb-hlc-fourier-energy-clamp.md`：同模高 `lcm` 相位块满足
+`\sum_{h\ne0}|\widehat\mu(h)|^2=R\sum_a\mu(a)^2-U^2`，且当 `U<=R/2` 时至少为 `RU/2`。
+所以 high-lcm 大质量必注入非零 Fourier 能量；持久时进入 `PDEC/ColumnCRT`，非持久时进入
+`SAE/endpoint`。
 
 ### 4.2 互补商窗口长度
 
@@ -247,6 +252,6 @@ H3-DSB bad row
 因此当前真正剩余不再是抽象“大筛缺陷”，而是：
 
 ```text
-证明 KLS-window 覆盖活跃参数，排除 Persistent-HLC/Sparse-HLC 出口，
+证明 KLS-window 覆盖活跃参数，排除 HLC Fourier 能量注入后的 PDEC/ColumnCRT 与 SAE/endpoint 出口，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```

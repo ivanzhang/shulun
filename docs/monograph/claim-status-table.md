@@ -425,6 +425,12 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 `PDEC/ColumnCRT` 非零 Fourier/CRT 缺陷，非持久时进入 `SAE` 单窗逃逸。当前诚实状态：
 高 `lcm` 分支路由已证，`Persistent-HLC` 与 `Sparse-HLC` 出口排斥仍未证。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-fourier-energy-clamp.md` 后，上述两个出口共享的
+能量源已严格化：对同模高 `lcm` 相位块，有限 Plancherel 给出
+`\sum_{h!=0}|\hat\mu(h)|^2=R sum_a mu(a)^2-U^2`；若 `U<=R/2`，非零能量至少 `RU/2`。
+因此高 `lcm` 分支进一步压缩为已知 `PDEC/ColumnCRT` 持久出口或 `SAE/endpoint` 单窗出口；
+仍未证明的是这两个出口的最终排斥。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

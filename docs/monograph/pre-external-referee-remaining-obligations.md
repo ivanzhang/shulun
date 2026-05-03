@@ -500,6 +500,17 @@ Sparse-HLC     => SAE 单窗逃逸。
 外审前剩余因此改写为：排除 `Persistent-HLC` 与 `Sparse-HLC` 两个出口，或明确保留为
 条件输入；不能再把 high-lcm 质量混入低模 `KLS-window` 主估计。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-fourier-energy-clamp.md` 后，`Persistent-HLC`
+与 `Sparse-HLC` 又合并到同一个能量注入公式：同模相位块有
+
+```text
+sum_{h!=0}|muhat(h)|^2 = R*sum_a mu(a)^2 - U^2 >= R*U/2    若 U<=R/2。
+```
+
+因此外审前不再需要接受“高 lcm 无结构逃逸”作为独立缺口。剩余审稿义务更窄：
+证明上述能量在持久情形必被 `PDEC/ColumnCRT` 排斥，在单窗情形必被 `SAE/endpoint`
+排斥；未证明前只能称为出口压缩，不能称 H3 无条件闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

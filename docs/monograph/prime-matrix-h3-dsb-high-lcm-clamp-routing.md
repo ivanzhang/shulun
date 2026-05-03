@@ -181,22 +181,35 @@ Sparse-HLC:
   Persistent-HLC 失败，全部 q/log y 级质量只能集中在少量孤立行。
 ```
 
-在 persistent 分支中，令 `1_s` 为坏行指示函数。若高 lcm 质量不是低频常数项，
-则对某个 `R(c)>R_0` 与某个非零频率 `h`，有限 CRT Fourier 展开给出
+在 persistent 分支中，令 `\mu` 为坏行高 `lcm` 质量在某个同模相位块上的计数测度，
+总质量为 `U`，模数为 `R`。有限 CRT Fourier 展开给出精确能量恒等式
 
 \[
+\sum_{1\le h<R}
 \left|
-\sum_{s\in S}
-1_s
-e\!\left(\frac{h\,\rho_s(c)}{R(c)}\right)
-\right|
-\gg
-\frac{U_{>R_0}(S)}{\mathcal L},
+\sum_{a\bmod R}
+\mu(a)e\!\left(\frac{ha}{R}\right)
+\right|^2
+=
+R\sum_{a\bmod R}\mu(a)^2-U^2.
 \tag{HLC-14}
 \]
 
-其中 `mathcal L` 只记录 dyadic 分块、平滑截断和 gcd 层的多对数损失。于是 persistent
-高 lcm 逃逸不是自由逃逸，而是 `PDEC/ColumnCRT` 型非零频率缺陷。
+因此只要该相位块不是完全均衡，非零频率总能量就是正的；若进一步经过 dyadic 分块、
+低维频率截断或 PDEC 测试函数压缩到 `\mathcal L` 个有效频率，则某个非零频率满足
+
+\[
+\left|
+\sum_{a\bmod R}
+\mu(a)e\!\left(\frac{ha}{R}\right)
+\right|
+\gg
+\left(\frac{R\sum_a\mu(a)^2-U^2}{\mathcal L}\right)^{1/2}.
+\tag{HLC-15}
+\]
+
+这里 `\mathcal L` 只记录 dyadic 分块、平滑截断和 gcd 层的多对数损失。于是 persistent
+高 lcm 逃逸不是自由逃逸，而是 `PDEC/ColumnCRT` 型非零频率能量缺陷。
 
 在 sparse 分支中，`(HLC-10)` 逐行给出大量几乎单点的高 lcm 单元。若这些行不能形成
 `PDEC/ColumnCRT` 持久频率，则每个坏行必须作为 `SAE` 单窗逃逸处理；其可用约束为：
@@ -225,7 +238,8 @@ HighLCM mass
 2. 高 lcm 大质量必转化为大量稀疏激活单元 `(HLC-10)`；
 3. 该分支不能被低模 KLS-window 主估计自动覆盖；
 4. 大质量高 `lcm` 逃逸必进入 `Persistent-HLC` 或 `Sparse-HLC` 二分；
-5. 因而必须作为 `PDEC/ColumnCRT` 非零频率缺陷或 `SAE` 单窗逃逸列入最终审稿义务。
+5. persistent 分支具有精确非零 Fourier 能量恒等式 `(HLC-14)`；
+6. 因而必须作为 `PDEC/ColumnCRT` 非零频率缺陷或 `SAE` 单窗逃逸列入最终审稿义务。
 
 本文尚未证明：
 
@@ -235,3 +249,8 @@ Persistent-HLC 与 Sparse-HLC 两个出口都不可能发生。
 
 下一步若继续攻该分支，应证明大量稀疏高 lcm 单元必产生端点/ColumnCRT/cofactor 结构矛盾，
 或建立 persistent/sparse 二分的最终排斥定理。
+
+后续能量夹逼见 `docs/monograph/prime-matrix-h3-dsb-hlc-fourier-energy-clamp.md`：
+在同模高 `lcm` 相位块中，有限 Plancherel 给出
+`\sum_{h\ne0}|\widehat\mu(h)|^2=R\sum_a\mu(a)^2-U^2`；若 `U<=R/2`，则非零能量至少
+`RU/2`。因此该分支进一步压缩为 `PDEC/ColumnCRT` 持久出口或 `SAE/endpoint` 单窗出口。

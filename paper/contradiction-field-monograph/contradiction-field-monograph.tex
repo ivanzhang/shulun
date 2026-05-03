@@ -1344,6 +1344,20 @@ many almost-singleton high-lcm units.  Across a persistent family of bad rows th
 non-zero CRT/Fourier defect, hence a PDEC/ColumnCRT exit; if it is not persistent, it is a
 sparse single-window escape.  This does not yet exclude the branch, but it removes high-lcm
 mass from the low-modulus KLS-window estimate and routes it to the existing final exits.
+The common energy source of the two high-lcm exits is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-fourier-energy-clamp.md}.
+\]
+For a homogeneous high-lcm modulus block, with residue-counting measure $\mu$ and total
+mass $U$, finite Plancherel gives
+\[
+  \sum_{1\le h<R}|\widehat\mu(h)|^2
+  =
+  R\sum_{a\bmod R}\mu(a)^2-U^2.
+\]
+In particular, when $U\le R/2$, this non-zero energy is at least $RU/2$.  Hence high-lcm
+escape necessarily injects Fourier energy: persistent energy must be excluded by
+PDEC/ColumnCRT, and isolated energy by SAE/endpoint analysis.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

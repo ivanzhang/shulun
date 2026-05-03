@@ -1395,6 +1395,11 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 `PDEC/ColumnCRT` 非零 Fourier/CRT 缺陷，不持久则是 `SAE` 单窗逃逸。合著稿目录状态应
 写为：高 `lcm` 路由已证，最终排斥仍需证明 `Persistent-HLC` 与 `Sparse-HLC` 两个出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-fourier-energy-clamp.md` 后，高 `lcm` 两出口的
+共同能量机制已定理化：同模块非零 Fourier 能量为 `R sum mu(a)^2-U^2`，若 `U<=R/2`
+则至少为 `RU/2`。合著稿应把高 `lcm` 章节标为“能量注入已证，PDEC/ColumnCRT 与
+SAE/endpoint 出口排斥未证”。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
