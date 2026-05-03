@@ -1,0 +1,410 @@
+{
+  "status": "rpz_lower_grid_fail_avoidance_current_ledger",
+  "source": "docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.json",
+  "formula": "delta=-(a-1)(p-r) mod r; grid_success iff delta<=p-r",
+  "summary": {
+    "transition_rows": 5,
+    "rows_with_possible_grid_fail": 3,
+    "actual_transition_nodes": 20,
+    "actual_grid_fail_nodes": 0,
+    "formula_count_mismatches": 0,
+    "formula_delta_mismatches": 0,
+    "current_ledger_avoidance_status_counts": {
+      "avoids": 5
+    },
+    "global_avoidance_closed": false
+  },
+  "rows": [
+    {
+      "p": 3,
+      "r": 2,
+      "gap": 1,
+      "Q": 2,
+      "fail_residues_mod_r": [],
+      "success_residues_mod_r": [
+        0,
+        1
+      ],
+      "fail_count_formula": 0,
+      "source_fail_count": 0,
+      "formula_matches_source_count": true,
+      "actual_transition_nodes": 6,
+      "actual_grid_fail_nodes": 0,
+      "actual_min_margin": 0,
+      "actual_profiles": [
+        {
+          "row": 731,
+          "row_mod_r": 1,
+          "gap_p_minus_r": 1,
+          "delta_formula": 0,
+          "success_by_formula": true,
+          "criterion_margin": 1,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 0,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 6860,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 1,
+          "delta_formula": 1,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 1,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 23170,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 1,
+          "delta_formula": 1,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 1,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 23171,
+          "row_mod_r": 1,
+          "gap_p_minus_r": 1,
+          "delta_formula": 0,
+          "success_by_formula": true,
+          "criterion_margin": 1,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 0,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 450,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 1,
+          "delta_formula": 1,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 1,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 50360,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 1,
+          "delta_formula": 1,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 1,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        }
+      ],
+      "current_ledger_avoids_grid_fail": true,
+      "global_status": "not_global_avoidance_proof"
+    },
+    {
+      "p": 5,
+      "r": 3,
+      "gap": 2,
+      "Q": 6,
+      "fail_residues_mod_r": [],
+      "success_residues_mod_r": [
+        0,
+        1,
+        2
+      ],
+      "fail_count_formula": 0,
+      "source_fail_count": 0,
+      "formula_matches_source_count": true,
+      "actual_transition_nodes": 6,
+      "actual_grid_fail_nodes": 0,
+      "actual_min_margin": 0,
+      "actual_profiles": [
+        {
+          "row": 439,
+          "row_mod_r": 1,
+          "gap_p_minus_r": 2,
+          "delta_formula": 0,
+          "success_by_formula": true,
+          "criterion_margin": 2,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 0,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 4116,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 2,
+          "delta_formula": 2,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 2,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 13902,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 2,
+          "delta_formula": 2,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 2,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 13903,
+          "row_mod_r": 1,
+          "gap_p_minus_r": 2,
+          "delta_formula": 0,
+          "success_by_formula": true,
+          "criterion_margin": 2,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 0,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 270,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 2,
+          "delta_formula": 2,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 2,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 30216,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 2,
+          "delta_formula": 2,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 2,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        }
+      ],
+      "current_ledger_avoids_grid_fail": true,
+      "global_status": "not_global_avoidance_proof"
+    },
+    {
+      "p": 7,
+      "r": 5,
+      "gap": 2,
+      "Q": 30,
+      "fail_residues_mod_r": [
+        2,
+        4
+      ],
+      "success_residues_mod_r": [
+        0,
+        1,
+        3
+      ],
+      "fail_count_formula": 12,
+      "source_fail_count": 12,
+      "formula_matches_source_count": true,
+      "actual_transition_nodes": 5,
+      "actual_grid_fail_nodes": 0,
+      "actual_min_margin": 0,
+      "actual_profiles": [
+        {
+          "row": 2940,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 2,
+          "delta_formula": 2,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 2,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 9930,
+          "row_mod_r": 0,
+          "gap_p_minus_r": 2,
+          "delta_formula": 2,
+          "success_by_formula": true,
+          "criterion_margin": 0,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 2,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 9931,
+          "row_mod_r": 1,
+          "gap_p_minus_r": 2,
+          "delta_formula": 0,
+          "success_by_formula": true,
+          "criterion_margin": 2,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 0,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 193,
+          "row_mod_r": 3,
+          "gap_p_minus_r": 2,
+          "delta_formula": 1,
+          "success_by_formula": true,
+          "criterion_margin": 1,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 1,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 21583,
+          "row_mod_r": 3,
+          "gap_p_minus_r": 2,
+          "delta_formula": 1,
+          "success_by_formula": true,
+          "criterion_margin": 1,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 1,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        }
+      ],
+      "current_ledger_avoids_grid_fail": true,
+      "global_status": "not_global_avoidance_proof"
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "gap": 4,
+      "Q": 210,
+      "fail_residues_mod_r": [
+        3,
+        5
+      ],
+      "success_residues_mod_r": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "fail_count_formula": 60,
+      "source_fail_count": 60,
+      "formula_matches_source_count": true,
+      "actual_transition_nodes": 2,
+      "actual_grid_fail_nodes": 0,
+      "actual_min_margin": 2,
+      "actual_profiles": [
+        {
+          "row": 123,
+          "row_mod_r": 4,
+          "gap_p_minus_r": 4,
+          "delta_formula": 2,
+          "success_by_formula": true,
+          "criterion_margin": 2,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 2,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        },
+        {
+          "row": 13735,
+          "row_mod_r": 1,
+          "gap_p_minus_r": 4,
+          "delta_formula": 0,
+          "success_by_formula": true,
+          "criterion_margin": 4,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 0,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        }
+      ],
+      "current_ledger_avoids_grid_fail": true,
+      "global_status": "not_global_avoidance_proof"
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "Q": 2310,
+      "fail_residues_mod_r": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10
+      ],
+      "success_residues_mod_r": [
+        0,
+        1,
+        6
+      ],
+      "fail_count_formula": 1680,
+      "source_fail_count": 1680,
+      "formula_matches_source_count": true,
+      "actual_transition_nodes": 1,
+      "actual_grid_fail_nodes": 0,
+      "actual_min_margin": 1,
+      "actual_profiles": [
+        {
+          "row": 11622,
+          "row_mod_r": 6,
+          "gap_p_minus_r": 2,
+          "delta_formula": 1,
+          "success_by_formula": true,
+          "criterion_margin": 1,
+          "grid_fail_by_formula": false,
+          "source_status": "success",
+          "source_delta": 1,
+          "formula_matches_source_delta": true,
+          "formula_matches_source_status": true
+        }
+      ],
+      "current_ledger_avoids_grid_fail": true,
+      "global_status": "not_global_avoidance_proof"
+    }
+  ],
+  "review_boundary": [
+    "当前实际下降路径没有命中 grid_fail 相位",
+    "闭式判据与枚举账本完全一致",
+    "这不是全局正式下降路径避开证明"
+  ]
+}

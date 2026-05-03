@@ -148,6 +148,24 @@ docs/monograph/prime-matrix-rpz-endpoint-sae-finite-certificate.md。
 所以当前有限账本的 `candidate_windows` 为空，endpoint `RPZ-SAE-FIN` 真空闭合。它不是全局
 `SAE` 排斥；若正式反例族实际命中这些相位，仍需逐窗证书或进入 `PDEC/ColumnCRT`。
 
+继续新增：
+
+```text
+experiments/prime_matrix_rpz_lower_grid_fail_avoidance_certificate.py；
+docs/monograph/prime-matrix-rpz-lower-grid-fail-avoidance-certificate.json；
+docs/monograph/prime-matrix-rpz-lower-grid-fail-avoidance-certificate.md。
+```
+
+该证书把三条 lower-descent `grid_fail` 行化为闭式判据。若 `g=p-r`、`a` 是 `p` 行号，则
+
+```text
+delta = -(a-1)g mod r；
+grid_success iff delta<=g。
+```
+
+当前下降树 `20` 个实际转换节点全部满足该不等式，实际 `grid_fail` 节点为 `0`；闭式计数与
+相位枚举不一致数为 `0`。这仍是当前账本避开证书，不是全局正式下降路径避开证明。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -178,7 +196,8 @@ Track B 的下层零行下降引理；
 下降阻断相位有限账本；
 RPZ-SAE/PDEC/ColumnCRT 证书材料化接口；
 RPZ 出口证书骨架包；
-当前 endpoint SAE 有限证书。
+当前 endpoint SAE 有限证书；
+当前 lower_descent_grid_fail 避开证书。
 ```
 
 本文没有完成：
@@ -193,6 +212,6 @@ SAE/PDEC/ColumnCRT 证书排斥；
 
 ```text
 LowerDescent-Grid persistence；
-证明三条 lower_descent_grid_fail 行不被正式下降路径命中；
+证明正式下降路径全局满足 delta<=p-r；
 或提交 PDEC/ColumnCRT 排斥证书。
 ```

@@ -144,7 +144,8 @@ finite certificate or source theorem proving load > L_D impossible。
 ```text
 下降阻断相位 finite ledger；
 RPZ-SAE / RPZ-PDEC / RPZ-ColumnCRT 三类证书材料化接口；
-当前 endpoint RPZ-SAE-FIN 有限账本证书。
+当前 endpoint RPZ-SAE-FIN 有限账本证书；
+当前 lower_descent_grid_fail 闭式判据与避开证书。
 ```
 
 本文没有完成：
@@ -159,7 +160,7 @@ LowerDescent-Grid persistence 的全局证明。
 下一步最小硬点：
 
 ```text
-1. 对三条 lower_descent_grid_fail PDEC 行证明正式下降路径避开其 S_tau；
-2. 或为这些相位提交 U_CRT<L_PDEC / ColumnCRT 位移阈值证书；
+1. 证明正式下降路径全局满足 delta<=p-r；
+2. 或为 grid_fail 相位提交 U_CRT<L_PDEC / ColumnCRT 位移阈值证书；
 3. 若未来 endpoint 相位实际命中，再逐窗填写全局 SAE 局部证书。
 ```

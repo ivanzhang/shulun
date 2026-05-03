@@ -560,6 +560,13 @@ lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行各 `3` 条。`puncture_block`
 `RPZ-SAE-FIN` 真空闭合。该项不排除全局 SAE；当前最小硬点转为三条 lower-descent
 `grid_fail` 相位行的路径避开证明，或其 `PDEC/ColumnCRT` 证书。
 
+新增 `docs/monograph/prime-matrix-rpz-lower-grid-fail-avoidance-certificate.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_lower_grid_fail_avoidance_certificate.py` 后，三条 `grid_fail`
+相位行已化为闭式判据 `delta=-(a-1)(p-r) mod r`、`grid_success iff delta<=p-r`。当前下降树
+`20` 个实际转换节点全部避开，实际 `grid_fail` 为 `0`，闭式计数与枚举不一致为 `0`。
+剩余硬点因此变为全局相位控制：证明正式下降路径始终满足该不等式，或把违反族送入
+`PDEC/ColumnCRT`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

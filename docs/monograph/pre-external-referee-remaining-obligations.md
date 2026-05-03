@@ -207,6 +207,12 @@ endpoint SAE 候选均无实际窗口：possible load 为 `2`，actual load 为 
 endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬点转为 lower-descent
 `grid_fail` 三条相位行。
 
+新增 `docs/monograph/prime-matrix-rpz-lower-grid-fail-avoidance-certificate.md`、对应 JSON 与
+`experiments/prime_matrix_rpz_lower_grid_fail_avoidance_certificate.py` 后，`grid_fail` 三条相位行
+具有闭式判据 `delta=-(a-1)(p-r) mod r` 且 `grid_success iff delta<=p-r`。当前实际下降节点
+`20` 个全部避开该失败相位；这闭合当前账本，不闭合全局正式路径。外审前剩余是证明正式路径
+全局满足该相位不等式，或提交 `PDEC/ColumnCRT` 排斥证书。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、
