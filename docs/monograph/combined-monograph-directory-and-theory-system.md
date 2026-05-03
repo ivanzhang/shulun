@@ -988,3 +988,22 @@ p=13: 3510/30030
 
 这说明当前账本的 A 路线已闭合，但全局 formal-family 仍需证明起始相位总落入 `A_p`，或把
 `P(p)\setminus A_p` 的命中送入已物化的 seam/PDEC/ColumnCRT 链。
+
+新增 `docs/monograph/prime-matrix-rpz-rejected-phase-absorption.md` 后，后一项在当前自动机范围内
+已完全证书化。所有拒绝相位均有首个失败 seam，且全部属于已物化的 `12` 条 seam 行：
+
+```text
+total rejected phases = 27924
+distinct first-fail seams = 12
+uncovered rejected examples = 0
+```
+
+因此 RPZ formal-family 路线现在是一个完整的“接受/拒绝路由”：
+
+```text
+start phase in A_p      => canonical descent => p=2 contradiction；
+start phase not in A_p  => materialized first-grid-fail seam => PDEC/ColumnCRT/SAE。
+```
+
+这不是最终无条件闭合，因为 seam/PDEC/ColumnCRT 出口本身仍未排除；但它已排除 rejected set
+存在第三逃逸的可能。

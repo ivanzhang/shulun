@@ -154,6 +154,7 @@ unit endpoint seam 的 ColumnCRT 固定非零位移门控证书。
 ColumnCRT 阈值调参不可闭合障碍证书。
 三路线闭合审计与优先级排序。
 formal-family 下降相位自动机证书。
+formal-family rejected set 全量 seam 吸收证书。
 ```
 
 本文没有完成：
@@ -239,3 +240,16 @@ global formal-family closed = false。
 prove formal-family start phases lie in A_p；
 or route rejected start phases to first-grid-fail seam/PDEC/ColumnCRT。
 ```
+
+新增 `prime-matrix-rpz-rejected-phase-absorption.md` 后，第二支已在当前自动机范围内完全材料化：
+
+```text
+total rejected phases = 27924；
+distinct first-fail seams = 12；
+materialized seam rows = 12；
+uncovered rejected examples = 0。
+```
+
+因此 `A_p` 判定现在是完整二分证书：接受相位下降到 `p=2`；拒绝相位全部进入已物化的
+first-grid-fail seam/PDEC/ColumnCRT 链。剩余不是“拒绝集是否可命名”，而是排除这些 seam 出口，
+或证明 formal-family 起始相位根本不进入拒绝集。

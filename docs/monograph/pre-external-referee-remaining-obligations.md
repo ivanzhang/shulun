@@ -245,6 +245,10 @@ formal-family 避开优先，其次 endpoint-PDEC，上述两者都失败时才�
 具体化为起始相位准入：证明任意 formal-family 起始相位属于自动机接受集 `A_p`。当前账本
 `6/6` 起始行被接受，但这仍不是全局证明。
 
+新增 `docs/monograph/prime-matrix-rpz-rejected-phase-absorption.md` 后，自动机拒绝集的外审义务也被
+材料化：`27924` 个 rejected phase 全部追踪到 `12` 条已物化 first-grid-fail seam，未覆盖样例为
+`0`。外审前剩余不再是 rejected set 未命名，而是 seam/PDEC/ColumnCRT 出口排斥。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

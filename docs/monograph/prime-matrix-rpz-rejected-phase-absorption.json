@@ -1,0 +1,370 @@
+{
+  "status": "rpz_rejected_phase_absorption_certificate",
+  "sources": {
+    "automaton": "docs/monograph/prime-matrix-rpz-formal-phase-automaton.json",
+    "seam": "docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.json"
+  },
+  "summary": {
+    "start_prime_rows": 6,
+    "total_rejected_phases": 27924,
+    "distinct_first_fail_seams": 12,
+    "materialized_seam_rows": 12,
+    "uncovered_rejected_examples": 0,
+    "all_rejected_covered_by_materialized_seams": true
+  },
+  "absorption_rows": [
+    {
+      "start_p": 2,
+      "modulus": 2,
+      "rejected_phase_count": 0,
+      "first_fail_rows": [],
+      "all_rejected_covered_by_materialized_seams": true
+    },
+    {
+      "start_p": 3,
+      "modulus": 6,
+      "rejected_phase_count": 0,
+      "first_fail_rows": [],
+      "all_rejected_covered_by_materialized_seams": true
+    },
+    {
+      "start_p": 5,
+      "modulus": 30,
+      "rejected_phase_count": 0,
+      "first_fail_rows": [],
+      "all_rejected_covered_by_materialized_seams": true
+    },
+    {
+      "start_p": 7,
+      "modulus": 210,
+      "rejected_phase_count": 84,
+      "first_fail_rows": [
+        {
+          "first_fail_key": [
+            7,
+            5,
+            3,
+            2
+          ],
+          "count": 42,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "count": 42,
+          "materialized": true
+        }
+      ],
+      "all_rejected_covered_by_materialized_seams": true
+    },
+    {
+      "start_p": 11,
+      "modulus": 2310,
+      "rejected_phase_count": 1320,
+      "first_fail_rows": [
+        {
+          "first_fail_key": [
+            7,
+            5,
+            3,
+            2
+          ],
+          "count": 330,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "count": 330,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            11,
+            7,
+            5,
+            5
+          ],
+          "count": 330,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            11,
+            7,
+            6,
+            3
+          ],
+          "count": 330,
+          "materialized": true
+        }
+      ],
+      "all_rejected_covered_by_materialized_seams": true
+    },
+    {
+      "start_p": 13,
+      "modulus": 30030,
+      "rejected_phase_count": 26520,
+      "first_fail_rows": [
+        {
+          "first_fail_key": [
+            7,
+            5,
+            3,
+            2
+          ],
+          "count": 1170,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "count": 1170,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            11,
+            7,
+            5,
+            5
+          ],
+          "count": 1170,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            11,
+            7,
+            6,
+            3
+          ],
+          "count": 1170,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            3,
+            5
+          ],
+          "count": 2730,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            4,
+            10
+          ],
+          "count": 2730,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            5,
+            4
+          ],
+          "count": 2730,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            6,
+            9
+          ],
+          "count": 2730,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            7,
+            3
+          ],
+          "count": 2730,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            8,
+            8
+          ],
+          "count": 2730,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            9,
+            2
+          ],
+          "count": 2730,
+          "materialized": true
+        },
+        {
+          "first_fail_key": [
+            13,
+            11,
+            10,
+            7
+          ],
+          "count": 2730,
+          "materialized": true
+        }
+      ],
+      "all_rejected_covered_by_materialized_seams": true
+    }
+  ],
+  "global_first_fail_rows": [
+    {
+      "first_fail_key": [
+        7,
+        5,
+        3,
+        2
+      ],
+      "count": 1542,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        7,
+        5,
+        4,
+        4
+      ],
+      "count": 1542,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        11,
+        7,
+        5,
+        5
+      ],
+      "count": 1500,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        11,
+        7,
+        6,
+        3
+      ],
+      "count": 1500,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        3,
+        5
+      ],
+      "count": 2730,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        4,
+        10
+      ],
+      "count": 2730,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        5,
+        4
+      ],
+      "count": 2730,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        6,
+        9
+      ],
+      "count": 2730,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        7,
+        3
+      ],
+      "count": 2730,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        8,
+        8
+      ],
+      "count": 2730,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        9,
+        2
+      ],
+      "count": 2730,
+      "materialized": true
+    },
+    {
+      "first_fail_key": [
+        13,
+        11,
+        10,
+        7
+      ],
+      "count": 2730,
+      "materialized": true
+    }
+  ],
+  "uncovered_examples": [],
+  "review_boundary": [
+    "rejected set 已全部吸收到 first-grid-fail seam 证书行",
+    "该证书不排除 seam/PDEC/ColumnCRT 出口",
+    "若要全局闭合，仍需排除 seam 出口或证明 formal starts never enter rejected set"
+  ]
+}

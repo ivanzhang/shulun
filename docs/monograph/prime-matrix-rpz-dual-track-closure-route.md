@@ -295,7 +295,28 @@ unit endpoint seam 的固定非零 ColumnCRT 位移门控证书。
 ColumnCRT 阈值调参不可闭合障碍证书。
 三路线闭合审计与优先级排序。
 formal-family 下降相位自动机证书。
+formal-family rejected set 全量 seam 吸收证书。
 ```
+
+再新增
+
+```text
+experiments/prime_matrix_rpz_rejected_phase_absorption.py；
+docs/monograph/prime-matrix-rpz-rejected-phase-absorption.json；
+docs/monograph/prime-matrix-rpz-rejected-phase-absorption.md。
+```
+
+该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
+
+```text
+rejected phases = 27924；
+distinct first-fail seams = 12；
+materialized seam rows = 12；
+uncovered rejected examples = 0。
+```
+
+所以路线 A 已变成严格二分：`A_p` 内部相位下降到 `p=2`；`A_p` 外部相位全部回到已物化
+seam/PDEC/ColumnCRT 出口。它仍不排除这些出口，但关闭了“rejected set 是否还有未命名逃逸”的缺口。
 
 本文没有完成：
 

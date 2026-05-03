@@ -613,6 +613,10 @@ endpoint-PDEC 上界、或独立 `ColumnCRTDefect` 排斥定理。
 `p<=13` 的接受/拒绝相位计数。当前最小硬点更新为：证明 formal-family 起始相位必在
 `A_p`，或把拒绝相位命中送入 seam/PDEC/ColumnCRT。
 
+新增 `docs/monograph/prime-matrix-rpz-rejected-phase-absorption.md` 后，拒绝相位命中已经全量送入
+seam/PDEC/ColumnCRT：`27924` 个 rejected phase、`12` 个 distinct first-fail seams、未覆盖样例
+`0`。因此路线 A 的未命名逃逸已清零；剩余硬点重新集中到 seam/PDEC/ColumnCRT 出口排斥。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

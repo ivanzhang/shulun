@@ -883,6 +883,18 @@ successive prime levels to $p=2$, while phases outside $A_p$ hit a first-grid-fa
 return to the already materialized exits.  In the current ledger all six BCB-Core start rows
 belong to their accepted sets.  The global missing theorem is that every formal
 counterexample-family start phase lies in $A_p$, or else is captured by the seam exits.
+The rejected-phase absorption certificate
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-rejected-phase-absorption.md}
+\]
+removes the second ambiguity within the present automaton range.  It checks all
+$27924$ rejected phases, finds twelve distinct first-fail seam rows, and verifies that every
+one of them is already materialized by the first-grid-fail seam certificate.  Hence the
+RPZ formal route is now a strict two-way routing statement: an accepted start phase descends
+to $p=2$, while a rejected start phase enters the named seam/PDEC/ColumnCRT certificate chain.
+This is an absorption theorem, not an exclusion theorem; the remaining hard point is the
+actual discharge of those seam/PDEC/ColumnCRT exits, or a proof that formal counterexample
+starts always lie in $A_p$.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 
