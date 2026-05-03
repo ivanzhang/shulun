@@ -219,6 +219,13 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 判据与枚举不一致为 `0`；`4/5` 由纯长度条件 `N>=2h-1` 自动闭合。当前最小硬点更新为
 `BCB-Endpoint persistence exclusion`：排除端点失败相位持续存在，或送入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-endpoint-persistence-route.md`、
+`docs/monograph/prime-matrix-rpz-bcb-endpoint-phase-ledger.md` 与脚本
+`experiments/prime_matrix_rpz_bcb_endpoint_phase_ledger.py` 后，端点失败分支已完成命名化：
+实际端点失败 `0/5`，可能失败相位总数 `2`；低负载进入 `SAE`，持久同相失败进入
+`PDEC/ColumnCRT`。当前 RPZ 链条剩余不再是端点路由，而是 `SAE/PDEC/ColumnCRT` 证书闭合，
+或沿已得到的下层 `h`-筛零行继续递归下降。
+
 新增 `docs/monograph/prime-matrix-gje-sae-terminal-band-decomposition.md` 后，`GJE-SAE` 又被拆成低行段与终端带：指数 `theta>1/2` 的普通短区间素数输入最多覆盖 `s<=q^{1/theta-1}` 量级低行段，不能覆盖 `s≈q` 的终端行。终端带经 `m=q^2-n` 镜像后成为“每个旧素数 `ell<=p` 只允许非零类 `q^2 mod ell`”的 CRT 覆盖问题。当前最小硬核更新为 `Terminal-SAE/PDEC`。
 
 新增 `docs/monograph/prime-matrix-terminal-sae-split-audit.md` 与 `docs/monograph/prime-matrix-terminal-sae-split-inequality.md` 后，终端带又被压成分层骨架/尾命中不等式。取 `y=max(2,floor(p/e))`，低筛骨架数 `G_y(h)` 若大于尾素数命中重数 `T_y(h)`，则尾素数无法覆盖骨架，终端行必有旧筛幸存者。审计到 `p<=1000` 的全部终端镜像块均满足正余量；当前最小硬点更新为 `TSI-or-PDEC`。

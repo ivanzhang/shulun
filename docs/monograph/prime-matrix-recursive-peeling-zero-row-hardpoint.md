@@ -338,3 +338,13 @@ BCB-Grid/Endpoint exclusion。
 ```text
 BCB-Endpoint persistence exclusion。
 ```
+
+新增 `prime-matrix-rpz-bcb-endpoint-persistence-route.md` 与
+`prime-matrix-rpz-bcb-endpoint-phase-ledger.md` 后，端点持久失败已不再是独立硬点：
+低负载进入 `SAE`，高负载进入 `PDEC/ColumnCRT`。有限样本实际端点失败为 `0`，
+可能失败相位只有 `2` 个。下一步需要在两条路线中择一：
+
+```text
+1. 攻 SAE/PDEC/ColumnCRT certificate closure；
+2. 沿 BCB 得到的下层 h-筛零行继续做递归下降。
+```

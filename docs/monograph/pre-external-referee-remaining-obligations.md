@@ -175,6 +175,12 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 外审前剩余进一步收窄为 `BCB-Endpoint persistence exclusion`：若该判据失败，端点相位必须进入
 `SAE/PDEC/ColumnCRT`，不能作为未命名逃逸。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-endpoint-persistence-route.md`、
+`docs/monograph/prime-matrix-rpz-bcb-endpoint-phase-ledger.md` 与
+`experiments/prime_matrix_rpz_bcb_endpoint_phase_ledger.py` 后，端点失败已经完成命名路由：
+稀疏端点失败进入 `SAE`，持久同相失败进入 `PDEC/ColumnCRT`。该项仍不排除这些出口；
+但外审义务已从“端点失败是否还有第三逃逸”收窄为 `SAE/PDEC/ColumnCRT` 证书闭合或下层递归下降。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

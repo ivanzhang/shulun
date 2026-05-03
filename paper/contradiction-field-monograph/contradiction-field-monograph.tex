@@ -740,6 +740,19 @@ seam phase.  The audit in
 matches this criterion in all five samples and finds no endpoint-defect sample.  The remaining
 gate is endpoint persistence exclusion: a failed grid phase must be isolated as SAE or persistent
 as PDEC/ColumnCRT.
+This endpoint gate is routed in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-endpoint-persistence-route.md}
+\]
+and audited in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-endpoint-phase-ledger.md}.
+\]
+For fixed $(h,N)$, endpoint failure is a finite residue ledger in $u\bmod h$.  In the known
+samples there are no actual endpoint failures and only two possible failure phases.  Sparse
+loads are SAE obligations; persistent same-phase loads are PDEC/ColumnCRT objects.  Thus the
+RPZ endpoint branch is now named, not closed: the remaining work is either certificate closure
+for SAE/PDEC/ColumnCRT or recursive descent from the lower $h$-zero row.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

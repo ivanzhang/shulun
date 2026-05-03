@@ -525,6 +525,13 @@ survivor / TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ。
 当前最小硬点更新为 `BCB-Endpoint persistence exclusion`，即排除 `(Grid)` 失败相位的持续存在，
 或路由到 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-endpoint-persistence-route.md`、
+`docs/monograph/prime-matrix-rpz-bcb-endpoint-phase-ledger.md` 与脚本
+`experiments/prime_matrix_rpz_bcb_endpoint_phase_ledger.py` 后，端点失败分支已完成稀疏/持久二分：
+低相位负载进入 `SAE`，高相位负载进入 `PersistentEndpointDefect`，再进入 `PDEC/ColumnCRT`。
+有限样本实际端点失败 `0/5`，可能失败相位总数 `2`，不同可能失败相位键数 `2`。
+RPZ 链条下一步应转为二选一：闭合 `SAE/PDEC/ColumnCRT` 证书，或继续沿下层 `h`-筛零行做递归下降。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

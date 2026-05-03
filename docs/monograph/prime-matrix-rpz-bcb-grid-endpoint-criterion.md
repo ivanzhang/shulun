@@ -139,18 +139,35 @@ docs/monograph/prime-matrix-rpz-bcb-grid-endpoint-audit.md。
 解释：样本全部闭合到下层对齐零行，但其中只有部分可由 `N>=2h-1` 自动推出；
 其余必须使用端点相位 `\delta_h(u)` 的精确余量。
 
-## 5. 审稿边界
+## 5. 后续推进：端点持久失败路由
+
+新增 `prime-matrix-rpz-bcb-endpoint-persistence-route.md` 与审计
+`prime-matrix-rpz-bcb-endpoint-phase-ledger.md` 后，端点失败分支已被命名化：
+
+```text
+endpoint grid failure
+=> sparse SAE
+   or persistent endpoint phase defect
+=> PDEC/ColumnCRT。
+```
+
+固定 `(h,N)` 后，失败只由 `u mod h` 决定。有限相位账本显示同批样本实际端点失败为 `0/5`；
+所有可能失败相位总数为 `2`，且都来自 `h=11,N=19` 的两个左端残基。由此端点失败不再是
+未命名出口；剩余转回 `SAE/PDEC/ColumnCRT` 证书闭合或下层零行递归下降。
+
+## 6. 审稿边界
 
 本文完成：
 
 ```text
 BCB-Core 到下层对齐零行 / endpoint seam defect 的精确无损二分。
+endpoint seam defect 到 SAE/PDEC/ColumnCRT 的持久路由。
 ```
 
 本文没有完成：
 
 ```text
-端点 seam 缺陷的全局排斥；
+SAE/PDEC/ColumnCRT 出口排斥；
 下层 h-筛零行如何继续递归并最终矛盾闭合；
 正式坏窗抽取保证平台参数满足判据的全局证明。
 ```
@@ -158,8 +175,6 @@ BCB-Core 到下层对齐零行 / endpoint seam defect 的精确无损二分。
 下一步最小硬点更新为：
 
 ```text
-BCB-Endpoint persistence exclusion。
+SAE/PDEC/ColumnCRT certificate closure
+or lower-level recursive zero-row descent。
 ```
-
-即证明 `(Grid)` 失败的端点相位不能在正式反例抽取中持续存在；若持续，则必须进入
-`SAE/PDEC/ColumnCRT` 的既有出口。

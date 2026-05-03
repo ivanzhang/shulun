@@ -194,6 +194,16 @@ BCB-Grid/Endpoint exclusion。
 同批样本 `5/5` 满足该判据，端点缺陷为 `0`。剩余硬点更新为
 `BCB-Endpoint persistence exclusion`。
 
+新增 `prime-matrix-rpz-bcb-endpoint-persistence-route.md` 后，端点失败已二分为 `SAE` 稀疏包
+或持久端点相位缺陷；后者进入 `PDEC/ColumnCRT`。因此 RPZ 吸收链条当前已推进到：
+
+```text
+RPZ absorption
+=> TailAnchor / ColumnCRT / ColumnRadius
+   or lower-level h-zero-row descent
+   or SAE/PDEC certificate obligations。
+```
+
 ## 6. 审稿边界
 
 本文完成：

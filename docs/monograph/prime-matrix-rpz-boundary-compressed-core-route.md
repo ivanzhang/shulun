@@ -156,3 +156,10 @@ N\ge \delta_h(u)+h.
 其中 `4/5` 甚至由纯长度条件 `N>=2h-1` 自动闭合。下一硬点因此变为
 `BCB-Endpoint persistence exclusion`：排斥 `(Grid)` 失败端点相位的持续存在，或把它送入
 `SAE/PDEC/ColumnCRT`。
+
+新增 `prime-matrix-rpz-bcb-endpoint-persistence-route.md` 后，上述端点分支已完成命名路由：
+若端点失败相位低负载，则进入 `SAE` 稀疏包；若某个
+`\tau=(h,N mod h,u mod h,\Delta)` 超阈值重复，则进入 `PersistentEndpointDefect`，
+并按低模端点相位集中接入 `PDEC/ColumnCRT`。有限相位账本中实际端点失败为 `0`，
+可能失败相位总数为 `2`。因此 RPZ-BCB 端点分支不再保留未命名逃逸；剩余转入
+`SAE/PDEC/ColumnCRT` 证书闭合，或继续处理下层 `h`-筛零行递归。
