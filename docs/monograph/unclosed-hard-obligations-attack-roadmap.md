@@ -547,6 +547,13 @@ Track A 固定 `RPZ-SAE/RPZ-PDEC/RPZ-ColumnCRT` 三类证书接口；Track B 证
 `RPZ-SAE-FIN`、`RPZ-PDEC endpoint phase row` 与 `RPZ-ColumnCRT endpoint displacement row`。
 当前最小硬点进一步拆成：证明正式下降路径总在 `success` 相位，或提交上述三类证书。
 
+新增 `docs/monograph/prime-matrix-rpz-certificate-skeleton-package.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_certificate_skeleton_builder.py` 后，证书义务已变成具体行：
+endpoint 低负载 `RPZ-SAE-FIN` 候选 `2` 个；endpoint `PDEC/ColumnCRT` 行各 `2` 条；
+lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行各 `3` 条。`puncture_block` 暂无相位。
+下一步最小硬点是先闭合两个 endpoint SAE 候选，再证明三条 lower-descent `grid_fail`
+相位行不会被正式下降路径命中，或为其提交 `U_CRT<L_PDEC` / `ColumnCRT` 证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

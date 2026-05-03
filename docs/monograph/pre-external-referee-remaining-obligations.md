@@ -195,6 +195,12 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 把所有阻断相位接入 `RPZ-SAE-FIN/PDEC/ColumnCRT` 三类证书。外审前剩余不再是“阻断是否可命名”，
 而是必须证明正式反例下降避开阻断相位，或填写并核验这些证书。
 
+新增 `docs/monograph/prime-matrix-rpz-certificate-skeleton-package.md`、对应 JSON 与
+`experiments/prime_matrix_rpz_certificate_skeleton_builder.py` 后，证书行已经材料化：`2` 个
+endpoint `RPZ-SAE-FIN` 候选、`2` 条 endpoint `PDEC/ColumnCRT` 行、`3` 条 lower-descent
+`grid_fail` 的 `PDEC/ColumnCRT` 行。外审前作者仍需填写这些证书；当前文件只固定义务，
+不宣称排除。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

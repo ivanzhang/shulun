@@ -35,6 +35,25 @@ P(r)=\prod_{\ell\le r}\ell.
 有限审计中，实际下降转换节点全部为 `success`，实际阻断节点为 `0`。但枚举相位账本给出了
 所有可能阻断相位，因此全局阻断可直接进入 `SAE/PDEC/ColumnCRT`。
 
+新增证书骨架：
+
+```text
+experiments/prime_matrix_rpz_certificate_skeleton_builder.py；
+docs/monograph/prime-matrix-rpz-certificate-skeleton-package.json；
+docs/monograph/prime-matrix-rpz-certificate-skeleton-package.md。
+```
+
+该骨架把已命名出口转成待填证书行：
+
+```text
+Endpoint SAE 候选：2；
+Endpoint PDEC/ColumnCRT 行：各 2；
+LowerDescent grid_fail PDEC/ColumnCRT 行：各 3；
+LowerDescent 可能阻断相位：1752，全部为 grid_fail。
+```
+
+这一步只完成证书行抽取，不排除任何出口。
+
 ## 2. RPZ-SAE finite package
 
 **输入对象。**
@@ -139,7 +158,7 @@ LowerDescent-Grid persistence 的全局证明。
 下一步最小硬点：
 
 ```text
-1. 对下降阻断相位生成 RPZ-SAE-FIN 候选清单；
-2. 对持久相位生成 RPZ-PDEC/ColumnCRT 证书骨架；
-3. 尝试证明正式下降路径始终避开阻断相位。
+1. 填写两个 endpoint 低负载 RPZ-SAE-FIN；
+2. 对三条 lower_descent_grid_fail PDEC 行证明正式下降路径避开其 S_tau；
+3. 或为这些相位提交 U_CRT<L_PDEC / ColumnCRT 位移阈值证书。
 ```

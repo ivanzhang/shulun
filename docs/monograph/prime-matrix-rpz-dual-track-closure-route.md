@@ -124,6 +124,18 @@ RPZ-ColumnCRT endpoint displacement row。
 
 这一步只完成“阻断相位可命名、可证书化”的接口，不排除 `SAE/PDEC/ColumnCRT`。
 
+进一步新增：
+
+```text
+experiments/prime_matrix_rpz_certificate_skeleton_builder.py；
+docs/monograph/prime-matrix-rpz-certificate-skeleton-package.json；
+docs/monograph/prime-matrix-rpz-certificate-skeleton-package.md。
+```
+
+骨架包抽取出 `2` 个 endpoint `RPZ-SAE-FIN` 候选，`2` 条 endpoint `PDEC/ColumnCRT` 行，
+以及 `3` 条 lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行。LowerDescent 的可能阻断相位
+共 `1752` 个，全部属于 `grid_fail`；`puncture_block` 行为 `0`。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -152,7 +164,8 @@ Track A 的证书接口表；
 Track B 的下层零行下降引理；
 样本级下降到 p=2 的可复现审计；
 下降阻断相位有限账本；
-RPZ-SAE/PDEC/ColumnCRT 证书材料化接口。
+RPZ-SAE/PDEC/ColumnCRT 证书材料化接口；
+RPZ 出口证书骨架包。
 ```
 
 本文没有完成：
@@ -167,7 +180,7 @@ SAE/PDEC/ColumnCRT 证书排斥；
 
 ```text
 LowerDescent-Grid persistence；
-RPZ-SAE-FIN 候选清单；
-RPZ-PDEC/ColumnCRT 证书骨架；
-或证明正式下降路径始终避开阻断相位。
+填写两个 endpoint 低负载 RPZ-SAE-FIN；
+证明三条 lower_descent_grid_fail 行不被正式下降路径命中；
+或提交 PDEC/ColumnCRT 排斥证书。
 ```
