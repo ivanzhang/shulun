@@ -318,6 +318,13 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 近失败账本中 cutoff `31` 与 `43` 的最大强制中尾标签数分别为 `7` 与 `9`。剩余义务是证明
 `SmallSkeletonOverload=>Tail/PDEC` 或 `ManyLabel=>H3-PDEC` 的阈值比较。
 
+新增 `docs/monograph/prime-matrix-h3-global-scaling-law-route.md`、
+`docs/monograph/prime-matrix-h3-margin-growth-audit.md/json` 与脚本
+`experiments/prime_matrix_h3_margin_growth_audit.py` 后，H3 数据洞察被提升为全局尺度规律：
+`p<=5000` 中从 `p=331` 起所有素数层最小余量均 `>=21`；bucket 平均余量与
+`#A_s prod_{5<=ell<=p}(1-1/ell)` 同阶，随 `q/log q` 增长。全局反例若存在，必须把这个增长尺度
+压为 `0`，因此必定表现为小骨架 Tail/PDEC 过载、多中尾标签 PDEC 能量或端点 SAE/ColumnCRT。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

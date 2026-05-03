@@ -217,3 +217,19 @@ SmallSkeletonOverload(y,K) => Tail/PDEC
 or
 ManyLabel(y,K_y) => H3-PDEC.
 ```
+
+## 9. 全局尺度规律
+
+新增全局尺度路线：
+
+```text
+docs/monograph/prime-matrix-h3-global-scaling-law-route.md
+experiments/prime_matrix_h3_margin_growth_audit.py
+docs/monograph/prime-matrix-h3-margin-growth-audit.md/json
+```
+
+增长审计显示：`p<=5000` 中，从 `p=331` 起每个素数层的最小 H3 余量都至少为 `21`；bucket
+平均余量与六轮 Mertens 尺度 `#A_s prod_{5<=ell<=p}(1-1/ell)` 同阶。由此得到全局本质：
+H3 全阻断不是普通局部波动，而是必须把自然增长的 `q/log q` 粗剩余尺度压为 `0`。若选择
+`y=p^theta`，小骨架不过载时，包络公式强制至少约 `y/log y` 个中尾标签同步活跃；这正是
+`H3-PDEC` 能量的全局来源。

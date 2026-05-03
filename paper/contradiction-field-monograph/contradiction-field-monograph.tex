@@ -1079,6 +1079,19 @@ middle-tail labels are active.  The finite ledger for the near-miss rows gives m
 forced values $K_y=7$ for $y=31$ and $K_y=9$ for $y=43$.  The remaining proof obligation is
 to convert small-skeleton overload into Tail/PDEC, or many active labels into H3-PDEC
 energy, with endpoint losses routed to SAE/ColumnCRT.
+The global scaling audit
+\[
+  \texttt{docs/monograph/prime-matrix-h3-global-scaling-law-route.md}
+\]
+records the underlying scale.  The natural six-wheel rough count is
+\[
+  \#A_s\prod_{5\le\ell\le p}\left(1-\frac1\ell\right)\asymp \frac{q}{\log q}.
+\]
+In the finite ledger, from $p=331$ onward every prime layer has minimum H3 margin at least
+$21$, and bucket averages track this Mertens scale.  Thus a formal counterexample must
+annihilate a growing $q/\log q$ rough-residue scale.  The current proof task is to show that
+such annihilation forces small-skeleton Tail/PDEC overload, many-label H3-PDEC energy, or
+endpoint SAE/ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

@@ -1301,6 +1301,11 @@ Buchstab 下降方程：每个六轮候选 `n` 唯一写成 `n=ell m`，其中 `
 标签数为 `7,9`。因此 H3 当前最优分支是 `SmallSkeletonOverload=>Tail/PDEC` 与
 `ManyLabel=>H3-PDEC` 并行，而不是继续寻找新下降层。
 
+新增 `docs/monograph/prime-matrix-h3-global-scaling-law-route.md` 后，该并行分支获得全局尺度解释：
+H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度同阶，从 `p=331` 后最小余量也
+脱离近失败区。故全局反例必须压灭一个增长尺度，只能通过小骨架过载、多标签低模能量或端点相位
+集中来实现。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
