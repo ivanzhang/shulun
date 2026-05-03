@@ -140,3 +140,25 @@ dual arc length: 11
 DualCluster-Exclusion(ell=199,h=95)
 or SAE/Endpoint absorption.
 ```
+
+## 7. Formal unit 审计更新
+
+进一步审查发现，上述 `global equation count=43` 是有限证书库聚合，不自动等于单个正式
+反例分支的坏窗集合。新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_formal_unit_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-route.md
+```
+
+后，口径结论为：
+
+```text
+global_library_raw 强阈值需要 FormalUnit-Stitching；
+嵌套块重复需要 NestedBlock-Independence；
+否则强阈值不能进入正式 PDEC-Cert。
+```
+
+因此当前不能把 `U_CRT,199<3.959...` 直接作为单个反例分支的闭合目标。必须先证明跨层事件
+和嵌套重复属于同一合法多重坏窗集合，或把它们回流到 `SAE/Endpoint`。

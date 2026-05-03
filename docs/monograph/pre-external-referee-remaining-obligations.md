@@ -173,6 +173,21 @@ or the non-persistent instance is SAE/Endpoint.
 physical 去重后阈值为 `1.9699193446802263`。正式稿必须证明 `PDEC` 下界和 `U_CRT` 上界使用
 同一个多重集合，或降级到 primitive 阈值。
 
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-route.md` 后，该义务进一步前置：
+`3.959...` 来自有限证书库中的跨 `q` 层聚合和嵌套块重复，不自动对应单个正式反例分支。
+外审前必须补齐：
+
+```text
+FormalUnit-Stitching:
+跨 q 层事件属于同一个持久坏窗族；
+
+NestedBlock-Independence:
+嵌套块重复是独立 Hall/PDEC 约束；
+
+否则：
+重复项回流 SAE/Endpoint，不能计入强阈值。
+```
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

@@ -484,3 +484,9 @@ RH-1 explicit-formula entrance
 `experiments/prime_matrix_wsh_fo_pdec_primitive_cluster_audit.py` 后，最后一步的集合口径风险被暴露：
 强阈值 `3.959...` 依赖 equation/block-local 多重计数；physical 去重后为 `1.9699...`。
 因此下一步必须先证明多重计数合法，或在 primitive 口径下重做 `U_CRT`/SAE 排斥。
+
+新增 `experiments/prime_matrix_wsh_fo_pdec_formal_unit_audit.py` 后，风险进一步定位为 formal unit
+一致性：`3.959...` 来自跨 `q` 层与嵌套块的有限库聚合；单个正式单元坐标去重后最佳值为
+`1.0`。因此下一步最优不再是直接优化 `U_CRT,199`，而是证明
+`FormalUnit-Stitching` 或 `NestedBlock-Independence`；若失败，重复项必须回流到
+`SAE/Endpoint`。

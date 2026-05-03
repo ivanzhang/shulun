@@ -170,3 +170,25 @@ Multiplicity-Legitimacy:
 ```
 
 这一步是必要的，否则 `PDEC` 下界和 `U_CRT` 上界可能作用于不同集合。
+
+## 7. Formal unit 一致性更新
+
+新增 `prime-matrix-wsh-fo-pdec-formal-unit-audit.py` 后，短弧聚簇的来源被进一步拆开：
+
+```text
+global_library_raw: mass=4, Fourier=3.959247567099438
+global_layer_dedup: mass=3, Fourier=2.9698366905785227
+global_physical:    mass=2, Fourier=1.9997507790353146
+single formal unit: best Fourier=1.0 after coordinate dedup
+```
+
+因此 `DualCluster-Exclusion(199,95)` 只有在完成 `FormalUnit-Stitching` 后才是合法的
+单一 `PDEC` 目标。否则该短弧只是有限证书库的诊断聚合，不能直接用来闭合一个正式反例分支。
+
+当前最小顺序应改为：
+
+```text
+P0: FormalUnit-Stitching / NestedBlock-Independence
+P1: Multiplicity-Legitimacy under stitched formal unit
+P2: DualCluster-Exclusion or SAE/Endpoint absorption
+```

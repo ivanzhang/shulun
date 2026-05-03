@@ -313,6 +313,18 @@ P2: SAE/Endpoint absorption for non-persistent duplicates
 
 若不能证明多重计数合法，`U_CRT,199<3.959...` 不是同一集合上的合法目标。
 
+新增 formal unit 审计后，`P0` 还必须前置拆细：
+
+```text
+P0a: FormalUnit-Stitching for cross-q events
+P0b: NestedBlock-Independence for exact nested-coordinate duplicates
+P0c: otherwise SAE/Endpoint absorption
+```
+
+原因是 `global_library_raw` 的 `mass=4` 来自有限证书库聚合；在单个正式单元去重后，
+当前最佳 Fourier 只剩 `1.0`。因此不先证明拼接/独立性，就不能把强阈值带入
+`PDEC-Dual-Cert`。
+
 ### 2.5 可行性
 
 评级：C。

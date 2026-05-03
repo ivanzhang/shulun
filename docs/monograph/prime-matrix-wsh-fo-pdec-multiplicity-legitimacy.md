@@ -103,3 +103,32 @@ or absorb duplicates by SAE/Endpoint.
 ```
 
 该审查没有削弱主线；它防止在最后一步用错误的集合口径完成“伪闭合”。全局无条件证明必须先通过这一步。
+
+## 6. Formal unit 一致性更新
+
+进一步新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_formal_unit_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-route.md
+```
+
+审计结果显示，强阈值 `3.959...` 不仅依赖多重计数，还依赖跨 `q` 层的有限证书库聚合：
+
+```text
+global_library_raw: mass=4, Fourier=3.959247567099438
+q_row_coordinate_dedup / block_local / offset_row: best Fourier=1.0
+```
+
+因此正式 `PDEC` 使用强阈值前必须再证明：
+
+```text
+FormalUnit-Stitching:
+跨 q 层事件确实属于同一个持久坏窗族；
+
+NestedBlock-Independence:
+嵌套块重复确实代表独立 Hall/PDEC 约束行。
+```
+
+若这两个接口不能闭合，强阈值只能作为诊断聚簇，不能作为全局无条件证明的下界。

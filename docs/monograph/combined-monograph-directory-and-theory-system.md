@@ -857,6 +857,23 @@ physical:             mass=2, Fourier=1.9699193446802263
 多重计数，并且 `U_CRT` 上界也按同一多重集合计算。否则必须使用 primitive 口径或把重复项
 送入 `SAE/Endpoint`。这是全局闭合前不可跳过的集合一致性义务。
 
+新增 `experiments/prime_matrix_wsh_fo_pdec_formal_unit_audit.py`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-audit.md/json` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-route.md` 后，集合一致性又被推进到
+formal unit 层。审计显示：
+
+```text
+global_library_raw: mass=4, Fourier=3.959247567099438
+global_layer_dedup: mass=3, Fourier=2.9698366905785227
+global_physical:    mass=2, Fourier=1.9997507790353146
+single formal unit after coordinate dedup: best Fourier=1.0
+```
+
+因此强阈值来自有限证书库聚合，不能直接代表单个正式反例分支。当前最小硬点更新为
+`FormalUnit-Stitching / NestedBlock-Independence / SAE-Endpoint absorption`：必须证明跨 `q`
+层事件属于同一个持久坏窗族，且嵌套块重复是独立约束；否则强阈值只能作为诊断信号，不能作为
+全局无条件闭合的 `PDEC` 下界。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

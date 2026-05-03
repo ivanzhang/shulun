@@ -745,6 +745,29 @@ Under physical deduplication, it has mass $2$ and Fourier value
 \]
 Thus the final PDEC comparison must first fix the multiplicity convention.  The lower bound and the upper bound must be computed on the same multiset.  Otherwise the argument must switch to the primitive threshold or absorb the repeated events by SAE/Endpoint.
 
+\section{FO-PDEC Formal Unit Consistency}
+
+The formal-unit audit is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-route.md}.
+\]
+It checks a stricter requirement: the PDEC vector $g(t)$ must come from one formal bad-window set or multiset with one phase map.  The current strong value
+\[
+  3.959247567099438
+\]
+is obtained by pooling the finite certificate library.  After splitting by formal unit, the audit gives
+\[
+\begin{array}{c|c}
+\text{convention} & \text{best Fourier value}\\
+\hline
+\text{global library} & 3.959247567099438\\
+\text{layer deduplication} & 2.9698366905785227\\
+\text{physical deduplication} & 1.9997507790353146\\
+\text{single coordinate-deduplicated formal unit} & 1.0.
+\end{array}
+\]
+Thus the strong threshold cannot yet be used as a single-branch PDEC lower bound.  One must prove FormalUnit-Stitching for the cross-$q$ events and NestedBlock-Independence for exact nested-coordinate duplicates, or route the repeated events to SAE/Endpoint.  This is now the narrowest FO-PDEC obstruction before any global unconditional conclusion can be claimed.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

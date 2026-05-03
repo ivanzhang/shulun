@@ -1,0 +1,857 @@
+{
+  "status": "finite_fo_pdec_formal_unit_audit_not_global_proof",
+  "summary": {
+    "global_raw_best": {
+      "factor": 199,
+      "best_frequency": 95,
+      "max_fourier": 3.959247567099438,
+      "mass": 4,
+      "support_size": 3,
+      "mass_defect": 0.04075243290056196,
+      "top_residues": [
+        {
+          "residue": 40,
+          "load": 2
+        },
+        {
+          "residue": 126,
+          "load": 1
+        },
+        {
+          "residue": 61,
+          "load": 1
+        }
+      ]
+    },
+    "accepted_single_unit_best": 1.0,
+    "hard_obligation": "FormalUnit-Stitching 或 NestedBlock-Independence；否则 global_raw 强阈值只是诊断聚合。",
+    "duplicate_classes_for_best_factor": [
+      {
+        "type": "nested_same_formal_coordinate",
+        "key": [
+          1993,
+          836,
+          836,
+          82,
+          30,
+          1664237,
+          199,
+          40
+        ],
+        "multiplicity": 2,
+        "sources": [
+          {
+            "block_index": 1,
+            "offset_row_index": 2,
+            "p": 1987,
+            "q": 1993,
+            "source_row": 836,
+            "candidate": 1664237,
+            "factor": 199,
+            "target_residue": 40
+          },
+          {
+            "block_index": 4,
+            "offset_row_index": 9,
+            "p": 1987,
+            "q": 1993,
+            "source_row": 836,
+            "candidate": 1664237,
+            "factor": 199,
+            "target_residue": 40
+          }
+        ],
+        "proof_obligation": "需要 NestedBlock-Independence；否则只能按一个正式坐标计数。"
+      },
+      {
+        "type": "cross_level_same_physical_candidate",
+        "key": [
+          250541,
+          199
+        ],
+        "multiplicity": 2,
+        "q_layers": [
+          773,
+          967
+        ],
+        "target_residues": [
+          61,
+          126
+        ],
+        "sources": [
+          {
+            "block_index": 2,
+            "offset_row_index": 5,
+            "p": 769,
+            "q": 773,
+            "source_row": 325,
+            "candidate": 250541,
+            "factor": 199,
+            "target_residue": 126
+          },
+          {
+            "block_index": 3,
+            "offset_row_index": 7,
+            "p": 953,
+            "q": 967,
+            "source_row": 260,
+            "candidate": 250541,
+            "factor": 199,
+            "target_residue": 61
+          }
+        ],
+        "proof_obligation": "需要 CrossLevel-Stitching；否则不能把不同 q 层拼成同一 PDEC 向量。"
+      }
+    ]
+  },
+  "modes": [
+    {
+      "mode": "global_library_raw",
+      "status": "diagnostic_only_requires_persistent_stitching",
+      "unit_count": 1,
+      "best_unit": {
+        "unit_key": [
+          "global"
+        ],
+        "raw_equations": 43,
+        "effective_equations": 43,
+        "best_projection": {
+          "factor": 199,
+          "best_frequency": 95,
+          "max_fourier": 3.959247567099438,
+          "mass": 4,
+          "support_size": 3,
+          "mass_defect": 0.04075243290056196,
+          "top_residues": [
+            {
+              "residue": 40,
+              "load": 2
+            },
+            {
+              "residue": 126,
+              "load": 1
+            },
+            {
+              "residue": 61,
+              "load": 1
+            }
+          ]
+        }
+      },
+      "units": [
+        {
+          "unit_key": [
+            "global"
+          ],
+          "raw_equations": 43,
+          "effective_equations": 43,
+          "best_projection": {
+            "factor": 199,
+            "best_frequency": 95,
+            "max_fourier": 3.959247567099438,
+            "mass": 4,
+            "support_size": 3,
+            "mass_defect": 0.04075243290056196,
+            "top_residues": [
+              {
+                "residue": 40,
+                "load": 2
+              },
+              {
+                "residue": 126,
+                "load": 1
+              },
+              {
+                "residue": 61,
+                "load": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "global_layer_dedup",
+      "status": "diagnostic_only_requires_cross_level_stitching",
+      "unit_count": 1,
+      "best_unit": {
+        "unit_key": [
+          "global"
+        ],
+        "raw_equations": 43,
+        "effective_equations": 36,
+        "best_projection": {
+          "factor": 199,
+          "best_frequency": 95,
+          "max_fourier": 2.9698366905785227,
+          "mass": 3,
+          "support_size": 3,
+          "mass_defect": 0.03016330942147727,
+          "top_residues": [
+            {
+              "residue": 40,
+              "load": 1
+            },
+            {
+              "residue": 126,
+              "load": 1
+            },
+            {
+              "residue": 61,
+              "load": 1
+            }
+          ]
+        }
+      },
+      "units": [
+        {
+          "unit_key": [
+            "global"
+          ],
+          "raw_equations": 43,
+          "effective_equations": 36,
+          "best_projection": {
+            "factor": 199,
+            "best_frequency": 95,
+            "max_fourier": 2.9698366905785227,
+            "mass": 3,
+            "support_size": 3,
+            "mass_defect": 0.03016330942147727,
+            "top_residues": [
+              {
+                "residue": 40,
+                "load": 1
+              },
+              {
+                "residue": 126,
+                "load": 1
+              },
+              {
+                "residue": 61,
+                "load": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "global_physical_dedup",
+      "status": "diagnostic_only_physical_projection",
+      "unit_count": 1,
+      "best_unit": {
+        "unit_key": [
+          "global"
+        ],
+        "raw_equations": 43,
+        "effective_equations": 27,
+        "best_projection": {
+          "factor": 199,
+          "best_frequency": 81,
+          "max_fourier": 1.9997507790353146,
+          "mass": 2,
+          "support_size": 2,
+          "mass_defect": 0.0002492209646853816,
+          "top_residues": [
+            {
+              "residue": 40,
+              "load": 1
+            },
+            {
+              "residue": 126,
+              "load": 1
+            }
+          ]
+        }
+      },
+      "units": [
+        {
+          "unit_key": [
+            "global"
+          ],
+          "raw_equations": 43,
+          "effective_equations": 27,
+          "best_projection": {
+            "factor": 199,
+            "best_frequency": 81,
+            "max_fourier": 1.9997507790353146,
+            "mass": 2,
+            "support_size": 2,
+            "mass_defect": 0.0002492209646853816,
+            "top_residues": [
+              {
+                "residue": 40,
+                "load": 1
+              },
+              {
+                "residue": 126,
+                "load": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "q_row_raw",
+      "status": "single_matrix_row_raw_nested_duplicates_allowed_only_with_block_independence",
+      "unit_count": 3,
+      "best_unit": {
+        "unit_key": [
+          1993,
+          836
+        ],
+        "raw_equations": 25,
+        "effective_equations": 25,
+        "best_projection": {
+          "factor": 199,
+          "best_frequency": 1,
+          "max_fourier": 2.0,
+          "mass": 2,
+          "support_size": 1,
+          "mass_defect": 0.0,
+          "top_residues": [
+            {
+              "residue": 40,
+              "load": 2
+            }
+          ]
+        }
+      },
+      "units": [
+        {
+          "unit_key": [
+            773,
+            325
+          ],
+          "raw_equations": 9,
+          "effective_equations": 9,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 325,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            967,
+            260
+          ],
+          "raw_equations": 9,
+          "effective_equations": 9,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 260,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            1993,
+            836
+          ],
+          "raw_equations": 25,
+          "effective_equations": 25,
+          "best_projection": {
+            "factor": 199,
+            "best_frequency": 1,
+            "max_fourier": 2.0,
+            "mass": 2,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 40,
+                "load": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "q_row_coordinate_dedup",
+      "status": "single_matrix_row_coordinate_dedup",
+      "unit_count": 3,
+      "best_unit": {
+        "unit_key": [
+          1993,
+          836
+        ],
+        "raw_equations": 25,
+        "effective_equations": 18,
+        "best_projection": {
+          "factor": 1013,
+          "best_frequency": 1,
+          "max_fourier": 1.0,
+          "mass": 1,
+          "support_size": 1,
+          "mass_defect": 0.0,
+          "top_residues": [
+            {
+              "residue": 836,
+              "load": 1
+            }
+          ]
+        }
+      },
+      "units": [
+        {
+          "unit_key": [
+            773,
+            325
+          ],
+          "raw_equations": 9,
+          "effective_equations": 9,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 325,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            967,
+            260
+          ],
+          "raw_equations": 9,
+          "effective_equations": 9,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 260,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            1993,
+            836
+          ],
+          "raw_equations": 25,
+          "effective_equations": 18,
+          "best_projection": {
+            "factor": 1013,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 836,
+                "load": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "block_local_raw",
+      "status": "single_hall_block",
+      "unit_count": 4,
+      "best_unit": {
+        "unit_key": [
+          1
+        ],
+        "raw_equations": 13,
+        "effective_equations": 13,
+        "best_projection": {
+          "factor": 439,
+          "best_frequency": 1,
+          "max_fourier": 1.0,
+          "mass": 1,
+          "support_size": 1,
+          "mass_defect": 0.0,
+          "top_residues": [
+            {
+              "residue": 397,
+              "load": 1
+            }
+          ]
+        }
+      },
+      "units": [
+        {
+          "unit_key": [
+            1
+          ],
+          "raw_equations": 13,
+          "effective_equations": 13,
+          "best_projection": {
+            "factor": 439,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 397,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            2
+          ],
+          "raw_equations": 9,
+          "effective_equations": 9,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 325,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            3
+          ],
+          "raw_equations": 9,
+          "effective_equations": 9,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 260,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            4
+          ],
+          "raw_equations": 12,
+          "effective_equations": 12,
+          "best_projection": {
+            "factor": 1013,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 836,
+                "load": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "mode": "offset_row_raw",
+      "status": "single_fixed_offset_row",
+      "unit_count": 11,
+      "best_unit": {
+        "unit_key": [
+          2
+        ],
+        "raw_equations": 6,
+        "effective_equations": 6,
+        "best_projection": {
+          "factor": 439,
+          "best_frequency": 1,
+          "max_fourier": 1.0,
+          "mass": 1,
+          "support_size": 1,
+          "mass_defect": 0.0,
+          "top_residues": [
+            {
+              "residue": 397,
+              "load": 1
+            }
+          ]
+        }
+      },
+      "units": [
+        {
+          "unit_key": [
+            1
+          ],
+          "raw_equations": 3,
+          "effective_equations": 3,
+          "best_projection": {
+            "factor": 131,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 49,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            2
+          ],
+          "raw_equations": 6,
+          "effective_equations": 6,
+          "best_projection": {
+            "factor": 439,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 397,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            3
+          ],
+          "raw_equations": 4,
+          "effective_equations": 4,
+          "best_projection": {
+            "factor": 269,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 29,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            4
+          ],
+          "raw_equations": 3,
+          "effective_equations": 3,
+          "best_projection": {
+            "factor": 67,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 57,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            5
+          ],
+          "raw_equations": 6,
+          "effective_equations": 6,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 325,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            6
+          ],
+          "raw_equations": 3,
+          "effective_equations": 3,
+          "best_projection": {
+            "factor": 67,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 59,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            7
+          ],
+          "raw_equations": 6,
+          "effective_equations": 6,
+          "best_projection": {
+            "factor": 631,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 260,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            8
+          ],
+          "raw_equations": 2,
+          "effective_equations": 2,
+          "best_projection": {
+            "factor": 127,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 73,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            9
+          ],
+          "raw_equations": 3,
+          "effective_equations": 3,
+          "best_projection": {
+            "factor": 199,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 40,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            10
+          ],
+          "raw_equations": 2,
+          "effective_equations": 2,
+          "best_projection": {
+            "factor": 79,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 46,
+                "load": 1
+              }
+            ]
+          }
+        },
+        {
+          "unit_key": [
+            11
+          ],
+          "raw_equations": 5,
+          "effective_equations": 5,
+          "best_projection": {
+            "factor": 1013,
+            "best_frequency": 1,
+            "max_fourier": 1.0,
+            "mass": 1,
+            "support_size": 1,
+            "mass_defect": 0.0,
+            "top_residues": [
+              {
+                "residue": 836,
+                "load": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
