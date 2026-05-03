@@ -235,3 +235,11 @@ docs/monograph/prime-matrix-h3-singleton-clamp-defect-criterion.md
 
 该文件证明：每个孤立尾点由尾标签与左右夹逼低模唯一定位；大量孤立尾点若存在，必进入
 尾标签集中、夹逼低模集中或分散容量三分支。前两者是命名缺陷入口，后者是当前最后硬核。
+
+分散容量分支的双线性形式见：
+
+```text
+docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md
+```
+
+该文件把最后硬核写成 `ell,m` 双线性素数计数：大正异常即短互补商区间中的有符号素数分布缺陷。

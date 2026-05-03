@@ -1375,6 +1375,12 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 能容纳与素数余量同阶的双粗半素数。合著稿最新状态应写为：单点夹逼 CRT 判据已证，
 分散有符号半素数过剩排斥未证。
 
+新增 `docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md` 后，该最终硬核
+被改写为尾标签--互补商双线性估计：`a=ell*m`，`m` 为素数，且
+`m≡ell^{-1}rho(c) mod R(c)`。合著稿最新状态应写为：分散孤立尾点坏行等价于短互补商
+区间族中的有符号素数偏差；仍需证明该偏差进入 `endpoint/PDEC/ColumnCRT/cofactor`，或给出
+无条件双线性上界。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

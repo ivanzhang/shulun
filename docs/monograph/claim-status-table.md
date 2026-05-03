@@ -399,6 +399,13 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 或分散容量三分支。当前未闭合的是分散容量分支：它仍能在自然量级容纳 `q/log y` 个孤立双粗点，
 需要有符号半素数过剩排斥或路由到 `PDEC/ColumnCRT/endpoint/cofactor`。
 
+新增 `docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md` 后，分散容量
+分支被双线性化：在 `y>q^(2/3)` 下孤立尾点必为 `a=ell*m`，其中 `m` 为素数；夹逼类
+`rho(c) mod R(c)` 等价于互补商移动同余 `m≡ell^{-1}rho(c) mod R(c)`。因此分散半素数过剩
+等价于短互补商区间族中的有符号素数偏差。当前最终硬输入是
+`H3 Distributed Singleton Bilinear Exclusion`：无集中时该有符号双线性误差必须为
+`O(q/log^2 y)`，或触发 `PDEC/ColumnCRT/endpoint/cofactor`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

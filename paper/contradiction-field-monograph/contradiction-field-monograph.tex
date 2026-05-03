@@ -1291,6 +1291,20 @@ points from that unit.  Consequently many singleton tails must enter one of thre
 tail-label concentration, clamp low-mod concentration, or distributed singleton capacity.
 The first two are named defect entrances.  The final unresolved branch is the distributed
 signed excess of double-rough semiprimes over the prime survivor channel.
+This distributed branch is made bilinear in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md}.
+\]
+For $y>q^{2/3}$, every singleton tail is a product $\ell m$ with $y<\ell\le p$ and
+$m$ prime.  The clamp class $\rho(c)\pmod{R(c)}$ is equivalent to the moving cofactor
+congruence
+\[
+  m\equiv \ell^{-1}\rho(c)\pmod{R(c)}.
+\]
+Thus the final distributed obstruction is a signed bilinear prime-counting defect over the
+short cofactor intervals $I/\ell$.  Without tail-label concentration, clamp concentration,
+endpoint accumulation, or ColumnCRT/cofactor bias, one must prove that this signed bilinear
+error is only $O(q/\log^2 y)$; this is the current last H3 input.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

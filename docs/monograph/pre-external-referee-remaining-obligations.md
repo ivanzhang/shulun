@@ -444,6 +444,20 @@ Tail-label concentration / Clamp low-mod concentration / Distributed singleton c
 前两项是命名缺陷入口；外审前剩余是第三项，即分散容量中素数与双粗半素数的有符号分离。
 该项未证明前，不能把夹逼 CRT 容量误写成 Singleton Tail Exclusion 的无条件证明。
 
+新增 `docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md` 后，第三项被
+精确双线性化。外审前剩余义务应改写为：
+
+```text
+H3 Distributed Singleton Bilinear Exclusion:
+对 y>q^(2/3) 的分散孤立尾点，证明
+sum Delta(c)=O(q/log^2 y)，
+或证明 q/log y 级正异常必触发 endpoint/PDEC/ColumnCRT/cofactor。
+```
+
+这里 `Delta(c)` 是夹逼单元中半素数通道减素数幸存通道；半素数通道等价于互补商短区间中
+`m≡ell^{-1}rho(c) mod R(c)` 的素数计数。该有符号短互补商估计未证明前，H3/行命题仍保持
+条件闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

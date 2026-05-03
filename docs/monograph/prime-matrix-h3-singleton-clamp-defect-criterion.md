@@ -1,6 +1,6 @@
 # H3 孤立尾点夹逼相位的容量与缺陷判据
 
-**状态：** `singleton_clamp_capacity_criterion_proved_parity_split_open`
+**状态：** `singleton_clamp_capacity_criterion_proved_bilinear_obstruction_added`
 
 本文继续攻击当前唯一剩余硬障碍：
 
@@ -243,3 +243,28 @@ Singleton Tail Exclusion 已无条件证明。
 
 原因是分散容量分支仍可在自然量级上容纳 `q/log y` 个孤立双粗点。要完成无条件闭合，下一步
 必须专攻有符号半素数过剩排斥，或证明分散容量达到自然量级时必产生低模/端点/互补商缺陷。
+
+## 8. 分散分支的双线性化
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md
+```
+
+把第 7 节的分散容量分支进一步写成尾标签--互补商双线性计数。在 `y>q^(2/3)` 下，每个孤立
+尾点严格为
+
+\[
+a=\ell m,\qquad y<\ell\le p,\qquad m\in\mathbb P.
+\]
+
+夹逼类 `rho(c) mod R(c)` 给出互补商同余
+
+\[
+m\equiv \ell^{-1}\rho(c)\pmod{R(c)}.
+\]
+
+因此分散孤立尾点过剩等价于大量短互补商区间 `I/ell` 中的有符号素数偏差。该文件证明了
+从分散坏行到双线性缺陷的确定性路由；仍未证明的是该有符号双线性缺陷必被
+`PDEC/ColumnCRT/endpoint/cofactor` 排除。
