@@ -35,8 +35,10 @@ def classify_q_row(p: int, q: int, row: int) -> dict:
     start_minus_one = (row - 1) * q
     offset = start_minus_one % p
     p_row_start = start_minus_one // p + 1
-    contains_full_p_row = offset >= p - gap
-    full_p_row = p_row_start + 1 if contains_full_p_row else None
+    contains_full_p_row = offset == 0 or offset >= p - gap
+    full_p_row = (
+        p_row_start if offset == 0 else p_row_start + 1
+    ) if contains_full_p_row else None
     core_row = row * q <= p * p
     return {
         "q_row": row,
@@ -154,7 +156,7 @@ def write_markdown(result: dict, path: Path) -> None:
         "a_s=(s-1)q\\bmod p=(s-1)g\\bmod p.",
         "\\]",
         "",
-        "假想 q 零行若满足 `a_s>=p-g`，则它包含一个完整 p 对齐零行；若 `a_s<p-g`，则它只给出相邻两个 p 行的后缀/前缀缝合零窗。后者不能由 `Row(p)` 直接排除。",
+        "假想 q 零行若满足 `a_s=0` 或 `a_s>=p-g`，则它包含一个完整 p 对齐零行；其余情形只给出相邻两个 p 行的后缀/前缀缝合零窗。后者不能由 `Row(p)` 直接排除。",
         "",
         "## 核心区缝合比例最高样本",
         "",

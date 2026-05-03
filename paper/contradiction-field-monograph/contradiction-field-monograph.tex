@@ -675,6 +675,16 @@ lower-level zero row.  The accompanying finite audit finds no forced consecutive
 zero rows in the known first-zero-row samples.  The useful remaining target is therefore
 an absorption theorem routing those resurrected points to ColumnCRT, ColumnRadius, or
 TailAnchor, rather than a direct short-period contradiction.
+The CRT lift-parity variant is audited in
+\[
+  \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.
+\]
+For adjacent primes $p<q$, the non-trivial $q$-columns are not covered by the new prime $q$;
+therefore a hypothetical $q$-row zero does descend to an old $p$-sieve zero window of length
+$q$.  However, the old $p$-sieve row period already has an even number of zero rows by
+reflection symmetry, so multiplying the period by the odd factor $q$ preserves evenness and
+does not create a parity contradiction.  The retained conclusion is only the early-window
+dichotomy: an aligned lower zero row or a seam window routed to PDEC/SAE.
 The scaled-row and half-width version is audited in
 \[
   \texttt{docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md}.

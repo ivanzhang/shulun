@@ -321,6 +321,10 @@ formal BCB 平台长度增长定理，或把这些失败层路由到 TailAnchor/
 完整 `E_{h,N}` 尚未枚举；必须证明所有长度 `>=N` 的覆盖块归入最长块相位族，或补一个完整覆盖块
 枚举/证明，再进入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-crt-lift-parity-audit.md` 后，q 阶零行向 p 阶 CRT 周期提升的
+奇偶矛盾路线不能作为闭合证明：旧周期零行数本身已由镜像成偶数，乘以奇数 `q` 后仍为偶数。
+外审前可使用的版本只能是早期旧筛 q 零窗下降，并继续排斥完整 p 行支与缝合零窗支。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

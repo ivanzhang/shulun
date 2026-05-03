@@ -691,6 +691,10 @@ PDEC/ColumnCRT；数学任务是证明 formal 短平台不能长期避开这些�
 已推进为最长块子族证书：`Emax_{h,N}` 可由 CRT 重建并哈希核验。新的最小数学硬点是：
 证明完整 `E_{h,N}` 可归约到 `Emax_{h,N}`，或给出非最长但长度 `>=N` 覆盖块的完整相位证书。
 
+新增 `docs/monograph/prime-matrix-crt-lift-parity-audit.md` 后，递推剥离侧的奇偶捷径被排除：
+q 零行确实给出旧 p-筛 q 零窗，但旧周期零行数已偶，q 倍提升不产生矛盾。该路线的剩余可攻点
+是“早期缝合零窗排斥”，应并入 `SeamSafe/ASB/PDEC-or-SAE`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
