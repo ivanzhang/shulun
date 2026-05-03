@@ -826,6 +826,22 @@ for the same projected bad-window vector g_199.
 这个 `U_CRT` 上界必须由合法 `PDEC-Dual-Cert` 约束或 `SAE/Endpoint` 排斥给出，不能用完整
 CRT 周期均衡替代坏窗子集上界。
 
+新增 `experiments/prime_matrix_wsh_fo_pdec_dual_cluster_audit.py`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-dual-cluster-audit.md/json` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-dual-cluster-route.md` 后，`U_CRT,199`
+的剩余障碍已被定位为对偶短弧聚簇：
+
+```text
+mass = 4
+M_199 = 3.959247567099438
+mass defect = 0.04075243290056196
+dual arc length = 11
+dual residues = 19(2), 30(1), 24(1)
+```
+
+纯质量上界只差约 `1.02%`，所以必须证明 `ell=199,h=95` 的长度 `11` 对偶短弧聚簇不能在
+正式反例链中持久存在，或把非持久实例送入 `SAE/Endpoint`。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

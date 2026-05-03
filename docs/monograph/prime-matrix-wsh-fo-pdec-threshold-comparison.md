@@ -113,3 +113,30 @@ for the same projected bad-window set.
 
 在该上界完成前，不能宣称全局无条件闭合。下一步应直接为 `ell=199,h=95` 构造
 `PDEC-Dual-Cert` 或证明该投影进入 `SAE/Endpoint`。
+
+## 6. 对偶短弧聚簇更新
+
+新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_dual_cluster_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-dual-cluster-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-dual-cluster-route.md
+```
+
+后，`U_CRT,199` 的硬障碍已定位为短弧聚簇。最佳投影的质量为 `4`，阈值为
+`3.959247567099438`，只需约 `1.02%` 的结构节省；最佳频率 `h=95` 把支撑送入长度 `11`
+的对偶短弧：
+
+```text
+original residues: 40(2),126(1),61(1)
+dual residues: 19(2),30(1),24(1)
+dual arc length: 11
+```
+
+因此下一步目标进一步明确为：
+
+```text
+DualCluster-Exclusion(ell=199,h=95)
+or SAE/Endpoint absorption.
+```

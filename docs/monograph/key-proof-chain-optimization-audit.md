@@ -474,3 +474,8 @@ RH-1 explicit-formula entrance
 `experiments/prime_matrix_wsh_fo_pdec_threshold_ledger.py` 后，该阈值比较下界侧已具体化为
 `ell=199,h=95` 的 Fourier 投影，阈值 `3.959247567099438`。下一步如果继续硬攻，就必须直接给出
 同一投影的 `U_CRT,199` 合法上界或 `SAE/Endpoint` 非持久吸收。
+
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-dual-cluster-route.md` 与
+`experiments/prime_matrix_wsh_fo_pdec_dual_cluster_audit.py` 后，`U_CRT,199` 上界的实际障碍已
+显现：最佳频率把支撑压到长度 `11` 的对偶短弧，Fourier 距离质量上界只差
+`0.04075243290056196`。下一步必须攻对偶短弧聚簇排斥，而不是继续泛泛提高能量下界。
