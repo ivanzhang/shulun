@@ -201,4 +201,7 @@ Kloosterman 定理。
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-failure-localization.md` 后，PDEC 上界
 失败被内部 Fourier 凸性引理局部化为 Bohr-cap 集中；这也不是 DI/BFI 输入。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bohr-cap-component-route.md` 后，Bohr-cap
+组件分解同样是有限循环群几何，不属于外部 Kloosterman 定理输入。
+
 该表未完成前，`DI/BFI` 只能作为 H3-DSB 的候选外部输入，不能宣称 H3 行命题外部定理版闭合。

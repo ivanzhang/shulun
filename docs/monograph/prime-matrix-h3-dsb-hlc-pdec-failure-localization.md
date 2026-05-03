@@ -149,3 +149,7 @@ G_{L/(2U)}
 
 这就是当前剩余障碍的更窄形式。
 
+后续组件路由见 `docs/monograph/prime-matrix-h3-dsb-hlc-bohr-cap-component-route.md`。该文令
+`d=(h,R)`、`R'=R/d`，证明 Bohr-cap 是商群 `Z/R'Z` 上余弦弧的 `d` 重提升，
+每个组件长度至多 `d+omega(alpha)R`，并由鸽巢给出单组件质量
+`M_* >= (L-alpha U)/(d(1-alpha))`。因此剩余进一步拆为 high-gcd cap 或 short-arc cap。

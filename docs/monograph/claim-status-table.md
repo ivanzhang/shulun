@@ -443,6 +443,11 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 `\{a:Re(zeta e(ha/R))>=alpha\}` 至少承载 `(L-alpha U)/(1-alpha)` 的质量。该帽集中必须
 作为新 PDEC 约束来源或 `SAE/endpoint` 单窗证书处理；尚未完成的是排除全部 Bohr-cap 集中。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bohr-cap-component-route.md` 后，Bohr-cap 集中
+进一步拆成 `d=(h,R)` 的有效模数组件：每个组件长度至多 `d+omega(alpha)R`，且某个组件
+承载至少 `(L-alpha U)/(d(1-alpha))` 的质量。剩余因此变为 high-gcd cap 的低有效模集中
+排斥，或 short-arc cap 的 PDEC/SAE 证书化。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

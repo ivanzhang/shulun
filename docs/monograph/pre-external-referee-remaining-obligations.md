@@ -529,6 +529,10 @@ L_HLC(B)=sqrt((R*sum_a g_B(a)^2-U_B^2)/(R-1)).
 `G_alpha>=(L-alpha U)/(1-alpha)`。外审前剩余因此更具体：对这些帽集中逐项证明
 持久帽可加入 PDEC 约束并通过，或孤立帽由 SAE/endpoint 排除。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bohr-cap-component-route.md` 后，帽集中还需按
+`d=(h,R)` 拆成 high-gcd 与 short-arc 两类。外审前应要求：大 `d` 被证明为低有效模
+PDEC/ColumnCRT 集中，小 `d` 的短弧组件被物化为通过的 PDEC 行或 SAE/endpoint 证书。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -188,6 +188,9 @@ CRT/Fourier 缺陷，进入 `PDEC/ColumnCRT`；sparse 分支进入 `SAE` 单窗�
 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-failure-localization.md` 证明失败必局部化为
 非零频率 Bohr-cap 集中，帽内质量至少 `(L-alpha U)/(1-alpha)`；该集中只能成为新的
 PDEC 约束行或 `SAE/endpoint` 单窗出口。
+进一步 `docs/monograph/prime-matrix-h3-dsb-hlc-bohr-cap-component-route.md` 将该帽集中拆成
+`d=(h,R)` 的有效模数层：若 `d` 大，则是低有效模集中；若 `d` 小，则某个短弧组件承载
+至少 `(L-alpha U)/(d(1-alpha))` 的质量，进入 PDEC 约束或 `SAE/endpoint`。
 
 ### 4.2 互补商窗口长度
 
@@ -262,5 +265,6 @@ H3-DSB bad row
 ```text
 证明 KLS-window 覆盖活跃参数，并对每个 HLC formal unit 证明
 `U_CRT(B)<L_HLC(B)`，或把失败 Bohr-cap 全部物化为 PDEC/SAE 证书，
+并排除 high-gcd cap / short-arc cap 两个组件出口，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```

@@ -1411,6 +1411,10 @@ KLS/PDEC/SAE，不新增出口。
 `(L-alpha U)/(1-alpha)`。该集中不是新命题，只能进入持久 PDEC 约束或孤立
 SAE/endpoint 证书。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bohr-cap-component-route.md` 后，合著稿应
+继续把 Bohr-cap 写成组件路由：大 `d=(h,R)` 是低有效模集中，小 `d` 给出短弧组件集中。
+两者都必须进入 PDEC/ColumnCRT 或 SAE/endpoint，不能回流到 KLS 主项。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
