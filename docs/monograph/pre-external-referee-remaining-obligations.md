@@ -181,6 +181,13 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 稀疏端点失败进入 `SAE`，持久同相失败进入 `PDEC/ColumnCRT`。该项仍不排除这些出口；
 但外审义务已从“端点失败是否还有第三逃逸”收窄为 `SAE/PDEC/ColumnCRT` 证书闭合或下层递归下降。
 
+新增 `docs/monograph/prime-matrix-rpz-dual-track-closure-route.md`、
+`docs/monograph/prime-matrix-rpz-lower-zero-descent-audit.md` 与
+`experiments/prime_matrix_rpz_lower_zero_descent_audit.py` 后，双轨义务已明确：
+一边物化 `RPZ-SAE/RPZ-PDEC/RPZ-ColumnCRT` 证书，一边证明下层零行下降网格条件。
+有限审计显示样本 `6/6` 条件下层零行下降到 `p=2` 矛盾；全局外审前仍需证明该下降不被
+端点穿孔/网格缺口阻断，或把阻断送入上述证书接口。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

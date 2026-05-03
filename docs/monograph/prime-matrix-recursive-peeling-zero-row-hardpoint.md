@@ -348,3 +348,13 @@ BCB-Endpoint persistence exclusion。
 1. 攻 SAE/PDEC/ColumnCRT certificate closure；
 2. 沿 BCB 得到的下层 h-筛零行继续做递归下降。
 ```
+
+新增 `prime-matrix-rpz-dual-track-closure-route.md` 与
+`prime-matrix-rpz-lower-zero-descent-audit.md` 后，两条路线已并行化：证书路线给出
+`RPZ-SAE/RPZ-PDEC/RPZ-ColumnCRT` 三类接口；递归路线显示样本中的 `6` 条条件下层零行
+全部下降到 `p=2` 直接矛盾，阻断节点为 `0`。当前剩余硬点更新为：
+
+```text
+LowerDescent-Grid persistence
+and RPZ-SAE/PDEC/ColumnCRT certificate materialization。
+```

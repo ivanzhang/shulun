@@ -112,3 +112,18 @@ or lower-level recursive zero-row descent。
 
 对 RPZ 链条而言，端点分支已经命名化；剩余关键是决定走“出口证书排斥”还是继续沿
 `h`-筛零行做递归下降。
+
+## 5. 后续推进：双轨路线
+
+新增 `prime-matrix-rpz-dual-track-closure-route.md` 与审计
+`prime-matrix-rpz-lower-zero-descent-audit.md` 后，两条路线已同步推进：
+
+```text
+Track A：SAE/PDEC/ColumnCRT certificate materialization；
+Track B：lower h-zero-row recursive descent。
+```
+
+Track A 给出 `RPZ-SAE finite package`、`RPZ-PDEC endpoint phase row`、
+`RPZ-ColumnCRT endpoint displacement row` 三个证书接口。Track B 证明条件下层 `p` 零行若含
+不带端点穿孔的前一素数 `r` 对齐行，则下降为 `r` 零行。有限审计中，BCB-Core 给出的
+`6` 条条件下层零行全部下降到 `p=2` 直接矛盾，阻断节点数为 `0`。

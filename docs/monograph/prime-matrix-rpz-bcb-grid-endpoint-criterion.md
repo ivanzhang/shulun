@@ -155,6 +155,11 @@ endpoint grid failure
 所有可能失败相位总数为 `2`，且都来自 `h=11,N=19` 的两个左端残基。由此端点失败不再是
 未命名出口；剩余转回 `SAE/PDEC/ColumnCRT` 证书闭合或下层零行递归下降。
 
+新增 `prime-matrix-rpz-dual-track-closure-route.md` 后，下层递归下降也已启动：
+`prime-matrix-rpz-lower-zero-descent-audit.md` 显示，样本中 `6` 条 BCB 条件下层零行均可
+递归到 `p=2` 直接矛盾，无端点/网格阻断。全局剩余变为：证明下降网格条件持久成立，
+或把阻断相位送入 Track A 的 `SAE/PDEC/ColumnCRT` 证书。
+
 ## 6. 审稿边界
 
 本文完成：

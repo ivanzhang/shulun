@@ -532,6 +532,13 @@ survivor / TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ。
 有限样本实际端点失败 `0/5`，可能失败相位总数 `2`，不同可能失败相位键数 `2`。
 RPZ 链条下一步应转为二选一：闭合 `SAE/PDEC/ColumnCRT` 证书，或继续沿下层 `h`-筛零行做递归下降。
 
+新增 `docs/monograph/prime-matrix-rpz-dual-track-closure-route.md`、
+`docs/monograph/prime-matrix-rpz-lower-zero-descent-audit.md` 与脚本
+`experiments/prime_matrix_rpz_lower_zero_descent_audit.py` 后，上述二选一已同步推进：
+Track A 固定 `RPZ-SAE/RPZ-PDEC/RPZ-ColumnCRT` 三类证书接口；Track B 证明下层零行下降引理，
+并在样本中把 `6` 条 BCB 条件下层零行全部下降到 `p=2` 直接矛盾，阻断节点数为 `0`。
+当前最小硬点更新为 `LowerDescent-Grid persistence + certificate materialization`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

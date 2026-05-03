@@ -753,6 +753,19 @@ samples there are no actual endpoint failures and only two possible failure phas
 loads are SAE obligations; persistent same-phase loads are PDEC/ColumnCRT objects.  Thus the
 RPZ endpoint branch is now named, not closed: the remaining work is either certificate closure
 for SAE/PDEC/ColumnCRT or recursive descent from the lower $h$-zero row.
+The two remaining RPZ attacks are now advanced together in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-dual-track-closure-route.md}.
+\]
+Track A fixes the certificate interfaces for RPZ-SAE, RPZ-PDEC, and RPZ-ColumnCRT.  Track B
+uses the lower-zero descent audit
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-lower-zero-descent-audit.md}
+\]
+which shows that, in the known BCB samples, all six conditional lower zero rows descend to a
+$p=2$ impossible zero row with no endpoint/grid obstruction.  This is still a sample-level
+descent audit; the global task is to prove descent-grid persistence or route every obstruction
+to the named certificate interfaces.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 
