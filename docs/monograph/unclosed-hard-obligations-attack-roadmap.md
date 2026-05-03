@@ -172,6 +172,16 @@ SCB-2: |B|<=3 => local exclusion or named defect.
 有限范围内全部 `surplus<=2` 的块都满足 `|B|<=3`。下一步最优先攻 `SCB-2`：
 单点、双点、三点簇可以逐型调用尾标签、固定偏移、小轮禁类和 `q^2-n` 端点镜像。
 
+新增 `SCB-2` 局部证书后，短块分支的当前状态应更新为：
+
+```text
+SCB-2 routing closed modulo Endpoint/PDEC exclusion.
+```
+
+有限证书显示 `|B|=1,2,3` 的最小余量分别为 `1,1,2`，无负余量和零余量。
+形式证明层面，短块若失败即为 Endpoint/PDEC deficit；双点/三点紧块的固定偏移或尾标签压力
+进入相应命名出口。下一步应优先攻 `SCB-1` 长块自动扩张，或攻 Endpoint/PDEC 出口排斥。
+
 ### 2.5 可行性
 
 评级：C。

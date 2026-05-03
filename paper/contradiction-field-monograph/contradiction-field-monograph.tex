@@ -562,6 +562,29 @@ This suggests the next reduction:
 \]
 This is still finite evidence and a proof target, not a theorem.  It is useful because SCB--2 is a small local problem involving only one, two, or three two-tail semiprimes, where tail labels, fixed offsets, wheel residues, and endpoint mirrors can be written explicitly.
 
+\section{SCB--2 Local Routing Certificate}
+
+The SCB--2 local certificate is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-scb2-local-exclusion-template.md}.
+\]
+It enumerates all consecutive blocks with $|B|\le3$ for $17\le p\le2000$.  The block counts are
+\[
+\begin{array}{c|c|c}
+|B| & \text{count} & \min (|N_R(B)|-|B|)\\
+\hline
+1&1496400&1\\
+2&1281326&1\\
+3&1088870&2
+\end{array}
+\]
+There are no negative-surplus or zero-surplus short blocks.  The local routing statement is:
+\[
+  |B|\le3,\quad |N_R(B)|<|B|
+  \Rightarrow \text{Endpoint/PDEC deficit},
+\]
+with additional Tail-repeat and fixed-offset-full-load checks on tight two- and three-point blocks.  Thus SCB--2 is closed as a routing lemma modulo the still-open Endpoint/PDEC exclusion.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

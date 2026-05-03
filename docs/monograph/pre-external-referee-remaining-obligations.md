@@ -89,6 +89,11 @@ else the named exit absorbs the block.
 `SCB-1/SCB-2`：长块 `|B|>=4` 自动扩张或触发命名缺陷；短块 `|B|<=3` 逐型排斥或触发命名缺陷。
 有限审计中所有 `surplus<=2` 的小余量块都满足 `|B|<=3`。外审前仍需给出这两个命题的逐行证明。
 
+新增 `docs/monograph/prime-matrix-wsh-scb2-local-exclusion-template.md` 后，`SCB-2` 已达到
+“路由闭合 modulo Endpoint/PDEC exclusion”：短块若 Hall 失败，按定义进入端点亏损出口；
+双点/三点紧块还检查 Tail-repeat 与 Fixed-offset-full-load。外审前剩余不再是短块失败是否
+可命名，而是 Endpoint/PDEC 出口是否能被全局排除。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

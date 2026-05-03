@@ -657,6 +657,30 @@ SCB-2: |B|<=3 local short blocks are excluded or hit a named defect.
 这仍是有限审计支持的归约，不是全局证明。优先建议专攻 `SCB-2`，因为它只涉及单点、
 双点、三点半素数簇，最适合把尾因子、固定偏移、小轮同余和端点镜像逐项写成不等式。
 
+新增 `experiments/prime_matrix_wsh_scb2_local_certificate.py`、
+`docs/monograph/prime-matrix-wsh-scb2-local-certificate.md/json` 与
+`docs/monograph/prime-matrix-wsh-scb2-local-exclusion-template.md` 后，`SCB-2` 分支已有
+路由闭合版定理。有限证书枚举所有 `|B|<=3` 短块：
+
+```text
+|B|=1 blocks = 1496400, min surplus = 1
+|B|=2 blocks = 1281326, min surplus = 1
+|B|=3 blocks = 1088870, min surplus = 2
+negative blocks = 0
+zero blocks = 0
+tight blocks = 45
+```
+
+形式上，若短块 `B` 真的有 `|N_R(B)|<|B|`，这正是 `Endpoint/PDEC deficit`；若双点或三点
+紧块还出现共享尾因子或共同固定偏移通道，则分别进入 `Tail-repeat` 或
+`Fixed-offset-full-load`。因此当前可诚实写为：
+
+```text
+SCB-2 closed as routing modulo Endpoint/PDEC exclusion.
+```
+
+剩余硬点转为 `SCB-1` 长块正扩张，以及短块端点亏损出口的全局排斥。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，
