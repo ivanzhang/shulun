@@ -450,3 +450,10 @@ RH-1 explicit-formula entrance
 `Fixed-offset-full-load` 与 `Endpoint-margin`。当前最优攻坚点因此不再是扩大 SCB 枚举，
 而是证明固定偏移满载必进入 persistent `PDEC` 或稀疏 `Endpoint/SAE` 出口；完成后可把
 `SCB-1` 与 `SCB-2` 合并为单一 `Endpoint/PDEC` 最终排斥接口。
+
+新增 `docs/monograph/prime-matrix-wsh-fixed-offset-pdec-absorption.md` 与
+`experiments/prime_matrix_wsh_fixed_offset_pdec_ledger.py` 后，固定偏移满载的第一层已闭合：
+`1<n<q^2` 的合数必有 `<=p` 因子，满载偏移排除小轮素数后，缺失候选必由 `(13,p]`
+解释。有限账本在 `11` 条满载偏移行上核验无未解释候选。当前最小硬点更新为
+`FO-PDEC`：分散解释因子必须产生 persistent low-mod CRTDefect/PDEC，或进入稀疏
+`SAE/Endpoint`。这是真正出口排斥，不应被写作已经完成的无条件闭合。

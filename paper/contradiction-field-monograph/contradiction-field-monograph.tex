@@ -614,6 +614,29 @@ Together with SCB--2, the present WSH chain is therefore:
 \]
 The remaining global obstructions are fixed-offset/PDEC absorption and Endpoint/PDEC exclusion.
 
+\section{Fixed-Offset/PDEC Absorption}
+
+The fixed-offset absorption interface is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fixed-offset-pdec-absorption.md}.
+\]
+It proves the no-third-escape lemma behind the fixed-offset-full-load label.  If $p<q$ are consecutive primes and
+$1<n<q^2$ is composite, then $n$ has a prime factor at most $p$.  Hence, if a fixed offset $d$ is allowed by the wheel
+$2,3,5,7,11,13$ for every $b\in B$, every missing candidate $b+d$ is explained by some factor in $(13,p]$.
+
+The finite ledger
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fixed-offset-pdec-ledger.md}
+\]
+checks the tight SCB--1 long blocks.  It finds $11$ full-load offset rows and $47$ candidates, among which $15$ are prime and $32$ are missing.  Every missing candidate has an explaining factor at most $p$; there is no unexplained candidate.
+
+Thus fixed-offset-full-load is no longer an unnamed escape.  It routes to expansion, Tail-anchor, PDEC/low-mod CRTDefect, or SAE/Endpoint.  The still-open global target is
+\[
+  \text{FO-PDEC: distributed explaining factors}
+  \Rightarrow
+  \text{persistent PDEC or sparse SAE/Endpoint}.
+\]
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

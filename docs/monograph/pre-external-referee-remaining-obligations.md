@@ -108,6 +108,21 @@ or every long tight block is absorbed by fixed-offset/PDEC, Tail-anchor, or Endp
 因此 `WSH-Hall/PDEC` 的真实剩余已收窄为固定偏移/PDEC 吸收与 Endpoint/PDEC 排斥，
 而不是继续枚举长短块样本。
 
+新增 `docs/monograph/prime-matrix-wsh-fixed-offset-pdec-absorption.md` 后，固定偏移满载已有
+一条逐行可核验的“无第三逃逸”引理：若 `1<n<q^2` 合成，则 `n` 有 `<=p` 的素因子；
+满载偏移避开 `2,3,5,7,11,13` 后，所有缺失候选都必须由 `(13,p]` 中的解释因子吸收。
+有限账本 `docs/monograph/prime-matrix-wsh-fixed-offset-pdec-ledger.md/json` 在 `11` 条满载偏移行、
+`47` 个候选上核验 `missing_without_factor<=p=0`。外审前剩余随之更新为：
+
+```text
+FO-PDEC:
+distributed explanation factors
+=> persistent low-mod CRTDefect/PDEC
+or sparse SAE/Endpoint escape.
+```
+
+该项仍未排除最终出口；它只证明固定偏移满载不再是未命名逃逸。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

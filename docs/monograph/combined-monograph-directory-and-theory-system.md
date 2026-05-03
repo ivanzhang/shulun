@@ -716,6 +716,37 @@ SCB-1 finite certificate supports long-block expansion;
 remaining hard point = fixed-offset/PDEC absorption + Endpoint/PDEC exclusion.
 ```
 
+新增 `experiments/prime_matrix_wsh_fixed_offset_pdec_ledger.py`、
+`docs/monograph/prime-matrix-wsh-fixed-offset-pdec-ledger.md/json` 与
+`docs/monograph/prime-matrix-wsh-fixed-offset-pdec-absorption.md` 后，
+`Fixed-offset-full-load` 已被定理化为“无第三逃逸”的吸收接口。关键引理是：
+
+```text
+若 1<n<q^2 且 n 合成，则 n 有 <=p 的素因子；
+若固定偏移 d 已避开 2,3,5,7,11,13，则缺失候选 b+d 必由 ell in (13,p] 解释。
+```
+
+有限吸收账本在 `SCB-1` 的 `4` 个最紧长块、`11` 条满载固定偏移行上核验：
+
+```text
+total candidates = 47
+prime candidates = 15
+missing candidates = 32
+missing without factor <=p = 0
+max factor load in one offset row = 1
+```
+
+这一步把固定偏移满载从未命名局部异常升级为正式路由：
+
+```text
+Fixed-offset-full-load
+=> expansion or Tail-anchor or PDEC/low-mod CRTDefect or SAE/Endpoint.
+```
+
+它仍不排除 `PDEC/SAE/Endpoint`。因此全局闭合的下一真实缺口是
+`FO-PDEC`：证明分散解释因子必产生 persistent low-mod 缺陷，或作为稀疏端点逃逸被
+`SAE/Endpoint` 排除。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

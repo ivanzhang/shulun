@@ -24,6 +24,17 @@ WSH-Hall/PDEC
 
 其中 `SCB-2` 已路由闭合 modulo `Endpoint/PDEC exclusion`；`SCB-1` 已有
 `|B|>=4` 长块有限证书，最小余量为 `3`。这仍是归约与证书接口，不是全局方阵行列命题证明。
+固定偏移满载已进一步路由为：
+
+```text
+Fixed-offset-full-load
+  -> expansion
+  -> Tail-anchor
+  -> PDEC / low-mod CRTDefect
+  -> SAE / Endpoint
+```
+
+剩余全局缺口是 `FO-PDEC` 与最终 `Endpoint/PDEC/SAE` 出口排斥。
 
 ## 2. RH 依赖链
 

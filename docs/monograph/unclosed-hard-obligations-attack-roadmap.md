@@ -202,6 +202,28 @@ Fixed-offset/PDEC absorption for long tight blocks
 该超载要么形成 persistent CRTDefect/PDEC，要么作为稀疏端点逃逸进入 SAE/Endpoint。
 完成该项后，`SCB-1 + SCB-2` 的内部路由基本合并，最终只剩 `Endpoint/PDEC` 排斥。
 
+新增固定偏移吸收引理后，上述目标已部分完成：
+
+```text
+Fixed-offset-full-load
+=> no third escape:
+   every missing candidate b+d has an explaining factor ell in (13,p].
+```
+
+有限账本显示 `11` 条满载固定偏移行中 `32` 个缺失候选全部有 `<=p` 解释因子，且单个偏移行
+最大解释因子负载为 `1`。这意味着当前最小硬点不是局部 Tail-repeat，而是分散解释因子的
+全局低模化：
+
+```text
+FO-PDEC:
+distributed factors in (13,p]
+=> persistent low-mod CRTDefect/PDEC
+or SAE/Endpoint.
+```
+
+下一步应直接为 `FO-PDEC` 构造测试函数或线性账本；若无法证明，就必须保持
+`WSH-Hall/PDEC` 为归约状态。
+
 ### 2.5 可行性
 
 评级：C。
