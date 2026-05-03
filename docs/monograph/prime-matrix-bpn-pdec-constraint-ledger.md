@@ -154,6 +154,23 @@ U_{\rm dual}=\sum_i\lambda_i b_i+\sum_j\mu_j e_j.
 若某个频率方向无法被对偶证书压住，则应输出该方向的 slack 失败相位；这些相位就是
 下一轮 `SAE-Window` 或 `Rankin low-mod spike` 的具体攻击目标。
 
+## 4A. 约束来源合法性规则
+
+补充文档 `h4-pdec-constraint-source-lemmas.md` 已把第一批约束来源逐行定理化。正式
+`PDEC-Dual-Cert` 中的每一行必须先通过以下分类：
+
+```text
+tautology: mass / nonnegativity；
+capacity inheritance: S subset Z 后的 phase cap 或 block cap；
+mirror closed: 坏窗族自身镜像闭合时的 equality；
+mirror pair capacity: 未证明镜像闭合时的弱成对容量；
+bucket capacity: 已有 Hall/CRT 容量定理或有限证书时的 low-hole bucket；
+conditional routing: 违反该行会进入 SAE/Rankin/tail/H5 出口的剩余分支约束。
+```
+
+因此，全周期 CRT 均衡、有限样本相位表、或完整零行族镜像等式不能自动成为任意
+persistent 坏窗子集的无条件约束。
+
 ## 5. 第一批真实系数行
 
 脚本 `experiments/prime_matrix_bpn_pdec_real_constraint_rows.py` 已开始从完整 CRT 周期枚举中

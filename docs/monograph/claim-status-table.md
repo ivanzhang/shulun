@@ -32,6 +32,11 @@
 `A,b,E,e` 证明 `U_CRT<L_PDEC`。该文件只闭合证书格式；正式 `PDEC exclusion`
 仍需提交完整约束来源证明、全频率方向对偶或显式证书，以及严格余量核验。
 
+新增 `docs/monograph/h4-pdec-constraint-source-lemmas.md`。该文件完成 H4-PDEC 的首批
+约束来源引理：质量与非负性、相位容量继承、镜像闭合/成对容量、low-hole bucket
+容量继承、条件出口路由行。它把可进入 `A,b,E,e` 的行与仍不可用的启发式行区分开；
+但尚未提交足以证明 `U_CRT<L_PDEC` 的完整约束表和全频率证书。
+
 
 ## 内部逐行复核更新
 

@@ -224,6 +224,24 @@ PDEC-Dual-Cert：覆盖无限族的线性对偶主控证书。
 该进展不排除 `PDEC`；它把 H4 persistent 分支的最终义务压缩为“逐条证明约束来源、
 覆盖全部频率方向、核验严格余量”的三项可审稿任务。
 
+### 4.2B 本轮进展：约束来源引理
+
+新增 `docs/monograph/h4-pdec-constraint-source-lemmas.md`。该文件把 `A g<=b, E g=e`
+中第一批可合法进入对偶证书的约束行逐条定理化：
+
+```text
+H4-PDEC-S1：mass 与非负性；
+H4-PDEC-S2：S subset Z 时的 phase/block capacity；
+H4-PDEC-S3：mirror equality 与 mirror-pair capacity 的区分；
+H4-PDEC-S4：low-hole bucket capacity 的继承规则；
+H4-PDEC-S5：出口路由后的 conditional row。
+```
+
+该进展闭合的是“约束行合法性规则”，不是 `U_CRT<L_PDEC` 本身。下一步需要把
+`prime-matrix-bpn-pdec-constraint-ledger.md` 的每一类原子标成
+`tautology / finite certificate / symbolic capacity theorem / conditional routing / not yet admissible`，
+再生成正式 `A,b,E,e` 表。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
