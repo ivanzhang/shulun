@@ -368,6 +368,10 @@ H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量�
 继续内攻：`D_y` 分支可由一维区间筛基本引理在小筛层控制；自然低模下 `F_y/d` 与尾标签总数
 `T_y` 常数等价。因此真正硬核是排斥尾标签/双粗点作为整行精确补洞器，而不是再证明平均尺度。
 
+新增 `docs/monograph/prime-matrix-h3-tail-filler-rigidity-hardcore.md` 后，尾补洞硬核已有局部刚性：
+相邻和二步候选的大因子族必须完全互斥，同一尾标签复用间距至少 `y/4`，短直径块消耗至少
+`2K` 个互异大素因子。剩余是把这些局部短差值单元全局化为 ColumnCRT、端点相位或互补商容量矛盾。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

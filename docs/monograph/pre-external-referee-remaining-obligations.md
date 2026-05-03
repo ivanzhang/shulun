@@ -386,6 +386,10 @@ PNT 与相邻壳层单点性理论解释：H3 行平均为第一行素数数目�
 `D_y` 分支可用标准区间筛处理；剩余必须证明尾标签/双粗补洞不可能精确填满整行，或必进入
 ColumnCRT、端点相位、互补因子矛盾证书。
 
+新增 `docs/monograph/prime-matrix-h3-tail-filler-rigidity-hardcore.md` 后，外审义务进一步收窄为：
+把已证的相邻互质、二步互质、复用间距和三连短差值刚性拼成全局不相容性证明。当前尚未完成
+该全局拼接排斥。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

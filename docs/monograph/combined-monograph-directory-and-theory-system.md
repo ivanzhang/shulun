@@ -1345,6 +1345,10 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 `D_y` 分支已归约到标准小筛层区间筛；最终未闭合对象是尾标签/双粗补洞排斥，即证明这些尾点
 不能无缺陷地精确填满整行 H3 候选。
 
+新增 `docs/monograph/prime-matrix-h3-tail-filler-rigidity-hardcore.md` 后，尾补洞排斥已有局部核心：
+相邻/二步候选互质、尾标签复用间距 `>=y/4`、三连短差值方程。全局闭合仍需证明这些局部刚性
+不能沿整行拼接。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

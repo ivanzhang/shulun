@@ -235,3 +235,13 @@ without producing ColumnCRT/endpoint/semiprime-cofactor contradiction.
 ```
 
 这是同一个 `Square-root Defect Exclusion` 目标的内部硬核，不是转换命题。
+
+进一步内部硬攻见：
+
+```text
+docs/monograph/prime-matrix-h3-tail-filler-rigidity-hardcore.md
+```
+
+该文件证明相邻与二步 H3 候选若均由尾标签补洞，则其大因子族完全互斥；同一尾标签复用间距至少
+为 `y/4`；三连补洞等价于互素 `y`-rough 合数的 `2/4/6` 短差值方程。剩余硬核是把这些局部刚性
+全局化为 ColumnCRT、端点相位或互补商容量矛盾。
