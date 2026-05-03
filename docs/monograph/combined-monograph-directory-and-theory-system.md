@@ -1254,6 +1254,13 @@ a=0 or a>=p-g  => 完整 p 对齐零行；
 这支持用户“seam 继续降阶会在某层变零行”的机制，但仍需全局证明 `SMD-Global Inequality`
 或把持久复活点阻断路由到 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-seam-tail-mirror-descent-route.md` 后，上述强制下层零行又被接入
+CRT 周期镜像。对 `h` 层行周期 `N_h=M_h/h`，强制零行行号 `R` 的相位为
+`rho=((R-1) mod N_h)+1`，镜像相位为 `N_h-rho+1`。若任一相位不超过 `h`，则条件零行落入
+`h×h` 方阵头部。全量 `p<=500` 与 `p<=2000` 抽样账本均为 `100%` 命中，其中既有直接头部相位，
+也有尾镜像相位。这把递归路线的最窄硬点更新为 `TailMirror-SMD`：证明真实 seam 反例必满足此
+相位命中，或证明非命中持久阻断必触发 `SAE/PDEC/ColumnCRT`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

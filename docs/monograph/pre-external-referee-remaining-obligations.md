@@ -310,6 +310,12 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 证明全局 `SMD-Global Inequality`，或证明所有持久阻断必触发 `SAE/PDEC/ColumnCRT`；不能仅凭有限账本
 宣称 seam guard 已无条件排除。
 
+新增 `docs/monograph/prime-matrix-seam-tail-mirror-descent-route.md` 与对应审计后，外审前还可使用
+尾镜像接口：强制 `h` 零行的行相位 `rho` 或镜像相位 `N_h-rho+1` 若落入 `1..h`，就给出
+`h×h` 方阵内条件零行，从而可与归纳输入 `Row(h)` 冲突。有限账本中 `p<=500` 全量和
+`p<=2000` 抽样均为 `100%` 命中。剩余义务进一步收窄为证明全局 `TailMirror-SMD`，
+或把非命中相位集合接入 `SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

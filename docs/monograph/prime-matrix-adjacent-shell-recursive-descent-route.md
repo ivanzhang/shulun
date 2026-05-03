@@ -188,3 +188,16 @@ p<=2000,row_stride=25 抽样 seam: 11488/11488 下降为强制零行；
 
 这强烈支持“缝合零窗继续降阶会在某层变零行”的机制。但它仍不是全局无条件证明：如果首次
 强制零行在下层方阵外，还必须继续接入下层零行延迟、递归下降或 `SAE/PDEC/ColumnCRT` 出口。
+
+新增 `docs/monograph/prime-matrix-seam-tail-mirror-descent-route.md` 后，这个“方阵外”问题得到更好
+的处理。强制 `h` 零行只需在 CRT 行周期中满足相位头部命中或尾镜像命中：
+
+```text
+rho=((R-1) mod N_h)+1<=h
+or
+N_h-rho+1<=h。
+```
+
+全量 `p<=500` 与抽样 `p<=2000` 的 seam 条件下降均 `100%` 命中。因此当前最窄形式不再是
+“强制零行是否绝对落入 h×h”，而是证明 `TailMirror-SMD` 的全局相位命中，或把非命中阻断
+路由到 `SAE/PDEC/ColumnCRT`。

@@ -1,0 +1,1320 @@
+{
+  "status": "finite_seam_tail_mirror_descent_audit_not_global_proof",
+  "parameters": {
+    "max_p": 500,
+    "row_stride": 1,
+    "max_levels": null
+  },
+  "summary": {
+    "seam_windows_checked": 21339,
+    "forced_zero_found": 21339,
+    "head_or_tail_hits": 21339,
+    "blocked_without_head_or_tail_hit": 0,
+    "hit_fraction": 1.0,
+    "max_hit_level_index": 91,
+    "min_hit_prime": 3,
+    "hit_prime_counts": {
+      "3": 4,
+      "5": 249,
+      "7": 4622,
+      "11": 1112,
+      "13": 99,
+      "17": 7,
+      "19": 10,
+      "23": 21,
+      "29": 19,
+      "31": 22,
+      "37": 21,
+      "41": 24,
+      "43": 37,
+      "47": 43,
+      "53": 47,
+      "59": 40,
+      "61": 50,
+      "67": 46,
+      "71": 52,
+      "73": 63,
+      "79": 75,
+      "83": 80,
+      "89": 75,
+      "97": 60,
+      "101": 55,
+      "103": 73,
+      "107": 79,
+      "109": 117,
+      "113": 139,
+      "127": 104,
+      "131": 106,
+      "137": 117,
+      "139": 116,
+      "149": 122,
+      "151": 137,
+      "157": 142,
+      "163": 131,
+      "167": 134,
+      "173": 147,
+      "179": 152,
+      "181": 150,
+      "191": 154,
+      "193": 167,
+      "197": 188,
+      "199": 241,
+      "211": 201,
+      "223": 178,
+      "227": 175,
+      "229": 200,
+      "233": 210,
+      "239": 194,
+      "241": 227,
+      "251": 219,
+      "257": 197,
+      "263": 202,
+      "269": 175,
+      "271": 237,
+      "277": 247,
+      "281": 257,
+      "283": 316,
+      "293": 281,
+      "307": 248,
+      "311": 278,
+      "313": 323,
+      "317": 342,
+      "331": 311,
+      "337": 321,
+      "347": 310,
+      "349": 299,
+      "353": 321,
+      "359": 341,
+      "367": 352,
+      "373": 347,
+      "379": 331,
+      "383": 355,
+      "389": 363,
+      "397": 342,
+      "401": 366,
+      "409": 353,
+      "419": 271,
+      "421": 301,
+      "431": 245,
+      "433": 263,
+      "439": 224,
+      "443": 215,
+      "449": 178,
+      "457": 133,
+      "461": 130,
+      "463": 122,
+      "467": 100,
+      "479": 52,
+      "487": 26,
+      "491": 11
+    },
+    "hit_mode_counts": {
+      "direct_head_phase": 28279,
+      "tail_mirror_phase": 12984
+    }
+  },
+  "hit_samples": [
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 2,
+      "interval": [
+        8,
+        14
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 2,
+        "right_guard": 1
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "forced_profiles": [
+          {
+            "row": 4,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "hit_profiles": [
+          {
+            "row": 4,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 4,
+      "interval": [
+        22,
+        28
+      ],
+      "seam_classification": {
+        "row": 4,
+        "type": "seam_window",
+        "offset_mod_p": 1,
+        "lower_rows": [
+          5,
+          6
+        ],
+        "left_guard": 1,
+        "right_guard": 2
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "forced_profiles": [
+          {
+            "row": 8,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "hit_profiles": [
+          {
+            "row": 8,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 7,
+      "interval": [
+        43,
+        49
+      ],
+      "seam_classification": {
+        "row": 7,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          9,
+          10
+        ],
+        "left_guard": 2,
+        "right_guard": 1
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "forced_profiles": [
+          {
+            "row": 15,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 1,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 16,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "hit_profiles": [
+          {
+            "row": 15,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 1,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 16,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 3,
+      "interval": [
+        23,
+        33
+      ],
+      "seam_classification": {
+        "row": 3,
+        "type": "seam_window",
+        "offset_mod_p": 1,
+        "lower_rows": [
+          4,
+          5
+        ],
+        "left_guard": 1,
+        "right_guard": 2
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 5,
+        "forced_profiles": [
+          {
+            "row": 6,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 6,
+            "mirror_phase": 1,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 6,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 6,
+            "mirror_phase": 1,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 5,
+      "interval": [
+        45,
+        55
+      ],
+      "seam_classification": {
+        "row": 5,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          7,
+          8
+        ],
+        "left_guard": 2,
+        "right_guard": 1
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 5,
+        "forced_profiles": [
+          {
+            "row": 11,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 11,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          }
+        ]
+      }
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 10,
+      "interval": [
+        100,
+        110
+      ],
+      "seam_classification": {
+        "row": 10,
+        "type": "seam_window",
+        "offset_mod_p": 1,
+        "lower_rows": [
+          15,
+          16
+        ],
+        "left_guard": 1,
+        "right_guard": 2
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 5,
+        "forced_profiles": [
+          {
+            "row": 21,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 3,
+            "mirror_phase": 4,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 4
+          },
+          {
+            "row": 22,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 4,
+            "mirror_phase": 3,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 3
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 21,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 3,
+            "mirror_phase": 4,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 4
+          },
+          {
+            "row": 22,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 4,
+            "mirror_phase": 3,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 3
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 2,
+      "interval": [
+        14,
+        26
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 2,
+        "right_guard": 7
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 3,
+            "mirror_phase": 28,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 28
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 3,
+            "mirror_phase": 28,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 28
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 3,
+      "interval": [
+        27,
+        39
+      ],
+      "seam_classification": {
+        "row": 3,
+        "type": "seam_window",
+        "offset_mod_p": 4,
+        "lower_rows": [
+          3,
+          4
+        ],
+        "left_guard": 4,
+        "right_guard": 5
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 5,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 5,
+            "mirror_phase": 26,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 26
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 5,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 5,
+            "mirror_phase": 26,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 26
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 4,
+      "interval": [
+        40,
+        52
+      ],
+      "seam_classification": {
+        "row": 4,
+        "type": "seam_window",
+        "offset_mod_p": 6,
+        "lower_rows": [
+          4,
+          5
+        ],
+        "left_guard": 6,
+        "right_guard": 3
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 7,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 7,
+            "mirror_phase": 24,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 24
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 7,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 7,
+            "mirror_phase": 24,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 24
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 5,
+      "interval": [
+        53,
+        65
+      ],
+      "seam_classification": {
+        "row": 5,
+        "type": "seam_window",
+        "offset_mod_p": 8,
+        "lower_rows": [
+          5,
+          6
+        ],
+        "left_guard": 8,
+        "right_guard": 1
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 9,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 9,
+            "mirror_phase": 22,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 22
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 12,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 6,
+            "mirror_phase": 1,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          },
+          {
+            "row": 13,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 1,
+            "mirror_phase": 6,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 6
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 7,
+      "interval": [
+        79,
+        91
+      ],
+      "seam_classification": {
+        "row": 7,
+        "type": "seam_window",
+        "offset_mod_p": 1,
+        "lower_rows": [
+          8,
+          9
+        ],
+        "left_guard": 1,
+        "right_guard": 8
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 13,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 13,
+            "mirror_phase": 18,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 18
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 17,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 18,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 6,
+            "mirror_phase": 1,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 8,
+      "interval": [
+        92,
+        104
+      ],
+      "seam_classification": {
+        "row": 8,
+        "type": "seam_window",
+        "offset_mod_p": 3,
+        "lower_rows": [
+          9,
+          10
+        ],
+        "left_guard": 3,
+        "right_guard": 6
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 14,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 14,
+            "mirror_phase": 17,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 17
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 20,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 2,
+            "mirror_phase": 5,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 5
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 9,
+      "interval": [
+        105,
+        117
+      ],
+      "seam_classification": {
+        "row": 9,
+        "type": "seam_window",
+        "offset_mod_p": 5,
+        "lower_rows": [
+          10,
+          11
+        ],
+        "left_guard": 5,
+        "right_guard": 4
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 16,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 16,
+            "mirror_phase": 15,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 15
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 22,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 4,
+            "mirror_phase": 3,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 3
+          },
+          {
+            "row": 23,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 10,
+      "interval": [
+        118,
+        130
+      ],
+      "seam_classification": {
+        "row": 10,
+        "type": "seam_window",
+        "offset_mod_p": 7,
+        "lower_rows": [
+          11,
+          12
+        ],
+        "left_guard": 7,
+        "right_guard": 2
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 5,
+        "forced_profiles": [
+          {
+            "row": 26,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 2,
+            "mirror_phase": 5,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 5
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 26,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 2,
+            "mirror_phase": 5,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 5
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 13,
+      "interval": [
+        157,
+        169
+      ],
+      "seam_classification": {
+        "row": 13,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          15,
+          16
+        ],
+        "left_guard": 2,
+        "right_guard": 7
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 24,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 24,
+            "mirror_phase": 7,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 7
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 24,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 24,
+            "mirror_phase": 7,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 7
+          }
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 2,
+      "interval": [
+        18,
+        34
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 4,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 4,
+        "right_guard": 5
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 11,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 3,
+            "mirror_phase": 208,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 208
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 11,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 3,
+            "mirror_phase": 208,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 208
+          }
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 3,
+      "interval": [
+        35,
+        51
+      ],
+      "seam_classification": {
+        "row": 3,
+        "type": "seam_window",
+        "offset_mod_p": 8,
+        "lower_rows": [
+          3,
+          4
+        ],
+        "left_guard": 8,
+        "right_guard": 1
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 6,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 6,
+            "mirror_phase": 25,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 25
+          },
+          {
+            "row": 7,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 7,
+            "mirror_phase": 24,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 24
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 6,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 6,
+            "mirror_phase": 25,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 25
+          },
+          {
+            "row": 7,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 7,
+            "mirror_phase": 24,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 24
+          }
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 5,
+      "interval": [
+        69,
+        85
+      ],
+      "seam_classification": {
+        "row": 5,
+        "type": "seam_window",
+        "offset_mod_p": 3,
+        "lower_rows": [
+          6,
+          7
+        ],
+        "left_guard": 3,
+        "right_guard": 6
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 11,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 11,
+            "mirror_phase": 20,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 20
+          },
+          {
+            "row": 12,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 12,
+            "mirror_phase": 19,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 19
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 3,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 15,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 3,
+            "mirror_phase": 4,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 4
+          },
+          {
+            "row": 17,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          }
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 6,
+      "interval": [
+        86,
+        102
+      ],
+      "seam_classification": {
+        "row": 6,
+        "type": "seam_window",
+        "offset_mod_p": 7,
+        "lower_rows": [
+          7,
+          8
+        ],
+        "left_guard": 7,
+        "right_guard": 2
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 11,
+        "forced_profiles": [
+          {
+            "row": 9,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 9,
+            "mirror_phase": 202,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 202
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 11,
+        "hit_profiles": [
+          {
+            "row": 9,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 9,
+            "mirror_phase": 202,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 202
+          }
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 8,
+      "interval": [
+        120,
+        136
+      ],
+      "seam_classification": {
+        "row": 8,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          10,
+          11
+        ],
+        "left_guard": 2,
+        "right_guard": 7
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 11,
+        "forced_profiles": [
+          {
+            "row": 12,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 12,
+            "mirror_phase": 199,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 199
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 3,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 26,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 2,
+            "mirror_phase": 5,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 5
+          }
+        ]
+      }
+    }
+  ],
+  "blocked_samples": []
+}

@@ -266,6 +266,15 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 条抽样 seam 均在某层出现强制零行，阻断数 `0`。但该结论仍是条件账本：需证明全局
 `SMD-Global Inequality`，或将持久复活点阻断送入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-seam-tail-mirror-descent-route.md`、
+`docs/monograph/prime-matrix-seam-tail-mirror-descent-audit.md/json`、
+`docs/monograph/prime-matrix-seam-tail-mirror-descent-audit-p2000-sample.md/json` 与脚本
+`experiments/prime_matrix_seam_tail_mirror_descent_audit.py` 后，用户提出的“强制零行经 CRT 尾边界镜像
+落回小阶方阵”被精确为行相位条件：对 `h` 层行周期 `N_h`，强制零行 `R` 若满足
+`rho=((R-1) mod N_h)+1<=h` 或 `N_h-rho+1<=h`，则周期或尾镜像给出 `h×h` 方阵内条件零行。
+全量 `p<=500` 与抽样 `p<=2000,row_stride=25` 均为 `100%` 命中，未命中数 `0`。当前最小硬点
+进一步压缩为 `TailMirror-SMD` 全局证明，或将非命中持久相位送入 `SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

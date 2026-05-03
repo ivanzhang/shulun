@@ -1000,6 +1000,17 @@ The finite ledger checks all $21339$ seam windows for $p\le500$ and a determinis
 $p\le2000$ sample of $11488$ seam windows, with no persistent blocking cases.  This is
 not a global theorem; it sharpens the remaining gate to the SMD-Global Inequality, or
 else a proof that persistent revival blocking enters SAE, PDEC, or ColumnCRT.
+The tail-mirror refinement is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-seam-tail-mirror-descent-route.md}.
+\]
+For a forced lower $h$-zero row with row number $R$, set
+$N_h=M_h/h$ and $\rho=((R-1)\bmod N_h)+1$.  If $\rho\le h$ or
+$N_h-\rho+1\le h$, then periodicity or CRT reflection places a conditional zero row
+inside the lower $h\times h$ matrix.  The finite ledgers above again show full success
+in the same domains.  This motivates the sharper TailMirror-SMD gate: every genuine seam
+counterexample must hit such a lower head/tail phase, or its persistent non-hit phases
+must be routed to SAE, PDEC, or ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

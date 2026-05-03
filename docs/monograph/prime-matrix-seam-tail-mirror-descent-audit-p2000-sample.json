@@ -1,0 +1,1555 @@
+{
+  "status": "finite_seam_tail_mirror_descent_audit_not_global_proof",
+  "parameters": {
+    "max_p": 2000,
+    "row_stride": 25,
+    "max_levels": null
+  },
+  "summary": {
+    "seam_windows_checked": 11488,
+    "forced_zero_found": 11488,
+    "head_or_tail_hits": 11488,
+    "blocked_without_head_or_tail_hit": 0,
+    "hit_fraction": 1.0,
+    "max_hit_level_index": 299,
+    "min_hit_prime": 3,
+    "hit_prime_counts": {
+      "3": 3,
+      "5": 24,
+      "7": 1082,
+      "11": 1045,
+      "13": 81,
+      "17": 7,
+      "19": 2,
+      "23": 3,
+      "31": 2,
+      "37": 2,
+      "43": 1,
+      "47": 3,
+      "53": 6,
+      "59": 2,
+      "61": 2,
+      "67": 4,
+      "71": 4,
+      "73": 5,
+      "79": 2,
+      "83": 2,
+      "89": 5,
+      "97": 3,
+      "103": 8,
+      "107": 4,
+      "109": 6,
+      "113": 8,
+      "127": 9,
+      "131": 7,
+      "137": 3,
+      "139": 4,
+      "149": 3,
+      "151": 6,
+      "157": 7,
+      "163": 7,
+      "167": 5,
+      "173": 10,
+      "179": 13,
+      "181": 6,
+      "191": 4,
+      "193": 7,
+      "197": 8,
+      "199": 8,
+      "211": 11,
+      "223": 5,
+      "227": 9,
+      "229": 10,
+      "233": 7,
+      "239": 9,
+      "241": 10,
+      "251": 9,
+      "257": 6,
+      "263": 8,
+      "269": 8,
+      "271": 7,
+      "277": 14,
+      "281": 9,
+      "283": 16,
+      "293": 12,
+      "307": 14,
+      "311": 9,
+      "313": 15,
+      "317": 17,
+      "331": 7,
+      "337": 10,
+      "347": 9,
+      "349": 14,
+      "353": 21,
+      "359": 22,
+      "367": 10,
+      "373": 17,
+      "379": 21,
+      "383": 13,
+      "389": 20,
+      "397": 15,
+      "401": 10,
+      "409": 19,
+      "419": 10,
+      "421": 12,
+      "431": 17,
+      "433": 12,
+      "439": 16,
+      "443": 17,
+      "449": 10,
+      "457": 16,
+      "461": 23,
+      "463": 15,
+      "467": 14,
+      "479": 14,
+      "487": 17,
+      "491": 22,
+      "499": 26,
+      "503": 38,
+      "509": 23,
+      "521": 21,
+      "523": 30,
+      "541": 14,
+      "547": 24,
+      "557": 22,
+      "563": 22,
+      "569": 24,
+      "571": 25,
+      "577": 17,
+      "587": 29,
+      "593": 15,
+      "599": 14,
+      "601": 11,
+      "607": 27,
+      "613": 31,
+      "617": 23,
+      "619": 24,
+      "631": 18,
+      "641": 18,
+      "643": 18,
+      "647": 20,
+      "653": 37,
+      "659": 32,
+      "661": 21,
+      "673": 24,
+      "677": 27,
+      "683": 35,
+      "691": 34,
+      "701": 21,
+      "709": 19,
+      "719": 28,
+      "727": 23,
+      "733": 24,
+      "739": 29,
+      "743": 30,
+      "751": 23,
+      "757": 28,
+      "761": 42,
+      "769": 37,
+      "773": 34,
+      "787": 31,
+      "797": 28,
+      "809": 24,
+      "811": 21,
+      "821": 28,
+      "823": 26,
+      "827": 23,
+      "829": 28,
+      "839": 33,
+      "853": 46,
+      "857": 25,
+      "859": 33,
+      "863": 35,
+      "877": 47,
+      "881": 37,
+      "883": 33,
+      "887": 41,
+      "907": 42,
+      "911": 41,
+      "919": 35,
+      "929": 43,
+      "937": 30,
+      "941": 37,
+      "947": 45,
+      "953": 61,
+      "967": 37,
+      "971": 38,
+      "977": 30,
+      "983": 40,
+      "991": 31,
+      "997": 37,
+      "1009": 43,
+      "1013": 35,
+      "1019": 38,
+      "1021": 26,
+      "1031": 35,
+      "1033": 42,
+      "1039": 31,
+      "1049": 26,
+      "1051": 27,
+      "1061": 37,
+      "1063": 34,
+      "1069": 51,
+      "1087": 44,
+      "1091": 33,
+      "1093": 50,
+      "1097": 42,
+      "1103": 47,
+      "1109": 53,
+      "1117": 43,
+      "1123": 49,
+      "1129": 51,
+      "1151": 38,
+      "1153": 61,
+      "1163": 49,
+      "1171": 39,
+      "1181": 44,
+      "1187": 40,
+      "1193": 49,
+      "1201": 29,
+      "1213": 38,
+      "1217": 50,
+      "1223": 48,
+      "1229": 53,
+      "1231": 38,
+      "1237": 47,
+      "1249": 40,
+      "1259": 45,
+      "1277": 39,
+      "1279": 50,
+      "1283": 46,
+      "1289": 46,
+      "1291": 46,
+      "1297": 42,
+      "1301": 51,
+      "1303": 65,
+      "1307": 65,
+      "1319": 57,
+      "1321": 62,
+      "1327": 90,
+      "1361": 65,
+      "1367": 60,
+      "1373": 48,
+      "1381": 68,
+      "1399": 41,
+      "1409": 46,
+      "1423": 37,
+      "1427": 46,
+      "1429": 39,
+      "1433": 46,
+      "1439": 43,
+      "1447": 64,
+      "1451": 45,
+      "1453": 87,
+      "1459": 51,
+      "1471": 59,
+      "1481": 56,
+      "1483": 56,
+      "1487": 72,
+      "1489": 54,
+      "1493": 55,
+      "1499": 47,
+      "1511": 71,
+      "1523": 63,
+      "1531": 53,
+      "1543": 45,
+      "1549": 57,
+      "1553": 60,
+      "1559": 44,
+      "1567": 54,
+      "1571": 57,
+      "1579": 51,
+      "1583": 54,
+      "1597": 41,
+      "1601": 44,
+      "1607": 53,
+      "1609": 53,
+      "1613": 64,
+      "1619": 66,
+      "1621": 62,
+      "1627": 56,
+      "1637": 60,
+      "1657": 66,
+      "1663": 54,
+      "1667": 53,
+      "1669": 71,
+      "1693": 68,
+      "1697": 54,
+      "1699": 52,
+      "1709": 60,
+      "1721": 60,
+      "1723": 62,
+      "1733": 58,
+      "1741": 67,
+      "1747": 71,
+      "1753": 87,
+      "1759": 60,
+      "1777": 57,
+      "1783": 56,
+      "1787": 59,
+      "1789": 68,
+      "1801": 35,
+      "1811": 65,
+      "1823": 51,
+      "1831": 44,
+      "1847": 43,
+      "1861": 31,
+      "1867": 29,
+      "1871": 32,
+      "1873": 35,
+      "1877": 42,
+      "1879": 35,
+      "1889": 29,
+      "1901": 22,
+      "1907": 27,
+      "1913": 22,
+      "1931": 18,
+      "1933": 17,
+      "1949": 6,
+      "1951": 2,
+      "1973": 3,
+      "1979": 1
+    },
+    "hit_mode_counts": {
+      "direct_head_phase": 15603,
+      "tail_mirror_phase": 6397
+    }
+  },
+  "hit_samples": [
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 2,
+      "interval": [
+        8,
+        14
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 2,
+        "right_guard": 1
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "forced_profiles": [
+          {
+            "row": 4,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "hit_profiles": [
+          {
+            "row": 4,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 7,
+      "interval": [
+        43,
+        49
+      ],
+      "seam_classification": {
+        "row": 7,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          9,
+          10
+        ],
+        "left_guard": 2,
+        "right_guard": 1
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "forced_profiles": [
+          {
+            "row": 15,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 1,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 16,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 3,
+        "hit_profiles": [
+          {
+            "row": 15,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 1,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 16,
+            "h": 3,
+            "period_rows": 2,
+            "phase": 2,
+            "mirror_phase": 1,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 2,
+      "interval": [
+        14,
+        26
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 2,
+        "right_guard": 7
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 3,
+            "mirror_phase": 28,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 28
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 3,
+            "mirror_phase": 28,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 28
+          }
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 13,
+      "interval": [
+        157,
+        169
+      ],
+      "seam_classification": {
+        "row": 13,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          15,
+          16
+        ],
+        "left_guard": 2,
+        "right_guard": 7
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 24,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 24,
+            "mirror_phase": 7,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 7
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 24,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 24,
+            "mirror_phase": 7,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 7
+          }
+        ]
+      }
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 2,
+      "interval": [
+        18,
+        34
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 4,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 4,
+        "right_guard": 5
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 11,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 3,
+            "mirror_phase": 208,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 208
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 11,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 3,
+            "mirror_phase": 208,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 208
+          }
+        ]
+      }
+    },
+    {
+      "p": 17,
+      "q": 19,
+      "q_row": 2,
+      "interval": [
+        20,
+        38
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 2,
+        "right_guard": 13
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 11,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 3,
+            "mirror_phase": 208,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 208
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 11,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 11,
+            "period_rows": 210,
+            "phase": 3,
+            "mirror_phase": 208,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 208
+          }
+        ]
+      }
+    },
+    {
+      "p": 17,
+      "q": 19,
+      "q_row": 19,
+      "interval": [
+        343,
+        361
+      ],
+      "seam_classification": {
+        "row": 19,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          21,
+          22
+        ],
+        "left_guard": 2,
+        "right_guard": 13
+      },
+      "first_forced": {
+        "level_index_from_p": 3,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 50,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 20,
+            "mirror_phase": 11,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 11
+          },
+          {
+            "row": 51,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 21,
+            "mirror_phase": 10,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 10
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 4,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 70,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 4,
+            "mirror_phase": 3,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 3
+          },
+          {
+            "row": 71,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 72,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 6,
+            "mirror_phase": 1,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 19,
+      "q": 23,
+      "q_row": 2,
+      "interval": [
+        24,
+        46
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 4,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 4,
+        "right_guard": 11
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 13,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 13,
+            "period_rows": 2310,
+            "phase": 3,
+            "mirror_phase": 2308,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 2308
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 13,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 13,
+            "period_rows": 2310,
+            "phase": 3,
+            "mirror_phase": 2308,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 2308
+          }
+        ]
+      }
+    },
+    {
+      "p": 19,
+      "q": 23,
+      "q_row": 23,
+      "interval": [
+        507,
+        529
+      ],
+      "seam_classification": {
+        "row": 23,
+        "type": "seam_window",
+        "offset_mod_p": 12,
+        "lower_rows": [
+          27,
+          28
+        ],
+        "left_guard": 12,
+        "right_guard": 3
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 17,
+        "forced_profiles": [
+          {
+            "row": 31,
+            "h": 17,
+            "period_rows": 30030,
+            "phase": 31,
+            "mirror_phase": 30000,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 30000
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 5,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 105,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 3,
+            "mirror_phase": 4,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 4
+          }
+        ]
+      }
+    },
+    {
+      "p": 23,
+      "q": 29,
+      "q_row": 2,
+      "interval": [
+        30,
+        58
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 6,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 6,
+        "right_guard": 11
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 19,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 19,
+            "period_rows": 510510,
+            "phase": 3,
+            "mirror_phase": 510508,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 510508
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 1,
+        "h": 19,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 19,
+            "period_rows": 510510,
+            "phase": 3,
+            "mirror_phase": 510508,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 510508
+          }
+        ]
+      }
+    },
+    {
+      "p": 23,
+      "q": 29,
+      "q_row": 29,
+      "interval": [
+        813,
+        841
+      ],
+      "seam_classification": {
+        "row": 29,
+        "type": "seam_window",
+        "offset_mod_p": 7,
+        "lower_rows": [
+          36,
+          37
+        ],
+        "left_guard": 7,
+        "right_guard": 10
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 19,
+        "forced_profiles": [
+          {
+            "row": 44,
+            "h": 19,
+            "period_rows": 510510,
+            "phase": 44,
+            "mirror_phase": 510467,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 510467
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 5,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 118,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 28,
+            "mirror_phase": 3,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 3
+          },
+          {
+            "row": 119,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 29,
+            "mirror_phase": 2,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 120,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 30,
+            "mirror_phase": 1,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 1
+          }
+        ]
+      }
+    },
+    {
+      "p": 29,
+      "q": 31,
+      "q_row": 2,
+      "interval": [
+        32,
+        62
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 2,
+        "right_guard": 25
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 19,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 19,
+            "period_rows": 510510,
+            "phase": 3,
+            "mirror_phase": 510508,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 510508
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 19,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 19,
+            "period_rows": 510510,
+            "phase": 3,
+            "mirror_phase": 510508,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 510508
+          }
+        ]
+      }
+    },
+    {
+      "p": 29,
+      "q": 31,
+      "q_row": 27,
+      "interval": [
+        807,
+        837
+      ],
+      "seam_classification": {
+        "row": 27,
+        "type": "seam_window",
+        "offset_mod_p": 23,
+        "lower_rows": [
+          28,
+          29
+        ],
+        "left_guard": 23,
+        "right_guard": 4
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 19,
+        "forced_profiles": [
+          {
+            "row": 44,
+            "h": 19,
+            "period_rows": 510510,
+            "phase": 44,
+            "mirror_phase": 510467,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 510467
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 6,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 118,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 28,
+            "mirror_phase": 3,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 3
+          },
+          {
+            "row": 119,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 29,
+            "mirror_phase": 2,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          }
+        ]
+      }
+    },
+    {
+      "p": 29,
+      "q": 31,
+      "q_row": 31,
+      "interval": [
+        931,
+        961
+      ],
+      "seam_classification": {
+        "row": 31,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          33,
+          34
+        ],
+        "left_guard": 2,
+        "right_guard": 25
+      },
+      "first_forced": {
+        "level_index_from_p": 6,
+        "h": 7,
+        "forced_profiles": [
+          {
+            "row": 134,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 14,
+            "mirror_phase": 17,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 17
+          },
+          {
+            "row": 137,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 17,
+            "mirror_phase": 14,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 14
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 7,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 188,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 2,
+            "mirror_phase": 5,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 5
+          },
+          {
+            "row": 191,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          }
+        ]
+      }
+    },
+    {
+      "p": 31,
+      "q": 37,
+      "q_row": 2,
+      "interval": [
+        38,
+        74
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 6,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 6,
+        "right_guard": 19
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 23,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 23,
+            "period_rows": 9699690,
+            "phase": 3,
+            "mirror_phase": 9699688,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 9699688
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 2,
+        "h": 23,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 23,
+            "period_rows": 9699690,
+            "phase": 3,
+            "mirror_phase": 9699688,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 9699688
+          }
+        ]
+      }
+    },
+    {
+      "p": 31,
+      "q": 37,
+      "q_row": 27,
+      "interval": [
+        963,
+        999
+      ],
+      "seam_classification": {
+        "row": 27,
+        "type": "seam_window",
+        "offset_mod_p": 1,
+        "lower_rows": [
+          32,
+          33
+        ],
+        "left_guard": 1,
+        "right_guard": 24
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 23,
+        "forced_profiles": [
+          {
+            "row": 43,
+            "h": 23,
+            "period_rows": 9699690,
+            "phase": 43,
+            "mirror_phase": 9699648,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 9699648
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 8,
+        "h": 5,
+        "hit_profiles": [
+          {
+            "row": 194,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 2,
+            "mirror_phase": 5,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 5
+          },
+          {
+            "row": 197,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 5,
+            "mirror_phase": 2,
+            "direct_head_hit": true,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          },
+          {
+            "row": 199,
+            "h": 5,
+            "period_rows": 6,
+            "phase": 1,
+            "mirror_phase": 6,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 6
+          }
+        ]
+      }
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 2,
+      "interval": [
+        42,
+        82
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 4,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 4,
+        "right_guard": 29
+      },
+      "first_forced": {
+        "level_index_from_p": 3,
+        "h": 23,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 23,
+            "period_rows": 9699690,
+            "phase": 3,
+            "mirror_phase": 9699688,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 9699688
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 3,
+        "h": 23,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 23,
+            "period_rows": 9699690,
+            "phase": 3,
+            "mirror_phase": 9699688,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 9699688
+          }
+        ]
+      }
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 27,
+      "interval": [
+        1067,
+        1107
+      ],
+      "seam_classification": {
+        "row": 27,
+        "type": "seam_window",
+        "offset_mod_p": 30,
+        "lower_rows": [
+          29,
+          30
+        ],
+        "left_guard": 30,
+        "right_guard": 3
+      },
+      "first_forced": {
+        "level_index_from_p": 2,
+        "h": 29,
+        "forced_profiles": [
+          {
+            "row": 38,
+            "h": 29,
+            "period_rows": 223092870,
+            "phase": 38,
+            "mirror_phase": 223092833,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 223092833
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 8,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 156,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 6,
+            "mirror_phase": 25,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 25
+          },
+          {
+            "row": 157,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 7,
+            "mirror_phase": 24,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 24
+          }
+        ]
+      }
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 41,
+      "interval": [
+        1641,
+        1681
+      ],
+      "seam_classification": {
+        "row": 41,
+        "type": "seam_window",
+        "offset_mod_p": 12,
+        "lower_rows": [
+          45,
+          46
+        ],
+        "left_guard": 12,
+        "right_guard": 21
+      },
+      "first_forced": {
+        "level_index_from_p": 1,
+        "h": 31,
+        "forced_profiles": [
+          {
+            "row": 54,
+            "h": 31,
+            "period_rows": 6469693230,
+            "phase": 54,
+            "mirror_phase": 6469693177,
+            "direct_head_hit": false,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": false,
+            "tail_distance": 6469693177
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 8,
+        "h": 7,
+        "hit_profiles": [
+          {
+            "row": 237,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 27,
+            "mirror_phase": 4,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 4
+          },
+          {
+            "row": 239,
+            "h": 7,
+            "period_rows": 30,
+            "phase": 29,
+            "mirror_phase": 2,
+            "direct_head_hit": false,
+            "mirror_head_hit": true,
+            "head_or_tail_hit": true,
+            "tail_distance": 2
+          }
+        ]
+      }
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 2,
+      "interval": [
+        44,
+        86
+      ],
+      "seam_classification": {
+        "row": 2,
+        "type": "seam_window",
+        "offset_mod_p": 2,
+        "lower_rows": [
+          2,
+          3
+        ],
+        "left_guard": 2,
+        "right_guard": 37
+      },
+      "first_forced": {
+        "level_index_from_p": 4,
+        "h": 23,
+        "forced_profiles": [
+          {
+            "row": 3,
+            "h": 23,
+            "period_rows": 9699690,
+            "phase": 3,
+            "mirror_phase": 9699688,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 9699688
+          }
+        ]
+      },
+      "first_head_or_tail": {
+        "level_index_from_p": 4,
+        "h": 23,
+        "hit_profiles": [
+          {
+            "row": 3,
+            "h": 23,
+            "period_rows": 9699690,
+            "phase": 3,
+            "mirror_phase": 9699688,
+            "direct_head_hit": true,
+            "mirror_head_hit": false,
+            "head_or_tail_hit": true,
+            "tail_distance": 9699688
+          }
+        ]
+      }
+    }
+  ],
+  "blocked_samples": []
+}

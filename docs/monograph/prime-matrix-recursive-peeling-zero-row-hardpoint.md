@@ -429,3 +429,9 @@ P^-(n) in (h,p]
 条 seam 均在某一层出现强制零行，无阻断样本。这说明用户提出的“缝合零窗继续降阶会有一阶变零行”
 在条件模型中非常稳定。剩余硬点因此不是机制是否存在，而是把该机制全局化：证明所有 seam 相位
 满足 `SMD-Global Inequality`，或证明复活点持续阻断必触发 `SAE/PDEC/ColumnCRT`。
+
+新增 `docs/monograph/prime-matrix-seam-tail-mirror-descent-route.md` 后，强制零行还可通过 CRT 周期
+相位或尾镜像落回小阶方阵：若 `rho=((R-1) mod N_h)+1<=h` 或 `N_h-rho+1<=h`，则得到
+`h×h` 方阵内条件零行。有限账本中 `p<=500` 全量与 `p<=2000` 抽样均 `100%` 命中。
+因此递归剥离路线的当前最小硬点进一步更新为 `TailMirror-SMD` 的全局证明，或非命中相位的
+`SAE/PDEC/ColumnCRT` 路由。

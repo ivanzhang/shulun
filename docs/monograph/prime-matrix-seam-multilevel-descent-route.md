@@ -136,3 +136,25 @@ J\cap \operatorname{Rev}_{h,p}(I)=\varnothing
 `SAE/PDEC/ColumnCRT` 缺陷。
 
 这一步是目前最接近用户“缝合零窗继续降阶必变零行”直觉的可审稿形式。
+
+## 6. 尾镜像强化
+
+新增 `docs/monograph/prime-matrix-seam-tail-mirror-descent-route.md` 后，本路线获得更强出口：
+强制 `h` 零行不必以绝对行号 `R<=h` 落入小方阵。令
+
+```text
+N_h=prod_{ell<=h}ell / h,
+rho=((R-1) mod N_h)+1。
+```
+
+若 `rho<=h`，周期性直接把它落入 `h×h`；若 `N_h-rho+1<=h`，则 CRT 取负镜像把尾边界相位
+落入 `h×h`。有限账本中全量 `p<=500` 与抽样 `p<=2000` 均 `100%` 命中该头部/尾镜像条件。
+
+因此 `SMD-Global Inequality` 可进一步收窄为：
+
+```text
+TailMirror-SMD:
+每个真实 seam 反例的多层下降中，存在强制 h 零行满足
+rho<=h 或 N_h-rho+1<=h；
+若不存在，则非命中相位集合必须触发 SAE/PDEC/ColumnCRT。
+```
