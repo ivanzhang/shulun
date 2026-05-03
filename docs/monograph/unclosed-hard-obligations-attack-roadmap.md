@@ -274,10 +274,18 @@ C_{\mathrm{SelbergUniform}}+C_{\mathrm{round}}
 
 因此 H5.1 的路由义务已闭合；当前 H5 最小硬点转为排除 `OSPC* / weighted CRTDefect` 出口，或把它们并入 H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。
 
+新增 `docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md`。该文件证明 `OSPC*` 与 `weighted CRTDefect` 都产生零均值低模测试函数与坏窗集合，因此由统一 `UPS-1` 二分进入：
+
+```text
+PDEC or SAE.
+```
+
+由此，H5.4 的出口吸收已闭合；未闭合的是 H4 的 `PDEC exclusion` 与 `SAE local escape exclusion` 证书。
+
 ### 5.3 可行性
 
 评级：B。
-这是 PM 方向当前最可操作的硬项。当前并未闭合 H5；H5.1 已完成出口路由，下一步应先攻 H5.4/H4 的出口排斥，再攻 H5.2。
+这是 PM 方向当前最可操作的硬项。当前并未闭合 H5；H5.1 与 H5.4 的路由/吸收已完成，下一步应先攻 H4 的 `PDEC-Cert/SAE-Cert`，再攻 H5.2。
 
 ## 6. H6：二点筛 I3-Core
 

@@ -10,7 +10,7 @@ H5 尚未闭合，但已经从“笼统常数账本”压缩为六个命名证�
 H5.1 RRD-low dichotomy
 H5.2 RRD-perp orthogonal estimate
 H5.3 RRD-conversion rounding
-H5.4 OSPC* => CRTDefect/Tail-anchor
+H5.4 OSPC*/weighted CRTDefect => PDEC-or-SAE absorption
 H5.5 SelbergUniform
 H5.6 LedgerRounding
 ```
@@ -43,7 +43,7 @@ C_{\rm RRD}+C_{\rm OSPC}+C_{\rm SelbergUniform}+C_{\rm round}
 | H5.1 | `RRD-low` | `0.006` | 出口路由已闭合 | `docs/monograph/h5-1-rrd-low-exit-theorem.md` 证明：若 `|E_low|>0.006`，必触发 `OSPC*` 或 `weighted CRTDefect`; 出口排斥转入 H4/PDEC-or-SAE |
 | H5.2 | `RRD-perp` | `0.012` | 未闭合 | 低模正交后，Buchstab/CRT 均衡/短窗不可复用给同权测试范数上界 |
 | H5.3 | `RRD-conversion` | `0.002` | 待外向舍入 | 振幅线性化二阶项、dyadic 端点、Gram 投影损失均小于预算 |
-| H5.4 | `OSPC` | `0.020` | 归一化已修正 | `E_dir>=1+delta_dir` 定量推出 `CRTDefect/Tail-anchor`，Fourier 到出口损失小于预算 |
+| H5.4 | `OSPC` | `0.020` | 出口吸收已闭合 | `docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md` 证明 `OSPC* / weighted CRTDefect => PDEC or SAE`; 真正排斥仍属 H4 |
 | H5.5 | `SelbergUniform` | `0.008` | 样本证书已有 | 样本 Selberg 有理矩阵审计升级到 `P>=P0` 的统一谱隙/扰动界 |
 | H5.6 | `LedgerRounding` | `0.003` | 部分已有 | H/Q、Selberg 变差、RSE 核、RRD/OSPC 之间所有换算误差外向舍入 |
 
@@ -104,8 +104,8 @@ H5.1 的出口路由已经闭合，形式为：
 
 剩余不再是 H5.1 的路由问题，而是下游出口排斥：
 
-1. `OSPC*` 如何定量进入 `CRTDefect/Tail-anchor` 并被 H4 排斥；
-2. `weighted CRTDefect` 如何进入 `PDEC-or-SAE` 或 Tail-anchor 并被 H4 排斥。
+1. `OSPC* / weighted CRTDefect` 已由 `docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md` 吸收到 `PDEC-or-SAE`；
+2. 真正剩余是 H4：给 persistent 分支提交 `PDEC-Cert`，给 sparse 分支提交 `SAE-Cert`。
 
 ## 5. H5.2 的正交项目标
 
@@ -157,7 +157,7 @@ sample rational Selberg audit
 
 ## 7. 下一步攻坚顺序
 
-1. **先攻 H5.4/H4 出口排斥**：排除 `OSPC*` 与 `weighted CRTDefect` 的下游出口。
+1. **先攻 H4 证书层**：为 `PDEC-or-SAE` 的 persistent/sparse 两分支提交可审稿证书。
 2. **再攻 H5.2**：证明低模正交粗数误差的同权测试范数上界。
 3. **并行做 H5.6**：把所有外向舍入换算写成一张有限表。
 4. **最后做 H5.5**：用统一扰动/谱隙完成 `P>=P0` 的 Selberg 常数。

@@ -100,8 +100,7 @@ E_{\rm dir}(B)\le 1+\delta_{\rm dir},
 因此 H5.1 的路由义务已闭合；真正剩余不再是 Hilbert 投影本身，而是两个下游定量输入：
 
 - 证明低模字典可分解为有限近正交块，且 Gram 损失并入 RRD-conversion。
-- 排除 `OSPC*` 出口，或证明它进入 H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。
-- 排除 `weighted CRTDefect` 出口，或证明它进入 H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。
+- `OSPC*` 与 `weighted CRTDefect` 已由 `docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md` 吸收到 H4 的 `PDEC-or-SAE`；后续必须排除这两个最终分支。
 - 若上述两出口均不发生，则由 Cauchy--Schwarz 得 |E_low|<=epsilon_low。
 
-下一步最优攻坚不再是 H5.1 路由，而是 H5.4/H4：证明 `OSPC*` 与 `weighted CRTDefect` 不能作为真实坏窗口的孤立逃逸。
+下一步最优攻坚不再是 H5.1/H5.4 路由，而是 H4 证书层：证明 persistent 分支的 `PDEC-Cert` 和 sparse 分支的 `SAE-Cert`。

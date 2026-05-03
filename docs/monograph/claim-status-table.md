@@ -371,6 +371,8 @@
 
 | Prime Matrix A/B入口定理清单 | H1入口归约闭合 | 新增 `docs/monograph/prime-matrix-ab-entrance-theorem-list.md`，把行/列反例入口整理为 `AB1--AB6`、`Theorem A`、`Theorem B`、`Corollary AB`，并固定小因子锁定、45度小因子锁定、Tail-log4尾部锚、主体双粗锚的剥离优先级。主稿中的 A/B reduction 已改用 `Reduction-closed Statement`。该项只完成反例到 `Structured-EHPD` 的入口归约，不证明 `Structured-EHPD` 不存在。 |
 
-| H5 RRD/OSPC验收矩阵 | 六项硬义务已定式化 | 新增 `docs/monograph/h5-rrd-ospc-proof-obligation-matrix.md`，把 `RRD/OSPC/SelbergUniform/round` 常数接口拆成 `RRD-low<=0.006`、`RRD-perp<=0.012`、`RRD-conversion<=0.002`、`OSPC<=0.020`、`SelbergUniform<=0.008`、`round<=0.003` 六项。文件给出 `H5-Acceptance`：六项成立则总损失 `0.051<0.053369509758272926`。当前仍未闭合 H5，最小硬点是 `RRD-low` 超预算推出 `OSPC*` 或加权 `CRTDefect/Tail-anchor`。 |
+| H5 RRD/OSPC验收矩阵 | 六项硬义务已定式化 | 新增 `docs/monograph/h5-rrd-ospc-proof-obligation-matrix.md`，把 `RRD/OSPC/SelbergUniform/round` 常数接口拆成 `RRD-low<=0.006`、`RRD-perp<=0.012`、`RRD-conversion<=0.002`、`OSPC<=0.020`、`SelbergUniform<=0.008`、`round<=0.003` 六项。文件给出 `H5-Acceptance`：六项成立则总损失 `0.051<0.053369509758272926`。当前 H5.1 路由与 H5.4 出口吸收已完成；H5 仍未闭合，最小硬点转为 H4 的 `PDEC-Cert/SAE-Cert` 与 H5.2 的 `RRD-perp` 同权上界。 |
 
 | H5.1 RRD-low出口定理 | 路由闭合/出口未排斥 | 新增 `docs/monograph/h5-1-rrd-low-exit-theorem.md`。该文件定义 `weighted CRTDefect` 阈值 `0.005366563145999495`，并用块级 Cauchy--Schwarz 证明：若无 `OSPC*` 且无 `weighted CRTDefect`，则 `|E_low|<=0.006`；等价地，`RRD-low` 超预算必进入 `OSPC*` 或 `weighted CRTDefect`。该项只闭合 H5.1 的出口路由，不排除这些出口；下游仍需 H5.4/H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。 |
+
+| H5.4 OSPC/weighted CRTDefect吸收 | 吸收到H4/出口未排斥 | 新增 `docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md`。该文件证明 `OSPC*` 与 `weighted CRTDefect` 都可写成零均值低模测试函数上的命名缺陷，并由统一 `PDEC-or-SAE` 二分进入 persistent Fourier/CRT 缺陷或 sparse 单窗逃逸义务。该项只完成出口吸收；仍未提交 `PDEC-Cert` 或 `SAE-Cert`，所以 Prime Matrix 终局不升级。 |
