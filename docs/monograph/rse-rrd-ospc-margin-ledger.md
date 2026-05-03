@@ -123,4 +123,4 @@ H5.5 SelbergUniform             <= 0.008
 H5.6 LedgerRounding             <= 0.003
 ```
 
-若六项全部成立，则总损失至多 `0.051`，严格小于可用余量 `0.053369509758272926`。当前最小硬点是 H5.1 的出口侧：证明 `RRD-low` 超预算必触发 `OSPC*` 或加权 `CRTDefect/Tail-anchor`。
+若六项全部成立，则总损失至多 `0.051`，严格小于可用余量 `0.053369509758272926`。新增 `docs/monograph/h5-1-rrd-low-exit-theorem.md` 后，H5.1 的出口路由已经闭合为：`RRD-low` 超预算必触发 `OSPC*` 或 `weighted CRTDefect`。当前最小硬点转为排除这些命名出口，或把它们并入 H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。

@@ -264,12 +264,20 @@ C_{\mathrm{SelbergUniform}}+C_{\mathrm{round}}
 
 ### 5.2A 本轮进展
 
-新增 `docs/monograph/h5-rrd-ospc-proof-obligation-matrix.md`。该矩阵给出 `H5-Acceptance`：若 `RRD-low<=0.006`、`RRD-perp<=0.012`、`RRD-conversion<=0.002`、`OSPC<=0.020`、`SelbergUniform<=0.008`、`round<=0.003` 六项成立，则总损失为 `0.051`，严格小于 `0.053369509758272926`。当前 H5 最小硬点被定位为 `RRD-low` 超预算到 `OSPC*` 或加权 `CRTDefect/Tail-anchor` 的出口证明。
+新增 `docs/monograph/h5-rrd-ospc-proof-obligation-matrix.md`。该矩阵给出 `H5-Acceptance`：若 `RRD-low<=0.006`、`RRD-perp<=0.012`、`RRD-conversion<=0.002`、`OSPC<=0.020`、`SelbergUniform<=0.008`、`round<=0.003` 六项成立，则总损失为 `0.051`，严格小于 `0.053369509758272926`。
+
+新增 `docs/monograph/h5-1-rrd-low-exit-theorem.md`。该文件用块级 Cauchy--Schwarz 证明 H5.1 出口路由：
+
+```text
+|E_low|>0.006 => OSPC* or weighted CRTDefect.
+```
+
+因此 H5.1 的路由义务已闭合；当前 H5 最小硬点转为排除 `OSPC* / weighted CRTDefect` 出口，或把它们并入 H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。
 
 ### 5.3 可行性
 
 评级：B。
-这是 PM 方向当前最可操作的硬项。当前并未闭合 H5，但已经把它压缩为六个可验收不等式；下一步应先攻 H5.1，再攻 H5.2。
+这是 PM 方向当前最可操作的硬项。当前并未闭合 H5；H5.1 已完成出口路由，下一步应先攻 H5.4/H4 的出口排斥，再攻 H5.2。
 
 ## 6. H6：二点筛 I3-Core
 

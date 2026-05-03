@@ -90,11 +90,18 @@ E_{\rm dir}(B)\le 1+\delta_{\rm dir},
 
 ## 4. 当前剩余
 
-本轮已经把 `low-block=>exit` 变成代数准则。真正剩余不再是 Hilbert 投影本身，而是两个定量输入：
+本轮已经把 `low-block=>exit` 变成代数准则。`docs/monograph/h5-1-rrd-low-exit-theorem.md` 进一步把该准则写成 H5.1 出口定理：
+
+```text
+|E_low| > 0.006
+=> OSPC* or weighted CRTDefect.
+```
+
+因此 H5.1 的路由义务已闭合；真正剩余不再是 Hilbert 投影本身，而是两个下游定量输入：
 
 - 证明低模字典可分解为有限近正交块，且 Gram 损失并入 RRD-conversion。
-- 证明若某块 E_dir(B)>1+delta_dir，则进入 OSPC* 出口。
-- 证明若加权 CRT 缺陷和超过 allowed_weighted_crt_defect，则进入 CRTDefect/Tail-anchor 出口。
+- 排除 `OSPC*` 出口，或证明它进入 H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。
+- 排除 `weighted CRTDefect` 出口，或证明它进入 H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。
 - 若上述两出口均不发生，则由 Cauchy--Schwarz 得 |E_low|<=epsilon_low。
 
-下一步最优攻坚是证明加权 CRT 缺陷和 `sum_B kappa_B m_B <= 0.005367`，或证明一旦它失败就触发已有 `Tail-anchor/CRTDefect` 刚性出口。
+下一步最优攻坚不再是 H5.1 路由，而是 H5.4/H4：证明 `OSPC*` 与 `weighted CRTDefect` 不能作为真实坏窗口的孤立逃逸。

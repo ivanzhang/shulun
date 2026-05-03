@@ -40,7 +40,7 @@ C_{\rm RRD}+C_{\rm OSPC}+C_{\rm SelbergUniform}+C_{\rm round}
 
 | 编号 | 目标 | 预算 | 当前状态 | 必须证明 |
 |---|---|---:|---|---|
-| H5.1 | `RRD-low` | `0.006` | 二分准则已写出 | 若 `|E_low|>0.006`，必触发 `OSPC*` 或加权 `CRTDefect/Tail-anchor` |
+| H5.1 | `RRD-low` | `0.006` | 出口路由已闭合 | `docs/monograph/h5-1-rrd-low-exit-theorem.md` 证明：若 `|E_low|>0.006`，必触发 `OSPC*` 或 `weighted CRTDefect`; 出口排斥转入 H4/PDEC-or-SAE |
 | H5.2 | `RRD-perp` | `0.012` | 未闭合 | 低模正交后，Buchstab/CRT 均衡/短窗不可复用给同权测试范数上界 |
 | H5.3 | `RRD-conversion` | `0.002` | 待外向舍入 | 振幅线性化二阶项、dyadic 端点、Gram 投影损失均小于预算 |
 | H5.4 | `OSPC` | `0.020` | 归一化已修正 | `E_dir>=1+delta_dir` 定量推出 `CRTDefect/Tail-anchor`，Fourier 到出口损失小于预算 |
@@ -78,14 +78,14 @@ C_{\rm round}\le0.003.
 
 ## 4. 当前最小硬点
 
-当前最窄硬点是 H5.1 的出口侧：
+H5.1 的出口路由已经闭合，形式为：
 
 ```text
 |E_low| > 0.006
-=> OSPC* or weighted CRTDefect/Tail-anchor.
+=> OSPC* or weighted CRTDefect.
 ```
 
-已有代数准则：
+该命题由 `docs/monograph/h5-1-rrd-low-exit-theorem.md` 的 Cauchy--Schwarz 块分解证明。核心估计为
 
 \[
 |\mathcal E_{\rm low}|
@@ -93,17 +93,19 @@ C_{\rm round}\le0.003.
 \sqrt{1+\delta_{\rm dir}}\sum_B \kappa_B m_B.
 \]
 
-取 `delta_dir=1/4` 时，若无加权 CRT 缺陷且
+取 `delta_dir=1/4` 时，若无 `OSPC*` 且
 
 \[
 \sum_B\kappa_Bm_B
 \le 0.005366563145999495,
 \]
 
-则 `RRD-low<=0.006`。因此 H5.1 只剩两个出口证明：
+则 `RRD-low<=0.006`。
 
-1. `E_dir(B)>1+delta_dir` 必进入 `OSPC*`；
-2. `sum_B kappa_B m_B` 超界必进入 `CRTDefect/Tail-anchor`。
+剩余不再是 H5.1 的路由问题，而是下游出口排斥：
+
+1. `OSPC*` 如何定量进入 `CRTDefect/Tail-anchor` 并被 H4 排斥；
+2. `weighted CRTDefect` 如何进入 `PDEC-or-SAE` 或 Tail-anchor 并被 H4 排斥。
 
 ## 5. H5.2 的正交项目标
 
@@ -155,7 +157,7 @@ sample rational Selberg audit
 
 ## 7. 下一步攻坚顺序
 
-1. **先攻 H5.1**：证明加权 CRT 缺陷超界必触发已命名 `CRTDefect/Tail-anchor`。
+1. **先攻 H5.4/H4 出口排斥**：排除 `OSPC*` 与 `weighted CRTDefect` 的下游出口。
 2. **再攻 H5.2**：证明低模正交粗数误差的同权测试范数上界。
 3. **并行做 H5.6**：把所有外向舍入换算写成一张有限表。
 4. **最后做 H5.5**：用统一扰动/谱隙完成 `P>=P0` 的 Selberg 常数。
