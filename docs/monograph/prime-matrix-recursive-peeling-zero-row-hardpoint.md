@@ -358,3 +358,17 @@ BCB-Endpoint persistence exclusion。
 LowerDescent-Grid persistence
 and RPZ-SAE/PDEC/ColumnCRT certificate materialization。
 ```
+
+新增 `prime-matrix-rpz-lower-descent-obstruction-ledger.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_lower_descent_obstruction_ledger.py` 后，上述剩余进一步精确：
+对每个相邻下降 `p -> r`，阻断只依赖行号模 `P(r)`，并被分成 `grid_fail` 与
+`puncture_block` 两类有限相位。本批实际下降节点 `20` 个、全部 `success`，实际阻断为 `0`。
+因此递归剥离主线现在有两个并行最小义务：
+
+```text
+1. 证明正式反例下降路径始终落在 success 相位；
+2. 若落入 grid_fail/puncture_block，则把该相位送入 RPZ-SAE/PDEC/ColumnCRT 证书接口。
+```
+
+新增 `prime-matrix-rpz-certificate-materialization-interface.md` 给出上述接口的可审稿填表格式；
+它不宣称这些出口已被排除。

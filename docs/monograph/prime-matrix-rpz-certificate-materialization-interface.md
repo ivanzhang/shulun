@@ -1,0 +1,145 @@
+# RPZ 出口证书材料化接口
+
+**状态：** `rpz_certificate_materialization_interface_defined`
+
+本文承接 `prime-matrix-rpz-dual-track-closure-route.md`。双轨路线已经把 RPZ 剩余义务压成：
+
+```text
+LowerDescent-Grid persistence
+and RPZ-SAE/PDEC/ColumnCRT certificate materialization。
+```
+
+本文把第二项证书义务材料化为可填写的审稿接口，同时说明下降阻断相位如何回流到同一接口。
+
+## 1. 下降阻断相位账本
+
+新增审计：
+
+```text
+experiments/prime_matrix_rpz_lower_descent_obstruction_ledger.py；
+docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.json；
+docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.md。
+```
+
+对每个相邻素数转换 `p -> r`，行号相位取模
+
+\[
+P(r)=\prod_{\ell\le r}\ell.
+\]
+
+下降失败只有两类：
+
+1. `grid_fail`：`p` 行不完整包含任何 `r` 对齐行；
+2. `puncture_block`：完整 `r` 行全部含端点穿孔 `p\cdot row`。
+
+有限审计中，实际下降转换节点全部为 `success`，实际阻断节点为 `0`。但枚举相位账本给出了
+所有可能阻断相位，因此全局阻断可直接进入 `SAE/PDEC/ColumnCRT`。
+
+## 2. RPZ-SAE finite package
+
+**输入对象。**
+
+```text
+phase_type = endpoint_grid_failure | lower_descent_grid_fail | lower_descent_puncture_block
+phase_key  = finite tuple recorded in the corresponding ledger
+load       = number of formal bad windows carrying this phase
+B_SAE      = sparse escape threshold
+```
+
+**验收义务。**
+
+若每个 `phase_key` 的负载 `<=B_SAE`，需要提交：
+
+```text
+RPZ-SAE-FIN:
+  candidate_windows: explicit finite list or bounded local family；
+  local_state: survivor / lift / higher-defect status for each window；
+  verdict: each window either contains a survivor or routes to named higher defect。
+```
+
+该接口不要求证明全局 Fourier 矛盾；它只处理低负载孤立逃逸。
+
+## 3. RPZ-PDEC endpoint phase row
+
+**输入对象。**
+
+```text
+S_tau = {formal bad windows with the same persistent RPZ phase tau}
+F_tau = 1_{S_tau} - |S_tau|/Q
+```
+
+其中 `tau` 可以来自：
+
+```text
+BCB endpoint phase；
+LowerDescent grid_fail phase；
+LowerDescent puncture_block phase。
+```
+
+**验收义务。**
+
+接入 `h4-pdec-certificate-template.md`：
+
+```text
+PDEC-Explicit-Cert if S_tau is finite；
+PDEC-Dual-Cert if S_tau is an infinite same-phase family。
+```
+
+需要填写：
+
+```text
+Q, S_tau, F_tau；
+Fourier lower bound L_PDEC；
+CRT upper bound U_CRT；
+verification U_CRT < L_PDEC。
+```
+
+该接口只说明如何接入 PDEC；它不宣称 PDEC 已排除。
+
+## 4. RPZ-ColumnCRT endpoint displacement row
+
+当同一持久 RPZ 相位同时携带吸收标签 `ell` 与列见证位移余类 `a` 时，接入
+`h4-pdec-column-defect-routing-contract.md`：
+
+```text
+ColumnCRTDefect(ell, a, L_D, theta, S, Pi, lambda)。
+```
+
+需要填写：
+
+```text
+label selector lambda；
+same-column prime witness selector Pi；
+nonzero displacement residue a mod ell；
+load threshold L_D；
+finite certificate or source theorem proving load > L_D impossible。
+```
+
+若负载超过阈值，则进入 `ColumnCRTDefect`；若未超过阈值，则该相位可回到 PDEC/SAE
+账本继续处理。
+
+## 5. 当前审稿边界
+
+本文完成：
+
+```text
+下降阻断相位 finite ledger；
+RPZ-SAE / RPZ-PDEC / RPZ-ColumnCRT 三类证书材料化接口。
+```
+
+本文没有完成：
+
+```text
+RPZ-SAE-FIN 的窗口列表；
+RPZ-PDEC 的 U_CRT<L_PDEC 证书；
+RPZ-ColumnCRT 的 L_D 阈值证书；
+LowerDescent-Grid persistence 的全局证明。
+```
+
+下一步最小硬点：
+
+```text
+1. 对下降阻断相位生成 RPZ-SAE-FIN 候选清单；
+2. 对持久相位生成 RPZ-PDEC/ColumnCRT 证书骨架；
+3. 尝试证明正式下降路径始终避开阻断相位。
+```

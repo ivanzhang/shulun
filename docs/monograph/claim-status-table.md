@@ -234,6 +234,13 @@ Track B 证明下层零行下降引理，并在样本中将 `6` 条条件下层�
 阻断节点数为 `0`。当前最小硬点更新为 `LowerDescent-Grid persistence` 与
 `RPZ-SAE/PDEC/ColumnCRT certificate materialization`。
 
+新增 `docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_lower_descent_obstruction_ledger.py` 后，下降阻断已落入有限相位账本：
+实际下降转换节点 `20` 个全部为 `success`，实际阻断为 `0`；可能阻断分为 `grid_fail` 与
+`puncture_block`。新增 `docs/monograph/prime-matrix-rpz-certificate-materialization-interface.md`
+把阻断相位统一接入 `RPZ-SAE-FIN`、`RPZ-PDEC` 与 `RPZ-ColumnCRT` 证书。该项只压缩接口，
+不排除这些出口；当前下一步是生成 SAE 候选清单与 PDEC/ColumnCRT 证书骨架。
+
 新增 `docs/monograph/prime-matrix-gje-sae-terminal-band-decomposition.md` 后，`GJE-SAE` 又被拆成低行段与终端带：指数 `theta>1/2` 的普通短区间素数输入最多覆盖 `s<=q^{1/theta-1}` 量级低行段，不能覆盖 `s≈q` 的终端行。终端带经 `m=q^2-n` 镜像后成为“每个旧素数 `ell<=p` 只允许非零类 `q^2 mod ell`”的 CRT 覆盖问题。当前最小硬核更新为 `Terminal-SAE/PDEC`。
 
 新增 `docs/monograph/prime-matrix-terminal-sae-split-audit.md` 与 `docs/monograph/prime-matrix-terminal-sae-split-inequality.md` 后，终端带又被压成分层骨架/尾命中不等式。取 `y=max(2,floor(p/e))`，低筛骨架数 `G_y(h)` 若大于尾素数命中重数 `T_y(h)`，则尾素数无法覆盖骨架，终端行必有旧筛幸存者。审计到 `p<=1000` 的全部终端镜像块均满足正余量；当前最小硬点更新为 `TSI-or-PDEC`。

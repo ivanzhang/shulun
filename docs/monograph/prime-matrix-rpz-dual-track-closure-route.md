@@ -88,7 +88,43 @@ docs/monograph/prime-matrix-rpz-lower-zero-descent-audit.md。
 
 这说明样本中 Track B 不需要调用出口证书：每条 BCB 下层零行都可递归下降到 `p=2`。
 
-## 4. 双轨合成
+## 4. 下降阻断相位账本与证书材料化
+
+新增审计与接口：
+
+```text
+experiments/prime_matrix_rpz_lower_descent_obstruction_ledger.py；
+docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.json；
+docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.md；
+docs/monograph/prime-matrix-rpz-certificate-materialization-interface.md。
+```
+
+对每个相邻素数转换 `p -> r`，下降是否被阻断只依赖行号模
+
+\[
+P(r)=\prod_{\ell\le r}\ell.
+\]
+
+阻断被分成两类：
+
+```text
+grid_fail：p 行不完整包含任何 r 对齐行；
+puncture_block：完整 r 行全部被端点 p*a 穿孔。
+```
+
+有限下降树中的实际转换节点数为 `20`，实际状态全部为 `success`，实际阻断节点为 `0`。
+枚举相位表同时显示，可能的 `grid_fail` 相位是有限账本对象，`puncture_block` 在本批相位中密度为
+`0`。因此全局证明若遇到下降阻断，不再产生新逃逸，而是进入：
+
+```text
+RPZ-SAE-FIN；
+RPZ-PDEC endpoint phase row；
+RPZ-ColumnCRT endpoint displacement row。
+```
+
+这一步只完成“阻断相位可命名、可证书化”的接口，不排除 `SAE/PDEC/ColumnCRT`。
+
+## 5. 双轨合成
 
 当前 RPZ 链条可写成：
 
@@ -107,14 +143,16 @@ RPZ absorption
 1. 证明正式反例平台满足下层下降网格条件直到 `p=2`，或每个阻断都进入端点相位账本；
 2. 对所有进入账本的 `SAE/PDEC/ColumnCRT` 分支提交证书。
 
-## 5. 审稿边界
+## 6. 审稿边界
 
 本文完成：
 
 ```text
 Track A 的证书接口表；
 Track B 的下层零行下降引理；
-样本级下降到 p=2 的可复现审计。
+样本级下降到 p=2 的可复现审计；
+下降阻断相位有限账本；
+RPZ-SAE/PDEC/ColumnCRT 证书材料化接口。
 ```
 
 本文没有完成：
@@ -128,6 +166,8 @@ SAE/PDEC/ColumnCRT 证书排斥；
 下一步最小硬点更新为：
 
 ```text
-LowerDescent-Grid persistence
-and RPZ-SAE/PDEC/ColumnCRT certificate materialization。
+LowerDescent-Grid persistence；
+RPZ-SAE-FIN 候选清单；
+RPZ-PDEC/ColumnCRT 证书骨架；
+或证明正式下降路径始终避开阻断相位。
 ```

@@ -188,6 +188,13 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 有限审计显示样本 `6/6` 条件下层零行下降到 `p=2` 矛盾；全局外审前仍需证明该下降不被
 端点穿孔/网格缺口阻断，或把阻断送入上述证书接口。
 
+新增 `docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.md`、对应 JSON 与
+`experiments/prime_matrix_rpz_lower_descent_obstruction_ledger.py` 后，端点穿孔/网格缺口已被改写为
+有限相位账本：`grid_fail` 与 `puncture_block`。本批实际下降转换 `20` 个全部为 `success`，
+实际阻断为 `0`。新增 `docs/monograph/prime-matrix-rpz-certificate-materialization-interface.md`
+把所有阻断相位接入 `RPZ-SAE-FIN/PDEC/ColumnCRT` 三类证书。外审前剩余不再是“阻断是否可命名”，
+而是必须证明正式反例下降避开阻断相位，或填写并核验这些证书。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

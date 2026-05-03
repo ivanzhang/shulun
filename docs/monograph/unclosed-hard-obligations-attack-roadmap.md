@@ -539,6 +539,14 @@ Track A 固定 `RPZ-SAE/RPZ-PDEC/RPZ-ColumnCRT` 三类证书接口；Track B 证
 并在样本中把 `6` 条 BCB 条件下层零行全部下降到 `p=2` 直接矛盾，阻断节点数为 `0`。
 当前最小硬点更新为 `LowerDescent-Grid persistence + certificate materialization`。
 
+新增 `docs/monograph/prime-matrix-rpz-lower-descent-obstruction-ledger.md`、对应 JSON 与脚本
+`experiments/prime_matrix_rpz_lower_descent_obstruction_ledger.py` 后，`LowerDescent` 阻断不再是
+未命名异常。对每个相邻转换 `p -> r`，阻断由行号模 `P(r)` 的有限相位决定，并分为
+`grid_fail` 与 `puncture_block`。本批实际转换节点 `20` 个全部为 `success`，实际阻断为 `0`。
+新增 `docs/monograph/prime-matrix-rpz-certificate-materialization-interface.md` 把这些阻断相位并入
+`RPZ-SAE-FIN`、`RPZ-PDEC endpoint phase row` 与 `RPZ-ColumnCRT endpoint displacement row`。
+当前最小硬点进一步拆成：证明正式下降路径总在 `success` 相位，或提交上述三类证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
