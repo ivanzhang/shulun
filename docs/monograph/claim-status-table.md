@@ -37,6 +37,11 @@
 容量继承、条件出口路由行。它把可进入 `A,b,E,e` 的行与仍不可用的启发式行区分开；
 但尚未提交足以证明 `U_CRT<L_PDEC` 的完整约束表和全频率证书。
 
+新增 `docs/monograph/h4-pdec-admissible-constraint-table.md`。该文件给出第一版准入矩阵，
+把 PDEC 候选行分为 `Tautology / FiniteCert / SymbolicReady / ConditionalRouting /
+NeedsProof / Rejected`。当前已经明确拒绝 full-cycle balance 直接作用于坏窗子集、
+有限样本相位表直接全局推广、以及未证明镜像闭合时使用强 mirror equality。
+
 
 ## 内部逐行复核更新
 

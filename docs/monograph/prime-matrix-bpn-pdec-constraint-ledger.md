@@ -171,6 +171,11 @@ conditional routing: 违反该行会进入 SAE/Rankin/tail/H5 出口的剩余分
 因此，全周期 CRT 均衡、有限样本相位表、或完整零行族镜像等式不能自动成为任意
 persistent 坏窗子集的无条件约束。
 
+补充文档 `h4-pdec-admissible-constraint-table.md` 已把上述规则落实成第一版准入矩阵。
+准入等级为 `Tautology / FiniteCert / SymbolicReady / ConditionalRouting / NeedsProof /
+Rejected`。下一步生成正式 `A,b,E,e` 时必须只取已准入行；`NeedsProof` 行只能作为
+待攻目标，`Rejected` 行必须从证书输入中删除。
+
 ## 5. 第一批真实系数行
 
 脚本 `experiments/prime_matrix_bpn_pdec_real_constraint_rows.py` 已开始从完整 CRT 周期枚举中

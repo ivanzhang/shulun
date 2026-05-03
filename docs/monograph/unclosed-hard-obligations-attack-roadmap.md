@@ -242,6 +242,32 @@ H4-PDEC-S5：出口路由后的 conditional row。
 `tautology / finite certificate / symbolic capacity theorem / conditional routing / not yet admissible`，
 再生成正式 `A,b,E,e` 表。
 
+### 4.2C 本轮进展：约束准入表
+
+新增 `docs/monograph/h4-pdec-admissible-constraint-table.md`。该表把 PDEC 候选约束行
+逐项分为：
+
+```text
+Tautology；
+FiniteCert；
+SymbolicReady；
+ConditionalRouting；
+NeedsProof；
+Rejected。
+```
+
+当前可无争议进入证书的是非负性、质量行、已证明 `S subset Z` 后的 phase/block cap、
+有限范围证书行，以及带出口元数据的 conditional routing 行。当前明确不能进入的是：
+
+```text
+完整 CRT 周期均衡直接推出坏窗子集均衡；
+有限样本相位表直接推广到全体 P；
+未证明 m(S)=S 时使用 mirror equality。
+```
+
+因此 H4-PDEC 下一步从“准入规则”推进到“正式系数源”：column cap、low-hole bucket
+符号化、tail/core/Rankin/H5 条件路由元数据。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
