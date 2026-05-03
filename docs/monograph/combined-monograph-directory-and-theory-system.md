@@ -1073,3 +1073,10 @@ BCB-Core 的端点相位和长度强制该相交；若相交为空，则全体�
 当前层的最大 rejected run 为：`h=5:0`、`h=7:1`、`h=11:5`、`h=13:15`。样本中 `2/5`
 由长度单独强制 selector，`3/5` 仍依赖短候选端点相位。因此下一步必须直接攻短候选端点相位，
 不能只强化核心长度估计。
+
+新增 `docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.md` 后，短候选端点相位已从
+`u mod h` 细化到 `u mod hP(h)`。当前 `3/3` 个短候选实际样本都有 accepted selector；
+但完整相位族仍存在 all-rejected 相位：`(h,length)=(7,13)` 有 `588` 个、`(11,19)` 有
+`11880` 个、`(13,25)` 有 `344760` 个。每个 all-rejected 相位都带有
+`first_failure_key`，可回流到 seam/PDEC/ColumnCRT。剩余义务因此变成更精确的二选一：
+证明正式 BCB 构造的端点相位避开这些 all-rejected 类，或逐项闭合对应出口证书。

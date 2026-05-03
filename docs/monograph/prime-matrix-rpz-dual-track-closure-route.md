@@ -301,6 +301,7 @@ accepted-set 符号阶梯证书。
 BCB 起始数字账本。
 BCB accepted lower-row 选择器账本。
 selector gap 阈值账本。
+短候选端点相位账本。
 ```
 
 再新增
@@ -324,6 +325,9 @@ docs/monograph/prime-matrix-rpz-bcb-accepted-row-selector.md。
 experiments/prime_matrix_rpz_selector_gap_threshold.py；
 docs/monograph/prime-matrix-rpz-selector-gap-threshold.json；
 docs/monograph/prime-matrix-rpz-selector-gap-threshold.md。
+experiments/prime_matrix_rpz_short_candidate_phase_ledger.py；
+docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.json；
+docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -383,6 +387,11 @@ selector gap 阈值账本进一步给出长度自动分支：
 
 当前样本 `2/5` 由长度分支自动保证，`3/5` 仍需短候选端点相位。因此下一步应专攻短候选相位
 避开 rejected gaps。
+
+短候选端点相位账本进一步说明，端点相位必须看 `u mod hP(h)`。当前 `3/3` 个短候选实际样本
+均有 selector；但同一 `(h,length)` 的完整相位族中仍存在 all-rejected 类，且这些类都带有
+first-failure seam 键。因此路线不能改写成“所有短候选自动安全”；下一硬点是证明正式 BCB
+端点相位避开 all-rejected 类，或用已有 seam/PDEC/ColumnCRT 出口证书吸收。
 
 本文没有完成：
 

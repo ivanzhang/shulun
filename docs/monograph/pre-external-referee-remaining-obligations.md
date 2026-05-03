@@ -272,6 +272,11 @@ selector 存在定理：对正式 BCB 核心区间 `J`，证明完整下层候�
 与短候选端点相位分支。当前样本只有 `2/5` 可由长度自动保证，`3/5` 必须证明端点相位避开
 `A_h` 的 rejected gaps。
 
+新增 `docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.md` 后，短候选分支已被精确化：
+实际 `3/3` 个短候选样本均命中 selector，但完整 `u mod hP(h)` 相位族中仍有 all-rejected
+相位。外审前不能把“当前样本安全”写成“任意短相位安全”；必须证明正式 BCB 端点相位不落入
+all-rejected 类，或把这些类逐项送入 seam/PDEC/ColumnCRT 证书闭合。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

@@ -1,0 +1,459 @@
+{
+  "status": "rpz_short_candidate_endpoint_phase_ledger",
+  "sources": {
+    "core": "docs/monograph/prime-matrix-rpz-bcb-core-audit.json",
+    "selector_gap": "docs/monograph/prime-matrix-rpz-selector-gap-threshold.json"
+  },
+  "summary": {
+    "short_sample_records": 3,
+    "phase_families": 3,
+    "actual_records_with_selector": 3,
+    "actual_records_without_selector": 0,
+    "families_with_all_rejected_phases": 3
+  },
+  "phase_family_rows": [
+    {
+      "h": 7,
+      "length": 13,
+      "primorial": 210,
+      "endpoint_phase_period_hP": 1470,
+      "candidate_count_histogram": {
+        "1": 1470
+      },
+      "selector_count_by_candidate_count": {
+        "1": 882
+      },
+      "all_rejected_by_candidate_count": {
+        "1": 588
+      },
+      "rejected_first_failure_rows": [
+        {
+          "first_failure_key": [
+            7,
+            5,
+            3,
+            2
+          ],
+          "count": 294
+        },
+        {
+          "first_failure_key": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "count": 294
+        }
+      ],
+      "examples_by_candidate_count": {
+        "1": [
+          {
+            "u_mod_hP": 0,
+            "u_mod_h": 0,
+            "candidate_count": 1,
+            "selector_exists": true,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 1,
+                "accepted": true
+              }
+            ]
+          },
+          {
+            "u_mod_hP": 1,
+            "u_mod_h": 1,
+            "candidate_count": 1,
+            "selector_exists": true,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 1,
+                "accepted": true
+              }
+            ]
+          },
+          {
+            "u_mod_hP": 2,
+            "u_mod_h": 2,
+            "candidate_count": 1,
+            "selector_exists": false,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 2,
+                "accepted": false,
+                "first_failure_key": [
+                  7,
+                  5,
+                  3,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "h": 11,
+      "length": 19,
+      "primorial": 2310,
+      "endpoint_phase_period_hP": 25410,
+      "candidate_count_histogram": {
+        "0": 4620,
+        "1": 20790
+      },
+      "selector_count_by_candidate_count": {
+        "1": 8910
+      },
+      "all_rejected_by_candidate_count": {
+        "1": 11880
+      },
+      "rejected_first_failure_rows": [
+        {
+          "first_failure_key": [
+            7,
+            5,
+            3,
+            2
+          ],
+          "count": 2970
+        },
+        {
+          "first_failure_key": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "count": 2970
+        },
+        {
+          "first_failure_key": [
+            11,
+            7,
+            5,
+            5
+          ],
+          "count": 2970
+        },
+        {
+          "first_failure_key": [
+            11,
+            7,
+            6,
+            3
+          ],
+          "count": 2970
+        }
+      ],
+      "examples_by_candidate_count": {
+        "1": [
+          {
+            "u_mod_hP": 0,
+            "u_mod_h": 0,
+            "candidate_count": 1,
+            "selector_exists": true,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 1,
+                "accepted": true
+              }
+            ]
+          },
+          {
+            "u_mod_hP": 1,
+            "u_mod_h": 1,
+            "candidate_count": 1,
+            "selector_exists": true,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 1,
+                "accepted": true
+              }
+            ]
+          },
+          {
+            "u_mod_hP": 4,
+            "u_mod_h": 4,
+            "candidate_count": 1,
+            "selector_exists": true,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 2,
+                "accepted": true
+              }
+            ]
+          }
+        ],
+        "0": [
+          {
+            "u_mod_hP": 2,
+            "u_mod_h": 2,
+            "candidate_count": 0,
+            "selector_exists": false,
+            "candidate_packets": []
+          },
+          {
+            "u_mod_hP": 3,
+            "u_mod_h": 3,
+            "candidate_count": 0,
+            "selector_exists": false,
+            "candidate_packets": []
+          },
+          {
+            "u_mod_hP": 13,
+            "u_mod_h": 2,
+            "candidate_count": 0,
+            "selector_exists": false,
+            "candidate_packets": []
+          }
+        ]
+      }
+    },
+    {
+      "h": 13,
+      "length": 25,
+      "primorial": 30030,
+      "endpoint_phase_period_hP": 390390,
+      "candidate_count_histogram": {
+        "1": 390390
+      },
+      "selector_count_by_candidate_count": {
+        "1": 45630
+      },
+      "all_rejected_by_candidate_count": {
+        "1": 344760
+      },
+      "rejected_first_failure_rows": [
+        {
+          "first_failure_key": [
+            7,
+            5,
+            3,
+            2
+          ],
+          "count": 15210
+        },
+        {
+          "first_failure_key": [
+            7,
+            5,
+            4,
+            4
+          ],
+          "count": 15210
+        },
+        {
+          "first_failure_key": [
+            11,
+            7,
+            5,
+            5
+          ],
+          "count": 15210
+        },
+        {
+          "first_failure_key": [
+            11,
+            7,
+            6,
+            3
+          ],
+          "count": 15210
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            3,
+            5
+          ],
+          "count": 35490
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            4,
+            10
+          ],
+          "count": 35490
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            5,
+            4
+          ],
+          "count": 35490
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            6,
+            9
+          ],
+          "count": 35490
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            7,
+            3
+          ],
+          "count": 35490
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            8,
+            8
+          ],
+          "count": 35490
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            9,
+            2
+          ],
+          "count": 35490
+        },
+        {
+          "first_failure_key": [
+            13,
+            11,
+            10,
+            7
+          ],
+          "count": 35490
+        }
+      ],
+      "examples_by_candidate_count": {
+        "1": [
+          {
+            "u_mod_hP": 0,
+            "u_mod_h": 0,
+            "candidate_count": 1,
+            "selector_exists": true,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 1,
+                "accepted": true
+              }
+            ]
+          },
+          {
+            "u_mod_hP": 1,
+            "u_mod_h": 1,
+            "candidate_count": 1,
+            "selector_exists": true,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 1,
+                "accepted": true
+              }
+            ]
+          },
+          {
+            "u_mod_hP": 2,
+            "u_mod_h": 2,
+            "candidate_count": 1,
+            "selector_exists": false,
+            "candidate_packets": [
+              {
+                "row_mod_primorial": 2,
+                "accepted": false,
+                "first_failure_key": [
+                  13,
+                  11,
+                  9,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "actual_short_rows": [
+    {
+      "top_prime": 17,
+      "top_zero_row": 1211,
+      "h": 7,
+      "length": 13,
+      "u": 20574,
+      "u_mod_h": 1,
+      "u_mod_hP": 1464,
+      "candidate_rows": [
+        2940
+      ],
+      "candidate_packets": [
+        {
+          "row": 2940,
+          "phase_mod_primorial": 0,
+          "accepted": true,
+          "first_failure_key": null
+        }
+      ],
+      "selector_exists": true,
+      "family_all_rejected_count": 588
+    },
+    {
+      "top_prime": 23,
+      "top_zero_row": 59,
+      "h": 11,
+      "length": 19,
+      "u": 1338,
+      "u_mod_h": 7,
+      "u_mod_hP": 1338,
+      "candidate_rows": [
+        123
+      ],
+      "candidate_packets": [
+        {
+          "row": 123,
+          "phase_mod_primorial": 123,
+          "accepted": true,
+          "first_failure_key": null
+        }
+      ],
+      "selector_exists": true,
+      "family_all_rejected_count": 11880
+    },
+    {
+      "top_prime": 29,
+      "top_zero_row": 5210,
+      "h": 13,
+      "length": 25,
+      "u": 151062,
+      "u_mod_h": 2,
+      "u_mod_hP": 151062,
+      "candidate_rows": [
+        11622
+      ],
+      "candidate_packets": [
+        {
+          "row": 11622,
+          "phase_mod_primorial": 11622,
+          "accepted": true,
+          "first_failure_key": null
+        }
+      ],
+      "selector_exists": true,
+      "family_all_rejected_count": 344760
+    }
+  ],
+  "review_boundary": [
+    "短候选 selector 需要 u mod hP(h)，单纯 u mod h 不足以决定 A_h 命中。",
+    "当前短候选样本全部命中 accepted selector。",
+    "同一 (h,length) 相位族中仍存在 all-rejected 相位；全局证明必须排除正式构造命中这些相位。",
+    "all-rejected 相位已带 first_failure_key，可回流到 seam/PDEC/ColumnCRT。"
+  ]
+}

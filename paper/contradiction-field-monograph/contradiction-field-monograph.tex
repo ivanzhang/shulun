@@ -953,6 +953,18 @@ forces a selector.  In the current samples this explains two of the five BCB cor
 remaining three are short-candidate cases and require exact endpoint phase information.
 Thus the next proof obligation is not merely to enlarge $J$, but to control the endpoint
 phase of short cores relative to the rejected gaps of $A_h$.
+The short-candidate endpoint phase ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.md}
+\]
+performs this refinement at modulus $hP(h)$ rather than just modulo $h$.  In the current
+ledger the three short-candidate BCB records all hit an accepted selector.  However, the
+full $(h,\ell)$ phase families still contain all-rejected endpoint phases: $588$ for
+$(h,\ell)=(7,13)$, $11880$ for $(11,19)$, and $344760$ for $(13,25)$.  These rejected
+phases are not unnamed escapes; each carries a first-failure seam key and therefore returns
+to the seam/PDEC/ColumnCRT exits.  The remaining theorem-level gate is consequently exact:
+prove that the formal BCB construction avoids these all-rejected $hP(h)$ endpoint phases,
+or close the corresponding seam/PDEC/ColumnCRT certificates.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

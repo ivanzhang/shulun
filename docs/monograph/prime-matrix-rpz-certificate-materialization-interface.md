@@ -160,6 +160,7 @@ accepted-set 符号阶梯证书。
 BCB 起始数字账本。
 BCB accepted lower-row 选择器账本。
 selector gap 阈值账本。
+短候选端点相位账本。
 ```
 
 本文没有完成：
@@ -296,3 +297,8 @@ accepted count 公式，剩余义务是把正式反例起始行的 `a mod r` 来
 新增 `prime-matrix-rpz-selector-gap-threshold.md` 后，selector 证明接口拆成两类：
 若候选行数超过 `A_h` 的最大 rejected gap，则长度自动闭合；否则必须证明短候选端点相位
 避开 rejected gap。当前样本中 `2/5` 为长度分支，`3/5` 为短候选相位分支。
+
+新增 `prime-matrix-rpz-short-candidate-phase-ledger.md` 后，短候选相位接口已经材料化为
+`u mod hP(h)`。当前 `3/3` 个短候选实际样本均通过 selector；但完整相位族仍存在 all-rejected
+类。每个 all-rejected 类带有 `first_failure_key`，可接入 seam/PDEC/ColumnCRT。材料化接口的
+下一验收口径是：证明正式端点相位避开这些类，或填写对应出口证书。
