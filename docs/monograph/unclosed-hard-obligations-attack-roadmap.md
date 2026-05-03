@@ -508,6 +508,15 @@ survivor / TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ。
 若未触发 TailAnchor，则所有复活源必须落入滑动平台两端边界层；下一步要排除该边界层逃逸，
 或把它送入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-rpz-boundary-compressed-core-route.md`、
+`docs/monograph/prime-matrix-rpz-bcb-core-audit.md` 与脚本
+`experiments/prime_matrix_rpz_bcb_core_audit.py` 后，`RPZ-BCB` 已被进一步路由为
+`BCB-Core`：无 TailAnchor 时，强制中心区间 `J_{T0}=[L+A+T0,R+B-T0]`
+是半宽 `h`-筛零区间。同批样本中中心区间实际 `11` 个半宽幸存者全是尾锚核心源；
+删除这些尾锚源后 `5/5` 中心区间干净，且 `5/5` 中心区间含完整半宽行。当前最小硬点更新为
+`BCB-Grid/Endpoint exclusion`：证明正式平台中心区间必含完整下层行，或端点 seam
+失败进入 `SAE/PDEC/ColumnCRT`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

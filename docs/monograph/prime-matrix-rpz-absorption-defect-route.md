@@ -178,6 +178,16 @@ RPZ-Absorption
 这就是下一步最小可攻命题。它比原始 `Distributed-RPZ` 更窄，因为滑动平台已把非边界的
 分散吸收强制转回 TailAnchor。
 
+新增 `prime-matrix-rpz-boundary-compressed-core-route.md` 后，该命题的第一步已闭合为
+`BCB-Core`：在无 TailAnchor 条件下，中心区间
+`J_{T0}=[L+A+T0,R+B-T0]` 必为 `h`-筛零区间。剩余不再是任意边界压缩，而是：
+
+```text
+BCB-Grid/Endpoint exclusion。
+```
+
+即证明 `J_{T0}` 必含完整 `h` 对齐行，或端点缝合失败进入 `SAE/PDEC/ColumnCRT`。
+
 ## 6. 审稿边界
 
 本文完成：
@@ -196,4 +206,5 @@ TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ 五分支路由。
 正式 q-grid 零行到 RPZ 漂移窗口族的抽取映射。
 ```
 
-下一步应直接攻 `RPZ-BCB`，并把它写成“公共核心幸存者或端点缺陷”的容量不等式。
+下一步应直接攻 `BCB-Grid/Endpoint exclusion`，并把它写成“完整下层零行或端点缺陷”的
+网格相位不等式。

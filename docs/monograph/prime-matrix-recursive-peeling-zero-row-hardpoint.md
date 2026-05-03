@@ -311,3 +311,21 @@ RPZ-BCB（boundary-compressed barrier）。
 
 该命题比“递归推出连续零行”更弱，也比全局证明固定小 `D_0,L_D` 更局部：
 只需排除源删除后的边界层逃逸。
+
+新增 `prime-matrix-rpz-boundary-compressed-core-route.md` 与
+`prime-matrix-rpz-bcb-core-audit.md` 后，第三项已被严写为 `BCB-Core`：
+若无 TailAnchor，则平台中心
+
+```text
+J_{T0}=[L+A+T0,R+B-T0]
+```
+
+必为半宽 `h`-筛零区间。样本中该中心区间的 `11` 个幸存者全是尾锚核心源；
+条件排除 TailAnchor 后，`5/5` 个中心区间干净且含完整半宽行。下一硬点因此更新为：
+
+```text
+BCB-Grid/Endpoint exclusion。
+```
+
+也就是证明正式平台的 `J_{T0}` 必含完整 `h` 对齐行，或端点缝合相位进入
+`SAE/PDEC/ColumnCRT`。

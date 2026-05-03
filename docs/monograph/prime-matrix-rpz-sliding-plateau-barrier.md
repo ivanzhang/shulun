@@ -159,3 +159,17 @@ TailAnchor/PDEC/SAE 出口排斥证书。
 端点缺陷。
 
 这比原始 `Distributed-RPZ` 更窄：不再处理任意分散吸收，只处理源删除后的边界层逃逸。
+
+## 6. 后续推进：BCB-Core
+
+新增 `prime-matrix-rpz-boundary-compressed-core-route.md` 后，`RPZ-BCB` 已进一步路由为：
+
+```text
+no TailAnchor + sliding platform
+=> half-sieve zero core J_{T0}
+=> aligned lower zero row or SeamEndpoint/SAE/PDEC/ColumnCRT。
+```
+
+有限审计 `prime-matrix-rpz-bcb-core-audit.md` 显示，同批样本的强制中心区间实际幸存者
+全部是尾锚核心源；删除尾锚核心源后，`5/5` 个中心区间干净，且 `5/5` 个中心区间含完整半宽行。
+因此下一硬点再收窄为 `BCB-Grid/Endpoint exclusion`。

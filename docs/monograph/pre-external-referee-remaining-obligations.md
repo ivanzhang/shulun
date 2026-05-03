@@ -161,6 +161,13 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 因此外审前剩余进一步收窄为 `RPZ-BCB`：排除源删除后的边界压缩逃逸，或证明它进入
 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-rpz-boundary-compressed-core-route.md`、
+`docs/monograph/prime-matrix-rpz-bcb-core-audit.md` 与
+`experiments/prime_matrix_rpz_bcb_core_audit.py` 后，边界压缩分支已转化为强制中心零区间：
+若无 TailAnchor，则 `J_{T0}` 是半宽 `h`-筛零区间。有限审计显示中心幸存者全为尾锚核心源；
+条件删除后 `5/5` 中心区间含完整半宽行。外审前剩余进一步收窄为
+`BCB-Grid/Endpoint exclusion`，即下层对齐零行或端点 seam 缺陷的最终处理。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、
