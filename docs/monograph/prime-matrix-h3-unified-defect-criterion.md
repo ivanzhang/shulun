@@ -177,3 +177,13 @@ H3 is unconditionally proved.
 
 原因是 `(UDC-5)` 与 `(UDC-6)` 是平方根长度窗口上的低模缺陷排斥；它们正是当前主链的最后深输入，
 不能由有限样本、普通 Mertens 乘积或线性筛临界下界自动推出。
+
+补充边界文件：
+
+```text
+docs/monograph/prime-matrix-h3-pointwise-closure-boundary.md
+```
+
+该文件把最终硬点改写为第一行尺度的逐行转移：已证平均
+`avg_s M_H3(p,s)~pi(q)/2`，未证点态 `M_H3(p,s)>=kappa*pi(q)`。统一缺陷判据正是证明该点态转移的
+当前最短路线。

@@ -355,6 +355,11 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量是第一行素数尺度在
 `q^2` 平方壳层上的半密度投影。该桥接证明全局平均尺度，不替代逐行统一缺陷排斥。
 
+新增 `docs/monograph/prime-matrix-h3-pointwise-closure-boundary.md` 后，审稿边界进一步明确：
+平均尺度桥已严格证明，但逐行闭合等价于点态尺度转移
+`M_H3(p,s)>=kappa*pi(q)` 或等价的统一缺陷排斥。不能使用
+`avg_s M_H3~pi(q)/2` 直接推出每行 `M_H3>0`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

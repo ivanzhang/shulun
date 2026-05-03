@@ -374,6 +374,10 @@ SmallSkeletonOverload、ManyLabel-PDEC、Endpoint-SAE/ColumnCRT 的逐项证明�
 PNT 与相邻壳层单点性理论解释：H3 行平均为第一行素数数目的 `1/2+o(1)`。但这仍是平均尺度桥，
 不是逐行下界；外审前仍需统一缺陷排斥才能宣称行命题闭合。
 
+新增 `docs/monograph/prime-matrix-h3-pointwise-closure-boundary.md` 后，外审义务应精确写为：
+证明点态第一行尺度转移 `M_H3(p,s)>=kappa*pi(q)`，或证明统一缺陷判据中的 `D_y/F_y` 排斥。
+若两者都未证明，行命题必须保持未闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

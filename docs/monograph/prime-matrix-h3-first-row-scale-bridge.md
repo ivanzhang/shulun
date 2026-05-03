@@ -216,3 +216,12 @@ First-row scale conservation + no persistent low-mod defect
 ```
 
 第一项已由素数定理和相邻壳层单点性给出；第二项仍是最后统一缺陷排斥输入。
+
+补充审稿边界见：
+
+```text
+docs/monograph/prime-matrix-h3-pointwise-closure-boundary.md
+```
+
+该文件明确：本文证明的是全局平均尺度桥，不是逐行下界。逐行闭合等价于把第一行尺度
+`pi(q)` 逐行转移到每个平方壳层 `q` 窗口，或等价于排斥统一缺陷判据中的 `D_y/F_y` 逃逸。
