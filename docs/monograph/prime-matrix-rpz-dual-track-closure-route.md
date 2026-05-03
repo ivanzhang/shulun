@@ -296,6 +296,7 @@ ColumnCRT 阈值调参不可闭合障碍证书。
 三路线闭合审计与优先级排序。
 formal-family 下降相位自动机证书。
 formal-family rejected set 全量 seam 吸收证书。
+seam/PDEC/ColumnCRT 出口压力账本。
 ```
 
 再新增
@@ -304,6 +305,9 @@ formal-family rejected set 全量 seam 吸收证书。
 experiments/prime_matrix_rpz_rejected_phase_absorption.py；
 docs/monograph/prime-matrix-rpz-rejected-phase-absorption.json；
 docs/monograph/prime-matrix-rpz-rejected-phase-absorption.md。
+experiments/prime_matrix_rpz_seam_exit_pressure_ledger.py；
+docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.json；
+docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -318,6 +322,20 @@ uncovered rejected examples = 0。
 所以路线 A 已变成严格二分：`A_p` 内部相位下降到 `p=2`；`A_p` 外部相位全部回到已物化
 seam/PDEC/ColumnCRT 出口。它仍不排除这些出口，但关闭了“rejected set 是否还有未命名逃逸”的缺口。
 
+出口压力账本进一步显示：
+
+```text
+seam rows = 12；
+total seam support = 1752；
+killed endpoint phases = 1348；
+unit endpoint phases = 404；
+ColumnCRT displacement classes = 10；
+max aggregated displacement load = 96。
+```
+
+因此剩余出口不再是相位搜索，而是有限窄接口：`12` 条 seam、`12` 条单余类 PDEC 支持、
+`10` 个固定非零 ColumnCRT 位移类。
+
 本文没有完成：
 
 ```text
@@ -329,6 +347,7 @@ first-grid-fail seam 标准形的 PDEC/ColumnCRT 证书排斥；
 下一步最小硬点更新为：
 
 ```text
-LowerDescent-Grid persistence；
-排除 first-grid-fail seam 标准形的 PDEC/ColumnCRT 证书。
+formal-family 避开 12 条 seam；
+或 12 条 endpoint-PDEC 上界 U_CRT<L_PDEC；
+或 10 个固定非零 ColumnCRTDefect 排斥证书。
 ```

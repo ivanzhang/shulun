@@ -1007,3 +1007,19 @@ start phase not in A_p  => materialized first-grid-fail seam => PDEC/ColumnCRT/S
 
 这不是最终无条件闭合，因为 seam/PDEC/ColumnCRT 出口本身仍未排除；但它已排除 rejected set
 存在第三逃逸的可能。
+
+新增 `docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.md` 后，剩余出口进一步压缩：
+
+```text
+rejected phases absorbed = 27924
+seam rows = 12
+total seam support = 1752
+killed endpoint phases = 1348
+unit endpoint phases = 404
+ColumnCRT displacement classes = 10
+max aggregated displacement load = 96
+```
+
+因此当前真正硬点已经不是逐相位搜索，而是 `12` 条 seam 行、`12` 条单余类 PDEC 支持行、
+以及聚合后的 `10` 个固定非零 ColumnCRT 位移类。若要继续推进，只能证明 formal-family 避开
+这些 seam 行，或提交同口径 `U_CRT<L_PDEC` / `ColumnCRTDefect` 排斥证书。

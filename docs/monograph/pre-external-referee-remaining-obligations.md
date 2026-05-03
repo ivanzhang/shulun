@@ -249,6 +249,12 @@ formal-family 避开优先，其次 endpoint-PDEC，上述两者都失败时才�
 材料化：`27924` 个 rejected phase 全部追踪到 `12` 条已物化 first-grid-fail seam，未覆盖样例为
 `0`。外审前剩余不再是 rejected set 未命名，而是 seam/PDEC/ColumnCRT 出口排斥。
 
+新增 `docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.md` 后，该出口排斥义务已被压成
+可逐行审查的窄接口：`12` 条 seam 行、`1348` 个下层标签已杀死端点、`404` 个 unit endpoint
+相位、`10` 个固定非零 ColumnCRT 位移类，最大聚合位移负载为 `96`。外审前不能再把该项写成
+“继续查 rejected phase”；必须提交 formal-family 避开定理、endpoint-PDEC 上界，或独立
+`ColumnCRTDefect` 排斥定理。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

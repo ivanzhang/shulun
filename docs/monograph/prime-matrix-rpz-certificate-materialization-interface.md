@@ -155,6 +155,7 @@ ColumnCRT 阈值调参不可闭合障碍证书。
 三路线闭合审计与优先级排序。
 formal-family 下降相位自动机证书。
 formal-family rejected set 全量 seam 吸收证书。
+seam/PDEC/ColumnCRT 出口压力账本。
 ```
 
 本文没有完成：
@@ -253,3 +254,18 @@ uncovered rejected examples = 0。
 因此 `A_p` 判定现在是完整二分证书：接受相位下降到 `p=2`；拒绝相位全部进入已物化的
 first-grid-fail seam/PDEC/ColumnCRT 链。剩余不是“拒绝集是否可命名”，而是排除这些 seam 出口，
 或证明 formal-family 起始相位根本不进入拒绝集。
+
+新增 `prime-matrix-rpz-seam-exit-pressure-ledger.md` 后，这些 seam 出口被压缩为：
+
+```text
+seam rows = 12；
+total seam support = 1752；
+killed endpoint phases = 1348；
+unit endpoint phases = 404；
+ColumnCRT displacement classes = 10；
+max aggregated displacement load = 96。
+```
+
+因此材料化接口的剩余义务已经足够窄：`12` 条单余类 PDEC 支持行需要同口径
+`U_CRT<L_PDEC`，或 `10` 个固定非零 ColumnCRT 位移类需要独立排斥定理；否则必须证明
+formal-family 起始相位避开这 `12` 条 seam。

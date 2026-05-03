@@ -617,6 +617,13 @@ endpoint-PDEC 上界、或独立 `ColumnCRTDefect` 排斥定理。
 seam/PDEC/ColumnCRT：`27924` 个 rejected phase、`12` 个 distinct first-fail seams、未覆盖样例
 `0`。因此路线 A 的未命名逃逸已清零；剩余硬点重新集中到 seam/PDEC/ColumnCRT 出口排斥。
 
+新增 `docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.md` 后，seam/PDEC/ColumnCRT 出口
+本身被压成更小的审稿对象：`12` 条 seam 行覆盖 `1752` 个 seam 支持相位，其中 `1348` 个端点
+已由下层标签杀死；剩余 `404` 个 unit endpoint 相位全部进入固定非零 ColumnCRT 位移类，聚合后
+为 `10` 类，最大聚合负载 `96`。当前最小硬点因此更新为三选一：formal-family 避开这 `12`
+条 seam；为 `12` 条单余类 PDEC 支持提交 `U_CRT<L_PDEC`；或证明 `10` 个固定非零
+`ColumnCRTDefect` 类不可能出现。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
