@@ -139,6 +139,13 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 口径混合必须无损拆成同口径子族，不能作为单个 `PDEC-Dual-Cert`。剩余硬义务只保留
 拆分后的 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin` 出口。
 
+新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
+`ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
+`D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、
+阈值 `L_D` 和相位兼容权重 `W_{ell,a}(t)`。该项允许在剥离这些出口后的分支中加入
+`R_D(g)<=0` 与 `R_{ell,a}(g)<=L_D`。它仍不排除这些出口；外审前还需物化权重并证明
+阈值或提交排斥证书。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：

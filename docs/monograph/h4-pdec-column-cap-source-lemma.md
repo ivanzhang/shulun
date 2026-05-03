@@ -211,5 +211,7 @@ normalization used by PDEC-Dual-Cert。
 ```
 
 该 V1 账本登记了有限列见证半径、RCI/CDB 联合审计界值、LHB 列残基刚性有限界值和
-ColumnDefect 条件路由模板。它仍未把所有相位块 `C_j` 物化为机器可读数组；因此下一步是
-扩展审计脚本输出 `phase_block`、`bound` 与 `source_hash`。
+ColumnDefect 条件路由模板。新增 `h4-pdec-column-defect-routing-contract.md` 后，
+`ColumnRadius/ColumnCRT` 模板的路由合同已定式化为相位兼容权重
+`W_D(t),W_{\ell,a}(t)` 与阈值 `D_0,L_D`。它仍未把所有相位块或权重物化为机器可读数组；
+因此下一步是扩展审计脚本输出 `phase_block`、`weight`、`bound` 与 `source_hash`。

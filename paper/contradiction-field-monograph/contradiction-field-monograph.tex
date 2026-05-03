@@ -644,6 +644,17 @@ It closes the bookkeeping case in which one attempted certificate mixes differen
 $(Q,\tau,F,\kappa,p)$ types: such a family must be partitioned into homogeneous subfamilies
 before applying UPS-1 or the bad-window classification.  Thus mixed type is not an additional
 mathematical exit; the remaining exits are SAE, ColumnCRT/ColumnRadius, TailAnchor, and Rankin.
+The column-defect routing contract is recorded in
+\[
+  \texttt{docs/monograph/h4-pdec-column-defect-routing-contract.md}.
+\]
+It defines the conditional certificate objects for ColumnRadius and ColumnCRT rows:
+radius rows use a threshold $D_0$, a column-witness selector, and phase-compatible weights $W_D(t)$,
+while displacement rows use a label $\ell$, a non-zero displacement residue $a$, a threshold
+$L_D$, and phase-compatible weights $W_{\ell,a}(t)$.  Violating such a row routes to the named
+ColumnRadius or ColumnCRT exit after the zero displacement class has been separated by the
+same-column prime-witness rigidity.  This is a routing-contract closure only; the exits
+themselves still require materialized weights, thresholds, and exclusion certificates.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

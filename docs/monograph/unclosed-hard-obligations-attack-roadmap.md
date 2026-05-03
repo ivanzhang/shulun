@@ -403,6 +403,29 @@ theta=(Q,tau,F,kappa,p,window-shape)
 当前剩余数学出口因此更新为 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin`，不再包含
 口径混合作为独立出口。
 
+### 4.2M 本轮进展：ColumnDefect 路由合同
+
+新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md`。该文件把
+`ColumnRadiusDefect` 与 `ColumnCRTDefect` 从口头出口改成可审稿的条件证书对象：
+
+```text
+ColumnRadiusDefect：
+  半径阈值 D_0、列见证选择器、相位兼容权重 W_D(t)，违反 R_D(g)<=0 即回流出口；
+
+ColumnCRTDefect：
+  标签 ell、非零位移余类 a、阈值 L_D、相位兼容权重 W_{ell,a}(t)，
+  违反 R_{ell,a}(g)<=L_D 即回流出口。
+```
+
+该文件还严写 CD0 零类禁止：若坏行点由 `ell` 覆盖且同列素数见证不是 `ell`，
+则列位移 `d_c` 不能为 `0 mod ell`。因此 `ColumnCRT` 的入口不再依赖启发式均匀性，
+而是来自同列素数见证的不可零同余刚性。
+
+审稿边界：这一步只闭合 `CC-COND-RADIUS/CC-COND-DISPLOAD` 的路由元数据；
+它没有排除 `ColumnRadius/ColumnCRT`。当前最小硬点更新为物化
+相位兼容的 `W_D(t),W_{\ell,a}(t)`，并证明全局阈值 `D_0,L_D` 或把违反者继续送入
+`PDEC/TailAnchor/SAE`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

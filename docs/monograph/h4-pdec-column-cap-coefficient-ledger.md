@@ -81,6 +81,22 @@ remaining materialization task。
 
 条件行进入 `A` 的规则是：先在证明树中剥离对应出口，再把剩余分支限制写成线性约束。没有出口排斥时，这些行不能作为无条件证书行。
 
+新增 `h4-pdec-column-defect-routing-contract.md` 后，`CC-COND-RADIUS` 与
+`CC-COND-DISPLOAD` 的合同对象已经定式化：
+
+```text
+ColumnRadiusDefect:
+  输入 D_0、列见证选择器 Pi、高半径相位兼容权重 W_D(t)；
+  违反 R_D(g)<=0 即回流 ColumnRadiusDefect。
+
+ColumnCRTDefect:
+  输入标签 ell、非零位移余类 a、阈值 L_D、相位兼容权重 W_{ell,a}(t)；
+  违反 R_{ell,a}(g)<=L_D 即回流 ColumnCRTDefect。
+```
+
+因此条件路由行的“出口元数据”已闭合；仍未闭合的是 `D_0,L_D` 的全局解析阈值和
+有限摘要到机器可读相位兼容权重 `W_D,W_{ell,a}` 的物化。
+
 ## 6. 第一版已生成的机器输入
 
 新增 `h4-pdec-lhb-column-phase-blocks.json` 与 `h4-pdec-lhb-column-phase-blocks.md` 后，

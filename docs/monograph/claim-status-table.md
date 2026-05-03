@@ -80,6 +80,12 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 口径混合处理：混合坏窗集合必须按 `(Q,tau,F,kappa,p,window-shape)` 无损拆分，拆分后
 逐子族应用 `UPS-1` 和坏窗分类。剩余出口不再包含口径混合。
 
+新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md`。该文件把
+`ColumnRadius/ColumnCRT` 条件路由写成正式证书对象：`ColumnRadius` 行使用半径阈值
+`D_0`、列见证选择器和相位兼容权重 `W_D(t)`；`ColumnCRT` 行使用标签 `ell`、非零位移余类
+`a`、阈值 `L_D` 和相位兼容权重 `W_{ell,a}(t)`。该项闭合的是 `CC-COND-RADIUS/CC-COND-DISPLOAD`
+的路由元数据，不是出口排斥；下一步仍需物化权重并证明阈值或排除这些出口。
+
 
 ## 内部逐行复核更新
 
