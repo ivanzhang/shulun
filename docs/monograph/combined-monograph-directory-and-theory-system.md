@@ -1080,3 +1080,15 @@ BCB-Core 的端点相位和长度强制该相交；若相交为空，则全体�
 `11880` 个、`(13,25)` 有 `344760` 个。每个 all-rejected 相位都带有
 `first_failure_key`，可回流到 seam/PDEC/ColumnCRT。剩余义务因此变成更精确的二选一：
 证明正式 BCB 构造的端点相位避开这些 all-rejected 类，或逐项闭合对应出口证书。
+
+新增 `docs/monograph/prime-matrix-rpz-short-phase-block-formula.md` 后，短候选端点禁区进一步
+公式化。因当前短候选均满足 `length<2h`，一个端点最多包含一个完整 `h` 行；行号 `m`
+对应端点块
+
+```text
+mh-length+1 <= u <= (m-1)h+1，
+```
+
+块宽为 `length-h+1`。于是 all-rejected 端点集合等于 rejected 行相位块的并集。三族公式均与
+完整枚举一致；实际端点到 all-rejected 集合的距离分别为 `7,6,1`。剩余硬点被压成：
+从正式 BCB 构造推出候选行相位属于 `A_h`，否则闭合其 first-failure 出口。

@@ -161,6 +161,7 @@ BCB 起始数字账本。
 BCB accepted lower-row 选择器账本。
 selector gap 阈值账本。
 短候选端点相位账本。
+短候选端点禁区块公式账本。
 ```
 
 本文没有完成：
@@ -302,3 +303,8 @@ accepted count 公式，剩余义务是把正式反例起始行的 `a mod r` 来
 `u mod hP(h)`。当前 `3/3` 个短候选实际样本均通过 selector；但完整相位族仍存在 all-rejected
 类。每个 all-rejected 类带有 `first_failure_key`，可接入 seam/PDEC/ColumnCRT。材料化接口的
 下一验收口径是：证明正式端点相位避开这些类，或填写对应出口证书。
+
+新增 `prime-matrix-rpz-short-phase-block-formula.md` 后，短候选端点接口已经不需要逐点枚举：
+all-rejected 端点集合等于 rejected 行相位的端点块并集。当前三族公式全部匹配枚举，实际端点
+到禁区距离为正。材料化接口的剩余输入是候选行相位归属证明 `m mod P(h) in A_h`；失败时
+直接填写该行相位的 first-failure 出口证书。

@@ -965,6 +965,22 @@ phases are not unnamed escapes; each carries a first-failure seam key and theref
 to the seam/PDEC/ColumnCRT exits.  The remaining theorem-level gate is consequently exact:
 prove that the formal BCB construction avoids these all-rejected $hP(h)$ endpoint phases,
 or close the corresponding seam/PDEC/ColumnCRT certificates.
+The follow-up forbidden-block ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-short-phase-block-formula.md}
+\]
+removes another layer of enumeration.  Since the relevant short cores have length
+$\ell<2h$, a starting endpoint $u$ contains at most one complete $h$-row.  For a lower row
+$m$, the endpoint interval that contains it is exactly
+\[
+  mh-\ell+1\le u\le (m-1)h+1,
+\]
+of width $\ell-h+1$.  Hence the all-rejected endpoint set is the disjoint union of such
+blocks over rejected row phases $m\bmod P(h)$.  The formula matches enumeration in all
+three short families, and the current endpoints have positive distance from the rejected
+endpoint union.  The remaining non-enumerative input is therefore narrower still: derive
+from the formal BCB construction that the induced candidate row phase belongs to $A_h$,
+or else close its named first-failure exit.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

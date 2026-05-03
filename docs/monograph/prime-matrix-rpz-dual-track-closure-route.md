@@ -302,6 +302,7 @@ BCB 起始数字账本。
 BCB accepted lower-row 选择器账本。
 selector gap 阈值账本。
 短候选端点相位账本。
+短候选端点禁区块公式账本。
 ```
 
 再新增
@@ -328,6 +329,9 @@ docs/monograph/prime-matrix-rpz-selector-gap-threshold.md。
 experiments/prime_matrix_rpz_short_candidate_phase_ledger.py；
 docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.json；
 docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.md。
+experiments/prime_matrix_rpz_short_phase_block_formula.py；
+docs/monograph/prime-matrix-rpz-short-phase-block-formula.json；
+docs/monograph/prime-matrix-rpz-short-phase-block-formula.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -392,6 +396,16 @@ selector gap 阈值账本进一步给出长度自动分支：
 均有 selector；但同一 `(h,length)` 的完整相位族中仍存在 all-rejected 类，且这些类都带有
 first-failure seam 键。因此路线不能改写成“所有短候选自动安全”；下一硬点是证明正式 BCB
 端点相位避开 all-rejected 类，或用已有 seam/PDEC/ColumnCRT 出口证书吸收。
+
+短候选端点禁区块公式账本把 all-rejected 端点集合写成显式块并集：
+
+```text
+mh-length+1 <= u <= (m-1)h+1。
+```
+
+这里 `m mod P(h)` 为 rejected 行相位，块宽为 `length-h+1`。当前三族公式与枚举完全一致，
+实际端点到 all-rejected 集合距离为 `7,6,1`。因此下一硬点进一步收窄为候选行相位证明：
+正式 BCB 构造必须推出 `m mod P(h) in A_h`，否则进入对应 first-failure 出口。
 
 本文没有完成：
 

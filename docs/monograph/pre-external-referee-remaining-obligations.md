@@ -277,6 +277,12 @@ selector 存在定理：对正式 BCB 核心区间 `J`，证明完整下层候�
 相位。外审前不能把“当前样本安全”写成“任意短相位安全”；必须证明正式 BCB 端点相位不落入
 all-rejected 类，或把这些类逐项送入 seam/PDEC/ColumnCRT 证书闭合。
 
+新增 `docs/monograph/prime-matrix-rpz-short-phase-block-formula.md` 后，all-rejected 类已由块公式
+替代枚举：当 `length<2h` 时，rejected 行相位 `m mod P(h)` 给出端点禁区
+`mh-length+1 <= u <= (m-1)h+1`。当前三族公式全部匹配枚举，实际端点到禁区集合距离为正。
+外审剩余不再是端点集合计算，而是证明正式 BCB 构造诱导的候选行相位属于 `A_h`，或闭合其
+first-failure 出口。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

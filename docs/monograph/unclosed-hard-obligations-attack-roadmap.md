@@ -650,6 +650,12 @@ seam/PDEC/ColumnCRT：`27924` 个 rejected phase、`12` 个 distinct first-fail 
 从正式 BCB 构造推出端点相位避开 all-rejected 类；若无法推出，则把这些类接入
 seam/PDEC/ColumnCRT 出口证书。
 
+新增 `docs/monograph/prime-matrix-rpz-short-phase-block-formula.md` 后，该硬点继续压缩：
+all-rejected 端点类是 rejected 行相位的显式端点块
+`mh-length+1 <= u <= (m-1)h+1`。三族公式均已匹配枚举，实际端点均有正距离。当前最小
+可攻命题变为：证明正式 BCB 诱导的候选行相位属于 `A_h`；否则该候选行的
+first-failure seam/PDEC/ColumnCRT 证书必须闭合。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

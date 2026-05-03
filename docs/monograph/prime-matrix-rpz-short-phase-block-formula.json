@@ -1,0 +1,137 @@
+{
+  "status": "rpz_short_candidate_endpoint_forbidden_block_formula",
+  "source": "docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.json",
+  "summary": {
+    "families": 3,
+    "actual_short_records": 3,
+    "families_with_formula_match": 3,
+    "actual_records_accepted": 3
+  },
+  "family_rows": [
+    {
+      "h": 7,
+      "length": 13,
+      "primorial": 210,
+      "endpoint_period_hP": 1470,
+      "endpoint_window_width": 7,
+      "accepted_row_phase_count": 126,
+      "rejected_row_phase_count": 84,
+      "no_candidate_formula": 0,
+      "selector_formula": 882,
+      "all_rejected_formula": 588,
+      "no_candidate_enumerated": 0,
+      "selector_enumerated": 882,
+      "all_rejected_enumerated": 588,
+      "block_formula_matches_enumeration": true
+    },
+    {
+      "h": 11,
+      "length": 19,
+      "primorial": 2310,
+      "endpoint_period_hP": 25410,
+      "endpoint_window_width": 9,
+      "accepted_row_phase_count": 990,
+      "rejected_row_phase_count": 1320,
+      "no_candidate_formula": 4620,
+      "selector_formula": 8910,
+      "all_rejected_formula": 11880,
+      "no_candidate_enumerated": 4620,
+      "selector_enumerated": 8910,
+      "all_rejected_enumerated": 11880,
+      "block_formula_matches_enumeration": true
+    },
+    {
+      "h": 13,
+      "length": 25,
+      "primorial": 30030,
+      "endpoint_period_hP": 390390,
+      "endpoint_window_width": 13,
+      "accepted_row_phase_count": 3510,
+      "rejected_row_phase_count": 26520,
+      "no_candidate_formula": 0,
+      "selector_formula": 45630,
+      "all_rejected_formula": 344760,
+      "no_candidate_enumerated": 0,
+      "selector_enumerated": 45630,
+      "all_rejected_enumerated": 344760,
+      "block_formula_matches_enumeration": true
+    }
+  ],
+  "actual_rows": [
+    {
+      "top_prime": 17,
+      "top_zero_row": 1211,
+      "h": 7,
+      "length": 13,
+      "u": 20574,
+      "u_mod_hP": 1464,
+      "endpoint_distance_to_all_rejected": 7,
+      "candidate_row": 2940,
+      "candidate_phase_mod_primorial": 0,
+      "candidate_accepted": true,
+      "endpoint_block": [
+        20568,
+        20574
+      ],
+      "endpoint_offset_from_block_left": 6,
+      "endpoint_offset_to_block_right": 0,
+      "accepted": true,
+      "accepted_run_length": 2,
+      "accepted_run_left_steps": 0,
+      "accepted_run_right_steps": 1,
+      "row_phase_margin_to_rejected": 1
+    },
+    {
+      "top_prime": 23,
+      "top_zero_row": 59,
+      "h": 11,
+      "length": 19,
+      "u": 1338,
+      "u_mod_hP": 1338,
+      "endpoint_distance_to_all_rejected": 6,
+      "candidate_row": 123,
+      "candidate_phase_mod_primorial": 123,
+      "candidate_accepted": true,
+      "endpoint_block": [
+        1335,
+        1343
+      ],
+      "endpoint_offset_from_block_left": 3,
+      "endpoint_offset_to_block_right": 5,
+      "accepted": true,
+      "accepted_run_length": 1,
+      "accepted_run_left_steps": 0,
+      "accepted_run_right_steps": 0,
+      "row_phase_margin_to_rejected": 1
+    },
+    {
+      "top_prime": 29,
+      "top_zero_row": 5210,
+      "h": 13,
+      "length": 25,
+      "u": 151062,
+      "u_mod_hP": 151062,
+      "endpoint_distance_to_all_rejected": 1,
+      "candidate_row": 11622,
+      "candidate_phase_mod_primorial": 11622,
+      "candidate_accepted": true,
+      "endpoint_block": [
+        151062,
+        151074
+      ],
+      "endpoint_offset_from_block_left": 0,
+      "endpoint_offset_to_block_right": 12,
+      "accepted": true,
+      "accepted_run_length": 1,
+      "accepted_run_left_steps": 0,
+      "accepted_run_right_steps": 0,
+      "row_phase_margin_to_rejected": 1
+    }
+  ],
+  "review_boundary": [
+    "当 length<2h 时，每个端点最多包含一个完整 h 行。",
+    "all-rejected 端点集合等于 rejected 行相位产生的闭区间块并集。",
+    "当前实际短候选端点均落在 accepted 行相位块内。",
+    "全局仍需证明正式 BCB 端点相位避开 rejected 行相位块，或闭合对应 seam/PDEC/ColumnCRT 出口。"
+  ]
+}
