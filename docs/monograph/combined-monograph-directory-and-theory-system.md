@@ -1415,6 +1415,9 @@ SAE/endpoint 证书。
 继续把 Bohr-cap 写成组件路由：大 `d=(h,R)` 是低有效模集中，小 `d` 给出短弧组件集中。
 两者都必须进入 PDEC/ColumnCRT 或 SAE/endpoint，不能回流到 KLS 主项。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-high-gcd-descent.md` 后，大 `d` 分支已无损下降
+到低有效模数 `R/d`，不再作为独立目录项保留；合著稿剩余应标为低有效模出口和短弧组件出口。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

@@ -448,6 +448,10 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 承载至少 `(L-alpha U)/(d(1-alpha))` 的质量。剩余因此变为 high-gcd cap 的低有效模集中
 排斥，或 short-arc cap 的 PDEC/SAE 证书化。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-high-gcd-descent.md` 后，high-gcd cap 已不再是
+独立剩余：若 `d=(h,R)>D_0`，投影到 `R'=R/d` 保持 Fourier 系数与 Bohr-cap 质量，且
+有效模数严格下降。当前剩余随之收窄为低有效模 PDEC/KLS 出口和 short-arc cap 排斥。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

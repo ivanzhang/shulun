@@ -139,3 +139,7 @@ Short-arc cap:
 
 这就是 Bohr-cap 层面的最窄剩余。
 
+后续 high-gcd 下降见 `docs/monograph/prime-matrix-h3-dsb-hlc-high-gcd-descent.md`。该文证明
+若 `d=(h,R)>D_0`，则失败频率和 Bohr-cap 质量都无损投影到 `R'=R/d`：
+`\hat g_R(h)=\hat g_{R'}(h/d)`，且帽内质量保持。每次下降使有效模数至少缩小 `D_0`，
+所以 high-gcd cap 不能作为独立出口，最终回到低有效模 PDEC/KLS 或 short-arc cap。
