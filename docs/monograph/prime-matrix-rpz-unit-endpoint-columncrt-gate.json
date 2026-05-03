@@ -1,0 +1,3208 @@
+{
+  "status": "rpz_unit_endpoint_columncrt_gate_certificate",
+  "source": "docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.json",
+  "summary": {
+    "gate_row_count": 12,
+    "unit_endpoint_phase_count": 404,
+    "rows_with_column_identity_ok": 12,
+    "rows_with_explicit_same_column_witness": 12,
+    "rows_with_nonzero_displacement": 12,
+    "rows_with_fixed_unit_residue_column": 12,
+    "rows_with_fixed_unit_row_mod_p": 12
+  },
+  "gate_rows": [
+    {
+      "p": 7,
+      "r": 5,
+      "gap": 2,
+      "delta": 3,
+      "row_residue_mod_r": 2,
+      "unit_endpoint_support_size": 2,
+      "lower_column_mod_r": 4,
+      "lower_column_expected_from_right_cap": 4,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 19,
+        "witness_row_zero_based": 3
+      },
+      "endpoint_lower_row_mod_p": 2,
+      "columncrt_label": 7,
+      "columncrt_displacement_mod_p": 1,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 7,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 17,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 7,
+      "r": 5,
+      "gap": 2,
+      "delta": 4,
+      "row_residue_mod_r": 4,
+      "unit_endpoint_support_size": 2,
+      "lower_column_mod_r": 3,
+      "lower_column_expected_from_right_cap": 3,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 3,
+        "witness_row_zero_based": 0
+      },
+      "endpoint_lower_row_mod_p": 5,
+      "columncrt_label": 7,
+      "columncrt_displacement_mod_p": 2,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 19,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 29,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "gap": 4,
+      "delta": 5,
+      "row_residue_mod_r": 5,
+      "unit_endpoint_support_size": 8,
+      "lower_column_mod_r": 6,
+      "lower_column_expected_from_right_cap": 6,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 13,
+        "witness_row_zero_based": 1
+      },
+      "endpoint_lower_row_mod_p": 7,
+      "columncrt_label": 11,
+      "columncrt_displacement_mod_p": 5,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 19,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 47,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 61,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 89,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 103,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 131,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 173,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 187,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 7,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "gap": 4,
+      "delta": 6,
+      "row_residue_mod_r": 3,
+      "unit_endpoint_support_size": 8,
+      "lower_column_mod_r": 5,
+      "lower_column_expected_from_right_cap": 5,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 5,
+        "witness_row_zero_based": 0
+      },
+      "endpoint_lower_row_mod_p": 4,
+      "columncrt_label": 11,
+      "columncrt_displacement_mod_p": 7,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 17,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 31,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 59,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 73,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 101,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 143,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 157,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 199,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 3,
+      "row_residue_mod_r": 5,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 10,
+      "lower_column_expected_from_right_cap": 10,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 43,
+        "witness_row_zero_based": 3
+      },
+      "endpoint_lower_row_mod_p": 5,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 11,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 71,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 137,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 181,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 247,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 269,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 313,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 379,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 401,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 467,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 533,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 577,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 599,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 643,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 709,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 731,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 797,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 841,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 863,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 907,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 929,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1039,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1061,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1171,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1193,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1237,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1259,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1303,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1369,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1391,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1457,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1501,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1523,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1567,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1633,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1699,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1721,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1787,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1831,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1853,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1919,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1963,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2029,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2117,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2161,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2183,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2227,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2249,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2293,
+          "endpoint_mod_r": 10,
+          "endpoint_lower_row_mod_p": 5,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 4,
+      "row_residue_mod_r": 10,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 9,
+      "lower_column_expected_from_right_cap": 9,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 31,
+        "witness_row_zero_based": 2
+      },
+      "endpoint_lower_row_mod_p": 11,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 4,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 43,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 109,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 131,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 197,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 241,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 263,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 307,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 373,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 439,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 461,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 527,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 571,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 593,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 659,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 703,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 769,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 857,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 901,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 923,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 967,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 989,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1033,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1121,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1187,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1231,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1297,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1319,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1363,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1429,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1451,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1517,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1583,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1627,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1649,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1693,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1759,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1781,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1847,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1891,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1913,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1957,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1979,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2089,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2111,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2221,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2243,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2287,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2309,
+          "endpoint_mod_r": 9,
+          "endpoint_lower_row_mod_p": 11,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 5,
+      "row_residue_mod_r": 4,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 8,
+      "lower_column_expected_from_right_cap": 8,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 19,
+        "witness_row_zero_based": 1
+      },
+      "endpoint_lower_row_mod_p": 4,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 10,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 37,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 59,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 103,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 169,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 191,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 257,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 323,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 367,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 389,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 433,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 499,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 521,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 587,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 631,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 653,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 697,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 719,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 829,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 851,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 961,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 983,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1027,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1049,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1093,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1159,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1181,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1247,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1291,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1313,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1357,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1423,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1489,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1511,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1577,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1621,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1643,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1709,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1753,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1819,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1907,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1951,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1973,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2017,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2039,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2083,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2171,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2237,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2281,
+          "endpoint_mod_r": 8,
+          "endpoint_lower_row_mod_p": 4,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 6,
+      "row_residue_mod_r": 9,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 7,
+      "lower_column_expected_from_right_cap": 7,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 7,
+        "witness_row_zero_based": 0
+      },
+      "endpoint_lower_row_mod_p": 10,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 3,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 31,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 53,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 97,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 163,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 229,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 251,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 317,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 361,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 383,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 449,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 493,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 559,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 647,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 691,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 713,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 757,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 779,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 823,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 911,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 977,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1021,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1087,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1109,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1153,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1219,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1241,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1307,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1373,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1417,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1439,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1483,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1549,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1571,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1637,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1681,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1703,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1747,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1769,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1879,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1901,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2011,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2033,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2077,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2099,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2143,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2209,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2231,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2297,
+          "endpoint_mod_r": 7,
+          "endpoint_lower_row_mod_p": 10,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 7,
+      "row_residue_mod_r": 3,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 6,
+      "lower_column_expected_from_right_cap": 6,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 17,
+        "witness_row_zero_based": 1
+      },
+      "endpoint_lower_row_mod_p": 3,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 11,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 47,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 113,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 157,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 179,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 223,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 289,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 311,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 377,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 421,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 443,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 487,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 509,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 619,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 641,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 751,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 773,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 817,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 839,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 883,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 949,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 971,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1037,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1081,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1103,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1147,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1213,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1279,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1301,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1367,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1411,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1433,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1499,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1543,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1609,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1697,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1741,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1763,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1807,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1829,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1873,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1961,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2027,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2071,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2137,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2159,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2203,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2269,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2291,
+          "endpoint_mod_r": 6,
+          "endpoint_lower_row_mod_p": 3,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 8,
+      "row_residue_mod_r": 8,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 5,
+      "lower_column_expected_from_right_cap": 5,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 5,
+        "witness_row_zero_based": 0
+      },
+      "endpoint_lower_row_mod_p": 9,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 4,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 19,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 41,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 107,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 151,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 173,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 239,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 283,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 349,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 437,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 481,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 503,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 547,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 569,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 613,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 701,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 767,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 811,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 877,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 899,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 943,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1009,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1031,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1097,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1163,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1207,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1229,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1273,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1339,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1361,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1427,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1471,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1493,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1537,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1559,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1669,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1691,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1801,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1823,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1867,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1889,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1933,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1999,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2021,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2087,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2131,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2153,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2197,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2263,
+          "endpoint_mod_r": 5,
+          "endpoint_lower_row_mod_p": 9,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 9,
+      "row_residue_mod_r": 2,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 4,
+      "lower_column_expected_from_right_cap": 4,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 37,
+        "witness_row_zero_based": 3
+      },
+      "endpoint_lower_row_mod_p": 2,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 1,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 13,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 79,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 101,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 167,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 211,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 233,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 277,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 299,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 409,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 431,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 541,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 563,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 607,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 629,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 673,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 739,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 761,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 827,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 871,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 893,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 937,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1003,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1069,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1091,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1157,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1201,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1223,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1289,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1333,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1399,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1487,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1531,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1553,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1597,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1619,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1663,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1751,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1817,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1861,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1927,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1949,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1993,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2059,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2081,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2147,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2213,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2257,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2279,
+          "endpoint_mod_r": 4,
+          "endpoint_lower_row_mod_p": 2,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "gap": 2,
+      "delta": 10,
+      "row_residue_mod_r": 7,
+      "unit_endpoint_support_size": 48,
+      "lower_column_mod_r": 3,
+      "lower_column_expected_from_right_cap": 3,
+      "column_identity_ok": true,
+      "column_is_nontrivial": true,
+      "same_column_witness": {
+        "witness_prime": 3,
+        "witness_row_zero_based": 0
+      },
+      "endpoint_lower_row_mod_p": 8,
+      "columncrt_label": 13,
+      "columncrt_displacement_mod_p": 5,
+      "columncrt_displacement_nonzero": true,
+      "unit_residue_checks": [
+        {
+          "a_mod_Q": 29,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 73,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 139,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 227,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 271,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 293,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 337,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 359,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 403,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 491,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 557,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 601,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 667,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 689,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 733,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 799,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 821,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 887,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 953,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 997,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1019,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1063,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1129,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1151,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1217,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1261,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1283,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1327,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1349,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1459,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1481,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1591,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1613,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1657,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1679,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1723,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1789,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1811,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1877,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1921,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1943,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 1987,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2053,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2119,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2141,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2207,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2251,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        },
+        {
+          "a_mod_Q": 2273,
+          "endpoint_mod_r": 3,
+          "endpoint_lower_row_mod_p": 8,
+          "column_ok": true,
+          "row_mod_p_ok": true
+        }
+      ],
+      "all_unit_residues_have_fixed_column": true,
+      "all_unit_residues_have_fixed_row_mod_p": true,
+      "gate_verdict": "routes_to_fixed_nonzero_columncrt_residue",
+      "remaining_for_exclusion": [
+        "把正式反例族映射到这些 unit endpoint rows",
+        "给出全局同列素数见证或列命题输入",
+        "证明 ColumnCRTDefect 阈值 L_D 不可被超过，或将超过视为已排除出口"
+      ]
+    }
+  ],
+  "review_boundary": [
+    "本证书证明 unit endpoint seam 的列位移入口已标准化",
+    "本证书不排除 ColumnCRTDefect",
+    "全局闭合仍需 ColumnCRT 阈值或正式反例族避开证明"
+  ]
+}

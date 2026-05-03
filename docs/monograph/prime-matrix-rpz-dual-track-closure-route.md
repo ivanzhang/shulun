@@ -198,6 +198,26 @@ Endpoint split:
 `404` 个 unit endpoint 相位：它们需要 endpoint-PDEC 的 `U_CRT<L_PDEC`，或需要
 ColumnCRT 的 `Pi,lambda,L_D` 位移阈值证书。
 
+进一步新增
+
+```text
+experiments/prime_matrix_rpz_unit_endpoint_columncrt_gate.py；
+docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.json；
+docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.md。
+```
+
+该门控证书证明 unit endpoint 的下层列不是自由变量。若 `a≡rho mod r`，则
+
+```text
+c = ap mod r = p*rho mod r = r+g-delta；
+H_endpoint ≡ -c*r^{-1} mod p。
+```
+
+对每个显式同列素数见证 `pi=h*r+c`，位移 `d=h-H_endpoint mod p` 与 `a` 无关且非零。
+当前账本 `12/12` 门控行通过，覆盖全部 `404` 个 unit endpoint 相位。因此持久 unit seam
+已经被路由到固定非零 `ColumnCRTDefect(p,d)` 候选；剩余不再是构造位移入口，而是排除
+该 `ColumnCRT` 阈值或证明正式反例族避开这些门控行。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -234,6 +254,7 @@ RPZ 出口证书骨架包；
 首阻断 grid_fail 二分定理。
 first-grid-fail seam 标准形证书。
 first-grid-fail seam 的单余类 PDEC/Fourier 支持包与端点分裂账本。
+unit endpoint seam 的固定非零 ColumnCRT 位移门控证书。
 ```
 
 本文没有完成：

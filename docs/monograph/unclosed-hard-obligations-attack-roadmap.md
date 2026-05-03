@@ -579,7 +579,22 @@ lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行各 `3` 条。`puncture_block`
 新增 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md`、对应 JSON 与脚本
 `experiments/prime_matrix_rpz_first_grid_fail_seam_certificate.py` 后，first-grid-fail 已压成双帽
 seam 标准形：`12` 个 seam 相位行覆盖完整 `Q` 中 `1752` 个 grid_fail 相位，计数不一致为 `0`。
-当前最小硬点更新为：对这些双帽 seam 标准形提交 `PDEC/ColumnCRT` 排斥证书。
+增强账本进一步给出：`1348` 个端点相位已由下层标签杀死，`404` 个 unit endpoint 相位需要
+endpoint-PDEC 或 ColumnCRT。
+
+新增 `docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.md` 与脚本
+`experiments/prime_matrix_rpz_unit_endpoint_columncrt_gate.py` 后，unit endpoint 分支被压到固定非零
+ColumnCRT 位移：
+
+```text
+c=ap mod r=r+(p-r)-delta；
+H_endpoint ≡ -c*r^{-1} mod p；
+d=h_witness-H_endpoint mod p != 0。
+```
+
+当前 `12/12` 门控行都有显式同列素数见证，覆盖全部 `404` 个 unit endpoint 相位。当前最小硬点更新为：
+证明正式反例族映入这些门控行并排除 `ColumnCRTDefect(p,d)` 阈值 `L_D`，或证明正式反例族避开
+unit endpoint seam。
 
 ### 4.3 SAE local escape exclusion
 

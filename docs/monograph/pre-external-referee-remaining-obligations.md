@@ -225,7 +225,11 @@ endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬�
 新增 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md`、对应 JSON 与脚本
 `experiments/prime_matrix_rpz_first_grid_fail_seam_certificate.py` 后，first-grid-fail seam 已有
 双帽标准形和机器账本：`12` 个 seam 相位行、完整 `Q` 中 `1752` 个相位、源计数不一致为 `0`。
-外审前剩余进一步变为排除这些双帽 seam 标准形的 `PDEC/ColumnCRT` 证书。
+其中 `1348` 个端点相位已由下层标签杀死，`404` 个 unit endpoint 相位仍需处理。
+新增 `docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.md` 后，`404` 个 unit endpoint
+相位被压缩为 `12` 条固定非零位移 `ColumnCRT` 门控行，且当前账本 `12/12` 有显式同列素数见证。
+外审前剩余进一步变为：证明正式反例族映入这些门控行并排除对应 `ColumnCRTDefect(p,d)` 阈值，
+或证明正式反例族避开 unit endpoint seam。
 
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用

@@ -835,6 +835,21 @@ labels and 404 $Q$-unit endpoint phases.  Thus the next narrow gate is no longer
 extraction, but either an endpoint-PDEC upper bound $U_{\rm CRT}<L_{\rm PDEC}$ for these
 same bad-window families or a ColumnCRT displacement certificate with explicit selectors
 $\Pi,\lambda$ and threshold $L_D$.
+The unit-endpoint gate certificate
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.md}
+\]
+pushes this one step further.  For a unit endpoint seam,
+\[
+  c\equiv ap\equiv p\rho\equiv r+(p-r)-\delta\pmod r,
+\]
+so the endpoint lies in a fixed non-trivial lower column.  If $\pi=h r+c$ is a same-column
+prime witness, then the endpoint lower row satisfies
+$H\equiv -cr^{-1}\pmod p$, and the displacement $d=h-H\pmod p$ is independent of the
+row phase and non-zero.  In the current ledger all twelve gate rows have explicit witnesses
+and non-zero displacements, covering all 404 unit endpoint phases.  This routes persistent
+unit endpoint seams to fixed non-zero ColumnCRT candidates; it still does not exclude the
+ColumnCRT threshold $L_D$ or prove that formal counterexample families avoid these gates.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

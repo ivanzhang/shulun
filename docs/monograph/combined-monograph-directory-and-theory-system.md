@@ -910,3 +910,26 @@ unit endpoint seam branch
 => endpoint-PDEC upper bound
    or ColumnCRT displacement threshold certificate。
 ```
+
+新增 `docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.md` 后，该硬点又被压缩一层。
+对每条 unit endpoint seam，端点在下层 `r` 网格中的列满足
+
+```text
+c=ap mod r=p*rho mod r=r+(p-r)-delta，
+```
+
+所以 `c` 是固定非平凡列；若同列素数见证为 `pi=h*r+c`，则端点下层行号满足
+
+```text
+H_endpoint ≡ -c*r^{-1} mod p，
+d=h-H_endpoint mod p != 0。
+```
+
+当前有限账本中 `12/12` 门控行有显式同列素数见证，`12/12` 行给出非零位移，覆盖全部
+`404` 个 unit endpoint 相位。故持久 unit endpoint seam 已被标准化为
+`ColumnCRTDefect(p,d)` 候选。剩余真正硬点更新为：
+
+```text
+formal counterexample family -> unit endpoint gate rows
+and ColumnCRTDefect(p,d) threshold L_D exclusion。
+```

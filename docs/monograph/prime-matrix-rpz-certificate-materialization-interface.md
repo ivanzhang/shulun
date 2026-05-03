@@ -150,6 +150,7 @@ RPZ-SAE / RPZ-PDEC / RPZ-ColumnCRT 三类证书材料化接口；
 首阻断 grid_fail 二分定理；
 first-grid-fail seam 标准形证书。
 first-grid-fail seam 的 PDEC/Fourier 支持包与端点 unit/killed 分裂。
+unit endpoint seam 的 ColumnCRT 固定非零位移门控证书。
 ```
 
 本文没有完成：
@@ -174,10 +175,23 @@ endpoint split = Q-unit endpoint branch + lower-label-killed endpoint branch。
 `1348`，端点是 `Q`-unit、必须继续进入 endpoint-PDEC 或 ColumnCRT 的相位为 `404`。
 这一步填实了 PDEC 输入行和端点分裂账本；它仍不提供 `U_CRT` 上界或 ColumnCRT 阈值。
 
+新增 `prime-matrix-rpz-unit-endpoint-columncrt-gate.md` 后，`404` 个 unit endpoint 相位又被压成
+`12` 条固定列位移门控行。若下层列为 `c`，则
+
+```text
+c = p*rho mod r = r+(p-r)-delta；
+H_endpoint ≡ -c*r^{-1} mod p；
+d = h_witness-H_endpoint mod p != 0。
+```
+
+当前有限门控账本中 `12/12` 行有显式同列素数见证，且 `12/12` 行的位移均为非零 `mod p`
+余类。因此持久 unit endpoint seam 不再是未结构化坏窗，而是标准
+`ColumnCRTDefect(p,d)` 候选。
+
 下一步最小硬点：
 
 ```text
-1. 为 unit endpoint branch 构造列见证选择器 Pi、标签选择器 lambda 与位移阈值 L_D；
-2. 为 seam-PDEC 支持行提交同一坏窗族上的 U_CRT<L_PDEC；
-3. 或证明正式反例族无法命中这些 unit endpoint seam 相位。
+1. 把正式反例族到 unit endpoint gate rows 的映射写成定理；
+2. 为固定非零位移余类提交 ColumnCRT 阈值 L_D 排斥证书；
+3. 或证明正式反例族无法命中 unit endpoint seam。
 ```
