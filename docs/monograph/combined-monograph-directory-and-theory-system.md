@@ -776,6 +776,35 @@ or non-persistent part is SAE/Endpoint.
 
 该不等式尚未证明；因此不能宣称 `WSH-Hall/PDEC` 或方阵行列命题已全局无条件闭合。
 
+新增 `experiments/prime_matrix_wsh_fo_pdec_energy_ledger.py`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-energy-ledger.md/json` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-energy-lemma.md` 后，`FO-PDEC` 的能量产生部分已有
+无条件组合下界。对任意解释方程多重集 `E` 和 `0<theta<1`：
+
+```text
+either exists ell with t_ell > theta*ell,
+or low-mod defect energy E(E) >= (1-theta)|E|.
+```
+
+第一项是 `Tail/PDEC` 高负载出口；第二项给出低模正超额能量。默认 `theta=0.25` 的账本结果：
+
+```text
+global equation count = 43
+global energy per equation = 0.9547817296210457
+global high-load factor count = 0
+```
+
+因此当前主链最窄硬点已经更新为：
+
+```text
+FO-PDEC-to-PDEC threshold comparison:
+prove U_CRT(E) < E(E)
+or L_PDEC(E) <= (1-theta)|E|
+for the same bad-window equation set.
+```
+
+这是定量阈值比较缺口，不是结构命名缺口。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

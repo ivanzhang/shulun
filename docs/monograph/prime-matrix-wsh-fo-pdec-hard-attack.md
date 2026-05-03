@@ -153,3 +153,36 @@ Output:
 FO-PDEC equation layer closed;
 global FO-PDEC inequality still open.
 ```
+
+## 6. 能量下界硬攻更新
+
+新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_energy_ledger.py
+docs/monograph/prime-matrix-wsh-fo-pdec-energy-ledger.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-energy-lemma.md
+```
+
+后，`FO-PDEC` 的能量产生部分已经有无条件组合下界。对任意解释方程多重集 `E`，
+固定 `0<theta<1`，若不存在 `t_ell>theta ell` 的高负载解释因子，则
+
+\[
+  \mathcal E(E)\ge(1-\theta)|E|.
+\]
+
+若存在 `t_ell>theta ell`，则已经进入 `Tail/PDEC` 高负载出口。因此当前状态更新为：
+
+```text
+FO-PDEC energy production: proved.
+FO-PDEC-to-PDEC threshold comparison: open.
+```
+
+默认 `theta=0.25` 的有限账本给出：
+
+```text
+global energy per equation = 0.9547817296210457
+global high-load factor count = 0
+```
+
+下一步唯一硬点是同一坏窗集合上的 `PDEC` 阈值比较，而不是继续寻找新的结构命名。

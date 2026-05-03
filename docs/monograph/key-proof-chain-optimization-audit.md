@@ -463,3 +463,9 @@ RH-1 explicit-formula entrance
 每条缺失候选都严格给出 `r=1-cq^{-1} mod ell` 与 `uv+d=0 mod ell` 两个方程，
 有限账本 `43` 条方程无失败。当前最窄硬点已不是结构发现，而是定量能量：
 证明这些低模方程的正超额达到 `PDEC` 阈值，或把非持久部分送入 `SAE/Endpoint`。
+
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-energy-lemma.md` 与
+`experiments/prime_matrix_wsh_fo_pdec_energy_ledger.py` 后，定量能量产生本身也已闭合为组合引理：
+若 `t_ell<=theta ell` 对所有解释因子成立，则低模能量 `>= (1-theta)|E|`；否则同一解释因子
+高负载已经触发 `Tail/PDEC`。当前唯一硬点收窄为同一坏窗集合上的 `PDEC` 阈值比较
+`U_CRT(E)<E(E)` 或 `L_PDEC(E)<=(1-theta)|E|`。

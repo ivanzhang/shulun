@@ -136,6 +136,19 @@ unless SAE/Endpoint absorbs the non-persistent part.
 
 这仍是定量不等式缺口，不是文本工程缺口。
 
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-energy-lemma.md` 后，`FO-PDEC-E` 的能量产生
+半边已经证明：若解释因子不高负载，则低模能量至少为 `(1-theta)|E|`；若高负载，则进入
+`Tail/PDEC` 出口。外审前剩余进一步收窄为阈值比较：
+
+```text
+PDEC-threshold:
+same bad-window equation set E
+must satisfy U_CRT(E) < E(E)
+or L_PDEC(E) <= (1-theta)|E|.
+```
+
+该项需要正式常数、测试函数和同一集合上界；不能由有限能量账本替代。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

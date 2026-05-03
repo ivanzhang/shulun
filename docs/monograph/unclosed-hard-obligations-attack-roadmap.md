@@ -253,6 +253,26 @@ or non-persistent equations
 可行优先级：先构造 `L_PDEC` 的显式阈值和同一坏窗集合的测试函数，再尝试证明
 `U_CRT<L_PDEC`。
 
+新增能量下界引理后，上述“低模能量产生”不再是缺口。已证明：
+
+```text
+no factor high-load
+=> low-mod energy >= (1-theta)|E|.
+
+factor high-load
+=> Tail/PDEC exit.
+```
+
+因此下一步硬点必须直接落到 `PDEC-threshold`：
+
+```text
+construct F_E on the same equation set E;
+prove U_CRT(E) < (1-theta)|E|;
+or prove L_PDEC(E) <= (1-theta)|E|.
+```
+
+若该阈值比较不能完成，`FO-PDEC` 仍不能升级为全局闭合。
+
 ### 2.5 可行性
 
 评级：C。

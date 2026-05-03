@@ -659,6 +659,36 @@ This closes the equation layer of FO-PDEC.  It does not close the global theorem
 \]
 unless the non-persistent part is absorbed by SAE/Endpoint.
 
+\section{FO-PDEC Energy Lower Bound}
+
+The energy ledger is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fo-pdec-energy-lemma.md}.
+\]
+For a multiset $E$ of explaining equations, let $t_\ell$ be the number of equations using $\ell$ and let
+$s_\ell$ be the number of occupied row residues modulo $\ell$.  Define
+\[
+  \mathcal E_\ell(E)=t_\ell-\frac{s_\ell t_\ell}{\ell},
+  \qquad
+  \mathcal E(E)=\sum_\ell \mathcal E_\ell(E).
+\]
+For every $0<\theta<1$, either some explaining factor has high load $t_\ell>\theta\ell$, which is a Tail/PDEC exit, or
+\[
+  \mathcal E(E)\ge (1-\theta)|E|.
+\]
+Thus FO-PDEC now produces low-mod energy unconditionally, modulo the named high-load exit.
+
+The finite ledger with $\theta=0.25$ gives global energy per equation
+\[
+  0.9547817296210457
+\]
+and no high-load factor.  The remaining obstruction is not energy production; it is the final threshold comparison on the same bad-window set:
+\[
+  U_{\rm CRT}(E)<\mathcal E(E)
+  \quad\text{or}\quad
+  L_{\rm PDEC}(E)\le(1-\theta)|E|.
+\]
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.
