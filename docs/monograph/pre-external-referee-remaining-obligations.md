@@ -118,6 +118,10 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 支撑相位大小不能自动界定 persistent 计数 `g(t)`；必须补相位指示、多重度界 `M(t)` 或允许全集
 `Z_LHB` 投影容量。
 
+新增 `docs/monograph/h4-pdec-lhb-multiplicity-cap-route.md` 后，`T3` 多重度路线已经有正式验收合同：
+同一 `(p,Q,S,tau)` 下证明 `g(t)<=M(t)`，再把 `WHOLEDEF/BRIDGED` 的容量界写成
+`sum_{t in C}M(t)`。当前仍缺 `Q=2310` 的 `M(t)` 数组或公式，因此该项仍是外审前硬义务。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：

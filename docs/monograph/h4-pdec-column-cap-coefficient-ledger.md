@@ -106,6 +106,9 @@ CC-LHB-UNBRIDGED。
 补充文档 `h4-pdec-lhb-support-to-capacity-transfer.md` 已证明转移规则：若没有相位指示假设、
 多重度界 `M(t)` 或允许全集 `Z_LHB` 投影容量，不能把 `bound=phase_block_size` 当作
 `sum_{t in C}g(t)` 的上界。
+进一步新增 `h4-pdec-lhb-multiplicity-cap-route.md` 后，多重度路线已固定为正式合同：
+只要同一 `(p,Q,S,tau)` 下给出 `M(t)` 并证明 `g(t)<=M(t)`，`WHOLEDEF/BRIDGED`
+即可用 `bound=sum_{t in C}M(t)` 升级为容量行；当前缺的正是 `Q=2310` 的 `M(t)`。
 
 因此 V1 账本已经从“系数来源登记”推进到“部分相位块物化”。它仍不是最终
 `A,b,E,e`，因为有限列见证半径、RCI/CDB 摘要界值和条件路由行尚未物化相位块。

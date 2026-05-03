@@ -326,6 +326,21 @@ phase_block support != capacity bound for g(t)。
 并计算 `Z_LHB` 在相位块上的投影容量。下一步最小硬点因此变为 `T3-multiplicity`
 或 `T4-allowed-set`，其中优先推荐 `T3` 与既有 `phase_cap_t` 合并。
 
+### 4.2H 本轮进展：T3 多重度容量路线
+
+新增 `docs/monograph/h4-pdec-lhb-multiplicity-cap-route.md`。该文件把
+`T3-multiplicity` 从一句“补多重度界”严写为可审计合同：
+
+```text
+输入同一 (p,Q,S,tau) 下的 M(t)；
+证明 g(t)<=M(t)；
+对每个相位块 C 输出 bound=sum_{t in C}M(t)。
+```
+
+合法来源被限定为有限全集投影、资源不可复用单射、以及排除命名出口后的条件路由上界。
+因此 `WHOLEDEF/BRIDGED` 的剩余硬点进一步收窄为：生成并证明 `Q=2310` 的 `M(t)`，
+而不是继续争论 `phase_block_size` 是否可作容量。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

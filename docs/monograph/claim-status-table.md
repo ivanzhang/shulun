@@ -57,6 +57,11 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 
 新增 `docs/monograph/h4-pdec-lhb-support-to-capacity-transfer.md`。该文件把诊断支撑行转容量行的条件严写为相位指示、多重度界或允许全集投影容量三选一；当前优先硬点是用 `phase_cap_t` 或窗口互斥建立 `T3-multiplicity`。
 
+新增 `docs/monograph/h4-pdec-lhb-multiplicity-cap-route.md`。该文件把 `T3-multiplicity`
+正式化为 `M(t)` 输入合同：若同一 `(p,Q,S,tau)` 下有 `g(t)<=M(t)`，则
+`WHOLEDEF/BRIDGED` 可用 `bound=sum_{t in C}M(t)` 升级为容量行。当前状态是路线闭合、
+`Q=2310` 的 `M(t)` 尚未物化；不能把 `phase_block_size` 当作 persistent 容量界。
+
 
 ## 内部逐行复核更新
 

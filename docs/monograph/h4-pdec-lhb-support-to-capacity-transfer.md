@@ -172,3 +172,24 @@ phase-indicator fork:
 ```
 
 对 H4-PDEC 最有价值的是 `T3-multiplicity`：它能直接与已有 `phase_cap_t` 和尾锚不可复用约束合并，形成真正可审计的 `A,b,E,e` 行。
+
+## 8. T3 路线的正式化
+
+新增 `h4-pdec-lhb-multiplicity-cap-route.md` 后，`T3-multiplicity` 已被精确化为：
+
+```text
+输入：同一 (p,Q,S,tau) 下的 M(t)；
+证明：逐相位 g(t)<=M(t)；
+输出：sum_{t in C} g(t)<=sum_{t in C} M(t)。
+```
+
+该文件同时固定了 `M(t)` 的三类合法来源：
+
+```text
+有限全集投影；
+资源不可复用单射；
+条件路由后的剩余分支上界。
+```
+
+因此当前剩余不再是“支撑能否当容量”的逻辑问题，而是更窄的机器与证明义务：
+物化 `Q=2310`、同一正式坏窗集合 `S` 下的 `M(t)` 数组或公式，并逐项给出来源证明。
