@@ -1295,6 +1295,12 @@ Buchstab 下降方程：每个六轮候选 `n` 唯一写成 `n=ell m`，其中 `
 负载由 `5,7,11,13,...` 小素数阶梯主导。若全局大 `p` 反例存在，它必须是持久结构相位，
 不是普通近失败；这正是 Tail/PDEC/ColumnCRT/SAE 出口应捕获的对象。
 
+新增 `docs/monograph/prime-matrix-h3-small-factor-envelope-route.md` 后，H3 第一出口进一步压成
+确定性骨架包络：固定 cutoff `y`，小首因子不过载则全阻断至少需要
+`K_y=ceil(R_y/(floor(q/ell_+(y))+1))` 个中尾标签。有限账本显示 `y=31,43` 时最大强制中尾
+标签数为 `7,9`。因此 H3 当前最优分支是 `SmallSkeletonOverload=>Tail/PDEC` 与
+`ManyLabel=>H3-PDEC` 并行，而不是继续寻找新下降层。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

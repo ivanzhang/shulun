@@ -340,6 +340,11 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `Tail/PDEC envelope` 的可验证上界；若不使用该上界，则必须证明多标签低模能量达到
 `H3-PDEC` 阈值。
 
+新增 `docs/monograph/prime-matrix-h3-small-factor-envelope-route.md` 后，外审前的最小义务进一步
+具体化：必须证明 `SmallSkeletonOverload(y,K)=>Tail/PDEC`，或证明由
+`K_y=ceil(R_y/(floor(q/ell_+(y))+1))` 强制出的多中尾标签给出 `H3-PDEC` 下界。该二分本身是
+确定性组合账本；未闭合的是两个出口的阈值。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

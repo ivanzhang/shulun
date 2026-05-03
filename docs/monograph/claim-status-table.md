@@ -310,6 +310,14 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 `q=331`；聚合 first-factor 负载以 `5:36548, 7:20953, 11:11564, 13:8858` 为主阶梯。
 这支持下一步专攻“低层小首因子骨架过载或多标签低模能量”的二分，而不是继续扩展有限模板。
 
+新增 `docs/monograph/prime-matrix-h3-small-factor-envelope-route.md`、
+`docs/monograph/prime-matrix-h3-small-factor-envelope-audit.md/json` 与脚本
+`experiments/prime_matrix_h3_small_factor_envelope_audit.py` 后，小首因子分支有了确定性包络二分：
+对 cutoff `y`，若小骨架覆盖为 `C_y`、剩余为 `R_y`，则全阻断至少需要
+`ceil(R_y/(floor(q/ell_+(y))+1))` 个 `>y` 中尾标签，除非 `C_y` 已达到 Tail/PDEC 过载。
+近失败账本中 cutoff `31` 与 `43` 的最大强制中尾标签数分别为 `7` 与 `9`。剩余义务是证明
+`SmallSkeletonOverload=>Tail/PDEC` 或 `ManyLabel=>H3-PDEC` 的阈值比较。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

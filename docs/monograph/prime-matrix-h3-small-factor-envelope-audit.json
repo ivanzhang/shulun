@@ -1,0 +1,4373 @@
+{
+  "status": "finite_h3_small_factor_envelope_audit_not_global_proof",
+  "parameters": {
+    "max_p": 5000,
+    "margin_threshold": 20,
+    "row_stride": 1,
+    "cutoffs": [
+      7,
+      13,
+      31,
+      43
+    ],
+    "max_n": 25030009
+  },
+  "summary": {
+    "q_rows_checked": 1552462,
+    "near_windows": 4015,
+    "near_min_p": 5,
+    "near_max_p": 317,
+    "near_max_q": 331,
+    "near_margin_counts": {
+      "1": 8,
+      "2": 19,
+      "3": 43,
+      "4": 56,
+      "5": 73,
+      "6": 98,
+      "7": 106,
+      "8": 150,
+      "9": 162,
+      "10": 188,
+      "11": 197,
+      "12": 225,
+      "13": 242,
+      "14": 262,
+      "15": 328,
+      "16": 354,
+      "17": 353,
+      "18": 349,
+      "19": 392,
+      "20": 410
+    },
+    "cutoff_summary": {
+      "7": {
+        "max_small_share": 0.6666666666666666,
+        "min_small_share": 0.0,
+        "max_residual_after_small": 76,
+        "max_min_tail_labels_for_full_block": 3,
+        "avg_min_tail_labels_for_full_block": 2.9359900373599004
+      },
+      "13": {
+        "max_small_share": 0.8,
+        "min_small_share": 0.0,
+        "max_residual_after_small": 65,
+        "max_min_tail_labels_for_full_block": 4,
+        "avg_min_tail_labels_for_full_block": 3.3768368617683686
+      },
+      "31": {
+        "max_small_share": 0.8333333333333334,
+        "min_small_share": 0.0,
+        "max_residual_after_small": 49,
+        "max_min_tail_labels_for_full_block": 7,
+        "avg_min_tail_labels_for_full_block": 5.094645080946451
+      },
+      "43": {
+        "max_small_share": 0.8333333333333334,
+        "min_small_share": 0.0,
+        "max_residual_after_small": 45,
+        "max_min_tail_labels_for_full_block": 9,
+        "avg_min_tail_labels_for_full_block": 5.688418430884185
+      }
+    }
+  },
+  "tight_samples": [
+    {
+      "p": 17,
+      "q": 19,
+      "q_row": 16,
+      "interval": [
+        286,
+        304
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 6,
+      "blocked_count": 5,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.5,
+          "residual_after_small": 3,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.8333333333333334,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.8333333333333334,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 13,
+      "interval": [
+        205,
+        221
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 5,
+      "blocked_count": 4,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.6,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.8,
+          "residual_after_small": 1,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.8,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.8,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 10,
+      "interval": [
+        118,
+        130
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 4,
+      "blocked_count": 3,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.5,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 3,
+          "small_share": 0.75,
+          "residual_after_small": 1,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 3,
+          "small_share": 0.75,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 3,
+          "small_share": 0.75,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 9,
+      "interval": [
+        89,
+        99
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 3,
+      "blocked_count": 2,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 2,
+      "top_factor_counts": [
+        [
+          7,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 11,
+      "interval": [
+        111,
+        121
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 3,
+      "blocked_count": 2,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 2,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 2,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 4,
+      "interval": [
+        22,
+        28
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 2,
+      "blocked_count": 1,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.5,
+          "residual_after_small": 1,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.5,
+          "residual_after_small": 1,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.5,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.5,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 2,
+      "interval": [
+        8,
+        14
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 1,
+      "blocked_count": 0,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 0,
+      "top_factor_counts": [],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 5,
+      "interval": [
+        29,
+        35
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 1,
+      "blocked_count": 0,
+      "survivor_count": 1,
+      "margin": 1,
+      "distinct_factor_count": 0,
+      "top_factor_counts": [],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 1,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 31,
+      "q": 37,
+      "q_row": 37,
+      "interval": [
+        1333,
+        1369
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 12,
+      "blocked_count": 10,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 8,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          29,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 6,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.4166666666666667,
+          "residual_after_small": 7,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 5
+        },
+        {
+          "cutoff": 31,
+          "small_load": 10,
+          "small_share": 0.8333333333333334,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 10,
+          "small_share": 0.8333333333333334,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 29,
+      "q": 31,
+      "q_row": 26,
+      "interval": [
+        776,
+        806
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 9,
+      "blocked_count": 7,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 6,
+      "top_factor_counts": [
+        [
+          11,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.2222222222222222,
+          "residual_after_small": 7,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 4,
+          "actual_tail_load": 5
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.5555555555555556,
+          "residual_after_small": 4,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 31,
+          "small_load": 7,
+          "small_share": 0.7777777777777778,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 7,
+          "small_share": 0.7777777777777778,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 19,
+      "q": 23,
+      "q_row": 15,
+      "interval": [
+        323,
+        345
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 7,
+      "blocked_count": 5,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.5714285714285714,
+          "residual_after_small": 3,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.7142857142857143,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.7142857142857143,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.7142857142857143,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 17,
+      "q": 19,
+      "q_row": 7,
+      "interval": [
+        115,
+        133
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 6,
+      "blocked_count": 4,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.5,
+          "residual_after_small": 3,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 17,
+      "q": 19,
+      "q_row": 18,
+      "interval": [
+        324,
+        342
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 6,
+      "blocked_count": 4,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.5,
+          "residual_after_small": 3,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 8,
+      "interval": [
+        120,
+        136
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 5,
+      "blocked_count": 3,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          11,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.4,
+          "residual_after_small": 3,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 3,
+          "small_share": 0.6,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 3,
+          "small_share": 0.6,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 3,
+          "small_share": 0.6,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 13,
+      "q": 17,
+      "q_row": 15,
+      "interval": [
+        239,
+        255
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 5,
+      "blocked_count": 3,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.2,
+          "residual_after_small": 4,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 3,
+          "small_share": 0.6,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 3,
+          "small_share": 0.6,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 3,
+          "small_share": 0.6,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 12,
+      "interval": [
+        144,
+        156
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 4,
+      "blocked_count": 2,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.5,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 2,
+          "small_share": 0.5,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 2,
+          "small_share": 0.5,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 2,
+          "small_share": 0.5,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 3,
+      "interval": [
+        23,
+        33
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 4,
+      "interval": [
+        34,
+        44
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 5,
+      "interval": [
+        45,
+        55
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 6,
+      "interval": [
+        56,
+        66
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "q_row": 8,
+      "interval": [
+        78,
+        88
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 5,
+      "interval": [
+        53,
+        65
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 8,
+      "interval": [
+        92,
+        104
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          5,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "q_row": 11,
+      "interval": [
+        131,
+        143
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 3,
+      "blocked_count": 1,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 1,
+      "top_factor_counts": [
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 1,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 1,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 3,
+      "interval": [
+        15,
+        21
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 2,
+      "blocked_count": 0,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 0,
+      "top_factor_counts": [],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 6,
+      "interval": [
+        36,
+        42
+      ],
+      "initial_type": "aligned_p_row_contained",
+      "candidate_count": 2,
+      "blocked_count": 0,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 0,
+      "top_factor_counts": [],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "q_row": 7,
+      "interval": [
+        43,
+        49
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 2,
+      "blocked_count": 0,
+      "survivor_count": 2,
+      "margin": 2,
+      "distinct_factor_count": 0,
+      "top_factor_counts": [],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 0,
+          "small_share": 0.0,
+          "residual_after_small": 2,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 53,
+      "q": 59,
+      "q_row": 43,
+      "interval": [
+        2479,
+        2537
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 19,
+      "blocked_count": 16,
+      "survivor_count": 3,
+      "margin": 3,
+      "distinct_factor_count": 10,
+      "top_factor_counts": [
+        [
+          5,
+          4
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 6,
+          "small_share": 0.3157894736842105,
+          "residual_after_small": 13,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 6,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 8,
+          "actual_tail_load": 10
+        },
+        {
+          "cutoff": 13,
+          "small_load": 10,
+          "small_share": 0.5263157894736842,
+          "residual_after_small": 9,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 6,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 31,
+          "small_load": 13,
+          "small_share": 0.6842105263157895,
+          "residual_after_small": 6,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 3,
+          "actual_tail_load": 3
+        },
+        {
+          "cutoff": 43,
+          "small_load": 15,
+          "small_share": 0.7894736842105263,
+          "residual_after_small": 4,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        }
+      ]
+    },
+    {
+      "p": 43,
+      "q": 47,
+      "q_row": 47,
+      "interval": [
+        2163,
+        2209
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 15,
+      "blocked_count": 12,
+      "survivor_count": 3,
+      "margin": 3,
+      "distinct_factor_count": 7,
+      "top_factor_counts": [
+        [
+          5,
+          3
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 5,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 5,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 7
+        },
+        {
+          "cutoff": 13,
+          "small_load": 9,
+          "small_share": 0.6,
+          "residual_after_small": 6,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 3,
+          "actual_tail_load": 3
+        },
+        {
+          "cutoff": 31,
+          "small_load": 10,
+          "small_share": 0.6666666666666666,
+          "residual_after_small": 5,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 43,
+          "small_load": 12,
+          "small_share": 0.8,
+          "residual_after_small": 3,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 33,
+      "interval": [
+        1377,
+        1419
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 11,
+      "survivor_count": 3,
+      "margin": 3,
+      "distinct_factor_count": 7,
+      "top_factor_counts": [
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 5,
+          "small_share": 0.35714285714285715,
+          "residual_after_small": 9,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 13,
+          "small_load": 8,
+          "small_share": 0.5714285714285714,
+          "residual_after_small": 6,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 3,
+          "actual_tail_load": 3
+        },
+        {
+          "cutoff": 31,
+          "small_load": 11,
+          "small_share": 0.7857142857142857,
+          "residual_after_small": 3,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 11,
+          "small_share": 0.7857142857142857,
+          "residual_after_small": 3,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 33,
+      "interval": [
+        1313,
+        1353
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 10,
+      "survivor_count": 3,
+      "margin": 3,
+      "distinct_factor_count": 7,
+      "top_factor_counts": [
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 5
+        },
+        {
+          "cutoff": 13,
+          "small_load": 7,
+          "small_share": 0.5384615384615384,
+          "residual_after_small": 6,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 3,
+          "actual_tail_load": 3
+        },
+        {
+          "cutoff": 31,
+          "small_load": 10,
+          "small_share": 0.7692307692307693,
+          "residual_after_small": 3,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 10,
+          "small_share": 0.7692307692307693,
+          "residual_after_small": 3,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 32,
+      "interval": [
+        1334,
+        1376
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 10,
+      "survivor_count": 3,
+      "margin": 3,
+      "distinct_factor_count": 8,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          37,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 6,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 5
+        },
+        {
+          "cutoff": 31,
+          "small_load": 9,
+          "small_share": 0.6923076923076923,
+          "residual_after_small": 4,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 43,
+          "small_load": 10,
+          "small_share": 0.7692307692307693,
+          "residual_after_small": 3,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    }
+  ],
+  "max_tail_label_need_samples": [
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 34,
+      "interval": [
+        1420,
+        1462
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 5,
+      "survivor_count": 9,
+      "margin": 9,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.21428571428571427,
+          "residual_after_small": 11,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.2857142857142857,
+          "residual_after_small": 10,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.35714285714285715,
+          "residual_after_small": 9,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 5,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.35714285714285715,
+          "residual_after_small": 9,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 9,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 2,
+      "interval": [
+        42,
+        82
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 4,
+      "survivor_count": 9,
+      "margin": 9,
+      "distinct_factor_count": 2,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 5,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 9,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 32,
+      "interval": [
+        1272,
+        1312
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 4,
+      "survivor_count": 9,
+      "margin": 9,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.23076923076923078,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 3,
+          "small_share": 0.23076923076923078,
+          "residual_after_small": 10,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 5,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 9,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 2,
+      "interval": [
+        44,
+        86
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 4,
+      "survivor_count": 9,
+      "margin": 9,
+      "distinct_factor_count": 2,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 5,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 9,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 83,
+      "q": 89,
+      "q_row": 85,
+      "interval": [
+        7477,
+        7565
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 29,
+      "blocked_count": 14,
+      "survivor_count": 15,
+      "margin": 15,
+      "distinct_factor_count": 8,
+      "top_factor_counts": [
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 8,
+          "small_share": 0.27586206896551724,
+          "residual_after_small": 21,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 9,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 6,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 13,
+          "small_load": 10,
+          "small_share": 0.3448275862068966,
+          "residual_after_small": 19,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 6,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 4,
+          "actual_tail_load": 4
+        },
+        {
+          "cutoff": 31,
+          "small_load": 12,
+          "small_share": 0.41379310344827586,
+          "residual_after_small": 17,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 6,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 43,
+          "small_load": 12,
+          "small_share": 0.41379310344827586,
+          "residual_after_small": 17,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 9,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 3,
+      "interval": [
+        87,
+        129
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 6,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 5,
+          "small_share": 0.35714285714285715,
+          "residual_after_small": 9,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 4,
+      "interval": [
+        130,
+        172
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 6,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.2857142857142857,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 6,
+      "interval": [
+        216,
+        258
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 6,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          13,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.21428571428571427,
+          "residual_after_small": 11,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 3
+        },
+        {
+          "cutoff": 13,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 9,
+      "interval": [
+        345,
+        387
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 6,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          5,
+          3
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.2857142857142857,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.35714285714285715,
+          "residual_after_small": 9,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 31,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 18,
+      "interval": [
+        732,
+        774
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 6,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.2857142857142857,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 31,
+      "interval": [
+        1291,
+        1333
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 14,
+      "blocked_count": 6,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.2857142857142857,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 6,
+          "small_share": 0.42857142857142855,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 5,
+      "interval": [
+        165,
+        205
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 5,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.23076923076923078,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 7,
+      "interval": [
+        247,
+        287
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 5,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.23076923076923078,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "q_row": 40,
+      "interval": [
+        1600,
+        1640
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 5,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 11,
+      "interval": [
+        431,
+        473
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 5,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 4,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.23076923076923078,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.3076923076923077,
+          "residual_after_small": 9,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 41,
+      "q": 43,
+      "q_row": 38,
+      "interval": [
+        1592,
+        1634
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 13,
+      "blocked_count": 5,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 2,
+      "top_factor_counts": [
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 5,
+          "small_share": 0.38461538461538464,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 31,
+      "q": 37,
+      "q_row": 3,
+      "interval": [
+        75,
+        111
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 12,
+      "blocked_count": 4,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 2,
+      "top_factor_counts": [
+        [
+          7,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 31,
+      "q": 37,
+      "q_row": 7,
+      "interval": [
+        223,
+        259
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 12,
+      "blocked_count": 4,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.16666666666666666,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 31,
+      "q": 37,
+      "q_row": 24,
+      "interval": [
+        852,
+        888
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 12,
+      "blocked_count": 4,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 3,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 2,
+          "small_share": 0.16666666666666666,
+          "residual_after_small": 10,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 13,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 4,
+          "small_share": 0.3333333333333333,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 31,
+      "q": 37,
+      "q_row": 2,
+      "interval": [
+        38,
+        74
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 11,
+      "blocked_count": 3,
+      "survivor_count": 8,
+      "margin": 8,
+      "distinct_factor_count": 2,
+      "top_factor_counts": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 3,
+          "small_share": 0.2727272727272727,
+          "residual_after_small": 8,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 4,
+          "min_tail_labels_for_full_block": 2,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 13,
+          "small_load": 3,
+          "small_share": 0.2727272727272727,
+          "residual_after_small": 8,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 31,
+          "small_load": 3,
+          "small_share": 0.2727272727272727,
+          "residual_after_small": 8,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        },
+        {
+          "cutoff": 43,
+          "small_load": 3,
+          "small_share": 0.2727272727272727,
+          "residual_after_small": 8,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 1,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 0,
+          "actual_tail_load": 0
+        }
+      ]
+    },
+    {
+      "p": 83,
+      "q": 89,
+      "q_row": 87,
+      "interval": [
+        7655,
+        7743
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 29,
+      "blocked_count": 18,
+      "survivor_count": 11,
+      "margin": 11,
+      "distinct_factor_count": 9,
+      "top_factor_counts": [
+        [
+          5,
+          5
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          71,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 8,
+          "small_share": 0.27586206896551724,
+          "residual_after_small": 21,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 9,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 7,
+          "actual_tail_load": 10
+        },
+        {
+          "cutoff": 13,
+          "small_load": 13,
+          "small_share": 0.4482758620689655,
+          "residual_after_small": 16,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 6,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 5
+        },
+        {
+          "cutoff": 31,
+          "small_load": 13,
+          "small_share": 0.4482758620689655,
+          "residual_after_small": 16,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 6,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 5
+        },
+        {
+          "cutoff": 43,
+          "small_load": 14,
+          "small_share": 0.4827586206896552,
+          "residual_after_small": 15,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 4,
+          "actual_tail_load": 4
+        }
+      ]
+    },
+    {
+      "p": 79,
+      "q": 83,
+      "q_row": 77,
+      "interval": [
+        6309,
+        6391
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 27,
+      "blocked_count": 14,
+      "survivor_count": 13,
+      "margin": 13,
+      "distinct_factor_count": 8,
+      "top_factor_counts": [
+        [
+          5,
+          5
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 7,
+          "small_share": 0.25925925925925924,
+          "residual_after_small": 20,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 8,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 6,
+          "actual_tail_load": 7
+        },
+        {
+          "cutoff": 13,
+          "small_load": 10,
+          "small_share": 0.37037037037037035,
+          "residual_after_small": 17,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 5,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 4,
+          "actual_tail_load": 4
+        },
+        {
+          "cutoff": 31,
+          "small_load": 12,
+          "small_share": 0.4444444444444444,
+          "residual_after_small": 15,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 5,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        },
+        {
+          "cutoff": 43,
+          "small_load": 12,
+          "small_share": 0.4444444444444444,
+          "residual_after_small": 15,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        }
+      ]
+    },
+    {
+      "p": 83,
+      "q": 89,
+      "q_row": 38,
+      "interval": [
+        3294,
+        3382
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 29,
+      "blocked_count": 15,
+      "survivor_count": 14,
+      "margin": 14,
+      "distinct_factor_count": 7,
+      "top_factor_counts": [
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          31,
+          2
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 9,
+          "small_share": 0.3103448275862069,
+          "residual_after_small": 20,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 9,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 5,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 13,
+          "small_load": 11,
+          "small_share": 0.3793103448275862,
+          "residual_after_small": 18,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 6,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 3,
+          "actual_tail_load": 4
+        },
+        {
+          "cutoff": 31,
+          "small_load": 14,
+          "small_share": 0.4827586206896552,
+          "residual_after_small": 15,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 5,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        },
+        {
+          "cutoff": 43,
+          "small_load": 14,
+          "small_share": 0.4827586206896552,
+          "residual_after_small": 15,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 1,
+          "actual_tail_load": 1
+        }
+      ]
+    },
+    {
+      "p": 83,
+      "q": 89,
+      "q_row": 79,
+      "interval": [
+        6943,
+        7031
+      ],
+      "initial_type": "seam_window",
+      "candidate_count": 29,
+      "blocked_count": 15,
+      "survivor_count": 14,
+      "margin": 14,
+      "distinct_factor_count": 8,
+      "top_factor_counts": [
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          43,
+          1
+        ]
+      ],
+      "cutoff_profiles": [
+        {
+          "cutoff": 7,
+          "small_load": 9,
+          "small_share": 0.3103448275862069,
+          "residual_after_small": 20,
+          "next_tail_label": 11,
+          "per_tail_label_cap": 9,
+          "min_tail_labels_for_full_block": 3,
+          "actual_tail_label_count": 6,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 13,
+          "small_load": 9,
+          "small_share": 0.3103448275862069,
+          "residual_after_small": 20,
+          "next_tail_label": 17,
+          "per_tail_label_cap": 6,
+          "min_tail_labels_for_full_block": 4,
+          "actual_tail_label_count": 6,
+          "actual_tail_load": 6
+        },
+        {
+          "cutoff": 31,
+          "small_load": 12,
+          "small_share": 0.41379310344827586,
+          "residual_after_small": 17,
+          "next_tail_label": 37,
+          "per_tail_label_cap": 3,
+          "min_tail_labels_for_full_block": 6,
+          "actual_tail_label_count": 3,
+          "actual_tail_load": 3
+        },
+        {
+          "cutoff": 43,
+          "small_load": 13,
+          "small_share": 0.4482758620689655,
+          "residual_after_small": 16,
+          "next_tail_label": 47,
+          "per_tail_label_cap": 2,
+          "min_tail_labels_for_full_block": 8,
+          "actual_tail_label_count": 2,
+          "actual_tail_load": 2
+        }
+      ]
+    }
+  ]
+}

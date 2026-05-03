@@ -1065,6 +1065,20 @@ aggregate first-factor load is led by the small-prime skeleton
 $5,7,11,13,\ldots$.  This data does not prove the theorem, but it identifies the correct
 next split: small-first-factor overload should be absorbed by Tail/PDEC, while low-load
 many-label blocking should produce low-mod PDEC/ColumnCRT energy.
+The small-factor envelope route
+\[
+  \texttt{docs/monograph/prime-matrix-h3-small-factor-envelope-route.md}
+\]
+makes this split deterministic.  For a cutoff $y$, let $C_y$ be the load carried by
+first factors at most $y$, let $R_y=A-C_y$, and let $\ell_+(y)$ be the next prime.  If full
+blocking holds, then either $C_y$ is already a small-skeleton overload, or at least
+\[
+  K_y=\left\lceil \frac{R_y}{\lfloor q/\ell_+(y)\rfloor+1}\right\rceil
+\]
+middle-tail labels are active.  The finite ledger for the near-miss rows gives maximum
+forced values $K_y=7$ for $y=31$ and $K_y=9$ for $y=43$.  The remaining proof obligation is
+to convert small-skeleton overload into Tail/PDEC, or many active labels into H3-PDEC
+energy, with endpoint losses routed to SAE/ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

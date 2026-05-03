@@ -190,3 +190,30 @@ H3 full blocking
 ```
 
 其中第一项进入 `Tail/PDEC`，第二项进入 `PDEC/ColumnCRT`，第三项进入 `SAE/ColumnCRT`。
+
+## 8. 小首因子骨架包络
+
+新增路线：
+
+```text
+docs/monograph/prime-matrix-h3-small-factor-envelope-route.md
+experiments/prime_matrix_h3_small_factor_envelope_audit.py
+docs/monograph/prime-matrix-h3-small-factor-envelope-audit.md/json
+```
+
+该路线给出确定性二分。对 cutoff `y`，记 `C_y` 为 `<=y` 的小首因子骨架覆盖，`R_y=A-C_y`，
+`ell_+(y)` 为下一素数，`U_y=floor(q/ell_+(y))+1`。若 H3 全阻断成立，则至少需要
+
+\[
+K_y=\left\lceil {R_y\over U_y}\right\rceil
+\]
+
+个 `>y` 的中尾 first-factor 标签，除非 `C_y` 已经接近全覆盖并进入 `Tail/PDEC` 过载。
+在 `p<=5000, margin<=20` 的近失败账本中，cutoff `31` 与 `43` 分别给出最大强制中尾标签数
+`7` 与 `9`。因此下一步可专攻：
+
+```text
+SmallSkeletonOverload(y,K) => Tail/PDEC
+or
+ManyLabel(y,K_y) => H3-PDEC.
+```
