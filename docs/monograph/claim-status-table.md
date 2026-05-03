@@ -285,6 +285,18 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 证明任意真实高阶零行都存在满足头部/尾镜像相位条件的小阶强制零行，或证明非命中相位触发
 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-total-descent-h3-margin-route.md`、
+`docs/monograph/prime-matrix-total-descent-h3-margin-audit.md/json` 与脚本
+`experiments/prime_matrix_total_descent_h3_margin_audit.py` 后，`TotalDescent-TM` 被进一步压到
+固定 `h=3` 的六轮余量接口。对任意相邻 `p<q` 和 `2<=s<=q`，令
+`I=[(s-1)q+1,sq]`，完整 3 行的唯一六轮候选为 `c_R`。若
+`P^-(c_R)>p`，则 `c_R` 是旧 `p`-筛零窗中的幸存点，反设直接矛盾；若
+`5<=P^-(c_R)<=p`，该完整 3 行被复活点阻断。全量 `p<=5000` 审计检查
+`1552462` 条 `q` 行，`h=3` 余量全部为正，最小余量为 `1`。正式稿剩余随之收窄为
+`H3-SixWheel-Roughness`：证明 `[5,p]` 素因子不能覆盖每个 `q` 行窗口中的全部六轮候选，
+或证明全覆盖相位必触发 `SAE/PDEC/ColumnCRT`。该接口仍不能由有限账本或普通素数间隙定理
+直接替代。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

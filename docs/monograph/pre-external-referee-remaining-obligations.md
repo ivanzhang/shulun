@@ -323,6 +323,13 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `SAE/PDEC/ColumnCRT`。不能把“与实证矛盾”写成最终逻辑；应写为“与有限基底验证和强归纳输入
 `Row(h)` 矛盾”。
 
+新增 `docs/monograph/prime-matrix-total-descent-h3-margin-route.md` 与固定 `h=3` 审计后，外审前可把
+上述义务再压缩为 `H3-SixWheel-Roughness`。具体义务是：对任意相邻 `p<q`、任意 `2<=s<=q`，
+证明 `I=[(s-1)q+1,sq]` 内完整 3 行的六轮候选不可能全部满足 `5<=P^-(c_R)<=p`。有限账本中
+`p<=5000` 的 `1552462` 条 `q` 行全部有正余量，最小余量为 `1`；但这仍是计算证据，不是全局
+证明。若正式稿不能直接证明该六轮余量不等式，就必须证明全阻断相位产生
+`SAE/PDEC/ColumnCRT` 缺陷；不得把普通素数间隙定理或有限样本写成替代证明。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -396,6 +396,12 @@ RH-1 explicit-formula entrance
 `q` 行假想零行均能强制小阶方阵零行。下一步最优专攻应是把该有限相位事实转为全局不等式：
 任意非命中相位若存在，则其复活点/端点/镜像结构必须产生 `SAE/PDEC/ColumnCRT` 缺陷。
 
+新增 `docs/monograph/prime-matrix-total-descent-h3-margin-route.md` 后，最窄接口进一步变为固定
+`h=3` 的六轮余量：完整 3 行只有一个六轮候选，阻断只来自 `5<=P^-(c_R)<=p`。若存在未阻断候选，
+它就是旧 `p`-筛零窗的幸存点，直接排除假想 `q` 零行。有限账本到 `p<=5000` 全量无失败，最小
+余量 `1`。优化结论是：后续不应再扩展任意 `h` 模板，而应专攻
+`H3-SixWheel-Roughness` 或证明六轮全阻断相位进入 `SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。

@@ -1022,6 +1022,27 @@ deterministic $p\le2000$ sample all $11583$ checked rows do the same.  The remai
 theorem-level statement is TotalDescent-TM: every genuine higher zero row must force a
 lower $h\times h$ zero row by periodicity or tail reflection, or else its non-hit phase
 set must enter SAE, PDEC, or ColumnCRT.
+The fixed $h=3$ refinement is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-total-descent-h3-margin-route.md}.
+\]
+Each complete $3$-row contains a unique candidate $c_R$ coprime to $6$.  If
+$5\le P^-(c_R)\le p$, that row is blocked by a resurrected point when descending from the
+$p$-sieve to the $3$-sieve; if $P^-(c_R)>p$, then $c_R$ is already a survivor of the old
+$p$-sieve and contradicts the assumed $p$-sieve zero window.  Thus the narrowest remaining
+form of TotalDescent is the six-wheel inequality
+\[
+  \#\{R:J_R\subset I_s\}>
+  \#\{R:J_R\subset I_s,\ 5\le P^-(c_R)\le p\}.
+\]
+The audit
+\[
+  \texttt{docs/monograph/prime-matrix-total-descent-h3-margin-audit.md}
+\]
+checks this for all $1{,}552{,}462$ non-first $q$-rows with $p\le5000$, with minimum margin
+$1$.  This is a finite certificate and a sharpened interface, not a global theorem: a final
+proof must establish the six-wheel inequality uniformly, or route full blocking to
+SAE/PDEC/ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

@@ -1269,6 +1269,21 @@ seam 分支，而是统一覆盖任意非第一 `q` 行。总模型从相邻壳�
 `TotalDescent-TM`：若它全局成立，则强归纳给出行命题；若不成立，非命中相位必须进入
 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-total-descent-h3-margin-route.md` 后，这条路线获得更窄的固定
+`h=3` 版本。每条完整 3 对齐行只有一个避开 `2,3` 的六轮候选 `c_R`。若
+`5<=P^-(c_R)<=p`，它是从 `p` 层降到 `3` 层时的复活阻断；若 `P^-(c_R)>p`，它已经是旧
+`p`-筛零窗的幸存点，直接矛盾。因此最小接口可写成
+
+```text
+H3-SixWheel-Roughness:
+|完整 3 行| > |被 [5,p] 最小素因子打断的完整 3 行|。
+```
+
+脚本 `experiments/prime_matrix_total_descent_h3_margin_audit.py` 在 `p<=5000` 全量检查
+`1552462` 条 `q` 行，失败数为 `0`、最小余量为 `1`。该结果把硬点从“找某个下降层”压成
+“排除六轮候选全覆盖”；但它仍接近原行命题本身，不能用有限账本或一般短区间素数定理直接升级为
+全局无条件证明。若全覆盖相位存在，必须进入 `SAE/PDEC/ColumnCRT`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
