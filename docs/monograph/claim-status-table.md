@@ -297,6 +297,13 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 或证明全覆盖相位必触发 `SAE/PDEC/ColumnCRT`。该接口仍不能由有限账本或普通素数间隙定理
 直接替代。
 
+新增 `docs/monograph/prime-matrix-h3-sixwheel-hard-attack.md` 后，上述接口的强度边界被明确：
+`H3-SWR` 推出对应 `q` 行含素数，且处于 `u=2` 的线性筛临界障碍，不能靠普通短区间素数定理闭合。
+`H3` 失败被精确写成 first-factor partition
+`A_s=sqcup_{5<=ell<=p} A_{s,ell}`，其中 `n=ell m` 落入长度 `q/ell` 的 `ell`-rough cofactor
+窗口。下一最小定理是 `H3 Full-Blocking Defect`：全阻断必须出现 first-factor 高负载、分布式
+低模 PDEC 能量、稀疏端点 SAE 或持久 ColumnCRT 位移。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

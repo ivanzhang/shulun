@@ -107,3 +107,15 @@ H3 full blocking => SAE/PDEC/ColumnCRT.
 ```
 
 该命名比“继续递归寻找某层零行”更精确：一旦固定 `h=3`，剩余障碍就是六轮候选全覆盖的排斥不等式或其缺陷路由。
+
+## 7. 硬攻展开
+
+进一步的硬攻稿见：
+
+```text
+docs/monograph/prime-matrix-h3-sixwheel-hard-attack.md
+```
+
+该文把 `H3-SWR` 的真实强度、`u=2` 筛法障碍、first-factor partition、短 cofactor 窗口和
+`Tail/PDEC/ColumnCRT/SAE` 四出口写成同一套方程。结论是：直接证明 `H3-SWR` 近似平方根长度
+素数存在问题；更可审查的路径是证明六轮全阻断必产生命名缺陷。

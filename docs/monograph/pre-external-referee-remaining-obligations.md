@@ -330,6 +330,11 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 证明。若正式稿不能直接证明该六轮余量不等式，就必须证明全阻断相位产生
 `SAE/PDEC/ColumnCRT` 缺陷；不得把普通素数间隙定理或有限样本写成替代证明。
 
+新增 `docs/monograph/prime-matrix-h3-sixwheel-hard-attack.md` 后，外审前的新增精确义务是：
+把 `H3 Full-Blocking Defect Theorem` 逐行证明或标为条件输入。该定理必须在同一集合口径下证明
+四分支覆盖：first-factor 高负载、分布式低模 PDEC 能量、稀疏端点 SAE、持久 ColumnCRT 位移。
+若该四分支只被命名而未给阈值比较，则 Prime Matrix 行命题仍只能保持归约状态。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

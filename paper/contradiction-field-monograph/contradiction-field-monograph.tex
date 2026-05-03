@@ -1043,6 +1043,18 @@ checks this for all $1{,}552{,}462$ non-first $q$-rows with $p\le5000$, with min
 $1$.  This is a finite certificate and a sharpened interface, not a global theorem: a final
 proof must establish the six-wheel inequality uniformly, or route full blocking to
 SAE/PDEC/ColumnCRT.
+The hard-attack reduction
+\[
+  \texttt{docs/monograph/prime-matrix-h3-sixwheel-hard-attack.md}
+\]
+clarifies the remaining obstruction.  The direct six-wheel inequality sits at the
+Buchstab/linear-sieve boundary $u=2$, i.e. at square-root interval length near $x=q^2$.
+Therefore a proof cannot be obtained by a generic short-interval theorem or a finite
+template.  If the six-wheel candidates are all blocked, they admit the first-factor
+partition $n=\ell m$ with $5\le\ell\le p$, $m$ in an interval of length $q/\ell$, and
+$P^-(m)\ge\ell$.  The next theorem-level gate is consequently an H3 full-blocking defect
+theorem: high first-factor load enters Tail/PDEC, distributed low-load coverage produces
+low-mod PDEC energy, and endpoint residue concentration is SAE or ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

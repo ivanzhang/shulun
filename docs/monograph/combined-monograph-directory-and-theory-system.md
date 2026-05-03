@@ -1284,6 +1284,12 @@ H3-SixWheel-Roughness:
 “排除六轮候选全覆盖”；但它仍接近原行命题本身，不能用有限账本或一般短区间素数定理直接升级为
 全局无条件证明。若全覆盖相位存在，必须进入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-h3-sixwheel-hard-attack.md` 后，`H3` 全阻断被改写为 first-factor
+Buchstab 下降方程：每个六轮候选 `n` 唯一写成 `n=ell m`，其中 `5<=ell<=p`、
+`m` 落在长度 `q/ell` 的短 cofactor 窗口且 `P^-(m)>=ell`。这给出两个硬出口：少数 `ell` 高负载
+进入 Tail/PDEC；所有 `ell` 低负载但全覆盖则产生分布式低模能量或端点/ColumnCRT 相位缺陷。
+因此下一步不是再扩展有限模板，而是证明 `H3 Full-Blocking Defect Theorem`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
