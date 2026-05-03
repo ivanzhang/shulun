@@ -364,3 +364,5 @@
 | 未闭合硬项攻坚路线图 | 已新增/逐项补充可行性方案 | 新增 `docs/monograph/unclosed-hard-obligations-attack-roadmap.md`。该路线图对 H1--H10 逐项给出精确证明目标、可用刚性、最小补正动作、可行性评级与失败时状态。优先级明确为：先做 `H7/H3/H10/H1` 的外审工程闭合，再攻 `H5/H4/H2` 的 PM 数学接口；`H6/H8/H9` 保持条件/verification 状态，除非新增真正深证明。 |
 
 | BPN-LHB 证书复现账本 | H3已完成/外审复现包 | 新增 `docs/monograph/prime-matrix-bpn-lhb-certificate-reproduction-ledger.md`，列出低范围、窄带、尾段有限、显式尾段四组证书的脚本、JSON/Markdown 输出、验收标准和临时目录复现命令。本轮已修正窄带与显式尾段脚本的报告文字，使 8 个生成文件均可与仓库内对应文件字节级一致。该项闭合 BPN-LHB 子模块复现义务，但不升级 Prime Matrix 全局行列命题。 |
+
+| KLS-window DI/BFI适配模板 | H7外部深定理版闭合 | 新增 `docs/monograph/kls-window-di-bfi-adaptation-template.md`，把 `DI+BFI=>KLS-window=>BE2-3K=>BE2-3=>WBE2=>BMD` 写成可审稿适配链。模板逐项核验 CRT 相位到标准 Kloosterman 逆元相位、模数族、频率族、逆元变量、well-factorable 权重、gcd strata、端点平滑和 `B(A)` 对数损失吸收。该项只闭合 BMD 的外部深定理输入，不闭合 `BMD=>TLI`，也不把二点筛终局或孪生素数命题升级为无条件证明。 |

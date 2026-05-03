@@ -129,11 +129,10 @@
 
 ## 10. 下一步核查任务
 
-1. 把 DI/BFI 的定理原文版本摘录成可引用的定理模板。
-2. 将 KLS-window 的变量逐项填入该模板。
-3. 对所有多对数损失建立 `B(A)` 吸收账本。
-4. 在主稿中把“引用版闭合”和“完全自足版未闭合”分开定理化。
-5. 把 Rosser--Schoenfeld 显式 Mertens/prime-count 常数写入主稿参考文献和定理模板。
+1. `docs/monograph/kls-window-di-bfi-adaptation-template.md` 已把 DI/BFI 到 KLS-window 的相位、模数、频率、逆元变量、权重、gcd 层、端点平滑和 `B(A)` 损失账本写成独立适配模板。
+2. 在主稿中把“引用版闭合”和“完全自足版未闭合”继续分开定理化。
+3. 把 Rosser--Schoenfeld 显式 Mertens/prime-count 常数写入主稿参考文献和定理模板。
+4. 若投稿要求外部文献原文定理号，逐页核对 DI/BFI 的对应定理编号；这属于书目精确化，不改变当前 H7 外部定理版逻辑链。
 
 ## 11. KLS-window 变量适配核查表
 

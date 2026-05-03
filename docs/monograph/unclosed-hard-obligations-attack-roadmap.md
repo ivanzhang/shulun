@@ -344,10 +344,14 @@ TRC / true residual balance
 3. 证明本文 KLS-window 完全满足该模板；
 4. 把完全自足版明确降级为“需重证 DI/BFI”。
 
+### 7.2A 本轮进展
+
+新增 `docs/monograph/kls-window-di-bfi-adaptation-template.md`。该文件已给出 `H7-KLS-ext` 与 `H7-BMD-ext` 两个外部定理版命题，并逐项填入 CRT 相位归一化、非互素 gcd 层、多对数损失、well-factorable 权重和 `B(A)` 吸收账本。由此，H7 从“适配表未完成”升级为“外部深定理版闭合；完全自足版仍需重证 DI/BFI”。
+
 ### 7.3 可行性
 
-评级：A/B。
-这是外部引用工程，不等于证明孪生素数。应优先完成。
+评级：A/B，外部引用工程已完成第一版。
+该项不等于证明孪生素数，也不闭合 `BMD=>TLI`；下一硬项应转入 H8 或返回 Prime Matrix 的 H5/H4/H2。
 
 ## 8. H8：BMD 到 TLI 无隐藏下界审查
 
