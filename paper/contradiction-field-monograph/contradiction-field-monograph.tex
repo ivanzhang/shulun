@@ -515,6 +515,24 @@ If Tail-anchor and fixed-offset/PDEC thresholds do not fire, one must prove the 
 \]
 for $R=C\log^2 q$; otherwise the failing block must be absorbed by Endpoint/PDEC.  A forced-radius audit on the $44$ tight certificate rows produces $124$ explicit Hall defects and records their tail, phase, offset, and mirror data.  This audit fixes the certificate fields and exit geometry; it is not a substitute for the uniform expansion theorem.
 
+\section{WSH Expansion Margin Ledger}
+
+The expansion term itself is audited in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-expansion-margin-ledger.md}.
+\]
+For $17\le p\le2000$, $R=\lceil3\log^2 q\rceil$, and the same $y=\lfloor p/e\rfloor$, the audit scans every consecutive balanced-semiprime block in every relevant row.  It checks $8440419$ blocks across $215074$ rows and finds
+\[
+  \min_B\bigl(|N_R(B)|-|B|\bigr)=1,
+\]
+with no zero-surplus block.  Only seven blocks have surplus at most $1$.
+
+This strengthens the finite certificate from ``a matching exists'' to ``every interval-Hall block has positive margin'' in the audited range.  It still does not prove the uniform theorem.  The remaining target is:
+\[
+  \text{WSH Positive Expansion or Named Defect}.
+\]
+After Tail-anchor, fixed-offset/PDEC, and endpoint-mirror deficit exits are removed, one must prove the positive expansion inequality for all formal blocks.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

@@ -605,6 +605,35 @@ otherwise the failing block is absorbed by Endpoint/PDEC.
 
 注意：该命题尚未证明。当前完成的是一维 Hall 缺陷正规形、五个刚性投影和三出口证书字段。
 
+新增 `experiments/prime_matrix_wsh_expansion_margin_audit.py`、
+`docs/monograph/prime-matrix-wsh-expansion-margin-audit.md/json` 与
+`docs/monograph/prime-matrix-wsh-expansion-margin-ledger.md` 后，`WSH-Expansion-or-Defect`
+的扩张项已被有限证书直接审计。脚本对 `17<=p<=2000`、`R=ceil(3 log^2 q)` 的全部含
+平衡双尾半素数行逐个连续块计算
+
+```text
+Hall surplus = |N_R(B)| - |B|.
+```
+
+结果为：
+
+```text
+rows with balanced semiprimes = 215074
+contiguous semiprime blocks = 8440419
+global minimum Hall surplus = 1
+zero-surplus blocks = 0
+tight blocks with surplus <=1 = 7
+```
+
+这说明有限范围内不只是有匹配，而是每个连续半素数块都有正余量。全局证明仍缺
+统一扩张下界；最新最小命题应写为：
+
+```text
+WSH Positive Expansion or Named Defect:
+|N_R(B)| >= |B|
+or Tail-anchor / fixed-offset-PDEC / Endpoint mirror deficit fires.
+```
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

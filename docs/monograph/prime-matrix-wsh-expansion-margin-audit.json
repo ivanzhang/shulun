@@ -1,0 +1,965 @@
+{
+  "parameters": {
+    "max_p": 2000,
+    "min_p": 17,
+    "y_ratio": 0.36787944117144233,
+    "radius_factor": 3.0,
+    "tight_surplus": 1,
+    "wheel_primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13
+    ]
+  },
+  "summary": {
+    "prime_record_count": 297,
+    "row_with_semiprime_count": 215074,
+    "block_count": 8440419,
+    "global_min_surplus": 1,
+    "zero_surplus_blocks": 0,
+    "tight_block_count": 7,
+    "max_tight_block_semiprime_count": 2,
+    "max_zero_block_semiprime_count": 0,
+    "max_tail_load_in_tight_blocks": 2,
+    "max_allowed_offset_load_in_tight_blocks": 2
+  },
+  "tight_blocks": [
+    {
+      "p": 17,
+      "q": 19,
+      "row": 5,
+      "radius": 27,
+      "semi_index_range": [
+        0,
+        1
+      ],
+      "semiprime_count": 2,
+      "prime_count": 3,
+      "surplus": 1,
+      "neighbor_intervals": [
+        [
+          50,
+          118
+        ]
+      ],
+      "span": 69,
+      "semiprime_values_sample": [
+        77,
+        91
+      ],
+      "q_square_mirror_span": [
+        243,
+        311
+      ],
+      "pressure": {
+        "max_tail_load": 2,
+        "max_tail_pair_load": 1,
+        "max_wheel_phase_load": 1,
+        "max_allowed_offset_load": 2,
+        "max_actual_edge_offset_load": 1,
+        "top_tail_labels": [
+          {
+            "label": 7,
+            "load": 2
+          },
+          {
+            "label": 11,
+            "load": 1
+          },
+          {
+            "label": 13,
+            "load": 1
+          }
+        ],
+        "top_tail_pairs": [
+          {
+            "labels": [
+              7,
+              11
+            ],
+            "load": 1
+          },
+          {
+            "labels": [
+              7,
+              13
+            ],
+            "load": 1
+          }
+        ],
+        "top_wheel_phases": [
+          {
+            "residue": 77,
+            "load": 1
+          },
+          {
+            "residue": 91,
+            "load": 1
+          }
+        ],
+        "top_allowed_offsets": [
+          {
+            "offset": -24,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -18,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 6,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 12,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -16,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -10,
+            "load": 1,
+            "rho_z_offset": 0.34375
+          },
+          {
+            "offset": -6,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -4,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          }
+        ],
+        "top_actual_edge_offsets": [
+          {
+            "offset": 2,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 6,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -8,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -2,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          }
+        ],
+        "neighbor_primes_sample": [
+          79,
+          83,
+          89
+        ]
+      }
+    },
+    {
+      "p": 19,
+      "q": 23,
+      "row": 6,
+      "radius": 30,
+      "semi_index_range": [
+        0,
+        1
+      ],
+      "semiprime_count": 2,
+      "prime_count": 3,
+      "surplus": 1,
+      "neighbor_intervals": [
+        [
+          89,
+          163
+        ]
+      ],
+      "span": 75,
+      "semiprime_values_sample": [
+        119,
+        133
+      ],
+      "q_square_mirror_span": [
+        366,
+        440
+      ],
+      "pressure": {
+        "max_tail_load": 2,
+        "max_tail_pair_load": 1,
+        "max_wheel_phase_load": 1,
+        "max_allowed_offset_load": 2,
+        "max_actual_edge_offset_load": 1,
+        "top_tail_labels": [
+          {
+            "label": 7,
+            "load": 2
+          },
+          {
+            "label": 17,
+            "load": 1
+          },
+          {
+            "label": 19,
+            "load": 1
+          }
+        ],
+        "top_tail_pairs": [
+          {
+            "labels": [
+              7,
+              17
+            ],
+            "load": 1
+          },
+          {
+            "labels": [
+              7,
+              19
+            ],
+            "load": 1
+          }
+        ],
+        "top_wheel_phases": [
+          {
+            "residue": 119,
+            "load": 1
+          },
+          {
+            "residue": 133,
+            "load": 1
+          }
+        ],
+        "top_allowed_offsets": [
+          {
+            "offset": -30,
+            "load": 2,
+            "rho_z_offset": 0.6875
+          },
+          {
+            "offset": -6,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 18,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 30,
+            "load": 2,
+            "rho_z_offset": 0.6875
+          },
+          {
+            "offset": -22,
+            "load": 1,
+            "rho_z_offset": 0.2864583333333333
+          },
+          {
+            "offset": -18,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -16,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          }
+        ],
+        "top_actual_edge_offsets": [
+          {
+            "offset": 8,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -6,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -2,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 18,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 4,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          }
+        ],
+        "neighbor_primes_sample": [
+          127,
+          131,
+          137
+        ]
+      }
+    },
+    {
+      "p": 1721,
+      "q": 1723,
+      "row": 853,
+      "radius": 167,
+      "semi_index_range": [
+        0,
+        1
+      ],
+      "semiprime_count": 2,
+      "prime_count": 3,
+      "surplus": 1,
+      "neighbor_intervals": [
+        [
+          1467836,
+          1468180
+        ]
+      ],
+      "span": 345,
+      "semiprime_values_sample": [
+        1468003,
+        1468013
+      ],
+      "q_square_mirror_span": [
+        1500549,
+        1500893
+      ],
+      "pressure": {
+        "max_tail_load": 1,
+        "max_tail_pair_load": 1,
+        "max_wheel_phase_load": 1,
+        "max_allowed_offset_load": 2,
+        "max_actual_edge_offset_load": 1,
+        "top_tail_labels": [
+          {
+            "label": 1063,
+            "load": 1
+          },
+          {
+            "label": 1381,
+            "load": 1
+          },
+          {
+            "label": 853,
+            "load": 1
+          },
+          {
+            "label": 1721,
+            "load": 1
+          }
+        ],
+        "top_tail_pairs": [
+          {
+            "labels": [
+              1063,
+              1381
+            ],
+            "load": 1
+          },
+          {
+            "labels": [
+              853,
+              1721
+            ],
+            "load": 1
+          }
+        ],
+        "top_wheel_phases": [
+          {
+            "residue": 26563,
+            "load": 1
+          },
+          {
+            "residue": 26573,
+            "load": 1
+          }
+        ],
+        "top_allowed_offsets": [
+          {
+            "offset": -156,
+            "load": 2,
+            "rho_z_offset": 0.5625
+          },
+          {
+            "offset": -150,
+            "load": 2,
+            "rho_z_offset": 0.6875
+          },
+          {
+            "offset": -132,
+            "load": 2,
+            "rho_z_offset": 0.5729166666666666
+          },
+          {
+            "offset": -126,
+            "load": 2,
+            "rho_z_offset": 0.61875
+          },
+          {
+            "offset": -114,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -102,
+            "load": 2,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -90,
+            "load": 2,
+            "rho_z_offset": 0.6875
+          },
+          {
+            "offset": -84,
+            "load": 2,
+            "rho_z_offset": 0.61875
+          }
+        ],
+        "top_actual_edge_offsets": [
+          {
+            "offset": 76,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 66,
+            "load": 1,
+            "rho_z_offset": 0.5729166666666666
+          },
+          {
+            "offset": 106,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 96,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 160,
+            "load": 1,
+            "rho_z_offset": 0.34375
+          },
+          {
+            "offset": 150,
+            "load": 1,
+            "rho_z_offset": 0.6875
+          }
+        ],
+        "neighbor_primes_sample": [
+          1468079,
+          1468109,
+          1468163
+        ]
+      }
+    },
+    {
+      "p": 17,
+      "q": 19,
+      "row": 7,
+      "radius": 27,
+      "semi_index_range": [
+        0,
+        0
+      ],
+      "semiprime_count": 1,
+      "prime_count": 2,
+      "surplus": 1,
+      "neighbor_intervals": [
+        [
+          92,
+          146
+        ]
+      ],
+      "span": 55,
+      "semiprime_values_sample": [
+        119
+      ],
+      "q_square_mirror_span": [
+        215,
+        269
+      ],
+      "pressure": {
+        "max_tail_load": 1,
+        "max_tail_pair_load": 1,
+        "max_wheel_phase_load": 1,
+        "max_allowed_offset_load": 1,
+        "max_actual_edge_offset_load": 1,
+        "top_tail_labels": [
+          {
+            "label": 7,
+            "load": 1
+          },
+          {
+            "label": 17,
+            "load": 1
+          }
+        ],
+        "top_tail_pairs": [
+          {
+            "labels": [
+              7,
+              17
+            ],
+            "load": 1
+          }
+        ],
+        "top_wheel_phases": [
+          {
+            "residue": 119,
+            "load": 1
+          }
+        ],
+        "top_allowed_offsets": [
+          {
+            "offset": -22,
+            "load": 1,
+            "rho_z_offset": 0.2864583333333333
+          },
+          {
+            "offset": -18,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -16,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -10,
+            "load": 1,
+            "rho_z_offset": 0.34375
+          },
+          {
+            "offset": -6,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 8,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          }
+        ],
+        "top_actual_edge_offsets": [
+          {
+            "offset": 8,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          }
+        ],
+        "neighbor_primes_sample": [
+          127,
+          131
+        ]
+      }
+    },
+    {
+      "p": 19,
+      "q": 23,
+      "row": 15,
+      "radius": 30,
+      "semi_index_range": [
+        0,
+        0
+      ],
+      "semiprime_count": 1,
+      "prime_count": 2,
+      "surplus": 1,
+      "neighbor_intervals": [
+        [
+          293,
+          353
+        ]
+      ],
+      "span": 61,
+      "semiprime_values_sample": [
+        323
+      ],
+      "q_square_mirror_span": [
+        176,
+        236
+      ],
+      "pressure": {
+        "max_tail_load": 1,
+        "max_tail_pair_load": 1,
+        "max_wheel_phase_load": 1,
+        "max_allowed_offset_load": 1,
+        "max_actual_edge_offset_load": 1,
+        "top_tail_labels": [
+          {
+            "label": 17,
+            "load": 1
+          },
+          {
+            "label": 19,
+            "load": 1
+          }
+        ],
+        "top_tail_pairs": [
+          {
+            "labels": [
+              17,
+              19
+            ],
+            "load": 1
+          }
+        ],
+        "top_wheel_phases": [
+          {
+            "residue": 323,
+            "load": 1
+          }
+        ],
+        "top_allowed_offsets": [
+          {
+            "offset": -30,
+            "load": 1,
+            "rho_z_offset": 0.6875
+          },
+          {
+            "offset": -16,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -12,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -10,
+            "load": 1,
+            "rho_z_offset": 0.34375
+          },
+          {
+            "offset": -6,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": 8,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 14,
+            "load": 1,
+            "rho_z_offset": 0.309375
+          },
+          {
+            "offset": 24,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          }
+        ],
+        "top_actual_edge_offsets": [
+          {
+            "offset": 8,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 14,
+            "load": 1,
+            "rho_z_offset": 0.309375
+          }
+        ],
+        "neighbor_primes_sample": [
+          331,
+          337
+        ]
+      }
+    },
+    {
+      "p": 379,
+      "q": 383,
+      "row": 94,
+      "radius": 107,
+      "semi_index_range": [
+        0,
+        0
+      ],
+      "semiprime_count": 1,
+      "prime_count": 2,
+      "surplus": 1,
+      "neighbor_intervals": [
+        [
+          35514,
+          35728
+        ]
+      ],
+      "span": 215,
+      "semiprime_values_sample": [
+        35621
+      ],
+      "q_square_mirror_span": [
+        110961,
+        111175
+      ],
+      "pressure": {
+        "max_tail_load": 1,
+        "max_tail_pair_load": 1,
+        "max_wheel_phase_load": 1,
+        "max_allowed_offset_load": 1,
+        "max_actual_edge_offset_load": 1,
+        "top_tail_labels": [
+          {
+            "label": 179,
+            "load": 1
+          },
+          {
+            "label": 199,
+            "load": 1
+          }
+        ],
+        "top_tail_pairs": [
+          {
+            "labels": [
+              179,
+              199
+            ],
+            "load": 1
+          }
+        ],
+        "top_wheel_phases": [
+          {
+            "residue": 5591,
+            "load": 1
+          }
+        ],
+        "top_allowed_offsets": [
+          {
+            "offset": -100,
+            "load": 1,
+            "rho_z_offset": 0.34375
+          },
+          {
+            "offset": -94,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -90,
+            "load": 1,
+            "rho_z_offset": 0.6875
+          },
+          {
+            "offset": -88,
+            "load": 1,
+            "rho_z_offset": 0.2864583333333333
+          },
+          {
+            "offset": -84,
+            "load": 1,
+            "rho_z_offset": 0.61875
+          },
+          {
+            "offset": -78,
+            "load": 1,
+            "rho_z_offset": 0.5625
+          },
+          {
+            "offset": -72,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -70,
+            "load": 1,
+            "rho_z_offset": 0.4125
+          }
+        ],
+        "top_actual_edge_offsets": [
+          {
+            "offset": 50,
+            "load": 1,
+            "rho_z_offset": 0.34375
+          },
+          {
+            "offset": 56,
+            "load": 1,
+            "rho_z_offset": 0.309375
+          }
+        ],
+        "neighbor_primes_sample": [
+          35671,
+          35677
+        ]
+      }
+    },
+    {
+      "p": 673,
+      "q": 677,
+      "row": 587,
+      "radius": 128,
+      "semi_index_range": [
+        0,
+        0
+      ],
+      "semiprime_count": 1,
+      "prime_count": 2,
+      "surplus": 1,
+      "neighbor_intervals": [
+        [
+          396603,
+          396859
+        ]
+      ],
+      "span": 257,
+      "semiprime_values_sample": [
+        396731
+      ],
+      "q_square_mirror_span": [
+        61470,
+        61726
+      ],
+      "pressure": {
+        "max_tail_load": 1,
+        "max_tail_pair_load": 1,
+        "max_wheel_phase_load": 1,
+        "max_allowed_offset_load": 1,
+        "max_actual_edge_offset_load": 1,
+        "top_tail_labels": [
+          {
+            "label": 617,
+            "load": 1
+          },
+          {
+            "label": 643,
+            "load": 1
+          }
+        ],
+        "top_tail_pairs": [
+          {
+            "labels": [
+              617,
+              643
+            ],
+            "load": 1
+          }
+        ],
+        "top_wheel_phases": [
+          {
+            "residue": 6341,
+            "load": 1
+          }
+        ],
+        "top_allowed_offsets": [
+          {
+            "offset": -124,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -120,
+            "load": 1,
+            "rho_z_offset": 0.6875
+          },
+          {
+            "offset": -112,
+            "load": 1,
+            "rho_z_offset": 0.309375
+          },
+          {
+            "offset": -108,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -102,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          },
+          {
+            "offset": -100,
+            "load": 1,
+            "rho_z_offset": 0.34375
+          },
+          {
+            "offset": -94,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": -84,
+            "load": 1,
+            "rho_z_offset": 0.61875
+          }
+        ],
+        "top_actual_edge_offsets": [
+          {
+            "offset": 2,
+            "load": 1,
+            "rho_z_offset": 0.2578125
+          },
+          {
+            "offset": 102,
+            "load": 1,
+            "rho_z_offset": 0.515625
+          }
+        ],
+        "neighbor_primes_sample": [
+          396733,
+          396833
+        ]
+      }
+    }
+  ]
+}

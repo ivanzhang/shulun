@@ -151,6 +151,17 @@ WSH-Expansion-or-Defect
 `q^2-n` 镜像送入早期非零类 `PDEC/Endpoint`。强制缩半径审计只支持这个分解格式，
 不能替代该统一扩张不等式。
 
+新增 `prime-matrix-wsh-expansion-margin-ledger` 后，路线 C 的有限证书进一步增强：
+在 `17<=p<=2000` 的 `8440419` 个连续半素数块上，`R=ceil(3 log^2 q)` 的最小
+Hall 余量为 `1`，没有零余量块。下一步应把“正余量”证明为结构定理：
+
+```text
+WSH Positive Expansion or Named Defect
+```
+
+即在排除 Tail-anchor、固定偏移/PDEC 和 Endpoint mirror deficit 后，证明正扩张。
+这比普通短区间素数下界更窄，因为只需控制由平衡双尾半素数簇诱导的邻域。
+
 ### 2.5 可行性
 
 评级：C。

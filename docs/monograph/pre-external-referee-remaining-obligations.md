@@ -80,6 +80,11 @@ then |N_R(B_0)| >= |B_0| for R=C log^2(q);
 else the named exit absorbs the block.
 ```
 
+新增 `docs/monograph/prime-matrix-wsh-expansion-margin-ledger.md` 后，作者侧有限证书显示
+`17<=p<=2000` 中 `8440419` 个连续半素数块的最小 Hall 余量为 `1`，零余量块为 `0`。
+外审前仍不能把该有限事实推广为全局证明；必须补 `WSH Positive Expansion or Named Defect`
+的统一证明，或把它明确标为条件输入。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：
