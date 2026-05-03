@@ -218,6 +218,26 @@ H_endpoint ≡ -c*r^{-1} mod p。
 已经被路由到固定非零 `ColumnCRTDefect(p,d)` 候选；剩余不再是构造位移入口，而是排除
 该 `ColumnCRT` 阈值或证明正式反例族避开这些门控行。
 
+再新增
+
+```text
+experiments/prime_matrix_rpz_columncrt_threshold_obstruction.py；
+docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.json；
+docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.md。
+```
+
+该审计说明固定非零位移入口仍不是排斥。对每条 unit gate，全部 unit residues 已在同一
+`(label=p, displacement=d)` 类中，因此
+
+```text
+R_{p,d} >= prod_{ell<r}(ell-1)。
+```
+
+当前最大内禀负载为 `48`；测试 `L_D=2` 时有 `10` 条门控行、`400` 个相位超过阈值。
+这只说明它们进入 `ColumnCRTDefect`，不是被排除。故单靠阈值调参不能闭合 RPZ；
+下一步必须证明正式反例族避开 unit gate、走 endpoint-PDEC，或给出独立的
+`ColumnCRTDefect` 排斥定理。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -255,6 +275,7 @@ RPZ 出口证书骨架包；
 first-grid-fail seam 标准形证书。
 first-grid-fail seam 的单余类 PDEC/Fourier 支持包与端点分裂账本。
 unit endpoint seam 的固定非零 ColumnCRT 位移门控证书。
+ColumnCRT 阈值调参不可闭合障碍证书。
 ```
 
 本文没有完成：

@@ -231,6 +231,12 @@ endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬�
 外审前剩余进一步变为：证明正式反例族映入这些门控行并排除对应 `ColumnCRTDefect(p,d)` 阈值，
 或证明正式反例族避开 unit endpoint seam。
 
+新增 `docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.md` 后，阈值路线的限制已明确：
+固定 unit gate 的全部 unit residues 自身已经落入同一个 `(p,d)` 类，内禀负载为
+`prod_{ell<r}(ell-1)`；当前最大为 `48`。因此 `L_D=2` 只会触发 `ColumnCRTDefect`，不是排除。
+外审前若要闭合该项，必须给出独立 `ColumnCRTDefect` 排斥、endpoint-PDEC 上界，或 formal-family
+避开定理。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

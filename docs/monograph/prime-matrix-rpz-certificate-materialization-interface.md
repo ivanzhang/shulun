@@ -151,6 +151,7 @@ RPZ-SAE / RPZ-PDEC / RPZ-ColumnCRT 三类证书材料化接口；
 first-grid-fail seam 标准形证书。
 first-grid-fail seam 的 PDEC/Fourier 支持包与端点 unit/killed 分裂。
 unit endpoint seam 的 ColumnCRT 固定非零位移门控证书。
+ColumnCRT 阈值调参不可闭合障碍证书。
 ```
 
 本文没有完成：
@@ -188,10 +189,23 @@ d = h_witness-H_endpoint mod p != 0。
 余类。因此持久 unit endpoint seam 不再是未结构化坏窗，而是标准
 `ColumnCRTDefect(p,d)` 候选。
 
+新增 `prime-matrix-rpz-columncrt-threshold-obstruction.md` 后，下一层障碍也已明确：
+在同一 unit gate 内，所有 unit residues 已经落到同一个 `(label=p, displacement=d mod p)` 类，
+所以该类的内禀负载为
+
+```text
+R_{p,d} >= prod_{ell<r}(ell-1)。
+```
+
+当前账本最大内禀负载为 `48`；若测试阈值 `L_D=2`，则 `10` 条门控行、`400` 个相位只会触发
+`ColumnCRTDefect`，不能被排除。若把 `L_D` 提高到内禀负载以上，又失去排斥力。因此
+`ColumnCRT` 路线的剩余必须是独立 `ColumnCRTDefect` 排斥定理，不能靠阈值调参完成。
+
 下一步最小硬点：
 
 ```text
 1. 把正式反例族到 unit endpoint gate rows 的映射写成定理；
-2. 为固定非零位移余类提交 ColumnCRT 阈值 L_D 排斥证书；
-3. 或证明正式反例族无法命中 unit endpoint seam。
+2. 提交独立 ColumnCRTDefect(p,d) 排斥定理，不能仅调小 L_D；
+3. 或证明正式反例族无法命中 unit endpoint seam；
+4. 或改走 endpoint-PDEC 的 U_CRT<L_PDEC 上界。
 ```

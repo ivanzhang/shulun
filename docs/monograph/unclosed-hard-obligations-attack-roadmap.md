@@ -596,6 +596,13 @@ d=h_witness-H_endpoint mod p != 0。
 证明正式反例族映入这些门控行并排除 `ColumnCRTDefect(p,d)` 阈值 `L_D`，或证明正式反例族避开
 unit endpoint seam。
 
+新增 `docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.md` 后，直接阈值排斥被证伪为
+无效路线：同一 unit gate 内全部 unit residues 具有同一个 `(label=p, displacement=d)`，故
+`R_{p,d}` 的内禀负载等于 `prod_{ell<r}(ell-1)`。当前最大内禀负载 `48`，测试 `L_D=2`
+时 `10` 条门控行、`400` 个相位超过阈值；这只表示进入 `ColumnCRTDefect`，不是排除。
+因此当前最小硬点不应再写成“调低 L_D”，而应写成三选一：formal-family 避开 unit gate、
+endpoint-PDEC 上界、或独立 `ColumnCRTDefect` 排斥定理。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

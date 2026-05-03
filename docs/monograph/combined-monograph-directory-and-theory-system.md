@@ -933,3 +933,24 @@ d=h-H_endpoint mod p != 0。
 formal counterexample family -> unit endpoint gate rows
 and ColumnCRTDefect(p,d) threshold L_D exclusion。
 ```
+
+继续新增 `docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.md` 后，`L_D` 路线本身被
+审到底。固定 unit gate 中，所有 unit residues 已经具有同一个标签 `p` 和同一个非零位移
+`d mod p`，所以
+
+```text
+R_{p,d} >= prod_{ell<r}(ell-1)。
+```
+
+当前账本最大内禀负载为 `48`；若使用既有有限样本中的位移负载阈值 `L_D=2`，则 `10`
+条门控行、`400` 个相位都会超过阈值。该结果不是矛盾，而是表明这些相位进入
+`ColumnCRTDefect`。因此最小硬点的严格状态应更新为：
+
+```text
+unit endpoint gate
+=> fixed nonzero ColumnCRTDefect(p,d)
+but threshold tuning alone cannot exclude it.
+```
+
+剩余合法闭合路线只剩三条：证明正式反例族避开 unit gate；证明 endpoint-PDEC 的
+`U_CRT<L_PDEC`；或给出独立的 `ColumnCRTDefect` 排斥定理。

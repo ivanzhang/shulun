@@ -850,6 +850,20 @@ row phase and non-zero.  In the current ledger all twelve gate rows have explici
 and non-zero displacements, covering all 404 unit endpoint phases.  This routes persistent
 unit endpoint seams to fixed non-zero ColumnCRT candidates; it still does not exclude the
 ColumnCRT threshold $L_D$ or prove that formal counterexample families avoid these gates.
+The threshold obstruction audit
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.md}
+\]
+then shows why this cannot be closed by merely lowering $L_D$.  Inside a fixed unit gate, all
+unit endpoint residues already have the same label $p$ and the same non-zero displacement
+class $d\bmod p$, so the intrinsic load of that class is
+\[
+  R_{p,d}\ge \prod_{\ell<r}(\ell-1).
+\]
+In the present ledger the maximum intrinsic load is $48$, and the test value $L_D=2$ would
+send ten gate rows, covering 400 phases, into ColumnCRTDefect rather than exclude them.  Thus
+the remaining legitimate closures are a formal-family avoidance theorem, an endpoint-PDEC
+upper bound, or an independent exclusion theorem for the resulting ColumnCRTDefect.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 
