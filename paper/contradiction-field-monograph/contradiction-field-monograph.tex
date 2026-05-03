@@ -1237,6 +1237,28 @@ capacity exclusion: prove that these edge or triple capacities are strictly belo
 full-chain requirements, or that full capacity forces PDEC, ColumnCRT, endpoint phase, or
 cofactor-structure defects.  This is a necessary-capacity reduction, not yet an unconditional
 proof of H3.
+The macroscopic full-tail branch is then attacked in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md}.
+\]
+For a fixed even shift $\delta\in\{2,4,6\}$ and an interval $I$ of length $H$, the classical
+two-dimensional Selberg upper-bound sieve gives
+\[
+  \#\{n\in I:(n(n+\delta),P(y))=1\}
+  \le A_\delta(\theta)\frac{H}{(\log y)^2}
+  \qquad (3\le y\le H^\theta).
+\]
+Every filled adjacent edge gives a $y$-rough pair with shift $2$ or $4$, and every filled
+triple gives a $y$-rough endpoint pair with shift $6$.  Hence a continuous tail-filled block
+$B$ must satisfy
+\[
+  |B|\le 2+A_*(\theta)\frac{q+6}{(\log y)^2}.
+\]
+Thus a macroscopic block of length comparable with $q$, in particular a whole H3 row of
+about $q/3$ candidates, cannot be filled only by tail labels at sufficiently large scale.
+The remaining H3 obstruction is consequently narrower: any surviving bad row must split tail
+points into many short blocks, and the small-factor cuts or short-block endpoint phases must
+be routed to PDEC, ColumnCRT, endpoint, or cofactor defects.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

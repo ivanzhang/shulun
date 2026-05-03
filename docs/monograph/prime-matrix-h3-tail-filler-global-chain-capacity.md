@@ -1,6 +1,6 @@
 # H3 尾补洞全局链容量硬攻
 
-**状态：** `global_chain_capacity_reduction_proved_final_edge_capacity_open`
+**状态：** `global_chain_capacity_reduction_proved_macroscopic_tail_chain_excluded`
 
 本文不转换命题，只继续攻击 H3/行命题当前唯一闭合目标的尾补洞全局拼接硬障碍：
 
@@ -254,3 +254,28 @@ unless the row produces a named PDEC/ColumnCRT/endpoint/cofactor defect.
    非零 Fourier/CRT 缺陷，从而进入既有 `PDEC/ColumnCRT/endpoint/cofactor` 出口。
 
 这三项是同一个硬障碍的不同投影，不能再拆成新的证明目标来替代原命题。
+
+## 9. 二维上筛推进
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md
+```
+
+证明了第 8 节中的宏观边/三连容量排斥：任意满尾补洞连续块 `B` 满足
+
+\[
+|B|\le 2+A_*(\theta){q+6\over(\log y)^2}
+\]
+
+只要 `y<=q^theta` 且使用经典二维 Selberg 上筛。因此长度为正比例 `q` 的整行尾链已经不能在
+无限尺度存在。
+
+剩余不再是“尾链能否整行拼满”，而是：
+
+```text
+若坏行仍存在，则尾点只能被小骨架切成许多短块；
+必须证明这种高频切割触发 D_y/PDEC 缺陷，
+或短块相位集中触发 ColumnCRT/endpoint/cofactor 缺陷。
+```

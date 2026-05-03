@@ -205,3 +205,14 @@ docs/monograph/prime-matrix-h3-square-root-defect-exclusion-hard-attack.md
 
 它显示 `D_y` 不是主障碍；在自然低模选择下 `F_y/d` 与尾标签总数 `T_y` 常数等价。因此最终证明
 必须排斥尾标签/双粗点作为整行补洞器，而不能只要求普通 Fourier 能量小。
+
+尾补洞器的后续进展见：
+
+```text
+docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md
+docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md
+```
+
+当前最精确状态是：宏观连续尾链已由二维 rough 对上筛排除；统一缺陷排斥的剩余部分是
+`ShortBlock-PDEC Routing`，即证明全阻断若仍存在，则小骨架高频切割产生 `D_y/PDEC` 缺陷，
+或短尾块相位产生 `ColumnCRT/endpoint/cofactor` 缺陷。

@@ -401,6 +401,24 @@ EdgeCap(B;y)<|B|-1 或 TriCap(B;y)<|B|-2，
 
 该容量判据是必要条件已证，不是无条件排斥已证；未补完前不能宣称 H3/行命题无条件闭合。
 
+新增 `docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md` 后，容量排斥已有第一条
+审稿级闭合分支：二维 Selberg 上筛给出
+
+```text
+满尾补洞连续块长度 <= 2 + A_*(theta)(q+6)/(log y)^2。
+```
+
+故宏观整行尾补洞分支已排除。外审前剩余义务相应收窄为：
+
+```text
+Short-block extraction / PDEC routing:
+尾点若只能出现在许多短块中，则小骨架切割频率必须产生 D_y/PDEC 缺陷；
+若不产生 D_y/PDEC，则短块端点、列位移或互补商必须产生 ColumnCRT/endpoint/cofactor 缺陷。
+```
+
+此外还需把二维上筛常数 `A_delta(theta)` 显式引用或内联 Selberg 二次型证明，才能升级为
+完全显式阈值版。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

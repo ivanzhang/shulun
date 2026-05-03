@@ -379,6 +379,12 @@ H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量�
 而是证明 `EdgeCap<|B|-1` 或 `TriCap<|B|-2`，或把满容量强制送入
 `PDEC/ColumnCRT/endpoint/cofactor` 缺陷。
 
+新增 `docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md` 后，宏观满尾链分支已有
+二维上筛排斥：若 `3<=y<=q^theta`，任意满尾补洞连续块满足
+`|B|<=2+A_*(theta)(q+6)/(log y)^2`。因此整行 `~q/3` 个 H3 候选全由尾标签/双粗点补洞，
+在无限尺度上被排除。剩余最窄接口转为：一般混合坏行只能由小骨架把尾点切成许多短块；
+必须证明这种高频切割触发 `D_y/PDEC`，或短块相位集中触发 `ColumnCRT/endpoint/cofactor`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

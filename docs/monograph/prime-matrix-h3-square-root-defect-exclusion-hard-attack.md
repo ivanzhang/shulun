@@ -245,3 +245,15 @@ docs/monograph/prime-matrix-h3-tail-filler-rigidity-hardcore.md
 该文件证明相邻与二步 H3 候选若均由尾标签补洞，则其大因子族完全互斥；同一尾标签复用间距至少
 为 `y/4`；三连补洞等价于互素 `y`-rough 合数的 `2/4/6` 短差值方程。剩余硬核是把这些局部刚性
 全局化为 ColumnCRT、端点相位或互补商容量矛盾。
+
+进一步容量化与首个排斥分支见：
+
+```text
+docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md
+docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md
+```
+
+前者证明满尾链必有满相邻边容量和满三连容量；后者用二维 Selberg 上筛证明宏观满尾链长度
+至多 `O(q/log^2 y)`。因此整行尾补洞器已在无限尺度上被排除。剩余是混合坏行中的短尾块抽取：
+若尾块只能短而多，小骨架切割必须触发 `D_y/PDEC`，或短块端点相位触发
+`ColumnCRT/endpoint/cofactor`。

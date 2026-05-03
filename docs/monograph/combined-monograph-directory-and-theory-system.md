@@ -1356,6 +1356,13 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 必要容量判据已证，最终剩余是证明边/三连容量严格不足，或把满容量路由到
 `PDEC/ColumnCRT/endpoint/cofactor` 缺陷。
 
+新增 `docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md` 后，边/三连容量已有
+宏观排斥：二维 Selberg 上筛给出满尾补洞块长度 `O(q/log^2 y)`，所以整行 `~q/3`
+候选全由尾标签/双粗半素数连续补洞在无限尺度上不可能。合著稿的 H3 剩余接口应更新为：
+`ShortBlock-PDEC Routing`。也就是说，若坏行仍存在，尾点只能被小骨架切成许多短块；
+这种高频切割必须证明会触发 `D_y/PDEC`，或由短块端点、列位移和互补商相位触发
+`ColumnCRT/endpoint/cofactor`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
