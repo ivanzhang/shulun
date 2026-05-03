@@ -431,6 +431,13 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 因此高 `lcm` 分支进一步压缩为已知 `PDEC/ColumnCRT` 持久出口或 `SAE/endpoint` 单窗出口；
 仍未证明的是这两个出口的最终排斥。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-threshold-bridge.md` 后，persistent 高 `lcm`
+出口已有同口径 PDEC 下界：
+`L_HLC(B)=((R sum_a g_B(a)^2-U_B^2)/(R-1))^(1/2)`。稀疏时有统一下界
+`L_HLC>=sqrt(R U_B/(2(R-1)))`；稠密例外 `U_B>R/2` 被路由回 `KLS-window`、
+`PDEC/ColumnCRT` 或 `SAE/endpoint`。当前剩余精确为：对所有 HLC formal unit 证明
+`U_CRT(B)<L_HLC(B)`，或给出失败的 SAE/endpoint 回流证书。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

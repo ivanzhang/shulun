@@ -135,3 +135,7 @@ U_B>0 and U_B<=R/2
 换言之，高 `lcm` 分支已经被压缩为已知最终出口的能量注入问题；它不再需要新的
 有限模板或新的命题转换。
 
+后续阈值桥接见 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-threshold-bridge.md`。该文把
+非零能量转为同一 formal unit 的 PDEC 下界
+`L_HLC=((R sum_a g(a)^2-U^2)/(R-1))^(1/2)`，并证明 `U>R/2` 的稠密例外不是新出口，而是
+`KLS-window`、`PDEC/ColumnCRT` 或 `SAE/endpoint` 的已有入口。

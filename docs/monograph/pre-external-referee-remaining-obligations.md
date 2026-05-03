@@ -511,6 +511,18 @@ sum_{h!=0}|muhat(h)|^2 = R*sum_a mu(a)^2 - U^2 >= R*U/2    若 U<=R/2。
 证明上述能量在持久情形必被 `PDEC/ColumnCRT` 排斥，在单窗情形必被 `SAE/endpoint`
 排斥；未证明前只能称为出口压缩，不能称 H3 无条件闭合。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-threshold-bridge.md` 后，持久情形的下界
+已经变成可审稿阈值：
+
+```text
+L_HLC(B)=sqrt((R*sum_a g_B(a)^2-U_B^2)/(R-1)).
+```
+
+稀疏区 `U_B<=R/2` 自动给 `L_HLC>=sqrt(R U_B/(2(R-1)))`；稠密区 `U_B>R/2`
+不再作为 high-lcm 分散逃逸，而必须回到 KLS、PDEC/ColumnCRT 或 SAE/endpoint。
+外审前真正剩余是：逐个 HLC formal unit 证明同口径上界 `U_CRT(B)<L_HLC(B)`，
+或输出失败频率、相位主贡献与回流出口。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

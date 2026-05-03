@@ -1400,6 +1400,12 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 则至少为 `RU/2`。合著稿应把高 `lcm` 章节标为“能量注入已证，PDEC/ColumnCRT 与
 SAE/endpoint 出口排斥未证”。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-threshold-bridge.md` 后，合著稿的
+高 `lcm` 持久出口可写成同口径 PDEC 证书条件：对每个 formal unit `B`，证明
+`U_CRT(B)<L_HLC(B)`，其中
+`L_HLC(B)=((R sum g_B(a)^2-U_B^2)/(R-1))^(1/2)`。稠密例外 `U_B>R/2` 已路由回
+KLS/PDEC/SAE，不新增出口。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

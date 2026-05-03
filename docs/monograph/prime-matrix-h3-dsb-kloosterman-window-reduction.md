@@ -180,6 +180,10 @@ CRT/Fourier 缺陷，进入 `PDEC/ColumnCRT`；sparse 分支进入 `SAE` 单窗�
 `\sum_{h\ne0}|\widehat\mu(h)|^2=R\sum_a\mu(a)^2-U^2`，且当 `U<=R/2` 时至少为 `RU/2`。
 所以 high-lcm 大质量必注入非零 Fourier 能量；持久时进入 `PDEC/ColumnCRT`，非持久时进入
 `SAE/endpoint`。
+阈值形式见 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-threshold-bridge.md`：
+对同一 formal unit，persistent 高 `lcm` 出口给出
+`L_HLC=((R sum g(a)^2-U^2)/(R-1))^(1/2)`。若 `U>R/2`，则不是分散逃逸，而是
+稠密有效模集中，回到 `KLS-window`、`PDEC/ColumnCRT` 或 `SAE/endpoint`。
 
 ### 4.2 互补商窗口长度
 
@@ -252,6 +256,7 @@ H3-DSB bad row
 因此当前真正剩余不再是抽象“大筛缺陷”，而是：
 
 ```text
-证明 KLS-window 覆盖活跃参数，排除 HLC Fourier 能量注入后的 PDEC/ColumnCRT 与 SAE/endpoint 出口，
+证明 KLS-window 覆盖活跃参数，并对每个 HLC formal unit 证明
+`U_CRT(B)<L_HLC(B)` 或路由到 SAE/endpoint，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```

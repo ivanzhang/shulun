@@ -506,6 +506,12 @@ dispersion；因此后续应直接攻 `H3-DSB-LS/KLS`，核验是否能由已有
 能量注入后的出口排斥问题：持久能量排斥归入 `PDEC/ColumnCRT`，单窗能量排斥归入
 `SAE/endpoint`。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-threshold-bridge.md` 后，persistent
+分支的最小审查点已经是单个不等式：
+`U_CRT(B)<L_HLC(B)`，其中
+`L_HLC(B)=((R sum g_B(a)^2-U_B^2)/(R-1))^(1/2)`。若 `U_B>R/2`，则作为稠密有效模
+集中回流到 KLS/PDEC/SAE，不再是分散高 `lcm` 自由出口。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。
