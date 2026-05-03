@@ -70,7 +70,11 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 
 新增 `docs/monograph/h4-pdec-lhb-attachment-lemma.md`。该文件证明 LHB 型坏窗满足
 `S subset Z_LHB(p,Q)`，从而上述 `bound=0` 容量行可正式用于 LHB 型 PDEC 分支。
-全局 PDEC 仍未排除；剩余最小硬点是坏窗分类和非 LHB 型失败路由。
+该项把 LHB 接入口闭合；全局 PDEC 仍未排除。
+
+新增 `docs/monograph/h4-pdec-bad-window-classification-lemma.md`。该文件将非空命名
+低模坏窗分成 `SAE / LHB-PDEC / Routed-PDEC` 三类；排除非 LHB 出口后的 persistent
+剩余分支可使用 LHB `bound=0` 容量行。该项仍是路由闭合，不是出口排斥。
 
 
 ## 内部逐行复核更新

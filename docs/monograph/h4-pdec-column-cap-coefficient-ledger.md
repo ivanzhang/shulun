@@ -114,6 +114,8 @@ CC-LHB-UNBRIDGED。
 这些行当前的使用范围是 LHB allowed-set 分支；进入全局 PDEC 还需证明当前 `S subset Z_LHB`。
 新增 `h4-pdec-lhb-attachment-lemma.md` 后，该包含关系在 LHB 型坏窗分支中已经证明；
 全局剩余改为证明正式 PDEC 坏窗的分类：LHB 型接入，非 LHB 型进入命名出口。
+新增 `h4-pdec-bad-window-classification-lemma.md` 后，该分类已定式化为 `SAE` 或
+`LHB-PDEC` 或 `Routed-PDEC` 三分支；它仍不排除非 LHB 出口。
 
 因此 V1 账本已经从“系数来源登记”推进到“部分相位块物化”。它仍不是最终
 `A,b,E,e`，因为有限列见证半径、RCI/CDB 摘要界值和条件路由行尚未物化相位块。

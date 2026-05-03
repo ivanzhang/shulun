@@ -209,4 +209,6 @@ LHB 型坏窗 => S subset Z_LHB(p,Q)。
 3. **条件路由路线。** 先剥离 `ColumnRadius/ColumnCRT/TailAnchor` 出口，再在剩余分支给出 `M_E(t)`。
 
 在 LHB allowed-set 分支内，`WHOLEDEF/BRIDGED` 已有 `bound=0` 的有限容量行，且
-LHB 型接入已证明；在全局 PDEC 中使用它们，还必须完成上述分类与出口路由。
+LHB 型接入已证明。新增 `h4-pdec-bad-window-classification-lemma.md` 后，全局使用边界
+已压缩为：排除 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/口径混合` 出口后的
+剩余 persistent 分支可使用这些 LHB 行。

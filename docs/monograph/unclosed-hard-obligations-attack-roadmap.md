@@ -373,6 +373,22 @@ docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.md。
 低骨架、高标签或混合口径失败而进入 `SAE / ColumnCRT / ColumnRadius / TailAnchor / Rankin`
 等命名出口。
 
+### 4.2K 本轮进展：PDEC 坏窗分类
+
+新增 `docs/monograph/h4-pdec-bad-window-classification-lemma.md`。该文件使用已有
+`UPS-1`、`H4-PDEC-S5`、`H4-PDEC-COL3`、尾锚二分和 Rankin 接入规则，证明非空命名
+低模坏窗满足三分支：
+
+```text
+SAE；
+LHB-PDEC；
+Routed-PDEC。
+```
+
+在排除 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/口径混合` 出口的剩余分支中，
+所有 persistent 坏窗都是 LHB 型，因此可以接入 `Z_LHB` 与 `M(t)` 的 `bound=0` 容量行。
+审稿边界保持不变：这些出口尚未被排除，PDEC 最终对偶主控也尚未提交。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

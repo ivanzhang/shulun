@@ -124,12 +124,16 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 
 新增 `docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.json/md` 后，`Q=2310` 的
 `M(t)` 已由高层 CRT 补洞完成数物化；`WHOLEDEF/BRIDGED` 在 LHB allowed-set 分支给出
-`bound=0` 容量行。剩余外审硬义务改为证明当前全局 PDEC 坏窗集合满足 `S subset Z_LHB`，
-或把不满足者路由到 `ColumnRadius/ColumnCRT/TailAnchor/SAE` 等命名出口。
+`bound=0` 容量行。外审硬义务随之改为接入 LHB 分支或把不满足者路由到
+`ColumnRadius/ColumnCRT/TailAnchor/SAE` 等命名出口。
 
 新增 `docs/monograph/h4-pdec-lhb-attachment-lemma.md` 后，`S subset Z_LHB` 在 LHB 型坏窗
 分支中已经逐行证明。外审硬义务继续收窄为：证明正式 PDEC 抽取过程只产生 LHB 型坏窗，
 或把非 LHB 型失败逐类送入命名出口。
+
+新增 `docs/monograph/h4-pdec-bad-window-classification-lemma.md` 后，非 LHB 型失败已经
+逐类送入 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/拆分证书`。剩余硬义务是排除
+这些出口或提交各自证书，而不是继续补 LHB 接入口。
 
 ### PM-E. RSE/RRD/OSPC 常数链
 

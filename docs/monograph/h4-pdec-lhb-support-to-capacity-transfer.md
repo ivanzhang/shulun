@@ -181,6 +181,10 @@ phase-indicator fork:
 `S subset Z_LHB(p,Q)`。剩余是分类义务：证明当前 PDEC 抽取出的坏窗都满足这些条件，
 或把失败者路由到命名出口。
 
+新增 `h4-pdec-bad-window-classification-lemma.md` 后，上述分类已经定式化：`UPS-1`
+先给出 `SAE/PDEC` 二分，persistent 分支再按首个失败条件进入 `ColumnCRT`、
+`ColumnRadius`、`TailAnchor`、`Rankin` 或拆分义务。该文件仍不排除这些出口。
+
 ## 8. T3 路线的正式化
 
 新增 `h4-pdec-lhb-multiplicity-cap-route.md` 后，`T3-multiplicity` 已被精确化为：

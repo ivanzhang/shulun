@@ -169,3 +169,8 @@ WHOLEDEF/BRIDGED 在该分支中给出 bound=0 容量行。
 \[
 \boxed{\text{PDEC 坏窗分类：LHB 型接入，非 LHB 型命名出口。}}
 \]
+
+补充文件 `h4-pdec-bad-window-classification-lemma.md` 已完成该分类的第一版合同：
+非空命名低模坏窗先由 `UPS-1` 二分为 `SAE` 或 persistent；persistent 分支再按同一
+`(p,Q,tau)`、低骨架、高标签和口径混合四类失败路由。该分类仍不排除出口，但把
+LHB 容量行的全局使用边界精确化为“排除非 LHB 型出口后的剩余分支”。
