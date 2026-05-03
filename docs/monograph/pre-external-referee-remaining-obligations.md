@@ -545,6 +545,10 @@ short-arc 组件出口。
 已有精确格式：`Psi_{D0,R}(L/U)<=1+epsilon`，并推出 L2 平坦性。外审前剩余应改为：
 给出有限 `lambda` 压力证书，或逐项核验 L2-flat residual 满足 KLS-window 的系数范数条件。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-l2-flat-kls-admission.md` 后，外审前应按 K1--K6
+核查 HLC L2-flat residual。不能只说“平坦所以 KLS 可用”；必须逐项确认模数、频率、端点、
+二范数、gcd/unit 和分块条件，或把失败项路由到对应出口。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

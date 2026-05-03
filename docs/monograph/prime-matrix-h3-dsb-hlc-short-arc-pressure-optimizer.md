@@ -159,3 +159,7 @@ short-arc 新出口。
 
 这就是 short-arc 低压残余的当前最窄剩余。
 
+后续 KLS admission 接口见
+`docs/monograph/prime-matrix-h3-dsb-hlc-l2-flat-kls-admission.md`。该文把 L2-flat residual
+接入 KLS-window 的 K1--K6 核查表：有效模数、频率、平滑端点、系数二范数、gcd/unit 层、
+dyadic/尾标签分块。任一失败项回到既有出口；全部通过时 residual 才可调用 KLS-window。

@@ -1426,6 +1426,10 @@ SAE/endpoint 证书。
 进一步变成 `t=L/U` 阈值与 L2 平坦残余；合著稿应把它列入 KLS-window 系数二范数核验，
 而不是继续作为 short-arc 独立出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-l2-flat-kls-admission.md` 后，合著稿应把
+L2-flat residual 写成 KLS admission 问题。K1--K6 全部通过才可引用 KLS；失败项必须回到
+既有出口。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

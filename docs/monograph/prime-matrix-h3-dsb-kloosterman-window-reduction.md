@@ -201,6 +201,9 @@ PDEC 约束行或 `SAE/endpoint` 单窗出口。
 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-pressure-optimizer.md` 将低压残余再压缩为
 `t=L/U` 的一维阈值 `Psi_{D0,R}(t)<=1+epsilon`；该残余推出同一 formal unit 的
 L2 平坦性与大支持，因此应回到 `KLS-window` 系数二范数核验或 coefficient concentration。
+`docs/monograph/prime-matrix-h3-dsb-hlc-l2-flat-kls-admission.md` 进一步给出 K1--K6
+admission 表：模数、频率、端点平滑、二范数、gcd/unit 层和 dyadic/尾标签分块。任一失败
+项回到既有出口；全部通过时才可调用 `KLS-window`。
 
 ### 4.2 互补商窗口长度
 
@@ -277,5 +280,6 @@ H3-DSB bad row
 `U_CRT(B)<L_HLC(B)`，或把失败 Bohr-cap 全部物化为 PDEC/SAE 证书，
 并排除低有效模出口与 short-arc density pressure 残余，
 把低压平坦残余接入 KLS-window/coefficient 分支，
+并逐项核验 HLC L2-flat residual 的 K1--K6 admission，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```

@@ -463,6 +463,10 @@ cap 已被压成密度压力公式：
 `\sum g(a)^2 <= (1+(R-1)tau^2)U^2/R` 与支持下界 `A>=R/(1+(R-1)tau^2)`，因此不再是
 short-arc 出口，而是 KLS-window 低二范数输入或 coefficient concentration 失败。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-l2-flat-kls-admission.md` 后，L2-flat residual
+已有 KLS admission 表：K1 模数、K2 频率、K3 平滑端点、K4 系数二范数、K5 gcd/unit、
+K6 dyadic/尾标签分块。任一失败项都回到既有命名出口；全部通过时才进入 `KLS-window`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

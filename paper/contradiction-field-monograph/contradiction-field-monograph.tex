@@ -1436,6 +1436,14 @@ the same-unit flatness estimate
 \]
 and the corresponding support lower bound.  Thus low-pressure short-arc mass is routed back
 to the KLS-window coefficient-norm check or to coefficient concentration.
+The KLS admission step is separated in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-l2-flat-kls-admission.md}.
+\]
+It lists six required checks for an HLC L2-flat residual: effective modulus, effective
+frequency, endpoint smoothing, coefficient $L^2$ norm, gcd/unit strata, and dyadic or
+tail-label splitting.  The L2-flat estimate supplies the coefficient-norm check; any other
+failed item is a named exit, and only if all six pass may the KLS-window input be invoked.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.
