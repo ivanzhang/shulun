@@ -477,6 +477,24 @@ For the infinite tail, Rosser--Schoenfeld Corollary 1, formulas (3.5)--(3.6), su
 
 This closes the BPN low-hole bucket interface in the stated finite-certificate/external-theorem sense.  It does not by itself promote the whole prime-matrix row/column program to a final theorem, because the remaining global exits still require the separately named PDEC/SAE and Rankin-ledger acceptance obligations.
 
+\section{Prime-Matrix WSH-Hall Phase Certificate}
+
+The latest row-program compression keeps the endpoint status honest.  The terminal RCI branch has been reduced to the comparison between no-tail primes and balanced two-tail semiprimes.  The next local interface is
+\[
+  \text{RCI/PDEC}\Rightarrow
+  \text{Distributed-RCI}\Rightarrow
+  \text{WSH-Hall/PDEC}.
+\]
+Here WSH-Hall means that every balanced two-tail semiprime in a row can be injectively matched to a same-row prime through an offset allowed by the small-prime wheel.  If such a Hall matching fails, the failing interval must be routed to a named exit: persistent endpoint CRT defect, tail-anchor concentration, or endpoint prime deficit.
+
+A finite phase certificate is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-hall-phase-certificate.md}.
+\]
+For $17\le p\le2000$, $y=\lfloor p/e\rfloor$, and wheel primes $2,3,5,7,11,13$, it scans $215074$ rows containing balanced two-tail semiprimes.  It finds no Hall matching failure, no failure under the candidate radius $3\log^2 q$, maximum minimal matching radius $132$, maximum ratio $R/\log^2 q=2.3771082468335174$, and minimum margin $\#\text{primes}-\#\text{semiprimes}=1$.  The certificate rows list semiprime labels, matched primes, offsets, fixed-offset loads, and wheel-phase loads; each matched offset is checked against the congruence condition $d\not\equiv-b\pmod r$.
+
+This is a computational-certificate update, not a global theorem.  The remaining proof obligation is either a uniform WSH-Hall theorem or a proof that every Hall defect necessarily triggers PDEC, Tail-anchor, or Endpoint deficit.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

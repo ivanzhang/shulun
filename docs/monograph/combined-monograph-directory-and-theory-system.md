@@ -564,6 +564,28 @@ RCI/PDEC
 该接口尚未无条件闭合，但比裸短区间素数下界更窄、更接近用户提出的
 “半素数补洞能力受小素因子层锁限制”的刚性矛盾场。
 
+新增 `experiments/prime_matrix_wsh_hall_phase_certificate.py` 与
+`docs/monograph/prime-matrix-wsh-hall-phase-certificate.md/json` 后，
+`WSH-Hall/PDEC` 的有限相位证书已经材料化。脚本在 `17<=p<=2000`、
+`y=floor(p/e)`、轮筛素数 `2,3,5,7,11,13` 下扫描 `215074` 条含平衡双尾半素数的行：
+
+```text
+matching failure rows = 0
+candidate radius failure rows for 3 log^2(q) = 0
+max minimal matching radius = 132
+max radius/log^2(q) = 2.3771082468335174
+min(prime_count-semi_count) = 1
+```
+
+证书行逐项列出半素数、匹配素数、偏移、尾标签、固定偏移负载与轮筛相位负载，
+并核验实际匹配偏移满足 `d != -b mod r`。这一步闭合的是有限审计格式和
+失败出口格式，不是全局 `WSH-Hall` 定理。全局剩余仍是：
+
+```text
+prove WSH-Hall uniformly
+or every Hall defect => PDEC / Tail-anchor / Endpoint deficit.
+```
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

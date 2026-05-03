@@ -102,6 +102,7 @@ e^{-1}<\alpha<1/2.
 2. PTA/RSE 链：`docs/monograph/pta-gsl-hard-attack.md`
 3. RRD/OSPC 账本：`docs/monograph/rse-rrd-ospc-margin-ledger.md`
 4. 低模投影二分：`docs/monograph/rse-rrd-low-projection-dichotomy.md`
+5. WSH-Hall 相位证书：`docs/monograph/prime-matrix-wsh-hall-phase-certificate.md`
 
 ### 2.4 攻坚路线
 
@@ -126,10 +127,24 @@ GSL deletes q<=Y
 
 当前更建议路线 B，因为它把大量局部刚性统一成一个总命中不等式。
 
+路线 C：局部 Hall / 轮筛相位出口。
+
+```text
+RCI/PDEC
+=> balanced semiprimes < primes
+=> WSH-Hall/PDEC
+```
+
+新增 `prime-matrix-wsh-hall-phase-certificate` 后，有限样本中每个平衡双尾半素数行都能
+匹配到同一行素数，且匹配偏移满足小素数轮筛允许条件。该路线的下一证明目标不是继续枚举，
+而是证明局部 Hall 缺陷若出现，必然表现为固定偏移相位超载、尾标签集中或端点素数亏损，
+从而进入 `PDEC/Tail-anchor/Endpoint`。
+
 ### 2.5 可行性
 
 评级：C。
-目标已经清楚，但 `PM-R2B/RSE/RRD/OSPC` 仍需新的定量证明。不能用 CRT 完整周期均衡或实验扫描替代短窗口大因子命中上界。
+目标已经清楚，但 `PM-R2B/RSE/RRD/OSPC` 或 `WSH-Hall=>PDEC` 仍需新的定量证明。
+不能用 CRT 完整周期均衡或有限相位证书替代短窗口大因子命中上界。
 
 ## 3. H3：BPN-LHB 子模块
 

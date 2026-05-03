@@ -57,6 +57,17 @@
 
 当前风险：扩展斜线锁、CRT 镜像、零行复现、实验扫描都能提供刚性，但不能单独替代大因子命中上界或有符号分布估计。
 
+新增 `docs/monograph/prime-matrix-wsh-hall-phase-certificate.md` 后，RHI/Structured-EHPD
+路线中最窄的半素数补洞接口已有有限相位证书：`17<=p<=2000` 的 `215074` 条含平衡双尾半素数行
+没有局部 Hall 匹配失败，且全部通过 `3 log^2(q)` 候选半径；证书逐项核验匹配偏移满足
+小素数轮筛允许条件。该文件只能作为 `WSH-Hall/PDEC` 的材料化审计，不能替代全局定理。
+外审前若使用此路线，必须补以下二择一证明：
+
+```text
+WSH-Hall uniformly true;
+or any Hall defect forces PDEC / Tail-anchor / Endpoint deficit.
+```
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：
