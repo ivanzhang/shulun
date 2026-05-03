@@ -190,3 +190,9 @@ clean HLC residual 若承载 `q/log y` 级反例质量，则非零频率归约�
 prove HLC-KLS-core internally,
 or cite an external windowed Kloosterman spectral/dispersion theorem that implies (CORE-5).
 ```
+
+完全自足化证明脊柱见
+`docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-self-contained-spine.md`。该文把 `(CORE-5)`
+继续拆成平滑 completion、标准 Kloosterman 二次型、系数二范数账本和唯一的
+`Kuznetsov-LS atom (SC-9)`，并证明 `SC-9 => CORE-5`。因此当前唯一未内联证明的行已经
+精确变为 `(SC-9)`，不是 high-lcm、short-arc、L2-flat 或普通 Weil 估计。

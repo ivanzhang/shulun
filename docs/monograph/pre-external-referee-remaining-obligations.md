@@ -578,6 +578,18 @@ prove HLC-KLS-core (CORE-5):
 多个模糊解析缺口；它只有一个精确缺口 `(CORE-5)`，以及一个书目动作：找出可直接推出
 `(CORE-5)` 的外部定理并核对变量。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-self-contained-spine.md` 后，外审前义务
+继续收窄：
+
+```text
+prove Kuznetsov-LS atom (SC-9)
+or cite an external theorem that implies it.
+```
+
+该文已完成 `SC-9=>CORE-5` 和点态 Weil 不足审查。若作者要宣称完全自足闭合，必须继续
+补 Kuznetsov trace formula、Bessel transform bounds、spectral large sieve 与本文窗口的
+参数专门化，不能只写“由谱理论可得”。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -1452,6 +1452,18 @@ clean HLC window
 这把完全自足版的剩余从宽泛谱理论重证压缩为单一核心平均命题；但在 `(CORE-5)` 未证明或
 未精确引用前，仍不得标为完全无黑箱闭合。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-self-contained-spine.md` 后，理论目录应在
+`HLC-KLS-core` 下再挂一个自足证明脊柱：
+
+```text
+CORE-5
+=> smooth completion + Kloosterman quadratic form
+=> Kuznetsov-LS atom (SC-9)
+=> CORE-5.
+```
+
+该节点把唯一未内联证明行精确标为 `(SC-9)`，并记录普通 Weil 界不足以替代谱平均。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

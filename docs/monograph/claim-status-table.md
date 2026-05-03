@@ -481,6 +481,11 @@ clean HLC 分支在外部深定理版中闭合；完全自足无黑箱版仍需�
 unit/gcd 剥离、L2 账本和多对数吸收，证明 `HLC-KLS-core => HLC-KLS-ext => clean HLC`
 反例矛盾。当前唯一未自证行是 `(CORE-5)` 本身。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-self-contained-spine.md` 后，`(CORE-5)`
+又被完全自足化拆解为：平滑 completion、逆元变量 completion、Kloosterman 二次型
+`(SC-7)`、系数二范数 `(SC-8)`，以及唯一未内联的 `Kuznetsov-LS atom (SC-9)`。该文件
+证明 `SC-9=>CORE-5`，并排除点态 Weil 路线足以闭合的误用。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

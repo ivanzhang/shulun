@@ -250,3 +250,8 @@ windowed Kloosterman spectral/dispersion theorem
 
 外部文献核对时应优先寻找能直接推出 `(CORE-5)` 的定理形式；若不能直接推出，则必须补
 从外部定理到 `(CORE-5)` 的变量、权重、平滑和二范数转换。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-self-contained-spine.md` 后，外部引用
+还可进一步按 `SC-9` 核验：外部定理若能直接给出本文窗口族上的
+`Kuznetsov-LS atom (SC-9)`，则由该文件已证明的账本推出 `(CORE-5)`。若外部定理只给点态
+Weil 或单模估计，则不够；文件第 7 节已记录其量级不足。
