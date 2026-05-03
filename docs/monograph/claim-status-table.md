@@ -372,6 +372,13 @@ H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量�
 相邻和二步候选的大因子族必须完全互斥，同一尾标签复用间距至少 `y/4`，短直径块消耗至少
 `2K` 个互异大素因子。剩余是把这些局部短差值单元全局化为 ColumnCRT、端点相位或互补商容量矛盾。
 
+新增 `docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md` 后，全局化接口已被压成
+相邻边容量和三连端点容量。若一个连续尾补洞块 `B` 被拼满，则必有
+`EdgeCap(B;y)=|B|-1` 且 `TriCap(B;y)=|B|-2`；在 `y>sqrt(q+6)` 时每个有序标签对在一行内
+最多贡献一次，在 `y>q^(2/3)` 时尾点全部半素数化。因此当前唯一剩余不是再找平均量级，
+而是证明 `EdgeCap<|B|-1` 或 `TriCap<|B|-2`，或把满容量强制送入
+`PDEC/ColumnCRT/endpoint/cofactor` 缺陷。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

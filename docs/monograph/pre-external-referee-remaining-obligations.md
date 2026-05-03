@@ -390,6 +390,17 @@ ColumnCRT、端点相位、互补因子矛盾证书。
 把已证的相邻互质、二步互质、复用间距和三连短差值刚性拼成全局不相容性证明。当前尚未完成
 该全局拼接排斥。
 
+新增 `docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md` 后，该义务进一步定式化：
+尾补洞连续块若被拼满，必须满足相邻边容量 `EdgeCap(B;y)=|B|-1` 与三连容量
+`TriCap(B;y)=|B|-2`。外审前需补上的最后一层证明是：
+
+```text
+EdgeCap(B;y)<|B|-1 或 TriCap(B;y)<|B|-2，
+除非满容量本身强制 PDEC/ColumnCRT/endpoint/cofactor 缺陷。
+```
+
+该容量判据是必要条件已证，不是无条件排斥已证；未补完前不能宣称 H3/行命题无条件闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

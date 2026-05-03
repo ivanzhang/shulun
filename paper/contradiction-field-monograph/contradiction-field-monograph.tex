@@ -1219,6 +1219,24 @@ tail label must be separated by at least $y/4$ candidate steps, and any block of
 less than $y$ consumes at least two fresh large prime factors per candidate.  Thus the
 remaining obstruction is the global concatenation of these local $2/4/6$ rough
 short-difference units into a whole row.
+The global concatenation interface is sharpened in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md}.
+\]
+For any continuous tail-filled block $B$, full concatenation forces
+\[
+  \mathrm{EdgeCap}(B;y)=|B|-1,
+  \qquad
+  \mathrm{TriCap}(B;y)=|B|-2.
+\]
+Here $\mathrm{EdgeCap}$ counts compatible adjacent $2/4$ tail edges and
+$\mathrm{TriCap}$ counts compatible $2/4/6$ triples.  If $y>\sqrt{q+6}$, a fixed ordered
+tail-label pair contributes at most once in the row; if $y>q^{2/3}$, every tail-filled point
+is a double-rough semiprime.  Hence the final H3 hard input can now be stated as an explicit
+capacity exclusion: prove that these edge or triple capacities are strictly below the
+full-chain requirements, or that full capacity forces PDEC, ColumnCRT, endpoint phase, or
+cofactor-structure defects.  This is a necessary-capacity reduction, not yet an unconditional
+proof of H3.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

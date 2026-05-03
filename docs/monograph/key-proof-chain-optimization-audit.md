@@ -454,6 +454,12 @@ RH-1 explicit-formula entrance
 新增 `docs/monograph/prime-matrix-h3-tail-filler-rigidity-hardcore.md` 后，下一步最窄攻坚应是
 `Tail-Filler Global Incompatibility`：局部 `2/4/6` 短差值互质单元不能整行拼接。
 
+新增 `docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md` 后，上述攻坚面已改写为
+`H3 Tail Edge/Triple Capacity`：尾补洞连续块 `B` 若拼满，则相邻边证书数为 `|B|-1`，
+三连端点证书数为 `|B|-2`。在高 cutoff 下，有序标签对一行内不可复用，尾点半素数化。
+下一步最优攻坚不再是寻找新平均尺度，而是证明边/三连容量严格小于满链需求，或证明满容量强制
+`PDEC/ColumnCRT/endpoint/cofactor` 缺陷。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。

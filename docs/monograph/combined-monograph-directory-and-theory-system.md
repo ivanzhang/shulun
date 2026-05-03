@@ -1349,6 +1349,13 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 相邻/二步候选互质、尾标签复用间距 `>=y/4`、三连短差值方程。全局闭合仍需证明这些局部刚性
 不能沿整行拼接。
 
+新增 `docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md` 后，尾补洞全局拼接已
+被容量化。任一连续尾补洞块 `B` 若被拼满，则必须有 `EdgeCap(B;y)=|B|-1` 与
+`TriCap(B;y)=|B|-2`；若 `y>sqrt(q+6)`，同一有序标签对在一行内最多贡献一个相邻边或三连端点；
+若 `y>q^(2/3)`，所有尾点都是双粗半素数。合著稿的 H3 目录状态应更新为：
+必要容量判据已证，最终剩余是证明边/三连容量严格不足，或把满容量路由到
+`PDEC/ColumnCRT/endpoint/cofactor` 缺陷。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

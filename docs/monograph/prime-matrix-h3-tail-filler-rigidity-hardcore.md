@@ -234,3 +234,22 @@ equation (TFR-12) force one of:
 5. 三连补洞的最小方程是两个互素 `y`-rough 合数相差 `6`，中间插入第三个互素 `y`-rough 合数。
 
 未完成且不能省略的是第 9 节的全局不相容性证明。
+
+## 11. 后续全局容量化
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-h3-tail-filler-global-chain-capacity.md
+```
+
+把第 9 节的全局不相容性进一步压缩成相邻边容量和三连端点容量：
+
+```text
+EdgeCap(B;y)<|B|-1
+或
+TriCap(B;y)<|B|-2
+或触发 PDEC/ColumnCRT/endpoint/cofactor 缺陷。
+```
+
+该文件已证明从尾补洞全局拼接到上述容量判据的必要性；尚未证明的是这两个容量上界本身。
