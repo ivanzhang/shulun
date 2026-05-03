@@ -1444,6 +1444,17 @@ It lists six required checks for an HLC L2-flat residual: effective modulus, eff
 frequency, endpoint smoothing, coefficient $L^2$ norm, gcd/unit strata, and dyadic or
 tail-label splitting.  The L2-flat estimate supplies the coefficient-norm check; any other
 failed item is a named exit, and only if all six pass may the KLS-window input be invoked.
+Clean admission is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-clean-kls-reduction.md}.
+\]
+A clean HLC formal unit is one in which the six named exits do not occur; then the K1--K6
+admission checks pass.  The remaining object is the clean HLC Kloosterman window
+\[
+  \mathcal K_{\rm HLC}(B),
+\]
+and the remaining external/self-contained input is an estimate
+$\mathcal K_{\rm HLC}(B)=O(q/\log^2 y)$, denoted HLC--KLS-ext in the notes.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

@@ -1430,6 +1430,10 @@ SAE/endpoint 证书。
 L2-flat residual 写成 KLS admission 问题。K1--K6 全部通过才可引用 KLS；失败项必须回到
 既有出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-clean-kls-reduction.md` 后，合著稿 HLC 目录
+应标为：内部结构归约到 clean HLC Kloosterman window，剩余为 `HLC-KLS-ext` 外部输入或
+自足证明。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

@@ -549,6 +549,10 @@ short-arc 组件出口。
 核查 HLC L2-flat residual。不能只说“平坦所以 KLS 可用”；必须逐项确认模数、频率、端点、
 二范数、gcd/unit 和分块条件，或把失败项路由到对应出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-clean-kls-reduction.md` 后，K1--K6 核验已可
+压缩为 clean-unit 判定：若 E1--E6 均无，则 K1--K6 通过。外审前剩余变为逐项引用或证明
+`HLC-KLS-ext` 覆盖 clean HLC 的 `(CKR-4)` 窗口和。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

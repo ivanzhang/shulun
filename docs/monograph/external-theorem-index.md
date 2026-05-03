@@ -218,4 +218,8 @@ Kloosterman 定理。
 DI/BFI 的入口被限制为 K1--K6 全部通过后的 KLS-window；K4 由 L2 平坦性供给，其余条件
 需逐项核验。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-clean-kls-reduction.md` 后，外部索引中的
+H3-HLC 待核验项应写为 `HLC-KLS-ext`：DI/BFI/Kuznetsov 是否覆盖 clean HLC 窗口对象
+`(CKR-4)` 并给出 `O(q/log^2 y)` 或任意对数节省。
+
 该表未完成前，`DI/BFI` 只能作为 H3-DSB 的候选外部输入，不能宣称 H3 行命题外部定理版闭合。

@@ -467,6 +467,10 @@ short-arc 出口，而是 KLS-window 低二范数输入或 coefficient concentra
 已有 KLS admission 表：K1 模数、K2 频率、K3 平滑端点、K4 系数二范数、K5 gcd/unit、
 K6 dyadic/尾标签分块。任一失败项都回到既有命名出口；全部通过时才进入 `KLS-window`。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-clean-kls-reduction.md` 后，HLC 内部剩余进一步
+收窄：clean formal unit 定义为 E1--E6 均不发生；clean 时 K1--K6 逐项自动通过。
+剩余唯一为 `HLC-KLS-ext`：对 clean HLC Kloosterman 窗口对象给出 `O(q/log^2 y)` 上界。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

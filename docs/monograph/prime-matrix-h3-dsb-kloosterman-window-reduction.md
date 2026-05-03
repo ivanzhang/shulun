@@ -204,6 +204,9 @@ L2 平坦性与大支持，因此应回到 `KLS-window` 系数二范数核验或
 `docs/monograph/prime-matrix-h3-dsb-hlc-l2-flat-kls-admission.md` 进一步给出 K1--K6
 admission 表：模数、频率、端点平滑、二范数、gcd/unit 层和 dyadic/尾标签分块。任一失败
 项回到既有出口；全部通过时才可调用 `KLS-window`。
+`docs/monograph/prime-matrix-h3-dsb-hlc-clean-kls-reduction.md` 完成 clean-unit 核验：
+无 E1--E6 命名出口时 K1--K6 自动通过，剩余就是 clean HLC Kloosterman window
+`HLC-KLS-ext` 输入。
 
 ### 4.2 互补商窗口长度
 
@@ -281,5 +284,6 @@ H3-DSB bad row
 并排除低有效模出口与 short-arc density pressure 残余，
 把低压平坦残余接入 KLS-window/coefficient 分支，
 并逐项核验 HLC L2-flat residual 的 K1--K6 admission，
+或证明 clean HLC Kloosterman window 的 `HLC-KLS-ext` 上界，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```
