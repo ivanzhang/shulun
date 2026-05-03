@@ -299,6 +299,11 @@ bad residue。因此外审前仍需证明正式反例不能取这些 bad residue
 的最大低筛覆盖长度为 `5,9,9,13,21`。外审前需要把这一有限账本升级为 formal 层的
 Jacobsthal 型上界，或保留 endpoint/first-failure/PDEC/ColumnCRT 出口闭合义务。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-jacobsthal-closure-interface.md` 后，外审义务可表述为：
+对正式 BCB 参数 `(P,h,m,T)`，证明 `G(h)<P+m-1-2T`，其中 `G(h)` 是 `h` 层低筛最大连续
+覆盖长度。该条件闭合 no-TailAnchor BCB 分支；未证明前，不得把当前 finite 样本闭合推广为
+全局闭合。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

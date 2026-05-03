@@ -1126,3 +1126,14 @@ h=5: 5，h=7: 9，h=11: 13，h=13: 21。
 当前五个 BCB 核心长度为 `9,13,15,19,25`，全部严格超过对应上界，最小余量为 `4`。
 因此当前有限 BCB no-TailAnchor 参数族已被核心低筛长度障碍排斥。全局剩余义务上移为
 Jacobsthal 型低筛覆盖长度上界；若不能给出该上界，则仍按 endpoint/first-failure 出口路由。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-jacobsthal-closure-interface.md` 后，这个全局义务被写成
+精确闭合判据。记 `G(h)` 为所有点均被某个 `<=h` 素数整除的最长连续区间长度。正式 BCB
+参数 `(P,h,m,T)` 的 no-TailAnchor 分支闭合当且仅当可证明
+
+```text
+G(h) < P+m-1-2T。
+```
+
+当前 finite 样本满足该不等式；全局证明仍需给出 formal 层的 Jacobsthal 型上界，或者继续保留
+TailAnchor、endpoint、first-failure、PDEC、ColumnCRT 出口。

@@ -1030,6 +1030,18 @@ current finite BCB no-TailAnchor samples are obstructed before the accepted-prei
 question is reached.  The global theorem-level input is now a Jacobsthal-type low-sieve
 run bound for the formal layers; without such a bound, the remaining bad cases still route
 to the named endpoint and first-failure exits.
+This input is isolated in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-jacobsthal-closure-interface.md}.
+\]
+Writing $G(h)$ for the maximum length of a consecutive interval all of whose points are
+divisible by some prime $\le h$, the exact BCB closure condition is
+\[
+  G(h)<P+m-1-2T,
+\]
+where $m$ is the sliding platform length.  Under this inequality the no-TailAnchor BCB
+branch closes immediately; if it fails, the proof must keep the TailAnchor, endpoint,
+first-failure, PDEC, and ColumnCRT exits active.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

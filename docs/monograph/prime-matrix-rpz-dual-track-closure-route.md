@@ -306,6 +306,7 @@ selector gap 阈值账本。
 BCB 候选下层行相位身份账本。
 BCB accepted top-row residue preimage 账本。
 BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
+BCB Jacobsthal 型闭合接口。
 ```
 
 再新增
@@ -344,6 +345,7 @@ docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.md。
 experiments/prime_matrix_rpz_bcb_core_run_obstruction.py；
 docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.json；
 docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.md。
+docs/monograph/prime-matrix-rpz-bcb-jacobsthal-closure-interface.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -441,6 +443,15 @@ BCB 核心低筛连续覆盖长度障碍账本进一步上移硬点：no-TailAnc
 `h=5:5`、`h=7:9`、`h=11:13`、`h=13:21`；五个 BCB 核心长度 `9,13,15,19,25` 全部超界。
 因此当前有限样本的 no-TailAnchor BCB 分支已由该长度障碍排斥。全局路线现在最优先攻
 Jacobsthal 型低筛覆盖上界；若该上界失败，则回到 endpoint/first-failure 出口证书。
+
+BCB Jacobsthal 型闭合接口把该目标写成单个不等式：
+
+```text
+G(h) < P+m-1-2T。
+```
+
+这里 `G(h)` 是 `h` 层最大低筛连续覆盖长度。该不等式一旦在 formal BCB 参数范围内证明，
+no-TailAnchor BCB 分支即闭合；未证明前，不能把 finite closure 升级为全局 closure。
 
 本文没有完成：
 

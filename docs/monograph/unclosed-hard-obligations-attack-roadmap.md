@@ -671,6 +671,10 @@ BCB 参数 floor 身份抽出。当前 `5/5` 条样本公式匹配，`6/6` 个�
 覆盖段，因而 `5/5` 当前 BCB 样本被排斥。下一最优攻坚目标是把该有限事实升级为 formal 层的
 Jacobsthal 型上界；若无法升级，则回到 endpoint/first-failure/PDEC/ColumnCRT 出口闭合。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-jacobsthal-closure-interface.md` 后，下一硬点精确为：
+证明 formal BCB 参数满足 `G(h)<P+m-1-2T`。这是当前路线中最小的全局数学输入；若证明成功，
+no-TailAnchor BCB 分支闭合；若失败，必须继续攻 TailAnchor/endpoint/first-failure 出口。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

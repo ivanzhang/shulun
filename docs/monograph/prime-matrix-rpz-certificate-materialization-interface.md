@@ -165,6 +165,7 @@ selector gap 阈值账本。
 BCB 候选下层行相位身份账本。
 BCB accepted top-row residue preimage 账本。
 BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
+BCB Jacobsthal 型闭合接口。
 ```
 
 本文没有完成：
@@ -326,3 +327,7 @@ all-rejected 端点集合等于 rejected 行相位的端点块并集。当前三
 若 no-TailAnchor 强制核心长度超过 `h` 层最大低筛覆盖段，则 BCB 核心不相容，甚至不需要进入
 accepted preimage。当前有限样本 `5/5` 均被该障碍排斥；全局接口需要填入对应 Jacobsthal 型
 低筛覆盖上界，或继续保留 endpoint/first-failure 出口。
+
+新增 `prime-matrix-rpz-bcb-jacobsthal-closure-interface.md` 后，材料化接口的验收条件变成：
+提交 `G(h)<P+m-1-2T` 的证明或外部引用；其中 `G(h)` 为 `h` 层低筛最大连续覆盖长度。该条件
+不是数值样本替代品，而是 no-TailAnchor BCB 分支的全局闭合输入。
