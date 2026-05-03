@@ -119,3 +119,13 @@ docs/monograph/prime-matrix-h3-sixwheel-hard-attack.md
 该文把 `H3-SWR` 的真实强度、`u=2` 筛法障碍、first-factor partition、短 cofactor 窗口和
 `Tail/PDEC/ColumnCRT/SAE` 四出口写成同一套方程。结论是：直接证明 `H3-SWR` 近似平方根长度
 素数存在问题；更可审查的路径是证明六轮全阻断必产生命名缺陷。
+
+近失败数据审计见：
+
+```text
+docs/monograph/prime-matrix-h3-full-blocking-defect-audit.md
+```
+
+全量 `p<=5000` 中 `margin<=20` 的窗口只有 `4015` 个，且最高只到 `p=317`。聚合 first-factor
+负载由 `5,7,11,13,...` 小素数阶梯主导。这支持把全阻断缺陷拆为“小首因子骨架过载”与
+“多标签低模能量”两条出口。

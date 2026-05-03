@@ -150,3 +150,43 @@ Then either
 ```
 
 若此定理闭合，再结合已有 `SAE/PDEC/ColumnCRT` 排斥或证书，行命题主链才能继续升级。若这些出口尚未排除，则本链仍应诚实标记为 `Reduction-closed`，不能宣称全局无条件证明。
+
+## 7. 近失败数据给出的结构信号
+
+新增审计：
+
+```text
+experiments/prime_matrix_h3_full_blocking_defect_audit.py
+docs/monograph/prime-matrix-h3-full-blocking-defect-audit.md/json
+```
+
+该审计在 `p<=5000` 的 `1552462` 条非第一 `q` 行中抽取 `margin<=20` 的近失败窗口，得到：
+
+```text
+near windows = 4015
+near p range = 5..317
+near max q = 331
+near max candidate count = 110
+near max blocked count = 91
+near branch counts = {'aligned_p_row_contained': 255, 'seam_window': 3760}
+aggregate first factors =
+  5:36548, 7:20953, 11:11564, 13:8858,
+  17:6153, 19:5052, 23:3738, 29:2673, ...
+```
+
+这给出三条可用洞察。
+
+1. **真正最紧余量是低层现象。** `margin<=3` 的 `70` 个窗口全部已包含在低素数层；扩大到 `margin<=20` 后，近失败也只到 `p=317`。这说明全局大 `p` 反例若存在，不会表现为普通随机近失败，而必须维持一个异常稳定的结构相位。
+2. **阻断主负载来自小首因子阶梯。** 聚合 first-factor 负载近似按 `5,7,11,13,...` 递减，小素数承担骨架覆盖，中尾素数只是补洞。若要全阻断，必须把这种小首因子骨架推到更强的固定相位负载，正适合进入 Tail/PDEC。
+3. **低负载全覆盖必有相位能量。** 若禁止任何首因子高负载，则全覆盖只能使用更多中尾 first-factor。每个中尾标签在短 cofactor 窗口中贡献很少，标签数量增加会提高小模投影方差；这正是 `H3-PDEC` 的数据来源。
+
+因此下一步不应继续枚举更大有限模板，而应尝试证明如下数据驱动二分：
+
+```text
+H3 full blocking
+=> small-first-factor skeleton overload
+   or many-label low-mod energy
+   or endpoint persistence.
+```
+
+其中第一项进入 `Tail/PDEC`，第二项进入 `PDEC/ColumnCRT`，第三项进入 `SAE/ColumnCRT`。

@@ -304,6 +304,12 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 窗口。下一最小定理是 `H3 Full-Blocking Defect`：全阻断必须出现 first-factor 高负载、分布式
 低模 PDEC 能量、稀疏端点 SAE 或持久 ColumnCRT 位移。
 
+新增 `docs/monograph/prime-matrix-h3-full-blocking-defect-audit.md/json` 与脚本
+`experiments/prime_matrix_h3_full_blocking_defect_audit.py` 后，数据支撑进一步明确：在 `p<=5000`
+的 `1552462` 条 `q` 行中，`margin<=20` 的近失败窗口只有 `4015` 个，最高 `p=317`、最高
+`q=331`；聚合 first-factor 负载以 `5:36548, 7:20953, 11:11564, 13:8858` 为主阶梯。
+这支持下一步专攻“低层小首因子骨架过载或多标签低模能量”的二分，而不是继续扩展有限模板。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

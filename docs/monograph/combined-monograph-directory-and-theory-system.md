@@ -1290,6 +1290,11 @@ Buchstab 下降方程：每个六轮候选 `n` 唯一写成 `n=ell m`，其中 `
 进入 Tail/PDEC；所有 `ell` 低负载但全覆盖则产生分布式低模能量或端点/ColumnCRT 相位缺陷。
 因此下一步不是再扩展有限模板，而是证明 `H3 Full-Blocking Defect Theorem`。
 
+新增 `docs/monograph/prime-matrix-h3-full-blocking-defect-audit.md` 后，数据层也支持该二分：
+`p<=5000` 中 `margin<=20` 的 `4015` 个近失败窗口最高只到 `p=317`，并且聚合 first-factor
+负载由 `5,7,11,13,...` 小素数阶梯主导。若全局大 `p` 反例存在，它必须是持久结构相位，
+不是普通近失败；这正是 Tail/PDEC/ColumnCRT/SAE 出口应捕获的对象。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

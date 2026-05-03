@@ -335,6 +335,11 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 四分支覆盖：first-factor 高负载、分布式低模 PDEC 能量、稀疏端点 SAE、持久 ColumnCRT 位移。
 若该四分支只被命名而未给阈值比较，则 Prime Matrix 行命题仍只能保持归约状态。
 
+新增 `docs/monograph/prime-matrix-h3-full-blocking-defect-audit.md` 后，外审前还需把数据中出现的
+小首因子骨架过载转为正式阈值：`5,7,11,13,...` 的聚合负载不能只作为经验表，应写成
+`Tail/PDEC envelope` 的可验证上界；若不使用该上界，则必须证明多标签低模能量达到
+`H3-PDEC` 阈值。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

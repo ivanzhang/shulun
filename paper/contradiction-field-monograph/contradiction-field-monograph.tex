@@ -1055,6 +1055,16 @@ partition $n=\ell m$ with $5\le\ell\le p$, $m$ in an interval of length $q/\ell$
 $P^-(m)\ge\ell$.  The next theorem-level gate is consequently an H3 full-blocking defect
 theorem: high first-factor load enters Tail/PDEC, distributed low-load coverage produces
 low-mod PDEC energy, and endpoint residue concentration is SAE or ColumnCRT.
+The near-miss audit
+\[
+  \texttt{docs/monograph/prime-matrix-h3-full-blocking-defect-audit.md}
+\]
+checks the same ledger for all $p\le5000$.  Among $1{,}552{,}462$ non-first $q$-rows, only
+$4015$ have margin at most $20$, and these occur only up to $p=317$ and $q=331$.  Their
+aggregate first-factor load is led by the small-prime skeleton
+$5,7,11,13,\ldots$.  This data does not prove the theorem, but it identifies the correct
+next split: small-first-factor overload should be absorbed by Tail/PDEC, while low-load
+many-label blocking should produce low-mod PDEC/ColumnCRT energy.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.
