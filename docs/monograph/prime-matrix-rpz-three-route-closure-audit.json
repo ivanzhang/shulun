@@ -1,0 +1,81 @@
+{
+  "status": "rpz_three_route_closure_audit",
+  "sources": {
+    "lower_grid": "docs/monograph/prime-matrix-rpz-lower-grid-fail-avoidance-certificate.json",
+    "seam": "docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.json",
+    "unit_gate": "docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.json",
+    "columncrt_obstruction": "docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.json"
+  },
+  "summary": {
+    "route_count": 3,
+    "closed_routes": 0,
+    "recommended_first_route": "A_formal_family_avoidance",
+    "hard_boundary": "none_closed_yet"
+  },
+  "routes": [
+    {
+      "route_id": "A_formal_family_avoidance",
+      "current_status": "current_ledger_avoids_all_grid_fail",
+      "current_ledger_inputs": {
+        "actual_transition_nodes": 20,
+        "actual_grid_fail_nodes": 0,
+        "formula_count_mismatches": 0,
+        "formula_delta_mismatches": 0
+      },
+      "global_closed": false,
+      "why_not_closed": [
+        "当前账本实际下降节点全部避开 grid_fail，但正式反例族尚未证明必须落入同一相位轨道。",
+        "需要把 formal counterexample family 的下降相位映射到已审计的 delta<=p-r 结构。"
+      ],
+      "next_atomic_target": "prove formal-family phase inequality delta<=p-r or formal-family avoids unit endpoint gate rows",
+      "priority_rank": 1,
+      "priority_reason": "当前有限账本支持该路线，且没有被内禀负载障碍直接证伪。"
+    },
+    {
+      "route_id": "B_endpoint_PDEC",
+      "current_status": "support_and_test_function_materialized_upper_bound_missing",
+      "current_inputs": {
+        "pdec_support_rows": 12,
+        "seam_phase_rows": 12,
+        "endpoint_unit_phases": 404,
+        "L_PDEC_per_unit_mass_min": 0.0013692477740973872,
+        "L_PDEC_per_unit_mass_max": 0.06780635036208105
+      },
+      "global_closed": false,
+      "why_not_closed": [
+        "PDEC 支持集、测试函数和 Fourier 支持已材料化。",
+        "尚未给出同一正式坏窗族上的 admissible CRT upper bound U_CRT。",
+        "缺少 A,b,E,e 结构约束来源，不能套用 PDEC 模板直接闭合。"
+      ],
+      "next_atomic_target": "derive admissible U_CRT upper bound for the same unit endpoint bad-window family",
+      "priority_rank": 2,
+      "priority_reason": "输入已规范化，但核心上界仍是全新不等式。"
+    },
+    {
+      "route_id": "C_columnCRT_defect_exclusion",
+      "current_status": "routes_to_defect_threshold_tuning_obstructed",
+      "current_inputs": {
+        "gate_rows": 12,
+        "unit_endpoint_phases": 404,
+        "rows_with_nonzero_displacement": 12,
+        "max_intrinsic_single_residue_load": 48,
+        "rows_exceeding_tested_L_D": 10,
+        "phases_exceeding_tested_L_D": 400
+      },
+      "global_closed": false,
+      "why_not_closed": [
+        "固定非零位移入口已闭合。",
+        "但同一 gate 的 unit residues 已全部落在同一 (p,d) 类，内禀负载随 prod_{ell<r}(ell-1) 增长。",
+        "调小 L_D 只会触发 ColumnCRTDefect，不能排除它。"
+      ],
+      "next_atomic_target": "prove an independent ColumnCRTDefect exclusion theorem, not a smaller L_D threshold",
+      "priority_rank": 3,
+      "priority_reason": "该路线已转成独立大定理，短期不能靠现有账本闭合。"
+    }
+  ],
+  "review_boundary": [
+    "三条路线已同口径比较，但没有任何一条达到全局无条件闭合。",
+    "当前最优先继续攻击 formal-family avoidance。",
+    "endpoint-PDEC 与 ColumnCRTDefect 可并行保留，但不能替代 formal-family 缺口。"
+  ]
+}

@@ -152,6 +152,7 @@ first-grid-fail seam 标准形证书。
 first-grid-fail seam 的 PDEC/Fourier 支持包与端点 unit/killed 分裂。
 unit endpoint seam 的 ColumnCRT 固定非零位移门控证书。
 ColumnCRT 阈值调参不可闭合障碍证书。
+三路线闭合审计与优先级排序。
 ```
 
 本文没有完成：
@@ -209,3 +210,14 @@ R_{p,d} >= prod_{ell<r}(ell-1)。
 3. 或证明正式反例族无法命中 unit endpoint seam；
 4. 或改走 endpoint-PDEC 的 U_CRT<L_PDEC 上界。
 ```
+
+新增 `prime-matrix-rpz-three-route-closure-audit.md` 后，三条剩余路线已同口径比较：
+
+```text
+A formal-family avoidance：当前有限账本 20 个实际转换节点全部避开 grid_fail；
+B endpoint-PDEC：支持集与测试函数已物化，但 U_CRT 上界缺失；
+C ColumnCRTDefect：固定非零位移入口已物化，但阈值调参路线被内禀负载障碍阻断。
+```
+
+因此当前优先级为 `A > B > C`。下一轮应直接攻 formal-family 相位避开定理；B 保留为并行上界路线，
+C 只能作为独立深定理路线，不能再靠 `L_D` 调参推进。

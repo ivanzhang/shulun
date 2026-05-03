@@ -954,3 +954,15 @@ but threshold tuning alone cannot exclude it.
 
 剩余合法闭合路线只剩三条：证明正式反例族避开 unit gate；证明 endpoint-PDEC 的
 `U_CRT<L_PDEC`；或给出独立的 `ColumnCRTDefect` 排斥定理。
+
+新增 `docs/monograph/prime-matrix-rpz-three-route-closure-audit.md` 后，这三条路线被同口径排序：
+
+```text
+rank 1: A_formal_family_avoidance
+rank 2: B_endpoint_PDEC
+rank 3: C_columnCRT_defect_exclusion
+```
+
+排序依据是：路线 A 与当前有限下降账本完全一致，`20` 个实际转换节点中 `grid_fail=0`；
+路线 B 已完成支持行和测试函数，但没有 `U_CRT` 上界；路线 C 已完成固定非零位移入口，但
+阈值调参被内禀负载障碍阻断。因此下一步主攻应从路线 A 的 formal-family 相位避开定理开始。

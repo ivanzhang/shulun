@@ -603,6 +603,11 @@ unit endpoint seam。
 因此当前最小硬点不应再写成“调低 L_D”，而应写成三选一：formal-family 避开 unit gate、
 endpoint-PDEC 上界、或独立 `ColumnCRTDefect` 排斥定理。
 
+新增 `docs/monograph/prime-matrix-rpz-three-route-closure-audit.md` 后，三选一已排序：
+路线 A `formal-family avoidance` 优先；路线 B `endpoint-PDEC` 保留；路线 C
+`ColumnCRTDefect` 只作为深定理备选。下一步应把攻坚火力转到 formal-family 相位不等式
+`delta<=p-r` 或 unit gate 避开定理。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

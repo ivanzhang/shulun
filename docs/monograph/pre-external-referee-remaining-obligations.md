@@ -237,6 +237,10 @@ endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬�
 外审前若要闭合该项，必须给出独立 `ColumnCRTDefect` 排斥、endpoint-PDEC 上界，或 formal-family
 避开定理。
 
+新增 `docs/monograph/prime-matrix-rpz-three-route-closure-audit.md` 后，三条路线的外审优先级固定为：
+formal-family 避开优先，其次 endpoint-PDEC，上述两者都失败时才转独立 `ColumnCRTDefect`
+排斥定理。当前没有路线已全局闭合。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

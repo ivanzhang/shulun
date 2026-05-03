@@ -238,6 +238,18 @@ R_{p,d} >= prod_{ell<r}(ell-1)。
 下一步必须证明正式反例族避开 unit gate、走 endpoint-PDEC，或给出独立的
 `ColumnCRTDefect` 排斥定理。
 
+三路线并进审计
+
+```text
+experiments/prime_matrix_rpz_three_route_closure_audit.py；
+docs/monograph/prime-matrix-rpz-three-route-closure-audit.json；
+docs/monograph/prime-matrix-rpz-three-route-closure-audit.md
+```
+
+进一步给出当前排序：`A_formal_family_avoidance` 第一，`B_endpoint_PDEC` 第二，
+`C_columnCRT_defect_exclusion` 第三。理由是当前有限下降账本 `20` 个实际转换节点全部避开
+`grid_fail`，而 PDEC 仍缺 `U_CRT`，ColumnCRT 则已被证明不能靠阈值调参闭合。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -276,6 +288,7 @@ first-grid-fail seam 标准形证书。
 first-grid-fail seam 的单余类 PDEC/Fourier 支持包与端点分裂账本。
 unit endpoint seam 的固定非零 ColumnCRT 位移门控证书。
 ColumnCRT 阈值调参不可闭合障碍证书。
+三路线闭合审计与优先级排序。
 ```
 
 本文没有完成：
