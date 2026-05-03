@@ -988,6 +988,18 @@ $q$-window, with only the terminal $q^2$ puncture in the last row.  That window 
 contains a full $p$-aligned zero row or is a seam window whose two guard intervals have
 lengths $a$ and $p-(q-p)-a$.  The resulting narrow target is SeamGuard-Elimination:
 guards cannot absorb all forced survivors without entering SAE, PDEC, or ColumnCRT.
+The multi-level seam descent audit is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-seam-multilevel-descent-route.md}.
+\]
+In this conditional model, if a seam interval is already an old $p$-sieve zero window,
+then after descending to a lower prime $h<p$ the only resurrected points are those with
+$P^-(n)\in(h,p]$, together with the terminal $q^2$ puncture in the last $q$-row.  Any full
+$h$-aligned row avoiding these resurrected points is therefore a forced $h$-zero row.
+The finite ledger checks all $21339$ seam windows for $p\le500$ and a deterministic
+$p\le2000$ sample of $11488$ seam windows, with no persistent blocking cases.  This is
+not a global theorem; it sharpens the remaining gate to the SMD-Global Inequality, or
+else a proof that persistent revival blocking enters SAE, PDEC, or ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

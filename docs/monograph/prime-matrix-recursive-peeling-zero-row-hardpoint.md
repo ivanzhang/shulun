@@ -411,3 +411,21 @@ seam guards 不能无代价吸收 Row(p) 所需幸存者；
 所以旧结论仍成立：不能直接从零行推出连续下层零行。但现在有更强的正向路线：
 若 `SeamGuard-Elimination` 与 `SAE/PDEC/ColumnCRT` 出口排斥闭合，则相邻壳层递归下降
 会把任意 `q^2` 内零行降到 `p=2` 矛盾。
+
+## 9. Seam 多层下降更新
+
+新增 `docs/monograph/prime-matrix-seam-multilevel-descent-route.md` 与脚本
+`experiments/prime_matrix_seam_multilevel_descent_audit.py` 后，缝合分支得到更精确的条件模型：
+若 seam 区间在旧 `p`-筛下为零，则降到 `h<p` 后复活点不是任意散点，而是精确满足
+
+```text
+P^-(n) in (h,p]
+```
+
+的点，最后一条 `q` 行另加 `q^2` 穿孔。任何完整下层 `h` 行只要避开这些复活点，就成为强制
+`h` 零行。
+
+有限账本中，`p<=500` 全量 `21339` 条 seam 和 `p<=2000,row_stride=25` 抽样 `11488`
+条 seam 均在某一层出现强制零行，无阻断样本。这说明用户提出的“缝合零窗继续降阶会有一阶变零行”
+在条件模型中非常稳定。剩余硬点因此不是机制是否存在，而是把该机制全局化：证明所有 seam 相位
+满足 `SMD-Global Inequality`，或证明复活点持续阻断必触发 `SAE/PDEC/ColumnCRT`。

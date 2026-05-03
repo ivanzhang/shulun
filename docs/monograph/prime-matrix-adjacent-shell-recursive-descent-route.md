@@ -164,3 +164,27 @@ seam guards cannot absorb all forced survivors without triggering SAE/PDEC/Colum
 ```
 
 这是把用户递归剥离路线推进到可审稿定理形态后的最小剩余。
+
+## 8. Seam 多层下降更新
+
+新增 `docs/monograph/prime-matrix-seam-multilevel-descent-route.md` 与对应审计后，`SeamGuard-Elimination`
+可以进一步改写为 `SMD-Global Inequality`。若 seam 区间 `I` 已经是旧 `p`-筛零窗，则降到
+任意 `h<p` 后，条件复活点精确为
+
+```text
+Rev_{h,p}(I)={n in I : P^-(n)>h 且 P^-(n)<=p}
+```
+
+最后一条 `q` 行另加 `q^2` 端点穿孔。若某条完整 `h` 对齐行避开 `Rev_{h,p}(I)` 与端点穿孔，
+则该行被强制为 `h` 零行。
+
+有限审计显示：
+
+```text
+p<=500 全量 seam: 21339/21339 下降为强制零行；
+p<=2000,row_stride=25 抽样 seam: 11488/11488 下降为强制零行；
+阻断样本数均为 0。
+```
+
+这强烈支持“缝合零窗继续降阶会在某层变零行”的机制。但它仍不是全局无条件证明：如果首次
+强制零行在下层方阵外，还必须继续接入下层零行延迟、递归下降或 `SAE/PDEC/ColumnCRT` 出口。

@@ -256,6 +256,16 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 只有 `1/5`。取约半宽素数后，虽然 `P/h>2`，连续半宽零行段最大长度仍为 `0`，因为剥到半宽层会复活
 最小素因子在 `(h,P]` 的粗互补因子点。该结果进一步支持把下一硬点定为复活点吸收缺陷，而不是镜像连续零行矛盾。
 
+新增 `docs/monograph/prime-matrix-seam-multilevel-descent-route.md`、
+`docs/monograph/prime-matrix-seam-multilevel-descent-audit.md/json`、
+`docs/monograph/prime-matrix-seam-multilevel-descent-audit-p2000-sample.md/json` 与脚本
+`experiments/prime_matrix_seam_multilevel_descent_audit.py` 后，seam guard 路线被进一步细化：
+若 seam 区间在旧 `p`-筛下为零，降到 `h<p` 后复活点精确为
+`{n∈I:P^-(n)>h, P^-(n)<=p}` 加终端 `q^2` 穿孔；若某条完整 `h` 行避开该复活集，则得到强制
+`h` 零行。全量 `p<=500` 的 `21339` 条 seam 与 `p<=2000,row_stride=25` 的 `11488`
+条抽样 seam 均在某层出现强制零行，阻断数 `0`。但该结论仍是条件账本：需证明全局
+`SMD-Global Inequality`，或将持久复活点阻断送入 `SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

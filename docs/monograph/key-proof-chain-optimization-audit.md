@@ -380,6 +380,12 @@ RH-1 explicit-formula entrance
 
 新增 `docs/monograph/prime-matrix-adjacent-shell-recursive-descent-route.md` 后，递归零行路线得到更精确的入口：相邻 `p<q` 时，`q^2` 内旧 `p`-筛唯一合数幸存者是 `q^2`；所以 `q` 零行可无损降为旧 `p`-筛 q 零窗，再二分为完整 `p` 行或 seam guard。该支线当前最小硬点是 `SeamGuard-Elimination`，即证明端点 guards 无法长期吸收幸存者，或其持续吸收进入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-seam-multilevel-descent-route.md` 后，`SeamGuard-Elimination`
+被进一步压成 `SMD-Global Inequality`：从 seam 零窗降到 `h<p` 时，复活点精确为
+`P^-(n)∈(h,p]` 的点；若某条完整 `h` 行避开该集合，则 seam 强制下降为 `h` 零行。
+实验账本 `p<=500` 全量与 `p<=2000` 抽样均无阻断。证明链优化的下一步应专攻全局复活点
+非全覆盖不等式；若失败，则把持久阻断路由到 `SAE/PDEC/ColumnCRT`，而不是退回泛化模板覆盖。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。

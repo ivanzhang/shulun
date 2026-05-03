@@ -1245,6 +1245,15 @@ a=0 or a>=p-g  => 完整 p 对齐零行；
 `SeamGuard-Elimination`：证明 seam guards 不能无代价吸收 `Row(p)` 所需幸存者；若持续吸收，
 则进入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-seam-multilevel-descent-route.md` 与
+`docs/monograph/prime-matrix-seam-multilevel-descent-audit.md/json` 后，guard 缝合又被转写成
+多层下降问题。若 seam 区间 `I` 已是旧 `p`-筛零窗，则降到 `h<p` 后的条件复活点为
+`Rev_{h,p}(I)={n∈I:P^-(n)>h,P^-(n)<=p}`，最后 `q` 行另加 `q^2` 穿孔。任何完整
+`h` 对齐行只要避开 `Rev_{h,p}(I)`，就在该条件下成为强制 `h` 零行。全量 `p<=500`
+的 `21339` 条 seam 和 `p<=2000,row_stride=25` 的 `11488` 条抽样 seam 均出现此类下层零行。
+这支持用户“seam 继续降阶会在某层变零行”的机制，但仍需全局证明 `SMD-Global Inequality`
+或把持久复活点阻断路由到 `SAE/PDEC/ColumnCRT`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

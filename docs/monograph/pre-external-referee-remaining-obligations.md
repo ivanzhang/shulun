@@ -304,6 +304,12 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 后，缩放到前一素数和约半宽素数的版本
 也不能直接闭合：缩放行号需要完整包含判据，半宽层会复活粗互补因子点。该路线仍需复活点吸收缺陷定理。
 
+新增 `docs/monograph/prime-matrix-seam-multilevel-descent-route.md` 与对应审计后，外审前可使用更精确
+的 seam 多层下降接口：`h` 层复活点为 `P^-(n)∈(h,p]` 的点，完整下层行避开该集合即强制零行。
+有限账本中 `p<=500` 全量与 `p<=2000` 确定性抽样均无 seam 阻断。剩余义务因此改写为：
+证明全局 `SMD-Global Inequality`，或证明所有持久阻断必触发 `SAE/PDEC/ColumnCRT`；不能仅凭有限账本
+宣称 seam guard 已无条件排除。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为
