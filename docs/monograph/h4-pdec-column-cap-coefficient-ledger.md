@@ -103,6 +103,9 @@ CC-LHB-UNBRIDGED。
 这些行在有限 `Q=2310` 范围内可以作为空异常块 `A` 行。`CC-LHB-WHOLEDEF` 与
 `CC-LHB-BRIDGED` 已输出支撑相位块，但当前仍标为 `diagnostic-phase-support`：
 它们需要额外证明正式坏窗集合 `S` 的投影关系和容量含义，才能进入最终对偶证书。
+补充文档 `h4-pdec-lhb-support-to-capacity-transfer.md` 已证明转移规则：若没有相位指示假设、
+多重度界 `M(t)` 或允许全集 `Z_LHB` 投影容量，不能把 `bound=phase_block_size` 当作
+`sum_{t in C}g(t)` 的上界。
 
 因此 V1 账本已经从“系数来源登记”推进到“部分相位块物化”。它仍不是最终
 `A,b,E,e`，因为有限列见证半径、RCI/CDB 摘要界值和条件路由行尚未物化相位块。

@@ -313,6 +313,19 @@ docs/monograph/h4-pdec-lhb-column-phase-blocks.md。
 `bound=0`，可作为有限空异常块 `A` 行。`WHOLEDEF` 与 `BRIDGED` 行已输出支撑相位，
 但仍需证明正式坏窗集合投影关系，暂不升级为最终容量行。
 
+### 4.2G 本轮进展：支撑到容量转移条件
+
+新增 `docs/monograph/h4-pdec-lhb-support-to-capacity-transfer.md`。该文件严写：
+
+```text
+phase_block support != capacity bound for g(t)。
+```
+
+`WHOLEDEF/BRIDGED` 的 `bound=phase_block_size` 只有在相位指示型证书中才可直接使用；
+对 persistent 计数向量，必须补充 `g(t)<=M(t)` 的多重度界，或证明 `S subset Z_LHB`
+并计算 `Z_LHB` 在相位块上的投影容量。下一步最小硬点因此变为 `T3-multiplicity`
+或 `T4-allowed-set`，其中优先推荐 `T3` 与既有 `phase_cap_t` 合并。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

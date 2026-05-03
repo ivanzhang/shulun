@@ -184,7 +184,7 @@ def scan_prime_phase_blocks(p: int, q: int) -> dict[str, Any]:
             len(whole_deficit_phases),
             "FiniteCert",
             "diagnostic-phase-support",
-            "整洞集 Hall 亏损相位支撑；需结合 S subset Z 后才可转成 A 行。",
+            "整洞集 Hall 亏损相位支撑；bound 是支撑大小，不是 persistent 计数容量；需补多重度界或 S subset Z 投影容量。",
         ),
         row(
             f"CC-LHB-BRIDGED-Q{q}-P{p}",
@@ -195,7 +195,7 @@ def scan_prime_phase_blocks(p: int, q: int) -> dict[str, Any]:
             len(bridged_critical_phases),
             "FiniteCert",
             "diagnostic-phase-support",
-            "桥洞临界相位支撑；需按 P 拆行并证明 S 的投影关系。",
+            "桥洞临界相位支撑；bound 是支撑大小，不是 persistent 计数容量；需按 P 拆行并证明 S 的投影关系和多重度容量。",
         ),
     ]
 
@@ -317,6 +317,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "- `A-ready-empty-anomaly-block` 行已经有 `phase_block` 与 `bound=0`；在有限 `Q=2310` 范围内可作为空异常块约束。",
             "- `diagnostic-phase-support` 行只登记支撑相位；若要进入 `A,b,E,e`，还需证明正式坏窗集合 `S` 投影到这些相位块并给出对应容量界。",
+            "- `diagnostic-phase-support` 行表中的 `bound=phase_block_size` 只是支撑大小，不是 persistent 计数向量 `g(t)` 的容量界；转移条件见 `h4-pdec-lhb-support-to-capacity-transfer.md`。",
             "- 本文件不证明全局 `PDEC exclusion`，也不把有限相位块推广到无限 `P`。",
         ]
     )

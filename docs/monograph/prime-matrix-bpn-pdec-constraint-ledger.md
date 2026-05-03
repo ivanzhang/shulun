@@ -188,6 +188,8 @@ ColumnRadius/ColumnCRT/Tail-anchor 出口的条件路由行。该文件证明了
 补充证书 `h4-pdec-lhb-column-phase-blocks.json` 已把 `Q=2310`、`13<=p<=47` 的
 LHB column rows 物化为 `45` 条机器行。三类空异常块 `AFFINE/NEGDELTA/UNBRIDGED`
 均通过 `bound=0`；整洞集亏损与桥洞临界块保留为诊断支撑，尚需正式投影容量证明。
+补充文档 `h4-pdec-lhb-support-to-capacity-transfer.md` 已把该投影容量证明拆为三种合法路线：
+相位指示型、多重度界 `M(t)`、或允许全集 `Z_LHB` 投影容量。
 
 ## 5. 第一批真实系数行
 

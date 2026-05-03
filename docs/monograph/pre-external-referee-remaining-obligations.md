@@ -114,6 +114,10 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `Q=2310` LHB column rows 的第一批相位块已物化。`AFFINE/NEGDELTA/UNBRIDGED`
 空异常块可作为有限 `A` 行；`WHOLEDEF/BRIDGED` 仍需投影容量证明。
 
+新增 `docs/monograph/h4-pdec-lhb-support-to-capacity-transfer.md` 后，投影容量证明的缺口已精确化：
+支撑相位大小不能自动界定 persistent 计数 `g(t)`；必须补相位指示、多重度界 `M(t)` 或允许全集
+`Z_LHB` 投影容量。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：

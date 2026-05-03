@@ -55,6 +55,8 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 的 LHB column rows 已物化为 `45` 条机器行，空异常块全部通过 `bound=0`；诊断支撑行
 仍需投影容量证明后才能进入最终 `A,b,E,e`。
 
+新增 `docs/monograph/h4-pdec-lhb-support-to-capacity-transfer.md`。该文件把诊断支撑行转容量行的条件严写为相位指示、多重度界或允许全集投影容量三选一；当前优先硬点是用 `phase_cap_t` 或窗口互斥建立 `T3-multiplicity`。
+
 
 ## 内部逐行复核更新
 

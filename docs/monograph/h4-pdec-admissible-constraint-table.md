@@ -96,7 +96,7 @@ low-hole >=5 的 bucket bound = 0。
 
 第一版准入表暴露出三个真正数学硬点：
 
-1. **Column cap 相位块物化。** `Q=2310` LHB 空异常块已由 `h4-pdec-lhb-column-phase-blocks.json` 物化；仍需把诊断支撑行升级为容量行，并物化列见证半径/RCI-CDB/条件路由相位块。
+1. **Column cap 相位块物化。** `Q=2310` LHB 空异常块已由 `h4-pdec-lhb-column-phase-blocks.json` 物化；`WHOLEDEF/BRIDGED` 转容量需按 `h4-pdec-lhb-support-to-capacity-transfer.md` 补多重度界或允许全集投影容量；仍需物化列见证半径/RCI-CDB/条件路由相位块。
 2. **Low-hole bucket 符号化。** 需要把有限 `B_m=0` 现象提升为 Hall/CRT 容量定理或给出可计算的分范围证书。
 3. **Conditional routing 元数据。** tail/core/Rankin/H5 行必须逐条绑定“违反即进入哪个出口”的定理编号，否则不能进入正式 `A`。
 
