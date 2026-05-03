@@ -343,6 +343,21 @@ CRT 最小代表下界。
 必释放旧覆盖列。该文件还记录了 Sylvester 大因子弱输入：每个边界行必有某数含 `>p` 大素因子，
 但仍需排除“小因子 × 大因子”覆盖全部大因子点的可能。
 
+## 6.2. 递归剥离路线的精确化
+
+新增 `docs/monograph/prime-matrix-recursive-peeling-zero-row-hardpoint.md` 与审计
+`docs/monograph/prime-matrix-recursive-peeling-zero-row-audit.md` 后，递归剥离可写成严格层恒等式：
+
+```text
+若 I 在 p-筛下为零，则剥到前一素数 r 后，
+I 中的 r-筛幸存者只能是 p 的倍数且商避开 P(r)。
+```
+
+因此递归对象是带少数复活点的 `punctured zero window`。已知 `5` 个首零行样本中，
+一步剥离后仍零的有 `2` 个，包含完整下层对齐零行的只有 `1` 个，连续零行对为 `0`。
+所以“递归剥离自动推出连续零行”不能作为证明出口；可用出口是
+`RPZ-Absorption=>ColumnCRT/TailAnchor/ColumnRadius`。
+
 ## 7. 审稿边界
 
 本文严格证明了 `QSurv=>Row(q)`，并证明了 `AlignedDelay` 的精确作用范围。但本文没有证明 `QSurv` 对所有相邻素数无条件成立。

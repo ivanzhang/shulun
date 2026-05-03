@@ -664,6 +664,17 @@ the five tightest RCI rows for each $p$.  In this finite domain, the blocks
 $D_{\rm col}>81$ and displacement-residue load $>2$ are both empty, over $835$ phases.
 This is a finite refined-phase certificate; it does not provide a global $D_0,L_D$ theorem
 or exclude the ColumnRadius/ColumnCRT exits.
+The recursive zero-row peeling route is isolated in
+\[
+  \texttt{docs/monograph/prime-matrix-recursive-peeling-zero-row-hardpoint.md}.
+\]
+It proves the exact layer-peeling identity: after a $p$-sieve zero window is peeled to the
+previous prime level, any resurrected survivor must be a multiple of the peeled prime with
+rough cofactor.  Thus the recursive object is a punctured zero window, not automatically a
+lower-level zero row.  The accompanying finite audit finds no forced consecutive lower
+zero rows in the known first-zero-row samples.  The useful remaining target is therefore
+an absorption theorem routing those resurrected points to ColumnCRT, ColumnRadius, or
+TailAnchor, rather than a direct short-period contradiction.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

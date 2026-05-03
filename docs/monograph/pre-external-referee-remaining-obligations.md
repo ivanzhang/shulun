@@ -139,6 +139,11 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 口径混合必须无损拆成同口径子族，不能作为单个 `PDEC-Dual-Cert`。剩余硬义务只保留
 拆分后的 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin` 出口。
 
+新增 `docs/monograph/prime-matrix-recursive-peeling-zero-row-hardpoint.md` 与
+`docs/monograph/prime-matrix-recursive-peeling-zero-row-audit.md` 后，递归剥离路线已进入审稿边界：
+它严格给出上层零窗剥离后的复活点结构，但不能自动推出连续下层零行。外审前若使用该路线，
+必须补 `RPZ-Absorption=>ColumnCRT/TailAnchor/ColumnRadius`，即复活点被吸收时必触发命名出口。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

@@ -460,6 +460,27 @@ CC-FIN-DISPLOAD-WEIGHT：displacement residue load>2 的异常块为空。
 并补 CC-FIN-RADIUS-1000 的全行半径权重。
 ```
 
+### 4.2O 本轮进展：递归剥离新硬点
+
+新增 `docs/monograph/prime-matrix-recursive-peeling-zero-row-hardpoint.md` 与审计
+`docs/monograph/prime-matrix-recursive-peeling-zero-row-audit.md`。它把“上层零行向下递归”
+写成精确层剥离恒等式：
+
+```text
+p-筛零窗剥到前一素数 r 后，
+r-筛幸存者只能来自 p 的倍数，且商避开更小素数。
+```
+
+因此第一层剥离给出的是低复杂度复活点集合，而不是自动下层对齐零行。已知 `5` 个首零行样本中，
+连续下层零行对为 `0`。该路线可保留为新的全局阈值攻坚目标：
+
+```text
+RPZ-Absorption => ColumnCRT/TailAnchor/ColumnRadius。
+```
+
+也就是证明若这些复活点被缝合窗口稳定吸收，则位移余类负载、尾标签负载或列见证半径必超阈值。
+这比直接证明固定小 `D_0,L_D` 更接近当前 H4-PDEC 出口账本。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
