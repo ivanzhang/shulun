@@ -533,6 +533,35 @@ This strengthens the finite certificate from ``a matching exists'' to ``every in
 \]
 After Tail-anchor, fixed-offset/PDEC, and endpoint-mirror deficit exits are removed, one must prove the positive expansion inequality for all formal blocks.
 
+\section{Short Critical Block Reduction}
+
+The short-critical-block audit is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-short-critical-block-reduction.md}.
+\]
+It reruns the expansion-margin audit with tight surplus threshold $2$.  Among the same $8440419$ consecutive semiprime blocks, only $45$ have surplus at most $2$, and every such block has at most three semiprimes.  The distribution is:
+\[
+\begin{array}{c|c|c}
+\text{surplus} & |B| & \text{count}\\
+\hline
+1&1&4\\
+1&2&3\\
+2&1&24\\
+2&2&10\\
+2&3&4
+\end{array}
+\]
+This suggests the next reduction:
+\[
+  \text{SCB--1: } |B|\ge4 \Rightarrow
+  \text{positive expansion or named defect},
+\]
+\[
+  \text{SCB--2: } |B|\le3 \Rightarrow
+  \text{local exclusion or named defect}.
+\]
+This is still finite evidence and a proof target, not a theorem.  It is useful because SCB--2 is a small local problem involving only one, two, or three two-tail semiprimes, where tail labels, fixed offsets, wheel residues, and endpoint mirrors can be written explicitly.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

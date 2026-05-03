@@ -162,6 +162,16 @@ WSH Positive Expansion or Named Defect
 即在排除 Tail-anchor、固定偏移/PDEC 和 Endpoint mirror deficit 后，证明正扩张。
 这比普通短区间素数下界更窄，因为只需控制由平衡双尾半素数簇诱导的邻域。
 
+新增短临界块审计后，路线 C 还能再拆：
+
+```text
+SCB-1: |B|>=4 => positive expansion or named defect.
+SCB-2: |B|<=3 => local exclusion or named defect.
+```
+
+有限范围内全部 `surplus<=2` 的块都满足 `|B|<=3`。下一步最优先攻 `SCB-2`：
+单点、双点、三点簇可以逐型调用尾标签、固定偏移、小轮禁类和 `q^2-n` 端点镜像。
+
 ### 2.5 可行性
 
 评级：C。

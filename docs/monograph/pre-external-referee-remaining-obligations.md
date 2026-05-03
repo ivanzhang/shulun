@@ -85,6 +85,10 @@ else the named exit absorbs the block.
 外审前仍不能把该有限事实推广为全局证明；必须补 `WSH Positive Expansion or Named Defect`
 的统一证明，或把它明确标为条件输入。
 
+新增 `docs/monograph/prime-matrix-wsh-short-critical-block-reduction.md` 后，该统一证明进一步拆为
+`SCB-1/SCB-2`：长块 `|B|>=4` 自动扩张或触发命名缺陷；短块 `|B|<=3` 逐型排斥或触发命名缺陷。
+有限审计中所有 `surplus<=2` 的小余量块都满足 `|B|<=3`。外审前仍需给出这两个命题的逐行证明。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

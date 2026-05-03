@@ -634,6 +634,29 @@ WSH Positive Expansion or Named Defect:
 or Tail-anchor / fixed-offset-PDEC / Endpoint mirror deficit fires.
 ```
 
+新增 `docs/monograph/prime-matrix-wsh-short-critical-block-audit.md/json` 与
+`docs/monograph/prime-matrix-wsh-short-critical-block-reduction.md` 后，正扩张硬点又被压缩一层。
+用同一扩张余量脚本取 `tight_surplus=2`，在 `8440419` 个连续块中只有 `45` 个小余量块，
+且全部满足 `|B|<=3`：
+
+```text
+surplus=1, |B|=1: 4
+surplus=1, |B|=2: 3
+surplus=2, |B|=1: 24
+surplus=2, |B|=2: 10
+surplus=2, |B|=3: 4
+```
+
+因此下一最小硬点可拆为：
+
+```text
+SCB-1: |B|>=4 automatically expands or hits a named defect.
+SCB-2: |B|<=3 local short blocks are excluded or hit a named defect.
+```
+
+这仍是有限审计支持的归约，不是全局证明。优先建议专攻 `SCB-2`，因为它只涉及单点、
+双点、三点半素数簇，最适合把尾因子、固定偏移、小轮同余和端点镜像逐项写成不等式。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，
