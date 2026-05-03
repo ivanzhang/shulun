@@ -181,6 +181,10 @@ Rejected`。下一步生成正式 `A,b,E,e` 时必须只取已准入行；`Needs
 ColumnRadius/ColumnCRT/Tail-anchor 出口的条件路由行。该文件证明了列见证位移非零刚性，
 但尚未提交 `B_col(j)` 系数表。
 
+补充文档 `h4-pdec-column-cap-coefficient-ledger.md` 已提交 V1 系数账本，登记了
+`CC-FIN-*`、`CC-LHB-*` 与 `CC-COND-*` 三类行。当前状态是数值界值和条件出口已登记，
+但多数行仍缺机器可读 `phase_block`，所以尚不能直接作为 `A,b,E,e` 输入。
+
 ## 5. 第一批真实系数行
 
 脚本 `experiments/prime_matrix_bpn_pdec_real_constraint_rows.py` 已开始从完整 CRT 周期枚举中

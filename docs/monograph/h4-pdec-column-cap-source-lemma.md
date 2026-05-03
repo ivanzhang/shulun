@@ -195,7 +195,8 @@ coefficients and branch metadata still open。
 
 ## 8. 下一步系数任务
 
-下一步应生成 `column-cap coefficient ledger`，每一行至少包含：
+补充文档 `h4-pdec-column-cap-coefficient-ledger.md` 已生成第一版 `column-cap coefficient
+ledger`，每一行登记：
 
 ```text
 row_id；
@@ -209,4 +210,6 @@ excluded exit if conditional；
 normalization used by PDEC-Dual-Cert。
 ```
 
-只有该系数账本完成后，column cap 才能实际进入可机器审计的 `A,b,E,e` 输入。
+该 V1 账本登记了有限列见证半径、RCI/CDB 联合审计界值、LHB 列残基刚性有限界值和
+ColumnDefect 条件路由模板。它仍未把所有相位块 `C_j` 物化为机器可读数组；因此下一步是
+扩展审计脚本输出 `phase_block`、`bound` 与 `source_hash`。

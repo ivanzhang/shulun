@@ -46,6 +46,10 @@ NeedsProof / Rejected`。当前已经明确拒绝 full-cycle balance 直接作�
 固定为有限列投影容量、符号化列容量定理和条件列路由行，并严写列见证位移非零刚性。
 当前状态是来源规则闭合、`B_col(j)` 系数账本与 ColumnDefect 路由证书未填。
 
+新增 `docs/monograph/h4-pdec-column-cap-coefficient-ledger.md`。该文件登记 V1 column cap
+系数源：有限列见证半径、RCI/CDB 联合审计界值、`Q=2310` LHB 列残基刚性界值和条件
+ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相位块仍未物化。
+
 
 ## 内部逐行复核更新
 

@@ -284,6 +284,21 @@ Rejected。
 PDEC 约束场的真实通道。当前仍未完成的是 `B_col(j)` 系数账本和完整 ColumnDefect
 路由证书。
 
+### 4.2E 本轮进展：column cap 系数账本 V1
+
+新增 `docs/monograph/h4-pdec-column-cap-coefficient-ledger.md`。该账本登记三类 column cap
+系数源：
+
+```text
+CC-FIN-*：q<=1000 或 p<=1000 的有限列见证/RCI-CDB 摘要界值；
+CC-LHB-*：Q=2310 的 LHB 列残基刚性有限界值；
+CC-COND-*：ColumnRadius/ColumnCRT/Tail-anchor 条件路由模板。
+```
+
+账本明确当前还不是最终 `A,b,E,e`：有限审计多数只给摘要常数，尚未输出相位块
+`C_j=[t_1,...,t_k]`。下一步最小工程任务是优先把 `Q=2310` 的 LHB column rows
+物化为机器可读 `phase_block + bound + source_hash`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

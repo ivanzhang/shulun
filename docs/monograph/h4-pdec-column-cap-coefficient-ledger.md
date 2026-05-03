@@ -1,0 +1,110 @@
+# H4-PDEC Column Cap 系数账本 V1
+
+**状态：** `h4_pdec_column_cap_coefficients_v1_registered_not_a_ready`
+
+本文承接 `h4-pdec-column-cap-source-lemma.md`，登记当前已有 column cap 数值界值与条件路由阈值。结论是：已有审计能给出若干有限或条件界值，但还没有完整物化为 `PDEC-Dual-Cert` 可直接读取的 `A,b,E,e` 输入；缺口主要是相位块 `C_j` 与正式坏窗集合 `S` 的投影关系。
+
+## 1. 账本字段
+
+每一行使用以下字段：
+
+```text
+row_id；
+q_range / p_range；
+Q；
+phase block C_j；
+B_col(j)；
+source type；
+source file；
+excluded exit if conditional；
+A-ready status；
+remaining materialization task。
+```
+
+`A-ready` 的含义是：该行已经有明确相位块、明确界值、明确来源定理或证书，并作用于同一个 `g(t)`。若只登记了数值摘要但没有 `C_j`，则不是 `A-ready`。
+
+## 2. 有限列见证界值
+
+来源：`prime-matrix-column-row-bridge-audit.json`，扫描 `q<=1000` 的 `167` 个奇素数。
+
+| row_id | q_range | Q | phase block `C_j` | `B_col(j)` | source type | source file | A-ready | 剩余任务 |
+|---|---|---:|---|---:|---|---|---|---|
+| `CC-FIN-EMPTYCOL-1000` | `q<=1000` | variable | empty nontrivial column defect set | `0` | `FiniteCert` | `prime-matrix-column-row-bridge-audit.json` | 否 | 把“空非平凡列”事件映射到 `tau` 相位块 |
+| `CC-FIN-RADIUS-1000` | `q<=1000` | variable | `D_col(r)>107` | `0` | `FiniteCert` | `prime-matrix-column-row-bridge-audit.json` | 否 | 输出所有 `D_col(r)>107` 相位块为空的证书 |
+| `CC-FIN-RADIUS-WORST` | `q=929` | variable | worst radius row | `D_col=107` | `FiniteCert` | `prime-matrix-column-row-bridge-audit.json` | 否 | 仅作常数定位，不能作为上界行 |
+
+审稿解释：`CC-FIN-RADIUS-1000` 可在有限范围内写成
+
+\[
+\sum_{t\in C_{D>107}}g(t)\le0,
+\]
+
+但当前 JSON 只给出摘要，没有列出 `C_{D>107}` 的相位块。因此它是“数值界值已知、相位块未物化”的账本行。
+
+## 3. RCI/CDB 联合有限界值
+
+来源：`prime-matrix-rci-cdb-joint-audit.json`，扫描 `p<=1000`。
+
+| row_id | p_range | Q | phase block `C_j` | `B_col(j)` | source type | source file | A-ready | 剩余任务 |
+|---|---|---:|---|---:|---|---|---|---|
+| `CC-FIN-TIGHT-RCI-MARGIN` | `p<=1000` | variable | tight rows with `RCI margin<1` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 输出 tight-row 相位块 |
+| `CC-FIN-TIGHT-RADIUS` | `p<=1000` | variable | tight rows with `D_col>81` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 物化 `D_col>81` 的相位块 |
+| `CC-FIN-TAILLOAD` | `p<=1000` | variable | tight rows with tail-label load `>2` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 物化尾标签负载相位块 |
+| `CC-FIN-DISPLOAD` | `p<=1000` | variable | tight rows with displacement residue load `>2` | `0` | `FiniteCert` | `prime-matrix-rci-cdb-joint-audit.json` | 否 | 物化位移余类负载相位块 |
+
+这里 `B_col=0` 的含义是：有限扫描中没有超过该阈值的记录。它不能直接推广到全局，也不能代替 CDB 证明。
+
+## 4. LHB 列残基刚性有限界值
+
+来源：`prime-matrix-bpn-lhb-column-residue-rigidity-audit.json` 与
+`prime-matrix-bpn-lhb-column-residue-rigidity-extended.json`。
+
+| row_id | p_range | Q | phase block `C_j` | `B_col(j)` | source type | source file | A-ready | 剩余任务 |
+|---|---|---:|---|---:|---|---|---|---|
+| `CC-LHB-AFFINE-Q2310` | `13<=p<=61` sampled | `2310` | affine rigidity failure phases | `0` | `FiniteCert` | LHB column residue audits | 部分 | 将失败相位块空集写入机器输入 |
+| `CC-LHB-NEGDELTA-Q2310` | `13<=p<=61` sampled | `2310` | zero bucket with `Delta(H)<0` | `0` | `FiniteCert` | LHB column residue audits | 部分 | 将 `Delta(H)<0` 相位块空集写入机器输入 |
+| `CC-LHB-UNBRIDGED-Q2310` | `13<=p<=61` sampled | `2310` | critical zero bucket not bridged | `0` | `FiniteCert` | LHB column residue audits | 部分 | 输出未桥接临界相位块为空的证书 |
+| `CC-LHB-BRIDGE-SUPPORT` | `p=43,47` sampled | `2310` | bridged critical phases | `40` for `p=43`, `12` for `p=47` | `FiniteCert` | LHB column residue audits | 否 | 若要入 `A`，需按 `p` 拆行并列出相位块 |
+
+这些行比一般 column cap 更接近 `A-ready`，因为 `Q=2310` 固定且列残基刚性已给出明确相位结构。但当前仓库只保存审计摘要和例子；正式审计输入仍需输出完整相位块列表。
+
+## 5. 条件 ColumnDefect 路由系数
+
+以下行不是有限事实，而是下一步要证明的条件路由模板。
+
+| row_id | range | Q | phase block `C_j` | `B_col(j)` | source type | excluded exit | A-ready | 剩余任务 |
+|---|---|---:|---|---:|---|---|---|---|
+| `CC-COND-RADIUS` | asymptotic | variable | `D_col>D_0(q)` | `0` after routing | `ConditionalRouting` | `ColumnRadiusDefect` | 否 | 证明大半径坏窗进入端点/列 CRT 缺陷 |
+| `CC-COND-DISPLOAD` | asymptotic | variable | displacement residue load `>L_D(q)` | `0` after routing | `ConditionalRouting` | `ColumnCRTDefect` | 否 | 给出 `L_D(q)` 与路由定理 |
+| `CC-COND-TAILLOAD` | asymptotic | variable | tail-label load `>L_T(q)` | `0` after routing | `ConditionalRouting` | `TailAnchorDefect` | 否 | 给出 `L_T(q)` 与尾锚路由 |
+| `CC-COND-DISTRIBUTED` | asymptotic | variable | low radius/load complement | RCI positive margin | `ConditionalRouting` | none; direct `Distributed-RCI` | 否 | 证明低集中度时 RCI 正余量 |
+
+条件行进入 `A` 的规则是：先在证明树中剥离对应出口，再把剩余分支限制写成线性约束。没有出口排斥时，这些行不能作为无条件证书行。
+
+## 6. 第一版可生成的机器输入
+
+当前可以生成两类有限机器输入：
+
+1. **空异常相位块输入。** 对 `CC-LHB-AFFINE-Q2310`、`CC-LHB-NEGDELTA-Q2310`、
+   `CC-LHB-UNBRIDGED-Q2310`，若脚本输出完整相位块，则可直接写成 `sum_{t in C}g(t)<=0`。
+2. **摘要常数输入。** 对 `CC-FIN-RADIUS-1000`、`CC-FIN-TIGHT-RADIUS`、`CC-FIN-TAILLOAD`、
+   `CC-FIN-DISPLOAD`，必须先补脚本输出相位块；否则只能作为审稿说明，不能作为 `A` 行。
+
+因此 V1 账本完成的是“系数来源登记”，还不是最终 `A,b,E,e`。
+
+## 7. 下一步最小工程任务
+
+下一步应扩展审计脚本，输出以下机器可读对象：
+
+```text
+row_id；
+Q；
+phase_block: [t_1,...,t_k]；
+bound；
+source_hash；
+normalization；
+admissibility: finite / conditional；
+excluded_exit。
+```
+
+建议优先从 `Q=2310` 的 LHB 列残基刚性行开始，因为这些行已经有固定低模周期，最容易物化为 `A` 矩阵行。

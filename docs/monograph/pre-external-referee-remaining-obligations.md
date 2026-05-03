@@ -106,6 +106,10 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 有限列投影容量、符号化列容量定理、或违反列预算即进入 ColumnRadius/ColumnCRT/Tail-anchor
 出口的条件路由行。该文件证明列见证位移非零刚性，但尚未给出 `B_col(j)` 系数账本。
 
+新增 `docs/monograph/h4-pdec-column-cap-coefficient-ledger.md` 后，column cap 的 V1 系数源
+已登记：有限列见证半径、RCI/CDB 联合审计、LHB 列残基刚性和条件 ColumnDefect 路由。
+当前仍缺机器可读相位块 `C_j`，所以这些行尚不能直接进入最终 `A,b,E,e`。
+
 ### PM-E. RSE/RRD/OSPC 常数链
 
 当前最窄常数账本为：
@@ -251,7 +255,7 @@ RH 章节必须保持 verification package 状态。外审前应完成：
 | H1 | Prime Matrix A/B 入口 | 已新增 `prime-matrix-ab-entrance-theorem-list.md`，并将主稿 A/B reduction 改为 `Reduction-closed Statement` | 归约闭合；非终局排斥 |
 | H2 | Structured-EHPD / D 组 | 明确列为 Prime Matrix 终局第一硬门；要求直接证明或由 RHI 替代 | 未闭合定理级接口 |
 | H3 | BPN-LHB | 已确认五段证书/RS1962 外部定理版闭合边界，并新增可字节级复现的证书账本 | 子模块闭合；不推出全局行列命题 |
-| H4 | PDEC/SAE/Rankin | 拆成 `PDEC exclusion`、`SAE local escape exclusion`、Rankin certificates 三项；新增 H4-PDEC 证书模板、首批约束来源引理、约束准入表和 column cap 来源规则，固定 `PDEC-Explicit-Cert/PDEC-Dual-Cert` 的输入、下界、约束合法性、准入等级和失败回流规则 | 最终硬输入；PDEC 格式/来源/准入规则闭合但证书未填 |
+| H4 | PDEC/SAE/Rankin | 拆成 `PDEC exclusion`、`SAE local escape exclusion`、Rankin certificates 三项；新增 H4-PDEC 证书模板、首批约束来源引理、约束准入表、column cap 来源规则和 V1 系数账本，固定 `PDEC-Explicit-Cert/PDEC-Dual-Cert` 的输入、下界、约束合法性、准入等级和失败回流规则 | 最终硬输入；PDEC 格式/来源/准入规则闭合但证书未填 |
 | H5 | RRD/OSPC 常数账本 | 新增 `h5-4-ospc-weighted-crtdefect-absorption.md`，把 `OSPC* / weighted CRTDefect` 吸收到 `PDEC-or-SAE` | H5.1/H5.4 路由完成；最小硬点转为 H4 证书排斥 |
 | H6 | 二点筛 I3-Core | 拆成八个必须逐项证明的定理义务 | 条件核心；未闭合 |
 | H7 | DI/BFI 外部适配 | 已新增 `kls-window-di-bfi-adaptation-template.md`，完成 KLS-window 的相位、模数、频率、权重、gcd、平滑、`B(A)` 全表核验 | 外部深定理版闭合；完全自足版仍需重证 DI/BFI |
