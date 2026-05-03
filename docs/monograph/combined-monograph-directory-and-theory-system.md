@@ -1228,6 +1228,23 @@ q 方阵边界零行
 有 `45` 次落入某些更小方阵早期行号，但实际成为更小方阵零行的次数为 `0`。因此可保留路线是
 `terminal nonzero-class block -> PDEC/SAE`，不是“小方阵零行递归矛盾”。
 
+新增 `experiments/prime_matrix_adjacent_shell_descent_ledger.py`、
+`docs/monograph/prime-matrix-adjacent-shell-descent-ledger.md/json` 与
+`docs/monograph/prime-matrix-adjacent-shell-recursive-descent-route.md` 后，用户的相邻壳层直觉被
+提炼为可用的正向递归路线。严格引理为：若 `p<q` 相邻，`n<q^2` 且旧 `p`-筛幸存，则 `n`
+为素数；在闭端点 `n<=q^2` 内唯一合数旧筛幸存者为 `q^2`。因此非第一行 `q` 零行确实先降为
+旧 `p`-筛零窗口，最后一行至多带 `q^2` 端点穿孔。随后写 `(s-1)q=mp+a,g=q-p`，得到无损二分：
+
+```text
+a=0 or a>=p-g  => 完整 p 对齐零行；
+0<a<p-g        => seam zero window，guard 长度 a 与 p-g-a。
+```
+
+有限账本到 `p<=2000` 的 `302` 个相邻素数对中 `singleton failures=0`，但最大 seam 比例约
+`0.9985`，说明主分支几乎总是 guard 缝合。当前递归路线的最小硬点更新为
+`SeamGuard-Elimination`：证明 seam guards 不能无代价吸收 `Row(p)` 所需幸存者；若持续吸收，
+则进入 `SAE/PDEC/ColumnCRT`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

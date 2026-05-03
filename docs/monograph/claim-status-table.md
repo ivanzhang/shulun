@@ -242,6 +242,14 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 个，包含完整下层对齐零行的只有 `1` 个，连续零行对为 `0`。因此该路线的下一硬点不是“推出连续零行”，
 而是 `RPZ-Absorption=>ColumnCRT/TailAnchor`：证明复活点被稳定吸收必触发列/尾锚/低模缺陷。
 
+新增 `docs/monograph/prime-matrix-adjacent-shell-recursive-descent-route.md`、
+`docs/monograph/prime-matrix-adjacent-shell-descent-ledger.md/json` 与脚本
+`experiments/prime_matrix_adjacent_shell_descent_ledger.py` 后，相邻壳层事实被强化：`p<q`
+相邻时，`q^2` 内旧 `p`-筛唯一合数幸存者是 `q^2`，有限账本 `p<=2000` 无单点失败。
+因此 `q^2` 内零行确实先降为旧 `p`-筛零窗；剩余无损二分为完整 `p` 行或 seam guard。
+当前递归路线最小硬点更新为 `SeamGuard-Elimination`：排除两个 guard 持续吸收，否则送入
+`SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 与脚本
 `experiments/prime_matrix_scaled_peeling_halfwidth_audit.py` 后，进一步核查缩放行号与半宽素数版本：
 `nP/p` 只是高度近似，完整包含下层对齐零行需要额外相位条件；同批样本中缩放后含完整前一素数零行的记录

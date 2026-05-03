@@ -372,3 +372,42 @@ and RPZ-SAE/PDEC/ColumnCRT certificate materialization。
 
 新增 `prime-matrix-rpz-certificate-materialization-interface.md` 给出上述接口的可审稿填表格式；
 它不宣称这些出口已被排除。
+
+## 8. 相邻壳层单点下降路线更新
+
+新增：
+
+```text
+experiments/prime_matrix_adjacent_shell_descent_ledger.py；
+docs/monograph/prime-matrix-adjacent-shell-descent-ledger.md/json；
+docs/monograph/prime-matrix-adjacent-shell-recursive-descent-route.md。
+```
+
+该更新把用户提出的“每次降阶只有一个新双粗点”精确化为相邻壳层单点引理：
+
+```text
+p<q 相邻；
+n<q^2 且旧 p-筛幸存；
+=> n 是素数；
+n<=q^2 的唯一合数旧筛幸存者是 q^2。
+```
+
+因此 `q^2` 内的非第一行 `q` 零行确实先降为旧 `p`-筛零窗口，最后一行至多带 `q^2`
+端点穿孔。随后写 `(s-1)q=mp+a,g=q-p`，得到无损二分：
+
+```text
+a=0 or a>=p-g  => 完整 p 对齐零行；
+0<a<p-g        => seam zero window，两个 guard 长度为 a 与 p-g-a。
+```
+
+这把递归路线的实质缺口从“零行是否自动降阶”压缩为：
+
+```text
+SeamGuard-Elimination:
+seam guards 不能无代价吸收 Row(p) 所需幸存者；
+若持续吸收，则进入 SAE/PDEC/ColumnCRT。
+```
+
+所以旧结论仍成立：不能直接从零行推出连续下层零行。但现在有更强的正向路线：
+若 `SeamGuard-Elimination` 与 `SAE/PDEC/ColumnCRT` 出口排斥闭合，则相邻壳层递归下降
+会把任意 `q^2` 内零行降到 `p=2` 矛盾。

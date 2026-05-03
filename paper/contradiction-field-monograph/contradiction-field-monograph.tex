@@ -978,6 +978,16 @@ lower-level zero row.  The accompanying finite audit finds no forced consecutive
 zero rows in the known first-zero-row samples.  The useful remaining target is therefore
 an absorption theorem routing those resurrected points to ColumnCRT, ColumnRadius, or
 TailAnchor, rather than a direct short-period contradiction.
+The adjacent-shell refinement is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-adjacent-shell-recursive-descent-route.md}.
+\]
+For adjacent primes $p<q$, it proves that the only composite old $p$-sieve survivor in
+$[1,q^2]$ is $q^2$.  Hence a non-first $q$-zero row first descends to an old $p$-sieve
+$q$-window, with only the terminal $q^2$ puncture in the last row.  That window either
+contains a full $p$-aligned zero row or is a seam window whose two guard intervals have
+lengths $a$ and $p-(q-p)-a$.  The resulting narrow target is SeamGuard-Elimination:
+guards cannot absorb all forced survivors without entering SAE, PDEC, or ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

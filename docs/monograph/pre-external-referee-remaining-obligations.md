@@ -288,6 +288,19 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `docs/monograph/prime-matrix-recursive-peeling-zero-row-audit.md` 后，递归剥离路线已进入审稿边界：
 它严格给出上层零窗剥离后的复活点结构，但不能自动推出连续下层零行。外审前若使用该路线，
 必须补 `RPZ-Absorption=>ColumnCRT/TailAnchor/ColumnRadius`，即复活点被吸收时必触发命名出口。
+
+新增 `docs/monograph/prime-matrix-adjacent-shell-recursive-descent-route.md` 后，递归剥离支线得到
+更强的相邻壳层入口：在 `q^2` 内从旧 `p`-筛升级到 `q`-筛，非第一行唯一新增旧筛幸存穿孔为
+`q^2`。因此外审前可把 `q` 零行无损降为：
+
+```text
+旧 p-筛 q 零窗
+=> 完整 p 对齐零行 or seam zero window with two guards。
+```
+
+新的剩余义务是 `SeamGuard-Elimination`：证明两个 guard 不能长期吸收 `Row(p)` 所需幸存者；
+若吸收持续，必须触发 `SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 后，缩放到前一素数和约半宽素数的版本
 也不能直接闭合：缩放行号需要完整包含判据，半宽层会复活粗互补因子点。该路线仍需复活点吸收缺陷定理。
 
