@@ -268,6 +268,22 @@ Rejected。
 因此 H4-PDEC 下一步从“准入规则”推进到“正式系数源”：column cap、low-hole bucket
 符号化、tail/core/Rankin/H5 条件路由元数据。
 
+### 4.2D 本轮进展：column cap 来源
+
+新增 `docs/monograph/h4-pdec-column-cap-source-lemma.md`。该文件把 column cap 的合法来源
+固定为三类：
+
+```text
+有限列投影容量；
+符号化列容量定理；
+违反列预算即进入 ColumnRadius/ColumnCRT/Tail-anchor 的条件路由行。
+```
+
+它严写了列见证位移非零刚性：若坏行点 `Hq+c` 被旧标签 `ell` 覆盖，而同列素数见证
+`r_c q+c` 不等于 `ell`，则 `r_c-H` 不能为 `0 mod ell`。这给出列见证能进入
+PDEC 约束场的真实通道。当前仍未完成的是 `B_col(j)` 系数账本和完整 ColumnDefect
+路由证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

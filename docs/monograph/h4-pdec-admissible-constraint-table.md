@@ -14,6 +14,7 @@
 | `FiniteCert` | 指定有限范围、指定 `Z`、指定输出文件可复核 | 可进入有限证书 |
 | `SymbolicReady` | 已有符号化定理给出容量或路由 | 可进入对应范围 |
 | `ConditionalRouting` | 在排除某个命名出口后的剩余分支中成立 | 只能作为分支证书行 |
+| `NeedsCoefficients` | 来源规则已证明，但 `C_j,B_j` 或分支元数据未填 | 暂不可进入实际审计输入 |
 | `NeedsProof` | 形式正确但缺来源证明、系数或界值 | 不可进入 |
 | `Rejected` | 逻辑上不能从现有假设推出 | 不可进入 |
 
@@ -32,7 +33,7 @@
 | block cap | `sum_{t in T}g(t)<=C_Z(T)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S2` | 有相位块容量定理时 | column、bucket、mirror-pair 都是特例 |
 | mirror equality | `g(t)=g(rho(t))` | `NeedsProof` | `H4-PDEC-S3` | 仅当证明 `m(S)=S` | 不能由完整周期镜像自动推出 |
 | mirror-pair cap | `g(t)+g(rho(t))<=B_mir(t)` | `FiniteCert` / `SymbolicReady` | `H4-PDEC-S3` | 有 `S subset Z` 与成对容量时 | 当前比强镜像等式更安全 |
-| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `NeedsProof` | 待接列见证/列均衡定理 | 暂无全局准入 | 不能由期望均匀性替代 |
+| column cap | `sum_{t in C_j}g(t)<=B_col(j)` | `NeedsCoefficients` / `ConditionalRouting` | `h4-pdec-column-cap-source-lemma.md` | 来源规则已证明；系数未填 | 不能由期望均匀性替代 |
 | low-hole bucket | `sum_{h_Q(t)>=m}g(t)<=B_m` | `FiniteCert` / `NeedsProof` | `H4-PDEC-S4` | 有限样本可用；全局需 Hall/CRT 定理 | `P=23,Q=210,m>=5` 是有限证书行 |
 | tail-anchor cap | `sum_{t in A_a}g(t)<=B_tail(a)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 Tail-anchor 出口后的剩余分支 | 必须列出路由定理 |
 | core-overlap cap | `sum_{t in H_c}g(t)<=B_core(c)` | `ConditionalRouting` | `H4-PDEC-S5` | 排除 core/high-overlap 出口后的剩余分支 | 违反时回流 higher-defect |
@@ -93,7 +94,7 @@ low-hole >=5 的 bucket bound = 0。
 
 第一版准入表暴露出三个真正数学硬点：
 
-1. **Column cap 来源。** 需要把列见证或列非零同余类均衡转成 `S subset Z` 型容量，而不是子集均匀性。
+1. **Column cap 系数账本。** 来源规则已由 `h4-pdec-column-cap-source-lemma.md` 固定；仍需填 `C_j,B_col(j)`、来源类型和条件出口元数据。
 2. **Low-hole bucket 符号化。** 需要把有限 `B_m=0` 现象提升为 Hall/CRT 容量定理或给出可计算的分范围证书。
 3. **Conditional routing 元数据。** tail/core/Rankin/H5 行必须逐条绑定“违反即进入哪个出口”的定理编号，否则不能进入正式 `A`。
 

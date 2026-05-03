@@ -176,6 +176,11 @@ persistent 坏窗子集的无条件约束。
 Rejected`。下一步生成正式 `A,b,E,e` 时必须只取已准入行；`NeedsProof` 行只能作为
 待攻目标，`Rejected` 行必须从证书输入中删除。
 
+补充文档 `h4-pdec-column-cap-source-lemma.md` 已进一步处理 column cap 来源。列约束
+只能通过三种方式进入 `A`：有限列投影容量、符号化列容量定理、或违反列预算即进入
+ColumnRadius/ColumnCRT/Tail-anchor 出口的条件路由行。该文件证明了列见证位移非零刚性，
+但尚未提交 `B_col(j)` 系数表。
+
 ## 5. 第一批真实系数行
 
 脚本 `experiments/prime_matrix_bpn_pdec_real_constraint_rows.py` 已开始从完整 CRT 周期枚举中

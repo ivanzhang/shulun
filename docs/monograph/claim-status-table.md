@@ -42,6 +42,10 @@
 NeedsProof / Rejected`。当前已经明确拒绝 full-cycle balance 直接作用于坏窗子集、
 有限样本相位表直接全局推广、以及未证明镜像闭合时使用强 mirror equality。
 
+新增 `docs/monograph/h4-pdec-column-cap-source-lemma.md`。该文件把 column cap 的合法来源
+固定为有限列投影容量、符号化列容量定理和条件列路由行，并严写列见证位移非零刚性。
+当前状态是来源规则闭合、`B_col(j)` 系数账本与 ColumnDefect 路由证书未填。
+
 
 ## 内部逐行复核更新
 
