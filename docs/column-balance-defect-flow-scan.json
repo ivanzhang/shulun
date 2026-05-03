@@ -1,0 +1,128 @@
+{
+  "certificate_type": "column_balance_defect_flow_scan",
+  "status": "complete_CRT_smallP_confirms_column_balance_and_zero_row_pattern",
+  "results": [
+    {
+      "P": 5,
+      "basis_primes": [
+        2,
+        3
+      ],
+      "M": 6,
+      "column_counts": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "equal_columns": true,
+      "zero_rows": [],
+      "zero_row_count": 0,
+      "row_count_hist": {
+        "1": 4,
+        "2": 2
+      }
+    },
+    {
+      "P": 7,
+      "basis_primes": [
+        2,
+        3,
+        5
+      ],
+      "M": 30,
+      "column_counts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "equal_columns": true,
+      "zero_rows": [],
+      "zero_row_count": 0,
+      "row_count_hist": {
+        "1": 12,
+        "2": 18
+      }
+    },
+    {
+      "P": 11,
+      "basis_primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "M": 210,
+      "column_counts": [
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "equal_columns": true,
+      "zero_rows": [],
+      "zero_row_count": 0,
+      "row_count_hist": {
+        "1": 24,
+        "2": 108,
+        "3": 72,
+        "4": 6
+      }
+    },
+    {
+      "P": 13,
+      "basis_primes": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "M": 2310,
+      "column_counts": [
+        480,
+        480,
+        480,
+        480,
+        480,
+        480,
+        480,
+        480,
+        480,
+        480,
+        480,
+        480
+      ],
+      "equal_columns": true,
+      "zero_rows": [
+        169,
+        702,
+        1609,
+        2142
+      ],
+      "zero_row_count": 4,
+      "row_count_hist": {
+        "0": 4,
+        "1": 180,
+        "2": 966,
+        "3": 992,
+        "4": 168
+      }
+    }
+  ],
+  "structural_conclusion": "小 P 完整 CRT 周期扫描确认除第 P 列外列类素数计数相等。零行若存在，其在周期内的位置呈刚性分布；下一步应研究零行间距与根基模数的关系，判断是否可推广为全行覆盖的周期矛盾。",
+  "next_obligations": [
+    "分析 zero_rows 的间距 gcd 与 M 的关系。",
+    "若 P x P 内出现零行，比较其在完整 CRT 周期中的重复位置。",
+    "将零行亏损视为列均衡缺陷，研究补偿行的相位分布。"
+  ]
+}

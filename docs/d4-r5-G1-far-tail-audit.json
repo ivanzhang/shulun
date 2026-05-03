@@ -1,0 +1,806 @@
+{
+  "certificate_type": "D4_R5_G1_far_tail_audit",
+  "status": "far_tail_reduced_to_low_tau_buckets",
+  "rows_seen": 1000,
+  "target": "far_{<0.5w20}/head20 <= 0.43",
+  "worst_far": {
+    "x": 1023400,
+    "head_sum": 0.07441142592365829,
+    "w20": 0.0022568707839301753,
+    "far_count": 59,
+    "far_sum": 0.03222726723044008,
+    "far_over_head": 0.4330956816161989,
+    "bucket_values": {
+      "tau_le_4": {
+        "count": 37,
+        "sum": 0.01675839513030003,
+        "over_head": 0.2252126595113652
+      },
+      "tau_5_8": {
+        "count": 16,
+        "sum": 0.010793454826484963,
+        "over_head": 0.1450510414564345
+      },
+      "tau_9_16": {
+        "count": 5,
+        "sum": 0.0045129843524985315,
+        "over_head": 0.060649077698478535
+      },
+      "tau_17_32": {
+        "count": 1,
+        "sum": 0.00016243292115655436,
+        "over_head": 0.002182902949920633
+      },
+      "tau_33_59": {
+        "count": 0,
+        "sum": 0,
+        "over_head": 0.0
+      },
+      "heavy_short": {
+        "count": 0,
+        "sum": 0,
+        "over_head": 0.0
+      }
+    },
+    "far_top10": [
+      {
+        "weight": 0.0011215404356566265,
+        "offset": 45,
+        "tau_sum": 6,
+        "count": 2,
+        "average_kernel": 0.0001869234059427711
+      },
+      {
+        "weight": 0.0011116623785564995,
+        "offset": 134,
+        "tau_sum": 8,
+        "count": 2,
+        "average_kernel": 0.00013895779731956244
+      },
+      {
+        "weight": 0.0010765279400316863,
+        "offset": 320,
+        "tau_sum": 12,
+        "count": 1,
+        "average_kernel": 8.971066166930719e-05
+      },
+      {
+        "weight": 0.0010697699745417892,
+        "offset": 92,
+        "tau_sum": 10,
+        "count": 2,
+        "average_kernel": 0.00010697699745417892
+      },
+      {
+        "weight": 0.0010516595661350927,
+        "offset": 112,
+        "tau_sum": 6,
+        "count": 2,
+        "average_kernel": 0.00017527659435584878
+      },
+      {
+        "weight": 0.0010077621527651711,
+        "offset": 155,
+        "tau_sum": 6,
+        "count": 2,
+        "average_kernel": 0.00016796035879419519
+      },
+      {
+        "weight": 0.0009762676110262663,
+        "offset": 60,
+        "tau_sum": 6,
+        "count": 2,
+        "average_kernel": 0.00016271126850437773
+      },
+      {
+        "weight": 0.0009746294123251596,
+        "offset": 57,
+        "tau_sum": 4,
+        "count": 2,
+        "average_kernel": 0.0002436573530812899
+      },
+      {
+        "weight": 0.0009447144590078746,
+        "offset": 20,
+        "tau_sum": 4,
+        "count": 1,
+        "average_kernel": 0.00023617861475196865
+      },
+      {
+        "weight": 0.0009426588637565296,
+        "offset": 18,
+        "tau_sum": 3,
+        "count": 1,
+        "average_kernel": 0.0003142196212521765
+      }
+    ]
+  },
+  "bucket_worst": {
+    "tau_le_4": {
+      "x": 1023400,
+      "head_sum": 0.07441142592365829,
+      "w20": 0.0022568707839301753,
+      "far_count": 59,
+      "far_sum": 0.03222726723044008,
+      "far_over_head": 0.4330956816161989,
+      "bucket_values": {
+        "tau_le_4": {
+          "count": 37,
+          "sum": 0.01675839513030003,
+          "over_head": 0.2252126595113652
+        },
+        "tau_5_8": {
+          "count": 16,
+          "sum": 0.010793454826484963,
+          "over_head": 0.1450510414564345
+        },
+        "tau_9_16": {
+          "count": 5,
+          "sum": 0.0045129843524985315,
+          "over_head": 0.060649077698478535
+        },
+        "tau_17_32": {
+          "count": 1,
+          "sum": 0.00016243292115655436,
+          "over_head": 0.002182902949920633
+        },
+        "tau_33_59": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "heavy_short": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        }
+      },
+      "far_top10": [
+        {
+          "weight": 0.0011215404356566265,
+          "offset": 45,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.0001869234059427711
+        },
+        {
+          "weight": 0.0011116623785564995,
+          "offset": 134,
+          "tau_sum": 8,
+          "count": 2,
+          "average_kernel": 0.00013895779731956244
+        },
+        {
+          "weight": 0.0010765279400316863,
+          "offset": 320,
+          "tau_sum": 12,
+          "count": 1,
+          "average_kernel": 8.971066166930719e-05
+        },
+        {
+          "weight": 0.0010697699745417892,
+          "offset": 92,
+          "tau_sum": 10,
+          "count": 2,
+          "average_kernel": 0.00010697699745417892
+        },
+        {
+          "weight": 0.0010516595661350927,
+          "offset": 112,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00017527659435584878
+        },
+        {
+          "weight": 0.0010077621527651711,
+          "offset": 155,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00016796035879419519
+        },
+        {
+          "weight": 0.0009762676110262663,
+          "offset": 60,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00016271126850437773
+        },
+        {
+          "weight": 0.0009746294123251596,
+          "offset": 57,
+          "tau_sum": 4,
+          "count": 2,
+          "average_kernel": 0.0002436573530812899
+        },
+        {
+          "weight": 0.0009447144590078746,
+          "offset": 20,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.00023617861475196865
+        },
+        {
+          "weight": 0.0009426588637565296,
+          "offset": 18,
+          "tau_sum": 3,
+          "count": 1,
+          "average_kernel": 0.0003142196212521765
+        }
+      ]
+    },
+    "tau_5_8": {
+      "x": 1001500,
+      "head_sum": 0.14135758961405032,
+      "w20": 0.004280846802176284,
+      "far_count": 71,
+      "far_sum": 0.05156699851128171,
+      "far_over_head": 0.364798230162777,
+      "bucket_values": {
+        "tau_le_4": {
+          "count": 43,
+          "sum": 0.023232107163238647,
+          "over_head": 0.16434991022887022
+        },
+        "tau_5_8": {
+          "count": 24,
+          "sum": 0.02339284610307652,
+          "over_head": 0.16548701889262674
+        },
+        "tau_9_16": {
+          "count": 3,
+          "sum": 0.0034996866732822604,
+          "over_head": 0.024757684980604728
+        },
+        "tau_17_32": {
+          "count": 1,
+          "sum": 0.0014423585716842801,
+          "over_head": 0.01020361606067536
+        },
+        "tau_33_59": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "heavy_short": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        }
+      },
+      "far_top10": [
+        {
+          "weight": 0.0021093951951843505,
+          "offset": 170,
+          "tau_sum": 10,
+          "count": 3,
+          "average_kernel": 0.00021093951951843505
+        },
+        {
+          "weight": 0.0019334979890145159,
+          "offset": 242,
+          "tau_sum": 8,
+          "count": 1,
+          "average_kernel": 0.00024168724862681448
+        },
+        {
+          "weight": 0.0017667296353402545,
+          "offset": 26,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.0004416824088350636
+        },
+        {
+          "weight": 0.0017573120011973463,
+          "offset": 8,
+          "tau_sum": 6,
+          "count": 1,
+          "average_kernel": 0.00029288533353289103
+        },
+        {
+          "weight": 0.0016614221268656613,
+          "offset": 166,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00027690368781094356
+        },
+        {
+          "weight": 0.001645974566564453,
+          "offset": 23,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00027432909442740884
+        },
+        {
+          "weight": 0.001609530356820176,
+          "offset": 256,
+          "tau_sum": 8,
+          "count": 1,
+          "average_kernel": 0.000201191294602522
+        },
+        {
+          "weight": 0.0015534664508844499,
+          "offset": 332,
+          "tau_sum": 6,
+          "count": 1,
+          "average_kernel": 0.00025891107514740833
+        },
+        {
+          "weight": 0.0014748695899345593,
+          "offset": 212,
+          "tau_sum": 8,
+          "count": 1,
+          "average_kernel": 0.0001843586987418199
+        },
+        {
+          "weight": 0.0014682879678156544,
+          "offset": 10,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.0003670719919539136
+        }
+      ]
+    },
+    "tau_9_16": {
+      "x": 1012300,
+      "head_sum": 0.15602538670899657,
+      "w20": 0.0043890769199285955,
+      "far_count": 62,
+      "far_sum": 0.046457582608437326,
+      "far_over_head": 0.2977565612132435,
+      "bucket_values": {
+        "tau_le_4": {
+          "count": 36,
+          "sum": 0.016763038287317778,
+          "over_head": 0.10743788969792828
+        },
+        "tau_5_8": {
+          "count": 14,
+          "sum": 0.011325092530813508,
+          "over_head": 0.07258493486022229
+        },
+        "tau_9_16": {
+          "count": 12,
+          "sum": 0.01836945179030604,
+          "over_head": 0.11773373665509294
+        },
+        "tau_17_32": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "tau_33_59": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "heavy_short": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        }
+      },
+      "far_top10": [
+        {
+          "weight": 0.0021103138897840467,
+          "offset": 64,
+          "tau_sum": 10,
+          "count": 2,
+          "average_kernel": 0.00021103138897840467
+        },
+        {
+          "weight": 0.0020540681931530587,
+          "offset": 124,
+          "tau_sum": 10,
+          "count": 3,
+          "average_kernel": 0.00020540681931530586
+        },
+        {
+          "weight": 0.0020018659315957036,
+          "offset": 36,
+          "tau_sum": 12,
+          "count": 2,
+          "average_kernel": 0.00016682216096630862
+        },
+        {
+          "weight": 0.0019381700779342464,
+          "offset": 119,
+          "tau_sum": 6,
+          "count": 1,
+          "average_kernel": 0.0003230283463223744
+        },
+        {
+          "weight": 0.0018365177899429608,
+          "offset": 1,
+          "tau_sum": 3,
+          "count": 2,
+          "average_kernel": 0.0006121725966476536
+        },
+        {
+          "weight": 0.0017726243045917188,
+          "offset": 23,
+          "tau_sum": 8,
+          "count": 3,
+          "average_kernel": 0.00022157803807396485
+        },
+        {
+          "weight": 0.0016927344394246,
+          "offset": 107,
+          "tau_sum": 9,
+          "count": 2,
+          "average_kernel": 0.00018808160438051112
+        },
+        {
+          "weight": 0.0016818747919644364,
+          "offset": 254,
+          "tau_sum": 12,
+          "count": 1,
+          "average_kernel": 0.00014015623266370303
+        },
+        {
+          "weight": 0.0015979023582064792,
+          "offset": 56,
+          "tau_sum": 10,
+          "count": 3,
+          "average_kernel": 0.00015979023582064793
+        },
+        {
+          "weight": 0.0015840884582883847,
+          "offset": 134,
+          "tau_sum": 16,
+          "count": 4,
+          "average_kernel": 9.900552864302404e-05
+        }
+      ]
+    },
+    "tau_17_32": {
+      "x": 1064700,
+      "head_sum": 0.19278160120358415,
+      "w20": 0.0040098973782063925,
+      "far_count": 63,
+      "far_sum": 0.053090337731389214,
+      "far_over_head": 0.2753911026775006,
+      "bucket_values": {
+        "tau_le_4": {
+          "count": 34,
+          "sum": 0.016548616592421007,
+          "over_head": 0.08584126539619871
+        },
+        "tau_5_8": {
+          "count": 14,
+          "sum": 0.013658681898207703,
+          "over_head": 0.07085054700725125
+        },
+        "tau_9_16": {
+          "count": 9,
+          "sum": 0.013187243382536788,
+          "over_head": 0.06840509312198624
+        },
+        "tau_17_32": {
+          "count": 6,
+          "sum": 0.009695795858223711,
+          "over_head": 0.05029419715206437
+        },
+        "tau_33_59": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "heavy_short": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        }
+      },
+      "far_top10": [
+        {
+          "weight": 0.001988900860852152,
+          "offset": 288,
+          "tau_sum": 31,
+          "count": 3,
+          "average_kernel": 6.41580922855533e-05
+        },
+        {
+          "weight": 0.0019175947380997713,
+          "offset": 6,
+          "tau_sum": 18,
+          "count": 4,
+          "average_kernel": 0.00010653304100554285
+        },
+        {
+          "weight": 0.0018992130485212142,
+          "offset": 64,
+          "tau_sum": 18,
+          "count": 5,
+          "average_kernel": 0.00010551183602895635
+        },
+        {
+          "weight": 0.0018871647141917506,
+          "offset": 177,
+          "tau_sum": 8,
+          "count": 2,
+          "average_kernel": 0.00023589558927396883
+        },
+        {
+          "weight": 0.0018786587982255248,
+          "offset": 24,
+          "tau_sum": 10,
+          "count": 3,
+          "average_kernel": 0.0001878658798225525
+        },
+        {
+          "weight": 0.0018033201719055252,
+          "offset": 84,
+          "tau_sum": 16,
+          "count": 1,
+          "average_kernel": 0.00011270751074409532
+        },
+        {
+          "weight": 0.0017125214186064633,
+          "offset": 342,
+          "tau_sum": 6,
+          "count": 1,
+          "average_kernel": 0.00028542023643441056
+        },
+        {
+          "weight": 0.001659600818194034,
+          "offset": 69,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00027660013636567234
+        },
+        {
+          "weight": 0.0016504139632917024,
+          "offset": 22,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.0004126034908229256
+        },
+        {
+          "weight": 0.001624129656149239,
+          "offset": 45,
+          "tau_sum": 20,
+          "count": 3,
+          "average_kernel": 8.120648280746196e-05
+        }
+      ]
+    },
+    "tau_33_59": {
+      "x": 1075900,
+      "head_sum": 0.20222247239629582,
+      "w20": 0.006092972821893647,
+      "far_count": 61,
+      "far_sum": 0.061653823359086125,
+      "far_over_head": 0.3048811669074196,
+      "bucket_values": {
+        "tau_le_4": {
+          "count": 31,
+          "sum": 0.013768742776090859,
+          "over_head": 0.06808710531986882
+        },
+        "tau_5_8": {
+          "count": 17,
+          "sum": 0.022135274039361254,
+          "over_head": 0.10946001093282406
+        },
+        "tau_9_16": {
+          "count": 12,
+          "sum": 0.02326107327788329,
+          "over_head": 0.11502714313718068
+        },
+        "tau_17_32": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "tau_33_59": {
+          "count": 1,
+          "sum": 0.002488733265750721,
+          "over_head": 0.012306907517546047
+        },
+        "heavy_short": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        }
+      },
+      "far_top10": [
+        {
+          "weight": 0.002890857288954975,
+          "offset": 42,
+          "tau_sum": 9,
+          "count": 2,
+          "average_kernel": 0.00032120636543944166
+        },
+        {
+          "weight": 0.002748153128088169,
+          "offset": 6,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.0004580255213480282
+        },
+        {
+          "weight": 0.0026753754406616233,
+          "offset": 175,
+          "tau_sum": 14,
+          "count": 2,
+          "average_kernel": 0.00019109824576154453
+        },
+        {
+          "weight": 0.002655464272030273,
+          "offset": 104,
+          "tau_sum": 16,
+          "count": 3,
+          "average_kernel": 0.00016596651700189207
+        },
+        {
+          "weight": 0.002627755943884374,
+          "offset": 126,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00043795932398072904
+        },
+        {
+          "weight": 0.002601633060596971,
+          "offset": 53,
+          "tau_sum": 12,
+          "count": 4,
+          "average_kernel": 0.00021680275504974757
+        },
+        {
+          "weight": 0.002505546648323239,
+          "offset": 84,
+          "tau_sum": 12,
+          "count": 2,
+          "average_kernel": 0.00020879555402693656
+        },
+        {
+          "weight": 0.002488733265750721,
+          "offset": 100,
+          "tau_sum": 33,
+          "count": 4,
+          "average_kernel": 7.541615956820366e-05
+        },
+        {
+          "weight": 0.00247115543564925,
+          "offset": 24,
+          "tau_sum": 16,
+          "count": 4,
+          "average_kernel": 0.0001544472147280781
+        },
+        {
+          "weight": 0.0024012020968866015,
+          "offset": 63,
+          "tau_sum": 8,
+          "count": 2,
+          "average_kernel": 0.0003001502621108252
+        }
+      ]
+    },
+    "heavy_short": {
+      "x": 1000000,
+      "head_sum": 0.11847255150291404,
+      "w20": 0.0028305305714225607,
+      "far_count": 57,
+      "far_sum": 0.031685006865006644,
+      "far_over_head": 0.26744597346016724,
+      "bucket_values": {
+        "tau_le_4": {
+          "count": 41,
+          "sum": 0.02056802615738196,
+          "over_head": 0.17361005478873354
+        },
+        "tau_5_8": {
+          "count": 12,
+          "sum": 0.007869508329351545,
+          "over_head": 0.06642473914439144
+        },
+        "tau_9_16": {
+          "count": 4,
+          "sum": 0.003247472378273136,
+          "over_head": 0.02741117952704225
+        },
+        "tau_17_32": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "tau_33_59": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        },
+        "heavy_short": {
+          "count": 0,
+          "sum": 0,
+          "over_head": 0.0
+        }
+      },
+      "far_top10": [
+        {
+          "weight": 0.001367786501038063,
+          "offset": 22,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.00034194662525951575
+        },
+        {
+          "weight": 0.0013390496800774227,
+          "offset": 153,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.00033476242001935567
+        },
+        {
+          "weight": 0.0011920121940043374,
+          "offset": 366,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.00029800304850108436
+        },
+        {
+          "weight": 0.001114947378544035,
+          "offset": 88,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.0001858245630906725
+        },
+        {
+          "weight": 0.0010905846248958372,
+          "offset": 244,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.0002726461562239593
+        },
+        {
+          "weight": 0.001074256381741838,
+          "offset": 17,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.0002685640954354595
+        },
+        {
+          "weight": 0.0010594161042186082,
+          "offset": 126,
+          "tau_sum": 6,
+          "count": 2,
+          "average_kernel": 0.00017656935070310136
+        },
+        {
+          "weight": 0.0010507518734520697,
+          "offset": 38,
+          "tau_sum": 8,
+          "count": 1,
+          "average_kernel": 0.00013134398418150872
+        },
+        {
+          "weight": 0.001037474234152682,
+          "offset": 10,
+          "tau_sum": 4,
+          "count": 1,
+          "average_kernel": 0.0002593685585381705
+        },
+        {
+          "weight": 0.0010043213010800915,
+          "offset": 19,
+          "tau_sum": 2,
+          "count": 1,
+          "average_kernel": 0.0005021606505400457
+        }
+      ]
+    }
+  },
+  "structural_conclusion": "far 最坏仍在 x=1023400，far/head≈0.4331，略高于目标 0.43，说明当前 0.43 常数过紧；若放宽到 0.435，则扫描通过。far 质量几乎完全来自 tau_sum<=8 且 count<=2 的低容量团：tau<=4 贡献约 0.225H，5<=tau<=8 贡献约 0.145H。tau>=9 的总贡献很小。",
+  "recommended_adjustment": {
+    "near_bound": 0.35,
+    "far_bound": 0.435,
+    "combined": 0.785,
+    "target_11_over_14": 0.7857142857142857,
+    "passes_tail44": true
+  },
+  "proof_obligations": [
+    "F1: tau_sum<=4 far bucket <=0.23 head20",
+    "F2: 5<=tau_sum<=8 far bucket <=0.17 head20",
+    "F3: tau_sum>=9 far bucket <=0.035 head20",
+    "Then far/head <=0.435 and near/head<=0.35 imply tail/head<=0.785<11/14"
+  ]
+}

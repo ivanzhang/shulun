@@ -1,0 +1,175 @@
+{
+  "certificate_type": "D4-R5-highmass-layer-template-proof",
+  "statement": "If L>=0.35 then E2/L2>1/20 in the full dangerous window.",
+  "proof_steps": [
+    {
+      "step": "mass_threshold",
+      "claim": "Restrict to rows with L>=0.35.",
+      "data": {
+        "count": 117
+      }
+    },
+    {
+      "step": "tail_present",
+      "claim": "If high-tail transition is present, a transition atom gives large square energy.",
+      "data": {
+        "name": "tail_present",
+        "count": 45,
+        "min_E2_over_L2": 0.08667084816908474,
+        "max_R": 11.537904856418578,
+        "witness_x": 1088483,
+        "witness_layers": {
+          "transition_high_tail": {
+            "L": 0.0934402042786388,
+            "E2": 0.00873107177563375,
+            "E": 0.0934402042786388,
+            "M": 1,
+            "W": 317,
+            "N": 21,
+            "maxB": 0.0934402042786388
+          },
+          "transition_low_start": {
+            "L": 0,
+            "E2": 0,
+            "E": 0.0,
+            "M": 0,
+            "W": 0,
+            "N": 0,
+            "maxB": 0
+          },
+          "short": {
+            "L": 0.09361598863023798,
+            "E2": 0.0031757085874625827,
+            "E": 0.05635342569411892,
+            "M": 3,
+            "W": 271,
+            "N": 33,
+            "maxB": 0.042249859138984644
+          },
+          "light": {
+            "L": 0.20284817643329806,
+            "E2": 0.0012693914916704174,
+            "E": 0.03562852076174953,
+            "M": 98,
+            "W": 969,
+            "N": 177,
+            "maxB": 0.014168311802997895
+          }
+        },
+        "witness_total": {
+          "L": 0.3899043693421748,
+          "E2": 0.01317617185476675,
+          "E": 0.11478750739852639,
+          "R": 11.537904856418578,
+          "ratio_E2_over_L2": 0.08667084816908474
+        }
+      }
+    },
+    {
+      "step": "tail_absent",
+      "claim": "If high-tail is absent, reduce to short/light/low-start layer curves.",
+      "data": {
+        "name": "tail_absent",
+        "count": 72,
+        "min_E2_over_L2": 0.05077216688387414,
+        "max_R": 19.69583063663986,
+        "witness_x": 1088373,
+        "witness_layers": {
+          "transition_high_tail": {
+            "L": 0,
+            "E2": 0,
+            "E": 0.0,
+            "M": 0,
+            "W": 0,
+            "N": 0,
+            "maxB": 0
+          },
+          "transition_low_start": {
+            "L": 0,
+            "E2": 0,
+            "E": 0.0,
+            "M": 0,
+            "W": 0,
+            "N": 0,
+            "maxB": 0
+          },
+          "short": {
+            "L": 0.14101806510315096,
+            "E2": 0.004258620845358317,
+            "E": 0.06525810942218842,
+            "M": 5,
+            "W": 527,
+            "N": 48,
+            "maxB": 0.038977254790182825
+          },
+          "light": {
+            "L": 0.2145783616982764,
+            "E2": 0.002161459682685626,
+            "E": 0.04649150118769694,
+            "M": 82,
+            "W": 947,
+            "N": 170,
+            "maxB": 0.025627274681533765
+          }
+        },
+        "witness_total": {
+          "L": 0.3555964268014274,
+          "E2": 0.006420080528043943,
+          "E": 0.08012540501017104,
+          "R": 19.69583063663986,
+          "ratio_E2_over_L2": 0.05077216688387414
+        }
+      }
+    },
+    {
+      "step": "energy_floor",
+      "claim": "All branches satisfy E2/L2>=1/20.",
+      "data": [
+        {
+          "name": "L>=0.35 energy floor",
+          "ok": true,
+          "observed": 0.05077216688387414,
+          "target": 0.05,
+          "margin": 0.0007721668838741383,
+          "witness_x": 1088373
+        },
+        {
+          "name": "branch tail_present",
+          "ok": true,
+          "observed": 0.08667084816908474,
+          "target": 0.05,
+          "margin": 0.03667084816908474,
+          "witness_x": 1088483
+        },
+        {
+          "name": "branch tail_absent",
+          "ok": true,
+          "observed": 0.05077216688387414,
+          "target": 0.05,
+          "margin": 0.0007721668838741383,
+          "witness_x": 1088373
+        },
+        {
+          "name": "branch short_L_ge_0p10",
+          "ok": true,
+          "observed": 0.05077216688387414,
+          "target": 0.05,
+          "margin": 0.0007721668838741383,
+          "witness_x": 1088373
+        },
+        {
+          "name": "branch short_L_lt_0p10",
+          "ok": true,
+          "observed": 0.08667084816908474,
+          "target": 0.05,
+          "margin": 0.03667084816908474,
+          "witness_x": 1088483
+        }
+      ]
+    }
+  ],
+  "remaining_to_globalize": [
+    "Template inequalities for high-tail atom, short layer energy, light compensation, and low-start atom."
+  ],
+  "status": "template proof skeleton for high-mass interface; finite-window closed with small margin."
+}

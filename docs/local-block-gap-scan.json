@@ -1,0 +1,147 @@
+{
+  "certificate_type": "local_block_gap_scan",
+  "status": "sqrt_blocks_still_have_unpatched_points_in_samples",
+  "results": [
+    {
+      "P": 401,
+      "Y": 20,
+      "block_count": 100,
+      "max_block_patch_ratio": 1.0,
+      "worst_patch_block": {
+        "r": 100,
+        "start": 101,
+        "end": 120,
+        "holes": 3,
+        "patch": 3,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 3
+      },
+      "min_block_unpatched": 0,
+      "min_unpatched_block": {
+        "r": 100,
+        "start": 101,
+        "end": 120,
+        "holes": 3,
+        "patch": 3,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 3
+      }
+    },
+    {
+      "P": 809,
+      "Y": 28,
+      "block_count": 145,
+      "max_block_patch_ratio": 1.0,
+      "worst_patch_block": {
+        "r": 202,
+        "start": 421,
+        "end": 448,
+        "holes": 3,
+        "patch": 3,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 4
+      },
+      "min_block_unpatched": 0,
+      "min_unpatched_block": {
+        "r": 202,
+        "start": 421,
+        "end": 448,
+        "holes": 3,
+        "patch": 3,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 4
+      }
+    },
+    {
+      "P": 1601,
+      "Y": 40,
+      "block_count": 201,
+      "max_block_patch_ratio": 1.0,
+      "worst_patch_block": {
+        "r": 400,
+        "start": 961,
+        "end": 1000,
+        "holes": 5,
+        "patch": 5,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 6
+      },
+      "min_block_unpatched": 0,
+      "min_unpatched_block": {
+        "r": 400,
+        "start": 961,
+        "end": 1000,
+        "holes": 5,
+        "patch": 5,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 6
+      }
+    },
+    {
+      "P": 3203,
+      "Y": 56,
+      "block_count": 289,
+      "max_block_patch_ratio": 1.0,
+      "worst_patch_block": {
+        "r": 1601,
+        "start": 3193,
+        "end": 3203,
+        "holes": 2,
+        "patch": 2,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 2
+      },
+      "min_block_unpatched": 0,
+      "min_unpatched_block": {
+        "r": 1601,
+        "start": 3193,
+        "end": 3203,
+        "holes": 2,
+        "patch": 2,
+        "unpatched": 0,
+        "patch_ratio": 1.0,
+        "distinct_large_factors": 2
+      }
+    },
+    {
+      "P": 6421,
+      "Y": 80,
+      "block_count": 405,
+      "max_block_patch_ratio": 0.9090909090909091,
+      "worst_patch_block": {
+        "r": 3210,
+        "start": 1601,
+        "end": 1680,
+        "holes": 11,
+        "patch": 10,
+        "unpatched": 1,
+        "patch_ratio": 0.9090909090909091,
+        "distinct_large_factors": 12
+      },
+      "min_block_unpatched": 1,
+      "min_unpatched_block": {
+        "r": 1605,
+        "start": 721,
+        "end": 800,
+        "holes": 10,
+        "patch": 9,
+        "unpatched": 1,
+        "patch_ratio": 0.9,
+        "distinct_large_factors": 9
+      }
+    }
+  ],
+  "structural_conclusion": "按 sqrt(P) 分块后，每个被扫描行的短块仍出现未补洞点。这支持把全局缺口降维为局部块引理：在长度约 sqrt(P) 的块中，大因子互斥无法填满小筛洞。",
+  "next_obligations": [
+    "形式化短块内共享大因子的互斥：同一大因子在长度 sqrt(P) 块中至多出现一次。",
+    "估计短块小筛洞数下界。",
+    "估计短块可用不同大因子命中数上界，并证明小于洞数。"
+  ]
+}

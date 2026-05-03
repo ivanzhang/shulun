@@ -1,0 +1,121 @@
+{
+  "certificate_type": "DBA_A2_A5_parameter_ledger",
+  "status": "A2_standard_height_closed_conditionally_on_fixed_degree_atlas; A5_numeric_inequalities_pass",
+  "base_fourier_B": 20,
+  "components": {
+    "C_ht": 120,
+    "C_rk": 80,
+    "C_dy": 120,
+    "C_co": 160,
+    "C_st": 80,
+    "C_LV": 160,
+    "C_AE": 160,
+    "C_L": 80,
+    "C_KS": 80,
+    "C_poly": 0
+  },
+  "C_star": 160,
+  "chosen_parameters": {
+    "B1": 960,
+    "B2": 880,
+    "B4": 820,
+    "B5_min": 103
+  },
+  "A2_height_rules": [
+    {
+      "operation": "addition_multiplication_substitution",
+      "degree_growth": "O_r(1)",
+      "height_growth": "P^{O_r(1)}",
+      "used_by": [
+        "denominator_pole",
+        "four_point_E",
+        "Kloosterman_clear_denominators"
+      ],
+      "status": "standard_closed"
+    },
+    {
+      "operation": "derivative",
+      "degree_growth": "d -> d-1",
+      "height_growth": "H(P') <= d H(P)",
+      "used_by": [
+        "derivative_zero",
+        "coarea_critical_points"
+      ],
+      "status": "standard_closed"
+    },
+    {
+      "operation": "univariate_resultant_discriminant",
+      "degree_growth": "O(d^2)",
+      "height_growth": "H(Res(P,Q)) <= (2d)^{O(d)} H(P)^{O(d)} H(Q)^{O(d)}",
+      "used_by": [
+        "ramification",
+        "branch_merge"
+      ],
+      "status": "standard_closed_for_fixed_d"
+    },
+    {
+      "operation": "multivariate_elimination_resultant",
+      "degree_growth": "D^{O_n(1)} for fixed variable count n",
+      "height_growth": "H <= (C D)^{O_n(D^n)} prod_i H_i^{O_n(D^n)}; fixed D,n gives P^{O_r(1)}",
+      "used_by": [
+        "jacobian_common_branch",
+        "rank_failure_high_dimensional_factor"
+      ],
+      "status": "closed_if_fixed_variable_count_and_degree_are_explicitly_recorded"
+    },
+    {
+      "operation": "integer_factor_resonance",
+      "degree_growth": "linear factors only",
+      "height_growth": "<= P^{O(1)}",
+      "used_by": [
+        "step_frequency_resonance"
+      ],
+      "status": "standard_closed_plus_step_average"
+    }
+  ],
+  "A2_remaining_explicitness": [
+    "在论文正文或附录中记录每个 atlas 项的变量数 n 和次数 D 的固定上界符号 d_i(r)。",
+    "对 multivariate_elimination_resultant 引用标准 Macaulay/resultant 高度界，说明 fixed n,D 下为 P^{O_r(1)}。",
+    "对 rank_failure_high_dimensional_factor 说明若非零多项式低 rank，则进入系数/resultant atlas，而非正常层。"
+  ],
+  "A5_inequalities": [
+    {
+      "name": "thickness_delta",
+      "lhs": 960,
+      "rhs": 190,
+      "margin": 770
+    },
+    {
+      "name": "small_root_density",
+      "lhs": 880,
+      "rhs": 220,
+      "margin": 660
+    },
+    {
+      "name": "step_frequency_T",
+      "lhs": 820,
+      "rhs": 220,
+      "margin": 600
+    },
+    {
+      "name": "KS_margin_B1",
+      "lhs": 960,
+      "rhs": 740,
+      "margin": 220
+    },
+    {
+      "name": "KS_margin_B2",
+      "lhs": 880,
+      "rhs": 740,
+      "margin": 140
+    },
+    {
+      "name": "Stieltjes_B5_min",
+      "lhs": 103,
+      "rhs": 103,
+      "margin": 0
+    }
+  ],
+  "all_A5_margins_positive_except_definition_minimum": true,
+  "interpretation": "With B=20 and C_star=160, B1=960, B2=880, B4=820. The Kloosterman margins are positive; parameter absorption is no longer the main structural blocker once A1/A2 explicitness is accepted."
+}

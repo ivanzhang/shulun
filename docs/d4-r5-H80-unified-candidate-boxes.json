@@ -1,0 +1,1965 @@
+{
+  "certificate_type": "D4-R5-unified-candidate-box-table",
+  "status": "prototype merged table; proves integer H80 checks and records contract-root ledgers, but not yet full layer-functional root closure",
+  "H": 80,
+  "hi": 400,
+  "q": 0.958,
+  "threshold_tau": 60,
+  "U_split": 0.16,
+  "root_blocks": [
+    [
+      1,
+      200
+    ],
+    [
+      201,
+      400
+    ]
+  ],
+  "units": [
+    {
+      "unit_id": 1,
+      "x_range": [
+        1088472,
+        1088477
+      ],
+      "integer_candidate_checks_ok": true,
+      "root_ledger_ok_for_contract_blocks": true,
+      "status": "merged ledger; full closure still requires layer-functional derivatives, not only block contract derivatives",
+      "layer_summary": {
+        "max_U": {
+          "x": 1088475,
+          "L": 0.39356460774320096,
+          "E2": 0.012125011404079207,
+          "ratio": 0.07827986764703891,
+          "potential": 0.004380356380676226,
+          "U": 0.1814580236059204,
+          "V": 0.07395501207621746,
+          "light_L": 0.25541303568213786,
+          "short_L": 0.13815157206106313,
+          "transition_L": 0,
+          "W_pref": 555,
+          "N_pref": 111,
+          "M_pref": 43,
+          "W_tail": 502,
+          "N_tail": 75,
+          "M_tail": 60
+        },
+        "max_V": {
+          "x": 1088475,
+          "L": 0.39356460774320096,
+          "E2": 0.012125011404079207,
+          "ratio": 0.07827986764703891,
+          "potential": 0.004380356380676226,
+          "U": 0.1814580236059204,
+          "V": 0.07395501207621746,
+          "light_L": 0.25541303568213786,
+          "short_L": 0.13815157206106313,
+          "transition_L": 0,
+          "W_pref": 555,
+          "N_pref": 111,
+          "M_pref": 43,
+          "W_tail": 502,
+          "N_tail": 75,
+          "M_tail": 60
+        },
+        "max_light_L": {
+          "x": 1088475,
+          "L": 0.39356460774320096,
+          "E2": 0.012125011404079207,
+          "ratio": 0.07827986764703891,
+          "potential": 0.004380356380676226,
+          "U": 0.1814580236059204,
+          "V": 0.07395501207621746,
+          "light_L": 0.25541303568213786,
+          "short_L": 0.13815157206106313,
+          "transition_L": 0,
+          "W_pref": 555,
+          "N_pref": 111,
+          "M_pref": 43,
+          "W_tail": 502,
+          "N_tail": 75,
+          "M_tail": 60
+        },
+        "min_potential_L_ge_035": {
+          "x": 1088475,
+          "L": 0.39356460774320096,
+          "E2": 0.012125011404079207,
+          "ratio": 0.07827986764703891,
+          "potential": 0.004380356380676226,
+          "U": 0.1814580236059204,
+          "V": 0.07395501207621746,
+          "light_L": 0.25541303568213786,
+          "short_L": 0.13815157206106313,
+          "transition_L": 0,
+          "W_pref": 555,
+          "N_pref": 111,
+          "M_pref": 43,
+          "W_tail": 502,
+          "N_tail": 75,
+          "M_tail": 60
+        },
+        "checks": [
+          {
+            "name": "R5global1-local U<Hsplit implies light_L<=0.245",
+            "predicate": "U < 0.16",
+            "bound": 0.245,
+            "observed": null,
+            "sense": "<=",
+            "ok": true,
+            "witness": null
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies U<=0.182",
+            "predicate": "U >= 0.16",
+            "bound": 0.182,
+            "observed": 0.1814580236059204,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088475,
+              "L": 0.39356460774320096,
+              "E2": 0.012125011404079207,
+              "ratio": 0.07827986764703891,
+              "potential": 0.004380356380676226,
+              "U": 0.1814580236059204,
+              "V": 0.07395501207621746,
+              "light_L": 0.25541303568213786,
+              "short_L": 0.13815157206106313,
+              "transition_L": 0,
+              "W_pref": 555,
+              "N_pref": 111,
+              "M_pref": 43,
+              "W_tail": 502,
+              "N_tail": 75,
+              "M_tail": 60
+            }
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies V<=0.074",
+            "predicate": "U >= 0.16",
+            "bound": 0.074,
+            "observed": 0.07395501207621746,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088475,
+              "L": 0.39356460774320096,
+              "E2": 0.012125011404079207,
+              "ratio": 0.07827986764703891,
+              "potential": 0.004380356380676226,
+              "U": 0.1814580236059204,
+              "V": 0.07395501207621746,
+              "light_L": 0.25541303568213786,
+              "short_L": 0.13815157206106313,
+              "transition_L": 0,
+              "W_pref": 555,
+              "N_pref": 111,
+              "M_pref": 43,
+              "W_tail": 502,
+              "N_tail": 75,
+              "M_tail": 60
+            }
+          },
+          {
+            "name": "R5global-light-local light_L<=0.26",
+            "predicate": "all rows",
+            "bound": 0.26,
+            "observed": 0.25541303568213786,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088475,
+              "L": 0.39356460774320096,
+              "E2": 0.012125011404079207,
+              "ratio": 0.07827986764703891,
+              "potential": 0.004380356380676226,
+              "U": 0.1814580236059204,
+              "V": 0.07395501207621746,
+              "light_L": 0.25541303568213786,
+              "short_L": 0.13815157206106313,
+              "transition_L": 0,
+              "W_pref": 555,
+              "N_pref": 111,
+              "M_pref": 43,
+              "W_tail": 502,
+              "N_tail": 75,
+              "M_tail": 60
+            }
+          },
+          {
+            "name": "R5global3-local L>=0.35 implies E2-L2/20>=0",
+            "predicate": "L >= 0.35",
+            "bound": 0.0,
+            "observed": 0.004380356380676226,
+            "sense": ">=",
+            "ok": true,
+            "witness": {
+              "x": 1088475,
+              "L": 0.39356460774320096,
+              "E2": 0.012125011404079207,
+              "ratio": 0.07827986764703891,
+              "potential": 0.004380356380676226,
+              "U": 0.1814580236059204,
+              "V": 0.07395501207621746,
+              "light_L": 0.25541303568213786,
+              "short_L": 0.13815157206106313,
+              "transition_L": 0,
+              "W_pref": 555,
+              "N_pref": 111,
+              "M_pref": 43,
+              "W_tail": 502,
+              "N_tail": 75,
+              "M_tail": 60
+            }
+          }
+        ]
+      },
+      "root_tables": [
+        {
+          "block": [
+            1,
+            200
+          ],
+          "boundary_count": 11,
+          "no_root_interval_count": 10,
+          "monotone_no_root_count": 10,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088472.0,
+            1088472.5,
+            1088473.0,
+            1088473.5,
+            1088474.0,
+            1088474.5,
+            1088475.0,
+            1088475.5,
+            1088476.0,
+            1088476.5,
+            1088477.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088472.00000005,
+                1088472.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376407735294378,
+                -0.004376404850042856
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230388867.25477096,
+                  230388883.46987653
+                ],
+                "checked_points": [
+                  1088472.00000005,
+                  1088472.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088472.50000005,
+                1088472.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376405433620995,
+                -0.004376402548372448
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230388920.9299039,
+                  230388937.14500988
+                ],
+                "checked_points": [
+                  1088472.50000005,
+                  1088472.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088473.00000005,
+                1088473.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376403013064042,
+                -0.004376400127818562
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230388966.97371188,
+                  230388983.18881828
+                ],
+                "checked_points": [
+                  1088473.00000005,
+                  1088473.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088473.50000005,
+                1088473.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376400614132803,
+                -0.004376397728890381
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230389014.40550837,
+                  230389030.62061518
+                ],
+                "checked_points": [
+                  1088473.50000005,
+                  1088473.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088474.00000005,
+                1088474.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376398053072323,
+                -0.004376395167833086
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230389051.43000397,
+                  230389067.6451112
+                ],
+                "checked_points": [
+                  1088474.00000005,
+                  1088474.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088474.50000005,
+                1088474.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376395216463909,
+                -0.004376392331228066
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230389070.76678315,
+                  230389086.98189077
+                ],
+                "checked_points": [
+                  1088474.50000005,
+                  1088474.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088475.00000005,
+                1088475.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376404715744088,
+                -0.004376401830501728
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230389881.94946122,
+                  230389898.16456926
+                ],
+                "checked_points": [
+                  1088475.00000005,
+                  1088475.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088475.50000005,
+                1088475.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376402219551753,
+                -0.004376399334312522
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230389923.13792196,
+                  230389939.3530304
+                ],
+                "checked_points": [
+                  1088475.50000005,
+                  1088475.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088476.00000005,
+                1088476.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376400090708324,
+                -0.0043763972054719335
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230389987.90652788,
+                  230390004.12163675
+                ],
+                "checked_points": [
+                  1088476.00000005,
+                  1088476.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088476.50000005,
+                1088476.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376397594521327,
+                -0.004376394709288061
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230390029.09498933,
+                  230390045.3100986
+                ],
+                "checked_points": [
+                  1088476.50000005,
+                  1088476.99999995
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        },
+        {
+          "block": [
+            201,
+            400
+          ],
+          "boundary_count": 8,
+          "no_root_interval_count": 7,
+          "monotone_no_root_count": 7,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088472.0,
+            1088473.0,
+            1088474.0,
+            1088475.0,
+            1088475.5,
+            1088476.0,
+            1088476.5,
+            1088477.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088472.0000001,
+                1088472.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362660702923579,
+                -0.0008362649770988335
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646067.904073216,
+                  43646074.27447937
+                ],
+                "checked_points": [
+                  1088472.0000001,
+                  1088472.9999999
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088473.0000001,
+                1088473.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362649770986144,
+                -0.0008362638839076921
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646074.27448064,
+                  43646080.64488717
+                ],
+                "checked_points": [
+                  1088473.0000001,
+                  1088473.9999999
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088474.0000001,
+                1088474.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362639595473546,
+                -0.0008362628663589116
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646085.50023787,
+                  43646091.87064477
+                ],
+                "checked_points": [
+                  1088474.0000001,
+                  1088474.9999999
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088475.00000005,
+                1088475.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362647251214496,
+                -0.000836264178526711
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646211.18544104,
+                  43646214.37064463
+                ],
+                "checked_points": [
+                  1088475.00000005,
+                  1088475.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088475.50000005,
+                1088475.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362643730519029,
+                -0.0008362638264576587
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646226.857319966,
+                  43646230.042523645
+                ],
+                "checked_points": [
+                  1088475.50000005,
+                  1088475.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088476.00000005,
+                1088476.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362638264575485,
+                -0.0008362632798639539
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646230.042524286,
+                  43646233.22772806
+                ],
+                "checked_points": [
+                  1088476.00000005,
+                  1088476.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088476.50000005,
+                1088476.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362634743888341,
+                -0.0008362629277957343
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646245.71440343,
+                  43646248.8996073
+                ],
+                "checked_points": [
+                  1088476.50000005,
+                  1088476.99999995
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        }
+      ],
+      "candidate_box_count": 19,
+      "open_interval_no_root_count": 17,
+      "open_interval_root_box_count": 0,
+      "unresolved_open_interval_count": 0
+    },
+    {
+      "unit_id": 2,
+      "x_range": [
+        1088496,
+        1088499
+      ],
+      "integer_candidate_checks_ok": true,
+      "root_ledger_ok_for_contract_blocks": true,
+      "status": "merged ledger; full closure still requires layer-functional derivatives, not only block contract derivatives",
+      "layer_summary": {
+        "max_U": {
+          "x": 1088496,
+          "L": 0.37704641123720434,
+          "E2": 0.013805443984724974,
+          "ratio": 0.09710928470732663,
+          "potential": 0.006697244173382223,
+          "U": 0.15204527459697162,
+          "V": 0.056730030660872795,
+          "light_L": 0.2087753052578444,
+          "short_L": 0.07054084585946055,
+          "transition_L": 0.09773026011989938,
+          "W_pref": 515,
+          "N_pref": 102,
+          "M_pref": 38,
+          "W_tail": 446,
+          "N_tail": 71,
+          "M_tail": 56
+        },
+        "max_V": {
+          "x": 1088497,
+          "L": 0.375369753437602,
+          "E2": 0.013728473542986317,
+          "ratio": 0.09743246741285548,
+          "potential": 0.006683350953196012,
+          "U": 0.15023969646565224,
+          "V": 0.056997304680915156,
+          "light_L": 0.2072370011465674,
+          "short_L": 0.07064460685439451,
+          "transition_L": 0.09748814543664008,
+          "W_pref": 517,
+          "N_pref": 103,
+          "M_pref": 38,
+          "W_tail": 430,
+          "N_tail": 70,
+          "M_tail": 55
+        },
+        "max_light_L": {
+          "x": 1088496,
+          "L": 0.37704641123720434,
+          "E2": 0.013805443984724974,
+          "ratio": 0.09710928470732663,
+          "potential": 0.006697244173382223,
+          "U": 0.15204527459697162,
+          "V": 0.056730030660872795,
+          "light_L": 0.2087753052578444,
+          "short_L": 0.07054084585946055,
+          "transition_L": 0.09773026011989938,
+          "W_pref": 515,
+          "N_pref": 102,
+          "M_pref": 38,
+          "W_tail": 446,
+          "N_tail": 71,
+          "M_tail": 56
+        },
+        "min_potential_L_ge_035": {
+          "x": 1088497,
+          "L": 0.375369753437602,
+          "E2": 0.013728473542986317,
+          "ratio": 0.09743246741285548,
+          "potential": 0.006683350953196012,
+          "U": 0.15023969646565224,
+          "V": 0.056997304680915156,
+          "light_L": 0.2072370011465674,
+          "short_L": 0.07064460685439451,
+          "transition_L": 0.09748814543664008,
+          "W_pref": 517,
+          "N_pref": 103,
+          "M_pref": 38,
+          "W_tail": 430,
+          "N_tail": 70,
+          "M_tail": 55
+        },
+        "checks": [
+          {
+            "name": "R5global1-local U<Hsplit implies light_L<=0.245",
+            "predicate": "U < 0.16",
+            "bound": 0.245,
+            "observed": 0.2087753052578444,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088496,
+              "L": 0.37704641123720434,
+              "E2": 0.013805443984724974,
+              "ratio": 0.09710928470732663,
+              "potential": 0.006697244173382223,
+              "U": 0.15204527459697162,
+              "V": 0.056730030660872795,
+              "light_L": 0.2087753052578444,
+              "short_L": 0.07054084585946055,
+              "transition_L": 0.09773026011989938,
+              "W_pref": 515,
+              "N_pref": 102,
+              "M_pref": 38,
+              "W_tail": 446,
+              "N_tail": 71,
+              "M_tail": 56
+            }
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies U<=0.182",
+            "predicate": "U >= 0.16",
+            "bound": 0.182,
+            "observed": null,
+            "sense": "<=",
+            "ok": true,
+            "witness": null
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies V<=0.074",
+            "predicate": "U >= 0.16",
+            "bound": 0.074,
+            "observed": null,
+            "sense": "<=",
+            "ok": true,
+            "witness": null
+          },
+          {
+            "name": "R5global-light-local light_L<=0.26",
+            "predicate": "all rows",
+            "bound": 0.26,
+            "observed": 0.2087753052578444,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088496,
+              "L": 0.37704641123720434,
+              "E2": 0.013805443984724974,
+              "ratio": 0.09710928470732663,
+              "potential": 0.006697244173382223,
+              "U": 0.15204527459697162,
+              "V": 0.056730030660872795,
+              "light_L": 0.2087753052578444,
+              "short_L": 0.07054084585946055,
+              "transition_L": 0.09773026011989938,
+              "W_pref": 515,
+              "N_pref": 102,
+              "M_pref": 38,
+              "W_tail": 446,
+              "N_tail": 71,
+              "M_tail": 56
+            }
+          },
+          {
+            "name": "R5global3-local L>=0.35 implies E2-L2/20>=0",
+            "predicate": "L >= 0.35",
+            "bound": 0.0,
+            "observed": 0.006683350953196012,
+            "sense": ">=",
+            "ok": true,
+            "witness": {
+              "x": 1088497,
+              "L": 0.375369753437602,
+              "E2": 0.013728473542986317,
+              "ratio": 0.09743246741285548,
+              "potential": 0.006683350953196012,
+              "U": 0.15023969646565224,
+              "V": 0.056997304680915156,
+              "light_L": 0.2072370011465674,
+              "short_L": 0.07064460685439451,
+              "transition_L": 0.09748814543664008,
+              "W_pref": 517,
+              "N_pref": 103,
+              "M_pref": 38,
+              "W_tail": 430,
+              "N_tail": 70,
+              "M_tail": 55
+            }
+          }
+        ]
+      },
+      "root_tables": [
+        {
+          "block": [
+            1,
+            200
+          ],
+          "boundary_count": 7,
+          "no_root_interval_count": 6,
+          "monotone_no_root_count": 6,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088496.0,
+            1088496.5,
+            1088497.0,
+            1088497.5,
+            1088498.0,
+            1088498.5,
+            1088499.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088496.00000005,
+                1088496.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0043763342749633515,
+                -0.004376331389824758
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230393819.89008757,
+                  230393836.1052129
+                ],
+                "checked_points": [
+                  1088496.00000005,
+                  1088496.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088496.50000005,
+                1088496.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.00437633333501152,
+                -0.004376330449874802
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230393960.97196317,
+                  230393977.1870889
+                ],
+                "checked_points": [
+                  1088496.50000005,
+                  1088496.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088497.00000005,
+                1088497.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376330682211341,
+                -0.004376327797077877
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230393992.1014416,
+                  230394008.31656775
+                ],
+                "checked_points": [
+                  1088497.00000005,
+                  1088497.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088497.50000005,
+                1088497.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376328575150985,
+                -0.004376325690020338
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230394058.26326978,
+                  230394074.47839633
+                ],
+                "checked_points": [
+                  1088497.50000005,
+                  1088497.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088498.00000005,
+                1088498.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376326381604142,
+                -0.004376323496476375
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230394118.8731467,
+                  230394135.0882737
+                ],
+                "checked_points": [
+                  1088498.00000005,
+                  1088498.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088498.50000005,
+                1088498.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376323545105323,
+                -0.004376320659980962
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230394138.20994565,
+                  230394154.42507303
+                ],
+                "checked_points": [
+                  1088498.50000005,
+                  1088498.99999995
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        },
+        {
+          "block": [
+            201,
+            400
+          ],
+          "boundary_count": 5,
+          "no_root_interval_count": 4,
+          "monotone_no_root_count": 4,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088496.0,
+            1088496.5,
+            1088497.0,
+            1088498.0,
+            1088499.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088496.00000005,
+                1088496.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362497383434227,
+                -0.0008362491917696009
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646856.5564192,
+                  43646859.741626725
+                ],
+                "checked_points": [
+                  1088496.00000005,
+                  1088496.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088496.50000005,
+                1088496.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362495808069597,
+                -0.0008362490342334761
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646884.71497679,
+                  43646887.9001844
+                ],
+                "checked_points": [
+                  1088496.50000005,
+                  1088496.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088497.0000001,
+                1088497.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362490342333118,
+                -0.000836247941088295
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646887.900185354,
+                  43646894.27060087
+                ],
+                "checked_points": [
+                  1088497.0000001,
+                  1088497.9999999
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088498.0000001,
+                1088498.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362479410880773,
+                -0.0008362468479456622
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43646894.270602144,
+                  43646900.64101803
+                ],
+                "checked_points": [
+                  1088498.0000001,
+                  1088498.9999999
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        }
+      ],
+      "candidate_box_count": 12,
+      "open_interval_no_root_count": 10,
+      "open_interval_root_box_count": 0,
+      "unresolved_open_interval_count": 0
+    },
+    {
+      "unit_id": 3,
+      "x_range": [
+        1088506,
+        1088507
+      ],
+      "integer_candidate_checks_ok": true,
+      "root_ledger_ok_for_contract_blocks": true,
+      "status": "merged ledger; full closure still requires layer-functional derivatives, not only block contract derivatives",
+      "layer_summary": {
+        "max_U": {
+          "x": 1088506,
+          "L": 0.40960908613755176,
+          "E2": 0.016766187674979345,
+          "ratio": 0.09992983253373558,
+          "potential": 0.00837720750265733,
+          "U": 0.16077298025528122,
+          "V": 0.06295986809479215,
+          "light_L": 0.22373284835007337,
+          "short_L": 0.07879198572298503,
+          "transition_L": 0.10708425206449335,
+          "W_pref": 527,
+          "N_pref": 102,
+          "M_pref": 37,
+          "W_tail": 444,
+          "N_tail": 72,
+          "M_tail": 53
+        },
+        "max_V": {
+          "x": 1088506,
+          "L": 0.40960908613755176,
+          "E2": 0.016766187674979345,
+          "ratio": 0.09992983253373558,
+          "potential": 0.00837720750265733,
+          "U": 0.16077298025528122,
+          "V": 0.06295986809479215,
+          "light_L": 0.22373284835007337,
+          "short_L": 0.07879198572298503,
+          "transition_L": 0.10708425206449335,
+          "W_pref": 527,
+          "N_pref": 102,
+          "M_pref": 37,
+          "W_tail": 444,
+          "N_tail": 72,
+          "M_tail": 53
+        },
+        "max_light_L": {
+          "x": 1088506,
+          "L": 0.40960908613755176,
+          "E2": 0.016766187674979345,
+          "ratio": 0.09992983253373558,
+          "potential": 0.00837720750265733,
+          "U": 0.16077298025528122,
+          "V": 0.06295986809479215,
+          "light_L": 0.22373284835007337,
+          "short_L": 0.07879198572298503,
+          "transition_L": 0.10708425206449335,
+          "W_pref": 527,
+          "N_pref": 102,
+          "M_pref": 37,
+          "W_tail": 444,
+          "N_tail": 72,
+          "M_tail": 53
+        },
+        "min_potential_L_ge_035": {
+          "x": 1088507,
+          "L": 0.4068104876414918,
+          "E2": 0.016630368809294076,
+          "ratio": 0.10048878597424984,
+          "potential": 0.008355630166538657,
+          "U": 0.1596562104964484,
+          "V": 0.06214845082785404,
+          "light_L": 0.22180466132430243,
+          "short_L": 0.07819093343733044,
+          "transition_L": 0.10681489287985894,
+          "W_pref": 529,
+          "N_pref": 103,
+          "M_pref": 37,
+          "W_tail": 434,
+          "N_tail": 70,
+          "M_tail": 51
+        },
+        "checks": [
+          {
+            "name": "R5global1-local U<Hsplit implies light_L<=0.245",
+            "predicate": "U < 0.16",
+            "bound": 0.245,
+            "observed": 0.22180466132430243,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088507,
+              "L": 0.4068104876414918,
+              "E2": 0.016630368809294076,
+              "ratio": 0.10048878597424984,
+              "potential": 0.008355630166538657,
+              "U": 0.1596562104964484,
+              "V": 0.06214845082785404,
+              "light_L": 0.22180466132430243,
+              "short_L": 0.07819093343733044,
+              "transition_L": 0.10681489287985894,
+              "W_pref": 529,
+              "N_pref": 103,
+              "M_pref": 37,
+              "W_tail": 434,
+              "N_tail": 70,
+              "M_tail": 51
+            }
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies U<=0.182",
+            "predicate": "U >= 0.16",
+            "bound": 0.182,
+            "observed": 0.16077298025528122,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088506,
+              "L": 0.40960908613755176,
+              "E2": 0.016766187674979345,
+              "ratio": 0.09992983253373558,
+              "potential": 0.00837720750265733,
+              "U": 0.16077298025528122,
+              "V": 0.06295986809479215,
+              "light_L": 0.22373284835007337,
+              "short_L": 0.07879198572298503,
+              "transition_L": 0.10708425206449335,
+              "W_pref": 527,
+              "N_pref": 102,
+              "M_pref": 37,
+              "W_tail": 444,
+              "N_tail": 72,
+              "M_tail": 53
+            }
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies V<=0.074",
+            "predicate": "U >= 0.16",
+            "bound": 0.074,
+            "observed": 0.06295986809479215,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088506,
+              "L": 0.40960908613755176,
+              "E2": 0.016766187674979345,
+              "ratio": 0.09992983253373558,
+              "potential": 0.00837720750265733,
+              "U": 0.16077298025528122,
+              "V": 0.06295986809479215,
+              "light_L": 0.22373284835007337,
+              "short_L": 0.07879198572298503,
+              "transition_L": 0.10708425206449335,
+              "W_pref": 527,
+              "N_pref": 102,
+              "M_pref": 37,
+              "W_tail": 444,
+              "N_tail": 72,
+              "M_tail": 53
+            }
+          },
+          {
+            "name": "R5global-light-local light_L<=0.26",
+            "predicate": "all rows",
+            "bound": 0.26,
+            "observed": 0.22373284835007337,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088506,
+              "L": 0.40960908613755176,
+              "E2": 0.016766187674979345,
+              "ratio": 0.09992983253373558,
+              "potential": 0.00837720750265733,
+              "U": 0.16077298025528122,
+              "V": 0.06295986809479215,
+              "light_L": 0.22373284835007337,
+              "short_L": 0.07879198572298503,
+              "transition_L": 0.10708425206449335,
+              "W_pref": 527,
+              "N_pref": 102,
+              "M_pref": 37,
+              "W_tail": 444,
+              "N_tail": 72,
+              "M_tail": 53
+            }
+          },
+          {
+            "name": "R5global3-local L>=0.35 implies E2-L2/20>=0",
+            "predicate": "L >= 0.35",
+            "bound": 0.0,
+            "observed": 0.008355630166538657,
+            "sense": ">=",
+            "ok": true,
+            "witness": {
+              "x": 1088507,
+              "L": 0.4068104876414918,
+              "E2": 0.016630368809294076,
+              "ratio": 0.10048878597424984,
+              "potential": 0.008355630166538657,
+              "U": 0.1596562104964484,
+              "V": 0.06214845082785404,
+              "light_L": 0.22180466132430243,
+              "short_L": 0.07819093343733044,
+              "transition_L": 0.10681489287985894,
+              "W_pref": 529,
+              "N_pref": 103,
+              "M_pref": 37,
+              "W_tail": 434,
+              "N_tail": 70,
+              "M_tail": 51
+            }
+          }
+        ]
+      },
+      "root_tables": [
+        {
+          "block": [
+            1,
+            200
+          ],
+          "boundary_count": 3,
+          "no_root_interval_count": 2,
+          "monotone_no_root_count": 2,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088506.0,
+            1088506.5,
+            1088507.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088506.00000005,
+                1088506.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0043763306026560495,
+                -0.004376327717542851
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230397612.56365293,
+                  230397628.77878648
+                ],
+                "checked_points": [
+                  1088506.00000005,
+                  1088506.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088506.50000005,
+                1088506.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376327912057878,
+                -0.0043763250269479685
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230397641.2654644,
+                  230397657.48059836
+                ],
+                "checked_points": [
+                  1088506.50000005,
+                  1088506.99999995
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        },
+        {
+          "block": [
+            201,
+            400
+          ],
+          "boundary_count": 2,
+          "no_root_interval_count": 1,
+          "monotone_no_root_count": 1,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088506.0,
+            1088507.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088506.0000001,
+                1088506.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362463927780498,
+                -0.000836245299644882
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43647407.22004714,
+                  43647413.59046602
+                ],
+                "checked_points": [
+                  1088506.0000001,
+                  1088506.9999999
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        }
+      ],
+      "candidate_box_count": 5,
+      "open_interval_no_root_count": 3,
+      "open_interval_root_box_count": 0,
+      "unresolved_open_interval_count": 0
+    },
+    {
+      "unit_id": 4,
+      "x_range": [
+        1088551,
+        1088555
+      ],
+      "integer_candidate_checks_ok": true,
+      "root_ledger_ok_for_contract_blocks": true,
+      "status": "merged ledger; full closure still requires layer-functional derivatives, not only block contract derivatives",
+      "layer_summary": {
+        "max_U": {
+          "x": 1088551,
+          "L": 0.26160405907126344,
+          "E2": 0.0032350873241624597,
+          "ratio": 0.047271246182491,
+          "potential": -0.00018674686196559504,
+          "U": 0.15806171589119164,
+          "V": 0.0725396445564806,
+          "light_L": 0.23060136044767224,
+          "short_L": 0.031002698623591216,
+          "transition_L": 0,
+          "W_pref": 510,
+          "N_pref": 92,
+          "M_pref": 39,
+          "W_tail": 521,
+          "N_tail": 89,
+          "M_tail": 61
+        },
+        "max_V": {
+          "x": 1088551,
+          "L": 0.26160405907126344,
+          "E2": 0.0032350873241624597,
+          "ratio": 0.047271246182491,
+          "potential": -0.00018674686196559504,
+          "U": 0.15806171589119164,
+          "V": 0.0725396445564806,
+          "light_L": 0.23060136044767224,
+          "short_L": 0.031002698623591216,
+          "transition_L": 0,
+          "W_pref": 510,
+          "N_pref": 92,
+          "M_pref": 39,
+          "W_tail": 521,
+          "N_tail": 89,
+          "M_tail": 61
+        },
+        "max_light_L": {
+          "x": 1088551,
+          "L": 0.26160405907126344,
+          "E2": 0.0032350873241624597,
+          "ratio": 0.047271246182491,
+          "potential": -0.00018674686196559504,
+          "U": 0.15806171589119164,
+          "V": 0.0725396445564806,
+          "light_L": 0.23060136044767224,
+          "short_L": 0.031002698623591216,
+          "transition_L": 0,
+          "W_pref": 510,
+          "N_pref": 92,
+          "M_pref": 39,
+          "W_tail": 521,
+          "N_tail": 89,
+          "M_tail": 61
+        },
+        "min_potential_L_ge_035": null,
+        "checks": [
+          {
+            "name": "R5global1-local U<Hsplit implies light_L<=0.245",
+            "predicate": "U < 0.16",
+            "bound": 0.245,
+            "observed": 0.23060136044767224,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088551,
+              "L": 0.26160405907126344,
+              "E2": 0.0032350873241624597,
+              "ratio": 0.047271246182491,
+              "potential": -0.00018674686196559504,
+              "U": 0.15806171589119164,
+              "V": 0.0725396445564806,
+              "light_L": 0.23060136044767224,
+              "short_L": 0.031002698623591216,
+              "transition_L": 0,
+              "W_pref": 510,
+              "N_pref": 92,
+              "M_pref": 39,
+              "W_tail": 521,
+              "N_tail": 89,
+              "M_tail": 61
+            }
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies U<=0.182",
+            "predicate": "U >= 0.16",
+            "bound": 0.182,
+            "observed": null,
+            "sense": "<=",
+            "ok": true,
+            "witness": null
+          },
+          {
+            "name": "R5global2-local U>=Hsplit implies V<=0.074",
+            "predicate": "U >= 0.16",
+            "bound": 0.074,
+            "observed": null,
+            "sense": "<=",
+            "ok": true,
+            "witness": null
+          },
+          {
+            "name": "R5global-light-local light_L<=0.26",
+            "predicate": "all rows",
+            "bound": 0.26,
+            "observed": 0.23060136044767224,
+            "sense": "<=",
+            "ok": true,
+            "witness": {
+              "x": 1088551,
+              "L": 0.26160405907126344,
+              "E2": 0.0032350873241624597,
+              "ratio": 0.047271246182491,
+              "potential": -0.00018674686196559504,
+              "U": 0.15806171589119164,
+              "V": 0.0725396445564806,
+              "light_L": 0.23060136044767224,
+              "short_L": 0.031002698623591216,
+              "transition_L": 0,
+              "W_pref": 510,
+              "N_pref": 92,
+              "M_pref": 39,
+              "W_tail": 521,
+              "N_tail": 89,
+              "M_tail": 61
+            }
+          },
+          {
+            "name": "R5global3-local L>=0.35 implies E2-L2/20>=0",
+            "predicate": "L >= 0.35",
+            "bound": 0.0,
+            "observed": null,
+            "sense": ">=",
+            "ok": true,
+            "witness": null
+          }
+        ]
+      },
+      "root_tables": [
+        {
+          "block": [
+            1,
+            200
+          ],
+          "boundary_count": 9,
+          "no_root_interval_count": 8,
+          "monotone_no_root_count": 8,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088551.0,
+            1088551.5,
+            1088552.0,
+            1088552.5,
+            1088553.0,
+            1088553.5,
+            1088554.0,
+            1088554.5,
+            1088555.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088551.00000005,
+                1088551.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376203975587379,
+                -0.004376201090676957
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230407611.5440578,
+                  230407627.75922838
+                ],
+                "checked_points": [
+                  1088551.00000005,
+                  1088551.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088551.50000005,
+                1088551.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376201479679454,
+                -0.004376198594772158
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230407652.73258108,
+                  230407668.9477521
+                ],
+                "checked_points": [
+                  1088551.50000005,
+                  1088551.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088552.00000005,
+                1088552.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376198729796844,
+                -0.004376195844892881
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230407677.61615896,
+                  230407693.8313304
+                ],
+                "checked_points": [
+                  1088552.00000005,
+                  1088552.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088552.50000005,
+                1088552.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376198567909419,
+                -0.004376195683006711
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230407868.64477956,
+                  230407884.85995138
+                ],
+                "checked_points": [
+                  1088552.50000005,
+                  1088552.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088553.00000005,
+                1088553.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376196147638539,
+                -0.004376193262738904
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230407914.6886535,
+                  230407930.90382576
+                ],
+                "checked_points": [
+                  1088553.00000005,
+                  1088553.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088553.50000005,
+                1088553.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376193359988775,
+                -0.004376190475092504
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230407937.1471664,
+                  230407953.36233905
+                ],
+                "checked_points": [
+                  1088553.50000005,
+                  1088553.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088554.00000005,
+                1088554.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.00437619064797245,
+                -0.004376187763079482
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230407964.461029,
+                  230407980.67620206
+                ],
+                "checked_points": [
+                  1088554.00000005,
+                  1088554.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088554.50000005,
+                1088554.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.004376189708084868,
+                -0.004376186823193776
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  230408105.54295245,
+                  230408121.75812593
+                ],
+                "checked_points": [
+                  1088554.50000005,
+                  1088554.99999995
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        },
+        {
+          "block": [
+            201,
+            400
+          ],
+          "boundary_count": 6,
+          "no_root_interval_count": 5,
+          "monotone_no_root_count": 5,
+          "unresolved_no_root_count": 0,
+          "root_box_count": 0,
+          "boundaries": [
+            1088551.0,
+            1088551.5,
+            1088552.0,
+            1088553.0,
+            1088554.0,
+            1088555.0
+          ],
+          "no_root_subintervals": [
+            {
+              "interval": [
+                1088551.00000005,
+                1088551.49999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362229214404744,
+                -0.0008362223749114376
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43649344.88227626,
+                  43649348.06749408
+                ],
+                "checked_points": [
+                  1088551.00000005,
+                  1088551.49999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088551.50000005,
+                1088551.99999995
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362225694128638,
+                -0.0008362220228843205
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43649360.55416942,
+                  43649363.739387326
+                ],
+                "checked_points": [
+                  1088551.50000005,
+                  1088551.99999995
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088552.0000001,
+                1088552.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362220228841561,
+                -0.0008362209298290219
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43649363.73938828,
+                  43649370.10982439
+                ],
+                "checked_points": [
+                  1088552.0000001,
+                  1088552.9999999
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088553.0000001,
+                1088553.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362209298288037,
+                -0.0008362198367762707
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43649370.109825656,
+                  43649376.48026214
+                ],
+                "checked_points": [
+                  1088553.0000001,
+                  1088553.9999999
+                ],
+                "monotone": "increasing"
+              }
+            },
+            {
+              "interval": [
+                1088554.0000001,
+                1088554.9999999
+              ],
+              "method": "same-sign endpoints plus monotone F'",
+              "fprime_endpoints": [
+                -0.0008362198367760521,
+                -0.0008362187437261216
+              ],
+              "monotone_certificate": {
+                "method": "analytic F'' core sign",
+                "fdouble_core_range": [
+                  43649376.48026341,
+                  43649382.85070027
+                ],
+                "checked_points": [
+                  1088554.0000001,
+                  1088554.9999999
+                ],
+                "monotone": "increasing"
+              }
+            }
+          ],
+          "root_boxes": []
+        }
+      ],
+      "candidate_box_count": 15,
+      "open_interval_no_root_count": 13,
+      "open_interval_root_box_count": 0,
+      "unresolved_open_interval_count": 0
+    }
+  ],
+  "integer_candidate_checks_ok": true,
+  "contract_root_ledgers_ok": true,
+  "total_candidate_box_count": 51,
+  "total_open_interval_no_root_count": 43,
+  "total_open_interval_root_box_count": 0,
+  "total_unresolved_open_interval_count": 0,
+  "remaining_hard_point": "replace block-contract root ledgers by derivatives of layer functionals U,V,L,E2,light_L,potential on fixed membership cells"
+}

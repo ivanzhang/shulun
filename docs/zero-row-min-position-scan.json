@@ -1,0 +1,199 @@
+{
+  "certificate_type": "zero_row_min_position_scan",
+  "status": "min_zero_rows_appear_well_beyond_first_P_window_in_scanned_cases",
+  "results": [
+    {
+      "P": 5,
+      "basis_primes": [
+        2,
+        3
+      ],
+      "M": 6,
+      "scanned_rows": 6,
+      "min_zero": null,
+      "min_zero_over_P": null,
+      "min_zero_over_P2": null,
+      "zero_count_seen": 0,
+      "zeros_sample": []
+    },
+    {
+      "P": 7,
+      "basis_primes": [
+        2,
+        3,
+        5
+      ],
+      "M": 30,
+      "scanned_rows": 30,
+      "min_zero": null,
+      "min_zero_over_P": null,
+      "min_zero_over_P2": null,
+      "zero_count_seen": 0,
+      "zeros_sample": []
+    },
+    {
+      "P": 11,
+      "basis_primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "M": 210,
+      "scanned_rows": 210,
+      "min_zero": null,
+      "min_zero_over_P": null,
+      "min_zero_over_P2": null,
+      "zero_count_seen": 0,
+      "zeros_sample": []
+    },
+    {
+      "P": 13,
+      "basis_primes": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "M": 2310,
+      "scanned_rows": 2310,
+      "min_zero": 169,
+      "min_zero_over_P": 13.0,
+      "min_zero_over_P2": 1.0,
+      "zero_count_seen": 4,
+      "zeros_sample": [
+        169,
+        702,
+        1609,
+        2142
+      ]
+    },
+    {
+      "P": 17,
+      "basis_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "M": 30030,
+      "scanned_rows": 30030,
+      "min_zero": 1211,
+      "min_zero_over_P": 71.23529411764706,
+      "min_zero_over_P2": 4.190311418685121,
+      "zero_count_seen": 28,
+      "zeros_sample": [
+        1211,
+        1638,
+        2323,
+        4744,
+        5171,
+        6530,
+        8277,
+        9618,
+        10063,
+        10938,
+        11810,
+        13151,
+        14471,
+        14688,
+        15343,
+        15560,
+        16880,
+        18221,
+        19093,
+        19968
+      ]
+    },
+    {
+      "P": 19,
+      "basis_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "M": 510510,
+      "scanned_rows": 510510,
+      "min_zero": 3659,
+      "min_zero_over_P": 192.57894736842104,
+      "min_zero_over_P2": 10.13573407202216,
+      "zero_count_seen": 496,
+      "zeros_sample": [
+        3659,
+        4101,
+        4731,
+        6705,
+        6820,
+        7671,
+        9004,
+        9981,
+        10275,
+        11429,
+        11898,
+        13142,
+        13728,
+        13922,
+        15441,
+        15468,
+        16595,
+        16889,
+        17028,
+        17132
+      ]
+    },
+    {
+      "P": 23,
+      "basis_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "M": 9699690,
+      "scanned_rows": 1000000,
+      "min_zero": 59,
+      "min_zero_over_P": 2.5652173913043477,
+      "min_zero_over_P2": 0.11153119092627599,
+      "zero_count_seen": 20,
+      "zeros_sample": [
+        59,
+        2612,
+        5539,
+        5840,
+        6569,
+        10747,
+        13709,
+        14759,
+        15084,
+        17686,
+        17792,
+        19049,
+        20239,
+        20480,
+        42269,
+        45302,
+        46682,
+        53282,
+        57869,
+        58459
+      ]
+    }
+  ],
+  "structural_conclusion": "扫描显示完整周期零行若出现，其最小位置远大于 P；P=13 的最小零行为 169=P^2，P=17 在前 1e6 行未见零行。该规律支持将目标转化为 min Z_P>P 的高度排斥命题。",
+  "next_obligations": [
+    "分析 P=13 min_zero=P^2 的构造原因。",
+    "证明 r<=P 时 xP+c<P^2 的高度约束阻止覆盖所有 c。",
+    "寻找 min_zero 的下界，目标仅需 min_zero>P。"
+  ]
+}

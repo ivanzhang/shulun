@@ -1,0 +1,67 @@
+# OSE 局部补核释放扫描
+
+**状态：** `front_patch_representatives_release_new_holes_in_scanned_cases`
+
+当局部补核 CRT 约束仍有前窗口代表时，这些代表在扫描样本中均释放新洞；它们补掉旧短差核，但洞集迁移到其它列，未产生零行。
+
+## 摘要
+- P=23
+  - x=14 K=[9, 15] short=[{'c1': 9, 'c2': 15, 'd': 6}]
+    - medium_or_large: [{'y': 17, 'holes_y': [6, 10, 18], 'born_new': [6, 10, 18], 'remaining_K': [], 'release_count': 3, 'total_holes': 3, 'scheme': {5: 2, 7: 3}, 'mod': 35}, {'y': 6, 'holes_y': [1, 11, 13, 19], 'born_new': [1, 11, 13, 19], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {7: 6, 17: 6}, 'mod': 119}, {'y': 20, 'holes_y': [1, 3, 7, 19], 'born_new': [1, 3, 7, 19], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {7: 6, 5: 0}, 'mod': 35}, {'y': 3, 'holes_y': [2, 4, 10, 14, 20], 'born_new': [2, 4, 10, 14, 20], 'remaining_K': [], 'release_count': 5, 'total_holes': 5, 'scheme': {13: 3, 7: 3}, 'mod': 91}, {'y': 7, 'holes_y': [2, 6, 12, 18, 20], 'born_new': [2, 6, 12, 18, 20], 'remaining_K': [], 'release_count': 5, 'total_holes': 5, 'scheme': {5: 2, 11: 7}, 'mod': 55}]
+    - large_gt_sqrt: [{'y': 17, 'holes_y': [6, 10, 18], 'born_new': [6, 10, 18], 'remaining_K': [], 'release_count': 3, 'total_holes': 3, 'scheme': {5: 2, 7: 3}, 'mod': 35}, {'y': 6, 'holes_y': [1, 11, 13, 19], 'born_new': [1, 11, 13, 19], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {7: 6, 17: 6}, 'mod': 119}, {'y': 20, 'holes_y': [1, 3, 7, 19], 'born_new': [1, 3, 7, 19], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {7: 6, 5: 0}, 'mod': 35}, {'y': 3, 'holes_y': [2, 4, 10, 14, 20], 'born_new': [2, 4, 10, 14, 20], 'remaining_K': [], 'release_count': 5, 'total_holes': 5, 'scheme': {13: 3, 7: 3}, 'mod': 91}, {'y': 7, 'holes_y': [2, 6, 12, 18, 20], 'born_new': [2, 6, 12, 18, 20], 'remaining_K': [], 'release_count': 5, 'total_holes': 5, 'scheme': {5: 2, 11: 7}, 'mod': 55}]
+- P=29
+  - x=11 K=[12, 18, 28] short=[{'c1': 12, 'c2': 18, 'd': 6}]
+    - medium_or_large: [{'y': 7, 'holes_y': [8, 20, 24, 26], 'born_new': [8, 20, 24, 26], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {5: 2, 13: 7, 7: 0}, 'mod': 455}, {'y': 3, 'holes_y': [2, 10, 14, 16, 20, 22, 26], 'born_new': [2, 10, 14, 16, 20, 22, 26], 'remaining_K': [], 'release_count': 7, 'total_holes': 7, 'scheme': {11: 3, 5: 3}, 'mod': 55}]
+    - large_gt_sqrt: [{'y': 21, 'holes_y': [4, 8, 10, 22], 'born_new': [4, 8, 10, 22], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {23: 21, 11: 10, 7: 0}, 'mod': 1771}, {'y': 3, 'holes_y': [2, 10, 14, 16, 20, 22, 26], 'born_new': [2, 10, 14, 16, 20, 22, 26], 'remaining_K': [], 'release_count': 7, 'total_holes': 7, 'scheme': {11: 3, 7: 3, 23: 3}, 'mod': 1771}]
+  - x=18 K=[1, 19, 25] short=[{'c1': 19, 'c2': 25, 'd': 6}]
+    - medium_or_large: [{'y': 24, 'holes_y': [5, 13, 23], 'born_new': [5, 13, 23], 'remaining_K': [], 'release_count': 3, 'total_holes': 3, 'scheme': {17: 7, 5: 4, 7: 3}, 'mod': 595}]
+    - large_gt_sqrt: [{'y': 24, 'holes_y': [5, 13, 23], 'born_new': [5, 13, 23], 'remaining_K': [], 'release_count': 3, 'total_holes': 3, 'scheme': {17: 7, 11: 2, 7: 3}, 'mod': 1309}]
+- P=37
+  - x=36 K=[29, 35] short=[{'c1': 29, 'c2': 35, 'd': 6}]
+    - medium_or_large: [{'y': 21, 'holes_y': [10, 20, 32, 34], 'born_new': [10, 20, 32, 34], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {13: 8, 7: 0}, 'mod': 91}, {'y': 10, 'holes_y': [3, 9, 13, 19, 27, 31], 'born_new': [3, 9, 13, 19, 27, 31], 'remaining_K': [], 'release_count': 6, 'total_holes': 6, 'scheme': {7: 3, 5: 0}, 'mod': 35}, {'y': 16, 'holes_y': [1, 7, 9, 15, 21, 25, 27], 'born_new': [1, 7, 9, 15, 21, 25, 27], 'remaining_K': [], 'release_count': 7, 'total_holes': 7, 'scheme': {23: 16, 11: 5}, 'mod': 253}]
+    - large_gt_sqrt: [{'y': 24, 'holes_y': [19, 23, 31], 'born_new': [19, 23, 31], 'remaining_K': [], 'release_count': 3, 'total_holes': 3, 'scheme': {7: 3, 13: 11}, 'mod': 91}, {'y': 21, 'holes_y': [10, 20, 32, 34], 'born_new': [10, 20, 32, 34], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {13: 8, 7: 0}, 'mod': 91}, {'y': 16, 'holes_y': [1, 7, 9, 15, 21, 25, 27], 'born_new': [1, 7, 9, 15, 21, 25, 27], 'remaining_K': [], 'release_count': 7, 'total_holes': 7, 'scheme': {23: 16, 11: 5}, 'mod': 253}]
+- P=41
+  - x=32 K=[7, 9, 15] short=[{'c1': 7, 'c2': 9, 'd': 2}, {'c1': 9, 'c2': 15, 'd': 6}]
+    - medium_or_large: [{'y': 14, 'holes_y': [3, 13, 19, 25, 27, 33, 39], 'born_new': [3, 13, 19, 25, 27, 33, 39], 'remaining_K': [], 'release_count': 7, 'total_holes': 7, 'scheme': {7: 0, 11: 3, 19: 14}, 'mod': 1463}, {'y': 3, 'holes_y': [4, 8, 14, 16, 26, 28, 34, 40], 'born_new': [4, 8, 14, 16, 26, 28, 34, 40], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {5: 3, 11: 3, 23: 3}, 'mod': 1265}, {'y': 6, 'holes_y': [5, 11, 17, 23, 25, 31, 35, 37], 'born_new': [5, 11, 17, 23, 25, 31, 35, 37], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {11: 6, 5: 1, 29: 6}, 'mod': 1595}]
+    - large_gt_sqrt: [{'y': 16, 'holes_y': [3, 5, 17, 21, 27, 35], 'born_new': [3, 5, 17, 21, 27, 35], 'remaining_K': [], 'release_count': 6, 'total_holes': 6, 'scheme': {13: 3, 7: 2, 11: 5}, 'mod': 1001}, {'y': 14, 'holes_y': [3, 13, 19, 25, 27, 33, 39], 'born_new': [3, 13, 19, 25, 27, 33, 39], 'remaining_K': [], 'release_count': 7, 'total_holes': 7, 'scheme': {7: 0, 11: 3, 19: 14}, 'mod': 1463}, {'y': 3, 'holes_y': [4, 8, 14, 16, 26, 28, 34, 40], 'born_new': [4, 8, 14, 16, 26, 28, 34, 40], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {13: 3, 11: 3, 23: 3}, 'mod': 3289}, {'y': 6, 'holes_y': [5, 11, 17, 23, 25, 31, 35, 37], 'born_new': [5, 11, 17, 23, 25, 31, 35, 37], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {11: 6, 17: 6, 29: 6}, 'mod': 5423}]
+- P=47
+  - x=46 K=[17, 41, 45] short=[{'c1': 41, 'c2': 45, 'd': 4}]
+    - medium_or_large: [{'y': 12, 'holes_y': [5, 7, 13, 23, 29, 35, 37, 43], 'born_new': [5, 7, 13, 23, 29, 35, 37, 43], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {7: 5, 5: 2}, 'mod': 35}, {'y': 5, 'holes_y': [4, 6, 16, 22, 28, 34, 36, 42, 46], 'born_new': [4, 6, 16, 22, 28, 34, 36, 42, 46], 'remaining_K': [], 'release_count': 9, 'total_holes': 9, 'scheme': {7: 5, 23: 5}, 'mod': 161}, {'y': 9, 'holes_y': [8, 10, 16, 20, 26, 34, 38, 40, 44], 'born_new': [8, 10, 16, 20, 26, 34, 38, 40, 44], 'remaining_K': [], 'release_count': 9, 'total_holes': 9, 'scheme': {5: 4, 29: 9, 13: 9}, 'mod': 1885}]
+    - large_gt_sqrt: [{'y': 40, 'holes_y': [9, 21, 27, 33], 'born_new': [9, 21, 27, 33], 'remaining_K': [], 'release_count': 4, 'total_holes': 4, 'scheme': {7: 5, 17: 6}, 'mod': 119}, {'y': 29, 'holes_y': [4, 10, 18, 36, 46], 'born_new': [4, 10, 18, 36, 46], 'remaining_K': [], 'release_count': 5, 'total_holes': 5, 'scheme': {23: 6, 13: 3, 11: 7}, 'mod': 3289}, {'y': 12, 'holes_y': [5, 7, 13, 23, 29, 35, 37, 43], 'born_new': [5, 7, 13, 23, 29, 35, 37, 43], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {7: 5, 11: 1}, 'mod': 77}, {'y': 34, 'holes_y': [3, 9, 11, 15, 21, 23, 29, 39], 'born_new': [3, 9, 11, 15, 21, 23, 29, 39], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {17: 0, 11: 1, 31: 3}, 'mod': 5797}, {'y': 5, 'holes_y': [4, 6, 16, 22, 28, 34, 36, 42, 46], 'born_new': [4, 6, 16, 22, 28, 34, 36, 42, 46], 'remaining_K': [], 'release_count': 9, 'total_holes': 9, 'scheme': {7: 5, 23: 5}, 'mod': 161}]
+- P=53
+  - x=25 K=[2, 36, 42, 48] short=[{'c1': 36, 'c2': 42, 'd': 6}, {'c1': 42, 'c2': 48, 'd': 6}]
+    - medium_or_large: [{'y': 23, 'holes_y': [4, 10, 12, 18, 30, 40], 'born_new': [4, 10, 12, 18, 30, 40], 'remaining_K': [], 'release_count': 6, 'total_holes': 6, 'scheme': {11: 1, 5: 3, 13: 10, 7: 2}, 'mod': 5005}, {'y': 26, 'holes_y': [3, 21, 31, 45, 49, 51], 'born_new': [3, 21, 31, 45, 49, 51], 'remaining_K': [], 'release_count': 6, 'total_holes': 6, 'scheme': {5: 1, 7: 5, 23: 3}, 'mod': 805}, {'y': 16, 'holes_y': [5, 9, 11, 15, 29, 33, 35, 39], 'born_new': [5, 9, 11, 15, 29, 33, 35, 39], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {5: 1, 13: 3, 7: 2}, 'mod': 455}]
+    - large_gt_sqrt: []
+- P=67
+  - x=20 K=[21, 27, 33, 41, 59] short=[{'c1': 21, 'c2': 27, 'd': 6}, {'c1': 27, 'c2': 33, 'd': 6}, {'c1': 33, 'c2': 41, 'd': 8}]
+    - medium_or_large: [{'y': 22, 'holes_y': [7, 9, 13, 15, 19, 25, 37, 49, 57], 'born_new': [7, 9, 13, 15, 19, 25, 37, 49, 57], 'remaining_K': [], 'release_count': 9, 'total_holes': 9, 'scheme': {5: 2, 19: 3, 11: 0, 7: 1}, 'mod': 7315}]
+    - large_gt_sqrt: []
+  - x=32 K=[9, 17, 35, 59, 63] short=[{'c1': 9, 'c2': 17, 'd': 8}, {'c1': 59, 'c2': 63, 'd': 4}]
+    - medium_or_large: [{'y': 63, 'holes_y': [8, 10, 20, 22, 32, 38, 40, 50, 52, 62], 'born_new': [8, 10, 20, 22, 32, 38, 40, 50, 52, 62], 'remaining_K': [], 'release_count': 10, 'total_holes': 10, 'scheme': {5: 3, 13: 11, 7: 0}, 'mod': 455}]
+    - large_gt_sqrt: []
+  - x=37 K=[24, 42, 52, 60, 64] short=[{'c1': 52, 'c2': 60, 'd': 8}, {'c1': 60, 'c2': 64, 'd': 4}]
+    - medium_or_large: [{'y': 13, 'holes_y': [6, 10, 12, 16, 36, 40, 48, 58, 66], 'born_new': [6, 10, 12, 16, 36, 40, 48, 58, 66], 'remaining_K': [], 'release_count': 9, 'total_holes': 9, 'scheme': {5: 3, 11: 2, 13: 0, 7: 6}, 'mod': 5005}]
+    - large_gt_sqrt: []
+- P=71
+  - x=68 K=[3, 33, 43, 49, 61] short=[{'c1': 43, 'c2': 49, 'd': 6}]
+    - medium_or_large: [{'y': 42, 'holes_y': [17, 19, 29, 37, 41, 55, 59, 67], 'born_new': [17, 19, 29, 37, 41, 55, 59, 67], 'remaining_K': [], 'release_count': 8, 'total_holes': 8, 'scheme': {5: 2, 7: 0, 17: 8}, 'mod': 595}, {'y': 7, 'holes_y': [2, 6, 12, 24, 26, 44, 50, 60, 66], 'born_new': [2, 6, 12, 24, 26, 44, 50, 60, 66], 'remaining_K': [], 'release_count': 9, 'total_holes': 9, 'scheme': {5: 2, 7: 0, 31: 7}, 'mod': 1085}, {'y': 12, 'holes_y': [1, 5, 7, 11, 25, 29, 31, 35, 55, 59, 67], 'born_new': [1, 5, 7, 11, 25, 29, 31, 35, 55, 59, 67], 'remaining_K': [], 'release_count': 11, 'total_holes': 11, 'scheme': {5: 2, 17: 12, 11: 1}, 'mod': 935}]
+    - large_gt_sqrt: []
+- P=83
+  - x=16 K=[33, 39, 45, 53, 71, 81] short=[{'c1': 33, 'c2': 39, 'd': 6}, {'c1': 39, 'c2': 45, 'd': 6}, {'c1': 45, 'c2': 53, 'd': 8}]
+    - medium_or_large: []
+    - large_gt_sqrt: []
+  - x=58 K=[3, 17, 47, 57, 63, 75] short=[{'c1': 57, 'c2': 63, 'd': 6}]
+    - medium_or_large: []
+    - large_gt_sqrt: []
+  - x=71 K=[4, 10, 30, 34, 46, 60] short=[{'c1': 4, 'c2': 10, 'd': 6}, {'c1': 30, 'c2': 34, 'd': 4}]
+    - medium_or_large: []
+    - large_gt_sqrt: []
+- P=97
+  - x=82 K=[9, 39, 55, 57, 63, 85] short=[{'c1': 55, 'c2': 57, 'd': 2}, {'c1': 55, 'c2': 63, 'd': 8}, {'c1': 57, 'c2': 63, 'd': 6}]
+    - medium_or_large: []
+    - large_gt_sqrt: []
+
+## 下一证明义务
+- 将 release_count>=1 写成 OSE-local 的精确目标。
+- 证明同奇偶补核时 q=2 不参与，释放来自奇素数层重叠能量不足。
+- 证明异奇偶补核时释放来自对侧奇偶壳。

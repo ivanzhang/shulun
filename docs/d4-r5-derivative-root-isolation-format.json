@@ -1,0 +1,46 @@
+{
+  "certificate_type": "D4-R5-derivative-root-isolation-certificate-format",
+  "purpose": "Provide a rigorous certificate format for the remaining phasecell-extremum derivative-root isolation problem.",
+  "function_class": {
+    "basis": "finite sums of c*x^alpha*(log x)^k with rational/explicit real coefficients, plus finite products for E2 derivatives",
+    "closure": [
+      "addition",
+      "multiplication by constants",
+      "finite squaring/sum of squares",
+      "derivative",
+      "interval restriction"
+    ],
+    "domain": "compact phase cell intervals avoiding floor/divisibility/sign boundaries"
+  },
+  "certificate_objects": [
+    {
+      "name": "cell_interval",
+      "data": "[l,r] with all phase data fixed"
+    },
+    {
+      "name": "no_root_subinterval",
+      "data": "interval evaluation of F_prime excludes 0"
+    },
+    {
+      "name": "root_box",
+      "data": "[a,b] with F_prime(a)*F_prime(b)<=0 and interval evaluation of F_double_prime excludes 0, proving uniqueness"
+    },
+    {
+      "name": "boundary_box",
+      "data": "endpoint, floor boundary, sign boundary, or constraint boundary to be evaluated separately"
+    },
+    {
+      "name": "coverage",
+      "data": "ordered union of no_root_subintervals, root_boxes, and boundary boxes covers the whole cell"
+    }
+  ],
+  "verification_rules": [
+    "Use outward-rounded interval arithmetic for x^alpha and log x.",
+    "A no-root interval is certified if 0 notin interval(F_prime).",
+    "A root box is certified unique if F_prime changes sign or contains a Newton inclusion and interval(F_double_prime) excludes 0.",
+    "Every local extremum of F in the cell lies in a root_box or on a boundary_box.",
+    "Evaluate F with interval arithmetic on every candidate box; if the required inequality holds with margin, the cell is certified."
+  ],
+  "why_sufficient": "This avoids needing a symbolic global root-count theorem; finite phase cells plus interval root isolation give a machine-checkable proof of all extrema.",
+  "remaining_implementation": "Need scripts to emit and verify these certificates for R5global1--R5global4 candidate functionals."
+}

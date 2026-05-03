@@ -1,0 +1,35 @@
+# D4/R5 G1 A_eff 分层 Cauchy 审计
+
+**状态：** `Aeff_not_yet_proved_unified_exceptional_candidate_available`
+
+分层口径已由 partition refinement 审计修正：互斥分解应为 transition + short_chain + ordinary + light = L，而 heavy 是 transition/short_chain/ordinary 的父类监控量。进一步的 unified exceptional 审计发现，可尝试用单一 exceptional_l2_sqrt 控制全体 L，扫描最坏 A_eff 约 12.69，低于 18.113；当前剩余是把该候选提升为定理并证明递归尺度传递。
+
+## 阈值计算
+- `needed_for_Lcap_0p48_eta_0p015`：A_eff <= L/(eta + L^2/20) = 18.113...
+- `warning`：观测 A_eff 在 L=0.413 时达到 17.32，在 L>=0.42 时达到 14.92；余量很窄，粗糙 A_eff 上界很可能失败
+
+## L 下界分组的局部最坏 A_eff
+- `L>=0.35`：count=614, worst={'source': 'd4-r5-offset-heavy-light-scan-1088200-1088600-step1-T60.json', 'x': 1088531, 'L': 0.41314149173137815, 'E_star': 0.023852555554531214, 'A_eff_observed': 17.32063848617238}
+- `L>=0.4`：count=191, worst={'source': 'd4-r5-offset-heavy-light-scan-1088200-1088600-step1-T60.json', 'x': 1088531, 'L': 0.41314149173137815, 'E_star': 0.023852555554531214, 'A_eff_observed': 17.32063848617238}
+- `L>=0.42`：count=80, worst={'source': 'd4-r5-offset-heavy-light-scan-1028000-1028300-step1.json', 'x': 1028158, 'L': 0.45363691818826296, 'E_star': 0.03041327342241804, 'A_eff_observed': 14.915754443383296}
+- `L>=0.45`：count=40, worst={'source': 'd4-r5-offset-heavy-light-scan-1028000-1028300-step1.json', 'x': 1028158, 'L': 0.45363691818826296, 'E_star': 0.03041327342241804, 'A_eff_observed': 14.915754443383296}
+
+## 分层最坏 B/e
+- `transition_high_tail_weight`：ratio=1.0, x=1088480, source=d4-r5-offset-layered-scan-1088200-1088600-step1-T60-full.json
+- `transition_low_start_weight`：ratio=1.3958702319563918, x=1088518, source=d4-r5-offset-layered-scan-1088200-1088600-step1-T60-full.json
+- `short_chain_weight`：ratio=3.0268510362362, x=1088304, source=d4-r5-offset-layered-scan-1088200-1088600-step1-T60-full.json
+- `light_weight`：ratio=6.835154130403232, x=1023400, source=d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60.json
+
+## 质量缺口诊断
+current_layer_mass 只含 transition_high_tail/transition_low_start/short_chain/light；若 current_mass_gap 为正，则当前 Cauchy 分层未覆盖全部 L。heavy/ordinary 与 short/light 可能是父类或重叠口径，不能形式相加当作互斥分解；formal_overlap_or_gap 仅用于暴露口径不互斥或数据字段不足。
+- `max_current_mass_gap`：{'source': 'd4-r5-offset-heavy-light-scan-1028000-1028300-step1.json', 'x': 1028159, 'L': 0.45115906785824295, 'current_layer_mass': 0.16278975514150032, 'heavy_mass': 0.2883693127167426, 'ordinary_mass': 0.0, 'all_named_formal_sum': 0.4511590678582429, 'current_mass_gap': 0.2883693127167426, 'formal_overlap_or_gap': 5.551115123125783e-17}
+- `max_positive_formal_overlap_or_gap`：{'source': 'd4-r5-offset-heavy-light-scan-1028000-1028300-step1.json', 'x': 1028126, 'L': 0.43788765875721547, 'current_layer_mass': 0.22060954573549865, 'heavy_mass': 0.21727811302171668, 'ordinary_mass': 0.0, 'all_named_formal_sum': 0.43788765875721536, 'current_mass_gap': 0.21727811302171682, 'formal_overlap_or_gap': 1.1102230246251565e-16}
+- `max_negative_formal_overlap_or_gap`：{'source': 'd4-r5-offset-layered-scan-1e6-1p1e6-step100-T60.json', 'x': 1048300, 'L': 0.44083675266307654, 'current_layer_mass': 0.18589446761120842, 'heavy_mass': 0.2724384364463708, 'ordinary_mass': 0.25494228505186817, 'all_named_formal_sum': 0.7132751891094473, 'current_mass_gap': 0.2549422850518681, 'formal_overlap_or_gap': -0.2724384364463708}
+- `max_heavy_mass`：{'source': 'd4-r5-offset-heavy-light-scan-1028000-1028300-step1.json', 'x': 1028159, 'L': 0.45115906785824295, 'current_layer_mass': 0.16278975514150032, 'heavy_mass': 0.2883693127167426, 'ordinary_mass': 0.0, 'all_named_formal_sum': 0.4511590678582429, 'current_mass_gap': 0.2883693127167426, 'formal_overlap_or_gap': 5.551115123125783e-17}
+- `max_ordinary_mass`：{'source': 'd4-r5-offset-layered-scan-1e6-1p1e6-step100-T60.json', 'x': 1048300, 'L': 0.44083675266307654, 'current_layer_mass': 0.18589446761120842, 'heavy_mass': 0.2724384364463708, 'ordinary_mass': 0.25494228505186817, 'all_named_formal_sum': 0.7132751891094473, 'current_mass_gap': 0.2549422850518681, 'formal_overlap_or_gap': -0.2724384364463708}
+
+## 最小剩余
+- 采用互斥层分解 P_transition/P_short/P_ordinary/P_light，使所有 B_i 精确求和为 L_j，且 heavy 只作父类监控量
+- 采用统一 exceptional 能量 E_G1:=exceptional_l2_sqrt，避免分层重复使用同一能量
+- 证明 L_j <= A_eff E_G1,j，建议以 A_eff=13 或 14 为定理化常数目标
+- 证明统一 exceptional 能量在递归尺度传递中与 stable payment telescope 兼容

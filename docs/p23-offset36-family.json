@@ -1,0 +1,227 @@
+{
+  "certificate_type": "p23_offset36_family",
+  "status": "offset_36_first_hit_not_periodic_family",
+  "zero_count_in_first100": 1,
+  "zeros": [
+    {
+      "k": 1,
+      "r": 59,
+      "holes": [],
+      "hole_count": 0,
+      "is_zero": true
+    }
+  ],
+  "best": [
+    {
+      "k": 1,
+      "r": 59,
+      "holes": [],
+      "hole_count": 0,
+      "is_zero": true
+    },
+    {
+      "k": 8,
+      "r": 311,
+      "holes": [
+        11,
+        21
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 15,
+      "r": 563,
+      "holes": [
+        5,
+        15
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 18,
+      "r": 671,
+      "holes": [
+        3,
+        17
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 20,
+      "r": 743,
+      "holes": [
+        5,
+        11
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 33,
+      "r": 1211,
+      "holes": [
+        17,
+        21
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 36,
+      "r": 1319,
+      "holes": [
+        5,
+        9
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 43,
+      "r": 1571,
+      "holes": [
+        11,
+        21
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 44,
+      "r": 1607,
+      "holes": [
+        5,
+        9
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 61,
+      "r": 2219,
+      "holes": [
+        5,
+        17
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 71,
+      "r": 2579,
+      "holes": [
+        9,
+        15
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 86,
+      "r": 3119,
+      "holes": [
+        3,
+        5
+      ],
+      "hole_count": 2,
+      "is_zero": false
+    },
+    {
+      "k": 2,
+      "r": 95,
+      "holes": [
+        11,
+        17,
+        21
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    },
+    {
+      "k": 6,
+      "r": 239,
+      "holes": [
+        3,
+        5,
+        9
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    },
+    {
+      "k": 9,
+      "r": 347,
+      "holes": [
+        5,
+        9,
+        21
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    },
+    {
+      "k": 10,
+      "r": 383,
+      "holes": [
+        5,
+        17,
+        21
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    },
+    {
+      "k": 17,
+      "r": 635,
+      "holes": [
+        5,
+        9,
+        11
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    },
+    {
+      "k": 21,
+      "r": 779,
+      "holes": [
+        9,
+        15,
+        17
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    },
+    {
+      "k": 26,
+      "r": 959,
+      "holes": [
+        3,
+        5,
+        17
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    },
+    {
+      "k": 28,
+      "r": 1031,
+      "holes": [
+        11,
+        17,
+        21
+      ],
+      "hole_count": 3,
+      "is_zero": false
+    }
+  ],
+  "structural_conclusion": "P=23 的 r=P+36 是零行，但 P+36k 不是零行周期族；前 100 个 k 中只有部分命中/近命中。36=2^2*3^2 提供了与小素数骨架对齐的首个机会，但完整零行还依赖 5,7,11,13,17,19 的剩余相位同时补洞。",
+  "next_obligations": [
+    "分解 r=P+36 首次命中中各素数的贡献。",
+    "证明小素数骨架只给候选相位，不给周期性零行。",
+    "将零行解集视为多个覆盖方案的并集，而非单一等差数列。"
+  ]
+}

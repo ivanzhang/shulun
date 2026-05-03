@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+"""B1/DBA-A1--A5 最终接受复核证书。"""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+DOCS = ROOT / "docs"
+
+CHECKS = [
+    {
+        "id": "A1_source_coverage",
+        "claim": "6.10--6.18、4.3.6/FS8 与 FS8-polymer 已列失败方式都有合法 atlas/budget 去向。",
+        "evidence": ["docs/dba-A1-source-coverage-certificate.md"],
+        "status": "passed_for_listed_sources_32_of_32_unknown_0",
+        "remaining": "终稿人工确认正文未新增未列失败方式。",
+    },
+    {
+        "id": "A2_fixed_degree_height",
+        "claim": "所有 DBA 多项式 atlas 项变量数和次数只依赖 r，resultant 高度为 P^{O_r(1)}。",
+        "evidence": ["docs/dba-A2-fixed-degree-table.md", "docs/dba-A2-A5-parameter-ledger.md"],
+        "status": "passed_with_fixed_degree_table",
+        "remaining": "接受标准 Macaulay/resultant 高度界引用。",
+    },
+    {
+        "id": "A3_step_frequency_budget",
+        "claim": "步长/频率共振的 1/q+1/T 损失由 Rankin 与 B4 余量吸收。",
+        "evidence": ["docs/dba-closure-finite-generated-atlas.md", "docs/dba-A2-A5-parameter-ledger.md"],
+        "status": "passed_margin_B4_600",
+        "remaining": "无新增预算；需终稿保持所有共振引用均指向 A3。",
+    },
+    {
+        "id": "A4_layering_low_volume_budget",
+        "claim": "层化端点/低体积盒由 C_L/C_KS 与 KS 余量吸收。",
+        "evidence": ["docs/dba-closure-finite-generated-atlas.md", "docs/dba-A2-A5-parameter-ledger.md"],
+        "status": "passed_KS_margins_220_140",
+        "remaining": "无新增预算；需终稿保持低体积口径不被重复计入正常层。",
+    },
+    {
+        "id": "A5_numeric_absorption",
+        "claim": "B1,B2,B4 大于高度、Rankin、KS 与层化损失常数。",
+        "evidence": ["docs/dba-A2-A5-parameter-ledger.md", "docs/r2-Cpoly-absorption-scan.md"],
+        "status": "passed_positive_margins_except_B5_equality_not_used_here",
+        "remaining": "B5_min 等号属于 Stieltjes/阈值接口，不阻塞 B1 sawtooth DBA。",
+    },
+    {
+        "id": "C6_row_interface",
+        "claim": "R1a/R1b 与 R2a 终审证书已生成，行侧短块接口归入 FS8/DBA/参数账本接受。",
+        "evidence": ["docs/c6-row-hard-route-audit.md", "docs/r1-gap-word-capacity-audit.md", "docs/r2a-weighted-fnl-ks-interface-audit.md"],
+        "status": "passed_modulo_existing_FS8_DBA_parameter_acceptance",
+        "remaining": "与 A1--A5 同步接受；不再是独立 B1 局部硬点。",
+    },
+]
+
+
+def build_certificate() -> dict:
+    return {
+        "certificate_type": "B1_DBA_final_acceptance_review",
+        "status": "B1_row_sawtooth_route_reduced_to_final_editorial_acceptance_of_existing_certificates",
+        "checks": CHECKS,
+        "conclusion": "B1 行侧 sawtooth 硬路线的局部技术义务已压缩为接受既有证书链：DBA-A1--A5、FS8-Disp/FNL-KS/DBA、R1a/R1b 与 R2a 终审。仍不能推出全局主定理，因为 B2/B3 R5 全局化、B4 列侧 LC、B5 显式阈值与有限验证仍独立阻塞。",
+    }
+
+
+def write_markdown(cert: dict) -> None:
+    lines = [
+        "# B1 DBA 最终接受复核",
+        "",
+        f"**状态：** `{cert['status']}`",
+        "",
+        cert["conclusion"],
+        "",
+        "## 复核项",
+    ]
+    for item in cert["checks"]:
+        lines += [
+            f"### {item['id']}",
+            f"- 命题：{item['claim']}",
+            f"- 状态：`{item['status']}`",
+            f"- 剩余：{item['remaining']}",
+            "- 证据：" + ", ".join(item["evidence"]),
+            "",
+        ]
+    (DOCS / "b1-dba-final-acceptance-review.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def main() -> None:
+    cert = build_certificate()
+    (DOCS / "b1-dba-final-acceptance-review.json").write_text(
+        json.dumps(cert, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    write_markdown(cert)
+    print(DOCS / "b1-dba-final-acceptance-review.json")
+    print(DOCS / "b1-dba-final-acceptance-review.md")
+
+
+if __name__ == "__main__":
+    main()

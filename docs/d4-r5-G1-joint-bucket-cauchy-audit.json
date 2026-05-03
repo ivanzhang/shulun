@@ -1,0 +1,122 @@
+{
+  "certificate_type": "D4_R5_G1_joint_bucket_cauchy_audit",
+  "status": "promising_joint_support_cauchy_interface_needs_structural_count_mass_constraints",
+  "target_Q_over_S2": 0.015625,
+  "rows_seen": 1801,
+  "violations_actual_target": 0,
+  "violations_bucket_cauchy_target": 0,
+  "worst_actual": {
+    "source": "docs/d4-r5-O2-caseA-neighborhood-1023000-1023800-step1.json",
+    "x": 1023427,
+    "support_count": 95,
+    "actual_Q_over_S2": 0.02092883563486847,
+    "Neff": 47.780966769787746,
+    "bucket_cauchy_Q_over_S2": 0.017558102476038357,
+    "cauchy_margin_to_target": 0.001933102476038357,
+    "masses": {
+      "tau_le_4": 0.16716398357489698,
+      "tau_5_8": 0.15754501747611543,
+      "tau_9_16": 0.297760852373164,
+      "tau_17_32": 0.2905983585947855,
+      "tau_33_59": 0.08693178798103805,
+      "heavy_short": 0.0
+    },
+    "counts": {
+      "tau_le_4": 40,
+      "tau_5_8": 21,
+      "tau_9_16": 21,
+      "tau_17_32": 11,
+      "tau_33_59": 2,
+      "heavy_short": 0
+    },
+    "actual_bucket_qshare": {
+      "tau_le_4": 0.0009755949797030436,
+      "tau_5_8": 0.0018953353800865813,
+      "tau_9_16": 0.00560265531869375,
+      "tau_17_32": 0.008676148356065077,
+      "tau_33_59": 0.0037791016003200168,
+      "heavy_short": 0.0
+    }
+  },
+  "worst_bucket_cauchy": {
+    "source": "docs/d4-r5-O2-caseA-neighborhood-1023000-1023800-step1.json",
+    "x": 1023406,
+    "support_count": 90,
+    "actual_Q_over_S2": 0.021553031316790684,
+    "Neff": 46.39718586688822,
+    "bucket_cauchy_Q_over_S2": 0.017306823886965444,
+    "cauchy_margin_to_target": 0.0016818238869654445,
+    "masses": {
+      "tau_le_4": 0.1703458684347539,
+      "tau_5_8": 0.2052116368418374,
+      "tau_9_16": 0.2246592903738756,
+      "tau_17_32": 0.3470962342649412,
+      "tau_33_59": 0.0,
+      "heavy_short": 0.052686970084591986
+    },
+    "counts": {
+      "tau_le_4": 36,
+      "tau_5_8": 24,
+      "tau_9_16": 15,
+      "tau_17_32": 14,
+      "tau_33_59": 0,
+      "heavy_short": 1
+    },
+    "actual_bucket_qshare": {
+      "tau_le_4": 0.001145517621079082,
+      "tau_5_8": 0.002556844798988352,
+      "tau_9_16": 0.004693617621130926,
+      "tau_17_32": 0.010381134458897634,
+      "tau_33_59": 0.0,
+      "heavy_short": 0.002775916816694691
+    }
+  },
+  "max_support_record": {
+    "source": "docs/d4-r5-O2-alloffsets-1e6-1p1e6-step100-T60.json",
+    "x": 1012100,
+    "support_count": 110,
+    "actual_Q_over_S2": 0.03390139366753169,
+    "Neff": 29.49731240570584,
+    "bucket_cauchy_Q_over_S2": 0.02840282412478129,
+    "cauchy_margin_to_target": 0.01277782412478129,
+    "masses": {
+      "tau_le_4": 0.06679598072646467,
+      "tau_5_8": 0.09085779672465308,
+      "tau_9_16": 0.1947035675537578,
+      "tau_17_32": 0.14342951119247113,
+      "tau_33_59": 0.27796474742737287,
+      "heavy_short": 0.22624839637528038
+    },
+    "counts": {
+      "tau_le_4": 40,
+      "tau_5_8": 30,
+      "tau_9_16": 20,
+      "tau_17_32": 9,
+      "tau_33_59": 7,
+      "heavy_short": 4
+    },
+    "actual_bucket_qshare": {
+      "tau_le_4": 0.00017510597651688794,
+      "tau_5_8": 0.00039398328954525684,
+      "tau_9_16": 0.00300289712831011,
+      "tau_17_32": 0.0027490256075466545,
+      "tau_33_59": 0.013631876548490638,
+      "heavy_short": 0.013948505117122142
+    }
+  },
+  "bucket_count_maxima": {
+    "tau_le_4": 53,
+    "tau_5_8": 33,
+    "tau_9_16": 27,
+    "tau_17_32": 20,
+    "tau_33_59": 13,
+    "heavy_short": 9
+  },
+  "structural_conclusion": "联合桶路线的正确形态不是逐桶独立常数 q_i>=c_i m_i^2，而是精确的桶内 Cauchy 恒等下界 Q/S^2 >= sum_i m_i^2/n_i。样本中该下界最坏仍为约 0.0173068，高于 1/64。因此下一步可证化目标应转为：证明所有允许行的桶质量 m_i 与桶支撑数 n_i 不能落入 sum_i m_i^2/n_i < 1/64 的危险单纯形。",
+  "proof_obligations": [
+    "证明桶内 Cauchy 账本：若第 i 桶质量份额为 m_i、正支撑数为 n_i，则该桶贡献至少 m_i^2/n_i。",
+    "证明结构计数-质量约束：低 tau 桶可有较大 n_i 但权重密度低；高 tau 桶权重密度高但 n_i 被几何互斥压缩。",
+    "把危险域 sum_i m_i^2/n_i < 1/64 化为有限个线性/二次不等式盒，并由 tau 几何互斥逐盒排除。",
+    "当前数据支持该接口，但尚未构成无条件证明；禁止把扫描最坏值直接写成定理。"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "certificate_type": "D4-R5-global-RPL-gates",
+  "status": "G2 algebraically proved conditionally; G1 revised to capacity-defect dichotomy; G3-G5 remain global gates",
+  "gates": [
+    {
+      "name": "G1_capacity_bound",
+      "statement": "G1 prime form: along every recursive dangerous chain, either the normalized active capacity satisfies L_j <= L_cap, or the excess capacity forces a positive defect that exits the dangerous class.",
+      "current_local_evidence": "docs/d4-r5-G1-capacity-audit.json and docs/d4-r5-G1-lyapunov-energy-audit.json; resource-curve local max L=0.4213905845641671; row positive-contract local max L=0.45976127079428586; multi-window row max L=0.4750671263244978; safe local L_cap=0.48",
+      "global_status": "not proved globally; reduced to capacity-defect dichotomy plus scale-transfer invariance",
+      "remaining_obligations": [
+        "Define L_j,D_j invariantly across arbitrary scales and shell relabellings.",
+        "Prove large normalized capacity implies positive defect in every frozen member cell.",
+        "Show failures project to the finite outward-certified terminal window family."
+      ]
+    },
+    {
+      "name": "G2_stable_payment_telescope",
+      "statement": "sum L_{j-1} Delta L_j / 10 <= L_max^2 / 20.",
+      "current_status": "proved algebraically once G1 and Delta L_j>=0 on stable positive-mass steps hold"
+    },
+    {
+      "name": "G3_jump_absorption",
+      "statement": "Each jump either reduces badness by kappa_j or lands in finite certified windows; sum jump errors is finite.",
+      "current_local_evidence": "docs/d4-r5-jump-absorption-audit.json",
+      "global_status": "needs boundary-count/threshold-crossing proof"
+    },
+    {
+      "name": "G4_backflow_summability",
+      "statement": "Backflow projection loss eps_j is summable and below local outward-certificate margin.",
+      "current_local_evidence": "backflow not triggered in current probe",
+      "global_status": "not proved globally"
+    },
+    {
+      "name": "G5_base_certificate",
+      "statement": "All terminal projected bad windows are covered by outward interval certificates.",
+      "current_local_evidence": "H80/current-window outward certificates",
+      "global_status": "needs coverage of terminal window family"
+    }
+  ]
+}

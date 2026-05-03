@@ -1,0 +1,227 @@
+{
+  "input": "docs/d4-r5-offset-layered-scan-1088200-1088600-step1-T60-full.json",
+  "class_stats": {
+    "transition_high_tail": {
+      "count": 45,
+      "max_B": 0.13105566602785185,
+      "max_W": 366,
+      "max_N": 25,
+      "max_K": 0.0003600430385380545,
+      "p95_B": 0.13010831645976847
+    },
+    "transition_low_start": {
+      "count": 88,
+      "max_B": 0.08407703769027211,
+      "max_W": 200,
+      "max_N": 25,
+      "max_K": 0.0005166631748140954,
+      "p95_B": 0.06007511559882104
+    },
+    "short": {
+      "count": 1789,
+      "max_B": 0.0921090343011121,
+      "max_W": 305,
+      "max_N": 20,
+      "max_K": 0.0007405775951489038,
+      "p95_B": 0.0548873501561894
+    },
+    "light": {
+      "count": 34695,
+      "max_B": 0.04437030506807574,
+      "max_W": 59,
+      "max_N": 12,
+      "max_K": 0.0017861829497895058,
+      "p95_B": 0.009105117588111118
+    }
+  },
+  "resource_caps": {
+    "W_exc": 1626,
+    "N_exc": 247,
+    "M_exc": 108,
+    "W_light": 1057,
+    "N_light": 191,
+    "M_light": 105,
+    "M_short": 10,
+    "M_transition": 3
+  },
+  "empirical_envelope": [
+    {
+      "type": "R_floor",
+      "R0": 8,
+      "count": 395,
+      "max_L": 0.4213905845641671,
+      "witness": 1088520
+    },
+    {
+      "type": "R_floor",
+      "R0": 10,
+      "count": 370,
+      "max_L": 0.41313356683371855,
+      "witness": 1088505
+    },
+    {
+      "type": "R_floor",
+      "R0": 12,
+      "count": 337,
+      "max_L": 0.39532698094512947,
+      "witness": 1088438
+    },
+    {
+      "type": "R_floor",
+      "R0": 14,
+      "count": 314,
+      "max_L": 0.39532698094512947,
+      "witness": 1088438
+    },
+    {
+      "type": "R_floor",
+      "R0": 16,
+      "count": 261,
+      "max_L": 0.39532698094512947,
+      "witness": 1088438
+    },
+    {
+      "type": "R_floor",
+      "R0": 18,
+      "count": 179,
+      "max_L": 0.3567833611143355,
+      "witness": 1088247
+    },
+    {
+      "type": "R_floor",
+      "R0": 20,
+      "count": 119,
+      "max_L": 0.3490654828977675,
+      "witness": 1088235
+    },
+    {
+      "type": "R_floor",
+      "R0": 22,
+      "count": 56,
+      "max_L": 0.3396567351023347,
+      "witness": 1088220
+    },
+    {
+      "type": "R_floor",
+      "R0": 24,
+      "count": 11,
+      "max_L": 0.2675185691470479,
+      "witness": 1088588
+    },
+    {
+      "type": "R_floor",
+      "R0": 26,
+      "count": 6,
+      "max_L": 0.2675185691470479,
+      "witness": 1088588
+    },
+    {
+      "type": "R_floor",
+      "R0": 28,
+      "count": 5,
+      "max_L": 0.2675185691470479,
+      "witness": 1088588
+    },
+    {
+      "type": "R_floor",
+      "R0": 30,
+      "count": 2,
+      "max_L": 0.2675185691470479,
+      "witness": 1088588
+    },
+    {
+      "type": "R_floor",
+      "R0": 32,
+      "count": 0,
+      "max_L": 0,
+      "witness": null
+    },
+    {
+      "type": "R_floor",
+      "R0": 34,
+      "count": 0,
+      "max_L": 0,
+      "witness": null
+    },
+    {
+      "type": "R_floor",
+      "R0": 36,
+      "count": 0,
+      "max_L": 0,
+      "witness": null
+    },
+    {
+      "type": "L_floor",
+      "L0": 0.2,
+      "count": 400,
+      "max_R": 30.192707730295623,
+      "witness": 1088588
+    },
+    {
+      "type": "L_floor",
+      "L0": 0.25,
+      "count": 355,
+      "max_R": 30.192707730295623,
+      "witness": 1088588
+    },
+    {
+      "type": "L_floor",
+      "L0": 0.3,
+      "count": 314,
+      "max_R": 23.226671857671406,
+      "witness": 1088280
+    },
+    {
+      "type": "L_floor",
+      "L0": 0.35,
+      "count": 117,
+      "max_R": 19.69583063663986,
+      "witness": 1088373
+    },
+    {
+      "type": "L_floor",
+      "L0": 0.4,
+      "count": 25,
+      "max_R": 10.108146866241853,
+      "witness": 1088505
+    }
+  ],
+  "relaxed_waterfill_envelope": [
+    {
+      "R0": 10,
+      "relaxed_max_L": 0.6990000000000005,
+      "bucket_count": 118,
+      "sum_caps": 6.670000000000001,
+      "max_caps": 0.14
+    },
+    {
+      "R0": 18,
+      "relaxed_max_L": 0.6990000000000005,
+      "bucket_count": 118,
+      "sum_caps": 6.670000000000001,
+      "max_caps": 0.14
+    },
+    {
+      "R0": 24,
+      "relaxed_max_L": 0.6990000000000005,
+      "bucket_count": 118,
+      "sum_caps": 6.670000000000001,
+      "max_caps": 0.14
+    },
+    {
+      "R0": 30,
+      "relaxed_max_L": 0.6990000000000005,
+      "bucket_count": 118,
+      "sum_caps": 6.670000000000001,
+      "max_caps": 0.14
+    },
+    {
+      "R0": 36,
+      "relaxed_max_L": 0.6990000000000005,
+      "bucket_count": 118,
+      "sum_caps": 6.670000000000001,
+      "max_caps": 0.14
+    }
+  ],
+  "note": "relaxed_waterfill is intentionally loose; next proof must add W/N/K coupled templates."
+}

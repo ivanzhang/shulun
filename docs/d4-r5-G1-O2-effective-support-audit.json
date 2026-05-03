@@ -1,0 +1,69 @@
+{
+  "certificate_type": "D4_R5_G1_O2_effective_support_audit",
+  "status": "O2_reduced_to_Neff64_with_top20_56_mass_route",
+  "target": "nonordinary_weight = light + short_chain + transition <= 8 * exceptional_l2_sqrt",
+  "rows_seen": 2000,
+  "worst_total": {
+    "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+    "x": 1023400,
+    "nonordinary_weight": 0.12864024379619862,
+    "exceptional_l2_sqrt": 0.019258766518065816,
+    "ratio": 6.6795681683729216,
+    "effective_support": 44.61663091594079,
+    "masses": {
+      "light": 0.12108541442396392,
+      "short": 0.007554829372234709,
+      "transition": 0.0
+    },
+    "energies": {
+      "light": 0.017715096413900563,
+      "short": 0.007554829372234709,
+      "transition": 0.0
+    },
+    "counts": {
+      "light": 92,
+      "short": 1,
+      "transition": 0
+    }
+  },
+  "worst_layers": {
+    "light": {
+      "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+      "x": 1023400,
+      "mass": 0.12108541442396392,
+      "energy": 0.017715096413900563,
+      "ratio": 6.835154130403232,
+      "effective_support": 46.71933198636837,
+      "count": 92
+    },
+    "short": {
+      "source": "d4-r5-offset-layered-scan-1088200-1088600-step1-T60-full.json",
+      "x": 1088304,
+      "mass": 0.18239561069826196,
+      "energy": 0.06025919627847478,
+      "ratio": 3.0268510362362,
+      "effective_support": 9.161827195564157,
+      "count": 10
+    },
+    "transition": {
+      "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+      "x": 1060700,
+      "mass": 0.17440207463086713,
+      "energy": 0.10350374859271773,
+      "ratio": 1.684983172127716,
+      "effective_support": 2.83916829035358,
+      "count": 3
+    }
+  },
+  "effective_support_target": "It is enough to prove nonordinary effective support (sum w)^2 / sum w^2 <= 64.",
+  "structural_reading": "O2 的最坏情形由 light 层主导；short_chain 与 transition 的单层比值分别约 3.03 与 1.69，远低于 light 的 6.84。扫描中 nonordinary 总有效支撑最大约 44.62，低于目标 64；top20 审计显示只需证明前 20 个非 ordinary 权重承担至少 56% 总质量即可推出 Neff<=64，余量比 top16 半质量更稳。",
+  "proof_route": [
+    "定义非 ordinary 权重向量 w_h，包含 light、short_chain、transition 的正贡献，E_G1^2=sum_h w_h^2",
+    "证明有效支撑 Neff=(sum_h w_h)^2/(sum_h w_h^2)<=64",
+    "用 Cauchy 得到 sum_h w_h <= sqrt(64) E_G1 = 8 E_G1",
+    "Neff<=64 的证明应利用 light 层 tau_sum<T_off=60 导致单偏移贡献上界，以及 short/transition 的低计数异常被平方项放大吸收",
+    "优先使用 top20_56_mass 模板：证明最大 20 个非 ordinary 偏移团贡献至少 56% 总质量，从而推出 Neff<=64",
+    "等价使用 tail44 模板：证明第 21 位后的尾部质量与前 20 位头部质量满足 tail/head <= 11/14",
+    "top16 半质量仍可作为锐利备选，但余量较窄"
+  ]
+}

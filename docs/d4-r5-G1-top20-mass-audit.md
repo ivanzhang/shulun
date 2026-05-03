@@ -1,0 +1,22 @@
+# D4/R5 G1 top20 稳健质量证书审计
+
+**状态：** `top20_route_preferred_over_top16_for_margin`
+
+top16 半质量路线虽可行但最坏余量极窄。top20 路线只需前 20 个权重承担 56% 总质量；扫描最坏 share≈0.57845，对应 Cauchy 常数≈59.77，余量明显更适合定理化。
+
+## 推荐引理
+- `top20_56_mass: sum_{i<=20} w_i >= 0.56 * sum_i w_i for nonordinary offset weights.`
+- 模板：If the largest 20 nonordinary weights carry at least 0.56 of S, then S^2/Q <= 20/0.56^2 = 63.776 < 64.
+
+## r 对比
+- `top16`：{'x': 1023400, 'r': 16, 'count': 93, 'sum': 0.12864024379619862, 'neff': 44.61663091594079, 'top_sum_share': 0.5030516401001571, 'cauchy_bound_from_top_r': 63.225874379832945}
+- `top18`：{'x': 1023400, 'r': 18, 'count': 93, 'sum': 0.12864024379619862, 'neff': 44.61663091594079, 'top_sum_share': 0.5421310528001678, 'cauchy_bound_from_top_r': 61.244054894559085}
+- `top20`：{'x': 1023400, 'r': 20, 'count': 93, 'sum': 0.12864024379619862, 'neff': 44.61663091594079, 'top_sum_share': 0.5784459336189254, 'cauchy_bound_from_top_r': 59.77291704791406}
+- `top24`：{'x': 1023400, 'r': 24, 'count': 93, 'sum': 0.12864024379619862, 'neff': 44.61663091594079, 'top_sum_share': 0.6402866818706906, 'cauchy_bound_from_top_r': 58.54129223124858}
+- `top32`：{'x': 1023400, 'r': 32, 'count': 93, 'sum': 0.12864024379619862, 'neff': 44.61663091594079, 'top_sum_share': 0.7316249828711389, 'cauchy_bound_from_top_r': 59.78234195783694}
+
+## 优势
+- 0.56 比 top16 的 0.5 有更大扫描余量
+- top20 仍是固定有限头部，适合转写成排序权重尾界
+- tail44 审计给出等价目标 tail_after20/head20 <= 11/14，扫描最坏约 0.72877
+- 若证明 0.56 困难，可用 0.57 或自适应 top24；top24 最坏 Cauchy 常数约 58.54

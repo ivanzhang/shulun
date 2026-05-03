@@ -1,0 +1,58 @@
+{
+  "certificate_type": "D4-R5-highmass-energy-master",
+  "input": "docs/d4-r5-highmass-energy-branch-summary.json",
+  "target_statement": "L>=0.35 => E2 >= L2/20",
+  "target_ratio": 0.05,
+  "checks": [
+    {
+      "name": "L>=0.35 energy floor",
+      "ok": true,
+      "observed": 0.05077216688387414,
+      "target": 0.05,
+      "margin": 0.0007721668838741383,
+      "witness_x": 1088373
+    },
+    {
+      "name": "branch tail_present",
+      "ok": true,
+      "observed": 0.08667084816908474,
+      "target": 0.05,
+      "margin": 0.03667084816908474,
+      "witness_x": 1088483
+    },
+    {
+      "name": "branch tail_absent",
+      "ok": true,
+      "observed": 0.05077216688387414,
+      "target": 0.05,
+      "margin": 0.0007721668838741383,
+      "witness_x": 1088373
+    },
+    {
+      "name": "branch short_L_ge_0p10",
+      "ok": true,
+      "observed": 0.05077216688387414,
+      "target": 0.05,
+      "margin": 0.0007721668838741383,
+      "witness_x": 1088373
+    },
+    {
+      "name": "branch short_L_lt_0p10",
+      "ok": true,
+      "observed": 0.08667084816908474,
+      "target": 0.05,
+      "margin": 0.03667084816908474,
+      "witness_x": 1088483
+    }
+  ],
+  "worst_margin": 0.0007721668838741383,
+  "worst_check": {
+    "name": "L>=0.35 energy floor",
+    "ok": true,
+    "observed": 0.05077216688387414,
+    "target": 0.05,
+    "margin": 0.0007721668838741383,
+    "witness_x": 1088373
+  },
+  "status": "finite-window certificate; theorem-level proof needs layer resource curve proof"
+}

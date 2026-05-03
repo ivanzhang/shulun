@@ -1,0 +1,86 @@
+{
+  "certificate_type": "D4-R5-review-grade-consistency-audit",
+  "checks": [
+    {
+      "name": "H80 layer integer checks",
+      "path": "docs/d4-r5-light-H80-layer-functional-certificate.json",
+      "exists": true,
+      "ok": true,
+      "summary": {
+        "all_checks_ok": true
+      }
+    },
+    {
+      "name": "H80 unified candidate table",
+      "path": "docs/d4-r5-H80-unified-candidate-boxes.json",
+      "exists": true,
+      "ok": true,
+      "summary": {
+        "integer_candidate_checks_ok": true,
+        "contract_root_ledgers_ok": true,
+        "total_unresolved_open_interval_count": 0
+      }
+    },
+    {
+      "name": "H80 membership cells",
+      "path": "docs/d4-r5-H80-membership-cell-decomposition.json",
+      "exists": true,
+      "ok": true,
+      "summary": {
+        "total_rows": 17,
+        "total_runs": 17
+      }
+    },
+    {
+      "name": "H80 one-sided all17",
+      "path": "docs/d4-r5-H80-one-sided-fixed-membership-all17-batch.json",
+      "exists": true,
+      "ok": true,
+      "summary": {
+        "all_ok": true,
+        "total_root_boxes": 0,
+        "total_unresolved": 0
+      }
+    },
+    {
+      "name": "Decimal worst audit",
+      "path": "docs/d4-r5-decimal-audit-by-functional-worst.json",
+      "exists": true,
+      "ok": true,
+      "summary": {
+        "precision": 80,
+        "all_certified": true
+      }
+    },
+    {
+      "name": "Budget interval audit",
+      "path": "docs/d4-r5-budget-interval-audit-by-functional-worst.json",
+      "exists": true,
+      "ok": true,
+      "summary": {
+        "precision": 80,
+        "all_certified": true
+      }
+    },
+    {
+      "name": "Outward interval audit",
+      "path": "docs/d4-r5-outward-interval-audit-by-functional-worst.json",
+      "exists": true,
+      "ok": true,
+      "summary": {
+        "precision": 80,
+        "all_certified": true
+      }
+    }
+  ],
+  "all_ok": true,
+  "min_outward_margin": "3.76564855398413484253367188062E-10",
+  "min_outward_margin_functional": "V",
+  "min_outward_margin_certificate": "docs/d4-r5-outward-audit-V.json",
+  "scope": "H80 R5 resource-lock candidate closure only; does not prove the full prime-in-every-row/column theorem.",
+  "remaining_for_full_theorem": [
+    "extend the same certificate pipeline from H80 resource-lock units to all R5global1--R5global4 candidate cells",
+    "connect R5global closure back into all earlier USC/DBA/JND/column theorem dependencies",
+    "extract final global threshold and run finite verification below it"
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "certificate_type": "DBA_A1_source_coverage_certificate",
+  "status": "verified",
+  "row_count": 32,
+  "verified_count": 32,
+  "needs_review_count": 0,
+  "unknown_destination_count": 0,
+  "rows": [
+    {
+      "index": 1,
+      "source": "6.10.1",
+      "failure_mode": "D_i=0 / 四点分母不可逆",
+      "atlas_destination": "denominator_pole",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.10.1"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 2,
+      "source": "6.10.1",
+      "failure_mode": "E mod q 恒等为零",
+      "atlas_destination": "four_point_rank_failure",
+      "budget_destinations": [
+        "rank/resultant atlas; A2 coefficient height + C_rk budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.10.1"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 3,
+      "source": "6.10.2",
+      "failure_mode": "对角/半对角",
+      "atlas_destination": "separate_count_not_DBA",
+      "budget_destinations": [
+        "separate diagonal/semidiagonal count; not DBA"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.10.2"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 4,
+      "source": "6.10.3",
+      "failure_mode": "水平纤维厚化根簇过多",
+      "atlas_destination": "ramification",
+      "budget_destinations": [
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.10.3"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 5,
+      "source": "6.10.3",
+      "failure_mode": "R' 消失",
+      "atlas_destination": "derivative_zero",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + coarea budget C_co"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.10.3"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 6,
+      "source": "6.10.4",
+      "failure_mode": "局部 rank 低于 1",
+      "atlas_destination": "four_point_rank_failure or jacobian_common_branch",
+      "budget_destinations": [
+        "rank/resultant atlas; A2 coefficient height + C_rk budget",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.10.4"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 7,
+      "source": "6.11.1",
+      "failure_mode": "F 与梯度同时小",
+      "atlas_destination": "jacobian_common_branch",
+      "budget_destinations": [
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.11.1"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 8,
+      "source": "6.12.2",
+      "failure_mode": "投影 Jacobian 消失",
+      "atlas_destination": "derivative_zero or ramification or jacobian_common_branch",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + coarea budget C_co",
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.12.2"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 9,
+      "source": "6.13.2",
+      "failure_mode": "小导数单调段",
+      "atlas_destination": "derivative_zero or jacobian_common_branch",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + coarea budget C_co",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.13.2"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 10,
+      "source": "6.13.2",
+      "failure_mode": "分母极点/多值分支合并",
+      "atlas_destination": "denominator_pole or ramification",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget",
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.13.2"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 11,
+      "source": "6.18.1d",
+      "failure_mode": "W_h 阶梯端点/权重突变",
+      "atlas_destination": "layering_endpoint_low_volume",
+      "budget_destinations": [
+        "A4 non-polynomial budget; C_L/C_KS/low-volume boxes"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.1d"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 12,
+      "source": "6.18.1e",
+      "failure_mode": "q|h, q|mT, 分母不可逆",
+      "atlas_destination": "step_frequency_resonance or denominator_pole",
+      "budget_destinations": [
+        "A3 step/frequency budget; 1/q enters Rankin, 1/T enters B4",
+        "DBA polynomial atlas; A2 height + A5 Rankin budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.1e"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 13,
+      "source": "6.18.2c",
+      "failure_mode": "层化四点厚化异常",
+      "atlas_destination": "four_point_rank_failure or jacobian_common_branch",
+      "budget_destinations": [
+        "rank/resultant atlas; A2 coefficient height + C_rk budget",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.2c"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 14,
+      "source": "6.7--6.8",
+      "failure_mode": "q|t,q|h,q|mU",
+      "atlas_destination": "step_frequency_resonance",
+      "budget_destinations": [
+        "A3 step/frequency budget; 1/q enters Rankin, 1/T enters B4"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.7--6.8"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 15,
+      "source": "4.3.6/FS8",
+      "failure_mode": "多逆元 CRT/Kloosterman 分支退化",
+      "atlas_destination": "denominator_pole or ramification or step_frequency_resonance",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget",
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget",
+        "A3 step/frequency budget; 1/q enters Rankin, 1/T enters B4"
+      ],
+      "evidence": [
+        "final-proof-draft.md:4.3.6",
+        "final-proof-draft.md:FS8-Disp"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 16,
+      "source": "6.17.1--6.17.3",
+      "failure_mode": "sawtooth 端点相位 Fourier 截断尾",
+      "atlas_destination": "fourier_truncation_tail",
+      "budget_destinations": [
+        "Fourier truncation parameter budget B1; not DBA"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.17.1--6.17.3"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 17,
+      "source": "6.17.6/6.18.1d",
+      "failure_mode": "权重 W(a) 变差或 dyadic 端点过多",
+      "atlas_destination": "layering_endpoint_low_volume",
+      "budget_destinations": [
+        "A4 non-polynomial budget; C_L/C_KS/low-volume boxes"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.17.6",
+        "final-proof-draft.md:6.18.1d"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 18,
+      "source": "B.0.3e+",
+      "failure_mode": "CRT 逆元 b(a) 分母或兼容失败",
+      "atlas_destination": "denominator_pole or ramification",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget",
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:B.0.3e+",
+        "final-proof-draft.md:6.17.6"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 19,
+      "source": "6.18.1c",
+      "failure_mode": "差分相位 F_h(a) 分母为零或分片无定义",
+      "atlas_destination": "denominator_pole",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.1c"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 20,
+      "source": "6.18.1e",
+      "failure_mode": "非共振步长检测失败 q|h,q|mT,q|mU",
+      "atlas_destination": "step_frequency_resonance",
+      "budget_destinations": [
+        "A3 step/frequency budget; 1/q enters Rankin, 1/T enters B4"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.1e"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 21,
+      "source": "6.18.2a--b",
+      "failure_mode": "短弧层化 L 超对数幂",
+      "atlas_destination": "denominator_pole or derivative_zero or ramification or layering_endpoint_low_volume",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget",
+        "DBA polynomial atlas; A2 height + coarea budget C_co",
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget",
+        "A4 non-polynomial budget; C_L/C_KS/low-volume boxes"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.2a--6.18.2b"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 22,
+      "source": "6.13.1--6.13.3",
+      "failure_mode": "coarea 切片法向导数为零",
+      "atlas_destination": "derivative_zero or jacobian_common_branch",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + coarea budget C_co",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.13.1--6.13.3"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 23,
+      "source": "4.3.6h/6.18.1d-KS-J",
+      "failure_mode": "Kloosterman reciprocity 模逆元分支退化",
+      "atlas_destination": "denominator_pole or ramification or step_frequency_resonance",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget",
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget",
+        "A3 step/frequency budget; 1/q enters Rankin, 1/T enters B4"
+      ],
+      "evidence": [
+        "final-proof-draft.md:4.3.6h",
+        "final-proof-draft.md:6.18.1d-KS-J"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 24,
+      "source": "6.18.1d-KS",
+      "failure_mode": "KS-W 双线性权重变差和端点分片",
+      "atlas_destination": "layering_endpoint_low_volume",
+      "budget_destinations": [
+        "A4 non-polynomial budget; C_L/C_KS/low-volume boxes"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.1d-KS",
+        "final-proof-draft.md:6.15.3a"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 25,
+      "source": "6.18.1d-KS-J/6.15.3a",
+      "failure_mode": "KS-J 中 z,t,resultant atlas 退化",
+      "atlas_destination": "denominator_pole or derivative_zero or ramification or jacobian_common_branch",
+      "budget_destinations": [
+        "DBA polynomial atlas; A2 height + A5 Rankin budget",
+        "DBA polynomial atlas; A2 height + coarea budget C_co",
+        "DBA resultant atlas; A2 resultant height + C_co/C_L budget",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.18.1d-KS-J",
+        "final-proof-draft.md:6.15.3a"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 26,
+      "source": "6.13.6/6.15.3a-K1",
+      "failure_mode": "KS-DC 切片端点余量或低体积盒",
+      "atlas_destination": "layering_endpoint_low_volume or jacobian_common_branch",
+      "budget_destinations": [
+        "A4 non-polynomial budget; C_L/C_KS/low-volume boxes",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.13.6",
+        "final-proof-draft.md:6.15.3a-K1"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 27,
+      "source": "6.13.6/6.15.3a-K2",
+      "failure_mode": "Kloosterman 八变量 rank 失效",
+      "atlas_destination": "four_point_rank_failure or jacobian_common_branch",
+      "budget_destinations": [
+        "rank/resultant atlas; A2 coefficient height + C_rk budget",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:6.13.6",
+        "final-proof-draft.md:6.15.3a-K2"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 28,
+      "source": "FS8-polymer",
+      "failure_mode": "skeleton 标签、短块来源、gap-word 端点过多",
+      "atlas_destination": "layering_endpoint_low_volume",
+      "budget_destinations": [
+        "A4 non-polynomial budget; C_L/C_KS/low-volume boxes"
+      ],
+      "evidence": [
+        "final-proof-draft.md:FS8-polymer 覆盖审查表",
+        "final-proof-draft.md:6.14.2c-FS8"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 29,
+      "source": "FS8-polymer",
+      "failure_mode": "不同 connected 分量相位分离",
+      "atlas_destination": "component_split_mobius_cancelled",
+      "budget_destinations": [
+        "disconnected cumulant component cancels by Mobius inversion; not DBA"
+      ],
+      "evidence": [
+        "final-proof-draft.md:FS8-polymer 覆盖审查表",
+        "final-proof-draft.md:6.14.2c-FS8"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 30,
+      "source": "FS8-polymer",
+      "failure_mode": "Hall 叶变量匹配失败",
+      "atlas_destination": "four_point_rank_failure or jacobian_common_branch",
+      "budget_destinations": [
+        "rank/resultant atlas; A2 coefficient height + C_rk budget",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:FS8-polymer 覆盖审查表",
+        "final-proof-draft.md:6.14.2c-FS8"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 31,
+      "source": "FS8-polymer",
+      "failure_mode": "相位差分落入共振弧",
+      "atlas_destination": "step_frequency_resonance or jacobian_common_branch or four_point_rank_failure",
+      "budget_destinations": [
+        "A3 step/frequency budget; 1/q enters Rankin, 1/T enters B4",
+        "multivariate resultant atlas; A2 multivariate height + C_co budget",
+        "rank/resultant atlas; A2 coefficient height + C_rk budget"
+      ],
+      "evidence": [
+        "final-proof-draft.md:FS8-polymer 覆盖审查表",
+        "final-proof-draft.md:6.14.2c-FS8"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    },
+    {
+      "index": 32,
+      "source": "FS8-polymer",
+      "failure_mode": "多 skeleton 坏素重复计数",
+      "atlas_destination": "rankin_divisor_budget",
+      "budget_destinations": [
+        "bad prime multiplicity counted by Rankin/divisor budget C_rk"
+      ],
+      "evidence": [
+        "final-proof-draft.md:FS8-polymer 覆盖审查表",
+        "final-proof-draft.md:6.14.2c-FS8"
+      ],
+      "status": "verified",
+      "review_note": "source has explicit atlas destination and budget class"
+    }
+  ],
+  "interpretation": "This is a coverage certificate for listed failure modes. It verifies that each listed source has evidence and a legal atlas/budget destination; it does not prove that no unlisted source exists beyond the audited sections."
+}

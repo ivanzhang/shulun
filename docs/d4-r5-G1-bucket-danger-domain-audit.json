@@ -1,0 +1,35 @@
+{
+  "certificate_type": "D4_R5_G1_bucket_danger_domain_audit",
+  "status": "two_block_coarsening_insufficient_need_three_or_six_bucket_constraints",
+  "target_Q_over_S2": 0.015625,
+  "rows_seen": 1801,
+  "two_block_violations": 16,
+  "worst_high_mass_margin": {
+    "source": "docs/d4-r5-O2-caseA-neighborhood-1023000-1023800-step1.json",
+    "x": 1023403,
+    "low_mass_tau_le_16": 0.5994272832842551,
+    "high_mass_tau_ge_17": 0.40057271671574496,
+    "low_count_tau_le_16": 78,
+    "high_count_tau_ge_17": 15,
+    "required_high_mass_for_2block_target": 0.4088722811775605,
+    "high_mass_margin": -0.008299564461815567,
+    "two_block_cauchy": 0.015303811219309122
+  },
+  "worst_two_block_cauchy": {
+    "source": "docs/d4-r5-O2-caseA-neighborhood-1023000-1023800-step1.json",
+    "x": 1023403,
+    "low_mass_tau_le_16": 0.5994272832842551,
+    "high_mass_tau_ge_17": 0.40057271671574496,
+    "low_count_tau_le_16": 78,
+    "high_count_tau_ge_17": 15,
+    "required_high_mass_for_2block_target": 0.4088722811775605,
+    "high_mass_margin": -0.008299564461815567,
+    "two_block_cauchy": 0.015303811219309122
+  },
+  "structural_conclusion": "把六个 tau 桶粗并为 low=tau<=16 与 high=tau>=17 后，Cauchy 下界会丢失过多结构，样本中已有二块下界低于 1/64 的记录。因此正式证明不能只用一个高 tau 总质量条件；必须保留三到六桶的层叠约束，尤其是 tau_17_32 与 tau_33_59/heavy_short 的小支撑高质量效应。",
+  "next_proof_target": [
+    "保留六桶 Cauchy 形式 sum_i m_i^2/n_i，而不是二块粗并。",
+    "证明每个 n 向量对应的危险单纯形与 tau 几何质量约束不相交。",
+    "优先提取可证的相邻桶迁移约束：若低桶支撑数大，则中高桶质量下界同步抬升。"
+  ]
+}

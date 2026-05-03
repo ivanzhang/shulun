@@ -1,0 +1,211 @@
+{
+  "certificate_type": "D4-R5-fourpoint-fixed-target-template-proof",
+  "statement": "In the minimal valley box, the fixed target cluster either exits L>=0.35 or has positive potential.",
+  "dependencies": [
+    "docs/d4-r5-valley-fourpoint-fixed-targets.json",
+    "docs/d4-r5-valley-fixed-target-overlap-band.json",
+    "docs/d4-r5-valley-fixed-target-overlap-band-rows.json",
+    "docs/d4-r5-valley-fourpoint-local-table.json"
+  ],
+  "proof_steps": [
+    {
+      "step": "fixed_target_templates",
+      "claim": "Five fixed target integers carry the short atoms.",
+      "data": [
+        {
+          "n": 1088388,
+          "h_range": [
+            13,
+            18
+          ],
+          "a_template": [
+            18,
+            21,
+            36,
+            42,
+            49,
+            63,
+            84,
+            126,
+            147,
+            252
+          ],
+          "W_range": [
+            84,
+            88
+          ],
+          "N_range": [
+            10,
+            11
+          ]
+        },
+        {
+          "n": 1088400,
+          "h_range": [
+            25,
+            30
+          ],
+          "a_template": [
+            30,
+            40,
+            48,
+            60,
+            80,
+            120,
+            200,
+            240,
+            300
+          ],
+          "W_range": [
+            114,
+            114
+          ],
+          "N_range": [
+            9,
+            9
+          ]
+        },
+        {
+          "n": 1088472,
+          "h_range": [
+            97,
+            102
+          ],
+          "a_template": [
+            124,
+            132,
+            133,
+            168,
+            209,
+            217,
+            248,
+            264,
+            266,
+            308,
+            341,
+            399
+          ],
+          "W_range": [
+            102,
+            102
+          ],
+          "N_range": [
+            12,
+            12
+          ]
+        },
+        {
+          "n": 1088544,
+          "h_range": [
+            169,
+            174
+          ],
+          "a_template": [
+            174,
+            184,
+            204,
+            272,
+            276,
+            348,
+            368,
+            391
+          ],
+          "W_range": [
+            76,
+            76
+          ],
+          "N_range": [
+            8,
+            8
+          ]
+        },
+        {
+          "n": 1088640,
+          "h_range": [
+            265,
+            270
+          ],
+          "a_template": [
+            270,
+            280,
+            288,
+            315,
+            320,
+            324,
+            336,
+            360,
+            378
+          ],
+          "W_range": [
+            151,
+            151
+          ],
+          "N_range": [
+            9,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "step": "overlap_band",
+      "claim": "The five h-ranges overlap only on x in [1088370,1088375].",
+      "data": [
+        1088370,
+        1088375
+      ]
+    },
+    {
+      "step": "mass_exit",
+      "claim": "Inside the six-point band, x=1088371 and x=1088372 have L<0.35 and exit high-mass branch.",
+      "data": [
+        {
+          "x": 1088371,
+          "L": 0.3476410847899721,
+          "potential": 0.00028023808703887126
+        },
+        {
+          "x": 1088372,
+          "L": 0.34530989925751365,
+          "potential": 0.00029427781586675254
+        }
+      ]
+    },
+    {
+      "step": "four_point_energy",
+      "claim": "The remaining four points have positive potential E2-L2/20.",
+      "data": [
+        {
+          "x": 1088370,
+          "L": 0.3502156391359381,
+          "E2": 0.006399251298918274,
+          "potential": 0.00026670160414859166,
+          "ratio": 0.05217447568648368
+        },
+        {
+          "x": 1088373,
+          "L": 0.35559642680142733,
+          "E2": 0.006420080528043943,
+          "potential": 9.763959034679928e-05,
+          "ratio": 0.05077216688387415
+        },
+        {
+          "x": 1088374,
+          "L": 0.35351293475048784,
+          "E2": 0.006420248250578183,
+          "potential": 0.00017167849878304935,
+          "ratio": 0.051373742357070824
+        },
+        {
+          "x": 1088375,
+          "L": 0.35181619973571737,
+          "E2": 0.006368007223572522,
+          "potential": 0.00017927530374841228,
+          "ratio": 0.05144840094926512
+        }
+      ]
+    }
+  ],
+  "min_positive_potential": 9.763959034679928e-05,
+  "status": "template proof skeleton for the four-point fixed target interface; still local to the R5 window constants."
+}

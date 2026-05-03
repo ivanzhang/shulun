@@ -1,0 +1,118 @@
+{
+  "certificate_type": "D4_R5_G1_unified_theoremization_audit",
+  "status": "reduced_to_two_analytic_lemmas_Aordinary_and_Anonordinary",
+  "target_Aeff": 18.113,
+  "rows_seen": 2000,
+  "worst_observed": {
+    "ordinary_ratio": {
+      "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+      "x": 1048300,
+      "L": 0.4408367526630766,
+      "ordinary_weight": 0.25494228505186817,
+      "nonordinary_weight": 0.18589446761120842,
+      "exceptional_l2_sqrt": 0.03476049050565637,
+      "ordinary_ratio": 7.33425453275416,
+      "nonordinary_ratio": 5.347866641322536,
+      "total_ratio": 12.682121174076697,
+      "nonordinary_count": 89,
+      "offset_count": 90,
+      "ordinary_count": 1
+    },
+    "nonordinary_ratio": {
+      "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+      "x": 1023400,
+      "L": 0.12864024379619862,
+      "ordinary_weight": 0.0,
+      "nonordinary_weight": 0.12864024379619862,
+      "exceptional_l2_sqrt": 0.019258766518065816,
+      "ordinary_ratio": 0.0,
+      "nonordinary_ratio": 6.6795681683729216,
+      "total_ratio": 6.6795681683729216,
+      "nonordinary_count": 93,
+      "offset_count": 93,
+      "ordinary_count": 0
+    },
+    "total_ratio": {
+      "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+      "x": 1048300,
+      "L": 0.4408367526630766,
+      "ordinary_weight": 0.25494228505186817,
+      "nonordinary_weight": 0.18589446761120842,
+      "exceptional_l2_sqrt": 0.03476049050565637,
+      "ordinary_ratio": 7.33425453275416,
+      "nonordinary_ratio": 5.347866641322536,
+      "total_ratio": 12.682121174076697,
+      "nonordinary_count": 89,
+      "offset_count": 90,
+      "ordinary_count": 1
+    },
+    "nonordinary_count": {
+      "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+      "x": 1012100,
+      "L": 0.31195558244075966,
+      "ordinary_weight": 0.0,
+      "nonordinary_weight": 0.31195558244075966,
+      "exceptional_l2_sqrt": 0.057438294735725884,
+      "ordinary_ratio": 0.0,
+      "nonordinary_ratio": 5.431142826855674,
+      "total_ratio": 5.431142826855674,
+      "nonordinary_count": 110,
+      "offset_count": 110,
+      "ordinary_count": 0
+    },
+    "offset_count": {
+      "source": "d4-r5-offset-layered-scan-1e6-1p1e6-step100-T60-full.json",
+      "x": 1012100,
+      "L": 0.31195558244075966,
+      "ordinary_weight": 0.0,
+      "nonordinary_weight": 0.31195558244075966,
+      "exceptional_l2_sqrt": 0.057438294735725884,
+      "ordinary_ratio": 0.0,
+      "nonordinary_ratio": 5.431142826855674,
+      "total_ratio": 5.431142826855674,
+      "nonordinary_count": 110,
+      "offset_count": 110,
+      "ordinary_count": 0
+    }
+  },
+  "recommended_constants": {
+    "scan_tight": {
+      "A_ordinary": 7.5,
+      "A_nonordinary": 6.75,
+      "A_total": 14.25,
+      "margin": 3.8629999999999995
+    },
+    "review_safe": {
+      "A_ordinary": 8.0,
+      "A_nonordinary": 8.0,
+      "A_total": 16.0,
+      "margin": 2.1129999999999995
+    },
+    "support_cauchy_if_N_le_102": {
+      "A_ordinary": 8.0,
+      "A_nonordinary": 10.099504938362077,
+      "A_total": 18.099504938362077,
+      "margin": 0.013495061637922134
+    },
+    "support_cauchy_if_N_le_110": {
+      "A_ordinary": 8.0,
+      "A_nonordinary": 10.488088481701515,
+      "A_total": 18.488088481701517,
+      "margin": -0.37508848170151765
+    }
+  },
+  "best_simple_passing_combo": {
+    "A_ordinary": 7.5,
+    "A_nonordinary": 6.75,
+    "A_total": 14.25,
+    "margin_to_18p113": 3.8629999999999995,
+    "passes": true
+  },
+  "structural_reduction": "统一 exceptional 路线可化为两个解析引理：ordinary_weight <= A_o E_G1 与 nonordinary_weight <= A_x E_G1。扫描最坏分别约 7.3343 与 6.6796；因此取 A_o=8, A_x=8 可给 A_eff=16，较 18.113 有约 2.113 余量。粗 Cauchy 支撑数路线若只知 N<=110 则 A_o+sqrt(N)>18.113，不足；所以非 ordinary 层应证明加权/有效支撑常数 A_x<=8，而不是只用裸支撑数上界。",
+  "analytic_obligations": [
+    "O1 ordinary 影子能量引理：证明 ordinary_weight <= 8 exceptional_l2_sqrt",
+    "O2 非 ordinary 有效支撑引理：证明 transition+short_chain+light <= 8 exceptional_l2_sqrt；已由 O2 审计压缩为 Neff<=64",
+    "O3 能量语义引理：证明 E_G1=exceptional_l2_sqrt 在递归尺度下与 D_* 定义同型，并可替代旧分层 E_*",
+    "O4 支付兼容引理：用 E_G1 改写后 stable payment telescope 的符号与望远镜求和不变"
+  ]
+}

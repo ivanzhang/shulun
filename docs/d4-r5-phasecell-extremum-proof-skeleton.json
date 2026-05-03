@@ -1,0 +1,26 @@
+{
+  "certificate_type": "D4-R5-phasecell-extremum-proof-skeleton",
+  "statement": "On a phase cell where floor data, divisibility templates, layer labels, and signs of contract kernels are fixed, R5 functionals reduce to finite smooth expressions whose extrema are covered by endpoints and derivative critical points.",
+  "phase_cell_data": [
+    "floor(x/a)",
+    "floor(2x/a)",
+    "divisibility pattern a|x+h for a,h<=400",
+    "layer membership of offsets",
+    "sign of each contract kernel Phi_a"
+  ],
+  "smooth_pieces": [
+    "Each fixed-a contract kernel has form x^{-3/4}(A+B x log x + C x) plus the old 2x analogue with fixed floors.",
+    "B_h is a finite sum over fixed a in an offset template.",
+    "L,U,V,S,Q are finite sums of B_h over fixed labels.",
+    "E2 is finite sum of squares B_h^2."
+  ],
+  "candidate_set": [
+    "phase cell endpoints",
+    "floor/divisibility boundary neighbors",
+    "sign-switch boundaries Phi_a=0",
+    "constraint boundaries such as U=0.16 or L=0.35",
+    "roots of derivative of the target functional on the smooth piece"
+  ],
+  "main_gap": "Need a rigorous finite root-count/isolating interval method for derivative equations of sums involving x^{-3/4}, log x, and squares of such sums.",
+  "possible_resolution": "Use interval arithmetic/Sturm-like monotonic subdivision: prove derivative has at most one root on each small cell or isolate all roots with certified signs."
+}

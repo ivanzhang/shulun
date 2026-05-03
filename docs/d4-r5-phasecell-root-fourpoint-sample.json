@@ -1,0 +1,83 @@
+{
+  "certificate_type": "D4-R5-phasecell-root-certificate-sample",
+  "status": "prototype: validates certificate shape, not full R5global closure",
+  "cell_interval": [
+    1088370,
+    1088375
+  ],
+  "block": [
+    1,
+    400
+  ],
+  "q": 0.958,
+  "boundary_count": 6,
+  "no_root_interval_count": 0,
+  "root_box_count": 0,
+  "coverage": "covered by integer phase boundaries plus open intervals between consecutive boundaries",
+  "best_boundary_value": {
+    "x": 1088374,
+    "contract": 0.15984634347232624,
+    "positive_contract": 0.15984634347232624
+  },
+  "boundary_boxes": [
+    {
+      "x": 1088370,
+      "type": "integer/floor boundary candidate"
+    },
+    {
+      "x": 1088371,
+      "type": "integer/floor boundary candidate"
+    },
+    {
+      "x": 1088372,
+      "type": "integer/floor boundary candidate"
+    },
+    {
+      "x": 1088373,
+      "type": "integer/floor boundary candidate"
+    },
+    {
+      "x": 1088374,
+      "type": "integer/floor boundary candidate"
+    },
+    {
+      "x": 1088375,
+      "type": "integer/floor boundary candidate"
+    }
+  ],
+  "no_root_subintervals": [],
+  "root_boxes": [],
+  "candidate_values": [
+    {
+      "x": 1088370,
+      "contract": 0.14289384050498793,
+      "positive_contract": 0.14289384050498793
+    },
+    {
+      "x": 1088371,
+      "contract": 0.13869649744923757,
+      "positive_contract": 0.13869649744923757
+    },
+    {
+      "x": 1088372,
+      "contract": 0.1348873407687417,
+      "positive_contract": 0.1348873407687417
+    },
+    {
+      "x": 1088373,
+      "contract": 0.1596326569539838,
+      "positive_contract": 0.1596326569539838
+    },
+    {
+      "x": 1088374,
+      "contract": 0.15984634347232624,
+      "positive_contract": 0.15984634347232624
+    },
+    {
+      "x": 1088375,
+      "contract": 0.15871147913768394,
+      "positive_contract": 0.15871147913768394
+    }
+  ],
+  "audit_note": "下一步需把 same-sign endpoint 升级为区间算术无根证明，并把层分类 L,E2,U,V,S,Q 接入同一候选框架。"
+}
