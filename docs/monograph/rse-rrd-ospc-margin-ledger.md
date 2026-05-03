@@ -109,3 +109,18 @@ E_{\rm dir}(q,r)=
 \]
 
 则 `RRD-low<=0.006`。因此 `RRD-low` 超预算只能来自 `OSPC*` 或加权 `CRTDefect`。下一步常数义务是证明该加权 CRT 缺陷界，或证明其失败进入 `Tail-anchor/CRTDefect`。
+
+## H5 接受矩阵
+
+新增 `docs/monograph/h5-rrd-ospc-proof-obligation-matrix.md`。该矩阵把本账本的四个总预算拆成六个验收项：
+
+```text
+H5.1 RRD-low dichotomy          <= 0.006
+H5.2 RRD-perp orthogonal bound  <= 0.012
+H5.3 RRD-conversion             <= 0.002
+H5.4 OSPC* exit                 <= 0.020
+H5.5 SelbergUniform             <= 0.008
+H5.6 LedgerRounding             <= 0.003
+```
+
+若六项全部成立，则总损失至多 `0.051`，严格小于可用余量 `0.053369509758272926`。当前最小硬点是 H5.1 的出口侧：证明 `RRD-low` 超预算必触发 `OSPC*` 或加权 `CRTDefect/Tail-anchor`。

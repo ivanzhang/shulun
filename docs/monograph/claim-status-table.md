@@ -370,3 +370,5 @@
 | 命题状态纪律 | H10状态工程完成第一版 | 新增 `docs/monograph/claim-status-discipline.md`，固定 `Proved-in-text`、`Reduction-closed`、`External-theorem closed`、`Computational-certificate`、`Referee-block`、`Not claimed` 六类状态的允许结论、必须附件、禁止越界和升级条件。主稿同步新增六类状态专用 theorem-like 环境，并在 `Claim Status Legend` 中补入 `Computational-certificate`。该项不升级任何数学终局，只防止条件链被误写成无条件定理。 |
 
 | Prime Matrix A/B入口定理清单 | H1入口归约闭合 | 新增 `docs/monograph/prime-matrix-ab-entrance-theorem-list.md`，把行/列反例入口整理为 `AB1--AB6`、`Theorem A`、`Theorem B`、`Corollary AB`，并固定小因子锁定、45度小因子锁定、Tail-log4尾部锚、主体双粗锚的剥离优先级。主稿中的 A/B reduction 已改用 `Reduction-closed Statement`。该项只完成反例到 `Structured-EHPD` 的入口归约，不证明 `Structured-EHPD` 不存在。 |
+
+| H5 RRD/OSPC验收矩阵 | 六项硬义务已定式化 | 新增 `docs/monograph/h5-rrd-ospc-proof-obligation-matrix.md`，把 `RRD/OSPC/SelbergUniform/round` 常数接口拆成 `RRD-low<=0.006`、`RRD-perp<=0.012`、`RRD-conversion<=0.002`、`OSPC<=0.020`、`SelbergUniform<=0.008`、`round<=0.003` 六项。文件给出 `H5-Acceptance`：六项成立则总损失 `0.051<0.053369509758272926`。当前仍未闭合 H5，最小硬点是 `RRD-low` 超预算推出 `OSPC*` 或加权 `CRTDefect/Tail-anchor`。 |
