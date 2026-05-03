@@ -55,10 +55,14 @@
 2. 对每个剥离步骤给出集合分解式，避免“解释层重叠”。
 3. 明确 Tail-log4 是输入还是已证引理。
 
+### 1.3A 本轮进展
+
+新增 `docs/monograph/prime-matrix-ab-entrance-theorem-list.md`。该清单把 A/B 入口整理为 `AB1--AB6`、`Theorem A`、`Theorem B` 与 `Corollary AB`，并固定剥离优先级、小因子/45度锁定/尾部锚/主体双粗层的不重不漏规则，以及 `ab-to-d-interface-match.md` 的五项 D 标准形式匹配。主稿中的 A/B reduction 已改为 `Reduction-closed Statement`。
+
 ### 1.4 可行性
 
-评级：A/B。
-这是归约定理化任务，不需要解决终局排斥。完成后只能得到入口闭合，不能推出行列命题。
+评级：A/B，作者侧入口定理化已完成。
+这只得到入口闭合，不能推出行列命题；终局仍转入 H2/H4/H5。
 
 ## 2. H2：Structured-EHPD / D 组终局排斥
 
@@ -467,9 +471,8 @@ TRC / true residual balance
 
 ### 11.1 可立即完成的工程闭合
 
-1. `H1`：A/B 入口附录转 theorem list；
-2. 给每个实验脚本建立用途索引；
-3. 把历史章节中的普通 theorem 环境逐步替换为状态专用环境。
+1. 给每个实验脚本建立用途索引；
+2. 把历史章节中的普通 theorem 环境逐步替换为状态专用环境。
 
 ### 11.2 最值得继续硬攻的数学接口
 

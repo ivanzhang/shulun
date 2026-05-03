@@ -61,11 +61,15 @@ Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
 \]
 The row and column programs attempt to show that every nontrivial row or column contains a prime.  The current formal appendix reduces a row or non-$P$ column counterexample to a structured bad configuration after removing small-factor locks and tail anchors.
 
-\begin{theorem}[A/B reduction, recorded form]
+\begin{reductionstatement}[A/B reduction, recorded form]
 A nontrivial full-composite row or column, after small-factor and tail-anchor peeling, induces a Structured-EHPD bad configuration satisfying CRT balance, large-factor non-reuse, and anchor-capacity constraints.
-\end{theorem}
+\end{reductionstatement}
 \begin{proof}[Reference]
-See \texttt{docs/row-column-reduction-formal-appendix.md}.  This theorem is a reduction statement; it does not by itself prove the Structured-EHPD exclusion theorem.
+See \texttt{docs/row-column-reduction-formal-appendix.md} and the theorem list
+\[
+  \texttt{docs/monograph/prime-matrix-ab-entrance-theorem-list.md}.
+\]
+This statement is a reduction interface; it does not by itself prove the Structured-EHPD exclusion theorem.
 \end{proof}
 
 
