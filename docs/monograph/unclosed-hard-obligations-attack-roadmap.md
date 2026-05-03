@@ -695,6 +695,10 @@ PDEC/ColumnCRT；数学任务是证明 formal 短平台不能长期避开这些�
 q 零行确实给出旧 p-筛 q 零窗，但旧周期零行数已偶，q 倍提升不产生矛盾。该路线的剩余可攻点
 是“早期缝合零窗排斥”，应并入 `SeamSafe/ASB/PDEC-or-SAE`。
 
+新增 `docs/monograph/prime-matrix-recursive-mirror-descent-audit.md` 后，继续向更小 CRT 周期递归
+也没有自动矛盾：剥层会复活洞，且固定宽度零行不能投影成小宽度方阵零行。下一最小硬点仍是
+早期 `q` 零窗的 seam-window 排斥，而不是全周期零行偶性。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

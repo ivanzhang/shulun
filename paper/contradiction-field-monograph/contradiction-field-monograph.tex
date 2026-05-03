@@ -685,6 +685,15 @@ $q$.  However, the old $p$-sieve row period already has an even number of zero r
 reflection symmetry, so multiplying the period by the odd factor $q$ preserves evenness and
 does not create a parity contradiction.  The retained conclusion is only the early-window
 dichotomy: an aligned lower zero row or a seam window routed to PDEC/SAE.
+The attempted recursive continuation is audited in
+\[
+  \texttt{docs/monograph/prime-matrix-recursive-mirror-descent-audit.md}.
+\]
+It separates three objects: zero rows in a full CRT period at fixed width $q$, zero rows after
+peeling the largest base prime, and zero rows in an actual smaller-width matrix.  These objects
+do not imply one another.  In the finite audit, full-period zero rows occur for several
+adjacent pairs, but no early $q^2$ zero row and no actual smaller matrix zero row is forced.
+The next usable gate remains seam-window exclusion, not recursive parity.
 The scaled-row and half-width version is audited in
 \[
   \texttt{docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md}.
