@@ -1011,6 +1011,17 @@ inside the lower $h\times h$ matrix.  The finite ledgers above again show full s
 in the same domains.  This motivates the sharper TailMirror-SMD gate: every genuine seam
 counterexample must hit such a lower head/tail phase, or its persistent non-hit phases
 must be routed to SAE, PDEC, or ColumnCRT.
+The all-branch version is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md}.
+\]
+It treats aligned containment, seam windows, and the terminal $q^2$ puncture by the same
+descent rule.  In the $p\le500$ ledger all $21936$ non-first $q$-rows, including $597$
+aligned rows and $21339$ seam rows, force a lower matrix head/tail phase.  In the
+deterministic $p\le2000$ sample all $11583$ checked rows do the same.  The remaining
+theorem-level statement is TotalDescent-TM: every genuine higher zero row must force a
+lower $h\times h$ zero row by periodicity or tail reflection, or else its non-hit phase
+set must enter SAE, PDEC, or ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

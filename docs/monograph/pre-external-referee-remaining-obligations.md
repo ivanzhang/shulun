@@ -316,6 +316,13 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `p<=2000` 抽样均为 `100%` 命中。剩余义务进一步收窄为证明全局 `TailMirror-SMD`，
 或把非命中相位集合接入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md` 与对应总审计后，外审前
+应把 aligned、seam、末行穿孔统一放入 `TotalDescent-TM`。有限账本中 `p<=500` 全量
+`21936/21936` 条非第一 `q` 行闭合，`p<=2000,row_stride=25` 抽样 `11583/11583`
+条闭合。正式稿剩余义务：逐行证明 `TotalDescent-TM`，或证明任意非命中相位集合必触发
+`SAE/PDEC/ColumnCRT`。不能把“与实证矛盾”写成最终逻辑；应写为“与有限基底验证和强归纳输入
+`Row(h)` 矛盾”。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

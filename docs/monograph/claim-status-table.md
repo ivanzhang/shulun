@@ -275,6 +275,16 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 全量 `p<=500` 与抽样 `p<=2000,row_stride=25` 均为 `100%` 命中，未命中数 `0`。当前最小硬点
 进一步压缩为 `TailMirror-SMD` 全局证明，或将非命中持久相位送入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md`、
+`docs/monograph/prime-matrix-total-zero-row-descent-audit.md/json`、
+`docs/monograph/prime-matrix-total-zero-row-descent-audit-p2000-sample.md/json` 与脚本
+`experiments/prime_matrix_total_zero_row_descent_audit.py` 后，aligned、seam、末行 `q^2` 穿孔、
+周期性和尾镜像已统一为总下降模型。全量 `p<=500` 检查 `21936` 条非第一 `q` 行，含
+`597` 条 aligned 与 `21339` 条 seam，全部强制命中某个小阶方阵零行；`p<=2000,row_stride=25`
+抽样 `11583` 条也全部命中，未闭合 `0`。当前总硬点精确更新为 `TotalDescent-TM`：
+证明任意真实高阶零行都存在满足头部/尾镜像相位条件的小阶强制零行，或证明非命中相位触发
+`SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

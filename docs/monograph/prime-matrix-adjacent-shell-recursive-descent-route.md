@@ -201,3 +201,8 @@ N_h-rho+1<=h。
 全量 `p<=500` 与抽样 `p<=2000` 的 seam 条件下降均 `100%` 命中。因此当前最窄形式不再是
 “强制零行是否绝对落入 h×h”，而是证明 `TailMirror-SMD` 的全局相位命中，或把非命中阻断
 路由到 `SAE/PDEC/ColumnCRT`。
+
+新增 `docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md` 后，上述接口已覆盖任意
+非第一 `q` 行：aligned 分支、seam 分支与末行 `q^2` 穿孔统一下降到 `h<=p`，再用 CRT 头部/尾镜像
+判据落入小阶方阵。有限账本中 `p<=500` 全量 `21936/21936` 与 `p<=2000` 抽样
+`11583/11583` 均闭合。当前全局硬点更新为 `TotalDescent-TM`。

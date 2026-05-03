@@ -435,3 +435,8 @@ P^-(n) in (h,p]
 `h×h` 方阵内条件零行。有限账本中 `p<=500` 全量与 `p<=2000` 抽样均 `100%` 命中。
 因此递归剥离路线的当前最小硬点进一步更新为 `TailMirror-SMD` 的全局证明，或非命中相位的
 `SAE/PDEC/ColumnCRT` 路由。
+
+新增 `docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md` 后，该路线被统一为
+`TotalDescent-TM`：任意非第一高阶 `q` 零行，无论初始是 aligned、seam 还是末行 `q^2` 穿孔，
+都在条件账本中下降到某个小阶 `h×h` 方阵零行。有限账本 `p<=500` 全量和 `p<=2000`
+抽样均未发现未闭合分支。正式证明仍需把 `TotalDescent-TM` 从账本升级为全局相位不等式。

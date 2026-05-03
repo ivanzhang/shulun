@@ -150,3 +150,18 @@ TailMirror-SMD:
    或把不发生的相位集合转入 `SAE/PDEC/ColumnCRT`。
 
 所以该路线不是“有限实验已经闭合”，而是把 seam guard 的剩余义务变成更窄的相位命中不等式。
+
+## 6. 总下降模型
+
+新增 `docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md` 后，尾镜像路线已从 seam
+分支扩展为任意非第一 `q` 行的统一模型。aligned 分支、seam 分支和末行 `q^2` 穿孔均按同一个
+复活集和相位命中条件处理。全量 `p<=500` 的 `21936` 条非第一 `q` 行和 `p<=2000` 抽样
+`11583` 条均命中小阶方阵头部或尾镜像相位，未闭合为 `0`。
+
+因此当前总目标应写成：
+
+```text
+TotalDescent-TM:
+任意高阶 q 零行都强制产生某个小阶 h×h 方阵零行；
+若失败，则非命中相位进入 SAE/PDEC/ColumnCRT。
+```

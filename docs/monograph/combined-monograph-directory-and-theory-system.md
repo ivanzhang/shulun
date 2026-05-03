@@ -1261,6 +1261,14 @@ CRT 周期镜像。对 `h` 层行周期 `N_h=M_h/h`，强制零行行号 `R` 的
 也有尾镜像相位。这把递归路线的最窄硬点更新为 `TailMirror-SMD`：证明真实 seam 反例必满足此
 相位命中，或证明非命中持久阻断必触发 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md` 后，递归路线不再只覆盖
+seam 分支，而是统一覆盖任意非第一 `q` 行。总模型从相邻壳层单点性出发，把假想 `q` 零行转为
+旧 `p`-筛零窗，末行允许 `q^2` 穿孔；再对所有 `h<=p` 检查复活集
+`P^-(n)∈(h,p]`、完整 `h` 行和 CRT 头部/尾镜像命中。全量 `p<=500` 的 `21936`
+条非第一 `q` 行与 `p<=2000` 抽样 `11583` 条均闭合，未闭合 `0`。合著稿当前应把该路线命名为
+`TotalDescent-TM`：若它全局成立，则强归纳给出行命题；若不成立，非命中相位必须进入
+`SAE/PDEC/ColumnCRT`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
