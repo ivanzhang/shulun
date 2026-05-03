@@ -75,7 +75,7 @@
 
 新增 `docs/monograph/prime-matrix-bpn-colored-corridor-core-sieve-budget.md`。着色不相交走廊预算已严写为有限 Rankin smooth-core 账本：`N_K(C)<=(2D0)^s sum_{d in C} sigma_K(d)/d^s`。这一步校正了不能把 rough-number Selberg 下界误用于 smooth squarefree core 计数的问题。当前剩余进一步变为：`PDEC-or-SAE` 排斥、有限 Rankin smooth-core ledger 常数闭合、以及 low-mod core CRTDefect 排斥。
 
-新增脚本 `experiments/prime_matrix_bpn_rankin_ledger_certificate_audit.py` 与报告 `docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.md/json`。有限 Rankin 账本现有可执行证书格式：输入 `P,K,intervals,phase_moduli`，输出精确 smooth-core 数、Rankin 最优网格与低模相位尖峰。默认合成样本 `P=1009,K=9`、总宽度 `256` 中精确 core 数为 `39`，低模 `210` 的最大相位比均匀模型约 `16.153846`。这说明若正式证书常数超预算，low-mod core CRTDefect 是实际可抽取的出口。
+新增脚本 `experiments/prime_matrix_bpn_rankin_ledger_certificate_audit.py` 与报告 `docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.md`、`docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json`。有限 Rankin 账本现有可执行证书格式：输入 `P,K,intervals,phase_moduli`，输出精确 smooth-core 数、Rankin 最优网格与低模相位尖峰。默认合成样本 `P=1009,K=9`、总宽度 `256` 中精确 core 数为 `39`，低模 `210` 的最大相位比均匀模型约 `16.153846`。这说明若正式证书常数超预算，low-mod core CRTDefect 是实际可抽取的出口。
 
 新增 `docs/monograph/prime-matrix-bpn-lowmod-core-crtdefect-bridge.md`。low-mod core CRTDefect 已严格桥接到有限 Fourier/CRT 缺陷：若 residue 尖峰 `N_b-N/Q>=eta`，则存在非平凡角色 `h` 使 `|sum_d sigma_K(d)e_Q(hd)|>=eta`。持续出现进入 `PDEC`，孤立出现进入 `SAE-core`。因此 low-mod core CRTDefect 不再是独立剩余出口，当前 BPN-BK 剩余压缩为 `PDEC-or-SAE` 排斥与 finite Rankin smooth-core ledger 常数闭合。
 
@@ -317,7 +317,7 @@
 
 | `q|w` 局部塌缩刚性 | 已纳入/不闭合RB-TLI | `docs/monograph/two-point-secondary-sieve-research.md` 第 395--400 节新增分析。若奇素 `q|w`，二禁类 `{0,w}` 合并为一禁类，局部密度由 `1-2/q` 改为 `1-1/q`，相对最硬情形增益 `(q-1)/(q-2)`；固定 `w` 后形成有限奇异因子。该刚性增大绝对候选密度、削弱小素同步峰、改善有限阈值。但对 TLI/RB-TLI 的相对主项，分子 `A_p` 与分母 `|U_Y|` 同乘正确的 `V_w(Y)`，故主常数仍为 `2log(1/alpha)`，取 `alpha=3/4` 仍是 `2log(4/3)`。最硬全称情形仍为 `w=2`，RB-TLI 尚未因此无条件闭合。 |
 
-| `w=2` RB-TLI数值刚性 | 新框架BST/未闭合 | 新增 `experiments/rb_tli_w2_scan.py`，并生成 `docs/rb-tli-w2-scan*.{json,md}`。`docs/monograph/two-point-secondary-sieve-research.md` 第 401--407 节记录实验与新刚性：当 `alpha>2/3` 时，任意大因子命中 `p|x` 或 `p|(x-2)` 都强制互补商为素数，故命中等价于素商半素数转移。真实均值不服从 naive `2log(1/alpha)`，而服从 Buchstab 条件主常数 `K(alpha)=2log((2-alpha)/alpha)/(1+log((2-alpha)/alpha))`。实验：`alpha=3/4, P=10007` 得 `E_U D=0.691696`, `K=0.676220`, `D=0` 比例 `0.458678`；`alpha=0.80` 得 `E_U D=0.589679`, `K=0.576984`；`alpha=0.85` 得 `E_U D=0.477321`, `K=0.464233`。最终硬点升级为 BST（二点 Buchstab 半素数转移稳定性），尚未无条件证明。 |
+| `w=2` RB-TLI数值刚性 | 新框架BST/未闭合 | 新增 `experiments/rb_tli_w2_scan.py`，并生成 `docs/rb-tli-w2-scan.md`、`docs/rb-tli-w2-scan.json`、`docs/rb-tli-w2-scan-large.md`、`docs/rb-tli-w2-scan-large.json`。`docs/monograph/two-point-secondary-sieve-research.md` 第 401--407 节记录实验与新刚性：当 `alpha>2/3` 时，任意大因子命中 `p|x` 或 `p|(x-2)` 都强制互补商为素数，故命中等价于素商半素数转移。真实均值不服从 naive `2log(1/alpha)`，而服从 Buchstab 条件主常数 `K(alpha)=2log((2-alpha)/alpha)/(1+log((2-alpha)/alpha))`。实验：`alpha=3/4, P=10007` 得 `E_U D=0.691696`, `K=0.676220`, `D=0` 比例 `0.458678`；`alpha=0.80` 得 `E_U D=0.589679`, `K=0.576984`；`alpha=0.85` 得 `E_U D=0.477321`, `K=0.464233`。最终硬点升级为 BST（二点 Buchstab 半素数转移稳定性），尚未无条件证明。 |
 
 | BST误差细分审查 | 压缩为BST-2/未闭合 | `experiments/rb_tli_w2_scan.py` 已增强壳层与两侧协方差指标，`docs/rb-tli-w2-scan-large.md` 更新结果。`docs/monograph/two-point-secondary-sieve-research.md` 第 408--413 节记录新刚性：`P=10007, alpha=3/4` 各壳层实际命中与 Buchstab 壳层期望接近；两侧协方差约 `-0.000093`；`D=0` 个数在 `alpha=0.75,0.80,0.85` 下均为 `201481`，说明最终幸存集与截断无关；端点类型在 `alpha>2/3` 下严格为“素数/单半素数/双半素数”三类。最后硬点进一步压缩为 BST-2：证明移位双素变量 `pm-2` 的 `Y`-rough 稳定性，即二点条件不造成 Buchstab 半素数主项常数级正放大。 |
 

@@ -1,0 +1,26 @@
+{
+  "certificate_type": "prime_matrix_asb_hard_attack",
+  "status": "asb_reduced_to_relative_high_prime_point_coverage",
+  "core_reduction": {
+    "asb_fail": "A sampled q-row window J=[(s-1)q+1,sq] has no primes.",
+    "low_sifted_set": "R_z(J)={n in J : gcd(n, prod_{ell<=z} ell)=1}, z=p^alpha.",
+    "cover_lower_bound": "ASB-Fail implies |R_z(J)| <= |D_z(J)|, where D_z(J)=union_{z<ell<=p}(R_z(J) cap ell Z).",
+    "target_upper_bound": "|D_z(J)| <= (1-eta)|R_z(J)|.",
+    "incidence_correction": "Raw incidence sum_{z<ell<=p}|R_z(J) cap ell Z| can exceed |R_z(J)| in samples, so the target must be point coverage or incidence minus duplicate energy."
+  },
+  "parameter_window": {
+    "heuristic_high_prime_ratio": "sum_{p^alpha<ell<=p} 1/ell ~ log(1/alpha)",
+    "coverage_margin_condition": "alpha > exp(-1)",
+    "linear_sieve_positive_range": "alpha < 1/2",
+    "nonempty_window": "exp(-1) < alpha < 1/2"
+  },
+  "next_target": "RPD-or-CRTDefect: prove |R_z(J) cap P| >= eta |R_z(J)| on all sampled ASB windows, or show failure triggers CRTDefect/Tail-anchor/OSPC.",
+  "rigidity_inputs": [
+    "adjacent coprimality",
+    "old/new row double blocking",
+    "CRT drift r_s=(s-1)(q-p) mod p",
+    "low-prime slope locks removed before high-prime incidence",
+    "square bound n<=p^2 ensures every composite has a prime factor <=p"
+  ],
+  "review_conclusion": "Do not claim ASB proved yet. ASB-RHC is equivalent to positive prime density inside the low-sifted set R_z(J). The remaining hard point is RPD-or-CRTDefect, not raw incidence."
+}

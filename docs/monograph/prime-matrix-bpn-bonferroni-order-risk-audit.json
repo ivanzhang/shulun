@@ -1,0 +1,110 @@
+{
+  "certificate_type": "prime_matrix_bpn_bonferroni_order_risk_audit",
+  "status": "fixed_order_bonferroni_has_asymptotic_risk",
+  "sample_rows": [
+    {
+      "p": 251,
+      "min_s5": 17,
+      "prime_like": 18,
+      "high_omega_penalty": 1,
+      "penalty_over_prime_like": 0.05555555555555555,
+      "lambda_loglog_p2": 2.402512404536945,
+      "s5_model_partial": -0.10655753122431932
+    },
+    {
+      "p": 503,
+      "min_s5": 28,
+      "prime_like": 29,
+      "high_omega_penalty": 1,
+      "penalty_over_prime_like": 0.034482758620689655,
+      "lambda_loglog_p2": 2.5210119654626504,
+      "s5_model_partial": -0.17920820674217963
+    },
+    {
+      "p": 1009,
+      "min_s5": 49,
+      "prime_like": 52,
+      "high_omega_penalty": 3,
+      "penalty_over_prime_like": 0.057692307692307696,
+      "lambda_loglog_p2": 2.6270881294386044,
+      "s5_model_partial": -0.256253251526237
+    },
+    {
+      "p": 2003,
+      "min_s5": 96,
+      "prime_like": 113,
+      "high_omega_penalty": 17,
+      "penalty_over_prime_like": 0.1504424778761062,
+      "lambda_loglog_p2": 2.72161134316492,
+      "s5_model_partial": -0.33621276903175445
+    },
+    {
+      "p": 5003,
+      "min_s5": 177,
+      "prime_like": 272,
+      "high_omega_penalty": 95,
+      "penalty_over_prime_like": 0.3492647058823529,
+      "lambda_loglog_p2": 2.8353044516351913,
+      "s5_model_partial": -0.4488671699812452
+    },
+    {
+      "p": 10007,
+      "min_s5": 236,
+      "prime_like": 505,
+      "high_omega_penalty": 269,
+      "penalty_over_prime_like": 0.5326732673267327,
+      "lambda_loglog_p2": 2.9135499589880447,
+      "s5_model_partial": -0.5383402117575933
+    }
+  ],
+  "model_rows": [
+    {
+      "odd_order": 3,
+      "first_root_lambda": 1.5960716379833215,
+      "model_threshold_log_P": 2.4668066438122183,
+      "model_threshold_log10_P": 1.0713205133299266
+    },
+    {
+      "odd_order": 5,
+      "first_root_lambda": 2.1806071240351255,
+      "model_threshold_log_P": 4.425839347287538,
+      "model_threshold_log10_P": 1.9221176063172674
+    },
+    {
+      "odd_order": 7,
+      "first_root_lambda": 2.7590027099622727,
+      "model_threshold_log_P": 7.892046888420824,
+      "model_threshold_log10_P": 3.427472414562892
+    },
+    {
+      "odd_order": 9,
+      "first_root_lambda": 3.333551485269055,
+      "model_threshold_log_P": 14.018870357411533,
+      "model_threshold_log10_P": 6.088318038740896
+    },
+    {
+      "odd_order": 11,
+      "first_root_lambda": 3.9054517576169054,
+      "model_threshold_log_P": 24.836257390568676,
+      "model_threshold_log10_P": 10.786249535852832
+    },
+    {
+      "odd_order": 15,
+      "first_root_lambda": 5.04388707261351,
+      "model_threshold_log_P": 77.5358098369476,
+      "model_threshold_log10_P": 33.673374362086214
+    },
+    {
+      "odd_order": 21,
+      "first_root_lambda": 6.743090893663457,
+      "model_threshold_log_P": 424.08915871037055,
+      "model_threshold_log10_P": 184.1795814629063
+    }
+  ],
+  "structural_conclusion": "固定五阶 S5 在样本中仍为正，但固定阶 Bonferroni 不是稳健终局。小素因子个数的自然尺度 log log(P^2) 无界增长；任意固定奇阶截断的指数多项式模型都会在足够大参数处变号。因此下一步应升级为可变阶 BK 或 Selberg/Brun 带权筛。",
+  "next_obligations": [
+    "将 BPN-B5 改写为 BPN-BK：K 随 log log P 缓慢增长。",
+    "或构造 Selberg/Brun 非负筛权，避免固定阶截断的渐近变号。",
+    "Core6-Density-or-TailAnchor 仍可作为低阶失败时的缺陷出口。"
+  ]
+}

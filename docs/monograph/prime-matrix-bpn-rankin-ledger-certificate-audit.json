@@ -1,0 +1,63 @@
+{
+  "certificate_type": "prime_matrix_bpn_rankin_ledger_certificate_audit",
+  "status": "finite_rankin_ledger_computable_with_lowmod_residue_report",
+  "p": 1009,
+  "k": 9,
+  "intervals": [
+    [
+      127260,
+      127323
+    ],
+    [
+      254520,
+      254583
+    ],
+    [
+      509040,
+      509103
+    ],
+    [
+      763560,
+      763623
+    ]
+  ],
+  "total_width": 256,
+  "core_count_exact": 39,
+  "core_density_in_corridors": 0.15234375,
+  "omega_hist": {
+    "2": 6,
+    "3": 13,
+    "4": 14,
+    "5": 4,
+    "6": 2
+  },
+  "rankin_best_grid": {
+    "s": 0.05,
+    "rankin_ledger": 39.000256537659695
+  },
+  "allowed_budget": 40.0,
+  "rankin_budget_pass": true,
+  "exact_budget_pass": true,
+  "rankin_over_exact": 1.0000065778887102,
+  "phase_reports": [
+    {
+      "modulus": 30,
+      "total": 39,
+      "max_residue": 3,
+      "max_count": 4,
+      "uniform_expected": 1.3,
+      "max_excess": 2.7,
+      "max_ratio_to_uniform": 3.0769230769230766
+    },
+    {
+      "modulus": 210,
+      "total": 39,
+      "max_residue": 33,
+      "max_count": 3,
+      "uniform_expected": 0.18571428571428572,
+      "max_excess": 2.814285714285714,
+      "max_ratio_to_uniform": 16.153846153846153
+    }
+  ],
+  "review_conclusion": "有限走廊证书可精确计算 smooth-core 计数，并给出 Rankin 账本和低模相位尖峰。若 Rankin 账本无法进入允许预算，下一步应调参或把最大相位尖峰登记为 low-mod core CRTDefect。"
+}

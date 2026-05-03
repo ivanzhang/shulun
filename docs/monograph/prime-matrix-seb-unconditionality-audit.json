@@ -1,0 +1,24 @@
+{
+  "certificate_type": "prime_matrix_seb_unconditionality_audit",
+  "status": "seb_too_strong_reduce_to_arithmetic_seam_barrier",
+  "main_findings": {
+    "seb_gap_identity": "For the p-row boundary tp, sigma_t + pi_{t+1} = B_t - A_t - 1, where A_t and B_t are the adjacent primes bracketing tp.",
+    "row_p_insufficiency": "Row(p) only gives sigma_t + pi_{t+1} <= 2p-2, while SEB needs sigma_t + pi_{t+1} < q=p+g.",
+    "gap_barrier": "A direct uniform proof of SEB is close to proving G(p^2) <= q, a Legendre-scale prime-gap input not supplied by current unconditional tools.",
+    "replacement_target": "Use ASB(p,q), the arithmetic sampled endpoint barrier, instead of global SEB."
+  },
+  "asb_definition": {
+    "g": "q-p",
+    "r_s": "(s-1)q mod p = (s-1)g mod p",
+    "t_s": "floor((s-1)q/p)+1",
+    "condition": "for every relevant s with r_s>g, sigma_{t_s}<p-r_s or pi_{t_s+1}<r_s+g",
+    "failure": "sigma_{t_s}>=p-r_s and pi_{t_s+1}>=r_s+g"
+  },
+  "recommended_chain": "Row(p) + ASB(p,q) + Annulus(p,q) => Row(q)",
+  "next_obligations": [
+    "Formalize ASB-Fail as a q-row empty-window contradiction pattern.",
+    "Exploit the drift residues r_s=(s-1)(q-p) mod p rather than all p-row boundaries.",
+    "Use CRT phase, local slope-cover capacity, adjacent-coprimality, and row/column duality to bound ASB-Fail coverage.",
+    "Keep SEB as a diagnostic sufficient condition, not as the unconditional minimal target."
+  ]
+}

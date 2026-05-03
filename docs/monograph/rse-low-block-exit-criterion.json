@@ -1,0 +1,28 @@
+{
+  "certificate_type": "rse_low_block_exit_criterion",
+  "status": "algebraic_exit_criterion_remaining_crt_weighted_bound",
+  "source": "docs/monograph/rse-rrd-low-projection-dichotomy.json",
+  "parameters": {
+    "epsilon_low": 0.006,
+    "delta_dir": 0.25,
+    "allowed_weighted_crt_defect": 0.005366563145999495
+  },
+  "criterion": {
+    "no_ospc": "for every low block B(q,r), E_dir(B) <= 1+delta_dir",
+    "no_crtdefect": "sum_B kappa_B * m_B <= epsilon_low/sqrt(1+delta_dir)",
+    "conclusion": "|E_low| <= epsilon_low",
+    "contrapositive": "|E_low| > epsilon_low implies OSPC* or weighted CRTDefect"
+  },
+  "definitions": {
+    "m_B": "low-block absolute mass share after same-weight normalization; sum_B m_B <= 1 after block partition",
+    "kappa_B": "normalized CRT residue discrepancy of the true rough residual on block B",
+    "E_dir_B": "(r-1) sum_a |C_{B,a}|^2 / A_B^2, where A_B is pre-cancellation absolute mass",
+    "weighted_CRTDefect": "sum_B kappa_B*m_B"
+  },
+  "next_obligations": [
+    "证明低模字典可分解为有限近正交块，且 Gram 损失并入 RRD-conversion。",
+    "证明若某块 E_dir(B)>1+delta_dir，则进入 OSPC* 出口。",
+    "证明若加权 CRT 缺陷和超过 allowed_weighted_crt_defect，则进入 CRTDefect/Tail-anchor 出口。",
+    "若上述两出口均不发生，则由 Cauchy--Schwarz 得 |E_low|<=epsilon_low。"
+  ]
+}

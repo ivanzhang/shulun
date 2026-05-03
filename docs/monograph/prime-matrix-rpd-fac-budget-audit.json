@@ -1,0 +1,730 @@
+{
+  "certificate_type": "prime_matrix_rpd_fac_budget_audit",
+  "status": "first_anchor_fac_budget_numerical_pressure_audit",
+  "parameters": {
+    "max_p": 2000,
+    "alpha": 0.43,
+    "tail_fraction": 0.25,
+    "keep": 40,
+    "etas": [
+      0.1,
+      0.18
+    ]
+  },
+  "fac_budget": {
+    "window_count": 40,
+    "rough_count": 2002,
+    "prime_count": 548,
+    "composite_count": 1454,
+    "fac_capacity": 7086,
+    "fac_actual_rough_cofactor": 1454,
+    "fac_identity_gap": 0,
+    "mertens_model": 1075.2560570968162,
+    "global_required_constant": 1.3522360468498915,
+    "global_allowed_constants": {
+      "0.1": 1.6756938852917018,
+      "0.18": 1.5267433177102174
+    },
+    "global_prime_ratio": 0.27372627372627373,
+    "global_composite_ratio": 0.7262737262737263,
+    "buckets": [
+      {
+        "bucket": "[0.50,0.60)",
+        "anchor_interval_count": 113,
+        "capacity": 1447,
+        "actual_rough_cofactor": 289,
+        "mertens_model": 252.63937120025543,
+        "actual_density": 0.19972356599861782,
+        "required_constant": 1.1439230497883215
+      },
+      {
+        "bucket": "[0.60,2/3)",
+        "anchor_interval_count": 102,
+        "capacity": 817,
+        "actual_rough_cofactor": 147,
+        "mertens_model": 125.27681563929916,
+        "actual_density": 0.1799265605875153,
+        "required_constant": 1.1734014729688445
+      },
+      {
+        "bucket": "[0.80,0.90)",
+        "anchor_interval_count": 428,
+        "capacity": 1038,
+        "actual_rough_cofactor": 221,
+        "mertens_model": 119.28710725896592,
+        "actual_density": 0.21290944123314065,
+        "required_constant": 1.8526729759673093
+      },
+      {
+        "bucket": "[0.90,1.01)",
+        "anchor_interval_count": 603,
+        "capacity": 863,
+        "actual_rough_cofactor": 197,
+        "mertens_model": 89.95623570842088,
+        "actual_density": 0.22827346465816917,
+        "required_constant": 2.189953797517104
+      },
+      {
+        "bucket": "[2/3,0.80)",
+        "anchor_interval_count": 337,
+        "capacity": 1566,
+        "actual_rough_cofactor": 301,
+        "mertens_model": 208.57952478773316,
+        "actual_density": 0.1922094508301405,
+        "required_constant": 1.4430946676396983
+      },
+      {
+        "bucket": "[α,0.50)",
+        "anchor_interval_count": 64,
+        "capacity": 1355,
+        "actual_rough_cofactor": 299,
+        "mertens_model": 279.517002502142,
+        "actual_density": 0.22066420664206643,
+        "required_constant": 1.069702369886099
+      }
+    ],
+    "worst_required_constant_windows": [
+      {
+        "p": 53,
+        "q": 59,
+        "q_row": 43,
+        "left": 2479,
+        "right": 2537,
+        "rough_count": 16,
+        "prime_count": 3,
+        "composite_count": 13,
+        "fac_capacity": 38,
+        "fac_actual_rough_cofactor": 13,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.666435312280977,
+        "required_constant": 1.695703344574643,
+        "allowed_constants": {
+          "0.1": 1.8783175509134507,
+          "0.18": 1.711355990832255
+        },
+        "prime_ratio": 0.1875,
+        "composite_ratio": 0.8125,
+        "model_share_of_rough": 0.47915220701756106
+      },
+      {
+        "p": 103,
+        "q": 107,
+        "q_row": 94,
+        "left": 9952,
+        "right": 10058,
+        "rough_count": 24,
+        "prime_count": 6,
+        "composite_count": 18,
+        "fac_capacity": 68,
+        "fac_actual_rough_cofactor": 18,
+        "fac_identity_gap": 0,
+        "mertens_model": 11.694274910341658,
+        "required_constant": 1.5392147130115752,
+        "allowed_constants": {
+          "0.1": 1.8470576556138905,
+          "0.18": 1.6828747528926555
+        },
+        "prime_ratio": 0.25,
+        "composite_ratio": 0.75,
+        "model_share_of_rough": 0.4872614545975691
+      },
+      {
+        "p": 37,
+        "q": 41,
+        "q_row": 33,
+        "left": 1313,
+        "right": 1353,
+        "rough_count": 14,
+        "prime_count": 3,
+        "composite_count": 11,
+        "fac_capacity": 29,
+        "fac_actual_rough_cofactor": 11,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.249347750604245,
+        "required_constant": 1.5173778908706832,
+        "allowed_constants": {
+          "0.1": 1.7380874022700552,
+          "0.18": 1.5835907442904948
+        },
+        "prime_ratio": 0.21428571428571427,
+        "composite_ratio": 0.7857142857142857,
+        "model_share_of_rough": 0.5178105536145889
+      },
+      {
+        "p": 71,
+        "q": 73,
+        "q_row": 67,
+        "left": 4819,
+        "right": 4891,
+        "rough_count": 20,
+        "prime_count": 5,
+        "composite_count": 15,
+        "fac_capacity": 51,
+        "fac_actual_rough_cofactor": 15,
+        "fac_identity_gap": 0,
+        "mertens_model": 9.906235251750136,
+        "required_constant": 1.5141978379071857,
+        "allowed_constants": {
+          "0.1": 1.8170374054886227,
+          "0.18": 1.6555229694451898
+        },
+        "prime_ratio": 0.25,
+        "composite_ratio": 0.75,
+        "model_share_of_rough": 0.4953117625875068
+      },
+      {
+        "p": 47,
+        "q": 53,
+        "q_row": 35,
+        "left": 1803,
+        "right": 1855,
+        "rough_count": 14,
+        "prime_count": 4,
+        "composite_count": 10,
+        "fac_capacity": 32,
+        "fac_actual_rough_cofactor": 10,
+        "fac_identity_gap": 0,
+        "mertens_model": 6.636183414568375,
+        "required_constant": 1.5068902372479727,
+        "allowed_constants": {
+          "0.1": 1.8986816989324455,
+          "0.18": 1.7299099923606727
+        },
+        "prime_ratio": 0.2857142857142857,
+        "composite_ratio": 0.7142857142857143,
+        "model_share_of_rough": 0.47401310104059824
+      },
+      {
+        "p": 137,
+        "q": 139,
+        "q_row": 103,
+        "left": 14179,
+        "right": 14317,
+        "rough_count": 32,
+        "prime_count": 9,
+        "composite_count": 23,
+        "fac_capacity": 92,
+        "fac_actual_rough_cofactor": 23,
+        "fac_identity_gap": 0,
+        "mertens_model": 15.633623948673101,
+        "required_constant": 1.471188003210997,
+        "allowed_constants": {
+          "0.1": 1.8421832388033352,
+          "0.18": 1.6784336175763723
+        },
+        "prime_ratio": 0.28125,
+        "composite_ratio": 0.71875,
+        "model_share_of_rough": 0.4885507483960344
+      },
+      {
+        "p": 109,
+        "q": 113,
+        "q_row": 89,
+        "left": 9945,
+        "right": 10057,
+        "rough_count": 25,
+        "prime_count": 7,
+        "composite_count": 18,
+        "fac_capacity": 71,
+        "fac_actual_rough_cofactor": 18,
+        "fac_identity_gap": 0,
+        "mertens_model": 12.273691329402102,
+        "required_constant": 1.4665514649924676,
+        "allowed_constants": {
+          "0.1": 1.8331893312405845,
+          "0.18": 1.6702391684636437
+        },
+        "prime_ratio": 0.28,
+        "composite_ratio": 0.72,
+        "model_share_of_rough": 0.4909476531760841
+      },
+      {
+        "p": 31,
+        "q": 37,
+        "q_row": 25,
+        "left": 889,
+        "right": 925,
+        "rough_count": 13,
+        "prime_count": 3,
+        "composite_count": 10,
+        "fac_capacity": 28,
+        "fac_actual_rough_cofactor": 10,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.054632342127296,
+        "required_constant": 1.4175083143999168,
+        "allowed_constants": {
+          "0.1": 1.6584847278479027,
+          "0.18": 1.5110638631503113
+        },
+        "prime_ratio": 0.23076923076923078,
+        "composite_ratio": 0.7692307692307693,
+        "model_share_of_rough": 0.5426640263174843
+      },
+      {
+        "p": 41,
+        "q": 43,
+        "q_row": 33,
+        "left": 1377,
+        "right": 1419,
+        "rough_count": 14,
+        "prime_count": 3,
+        "composite_count": 11,
+        "fac_capacity": 32,
+        "fac_actual_rough_cofactor": 11,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.7650321162186335,
+        "required_constant": 1.416607147963312,
+        "allowed_constants": {
+          "0.1": 1.6226590967579755,
+          "0.18": 1.4784227326017112
+        },
+        "prime_ratio": 0.21428571428571427,
+        "composite_ratio": 0.7857142857142857,
+        "model_share_of_rough": 0.5546451511584738
+      },
+      {
+        "p": 509,
+        "q": 521,
+        "q_row": 481,
+        "left": 250081,
+        "right": 250601,
+        "rough_count": 101,
+        "prime_count": 26,
+        "composite_count": 75,
+        "fac_capacity": 393,
+        "fac_actual_rough_cofactor": 75,
+        "fac_identity_gap": 0,
+        "mertens_model": 53.28605589808845,
+        "required_constant": 1.4074976790070608,
+        "allowed_constants": {
+          "0.1": 1.705887186956558,
+          "0.18": 1.5542527703381972
+        },
+        "prime_ratio": 0.25742574257425743,
+        "composite_ratio": 0.7425742574257426,
+        "model_share_of_rough": 0.5275847118622619
+      },
+      {
+        "p": 79,
+        "q": 83,
+        "q_row": 59,
+        "left": 4815,
+        "right": 4897,
+        "rough_count": 22,
+        "prime_count": 6,
+        "composite_count": 16,
+        "fac_capacity": 58,
+        "fac_actual_rough_cofactor": 16,
+        "fac_identity_gap": 0,
+        "mertens_model": 11.36970033872095,
+        "required_constant": 1.4072490499604444,
+        "allowed_constants": {
+          "0.1": 1.74147069932605,
+          "0.18": 1.5866733038304013
+        },
+        "prime_ratio": 0.2727272727272727,
+        "composite_ratio": 0.7272727272727273,
+        "model_share_of_rough": 0.5168045608509523
+      },
+      {
+        "p": 569,
+        "q": 571,
+        "q_row": 439,
+        "left": 250099,
+        "right": 250669,
+        "rough_count": 109,
+        "prime_count": 27,
+        "composite_count": 82,
+        "fac_capacity": 431,
+        "fac_actual_rough_cofactor": 82,
+        "fac_identity_gap": 0,
+        "mertens_model": 58.473276714342965,
+        "required_constant": 1.4023500068345947,
+        "allowed_constants": {
+          "0.1": 1.6776894593960212,
+          "0.18": 1.5285615074497083
+        },
+        "prime_ratio": 0.24770642201834864,
+        "composite_ratio": 0.7522935779816514,
+        "model_share_of_rough": 0.5364520799481006
+      }
+    ],
+    "worst_prime_ratio_windows": [
+      {
+        "p": 53,
+        "q": 59,
+        "q_row": 43,
+        "left": 2479,
+        "right": 2537,
+        "rough_count": 16,
+        "prime_count": 3,
+        "composite_count": 13,
+        "fac_capacity": 38,
+        "fac_actual_rough_cofactor": 13,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.666435312280977,
+        "required_constant": 1.695703344574643,
+        "allowed_constants": {
+          "0.1": 1.8783175509134507,
+          "0.18": 1.711355990832255
+        },
+        "prime_ratio": 0.1875,
+        "composite_ratio": 0.8125,
+        "model_share_of_rough": 0.47915220701756106
+      },
+      {
+        "p": 29,
+        "q": 31,
+        "q_row": 26,
+        "left": 776,
+        "right": 806,
+        "rough_count": 10,
+        "prime_count": 2,
+        "composite_count": 8,
+        "fac_capacity": 23,
+        "fac_actual_rough_cofactor": 8,
+        "fac_identity_gap": 0,
+        "mertens_model": 5.729139384866939,
+        "required_constant": 1.3963702857590368,
+        "allowed_constants": {
+          "0.1": 1.5709165714789164,
+          "0.18": 1.431279542903013
+        },
+        "prime_ratio": 0.2,
+        "composite_ratio": 0.8,
+        "model_share_of_rough": 0.5729139384866939
+      },
+      {
+        "p": 37,
+        "q": 41,
+        "q_row": 33,
+        "left": 1313,
+        "right": 1353,
+        "rough_count": 14,
+        "prime_count": 3,
+        "composite_count": 11,
+        "fac_capacity": 29,
+        "fac_actual_rough_cofactor": 11,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.249347750604245,
+        "required_constant": 1.5173778908706832,
+        "allowed_constants": {
+          "0.1": 1.7380874022700552,
+          "0.18": 1.5835907442904948
+        },
+        "prime_ratio": 0.21428571428571427,
+        "composite_ratio": 0.7857142857142857,
+        "model_share_of_rough": 0.5178105536145889
+      },
+      {
+        "p": 41,
+        "q": 43,
+        "q_row": 32,
+        "left": 1334,
+        "right": 1376,
+        "rough_count": 14,
+        "prime_count": 3,
+        "composite_count": 11,
+        "fac_capacity": 32,
+        "fac_actual_rough_cofactor": 11,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.86235324530716,
+        "required_constant": 1.3990722188125575,
+        "allowed_constants": {
+          "0.1": 1.6025736324580202,
+          "0.18": 1.4601226429061964
+        },
+        "prime_ratio": 0.21428571428571427,
+        "composite_ratio": 0.7857142857142857,
+        "model_share_of_rough": 0.5615966603790828
+      },
+      {
+        "p": 41,
+        "q": 43,
+        "q_row": 33,
+        "left": 1377,
+        "right": 1419,
+        "rough_count": 14,
+        "prime_count": 3,
+        "composite_count": 11,
+        "fac_capacity": 32,
+        "fac_actual_rough_cofactor": 11,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.7650321162186335,
+        "required_constant": 1.416607147963312,
+        "allowed_constants": {
+          "0.1": 1.6226590967579755,
+          "0.18": 1.4784227326017112
+        },
+        "prime_ratio": 0.21428571428571427,
+        "composite_ratio": 0.7857142857142857,
+        "model_share_of_rough": 0.5546451511584738
+      },
+      {
+        "p": 31,
+        "q": 37,
+        "q_row": 25,
+        "left": 889,
+        "right": 925,
+        "rough_count": 13,
+        "prime_count": 3,
+        "composite_count": 10,
+        "fac_capacity": 28,
+        "fac_actual_rough_cofactor": 10,
+        "fac_identity_gap": 0,
+        "mertens_model": 7.054632342127296,
+        "required_constant": 1.4175083143999168,
+        "allowed_constants": {
+          "0.1": 1.6584847278479027,
+          "0.18": 1.5110638631503113
+        },
+        "prime_ratio": 0.23076923076923078,
+        "composite_ratio": 0.7692307692307693,
+        "model_share_of_rough": 0.5426640263174843
+      },
+      {
+        "p": 569,
+        "q": 571,
+        "q_row": 439,
+        "left": 250099,
+        "right": 250669,
+        "rough_count": 109,
+        "prime_count": 27,
+        "composite_count": 82,
+        "fac_capacity": 431,
+        "fac_actual_rough_cofactor": 82,
+        "fac_identity_gap": 0,
+        "mertens_model": 58.473276714342965,
+        "required_constant": 1.4023500068345947,
+        "allowed_constants": {
+          "0.1": 1.6776894593960212,
+          "0.18": 1.5285615074497083
+        },
+        "prime_ratio": 0.24770642201834864,
+        "composite_ratio": 0.7522935779816514,
+        "model_share_of_rough": 0.5364520799481006
+      },
+      {
+        "p": 103,
+        "q": 107,
+        "q_row": 94,
+        "left": 9952,
+        "right": 10058,
+        "rough_count": 24,
+        "prime_count": 6,
+        "composite_count": 18,
+        "fac_capacity": 68,
+        "fac_actual_rough_cofactor": 18,
+        "fac_identity_gap": 0,
+        "mertens_model": 11.694274910341658,
+        "required_constant": 1.5392147130115752,
+        "allowed_constants": {
+          "0.1": 1.8470576556138905,
+          "0.18": 1.6828747528926555
+        },
+        "prime_ratio": 0.25,
+        "composite_ratio": 0.75,
+        "model_share_of_rough": 0.4872614545975691
+      },
+      {
+        "p": 71,
+        "q": 73,
+        "q_row": 67,
+        "left": 4819,
+        "right": 4891,
+        "rough_count": 20,
+        "prime_count": 5,
+        "composite_count": 15,
+        "fac_capacity": 51,
+        "fac_actual_rough_cofactor": 15,
+        "fac_identity_gap": 0,
+        "mertens_model": 9.906235251750136,
+        "required_constant": 1.5141978379071857,
+        "allowed_constants": {
+          "0.1": 1.8170374054886227,
+          "0.18": 1.6555229694451898
+        },
+        "prime_ratio": 0.25,
+        "composite_ratio": 0.75,
+        "model_share_of_rough": 0.4953117625875068
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 450,
+        "left": 250094,
+        "right": 250650,
+        "rough_count": 106,
+        "prime_count": 27,
+        "composite_count": 79,
+        "fac_capacity": 418,
+        "fac_actual_rough_cofactor": 79,
+        "fac_identity_gap": 0,
+        "mertens_model": 56.948995104123625,
+        "required_constant": 1.3872062159404053,
+        "allowed_constants": {
+          "0.1": 1.675183202540692,
+          "0.18": 1.5262780289815194
+        },
+        "prime_ratio": 0.25471698113207547,
+        "composite_ratio": 0.7452830188679245,
+        "model_share_of_rough": 0.5372546707936191
+      },
+      {
+        "p": 577,
+        "q": 587,
+        "q_row": 427,
+        "left": 250063,
+        "right": 250649,
+        "rough_count": 113,
+        "prime_count": 29,
+        "composite_count": 84,
+        "fac_capacity": 441,
+        "fac_actual_rough_cofactor": 84,
+        "fac_identity_gap": 0,
+        "mertens_model": 59.98699047376042,
+        "required_constant": 1.4003036214451094,
+        "allowed_constants": {
+          "0.1": 1.6953675988210433,
+          "0.18": 1.5446682567036174
+        },
+        "prime_ratio": 0.25663716814159293,
+        "composite_ratio": 0.7433628318584071,
+        "model_share_of_rough": 0.5308583227766409
+      },
+      {
+        "p": 509,
+        "q": 521,
+        "q_row": 481,
+        "left": 250081,
+        "right": 250601,
+        "rough_count": 101,
+        "prime_count": 26,
+        "composite_count": 75,
+        "fac_capacity": 393,
+        "fac_actual_rough_cofactor": 75,
+        "fac_identity_gap": 0,
+        "mertens_model": 53.28605589808845,
+        "required_constant": 1.4074976790070608,
+        "allowed_constants": {
+          "0.1": 1.705887186956558,
+          "0.18": 1.5542527703381972
+        },
+        "prime_ratio": 0.25742574257425743,
+        "composite_ratio": 0.7425742574257426,
+        "model_share_of_rough": 0.5275847118622619
+      }
+    ],
+    "eta_summary": {
+      "0.1": {
+        "eta": 0.1,
+        "window_count": 40,
+        "actual_rpd_failure_count": 0,
+        "min_allowed_constant": 1.5709165714789164,
+        "min_allowed_window": {
+          "p": 29,
+          "q": 31,
+          "q_row": 26,
+          "left": 776,
+          "right": 806,
+          "rough_count": 10,
+          "prime_count": 2,
+          "composite_count": 8,
+          "fac_capacity": 23,
+          "fac_actual_rough_cofactor": 8,
+          "fac_identity_gap": 0,
+          "mertens_model": 5.729139384866939,
+          "required_constant": 1.3963702857590368,
+          "allowed_constants": {
+            "0.1": 1.5709165714789164,
+            "0.18": 1.431279542903013
+          },
+          "prime_ratio": 0.2,
+          "composite_ratio": 0.8,
+          "model_share_of_rough": 0.5729139384866939
+        },
+        "max_required_constant": 1.695703344574643,
+        "max_required_window": {
+          "p": 53,
+          "q": 59,
+          "q_row": 43,
+          "left": 2479,
+          "right": 2537,
+          "rough_count": 16,
+          "prime_count": 3,
+          "composite_count": 13,
+          "fac_capacity": 38,
+          "fac_actual_rough_cofactor": 13,
+          "fac_identity_gap": 0,
+          "mertens_model": 7.666435312280977,
+          "required_constant": 1.695703344574643,
+          "allowed_constants": {
+            "0.1": 1.8783175509134507,
+            "0.18": 1.711355990832255
+          },
+          "prime_ratio": 0.1875,
+          "composite_ratio": 0.8125,
+          "model_share_of_rough": 0.47915220701756106
+        },
+        "uniform_constant_gap": -0.12478677309572661,
+        "uniform_constant_feasible_on_sample": false,
+        "largest_excess_windows": []
+      },
+      "0.18": {
+        "eta": 0.18,
+        "window_count": 40,
+        "actual_rpd_failure_count": 0,
+        "min_allowed_constant": 1.431279542903013,
+        "min_allowed_window": {
+          "p": 29,
+          "q": 31,
+          "q_row": 26,
+          "left": 776,
+          "right": 806,
+          "rough_count": 10,
+          "prime_count": 2,
+          "composite_count": 8,
+          "fac_capacity": 23,
+          "fac_actual_rough_cofactor": 8,
+          "fac_identity_gap": 0,
+          "mertens_model": 5.729139384866939,
+          "required_constant": 1.3963702857590368,
+          "allowed_constants": {
+            "0.1": 1.5709165714789164,
+            "0.18": 1.431279542903013
+          },
+          "prime_ratio": 0.2,
+          "composite_ratio": 0.8,
+          "model_share_of_rough": 0.5729139384866939
+        },
+        "max_required_constant": 1.695703344574643,
+        "max_required_window": {
+          "p": 53,
+          "q": 59,
+          "q_row": 43,
+          "left": 2479,
+          "right": 2537,
+          "rough_count": 16,
+          "prime_count": 3,
+          "composite_count": 13,
+          "fac_capacity": 38,
+          "fac_actual_rough_cofactor": 13,
+          "fac_identity_gap": 0,
+          "mertens_model": 7.666435312280977,
+          "required_constant": 1.695703344574643,
+          "allowed_constants": {
+            "0.1": 1.8783175509134507,
+            "0.18": 1.711355990832255
+          },
+          "prime_ratio": 0.1875,
+          "composite_ratio": 0.8125,
+          "model_share_of_rough": 0.47915220701756106
+        },
+        "uniform_constant_gap": -0.26442380167163004,
+        "uniform_constant_feasible_on_sample": false,
+        "largest_excess_windows": []
+      }
+    }
+  },
+  "review_conclusion": "FAC 恒等式侧可用 sum capacity*V(<anchor) 给出同权模型常数审计。全局压力有余量；逐窗口尖峰仍需要端点缺陷出口或分层 Selberg 常数证明。"
+}

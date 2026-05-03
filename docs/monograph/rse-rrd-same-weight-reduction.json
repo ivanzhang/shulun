@@ -1,0 +1,131 @@
+{
+  "certificate_type": "rse_rrd_same_weight_reduction",
+  "status": "same_weight_reduction_and_two_stage_rrd_obligation",
+  "scan_source": "docs/monograph/kscwm-crd-dual-obstruction-scan.json",
+  "ledger_source": "docs/monograph/rse-rrd-ospc-margin-ledger.json",
+  "rrd_budget": 0.02,
+  "scan_summary": {
+    "case_count": 8,
+    "rrd_budget": 0.02,
+    "max_ratio": 0.2000018136297129,
+    "median_ratio": 0.033779147536475755,
+    "hardest_case": {
+      "P": 5003,
+      "M_exp": 1.2,
+      "R_exp": 0.3,
+      "term_count": 51,
+      "rough_discrepancy_ratio": 0.2000018136297129,
+      "passes_rrd_budget_as_stress_test": false
+    },
+    "groups_by_M_exp": [
+      {
+        "M_exp": 1.2,
+        "count": 4,
+        "max_ratio": 0.2000018136297129,
+        "median_ratio": 0.09217675038982097,
+        "all_pass_budget_as_stress_test": false
+      },
+      {
+        "M_exp": 1.4,
+        "count": 4,
+        "max_ratio": 0.016076553596961755,
+        "median_ratio": 0.009683032825173903,
+        "all_pass_budget_as_stress_test": true
+      }
+    ],
+    "top_cases": [
+      {
+        "P": 5003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "term_count": 51,
+        "rough_discrepancy_ratio": 0.2000018136297129,
+        "passes_rrd_budget_as_stress_test": false
+      },
+      {
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "term_count": 27,
+        "rough_discrepancy_ratio": 0.10795235353969986,
+        "passes_rrd_budget_as_stress_test": false
+      },
+      {
+        "P": 5003,
+        "M_exp": 1.2,
+        "R_exp": 0.35,
+        "term_count": 181,
+        "rough_discrepancy_ratio": 0.07640114723994208,
+        "passes_rrd_budget_as_stress_test": false
+      },
+      {
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.35,
+        "term_count": 108,
+        "rough_discrepancy_ratio": 0.05148174147598975,
+        "passes_rrd_budget_as_stress_test": false
+      },
+      {
+        "P": 5003,
+        "M_exp": 1.4,
+        "R_exp": 0.3,
+        "term_count": 100,
+        "rough_discrepancy_ratio": 0.016076553596961755,
+        "passes_rrd_budget_as_stress_test": true
+      },
+      {
+        "P": 2003,
+        "M_exp": 1.4,
+        "R_exp": 0.3,
+        "term_count": 58,
+        "rough_discrepancy_ratio": 0.01061957681277822,
+        "passes_rrd_budget_as_stress_test": true
+      },
+      {
+        "P": 2003,
+        "M_exp": 1.4,
+        "R_exp": 0.35,
+        "term_count": 154,
+        "rough_discrepancy_ratio": 0.008746488837569585,
+        "passes_rrd_budget_as_stress_test": true
+      },
+      {
+        "P": 5003,
+        "M_exp": 1.4,
+        "R_exp": 0.35,
+        "term_count": 250,
+        "rough_discrepancy_ratio": 0.006648465546425847,
+        "passes_rrd_budget_as_stress_test": true
+      }
+    ],
+    "direct_one_density_replacement_passes": false
+  },
+  "main_reduction": {
+    "kernel_amplitude": "|K_{h,ell}(m)| <= 2*pi*h*H/(ell*M) on m~M when hH/(ell M) is small",
+    "coefficient_cancellation": "(|omega_ell|/h) * (h/ell) = |omega_ell|/ell",
+    "same_weight_norm": "RRD naturally lands in the same Selberg variation norm V_omega=sum |omega_ell|/ell",
+    "sufficient_bound": "C_RRD <= Theta_crit*(eta_low + eta_perp) with Theta_crit<=1 under the same critical-band convention"
+  },
+  "two_stage_targets": [
+    {
+      "key": "RRD-low",
+      "budget": 0.006,
+      "meaning": "粗数指示函数中由小模周期/低 Buchstab 层产生的可见结构项。",
+      "required_action": "证明该低模项或者被并入 OSPC/CRTDefect 出口，或者在 RRD 账本中消耗不超过 0.006。"
+    },
+    {
+      "key": "RRD-perp",
+      "budget": 0.012,
+      "meaning": "去掉低模投影后的正交粗数余项。",
+      "required_action": "用 Buchstab 分解、CRT 非零类均衡和短窗不可复用证明同权测试范数不超过 0.012。"
+    },
+    {
+      "key": "RRD-conversion",
+      "budget": 0.002,
+      "meaning": "振幅线性化、dyadic 端点和 H/M 归一化换算误差。",
+      "required_action": "把 |1-e(t)| 的二阶余项、端点层和有限截断误差全部外向舍入进 0.002。"
+    }
+  ],
+  "review_conclusion": "旧的一步常数密度替换在压力样本中最坏 roughDiff/env 约为 0.200002，不能直接作为 C_RRD<=0.020 的证明。可行路线是先剥离低模/Buchstab 可见结构，再只对正交余项证明同权小范数。"
+}

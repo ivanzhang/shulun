@@ -1,0 +1,115 @@
+{
+  "certificate_type": "rse_rrd_low_projection_dichotomy",
+  "status": "normalized_ospc_formula_and_low_projection_bridge",
+  "scan_source": "docs/monograph/kscwm-crd-dual-obstruction-scan.json",
+  "rrd_source": "docs/monograph/rse-rrd-same-weight-reduction.json",
+  "budgets": {
+    "RRD_low": 0.006,
+    "RRD_perp": 0.012,
+    "RRD_conversion": 0.002,
+    "RRD_total": 0.020000000000000004
+  },
+  "ospc_normalization": {
+    "legacy_issue": "早期文档中 RHS 额外除以 r-1 会使均匀分布也自动满足 OSPC，阈值过弱。",
+    "correct_energy": "E_dir(q,r)=(r-1)*sum_a |C_a(q,r)|^2/A_abs(q,r)^2, where A_abs is the pre-cancellation absolute mass",
+    "correct_ospc": "E_dir(q,r) >= 1+delta_dir",
+    "uniform_coherent_value": 1.0,
+    "single_residue_value": "r-1"
+  },
+  "auxiliary_energy_scan": {
+    "row_count": 48,
+    "max_complex_energy": 0.004423944634515985,
+    "max_abs_over_uniform": 1.2932319560129462,
+    "top_rows": [
+      {
+        "complex_energy": 0.004423944634515985,
+        "max_abs_over_uniform": 1.0617071768297868,
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "support_prime": 2,
+        "aux_prime": 29
+      },
+      {
+        "complex_energy": 0.0028830218360948413,
+        "max_abs_over_uniform": 1.0423774155620087,
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "support_prime": 2,
+        "aux_prime": 19
+      },
+      {
+        "complex_energy": 0.002649586791247477,
+        "max_abs_over_uniform": 1.0708064455990312,
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "support_prime": 2,
+        "aux_prime": 23
+      },
+      {
+        "complex_energy": 0.0018283835149968644,
+        "max_abs_over_uniform": 1.040881465493009,
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "support_prime": 2,
+        "aux_prime": 17
+      },
+      {
+        "complex_energy": 0.0017994064356118696,
+        "max_abs_over_uniform": 1.0617101031424792,
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.35,
+        "support_prime": 2,
+        "aux_prime": 29
+      },
+      {
+        "complex_energy": 0.001614116356080015,
+        "max_abs_over_uniform": 1.0299395922890624,
+        "P": 2003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "support_prime": 2,
+        "aux_prime": 13
+      },
+      {
+        "complex_energy": 0.0014170938544061508,
+        "max_abs_over_uniform": 1.2217974657374895,
+        "P": 5003,
+        "M_exp": 1.4,
+        "R_exp": 0.3,
+        "support_prime": 2,
+        "aux_prime": 31
+      },
+      {
+        "complex_energy": 0.001374223476238432,
+        "max_abs_over_uniform": 1.109822854737015,
+        "P": 5003,
+        "M_exp": 1.2,
+        "R_exp": 0.3,
+        "support_prime": 5,
+        "aux_prime": 23
+      }
+    ]
+  },
+  "projection_definition": {
+    "space": "H_M=L^2([M,2M), mu_M), mu_M 为 dyadic 归一化计数测度。",
+    "low_dictionary": "由 q<=Z 的小模周期、Buchstab 低层和辅助模 r 的有向残基块生成的有限字典 D_Z。",
+    "projection": "Pi_{<=Z} 是 H_M 到 span(D_Z) 的正交投影；若字典非正交，先做 Gram 外向区间审计。",
+    "residual": "a_perp=(1-Pi_{<=Z})a，满足对所有低模字典原子正交。"
+  },
+  "hilbert_dichotomy": {
+    "statement": "令 W 为同权归一化后的 RSE 临界测试函数。若 |<Pi a,W>| > epsilon_low，则在低模字典的某个块 B(q,r) 上，必有 |<a,Pi_B W>| 超过该块预算；该块预算违例就是 OSPC/CRTDefect 候选。",
+    "small_case": "|<Pi a,W>| <= 0.006，RRD-low 被预算吸收。",
+    "large_case": "|<Pi a,W>| > 0.006，存在低模块 B(q,r) 产生有向能量异常，进入 OSPC/CRTDefect 出口。"
+  },
+  "next_obligations": [
+    "把 OSPC 公式统一改为 E_dir(q,r)>=1+delta_dir。",
+    "在正文中定义 D_Z、Gram 矩阵和 Pi_{<=Z}。",
+    "证明低模块预算违例推出修正后的 OSPC 或直接 CRTDefect。",
+    "证明 a_perp 的同权测试范数 <=0.012。"
+  ]
+}

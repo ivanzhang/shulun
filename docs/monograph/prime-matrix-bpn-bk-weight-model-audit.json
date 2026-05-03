@@ -1,0 +1,143 @@
+{
+  "certificate_type": "prime_matrix_bpn_bk_weight_model_audit",
+  "status": "bk_selberg_route_reduced_to_endpoint_defect_or_corek_exit",
+  "sample_rows": [
+    {
+      "p": 251,
+      "lambda_loglog_p2": 2.402512404536945,
+      "expected_sift_density": 0.09049031916622663,
+      "expected_survivors_model": 22.713070110722885,
+      "min_odd_order_positive_model": 7,
+      "min_odd_order_half_exp_model": 7,
+      "partial_at_half_order": 0.0688643894506083,
+      "max_omega_bound_n_lt_p2": 6,
+      "candidate_core_order": 8
+    },
+    {
+      "p": 503,
+      "lambda_loglog_p2": 2.5210119654626504,
+      "expected_sift_density": 0.08037822559076949,
+      "expected_survivors_model": 40.43024747215705,
+      "min_odd_order_positive_model": 7,
+      "min_odd_order_half_exp_model": 7,
+      "partial_at_half_order": 0.048930411906973725,
+      "max_omega_bound_n_lt_p2": 6,
+      "candidate_core_order": 8
+    },
+    {
+      "p": 1009,
+      "lambda_loglog_p2": 2.6270881294386044,
+      "expected_sift_density": 0.07228865126417167,
+      "expected_survivors_model": 72.93924912554921,
+      "min_odd_order_positive_model": 7,
+      "min_odd_order_half_exp_model": 9,
+      "partial_at_half_order": 0.06881687883089638,
+      "max_omega_bound_n_lt_p2": 7,
+      "candidate_core_order": 10
+    },
+    {
+      "p": 2003,
+      "lambda_loglog_p2": 2.72161134316492,
+      "expected_sift_density": 0.06576869306469071,
+      "expected_survivors_model": 131.7346922085755,
+      "min_odd_order_positive_model": 7,
+      "min_odd_order_half_exp_model": 9,
+      "partial_at_half_order": 0.06085985803418584,
+      "max_omega_bound_n_lt_p2": 7,
+      "candidate_core_order": 10
+    },
+    {
+      "p": 5003,
+      "lambda_loglog_p2": 2.8353044516351913,
+      "expected_sift_density": 0.058700651603723494,
+      "expected_survivors_model": 293.67935997342863,
+      "min_odd_order_positive_model": 9,
+      "min_odd_order_half_exp_model": 9,
+      "partial_at_half_order": 0.05137196398776847,
+      "max_omega_bound_n_lt_p2": 8,
+      "candidate_core_order": 10
+    },
+    {
+      "p": 10007,
+      "lambda_loglog_p2": 2.9135499589880447,
+      "expected_sift_density": 0.05428268611374923,
+      "expected_survivors_model": 543.2068399402885,
+      "min_odd_order_positive_model": 9,
+      "min_odd_order_half_exp_model": 9,
+      "partial_at_half_order": 0.04471665870786498,
+      "max_omega_bound_n_lt_p2": 8,
+      "candidate_core_order": 10
+    },
+    {
+      "p": 100003,
+      "lambda_loglog_p2": 3.1366201439664123,
+      "expected_sift_density": 0.043429335025299325,
+      "expected_survivors_model": 4343.063790535009,
+      "min_odd_order_positive_model": 9,
+      "min_odd_order_half_exp_model": 9,
+      "partial_at_half_order": 0.023750211526466558,
+      "max_omega_bound_n_lt_p2": 10,
+      "candidate_core_order": 10
+    },
+    {
+      "p": 1000003,
+      "lambda_loglog_p2": 3.318939312182848,
+      "expected_sift_density": 0.036191198966463764,
+      "expected_survivors_model": 36191.30754006066,
+      "min_odd_order_positive_model": 9,
+      "min_odd_order_half_exp_model": 11,
+      "partial_at_half_order": 0.03322938883748913,
+      "max_omega_bound_n_lt_p2": 11,
+      "candidate_core_order": 12
+    }
+  ],
+  "sieve_level_rows": [
+    {
+      "p": 251,
+      "window_length_h": 251,
+      "sieve_limit_z": 251,
+      "available_distribution_level": 251,
+      "s_parameter_available": 1.0,
+      "positive_lower_bound_requires_s_gt": 2.0,
+      "model_required_level_gt": 63001,
+      "level_gap_factor": 251.0
+    },
+    {
+      "p": 1009,
+      "window_length_h": 1009,
+      "sieve_limit_z": 1009,
+      "available_distribution_level": 1009,
+      "s_parameter_available": 1.0,
+      "positive_lower_bound_requires_s_gt": 2.0,
+      "model_required_level_gt": 1018081,
+      "level_gap_factor": 1009.0
+    },
+    {
+      "p": 10007,
+      "window_length_h": 10007,
+      "sieve_limit_z": 10007,
+      "available_distribution_level": 10007,
+      "s_parameter_available": 1.0,
+      "positive_lower_bound_requires_s_gt": 2.0,
+      "model_required_level_gt": 100140049,
+      "level_gap_factor": 10007.0
+    },
+    {
+      "p": 1000003,
+      "window_length_h": 1000003,
+      "sieve_limit_z": 1000003,
+      "available_distribution_level": 1000003,
+      "s_parameter_available": 1.0,
+      "positive_lower_bound_requires_s_gt": 2.0,
+      "model_required_level_gt": 1000006000009,
+      "level_gap_factor": 1000003.0
+    }
+  ],
+  "structural_conclusion": "可变阶 BK 能避免固定奇阶 Bonferroni 的模型变号，但它本身仍只是高重尾部控制问题。标准 Selberg/Brun 下界筛在 H=P、z=P 时只有s<=1，而一维下界筛正性需要 s>2；因此非负筛权不能单独给出边界行非空。下一步必须证明 BK 端点 sawtooth 缺陷被 CRTDefect/Tail-anchor 排斥，或证明 CoreK 高重桶过密必触发同类缺陷。",
+  "next_obligations": [
+    "严写任意奇阶 K 的逐点恒等式 S_K=prime_count-CoreK_penalty。",
+    "把 S_K 展开为主项加端点 sawtooth 误差，定义 BK-DEC 缺陷。",
+    "证明 BK-DEC 大于预算时推出 Directed CRTDefect/Tail-anchor。",
+    "证明 CoreK 高重桶过密时也推出同一缺陷出口。"
+  ]
+}

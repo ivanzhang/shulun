@@ -1,0 +1,1065 @@
+{
+  "certificate_type": "prime_matrix_mge3_budget_audit",
+  "status": "mge3_reduced_to_low_anchor_composite_cofactor_budget",
+  "parameters": {
+    "max_p": 2000,
+    "alpha": 0.43,
+    "tail_fraction": 0.25,
+    "keep": 40
+  },
+  "hard_aggregate": {
+    "hard_window_count": 40,
+    "rough_count": 2002,
+    "prime_count": 548,
+    "composite_count": 1454,
+    "semiprime_count": 1248,
+    "mge3_count": 206,
+    "identity_violations": 0,
+    "other_check": 0,
+    "mge3_share_of_rough": 0.1028971028971029,
+    "mge3_share_of_composites": 0.14167812929848694,
+    "semiprime_share_of_composites": 0.8583218707015131
+  },
+  "identity_audit": {
+    "classified_mge3_total": 206,
+    "identity_mge3_total": 206,
+    "identity_gap": 0,
+    "integer_capacity_total": 3553,
+    "capacity_efficiency": 0.05797917253025612,
+    "buckets": [
+      {
+        "bucket": "[0.50,0.60)",
+        "anchor_interval_count": 113,
+        "integer_capacity": 1447,
+        "mge3_count": 74,
+        "capacity_efficiency": 0.05114029025570145,
+        "distinct_anchor_count": 12,
+        "max_anchor": 47,
+        "max_beta": 0.5998642395905552
+      },
+      {
+        "bucket": "[0.60,2/3)",
+        "anchor_interval_count": 91,
+        "integer_capacity": 751,
+        "mge3_count": 17,
+        "capacity_efficiency": 0.022636484687083888,
+        "distinct_anchor_count": 17,
+        "max_anchor": 73,
+        "max_beta": 0.6656131210441337
+      },
+      {
+        "bucket": "[α,0.50)",
+        "anchor_interval_count": 64,
+        "integer_capacity": 1355,
+        "mge3_count": 115,
+        "capacity_efficiency": 0.08487084870848709,
+        "distinct_anchor_count": 7,
+        "max_anchor": 23,
+        "max_beta": 0.49734628897685496
+      }
+    ]
+  },
+  "worst_mge3_windows": [
+    {
+      "p": 41,
+      "q": 43,
+      "z": 4,
+      "q_row": 36,
+      "left": 1506,
+      "right": 1548,
+      "r": 29,
+      "rough_count": 14,
+      "prime_count": 4,
+      "composite_count": 10,
+      "semiprime_count": 7,
+      "mge3_count": 3,
+      "other_check": 0,
+      "prime_ratio": 0.2857142857142857,
+      "mge3_share_of_rough": 0.21428571428571427,
+      "mge3_share_of_composites": 0.3,
+      "semiprime_share_of_composites": 0.7,
+      "repeated_mge3_count": 2,
+      "omega_counts": {
+        "2": 7,
+        "3": 3
+      },
+      "max_anchor": 7,
+      "max_anchor_beta": 0.5239995654055677,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 1519,
+          "factors": [
+            7,
+            7,
+            31
+          ],
+          "anchor": 7,
+          "cofactor": 217
+        },
+        {
+          "n": 1525,
+          "factors": [
+            5,
+            5,
+            61
+          ],
+          "anchor": 5,
+          "cofactor": 305
+        },
+        {
+          "n": 1547,
+          "factors": [
+            7,
+            13,
+            17
+          ],
+          "anchor": 7,
+          "cofactor": 221
+        }
+      ]
+    },
+    {
+      "p": 227,
+      "q": 229,
+      "z": 10,
+      "q_row": 222,
+      "left": 50610,
+      "right": 50838,
+      "r": 215,
+      "rough_count": 52,
+      "prime_count": 15,
+      "composite_count": 37,
+      "semiprime_count": 27,
+      "mge3_count": 10,
+      "other_check": 0,
+      "prime_ratio": 0.28846153846153844,
+      "mge3_share_of_rough": 0.19230769230769232,
+      "mge3_share_of_composites": 0.2702702702702703,
+      "semiprime_share_of_composites": 0.7297297297297297,
+      "repeated_mge3_count": 3,
+      "omega_counts": {
+        "3": 10,
+        "2": 27
+      },
+      "max_anchor": 37,
+      "max_anchor_beta": 0.6656131210441337,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 50611,
+          "factors": [
+            11,
+            43,
+            107
+          ],
+          "anchor": 11,
+          "cofactor": 4601
+        },
+        {
+          "n": 50623,
+          "factors": [
+            23,
+            31,
+            71
+          ],
+          "anchor": 23,
+          "cofactor": 2201
+        },
+        {
+          "n": 50653,
+          "factors": [
+            37,
+            37,
+            37
+          ],
+          "anchor": 37,
+          "cofactor": 1369
+        },
+        {
+          "n": 50677,
+          "factors": [
+            11,
+            17,
+            271
+          ],
+          "anchor": 11,
+          "cofactor": 4607
+        },
+        {
+          "n": 50699,
+          "factors": [
+            11,
+            11,
+            419
+          ],
+          "anchor": 11,
+          "cofactor": 4609
+        },
+        {
+          "n": 50711,
+          "factors": [
+            17,
+            19,
+            157
+          ],
+          "anchor": 17,
+          "cofactor": 2983
+        },
+        {
+          "n": 50713,
+          "factors": [
+            13,
+            47,
+            83
+          ],
+          "anchor": 13,
+          "cofactor": 3901
+        },
+        {
+          "n": 50779,
+          "factors": [
+            17,
+            29,
+            103
+          ],
+          "anchor": 17,
+          "cofactor": 2987
+        }
+      ]
+    },
+    {
+      "p": 229,
+      "q": 233,
+      "z": 10,
+      "q_row": 187,
+      "left": 43339,
+      "right": 43571,
+      "r": 57,
+      "rough_count": 53,
+      "prime_count": 15,
+      "composite_count": 38,
+      "semiprime_count": 29,
+      "mge3_count": 9,
+      "other_check": 0,
+      "prime_ratio": 0.2830188679245283,
+      "mge3_share_of_rough": 0.16981132075471697,
+      "mge3_share_of_composites": 0.23684210526315788,
+      "semiprime_share_of_composites": 0.7631578947368421,
+      "repeated_mge3_count": 2,
+      "omega_counts": {
+        "2": 29,
+        "3": 9
+      },
+      "max_anchor": 23,
+      "max_anchor_beta": 0.5770435465557859,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 43381,
+          "factors": [
+            13,
+            47,
+            71
+          ],
+          "anchor": 13,
+          "cofactor": 3337
+        },
+        {
+          "n": 43433,
+          "factors": [
+            13,
+            13,
+            257
+          ],
+          "anchor": 13,
+          "cofactor": 3341
+        },
+        {
+          "n": 43439,
+          "factors": [
+            11,
+            11,
+            359
+          ],
+          "anchor": 11,
+          "cofactor": 3949
+        },
+        {
+          "n": 43483,
+          "factors": [
+            11,
+            59,
+            67
+          ],
+          "anchor": 11,
+          "cofactor": 3953
+        },
+        {
+          "n": 43493,
+          "factors": [
+            23,
+            31,
+            61
+          ],
+          "anchor": 23,
+          "cofactor": 1891
+        },
+        {
+          "n": 43529,
+          "factors": [
+            19,
+            29,
+            79
+          ],
+          "anchor": 19,
+          "cofactor": 2291
+        },
+        {
+          "n": 43537,
+          "factors": [
+            13,
+            17,
+            197
+          ],
+          "anchor": 13,
+          "cofactor": 3349
+        },
+        {
+          "n": 43549,
+          "factors": [
+            11,
+            37,
+            107
+          ],
+          "anchor": 11,
+          "cofactor": 3959
+        }
+      ]
+    },
+    {
+      "p": 103,
+      "q": 107,
+      "z": 7,
+      "q_row": 94,
+      "left": 9952,
+      "right": 10058,
+      "r": 63,
+      "rough_count": 24,
+      "prime_count": 6,
+      "composite_count": 18,
+      "semiprime_count": 14,
+      "mge3_count": 4,
+      "other_check": 0,
+      "prime_ratio": 0.25,
+      "mge3_share_of_rough": 0.16666666666666666,
+      "mge3_share_of_composites": 0.2222222222222222,
+      "semiprime_share_of_composites": 0.7777777777777778,
+      "repeated_mge3_count": 3,
+      "omega_counts": {
+        "2": 14,
+        "3": 4
+      },
+      "max_anchor": 19,
+      "max_anchor_beta": 0.6352990620690318,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 9971,
+          "factors": [
+            13,
+            13,
+            59
+          ],
+          "anchor": 13,
+          "cofactor": 767
+        },
+        {
+          "n": 10013,
+          "factors": [
+            17,
+            19,
+            31
+          ],
+          "anchor": 17,
+          "cofactor": 589
+        },
+        {
+          "n": 10043,
+          "factors": [
+            11,
+            11,
+            83
+          ],
+          "anchor": 11,
+          "cofactor": 913
+        },
+        {
+          "n": 10051,
+          "factors": [
+            19,
+            23,
+            23
+          ],
+          "anchor": 19,
+          "cofactor": 529
+        }
+      ]
+    },
+    {
+      "p": 109,
+      "q": 113,
+      "z": 7,
+      "q_row": 89,
+      "left": 9945,
+      "right": 10057,
+      "r": 25,
+      "rough_count": 25,
+      "prime_count": 7,
+      "composite_count": 18,
+      "semiprime_count": 14,
+      "mge3_count": 4,
+      "other_check": 0,
+      "prime_ratio": 0.28,
+      "mge3_share_of_rough": 0.16,
+      "mge3_share_of_composites": 0.2222222222222222,
+      "semiprime_share_of_composites": 0.7777777777777778,
+      "repeated_mge3_count": 3,
+      "omega_counts": {
+        "2": 14,
+        "3": 4
+      },
+      "max_anchor": 19,
+      "max_anchor_beta": 0.6276317708861443,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 9971,
+          "factors": [
+            13,
+            13,
+            59
+          ],
+          "anchor": 13,
+          "cofactor": 767
+        },
+        {
+          "n": 10013,
+          "factors": [
+            17,
+            19,
+            31
+          ],
+          "anchor": 17,
+          "cofactor": 589
+        },
+        {
+          "n": 10043,
+          "factors": [
+            11,
+            11,
+            83
+          ],
+          "anchor": 11,
+          "cofactor": 913
+        },
+        {
+          "n": 10051,
+          "factors": [
+            19,
+            23,
+            23
+          ],
+          "anchor": 19,
+          "cofactor": 529
+        }
+      ]
+    },
+    {
+      "p": 89,
+      "q": 97,
+      "z": 6,
+      "q_row": 77,
+      "left": 7373,
+      "right": 7469,
+      "r": 74,
+      "rough_count": 26,
+      "prime_count": 7,
+      "composite_count": 19,
+      "semiprime_count": 15,
+      "mge3_count": 4,
+      "other_check": 0,
+      "prime_ratio": 0.2692307692307692,
+      "mge3_share_of_rough": 0.15384615384615385,
+      "mge3_share_of_composites": 0.21052631578947367,
+      "semiprime_share_of_composites": 0.7894736842105263,
+      "repeated_mge3_count": 2,
+      "omega_counts": {
+        "2": 15,
+        "3": 4
+      },
+      "max_anchor": 17,
+      "max_anchor_beta": 0.6311968960464688,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 7381,
+          "factors": [
+            11,
+            11,
+            61
+          ],
+          "anchor": 11,
+          "cofactor": 671
+        },
+        {
+          "n": 7399,
+          "factors": [
+            7,
+            7,
+            151
+          ],
+          "anchor": 7,
+          "cofactor": 1057
+        },
+        {
+          "n": 7429,
+          "factors": [
+            17,
+            19,
+            23
+          ],
+          "anchor": 17,
+          "cofactor": 437
+        },
+        {
+          "n": 7469,
+          "factors": [
+            7,
+            11,
+            97
+          ],
+          "anchor": 7,
+          "cofactor": 1067
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "z": 4,
+      "q_row": 31,
+      "left": 1231,
+      "right": 1271,
+      "r": 9,
+      "rough_count": 14,
+      "prime_count": 4,
+      "composite_count": 10,
+      "semiprime_count": 8,
+      "mge3_count": 2,
+      "other_check": 0,
+      "prime_ratio": 0.2857142857142857,
+      "mge3_share_of_rough": 0.14285714285714285,
+      "mge3_share_of_composites": 0.2,
+      "semiprime_share_of_composites": 0.8,
+      "repeated_mge3_count": 0,
+      "omega_counts": {
+        "3": 2,
+        "2": 8
+      },
+      "max_anchor": 5,
+      "max_anchor_beta": 0.4457143450418488,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 1235,
+          "factors": [
+            5,
+            13,
+            19
+          ],
+          "anchor": 5,
+          "cofactor": 247
+        },
+        {
+          "n": 1265,
+          "factors": [
+            5,
+            11,
+            23
+          ],
+          "anchor": 5,
+          "cofactor": 253
+        }
+      ]
+    },
+    {
+      "p": 211,
+      "q": 223,
+      "z": 9,
+      "q_row": 173,
+      "left": 38357,
+      "right": 38579,
+      "r": 165,
+      "rough_count": 52,
+      "prime_count": 15,
+      "composite_count": 37,
+      "semiprime_count": 30,
+      "mge3_count": 7,
+      "other_check": 0,
+      "prime_ratio": 0.28846153846153844,
+      "mge3_share_of_rough": 0.1346153846153846,
+      "mge3_share_of_composites": 0.1891891891891892,
+      "semiprime_share_of_composites": 0.8108108108108109,
+      "repeated_mge3_count": 2,
+      "omega_counts": {
+        "3": 7,
+        "2": 30
+      },
+      "max_anchor": 19,
+      "max_anchor_beta": 0.5501713434346975,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 38357,
+          "factors": [
+            11,
+            11,
+            317
+          ],
+          "anchor": 11,
+          "cofactor": 3487
+        },
+        {
+          "n": 38363,
+          "factors": [
+            13,
+            13,
+            227
+          ],
+          "anchor": 13,
+          "cofactor": 2951
+        },
+        {
+          "n": 38369,
+          "factors": [
+            17,
+            37,
+            61
+          ],
+          "anchor": 17,
+          "cofactor": 2257
+        },
+        {
+          "n": 38399,
+          "factors": [
+            19,
+            43,
+            47
+          ],
+          "anchor": 19,
+          "cofactor": 2021
+        },
+        {
+          "n": 38467,
+          "factors": [
+            11,
+            13,
+            269
+          ],
+          "anchor": 11,
+          "cofactor": 3497
+        },
+        {
+          "n": 38471,
+          "factors": [
+            17,
+            31,
+            73
+          ],
+          "anchor": 17,
+          "cofactor": 2263
+        },
+        {
+          "n": 38533,
+          "factors": [
+            11,
+            31,
+            113
+          ],
+          "anchor": 11,
+          "cofactor": 3503
+        }
+      ]
+    },
+    {
+      "p": 223,
+      "q": 227,
+      "z": 10,
+      "q_row": 178,
+      "left": 40180,
+      "right": 40406,
+      "r": 39,
+      "rough_count": 52,
+      "prime_count": 15,
+      "composite_count": 37,
+      "semiprime_count": 30,
+      "mge3_count": 7,
+      "other_check": 0,
+      "prime_ratio": 0.28846153846153844,
+      "mge3_share_of_rough": 0.1346153846153846,
+      "mge3_share_of_composites": 0.1891891891891892,
+      "semiprime_share_of_composites": 0.8108108108108109,
+      "repeated_mge3_count": 1,
+      "omega_counts": {
+        "2": 30,
+        "3": 7
+      },
+      "max_anchor": 19,
+      "max_anchor_beta": 0.5445432665386442,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 40183,
+          "factors": [
+            11,
+            13,
+            281
+          ],
+          "anchor": 11,
+          "cofactor": 3653
+        },
+        {
+          "n": 40223,
+          "factors": [
+            19,
+            29,
+            73
+          ],
+          "anchor": 19,
+          "cofactor": 2117
+        },
+        {
+          "n": 40261,
+          "factors": [
+            13,
+            19,
+            163
+          ],
+          "anchor": 13,
+          "cofactor": 3097
+        },
+        {
+          "n": 40273,
+          "factors": [
+            17,
+            23,
+            103
+          ],
+          "anchor": 17,
+          "cofactor": 2369
+        },
+        {
+          "n": 40337,
+          "factors": [
+            11,
+            19,
+            193
+          ],
+          "anchor": 11,
+          "cofactor": 3667
+        },
+        {
+          "n": 40339,
+          "factors": [
+            13,
+            29,
+            107
+          ],
+          "anchor": 13,
+          "cofactor": 3103
+        },
+        {
+          "n": 40391,
+          "factors": [
+            13,
+            13,
+            239
+          ],
+          "anchor": 13,
+          "cofactor": 3107
+        }
+      ]
+    },
+    {
+      "p": 659,
+      "q": 661,
+      "z": 16,
+      "q_row": 613,
+      "left": 404533,
+      "right": 405193,
+      "r": 565,
+      "rough_count": 128,
+      "prime_count": 37,
+      "composite_count": 91,
+      "semiprime_count": 74,
+      "mge3_count": 17,
+      "other_check": 0,
+      "prime_ratio": 0.2890625,
+      "mge3_share_of_rough": 0.1328125,
+      "mge3_share_of_composites": 0.18681318681318682,
+      "semiprime_share_of_composites": 0.8131868131868132,
+      "repeated_mge3_count": 4,
+      "omega_counts": {
+        "2": 74,
+        "3": 16,
+        "4": 1
+      },
+      "max_anchor": 47,
+      "max_anchor_beta": 0.5931769518827857,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 404549,
+          "factors": [
+            17,
+            53,
+            449
+          ],
+          "anchor": 17,
+          "cofactor": 23797
+        },
+        {
+          "n": 404567,
+          "factors": [
+            19,
+            107,
+            199
+          ],
+          "anchor": 19,
+          "cofactor": 21293
+        },
+        {
+          "n": 404581,
+          "factors": [
+            31,
+            31,
+            421
+          ],
+          "anchor": 31,
+          "cofactor": 13051
+        },
+        {
+          "n": 404587,
+          "factors": [
+            43,
+            97,
+            97
+          ],
+          "anchor": 43,
+          "cofactor": 9409
+        },
+        {
+          "n": 404629,
+          "factors": [
+            41,
+            71,
+            139
+          ],
+          "anchor": 41,
+          "cofactor": 9869
+        },
+        {
+          "n": 404639,
+          "factors": [
+            23,
+            73,
+            241
+          ],
+          "anchor": 23,
+          "cofactor": 17593
+        },
+        {
+          "n": 404681,
+          "factors": [
+            19,
+            19,
+            19,
+            59
+          ],
+          "anchor": 19,
+          "cofactor": 21299
+        },
+        {
+          "n": 404717,
+          "factors": [
+            47,
+            79,
+            109
+          ],
+          "anchor": 47,
+          "cofactor": 8611
+        }
+      ]
+    },
+    {
+      "p": 547,
+      "q": 557,
+      "z": 15,
+      "q_row": 482,
+      "left": 267918,
+      "right": 268474,
+      "r": 434,
+      "rough_count": 106,
+      "prime_count": 30,
+      "composite_count": 76,
+      "semiprime_count": 62,
+      "mge3_count": 14,
+      "other_check": 0,
+      "prime_ratio": 0.2830188679245283,
+      "mge3_share_of_rough": 0.1320754716981132,
+      "mge3_share_of_composites": 0.18421052631578946,
+      "semiprime_share_of_composites": 0.8157894736842105,
+      "repeated_mge3_count": 2,
+      "omega_counts": {
+        "3": 14,
+        "2": 62
+      },
+      "max_anchor": 53,
+      "max_anchor_beta": 0.629760354628759,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 267919,
+          "factors": [
+            19,
+            59,
+            239
+          ],
+          "anchor": 19,
+          "cofactor": 14101
+        },
+        {
+          "n": 267973,
+          "factors": [
+            23,
+            61,
+            191
+          ],
+          "anchor": 23,
+          "cofactor": 11651
+        },
+        {
+          "n": 268019,
+          "factors": [
+            23,
+            43,
+            271
+          ],
+          "anchor": 23,
+          "cofactor": 11653
+        },
+        {
+          "n": 268109,
+          "factors": [
+            19,
+            103,
+            137
+          ],
+          "anchor": 19,
+          "cofactor": 14111
+        },
+        {
+          "n": 268157,
+          "factors": [
+            23,
+            89,
+            131
+          ],
+          "anchor": 23,
+          "cofactor": 11659
+        },
+        {
+          "n": 268181,
+          "factors": [
+            31,
+            41,
+            211
+          ],
+          "anchor": 31,
+          "cofactor": 8651
+        },
+        {
+          "n": 268223,
+          "factors": [
+            19,
+            19,
+            743
+          ],
+          "anchor": 19,
+          "cofactor": 14117
+        },
+        {
+          "n": 268243,
+          "factors": [
+            17,
+            31,
+            509
+          ],
+          "anchor": 17,
+          "cofactor": 15779
+        }
+      ]
+    },
+    {
+      "p": 37,
+      "q": 41,
+      "z": 4,
+      "q_row": 33,
+      "left": 1313,
+      "right": 1353,
+      "r": 17,
+      "rough_count": 14,
+      "prime_count": 3,
+      "composite_count": 11,
+      "semiprime_count": 9,
+      "mge3_count": 2,
+      "other_check": 0,
+      "prime_ratio": 0.21428571428571427,
+      "mge3_share_of_rough": 0.14285714285714285,
+      "mge3_share_of_composites": 0.18181818181818182,
+      "semiprime_share_of_composites": 0.8181818181818182,
+      "repeated_mge3_count": 2,
+      "omega_counts": {
+        "2": 9,
+        "3": 2
+      },
+      "max_anchor": 11,
+      "max_anchor_beta": 0.6640680654638381,
+      "identity_violations": 0,
+      "examples": [
+        {
+          "n": 1325,
+          "factors": [
+            5,
+            5,
+            53
+          ],
+          "anchor": 5,
+          "cofactor": 265
+        },
+        {
+          "n": 1331,
+          "factors": [
+            11,
+            11,
+            11
+          ],
+          "anchor": 11,
+          "cofactor": 121
+        }
+      ]
+    }
+  ],
+  "review_conclusion": "M_{>=3} 项有精确最小锚恒等式，锚必落在 z<a<=R^{1/3}。因此它不是高锚层压力，而是低锚-复合互补因子预算；若该预算失败，就必须表现为低锚复合互补因子密度异常。"
+}

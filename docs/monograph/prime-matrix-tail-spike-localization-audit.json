@@ -1,0 +1,1463 @@
+{
+  "certificate_type": "prime_matrix_tail_spike_localization_audit",
+  "status": "tail_spikes_localized_to_singleton_prime_corridors",
+  "parameters": {
+    "max_p": 2000,
+    "alpha": 0.43,
+    "tail_fraction": 0.25,
+    "keep": 40
+  },
+  "spike_localization": {
+    "pair_interval_count": 957,
+    "rough_pair_interval_count": 206,
+    "singleton_rough_count": 182,
+    "singleton_prime_count": 181,
+    "singleton_composite_rough_count": 1,
+    "unique_singleton_corridor_count": 176,
+    "singleton_corridor_width_sum": 543,
+    "singleton_corridor_pair_count": 182,
+    "singleton_corridor_prime_pair_count": 181,
+    "singleton_pair_width_ratio": 0.3351749539594843,
+    "max_pairs_per_corridor": 2,
+    "by_capacity": [
+      {
+        "bucket": "doubleton",
+        "pair_interval_count": 53,
+        "capacity": 106,
+        "rough_tail": 24,
+        "prime_tail": 21,
+        "mertens_envelope": 21.787035166117146,
+        "needed_constant": 1.1015725552839066,
+        "density": 0.22641509433962265,
+        "prime_tail_share": 0.875,
+        "max_needed_constant": 2.9235658998842586,
+        "max_capacity": 2
+      },
+      {
+        "bucket": "short_3_5",
+        "pair_interval_count": 1,
+        "capacity": 3,
+        "rough_tail": 0,
+        "prime_tail": 0,
+        "mertens_envelope": 0.5754245754245756,
+        "needed_constant": 0.0,
+        "density": 0.0,
+        "prime_tail_share": null,
+        "max_needed_constant": 0.0,
+        "max_capacity": 3
+      },
+      {
+        "bucket": "singleton",
+        "pair_interval_count": 903,
+        "capacity": 903,
+        "rough_tail": 182,
+        "prime_tail": 181,
+        "mertens_envelope": 143.4481487005636,
+        "needed_constant": 1.2687511247001888,
+        "density": 0.20155038759689922,
+        "prime_tail_share": 0.9945054945054945,
+        "max_needed_constant": 8.713075139315405,
+        "max_capacity": 1
+      }
+    ],
+    "by_tail_type": [
+      {
+        "bucket": "multi_all_prime_tail",
+        "pair_interval_count": 21,
+        "capacity": 42,
+        "rough_tail": 21,
+        "prime_tail": 21,
+        "mertens_envelope": 9.25745791875823,
+        "needed_constant": 2.2684413134029002,
+        "density": 0.5,
+        "prime_tail_share": 1.0,
+        "max_needed_constant": 2.9235658998842586,
+        "max_capacity": 2
+      },
+      {
+        "bucket": "multi_mixed_tail",
+        "pair_interval_count": 3,
+        "capacity": 6,
+        "rough_tail": 3,
+        "prime_tail": 0,
+        "mertens_envelope": 1.411333764274941,
+        "needed_constant": 2.1256488549618315,
+        "density": 0.5,
+        "prime_tail_share": 0.0,
+        "max_needed_constant": 2.769694010416666,
+        "max_capacity": 2
+      },
+      {
+        "bucket": "multi_nonrough",
+        "pair_interval_count": 30,
+        "capacity": 61,
+        "rough_tail": 0,
+        "prime_tail": 0,
+        "mertens_envelope": 11.693668058508548,
+        "needed_constant": 0.0,
+        "density": 0.0,
+        "prime_tail_share": null,
+        "max_needed_constant": 0.0,
+        "max_capacity": 3
+      },
+      {
+        "bucket": "singleton_composite_rough",
+        "pair_interval_count": 1,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 0,
+        "mertens_envelope": 0.2666666666666667,
+        "needed_constant": 3.749999999999999,
+        "density": 1.0,
+        "prime_tail_share": 0.0,
+        "max_needed_constant": 3.749999999999999,
+        "max_capacity": 1
+      },
+      {
+        "bucket": "singleton_nonrough",
+        "pair_interval_count": 721,
+        "capacity": 721,
+        "rough_tail": 0,
+        "prime_tail": 0,
+        "mertens_envelope": 114.58002060706306,
+        "needed_constant": 0.0,
+        "density": 0.0,
+        "prime_tail_share": null,
+        "max_needed_constant": 0.0,
+        "max_capacity": 1
+      },
+      {
+        "bucket": "singleton_prime",
+        "pair_interval_count": 181,
+        "capacity": 181,
+        "rough_tail": 181,
+        "prime_tail": 181,
+        "mertens_envelope": 28.601461426833534,
+        "needed_constant": 6.328347957429478,
+        "density": 1.0,
+        "prime_tail_share": 1.0,
+        "max_needed_constant": 8.713075139315405,
+        "max_capacity": 1
+      }
+    ],
+    "by_threshold": [
+      {
+        "bucket": ">=1.25",
+        "pair_interval_count": 206,
+        "capacity": 230,
+        "rough_tail": 206,
+        "prime_tail": 202,
+        "mertens_envelope": 39.53691977653333,
+        "needed_constant": 5.210319902620964,
+        "density": 0.8956521739130435,
+        "prime_tail_share": 0.9805825242718447,
+        "max_needed_constant": 8.713075139315405,
+        "max_capacity": 2
+      },
+      {
+        "bucket": ">=1.50",
+        "pair_interval_count": 203,
+        "capacity": 224,
+        "rough_tail": 203,
+        "prime_tail": 200,
+        "mertens_envelope": 37.53691977653335,
+        "needed_constant": 5.408009000432365,
+        "density": 0.90625,
+        "prime_tail_share": 0.9852216748768473,
+        "max_needed_constant": 8.713075139315405,
+        "max_capacity": 2
+      },
+      {
+        "bucket": ">=2.00",
+        "pair_interval_count": 202,
+        "capacity": 222,
+        "rough_tail": 202,
+        "prime_tail": 199,
+        "mertens_envelope": 37.003586443200014,
+        "needed_constant": 5.458930320445213,
+        "density": 0.9099099099099099,
+        "prime_tail_share": 0.9851485148514851,
+        "max_needed_constant": 8.713075139315405,
+        "max_capacity": 2
+      },
+      {
+        "bucket": ">=3.00",
+        "pair_interval_count": 181,
+        "capacity": 181,
+        "rough_tail": 181,
+        "prime_tail": 180,
+        "mertens_envelope": 28.534794760166868,
+        "needed_constant": 6.343133059876318,
+        "density": 1.0,
+        "prime_tail_share": 0.994475138121547,
+        "max_needed_constant": 8.713075139315405,
+        "max_capacity": 1
+      }
+    ],
+    "top_pair_spikes": [
+      {
+        "p": 613,
+        "q": 617,
+        "q_row": 585,
+        "left": 360329,
+        "right": 360945,
+        "first_anchor": 17,
+        "second_anchor": 127,
+        "tail_left": 167,
+        "tail_right": 167,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.11477004203576407,
+        "needed_constant": 8.713075139315405,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "first_anchor": 23,
+        "second_anchor": 107,
+        "tail_left": 109,
+        "tail_right": 109,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.11796946677346334,
+        "needed_constant": 8.476769687535327,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 659,
+        "q": 661,
+        "q_row": 613,
+        "left": 404533,
+        "right": 405193,
+        "first_anchor": 19,
+        "second_anchor": 107,
+        "tail_left": 199,
+        "tail_right": 199,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.11796946677346334,
+        "needed_constant": 8.476769687535327,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "first_anchor": 19,
+        "second_anchor": 103,
+        "tail_left": 137,
+        "tail_right": 137,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.11912603017320318,
+        "needed_constant": 8.394470952704888,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 613,
+        "q": 617,
+        "q_row": 585,
+        "left": 360329,
+        "right": 360945,
+        "first_anchor": 31,
+        "second_anchor": 103,
+        "tail_left": 113,
+        "tail_right": 113,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.11912603017320318,
+        "needed_constant": 8.394470952704888,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 659,
+        "q": 661,
+        "q_row": 613,
+        "left": 404533,
+        "right": 405193,
+        "first_anchor": 19,
+        "second_anchor": 101,
+        "tail_left": 211,
+        "tail_right": 211,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12031729047493521,
+        "needed_constant": 8.31135737891573,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 659,
+        "q": 661,
+        "q_row": 613,
+        "left": 404533,
+        "right": 405193,
+        "first_anchor": 43,
+        "second_anchor": 97,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12157059558404912,
+        "needed_constant": 8.225673282225877,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 569,
+        "q": 571,
+        "q_row": 439,
+        "left": 250099,
+        "right": 250669,
+        "first_anchor": 29,
+        "second_anchor": 89,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 450,
+        "left": 250094,
+        "right": 250650,
+        "first_anchor": 29,
+        "second_anchor": 89,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 577,
+        "q": 587,
+        "q_row": 427,
+        "left": 250063,
+        "right": 250649,
+        "first_anchor": 29,
+        "second_anchor": 89,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 509,
+        "q": 521,
+        "q_row": 481,
+        "left": 250081,
+        "right": 250601,
+        "first_anchor": 29,
+        "second_anchor": 89,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "first_anchor": 23,
+        "second_anchor": 89,
+        "tail_left": 131,
+        "tail_right": 131,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 577,
+        "q": 587,
+        "q_row": 427,
+        "left": 250063,
+        "right": 250649,
+        "first_anchor": 23,
+        "second_anchor": 83,
+        "tail_left": 131,
+        "tail_right": 131,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12445149522995717,
+        "needed_constant": 8.035259023222135,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 613,
+        "q": 617,
+        "q_row": 585,
+        "left": 360329,
+        "right": 360945,
+        "first_anchor": 43,
+        "second_anchor": 83,
+        "tail_left": 101,
+        "tail_right": 101,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12445149522995717,
+        "needed_constant": 8.035259023222135,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 569,
+        "q": 571,
+        "q_row": 439,
+        "left": 250099,
+        "right": 250669,
+        "first_anchor": 19,
+        "second_anchor": 79,
+        "tail_left": 167,
+        "tail_right": 167,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12604702722008482,
+        "needed_constant": 7.933546883687679,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "first_anchor": 43,
+        "second_anchor": 79,
+        "tail_left": 79,
+        "tail_right": 79,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12604702722008482,
+        "needed_constant": 7.933546883687679,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton"
+      }
+    ],
+    "top_singleton_corridors": [
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 450,
+        "left": 250094,
+        "right": 250650,
+        "first_anchor": 47,
+        "second_anchor": 73,
+        "tail_left": 73,
+        "tail_right": 73,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12779768037591935,
+        "needed_constant": 7.8248681592536,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 73,
+        "tail_is_prime": true,
+        "corridor_width": 8
+      },
+      {
+        "p": 577,
+        "q": 587,
+        "q_row": 427,
+        "left": 250063,
+        "right": 250649,
+        "first_anchor": 47,
+        "second_anchor": 73,
+        "tail_left": 73,
+        "tail_right": 73,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12779768037591935,
+        "needed_constant": 7.8248681592536,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 73,
+        "tail_is_prime": true,
+        "corridor_width": 8
+      },
+      {
+        "p": 659,
+        "q": 661,
+        "q_row": 613,
+        "left": 404533,
+        "right": 405193,
+        "first_anchor": 43,
+        "second_anchor": 97,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12157059558404912,
+        "needed_constant": 8.225673282225877,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 97,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 577,
+        "q": 587,
+        "q_row": 427,
+        "left": 250063,
+        "right": 250649,
+        "first_anchor": 29,
+        "second_anchor": 89,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 97,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "first_anchor": 43,
+        "second_anchor": 79,
+        "tail_left": 79,
+        "tail_right": 79,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12604702722008482,
+        "needed_constant": 7.933546883687679,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 79,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 569,
+        "q": 571,
+        "q_row": 439,
+        "left": 250099,
+        "right": 250669,
+        "first_anchor": 47,
+        "second_anchor": 73,
+        "tail_left": 73,
+        "tail_right": 73,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12779768037591935,
+        "needed_constant": 7.8248681592536,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 73,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 509,
+        "q": 521,
+        "q_row": 481,
+        "left": 250081,
+        "right": 250601,
+        "first_anchor": 47,
+        "second_anchor": 73,
+        "tail_left": 73,
+        "tail_right": 73,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12779768037591935,
+        "needed_constant": 7.8248681592536,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 73,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "first_anchor": 53,
+        "second_anchor": 61,
+        "tail_left": 83,
+        "tail_right": 83,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.13378047438110804,
+        "needed_constant": 7.474932381770774,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 83,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 613,
+        "q": 617,
+        "q_row": 585,
+        "left": 360329,
+        "right": 360945,
+        "first_anchor": 61,
+        "second_anchor": 61,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.13378047438110804,
+        "needed_constant": 7.474932381770774,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 97,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 227,
+        "q": 229,
+        "q_row": 222,
+        "left": 50610,
+        "right": 50838,
+        "first_anchor": 37,
+        "second_anchor": 37,
+        "tail_left": 37,
+        "tail_right": 37,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.15285215138898609,
+        "needed_constant": 6.5422697090808235,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 37,
+        "tail_is_prime": true,
+        "corridor_width": 7
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "first_anchor": 23,
+        "second_anchor": 107,
+        "tail_left": 109,
+        "tail_right": 109,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.11796946677346334,
+        "needed_constant": 8.476769687535327,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 109,
+        "tail_is_prime": true,
+        "corridor_width": 6
+      },
+      {
+        "p": 613,
+        "q": 617,
+        "q_row": 585,
+        "left": 360329,
+        "right": 360945,
+        "first_anchor": 31,
+        "second_anchor": 103,
+        "tail_left": 113,
+        "tail_right": 113,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.11912603017320318,
+        "needed_constant": 8.394470952704888,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 113,
+        "tail_is_prime": true,
+        "corridor_width": 6
+      },
+      {
+        "p": 569,
+        "q": 571,
+        "q_row": 439,
+        "left": 250099,
+        "right": 250669,
+        "first_anchor": 29,
+        "second_anchor": 89,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 97,
+        "tail_is_prime": true,
+        "corridor_width": 6
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 450,
+        "left": 250094,
+        "right": 250650,
+        "first_anchor": 29,
+        "second_anchor": 89,
+        "tail_left": 97,
+        "tail_right": 97,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12295207962477696,
+        "needed_constant": 8.133249986919967,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 97,
+        "tail_is_prime": true,
+        "corridor_width": 6
+      },
+      {
+        "p": 613,
+        "q": 617,
+        "q_row": 585,
+        "left": 360329,
+        "right": 360945,
+        "first_anchor": 43,
+        "second_anchor": 83,
+        "tail_left": 101,
+        "tail_right": 101,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12445149522995717,
+        "needed_constant": 8.035259023222135,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 101,
+        "tail_is_prime": true,
+        "corridor_width": 6
+      },
+      {
+        "p": 659,
+        "q": 661,
+        "q_row": 613,
+        "left": 404533,
+        "right": 405193,
+        "first_anchor": 47,
+        "second_anchor": 79,
+        "tail_left": 109,
+        "tail_right": 109,
+        "capacity": 1,
+        "rough_tail": 1,
+        "prime_tail": 1,
+        "mertens_envelope": 0.12604702722008482,
+        "needed_constant": 7.933546883687679,
+        "tail_type": "singleton_prime",
+        "capacity_type": "singleton",
+        "tail_value": 109,
+        "tail_is_prime": true,
+        "corridor_width": 6
+      }
+    ],
+    "top_corridors_by_pairs": [
+      {
+        "p": 509,
+        "q": 521,
+        "q_row": 481,
+        "left": 250081,
+        "right": 250601,
+        "tail_value": 149,
+        "tail_is_prime": true,
+        "corridor_width": 3,
+        "pair_count": 2,
+        "prime_pair_count": 2,
+        "anchors": [
+          [
+            23,
+            73
+          ],
+          [
+            41,
+            41
+          ]
+        ],
+        "pair_width_ratio": 0.6666666666666666
+      },
+      {
+        "p": 233,
+        "q": 239,
+        "q_row": 197,
+        "left": 46845,
+        "right": 47083,
+        "tail_value": 89,
+        "tail_is_prime": true,
+        "corridor_width": 3,
+        "pair_count": 2,
+        "prime_pair_count": 2,
+        "anchors": [
+          [
+            17,
+            31
+          ],
+          [
+            23,
+            23
+          ]
+        ],
+        "pair_width_ratio": 0.6666666666666666
+      },
+      {
+        "p": 659,
+        "q": 661,
+        "q_row": 613,
+        "left": 404533,
+        "right": 405193,
+        "tail_value": 241,
+        "tail_is_prime": true,
+        "corridor_width": 3,
+        "pair_count": 2,
+        "prime_pair_count": 2,
+        "anchors": [
+          [
+            23,
+            73
+          ],
+          [
+            41,
+            41
+          ]
+        ],
+        "pair_width_ratio": 0.6666666666666666
+      },
+      {
+        "p": 569,
+        "q": 571,
+        "q_row": 439,
+        "left": 250099,
+        "right": 250669,
+        "tail_value": 149,
+        "tail_is_prime": true,
+        "corridor_width": 4,
+        "pair_count": 2,
+        "prime_pair_count": 2,
+        "anchors": [
+          [
+            23,
+            73
+          ],
+          [
+            41,
+            41
+          ]
+        ],
+        "pair_width_ratio": 0.5
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 450,
+        "left": 250094,
+        "right": 250650,
+        "tail_value": 149,
+        "tail_is_prime": true,
+        "corridor_width": 4,
+        "pair_count": 2,
+        "prime_pair_count": 2,
+        "anchors": [
+          [
+            23,
+            73
+          ],
+          [
+            41,
+            41
+          ]
+        ],
+        "pair_width_ratio": 0.5
+      },
+      {
+        "p": 577,
+        "q": 587,
+        "q_row": 427,
+        "left": 250063,
+        "right": 250649,
+        "tail_value": 149,
+        "tail_is_prime": true,
+        "corridor_width": 4,
+        "pair_count": 2,
+        "prime_pair_count": 2,
+        "anchors": [
+          [
+            23,
+            73
+          ],
+          [
+            41,
+            41
+          ]
+        ],
+        "pair_width_ratio": 0.5
+      },
+      {
+        "p": 197,
+        "q": 199,
+        "q_row": 180,
+        "left": 35622,
+        "right": 35820,
+        "tail_value": 191,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            17
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 197,
+        "q": 199,
+        "q_row": 180,
+        "left": 35622,
+        "right": 35820,
+        "tail_value": 211,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            13
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 271,
+        "q": 277,
+        "q_row": 252,
+        "left": 69528,
+        "right": 69804,
+        "tail_value": 233,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            23
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 271,
+        "q": 277,
+        "q_row": 252,
+        "left": 69528,
+        "right": 69804,
+        "tail_value": 241,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            17,
+            17
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 271,
+        "q": 277,
+        "q_row": 252,
+        "left": 69528,
+        "right": 69804,
+        "tail_value": 193,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            19,
+            19
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 263,
+        "q": 269,
+        "q_row": 228,
+        "left": 61064,
+        "right": 61332,
+        "tail_value": 293,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            19
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 263,
+        "q": 269,
+        "q_row": 228,
+        "left": 61064,
+        "right": 61332,
+        "tail_value": 277,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            17
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 211,
+        "q": 223,
+        "q_row": 153,
+        "left": 33897,
+        "right": 34119,
+        "tail_value": 281,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            11
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 211,
+        "q": 223,
+        "q_row": 153,
+        "left": 33897,
+        "right": 34119,
+        "tail_value": 163,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            19
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "tail_value": 509,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            17,
+            31
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      }
+    ],
+    "top_corridors_by_density": [
+      {
+        "p": 197,
+        "q": 199,
+        "q_row": 180,
+        "left": 35622,
+        "right": 35820,
+        "tail_value": 191,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            17
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 197,
+        "q": 199,
+        "q_row": 180,
+        "left": 35622,
+        "right": 35820,
+        "tail_value": 211,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            13
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 271,
+        "q": 277,
+        "q_row": 252,
+        "left": 69528,
+        "right": 69804,
+        "tail_value": 233,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            23
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 271,
+        "q": 277,
+        "q_row": 252,
+        "left": 69528,
+        "right": 69804,
+        "tail_value": 241,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            17,
+            17
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 271,
+        "q": 277,
+        "q_row": 252,
+        "left": 69528,
+        "right": 69804,
+        "tail_value": 193,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            19,
+            19
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 263,
+        "q": 269,
+        "q_row": 228,
+        "left": 61064,
+        "right": 61332,
+        "tail_value": 293,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            19
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 263,
+        "q": 269,
+        "q_row": 228,
+        "left": 61064,
+        "right": 61332,
+        "tail_value": 277,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            17
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 211,
+        "q": 223,
+        "q_row": 153,
+        "left": 33897,
+        "right": 34119,
+        "tail_value": 281,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            11
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 211,
+        "q": 223,
+        "q_row": 153,
+        "left": 33897,
+        "right": 34119,
+        "tail_value": 163,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            11,
+            19
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "tail_value": 509,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            17,
+            31
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "tail_value": 367,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            17,
+            43
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "tail_value": 743,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            19,
+            19
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 547,
+        "q": 557,
+        "q_row": 482,
+        "left": 267918,
+        "right": 268474,
+        "tail_value": 487,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            19,
+            29
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 229,
+        "q": 233,
+        "q_row": 187,
+        "left": 43339,
+        "right": 43571,
+        "tail_value": 257,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            13
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 229,
+        "q": 233,
+        "q_row": 187,
+        "left": 43339,
+        "right": 43571,
+        "tail_value": 197,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            13,
+            17
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      },
+      {
+        "p": 613,
+        "q": 617,
+        "q_row": 585,
+        "left": 360329,
+        "right": 360945,
+        "tail_value": 463,
+        "tail_is_prime": true,
+        "corridor_width": 1,
+        "pair_count": 1,
+        "prime_pair_count": 1,
+        "anchors": [
+          [
+            19,
+            41
+          ]
+        ],
+        "pair_width_ratio": 1.0
+      }
+    ]
+  },
+  "review_conclusion": "第二锚粗尾的高放大常数主要来自尾区间长度为 1 的 singleton 事件。这些事件等价于 ab 落入由单个尾值 d 决定的极窄双曲走廊；因此局部尖峰出口可进一步形式化为 singleton-prime corridor，而非一般短区间异常。"
+}

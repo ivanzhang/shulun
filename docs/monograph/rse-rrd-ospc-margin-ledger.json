@@ -1,0 +1,56 @@
+{
+  "certificate_type": "rse_rrd_ospc_margin_ledger",
+  "status": "positive_margin_proof_obligation_ledger",
+  "source": "docs/monograph/qlow-mid-comp-supnorm-audit.json",
+  "normalization": "所有 C_* 必须先换算到 QLOW-MID-COMP 的 target=0.35 归一化损失尺度；否则本账本不能使用。",
+  "hardest_case": {
+    "P": 2003,
+    "R_exp": 0.3,
+    "R": 9,
+    "target": "0.35",
+    "comp_bound": "0.29663049024172705",
+    "computed_margin": "0.05336950975827295",
+    "available_margin": "0.053369509758272926",
+    "reported_min_slack": "0.053369509758272926",
+    "margin_consistency_error": "0.000000000000000024"
+  },
+  "budgets": [
+    {
+      "key": "RRD",
+      "name": "粗数替换误差",
+      "budget": "0.020",
+      "required_bound": "C_RRD <= 0.020",
+      "proof_obligation": "把 E_rough-discrep 的绝对值归一化到 QLOW 的 K V_omega 尺度，并证明同权 convention 下的损失不超过 0.020。"
+    },
+    {
+      "key": "OSPC",
+      "name": "有向小素集中出口",
+      "budget": "0.020",
+      "required_bound": "C_OSPC <= 0.020",
+      "proof_obligation": "证明 OSPC 必触发 CRTDefect/Tail-anchor 出口，且 Fourier 到缺陷的常数损失不超过 0.020。"
+    },
+    {
+      "key": "SelbergUniform",
+      "name": "P>=P0 统一 Selberg 矩常数",
+      "budget": "0.008",
+      "required_bound": "C_SelbergUniform <= 0.008",
+      "proof_obligation": "把样本网格的 Selberg 有理审计升级为 P>=P0 的矩阵扰动/谱隙统一界。"
+    },
+    {
+      "key": "LedgerRounding",
+      "name": "账本换算与外向舍入",
+      "budget": "0.003",
+      "required_bound": "C_round <= 0.003",
+      "proof_obligation": "统一 H/Q、Selberg 变差、RSE 核和 RRD/OSPC 之间的归一化换算误差。"
+    }
+  ],
+  "allocated_budget": "0.051",
+  "reserve": "0.002369509758272926",
+  "closure_criterion": "C_RRD + C_OSPC + C_SelbergUniform + C_round < available_margin",
+  "current_review_conclusion": "QLOW-MID-COMP 的样本网格已有正余量；RRD/OSPC 尚未由本账本证明。下一步必须逐项证明 budget 表中的 required_bound。",
+  "next_hard_points": [
+    "RRD：粗数替换误差的同权归一化上界。",
+    "OSPC：有向小素集中到 CRTDefect/Tail-anchor 的定量推出。",
+    "SelbergUniform：样本 Selberg 矩常数到 P>=P0 的统一化。"
+  ]
+}
