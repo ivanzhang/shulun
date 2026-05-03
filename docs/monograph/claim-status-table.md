@@ -495,6 +495,10 @@ KZ-A--KZ-E 推出 `(SC-9)`；完全自足版剩余为 KZ-B--KZ-E 的内联证明
 Bessel 微分方程、自伴算子和反复分部积分证明。当前 `SC-9` 的未闭合子原子剩余为
 KZ-B、KZ-D、KZ-E。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D
+已对偶化为谱投影核矩阵上界，并完成 oldform、Eisenstein、holomorphic 谱的多对数账本。
+该文证明 `PTK-D=>KZ-D`；因此 KZ-D 的唯一未内联核心压缩为 `PTK-D` 预迹核上界。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

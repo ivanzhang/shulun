@@ -263,3 +263,7 @@ well-factorable dispersion，对数节省仍未闭合。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 不再需要
 外部引用；外部索引只需继续核对 KZ-B、KZ-D、KZ-E。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D 的
+外部核验点改为 `PTK-D`。外部谱大筛若能给出 diagonal `T^2` 和 off-diagonal `N0` 的
+Schur 行列和上界，即可由该文件推出 KZ-D；否则还需补 pre-trace kernel 证明。

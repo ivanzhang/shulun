@@ -145,6 +145,11 @@ holomorphic 谱满足同型估计。
 这是第二个真正谱理论输入。完全自足版必须用正交性、Petersson/Kuznetsov 反向公式或
 pre-trace 大筛证明。
 
+KZ-D 的自足化脊柱见
+`docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md`。该文件把 KZ-D
+对偶化为谱投影核矩阵上界，处理 oldform/Eisenstein/holomorphic 多对数账本，并证明
+`PTK-D=>KZ-D`。因此 KZ-D 的唯一未内联核心变为预迹核上界 `PTK-D`。
+
 ## 6. 子原子 KZ-E：BFI/well-factorable dispersion 对数节省
 
 Kuznetsov 与谱大筛给出平方根平均控制；要得到任意 `log^{-A}`，还需要本文 clean HLC
@@ -205,9 +210,9 @@ Kuznetsov 与谱大筛给出平方根平均控制；要得到任意 `log^{-A}`�
 
 ```text
 KZ-B: Kuznetsov trace formula 专门化；
-KZ-D: spectral large sieve 含 oldform/Eisenstein；
+PTK-D: pretrace kernel bound implying KZ-D；
 KZ-E: BFI/well-factorable dispersion 对数节省。
 ```
 
-因此，下一步若继续无黑箱硬攻，应从 KZ-D 开始：它直接控制谱侧二范数；随后攻 KZ-B，
-最后攻 KZ-E。不能把这些原子省略后宣称完全自足闭合。
+因此，下一步若继续无黑箱硬攻，应从 PTK-D 开始；随后攻 KZ-B，最后攻 KZ-E。不能把这些
+原子省略后宣称完全自足闭合。

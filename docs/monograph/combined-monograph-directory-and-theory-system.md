@@ -1481,6 +1481,18 @@ SC-9
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已内联
 证明，剩余子原子为 KZ-B、KZ-D、KZ-E。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D
+目录节点应展开为：
+
+```text
+KZ-D
+=> dual spectral kernel
+=> PTK-D pretrace kernel bound
+=> KZ-D.
+```
+
+oldform、Eisenstein、holomorphic 谱只保留为多对数账本；未闭合核心是 PTK-D。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

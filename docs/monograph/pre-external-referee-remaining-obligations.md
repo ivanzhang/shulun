@@ -611,6 +611,16 @@ KZ-D: spectral large sieve with oldform/Eisenstein;
 KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D
+继续收窄为：
+
+```text
+PTK-D: pretrace kernel bound (diagonal T^2 plus off-diagonal N0 Schur rows/columns).
+```
+
+oldform、Eisenstein、holomorphic 谱已经进入多对数账本；外审前剩余不应再笼统写
+“spectral large sieve”，而应写 PTK-D。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为
