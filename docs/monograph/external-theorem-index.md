@@ -183,4 +183,9 @@ e(-h*rho(c)*bar(ell)/R(c)).
 | 权重 | `Lambda(m)` 与素数 `ell` | 需 Vaughan/Heath-Brown 或 BFI 权重 |
 | 缺陷出口 | high-lcm/high-frequency/coefficient concentration | 必须分别路由，不能由 KLS 一句带过 |
 
+新增 `docs/monograph/prime-matrix-h3-dsb-high-lcm-clamp-routing.md` 后，high-lcm 项已获得
+独立路由：大质量高 `R(c)` 分支必稀疏化，并进入 `Persistent-HLC=>PDEC/ColumnCRT`
+或 `Sparse-HLC=>SAE`。因此 DI/BFI 只应覆盖低 `R(c)` 的 `KLS-window` 主分支；
+不能把 high-lcm 质量算入同一个外部定理输入。
+
 该表未完成前，`DI/BFI` 只能作为 H3-DSB 的候选外部输入，不能宣称 H3 行命题外部定理版闭合。

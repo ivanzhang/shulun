@@ -168,6 +168,14 @@ R(c)>R_0        : high-lcm clamp branch.
 高 `R(c)` 分支不能直接由同一个 KLS 输入覆盖；它必须由夹逼低模集中、端点稀疏或高 lcm
 容量排斥另行吸收。
 
+新增高 `lcm` 路由见
+`docs/monograph/prime-matrix-h3-dsb-high-lcm-clamp-routing.md`。该路由证明：若
+`R(c)>R_0` 分支承载 `q/log y` 级质量，则一行内每个夹逼单元容量至多
+`1+floor((q+O(1))/R_0)`，所以大质量必变成大量几乎单点的高 `lcm` 激活单元。
+进一步按坏行集合做 persistent/sparse 二分：persistent 分支给出坏行指示函数的非零
+CRT/Fourier 缺陷，进入 `PDEC/ColumnCRT`；sparse 分支进入 `SAE` 单窗逃逸。
+因此 high-lcm 不再是 KLS-window 的未说明参数漏洞，而是一个已经路由到既有最终出口的分支。
+
 ### 4.2 互补商窗口长度
 
 由 `(KWR-7)`，`m` 窗口长度最多 `q^{1/3}`，且当 `ell` 接近 `q` 时为常数级。这是强短窗口。
@@ -212,14 +220,15 @@ H3-DSB bad row
 => Kloosterman window sum K(C_*) is large
 => either
    (A) KLS-window estimates cover the active parameter range and contradict largeness;
-   (B) active mass lies in high-lcm clamp branch R(c)>R0;
+   (B) active mass lies in high-lcm clamp branch R(c)>R0,
+       hence enters Persistent-HLC/PDEC-ColumnCRT or Sparse-HLC/SAE;
    (C) active mass lies in high-frequency/sawtooth tail;
    (D) coefficient norms concentrate.
 ```
 
 其中：
 
-- `(B)` 应路由到 `Clamp/endpoint/cofactor`；
+- `(B)` 已路由到 `Persistent-HLC` 非零 CRT/Fourier 缺陷或 `Sparse-HLC` 单窗逃逸；
 - `(C)` 应路由到端点 sawtooth 缺陷；
 - `(D)` 是尾标签或夹逼集中；
 - `(A)` 是唯一需要外部 DI/BFI/KLS-window 输入的分支。
@@ -238,5 +247,6 @@ H3-DSB bad row
 因此当前真正剩余不再是抽象“大筛缺陷”，而是：
 
 ```text
-证明 KLS-window 覆盖活跃参数，或逐项排除 high-lcm / high-frequency / concentration 三个逃逸分支。
+证明 KLS-window 覆盖活跃参数，排除 Persistent-HLC/Sparse-HLC 出口，
+并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```

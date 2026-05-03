@@ -1331,6 +1331,19 @@ Thus the final H3 frequency input is a short-window Kloosterman sum with variabl
 cofactor window $I/\ell$, modulus $R(c)$, and frequency $h$.  The remaining audit splits into
 four branches: KLS-window coverage of the active parameters, high-lcm clamp escape,
 high-frequency endpoint tail, and coefficient concentration.
+The high-lcm branch is routed further in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-high-lcm-clamp-routing.md}.
+\]
+If $R(c)>R_0$, then one row contributes at most
+\[
+  1+\left\lfloor\frac{q+O(1)}{R_0}\right\rfloor
+\]
+points from a fixed clamp unit.  Hence any high-lcm mass of order $q/\log y$ must activate
+many almost-singleton high-lcm units.  Across a persistent family of bad rows this gives a
+non-zero CRT/Fourier defect, hence a PDEC/ColumnCRT exit; if it is not persistent, it is a
+sparse single-window escape.  This does not yet exclude the branch, but it removes high-lcm
+mass from the low-modulus KLS-window estimate and routes it to the existing final exits.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

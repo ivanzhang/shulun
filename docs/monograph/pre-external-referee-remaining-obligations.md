@@ -488,6 +488,18 @@ m≡rho*bar(ell) mod R
 
 这些分支未逐项证明前，不能把 DI/BFI 的名字直接写成 H3 行命题闭合。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-high-lcm-clamp-routing.md` 后，第 2 项已被进一步
+路由而不是闭合：高 `R(c)` 单元一行容量为 `1+floor((q+O(1))/R_0)`，所以若承载
+`q/log y` 级质量，必有大量稀疏高 `lcm` 单元。该分支只有两个合法出口：
+
+```text
+Persistent-HLC => PDEC/ColumnCRT 非零 Fourier/CRT 缺陷；
+Sparse-HLC     => SAE 单窗逃逸。
+```
+
+外审前剩余因此改写为：排除 `Persistent-HLC` 与 `Sparse-HLC` 两个出口，或明确保留为
+条件输入；不能再把 high-lcm 质量混入低模 `KLS-window` 主估计。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

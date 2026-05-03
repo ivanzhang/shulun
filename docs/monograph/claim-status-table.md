@@ -419,6 +419,12 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 `KLS-window` 覆盖活跃参数、`high-lcm clamp`、`high-frequency endpoint`、`coefficient concentration`。
 其中后三项应路由到既有缺陷；第一项需核验 DI/BFI/KLS-window 是否覆盖本 H3 参数。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-high-lcm-clamp-routing.md` 后，`high-lcm clamp`
+分支已不再是未定位参数漏洞：若 `R(c)>R_0` 承载 `q/log y` 级质量，则单元容量
+`1+floor((q+O(1))/R_0)` 强制大量稀疏高 `lcm` 单元激活；跨坏行持久时给出
+`PDEC/ColumnCRT` 非零 Fourier/CRT 缺陷，非持久时进入 `SAE` 单窗逃逸。当前诚实状态：
+高 `lcm` 分支路由已证，`Persistent-HLC` 与 `Sparse-HLC` 出口排斥仍未证。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为
