@@ -197,6 +197,13 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 因此当前最小硬点进一步更新为 `RPZ-Distributed Barrier`：低负载分散吸收若持续，必须证明其容量
 小于 RPZ 复活点需求，或使其回流到 `ColumnCRT/ColumnRadius/TailAnchor` 命名出口。
 
+新增 `docs/monograph/prime-matrix-rpz-sliding-plateau-barrier.md`、
+`docs/monograph/prime-matrix-rpz-sliding-plateau-audit.md` 与脚本
+`experiments/prime_matrix_rpz_sliding_plateau_audit.py` 后，`Distributed-RPZ` 的滑动平台版本已压缩为
+`TailAnchor` 或边界压缩。审计显示同批样本最大滑动零窗平台长度为 `5`，唯一复活源 `16` 个，
+吸收事件 `73` 个，阈值 `T_0=4` 下 `5/5` 记录触发持久源 TailAnchor。当前最小硬点更新为
+`RPZ-BCB`：排除源删除后的边界层逃逸，或将其路由到 `SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-gje-sae-terminal-band-decomposition.md` 后，`GJE-SAE` 又被拆成低行段与终端带：指数 `theta>1/2` 的普通短区间素数输入最多覆盖 `s<=q^{1/theta-1}` 量级低行段，不能覆盖 `s≈q` 的终端行。终端带经 `m=q^2-n` 镜像后成为“每个旧素数 `ell<=p` 只允许非零类 `q^2 mod ell`”的 CRT 覆盖问题。当前最小硬核更新为 `Terminal-SAE/PDEC`。
 
 新增 `docs/monograph/prime-matrix-terminal-sae-split-audit.md` 与 `docs/monograph/prime-matrix-terminal-sae-split-inequality.md` 后，终端带又被压成分层骨架/尾命中不等式。取 `y=max(2,floor(p/e))`，低筛骨架数 `G_y(h)` 若大于尾素数命中重数 `T_y(h)`，则尾素数无法覆盖骨架，终端行必有旧筛幸存者。审计到 `p<=1000` 的全部终端镜像块均满足正余量；当前最小硬点更新为 `TSI-or-PDEC`。

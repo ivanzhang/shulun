@@ -699,6 +699,21 @@ maximum one-window label and top-column loads equal to $1$.  Thus the route does
 single-window TailAnchor exclusion; the next theorem-level gate is the Distributed-RPZ capacity
 barrier, or a proof that distributed absorption necessarily returns to one of the named column
 or tail exits.
+The first attack on this gate is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-sliding-plateau-barrier.md}.
+\]
+It proves a sliding-platform multiplicity formula: if a zero window remains zero under a
+consecutive block of shifts, then a resurrected source in the common core repeats with the
+full platform multiplicity.  Hence distributed absorption on such a platform is either a
+persistent TailAnchor load or, after source deletion, a boundary-compressed branch.  The audit
+in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-sliding-plateau-audit.md}
+\]
+finds platform length $5$ in the known samples and TailAnchor triggering at $T_0=4$ in all five
+cases.  The remaining gate is therefore the boundary-compressed RPZ branch, not unrestricted
+distributed absorption.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

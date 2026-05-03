@@ -499,6 +499,15 @@ survivor / TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ。
 `L_T<=T_0`、`L_D<=D_1` 且 `L_R=0`，则低负载吸收容量不足以覆盖所有 RPZ 复活点，
 否则必须回流到命名出口。
 
+新增 `docs/monograph/prime-matrix-rpz-sliding-plateau-barrier.md`、
+`docs/monograph/prime-matrix-rpz-sliding-plateau-audit.md` 与脚本
+`experiments/prime_matrix_rpz_sliding_plateau_audit.py` 后，`Distributed-RPZ` 又被压缩：
+在同批样本中包含原零行的最大连续滑动零窗平台长度均为 `5`，唯一复活源 `16` 个，
+滑动吸收事件 `73` 个；阈值 `T_0=4` 时 `5/5` 样本都触发持久源 `TailAnchor`。
+因此剩余硬点不再是一般分散吸收，而是源删除后的边界压缩分支 `RPZ-BCB`：
+若未触发 TailAnchor，则所有复活源必须落入滑动平台两端边界层；下一步要排除该边界层逃逸，
+或把它送入 `SAE/PDEC/ColumnCRT`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

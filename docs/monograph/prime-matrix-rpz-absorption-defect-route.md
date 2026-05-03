@@ -164,14 +164,19 @@ RPZ-Absorption
 => ColumnCRT/ColumnRadius or survivor.
 ```
 
-要继续推进，必须证明一个分散吸收不等式：
+新增 `prime-matrix-rpz-sliding-plateau-barrier.md` 后，`Distributed-RPZ` 的第一层已经被进一步二分。
+若漂移族来自同一零窗的连续滑动平台，则同一复活源在多个滑动窗口中重复出现；按窗口事件计数时，
+这会形成持久源 `TailAnchor`。若坚持源删除账本，则低负载分支必须退化为边界压缩。
 
-**RPZ-Distributed Barrier.**
-若漂移族中 `L_T<=T_0`、`L_D<=D_1` 且 `L_R=0`，则某个窗口保留 `h`-筛幸存者；
-等价地，低负载吸收容量小于 RPZ 复活点需求。
+因此要继续推进，真正需要证明的是源删除后的分散吸收不等式：
 
-这就是下一步最小可攻命题。它比直接证明全局 `D_0,L_D` 小常数更弱，因为只需要在
-RPZ 复活点吸收场中证明低负载无法持续。
+**RPZ-BCB（boundary-compressed barrier）.**
+若漂移平台中 `L_T<=T_0`、`L_D<=D_1` 且 `L_R=0`，则所有复活源被压到平台并集的两端
+`T_0` 边界层。需要证明这种边界压缩要么保留公共核心中的 `h`-筛幸存者，要么进入
+`SAE/PDEC/ColumnCRT` 端点缺陷。
+
+这就是下一步最小可攻命题。它比原始 `Distributed-RPZ` 更窄，因为滑动平台已把非边界的
+分散吸收强制转回 TailAnchor。
 
 ## 6. 审稿边界
 
@@ -186,9 +191,9 @@ TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ 五分支路由。
 本文没有完成：
 
 ```text
-Distributed-RPZ 排斥；
+源删除后的边界压缩 Distributed-RPZ 排斥；
 全局 T_0,D_1,D_0 阈值；
 正式 q-grid 零行到 RPZ 漂移窗口族的抽取映射。
 ```
 
-下一步应直接攻 `RPZ-Distributed Barrier`，并把它写成低负载容量不等式。
+下一步应直接攻 `RPZ-BCB`，并把它写成“公共核心幸存者或端点缺陷”的容量不等式。

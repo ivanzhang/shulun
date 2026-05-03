@@ -154,6 +154,13 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `RPZ-Absorption=>TailAnchor`，而是必须证明 `Distributed-RPZ` 低负载分散吸收不能持续，
 或提交它进入 `ColumnCRT/ColumnRadius/TailAnchor` 的容量不等式。
 
+新增 `docs/monograph/prime-matrix-rpz-sliding-plateau-barrier.md`、
+`docs/monograph/prime-matrix-rpz-sliding-plateau-audit.md` 与
+`experiments/prime_matrix_rpz_sliding_plateau_audit.py` 后，连续滑动平台中的非边界复活源
+会以平台长度重复出现，形成持久源 TailAnchor；同批样本在 `T_0=4` 下 `5/5` 触发。
+因此外审前剩余进一步收窄为 `RPZ-BCB`：排除源删除后的边界压缩逃逸，或证明它进入
+`SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、
