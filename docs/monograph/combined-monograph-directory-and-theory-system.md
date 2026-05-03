@@ -586,6 +586,25 @@ prove WSH-Hall uniformly
 or every Hall defect => PDEC / Tail-anchor / Endpoint deficit.
 ```
 
+新增 `experiments/prime_matrix_wsh_hall_defect_anatomy.py`、
+`docs/monograph/prime-matrix-wsh-hall-defect-anatomy.md/json` 与
+`docs/monograph/prime-matrix-wsh-hall-defect-trichotomy.md` 后，上述第二分支的审稿模板被
+进一步定式化。脚本读取 `WSH-Hall` 相位证书中的 `44` 条最紧行，故意把半径压到最小
+Hall 半径以下，得到 `124` 个强制缺陷；每个缺陷都有连续半素数块 `B_0` 与
+`|N_R(B_0)|<|B_0|` 的端点亏损，最大超额为 `5`。审计同时记录尾标签负载、轮筛相位负载、
+固定偏移负载和 `q^2-n` 镜像区间。
+
+这一步把下一个单点硬核命名为：
+
+```text
+WSH-Expansion-or-Defect:
+if Tail-anchor and fixed-offset/PDEC thresholds do not fire,
+then |N_R(B_0)| >= |B_0| for R=C log^2(q);
+otherwise the failing block is absorbed by Endpoint/PDEC.
+```
+
+注意：该命题尚未证明。当前完成的是一维 Hall 缺陷正规形、五个刚性投影和三出口证书字段。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

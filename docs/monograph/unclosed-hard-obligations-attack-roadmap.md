@@ -140,6 +140,17 @@ RCI/PDEC
 而是证明局部 Hall 缺陷若出现，必然表现为固定偏移相位超载、尾标签集中或端点素数亏损，
 从而进入 `PDEC/Tail-anchor/Endpoint`。
 
+新增 `prime-matrix-wsh-hall-defect-trichotomy` 后，路线 C 的下一硬点更窄：
+
+```text
+WSH-Expansion-or-Defect
+```
+
+即对任意连续 Hall 缺陷块 `B_0`，证明非集中分支满足
+`|N_R(B_0)|>=|B_0|`；若不满足，则缺陷块已经给出可量化的端点亏损，并经
+`q^2-n` 镜像送入早期非零类 `PDEC/Endpoint`。强制缩半径审计只支持这个分解格式，
+不能替代该统一扩张不等式。
+
 ### 2.5 可行性
 
 评级：C。

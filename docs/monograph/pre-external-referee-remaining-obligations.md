@@ -68,6 +68,18 @@ WSH-Hall uniformly true;
 or any Hall defect forces PDEC / Tail-anchor / Endpoint deficit.
 ```
 
+新增 `docs/monograph/prime-matrix-wsh-hall-defect-trichotomy.md` 后，第二项被拆成可审查的
+三出口模板。任意 Hall 失败先化为连续半素数块 `B_0` 的正规形
+`|N_R(B_0)|<|B_0|`，再同时投影到端点亏损、尾因子负载、小轮相位、固定偏移容量和
+`q^2-n` 镜像非零类块。外审前仍缺的是统一不等式：
+
+```text
+WSH-Expansion-or-Defect:
+if Tail-anchor and fixed-offset/PDEC thresholds do not fire,
+then |N_R(B_0)| >= |B_0| for R=C log^2(q);
+else the named exit absorbs the block.
+```
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

@@ -495,6 +495,26 @@ For $17\le p\le2000$, $y=\lfloor p/e\rfloor$, and wheel primes $2,3,5,7,11,13$, 
 
 This is a computational-certificate update, not a global theorem.  The remaining proof obligation is either a uniform WSH-Hall theorem or a proof that every Hall defect necessarily triggers PDEC, Tail-anchor, or Endpoint deficit.
 
+\section{WSH-Hall Defect Trichotomy}
+
+The corresponding defect audit is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-hall-defect-trichotomy.md}.
+\]
+It converts a possible Hall failure into a consecutive block $B_0$ of balanced two-tail semiprimes with
+\[
+  |N_R(B_0)|<|B_0|.
+\]
+The same block is then examined through five projections: endpoint prime deficit, tail-factor load, small-wheel residue load, fixed-offset capacity, and the terminal mirror $n\mapsto q^2-n$.  The resulting target is the named interface
+\[
+  \text{WSH-Expansion-or-Defect}.
+\]
+If Tail-anchor and fixed-offset/PDEC thresholds do not fire, one must prove the expansion inequality
+\[
+  |N_R(B_0)|\ge |B_0|
+\]
+for $R=C\log^2 q$; otherwise the failing block must be absorbed by Endpoint/PDEC.  A forced-radius audit on the $44$ tight certificate rows produces $124$ explicit Hall defects and records their tail, phase, offset, and mirror data.  This audit fixes the certificate fields and exit geometry; it is not a substitute for the uniform expansion theorem.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.
