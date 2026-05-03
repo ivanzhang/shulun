@@ -1001,6 +1001,18 @@ $R\bmod hP(h)$ and the plateau parameters.  In the current ledger the formula ma
 five BCB samples and all six induced lower row phases lie in $A_h$.  This is the sharp
 remaining input: prove the same residue implication for every formal BCB counterexample,
 or send any rejected induced phase to its first-failure exit.
+The accepted-preimage ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.md}
+\]
+enumerates this final residue condition for the current BCB parameter families.  The
+$P=13,h=5$ family has no bad residue.  The other four families still have bad residues,
+split between no-candidate endpoint failures and all-rejected candidate phases.  The actual
+top-row residues in the ledger all lie in the selector preimage, with positive distance from
+the bad set where the bad set is nonempty.  Thus the residue preimage computation is now
+explicit, but the proof is still not global: the formal counterexample construction must be
+shown to land in the selector preimage, or the bad residue must be discharged through its
+named BCB endpoint or first-failure seam/PDEC/ColumnCRT exit.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

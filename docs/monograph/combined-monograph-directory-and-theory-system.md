@@ -1107,3 +1107,10 @@ m_max=floor(U/h)。
 写 `P=Qh+d` 后，`m_min,m_max mod P(h)` 只依赖 `R mod hP(h)` 与平台参数。当前 `5/5`
 条 BCB 样本公式匹配，`6/6` 个候选行相位 accepted。剩余全局义务进一步变为：
 证明正式反例的 `R mod hP(h)` 必诱导 accepted 候选相位；失败则进入对应 first-failure 出口。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.md` 后，accepted preimage 已对
+当前 BCB 参数族逐项枚举。`P=13,h=5` 参数族没有 bad residue；其余四族仍有 bad residue，
+类型为 `no_candidate` 或 `all_rejected`。当前实际 `R mod hP(h)` 全部落入 selector preimage；
+到 bad residue 的距离为：`P=17` 为 `7`、`P=19` 为 `3`、`P=23` 为 `2`、`P=29` 为 `1`。
+因此剩余义务不再是计算 preimage，而是证明 formal BCB 的顶层行 residue 必落入该 preimage；
+否则按 `no_candidate` 回到 BCB endpoint，或按 `all_rejected` 回到 first-failure 出口。

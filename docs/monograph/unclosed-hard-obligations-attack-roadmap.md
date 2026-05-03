@@ -661,6 +661,11 @@ BCB 参数 floor 身份抽出。当前 `5/5` 条样本公式匹配，`6/6` 个�
 硬点更新为 accepted preimage：证明 formal BCB 的 `R mod hP(h)` 与平台参数必把
 `m_min..m_max` 送入 `A_h`；若不能，则改攻该 rejected 相位的 first-failure 出口证书。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.md` 后，accepted preimage 已
+显式枚举。实际样本全部落入 selector preimage，但四个参数族仍有 bad residue。当前最小硬点
+继续收窄为 bad residue 排斥：证明 formal BCB 的顶层行 residue 不可能进入 bad set；否则
+分别闭合 `no_candidate` endpoint 或 `all_rejected` first-failure 出口。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

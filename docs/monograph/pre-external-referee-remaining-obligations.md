@@ -289,6 +289,11 @@ first-failure 出口。
 正式 BCB 反例的 `R mod hP(h)` 必须推出候选行相位属于 `A_h`；否则该 rejected 相位必须
 接入 first-failure seam/PDEC/ColumnCRT 证书。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.md` 后，该 residue implication
+的当前参数族 preimage 已显式化：实际样本全部在 selector preimage 中，但四个参数族仍存在
+bad residue。因此外审前仍需证明正式反例不能取这些 bad residue；若能取，则必须分别闭合
+`no_candidate` 的 BCB endpoint 出口或 `all_rejected` 的 first-failure 出口证书。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

@@ -163,6 +163,7 @@ selector gap 阈值账本。
 短候选端点相位账本。
 短候选端点禁区块公式账本。
 BCB 候选下层行相位身份账本。
+BCB accepted top-row residue preimage 账本。
 ```
 
 本文没有完成：
@@ -314,3 +315,8 @@ all-rejected 端点集合等于 rejected 行相位的端点块并集。当前三
 `m_min,m_max` 由 BCB 核心端点的 floor 身份给出，并且模 `P(h)` 只依赖 `R mod hP(h)` 与平台参数。
 当前 `6/6` 个候选行 accepted。材料化接口剩余为 accepted preimage 证明；若失败，则按该候选
 相位的 first-failure 键填入 seam/PDEC/ColumnCRT 证书。
+
+新增 `prime-matrix-rpz-bcb-accepted-preimage-ledger.md` 后，accepted preimage 已变成显式 residue
+集合。实际 residue 全部安全；bad residue 仍存在并分为 `no_candidate` 与 `all_rejected`。
+因此材料化接口可以直接接收两类失败：`no_candidate` 接 BCB grid/endpoint，`all_rejected`
+接 first-failure seam/PDEC/ColumnCRT。

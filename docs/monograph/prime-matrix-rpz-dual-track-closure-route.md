@@ -304,6 +304,7 @@ selector gap 阈值账本。
 短候选端点相位账本。
 短候选端点禁区块公式账本。
 BCB 候选下层行相位身份账本。
+BCB accepted top-row residue preimage 账本。
 ```
 
 再新增
@@ -336,6 +337,9 @@ docs/monograph/prime-matrix-rpz-short-phase-block-formula.md。
 experiments/prime_matrix_rpz_bcb_candidate_phase_identity.py；
 docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.json；
 docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.md。
+experiments/prime_matrix_rpz_bcb_accepted_preimage_ledger.py；
+docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.json；
+docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -421,6 +425,12 @@ m_min=floor((L+h-2)/h)+1, m_max=floor(U/h)。
 写 `P=Qh+d` 后，候选相位只依赖 `R mod hP(h)` 与平台参数。当前 `5/5` 条 BCB 样本公式匹配，
 `6/6` 个候选行相位 accepted。下一硬点不再是几何抽取，而是全局证明 formal BCB 的
 `R mod hP(h)` 落入这个 accepted preimage。
+
+BCB accepted preimage 账本枚举了当前参数族的全部 `R mod hP(h)`。实际样本全部在 selector
+preimage 中；但除 `P=13,h=5` 外，其余参数族仍有 bad residue。bad residue 已分型为
+`no_candidate` 与 `all_rejected`，后者携带 first-failure 出口键。因此当前最小硬点是：
+证明 formal BCB residue 不能落入 bad set；若不能证明，则逐项闭合对应 endpoint 或
+first-failure 出口。
 
 本文没有完成：
 
