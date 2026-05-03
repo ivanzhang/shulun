@@ -666,6 +666,11 @@ BCB 参数 floor 身份抽出。当前 `5/5` 条样本公式匹配，`6/6` 个�
 继续收窄为 bad residue 排斥：证明 formal BCB 的顶层行 residue 不可能进入 bad set；否则
 分别闭合 `no_candidate` endpoint 或 `all_rejected` first-failure 出口。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.md` 后，最小硬点进一步上移为
+低筛连续覆盖长度上界。当前样本中 no-TailAnchor 强制核心长度全部超过对应 `h` 层最大低筛
+覆盖段，因而 `5/5` 当前 BCB 样本被排斥。下一最优攻坚目标是把该有限事实升级为 formal 层的
+Jacobsthal 型上界；若无法升级，则回到 endpoint/first-failure/PDEC/ColumnCRT 出口闭合。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

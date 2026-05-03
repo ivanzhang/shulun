@@ -305,6 +305,7 @@ selector gap 阈值账本。
 短候选端点禁区块公式账本。
 BCB 候选下层行相位身份账本。
 BCB accepted top-row residue preimage 账本。
+BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
 ```
 
 再新增
@@ -340,6 +341,9 @@ docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.md。
 experiments/prime_matrix_rpz_bcb_accepted_preimage_ledger.py；
 docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.json；
 docs/monograph/prime-matrix-rpz-bcb-accepted-preimage-ledger.md。
+experiments/prime_matrix_rpz_bcb_core_run_obstruction.py；
+docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.json；
+docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -431,6 +435,12 @@ preimage 中；但除 `P=13,h=5` 外，其余参数族仍有 bad residue。bad r
 `no_candidate` 与 `all_rejected`，后者携带 first-failure 出口键。因此当前最小硬点是：
 证明 formal BCB residue 不能落入 bad set；若不能证明，则逐项闭合对应 endpoint 或
 first-failure 出口。
+
+BCB 核心低筛连续覆盖长度障碍账本进一步上移硬点：no-TailAnchor 分支要求 `J_T0` 本身是
+`h`-筛零区间，所以 `|J_T0|` 必须不超过模 `P(h)` 的最大低筛覆盖段。当前层最大覆盖段为
+`h=5:5`、`h=7:9`、`h=11:13`、`h=13:21`；五个 BCB 核心长度 `9,13,15,19,25` 全部超界。
+因此当前有限样本的 no-TailAnchor BCB 分支已由该长度障碍排斥。全局路线现在最优先攻
+Jacobsthal 型低筛覆盖上界；若该上界失败，则回到 endpoint/first-failure 出口证书。
 
 本文没有完成：
 

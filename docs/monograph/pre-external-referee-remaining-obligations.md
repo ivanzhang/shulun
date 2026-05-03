@@ -294,6 +294,11 @@ first-failure 出口。
 bad residue。因此外审前仍需证明正式反例不能取这些 bad residue；若能取，则必须分别闭合
 `no_candidate` 的 BCB endpoint 出口或 `all_rejected` 的 first-failure 出口证书。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.md` 后，当前 BCB no-TailAnchor
+样本可由低筛最大连续覆盖长度直接排斥：`|J_T0|` 分别为 `9,13,15,19,25`，对应 `h=5,7,7,11,13`
+的最大低筛覆盖长度为 `5,9,9,13,21`。外审前需要把这一有限账本升级为 formal 层的
+Jacobsthal 型上界，或保留 endpoint/first-failure/PDEC/ColumnCRT 出口闭合义务。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

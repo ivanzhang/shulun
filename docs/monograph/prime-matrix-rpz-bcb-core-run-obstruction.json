@@ -1,0 +1,113 @@
+{
+  "status": "rpz_bcb_no_tailanchor_core_run_obstruction",
+  "source": "docs/monograph/prime-matrix-rpz-bcb-core-audit.json",
+  "summary": {
+    "h_layers": 4,
+    "records": 5,
+    "records_obstructed_by_run_length": 5,
+    "minimum_obstruction_margin": 4
+  },
+  "run_rows": [
+    {
+      "h": 5,
+      "primorial": 30,
+      "max_covered_run": 5,
+      "example_start": 2,
+      "example_end": 6
+    },
+    {
+      "h": 7,
+      "primorial": 210,
+      "max_covered_run": 9,
+      "example_start": 2,
+      "example_end": 10
+    },
+    {
+      "h": 11,
+      "primorial": 2310,
+      "max_covered_run": 13,
+      "example_start": 114,
+      "example_end": 126
+    },
+    {
+      "h": 13,
+      "primorial": 30030,
+      "max_covered_run": 21,
+      "example_start": 9440,
+      "example_end": 9460
+    }
+  ],
+  "records": [
+    {
+      "top_prime": 13,
+      "top_zero_row": 169,
+      "h": 5,
+      "forced_core_interval": [
+        2188,
+        2196
+      ],
+      "forced_core_length": 9,
+      "max_h_sieve_covered_run": 5,
+      "run_obstruction_margin": 4,
+      "no_tailanchor_core_impossible_by_run": true
+    },
+    {
+      "top_prime": 17,
+      "top_zero_row": 1211,
+      "h": 7,
+      "forced_core_interval": [
+        20574,
+        20586
+      ],
+      "forced_core_length": 13,
+      "max_h_sieve_covered_run": 9,
+      "run_obstruction_margin": 4,
+      "no_tailanchor_core_impossible_by_run": true
+    },
+    {
+      "top_prime": 19,
+      "top_zero_row": 3659,
+      "h": 7,
+      "forced_core_interval": [
+        69504,
+        69518
+      ],
+      "forced_core_length": 15,
+      "max_h_sieve_covered_run": 9,
+      "run_obstruction_margin": 6,
+      "no_tailanchor_core_impossible_by_run": true
+    },
+    {
+      "top_prime": 23,
+      "top_zero_row": 59,
+      "h": 11,
+      "forced_core_interval": [
+        1338,
+        1356
+      ],
+      "forced_core_length": 19,
+      "max_h_sieve_covered_run": 13,
+      "run_obstruction_margin": 6,
+      "no_tailanchor_core_impossible_by_run": true
+    },
+    {
+      "top_prime": 29,
+      "top_zero_row": 5210,
+      "h": 13,
+      "forced_core_interval": [
+        151062,
+        151086
+      ],
+      "forced_core_length": 25,
+      "max_h_sieve_covered_run": 21,
+      "run_obstruction_margin": 4,
+      "no_tailanchor_core_impossible_by_run": true
+    }
+  ],
+  "review_boundary": [
+    "no TailAnchor 分支强制 J_T0 为 h-筛零区间。",
+    "任何 h-筛零区间长度都不能超过模 P(h) 的最大连续低筛覆盖长度。",
+    "当前 BCB 样本全部超过该最大长度，因此当前参数族的 no-TailAnchor BCB 核心不相容。",
+    "全局闭合仍需证明对应 h 层的 Jacobsthal/低筛覆盖长度上界，或把超界失败送入已命名出口。"
+  ]
+}

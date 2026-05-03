@@ -1114,3 +1114,15 @@ m_max=floor(U/h)。
 到 bad residue 的距离为：`P=17` 为 `7`、`P=19` 为 `3`、`P=23` 为 `2`、`P=29` 为 `1`。
 因此剩余义务不再是计算 preimage，而是证明 formal BCB 的顶层行 residue 必落入该 preimage；
 否则按 `no_candidate` 回到 BCB endpoint，或按 `all_rejected` 回到 first-failure 出口。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.md` 后，BCB no-TailAnchor 分支有了
+更上游的长度障碍。no-TailAnchor 强制 `J_T0` 是 `h`-筛零区间，因此 `|J_T0|` 不能超过
+模 `P(h)` 中由 `<=h` 素数覆盖的最大连续长度。当前精确值为：
+
+```text
+h=5: 5，h=7: 9，h=11: 13，h=13: 21。
+```
+
+当前五个 BCB 核心长度为 `9,13,15,19,25`，全部严格超过对应上界，最小余量为 `4`。
+因此当前有限 BCB no-TailAnchor 参数族已被核心低筛长度障碍排斥。全局剩余义务上移为
+Jacobsthal 型低筛覆盖长度上界；若不能给出该上界，则仍按 endpoint/first-failure 出口路由。

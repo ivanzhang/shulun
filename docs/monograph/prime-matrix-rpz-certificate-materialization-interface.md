@@ -164,6 +164,7 @@ selector gap 阈值账本。
 短候选端点禁区块公式账本。
 BCB 候选下层行相位身份账本。
 BCB accepted top-row residue preimage 账本。
+BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
 ```
 
 本文没有完成：
@@ -320,3 +321,8 @@ all-rejected 端点集合等于 rejected 行相位的端点块并集。当前三
 集合。实际 residue 全部安全；bad residue 仍存在并分为 `no_candidate` 与 `all_rejected`。
 因此材料化接口可以直接接收两类失败：`no_candidate` 接 BCB grid/endpoint，`all_rejected`
 接 first-failure seam/PDEC/ColumnCRT。
+
+新增 `prime-matrix-rpz-bcb-core-run-obstruction.md` 后，材料化接口增加一个更上游的快速排斥：
+若 no-TailAnchor 强制核心长度超过 `h` 层最大低筛覆盖段，则 BCB 核心不相容，甚至不需要进入
+accepted preimage。当前有限样本 `5/5` 均被该障碍排斥；全局接口需要填入对应 Jacobsthal 型
+低筛覆盖上界，或继续保留 endpoint/first-failure 出口。

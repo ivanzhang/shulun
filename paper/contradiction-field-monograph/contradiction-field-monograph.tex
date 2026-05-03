@@ -1013,6 +1013,23 @@ the bad set where the bad set is nonempty.  Thus the residue preimage computatio
 explicit, but the proof is still not global: the formal counterexample construction must be
 shown to land in the selector preimage, or the bad residue must be discharged through its
 named BCB endpoint or first-failure seam/PDEC/ColumnCRT exit.
+The core-run obstruction ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.md}
+\]
+adds a stronger upstream test for the no-TailAnchor branch.  In that branch BCB-Core forces
+$J_{T}$ itself to be an $h$-sieve zero interval, so its length cannot exceed the maximum
+cyclic run of integers divisible by primes $\le h$ modulo $P(h)$.  For the current layers
+these exact maxima are
+\[
+  h=5:5,\qquad h=7:9,\qquad h=11:13,\qquad h=13:21.
+\]
+The five current BCB cores have lengths $9,13,15,19,25$, respectively, so every one of
+them exceeds the corresponding low-sieve run bound, with minimum margin $4$.  Thus the
+current finite BCB no-TailAnchor samples are obstructed before the accepted-preimage
+question is reached.  The global theorem-level input is now a Jacobsthal-type low-sieve
+run bound for the formal layers; without such a bound, the remaining bad cases still route
+to the named endpoint and first-failure exits.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 
