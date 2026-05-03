@@ -307,6 +307,7 @@ BCB 候选下层行相位身份账本。
 BCB accepted top-row residue preimage 账本。
 BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
 BCB Jacobsthal 型闭合接口。
+BCB Jacobsthal 线性闭合风险扫描。
 ```
 
 再新增
@@ -346,6 +347,9 @@ experiments/prime_matrix_rpz_bcb_core_run_obstruction.py；
 docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.json；
 docs/monograph/prime-matrix-rpz-bcb-core-run-obstruction.md。
 docs/monograph/prime-matrix-rpz-bcb-jacobsthal-closure-interface.md。
+experiments/prime_matrix_rpz_bcb_jacobsthal_risk_scan.py；
+docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.json；
+docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -452,6 +456,10 @@ G(h) < P+m-1-2T。
 
 这里 `G(h)` 是 `h` 层最大低筛连续覆盖长度。该不等式一旦在 formal BCB 参数范围内证明，
 no-TailAnchor BCB 分支即闭合；未证明前，不能把 finite closure 升级为全局 closure。
+
+Jacobsthal 风险扫描说明，朴素线性路线本身不够：在 `m=5,T=4,P=nextprime(2h)` 的最弱参数下，
+`G(h)<P-4` 从 `h=43` 起已经失败。故下一步不能继续宣称“低筛长度障碍全局闭合”；必须改攻
+formal 平台长度增长、TailAnchor 强制，或 endpoint/first-failure 出口证书。
 
 本文没有完成：
 

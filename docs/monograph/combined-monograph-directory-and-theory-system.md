@@ -1137,3 +1137,9 @@ G(h) < P+m-1-2T。
 
 当前 finite 样本满足该不等式；全局证明仍需给出 formal 层的 Jacobsthal 型上界，或者继续保留
 TailAnchor、endpoint、first-failure、PDEC、ColumnCRT 出口。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.md` 后，必须修正全局路线预期：
+若只使用 `m=5,T=4,P>2h`，则 `G(h)<P-4` 不可能作为全局闭合输入。基于
+Ziller--Morack primorial Jacobsthal 附属数据的风险扫描显示，首个非平凡失败在 `h=43`：
+`G(h)=89`、最小 `P>2h` 为 `89`、核心长度为 `85`。因此下一步必须证明 formal BCB 平台长度
+`m` 随层增长，或证明 bad 参数族进入 TailAnchor/endpoint/first-failure/PDEC/ColumnCRT。

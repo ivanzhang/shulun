@@ -675,6 +675,10 @@ Jacobsthal 型上界；若无法升级，则回到 endpoint/first-failure/PDEC/C
 证明 formal BCB 参数满足 `G(h)<P+m-1-2T`。这是当前路线中最小的全局数学输入；若证明成功，
 no-TailAnchor BCB 分支闭合；若失败，必须继续攻 TailAnchor/endpoint/first-failure 出口。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.md` 后，朴素版本
+`G(h)<P-4` 已被判定不能全局使用。当前最优硬攻方向改为：证明 formal BCB 中平台长度 `m`
+随 `G(h)-P` 增长，或证明平台短时必触发 TailAnchor/endpoint/first-failure 出口。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

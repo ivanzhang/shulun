@@ -1042,6 +1042,17 @@ divisible by some prime $\le h$, the exact BCB closure condition is
 where $m$ is the sliding platform length.  Under this inequality the no-TailAnchor BCB
 branch closes immediately; if it fails, the proof must keep the TailAnchor, endpoint,
 first-failure, PDEC, and ColumnCRT exits active.
+The risk scan
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.md}
+\]
+checks this linear closure route against the Ziller--Morack primorial Jacobsthal data.
+It shows that the current finite samples are safe, but the naive global specialization
+$m=5$, $T=4$, and only $P>2h$ fails already at $h=43$: there $G(h)=89$, the minimal top
+prime is $P=89$, and the core length is only $85$.  Thus the finite core-run obstruction
+cannot be promoted to a global theorem by a blanket linear bound.  A global proof must
+either force longer platforms $m$, prove stronger restrictions on the formal BCB parameter
+set, or close the TailAnchor/endpoint/first-failure exits.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 
