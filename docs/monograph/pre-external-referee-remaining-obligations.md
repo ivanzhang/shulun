@@ -565,6 +565,19 @@ self-contained version:
   仍需在本文内重证相应窗口化谱/dispersion 定理。
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-reduction.md` 后，上述 self-contained
+义务进一步改写为：
+
+```text
+prove HLC-KLS-core (CORE-5):
+  for every clean dyadic/Type block D,
+  |S(D)| <= N(D)/log^A y.
+```
+
+该文件已经证明 `HLC-KLS-core => HLC-KLS-ext`，所以外审前不应再把 HLC clean 分支写成
+多个模糊解析缺口；它只有一个精确缺口 `(CORE-5)`，以及一个书目动作：找出可直接推出
+`(CORE-5)` 的外部定理并核对变量。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -1439,6 +1439,19 @@ L2-flat residual 写成 KLS admission 问题。K1--K6 全部通过才可引用 K
 `external-theorem closed`；完全自足无黑箱版仍标为 `self-contained spectral/dispersion proof open`。
 该区分必须保留在合著稿中，避免把“可引用 DI/BFI/Kuznetsov”误写成“本文已重证 DI/BFI”。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-reduction.md` 后，目录中应增加
+`HLC-KLS-core` 节点：
+
+```text
+clean HLC window
+=> dyadic/Type standard kernel
+=> HLC-KLS-core (CORE-5)
+=> HLC-KLS-ext (CKR-5).
+```
+
+这把完全自足版的剩余从宽泛谱理论重证压缩为单一核心平均命题；但在 `(CORE-5)` 未证明或
+未精确引用前，仍不得标为完全无黑箱闭合。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

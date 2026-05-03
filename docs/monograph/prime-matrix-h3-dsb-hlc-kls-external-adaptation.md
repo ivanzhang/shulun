@@ -158,6 +158,11 @@ clean HLC branch is closed in the external-deep-theorem version.
 prove HLC-KLS-ext internally, i.e. reprove the needed DI/BFI/Kuznetsov window theorem.
 ```
 
+进一步压缩见 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-reduction.md`。该文件把
+`HLC-KLS-ext` 归约为单一核心谱平均命题 `HLC-KLS-core`，并逐步证明
+`HLC-KLS-core => (CKR-5)`。因此完全自足版的真正剩余已经不再是宽泛的“DI/BFI 总称”，而是
+证明或精确引用该核心 `(CORE-5)`。
+
 ## 6. 不能越界的结论
 
 1. 本文闭合的是 `HLC-KLS-ext` 的外部定理适配，不是 DI/BFI 本身的重证。

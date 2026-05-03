@@ -290,4 +290,6 @@ H3-DSB bad row
 ```
 
 最新状态：clean HLC 分支的外部深定理版适配已完成；若坚持完全自足无黑箱版，唯一剩余是
-在文内重证该窗口化 Kloosterman 谱/dispersion 定理。
+在文内重证该窗口化 Kloosterman 谱/dispersion 定理。该剩余又被
+`docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-reduction.md` 压缩为单一
+`HLC-KLS-core` 平均定理 `(CORE-5)`；证明该核心定理即可推出 clean HLC 的 `(CKR-5)`。

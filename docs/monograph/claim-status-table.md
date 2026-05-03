@@ -476,6 +476,11 @@ K6 dyadic/尾标签分块。任一失败项都回到既有命名出口；全部�
 gcd/unit 与分块条件逐项接入 DI/BFI/Kuznetsov 型窗口化 Kloosterman 输入。当前诚实状态为：
 clean HLC 分支在外部深定理版中闭合；完全自足无黑箱版仍需重证该谱/dispersion 定理。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-reduction.md` 后，完全自足缺口进一步
+压缩为单一 `HLC-KLS-core` 命题 `(CORE-5)`。该文严写 dyadic 分块、`Lambda(m)` 分解、
+unit/gcd 剥离、L2 账本和多对数吸收，证明 `HLC-KLS-core => HLC-KLS-ext => clean HLC`
+反例矛盾。当前唯一未自证行是 `(CORE-5)` 本身。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

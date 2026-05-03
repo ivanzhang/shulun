@@ -124,6 +124,10 @@ HLC 反例质量若在 clean unit 内保持 `q/log y` 级，则前面非零频�
 并说明在接受 DI/BFI/Kuznetsov 型窗口化 Kloosterman 输入时，clean HLC 分支得到
 `O(q/log^2 y)` 上界而闭合。
 
+进一步的核心压缩见 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-reduction.md`：
+它把 `HLC-KLS-ext` 化为单一 `HLC-KLS-core` 谱平均定理 `(CORE-5)`，并证明该核心定理
+推出 `(CKR-5)`。
+
 这就是当前剩余障碍的最窄形式：不再是 high-lcm / short-arc / L2-flat 的内部结构问题，
-而是 clean HLC Kloosterman window 的完全自足谱/dispersion 重证问题；外部深定理版已完成
-变量适配与审稿边界标注。
+而是 `HLC-KLS-core` 的完全自足谱/dispersion 重证问题；外部深定理版已完成变量适配与
+审稿边界标注。

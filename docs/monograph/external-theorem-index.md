@@ -237,3 +237,16 @@ H3-HLC 待核验项写为 `HLC-KLS-ext`：DI/BFI/Kuznetsov 是否覆盖 clean HL
 
 因此 H3-HLC clean branch 在允许引用 DI/BFI/Kuznetsov 窗口化 Kloosterman 输入时可标为
 `external-theorem closed`。完全自足无黑箱版仍需在文内重证对应谱/dispersion 定理。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-core-reduction.md` 后，完全自足版的引用边界
+进一步收窄为 `HLC-KLS-core`：
+
+```text
+windowed Kloosterman spectral/dispersion theorem
+=> HLC-KLS-core (CORE-5)
+=> HLC-KLS-ext (CKR-5)
+=> clean HLC branch contradiction.
+```
+
+外部文献核对时应优先寻找能直接推出 `(CORE-5)` 的定理形式；若不能直接推出，则必须补
+从外部定理到 `(CORE-5)` 的变量、权重、平滑和二范数转换。
