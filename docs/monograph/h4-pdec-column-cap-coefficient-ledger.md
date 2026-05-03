@@ -116,6 +116,8 @@ CC-LHB-UNBRIDGED。
 全局剩余改为证明正式 PDEC 坏窗的分类：LHB 型接入，非 LHB 型进入命名出口。
 新增 `h4-pdec-bad-window-classification-lemma.md` 后，该分类已定式化为 `SAE` 或
 `LHB-PDEC` 或 `Routed-PDEC` 三分支；它仍不排除非 LHB 出口。
+新增 `h4-pdec-homogeneous-splitting-lemma.md` 后，口径混合不再是数学出口，而是
+无损拆分预处理；拆分后的子族再分别进入上述三分支。
 
 因此 V1 账本已经从“系数来源登记”推进到“部分相位块物化”。它仍不是最终
 `A,b,E,e`，因为有限列见证半径、RCI/CDB 摘要界值和条件路由行尚未物化相位块。

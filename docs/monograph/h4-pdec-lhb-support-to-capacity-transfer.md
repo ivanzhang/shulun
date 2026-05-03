@@ -183,7 +183,9 @@ phase-indicator fork:
 
 新增 `h4-pdec-bad-window-classification-lemma.md` 后，上述分类已经定式化：`UPS-1`
 先给出 `SAE/PDEC` 二分，persistent 分支再按首个失败条件进入 `ColumnCRT`、
-`ColumnRadius`、`TailAnchor`、`Rankin` 或拆分义务。该文件仍不排除这些出口。
+`ColumnRadius`、`TailAnchor`、`Rankin` 或同口径拆分。新增
+`h4-pdec-homogeneous-splitting-lemma.md` 后，同口径拆分义务已闭合；剩余数学出口是
+`SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin`。
 
 ## 8. T3 路线的正式化
 

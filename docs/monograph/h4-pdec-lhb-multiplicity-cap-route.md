@@ -200,7 +200,7 @@ LHB 型坏窗 => S subset Z_LHB(p,Q)。
 
 1. **分类坏窗。** 对正式 PDEC 抽取过程逐项判定是否满足 LHB 型三条件；
 2. **LHB 分支。** 使用 `h4-pdec-lhb-attachment-lemma.md` 与 `h4-pdec-lhb-multiplicity-cap-certificate.json`，把 `WHOLEDEF/BRIDGED` 写成 `bound=0` 行；
-3. **非 LHB 分支。** 将坐标失败、低骨架失败、高标签失败、多窗口混合分别路由到 `SAE`、`ColumnCRT/ColumnRadius`、`TailAnchor/Rankin` 或拆分证书。
+3. **非 LHB 分支。** 将坐标失败、低骨架失败、高标签失败分别路由到 `SAE`、`ColumnCRT/ColumnRadius`、`TailAnchor/Rankin`；多窗口混合先按同口径拆分。
 
 备选路线仍保留：
 
@@ -210,5 +210,5 @@ LHB 型坏窗 => S subset Z_LHB(p,Q)。
 
 在 LHB allowed-set 分支内，`WHOLEDEF/BRIDGED` 已有 `bound=0` 的有限容量行，且
 LHB 型接入已证明。新增 `h4-pdec-bad-window-classification-lemma.md` 后，全局使用边界
-已压缩为：排除 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/口径混合` 出口后的
-剩余 persistent 分支可使用这些 LHB 行。
+已压缩为：先执行同口径拆分，再排除 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin`
+出口后的剩余 persistent 分支可使用这些 LHB 行。

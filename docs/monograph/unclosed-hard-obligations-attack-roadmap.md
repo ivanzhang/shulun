@@ -385,9 +385,23 @@ LHB-PDEC；
 Routed-PDEC。
 ```
 
-在排除 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/口径混合` 出口的剩余分支中，
+在执行同口径拆分并排除 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin` 出口的剩余分支中，
 所有 persistent 坏窗都是 LHB 型，因此可以接入 `Z_LHB` 与 `M(t)` 的 `bound=0` 容量行。
 审稿边界保持不变：这些出口尚未被排除，PDEC 最终对偶主控也尚未提交。
+
+### 4.2L 本轮进展：同口径拆分
+
+新增 `docs/monograph/h4-pdec-homogeneous-splitting-lemma.md`。该文件证明口径混合
+不是新的数学出口：任何混合坏窗集合必须按
+
+```text
+theta=(Q,tau,F,kappa,p,window-shape)
+```
+
+无损拆成同口径子族，然后对每个非空子族单独应用 `UPS-1` 与坏窗分类。若要从全局混合
+密度推出同口径 persistent 子族，还需额外阈值账本；否则逐子族进入 `PDEC/SAE` 即可。
+当前剩余数学出口因此更新为 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin`，不再包含
+口径混合作为独立出口。
 
 ### 4.3 SAE local escape exclusion
 

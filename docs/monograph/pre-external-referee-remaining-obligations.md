@@ -132,8 +132,12 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 或把非 LHB 型失败逐类送入命名出口。
 
 新增 `docs/monograph/h4-pdec-bad-window-classification-lemma.md` 后，非 LHB 型失败已经
-逐类送入 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/拆分证书`。剩余硬义务是排除
-这些出口或提交各自证书，而不是继续补 LHB 接入口。
+逐类送入 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/拆分证书`。其中拆分是工程义务；
+其余出口仍需排除或提交各自证书，而不是继续补 LHB 接入口。
+
+新增 `docs/monograph/h4-pdec-homogeneous-splitting-lemma.md` 后，`拆分证书` 义务已闭合：
+口径混合必须无损拆成同口径子族，不能作为单个 `PDEC-Dual-Cert`。剩余硬义务只保留
+拆分后的 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin` 出口。
 
 ### PM-E. RSE/RRD/OSPC 常数链
 

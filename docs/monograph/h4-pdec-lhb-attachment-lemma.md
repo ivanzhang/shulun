@@ -142,7 +142,7 @@ y\equiv (1-cp^{-1}-t)Q^{-1}\pmod\ell.
 | 坐标失败 | 不是同一 `p,Q` 下的一整行非平凡列窗口 | `SAE` 或重新抽取 PDEC 块 |
 | 低骨架失败 | 低素数剥离后剩余列不是 `H_Q(t)` | `ColumnCRTDefect` / `ColumnRadiusDefect` |
 | 高标签失败 | 某个低洞不是由 `R={ell<p:ell∤Q}` 中的高根基素数覆盖 | `TailAnchorDefect` / `Rankin low-mod spike` |
-| 多窗口混合 | 一个 `S` 混合了不同 `p,Q,tau` 口径 | 拆分成同口径子证书，或拒绝进入该行 |
+| 多窗口混合 | 一个 `S` 混合了不同 `p,Q,tau` 口径 | 由 `h4-pdec-homogeneous-splitting-lemma.md` 拆分成同口径子证书 |
 
 这些回流不是证明出口已经矛盾；它只说明 LHB 容量行的使用边界是可审查的。
 
@@ -172,5 +172,6 @@ WHOLEDEF/BRIDGED 在该分支中给出 bound=0 容量行。
 
 补充文件 `h4-pdec-bad-window-classification-lemma.md` 已完成该分类的第一版合同：
 非空命名低模坏窗先由 `UPS-1` 二分为 `SAE` 或 persistent；persistent 分支再按同一
-`(p,Q,tau)`、低骨架、高标签和口径混合四类失败路由。该分类仍不排除出口，但把
-LHB 容量行的全局使用边界精确化为“排除非 LHB 型出口后的剩余分支”。
+`(p,Q,tau)`、低骨架、高标签和口径混合四类失败路由。补充的
+`h4-pdec-homogeneous-splitting-lemma.md` 已把口径混合降为机械拆分；分类仍不排除
+其他出口，但把 LHB 容量行的全局使用边界精确化为“拆分后排除非 LHB 型出口的剩余分支”。

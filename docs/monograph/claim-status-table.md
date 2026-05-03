@@ -76,6 +76,10 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 低模坏窗分成 `SAE / LHB-PDEC / Routed-PDEC` 三类；排除非 LHB 出口后的 persistent
 剩余分支可使用 LHB `bound=0` 容量行。该项仍是路由闭合，不是出口排斥。
 
+新增 `docs/monograph/h4-pdec-homogeneous-splitting-lemma.md`。该文件闭合 `C0/C4`
+口径混合处理：混合坏窗集合必须按 `(Q,tau,F,kappa,p,window-shape)` 无损拆分，拆分后
+逐子族应用 `UPS-1` 和坏窗分类。剩余出口不再包含口径混合。
+
 
 ## 内部逐行复核更新
 

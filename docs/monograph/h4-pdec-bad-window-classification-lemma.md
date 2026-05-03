@@ -40,11 +40,11 @@ C4: 坏窗集合不混合不同的 (p,Q,tau) 口径。
 
 | 首个失败条件 | 失败含义 | 强制路由 |
 |---|---|---|
-| `C0` | 低模测试函数或 `tau` 不同一 | 拆成同一口径子证书；若不可拆则该行拒绝进入 `PDEC-Cert` |
+| `C0` | 低模测试函数或 `tau` 不同一 | 按 `h4-pdec-homogeneous-splitting-lemma.md` 拆成同口径子证书 |
 | `C1` | 不是同一 `p,Q` 下的一整行非平凡列窗口 | `SAE` 或重新抽取正式 PDEC 块 |
 | `C2` | 低骨架与 `H_Q(t)` 不一致 | `ColumnCRTDefect` 或 `ColumnRadiusDefect` |
 | `C3` | 某低洞不能由 `R` 中高根基素数覆盖 | `TailAnchorDefect`、`Rankin low-mod spike` 或 `SAE-survivor` |
-| `C4` | 集合 `S` 混合多个口径 | 分块后分别提交证书；不能作为单个 `PDEC-Dual-Cert` 行 |
+| `C4` | 集合 `S` 混合多个口径 | 按 `h4-pdec-homogeneous-splitting-lemma.md` 分块后分别提交证书 |
 
 该表是分类表，不是出口排斥表。若出口尚未排除，只能作为分支条件使用。
 
@@ -62,10 +62,10 @@ S=\{x\in X:\Re F(\tau(x))\ge \kappa\}.
 
 1. `SAE`：`0<|S|<\beta |X|`；
 2. `LHB-PDEC`：`|S|\ge\beta |X|`，且 `S` 可分解为同一 `(p,Q,tau)` 下的 LHB 型子族；
-3. `Routed-PDEC`：`|S|\ge\beta |X|`，但某个首个失败条件 `C0--C4` 触发上表中的命名出口或拆分义务。
+3. `Routed-PDEC`：`|S|\ge\beta |X|`，但某个首个失败条件 `C1--C3` 触发上表中的命名出口；若 `C0/C4` 失败，则先执行同口径拆分并对子证书重跑分类。
 
-特别地，在排除了 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin/口径混合` 出口的剩余
-分支中，所有 persistent 坏窗都是 LHB 型，因而满足
+特别地，在执行同口径拆分并排除了 `SAE/ColumnCRT/ColumnRadius/TailAnchor/Rankin`
+出口的剩余分支中，所有 persistent 坏窗都是 LHB 型，因而满足
 
 \[
 S\subset Z_{\rm LHB}(p,Q).
@@ -73,10 +73,12 @@ S\subset Z_{\rm LHB}(p,Q).
 
 **证明。**
 由 `UPS-1`，非空 `S` 首先二分为 sparse 与 persistent。Sparse 分支即第 1 类 `SAE`。
-在 persistent 分支中，按 `C0,C1,C2,C3,C4` 顺序检查。若全部通过，则每个同口径子族
-满足 `H4-LHB-Attach` 的三个 LHB 型条件，因此是第 2 类。若某项首次失败，则根据第 3
-节失败出口表进入对应命名出口或拆分义务，得到第 3 类。三类由构造穷尽，且在排除所有
-第 1、3 类出口后的剩余分支中只剩第 2 类，故 `S subset Z_LHB(p,Q)`。证毕。
+在 persistent 分支中，先检查 `C0/C4`。若失败，则由 `H4-PDEC-HS` 无损拆成同口径
+子证书，并对子证书重跑本分类；因此口径混合不是新的数学出口。对每个同口径子族，
+再按 `C1,C2,C3` 检查。若全部通过，则满足 `H4-LHB-Attach` 的三个 LHB 型条件，因此是
+第 2 类。若某项首次失败，则根据第 3 节失败出口表进入对应命名出口，得到第 3 类。
+三类由构造穷尽，且在排除第 1、3 类出口后的同口径剩余分支中只剩第 2 类，故
+`S subset Z_LHB(p,Q)`。证毕。
 
 ## 5. 接入 `M(t)` 容量行
 
@@ -103,7 +105,7 @@ g(t)\le M(t),\qquad
 
 ```text
 非空命名低模坏窗 => SAE 或 persistent；
-persistent => LHB 型接入 或 命名出口/拆分义务；
+persistent => 同口径拆分后 LHB 型接入 或 命名出口；
 排除非 LHB 出口后的剩余分支可使用 LHB bound=0 容量行。
 ```
 
@@ -112,7 +114,7 @@ persistent => LHB 型接入 或 命名出口/拆分义务；
 ```text
 SAE 出口排斥；
 ColumnCRT/ColumnRadius/TailAnchor/Rankin 出口排斥或完整吸收；
-混合口径拆分后的所有子证书；
+拆分后子证书的阈值账本；
 Q=2310 有限 P 列表之外的符号化或分段扩展；
 最终 PDEC 对偶主控 U_CRT<L_PDEC。
 ```

@@ -636,6 +636,14 @@ It combines the unified PDEC-or-SAE dichotomy, column-conflict routing, tail-anc
 and Rankin access rules to split each named low-mod bad-window family into SAE, LHB-PDEC, or
 Routed-PDEC.  This is still a routing theorem: the non-LHB exits and the final dual
 $U_{\rm CRT}<L_{\rm PDEC}$ certificate remain open.
+The homogeneous-splitting rule is recorded in
+\[
+  \texttt{docs/monograph/h4-pdec-homogeneous-splitting-lemma.md}.
+\]
+It closes the bookkeeping case in which one attempted certificate mixes different
+$(Q,\tau,F,\kappa,p)$ types: such a family must be partitioned into homogeneous subfamilies
+before applying UPS-1 or the bad-window classification.  Thus mixed type is not an additional
+mathematical exit; the remaining exits are SAE, ColumnCRT/ColumnRadius, TailAnchor, and Rankin.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 
