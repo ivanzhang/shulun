@@ -294,3 +294,12 @@ docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md
 
 该文件证明大误差必有非主角色频率缺陷；普通大筛仍不足，最终需要短窗口 dispersion/Kloosterman
 抵消或命名缺陷排斥。
+
+加性 Kloosterman 归约见：
+
+```text
+docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md
+```
+
+它把 `m≡rho*bar(ell) mod R` 展开为 `e(-h*rho*bar(ell)/R)`，并明确 high-lcm、high-frequency
+与系数集中三个逃逸分支必须单独排斥。

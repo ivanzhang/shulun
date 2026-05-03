@@ -413,6 +413,12 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 `H3-DSB-LS/KLS`：证明该频率缺陷由短窗口 dispersion/Kloosterman 抵消排除，或路由到
 `PDEC/ColumnCRT/cofactor`。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md` 后，该频率缺陷已
+加性 Kloosterman 化：`m≡rho*bar(ell) mod R` 给逆元核 `e(-h*rho*bar(ell)/R)`，并得到
+短互补商窗口和 `(KWR-8)`。最终硬点拆成四个仍属原命题内部的分支：
+`KLS-window` 覆盖活跃参数、`high-lcm clamp`、`high-frequency endpoint`、`coefficient concentration`。
+其中后三项应路由到既有缺陷；第一项需核验 DI/BFI/KLS-window 是否覆盖本 H3 参数。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

@@ -252,3 +252,12 @@ docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md
 
 它证明大双线性误差必推出非主角色频率缺陷；普通大筛不足，剩余为短窗口
 dispersion/Kloosterman 输入或 `PDEC/ColumnCRT/cofactor` 排斥。
+
+Kloosterman 窗口归约见：
+
+```text
+docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md
+```
+
+该文件把最终频率缺陷写成 `e(-h*rho*bar(ell)/R)` 逆元相位，并给出
+`KLS/high-lcm/high-frequency/coefficient concentration` 四分支。

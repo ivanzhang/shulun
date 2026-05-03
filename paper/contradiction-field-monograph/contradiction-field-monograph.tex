@@ -1318,6 +1318,19 @@ the short cofactor intervals.  A plain large-sieve bound is still too weak at th
 window scale; the final input is a dispersion/Kloosterman-type estimate for this family, or
 a proof that the corresponding non-zero frequency is already a PDEC, ColumnCRT, or cofactor
 defect.
+The additive Kloosterman reduction is
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md}.
+\]
+The congruence $m\equiv \rho(c)\bar\ell\pmod{R(c)}$ gives, after finite additive Fourier
+expansion, the inverse phase
+\[
+  e\!\left(-\frac{h\rho(c)\bar\ell}{R(c)}\right).
+\]
+Thus the final H3 frequency input is a short-window Kloosterman sum with variable $\ell$,
+cofactor window $I/\ell$, modulus $R(c)$, and frequency $h$.  The remaining audit splits into
+four branches: KLS-window coverage of the active parameters, high-lcm clamp escape,
+high-frequency endpoint tail, and coefficient concentration.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

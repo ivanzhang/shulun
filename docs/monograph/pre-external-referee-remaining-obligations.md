@@ -471,6 +471,23 @@ H3-DSB-LS/KLS:
 普通大筛不足以直接给出该界；若引用外部 dispersion/Kloosterman 型定理，必须逐项核验
 模数范围、短窗口长度、素数权、平滑截断和角色相位 `conj(chi(ell))*chi(m)`。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md` 后，最后义务变为
+Kloosterman 窗口适配核查：
+
+```text
+m≡rho*bar(ell) mod R
+=> e(-h*rho*bar(ell)/R) Kloosterman kernel.
+```
+
+外审前必须逐项处理四个分支：
+
+1. `KLS-window` 是否覆盖 `R(c)`、`h`、短窗口 `I/ell` 与素数权；
+2. `high-lcm clamp` 是否能并入夹逼低模/端点/cofactor 缺陷；
+3. `high-frequency endpoint` 是否能由 sawtooth 尾项预算吸收；
+4. 系数二范数过大是否等价于 tail-label 或 clamp concentration。
+
+这些分支未逐项证明前，不能把 DI/BFI 的名字直接写成 H3 行命题闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

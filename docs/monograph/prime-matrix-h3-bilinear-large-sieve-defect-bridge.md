@@ -1,6 +1,6 @@
 # H3 分散单点双线性误差的大筛缺陷桥
 
-**状态：** `bilinear_large_sieve_defect_bridge_proved_dispersion_bound_open`
+**状态：** `bilinear_large_sieve_defect_bridge_proved_kloosterman_window_reduction_added`
 
 本文继续只攻击当前唯一闭合目标中的最后硬障碍：
 
@@ -253,3 +253,26 @@ Distributed Singleton Bilinear Exclusion
 5. 明确普通大筛仍不足，最后需要短窗口 dispersion/Kloosterman 抵消或缺陷排斥。
 
 这一步没有转换命题，只把最后硬障碍压到可引用、可审查的频率估计层。
+
+## 8. Kloosterman 窗口化
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md
+```
+
+把第 6 节的非主角色频率缺陷进一步改写为加性逆元相位。由
+
+\[
+m\equiv \rho\bar\ell\pmod R
+\]
+
+的有限加性展开得到 Kloosterman 核
+
+\[
+e\!\left(-{h\rho\bar\ell\over R}\right).
+\]
+
+这给出短互补商窗口上的 Kloosterman 双线性和，并把最后硬点拆成四个同一命题内部的分支：
+`KLS-window` 覆盖、`high-lcm clamp`、`high-frequency endpoint`、`coefficient concentration`。

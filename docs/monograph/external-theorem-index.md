@@ -162,3 +162,25 @@
 `Proposition.` `KLS-window=>BE2-3K=>BE2-3=>WBE2=>BMD`。
 
 这样审稿人可以分别检查“外部定理是否可引用”和“引用后是否真的推出本文所需命题”，避免把两个问题混在一起。
+
+## 13. H3-DSB-KLS 适配新增核查
+
+新增 H3 单点尾块分支后，DI/BFI 的潜在用途不再只限二点筛 BMD。文件
+`docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md` 给出新的 Kloosterman 核：
+
+```text
+e(-h*rho(c)*bar(ell)/R(c)).
+```
+
+若要引用 DI/BFI 覆盖该 H3 分支，必须另行核验：
+
+| 核查项 | H3-DSB 对象 | 当前风险 |
+| --- | --- | --- |
+| 模数 | `R(c)=lcm(r_-,r_+)<=y^2` | 可超过 `q`，需 high-lcm 分支 |
+| 逆元变量 | `ell in (y,p]` | 与 DI 逆元变量方向匹配 |
+| 互补窗口 | `J_ell=I/ell`, 长度 `<=q/ell` | 极短窗口，需平滑/端点账本 |
+| 频率 | `1<=h<R(c)` | 高频尾需 Vaaler/sawtooth 吸收 |
+| 权重 | `Lambda(m)` 与素数 `ell` | 需 Vaughan/Heath-Brown 或 BFI 权重 |
+| 缺陷出口 | high-lcm/high-frequency/coefficient concentration | 必须分别路由，不能由 KLS 一句带过 |
+
+该表未完成前，`DI/BFI` 只能作为 H3-DSB 的候选外部输入，不能宣称 H3 行命题外部定理版闭合。

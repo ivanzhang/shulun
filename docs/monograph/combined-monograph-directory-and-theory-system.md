@@ -1386,6 +1386,10 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 短窗口 `H3-DSB-LS/KLS` 型 dispersion/Kloosterman 估计，或证明该频率缺陷已是
 `PDEC/ColumnCRT/cofactor`。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-kloosterman-window-reduction.md` 后，H3 最终频率缺陷
+已转为加性 Kloosterman 窗口和。合著稿应把剩余义务写成四分支：
+`KLS-window` 参数覆盖、`high-lcm clamp` 排斥、`high-frequency endpoint` 吸收、系数集中排斥。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
