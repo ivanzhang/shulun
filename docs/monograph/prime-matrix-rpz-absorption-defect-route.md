@@ -188,6 +188,12 @@ BCB-Grid/Endpoint exclusion。
 
 即证明 `J_{T0}` 必含完整 `h` 对齐行，或端点缝合失败进入 `SAE/PDEC/ColumnCRT`。
 
+新增 `prime-matrix-rpz-bcb-grid-endpoint-criterion.md` 后，`J_{T0}` 是否含完整下层行已有精确判据：
+若 `J=[u,v]`、`N=v-u+1`、`\delta_h(u)\equiv1-u mod h`，则含完整 `h` 行当且仅当
+`N>=\delta_h(u)+h`。失败缺口 `\Delta_h(J)=\delta_h(u)+h-N` 是端点 seam 相位。
+同批样本 `5/5` 满足该判据，端点缺陷为 `0`。剩余硬点更新为
+`BCB-Endpoint persistence exclusion`。
+
 ## 6. 审稿边界
 
 本文完成：

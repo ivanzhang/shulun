@@ -129,3 +129,30 @@ BCB-Grid/Endpoint exclusion。
 
 具体应证明：在正式坏窗抽取出的平台中，`|J_{T_0}|` 与端点相位不能同时避开所有完整
 `h` 对齐行；若避开，则端点残基持续集中，进入 `SAE/PDEC/ColumnCRT`。
+
+## 6. 后续推进：精确网格端点判据
+
+新增 `prime-matrix-rpz-bcb-grid-endpoint-criterion.md` 与审计
+`prime-matrix-rpz-bcb-grid-endpoint-audit.md` 后，`BCB-Grid/Endpoint` 的几何部分已无损闭合。
+对 `J=[u,v]`、`N=v-u+1`，令
+
+\[
+\delta_h(u)\equiv 1-u\pmod h,\qquad 0\le\delta_h(u)<h.
+\]
+
+则 `J` 完整包含 `h` 对齐行当且仅当
+
+\[
+N\ge \delta_h(u)+h.
+\]
+
+若失败，缺口
+
+\[
+\Delta_h(J)=\delta_h(u)+h-N>0
+\]
+
+就是端点 seam 缺陷相位。有限审计中 `5/5` 样本满足精确判据，端点缺陷为 `0`；
+其中 `4/5` 甚至由纯长度条件 `N>=2h-1` 自动闭合。下一硬点因此变为
+`BCB-Endpoint persistence exclusion`：排斥 `(Grid)` 失败端点相位的持续存在，或把它送入
+`SAE/PDEC/ColumnCRT`。

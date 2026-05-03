@@ -727,6 +727,19 @@ finds that all $11$ center survivors in the known samples are TailAnchor core so
 conditional TailAnchor deletion, all five center intervals are clean and contain an aligned
 half-width row.  The next gate is therefore the BCB grid/endpoint exclusion: either the center
 contains an aligned lower zero row, or the endpoint seam enters SAE, PDEC, or ColumnCRT.
+The exact grid criterion is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-grid-endpoint-criterion.md}.
+\]
+For $J=[u,v]$, $N=v-u+1$, and $\delta_h(u)\equiv1-u\pmod h$, the interval contains an
+aligned $h$-row if and only if $N\ge\delta_h(u)+h$.  Failure is therefore a finite endpoint
+seam phase.  The audit in
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-grid-endpoint-audit.md}
+\]
+matches this criterion in all five samples and finds no endpoint-defect sample.  The remaining
+gate is endpoint persistence exclusion: a failed grid phase must be isolated as SAE or persistent
+as PDEC/ColumnCRT.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

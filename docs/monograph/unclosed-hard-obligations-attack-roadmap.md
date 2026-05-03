@@ -517,6 +517,14 @@ survivor / TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ。
 `BCB-Grid/Endpoint exclusion`：证明正式平台中心区间必含完整下层行，或端点 seam
 失败进入 `SAE/PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-grid-endpoint-criterion.md`、
+`docs/monograph/prime-matrix-rpz-bcb-grid-endpoint-audit.md` 与脚本
+`experiments/prime_matrix_rpz_bcb_grid_endpoint_audit.py` 后，网格包含部分已精确化：
+`J=[u,v]` 含完整 `h` 对齐行当且仅当 `N>=delta_h(u)+h`。样本中 `5/5` 满足该判据，
+端点缺陷为 `0`，判据与枚举不一致为 `0`，`4/5` 由纯长度 `N>=2h-1` 自动闭合。
+当前最小硬点更新为 `BCB-Endpoint persistence exclusion`，即排除 `(Grid)` 失败相位的持续存在，
+或路由到 `SAE/PDEC/ColumnCRT`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
