@@ -1101,6 +1101,27 @@ $0.40\,q/\log q$ holds from $p=2011$ onward.  These are not asserted as uncondit
 short-interval prime theorems.  They are target constants for a defect inequality: if the
 H3 margin falls below $c q/\log q$, then SmallSkeletonOverload, ManyLabel-PDEC, or
 Endpoint-SAE/ColumnCRT must fire.
+The global tail-energy lemma
+\[
+  \texttt{docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md}
+\]
+proves the deterministic core of this defect inequality.  For any cutoff $y$, target $B$,
+threshold $L$, and modulus
+\[
+  d\ge 2\left(\left\lfloor \frac{q}{\ell_+(y)}\right\rfloor+1\right),
+\]
+where $\ell_+(y)$ is the next prime after $y$, the implication
+\[
+  M_{H3}(p,s)<B
+  \quad\Longrightarrow\quad
+  C_y>\#A_s-B-2L
+  \quad\hbox{or}\quad
+  E_y(d)>L
+\]
+holds for every adjacent pair $p<q$ and every row window $2\le s\le q$.  Substituting
+$B=cq/\log q$ and $L=\lambda q/\log q$ gives a uniform infinite-scale defect formula.
+This is still not the final H3 lower bound: the remaining theorem-level exits are
+SmallSkeletonOverload $\Rightarrow$ Tail/PDEC and TailEnergy $\Rightarrow$ H3-PDEC/ColumnCRT.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

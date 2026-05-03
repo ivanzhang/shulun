@@ -1310,6 +1310,13 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 数据版为 `M_H3>=0.30*q/log q`（`p>=113`）和尾部 `0.40*q/log q`（`p>=2011`）；理论版为
 `M_H3<c*q/log q` 必触发三类命名缺陷。
 
+新增 `docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md` 后，理论版进一步内联为确定性
+二分：对任意 `B,L,y`，若 `M_H3(p,s)<B`，则
+`C_y>#A_s-B-2L` 或尾标签低模能量 `E_y(d)>L`，其中
+`d>=2(floor(q/ell_+(y))+1)`。取 `B=c*q/log q`、`L=lambda*q/log q` 即得到全局无限通用的
+尺度缺陷公式。当前目录应把 H3 主链标为“组合缺陷二分已证，出口排斥未闭合”，剩余出口为
+`SmallSkeletonOverload=>Tail/PDEC` 与 `TailEnergy=>H3-PDEC/ColumnCRT`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

@@ -154,3 +154,7 @@ M_{H3}(p,s)\ge 0.30\,{q\over\log q}
 从 `p=113` 起全部成立；更强的 `0.40*q/log q` 从 `p=2011` 起成立。正式理论版本应写为缺陷不等式：
 若低于 `c*q/log q`，则必须触发 `SmallSkeletonOverload`、`ManyLabel-PDEC` 或
 `Endpoint-SAE/ColumnCRT`。
+
+新增 `docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md` 后，缺陷不等式的组合核心已经
+全局证明：`M_H3<B` 必推出 `C_y>#A_s-B-2L` 或尾标签低模能量 `E_y(d)>L`。因此剩余严格压缩为
+`SmallSkeletonOverload=>Tail/PDEC` 与 `TailEnergy=>H3-PDEC/ColumnCRT` 两个出口排斥。

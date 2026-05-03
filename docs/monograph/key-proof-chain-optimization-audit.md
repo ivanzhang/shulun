@@ -423,6 +423,11 @@ RH-1 explicit-formula entrance
 新增 `docs/monograph/prime-matrix-h3-universal-scaling-inequality.md` 后，优化目标常数固定为
 缺陷版 `c*q/log q` 下界，优先使用 `c=0.30`。下一步不是调参，而是证明低于该阈值必进入三出口。
 
+新增 `docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md` 后，这一步的组合证明已经完成到
+全局尺度：`M_H3<B` 强制 `C_y>#A_s-B-2L` 或 `E_y(d)>L`，且证明只用 first-factor 分解、短窗
+容量与整数二次能量恒等式。后续最优专攻应从“证明低余量进入缺陷”转为“排斥两个出口”：先攻
+`SmallSkeletonOverload=>Tail/PDEC`，并行保留 `TailEnergy=>H3-PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。

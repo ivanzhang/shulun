@@ -353,6 +353,13 @@ Mertens 粗剩余尺度只能作为自然尺度和阈值设计依据，不能直
 `0.30*q/log q` 有限公式写成已证全局下界。可接受写法是缺陷版不等式：低于该尺度时，给出
 SmallSkeletonOverload、ManyLabel-PDEC、Endpoint-SAE/ColumnCRT 的逐项证明。
 
+新增 `docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md` 后，上述“低于尺度时进入缺陷”的
+组合部分已可逐行证明：`M_H3<B` 必推出小骨架过载 `C_y>#A_s-B-2L` 或尾标签低模能量
+`E_y(d)>L`。外审前剩余义务应相应改写为两个出口证明，而不是继续要求证明三分支组合账本：
+1. 证明 `SmallSkeletonOverload(y,B,L)=>Tail/PDEC` 的同口径阈值上界；
+2. 证明 `TailEnergy(d,L)=>H3-PDEC/ColumnCRT` 的低模能量排斥。
+这两个出口未闭合前，正文只能宣称全局确定性缺陷二分，不能宣称 H3/行命题无条件闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

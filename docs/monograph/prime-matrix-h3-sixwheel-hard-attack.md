@@ -242,3 +242,24 @@ docs/monograph/prime-matrix-h3-universal-scaling-inequality.md
 
 有限账本支持 `M_H3(p,s)>=0.30*q/log q` 从 `p=113` 起成立，`0.40*q/log q` 从 `p=2011` 起成立。
 这些常数应作为缺陷版定理的目标阈值，而不是作为已证短区间素数定理引用。
+
+## 10. 全局尾标签能量引理
+
+新增：
+
+```text
+docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md
+```
+
+这是本链条目前最实质的全局理论推进。它证明：对任意 cutoff `y`、目标 `B`、阈值 `L`，
+
+\[
+M_{H3}(p,s)<B
+\Rightarrow
+C_y>\#A_s-B-2L
+\quad\text{or}\quad
+E_y(d)>L
+\]
+
+其中 `d>=2(floor(q/ell_+(y))+1)`。证明只用 first-factor 分解、短窗容量和整数二次能量恒等式。
+取 `B=c q/log q`、`L=lambda q/log q`，就得到全局无限通用的尺度缺陷公式。

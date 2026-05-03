@@ -164,3 +164,40 @@ K_y=\left\lceil {R_y\over \lfloor q/\ell_+(y)\rfloor+1}\right\rceil.
 4. 三分支同一阻断点口径下的不重不漏。
 
 这就是当前最窄硬点的理论层公式：不是直接证明所有短区间有素数，而是证明低于 `c q/log q` 的异常必定触发已命名缺陷场。
+
+## 7. 已证明的全局缺陷二分
+
+新增：
+
+```text
+docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md
+```
+
+该文件证明一个完全确定性的全局不等式。对任意 cutoff `y`、目标尺度 `B`、能量阈值 `L` 和任意
+`d>=2(floor(q/ell_+(y))+1)`，若
+
+\[
+M_{H3}(p,s)<B,
+\]
+
+则必有
+
+\[
+C_y>\#A_s-B-2L
+\]
+
+或
+
+\[
+E_y(d)>L.
+\]
+
+取 `B=c q/log q`、`L=lambda q/log q`，得到：
+
+```text
+M_H3 below c q/log q
+=> small skeleton overload at level c+2lambda
+   or tail-label low-mod energy >= lambda q/log q.
+```
+
+这是全局无限通用的缺陷公式。剩余不是组合推导，而是排除这两个缺陷出口。

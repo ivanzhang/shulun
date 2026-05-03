@@ -331,6 +331,14 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 `M_H3(p,s)>=0.30*q/log q` 从 `p=113` 起成立，`0.40*q/log q` 从 `p=2011` 起成立。正式证明仍需
 缺陷版：若低于 `c*q/log q`，则触发 `SmallSkeletonOverload/ManyLabel-PDEC/Endpoint-SAE-ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md` 后，缺陷版的组合核心已升级为
+全局无限尺度的确定性二分：对任意相邻 `p<q`、任意 `2<=s<=q`、任意 cutoff `y`、目标 `B`、
+能量阈值 `L`，若 `M_H3(p,s)<B`，则
+`C_y>#A_s-B-2L` 或存在 `d>=2(floor(q/ell_+(y))+1)` 使尾标签低模能量 `E_y(d)>L`。
+代入 `B=c*q/log q`、`L=lambda*q/log q` 即得到全局通用尺度公式。当前状态因此不是“已证
+`M_H3>=c*q/log q`”，而是“低于该尺度必进入两个出口”：`SmallSkeletonOverload=>Tail/PDEC`
+或 `TailEnergy=>H3-PDEC/ColumnCRT`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为
