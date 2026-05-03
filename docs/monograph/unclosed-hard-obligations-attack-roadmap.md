@@ -481,6 +481,10 @@ RPZ-Absorption => ColumnCRT/TailAnchor/ColumnRadius。
 也就是证明若这些复活点被缝合窗口稳定吸收，则位移余类负载、尾标签负载或列见证半径必超阈值。
 这比直接证明固定小 `D_0,L_D` 更接近当前 H4-PDEC 出口账本。
 
+新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 后，缩放行号与半宽素数版本也已审计：
+同批样本中 `nP/p` 缩放后实际含完整下层零行的只有 `1/5`；半宽层连续零行段最大长度为 `0`。
+这说明 `q^2` 落入半宽 CRT 周期只是建模条件，不能替代复活点吸收缺陷定理。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

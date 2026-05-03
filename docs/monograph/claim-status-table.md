@@ -183,6 +183,12 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 个，包含完整下层对齐零行的只有 `1` 个，连续零行对为 `0`。因此该路线的下一硬点不是“推出连续零行”，
 而是 `RPZ-Absorption=>ColumnCRT/TailAnchor`：证明复活点被稳定吸收必触发列/尾锚/低模缺陷。
 
+新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 与脚本
+`experiments/prime_matrix_scaled_peeling_halfwidth_audit.py` 后，进一步核查缩放行号与半宽素数版本：
+`nP/p` 只是高度近似，完整包含下层对齐零行需要额外相位条件；同批样本中缩放后含完整前一素数零行的记录
+只有 `1/5`。取约半宽素数后，虽然 `P/h>2`，连续半宽零行段最大长度仍为 `0`，因为剥到半宽层会复活
+最小素因子在 `(h,P]` 的粗互补因子点。该结果进一步支持把下一硬点定为复活点吸收缺陷，而不是镜像连续零行矛盾。
+
 新增 `docs/monograph/prime-matrix-gje-sae-terminal-band-decomposition.md` 后，`GJE-SAE` 又被拆成低行段与终端带：指数 `theta>1/2` 的普通短区间素数输入最多覆盖 `s<=q^{1/theta-1}` 量级低行段，不能覆盖 `s≈q` 的终端行。终端带经 `m=q^2-n` 镜像后成为“每个旧素数 `ell<=p` 只允许非零类 `q^2 mod ell`”的 CRT 覆盖问题。当前最小硬核更新为 `Terminal-SAE/PDEC`。
 
 新增 `docs/monograph/prime-matrix-terminal-sae-split-audit.md` 与 `docs/monograph/prime-matrix-terminal-sae-split-inequality.md` 后，终端带又被压成分层骨架/尾命中不等式。取 `y=max(2,floor(p/e))`，低筛骨架数 `G_y(h)` 若大于尾素数命中重数 `T_y(h)`，则尾素数无法覆盖骨架，终端行必有旧筛幸存者。审计到 `p<=1000` 的全部终端镜像块均满足正余量；当前最小硬点更新为 `TSI-or-PDEC`。

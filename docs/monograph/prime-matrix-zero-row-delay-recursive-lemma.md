@@ -358,6 +358,11 @@ I 中的 r-筛幸存者只能是 p 的倍数且商避开 P(r)。
 所以“递归剥离自动推出连续零行”不能作为证明出口；可用出口是
 `RPZ-Absorption=>ColumnCRT/TailAnchor/ColumnRadius`。
 
+新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 后，行号缩放版也已核查：
+`nq/p` 只是高度近似，严格条件是上层零窗完整包含下层对齐行；同批 `5` 个样本中只有
+`1` 个缩放后含完整前一素数零行。取约半宽素数后，上层长度均超过半宽行宽两倍，但连续半宽零行对仍为
+`0`，因为半宽筛会复活最小素因子落在半宽层以上的点。
+
 ## 7. 审稿边界
 
 本文严格证明了 `QSurv=>Row(q)`，并证明了 `AlignedDelay` 的精确作用范围。但本文没有证明 `QSurv` 对所有相邻素数无条件成立。

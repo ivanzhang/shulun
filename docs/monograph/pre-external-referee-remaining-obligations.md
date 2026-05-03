@@ -143,6 +143,8 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 `docs/monograph/prime-matrix-recursive-peeling-zero-row-audit.md` 后，递归剥离路线已进入审稿边界：
 它严格给出上层零窗剥离后的复活点结构，但不能自动推出连续下层零行。外审前若使用该路线，
 必须补 `RPZ-Absorption=>ColumnCRT/TailAnchor/ColumnRadius`，即复活点被吸收时必触发命名出口。
+新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 后，缩放到前一素数和约半宽素数的版本
+也不能直接闭合：缩放行号需要完整包含判据，半宽层会复活粗互补因子点。该路线仍需复活点吸收缺陷定理。
 
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
