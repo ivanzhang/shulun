@@ -216,3 +216,13 @@ docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md
 当前最精确状态是：宏观连续尾链已由二维 rough 对上筛排除；统一缺陷排斥的剩余部分是
 `ShortBlock-PDEC Routing`，即证明全阻断若仍存在，则小骨架高频切割产生 `D_y/PDEC` 缺陷，
 或短尾块相位产生 `ColumnCRT/endpoint/cofactor` 缺陷。
+
+短块路由的进一步校正见：
+
+```text
+docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md
+```
+
+该文件证明尾块分解恒等式 `T=J+E`。二维上筛控制 `E` 后，剩余尾质量主要表现为孤立尾点；
+小骨架切割数量本身不足以构成 PDEC。统一缺陷排斥的最终局部硬核因此更新为
+`Singleton Tail Exclusion`。

@@ -466,6 +466,13 @@ RH-1 explicit-formula entrance
 `ShortBlock-PDEC Routing`：若全阻断仍成立，尾块只能短而多，小骨架切割必须转化为
 `D_y/PDEC` 缺陷，或短块端点/列位移/互补商集中转化为 `ColumnCRT/endpoint/cofactor`。
 
+新增 `docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md` 后，最优攻坚面再次收窄并
+修正：`ShortBlock-PDEC Routing` 中“切割频率本身给 PDEC”并不成立。尾块恒等式 `T=J+E`
+与二维上筛 `E=O(q/log^2 y)` 说明，主要剩余是 `J_1=T+O(q/log^2 y)` 个孤立尾点。
+下一步必须专攻 `Singleton Tail Exclusion`：用孤立尾点的
+`ell>y` 尾标签和左右 `r_-,r_+<=y` 小骨架夹逼同余，逼出
+`PDEC/ColumnCRT/endpoint/cofactor` 缺陷。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。

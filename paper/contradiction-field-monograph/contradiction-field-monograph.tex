@@ -1259,6 +1259,23 @@ about $q/3$ candidates, cannot be filled only by tail labels at sufficiently lar
 The remaining H3 obstruction is consequently narrower: any surviving bad row must split tail
 points into many short blocks, and the small-factor cuts or short-block endpoint phases must
 be routed to PDEC, ColumnCRT, endpoint, or cofactor defects.
+The short-block routing is made exact in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md}.
+\]
+If the tail points are decomposed into maximal consecutive tail blocks, with total tail mass
+$T$, number of blocks $J$, and internal adjacent-tail edges $E$, then
+\[
+  T=J+E.
+\]
+The two-dimensional sieve controls $E$, so a bad row with $T$ still of order $q/\log y$
+would have almost all tail mass in singleton tail blocks.  The small-factor cuts themselves
+are not yet a PDEC contradiction, because the small skeleton has natural size comparable
+with $q$.  The final local obstruction is therefore the singleton-tail system:
+a point $a_j=\ell_jm_j$ with $\ell_j>y$ is isolated between two small-skeleton neighbours,
+so $a_j\equiv0\pmod{\ell_j}$ and simultaneously satisfies two non-zero congruences modulo
+small labels $r_-,r_+\le y$.  One must prove that many such squeezed singleton phases force
+PDEC, ColumnCRT, endpoint, or cofactor defects.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

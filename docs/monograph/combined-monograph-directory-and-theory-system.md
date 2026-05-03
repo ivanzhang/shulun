@@ -1363,6 +1363,12 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 这种高频切割必须证明会触发 `D_y/PDEC`，或由短块端点、列位移和互补商相位触发
 `ColumnCRT/endpoint/cofactor`。
 
+新增 `docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md` 后，上述接口被精细化：
+尾点数 `T`、尾块数 `J`、内部相邻尾边数 `E` 满足恒等式 `T=J+E`。二维上筛只控制 `E`，
+因此尾质量在坏行中主要变为单点尾块，而不是直接变成 PDEC 缺陷。合著稿应把 H3 最新剩余
+硬核改写为 `Singleton Tail Exclusion`：孤立尾点 `a_j=ell_j m_j` 被左右小骨架点夹住，
+满足 `a_j≡0 mod ell_j` 与 `a_j≡±delta mod r_\pm`；需证明大量此类夹逼相位不能无缺陷存在。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

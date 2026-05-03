@@ -419,6 +419,19 @@ Short-block extraction / PDEC routing:
 此外还需把二维上筛常数 `A_delta(theta)` 显式引用或内联 Selberg 二次型证明，才能升级为
 完全显式阈值版。
 
+新增 `docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md` 后，需修正外审义务表述：
+短块化并不自动产生 PDEC。精确恒等式 `T=J+E` 显示，二维上筛控制内部相邻尾边 `E` 后，
+尾质量主要转移到单点尾块。由于小骨架自然为 `q` 级，不能把 `J~q/log y` 个切割点直接宣称为
+异常。外审前真正剩余义务是：
+
+```text
+Singleton Tail Exclusion:
+大量孤立 y-rough 尾点若全部为合数，则尾标签 ell>y 与左右小骨架标签 r_-,r_+<=y
+形成的夹逼相位系统必须触发 PDEC/ColumnCRT/endpoint/cofactor 缺陷。
+```
+
+若该单点尾块排斥未证明，H3/行命题仍不能宣称无条件闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -257,3 +257,13 @@ docs/monograph/prime-matrix-h3-tail-edge-selberg-exclusion.md
 至多 `O(q/log^2 y)`。因此整行尾补洞器已在无限尺度上被排除。剩余是混合坏行中的短尾块抽取：
 若尾块只能短而多，小骨架切割必须触发 `D_y/PDEC`，或短块端点相位触发
 `ColumnCRT/endpoint/cofactor`。
+
+进一步校正见：
+
+```text
+docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md
+```
+
+短块抽取满足精确恒等式 `T=J+E`。二维上筛只压小内部相邻尾边 `E`，于是坏行尾质量主要转成
+孤立尾点。由于小骨架自然是 `q` 级，不能把切割点数量直接当作 PDEC 缺陷。剩余硬核是孤立
+尾点的左右小骨架夹逼相位排斥。

@@ -1,6 +1,6 @@
 # H3 尾链边容量的二维 Selberg 排斥
 
-**状态：** `macroscopic_tail_chain_excluded_by_2d_upper_sieve_explicit_constants_pending`
+**状态：** `macroscopic_tail_chain_excluded_singleton_tail_barrier_identified`
 
 本文继续攻击同一个硬障碍：
 
@@ -280,3 +280,23 @@ or the short tail blocks must create endpoint/ColumnCRT/cofactor concentration.
 ```
 
 这保持在原 H3 缺陷排斥内部，没有转换命题。
+
+## 8. 短块恒等式后的修正
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-h3-shortblock-singleton-barrier.md
+```
+
+进一步检查了第 7 节的路由。精确恒等式为：若尾点集合分解为极大连续尾块，尾点数为 `T`，
+尾块数为 `J`，内部相邻尾边数为 `E`，则
+
+\[
+T=J+E.
+\]
+
+二维上筛给出 `E=O(q/log^2 y)`，所以若 `T` 仍为 `q/log y` 级，绝大多数尾块是单点块。
+但“小骨架切割很多”本身不构成 PDEC 缺陷，因为小骨架自然是 `q` 级。真正剩余硬点应更新为
+`Singleton Tail Exclusion`：大量孤立 `y`-rough 尾点若全部为合数，必须从其尾标签与左右小骨架
+夹逼相位中导出 `PDEC/ColumnCRT/endpoint/cofactor` 缺陷。
