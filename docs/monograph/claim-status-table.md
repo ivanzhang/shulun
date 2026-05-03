@@ -360,6 +360,10 @@ H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量�
 `M_H3(p,s)>=kappa*pi(q)` 或等价的统一缺陷排斥。不能使用
 `avg_s M_H3~pi(q)/2` 直接推出每行 `M_H3>0`。
 
+新增 `docs/monograph/prime-matrix-h3-square-root-short-interval-barrier.md` 后，H3 逐行闭合被定位为
+`x≈q^2`、长度 `sqrt x` 的对齐短区间素数下界。普通 PNT、RH 型误差和已知无条件短区间输入
+不能直接推出该结论；必须证明 `D_y/F_y` 低模缺陷排斥。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

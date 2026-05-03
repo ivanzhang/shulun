@@ -1337,6 +1337,10 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 第一行尺度桥是已证全局平均定理；逐行行命题仍等价于点态尺度转移
 `M_H3(p,s)>=kappa*pi(q)` 或统一缺陷排斥，不能由平均式直接推出。
 
+新增 `docs/monograph/prime-matrix-h3-square-root-short-interval-barrier.md` 后，该点态转移又被
+识别为 `x≈q^2`、`h=sqrt x` 的对齐短区间素数下界。它是标准短区间/奇偶障碍强度的硬输入；
+当前文稿只能给出缺陷判据，不能无条件闭合该输入。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

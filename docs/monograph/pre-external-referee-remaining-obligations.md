@@ -378,6 +378,10 @@ PNT 与相邻壳层单点性理论解释：H3 行平均为第一行素数数目�
 证明点态第一行尺度转移 `M_H3(p,s)>=kappa*pi(q)`，或证明统一缺陷判据中的 `D_y/F_y` 排斥。
 若两者都未证明，行命题必须保持未闭合。
 
+新增 `docs/monograph/prime-matrix-h3-square-root-short-interval-barrier.md` 后，外审前必须承认：
+上述点态转移是平方根长度短区间素数下界问题。除非提交新的 `Square-root Defect Exclusion`
+证明，否则不得写成已完成无条件 H3/行命题。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -199,3 +199,12 @@ M_{H3}(p,s)\ge \kappa {q\over\log q}>0
 \]
 
 并完成行命题。该定理目前尚未证明；它是“平均尺度桥”之后唯一真正剩余的数学硬点。
+
+补充硬边界见：
+
+```text
+docs/monograph/prime-matrix-h3-square-root-short-interval-barrier.md
+```
+
+该文件说明逐行 H3 闭合等价于 `x≈q^2`、窗口长度 `sqrt x` 的对齐短区间素数下界。现有普通
+PNT、RH 型误差和已知无条件短区间素数输入都不能直接推出这一点；必须证明方阵/CRT 低模缺陷排斥。

@@ -187,3 +187,12 @@ docs/monograph/prime-matrix-h3-pointwise-closure-boundary.md
 该文件把最终硬点改写为第一行尺度的逐行转移：已证平均
 `avg_s M_H3(p,s)~pi(q)/2`，未证点态 `M_H3(p,s)>=kappa*pi(q)`。统一缺陷判据正是证明该点态转移的
 当前最短路线。
+
+进一步硬边界见：
+
+```text
+docs/monograph/prime-matrix-h3-square-root-short-interval-barrier.md
+```
+
+该文件把点态转移等价化为平方根长度短区间素数下界，并解释为什么必须由 `D_y/F_y` 缺陷排斥来
+突破线性筛 `u=2` 的奇偶障碍。
