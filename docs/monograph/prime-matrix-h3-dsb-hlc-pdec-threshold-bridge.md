@@ -145,3 +145,8 @@ U_B>\frac{R}{2},
 这就是当前剩余硬障碍的精确形式。它不再是“高 lcm 是否有结构”，而是同一 formal unit
 中的 PDEC 上界证书是否足以压过显式下界。
 
+若该上界证书失败，失败形态已进一步局部化于
+`docs/monograph/prime-matrix-h3-dsb-hlc-pdec-failure-localization.md`：存在非零频率
+`h` 与方向 `zeta`，使正相位 Bohr-cap
+`\mathcal C_\alpha=\{a:Re(zeta e(ha/R))>=alpha\}` 至少承载
+`(L-alpha U)/(1-alpha)` 的质量。该帽集中必须回流为同口径 PDEC 约束或 `SAE/endpoint`。

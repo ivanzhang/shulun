@@ -1406,6 +1406,11 @@ SAE/endpoint 出口排斥未证”。
 `L_HLC(B)=((R sum g_B(a)^2-U_B^2)/(R-1))^(1/2)`。稠密例外 `U_B>R/2` 已路由回
 KLS/PDEC/SAE，不新增出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-failure-localization.md` 后，合著稿应
+把高 `lcm` PDEC 失败记录为 Bohr-cap 相位集中：帽内质量至少
+`(L-alpha U)/(1-alpha)`。该集中不是新命题，只能进入持久 PDEC 约束或孤立
+SAE/endpoint 证书。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

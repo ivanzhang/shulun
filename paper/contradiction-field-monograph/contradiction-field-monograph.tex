@@ -1374,6 +1374,18 @@ is a forced non-zero-frequency lower bound.  Thus a persistent high-lcm unit is 
 by a same-unit certificate $U_{\rm CRT}(B)<L_{\rm HLC}(B)$.  The case $U_B>R/2$ is not a
 new escape; it is dense effective-modulus concentration and routes back to KLS-window,
 PDEC/ColumnCRT, or SAE/endpoint.
+If this PDEC upper certificate fails, the failure is localized in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-pdec-failure-localization.md}.
+\]
+For a failing non-zero frequency $h$ and direction $\zeta$, every cap
+\[
+  \mathcal C_\alpha=\{a:\Re(\zeta e(ha/R))\ge\alpha\},
+  \qquad 0\le\alpha<L/U,
+\]
+has mass at least $(L-\alpha U)/(1-\alpha)$.  Hence failure is a concrete Bohr-cap
+concentration, which must become a same-unit PDEC constraint or a sparse SAE/endpoint
+certificate.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

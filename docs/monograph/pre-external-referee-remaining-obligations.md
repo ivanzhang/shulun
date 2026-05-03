@@ -523,6 +523,12 @@ L_HLC(B)=sqrt((R*sum_a g_B(a)^2-U_B^2)/(R-1)).
 外审前真正剩余是：逐个 HLC formal unit 证明同口径上界 `U_CRT(B)<L_HLC(B)`，
 或输出失败频率、相位主贡献与回流出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-pdec-failure-localization.md` 后，失败输出有了
+定量下界：若 `sum g(a)Re(zeta e(ha/R))>=L`，则 Bohr-cap
+`C_alpha={a:Re(zeta e(ha/R))>=alpha}` 的质量满足
+`G_alpha>=(L-alpha U)/(1-alpha)`。外审前剩余因此更具体：对这些帽集中逐项证明
+持久帽可加入 PDEC 约束并通过，或孤立帽由 SAE/endpoint 排除。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为
