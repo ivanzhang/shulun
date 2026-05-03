@@ -68,6 +68,10 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 支撑块均给出 `bound=0`。该结论只在已证明 `S subset Z_LHB` 的 LHB allowed-set 分支中
 可用；全局 PDEC 仍需接入包含关系或失败路由。
 
+新增 `docs/monograph/h4-pdec-lhb-attachment-lemma.md`。该文件证明 LHB 型坏窗满足
+`S subset Z_LHB(p,Q)`，从而上述 `bound=0` 容量行可正式用于 LHB 型 PDEC 分支。
+全局 PDEC 仍未排除；剩余最小硬点是坏窗分类和非 LHB 型失败路由。
+
 
 ## 内部逐行复核更新
 

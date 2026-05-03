@@ -358,6 +358,21 @@ docs/monograph/h4-pdec-lhb-multiplicity-cap-certificate.md。
 审稿边界：该升级依赖 `S subset Z_LHB(p,Q)`。当前全局 PDEC 的最小硬点已从
 “生成 `M(t)`”变为“证明当前正式坏窗集合接入 LHB allowed-set，或失败回流到命名出口”。
 
+### 4.2J 本轮进展：LHB 型坏窗接入
+
+新增 `docs/monograph/h4-pdec-lhb-attachment-lemma.md`。该文件定义
+`Z_LHB(p,Q)` 为高层 CRT 补洞完成集合，并证明：
+
+```text
+若 PDEC 坏窗是同一 (p,Q) 下的一整行 LHB 型全覆盖窗口，
+则 S subset Z_LHB(p,Q)。
+```
+
+于是 `WHOLEDEF/BRIDGED` 的 `bound=0` 行已经可用于 LHB 型分支。当前全局最小硬点
+进一步变为坏窗分类：证明正式 PDEC 抽取出的坏窗要么满足 LHB 型三条件，要么因坐标、
+低骨架、高标签或混合口径失败而进入 `SAE / ColumnCRT / ColumnRadius / TailAnchor / Rankin`
+等命名出口。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

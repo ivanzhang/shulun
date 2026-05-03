@@ -155,7 +155,7 @@ BRIDGED : bridged_critical_phases。
 ```text
 WHOLEDEF/BRIDGED phase_block 已物化；
 WHOLEDEF/BRIDGED 在 LHB allowed-set 分支中的 bound=0 容量行已物化；
-全局 PDEC 使用仍需 S subset Z_LHB 接入引理。
+全局 PDEC 使用仍需坏窗分类与非 LHB 型出口路由。
 ```
 
 ## 7. 下一步最小任务
@@ -163,18 +163,23 @@ WHOLEDEF/BRIDGED 在 LHB allowed-set 分支中的 bound=0 容量行已物化；
 下一步不应再把 `bound=phase_block_size` 当作容量界。第一版 `M(t)` 已完成后，最小任务变为：
 
 ```text
-LHB-attachment:
-  证明当前正式坏窗集合 S subset Z_LHB(p,Q)；
+PDEC-classification:
+  证明当前正式坏窗集合要么 LHB 型，要么进入命名出口；
 
 exit-routing:
-  若 S 不属于 Z_LHB，证明它进入 ColumnRadius/ColumnCRT/TailAnchor/SAE；
+  对非 LHB 型失败逐类证明 ColumnRadius/ColumnCRT/TailAnchor/SAE 回流；
 
 phase-indicator fork:
   明确切换到相位级证书，声明该证书只验证相位集合，不验证 persistent 多重坏窗。
 ```
 
-对 H4-PDEC 最有价值的是 `LHB-attachment`：它把已经物化的 `M(t)` 容量行接入全局
-PDEC 分支，而不是停留在 LHB allowed-set 子证书内。
+对 H4-PDEC 最有价值的是 `PDEC-classification`：LHB 型接入已经证明，剩余工作是确保
+全局 PDEC 分支不会出现未命名的非 LHB 型坏窗。
+
+新增 `h4-pdec-lhb-attachment-lemma.md` 后，`LHB-attachment` 的 LHB 型部分已经闭合：
+若坏窗满足同一 `p,Q`、低洞集 `H_Q(t)` 和高根基素数补洞三条件，则
+`S subset Z_LHB(p,Q)`。剩余是分类义务：证明当前 PDEC 抽取出的坏窗都满足这些条件，
+或把失败者路由到命名出口。
 
 ## 8. T3 路线的正式化
 
@@ -214,4 +219,5 @@ sum_{t in C} M(t)=0
 ```
 
 全部通过。因此在已证明 `S subset Z_LHB(p,Q)` 的 LHB 分支中，这些支撑块已经可以作为
-`bound=0` 容量行使用。全局 PDEC 仍需补的是 `S subset Z_LHB` 接入引理。
+`bound=0` 容量行使用。新增接入引理证明了 LHB 型坏窗满足该包含关系；全局 PDEC
+仍需补的是坏窗分类与非 LHB 型出口路由。
