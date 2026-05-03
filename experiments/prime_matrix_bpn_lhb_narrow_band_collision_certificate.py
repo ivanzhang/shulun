@@ -201,7 +201,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "## 3. 审稿结论",
             "",
             "该证书闭合 `61<=P<=103` 的窄带碰撞能量义务。",
-            "剩余 low-hole 主线只剩低范围桥洞/整洞集亏损临界带，以及 `P>=13208` 的显式常数引用核验。",
+            "结合低范围最终证书后，low-hole 主线只剩 `P>=13208` 的显式常数引用核验。",
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

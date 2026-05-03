@@ -140,6 +140,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"- `max_excess`: `{d['max_excess']}`",
         f"- `mertens_eps`: `{result['mertens_eps']}`",
         f"- `pi_upper_constant`: `{result['pi_upper_constant']}`",
+        "- 外部来源：Rosser--Schoenfeld, *Approximate formulas for some functions of prime numbers*, Illinois J. Math. 6(1), 64--94, 1962。",
+        "- 公式定位：Corollary 1 `(3.5),(3.6)`, p. 69 给出 `pi` 上下界；Theorem 7 `(3.26)`,",
+        "  p. 70 给出 Mertens 乘积上界。",
+        "- 使用范围：`P>=13208` 时 `floor(P/5)>=2641`，足以把 Rosser--Schoenfeld 的",
+        "  `1+1/(2log^2 x)` 型 Mertens 因子放宽为 `1.03`；素数计数上下界输入点也满足",
+        "  对应阈值。",
         "",
         "## 2. 解析余量",
         "",
@@ -160,6 +166,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "该报告不替代外部显式 Mertens/素数计数定理；它只核算这些标准输入一旦接受后，",
             "需要保留到哪个有限阈值。当前默认常数包下，`P>=stable_from_in_scan` 由解析余量闭合，",
             "`233<=P<stable_from_in_scan` 应使用精确乘积有限证书。",
+            "",
+            "引用接口已登记在 `external-theorem-index.md`。若常数包改变，必须重新生成本审计。",
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -362,3 +362,5 @@
 | 外审前最硬剩余义务总表 | 已新增/主稿已接入 | 新增 `docs/monograph/pre-external-referee-remaining-obligations.md`，并在 `paper/contradiction-field-monograph/contradiction-field-monograph.tex` 增加 `Pre-External-Referee Hard Obligations` 小节。该表把当前所有最硬剩余逐项归入唯一审稿义务链：Prime Matrix 的 `Structured-EHPD/PDEC/SAE/Rankin/RRD/OSPC`，二点筛的 `I3-Core/DI-BFI适配/BMD=>TLI`，RH 的 controlled exits。结论保持诚实边界：作者侧已完成状态归档和阻塞接口压缩，但未把未证深命题伪装为无条件终局。 |
 
 | 未闭合硬项攻坚路线图 | 已新增/逐项补充可行性方案 | 新增 `docs/monograph/unclosed-hard-obligations-attack-roadmap.md`。该路线图对 H1--H10 逐项给出精确证明目标、可用刚性、最小补正动作、可行性评级与失败时状态。优先级明确为：先做 `H7/H3/H10/H1` 的外审工程闭合，再攻 `H5/H4/H2` 的 PM 数学接口；`H6/H8/H9` 保持条件/verification 状态，除非新增真正深证明。 |
+
+| BPN-LHB 证书复现账本 | H3已完成/外审复现包 | 新增 `docs/monograph/prime-matrix-bpn-lhb-certificate-reproduction-ledger.md`，列出低范围、窄带、尾段有限、显式尾段四组证书的脚本、JSON/Markdown 输出、验收标准和临时目录复现命令。本轮已修正窄带与显式尾段脚本的报告文字，使 8 个生成文件均可与仓库内对应文件字节级一致。该项闭合 BPN-LHB 子模块复现义务，但不升级 Prime Matrix 全局行列命题。 |

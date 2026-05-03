@@ -229,7 +229,7 @@ RH 章节必须保持 verification package 状态。外审前应完成：
 |---|---|---|---|
 | H1 | Prime Matrix A/B 入口 | 主稿继续保持 `A/B reduction` 为 reduction statement，并列入外审前硬义务表 | 归约闭合；非终局排斥 |
 | H2 | Structured-EHPD / D 组 | 明确列为 Prime Matrix 终局第一硬门；要求直接证明或由 RHI 替代 | 未闭合定理级接口 |
-| H3 | BPN-LHB | 已确认五段证书/RS1962 外部定理版闭合边界，并要求证书复现说明 | 子模块闭合；不推出全局行列命题 |
+| H3 | BPN-LHB | 已确认五段证书/RS1962 外部定理版闭合边界，并新增可字节级复现的证书账本 | 子模块闭合；不推出全局行列命题 |
 | H4 | PDEC/SAE/Rankin | 拆成 `PDEC exclusion`、`SAE local escape exclusion`、Rankin certificates 三项 | 最终硬输入；未闭合 |
 | H5 | RRD/OSPC 常数账本 | 固定同一口径预算 `0.053369509758272926` 和六个子预算项 | 常数义务明确；无限范围证明未闭合 |
 | H6 | 二点筛 I3-Core | 拆成八个必须逐项证明的定理义务 | 条件核心；未闭合 |
@@ -253,7 +253,7 @@ RH 章节必须保持 verification package 状态。外审前应完成：
 该路线图把下一步执行顺序明确为：
 
 ```text
-可立即完成：H7 DI/BFI适配、H3证书复现、H10状态分级、H1入口定理化；
+可立即完成：H7 DI/BFI适配、H10状态分级、H1入口定理化；H3证书复现账本已完成；
 最值得硬攻：H5 RRD/OSPC、H4 Rankin/PDEC/SAE、H2 RHI/PM-R2B；
 必须保持条件：H6 I3-Core、H8 BMD=>TLI、H9 RH controlled exits。
 ```
