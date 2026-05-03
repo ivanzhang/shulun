@@ -1051,3 +1051,14 @@ minimum margin = 0
 
 这说明当前样本确实全部避开 seam，但有一半节点贴在 `delta=gap` 边界上。下一步不能靠
 粗余量估计，必须从起始行构造中证明精确同余余类落入 allowed residues。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-accepted-row-selector.md` 后，正向目标再弱化为足够的
+选择器命题。对 BCB 核心区间 `J=[u,v]` 与半宽素数 `h`，令
+
+```text
+C_h(J)={m: u <= (m-1)h+1 and mh <= v}。
+```
+
+只需证明 `C_h(J)∩A_h` 非空即可选择一条 accepted lower zero-row 下降。当前 `5/5` 个
+BCB-Core 样本存在 selector，`6/6` 个候选完整下层行全部 accepted。剩余全局义务是证明正式
+BCB-Core 的端点相位和长度强制该相交；若相交为空，则全体候选行回流到 seam/PDEC/ColumnCRT。

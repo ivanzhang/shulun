@@ -930,6 +930,19 @@ ten of them have zero margin $\delta_p(a)=p-r$.  This is a useful negative resul
 proof strategy: the desired avoidance theorem cannot be closed by a coarse positive margin
 estimate.  It must use exact congruence information for the start row modulo each lower
 prime $r$.
+The accepted lower-row selector ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-accepted-row-selector.md}
+\]
+weakens the required positive statement to the exact selector condition
+\[
+  C_h(J)\cap A_h\ne\varnothing,\qquad
+  C_h(J)=\{m:\ J\supset [(m-1)h+1,mh]\}.
+\]
+For the current BCB-Core samples all five core intervals have such a selector, and all six
+candidate lower rows are accepted.  This is still only a current-ledger certificate; the
+global theorem must prove selector existence for every formal BCB core interval, or else
+route the all-rejected selector failure back to the seam/PDEC/ColumnCRT exits.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

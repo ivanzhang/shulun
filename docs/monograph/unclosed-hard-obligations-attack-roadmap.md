@@ -635,6 +635,11 @@ seam/PDEC/ColumnCRT：`27924` 个 rejected phase、`12` 个 distinct first-fail 
 进一步收窄为“精确同余推导”：证明正式起始行模每个下层 `r` 的余类属于 allowed residues；
 不能尝试用统一正余量不等式代替。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-accepted-row-selector.md` 后，最小正向目标变成
+`C_h(J)∩A_h != empty`。当前样本中 `5/5` 个 BCB-Core 区间都有 selector，`6/6` 个候选完整
+下层行 accepted。下一步应优先证明这个 selector 存在定理；若失败，则“所有候选行 rejected”
+会自动回流到 seam/PDEC/ColumnCRT 出口压力账本。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

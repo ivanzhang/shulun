@@ -264,6 +264,10 @@ formal-family 避开优先，其次 endpoint-PDEC，上述两者都失败时才�
 digit 节点全部安全，但 `10` 个节点正好位于 `margin=0`。外审前应明确：formal-family
 避开不能用粗余量替代，必须给出 `start_row mod r` 的精确同余推导。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-accepted-row-selector.md` 后，外审义务可改写为更弱的
+selector 存在定理：对正式 BCB 核心区间 `J`，证明完整下层候选行集合 `C_h(J)` 与 accepted set
+`A_h` 相交。当前样本 `5/5` 有 selector、`6/6` 候选行 accepted；但全局 selector 存在仍未证明。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

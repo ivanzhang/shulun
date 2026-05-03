@@ -1,0 +1,202 @@
+{
+  "status": "rpz_bcb_accepted_row_selector_current_samples",
+  "source": "docs/monograph/prime-matrix-rpz-bcb-core-audit.json",
+  "summary": {
+    "records": 5,
+    "records_with_selector": 5,
+    "total_candidate_rows": 6,
+    "total_accepted_candidate_rows": 6,
+    "total_rejected_candidate_rows": 0,
+    "all_records_have_selector": true
+  },
+  "records": [
+    {
+      "top_prime": 13,
+      "top_zero_row": 169,
+      "half_prime": 5,
+      "core_interval": [
+        2188,
+        2196
+      ],
+      "core_length": 9,
+      "candidate_rows": [
+        439
+      ],
+      "candidate_count": 1,
+      "accepted_rows": [
+        439
+      ],
+      "accepted_count": 1,
+      "rejected_rows": [],
+      "rejected_count": 0,
+      "selector_exists": true,
+      "selected_row": 439,
+      "row_packets": [
+        {
+          "row": 439,
+          "interval": [
+            2191,
+            2195
+          ],
+          "phase_mod_primorial": 19,
+          "accepted": true,
+          "first_failure": null
+        }
+      ]
+    },
+    {
+      "top_prime": 17,
+      "top_zero_row": 1211,
+      "half_prime": 7,
+      "core_interval": [
+        20574,
+        20586
+      ],
+      "core_length": 13,
+      "candidate_rows": [
+        2940
+      ],
+      "candidate_count": 1,
+      "accepted_rows": [
+        2940
+      ],
+      "accepted_count": 1,
+      "rejected_rows": [],
+      "rejected_count": 0,
+      "selector_exists": true,
+      "selected_row": 2940,
+      "row_packets": [
+        {
+          "row": 2940,
+          "interval": [
+            20574,
+            20580
+          ],
+          "phase_mod_primorial": 0,
+          "accepted": true,
+          "first_failure": null
+        }
+      ]
+    },
+    {
+      "top_prime": 19,
+      "top_zero_row": 3659,
+      "half_prime": 7,
+      "core_interval": [
+        69504,
+        69518
+      ],
+      "core_length": 15,
+      "candidate_rows": [
+        9930,
+        9931
+      ],
+      "candidate_count": 2,
+      "accepted_rows": [
+        9930,
+        9931
+      ],
+      "accepted_count": 2,
+      "rejected_rows": [],
+      "rejected_count": 0,
+      "selector_exists": true,
+      "selected_row": 9930,
+      "row_packets": [
+        {
+          "row": 9930,
+          "interval": [
+            69504,
+            69510
+          ],
+          "phase_mod_primorial": 60,
+          "accepted": true,
+          "first_failure": null
+        },
+        {
+          "row": 9931,
+          "interval": [
+            69511,
+            69517
+          ],
+          "phase_mod_primorial": 61,
+          "accepted": true,
+          "first_failure": null
+        }
+      ]
+    },
+    {
+      "top_prime": 23,
+      "top_zero_row": 59,
+      "half_prime": 11,
+      "core_interval": [
+        1338,
+        1356
+      ],
+      "core_length": 19,
+      "candidate_rows": [
+        123
+      ],
+      "candidate_count": 1,
+      "accepted_rows": [
+        123
+      ],
+      "accepted_count": 1,
+      "rejected_rows": [],
+      "rejected_count": 0,
+      "selector_exists": true,
+      "selected_row": 123,
+      "row_packets": [
+        {
+          "row": 123,
+          "interval": [
+            1343,
+            1353
+          ],
+          "phase_mod_primorial": 123,
+          "accepted": true,
+          "first_failure": null
+        }
+      ]
+    },
+    {
+      "top_prime": 29,
+      "top_zero_row": 5210,
+      "half_prime": 13,
+      "core_interval": [
+        151062,
+        151086
+      ],
+      "core_length": 25,
+      "candidate_rows": [
+        11622
+      ],
+      "candidate_count": 1,
+      "accepted_rows": [
+        11622
+      ],
+      "accepted_count": 1,
+      "rejected_rows": [],
+      "rejected_count": 0,
+      "selector_exists": true,
+      "selected_row": 11622,
+      "row_packets": [
+        {
+          "row": 11622,
+          "interval": [
+            151074,
+            151086
+          ],
+          "phase_mod_primorial": 11622,
+          "accepted": true,
+          "first_failure": null
+        }
+      ]
+    }
+  ],
+  "selector_theorem_boundary": [
+    "若 C_h(J) 与 A_h 相交，则可选择 accepted lower zero-row 并递归下降。",
+    "若 C_h(J) 与 A_h 不相交，则所有候选行进入 first-grid-fail seam/PDEC/ColumnCRT。",
+    "当前样本全部有 selector；这仍不是全局 selector 存在证明。",
+    "全局硬点是证明正式 BCB-Core 的 C_h(J) 必与 A_h 相交，或排除全拒绝候选行的 seam 出口。"
+  ]
+}

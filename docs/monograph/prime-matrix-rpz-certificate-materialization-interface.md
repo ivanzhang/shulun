@@ -158,6 +158,7 @@ formal-family rejected set 全量 seam 吸收证书。
 seam/PDEC/ColumnCRT 出口压力账本。
 accepted-set 符号阶梯证书。
 BCB 起始数字账本。
+BCB accepted lower-row 选择器账本。
 ```
 
 本文没有完成：
@@ -285,3 +286,8 @@ accepted count 公式，剩余义务是把正式反例起始行的 `a mod r` 来
 新增 `prime-matrix-rpz-bcb-start-digit-ledger.md` 后，当前 BCB-Core 样本的 `20` 个 digit 节点
 全部满足该不等式，且 `10` 个节点为 `margin=0`。这说明材料化接口的正向闭合必须依赖
 精确同余来源；若无法证明这些同余，则只能回到 seam/PDEC/ColumnCRT 出口排斥。
+
+新增 `prime-matrix-rpz-bcb-accepted-row-selector.md` 后，正向接口可进一步弱化：
+不要求所有候选完整下层行都安全，只要求 `C_h(J)∩A_h` 非空。当前样本 `5/5` 个 BCB-Core
+核心区间都有 selector，`6/6` 个候选行 accepted。若全局 selector 失败，则失败对象是
+“全部候选行 rejected”的有限 seam/PDEC/ColumnCRT 回流，而非新的未命名出口。
