@@ -308,6 +308,7 @@ BCB accepted top-row residue preimage 账本。
 BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
 BCB Jacobsthal 型闭合接口。
 BCB Jacobsthal 线性闭合风险扫描。
+BCB 平台长度阈值账本。
 ```
 
 再新增
@@ -350,6 +351,9 @@ docs/monograph/prime-matrix-rpz-bcb-jacobsthal-closure-interface.md。
 experiments/prime_matrix_rpz_bcb_jacobsthal_risk_scan.py；
 docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.json；
 docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.md。
+experiments/prime_matrix_rpz_bcb_platform_length_threshold.py；
+docs/monograph/prime-matrix-rpz-bcb-platform-length-threshold.json；
+docs/monograph/prime-matrix-rpz-bcb-platform-length-threshold.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -460,6 +464,15 @@ no-TailAnchor BCB 分支即闭合；未证明前，不能把 finite closure 升�
 Jacobsthal 风险扫描说明，朴素线性路线本身不够：在 `m=5,T=4,P=nextprime(2h)` 的最弱参数下，
 `G(h)<P-4` 从 `h=43` 起已经失败。故下一步不能继续宣称“低筛长度障碍全局闭合”；必须改攻
 formal 平台长度增长、TailAnchor 强制，或 endpoint/first-failure 出口证书。
+
+平台长度阈值账本给出精确目标：
+
+```text
+m >= G(h)-P+2+2T。
+```
+
+对于 `T=4`，`h=43` 层需要 `m>=10`。因此 Track B 的最小证明义务是平台长度增长定理；
+Track A 则负责短平台失败时的 TailAnchor/endpoint/first-failure 出口。
 
 本文没有完成：
 

@@ -167,6 +167,7 @@ BCB accepted top-row residue preimage 账本。
 BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
 BCB Jacobsthal 型闭合接口。
 BCB Jacobsthal 线性闭合风险扫描。
+BCB 平台长度阈值账本。
 ```
 
 本文没有完成：
@@ -336,3 +337,6 @@ accepted preimage。当前有限样本 `5/5` 均被该障碍排斥；全局接�
 新增 `prime-matrix-rpz-bcb-jacobsthal-risk-scan.md` 后，材料化接口禁止使用朴素
 `G(h)<P-4` 作为全局证书；风险扫描已给出失败层。可接受材料必须包含平台长度增长证明、
 formal 参数限制证明，或对应出口证书。
+
+新增 `prime-matrix-rpz-bcb-platform-length-threshold.md` 后，可接受的平台长度证书必须逐层验证
+`m>=G(h)-P+2+2T`。未达标的短平台必须直接进入 TailAnchor/endpoint/first-failure/PDEC/ColumnCRT。

@@ -1053,6 +1053,17 @@ prime is $P=89$, and the core length is only $85$.  Thus the finite core-run obs
 cannot be promoted to a global theorem by a blanket linear bound.  A global proof must
 either force longer platforms $m$, prove stronger restrictions on the formal BCB parameter
 set, or close the TailAnchor/endpoint/first-failure exits.
+The platform-threshold ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-platform-length-threshold.md}
+\]
+rewrites this requirement as the exact integer condition
+\[
+  m\ge G(h)-P+2+2T.
+\]
+For $T=4$, the first substantive unsafe layer with $h\ge5$ is again $h=43$, where the
+required platform length is $10$ rather than $5$.  The next attack must therefore prove
+platform-length growth or prove that short platforms trigger one of the named exits.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

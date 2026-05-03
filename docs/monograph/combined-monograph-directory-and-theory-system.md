@@ -1143,3 +1143,13 @@ TailAnchor、endpoint、first-failure、PDEC、ColumnCRT 出口。
 Ziller--Morack primorial Jacobsthal 附属数据的风险扫描显示，首个非平凡失败在 `h=43`：
 `G(h)=89`、最小 `P>2h` 为 `89`、核心长度为 `85`。因此下一步必须证明 formal BCB 平台长度
 `m` 随层增长，或证明 bad 参数族进入 TailAnchor/endpoint/first-failure/PDEC/ColumnCRT。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-platform-length-threshold.md` 后，平台增长目标已写成
+精确整数阈值：
+
+```text
+m >= G(h)-P+2+2T。
+```
+
+当 `T=4` 时，首个 `h>=5` 实质不安全层为 `h=43`，所需平台长度为 `10`。因此下一硬点不再是
+“是否存在 accepted selector”，而是证明 formal BCB 平台长度达到该阈值，或短平台触发已命名出口。

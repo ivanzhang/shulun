@@ -679,6 +679,10 @@ no-TailAnchor BCB 分支闭合；若失败，必须继续攻 TailAnchor/endpoint
 `G(h)<P-4` 已被判定不能全局使用。当前最优硬攻方向改为：证明 formal BCB 中平台长度 `m`
 随 `G(h)-P` 增长，或证明平台短时必触发 TailAnchor/endpoint/first-failure 出口。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-platform-length-threshold.md` 后，当前最小目标是
+`m>=G(h)-P+2+2T`。这给出可审查的下一层任务：证明平台增长，或证明低于该阈值的短平台
+不能保持 no-TailAnchor 且必进入命名出口。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
