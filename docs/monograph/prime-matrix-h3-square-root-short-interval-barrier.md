@@ -107,3 +107,12 @@ satisfies D_y <= eta*q/log q and F_y(d) <= d*lambda*q/log q.
 
 这就是平方根长度短区间问题在方阵/CRT 矛盾场语言中的精确版本。证明它即可完成 H3/行命题；
 没有它，则不能诚实宣称逐行正余量已经无条件闭合。
+
+硬攻进展见：
+
+```text
+docs/monograph/prime-matrix-h3-square-root-defect-exclusion-hard-attack.md
+```
+
+该文件证明 `D_y` 分支可在小筛层由一维区间筛基本引理控制；真正硬核收缩为尾标签/双粗补洞
+不可形成整行精确填充，除非触发 ColumnCRT、端点相位或互补因子结构矛盾。

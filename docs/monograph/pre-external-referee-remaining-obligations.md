@@ -382,6 +382,10 @@ PNT 与相邻壳层单点性理论解释：H3 行平均为第一行素数数目�
 上述点态转移是平方根长度短区间素数下界问题。除非提交新的 `Square-root Defect Exclusion`
 证明，否则不得写成已完成无条件 H3/行命题。
 
+新增 `docs/monograph/prime-matrix-h3-square-root-defect-exclusion-hard-attack.md` 后，外审义务应再细化：
+`D_y` 分支可用标准区间筛处理；剩余必须证明尾标签/双粗补洞不可能精确填满整行，或必进入
+ColumnCRT、端点相位、互补因子矛盾证书。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

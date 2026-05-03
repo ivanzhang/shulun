@@ -196,3 +196,12 @@ docs/monograph/prime-matrix-h3-square-root-short-interval-barrier.md
 
 该文件把点态转移等价化为平方根长度短区间素数下界，并解释为什么必须由 `D_y/F_y` 缺陷排斥来
 突破线性筛 `u=2` 的奇偶障碍。
+
+进一步硬攻文件：
+
+```text
+docs/monograph/prime-matrix-h3-square-root-defect-exclusion-hard-attack.md
+```
+
+它显示 `D_y` 不是主障碍；在自然低模选择下 `F_y/d` 与尾标签总数 `T_y` 常数等价。因此最终证明
+必须排斥尾标签/双粗点作为整行补洞器，而不能只要求普通 Fourier 能量小。

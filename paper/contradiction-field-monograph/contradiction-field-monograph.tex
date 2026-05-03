@@ -1196,6 +1196,19 @@ length $q=\sqrt{q^2}$ near $x=q^2$.  This is exactly the square-root short-inter
 where ordinary average PNT input and the linear sieve at $u=2$ do not supply a pointwise
 positive lower bound.  The remaining theorem is therefore a genuine square-root defect
 exclusion, not a bookkeeping consequence of the first-row average.
+The direct hard attack is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-square-root-defect-exclusion-hard-attack.md}.
+\]
+It shows that the $D_y$ branch can be controlled at a small sieve level by the standard
+one-dimensional interval-sieve fundamental lemma.  The obstruction is the tail branch:
+for a natural low modulus $d$, the tail Fourier energy satisfies
+\[
+  \frac12 T_y\le E_y(d)\le T_y,
+\]
+so it is essentially the tail-label count.  The final hard core is therefore to exclude
+tail labels and double-rough points as an exact full-row filler, or to force them into
+ColumnCRT, endpoint phase, or cofactor-structure defects.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

@@ -1341,6 +1341,10 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 识别为 `x≈q^2`、`h=sqrt x` 的对齐短区间素数下界。它是标准短区间/奇偶障碍强度的硬输入；
 当前文稿只能给出缺陷判据，不能无条件闭合该输入。
 
+新增 `docs/monograph/prime-matrix-h3-square-root-defect-exclusion-hard-attack.md` 后，目录状态更新为：
+`D_y` 分支已归约到标准小筛层区间筛；最终未闭合对象是尾标签/双粗补洞排斥，即证明这些尾点
+不能无缺陷地精确填满整行 H3 候选。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

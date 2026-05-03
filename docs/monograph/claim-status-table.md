@@ -364,6 +364,10 @@ H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量�
 `x≈q^2`、长度 `sqrt x` 的对齐短区间素数下界。普通 PNT、RH 型误差和已知无条件短区间输入
 不能直接推出该结论；必须证明 `D_y/F_y` 低模缺陷排斥。
 
+新增 `docs/monograph/prime-matrix-h3-square-root-defect-exclusion-hard-attack.md` 后，唯一闭合目标已
+继续内攻：`D_y` 分支可由一维区间筛基本引理在小筛层控制；自然低模下 `F_y/d` 与尾标签总数
+`T_y` 常数等价。因此真正硬核是排斥尾标签/双粗点作为整行精确补洞器，而不是再证明平均尺度。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为
