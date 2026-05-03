@@ -485,6 +485,20 @@ RPZ-Absorption => ColumnCRT/TailAnchor/ColumnRadius。
 同批样本中 `nP/p` 缩放后实际含完整下层零行的只有 `1/5`；半宽层连续零行段最大长度为 `0`。
 这说明 `q^2` 落入半宽 CRT 周期只是建模条件，不能替代复活点吸收缺陷定理。
 
+新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
+`docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
+`experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已被路由为：
+
+```text
+survivor / TailAnchor / ColumnCRT / ColumnRadius / Distributed-RPZ。
+```
+
+有限样本中半宽层共有 `15` 个复活点，缺失吸收标签为 `0`，单窗最大吸收标签负载与
+最大顶层列负载均为 `1`。因此 `RPZ-Absorption=>TailAnchor` 不能靠单窗集中闭合；
+当前最小硬点进一步压缩为 `RPZ-Distributed Barrier`：若漂移窗口族中
+`L_T<=T_0`、`L_D<=D_1` 且 `L_R=0`，则低负载吸收容量不足以覆盖所有 RPZ 复活点，
+否则必须回流到命名出口。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

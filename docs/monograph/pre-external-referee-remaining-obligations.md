@@ -146,6 +146,14 @@ low-hole bucket 符号化和条件路由元数据仍是下一步系数源硬点�
 新增 `docs/monograph/prime-matrix-scaled-peeling-halfwidth-audit.md` 后，缩放到前一素数和约半宽素数的版本
 也不能直接闭合：缩放行号需要完整包含判据，半宽层会复活粗互补因子点。该路线仍需复活点吸收缺陷定理。
 
+新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
+`docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
+`experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为
+`survivor/TailAnchor/ColumnCRT/ColumnRadius/Distributed-RPZ` 五分支路由。有限样本显示
+单窗吸收是分散型，最大标签负载和最大顶层列负载均为 `1`。因此外审前剩余不是简单
+`RPZ-Absorption=>TailAnchor`，而是必须证明 `Distributed-RPZ` 低负载分散吸收不能持续，
+或提交它进入 `ColumnCRT/ColumnRadius/TailAnchor` 的容量不等式。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

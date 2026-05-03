@@ -275,17 +275,34 @@ R_{\ell,a}(g)>L_D(q)\ \text{or}\ R_D(g)>0.
 
 ## 7. 下一步最小硬点
 
+新增 `prime-matrix-rpz-absorption-defect-route.md` 与
+`prime-matrix-rpz-absorption-defect-audit.md` 后，上一版硬点
+`RPZ-Absorption=>ColumnCRT/TailAnchor/ColumnRadius` 已被写成可审稿的五分支路由：
+
+```text
+survivor remains
+or TailAnchor load
+or ColumnCRT displacement load
+or ColumnRadius
+or Distributed-RPZ。
+```
+
+同批 `5` 个已知首零行样本的半宽复活点总数为 `15`，所有复活点都有上层吸收标签，
+但单窗最大标签负载与最大顶层列负载均为 `1`。这排除了“单窗标签集中直接给出
+TailAnchor”的最短路线；真实剩余不是吸收路由，而是低负载分散吸收能否长期持续。
+
 当前最小硬点更新为：
 
 ```text
-RPZ-Absorption => ColumnCRT/TailAnchor。
+RPZ-Distributed Barrier。
 ```
 
 具体要证明：
 
-1. 第一层最多两个复活点若被缝合窗口消除，则消除标签不能在所有相邻漂移窗口中分散；
-2. 若分散，则某个邻近窗口保留旧筛幸存者，反例失败；
-3. 若集中，则进入 `ColumnCRT` 位移余类负载或 `TailAnchor` 标签集中；
-4. 若需要远距离列见证补偿，则进入 `ColumnRadius`。
+1. 漂移窗口族中若每个 RPZ 复活点都被吸收，吸收事件必须进入
+   `TailAnchor/ColumnCRT/ColumnRadius` 之一，或保持低负载分散态；
+2. 低负载分散态若持续，则其吸收容量严格小于复活点需求，故某个窗口保留旧筛幸存者；
+3. 若容量不小于需求，则必产生尾标签重复、同列位移余类重复或远半径见证，回到命名出口。
 
-该命题比“递归推出连续零行”更弱、更接近已建好的 H4-PDEC 出口账本，也更适合作为下一步全局阈值攻坚目标。
+该命题比“递归推出连续零行”更弱，也比全局证明固定小 `D_0,L_D` 更局部：
+只需在 RPZ 复活点吸收场中证明低负载容量不等式。
