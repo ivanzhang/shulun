@@ -297,6 +297,7 @@ ColumnCRT 阈值调参不可闭合障碍证书。
 formal-family 下降相位自动机证书。
 formal-family rejected set 全量 seam 吸收证书。
 seam/PDEC/ColumnCRT 出口压力账本。
+accepted-set 符号阶梯证书。
 ```
 
 再新增
@@ -308,6 +309,9 @@ docs/monograph/prime-matrix-rpz-rejected-phase-absorption.md。
 experiments/prime_matrix_rpz_seam_exit_pressure_ledger.py；
 docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.json；
 docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.md。
+experiments/prime_matrix_rpz_symbolic_ladder_certificate.py；
+docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.json；
+docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -336,6 +340,17 @@ max aggregated displacement load = 96。
 因此剩余出口不再是相位搜索，而是有限窄接口：`12` 条 seam、`12` 条单余类 PDEC 支持、
 `10` 个固定非零 ColumnCRT 位移类。
 
+accepted-set 符号阶梯证书把路线 A 的正面目标写成：
+
+```text
+for every adjacent p->r, g=p-r:
+  delta_p(a)=-(a-1)g mod r <= g。
+```
+
+若该不等式首次失败，即进入已材料化 first-grid-fail seam。证书在 `P(19)=9699690` 内逐相位
+枚举核验计数公式无不一致，并把符号阶梯记录到 `p=97`。因此 Track B 的下一步不是再扩展
+有限相位表，而是证明 formal-family 起始行构造本身强制这些 `delta` 数字落入允许盒。
+
 本文没有完成：
 
 ```text
@@ -350,4 +365,5 @@ first-grid-fail seam 标准形的 PDEC/ColumnCRT 证书排斥；
 formal-family 避开 12 条 seam；
 或 12 条 endpoint-PDEC 上界 U_CRT<L_PDEC；
 或 10 个固定非零 ColumnCRTDefect 排斥证书。
+其中 formal-family 避开已等价压缩为逐层 delta 数字约束。
 ```

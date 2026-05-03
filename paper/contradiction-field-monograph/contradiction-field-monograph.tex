@@ -906,6 +906,21 @@ classes, with maximum aggregated load $96$.  Thus the next gate is no longer a p
 one must either prove formal-family avoidance of the twelve seam rows, provide
 $U_{\rm CRT}<L_{\rm PDEC}$ for their single-residue PDEC supports, or prove an independent
 exclusion theorem for the ten ColumnCRT displacement classes.
+The symbolic ladder certificate
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.md}
+\]
+rewrites the preferred avoidance route as local adjacent-prime digits.  For each adjacent
+pair $p>r$, with $g=p-r$, it uses
+\[
+  \delta_p(a)=-(a-1)g \pmod r,\qquad
+  \delta_p(a)\le g
+\]
+as the exact success digit.  Failure of this inequality is precisely the first-grid-fail
+seam already materialized above.  The certificate verifies the resulting counting formula
+by full enumeration through modulus $P(19)=9699690$ and symbolically records the same ladder
+through $p=97$.  The remaining theorem is now sharply stated: derive these digit inequalities
+from the formal counterexample construction itself, not from a finite phase enumeration.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

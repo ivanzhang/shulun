@@ -1023,3 +1023,16 @@ max aggregated displacement load = 96
 因此当前真正硬点已经不是逐相位搜索，而是 `12` 条 seam 行、`12` 条单余类 PDEC 支持行、
 以及聚合后的 `10` 个固定非零 ColumnCRT 位移类。若要继续推进，只能证明 formal-family 避开
 这些 seam 行，或提交同口径 `U_CRT<L_PDEC` / `ColumnCRTDefect` 排斥证书。
+
+新增 `docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.md` 后，首选 formal-family 避开
+路线进一步改写为相邻素数阶梯数字约束。对 `p>r`、`g=p-r`：
+
+```text
+delta_p(a)=-(a-1)g mod r；
+success iff delta_p(a)<=g；
+first fail iff delta_p(a)>g。
+```
+
+该证书在 `P(19)=9699690` 以内逐相位枚举核验计数公式无不一致，并把符号阶梯延伸到
+`p=97`。剩余证明义务不再是枚举 `A_p`，而是从正式反例构造本身推出每层
+`delta_p(a)<=g`；若某层失败，则已回流到前述 seam/PDEC/ColumnCRT 出口。

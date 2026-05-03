@@ -156,6 +156,7 @@ ColumnCRT 阈值调参不可闭合障碍证书。
 formal-family 下降相位自动机证书。
 formal-family rejected set 全量 seam 吸收证书。
 seam/PDEC/ColumnCRT 出口压力账本。
+accepted-set 符号阶梯证书。
 ```
 
 本文没有完成：
@@ -269,3 +270,13 @@ max aggregated displacement load = 96。
 因此材料化接口的剩余义务已经足够窄：`12` 条单余类 PDEC 支持行需要同口径
 `U_CRT<L_PDEC`，或 `10` 个固定非零 ColumnCRT 位移类需要独立排斥定理；否则必须证明
 formal-family 起始相位避开这 `12` 条 seam。
+
+新增 `prime-matrix-rpz-symbolic-ladder-certificate.md` 后，formal-family 避开这 `12` 条 seam
+的接口被重写为相邻素数下降数字：
+
+```text
+delta_p(a)=-(a-1)(p-r) mod r <= p-r。
+```
+
+该数字不等式失败时自动进入 seam 材料化链；成功时继续向下层下降。证书已在可枚举范围内核验
+accepted count 公式，剩余义务是把正式反例起始行的 `a mod r` 来源逐层证明出来。

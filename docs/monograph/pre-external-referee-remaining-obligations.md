@@ -255,6 +255,11 @@ formal-family 避开优先，其次 endpoint-PDEC，上述两者都失败时才�
 “继续查 rejected phase”；必须提交 formal-family 避开定理、endpoint-PDEC 上界，或独立
 `ColumnCRTDefect` 排斥定理。
 
+新增 `docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.md` 后，formal-family 避开定理的
+外审表述变成逐层数字不等式：对相邻素数 `p>r` 与 `g=p-r`，必须证明正式起始相位沿 canonical
+下降链满足 `delta_p(a)=-(a-1)g mod r <= g`。该证书已在 `P(19)=9699690` 内枚举核验计数公式，
+但仍未证明正式反例族必满足这些数字约束。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

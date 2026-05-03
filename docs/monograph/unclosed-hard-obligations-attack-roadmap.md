@@ -624,6 +624,12 @@ seam/PDEC/ColumnCRT：`27924` 个 rejected phase、`12` 个 distinct first-fail 
 条 seam；为 `12` 条单余类 PDEC 支持提交 `U_CRT<L_PDEC`；或证明 `10` 个固定非零
 `ColumnCRTDefect` 类不可能出现。
 
+新增 `docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.md` 后，第一路线被压成更精确的
+数字阶梯目标：证明正式反例起始行在每个相邻素数下降 `p->r` 中满足
+`delta_p(a)=-(a-1)(p-r) mod r <= p-r`。若失败，则首次失败就是已材料化 seam。该脚本把
+`A_p` 计数公式在 `P(19)=9699690` 内逐相位核验无不一致，并符号记录到 `p=97`。下一轮应直接
+从 BCB/TailAnchor/条件零行构造中抽取 `a mod r` 约束，而不是继续枚举 `A_p`。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
