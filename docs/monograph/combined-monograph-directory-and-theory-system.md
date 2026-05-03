@@ -681,6 +681,41 @@ SCB-2 closed as routing modulo Endpoint/PDEC exclusion.
 
 剩余硬点转为 `SCB-1` 长块正扩张，以及短块端点亏损出口的全局排斥。
 
+新增 `experiments/prime_matrix_wsh_scb1_long_block_certificate.py`、
+`docs/monograph/prime-matrix-wsh-scb1-long-block-certificate.md/json` 与
+`docs/monograph/prime-matrix-wsh-scb1-long-block-expansion-template.md` 后，`SCB-1`
+长块分支也已有有限证书和审稿模板。脚本枚举所有 `|B|>=4` 的连续平衡双尾半素数长块：
+
+```text
+long blocks = 4573823
+global minimum long-block surplus = 3
+negative long blocks = 0
+zero long blocks = 0
+tight long blocks = 4
+```
+
+最紧长块只出现在 `|B|=4,5`，且全部触发 `Endpoint-margin` 与
+`Fixed-offset-full-load`。因此当前可诚实写为：
+
+```text
+SCB-1 has a finite long-block certificate with min surplus 3.
+```
+
+这一步没有证明全局长块扩张定理。它把下一最小硬点精确为：
+
+```text
+long-block positive expansion
+or fixed-offset/PDEC absorption for long tight blocks.
+```
+
+合并后，`WSH-Hall/PDEC` 的当前主链为：
+
+```text
+SCB-2 routing closed modulo Endpoint/PDEC exclusion;
+SCB-1 finite certificate supports long-block expansion;
+remaining hard point = fixed-offset/PDEC absorption + Endpoint/PDEC exclusion.
+```
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

@@ -94,6 +94,20 @@ else the named exit absorbs the block.
 双点/三点紧块还检查 Tail-repeat 与 Fixed-offset-full-load。外审前剩余不再是短块失败是否
 可命名，而是 Endpoint/PDEC 出口是否能被全局排除。
 
+新增 `docs/monograph/prime-matrix-wsh-scb1-long-block-expansion-template.md` 与
+`docs/monograph/prime-matrix-wsh-scb1-long-block-certificate.md/json` 后，`SCB-1` 长块分支
+也有了有限证书：`17<=p<=2000` 中 `4573823` 个 `|B|>=4` 连续长块的最小 Hall 余量为
+`3`，负余量和零余量均为 `0`；全部 `4` 个最紧长块同时触发 `Endpoint-margin` 与
+`Fixed-offset-full-load`。外审前仍不能把该有限证书写成全局定理；必须补以下二择一证明：
+
+```text
+long-block positive expansion uniformly;
+or every long tight block is absorbed by fixed-offset/PDEC, Tail-anchor, or Endpoint/PDEC.
+```
+
+因此 `WSH-Hall/PDEC` 的真实剩余已收窄为固定偏移/PDEC 吸收与 Endpoint/PDEC 排斥，
+而不是继续枚举长短块样本。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

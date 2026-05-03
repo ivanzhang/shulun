@@ -443,3 +443,10 @@ RH-1 explicit-formula entrance
 新增 `docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md` 后，finite Rankin ledger constants 已变成可验收证书：`rankin_budget_pass=true` 即闭合该颜色类；失败者必须低模化或细分。当前最终剩余进一步精确为 `PDEC exclusion`、`SAE local escape exclusion`、正式着色走廊 Rankin certificates 全部通过或失败者进入 PDEC/SAE。
 
 新增 `docs/monograph/prime-matrix-reverse-zero-row-dichotomy.md` 后，用户提出的“q 零行反推 p 零行”被严写为二分：`q` 零行先变成旧 `p`-筛长度 `q` 零窗；若起点相位 `a_s>=p-(q-p)`，则包含完整 `p` 对齐零行并直接矛盾；若 `a_s<p-(q-p)`，则只形成相邻 `p` 行的缝合零窗。审计显示核心区直接支仅约 `0.00616`，主支是缝合零窗。因此下一步最小硬点应攻 `SeamSafe/ASB-or-PDEC`，而不是继续尝试从所有 `q` 零行直接推出 `p` 对齐零行。
+
+新增 `docs/monograph/prime-matrix-wsh-scb1-long-block-expansion-template.md` 与
+`experiments/prime_matrix_wsh_scb1_long_block_certificate.py` 后，`WSH-Hall/PDEC` 的长块分支也被
+材料化：`17<=p<=2000` 中 `4573823` 个 `|B|>=4` 连续长块最小余量为 `3`，最紧长块均触发
+`Fixed-offset-full-load` 与 `Endpoint-margin`。当前最优攻坚点因此不再是扩大 SCB 枚举，
+而是证明固定偏移满载必进入 persistent `PDEC` 或稀疏 `Endpoint/SAE` 出口；完成后可把
+`SCB-1` 与 `SCB-2` 合并为单一 `Endpoint/PDEC` 最终排斥接口。

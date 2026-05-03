@@ -14,6 +14,16 @@ Row/Column counterexample
 ```
 
 当前状态：前半归约已经附录化；D-structure exclusion 与常数/外部输入仍需逐行顶刊级复核。
+`RCI/PDEC` 分散分支的最新窄接口为 `WSH-Hall/PDEC`：
+
+```text
+WSH-Hall/PDEC
+  -> WSH Positive Expansion or Named Defect
+  -> SCB-1 long blocks + SCB-2 short blocks + Endpoint/PDEC exclusion
+```
+
+其中 `SCB-2` 已路由闭合 modulo `Endpoint/PDEC exclusion`；`SCB-1` 已有
+`|B|>=4` 长块有限证书，最小余量为 `3`。这仍是归约与证书接口，不是全局方阵行列命题证明。
 
 ## 2. RH 依赖链
 

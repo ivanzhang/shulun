@@ -182,6 +182,26 @@ SCB-2 routing closed modulo Endpoint/PDEC exclusion.
 形式证明层面，短块若失败即为 Endpoint/PDEC deficit；双点/三点紧块的固定偏移或尾标签压力
 进入相应命名出口。下一步应优先攻 `SCB-1` 长块自动扩张，或攻 Endpoint/PDEC 出口排斥。
 
+新增 `SCB-1` 长块证书后，路线 C 的下一硬点再次收窄：
+
+```text
+SCB-1 finite status:
+  |B|>=4 long blocks checked = 4573823
+  min long-block surplus = 3
+  negative/zero long blocks = 0
+  all tight long blocks trigger Fixed-offset-full-load and Endpoint-margin
+```
+
+因此下一步不应继续只扩大枚举范围，而应专攻：
+
+```text
+Fixed-offset/PDEC absorption for long tight blocks
+```
+
+具体证明目标是：若 `|B|>=4` 的长块不能给出正扩张余量，则同一固定偏移通道必须超载；
+该超载要么形成 persistent CRTDefect/PDEC，要么作为稀疏端点逃逸进入 SAE/Endpoint。
+完成该项后，`SCB-1 + SCB-2` 的内部路由基本合并，最终只剩 `Endpoint/PDEC` 排斥。
+
 ### 2.5 可行性
 
 评级：C。

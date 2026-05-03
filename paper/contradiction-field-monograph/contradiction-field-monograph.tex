@@ -585,6 +585,35 @@ There are no negative-surplus or zero-surplus short blocks.  The local routing s
 \]
 with additional Tail-repeat and fixed-offset-full-load checks on tight two- and three-point blocks.  Thus SCB--2 is closed as a routing lemma modulo the still-open Endpoint/PDEC exclusion.
 
+\section{SCB--1 Long-Block Certificate}
+
+The complementary long-block certificate is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-scb1-long-block-expansion-template.md}.
+\]
+It enumerates all consecutive balanced two-tail semiprime blocks with $|B|\ge4$ for
+$17\le p\le2000$ and the same radius $R=\lceil3\log^2 q\rceil$.  The audit checks
+$4573823$ long blocks and finds
+\[
+  \min_{|B|\ge4}\bigl(|N_R(B)|-|B|\bigr)=3,
+\]
+with no negative-surplus or zero-surplus long block.  The four tight long blocks have sizes
+$4$ or $5$, and every tight block carries both Endpoint-margin and fixed-offset-full-load labels.
+
+This is a finite certificate, not the uniform SCB--1 theorem.  Its proof-theoretic role is to isolate the next target:
+\[
+  \text{long-block positive expansion}
+  \quad\text{or}\quad
+  \text{fixed-offset/PDEC absorption}.
+\]
+Together with SCB--2, the present WSH chain is therefore:
+\[
+  \text{SCB--2 routing modulo Endpoint/PDEC},
+  \qquad
+  \text{SCB--1 finite long-block margin},
+\]
+The remaining global obstructions are fixed-offset/PDEC absorption and Endpoint/PDEC exclusion.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.
