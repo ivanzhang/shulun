@@ -358,3 +358,7 @@
 | BSI sawtooth 硬攻 | 新增/压缩为 RSE 与筛水平张力 | `docs/monograph/pta-gsl-hard-attack.md` 已新增第 11--16 节。把 BSI 的地板函数余项用 sawtooth/Vaaler 展开，得到粗数倒数指数和 `S_{h,ell}(M)=sum_{m~M,P^-(m)>Y} e(hX/(ell m))(1-e(hH/(ell m)))`。相位总变化约 `hP_m/ell`，故振荡需要 `ell<<hP_m`；而 Selberg 筛水平给 `ell<=R^2`。新核心张力为 `R<=P^{(1-alpha)/2}` 有利于倒数相位抵消，但可能削弱 `1/log P` 主常数。最小接口进一步压缩为 `RSE`：Selberg 二次权平均下的粗数倒数指数和估计。 |
 
 | 三命题闭合优化矩阵 | 新增/统一三链最小接口 | 新增 `docs/monograph/three-proposition-closure-optimization.md`。该矩阵把 PM、TP、RH 分别压缩为 `QLOW-MID-COMP(intervalized)+RRD+OSPC`、`BMD-to-TLI no-hidden-lower-bound`、`controlled exits four-column ledger`。结论：PM 的紧区间常数证书是当前最窄可攻点，且外向舍入预算已量化；TP 不能把 BMD 外部闭合直接等同于素数对终局；RH 仍保持 `Not claimed`。 |
+
+| 外审前最硬剩余义务总表 | 已新增/主稿已接入 | 新增 `docs/monograph/pre-external-referee-remaining-obligations.md`，并在 `paper/contradiction-field-monograph/contradiction-field-monograph.tex` 增加 `Pre-External-Referee Hard Obligations` 小节。该表把当前所有最硬剩余逐项归入唯一审稿义务链：Prime Matrix 的 `Structured-EHPD/PDEC/SAE/Rankin/RRD/OSPC`，二点筛的 `I3-Core/DI-BFI适配/BMD=>TLI`，RH 的 controlled exits。结论保持诚实边界：作者侧已完成状态归档和阻塞接口压缩，但未把未证深命题伪装为无条件终局。 |
+
+| 未闭合硬项攻坚路线图 | 已新增/逐项补充可行性方案 | 新增 `docs/monograph/unclosed-hard-obligations-attack-roadmap.md`。该路线图对 H1--H10 逐项给出精确证明目标、可用刚性、最小补正动作、可行性评级与失败时状态。优先级明确为：先做 `H7/H3/H10/H1` 的外审工程闭合，再攻 `H5/H4/H2` 的 PM 数学接口；`H6/H8/H9` 保持条件/verification 状态，除非新增真正深证明。 |
