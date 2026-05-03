@@ -30,7 +30,8 @@ PM-1 Matrix model
 ### 1.1 已稳定部分
 
 - `PM-1` 到 `PM-4` 是结构性定义、CRT 骨架和局部刚性，适合作为正文基础引理。
-- 大因子不可复用、相邻互质、45 度锁、`P±1` 斜线锁定应统一归入“局部刚性层”，避免在主线中反复新增命名。
+- 大因子不可复用、相邻互质、45 度锁、`P±1` 斜线锁定及其广义版本 `P±t` 应统一归入“局部刚性层”，避免在主线中反复新增命名。
+- 新增的广义斜率锁只闭合小素因子层：`q|k` 且 `q|P±t` 时非绕回算术段全由 `q` 标记；圆柱绕回螺旋持续延续，但实际整数值带有绕回次数余项，故应按绕回相位块计算锁定覆盖。
 
 ### 1.2 仍需保守标注部分
 
@@ -48,6 +49,243 @@ local rigidity ledger + capacity ledger + no-reuse ledger
 ```
 
 这会把方阵部分的审稿焦点压缩到一个最终接口。
+
+新增的粗数补洞接口可写为：
+
+```text
+generalized slope locks remove q<=Y
+=> rough band G_Y remains
+=> large-prime incidence B_Y(G_Y) must be < |G_Y|
+```
+
+其模型常数为 `log(1/alpha)`，其中 `Y=P^alpha`。这给出更简单的目标不等式，但证明该不等式仍需要短窗口粗数分布和大因子命中上界，不能由斜率锁本身推出。
+
+### 1.3A BPN-BK 最终证书层
+
+新增 `docs/monograph/prime-matrix-bpn-final-exit-acceptance-contract.md` 与
+`docs/monograph/prime-matrix-bpn-final-residual-hard-attack.md` 后，边界相位非覆盖主链
+应按最终证书层书写：
+
+```text
+BPN-BK reductions
+=> PDEC-Cert
+   or SAE-Cert
+   or formal Rankin certificates。
+```
+
+优化重点不再是新增等价分支，而是提交三类证书：
+
+- `PDEC-Cert`：证明同一坏窗集合的非零 Fourier 上界 `U_CRT<L_PDEC`；
+- `SAE-Cert`：对孤立坏窗给出 survivor/lift/higher-defect；
+- `Rankin certificates`：全部颜色类通过预算，或失败者转入 low-mod core CRTDefect。
+
+该层当前是 `Reduction-closed`，不是 `Proved-in-text`。在证书全集通过前，方阵行命题仍不能升级为无条件终局定理。
+
+新增 `docs/monograph/prime-matrix-bpn-pdec-dual-certificate-framework.md` 后，`PDEC-Cert`
+进一步拆成两类可验收对象：
+
+```text
+PDEC-Explicit-Cert:
+  直接给出坏窗相位计数向量并核验 max |g_hat(h)|<L_PDEC；
+
+PDEC-Dual-Cert:
+  把镜像、列均衡、尾锚不可复用、核心重叠回流写成线性约束，
+  再用对偶主控证书统一证明 U_CRT<L_PDEC。
+```
+
+脚本 `experiments/prime_matrix_bpn_pdec_certificate_audit.py` 已覆盖显式证书审计。无限族闭合仍需
+对偶证书或解析主控；这是当前最窄硬点。
+
+新增 `docs/monograph/prime-matrix-bpn-pdec-constraint-ledger.md` 与
+`experiments/prime_matrix_bpn_pdec_dual_certificate_audit.py` 后，对偶证书层进一步机器化：
+
+```text
+结构约束原子 -> A,b,E,e；
+对偶权重 -> lambda,mu；
+逐相位主控 -> c_{h,zeta}(t)<=A^T lambda+E^T mu；
+总界 -> U_dual=lambda*b+mu*e<L_PDEC。
+```
+
+当前真正剩余不是证书格式，而是证明这些 `A,b,E,e` 的每一行确实来自边界零行刚性，
+并覆盖所有非零频率与连续方向。
+
+新增 `experiments/prime_matrix_bpn_pdec_real_constraint_rows.py` 与报告
+`docs/monograph/prime-matrix-bpn-pdec-real-constraint-rows.md` 后，第一批真实系数行已填入。
+默认 `P=23,Q=210` 完整 CRT 枚举给出：
+
+```text
+zero rows = 3456；
+nonzero phase caps = 44/210；
+max phase cap = 324；
+low-hole >=5 bucket bound = 0。
+```
+
+这把下一步攻坚压成一个具体符号化目标：证明“低骨架剩余洞数过高”时尾锚/核心补洞容量
+不足，形成 `low-hole bucket` 上界定理。
+
+新增 `docs/monograph/prime-matrix-bpn-low-hole-bucket-capacity-theorem.md` 与
+`experiments/prime_matrix_bpn_low_hole_bucket_capacity.py` 后，`low-hole bucket` 已不再依赖
+整周期枚举，而是精确改写为高层 CRT 补洞容量。低范围 `P=13,17,19,23,Q=210` 的读数显示：
+
+```text
+max holes with completion = number of high primes；
+max single-prime cover on completion = 1。
+```
+
+但 `P>=29` 时单洞匹配会失效。正确的下一步最窄硬点是 Hall 型 set-cover 亏损：
+
+```text
+存在 W subset H_Q(t):
+|W| > sum_ell max_a |W cap B_{ell,a}(t)|
+=> completion_count(t)=0。
+```
+
+最新 `Q=2310` 扫描中，`P=13..47` 的全部 zero phases 均已由 Hall 亏损证书覆盖。
+进一步按最小删洞数 `d=|H_Q(t)|-|W|` 统计，证书实际只有两类：
+`P<=37` 全部为整洞集见证，`P=43,47` 只需整洞集或一洞删除。
+先前的二洞删除是最大亏损搜索的见证选择假象，不是结构例外。因此下一步不应再搜索任意
+`W⊆H_Q(t)`，而应严攻两类显式不等式：
+
+```text
+Delta(H_Q(t))>0；
+若 Delta(H_Q(t))=0，则存在桥洞 c0 使 Delta(H_Q(t)\{c0})>0。
+```
+
+新增 `prime-matrix-bpn-lhb-bridge-deletion-audit.md` 显示全部一洞删除相位满足桥洞机制：
+被删洞同时支撑两个高素数最大残基块，删去它使总容量下降 `2`、洞数只下降 `1`。
+这把 `low-hole bucket` 的当前最窄硬点压成“整洞集亏损或桥洞删一亏损”定理。
+
+新增 `prime-matrix-bpn-lhb-column-residue-rigidity-audit.md` 后，这个硬点又被代数化：
+由
+
+```text
+a_{ell,c,t}=a_{ell,c',t} <=> c=c' mod ell
+```
+
+可知高层覆盖容量只取决于低洞集 `H_Q(t)` 的列残基分布。`Q=2310,P<=47`
+的全部 zero bucket 均满足：
+
+```text
+Delta(H_Q(t))>0；
+或 Delta(H_Q(t))=0 且存在两个高素数最大列残基块的公共桥洞 c_*。
+```
+
+临界态只出现在 `P=43,47`，桥洞支撑素数均为 `(13,19)`。下一步最窄硬点因此是：
+证明实际 PDEC 低骨架中，整洞集若不亏损，则小高素数最大块必发生桥洞交叉。
+扩展审计 `P=53,59,61` 显示，桥洞临界带之后 zero bucket 基本消失；唯一例外
+`P=59` 的 8 个相位已经由 `Delta(H)>0` 直接覆盖。因此更准确的下一步二分是：
+
+```text
+低范围临界带：整洞集亏损、桥洞临界或精确 DP 临界；
+转折后范围：zero bucket 消失，或仅剩整洞集直接亏损。
+```
+
+新增 `prime-matrix-bpn-lhb-greedy-cover-transition-audit.md` 后，转折后范围进一步有构造性证书：
+
+```text
+Q=2310:
+P=53 greedy fail = 26；
+P=59 greedy fail = 22；
+P>=61, P<=109 greedy fail = 0。
+```
+
+因此下一步真正最窄硬点变为证明 `P>=61` 的贪心补洞定理：低洞集在高素数列残基块中
+总能被逐步覆盖。后续低范围最终证书已把 `P<61` 的有限临界带闭合为三类证书：
+整洞集亏损、桥洞临界和 `P=41` 的精确 DP 临界。
+增益账本进一步显示，该贪心定理可压成一个显式不等式。若 `s(t)` 是构造覆盖所需块数，
+`D(t)=|H_Q(t)|-s(t)` 是重复增益，则只需证明
+
+```text
+D(t) >= |H_Q(t)|-|R|。
+```
+
+样本中重复增益主要由 `13,17,19,23` 的列残基碰撞提供；`P` 增大后，`29,31,37`
+继续补强。所以下一层最窄硬点是“小高素数碰撞梯重复增益下界”。
+
+最新固定升序碰撞梯审计把该硬点再压窄一层：不需要动态选择高素数顺序。固定按
+`13,17,19,23,...` 使用高素数，每步只取当前未覆盖洞中的最大列残基块，得到：
+
+```text
+Q=2310:
+P=53 fixed-ladder fail = 44；
+P=59 fixed-ladder fail = 36；
+P>=61, P<=149 fixed-ladder fail = 0。
+```
+
+因此转折后最小符号目标应写成 `LHB-7`：证明 `P>=61` 时固定升序碰撞梯的累计重复增益
+满足 `sum_j(|H_{j-1}∩(b_j mod ell_j)|-1) >= |H_Q(t)|-|R|`。该形式只涉及
+固定低洞集的列残基块计数，比“存在某个贪心路径”更适合进入顶刊审稿。
+
+主定理稿已补入碰撞能量分解：令
+`E_ell(S)=sum_a binom(|S∩(a mod ell)|,2)`，则固定梯单步增益满足
+`g_j-1 >= 2E_ell_j(H_{j-1})/|H_{j-1}|`。所以 `LHB-7` 可进一步由
+固定残集上的能量和不等式推出。当前最小硬点不是搜索证书，而是证明
+`13,17,19,23,...` 在低洞残集上的累计碰撞能量下界。
+
+新增 `prime-matrix-bpn-lhb-pigeonhole-tail-audit.md` 后，尾段又出现一个更强的纯鸽巢出口。
+令 `Hmax(P)` 为 `Q=2310` 周期中长度 `P-1` 的最大互素残基数，并递推
+`U_j=U_{j-1}-ceil(U_{j-1}/ell_j)`。若 `U_j` 归零，则任意洞集都被固定升序梯覆盖。
+扫描到 `P<=100000` 显示鸽巢递推只在
+`61,67,71,73,79,83,89,97,101,103` 失败，`P=107` 起全部闭合。
+进一步的 `P/5` 分割判据更适合解析证明：先用 `ell<=P/5` 做鸽巢递推，若剩余洞数
+不超过 `(P/5,P)` 中的高素数个数，则后半段逐个删洞闭合。扫描中该判据在
+`P>=107` 无失败。若再用连续乘积上界替代精确取整递推，则最后失败为 `P=229`，
+从 `P=233` 起扫描无失败。
+因此下一步最优严攻被拆成两个更小任务：
+
+```text
+Tail-A: 对 107<=P<=229 做精确 P/5 分割递推有限证书；
+Tail-B: 用显式 prime-count/Mertens 界证明连续乘积不等式对所有 P>=233 闭合；
+Band: 对 61<=P<=103 的十个素数，用真实碰撞能量补足鸽巢残量 1 或 2。
+```
+
+新增 `prime-matrix-bpn-lhb-explicit-tail-constant-audit.md` 后，`Tail-B` 被进一步拆成
+有限乘积证书与解析常数包：`Hmax(P)<=16(P-1)/77+5`，再用候选标准输入
+`prod_{p<=x}(1-1/p)<=e^{-gamma}(1.03)/log x`、`pi(x)>=x/log x`、
+`pi(x)<=1.25506x/log x`，得到解析余量从 `P>=13208` 起为正。因此尾段当前最窄
+工程义务是：
+
+```text
+107<=P<=229：精确分割递推表；
+233<=P<=13207：精确连续乘积有限表；
+P>=13208：显式 Mertens/prime-count 引用核验。
+```
+
+新增 `prime-matrix-bpn-lhb-tail-finite-certificate.md` 后，两段有限尾段证书已经生成：
+`107<=P<=229` 共 `23` 行精确分割递推无失败，最小余量 `0`；`233<=P<=13207`
+共 `1520` 行连续乘积证书无失败，使用整数交叉乘法
+`R(P)B_y-Hmax(P)A_y>0` 验收，最小浮点余量约 `0.5347204`。因此尾段有限义务
+已从“待生成”变为“证书可复核”，无限尾段只剩显式常数引用核验。
+
+新增 `prime-matrix-bpn-lhb-narrow-band-collision-certificate.md` 后，`61<=P<=103`
+的十个窄带素数也已闭合为有限碰撞能量证书。全 `23100` 个低相位固定升序梯均通过，
+最小碰撞余量分别为 `0,0,0,1,1,2,2,2,2,3`。因此 `LHB-7` 剩余不再包含窄带；
+新增 `prime-matrix-bpn-lhb-low-range-final-certificate.md` 后，`P<61` 也不再是剩余缺口：
+`15414` 个 zero bucket 全部通过，分解为 `15282` 个整洞集亏损、`108` 个桥洞临界和
+`24` 个 `P=41` 精确 DP 临界。当前 `LHB` 主线只剩 `P>=13208` 的显式常数引用核验。
+
+### 1.4 尾段接口的最新压缩
+
+新增 `docs/monograph/pta-gsl-hard-attack.md` 与 `docs/monograph/rse-reciprocal-sum-scan.md` 后，方阵尾段链条应改写为：
+
+```text
+GSL
+=> Selberg upper sieve
+=> BSI
+=> RSE-OSC + RSE-AMP + RSE-CRIT
+=> PTA-GSL
+=> PM-R2B
+```
+
+其中：
+
+- `RSE-OSC`：`hP_m/ell` 足够大，目标是粗数倒数相位抵消；
+- `RSE-AMP`：`hP_m/ell` 足够小，目标是振幅因子账本吸收；
+- `RSE-CRIT`：`ell≈hP_m` 的临界带，是当前唯一实质新硬点。
+
+压力测试只能作为证据等级，但它明确排除了“继续泛化斜率锁即可闭合尾段”的路线。斜率锁负责删除小素合数层；剩余需要解析型短区间双线性分布或等价的临界带 CRTDefect 排斥。
+
+`docs/monograph/rse-critical-band-hard-attack.md` 进一步把 `RSE-CRIT` 改写为 `CWM/CRD` 二分。随后 `docs/monograph/cwm-selberg-critical-mass-scan.md` 显示绝对 `CWM` 在尾部 dyadic 桶并不稳；`docs/monograph/scwm-crd-profile-scan.md` 显示必须保留真实 RSE 核；`docs/monograph/kscwm-crd-dual-obstruction-scan.md` 又修正了一个关键点：普通小素支撑集中 `SPC` 不足以推出 CRTDefect。`docs/monograph/skt-smooth-transform-scan.md` 把 `SKT` 拆成 `SKT-LIN` 与 `SKT-TRANS/SQF`；`docs/monograph/sqf-quadratic-form-scan.md` 显示 SQF 主瓶颈在低频 `Q(it)`；`docs/monograph/sqf-qlow-optimal-weight-scan.md` 显示精确最优 Selberg 权能降低零频和预算；`docs/monograph/sqf-qlow-fixed-low-stability-scan.md` 修正为 `QLOW-MID` 带权吸收；`docs/monograph/sqf-qlow-mid-weighted-absorption-scan.md` 将其进一步压缩为固定紧区间 `QLOW-MID-COMP` 加平滑尾部；`docs/monograph/qlow-mid-comp-grid-certificate.md` 则给出 `2<u<=12` 的导数余量网格证书，当前读数 `certified≈0.21--0.23<0.35`。因此最终窄接口应写为 `QLOW-MID-COMP(intervalized) + RRD + OSPC`。
 
 ## 2. 二点筛链条
 
@@ -135,3 +373,73 @@ RH-1 explicit-formula entrance
 3. 为 `KLS-window` 建立变量适配核查表，并在主稿中标明“已核对/待核对”。
 4. 将方阵行列章节压缩到 `Structured-EHPD` 单一最终接口。
 5. 对 RH 章节继续使用 `Not claimed` 警示，直到 controlled exits 全部逐行闭合。
+
+最新三命题统一优化矩阵见 `docs/monograph/three-proposition-closure-optimization.md`。在 `RSE` 被压缩后，方阵链条的第 4 项已细化为 `QLOW-MID-COMP(intervalized)+RRD+OSPC` 常数账本；其中 `QLOW-MID-COMP` 已有 `0.065` 外向舍入预算、正余量记录、Selberg 样本有理线性代数审计、trig/log 有理 oracle、H/Q 增量审计和 Phihat-free 的 sup-rho 旁路。新增 `docs/monograph/rse-rrd-ospc-margin-ledger.md` 给出 `0.053369509758272926` 可用余量，并把剩余拆为 `C_RRD<=0.020`、`C_OSPC<=0.020`、`C_SelbergUniform<=0.008`、`C_round<=0.003` 四个可审查目标。新增 `docs/monograph/rse-rrd-same-weight-reduction.md` 进一步证明 `RRD` 使用同一 `sum |omega_l|/l` 变差范数，并把 `C_RRD` 拆为 `RRD-low<=0.006`、`RRD-perp<=0.012`、`RRD-conversion<=0.002`。新增 `docs/monograph/rse-rrd-low-projection-dichotomy.md` 修正 `OSPC` 为 `E_dir>=1+delta_dir`，并把 `Pi_{<=Z}` 形式化为低模字典正交投影。新增 `docs/monograph/rse-low-block-exit-criterion.md` 给出 low-block 出口代数准则：无 `OSPC*` 时只需加权 CRT 缺陷界 `0.005366563145999495` 即可吸收 `RRD-low`。二点筛保持 `BMD-to-TLI` 审查；RH 保持 controlled exits 四列表。
+
+相邻素数递推路线见 `docs/monograph/prime-matrix-recursive-lift-audit.md`。它保留了“旧核心素数不会被升级筛消去”的正确直觉，但指出 `Row(p)` 不能直接传递到 `Row(q)`：多数 `q` 行不包含完整 `p` 行，必须增加 `Seam(p,q)` 缝合窗口引理。新增 `docs/monograph/prime-matrix-seam-endpoint-audit.md` 将该引理压缩为 `SEB(p,q)` 端点屏障：相邻旧 `p` 行跨边界的末端无素数段与首端无素数段之和必须小于 `q`。新增 `docs/monograph/prime-matrix-seb-unconditionality-audit.md` 进一步审查后，结论是全局 `SEB` 过强，接近 `G(p^2)<=q` 的素数间隙输入；真正应攻的是只检查新 `q` 行漂移残基的 `ASB(p,q)`。新增 `docs/monograph/prime-matrix-asb-hard-attack.md` 又把 `ASB-Fail` 转化为低筛粗剩余与高素补洞的相对点覆盖矛盾 `ASB-RHC`；新增 `docs/monograph/prime-matrix-asb-rhc-alpha-sweep.md` 再把它等价改写为粗剩余素数比例下界 `RPD`；新增 `docs/monograph/prime-matrix-rpd-failure-structure.md` 将压力进一步定位到粗半素数投影；新增 `docs/monograph/prime-matrix-semiprime-anchor-projection.md` 又将半素数投影压缩到锚层效率接口；新增 `docs/monograph/prime-matrix-anchor-cofactor-interval-audit.md` 进一步把锚层效率改写为互补素数短区间平均；新增 `docs/monograph/prime-matrix-mge3-budget-audit.md` 将至少三粗因子项改写为低锚复合互补因子恒等式；新增 `docs/monograph/prime-matrix-mge3-second-anchor-audit.md` 继续压缩为第二锚粗尾恒等式；新增 `docs/monograph/prime-matrix-mge3-tail-envelope-audit.md` 将第二锚粗尾压成聚合 Mertens 包络或局部密度尖峰出口；新增 `docs/monograph/prime-matrix-tail-spike-localization-audit.md` 将尖峰进一步定位为 singleton-prime 双曲走廊；新增 `docs/monograph/prime-matrix-singleton-corridor-bound-audit.md` 给出唯一分解、低筛 z-rough 与走廊宽度三层上界；新增 `docs/monograph/prime-matrix-singleton-corridor-overlap-audit.md` 证明样本中同窗口走廊不重叠。该路线可作为 PM 的替代结构框架，但当前不能替代 RSE/RRD/OSPC 主链；其最小硬点已从泛化窗口存在性变为“素互补因子短区间上界 + 聚合 Mertens 包络 + 不相交 singleton 走廊并集 z-rough 上筛，或异常出口”，并仍需 annulus 壳层命题。
+
+新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
+
+新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。
+
+进一步新增 `docs/monograph/prime-matrix-rpd-first-anchor-identity.md` 后，上一句可再压缩：半素数与 `M_{\ge3}` 不应分开加预算；全部粗合数精确等于第一锚粗互补因子计数。因此当前最小硬点更新为“第一锚加权 rough-cofactor Selberg 预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。
+
+新增 `docs/monograph/prime-matrix-rpd-fac-budget-audit.md` 后，该硬点有了首轮常数账本：全局模型量 `1075.256057`、真实 FAC 粗互补 `1454`、全局所需常数 `1.352236`；但逐窗口最大所需常数 `1.695703` 高于 `eta=0.10` 的逐窗口最小允许常数 `1.570917`。因此递推支线的下一步不能是裸全局 Mertens 常数，而必须是“分层/端点修正 FAC-Selberg 预算”与“低模端点缺陷出口”二分。
+
+新增 `docs/monograph/prime-matrix-rpd-fac-lowmod-defect-audit.md` 后，低模端点缺陷出口已有明确数值形态：最尖峰窗口 `p=53,q_row=43` 在 `T=17` 已捕获 `90.9089%` 的 FAC 缺陷；同批窗口在 `T=101` 的最小捕获率为 `80.4688%`。下一步最小证明义务是把大的 `D_T` 变成有向 CRTDefect/Tail-anchor/OSPC，而不是继续放宽全局常数。
+
+新增 `docs/monograph/prime-matrix-square-annulus-lift-lemma.md` 后，递推支线的 `Annulus` 接口也被结构化：平方壳层 `(p^2,q^2]` 中旧 `p`-筛幸存者除 `q^2` 外自动为素数；`pq` 是 `q` 倍数但已被旧筛删除。审计 `docs/monograph/prime-matrix-square-annulus-sieve-lift-audit.md` 给出 `max_p=2000` 下例外失败数 `0`，完整壳层行空段数 `0`，但最稀疏完整壳层行旧筛幸存者数只有 `1`。因此后续不再需要在壳层重新处理合数结构，只需证明相关 `q` 行壳层段的旧筛幸存者非空；该步骤不能用粗平均闭合。
+
+新增 `docs/monograph/prime-matrix-annulus-rough-nonempty-hard-attack.md` 后，相关 `q` 行壳层段非空失败被写成负低模亏损 `D_{p^+}^{ann}(I)=-|I|V(p^+)`。它与 ASB/RPD 中正 FAC 尖峰共用同一个最终桥接：`large signed low-mod endpoint defect => directed CRTDefect/Tail-anchor/OSPC`。
+
+新增 `docs/monograph/prime-matrix-signed-lowmod-bridge-hard-attack.md` 后，该最终桥接已拆成精确 Möbius 端点恒等式和 `SESE-low` 两步。第一步已严格证明：`D_T(I)=sum_{d|P_T} mu(d)({(L-1)/d}-{R/d})`，完整 `q` 行上是单位旋转 sawtooth 场；第二步仍待证：大 sawtooth 投影必须触发 `CRTDefect/Tail-anchor/OSPC`。
+
+新增 `docs/monograph/prime-matrix-directed-endpoint-crtdefect-bridge.md` 与 `docs/monograph/prime-matrix-dec-ospc-exclusion-hardpoint.md` 后，第二步应再拆开：大端点投影已经能严格推出 `Directed Endpoint CRTDefect/OSPC*`；但单个 DEC 不是矛盾，因为完整 CRT 零均值不排除单个短窗端点尖峰。最终剩余应标为 `PDEC-or-SAE`：要么坏窗在同一低模块上形成持续端点缺陷并推出坏行指示函数的 Fourier/CRT 缺陷，要么孤立坏窗由单窗锚逃逸排斥。该接口闭合前，递推链仍是严格归约，不是无条件行命题证明。
+
+新增 `docs/monograph/prime-matrix-semiprime-wheel-shadow-rigidity.md` 与 `docs/monograph/prime-matrix-semiprime-wheel-near-offset-audit.md` 后，`RCI/PDEC` 的分散分支又被压缩为 `WSH-Hall/PDEC`。固定偏移 `d` 的粗相位容量精确为 `rho_z(d)=prod_{r<=z,r∤d}(r-2)/(r-1)`：奇偏移由模 `2` 归零，`±2` 类偏移继续被 `3,5,7,...` 逐层削弱，`±6,±12,±30` 因含小素因子而更宽但仍非自由。下一步应证明轮筛允许 Hall 匹配，或把匹配失败导入固定偏移 CRTDefect、Tail-anchor 或 Endpoint/PDEC。
+
+新增 `docs/monograph/prime-matrix-row-reflection-period-audit.md` 后，CRT 行反射被校正为可用但有限的工具。若 `p` 对齐全覆盖行为 `r`，则镜像行 `N-r+1` 必全覆盖；第二周期复现给出的轨道为 `r,N-r+1,N+r,2N-r+1,...`，相邻间隔交替为 `N-2r+1` 与 `2r-1`，不是短平移周期。即使只要求全覆盖现象复现，`r,2r,2r-1` 也不是自动现象周期；样本 `p=23,r=59` 中 `r+59=118`、`r+117=176`、`r+118=177` 都不是零行。可保留的证明增益是“两端帽排斥”和条件稳定子引理 `period d => gcd(N,d)>=r`，可作为 `PDEC-or-SAE` 的端点刚性输入。
+
+新增 `docs/monograph/prime-matrix-p23-zero-recurrence-audit.md` 后，`P=23` 的真实复现结构被完整确认：周期内零行 `3456` 个，镜像前复现 `3454` 次，首次复现在第 `2612` 行而不是第 `118` 行。复现的本质是不同 CRT 相位向量重新组成覆盖证书；间隔不规则，不能写成短周期。最新分层读数进一步显示，同一 `2,3,5,7` 骨架 `r≡59 (mod 210)` 在镜像前有 `324` 个零行，第 `59` 与 `6569` 行共享三洞 `5,9,15`，由 `13,17,19` 与 `19,13,17` 两套高标签置换补齐。该事实支持下一步把“复现稳定性”作为条件出口：若短平移稳定则触发 gcd 限制，否则进入层级稀疏相位证书的 `PDEC/SAE` 账本。
+
+新增 `docs/monograph/prime-matrix-short-recurrence-gap-audit.md` 后，`2P` 短复现路线被校正：全局短间隔禁止为假，`P=19`、`P=23` 均有周期内部的 `<=2P` 短复现簇；边界短间隔版本则与 `first_zero>P` 等价，因为跨周期首尾间隔恒为 `2r0-1`。优化方向因此不是证明全局零行稀疏，而是证明首端帽/尾端帽的边界相位非覆盖：前 `P` 行低素数骨架必留洞，且高素数补洞标签的 CRT 最小代表越过 `P`。
+
+新增 `docs/monograph/prime-matrix-boundary-phase-noncoverage-hard-attack.md` 后，边界帽路线压缩为单一核心接口 `BPN-RM`：低素数骨架在 `x<P` 内留下残洞；任何高素数标签补洞若保持 `x<P`，必须释放一个旧覆盖列，因此完整覆盖证书的 CRT 最小代表 `x_S` 不可能小于 `P`。该路线吸收了前缀势垒、完整覆盖最小相位、短复现反例和 Sylvester 大因子弱输入。诚实状态：`BPN-RM` 尚未逐行证明；在闭合前，边界相位非覆盖只能标为严格归约，不能标为无条件定理。
+
+新增 `docs/monograph/prime-matrix-boundary-residual-migration-audit.md` 后，`BPN-RM` 的正确非循环版本更清楚：局部补洞可发生，不能声称高素数补洞能力不足；可攻对象是残洞势函数。全局陈述“补洞必有新洞”与 `BPN(P)` 几乎等价，因此下一步必须证明一个独立势函数不等式 `Phi(R(y))>=1`，而不是把等价命题换名。
+
+新增 `docs/monograph/prime-matrix-crt-solution-set-geometry-audit.md` 后，CRT 解集路线被校正：`R(N-r+1)=P-R(r)` 给出精确镜像和两端帽，但中区素数/粗合数密度是数值层，不是 CRT 筛幸存数的单调势能。该路线可提供势函数候选，但目前不能单独证明边界零行不存在。主链仍回到 `BPN` 残洞势函数或 `GridPrimeGap` 条件输入。
+
+新增 `docs/monograph/prime-matrix-crt-zero-solution-distribution-audit.md` 与脚本 `experiments/prime_matrix_crt_zero_solution_distribution_audit.py` 后，零行被写成精确 CRT 覆盖方程组
+`Z_P=cap_c union_{ell<P}{r: r=1-cP^{-1} mod ell}`。完整扫描 `P=13,17,19,23` 显示边界帽零行数均为 `0`，镜像严格成立；但十等分平均幸存列数基本相同，说明“中区粗合数密集”不能作为单调势能推出边界帽无零行。新的可审查硬点更精确：证明所有完整覆盖证书的 CRT 最小正代表 `>=P`，或构造非循环残洞势函数 `Phi_P(R)`。
+
+新增 `docs/monograph/prime-matrix-zero-row-spacing-gradient-audit.md` 与脚本 `experiments/prime_matrix_zero_row_spacing_gradient_audit.py` 后，零行间隔梯度猜想被校正：首尾跨周期边界间隔 `Delta_edge=2r0-1` 在样本中均大于 `2P`，但这等价于 `r0>P`，即等价于 `BPN(P)`；同时全局“中心更密、边界更稀”的十等分梯度为假，`P=23` 边缘十等分零行数 `361` 反而高于中心十等分 `342`。因此主链不能使用全局密度梯度，只能把边界间隔作为 `BPN-Defect` 目标形式：若边界帽有零行，则双端镜像证书距离 `<=2P-1`，需推出低模 CRT 缺陷、Tail-anchor 缺陷或残洞势函数矛盾。
+
+新增 `docs/monograph/prime-matrix-bpn-defect-bonferroni-audit.md` 与脚本 `experiments/prime_matrix_bpn_defect_bonferroni_audit.py` 后，边界帽最优硬点进一步从抽象 `Phi` 势函数压缩为 `BPN-B5`：证明五阶 Bonferroni 下界
+`S5(r)=(P-1)-I1+I2-I3+I4-I5>0` 对所有 `2<=r<=P` 成立。边界事实 `r<=P` 使所有 `d>=P^2` 的交集项为 `0`，所以该不等式是有限且可逐项审查的。审计显示三阶 `S3` 会失败，但 `P<=199` 的全部边界帽行中 `S5` 未失败，最坏 `P=199` 仍有最小 `S5=12`。下一步最优攻坚应是证明 `I1-I2+I3-I4+I5<P-1`，失败时再转带权 Selberg/Brun 或 CRTDefect/Tail-anchor 出口。
+
+同一审计进一步给出 `BPN-B5` 的逐点恒等式：`S5(r)=prime_like_count-high_omega_penalty`，其中高重惩罚只来自同一行内含至少六个 `<P` 小素因子的数，权重为 `binom(omega_P(n)-1,5)`。选点扫描到 `P=5003` 仍为正，最坏样本 `P=5003` 的最薄行有 `272` 个素数型点、惩罚 `95`、余量 `177`。这把下一步硬点再压成：证明长度 `P` 边界短窗中，至少六小素因子整数的加权数量严格小于素数数量；若失败，则失败应表现为小核心乘积过密或 Tail-anchor/CRTDefect。
+
+新增 `docs/monograph/prime-matrix-bpn-high-omega-core-audit.md` 与脚本 `experiments/prime_matrix_bpn_high_omega_core_audit.py` 后，高重惩罚进一步按六小素核心 `core6` 分桶。样本最薄行显示惩罚项有明显 core 结构：小/中 `core6` 桶对应固定小核心倍数在长度 `P` 短窗中过密，大 `core6≈n` 桶对应尾锚或端点集中。由此 `BPN-B5` 的下一步最小出口可写成 `Core6-Density-or-TailAnchor`：若高重惩罚压过素数数目，则某个 core6 桶产生可命名的 CRT/Tail-anchor 缺陷；否则五阶下界保持正。
+
+新增 `docs/monograph/prime-matrix-bpn-bonferroni-order-risk-audit.md` 与脚本 `experiments/prime_matrix_bpn_bonferroni_order_risk_audit.py` 后，固定阶路线被校正：任意固定奇阶 Bonferroni 截断在 `lambda≈log log(P^2)` 的独立模型下都会在有限 `lambda` 后变号。`P=10007` 样本仍有 `S5=236>0`，但高重惩罚/素数型点比例已达 `0.532673`，显示固定五阶不能作为全局终局。主线最优硬点应升级为 `BPN-BK/Selberg`：取 `K≈c log log P` 的可变阶 Bonferroni/Brun 截断，或构造 Selberg/Brun 非负筛权；`Core6` 相应升级为低阶失败时的 `CoreK-Density-or-TailAnchor` 出口。
+
+新增 `docs/monograph/prime-matrix-bpn-bk-weight-model-audit.md` 与 `docs/monograph/prime-matrix-bpn-bk-selberg-route.md` 后，`BPN-BK/Selberg` 的可审查表述进一步收紧：普通 Selberg/Brun 下界筛在边界行 `H=P,z=P` 下只有 `s<=1`，不能单独给正筛余。下一步真正硬点不是“再换一个筛权”，而是严证 `S_K(r)<=0` 必推出 `BK-DEC` 端点 sawtooth 缺陷或 `CoreK` 高重桶过密，并由 `Directed CRTDefect/Tail-anchor/PDEC-or-SAE` 排斥。
+
+新增 `docs/monograph/prime-matrix-bpn-bk-dec-bridge-proof.md` 后，`BK-DEC=>Directed Endpoint CRTDefect` 已严格闭合。证明依赖三个确定事实：零行使奇阶 BK 总和非正；低阶 BK 截断精确等于 `(P-1)V_{K,D}+E_{K,D}(r)`；大端点项经低模分块鸽巢给出某个块投影异常。当前最小硬点因此继续前移到 `BK tail budget/CoreK tail control` 与 `PDEC-or-SAE` 排斥。
+
+新增 `docs/monograph/prime-matrix-bpn-bk-tail-core-dichotomy.md`、`docs/monograph/prime-matrix-bpn-tailcore-corridor-reduction.md` 与 `docs/monograph/prime-matrix-bpn-tailanchor-persistence-dichotomy.md` 后，`BK tail/CoreK` 已不再是黑箱：尾项失败推出尾核心桶过密；尾核心桶过密推出尾锚集中或分布式走廊饱和；尾锚集中再推出 `SAE-anchor` 或持续尾锚低模缺陷。因此当前最小硬点压为 `PDEC-or-SAE` 与 `Distributed corridor saturation` 的 Selberg/CRTDefect 排斥。
+
+新增 `docs/monograph/prime-matrix-bpn-distributed-corridor-saturation-reduction.md` 后，分布式走廊饱和又被压成高重叠固定核心缺陷或着色不相交走廊预算违例。高重叠分支归入 `PDEC-or-SAE`；低重叠分支归入 `Colored disjoint-corridor core-sieve budget/low-mod CRTDefect`。因此下一步最小硬攻应在两个最终出口中选择：要么攻 `PDEC-or-SAE`，要么攻不相交着色走廊的核心筛预算。
+
+新增 `docs/monograph/prime-matrix-bpn-colored-corridor-core-sieve-budget.md` 后，着色走廊的核心筛预算已改成有限 Rankin smooth-core 账本，避免误用 rough Selberg 下界。当前最小硬点更新为：`PDEC-or-SAE`、finite Rankin smooth-core ledger 常数闭合、low-mod core CRTDefect 排斥。
+
+新增 `experiments/prime_matrix_bpn_rankin_ledger_certificate_audit.py` 后，finite Rankin 账本已有证书工具。它对正式走廊列表给出 exact core count、Rankin ledger 与 low-mod residue spike；若常数闭合失败，应直接抽取 `low-mod core CRTDefect`，而不是继续使用粗全局 smooth-core 包络。
+
+新增 `docs/monograph/prime-matrix-bpn-lowmod-core-crtdefect-bridge.md` 后，low-mod core CRTDefect 已由 Fourier 反演并入 `PDEC-or-SAE`。当前 BPN-BK 只剩两个独立任务：`PDEC-or-SAE` 排斥，以及正式走廊证书上的 finite Rankin smooth-core ledger 常数闭合。
+
+新增 `docs/monograph/prime-matrix-bpn-unified-pdec-sae-dichotomy.md` 后，`PDEC-or-SAE` 被统一为 endpoint/core 共用的低模测试函数二分。Persistent 分支已经严格 Fourier 化；Sparse 分支就是 SAE local escape。当前最终剩余为 `PDEC exclusion`、`SAE local escape exclusion` 和 finite Rankin ledger constants。
+
+新增 `docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md` 后，finite Rankin ledger constants 已变成可验收证书：`rankin_budget_pass=true` 即闭合该颜色类；失败者必须低模化或细分。当前最终剩余进一步精确为 `PDEC exclusion`、`SAE local escape exclusion`、正式着色走廊 Rankin certificates 全部通过或失败者进入 PDEC/SAE。
+
+新增 `docs/monograph/prime-matrix-reverse-zero-row-dichotomy.md` 后，用户提出的“q 零行反推 p 零行”被严写为二分：`q` 零行先变成旧 `p`-筛长度 `q` 零窗；若起点相位 `a_s>=p-(q-p)`，则包含完整 `p` 对齐零行并直接矛盾；若 `a_s<p-(q-p)`，则只形成相邻 `p` 行的缝合零窗。审计显示核心区直接支仅约 `0.00616`，主支是缝合零窗。因此下一步最小硬点应攻 `SeamSafe/ASB-or-PDEC`，而不是继续尝试从所有 `q` 零行直接推出 `p` 对齐零行。

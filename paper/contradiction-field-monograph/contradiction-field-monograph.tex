@@ -449,6 +449,24 @@ For the $w=2$ hardest two-point branch, the current analytic chain is
 \]
 The chain is closed only in the external-deep-theorem sense: DI and BFI are cited as classical analytic inputs.  A fully self-contained version would require reproving the spectral Kloosterman large-sieve and dispersion machinery.
 
+\section{Prime-Matrix Low-Hole Closure Package}
+
+The latest prime-matrix update closes the low-hole bucket submodule as a finite-certificate plus explicit-external-theorem package.  The verification is split into five non-overlapping ranges:
+\[
+\begin{array}{rcl}
+13\le P<61 &:& \text{low-range final certificate},\\
+61\le P\le 103 &:& \text{narrow-band collision-energy certificate},\\
+107\le P\le 229 &:& \text{exact }P/5\text{ splitting recursion},\\
+233\le P\le 13207 &:& \text{integer cross-multiplied product certificate},\\
+P\ge 13208 &:& \text{Rosser--Schoenfeld explicit constants}.
+\end{array}
+\]
+The low-range certificate checks $15414$ zero buckets: $15282$ close by whole-set Hall deficit, $108$ close by bridge-critical deletion, and the remaining $24$ exceptional phases at $P=41$ close by exact finite set-cover dynamic programming.  The narrow band $61\le P\le103$ covers $23100$ low phases by fixed ascending high-prime residue blocks.  The two finite tail certificates cover $23$ and $1520$ prime rows respectively, the latter by exact integer cross multiplication rather than floating-point comparison.
+
+For the infinite tail, Rosser--Schoenfeld Corollary 1, formulas (3.5)--(3.6), supplies the prime-counting bounds, while Theorem 7, formula (3.26), supplies the Mertens product bound.  Since $P\ge13208$ implies $\lfloor P/5\rfloor\ge2641$, the factor $1+1/(2\log^2\lfloor P/5\rfloor)$ is below $1.009$, hence the manuscript's conservative $1.03$ Mertens constant is admissible.
+
+This closes the BPN low-hole bucket interface in the stated finite-certificate/external-theorem sense.  It does not by itself promote the whole prime-matrix row/column program to a final theorem, because the remaining global exits still require the separately named PDEC/SAE and Rankin-ledger acceptance obligations.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.
@@ -471,6 +489,8 @@ The external-input index is maintained in
 \[
   \texttt{docs/monograph/external-theorem-index.md}.
 \]
+For the prime-matrix low-hole tail, the current explicit package is Rosser--Schoenfeld 1962: Corollary 1, formulas (3.5)--(3.6), supplies the required $\pi(x)$ bounds, and Theorem 7, formula (3.26), supplies the required Mertens product bound.  These constants close the $P\ge13208$ tail in the external-theorem sense once the finite certificates below that threshold are accepted.
+
 For the two-point sieve, the critical external package is DI plus BFI.  The index records the required checks for the KLS-window input: Kloosterman phase normalization, modulus range, frequency range, inverse-variable support, well-factorable weights, gcd strata, smoothing and sawtooth losses, and the final choice of the logarithmic-loss parameter $B(A)$.
 
 \section{Critical Chain Audit}
@@ -511,7 +531,7 @@ If any item is replaced by an unverified structural input, the conclusion is con
 The present manuscript closes the audit and dependency structure of the two contradiction-field programs: all known entrances, decompositions, exits, external inputs, finite certificates, and referee obligations are explicitly named.  It does not close the final unconditional theorem status of either program.
 \end{theorem}
 \begin{proof}
-For the prime-matrix program, the A/B appendix gives the entrance reduction from a row or column counterexample to a Structured-EHPD bad configuration, while the D-structure exclusion remains the decisive input requiring independent line-by-line review.  Therefore the chain is closed as a reduction package but not as a final theorem.
+For the prime-matrix program, the A/B appendix gives the entrance reduction from a row or column counterexample to a Structured-EHPD bad configuration.  Inside the BPN branch, the low-hole bucket submodule is now closed by the low-range certificate, the narrow-band collision certificate, the two finite tail certificates, and the Rosser--Schoenfeld explicit tail package recorded above.  This is a genuine submodule closure.  The D-structure exclusion and the remaining PDEC/SAE/Rankin global exits remain decisive inputs requiring independent line-by-line review.  Therefore the whole chain is closed as a reduction and certificate package but not as a final theorem.
 
 For the RH program, the RH manuscript has completed U1--U5: statement wording, AEX acceptance, EXT localization, manuscript wording, BibTeX/PDF compilation, and warning-free LaTeX logs.  The final audit still requires independent referee verification of every local theorem and controlled exit.  Therefore the chain is closed as a verification package but not as a final unconditional RH theorem.
 

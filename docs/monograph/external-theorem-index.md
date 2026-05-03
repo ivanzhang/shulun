@@ -92,24 +92,50 @@
   - 若依赖，精确版本和常数；
   - 若不依赖，移入历史注记。
 
-## 8. 不能误用的输入
+## 8. 显式 Mertens/prime-count 常数包
+
+- **来源**：Rosser, J. B.; Schoenfeld, L., *Approximate formulas for some functions of prime numbers*, Illinois Journal of Mathematics 6(1), 64--94, 1962.
+- **状态**：`required` for `BPN-LHB` tail `P>=13208`.
+- **用于**：把 `prime-matrix-bpn-low-hole-bucket-capacity-theorem.md` 中的连续乘积不等式
+  \[
+  H_{\max}(P)\prod_{13\le \ell\le P/5}\left(1-{1\over \ell}\right)
+  \le \pi(P-1)-\pi(P/5)
+  \]
+  变成显式常数核查。
+- **本文所需不等式**：
+  - Corollary 1, formula `(3.5)`, p. 69: `pi(x) > x/log x` for `x>=17`，用于 `x=P-1` 的下界；
+  - Corollary 1, formula `(3.6)`, p. 69: `pi(x) < 1.25506 x/log x` for `x>1`，用于 `x=floor(P/5)` 的上界；
+  - Theorem 7, formula `(3.26)`, p. 70:
+    `prod_{p<=x}(1-1/p) < e^{-gamma}(1+1/(2log^2 x))/log x` for `x>1`，并在 `x>=2641`
+    时放宽为 `e^{-gamma}(1.03)/log x`。
+- **范围核查**：`P>=13208` 时 `floor(P/5)>=2641`，所以 Mertens 放宽常数满足
+  `1+1/(2log^2 floor(P/5))<1.009<1.03`；素数计数上下界的输入点均远大于
+  `17`。因此 `prime-matrix-bpn-lhb-explicit-tail-constant-audit.md` 的
+  `stable_from_in_scan=13208` 可作为外部定理版解析闭合阈值。
+- **必须核对**：
+  - 最终稿中把 `P/5` 的取整统一为 `floor(P/5)`；
+  - 参考文献表使用标签 `RS1962`；
+  - 若后续改用 Dusart 型更强常数，必须重新运行 `explicit-tail-constant-audit`。
+
+## 9. 不能误用的输入
 
 | 输入 | 不能替代什么 | 原因 |
 | --- | --- | --- |
 | RC-Prime | BMD/WBE2 | 只给非空性，不给有符号分布 |
 | 普通大筛 | BE2-3K/KLS-window | 平衡块差一个 `P` 量级 |
 | 点态 Weil | KLS-window | 只给单模抵消，不给总平均 `log^{-A}` |
-| 实验扫描 | 证明 | 只能作为常数与结构证据 |
+| 实验扫描 | 证明 | 只能作为常数与结构证据；无限尾段必须接显式外部不等式 |
 | 完整 CRT 周期均衡 | 短窗口真实分布 | 短窗口不等于完整周期 |
 
-## 9. 下一步核查任务
+## 10. 下一步核查任务
 
 1. 把 DI/BFI 的定理原文版本摘录成可引用的定理模板。
 2. 将 KLS-window 的变量逐项填入该模板。
 3. 对所有多对数损失建立 `B(A)` 吸收账本。
 4. 在主稿中把“引用版闭合”和“完全自足版未闭合”分开定理化。
+5. 把 Rosser--Schoenfeld 显式 Mertens/prime-count 常数写入主稿参考文献和定理模板。
 
-## 10. KLS-window 变量适配核查表
+## 11. KLS-window 变量适配核查表
 
 这是当前二点筛链条最需要继续压实的审稿表。只有该表逐项完成后，`DI+BFI=>KLS-window` 才能从“方向正确”升级为“引用适配充分”。
 
@@ -124,7 +150,7 @@
 | 端点和平滑 | dyadic、sawtooth、窗口边界 | 平滑权/partial summation | 待量化 | 建立 `B(A)` 吸收账本 |
 | 目标强度 | `K<<N^2/(R log^A P)` | 任意对数节省 | 依赖外部定理 | 明确选择 `B=B(A)` 的顺序 |
 
-## 11. 审稿级输出格式
+## 12. 审稿级输出格式
 
 主稿中建议把外部输入写为两层。
 
