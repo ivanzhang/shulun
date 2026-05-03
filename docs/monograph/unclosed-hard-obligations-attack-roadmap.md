@@ -325,6 +325,20 @@ P0c: otherwise SAE/Endpoint absorption
 当前最佳 Fourier 只剩 `1.0`。因此不先证明拼接/独立性，就不能把强阈值带入
 `PDEC-Dual-Cert`。
 
+新增 stitching feasibility 审计与 branch separation theorem 后，`P0a/P0b` 的审稿形态为：
+
+```text
+BS-1 closed: cross-q pooling is illegal without persistence theorem.
+BS-2 closed: exact nested coordinate duplicate is illegal without weighted Hall dual row.
+
+Open:
+Weighted Hall Dual Independence
+or exact duplicate SAE/Endpoint absorption.
+```
+
+因此下一步不应继续直接调 `U_CRT,199` 常数，而应先攻加权 Hall 对偶独立性；若无法证明，
+则正式把 exact duplicates 商掉，并转攻 primitive/SAE 路线。
+
 ### 2.5 可行性
 
 评级：C。

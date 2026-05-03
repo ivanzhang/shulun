@@ -107,3 +107,39 @@ FormalUnit-Stitching / NestedBlock-Independence / SAE-Endpoint absorption
 ```
 
 三者之一必须严格闭合，才能继续使用强阈值并推进全局证明。
+
+## 7. 分支分离定理更新
+
+新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_stitching_feasibility_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-stitching-feasibility-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-branch-separation-theorem.md
+```
+
+后，`FormalUnit-Stitching` 的必要条件被严写为两个定理：
+
+```text
+BS-1: 不同 q 层不能自动拼接；
+BS-2: 同坐标嵌套重复必须商掉，除非有 weighted Hall dual independence。
+```
+
+当前审计给出：
+
+```text
+global library raw:     Fourier=3.959247567099438
+single q-row coordinate: best Fourier=1.0
+block-local:             best Fourier=1.0
+exact nested duplicates: 7
+cross-level reuses:      9
+```
+
+因此下一步最小硬点进一步变成：
+
+```text
+Weighted Hall Dual Independence
+or exact duplicate SAE/Endpoint absorption.
+```
+
+若该目标失败，强阈值路线必须退回坐标商或 primitive 阈值，不能直接作为全局无条件证明。

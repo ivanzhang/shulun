@@ -768,6 +768,18 @@ is obtained by pooling the finite certificate library.  After splitting by forma
 \]
 Thus the strong threshold cannot yet be used as a single-branch PDEC lower bound.  One must prove FormalUnit-Stitching for the cross-$q$ events and NestedBlock-Independence for exact nested-coordinate duplicates, or route the repeated events to SAE/Endpoint.  This is now the narrowest FO-PDEC obstruction before any global unconditional conclusion can be claimed.
 
+\section{FO-PDEC Branch Separation}
+
+The branch-separation theorem and stitching audit are archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fo-pdec-branch-separation-theorem.md}.
+\]
+They separate two issues.  First, events from different matrix widths $q$ cannot be pooled into one PDEC vector without a cross-$q$ persistence theorem.  Second, two occurrences with the same
+\[
+  (q,row,candidate\_row,column,offset,n,\ell,\rho)
+\]
+give the same CRT equation and must be quotiented unless a weighted Hall-dual independence row is supplied.  In the present finite ledger there are $7$ exact nested-coordinate duplicates and $9$ cross-level physical reuses.  After coordinate deduplication inside a single formal unit, the best Fourier value recorded by the audit is only $1.0$.  Therefore the next narrow obstruction is Weighted Hall Dual Independence, or else SAE/Endpoint absorption of the exact duplicates.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

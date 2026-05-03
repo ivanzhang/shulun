@@ -188,6 +188,20 @@ NestedBlock-Independence:
 重复项回流 SAE/Endpoint，不能计入强阈值。
 ```
 
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-branch-separation-theorem.md` 后，外审前义务进一步
+精确：`BS-1/BS-2` 已排除无证明拼接和无证明重复计数。剩余不是泛泛的 formal unit 口径，
+而是：
+
+```text
+Weighted Hall Dual Independence:
+为 exact nested duplicates 提交加权 Hall 对偶独立行；
+
+or
+
+SAE/Endpoint absorption:
+证明这些 exact duplicates 是非持久端点逃逸或必须坐标商掉。
+```
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

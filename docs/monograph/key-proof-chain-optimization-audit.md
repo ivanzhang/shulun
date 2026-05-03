@@ -490,3 +490,9 @@ RH-1 explicit-formula entrance
 `1.0`。因此下一步最优不再是直接优化 `U_CRT,199`，而是证明
 `FormalUnit-Stitching` 或 `NestedBlock-Independence`；若失败，重复项必须回流到
 `SAE/Endpoint`。
+
+新增 `prime_matrix_wsh_fo_pdec_stitching_feasibility_audit.py` 与
+`prime-matrix-wsh-fo-pdec-branch-separation-theorem.md` 后，前述目标进一步细化：
+不同 `q` 层已证明不能无条件拼接，同坐标嵌套重复已证明必须坐标商掉，除非补上
+`Weighted Hall Dual Independence`。因此当前最小硬点是加权 Hall 对偶独立性或 exact duplicate
+的 SAE/Endpoint 吸收。

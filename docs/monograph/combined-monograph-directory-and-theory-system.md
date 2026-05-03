@@ -874,6 +874,14 @@ single formal unit after coordinate dedup: best Fourier=1.0
 层事件属于同一个持久坏窗族，且嵌套块重复是独立约束；否则强阈值只能作为诊断信号，不能作为
 全局无条件闭合的 `PDEC` 下界。
 
+新增 `experiments/prime_matrix_wsh_fo_pdec_stitching_feasibility_audit.py`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-stitching-feasibility-audit.md/json` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-branch-separation-theorem.md` 后，该硬点又被拆成两个
+可审稿定理：`BS-1` 证明不同 `q` 层不能无拼接定理地合并；`BS-2` 证明同坐标嵌套重复必须
+坐标商掉，除非有加权 Hall 对偶独立性。当前数据中 exact nested duplicates 为 `7`、
+cross-level reuses 为 `9`；单个正式单元最佳 Fourier 仍为 `1.0`。下一步最小硬点因此是
+`Weighted Hall Dual Independence` 或 exact duplicate 的 `SAE/Endpoint` 吸收。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

@@ -158,6 +158,12 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 升级为 `FormalUnit-Stitching / NestedBlock-Independence / SAE-Endpoint absorption`，不能直接用
 `3.959...` 宣称全局无条件闭合。
 
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-branch-separation-theorem.md`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-stitching-feasibility-audit.md/json` 与脚本
+`experiments/prime_matrix_wsh_fo_pdec_stitching_feasibility_audit.py`。已证明不同 `q` 层不能无
+拼接定理合并，同坐标嵌套重复不能无加权 Hall 对偶行重复计数。当前剩余精确为
+`Weighted Hall Dual Independence` 或 exact duplicate `SAE/Endpoint` 吸收。
+
 ## Prime Matrix CRT 行反射更新
 
 新增 `docs/monograph/prime-matrix-row-reflection-period-audit.md` 与脚本 `experiments/prime_matrix_row_reflection_period_audit.py`。已严格证明：`p` 对齐全覆盖行 `r` 在 CRT 行周期 `N=P(p)/p` 内必有镜像全覆盖行 `N-r+1`。同时审计反驳了“由镜像推出短平移周期或整除条件”的猜想；第二周期复现只给出二面体轨道，相邻间隔交替为 `N-2r+1` 与 `2r-1`。若放宽为“相位组合可变但全覆盖现象复现”，`r,2r,2r-1` 仍不是自动现象周期；已知零行样本均不复现。可用条件引理是：若零行集合对平移 `d` 不变且 `r` 是首个零行，则必须有 `gcd(N,d)>=r`。样本 `p=23,r=59` 中 `N mod (2r-1)=39`，且 `r+59=118`、`r+117=176`、`r+118=177` 都不是零行。可用增益是“两端帽排斥”和条件 gcd 限制；该结论可强化 `PDEC-or-SAE`，但不能替代 `QSurv`。
