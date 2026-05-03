@@ -458,6 +458,19 @@ sum Delta(c)=O(q/log^2 y)，
 `m≡ell^{-1}rho(c) mod R(c)` 的素数计数。该有符号短互补商估计未证明前，H3/行命题仍保持
 条件闭合。
 
+新增 `docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md` 后，上述估计被
+进一步压缩为非主角色频率缺陷。外审前最后义务应写为：
+
+```text
+H3-DSB-LS/KLS:
+对夹逼模 R(c) 与短互补商窗口 I/ell，
+证明非主角色双线性和满足 O(q/log^2 y)，
+或证明任意 q/log y 级频率异常触发 PDEC/ColumnCRT/cofactor。
+```
+
+普通大筛不足以直接给出该界；若引用外部 dispersion/Kloosterman 型定理，必须逐项核验
+模数范围、短窗口长度、素数权、平滑截断和角色相位 `conj(chi(ell))*chi(m)`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

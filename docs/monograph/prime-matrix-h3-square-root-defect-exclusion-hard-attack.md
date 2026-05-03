@@ -285,3 +285,12 @@ docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md
 
 在 `y>q^(2/3)` 下，孤立尾点半素数化为 `ell*m`，夹逼类给互补商同余
 `m≡ell^{-1}rho(c) mod R(c)`。因此最终未闭合项是短互补商素数计数的有符号双线性缺陷。
+
+进一步频率化见：
+
+```text
+docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md
+```
+
+该文件证明大误差必有非主角色频率缺陷；普通大筛仍不足，最终需要短窗口 dispersion/Kloosterman
+抵消或命名缺陷排斥。

@@ -243,3 +243,12 @@ docs/monograph/prime-matrix-h3-distributed-singleton-bilinear-obstruction.md
 ```
 
 该文件把最后硬核写成 `ell,m` 双线性素数计数：大正异常即短互补商区间中的有符号素数分布缺陷。
+
+非零频率桥见：
+
+```text
+docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md
+```
+
+它证明大双线性误差必推出非主角色频率缺陷；普通大筛不足，剩余为短窗口
+dispersion/Kloosterman 输入或 `PDEC/ColumnCRT/cofactor` 排斥。

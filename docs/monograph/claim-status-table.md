@@ -406,6 +406,13 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 `H3 Distributed Singleton Bilinear Exclusion`：无集中时该有符号双线性误差必须为
 `O(q/log^2 y)`，或触发 `PDEC/ColumnCRT/endpoint/cofactor`。
 
+新增 `docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md` 后，上述双线性误差
+已被非零频率化：对夹逼模 `R(c)` 展开角色，移动同余给相位
+`\chi(ell^{-1}rho(c))=\chi(rho(c))*conj(chi(ell))`。因此若误差仍为 `q/log y` 级，
+必存在非主角色上的双线性频率缺陷。普通大筛在短互补商窗口上仍不足；最后输入应写成
+`H3-DSB-LS/KLS`：证明该频率缺陷由短窗口 dispersion/Kloosterman 抵消排除，或路由到
+`PDEC/ColumnCRT/cofactor`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

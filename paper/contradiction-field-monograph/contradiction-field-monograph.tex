@@ -1305,6 +1305,19 @@ Thus the final distributed obstruction is a signed bilinear prime-counting defec
 short cofactor intervals $I/\ell$.  Without tail-label concentration, clamp concentration,
 endpoint accumulation, or ColumnCRT/cofactor bias, one must prove that this signed bilinear
 error is only $O(q/\log^2 y)$; this is the current last H3 input.
+The non-zero-frequency bridge is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md}.
+\]
+Expanding the cofactor residue condition modulo $R(c)$ into non-principal characters gives
+\[
+  \chi(\ell^{-1}\rho(c))=\chi(\rho(c))\overline{\chi(\ell)}.
+\]
+Hence a large distributed singleton error forces a non-principal bilinear character sum over
+the short cofactor intervals.  A plain large-sieve bound is still too weak at this short
+window scale; the final input is a dispersion/Kloosterman-type estimate for this family, or
+a proof that the corresponding non-zero frequency is already a PDEC, ColumnCRT, or cofactor
+defect.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

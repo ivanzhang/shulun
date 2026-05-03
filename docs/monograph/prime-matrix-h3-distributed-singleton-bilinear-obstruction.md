@@ -1,6 +1,6 @@
 # H3 分散孤立尾点的有符号双线性障碍
 
-**状态：** `distributed_singleton_bilinear_obstruction_formalized_signed_estimate_open`
+**状态：** `distributed_singleton_bilinear_obstruction_formalized_large_sieve_bridge_added`
 
 本文继续只攻击当前唯一剩余硬障碍：
 
@@ -264,3 +264,27 @@ unless it produces endpoint/PDEC/ColumnCRT/cofactor defect.
 5. 明确最后未闭合项是短互补商素数偏差，而不是平均尺度、有限模板或尾链容量。
 
 这一步继续保持在当前唯一闭合目标内部。
+
+## 8. 非零频率缺陷桥
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md
+```
+
+把第 6 节的最终硬输入继续频率化。对互补商同余
+
+\[
+m\equiv \ell^{-1}\rho(c)\pmod{R(c)}
+\]
+
+做有限 Fourier/Dirichlet 角色展开，非主项满足
+
+\[
+\chi(\ell^{-1}\rho(c))=\chi(\rho(c))\overline{\chi(\ell)}.
+\]
+
+因此大有符号误差必推出某个非主角色上的双线性频率缺陷。普通大筛仍不足以排除该缺陷；
+最后需要短窗口 dispersion/Kloosterman 型抵消，或把该频率缺陷并入
+`PDEC/ColumnCRT/cofactor`。

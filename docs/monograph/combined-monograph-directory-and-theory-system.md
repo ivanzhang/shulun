@@ -1381,6 +1381,11 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 区间族中的有符号素数偏差；仍需证明该偏差进入 `endpoint/PDEC/ColumnCRT/cofactor`，或给出
 无条件双线性上界。
 
+新增 `docs/monograph/prime-matrix-h3-bilinear-large-sieve-defect-bridge.md` 后，合著稿最新状态
+应再更新为：大有符号双线性误差必产生非主角色频率缺陷。由于普通大筛不够，最终硬输入是
+短窗口 `H3-DSB-LS/KLS` 型 dispersion/Kloosterman 估计，或证明该频率缺陷已是
+`PDEC/ColumnCRT/cofactor`。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
