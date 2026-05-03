@@ -158,3 +158,8 @@ M_{H3}(p,s)\ge 0.30\,{q\over\log q}
 新增 `docs/monograph/prime-matrix-h3-global-tail-energy-lemma.md` 后，缺陷不等式的组合核心已经
 全局证明：`M_H3<B` 必推出 `C_y>#A_s-B-2L` 或尾标签低模能量 `E_y(d)>L`。因此剩余严格压缩为
 `SmallSkeletonOverload=>Tail/PDEC` 与 `TailEnergy=>H3-PDEC/ColumnCRT` 两个出口排斥。
+
+新增 `docs/monograph/prime-matrix-h3-first-row-scale-bridge.md` 后，`q/log q` 尺度有了更本质的
+全局解释：方阵第一行素数数目 `Pi_1(q)=pi(q)~q/log q`；而 H3 在 `q^2` 壳层的行平均为
+`(pi(q^2)-pi(q))/q~q/(2log q)~Pi_1(q)/2`。因此 H3 余量与第一行素数计数是同一个平方根筛障的
+两个投影；全阻断等价于把一整份第一行尺度质量在单行内压灭，必须由低模缺陷解释。

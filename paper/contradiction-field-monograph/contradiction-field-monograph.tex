@@ -1160,6 +1160,22 @@ therefore proves the conditional closure criterion
 With $B=cq/\log q$ and $L=\lambda q/\log q$, this is the current global scale theorem:
 the empirical $q/\log q$ law is explained by two explicit low-mod defect exclusions.  The
 unconditional row theorem still requires proving those exclusions uniformly.
+The source of the $q/\log q$ scale is clarified in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-first-row-scale-bridge.md}.
+\]
+Let $\Pi_1(q)=\pi(q)$ be the number of primes in the first row up to $q$.  By the prime
+number theorem, $\Pi_1(q)\sim q/\log q$.  On the other hand, adjacent-shell singleton
+rigidity says that below $q^2$ every old $p$-sieve survivor, apart from the endpoint
+$q^2$, is prime.  Hence the average H3 margin over the non-first $q$-rows satisfies
+\[
+  \frac1{q-1}\sum_{s=2}^{q}M_{H3}(p,s)
+  \sim \frac{q}{2\log q}
+  \sim \frac12\Pi_1(q).
+\]
+The factor $1/2$ is simply $\log q/\log(q^2)$.  Thus H3 is the square-shell projection of
+the first-row prime scale; a zero H3 row would have to remove a full first-row-scale mass
+from one row and therefore must be accounted for by the low-mod defects above.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

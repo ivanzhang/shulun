@@ -350,6 +350,11 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 若 `D_y<=V_y-B-2L` 且 `F_y(d)<=dL`，则 `M_H3(p,s)>=B`。这已经是全局无限尺度的完整
 条件闭合判据；未完成的是统一缺陷排斥估计 `D_y` 与 `F_y(d)` 的无条件证明。
 
+新增 `docs/monograph/prime-matrix-h3-first-row-scale-bridge.md` 后，`q/log q` 尺度不再只是数据规律：
+由素数定理，方阵第一行素数数目 `Pi_1(q)=pi(q)~q/log q`；由相邻壳层单点性与 PNT，
+H3 行平均满足 `avg_s M_H3(p,s)~q/(2log q)~Pi_1(q)/2`。这说明 H3 余量是第一行素数尺度在
+`q^2` 平方壳层上的半密度投影。该桥接证明全局平均尺度，不替代逐行统一缺陷排斥。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

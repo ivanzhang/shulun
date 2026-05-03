@@ -1328,6 +1328,11 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 `D_y<=V_y-B-2L` 且 `F_y(d)<=dL` 推出 `M_H3(p,s)>=B`。该公式是全局通用条件闭合判据；
 无条件 H3 仍等价于补齐统一缺陷排斥。
 
+新增 `docs/monograph/prime-matrix-h3-first-row-scale-bridge.md` 后，H3 的尺度来源被接回方阵第一行：
+`Pi_1(q)=pi(q)~q/log q`，而 H3 在 `q^2` 壳层的行平均为
+`(pi(q^2)-pi(q))/q~q/(2log q)~Pi_1(q)/2`。该关系由素数定理和相邻壳层单点性给出，
+说明 H3 的自然质量是第一行素数质量的平方壳层投影；逐行反例必须解释为低模质量迁移缺陷。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

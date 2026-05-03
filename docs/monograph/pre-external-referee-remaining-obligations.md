@@ -370,6 +370,10 @@ SmallSkeletonOverload、ManyLabel-PDEC、Endpoint-SAE/ColumnCRT 的逐项证明�
 证明统一缺陷排斥 `D_y<=V_y-B-2L` 与 `F_y(d)<=dL`，或明确声明 H3 只达到条件闭合判据。
 当前文稿不能把该判据误升格为无条件 H3/行命题，因为 `(D_y,F_y)` 的排斥正是最后深输入。
 
+新增 `docs/monograph/prime-matrix-h3-first-row-scale-bridge.md` 后，外审表述可说明 `q/log q` 尺度已由
+PNT 与相邻壳层单点性理论解释：H3 行平均为第一行素数数目的 `1/2+o(1)`。但这仍是平均尺度桥，
+不是逐行下界；外审前仍需统一缺陷排斥才能宣称行命题闭合。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为
