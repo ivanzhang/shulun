@@ -1062,3 +1062,14 @@ C_h(J)={m: u <= (m-1)h+1 and mh <= v}。
 只需证明 `C_h(J)∩A_h` 非空即可选择一条 accepted lower zero-row 下降。当前 `5/5` 个
 BCB-Core 样本存在 selector，`6/6` 个候选完整下层行全部 accepted。剩余全局义务是证明正式
 BCB-Core 的端点相位和长度强制该相交；若相交为空，则全体候选行回流到 seam/PDEC/ColumnCRT。
+
+新增 `docs/monograph/prime-matrix-rpz-selector-gap-threshold.md` 后，selector 存在被拆成两支：
+
+```text
+长度分支：|C_h(J)| >= max_rejected_run(A_h)+1；
+短候选相位分支：|C_h(J)| 较小时，端点相位必须精确避开 rejected gaps。
+```
+
+当前层的最大 rejected run 为：`h=5:0`、`h=7:1`、`h=11:5`、`h=13:15`。样本中 `2/5`
+由长度单独强制 selector，`3/5` 仍依赖短候选端点相位。因此下一步必须直接攻短候选端点相位，
+不能只强化核心长度估计。

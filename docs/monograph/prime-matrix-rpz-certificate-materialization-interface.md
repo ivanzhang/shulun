@@ -159,6 +159,7 @@ seam/PDEC/ColumnCRT 出口压力账本。
 accepted-set 符号阶梯证书。
 BCB 起始数字账本。
 BCB accepted lower-row 选择器账本。
+selector gap 阈值账本。
 ```
 
 本文没有完成：
@@ -291,3 +292,7 @@ accepted count 公式，剩余义务是把正式反例起始行的 `a mod r` 来
 不要求所有候选完整下层行都安全，只要求 `C_h(J)∩A_h` 非空。当前样本 `5/5` 个 BCB-Core
 核心区间都有 selector，`6/6` 个候选行 accepted。若全局 selector 失败，则失败对象是
 “全部候选行 rejected”的有限 seam/PDEC/ColumnCRT 回流，而非新的未命名出口。
+
+新增 `prime-matrix-rpz-selector-gap-threshold.md` 后，selector 证明接口拆成两类：
+若候选行数超过 `A_h` 的最大 rejected gap，则长度自动闭合；否则必须证明短候选端点相位
+避开 rejected gap。当前样本中 `2/5` 为长度分支，`3/5` 为短候选相位分支。

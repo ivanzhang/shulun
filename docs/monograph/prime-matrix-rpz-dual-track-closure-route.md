@@ -300,6 +300,7 @@ seam/PDEC/ColumnCRT 出口压力账本。
 accepted-set 符号阶梯证书。
 BCB 起始数字账本。
 BCB accepted lower-row 选择器账本。
+selector gap 阈值账本。
 ```
 
 再新增
@@ -320,6 +321,9 @@ docs/monograph/prime-matrix-rpz-bcb-start-digit-ledger.md。
 experiments/prime_matrix_rpz_bcb_accepted_row_selector.py；
 docs/monograph/prime-matrix-rpz-bcb-accepted-row-selector.json；
 docs/monograph/prime-matrix-rpz-bcb-accepted-row-selector.md。
+experiments/prime_matrix_rpz_selector_gap_threshold.py；
+docs/monograph/prime-matrix-rpz-selector-gap-threshold.json；
+docs/monograph/prime-matrix-rpz-selector-gap-threshold.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -371,6 +375,15 @@ C_h(J)∩A_h != empty。
 当前 `5/5` 个 BCB-Core 样本都有 selector，`6/6` 个完整下层候选行都 accepted。因此路线 A
 的最小闭合目标不必证明每个候选行安全，只需证明正式核心区间中至少存在一个 accepted 候选行。
 
+selector gap 阈值账本进一步给出长度自动分支：
+
+```text
+|C_h(J)| >= max_rejected_run(A_h)+1  =>  C_h(J)∩A_h != empty。
+```
+
+当前样本 `2/5` 由长度分支自动保证，`3/5` 仍需短候选端点相位。因此下一步应专攻短候选相位
+避开 rejected gaps。
+
 本文没有完成：
 
 ```text
@@ -388,4 +401,5 @@ formal-family 避开 12 条 seam；
 其中 formal-family 避开已等价压缩为逐层 delta 数字约束。
 当前样本还显示该数字约束是贴边成立，不能用粗余量替代。
 更弱的 selector 存在定理 `C_h(J)∩A_h != empty` 仍未全局证明。
+selector gap 账本显示该定理还需短候选端点相位分支。
 ```

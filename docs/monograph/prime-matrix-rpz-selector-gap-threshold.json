@@ -1,0 +1,135 @@
+{
+  "status": "rpz_selector_gap_threshold_current_layers",
+  "source": "docs/monograph/prime-matrix-rpz-bcb-core-audit.json",
+  "parameters": {
+    "max_enum_modulus": 10000000
+  },
+  "summary": {
+    "h_layers": 4,
+    "enumerated_h_layers": 4,
+    "sample_records": 5,
+    "records_length_alone_forces_selector": 2,
+    "records_requiring_endpoint_phase": 3
+  },
+  "gap_rows": [
+    {
+      "h": 5,
+      "modulus": 30,
+      "accepted_count": 30,
+      "rejected_count": 0,
+      "max_rejected_run": 0,
+      "length_threshold": 1,
+      "enumerated": true
+    },
+    {
+      "h": 7,
+      "modulus": 210,
+      "accepted_count": 126,
+      "rejected_count": 84,
+      "max_rejected_run": 1,
+      "length_threshold": 2,
+      "enumerated": true
+    },
+    {
+      "h": 11,
+      "modulus": 2310,
+      "accepted_count": 990,
+      "rejected_count": 1320,
+      "max_rejected_run": 5,
+      "length_threshold": 6,
+      "enumerated": true
+    },
+    {
+      "h": 13,
+      "modulus": 30030,
+      "accepted_count": 3510,
+      "rejected_count": 26520,
+      "max_rejected_run": 15,
+      "length_threshold": 16,
+      "enumerated": true
+    }
+  ],
+  "sample_rows": [
+    {
+      "top_prime": 13,
+      "top_zero_row": 169,
+      "h": 5,
+      "core_interval": [
+        2188,
+        2196
+      ],
+      "candidate_rows": [
+        439
+      ],
+      "candidate_count": 1,
+      "selector_length_threshold": 1,
+      "length_alone_forces_selector": true
+    },
+    {
+      "top_prime": 17,
+      "top_zero_row": 1211,
+      "h": 7,
+      "core_interval": [
+        20574,
+        20586
+      ],
+      "candidate_rows": [
+        2940
+      ],
+      "candidate_count": 1,
+      "selector_length_threshold": 2,
+      "length_alone_forces_selector": false
+    },
+    {
+      "top_prime": 19,
+      "top_zero_row": 3659,
+      "h": 7,
+      "core_interval": [
+        69504,
+        69518
+      ],
+      "candidate_rows": [
+        9930,
+        9931
+      ],
+      "candidate_count": 2,
+      "selector_length_threshold": 2,
+      "length_alone_forces_selector": true
+    },
+    {
+      "top_prime": 23,
+      "top_zero_row": 59,
+      "h": 11,
+      "core_interval": [
+        1338,
+        1356
+      ],
+      "candidate_rows": [
+        123
+      ],
+      "candidate_count": 1,
+      "selector_length_threshold": 6,
+      "length_alone_forces_selector": false
+    },
+    {
+      "top_prime": 29,
+      "top_zero_row": 5210,
+      "h": 13,
+      "core_interval": [
+        151062,
+        151086
+      ],
+      "candidate_rows": [
+        11622
+      ],
+      "candidate_count": 1,
+      "selector_length_threshold": 16,
+      "length_alone_forces_selector": false
+    }
+  ],
+  "review_boundary": [
+    "若 candidate_count >= max_rejected_run(A_h)+1，则长度单独保证 selector。",
+    "当前样本只有部分记录由长度保证，其余依赖端点相位精确命中 A_h。",
+    "该账本不证明全局 selector；它把证明拆为长度阈值分支与短候选相位分支。"
+  ]
+}

@@ -943,6 +943,16 @@ For the current BCB-Core samples all five core intervals have such a selector, a
 candidate lower rows are accepted.  This is still only a current-ledger certificate; the
 global theorem must prove selector existence for every formal BCB core interval, or else
 route the all-rejected selector failure back to the seam/PDEC/ColumnCRT exits.
+Finally, the selector gap ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-selector-gap-threshold.md}
+\]
+splits selector existence into two verifiable mechanisms.  If the number of complete
+candidate rows in $C_h(J)$ exceeds the maximum cyclic rejected gap of $A_h$, length alone
+forces a selector.  In the current samples this explains two of the five BCB cores; the
+remaining three are short-candidate cases and require exact endpoint phase information.
+Thus the next proof obligation is not merely to enlarge $J$, but to control the endpoint
+phase of short cores relative to the rejected gaps of $A_h$.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

@@ -640,6 +640,10 @@ seam/PDEC/ColumnCRT：`27924` 个 rejected phase、`12` 个 distinct first-fail 
 下层行 accepted。下一步应优先证明这个 selector 存在定理；若失败，则“所有候选行 rejected”
 会自动回流到 seam/PDEC/ColumnCRT 出口压力账本。
 
+新增 `docs/monograph/prime-matrix-rpz-selector-gap-threshold.md` 后，selector 存在定理被拆成：
+长度自动分支与短候选端点相位分支。当前样本 `2/5` 由长度保证，`3/5` 仍需端点相位。
+因此下一硬点是短候选端点相位避开 rejected gaps，而不是继续扩大长度估计。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

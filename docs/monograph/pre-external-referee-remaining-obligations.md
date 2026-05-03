@@ -268,6 +268,10 @@ digit 节点全部安全，但 `10` 个节点正好位于 `margin=0`。外审前
 selector 存在定理：对正式 BCB 核心区间 `J`，证明完整下层候选行集合 `C_h(J)` 与 accepted set
 `A_h` 相交。当前样本 `5/5` 有 selector、`6/6` 候选行 accepted；但全局 selector 存在仍未证明。
 
+新增 `docs/monograph/prime-matrix-rpz-selector-gap-threshold.md` 后，selector 存在义务拆成长度分支
+与短候选端点相位分支。当前样本只有 `2/5` 可由长度自动保证，`3/5` 必须证明端点相位避开
+`A_h` 的 rejected gaps。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、
