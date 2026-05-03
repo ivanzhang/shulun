@@ -1153,3 +1153,13 @@ m >= G(h)-P+2+2T。
 
 当 `T=4` 时，首个 `h>=5` 实质不安全层为 `h=43`，所需平台长度为 `10`。因此下一硬点不再是
 “是否存在 accepted selector”，而是证明 formal BCB 平台长度达到该阈值，或短平台触发已命名出口。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-route.md` 后，短平台出口也已命名：
+若 `N=P+m-1-2T<=G(h)` 且 no-TailAnchor 成立，则 `J_T` 必须嵌入模 `P(h)` 的某个低筛极大覆盖块。
+因此 `left(J_T) mod P(h)` 属于有限 Jacobsthal endpoint set `E_{h,N}`。该相位若低负载进入
+`SAE`，若持续复现进入 `PDEC/ColumnCRT`。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-certificate.md` 后，最长块端点
+子族 `Emax_{h,N}` 已材料化：脚本从 Ziller--Morack 的最长覆盖块模表示重建 CRT 左端相位，并
+验证 `1197` 个最长块的覆盖性与边界非覆盖，验证失败数为 `0`。审稿边界保持不变：这不是完整
+`E_{h,N}` 枚举；下一义务是证明任意长度 `>=N` 的覆盖块可归入最长块相位族，或生成完整覆盖块证书。

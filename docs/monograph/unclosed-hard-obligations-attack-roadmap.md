@@ -683,6 +683,14 @@ no-TailAnchor BCB 分支闭合；若失败，必须继续攻 TailAnchor/endpoint
 `m>=G(h)-P+2+2T`。这给出可审查的下一层任务：证明平台增长，或证明低于该阈值的短平台
 不能保持 no-TailAnchor 且必进入命名出口。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-route.md` 后，短平台命名出口为
+Jacobsthal endpoint set `E_{h,N}`。下一步最小工程任务是生成 `E_{h,N}` 证书并把持续相位接入
+PDEC/ColumnCRT；数学任务是证明 formal 短平台不能长期避开这些出口。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-certificate.md` 后，最小工程任务
+已推进为最长块子族证书：`Emax_{h,N}` 可由 CRT 重建并哈希核验。新的最小数学硬点是：
+证明完整 `E_{h,N}` 可归约到 `Emax_{h,N}`，或给出非最长但长度 `>=N` 覆盖块的完整相位证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

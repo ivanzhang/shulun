@@ -312,6 +312,15 @@ formal BCB 平台长度增长定理，或把这些失败层路由到 TailAnchor/
 形式是 `m>=G(h)-P+2+2T`。外审前若不能证明该不等式覆盖 formal BCB 参数，则必须保留短平台
 出口闭合义务。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-route.md` 后，短平台出口已被压成
+有限 Jacobsthal endpoint set `E_{h,N}`。外审前仍需生成 `E_{h,N}` 的显式证书，或证明这些相位
+进入并闭合 `SAE/PDEC/ColumnCRT`。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-certificate.md` 后，最长块端点
+子族 `Emax_{h,N}` 已有可重算证书：`1197` 个最长块通过 CRT 重建与边界验证。剩余义务更精确：
+完整 `E_{h,N}` 尚未枚举；必须证明所有长度 `>=N` 的覆盖块归入最长块相位族，或补一个完整覆盖块
+枚举/证明，再进入 `SAE/PDEC/ColumnCRT`。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

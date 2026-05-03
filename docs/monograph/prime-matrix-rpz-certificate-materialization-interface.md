@@ -168,6 +168,8 @@ BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
 BCB Jacobsthal 型闭合接口。
 BCB Jacobsthal 线性闭合风险扫描。
 BCB 平台长度阈值账本。
+BCB 短平台 Jacobsthal 嵌入路由。
+BCB 短平台最长块端点证书。
 ```
 
 本文没有完成：
@@ -340,3 +342,11 @@ formal 参数限制证明，或对应出口证书。
 
 新增 `prime-matrix-rpz-bcb-platform-length-threshold.md` 后，可接受的平台长度证书必须逐层验证
 `m>=G(h)-P+2+2T`。未达标的短平台必须直接进入 TailAnchor/endpoint/first-failure/PDEC/ColumnCRT。
+
+新增 `prime-matrix-rpz-bcb-short-platform-embedding-route.md` 后，未达标短平台的材料化对象是
+`E_{h,N}`：所有可嵌入 `h` 层低筛覆盖块的左端相位。该集合若持续出现，应按 PDEC/ColumnCRT
+证书格式填写；若低负载则进入 SAE。
+
+新增 `prime-matrix-rpz-bcb-short-platform-embedding-certificate.md` 后，已可自动生成最长覆盖块
+子族 `Emax_{h,N}`。该证书记录 endpoint 数、CRT 哈希与样本，但不替代完整 `E_{h,N}`；任何使用
+它的闭合证明必须额外说明“任意长度 `>=N` 覆盖块为何可归约到最长块端点”。

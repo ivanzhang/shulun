@@ -1064,6 +1064,26 @@ rewrites this requirement as the exact integer condition
 For $T=4$, the first substantive unsafe layer with $h\ge5$ is again $h=43$, where the
 required platform length is $10$ rather than $5$.  The next attack must therefore prove
 platform-length growth or prove that short platforms trigger one of the named exits.
+The short-platform embedding route
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-route.md}
+\]
+handles the second alternative.  If $N=P+m-1-2T\le G(h)$ and no TailAnchor is present, then
+the forced core $J_T$ is an $h$-sieve zero interval of length $N$ and hence must be embedded
+inside an extremal low-sieve covered block modulo $P(h)$.  Therefore its left endpoint lies
+in a finite Jacobsthal endpoint set $E_{h,N}$.  Persistent occurrence of such an endpoint
+phase is no longer an unnamed escape: it is routed to SAE if sparse, or to PDEC/ColumnCRT
+if persistent.
+The accompanying certificate
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-certificate.md}
+\]
+materializes the max-block subfamily $E^{\max}_{h,N}$ by reconstructing CRT left endpoints
+from the Ziller--Morack modulus representation.  For the current $m=5,T=4$ interface, the
+first non-trivial short platform is $h=43$, $P=89$, $N=85$, with $240$ distinct max-block
+endpoint phases; across the scanned table, $1197$ reconstructed longest blocks pass the
+coverage and boundary checks.  This remains a certificate for the longest-block subfamily,
+not a proof that the full endpoint set $E_{h,N}$ has been exhausted.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

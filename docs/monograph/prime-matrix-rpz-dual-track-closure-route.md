@@ -309,6 +309,8 @@ BCB no-TailAnchor 核心低筛连续覆盖长度障碍账本。
 BCB Jacobsthal 型闭合接口。
 BCB Jacobsthal 线性闭合风险扫描。
 BCB 平台长度阈值账本。
+BCB 短平台 Jacobsthal 嵌入路由。
+BCB 短平台最长块端点证书。
 ```
 
 再新增
@@ -354,6 +356,10 @@ docs/monograph/prime-matrix-rpz-bcb-jacobsthal-risk-scan.md。
 experiments/prime_matrix_rpz_bcb_platform_length_threshold.py；
 docs/monograph/prime-matrix-rpz-bcb-platform-length-threshold.json；
 docs/monograph/prime-matrix-rpz-bcb-platform-length-threshold.md。
+docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-route.md。
+experiments/prime_matrix_rpz_bcb_short_platform_embedding_certificate.py；
+docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-certificate.json；
+docs/monograph/prime-matrix-rpz-bcb-short-platform-embedding-certificate.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -473,6 +479,14 @@ m >= G(h)-P+2+2T。
 
 对于 `T=4`，`h=43` 层需要 `m>=10`。因此 Track B 的最小证明义务是平台长度增长定理；
 Track A 则负责短平台失败时的 TailAnchor/endpoint/first-failure 出口。
+
+短平台 Jacobsthal 嵌入路由说明：若平台未达阈值且 no-TailAnchor 仍成立，则 `J_T` 嵌入某个
+低筛极大覆盖块，左端相位属于有限集合 `E_{h,N}`。该集合是下一步应材料化的 PDEC/ColumnCRT
+接口输入。
+
+最长块端点证书已材料化 `Emax_{h,N}`：当前 `m=5,T=4` 下首个非平凡短平台为
+`h=43,P=89,N=85,D=4`，唯一 endpoint 数为 `240`；全表 `1197` 个最长块验证失败数为 `0`。
+剩余缺口是完整覆盖块族，不是最长块族。
 
 本文没有完成：
 
