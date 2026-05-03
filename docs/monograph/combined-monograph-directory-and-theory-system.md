@@ -1434,6 +1434,11 @@ L2-flat residual 写成 KLS admission 问题。K1--K6 全部通过才可引用 K
 应标为：内部结构归约到 clean HLC Kloosterman window，剩余为 `HLC-KLS-ext` 外部输入或
 自足证明。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md` 后，目录状态应进一步
+细分：`HLC-KLS-ext` 的外部深定理版已经完成变量适配，clean HLC branch 可标为
+`external-theorem closed`；完全自足无黑箱版仍标为 `self-contained spectral/dispersion proof open`。
+该区分必须保留在合著稿中，避免把“可引用 DI/BFI/Kuznetsov”误写成“本文已重证 DI/BFI”。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

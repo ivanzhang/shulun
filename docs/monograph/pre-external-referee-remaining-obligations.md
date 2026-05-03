@@ -553,6 +553,18 @@ short-arc 组件出口。
 压缩为 clean-unit 判定：若 E1--E6 均无，则 K1--K6 通过。外审前剩余变为逐项引用或证明
 `HLC-KLS-ext` 覆盖 clean HLC 的 `(CKR-4)` 窗口和。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md` 后，外部深定理版
+的逐项引用适配已完成：`(CKR-4)` 的逆元相位、低有效模 dyadic level、有效频率、短窗口
+平滑、`Lambda(m)` 分解、L2-flat 系数、gcd/unit 层和分块损失都已列入同一核查表。
+因此外审义务应区分为两类：
+
+```text
+external-theorem version:
+  核对 DI/BFI/Kuznetsov 原文定理号和窗口化版本，即可审查 HLC-KLS-ext 调用；
+self-contained version:
+  仍需在本文内重证相应窗口化谱/dispersion 定理。
+```
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

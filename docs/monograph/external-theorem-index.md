@@ -219,7 +219,21 @@ DI/BFI 的入口被限制为 K1--K6 全部通过后的 KLS-window；K4 由 L2 �
 需逐项核验。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-clean-kls-reduction.md` 后，外部索引中的
-H3-HLC 待核验项应写为 `HLC-KLS-ext`：DI/BFI/Kuznetsov 是否覆盖 clean HLC 窗口对象
+H3-HLC 待核验项写为 `HLC-KLS-ext`：DI/BFI/Kuznetsov 是否覆盖 clean HLC 窗口对象
 `(CKR-4)` 并给出 `O(q/log^2 y)` 或任意对数节省。
 
-该表未完成前，`DI/BFI` 只能作为 H3-DSB 的候选外部输入，不能宣称 H3 行命题外部定理版闭合。
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md` 后，该核验项已形成
+外部深定理版适配表：
+
+| 核查项 | H3-HLC 结论 |
+| --- | --- |
+| 相位 | `e(-h rho(c) bar(ell)/R(c))` 归一化为标准 `S(a,b;R)` 的逆元相位，`b=-h rho(c)` |
+| 模数 | K1 与 high-lcm clamp 保证只把低有效模 dyadic level 交给 KLS |
+| 频率 | K2 与 sawtooth 截断给出 `0<|h|<=H0` |
+| 窗口 | K3 平滑 `J_ell=I/ell`，端点只付多对数损失 |
+| 权重 | `Lambda(m)` 经 Vaughan/Heath-Brown 分解，`alpha_ell,beta_{c,h}` 由 K4 控制二范数 |
+| gcd/unit | K5 把非单位和 gcd 层压为多对数损失 |
+| 分块 | K6 保证 dyadic/tail-label 分块为多对数级 |
+
+因此 H3-HLC clean branch 在允许引用 DI/BFI/Kuznetsov 窗口化 Kloosterman 输入时可标为
+`external-theorem closed`。完全自足无黑箱版仍需在文内重证对应谱/dispersion 定理。

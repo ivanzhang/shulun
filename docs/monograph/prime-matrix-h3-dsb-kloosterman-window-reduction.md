@@ -279,11 +279,15 @@ H3-DSB bad row
 因此当前真正剩余不再是抽象“大筛缺陷”，而是：
 
 ```text
-证明 KLS-window 覆盖活跃参数，并对每个 HLC formal unit 证明
+证明或引用 KLS-window 覆盖活跃参数，并对每个 HLC formal unit 证明
 `U_CRT(B)<L_HLC(B)`，或把失败 Bohr-cap 全部物化为 PDEC/SAE 证书，
 并排除低有效模出口与 short-arc density pressure 残余，
 把低压平坦残余接入 KLS-window/coefficient 分支，
 并逐项核验 HLC L2-flat residual 的 K1--K6 admission，
-或证明 clean HLC Kloosterman window 的 `HLC-KLS-ext` 上界，
+并通过 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md`
+把 clean HLC Kloosterman window 的 `HLC-KLS-ext` 接入 DI/BFI/Kuznetsov 外部输入，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```
+
+最新状态：clean HLC 分支的外部深定理版适配已完成；若坚持完全自足无黑箱版，唯一剩余是
+在文内重证该窗口化 Kloosterman 谱/dispersion 定理。

@@ -1455,6 +1455,17 @@ admission checks pass.  The remaining object is the clean HLC Kloosterman window
 \]
 and the remaining external/self-contained input is an estimate
 $\mathcal K_{\rm HLC}(B)=O(q/\log^2 y)$, denoted HLC--KLS-ext in the notes.
+The external-theorem adaptation is now separated in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md}.
+\]
+It matches the clean HLC object to a DI/BFI/Kuznetsov-type windowed Kloosterman input:
+the inverse phase is $e(-h\rho(c)\overline{\ell}/R(c))$, the modulus and frequency checks
+are supplied by K1--K2, endpoint smoothing by K3, coefficient $L^2$ control by K4,
+gcd/unit strata by K5, and dyadic or tail-label losses by K6.  Thus the clean HLC branch
+is closed in the external-deep-theorem version.  A fully self-contained version would still
+require reproving the corresponding spectral/dispersion Kloosterman theorem inside this
+manuscript.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

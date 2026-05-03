@@ -471,6 +471,11 @@ K6 dyadic/尾标签分块。任一失败项都回到既有命名出口；全部�
 收窄：clean formal unit 定义为 E1--E6 均不发生；clean 时 K1--K6 逐项自动通过。
 剩余唯一为 `HLC-KLS-ext`：对 clean HLC Kloosterman 窗口对象给出 `O(q/log^2 y)` 上界。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md` 后，`HLC-KLS-ext`
+已有外部深定理版适配：`(CKR-4)` 的相位、模数、频率、短窗口、素数权、二范数、
+gcd/unit 与分块条件逐项接入 DI/BFI/Kuznetsov 型窗口化 Kloosterman 输入。当前诚实状态为：
+clean HLC 分支在外部深定理版中闭合；完全自足无黑箱版仍需重证该谱/dispersion 定理。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

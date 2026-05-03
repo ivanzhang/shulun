@@ -1,6 +1,6 @@
 # H3-DSB 高 lcm clean formal unit 到 KLS-window 的归约
 
-**状态：** `hlc_clean_kls_reduction_proved_external_kls_open`
+**状态：** `hlc_clean_kls_reduction_proved_external_kls_adapted_self_contained_open`
 
 本文继续只攻击当前唯一闭合目标：
 
@@ -115,10 +115,15 @@ HLC 反例质量若在 clean unit 内保持 `q/log y` 级，则前面非零频�
 本文仍未完成：
 
 ```text
-在文内自足证明 HLC-KLS-ext，
-或逐项引用 DI/BFI/Kuznetsov 型定理覆盖 (CKR-4) 的 HLC 参数。
+在文内自足证明 HLC-KLS-ext。
 ```
 
-这就是当前剩余障碍的最窄形式：不再是 high-lcm / short-arc / L2-flat 的内部结构问题，
-而是 clean HLC Kloosterman window 的外部深输入或自足证明问题。
+外部深定理版适配已补入
+`docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md`。该文件逐项核验
+`(CKR-4)` 的模数、频率、逆元变量、短窗口、素数权、二范数、gcd/unit 与分块条件，
+并说明在接受 DI/BFI/Kuznetsov 型窗口化 Kloosterman 输入时，clean HLC 分支得到
+`O(q/log^2 y)` 上界而闭合。
 
+这就是当前剩余障碍的最窄形式：不再是 high-lcm / short-arc / L2-flat 的内部结构问题，
+而是 clean HLC Kloosterman window 的完全自足谱/dispersion 重证问题；外部深定理版已完成
+变量适配与审稿边界标注。

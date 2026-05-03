@@ -111,3 +111,7 @@ low-mod/unit conflict。K6 失败说明尾标签或 dyadic 块数集中，回到
 该文定义 clean HLC formal unit，证明无 E1--E6 命名出口时 K1--K6 自动通过，并把剩余
 写成单一外部输入 `HLC-KLS-ext`：对 clean unit 的 Kloosterman 窗口对象 `(CKR-4)` 给出
 `O(q/log^2 y)` 上界。
+
+外部深定理版适配见 `docs/monograph/prime-matrix-h3-dsb-hlc-kls-external-adaptation.md`。
+该文把 `(CKR-4)` 的变量逐项接入 DI/BFI/Kuznetsov 型窗口化 Kloosterman 输入；完全自足版
+仍需重证该谱/dispersion 定理。
