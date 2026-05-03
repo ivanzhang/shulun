@@ -486,6 +486,15 @@ unit/gcd 剥离、L2 账本和多对数吸收，证明 `HLC-KLS-core => HLC-KLS-
 `(SC-7)`、系数二范数 `(SC-8)`，以及唯一未内联的 `Kuznetsov-LS atom (SC-9)`。该文件
 证明 `SC-9=>CORE-5`，并排除点态 Weil 路线足以闭合的误用。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md` 后，`(SC-9)`
+继续拆成 KZ-A--KZ-E：Kloosterman 权重平滑化、Kuznetsov trace formula 专门化、Bessel
+transform 衰减、spectral large sieve、BFI/well-factorable dispersion 对数节省。该文证明
+KZ-A--KZ-E 推出 `(SC-9)`；完全自足版剩余为 KZ-B--KZ-E 的内联证明。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已用
+Bessel 微分方程、自伴算子和反复分部积分证明。当前 `SC-9` 的未闭合子原子剩余为
+KZ-B、KZ-D、KZ-E。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

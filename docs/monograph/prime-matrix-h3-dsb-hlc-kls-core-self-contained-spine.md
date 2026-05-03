@@ -229,3 +229,8 @@ R_0^{1/2+\epsilon}
 所以当前不能诚实宣称“完全自足无黑箱闭合”。真正下一步不是改命题，也不是重新拆 high-lcm；
 而是继续在 `(SC-9)` 上展开 Kuznetsov trace formula、Bessel transform 和 spectral large
 sieve 的完整证明，或明确引用外部定理。
+
+进一步展开见 `docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md`。
+该文件把 `(SC-9)` 拆成 KZ-A--KZ-E：平滑化、Kuznetsov trace formula、Bessel transform
+衰减、spectral large sieve、BFI/well-factorable dispersion 对数节省，并证明这些子原子
+推出 `(SC-9)`。

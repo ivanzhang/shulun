@@ -255,3 +255,11 @@ windowed Kloosterman spectral/dispersion theorem
 还可进一步按 `SC-9` 核验：外部定理若能直接给出本文窗口族上的
 `Kuznetsov-LS atom (SC-9)`，则由该文件已证明的账本推出 `(CORE-5)`。若外部定理只给点态
 Weil 或单模估计，则不够；文件第 7 节已记录其量级不足。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md` 后，外部引用
+可继续细分核验：若外部文献分别提供 KZ-B、KZ-C、KZ-D、KZ-E，则本文已有
+`KZ-A--KZ-E=>SC-9` 的推导。若只提供 trace formula 而无 spectral large sieve 或
+well-factorable dispersion，对数节省仍未闭合。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 不再需要
+外部引用；外部索引只需继续核对 KZ-B、KZ-D、KZ-E。

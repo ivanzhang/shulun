@@ -1464,6 +1464,23 @@ CORE-5
 
 该节点把唯一未内联证明行精确标为 `(SC-9)`，并记录普通 Weil 界不足以替代谱平均。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md` 后，目录应在
+`SC-9` 下展开五个谱子原子：
+
+```text
+SC-9
+=> KZ-A smoothing
+ + KZ-B Kuznetsov trace formula
+ + KZ-C Bessel transform decay
+ + KZ-D spectral large sieve
+ + KZ-E BFI/well-factorable logarithmic saving.
+```
+
+该文件证明 KZ-A--KZ-E 推出 `SC-9`，但 KZ-B--KZ-E 尚未内联证明。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已内联
+证明，剩余子原子为 KZ-B、KZ-D、KZ-E。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

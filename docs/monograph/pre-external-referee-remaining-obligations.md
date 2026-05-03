@@ -590,6 +590,27 @@ or cite an external theorem that implies it.
 补 Kuznetsov trace formula、Bessel transform bounds、spectral large sieve 与本文窗口的
 参数专门化，不能只写“由谱理论可得”。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md` 后，外审义务
+被拆成以下精确清单：
+
+```text
+KZ-B: Kuznetsov trace formula specialization;
+KZ-C: Bessel transform decay;
+KZ-D: spectral large sieve with oldform/Eisenstein;
+KZ-E: BFI/well-factorable dispersion logarithmic saving.
+```
+
+该文件已证明 KZ-A--KZ-E 合起来推出 `SC-9`。作者若继续无黑箱化，必须逐项补这四个子原子。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已补齐。
+外审前剩余清单缩为：
+
+```text
+KZ-B: Kuznetsov trace formula specialization;
+KZ-D: spectral large sieve with oldform/Eisenstein;
+KZ-E: BFI/well-factorable dispersion logarithmic saving.
+```
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -557,6 +557,14 @@ high-lcm、short-arc 或 L2-flat 子情形。
 账本和 `SC-9=>CORE-5`；同时证明点态 Weil 只给临界平方根级，不能提供所需任意对数节省。
 因此继续攻坚时必须进入 Kuznetsov trace formula / spectral large sieve 的内联证明。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md` 后，`SC-9`
+已经分解为 KZ-A--KZ-E 五个子原子。下一步最优顺序是先攻 KZ-C（Bessel transform
+衰减，最短），再攻 KZ-D（谱大筛），再攻 KZ-B（trace formula 正规化），最后攻 KZ-E
+（BFI/well-factorable 对数节省）。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已闭合。
+下一步最优硬点更新为 KZ-D：spectral large sieve with oldform/Eisenstein。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。
