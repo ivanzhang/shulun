@@ -180,6 +180,24 @@ grid_success iff delta<=g。
 `g<delta<r`，左右帽长为 `delta` 与 `r+g-delta`，缺口总量恒为 `r-g`，且 `r`-筛幸存者至多为右端点
 `ap`。证书抽取 `12` 个 seam 相位行，覆盖完整 `Q` 中 `1752` 个 grid_fail 相位，源账本计数不一致为 `0`。
 
+该证书现在进一步输出每条 seam 的 `PDEC/ColumnCRT` 增强包：
+
+```text
+PDEC support:
+  S_tau={a mod Q: a≡rho mod r}
+  F_tau=1_{rho}-1/r
+  Fourier support={jQ/r: 1<=j<r}
+
+Endpoint split:
+  endpoint killed by lower labels: 1348 phases
+  endpoint Q-unit branch: 404 phases
+```
+
+因此 lower-descent grid_fail 不再是三条粗粒度 PDEC 行，而是 `12` 条可逐行检查的
+单余类 PDEC/Fourier 行。端点已由下层标签杀死的分支可回到下层标签账本；真正剩余的窄口是
+`404` 个 unit endpoint 相位：它们需要 endpoint-PDEC 的 `U_CRT<L_PDEC`，或需要
+ColumnCRT 的 `Pi,lambda,L_D` 位移阈值证书。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -215,6 +233,7 @@ RPZ 出口证书骨架包；
 正式下降路径相位不等式定理。
 首阻断 grid_fail 二分定理。
 first-grid-fail seam 标准形证书。
+first-grid-fail seam 的单余类 PDEC/Fourier 支持包与端点分裂账本。
 ```
 
 本文没有完成：

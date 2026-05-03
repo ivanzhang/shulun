@@ -149,6 +149,7 @@ RPZ-SAE / RPZ-PDEC / RPZ-ColumnCRT 三类证书材料化接口；
 正式下降路径相位不等式定理；
 首阻断 grid_fail 二分定理；
 first-grid-fail seam 标准形证书。
+first-grid-fail seam 的 PDEC/Fourier 支持包与端点 unit/killed 分裂。
 ```
 
 本文没有完成：
@@ -160,10 +161,23 @@ RPZ-ColumnCRT 的 L_D 阈值证书；
 LowerDescent-Grid persistence 的全局证明。
 ```
 
+新增 seam 增强包把 `12` 个 first-grid-fail 相位逐行写成：
+
+```text
+S_tau={a mod Q: a≡rho mod r}；
+F_tau=1_{a≡rho mod r}-1/r；
+nonzero Fourier support={Q/r,2Q/r,...,(r-1)Q/r}；
+endpoint split = Q-unit endpoint branch + lower-label-killed endpoint branch。
+```
+
+完整 `Q` 中共有 `1752` 个 grid_fail 相位，其中端点 `ap` 已被下层小素数杀死的相位为
+`1348`，端点是 `Q`-unit、必须继续进入 endpoint-PDEC 或 ColumnCRT 的相位为 `404`。
+这一步填实了 PDEC 输入行和端点分裂账本；它仍不提供 `U_CRT` 上界或 ColumnCRT 阈值。
+
 下一步最小硬点：
 
 ```text
-1. 为 first-grid-fail seam 标准形提交 U_CRT<L_PDEC / ColumnCRT 位移阈值证书；
-2. 或给出等价的全局相位避开证明；
-3. 若未来 endpoint 相位实际命中，再逐窗填写全局 SAE 局部证书。
+1. 为 unit endpoint branch 构造列见证选择器 Pi、标签选择器 lambda 与位移阈值 L_D；
+2. 为 seam-PDEC 支持行提交同一坏窗族上的 U_CRT<L_PDEC；
+3. 或证明正式反例族无法命中这些 unit endpoint seam 相位。
 ```

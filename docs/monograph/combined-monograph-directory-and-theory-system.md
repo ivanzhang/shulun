@@ -877,3 +877,36 @@ Row(p)
 ```
 
 这把用户提出的“向前反推矛盾”变成了实际可攻的硬点：专攻缝合零窗排斥，而不是仅查完整旧行。
+
+## 19. RPZ first-grid-fail seam 的单余类证书化
+
+新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
+首个 `grid_fail` seam 不再只是几何标准形，而被拆成可接入 PDEC/ColumnCRT 的精确账本。
+对每个相邻下降 `p->r`，令 `Q=prod_{ell<=r}ell`、`g=p-r`、
+`delta=-(a-1)g mod r`。若 `g<delta<r`，则对应相位行满足
+
+```text
+S_tau={a mod Q: a≡rho mod r}；
+F_tau=1_{a≡rho mod r}-1/r；
+nonzero Fourier support={Q/r,2Q/r,...,(r-1)Q/r}。
+```
+
+脚本 `experiments/prime_matrix_rpz_first_grid_fail_seam_certificate.py` 现在同时给出端点分裂：
+
+```text
+grid_fail phases in full Q: 1752
+PDEC/Fourier support rows: 12
+endpoint killed by lower labels: 1348
+endpoint Q-unit branch: 404
+```
+
+这一步的意义是把 seam 的 PDEC 输入行、测试函数、Fourier 支持和端点 lower-label/unit
+分支都固定下来。它仍不是排斥定理：`404` 个 unit endpoint 相位还需要 endpoint-PDEC 的
+`U_CRT<L_PDEC` 上界，或 ColumnCRT 的列见证选择器 `Pi`、标签选择器 `lambda`、
+位移余类与阈值 `L_D`。因此合著稿中的最新最小硬点应写为：
+
+```text
+unit endpoint seam branch
+=> endpoint-PDEC upper bound
+   or ColumnCRT displacement threshold certificate。
+```
