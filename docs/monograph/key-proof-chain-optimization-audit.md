@@ -469,3 +469,8 @@ RH-1 explicit-formula entrance
 若 `t_ell<=theta ell` 对所有解释因子成立，则低模能量 `>= (1-theta)|E|`；否则同一解释因子
 高负载已经触发 `Tail/PDEC`。当前唯一硬点收窄为同一坏窗集合上的 `PDEC` 阈值比较
 `U_CRT(E)<E(E)` 或 `L_PDEC(E)<=(1-theta)|E|`。
+
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-threshold-comparison.md` 与
+`experiments/prime_matrix_wsh_fo_pdec_threshold_ledger.py` 后，该阈值比较下界侧已具体化为
+`ell=199,h=95` 的 Fourier 投影，阈值 `3.959247567099438`。下一步如果继续硬攻，就必须直接给出
+同一投影的 `U_CRT,199` 合法上界或 `SAE/Endpoint` 非持久吸收。

@@ -135,3 +135,37 @@ FO-PDEC-to-PDEC threshold comparison remains open.
 1. 明确 `L_PDEC(E)` 的定义和常数；
 2. 证明同一方程集合的 `U_CRT(E)` 上界；
 3. 核验 `U_CRT(E)<(1-theta)|E|`。
+
+## 6. 显式 Fourier 阈值更新
+
+新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_threshold_ledger.py
+docs/monograph/prime-matrix-wsh-fo-pdec-threshold-ledger.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-threshold-comparison.md
+```
+
+后，`FO-PDEC` 的下界侧又被显式化。对每个解释因子 `ell` 的行残基计数向量 `g_ell`，直接计算
+
+\[
+  M_\ell(E)=\max_{h\ne0}|\widehat g_\ell(h)|.
+\]
+
+当前账本最佳投影为：
+
+```text
+ell = 199
+h = 95
+M_ell(E) = 3.959247567099438
+```
+
+因此剩余硬点从抽象阈值比较变成具体目标：
+
+```text
+prove U_CRT,199 < 3.959247567099438
+for the same projected bad-window set.
+```
+
+该 `U_CRT` 上界仍未证明；它必须来自合法的 `PDEC-Dual-Cert` 约束行或 `SAE/Endpoint`
+排斥，不能来自完整 CRT 周期均衡。

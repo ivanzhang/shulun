@@ -689,6 +689,30 @@ and no high-load factor.  The remaining obstruction is not energy production; it
   L_{\rm PDEC}(E)\le(1-\theta)|E|.
 \]
 
+\section{FO-PDEC Explicit Threshold}
+
+The explicit threshold ledger is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fo-pdec-threshold-comparison.md}.
+\]
+For each explaining factor $\ell$, it computes the nonzero Fourier threshold
+\[
+  M_\ell(E)=
+  \max_{1\le h<\ell}
+  \left|
+  \sum_{\rho\bmod\ell}g_\ell(\rho)e^{2\pi i h\rho/\ell}
+  \right|.
+\]
+The current best projection is
+\[
+  \ell=199,\qquad h=95,\qquad M_\ell(E)=3.959247567099438.
+\]
+Thus the remaining task is now concrete:
+\[
+  U_{{\rm CRT},199}<3.959247567099438
+\]
+for the same vector $g_{199}$.  Otherwise this projection must be absorbed by SAE/Endpoint.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

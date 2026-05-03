@@ -149,6 +149,16 @@ or L_PDEC(E) <= (1-theta)|E|.
 
 该项需要正式常数、测试函数和同一集合上界；不能由有限能量账本替代。
 
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-threshold-comparison.md` 后，`PDEC-threshold`
+下界侧已变成显式投影：
+
+```text
+ell=199, h=95, M_ell(E)=3.959247567099438.
+```
+
+外审前剩余义务已经具体为：对同一投影坏窗向量 `g_199`，提交合法约束来源并证明
+`U_CRT,199<3.959247567099438`，或证明该投影不持久而进入 `SAE/Endpoint`。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

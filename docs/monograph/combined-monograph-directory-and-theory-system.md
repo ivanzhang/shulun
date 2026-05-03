@@ -805,6 +805,27 @@ for the same bad-window equation set.
 
 这是定量阈值比较缺口，不是结构命名缺口。
 
+新增 `experiments/prime_matrix_wsh_fo_pdec_threshold_ledger.py`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-threshold-ledger.md/json` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-threshold-comparison.md` 后，阈值下界侧进一步显式化。
+逐个解释因子投影计算非零 Fourier 最大值，当前最佳投影为：
+
+```text
+ell = 199
+frequency h = 95
+M_ell(E) = 3.959247567099438
+```
+
+因此下一步全局闭合目标已经具体到：
+
+```text
+prove U_CRT,199 < 3.959247567099438
+for the same projected bad-window vector g_199.
+```
+
+这个 `U_CRT` 上界必须由合法 `PDEC-Dual-Cert` 约束或 `SAE/Endpoint` 排斥给出，不能用完整
+CRT 周期均衡替代坏窗子集上界。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，
