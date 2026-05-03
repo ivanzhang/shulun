@@ -1092,3 +1092,18 @@ mh-length+1 <= u <= (m-1)h+1，
 块宽为 `length-h+1`。于是 all-rejected 端点集合等于 rejected 行相位块的并集。三族公式均与
 完整枚举一致；实际端点到 all-rejected 集合的距离分别为 `7,6,1`。剩余硬点被压成：
 从正式 BCB 构造推出候选行相位属于 `A_h`，否则闭合其 first-failure 出口。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.md` 后，候选行相位已从 BCB
+参数中显式抽取。若上层零行号为 `R`、上层素数为 `P`、半宽素数为 `h`、平台端点为
+`s_min,s_max`、尾锚阈值为 `T`，则
+
+```text
+L=(R-1)P+1+s_min+T，
+U=RP+s_max-T，
+m_min=floor((L+h-2)/h)+1，
+m_max=floor(U/h)。
+```
+
+写 `P=Qh+d` 后，`m_min,m_max mod P(h)` 只依赖 `R mod hP(h)` 与平台参数。当前 `5/5`
+条 BCB 样本公式匹配，`6/6` 个候选行相位 accepted。剩余全局义务进一步变为：
+证明正式反例的 `R mod hP(h)` 必诱导 accepted 候选相位；失败则进入对应 first-failure 出口。

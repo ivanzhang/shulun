@@ -656,6 +656,11 @@ all-rejected 端点类是 rejected 行相位的显式端点块
 可攻命题变为：证明正式 BCB 诱导的候选行相位属于 `A_h`；否则该候选行的
 first-failure seam/PDEC/ColumnCRT 证书必须闭合。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.md` 后，候选行相位已由
+BCB 参数 floor 身份抽出。当前 `5/5` 条样本公式匹配，`6/6` 个候选行 accepted。当前最小
+硬点更新为 accepted preimage：证明 formal BCB 的 `R mod hP(h)` 与平台参数必把
+`m_min..m_max` 送入 `A_h`；若不能，则改攻该 rejected 相位的 first-failure 出口证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

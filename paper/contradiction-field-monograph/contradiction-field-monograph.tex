@@ -981,6 +981,26 @@ three short families, and the current endpoints have positive distance from the 
 endpoint union.  The remaining non-enumerative input is therefore narrower still: derive
 from the formal BCB construction that the induced candidate row phase belongs to $A_h$,
 or else close its named first-failure exit.
+The BCB candidate phase identity ledger
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.md}
+\]
+then makes the induced row phase explicit.  If the top zero row is $R$, the top prime is
+$P$, the half-prime is $h$, the plateau extremes are $s_-,s_+$, and the tail threshold is
+$T$, the forced core is
+\[
+  L=(R-1)P+1+s_-+T,\qquad U=RP+s_+-T.
+\]
+The complete lower rows inside this core are exactly
+\[
+  m_{\min}=\left\lfloor \frac{L+h-2}{h}\right\rfloor+1,\qquad
+  m_{\max}=\left\lfloor \frac{U}{h}\right\rfloor .
+\]
+Equivalently, after writing $P=Qh+d$, these phases depend only on
+$R\bmod hP(h)$ and the plateau parameters.  In the current ledger the formula matches all
+five BCB samples and all six induced lower row phases lie in $A_h$.  This is the sharp
+remaining input: prove the same residue implication for every formal BCB counterexample,
+or send any rejected induced phase to its first-failure exit.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

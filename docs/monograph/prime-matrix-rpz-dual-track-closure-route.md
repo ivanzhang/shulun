@@ -303,6 +303,7 @@ BCB accepted lower-row 选择器账本。
 selector gap 阈值账本。
 短候选端点相位账本。
 短候选端点禁区块公式账本。
+BCB 候选下层行相位身份账本。
 ```
 
 再新增
@@ -332,6 +333,9 @@ docs/monograph/prime-matrix-rpz-short-candidate-phase-ledger.md。
 experiments/prime_matrix_rpz_short_phase_block_formula.py；
 docs/monograph/prime-matrix-rpz-short-phase-block-formula.json；
 docs/monograph/prime-matrix-rpz-short-phase-block-formula.md。
+experiments/prime_matrix_rpz_bcb_candidate_phase_identity.py；
+docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.json；
+docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -406,6 +410,17 @@ mh-length+1 <= u <= (m-1)h+1。
 这里 `m mod P(h)` 为 rejected 行相位，块宽为 `length-h+1`。当前三族公式与枚举完全一致，
 实际端点到 all-rejected 集合距离为 `7,6,1`。因此下一硬点进一步收窄为候选行相位证明：
 正式 BCB 构造必须推出 `m mod P(h) in A_h`，否则进入对应 first-failure 出口。
+
+BCB 候选下层行相位身份账本把该相位写成 floor 身份：
+
+```text
+L=(R-1)P+1+s_min+T, U=RP+s_max-T,
+m_min=floor((L+h-2)/h)+1, m_max=floor(U/h)。
+```
+
+写 `P=Qh+d` 后，候选相位只依赖 `R mod hP(h)` 与平台参数。当前 `5/5` 条 BCB 样本公式匹配，
+`6/6` 个候选行相位 accepted。下一硬点不再是几何抽取，而是全局证明 formal BCB 的
+`R mod hP(h)` 落入这个 accepted preimage。
 
 本文没有完成：
 

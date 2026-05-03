@@ -283,6 +283,12 @@ all-rejected 类，或把这些类逐项送入 seam/PDEC/ColumnCRT 证书闭合�
 外审剩余不再是端点集合计算，而是证明正式 BCB 构造诱导的候选行相位属于 `A_h`，或闭合其
 first-failure 出口。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-candidate-phase-identity.md` 后，候选行相位不再是
+程序扫描黑箱，而是由 BCB 参数的 floor 身份给出。当前 `5/5` 条样本匹配核心区间与候选行，
+`6/6` 个候选行相位 accepted。外审前最后剩余输入是全局 residue implication：
+正式 BCB 反例的 `R mod hP(h)` 必须推出候选行相位属于 `A_h`；否则该 rejected 相位必须
+接入 first-failure seam/PDEC/ColumnCRT 证书。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

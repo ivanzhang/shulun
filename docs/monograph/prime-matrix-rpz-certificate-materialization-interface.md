@@ -162,6 +162,7 @@ BCB accepted lower-row 选择器账本。
 selector gap 阈值账本。
 短候选端点相位账本。
 短候选端点禁区块公式账本。
+BCB 候选下层行相位身份账本。
 ```
 
 本文没有完成：
@@ -308,3 +309,8 @@ accepted count 公式，剩余义务是把正式反例起始行的 `a mod r` 来
 all-rejected 端点集合等于 rejected 行相位的端点块并集。当前三族公式全部匹配枚举，实际端点
 到禁区距离为正。材料化接口的剩余输入是候选行相位归属证明 `m mod P(h) in A_h`；失败时
 直接填写该行相位的 first-failure 出口证书。
+
+新增 `prime-matrix-rpz-bcb-candidate-phase-identity.md` 后，候选行相位归属证明的输入已显式化：
+`m_min,m_max` 由 BCB 核心端点的 floor 身份给出，并且模 `P(h)` 只依赖 `R mod hP(h)` 与平台参数。
+当前 `6/6` 个候选行 accepted。材料化接口剩余为 accepted preimage 证明；若失败，则按该候选
+相位的 first-failure 键填入 seam/PDEC/ColumnCRT 证书。
