@@ -166,6 +166,11 @@ grid_success iff delta<=g。
 当前下降树 `20` 个实际转换节点全部满足该不等式，实际 `grid_fail` 节点为 `0`；闭式计数与
 相位枚举不一致数为 `0`。这仍是当前账本避开证书，不是全局正式下降路径避开证明。
 
+新增 `prime-matrix-rpz-formal-descent-phase-inequality.md` 后，逻辑边界进一步澄清：
+一旦一条正式下降路径已经存在，即每步有完整下层行包含且不被端点穿孔阻断，则
+`delta<=p-r` 由网格判据自动成立。真正未闭合的是正式下降路径的全局存在性；若不存在，
+第一处失败必为 `grid_fail` 或 `puncture_block` 有限相位，并回到 `SAE/PDEC/ColumnCRT`。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -198,6 +203,7 @@ RPZ-SAE/PDEC/ColumnCRT 证书材料化接口；
 RPZ 出口证书骨架包；
 当前 endpoint SAE 有限证书；
 当前 lower_descent_grid_fail 避开证书。
+正式下降路径相位不等式定理。
 ```
 
 本文没有完成：
@@ -212,6 +218,6 @@ SAE/PDEC/ColumnCRT 证书排斥；
 
 ```text
 LowerDescent-Grid persistence；
-证明正式下降路径全局满足 delta<=p-r；
-或提交 PDEC/ColumnCRT 排斥证书。
+证明每个正式反例分支都存在下降路径；
+或排除首阻断相位的 SAE/PDEC/ColumnCRT 证书。
 ```

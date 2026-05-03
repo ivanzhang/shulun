@@ -801,6 +801,13 @@ reduces every adjacent descent $p\to r$ to the exact test
 $\delta=-(a-1)(p-r)\bmod r$ and grid success iff $\delta\le p-r$.  The current descent tree
 has twenty actual transition nodes and none hits grid failure.  The remaining global task is
 to prove this phase inequality for formal descent paths, or route its failure to PDEC/ColumnCRT.
+The formal path note
+\[
+  \texttt{docs/monograph/prime-matrix-rpz-formal-descent-phase-inequality.md}
+\]
+sharpens this statement: once a formal descent path exists, the phase inequality is automatic
+from interval containment.  The true remaining task is path existence for every formal
+counterexample branch, or exclusion of the first obstruction phase through SAE/PDEC/ColumnCRT.
 
 These obligations are not typographical tasks.  They are the remaining theorem-level gates.  Until they are closed, the monograph may be submitted only as a synthesis, dependency, and verification manuscript, not as a final unconditional proof of the prime-matrix theorem, prime-pair assertions, or RH.
 

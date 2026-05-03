@@ -213,6 +213,11 @@ endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬�
 `20` 个全部避开该失败相位；这闭合当前账本，不闭合全局正式路径。外审前剩余是证明正式路径
 全局满足该相位不等式，或提交 `PDEC/ColumnCRT` 排斥证书。
 
+新增 `docs/monograph/prime-matrix-rpz-formal-descent-phase-inequality.md` 后，外审表述需更精确：
+若正式下降路径已经存在，则 `delta<=p-r` 是定义和网格判据的推论；未闭合的是路径存在性。
+如果路径不存在，第一处失败必为有限相位首阻断，并进入 `SAE/PDEC/ColumnCRT`。因此外审前
+剩余应写为“证明路径存在或排除首阻断相位证书”，而不是重复证明已存在路径的相位不等式。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

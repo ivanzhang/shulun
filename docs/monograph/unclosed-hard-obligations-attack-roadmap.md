@@ -567,6 +567,11 @@ lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行各 `3` 条。`puncture_block`
 剩余硬点因此变为全局相位控制：证明正式下降路径始终满足该不等式，或把违反族送入
 `PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-rpz-formal-descent-phase-inequality.md` 后，上述表述进一步校正：
+已存在的正式下降路径自动满足 `delta<=p-r`；真正未闭合的是“每个正式反例分支都存在这样的
+下降路径”。若路径不存在，第一处失败必是 `grid_fail/puncture_block` 有限相位，进入
+`SAE/PDEC/ColumnCRT`。当前最小硬点更新为：证明路径存在，或排除首阻断相位证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
