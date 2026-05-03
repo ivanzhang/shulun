@@ -141,3 +141,9 @@ SADP pressure <= 1+epsilon
 
 这就是 short-arc 层面的当前最窄剩余。
 
+后续低压残余优化见
+`docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-pressure-optimizer.md`。该文令
+`t=L/U`，定义最优压力
+`\Psi_{D0,R}(t)=sup_{0<=alpha<t}(t-alpha)/(D0(1-alpha)(D0/R+omega(alpha)))`。
+若无尖峰，则 `t` 落入一维阈值区；该低压区推出同一 formal unit 的 L2 平坦性
+`\sum g(a)^2 <= (1+(R-1)tau^2)U^2/R`，从而回接 `KLS-window / coefficient concentration`。

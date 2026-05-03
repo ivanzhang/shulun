@@ -210,4 +210,8 @@ Kloosterman 定理。
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md` 后，short-arc
 压力判据也是内部密度账本；外部 DI/BFI 只可能用于压力低残余进入低模 KLS-window 时。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-pressure-optimizer.md` 后，外部输入
+接口更明确：DI/BFI 若被使用，只能作用于 L2-flat residual 的 KLS-window 核验，而不是
+用于证明 short-arc 压力公式本身。
+
 该表未完成前，`DI/BFI` 只能作为 H3-DSB 的候选外部输入，不能宣称 H3 行命题外部定理版闭合。

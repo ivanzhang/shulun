@@ -458,6 +458,11 @@ cap 已被压成密度压力公式：
 则强制同一 formal unit 的局部密度尖峰，进入 PDEC 局部密度行或 `SAE/endpoint`；
 否则只剩显式参数残余不等式。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-pressure-optimizer.md` 后，压力低残余
+被写成 `t=L/U` 的一维阈值 `Psi_{D0,R}(t)<=1+epsilon`。该残余推出
+`\sum g(a)^2 <= (1+(R-1)tau^2)U^2/R` 与支持下界 `A>=R/(1+(R-1)tau^2)`，因此不再是
+short-arc 出口，而是 KLS-window 低二范数输入或 coefficient concentration 失败。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

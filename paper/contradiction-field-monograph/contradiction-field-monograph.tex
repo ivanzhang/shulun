@@ -1419,6 +1419,23 @@ lower bound, then its density relative to the global density $U/R$ is at least
 \]
 If this pressure exceeds $1+\epsilon$, a local-density PDEC row or SAE/endpoint certificate
 is forced; otherwise only the explicit parameter residual remains.
+The low-pressure residual is optimized in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-pressure-optimizer.md}.
+\]
+Writing $t=L/U$ and
+\[
+  \Psi_{D_0,R}(t)=
+  \sup_{0\le\alpha<t}
+  \frac{t-\alpha}{D_0(1-\alpha)(D_0/R+\omega(\alpha))},
+\]
+the residual is the one-dimensional condition $\Psi_{D_0,R}(t)\le1+\epsilon$.  This implies
+the same-unit flatness estimate
+\[
+  \sum_a g(a)^2\le \frac{1+(R-1)\tau^2}{R}U^2
+\]
+and the corresponding support lower bound.  Thus low-pressure short-arc mass is routed back
+to the KLS-window coefficient-norm check or to coefficient concentration.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

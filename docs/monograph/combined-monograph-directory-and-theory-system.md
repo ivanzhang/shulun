@@ -1422,6 +1422,10 @@ SAE/endpoint 证书。
 应改写为密度压力判据：压力超阈值进入 PDEC 局部密度行或 SAE/endpoint；压力低区间是
 显式参数残余。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-pressure-optimizer.md` 后，压力低区间
+进一步变成 `t=L/U` 阈值与 L2 平坦残余；合著稿应把它列入 KLS-window 系数二范数核验，
+而不是继续作为 short-arc 独立出口。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

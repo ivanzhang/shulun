@@ -198,6 +198,9 @@ PDEC 约束行或 `SAE/endpoint` 单窗出口。
 压成密度压力：
 `R(L-alpha U)/(D0(1-alpha)U(D0+omega(alpha)R))`。若该量超过 `1+epsilon`，
 则强制 PDEC 局部密度行或 `SAE/endpoint`；否则只剩显式参数残余不等式。
+`docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-pressure-optimizer.md` 将低压残余再压缩为
+`t=L/U` 的一维阈值 `Psi_{D0,R}(t)<=1+epsilon`；该残余推出同一 formal unit 的
+L2 平坦性与大支持，因此应回到 `KLS-window` 系数二范数核验或 coefficient concentration。
 
 ### 4.2 互补商窗口长度
 
@@ -273,5 +276,6 @@ H3-DSB bad row
 证明 KLS-window 覆盖活跃参数，并对每个 HLC formal unit 证明
 `U_CRT(B)<L_HLC(B)`，或把失败 Bohr-cap 全部物化为 PDEC/SAE 证书，
 并排除低有效模出口与 short-arc density pressure 残余，
+把低压平坦残余接入 KLS-window/coefficient 分支，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```
