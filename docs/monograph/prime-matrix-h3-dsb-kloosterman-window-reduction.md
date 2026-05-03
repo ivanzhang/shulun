@@ -194,6 +194,10 @@ PDEC 约束行或 `SAE/endpoint` 单窗出口。
 `docs/monograph/prime-matrix-h3-dsb-hlc-high-gcd-descent.md` 进一步证明 high-gcd 分支可无损
 下降到 `R'=R/d`：Fourier 系数与 Bohr-cap 质量都保持，且有效模数严格缩小。因此 high-gcd
 不再是独立剩余，只能终止于低有效模 PDEC/KLS 或 short-arc cap。
+`docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md` 继续把 short-arc cap
+压成密度压力：
+`R(L-alpha U)/(D0(1-alpha)U(D0+omega(alpha)R))`。若该量超过 `1+epsilon`，
+则强制 PDEC 局部密度行或 `SAE/endpoint`；否则只剩显式参数残余不等式。
 
 ### 4.2 互补商窗口长度
 
@@ -268,6 +272,6 @@ H3-DSB bad row
 ```text
 证明 KLS-window 覆盖活跃参数，并对每个 HLC formal unit 证明
 `U_CRT(B)<L_HLC(B)`，或把失败 Bohr-cap 全部物化为 PDEC/SAE 证书，
-并排除低有效模出口与 short-arc cap，
+并排除低有效模出口与 short-arc density pressure 残余，
 并逐项排除 high-frequency / concentration 两个逃逸分支。
 ```

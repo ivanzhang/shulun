@@ -127,3 +127,8 @@ high-gcd cap
 本文仍未证明低有效模 PDEC/ColumnCRT 出口和 short-arc cap 不可能；但它证明 high-gcd cap
 不能作为独立剩余障碍保留。
 
+后续 short-arc 压力判据见
+`docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md`。该文证明若
+short-arc 组件不产生局部密度尖峰，则必须满足显式标量不等式
+`R(L-alpha U)/(D0(1-alpha)U(D0+omega(alpha)R)) <= 1+epsilon`；否则该组件强制进入
+PDEC 局部密度约束或 `SAE/endpoint`。

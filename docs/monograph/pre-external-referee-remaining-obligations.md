@@ -537,6 +537,10 @@ PDEC/ColumnCRT 集中，小 `d` 的短弧组件被物化为通过的 PDEC 行或
 外审前不应再把 high-gcd 作为独立缺口；只需审查下降后的低有效模 PDEC/KLS 出口和
 short-arc 组件出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md` 后，short-arc
+出口应按密度压力审查：若压力 `>1+epsilon`，必须给出 PDEC 局部密度行或 SAE/endpoint
+证书；若压力 `<=1+epsilon`，必须列出参数残余区并说明由 KLS/PDEC/SAE 哪一项覆盖。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

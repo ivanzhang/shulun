@@ -1407,6 +1407,18 @@ $g'(b)=\sum_{a\equiv b\pmod {R'}}g(a)$ satisfies
 and the Bohr-cap mass is preserved.  Hence each high-gcd step strictly lowers the effective
 modulus and must terminate in a low-effective-modulus PDEC/KLS exit or in the short-arc
 case.
+The short-arc case is quantified in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md}.
+\]
+If a short arc has length at most $D_0+\omega(\alpha)R$ and mass forced by the Bohr-cap
+lower bound, then its density relative to the global density $U/R$ is at least
+\[
+  \frac{R(L-\alpha U)}
+  {D_0(1-\alpha)U(D_0+\omega(\alpha)R)}.
+\]
+If this pressure exceeds $1+\epsilon$, a local-density PDEC row or SAE/endpoint certificate
+is forced; otherwise only the explicit parameter residual remains.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

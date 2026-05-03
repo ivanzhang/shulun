@@ -143,3 +143,8 @@ Short-arc cap:
 若 `d=(h,R)>D_0`，则失败频率和 Bohr-cap 质量都无损投影到 `R'=R/d`：
 `\hat g_R(h)=\hat g_{R'}(h/d)`，且帽内质量保持。每次下降使有效模数至少缩小 `D_0`，
 所以 high-gcd cap 不能作为独立出口，最终回到低有效模 PDEC/KLS 或 short-arc cap。
+
+short-arc cap 的下一层密度压力见
+`docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md`：短弧组件若不形成
+局部密度尖峰，则必须满足显式压力不等式；若压力超过 `1+epsilon`，则强制进入
+PDEC 局部密度行或 `SAE/endpoint`。

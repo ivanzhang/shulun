@@ -452,6 +452,12 @@ CRT 容量化：固定左右小标签和差值给唯一低模类，叠加尾标�
 独立剩余：若 `d=(h,R)>D_0`，投影到 `R'=R/d` 保持 Fourier 系数与 Bohr-cap 质量，且
 有效模数严格下降。当前剩余随之收窄为低有效模 PDEC/KLS 出口和 short-arc cap 排斥。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md` 后，short-arc
+cap 已被压成密度压力公式：
+`Pi_arc>=R(L-alpha U)/(D0(1-alpha)U(D0+omega(alpha)R))`。若该压力超过 `1+epsilon`，
+则强制同一 formal unit 的局部密度尖峰，进入 PDEC 局部密度行或 `SAE/endpoint`；
+否则只剩显式参数残余不等式。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

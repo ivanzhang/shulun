@@ -1418,6 +1418,10 @@ SAE/endpoint 证书。
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-high-gcd-descent.md` 后，大 `d` 分支已无损下降
 到低有效模数 `R/d`，不再作为独立目录项保留；合著稿剩余应标为低有效模出口和短弧组件出口。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-short-arc-density-pressure.md` 后，短弧组件出口
+应改写为密度压力判据：压力超阈值进入 PDEC 局部密度行或 SAE/endpoint；压力低区间是
+显式参数残余。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
