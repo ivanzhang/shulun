@@ -344,6 +344,12 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 `D_y=V_y-R_y>V_y-B-2L`。取 `V_y>=(c+2lambda+eta)q/log q` 时得到
 `D_y>eta*q/log q`。因此 `SmallSkeletonOverload` 已送入 PDEC 缺陷；未闭合的是 PDEC 缺陷排斥。
 
+新增 `docs/monograph/prime-matrix-h3-tail-energy-fourier-bridge.md` 与
+`docs/monograph/prime-matrix-h3-unified-defect-criterion.md` 后，第二出口也已精确桥接：
+`E_y(d)>L` 等价于尾标签非零 Fourier 能量 `F_y(d)>dL`。合成定理为：
+若 `D_y<=V_y-B-2L` 且 `F_y(d)<=dL`，则 `M_H3(p,s)>=B`。这已经是全局无限尺度的完整
+条件闭合判据；未完成的是统一缺陷排斥估计 `D_y` 与 `F_y(d)` 的无条件证明。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

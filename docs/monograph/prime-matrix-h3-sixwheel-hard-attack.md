@@ -294,3 +294,33 @@ D_y>V_y-B-2L.
 
 取 `B=c q/log q`、`L=lambda q/log q` 且 `V_y>=(c+2lambda+eta)q/log q`，得到
 `D_y>eta q/log q`。因此小骨架过载已被严格送入低模 CRT/PDEC 缺陷；剩余是排斥该缺陷。
+
+## 12. 统一缺陷闭合判据
+
+新增：
+
+```text
+docs/monograph/prime-matrix-h3-tail-energy-fourier-bridge.md
+docs/monograph/prime-matrix-h3-unified-defect-criterion.md
+```
+
+第二出口由 Parseval 精确桥接：
+
+\[
+E_y(d)>L
+\iff
+\mathcal F_y(d)>dL.
+\]
+
+因此得到当前最强的严格全局判据：
+
+\[
+D_y\le V_y-B-2L
+\quad\text{and}\quad
+\mathcal F_y(d)\le dL
+\quad\Longrightarrow\quad
+M_{H3}(p,s)\ge B.
+\]
+
+这把 H3/行命题的剩余内容压缩到一个统一缺陷排斥定理：同时控制 `D_y` 与 `F_y(d)`。在该排斥
+定理证明前，本文状态仍是条件闭合判据，而不是无条件行命题证明。

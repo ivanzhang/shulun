@@ -187,3 +187,8 @@ low H3 margin
 补充文件 `docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md` 已把第一出口的组合桥接写成
 确定性不等式：小骨架过载推出 `y`-rough 计数亏损
 `D_y>V_y-B-2L`。因此后续真正剩余是排斥该 PDEC 缺陷，以及排斥尾标签能量缺陷。
+
+补充文件 `docs/monograph/prime-matrix-h3-tail-energy-fourier-bridge.md` 进一步把第二出口写成
+Parseval/Fourier 恒等式：`E_y(d)>L` 等价于尾标签非零低模 Fourier 能量
+`F_y(d)>dL`。最终合成判据见
+`docs/monograph/prime-matrix-h3-unified-defect-criterion.md`。

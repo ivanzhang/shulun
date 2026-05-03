@@ -1322,6 +1322,12 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 `(c+2lambda+eta)q/log q` 余量，则得到 `D_y>eta*q/log q`。因此 H3 目录状态应更新为：
 低余量反例必触发 `PDEC defect D_y` 或 `TailEnergy`；剩余是这两个缺陷的最终排斥。
 
+新增 `docs/monograph/prime-matrix-h3-tail-energy-fourier-bridge.md` 与
+`docs/monograph/prime-matrix-h3-unified-defect-criterion.md` 后，`TailEnergy` 也被精确写成
+`F_y(d)>dL` 的非零 Fourier/CRT 缺陷。当前 H3 主链的总公式为：
+`D_y<=V_y-B-2L` 且 `F_y(d)<=dL` 推出 `M_H3(p,s)>=B`。该公式是全局通用条件闭合判据；
+无条件 H3 仍等价于补齐统一缺陷排斥。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

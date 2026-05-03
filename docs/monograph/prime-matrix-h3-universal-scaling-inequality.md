@@ -234,3 +234,42 @@ D_y>\eta {q\over\log q}.
 
 这把 `SmallSkeletonOverload` 全局转化为低模 CRT/PDEC 缺陷。剩余是 PDEC 缺陷排斥，而不是骨架
 组合账本本身。
+
+## 9. 统一缺陷判据
+
+新增：
+
+```text
+docs/monograph/prime-matrix-h3-tail-energy-fourier-bridge.md
+docs/monograph/prime-matrix-h3-unified-defect-criterion.md
+```
+
+尾能量由 Parseval 精确改写为
+
+\[
+\mathcal F_y(d)=dE_y(d).
+\]
+
+因此对任意 `B,L`，若
+
+\[
+D_y\le V_y-B-2L,
+\qquad
+\mathcal F_y(d)\le dL,
+\]
+
+则必有
+
+\[
+M_{H3}(p,s)\ge B.
+\]
+
+代入 `B=c*q/log q`、`L=lambda*q/log q`，得到当前最强的全局通用定理化形式：
+
+```text
+No rough-count PDEC defect
+and no tail-label Fourier defect
+=> H3 margin >= c*q/log q.
+```
+
+这已经完整解释了数据洞察的理论机制；但无条件 H3 还需要证明这两个缺陷排斥估计本身。
