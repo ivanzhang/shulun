@@ -157,6 +157,7 @@ formal-family 下降相位自动机证书。
 formal-family rejected set 全量 seam 吸收证书。
 seam/PDEC/ColumnCRT 出口压力账本。
 accepted-set 符号阶梯证书。
+BCB 起始数字账本。
 ```
 
 本文没有完成：
@@ -280,3 +281,7 @@ delta_p(a)=-(a-1)(p-r) mod r <= p-r。
 
 该数字不等式失败时自动进入 seam 材料化链；成功时继续向下层下降。证书已在可枚举范围内核验
 accepted count 公式，剩余义务是把正式反例起始行的 `a mod r` 来源逐层证明出来。
+
+新增 `prime-matrix-rpz-bcb-start-digit-ledger.md` 后，当前 BCB-Core 样本的 `20` 个 digit 节点
+全部满足该不等式，且 `10` 个节点为 `margin=0`。这说明材料化接口的正向闭合必须依赖
+精确同余来源；若无法证明这些同余，则只能回到 seam/PDEC/ColumnCRT 出口排斥。

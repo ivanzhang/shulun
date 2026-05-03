@@ -298,6 +298,7 @@ formal-family 下降相位自动机证书。
 formal-family rejected set 全量 seam 吸收证书。
 seam/PDEC/ColumnCRT 出口压力账本。
 accepted-set 符号阶梯证书。
+BCB 起始数字账本。
 ```
 
 再新增
@@ -312,6 +313,9 @@ docs/monograph/prime-matrix-rpz-seam-exit-pressure-ledger.md。
 experiments/prime_matrix_rpz_symbolic_ladder_certificate.py；
 docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.json；
 docs/monograph/prime-matrix-rpz-symbolic-ladder-certificate.md。
+experiments/prime_matrix_rpz_bcb_start_digit_ledger.py；
+docs/monograph/prime-matrix-rpz-bcb-start-digit-ledger.json；
+docs/monograph/prime-matrix-rpz-bcb-start-digit-ledger.md。
 ```
 
 该证书把自动机拒绝集逐相位追踪到首个 `grid_fail` seam。当前范围内：
@@ -351,6 +355,9 @@ for every adjacent p->r, g=p-r:
 枚举核验计数公式无不一致，并把符号阶梯记录到 `p=97`。因此 Track B 的下一步不是再扩展
 有限相位表，而是证明 formal-family 起始行构造本身强制这些 `delta` 数字落入允许盒。
 
+BCB 起始数字账本显示当前样本的 `20` 个 digit 节点全部安全，但 `10` 个节点位于
+`margin=0` 边界。因此不能期待一个统一正余量；路线 A 必须走精确同余证明。
+
 本文没有完成：
 
 ```text
@@ -366,4 +373,5 @@ formal-family 避开 12 条 seam；
 或 12 条 endpoint-PDEC 上界 U_CRT<L_PDEC；
 或 10 个固定非零 ColumnCRTDefect 排斥证书。
 其中 formal-family 避开已等价压缩为逐层 delta 数字约束。
+当前样本还显示该数字约束是贴边成立，不能用粗余量替代。
 ```

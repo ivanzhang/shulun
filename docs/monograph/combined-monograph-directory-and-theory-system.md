@@ -1036,3 +1036,18 @@ first fail iff delta_p(a)>g。
 该证书在 `P(19)=9699690` 以内逐相位枚举核验计数公式无不一致，并把符号阶梯延伸到
 `p=97`。剩余证明义务不再是枚举 `A_p`，而是从正式反例构造本身推出每层
 `delta_p(a)<=g`；若某层失败，则已回流到前述 seam/PDEC/ColumnCRT 出口。
+
+新增 `docs/monograph/prime-matrix-rpz-bcb-start-digit-ledger.md` 后，当前 BCB-Core 起始行的实际
+数字也已逐项抽取：
+
+```text
+start rows = 6
+digit nodes = 20
+safe digit nodes = 20
+grid-fail digit nodes = 0
+boundary margin=0 nodes = 10
+minimum margin = 0
+```
+
+这说明当前样本确实全部避开 seam，但有一半节点贴在 `delta=gap` 边界上。下一步不能靠
+粗余量估计，必须从起始行构造中证明精确同余余类落入 allowed residues。

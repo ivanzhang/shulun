@@ -630,6 +630,11 @@ seam/PDEC/ColumnCRT：`27924` 个 rejected phase、`12` 个 distinct first-fail 
 `A_p` 计数公式在 `P(19)=9699690` 内逐相位核验无不一致，并符号记录到 `p=97`。下一轮应直接
 从 BCB/TailAnchor/条件零行构造中抽取 `a mod r` 约束，而不是继续枚举 `A_p`。
 
+新增 `docs/monograph/prime-matrix-rpz-bcb-start-digit-ledger.md` 后，当前 BCB 起始行的数字分布显示：
+`20` 个 digit 节点全安全、`0` 个 grid_fail，但 `10` 个节点在 `margin=0` 边界。该事实把下一硬点
+进一步收窄为“精确同余推导”：证明正式起始行模每个下层 `r` 的余类属于 allowed residues；
+不能尝试用统一正余量不等式代替。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。
