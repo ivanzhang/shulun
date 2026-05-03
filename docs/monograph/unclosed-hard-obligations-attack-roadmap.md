@@ -449,26 +449,27 @@ TRC / true residual balance
 2. `pre-external-referee-remaining-obligations.md` 已列出 H1--H10。
 3. `claim-status-table.md` 已记录该审查项。
 4. 主稿保留不可过度声明边界。
+5. 新增 `docs/monograph/claim-status-discipline.md`，固定六类状态、升级条件、禁止越界声明和机械检查命令。
+6. 主稿新增状态专用 theorem-like 环境：`Proved-in-text`、`Reduction-closed`、`External-theorem-closed`、`Computational-certificate`、`Referee-block`、`Not-claimed`。
 
 ### 10.2 仍可优化
 
-1. 在主稿中为 `Proved-in-text`、`Reduction-closed`、`External-theorem closed`、`Referee-block` 使用不同 theorem-like 环境；
+1. 把历史章节中的普通 theorem 环境逐步替换为状态专用环境；
 2. 给每个实验脚本建立用途索引；
 3. 将历史探索文档移入 archive，主线只保留当前最短链条。
 
 ### 10.3 可行性
 
-评级：A。
-这是纯文稿工程，可持续完成。
+评级：A，作者侧状态分级工程已完成第一版。
+剩余为编辑性替换和索引清理，不改变当前数学闭合状态。
 
 ## 11. 建议下一轮执行顺序
 
 ### 11.1 可立即完成的工程闭合
 
-1. `H7`：写 DI/BFI/KLS-window 引用适配模板；
-2. `H3`：写 BPN-LHB 证书复现表；
-3. `H10`：定理环境状态分级；
-4. `H1`：A/B 入口附录转 theorem list。
+1. `H1`：A/B 入口附录转 theorem list；
+2. 给每个实验脚本建立用途索引；
+3. 把历史章节中的普通 theorem 环境逐步替换为状态专用环境。
 
 ### 11.2 最值得继续硬攻的数学接口
 

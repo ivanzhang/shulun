@@ -366,3 +366,5 @@
 | BPN-LHB 证书复现账本 | H3已完成/外审复现包 | 新增 `docs/monograph/prime-matrix-bpn-lhb-certificate-reproduction-ledger.md`，列出低范围、窄带、尾段有限、显式尾段四组证书的脚本、JSON/Markdown 输出、验收标准和临时目录复现命令。本轮已修正窄带与显式尾段脚本的报告文字，使 8 个生成文件均可与仓库内对应文件字节级一致。该项闭合 BPN-LHB 子模块复现义务，但不升级 Prime Matrix 全局行列命题。 |
 
 | KLS-window DI/BFI适配模板 | H7外部深定理版闭合 | 新增 `docs/monograph/kls-window-di-bfi-adaptation-template.md`，把 `DI+BFI=>KLS-window=>BE2-3K=>BE2-3=>WBE2=>BMD` 写成可审稿适配链。模板逐项核验 CRT 相位到标准 Kloosterman 逆元相位、模数族、频率族、逆元变量、well-factorable 权重、gcd strata、端点平滑和 `B(A)` 对数损失吸收。该项只闭合 BMD 的外部深定理输入，不闭合 `BMD=>TLI`，也不把二点筛终局或孪生素数命题升级为无条件证明。 |
+
+| 命题状态纪律 | H10状态工程完成第一版 | 新增 `docs/monograph/claim-status-discipline.md`，固定 `Proved-in-text`、`Reduction-closed`、`External-theorem closed`、`Computational-certificate`、`Referee-block`、`Not claimed` 六类状态的允许结论、必须附件、禁止越界和升级条件。主稿同步新增六类状态专用 theorem-like 环境，并在 `Claim Status Legend` 中补入 `Computational-certificate`。该项不升级任何数学终局，只防止条件链被误写成无条件定理。 |

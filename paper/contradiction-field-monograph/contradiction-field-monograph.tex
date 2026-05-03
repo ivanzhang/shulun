@@ -14,9 +14,15 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{provedstatement}[theorem]{Proved-in-text Statement}
+\newtheorem{reductionstatement}[theorem]{Reduction-closed Statement}
+\newtheorem{externalstatement}[theorem]{External-theorem-closed Statement}
+\newtheorem{certificatestatement}[theorem]{Computational-certificate Statement}
+\newtheorem{refereestatement}[theorem]{Referee-block Statement}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{notclaimedstatement}[theorem]{Not-claimed Statement}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \title{Contradiction Fields: CRT Rigidity, Prime Matrix Geometry, and Zeta-Zero Escape}
@@ -478,10 +484,17 @@ Label & Meaning\\
 Proved-in-text & The statement is proved inside the manuscript under the stated hypotheses.\\
 Reduction-closed & The statement has been reduced to a smaller named interface.\\
 External-theorem closed & The statement is closed after citing explicitly named external theorems.\\
+Computational-certificate & The statement is closed over a finite range or certified submodule by reproducible scripts and archived outputs.\\
 Referee-block & A proof package exists, but it still requires line-by-line referee verification.\\
 Not claimed & The statement is not asserted as a theorem of the manuscript.\\
 \bottomrule
 \end{longtable}
+
+The status discipline and promotion rules are maintained in
+\[
+  \texttt{docs/monograph/claim-status-discipline.md}.
+\]
+The manuscript provides theorem-like environments with matching names for future editing.  A statement may be promoted only when its required proof, reduction endpoint, external theorem template, or certificate package is present.
 
 \section{External Theorem Index}
 

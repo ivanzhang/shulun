@@ -236,7 +236,7 @@ RH 章节必须保持 verification package 状态。外审前应完成：
 | H7 | DI/BFI 外部适配 | 已新增 `kls-window-di-bfi-adaptation-template.md`，完成 KLS-window 的相位、模数、频率、权重、gcd、平滑、`B(A)` 全表核验 | 外部深定理版闭合；完全自足版仍需重证 DI/BFI |
 | H8 | BMD 到 TLI | 明确为二点筛最重要的无隐藏下界审查 | 未闭合；若失败即 parity-transfer gap |
 | H9 | RH controlled exits | 改写为七项 controlled-exit 证明义务 | verification package；非 RH 证明 |
-| H10 | 合著稿状态工程 | 已新增主稿 `Pre-External-Referee Hard Obligations` 小节并链接本表 | 作者侧状态闭合完成 |
+| H10 | 合著稿状态工程 | 已新增 `claim-status-discipline.md`，并在主稿加入六类状态专用 theorem-like 环境 | 作者侧状态分级完成；剩余为编辑性替换 |
 
 因此，“逐项完成”的当前可交付结果是：所有最硬剩余已被归入唯一审稿义务链，且每项都标明了可闭合条件和不能过度声明的边界。真正的数学定理级缺口仍需新增证明，不能由文稿整理或实验扫描替代。
 
@@ -253,7 +253,7 @@ RH 章节必须保持 verification package 状态。外审前应完成：
 该路线图把下一步执行顺序明确为：
 
 ```text
-可立即完成：H10状态分级、H1入口定理化；H3证书复现账本与H7 DI/BFI适配模板已完成；
+可立即完成：H1入口定理化；H3证书复现账本、H7 DI/BFI适配模板、H10状态分级已完成；
 最值得硬攻：H5 RRD/OSPC、H4 Rankin/PDEC/SAE、H2 RHI/PM-R2B；
 必须保持条件：H6 I3-Core、H8 BMD=>TLI、H9 RH controlled exits。
 ```
