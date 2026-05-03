@@ -263,3 +263,34 @@ E_y(d)>L
 
 其中 `d>=2(floor(q/ell_+(y))+1)`。证明只用 first-factor 分解、短窗容量和整数二次能量恒等式。
 取 `B=c q/log q`、`L=lambda q/log q`，就得到全局无限通用的尺度缺陷公式。
+
+## 11. 小骨架过载的 PDEC 桥接
+
+新增：
+
+```text
+docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md
+```
+
+该桥接证明第一出口不是口号。若
+
+\[
+C_y>\#A_s-B-2L,
+\]
+
+则 `R_y=#A_s-C_y<B+2L`。令
+
+\[
+V_y=\#A_s\prod_{5\le r\le y}\left(1-{1\over r}\right),
+\qquad
+D_y=V_y-R_y.
+\]
+
+于是
+
+\[
+D_y>V_y-B-2L.
+\]
+
+取 `B=c q/log q`、`L=lambda q/log q` 且 `V_y>=(c+2lambda+eta)q/log q`，得到
+`D_y>eta q/log q`。因此小骨架过载已被严格送入低模 CRT/PDEC 缺陷；剩余是排斥该缺陷。

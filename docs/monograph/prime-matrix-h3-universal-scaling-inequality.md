@@ -201,3 +201,36 @@ M_H3 below c q/log q
 ```
 
 这是全局无限通用的缺陷公式。剩余不是组合推导，而是排除这两个缺陷出口。
+
+## 8. 第一出口的 PDEC 桥接
+
+新增：
+
+```text
+docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md
+```
+
+该文件证明：若
+
+\[
+C_y>\#A_s-B-2L,
+\]
+
+则 `R_y=#A_s-C_y<B+2L`，从而
+
+\[
+D_y
+=\#A_s\prod_{5\le r\le y}\left(1-{1\over r}\right)-R_y
+>
+V_y-B-2L.
+\]
+
+取 `B=c*q/log q`、`L=lambda*q/log q`，若
+`V_y>=(c+2lambda+eta)q/log q`，则强制
+
+\[
+D_y>\eta {q\over\log q}.
+\]
+
+这把 `SmallSkeletonOverload` 全局转化为低模 CRT/PDEC 缺陷。剩余是 PDEC 缺陷排斥，而不是骨架
+组合账本本身。

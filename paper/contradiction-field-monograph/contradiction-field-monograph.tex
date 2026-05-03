@@ -1122,6 +1122,24 @@ holds for every adjacent pair $p<q$ and every row window $2\le s\le q$.  Substit
 $B=cq/\log q$ and $L=\lambda q/\log q$ gives a uniform infinite-scale defect formula.
 This is still not the final H3 lower bound: the remaining theorem-level exits are
 SmallSkeletonOverload $\Rightarrow$ Tail/PDEC and TailEnergy $\Rightarrow$ H3-PDEC/ColumnCRT.
+The first exit is bridged in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md}.
+\]
+Let
+\[
+  V_y=\#A_s\prod_{5\le r\le y}\left(1-\frac1r\right),
+  \qquad
+  D_y=V_y-R_y,
+\]
+where $R_y=\#\{n\in A_s:P^-(n)>y\}$.  The overload inequality
+$C_y>\#A_s-B-2L$ gives $R_y<B+2L$, hence
+\[
+  D_y>V_y-B-2L.
+\]
+Thus, whenever $V_y\ge(c+2\lambda+\eta)q/\log q$, small-skeleton overload forces a
+PDEC defect of size $D_y>\eta q/\log q$.  The remaining issue is not this bridge, but the
+exclusion of such persistent PDEC defects and of the tail-energy alternative.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

@@ -183,3 +183,7 @@ low H3 margin
 2. `TailEnergy=>H3-PDEC/ColumnCRT`。
 
 这比单纯 Mertens 期望强：它不声称直接有正余量，而是证明任何低余量反例都必须付出可量化的缺陷能量或小骨架过载。
+
+补充文件 `docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md` 已把第一出口的组合桥接写成
+确定性不等式：小骨架过载推出 `y`-rough 计数亏损
+`D_y>V_y-B-2L`。因此后续真正剩余是排斥该 PDEC 缺陷，以及排斥尾标签能量缺陷。

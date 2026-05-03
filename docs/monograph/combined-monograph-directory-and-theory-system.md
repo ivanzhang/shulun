@@ -1317,6 +1317,11 @@ H3 自然幸存尺度为 `q/log q`；数据中 bucket 平均余量与此尺度�
 尺度缺陷公式。当前目录应把 H3 主链标为“组合缺陷二分已证，出口排斥未闭合”，剩余出口为
 `SmallSkeletonOverload=>Tail/PDEC` 与 `TailEnergy=>H3-PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md` 后，`SmallSkeletonOverload`
+出口也已桥接到具体 PDEC 量：`D_y=V_y-R_y>V_y-B-2L`。若 `V_y` 具有
+`(c+2lambda+eta)q/log q` 余量，则得到 `D_y>eta*q/log q`。因此 H3 目录状态应更新为：
+低余量反例必触发 `PDEC defect D_y` 或 `TailEnergy`；剩余是这两个缺陷的最终排斥。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

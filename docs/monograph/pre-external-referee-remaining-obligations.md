@@ -360,6 +360,11 @@ SmallSkeletonOverload、ManyLabel-PDEC、Endpoint-SAE/ColumnCRT 的逐项证明�
 2. 证明 `TailEnergy(d,L)=>H3-PDEC/ColumnCRT` 的低模能量排斥。
 这两个出口未闭合前，正文只能宣称全局确定性缺陷二分，不能宣称 H3/行命题无条件闭合。
 
+新增 `docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md` 后，第 1 项已从“阈值上界”改写为
+精确 PDEC 入口：`SmallSkeletonOverload` 推出 `D_y>V_y-B-2L`。外审前剩余不再是证明
+`SmallSkeletonOverload` 会产生缺陷，而是证明该大小的 `D_y` 缺陷不能在坏窗集合中持续，或必须
+进入既有 `PDEC/SAE/ColumnCRT` 排斥证书。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

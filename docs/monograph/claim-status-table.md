@@ -339,6 +339,11 @@ punctured zero window，而不是自动下层零行。已知 `5` 个首零行样
 `M_H3>=c*q/log q`”，而是“低于该尺度必进入两个出口”：`SmallSkeletonOverload=>Tail/PDEC`
 或 `TailEnergy=>H3-PDEC/ColumnCRT`。
 
+新增 `docs/monograph/prime-matrix-h3-small-skeleton-pdec-bridge.md` 后，第一出口已有确定性桥接：
+小骨架过载 `C_y>#A_s-B-2L` 等价于 `y`-rough 剩余 `R_y<B+2L`，从而强制
+`D_y=V_y-R_y>V_y-B-2L`。取 `V_y>=(c+2lambda+eta)q/log q` 时得到
+`D_y>eta*q/log q`。因此 `SmallSkeletonOverload` 已送入 PDEC 缺陷；未闭合的是 PDEC 缺陷排斥。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为
