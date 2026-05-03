@@ -637,6 +637,28 @@ Thus fixed-offset-full-load is no longer an unnamed escape.  It routes to expans
   \text{persistent PDEC or sparse SAE/Endpoint}.
 \]
 
+\section{FO-PDEC Low-Mod Equations}
+
+The low-mod equation audit is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fo-pdec-hard-attack.md}.
+\]
+For every missing candidate $n=b+d=(r-1)q+c$ and every explaining factor $\ell$, the exact CRT equation is
+\[
+  r\equiv 1-cq^{-1}\pmod{\ell}.
+\]
+If $b=uv$ is the corresponding two-tail semiprime, the same missing candidate also satisfies
+\[
+  uv+d\equiv0\pmod{\ell}.
+\]
+The finite audit checks $43$ such low-mod equations in the tight fixed-offset ledger.  There are no CRT-equation failures and no bilinear-equation failures.
+
+This closes the equation layer of FO-PDEC.  It does not close the global theorem.  The remaining target is the quantitative inequality
+\[
+  \text{low-mod defect energy}\ge \text{PDEC threshold},
+\]
+unless the non-persistent part is absorbed by SAE/Endpoint.
+
 \section{Claim Status Legend}
 
 The monograph uses the following status labels.

@@ -747,6 +747,35 @@ Fixed-offset-full-load
 `FO-PDEC`：证明分散解释因子必产生 persistent low-mod 缺陷，或作为稀疏端点逃逸被
 `SAE/Endpoint` 排除。
 
+新增 `experiments/prime_matrix_wsh_fo_pdec_lowmod_audit.py`、
+`docs/monograph/prime-matrix-wsh-fo-pdec-lowmod-audit.md/json` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-hard-attack.md` 后，`FO-PDEC` 的方程层已经闭合。
+每个缺失候选 `n=b+d=(r-1)q+c` 与解释因子 `ell` 给出：
+
+```text
+r == 1 - c*q^{-1} mod ell
+uv + d == 0 mod ell
+```
+
+有限账本结果：
+
+```text
+lowmod equations = 43
+CRT equation failures = 0
+bilinear equation failures = 0
+distinct explaining factors = 21
+max same (q,row,factor) load = 2
+```
+
+这把 `FO-PDEC` 的剩余压成一个单一能量不等式：
+
+```text
+low-mod defect energy >= PDEC threshold
+or non-persistent part is SAE/Endpoint.
+```
+
+该不等式尚未证明；因此不能宣称 `WSH-Hall/PDEC` 或方阵行列命题已全局无条件闭合。
+
 ## 17. CRT 行反射的可用与不可用部分
 
 针对“第 `k` 行全覆盖是否迫使倒数第 `k` 行全覆盖并产生短周期”的新想法，

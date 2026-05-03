@@ -123,6 +123,19 @@ or sparse SAE/Endpoint escape.
 
 该项仍未排除最终出口；它只证明固定偏移满载不再是未命名逃逸。
 
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-hard-attack.md` 与
+`docs/monograph/prime-matrix-wsh-fo-pdec-lowmod-audit.md/json` 后，`FO-PDEC` 进一步被压成
+低模能量不等式。方程层已经逐项核验：`43` 条低模方程、`0` 个 CRT 方程失败、`0` 个双线性
+方程失败。外审前剩余的精确义务是：
+
+```text
+FO-PDEC-E:
+low-mod defect energy >= explicit PDEC threshold,
+unless SAE/Endpoint absorbs the non-persistent part.
+```
+
+这仍是定量不等式缺口，不是文本工程缺口。
+
 ### PM-C. BPN-BK / BPN-LHB 子模块
 
 已较强闭合的部分：

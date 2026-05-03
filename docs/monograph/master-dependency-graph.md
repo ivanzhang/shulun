@@ -35,6 +35,17 @@ Fixed-offset-full-load
 ```
 
 剩余全局缺口是 `FO-PDEC` 与最终 `Endpoint/PDEC/SAE` 出口排斥。
+`FO-PDEC` 已再拆为：
+
+```text
+FO-PDEC
+  -> exact low-mod row equation
+  -> exact tail bilinear equation
+  -> low-mod defect energy threshold
+  -> PDEC or SAE/Endpoint
+```
+
+其中前两项已方程化闭合，能量阈值仍未证明。
 
 ## 2. RH 依赖链
 

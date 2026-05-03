@@ -137,3 +137,45 @@ Fixed-offset-full-load 不再是未命名逃逸；
 Endpoint/PDEC exclusion
 plus SAE local escape exclusion.
 ```
+
+## 6. FO-PDEC 低模方程层更新
+
+新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_lowmod_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-lowmod-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-hard-attack.md
+```
+
+后，`FO-PDEC` 的方程层已经闭合。每个缺失候选 `n=b+d=(r-1)q+c` 与解释因子
+`ell in (13,p]` 都给出精确行相位方程
+
+\[
+  r\equiv1-cq^{-1}\pmod{\ell},
+\]
+
+同时若 `b=uv`，则给出双尾双线性方程
+
+\[
+  uv+d\equiv0\pmod{\ell}.
+\]
+
+有限账本核验：
+
+```text
+lowmod equations = 43
+CRT equation failures = 0
+bilinear equation failures = 0
+semiprime factor failures = 0
+max same (q,row,factor) load = 2
+```
+
+因此当前状态应更新为：
+
+```text
+FO-PDEC equation layer closed;
+global FO-PDEC energy inequality open.
+```
+
+剩余唯一硬点是证明低模缺陷能量超过 `PDEC` 阈值，或证明不持久时必进入 `SAE/Endpoint`。

@@ -224,6 +224,35 @@ or SAE/Endpoint.
 下一步应直接为 `FO-PDEC` 构造测试函数或线性账本；若无法证明，就必须保持
 `WSH-Hall/PDEC` 为归约状态。
 
+新增 `FO-PDEC` 低模审计后，路线 C 的最小硬点更新为：
+
+```text
+FO-PDEC equation layer: closed.
+FO-PDEC energy inequality: open.
+```
+
+已核验方程：
+
+```text
+n=b+d=(r-1)q+c, ell|n
+=> r == 1-c*q^{-1} mod ell
+
+b=uv
+=> uv+d == 0 mod ell
+```
+
+下一步不应再证明这些恒等式，而应直接攻：
+
+```text
+sum_{ell,rho} positive low-mod excess
+  >= L_PDEC
+or non-persistent equations
+  => SAE/Endpoint.
+```
+
+可行优先级：先构造 `L_PDEC` 的显式阈值和同一坏窗集合的测试函数，再尝试证明
+`U_CRT<L_PDEC`。
+
 ### 2.5 可行性
 
 评级：C。

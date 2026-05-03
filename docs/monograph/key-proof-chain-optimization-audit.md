@@ -457,3 +457,9 @@ RH-1 explicit-formula entrance
 解释。有限账本在 `11` 条满载偏移行上核验无未解释候选。当前最小硬点更新为
 `FO-PDEC`：分散解释因子必须产生 persistent low-mod CRTDefect/PDEC，或进入稀疏
 `SAE/Endpoint`。这是真正出口排斥，不应被写作已经完成的无条件闭合。
+
+新增 `docs/monograph/prime-matrix-wsh-fo-pdec-hard-attack.md` 与
+`experiments/prime_matrix_wsh_fo_pdec_lowmod_audit.py` 后，`FO-PDEC` 继续压缩：
+每条缺失候选都严格给出 `r=1-cq^{-1} mod ell` 与 `uv+d=0 mod ell` 两个方程，
+有限账本 `43` 条方程无失败。当前最窄硬点已不是结构发现，而是定量能量：
+证明这些低模方程的正超额达到 `PDEC` 阈值，或把非持久部分送入 `SAE/Endpoint`。
