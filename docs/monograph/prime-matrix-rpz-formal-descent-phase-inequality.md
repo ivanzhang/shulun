@@ -101,15 +101,16 @@ P(r)=\prod_{\ell\le r}\ell
 给定任何形式反例分支，从上层 BCB 条件零行开始尝试下降。若存在正式下降路径，则每一步满足
 `(Path-GD)`，最终到达 `p=2` 时产生直接矛盾。
 
-若不存在正式下降路径，取第一处失败的相邻转换 `p -> r`。则该失败必属于有限账本中的
-`grid_fail` 或 `puncture_block` 相位。因此：
+若不存在正式下降路径，取第一处失败的相邻转换 `p -> r`。在
+`prime-matrix-rpz-first-obstruction-dichotomy.md` 中进一步证明：端点穿孔不可能阻断完整下层行，
+因此第一失败实际只能是 `grid_fail` 相位。因此：
 
 ```text
 formal descent path exists
 => p=2 contradiction；
 
 formal descent path does not exist
-=> first obstruction phase
+=> first grid_fail seam phase
 => SAE if sparse；
 => PDEC/ColumnCRT if persistent or carrying displacement structure。
 ```
@@ -117,7 +118,7 @@ formal descent path does not exist
 这就是目前可严格提交的全局二分。它没有排除 `PDEC/ColumnCRT`，但已经证明：
 
 1. 正式下降路径一旦存在，`delta<=p-r` 全程成立；
-2. 任何违反 `delta<=p-r` 的分支不是未命名逃逸，而是首阻断相位；
+2. 任何违反 `delta<=p-r` 的分支不是未命名逃逸，而是首个 `grid_fail` seam 相位；
 3. 首阻断相位已被接入 `SAE/PDEC/ColumnCRT` 证书接口。
 
 ## 5. 下一硬点

@@ -218,6 +218,10 @@ endpoint SAE-FIN 行已真空闭合；全局 SAE 排斥仍未完成，下一硬�
 如果路径不存在，第一处失败必为有限相位首阻断，并进入 `SAE/PDEC/ColumnCRT`。因此外审前
 剩余应写为“证明路径存在或排除首阻断相位证书”，而不是重复证明已存在路径的相位不等式。
 
+新增 `docs/monograph/prime-matrix-rpz-first-obstruction-dichotomy.md` 后，首阻断类型进一步唯一化：
+端点穿孔不可能阻断完整下层行，所以不存在 `puncture_block` 第三逃逸。外审前剩余压缩为：
+排除 first-grid-fail seam 相位的 `SAE/PDEC/ColumnCRT` 证书。
+
 新增 `docs/monograph/h4-pdec-column-defect-routing-contract.md` 后，
 `ColumnRadius/ColumnCRT` 的条件路由元数据已定式化：半径缺陷使用
 `D_0`、列见证选择器和相位兼容权重 `W_D(t)`；位移余类缺陷使用标签 `ell`、非零余类 `a`、

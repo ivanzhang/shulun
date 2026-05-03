@@ -572,6 +572,10 @@ lower-descent `grid_fail` 的 `PDEC/ColumnCRT` 行各 `3` 条。`puncture_block`
 下降路径”。若路径不存在，第一处失败必是 `grid_fail/puncture_block` 有限相位，进入
 `SAE/PDEC/ColumnCRT`。当前最小硬点更新为：证明路径存在，或排除首阻断相位证书。
 
+新增 `docs/monograph/prime-matrix-rpz-first-obstruction-dichotomy.md` 后，端点穿孔阻断被全局排除：
+完整下层行若含端点 `ap`，则必有 `r|a`，与端点复活所需的 `r∤a` 矛盾。因此首阻断唯一可能是
+`grid_fail` seam 相位。当前最小硬点收窄为 first-grid-fail seam 的 `PDEC/ColumnCRT` 排斥证书。
+
 ### 4.3 SAE local escape exclusion
 
 目标：孤立坏窗不能逃过 PDEC。

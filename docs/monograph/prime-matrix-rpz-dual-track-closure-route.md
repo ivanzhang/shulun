@@ -171,6 +171,10 @@ grid_success iff delta<=g。
 `delta<=p-r` 由网格判据自动成立。真正未闭合的是正式下降路径的全局存在性；若不存在，
 第一处失败必为 `grid_fail` 或 `puncture_block` 有限相位，并回到 `SAE/PDEC/ColumnCRT`。
 
+新增 `prime-matrix-rpz-first-obstruction-dichotomy.md` 后，首阻断进一步收窄：端点穿孔不能阻断
+完整下层行。若完整 `r` 行包含端点 `ap`，则其右端点必须等于 `ap`，从而 `r|a`；但端点实际复活
+要求 `a` 避开所有 `<=r` 素数，矛盾。因此不下降分支的唯一首阻断是 `grid_fail` seam 相位。
+
 ## 5. 双轨合成
 
 当前 RPZ 链条可写成：
@@ -204,13 +208,14 @@ RPZ 出口证书骨架包；
 当前 endpoint SAE 有限证书；
 当前 lower_descent_grid_fail 避开证书。
 正式下降路径相位不等式定理。
+首阻断 grid_fail 二分定理。
 ```
 
 本文没有完成：
 
 ```text
 全局下降网格条件；
-SAE/PDEC/ColumnCRT 证书排斥；
+first-grid-fail seam 相位的 SAE/PDEC/ColumnCRT 证书排斥；
 最终 Prime Matrix 行命题无条件闭合。
 ```
 
@@ -218,6 +223,5 @@ SAE/PDEC/ColumnCRT 证书排斥；
 
 ```text
 LowerDescent-Grid persistence；
-证明每个正式反例分支都存在下降路径；
-或排除首阻断相位的 SAE/PDEC/ColumnCRT 证书。
+排除 first-grid-fail seam 相位的 SAE/PDEC/ColumnCRT 证书。
 ```

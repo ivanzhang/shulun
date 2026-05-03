@@ -263,6 +263,10 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 首阻断相位进入 `SAE/PDEC/ColumnCRT`。因此当前剩余是证明所有正式反例分支存在下降路径，
 或排除首阻断相位证书。
 
+新增 `docs/monograph/prime-matrix-rpz-first-obstruction-dichotomy.md` 后，端点穿孔阻断全局排除；
+首阻断唯一可能是 `grid_fail` seam 相位。当前 RPZ 剩余更新为 first-grid-fail seam 的
+`SAE/PDEC/ColumnCRT` 排斥证书。
+
 新增 `docs/monograph/prime-matrix-gje-sae-terminal-band-decomposition.md` 后，`GJE-SAE` 又被拆成低行段与终端带：指数 `theta>1/2` 的普通短区间素数输入最多覆盖 `s<=q^{1/theta-1}` 量级低行段，不能覆盖 `s≈q` 的终端行。终端带经 `m=q^2-n` 镜像后成为“每个旧素数 `ell<=p` 只允许非零类 `q^2 mod ell`”的 CRT 覆盖问题。当前最小硬核更新为 `Terminal-SAE/PDEC`。
 
 新增 `docs/monograph/prime-matrix-terminal-sae-split-audit.md` 与 `docs/monograph/prime-matrix-terminal-sae-split-inequality.md` 后，终端带又被压成分层骨架/尾命中不等式。取 `y=max(2,floor(p/e))`，低筛骨架数 `G_y(h)` 若大于尾素数命中重数 `T_y(h)`，则尾素数无法覆盖骨架，终端行必有旧筛幸存者。审计到 `p<=1000` 的全部终端镜像块均满足正余量；当前最小硬点更新为 `TSI-or-PDEC`。
