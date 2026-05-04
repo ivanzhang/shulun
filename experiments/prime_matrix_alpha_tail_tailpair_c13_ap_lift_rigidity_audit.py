@@ -102,12 +102,16 @@ def lift_row(
                                 }
                             )
     active_lift_values = sorted(active_lifts)
+    possible_lift1_count = possible_lifts.get(1, 0)
+    possible_lift_ge2_count = sum(count for lift, count in possible_lifts.items() if lift >= 2)
     return {
         "p": prime_bound,
         "block": block,
         "shift": shift,
         "m": point_count,
         "active_deletions": sum(active_lifts.values()),
+        "possible_lift1_count": possible_lift1_count,
+        "possible_lift_ge2_count": possible_lift_ge2_count,
         "active_lift_hist": dict(sorted(active_lifts.items())),
         "possible_lift_hist": dict(sorted(possible_lifts.items())[:12]),
         "max_possible_lift": max_possible_lift,
@@ -140,6 +144,8 @@ def lift_package(
             "active_deletions": 0,
             "active_lift1_count": 0,
             "active_lift_ge2_count": 0,
+            "possible_lift1_count": 0,
+            "possible_lift_ge2_count": 0,
             "max_possible_lift": 0,
         }
     )
@@ -147,6 +153,8 @@ def lift_package(
         "active_deletions": 0,
         "active_lift1_count": 0,
         "active_lift_ge2_count": 0,
+        "possible_lift1_count": 0,
+        "possible_lift_ge2_count": 0,
         "max_possible_lift": 0,
     }
     for prime_bound, block, shift in parse_selected(selected):
@@ -156,7 +164,13 @@ def lift_package(
             item = lift_row(prime_bound, block, shift, point_count, alpha, num_primes)
             rows.append(item)
             key = (prime_bound, block, shift)
-            for name in ("active_deletions", "active_lift1_count", "active_lift_ge2_count"):
+            for name in (
+                "active_deletions",
+                "active_lift1_count",
+                "active_lift_ge2_count",
+                "possible_lift1_count",
+                "possible_lift_ge2_count",
+            ):
                 windows[key][name] += item[name]
                 total[name] += item[name]
             windows[key]["max_possible_lift"] = max(windows[key]["max_possible_lift"], item["max_possible_lift"])
@@ -182,27 +196,30 @@ def lift_package(
 def print_table(package: dict) -> None:
     """输出提升层刚性表。"""
     total = package["total"]
-    print("scope active lift1 lift_ge2 max_possible_lift all_active_lift1", flush=True)
+    print("scope active lift1 lift_ge2 possible_lift1 possible_lift_ge2 max_possible_lift all_active_lift1", flush=True)
     print(
         f"highP-total {total['active_deletions']} {total['active_lift1_count']} "
-        f"{total['active_lift_ge2_count']} {total['max_possible_lift']} "
+        f"{total['active_lift_ge2_count']} {total['possible_lift1_count']} "
+        f"{total['possible_lift_ge2_count']} {total['max_possible_lift']} "
         f"{total['all_active_lift1']}",
         flush=True,
     )
-    print("p block shift active lift1 lift_ge2 max_possible_lift all_active_lift1", flush=True)
+    print("p block shift active lift1 lift_ge2 possible_lift1 possible_lift_ge2 max_possible_lift all_active_lift1", flush=True)
     for row in package["windows"]:
         print(
             f"{row['p']} {row['block']} {row['shift']} {row['active_deletions']} "
             f"{row['active_lift1_count']} {row['active_lift_ge2_count']} "
+            f"{row['possible_lift1_count']} {row['possible_lift_ge2_count']} "
             f"{row['max_possible_lift']} {row['all_active_lift1']}",
             flush=True,
         )
-    print("p block shift m active lift_hist lift_ge2 offset_min offset_max top_offsets", flush=True)
+    print("p block shift m active possible_lift1 possible_lift_ge2 lift_hist lift_ge2 offset_min offset_max top_offsets", flush=True)
     for row in package["rows"]:
         offsets = ",".join(f"{offset}:{count}" for offset, count in row["top_offsets"].items())
         print(
             f"{row['p']} {row['block']} {row['shift']} {row['m']} "
-            f"{row['active_deletions']} {row['active_lift_hist']} "
+            f"{row['active_deletions']} {row['possible_lift1_count']} "
+            f"{row['possible_lift_ge2_count']} {row['active_lift_hist']} "
             f"{row['active_lift_ge2_count']} {row['active_offset_min']} "
             f"{row['active_offset_max']} {offsets}",
             flush=True,
