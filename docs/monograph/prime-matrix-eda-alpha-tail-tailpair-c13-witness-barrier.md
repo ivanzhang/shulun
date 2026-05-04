@@ -98,6 +98,10 @@ d=qu-j1*r 的端点相位。
 因此 persistent 分支不再是一个松散的“端点过密”事件，而是同一端点相位下固定差值尾素对
 反复出现。
 
+具体相位输入格式与同商数锁定恒等式已在
+`prime-matrix-eda-alpha-tail-tailpair-c13-witness-phase-ledger.md` 中物化：每个见证原子
+携带 `Q_pair=q(q+g)`、`tau_pair=d mod Q_pair` 和端点深度 `depth`。
+
 ## 4. 审计脚本
 
 脚本：
@@ -136,7 +140,8 @@ min_extra_to_failure 1 max_required_C 1.292474
 C13 失败质量被物化为具体尾素对见证；
 删除见证后整数余量严格恢复为 1；
 样本 C13 见证失败集合为空；
-最紧样本的 extra_to_failure=1。
+最紧样本的 extra_to_failure=1；
+见证原子已可接入相位/PDEC 输入账本。
 ```
 
 仍未完成：
