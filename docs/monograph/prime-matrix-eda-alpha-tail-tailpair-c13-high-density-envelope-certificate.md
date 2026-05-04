@@ -103,6 +103,10 @@ HighDensityEnvelope
 => stitching/ColumnCRT or endpoint-band density contradiction.
 ```
 
+下一层一维化见 `prime-matrix-eda-alpha-tail-tailpair-c13-layer-interval-reduction.md`：
+固定层内 `h` 与 `q` 一一对应，因此高密度层给出一个普通固定 gap q-区间
+`J_band`，其中至少有 `S_m(E)` 个尾素对 `q,q+g`。
+
 当前 `eta=1/25` 的压力样本没有该出口；但若全局证明中出现高密度 envelope，本文给出其
 必须提交的证书格式和下游矛盾接口。
 
@@ -113,6 +117,7 @@ HighDensityEnvelope
 ```text
 HighDensityEnvelope 的层投影鸽巢引理；
 层级高密度端点素对块证书格式；
+一维固定 gap q-区间归约接口；
 脚本可输出 eta=0.03 路线测试中的高密度证书。
 ```
 
