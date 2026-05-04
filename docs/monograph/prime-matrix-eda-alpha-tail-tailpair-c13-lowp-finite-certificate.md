@@ -87,11 +87,39 @@ p=5003  : D_even-capacity/D2=0.780430；
 p=10007 : D_even-capacity/D2=0.736789。
 ```
 
+更细的 `D2=M2-B2` 余量账本见
+`prime-matrix-eda-alpha-tail-tailpair-c13-highp-d2-margin.md`。该账本把 `(LFC-3)` 等价改写为
+
+\[
+{B_2\over M_2}
+\le
+1-{|M|\eta D_{\rm even}\over M_2}.
+\tag{LFC-4}
+\]
+
+当前高 `P` 样本总量为：
+
+```text
+Cap_even=7476.160000；
+D2=9964.123717；
+margin=2487.963717；
+Cap_even/D2=0.750308。
+```
+
+逐窗口最紧者仍是 `p=5003`：
+
+```text
+Cap_even=2408.880000；
+D2=3086.607367；
+margin=677.727367；
+Cap_even/D2=0.780430。
+```
+
 因此当前样本的高 `P` 接口可定为
 
 \[
 c_*=0.781.
-\tag{LFC-4}
+\tag{LFC-5}
 \]
 
 正式全局证明必须证明所有 `P>P_fin` 目标窗口满足 `(LFC-3)`，或把超出者送入
@@ -107,7 +135,9 @@ P<=1000:
 
 P>1000:
   D_even divisor envelope；
-  required high-P inequality: |M| eta D_even <= 0.781 D2。
+  required high-P inequality: |M| eta D_even <= 0.781 D2；
+  equivalent margin inequality:
+    B2/M2 <= 1-|M| eta D_even/M2。
 ```
 
 这一步把上一层剩余拆成两个可审稿对象：
@@ -117,7 +147,8 @@ LowP-FiniteComplete:
   P<=P_fin 的目标窗口清单必须完整，且证书可复现；
 
 HighP-D2-Lower:
-  P>P_fin 时 D2 必须统一支配 D_even 外壳。
+  P>P_fin 时 D2 必须统一支配 D_even 外壳；
+  等价于乘法基线 B2 在 M2 中留出足够正偏差余量。
 ```
 
 ## 5. 审稿边界
@@ -127,7 +158,8 @@ HighP-D2-Lower:
 ```text
 P_fin=1000 的样本有限 group 证书；
 低 P 证书不依赖实际 failure 分布；
-高 P 预算接口压成 |M| eta D_even <= 0.781 D2。
+高 P 预算接口压成 |M| eta D_even <= 0.781 D2；
+HighP-D2-Lower 已代数化为 B2/M2 余量不等式。
 ```
 
 仍未完成：
