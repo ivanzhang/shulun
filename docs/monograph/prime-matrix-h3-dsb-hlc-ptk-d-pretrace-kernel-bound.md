@@ -186,3 +186,7 @@ LPC-D: spatial lattice-point/correlation Schur row-column bound (PTK-10).
 下一步若继续完全自足无黑箱硬攻，应直接证明 LPC-D。最短路径是先证明远距离尾项由
 `k_T` 衰减吸收，再把近距离项拆成 identity-near、parabolic cusp、generic hyperbolic 三类
 格点计数，并逐类给行列和上界。
+
+进一步压缩见 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md`。
+该文完成 FAR 远距离尾项、ID-near 和 PAR cusp/parabolic 分支，并证明 `GHLC-D=>LPC-D`。
+因此当前唯一空间侧剩余变为 `GHLC-D`：generic hyperbolic local correlation row-column bound。

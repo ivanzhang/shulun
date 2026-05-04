@@ -630,6 +630,16 @@ LPC-D: spatial lattice-point/correlation Schur row-column bound.
 
 该文已证明 `LPC-D=>PTK-D`。外审前若继续无黑箱化，应直接补空间侧格点/相关计数。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 后，LPC-D
+继续收窄为：
+
+```text
+GHLC-D: generic hyperbolic local correlation row-column bound.
+```
+
+FAR、ID-near、PAR 三个空间分支已经处理；外审前应直接补 generic hyperbolic 近距离格点
+相关计数。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -271,3 +271,7 @@ Schur 行列和上界，即可由该文件推出 KZ-D；否则还需补 pre-trac
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md` 后，外部核验点
 进一步改为 `LPC-D`。若外部几何/预迹估计能给出空间侧 row-column correlation bound，
 则本文已有 `LPC-D=>PTK-D=>KZ-D`。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 后，外部核验点
+进一步改为 `GHLC-D`。任何外部或内部几何计数若给出 generic hyperbolic local correlation
+的 Schur 行列和，即可接回 `GHLC-D=>LPC-D=>PTK-D`。

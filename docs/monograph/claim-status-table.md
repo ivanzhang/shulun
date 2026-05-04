@@ -503,6 +503,11 @@ KZ-B、KZ-D、KZ-E。
 继续压缩为空间侧 `LPC-D` 行列和上界。该文完成谱截断测试函数接口、预迹/Poincare 系数核
 展开、对角 `T^2` 体积账本，并证明 `LPC-D=>PTK-D`。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 后，LPC-D
+被拆成 FAR/ID/PAR/HYP 四类。FAR 尾项由 `k_T` 衰减闭合，ID-near 并入 PAR，PAR
+cusp/parabolic 分支由 cusp 宽度与除数账本闭合；当前唯一空间侧剩余变为 `GHLC-D`
+generic hyperbolic local correlation。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

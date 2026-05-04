@@ -1506,6 +1506,20 @@ PTK-D
 
 未闭合核心变为 LPC-D。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 后，LPC-D
+目录节点展开为：
+
+```text
+LPC-D
+=> FAR tail closed
+ + ID-near absorbed into PAR
+ + PAR cusp divisor ledger closed
+ + GHLC-D generic hyperbolic local correlation
+=> LPC-D.
+```
+
+未闭合核心变为 GHLC-D。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
