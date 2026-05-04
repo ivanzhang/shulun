@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""AlphaTail RoughSurplus-PDEC 低大素粗筛盈余审计。
+
+用法示例：
+  python3 experiments/prime_matrix_alpha_tail_roughsurplus_pdec_audit.py --selected '997:4096:-36,5003:8192:-36' --num-primes 8 --format table
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from math import isqrt
+
+
+def primes_upto(limit: int) -> list[int]:
+    """返回不超过 limit 的素数。"""
+    primes: list[int] = []
+    for value in range(2, limit + 1):
+        if all(value % divisor for divisor in range(2, isqrt(value) + 1)):
+            primes.append(value)
+    return primes
+
+
+def domain_bounds(block: int, shift: int, point_count: int) -> tuple[int, int]:
+    """返回 m 点都落在 block 内的起点区间。"""
+    starts = [block + 1 - index * shift for index in range(point_count)]
+    stops = [2 * block - index * shift for index in range(point_count)]
+    return max(starts), min(stops)
+
+
+def local_zero_classes(point_count: int, shift: int, prime: int) -> int:
+    """返回 m 点链在 prime 下的 distinct 禁零类数。"""
+    return len({(-index * shift) % prime for index in range(point_count)})
+
+
+def avoids_primes(value: int, shift: int, point_count: int, primes: list[int]) -> bool:
+    """判断 m 点是否避开给定大素数的禁零类。"""
+    for prime in primes:
+        for index in range(point_count):
+            if (value + index * shift) % prime == 0:
+                return False
+    return True
+
+
+def model_factor(primes: list[int], shift: int, point_count: int) -> float:
+    """计算给定大素集合的粗筛模型因子。"""
+    factor = 1.0
+    for prime in primes:
+        factor *= 1.0 - local_zero_classes(point_count, shift, prime) / prime
+    return factor
+
+
+def audit_item(prime_bound: int, block: int, shift: int, alpha: float, num_primes: int) -> dict:
+    """审计单个 p:B:r 的低大素粗筛盈余。"""
+    cutoff = int(alpha * prime_bound)
+    rows = []
+    for point_count in (4, 5):
+        domain_start, domain_stop = domain_bounds(block, shift, point_count)
+        domain_size = max(0, domain_stop - domain_start + 1)
+        z_value = max(domain_stop + index * shift for index in range(point_count))
+        large_primes = [prime for prime in primes_upto(z_value) if prime > cutoff]
+        low_large_primes = large_primes[:num_primes]
+        full_count = 0
+        low_count = 0
+        for value in range(domain_start, domain_stop + 1):
+            if avoids_primes(value, shift, point_count, low_large_primes):
+                low_count += 1
+            if avoids_primes(value, shift, point_count, large_primes):
+                full_count += 1
+        full_model = domain_size * model_factor(large_primes, shift, point_count)
+        low_model = domain_size * model_factor(low_large_primes, shift, point_count)
+        full_surplus = full_count - full_model
+        low_surplus = low_count - low_model
+        rows.append(
+            {
+                "m": point_count,
+                "domain_size": domain_size,
+                "large_prime_count": len(large_primes),
+                "low_prime_count": len(low_large_primes),
+                "full_count": full_count,
+                "low_count": low_count,
+                "full_surplus": full_surplus,
+                "low_surplus": low_surplus,
+                "tail_gap": full_surplus - low_surplus,
+            }
+        )
+    return {
+        "p": prime_bound,
+        "alpha": alpha,
+        "block": block,
+        "shift": shift,
+        "rows": rows,
+    }
+
+
+def parse_selected(raw: str) -> list[tuple[int, int, int]]:
+    """解析 p:B:r 逗号列表。"""
+    items: list[tuple[int, int, int]] = []
+    for part in raw.split(","):
+        if not part.strip():
+            continue
+        prime_raw, block_raw, shift_raw = part.split(":", 2)
+        items.append((int(prime_raw), int(block_raw), int(shift_raw)))
+    return items
+
+
+def main() -> None:
+    """命令行入口。"""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--selected", type=str, default="997:4096:-36,5003:8192:-36")
+    parser.add_argument("--num-primes", type=int, default=8)
+    parser.add_argument("--alpha", type=float, default=0.9)
+    parser.add_argument("--format", choices=("json", "table", "repr"), default="repr")
+    args = parser.parse_args()
+
+    audits = [
+        audit_item(prime_bound, block, shift, args.alpha, args.num_primes)
+        for prime_bound, block, shift in parse_selected(args.selected)
+    ]
+    if args.format == "json":
+        print(json.dumps(audits, ensure_ascii=False, indent=2), flush=True)
+        return
+    if args.format == "table":
+        print("p block shift m Dprimes full_surplus low_surplus tail_gap full_count low_count", flush=True)
+        for audit in audits:
+            for row in audit["rows"]:
+                print(
+                    f"{audit['p']} {audit['block']} {audit['shift']} "
+                    f"{row['m']} {row['low_prime_count']} "
+                    f"{row['full_surplus']:.6f} {row['low_surplus']:.6f} "
+                    f"{row['tail_gap']:.6f} {row['full_count']} {row['low_count']}",
+                    flush=True,
+                )
+        return
+    for audit in audits:
+        print(audit, flush=True)
+
+
+if __name__ == "__main__":
+    main()
