@@ -1,6 +1,6 @@
 # KZ-E：well-factorable dispersion 对数节省的无黑箱攻坚脊柱
 
-**状态：** `kz_e_reduced_to_wfd_core_not_yet_self_contained_closed`
+**状态：** `kz_e_reduced_to_balanced_wfd_core_not_yet_self_contained_closed`
 
 本文继续只攻击同一个剩余：
 
@@ -213,8 +213,9 @@ HLC completely self-contained closed.
 当前唯一剩余已经精确压缩为：
 
 ```text
-WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
+BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
 ```
 
-下一步若继续不换命题硬攻，必须直接证明 `(KE-13)`：从 KZ-B trace formula、KZ-C Bessel
-衰减、KZ-D 谱大筛和 well-factorable 分层出发，给出模数族与频率族上的任意对数节省。
+后续 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 已把
+`WFD-core` 用平方根 well-factorable 分解、gcd 剥离和 CRT 因子化压缩为 `BWFD-core`。因此
+下一步若继续不换命题硬攻，必须直接证明 balanced 双模数核 `(WB-11)`。

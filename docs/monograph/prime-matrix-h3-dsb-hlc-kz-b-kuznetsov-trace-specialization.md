@@ -41,9 +41,9 @@ S_\chi(a,b;c)=
 \mathcal K_{a,b}(\Phi)
 =
 \mathcal M^{\rm Maa}_{a,b}(\widetilde\Phi)
-\mathcal M^{\rm hol}_{a,b}(\widetilde\Phi)
-\mathcal M^{\rm Eis}_{a,b}(\widetilde\Phi)
-\mathcal D_{a,b}(\Phi),
++\mathcal M^{\rm hol}_{a,b}(\widetilde\Phi)
++\mathcal M^{\rm Eis}_{a,b}(\widetilde\Phi)
++\mathcal D_{a,b}(\Phi),
 \tag{KB-3}
 \]
 
@@ -177,8 +177,8 @@ Poincare 包的 unfolding 给
 \mathcal I_{a,b}(\Phi)
 =
 \mathcal M^{\rm Maa}_{a,b}(\widetilde\Phi)
-\mathcal M^{\rm hol}_{a,b}(\widetilde\Phi)
-\mathcal M^{\rm Eis}_{a,b}(\widetilde\Phi).
++\mathcal M^{\rm hol}_{a,b}(\widetilde\Phi)
++\mathcal M^{\rm Eis}_{a,b}(\widetilde\Phi).
 \tag{KB-14}
 \]
 

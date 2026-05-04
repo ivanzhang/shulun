@@ -300,3 +300,13 @@ well-factorable Kloosterman dispersion 平均估计；完全自足版则必须�
 ```text
 WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
 ```
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 后，外部核验
+点进一步缩为：
+
+```text
+BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+```
+
+DI/BFI 若要作为外部定理使用，必须覆盖该平方根双模数窗口，而不仅是单模 Kloosterman
+点态估计。

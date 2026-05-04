@@ -876,3 +876,5 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 | H3-HLC KZ-B闭合 | 完全自足链剩KZ-E | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md`。该文件把 Kuznetsov trace formula 的本文专门化从 automorphic kernel、Poincare 包 unfolding、双陪集 Kloosterman 几何侧、谱 Plancherel 侧和 Bessel 变换归一化逐项推出。KZ-B 只闭合公式转换；`log^{-A}` 节省仍完全落在 `KZ-E` BFI/well-factorable dispersion。 |
 
 | H3-HLC KZ-E攻坚 | 压缩为WFD-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-e-well-factorable-dispersion-spine.md`。该文件内联 well-factorable 卷积分解、dispersion 方差恒等式、CRT 到标准 Kloosterman 相位的归一化、gcd 相容层和端点平滑账本，并证明 `WFD-core=>KZ-E`。当前完全自足链唯一剩余为 `WFD-core`：窗口化 well-factorable Kloosterman dispersion 平均估计；未证明前不得宣称 `SC-9/CORE-5/HLC` 完全自足闭合。 |
+
+| H3-HLC WFD平方根平衡化 | 压缩为BWFD-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md`。该文件用平方根 well-factorable 分解把 `lambda_c` 写成 `c=uv` 且 `u,v≈c^{1/2}`，剥离 gcd 多对数层，并用 CRT 把 `e_{uv}(as+b\\bar s)` 因子化为双模数相位，证明 `BWFD-core=>WFD-core=>KZ-E`。当前唯一剩余为 `BWFD-core`：balanced two-modulus well-factorable Kloosterman dispersion mean estimate。 |

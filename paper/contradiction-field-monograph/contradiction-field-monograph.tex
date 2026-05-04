@@ -1552,8 +1552,16 @@ The current KZ--E attack is recorded in
 It internalizes the well-factorable convolution algebra, the dispersion variance identity,
 the CRT reduction to a standard Kloosterman phase, and the gcd/endpoint polylogarithmic
 ledger.  This proves that KZ--E would follow from one remaining estimate, denoted
-WFD-core: a windowed well-factorable Kloosterman dispersion mean estimate.  This is now the
-single remaining no-black-box analytic obstacle in the HLC branch.
+WFD-core: a windowed well-factorable Kloosterman dispersion mean estimate.
+That core is further balanced in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md}.
+\]
+Using the square-root well-factorable decomposition $\lambda_c=\sum_{c=uv}\alpha_u\delta_v$,
+the condition $c\asymp C$ forces $u,v\asymp C^{1/2}$ up to polylogarithmic boundary blocks.
+The gcd strata are polylogarithmic, and CRT factors the phase modulo $uv$ into coupled
+phases modulo $u$ and $v$.  Thus the remaining atom is BWFD-core, a balanced two-modulus
+well-factorable Kloosterman dispersion mean estimate.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

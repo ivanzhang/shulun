@@ -1576,6 +1576,24 @@ WFD-core windowed well-factorable Kloosterman dispersion mean estimate.
 
 该核未证明前，合著稿仍不得宣称 HLC/SC-9/CORE-5 完全自足闭合。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 后，
+`WFD-core` 进一步平方根平衡化：
+
+```text
+lambda_c well-factorable
+=> c=uv, u,v≈c^{1/2}
+=> gcd strata polylog ledger
+=> CRT factorization of e_{uv}(as+b\bar s)
+=> BWFD-core
+=> WFD-core.
+```
+
+当前唯一剩余核为：
+
+```text
+BWFD-core balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+```
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

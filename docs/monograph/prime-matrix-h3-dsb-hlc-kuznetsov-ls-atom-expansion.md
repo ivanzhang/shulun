@@ -183,6 +183,10 @@ KZ-E 的无黑箱攻坚脊柱见
 gcd/端点账本，并证明 `WFD-core=>KZ-E`。因此 KZ-E 的唯一未内联核心变为 `WFD-core`：
 windowed well-factorable Kloosterman dispersion mean estimate。
 
+随后 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 用平方根
+well-factorable 分解证明 `BWFD-core=>WFD-core`。所以 KZ-E 的最小未内联核心进一步变为
+`BWFD-core`：balanced two-modulus well-factorable Kloosterman dispersion mean estimate。
+
 ## 7. 四原子推出 SC-9
 
 **命题。** KZ-A、KZ-B、KZ-C、KZ-D、KZ-E 成立，则 `(SC-9)` 成立。
@@ -221,8 +225,8 @@ windowed well-factorable Kloosterman dispersion mean estimate。
 本文仍未完成完全自足闭合：
 
 ```text
-WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
+BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
 ```
 
-因此，下一步若继续无黑箱硬攻，应直接证明 WFD-core。不能把该原子省略后宣称完全自足
+因此，下一步若继续无黑箱硬攻，应直接证明 BWFD-core。不能把该原子省略后宣称完全自足
 闭合。

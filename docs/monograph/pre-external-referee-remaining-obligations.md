@@ -670,6 +670,16 @@ WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
 该项是当前唯一不得省略的深平均估计。若只引用 BFI/DI，则可作为外部深定理版；若要求完全
 自足，必须继续逐行证明 WFD-core。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 后，WFD-core
+已平方根平衡化。外审前 HLC 完全自足剩余清单进一步缩为：
+
+```text
+BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+```
+
+该项要求直接处理 `u,v≈C^{1/2}` 的双模数 Kloosterman 相位平均；筛权分解、gcd 剥离和 CRT
+归一化已经不再是剩余义务。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为
