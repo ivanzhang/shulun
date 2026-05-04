@@ -108,3 +108,17 @@ TargetFamilyRule:
 
 一旦目标族规则固定，就可以逐项证明上述三条合同；若某些窗口不满足，则进入有限证书或
 PDEC/SAE 出口。
+
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-target-family-contract.md` 与脚本
+`experiments/prime_matrix_alpha_tail_tailpair_c13_target_family_contract.py` 后，该缺口已被
+单独物化为 `TFC-A/B/C/D`：
+
+```text
+TFC-A: B 是当前候选 dyadic block，且样本中 B=2^ceil(log2(p+1)), p<B<2p；
+TFC-B: 6 divides |r|；
+TFC-C: B<2L 且 (m-1)|r|<L；
+TFC-D: Gate 总池闭合，或 Formal+MidVoid 逐窗口闭合。
+```
+
+当前结果是 `explicit_selected_contract=True`，但 `target_family_rule_closed=False`。因此
+该更新压实了最后接口，没有把样本闭合升级为全局闭合。
