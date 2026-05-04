@@ -126,3 +126,7 @@ lift>=2:
 
 与 `lift=1` 纯整数余量合成后的低筛保存证书见
 `prime-matrix-eda-alpha-tail-tailpair-c13-lowsieve-lift-closure.md`。
+
+小素因子空性的纯同余版本见
+`prime-matrix-eda-alpha-tail-tailpair-c13-liftge2-mod6-audit.md`。该文件把当前样本的
+`2/3` 杀除改写为 `q mod 6 notin {1,5}`。
