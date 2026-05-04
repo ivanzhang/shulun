@@ -175,6 +175,10 @@ C13Failure groups
 或进一步用 slack/positive 层把 geometric 外壳压小。
 ```
 
+`(GUD-7)` 的闭式除数函数版本见
+`prime-matrix-eda-alpha-tail-tailpair-c13-divisor-sum-envelope-bound.md`，其中
+`D_tau_sigma(B,r)` 只含 `tau(Delta|r|)` 与 `sigma_{-1}(Delta|r|)`。
+
 ## 5. 审稿边界
 
 已完成：
