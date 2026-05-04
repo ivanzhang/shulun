@@ -106,6 +106,9 @@ HighDensityEnvelope
 下一层一维化见 `prime-matrix-eda-alpha-tail-tailpair-c13-layer-interval-reduction.md`：
 固定层内 `h` 与 `q` 一一对应，因此高密度层给出一个普通固定 gap q-区间
 `J_band`，其中至少有 `S_m(E)` 个尾素对 `q,q+g`。
+进一步的固定 gap 密度天花板审计见
+`prime-matrix-eda-alpha-tail-tailpair-c13-density-ceiling-audit.md`：它给出
+`C_FG*S_g/log(Q)^2<=eta` 的直接排斥条件，并把当前剩余定位到低 `q` 端点层。
 
 当前 `eta=1/25` 的压力样本没有该出口；但若全局证明中出现高密度 envelope，本文给出其
 必须提交的证书格式和下游矛盾接口。

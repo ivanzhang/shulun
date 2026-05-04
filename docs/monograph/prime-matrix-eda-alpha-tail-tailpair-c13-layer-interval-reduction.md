@@ -97,11 +97,14 @@ g=24, J=[1366,1498], witnesses=4, required_C=0.783808。
 HighDensityEnvelope
 => LayerHighDensityEndpointPair
 => one-dimensional fixed-gap q-interval certificate
+=> fixed-gap density ceiling audit
 => fixed-gap endpoint-band density contradiction
    or ColumnCRT/stitching.
 ```
 
 因此后续排斥不再处理抽象 envelope，而只需处理形如 `(LIR-5)` 的一维固定 gap 区间。
+密度天花板审计见
+`prime-matrix-eda-alpha-tail-tailpair-c13-density-ceiling-audit.md`。
 
 ## 5. 审稿边界
 
