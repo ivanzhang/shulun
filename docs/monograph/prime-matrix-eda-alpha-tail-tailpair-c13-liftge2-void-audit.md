@@ -123,3 +123,6 @@ lift>=2:
 ```
 
 所以本文闭合的是当前压力样本的 `lift>=2` 分支，不是行命题最终闭合。
+
+与 `lift=1` 纯整数余量合成后的低筛保存证书见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowsieve-lift-closure.md`。
