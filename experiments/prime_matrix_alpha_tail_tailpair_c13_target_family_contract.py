@@ -93,6 +93,9 @@ def target_family_contract_package(
         block_alpha_guard = block < 2 * alpha * prime_bound
         n_alpha_guard = max(n_span_values, default=0) < alpha * prime_bound
         ratio_structural_guard = block_alpha_guard and n_alpha_guard and shift_mod6
+        max_m_value = max(m_values)
+        min_p_for_block = block / (2 * alpha)
+        max_shift_for_ratio = alpha * prime_bound / (max_m_value - 1)
         syntax_pass = block_power2 and dyadic_band and dyadic_ceiling and shift_mod6
         rows.append(
             {
@@ -106,6 +109,10 @@ def target_family_contract_package(
                 "syntax_pass": syntax_pass,
                 "block_over_p": block / prime_bound,
                 "shift_over_p": abs(shift) / prime_bound,
+                "min_p_for_block": min_p_for_block,
+                "p_margin_for_block": prime_bound - min_p_for_block,
+                "max_shift_for_ratio": max_shift_for_ratio,
+                "shift_margin_for_ratio": max_shift_for_ratio - abs(shift),
                 "min_low_min": min(low_min_values) if low_min_values else None,
                 "max_n_span": max(n_span_values) if n_span_values else None,
                 "block_guard": block_guard,
@@ -175,8 +182,8 @@ def print_table(package: dict) -> None:
     )
     print(
         "p block shift pow2 ceil band mod6 alphaB alphaN ratio_struct "
-        "B_over_p R_over_p min_L max_n block_margin n_margin structural gate formal "
-        "gate_margin formal_margin",
+        "B_over_p R_over_p p_block_margin r_ratio_margin min_L max_n "
+        "block_margin n_margin structural gate formal gate_margin formal_margin",
         flush=True,
     )
     for row in package["windows"]:
@@ -186,6 +193,7 @@ def print_table(package: dict) -> None:
             f"{row['block_alpha_guard']} {row['n_alpha_guard']} "
             f"{row['ratio_structural_guard']} "
             f"{row['block_over_p']:.6f} {row['shift_over_p']:.6f} "
+            f"{row['p_margin_for_block']:.6f} {row['shift_margin_for_ratio']:.6f} "
             f"{row['min_low_min']} {row['max_n_span']} {row['min_block_margin']} "
             f"{row['min_n_margin']} {row['structural_pass']} {row['gate_pass']} "
             f"{row['formal_pass']} {fmt(row['gate_margin'])} {fmt(row['formal_margin'])}",
