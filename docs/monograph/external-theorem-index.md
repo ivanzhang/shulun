@@ -321,3 +321,13 @@ BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
 外部 DI/BFI 适配若要闭合该点，必须在完成 Kloosterman 形 `(BSA-9)` 上给出任意 `log^{-A}`
 节省，并覆盖同一全局 `\beta_s` 诱导的 Fourier 系数族 `(BSA-4)`；只给普通 spectral large
 sieve 或点态 Weil bound 不足。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 后，外部核验
+点进一步缩为：
+
+```text
+KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
+```
+
+外部 DI/BFI 若要匹配该点，必须能覆盖相位
+`e(\bar vR/u+\bar uT/v)` 的平衡双模数平均，并处理退化二次同余层的 gcd/divisor 账本。

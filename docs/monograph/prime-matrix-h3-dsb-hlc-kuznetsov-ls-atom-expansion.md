@@ -192,6 +192,12 @@ well-factorable 分解证明 `BWFD-core=>WFD-core`。所以 KZ-E 的最小未内
 `BSC-core=>BWFD-core`。所以 KZ-E 的最小未内联核心进一步变为 `BSC-core`：
 balanced complete Kloosterman bilinear correlation logarithmic saving。
 
+最新 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 又把
+`BSC-core` 展开为互逆分数相位
+`e(\bar vR/u+\bar uT/v)`，定位退化二次同余层，并证明 `KFLS-core=>BSC-core`。所以 KZ-E 的
+最小未内联核心进一步变为 `KFLS-core`：balanced Kloosterman-fraction large sieve
+logarithmic saving。
+
 ## 7. 四原子推出 SC-9
 
 **命题。** KZ-A、KZ-B、KZ-C、KZ-D、KZ-E 成立，则 `(SC-9)` 成立。
@@ -230,8 +236,8 @@ balanced complete Kloosterman bilinear correlation logarithmic saving。
 本文仍未完成完全自足闭合：
 
 ```text
-BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
+KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 ```
 
-因此，下一步若继续无黑箱硬攻，应直接证明 BSC-core。不能把该原子省略后宣称完全自足
+因此，下一步若继续无黑箱硬攻，应直接证明 KFLS-core。不能把该原子省略后宣称完全自足
 闭合。

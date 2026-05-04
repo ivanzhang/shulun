@@ -687,8 +687,18 @@ BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean esti
 BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
 ```
 
-该项要求证明 `(BSA-13)` 的任意对数节省；普通谱大筛 KZ-D 和点态 Weil 已在该文件中核定为
-只能给 raw 尺度或单点平方根抵消，不能替代 BSC-core。
+该项当时要求证明 `(BSA-13)` 的任意对数节省；普通谱大筛 KZ-D 和点态 Weil 已在该文件中核定为
+只能给 raw 尺度或单点平方根抵消，不能替代 BSC-core。后续分数相位攻击已进一步压缩该点。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 后，BSC-core
+已展开为互逆 Kloosterman 分数相位。外审前 HLC 完全自足剩余清单进一步缩为：
+
+```text
+KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
+```
+
+该项要求直接证明 `(KFA-17a)`--`(KFA-17b)`；也就是在 `u,v≈C^{1/2}` 的双模数族上控制
+`e(\bar vR/u+\bar uT/v)` 的非退化平均抵消。
 
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与

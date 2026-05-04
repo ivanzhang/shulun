@@ -1572,6 +1572,14 @@ still narrower atom, BSC-core: balanced complete Kloosterman bilinear correlatio
 arbitrary logarithmic saving.  Ordinary KZ--D spectral large sieve recovers only the raw
 quadratic norm scale, and pointwise Weil bounds give only single-sum square-root
 cancellation; neither supplies the required $\log^{-A}$ saving.
+The current direct attack on BSC-core is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md}.
+\]
+It expands the complete Kloosterman sums term by term and exposes the reciprocal-fraction
+phase $e(\bar v R/u+\bar u T/v)$.  One-sided degeneracy is localized to quadratic congruences
+such as $(a_h+\ell)x^2+b_h\equiv0\pmod u$; the remaining no-black-box atom is KFLS-core,
+a balanced Kloosterman-fraction large-sieve estimate with arbitrary logarithmic saving.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

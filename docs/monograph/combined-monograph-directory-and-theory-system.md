@@ -1613,6 +1613,26 @@ s-variable finite Fourier completion
 BSC-core balanced complete Kloosterman bilinear correlation logarithmic saving.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 后，
+`BSC-core` 进一步显形化：
+
+```text
+complete Kloosterman expansion
++ phase e(bar v R/u + bar u T/v)
++ degenerate quadratic congruence ledger
++ non-degenerate two-modulus reciprocal-fraction average
+=> BSC-core
+=> BWFD-core
+=> WFD-core
+=> KZ-E.
+```
+
+当前唯一剩余核更新为：
+
+```text
+KFLS-core balanced Kloosterman-fraction large sieve logarithmic saving.
+```
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

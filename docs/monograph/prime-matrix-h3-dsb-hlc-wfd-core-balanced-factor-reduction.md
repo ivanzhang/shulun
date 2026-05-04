@@ -1,6 +1,6 @@
 # WFD-core：平方根 well-factorable 平衡化与双模数核心
 
-**状态：** `wfd_core_reduced_to_bsc_complete_kloosterman_bilinear_core`
+**状态：** `wfd_core_reduced_to_kfls_kloosterman_fraction_core`
 
 本文继续只攻击同一个剩余：
 
@@ -12,6 +12,8 @@ WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
 剩余不再是笼统的 BFI/DI，而是一个明确的 balanced two-modulus Kloosterman 核 `BWFD-core`。
 后续 `prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 已进一步把 `BWFD-core`
 经 `s` 变量精确完成和完整 Kloosterman 乘法公式压缩为 `BSC-core`。
+再后续 `prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 把 `BSC-core` 展开为
+互逆分数相位并压缩为 `KFLS-core`。
 
 ## 1. 起点：WFD-core
 
@@ -170,15 +172,15 @@ e_v(\bar u(a_hs+b_h\bar s))
 本文严格完成：
 
 ```text
-BSC-core => BWFD-core => WFD-core => KZ-E.
+KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 ```
 
 本文本身证明 `BWFD-core=>WFD-core`；后续谱完成攻击文件进一步证明 `BSC-core=>BWFD-core`。
-因此当前唯一剩余进一步压缩为：
+再后续分数相位攻击文件证明 `KFLS-core=>BSC-core`。因此当前唯一剩余进一步压缩为：
 
 ```text
-BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
+KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 ```
 
 下一步不能再重复筛权分解、gcd 剥离、CRT 归一化或 `s`-completion；这些已经完成。必须直接攻
-`(BSA-13)`：在 `u,v≈C^{1/2}` 的完整 Kloosterman 双线性族上证明任意对数节省。
+`(KFA-17a)`--`(KFA-17b)`：在 `u,v≈C^{1/2}` 的互逆分数相位族上证明任意对数节省。
