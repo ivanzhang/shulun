@@ -182,6 +182,8 @@ ColumnDefect 路由模板。当前状态是系数源已登记、机器可读相�
 
 新增 `docs/monograph/prime-matrix-zero-row-covering-vs-smoothness-audit.md`、`docs/monograph/prime-matrix-early-diagonal-avoidance-hardpoint.md` 与脚本 `experiments/prime_matrix_early_diagonal_avoidance_audit.py` 后，边界帽硬点进一步校正：旧第 `59` 行对应 `P=23,x=58`，不是 `23*59+1` 起点；零行覆盖只要求“至少一个 `<=P` 小素因子”，不能误用连续 `P`-光滑数/Pell 下界。新最窄接口为 `Early-Diagonal-Avoidance`：证明 `1<=x<=p` 时 `U_p(x)=#{1<=k<p:(px+k,M_p)=1}>0`。早期未覆盖点必为素数，故该接口等价于每个 `p` 对齐短区间 `(px,px+p)` 含素数。审计到 `p<=2000` 无早期零行；完全自足证明仍需 `EDA-Dual` 下界证书或接入 `PDEC/SAE` 出口。
 
+新增 `docs/monograph/prime-matrix-first-zero-equivalence-and-diagonal-barrier.md` 与脚本 `experiments/prime_matrix_first_zero_pattern_audit.py` 后，CRT 首个零行规律被写成覆盖证书最小代表元定理：每个完整覆盖证书 `tau` 给出一个 CRT 进程 `x≡r_tau (mod D_tau)`，首零行 `X0(p)=min_tau r_tau^+`。扫描到 `p<=47,x<=200000` 显示 `X0(p)/p` 高度非单调，例如 `p=23` 为 `58`，`p=31` 为 `60794`，`p=41` 为 `170880`。因此规律不是密度单调，而是低骨架加高标签补洞证书的最小 CRT 代表。`X0(p)>p` 等价于所有证书的 `r_tau^+>p`，也等价于 `p` 对齐短区间素数命题；特别包含素数子序列上的 Oppermann 第一半区间。当前证明路径压缩为 `Certificate-MinRep Barrier` 或 `EDA-Dual`。
+
 新增 `docs/monograph/prime-matrix-zero-row-spacing-gradient-audit.md` 与脚本 `experiments/prime_matrix_zero_row_spacing_gradient_audit.py`。该审计确认：若 `r0` 为首个零行，则镜像给出首尾跨周期间隔 `2r0-1`；样本 `P=13,17,19,23` 的该间隔分别为 `337,2421,7317,117`，均大于 `2P`。但该命题等价于 `r0>P`，也就是 `BPN(P)` 本身；同时全局“中心附近零行更密、越靠边界越稀”的十等分梯度不成立。状态更新：边界复现距离可作为 `BPN-Defect` 的目标形式，但不能作为独立证明输入。
 
 新增 `docs/monograph/prime-matrix-bpn-defect-bonferroni-audit.md` 与脚本 `experiments/prime_matrix_bpn_defect_bonferroni_audit.py`。边界帽路线当前最小硬点更新为 `BPN-B5`：证明五阶 Bonferroni 下界 `S5(r)>0`。审计显示三阶下界在 `P<=199` 已有失败，但五阶下界在 `P<=199` 的全部边界行未失败，最坏样本 `P=199` 仍有最小 `S5=12`。这不是无条件闭合；下一步必须逐项证明 `I1-I2+I3-I4+I5<P-1`，或在失败时转入带权筛与 `CRTDefect/Tail-anchor` 出口。
