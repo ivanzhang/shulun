@@ -111,6 +111,11 @@ max_window_hybrid/D2=0.780430。
 4. 将 0.780430 与主链 H/RRD/OSPC 总预算合并。
 ```
 
+低 `P` 有限 group 证书与高 `P` 预算接口见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowp-finite-certificate.md`。该文件把
+`P_fin=1000` 的有限证书复现为 `groups=81, slots=9387, cap/D2=0.709157`，并把高 `P`
+义务写成 `|M| eta D_even <= 0.781 D2`。
+
 ## 4. 审稿边界
 
 已完成：
