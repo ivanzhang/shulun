@@ -98,6 +98,10 @@ MovingModulusDepth-SAE
 或若在同一 envelope 中持续高密度出现，则触发 cross-modulus stitching/ColumnCRT。
 ```
 
+下一层稀疏验收见 `prime-matrix-eda-alpha-tail-tailpair-c13-band-sparse-acceptance.md`：
+对每个 envelope group 定义 `rho=observed_slots/envelope_slots`，若 `rho<=1/25` 则进入
+`SparseSAE`，否则命名为 `HighDensityEnvelope`。
+
 ## 5. 审稿边界
 
 已完成：
@@ -105,6 +109,7 @@ MovingModulusDepth-SAE
 ```text
 端点带宽 envelope 的逐行推导；
 BulkDepthOverflow 出口命名；
+SparseSAE/HighDensityEnvelope 二分接口已物化；
 样本 C=1.3 无 moving 原子；
 C=1.2 压力样本 overflow=0，observed/envelope 最大约 0.037594。
 ```
