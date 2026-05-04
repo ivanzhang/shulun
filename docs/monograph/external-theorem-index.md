@@ -356,3 +356,7 @@ Kloosterman 平均估计不能越过块对角障碍。
 优先级更新：必须先核对外部 DI/BFI dispersion 定理是否在进入 Kloosterman 平均前已经扣除
 同块局部方差，即是否提供 `(BDC-5)`。若外部定理只陈述非零 Fourier 频率或普通方差式，
 不能自动视为 `BD-CEN`。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 后，外部引用路线的重要性
+进一步明确：当前内部对象不满足 `BD-CEN`。若使用外部 DI/BFI，必须直接引用其原始 dispersion
+结论，而不是把本文当前平方核中心化误认为已经自足证明。

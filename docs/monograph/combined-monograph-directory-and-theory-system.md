@@ -1683,13 +1683,23 @@ BD-CEN + OSQK-core + TFQK-core.
 |sum_b S_b|^2 - sum_b |S_b|^2.
 ```
 
-所以第一阻断点进一步明确为：
+该审计阶段的第一阻断点曾明确为：
 
 ```text
 BD-CEN identity (BDC-5).
 ```
 
-`OSQK-core` 与 `TFQK-core` 仍是后续条件义务，不能在 `BD-CEN` 之前宣称可接回 KFLS。
+随后 no-go 文件进一步表明该身份在当前对象下失败；因此不能再把 `BD-CEN` 当作普通待证引理。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 后，`BD-CEN` 在当前对象
+下被反证。单块非零模型显示 `h=0` 中心化不能推出块中心化，`(BDC-5)` 对当前未块中心化
+WFD/KZ-E 对象失败。当前路线必须分叉为：
+
+```text
+SOURCE-CEN
+or BLK-energy-core
+or external DI/BFI.
+```
 
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 

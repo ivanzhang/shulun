@@ -1,6 +1,6 @@
 # BD-CEN：dispersion 块中心化身份核查
 
-**状态：** `bd_cen_not_closed_in_current_kz_e_spine`
+**状态：** `bd_cen_refuted_for_current_unblocked_wfd_object`
 
 本文继续只攻击同一个最窄剩余：
 
@@ -185,12 +185,16 @@ BLK-energy-core + OSQK-core + TFQK-core,
 BD-CEN is not proved by the current KZ-E spine.
 ```
 
+后续 `prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 进一步证明：在当前未块中心化的
+WFD/KZ-E 对象和当前 admissible 系数范围下，`BD-CEN` 不只是未证明，而是被单块非零反例
+阻断。
+
 因此当前完全自足链的第一阻断点更新为：
 
 ```text
-BD-CEN identity (BDC-5).
+SOURCE-CEN or BLK-energy-core or external DI/BFI.
 ```
 
-不能在没有 `(BDC-5)` 的情况下继续声称 `BCFQK-core=>KFLS-core` 已闭合。下一步若继续硬攻，
-必须回到 KZ-E dispersion 恒等式的原始变量，在 Cauchy--Schwarz 与 well-factorable 分解之前
-证明块局部方差确实被扣除；否则需要放弃块中心化平方核路线，改攻 `BLK-energy-core`。
+不能在没有新输入的情况下继续声称 `BCFQK-core=>KFLS-core` 已闭合。下一步若继续硬攻，必须
+三选一：证明原始对象已经是块条件中心化的 `SOURCE-CEN`；新增并证明非集中条件以支持
+`BLK-energy-core`；或明确切换到外部 DI/BFI 定理。

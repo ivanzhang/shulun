@@ -208,7 +208,10 @@ Kloosterman-fraction correlation saving。
 未内联核心修正为 `BD-CEN + OSQK-core + TFQK-core`。
 最新 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查：
 当前 KZ-E spine 尚未证明 `BD-CEN`；它只写明 `h=0` 主项抵消，未写明同 `(u,v)` 块局部
-方差扣除。因此第一阻断点是 `BD-CEN` 身份 `(BDC-5)`。
+方差扣除。该审计阶段的阻断点是 `BD-CEN` 身份 `(BDC-5)`。
+最新 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 进一步证明：在当前
+未块中心化的 WFD/KZ-E 对象下，`(BDC-5)` 被单块非零反例阻断。当前路线必须改为
+`SOURCE-CEN`、`BLK-energy-core` 或外部 DI/BFI。
 
 ## 7. 四原子推出 SC-9
 
@@ -248,9 +251,9 @@ Kloosterman-fraction correlation saving。
 本文仍未完成完全自足闭合：
 
 ```text
-BD-CEN identity (BDC-5), then OSQK-core + TFQK-core.
+SOURCE-CEN or BLK-energy-core or external DI/BFI.
 ```
 
-因此，下一步若继续无黑箱硬攻，应先证明块中心化身份 `(BDC-5)`；不能把该身份或后续
+因此，下一步若继续无黑箱硬攻，应先证明源头块中心化或块能量节省；不能把这些新输入或后续
 `OSQK/TFQK` 原子省略后宣称完全自足
 闭合。

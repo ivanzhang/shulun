@@ -617,8 +617,12 @@ correlation saving。
 `OSQK-core`。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 后，最窄目标
-顺序修正：`BD-CEN` 尚未闭合。当前 KZ-E spine 只证明 `h=0` 主项抵消，没有证明同 `(u,v)`
-块投影扣除 `(BDC-5)`。因此下一步必须先攻 `BD-CEN identity`，不能直接跳到 `OSQK-core`。
+顺序一度修正为：`BD-CEN` 尚未闭合。当前 KZ-E spine 只证明 `h=0` 主项抵消，没有证明同
+`(u,v)` 块投影扣除 `(BDC-5)`，因此当时不能直接跳到 `OSQK-core`。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 后，`BD-CEN identity`
+在当前对象下被反证。当前不应继续试图从现有 KZ-E 推出 `(BDC-5)`；必须改攻 `SOURCE-CEN`
+源头块中心化、`BLK-energy-core` 块能量节省，或明确使用外部 DI/BFI。
 
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 

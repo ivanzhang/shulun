@@ -723,13 +723,22 @@ BD-CEN + OSQK-core + TFQK-core.
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 后，BD-CEN
 核查结论为未闭合：当前 KZ-E spine 只扣除 `h=0` 主项，未扣除同 `(u,v)` 块局部方差。因此
-外审前第一阻断点是：
+该审计阶段的阻断点曾写为：
 
 ```text
 BD-CEN identity (BDC-5).
 ```
 
-在该身份未证明前，不能把 `OSQK/TFQK` 估计接回 `KFLS-core`。
+随后 no-go 文件进一步证明该身份在当前对象下失败，不能把它当作普通待证接口。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 后，外审前状态进一步
+收紧：`BD-CEN` 在当前未块中心化对象下被单块非零反例阻断。当前必须选择并证明：
+
+```text
+SOURCE-CEN, or BLK-energy-core, or external DI/BFI.
+```
+
+否则平方核路线不能作为完全自足证明链的一部分。
 
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与

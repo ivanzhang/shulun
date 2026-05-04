@@ -18,7 +18,8 @@ BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean esti
 `prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 把 `KFLS-core` 平方化为
 `CFQK-core`；`prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 又把同块半对角修正为
 块中心化账本；`prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已进一步核查：
-当前 KZ-E spine 尚未证明 `BD-CEN`。
+当前 KZ-E spine 尚未证明 `BD-CEN`；`prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md`
+进一步证明当前未块中心化对象下 `BD-CEN` 失败。
 
 ## 1. 起点
 
@@ -215,10 +216,10 @@ BSC-core => BWFD-core => WFD-core => KZ-E.
 无黑箱闭合的唯一剩余现在进一步定位为：
 
 ```text
-BD-CEN identity (BDC-5), then OSQK-core + TFQK-core.
+SOURCE-CEN or BLK-energy-core or external DI/BFI.
 ```
 
 若允许引用 Deshouillers--Iwaniec/Bombieri--Friedlander--Iwaniec 型 well-factorable dispersion
 定理，该核心可作为外部深定理适配点；若要求文内完全自足，则必须继续证明后续文件中的
-`(BDC-5)`；然后才是 `(BCF-14)`--`(BCF-16)`。在这些核未证明前，不能宣称 H3-HLC、SC-9
-或 CORE-5 已完全无黑箱闭合。
+`SOURCE-CEN` 或 `BLK-energy-core`。在这些核未证明前，不能宣称 H3-HLC、SC-9 或 CORE-5
+已完全无黑箱闭合。

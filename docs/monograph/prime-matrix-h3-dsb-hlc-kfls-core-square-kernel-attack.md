@@ -20,7 +20,9 @@ KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 内半对角不能被要求 `log^{-A}` 估小，必须作为块对角局部方差中心化扣除。当前剩余因此
 细化为 `BD-CEN + OSQK-core + TFQK-core`。
 再后续 `prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查：当前 KZ-E spine
-尚未证明 `BD-CEN`，所以第一阻断点是 `(BDC-5)`。
+尚未证明 `BD-CEN`；该审计阶段的阻断点是 `(BDC-5)`。
+`prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 进一步证明当前对象下 `(BDC-5)` 失败；
+因此平方核路线必须改为 `SOURCE-CEN`、`BLK-energy-core` 或外部 DI/BFI。
 
 ## 1. 非退化 KFLS 和的统一索引
 
@@ -297,6 +299,6 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 BD-CEN + OSQK-core + TFQK-core.
 ```
 
-下一步若继续硬攻，必须先证明 `BD-CEN` 块中心化身份 `(BDC-5)`；随后才可处理三模数的
-`OSQK-core` 和真四模数的 `TFQK-core`。若不能证明这些中心化核，完全自足无黑箱闭合仍不能
-宣称完成。
+下一步若继续硬攻，必须按 no-go 分叉改攻 `SOURCE-CEN`、`BLK-energy-core` 或外部 DI/BFI；
+不能再把 `BD-CEN` 当作当前对象下的普通待证身份。若不能完成这些新输入，完全自足无黑箱
+闭合仍不能宣称完成。

@@ -182,9 +182,9 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 块中心化文件进一步修正为 `BCFQK-core=>KFLS-core`。因此当前剩余进一步压缩为：
 
 ```text
-BD-CEN identity (BDC-5), then OSQK-core + TFQK-core.
+SOURCE-CEN or BLK-energy-core or external DI/BFI.
 ```
 
 下一步不能再重复筛权分解、gcd 剥离、CRT 归一化或 `s`-completion；这些已经完成。必须直接攻
-`BD-CEN`：当前 `bd-cen` 核查文件表明现有 KZ-E spine 尚未证明 `(BDC-5)`。只有该身份闭合后，
-才可继续攻 `(BCF-14)`--`(BCF-16)` 的半对角与真非对角任意对数节省。
+`SOURCE-CEN` 或 `BLK-energy-core`：当前 `bd-cen` 反证文件表明现有未块中心化对象下
+`(BDC-5)` 失败。只有补出新的源头中心化或块能量节省，才可继续攻 `(BCF-14)`--`(BCF-16)`。

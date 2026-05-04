@@ -225,8 +225,10 @@ BD-CEN + OSQK-core + TFQK-core.
 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 最后把 `KFLS-core`
 平方化为中心化四模数相关核 `CFQK-core`；
 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 进一步指出同块
-半对角必须中心化扣除，并把当前剩余修正为 `BD-CEN + OSQK-core + TFQK-core`。因此下一步
-若继续不换命题硬攻，必须先证明 `BD-CEN` 身份 `(BDC-5)`；当前
+半对角必须中心化扣除，并把当时剩余修正为 `BD-CEN + OSQK-core + TFQK-core`。随后
 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查现有 KZ-E
 spine 只给出 `h=0` 主项抵消，尚未给出同 `(u,v)` 块方差扣除。`OSQK/TFQK` 只能在
-`BD-CEN` 成立后继续推进。
+`BD-CEN` 成立后继续推进。进一步的
+`docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 已证明当前未块中心化对象下
+`BD-CEN` 被单块非零反例阻断；因此必须改为证明 `SOURCE-CEN`、`BLK-energy-core`，或使用
+外部 DI/BFI。

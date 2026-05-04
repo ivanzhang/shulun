@@ -888,3 +888,5 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 | H3-HLC CFQK块中心化修正 | 压缩为BD-CEN/OSQK/TFQK | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md`。该文件把平方核按 `(u,v)` 块拆分，证明同块半对角 `sum_b |S_b|^2` 不能被要求 `log^{-A}` 估小；它必须作为块对角/局部方差由 dispersion 中心化扣除。当前剩余修正为三项：`BD-CEN` 块中心化身份核查，`OSQK-core` 一侧共享模数三模数相关 `(BCF-14)`，以及 `TFQK-core` 真四模数相关 `(BCF-16)`。 |
 
 | H3-HLC BD-CEN身份核查 | BD-CEN未闭合/第一阻断 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md`。该文件逐行核查 KZ-E dispersion spine：现有 `(KE-5)` 只给出 `h=0` 主项抵消，即频率方向中心化；它没有给出同 `(u,v)` 块投影扣除 `(BDC-5)`。因此不能在平方核中事后删除 `sum_b |S_b|^2`。当前第一阻断点更新为 `BD-CEN identity (BDC-5)`；`OSQK/TFQK` 只能作为其后的条件义务。 |
+
+| H3-HLC BD-CEN反证分叉 | BD-CEN当前对象下失败 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md`。该文件用单块非零模型严格反证：在当前未块中心化的 WFD/KZ-E 对象和当前 admissible 系数范围内，`BD-CEN identity (BDC-5)` 不是未证引理而是错误身份；`h=0` 投影与块投影不同。当前必须三选一：证明 `SOURCE-CEN` 源头块中心化，证明新的 `BLK-energy-core` 非集中/块能量节省，或切换到外部 DI/BFI。 |

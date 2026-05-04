@@ -24,7 +24,9 @@ e\!\left({\bar v R\over u}+{\bar u T\over v}\right).
 再后续 `prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 修正同块半对角处理，把
 当前剩余细化为 `BD-CEN + OSQK-core + TFQK-core`。
 最新 `prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查 `BD-CEN` 尚未由
-当前 KZ-E spine 证明，因此第一阻断点是 `(BDC-5)`。
+当前 KZ-E spine 证明；该审计阶段的阻断点是 `(BDC-5)`。
+`prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 进一步证明当前对象下 `(BDC-5)` 失败，
+所以必须改走源头中心化、块能量或外部定理路线。
 
 ## 1. 起点：BSC 完整双模数核
 
@@ -243,8 +245,8 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 块中心化文件进一步证明修正后的 `BCFQK-core=>KFLS-core`。当前剩余为：
 
 ```text
-BD-CEN identity (BDC-5), then OSQK-core + TFQK-core.
+SOURCE-CEN or BLK-energy-core or external DI/BFI.
 ```
 
-下一步若继续完全自足硬攻，必须先证明块中心化身份 `(BDC-5)`；一侧共享模数核和真四模数核
-目前是条件后续义务。
+下一步若继续完全自足硬攻，必须先证明源头块中心化 `SOURCE-CEN` 或块能量节省
+`BLK-energy-core`；一侧共享模数核和真四模数核目前是条件后续义务。

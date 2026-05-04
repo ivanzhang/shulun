@@ -1,6 +1,6 @@
 # CFQK-core：块中心化与半对角修正硬攻
 
-**状态：** `cfqk_refined_to_bd_cen_identity_blocker`
+**状态：** `cfqk_block_centering_route_blocked_without_new_input`
 
 本文继续只攻击同一个剩余：
 
@@ -25,6 +25,8 @@ CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 对角处被阻断。
 后续 `prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查：当前 KZ-E spine 只
 写明 `h=0` 主项抵消，尚未证明同 `(u,v)` 块局部方差扣除。因此 `BD-CEN` 是当前第一阻断点。
+再后续 `prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 证明：对当前未块中心化对象，
+`BD-CEN` 被单块非零反例阻断。
 
 ## 1. 按模数块重写平方核
 
@@ -250,8 +252,8 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 并且严格指出上一层把整个 `(u,v)=(u',v')` 半对角要求 `log^{-A}` 是过强的；正确剩余更新为：
 
 ```text
-BD-CEN identity (BDC-5), then OSQK-core + TFQK-core.
+SOURCE-CEN or BLK-energy-core or external DI/BFI.
 ```
 
-其中 `BD-CEN` 尚未由当前 KZ-E 文档证明；只有在 `(BDC-5)` 建立后，真正的解析硬点才推进到
-`(BCF-14)` 与 `(BCF-16)`。若不能证明 `(BDC-5)`，必须改攻更强的 `BLK-energy-core`。
+其中 `SOURCE-CEN` 要证明原始对象已块条件中心化；`BLK-energy-core` 要证明块能量本身也有
+对数节省；外部 DI/BFI 是引用版出口。没有三者之一，不能继续把 `OSQK/TFQK` 接回 `KFLS`。
