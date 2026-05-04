@@ -124,6 +124,22 @@ U_{\rm edge}\le N_{\rm edge,raw}\le K\,G_{\rm edge}.
 
 这一步把 `LOD-EdgeBudget` 从素数位置问题进一步压成纯几何门数问题。
 
+等价地，定义临界低素块大小
+
+\[
+K_{\rm crit}:=\left\lfloor\frac{S}{G_{\rm edge}}\right\rfloor,
+\tag{LEB-12}
+\]
+
+其中 `S` 是 `LowSievePreservation` 可用 slack。若
+
+\[
+K\le K_{\rm crit},
+\tag{LEB-13}
+\]
+
+则边缘层由纯几何门数包络自动付款。
+
 ## 4. 审计脚本
 
 脚本：
@@ -153,6 +169,9 @@ highP-total:
   gate_envelope/slack=0.334126；
   unique_margin=2010.963717；
   gate_margin=1689.963717；
+  slack_per_gate=23.943054；
+  Kcrit=23；
+  Kmargin=15；
   max_unit_multiplicity=2。
 ```
 
@@ -165,7 +184,9 @@ p=5003:
   gate_envelope=576；
   duplicate_saving=14；
   unique_edge/slack=0.396937；
-  gate_envelope/slack=0.843675。
+  gate_envelope/slack=0.843675；
+  Kcrit=9；
+  Kmargin=1。
 
 p=10007:
   raw_edge=256；
@@ -173,7 +194,9 @@ p=10007:
   gate_envelope=272；
   duplicate_saving=0；
   unique_edge/slack=0.137988；
-  gate_envelope/slack=0.146612。
+  gate_envelope/slack=0.146612；
+  Kcrit=54；
+  Kmargin=46。
 ```
 
 逐层最紧者仍为 `p=5003,m=5`：
@@ -186,6 +209,9 @@ gate_envelope=400；
 duplicate_saving=12；
 unique_edge/slack=0.420349。
 gate_envelope/slack=0.866699。
+slack_per_gate=9.230420。
+Kcrit=9。
+Kmargin=1。
 ```
 
 ## 5. 压缩后的全局接口
@@ -194,7 +220,7 @@ gate_envelope/slack=0.866699。
 
 \[
 D_1\le N_1=N_{\rm edge}+N_{\rm mid}.
-\tag{LEB-12}
+\tag{LEB-14}
 \]
 
 本节将边缘项替换为更强的 formal 去重版本：
@@ -203,7 +229,7 @@ D_1\le N_1=N_{\rm edge}+N_{\rm mid}.
 D_1
 \le
 U_{\rm edge}+N_{\rm mid}.
-\tag{LEB-13}
+\tag{LEB-15}
 \]
 
 若只使用纯几何门数包络，则有
@@ -212,7 +238,7 @@ U_{\rm edge}+N_{\rm mid}.
 D_1
 \le
 K\,G_{\rm edge}+N_{\rm mid}.
-\tag{LEB-14}
+\tag{LEB-16}
 \]
 
 因此下一步全局义务变为：
@@ -234,7 +260,7 @@ LOD-MidVoid:
 K\,G_{\rm edge}=848<2537.963717,
 \qquad
 U_{\rm edge}=527<2537.963717.
-\tag{LEB-15}
+\tag{LEB-17}
 \]
 
 但这仍是样本闭合，不是全局无条件证明。
@@ -247,15 +273,18 @@ U_{\rm edge}=527<2537.963717.
 边缘层 h=0/h=u 的短区间公式；
 formal unit 去重引理；
 纯几何门数包络 U_edge<=N_edge_raw<=K*G_edge；
+临界低素块条件 K<=floor(S/G_edge)；
 当前压力样本 raw edge=541 与前一层精确接合；
 当前压力样本 unique edge=527，较 raw N1 节省 14；
-当前压力样本 gate_envelope=848，仍小于 slack。
+当前压力样本 gate_envelope=848，仍小于 slack；
+当前压力样本最紧层 Kcrit=9，当前 K=8，整数余量为 1。
 ```
 
 仍未完成：
 
 ```text
-全局证明 K*G_edge<=slack，或进一步证明 U_edge<=slack；
+全局证明 K<=Kcrit，即 K*G_edge<=slack；
+若 Kcrit=K-1 等边界失败，则进一步证明 U_edge<=slack；
 全局证明 N_mid=0 或给出残项出口；
 与 lift>=2 Mod6Void 一起接回 LowSievePreservation。
 ```

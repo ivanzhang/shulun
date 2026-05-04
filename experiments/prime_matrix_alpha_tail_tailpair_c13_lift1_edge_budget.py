@@ -177,6 +177,8 @@ def edge_budget_row(
 
     duplicate_saving = raw_edge_candidates - len(unique_edge_units)
     gate_envelope = num_primes * nonempty_edge_gate_count
+    slack_per_gate = ratio(slack, nonempty_edge_gate_count)
+    allowed_num_primes = int(slack // nonempty_edge_gate_count) if nonempty_edge_gate_count else None
     max_unit_multiplicity = max(unit_multiplicity.values()) if unit_multiplicity else 0
     return {
         "p": prime_bound,
@@ -192,6 +194,13 @@ def edge_budget_row(
         "edge_gate_count": edge_gate_count,
         "nonempty_edge_gate_count": nonempty_edge_gate_count,
         "gate_envelope": gate_envelope,
+        "slack_per_gate": slack_per_gate,
+        "allowed_num_primes": allowed_num_primes,
+        "num_primes_margin": (
+            allowed_num_primes - num_primes
+            if allowed_num_primes is not None
+            else None
+        ),
         "raw_edge_over_slack": ratio(raw_edge_candidates, slack),
         "unique_edge_over_slack": ratio(len(unique_edge_units), slack),
         "gate_envelope_over_slack": ratio(gate_envelope, slack),
@@ -304,6 +313,17 @@ def edge_budget_package(
         value["gate_envelope_over_slack"] = ratio(value["gate_envelope"], value["slack_before_low"])
         value["unique_edge_margin"] = value["slack_before_low"] - value["unique_edge_units"]
         value["gate_envelope_margin"] = value["slack_before_low"] - value["gate_envelope"]
+        value["slack_per_gate"] = ratio(value["slack_before_low"], value["nonempty_edge_gate_count"])
+        value["allowed_num_primes"] = (
+            int(value["slack_before_low"] // value["nonempty_edge_gate_count"])
+            if value["nonempty_edge_gate_count"]
+            else None
+        )
+        value["num_primes_margin"] = (
+            value["allowed_num_primes"] - num_primes
+            if value["allowed_num_primes"] is not None
+            else None
+        )
         value["duplicate_saving_ratio"] = ratio(value["duplicate_saving"], value["raw_edge_candidates"])
         window_rows.append(value)
     total["raw_edge_over_slack"] = ratio(total["raw_edge_candidates"], total["slack_before_low"])
@@ -311,6 +331,17 @@ def edge_budget_package(
     total["gate_envelope_over_slack"] = ratio(total["gate_envelope"], total["slack_before_low"])
     total["unique_edge_margin"] = total["slack_before_low"] - total["unique_edge_units"]
     total["gate_envelope_margin"] = total["slack_before_low"] - total["gate_envelope"]
+    total["slack_per_gate"] = ratio(total["slack_before_low"], total["nonempty_edge_gate_count"])
+    total["allowed_num_primes"] = (
+        int(total["slack_before_low"] // total["nonempty_edge_gate_count"])
+        if total["nonempty_edge_gate_count"]
+        else None
+    )
+    total["num_primes_margin"] = (
+        total["allowed_num_primes"] - num_primes
+        if total["allowed_num_primes"] is not None
+        else None
+    )
     total["duplicate_saving_ratio"] = ratio(total["duplicate_saving"], total["raw_edge_candidates"])
     total["side_hist"] = dict(sorted(total_side.items()))
     total["unique_side_hist"] = dict(sorted(total_unique_side.items()))
@@ -334,7 +365,7 @@ def print_table(package: dict) -> None:
     print(
         "scope slack raw_edge unique_edge dup_save raw_slack unique_slack "
         "gate_env gate_slack unique_margin gate_margin dup_ratio span gates "
-        "nonempty max_mult side unique_side",
+        "nonempty slack_gate kcrit kmargin max_mult side unique_side",
         flush=True,
     )
     print(
@@ -345,13 +376,16 @@ def print_table(package: dict) -> None:
         f"{total['unique_edge_margin']:.6f} {total['gate_envelope_margin']:.6f} "
         f"{fmt(total['duplicate_saving_ratio'])} "
         f"{total['edge_integer_span']:.0f} {total['edge_gate_count']:.0f} "
-        f"{total['nonempty_edge_gate_count']:.0f} {total['max_unit_multiplicity']} "
+        f"{total['nonempty_edge_gate_count']:.0f} {fmt(total['slack_per_gate'])} "
+        f"{total['allowed_num_primes']} {total['num_primes_margin']} "
+        f"{total['max_unit_multiplicity']} "
         f"{total['side_hist']} {total['unique_side_hist']}",
         flush=True,
     )
     print(
         "p block shift slack raw_edge unique_edge dup_save raw_slack unique_slack "
-        "gate_env gate_slack unique_margin gate_margin dup_ratio span gates nonempty max_mult",
+        "gate_env gate_slack unique_margin gate_margin dup_ratio span gates "
+        "nonempty slack_gate kcrit kmargin max_mult",
         flush=True,
     )
     for row in package["windows"]:
@@ -364,12 +398,15 @@ def print_table(package: dict) -> None:
             f"{row['unique_edge_margin']:.6f} {row['gate_envelope_margin']:.6f} "
             f"{fmt(row['duplicate_saving_ratio'])} "
             f"{row['edge_integer_span']:.0f} {row['edge_gate_count']:.0f} "
-            f"{row['nonempty_edge_gate_count']:.0f} {row['max_unit_multiplicity']}",
+            f"{row['nonempty_edge_gate_count']:.0f} {fmt(row['slack_per_gate'])} "
+            f"{row['allowed_num_primes']} {row['num_primes_margin']} "
+            f"{row['max_unit_multiplicity']}",
             flush=True,
         )
     print(
         "p block shift m slack raw_edge unique_edge dup_save raw_slack unique_slack "
-        "gate_env gate_slack side unique_side top_edges top_offsets top_low_primes max_mult",
+        "gate_env gate_slack slack_gate kcrit kmargin side unique_side top_edges "
+        "top_offsets top_low_primes max_mult",
         flush=True,
     )
     for row in package["rows"]:
@@ -379,6 +416,8 @@ def print_table(package: dict) -> None:
             f"{row['unique_edge_units']:.0f} {row['duplicate_saving']:.0f} "
             f"{fmt(row['raw_edge_over_slack'])} {fmt(row['unique_edge_over_slack'])} "
             f"{row['gate_envelope']:.0f} {fmt(row['gate_envelope_over_slack'])} "
+            f"{fmt(row['slack_per_gate'])} {row['allowed_num_primes']} "
+            f"{row['num_primes_margin']} "
             f"{row['side_hist']} {row['unique_side_hist']} {row['top_edges']} "
             f"{row['top_offsets']} {row['top_low_primes']} {row['max_unit_multiplicity']}",
             flush=True,
