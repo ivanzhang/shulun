@@ -76,6 +76,11 @@ SAEWitness。
 该出口仍未排斥 persistent 分支；它只保证所有真实失败都已经变成带有
 `Q_pair,tau_pair,depth` 的可审稿输入行。
 
+审稿时还必须区分固定模与变模。具体分流见
+`prime-matrix-eda-alpha-tail-tailpair-c13-pairphase-modulus-route.md`：只有同一
+`Q_pair=q(q+g)` 重复的原子才可直接进入同模 `PDEC`；变化的 `Q_pair` 必须进入
+`MovingModulusDepth-SAE` 或先证明 cross-modulus stitching。
+
 ## 3. 可引用引理
 
 **引理 WPL-1（尾素对见证的同商数锁定）。**  
@@ -134,6 +139,7 @@ route_counts PairPhase-PDEC/ColumnCRT:32,SAEWitness:5
 见证对的同商数锁定恒等式；
 见证原子的 Q_pair/tau_pair/depth 输入格式；
 按 shape_key 的 PairPhase-PDEC/SAE 无损分流；
+固定模/变模分流接口已独立物化；
 样本 C=1.3 无失败相位原子；
 C=1.2 压力样本中 281 个原子全部 quotient_lock 通过。
 ```
