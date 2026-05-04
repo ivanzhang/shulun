@@ -120,6 +120,10 @@ LowQ-Layer-HDE:
   或把该层送入 ColumnCRT/stitching 排斥。
 ```
 
+低 q 层的第一步结构压缩见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowq-overlap-certificate.md`：当前样本中未被
+`C_FG=1.3` 天花板排斥的 14 层压缩为 9 个共享 `q` 锚与 12 个固定 gap 素对。
+
 ## 4. 审稿边界
 
 已完成：
