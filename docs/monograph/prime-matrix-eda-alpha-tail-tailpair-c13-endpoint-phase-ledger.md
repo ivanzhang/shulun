@@ -66,19 +66,44 @@ K=(24,3,1,3,left), count=2, failures=0, min_slack=1, max_required_C=1.289379。
 因此当前样本中 near-C13 端点分支没有实际失败；若把阈值继续压紧，则最先触发的也是
 明确的端点相位键，而不是无结构的中尺度素对异常。
 
-## 3. 可引用引理
+## 3. 失败质量口径修正
+
+端点相位键本身只记录“近门槛压力位置”。正式反例出口必须使用
+`prime-matrix-eda-alpha-tail-tailpair-c13-endpoint-persistence-contract.md` 的整数失败质量
+
+\[
+\mu_{13}(J)=\max(0,1-\sigma_{13}(J)).
+\]
+
+因此：
+
+```text
+slack<=0 的端点键才携带 PDEC/SAE 失败质量；
+slack>0 的端点键只是 NearThresholdWatchOnly；
+不能把 near-threshold 记录直接作为 PDEC 下界。
+```
+
+样本合同核验给出：
+
+```text
+failure_records=0, failure_keys=0, failure_mass=0,
+NearThresholdWatchOnly keys=59。
+```
+
+## 4. 可引用引理
 
 **引理 EPL-1（C13 端点键路由）。**  
 任何 small-`u` 的 `C13` 失败或近门槛记录都带有端点相位键 `(EPL-1)`。若同一键在无限
-窗口族中持久承担正超额，则它进入 `Directed endpoint CRTDefect/PDEC/ColumnCRT`；否则它
-是有限或可求和 `SAE`。
+窗口族中持久承担正失败质量 `mu_13>0`，则它进入 `Directed endpoint CRTDefect/PDEC/ColumnCRT`；
+若正失败质量非持久，则它是有限或可求和 `SAE`；若 `mu_13=0`，则只登记为近门槛观察项。
 
 **证明。**  
 small-`u` 由 `LEG-2` 强制端点化。固定 `g,j_1,j_2,u` 与端点侧后，责任区间的端点位置
-由同余格点 `d≡-j_1r mod u` 的首末点决定，故形成固定相位键。持久正超额正是既有
-`EndpointDefect` 定义；非持久情形按定义进入 SAE。□
+由同余格点 `d≡-j_1r mod u` 的首末点决定，故形成固定相位键。合同文档中的
+`mu_13` 把真实失败与近门槛观察项分离；持久正失败质量正是既有 `EndpointDefect`
+输入，非持久正失败质量按定义进入 SAE。□
 
-## 4. 对主链的影响
+## 5. 对主链的影响
 
 `C13` 分支现在合成为：
 
@@ -97,7 +122,7 @@ small-u 近门槛 keys=59，但 failures=0。
 
 因此样本 `C13` 分支已全清空；全局剩余只剩端点键的 persistent 排斥或 SAE 登记。
 
-## 5. 审稿边界
+## 6. 审稿边界
 
 已完成：
 
@@ -114,4 +139,3 @@ C13 small-u 端点相位键定义；
 全局非持久端点键 SAE 可求和账本；
 TailCutoffVoid 不等式在目标无限窗口族上的证明。
 ```
-
