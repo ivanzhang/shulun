@@ -72,6 +72,11 @@ def audit_item(prime_bound: int, block: int, shift: int, alpha: float) -> dict:
     plus_pair_count = 0
     minus_pair_count = 0
     squarefree_same_sign_count = 0
+    squarefree_pair_count = 0
+    opposite_sign_count = 0
+    left_mobius_sum = 0
+    right_mobius_sum = 0
+    mobius_correlation = 0
     for value in domain:
         if value in union_deleted:
             continue
@@ -79,7 +84,14 @@ def audit_item(prime_bound: int, block: int, shift: int, alpha: float) -> dict:
         if left_sign == 0:
             continue
         right_sign = squarefree_mobius_sign(value + shift, small_primes)
-        if right_sign == 0 or right_sign != left_sign:
+        if right_sign == 0:
+            continue
+        squarefree_pair_count += 1
+        left_mobius_sum += left_sign
+        right_mobius_sum += right_sign
+        mobius_correlation += left_sign * right_sign
+        if right_sign != left_sign:
+            opposite_sign_count += 1
             continue
         squarefree_same_sign_count += 1
         if left_sign > 0:
@@ -100,9 +112,14 @@ def audit_item(prime_bound: int, block: int, shift: int, alpha: float) -> dict:
         "delete_overlap": len(left_deleted & right_deleted),
         "delete_union": len(union_deleted),
         "smooth_pair_count": smooth_pair_count,
+        "squarefree_pair_count": squarefree_pair_count,
         "same_sign_squarefree_pairs": squarefree_same_sign_count,
+        "opposite_sign_squarefree_pairs": opposite_sign_count,
         "plus_pairs": plus_pair_count,
         "minus_pairs": minus_pair_count,
+        "left_mobius_sum": left_mobius_sum,
+        "right_mobius_sum": right_mobius_sum,
+        "mobius_correlation": mobius_correlation,
         "large_prime_count": len(large_primes),
         "max_value": max_value,
     }
@@ -136,16 +153,17 @@ def main() -> None:
         return
     if args.format == "table":
         print(
-            "p block shift near domain left_del right_del overlap union smooth_pairs same_sign plus minus large_primes",
+            "p block shift near domain smooth_pairs sqfree same opposite plus minus corr large_primes",
             flush=True,
         )
         for audit in audits:
             print(
                 f"{audit['p']} {audit['block']} {audit['shift']} {audit['near_linear']} "
-                f"{audit['domain_size']} {audit['left_deleted']} {audit['right_deleted']} "
-                f"{audit['delete_overlap']} {audit['delete_union']} "
-                f"{audit['smooth_pair_count']} {audit['same_sign_squarefree_pairs']} "
-                f"{audit['plus_pairs']} {audit['minus_pairs']} {audit['large_prime_count']}",
+                f"{audit['domain_size']} {audit['smooth_pair_count']} "
+                f"{audit['squarefree_pair_count']} {audit['same_sign_squarefree_pairs']} "
+                f"{audit['opposite_sign_squarefree_pairs']} {audit['plus_pairs']} "
+                f"{audit['minus_pairs']} {audit['mobius_correlation']} "
+                f"{audit['large_prime_count']}",
                 flush=True,
             )
         return
