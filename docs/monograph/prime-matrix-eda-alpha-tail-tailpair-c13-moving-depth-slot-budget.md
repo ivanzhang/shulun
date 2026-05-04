@@ -87,6 +87,10 @@ MovingModulusDepth-SAE
 或同一深度槽/相邻深度槽持久出现时触发 cross-modulus stitching/ColumnCRT。
 ```
 
+下一层 envelope 见 `prime-matrix-eda-alpha-tail-tailpair-c13-depth-band-envelope.md`：若深度
+`s<=beta|I|`，则固定 `(p,B,r,K,epsilon)` 的槽数至多为
+`floor((beta|I|-epsilon)/u)+1`；若 `s>beta|I|`，则进入 `BulkDepthOverflow`。
+
 ## 5. 审稿边界
 
 已完成：
@@ -94,6 +98,7 @@ MovingModulusDepth-SAE
 ```text
 深度槽 formal unit 定义；
 槽容量 load<=|M| 的逐行证明；
+端点带宽 envelope 接口已物化；
 样本 C=1.3 无 moving 原子；
 C=1.2 压力样本 moving=224 压成 slots=215，capacity_failures=0。
 ```
