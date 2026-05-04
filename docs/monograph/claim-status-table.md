@@ -881,4 +881,6 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 
 | H3-HLC BWFD谱完成攻击 | 压缩为BSC-core/后续再压缩 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md`。该文件对 `s` 变量作精确有限 Fourier 完成，把不完整逆元相位化为完整 Kloosterman 和，并用 `S(A,B;uv)=S(A\\bar v,B\\bar v;u)S(A\\bar u,B\\bar u;v)` 显示平衡双模数完整核心。文中同时核定：普通 KZ-D 只能给 raw 二范数尺度，点态 Weil 也不给任意 `log^{-A}`；该步当时剩余为 `BSC-core`，后续分数相位攻击已进一步压缩为 `KFLS-core`。 |
 
-| H3-HLC BSC分数相位硬攻 | 压缩为KFLS-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md`。该文件逐项展开完整 Kloosterman 和，把核心相位显形为 `e(\\bar vR/u+\\bar uT/v)`，并把单侧退化定位为二次同余 `(a_h+ell)x^2+b_h=0 mod u`，给出 CRT 根数包络。当前唯一剩余进一步压缩为 `KFLS-core`：balanced Kloosterman-fraction large sieve logarithmic saving，即 `(KFA-17a)`--`(KFA-17b)` 的退化账本和二维互逆分数相位平均抵消。 |
+| H3-HLC BSC分数相位硬攻 | 压缩为KFLS-core/后续再压缩 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md`。该文件逐项展开完整 Kloosterman 和，把核心相位显形为 `e(\\bar vR/u+\\bar uT/v)`，并把单侧退化定位为二次同余 `(a_h+ell)x^2+b_h=0 mod u`，给出 CRT 根数包络。该步当时剩余为 `KFLS-core`：balanced Kloosterman-fraction large sieve logarithmic saving；后续平方核硬攻已进一步压缩为 `CFQK-core`。 |
+
+| H3-HLC KFLS平方核硬攻 | 压缩为CFQK-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md`。该文件把 `KFLS-core` 的非退化和平方化，显式得到四模数相位差 `bar v R/u+bar u T/v-bar v' R'/u'-bar u' T'/v'`。文件指出全核绝对 Schur 被精确对角层阻断，只能恢复 raw 二范数尺度；正确剩余是中心化后的半对角 `(SQK-21)` 与真非对角 `(SQK-23)`。当前唯一剩余更新为 `CFQK-core`：centered four-modulus Kloosterman-fraction correlation saving。 |

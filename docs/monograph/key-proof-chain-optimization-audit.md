@@ -603,8 +603,13 @@ bilinear correlation 任意对数节省。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 后，
 `BSC-core` 被逐项展开为 `e(\bar vR/u+\bar uT/v)` 的互逆分数相位。现在不应再停留在
-Kloosterman 和符号层；唯一硬点是 `(KFA-17a)`--`(KFA-17b)` 的 `KFLS-core`，即 balanced
+Kloosterman 和符号层；该步当时的硬点是 `(KFA-17a)`--`(KFA-17b)` 的 `KFLS-core`，即 balanced
 Kloosterman-fraction large sieve 任意对数节省。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 后，`KFLS-core`
+被平方化为中心化四模数核。现在不应再尝试全核绝对 Schur；该路线被对角层阻断。唯一硬点
+更新为 `(SQK-21)`--`(SQK-23)` 的 `CFQK-core`，即 centered four-modulus Kloosterman-fraction
+correlation saving。
 
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 

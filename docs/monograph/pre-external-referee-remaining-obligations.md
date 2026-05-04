@@ -700,6 +700,16 @@ KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 该项要求直接证明 `(KFA-17a)`--`(KFA-17b)`；也就是在 `u,v≈C^{1/2}` 的双模数族上控制
 `e(\bar vR/u+\bar uT/v)` 的非退化平均抵消。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 后，KFLS-core 已
+平方化为中心化四模数核。外审前 HLC 完全自足剩余清单进一步缩为：
+
+```text
+CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
+```
+
+该项要求证明 `(SQK-21)` 半对角账本和 `(SQK-23)` 真非对角中心化相关。全核绝对 Schur 已被
+该文件排除为错误路线，因为精确对角层只给 raw 二范数尺度。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

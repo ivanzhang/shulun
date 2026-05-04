@@ -331,3 +331,13 @@ KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 
 外部 DI/BFI 若要匹配该点，必须能覆盖相位
 `e(\bar vR/u+\bar uT/v)` 的平衡双模数平均，并处理退化二次同余层的 gcd/divisor 账本。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 后，外部核验点
+进一步缩为：
+
+```text
+CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
+```
+
+外部定理若要覆盖该点，必须提供中心化四模数相关的对数节省，而不能只给全核绝对 Schur；
+后者被精确对角层阻断。

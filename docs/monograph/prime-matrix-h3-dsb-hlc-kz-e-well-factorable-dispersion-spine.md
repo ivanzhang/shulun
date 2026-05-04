@@ -210,10 +210,10 @@ CORE-5 closed;
 HLC completely self-contained closed.
 ```
 
-当前唯一剩余已经由后续三步继续压缩为：
+当前唯一剩余已经由后续四步继续压缩为：
 
 ```text
-KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
+CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 ```
 
 后续 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 已把
@@ -221,5 +221,7 @@ KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 `docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 又把
 `BWFD-core` 通过 `s` 变量精确完成和完整 Kloosterman 乘法公式压缩为 `BSC-core`；
 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 再把
-`BSC-core` 展开为互逆分数相位并压缩为 `KFLS-core`。因此下一步若继续不换命题硬攻，必须
-直接证明 `(KFA-17a)`--`(KFA-17b)`。
+`BSC-core` 展开为互逆分数相位并压缩为 `KFLS-core`；
+`docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 最后把 `KFLS-core`
+平方化为中心化四模数相关核 `CFQK-core`。因此下一步若继续不换命题硬攻，必须直接证明
+`(SQK-21)`--`(SQK-23)`。

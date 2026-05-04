@@ -14,7 +14,9 @@ BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean esti
 和乘法分裂。结论是：普通 KZ-D 谱大筛只能恢复 raw 二范数尺度；任意 `log^{-A}` 节省必须
 来自一个更窄的 balanced spectral bilinear correlation 核，记为 `BSC-core`。后续
 `prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 已把 `BSC-core` 逐项展开为
-互逆 Kloosterman 分数相位，并进一步压缩为 `KFLS-core`。
+互逆 Kloosterman 分数相位，并进一步压缩为 `KFLS-core`；再后续
+`prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 把 `KFLS-core` 平方化为
+`CFQK-core`。
 
 ## 1. 起点
 
@@ -211,10 +213,10 @@ BSC-core => BWFD-core => WFD-core => KZ-E.
 无黑箱闭合的唯一剩余现在进一步定位为：
 
 ```text
-KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
+CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 ```
 
 若允许引用 Deshouillers--Iwaniec/Bombieri--Friedlander--Iwaniec 型 well-factorable dispersion
 定理，该核心可作为外部深定理适配点；若要求文内完全自足，则必须继续证明后续文件中的
-`(KFA-17a)`--`(KFA-17b)`。在 `KFLS-core` 未证明前，不能宣称 H3-HLC、SC-9 或 CORE-5
+`(SQK-21)`--`(SQK-23)`。在 `CFQK-core` 未证明前，不能宣称 H3-HLC、SC-9 或 CORE-5
 已完全无黑箱闭合。

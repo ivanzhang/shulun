@@ -1,6 +1,6 @@
 # BSC-core：Kloosterman 分数相位硬攻
 
-**状态：** `bsc_reduced_to_kloosterman_fraction_large_sieve_core_not_closed`
+**状态：** `bsc_reduced_to_centered_four_modulus_kernel_core_not_closed`
 
 本文继续只攻击同一个剩余：
 
@@ -19,6 +19,8 @@ e\!\left({\bar v R\over u}+{\bar u T\over v}\right).
 结论是：`BSC-core` 等价地压缩为一个更内部的 `KFLS-core`，即该分数相位族的任意对数节省。
 这一步完成相位显形、退化方程定位和对角/非对角职责切分；但尚未证明 `KFLS-core`，所以仍
 不能宣称完全自足闭合。
+后续 `prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 已把 `KFLS-core` 进一步平方化为
+中心化四模数相关核 `CFQK-core`。
 
 ## 1. 起点：BSC 完整双模数核
 
@@ -230,9 +232,14 @@ well-factorable 平衡化或 `s`-completion 的残留义务；只剩平衡互逆
 本步完成了：
 
 ```text
-KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
+CFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 ```
 
-但 `KFLS-core` 本身尚未证明。下一步若继续完全自足硬攻，不能再停留在 Kloosterman 和符号层；
-必须直接证明 `(KFA-17a)`--`(KFA-17b)` 的二维互逆分数相位平均抵消，或者把它进一步平方化为可审查的
-四模数相关核并关闭非对角 Schur 上界。
+本文本身证明 `KFLS-core=>BSC-core`；后续平方核文件进一步证明 `CFQK-core=>KFLS-core`。
+当前唯一剩余为：
+
+```text
+CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
+```
+
+下一步若继续完全自足硬攻，必须直接处理 `(SQK-21)` 半对角和 `(SQK-23)` 真非对角中心化核。

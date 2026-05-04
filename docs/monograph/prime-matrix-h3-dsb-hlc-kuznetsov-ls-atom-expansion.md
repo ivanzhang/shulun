@@ -198,6 +198,11 @@ balanced complete Kloosterman bilinear correlation logarithmic saving。
 最小未内联核心进一步变为 `KFLS-core`：balanced Kloosterman-fraction large sieve
 logarithmic saving。
 
+再后续 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 把 `KFLS-core`
+平方化，指出全核绝对 Schur 会被对角层阻断，正确剩余应是中心化四模数相关核
+`CFQK-core`。所以 KZ-E 的最小未内联核心进一步变为 `CFQK-core`：centered four-modulus
+Kloosterman-fraction correlation saving。
+
 ## 7. 四原子推出 SC-9
 
 **命题。** KZ-A、KZ-B、KZ-C、KZ-D、KZ-E 成立，则 `(SC-9)` 成立。
@@ -236,8 +241,8 @@ logarithmic saving。
 本文仍未完成完全自足闭合：
 
 ```text
-KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
+CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 ```
 
-因此，下一步若继续无黑箱硬攻，应直接证明 KFLS-core。不能把该原子省略后宣称完全自足
+因此，下一步若继续无黑箱硬攻，应直接证明 CFQK-core。不能把该原子省略后宣称完全自足
 闭合。

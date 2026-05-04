@@ -1633,6 +1633,28 @@ complete Kloosterman expansion
 KFLS-core balanced Kloosterman-fraction large sieve logarithmic saving.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 后，
+`KFLS-core` 进一步平方化：
+
+```text
+square expansion of e(bar v R/u + bar u T/v)
++ exact diagonal/raw norm ledger
++ semi-diagonal layers
++ centered true off-diagonal four-modulus kernel
+=> KFLS-core
+=> BSC-core
+=> BWFD-core
+=> WFD-core
+=> KZ-E.
+```
+
+该文件同时排除一条错误闭合路线：全核绝对 Schur 受对角质量阻断，只能恢复 raw 二范数尺度，
+不能产生任意 `log^{-A}`。当前唯一剩余核更新为：
+
+```text
+CFQK-core centered four-modulus Kloosterman-fraction correlation saving.
+```
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
