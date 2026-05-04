@@ -5,6 +5,7 @@
   python3 experiments/prime_matrix_p23_zero_recurrence_audit.py
 
 本脚本验证第 59 行全覆盖是否在 CRT 镜像行之前真实复现，并分析复现间隔。
+这里行号采用一编号：第 r 行为 [(r-1)P+1, rP]；因此第 59 行对应乘数 x=58。
 """
 
 from __future__ import annotations
