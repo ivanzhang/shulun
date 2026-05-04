@@ -152,3 +152,7 @@ Lift>=2-void/PDEC:
 ```
 
 所以本文是结构压缩与样本证书，不是行命题最终闭合。
+
+`lift=1` 纯整数候选余量已单独整理在
+`prime-matrix-eda-alpha-tail-tailpair-c13-lift1-integer-margin.md`。该文件显示当前样本
+`possible_lift1/slack=0.213163`，从而把剩余进一步压成 `lift>=2` 的空性或 PDEC/SAE 出口。
