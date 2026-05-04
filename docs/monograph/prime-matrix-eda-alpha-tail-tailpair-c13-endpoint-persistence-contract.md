@@ -6,6 +6,10 @@
 `C13` 失败质量无损登记到 `SAE` 或 `DirectedEndpointCRTDefect/PDEC`，同时明确：
 近门槛但未失败的记录只能作为观察项，不能作为 `PDEC` 下界质量。
 
+进一步的见证级细化见
+`prime-matrix-eda-alpha-tail-tailpair-c13-witness-barrier.md`：任何 `mu_13>0` 的失败键
+必须给出具体尾素对 `(q,q+g)`，并以这些见证对作为 `SAE/PDEC` 的原子输入。
+
 ## 1. 真实失败原子
 
 对一个端点责任区间 `J`，记
@@ -125,7 +129,8 @@ C13 EndpointPhaseKey
 C13 端点真实失败质量定义；
 按端点键无损分解；
 失败键 persistent/SAE 二分；
-样本端点分支真实失败质量为 0。
+样本端点分支真实失败质量为 0；
+失败质量已可进一步细化为尾素对见证障碍。
 ```
 
 仍未完成：
