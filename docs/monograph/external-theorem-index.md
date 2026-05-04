@@ -310,3 +310,14 @@ BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean esti
 
 DI/BFI 若要作为外部定理使用，必须覆盖该平方根双模数窗口，而不仅是单模 Kloosterman
 点态估计。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 后，外部核验
+点进一步缩为：
+
+```text
+BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
+```
+
+外部 DI/BFI 适配若要闭合该点，必须在完成 Kloosterman 形 `(BSA-9)` 上给出任意 `log^{-A}`
+节省，并覆盖同一全局 `\beta_s` 诱导的 Fourier 系数族 `(BSA-4)`；只给普通 spectral large
+sieve 或点态 Weil bound 不足。

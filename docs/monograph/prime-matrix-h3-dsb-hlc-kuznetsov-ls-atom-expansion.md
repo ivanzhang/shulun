@@ -187,6 +187,11 @@ windowed well-factorable Kloosterman dispersion mean estimate。
 well-factorable 分解证明 `BWFD-core=>WFD-core`。所以 KZ-E 的最小未内联核心进一步变为
 `BWFD-core`：balanced two-modulus well-factorable Kloosterman dispersion mean estimate。
 
+再后续 `docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 对
+`s` 变量作精确有限 Fourier 完成，并用完整 Kloosterman 乘法公式证明
+`BSC-core=>BWFD-core`。所以 KZ-E 的最小未内联核心进一步变为 `BSC-core`：
+balanced complete Kloosterman bilinear correlation logarithmic saving。
+
 ## 7. 四原子推出 SC-9
 
 **命题。** KZ-A、KZ-B、KZ-C、KZ-D、KZ-E 成立，则 `(SC-9)` 成立。
@@ -225,8 +230,8 @@ well-factorable 分解证明 `BWFD-core=>WFD-core`。所以 KZ-E 的最小未内
 本文仍未完成完全自足闭合：
 
 ```text
-BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
 ```
 
-因此，下一步若继续无黑箱硬攻，应直接证明 BWFD-core。不能把该原子省略后宣称完全自足
+因此，下一步若继续无黑箱硬攻，应直接证明 BSC-core。不能把该原子省略后宣称完全自足
 闭合。

@@ -877,4 +877,6 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 
 | H3-HLC KZ-E攻坚 | 压缩为WFD-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-e-well-factorable-dispersion-spine.md`。该文件内联 well-factorable 卷积分解、dispersion 方差恒等式、CRT 到标准 Kloosterman 相位的归一化、gcd 相容层和端点平滑账本，并证明 `WFD-core=>KZ-E`。当前完全自足链唯一剩余为 `WFD-core`：窗口化 well-factorable Kloosterman dispersion 平均估计；未证明前不得宣称 `SC-9/CORE-5/HLC` 完全自足闭合。 |
 
-| H3-HLC WFD平方根平衡化 | 压缩为BWFD-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md`。该文件用平方根 well-factorable 分解把 `lambda_c` 写成 `c=uv` 且 `u,v≈c^{1/2}`，剥离 gcd 多对数层，并用 CRT 把 `e_{uv}(as+b\\bar s)` 因子化为双模数相位，证明 `BWFD-core=>WFD-core=>KZ-E`。当前唯一剩余为 `BWFD-core`：balanced two-modulus well-factorable Kloosterman dispersion mean estimate。 |
+| H3-HLC WFD平方根平衡化 | 压缩为BWFD-core/后续再压缩 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md`。该文件用平方根 well-factorable 分解把 `lambda_c` 写成 `c=uv` 且 `u,v≈c^{1/2}`，剥离 gcd 多对数层，并用 CRT 把 `e_{uv}(as+b\\bar s)` 因子化为双模数相位，证明 `BWFD-core=>WFD-core=>KZ-E`。该步当时剩余为 `BWFD-core`；后续谱完成攻击已进一步压缩为 `BSC-core`。 |
+
+| H3-HLC BWFD谱完成攻击 | 压缩为BSC-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md`。该文件对 `s` 变量作精确有限 Fourier 完成，把不完整逆元相位化为完整 Kloosterman 和，并用 `S(A,B;uv)=S(A\\bar v,B\\bar v;u)S(A\\bar u,B\\bar u;v)` 显示平衡双模数完整核心。文中同时核定：普通 KZ-D 只能给 raw 二范数尺度，点态 Weil 也不给任意 `log^{-A}`；当前唯一剩余进一步压缩为 `BSC-core`：balanced complete Kloosterman bilinear correlation logarithmic saving。 |

@@ -1588,10 +1588,29 @@ lambda_c well-factorable
 => WFD-core.
 ```
 
-当前唯一剩余核为：
+该步当时的唯一剩余核为：
 
 ```text
 BWFD-core balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+```
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 后，
+`BWFD-core` 进一步完成化：
+
+```text
+s-variable finite Fourier completion
++ complete Kloosterman multiplicativity modulo uv
++ balanced u,v spectral bilinear correlation
+=> BWFD-core
+=> WFD-core
+=> KZ-E.
+```
+
+普通 KZ-D 只恢复 raw 二范数尺度，点态 Weil 只给单点平方根抵消，均不能产生任意
+`log^{-A}`。当前唯一剩余核因此更新为：
+
+```text
+BSC-core balanced complete Kloosterman bilinear correlation logarithmic saving.
 ```
 
 ## 19. RPZ first-grid-fail seam 的单余类证书化

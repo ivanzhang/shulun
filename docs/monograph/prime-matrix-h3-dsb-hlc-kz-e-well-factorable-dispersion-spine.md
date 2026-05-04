@@ -210,12 +210,14 @@ CORE-5 closed;
 HLC completely self-contained closed.
 ```
 
-当前唯一剩余已经精确压缩为：
+当前唯一剩余已经由后续两步继续压缩为：
 
 ```text
-BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
 ```
 
 后续 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 已把
-`WFD-core` 用平方根 well-factorable 分解、gcd 剥离和 CRT 因子化压缩为 `BWFD-core`。因此
-下一步若继续不换命题硬攻，必须直接证明 balanced 双模数核 `(WB-11)`。
+`WFD-core` 用平方根 well-factorable 分解、gcd 剥离和 CRT 因子化压缩为 `BWFD-core`；
+`docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 又把
+`BWFD-core` 通过 `s` 变量精确完成和完整 Kloosterman 乘法公式压缩为 `BSC-core`。因此
+下一步若继续不换命题硬攻，必须直接证明完整双模数谱双线性相关核 `(BSA-13)`。

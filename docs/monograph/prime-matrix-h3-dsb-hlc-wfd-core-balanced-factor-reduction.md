@@ -1,6 +1,6 @@
 # WFD-core：平方根 well-factorable 平衡化与双模数核心
 
-**状态：** `wfd_core_reduced_to_balanced_two_modulus_kloosterman_core`
+**状态：** `wfd_core_reduced_to_bsc_complete_kloosterman_bilinear_core`
 
 本文继续只攻击同一个剩余：
 
@@ -10,6 +10,8 @@ WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
 
 本步目标是把 `WFD-core` 中的单一 well-factorable 模数权，严格拆成平方根双模数平均。这样
 剩余不再是笼统的 BFI/DI，而是一个明确的 balanced two-modulus Kloosterman 核 `BWFD-core`。
+后续 `prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 已进一步把 `BWFD-core`
+经 `s` 变量精确完成和完整 Kloosterman 乘法公式压缩为 `BSC-core`。
 
 ## 1. 起点：WFD-core
 
@@ -168,14 +170,15 @@ e_v(\bar u(a_hs+b_h\bar s))
 本文严格完成：
 
 ```text
-BWFD-core => WFD-core => KZ-E.
+BSC-core => BWFD-core => WFD-core => KZ-E.
 ```
 
-但本文尚未证明 `BWFD-core`。因此当前唯一剩余进一步压缩为：
+本文本身证明 `BWFD-core=>WFD-core`；后续谱完成攻击文件进一步证明 `BSC-core=>BWFD-core`。
+因此当前唯一剩余进一步压缩为：
 
 ```text
-BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
 ```
 
-下一步不能再重复筛权分解、gcd 剥离或 CRT 归一化；这些已经完成。必须直接攻 `(WB-11)`：
-在 `u,v≈C^{1/2}` 的双模数族上证明 Kloosterman 相位的平均抵消。
+下一步不能再重复筛权分解、gcd 剥离、CRT 归一化或 `s`-completion；这些已经完成。必须直接攻
+`(BSA-13)`：在 `u,v≈C^{1/2}` 的完整 Kloosterman 双线性族上证明任意对数节省。

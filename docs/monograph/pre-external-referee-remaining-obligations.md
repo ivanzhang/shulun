@@ -680,6 +680,16 @@ BWFD-core: balanced two-modulus well-factorable Kloosterman dispersion mean esti
 该项要求直接处理 `u,v≈C^{1/2}` 的双模数 Kloosterman 相位平均；筛权分解、gcd 剥离和 CRT
 归一化已经不再是剩余义务。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md` 后，BWFD-core
+已完成化为完整 Kloosterman 双线性相关。外审前 HLC 完全自足剩余清单进一步缩为：
+
+```text
+BSC-core: balanced complete Kloosterman bilinear correlation logarithmic saving.
+```
+
+该项要求证明 `(BSA-13)` 的任意对数节省；普通谱大筛 KZ-D 和点态 Weil 已在该文件中核定为
+只能给 raw 尺度或单点平方根抵消，不能替代 BSC-core。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

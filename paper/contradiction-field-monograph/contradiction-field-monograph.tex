@@ -1560,8 +1560,18 @@ That core is further balanced in
 Using the square-root well-factorable decomposition $\lambda_c=\sum_{c=uv}\alpha_u\delta_v$,
 the condition $c\asymp C$ forces $u,v\asymp C^{1/2}$ up to polylogarithmic boundary blocks.
 The gcd strata are polylogarithmic, and CRT factors the phase modulo $uv$ into coupled
-phases modulo $u$ and $v$.  Thus the remaining atom is BWFD-core, a balanced two-modulus
-well-factorable Kloosterman dispersion mean estimate.
+phases modulo $u$ and $v$.  At this intermediate stage the remaining atom is BWFD-core,
+a balanced two-modulus well-factorable Kloosterman dispersion mean estimate.
+The subsequent completion attack is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-bwfd-core-spectral-completion-attack.md}.
+\]
+It performs exact finite Fourier completion in the $s$ variable and uses complete
+Kloosterman multiplicativity modulo $uv$.  This proves that BWFD-core follows from one
+still narrower atom, BSC-core: balanced complete Kloosterman bilinear correlation with
+arbitrary logarithmic saving.  Ordinary KZ--D spectral large sieve recovers only the raw
+quadratic norm scale, and pointwise Weil bounds give only single-sum square-root
+cancellation; neither supplies the required $\log^{-A}$ saving.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.
