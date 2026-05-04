@@ -133,6 +133,9 @@ LowQ-Reuse-Cap:
 
 这一路线比继续改进普通固定 gap 常数更窄：普通 `C_FG=1.3` 卡在低 q 常数，而共享锚证书
 直接利用了高密度层的相位复用刚性。
+另一条互补出口是低 q 有限化，见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowq-finite-threshold.md`。该出口证明
+`P` 大于显式阈值后无需共享锚复用分析；阈值以下则由本文件的共享锚与精确稀疏证书处理。
 
 ## 5. 审稿边界
 

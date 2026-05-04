@@ -123,6 +123,10 @@ LowQ-Layer-HDE:
 低 q 层的第一步结构压缩见
 `prime-matrix-eda-alpha-tail-tailpair-c13-lowq-overlap-certificate.md`：当前样本中未被
 `C_FG=1.3` 天花板排斥的 14 层压缩为 9 个共享 `q` 锚与 12 个固定 gap 素对。
+进一步有限化见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowq-finite-threshold.md`：若
+`P>=alpha^{-1} exp sqrt(C_FG*S_g*|M|/eta)`，则层投影鸽巢直接排斥低 q 高密度；低于该阈值
+时进入有限精确证书。
 
 ## 4. 审稿边界
 
