@@ -138,6 +138,11 @@ C13-DivisorBudget:
   小于 C13 主链允许预算。
 ```
 
+该预算接口的归一化账本见
+`prime-matrix-eda-alpha-tail-tailpair-c13-budget-normalization-ledger.md`。当前压力样本中
+`D_even` 外壳需要全局 `D2` 的 `0.786293`，`D_tau_sigma` 外壳需要 `0.887551`；若逐窗口
+付款，则 `p=997` 窗口不足，必须全局池化或进一步局部细分。
+
 这比前一版更严格：不再需要观测 group 数、实际 positive/narrow/failure 记录数，也不需要
 实际尾素对分布。
 
