@@ -14,7 +14,8 @@ WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
 经 `s` 变量精确完成和完整 Kloosterman 乘法公式压缩为 `BSC-core`。
 再后续 `prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 把 `BSC-core` 展开为
 互逆分数相位并压缩为 `KFLS-core`；`prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md`
-又把 `KFLS-core` 平方化为中心化四模数相关核 `CFQK-core`。
+又把 `KFLS-core` 平方化为中心化四模数相关核 `CFQK-core`；
+`prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 再把同块半对角修正为块中心化账本。
 
 ## 1. 起点：WFD-core
 
@@ -173,16 +174,17 @@ e_v(\bar u(a_hs+b_h\bar s))
 本文严格完成：
 
 ```text
-CFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
+BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 ```
 
 本文本身证明 `BWFD-core=>WFD-core`；后续谱完成攻击文件进一步证明 `BSC-core=>BWFD-core`。
 再后续分数相位攻击文件证明 `KFLS-core=>BSC-core`，平方核文件证明 `CFQK-core=>KFLS-core`。
-因此当前唯一剩余进一步压缩为：
+块中心化文件进一步修正为 `BCFQK-core=>KFLS-core`。因此当前剩余进一步压缩为：
 
 ```text
-CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
+BD-CEN + OSQK-core + TFQK-core.
 ```
 
 下一步不能再重复筛权分解、gcd 剥离、CRT 归一化或 `s`-completion；这些已经完成。必须直接攻
-`(SQK-21)`--`(SQK-23)`：在四模数中心化相关核上证明半对角与真非对角任意对数节省。
+`(BCF-14)`--`(BCF-16)` 并核查 `BD-CEN`：在块中心化四模数相关核上证明半对角与真非对角
+任意对数节省。

@@ -710,6 +710,17 @@ CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 该项要求证明 `(SQK-21)` 半对角账本和 `(SQK-23)` 真非对角中心化相关。全核绝对 Schur 已被
 该文件排除为错误路线，因为精确对角层只给 raw 二范数尺度。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 后，CFQK 半对角
+被修正为块中心化账本。外审前 HLC 完全自足剩余清单进一步细化为：
+
+```text
+BD-CEN + OSQK-core + TFQK-core.
+```
+
+其中 `BD-CEN` 是 KZ-E dispersion 方差是否扣除同 `(u,v)` 块局部方差的身份核查；
+`OSQK-core` 是 `(BCF-14)` 的一侧共享模数三模数相关；`TFQK-core` 是 `(BCF-16)` 的真四模数
+相关。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

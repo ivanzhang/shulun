@@ -203,6 +203,10 @@ logarithmic saving。
 `CFQK-core`。所以 KZ-E 的最小未内联核心进一步变为 `CFQK-core`：centered four-modulus
 Kloosterman-fraction correlation saving。
 
+最新 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 进一步指出
+`(u,v)=(u',v')` 的整块半对角不能估小，必须由 dispersion 方差作块中心化扣除。当前最小
+未内联核心修正为 `BD-CEN + OSQK-core + TFQK-core`。
+
 ## 7. 四原子推出 SC-9
 
 **命题。** KZ-A、KZ-B、KZ-C、KZ-D、KZ-E 成立，则 `(SC-9)` 成立。
@@ -241,8 +245,9 @@ Kloosterman-fraction correlation saving。
 本文仍未完成完全自足闭合：
 
 ```text
-CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
+BD-CEN + OSQK-core + TFQK-core.
 ```
 
-因此，下一步若继续无黑箱硬攻，应直接证明 CFQK-core。不能把该原子省略后宣称完全自足
+因此，下一步若继续无黑箱硬攻，应直接证明块中心化身份、一侧共享模数核和真四模数核。
+不能把这些原子省略后宣称完全自足
 闭合。

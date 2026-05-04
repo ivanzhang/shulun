@@ -341,3 +341,13 @@ CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 
 外部定理若要覆盖该点，必须提供中心化四模数相关的对数节省，而不能只给全核绝对 Schur；
 后者被精确对角层阻断。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 后，外部核验点
+进一步修正为：
+
+```text
+BD-CEN + OSQK-core + TFQK-core.
+```
+
+外部定理若要匹配该点，必须说明是否已扣除同 `(u,v)` 块局部方差；若没有该中心化，单靠
+Kloosterman 平均估计不能越过块对角障碍。

@@ -1589,6 +1589,14 @@ This also rules out an absolute Schur proof of the full kernel: the exact diagon
 only the raw quadratic norm scale.  The remaining atom is therefore CFQK-core, a centered
 four-modulus Kloosterman-fraction correlation estimate covering the semi-diagonal and true
 off-diagonal layers.
+The block-centering correction is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md}.
+\]
+It shows that the entire same-$(u,v)$ block diagonal is local variance and cannot be forced
+to be logarithmically small for arbitrary admissible coefficients.  The remaining obligations
+are therefore BD-CEN, the block-centering identity, OSQK-core for one shared modulus, and
+TFQK-core for the true four-modulus layer.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

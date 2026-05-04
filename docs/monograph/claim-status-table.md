@@ -883,4 +883,6 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 
 | H3-HLC BSC分数相位硬攻 | 压缩为KFLS-core/后续再压缩 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md`。该文件逐项展开完整 Kloosterman 和，把核心相位显形为 `e(\\bar vR/u+\\bar uT/v)`，并把单侧退化定位为二次同余 `(a_h+ell)x^2+b_h=0 mod u`，给出 CRT 根数包络。该步当时剩余为 `KFLS-core`：balanced Kloosterman-fraction large sieve logarithmic saving；后续平方核硬攻已进一步压缩为 `CFQK-core`。 |
 
-| H3-HLC KFLS平方核硬攻 | 压缩为CFQK-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md`。该文件把 `KFLS-core` 的非退化和平方化，显式得到四模数相位差 `bar v R/u+bar u T/v-bar v' R'/u'-bar u' T'/v'`。文件指出全核绝对 Schur 被精确对角层阻断，只能恢复 raw 二范数尺度；正确剩余是中心化后的半对角 `(SQK-21)` 与真非对角 `(SQK-23)`。当前唯一剩余更新为 `CFQK-core`：centered four-modulus Kloosterman-fraction correlation saving。 |
+| H3-HLC KFLS平方核硬攻 | 压缩为CFQK-core/后续再修正 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md`。该文件把 `KFLS-core` 的非退化和平方化，显式得到四模数相位差 `bar v R/u+bar u T/v-bar v' R'/u'-bar u' T'/v'`。文件指出全核绝对 Schur 被精确对角层阻断，只能恢复 raw 二范数尺度；该步当时剩余为中心化后的半对角 `(SQK-21)` 与真非对角 `(SQK-23)`。后续块中心化修正已进一步细化为 `BD-CEN + OSQK-core + TFQK-core`。 |
+
+| H3-HLC CFQK块中心化修正 | 压缩为BD-CEN/OSQK/TFQK | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md`。该文件把平方核按 `(u,v)` 块拆分，证明同块半对角 `sum_b |S_b|^2` 不能被要求 `log^{-A}` 估小；它必须作为块对角/局部方差由 dispersion 中心化扣除。当前剩余修正为三项：`BD-CEN` 块中心化身份核查，`OSQK-core` 一侧共享模数三模数相关 `(BCF-14)`，以及 `TFQK-core` 真四模数相关 `(BCF-16)`。 |

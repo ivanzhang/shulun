@@ -1655,6 +1655,27 @@ square expansion of e(bar v R/u + bar u T/v)
 CFQK-core centered four-modulus Kloosterman-fraction correlation saving.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 后，`CFQK-core`
+的半对角条款被修正：
+
+```text
+same (u,v) block diagonal = local variance, not a log-saving error
++ block-centering identity BD-CEN
++ one-shared-modulus core OSQK
++ true-four-modulus core TFQK
+=> KFLS-core
+=> BSC-core
+=> BWFD-core
+=> WFD-core
+=> KZ-E.
+```
+
+当前剩余更新为：
+
+```text
+BD-CEN + OSQK-core + TFQK-core.
+```
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

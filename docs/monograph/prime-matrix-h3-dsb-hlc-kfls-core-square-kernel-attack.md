@@ -1,6 +1,6 @@
 # KFLS-core：平方核与中心化四模数相关硬攻
 
-**状态：** `kfls_reduced_to_centered_four_modulus_kernel_core_not_closed`
+**状态：** `kfls_reduced_to_block_centered_four_modulus_core_not_closed`
 
 本文继续只攻击同一个剩余：
 
@@ -16,6 +16,9 @@ KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 
 这一步关闭的是错误路线：不能用正核/绝对值 Schur 伪造任意对数节省。正确的无黑箱硬点必须
 证明带符号的中心化四模数核。
+后续 `prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 进一步指出：同一 `(u,v)` 块
+内半对角不能被要求 `log^{-A}` 估小，必须作为块对角局部方差中心化扣除。当前剩余因此
+细化为 `BD-CEN + OSQK-core + TFQK-core`。
 
 ## 1. 非退化 KFLS 和的统一索引
 
@@ -281,16 +284,17 @@ v=v',\,u\ne u'.
 本步完成了：
 
 ```text
-CFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
+BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 ```
 
-但 `CFQK-core` 尚未证明。当前真正剩余已经不是“怎么展开 Kloosterman 和”，也不是“能不能用
+本文本身把 `KFLS-core` 平方化为 `CFQK-core`；后续块中心化文件进一步修正并证明
+`BCFQK-core=>KFLS-core`。当前真正剩余已经不是“怎么展开 Kloosterman 和”，也不是“能不能用
 普通谱大筛”，而是：
 
 ```text
-CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
+BD-CEN + OSQK-core + TFQK-core.
 ```
 
-下一步若继续硬攻，必须逐层处理 `(SQK-21)` 半对角和 `(SQK-23)` 真非对角；尤其要证明
-`(SQK-10)` 在四个独立模数运动时没有可持续的低相位锁定。若不能证明中心化核，完全自足
-无黑箱闭合仍不能宣称完成。
+下一步若继续硬攻，必须先核查 KZ-E dispersion 是否已给出 `BD-CEN` 块中心化身份；随后优先
+处理三模数的 `OSQK-core`，最后处理真四模数的 `TFQK-core`。若不能证明这些中心化核，完全
+自足无黑箱闭合仍不能宣称完成。

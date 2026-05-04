@@ -210,10 +210,10 @@ CORE-5 closed;
 HLC completely self-contained closed.
 ```
 
-当前唯一剩余已经由后续四步继续压缩为：
+当前剩余已经由后续五步继续压缩为：
 
 ```text
-CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
+BD-CEN + OSQK-core + TFQK-core.
 ```
 
 后续 `docs/monograph/prime-matrix-h3-dsb-hlc-wfd-core-balanced-factor-reduction.md` 已把
@@ -223,5 +223,7 @@ CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 `docs/monograph/prime-matrix-h3-dsb-hlc-bsc-core-kloosterman-fraction-attack.md` 再把
 `BSC-core` 展开为互逆分数相位并压缩为 `KFLS-core`；
 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md` 最后把 `KFLS-core`
-平方化为中心化四模数相关核 `CFQK-core`。因此下一步若继续不换命题硬攻，必须直接证明
-`(SQK-21)`--`(SQK-23)`。
+平方化为中心化四模数相关核 `CFQK-core`；
+`docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 进一步指出同块
+半对角必须中心化扣除，并把当前剩余修正为 `BD-CEN + OSQK-core + TFQK-core`。因此下一步
+若继续不换命题硬攻，必须直接证明 `(BCF-14)`--`(BCF-16)` 并核查 `BD-CEN`。
