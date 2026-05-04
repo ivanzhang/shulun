@@ -23,24 +23,13 @@ N_{\ell,a,g}(J)
 \tag{ABM-2}
 \]
 
-若存在常数 `C_AP` 使目标族中所有删除类满足
-
-\[
-N_{\ell,a,g}(J)
-\le
-C_{\rm AP}\,
-\mathfrak S(g)\,
-{|J\cap(a\bmod\ell)|\over \log^2 J_-},
-\tag{ABM-3}
-\]
-
-则
+若存在常数 `C_AP` 使目标窗口内的删除类族整体满足聚合上界
 
 \[
 U_{\rm AP}
 \le
 C_{\rm AP}\,\mathcal B_{\rm AP},
-\tag{ABM-4}
+\tag{ABM-3}
 \]
 
 其中
@@ -50,7 +39,7 @@ C_{\rm AP}\,\mathcal B_{\rm AP},
 \sum_{\rm deletion\ classes}
 \mathfrak S(g)\,
 {|J\cap(a\bmod\ell)|\over \log^2 J_-}.
-\tag{ABM-5}
+\tag{ABM-4}
 \]
 
 因此低筛保存的充分条件为
@@ -59,7 +48,7 @@ C_{\rm AP}\,\mathcal B_{\rm AP},
 C_{\rm AP}\mathcal B_{\rm AP}
 \le
 G^{\rm geom}-R.
-\tag{ABM-6}
+\tag{ABM-5}
 \]
 
 ## 2. 审计脚本
@@ -120,12 +109,13 @@ p=5003,m=5:
 
 ```text
 AP-Brun-C20:
-  在目标删除类中证明固定 gap AP 素对上界常数 C_AP<=20；
-  或把超过 C_AP=20 的删除类送入 CRTDefect/PDEC/SAE。
+  在目标删除类族整体上证明固定 gap AP 素对聚合上界 C_AP<=20；
+  或把超过聚合 C_AP=20 的删除子族送入 CRTDefect/PDEC/SAE。
 ```
 
-注意：本文没有证明 `C_AP<=20`。它只证明若该 AP-Brun 常数包成立，则当前高 `P`
-压力样本的低筛保存余量足够。
+注意：本文没有证明 `C_AP<=20`，也不声称逐个 AP 类都满足 `C_AP<=20`。事实上当前样本中
+单点 AP 类的逐类常数可超过 `20`，所以正式路线必须使用聚合上界，或先分裂出单点类。
+提升层分裂见 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-lift-rigidity-audit.md`。
 
 ## 4. 剩余义务
 
@@ -140,7 +130,7 @@ AP-Brun 常数判据；
 仍未完成：
 
 ```text
-无条件证明目标 AP 删除类满足 C_AP<=20；
+无条件证明目标 AP 删除类族聚合满足 C_AP<=20；
 或证明 C_AP 超标会触发固定模 CRTDefect/PDEC/SAE；
 把该常数包推广到所有 P>1000 目标窗口。
 ```
