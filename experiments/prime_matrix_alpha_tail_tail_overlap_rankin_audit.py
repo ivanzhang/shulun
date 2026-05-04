@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from math import prod
+from collections import Counter
 
 
 def primes_upto(limit: int) -> list[int]:
@@ -140,6 +140,7 @@ def audit_point_count(
     hits, point_hit_sums = tail_hit_counts(domain_start, domain_size, shift, point_count, active, tail_primes)
     low_count = sum(active)
     active_hits = [hits[offset] for offset, is_active in enumerate(active) if is_active]
+    hit_histogram = dict(sorted(Counter(active_hits).items()))
     tail_hit_sum = sum(active_hits)
     tail_deleted = sum(1 for value in active_hits if value > 0)
     full_count = low_count - tail_deleted
@@ -185,6 +186,7 @@ def audit_point_count(
         "point_hit_max": point_hit_max,
         "point_hit_argmax": point_hit_argmax,
         "point_hit_sums": point_hit_sums,
+        "hit_histogram": hit_histogram,
         "identity_ok": abs(xi_tail - (tail_model_deleted - tail_deleted)) < 1e-9,
     }
 
