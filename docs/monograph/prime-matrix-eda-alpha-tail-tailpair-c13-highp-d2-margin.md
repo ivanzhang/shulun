@@ -134,4 +134,14 @@ D_2-\mathrm{Cap}_{\rm even}=677.727367.
 证明 P<=P_fin 的目标窗口清单已由有限证书全覆盖。
 ```
 
+进一步的固定 gap 素对下界化见
+`prime-matrix-eda-alpha-tail-tailpair-c13-highp-pair-lower-target.md`。该文件把
+`HighP-D2-Lower` 细化为
+
+```text
+sum G_m^L >= sum(B2_m+Cap_even_m)，
+```
+
+其中 `G_m^L` 是低筛后等乘数固定 gap 尾素对数。
+
 所以本文完成的是 `HighP-D2-Lower` 的代数化和样本证书，不是行命题最终闭合。
