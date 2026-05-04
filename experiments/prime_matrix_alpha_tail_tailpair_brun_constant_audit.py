@@ -128,6 +128,7 @@ def brun_row(
                         }
                     )
     local_rows.sort(key=lambda item: (-(item["required_c"] or 0), -item["actual"], item["gap"]))
+    max_local_required = local_rows[0]["required_c"] if local_rows else 0.0
     return {
         "p": prime_bound,
         "block": block,
@@ -139,6 +140,8 @@ def brun_row(
         "intervals_match_geom": total_actual == geom["geometric_upper"],
         "bs_scale": total_scale,
         "required_c_bs": total_actual / total_scale if total_scale else None,
+        "max_local_required_c": max_local_required,
+        "positive_interval_count": len(local_rows),
         "top_requirements": local_rows[:8],
     }
 
@@ -147,7 +150,7 @@ def print_table(rows: list[dict]) -> None:
     """输出常数需求表。"""
     print(
         "p block shift m tail_primes geom_count interval_count match bs_scale "
-        "required_C_BS top_requirements",
+        "required_C_BS max_local_C positive_intervals top_requirements",
         flush=True,
     )
     for row in rows:
@@ -158,7 +161,8 @@ def print_table(rows: list[dict]) -> None:
         print(
             f"{row['p']} {row['block']} {row['shift']} {row['m']} {row['tail_prime_count']} "
             f"{row['geom_count']} {row['actual_from_intervals']} {row['intervals_match_geom']} "
-            f"{row['bs_scale']:.6f} {row['required_c_bs']:.6f} {top}",
+            f"{row['bs_scale']:.6f} {row['required_c_bs']:.6f} "
+            f"{row['max_local_required_c']:.6f} {row['positive_interval_count']} {top}",
             flush=True,
         )
 
