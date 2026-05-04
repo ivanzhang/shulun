@@ -177,5 +177,10 @@ HighP-D2-Lower 精确化为固定 gap 素对下界；
 或证明任一失败都会触发 PDEC/SAE/ColumnCRT 出口。
 ```
 
+低筛保存的下一层审计见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowsieve-preservation-audit.md`。该文件显示纯整数同余
+删除天花板在高 `P` 总池中通过，但在逐窗口最紧点 `p=5003` 仍不够，故必须引入 AP 素对删除
+上界或允许高 `P` 池化付款。
+
 所以本文没有闭合行命题；它把当前唯一可攻硬点压缩成
 `HighP-PLT = PairLower + LowSievePreservation`。
