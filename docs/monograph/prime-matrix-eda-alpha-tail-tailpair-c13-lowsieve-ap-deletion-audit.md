@@ -138,4 +138,8 @@ p=5003 的整数天花板缺口被 AP 素对计数修复。
 把该 AP 上界接入所有 P>1000 目标窗口族。
 ```
 
+AP-Brun 常数余量见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowsieve-ap-brun-margin.md`。该文件显示当前样本若有
+`C_AP<=20` 的目标 AP 素对上界，则逐层通过；最紧允许常数为 `27.077992`。
+
 所以本文闭合的是当前压力样本的 `LowSievePreservation-AP` 证书，不是行命题最终闭合。
