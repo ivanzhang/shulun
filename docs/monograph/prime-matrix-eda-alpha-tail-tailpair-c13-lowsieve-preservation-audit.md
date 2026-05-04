@@ -156,3 +156,7 @@ LowSievePreservation-AP:
 ```
 
 本文完成的是低筛删除结构和整数天花板审计，不是行命题闭合。
+
+下一层 AP 素对删除证书见
+`prime-matrix-eda-alpha-tail-tailpair-c13-lowsieve-ap-deletion-audit.md`。该证书在当前压力样本中
+给出 `U_AP=50`，逐窗口最紧点 `p=5003` 只有 `U_AP=5`，从而修复纯整数天花板的逐窗口失败。
