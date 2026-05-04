@@ -36,6 +36,22 @@ def allowed_gaps(shift: int, point_count: int) -> list[int]:
     return sorted(gaps)
 
 
+def exact_gap_coefficients(shift: int, point_count: int) -> dict[int, int]:
+    """返回每个 gap 的精确有向点位系数 C_{g,m}。"""
+    coefficients: dict[int, int] = {}
+    for index_a in range(point_count):
+        for index_b in range(point_count):
+            if index_a == index_b:
+                continue
+            base = -(index_a - index_b) * shift
+            if base <= 0:
+                continue
+            for divisor in divisors(base):
+                gap = base // divisor
+                coefficients[gap] = coefficients.get(gap, 0) + 1
+    return dict(sorted(coefficients.items()))
+
+
 def shortgap_row(
     prime_bound: int,
     block: int,
@@ -47,11 +63,21 @@ def shortgap_row(
     """返回固定窗口的短差值尾素对容量证书。"""
     tail_primes = tail_primes_for_item(prime_bound, block, shift, point_count, alpha, num_primes)
     tail_set = set(tail_primes)
-    gaps = allowed_gaps(shift, point_count)
+    coefficients = exact_gap_coefficients(shift, point_count)
+    gaps = sorted(coefficients)
     pair_counts = {gap: sum(1 for prime in tail_primes if prime + gap in tail_set) for gap in gaps}
     total_pair_count = sum(pair_counts.values())
-    upper_m2_equal = point_count * point_count * total_pair_count
+    coarse_upper_m2_equal = point_count * point_count * total_pair_count
+    exact_upper_m2_equal = sum(coefficients[gap] * pair_counts[gap] for gap in gaps)
     budget = budget_row(prime_bound, block, shift, point_count, alpha, num_primes)
+    top_gap_rows = {
+        gap: {
+            "pairs": pair_counts[gap],
+            "coefficient": coefficients[gap],
+            "capacity": pair_counts[gap] * coefficients[gap],
+        }
+        for gap in gaps
+    }
     return {
         "p": prime_bound,
         "block": block,
@@ -60,26 +86,35 @@ def shortgap_row(
         "tail_prime_count": len(tail_primes),
         "gap_count": len(gaps),
         "total_shortgap_pairs": total_pair_count,
-        "upper_m2_equal": upper_m2_equal,
+        "coarse_upper_m2_equal": coarse_upper_m2_equal,
+        "exact_upper_m2_equal": exact_upper_m2_equal,
         "equal_actual": budget["equal_multiplier"],
-        "upper_pass": budget["equal_multiplier"] <= upper_m2_equal,
-        "top_gap_counts": dict(sorted(pair_counts.items(), key=lambda item: (-item[1], item[0]))[:8]),
+        "upper_pass": budget["equal_multiplier"] <= exact_upper_m2_equal,
+        "compression_factor": coarse_upper_m2_equal / exact_upper_m2_equal if exact_upper_m2_equal else None,
+        "actual_over_exact_upper": budget["equal_multiplier"] / exact_upper_m2_equal if exact_upper_m2_equal else None,
+        "top_gap_counts": dict(
+            sorted(top_gap_rows.items(), key=lambda item: (-item[1]["capacity"], item[0]))[:8]
+        ),
     }
 
 
 def print_table(rows: list[dict]) -> None:
     """输出短差值容量证书表。"""
     print(
-        "p block shift m tail_primes gap_count shortgap_pairs upper_m2_equal "
-        "equal_actual upper_pass top_gap_counts",
+        "p block shift m tail_primes gap_count shortgap_pairs exact_upper coarse_upper "
+        "equal_actual upper_pass compression actual_over_exact top_gap_counts",
         flush=True,
     )
     for row in rows:
-        gaps = ",".join(f"{gap}:{count}" for gap, count in row["top_gap_counts"].items())
+        gaps = ",".join(
+            f"{gap}:{data['pairs']}/{data['coefficient']}/{data['capacity']}"
+            for gap, data in row["top_gap_counts"].items()
+        )
         print(
             f"{row['p']} {row['block']} {row['shift']} {row['m']} {row['tail_prime_count']} "
-            f"{row['gap_count']} {row['total_shortgap_pairs']} {row['upper_m2_equal']} "
-            f"{row['equal_actual']} {row['upper_pass']} {gaps}",
+            f"{row['gap_count']} {row['total_shortgap_pairs']} {row['exact_upper_m2_equal']} "
+            f"{row['coarse_upper_m2_equal']} {row['equal_actual']} {row['upper_pass']} "
+            f"{row['compression_factor']:.6f} {row['actual_over_exact_upper']:.6f} {gaps}",
             flush=True,
         )
 
