@@ -141,6 +141,9 @@ python3 experiments/prime_matrix_alpha_tail_tailpair_c13_lift1_offset_decomposit
 highP-total:
   slack=2537.963717；
   lift1=541；
+  exact_hgate=541；
+  edge=541；
+  mid=0；
   lift1/slack=0.213163；
   lift1_margin=1996.963717；
   h0_head_integer=277；
@@ -154,12 +157,16 @@ highP-total:
 p=5003:
   slack=682.727367；
   lift1=285；
+  edge=285；
+  mid=0；
   lift1/slack=0.417443；
   lift1_margin=397.727367。
 
 p=10007:
   slack=1855.236350；
   lift1=256；
+  edge=256；
+  mid=0；
   lift1/slack=0.137988；
   lift1_margin=1599.236350。
 ```
@@ -169,6 +176,8 @@ p=10007:
 ```text
 slack=461.520978；
 lift1=206；
+edge=206；
+mid=0；
 lift1/slack=0.446350；
 lift1_margin=255.520978。
 ```
@@ -222,7 +231,8 @@ N_{\rm mid},
 ```text
 lift=1 候选的精确 h-layer 恒等式；
 当前压力样本中 N1=541 的复现；
-证明样本实际候选全部为边缘整数层，非中间分数层。
+证明样本实际候选全部为边缘整数层，非中间分数层；
+证明实际低素块门控 exact_hgate 与原始 lift1 计数逐项一致。
 ```
 
 仍未完成：

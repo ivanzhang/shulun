@@ -125,8 +125,12 @@ def lift1_offset_row(
             "m": point_count,
             "slack_before_low": slack,
             "lift1_candidates": 0,
+            "h_gate_lowprime_exact": 0,
+            "edge_lowprime_exact": 0,
+            "mid_lowprime_exact": 0,
             "h_gate_integer_ceiling": 0,
             "exact_identity_ok": True,
+            "lowprime_gate_identity_ok": True,
         }
 
     tail_min = min(tail_primes)
@@ -134,6 +138,9 @@ def lift1_offset_row(
     low_min = min(low_primes)
     low_max = max(low_primes)
     lift1_candidates = 0
+    h_gate_lowprime_exact = 0
+    edge_lowprime_exact = 0
+    mid_lowprime_exact = 0
     h_gate_integer_ceiling = 0
     all_channels = set()
     lift1_channels = set()
@@ -180,6 +187,25 @@ def lift1_offset_row(
                         if count:
                             h_gate_channels += 1
                             h_gate_integer_ceiling += count
+                        for low_prime in low_primes:
+                            if low_prime < lo or low_prime > hi:
+                                continue
+                            residue_numerator = numerator + h_layer * low_prime
+                            if residue_numerator % multiplier != 0:
+                                continue
+                            residue = residue_numerator // multiplier
+                            if residue < 0 or residue >= low_prime:
+                                continue
+                            if (residue + gap) % low_prime == 0:
+                                continue
+                            q_value = low_prime + residue
+                            if q_value < q_lo or q_value > q_hi:
+                                continue
+                            h_gate_lowprime_exact += 1
+                            if h_layer == 0 or h_layer == multiplier:
+                                edge_lowprime_exact += 1
+                            else:
+                                mid_lowprime_exact += 1
                     for low_prime in low_primes:
                         inverse = pow(multiplier, -1, low_prime)
                         residue = (numerator * inverse) % low_prime
@@ -232,16 +258,22 @@ def lift1_offset_row(
         "m": point_count,
         "slack_before_low": slack,
         "lift1_candidates": lift1_candidates,
+        "h_gate_lowprime_exact": h_gate_lowprime_exact,
+        "edge_lowprime_exact": edge_lowprime_exact,
+        "mid_lowprime_exact": mid_lowprime_exact,
         "all_channel_count": len(all_channels),
         "lift1_channel_count": len(lift1_channels),
         "h_gate_channel_count": h_gate_channels,
         "h_gate_integer_ceiling": h_gate_integer_ceiling,
+        "lowprime_gate_over_lift1": ratio(h_gate_lowprime_exact, lift1_candidates),
         "h_gate_over_lift1": ratio(h_gate_integer_ceiling, lift1_candidates),
         "lift1_margin": slack - lift1_candidates,
         "h_gate_margin": slack - h_gate_integer_ceiling,
         "lift1_over_slack": ratio(lift1_candidates, slack),
         "h_gate_over_slack": ratio(h_gate_integer_ceiling, slack),
         "exact_identity_ok": lift1_candidates <= h_gate_integer_ceiling,
+        "lowprime_gate_identity_ok": h_gate_lowprime_exact == lift1_candidates,
+        "edge_mid_identity_ok": edge_lowprime_exact + mid_lowprime_exact == lift1_candidates,
         "top_offsets": dict(offset_hist.most_common(8)),
         "top_edges": dict(edge_hist.most_common(8)),
         "h_hist": dict(sorted(h_hist.items())),
@@ -276,21 +308,31 @@ def lift1_offset_package(
         lambda: {
             "slack_before_low": 0.0,
             "lift1_candidates": 0.0,
+            "h_gate_lowprime_exact": 0.0,
+            "edge_lowprime_exact": 0.0,
+            "mid_lowprime_exact": 0.0,
             "all_channel_count": 0.0,
             "lift1_channel_count": 0.0,
             "h_gate_channel_count": 0.0,
             "h_gate_integer_ceiling": 0.0,
             "exact_identity_ok": True,
+            "lowprime_gate_identity_ok": True,
+            "edge_mid_identity_ok": True,
         }
     )
     total = {
         "slack_before_low": 0.0,
         "lift1_candidates": 0.0,
+        "h_gate_lowprime_exact": 0.0,
+        "edge_lowprime_exact": 0.0,
+        "mid_lowprime_exact": 0.0,
         "all_channel_count": 0.0,
         "lift1_channel_count": 0.0,
         "h_gate_channel_count": 0.0,
         "h_gate_integer_ceiling": 0.0,
         "exact_identity_ok": True,
+        "lowprime_gate_identity_ok": True,
+        "edge_mid_identity_ok": True,
     }
     total_h_kind: Counter[str] = Counter()
     total_side: Counter[str] = Counter()
@@ -314,6 +356,9 @@ def lift1_offset_package(
             for name in (
                 "slack_before_low",
                 "lift1_candidates",
+                "h_gate_lowprime_exact",
+                "edge_lowprime_exact",
+                "mid_lowprime_exact",
                 "all_channel_count",
                 "lift1_channel_count",
                 "h_gate_channel_count",
@@ -323,6 +368,16 @@ def lift1_offset_package(
                 windows[key][name] += item[name]
             total["exact_identity_ok"] = total["exact_identity_ok"] and item["exact_identity_ok"]
             windows[key]["exact_identity_ok"] = windows[key]["exact_identity_ok"] and item["exact_identity_ok"]
+            total["lowprime_gate_identity_ok"] = (
+                total["lowprime_gate_identity_ok"] and item["lowprime_gate_identity_ok"]
+            )
+            windows[key]["lowprime_gate_identity_ok"] = (
+                windows[key]["lowprime_gate_identity_ok"] and item["lowprime_gate_identity_ok"]
+            )
+            total["edge_mid_identity_ok"] = total["edge_mid_identity_ok"] and item["edge_mid_identity_ok"]
+            windows[key]["edge_mid_identity_ok"] = (
+                windows[key]["edge_mid_identity_ok"] and item["edge_mid_identity_ok"]
+            )
             total_h_kind.update(item["h_kind_hist"])
             total_side.update(item["side_hist"])
 
@@ -334,12 +389,14 @@ def lift1_offset_package(
         value["lift1_over_slack"] = ratio(value["lift1_candidates"], value["slack_before_low"])
         value["h_gate_over_slack"] = ratio(value["h_gate_integer_ceiling"], value["slack_before_low"])
         value["h_gate_over_lift1"] = ratio(value["h_gate_integer_ceiling"], value["lift1_candidates"])
+        value["lowprime_gate_over_lift1"] = ratio(value["h_gate_lowprime_exact"], value["lift1_candidates"])
         window_rows.append(value)
     total["lift1_margin"] = total["slack_before_low"] - total["lift1_candidates"]
     total["h_gate_margin"] = total["slack_before_low"] - total["h_gate_integer_ceiling"]
     total["lift1_over_slack"] = ratio(total["lift1_candidates"], total["slack_before_low"])
     total["h_gate_over_slack"] = ratio(total["h_gate_integer_ceiling"], total["slack_before_low"])
     total["h_gate_over_lift1"] = ratio(total["h_gate_integer_ceiling"], total["lift1_candidates"])
+    total["lowprime_gate_over_lift1"] = ratio(total["h_gate_lowprime_exact"], total["lift1_candidates"])
     total["h_kind_hist"] = dict(sorted(total_h_kind.items()))
     total["side_hist"] = dict(sorted(total_side.items()))
     return {
@@ -360,50 +417,60 @@ def print_table(package: dict) -> None:
     """输出 lift=1 offset/h-layer 分解表。"""
     total = package["total"]
     print(
-        "scope slack lift1 h_gate hgate_lift1 lift1_slack hgate_slack "
-        "lift1_margin hgate_margin channels lift1_channels h_gate_channels "
-        "h_kind side identity",
+        "scope slack lift1 exact_hgate edge mid h_gate hgate_lift1 "
+        "exact_lift1 lift1_slack hgate_slack lift1_margin hgate_margin "
+        "channels lift1_channels h_gate_channels h_kind side identity exact_identity",
         flush=True,
     )
     print(
         f"highP-total {total['slack_before_low']:.6f} {total['lift1_candidates']:.0f} "
-        f"{total['h_gate_integer_ceiling']:.0f} {fmt(total['h_gate_over_lift1'])} "
+        f"{total['h_gate_lowprime_exact']:.0f} {total['edge_lowprime_exact']:.0f} "
+        f"{total['mid_lowprime_exact']:.0f} {total['h_gate_integer_ceiling']:.0f} "
+        f"{fmt(total['h_gate_over_lift1'])} {fmt(total['lowprime_gate_over_lift1'])} "
         f"{fmt(total['lift1_over_slack'])} {fmt(total['h_gate_over_slack'])} "
         f"{total['lift1_margin']:.6f} {total['h_gate_margin']:.6f} "
         f"{total['all_channel_count']:.0f} {total['lift1_channel_count']:.0f} "
         f"{total['h_gate_channel_count']:.0f} {total['h_kind_hist']} "
-        f"{total['side_hist']} {total['exact_identity_ok']}",
+        f"{total['side_hist']} {total['exact_identity_ok']} "
+        f"{total['lowprime_gate_identity_ok']}",
         flush=True,
     )
     print(
-        "p block shift slack lift1 h_gate hgate_lift1 lift1_slack hgate_slack "
-        "lift1_margin hgate_margin channels lift1_channels h_gate_channels identity",
+        "p block shift slack lift1 exact_hgate edge mid h_gate hgate_lift1 "
+        "exact_lift1 lift1_slack hgate_slack lift1_margin hgate_margin "
+        "channels lift1_channels h_gate_channels identity exact_identity",
         flush=True,
     )
     for row in package["windows"]:
         print(
             f"{row['p']} {row['block']} {row['shift']} "
             f"{row['slack_before_low']:.6f} {row['lift1_candidates']:.0f} "
-            f"{row['h_gate_integer_ceiling']:.0f} {fmt(row['h_gate_over_lift1'])} "
+            f"{row['h_gate_lowprime_exact']:.0f} {row['edge_lowprime_exact']:.0f} "
+            f"{row['mid_lowprime_exact']:.0f} {row['h_gate_integer_ceiling']:.0f} "
+            f"{fmt(row['h_gate_over_lift1'])} {fmt(row['lowprime_gate_over_lift1'])} "
             f"{fmt(row['lift1_over_slack'])} {fmt(row['h_gate_over_slack'])} "
             f"{row['lift1_margin']:.6f} {row['h_gate_margin']:.6f} "
             f"{row['all_channel_count']:.0f} {row['lift1_channel_count']:.0f} "
-            f"{row['h_gate_channel_count']:.0f} {row['exact_identity_ok']}",
+            f"{row['h_gate_channel_count']:.0f} {row['exact_identity_ok']} "
+            f"{row['lowprime_gate_identity_ok']}",
             flush=True,
         )
     print(
-        "p block shift m slack lift1 h_gate hgate_lift1 lift1_slack hgate_slack "
-        "h_kind side top_edges top_offsets identity",
+        "p block shift m slack lift1 exact_hgate edge mid h_gate hgate_lift1 "
+        "exact_lift1 lift1_slack hgate_slack h_kind side top_edges top_offsets identity exact_identity",
         flush=True,
     )
     for row in package["rows"]:
         print(
             f"{row['p']} {row['block']} {row['shift']} {row['m']} "
             f"{row['slack_before_low']:.6f} {row['lift1_candidates']:.0f} "
-            f"{row['h_gate_integer_ceiling']:.0f} {fmt(row['h_gate_over_lift1'])} "
+            f"{row['h_gate_lowprime_exact']:.0f} {row['edge_lowprime_exact']:.0f} "
+            f"{row['mid_lowprime_exact']:.0f} {row['h_gate_integer_ceiling']:.0f} "
+            f"{fmt(row['h_gate_over_lift1'])} {fmt(row['lowprime_gate_over_lift1'])} "
             f"{fmt(row['lift1_over_slack'])} {fmt(row['h_gate_over_slack'])} "
             f"{row['h_kind_hist']} {row['side_hist']} {row['top_edges']} "
-            f"{row['top_offsets']} {row['exact_identity_ok']}",
+            f"{row['top_offsets']} {row['exact_identity_ok']} "
+            f"{row['lowprime_gate_identity_ok']}",
             flush=True,
         )
 
