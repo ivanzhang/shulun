@@ -1493,6 +1493,19 @@ KZ-D
 
 oldform、Eisenstein、holomorphic 谱只保留为多对数账本；未闭合核心是 PTK-D。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md` 后，PTK-D 目录节点
+继续展开为：
+
+```text
+PTK-D
+=> pretrace/Poincare coefficient kernel
+=> diagonal T^2 volume
+=> LPC-D spatial row-column correlation bound
+=> PTK-D.
+```
+
+未闭合核心变为 LPC-D。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

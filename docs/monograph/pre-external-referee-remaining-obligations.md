@@ -621,6 +621,15 @@ PTK-D: pretrace kernel bound (diagonal T^2 plus off-diagonal N0 Schur rows/colum
 oldform、Eisenstein、holomorphic 谱已经进入多对数账本；外审前剩余不应再笼统写
 “spectral large sieve”，而应写 PTK-D。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md` 后，PTK-D 继续
+收窄为：
+
+```text
+LPC-D: spatial lattice-point/correlation Schur row-column bound.
+```
+
+该文已证明 `LPC-D=>PTK-D`。外审前若继续无黑箱化，应直接补空间侧格点/相关计数。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

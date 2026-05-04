@@ -267,3 +267,7 @@ well-factorable dispersion，对数节省仍未闭合。
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D 的
 外部核验点改为 `PTK-D`。外部谱大筛若能给出 diagonal `T^2` 和 off-diagonal `N0` 的
 Schur 行列和上界，即可由该文件推出 KZ-D；否则还需补 pre-trace kernel 证明。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md` 后，外部核验点
+进一步改为 `LPC-D`。若外部几何/预迹估计能给出空间侧 row-column correlation bound，
+则本文已有 `LPC-D=>PTK-D=>KZ-D`。

@@ -499,6 +499,10 @@ KZ-B、KZ-D、KZ-E。
 已对偶化为谱投影核矩阵上界，并完成 oldform、Eisenstein、holomorphic 谱的多对数账本。
 该文证明 `PTK-D=>KZ-D`；因此 KZ-D 的唯一未内联核心压缩为 `PTK-D` 预迹核上界。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md` 后，`PTK-D`
+继续压缩为空间侧 `LPC-D` 行列和上界。该文完成谱截断测试函数接口、预迹/Poincare 系数核
+展开、对角 `T^2` 体积账本，并证明 `LPC-D=>PTK-D`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为

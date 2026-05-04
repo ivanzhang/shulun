@@ -210,9 +210,9 @@ Kuznetsov 与谱大筛给出平方根平均控制；要得到任意 `log^{-A}`�
 
 ```text
 KZ-B: Kuznetsov trace formula 专门化；
-PTK-D: pretrace kernel bound implying KZ-D；
+LPC-D: spatial lattice-point/correlation bound implying PTK-D；
 KZ-E: BFI/well-factorable dispersion 对数节省。
 ```
 
-因此，下一步若继续无黑箱硬攻，应从 PTK-D 开始；随后攻 KZ-B，最后攻 KZ-E。不能把这些
+因此，下一步若继续无黑箱硬攻，应从 LPC-D 开始；随后攻 KZ-B，最后攻 KZ-E。不能把这些
 原子省略后宣称完全自足闭合。

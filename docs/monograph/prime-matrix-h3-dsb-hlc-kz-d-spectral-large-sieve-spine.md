@@ -208,3 +208,7 @@ PTK-D: pretrace kernel bound (KD-7)--(KD-9).
 
 下一步若继续完全自足无黑箱硬攻，应证明 PTK-D：构造谱投影平滑核，写出 pre-trace formula，
 证明 Selberg/Harish-Chandra transform 正性和空间侧核的 diagonal/off-diagonal 行列和上界。
+
+进一步压缩见 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md`。该文
+构造谱截断测试函数，写出预迹/Poincare 系数核展开，证明对角 `T^2` 体积账本，并把
+`PTK-D` 的唯一剩余压成空间侧 `LPC-D` 行列和上界；同时证明 `LPC-D=>PTK-D`。
