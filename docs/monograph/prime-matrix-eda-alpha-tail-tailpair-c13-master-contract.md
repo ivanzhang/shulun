@@ -120,5 +120,16 @@ TFC-C: B<2L 且 (m-1)|r|<L；
 TFC-D: Gate 总池闭合，或 Formal+MidVoid 逐窗口闭合。
 ```
 
+其中 `TFC-C` 还可由比例条件替代：因低大素块最小素数 `L>alpha p`，只要
+
+```text
+B < 2 alpha p；
+(m_max-1)|r| < alpha p；
+6 divides |r|，
+```
+
+就自动推出 `B<2L` 与 `(m-1)|r|<L`。在默认 `alpha=0.9,m_max=5` 下即
+`B/p<1.8` 与 `|r|/p<0.225`。
+
 当前结果是 `explicit_selected_contract=True`，但 `target_family_rule_closed=False`。因此
 该更新压实了最后接口，没有把样本闭合升级为全局闭合。

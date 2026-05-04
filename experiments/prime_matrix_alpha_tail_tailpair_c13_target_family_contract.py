@@ -90,6 +90,9 @@ def target_family_contract_package(
         shift_mod6 = abs(shift) % 6 == 0
         n_span_guard = all(row["n_condition"] for row in layers)
         block_guard = all(row["block_condition"] for row in layers)
+        block_alpha_guard = block < 2 * alpha * prime_bound
+        n_alpha_guard = max(n_span_values, default=0) < alpha * prime_bound
+        ratio_structural_guard = block_alpha_guard and n_alpha_guard and shift_mod6
         syntax_pass = block_power2 and dyadic_band and dyadic_ceiling and shift_mod6
         rows.append(
             {
@@ -107,6 +110,9 @@ def target_family_contract_package(
                 "max_n_span": max(n_span_values) if n_span_values else None,
                 "block_guard": block_guard,
                 "n_span_guard": n_span_guard,
+                "block_alpha_guard": block_alpha_guard,
+                "n_alpha_guard": n_alpha_guard,
+                "ratio_structural_guard": ratio_structural_guard,
                 "min_block_margin": structural["min_block_margin"],
                 "min_n_margin": structural["min_n_margin"],
                 "structural_pass": structural["criterion_pass"],
@@ -118,6 +124,7 @@ def target_family_contract_package(
         )
     total = master["total"]
     syntax_pass = all(row["syntax_pass"] for row in rows)
+    ratio_structural_pass = all(row["ratio_structural_guard"] for row in rows)
     explicit_contract = syntax_pass and (
         total["total_gate_contract"]
         or total["local_formal_contract"]
@@ -137,6 +144,7 @@ def target_family_contract_package(
         "total": {
             "highp_windows": len(rows),
             "syntax_pass": syntax_pass,
+            "ratio_structural_pass": ratio_structural_pass,
             "structural_pass": total["structural_pass"],
             "total_gate_contract": total["total_gate_contract"],
             "local_formal_contract": total["local_formal_contract"],
@@ -153,26 +161,30 @@ def print_table(package: dict) -> None:
     """输出目标窗口族合同表。"""
     total = package["total"]
     print(
-        "scope highp_windows syntax structural total_gate local_formal row_formal "
+        "scope highp_windows syntax ratio_structural structural total_gate local_formal row_formal "
         "explicit_contract target_rule_closed",
         flush=True,
     )
     print(
         f"highP-selected {total['highp_windows']} {total['syntax_pass']} "
+        f"{total['ratio_structural_pass']} "
         f"{total['structural_pass']} {total['total_gate_contract']} "
         f"{total['local_formal_contract']} {total['row_formal_contract']} "
         f"{total['explicit_selected_contract']} {total['target_family_rule_closed']}",
         flush=True,
     )
     print(
-        "p block shift pow2 ceil band mod6 B_over_p R_over_p min_L max_n "
-        "block_margin n_margin structural gate formal gate_margin formal_margin",
+        "p block shift pow2 ceil band mod6 alphaB alphaN ratio_struct "
+        "B_over_p R_over_p min_L max_n block_margin n_margin structural gate formal "
+        "gate_margin formal_margin",
         flush=True,
     )
     for row in package["windows"]:
         print(
             f"{row['p']} {row['block']} {row['shift']} {row['block_power2']} "
             f"{row['dyadic_ceiling']} {row['dyadic_band']} {row['shift_mod6']} "
+            f"{row['block_alpha_guard']} {row['n_alpha_guard']} "
+            f"{row['ratio_structural_guard']} "
             f"{row['block_over_p']:.6f} {row['shift_over_p']:.6f} "
             f"{row['min_low_min']} {row['max_n_span']} {row['min_block_margin']} "
             f"{row['min_n_margin']} {row['structural_pass']} {row['gate_pass']} "

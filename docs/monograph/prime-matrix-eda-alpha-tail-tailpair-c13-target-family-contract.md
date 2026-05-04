@@ -22,7 +22,39 @@ TFC-D: Gate 总池闭合，或 Formal+MidVoid 逐窗口闭合。
 若完整目标族生成器只输出满足 `TFC-A/B/C/D` 的窗口，则 `C13` 高 `P` 链条可在该
 目标族上闭合。
 
-## 2. 审计脚本
+## 2. 比例化结构充分条件
+
+`TFC-C` 仍含低素块最小素数 `L`。但在当前 `alpha=0.9` 的低大素块定义下，
+`L` 是第一个大于 `floor(alpha p)` 的素数，故
+
+\[
+L>\alpha p.
+\tag{TFC-1}
+\]
+
+因此有一个不再依赖低素枚举的充分条件：
+
+```text
+TFC-R1: B < 2 alpha p；
+TFC-R2: (m_max-1)|r| < alpha p；
+TFC-R3: 6 divides |r|。
+```
+
+由 `TFC-R1` 与 `(TFC-1)` 得 `B<2L`；由 `TFC-R2` 与 `(TFC-1)` 得
+`(m-1)|r|<L`。所以 `TFC-R1/R2/R3` 推出 `TFC-B/C`。
+
+在本文默认 `alpha=0.9,m_max=5` 下，该比例条件为：
+
+```text
+B/p < 1.8；
+|r|/p < 0.225；
+6 divides |r|。
+```
+
+这给目标窗口族生成器一个更硬的审稿接口：无需逐窗口先算 `L`，只要生成器保证上述
+两个比例不等式，`lift>=2` 结构空性即自动接回。
+
+## 3. 审计脚本
 
 脚本：
 
@@ -38,13 +70,14 @@ python3 experiments/prime_matrix_alpha_tail_tailpair_c13_target_family_contract.
   --finite-p-cut 1000 --eta 0.04 --format table
 ```
 
-## 3. 当前样本结果
+## 4. 当前样本结果
 
 高 `P` 样本只包含 `p=5003,10007`，输出为：
 
 ```text
 highP_windows=2；
 syntax=True；
+ratio_structural=True；
 structural=True；
 total_gate=True；
 local_formal=True；
@@ -59,6 +92,8 @@ target_rule_closed=False。
 p=5003:
   B=8192=2^ceil(log2(p+1))；
   p<B<2p；
+  B/p=1.637418<1.8；
+  |r|/p=0.007196<0.225；
   6 divides |r|；
   min_block_margin=822；
   min_n_margin=4363；
@@ -68,6 +103,8 @@ p=5003:
 p=10007:
   B=16384=2^ceil(log2(p+1))；
   p<B<2p；
+  B/p=1.637254<1.8；
+  |r|/p=0.089937<0.225；
   6 divides |r|；
   min_block_margin=1630；
   min_n_margin=5407；
@@ -83,7 +120,7 @@ Gate total pool closure；
 Formal local closure。
 ```
 
-## 4. 精确剩余
+## 5. 精确剩余
 
 当前真正剩余不是样本内部预算，而是：
 
@@ -91,7 +128,8 @@ Formal local closure。
 TargetFamilyGenerator:
   给出完整高 P 目标窗口族 W(P)；
   证明 W(P) 不遗漏任何 C13 目标窗口；
-  证明每个输出窗口满足 TFC-A/B/C/D；
+  证明每个输出窗口满足 TFC-A 与 TFC-R1/R2/R3；
+  证明每个输出窗口满足 TFC-D；
   若有例外，则列入有限证书或 PDEC/SAE 出口。
 ```
 
@@ -101,4 +139,3 @@ TargetFamilyGenerator:
 当前 explicit-selected 样本合同闭合；
 完整行命题全局闭合仍未完成。
 ```
-
