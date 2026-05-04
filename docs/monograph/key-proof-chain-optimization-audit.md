@@ -621,8 +621,19 @@ correlation saving。
 `(u,v)` 块投影扣除 `(BDC-5)`，因此当时不能直接跳到 `OSQK-core`。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 后，`BD-CEN identity`
-在当前对象下被反证。当前不应继续试图从现有 KZ-E 推出 `(BDC-5)`；必须改攻 `SOURCE-CEN`
-源头块中心化、`BLK-energy-core` 块能量节省，或明确使用外部 DI/BFI。
+在当前对象下被反证。此时不应继续试图从现有 KZ-E 推出 `(BDC-5)`；路线曾分叉为
+`SOURCE-CEN` 源头块中心化、`BLK-energy-core` 块能量节省，或明确使用外部 DI/BFI。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-source-cen-no-go.md` 后，`SOURCE-CEN` 也被反证：
+源头块中心化会把当前未块中心化的 `WFD-core (KE-13)` 换成另一个对象，不能作为恒等式加入。
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md` 后，裸
+`BLK-energy-core` 也被证明不能作为平方核层任意系数数组定理成立。当前最窄
+无黑箱义务不再是 `SOURCE-CEN` 或裸块能量估计，而是：
+
+```text
+NC-BLK actual coefficient block non-concentration,
+or external DI/BFI original dispersion theorem.
+```
 
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 

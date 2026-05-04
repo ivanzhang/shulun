@@ -249,7 +249,7 @@ K^{\flat}(\xi,\xi')
 BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 ```
 
-并且严格指出上一层把整个 `(u,v)=(u',v')` 半对角要求 `log^{-A}` 是过强的；正确剩余更新为：
+并且严格指出上一层把整个 `(u,v)=(u',v')` 半对角要求 `log^{-A}` 是过强的；该阶段正确剩余更新为：
 
 ```text
 SOURCE-CEN or BLK-energy-core or external DI/BFI.
@@ -257,3 +257,7 @@ SOURCE-CEN or BLK-energy-core or external DI/BFI.
 
 其中 `SOURCE-CEN` 要证明原始对象已块条件中心化；`BLK-energy-core` 要证明块能量本身也有
 对数节省；外部 DI/BFI 是引用版出口。没有三者之一，不能继续把 `OSQK/TFQK` 接回 `KFLS`。
+
+后续核查进一步收紧该分叉：`SOURCE-CEN` 会改变当前未块中心化 WFD 对象，不能作为恒等式；
+裸 `BLK-energy-core` 不能作为平方核层任意系数数组定理成立。当前内部无黑箱路线的
+真实剩余应写为 `NC-BLK`，即从实际 WFD 系数证明块非集中；否则只能走外部 DI/BFI。

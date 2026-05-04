@@ -1701,6 +1701,28 @@ or BLK-energy-core
 or external DI/BFI.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-source-cen-no-go.md` 后，`SOURCE-CEN` 也被核查并
+反证。当前 `WFD-core (KE-13)` 是未块中心化的线性 Kloosterman 窗口；若在源头替换成同
+`(u,v)` 块中心化对象，就改变了目标对象，并留下必须另估的块均值项。因此 `SOURCE-CEN`
+不能作为当前无黑箱平方核路线的出口。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md` 后，裸
+`BLK-energy-core` 也被进一步核查：若把它表述成平方核层任意系数数组定理，单块单原子测试使
+`\sum_b |S_b|^2` 与 raw 二范数同阶，不能再额外获得任意 `\log^{-A}`。当前内部无黑箱路线
+的真实最窄义务因此更新为：
+
+```text
+NC-BLK:
+prove actual WFD coefficients are block-nonconcentrated strongly enough
+to imply the block-energy estimate.
+```
+
+若不证明 `NC-BLK`，则只能走：
+
+```text
+external DI/BFI original dispersion theorem route.
+```
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

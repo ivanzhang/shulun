@@ -360,3 +360,15 @@ Kloosterman 平均估计不能越过块对角障碍。
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 后，外部引用路线的重要性
 进一步明确：当前内部对象不满足 `BD-CEN`。若使用外部 DI/BFI，必须直接引用其原始 dispersion
 结论，而不是把本文当前平方核中心化误认为已经自足证明。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-source-cen-no-go.md` 与
+`docs/monograph/prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md` 后，外部引用接口再收紧：
+`SOURCE-CEN` 不能免费改变当前 WFD 对象；裸 `BLK-energy-core` 也不能作为平方核层任意
+系数数组定理成立。若外部 DI/BFI 用于 H3-HLC/KZ-E，必须直接提供以下二者之一：
+
+```text
+original dispersion estimate for the uncentered WFD target,
+or a theorem implying NC-BLK block non-concentration for the actual WFD coefficients.
+```
+
+只给普通跨块 Kloosterman 平均而未处理同 `(u,v)` 块能量的外部定理，不能闭合当前接口。

@@ -189,7 +189,7 @@ BD-CEN is not proved by the current KZ-E spine.
 WFD/KZ-E 对象和当前 admissible 系数范围下，`BD-CEN` 不只是未证明，而是被单块非零反例
 阻断。
 
-因此当前完全自足链的第一阻断点更新为：
+因此该阶段完全自足链的第一阻断点更新为：
 
 ```text
 SOURCE-CEN or BLK-energy-core or external DI/BFI.
@@ -198,3 +198,7 @@ SOURCE-CEN or BLK-energy-core or external DI/BFI.
 不能在没有新输入的情况下继续声称 `BCFQK-core=>KFLS-core` 已闭合。下一步若继续硬攻，必须
 三选一：证明原始对象已经是块条件中心化的 `SOURCE-CEN`；新增并证明非集中条件以支持
 `BLK-energy-core`；或明确切换到外部 DI/BFI 定理。
+
+后续核查进一步收紧：`SOURCE-CEN` 在当前对象下不是恒等式，裸 `BLK-energy-core` 不能作为
+平方核层任意系数数组定理成立。当前内部无黑箱路线的真实剩余应写为 `NC-BLK`，即从实际 WFD
+系数证明块非集中；否则该分支只能作为外部 DI/BFI 定理版闭合。

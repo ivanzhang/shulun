@@ -173,8 +173,8 @@ F_{b,\theta}
 \tag{BDN-15}
 \]
 
-但该路线在当前“任意 admissible 系数”范围下也被单块反例阻断。若要走此路，必须先新增
-非集中条件，例如：
+但该路线若被表述为平方核层任意系数数组定理，也被单块反例阻断。若要走此路，必须先新增
+并从上游实际结构证明非集中条件，例如：
 
 ```text
 no single (u,v) block can carry more than log^{-A} of the square norm.
@@ -203,3 +203,9 @@ or explicitly switch to external DI/BFI.
 ```
 
 在这三者之一完成前，不能继续声称平方核路线可通向完全自足无黑箱证明。
+
+后续 `prime-matrix-h3-dsb-hlc-source-cen-no-go.md` 与
+`prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md` 已进一步核查前两条内部出口：
+`SOURCE-CEN` 会改变当前 WFD 目标，不能作为恒等式；裸 `BLK-energy-core` 不能作为平方核层
+任意系数数组定理成立。因此当前内部路线的真实待证输入已收窄为 `NC-BLK`，即证明实际
+WFD 系数的块非集中，而不是证明裸块能量估计。

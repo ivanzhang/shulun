@@ -22,7 +22,8 @@ KFLS-core: balanced Kloosterman-fraction large sieve logarithmic saving.
 再后续 `prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查：当前 KZ-E spine
 尚未证明 `BD-CEN`；该审计阶段的阻断点是 `(BDC-5)`。
 `prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 进一步证明当前对象下 `(BDC-5)` 失败；
-因此平方核路线必须改为 `SOURCE-CEN`、`BLK-energy-core` 或外部 DI/BFI。
+该阶段平方核路线分叉为 `SOURCE-CEN`、`BLK-energy-core` 或外部 DI/BFI。后续核查已把内部
+出口进一步收窄为 `NC-BLK`。
 
 ## 1. 非退化 KFLS 和的统一索引
 
@@ -299,6 +300,7 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 BD-CEN + OSQK-core + TFQK-core.
 ```
 
-下一步若继续硬攻，必须按 no-go 分叉改攻 `SOURCE-CEN`、`BLK-energy-core` 或外部 DI/BFI；
-不能再把 `BD-CEN` 当作当前对象下的普通待证身份。若不能完成这些新输入，完全自足无黑箱
-闭合仍不能宣称完成。
+后续 no-go 核查进一步排除 `SOURCE-CEN` 恒等式，并证明裸 `BLK-energy-core` 被单块单原子
+测试阻断。因此下一步若继续硬攻，必须改攻实际系数块非集中 `NC-BLK`，或明确使用外部
+DI/BFI；不能再把 `BD-CEN` 当作当前对象下的普通待证身份。若不能完成该新输入，完全自足
+无黑箱闭合仍不能宣称完成。

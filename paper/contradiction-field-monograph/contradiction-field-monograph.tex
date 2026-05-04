@@ -1613,6 +1613,24 @@ It shows that, for the current unblocked WFD/KZ--E object, BD-CEN is false rathe
 unproved: a single nonzero block with nonzero frequency survives the $h=0$ subtraction but has
 no cross-block counterpart.  The remaining choices are therefore SOURCE-CEN, BLK-energy-core,
 or an explicit external DI/BFI input.
+The SOURCE-CEN no-go note
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-source-cen-no-go.md}
+\]
+checks the first of these choices.  It shows that source block-centering would replace the
+unblocked linear WFD target in (KE-13) by a different centered object and would leave a block
+mean term which still has to be estimated.  Thus SOURCE-CEN is not an identity for the present
+target.  The subsequent BLK-energy audit
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md}
+\]
+checks the second choice.  As an arbitrary coefficient-array theorem at the square-kernel
+level, a one-block one-atom test makes $\sum_b |S_b|^2$ comparable with the raw norm, so a bare
+arbitrary logarithmic saving for BLK-energy-core is false.  The remaining self-contained obligation is
+therefore the sharper NC-BLK input: prove block non-concentration for the actual WFD
+coefficients produced by the Type-I/II, Fourier, and well-factorable structure.  Without that
+new input, this branch is only closed in an external-theorem version using a precisely matched
+DI/BFI dispersion theorem.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

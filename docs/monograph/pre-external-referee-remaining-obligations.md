@@ -732,13 +732,25 @@ BD-CEN identity (BDC-5).
 随后 no-go 文件进一步证明该身份在当前对象下失败，不能把它当作普通待证接口。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 后，外审前状态进一步
-收紧：`BD-CEN` 在当前未块中心化对象下被单块非零反例阻断。当前必须选择并证明：
+收紧：`BD-CEN` 在当前未块中心化对象下被单块非零反例阻断。当时路线分叉为：
 
 ```text
 SOURCE-CEN, or BLK-energy-core, or external DI/BFI.
 ```
 
 否则平方核路线不能作为完全自足证明链的一部分。
+
+随后 `docs/monograph/prime-matrix-h3-dsb-hlc-source-cen-no-go.md` 证明 `SOURCE-CEN` 也不能作为
+当前对象的恒等式：它会把未块中心化的 `WFD-core (KE-13)` 替换为块中心化对象，并额外留下
+块均值项。`docs/monograph/prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md` 又证明裸
+`BLK-energy-core` 不能作为平方核层任意系数数组定理成立：单块单原子测试使块能量与 raw 二范数同阶。
+因此外审前 H3-HLC 完全自足版的当前真实剩余义务为：
+
+```text
+NC-BLK:
+derive block non-concentration from the actual WFD/Type-I-II/Fourier coefficients;
+otherwise mark this branch as external DI/BFI theorem dependent.
+```
 
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与

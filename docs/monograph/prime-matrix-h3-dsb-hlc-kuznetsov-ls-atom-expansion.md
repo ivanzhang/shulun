@@ -251,9 +251,9 @@ Kloosterman-fraction correlation saving。
 本文仍未完成完全自足闭合：
 
 ```text
-SOURCE-CEN or BLK-energy-core or external DI/BFI.
+NC-BLK actual block non-concentration or external DI/BFI.
 ```
 
-因此，下一步若继续无黑箱硬攻，应先证明源头块中心化或块能量节省；不能把这些新输入或后续
-`OSQK/TFQK` 原子省略后宣称完全自足
-闭合。
+因此，下一步若继续无黑箱硬攻，应证明实际 WFD 系数的同 `(u,v)` 块非集中 `NC-BLK`。后续
+审计已排除 `SOURCE-CEN` 恒等式和裸 `BLK-energy-core`；不能把这些新输入或后续 `OSQK/TFQK`
+原子省略后宣称完全自足闭合。

@@ -245,8 +245,8 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 块中心化文件进一步证明修正后的 `BCFQK-core=>KFLS-core`。当前剩余为：
 
 ```text
-SOURCE-CEN or BLK-energy-core or external DI/BFI.
+NC-BLK actual block non-concentration or external DI/BFI.
 ```
 
-下一步若继续完全自足硬攻，必须先证明源头块中心化 `SOURCE-CEN` 或块能量节省
-`BLK-energy-core`；一侧共享模数核和真四模数核目前是条件后续义务。
+下一步若继续完全自足硬攻，必须证明实际 WFD 系数的块非集中 `NC-BLK`；后续核查已排除
+`SOURCE-CEN` 恒等式和裸 `BLK-energy-core`。一侧共享模数核和真四模数核目前仍是条件后续义务。

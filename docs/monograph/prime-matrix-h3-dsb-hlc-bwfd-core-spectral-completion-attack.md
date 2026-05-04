@@ -216,10 +216,11 @@ BSC-core => BWFD-core => WFD-core => KZ-E.
 无黑箱闭合的唯一剩余现在进一步定位为：
 
 ```text
-SOURCE-CEN or BLK-energy-core or external DI/BFI.
+NC-BLK actual block non-concentration or external DI/BFI.
 ```
 
 若允许引用 Deshouillers--Iwaniec/Bombieri--Friedlander--Iwaniec 型 well-factorable dispersion
 定理，该核心可作为外部深定理适配点；若要求文内完全自足，则必须继续证明后续文件中的
-`SOURCE-CEN` 或 `BLK-energy-core`。在这些核未证明前，不能宣称 H3-HLC、SC-9 或 CORE-5
-已完全无黑箱闭合。
+`NC-BLK`。后续核查已证明 `SOURCE-CEN` 不是当前对象的恒等式，裸 `BLK-energy-core` 不能作为
+平方核层任意系数数组定理成立；在 `NC-BLK` 未证明前，不能宣称 H3-HLC、SC-9 或 CORE-5 已完全
+无黑箱闭合。

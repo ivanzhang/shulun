@@ -889,4 +889,8 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 
 | H3-HLC BD-CEN身份核查 | BD-CEN未闭合/第一阻断 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md`。该文件逐行核查 KZ-E dispersion spine：现有 `(KE-5)` 只给出 `h=0` 主项抵消，即频率方向中心化；它没有给出同 `(u,v)` 块投影扣除 `(BDC-5)`。因此不能在平方核中事后删除 `sum_b |S_b|^2`。当前第一阻断点更新为 `BD-CEN identity (BDC-5)`；`OSQK/TFQK` 只能作为其后的条件义务。 |
 
-| H3-HLC BD-CEN反证分叉 | BD-CEN当前对象下失败 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md`。该文件用单块非零模型严格反证：在当前未块中心化的 WFD/KZ-E 对象和当前 admissible 系数范围内，`BD-CEN identity (BDC-5)` 不是未证引理而是错误身份；`h=0` 投影与块投影不同。当前必须三选一：证明 `SOURCE-CEN` 源头块中心化，证明新的 `BLK-energy-core` 非集中/块能量节省，或切换到外部 DI/BFI。 |
+| H3-HLC BD-CEN反证分叉 | BD-CEN当前对象下失败 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md`。该文件用单块非零模型严格反证：在当前未块中心化的 WFD/KZ-E 对象和当前 admissible 系数范围内，`BD-CEN identity (BDC-5)` 不是未证引理而是错误身份；`h=0` 投影与块投影不同。该步当时把路线分叉为 `SOURCE-CEN`、`BLK-energy-core` 或外部 DI/BFI；后续两条内部裸出口已进一步核查并收窄为 `NC-BLK`。 |
+
+| H3-HLC SOURCE-CEN反证 | SOURCE-CEN当前对象下失败 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-source-cen-no-go.md`。该文件证明当前 `WFD-core (KE-13)` 是未块中心化的线性 Kloosterman 窗口；若在源头替换为同 `(u,v)` 块中心化对象，会改变原始目标并产生必须另估的块均值项。因此 `SOURCE-CEN` 不能作为恒等式闭合 `BD-CEN` 阻断。该步把剩余内部路线收窄为块能量/块非集中输入；后续 `BLK-energy` 核查进一步压缩为 `NC-BLK`。 |
+
+| H3-HLC BLK-energy核查 | 裸BLK-energy数组版失败/剩NC-BLK | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md`。该文件证明裸 `BLK-energy-core` 不能作为平方核层任意系数数组定理成立：单块单原子测试使 `sum_b |S_b|^2` 与 raw 二范数同阶，不能再获得任意 `log^{-A}`。因此无黑箱内部版的真实最窄义务是 `NC-BLK`：从上游实际 Type-I/II、Fourier 与 well-factorable 结构证明块内非集中 `(BEC-12)`；否则 H3-HLC/KZ-E 只能标为外部 DI/BFI 定理版闭合。 |

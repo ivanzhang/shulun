@@ -230,5 +230,8 @@ BD-CEN + OSQK-core + TFQK-core.
 spine 只给出 `h=0` 主项抵消，尚未给出同 `(u,v)` 块方差扣除。`OSQK/TFQK` 只能在
 `BD-CEN` 成立后继续推进。进一步的
 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-no-go-route-fork.md` 已证明当前未块中心化对象下
-`BD-CEN` 被单块非零反例阻断；因此必须改为证明 `SOURCE-CEN`、`BLK-energy-core`，或使用
-外部 DI/BFI。
+`BD-CEN` 被单块非零反例阻断；该阶段路线分叉为 `SOURCE-CEN`、`BLK-energy-core`，或使用
+外部 DI/BFI。随后 `SOURCE-CEN` 也被证明不是当前未块中心化 WFD 对象的恒等式；裸
+`BLK-energy-core` 不能作为平方核层任意系数数组定理成立。因此当前真正
+最窄的完全自足义务是 `NC-BLK`：从实际 WFD/Type-I-II/Fourier 系数证明同 `(u,v)` 块非集中；
+否则只能采用外部 DI/BFI 原始 dispersion 定理。

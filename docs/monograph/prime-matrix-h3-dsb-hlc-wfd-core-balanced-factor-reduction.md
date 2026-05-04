@@ -179,12 +179,13 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 
 本文本身证明 `BWFD-core=>WFD-core`；后续谱完成攻击文件进一步证明 `BSC-core=>BWFD-core`。
 再后续分数相位攻击文件证明 `KFLS-core=>BSC-core`，平方核文件证明 `CFQK-core=>KFLS-core`。
-块中心化文件进一步修正为 `BCFQK-core=>KFLS-core`。因此当前剩余进一步压缩为：
+块中心化文件进一步修正为 `BCFQK-core=>KFLS-core`。随后 `BD-CEN` 与 `SOURCE-CEN` 均已在
+当前对象下被反证，裸 `BLK-energy-core` 也被单块单原子测试阻断。因此当前剩余进一步压缩为：
 
 ```text
-SOURCE-CEN or BLK-energy-core or external DI/BFI.
+NC-BLK actual block non-concentration or external DI/BFI.
 ```
 
 下一步不能再重复筛权分解、gcd 剥离、CRT 归一化或 `s`-completion；这些已经完成。必须直接攻
-`SOURCE-CEN` 或 `BLK-energy-core`：当前 `bd-cen` 反证文件表明现有未块中心化对象下
-`(BDC-5)` 失败。只有补出新的源头中心化或块能量节省，才可继续攻 `(BCF-14)`--`(BCF-16)`。
+`NC-BLK`：从实际 WFD/Type-I-II/Fourier 系数推出同 `(u,v)` 块非集中，或明确使用外部
+DI/BFI 原始 dispersion 定理。没有该输入，不能继续攻 `(BCF-14)`--`(BCF-16)` 并接回 KZ-E。
