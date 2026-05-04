@@ -106,6 +106,11 @@ C13-Budget-Allocation:
   或把低 p 局部外壳改为有限证书。
 ```
 
+低 `P` 有限证书与高 `P` 除数外壳的混合修正见
+`prime-matrix-eda-alpha-tail-tailpair-c13-hybrid-budget-certificate.md`。当前样本取
+`P_fin=1000`、低 `P` 使用 finite geometric envelope 后，逐窗口最大 `Cap/D2` 降为
+`0.780430`，修复了 `p=997` 的逐窗口不足。
+
 ## 4. 审稿边界
 
 已完成：
