@@ -76,6 +76,12 @@ p=10007 : accepted_env=13790, capacity=1103.20。
 这说明当前压力样本中，`eta=1/25` 给出的总 envelope 付款远大于实际 moving atoms；
 SparseSAE 总量在样本层面已可同时吸收。
 
+进一步的确定性 envelope 上界见
+`prime-matrix-eda-alpha-tail-tailpair-c13-deterministic-envelope-bound.md`：把
+`sum Omega(E)` 改写为
+`sum (1+floor((beta max_m |I_m|-epsilon_E)/u_E))`，当前样本给出
+`deterministic_env=24641` 与 `deterministic_capacity=1971.28`。
+
 ## 3. 对主链的影响
 
 `C13` 的 moving 分支现在变成：
