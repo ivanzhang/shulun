@@ -109,6 +109,11 @@ BandEnvelope
 所有 envelope group 均满足 `(BSA-3)`，或者证明 `HighDensityEnvelope` 触发
 cross-modulus stitching/ColumnCRT。
 
+`HighDensityEnvelope` 的下一层证书见
+`prime-matrix-eda-alpha-tail-tailpair-c13-high-density-envelope-certificate.md`：若
+`S(E)>eta Omega(E)`，则存在某个具体 `m` 层满足
+`S_m(E)>=ceil(S(E)/|M|)`，形成端点带固定差值高密度素对块。
+
 ## 5. 审稿边界
 
 已完成：
@@ -116,6 +121,7 @@ cross-modulus stitching/ColumnCRT。
 ```text
 稀疏/高密度 envelope 二分；
 SparseSAE 的 atom 上界 |M|*eta*Omega(E)；
+HighDensityEnvelope 的层投影证书接口；
 样本 C=1.3 无 moving 原子；
 C=1.2 压力样本在 eta=1/25 下 high=0。
 ```
