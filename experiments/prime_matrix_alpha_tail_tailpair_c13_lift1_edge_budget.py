@@ -78,6 +78,9 @@ def edge_budget_row(
             "raw_edge_candidates": 0,
             "unique_edge_units": 0,
             "raw_mid_candidates": 0,
+            "gate_envelope": 0,
+            "gate_envelope_over_slack": ratio(0, slack),
+            "gate_envelope_margin": slack,
         }
 
     tail_min = min(tail_primes)
@@ -173,6 +176,7 @@ def edge_budget_row(
                                 )
 
     duplicate_saving = raw_edge_candidates - len(unique_edge_units)
+    gate_envelope = num_primes * nonempty_edge_gate_count
     max_unit_multiplicity = max(unit_multiplicity.values()) if unit_multiplicity else 0
     return {
         "p": prime_bound,
@@ -187,9 +191,12 @@ def edge_budget_row(
         "edge_integer_span": edge_integer_span,
         "edge_gate_count": edge_gate_count,
         "nonempty_edge_gate_count": nonempty_edge_gate_count,
+        "gate_envelope": gate_envelope,
         "raw_edge_over_slack": ratio(raw_edge_candidates, slack),
         "unique_edge_over_slack": ratio(len(unique_edge_units), slack),
+        "gate_envelope_over_slack": ratio(gate_envelope, slack),
         "unique_edge_margin": slack - len(unique_edge_units),
+        "gate_envelope_margin": slack - gate_envelope,
         "duplicate_saving_ratio": ratio(duplicate_saving, raw_edge_candidates),
         "max_unit_multiplicity": max_unit_multiplicity,
         "low_prime_support": len(low_prime_hist),
@@ -235,6 +242,7 @@ def edge_budget_package(
             "edge_integer_span": 0.0,
             "edge_gate_count": 0.0,
             "nonempty_edge_gate_count": 0.0,
+            "gate_envelope": 0.0,
             "max_unit_multiplicity": 0,
         }
     )
@@ -246,6 +254,7 @@ def edge_budget_package(
         "edge_integer_span": 0.0,
         "edge_gate_count": 0.0,
         "nonempty_edge_gate_count": 0.0,
+        "gate_envelope": 0.0,
         "max_unit_multiplicity": 0,
     }
     total_side: Counter[str] = Counter()
@@ -275,6 +284,7 @@ def edge_budget_package(
                 "edge_integer_span",
                 "edge_gate_count",
                 "nonempty_edge_gate_count",
+                "gate_envelope",
             ):
                 total[name] += item[name]
                 windows[key][name] += item[name]
@@ -291,12 +301,16 @@ def edge_budget_package(
         value["p"], value["block"], value["shift"] = key
         value["raw_edge_over_slack"] = ratio(value["raw_edge_candidates"], value["slack_before_low"])
         value["unique_edge_over_slack"] = ratio(value["unique_edge_units"], value["slack_before_low"])
+        value["gate_envelope_over_slack"] = ratio(value["gate_envelope"], value["slack_before_low"])
         value["unique_edge_margin"] = value["slack_before_low"] - value["unique_edge_units"]
+        value["gate_envelope_margin"] = value["slack_before_low"] - value["gate_envelope"]
         value["duplicate_saving_ratio"] = ratio(value["duplicate_saving"], value["raw_edge_candidates"])
         window_rows.append(value)
     total["raw_edge_over_slack"] = ratio(total["raw_edge_candidates"], total["slack_before_low"])
     total["unique_edge_over_slack"] = ratio(total["unique_edge_units"], total["slack_before_low"])
+    total["gate_envelope_over_slack"] = ratio(total["gate_envelope"], total["slack_before_low"])
     total["unique_edge_margin"] = total["slack_before_low"] - total["unique_edge_units"]
+    total["gate_envelope_margin"] = total["slack_before_low"] - total["gate_envelope"]
     total["duplicate_saving_ratio"] = ratio(total["duplicate_saving"], total["raw_edge_candidates"])
     total["side_hist"] = dict(sorted(total_side.items()))
     total["unique_side_hist"] = dict(sorted(total_unique_side.items()))
@@ -319,14 +333,17 @@ def print_table(package: dict) -> None:
     total = package["total"]
     print(
         "scope slack raw_edge unique_edge dup_save raw_slack unique_slack "
-        "unique_margin dup_ratio span gates nonempty max_mult side unique_side",
+        "gate_env gate_slack unique_margin gate_margin dup_ratio span gates "
+        "nonempty max_mult side unique_side",
         flush=True,
     )
     print(
         f"highP-total {total['slack_before_low']:.6f} {total['raw_edge_candidates']:.0f} "
         f"{total['unique_edge_units']:.0f} {total['duplicate_saving']:.0f} "
         f"{fmt(total['raw_edge_over_slack'])} {fmt(total['unique_edge_over_slack'])} "
-        f"{total['unique_edge_margin']:.6f} {fmt(total['duplicate_saving_ratio'])} "
+        f"{total['gate_envelope']:.0f} {fmt(total['gate_envelope_over_slack'])} "
+        f"{total['unique_edge_margin']:.6f} {total['gate_envelope_margin']:.6f} "
+        f"{fmt(total['duplicate_saving_ratio'])} "
         f"{total['edge_integer_span']:.0f} {total['edge_gate_count']:.0f} "
         f"{total['nonempty_edge_gate_count']:.0f} {total['max_unit_multiplicity']} "
         f"{total['side_hist']} {total['unique_side_hist']}",
@@ -334,7 +351,7 @@ def print_table(package: dict) -> None:
     )
     print(
         "p block shift slack raw_edge unique_edge dup_save raw_slack unique_slack "
-        "unique_margin dup_ratio span gates nonempty max_mult",
+        "gate_env gate_slack unique_margin gate_margin dup_ratio span gates nonempty max_mult",
         flush=True,
     )
     for row in package["windows"]:
@@ -343,14 +360,16 @@ def print_table(package: dict) -> None:
             f"{row['slack_before_low']:.6f} {row['raw_edge_candidates']:.0f} "
             f"{row['unique_edge_units']:.0f} {row['duplicate_saving']:.0f} "
             f"{fmt(row['raw_edge_over_slack'])} {fmt(row['unique_edge_over_slack'])} "
-            f"{row['unique_edge_margin']:.6f} {fmt(row['duplicate_saving_ratio'])} "
+            f"{row['gate_envelope']:.0f} {fmt(row['gate_envelope_over_slack'])} "
+            f"{row['unique_edge_margin']:.6f} {row['gate_envelope_margin']:.6f} "
+            f"{fmt(row['duplicate_saving_ratio'])} "
             f"{row['edge_integer_span']:.0f} {row['edge_gate_count']:.0f} "
             f"{row['nonempty_edge_gate_count']:.0f} {row['max_unit_multiplicity']}",
             flush=True,
         )
     print(
         "p block shift m slack raw_edge unique_edge dup_save raw_slack unique_slack "
-        "side unique_side top_edges top_offsets top_low_primes max_mult",
+        "gate_env gate_slack side unique_side top_edges top_offsets top_low_primes max_mult",
         flush=True,
     )
     for row in package["rows"]:
@@ -359,6 +378,7 @@ def print_table(package: dict) -> None:
             f"{row['slack_before_low']:.6f} {row['raw_edge_candidates']:.0f} "
             f"{row['unique_edge_units']:.0f} {row['duplicate_saving']:.0f} "
             f"{fmt(row['raw_edge_over_slack'])} {fmt(row['unique_edge_over_slack'])} "
+            f"{row['gate_envelope']:.0f} {fmt(row['gate_envelope_over_slack'])} "
             f"{row['side_hist']} {row['unique_side_hist']} {row['top_edges']} "
             f"{row['top_offsets']} {row['top_low_primes']} {row['max_unit_multiplicity']}",
             flush=True,

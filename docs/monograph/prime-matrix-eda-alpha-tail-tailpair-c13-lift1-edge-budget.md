@@ -111,7 +111,20 @@ D_{1,\rm edge}\le U_{\rm edge}\le N_{\rm edge,raw}.
 故 `D_{1,edge}<=U_edge`。投影像的基数不超过原集合基数，所以
 `U_edge<=N_edge_raw`。□
 
-## 3. 审计脚本
+## 3. 纯几何门数包络
+
+设 `G_edge` 为非空边缘门数，即 `(LEB-4)` 或 `(LEB-7)` 与低素块外壳相交的
+edge gate 数。由于低素块固定只含 `K=num_primes` 个素数，每个非空 edge gate 最多贡献
+`K` 个 witness。因此有完全不依赖低素分布的包络
+
+\[
+U_{\rm edge}\le N_{\rm edge,raw}\le K\,G_{\rm edge}.
+\tag{LEB-11}
+\]
+
+这一步把 `LOD-EdgeBudget` 从素数位置问题进一步压成纯几何门数问题。
+
+## 4. 审计脚本
 
 脚本：
 
@@ -134,9 +147,12 @@ highP-total:
   slack=2537.963717；
   raw_edge=541；
   unique_edge=527；
+  gate_envelope=848；
   duplicate_saving=14；
   unique_edge/slack=0.207647；
+  gate_envelope/slack=0.334126；
   unique_margin=2010.963717；
+  gate_margin=1689.963717；
   max_unit_multiplicity=2。
 ```
 
@@ -146,14 +162,18 @@ highP-total:
 p=5003:
   raw_edge=285；
   unique_edge=271；
+  gate_envelope=576；
   duplicate_saving=14；
-  unique_edge/slack=0.396937。
+  unique_edge/slack=0.396937；
+  gate_envelope/slack=0.843675。
 
 p=10007:
   raw_edge=256；
   unique_edge=256；
+  gate_envelope=272；
   duplicate_saving=0；
-  unique_edge/slack=0.137988。
+  unique_edge/slack=0.137988；
+  gate_envelope/slack=0.146612。
 ```
 
 逐层最紧者仍为 `p=5003,m=5`：
@@ -162,17 +182,19 @@ p=10007:
 slack=461.520978；
 raw_edge=206；
 unique_edge=194；
+gate_envelope=400；
 duplicate_saving=12；
 unique_edge/slack=0.420349。
+gate_envelope/slack=0.866699。
 ```
 
-## 4. 压缩后的全局接口
+## 5. 压缩后的全局接口
 
 前一层接口为
 
 \[
 D_1\le N_1=N_{\rm edge}+N_{\rm mid}.
-\tag{LEB-11}
+\tag{LEB-12}
 \]
 
 本节将边缘项替换为更强的 formal 去重版本：
@@ -181,14 +203,26 @@ D_1\le N_1=N_{\rm edge}+N_{\rm mid}.
 D_1
 \le
 U_{\rm edge}+N_{\rm mid}.
-\tag{LEB-12}
+\tag{LEB-13}
+\]
+
+若只使用纯几何门数包络，则有
+
+\[
+D_1
+\le
+K\,G_{\rm edge}+N_{\rm mid}.
+\tag{LEB-14}
 \]
 
 因此下一步全局义务变为：
 
 ```text
-LEB-EdgeBudget:
-  证明 U_edge 小于 LowSievePreservation slack 的可分配部分。
+LEB-GateEnvelope:
+  证明 K*G_edge 小于 LowSievePreservation slack 的可分配部分。
+
+LEB-FormalEdgeBudget:
+  若 GateEnvelope 过宽，则用 formal unit 去重证明 U_edge 小于 slack。
 
 LOD-MidVoid:
   证明 N_mid=0，或把 N_mid 残项送入 PDEC/SAE。
@@ -197,27 +231,31 @@ LOD-MidVoid:
 当前压力样本满足
 
 \[
+K\,G_{\rm edge}=848<2537.963717,
+\qquad
 U_{\rm edge}=527<2537.963717.
-\tag{LEB-13}
+\tag{LEB-15}
 \]
 
 但这仍是样本闭合，不是全局无条件证明。
 
-## 5. 审稿边界
+## 6. 审稿边界
 
 已完成：
 
 ```text
 边缘层 h=0/h=u 的短区间公式；
 formal unit 去重引理；
+纯几何门数包络 U_edge<=N_edge_raw<=K*G_edge；
 当前压力样本 raw edge=541 与前一层精确接合；
-当前压力样本 unique edge=527，较 raw N1 节省 14。
+当前压力样本 unique edge=527，较 raw N1 节省 14；
+当前压力样本 gate_envelope=848，仍小于 slack。
 ```
 
 仍未完成：
 
 ```text
-全局证明 U_edge<=slack；
+全局证明 K*G_edge<=slack，或进一步证明 U_edge<=slack；
 全局证明 N_mid=0 或给出残项出口；
 与 lift>=2 Mod6Void 一起接回 LowSievePreservation。
 ```
