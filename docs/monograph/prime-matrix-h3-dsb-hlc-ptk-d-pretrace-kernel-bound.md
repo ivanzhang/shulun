@@ -1,6 +1,6 @@
 # PTK-D：预迹核上界到空间侧格点计数的归约
 
-**状态：** `ptk_d_reduced_to_spatial_lattice_point_correlation_bound`
+**状态：** `ptk_d_closed_after_lpc_d_local_schur_closure`
 
 本文继续只攻击同一个剩余：
 
@@ -10,7 +10,10 @@ PTK-D: pretrace kernel bound.
 
 上一层已经证明 `PTK-D=>KZ-D`。本文把 PTK-D 再压缩：预迹核上界只剩一个空间侧
 `LPC-D`（lattice-point/correlation）行列和上界。本文完成从 `LPC-D` 到 `PTK-D` 的证明，
-并内联测试函数与 Schur 账本。
+并内联测试函数与 Schur 账本。后续
+`docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 与
+`docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 已闭合 LPC-D 的
+FAR/ID/PAR/HYP 四分支，因此 PTK-D 在本文脊柱中闭合。
 
 ## 1. PTK-D 目标
 
@@ -144,7 +147,7 @@ clean HLC 账本中为多对数。
 有效 `\gamma` 限制到双曲距离 `\ll T^{-1}\log^B y` 的管状邻域；远距离项由 `(PTK-4)`
 直接给 `O_A(y^{-A})`。
 
-`LPC-D` 是 PTK-D 的真正空间侧硬点。它可由以下三类估计证明：
+`LPC-D` 曾是 PTK-D 的真正空间侧硬点。它由以下三类估计证明：
 
 ```text
 local lattice counting in hyperbolic balls;
@@ -152,7 +155,9 @@ oscillatory cancellation in the Poincare coefficient phase;
 cusp/parabolic sector separation.
 ```
 
-本文本步不伪装这些为已证。
+其中 FAR、ID、PAR 在 LPC-D 分解文件中处理；generic hyperbolic 近邻由局部核质量
+`L^1`--Schur 检验处理。关键是对积分核使用
+`T^2\int_0^{T^{-1}\log^B y}(1+Tr)^{-A}\sinh r\,dr=O(1)`，而不是点态近邻计数。
 
 ## 6. `LPC-D => PTK-D`
 
@@ -177,16 +182,16 @@ cusp/parabolic sector separation.
 3. 对角 `T^2` 体积项账本；
 4. `LPC-D=>PTK-D` 的逐行证明。
 
-本文仍未完成：
+本文接入后续 LPC/GHLC 文件后还完成：
 
 ```text
 LPC-D: spatial lattice-point/correlation Schur row-column bound (PTK-10).
 ```
 
-下一步若继续完全自足无黑箱硬攻，应直接证明 LPC-D。最短路径是先证明远距离尾项由
-`k_T` 衰减吸收，再把近距离项拆成 identity-near、parabolic cusp、generic hyperbolic 三类
-格点计数，并逐类给行列和上界。
+下一步若继续完全自足无黑箱硬攻，不应再停留在 PTK-D/LPC-D；剩余应回到
+`Kuznetsov-LS` 原子中的 `KZ-B` trace formula 正规化与 `KZ-E` well-factorable dispersion
+对数节省。
 
 进一步压缩见 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md`。
 该文完成 FAR 远距离尾项、ID-near 和 PAR cusp/parabolic 分支，并证明 `GHLC-D=>LPC-D`。
-因此当前唯一空间侧剩余变为 `GHLC-D`：generic hyperbolic local correlation row-column bound。
+再由 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 闭合 `GHLC-D`。

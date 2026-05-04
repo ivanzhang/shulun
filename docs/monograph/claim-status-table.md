@@ -508,6 +508,11 @@ KZ-B、KZ-D、KZ-E。
 cusp/parabolic 分支由 cusp 宽度与除数账本闭合；当前唯一空间侧剩余变为 `GHLC-D`
 generic hyperbolic local correlation。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 后，`GHLC-D`
+由局部 `L^1` 核质量和 Poincare 包 Schur 检验闭合，继而
+`GHLC-D=>LPC-D=>PTK-D=>KZ-D`。因此当前 `SC-9` 的未闭合子原子剩余已缩为
+KZ-B、KZ-E。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收缺陷已路由为
@@ -860,3 +865,5 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 | H5.1 RRD-low出口定理 | 路由闭合/出口未排斥 | 新增 `docs/monograph/h5-1-rrd-low-exit-theorem.md`。该文件定义 `weighted CRTDefect` 阈值 `0.005366563145999495`，并用块级 Cauchy--Schwarz 证明：若无 `OSPC*` 且无 `weighted CRTDefect`，则 `|E_low|<=0.006`；等价地，`RRD-low` 超预算必进入 `OSPC*` 或 `weighted CRTDefect`。该项只闭合 H5.1 的出口路由，不排除这些出口；下游仍需 H5.4/H4 的 `PDEC-or-SAE` / Tail-anchor 排斥。 |
 
 | H5.4 OSPC/weighted CRTDefect吸收 | 吸收到H4/出口未排斥 | 新增 `docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md`。该文件证明 `OSPC*` 与 `weighted CRTDefect` 都可写成零均值低模测试函数上的命名缺陷，并由统一 `PDEC-or-SAE` 二分进入 persistent Fourier/CRT 缺陷或 sparse 单窗逃逸义务。该项只完成出口吸收；仍未提交 `PDEC-Cert` 或 `SAE-Cert`，所以 Prime Matrix 终局不升级。 |
+
+| H3-HLC GHLC-D闭合 | KZ-D分支闭合/剩KZ-B,KZ-E | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md`。该文件证明 generic hyperbolic 局部相关不能用点态格点数硬估，而应在预迹积分核层使用局部 `L^1` 核质量与 Schur 检验：`T^2∫_0^{T^{-1}log^B y}(1+Tr)^{-A}sinh r dr=O(1)`。因此 `GHLC-D=>LPC-D=>PTK-D=>KZ-D`。完全自足总链仍未闭合；剩余深原子为 `KZ-B` Kuznetsov trace formula 专门化与 `KZ-E` BFI/well-factorable dispersion 对数节省。 |

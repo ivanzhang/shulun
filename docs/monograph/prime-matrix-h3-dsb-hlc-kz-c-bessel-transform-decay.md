@@ -189,8 +189,7 @@ KZ-C 已内联证明。`Kuznetsov-LS atom (SC-9)` 仍需：
 
 ```text
 KZ-B: Kuznetsov trace formula specialization;
-KZ-D: spectral large sieve with oldform/Eisenstein;
 KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
 
-下一步最优硬攻点是 KZ-D，因为它直接控制谱侧二范数，是 `SC-9` 中真正产生平均抵消的地方。
+KZ-D 已由后续 `PTK-D/LPC-D/GHLC-D` 链闭合。下一步最优硬攻点应转为 KZ-B 或 KZ-E。

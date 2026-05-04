@@ -262,7 +262,7 @@ Weil 或单模估计，则不够；文件第 7 节已记录其量级不足。
 well-factorable dispersion，对数节省仍未闭合。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 不再需要
-外部引用；外部索引只需继续核对 KZ-B、KZ-D、KZ-E。
+外部引用；当时外部索引只需继续核对 KZ-B、KZ-D、KZ-E。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D 的
 外部核验点改为 `PTK-D`。外部谱大筛若能给出 diagonal `T^2` 和 off-diagonal `N0` 的
@@ -275,3 +275,12 @@ Schur 行列和上界，即可由该文件推出 KZ-D；否则还需补 pre-trac
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 后，外部核验点
 进一步改为 `GHLC-D`。任何外部或内部几何计数若给出 generic hyperbolic local correlation
 的 Schur 行列和，即可接回 `GHLC-D=>LPC-D=>PTK-D`。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 后，GHLC-D 已由
+局部积分核质量闭合，不再需要外部几何计数。KZ-D 分支随之闭合；外部索引对 H3-HLC 完全
+自足版的剩余核验点缩为：
+
+```text
+KZ-B: specialized Kuznetsov trace formula;
+KZ-E: BFI/well-factorable dispersion logarithmic saving.
+```

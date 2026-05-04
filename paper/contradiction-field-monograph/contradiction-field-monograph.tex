@@ -1499,8 +1499,8 @@ The Bessel-transform part is now treated in
 \]
 It uses the Bessel differential equation, the self-adjoint Bessel operator, and repeated
 integration by parts to obtain the required rapid transform decay.  The remaining
-no-black-box analytic atoms are the specialized Kuznetsov formula, the spectral large sieve,
-and the well-factorable dispersion logarithmic saving.
+no-black-box analytic atoms at this point are the specialized Kuznetsov formula, the spectral
+large sieve, and the well-factorable dispersion logarithmic saving.
 The spectral-large-sieve atom is further reduced in
 \[
   \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md}.
@@ -1521,6 +1521,21 @@ The spatial kernel is split in
 The far tail is absorbed by kernel decay, the identity-near sector is empty or parabolic,
 and the parabolic cusp sector is controlled by divisor bookkeeping.  The remaining spatial
 line is the generic hyperbolic local-correlation bound GHLC--D.
+That last spatial line is now treated in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md}.
+\]
+The key correction is to estimate the pre-trace object as an integral kernel, not by
+pointwise hyperbolic neighbour counting.  On the local radius
+$r_*=T^{-1}\log^B y$ one has
+\[
+  T^2\int_0^{r_*}(1+Tr)^{-A}\sinh r\,dr=O_A(1),
+\]
+so the local ball area cancels the $T^2$ height of the kernel.  Combining this local
+$L^1$ kernel mass with the Poincare-packet Schur normalization gives GHLC--D, hence
+LPC--D, PTK--D, and KZ--D.  The fully self-contained HLC chain therefore no longer has
+KZ--D as a remaining atom; the remaining analytic atoms are KZ--B, the specialized
+Kuznetsov trace formula, and KZ--E, the well-factorable dispersion logarithmic saving.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

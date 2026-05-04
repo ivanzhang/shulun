@@ -1479,10 +1479,10 @@ SC-9
 该文件证明 KZ-A--KZ-E 推出 `SC-9`，但 KZ-B--KZ-E 尚未内联证明。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已内联
-证明，剩余子原子为 KZ-B、KZ-D、KZ-E。
+证明，当时剩余子原子为 KZ-B、KZ-D、KZ-E。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D
-目录节点应展开为：
+目录节点展开为：
 
 ```text
 KZ-D
@@ -1491,7 +1491,7 @@ KZ-D
 => KZ-D.
 ```
 
-oldform、Eisenstein、holomorphic 谱只保留为多对数账本；未闭合核心是 PTK-D。
+oldform、Eisenstein、holomorphic 谱只保留为多对数账本；当时未闭合核心是 PTK-D。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md` 后，PTK-D 目录节点
 继续展开为：
@@ -1504,7 +1504,7 @@ PTK-D
 => PTK-D.
 ```
 
-未闭合核心变为 LPC-D。
+当时未闭合核心变为 LPC-D。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 后，LPC-D
 目录节点展开为：
@@ -1518,7 +1518,25 @@ LPC-D
 => LPC-D.
 ```
 
-未闭合核心变为 GHLC-D。
+当时未闭合核心变为 GHLC-D。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 后，GHLC-D
+被闭合为局部核质量问题：
+
+```text
+GHLC-D
+=> local L1 mass of k_T on radius T^{-1}log^B y balls
+=> Poincare-packet Schur row/column bound
+=> LPC-D => PTK-D => KZ-D.
+```
+
+核心修正是不用点态 hyperbolic 格点计数控制 `k_T(0)≈T^2`，而在预迹积分核中使用局部面积
+`T^{-2}` 抵消核高。KZ-D 因此不再是完全自足链的未闭合原子。剩余谱/dispersion 原子缩为：
+
+```text
+KZ-B specialized Kuznetsov trace formula
+KZ-E BFI/well-factorable logarithmic saving.
+```
 
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 

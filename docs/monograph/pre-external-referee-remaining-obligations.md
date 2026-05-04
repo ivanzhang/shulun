@@ -640,6 +640,16 @@ GHLC-D: generic hyperbolic local correlation row-column bound.
 FAR、ID-near、PAR 三个空间分支已经处理；外审前应直接补 generic hyperbolic 近距离格点
 相关计数。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 后，上述
+GHLC-D 已闭合。关键是不用点态格点计数，而在预迹积分核层使用局部 `L^1` 质量
+`T^2∫_0^{T^{-1}log^B y}(1+Tr)^{-A}sinh r dr=O(1)` 与 Poincare 包 Schur 归一化。
+因此外审前 HLC 无黑箱剩余清单更新为：
+
+```text
+KZ-B: Kuznetsov trace formula specialization;
+KZ-E: BFI/well-factorable dispersion logarithmic saving.
+```
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

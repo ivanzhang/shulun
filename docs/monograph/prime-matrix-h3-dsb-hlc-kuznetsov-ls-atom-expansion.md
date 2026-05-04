@@ -148,7 +148,11 @@ pre-trace 大筛证明。
 KZ-D 的自足化脊柱见
 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md`。该文件把 KZ-D
 对偶化为谱投影核矩阵上界，处理 oldform/Eisenstein/holomorphic 多对数账本，并证明
-`PTK-D=>KZ-D`。因此 KZ-D 的唯一未内联核心变为预迹核上界 `PTK-D`。
+`PTK-D=>KZ-D`。随后
+`docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md`、
+`docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 与
+`docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md`
+闭合 `PTK-D/LPC-D/GHLC-D`，所以 KZ-D 不再是未内联核心。
 
 ## 6. 子原子 KZ-E：BFI/well-factorable dispersion 对数节省
 
@@ -210,9 +214,8 @@ Kuznetsov 与谱大筛给出平方根平均控制；要得到任意 `log^{-A}`�
 
 ```text
 KZ-B: Kuznetsov trace formula 专门化；
-GHLC-D: generic hyperbolic local correlation bound implying LPC-D；
 KZ-E: BFI/well-factorable dispersion 对数节省。
 ```
 
-因此，下一步若继续无黑箱硬攻，应从 GHLC-D 开始；随后攻 KZ-B，最后攻 KZ-E。不能把这些
-原子省略后宣称完全自足闭合。
+因此，下一步若继续无黑箱硬攻，应从 KZ-B 或 KZ-E 开始。不能把这些原子省略后宣称完全
+自足闭合。

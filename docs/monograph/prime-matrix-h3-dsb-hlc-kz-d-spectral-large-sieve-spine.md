@@ -1,6 +1,6 @@
 # KZ-D：spectral large sieve 的自足化证明脊柱
 
-**状态：** `kz_d_reduced_to_pretrace_kernel_bound_oldform_eisenstein_bookkept`
+**状态：** `kz_d_closed_by_pretrace_lpc_ghlc_schur_chain`
 
 本文继续只攻击 `Kuznetsov-LS atom (SC-9)` 的子原子：
 
@@ -10,7 +10,8 @@ KZ-D: spectral large sieve with oldform/Eisenstein.
 
 目标是把 KZ-D 从一句“谱大筛”拆成对偶化、预迹核、oldform 分解、Eisenstein 连续谱四个
 可审查部分。本文完成前三类普通线性代数/账本归约，并把真正剩余压成单一 `PTK-D`
-预迹核上界。
+预迹核上界；后续 PTK/LPC/GHLC 文件已经闭合该预迹核上界，所以 KZ-D 分支现在在本文
+脊柱中闭合。
 
 ## 1. KZ-D 的目标形式
 
@@ -112,8 +113,9 @@ K_T(n,m)
 
 从而得到 KZ-D。
 
-PTK-D 是 spectral large sieve 的真正内核。它可以由 pre-trace formula、Selberg/Harish-Chandra
-变换的正性、局部 Weyl 上界和 Hecke 关系证明；但这些谱几何步骤尚未在本文内完全展开。
+PTK-D 是 spectral large sieve 的真正内核。后续文件已把它展开为 pre-trace formula、
+Selberg/Harish-Chandra 正核、局部 Weyl 对角项、空间侧 LPC-D，以及 GHLC-D 的局部
+`L^1`--Schur 核质量闭合。
 
 ## 4. oldform 账本
 
@@ -200,15 +202,16 @@ holomorphic 谱的 Petersson kernel 与 Maass 预迹核同型。权重 `k<=T` �
 3. oldform、Eisenstein、holomorphic 谱的多对数账本定位；
 4. PTK-D 推出 KZ-D 的逐行证明。
 
-本文仍未完成：
+本文接入后续 PTK/LPC/GHLC 文件后还完成：
 
 ```text
 PTK-D: pretrace kernel bound (KD-7)--(KD-9).
 ```
 
-下一步若继续完全自足无黑箱硬攻，应证明 PTK-D：构造谱投影平滑核，写出 pre-trace formula，
-证明 Selberg/Harish-Chandra transform 正性和空间侧核的 diagonal/off-diagonal 行列和上界。
+下一步若继续完全自足无黑箱硬攻，不再是 KZ-D；应回到 `Kuznetsov-LS atom` 中仍未内联的
+`KZ-B` Kuznetsov trace formula 专门化与 `KZ-E` BFI/well-factorable dispersion 对数节省。
 
 进一步压缩见 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md`。该文
 构造谱截断测试函数，写出预迹/Poincare 系数核展开，证明对角 `T^2` 体积账本，并把
-`PTK-D` 的唯一剩余压成空间侧 `LPC-D` 行列和上界；同时证明 `LPC-D=>PTK-D`。
+`PTK-D` 的唯一剩余压成空间侧 `LPC-D` 行列和上界；同时证明 `LPC-D=>PTK-D`。随后 LPC-D
+分解文件与 GHLC-D 局部 Schur 文件闭合该空间侧上界。

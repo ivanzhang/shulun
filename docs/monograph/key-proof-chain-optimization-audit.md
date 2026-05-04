@@ -563,17 +563,24 @@ high-lcm、short-arc 或 L2-flat 子情形。
 （BFI/well-factorable 对数节省）。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已闭合。
-下一步最优硬点更新为 KZ-D：spectral large sieve with oldform/Eisenstein。
+当时下一步最优硬点更新为 KZ-D：spectral large sieve with oldform/Eisenstein。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md` 后，KZ-D
 已压缩为 `PTK-D` 预迹核上界；oldform/Eisenstein/holomorphic 账本不再是独立黑箱。
-下一步最优硬点更新为 PTK-D。
+当时下一步最优硬点更新为 PTK-D。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ptk-d-pretrace-kernel-bound.md` 后，PTK-D
-已压缩为空间侧 `LPC-D` 格点/相关行列和上界。下一步最优硬点更新为 LPC-D。
+已压缩为空间侧 `LPC-D` 格点/相关行列和上界。当时下一步最优硬点更新为 LPC-D。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-lpc-d-spatial-correlation-split.md` 后，LPC-D
-已压缩为 `GHLC-D`：generic hyperbolic local correlation。下一步最优硬点更新为 GHLC-D。
+已压缩为 `GHLC-D`：generic hyperbolic local correlation。当时下一步最优硬点更新为 GHLC-D。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 后，GHLC-D 的
+正确闭合方式已明确：在积分核层用局部 `L^1` 质量
+`T^2∫_0^{T^{-1}log^B y}(1+Tr)^{-A}sinh(r)dr=O(1)`，再用 Poincare 包 Schur 归一化给出
+行列和 `O(N_0log^C y)`。这避免了点态近邻计数保留 `T^2` 的错误。于是
+`GHLC-D=>LPC-D=>PTK-D=>KZ-D`，KZ-D 不再是当前未闭合原子；完全自足链剩余更新为
+KZ-B 与 KZ-E。
 
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 

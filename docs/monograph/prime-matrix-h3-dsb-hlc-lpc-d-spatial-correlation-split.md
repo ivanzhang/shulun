@@ -1,6 +1,6 @@
 # LPC-D：空间侧相关核的几何分解与尾项闭合
 
-**状态：** `lpc_d_reduced_to_generic_hyperbolic_local_correlation_bound`
+**状态：** `lpc_d_closed_by_generic_hyperbolic_l1_schur_bound`
 
 本文继续只攻击同一个剩余：
 
@@ -10,7 +10,9 @@ LPC-D: spatial lattice-point/correlation Schur row-column bound.
 
 上一层已经证明 `LPC-D=>PTK-D=>KZ-D`。本文把 LPC-D 的空间侧核按几何类型拆开，闭合
 远距离尾项与 identity-near 项，并把剩余压成单一 `GHLC-D`：generic hyperbolic local
-correlation bound。
+correlation bound；随后
+`docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 用局部核质量
+`L^1`--Schur 检验证明该剩余。因此 LPC-D 现在在本文脊柱中闭合。
 
 ## 1. LPC-D 目标
 
@@ -196,8 +198,10 @@ d(z_n,\gamma z_m)\le r_*=T^{-1}\log^B y
 \tag{LPC-16}
 \]
 
-这是当前唯一未闭合空间侧核心。它应由局部 hyperbolic 格点计数、Hecke/Poincare 相位非复用
-和 clean HLC 的频率分散共同证明。
+这曾是唯一未闭合空间侧核心。后续 `GHLC-D` 文件给出的关键修正是：不能点态计数近邻
+hyperbolic 元，否则会保留错误的 `T^2` 核高；必须在预迹/Poincare 展开后的积分核层使用
+局部双曲球面积 `T^{-2}` 与核高 `T^2` 的抵消。该 `L^1` 核质量估计与 Poincare 包 Schur
+检验给出 `(LPC-16)`。
 
 ## 7. `GHLC-D => LPC-D`
 
@@ -224,12 +228,14 @@ d(z_n,\gamma z_m)\le r_*=T^{-1}\log^B y
 4. PAR cusp/parabolic 分支闭合到除数账本；
 5. `GHLC-D=>LPC-D`。
 
-本文仍未完成：
+本文在接入
+`docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md`
+后还完成：
 
 ```text
 GHLC-D: generic hyperbolic local correlation row-column bound.
 ```
 
-下一步应直接攻 GHLC-D：把近距离 hyperbolic 元写成矩阵条件
-`|a z_m+b-(c z_m+d)z_n|` 小，转为二次型/行列式约束，再证明对每个固定 `n` 的有效
-`(m,gamma)` 对总数为 `O(N_0 log^C y)`，或利用相位振荡进一步减少。
+需要保留的审稿边界是：点态矩阵条件
+`|a z_m+b-(c z_m+d)z_n|` 只作为几何分解 sanity check；真正闭合行列和的是积分核
+`L^1` 质量和 Poincare 包 Schur 归一化。完全自足总链的剩余已上移为 `KZ-B` 与 `KZ-E`。
