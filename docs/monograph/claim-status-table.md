@@ -886,3 +886,5 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 | H3-HLC KFLS平方核硬攻 | 压缩为CFQK-core/后续再修正 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kfls-core-square-kernel-attack.md`。该文件把 `KFLS-core` 的非退化和平方化，显式得到四模数相位差 `bar v R/u+bar u T/v-bar v' R'/u'-bar u' T'/v'`。文件指出全核绝对 Schur 被精确对角层阻断，只能恢复 raw 二范数尺度；该步当时剩余为中心化后的半对角 `(SQK-21)` 与真非对角 `(SQK-23)`。后续块中心化修正已进一步细化为 `BD-CEN + OSQK-core + TFQK-core`。 |
 
 | H3-HLC CFQK块中心化修正 | 压缩为BD-CEN/OSQK/TFQK | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md`。该文件把平方核按 `(u,v)` 块拆分，证明同块半对角 `sum_b |S_b|^2` 不能被要求 `log^{-A}` 估小；它必须作为块对角/局部方差由 dispersion 中心化扣除。当前剩余修正为三项：`BD-CEN` 块中心化身份核查，`OSQK-core` 一侧共享模数三模数相关 `(BCF-14)`，以及 `TFQK-core` 真四模数相关 `(BCF-16)`。 |
+
+| H3-HLC BD-CEN身份核查 | BD-CEN未闭合/第一阻断 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md`。该文件逐行核查 KZ-E dispersion spine：现有 `(KE-5)` 只给出 `h=0` 主项抵消，即频率方向中心化；它没有给出同 `(u,v)` 块投影扣除 `(BDC-5)`。因此不能在平方核中事后删除 `sum_b |S_b|^2`。当前第一阻断点更新为 `BD-CEN identity (BDC-5)`；`OSQK/TFQK` 只能作为其后的条件义务。 |

@@ -721,6 +721,16 @@ BD-CEN + OSQK-core + TFQK-core.
 `OSQK-core` 是 `(BCF-14)` 的一侧共享模数三模数相关；`TFQK-core` 是 `(BCF-16)` 的真四模数
 相关。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 后，BD-CEN
+核查结论为未闭合：当前 KZ-E spine 只扣除 `h=0` 主项，未扣除同 `(u,v)` 块局部方差。因此
+外审前第一阻断点是：
+
+```text
+BD-CEN identity (BDC-5).
+```
+
+在该身份未证明前，不能把 `OSQK/TFQK` 估计接回 `KFLS-core`。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

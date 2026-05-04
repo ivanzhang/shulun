@@ -1597,6 +1597,14 @@ It shows that the entire same-$(u,v)$ block diagonal is local variance and canno
 to be logarithmically small for arbitrary admissible coefficients.  The remaining obligations
 are therefore BD-CEN, the block-centering identity, OSQK-core for one shared modulus, and
 TFQK-core for the true four-modulus layer.
+The BD-CEN audit is recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md}.
+\]
+It checks the current KZ--E dispersion spine and finds only the $h=0$ main-term subtraction,
+not the same-$(u,v)$ block projection required by BD-CEN.  Thus the first blocking obligation
+is the identity $(\mathrm{BDC}\text{-}5)$; OSQK-core and TFQK-core are conditional downstream
+obligations until that identity is proved.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

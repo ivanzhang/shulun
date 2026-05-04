@@ -206,6 +206,9 @@ Kloosterman-fraction correlation saving。
 最新 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 进一步指出
 `(u,v)=(u',v')` 的整块半对角不能估小，必须由 dispersion 方差作块中心化扣除。当前最小
 未内联核心修正为 `BD-CEN + OSQK-core + TFQK-core`。
+最新 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查：
+当前 KZ-E spine 尚未证明 `BD-CEN`；它只写明 `h=0` 主项抵消，未写明同 `(u,v)` 块局部
+方差扣除。因此第一阻断点是 `BD-CEN` 身份 `(BDC-5)`。
 
 ## 7. 四原子推出 SC-9
 
@@ -245,9 +248,9 @@ Kloosterman-fraction correlation saving。
 本文仍未完成完全自足闭合：
 
 ```text
-BD-CEN + OSQK-core + TFQK-core.
+BD-CEN identity (BDC-5), then OSQK-core + TFQK-core.
 ```
 
-因此，下一步若继续无黑箱硬攻，应直接证明块中心化身份、一侧共享模数核和真四模数核。
-不能把这些原子省略后宣称完全自足
+因此，下一步若继续无黑箱硬攻，应先证明块中心化身份 `(BDC-5)`；不能把该身份或后续
+`OSQK/TFQK` 原子省略后宣称完全自足
 闭合。

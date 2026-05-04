@@ -1,6 +1,6 @@
 # CFQK-core：块中心化与半对角修正硬攻
 
-**状态：** `cfqk_refined_to_block_centered_four_modulus_core_not_closed`
+**状态：** `cfqk_refined_to_bd_cen_identity_blocker`
 
 本文继续只攻击同一个剩余：
 
@@ -23,6 +23,8 @@ CFQK-core: centered four-modulus Kloosterman-fraction correlation saving.
 
 这不是换命题，而是修正平方核层的必要中心化。若不做这一步，任何完全自足证明都会在精确块
 对角处被阻断。
+后续 `prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查：当前 KZ-E spine 只
+写明 `h=0` 主项抵消，尚未证明同 `(u,v)` 块局部方差扣除。因此 `BD-CEN` 是当前第一阻断点。
 
 ## 1. 按模数块重写平方核
 
@@ -248,8 +250,8 @@ BCFQK-core => KFLS-core => BSC-core => BWFD-core => WFD-core => KZ-E.
 并且严格指出上一层把整个 `(u,v)=(u',v')` 半对角要求 `log^{-A}` 是过强的；正确剩余更新为：
 
 ```text
-BD-CEN + OSQK-core + TFQK-core.
+BD-CEN identity (BDC-5), then OSQK-core + TFQK-core.
 ```
 
-其中 `BD-CEN` 是中心化身份核查；真正的解析硬点是 `(BCF-14)` 与 `(BCF-16)`。下一步应优先攻
-`OSQK-core`，因为它只有三模数结构，比真四模数层更窄。
+其中 `BD-CEN` 尚未由当前 KZ-E 文档证明；只有在 `(BDC-5)` 建立后，真正的解析硬点才推进到
+`(BCF-14)` 与 `(BCF-16)`。若不能证明 `(BDC-5)`，必须改攻更强的 `BLK-energy-core`。

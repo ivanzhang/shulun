@@ -613,7 +613,12 @@ correlation saving。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 后，`CFQK-core`
 的半对角被修正：同 `(u,v)` 块半对角不能估小，必须作为局部方差中心化扣除。当前硬点更新为
-`BD-CEN + OSQK-core + TFQK-core`，其中下一步最窄解析目标是三模数的 `OSQK-core`。
+`BD-CEN + OSQK-core + TFQK-core`；在尚未核查 BD-CEN 前，暂不能直接跳到三模数的
+`OSQK-core`。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 后，最窄目标
+顺序修正：`BD-CEN` 尚未闭合。当前 KZ-E spine 只证明 `h=0` 主项抵消，没有证明同 `(u,v)`
+块投影扣除 `(BDC-5)`。因此下一步必须先攻 `BD-CEN identity`，不能直接跳到 `OSQK-core`。
 
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 

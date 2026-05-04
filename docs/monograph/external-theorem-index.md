@@ -351,3 +351,8 @@ BD-CEN + OSQK-core + TFQK-core.
 
 外部定理若要匹配该点，必须说明是否已扣除同 `(u,v)` 块局部方差；若没有该中心化，单靠
 Kloosterman 平均估计不能越过块对角障碍。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 后，外部核验点
+优先级更新：必须先核对外部 DI/BFI dispersion 定理是否在进入 Kloosterman 平均前已经扣除
+同块局部方差，即是否提供 `(BDC-5)`。若外部定理只陈述非零 Fourier 频率或普通方差式，
+不能自动视为 `BD-CEN`。

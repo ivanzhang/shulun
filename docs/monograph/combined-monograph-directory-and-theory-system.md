@@ -1676,6 +1676,21 @@ same (u,v) block diagonal = local variance, not a log-saving error
 BD-CEN + OSQK-core + TFQK-core.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 后，`BD-CEN`
+被单独核查。结论是当前 KZ-E spine 只证明 `h=0` 主项抵消，没有证明同 `(u,v)` 块投影扣除
+
+```text
+|sum_b S_b|^2 - sum_b |S_b|^2.
+```
+
+所以第一阻断点进一步明确为：
+
+```text
+BD-CEN identity (BDC-5).
+```
+
+`OSQK-core` 与 `TFQK-core` 仍是后续条件义务，不能在 `BD-CEN` 之前宣称可接回 KFLS。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，

@@ -226,4 +226,7 @@ BD-CEN + OSQK-core + TFQK-core.
 平方化为中心化四模数相关核 `CFQK-core`；
 `docs/monograph/prime-matrix-h3-dsb-hlc-cfqk-core-block-centering-attack.md` 进一步指出同块
 半对角必须中心化扣除，并把当前剩余修正为 `BD-CEN + OSQK-core + TFQK-core`。因此下一步
-若继续不换命题硬攻，必须直接证明 `(BCF-14)`--`(BCF-16)` 并核查 `BD-CEN`。
+若继续不换命题硬攻，必须先证明 `BD-CEN` 身份 `(BDC-5)`；当前
+`docs/monograph/prime-matrix-h3-dsb-hlc-bd-cen-dispersion-centering-audit.md` 已核查现有 KZ-E
+spine 只给出 `h=0` 主项抵消，尚未给出同 `(u,v)` 块方差扣除。`OSQK/TFQK` 只能在
+`BD-CEN` 成立后继续推进。
