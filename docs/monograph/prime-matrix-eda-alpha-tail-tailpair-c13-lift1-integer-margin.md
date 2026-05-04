@@ -157,3 +157,7 @@ lift=1 纯整数候选上界；
 ```
 
 所以本文闭合的是当前样本的 `lift=1` 分支，不是行命题最终闭合。
+
+`lift>=2` 分支的当前样本空性见
+`prime-matrix-eda-alpha-tail-tailpair-c13-liftge2-void-audit.md`。该文件显示所有 `lift>=2`
+候选的 `q` 本身都被 `2` 或 `3` 杀掉，因此样本低筛保存分支已经闭合。
