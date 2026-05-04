@@ -112,6 +112,11 @@ MMD-SAE:
   或证明变模阶梯持久时触发新的 cross-modulus stitching/ColumnCRT。
 ```
 
+变模分支的第一层容量单位化见
+`prime-matrix-eda-alpha-tail-tailpair-c13-moving-depth-slot-budget.md`：formal moving 原子按
+深度槽 `Xi=(p,B,r,K,epsilon,h)` 登记，每槽负载至多为有限点位层数 `|M|`。压力样本中
+`moving=224` 被压成 `slots=215`，且 `capacity_failures=0`。
+
 ## 5. 审稿边界
 
 已完成：
@@ -120,6 +125,7 @@ MMD-SAE:
 同一 shape 下固定模与变模的无损二分；
 端点深度阶梯 s=epsilon+u*h；
 固定模分支的 formal unit 去重接口；
+变模分支的端点深度槽容量接口；
 样本 C=1.3 无见证原子；
 C=1.2 压力样本中 281 个原子全部满足深度阶梯。
 ```
