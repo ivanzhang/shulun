@@ -45,7 +45,8 @@ s=\varepsilon+u h,\qquad 0\le \varepsilon<u.
 ```text
 FixedModulus-PDEC:
   某个 Q_pair 在该 shape 中出现至少 nu 次；
-  可作为同模 PairPhase-PDEC 输入。
+  先按 formal physical unit 去重；
+  去重后仍重复时才可作为同模 PairPhase-PDEC 输入。
 
 MovingModulusDepth-SAE:
   Q_pair 不重复或未达持久阈值；
@@ -84,6 +85,11 @@ route_counts FixedModulus-PDEC:3,
 这里 `depth_failures=0` 核验 `(PMR-1)`。压力样本说明：即使在人工降常数产生失败的情况下，
 也不能把所有 persistent shape 直接视为同模 `PDEC`；多数原子处在变模深度阶梯分支。
 
+进一步的 formal unit 审计见
+`prime-matrix-eda-alpha-tail-tailpair-c13-fixed-modulus-formal-unit.md`。在压力测试 `C=1.2`
+中，原始 `raw_fixed_atoms=114` 全部来自 `m=4/5` 嵌套层重复；按物理见证键去重后
+`formal_fixed_atoms=0`。
+
 ## 4. 对主链的影响
 
 `C13` 真实失败出口现在更精确地写成：
@@ -113,6 +119,7 @@ MMD-SAE:
 ```text
 同一 shape 下固定模与变模的无损二分；
 端点深度阶梯 s=epsilon+u*h；
+固定模分支的 formal unit 去重接口；
 样本 C=1.3 无见证原子；
 C=1.2 压力样本中 281 个原子全部满足深度阶梯。
 ```
