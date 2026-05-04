@@ -96,6 +96,15 @@ explicit_contract=True；
 target_rule_closed=False。
 ```
 
+付款余量：
+
+```text
+gate_total_margin=505.963717；
+formal_total_margin=2010.963717；
+min_gate_window_margin=-485.272633；
+min_formal_window_margin=411.727367。
+```
+
 逐窗口：
 
 ```text
@@ -134,6 +143,9 @@ Gate total pool closure；
 Formal local closure。
 ```
 
+这也暴露下一窄口：`Gate` 不能逐窗口使用，因为 `p=5003` 的局部余量为负；
+若目标族不能证明总池付款合法，则必须使用 `Formal+MidVoid` 的逐窗口付款路线。
+
 ## 5. 精确剩余
 
 当前真正剩余不是样本内部预算，而是：
@@ -144,7 +156,7 @@ TargetFamilyGenerator:
   证明 W(P) 不遗漏任何 C13 目标窗口；
   证明每个输出窗口满足 TFC-A 与 TFC-R1/R2/R3；
   在生成器账本中显式给出 p-B/1.8 与 0.225p-|r| 的正余量；
-  证明每个输出窗口满足 TFC-D；
+  证明 Gate 总池付款合法，或证明每个输出窗口满足 Formal+MidVoid 局部付款；
   若有例外，则列入有限证书或 PDEC/SAE 出口。
 ```
 

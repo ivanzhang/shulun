@@ -132,6 +132,8 @@ def target_family_contract_package(
     total = master["total"]
     syntax_pass = all(row["syntax_pass"] for row in rows)
     ratio_structural_pass = all(row["ratio_structural_guard"] for row in rows)
+    gate_margins = [row["gate_margin"] for row in rows]
+    formal_margins = [row["formal_margin"] for row in rows]
     explicit_contract = syntax_pass and (
         total["total_gate_contract"]
         or total["local_formal_contract"]
@@ -158,6 +160,10 @@ def target_family_contract_package(
             "row_formal_contract": total["row_formal_contract"],
             "explicit_selected_contract": explicit_contract,
             "target_family_rule_closed": False,
+            "gate_total_margin": total["gate_margin_to_required"],
+            "formal_total_margin": total["formal_margin_to_required"],
+            "min_gate_window_margin": min(gate_margins) if gate_margins else None,
+            "min_formal_window_margin": min(formal_margins) if formal_margins else None,
         },
         "windows": rows,
         "master": master,
@@ -178,6 +184,17 @@ def print_table(package: dict) -> None:
         f"{total['structural_pass']} {total['total_gate_contract']} "
         f"{total['local_formal_contract']} {total['row_formal_contract']} "
         f"{total['explicit_selected_contract']} {total['target_family_rule_closed']}",
+        flush=True,
+    )
+    print(
+        "payment_margins "
+        "gate_total formal_total min_gate_window min_formal_window",
+        flush=True,
+    )
+    print(
+        f"payment_margins {fmt(total['gate_total_margin'])} "
+        f"{fmt(total['formal_total_margin'])} {fmt(total['min_gate_window_margin'])} "
+        f"{fmt(total['min_formal_window_margin'])}",
         flush=True,
     )
     print(

@@ -134,3 +134,7 @@ B < 2 alpha p；
 
 当前结果是 `explicit_selected_contract=True`，但 `target_family_rule_closed=False`。因此
 该更新压实了最后接口，没有把样本闭合升级为全局闭合。
+
+付款侧的当前边界也已明确：`gate_total_margin=505.963717`，但
+`min_gate_window_margin=-485.272633`；所以 Gate 只能作为目标族总池路线使用。逐窗口路线
+必须走 Formal 口径，当前样本 `min_formal_window_margin=411.727367`。
