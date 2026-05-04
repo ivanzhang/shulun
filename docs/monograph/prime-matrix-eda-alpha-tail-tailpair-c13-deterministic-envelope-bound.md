@@ -114,6 +114,8 @@ SparseSAE 现在具有三层形式：
 
 这减少了一个黑箱：后续全局证明不必依赖“观测 envelope 总量”，而只需证明目标反例族中
 出现的 group 数与 `u` 分布满足确定性求和预算。
+该 group 数与 `u` 分布的纯几何除数和上界见
+`prime-matrix-eda-alpha-tail-tailpair-c13-group-u-distribution-bound.md`。
 
 ## 4. 审稿边界
 
