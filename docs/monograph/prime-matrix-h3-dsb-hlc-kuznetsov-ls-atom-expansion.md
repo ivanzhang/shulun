@@ -96,8 +96,10 @@ Kuznetsov trace formula 的本文专门化为
 **KZ-B 原子。** 公式 `(KZ-6)` 对本文平滑权成立，且所有 oldform、Eisenstein、exceptional
 项的规范化常数可统一进入 `log^{O(1)}y` 账本。
 
-这是第一个真正谱理论输入。完全自足版必须从 Poincare series、Fourier 展开、Parseval 和
-Bessel kernel 恒等式证明它。
+这是第一个真正谱理论输入。其本文专门化已在
+`docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md`
+中由 automorphic kernel、Poincare 包 unfolding、双陪集 Kloosterman 求和和谱 Plancherel
+展开内联推导。因此 KZ-B 不再是未闭合黑箱。
 
 ## 4. 子原子 KZ-C：Bessel transform 窗口衰减
 
@@ -213,9 +215,7 @@ Kuznetsov 与谱大筛给出平方根平均控制；要得到任意 `log^{-A}`�
 本文仍未完成完全自足闭合：
 
 ```text
-KZ-B: Kuznetsov trace formula 专门化；
 KZ-E: BFI/well-factorable dispersion 对数节省。
 ```
 
-因此，下一步若继续无黑箱硬攻，应从 KZ-B 或 KZ-E 开始。不能把这些原子省略后宣称完全
-自足闭合。
+因此，下一步若继续无黑箱硬攻，应直接攻 KZ-E。不能把该原子省略后宣称完全自足闭合。

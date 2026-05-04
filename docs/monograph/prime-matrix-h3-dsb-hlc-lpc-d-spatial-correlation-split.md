@@ -238,4 +238,5 @@ GHLC-D: generic hyperbolic local correlation row-column bound.
 
 需要保留的审稿边界是：点态矩阵条件
 `|a z_m+b-(c z_m+d)z_n|` 只作为几何分解 sanity check；真正闭合行列和的是积分核
-`L^1` 质量和 Poincare 包 Schur 归一化。完全自足总链的剩余已上移为 `KZ-B` 与 `KZ-E`。
+`L^1` 质量和 Poincare 包 Schur 归一化。当时完全自足总链的剩余上移为 `KZ-B` 与 `KZ-E`；
+后续 KZ-B 文件已进一步把剩余压成 `KZ-E`。

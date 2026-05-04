@@ -650,6 +650,15 @@ KZ-B: Kuznetsov trace formula specialization;
 KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md` 后，KZ-B
+已内联推导。几何侧由 Poincare 包 unfolding 和双陪集分解给出 Kloosterman 模数和；谱侧由
+automorphic kernel 的 Plancherel 展开给出 Maass/holomorphic/Eisenstein 项；Bessel 变换
+归一化与 KZ-C 相接。因此当前 HLC 完全自足剩余清单进一步缩为：
+
+```text
+KZ-E: BFI/well-factorable dispersion logarithmic saving.
+```
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

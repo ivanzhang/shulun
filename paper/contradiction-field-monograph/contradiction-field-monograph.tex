@@ -1533,9 +1533,18 @@ $r_*=T^{-1}\log^B y$ one has
 \]
 so the local ball area cancels the $T^2$ height of the kernel.  Combining this local
 $L^1$ kernel mass with the Poincare-packet Schur normalization gives GHLC--D, hence
-LPC--D, PTK--D, and KZ--D.  The fully self-contained HLC chain therefore no longer has
-KZ--D as a remaining atom; the remaining analytic atoms are KZ--B, the specialized
-Kuznetsov trace formula, and KZ--E, the well-factorable dispersion logarithmic saving.
+LPC--D, PTK--D, and KZ--D.  At that point the remaining analytic atoms were KZ--B,
+the specialized Kuznetsov trace formula, and KZ--E, the well-factorable dispersion
+logarithmic saving.
+The KZ--B specialization is treated in
+\[
+  \texttt{docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md}.
+\]
+It derives the needed trace formula from the automorphic kernel, Poincare-packet unfolding,
+the double-coset Kloosterman geometric side, spectral Plancherel, and Bessel-transform
+normalization.  This closes the formula-conversion part; it does not supply the final
+logarithmic saving.  Hence the remaining no-black-box analytic atom in the HLC branch is
+KZ--E, the well-factorable dispersion logarithmic-saving step.
 The CRT lift-parity variant is audited in
 \[
   \texttt{docs/monograph/prime-matrix-crt-lift-parity-audit.md}.

@@ -284,3 +284,11 @@ Schur 行列和上界，即可由该文件推出 KZ-D；否则还需补 pre-trac
 KZ-B: specialized Kuznetsov trace formula;
 KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md` 后，KZ-B
+也不再需要外部引用。该文件只使用 Poincare unfolding、双陪集分解和谱 Plancherel 来推出
+本文需要的 trace formula 专门化。外部索引对 H3-HLC 完全自足版的剩余核验点现在只有：
+
+```text
+KZ-E: BFI/well-factorable dispersion logarithmic saving.
+```

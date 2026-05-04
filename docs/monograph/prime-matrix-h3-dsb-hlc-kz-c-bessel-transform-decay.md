@@ -188,8 +188,8 @@ R_0\left(1+\frac{|t|}{T_0}\right)^{-A}\log^{C_A}y,
 KZ-C 已内联证明。`Kuznetsov-LS atom (SC-9)` 仍需：
 
 ```text
-KZ-B: Kuznetsov trace formula specialization;
 KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
 
-KZ-D 已由后续 `PTK-D/LPC-D/GHLC-D` 链闭合。下一步最优硬攻点应转为 KZ-B 或 KZ-E。
+KZ-B 已由 Poincare unfolding 与谱 Plancherel 专门化推导闭合；KZ-D 已由后续
+`PTK-D/LPC-D/GHLC-D` 链闭合。下一步最优硬攻点应转为 KZ-E。

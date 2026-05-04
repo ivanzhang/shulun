@@ -489,7 +489,7 @@ unit/gcd 剥离、L2 账本和多对数吸收，证明 `HLC-KLS-core => HLC-KLS-
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md` 后，`(SC-9)`
 继续拆成 KZ-A--KZ-E：Kloosterman 权重平滑化、Kuznetsov trace formula 专门化、Bessel
 transform 衰减、spectral large sieve、BFI/well-factorable dispersion 对数节省。该文证明
-KZ-A--KZ-E 推出 `(SC-9)`；完全自足版剩余为 KZ-B--KZ-E 的内联证明。
+KZ-A--KZ-E 推出 `(SC-9)`；当时完全自足版剩余为 KZ-B--KZ-E 的内联证明。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已用
 Bessel 微分方程、自伴算子和反复分部积分证明。当前 `SC-9` 的未闭合子原子剩余为
@@ -511,7 +511,12 @@ generic hyperbolic local correlation。
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md` 后，`GHLC-D`
 由局部 `L^1` 核质量和 Poincare 包 Schur 检验闭合，继而
 `GHLC-D=>LPC-D=>PTK-D=>KZ-D`。因此当前 `SC-9` 的未闭合子原子剩余已缩为
-KZ-B、KZ-E。
+KZ-B、KZ-E。后续 KZ-B 条目已进一步压缩为只剩 KZ-E。
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md` 后，
+KZ-B 由 Poincare 包 unfolding、双陪集 Kloosterman 求和和谱 Plancherel 展开内联推导闭合。
+该步只闭合公式转换和归一化，不提供对数节省。因此当前 `SC-9` 的未闭合子原子剩余为
+KZ-E。
 
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与脚本
@@ -866,4 +871,6 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 
 | H5.4 OSPC/weighted CRTDefect吸收 | 吸收到H4/出口未排斥 | 新增 `docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md`。该文件证明 `OSPC*` 与 `weighted CRTDefect` 都可写成零均值低模测试函数上的命名缺陷，并由统一 `PDEC-or-SAE` 二分进入 persistent Fourier/CRT 缺陷或 sparse 单窗逃逸义务。该项只完成出口吸收；仍未提交 `PDEC-Cert` 或 `SAE-Cert`，所以 Prime Matrix 终局不升级。 |
 
-| H3-HLC GHLC-D闭合 | KZ-D分支闭合/剩KZ-B,KZ-E | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md`。该文件证明 generic hyperbolic 局部相关不能用点态格点数硬估，而应在预迹积分核层使用局部 `L^1` 核质量与 Schur 检验：`T^2∫_0^{T^{-1}log^B y}(1+Tr)^{-A}sinh r dr=O(1)`。因此 `GHLC-D=>LPC-D=>PTK-D=>KZ-D`。完全自足总链仍未闭合；剩余深原子为 `KZ-B` Kuznetsov trace formula 专门化与 `KZ-E` BFI/well-factorable dispersion 对数节省。 |
+| H3-HLC GHLC-D闭合 | KZ-D分支闭合/剩KZ-B,KZ-E | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md`。该文件证明 generic hyperbolic 局部相关不能用点态格点数硬估，而应在预迹积分核层使用局部 `L^1` 核质量与 Schur 检验：`T^2∫_0^{T^{-1}log^B y}(1+Tr)^{-A}sinh r dr=O(1)`。因此 `GHLC-D=>LPC-D=>PTK-D=>KZ-D`。该条已被后续 KZ-B 闭合条目进一步推进；历史状态保留。 |
+
+| H3-HLC KZ-B闭合 | 完全自足链剩KZ-E | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md`。该文件把 Kuznetsov trace formula 的本文专门化从 automorphic kernel、Poincare 包 unfolding、双陪集 Kloosterman 几何侧、谱 Plancherel 侧和 Bessel 变换归一化逐项推出。KZ-B 只闭合公式转换；`log^{-A}` 节省仍完全落在 `KZ-E` BFI/well-factorable dispersion。 |

@@ -1476,7 +1476,7 @@ SC-9
  + KZ-E BFI/well-factorable logarithmic saving.
 ```
 
-该文件证明 KZ-A--KZ-E 推出 `SC-9`，但 KZ-B--KZ-E 尚未内联证明。
+该文件证明 KZ-A--KZ-E 推出 `SC-9`；在该阶段 KZ-B--KZ-E 尚未内联证明。
 
 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-c-bessel-transform-decay.md` 后，KZ-C 已内联
 证明，当时剩余子原子为 KZ-B、KZ-D、KZ-E。
@@ -1536,6 +1536,24 @@ GHLC-D
 ```text
 KZ-B specialized Kuznetsov trace formula
 KZ-E BFI/well-factorable logarithmic saving.
+```
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md` 后，KZ-B
+也已内联为等式推导：
+
+```text
+automorphic kernel
+=> Poincare packet unfolding
+=> double-coset Kloosterman geometric side
+=> spectral Plancherel side
+=> KZ-B.
+```
+
+这一步不提供对数节省，只闭合 trace formula 的公式和归一化。完全自足链的剩余单原子因此
+更新为：
+
+```text
+KZ-E BFI/well-factorable dispersion logarithmic saving.
 ```
 
 ## 19. RPZ first-grid-fail seam 的单余类证书化

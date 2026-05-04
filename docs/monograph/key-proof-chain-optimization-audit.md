@@ -582,6 +582,11 @@ high-lcm、short-arc 或 L2-flat 子情形。
 `GHLC-D=>LPC-D=>PTK-D=>KZ-D`，KZ-D 不再是当前未闭合原子；完全自足链剩余更新为
 KZ-B 与 KZ-E。
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md` 后，KZ-B
+由 automorphic kernel、Poincare unfolding、双陪集 Kloosterman 几何侧和谱 Plancherel 侧的
+比较闭合。它只负责公式专门化，不产生 `log^{-A}`。当前完全自足链的唯一剩余原子更新为
+KZ-E：BFI/well-factorable dispersion logarithmic saving。
+
 新增 `docs/monograph/prime-matrix-disjoint-corridor-selberg-lemma.md` 后，上述 singleton 走廊并集上筛已不再停留在黑箱层，而是内联为有限 Selberg 二次型 `XΛ_z(ξ)` 与加权低模端点缺陷出口。递推路线的剩余硬点相应更新为“素互补因子短区间上界 + 聚合 Mertens 包络 + singleton Selberg 预算或端点缺陷排斥 + Annulus”。
 
 新增 `docs/monograph/prime-matrix-asb-rpd-weighted-sieve-kernel.md` 后，素互补因子短区间和聚合 Mertens 包络又被统一为同一个加权区间 Selberg 二次型：半素数互补因子使用锚层 `P_{<A_\nu}`-rough 上筛，`M_{\ge3}` 第二锚尾使用 `P_{<B_\mu}`-rough 上筛，singleton 走廊使用不相交二次型。ASB/RPD 当前最小硬点因此变为“同权加权区间筛预算小于低筛粗剩余下界，或低模端点缺陷触发 CRTDefect/Tail-anchor/OSPC”，外加 `Annulus(p,q)`。
