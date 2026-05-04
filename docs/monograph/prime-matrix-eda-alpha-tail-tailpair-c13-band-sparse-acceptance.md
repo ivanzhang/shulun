@@ -114,6 +114,12 @@ cross-modulus stitching/ColumnCRT。
 `S(E)>eta Omega(E)`，则存在某个具体 `m` 层满足
 `S_m(E)>=ceil(S(E)/|M|)`，形成端点带固定差值高密度素对块。
 
+SparseSAE 的总量付款账本见
+`prime-matrix-eda-alpha-tail-tailpair-c13-sparse-summability-ledger.md`：
+对所有稀疏 group 求和后有
+`sum atoms(E)<=|M|*eta*sum Omega(E)`，当前压力样本给出
+`accepted_capacity=1922.32` 与 `moving=224`。
+
 ## 5. 审稿边界
 
 已完成：
