@@ -98,6 +98,8 @@ def lowq_overlap_package(
                     "q_upper": q_upper,
                     "observed": len(q_values),
                     "actual_density": len(q_values) / envelope_slots,
+                    "eta_slack": eta * envelope_slots - len(q_values),
+                    "actual_sparse_pass": len(q_values) <= eta * envelope_slots + 1e-15,
                     "ceiling_density": ceiling_density,
                     "required_c": len(q_values) / scale if scale else None,
                     "q_values": q_values,
@@ -139,6 +141,9 @@ def lowq_overlap_package(
         "formal_moving_atoms": len(moving_atoms),
         "band_group_count": len(groups),
         "lowq_layer_count": len(lowq_layers),
+        "actual_sparse_layer_count": sum(1 for layer in lowq_layers if layer["actual_sparse_pass"]),
+        "actual_high_layer_count": sum(1 for layer in lowq_layers if not layer["actual_sparse_pass"]),
+        "min_eta_slack": min((layer["eta_slack"] for layer in lowq_layers), default=None),
         "total_layer_witnesses": sum(layer["observed"] for layer in lowq_layers),
         "unique_q_count": len(q_counter),
         "unique_pair_count": len(pair_counter),
@@ -159,13 +164,15 @@ def lowq_overlap_package(
 def print_table(package: dict) -> None:
     """输出低 q 重叠审计表。"""
     print(
-        "raw formal moving groups lowq_layers total_witnesses unique_q unique_pairs "
-        "max_q_mult eta witness_C ceiling_C",
+        "raw formal moving groups lowq_layers actual_sparse actual_high min_eta_slack "
+        "total_witnesses unique_q unique_pairs max_q_mult eta witness_C ceiling_C",
         flush=True,
     )
     print(
         f"{package['raw_atoms']} {package['formal_atoms']} {package['formal_moving_atoms']} "
         f"{package['band_group_count']} {package['lowq_layer_count']} "
+        f"{package['actual_sparse_layer_count']} {package['actual_high_layer_count']} "
+        f"{(package['min_eta_slack'] if package['min_eta_slack'] is not None else 0.0):.6f} "
         f"{package['total_layer_witnesses']} {package['unique_q_count']} "
         f"{package['unique_pair_count']} {package['max_q_multiplicity']} "
         f"{package['eta']:.6f} {package['witness_c']:.6f} {package['ceiling_c']:.6f}",
@@ -178,7 +185,7 @@ def print_table(package: dict) -> None:
             for item in row["pairs"]
         )
         print(f"q {row['q']} {row['multiplicity']} {pairs}", flush=True)
-    print("layers shape eps m q_interval obs actual_density required_C ceiling_density q_values", flush=True)
+    print("layers shape eps m q_interval obs actual_density eta_slack required_C ceiling_density q_values", flush=True)
     for layer in package["layers"]:
         shape = (
             f"g{layer['shape_key'][0]}:j{layer['shape_key'][1]}-"
@@ -188,7 +195,7 @@ def print_table(package: dict) -> None:
         print(
             f"{shape} eps{layer['epsilon']} {layer['m']} "
             f"[{layer['q_lower']},{layer['q_upper']}] {layer['observed']} "
-            f"{layer['actual_density']:.6f} "
+            f"{layer['actual_density']:.6f} {layer['eta_slack']:.6f} "
             f"{(layer['required_c'] if layer['required_c'] is not None else 0.0):.6f} "
             f"{layer['ceiling_density']:.6f} {q_values}",
             flush=True,

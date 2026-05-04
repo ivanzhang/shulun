@@ -82,6 +82,9 @@ python3 experiments/prime_matrix_alpha_tail_tailpair_c13_lowq_overlap_audit.py \
 
 ```text
 lowq_layers=14；
+actual_sparse=14；
+actual_high=0；
+min_eta_slack=1.320000；
 total_layer_witnesses=26；
 unique_q=9；
 unique_pairs=12；
@@ -103,7 +106,9 @@ q=1427；
 ```
 
 因此当前样本中，不能由 `C_FG=1.3` 密度天花板排斥的 14 层并非 14 个独立异常，而是 26 个
-层 witness 压缩到 9 个 q 锚、12 个固定 gap 素对。
+层 witness 压缩到 9 个 q 锚、12 个固定 gap 素对。并且这些低 q 层的精确有限计数已经全部
+满足 `eta=1/25` 稀疏条件，最小整数余量为 `1.32` 个槽；也就是说，当前样本的低 q 分支
+可由有限证书排除真实 `HighDensityEnvelope`，但全局证明仍需把这种有限化机制形式化。
 
 ## 4. 对主链的影响
 
@@ -136,6 +141,7 @@ LowQ-Reuse-Cap:
 ```text
 低 q 未排斥层的共享锚投影；
 样本中 14 层到 9 个 q 锚、12 个素对的压缩；
+样本中 14 个低 q 层的精确有限稀疏验收；
 把后续义务明确为 q-anchor reuse 上界。
 ```
 
