@@ -133,6 +133,7 @@ def audit_prime(prime_bound: int, cutoffs: list[int]) -> dict:
 
     focus_row = min_rows[0]
     low_skeleton = []
+    diagonal_low_skeleton = []
     for cutoff in cutoffs:
         holes = low_skeleton_holes(prime_bound, focus_row, cutoff)
         capacity = high_label_capacity(prime_bound, cutoff)
@@ -144,6 +145,15 @@ def audit_prime(prime_bound: int, cutoffs: list[int]) -> dict:
                 "capacity_margin": capacity - len(holes),
             }
         )
+        diagonal_holes = low_skeleton_holes(prime_bound, prime_bound, cutoff)
+        diagonal_low_skeleton.append(
+            {
+                "cutoff": cutoff,
+                "holes": len(diagonal_holes),
+                "high_capacity": capacity,
+                "capacity_margin": capacity - len(diagonal_holes),
+            }
+        )
 
     return {
         "p": prime_bound,
@@ -153,6 +163,7 @@ def audit_prime(prime_bound: int, cutoffs: list[int]) -> dict:
         "focus_row": focus_row,
         "factor_defects": leakage_records(prime_bound, focus_row),
         "low_skeleton": low_skeleton,
+        "diagonal_low_skeleton": diagonal_low_skeleton,
     }
 
 
