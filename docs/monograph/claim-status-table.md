@@ -874,3 +874,5 @@ PDEC/ColumnCRT 行各 `3` 条；lower-descent 可能阻断相位 `1752` 个且�
 | H3-HLC GHLC-D闭合 | KZ-D分支闭合/剩KZ-B,KZ-E | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-ghlc-d-local-schur-closure.md`。该文件证明 generic hyperbolic 局部相关不能用点态格点数硬估，而应在预迹积分核层使用局部 `L^1` 核质量与 Schur 检验：`T^2∫_0^{T^{-1}log^B y}(1+Tr)^{-A}sinh r dr=O(1)`。因此 `GHLC-D=>LPC-D=>PTK-D=>KZ-D`。该条已被后续 KZ-B 闭合条目进一步推进；历史状态保留。 |
 
 | H3-HLC KZ-B闭合 | 完全自足链剩KZ-E | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md`。该文件把 Kuznetsov trace formula 的本文专门化从 automorphic kernel、Poincare 包 unfolding、双陪集 Kloosterman 几何侧、谱 Plancherel 侧和 Bessel 变换归一化逐项推出。KZ-B 只闭合公式转换；`log^{-A}` 节省仍完全落在 `KZ-E` BFI/well-factorable dispersion。 |
+
+| H3-HLC KZ-E攻坚 | 压缩为WFD-core/未闭合 | 新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-e-well-factorable-dispersion-spine.md`。该文件内联 well-factorable 卷积分解、dispersion 方差恒等式、CRT 到标准 Kloosterman 相位的归一化、gcd 相容层和端点平滑账本，并证明 `WFD-core=>KZ-E`。当前完全自足链唯一剩余为 `WFD-core`：窗口化 well-factorable Kloosterman dispersion 平均估计；未证明前不得宣称 `SC-9/CORE-5/HLC` 完全自足闭合。 |

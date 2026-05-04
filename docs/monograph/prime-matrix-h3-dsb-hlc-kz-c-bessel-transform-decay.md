@@ -192,4 +192,5 @@ KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
 
 KZ-B 已由 Poincare unfolding 与谱 Plancherel 专门化推导闭合；KZ-D 已由后续
-`PTK-D/LPC-D/GHLC-D` 链闭合。下一步最优硬攻点应转为 KZ-E。
+`PTK-D/LPC-D/GHLC-D` 链闭合。KZ-E 已进一步压缩为 `WFD-core`；下一步最优硬攻点应转为
+该窗口化 well-factorable dispersion 核。

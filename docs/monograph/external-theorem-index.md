@@ -292,3 +292,11 @@ KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```text
 KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
+
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-e-well-factorable-dispersion-spine.md` 后，KZ-E
+本身被压缩为 `WFD-core`。外部索引现在只需核验 DI/BFI 是否直接提供该窗口化
+well-factorable Kloosterman dispersion 平均估计；完全自足版则必须在文内证明：
+
+```text
+WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
+```

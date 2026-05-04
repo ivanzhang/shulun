@@ -177,6 +177,12 @@ Kuznetsov 与谱大筛给出平方根平均控制；要得到任意 `log^{-A}`�
 这是 BFI dispersion 结构在本文窗口上的专门化。若完全自足，必须展开筛权分解、Type-I/II
 分块、Cauchy 后的非对角项和模数互换，而不能只引用“BFI”。
 
+KZ-E 的无黑箱攻坚脊柱见
+`docs/monograph/prime-matrix-h3-dsb-hlc-kz-e-well-factorable-dispersion-spine.md`。该文件
+内联 well-factorable 卷积分解、dispersion 方差恒等式、CRT 到标准 Kloosterman 相位的归一化、
+gcd/端点账本，并证明 `WFD-core=>KZ-E`。因此 KZ-E 的唯一未内联核心变为 `WFD-core`：
+windowed well-factorable Kloosterman dispersion mean estimate。
+
 ## 7. 四原子推出 SC-9
 
 **命题。** KZ-A、KZ-B、KZ-C、KZ-D、KZ-E 成立，则 `(SC-9)` 成立。
@@ -215,7 +221,8 @@ Kuznetsov 与谱大筛给出平方根平均控制；要得到任意 `log^{-A}`�
 本文仍未完成完全自足闭合：
 
 ```text
-KZ-E: BFI/well-factorable dispersion 对数节省。
+WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
 ```
 
-因此，下一步若继续无黑箱硬攻，应直接攻 KZ-E。不能把该原子省略后宣称完全自足闭合。
+因此，下一步若继续无黑箱硬攻，应直接证明 WFD-core。不能把该原子省略后宣称完全自足
+闭合。

@@ -659,6 +659,17 @@ automorphic kernel 的 Plancherel 展开给出 Maass/holomorphic/Eisenstein 项�
 KZ-E: BFI/well-factorable dispersion logarithmic saving.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-e-well-factorable-dispersion-spine.md` 后，KZ-E
+的非深账本已内联：well-factorable 分解、dispersion 方差恒等式、CRT 相位、gcd 相容层、
+端点和平滑损失。外审前 HLC 完全自足剩余清单进一步缩为：
+
+```text
+WFD-core: windowed well-factorable Kloosterman dispersion mean estimate.
+```
+
+该项是当前唯一不得省略的深平均估计。若只引用 BFI/DI，则可作为外部深定理版；若要求完全
+自足，必须继续逐行证明 WFD-core。
+
 新增 `docs/monograph/prime-matrix-rpz-absorption-defect-route.md`、
 `docs/monograph/prime-matrix-rpz-absorption-defect-audit.md` 与
 `experiments/prime_matrix_rpz_absorption_defect_audit.py` 后，复活点吸收定理已被改写为

@@ -1556,6 +1556,26 @@ automorphic kernel
 KZ-E BFI/well-factorable dispersion logarithmic saving.
 ```
 
+新增 `docs/monograph/prime-matrix-h3-dsb-hlc-kz-e-well-factorable-dispersion-spine.md` 后，
+KZ-E 已进一步拆为：
+
+```text
+well-factorable convolution algebra
++ dispersion variance identity
++ CRT normalization to Kloosterman phase
++ gcd/endpoint/polylog ledger
++ WFD-core
+=> KZ-E.
+```
+
+其中前四项是文内账本，已严写；剩余唯一深核是
+
+```text
+WFD-core windowed well-factorable Kloosterman dispersion mean estimate.
+```
+
+该核未证明前，合著稿仍不得宣称 HLC/SC-9/CORE-5 完全自足闭合。
+
 ## 19. RPZ first-grid-fail seam 的单余类证书化
 
 新增增强版 `docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md` 后，
