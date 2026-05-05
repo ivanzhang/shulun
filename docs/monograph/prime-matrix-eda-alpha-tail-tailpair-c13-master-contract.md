@@ -165,6 +165,11 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-structural-contract.md` 后，
 单点化由 `q<2ell` 结构推出；当前样本全部活跃类满足 `q=ell+residue`，
 最大 `q/ell=1.099922`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-active-class-template-bound-contract.md`
+后，`ActiveClassBound` 被进一步压成 `K*T_skeleton<=Allow`：
+当前样本 `T_skeleton=28`，模板上界 `224`，允许删除量 `1385.963717`，
+最紧窗口模板余量 `66.727367`。全局剩余因此更精确地变为
+`q<2ell` 结构排除与 `SkeletonCountBound`。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：
