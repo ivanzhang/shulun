@@ -116,7 +116,7 @@ PDEC/SAE 出口。
 ```text
 TFC-A: B 是当前候选 dyadic block，且样本中 B=2^ceil(log2(p+1)), p<B<2p；
 TFC-B: 6 divides |r|；
-TFC-C: B<2L 且 (m-1)|r|<L；
+TFC-C: B<2L、(m-1)|r|<L、2B+(m-1)|r|<5L；
 TFC-D: Gate 总池闭合，或 Formal+MidVoid 逐窗口闭合。
 ```
 
@@ -130,7 +130,8 @@ B < 2 alpha p；
 
 就自动推出 `B<2L` 与 `(m-1)|r|<L`。在默认 `alpha=0.9,m_max=5` 下即
 `B/p<1.8` 与 `|r|/p<0.225`，等价余量为 `p-B/1.8>0` 与
-`0.225p-|r|>0`。
+`0.225p-|r|>0`。同一比例条件还推出 `2B+(m-1)|r|<5L`，所以可同时接回
+`lift=1` 中间层结构空性。
 
 当前结果是 `explicit_selected_contract=True`，但 `target_family_rule_closed=False`。因此
 该更新压实了最后接口，没有把样本闭合升级为全局闭合。
@@ -144,15 +145,15 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 `N_mid=0`、`D_ge2=0`，所以最窄剩余为完整目标族上的 `U_edge<=S` 与 `MidVoid`。
 再新增 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-gate-payment-contract.md` 后，
 `U_edge<=S` 可由 `K*G_edge<=S` 代替；当前样本边缘 Gate 最紧余量为 `106.727367`。
-新增 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-parity-void-contract.md` 后，
-`MidVoid` 进一步由 `MidHalfOnly + r even + L>2` 推出；当前样本 `148` 个中间门全为
-`h/u=1/2`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-structural-void-contract.md` 后，
+`MidVoid` 进一步由 `2B+(m-1)|r|<5L` 与 `6|r,L>3` 推出；当前样本
+`structural_mid_void=True`，最小压缩余量为 `6007`。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：
 
 ```text
-RatioStructuralVoid + MidParityVoid + EdgeGatePayment
+RatioStructuralVoid + MidStructuralVoid + EdgeGatePayment
 => FormalLocalPayment。
 ```
 

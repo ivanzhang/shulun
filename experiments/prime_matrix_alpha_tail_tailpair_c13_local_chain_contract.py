@@ -13,8 +13,8 @@ import json
 from prime_matrix_alpha_tail_tailpair_c13_edge_gate_payment_contract import (
     edge_gate_payment_package,
 )
-from prime_matrix_alpha_tail_tailpair_c13_midlayer_parity_void_contract import (
-    midlayer_parity_void_package,
+from prime_matrix_alpha_tail_tailpair_c13_midhalf_structural_contract import (
+    midhalf_structural_package,
 )
 from prime_matrix_alpha_tail_tailpair_c13_target_family_contract import (
     target_family_contract_package,
@@ -46,14 +46,12 @@ def c13_local_chain_package(
         num_primes,
         endpoint_band_theta,
     )
-    mid = midlayer_parity_void_package(
+    mid = midhalf_structural_package(
         selected,
         m_values,
         finite_p_cut,
-        eta,
         alpha,
         num_primes,
-        endpoint_band_theta,
     )
     edge = edge_gate_payment_package(
         selected,
@@ -67,7 +65,8 @@ def c13_local_chain_package(
     total = {
         "syntax_pass": target["total"]["syntax_pass"],
         "ratio_structural_pass": target["total"]["ratio_structural_pass"],
-        "mid_parity_void": mid["total"]["all_parity_void"],
+        "mid_structural_void": mid["total"]["all_structural_mid_void"],
+        "mid_compression_margin": mid["total"]["min_compression_margin"],
         "edge_gate_pass": edge["total"]["all_edge_gate_pass"],
         "formal_local_margin": target["total"]["min_formal_window_margin"],
         "edge_gate_margin": edge["total"]["min_gate_margin"],
@@ -76,7 +75,7 @@ def c13_local_chain_package(
     total["selected_local_chain_contract"] = (
         total["syntax_pass"]
         and total["ratio_structural_pass"]
-        and total["mid_parity_void"]
+        and total["mid_structural_void"]
         and total["edge_gate_pass"]
     )
     return {
@@ -99,14 +98,15 @@ def print_table(package: dict) -> None:
     """输出 C13 高 P 局部闭合链合同表。"""
     total = package["total"]
     print(
-        "scope syntax ratio_struct mid_parity edge_gate local_chain "
-        "formal_margin edge_gate_margin target_rule_closed",
+        "scope syntax ratio_struct mid_struct edge_gate local_chain "
+        "mid_margin formal_margin edge_gate_margin target_rule_closed",
         flush=True,
     )
     print(
         f"highP-selected {total['syntax_pass']} {total['ratio_structural_pass']} "
-        f"{total['mid_parity_void']} {total['edge_gate_pass']} "
+        f"{total['mid_structural_void']} {total['edge_gate_pass']} "
         f"{total['selected_local_chain_contract']} "
+        f"{total['mid_compression_margin']} "
         f"{fmt(total['formal_local_margin'])} {fmt(total['edge_gate_margin'])} "
         f"{total['target_family_rule_closed']}",
         flush=True,

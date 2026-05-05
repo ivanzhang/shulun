@@ -84,6 +84,8 @@ def target_family_contract_package(
         layers = layer_rows(master, key)
         low_min_values = [row["low_min"] for row in layers]
         n_span_values = [row["n_span"] for row in layers]
+        min_low_min = min(low_min_values) if low_min_values else None
+        max_n_span = max(n_span_values, default=0)
         block_power2 = is_power_of_two(block)
         dyadic_ceiling = block == next_power_of_two(prime_bound + 1)
         dyadic_band = prime_bound < block < 2 * prime_bound
@@ -93,6 +95,12 @@ def target_family_contract_package(
         block_alpha_guard = block < 2 * alpha * prime_bound
         n_alpha_guard = max(n_span_values, default=0) < alpha * prime_bound
         ratio_structural_guard = block_alpha_guard and n_alpha_guard and shift_mod6
+        mid_compression_margin = (
+            5 * min_low_min - (2 * block + max_n_span)
+            if min_low_min is not None
+            else None
+        )
+        mid_compression_guard = mid_compression_margin is not None and mid_compression_margin > 0
         max_m_value = max(m_values)
         min_p_for_block = block / (2 * alpha)
         max_shift_for_ratio = alpha * prime_bound / (max_m_value - 1)
@@ -113,8 +121,10 @@ def target_family_contract_package(
                 "p_margin_for_block": prime_bound - min_p_for_block,
                 "max_shift_for_ratio": max_shift_for_ratio,
                 "shift_margin_for_ratio": max_shift_for_ratio - abs(shift),
-                "min_low_min": min(low_min_values) if low_min_values else None,
-                "max_n_span": max(n_span_values) if n_span_values else None,
+                "min_low_min": min_low_min,
+                "max_n_span": max_n_span if n_span_values else None,
+                "mid_compression_margin": mid_compression_margin,
+                "mid_compression_guard": mid_compression_guard,
                 "block_guard": block_guard,
                 "n_span_guard": n_span_guard,
                 "block_alpha_guard": block_alpha_guard,
@@ -154,6 +164,7 @@ def target_family_contract_package(
             "highp_windows": len(rows),
             "syntax_pass": syntax_pass,
             "ratio_structural_pass": ratio_structural_pass,
+            "mid_compression_pass": all(row["mid_compression_guard"] for row in rows),
             "structural_pass": total["structural_pass"],
             "total_gate_contract": total["total_gate_contract"],
             "local_formal_contract": total["local_formal_contract"],
@@ -199,7 +210,7 @@ def print_table(package: dict) -> None:
     )
     print(
         "p block shift pow2 ceil band mod6 alphaB alphaN ratio_struct "
-        "B_over_p R_over_p p_block_margin r_ratio_margin min_L max_n "
+        "mid_compress B_over_p R_over_p p_block_margin r_ratio_margin min_L max_n mid_margin "
         "block_margin n_margin structural gate formal gate_margin formal_margin",
         flush=True,
     )
@@ -208,10 +219,11 @@ def print_table(package: dict) -> None:
             f"{row['p']} {row['block']} {row['shift']} {row['block_power2']} "
             f"{row['dyadic_ceiling']} {row['dyadic_band']} {row['shift_mod6']} "
             f"{row['block_alpha_guard']} {row['n_alpha_guard']} "
-            f"{row['ratio_structural_guard']} "
+            f"{row['ratio_structural_guard']} {row['mid_compression_guard']} "
             f"{row['block_over_p']:.6f} {row['shift_over_p']:.6f} "
             f"{row['p_margin_for_block']:.6f} {row['shift_margin_for_ratio']:.6f} "
-            f"{row['min_low_min']} {row['max_n_span']} {row['min_block_margin']} "
+            f"{row['min_low_min']} {row['max_n_span']} {row['mid_compression_margin']} "
+            f"{row['min_block_margin']} "
             f"{row['min_n_margin']} {row['structural_pass']} {row['gate_pass']} "
             f"{row['formal_pass']} {fmt(row['gate_margin'])} {fmt(row['formal_margin'])}",
             flush=True,

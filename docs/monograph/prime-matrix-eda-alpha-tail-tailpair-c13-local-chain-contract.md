@@ -7,7 +7,7 @@
 ```text
 Target syntax
 RatioStructuralVoid
-MidParityVoid
+MidStructuralVoid
 EdgeGatePayment
 => FormalLocalPayment
 => HighP local C13 closure.
@@ -38,11 +38,19 @@ D_{\ge2}=0.
 
 ### 1.2 中间层空性
 
-若所有非空中间门满足 `h/u=1/2`，则由 `r` 偶与低素奇得到中间同余无解：
+同一比例条件还推出
+
+\[
+2B+(m-1)|r|<5L.
+\tag{LCC-2}
+\]
+
+因此真实低素中间候选先被压到 `(u,h)=(2,1)` 或 `(3,1)`；再由 `6|r`
+分别在模 `2` 与模 `3` 下排除，得到中间同余无解：
 
 \[
 N_{\rm mid}=0.
-\tag{LCC-2}
+\tag{LCC-3}
 \]
 
 ### 1.3 边缘层付款
@@ -51,21 +59,21 @@ N_{\rm mid}=0.
 
 \[
 K\,G_{\rm edge}\le S,
-\tag{LCC-3}
+\tag{LCC-4}
 \]
 
 则由 `U_edge<=K G_edge` 得
 
 \[
 U_{\rm edge}\le S.
-\tag{LCC-4}
+\tag{LCC-5}
 \]
 
-结合 `(LCC-1)`、`(LCC-2)`、`(LCC-4)`，
+结合 `(LCC-1)`、`(LCC-3)`、`(LCC-5)`，
 
 \[
 D_{\rm formal}=U_{\rm edge}+N_{\rm mid}+D_{\ge2}\le S.
-\tag{LCC-5}
+\tag{LCC-6}
 \]
 
 所以逐窗口 `FormalLocalPayment` 成立。
@@ -91,9 +99,10 @@ python3 experiments/prime_matrix_alpha_tail_tailpair_c13_local_chain_contract.py
 ```text
 syntax=True；
 ratio_struct=True；
-mid_parity=True；
+mid_struct=True；
 edge_gate=True；
 local_chain=True；
+mid_margin=6007；
 formal_margin=411.727367；
 edge_gate_margin=106.727367；
 target_rule_closed=False。
@@ -108,11 +117,10 @@ target_rule_closed=False。
 
 ```text
 LCC-G1: 证明完整目标窗口族满足比例结构条件；
-LCC-G2: 证明完整目标窗口族满足 MidHalfOnly；
+LCC-G2: 证明完整目标窗口族满足 MidStructuralVoid；
 LCC-G3: 证明完整目标窗口族满足 EdgeGatePayment；
 LCC-G4: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
 LCC-G5: 对失败窗口给有限证书或 PDEC/SAE 出口。
 ```
 
 这就是当前最窄的高 `P C13` 局部闭合路线图。
-

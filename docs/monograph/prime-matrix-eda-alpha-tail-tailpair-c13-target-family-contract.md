@@ -14,11 +14,12 @@
 ```text
 TFC-A: B 是 dyadic block，且在当前候选样式中 B=2^ceil(log2(p+1)), p<B<2p；
 TFC-B: 6 divides |r|；
-TFC-C: B<2L 且 (m-1)|r|<L；
+TFC-C: B<2L、(m-1)|r|<L、2B+(m-1)|r|<5L；
 TFC-D: Gate 总池闭合，或 Formal+MidVoid 逐窗口闭合。
 ```
 
-其中 `TFC-C` 接回 `lift>=2` 结构空性，`TFC-D` 接回 `HighP-PLT` 低筛闭合桥。
+其中 `TFC-C` 同时接回 `lift>=2` 结构空性与 `lift=1` 中间层结构空性，
+`TFC-D` 接回 `HighP-PLT` 低筛闭合桥。
 若完整目标族生成器只输出满足 `TFC-A/B/C/D` 的窗口，则 `C13` 高 `P` 链条可在该
 目标族上闭合。
 
@@ -41,7 +42,14 @@ TFC-R3: 6 divides |r|。
 ```
 
 由 `TFC-R1` 与 `(TFC-1)` 得 `B<2L`；由 `TFC-R2` 与 `(TFC-1)` 得
-`(m-1)|r|<L`。所以 `TFC-R1/R2/R3` 推出 `TFC-B/C`。
+`(m-1)|r|<L`。并且
+
+\[
+2B+(m-1)|r|<4\alpha p+\alpha p=5\alpha p<5L.
+\tag{TFC-2}
+\]
+
+所以 `TFC-R1/R2/R3` 推出 `TFC-B/C`。
 
 在本文默认 `alpha=0.9,m_max=5` 下，该比例条件为：
 
@@ -115,6 +123,7 @@ p=5003:
   |r|/p=0.007196<0.225；
   p-B/1.8=451.888889；
   0.225p-|r|=1089.675000；
+  mid_compression_margin=6007；
   6 divides |r|；
   min_block_margin=822；
   min_n_margin=4363；
@@ -128,6 +137,7 @@ p=10007:
   |r|/p=0.089937<0.225；
   p-B/1.8=904.777778；
   0.225p-|r|=1351.575000；
+  mid_compression_margin=8667；
   6 divides |r|；
   min_block_margin=1630；
   min_n_margin=5407；
@@ -159,9 +169,10 @@ FLP-C: EdgeExact U_edge<=S。
 `411.727367`。进一步由 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-gate-payment-contract.md`，
 `EdgeExact` 可替换为更粗的 `K*G_edge<=S`：当前 `gate_envelope=848`，
 `min_gate_margin=106.727367`。因此下一硬点已经压成完整目标族上的
-`MidVoid + EdgeGatePayment`。新增 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-parity-void-contract.md`
-后，`MidVoid` 又进一步压成 `MidHalfOnly`，当前样本 `mid_gates=148` 全部满足
-`h/u=1/2` 并由奇偶性杀掉。
+`MidVoid + EdgeGatePayment`。新增
+`prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-structural-void-contract.md` 后，
+`MidVoid` 又进一步压成 `2B+(m-1)|r|<5L` 与 `6|r,L>3` 的结构同余判据。
+当前样本 `structural_mid_void=True`，最小压缩余量为 `6007`。
 
 ## 5. 精确剩余
 

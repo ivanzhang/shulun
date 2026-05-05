@@ -107,7 +107,7 @@ TargetFamilyGenerator
 剩余真正硬点变为：
 
 ```text
-1. 证明完整目标族中 MidHalfOnly，从而由奇偶性推出 MidVoid，或失败进入 PDEC/SAE；
+1. 证明完整目标族中 MidStructuralVoid，从而推出 MidVoid，或失败进入 PDEC/SAE；
 2. 证明完整目标族中 K*G_edge<=S，或失败进入有限证书/PDEC/SAE。
 ```
 
