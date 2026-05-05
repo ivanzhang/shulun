@@ -85,15 +85,23 @@ p=10007:
 
 ## 4. 当前最窄剩余
 
-`FLP-A` 已由比例结构条件接回 `lift>=2` 模 `6` 空性。当前逐窗口付款路线的全局义务变成：
+`FLP-A` 已由比例结构条件接回 `lift>=2` 模 `6` 空性。新增
+`prime-matrix-eda-alpha-tail-tailpair-c13-edge-gate-payment-contract.md` 后，`FLP-C`
+还能由更粗的边缘 Gate 条件推出：
+
+```text
+K*G_edge<=S => U_edge<=S。
+```
+
+当前样本 `K*G_edge=848<S=2537.963717`，最紧窗口仍有 `106.727367` 余量。
+所以逐窗口付款路线的全局义务变成：
 
 ```text
 FormalLocalPayment:
   证明完整目标窗口族中 MidVoid 恒成立；
-  证明完整目标窗口族中 U_edge<=S；
+  证明完整目标窗口族中 K*G_edge<=S；
   若某窗口失败，则进入有限证书或 PDEC/SAE 出口。
 ```
 
 这比原来的 `TFC-D` 更窄：不再需要局部 Gate 付款，也不需要中间层或高提升层预算，
 只需对边缘 formal units 与低筛保存余量建立逐窗口支配。
-

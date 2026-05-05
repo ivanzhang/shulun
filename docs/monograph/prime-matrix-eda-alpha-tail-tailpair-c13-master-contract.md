@@ -142,3 +142,5 @@ B < 2 alpha p；
 进一步新增 `prime-matrix-eda-alpha-tail-tailpair-c13-formal-local-payment-contract.md` 后，
 Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 `N_mid=0`、`D_ge2=0`，所以最窄剩余为完整目标族上的 `U_edge<=S` 与 `MidVoid`。
+再新增 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-gate-payment-contract.md` 后，
+`U_edge<=S` 可由 `K*G_edge<=S` 代替；当前样本边缘 Gate 最紧余量为 `106.727367`。

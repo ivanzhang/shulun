@@ -156,7 +156,10 @@ FLP-C: EdgeExact U_edge<=S。
 ```
 
 当前样本 `mid=0, ge2=0, edge=527, slack=2537.963717`，最紧局部余量为
-`411.727367`。因此下一硬点已经压成完整目标族上的 `MidVoid + EdgeExact`。
+`411.727367`。进一步由 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-gate-payment-contract.md`，
+`EdgeExact` 可替换为更粗的 `K*G_edge<=S`：当前 `gate_envelope=848`，
+`min_gate_margin=106.727367`。因此下一硬点已经压成完整目标族上的
+`MidVoid + EdgeGatePayment`。
 
 ## 5. 精确剩余
 
