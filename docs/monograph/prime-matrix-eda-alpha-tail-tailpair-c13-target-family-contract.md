@@ -146,6 +146,18 @@ Formal local closure。
 这也暴露下一窄口：`Gate` 不能逐窗口使用，因为 `p=5003` 的局部余量为负；
 若目标族不能证明总池付款合法，则必须使用 `Formal+MidVoid` 的逐窗口付款路线。
 
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-formal-local-payment-contract.md` 后，
+`Formal+MidVoid` 进一步拆成：
+
+```text
+FLP-A: lift>=2 void；
+FLP-B: MidVoid；
+FLP-C: EdgeExact U_edge<=S。
+```
+
+当前样本 `mid=0, ge2=0, edge=527, slack=2537.963717`，最紧局部余量为
+`411.727367`。因此下一硬点已经压成完整目标族上的 `MidVoid + EdgeExact`。
+
 ## 5. 精确剩余
 
 当前真正剩余不是样本内部预算，而是：

@@ -138,3 +138,7 @@ B < 2 alpha p；
 付款侧的当前边界也已明确：`gate_total_margin=505.963717`，但
 `min_gate_window_margin=-485.272633`；所以 Gate 只能作为目标族总池路线使用。逐窗口路线
 必须走 Formal 口径，当前样本 `min_formal_window_margin=411.727367`。
+
+进一步新增 `prime-matrix-eda-alpha-tail-tailpair-c13-formal-local-payment-contract.md` 后，
+Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
+`N_mid=0`、`D_ge2=0`，所以最窄剩余为完整目标族上的 `U_edge<=S` 与 `MidVoid`。
