@@ -100,12 +100,15 @@ K*G_edge<=S => U_edge<=S。
 再新增 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-structural-ceiling-contract.md`
 后，`K*G_edge<=S` 也被压成固定门数公式：当前 `m in {4,5}` 时
 `G_edge<=72`，所以默认 `K=8` 只需 `S>=576`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-slack-floor-contract.md` 后，
+该条件进一步拆成 `ResonanceFloor + geometric_buffer`；当前样本最紧窗口只用
+`ResonanceFloor` 仍有 `101.727367` 余量。
 所以逐窗口付款路线的全局义务变成：
 
 ```text
 FormalLocalPayment:
   证明完整目标窗口族中 MidStructuralVoid 恒成立；
-  证明完整目标窗口族中 S>=K*72，或使用对应 m 集合的结构门数公式；
+  证明完整目标窗口族中 ResonanceFloor，或至少证明 SlackFloor；
   若某窗口失败，则进入有限证书或 PDEC/SAE 出口。
 ```
 

@@ -123,6 +123,16 @@ p=10007:
   margin=1279.236350。
 ```
 
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-slack-floor-contract.md` 后，
+该余量被拆成：
+
+```text
+S = (M2 - B2_model - Cap_even) + (G_geom - M2)。
+```
+
+当前样本甚至满足更强的 `ResonanceFloor`：最紧窗口仅用第一项仍有
+`101.727367` 正余量。
+
 ## 4. 审稿边界
 
 该合同已把边缘门数从窗口枚举压成固定公式，但完整行命题仍需目标族生成器证明：

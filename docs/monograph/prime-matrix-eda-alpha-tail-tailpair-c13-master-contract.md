@@ -152,12 +152,15 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 后，边缘门数由固定公式控制：
 `G_edge(m)<=sum j1^2+2*C(m,3)`；当前 `m in {4,5}` 的逐窗口上界为 `72`，
 默认 `K=8` 时结构 envelope 为 `576`，最紧余量仍为 `106.727367`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-slack-floor-contract.md` 后，该余量拆为
+`(M2-B2_model-Cap_even)+(G_geom-M2)`；当前样本甚至满足更强的
+`ResonanceFloor`，最紧窗口正余量为 `101.727367`。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：
 
 ```text
-RatioStructuralVoid + MidStructuralVoid + EdgeStructuralPayment
+RatioStructuralVoid + MidStructuralVoid + EdgeStructuralPayment + SlackFloor
 => FormalLocalPayment。
 ```
 

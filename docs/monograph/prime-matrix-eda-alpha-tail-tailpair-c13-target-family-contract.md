@@ -177,6 +177,9 @@ FLP-C: EdgeExact U_edge<=S。
 `EdgeGatePayment` 又被压成固定门数公式：当前 `m in {4,5}` 时
 `G_edge<=72`，默认 `K=8` 只需 `S>=576`。样本最小结构付款余量仍为
 `106.727367`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-slack-floor-contract.md` 后，
+`S>=576` 被拆成 `ResonanceFloor + geometric_buffer`；当前样本最紧窗口仅用
+`ResonanceFloor` 仍有 `101.727367` 正余量。
 
 ## 5. 精确剩余
 
@@ -188,7 +191,7 @@ TargetFamilyGenerator:
   证明 W(P) 不遗漏任何 C13 目标窗口；
   证明每个输出窗口满足 TFC-A 与 TFC-R1/R2/R3；
   在生成器账本中显式给出 p-B/1.8 与 0.225p-|r| 的正余量；
-  证明 Gate 总池付款合法，或证明每个输出窗口满足 Formal+MidVoid+EdgeStructural 局部付款；
+  证明 Gate 总池付款合法，或证明每个输出窗口满足 Formal+MidVoid+EdgeStructural+SlackFloor 局部付款；
   若有例外，则列入有限证书或 PDEC/SAE 出口。
 ```
 

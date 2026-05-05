@@ -9,6 +9,7 @@ Target syntax
 RatioStructuralVoid
 MidStructuralVoid
 EdgeStructuralPayment
+SlackFloor
 => FormalLocalPayment
 => HighP local C13 closure.
 ```
@@ -55,7 +56,7 @@ N_{\rm mid}=0.
 
 ### 1.3 边缘层付款
 
-若逐窗口满足
+边缘结构上界把 `G_edge` 压成固定公式。剩余只需逐窗口满足
 
 \[
 K\sum_{m\in M}\left(
@@ -107,8 +108,14 @@ local_chain=True；
 mid_margin=6007；
 formal_margin=411.727367；
 edge_struct_margin=106.727367；
+slack_floor=True；
+res_floor=True；
+res_margin=101.727367；
 target_rule_closed=False。
 ```
+
+进一步的 `SlackFloor` 审计显示，当前样本满足更强的
+`ResonanceFloor`，最紧窗口正余量为 `101.727367`。
 
 因此当前显式高 `P` 压力样本已经由完全局部链闭合；但完整目标窗口族生成器仍未形式化，
 所以不能宣称行命题全局闭合。
@@ -121,8 +128,9 @@ target_rule_closed=False。
 LCC-G1: 证明完整目标窗口族满足比例结构条件；
 LCC-G2: 证明完整目标窗口族满足 MidStructuralVoid；
 LCC-G3: 证明完整目标窗口族满足 EdgeStructuralPayment；
-LCC-G4: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
-LCC-G5: 对失败窗口给有限证书或 PDEC/SAE 出口。
+LCC-G4: 证明完整目标窗口族满足 ResonanceFloor/SlackFloor；
+LCC-G5: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
+LCC-G6: 对失败窗口给有限证书或 PDEC/SAE 出口。
 ```
 
 这就是当前最窄的高 `P C13` 局部闭合路线图。

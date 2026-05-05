@@ -16,6 +16,7 @@ from prime_matrix_alpha_tail_tailpair_c13_edge_structural_ceiling_contract impor
 from prime_matrix_alpha_tail_tailpair_c13_midhalf_structural_contract import (
     midhalf_structural_package,
 )
+from prime_matrix_alpha_tail_tailpair_c13_slack_floor_contract import slack_floor_package
 from prime_matrix_alpha_tail_tailpair_c13_target_family_contract import (
     target_family_contract_package,
 )
@@ -62,6 +63,15 @@ def c13_local_chain_package(
         num_primes,
         endpoint_band_theta,
     )
+    slack = slack_floor_package(
+        selected,
+        m_values,
+        finite_p_cut,
+        eta,
+        alpha,
+        num_primes,
+        endpoint_band_theta,
+    )
     total = {
         "syntax_pass": target["total"]["syntax_pass"],
         "ratio_structural_pass": target["total"]["ratio_structural_pass"],
@@ -70,6 +80,9 @@ def c13_local_chain_package(
         "edge_structural_payment": edge["total"]["all_structural_payment_pass"],
         "formal_local_margin": target["total"]["min_formal_window_margin"],
         "edge_structural_margin": edge["total"]["min_structural_margin"],
+        "slack_floor_pass": slack["total"]["all_slack_floor_pass"],
+        "resonance_floor_pass": slack["total"]["all_resonance_floor_pass"],
+        "resonance_floor_margin": slack["total"]["min_resonance_floor_margin"],
         "target_family_rule_closed": target["total"]["target_family_rule_closed"],
     }
     total["selected_local_chain_contract"] = (
@@ -77,6 +90,7 @@ def c13_local_chain_package(
         and total["ratio_structural_pass"]
         and total["mid_structural_void"]
         and total["edge_structural_payment"]
+        and total["slack_floor_pass"]
     )
     return {
         "selected": selected,
@@ -91,6 +105,7 @@ def c13_local_chain_package(
         "target": target,
         "mid": mid,
         "edge": edge,
+        "slack": slack,
     }
 
 
@@ -99,7 +114,8 @@ def print_table(package: dict) -> None:
     total = package["total"]
     print(
         "scope syntax ratio_struct mid_struct edge_struct local_chain "
-        "mid_margin formal_margin edge_struct_margin target_rule_closed",
+        "mid_margin formal_margin edge_struct_margin slack_floor "
+        "res_floor res_margin target_rule_closed",
         flush=True,
     )
     print(
@@ -108,6 +124,8 @@ def print_table(package: dict) -> None:
         f"{total['selected_local_chain_contract']} "
         f"{total['mid_compression_margin']} "
         f"{fmt(total['formal_local_margin'])} {fmt(total['edge_structural_margin'])} "
+        f"{total['slack_floor_pass']} {total['resonance_floor_pass']} "
+        f"{fmt(total['resonance_floor_margin'])} "
         f"{total['target_family_rule_closed']}",
         flush=True,
     )
