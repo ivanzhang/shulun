@@ -142,6 +142,20 @@ LowDeletionAllowance: 证明 G-M2 <= G-R-E。
 或对两者的差给目标族统一正余量。
 ```
 
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-reduction-contract.md`
+后，`D_low` 又被改写为活跃 AP 类计数。当前样本满足
+
+```text
+D_low=raw_ap=unique_ap=active_AP_classes=50；
+max_AP_pairs_per_class=1。
+```
+
+所以下一步可改攻：
+
+```text
+APSingleton + ActiveClassBound。
+```
+
 ## 4. 审稿边界
 
 本文没有证明完整目标族上的通用删除密度界。当前结论仍是：

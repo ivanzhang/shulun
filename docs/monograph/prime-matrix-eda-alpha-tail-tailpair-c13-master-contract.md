@@ -159,6 +159,9 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 `SlackFloor` 等价改写为低筛删除允许量：
 `D_low<=G_geom-B2_model-Cap_even-K E_M`。当前样本总删除 `50`，允许删除
 `1385.963717`；最紧窗口删除 `5`，允许删除 `106.727367`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-reduction-contract.md` 后，
+低筛删除又被压成活跃 AP 类计数：当前样本
+`D_low=raw_ap=unique_ap=active_AP_classes=50`，且每个活跃类只含一个尾素对。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：

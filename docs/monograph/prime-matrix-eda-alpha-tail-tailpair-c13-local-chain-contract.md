@@ -118,6 +118,8 @@ target_rule_closed=False。
 `ResonanceFloor`，最紧窗口正余量为 `101.727367`。
 再由 `LowDeletionAllowance` 等价改写，最紧窗口 `p=5003` 的实际低筛删除量为
 `5`，允许删除量为 `106.727367`。
+新增 `APSingletonReduction` 后，当前样本还满足
+`D_low=active_AP_classes` 且 `max_AP_pairs_per_class=1`。
 
 因此当前显式高 `P` 压力样本已经由完全局部链闭合；但完整目标窗口族生成器仍未形式化，
 所以不能宣称行命题全局闭合。
@@ -132,8 +134,9 @@ LCC-G2: 证明完整目标窗口族满足 MidStructuralVoid；
 LCC-G3: 证明完整目标窗口族满足 EdgeStructuralPayment；
 LCC-G4: 证明完整目标窗口族满足 ResonanceFloor/SlackFloor；
 LCC-G5: 证明完整目标窗口族满足 LowDeletionAllowance 密度界；
-LCC-G6: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
-LCC-G7: 对失败窗口给有限证书或 PDEC/SAE 出口。
+LCC-G6: 证明完整目标窗口族满足 APSingleton/ActiveClassBound；
+LCC-G7: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
+LCC-G8: 对失败窗口给有限证书或 PDEC/SAE 出口。
 ```
 
 这就是当前最窄的高 `P C13` 局部闭合路线图。

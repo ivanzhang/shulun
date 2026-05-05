@@ -183,6 +183,8 @@ FLP-C: EdgeExact U_edge<=S。
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-low-deletion-allowance-contract.md` 后，
 该条件等价为 `D_low<=G-B2-Cap-K E_M`。样本总删除量 `50`，允许删除量
 `1385.963717`；最紧窗口删除 `5`，允许删除 `106.727367`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-reduction-contract.md` 后，
+样本满足 `D_low=active_AP_classes` 且每个活跃 AP 类只含一个尾素对。
 
 ## 5. 精确剩余
 
@@ -194,7 +196,7 @@ TargetFamilyGenerator:
   证明 W(P) 不遗漏任何 C13 目标窗口；
   证明每个输出窗口满足 TFC-A 与 TFC-R1/R2/R3；
   在生成器账本中显式给出 p-B/1.8 与 0.225p-|r| 的正余量；
-  证明 Gate 总池付款合法，或证明每个输出窗口满足 Formal+MidVoid+EdgeStructural+LowDeletionAllowance 局部付款；
+  证明 Gate 总池付款合法，或证明每个输出窗口满足 Formal+MidVoid+EdgeStructural+LowDeletionAllowance+APSingleton 局部付款；
   若有例外，则列入有限证书或 PDEC/SAE 出口。
 ```
 
