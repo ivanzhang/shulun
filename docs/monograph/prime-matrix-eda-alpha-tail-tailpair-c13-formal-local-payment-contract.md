@@ -97,12 +97,15 @@ K*G_edge<=S => U_edge<=S。
 再新增 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-structural-void-contract.md` 后，
 `MidVoid` 被压缩为结构空性：`2B+(m-1)|r|<5L` 先把真实低素中间候选压到
 `(u,h)=(2,1)` 或 `(3,1)`，再由 `6|r` 与 `L>3` 在模 `2/3` 下排除。
+再新增 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-structural-ceiling-contract.md`
+后，`K*G_edge<=S` 也被压成固定门数公式：当前 `m in {4,5}` 时
+`G_edge<=72`，所以默认 `K=8` 只需 `S>=576`。
 所以逐窗口付款路线的全局义务变成：
 
 ```text
 FormalLocalPayment:
   证明完整目标窗口族中 MidStructuralVoid 恒成立；
-  证明完整目标窗口族中 K*G_edge<=S；
+  证明完整目标窗口族中 S>=K*72，或使用对应 m 集合的结构门数公式；
   若某窗口失败，则进入有限证书或 PDEC/SAE 出口。
 ```
 

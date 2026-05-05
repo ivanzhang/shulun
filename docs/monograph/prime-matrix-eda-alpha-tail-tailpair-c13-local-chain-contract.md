@@ -8,7 +8,7 @@
 Target syntax
 RatioStructuralVoid
 MidStructuralVoid
-EdgeGatePayment
+EdgeStructuralPayment
 => FormalLocalPayment
 => HighP local C13 closure.
 ```
@@ -58,11 +58,13 @@ N_{\rm mid}=0.
 若逐窗口满足
 
 \[
-K\,G_{\rm edge}\le S,
+K\sum_{m\in M}\left(
+\sum_{j_1=1}^{m-1}j_1^2+2\binom m3
+\right)\le S,
 \tag{LCC-4}
 \]
 
-则由 `U_edge<=K G_edge` 得
+则由边缘门结构上界与 `U_edge<=K G_edge` 得
 
 \[
 U_{\rm edge}\le S.
@@ -100,11 +102,11 @@ python3 experiments/prime_matrix_alpha_tail_tailpair_c13_local_chain_contract.py
 syntax=True；
 ratio_struct=True；
 mid_struct=True；
-edge_gate=True；
+edge_struct=True；
 local_chain=True；
 mid_margin=6007；
 formal_margin=411.727367；
-edge_gate_margin=106.727367；
+edge_struct_margin=106.727367；
 target_rule_closed=False。
 ```
 
@@ -118,7 +120,7 @@ target_rule_closed=False。
 ```text
 LCC-G1: 证明完整目标窗口族满足比例结构条件；
 LCC-G2: 证明完整目标窗口族满足 MidStructuralVoid；
-LCC-G3: 证明完整目标窗口族满足 EdgeGatePayment；
+LCC-G3: 证明完整目标窗口族满足 EdgeStructuralPayment；
 LCC-G4: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
 LCC-G5: 对失败窗口给有限证书或 PDEC/SAE 出口。
 ```

@@ -148,12 +148,16 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-structural-void-contract.md` 后，
 `MidVoid` 进一步由 `2B+(m-1)|r|<5L` 与 `6|r,L>3` 推出；当前样本
 `structural_mid_void=True`，最小压缩余量为 `6007`。
+再新增 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-structural-ceiling-contract.md`
+后，边缘门数由固定公式控制：
+`G_edge(m)<=sum j1^2+2*C(m,3)`；当前 `m in {4,5}` 的逐窗口上界为 `72`，
+默认 `K=8` 时结构 envelope 为 `576`，最紧余量仍为 `106.727367`。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：
 
 ```text
-RatioStructuralVoid + MidStructuralVoid + EdgeGatePayment
+RatioStructuralVoid + MidStructuralVoid + EdgeStructuralPayment
 => FormalLocalPayment。
 ```
 

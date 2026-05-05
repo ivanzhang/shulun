@@ -15,7 +15,7 @@
 TFC-A: B 是 dyadic block，且在当前候选样式中 B=2^ceil(log2(p+1)), p<B<2p；
 TFC-B: 6 divides |r|；
 TFC-C: B<2L、(m-1)|r|<L、2B+(m-1)|r|<5L；
-TFC-D: Gate 总池闭合，或 Formal+MidVoid 逐窗口闭合。
+TFC-D: Gate 总池闭合，或 Formal+MidVoid+EdgeStructural 逐窗口闭合。
 ```
 
 其中 `TFC-C` 同时接回 `lift>=2` 结构空性与 `lift=1` 中间层结构空性，
@@ -173,6 +173,10 @@ FLP-C: EdgeExact U_edge<=S。
 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-structural-void-contract.md` 后，
 `MidVoid` 又进一步压成 `2B+(m-1)|r|<5L` 与 `6|r,L>3` 的结构同余判据。
 当前样本 `structural_mid_void=True`，最小压缩余量为 `6007`。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-structural-ceiling-contract.md` 后，
+`EdgeGatePayment` 又被压成固定门数公式：当前 `m in {4,5}` 时
+`G_edge<=72`，默认 `K=8` 只需 `S>=576`。样本最小结构付款余量仍为
+`106.727367`。
 
 ## 5. 精确剩余
 
@@ -184,7 +188,7 @@ TargetFamilyGenerator:
   证明 W(P) 不遗漏任何 C13 目标窗口；
   证明每个输出窗口满足 TFC-A 与 TFC-R1/R2/R3；
   在生成器账本中显式给出 p-B/1.8 与 0.225p-|r| 的正余量；
-  证明 Gate 总池付款合法，或证明每个输出窗口满足 Formal+MidVoid 局部付款；
+  证明 Gate 总池付款合法，或证明每个输出窗口满足 Formal+MidVoid+EdgeStructural 局部付款；
   若有例外，则列入有限证书或 PDEC/SAE 出口。
 ```
 

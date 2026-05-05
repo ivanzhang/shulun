@@ -112,3 +112,13 @@ TargetFamilyGenerator
 ```
 
 这一步避免了对边缘层低素精确分布的依赖，是比 `EdgeExact` 更可审稿的付款接口。
+
+进一步新增 `prime-matrix-eda-alpha-tail-tailpair-c13-edge-structural-ceiling-contract.md`
+后，`G_edge` 可在目标条件下由固定公式控制：
+
+```text
+G_edge(m) <= sum_{j1=1}^{m-1} j1^2 + 2*C(m,3)。
+```
+
+当前 `m in {4,5}` 给出逐窗口结构上界 `72`，默认 `K=8` 时只需
+`S>=576`。样本最紧窗口 `p=5003` 的结构付款余量仍为 `106.727367`。
