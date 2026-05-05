@@ -90,3 +90,6 @@ HotShiftGenerator 对所有 p>P_fin 都满足比例结构、SlackFloor、APSingl
 ```
 
 全局仍需处理多个绝对热门差值并列的情形。
+
+新增 `HotShiftMirror` 后，正向同强窗口通过索引反射接回负向代表；当前样本正负余量完全一致，
+所以负向代表规则不会遗漏正向窗口。
