@@ -118,6 +118,18 @@ ActiveClassBound:
 或给出活跃 AP 类数的通用上界，直接压低 D_low/G。
 ```
 
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-structural-contract.md`
+后，单点化已被压成结构充分条件：当前所有活跃 AP 类满足
+
+```text
+u in {2,3}；
+q=ell+residue；
+q<2ell；
+max(q/ell)=1.099922。
+```
+
+因此同一 AP 类中不可能有第二个 `q`。
+
 ## 5. 审稿边界
 
 本文仍是显式样本合同，不是全局定理。全局闭合还需要：

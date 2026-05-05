@@ -162,6 +162,9 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-reduction-contract.md` 后，
 低筛删除又被压成活跃 AP 类计数：当前样本
 `D_low=raw_ap=unique_ap=active_AP_classes=50`，且每个活跃类只含一个尾素对。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-structural-contract.md` 后，
+单点化由 `q<2ell` 结构推出；当前样本全部活跃类满足 `q=ell+residue`，
+最大 `q/ell=1.099922`。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：

@@ -120,6 +120,8 @@ target_rule_closed=False。
 `5`，允许删除量为 `106.727367`。
 新增 `APSingletonReduction` 后，当前样本还满足
 `D_low=active_AP_classes` 且 `max_AP_pairs_per_class=1`。
+进一步的 `APSingletonStructural` 审计显示，所有活跃 AP 类均满足
+`u in {2,3}` 与 `q<2ell`，所以单点化由结构条件推出。
 
 因此当前显式高 `P` 压力样本已经由完全局部链闭合；但完整目标窗口族生成器仍未形式化，
 所以不能宣称行命题全局闭合。
@@ -134,7 +136,7 @@ LCC-G2: 证明完整目标窗口族满足 MidStructuralVoid；
 LCC-G3: 证明完整目标窗口族满足 EdgeStructuralPayment；
 LCC-G4: 证明完整目标窗口族满足 ResonanceFloor/SlackFloor；
 LCC-G5: 证明完整目标窗口族满足 LowDeletionAllowance 密度界；
-LCC-G6: 证明完整目标窗口族满足 APSingleton/ActiveClassBound；
+LCC-G6: 证明完整目标窗口族满足 APSingletonStructural/ActiveClassBound；
 LCC-G7: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
 LCC-G8: 对失败窗口给有限证书或 PDEC/SAE 出口。
 ```

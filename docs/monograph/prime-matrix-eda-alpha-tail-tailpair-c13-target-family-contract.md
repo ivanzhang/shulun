@@ -185,6 +185,9 @@ FLP-C: EdgeExact U_edge<=S。
 `1385.963717`；最紧窗口删除 `5`，允许删除 `106.727367`。
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-reduction-contract.md` 后，
 样本满足 `D_low=active_AP_classes` 且每个活跃 AP 类只含一个尾素对。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-ap-singleton-structural-contract.md`
+后，单点化由 `q<2ell` 推出；样本所有活跃类均满足 `u in {2,3}` 与
+`q=ell+residue`。
 
 ## 5. 精确剩余
 
