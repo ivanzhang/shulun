@@ -118,3 +118,13 @@ ACT-G2: 完整目标族上证明 SkeletonCountBound，即 T(W)<=Allow(W)/K。
 当前文档不宣称行命题全局闭合。它只说明：一旦 `ACT-G1` 与 `ACT-G2`
 在完整目标族上成立，`ActiveClassBound` 就自动闭合，并可接回
 `LowDeletionAllowance -> SlackFloor -> FormalLocalPayment` 主链。
+
+新增 `SourceSlotStructural` 后，当前样本的所有活跃模板还满足前向链
+`j>j1>j2`，残基恒等为 `(j-j1)|r|/u`。因此 `ACT-G2` 又可拆为：
+
+```text
+大余量窗口：用 K*sum_m 2*C(m,3) 直接付款；
+小余量窗口：证明实际可激活前向源槽数低于 Allow/K。
+```
+
+当前 `p=10007` 属于大余量自动付款，`p=5003` 仍需小余量精确源槽证书。
