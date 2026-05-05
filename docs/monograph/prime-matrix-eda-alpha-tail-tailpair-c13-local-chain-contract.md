@@ -147,6 +147,9 @@ small_slack_source_margin=8.340921。
 同步升级脚本后，`c13_local_chain_contract.py` 已把
 `ActiveClassTemplateBound`、`SourceSlotStructural` 与
 `SmallSlackSourceCertificate` 纳入同一张后段闭合表。
+新增 `SmallSlackFiniteReduction` 后，前向源槽付款被分成两个出口：
+`Allow>=224` 的大余量窗口自动付款；`Allow<224` 的小余量窗口进入有限表。
+当前样本的有限表只含 `(5003,8192,-36)`。
 
 因此当前显式高 `P` 压力样本已经由完全局部链闭合；但完整目标窗口族生成器仍未形式化，
 所以不能宣称行命题全局闭合。
@@ -162,8 +165,9 @@ LCC-G3: 证明完整目标窗口族满足 EdgeStructuralPayment；
 LCC-G4: 证明完整目标窗口族满足 ResonanceFloor/SlackFloor；
 LCC-G5: 证明完整目标窗口族满足 LowDeletionAllowance 密度界；
 LCC-G6: 证明完整目标窗口族满足 APSingletonStructural/ActiveClassTemplateBound；
-LCC-G7: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
-LCC-G8: 对失败窗口给有限证书或 PDEC/SAE 出口。
+LCC-G7: 证明完整目标窗口族中 Allow<224 的窗口均落入有限源槽证书表；
+LCC-G8: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
+LCC-G9: 对失败窗口给有限证书或 PDEC/SAE 出口。
 ```
 
 这就是当前最窄的高 `P C13` 局部闭合路线图。
