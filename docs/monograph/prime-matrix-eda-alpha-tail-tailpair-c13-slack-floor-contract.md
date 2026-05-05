@@ -133,6 +133,17 @@ RatioStructuralVoid
 
 若个别窗口失败，则必须进入有限证书、formal 去重、PDEC 或 SAE 出口。
 
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-low-deletion-allowance-contract.md`
+后，`SlackFloor` 又可等价改写为
+
+```text
+D_low = G_geom - M2 <= G_geom - B2_model - Cap_even - K E_M。
+```
+
+当前样本总删除量 `D_low=50`，允许删除量 `1385.963717`；最紧窗口
+`p=5003` 只删 `5` 个，允许删 `106.727367` 个。这说明下一步最窄硬点是
+低大素块在几何候选集上的删除密度上界。
+
 ## 4. 审稿边界
 
 该合同仍是显式样本闭合与条件接口，不是行命题全局无条件证明。真正未闭合项是：
