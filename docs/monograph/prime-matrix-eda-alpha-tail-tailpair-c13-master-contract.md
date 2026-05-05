@@ -183,6 +183,9 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-small-slack-finite-reduction-contract.md`
 后，小余量源槽问题被重写为有限出口：`Allow>=224` 自动付款，`Allow<224`
 必须列入 `F_small`。当前样本 `F_small={(5003,8192,-36)}`，且已由有限证书闭合。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-hotshift-target-generator-contract.md`
+后，当前高 `P` selected 样本不再完全手填：热门位移生成器自动给出
+`5003:8192:-36,10007:16384:-900`，并接回 `full_postlow_chain=True`。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：

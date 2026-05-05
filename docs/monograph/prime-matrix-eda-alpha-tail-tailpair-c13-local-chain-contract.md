@@ -151,6 +151,8 @@ small_slack_source_margin=8.340921。
 `Allow>=224` 的大余量窗口自动付款；`Allow<224` 的小余量窗口进入有限表。
 当前样本的高 `P` 有限表只含 `(5003,8192,-36)`；`(997,4096,-36)`
 按 `finite-p-cut=1000` 路由到低 `P` 有限证书系统。
+新增 `HotShiftTargetGenerator` 后，当前高 `P` selected 窗口可由热门位移规则自动生成：
+`5003:8192:-36,10007:16384:-900`，并接回 `full_postlow_chain=True`。
 
 因此当前显式高 `P` 压力样本已经由完全局部链闭合；但完整目标窗口族生成器仍未形式化，
 所以不能宣称行命题全局闭合。
@@ -167,7 +169,7 @@ LCC-G4: 证明完整目标窗口族满足 ResonanceFloor/SlackFloor；
 LCC-G5: 证明完整目标窗口族满足 LowDeletionAllowance 密度界；
 LCC-G6: 证明完整目标窗口族满足 APSingletonStructural/ActiveClassTemplateBound；
 LCC-G7: 证明完整目标窗口族中 Allow<224 的窗口均落入有限源槽证书表；
-LCC-G8: 证明目标窗口族不遗漏任何 C13 高 P 目标窗口；
+LCC-G8: 证明 HotShiftGenerator 覆盖所有 C13 高 P 目标窗口，或补充遗漏出口；
 LCC-G9: 对失败窗口给有限证书或 PDEC/SAE 出口。
 ```
 

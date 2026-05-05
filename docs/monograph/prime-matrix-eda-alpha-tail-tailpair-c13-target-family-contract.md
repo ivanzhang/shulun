@@ -209,3 +209,13 @@ TargetFamilyGenerator:
 当前 explicit-selected 样本合同闭合；
 完整行命题全局闭合仍未完成。
 ```
+
+新增 `HotShiftTargetGenerator` 后，当前高 `P` selected 样本已可由
+`B=2^ceil(log2(p+1))` 与固定符号 squarefree 光滑集合的热门非零位移生成：
+
+```text
+5003 -> 8192, r=-36；
+10007 -> 16384, r=-900。
+```
+
+该生成器目前只闭合“样本来源”，尚未证明它覆盖完整行命题目标族。
