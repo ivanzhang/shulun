@@ -71,6 +71,7 @@ small_slack_windows=1；
 finite_exit_windows=2；
 all_pass=True；
 enumeration_matches_ap=True；
+lowp_excluded={(997,4096,-36)}；
 min_source_margin=8.340921。
 ```
 
@@ -79,6 +80,9 @@ min_source_margin=8.340921。
 ```text
 F_small = {(p,B,r)=(5003,8192,-36)}。
 ```
+
+其中 `p=997` 不进入高 `P` 小余量链；它由当前默认 `finite-p-cut=1000`
+路由到低 `P` 有限证书系统。
 
 逐窗口：
 
@@ -100,9 +104,10 @@ p=10007:
 该归约没有证明完整目标族已经闭合；它把全局剩余改写为一个更具体的生成器义务：
 
 ```text
-SSFR-G1: 证明完整目标族中所有 Allow(W)<224 的窗口都落入有限集合 F_small；
+SSFR-G1: 证明完整高 P 目标族中所有 Allow(W)<224 的窗口都落入有限集合 F_small；
 SSFR-G2: 对 F_small 中每个窗口提交 SmallSlackSourceCertificate；
 SSFR-G3: 对 Allow(W)>=224 的窗口使用 LargeSlackExit 自动付款。
+SSFR-G4: 对 p<=P_fin 的窗口使用低 P 有限证书系统，不混入高 P 小余量链。
 ```
 
 当前样本已满足 `SSFR-G2/G3`。未完成的是 `SSFR-G1`，即目标族生成器必须证明

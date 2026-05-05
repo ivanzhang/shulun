@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 
+from prime_matrix_alpha_tail_pair_crtdefect_audit import parse_selected
 from prime_matrix_alpha_tail_tailpair_c13_small_slack_source_certificate import (
     small_slack_source_certificate_package,
 )
@@ -60,6 +61,11 @@ def small_slack_finite_reduction_package(
     cert_by_window = by_key(source_certificate["windows"])
     windows = []
     finite_keys = []
+    lowp_excluded = [
+        {"p": prime_bound, "block": block, "shift": shift}
+        for prime_bound, block, shift in parse_selected(selected)
+        if prime_bound <= finite_p_cut
+    ]
     for row in source_slot["windows"]:
         key = (row["p"], row["block"], row["shift"])
         cert = cert_by_window[key]
@@ -94,6 +100,8 @@ def small_slack_finite_reduction_package(
         "min_coarse_margin": min((row["coarse_margin"] for row in windows), default=None),
         "min_source_margin": min((row["source_margin"] for row in windows), default=None),
         "finite_keys": finite_keys,
+        "lowp_excluded": lowp_excluded,
+        "lowp_excluded_count": len(lowp_excluded),
     }
     return {
         "selected": selected,
@@ -116,7 +124,7 @@ def print_table(package: dict) -> None:
     total = package["total"]
     print(
         "scope windows large_slack small_slack finite_exit all_pass matches "
-        "min_coarse_margin min_source_margin finite_keys",
+        "min_coarse_margin min_source_margin lowp_excluded finite_keys",
         flush=True,
     )
     print(
@@ -124,7 +132,7 @@ def print_table(package: dict) -> None:
         f"{total['small_slack_windows']} {total['finite_exit_windows']} "
         f"{total['all_finite_exit_pass']} {total['all_enumeration_matches_ap']} "
         f"{fmt(total['min_coarse_margin'])} {fmt(total['min_source_margin'])} "
-        f"{total['finite_keys']}",
+        f"{total['lowp_excluded']} {total['finite_keys']}",
         flush=True,
     )
     print(
