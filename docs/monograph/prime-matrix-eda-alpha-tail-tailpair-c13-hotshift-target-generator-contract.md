@@ -80,3 +80,13 @@ HotShiftGenerator 对所有 p>P_fin 都满足比例结构、SlackFloor、APSingl
 ```
 
 因此该项降低了 `TargetFamilyGenerator` 的黑箱程度，但不把行命题升级为全局证明。
+
+新增 `HotShiftTiebreak` 后，当前样本的热门差值并列只来自正负对称，且最大绝对差值唯一。
+生成器取负向代表：
+
+```text
+5003: max_diffs={-36,36}；
+10007: max_diffs={-900,900}。
+```
+
+全局仍需处理多个绝对热门差值并列的情形。
