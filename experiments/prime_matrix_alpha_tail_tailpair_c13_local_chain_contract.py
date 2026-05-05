@@ -10,13 +10,22 @@ from __future__ import annotations
 import argparse
 import json
 
+from prime_matrix_alpha_tail_tailpair_c13_active_class_template_bound_contract import (
+    active_class_template_bound_package,
+)
 from prime_matrix_alpha_tail_tailpair_c13_edge_structural_ceiling_contract import (
     edge_structural_ceiling_package,
 )
 from prime_matrix_alpha_tail_tailpair_c13_midhalf_structural_contract import (
     midhalf_structural_package,
 )
+from prime_matrix_alpha_tail_tailpair_c13_small_slack_source_certificate import (
+    small_slack_source_certificate_package,
+)
 from prime_matrix_alpha_tail_tailpair_c13_slack_floor_contract import slack_floor_package
+from prime_matrix_alpha_tail_tailpair_c13_source_slot_structural_contract import (
+    source_slot_structural_package,
+)
 from prime_matrix_alpha_tail_tailpair_c13_target_family_contract import (
     target_family_contract_package,
 )
@@ -72,6 +81,33 @@ def c13_local_chain_package(
         num_primes,
         endpoint_band_theta,
     )
+    active_template = active_class_template_bound_package(
+        selected,
+        m_values,
+        finite_p_cut,
+        eta,
+        alpha,
+        num_primes,
+        endpoint_band_theta,
+    )
+    source_slot = source_slot_structural_package(
+        selected,
+        m_values,
+        finite_p_cut,
+        eta,
+        alpha,
+        num_primes,
+        endpoint_band_theta,
+    )
+    small_slack_source = small_slack_source_certificate_package(
+        selected,
+        m_values,
+        finite_p_cut,
+        eta,
+        alpha,
+        num_primes,
+        endpoint_band_theta,
+    )
     total = {
         "syntax_pass": target["total"]["syntax_pass"],
         "ratio_structural_pass": target["total"]["ratio_structural_pass"],
@@ -83,6 +119,14 @@ def c13_local_chain_package(
         "slack_floor_pass": slack["total"]["all_slack_floor_pass"],
         "resonance_floor_pass": slack["total"]["all_resonance_floor_pass"],
         "resonance_floor_margin": slack["total"]["min_resonance_floor_margin"],
+        "active_template_pay": active_template["total"]["all_template_pay"],
+        "active_template_margin": active_template["total"]["min_template_margin"],
+        "source_forward_struct": source_slot["total"]["all_forward"],
+        "source_exact_pay": source_slot["total"]["all_exact_source_pay"],
+        "source_exact_margin": source_slot["total"]["min_exact_source_margin"],
+        "small_slack_source_cert": small_slack_source["total"]["all_source_certificate_pass"],
+        "small_slack_windows": small_slack_source["total"]["small_slack_windows"],
+        "small_slack_source_margin": small_slack_source["total"]["min_source_margin"],
         "target_family_rule_closed": target["total"]["target_family_rule_closed"],
     }
     total["selected_local_chain_contract"] = (
@@ -91,6 +135,13 @@ def c13_local_chain_package(
         and total["mid_structural_void"]
         and total["edge_structural_payment"]
         and total["slack_floor_pass"]
+    )
+    total["selected_full_postlow_chain_contract"] = (
+        total["selected_local_chain_contract"]
+        and total["active_template_pay"]
+        and total["source_forward_struct"]
+        and total["source_exact_pay"]
+        and total["small_slack_source_cert"]
     )
     return {
         "selected": selected,
@@ -106,6 +157,9 @@ def c13_local_chain_package(
         "mid": mid,
         "edge": edge,
         "slack": slack,
+        "active_template": active_template,
+        "source_slot": source_slot,
+        "small_slack_source": small_slack_source,
     }
 
 
@@ -115,7 +169,8 @@ def print_table(package: dict) -> None:
     print(
         "scope syntax ratio_struct mid_struct edge_struct local_chain "
         "mid_margin formal_margin edge_struct_margin slack_floor "
-        "res_floor res_margin target_rule_closed",
+        "res_floor res_margin active_template source_forward source_exact "
+        "small_slack_cert full_postlow_chain target_rule_closed",
         flush=True,
     )
     print(
@@ -126,7 +181,20 @@ def print_table(package: dict) -> None:
         f"{fmt(total['formal_local_margin'])} {fmt(total['edge_structural_margin'])} "
         f"{total['slack_floor_pass']} {total['resonance_floor_pass']} "
         f"{fmt(total['resonance_floor_margin'])} "
+        f"{total['active_template_pay']} {total['source_forward_struct']} "
+        f"{total['source_exact_pay']} {total['small_slack_source_cert']} "
+        f"{total['selected_full_postlow_chain_contract']} "
         f"{total['target_family_rule_closed']}",
+        flush=True,
+    )
+    print(
+        "postlow_margins active_template source_exact small_slack_windows small_slack_source",
+        flush=True,
+    )
+    print(
+        f"postlow_margins {fmt(total['active_template_margin'])} "
+        f"{fmt(total['source_exact_margin'])} "
+        f"{total['small_slack_windows']} {fmt(total['small_slack_source_margin'])}",
         flush=True,
     )
 

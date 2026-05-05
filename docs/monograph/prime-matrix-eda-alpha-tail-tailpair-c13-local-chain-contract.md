@@ -111,7 +111,21 @@ edge_struct_margin=106.727367；
 slack_floor=True；
 res_floor=True；
 res_margin=101.727367；
+active_template=True；
+source_forward=True；
+source_exact=True；
+small_slack_cert=True；
+full_postlow_chain=True；
 target_rule_closed=False。
+```
+
+新增后段余量：
+
+```text
+active_template_margin=66.727367；
+source_exact_margin=66.727367；
+small_slack_windows=1；
+small_slack_source_margin=8.340921。
 ```
 
 进一步的 `SlackFloor` 审计显示，当前样本满足更强的
@@ -130,6 +144,9 @@ target_rule_closed=False。
 `p=10007`，仅 `p=5003` 还需要精确源槽数证书。
 新增 `SmallSlackSourceCertificate` 后，当前样本中该小余量窗口也已有限闭合：
 `224` 个前向低素试验只有 `5` 个激活，源槽预算余量 `8.340921`。
+同步升级脚本后，`c13_local_chain_contract.py` 已把
+`ActiveClassTemplateBound`、`SourceSlotStructural` 与
+`SmallSlackSourceCertificate` 纳入同一张后段闭合表。
 
 因此当前显式高 `P` 压力样本已经由完全局部链闭合；但完整目标窗口族生成器仍未形式化，
 所以不能宣称行命题全局闭合。

@@ -177,6 +177,9 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-small-slack-source-certificate.md`
 后，该小余量窗口在当前样本内闭合：`p=5003` 的 `28` 个前向源槽中仅
 `5` 个激活，低于允许源槽预算 `13.340921`。
+同步升级 `prime_matrix_alpha_tail_tailpair_c13_local_chain_contract.py` 后，
+主链脚本现在输出 `full_postlow_chain=True`，即当前显式样本不仅满足
+`MidVoid+EdgeStructural+SlackFloor`，也满足 AP 单点化、前向源槽结构与小余量源槽证书。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：
