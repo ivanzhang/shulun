@@ -174,6 +174,9 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 后，当前样本的 `SkeletonCountBound` 又被拆成前向源槽问题：
 所有活跃类满足 `j>j1>j2` 与偏移恒等式；`p=10007` 已由粗槽上界自动付款，
 `p=5003` 是唯一仍需精确源槽证书的小余量窗口。
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-small-slack-source-certificate.md`
+后，该小余量窗口在当前样本内闭合：`p=5003` 的 `28` 个前向源槽中仅
+`5` 个激活，低于允许源槽预算 `13.340921`。
 
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
 压力样本已经有一条完全局部链：
