@@ -94,11 +94,14 @@ K*G_edge<=S => U_edge<=S。
 ```
 
 当前样本 `K*G_edge=848<S=2537.963717`，最紧窗口仍有 `106.727367` 余量。
+再新增 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-parity-void-contract.md` 后，
+`MidVoid` 被压缩为 `MidHalfOnly`：所有非空中间门满足 `h/u=1/2`，而 `r` 偶且低素奇，
+所以中间同余无解。
 所以逐窗口付款路线的全局义务变成：
 
 ```text
 FormalLocalPayment:
-  证明完整目标窗口族中 MidVoid 恒成立；
+  证明完整目标窗口族中 MidHalfOnly 恒成立；
   证明完整目标窗口族中 K*G_edge<=S；
   若某窗口失败，则进入有限证书或 PDEC/SAE 出口。
 ```

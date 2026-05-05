@@ -107,9 +107,8 @@ TargetFamilyGenerator
 剩余真正硬点变为：
 
 ```text
-1. 证明完整目标族中 MidVoid 恒成立，或失败进入 PDEC/SAE；
+1. 证明完整目标族中 MidHalfOnly，从而由奇偶性推出 MidVoid，或失败进入 PDEC/SAE；
 2. 证明完整目标族中 K*G_edge<=S，或失败进入有限证书/PDEC/SAE。
 ```
 
 这一步避免了对边缘层低素精确分布的依赖，是比 `EdgeExact` 更可审稿的付款接口。
-

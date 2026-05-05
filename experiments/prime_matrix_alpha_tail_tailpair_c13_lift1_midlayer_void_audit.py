@@ -175,6 +175,8 @@ def midlayer_row(
         "mid_void": mid_lowprime_exact == 0,
         "mid_integer_over_slack": ratio(mid_integer_ceiling, slack),
         "mid_gate_over_slack": ratio(mid_gate_envelope, slack),
+        "all_h_ratios": dict(sorted(h_ratio_hist.items())),
+        "all_interval_widths": dict(sorted(interval_width_hist.items())),
         "top_h_ratios": dict(h_ratio_hist.most_common(8)),
         "top_interval_widths": dict(interval_width_hist.most_common(8)),
         "top_residues": dict(mid_solution_residue_hist.most_common(8)),
