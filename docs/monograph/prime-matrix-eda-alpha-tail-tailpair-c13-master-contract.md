@@ -147,3 +147,14 @@ Formal 逐窗口付款被拆为 `D_formal=U_edge+N_mid+D_ge2`。当前样本中
 新增 `prime-matrix-eda-alpha-tail-tailpair-c13-midlayer-parity-void-contract.md` 后，
 `MidVoid` 进一步由 `MidHalfOnly + r even + L>2` 推出；当前样本 `148` 个中间门全为
 `h/u=1/2`。
+
+新增 `prime-matrix-eda-alpha-tail-tailpair-c13-local-chain-contract.md` 后，当前高 `P`
+压力样本已经有一条完全局部链：
+
+```text
+RatioStructuralVoid + MidParityVoid + EdgeGatePayment
+=> FormalLocalPayment。
+```
+
+样本输出 `local_chain=True`，最紧 Formal 局部余量 `411.727367`，最紧 EdgeGate 余量
+`106.727367`；但 `target_rule_closed=False`，全局生成器仍是最终接口。
