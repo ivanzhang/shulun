@@ -190,6 +190,9 @@ DEFAULT_DIBFI_EXACT_FULL_S_SOURCE_ENTROPY_REDUCTION = (
 DEFAULT_DIBFI_FULL_S_SUPPORT_RANGE = (
     DOCS / "prime-matrix-triad-a1-dibfi-full-s-support-range-router.json"
 )
+DEFAULT_DIBFI_FULL_S_SOURCE_ANTIATOM = (
+    DOCS / "prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -306,6 +309,7 @@ def build_frontier_rows(
     dibfi_ncblk_branch_alignment: dict[str, Any],
     dibfi_exact_full_s_source_entropy_reduction: dict[str, Any],
     dibfi_full_s_support_range: dict[str, Any],
+    dibfi_full_s_source_antiatom: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -1043,6 +1047,19 @@ def build_frontier_rows(
                 "或完成外部定理匹配。"
             ),
         },
+        {
+            "frontier": "A1DIBFIFullSSourceAntiAtomRouter",
+            "status": "full_s_support_capacity_reduced_to_source_antiatom_or_external_open",
+            "evidence": (
+                f"支撑+容量兼容已压成 full-S non-AP source capacity 反原子合同；"
+                f"open_antiatom_gates={dibfi_full_s_source_antiatom['open_antiatom_gates']}；"
+                f"terminal_gap={dibfi_full_s_source_antiatom['terminal_gap_after_router']}。"
+            ),
+            "next_action": (
+                "证明最终 source capacity measure 无 moving same-(u,v) 原子，"
+                "或完成外部 DI/BFI/Kuznetsov dispersion 定理匹配。"
+            ),
+        },
     ]
 
 
@@ -1114,6 +1131,7 @@ def run(
     dibfi_ncblk_branch_alignment_path: Path,
     dibfi_exact_full_s_source_entropy_reduction_path: Path,
     dibfi_full_s_support_range_path: Path,
+    dibfi_full_s_source_antiatom_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1203,6 +1221,7 @@ def run(
         dibfi_exact_full_s_source_entropy_reduction_path
     )
     dibfi_full_s_support_range = load_json(dibfi_full_s_support_range_path)
+    dibfi_full_s_source_antiatom = load_json(dibfi_full_s_source_antiatom_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1271,6 +1290,7 @@ def run(
         dibfi_ncblk_branch_alignment,
         dibfi_exact_full_s_source_entropy_reduction,
         dibfi_full_s_support_range,
+        dibfi_full_s_source_antiatom,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1341,13 +1361,14 @@ def run(
         "ncblk_branch_alignment_reduced_to_exact_full_s_source_entropy_or_external_open",
         "exact_full_s_source_entropy_reduced_to_factor_support_package_open",
         "full_s_support_range_closed_factor_support_capacity_open",
+        "full_s_support_capacity_reduced_to_source_antiatom_or_external_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_full_s_factor_support_capacity_or_external_open",
+        "status": "same_set_capacity_frontier_full_s_source_antiatom_or_external_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1493,6 +1514,9 @@ def run(
             "a1_dibfi_full_s_support_range_json": file_sha256(
                 dibfi_full_s_support_range_path
             ),
+            "a1_dibfi_full_s_source_antiatom_json": file_sha256(
+                dibfi_full_s_source_antiatom_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1504,7 +1528,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov"
+            "FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov"
         ),
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
@@ -1607,8 +1631,8 @@ def run(
             "完成链精确对齐，并继续把 full-S non-AP NC-BLK 对齐到 exact source entropy/"
             "外部定理二分；source entropy 又被压成精确因子支撑、balanced range 阈值与"
             " Type/Fourier 容量兼容组成的支撑包；balanced range 阈值已由 full-S 尺度闭合。"
-            "当前终端为 "
-            "`FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov`。"
+            "支撑+容量兼容又被压成 source capacity measure 的反原子合同。当前终端为 "
+            "`FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov`。"
         ),
     }
 
@@ -1693,7 +1717,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  Full-S non-AP NC-BLK cannot silently import the canonical source branch。",
         "  Exact full-S source entropy reduces to factor support package。",
         "  Full-S balanced range threshold is closed by C≈P/log^O P。",
-        "  The remaining terminal is FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov。",
+        "  Factor support plus capacity compatibility reduces to source anti-atom contract。",
+        "  The remaining terminal is FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov。",
         "```",
         "",
         "## 2. 汇总",
@@ -1794,7 +1819,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFINCBLKBranchAlignment router materialized；",
             "DIBFIExactFullSSourceEntropyReduction router materialized；",
             "DIBFIFullSSupportRange router materialized；",
-            "remaining independent gap is FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov。",
+            "DIBFIFullSSourceAntiAtom router materialized；",
+            "remaining independent gap is FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1802,7 +1828,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩未中心化无投影恒等式"
             "与 DI Kloosterman 窗口代入账本；"
             "APSourceLift 已被当前合同排除；完全自足/主来源逐项版仍只剩"
-            " FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov。",
+            " FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -2077,6 +2103,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_FULL_S_SUPPORT_RANGE,
     )
+    parser.add_argument(
+        "--dibfi-full-s-source-antiatom-json",
+        type=Path,
+        default=DEFAULT_DIBFI_FULL_S_SOURCE_ANTIATOM,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -2177,6 +2208,7 @@ def main() -> None:
             args.dibfi_exact_full_s_source_entropy_reduction_json
         ),
         dibfi_full_s_support_range_path=args.dibfi_full_s_support_range_json,
+        dibfi_full_s_source_antiatom_path=args.dibfi_full_s_source_antiatom_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

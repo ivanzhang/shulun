@@ -1,0 +1,100 @@
+{
+  "antiatom_contract": "For the final full-S non-AP WFD source capacity measure M_{u,v}, prove max_{u,v} M_{u,v}/sum_{u,v}M_{u,v} <= log^{-2A} for every A.",
+  "antiatom_rows": [
+    {
+      "closed": true,
+      "evidence": "previous terminal=FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov; open=['FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov'].",
+      "gate": "PriorSupportCapacityTerminalPinned",
+      "next_target": "FullSNonAPSourceAntiAtomContract",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "After range closure the remaining clauses are exact u/v factor support and Type/Fourier capacity compatibility.",
+      "gate": "SupportCapacityPairPinned",
+      "next_target": "FullSNonAPSourceAntiAtomContract",
+      "remaining": "combine them into one source-level capacity anti-atom statement"
+    },
+    {
+      "closed": true,
+      "evidence": "SourceBlockEntropy records that well-factorable convolution, Type decomposition, and Fourier smoothing can all pass while capacity concentrates on one moving block.",
+      "gate": "FormalWFDTypeFourierDoNotForceAntiAtom",
+      "next_target": "FullSNonAPSourceAntiAtomContract",
+      "remaining": "anti-atom must be an additional exact source theorem"
+    },
+    {
+      "closed": true,
+      "evidence": "ExactFactorSupport records residue-flat but factor-concentrated models.",
+      "gate": "K4K6DoNotForceMovingFactorSupport",
+      "next_target": "FullSNonAPSourceAntiAtomContract",
+      "remaining": "cannot infer the source anti-atom from K4/K6 projection data"
+    },
+    {
+      "closed": true,
+      "evidence": "FactorResidueIncidence is blocked by the internal h, ell, x, z fiber inside one (u,v) block.",
+      "gate": "NaiveFactorResidueIncidenceBlocked",
+      "next_target": "FullSNonAPSourceAntiAtomContract",
+      "remaining": "no bounded-multiplicity incidence shortcut remains"
+    },
+    {
+      "closed": true,
+      "evidence": "Branch coverage closes only the canonical RIW/Buchstab branch; generic WFD self-contained closure remains false.",
+      "gate": "CanonicalSourceImportBlocked",
+      "next_target": "FullSNonAPSourceAntiAtomContract",
+      "remaining": "full-S non-AP generic WFD needs its own source anti-atom or an external theorem"
+    },
+    {
+      "closed": true,
+      "evidence": "Exact support plus Type/Fourier capacity compatibility is precisely a statement that the final source capacity measure has no moving same-(u,v) atom.",
+      "gate": "SupportCapacityReducedToSourceAntiAtom",
+      "next_target": "FullSNonAPStrengthenedSourceAntiAtomContractOrExternal",
+      "remaining": "none at reduction level"
+    },
+    {
+      "closed": false,
+      "evidence": "The repository has not proved a source-level anti-atom theorem for the full-S non-AP generic WFD capacity measure, and has not fully matched an external dispersion theorem.",
+      "gate": "FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov",
+      "next_target": "FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov",
+      "remaining": "prove source anti-atom before dispersion, strengthen the source contract, or cite/match external dispersion"
+    }
+  ],
+  "blocked_shortcuts": [
+    "formal well-factorable convolution",
+    "Type-I/II algebraic decomposition",
+    "Fourier h-smoothing",
+    "K4/K6 residue/tail projections",
+    "naive factor-residue incidence",
+    "silent canonical source import"
+  ],
+  "certificate_type": "triad_a1_dibfi_full_s_source_antiatom_router",
+  "closed_antiatom_gates": [
+    "PriorSupportCapacityTerminalPinned",
+    "SupportCapacityPairPinned",
+    "FormalWFDTypeFourierDoNotForceAntiAtom",
+    "K4K6DoNotForceMovingFactorSupport",
+    "NaiveFactorResidueIncidenceBlocked",
+    "CanonicalSourceImportBlocked",
+    "SupportCapacityReducedToSourceAntiAtom"
+  ],
+  "open_antiatom_gates": [
+    "FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov"
+  ],
+  "previous_terminal_gap": "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov",
+  "review_conclusion": "`FullSNonAPExactFactorSupportAndCapacityCompatibility` 已压成 `FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov`：必须证明最终 source capacity measure 无 moving atom，或匹配外部 dispersion 定理。",
+  "source_antiatom_reduction_closed": false,
+  "source_hashes": {
+    "branch_statement_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "exact_factor_support_json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "factor_residue_incidence_json": "be50163987cdc54179f3e439e32c390bc8df4dbde950f12a04ecad09b5f06e80",
+    "full_s_support_range_json": "f2816bc3d999d89883a123b655d62d2c774412f1728d7216c2bc62c21c680e0a",
+    "script": "1631a0c3ddc6493458678e26c370363069a7c6981681a74786198bba516ffa44",
+    "source_block_entropy_json": "2a70d49f65ae40245a6233d66fdefeba4e5dbb1a41bcb2c3e6c3e059a0868758"
+  },
+  "status": "full_s_support_capacity_reduced_to_source_antiatom_or_external_open",
+  "structural_law": "After range closure, exact factor support and Type/Fourier capacity compatibility are not two independent analytic estimates. Together they are exactly a source-level anti-atom condition for the final moving same-(u,v) capacity measure. Existing ledgers show this condition is not forced by formal WFD inputs, K4/K6, naive incidence, or canonical branch import.",
+  "terminal_gap_after_router": "FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov",
+  "terminal_gap_expansion": [
+    "FullSNonAPStrengthenedSourceAntiAtomContract",
+    "ExternalDIBFIKuznetsovDispersionTheoremMatch"
+  ]
+}
