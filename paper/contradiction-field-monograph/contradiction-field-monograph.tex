@@ -941,6 +941,20 @@ namely a same-bad-window global dual capacity certificate $U_{\rm CRT}<L_{\rm PD
 the PDEC families.  The D-structure/Rankin referee gate remains a separate final-promotion
 condition, so this is still not a final unconditional row/column theorem.
 
+The next PDEC-CAP router then opens this named bottleneck rather than treating it as a black
+box.  All currently materialized PDEC intermediate gates are routed: the DualCap families
+have same-$M_Q$ mass sources and closed early $P$-row exits; the current PersistentCaps
+route through promotion deletion or NoDeletion--KL/PDEC/CleanKLS; the current ForcedCaps
+route into multi-bucket ActualPaymentStitching; and LHB projection-stitching is removed by
+the common full-period completion set.  The PDEC-CAP theorem is still not proved.  Its
+current narrow internal frontier is
+\[
+  \texttt{ProfiniteActualPaymentStitchingDichotomy}.
+\]
+Persistent real payment $\Gamma$ must give a multi-bucket same-set PDEC dual comparison
+$U_{\rm CRT}^{\rm multi}<L_{\rm PDEC}^{\rm multi}$; nonpersistent $\Gamma$ must be absorbed
+by FiberDeletion, NoDeletion--KL/PDEC, or flat CleanKLS/DLS.
+
 \section{Triad-A1 Self-Contained Theorem-Boundary Closure}
 
 The final Triad-A1 review separates the exact theorem that is now closed from a stronger statement that is not true under the recorded hypotheses.  In plain terms, the closed result is the following.  Once the source of the A1 payment measure is fixed to the canonical RIW/Buchstab decision-tree source, every remaining same-set capacity gate in the full-$S$ terminal chain is internally accounted for.  The proof no longer needs to borrow the external FullS--KLS theorem for this canonical-source branch.
@@ -2294,7 +2308,11 @@ The current prime-matrix row/column unconditional theorem is routed to named ter
 \[
   \texttt{PDEC\_CAP\_SameSetGlobalDualCertificate}.
 \]
-Final theorem promotion still separately requires the D-structure/Tail-log4/finite Rankin referee interface.
+Inside that bottleneck, the currently materialized PDEC gates reduce to
+\[
+  \texttt{ProfiniteActualPaymentStitchingDichotomy},
+\]
+but the PDEC-CAP theorem itself remains open.  Final theorem promotion still separately requires the D-structure/Tail-log4/finite Rankin referee interface.
 \end{theorem}
 \begin{proof}
 The frontier router
@@ -2324,6 +2342,21 @@ independent self-contained blocker.  What remains is exactly the global same-set
 capacity certificate $U_{\rm CRT}<L_{\rm PDEC}$, plus the independent referee-promotion
 gate.  This proves the stated frontier and also explains why it is not yet a final
 unconditional theorem.
+
+The PDEC-CAP same-set global-dual router refines that frontier once more.  It records
+\[
+  \texttt{closed\_current\_materialized\_pdec\_gates=true}
+\]
+and
+\[
+  \texttt{pdec\_cap\_same\_set\_global\_dual\_closed=false}.
+\]
+Thus the current local PDEC materialization is exhausted, but the global proof is not.  The
+remaining APS dichotomy is genuinely global: along the inverse tower of signatures, the real
+payment graph $\Gamma_n$ must either have a positive-limsup persistent finite signature, in
+which case it becomes a multi-bucket PDEC formal unit, or avoid every finite signature, in
+which case it is a distributed CleanKLS/DLS input unless FiberDeletion or NoDeletion--KL has
+already routed it back to PDEC.  This is the current narrow hardpoint.
 \end{proof}
 
 

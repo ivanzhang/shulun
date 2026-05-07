@@ -2414,6 +2414,34 @@ narrowest_self_contained_hardpoint=PDEC_CAP_SameSetGlobalDualCertificate。
 `U_CRT<L_PDEC`；完整行/列无条件定理仍需单独通过 D-structure/Tail-log4/finite Rankin
 referee 晋级门。
 
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_same_set_global_dual_router.py
+docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
+```
+
+该路由器进入 `PDEC_CAP_SameSetGlobalDualCertificate` 内部，确认当前已物化 PDEC 中间门全部接线：
+
+```text
+closed_current_materialized_pdec_gates=true；
+pdec_cap_same_set_global_dual_closed=false；
+open_final_gates=[
+  ProfiniteActualPaymentStitchingDichotomy,
+  SameSetPDECDualComparisonForPersistentMFU,
+  GlobalFiberDeletionOrNoDeletionKLCleanKLS,
+  ActualPaymentStitchingContractStillOpen
+]；
+narrowest_next_hardpoint=ProfiniteActualPaymentStitchingDichotomy。
+```
+
+结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
+都有同一 `M_Q` 质量来源并关闭早期 `P` 行出口；PersistentCap 已进入晋升删除势或
+NoDeletion-KL/PDEC/CleanKLS；ForcedCap 已进入多桶 ActualPaymentStitching。剩余全局门是
+真实支付图 `Gamma_n` 的投影塔二分：若某有限候选签名正 limsup 持久，则进入多桶同集
+`PDEC` 对偶比较；若所有有限签名都不持久，则必须给出分散 `CleanKLS/DLS` 输入，或由
+FiberDeletion / NoDeletion-KL 回流剥离。
+
 因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明二选一解析终端：
 
 ```text

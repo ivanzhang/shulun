@@ -138,6 +138,27 @@ U_CRT < L_PDEC
 
 这仍不是完整行/列无条件定理闭合，因为还必须通过 `DStructureRankinReferee` 晋级门。
 
+继续进入这个 `PDEC-CAP` 内部后，最新路由给出：
+
+```text
+experiments/prime_matrix_pdec_cap_same_set_global_dual_router.py
+docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
+
+closed_current_materialized_pdec_gates=true；
+pdec_cap_same_set_global_dual_closed=false；
+narrowest_next_hardpoint=ProfiniteActualPaymentStitchingDichotomy。
+```
+
+通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。真正剩余变成：
+
+```text
+真实支付图 Gamma 在无穷投影塔中，
+要么持久命中某个有限候选签名 -> 多桶 PDEC；
+要么对所有有限候选签名都不持久 -> 分散 CleanKLS/DLS；
+若升层持续删除，则递推剥离；
+若删除停止但 KL/互信息偏斜，则回流 new-layer/refined PDEC。
+```
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

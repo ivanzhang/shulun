@@ -1,0 +1,130 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_same_set_global_dual_router",
+  "closed_current_materialized_pdec_gates": true,
+  "frontier_law": "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The next self-contained hardpoint is the profinite ActualPaymentStitching dichotomy for the real payment graph Gamma. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. None of these global final gates is closed here.",
+  "narrowest_next_hardpoint": "ProfiniteActualPaymentStitchingDichotomy",
+  "open_final_gates": [
+    "ProfiniteActualPaymentStitchingDichotomy",
+    "SameSetPDECDualComparisonForPersistentMFU",
+    "GlobalFiberDeletionOrNoDeletionKLCleanKLS",
+    "ActualPaymentStitchingContractStillOpen"
+  ],
+  "pdec_cap_same_set_global_dual_closed": false,
+  "review_conclusion": "PDEC-CAP 的当前已物化中间门全部可路由，但全局同集对偶证书仍未闭合。最窄下一步不再是固定 Q 常数优化，而是 `ProfiniteActualPaymentStitchingDichotomy`：对无限反例塔中的真实支付图 `Gamma` 证明持久缝合或无持久缝合。持久则进入多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`；不持久则必须由 FiberDeletion、NoDeletion-KL/PDEC 或 KL 平坦的 CleanKLS/DLS 吸收。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "PDEC_CAP_SameSetGlobalDualCertificate",
+      "gate": "SelfContainedBottleneckAccepted",
+      "meaning": "上一轮已把完全自足路线压到 PDEC-CAP 同集全局对偶证书。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "Same-Set Law and U_CRT<L_PDEC protocol",
+      "gate": "SameSetPDECProtocolRegistered",
+      "meaning": "PDEC 比较必须作用于同一坏窗推前计数，失败必须输出 DualCap 或缺失行。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'ForcedPersistentByDensityBarrier': 24, 'PersistentCap': 68, 'SparseCap': 16}",
+      "gate": "DualCapFailureMaterialized",
+      "meaning": "固定 Q 的 PDEC 对偶失败已分解为 Sparse、Persistent、Forced 三类 DualCap。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "mass verified; P×P exits closed",
+      "gate": "SameMassAndEarlyExitClosedForCurrentDualCaps",
+      "meaning": "当前 DualCap 都有同一 M_Q 质量来源，早期 P×P 出口由 Sparse/BTLS/LFTE 接线关闭。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'PromotionFiberDeletion': 68}",
+      "gate": "PersistentCapsCurrentLayerRouted",
+      "meaning": "当前 68 个 PersistentCap 已进入晋升删除势、NoDeletion-KL/CleanKLS 或固定签名 PDEC 路线。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'MultiBucketPDECOrDistributedCleanKLS': 24}",
+      "gate": "ForcedCapsCurrentLayerRouted",
+      "meaning": "当前 24 个 ForcedCap 已退出固定 Q 循环，单桶实际支付被排除，剩余进入多桶 PDEC/APS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "ActualPaymentStitchingPersistentMFUOrDistributedCleanKLS",
+      "gate": "ActualPaymentStitchingCurrentRowsRouted",
+      "meaning": "当前 48 个多桶矩阵行已路由到 APS：持久 Gamma 进 MFU/PDEC，不持久进分散 CleanKLS/DLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "pi(A_Q') subset A_Q for same C_P support",
+      "gate": "LHBProjectionStitchingRemoved",
+      "meaning": "同一 LHB 全周期完成集合口径下，升层坏项 N 为空，ProjectionStitching 不再是当前分支出口。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "finite Boolean algebra refinement; new-layer entropy contract",
+      "gate": "PDECCapNoCycleRegistered",
+      "meaning": "固定有限签名群内 PDEC cap 细化不能无限循环；升层必须进入 new-layer PDEC 或 CleanKLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "['FiberDeletionLayer', 'FiberDeletionLayer']",
+      "gate": "FiniteTowerEvidenceRegistered",
+      "meaning": "已物化两层均为 FiberDeletionLayer，但这仍只是有限塔证据，不是全局证明。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "APS contract open",
+      "gate": "ProfiniteActualPaymentStitchingDichotomy",
+      "meaning": "必须对无限反例塔中的真实支付图 Gamma 证明 PersistentStitching 或 NoPersistentStitching 二分。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "U_CRT^multi<L_PDEC^multi not submitted for all persistent MFU",
+      "gate": "SameSetPDECDualComparisonForPersistentMFU",
+      "meaning": "若 Gamma 持久缝合成多桶 formal unit，仍需提交同集多桶 PDEC 对偶容量证书。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "new-layer tower finite evidence only",
+      "gate": "GlobalFiberDeletionOrNoDeletionKLCleanKLS",
+      "meaning": "若 Gamma 不持久或升层继续推进，需证明删除势发散，或 NoDeletion-KL 回流 PDEC，或 KL 平坦进 CleanKLS/DLS。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "actual_payment_stitching_contract_open",
+      "gate": "ActualPaymentStitchingContractStillOpen",
+      "meaning": "APS 合同仍是 open；不能把当前有限层 APS 路由误写成全局 PDEC-CAP 闭合。"
+    }
+  ],
+  "source_hashes": {
+    "actual_payment_stitching": "14087651c52f19675e3253aaa3c8f856c0872ae18903f69da7636baa70fd7d2f",
+    "aps_contract": "5f86eb483338ddd0a0c3b7317b68c89e5967368a1d2dded81328b338b1d44855",
+    "dualcap": "b6bf0fc2a4305656fa7aef8cac33aa9b7dd1867617611fe7b96a23e8ba251c53",
+    "forced": "0f6779ef51c2603e7e1e9d9fe79fbc40bef1920665ec3ca3d92cc73db19814ab",
+    "mass_source": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
+    "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
+    "persistent": "590f92a0eb6cf5886038f8684d8577af29edf0fad7c46f75ae58983b72440703",
+    "projection": "a518f15194644cb07603f00246db122aac8cfd1f655ddf983c7bc7b4d0d390ef",
+    "script": "7a43b7ab747f37c0f0a4733bf9ea1e928f90d3b0001c45b24589bb629b8e4fa4",
+    "self_bottleneck": "efa40265600dc3d24976379f5605492932c3b23abe70e0a0b0c936454b3aa197",
+    "tower": "c59e17f45bd93129864e54c07eb5c27a5fbb96bdd6fe1fdedcff94a7d5249597"
+  },
+  "status": "pdec_cap_same_set_global_dual_frontier_reduced_to_aps_not_closed"
+}
