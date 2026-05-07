@@ -6825,3 +6825,65 @@ NonAPWFDNoProjectionAndExternalFullSDIBFIAtomMatch
 这一步仍不是行命题闭合；它把最后尺度硬点从“新增 full-S 原子”改成可审稿的
 `ExternalFullSDIBFIAtomMatch` 合同，并与对象侧 `UncenteredWFDToKE13NoProjectionIdentity`
 合成当前最窄剩余。
+
+## 114. External full-S match：压成 FullS-KLS-ext 专门化
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_external_full_s_match_router.py` 后，
+第 113 节的 `ExternalFullSDIBFIAtomMatch` 又被拆成外审级 KLS 专门化账本。
+
+已经就绪的部分：
+
+```text
+DI/BFI theorem locations:
+  BFI Theorem 10 and DI Theorem 12 pinned.
+
+Full-S window in local KLS template:
+  C≈P/log^{O(1)}P,
+  S≈P,
+  0<|h|<=H<=P/log^{O(1)}P.
+
+BFI level:
+  X≈P^2, Q<=P log^O P gives positive exponent slack.
+
+Template ledgers:
+  CRT phase, gcd strata, smoothing, and B(A) log loss.
+```
+
+机器结果：
+
+```text
+status=external_full_s_match_reduced_to_kls_specialization_open；
+closed_match_gates=[
+  PriorExternalFullSAtomFrontierAvailable,
+  DIBFITheoremLocationsPinned,
+  FullSWindowKLSTemplateMatch,
+  BFILevelSlackAtQHalf,
+  PhaseGcdSmoothingTemplateReady
+]；
+open_match_gates=[
+  NoProjectionCompatibilityStillOpen,
+  ExactExternalKLSSpecialization
+]；
+terminal_gap_after_router=FullSKLSExternalTheoremSpecialization。
+```
+
+因此当前最窄剩余更新为：
+
+```text
+NonAPWFDNoProjectionAndFullSKLSExternalSpecialization
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + FullSKLSExternalTheoremSpecialization。
+```
+
+其中 `FullSKLSExternalTheoremSpecialization` 要求写出精确定理：
+
+```text
+Theorem FullS-KLS-ext:
+  在 C≈P/log^{O(1)}P, S≈P, H<=P/log^{O(1)}P,
+  lambda well-factorable, beta divisor-bounded,
+  gcd/smoothing/log-loss 满足模板时，
+  当前 full-S Kloosterman/WFD 窗口有任意 log-saving。
+```
+
+该定理还必须和对象侧兼容：估计的必须是当前 non-AP WFD 的未中心化无投影对象，而不是
+AP-source 分支、块中心化对象或投影后的弱对象。

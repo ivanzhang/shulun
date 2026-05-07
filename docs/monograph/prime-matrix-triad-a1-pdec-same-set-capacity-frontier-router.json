@@ -359,6 +359,12 @@
       "frontier": "A1DIBFIFullSDispersionAtomRouter",
       "next_action": "提交 ExternalFullSDIBFIAtomMatch，或继续攻无投影未中心化对象恒等式。",
       "status": "full_s_dispersion_atom_reduced_to_external_dibfi_match_open"
+    },
+    {
+      "evidence": "外部 full-S 匹配已拆成 KLS 专门化；open_match_gates=['NoProjectionCompatibilityStillOpen', 'ExactExternalKLSSpecialization']；terminal_gap=FullSKLSExternalTheoremSpecialization。",
+      "frontier": "A1DIBFIExternalFullSMatchRouter",
+      "next_action": "写出 FullS-KLS-ext 精确定理专门化，并证明无隐藏投影兼容。",
+      "status": "external_full_s_match_reduced_to_kls_specialization_open"
     }
   ],
   "lp_summary": {
@@ -374,7 +380,7 @@
       "BRIDGED_zero_block"
     ]
   },
-  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的普通厚区间计数层已被压下去。exact 层转移又被压缩为 selector 保留率/clean 退出合同。selector 保留率已由有限签名 pigeonhole 处理到条件形式。无抵消已被决策树分割条件化。决策树公式已被压成源头系数识别。源头识别又被压成 canonical source lock 合同。source lock 已分裂成 canonical 内部分支和 generic WFD 外部分支。canonical 分支准入已被压成 theorem/ledger 分支陈述覆盖合同。分支陈述覆盖已落实。canonical RIW/Buchstab clean branch 在当前 source-lock 链条上不再有内部缺口。generic noncanonical WFD 的外部 DI/BFI 合同也已物化：未中心化原始对象、相位归一化、well-factorable level、Type-I/II 范围与损失账本都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书：对象不变转移与尺度不等式必须在同一变量表上同时成立。该合取证书现已继续压成 `NonAPWFDNoProjectionAndExternalFullSDIBFIAtomMatch`。",
+  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的普通厚区间计数层已被压下去。exact 层转移又被压缩为 selector 保留率/clean 退出合同。selector 保留率已由有限签名 pigeonhole 处理到条件形式。无抵消已被决策树分割条件化。决策树公式已被压成源头系数识别。源头识别又被压成 canonical source lock 合同。source lock 已分裂成 canonical 内部分支和 generic WFD 外部分支。canonical 分支准入已被压成 theorem/ledger 分支陈述覆盖合同。分支陈述覆盖已落实。canonical RIW/Buchstab clean branch 在当前 source-lock 链条上不再有内部缺口。generic noncanonical WFD 的外部 DI/BFI 合同也已物化：未中心化原始对象、相位归一化、well-factorable level、Type-I/II 范围与损失账本都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书：对象不变转移与尺度不等式必须在同一变量表上同时成立。该合取证书现已继续压成 `NonAPWFDNoProjectionAndFullSKLSExternalSpecialization`。",
   "source_hashes": {
     "a1_branch_statement_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
     "a1_canonical_branch_admission_json": "80d6a38882ba2326054e52702f82ae67bee05fc0aed3e94fb58b53287c7debff",
@@ -390,6 +396,7 @@
     "a1_dibfi_di_formula_ledger_json": "68f6a0be6499b2d1b5d8ac3b1cd5559aef32ed6ef3fdd59304253586393125d9",
     "a1_dibfi_di_rdn_substitution_json": "d5611a1991e1ba9c6be55eaea0f559e3bc8d9af0b7d55422f45d2079603a329d",
     "a1_dibfi_direct_bfi_atom_json": "daa5db7d52fa40b9a14b672fd0966b69ca803fee412dca1285127ee3fd4682ad",
+    "a1_dibfi_external_full_s_match_json": "1cb81c03845ce32374579b89dbf0b8ce3dbf1bafd8945688bc0ac6d99b527584",
     "a1_dibfi_full_s_dispersion_atom_json": "8e9ced4b82818f97d5125dd02cc7646df99e08b5fd0adac4c6ab06f69f349c29",
     "a1_dibfi_maynard_exponent_cone_json": "8a7b60d137e60fe109cdd92f80e3bd20ae94277f4519702c12cc4f51434228a7",
     "a1_dibfi_maynard_s_compression_barrier_json": "3fb2070e3533870b600c158a3c9551fb2144a6a0c0343e798bfee7e1a64a83d0",
@@ -429,12 +436,12 @@
     "fourier_cap_scan_json": "fe47050ce4b60f5c5651228f7e940eb20898506149f830d86448375984b7e502",
     "lhb_lp_skeleton_json": "77be4c32509e121013a11d5cc0668c314ceece3aa7f3e114bae2dc69cbdb8021",
     "pdec_mass_source_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
-    "script": "026b1efcf3307e094617346b2a0e98441aaaed9c90e5754119e45c4771c30148",
+    "script": "8acbc2061e3d10cb5bc89395f5a8755cb49ac6471fb4cc783195db9f49d1b364",
     "selective_promotion_commutation_json": "ca61b2488fdb1bc63ea571bd9223377c685918b584af13763c65d5d3438528e4",
     "standard_prime_lift_deletion_json": "733c195ae3c6c88ba29951bb2ee4a90da9e02899f606aacbd4c55bfb85291c5f",
     "terminal_confluence_json": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c"
   },
-  "status": "same_set_capacity_frontier_materialized_external_full_s_dibfi_atom_open",
+  "status": "same_set_capacity_frontier_materialized_full_s_kls_specialization_open",
   "status_counts": {
     "actual_payment_measure_constructed": 1,
     "actual_payment_selection_materialized": 1,
@@ -462,6 +469,7 @@
     "exact_decision_tree_formula_or_external_dibfi_required": 1,
     "exact_factor_support_or_external_dibfi_required": 1,
     "exact_wfd_source_entropy_or_external_dibfi_required": 1,
+    "external_full_s_match_reduced_to_kls_specialization_open": 1,
     "external_kls_input_registered_self_contained_atom_open": 1,
     "factor_residue_incidence_or_canonical_riw_support_required": 1,
     "finite_signature_no_cancellation_or_external_dibfi_required": 1,
@@ -493,6 +501,6 @@
     "terminal_dichotomy_admission_closed_capacity_open": 1,
     "w4_parameter_ledger_reduced_to_current_wfd_maynard_conditions_open": 1
   },
-  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；selector 保留率又被 finite-signature pigeonhole 压成 exact path partition、无抵消与 clean 退出；无抵消进一步化为完整 RIW/Buchstab 决策树公式、路径数预算与 clean 退出；决策树公式本身又被压成 A1/KZ-E 实际源头系数识别；实际源头识别又被压成 canonical RIW/Buchstab source lock 合同；source lock 合同已严格二分为 canonical 源头分支准入或 generic WFD 外部路由；canonical 分支准入又被压成主定理/账本分支陈述与覆盖合同；分支陈述已落实：canonical source branch 在 source-lock 链条上无剩余内部缺口；generic WFD 宽口径的外部 DI/BFI 原始 dispersion 已物化为外部合同；DI/BFI 原文定理位置已定位为 BFI Theorem 10 与 DI Theorem 12；当前窗口假设匹配又被压成 AP 到 KE-13 的对象不变转移与 dyadic 尺度不等式；二者现在已锁到同一张共同变量表；共同变量表合取证书又被逐行审计为无投影未中心化 dispersion 恒等式与 DI/BFI 量化窗口代入；该终端又分叉为直接 BFI prime-AP 原子匹配，或保留 KE-13 无投影 fallback；直接 BFI 原子匹配又被压成 AP 源对象等式和 BFI level 指数账本；BFI level 指数账本在X≈P^2、Q<=P log^O P 与 well-factorable support 下已有正指数余量，所以最窄剩余变为 AP 源对象等式；AP 源对象等式又被压成 Cauchy/dispersion 之前的原始 clean A1 残差定义合同；该合同作为 AP-source 分支已经允许直接 BFI 闭合，非 AP generic WFD 分支则必须走原始 dispersion 外部定理匹配或 KE-13 fallback；非 AP 分支已接回既有原始 dispersion 链条，剩余为量化无投影窗口证书；其中尺度侧又被压成 DI Kloosterman 窗口代入账本，BFI level 不再是终端；对象侧也已剥离 APErrorRepresentation，只剩未中心化 WFD 到 KE-13 的无投影恒等式；DI 侧又把 Theorem 12 的 J^2 公式固定下来，且 R/D/N 已代入 Maynard-W4 正规形；Maynard-W4 参数模板和 J-bound 简化也已固定；三条 Maynard 条件又统一压成当前 WFD 指数锥准入；指数锥准入再被压成 WFD 非对角对象等式、WFD 指数向量提交与带正余量的线性翻译矩阵；朴素把共同逆元窗口 S_common 直接当作 Maynard-S 的路线又被指数锥排除；已登记替代 W4 对象路由也被审计为不可绕开非 AP generic WFD，尺度侧曾单点化为 Maynard-S 压缩映射；但完整 S_common 窗口与 W4 对象等式z=s1*s2 同时保留会强制 Z≈X，超过 Maynard 锥允许的 Z<=X^(3/5-o(1))。短 S 子窗口退路也被排除：小区间宽度不能替代 Maynard-S 的实际量级，真实短量级又离开当前 full-S dyadic 块。因此尺度侧剩余曾单点化为新增 full-S 原始 dispersion 原子；该原子现在又被精确改写为 ExternalFullSDIBFIAtomMatch 与无投影兼容性。",
-  "terminal_dual_gap": "NonAPWFDNoProjectionAndExternalFullSDIBFIAtomMatch"
+  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；selector 保留率又被 finite-signature pigeonhole 压成 exact path partition、无抵消与 clean 退出；无抵消进一步化为完整 RIW/Buchstab 决策树公式、路径数预算与 clean 退出；决策树公式本身又被压成 A1/KZ-E 实际源头系数识别；实际源头识别又被压成 canonical RIW/Buchstab source lock 合同；source lock 合同已严格二分为 canonical 源头分支准入或 generic WFD 外部路由；canonical 分支准入又被压成主定理/账本分支陈述与覆盖合同；分支陈述已落实：canonical source branch 在 source-lock 链条上无剩余内部缺口；generic WFD 宽口径的外部 DI/BFI 原始 dispersion 已物化为外部合同；DI/BFI 原文定理位置已定位为 BFI Theorem 10 与 DI Theorem 12；当前窗口假设匹配又被压成 AP 到 KE-13 的对象不变转移与 dyadic 尺度不等式；二者现在已锁到同一张共同变量表；共同变量表合取证书又被逐行审计为无投影未中心化 dispersion 恒等式与 DI/BFI 量化窗口代入；该终端又分叉为直接 BFI prime-AP 原子匹配，或保留 KE-13 无投影 fallback；直接 BFI 原子匹配又被压成 AP 源对象等式和 BFI level 指数账本；BFI level 指数账本在X≈P^2、Q<=P log^O P 与 well-factorable support 下已有正指数余量，所以最窄剩余变为 AP 源对象等式；AP 源对象等式又被压成 Cauchy/dispersion 之前的原始 clean A1 残差定义合同；该合同作为 AP-source 分支已经允许直接 BFI 闭合，非 AP generic WFD 分支则必须走原始 dispersion 外部定理匹配或 KE-13 fallback；非 AP 分支已接回既有原始 dispersion 链条，剩余为量化无投影窗口证书；其中尺度侧又被压成 DI Kloosterman 窗口代入账本，BFI level 不再是终端；对象侧也已剥离 APErrorRepresentation，只剩未中心化 WFD 到 KE-13 的无投影恒等式；DI 侧又把 Theorem 12 的 J^2 公式固定下来，且 R/D/N 已代入 Maynard-W4 正规形；Maynard-W4 参数模板和 J-bound 简化也已固定；三条 Maynard 条件又统一压成当前 WFD 指数锥准入；指数锥准入再被压成 WFD 非对角对象等式、WFD 指数向量提交与带正余量的线性翻译矩阵；朴素把共同逆元窗口 S_common 直接当作 Maynard-S 的路线又被指数锥排除；已登记替代 W4 对象路由也被审计为不可绕开非 AP generic WFD，尺度侧曾单点化为 Maynard-S 压缩映射；但完整 S_common 窗口与 W4 对象等式z=s1*s2 同时保留会强制 Z≈X，超过 Maynard 锥允许的 Z<=X^(3/5-o(1))。短 S 子窗口退路也被排除：小区间宽度不能替代 Maynard-S 的实际量级，真实短量级又离开当前 full-S dyadic 块。因此尺度侧剩余曾单点化为新增 full-S 原始 dispersion 原子；该原子现在又被精确改写为 ExternalFullSDIBFIAtomMatch；外部匹配层继续压成 FullSKLSExternalTheoremSpecialization 与无投影兼容性。",
+  "terminal_dual_gap": "NonAPWFDNoProjectionAndFullSKLSExternalSpecialization"
 }
