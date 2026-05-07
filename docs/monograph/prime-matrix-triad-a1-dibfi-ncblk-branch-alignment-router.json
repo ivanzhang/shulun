@@ -1,0 +1,96 @@
+{
+  "alignment_rows": [
+    {
+      "closed": true,
+      "evidence": "previous terminal=NCBLKActualBlockNonConcentrationOrExternalDIBFI; open=['NCBLKActualBlockNonConcentrationOrExternalDIBFI'].",
+      "gate": "PriorNCBLKTerminalPinned",
+      "next_target": "FullSNonAPGenericObjectAdmission",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "NewFullSTheoremInput is pinned as the current full-S, non-AP, uncentered, no-projection WFD window.",
+      "gate": "FullSNonAPGenericObjectPinned",
+      "next_target": "NoSilentCanonicalSourceImport",
+      "remaining": "cannot replace this by AP-source or a centered object"
+    },
+    {
+      "closed": true,
+      "evidence": "APSourceLift is already rejected; the full-S non-AP object cannot be reclassified as AP-source.",
+      "gate": "APSourceLiftStillRejected",
+      "next_target": "NoSilentCanonicalSourceImport",
+      "remaining": "none; this blocks the AP-source shortcut"
+    },
+    {
+      "closed": true,
+      "evidence": "Branch coverage closes the canonical RIW/Buchstab source branch, but explicitly leaves generic WFD self-contained closure false.",
+      "gate": "NoSilentCanonicalSourceImport",
+      "next_target": "ExactFullSNonAPWFDSourceEntropy",
+      "remaining": "full-S non-AP generic WFD must prove its own source entropy or use external DI/BFI"
+    },
+    {
+      "closed": true,
+      "evidence": "SourceBlockEntropy gives max_b M_b/M <= log^{-2A}, hence sum_b |S_b|^2 <= log^{-2A} M^2 and implies NC-BLK.",
+      "gate": "SourceEntropyImpliesNCBLK",
+      "next_target": "ExactFullSNonAPWFDSourceEntropy",
+      "remaining": "source entropy itself is not proved for the exact full-S non-AP source"
+    },
+    {
+      "closed": true,
+      "evidence": "The source entropy router records moving-delta well-factorable models that pass formal templates while concentrating on one moving block.",
+      "gate": "FormalWFDInputsDoNotForceSourceEntropy",
+      "next_target": "ExactFullSNonAPWFDSourceEntropy",
+      "remaining": "must use exact coefficient generation, not the formal WFD template alone"
+    },
+    {
+      "closed": true,
+      "evidence": "The full-S non-AP NC-BLK terminal is aligned with the same valid sufficient condition as the KZ-E NC-BLK route, but without silent canonical-source import.",
+      "gate": "AlignmentToExactSourceEntropyOrExternal",
+      "next_target": "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov",
+      "remaining": "none at branch-alignment level"
+    },
+    {
+      "closed": false,
+      "evidence": "The repository has not proved scale-uniform moving-block entropy for the exact full-S non-AP WFD coefficients, and has not completed a primary-source theorem match for this exact object.",
+      "gate": "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov",
+      "next_target": "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov",
+      "remaining": "prove exact source entropy for the full-S non-AP coefficients, or cite/match external dispersion"
+    }
+  ],
+  "blocked_shortcuts": [
+    "silent canonical RIW/Buchstab source import",
+    "APSourceLift",
+    "formal WFD template implies moving-block entropy"
+  ],
+  "certificate_type": "triad_a1_dibfi_ncblk_branch_alignment_router",
+  "closed_alignment_gates": [
+    "PriorNCBLKTerminalPinned",
+    "FullSNonAPGenericObjectPinned",
+    "APSourceLiftStillRejected",
+    "NoSilentCanonicalSourceImport",
+    "SourceEntropyImpliesNCBLK",
+    "FormalWFDInputsDoNotForceSourceEntropy",
+    "AlignmentToExactSourceEntropyOrExternal"
+  ],
+  "ncblk_branch_alignment_closed": false,
+  "open_alignment_gates": [
+    "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov"
+  ],
+  "previous_terminal_gap": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+  "review_conclusion": "`NCBLKActualBlockNonConcentrationOrExternalDIBFI` 已被分支对齐为 `ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov`：canonical source branch 不能静默借用，形式 WFD 模板也不能推出 moving-block 熵。",
+  "source_hashes": {
+    "ap_source_lift_no_go_json": "e23282e2d3de3d5f70d70dde5013a0f0e8788656d98d04e13e0856dccece5d0f",
+    "branch_statement_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "c_dependent_reduction_json": "6a720ca520c5652928da6b14bd8c314c28396791e9c16c24a75cf5755980898c",
+    "new_full_s_input_json": "5a24752ca3d01eb90414bd498d9be025bebda93809eaaaebb396296d2f68ba68",
+    "script": "78b986f4148391ebf320ca9771397a6e588d74531549e6f8287c79e70e1cdfdb",
+    "source_block_entropy_json": "2a70d49f65ae40245a6233d66fdefeba4e5dbb1a41bcb2c3e6c3e059a0868758"
+  },
+  "status": "ncblk_branch_alignment_reduced_to_exact_full_s_source_entropy_or_external_open",
+  "structural_law": "NC-BLK is a block-energy statement. SourceBlockEntropy is a valid sufficient condition, but branch coverage forbids importing the canonical RIW/Buchstab source chain into the broader full-S non-AP generic WFD object. Therefore the honest next target is exact moving-block source entropy for this full-S non-AP coefficient generation, or a matched external DI/BFI/Kuznetsov theorem.",
+  "terminal_gap_after_router": "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov",
+  "terminal_gap_expansion": [
+    "ExactFullSNonAPWFDSourceEntropy",
+    "ExternalDIBFIKuznetsovDispersionTheoremMatch"
+  ]
+}

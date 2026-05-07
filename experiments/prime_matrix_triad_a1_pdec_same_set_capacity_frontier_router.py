@@ -180,6 +180,9 @@ DEFAULT_DIBFI_C_DEPENDENT_RESIDUE_SPECTRAL_REDUCTION = (
     DOCS
     / "prime-matrix-triad-a1-dibfi-c-dependent-residue-spectral-reduction-router.json"
 )
+DEFAULT_DIBFI_NCBLK_BRANCH_ALIGNMENT = (
+    DOCS / "prime-matrix-triad-a1-dibfi-ncblk-branch-alignment-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -293,6 +296,7 @@ def build_frontier_rows(
     dibfi_full_s_completion_reduction: dict[str, Any],
     dibfi_completed_weight_spectral_gap: dict[str, Any],
     dibfi_c_dependent_residue_spectral_reduction: dict[str, Any],
+    dibfi_ncblk_branch_alignment: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -989,6 +993,19 @@ def build_frontier_rows(
                 "或逐项匹配外部 DI/BFI/Kuznetsov dispersion 定理。"
             ),
         },
+        {
+            "frontier": "A1DIBFINCBLKBranchAlignmentRouter",
+            "status": "ncblk_branch_alignment_reduced_to_exact_full_s_source_entropy_or_external_open",
+            "evidence": (
+                f"full-S non-AP NC-BLK 已对齐到 exact source entropy/外部定理二分；"
+                f"open_alignment_gates={dibfi_ncblk_branch_alignment['open_alignment_gates']}；"
+                f"terminal_gap={dibfi_ncblk_branch_alignment['terminal_gap_after_router']}。"
+            ),
+            "next_action": (
+                "证明 exact full-S non-AP WFD 源块 moving entropy，"
+                "或完成外部 DI/BFI/Kuznetsov dispersion 定理逐项匹配。"
+            ),
+        },
     ]
 
 
@@ -1057,6 +1074,7 @@ def run(
     dibfi_full_s_completion_reduction_path: Path,
     dibfi_completed_weight_spectral_gap_path: Path,
     dibfi_c_dependent_residue_spectral_reduction_path: Path,
+    dibfi_ncblk_branch_alignment_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1141,6 +1159,7 @@ def run(
     dibfi_c_dependent_residue_spectral_reduction = load_json(
         dibfi_c_dependent_residue_spectral_reduction_path
     )
+    dibfi_ncblk_branch_alignment = load_json(dibfi_ncblk_branch_alignment_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1206,6 +1225,7 @@ def run(
         dibfi_full_s_completion_reduction,
         dibfi_completed_weight_spectral_gap,
         dibfi_c_dependent_residue_spectral_reduction,
+        dibfi_ncblk_branch_alignment,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1273,13 +1293,14 @@ def run(
         "full_s_nonap_wfd_kls_input_reduced_to_modulus_dependent_completed_kls_open",
         "modulus_dependent_completed_kls_reduced_to_c_dependent_residue_spectral_input_open",
         "c_dependent_residue_spectral_input_reduced_to_kfls_ncblk_or_external_open",
+        "ncblk_branch_alignment_reduced_to_exact_full_s_source_entropy_or_external_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_ncblk_or_external_dibfi_open",
+        "status": "same_set_capacity_frontier_exact_full_s_source_entropy_or_external_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1416,6 +1437,9 @@ def run(
             "a1_dibfi_c_dependent_residue_spectral_reduction_json": file_sha256(
                 dibfi_c_dependent_residue_spectral_reduction_path
             ),
+            "a1_dibfi_ncblk_branch_alignment_json": file_sha256(
+                dibfi_ncblk_branch_alignment_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1426,7 +1450,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+        "terminal_dual_gap": "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1487,8 +1511,9 @@ def run(
             " ModulusDependentCompletedFullSKLSInput：处理 B_{c,x}=sum_k beta_{x+kc} 的"
             "模数依赖 residue 权重；点态 Weil/L2、普通大筛和平坦 residue 捷径均不足，"
             "先压成 CDependentResidueWeightSpectralCancellationInput；该 residue 权重又由"
-            "有限 Fourier 反演精确接入 BWFD/BSC/KFLS 内核链，最终剩余变为实际系数"
-            " NC-BLK 块非集中，或逐项匹配外部 DI/BFI/Kuznetsov dispersion 定理。"
+            "有限 Fourier 反演精确接入 BWFD/BSC/KFLS 内核链；full-S non-AP NC-BLK "
+            "再经分支对齐压成 exact moving-block source entropy，或逐项匹配外部"
+            " DI/BFI/Kuznetsov dispersion 定理。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1524,7 +1549,9 @@ def run(
             "唯一 full-S non-AP WFD KLS 定理原子；full-S 完成分解又把它缩到模数依赖"
             "完整 Kloosterman 权重原子；朴素完成估计被尺度账本排除后，只剩 c,h 族上的"
             "谱/dispersion 平均抵消；最新路由把该抵消输入与 `BWFD -> BSC -> KFLS` "
-            "完成链精确对齐，当前终端为 `NCBLKActualBlockNonConcentrationOrExternalDIBFI`。"
+            "完成链精确对齐，并继续把 full-S non-AP NC-BLK 对齐到 exact source entropy/"
+            "外部定理二分。当前终端为 "
+            "`ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov`。"
         ),
     }
 
@@ -1606,7 +1633,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  FullSNonAPWFDKLSTheoremInput completes s modulo c into B_{c,x} weights。",
         "  Pointwise Weil/L2 and ordinary large sieve do not close the completed weights。",
         "  C-dependent residue weights are Fourier-dual to the BWFD/BSC/KFLS completion chain。",
-        "  The remaining terminal is NCBLKActualBlockNonConcentrationOrExternalDIBFI。",
+        "  Full-S non-AP NC-BLK cannot silently import the canonical source branch。",
+        "  The remaining terminal is ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov。",
         "```",
         "",
         "## 2. 汇总",
@@ -1704,7 +1732,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIFullSCompletionReduction router materialized；",
             "DIBFICompletedWeightSpectralGap router materialized；",
             "DIBFICDependentResidueSpectralReduction router materialized；",
-            "remaining independent gap is NCBLKActualBlockNonConcentrationOrExternalDIBFI。",
+            "DIBFINCBLKBranchAlignment router materialized；",
+            "remaining independent gap is ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1712,7 +1741,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩未中心化无投影恒等式"
             "与 DI Kloosterman 窗口代入账本；"
             "APSourceLift 已被当前合同排除；完全自足/主来源逐项版仍只剩"
-            " NCBLKActualBlockNonConcentrationOrExternalDIBFI。",
+            " ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1972,6 +2001,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_C_DEPENDENT_RESIDUE_SPECTRAL_REDUCTION,
     )
+    parser.add_argument(
+        "--dibfi-ncblk-branch-alignment-json",
+        type=Path,
+        default=DEFAULT_DIBFI_NCBLK_BRANCH_ALIGNMENT,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -2067,6 +2101,7 @@ def main() -> None:
         dibfi_c_dependent_residue_spectral_reduction_path=(
             args.dibfi_c_dependent_residue_spectral_reduction_json
         ),
+        dibfi_ncblk_branch_alignment_path=args.dibfi_ncblk_branch_alignment_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
