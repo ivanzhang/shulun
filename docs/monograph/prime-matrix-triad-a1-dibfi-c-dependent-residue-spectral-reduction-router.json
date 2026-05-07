@@ -1,0 +1,117 @@
+{
+  "blocked_shortcuts": [
+    "flat residue mass",
+    "pointwise Weil plus L2",
+    "ordinary large sieve",
+    "APSourceLift",
+    "SOURCE-CEN",
+    "BD-CEN",
+    "raw BLK-energy-core as an arbitrary coefficient-array theorem"
+  ],
+  "c_dependent_residue_spectral_reduction_closed": false,
+  "certificate_type": "triad_a1_dibfi_c_dependent_residue_spectral_reduction_router",
+  "closed_reduction_gates": [
+    "PriorCDependentResidueInputPinned",
+    "ResidueFourierCompletionEquivalence",
+    "BalancedWellFactorableBSCReduction",
+    "BSCToKFLSPhaseExpansion",
+    "KFLSToSquareKernelAudit",
+    "BlockCenteringNoGoImported",
+    "SourceCENAndRawBLKEnergyShortcutsBlocked",
+    "ReductionChainToNCBLKOrExternal"
+  ],
+  "exact_identity_bridge": [
+    "B_{c,x}=sum_{s≡x(c)} beta_s W(s/S)",
+    "hat_beta_c(ell)=sum_x B_{c,x} e_c(-ell*x)",
+    "sum_x^* B_{c,x} e_c(a_h*x+b_h*bar(x)) = (1/c) sum_ell hat_beta_c(ell) S(a_h+ell,b_h;c)"
+  ],
+  "open_reduction_gates": [
+    "NCBLKActualBlockNonConcentrationOrExternalDIBFI"
+  ],
+  "previous_terminal_gap": "CDependentResidueWeightSpectralCancellationInput",
+  "reduction_rows": [
+    {
+      "closed": true,
+      "evidence": "previous terminal=CDependentResidueWeightSpectralCancellationInput; open=['CDependentResidueWeightSpectralCancellationInput'].",
+      "gate": "PriorCDependentResidueInputPinned",
+      "next_target": "ResidueFourierCompletionEquivalence",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "B_{c,x}=sum_{s≡x(c)} beta_s W(s/S), hat_beta_c(ell)=sum_x B_{c,x} e_c(-ell*x); hence the B_{c,x} Kloosterman residue sum is exactly the finite-Fourier completed sum (1/c) sum_ell hat_beta_c(ell) S(a_h+ell,b_h;c).",
+      "gate": "ResidueFourierCompletionEquivalence",
+      "next_target": "BalancedBSCCompletionCore",
+      "remaining": "none; this is a finite Fourier identity, not an estimate"
+    },
+    {
+      "closed": true,
+      "evidence": "The HLC BWFD completion file already performs c=uv with U,V=C^{1/2}log^O(y) and rewrites the completed Kloosterman sum as BSC-core.",
+      "gate": "BalancedWellFactorableBSCReduction",
+      "next_target": "BSCCore",
+      "remaining": "BSC-core still needs logarithmic saving"
+    },
+    {
+      "closed": true,
+      "evidence": "Expanding the two complete Kloosterman sums exposes the rigid phase e(bar(v)R/u + bar(u)T/v), so BSC-core reduces to KFLS-core.",
+      "gate": "BSCToKFLSPhaseExpansion",
+      "next_target": "KFLSCore",
+      "remaining": "KFLS-core is not proved by the expansion itself"
+    },
+    {
+      "closed": true,
+      "evidence": "The KFLS square-kernel audit rules out positive-kernel/Schur shortcuts and reduces the self-contained route to centered four-modulus control plus block-energy duties.",
+      "gate": "KFLSToSquareKernelAudit",
+      "next_target": "BlockCenteredFourModulusOrNCBLK",
+      "remaining": "block diagonal/local variance cannot be discarded for free"
+    },
+    {
+      "closed": true,
+      "evidence": "CFQK/BD-CEN audits show that h=0 centering is not same-(u,v) block centering; BD-CEN is false for the current unblocked object.",
+      "gate": "BlockCenteringNoGoImported",
+      "next_target": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+      "remaining": "must use real source non-concentration or external dispersion"
+    },
+    {
+      "closed": true,
+      "evidence": "SOURCE-CEN changes the current WFD target, and raw BLK-energy is false as an arbitrary coefficient-array theorem.",
+      "gate": "SourceCENAndRawBLKEnergyShortcutsBlocked",
+      "next_target": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+      "remaining": "only actual-coefficient NC-BLK or an external theorem remains"
+    },
+    {
+      "closed": true,
+      "evidence": "C-dependent residue weights are the Fourier-dual form of the existing BWFD/BSC completion chain; all free centering and ordinary large-sieve exits have already been ruled out.",
+      "gate": "ReductionChainToNCBLKOrExternal",
+      "next_target": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+      "remaining": "none at reduction level"
+    },
+    {
+      "closed": false,
+      "evidence": "The repository still lacks a proof that the actual full-S non-AP WFD coefficients are same-(u,v) block-nonconcentrated with arbitrary log saving, and also lacks a fully matched primary-source external DI/BFI theorem for this exact full-S object.",
+      "gate": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+      "next_target": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+      "remaining": "prove actual-coefficient NC-BLK, or cite/match an external DI/BFI/Kuznetsov dispersion theorem"
+    }
+  ],
+  "review_conclusion": "`CDependentResidueWeightSpectralCancellationInput` 已经接入已有 `BWFD -> BSC -> KFLS` 内核链：`B_{c,x}` 与 `\\widehat\\beta_c(\\ell)` 由有限 Fourier 反演精确等价。自足版剩余不是新的普通大筛估计，而是 `NCBLKActualBlockNonConcentrationOrExternalDIBFI`。",
+  "source_hashes": {
+    "bd_cen_no_go_md": "927b69a25bee6a459b19561c111fb5797931d27d2b8673170ba9ab83c6a01b99",
+    "blk_energy_obstruction_md": "c424b1aed6378b1e476c86e238dfe7e02cf59f983efffcb6a8b9b7bf18715ca7",
+    "bsc_fraction_md": "33125fe96039dd099023d8bdc983c17150a99cab9f9ee66e3fa22af7f3332859",
+    "bwfd_completion_md": "54e835be78bdd9c8b3369ac87e83b14c597a4288e297003a09860d14976ac289",
+    "cfqk_block_md": "9e2f7eadc88db684cc6fd0ea432ee0df998e6b6444bbed64319d2c2fef35bfb3",
+    "completed_weight_spectral_gap_json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f",
+    "kfls_square_md": "2145c0824498ee21b9575d6e9b371f904e1a71447a844330457360f5715b19a5",
+    "script": "b636a01f1b9aae951931d35d4b84547ae7d6e31c0f63fc4b33f8bf58c5e6886e",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb"
+  },
+  "status": "c_dependent_residue_spectral_input_reduced_to_kfls_ncblk_or_external_open",
+  "structural_law": "The c-dependent residue object is not a new unrelated obstacle. It is the residue-space Fourier dual of the BWFD finite completion. After c=uv, the same object becomes the BSC/KFLS reciprocal-fraction phase. The remaining self-contained obstruction is therefore not another completion estimate, but actual same-(u,v) block non-concentration for the full-S non-AP WFD coefficients, unless a precisely matched external DI/BFI/Kuznetsov dispersion theorem is used.",
+  "terminal_gap_after_router": "NCBLKActualBlockNonConcentrationOrExternalDIBFI",
+  "terminal_gap_expansion": [
+    "KFLSCoreInput",
+    "NCBLKActualBlockNonConcentration",
+    "ExternalDIBFIOrKuznetsovDispersionTheoremMatch"
+  ]
+}
