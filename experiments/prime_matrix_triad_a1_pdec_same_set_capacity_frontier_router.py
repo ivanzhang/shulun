@@ -68,6 +68,7 @@ DEFAULT_CANONICAL_RIW_SUPPORT = (
 DEFAULT_SQUAREFREE_BUCHSTAB_SUPPORT = (
     DOCS / "prime-matrix-triad-a1-squarefree-buchstab-support-router.json"
 )
+DEFAULT_LAYER_TRANSFER = DOCS / "prime-matrix-triad-a1-layer-transfer-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -142,6 +143,7 @@ def build_frontier_rows(
     factor_residue_incidence: dict[str, Any],
     canonical_riw_support: dict[str, Any],
     squarefree_buchstab_support: dict[str, Any],
+    layer_transfer: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -408,6 +410,18 @@ def build_frontier_rows(
             ),
             "next_action": "证明 exact canonical 层承认/非零转移，并把薄或未承认块送回 PDEC/SAE；外部版引用 DI/BFI。",
         },
+        {
+            "frontier": "A1CanonicalLayerTransferRouter",
+            "status": "selector_retention_clean_return_or_external_dibfi_required"
+            if layer_transfer["next_internal_target"]
+            == "CanonicalSelectorRetentionOrCleanReturn"
+            else "layer_transfer_gap",
+            "evidence": (
+                f"exact 层转移已化为 selector 保留率或 clean 退出合同；"
+                f"terminal_gap={layer_transfer['terminal_gap_after_router']}。"
+            ),
+            "next_action": "固定 exact RIW/Buchstab selector，证明其保留 log-power 支撑；失败块回 PDEC/SAE。",
+        },
     ]
 
 
@@ -437,6 +451,7 @@ def run(
     factor_residue_incidence_path: Path,
     canonical_riw_support_path: Path,
     squarefree_buchstab_support_path: Path,
+    layer_transfer_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -464,6 +479,7 @@ def run(
     factor_residue_incidence = load_json(factor_residue_incidence_path)
     canonical_riw_support = load_json(canonical_riw_support_path)
     squarefree_buchstab_support = load_json(squarefree_buchstab_support_path)
+    layer_transfer = load_json(layer_transfer_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -490,6 +506,7 @@ def run(
         factor_residue_incidence,
         canonical_riw_support,
         squarefree_buchstab_support,
+        layer_transfer,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -516,6 +533,7 @@ def run(
         "canonical_riw_factor_support_or_external_dibfi_required",
         "squarefree_buchstab_support_or_external_dibfi_required",
         "layer_transfer_thin_return_or_external_dibfi_required",
+        "selector_retention_clean_return_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -558,6 +576,7 @@ def run(
             "a1_squarefree_buchstab_support_json": file_sha256(
                 squarefree_buchstab_support_path
             ),
+            "a1_layer_transfer_json": file_sha256(layer_transfer_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -569,7 +588,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn"
+            "CanonicalSelectorRetentionOrCleanReturn"
             "OrExternalDIBFIOriginalDispersion"
         ),
         "structural_law": (
@@ -589,7 +608,8 @@ def run(
             "朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。"
             "CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。"
             "Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；"
-            "当前无黑箱版只剩 exact canonical 层承认、非零系数转移与薄区间回流，"
+            "exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；"
+            "当前无黑箱版只剩 CanonicalSelectorRetentionOrCleanReturn，"
             "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
@@ -608,8 +628,9 @@ def run(
             "FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。"
             "CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。"
             "Squarefree Buchstab 的普通厚区间计数层已被压下去。"
-            "下一步不再是普通计数，而是证明 exact canonical 层承认这些 product 且系数非零，"
-            "并把薄或未承认块严格送回 PDEC/SAE；或者给出外部 DI/BFI 原始 dispersion 引用。"
+            "exact 层转移又被压缩为 selector 保留率/clean 退出合同。"
+            "下一步不再是普通计数或非零语义，而是固定 exact selector，证明其在每个 clean 厚块"
+            "保留 log-power 支撑；失败块必须回 PDEC/SAE。或者给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
 
@@ -651,7 +672,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  ExactFactorSupport needs factor-residue incidence or canonical RIW support；",
         "  FactorResidueIncidence is blocked; remaining internal target is canonical RIW support；",
         "  CanonicalRIW support reduces to squarefree Buchstab layer support；",
-        "  thick squarefree Buchstab counting is paid; exact layer transfer and thin return remain。",
+        "  thick squarefree Buchstab counting is paid; exact layer transfer and thin return remain；",
+        "  layer transfer reduces to canonical selector retention or clean return。",
         "```",
         "",
         "## 2. 汇总",
@@ -710,11 +732,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "FactorResidueIncidence router materialized；",
             "CanonicalRIWFactorSupport router materialized；",
             "SquarefreeBuchstabSupport router materialized；",
-            "remaining independent gap is exact canonical layer transfer/thin return or external DI/BFI original dispersion。",
+            "CanonicalLayerTransfer router materialized；",
+            "remaining independent gap is canonical selector retention/clean return or external DI/BFI original dispersion。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是 exact canonical 层承认与薄块回流：",
-            "证明 CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "所以下一步唯一值得硬攻的 A1 目标是 canonical selector 保留率与 clean 退出合同：",
+            "证明 CanonicalSelectorRetentionOrCleanReturn，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -789,6 +812,7 @@ def main() -> None:
         type=Path,
         default=DEFAULT_SQUAREFREE_BUCHSTAB_SUPPORT,
     )
+    parser.add_argument("--layer-transfer-json", type=Path, default=DEFAULT_LAYER_TRANSFER)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -819,6 +843,7 @@ def main() -> None:
         factor_residue_incidence_path=args.factor_residue_incidence_json,
         canonical_riw_support_path=args.canonical_riw_support_json,
         squarefree_buchstab_support_path=args.squarefree_buchstab_support_json,
+        layer_transfer_path=args.layer_transfer_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

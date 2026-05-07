@@ -4478,3 +4478,78 @@ terminal_dual_gap => CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn
 这一步把“是否有足够 squarefree 产品”的计数硬点排除掉。继续无黑箱硬攻时，不能再停留在
 Mertens/Buchstab 密度层，必须进入 exact canonical RIW/Buchstab 层选择、系数非零转移、
 以及薄块/拒绝块回流的结构刚性证明。
+
+## 83. A1 exact 层转移化为 selector 保留率或 clean 退出合同
+
+新增 `experiments/prime_matrix_triad_a1_layer_transfer_router.py` 后，第 82 节留下的
+`CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn` 被继续压缩。结论是：
+“层承认”和“非零转移”不应再作为两个模糊解析估计；一旦 exact canonical `alpha/delta`
+系数公式固定，承认集合就应定义为非零系数支撑，非零转移随定义闭合。真正的定量义务只剩
+selector 保留率，以及失败块从 clean 分支退出。
+
+机器结果：
+
+```text
+status=layer_transfer_reduced_to_selector_retention_or_clean_return；
+next_internal_target=CanonicalSelectorRetentionOrCleanReturn；
+terminal_gap_after_router=CanonicalSelectorRetentionOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+选择器保留律：
+
+```text
+raw thick Buchstab support >= interval/log^E;
+canonical selector retains >= log^-R of that support;
+if E+R <= C, retained nonzero coefficients >= interval/log^C;
+if selector retention fails, the block must return to edge/PDEC/SAE.
+```
+
+这一步关闭的语义跳步是：
+
+```text
+NonzeroCoefficientTransfer:
+  一旦 selected support 定义为 alpha_u != 0 或 delta_v != 0，
+  被选 product 携带非零系数就是定义事实；
+  不再需要另立一个神秘的非零转移估计。
+```
+
+仍未闭合的门控是：
+
+```text
+ExactCoefficientFormulaFixed:
+  必须写出 canonical RIW/Buchstab 的 alpha_u、delta_v 系数公式；
+
+SelectorRetentionLowerBound:
+  selector 在每个 clean 厚块中至少保留 raw Buchstab support 的 log-power 比例；
+
+RejectedOrThinCleanReturn:
+  若 selector 保留率不足或块太薄，则该块必须触发 endpoint/edge/tail-label/PDEC/SAE，
+  不能继续留在 clean A1 分支。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+CanonicalSelectorRetentionOrCleanReturn:
+  fix the exact canonical RIW/Buchstab coefficient selector;
+  prove it retains a log-power fraction of thick Buchstab support in every clean block;
+  otherwise prove the block exits to edge/PDEC/SAE.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1CanonicalLayerTransferRouter => selector_retention_clean_return_or_external_dibfi_required；
+terminal_dual_gap => CanonicalSelectorRetentionOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把当前硬点压到可审稿的 exact selector 合同：要么直接展示 canonical 筛权选择器在所有
+clean 厚块上具有对数幂保留率，要么证明任何低保留率块都会破坏 clean 准入并返回已有
+PDEC/SAE 出口。

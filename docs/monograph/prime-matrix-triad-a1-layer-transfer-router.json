@@ -1,0 +1,178 @@
+{
+  "all_retention_model_rows_suffice": true,
+  "certificate_type": "triad_a1_layer_transfer_router",
+  "conditional_selector_retention_implies_layer_transfer": true,
+  "exact_coefficient_formula_fixed": false,
+  "gate_rows": [
+    {
+      "available": "RIW/Buchstab factors are named but the exact selector is not ledgered here",
+      "closed": false,
+      "gap": "without the formula, layer admission is a label rather than a checkable predicate",
+      "gate": "ExactCoefficientFormulaFixed",
+      "needed": "an explicit formula for alpha_u and delta_v on the canonical layer",
+      "route": "record the canonical RIW path selector, parity rule and dyadic truncation rule"
+    },
+    {
+      "available": "raw thick Buchstab support has already been paid",
+      "closed": false,
+      "gap": "a selector could be formally well-factorable but keep a sparse sublayer",
+      "gate": "SelectorRetentionLowerBound",
+      "needed": "the exact selector keeps at least a log-power fraction of raw support",
+      "route": "prove retained_support >= raw_support/log^R in every clean thick block"
+    },
+    {
+      "available": "once selected support is defined by alpha_u != 0 or delta_v != 0",
+      "closed": true,
+      "gap": "this is tautological only after the exact coefficient formula is fixed",
+      "gate": "NonzeroTransferAfterSelection",
+      "needed": "selected products carry nonzero coefficients in absolute support",
+      "route": "define admission by nonzero coefficient, then no extra cancellation gate remains"
+    },
+    {
+      "available": "edge/PDEC/SAE exits exist elsewhere",
+      "closed": false,
+      "gap": "clean admission has not yet been stated as the contrapositive of this failure",
+      "gate": "RejectedOrThinCleanReturn",
+      "needed": "blocks failing thickness or selector retention cannot stay in clean A1",
+      "route": "add clean-branch contract: low retention => endpoint/edge/tail-label/PDEC exit"
+    },
+    {
+      "available": "previous squarefree router closed raw thick support",
+      "closed": true,
+      "gap": "conditional implication is direct; the selector/return contract remains",
+      "gate": "LayerTransferImpliesSquarefreeSupport",
+      "needed": "selector retention plus return contract",
+      "route": "combine retained support with nonzero transfer"
+    }
+  ],
+  "layer_transfer_closed": false,
+  "next_internal_target": "CanonicalSelectorRetentionOrCleanReturn",
+  "parameters": {
+    "buchstab_loss_power_E": 2.0,
+    "max_k": 9,
+    "min_k": 3,
+    "required_loss_power_C": 3.0,
+    "scale": "y=10^k",
+    "selector_retention_loss_R": 1.0,
+    "support_power_B": 7.0
+  },
+  "reduction_law": "Layer admission and nonzero transfer should not be treated as two mysterious analytic estimates. Once the exact canonical coefficient formula is fixed, admission can be defined by nonzero coefficient support. The only real quantitative obligation is selector retention: the canonical selector must retain a log-power fraction of the raw thick Buchstab support in every clean block; if it does not, that block must be rejected into an existing edge/PDEC/SAE exit.",
+  "rejected_or_thin_clean_return_closed": false,
+  "review_conclusion": "exact 层承认、非零转移与薄块回流已被压成一个更尖锐的合同：先固定 alpha/delta 的 canonical 系数公式；随后非零转移按定义闭合；真正需要证明的是 selector 在每个 clean 厚块中至少保留 log-power 比例的 Buchstab 支撑，否则该块必须从 clean 分支退出到 edge/PDEC/SAE。",
+  "rows": [
+    {
+      "buchstab_loss_power_E": 2.0,
+      "k": 3,
+      "log_y": 6.907755278982137,
+      "max_allowed_selector_loss_C_minus_E": 1.0,
+      "model_interval_size": 750513.6647456809,
+      "raw_support": 15728.406215343151,
+      "required_loss_power_C": 3.0,
+      "required_support": 2276.920009485447,
+      "retained_support": 2276.920009485447,
+      "retention_suffices": true,
+      "selector_retention_loss_R": 1.0,
+      "support_power_B": 7.0,
+      "y": 1000
+    },
+    {
+      "buchstab_loss_power_E": 2.0,
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "max_allowed_selector_loss_C_minus_E": 1.0,
+      "model_interval_size": 5622503.833193071,
+      "raw_support": 66279.37433955308,
+      "required_loss_power_C": 3.0,
+      "required_support": 7196.1916349169705,
+      "retained_support": 7196.191634916971,
+      "retention_suffices": true,
+      "selector_retention_loss_R": 1.0,
+      "support_power_B": 7.0,
+      "y": 10000
+    },
+    {
+      "buchstab_loss_power_E": 2.0,
+      "k": 5,
+      "log_y": 11.512925464970229,
+      "max_allowed_selector_loss_C_minus_E": 1.0,
+      "model_interval_size": 26810187.498059597,
+      "raw_support": 202268.59844834305,
+      "required_loss_power_C": 3.0,
+      "required_support": 17568.827233684005,
+      "retained_support": 17568.827233684005,
+      "retention_suffices": true,
+      "selector_retention_loss_R": 1.0,
+      "support_power_B": 7.0,
+      "y": 100000
+    },
+    {
+      "buchstab_loss_power_E": 2.0,
+      "k": 6,
+      "log_y": 13.815510557964274,
+      "max_allowed_selector_loss_C_minus_E": 1.0,
+      "model_interval_size": 96065749.08744715,
+      "raw_support": 503308.99889098085,
+      "required_loss_power_C": 3.0,
+      "required_support": 36430.72015176715,
+      "retained_support": 36430.72015176715,
+      "retention_suffices": true,
+      "selector_retention_loss_R": 1.0,
+      "support_power_B": 7.0,
+      "y": 1000000
+    },
+    {
+      "buchstab_loss_power_E": 2.0,
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "max_allowed_selector_loss_C_minus_E": 1.0,
+      "model_interval_size": 282615580.70674556,
+      "raw_support": 1087849.0669188167,
+      "required_loss_power_C": 3.0,
+      "required_support": 67492.40670092047,
+      "retained_support": 67492.40670092049,
+      "retention_suffices": true,
+      "selector_retention_loss_R": 1.0,
+      "support_power_B": 7.0,
+      "y": 10000000
+    },
+    {
+      "buchstab_loss_power_E": 2.0,
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "max_allowed_selector_loss_C_minus_E": 1.0,
+      "model_interval_size": 719680490.6487131,
+      "raw_support": 2120939.9788656984,
+      "required_loss_power_C": 3.0,
+      "required_support": 115139.06615867153,
+      "retained_support": 115139.06615867154,
+      "retention_suffices": true,
+      "selector_retention_loss_R": 1.0,
+      "support_power_B": 7.0,
+      "y": 100000000
+    },
+    {
+      "buchstab_loss_power_E": 2.0,
+      "k": 9,
+      "log_y": 20.72326583694641,
+      "max_allowed_selector_loss_C_minus_E": 1.0,
+      "model_interval_size": 1641373384.798804,
+      "raw_support": 3822002.7103283857,
+      "required_loss_power_C": 3.0,
+      "required_support": 184430.52076832118,
+      "retained_support": 184430.52076832118,
+      "retention_suffices": true,
+      "selector_retention_loss_R": 1.0,
+      "support_power_B": 7.0,
+      "y": 1000000000
+    }
+  ],
+  "selector_retention_lower_bound_closed": false,
+  "source_hashes": {
+    "script": "86fff0913d4a0b75f9bcc6f0f764143bf545874d127bf6157091f4f89e6bb707",
+    "squarefree_buchstab_support_json": "13edc798e762cafca5ed2e069460bc77ddfc63f709015b53762bc0c8784d6d10"
+  },
+  "squarefree_input_next_target": "CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn",
+  "squarefree_input_status": "raw_thick_squarefree_support_closed_layer_transfer_open",
+  "status": "layer_transfer_reduced_to_selector_retention_or_clean_return",
+  "terminal_gap_after_router": "CanonicalSelectorRetentionOrCleanReturnOrExternalDIBFIOriginalDispersion"
+}
