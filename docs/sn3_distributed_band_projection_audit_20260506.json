@@ -1,0 +1,4570 @@
+{
+  "parameters": {
+    "p_list": [
+      5003,
+      10007,
+      20011,
+      50021,
+      100003,
+      200003
+    ],
+    "alpha": 0.43,
+    "y_factor": 4.0,
+    "tail_factor": 10.0,
+    "top_n": 8,
+    "q_window_scale": 1.0,
+    "qwindow_excess_share": 0.5,
+    "phase_share": 0.35,
+    "centered_return_share": 0.75,
+    "w_list": [
+      30,
+      210
+    ]
+  },
+  "global_summary": {
+    "distributed_candidate_count": 32,
+    "sn3_centered_route_counts": {
+      "true_distributed_dls_candidate": 24,
+      "centered_columncrt_return": 6,
+      "centered_pdec_return": 2
+    },
+    "max_excess_over_required": 0.1325238038245916,
+    "max_excess_over_sqrt_model": 1.3104635109200444,
+    "max_projection_peak_share": 1.018659042102709,
+    "total_distributed_excess": 561.8527106060421,
+    "total_distributed_model": 20707.147289393957
+  },
+  "records": [
+    {
+      "p": 5003,
+      "cutoff": 38,
+      "y_limit": 152,
+      "q_window_width": 71,
+      "distributed_candidate_count": 3,
+      "sn3_centered_route_counts": {
+        "true_distributed_dls_candidate": 3
+      },
+      "total_distributed_excess": 25.524887397425985,
+      "total_distributed_model": 278.47511260257403,
+      "energy_lower_bound_if_same_sign": 2.3395982160211672,
+      "max_excess_over_required": 0.1325238038245916,
+      "max_excess_over_sqrt_model": 0.9709167692522167,
+      "max_projection_peak_share": 0.6124047762537767,
+      "candidates": [
+        {
+          "p": 5003,
+          "y": 34,
+          "x": 33,
+          "capacity_margin": 58,
+          "hit_ratio": 0.9221476510067114,
+          "required_tail_excess": 63.77273612114842,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.1325238038245916,
+          "excess_over_sqrt_model": 0.883289571432837,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 1,
+            "peak_share": 0.3481078937721228,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 100,
+            "model": 91.54859442892348,
+            "excess": 8.45140557107652,
+            "actual_over_model": 1.0923160603807853,
+            "interval_len": 684,
+            "active_m": 13,
+            "q_min": 1261,
+            "q_max": 2395,
+            "q_window": {
+              "block_count": 14,
+              "max_key": 18,
+              "max_positive": 2.4799760595122926,
+              "max_positive_share_of_E": 0.29343948041016793,
+              "positive_sum": 14.53107074321496,
+              "positive_sum_share_of_E": 1.7193673432198124,
+              "signed_l2": 6.377235943006451,
+              "chi2": 6.686343839847596,
+              "chi2_sqrt": 2.585796558093385
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 7,
+                "max_positive": 1.9626389480850701,
+                "max_positive_share_of_E": 0.23222633579458826,
+                "positive_sum": 7.712925710191447,
+                "positive_sum_share_of_E": 0.9126204683144785,
+                "signed_l2": 3.398909977919251,
+                "chi2": 1.0291733814067041,
+                "chi2_sqrt": 1.014481829017506
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 29,
+                "max_positive": 2.0622087801349456,
+                "max_positive_share_of_E": 0.24400778814739407,
+                "positive_sum": 22.103039109252975,
+                "positive_sum_share_of_E": 2.6153092433401635,
+                "signed_l2": 6.663609325286393,
+                "chi2": 22.563616383999577,
+                "chi2_sqrt": 4.750117512651616
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 1,
+                "max_positive": 2.9420009927614323,
+                "max_positive_share_of_E": 0.3481078937721228,
+                "positive_sum": 10.767744045065417,
+                "positive_sum_share_of_E": 1.274077306373293,
+                "signed_l2": 5.6571990949564235,
+                "chi2": 2.776040109430677,
+                "chi2_sqrt": 1.666145284610762
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 1,
+                "max_positive": 2.0687686651606927,
+                "max_positive_share_of_E": 0.24478397679087807,
+                "positive_sum": 20.573504207824918,
+                "positive_sum_share_of_E": 2.4343292999964636,
+                "signed_l2": 6.367146330213116,
+                "chi2": 18.7358482651559,
+                "chi2_sqrt": 4.328492608883132
+              }
+            },
+            "max_centered_projection_peak_share": 0.3481078937721228
+          }
+        },
+        {
+          "p": 5003,
+          "y": 53,
+          "x": 52,
+          "capacity_margin": 69,
+          "hit_ratio": 0.9077540106951871,
+          "required_tail_excess": 74.80957179728777,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.12872318386684303,
+          "excess_over_sqrt_model": 0.9709167692522167,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 13,
+            "peak_share": 0.4310437301035337,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 108,
+            "model": 98.37027373453793,
+            "excess": 9.629726265462068,
+            "actual_over_model": 1.0978926447988633,
+            "interval_len": 804,
+            "active_m": 12,
+            "q_min": 2526,
+            "q_max": 5002,
+            "q_window": {
+              "block_count": 19,
+              "max_key": 69,
+              "max_positive": 2.8225376841129863,
+              "max_positive_share_of_E": 0.29310674117874846,
+              "positive_sum": 16.426231718614176,
+              "positive_sum_share_of_E": 1.7057838681799733,
+              "signed_l2": 6.79518397791759,
+              "chi2": 10.00860407722344,
+              "chi2_sqrt": 3.163637791723863
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 13,
+                "max_positive": 4.150833129340741,
+                "max_positive_share_of_E": 0.4310437301035337,
+                "positive_sum": 11.02329923728673,
+                "positive_sum_share_of_E": 1.144715740967928,
+                "signed_l2": 5.464468244565212,
+                "chi2": 2.386648711592286,
+                "chi2_sqrt": 1.5448782190167243
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 163,
+                "max_positive": 2.328430227364315,
+                "max_positive_share_of_E": 0.24179609712432346,
+                "positive_sum": 22.966251800003434,
+                "positive_sum_share_of_E": 2.3849329842712232,
+                "signed_l2": 6.5321498796212705,
+                "chi2": 21.03240156037601,
+                "chi2_sqrt": 4.58610963239825
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 18,
+                "max_positive": 3.576485177966214,
+                "max_positive_share_of_E": 0.37140050291913485,
+                "positive_sum": 12.674890258572484,
+                "positive_sum_share_of_E": 1.316225395111405,
+                "signed_l2": 6.6624010290296924,
+                "chi2": 3.6431944590914984,
+                "chi2_sqrt": 1.9087153949951519
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 96,
+                "max_positive": 2.237085857939098,
+                "max_positive_share_of_E": 0.23231043087513503,
+                "positive_sum": 23.871170572805642,
+                "positive_sum_share_of_E": 2.4789043753426174,
+                "signed_l2": 6.792167777387442,
+                "chi2": 23.171509266440616,
+                "chi2_sqrt": 4.813679389660327
+              }
+            },
+            "max_centered_projection_peak_share": 0.4310437301035337
+          }
+        },
+        {
+          "p": 5003,
+          "y": 47,
+          "x": 46,
+          "capacity_margin": 70,
+          "hit_ratio": 0.9055330634278003,
+          "required_tail_excess": 68.68945146699197,
+          "band": "[4y,8y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.10836824871813715,
+          "excess_over_sqrt_model": 0.7910109729250278,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 24,
+            "peak_share": 0.6124047762537767,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 96,
+            "model": 88.5562444391126,
+            "excess": 7.443755560887396,
+            "actual_over_model": 1.0840568116684917,
+            "interval_len": 600,
+            "active_m": 32,
+            "q_min": 617,
+            "q_max": 1231,
+            "q_window": {
+              "block_count": 10,
+              "max_key": 12,
+              "max_positive": 2.335223993509363,
+              "max_positive_share_of_E": 0.3137158352941633,
+              "positive_sum": 9.711514012772291,
+              "positive_sum_share_of_E": 1.3046524611582688,
+              "signed_l2": 4.375555670076847,
+              "chi2": 2.6528301342985996,
+              "chi2_sqrt": 1.6287510964842355
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 1,
+                "max_positive": 3.398828867661514,
+                "max_positive_share_of_E": 0.4566013539617531,
+                "positive_sum": 11.41581213219999,
+                "positive_sum_share_of_E": 1.5336092163186335,
+                "signed_l2": 6.783369618291019,
+                "chi2": 4.073284057032832,
+                "chi2_sqrt": 2.0182378593795214
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 131,
+                "max_positive": 1.825115486631402,
+                "max_positive_share_of_E": 0.24518745567376257,
+                "positive_sum": 21.964366252558907,
+                "positive_sum_share_of_E": 2.950710306497552,
+                "signed_l2": 6.418072218704252,
+                "chi2": 23.238217129390424,
+                "chi2_sqrt": 4.8206033988900625
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 24,
+                "max_positive": 4.558591458753051,
+                "max_positive_share_of_E": 0.6124047762537767,
+                "positive_sum": 10.548277310169768,
+                "positive_sum_share_of_E": 1.4170639032795256,
+                "signed_l2": 6.737893524167978,
+                "chi2": 3.9231841699330823,
+                "chi2_sqrt": 1.9807029484334804
+              },
+              "210": {
+                "block_count": 46,
+                "max_key": 174,
+                "max_positive": 1.789165541104921,
+                "max_positive_share_of_E": 0.24035791160391465,
+                "positive_sum": 17.70005055068054,
+                "positive_sum_share_of_E": 2.3778387677967294,
+                "signed_l2": 5.628922184200014,
+                "chi2": 15.296083195163787,
+                "chi2_sqrt": 3.9110207357113036
+              }
+            },
+            "max_centered_projection_peak_share": 0.6124047762537767
+          }
+        }
+      ]
+    },
+    {
+      "p": 10007,
+      "cutoff": 52,
+      "y_limit": 208,
+      "q_window_width": 100,
+      "distributed_candidate_count": 5,
+      "sn3_centered_route_counts": {
+        "true_distributed_dls_candidate": 5
+      },
+      "total_distributed_excess": 60.73912836811269,
+      "total_distributed_model": 777.2608716318873,
+      "energy_lower_bound_if_same_sign": 4.746465246825529,
+      "max_excess_over_required": 0.1321501311195098,
+      "max_excess_over_sqrt_model": 1.3104635109200444,
+      "max_projection_peak_share": 0.6931685093975772,
+      "candidates": [
+        {
+          "p": 10007,
+          "y": 46,
+          "x": 45,
+          "capacity_margin": 98,
+          "hit_ratio": 0.9294456443484521,
+          "required_tail_excess": 107.86189972808057,
+          "band": "[4y,8y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.1321501311195098,
+          "excess_over_sqrt_model": 1.1348969696444011,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 19,
+            "peak_share": 0.37561150677544264,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 172,
+            "model": 157.74603580813474,
+            "excess": 14.253964191865265,
+            "actual_over_model": 1.0903602053696122,
+            "interval_len": 1176,
+            "active_m": 31,
+            "q_min": 1228,
+            "q_max": 2410,
+            "q_window": {
+              "block_count": 13,
+              "max_key": 14,
+              "max_positive": 5.1307357466905295,
+              "max_positive_share_of_E": 0.35995149683472893,
+              "positive_sum": 18.406716193333143,
+              "positive_sum_share_of_E": 1.2913401454900422,
+              "signed_l2": 7.902183788846154,
+              "chi2": 6.196285918572831,
+              "chi2_sqrt": 2.4892340023735877
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 17,
+                "max_positive": 4.874294492139814,
+                "max_positive_share_of_E": 0.34196062418352174,
+                "positive_sum": 14.201026243022866,
+                "positive_sum_share_of_E": 0.9962860893903038,
+                "signed_l2": 6.563159157330015,
+                "chi2": 2.101776668743948,
+                "chi2_sqrt": 1.44975055397263
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 61,
+                "max_positive": 2.5257555377134375,
+                "max_positive_share_of_E": 0.17719670848863825,
+                "positive_sum": 29.655048845969134,
+                "positive_sum_share_of_E": 2.080477293670575,
+                "signed_l2": 7.871522670122486,
+                "chi2": 18.506412104713498,
+                "chi2_sqrt": 4.30190796097656
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 19,
+                "max_positive": 5.353952967629716,
+                "max_positive_share_of_E": 0.37561150677544264,
+                "positive_sum": 16.396747549957542,
+                "positive_sum_share_of_E": 1.1503289421279144,
+                "signed_l2": 8.432360061143491,
+                "chi2": 3.5641209946611174,
+                "chi2_sqrt": 1.8878879719573187
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 201,
+                "max_positive": 2.8995325517888704,
+                "max_positive_share_of_E": 0.20341937953258177,
+                "positive_sum": 26.86283801329566,
+                "positive_sum_share_of_E": 1.8845871682928934,
+                "signed_l2": 7.1223919775547175,
+                "chi2": 16.15164513501846,
+                "chi2_sqrt": 4.0189109389259245
+              }
+            },
+            "max_centered_projection_peak_share": 0.37561150677544264
+          }
+        },
+        {
+          "p": 10007,
+          "y": 75,
+          "x": 74,
+          "capacity_margin": 116,
+          "hit_ratio": 0.9161849710982659,
+          "required_tail_excess": 132.29215751032638,
+          "band": "[4y,8y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.12014499184207322,
+          "excess_over_sqrt_model": 1.3104635109200444,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_window",
+            "peak_w": null,
+            "peak_key": 16,
+            "peak_share": 0.4503234767420662,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 163,
+            "model": 147.10575981515157,
+            "excess": 15.894240184848428,
+            "actual_over_model": 1.1080463484558363,
+            "interval_len": 1098,
+            "active_m": 46,
+            "q_min": 1237,
+            "q_max": 2444,
+            "q_window": {
+              "block_count": 13,
+              "max_key": 16,
+              "max_positive": 7.1575495002144045,
+              "max_positive_share_of_E": 0.4503234767420662,
+              "positive_sum": 24.81423263129549,
+              "positive_sum_share_of_E": 1.561209113660574,
+              "signed_l2": 12.086945774935096,
+              "chi2": 11.229163741293796,
+              "chi2_sqrt": 3.3509944406539676
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 17,
+                "max_positive": 4.876203837568198,
+                "max_positive_share_of_E": 0.3067906223171686,
+                "positive_sum": 14.312133747510888,
+                "positive_sum_share_of_E": 0.9004603920075575,
+                "signed_l2": 6.586845667827985,
+                "chi2": 2.2582096869567483,
+                "chi2_sqrt": 1.502734070604892
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 41,
+                "max_positive": 2.9110860266650826,
+                "max_positive_share_of_E": 0.18315351931325075,
+                "positive_sum": 29.846613015744616,
+                "positive_sum_share_of_E": 1.877825719797328,
+                "signed_l2": 8.43585958403554,
+                "chi2": 21.523068007538175,
+                "chi2_sqrt": 4.639296068105395
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 8,
+                "max_positive": 4.8458800075209645,
+                "max_positive_share_of_E": 0.3048827720711316,
+                "positive_sum": 15.90123152404107,
+                "positive_sum_share_of_E": 1.000439866210107,
+                "signed_l2": 7.517953761979938,
+                "chi2": 2.9865883108473956,
+                "chi2_sqrt": 1.728174849616611
+              },
+              "210": {
+                "block_count": 47,
+                "max_key": 88,
+                "max_positive": 1.8528087963453803,
+                "max_positive_share_of_E": 0.11657108328535361,
+                "positive_sum": 26.772554030590868,
+                "positive_sum_share_of_E": 1.6844186144935986,
+                "signed_l2": 6.773726176398024,
+                "chi2": 15.926374158010855,
+                "chi2_sqrt": 3.990786157890555
+              }
+            },
+            "max_centered_projection_peak_share": 0.4503234767420662
+          }
+        },
+        {
+          "p": 10007,
+          "y": 63,
+          "x": 62,
+          "capacity_margin": 100,
+          "hit_ratio": 0.9276934201012292,
+          "required_tail_excess": 121.84898729378038,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.0894502080847399,
+          "excess_over_sqrt_model": 0.8808761619496837,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 14,
+            "peak_share": 0.6931685093975772,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 164,
+            "model": 153.10058273165652,
+            "excess": 10.899417268343484,
+            "actual_over_model": 1.0711912200063092,
+            "interval_len": 1358,
+            "active_m": 12,
+            "q_min": 5491,
+            "q_max": 9409,
+            "q_window": {
+              "block_count": 23,
+              "max_key": 58,
+              "max_positive": 4.38311362752,
+              "max_positive_share_of_E": 0.40214201544979983,
+              "positive_sum": 18.960134051537366,
+              "positive_sum_share_of_E": 1.7395548390101196,
+              "signed_l2": 8.311765282598083,
+              "chi2": 10.486043545759449,
+              "chi2_sqrt": 3.238216105475274
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 23,
+                "max_positive": 4.124314957619642,
+                "max_positive_share_of_E": 0.3783977488042775,
+                "positive_sum": 14.99228550759015,
+                "positive_sum_share_of_E": 1.375512574523969,
+                "signed_l2": 7.6861759352944246,
+                "chi2": 3.066162003694907,
+                "chi2_sqrt": 1.7510459741808342
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 173,
+                "max_positive": 2.549314522023511,
+                "max_positive_share_of_E": 0.23389457062331195,
+                "positive_sum": 27.71387778590605,
+                "positive_sum_share_of_E": 2.5426935315522665,
+                "signed_l2": 8.254657793377131,
+                "chi2": 21.430215166826837,
+                "chi2_sqrt": 4.629278039481625
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 14,
+                "max_positive": 7.555132821199866,
+                "max_positive_share_of_E": 0.6931685093975772,
+                "positive_sum": 12.62719817983697,
+                "positive_sum_share_of_E": 1.1585204849906694,
+                "signed_l2": 8.458070295003802,
+                "chi2": 3.689663200163696,
+                "chi2_sqrt": 1.9208496037336438
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 80,
+                "max_positive": 2.5513919904132925,
+                "max_positive_share_of_E": 0.23408517424354544,
+                "positive_sum": 33.24838006956778,
+                "positive_sum_share_of_E": 3.0504731813631114,
+                "signed_l2": 10.164787043226452,
+                "chi2": 33.31043146893408,
+                "chi2_sqrt": 5.771518991473049
+              }
+            },
+            "max_centered_projection_peak_share": 0.6931685093975772
+          }
+        },
+        {
+          "p": 10007,
+          "y": 60,
+          "x": 59,
+          "capacity_margin": 120,
+          "hit_ratio": 0.9140401146131805,
+          "required_tail_excess": 125.67348862556362,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.08611383895704734,
+          "excess_over_sqrt_model": 0.8247609265991965,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 23,
+            "peak_share": 0.4996751067927717,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 183,
+            "model": 172.1777734393279,
+            "excess": 10.822226560672107,
+            "actual_over_model": 1.0628549570858845,
+            "interval_len": 1525,
+            "active_m": 13,
+            "q_min": 5225,
+            "q_max": 9842,
+            "q_window": {
+              "block_count": 27,
+              "max_key": 58,
+              "max_positive": 4.307541564799321,
+              "max_positive_share_of_E": 0.3980272950903556,
+              "positive_sum": 21.84181058314574,
+              "positive_sum_share_of_E": 2.0182363084615806,
+              "signed_l2": 8.196740427340146,
+              "chi2": 10.433269277464685,
+              "chi2_sqrt": 3.2300571631883988
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 19,
+                "max_positive": 4.429345117647948,
+                "max_positive_share_of_E": 0.40928223899360566,
+                "positive_sum": 14.877913947156081,
+                "positive_sum_share_of_E": 1.374755357758108,
+                "signed_l2": 7.321176348385565,
+                "chi2": 2.496608703587181,
+                "chi2_sqrt": 1.5800660440586594
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 191,
+                "max_positive": 3.023835581653792,
+                "max_positive_share_of_E": 0.27940974666362917,
+                "positive_sum": 29.909036443102828,
+                "positive_sum_share_of_E": 2.763667557265161,
+                "signed_l2": 9.569244672926523,
+                "chi2": 27.175049957738068,
+                "chi2_sqrt": 5.212969399271213
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 23,
+                "max_positive": 5.407597212439406,
+                "max_positive_share_of_E": 0.4996751067927717,
+                "positive_sum": 15.301627260564736,
+                "positive_sum_share_of_E": 1.4139074962790688,
+                "signed_l2": 8.611035399036815,
+                "chi2": 3.4607000110821273,
+                "chi2_sqrt": 1.8602956784022606
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 59,
+                "max_positive": 3.5473506504374086,
+                "max_positive_share_of_E": 0.32778380960240244,
+                "positive_sum": 34.59829621038296,
+                "positive_sum_share_of_E": 3.1969665407036407,
+                "signed_l2": 10.320116781711208,
+                "chi2": 27.39797544756048,
+                "chi2_sqrt": 5.234307542317367
+              }
+            },
+            "max_centered_projection_peak_share": 0.4996751067927717
+          }
+        },
+        {
+          "p": 10007,
+          "y": 75,
+          "x": 74,
+          "capacity_margin": 116,
+          "hit_ratio": 0.9161849710982659,
+          "required_tail_excess": 132.29215751032638,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.06704312885433962,
+          "excess_over_sqrt_model": 0.7312008603107923,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 22,
+            "peak_share": 0.6527230275735219,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 156,
+            "model": 147.1307198376166,
+            "excess": 8.869280162383404,
+            "actual_over_model": 1.060281633721171,
+            "interval_len": 1302,
+            "active_m": 14,
+            "q_min": 4970,
+            "q_max": 9500,
+            "q_window": {
+              "block_count": 27,
+              "max_key": 94,
+              "max_positive": 4.065894057427917,
+              "max_positive_share_of_E": 0.45842435721810665,
+              "positive_sum": 19.706307459644727,
+              "positive_sum_share_of_E": 2.221860973929268,
+              "signed_l2": 7.843617959897694,
+              "chi2": 8.956544119128043,
+              "chi2_sqrt": 2.992748589361967
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 23,
+                "max_positive": 5.061683098652075,
+                "max_positive_share_of_E": 0.5706982986195207,
+                "positive_sum": 10.446537566017163,
+                "positive_sum_share_of_E": 1.1778337559256793,
+                "signed_l2": 5.89158734670955,
+                "chi2": 1.797683850053178,
+                "chi2_sqrt": 1.3407773305262802
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 143,
+                "max_positive": 2.0542712885776035,
+                "max_positive_share_of_E": 0.23161646164817595,
+                "positive_sum": 29.018500233592814,
+                "positive_sum_share_of_E": 3.2717988046726436,
+                "signed_l2": 8.059771788578646,
+                "chi2": 21.945946921868828,
+                "chi2_sqrt": 4.68465013868366
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 22,
+                "max_positive": 5.789183399988673,
+                "max_positive_share_of_E": 0.6527230275735219,
+                "positive_sum": 20.810875890211623,
+                "positive_sum_share_of_E": 2.3463996524177,
+                "signed_l2": 12.977302199333302,
+                "chi2": 9.095428604728795,
+                "chi2_sqrt": 3.015862829229605
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 124,
+                "max_positive": 4.046995440494787,
+                "max_positive_share_of_E": 0.4562935623185067,
+                "positive_sum": 33.413746920542515,
+                "positive_sum_share_of_E": 3.767357249831578,
+                "signed_l2": 10.463122917670049,
+                "chi2": 36.264765703034364,
+                "chi2_sqrt": 6.022023389445973
+              }
+            },
+            "max_centered_projection_peak_share": 0.6527230275735219
+          }
+        }
+      ]
+    },
+    {
+      "p": 20011,
+      "cutoff": 70,
+      "y_limit": 280,
+      "q_window_width": 141,
+      "distributed_candidate_count": 5,
+      "sn3_centered_route_counts": {
+        "true_distributed_dls_candidate": 4,
+        "centered_columncrt_return": 1
+      },
+      "total_distributed_excess": 71.97742954275029,
+      "total_distributed_model": 1358.0225704572497,
+      "energy_lower_bound_if_same_sign": 3.8149221347898585,
+      "max_excess_over_required": 0.12535750019887468,
+      "max_excess_over_sqrt_model": 1.090000364422002,
+      "max_projection_peak_share": 0.7527363548600204,
+      "candidates": [
+        {
+          "p": 20011,
+          "y": 71,
+          "x": 70,
+          "capacity_margin": 112,
+          "hit_ratio": 0.9568567026194145,
+          "required_tail_excess": 146.75986639631566,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.12535750019887468,
+          "excess_over_sqrt_model": 1.0355888815481253,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 18,
+            "peak_share": 0.511271452689057,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 334,
+            "model": 315.60255001903704,
+            "excess": 18.39744998096296,
+            "actual_over_model": 1.0582930967441588,
+            "interval_len": 3021,
+            "active_m": 15,
+            "q_min": 10078,
+            "q_max": 20010,
+            "q_window": {
+              "block_count": 35,
+              "max_key": 97,
+              "max_positive": 4.70727565191471,
+              "max_positive_share_of_E": 0.25586565838122316,
+              "positive_sum": 33.67752253247776,
+              "positive_sum_share_of_E": 1.8305538304126976,
+              "signed_l2": 11.038762354566634,
+              "chi2": 12.20526945424828,
+              "chi2_sqrt": 3.4936040780615483
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 5.830267420474513,
+                "max_positive_share_of_E": 0.31690627921301434,
+                "positive_sum": 21.197486547818563,
+                "positive_sum_share_of_E": 1.1521969930481117,
+                "signed_l2": 10.166563306351545,
+                "chi2": 2.5989434459283163,
+                "chi2_sqrt": 1.6121238928594528
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 209,
+                "max_positive": 4.139111483481609,
+                "max_positive_share_of_E": 0.22498289098568647,
+                "positive_sum": 42.47214007749566,
+                "positive_sum_share_of_E": 2.3085884251048023,
+                "signed_l2": 12.093909234713745,
+                "chi2": 22.221814125513202,
+                "chi2_sqrt": 4.7140019225190395
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 18,
+                "max_positive": 9.406090977541197,
+                "max_positive_share_of_E": 0.511271452689057,
+                "positive_sum": 22.99028784028159,
+                "positive_sum_share_of_E": 1.2496453510715417,
+                "signed_l2": 13.562703180412703,
+                "chi2": 4.687083639122517,
+                "chi2_sqrt": 2.164967352899927
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 190,
+                "max_positive": 5.173786567492688,
+                "max_positive_share_of_E": 0.2812230267154601,
+                "positive_sum": 42.101699505340164,
+                "positive_sum_share_of_E": 2.288452994784904,
+                "signed_l2": 11.91436502728349,
+                "chi2": 21.733533897349123,
+                "chi2_sqrt": 4.66192384079246
+              }
+            },
+            "max_centered_projection_peak_share": 0.511271452689057
+          }
+        },
+        {
+          "p": 20011,
+          "y": 66,
+          "x": 65,
+          "capacity_margin": 190,
+          "hit_ratio": 0.9266409266409267,
+          "required_tail_excess": 188.33855807515997,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.06820198245592228,
+          "excess_over_sqrt_model": 0.760669130859872,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 29,
+            "peak_share": 0.5962688514584323,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 298,
+            "model": 285.15493696638424,
+            "excess": 12.845063033615759,
+            "actual_over_model": 1.0450459079203318,
+            "interval_len": 2522,
+            "active_m": 24,
+            "q_min": 4946,
+            "q_max": 9640,
+            "q_window": {
+              "block_count": 29,
+              "max_key": 61,
+              "max_positive": 5.661905491766129,
+              "max_positive_share_of_E": 0.44078456267196364,
+              "positive_sum": 28.90061535160001,
+              "positive_sum_share_of_E": 2.2499395507804505,
+              "signed_l2": 10.921704110266965,
+              "chi2": 12.123095282592196,
+              "chi2_sqrt": 3.481823557073534
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 19,
+                "max_positive": 5.24404699847895,
+                "max_positive_share_of_E": 0.4082538937142765,
+                "positive_sum": 17.920424092980653,
+                "positive_sum_share_of_E": 1.3951215378299495,
+                "signed_l2": 8.996012979791637,
+                "chi2": 2.3129029007202173,
+                "chi2_sqrt": 1.5208230997457322
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 191,
+                "max_positive": 4.032595842730369,
+                "max_positive_share_of_E": 0.3139413043110021,
+                "positive_sum": 39.0589368865253,
+                "positive_sum_share_of_E": 3.0407742479976445,
+                "signed_l2": 11.525174856421046,
+                "chi2": 22.499264091230604,
+                "chi2_sqrt": 4.743338918022895
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 7.6591109819652345,
+                "max_positive_share_of_E": 0.5962688514584323,
+                "positive_sum": 18.78840996687964,
+                "positive_sum_share_of_E": 1.4626950383746686,
+                "signed_l2": 10.555881771161882,
+                "chi2": 3.1837149954101065,
+                "chi2_sqrt": 1.7842967789608617
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 209,
+                "max_positive": 3.4859161008368265,
+                "max_positive_share_of_E": 0.27138178237927846,
+                "positive_sum": 38.69403501619348,
+                "positive_sum_share_of_E": 3.012366300961739,
+                "signed_l2": 11.346237783552315,
+                "chi2": 20.905427738365805,
+                "chi2_sqrt": 4.57224537162714
+              }
+            },
+            "max_centered_projection_peak_share": 0.5962688514584323
+          }
+        },
+        {
+          "p": 20011,
+          "y": 99,
+          "x": 98,
+          "capacity_margin": 214,
+          "hit_ratio": 0.9175654853620955,
+          "required_tail_excess": 249.33378717780698,
+          "band": "[16y,32y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.06453328351645592,
+          "excess_over_sqrt_model": 1.090000364422002,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_window",
+            "peak_w": null,
+            "peak_key": 7,
+            "peak_share": 0.3806027114685867,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 234,
+            "model": 217.9096720218229,
+            "excess": 16.0903279781771,
+            "actual_over_model": 1.0738394391992188,
+            "interval_len": 1488,
+            "active_m": 145,
+            "q_min": 701,
+            "q_max": 1240,
+            "q_window": {
+              "block_count": 5,
+              "max_key": 7,
+              "max_positive": 6.1240224569130675,
+              "max_positive_share_of_E": 0.3806027114685867,
+              "positive_sum": 16.090327978177008,
+              "positive_sum_share_of_E": 0.9999999999999942,
+              "signed_l2": 8.953905849789656,
+              "chi2": 1.54204484316012,
+              "chi2_sqrt": 1.2417909820739237
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 11,
+                "max_positive": 6.11934800430738,
+                "max_positive_share_of_E": 0.38031219827258306,
+                "positive_sum": 13.661408580775557,
+                "positive_sum_share_of_E": 0.8490447552905184,
+                "signed_l2": 8.223042052011673,
+                "chi2": 2.6532752938004887,
+                "chi2_sqrt": 1.62888774745238
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 79,
+                "max_positive": 3.897068134329869,
+                "max_positive_share_of_E": 0.24219942188968197,
+                "positive_sum": 52.57270494394275,
+                "positive_sum_share_of_E": 3.2673482489136183,
+                "signed_l2": 17.622995448626877,
+                "chi2": 58.109192377970196,
+                "chi2_sqrt": 7.622938565800606
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 22,
+                "max_positive": 4.154554012946072,
+                "max_positive_share_of_E": 0.2582019470691205,
+                "positive_sum": 14.131436850841734,
+                "positive_sum_share_of_E": 0.8782566067023518,
+                "signed_l2": 7.2845857381447745,
+                "chi2": 1.7974591669368627,
+                "chi2_sqrt": 1.3406935395297699
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 142,
+                "max_positive": 2.0854921521524803,
+                "max_positive_share_of_E": 0.12961153774994394,
+                "positive_sum": 21.448303989102662,
+                "positive_sum_share_of_E": 1.3329935858481223,
+                "signed_l2": 6.402159006640152,
+                "chi2": 9.721962207650607,
+                "chi2_sqrt": 3.1180061269424417
+              }
+            },
+            "max_centered_projection_peak_share": 0.3806027114685867
+          }
+        },
+        {
+          "p": 20011,
+          "y": 80,
+          "x": 79,
+          "capacity_margin": 198,
+          "hit_ratio": 0.9233449477351916,
+          "required_tail_excess": 217.2217067067434,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.0633186271429921,
+          "excess_over_sqrt_model": 0.8143761894302486,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 29,
+            "peak_share": 0.5708921566497231,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 299,
+            "model": 285.2458197456713,
+            "excess": 13.754180254328674,
+            "actual_over_model": 1.0482186917466207,
+            "interval_len": 2525,
+            "active_m": 29,
+            "q_min": 4987,
+            "q_max": 9821,
+            "q_window": {
+              "block_count": 28,
+              "max_key": 40,
+              "max_positive": 3.9889244738160485,
+              "max_positive_share_of_E": 0.2900154280412798,
+              "positive_sum": 32.70250493082236,
+              "positive_sum_share_of_E": 2.3776411480815316,
+              "signed_l2": 11.778598377613228,
+              "chi2": 14.998975853148227,
+              "chi2_sqrt": 3.8728511271604833
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 7.852153628342734,
+                "max_positive_share_of_E": 0.5708921566497231,
+                "positive_sum": 15.388519892573392,
+                "positive_sum_share_of_E": 1.1188249396201104,
+                "signed_l2": 9.59924608526258,
+                "chi2": 2.602396445099348,
+                "chi2_sqrt": 1.6131944845862038
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 73,
+                "max_positive": 3.5706962255278567,
+                "max_positive_share_of_E": 0.25960807256427354,
+                "positive_sum": 41.04921926505685,
+                "positive_sum_share_of_E": 2.98449042443936,
+                "signed_l2": 11.967902885634535,
+                "chi2": 23.656679087318864,
+                "chi2_sqrt": 4.863813224962372
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 3,
+                "max_positive": 5.280976817107778,
+                "max_positive_share_of_E": 0.3839543120314833,
+                "positive_sum": 16.02079581586014,
+                "positive_sum_share_of_E": 1.164794667484318,
+                "signed_l2": 7.662225532403961,
+                "chi2": 1.6548824683189902,
+                "chi2_sqrt": 1.2864223522307867
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 193,
+                "max_positive": 6.088241842964706,
+                "max_positive_share_of_E": 0.44264665217315535,
+                "positive_sum": 39.219047179121986,
+                "positive_sum_share_of_E": 2.851427453612082,
+                "signed_l2": 12.32977530422883,
+                "chi2": 24.91283498895868,
+                "chi2_sqrt": 4.991275887882645
+              }
+            },
+            "max_centered_projection_peak_share": 0.5708921566497231
+          }
+        },
+        {
+          "p": 20011,
+          "y": 99,
+          "x": 98,
+          "capacity_margin": 214,
+          "hit_ratio": 0.9175654853620955,
+          "required_tail_excess": 249.33378717780698,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.04367802863355833,
+          "excess_over_sqrt_model": 0.6831776233671195,
+          "sn3_centered_route": {
+            "route": "centered_columncrt_return",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 26,
+            "peak_share": 0.7527363548600204,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 265,
+            "model": 254.1095917043342,
+            "excess": 10.890408295665793,
+            "actual_over_model": 1.0428571319273032,
+            "interval_len": 2249,
+            "active_m": 32,
+            "q_min": 5042,
+            "q_max": 9955,
+            "q_window": {
+              "block_count": 30,
+              "max_key": 40,
+              "max_positive": 4.00151403118406,
+              "max_positive_share_of_E": 0.36743471158713104,
+              "positive_sum": 27.860619560436625,
+              "positive_sum_share_of_E": 2.558271352555689,
+              "signed_l2": 10.209736283787581,
+              "chi2": 12.832946645998957,
+              "chi2_sqrt": 3.582310238658701
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 19,
+                "max_positive": 5.390542965253161,
+                "max_positive_share_of_E": 0.49498079584385374,
+                "positive_sum": 21.527813531539316,
+                "positive_sum_share_of_E": 1.9767682668157665,
+                "signed_l2": 12.172131728058499,
+                "chi2": 4.763829615238528,
+                "chi2_sqrt": 2.182619897104974
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 47,
+                "max_positive": 3.0716883134200446,
+                "max_positive_share_of_E": 0.28205446756688884,
+                "positive_sum": 35.439078135672275,
+                "positive_sum_share_of_E": 3.2541551403335776,
+                "signed_l2": 10.661266774511047,
+                "chi2": 22.294862311578992,
+                "chi2_sqrt": 4.721743566901849
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 26,
+                "max_positive": 8.197606243416796,
+                "max_positive_share_of_E": 0.7527363548600204,
+                "positive_sum": 20.507540293472026,
+                "positive_sum_share_of_E": 1.8830827767617948,
+                "signed_l2": 12.177809197072907,
+                "chi2": 4.677313435808118,
+                "chi2_sqrt": 2.162709743772409
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 146,
+                "max_positive": 5.063662960887963,
+                "max_positive_share_of_E": 0.4649653918763743,
+                "positive_sum": 33.61925792344445,
+                "positive_sum_share_of_E": 3.0870521114276657,
+                "signed_l2": 10.237082857524909,
+                "chi2": 20.041414901482156,
+                "chi2_sqrt": 4.476763887171419
+              }
+            },
+            "max_centered_projection_peak_share": 0.7527363548600204
+          }
+        }
+      ]
+    },
+    {
+      "p": 50021,
+      "cutoff": 104,
+      "y_limit": 416,
+      "q_window_width": 224,
+      "distributed_candidate_count": 7,
+      "sn3_centered_route_counts": {
+        "true_distributed_dls_candidate": 5,
+        "centered_columncrt_return": 2
+      },
+      "total_distributed_excess": 126.16644082745734,
+      "total_distributed_model": 4101.833559172543,
+      "energy_lower_bound_if_same_sign": 3.8806964157461827,
+      "max_excess_over_required": 0.0497041917890569,
+      "max_excess_over_sqrt_model": 0.9923579649639281,
+      "max_projection_peak_share": 1.018659042102709,
+      "candidates": [
+        {
+          "p": 50021,
+          "y": 128,
+          "x": 127,
+          "capacity_margin": 486,
+          "hit_ratio": 0.9175991861648016,
+          "required_tail_excess": 489.72294223944175,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.0497041917890569,
+          "excess_over_sqrt_model": 0.9923579649639281,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 21,
+            "peak_share": 0.7461381510298242,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 626,
+            "model": 601.6587169554296,
+            "excess": 24.341283044570446,
+            "actual_over_model": 1.0404569606632552,
+            "interval_len": 6301,
+            "active_m": 23,
+            "q_min": 25310,
+            "q_max": 48875,
+            "q_window": {
+              "block_count": 50,
+              "max_key": 127,
+              "max_positive": 8.061448124281977,
+              "max_positive_share_of_E": 0.33118419064109933,
+              "positive_sum": 56.16393383348852,
+              "positive_sum_share_of_E": 2.3073530565602796,
+              "signed_l2": 17.351080321097825,
+              "chi2": 22.177030576143586,
+              "chi2_sqrt": 4.709249470578468
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 16.701731337754893,
+                "max_positive_share_of_E": 0.6861483557449686,
+                "positive_sum": 32.45314170511571,
+                "positive_sum_share_of_E": 1.3332551799217787,
+                "signed_l2": 19.50257440129032,
+                "chi2": 4.996518757861341,
+                "chi2_sqrt": 2.2352894125507197
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 181,
+                "max_positive": 5.467521746006394,
+                "max_positive_share_of_E": 0.22461929126722746,
+                "positive_sum": 63.97338458126827,
+                "positive_sum_share_of_E": 2.6281845728562834,
+                "signed_l2": 18.182886524347087,
+                "chi2": 25.93980561906588,
+                "chi2_sqrt": 5.093113548613056
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 21,
+                "max_positive": 18.161959924569402,
+                "max_positive_share_of_E": 0.7461381510298242,
+                "positive_sum": 40.59854211204562,
+                "positive_sum_share_of_E": 1.6678883375912064,
+                "signed_l2": 25.978687798089336,
+                "chi2": 9.007006444710726,
+                "chi2_sqrt": 3.001167513603785
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 171,
+                "max_positive": 6.878796974554721,
+                "max_positive_share_of_E": 0.2825979617409322,
+                "positive_sum": 67.08777136107462,
+                "positive_sum_share_of_E": 2.7561312704113674,
+                "signed_l2": 18.858992608627585,
+                "chi2": 28.357429382169215,
+                "chi2_sqrt": 5.325169422860574
+              }
+            },
+            "max_centered_projection_peak_share": 0.7461381510298242
+          }
+        },
+        {
+          "p": 50021,
+          "y": 125,
+          "x": 124,
+          "capacity_margin": 508,
+          "hit_ratio": 0.9139712108382726,
+          "required_tail_excess": 516.4200226822946,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.03936009148594007,
+          "excess_over_sqrt_model": 0.8165403549360191,
+          "sn3_centered_route": {
+            "route": "centered_columncrt_return",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 2,
+            "peak_share": 0.8712494700882008,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 640,
+            "model": 619.6736606620536,
+            "excess": 20.326339337946365,
+            "actual_over_model": 1.032801683576852,
+            "interval_len": 6494,
+            "active_m": 23,
+            "q_min": 25737,
+            "q_max": 49233,
+            "q_window": {
+              "block_count": 47,
+              "max_key": 139,
+              "max_positive": 4.540863007714467,
+              "max_positive_share_of_E": 0.22339797305446565,
+              "positive_sum": 38.11171047220198,
+              "positive_sum_share_of_E": 1.8749913517901804,
+              "signed_l2": 11.30250149218765,
+              "chi2": 10.0892213415633,
+              "chi2_sqrt": 3.1763534660933597
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 13,
+                "max_positive": 8.340097869710064,
+                "max_positive_share_of_E": 0.4103098807437646,
+                "positive_sum": 25.167340283660025,
+                "positive_sum_share_of_E": 1.2381639342543203,
+                "signed_l2": 12.786417611873432,
+                "chi2": 2.1083945438564,
+                "chi2_sqrt": 1.4520311786791633
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 29,
+                "max_positive": 5.801513890805424,
+                "max_positive_share_of_E": 0.28541852983703897,
+                "positive_sum": 61.653838374332295,
+                "positive_sum_share_of_E": 3.033199306046879,
+                "signed_l2": 18.492057415552758,
+                "chi2": 26.019034237597573,
+                "chi2_sqrt": 5.100885632671798
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 2,
+                "max_positive": 17.70931237701872,
+                "max_positive_share_of_E": 0.8712494700882008,
+                "positive_sum": 36.994894714504156,
+                "positive_sum_share_of_E": 1.8200470876445511,
+                "signed_l2": 24.84506319367509,
+                "chi2": 7.976698487901292,
+                "chi2_sqrt": 2.8243049566045966
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 152,
+                "max_positive": 7.642126365202364,
+                "max_positive_share_of_E": 0.37597160207473307,
+                "positive_sum": 68.8188016612643,
+                "positive_sum_share_of_E": 3.3856957968220796,
+                "signed_l2": 21.199381243318914,
+                "chi2": 34.613854473050274,
+                "chi2_sqrt": 5.883354015614756
+              }
+            },
+            "max_centered_projection_peak_share": 0.8712494700882008
+          }
+        },
+        {
+          "p": 50021,
+          "y": 111,
+          "x": 110,
+          "capacity_margin": 503,
+          "hit_ratio": 0.9147746526601153,
+          "required_tail_excess": 524.3210933487229,
+          "band": "[8y,16y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.03895250770113273,
+          "excess_over_sqrt_model": 0.8641546450747848,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 13,
+            "peak_share": 0.7195654841094845,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 579,
+            "model": 558.5763785734675,
+            "excess": 20.423621426532463,
+            "actual_over_model": 1.0365637041055904,
+            "interval_len": 4681,
+            "active_m": 120,
+            "q_min": 3129,
+            "q_max": 6121,
+            "q_window": {
+              "block_count": 15,
+              "max_key": 14,
+              "max_positive": 7.770978275888346,
+              "max_positive_share_of_E": 0.3804897336078222,
+              "positive_sum": 39.45768840300094,
+              "positive_sum_share_of_E": 1.931963366288272,
+              "signed_l2": 18.110068130897925,
+              "chi2": 8.816198807386039,
+              "chi2_sqrt": 2.969208447951413
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 13,
+                "max_positive": 14.696133039051674,
+                "max_positive_share_of_E": 0.7195654841094845,
+                "positive_sum": 34.353231402900136,
+                "positive_sum_share_of_E": 1.682034282043224,
+                "signed_l2": 20.99535451774123,
+                "chi2": 6.280496461614989,
+                "chi2_sqrt": 2.506091870146621
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 169,
+                "max_positive": 6.573583762581784,
+                "max_positive_share_of_E": 0.3218618101705507,
+                "positive_sum": 68.69026035903622,
+                "positive_sum_share_of_E": 3.3632752450944,
+                "signed_l2": 21.59648149744364,
+                "chi2": 40.92785867584982,
+                "chi2_sqrt": 6.397488466253755
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 28,
+                "max_positive": 11.944883363761946,
+                "max_positive_share_of_E": 0.584856285489324,
+                "positive_sum": 25.25661626091329,
+                "positive_sum_share_of_E": 1.2366375058295123,
+                "signed_l2": 15.110859369463208,
+                "chi2": 3.2057627853451316,
+                "chi2_sqrt": 1.7904644049366443
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 194,
+                "max_positive": 5.0216543699868055,
+                "max_positive_share_of_E": 0.24587482626676288,
+                "positive_sum": 52.438185002005525,
+                "positive_sum_share_of_E": 2.5675262925644877,
+                "signed_l2": 15.632992735269193,
+                "chi2": 20.342889320330638,
+                "chi2_sqrt": 4.510309226686196
+              }
+            },
+            "max_centered_projection_peak_share": 0.7195654841094845
+          }
+        },
+        {
+          "p": 50021,
+          "y": 91,
+          "x": 90,
+          "capacity_margin": 506,
+          "hit_ratio": 0.9140916808149406,
+          "required_tail_excess": 500.43060902951197,
+          "band": "[4y,8y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.03855465395381768,
+          "excess_over_sqrt_model": 0.7859010916725802,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 29,
+            "peak_share": 0.7144841284624237,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 622,
+            "model": 602.7060710409689,
+            "excess": 19.293928959031064,
+            "actual_over_model": 1.0320121695899087,
+            "interval_len": 5473,
+            "active_m": 57,
+            "q_min": 6193,
+            "q_max": 12403,
+            "q_window": {
+              "block_count": 29,
+              "max_key": 33,
+              "max_positive": 6.465249990400956,
+              "max_positive_share_of_E": 0.33509245338931937,
+              "positive_sum": 37.70318181064645,
+              "positive_sum_share_of_E": 1.9541474362586175,
+              "signed_l2": 13.703880436048696,
+              "chi2": 9.105617865281449,
+              "chi2_sqrt": 3.0175516342361814
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 13.785206016909228,
+                "max_positive_share_of_E": 0.7144841284624237,
+                "positive_sum": 26.502289897675354,
+                "positive_sum_share_of_E": 1.373607726759573,
+                "signed_l2": 16.478205696242714,
+                "chi2": 3.544543378122949,
+                "chi2_sqrt": 1.88269577418205
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 149,
+                "max_positive": 4.982917270758286,
+                "max_positive_share_of_E": 0.2582634818102143,
+                "positive_sum": 54.47307465552204,
+                "positive_sum_share_of_E": 2.823327211953084,
+                "signed_l2": 16.867281615634365,
+                "chi2": 22.77334892674816,
+                "chi2_sqrt": 4.772143011975664
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 24,
+                "max_positive": 12.826677291587998,
+                "max_positive_share_of_E": 0.6648038001396347,
+                "positive_sum": 33.992555912446264,
+                "positive_sum_share_of_E": 1.7618265302327185,
+                "signed_l2": 23.94144148698658,
+                "chi2": 7.687680722672695,
+                "chi2_sqrt": 2.7726667168400705
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 204,
+                "max_positive": 5.923760705343117,
+                "max_positive_share_of_E": 0.3070271854904045,
+                "positive_sum": 53.90408714136003,
+                "positive_sum_share_of_E": 2.7938367170222587,
+                "signed_l2": 16.742803366641077,
+                "chi2": 22.542610280149745,
+                "chi2_sqrt": 4.74790588366595
+              }
+            },
+            "max_centered_projection_peak_share": 0.7144841284624237
+          }
+        },
+        {
+          "p": 50021,
+          "y": 128,
+          "x": 127,
+          "capacity_margin": 486,
+          "hit_ratio": 0.9175991861648016,
+          "required_tail_excess": 489.72294223944175,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.032899719238549494,
+          "excess_over_sqrt_model": 0.6583695626358443,
+          "sn3_centered_route": {
+            "route": "centered_columncrt_return",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 29,
+            "peak_share": 1.018659042102709,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 615,
+            "model": 598.888252695646,
+            "excess": 16.111747304354026,
+            "actual_over_model": 1.0269027606266006,
+            "interval_len": 5854,
+            "active_m": 43,
+            "q_min": 12481,
+            "q_max": 24913,
+            "q_window": {
+              "block_count": 48,
+              "max_key": 65,
+              "max_positive": 6.131901890789866,
+              "max_positive_share_of_E": 0.3805857784979526,
+              "positive_sum": 49.86132407340211,
+              "positive_sum_share_of_E": 3.0947186007521124,
+              "signed_l2": 14.970638556772833,
+              "chi2": 17.776990673100727,
+              "chi2_sqrt": 4.216276873392061
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 13,
+                "max_positive": 7.033547747205702,
+                "max_positive_share_of_E": 0.43654779424854573,
+                "positive_sum": 28.895975010235404,
+                "positive_sum_share_of_E": 1.7934724561144637,
+                "signed_l2": 16.272451039627864,
+                "chi2": 3.5182178318189035,
+                "chi2_sqrt": 1.875691294381595
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 71,
+                "max_positive": 5.661994961514784,
+                "max_positive_share_of_E": 0.3514202931909621,
+                "positive_sum": 54.77495824648243,
+                "positive_sum_share_of_E": 3.3996907481089953,
+                "signed_l2": 16.345572517315283,
+                "chi2": 21.568302565199634,
+                "chi2_sqrt": 4.644168662441065
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 16.412377075654177,
+                "max_positive_share_of_E": 1.018659042102709,
+                "positive_sum": 32.36105795483488,
+                "positive_sum_share_of_E": 2.008538077436806,
+                "signed_l2": 21.294072380096463,
+                "chi2": 6.036092478304251,
+                "chi2_sqrt": 2.4568460428574377
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 119,
+                "max_positive": 8.404553161205305,
+                "max_positive_share_of_E": 0.5216413218530348,
+                "positive_sum": 65.44181856128056,
+                "positive_sum_share_of_E": 4.061745590038866,
+                "signed_l2": 20.878760141597645,
+                "chi2": 35.39164710213979,
+                "chi2_sqrt": 5.949087921870023
+              }
+            },
+            "max_centered_projection_peak_share": 1.018659042102709
+          }
+        },
+        {
+          "p": 50021,
+          "y": 116,
+          "x": 115,
+          "capacity_margin": 502,
+          "hit_ratio": 0.9149152542372881,
+          "required_tail_excess": 536.7929039351741,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.02843193073598288,
+          "excess_over_sqrt_model": 0.6439412397773427,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 29,
+            "peak_share": 0.49698252650869695,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 577,
+            "model": 561.737941335748,
+            "excess": 15.262058664251981,
+            "actual_over_model": 1.0271693569922669,
+            "interval_len": 5864,
+            "active_m": 20,
+            "q_min": 25120,
+            "q_max": 45688,
+            "q_window": {
+              "block_count": 40,
+              "max_key": 172,
+              "max_positive": 5.270485116501218,
+              "max_positive_share_of_E": 0.3453325159105941,
+              "positive_sum": 43.60142131821637,
+              "positive_sum_share_of_E": 2.856850591220902,
+              "signed_l2": 15.291158245134449,
+              "chi2": 14.031126872742224,
+              "chi2_sqrt": 3.7458145806676315
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 7.584976474683899,
+                "max_positive_share_of_E": 0.49698252650869695,
+                "positive_sum": 24.487386521240936,
+                "positive_sum_share_of_E": 1.6044615644544244,
+                "signed_l2": 13.66938359797211,
+                "chi2": 2.6496096405124288,
+                "chi2_sqrt": 1.6277621572307266
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 29,
+                "max_positive": 6.429330491616382,
+                "max_positive_share_of_E": 0.4212623364288119,
+                "positive_sum": 63.29038318859858,
+                "positive_sum_share_of_E": 4.146909966795135,
+                "signed_l2": 20.382019846771993,
+                "chi2": 35.40306599002979,
+                "chi2_sqrt": 5.950047561997281
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 9,
+                "max_positive": 7.294977534684662,
+                "max_positive_share_of_E": 0.4779812275110398,
+                "positive_sum": 21.16622845529271,
+                "positive_sum_share_of_E": 1.3868527779197934,
+                "signed_l2": 11.827564925095565,
+                "chi2": 1.9939373830579323,
+                "chi2_sqrt": 1.4120684767595133
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 159,
+                "max_positive": 4.2627971946775745,
+                "max_positive_share_of_E": 0.27930682802722023,
+                "positive_sum": 47.64607840967638,
+                "positive_sum_share_of_E": 3.121864452092354,
+                "signed_l2": 15.038666068983453,
+                "chi2": 19.22802384280485,
+                "chi2_sqrt": 4.384977062973631
+              }
+            },
+            "max_centered_projection_peak_share": 0.49698252650869695
+          }
+        },
+        {
+          "p": 50021,
+          "y": 128,
+          "x": 127,
+          "capacity_margin": 486,
+          "hit_ratio": 0.9175991861648016,
+          "required_tail_excess": 489.72294223944175,
+          "band": "[4y,8y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.02125173479351196,
+          "excess_over_sqrt_model": 0.44034926192468593,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 210,
+            "peak_key": 195,
+            "peak_share": 0.5750855949032233,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 569,
+            "model": 558.592537909229,
+            "excess": 10.407462090770991,
+            "actual_over_model": 1.0186315809547428,
+            "interval_len": 5068,
+            "active_m": 75,
+            "q_min": 6223,
+            "q_max": 12289,
+            "q_window": {
+              "block_count": 27,
+              "max_key": 42,
+              "max_positive": 4.158637675953404,
+              "max_positive_share_of_E": 0.3995823035128951,
+              "positive_sum": 26.96458506005738,
+              "positive_sum_share_of_E": 2.5908895775819087,
+              "signed_l2": 11.086197653299624,
+              "chi2": 6.608422948652954,
+              "chi2_sqrt": 2.570685307199805
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 7,
+                "max_positive": 4.759481925465579,
+                "max_positive_share_of_E": 0.45731436578434786,
+                "positive_sum": 16.242210394653284,
+                "positive_sum_share_of_E": 1.5606312329550893,
+                "signed_l2": 10.836374231976139,
+                "chi2": 1.6995035313990323,
+                "chi2_sqrt": 1.3036500801208246
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 61,
+                "max_positive": 5.462124439379977,
+                "max_positive_share_of_E": 0.5248277045585991,
+                "positive_sum": 54.88783763830112,
+                "positive_sum_share_of_E": 5.273892631996606,
+                "signed_l2": 16.257428112402497,
+                "chi2": 22.861665602973673,
+                "chi2_sqrt": 4.7813874140225945
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 11,
+                "max_positive": 4.910651816623044,
+                "max_positive_share_of_E": 0.4718395103238142,
+                "positive_sum": 16.244550221237986,
+                "positive_sum_share_of_E": 1.5608560549687844,
+                "signed_l2": 10.791937555259043,
+                "chi2": 1.663505782439994,
+                "chi2_sqrt": 1.2897696625521915
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 195,
+                "max_positive": 5.98518152790378,
+                "max_positive_share_of_E": 0.5750855949032233,
+                "positive_sum": 50.13389133729984,
+                "positive_sum_share_of_E": 4.817110156159684,
+                "signed_l2": 15.672715730996753,
+                "chi2": 21.199463756799886,
+                "chi2_sqrt": 4.604287540629917
+              }
+            },
+            "max_centered_projection_peak_share": 0.5750855949032233
+          }
+        }
+      ]
+    },
+    {
+      "p": 100003,
+      "cutoff": 141,
+      "y_limit": 564,
+      "q_window_width": 316,
+      "distributed_candidate_count": 10,
+      "sn3_centered_route_counts": {
+        "true_distributed_dls_candidate": 6,
+        "centered_columncrt_return": 2,
+        "centered_pdec_return": 2
+      },
+      "total_distributed_excess": 221.1776427679605,
+      "total_distributed_model": 10487.82235723204,
+      "energy_lower_bound_if_same_sign": 4.664414403115658,
+      "max_excess_over_required": 0.035861269033906296,
+      "max_excess_over_sqrt_model": 1.0242270372455353,
+      "max_projection_peak_share": 1.0153092513888755,
+      "candidates": [
+        {
+          "p": 100003,
+          "y": 145,
+          "x": 144,
+          "capacity_margin": 795,
+          "hit_ratio": 0.9285970899946111,
+          "required_tail_excess": 863.0056014198362,
+          "band": "[8y,16y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.035861269033906296,
+          "excess_over_sqrt_model": 0.9723519768078019,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 29,
+            "peak_share": 0.4198871728850323,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1044,
+            "model": 1013.0515239497151,
+            "excess": 30.948476050284853,
+            "actual_over_model": 1.0305497551887806,
+            "interval_len": 9200,
+            "active_m": 153,
+            "q_min": 6232,
+            "q_max": 12468,
+            "q_window": {
+              "block_count": 21,
+              "max_key": 27,
+              "max_positive": 10.385650565199015,
+              "max_positive_share_of_E": 0.3355787389441886,
+              "positive_sum": 42.531046294742,
+              "positive_sum_share_of_E": 1.3742533307823581,
+              "signed_l2": 16.455343024587695,
+              "chi2": 6.622841846508071,
+              "chi2_sqrt": 2.5734882643035446
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 12.994868113854238,
+                "max_positive_share_of_E": 0.4198871728850323,
+                "positive_sum": 35.631238310112636,
+                "positive_sum_share_of_E": 1.1513083310538221,
+                "signed_l2": 20.438760083464825,
+                "chi2": 3.2891615653421846,
+                "chi2_sqrt": 1.813604577999897
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 143,
+                "max_positive": 6.349186567253348,
+                "max_positive_share_of_E": 0.20515344784464465,
+                "positive_sum": 83.55093143913182,
+                "positive_sum_share_of_E": 2.6996783719941133,
+                "signed_l2": 23.394174193421,
+                "chi2": 25.917908627988247,
+                "chi2_sqrt": 5.090963428270552
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 12,
+                "max_positive": 10.499468811625917,
+                "max_positive_share_of_E": 0.3392564077974779,
+                "positive_sum": 34.91108919668228,
+                "positive_sum_share_of_E": 1.128039039465433,
+                "signed_l2": 17.525959945291333,
+                "chi2": 2.4153629320730508,
+                "chi2_sqrt": 1.5541437938855758
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 72,
+                "max_positive": 7.778986367171822,
+                "max_positive_share_of_E": 0.2513528082782681,
+                "positive_sum": 77.55522448616645,
+                "positive_sum_share_of_E": 2.5059464756893135,
+                "signed_l2": 23.40312854396201,
+                "chi2": 25.584736869141658,
+                "chi2_sqrt": 5.058135710826832
+              }
+            },
+            "max_centered_projection_peak_share": 0.4198871728850323
+          }
+        },
+        {
+          "p": 100003,
+          "y": 172,
+          "x": 171,
+          "capacity_margin": 840,
+          "hit_ratio": 0.9242629158777387,
+          "required_tail_excess": 926.4914798521181,
+          "band": "[4y,8y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.034831339307758134,
+          "excess_over_sqrt_model": 1.0242270372455353,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 23,
+            "peak_share": 0.6917576069121599,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1025,
+            "model": 992.7290608995239,
+            "excess": 32.270939100476085,
+            "actual_over_model": 1.0325072976822447,
+            "interval_len": 9702,
+            "active_m": 96,
+            "q_min": 12455,
+            "q_max": 24892,
+            "q_window": {
+              "block_count": 40,
+              "max_key": 61,
+              "max_positive": 12.342117571473686,
+              "max_positive_share_of_E": 0.3824530030888257,
+              "positive_sum": 83.10648255860198,
+              "positive_sum_share_of_E": 2.5752731366090282,
+              "signed_l2": 28.90806039551467,
+              "chi2": 27.419527497567298,
+              "chi2_sqrt": 5.23636586742822
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 17,
+                "max_positive": 14.038836701644584,
+                "max_positive_share_of_E": 0.4350303118832223,
+                "positive_sum": 40.99804382939391,
+                "positive_sum_share_of_E": 1.2704323137837992,
+                "signed_l2": 21.861680328612334,
+                "chi2": 3.8531019728663716,
+                "chi2_sqrt": 1.962931983759593
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 107,
+                "max_positive": 10.570239146810856,
+                "max_positive_share_of_E": 0.3275466857007243,
+                "positive_sum": 82.05154035101694,
+                "positive_sum_share_of_E": 2.5425829752133384,
+                "signed_l2": 24.611591654284517,
+                "chi2": 29.505175840620357,
+                "chi2_sqrt": 5.431866699452441
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 23,
+                "max_positive": 22.323667604953386,
+                "max_positive_share_of_E": 0.6917576069121599,
+                "positive_sum": 44.81875456509401,
+                "positive_sum_share_of_E": 1.388827093799474,
+                "signed_l2": 27.117446345897346,
+                "chi2": 5.991738348643034,
+                "chi2_sqrt": 2.447802759342148
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 203,
+                "max_positive": 8.32431122967601,
+                "max_positive_share_of_E": 0.2579506968718243,
+                "positive_sum": 70.94727363019341,
+                "positive_sum_share_of_E": 2.198488039325349,
+                "signed_l2": 20.186217235906277,
+                "chi2": 19.686583624969753,
+                "chi2_sqrt": 4.436956572355622
+              }
+            },
+            "max_centered_projection_peak_share": 0.6917576069121599
+          }
+        },
+        {
+          "p": 100003,
+          "y": 172,
+          "x": 171,
+          "capacity_margin": 840,
+          "hit_ratio": 0.9242629158777387,
+          "required_tail_excess": 926.4914798521181,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.0289195388326274,
+          "excess_over_sqrt_model": 0.8129739608650872,
+          "sn3_centered_route": {
+            "route": "centered_pdec_return",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 29,
+            "peak_share": 0.8939083637438532,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1113,
+            "model": 1086.2062936703182,
+            "excess": 26.793706329681754,
+            "actual_over_model": 1.0246672353914883,
+            "interval_len": 11376,
+            "active_m": 56,
+            "q_min": 25038,
+            "q_max": 49569,
+            "q_window": {
+              "block_count": 65,
+              "max_key": 90,
+              "max_positive": 9.536630827840426,
+              "max_positive_share_of_E": 0.355928019457161,
+              "positive_sum": 86.91628555667673,
+              "positive_sum_share_of_E": 3.243906777480497,
+              "signed_l2": 24.098873962762504,
+              "chi2": 31.47136583866766,
+              "chi2_sqrt": 5.609934566344572
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 29,
+                "max_positive": 23.95111818379914,
+                "max_positive_share_of_E": 0.8939083637438532,
+                "positive_sum": 39.511623540878645,
+                "positive_sum_share_of_E": 1.474660618232877,
+                "signed_l2": 26.847962991240333,
+                "chi2": 5.297657331458065,
+                "chi2_sqrt": 2.30166403531403
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 59,
+                "max_positive": 9.380196323663345,
+                "max_positive_share_of_E": 0.3500895399929077,
+                "positive_sum": 83.55967704328884,
+                "positive_sum_share_of_E": 3.118630771537658,
+                "signed_l2": 24.863772408658747,
+                "chi2": 27.216678819779325,
+                "chi2_sqrt": 5.2169606879656785
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 9,
+                "max_positive": 13.693237207652487,
+                "max_positive_share_of_E": 0.5110617037883736,
+                "positive_sum": 39.546067943222454,
+                "positive_sum_share_of_E": 1.475946159020702,
+                "signed_l2": 21.118506543200233,
+                "chi2": 3.290604670235393,
+                "chi2_sqrt": 1.8140023898097248
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 89,
+                "max_positive": 13.03304156192047,
+                "max_positive_share_of_E": 0.4864217514947762,
+                "positive_sum": 90.41118583860651,
+                "positive_sum_share_of_E": 3.3743441361246114,
+                "signed_l2": 27.847406138434113,
+                "chi2": 34.345102385817974,
+                "chi2_sqrt": 5.860469468039056
+              }
+            },
+            "max_centered_projection_peak_share": 0.8939083637438532
+          }
+        },
+        {
+          "p": 100003,
+          "y": 135,
+          "x": 134,
+          "capacity_margin": 830,
+          "hit_ratio": 0.9254602604400539,
+          "required_tail_excess": 888.5886882022066,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.027604961093772817,
+          "excess_over_sqrt_model": 0.762287933501379,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 19,
+            "peak_share": 0.6485605538156749,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1060,
+            "model": 1035.4705438338115,
+            "excess": 24.529456166188538,
+            "actual_over_model": 1.0236891877922174,
+            "interval_len": 11523,
+            "active_m": 23,
+            "q_min": 49816,
+            "q_max": 90606,
+            "q_window": {
+              "block_count": 55,
+              "max_key": 245,
+              "max_positive": 8.39419049377399,
+              "max_positive_share_of_E": 0.34220858533930987,
+              "positive_sum": 78.04349381019819,
+              "positive_sum_share_of_E": 3.181623484901126,
+              "signed_l2": 24.09764896426206,
+              "chi2": 29.965566964503655,
+              "chi2_sqrt": 5.4740813808806
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 19,
+                "max_positive": 15.90883767594056,
+                "max_positive_share_of_E": 0.6485605538156749,
+                "positive_sum": 36.35616695928255,
+                "positive_sum_share_of_E": 1.4821432123471199,
+                "signed_l2": 21.716784053983428,
+                "chi2": 3.6363021396754363,
+                "chi2_sqrt": 1.9069090538553317
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 173,
+                "max_positive": 8.36868251269157,
+                "max_positive_share_of_E": 0.3411686935084596,
+                "positive_sum": 90.77160838510413,
+                "positive_sum_share_of_E": 3.7005145067269747,
+                "signed_l2": 27.37294228241535,
+                "chi2": 34.71858337296447,
+                "chi2_sqrt": 5.892247735199571
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 28,
+                "max_positive": 13.27168149463074,
+                "max_positive_share_of_E": 0.541050784196531,
+                "positive_sum": 36.67192488699027,
+                "positive_sum_share_of_E": 1.495015814396201,
+                "signed_l2": 21.715713297946024,
+                "chi2": 3.6494662792965564,
+                "chi2_sqrt": 1.910357631255613
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 152,
+                "max_positive": 9.361138714092512,
+                "max_positive_share_of_E": 0.38162846541196166,
+                "positive_sum": 83.5258172323114,
+                "positive_sum_share_of_E": 3.405123075962996,
+                "signed_l2": 25.00119422942369,
+                "chi2": 29.106644762928052,
+                "chi2_sqrt": 5.395057438334466
+              }
+            },
+            "max_centered_projection_peak_share": 0.6485605538156749
+          }
+        },
+        {
+          "p": 100003,
+          "y": 131,
+          "x": 130,
+          "capacity_margin": 818,
+          "hit_ratio": 0.9265906847348111,
+          "required_tail_excess": 897.2947780959919,
+          "band": "[4y,8y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.025730071849373266,
+          "excess_over_sqrt_model": 0.7201086984741717,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 17,
+            "peak_share": 0.7442059374278269,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1051,
+            "model": 1027.9125408895227,
+            "excess": 23.08745911047731,
+            "actual_over_model": 1.0224605286851527,
+            "interval_len": 10039,
+            "active_m": 76,
+            "q_min": 12513,
+            "q_max": 24215,
+            "q_window": {
+              "block_count": 38,
+              "max_key": 46,
+              "max_positive": 9.529842095097344,
+              "max_positive_share_of_E": 0.4127713686246491,
+              "positive_sum": 57.39211766984133,
+              "positive_sum_share_of_E": 2.485856819289232,
+              "signed_l2": 19.642723479791705,
+              "chi2": 15.027893968366268,
+              "chi2_sqrt": 3.8765827694460837
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 17,
+                "max_positive": 17.18182415013939,
+                "max_positive_share_of_E": 0.7442059374278269,
+                "positive_sum": 32.660919390506365,
+                "positive_sum_share_of_E": 1.4146606274089524,
+                "signed_l2": 20.342282989966105,
+                "chi2": 3.1968399298843426,
+                "chi2_sqrt": 1.7879708973818178
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 127,
+                "max_positive": 6.111828277216773,
+                "max_positive_share_of_E": 0.26472502876867754,
+                "positive_sum": 71.72066783751609,
+                "positive_sum_share_of_E": 3.106477308495527,
+                "signed_l2": 20.584283471952197,
+                "chi2": 19.86441266489842,
+                "chi2_sqrt": 4.456951050314376
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 10,
+                "max_positive": 11.986701712708282,
+                "max_positive_share_of_E": 0.5191867002492535,
+                "positive_sum": 31.42083466093925,
+                "positive_sum_share_of_E": 1.3609481455098786,
+                "signed_l2": 18.028702263322234,
+                "chi2": 2.5253809295265888,
+                "chi2_sqrt": 1.5891447163573835
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 10,
+                "max_positive": 9.85171643071423,
+                "max_positive_share_of_E": 0.42671289133949897,
+                "positive_sum": 89.50071128862976,
+                "positive_sum_share_of_E": 3.876594252332145,
+                "signed_l2": 27.693630184985427,
+                "chi2": 36.4928102199059,
+                "chi2_sqrt": 6.040927927057721
+              }
+            },
+            "max_centered_projection_peak_share": 0.7442059374278269
+          }
+        },
+        {
+          "p": 100003,
+          "y": 131,
+          "x": 130,
+          "capacity_margin": 818,
+          "hit_ratio": 0.9265906847348111,
+          "required_tail_excess": 897.2947780959919,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.02572084637316315,
+          "excess_over_sqrt_model": 0.7414404095424749,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 16,
+            "peak_share": 0.7469698489155517,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 992,
+            "model": 968.9208188611515,
+            "excess": 23.079181138848526,
+            "actual_over_model": 1.0238194707860393,
+            "interval_len": 10774,
+            "active_m": 21,
+            "q_min": 50586,
+            "q_max": 87922,
+            "q_window": {
+              "block_count": 53,
+              "max_key": 207,
+              "max_positive": 6.498642816168765,
+              "max_positive_share_of_E": 0.2815803029176709,
+              "positive_sum": 72.36244688551047,
+              "positive_sum_share_of_E": 3.135399234928003,
+              "signed_l2": 21.091034197658402,
+              "chi2": 23.873875112623086,
+              "chi2_sqrt": 4.886089961576954
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 7,
+                "max_positive": 11.937201543620091,
+                "max_positive_share_of_E": 0.5172281231211683,
+                "positive_sum": 30.70328549509756,
+                "positive_sum_share_of_E": 1.330345531341907,
+                "signed_l2": 17.879660801985683,
+                "chi2": 2.636055979992136,
+                "chi2_sqrt": 1.6235935390337497
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 199,
+                "max_positive": 7.326557990951084,
+                "max_positive_share_of_E": 0.31745311702669116,
+                "positive_sum": 72.99712961204062,
+                "positive_sum_share_of_E": 3.1628994621982773,
+                "signed_l2": 22.325473910112297,
+                "chi2": 24.818845058868934,
+                "chi2_sqrt": 4.981851569333327
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 16,
+                "max_positive": 17.239452448380334,
+                "max_positive_share_of_E": 0.7469698489155517,
+                "positive_sum": 39.78650962793674,
+                "positive_sum_share_of_E": 1.7239134000714282,
+                "signed_l2": 26.03010080665774,
+                "chi2": 5.57592597554202,
+                "chi2_sqrt": 2.3613398687063283
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 196,
+                "max_positive": 8.931929413870165,
+                "max_positive_share_of_E": 0.38701240568866213,
+                "positive_sum": 75.88390882886776,
+                "positive_sum_share_of_E": 3.2879809891146676,
+                "signed_l2": 23.499258045509567,
+                "chi2": 27.348642743563406,
+                "chi2_sqrt": 5.22959298067865
+              }
+            },
+            "max_centered_projection_peak_share": 0.7469698489155517
+          }
+        },
+        {
+          "p": 100003,
+          "y": 147,
+          "x": 146,
+          "capacity_margin": 777,
+          "hit_ratio": 0.930176132278936,
+          "required_tail_excess": 803.7254763743341,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.02362303421873511,
+          "excess_over_sqrt_model": 0.5499241786846903,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 14,
+            "peak_share": 0.6084447354628105,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1211,
+            "model": 1192.01356556914,
+            "excess": 18.986434430860072,
+            "actual_over_model": 1.015928035535229,
+            "interval_len": 13309,
+            "active_m": 28,
+            "q_min": 49831,
+            "q_max": 98660,
+            "q_window": {
+              "block_count": 65,
+              "max_key": 172,
+              "max_positive": 6.756932006346588,
+              "max_positive_share_of_E": 0.35588209207749094,
+              "positive_sum": 84.90977433742208,
+              "positive_sum_share_of_E": 4.472128489771196,
+              "signed_l2": 24.833175320273046,
+              "chi2": 35.800228744234836,
+              "chi2_sqrt": 5.983329235821378
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 17,
+                "max_positive": 9.881128559823736,
+                "max_positive_share_of_E": 0.5204309737990193,
+                "positive_sum": 34.034225337092664,
+                "positive_sum_share_of_E": 1.7925548612631708,
+                "signed_l2": 18.693727930273138,
+                "chi2": 2.352107576007456,
+                "chi2_sqrt": 1.5336582331169666
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 131,
+                "max_positive": 9.353904323681704,
+                "max_positive_share_of_E": 0.49266250373361853,
+                "positive_sum": 85.15982160241057,
+                "positive_sum_share_of_E": 4.485298275067063,
+                "signed_l2": 25.390174914214793,
+                "chi2": 25.98345657516318,
+                "chi2_sqrt": 5.097397039191982
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 14,
+                "max_positive": 11.552196074666654,
+                "max_positive_share_of_E": 0.6084447354628105,
+                "positive_sum": 36.737622041434975,
+                "positive_sum_share_of_E": 1.9349405584927821,
+                "signed_l2": 20.04954409510808,
+                "chi2": 2.701329087729181,
+                "chi2_sqrt": 1.6435720512740477
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 194,
+                "max_positive": 6.087998247258135,
+                "max_positive_share_of_E": 0.32064989713723474,
+                "positive_sum": 87.72819532605865,
+                "positive_sum_share_of_E": 4.620572422143015,
+                "signed_l2": 27.176512974617925,
+                "chi2": 29.885414097028583,
+                "chi2_sqrt": 5.4667553536836255
+              }
+            },
+            "max_centered_projection_peak_share": 0.6084447354628105
+          }
+        },
+        {
+          "p": 100003,
+          "y": 145,
+          "x": 144,
+          "capacity_margin": 795,
+          "hit_ratio": 0.9285970899946111,
+          "required_tail_excess": 863.0056014198362,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.017408690376682818,
+          "excess_over_sqrt_model": 0.4685847875194144,
+          "sn3_centered_route": {
+            "route": "centered_pdec_return",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 23,
+            "peak_share": 0.8442844967944266,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1043,
+            "model": 1027.9762026915391,
+            "excess": 15.023797308460871,
+            "actual_over_model": 1.0146149271443485,
+            "interval_len": 10754,
+            "active_m": 45,
+            "q_min": 24958,
+            "q_max": 49489,
+            "q_window": {
+              "block_count": 61,
+              "max_key": 98,
+              "max_positive": 7.029199312247613,
+              "max_positive_share_of_E": 0.46787101609052034,
+              "positive_sum": 64.20998149400477,
+              "positive_sum_share_of_E": 4.2738849690047385,
+              "signed_l2": 19.476452322136712,
+              "chi2": 22.931356684253814,
+              "chi2_sqrt": 4.788669615274562
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 23,
+                "max_positive": 12.684359150515348,
+                "max_positive_share_of_E": 0.8442844967944266,
+                "positive_sum": 41.85894844346129,
+                "positive_sum_share_of_E": 2.7861763297277586,
+                "signed_l2": 25.704028112497088,
+                "chi2": 5.131910904337378,
+                "chi2_sqrt": 2.2653721337425727
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 191,
+                "max_positive": 6.22446399502957,
+                "max_positive_share_of_E": 0.4143069736120689,
+                "positive_sum": 76.1099748347572,
+                "positive_sum_share_of_E": 5.065961239499334,
+                "signed_l2": 24.592027345714737,
+                "chi2": 28.065038254848172,
+                "chi2_sqrt": 5.297644594992021
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 14,
+                "max_positive": 11.113586649420668,
+                "max_positive_share_of_E": 0.7397322009371019,
+                "positive_sum": 26.60536799733829,
+                "positive_sum_share_of_E": 1.7708817185888877,
+                "signed_l2": 16.60523267638526,
+                "chi2": 2.150522167797826,
+                "chi2_sqrt": 1.4664658767928511
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 6,
+                "max_positive": 7.342411773232026,
+                "max_positive_share_of_E": 0.4887187721240781,
+                "positive_sum": 77.00004506913825,
+                "positive_sum_share_of_E": 5.125205265234412,
+                "signed_l2": 24.91406596890227,
+                "chi2": 29.168949422489835,
+                "chi2_sqrt": 5.400828586660554
+              }
+            },
+            "max_centered_projection_peak_share": 0.8442844967944266
+          }
+        },
+        {
+          "p": 100003,
+          "y": 150,
+          "x": 149,
+          "capacity_margin": 830,
+          "hit_ratio": 0.9254937163375224,
+          "required_tail_excess": 883.8905197101162,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.016239007474314008,
+          "excess_over_sqrt_model": 0.4266802748509667,
+          "sn3_centered_route": {
+            "route": "centered_columncrt_return",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 1,
+            "peak_share": 0.995959854489163,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1146,
+            "model": 1131.6464952439521,
+            "excess": 14.353504756047869,
+            "actual_over_model": 1.0126837354389133,
+            "interval_len": 12639,
+            "active_m": 27,
+            "q_min": 50855,
+            "q_max": 99340,
+            "q_window": {
+              "block_count": 64,
+              "max_key": 245,
+              "max_positive": 6.07676467660206,
+              "max_positive_share_of_E": 0.4233645217584651,
+              "positive_sum": 70.31939133732209,
+              "positive_sum_share_of_E": 4.899109488063737,
+              "signed_l2": 19.086715967670663,
+              "chi2": 21.375806173585165,
+              "chi2_sqrt": 4.623397687154455
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 11,
+                "max_positive": 10.31238581749011,
+                "max_positive_share_of_E": 0.7184576863114197,
+                "positive_sum": 32.23309054221798,
+                "positive_sum_share_of_E": 2.2456599339361016,
+                "signed_l2": 21.22944965689468,
+                "chi2": 3.1816773916078382,
+                "chi2_sqrt": 1.7837257052607158
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 197,
+                "max_positive": 8.114625779387975,
+                "max_positive_share_of_E": 0.5653410729507625,
+                "positive_sum": 72.14922420094388,
+                "positive_sum_share_of_E": 5.026592837581616,
+                "signed_l2": 22.944870863966567,
+                "chi2": 22.328887220578647,
+                "chi2_sqrt": 4.725345195917294
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 1,
+                "max_positive": 14.295514508242945,
+                "max_positive_share_of_E": 0.995959854489163,
+                "positive_sum": 28.540496939761596,
+                "positive_sum_share_of_E": 1.9883991697383887,
+                "signed_l2": 21.744821213744196,
+                "chi2": 3.328522978172812,
+                "chi2_sqrt": 1.8244240127154685
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 23,
+                "max_positive": 6.503285539100855,
+                "max_positive_share_of_E": 0.45307997242699116,
+                "positive_sum": 79.60788646696145,
+                "positive_sum_share_of_E": 5.5462333290702786,
+                "signed_l2": 25.135519947235988,
+                "chi2": 26.859900988409418,
+                "chi2_sqrt": 5.182653855739298
+              }
+            },
+            "max_centered_projection_peak_share": 0.995959854489163
+          }
+        },
+        {
+          "p": 100003,
+          "y": 147,
+          "x": 146,
+          "capacity_margin": 777,
+          "hit_ratio": 0.930176132278936,
+          "required_tail_excess": 803.7254763743341,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.015060725001824964,
+          "excess_over_sqrt_model": 0.38052730171658006,
+          "sn3_centered_route": {
+            "route": "centered_columncrt_return",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 28,
+            "peak_share": 1.0153092513888755,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1024,
+            "model": 1011.8953116233654,
+            "excess": 12.104688376634613,
+            "actual_over_model": 1.0119623919960803,
+            "interval_len": 10583,
+            "active_m": 45,
+            "q_min": 24873,
+            "q_max": 47884,
+            "q_window": {
+              "block_count": 63,
+              "max_key": 132,
+              "max_positive": 5.957451993162543,
+              "max_positive_share_of_E": 0.4921607073059451,
+              "positive_sum": 63.557538940928644,
+              "positive_sum_share_of_E": 5.250654701992348,
+              "signed_l2": 19.61740358846424,
+              "chi2": 23.625791298329727,
+              "chi2_sqrt": 4.860636923113033
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 17,
+                "max_positive": 11.417280515574078,
+                "max_positive_share_of_E": 0.9432114367861446,
+                "positive_sum": 22.2018402347248,
+                "positive_sum_share_of_E": 1.8341521519529964,
+                "signed_l2": 15.283183903850658,
+                "chi2": 1.8462486174500918,
+                "chi2_sqrt": 1.358767315418682
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 71,
+                "max_positive": 3.9411117544020797,
+                "max_positive_share_of_E": 0.32558556088147733,
+                "positive_sum": 59.269332567656576,
+                "positive_sum_share_of_E": 4.896394745862499,
+                "signed_l2": 18.326158065250013,
+                "chi2": 16.08674488947498,
+                "chi2_sqrt": 4.010828454256674
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 28,
+                "max_positive": 12.290002093976511,
+                "max_positive_share_of_E": 1.0153092513888755,
+                "positive_sum": 27.460492086105432,
+                "positive_sum_share_of_E": 2.268583149906755,
+                "signed_l2": 17.985236564956434,
+                "chi2": 2.542051121600254,
+                "chi2_sqrt": 1.5943811092710094
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 38,
+                "max_positive": 10.271304282093727,
+                "max_positive_share_of_E": 0.8485393396760363,
+                "positive_sum": 75.28742053137171,
+                "positive_sum_share_of_E": 6.2196909320439175,
+                "signed_l2": 25.104809729154322,
+                "chi2": 29.788454021585103,
+                "chi2_sqrt": 5.457879993329379
+              }
+            },
+            "max_centered_projection_peak_share": 1.0153092513888755
+          }
+        }
+      ]
+    },
+    {
+      "p": 200003,
+      "cutoff": 190,
+      "y_limit": 760,
+      "q_window_width": 447,
+      "distributed_candidate_count": 2,
+      "sn3_centered_route_counts": {
+        "true_distributed_dls_candidate": 1,
+        "centered_columncrt_return": 1
+      },
+      "total_distributed_excess": 56.26718170233539,
+      "total_distributed_model": 3703.7328182976644,
+      "energy_lower_bound_if_same_sign": 0.8548121292882038,
+      "max_excess_over_required": 0.0262995216285218,
+      "max_excess_over_sqrt_model": 0.9416466404248163,
+      "max_projection_peak_share": 0.9387548929366205,
+      "candidates": [
+        {
+          "p": 200003,
+          "y": 172,
+          "x": 171,
+          "capacity_margin": 1474,
+          "hit_ratio": 0.9303994711493059,
+          "required_tail_excess": 1495.1109351465523,
+          "band": "[1y,2y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.0262995216285218,
+          "excess_over_sqrt_model": 0.9416466404248163,
+          "sn3_centered_route": {
+            "route": "true_distributed_dls_candidate",
+            "peak_kind": "q_mod_w",
+            "peak_w": 30,
+            "peak_key": 11,
+            "peak_share": 0.5413159918554957,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1783,
+            "model": 1743.6792976240738,
+            "excess": 39.3207023759262,
+            "actual_over_model": 1.0225504210719851,
+            "interval_len": 20628,
+            "active_m": 26,
+            "q_min": 101486,
+            "q_max": 180107,
+            "q_window": {
+              "block_count": 67,
+              "max_key": 305,
+              "max_positive": 9.190115728029674,
+              "max_positive_share_of_E": 0.23372206427462627,
+              "positive_sum": 101.09411858380949,
+              "positive_sum_share_of_E": 2.57101507539966,
+              "signed_l2": 26.44728698530708,
+              "chi2": 32.45804436987789,
+              "chi2_sqrt": 5.69719618495606
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 11,
+                "max_positive": 21.284925007079238,
+                "max_positive_share_of_E": 0.5413159918554957,
+                "positive_sum": 59.6182773160034,
+                "positive_sum_share_of_E": 1.5162058079741787,
+                "signed_l2": 33.98521842409744,
+                "chi2": 5.293028990757923,
+                "chi2_sqrt": 2.3006583820197912
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 23,
+                "max_positive": 11.142850560588315,
+                "max_positive_share_of_E": 0.2833838127828164,
+                "positive_sum": 113.36511163033815,
+                "positive_sum_share_of_E": 2.8830896901715843,
+                "signed_l2": 33.650492241766436,
+                "chi2": 31.114146306017975,
+                "chi2_sqrt": 5.578005584975509
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 15,
+                "max_positive": 11.286925379807315,
+                "max_positive_share_of_E": 0.2870479085520519,
+                "positive_sum": 46.12735838459099,
+                "positive_sum_share_of_E": 1.173106165388137,
+                "signed_l2": 20.14686837826242,
+                "chi2": 1.8606053472420634,
+                "chi2_sqrt": 1.3640400827109382
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 147,
+                "max_positive": 10.382515397759946,
+                "max_positive_share_of_E": 0.2640470482571176,
+                "positive_sum": 106.23756592793222,
+                "positive_sum_share_of_E": 2.7018226915746895,
+                "signed_l2": 30.83876772743799,
+                "chi2": 26.29564267865999,
+                "chi2_sqrt": 5.1279277177686495
+              }
+            },
+            "max_centered_projection_peak_share": 0.5413159918554957
+          }
+        },
+        {
+          "p": 200003,
+          "y": 189,
+          "x": 188,
+          "capacity_margin": 1482,
+          "hit_ratio": 0.9301602262016965,
+          "required_tail_excess": 1419.052605125639,
+          "band": "[2y,4y)",
+          "sn2_labels": [
+            "distributed_band_large_sieve_candidate"
+          ],
+          "excess_over_required": 0.011942107900156946,
+          "excess_over_sqrt_model": 0.3827767238416353,
+          "sn3_centered_route": {
+            "route": "centered_columncrt_return",
+            "peak_kind": "d_mod_w",
+            "peak_w": 30,
+            "peak_key": 4,
+            "peak_share": 0.9387548929366205,
+            "threshold": 0.75
+          },
+          "projection": {
+            "actual": 1977,
+            "model": 1960.0535206735908,
+            "excess": 16.94647932640919,
+            "actual_over_model": 1.0086459268319292,
+            "interval_len": 21893,
+            "active_m": 59,
+            "q_min": 50068,
+            "q_max": 99737,
+            "q_window": {
+              "block_count": 87,
+              "max_key": 127,
+              "max_positive": 7.990214544699704,
+              "max_positive_share_of_E": 0.47149702252596204,
+              "positive_sum": 105.7049359626273,
+              "positive_sum_share_of_E": 6.237575010515489,
+              "signed_l2": 28.36298950039071,
+              "chi2": 37.26759760540953,
+              "chi2_sqrt": 6.104719289648749
+            },
+            "q_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 11,
+                "max_positive": 12.531274625834385,
+                "max_positive_share_of_E": 0.7394618306532731,
+                "positive_sum": 38.636071981352245,
+                "positive_sum_share_of_E": 2.2798878302198293,
+                "signed_l2": 24.46323131250721,
+                "chi2": 2.440160492497899,
+                "chi2_sqrt": 1.562101306733305
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 197,
+                "max_positive": 10.263379727741935,
+                "max_positive_share_of_E": 0.6056349245207296,
+                "positive_sum": 100.83291164187771,
+                "positive_sum_share_of_E": 5.950080231989007,
+                "signed_l2": 33.075342612408804,
+                "chi2": 27.148272007028456,
+                "chi2_sqrt": 5.210400369168233
+              }
+            },
+            "d_mod_w": {
+              "30": {
+                "block_count": 8,
+                "max_key": 4,
+                "max_positive": 15.908590385715911,
+                "max_positive_share_of_E": 0.9387548929366205,
+                "positive_sum": 44.247512521032405,
+                "positive_sum_share_of_E": 2.6110150473601683,
+                "signed_l2": 28.803570797452938,
+                "chi2": 3.3865284318678603,
+                "chi2_sqrt": 1.8402522739743756
+              },
+              "210": {
+                "block_count": 48,
+                "max_key": 10,
+                "max_positive": 9.033179434438267,
+                "max_positive_share_of_E": 0.5330416578245293,
+                "positive_sum": 113.8525437249632,
+                "positive_sum_share_of_E": 6.718359697730063,
+                "signed_l2": 35.44977168680026,
+                "chi2": 30.73287510079654,
+                "chi2_sqrt": 5.543723938003816
+              }
+            },
+            "max_centered_projection_peak_share": 0.9387548929366205
+          }
+        }
+      ]
+    }
+  ],
+  "top_candidates": [
+    {
+      "p": 5003,
+      "y": 34,
+      "x": 33,
+      "capacity_margin": 58,
+      "hit_ratio": 0.9221476510067114,
+      "required_tail_excess": 63.77273612114842,
+      "band": "[2y,4y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.1325238038245916,
+      "excess_over_sqrt_model": 0.883289571432837,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 1,
+        "peak_share": 0.3481078937721228,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 100,
+        "model": 91.54859442892348,
+        "excess": 8.45140557107652,
+        "actual_over_model": 1.0923160603807853,
+        "interval_len": 684,
+        "active_m": 13,
+        "q_min": 1261,
+        "q_max": 2395,
+        "q_window": {
+          "block_count": 14,
+          "max_key": 18,
+          "max_positive": 2.4799760595122926,
+          "max_positive_share_of_E": 0.29343948041016793,
+          "positive_sum": 14.53107074321496,
+          "positive_sum_share_of_E": 1.7193673432198124,
+          "signed_l2": 6.377235943006451,
+          "chi2": 6.686343839847596,
+          "chi2_sqrt": 2.585796558093385
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 7,
+            "max_positive": 1.9626389480850701,
+            "max_positive_share_of_E": 0.23222633579458826,
+            "positive_sum": 7.712925710191447,
+            "positive_sum_share_of_E": 0.9126204683144785,
+            "signed_l2": 3.398909977919251,
+            "chi2": 1.0291733814067041,
+            "chi2_sqrt": 1.014481829017506
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 29,
+            "max_positive": 2.0622087801349456,
+            "max_positive_share_of_E": 0.24400778814739407,
+            "positive_sum": 22.103039109252975,
+            "positive_sum_share_of_E": 2.6153092433401635,
+            "signed_l2": 6.663609325286393,
+            "chi2": 22.563616383999577,
+            "chi2_sqrt": 4.750117512651616
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 1,
+            "max_positive": 2.9420009927614323,
+            "max_positive_share_of_E": 0.3481078937721228,
+            "positive_sum": 10.767744045065417,
+            "positive_sum_share_of_E": 1.274077306373293,
+            "signed_l2": 5.6571990949564235,
+            "chi2": 2.776040109430677,
+            "chi2_sqrt": 1.666145284610762
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 1,
+            "max_positive": 2.0687686651606927,
+            "max_positive_share_of_E": 0.24478397679087807,
+            "positive_sum": 20.573504207824918,
+            "positive_sum_share_of_E": 2.4343292999964636,
+            "signed_l2": 6.367146330213116,
+            "chi2": 18.7358482651559,
+            "chi2_sqrt": 4.328492608883132
+          }
+        },
+        "max_centered_projection_peak_share": 0.3481078937721228
+      }
+    },
+    {
+      "p": 10007,
+      "y": 46,
+      "x": 45,
+      "capacity_margin": 98,
+      "hit_ratio": 0.9294456443484521,
+      "required_tail_excess": 107.86189972808057,
+      "band": "[4y,8y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.1321501311195098,
+      "excess_over_sqrt_model": 1.1348969696444011,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 19,
+        "peak_share": 0.37561150677544264,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 172,
+        "model": 157.74603580813474,
+        "excess": 14.253964191865265,
+        "actual_over_model": 1.0903602053696122,
+        "interval_len": 1176,
+        "active_m": 31,
+        "q_min": 1228,
+        "q_max": 2410,
+        "q_window": {
+          "block_count": 13,
+          "max_key": 14,
+          "max_positive": 5.1307357466905295,
+          "max_positive_share_of_E": 0.35995149683472893,
+          "positive_sum": 18.406716193333143,
+          "positive_sum_share_of_E": 1.2913401454900422,
+          "signed_l2": 7.902183788846154,
+          "chi2": 6.196285918572831,
+          "chi2_sqrt": 2.4892340023735877
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 17,
+            "max_positive": 4.874294492139814,
+            "max_positive_share_of_E": 0.34196062418352174,
+            "positive_sum": 14.201026243022866,
+            "positive_sum_share_of_E": 0.9962860893903038,
+            "signed_l2": 6.563159157330015,
+            "chi2": 2.101776668743948,
+            "chi2_sqrt": 1.44975055397263
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 61,
+            "max_positive": 2.5257555377134375,
+            "max_positive_share_of_E": 0.17719670848863825,
+            "positive_sum": 29.655048845969134,
+            "positive_sum_share_of_E": 2.080477293670575,
+            "signed_l2": 7.871522670122486,
+            "chi2": 18.506412104713498,
+            "chi2_sqrt": 4.30190796097656
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 19,
+            "max_positive": 5.353952967629716,
+            "max_positive_share_of_E": 0.37561150677544264,
+            "positive_sum": 16.396747549957542,
+            "positive_sum_share_of_E": 1.1503289421279144,
+            "signed_l2": 8.432360061143491,
+            "chi2": 3.5641209946611174,
+            "chi2_sqrt": 1.8878879719573187
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 201,
+            "max_positive": 2.8995325517888704,
+            "max_positive_share_of_E": 0.20341937953258177,
+            "positive_sum": 26.86283801329566,
+            "positive_sum_share_of_E": 1.8845871682928934,
+            "signed_l2": 7.1223919775547175,
+            "chi2": 16.15164513501846,
+            "chi2_sqrt": 4.0189109389259245
+          }
+        },
+        "max_centered_projection_peak_share": 0.37561150677544264
+      }
+    },
+    {
+      "p": 5003,
+      "y": 53,
+      "x": 52,
+      "capacity_margin": 69,
+      "hit_ratio": 0.9077540106951871,
+      "required_tail_excess": 74.80957179728777,
+      "band": "[1y,2y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.12872318386684303,
+      "excess_over_sqrt_model": 0.9709167692522167,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "q_mod_w",
+        "peak_w": 30,
+        "peak_key": 13,
+        "peak_share": 0.4310437301035337,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 108,
+        "model": 98.37027373453793,
+        "excess": 9.629726265462068,
+        "actual_over_model": 1.0978926447988633,
+        "interval_len": 804,
+        "active_m": 12,
+        "q_min": 2526,
+        "q_max": 5002,
+        "q_window": {
+          "block_count": 19,
+          "max_key": 69,
+          "max_positive": 2.8225376841129863,
+          "max_positive_share_of_E": 0.29310674117874846,
+          "positive_sum": 16.426231718614176,
+          "positive_sum_share_of_E": 1.7057838681799733,
+          "signed_l2": 6.79518397791759,
+          "chi2": 10.00860407722344,
+          "chi2_sqrt": 3.163637791723863
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 13,
+            "max_positive": 4.150833129340741,
+            "max_positive_share_of_E": 0.4310437301035337,
+            "positive_sum": 11.02329923728673,
+            "positive_sum_share_of_E": 1.144715740967928,
+            "signed_l2": 5.464468244565212,
+            "chi2": 2.386648711592286,
+            "chi2_sqrt": 1.5448782190167243
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 163,
+            "max_positive": 2.328430227364315,
+            "max_positive_share_of_E": 0.24179609712432346,
+            "positive_sum": 22.966251800003434,
+            "positive_sum_share_of_E": 2.3849329842712232,
+            "signed_l2": 6.5321498796212705,
+            "chi2": 21.03240156037601,
+            "chi2_sqrt": 4.58610963239825
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 18,
+            "max_positive": 3.576485177966214,
+            "max_positive_share_of_E": 0.37140050291913485,
+            "positive_sum": 12.674890258572484,
+            "positive_sum_share_of_E": 1.316225395111405,
+            "signed_l2": 6.6624010290296924,
+            "chi2": 3.6431944590914984,
+            "chi2_sqrt": 1.9087153949951519
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 96,
+            "max_positive": 2.237085857939098,
+            "max_positive_share_of_E": 0.23231043087513503,
+            "positive_sum": 23.871170572805642,
+            "positive_sum_share_of_E": 2.4789043753426174,
+            "signed_l2": 6.792167777387442,
+            "chi2": 23.171509266440616,
+            "chi2_sqrt": 4.813679389660327
+          }
+        },
+        "max_centered_projection_peak_share": 0.4310437301035337
+      }
+    },
+    {
+      "p": 20011,
+      "y": 71,
+      "x": 70,
+      "capacity_margin": 112,
+      "hit_ratio": 0.9568567026194145,
+      "required_tail_excess": 146.75986639631566,
+      "band": "[1y,2y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.12535750019887468,
+      "excess_over_sqrt_model": 1.0355888815481253,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 18,
+        "peak_share": 0.511271452689057,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 334,
+        "model": 315.60255001903704,
+        "excess": 18.39744998096296,
+        "actual_over_model": 1.0582930967441588,
+        "interval_len": 3021,
+        "active_m": 15,
+        "q_min": 10078,
+        "q_max": 20010,
+        "q_window": {
+          "block_count": 35,
+          "max_key": 97,
+          "max_positive": 4.70727565191471,
+          "max_positive_share_of_E": 0.25586565838122316,
+          "positive_sum": 33.67752253247776,
+          "positive_sum_share_of_E": 1.8305538304126976,
+          "signed_l2": 11.038762354566634,
+          "chi2": 12.20526945424828,
+          "chi2_sqrt": 3.4936040780615483
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 29,
+            "max_positive": 5.830267420474513,
+            "max_positive_share_of_E": 0.31690627921301434,
+            "positive_sum": 21.197486547818563,
+            "positive_sum_share_of_E": 1.1521969930481117,
+            "signed_l2": 10.166563306351545,
+            "chi2": 2.5989434459283163,
+            "chi2_sqrt": 1.6121238928594528
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 209,
+            "max_positive": 4.139111483481609,
+            "max_positive_share_of_E": 0.22498289098568647,
+            "positive_sum": 42.47214007749566,
+            "positive_sum_share_of_E": 2.3085884251048023,
+            "signed_l2": 12.093909234713745,
+            "chi2": 22.221814125513202,
+            "chi2_sqrt": 4.7140019225190395
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 18,
+            "max_positive": 9.406090977541197,
+            "max_positive_share_of_E": 0.511271452689057,
+            "positive_sum": 22.99028784028159,
+            "positive_sum_share_of_E": 1.2496453510715417,
+            "signed_l2": 13.562703180412703,
+            "chi2": 4.687083639122517,
+            "chi2_sqrt": 2.164967352899927
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 190,
+            "max_positive": 5.173786567492688,
+            "max_positive_share_of_E": 0.2812230267154601,
+            "positive_sum": 42.101699505340164,
+            "positive_sum_share_of_E": 2.288452994784904,
+            "signed_l2": 11.91436502728349,
+            "chi2": 21.733533897349123,
+            "chi2_sqrt": 4.66192384079246
+          }
+        },
+        "max_centered_projection_peak_share": 0.511271452689057
+      }
+    },
+    {
+      "p": 10007,
+      "y": 75,
+      "x": 74,
+      "capacity_margin": 116,
+      "hit_ratio": 0.9161849710982659,
+      "required_tail_excess": 132.29215751032638,
+      "band": "[4y,8y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.12014499184207322,
+      "excess_over_sqrt_model": 1.3104635109200444,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "q_window",
+        "peak_w": null,
+        "peak_key": 16,
+        "peak_share": 0.4503234767420662,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 163,
+        "model": 147.10575981515157,
+        "excess": 15.894240184848428,
+        "actual_over_model": 1.1080463484558363,
+        "interval_len": 1098,
+        "active_m": 46,
+        "q_min": 1237,
+        "q_max": 2444,
+        "q_window": {
+          "block_count": 13,
+          "max_key": 16,
+          "max_positive": 7.1575495002144045,
+          "max_positive_share_of_E": 0.4503234767420662,
+          "positive_sum": 24.81423263129549,
+          "positive_sum_share_of_E": 1.561209113660574,
+          "signed_l2": 12.086945774935096,
+          "chi2": 11.229163741293796,
+          "chi2_sqrt": 3.3509944406539676
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 17,
+            "max_positive": 4.876203837568198,
+            "max_positive_share_of_E": 0.3067906223171686,
+            "positive_sum": 14.312133747510888,
+            "positive_sum_share_of_E": 0.9004603920075575,
+            "signed_l2": 6.586845667827985,
+            "chi2": 2.2582096869567483,
+            "chi2_sqrt": 1.502734070604892
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 41,
+            "max_positive": 2.9110860266650826,
+            "max_positive_share_of_E": 0.18315351931325075,
+            "positive_sum": 29.846613015744616,
+            "positive_sum_share_of_E": 1.877825719797328,
+            "signed_l2": 8.43585958403554,
+            "chi2": 21.523068007538175,
+            "chi2_sqrt": 4.639296068105395
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 8,
+            "max_positive": 4.8458800075209645,
+            "max_positive_share_of_E": 0.3048827720711316,
+            "positive_sum": 15.90123152404107,
+            "positive_sum_share_of_E": 1.000439866210107,
+            "signed_l2": 7.517953761979938,
+            "chi2": 2.9865883108473956,
+            "chi2_sqrt": 1.728174849616611
+          },
+          "210": {
+            "block_count": 47,
+            "max_key": 88,
+            "max_positive": 1.8528087963453803,
+            "max_positive_share_of_E": 0.11657108328535361,
+            "positive_sum": 26.772554030590868,
+            "positive_sum_share_of_E": 1.6844186144935986,
+            "signed_l2": 6.773726176398024,
+            "chi2": 15.926374158010855,
+            "chi2_sqrt": 3.990786157890555
+          }
+        },
+        "max_centered_projection_peak_share": 0.4503234767420662
+      }
+    },
+    {
+      "p": 5003,
+      "y": 47,
+      "x": 46,
+      "capacity_margin": 70,
+      "hit_ratio": 0.9055330634278003,
+      "required_tail_excess": 68.68945146699197,
+      "band": "[4y,8y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.10836824871813715,
+      "excess_over_sqrt_model": 0.7910109729250278,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 24,
+        "peak_share": 0.6124047762537767,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 96,
+        "model": 88.5562444391126,
+        "excess": 7.443755560887396,
+        "actual_over_model": 1.0840568116684917,
+        "interval_len": 600,
+        "active_m": 32,
+        "q_min": 617,
+        "q_max": 1231,
+        "q_window": {
+          "block_count": 10,
+          "max_key": 12,
+          "max_positive": 2.335223993509363,
+          "max_positive_share_of_E": 0.3137158352941633,
+          "positive_sum": 9.711514012772291,
+          "positive_sum_share_of_E": 1.3046524611582688,
+          "signed_l2": 4.375555670076847,
+          "chi2": 2.6528301342985996,
+          "chi2_sqrt": 1.6287510964842355
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 1,
+            "max_positive": 3.398828867661514,
+            "max_positive_share_of_E": 0.4566013539617531,
+            "positive_sum": 11.41581213219999,
+            "positive_sum_share_of_E": 1.5336092163186335,
+            "signed_l2": 6.783369618291019,
+            "chi2": 4.073284057032832,
+            "chi2_sqrt": 2.0182378593795214
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 131,
+            "max_positive": 1.825115486631402,
+            "max_positive_share_of_E": 0.24518745567376257,
+            "positive_sum": 21.964366252558907,
+            "positive_sum_share_of_E": 2.950710306497552,
+            "signed_l2": 6.418072218704252,
+            "chi2": 23.238217129390424,
+            "chi2_sqrt": 4.8206033988900625
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 24,
+            "max_positive": 4.558591458753051,
+            "max_positive_share_of_E": 0.6124047762537767,
+            "positive_sum": 10.548277310169768,
+            "positive_sum_share_of_E": 1.4170639032795256,
+            "signed_l2": 6.737893524167978,
+            "chi2": 3.9231841699330823,
+            "chi2_sqrt": 1.9807029484334804
+          },
+          "210": {
+            "block_count": 46,
+            "max_key": 174,
+            "max_positive": 1.789165541104921,
+            "max_positive_share_of_E": 0.24035791160391465,
+            "positive_sum": 17.70005055068054,
+            "positive_sum_share_of_E": 2.3778387677967294,
+            "signed_l2": 5.628922184200014,
+            "chi2": 15.296083195163787,
+            "chi2_sqrt": 3.9110207357113036
+          }
+        },
+        "max_centered_projection_peak_share": 0.6124047762537767
+      }
+    },
+    {
+      "p": 10007,
+      "y": 63,
+      "x": 62,
+      "capacity_margin": 100,
+      "hit_ratio": 0.9276934201012292,
+      "required_tail_excess": 121.84898729378038,
+      "band": "[1y,2y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.0894502080847399,
+      "excess_over_sqrt_model": 0.8808761619496837,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 14,
+        "peak_share": 0.6931685093975772,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 164,
+        "model": 153.10058273165652,
+        "excess": 10.899417268343484,
+        "actual_over_model": 1.0711912200063092,
+        "interval_len": 1358,
+        "active_m": 12,
+        "q_min": 5491,
+        "q_max": 9409,
+        "q_window": {
+          "block_count": 23,
+          "max_key": 58,
+          "max_positive": 4.38311362752,
+          "max_positive_share_of_E": 0.40214201544979983,
+          "positive_sum": 18.960134051537366,
+          "positive_sum_share_of_E": 1.7395548390101196,
+          "signed_l2": 8.311765282598083,
+          "chi2": 10.486043545759449,
+          "chi2_sqrt": 3.238216105475274
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 23,
+            "max_positive": 4.124314957619642,
+            "max_positive_share_of_E": 0.3783977488042775,
+            "positive_sum": 14.99228550759015,
+            "positive_sum_share_of_E": 1.375512574523969,
+            "signed_l2": 7.6861759352944246,
+            "chi2": 3.066162003694907,
+            "chi2_sqrt": 1.7510459741808342
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 173,
+            "max_positive": 2.549314522023511,
+            "max_positive_share_of_E": 0.23389457062331195,
+            "positive_sum": 27.71387778590605,
+            "positive_sum_share_of_E": 2.5426935315522665,
+            "signed_l2": 8.254657793377131,
+            "chi2": 21.430215166826837,
+            "chi2_sqrt": 4.629278039481625
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 14,
+            "max_positive": 7.555132821199866,
+            "max_positive_share_of_E": 0.6931685093975772,
+            "positive_sum": 12.62719817983697,
+            "positive_sum_share_of_E": 1.1585204849906694,
+            "signed_l2": 8.458070295003802,
+            "chi2": 3.689663200163696,
+            "chi2_sqrt": 1.9208496037336438
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 80,
+            "max_positive": 2.5513919904132925,
+            "max_positive_share_of_E": 0.23408517424354544,
+            "positive_sum": 33.24838006956778,
+            "positive_sum_share_of_E": 3.0504731813631114,
+            "signed_l2": 10.164787043226452,
+            "chi2": 33.31043146893408,
+            "chi2_sqrt": 5.771518991473049
+          }
+        },
+        "max_centered_projection_peak_share": 0.6931685093975772
+      }
+    },
+    {
+      "p": 10007,
+      "y": 60,
+      "x": 59,
+      "capacity_margin": 120,
+      "hit_ratio": 0.9140401146131805,
+      "required_tail_excess": 125.67348862556362,
+      "band": "[1y,2y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.08611383895704734,
+      "excess_over_sqrt_model": 0.8247609265991965,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 23,
+        "peak_share": 0.4996751067927717,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 183,
+        "model": 172.1777734393279,
+        "excess": 10.822226560672107,
+        "actual_over_model": 1.0628549570858845,
+        "interval_len": 1525,
+        "active_m": 13,
+        "q_min": 5225,
+        "q_max": 9842,
+        "q_window": {
+          "block_count": 27,
+          "max_key": 58,
+          "max_positive": 4.307541564799321,
+          "max_positive_share_of_E": 0.3980272950903556,
+          "positive_sum": 21.84181058314574,
+          "positive_sum_share_of_E": 2.0182363084615806,
+          "signed_l2": 8.196740427340146,
+          "chi2": 10.433269277464685,
+          "chi2_sqrt": 3.2300571631883988
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 19,
+            "max_positive": 4.429345117647948,
+            "max_positive_share_of_E": 0.40928223899360566,
+            "positive_sum": 14.877913947156081,
+            "positive_sum_share_of_E": 1.374755357758108,
+            "signed_l2": 7.321176348385565,
+            "chi2": 2.496608703587181,
+            "chi2_sqrt": 1.5800660440586594
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 191,
+            "max_positive": 3.023835581653792,
+            "max_positive_share_of_E": 0.27940974666362917,
+            "positive_sum": 29.909036443102828,
+            "positive_sum_share_of_E": 2.763667557265161,
+            "signed_l2": 9.569244672926523,
+            "chi2": 27.175049957738068,
+            "chi2_sqrt": 5.212969399271213
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 23,
+            "max_positive": 5.407597212439406,
+            "max_positive_share_of_E": 0.4996751067927717,
+            "positive_sum": 15.301627260564736,
+            "positive_sum_share_of_E": 1.4139074962790688,
+            "signed_l2": 8.611035399036815,
+            "chi2": 3.4607000110821273,
+            "chi2_sqrt": 1.8602956784022606
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 59,
+            "max_positive": 3.5473506504374086,
+            "max_positive_share_of_E": 0.32778380960240244,
+            "positive_sum": 34.59829621038296,
+            "positive_sum_share_of_E": 3.1969665407036407,
+            "signed_l2": 10.320116781711208,
+            "chi2": 27.39797544756048,
+            "chi2_sqrt": 5.234307542317367
+          }
+        },
+        "max_centered_projection_peak_share": 0.4996751067927717
+      }
+    },
+    {
+      "p": 20011,
+      "y": 66,
+      "x": 65,
+      "capacity_margin": 190,
+      "hit_ratio": 0.9266409266409267,
+      "required_tail_excess": 188.33855807515997,
+      "band": "[2y,4y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.06820198245592228,
+      "excess_over_sqrt_model": 0.760669130859872,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 29,
+        "peak_share": 0.5962688514584323,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 298,
+        "model": 285.15493696638424,
+        "excess": 12.845063033615759,
+        "actual_over_model": 1.0450459079203318,
+        "interval_len": 2522,
+        "active_m": 24,
+        "q_min": 4946,
+        "q_max": 9640,
+        "q_window": {
+          "block_count": 29,
+          "max_key": 61,
+          "max_positive": 5.661905491766129,
+          "max_positive_share_of_E": 0.44078456267196364,
+          "positive_sum": 28.90061535160001,
+          "positive_sum_share_of_E": 2.2499395507804505,
+          "signed_l2": 10.921704110266965,
+          "chi2": 12.123095282592196,
+          "chi2_sqrt": 3.481823557073534
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 19,
+            "max_positive": 5.24404699847895,
+            "max_positive_share_of_E": 0.4082538937142765,
+            "positive_sum": 17.920424092980653,
+            "positive_sum_share_of_E": 1.3951215378299495,
+            "signed_l2": 8.996012979791637,
+            "chi2": 2.3129029007202173,
+            "chi2_sqrt": 1.5208230997457322
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 191,
+            "max_positive": 4.032595842730369,
+            "max_positive_share_of_E": 0.3139413043110021,
+            "positive_sum": 39.0589368865253,
+            "positive_sum_share_of_E": 3.0407742479976445,
+            "signed_l2": 11.525174856421046,
+            "chi2": 22.499264091230604,
+            "chi2_sqrt": 4.743338918022895
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 29,
+            "max_positive": 7.6591109819652345,
+            "max_positive_share_of_E": 0.5962688514584323,
+            "positive_sum": 18.78840996687964,
+            "positive_sum_share_of_E": 1.4626950383746686,
+            "signed_l2": 10.555881771161882,
+            "chi2": 3.1837149954101065,
+            "chi2_sqrt": 1.7842967789608617
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 209,
+            "max_positive": 3.4859161008368265,
+            "max_positive_share_of_E": 0.27138178237927846,
+            "positive_sum": 38.69403501619348,
+            "positive_sum_share_of_E": 3.012366300961739,
+            "signed_l2": 11.346237783552315,
+            "chi2": 20.905427738365805,
+            "chi2_sqrt": 4.57224537162714
+          }
+        },
+        "max_centered_projection_peak_share": 0.5962688514584323
+      }
+    },
+    {
+      "p": 10007,
+      "y": 75,
+      "x": 74,
+      "capacity_margin": 116,
+      "hit_ratio": 0.9161849710982659,
+      "required_tail_excess": 132.29215751032638,
+      "band": "[1y,2y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.06704312885433962,
+      "excess_over_sqrt_model": 0.7312008603107923,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 22,
+        "peak_share": 0.6527230275735219,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 156,
+        "model": 147.1307198376166,
+        "excess": 8.869280162383404,
+        "actual_over_model": 1.060281633721171,
+        "interval_len": 1302,
+        "active_m": 14,
+        "q_min": 4970,
+        "q_max": 9500,
+        "q_window": {
+          "block_count": 27,
+          "max_key": 94,
+          "max_positive": 4.065894057427917,
+          "max_positive_share_of_E": 0.45842435721810665,
+          "positive_sum": 19.706307459644727,
+          "positive_sum_share_of_E": 2.221860973929268,
+          "signed_l2": 7.843617959897694,
+          "chi2": 8.956544119128043,
+          "chi2_sqrt": 2.992748589361967
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 23,
+            "max_positive": 5.061683098652075,
+            "max_positive_share_of_E": 0.5706982986195207,
+            "positive_sum": 10.446537566017163,
+            "positive_sum_share_of_E": 1.1778337559256793,
+            "signed_l2": 5.89158734670955,
+            "chi2": 1.797683850053178,
+            "chi2_sqrt": 1.3407773305262802
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 143,
+            "max_positive": 2.0542712885776035,
+            "max_positive_share_of_E": 0.23161646164817595,
+            "positive_sum": 29.018500233592814,
+            "positive_sum_share_of_E": 3.2717988046726436,
+            "signed_l2": 8.059771788578646,
+            "chi2": 21.945946921868828,
+            "chi2_sqrt": 4.68465013868366
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 22,
+            "max_positive": 5.789183399988673,
+            "max_positive_share_of_E": 0.6527230275735219,
+            "positive_sum": 20.810875890211623,
+            "positive_sum_share_of_E": 2.3463996524177,
+            "signed_l2": 12.977302199333302,
+            "chi2": 9.095428604728795,
+            "chi2_sqrt": 3.015862829229605
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 124,
+            "max_positive": 4.046995440494787,
+            "max_positive_share_of_E": 0.4562935623185067,
+            "positive_sum": 33.413746920542515,
+            "positive_sum_share_of_E": 3.767357249831578,
+            "signed_l2": 10.463122917670049,
+            "chi2": 36.264765703034364,
+            "chi2_sqrt": 6.022023389445973
+          }
+        },
+        "max_centered_projection_peak_share": 0.6527230275735219
+      }
+    },
+    {
+      "p": 20011,
+      "y": 99,
+      "x": 98,
+      "capacity_margin": 214,
+      "hit_ratio": 0.9175654853620955,
+      "required_tail_excess": 249.33378717780698,
+      "band": "[16y,32y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.06453328351645592,
+      "excess_over_sqrt_model": 1.090000364422002,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "q_window",
+        "peak_w": null,
+        "peak_key": 7,
+        "peak_share": 0.3806027114685867,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 234,
+        "model": 217.9096720218229,
+        "excess": 16.0903279781771,
+        "actual_over_model": 1.0738394391992188,
+        "interval_len": 1488,
+        "active_m": 145,
+        "q_min": 701,
+        "q_max": 1240,
+        "q_window": {
+          "block_count": 5,
+          "max_key": 7,
+          "max_positive": 6.1240224569130675,
+          "max_positive_share_of_E": 0.3806027114685867,
+          "positive_sum": 16.090327978177008,
+          "positive_sum_share_of_E": 0.9999999999999942,
+          "signed_l2": 8.953905849789656,
+          "chi2": 1.54204484316012,
+          "chi2_sqrt": 1.2417909820739237
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 11,
+            "max_positive": 6.11934800430738,
+            "max_positive_share_of_E": 0.38031219827258306,
+            "positive_sum": 13.661408580775557,
+            "positive_sum_share_of_E": 0.8490447552905184,
+            "signed_l2": 8.223042052011673,
+            "chi2": 2.6532752938004887,
+            "chi2_sqrt": 1.62888774745238
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 79,
+            "max_positive": 3.897068134329869,
+            "max_positive_share_of_E": 0.24219942188968197,
+            "positive_sum": 52.57270494394275,
+            "positive_sum_share_of_E": 3.2673482489136183,
+            "signed_l2": 17.622995448626877,
+            "chi2": 58.109192377970196,
+            "chi2_sqrt": 7.622938565800606
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 22,
+            "max_positive": 4.154554012946072,
+            "max_positive_share_of_E": 0.2582019470691205,
+            "positive_sum": 14.131436850841734,
+            "positive_sum_share_of_E": 0.8782566067023518,
+            "signed_l2": 7.2845857381447745,
+            "chi2": 1.7974591669368627,
+            "chi2_sqrt": 1.3406935395297699
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 142,
+            "max_positive": 2.0854921521524803,
+            "max_positive_share_of_E": 0.12961153774994394,
+            "positive_sum": 21.448303989102662,
+            "positive_sum_share_of_E": 1.3329935858481223,
+            "signed_l2": 6.402159006640152,
+            "chi2": 9.721962207650607,
+            "chi2_sqrt": 3.1180061269424417
+          }
+        },
+        "max_centered_projection_peak_share": 0.3806027114685867
+      }
+    },
+    {
+      "p": 20011,
+      "y": 80,
+      "x": 79,
+      "capacity_margin": 198,
+      "hit_ratio": 0.9233449477351916,
+      "required_tail_excess": 217.2217067067434,
+      "band": "[2y,4y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.0633186271429921,
+      "excess_over_sqrt_model": 0.8143761894302486,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "q_mod_w",
+        "peak_w": 30,
+        "peak_key": 29,
+        "peak_share": 0.5708921566497231,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 299,
+        "model": 285.2458197456713,
+        "excess": 13.754180254328674,
+        "actual_over_model": 1.0482186917466207,
+        "interval_len": 2525,
+        "active_m": 29,
+        "q_min": 4987,
+        "q_max": 9821,
+        "q_window": {
+          "block_count": 28,
+          "max_key": 40,
+          "max_positive": 3.9889244738160485,
+          "max_positive_share_of_E": 0.2900154280412798,
+          "positive_sum": 32.70250493082236,
+          "positive_sum_share_of_E": 2.3776411480815316,
+          "signed_l2": 11.778598377613228,
+          "chi2": 14.998975853148227,
+          "chi2_sqrt": 3.8728511271604833
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 29,
+            "max_positive": 7.852153628342734,
+            "max_positive_share_of_E": 0.5708921566497231,
+            "positive_sum": 15.388519892573392,
+            "positive_sum_share_of_E": 1.1188249396201104,
+            "signed_l2": 9.59924608526258,
+            "chi2": 2.602396445099348,
+            "chi2_sqrt": 1.6131944845862038
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 73,
+            "max_positive": 3.5706962255278567,
+            "max_positive_share_of_E": 0.25960807256427354,
+            "positive_sum": 41.04921926505685,
+            "positive_sum_share_of_E": 2.98449042443936,
+            "signed_l2": 11.967902885634535,
+            "chi2": 23.656679087318864,
+            "chi2_sqrt": 4.863813224962372
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 3,
+            "max_positive": 5.280976817107778,
+            "max_positive_share_of_E": 0.3839543120314833,
+            "positive_sum": 16.02079581586014,
+            "positive_sum_share_of_E": 1.164794667484318,
+            "signed_l2": 7.662225532403961,
+            "chi2": 1.6548824683189902,
+            "chi2_sqrt": 1.2864223522307867
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 193,
+            "max_positive": 6.088241842964706,
+            "max_positive_share_of_E": 0.44264665217315535,
+            "positive_sum": 39.219047179121986,
+            "positive_sum_share_of_E": 2.851427453612082,
+            "signed_l2": 12.32977530422883,
+            "chi2": 24.91283498895868,
+            "chi2_sqrt": 4.991275887882645
+          }
+        },
+        "max_centered_projection_peak_share": 0.5708921566497231
+      }
+    },
+    {
+      "p": 50021,
+      "y": 128,
+      "x": 127,
+      "capacity_margin": 486,
+      "hit_ratio": 0.9175991861648016,
+      "required_tail_excess": 489.72294223944175,
+      "band": "[1y,2y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.0497041917890569,
+      "excess_over_sqrt_model": 0.9923579649639281,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 21,
+        "peak_share": 0.7461381510298242,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 626,
+        "model": 601.6587169554296,
+        "excess": 24.341283044570446,
+        "actual_over_model": 1.0404569606632552,
+        "interval_len": 6301,
+        "active_m": 23,
+        "q_min": 25310,
+        "q_max": 48875,
+        "q_window": {
+          "block_count": 50,
+          "max_key": 127,
+          "max_positive": 8.061448124281977,
+          "max_positive_share_of_E": 0.33118419064109933,
+          "positive_sum": 56.16393383348852,
+          "positive_sum_share_of_E": 2.3073530565602796,
+          "signed_l2": 17.351080321097825,
+          "chi2": 22.177030576143586,
+          "chi2_sqrt": 4.709249470578468
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 29,
+            "max_positive": 16.701731337754893,
+            "max_positive_share_of_E": 0.6861483557449686,
+            "positive_sum": 32.45314170511571,
+            "positive_sum_share_of_E": 1.3332551799217787,
+            "signed_l2": 19.50257440129032,
+            "chi2": 4.996518757861341,
+            "chi2_sqrt": 2.2352894125507197
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 181,
+            "max_positive": 5.467521746006394,
+            "max_positive_share_of_E": 0.22461929126722746,
+            "positive_sum": 63.97338458126827,
+            "positive_sum_share_of_E": 2.6281845728562834,
+            "signed_l2": 18.182886524347087,
+            "chi2": 25.93980561906588,
+            "chi2_sqrt": 5.093113548613056
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 21,
+            "max_positive": 18.161959924569402,
+            "max_positive_share_of_E": 0.7461381510298242,
+            "positive_sum": 40.59854211204562,
+            "positive_sum_share_of_E": 1.6678883375912064,
+            "signed_l2": 25.978687798089336,
+            "chi2": 9.007006444710726,
+            "chi2_sqrt": 3.001167513603785
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 171,
+            "max_positive": 6.878796974554721,
+            "max_positive_share_of_E": 0.2825979617409322,
+            "positive_sum": 67.08777136107462,
+            "positive_sum_share_of_E": 2.7561312704113674,
+            "signed_l2": 18.858992608627585,
+            "chi2": 28.357429382169215,
+            "chi2_sqrt": 5.325169422860574
+          }
+        },
+        "max_centered_projection_peak_share": 0.7461381510298242
+      }
+    },
+    {
+      "p": 20011,
+      "y": 99,
+      "x": 98,
+      "capacity_margin": 214,
+      "hit_ratio": 0.9175654853620955,
+      "required_tail_excess": 249.33378717780698,
+      "band": "[2y,4y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.04367802863355833,
+      "excess_over_sqrt_model": 0.6831776233671195,
+      "sn3_centered_route": {
+        "route": "centered_columncrt_return",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 26,
+        "peak_share": 0.7527363548600204,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 265,
+        "model": 254.1095917043342,
+        "excess": 10.890408295665793,
+        "actual_over_model": 1.0428571319273032,
+        "interval_len": 2249,
+        "active_m": 32,
+        "q_min": 5042,
+        "q_max": 9955,
+        "q_window": {
+          "block_count": 30,
+          "max_key": 40,
+          "max_positive": 4.00151403118406,
+          "max_positive_share_of_E": 0.36743471158713104,
+          "positive_sum": 27.860619560436625,
+          "positive_sum_share_of_E": 2.558271352555689,
+          "signed_l2": 10.209736283787581,
+          "chi2": 12.832946645998957,
+          "chi2_sqrt": 3.582310238658701
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 19,
+            "max_positive": 5.390542965253161,
+            "max_positive_share_of_E": 0.49498079584385374,
+            "positive_sum": 21.527813531539316,
+            "positive_sum_share_of_E": 1.9767682668157665,
+            "signed_l2": 12.172131728058499,
+            "chi2": 4.763829615238528,
+            "chi2_sqrt": 2.182619897104974
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 47,
+            "max_positive": 3.0716883134200446,
+            "max_positive_share_of_E": 0.28205446756688884,
+            "positive_sum": 35.439078135672275,
+            "positive_sum_share_of_E": 3.2541551403335776,
+            "signed_l2": 10.661266774511047,
+            "chi2": 22.294862311578992,
+            "chi2_sqrt": 4.721743566901849
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 26,
+            "max_positive": 8.197606243416796,
+            "max_positive_share_of_E": 0.7527363548600204,
+            "positive_sum": 20.507540293472026,
+            "positive_sum_share_of_E": 1.8830827767617948,
+            "signed_l2": 12.177809197072907,
+            "chi2": 4.677313435808118,
+            "chi2_sqrt": 2.162709743772409
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 146,
+            "max_positive": 5.063662960887963,
+            "max_positive_share_of_E": 0.4649653918763743,
+            "positive_sum": 33.61925792344445,
+            "positive_sum_share_of_E": 3.0870521114276657,
+            "signed_l2": 10.237082857524909,
+            "chi2": 20.041414901482156,
+            "chi2_sqrt": 4.476763887171419
+          }
+        },
+        "max_centered_projection_peak_share": 0.7527363548600204
+      }
+    },
+    {
+      "p": 50021,
+      "y": 125,
+      "x": 124,
+      "capacity_margin": 508,
+      "hit_ratio": 0.9139712108382726,
+      "required_tail_excess": 516.4200226822946,
+      "band": "[1y,2y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.03936009148594007,
+      "excess_over_sqrt_model": 0.8165403549360191,
+      "sn3_centered_route": {
+        "route": "centered_columncrt_return",
+        "peak_kind": "d_mod_w",
+        "peak_w": 30,
+        "peak_key": 2,
+        "peak_share": 0.8712494700882008,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 640,
+        "model": 619.6736606620536,
+        "excess": 20.326339337946365,
+        "actual_over_model": 1.032801683576852,
+        "interval_len": 6494,
+        "active_m": 23,
+        "q_min": 25737,
+        "q_max": 49233,
+        "q_window": {
+          "block_count": 47,
+          "max_key": 139,
+          "max_positive": 4.540863007714467,
+          "max_positive_share_of_E": 0.22339797305446565,
+          "positive_sum": 38.11171047220198,
+          "positive_sum_share_of_E": 1.8749913517901804,
+          "signed_l2": 11.30250149218765,
+          "chi2": 10.0892213415633,
+          "chi2_sqrt": 3.1763534660933597
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 13,
+            "max_positive": 8.340097869710064,
+            "max_positive_share_of_E": 0.4103098807437646,
+            "positive_sum": 25.167340283660025,
+            "positive_sum_share_of_E": 1.2381639342543203,
+            "signed_l2": 12.786417611873432,
+            "chi2": 2.1083945438564,
+            "chi2_sqrt": 1.4520311786791633
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 29,
+            "max_positive": 5.801513890805424,
+            "max_positive_share_of_E": 0.28541852983703897,
+            "positive_sum": 61.653838374332295,
+            "positive_sum_share_of_E": 3.033199306046879,
+            "signed_l2": 18.492057415552758,
+            "chi2": 26.019034237597573,
+            "chi2_sqrt": 5.100885632671798
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 2,
+            "max_positive": 17.70931237701872,
+            "max_positive_share_of_E": 0.8712494700882008,
+            "positive_sum": 36.994894714504156,
+            "positive_sum_share_of_E": 1.8200470876445511,
+            "signed_l2": 24.84506319367509,
+            "chi2": 7.976698487901292,
+            "chi2_sqrt": 2.8243049566045966
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 152,
+            "max_positive": 7.642126365202364,
+            "max_positive_share_of_E": 0.37597160207473307,
+            "positive_sum": 68.8188016612643,
+            "positive_sum_share_of_E": 3.3856957968220796,
+            "signed_l2": 21.199381243318914,
+            "chi2": 34.613854473050274,
+            "chi2_sqrt": 5.883354015614756
+          }
+        },
+        "max_centered_projection_peak_share": 0.8712494700882008
+      }
+    },
+    {
+      "p": 50021,
+      "y": 111,
+      "x": 110,
+      "capacity_margin": 503,
+      "hit_ratio": 0.9147746526601153,
+      "required_tail_excess": 524.3210933487229,
+      "band": "[8y,16y)",
+      "sn2_labels": [
+        "distributed_band_large_sieve_candidate"
+      ],
+      "excess_over_required": 0.03895250770113273,
+      "excess_over_sqrt_model": 0.8641546450747848,
+      "sn3_centered_route": {
+        "route": "true_distributed_dls_candidate",
+        "peak_kind": "q_mod_w",
+        "peak_w": 30,
+        "peak_key": 13,
+        "peak_share": 0.7195654841094845,
+        "threshold": 0.75
+      },
+      "projection": {
+        "actual": 579,
+        "model": 558.5763785734675,
+        "excess": 20.423621426532463,
+        "actual_over_model": 1.0365637041055904,
+        "interval_len": 4681,
+        "active_m": 120,
+        "q_min": 3129,
+        "q_max": 6121,
+        "q_window": {
+          "block_count": 15,
+          "max_key": 14,
+          "max_positive": 7.770978275888346,
+          "max_positive_share_of_E": 0.3804897336078222,
+          "positive_sum": 39.45768840300094,
+          "positive_sum_share_of_E": 1.931963366288272,
+          "signed_l2": 18.110068130897925,
+          "chi2": 8.816198807386039,
+          "chi2_sqrt": 2.969208447951413
+        },
+        "q_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 13,
+            "max_positive": 14.696133039051674,
+            "max_positive_share_of_E": 0.7195654841094845,
+            "positive_sum": 34.353231402900136,
+            "positive_sum_share_of_E": 1.682034282043224,
+            "signed_l2": 20.99535451774123,
+            "chi2": 6.280496461614989,
+            "chi2_sqrt": 2.506091870146621
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 169,
+            "max_positive": 6.573583762581784,
+            "max_positive_share_of_E": 0.3218618101705507,
+            "positive_sum": 68.69026035903622,
+            "positive_sum_share_of_E": 3.3632752450944,
+            "signed_l2": 21.59648149744364,
+            "chi2": 40.92785867584982,
+            "chi2_sqrt": 6.397488466253755
+          }
+        },
+        "d_mod_w": {
+          "30": {
+            "block_count": 8,
+            "max_key": 28,
+            "max_positive": 11.944883363761946,
+            "max_positive_share_of_E": 0.584856285489324,
+            "positive_sum": 25.25661626091329,
+            "positive_sum_share_of_E": 1.2366375058295123,
+            "signed_l2": 15.110859369463208,
+            "chi2": 3.2057627853451316,
+            "chi2_sqrt": 1.7904644049366443
+          },
+          "210": {
+            "block_count": 48,
+            "max_key": 194,
+            "max_positive": 5.0216543699868055,
+            "max_positive_share_of_E": 0.24587482626676288,
+            "positive_sum": 52.438185002005525,
+            "positive_sum_share_of_E": 2.5675262925644877,
+            "signed_l2": 15.632992735269193,
+            "chi2": 20.342889320330638,
+            "chi2_sqrt": 4.510309226686196
+          }
+        },
+        "max_centered_projection_peak_share": 0.7195654841094845
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "all_current_small_ambiguous_routed": true,
+  "certificate_type": "triad_a1_small_ambiguous_clean_admission_router",
+  "gates": {
+    "current_layers_delete_before_clean": true,
+    "if_nodeletion_then_phase_residue_pdec_witness": true,
+    "kl_chain_identity_exact": true,
+    "no_clean_shape_currently_visible": true,
+    "small_ambiguous_gate_active": true
+  },
+  "nodeletion_summary": {
+    "current_nodeletion_triggered": false,
+    "gate_counts": {
+      "FiberDeletion": 6
+    },
+    "max_global_residue_normalized_kl": 0.038855655443699094,
+    "max_kl_chain_abs_error": 0.0,
+    "min_phase_residue_mutual_normalized_kl": 0.41250010713817964,
+    "shape_route_counts": {
+      "PhaseResidueMutualPDECWitness": 6
+    }
+  },
+  "review_conclusion": "当前 APS small-ambiguous 分支尚未触发 clean 终端：已物化升层仍全部处于 FiberDeletion；同时 KL 形状账本显示，若把这些层视作 NoDeletion，偏斜也会以 phase-residue mutual PDEC witness 回流。",
+  "route": "CurrentLayerFiberDeletionOrNoDeletionPhaseResiduePDEC; CleanKLSOnlyAfterFlatNoDeletion",
+  "small_ambiguous_summary": {
+    "global_max_ambiguous_gamma_share_upper_bound": 0.05528425182914454,
+    "global_min_signature_signal_minus_ambiguous_budget": 0.13073320222097914,
+    "global_min_signature_signal_to_ambiguity_ratio": 3.51497432278278
+  },
+  "source_hashes": {
+    "forced_gamma_signature_json": "5d1e1e55d68ce913f395db41890de6b436df802e07412e10dff904284c65a9b2",
+    "nodeletion_kl_gate_json": "5cbfa7c96f19c0ab178eb0810492383509edc23daf205f7a3f823986ecff755f",
+    "nodeletion_kl_witness_json": "700c9ad3240ab63767b5dd8d187fad562f4eafb4aa860bb7c23a2e4ed8dc304c",
+    "script": "4300a3584d59f954702001be4db810913173df932f4ecec1f8a7441da17ceb80"
+  },
+  "status": "small_ambiguous_branch_routed_before_clean_terminal",
+  "structural_law": "small-ambiguous 分支不能直接调用 CleanKLS。若新增层仍有 fiber deletion，则继续由删除势推进；若删除停止但 KL 或 phase-residue 互信息持久偏大，则回流 new-layer/refined PDEC；只有 deletion 停止且 KL/互信息同时趋平，才成为真正 CleanKLS/DLS 输入。"
+}

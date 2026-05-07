@@ -135,3 +135,8 @@ exclude U_p(p)=0 directly.
 
 若能证明 `(DBB-8)`，则对角分支闭合；再与 PDL 内部分支合并，才可能得到完整
 `X_0(p)>p`。
+
+后续 `docs/monograph/prime-matrix-diagonal-postsquare-rci-hardpoint.md` 已将 `(DBB-8)` 进一步压缩为
+`PostSquare-RCI/PDEC`：平方后端点的低筛骨架与尾命中存在精确单尾抵消恒等式，目标变成
+无尾储备大于双尾碰撞。`p<=10000` 审计全部通过，最大 `omega_tail=2`，但全局证明仍需排斥
+固定端点相位的 RCI 失败或将其路由到 PDEC。

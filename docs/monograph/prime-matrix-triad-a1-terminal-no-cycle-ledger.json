@@ -1,0 +1,293 @@
+{
+  "all_materialized_gates_pass": true,
+  "certificate_type": "triad_a1_terminal_no_cycle_ledger",
+  "gates": [
+    {
+      "all_empty": true,
+      "gate": "FixedQZeroBlockDirection",
+      "p_values": [
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47
+      ],
+      "route": "零容量块方向在 LHB 分支为空。",
+      "status": "Closed"
+    },
+    {
+      "gate": "FixedQDensityBarrier",
+      "has_persistent_caps": true,
+      "max_persistent_rate_row": {
+        "alpha": 0.0,
+        "p": 23,
+        "persistent_rate": 1.0,
+        "worst_intersection_mass": 3210,
+        "worst_intersection_size": 191
+      },
+      "route": "固定 Q 普通 Fourier cap 出现持久交集；不能在同一固定层循环，必须升层、加 column/tail 行或进 CleanKLS。",
+      "status": "PersistentCapForcesLiftOrExtraRows"
+    },
+    {
+      "all_layers_monotone": true,
+      "all_layers_resparse": true,
+      "gate": "NewLayerTower",
+      "layer_rows": [
+        {
+          "fiber_size": 13,
+          "layer_class": "FiberDeletionLayer",
+          "max_slot_survival_rate": 0.3128205128205128,
+          "min_density_drop_factor": 3.1967213114754096,
+          "q": 2310,
+          "q_lift": 30030
+        },
+        {
+          "fiber_size": 17,
+          "layer_class": "FiberDeletionLayer",
+          "max_slot_survival_rate": 0.16289592760180996,
+          "min_density_drop_factor": 6.138888888888888,
+          "q": 30030,
+          "q_lift": 510510
+        }
+      ],
+      "route": "已物化升层均重新稀疏，继续累计删除势。",
+      "status": "CurrentLayersDeleting"
+    },
+    {
+      "gate": "HoleResidueOccupancy",
+      "max_union_bound_rate": 0.3435897435897436,
+      "min_certified_deletion_lb_rate": 0.6564102564102564,
+      "route": "若 Occ+TI 不满则删除；若趋满只能进入 OccupancySaturation 或 TailIndependence。",
+      "row_count": 6,
+      "rows": [
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-hole-residue-occupancy-q2310-q30030.json",
+          "certified_deletion_lb_rate": 0.9230769230769231,
+          "max_phase_occupied_ratio": 0.07692307692307693,
+          "p": 17,
+          "q": 2310,
+          "q_lift": 30030,
+          "union_bound_rate": 0.07692307692307693
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-hole-residue-occupancy-q2310-q30030.json",
+          "certified_deletion_lb_rate": 0.7978021978021979,
+          "max_phase_occupied_ratio": 0.15384615384615385,
+          "p": 19,
+          "q": 2310,
+          "q_lift": 30030,
+          "union_bound_rate": 0.2021978021978022
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-hole-residue-occupancy-q2310-q30030.json",
+          "certified_deletion_lb_rate": 0.6896551724137931,
+          "max_phase_occupied_ratio": 0.23076923076923078,
+          "p": 23,
+          "q": 2310,
+          "q_lift": 30030,
+          "union_bound_rate": 0.3103448275862069
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-hole-residue-occupancy-q2310-q30030.json",
+          "certified_deletion_lb_rate": 0.6564102564102564,
+          "max_phase_occupied_ratio": 0.3076923076923077,
+          "p": 29,
+          "q": 2310,
+          "q_lift": 30030,
+          "union_bound_rate": 0.3435897435897436
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-hole-residue-occupancy-q30030-q510510.json",
+          "certified_deletion_lb_rate": 0.9411764705882353,
+          "max_phase_occupied_ratio": 0.058823529411764705,
+          "p": 19,
+          "q": 30030,
+          "q_lift": 510510,
+          "union_bound_rate": 0.058823529411764705
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-hole-residue-occupancy-q30030-q510510.json",
+          "certified_deletion_lb_rate": 0.8371040723981901,
+          "max_phase_occupied_ratio": 0.11764705882352941,
+          "p": 23,
+          "q": 30030,
+          "q_lift": 510510,
+          "union_bound_rate": 0.16289592760180996
+        }
+      ],
+      "status": "CertifiedDeletionOrNamedEscape"
+    },
+    {
+      "all_consistent_with_lift_m_vector": true,
+      "all_dead_slots_hall_certified": true,
+      "gate": "TailCapacityPressure",
+      "route": "残余洞容量/Hall 失败则死亡；容量成功则支付 Tail KL 或进入 CleanKLS。",
+      "rows": [
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-tail-capacity-pressure-q2310-q30030.json",
+          "avg_survivor_kl_floor": 0.0,
+          "hall_certified_dead_rate": 0.9230769230769231,
+          "hall_uncertified_dead_slots": 0,
+          "p": 17,
+          "q": 2310,
+          "q_lift": 30030,
+          "survival_rate": 0.07692307692307693
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-tail-capacity-pressure-q2310-q30030.json",
+          "avg_survivor_kl_floor": 2.771621749620212,
+          "hall_certified_dead_rate": 0.7978021978021979,
+          "hall_uncertified_dead_slots": 0,
+          "p": 19,
+          "q": 2310,
+          "q_lift": 30030,
+          "survival_rate": 0.2021978021978022
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-tail-capacity-pressure-q2310-q30030.json",
+          "avg_survivor_kl_floor": 4.9377256103073535,
+          "hall_certified_dead_rate": 0.6896551724137931,
+          "hall_uncertified_dead_slots": 0,
+          "p": 23,
+          "q": 2310,
+          "q_lift": 30030,
+          "survival_rate": 0.3103448275862069
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-tail-capacity-pressure-q2310-q30030.json",
+          "avg_survivor_kl_floor": 6.996640800327452,
+          "hall_certified_dead_rate": 0.6871794871794872,
+          "hall_uncertified_dead_slots": 0,
+          "p": 29,
+          "q": 2310,
+          "q_lift": 30030,
+          "survival_rate": 0.3128205128205128
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-tail-capacity-pressure-q30030-q510510.json",
+          "avg_survivor_kl_floor": 0.0,
+          "hall_certified_dead_rate": 0.9411764705882353,
+          "hall_uncertified_dead_slots": 0,
+          "p": 19,
+          "q": 30030,
+          "q_lift": 510510,
+          "survival_rate": 0.058823529411764705
+        },
+        {
+          "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-tail-capacity-pressure-q30030-q510510.json",
+          "avg_survivor_kl_floor": 2.889912331404099,
+          "hall_certified_dead_rate": 0.8371040723981901,
+          "hall_uncertified_dead_slots": 0,
+          "p": 23,
+          "q": 30030,
+          "q_lift": 510510,
+          "survival_rate": 0.16289592760180996
+        }
+      ],
+      "status": "CapacityDeathOrKL"
+    },
+    {
+      "all_unit_density_bounds_pass": true,
+      "gate": "TailUnitDensity",
+      "route": "非空残余洞幸存且 u_tail 不小则支付 KL；KL 小只能进入空残余洞或 CleanKLS。",
+      "rows": [
+        {
+          "max_actual_completion_ratio": 0.0,
+          "p": 17,
+          "positive_residual_survival_rate": 0.0,
+          "q": 2310,
+          "q_lift": 30030,
+          "singleton_completion_upper": 0.0,
+          "structural_kl_floor": null,
+          "tail_unit_density": 1.0
+        },
+        {
+          "max_actual_completion_ratio": 0.058823529411764705,
+          "p": 19,
+          "positive_residual_survival_rate": 0.1986754966887417,
+          "q": 2310,
+          "q_lift": 30030,
+          "singleton_completion_upper": 0.05882352941176472,
+          "structural_kl_floor": 2.8332133440562157,
+          "tail_unit_density": 0.9411764705882353
+        },
+        {
+          "max_actual_completion_ratio": 0.10835913312693499,
+          "p": 23,
+          "positive_residual_survival_rate": 0.3103448275862069,
+          "q": 2310,
+          "q_lift": 30030,
+          "singleton_completion_upper": 0.10835913312693501,
+          "structural_kl_floor": 2.2223042617332425,
+          "tail_unit_density": 0.891640866873065
+        },
+        {
+          "max_actual_completion_ratio": 0.01507605330461704,
+          "p": 29,
+          "positive_residual_survival_rate": 0.3128205128205128,
+          "q": 2310,
+          "q_lift": 30030,
+          "singleton_completion_upper": 0.14712612733880737,
+          "structural_kl_floor": 1.9164650509752676,
+          "tail_unit_density": 0.8528738726611926
+        },
+        {
+          "max_actual_completion_ratio": 0.0,
+          "p": 19,
+          "positive_residual_survival_rate": 0.0,
+          "q": 30030,
+          "q_lift": 510510,
+          "singleton_completion_upper": 0.0,
+          "structural_kl_floor": null,
+          "tail_unit_density": 1.0
+        },
+        {
+          "max_actual_completion_ratio": 0.05263157894736842,
+          "p": 23,
+          "positive_residual_survival_rate": 0.16036308623298035,
+          "q": 30030,
+          "q_lift": 510510,
+          "singleton_completion_upper": 0.052631578947368474,
+          "structural_kl_floor": 2.9444389791664394,
+          "tail_unit_density": 0.9473684210526315
+        }
+      ],
+      "status": "NonemptyResidualPaysKLOrCleanKLS"
+    },
+    {
+      "gate": "TerminalRouter",
+      "route": "当前物化层仍在删除势；删除停止时强制进入 PDEC/CleanKLS，删除发散时进入 Sparse/LocalSurvivor。",
+      "route_counts": {
+        "LiftFiberDeletion": 6
+      },
+      "status": "current_layers_all_deleting",
+      "triad_counts": {
+        "ContinueLiftOrSparse": 6
+      }
+    }
+  ],
+  "no_cycle_law": "固定 Q 普通 cap 持久时不能同层循环；升层后若删除不足则 HRO/TCP/TUD 强制进入 PDEC/CleanKLS，若删除持续则进入 Sparse/LocalSurvivor 或容量矛盾。",
+  "review_conclusion": "当前账本关闭的是 A1 路线的中间逃逸和同层循环，不是三终端证书全集。后续必须在 PDEC、CleanKLS/DLS、Sparse/LocalSurvivor 三类中提交实际排斥证书。",
+  "source_hashes": {
+    "direction_support_json": "fbdf2704a83255fb771d044287350368d7c75b43a277b0eb8a67e8862351c571",
+    "fourier_cap_scan_json": "fe47050ce4b60f5c5651228f7e940eb20898506149f830d86448375984b7e502",
+    "hro_1": "69deae251f17fe9bd22a2d38e093325f608fbe4b17de0e6da98efc00ee7f33e9",
+    "hro_2": "4c42aa7915919e83b3e2ef3e04891b282e1b9d78f80a0d80caa429888d4bba04",
+    "newlayer_tower_gate_json": "c59e17f45bd93129864e54c07eb5c27a5fbb96bdd6fe1fdedcff94a7d5249597",
+    "tail_unit_density_json": "5d178ad63bd0dcf03c25028af32389ae6636de0c6b1ea826b7076a1bb489c4d5",
+    "tcp_1": "17e00964a8d3bfd4b75a3c9d9ba943600eb24419a9881e5a105d87c6a24797af",
+    "tcp_2": "d08e44f727ca7b006fddcc672f1cd3066405f66e5987ce360f09642490767428",
+    "terminal_no_cycle_ledger_script": "1c908271e4cf67371e00b8b6551625674a4914f70b1be82e22af47551f57a1fe",
+    "terminal_router_json": "eb0c2528f581dd283cd4bdfb7687fd008f4ae0cc53bfa1faa705be8c89d27d6b"
+  },
+  "status": "a1_middle_escape_closed_terminal_certificates_open",
+  "terminal_obligations": [
+    "PDEC family U_CRT<L_PDEC",
+    "CleanKLS/DLS admission and large-sieve certificate",
+    "Sparse/LocalSurvivor witness or blocker deficit"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "all_current_dualcap_mass_sources_verified": true,
+  "all_current_dualcap_pxp_exits_closed": true,
+  "boundary_support_closure": {
+    "all_boundary_terminals_excluded": true,
+    "all_phase_le_p_have_local_survivor": true,
+    "total_phase_le_p_count": 113,
+    "total_y0_completion_le_p_count": 0
+  },
+  "certificate_type": "triad_a1_pdec_mass_source_router",
+  "dualcap_class_counts": {
+    "ForcedPersistentByDensityBarrier": 24,
+    "PersistentCap": 68,
+    "SparseCap": 16
+  },
+  "dualcap_route_counts": {
+    "LiftOrColumnTailOrCleanKLS": 24,
+    "LocalSurvivorOrExplicitPDEC": 16,
+    "RefinedPDECOrColumnTailRows": 68
+  },
+  "family_routes": [
+    {
+      "count": 16,
+      "family": "SparseCap",
+      "mass_source": "Q=2310 M_Q(t) from LHB multiplicity cap; sparse phase atoms are subsets of supp(M_Q).",
+      "mass_source_verified": true,
+      "pxp_exit_closed": true,
+      "pxp_exit_route": "SparseLocalSurvivorOrFinitePDEC",
+      "remaining_terminal_obligation": "finite PDEC packet beyond P; no P-row exit in current sparse atoms."
+    },
+    {
+      "count": 68,
+      "family": "PersistentCap",
+      "mass_source": "Q=2310 M_Q(t); cap intersections were recomputed and phase M counts match payment ledger.",
+      "mass_source_verified": true,
+      "pxp_exit_closed": true,
+      "pxp_exit_route": "BoundarySubsetBTLS",
+      "remaining_terminal_obligation": "ColumnTail/TailAnchor PDEC or distributed CleanKLS/DLS."
+    },
+    {
+      "count": 24,
+      "family": "ForcedPersistentByDensityBarrier",
+      "mass_source": "Q=2310 M_Q(t), then lifted to Q'=30030 support ledger; old intersections recomputed.",
+      "mass_source_verified": true,
+      "pxp_exit_closed": true,
+      "pxp_exit_route": "BoundarySubsetBTLS plus lift monotonicity",
+      "remaining_terminal_obligation": "next lift, column-tail rows, PDECEntropy, or CleanKLS."
+    }
+  ],
+  "materialized_lfte_closure": {
+    "all_phase_mass_identities_hold": true,
+    "all_terminal_gt_p": true,
+    "total_nonzero_phase_count": 5030,
+    "total_terminal_le_p_count": 0
+  },
+  "remaining_obligations": [
+    "Prove S subset Z_LHB or an equivalent attachment for any new formal PDEC branch.",
+    "For persistent current caps, finish ColumnTail/TailAnchor PDEC or distributed CleanKLS/DLS.",
+    "For forced persistent caps, continue lift deletion/KL/CleanKLS routing.",
+    "For any cap without same M_Q source, return to Multiplicity-Stitching instead of using BTLS/LFTE."
+  ],
+  "review_conclusion": "当前 DualCap 三族都已有可追踪的 M_Q 质量来源；其 P×P 早期出口由 SparseLocalSurvivor 或全支撑 BTLS 子集继承关闭。剩余不是早期行出口，而是 PDEC/CleanKLS 等终端证书。",
+  "source_hashes": {
+    "all_phase_json": "fe903cfdb2e6a2a57c79f785c39457c8aa13941756af1b9ed1eb199e87d98356",
+    "boundary_json": "21d9835674dfc2cbe05e76fde52692910fd5a0167c8f31ee4084ab351b18855c",
+    "dualcap_json": "b6bf0fc2a4305656fa7aef8cac33aa9b7dd1867617611fe7b96a23e8ba251c53",
+    "forced_json": "fd6107b8faeef59b057132e53c15419d0094ec008aa010a49d5fc66ac30f34e9",
+    "persistent_json": "14af137ae8279f5d816d0e764074c42b3f25bc62aa352aff056b663deeb0802a",
+    "router_script": "9bfda39a19434b4b01ddfd311d6d25ba334e3cced918d6b7d1a99aa2bf11c2aa",
+    "sparse_json": "b65eaf7458e9bcc8591109eab724cb5a90861f97181dfe59267a53a55716cc6c"
+  },
+  "status": "current_dualcap_mass_sources_routed_to_btls_lfte_terminal_open",
+  "structural_law": "A legal PDEC cap must first attach to the same formal unit C_P and inherit M_Q(t). If it is a subset of supp(M_Q) and Q>P, BTLS closes the P-row boundary exit. If a concrete atom is extracted, LFTE expands its remaining high-prime fiber locally."
+}

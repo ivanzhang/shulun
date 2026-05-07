@@ -1,0 +1,2679 @@
+{
+  "all_rows_have_finite_layer_correlation": true,
+  "certificate_type": "triad_a1_multibucket_mfu_candidate_audit",
+  "forced_cap_count": 24,
+  "kind_summary": [
+    {
+      "bucket_kind": "residue",
+      "max_mutual_info": 1.2655476691516472,
+      "max_normalized_mutual_info": 0.23667892629453768,
+      "max_pair_count": 125486,
+      "min_mutual_info": 1.2272116391841525,
+      "min_normalized_mutual_info": 0.22178298521804704,
+      "row_count": 24
+    },
+    {
+      "bucket_kind": "column_residue",
+      "max_mutual_info": 1.2428795368362089,
+      "max_normalized_mutual_info": 0.23243960023176133,
+      "max_pair_count": 125486,
+      "min_mutual_info": 0.9558026672775031,
+      "min_normalized_mutual_info": 0.18271512547032862,
+      "row_count": 24
+    }
+  ],
+  "matrix_row_count": 48,
+  "review_conclusion": "当前 forced 多桶暴露矩阵均存在有限层 phase-bucket 相关候选行；这给出了 MFU-1 的候选输入，但还未证明实际支付图 Gamma 持久落在这些行上。下一步是 ActualPaymentStitching：持久则 PDEC，不持久则 CleanKLS/DLS。",
+  "route_counts": {
+    "FiniteLayerMFUCandidateNeedsActualPaymentStitching": 48
+  },
+  "rows": [
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "h": 805,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "122b30f0ff45a01430aa0f70ec9055e0f181223c0f11777cb1fb0f93f119517f",
+      "p": 43,
+      "pair_count": 70520,
+      "phase_bucket_mutual_info": 1.2613661176829973,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23589690509061986,
+      "phase_count": 1077,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 10.308014506646183,
+          "mass_share": 0.00036192878070869785,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 10.255870734850319,
+          "mass_share": 0.00036192878070869785,
+          "phase": 349
+        },
+        {
+          "bucket": "41:4",
+          "count": 10660320,
+          "lift": 9.217251855878118,
+          "mass_share": 0.00036192878070869785,
+          "phase": 1669
+        },
+        {
+          "bucket": "41:36",
+          "count": 10660320,
+          "lift": 9.141541007208764,
+          "mass_share": 0.00036192878070869785,
+          "phase": 642
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 9.008284024265118,
+          "mass_share": 0.00036192878070869785,
+          "phase": 702
+        }
+      ],
+      "total_exposure_incidence": 29454192560
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "h": 805,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ebe77a72471b261e8e166dfae4b055d68d471456cb899b292388669a245f4f17",
+      "p": 43,
+      "pair_count": 70520,
+      "phase_bucket_mutual_info": 1.2427670324823483,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23241856000520628,
+      "phase_count": 1077,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 1747
+        }
+      ],
+      "total_exposure_incidence": 29454192560
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "h": 1505,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "d3f29b1cc054557506b787481295dec2d90f34b62093730528f60e941b99a0a6",
+      "p": 43,
+      "pair_count": 70844,
+      "phase_bucket_mutual_info": 1.2613735240592683,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23589829020887834,
+      "phase_count": 1081,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 10.375474311452312,
+          "mass_share": 0.0003620473273122034,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 10.25434301300772,
+          "mass_share": 0.0003620473273122034,
+          "phase": 349
+        },
+        {
+          "bucket": "41:4",
+          "count": 10660320,
+          "lift": 9.265301413862948,
+          "mass_share": 0.0003620473273122034,
+          "phase": 1669
+        },
+        {
+          "bucket": "41:36",
+          "count": 10660320,
+          "lift": 9.16466004562499,
+          "mass_share": 0.0003620473273122034,
+          "phase": 642
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 8.986416551211493,
+          "mass_share": 0.0003620473273122034,
+          "phase": 702
+        }
+      ],
+      "total_exposure_incidence": 29444548256
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "h": 1505,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ebeaf7e60a8b6cb51653c5937db4789df56ab7fd873b37f4747dcd818cb80a61",
+      "p": 43,
+      "pair_count": 70844,
+      "phase_bucket_mutual_info": 1.2428795368362089,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23243960023176133,
+      "phase_count": 1081,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 1747
+        }
+      ],
+      "total_exposure_incidence": 29444548256
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "h": 805,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "518ed146c1e1d8cec220ff760ac78ec35284998dea7819f9cc9f8f529e98fb48",
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2655476691516472,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23667892629453768,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 9.832610170548085,
+          "mass_share": 0.00045517590774299285,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:23",
+          "count": 10660320,
+          "lift": 9.62152503198523,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 9.528696975651592,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 9.449895822616558,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        },
+        {
+          "bucket": "37:31",
+          "count": 10660320,
+          "lift": 9.374077420140848,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        }
+      ],
+      "total_exposure_incidence": 23420220224
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "h": 805,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "0f209dbda44c6fdc01a532a3d0a74b581e25e76d785ebd3d4db416ea174078e6",
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2428020058527791,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2324251006199648,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        }
+      ],
+      "total_exposure_incidence": 23420220224
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "h": 1505,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "518ed146c1e1d8cec220ff760ac78ec35284998dea7819f9cc9f8f529e98fb48",
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2655476691516472,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23667892629453768,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 9.832610170548085,
+          "mass_share": 0.00045517590774299285,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:23",
+          "count": 10660320,
+          "lift": 9.62152503198523,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 9.528696975651592,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 9.449895822616558,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        },
+        {
+          "bucket": "37:31",
+          "count": 10660320,
+          "lift": 9.374077420140848,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        }
+      ],
+      "total_exposure_incidence": 23420220224
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "h": 1505,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "0f209dbda44c6fdc01a532a3d0a74b581e25e76d785ebd3d4db416ea174078e6",
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2428020058527791,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2324251006199648,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        }
+      ],
+      "total_exposure_incidence": 23420220224
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 770,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "3dc302c8131c0320d9fe34292c61d606e55e4a74299cc6724644cc2ae181f4d5",
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.2399720291835339,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23189584687801404,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 940
+        },
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 1907
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 599
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1612
+        }
+      ],
+      "total_exposure_incidence": 22137016224
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 770,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "764ede77302433f103986fb8dccf1d76cb5a2f60e867995e71f91ec8f5ff3d0f",
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.1889261438634922,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.222349398629723,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "41:0",
+          "count": 5271192,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00023811664348356038,
+          "phase": 1531
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 277
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 481
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1477
+        }
+      ],
+      "total_exposure_incidence": 22137016224
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1540,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "3dc302c8131c0320d9fe34292c61d606e55e4a74299cc6724644cc2ae181f4d5",
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.2399720291835339,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23189584687801404,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 940
+        },
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 1907
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 599
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1612
+        }
+      ],
+      "total_exposure_incidence": 22137016224
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1540,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "764ede77302433f103986fb8dccf1d76cb5a2f60e867995e71f91ec8f5ff3d0f",
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.1889261438634922,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.222349398629723,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "41:0",
+          "count": 5271192,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00023811664348356038,
+          "phase": 1531
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 277
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 481
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1477
+        }
+      ],
+      "total_exposure_incidence": 22137016224
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "af574c9512f729990fce0f13748d337dda71830c21ccdaec6d9f04883eb7db49",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178384,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23232815105761492,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 384
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 960
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1402
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1612
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1666
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "a4af79b2ad7079cd4260594228b4abfb3559a7c6895a81e209b4e6815ff4d141",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166592,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.19393451718179225,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "17:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "19:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "23:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "29:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "31:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ecd7b0938f10c8d634cadfb6ad0d9adaaf6ce7626427ae388c90e2cf7bd250d3",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178408,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2323281510576154,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 481
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 487
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 645
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 699
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 909
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "c03985431faa784640becc590faf05cad41b0c3530243378a1e655cbaaf4385c",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166763,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.19393451718179563,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "17:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "19:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "23:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "29:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "31:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "af574c9512f729990fce0f13748d337dda71830c21ccdaec6d9f04883eb7db49",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178384,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23232815105761492,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 384
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 960
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1402
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1612
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1666
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "a4af79b2ad7079cd4260594228b4abfb3559a7c6895a81e209b4e6815ff4d141",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166592,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.19393451718179225,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "17:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "19:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "23:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "29:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "31:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ecd7b0938f10c8d634cadfb6ad0d9adaaf6ce7626427ae388c90e2cf7bd250d3",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178408,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2323281510576154,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 481
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 487
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 645
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 699
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 909
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "c03985431faa784640becc590faf05cad41b0c3530243378a1e655cbaaf4385c",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166763,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.19393451718179563,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "17:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "19:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "23:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "29:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "31:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "af574c9512f729990fce0f13748d337dda71830c21ccdaec6d9f04883eb7db49",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178384,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.23232815105761492,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 384
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 960
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1402
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1612
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1666
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "a4af79b2ad7079cd4260594228b4abfb3559a7c6895a81e209b4e6815ff4d141",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166592,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.19393451718179225,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "17:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "19:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "23:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "29:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "31:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ecd7b0938f10c8d634cadfb6ad0d9adaaf6ce7626427ae388c90e2cf7bd250d3",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178408,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2323281510576154,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 481
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 487
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 645
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 699
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 909
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "c03985431faa784640becc590faf05cad41b0c3530243378a1e655cbaaf4385c",
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166763,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.19393451718179563,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "17:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "19:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "23:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "29:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "31:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        }
+      ],
+      "total_exposure_incidence": 16977762880
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "h": 665,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "d0d07ca9ff192ce6a7e587cf07049da36e391446a43b0e870bf2ae8aaebe46a3",
+      "p": 47,
+      "pair_count": 94198,
+      "phase_bucket_mutual_info": 1.250458965022523,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22598426652776316,
+      "phase_count": 1150,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 8.903717852583828,
+          "mass_share": 0.0002976952852818701,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 8.874990543717784,
+          "mass_share": 0.0002976952852818701,
+          "phase": 468
+        },
+        {
+          "bucket": "43:20",
+          "count": 292641936,
+          "lift": 8.186557999038529,
+          "mass_share": 0.0002976952852818701,
+          "phase": 860
+        },
+        {
+          "bucket": "43:20",
+          "count": 213042960,
+          "lift": 8.186557999038529,
+          "mass_share": 0.0002167217918982536,
+          "phase": 1548
+        },
+        {
+          "bucket": "43:11",
+          "count": 292641936,
+          "lift": 8.04080429433564,
+          "mass_share": 0.0002976952852818701,
+          "phase": 1423
+        }
+      ],
+      "total_exposure_incidence": 983025094680
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "h": 665,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "f86fa7c5ae3d83f981b29f235812054aef707c1f87fd1e3b3057677cef49b895",
+      "p": 47,
+      "pair_count": 94198,
+      "phase_bucket_mutual_info": 1.228264090851351,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22197318539631797,
+      "phase_count": 1150,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "37:31",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "41:31",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "43:31",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 565
+        }
+      ],
+      "total_exposure_incidence": 983025094680
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "h": 1645,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "6bb90e1047bb5e2ec886649e255b651c92b8aa1b36ff716e4a8eaeb07ee1ba36",
+      "p": 47,
+      "pair_count": 93819,
+      "phase_bucket_mutual_info": 1.2505398689394696,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22599888756919018,
+      "phase_count": 1145,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 8.966268474592319,
+          "mass_share": 0.0002991546476724833,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 8.816249119928218,
+          "mass_share": 0.0002991546476724833,
+          "phase": 468
+        },
+        {
+          "bucket": "43:20",
+          "count": 292641936,
+          "lift": 8.26478959756763,
+          "mass_share": 0.0002991546476724833,
+          "phase": 860
+        },
+        {
+          "bucket": "43:20",
+          "count": 213042960,
+          "lift": 8.26478959756763,
+          "mass_share": 0.00021778420587643648,
+          "phase": 1548
+        },
+        {
+          "bucket": "43:22",
+          "count": 292641936,
+          "lift": 8.095305376162399,
+          "mass_share": 0.0002991546476724833,
+          "phase": 1451
+        }
+      ],
+      "total_exposure_incidence": 978229615608
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "h": 1645,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "346abd10fdcd56f8901c6df2741cbe80e1cb12b0072c62b8cbd62d1fa9b9a54c",
+      "p": 47,
+      "pair_count": 93819,
+      "phase_bucket_mutual_info": 1.2282620983568882,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22197282531061158,
+      "phase_count": 1145,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "37:31",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "41:31",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "43:31",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 565
+        }
+      ],
+      "total_exposure_incidence": 978229615608
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 770,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "76cd209d6098be592a55f2ec3838f27dfe003d5bbdd6c629fe9b79db4334b67f",
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.234428678759135,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22308725624210649,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 124
+        },
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 937
+        }
+      ],
+      "total_exposure_incidence": 869391781416
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 770,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "b3cb452f9f64b6423aaa8c3afca1c743c681bfbef6601f72d2a359470b7f5528",
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.1677009889803636,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2110281575802994,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:4",
+          "count": 33480000,
+          "lift": 51.79737097738458,
+          "mass_share": 3.8509680808657164e-05,
+          "phase": 1402
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 148
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1180
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1618
+        },
+        {
+          "bucket": "43:4",
+          "count": 8145696,
+          "lift": 46.042107535452956,
+          "mass_share": 9.369419143499266e-06,
+          "phase": 190
+        }
+      ],
+      "total_exposure_incidence": 869391781416
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1540,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "76cd209d6098be592a55f2ec3838f27dfe003d5bbdd6c629fe9b79db4334b67f",
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.234428678759135,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22308725624210649,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 124
+        },
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 937
+        }
+      ],
+      "total_exposure_incidence": 869391781416
+    },
+    {
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1540,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "b3cb452f9f64b6423aaa8c3afca1c743c681bfbef6601f72d2a359470b7f5528",
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.1677009889803636,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2110281575802994,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:4",
+          "count": 33480000,
+          "lift": 51.79737097738458,
+          "mass_share": 3.8509680808657164e-05,
+          "phase": 1402
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 148
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1180
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1618
+        },
+        {
+          "bucket": "43:4",
+          "count": 8145696,
+          "lift": 46.042107535452956,
+          "mass_share": 9.369419143499266e-06,
+          "phase": 190
+        }
+      ],
+      "total_exposure_incidence": 869391781416
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "h": 1001,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "68b8dae4fe8b5d94ca6393ed5686c6e3e9f5304534ded93b26e9696b43c02126",
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.25496829128888,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2267991967392625,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 9.920932882209435,
+          "mass_share": 0.0004100528050662505,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 9.605229283460138,
+          "mass_share": 0.0004100528050662505,
+          "phase": 468
+        },
+        {
+          "bucket": "31:12",
+          "count": 213042960,
+          "lift": 9.566635667775795,
+          "mass_share": 0.0002985179244700493,
+          "phase": 565
+        },
+        {
+          "bucket": "43:28",
+          "count": 292641936,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0004100528050662505,
+          "phase": 440
+        },
+        {
+          "bucket": "43:28",
+          "count": 213042960,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0002985179244700493,
+          "phase": 1183
+        }
+      ],
+      "total_exposure_incidence": 713668904064
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "h": 1001,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "f8f1fc5eaa535fa54f8517f29a4a412fe2a504e054bdd24b7babd787ff436111",
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.2163900126505798,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.21982728942695584,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "43:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        }
+      ],
+      "total_exposure_incidence": 713668904064
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "h": 1309,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "68b8dae4fe8b5d94ca6393ed5686c6e3e9f5304534ded93b26e9696b43c02126",
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.25496829128888,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.2267991967392625,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 9.920932882209435,
+          "mass_share": 0.0004100528050662505,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 9.605229283460138,
+          "mass_share": 0.0004100528050662505,
+          "phase": 468
+        },
+        {
+          "bucket": "31:12",
+          "count": 213042960,
+          "lift": 9.566635667775795,
+          "mass_share": 0.0002985179244700493,
+          "phase": 565
+        },
+        {
+          "bucket": "43:28",
+          "count": 292641936,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0004100528050662505,
+          "phase": 440
+        },
+        {
+          "bucket": "43:28",
+          "count": 213042960,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0002985179244700493,
+          "phase": 1183
+        }
+      ],
+      "total_exposure_incidence": 713668904064
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "h": 1309,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "f8f1fc5eaa535fa54f8517f29a4a412fe2a504e054bdd24b7babd787ff436111",
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.2163900126505798,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.21982728942695584,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "43:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        }
+      ],
+      "total_exposure_incidence": 713668904064
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "d5bb1f498b9f6b45f089fe2a10dcd3ee199bc4edf7bd68804e23c6c8c01f4709",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272118918263073,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22178303087580442,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1374
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1830
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 2264
+        },
+        {
+          "bucket": "43:24",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 1058
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ca6d95db01a020bd1bcd744a15dca15fc4931e08a52139022a59341a6aaa13e9",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775031,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.18271512547032862,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "23:0",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "29:17",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "31:15",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "37:9",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "41:5",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "e4b354bacb44255473bb441fa57c6b00f17c4c8178a0a0a75faa1fcf4260b300",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272116391841525,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22178298521804704,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1107
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 937
+        },
+        {
+          "bucket": "43:18",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 607
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.5,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "7b4b5e6018f69dda5f11dc6e4e7c6726102893a33c3ec6ce7660336f9badb499",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775277,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.18271512547033333,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "23:22",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "29:16",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "31:14",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "37:8",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "41:4",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "d5bb1f498b9f6b45f089fe2a10dcd3ee199bc4edf7bd68804e23c6c8c01f4709",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272118918263073,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22178303087580442,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1374
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1830
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 2264
+        },
+        {
+          "bucket": "43:24",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 1058
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ca6d95db01a020bd1bcd744a15dca15fc4931e08a52139022a59341a6aaa13e9",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775031,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.18271512547032862,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "23:0",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "29:17",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "31:15",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "37:9",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "41:5",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "e4b354bacb44255473bb441fa57c6b00f17c4c8178a0a0a75faa1fcf4260b300",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272116391841525,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22178298521804704,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1107
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 937
+        },
+        {
+          "bucket": "43:18",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 607
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "7b4b5e6018f69dda5f11dc6e4e7c6726102893a33c3ec6ce7660336f9badb499",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775277,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.18271512547033333,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_mass",
+      "top_lift_rows": [
+        {
+          "bucket": "23:22",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "29:16",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "31:14",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "37:8",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "41:4",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "d5bb1f498b9f6b45f089fe2a10dcd3ee199bc4edf7bd68804e23c6c8c01f4709",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272118918263073,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22178303087580442,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1374
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1830
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 2264
+        },
+        {
+          "bucket": "43:24",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 1058
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "ca6d95db01a020bd1bcd744a15dca15fc4931e08a52139022a59341a6aaa13e9",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775031,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.18271512547032862,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "23:0",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "29:17",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "31:15",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "37:9",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "41:5",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "e4b354bacb44255473bb441fa57c6b00f17c4c8178a0a0a75faa1fcf4260b300",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272116391841525,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.22178298521804704,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1107
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 937
+        },
+        {
+          "bucket": "43:18",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 607
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    },
+    {
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "h": 1155,
+      "has_finite_layer_correlation": true,
+      "matrix_hash": "7b4b5e6018f69dda5f11dc6e4e7c6726102893a33c3ec6ce7660336f9badb499",
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775277,
+      "phase_bucket_mutual_info_normalized_by_log_bucket": 0.18271512547033333,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "FiniteLayerMFUCandidateNeedsActualPaymentStitching",
+      "source": "top_by_size",
+      "top_lift_rows": [
+        {
+          "bucket": "23:22",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "29:16",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "31:14",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "37:8",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "41:4",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        }
+      ],
+      "total_exposure_incidence": 603796019040
+    }
+  ],
+  "source_hashes": {
+    "dualcap_json": "b6bf0fc2a4305656fa7aef8cac33aa9b7dd1867617611fe7b96a23e8ba251c53",
+    "multiplicity_json": "5bcfa7c286e716b3b626c312becf303fee3b9d72142aaa30be63f849cb21162d",
+    "script": "914bd1a98c18c5980e0f97bb3dac80e3bc2ca0c503d3623502dc96de5f3535d9"
+  },
+  "status": "finite_layer_mfu_candidate_rows_materialized",
+  "structural_law": "Finite-layer phase-bucket correlation is a candidate compatibility row, not a proof of actual payment. If actual payment follows a correlated row persistently, it becomes a multi-bucket formal unit and must enter PDEC. If actual payment avoids every persistent finite signature, it is DistributedPayment and enters CleanKLS/DLS."
+}

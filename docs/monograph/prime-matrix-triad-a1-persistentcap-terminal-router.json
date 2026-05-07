@@ -1,0 +1,54 @@
+{
+  "all_counts_match": true,
+  "all_current_persistent_caps_routed": true,
+  "certificate_type": "triad_a1_persistentcap_terminal_router",
+  "count_chain": {
+    "deletion_cap_count": 68,
+    "mass_source_persistent_count": 68,
+    "payment_persistent_count": 68,
+    "promotion_cap_count": 68
+  },
+  "current_layer_metrics": {
+    "global_max_survival_current_layer": 0.4147501982553529,
+    "global_min_deletion_potential_current_layer": 0.8800788718999966,
+    "payment_route_counts": {
+      "ColumnTailPigeonholeRowOrDistributedCleanKLS": 68
+    },
+    "promotion_class_counts": {
+      "PromotionFiberDeletion": 68
+    },
+    "unique_phase_signature_count": 1915
+  },
+  "gates": {
+    "mass_source_verified": true,
+    "payment_intersections_recomputed": true,
+    "payment_phase_m_counts_match": true,
+    "promotion_all_fiber_deletion": true,
+    "promotion_deletion_potential_positive": true,
+    "pxp_exit_closed_by_btls": true,
+    "top_prime_is_next_high_prime": true
+  },
+  "remaining_obligations": [
+    "证明沿正式无限反例族的晋升删除势发散，或抽出 NoDeletion 层。",
+    "NoDeletion 层若 KL 偏斜持久，提交 new-layer/profinite PDEC。",
+    "NoDeletion 层若 KL 可求和，提交 CleanKLS/DLS admission。",
+    "若固定 residue/column 签名持久，提交 TailAnchor/ColumnCRT PDEC。"
+  ],
+  "review_conclusion": "当前 68 个 PersistentCap 已从早期出口和 top-prime 独立终端中退出：它们有同一 M_Q 质量来源，P×P 出口由 BTLS 关闭，top-prime 支付全部晋升为 Q=2310->30030 的正删除势。剩余是删除势塔是否发散，或停止后进入 NoDeletion-KL/CleanKLS/PDEC。",
+  "router_chain": [
+    "AttachedMass => g(t)<=M_Q(t)",
+    "BTLS => no P-row boundary exit",
+    "ColumnTail payment => fixed signature PDEC or distributed CleanKLS",
+    "TopPrime=next prime => promote Q to rQ",
+    "PromotionFiberDeletion => deletion potential ledger",
+    "If deletion potential stops accumulating => NoDeletion-KL / CleanKLS / PDEC"
+  ],
+  "source_hashes": {
+    "deletion_json": "26faac90a447ac6215c5a9194bfdd198976cba7cf3ac6937320da46a36bda184",
+    "mass_source_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
+    "payment_json": "14af137ae8279f5d816d0e764074c42b3f25bc62aa352aff056b663deeb0802a",
+    "promotion_json": "7d35be2091b3007ef596ea4fccfe21b4ec60b9b8ffe2bf280b0919747edc5df2",
+    "router_script": "c2628831aab49bf815f38e78ec7bb522c4dd95a62afb675645ee8b6200da2ec2"
+  },
+  "status": "current_persistent_caps_routed_to_promotion_deletion_or_terminal_triad"
+}

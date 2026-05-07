@@ -1,0 +1,114 @@
+{
+  "certificate_type": "triad_a1_nodeletion_kl_gate",
+  "current_nodeletion_triggered": false,
+  "gate_counts": {
+    "FiberDeletion": 6
+  },
+  "gate_law": "若 survival 未趋近 1，则仍在 FiberDeletion。若 survival->1 且 KL 在正质量层上累计，进入 new-layer PDEC；若 KL 可求和并趋零，则进入 CleanKLS/DLS。",
+  "nodeletion_rows": [],
+  "parameters": {
+    "clean_kl_threshold": 0.05,
+    "kl_pdec_threshold": 0.25,
+    "nodeletion_survival": 0.9,
+    "threshold_meaning": "阈值只用于有限审计分流；结构定理使用极限：survival->1 后按 KL 是否累计分支。"
+  },
+  "review_conclusion": "当前已物化层没有触发 NoDeletion；全部仍在 FiberDeletion。本文件给出后续层一旦删除停止时的 KL 分流接口。",
+  "rows": [
+    {
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q2310-q30030.json",
+      "deletion": 0.9230769230769231,
+      "density_drop_factor": 13.0,
+      "fiber_size": 13,
+      "gate": "FiberDeletion",
+      "kl_nats_to_uniform": 2.5649493574615367,
+      "normalized_entropy": 0.0,
+      "normalized_kl_to_uniform": 1.0,
+      "p": 17,
+      "pinsker_tv_upper_from_kl": 1.0,
+      "q": 2310,
+      "q_lift": 30030,
+      "survival": 0.07692307692307693
+    },
+    {
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q2310-q30030.json",
+      "deletion": 0.7978021978021979,
+      "density_drop_factor": 4.945652173913044,
+      "fiber_size": 13,
+      "gate": "FiberDeletion",
+      "kl_nats_to_uniform": 1.3978395319916956,
+      "normalized_entropy": 0.45502256100093114,
+      "normalized_kl_to_uniform": 0.5449774389990689,
+      "p": 19,
+      "pinsker_tv_upper_from_kl": 0.8360142139915133,
+      "q": 2310,
+      "q_lift": 30030,
+      "survival": 0.2021978021978022
+    },
+    {
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q2310-q30030.json",
+      "deletion": 0.6896551724137931,
+      "density_drop_factor": 3.2222222222222223,
+      "fiber_size": 13,
+      "gate": "FiberDeletion",
+      "kl_nats_to_uniform": 1.1134994559151745,
+      "normalized_entropy": 0.5658785805357283,
+      "normalized_kl_to_uniform": 0.4341214194642719,
+      "p": 23,
+      "pinsker_tv_upper_from_kl": 0.7461566376824555,
+      "q": 2310,
+      "q_lift": 30030,
+      "survival": 0.3103448275862069
+    },
+    {
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q2310-q30030.json",
+      "deletion": 0.6871794871794872,
+      "density_drop_factor": 3.1967213114754096,
+      "fiber_size": 13,
+      "gate": "FiberDeletion",
+      "kl_nats_to_uniform": 1.0852482471362164,
+      "normalized_entropy": 0.5768929144822342,
+      "normalized_kl_to_uniform": 0.4231070855177656,
+      "p": 29,
+      "pinsker_tv_upper_from_kl": 0.7366302488821025,
+      "q": 2310,
+      "q_lift": 30030,
+      "survival": 0.3128205128205128
+    },
+    {
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q30030-q510510.json",
+      "deletion": 0.9207161125319693,
+      "density_drop_factor": 12.612903225806452,
+      "fiber_size": 17,
+      "gate": "FiberDeletion",
+      "kl_nats_to_uniform": 2.05636452391177,
+      "normalized_entropy": 0.27419354838709675,
+      "normalized_kl_to_uniform": 0.7258064516129032,
+      "p": 19,
+      "pinsker_tv_upper_from_kl": 1.0,
+      "q": 30030,
+      "q_lift": 510510,
+      "survival": 0.0792838874680307
+    },
+    {
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q30030-q510510.json",
+      "deletion": 0.8371040723981901,
+      "density_drop_factor": 6.138888888888888,
+      "fiber_size": 17,
+      "gate": "FiberDeletion",
+      "kl_nats_to_uniform": 1.5257232436577777,
+      "normalized_entropy": 0.4614866378281773,
+      "normalized_kl_to_uniform": 0.5385133621718198,
+      "p": 23,
+      "pinsker_tv_upper_from_kl": 0.8734194993408888,
+      "q": 30030,
+      "q_lift": 510510,
+      "survival": 0.16289592760180996
+    }
+  ],
+  "source_hashes": {
+    "audit_1": "a0cf1d6b5560d5568754bf9fb23462924bcf53453889cc2e3fa85357b576e504",
+    "audit_2": "f07a7ba629db204c7b1d948851b52f35ac7f76697d434f68ea8dad21afdf31ed",
+    "nodeletion_kl_gate_script": "c05adcb46bd58d677a27863a112596956d2575e79838cbae47a31c4dc8a89e4f"
+  },
+  "status": "nodeletion_kl_gate_materialized_current_layers_deleting"
+}

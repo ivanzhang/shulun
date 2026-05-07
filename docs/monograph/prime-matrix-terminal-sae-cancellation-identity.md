@@ -195,15 +195,15 @@ experiments/prime_matrix_terminal_sae_cancellation_audit.py
 最新报告：
 
 ```text
-docs/monograph/prime-matrix-terminal-sae-cancellation-audit.md
+docs/terminal_sae_cancellation_audit_p2000_20260505.md
 ```
 
-参数 `max_p=1500`、`y=floor(p/e)` 下：
+参数 `max_p=2000`、`y=floor(p/e)` 下：
 
 - `p>=7` 未认证记录数为 `0`；
 - `p>=7` 最小余量为 `1`；
 - 严格排除 `n=1,q^2` 后余量仍为正；
-- 从 `p=11` 起样本中实际 `omega_tail<=2`；
+- 样本最大 `omega_tail=3`，从 `p=11` 起实际 `omega_tail<=2`；
 - 由简单条件 `y^3>q^2` 保证双尾化的最后例外样本为 `p=31`。
 
 这说明当前实验证据并不依赖端点误算，也不依赖一尾项；真正余量来自
@@ -232,3 +232,7 @@ RCI/PDEC:
 ```
 
 这是目前递推证明链条中最小、最具体、可逐项审查的剩余硬核。
+
+补充：`docs/monograph/prime-matrix-terminal-rci-boundary-split.md` 已将镜像边界块 `h=q`
+剥离。该块在 `y^2>q` 后由新素数 `q` 给出恒定余量 `1`；`p<=2000` 审计中 302 条记录有
+295 条全局最小余量来自该边界块。剥离后，真正剩余硬点是非底块 `1<=h<q` 的 `RCI/PDEC`。

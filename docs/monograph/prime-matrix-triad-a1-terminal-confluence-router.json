@@ -1,0 +1,133 @@
+{
+  "all_current_pxP_exits_closed": true,
+  "all_materialized_branches_routed_to_terminal_triad": true,
+  "certificate_type": "triad_a1_terminal_confluence_router",
+  "confluence_law": "当前 A1 物化链中，ActualPayment 持久性、PDEC DualCap、同集容量前沿、升层删除势、NoDeletion-KL 和 top-prime promotion 均已路由到 PDEC/LocalSurvivor/CleanKLS 三终端。失败只会回流到三终端内部，不生成第四出口。",
+  "no_fourth_exit_current_a1_chain": true,
+  "obligations": [
+    {
+      "closed_current_pxP": true,
+      "name": "APS persistent actual Gamma",
+      "remaining": "证明持久 actual Gamma 签名的同集 PDEC 容量上界。",
+      "route": "PersistentGammaFiniteSignatureToMFUPDEC",
+      "status": "routed",
+      "triad": "A:PDEC"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "APS no persistent actual Gamma",
+      "remaining": "删除势继续则升层；NoDeletion 偏斜则 PDEC；NoDeletion 平坦才 CleanKLS。",
+      "route": "SmallAmbiguousSuccessor",
+      "status": "routed_before_clean_terminal",
+      "triad": "C:CleanKLS-or-A:PDEC"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "small ambiguous current successor",
+      "remaining": "当前层由 FiberDeletion 推进；若删除停止，KL/MI 偏斜回流 PDEC，KL/MI 平坦才进入 CleanKLS。",
+      "route": "CurrentLayerFiberDeletionOrNoDeletionPhaseResiduePDEC; CleanKLSOnlyAfterFlatNoDeletion",
+      "status": "routed",
+      "triad": "B:LocalSurvivor-or-A:PDEC-or-C:CleanKLS"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "small ambiguous clean visibility",
+      "remaining": "未来 clean 输入必须提交 KLS/DLS admission 与大筛证书。",
+      "route": "CleanKLSOnlyAfterFlatNoDeletion",
+      "status": "not_currently_visible",
+      "triad": "C:CleanKLS"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "PDEC SparseCap",
+      "remaining": "finite PDEC packet beyond P; no P-row exit in current sparse atoms.",
+      "route": "SparseLocalSurvivorOrFinitePDEC",
+      "status": "mass_source_and_pxP_exit_closed",
+      "triad": "B:LocalSurvivor-or-A:PDEC"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "PDEC PersistentCap",
+      "remaining": "ColumnTail/TailAnchor PDEC or distributed CleanKLS/DLS.",
+      "route": "BoundarySubsetBTLS",
+      "status": "mass_source_and_pxP_exit_closed",
+      "triad": "A:PDEC"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "PDEC ForcedPersistentByDensityBarrier",
+      "remaining": "next lift, column-tail rows, PDECEntropy, or CleanKLS.",
+      "route": "BoundarySubsetBTLS plus lift monotonicity",
+      "status": "mass_source_and_pxP_exit_closed",
+      "triad": "A:PDEC-or-C:CleanKLS"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "PDEC same-set capacity frontier",
+      "remaining": "Attachment/零块/DualCap/P×P/终端回流已接线；仍需提交 ContinuousDirectionArcDual 或更窄 column/tail/cofactor DualCap。",
+      "route": "SameSetCapacityFrontierToContinuousDirectionArcDual",
+      "status": "known_frontiers_routed_dual_open",
+      "triad": "A:PDEC"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "new-layer terminal router",
+      "remaining": "删除势发散则 Sparse/LocalSurvivor 或容量矛盾；删除势停止则 PDEC/CleanKLS。",
+      "route": "LiftFiberDeletionOrNoDeletionTriad",
+      "status": "current_layers_all_deleting",
+      "triad": "B:LocalSurvivor-or-A:PDEC-or-C:CleanKLS"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "A1 middle no-cycle gates",
+      "remaining": "仍需提交 PDEC、LocalSurvivor、CleanKLS 三终端证书全集。",
+      "route": "NoMiddleEscapeNoSameLayerCycle",
+      "status": "materialized_gates_pass",
+      "triad": "A/B/C"
+    },
+    {
+      "closed_current_pxP": true,
+      "name": "top-prime promotion deletion potential",
+      "remaining": "当前晋升层有正删除势；未来若删除势不可发散，则进入 NoDeletion-KL/PDEC/CleanKLS。",
+      "route": "PositiveDeletionPotentialOrNoDeletionKL",
+      "status": "positive_current_layer",
+      "triad": "B:LocalSurvivor-or-A:PDEC-or-C:CleanKLS"
+    }
+  ],
+  "review_conclusion": "A1 当前所有物化分支已汇合到终端三证书接口，且当前 P×P 早期出口已关闭。这仍不是最终行命题证明；剩余是三终端证书全集，首要是 PDEC 同集容量上界。",
+  "source_hashes": {
+    "actual_payment_stitching_json": "14087651c52f19675e3253aaa3c8f856c0872ae18903f69da7636baa70fd7d2f",
+    "pdec_mass_source_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
+    "pdec_same_set_capacity_frontier_json": "e3c46a77c72aa064c9b48a8ced9390b6b5e564607381bd3967566e3227501026",
+    "promotion_deletion_potential_json": "26faac90a447ac6215c5a9194bfdd198976cba7cf3ac6937320da46a36bda184",
+    "script": "a32c373af6e9c5c8b451a1255412fb0d1a1c92ea12e335f8c99a88214fcf0320",
+    "small_ambiguous_clean_admission_json": "e27c0c1fbb5fc28d55e466cc4b4b1a635e5d6dc0dc5e8bb42e1bd9f01697cc8d",
+    "terminal_no_cycle_json": "38e46e8226037f523b9d321d9c579b086db866e21581ec3e3b54b9eda2224b02",
+    "terminal_router_json": "eb0c2528f581dd283cd4bdfb7687fd008f4ae0cc53bfa1faa705be8c89d27d6b"
+  },
+  "status": "a1_current_branches_confluent_to_terminal_triad_not_closed",
+  "status_counts": {
+    "current_layers_all_deleting": 1,
+    "known_frontiers_routed_dual_open": 1,
+    "mass_source_and_pxP_exit_closed": 3,
+    "materialized_gates_pass": 1,
+    "not_currently_visible": 1,
+    "positive_current_layer": 1,
+    "routed": 2,
+    "routed_before_clean_terminal": 1
+  },
+  "terminal_open_obligations": [
+    "A:PDEC family same-set capacity upper U_CRT<L_PDEC.",
+    "B:LocalSurvivor witness/blocker-deficit certificates for sparse packets.",
+    "C:CleanKLS/DLS admission plus large-sieve or explicit external input."
+  ],
+  "triad_counts": {
+    "A/B/C": 1,
+    "A:PDEC": 3,
+    "A:PDEC-or-C:CleanKLS": 1,
+    "B:LocalSurvivor-or-A:PDEC": 1,
+    "B:LocalSurvivor-or-A:PDEC-or-C:CleanKLS": 3,
+    "C:CleanKLS": 1,
+    "C:CleanKLS-or-A:PDEC": 1
+  }
+}

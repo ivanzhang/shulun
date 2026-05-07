@@ -1,0 +1,3545 @@
+{
+  "all_existing_exposure_references_match": true,
+  "all_phase_exposure_identities_hold": true,
+  "all_single_bucket_payments_excluded": true,
+  "bucket_kinds": [
+    "residue",
+    "column_residue"
+  ],
+  "certificate_type": "triad_a1_multibucket_pdec_skeleton",
+  "forced_cap_count": 24,
+  "kind_summary": [
+    {
+      "bucket_kind": "residue",
+      "global_max_bucket_exposure_share": 0.09595282805196387,
+      "global_max_variable_count": 125486,
+      "global_min_actual_buckets_by_exposure": 11,
+      "global_min_effective_bucket_support": 2.6015450360133348,
+      "row_count": 24
+    },
+    {
+      "bucket_kind": "column_residue",
+      "global_max_bucket_exposure_share": 0.11815744804881946,
+      "global_max_variable_count": 125486,
+      "global_min_actual_buckets_by_exposure": 9,
+      "global_min_effective_bucket_support": 2.0633901847496583,
+      "row_count": 24
+    }
+  ],
+  "matrix_row_count": 48,
+  "review_conclusion": "ForcedCap 的 residue 与 column-residue 多桶向量 LP 骨架已物化；当前每个骨架都复核了旧暴露账本、相位暴露恒等式与单桶排除。下一步可以直接生成 U_CRT^multi/L_PDEC^multi 对偶证书或输出可路由失败。",
+  "rows": [
+    {
+      "active_phase_count": 1077,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "dfbb117b49956932dcd18f0b0612c24b717c25297369024ad1c2d80de91bd165",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.8245841430468563,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.35403441687572035,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 805,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 70520,
+        "nonnegativity_rows": 70520,
+        "phase_mass_upper_rows": 1077,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "22c7a58b7eb0c2bae107113e16c378e094ebb9bf08851ed406d288e3e8deb209",
+      "max_bucket_exposure": 304931934,
+      "max_bucket_exposure_share": 0.0828220114006072,
+      "min_actual_buckets_by_exposure": 13,
+      "p": 43,
+      "phase_demand_hash": "4e6d8e6659c86f90e56a7667c87d80b02f17bcfda77ce21297e52ea0b75a5f5f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 304931934
+        },
+        {
+          "bucket": "13:0",
+          "count": 301083666
+        },
+        {
+          "bucket": "13:2",
+          "count": 292353776
+        },
+        {
+          "bucket": "13:10",
+          "count": 289165742
+        },
+        {
+          "bucket": "13:9",
+          "count": 288637686
+        },
+        {
+          "bucket": "13:3",
+          "count": 285122328
+        },
+        {
+          "bucket": "13:11",
+          "count": 281448842
+        },
+        {
+          "bucket": "13:1",
+          "count": 281321180
+        }
+      ],
+      "total_demand": 3681774070,
+      "total_exposure_incidence": 29454192560,
+      "variable_count": 70520
+    },
+    {
+      "active_phase_count": 1077,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "517d195e65dfe144297f814e855d4db11fa44dff5fcff9ac27f22101c018f835",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.733028977927472,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.36589440070932816,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 805,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 70520,
+        "nonnegativity_rows": 70520,
+        "phase_mass_upper_rows": 1077,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "6394ca5d88d635606fa2aa74aa010d1823492e81c78cef5460f11300f4d94e9f",
+      "max_bucket_exposure": 341329716,
+      "max_bucket_exposure_share": 0.09270794717721503,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "4e6d8e6659c86f90e56a7667c87d80b02f17bcfda77ce21297e52ea0b75a5f5f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:3",
+          "count": 341329716
+        },
+        {
+          "bucket": "13:1",
+          "count": 339957516
+        },
+        {
+          "bucket": "13:2",
+          "count": 312123748
+        },
+        {
+          "bucket": "13:4",
+          "count": 294761626
+        },
+        {
+          "bucket": "13:0",
+          "count": 290936308
+        },
+        {
+          "bucket": "17:1",
+          "count": 279806128
+        },
+        {
+          "bucket": "17:8",
+          "count": 274427278
+        },
+        {
+          "bucket": "13:10",
+          "count": 272738334
+        }
+      ],
+      "total_demand": 3681774070,
+      "total_exposure_incidence": 29454192560,
+      "variable_count": 70520
+    },
+    {
+      "active_phase_count": 1081,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "64e3973efc959b64d9d9b0bc5a14bf4f662e904599c16755601706543c361217",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.824606284740022,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.35403164164949824,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1505,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 70844,
+        "nonnegativity_rows": 70844,
+        "phase_mass_upper_rows": 1081,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "21dd3562841446e2c4cdceec9bd17d0ceaf75e02b38831a8ecf038dc982c7a31",
+      "max_bucket_exposure": 304877604,
+      "max_bucket_exposure_share": 0.08283437771890399,
+      "min_actual_buckets_by_exposure": 13,
+      "p": 43,
+      "phase_demand_hash": "50a596c6a5f6116f20b22a5627cbc976a30f0e8ed158ff704944de035331763f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 304877604
+        },
+        {
+          "bucket": "13:0",
+          "count": 300659520
+        },
+        {
+          "bucket": "13:2",
+          "count": 292540046
+        },
+        {
+          "bucket": "13:10",
+          "count": 289022606
+        },
+        {
+          "bucket": "13:9",
+          "count": 288441540
+        },
+        {
+          "bucket": "13:3",
+          "count": 284728752
+        },
+        {
+          "bucket": "13:1",
+          "count": 281932850
+        },
+        {
+          "bucket": "13:11",
+          "count": 280816346
+        }
+      ],
+      "total_demand": 3680568532,
+      "total_exposure_incidence": 29444548256,
+      "variable_count": 70844
+    },
+    {
+      "active_phase_count": 1081,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "6ec841b6fc75cc5bfb1635b480ab1ab14ecf04ea7605a69bec9d1989aba899db",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.7334826233672804,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3658336773211806,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1505,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 70844,
+        "nonnegativity_rows": 70844,
+        "phase_mass_upper_rows": 1081,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "43bdfebf8b706022ac744202d073a4b20e14d51c49f85f4a13cadd994762a4b3",
+      "max_bucket_exposure": 342155970,
+      "max_bucket_exposure_share": 0.09296280371502127,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "50a596c6a5f6116f20b22a5627cbc976a30f0e8ed158ff704944de035331763f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:3",
+          "count": 342155970
+        },
+        {
+          "bucket": "13:1",
+          "count": 339864420
+        },
+        {
+          "bucket": "13:2",
+          "count": 312813058
+        },
+        {
+          "bucket": "13:4",
+          "count": 295070986
+        },
+        {
+          "bucket": "13:0",
+          "count": 290977618
+        },
+        {
+          "bucket": "17:1",
+          "count": 279615742
+        },
+        {
+          "bucket": "17:8",
+          "count": 272898406
+        },
+        {
+          "bucket": "13:10",
+          "count": 272455764
+        }
+      ],
+      "total_demand": 3680568532,
+      "total_exposure_incidence": 29444548256,
+      "variable_count": 70844
+    },
+    {
+      "active_phase_count": 734,
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "b9b79cd7e2fb6cc9a38bf7f5b2284c36580030d91fb6a4a3593b38e30c72fcdc",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.8079414718300924,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3561327791309853,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 805,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 47690,
+        "nonnegativity_rows": 47690,
+        "phase_mass_upper_rows": 734,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "a1c4f802525d986f1cc09c7d639d58855afced6e6c9e6382100a192e08890b88",
+      "max_bucket_exposure": 255142800,
+      "max_bucket_exposure_share": 0.08715299772921554,
+      "min_actual_buckets_by_exposure": 12,
+      "p": 43,
+      "phase_demand_hash": "4340ceee1acd398a7bfe245551cf942e13c1d4ee44afbb80cc9018d9b43abe9b",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 255142800
+        },
+        {
+          "bucket": "13:3",
+          "count": 238362384
+        },
+        {
+          "bucket": "13:9",
+          "count": 237289758
+        },
+        {
+          "bucket": "13:1",
+          "count": 235000148
+        },
+        {
+          "bucket": "13:10",
+          "count": 234278744
+        },
+        {
+          "bucket": "13:0",
+          "count": 230573700
+        },
+        {
+          "bucket": "17:9",
+          "count": 228642336
+        },
+        {
+          "bucket": "13:6",
+          "count": 224751676
+        }
+      ],
+      "total_demand": 2927527528,
+      "total_exposure_incidence": 23420220224,
+      "variable_count": 47690
+    },
+    {
+      "active_phase_count": 734,
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "4a308f465c4bc631724331a6f109f237371a3e2909ac9987588c1a8b9940a04d",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.6972688064689954,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3707453990501984,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 805,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 47690,
+        "nonnegativity_rows": 47690,
+        "phase_mass_upper_rows": 734,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "21fa2bc4cf2ba30bde297224dd20a81a33d72e276cf5eb10837c5cd5f3dceeb4",
+      "max_bucket_exposure": 279229134,
+      "max_bucket_exposure_share": 0.09538053231928482,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "4340ceee1acd398a7bfe245551cf942e13c1d4ee44afbb80cc9018d9b43abe9b",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:3",
+          "count": 279229134
+        },
+        {
+          "bucket": "13:4",
+          "count": 260443780
+        },
+        {
+          "bucket": "13:1",
+          "count": 255721014
+        },
+        {
+          "bucket": "13:2",
+          "count": 244531588
+        },
+        {
+          "bucket": "17:1",
+          "count": 243562384
+        },
+        {
+          "bucket": "13:10",
+          "count": 239302794
+        },
+        {
+          "bucket": "17:6",
+          "count": 233313950
+        },
+        {
+          "bucket": "19:4",
+          "count": 227237078
+        }
+      ],
+      "total_demand": 2927527528,
+      "total_exposure_incidence": 23420220224,
+      "variable_count": 47690
+    },
+    {
+      "active_phase_count": 734,
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "b9b79cd7e2fb6cc9a38bf7f5b2284c36580030d91fb6a4a3593b38e30c72fcdc",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.8079414718300924,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3561327791309853,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1505,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 47690,
+        "nonnegativity_rows": 47690,
+        "phase_mass_upper_rows": 734,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "a1c4f802525d986f1cc09c7d639d58855afced6e6c9e6382100a192e08890b88",
+      "max_bucket_exposure": 255142800,
+      "max_bucket_exposure_share": 0.08715299772921554,
+      "min_actual_buckets_by_exposure": 12,
+      "p": 43,
+      "phase_demand_hash": "4340ceee1acd398a7bfe245551cf942e13c1d4ee44afbb80cc9018d9b43abe9b",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 255142800
+        },
+        {
+          "bucket": "13:3",
+          "count": 238362384
+        },
+        {
+          "bucket": "13:9",
+          "count": 237289758
+        },
+        {
+          "bucket": "13:1",
+          "count": 235000148
+        },
+        {
+          "bucket": "13:10",
+          "count": 234278744
+        },
+        {
+          "bucket": "13:0",
+          "count": 230573700
+        },
+        {
+          "bucket": "17:9",
+          "count": 228642336
+        },
+        {
+          "bucket": "13:6",
+          "count": 224751676
+        }
+      ],
+      "total_demand": 2927527528,
+      "total_exposure_incidence": 23420220224,
+      "variable_count": 47690
+    },
+    {
+      "active_phase_count": 734,
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "4a308f465c4bc631724331a6f109f237371a3e2909ac9987588c1a8b9940a04d",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.6972688064689954,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3707453990501984,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1505,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 47690,
+        "nonnegativity_rows": 47690,
+        "phase_mass_upper_rows": 734,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "21fa2bc4cf2ba30bde297224dd20a81a33d72e276cf5eb10837c5cd5f3dceeb4",
+      "max_bucket_exposure": 279229134,
+      "max_bucket_exposure_share": 0.09538053231928482,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "4340ceee1acd398a7bfe245551cf942e13c1d4ee44afbb80cc9018d9b43abe9b",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:3",
+          "count": 279229134
+        },
+        {
+          "bucket": "13:4",
+          "count": 260443780
+        },
+        {
+          "bucket": "13:1",
+          "count": 255721014
+        },
+        {
+          "bucket": "13:2",
+          "count": 244531588
+        },
+        {
+          "bucket": "17:1",
+          "count": 243562384
+        },
+        {
+          "bucket": "13:10",
+          "count": 239302794
+        },
+        {
+          "bucket": "17:6",
+          "count": 233313950
+        },
+        {
+          "bucket": "19:4",
+          "count": 227237078
+        }
+      ],
+      "total_demand": 2927527528,
+      "total_exposure_incidence": 23420220224,
+      "variable_count": 47690
+    },
+    {
+      "active_phase_count": 1370,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "df22cabaa70ec7e92a21202efe3a28db51b72a6e9f3a299cf0bd53f468932abd",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.8204773900035653,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.35454990830425903,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 770,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 91939,
+        "nonnegativity_rows": 91939,
+        "phase_mass_upper_rows": 1370,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "d4d236b54b44ad1992c0f82a2acf11f6d1e29662d28c60b632d6436887a91ea2",
+      "max_bucket_exposure": 245488180,
+      "max_bucket_exposure_share": 0.08871590552799154,
+      "min_actual_buckets_by_exposure": 12,
+      "p": 43,
+      "phase_demand_hash": "2616042ea4222f5ccb80d603a087c882fb7950370b6cd1ef5f4f83a8af4d23c5",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 245488180
+        },
+        {
+          "bucket": "13:4",
+          "count": 243261422
+        },
+        {
+          "bucket": "13:2",
+          "count": 226983132
+        },
+        {
+          "bucket": "13:11",
+          "count": 223483024
+        },
+        {
+          "bucket": "13:9",
+          "count": 218937226
+        },
+        {
+          "bucket": "13:6",
+          "count": 210943366
+        },
+        {
+          "bucket": "13:5",
+          "count": 206738460
+        },
+        {
+          "bucket": "13:10",
+          "count": 206439122
+        }
+      ],
+      "total_demand": 2767127028,
+      "total_exposure_incidence": 22137016224,
+      "variable_count": 91939
+    },
+    {
+      "active_phase_count": 1370,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "a716e1ee4d1c34965c523719fa723a5d44aa628f5940977fcfa8e2da86e63dd1",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.6114863667298938,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38292369155738737,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 770,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 91939,
+        "nonnegativity_rows": 91939,
+        "phase_mass_upper_rows": 1370,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "4fd33fe2afae071c9c34d155df6b2ef61022cd6930c52f6a9d991556e2d2468a",
+      "max_bucket_exposure": 276245928,
+      "max_bucket_exposure_share": 0.09983131428543872,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "2616042ea4222f5ccb80d603a087c882fb7950370b6cd1ef5f4f83a8af4d23c5",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:1",
+          "count": 276245928
+        },
+        {
+          "bucket": "13:3",
+          "count": 262230472
+        },
+        {
+          "bucket": "13:2",
+          "count": 227889224
+        },
+        {
+          "bucket": "17:8",
+          "count": 227429668
+        },
+        {
+          "bucket": "13:0",
+          "count": 222496712
+        },
+        {
+          "bucket": "13:4",
+          "count": 220369528
+        },
+        {
+          "bucket": "17:2",
+          "count": 216940242
+        },
+        {
+          "bucket": "13:10",
+          "count": 210639604
+        }
+      ],
+      "total_demand": 2767127028,
+      "total_exposure_incidence": 22137016224,
+      "variable_count": 91939
+    },
+    {
+      "active_phase_count": 1370,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "df22cabaa70ec7e92a21202efe3a28db51b72a6e9f3a299cf0bd53f468932abd",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.8204773900035653,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.35454990830425903,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1540,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 91939,
+        "nonnegativity_rows": 91939,
+        "phase_mass_upper_rows": 1370,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "d4d236b54b44ad1992c0f82a2acf11f6d1e29662d28c60b632d6436887a91ea2",
+      "max_bucket_exposure": 245488180,
+      "max_bucket_exposure_share": 0.08871590552799154,
+      "min_actual_buckets_by_exposure": 12,
+      "p": 43,
+      "phase_demand_hash": "2616042ea4222f5ccb80d603a087c882fb7950370b6cd1ef5f4f83a8af4d23c5",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 245488180
+        },
+        {
+          "bucket": "13:4",
+          "count": 243261422
+        },
+        {
+          "bucket": "13:2",
+          "count": 226983132
+        },
+        {
+          "bucket": "13:11",
+          "count": 223483024
+        },
+        {
+          "bucket": "13:9",
+          "count": 218937226
+        },
+        {
+          "bucket": "13:6",
+          "count": 210943366
+        },
+        {
+          "bucket": "13:5",
+          "count": 206738460
+        },
+        {
+          "bucket": "13:10",
+          "count": 206439122
+        }
+      ],
+      "total_demand": 2767127028,
+      "total_exposure_incidence": 22137016224,
+      "variable_count": 91939
+    },
+    {
+      "active_phase_count": 1370,
+      "alpha": 0.0,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "a716e1ee4d1c34965c523719fa723a5d44aa628f5940977fcfa8e2da86e63dd1",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.6114863667298938,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38292369155738737,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1540,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 91939,
+        "nonnegativity_rows": 91939,
+        "phase_mass_upper_rows": 1370,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "4fd33fe2afae071c9c34d155df6b2ef61022cd6930c52f6a9d991556e2d2468a",
+      "max_bucket_exposure": 276245928,
+      "max_bucket_exposure_share": 0.09983131428543872,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "2616042ea4222f5ccb80d603a087c882fb7950370b6cd1ef5f4f83a8af4d23c5",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:1",
+          "count": 276245928
+        },
+        {
+          "bucket": "13:3",
+          "count": 262230472
+        },
+        {
+          "bucket": "13:2",
+          "count": 227889224
+        },
+        {
+          "bucket": "17:8",
+          "count": 227429668
+        },
+        {
+          "bucket": "13:0",
+          "count": 222496712
+        },
+        {
+          "bucket": "13:4",
+          "count": 220369528
+        },
+        {
+          "bucket": "17:2",
+          "count": 216940242
+        },
+        {
+          "bucket": "13:10",
+          "count": 210639604
+        }
+      ],
+      "total_demand": 2767127028,
+      "total_exposure_incidence": 22137016224,
+      "variable_count": 91939
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "1d0ce8fcbcf6fc122fcbda8bbfe0181a89f76615ab06c9d09ffd9c9c842e8eb1",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.806089724805737,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3563677922199117,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "07dd30031aa4d7a21da08e1dfa7b5249ba067886c0bc203f839e654581df1a3a",
+      "max_bucket_exposure": 194147974,
+      "max_bucket_exposure_share": 0.09148341880953399,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "21bff88b3af179e8ed9817146da1eb50b825ef0ce86c532446f6f2d1a442ff35",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 194147974
+        },
+        {
+          "bucket": "13:3",
+          "count": 176075540
+        },
+        {
+          "bucket": "13:8",
+          "count": 173936322
+        },
+        {
+          "bucket": "13:10",
+          "count": 171323882
+        },
+        {
+          "bucket": "13:11",
+          "count": 163192294
+        },
+        {
+          "bucket": "13:2",
+          "count": 162615882
+        },
+        {
+          "bucket": "13:1",
+          "count": 160129618
+        },
+        {
+          "bucket": "17:9",
+          "count": 159210108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.5,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "191fbeb90d2ae4d751b4145c00426ffebe3285dccf31cd485433e2c9223e02a1",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.240671320282559,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.44629481840910756,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "0a3da317a3b5f4cad7268ff049be00b9f2b69d60e09a63b241915db7c6dce460",
+      "max_bucket_exposure": 215121760,
+      "max_bucket_exposure_share": 0.10136636329320674,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 43,
+      "phase_demand_hash": "21bff88b3af179e8ed9817146da1eb50b825ef0ce86c532446f6f2d1a442ff35",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:1",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:10",
+          "count": 197375836
+        },
+        {
+          "bucket": "13:8",
+          "count": 197375836
+        },
+        {
+          "bucket": "17:4",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:6",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:2",
+          "count": 190156108
+        },
+        {
+          "bucket": "17:8",
+          "count": 190156108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.5,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "f5077d0020ad4e11b375ce508cdcd119e9593db5b3ac7a26f6ddac64817bbb38",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.806089724805737,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3563677922199117,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "c33fc685d5466f26c7cf00fb1da93ff8bef6b1f78e8629f730e346a5685cad7f",
+      "max_bucket_exposure": 194147974,
+      "max_bucket_exposure_share": 0.09148341880953399,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "09cfef6b8e3fe7fe252f9b53bbe743c20ad34d6c207fb08e875bb54def48dd4a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 194147974
+        },
+        {
+          "bucket": "13:9",
+          "count": 176075540
+        },
+        {
+          "bucket": "13:4",
+          "count": 173936322
+        },
+        {
+          "bucket": "13:2",
+          "count": 171323882
+        },
+        {
+          "bucket": "13:1",
+          "count": 163192294
+        },
+        {
+          "bucket": "13:10",
+          "count": 162615882
+        },
+        {
+          "bucket": "13:11",
+          "count": 160129618
+        },
+        {
+          "bucket": "17:7",
+          "count": 159210108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.5,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "edac4ff589966e63ce02ac46d5b958e0c069d888e522dbae109a77c48ad530e1",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.240671320282559,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.44629481840910756,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "cff536f89c29f9a64cc93700beb4359306c6afbb38e5a756dd54540b087e3139",
+      "max_bucket_exposure": 215121760,
+      "max_bucket_exposure_share": 0.10136636329320674,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 43,
+      "phase_demand_hash": "09cfef6b8e3fe7fe252f9b53bbe743c20ad34d6c207fb08e875bb54def48dd4a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:3",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:0",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:7",
+          "count": 197375836
+        },
+        {
+          "bucket": "13:9",
+          "count": 197375836
+        },
+        {
+          "bucket": "17:3",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:5",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:7",
+          "count": 190156108
+        },
+        {
+          "bucket": "17:1",
+          "count": 190156108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "1d0ce8fcbcf6fc122fcbda8bbfe0181a89f76615ab06c9d09ffd9c9c842e8eb1",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.806089724805737,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3563677922199117,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "07dd30031aa4d7a21da08e1dfa7b5249ba067886c0bc203f839e654581df1a3a",
+      "max_bucket_exposure": 194147974,
+      "max_bucket_exposure_share": 0.09148341880953399,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "21bff88b3af179e8ed9817146da1eb50b825ef0ce86c532446f6f2d1a442ff35",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 194147974
+        },
+        {
+          "bucket": "13:3",
+          "count": 176075540
+        },
+        {
+          "bucket": "13:8",
+          "count": 173936322
+        },
+        {
+          "bucket": "13:10",
+          "count": 171323882
+        },
+        {
+          "bucket": "13:11",
+          "count": 163192294
+        },
+        {
+          "bucket": "13:2",
+          "count": 162615882
+        },
+        {
+          "bucket": "13:1",
+          "count": 160129618
+        },
+        {
+          "bucket": "17:9",
+          "count": 159210108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "191fbeb90d2ae4d751b4145c00426ffebe3285dccf31cd485433e2c9223e02a1",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.240671320282559,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.44629481840910756,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "0a3da317a3b5f4cad7268ff049be00b9f2b69d60e09a63b241915db7c6dce460",
+      "max_bucket_exposure": 215121760,
+      "max_bucket_exposure_share": 0.10136636329320674,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 43,
+      "phase_demand_hash": "21bff88b3af179e8ed9817146da1eb50b825ef0ce86c532446f6f2d1a442ff35",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:1",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:10",
+          "count": 197375836
+        },
+        {
+          "bucket": "13:8",
+          "count": 197375836
+        },
+        {
+          "bucket": "17:4",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:6",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:2",
+          "count": 190156108
+        },
+        {
+          "bucket": "17:8",
+          "count": 190156108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "f5077d0020ad4e11b375ce508cdcd119e9593db5b3ac7a26f6ddac64817bbb38",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.806089724805737,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3563677922199117,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "c33fc685d5466f26c7cf00fb1da93ff8bef6b1f78e8629f730e346a5685cad7f",
+      "max_bucket_exposure": 194147974,
+      "max_bucket_exposure_share": 0.09148341880953399,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "09cfef6b8e3fe7fe252f9b53bbe743c20ad34d6c207fb08e875bb54def48dd4a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 194147974
+        },
+        {
+          "bucket": "13:9",
+          "count": 176075540
+        },
+        {
+          "bucket": "13:4",
+          "count": 173936322
+        },
+        {
+          "bucket": "13:2",
+          "count": 171323882
+        },
+        {
+          "bucket": "13:1",
+          "count": 163192294
+        },
+        {
+          "bucket": "13:10",
+          "count": 162615882
+        },
+        {
+          "bucket": "13:11",
+          "count": 160129618
+        },
+        {
+          "bucket": "17:7",
+          "count": 159210108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "edac4ff589966e63ce02ac46d5b958e0c069d888e522dbae109a77c48ad530e1",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.240671320282559,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.44629481840910756,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "cff536f89c29f9a64cc93700beb4359306c6afbb38e5a756dd54540b087e3139",
+      "max_bucket_exposure": 215121760,
+      "max_bucket_exposure_share": 0.10136636329320674,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 43,
+      "phase_demand_hash": "09cfef6b8e3fe7fe252f9b53bbe743c20ad34d6c207fb08e875bb54def48dd4a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:3",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:0",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:7",
+          "count": 197375836
+        },
+        {
+          "bucket": "13:9",
+          "count": 197375836
+        },
+        {
+          "bucket": "17:3",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:5",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:7",
+          "count": 190156108
+        },
+        {
+          "bucket": "17:1",
+          "count": 190156108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "1d0ce8fcbcf6fc122fcbda8bbfe0181a89f76615ab06c9d09ffd9c9c842e8eb1",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.806089724805737,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3563677922199117,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "07dd30031aa4d7a21da08e1dfa7b5249ba067886c0bc203f839e654581df1a3a",
+      "max_bucket_exposure": 194147974,
+      "max_bucket_exposure_share": 0.09148341880953399,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "21bff88b3af179e8ed9817146da1eb50b825ef0ce86c532446f6f2d1a442ff35",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 194147974
+        },
+        {
+          "bucket": "13:3",
+          "count": 176075540
+        },
+        {
+          "bucket": "13:8",
+          "count": 173936322
+        },
+        {
+          "bucket": "13:10",
+          "count": 171323882
+        },
+        {
+          "bucket": "13:11",
+          "count": 163192294
+        },
+        {
+          "bucket": "13:2",
+          "count": 162615882
+        },
+        {
+          "bucket": "13:1",
+          "count": 160129618
+        },
+        {
+          "bucket": "17:9",
+          "count": 159210108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "191fbeb90d2ae4d751b4145c00426ffebe3285dccf31cd485433e2c9223e02a1",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.240671320282559,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.44629481840910756,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "0a3da317a3b5f4cad7268ff049be00b9f2b69d60e09a63b241915db7c6dce460",
+      "max_bucket_exposure": 215121760,
+      "max_bucket_exposure_share": 0.10136636329320674,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 43,
+      "phase_demand_hash": "21bff88b3af179e8ed9817146da1eb50b825ef0ce86c532446f6f2d1a442ff35",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:1",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:10",
+          "count": 197375836
+        },
+        {
+          "bucket": "13:8",
+          "count": 197375836
+        },
+        {
+          "bucket": "17:4",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:6",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:2",
+          "count": 190156108
+        },
+        {
+          "bucket": "17:8",
+          "count": 190156108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "f5077d0020ad4e11b375ce508cdcd119e9593db5b3ac7a26f6ddac64817bbb38",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.806089724805737,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3563677922199117,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "c33fc685d5466f26c7cf00fb1da93ff8bef6b1f78e8629f730e346a5685cad7f",
+      "max_bucket_exposure": 194147974,
+      "max_bucket_exposure_share": 0.09148341880953399,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 43,
+      "phase_demand_hash": "09cfef6b8e3fe7fe252f9b53bbe743c20ad34d6c207fb08e875bb54def48dd4a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 194147974
+        },
+        {
+          "bucket": "13:9",
+          "count": 176075540
+        },
+        {
+          "bucket": "13:4",
+          "count": 173936322
+        },
+        {
+          "bucket": "13:2",
+          "count": 171323882
+        },
+        {
+          "bucket": "13:1",
+          "count": 163192294
+        },
+        {
+          "bucket": "13:10",
+          "count": 162615882
+        },
+        {
+          "bucket": "13:11",
+          "count": 160129618
+        },
+        {
+          "bucket": "17:7",
+          "count": 159210108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1025,
+      "alpha": 0.9,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "edac4ff589966e63ce02ac46d5b958e0c069d888e522dbae109a77c48ad530e1",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.240671320282559,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.44629481840910756,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 8,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 68790,
+        "nonnegativity_rows": 68790,
+        "phase_mass_upper_rows": 1025,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "cff536f89c29f9a64cc93700beb4359306c6afbb38e5a756dd54540b087e3139",
+      "max_bucket_exposure": 215121760,
+      "max_bucket_exposure_share": 0.10136636329320674,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 43,
+      "phase_demand_hash": "09cfef6b8e3fe7fe252f9b53bbe743c20ad34d6c207fb08e875bb54def48dd4a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:3",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:0",
+          "count": 215121760
+        },
+        {
+          "bucket": "13:7",
+          "count": 197375836
+        },
+        {
+          "bucket": "13:9",
+          "count": 197375836
+        },
+        {
+          "bucket": "17:3",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:5",
+          "count": 195565128
+        },
+        {
+          "bucket": "17:7",
+          "count": 190156108
+        },
+        {
+          "bucket": "17:1",
+          "count": 190156108
+        }
+      ],
+      "total_demand": 2122220360,
+      "total_exposure_incidence": 16977762880,
+      "variable_count": 68790
+    },
+    {
+      "active_phase_count": 1150,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "4dcdbbd885e33ee6dbbe3bb65e9964b52070808cdd34b6e02a30e088515a3cdc",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.630044662466114,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3802216799855901,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 665,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94198,
+        "nonnegativity_rows": 94198,
+        "phase_mass_upper_rows": 1150,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "636a1e6103b2cfc432446ed51d01e967f1392efa7af8c743f7f5c9fabc97adca",
+      "max_bucket_exposure": 10370815032,
+      "max_bucket_exposure_share": 0.09494908705090963,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "4bc452a182e439e82d551bda124decc527a06e02106cc07eee12e528e690f27a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 10370815032
+        },
+        {
+          "bucket": "13:0",
+          "count": 10218421512
+        },
+        {
+          "bucket": "13:4",
+          "count": 9177929232
+        },
+        {
+          "bucket": "13:8",
+          "count": 9146062272
+        },
+        {
+          "bucket": "13:9",
+          "count": 8970109464
+        },
+        {
+          "bucket": "13:3",
+          "count": 8805685200
+        },
+        {
+          "bucket": "13:7",
+          "count": 8440515600
+        },
+        {
+          "bucket": "13:11",
+          "count": 8294194848
+        }
+      ],
+      "total_demand": 109225010520,
+      "total_exposure_incidence": 983025094680,
+      "variable_count": 94198
+    },
+    {
+      "active_phase_count": 1150,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "492b7a605844a4f4207c749f4cada2f88211280eef1a8550a0cc31e944f68b59",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.533040207173555,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3947825214807116,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 665,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94198,
+        "nonnegativity_rows": 94198,
+        "phase_mass_upper_rows": 1150,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "b3077116280d00008e9a7df69275abe662d09abd8f1bce6f8ebeb84ceb9a6df4",
+      "max_bucket_exposure": 10893302856,
+      "max_bucket_exposure_share": 0.09973267847848223,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "4bc452a182e439e82d551bda124decc527a06e02106cc07eee12e528e690f27a",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 10893302856
+        },
+        {
+          "bucket": "13:3",
+          "count": 10251477336
+        },
+        {
+          "bucket": "13:5",
+          "count": 9954323208
+        },
+        {
+          "bucket": "13:10",
+          "count": 8999857608
+        },
+        {
+          "bucket": "17:6",
+          "count": 8885515992
+        },
+        {
+          "bucket": "19:4",
+          "count": 8795955936
+        },
+        {
+          "bucket": "13:11",
+          "count": 8704566480
+        },
+        {
+          "bucket": "19:5",
+          "count": 8658271080
+        }
+      ],
+      "total_demand": 109225010520,
+      "total_exposure_incidence": 983025094680,
+      "variable_count": 94198
+    },
+    {
+      "active_phase_count": 1145,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "fbb70692cdc933c8989d96f528bbeb77391d99c6a94853f2a1f79ef322a90bb9",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.6295230494422297,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3802971037702516,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1645,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 93819,
+        "nonnegativity_rows": 93819,
+        "phase_mass_upper_rows": 1145,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "cd6d3f587098f6c636fa9a75e2b007635cb4697e8626a7310792e0afddd4395a",
+      "max_bucket_exposure": 10343152224,
+      "max_bucket_exposure_share": 0.09516004068037001,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "76781097f2799d056a1c7c2b2008fc89c6a66e69a7631a8c55c060380f432382",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 10343152224
+        },
+        {
+          "bucket": "13:0",
+          "count": 10149042624
+        },
+        {
+          "bucket": "13:4",
+          "count": 9136705824
+        },
+        {
+          "bucket": "13:8",
+          "count": 9086578032
+        },
+        {
+          "bucket": "13:9",
+          "count": 8959761624
+        },
+        {
+          "bucket": "13:3",
+          "count": 8760352896
+        },
+        {
+          "bucket": "13:7",
+          "count": 8396216952
+        },
+        {
+          "bucket": "13:11",
+          "count": 8286181656
+        }
+      ],
+      "total_demand": 108692179512,
+      "total_exposure_incidence": 978229615608,
+      "variable_count": 93819
+    },
+    {
+      "active_phase_count": 1145,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "d3cbc225e5dccf39209e6d37926e167ca159d2db9e050b431aa6da4b51319ae6",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.5322891003068624,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3948996186410233,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1645,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 93819,
+        "nonnegativity_rows": 93819,
+        "phase_mass_upper_rows": 1145,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "28e6a8c02056007868c64c6f72d895c8d56f511975bd1041fc34e1b74c60e1a1",
+      "max_bucket_exposure": 10871344008,
+      "max_bucket_exposure_share": 0.10001956034748356,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "76781097f2799d056a1c7c2b2008fc89c6a66e69a7631a8c55c060380f432382",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 10871344008
+        },
+        {
+          "bucket": "13:3",
+          "count": 10169213256
+        },
+        {
+          "bucket": "13:5",
+          "count": 9919331592
+        },
+        {
+          "bucket": "13:10",
+          "count": 8969516568
+        },
+        {
+          "bucket": "17:6",
+          "count": 8800870872
+        },
+        {
+          "bucket": "19:4",
+          "count": 8762074656
+        },
+        {
+          "bucket": "13:11",
+          "count": 8673036672
+        },
+        {
+          "bucket": "19:5",
+          "count": 8625702912
+        }
+      ],
+      "total_demand": 108692179512,
+      "total_exposure_incidence": 978229615608,
+      "variable_count": 93819
+    },
+    {
+      "active_phase_count": 1512,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "d7b80e39bba66aa173421498867778cebf7415dbdaadde233a441786e40a11af",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.627192642478849,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3806344399078648,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 770,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 125486,
+        "nonnegativity_rows": 125486,
+        "phase_mass_upper_rows": 1512,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "bb4ed4619f16580c7d73e5fd08ccfb4ec9235d02df7bd9a382562a2b710f50e3",
+      "max_bucket_exposure": 9268955568,
+      "max_bucket_exposure_share": 0.09595282805196387,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "b698f92c0db5fbd804fda098817938e70671b08fa8543de5a92495fa5af2ad7f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 9268955568
+        },
+        {
+          "bucket": "13:0",
+          "count": 9115890504
+        },
+        {
+          "bucket": "13:3",
+          "count": 8449096200
+        },
+        {
+          "bucket": "13:4",
+          "count": 8375003616
+        },
+        {
+          "bucket": "13:1",
+          "count": 7638176640
+        },
+        {
+          "bucket": "13:8",
+          "count": 7258397112
+        },
+        {
+          "bucket": "13:7",
+          "count": 7247899320
+        },
+        {
+          "bucket": "13:5",
+          "count": 7235620968
+        }
+      ],
+      "total_demand": 96599086824,
+      "total_exposure_incidence": 869391781416,
+      "variable_count": 125486
+    },
+    {
+      "active_phase_count": 1512,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "ecaaf20b792c0c5742d117aaf48bf83f4c56c21876169b334c3822cee384fa45",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.4137984668665124,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4142847937500583,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 770,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 125486,
+        "nonnegativity_rows": 125486,
+        "phase_mass_upper_rows": 1512,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "dc373b14b3fe9e9ad68b1f9b7c787b4d024973e912e27bf4452c34b56a3b6839",
+      "max_bucket_exposure": 10344227400,
+      "max_bucket_exposure_share": 0.10708411166294775,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "b698f92c0db5fbd804fda098817938e70671b08fa8543de5a92495fa5af2ad7f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:5",
+          "count": 10344227400
+        },
+        {
+          "bucket": "13:4",
+          "count": 8390218992
+        },
+        {
+          "bucket": "13:3",
+          "count": 8079070128
+        },
+        {
+          "bucket": "19:5",
+          "count": 8012214696
+        },
+        {
+          "bucket": "13:11",
+          "count": 7964145792
+        },
+        {
+          "bucket": "17:7",
+          "count": 7758515064
+        },
+        {
+          "bucket": "13:7",
+          "count": 7691550792
+        },
+        {
+          "bucket": "13:6",
+          "count": 7641920568
+        }
+      ],
+      "total_demand": 96599086824,
+      "total_exposure_incidence": 869391781416,
+      "variable_count": 125486
+    },
+    {
+      "active_phase_count": 1512,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "d7b80e39bba66aa173421498867778cebf7415dbdaadde233a441786e40a11af",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.627192642478849,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3806344399078648,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1540,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 125486,
+        "nonnegativity_rows": 125486,
+        "phase_mass_upper_rows": 1512,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "bb4ed4619f16580c7d73e5fd08ccfb4ec9235d02df7bd9a382562a2b710f50e3",
+      "max_bucket_exposure": 9268955568,
+      "max_bucket_exposure_share": 0.09595282805196387,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "b698f92c0db5fbd804fda098817938e70671b08fa8543de5a92495fa5af2ad7f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 9268955568
+        },
+        {
+          "bucket": "13:0",
+          "count": 9115890504
+        },
+        {
+          "bucket": "13:3",
+          "count": 8449096200
+        },
+        {
+          "bucket": "13:4",
+          "count": 8375003616
+        },
+        {
+          "bucket": "13:1",
+          "count": 7638176640
+        },
+        {
+          "bucket": "13:8",
+          "count": 7258397112
+        },
+        {
+          "bucket": "13:7",
+          "count": 7247899320
+        },
+        {
+          "bucket": "13:5",
+          "count": 7235620968
+        }
+      ],
+      "total_demand": 96599086824,
+      "total_exposure_incidence": 869391781416,
+      "variable_count": 125486
+    },
+    {
+      "active_phase_count": 1512,
+      "alpha": 0.0,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "ecaaf20b792c0c5742d117aaf48bf83f4c56c21876169b334c3822cee384fa45",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.4137984668665124,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4142847937500583,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1540,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 125486,
+        "nonnegativity_rows": 125486,
+        "phase_mass_upper_rows": 1512,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "dc373b14b3fe9e9ad68b1f9b7c787b4d024973e912e27bf4452c34b56a3b6839",
+      "max_bucket_exposure": 10344227400,
+      "max_bucket_exposure_share": 0.10708411166294775,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "b698f92c0db5fbd804fda098817938e70671b08fa8543de5a92495fa5af2ad7f",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:5",
+          "count": 10344227400
+        },
+        {
+          "bucket": "13:4",
+          "count": 8390218992
+        },
+        {
+          "bucket": "13:3",
+          "count": 8079070128
+        },
+        {
+          "bucket": "19:5",
+          "count": 8012214696
+        },
+        {
+          "bucket": "13:11",
+          "count": 7964145792
+        },
+        {
+          "bucket": "17:7",
+          "count": 7758515064
+        },
+        {
+          "bucket": "13:7",
+          "count": 7691550792
+        },
+        {
+          "bucket": "13:6",
+          "count": 7641920568
+        }
+      ],
+      "total_demand": 96599086824,
+      "total_exposure_incidence": 869391781416,
+      "variable_count": 125486
+    },
+    {
+      "active_phase_count": 757,
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "3f8236b6bd87cd5683e70261e2e0acf2fe4992091f2ea02f32b3eea17e50543a",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.6015450360133348,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3843869647293987,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1001,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 60618,
+        "nonnegativity_rows": 60618,
+        "phase_mass_upper_rows": 757,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "473d238081a5e92e4ec36fc512c9c2c609710336142a995647c3dd789f078252",
+      "max_bucket_exposure": 7325166288,
+      "max_bucket_exposure_share": 0.09237686582192445,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "1430b2072c89aea2b87ef0f58f952d856f1ab5f8fc966db42c13e68988e32275",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 7325166288
+        },
+        {
+          "bucket": "13:0",
+          "count": 7257005616
+        },
+        {
+          "bucket": "13:9",
+          "count": 6972721152
+        },
+        {
+          "bucket": "13:8",
+          "count": 6659261112
+        },
+        {
+          "bucket": "13:7",
+          "count": 6371909640
+        },
+        {
+          "bucket": "13:3",
+          "count": 6350536128
+        },
+        {
+          "bucket": "13:4",
+          "count": 6184198752
+        },
+        {
+          "bucket": "13:5",
+          "count": 6078445176
+        }
+      ],
+      "total_demand": 79296544896,
+      "total_exposure_incidence": 713668904064,
+      "variable_count": 60618
+    },
+    {
+      "active_phase_count": 757,
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "4e28a8f71dbf018a118afac742bde1299b36e86393719a28752ff2a18cf71a7b",
+      "direction": 0.25,
+      "effective_bucket_support_by_exposure": 2.4443766417186823,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.409102256556045,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1001,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 60618,
+        "nonnegativity_rows": 60618,
+        "phase_mass_upper_rows": 757,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "0fc05b282d3283ce648fe151dc3069df640ef1b0155c7b751873d3820f3238ef",
+      "max_bucket_exposure": 9369477384,
+      "max_bucket_exposure_share": 0.11815744804881946,
+      "min_actual_buckets_by_exposure": 9,
+      "p": 47,
+      "phase_demand_hash": "1430b2072c89aea2b87ef0f58f952d856f1ab5f8fc966db42c13e68988e32275",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 9369477384
+        },
+        {
+          "bucket": "13:3",
+          "count": 7934982936
+        },
+        {
+          "bucket": "13:5",
+          "count": 7800867240
+        },
+        {
+          "bucket": "19:5",
+          "count": 7234295808
+        },
+        {
+          "bucket": "19:4",
+          "count": 6921292224
+        },
+        {
+          "bucket": "19:6",
+          "count": 6854016336
+        },
+        {
+          "bucket": "17:7",
+          "count": 6416932992
+        },
+        {
+          "bucket": "17:6",
+          "count": 6325576176
+        }
+      ],
+      "total_demand": 79296544896,
+      "total_exposure_incidence": 713668904064,
+      "variable_count": 60618
+    },
+    {
+      "active_phase_count": 757,
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "3f8236b6bd87cd5683e70261e2e0acf2fe4992091f2ea02f32b3eea17e50543a",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.6015450360133348,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.3843869647293987,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1309,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 60618,
+        "nonnegativity_rows": 60618,
+        "phase_mass_upper_rows": 757,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "473d238081a5e92e4ec36fc512c9c2c609710336142a995647c3dd789f078252",
+      "max_bucket_exposure": 7325166288,
+      "max_bucket_exposure_share": 0.09237686582192445,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "1430b2072c89aea2b87ef0f58f952d856f1ab5f8fc966db42c13e68988e32275",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 7325166288
+        },
+        {
+          "bucket": "13:0",
+          "count": 7257005616
+        },
+        {
+          "bucket": "13:9",
+          "count": 6972721152
+        },
+        {
+          "bucket": "13:8",
+          "count": 6659261112
+        },
+        {
+          "bucket": "13:7",
+          "count": 6371909640
+        },
+        {
+          "bucket": "13:3",
+          "count": 6350536128
+        },
+        {
+          "bucket": "13:4",
+          "count": 6184198752
+        },
+        {
+          "bucket": "13:5",
+          "count": 6078445176
+        }
+      ],
+      "total_demand": 79296544896,
+      "total_exposure_incidence": 713668904064,
+      "variable_count": 60618
+    },
+    {
+      "active_phase_count": 757,
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "4e28a8f71dbf018a118afac742bde1299b36e86393719a28752ff2a18cf71a7b",
+      "direction": 0.75,
+      "effective_bucket_support_by_exposure": 2.4443766417186823,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.409102256556045,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1309,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 60618,
+        "nonnegativity_rows": 60618,
+        "phase_mass_upper_rows": 757,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "0fc05b282d3283ce648fe151dc3069df640ef1b0155c7b751873d3820f3238ef",
+      "max_bucket_exposure": 9369477384,
+      "max_bucket_exposure_share": 0.11815744804881946,
+      "min_actual_buckets_by_exposure": 9,
+      "p": 47,
+      "phase_demand_hash": "1430b2072c89aea2b87ef0f58f952d856f1ab5f8fc966db42c13e68988e32275",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 9369477384
+        },
+        {
+          "bucket": "13:3",
+          "count": 7934982936
+        },
+        {
+          "bucket": "13:5",
+          "count": 7800867240
+        },
+        {
+          "bucket": "19:5",
+          "count": 7234295808
+        },
+        {
+          "bucket": "19:4",
+          "count": 6921292224
+        },
+        {
+          "bucket": "19:6",
+          "count": 6854016336
+        },
+        {
+          "bucket": "17:7",
+          "count": 6416932992
+        },
+        {
+          "bucket": "17:6",
+          "count": 6325576176
+        }
+      ],
+      "total_demand": 79296544896,
+      "total_exposure_incidence": 713668904064,
+      "variable_count": 60618
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "dd9ea2c3490e8dcc201d3ef1b5015b5e9a6515ea35d18381dd5e6c99680eff14",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.61129040716669,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38295242737287993,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "fa3c7483e36be0afbecaf98f577ab8ca89b565902a7f80564d1e3685e9cb3854",
+      "max_bucket_exposure": 6370789056,
+      "max_bucket_exposure_share": 0.09496104594257279,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "726849255258fa80596bb0b475c08247d97a5dbf5e34b1f993eac71aa3be52c0",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 6370789056
+        },
+        {
+          "bucket": "13:9",
+          "count": 6300843432
+        },
+        {
+          "bucket": "13:8",
+          "count": 6195261024
+        },
+        {
+          "bucket": "13:0",
+          "count": 5870877288
+        },
+        {
+          "bucket": "13:7",
+          "count": 5393977224
+        },
+        {
+          "bucket": "13:11",
+          "count": 5259739896
+        },
+        {
+          "bucket": "13:5",
+          "count": 4981030440
+        },
+        {
+          "bucket": "13:4",
+          "count": 4895251008
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.5,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "9a1c28653514e73ccb5892479516258906c018ed58dbb6b0a33422997c22e707",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.0633901847496583,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4846393122303843,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "aaabcb164baf956f9de80f491af5ec367ecf27d87864e06b1d7e9ac9e1a80322",
+      "max_bucket_exposure": 6723201048,
+      "max_bucket_exposure_share": 0.10021399201704813,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "726849255258fa80596bb0b475c08247d97a5dbf5e34b1f993eac71aa3be52c0",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:5",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:10",
+          "count": 6176688168
+        },
+        {
+          "bucket": "13:12",
+          "count": 6176688168
+        },
+        {
+          "bucket": "17:6",
+          "count": 6102092160
+        },
+        {
+          "bucket": "17:8",
+          "count": 6102092160
+        },
+        {
+          "bucket": "19:4",
+          "count": 5982464424
+        },
+        {
+          "bucket": "19:6",
+          "count": 5982464424
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.5,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "f7100af766b22c4c478bfeab356702031738e1ce3b52a1a4033c084f8d615286",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.6112898528270714,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38295250866822234,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "d79dd775c7d1dade7643acf60c53c13ac36a7986287b0766ee1b3a6392fa6a01",
+      "max_bucket_exposure": 6370789056,
+      "max_bucket_exposure_share": 0.09496104594257279,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "495e1b6262b56eef6fb0ba25a741e15ed5155af5dc9289496473edf21d07e3e3",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 6370789056
+        },
+        {
+          "bucket": "13:3",
+          "count": 6300843432
+        },
+        {
+          "bucket": "13:4",
+          "count": 6195220704
+        },
+        {
+          "bucket": "13:12",
+          "count": 5870836968
+        },
+        {
+          "bucket": "13:5",
+          "count": 5394017544
+        },
+        {
+          "bucket": "13:1",
+          "count": 5259780216
+        },
+        {
+          "bucket": "13:7",
+          "count": 4981070760
+        },
+        {
+          "bucket": "13:8",
+          "count": 4895210688
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.5,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "05f523da410626bffe6f8a6a94b6026d28ae385f8e31ad9f2319e82814236341",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.0633901847496583,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4846393122303843,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "a4b0a2abeff23223b01247223bb6fe6c7dab68d8840e1c6367b272b82a5a67ac",
+      "max_bucket_exposure": 6723201048,
+      "max_bucket_exposure_share": 0.10021399201704813,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "495e1b6262b56eef6fb0ba25a741e15ed5155af5dc9289496473edf21d07e3e3",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:3",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:11",
+          "count": 6176688168
+        },
+        {
+          "bucket": "13:9",
+          "count": 6176688168
+        },
+        {
+          "bucket": "17:7",
+          "count": 6102092160
+        },
+        {
+          "bucket": "17:5",
+          "count": 6102092160
+        },
+        {
+          "bucket": "19:3",
+          "count": 5982464424
+        },
+        {
+          "bucket": "19:5",
+          "count": 5982464424
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "dd9ea2c3490e8dcc201d3ef1b5015b5e9a6515ea35d18381dd5e6c99680eff14",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.61129040716669,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38295242737287993,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "fa3c7483e36be0afbecaf98f577ab8ca89b565902a7f80564d1e3685e9cb3854",
+      "max_bucket_exposure": 6370789056,
+      "max_bucket_exposure_share": 0.09496104594257279,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "726849255258fa80596bb0b475c08247d97a5dbf5e34b1f993eac71aa3be52c0",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 6370789056
+        },
+        {
+          "bucket": "13:9",
+          "count": 6300843432
+        },
+        {
+          "bucket": "13:8",
+          "count": 6195261024
+        },
+        {
+          "bucket": "13:0",
+          "count": 5870877288
+        },
+        {
+          "bucket": "13:7",
+          "count": 5393977224
+        },
+        {
+          "bucket": "13:11",
+          "count": 5259739896
+        },
+        {
+          "bucket": "13:5",
+          "count": 4981030440
+        },
+        {
+          "bucket": "13:4",
+          "count": 4895251008
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "9a1c28653514e73ccb5892479516258906c018ed58dbb6b0a33422997c22e707",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.0633901847496583,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4846393122303843,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "aaabcb164baf956f9de80f491af5ec367ecf27d87864e06b1d7e9ac9e1a80322",
+      "max_bucket_exposure": 6723201048,
+      "max_bucket_exposure_share": 0.10021399201704813,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "726849255258fa80596bb0b475c08247d97a5dbf5e34b1f993eac71aa3be52c0",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:5",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:10",
+          "count": 6176688168
+        },
+        {
+          "bucket": "13:12",
+          "count": 6176688168
+        },
+        {
+          "bucket": "17:6",
+          "count": 6102092160
+        },
+        {
+          "bucket": "17:8",
+          "count": 6102092160
+        },
+        {
+          "bucket": "19:4",
+          "count": 5982464424
+        },
+        {
+          "bucket": "19:6",
+          "count": 5982464424
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "f7100af766b22c4c478bfeab356702031738e1ce3b52a1a4033c084f8d615286",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.6112898528270714,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38295250866822234,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "d79dd775c7d1dade7643acf60c53c13ac36a7986287b0766ee1b3a6392fa6a01",
+      "max_bucket_exposure": 6370789056,
+      "max_bucket_exposure_share": 0.09496104594257279,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "495e1b6262b56eef6fb0ba25a741e15ed5155af5dc9289496473edf21d07e3e3",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 6370789056
+        },
+        {
+          "bucket": "13:3",
+          "count": 6300843432
+        },
+        {
+          "bucket": "13:4",
+          "count": 6195220704
+        },
+        {
+          "bucket": "13:12",
+          "count": 5870836968
+        },
+        {
+          "bucket": "13:5",
+          "count": 5394017544
+        },
+        {
+          "bucket": "13:1",
+          "count": 5259780216
+        },
+        {
+          "bucket": "13:7",
+          "count": 4981070760
+        },
+        {
+          "bucket": "13:8",
+          "count": 4895210688
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "05f523da410626bffe6f8a6a94b6026d28ae385f8e31ad9f2319e82814236341",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.0633901847496583,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4846393122303843,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "a4b0a2abeff23223b01247223bb6fe6c7dab68d8840e1c6367b272b82a5a67ac",
+      "max_bucket_exposure": 6723201048,
+      "max_bucket_exposure_share": 0.10021399201704813,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "495e1b6262b56eef6fb0ba25a741e15ed5155af5dc9289496473edf21d07e3e3",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_mass",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:3",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:11",
+          "count": 6176688168
+        },
+        {
+          "bucket": "13:9",
+          "count": 6176688168
+        },
+        {
+          "bucket": "17:7",
+          "count": 6102092160
+        },
+        {
+          "bucket": "17:5",
+          "count": 6102092160
+        },
+        {
+          "bucket": "19:3",
+          "count": 5982464424
+        },
+        {
+          "bucket": "19:5",
+          "count": 5982464424
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "dd9ea2c3490e8dcc201d3ef1b5015b5e9a6515ea35d18381dd5e6c99680eff14",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.61129040716669,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38295242737287993,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "fa3c7483e36be0afbecaf98f577ab8ca89b565902a7f80564d1e3685e9cb3854",
+      "max_bucket_exposure": 6370789056,
+      "max_bucket_exposure_share": 0.09496104594257279,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "726849255258fa80596bb0b475c08247d97a5dbf5e34b1f993eac71aa3be52c0",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:12",
+          "count": 6370789056
+        },
+        {
+          "bucket": "13:9",
+          "count": 6300843432
+        },
+        {
+          "bucket": "13:8",
+          "count": 6195261024
+        },
+        {
+          "bucket": "13:0",
+          "count": 5870877288
+        },
+        {
+          "bucket": "13:7",
+          "count": 5393977224
+        },
+        {
+          "bucket": "13:11",
+          "count": 5259739896
+        },
+        {
+          "bucket": "13:5",
+          "count": 4981030440
+        },
+        {
+          "bucket": "13:4",
+          "count": 4895251008
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "9a1c28653514e73ccb5892479516258906c018ed58dbb6b0a33422997c22e707",
+      "direction": 0.0,
+      "effective_bucket_support_by_exposure": 2.0633901847496583,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4846393122303843,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "aaabcb164baf956f9de80f491af5ec367ecf27d87864e06b1d7e9ac9e1a80322",
+      "max_bucket_exposure": 6723201048,
+      "max_bucket_exposure_share": 0.10021399201704813,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "726849255258fa80596bb0b475c08247d97a5dbf5e34b1f993eac71aa3be52c0",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:5",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:10",
+          "count": 6176688168
+        },
+        {
+          "bucket": "13:12",
+          "count": 6176688168
+        },
+        {
+          "bucket": "17:6",
+          "count": 6102092160
+        },
+        {
+          "bucket": "17:8",
+          "count": 6102092160
+        },
+        {
+          "bucket": "19:4",
+          "count": 5982464424
+        },
+        {
+          "bucket": "19:6",
+          "count": 5982464424
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "bucket_total_hash": "f7100af766b22c4c478bfeab356702031738e1ce3b52a1a4033c084f8d615286",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.6112898528270714,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.38295250866822234,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "d79dd775c7d1dade7643acf60c53c13ac36a7986287b0766ee1b3a6392fa6a01",
+      "max_bucket_exposure": 6370789056,
+      "max_bucket_exposure_share": 0.09496104594257279,
+      "min_actual_buckets_by_exposure": 11,
+      "p": 47,
+      "phase_demand_hash": "495e1b6262b56eef6fb0ba25a741e15ed5155af5dc9289496473edf21d07e3e3",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:0",
+          "count": 6370789056
+        },
+        {
+          "bucket": "13:3",
+          "count": 6300843432
+        },
+        {
+          "bucket": "13:4",
+          "count": 6195220704
+        },
+        {
+          "bucket": "13:12",
+          "count": 5870836968
+        },
+        {
+          "bucket": "13:5",
+          "count": 5394017544
+        },
+        {
+          "bucket": "13:1",
+          "count": 5259780216
+        },
+        {
+          "bucket": "13:7",
+          "count": 4981070760
+        },
+        {
+          "bucket": "13:8",
+          "count": 4895210688
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    },
+    {
+      "active_phase_count": 1133,
+      "alpha": 0.9,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "bucket_total_hash": "05f523da410626bffe6f8a6a94b6026d28ae385f8e31ad9f2319e82814236341",
+      "direction": 0.5,
+      "effective_bucket_support_by_exposure": 2.0633901847496583,
+      "existing_exposure_reference_matches": true,
+      "exposure_herfindahl_by_demand": 0.4846393122303843,
+      "failure_routes": [
+        "SingleBucketReturn",
+        "CorrelatedBucketBlock",
+        "ColumnTailMissingRow",
+        "DiffuseExtremizer"
+      ],
+      "h": 1155,
+      "high_prime_count": 9,
+      "lp_row_counts": {
+        "bucket_exposure_upper_rows": 94478,
+        "nonnegativity_rows": 94478,
+        "phase_mass_upper_rows": 1133,
+        "total_payment_rows": 1
+      },
+      "matrix_hash": "a4b0a2abeff23223b01247223bb6fe6c7dab68d8840e1c6367b272b82a5a67ac",
+      "max_bucket_exposure": 6723201048,
+      "max_bucket_exposure_share": 0.10021399201704813,
+      "min_actual_buckets_by_exposure": 10,
+      "p": 47,
+      "phase_demand_hash": "495e1b6262b56eef6fb0ba25a741e15ed5155af5dc9289496473edf21d07e3e3",
+      "phase_exposure_identity": true,
+      "q": 2310,
+      "route": "MultiBucketVectorLPReady",
+      "single_bucket_payment_excluded": true,
+      "source": "top_by_size",
+      "top_bucket_totals": [
+        {
+          "bucket": "13:4",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:3",
+          "count": 6723201048
+        },
+        {
+          "bucket": "13:11",
+          "count": 6176688168
+        },
+        {
+          "bucket": "13:9",
+          "count": 6176688168
+        },
+        {
+          "bucket": "17:7",
+          "count": 6102092160
+        },
+        {
+          "bucket": "17:5",
+          "count": 6102092160
+        },
+        {
+          "bucket": "19:3",
+          "count": 5982464424
+        },
+        {
+          "bucket": "19:5",
+          "count": 5982464424
+        }
+      ],
+      "total_demand": 67088446560,
+      "total_exposure_incidence": 603796019040,
+      "variable_count": 94478
+    }
+  ],
+  "source_hashes": {
+    "dualcap_json": "b6bf0fc2a4305656fa7aef8cac33aa9b7dd1867617611fe7b96a23e8ba251c53",
+    "forcedcap_exposure_json": "2c59cbcf1c5837c536023eeab6f1f53d146ab6e2c4e9c15d6419ab3f93828467",
+    "multiplicity_json": "5bcfa7c286e716b3b626c312becf303fee3b9d72142aaa30be63f849cb21162d",
+    "script": "c50b6564f2a4df2784fd662ec2ca417de11b47cb654a5222b692433c54ce340f"
+  },
+  "status": "forcedcap_multibucket_vector_lp_skeleton_materialized",
+  "structural_law": "Multi-bucket PDEC must use variables g_b(t) with bounds 0<=g_b(t)<=E_b(t), sum_b g_b(t)<=M(t), and one total payment row. A failure of U_CRT^multi<L_PDEC^multi must route to SingleBucketReturn, CorrelatedBucketBlock, ColumnTailMissingRow, or DiffuseExtremizer."
+}

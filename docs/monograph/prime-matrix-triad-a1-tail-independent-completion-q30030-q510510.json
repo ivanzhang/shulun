@@ -1,0 +1,192 @@
+{
+  "certificate_type": "triad_a1_tail_independent_completion_audit",
+  "p_values": [
+    19,
+    23
+  ],
+  "prime_results": [
+    {
+      "active_old_phase_count": 368,
+      "by_old_hole_count": [
+        {
+          "completion_mass": 0,
+          "killed": 5760,
+          "old_hole_count": 1,
+          "survival_rate": 0.0,
+          "tail_independent_survivors": 0,
+          "zero_cover_slots": 5760
+        }
+      ],
+      "examples": [],
+      "independent_completion_histogram": {},
+      "independent_completion_mass": 0,
+      "killed_hole_count_histogram": {
+        "1": 5760
+      },
+      "nonempty_zero_cover_killed": 5760,
+      "nonempty_zero_cover_slots": 5760,
+      "p": 19,
+      "promoted_prime": 17,
+      "q": 30030,
+      "q_lift": 510510,
+      "structural_reading": "tail_independent_survivors 是 promoted prime 未覆盖任何旧洞但 Tail_{>r} 仍能完成旧洞集的槽位数。该比例若长期趋近 1，则进入 NoDeletion；若长期低，则 zero-cover death 提供删除势。",
+      "survivor_hole_count_histogram": {},
+      "tail_independent_survival_rate": 0.0,
+      "tail_independent_survivors": 0,
+      "tail_primes": [],
+      "trivial_empty_hole_zero_cover_survivors": 136
+    },
+    {
+      "active_old_phase_count": 936,
+      "by_old_hole_count": [
+        {
+          "completion_mass": 768,
+          "killed": 0,
+          "old_hole_count": 1,
+          "survival_rate": 1.0,
+          "tail_independent_survivors": 768,
+          "zero_cover_slots": 768
+        },
+        {
+          "completion_mass": 0,
+          "killed": 13320,
+          "old_hole_count": 2,
+          "survival_rate": 0.0,
+          "tail_independent_survivors": 0,
+          "zero_cover_slots": 13320
+        }
+      ],
+      "examples": [
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 0,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        },
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 1,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        },
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 2,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        },
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 3,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        },
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 4,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        },
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 5,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        },
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 6,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        },
+        {
+          "old_hole_count": 1,
+          "old_holes": [
+            14
+          ],
+          "old_phase": 110,
+          "residue": 7,
+          "tail_completion_count": 1,
+          "tail_primes": [
+            19
+          ]
+        }
+      ],
+      "independent_completion_histogram": {
+        "1": 768
+      },
+      "independent_completion_mass": 768,
+      "killed_hole_count_histogram": {
+        "2": 13320
+      },
+      "nonempty_zero_cover_killed": 13320,
+      "nonempty_zero_cover_slots": 14088,
+      "p": 23,
+      "promoted_prime": 17,
+      "q": 30030,
+      "q_lift": 510510,
+      "structural_reading": "tail_independent_survivors 是 promoted prime 未覆盖任何旧洞但 Tail_{>r} 仍能完成旧洞集的槽位数。该比例若长期趋近 1，则进入 NoDeletion；若长期低，则 zero-cover death 提供删除势。",
+      "survivor_hole_count_histogram": {
+        "1": 768
+      },
+      "tail_independent_survival_rate": 0.054514480408858604,
+      "tail_independent_survivors": 768,
+      "tail_primes": [
+        19
+      ],
+      "trivial_empty_hole_zero_cover_survivors": 0
+    }
+  ],
+  "promoted_prime": 17,
+  "q": 30030,
+  "q_lift": 510510,
+  "review_conclusion": "本审计只统计非空旧洞集上的 zero-cover 幸存。当前这些幸存很少；说明 Tail_{>r} 独立完成不是当前删除势的主导机制。",
+  "source_hashes": {
+    "base_multiplicity_json": "c62dea9f85ebdf6fb69eb9870b0a4e4af89dd88ac696a2247b48dd22c4a4bbba",
+    "lift_multiplicity_json": "400fadeec3a97b7cd6c22ed0bd5e1271c703ebda07ee074db7db549d43d9b4fd",
+    "tail_independent_script": "cbad37ce16854696c6d9b583691d2b87c3a1eaf9000c3618656acef5fc78cf1e"
+  },
+  "status": "tail_independent_zero_cover_completion_audited"
+}

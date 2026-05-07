@@ -1,0 +1,72 @@
+{
+  "all_counts_match": true,
+  "all_current_forced_multibucket_rows_routed_to_aps": true,
+  "certificate_type": "triad_a1_actual_payment_stitching_router",
+  "count_chain": {
+    "collapse_matrix_row_count": 48,
+    "forced_signature_matrix_row_count": 48,
+    "mfu_matrix_row_count": 48,
+    "skeleton_matrix_row_count": 48
+  },
+  "fiber_count_chain": {
+    "fiber_dominance_forced_cap_count": 24,
+    "fiber_forced_cap_count": 24,
+    "forced_signature_forced_cap_count": 24,
+    "gamma_freedom_forced_cap_count": 24
+  },
+  "gates": {
+    "bare_projection_collapses": true,
+    "fiber_column_residue_bucket_lower_bound_active": true,
+    "fiber_completion_counts_match_m_vector": true,
+    "fiber_residue_bucket_lower_bound_active": true,
+    "finite_layer_mfu_candidates_exist": true,
+    "forced_signature_or_small_ambiguous_gate_active": true,
+    "gamma_forced_share_large": true,
+    "single_bucket_payments_excluded": true,
+    "small_ambiguous_successor_routed_before_clean_terminal": true
+  },
+  "review_conclusion": "ForcedCap 多桶分支的当前 48 个矩阵行已全部路由到 ActualPaymentStitching：单桶支付已排除，裸多桶 LP 已坍缩，有限层 MFU 候选行已存在；进一步加入同一 CRT fiber y 的一致完成态后，实际支付至少需要 42 个 residue 桶或 24 个 column-residue 桶，且至少约 94.47% 的支付边由唯一覆盖强制决定。ForcedGammaSignature 进一步显示 48 个有限签名行的信号均超过 ambiguous 预算：持久则进入 MFU/PDEC，不持久则进入 small-ambiguous 后继门控。当前后继层仍由 FiberDeletion 推进；若视作 NoDeletion，则 KL 形状回流 phase-residue PDEC，尚未触发 clean KLS 终端。",
+  "route": "ActualPaymentStitchingPersistentMFUOrDistributedCleanKLS",
+  "router_chain": [
+    "ExposureDominance => no single-bucket payment",
+    "MultiBucketSkeleton => vector g_b(t) materialized",
+    "ProjectionCollapse => bare multi-bucket LP gives no stronger projection",
+    "MFUCandidateAudit => finite phase-bucket correlated rows exist",
+    "FiberConsistentPayment => actual completions come from one CRT fiber y",
+    "FiberDominance => at least 42 residue buckets or 24 column-residue buckets",
+    "GammaFreedom => at most 5.53% choice-ambiguous holes; at least 94.47% forced",
+    "ForcedGammaSignature => finite signature signal exceeds ambiguous budget on all 48 rows",
+    "SmallAmbiguousCleanAdmission => current successor layers delete or return phase-residue PDEC",
+    "ActualPaymentStitching => persistent Gamma row gives MFU/PDEC; no persistent row gives CleanKLS/DLS"
+  ],
+  "signature_pressure_summary": {
+    "global_max_ambiguous_gamma_share_upper_bound": 0.05528425182914454,
+    "global_min_forced_gamma_share_lower_bound": 0.9447157481708555,
+    "global_min_signature_signal_minus_ambiguous_budget": 0.13073320222097914,
+    "global_min_signature_signal_to_ambiguity_ratio": 3.51497432278278
+  },
+  "small_ambiguous_successor_summary": {
+    "current_nodeletion_triggered": false,
+    "gate_counts": {
+      "FiberDeletion": 6
+    },
+    "max_global_residue_normalized_kl": 0.038855655443699094,
+    "max_kl_chain_abs_error": 0.0,
+    "min_phase_residue_mutual_normalized_kl": 0.41250010713817964,
+    "shape_route_counts": {
+      "PhaseResidueMutualPDECWitness": 6
+    }
+  },
+  "source_hashes": {
+    "fiber_consistent_payment_json": "919c9e6ae9af3cd70c974151a22086dceb1357ef37b7f12ba34e874c60b5ebbf",
+    "fiber_dominance_json": "3ad62e3310dfe89ff72d8b89b592bd05107c2627a360f845fb71915f38a89a2a",
+    "forced_gamma_signature_json": "5d1e1e55d68ce913f395db41890de6b436df802e07412e10dff904284c65a9b2",
+    "gamma_freedom_json": "8a61e8d91cefcd18a9ca1b647809fcfffdfd6c3b8534cf9412db4eb740329f0e",
+    "mfu_candidate_json": "bf0ea37541ed6f51e0d4a1a7bc936d15d4d2fb83959088bbe49fb1cd71487505",
+    "projection_collapse_json": "a2d28bc037887df70510f0cc31775246e18f1101a81432204fa1586f0bd8ebaa",
+    "script": "79936fc2d375cc7b5c311c2d580ae488fff98c9e27f61b84e696d8d58da6796c",
+    "skeleton_json": "ba93811af92f46cb88a890edfe146776cabd7a8b2c33e635c6e992076d8307e8",
+    "small_ambiguous_clean_admission_json": "e27c0c1fbb5fc28d55e466cc4b4b1a635e5d6dc0dc5e8bb42e1bd9f01697cc8d"
+  },
+  "status": "forcedcap_multibucket_rows_routed_to_actual_payment_stitching"
+}

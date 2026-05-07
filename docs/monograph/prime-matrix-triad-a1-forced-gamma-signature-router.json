@@ -1,0 +1,4560 @@
+{
+  "all_rows_routed_to_forced_signature_or_small_ambiguous_clean": true,
+  "certificate_type": "triad_a1_forced_gamma_signature_router",
+  "forced_cap_count": 24,
+  "global_max_ambiguous_gamma_share_upper_bound": 0.05528425182914454,
+  "global_min_ambiguous_escape_bucket_lower_bound": 2,
+  "global_min_forced_gamma_share_lower_bound": 0.9447157481708555,
+  "global_min_signature_signal_minus_ambiguous_budget": 0.13073320222097914,
+  "global_min_signature_signal_to_ambiguity_ratio": 3.51497432278278,
+  "kind_summary": [
+    {
+      "bucket_kind": "column_residue",
+      "max_ambiguous_gamma_share_upper_bound": 0.05528425182914454,
+      "min_actual_buckets_by_fiber": 24,
+      "min_normalized_signature_signal": 0.18271512547032862,
+      "min_signature_signal_minus_ambiguous_budget": 0.13073320222097914,
+      "min_signature_signal_to_ambiguity_ratio": 3.51497432278278,
+      "row_count": 24
+    },
+    {
+      "bucket_kind": "residue",
+      "max_ambiguous_gamma_share_upper_bound": 0.05528425182914454,
+      "min_actual_buckets_by_fiber": 42,
+      "min_normalized_signature_signal": 0.22178298521804704,
+      "min_signature_signal_minus_ambiguous_budget": 0.16980106196869757,
+      "min_signature_signal_to_ambiguity_ratio": 4.0879433128196725,
+      "row_count": 24
+    }
+  ],
+  "missing_key_count": 0,
+  "missing_keys": [],
+  "review_conclusion": "ForcedCap 的 Gamma 自由度已压到小预算后，48 个有限层 phase-bucket 签名行全部满足 `signature_signal > ambiguous_budget`。因此下一步不再是寻找新的 exposure 统计，而是证明实际 Gamma 若持久命中这些签名则进入 PDEC；若不持久，则小 ambiguous 分散残余进入 CleanKLS/DLS。",
+  "route_counts": {
+    "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission": 48
+  },
+  "rows": [
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.04173630675822548,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.9582636932417745,
+      "forced_majority_minus_max_bucket_share": 0.9399993384167649,
+      "h": 805,
+      "max_bucket_fiber_cover_share": 0.01826435482500967,
+      "min_actual_buckets_by_fiber": 55,
+      "normalized_signature_signal": 0.23589690509061986,
+      "p": 43,
+      "pair_count": 70520,
+      "phase_bucket_mutual_info": 1.2613661176829973,
+      "phase_count": 1077,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19416059833239438,
+      "signature_signal_to_ambiguity_ratio": 5.6520790509124,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 67245228,
+          "key": "13:5"
+        },
+        {
+          "count": 66922632,
+          "key": "13:7"
+        },
+        {
+          "count": 64209228,
+          "key": "13:12"
+        },
+        {
+          "count": 63272796,
+          "key": "13:0"
+        },
+        {
+          "count": 61937158,
+          "key": "13:11"
+        },
+        {
+          "count": 61887238,
+          "key": "13:1"
+        },
+        {
+          "count": 57994656,
+          "key": "13:2"
+        },
+        {
+          "count": 56637912,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 10.308014506646183,
+          "mass_share": 0.00036192878070869785,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 10.255870734850319,
+          "mass_share": 0.00036192878070869785,
+          "phase": 349
+        },
+        {
+          "bucket": "41:4",
+          "count": 10660320,
+          "lift": 9.217251855878118,
+          "mass_share": 0.00036192878070869785,
+          "phase": 1669
+        },
+        {
+          "bucket": "41:36",
+          "count": 10660320,
+          "lift": 9.141541007208764,
+          "mass_share": 0.00036192878070869785,
+          "phase": 642
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 9.008284024265118,
+          "mass_share": 0.00036192878070869785,
+          "phase": 702
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.04173630675822548,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.9582636932417745,
+      "forced_majority_minus_max_bucket_share": 0.9373934153433808,
+      "h": 805,
+      "max_bucket_fiber_cover_share": 0.020870277898393696,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.23241856000520628,
+      "p": 43,
+      "pair_count": 70520,
+      "phase_bucket_mutual_info": 1.2427670324823483,
+      "phase_count": 1077,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1906822532469808,
+      "signature_signal_to_ambiguity_ratio": 5.568738061841103,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 76839648,
+          "key": "13:3"
+        },
+        {
+          "count": 75735048,
+          "key": "13:1"
+        },
+        {
+          "count": 72078072,
+          "key": "13:2"
+        },
+        {
+          "count": 58589848,
+          "key": "13:10"
+        },
+        {
+          "count": 56775192,
+          "key": "13:5"
+        },
+        {
+          "count": 56494440,
+          "key": "13:12"
+        },
+        {
+          "count": 56453932,
+          "key": "13:7"
+        },
+        {
+          "count": 54573348,
+          "key": "13:11"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 7.674882480061873,
+          "mass_share": 0.00017896236636812427,
+          "phase": 1747
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.041744059556068525,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.9582559404439315,
+      "forced_majority_minus_max_bucket_share": 0.93984945041094,
+      "h": 1505,
+      "max_bucket_fiber_cover_share": 0.018406490032991458,
+      "min_actual_buckets_by_fiber": 55,
+      "normalized_signature_signal": 0.23589829020887834,
+      "p": 43,
+      "pair_count": 70844,
+      "phase_bucket_mutual_info": 1.2613735240592683,
+      "phase_count": 1081,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19415423065280982,
+      "signature_signal_to_ambiguity_ratio": 5.651062515662416,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 67746348,
+          "key": "13:5"
+        },
+        {
+          "count": 67109352,
+          "key": "13:7"
+        },
+        {
+          "count": 64195692,
+          "key": "13:12"
+        },
+        {
+          "count": 63061620,
+          "key": "13:0"
+        },
+        {
+          "count": 62141878,
+          "key": "13:1"
+        },
+        {
+          "count": 61801678,
+          "key": "13:11"
+        },
+        {
+          "count": 58019376,
+          "key": "13:2"
+        },
+        {
+          "count": 56689152,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 10.375474311452312,
+          "mass_share": 0.0003620473273122034,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 10.25434301300772,
+          "mass_share": 0.0003620473273122034,
+          "phase": 349
+        },
+        {
+          "bucket": "41:4",
+          "count": 10660320,
+          "lift": 9.265301413862948,
+          "mass_share": 0.0003620473273122034,
+          "phase": 1669
+        },
+        {
+          "bucket": "41:36",
+          "count": 10660320,
+          "lift": 9.16466004562499,
+          "mass_share": 0.0003620473273122034,
+          "phase": 642
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 8.986416551211493,
+          "mass_share": 0.0003620473273122034,
+          "phase": 702
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.041744059556068525,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.9582559404439315,
+      "forced_majority_minus_max_bucket_share": 0.9372297627414482,
+      "h": 1505,
+      "max_bucket_fiber_cover_share": 0.021026177702483276,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.23243960023176133,
+      "p": 43,
+      "pair_count": 70844,
+      "phase_bucket_mutual_info": 1.2428795368362089,
+      "phase_count": 1081,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1906955406756928,
+      "signature_signal_to_ambiguity_ratio": 5.568207852893659,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 77388288,
+          "key": "13:3"
+        },
+        {
+          "count": 75703968,
+          "key": "13:1"
+        },
+        {
+          "count": 72209832,
+          "key": "13:2"
+        },
+        {
+          "count": 58595392,
+          "key": "13:10"
+        },
+        {
+          "count": 56744592,
+          "key": "13:5"
+        },
+        {
+          "count": 56421796,
+          "key": "13:7"
+        },
+        {
+          "count": 55492248,
+          "key": "13:12"
+        },
+        {
+          "count": 54791932,
+          "key": "13:9"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 7.672369462614485,
+          "mass_share": 0.00017902098392444767,
+          "phase": 1747
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.04205887419412857,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.9579411258058714,
+      "forced_majority_minus_max_bucket_share": 0.938408478050014,
+      "h": 805,
+      "max_bucket_fiber_cover_share": 0.01953264775585741,
+      "min_actual_buckets_by_fiber": 52,
+      "normalized_signature_signal": 0.23667892629453768,
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2655476691516472,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1946200521004091,
+      "signature_signal_to_ambiguity_ratio": 5.627324335932371,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 57182364,
+          "key": "13:12"
+        },
+        {
+          "count": 55590118,
+          "key": "13:1"
+        },
+        {
+          "count": 50926614,
+          "key": "13:4"
+        },
+        {
+          "count": 49115134,
+          "key": "13:11"
+        },
+        {
+          "count": 48307816,
+          "key": "13:3"
+        },
+        {
+          "count": 48217756,
+          "key": "13:9"
+        },
+        {
+          "count": 47825352,
+          "key": "13:7"
+        },
+        {
+          "count": 43493136,
+          "key": "13:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 9.832610170548085,
+          "mass_share": 0.00045517590774299285,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:23",
+          "count": 10660320,
+          "lift": 9.62152503198523,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 9.528696975651592,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 9.449895822616558,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        },
+        {
+          "bucket": "37:31",
+          "count": 10660320,
+          "lift": 9.374077420140848,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.04205887419412857,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.9579411258058714,
+      "forced_majority_minus_max_bucket_share": 0.9336476729451268,
+      "h": 805,
+      "max_bucket_fiber_cover_share": 0.02429345286074454,
+      "min_actual_buckets_by_fiber": 42,
+      "normalized_signature_signal": 0.2324251006199648,
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2428020058527791,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19036622642583623,
+      "signature_signal_to_ambiguity_ratio": 5.526184546623252,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 71119752,
+          "key": "13:3"
+        },
+        {
+          "count": 62676072,
+          "key": "13:2"
+        },
+        {
+          "count": 52823520,
+          "key": "13:1"
+        },
+        {
+          "count": 52186684,
+          "key": "13:10"
+        },
+        {
+          "count": 49202544,
+          "key": "13:4"
+        },
+        {
+          "count": 47588896,
+          "key": "13:9"
+        },
+        {
+          "count": 45773424,
+          "key": "13:5"
+        },
+        {
+          "count": 44347236,
+          "key": "19:4"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.04205887419412857,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.9579411258058714,
+      "forced_majority_minus_max_bucket_share": 0.938408478050014,
+      "h": 1505,
+      "max_bucket_fiber_cover_share": 0.01953264775585741,
+      "min_actual_buckets_by_fiber": 52,
+      "normalized_signature_signal": 0.23667892629453768,
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2655476691516472,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1946200521004091,
+      "signature_signal_to_ambiguity_ratio": 5.627324335932371,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 57182364,
+          "key": "13:12"
+        },
+        {
+          "count": 55590118,
+          "key": "13:1"
+        },
+        {
+          "count": 50926614,
+          "key": "13:4"
+        },
+        {
+          "count": 49115134,
+          "key": "13:11"
+        },
+        {
+          "count": 48307816,
+          "key": "13:3"
+        },
+        {
+          "count": 48217756,
+          "key": "13:9"
+        },
+        {
+          "count": 47825352,
+          "key": "13:7"
+        },
+        {
+          "count": 43493136,
+          "key": "13:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:2",
+          "count": 10660320,
+          "lift": 9.832610170548085,
+          "mass_share": 0.00045517590774299285,
+          "phase": 1962
+        },
+        {
+          "bucket": "37:23",
+          "count": 10660320,
+          "lift": 9.62152503198523,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:10",
+          "count": 10660320,
+          "lift": 9.528696975651592,
+          "mass_share": 0.00045517590774299285,
+          "phase": 702
+        },
+        {
+          "bucket": "37:34",
+          "count": 10660320,
+          "lift": 9.449895822616558,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        },
+        {
+          "bucket": "37:31",
+          "count": 10660320,
+          "lift": 9.374077420140848,
+          "mass_share": 0.00045517590774299285,
+          "phase": 349
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.04205887419412857,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.9579411258058714,
+      "forced_majority_minus_max_bucket_share": 0.9336476729451268,
+      "h": 1505,
+      "max_bucket_fiber_cover_share": 0.02429345286074454,
+      "min_actual_buckets_by_fiber": 42,
+      "normalized_signature_signal": 0.2324251006199648,
+      "p": 43,
+      "pair_count": 47690,
+      "phase_bucket_mutual_info": 1.2428020058527791,
+      "phase_count": 734,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19036622642583623,
+      "signature_signal_to_ambiguity_ratio": 5.526184546623252,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 71119752,
+          "key": "13:3"
+        },
+        {
+          "count": 62676072,
+          "key": "13:2"
+        },
+        {
+          "count": 52823520,
+          "key": "13:1"
+        },
+        {
+          "count": 52186684,
+          "key": "13:10"
+        },
+        {
+          "count": 49202544,
+          "key": "13:4"
+        },
+        {
+          "count": 47588896,
+          "key": "13:9"
+        },
+        {
+          "count": 45773424,
+          "key": "13:5"
+        },
+        {
+          "count": 44347236,
+          "key": "19:4"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "41:32",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 780
+        },
+        {
+          "bucket": "31:0",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "37:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        },
+        {
+          "bucket": "41:31",
+          "count": 5271192,
+          "lift": 9.890730828029874,
+          "mass_share": 0.00022507012955404735,
+          "phase": 1747
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.03972549466926756,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9602745053307324,
+      "forced_majority_minus_max_bucket_share": 0.9412596478747559,
+      "h": 770,
+      "max_bucket_fiber_cover_share": 0.019014857455976537,
+      "min_actual_buckets_by_fiber": 53,
+      "normalized_signature_signal": 0.23189584687801404,
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.2399720291835339,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19217035220874648,
+      "signature_signal_to_ambiguity_ratio": 5.837456495095915,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 52616526,
+          "key": "13:0"
+        },
+        {
+          "count": 50953944,
+          "key": "13:4"
+        },
+        {
+          "count": 50834094,
+          "key": "13:11"
+        },
+        {
+          "count": 50819130,
+          "key": "13:2"
+        },
+        {
+          "count": 47365938,
+          "key": "13:5"
+        },
+        {
+          "count": 47066982,
+          "key": "13:7"
+        },
+        {
+          "count": 43687674,
+          "key": "13:8"
+        },
+        {
+          "count": 42906526,
+          "key": "13:1"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 940
+        },
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 1907
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 599
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1612
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.03972549466926756,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9602745053307324,
+      "forced_majority_minus_max_bucket_share": 0.9327179937472678,
+      "h": 770,
+      "max_bucket_fiber_cover_share": 0.02755651158346461,
+      "min_actual_buckets_by_fiber": 37,
+      "normalized_signature_signal": 0.222349398629723,
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.1889261438634922,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.18262390396045544,
+      "signature_signal_to_ambiguity_ratio": 5.59714612696156,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 76252368,
+          "key": "13:1"
+        },
+        {
+          "count": 57584956,
+          "key": "13:10"
+        },
+        {
+          "count": 56284552,
+          "key": "13:7"
+        },
+        {
+          "count": 53200936,
+          "key": "13:8"
+        },
+        {
+          "count": 49985448,
+          "key": "13:5"
+        },
+        {
+          "count": 49653744,
+          "key": "13:3"
+        },
+        {
+          "count": 48913404,
+          "key": "13:11"
+        },
+        {
+          "count": 48236448,
+          "key": "13:4"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:0",
+          "count": 5271192,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00023811664348356038,
+          "phase": 1531
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 277
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 481
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1477
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.03972549466926756,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9602745053307324,
+      "forced_majority_minus_max_bucket_share": 0.9412596478747559,
+      "h": 1540,
+      "max_bucket_fiber_cover_share": 0.019014857455976537,
+      "min_actual_buckets_by_fiber": 53,
+      "normalized_signature_signal": 0.23189584687801404,
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.2399720291835339,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19217035220874648,
+      "signature_signal_to_ambiguity_ratio": 5.837456495095915,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 52616526,
+          "key": "13:0"
+        },
+        {
+          "count": 50953944,
+          "key": "13:4"
+        },
+        {
+          "count": 50834094,
+          "key": "13:11"
+        },
+        {
+          "count": 50819130,
+          "key": "13:2"
+        },
+        {
+          "count": 47365938,
+          "key": "13:5"
+        },
+        {
+          "count": 47066982,
+          "key": "13:7"
+        },
+        {
+          "count": 43687674,
+          "key": "13:8"
+        },
+        {
+          "count": 42906526,
+          "key": "13:1"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 940
+        },
+        {
+          "bucket": "37:23",
+          "count": 3355032,
+          "lift": 9.710767412438551,
+          "mass_share": 0.0001515575525649486,
+          "phase": 1907
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 599
+        },
+        {
+          "bucket": "37:23",
+          "count": 2297760,
+          "lift": 9.710767412438551,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1612
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.03972549466926756,
+      "bucket_count": 210,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9602745053307324,
+      "forced_majority_minus_max_bucket_share": 0.9327179937472678,
+      "h": 1540,
+      "max_bucket_fiber_cover_share": 0.02755651158346461,
+      "min_actual_buckets_by_fiber": 37,
+      "normalized_signature_signal": 0.222349398629723,
+      "p": 43,
+      "pair_count": 91939,
+      "phase_bucket_mutual_info": 1.1889261438634922,
+      "phase_count": 1370,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.18262390396045544,
+      "signature_signal_to_ambiguity_ratio": 5.59714612696156,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 76252368,
+          "key": "13:1"
+        },
+        {
+          "count": 57584956,
+          "key": "13:10"
+        },
+        {
+          "count": 56284552,
+          "key": "13:7"
+        },
+        {
+          "count": 53200936,
+          "key": "13:8"
+        },
+        {
+          "count": 49985448,
+          "key": "13:5"
+        },
+        {
+          "count": 49653744,
+          "key": "13:3"
+        },
+        {
+          "count": 48913404,
+          "key": "13:11"
+        },
+        {
+          "count": 48236448,
+          "key": "13:4"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:0",
+          "count": 5271192,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00023811664348356038,
+          "phase": 1531
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 277
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 481
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 487
+        },
+        {
+          "bucket": "41:0",
+          "count": 2297760,
+          "lift": 12.821456400171654,
+          "mass_share": 0.00010379718642970807,
+          "phase": 1477
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9392316790326146,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.021272982226972888,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.23232815105761492,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178384,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19283281231720248,
+      "signature_signal_to_ambiguity_ratio": 5.882419507390931,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 45145956,
+          "key": "13:5"
+        },
+        {
+          "count": 40906398,
+          "key": "13:12"
+        },
+        {
+          "count": 39351400,
+          "key": "13:1"
+        },
+        {
+          "count": 37158136,
+          "key": "13:9"
+        },
+        {
+          "count": 34530810,
+          "key": "17:9"
+        },
+        {
+          "count": 33312474,
+          "key": "13:2"
+        },
+        {
+          "count": 32379696,
+          "key": "13:4"
+        },
+        {
+          "count": 31918254,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 384
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 960
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1402
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1612
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1666
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9342422706754165,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.026262390584171003,
+      "min_actual_buckets_by_fiber": 39,
+      "normalized_signature_signal": 0.19393451718179225,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166592,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1544391784413798,
+      "signature_signal_to_ambiguity_ratio": 4.910314061526315,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 55734580,
+          "key": "13:10"
+        },
+        {
+          "count": 55734580,
+          "key": "13:8"
+        },
+        {
+          "count": 48363432,
+          "key": "13:12"
+        },
+        {
+          "count": 48363432,
+          "key": "13:6"
+        },
+        {
+          "count": 46289040,
+          "key": "13:4"
+        },
+        {
+          "count": 46289040,
+          "key": "13:1"
+        },
+        {
+          "count": 43223260,
+          "key": "17:4"
+        },
+        {
+          "count": 43223260,
+          "key": "17:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "17:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "19:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "23:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "29:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "31:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9392316790326146,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.021272982226972888,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.2323281510576154,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178408,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19283281231720295,
+      "signature_signal_to_ambiguity_ratio": 5.882419507390943,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 45145956,
+          "key": "13:7"
+        },
+        {
+          "count": 40906398,
+          "key": "13:0"
+        },
+        {
+          "count": 39351400,
+          "key": "13:11"
+        },
+        {
+          "count": 37158136,
+          "key": "13:3"
+        },
+        {
+          "count": 34530810,
+          "key": "17:7"
+        },
+        {
+          "count": 33312474,
+          "key": "13:10"
+        },
+        {
+          "count": 32379696,
+          "key": "13:8"
+        },
+        {
+          "count": 31918254,
+          "key": "13:2"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 481
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 487
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 645
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 699
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 909
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9342422706754165,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.026262390584171003,
+      "min_actual_buckets_by_fiber": 39,
+      "normalized_signature_signal": 0.19393451718179563,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166763,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1544391784413832,
+      "signature_signal_to_ambiguity_ratio": 4.9103140615264005,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 55734580,
+          "key": "13:9"
+        },
+        {
+          "count": 55734580,
+          "key": "13:7"
+        },
+        {
+          "count": 48363432,
+          "key": "13:11"
+        },
+        {
+          "count": 48363432,
+          "key": "13:5"
+        },
+        {
+          "count": 46289040,
+          "key": "13:3"
+        },
+        {
+          "count": 46289040,
+          "key": "13:0"
+        },
+        {
+          "count": 43223260,
+          "key": "17:3"
+        },
+        {
+          "count": 43223260,
+          "key": "17:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "17:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "19:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "23:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "29:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "31:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9392316790326146,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.021272982226972888,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.23232815105761492,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178384,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19283281231720248,
+      "signature_signal_to_ambiguity_ratio": 5.882419507390931,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 45145956,
+          "key": "13:5"
+        },
+        {
+          "count": 40906398,
+          "key": "13:12"
+        },
+        {
+          "count": 39351400,
+          "key": "13:1"
+        },
+        {
+          "count": 37158136,
+          "key": "13:9"
+        },
+        {
+          "count": 34530810,
+          "key": "17:9"
+        },
+        {
+          "count": 33312474,
+          "key": "13:2"
+        },
+        {
+          "count": 32379696,
+          "key": "13:4"
+        },
+        {
+          "count": 31918254,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 384
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 960
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1402
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1612
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1666
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9342422706754165,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.026262390584171003,
+      "min_actual_buckets_by_fiber": 39,
+      "normalized_signature_signal": 0.19393451718179225,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166592,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1544391784413798,
+      "signature_signal_to_ambiguity_ratio": 4.910314061526315,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 55734580,
+          "key": "13:10"
+        },
+        {
+          "count": 55734580,
+          "key": "13:8"
+        },
+        {
+          "count": 48363432,
+          "key": "13:12"
+        },
+        {
+          "count": 48363432,
+          "key": "13:6"
+        },
+        {
+          "count": 46289040,
+          "key": "13:4"
+        },
+        {
+          "count": 46289040,
+          "key": "13:1"
+        },
+        {
+          "count": 43223260,
+          "key": "17:4"
+        },
+        {
+          "count": 43223260,
+          "key": "17:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "17:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "19:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "23:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "29:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "31:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9392316790326146,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.021272982226972888,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.2323281510576154,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178408,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19283281231720295,
+      "signature_signal_to_ambiguity_ratio": 5.882419507390943,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 45145956,
+          "key": "13:7"
+        },
+        {
+          "count": 40906398,
+          "key": "13:0"
+        },
+        {
+          "count": 39351400,
+          "key": "13:11"
+        },
+        {
+          "count": 37158136,
+          "key": "13:3"
+        },
+        {
+          "count": 34530810,
+          "key": "17:7"
+        },
+        {
+          "count": 33312474,
+          "key": "13:10"
+        },
+        {
+          "count": 32379696,
+          "key": "13:8"
+        },
+        {
+          "count": 31918254,
+          "key": "13:2"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 481
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 487
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 645
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 699
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 909
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9342422706754165,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.026262390584171003,
+      "min_actual_buckets_by_fiber": 39,
+      "normalized_signature_signal": 0.19393451718179563,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166763,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1544391784413832,
+      "signature_signal_to_ambiguity_ratio": 4.9103140615264005,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 55734580,
+          "key": "13:9"
+        },
+        {
+          "count": 55734580,
+          "key": "13:7"
+        },
+        {
+          "count": 48363432,
+          "key": "13:11"
+        },
+        {
+          "count": 48363432,
+          "key": "13:5"
+        },
+        {
+          "count": 46289040,
+          "key": "13:3"
+        },
+        {
+          "count": 46289040,
+          "key": "13:0"
+        },
+        {
+          "count": 43223260,
+          "key": "17:3"
+        },
+        {
+          "count": 43223260,
+          "key": "17:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "17:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "19:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "23:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "29:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "31:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9392316790326146,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.021272982226972888,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.23232815105761492,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178384,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19283281231720248,
+      "signature_signal_to_ambiguity_ratio": 5.882419507390931,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 45145956,
+          "key": "13:5"
+        },
+        {
+          "count": 40906398,
+          "key": "13:12"
+        },
+        {
+          "count": 39351400,
+          "key": "13:1"
+        },
+        {
+          "count": 37158136,
+          "key": "13:9"
+        },
+        {
+          "count": 34530810,
+          "key": "17:9"
+        },
+        {
+          "count": 33312474,
+          "key": "13:2"
+        },
+        {
+          "count": 32379696,
+          "key": "13:4"
+        },
+        {
+          "count": 31918254,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 384
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 960
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1402
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1612
+        },
+        {
+          "bucket": "41:4",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 1666
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9342422706754165,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.026262390584171003,
+      "min_actual_buckets_by_fiber": 39,
+      "normalized_signature_signal": 0.19393451718179225,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166592,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1544391784413798,
+      "signature_signal_to_ambiguity_ratio": 4.910314061526315,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 55734580,
+          "key": "13:10"
+        },
+        {
+          "count": 55734580,
+          "key": "13:8"
+        },
+        {
+          "count": 48363432,
+          "key": "13:12"
+        },
+        {
+          "count": 48363432,
+          "key": "13:6"
+        },
+        {
+          "count": 46289040,
+          "key": "13:4"
+        },
+        {
+          "count": 46289040,
+          "key": "13:1"
+        },
+        {
+          "count": 43223260,
+          "key": "17:4"
+        },
+        {
+          "count": 43223260,
+          "key": "17:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "17:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "19:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "23:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "29:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        },
+        {
+          "bucket": "31:12",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 564
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 210,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9392316790326146,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.021272982226972888,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.2323281510576154,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 1.2422836061178408,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.19283281231720295,
+      "signature_signal_to_ambiguity_ratio": 5.882419507390943,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 45145956,
+          "key": "13:7"
+        },
+        {
+          "count": 40906398,
+          "key": "13:0"
+        },
+        {
+          "count": 39351400,
+          "key": "13:11"
+        },
+        {
+          "count": 37158136,
+          "key": "13:3"
+        },
+        {
+          "count": 34530810,
+          "key": "17:7"
+        },
+        {
+          "count": 33312474,
+          "key": "13:10"
+        },
+        {
+          "count": 32379696,
+          "key": "13:8"
+        },
+        {
+          "count": 31918254,
+          "key": "13:2"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 481
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 487
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 645
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 699
+        },
+        {
+          "bucket": "41:36",
+          "count": 2297760,
+          "lift": 8.834467724388166,
+          "mass_share": 0.00013533938577424637,
+          "phase": 909
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.039495338740412445,
+      "bucket_count": 154,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9605046612595876,
+      "forced_majority_minus_max_bucket_share": 0.9342422706754165,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.026262390584171003,
+      "min_actual_buckets_by_fiber": 39,
+      "normalized_signature_signal": 0.19393451718179563,
+      "p": 43,
+      "pair_count": 68790,
+      "phase_bucket_mutual_info": 0.9768389710166763,
+      "phase_count": 1025,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1544391784413832,
+      "signature_signal_to_ambiguity_ratio": 4.9103140615264005,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 55734580,
+          "key": "13:9"
+        },
+        {
+          "count": 55734580,
+          "key": "13:7"
+        },
+        {
+          "count": 48363432,
+          "key": "13:11"
+        },
+        {
+          "count": 48363432,
+          "key": "13:5"
+        },
+        {
+          "count": 46289040,
+          "key": "13:3"
+        },
+        {
+          "count": 46289040,
+          "key": "13:0"
+        },
+        {
+          "count": 43223260,
+          "key": "17:3"
+        },
+        {
+          "count": 43223260,
+          "key": "17:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "17:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "19:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "23:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "29:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        },
+        {
+          "bucket": "31:11",
+          "count": 5271192,
+          "lift": 3.8523940709439426,
+          "mass_share": 0.00031047624102522513,
+          "phase": 1531
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.0552063312541029,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.9447936687458971,
+      "forced_majority_minus_max_bucket_share": 0.9225865606444439,
+      "h": 665,
+      "max_bucket_fiber_cover_share": 0.022207108101453172,
+      "min_actual_buckets_by_fiber": 46,
+      "normalized_signature_signal": 0.22598426652776316,
+      "p": 47,
+      "pair_count": 94198,
+      "phase_bucket_mutual_info": 1.250458965022523,
+      "phase_count": 1150,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.17077793527366025,
+      "signature_signal_to_ambiguity_ratio": 4.093448367137567,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 2425571616,
+          "key": "13:12"
+        },
+        {
+          "count": 2419170888,
+          "key": "13:4"
+        },
+        {
+          "count": 2400752280,
+          "key": "13:0"
+        },
+        {
+          "count": 2355590760,
+          "key": "13:8"
+        },
+        {
+          "count": 1852604856,
+          "key": "13:9"
+        },
+        {
+          "count": 1745955744,
+          "key": "13:3"
+        },
+        {
+          "count": 1407863064,
+          "key": "13:7"
+        },
+        {
+          "count": 1381819536,
+          "key": "13:11"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 8.903717852583828,
+          "mass_share": 0.0002976952852818701,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 8.874990543717784,
+          "mass_share": 0.0002976952852818701,
+          "phase": 468
+        },
+        {
+          "bucket": "43:20",
+          "count": 292641936,
+          "lift": 8.186557999038529,
+          "mass_share": 0.0002976952852818701,
+          "phase": 860
+        },
+        {
+          "bucket": "43:20",
+          "count": 213042960,
+          "lift": 8.186557999038529,
+          "mass_share": 0.0002167217918982536,
+          "phase": 1548
+        },
+        {
+          "bucket": "43:11",
+          "count": 292641936,
+          "lift": 8.04080429433564,
+          "mass_share": 0.0002976952852818701,
+          "phase": 1423
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.0552063312541029,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.9447936687458971,
+      "forced_majority_minus_max_bucket_share": 0.9137892550875445,
+      "h": 665,
+      "max_bucket_fiber_cover_share": 0.03100441365835265,
+      "min_actual_buckets_by_fiber": 33,
+      "normalized_signature_signal": 0.22197318539631797,
+      "p": 47,
+      "pair_count": 94198,
+      "phase_bucket_mutual_info": 1.228264090851351,
+      "phase_count": 1150,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16676685414221507,
+      "signature_signal_to_ambiguity_ratio": 4.020792187305891,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 3386457408,
+          "key": "13:4"
+        },
+        {
+          "count": 2949065520,
+          "key": "13:3"
+        },
+        {
+          "count": 2789859744,
+          "key": "13:5"
+        },
+        {
+          "count": 1808297088,
+          "key": "13:2"
+        },
+        {
+          "count": 1803114864,
+          "key": "19:4"
+        },
+        {
+          "count": 1700490912,
+          "key": "19:5"
+        },
+        {
+          "count": 1663989360,
+          "key": "13:6"
+        },
+        {
+          "count": 1652722056,
+          "key": "19:3"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "37:31",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "41:31",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "43:31",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 145
+        },
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.877004939663452,
+          "mass_share": 0.0002167217918982536,
+          "phase": 565
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05528425182914454,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.9447157481708555,
+      "forced_majority_minus_max_bucket_share": 0.9224058787866255,
+      "h": 1645,
+      "max_bucket_fiber_cover_share": 0.022309869384229998,
+      "min_actual_buckets_by_fiber": 45,
+      "normalized_signature_signal": 0.22599888756919018,
+      "p": 47,
+      "pair_count": 93819,
+      "phase_bucket_mutual_info": 1.2505398689394696,
+      "phase_count": 1145,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.17071463574004564,
+      "signature_signal_to_ambiguity_ratio": 4.0879433128196725,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 2424908328,
+          "key": "13:12"
+        },
+        {
+          "count": 2414444568,
+          "key": "13:4"
+        },
+        {
+          "count": 2371450080,
+          "key": "13:0"
+        },
+        {
+          "count": 2358924672,
+          "key": "13:8"
+        },
+        {
+          "count": 1852902216,
+          "key": "13:9"
+        },
+        {
+          "count": 1744218552,
+          "key": "13:3"
+        },
+        {
+          "count": 1387712136,
+          "key": "13:11"
+        },
+        {
+          "count": 1378830816,
+          "key": "13:7"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 8.966268474592319,
+          "mass_share": 0.0002991546476724833,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 8.816249119928218,
+          "mass_share": 0.0002991546476724833,
+          "phase": 468
+        },
+        {
+          "bucket": "43:20",
+          "count": 292641936,
+          "lift": 8.26478959756763,
+          "mass_share": 0.0002991546476724833,
+          "phase": 860
+        },
+        {
+          "bucket": "43:20",
+          "count": 213042960,
+          "lift": 8.26478959756763,
+          "mass_share": 0.00021778420587643648,
+          "phase": 1548
+        },
+        {
+          "bucket": "43:22",
+          "count": 292641936,
+          "lift": 8.095305376162399,
+          "mass_share": 0.0002991546476724833,
+          "phase": 1451
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05528425182914454,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.9447157481708555,
+      "forced_majority_minus_max_bucket_share": 0.9135986747697595,
+      "h": 1645,
+      "max_bucket_fiber_cover_share": 0.031117073401095936,
+      "min_actual_buckets_by_fiber": 33,
+      "normalized_signature_signal": 0.22197282531061158,
+      "p": 47,
+      "pair_count": 93819,
+      "phase_bucket_mutual_info": 1.2282620983568882,
+      "phase_count": 1145,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16668857348146704,
+      "signature_signal_to_ambiguity_ratio": 4.015118554857476,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 3382182528,
+          "key": "13:4"
+        },
+        {
+          "count": 2906104560,
+          "key": "13:3"
+        },
+        {
+          "count": 2788402104,
+          "key": "13:5"
+        },
+        {
+          "count": 1804608480,
+          "key": "13:2"
+        },
+        {
+          "count": 1799727984,
+          "key": "19:4"
+        },
+        {
+          "count": 1695134712,
+          "key": "19:5"
+        },
+        {
+          "count": 1648401984,
+          "key": "19:3"
+        },
+        {
+          "count": 1639140936,
+          "key": "13:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "37:31",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "41:31",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "43:31",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 145
+        },
+        {
+          "bucket": "31:0",
+          "count": 213042960,
+          "lift": 9.999306654307274,
+          "mass_share": 0.00021778420587643648,
+          "phase": 565
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05226763869102724,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9477323613089728,
+      "forced_majority_minus_max_bucket_share": 0.9236952056345041,
+      "h": 770,
+      "max_bucket_fiber_cover_share": 0.024037155674468635,
+      "min_actual_buckets_by_fiber": 42,
+      "normalized_signature_signal": 0.22308725624210649,
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.234428678759135,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.17081961755107924,
+      "signature_signal_to_ambiguity_ratio": 4.268171699143619,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 2321967288,
+          "key": "13:0"
+        },
+        {
+          "count": 2034563040,
+          "key": "13:12"
+        },
+        {
+          "count": 1941590088,
+          "key": "13:4"
+        },
+        {
+          "count": 1887633432,
+          "key": "13:3"
+        },
+        {
+          "count": 1744498056,
+          "key": "13:8"
+        },
+        {
+          "count": 1343265720,
+          "key": "13:1"
+        },
+        {
+          "count": 1271526312,
+          "key": "13:9"
+        },
+        {
+          "count": 1267962720,
+          "key": "13:7"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 124
+        },
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 937
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05226763869102724,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9477323613089728,
+      "forced_majority_minus_max_bucket_share": 0.9143602080724365,
+      "h": 770,
+      "max_bucket_fiber_cover_share": 0.03337215323653627,
+      "min_actual_buckets_by_fiber": 30,
+      "normalized_signature_signal": 0.2110281575802994,
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.1677009889803636,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.15876051888927217,
+      "signature_signal_to_ambiguity_ratio": 4.03745343897708,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 3223719528,
+          "key": "13:5"
+        },
+        {
+          "count": 2155771800,
+          "key": "13:4"
+        },
+        {
+          "count": 2093107392,
+          "key": "13:3"
+        },
+        {
+          "count": 1798528608,
+          "key": "13:2"
+        },
+        {
+          "count": 1773357672,
+          "key": "19:5"
+        },
+        {
+          "count": 1700231592,
+          "key": "19:6"
+        },
+        {
+          "count": 1690455816,
+          "key": "13:11"
+        },
+        {
+          "count": 1627545024,
+          "key": "13:12"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:4",
+          "count": 33480000,
+          "lift": 51.79737097738458,
+          "mass_share": 3.8509680808657164e-05,
+          "phase": 1402
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 148
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1180
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1618
+        },
+        {
+          "bucket": "43:4",
+          "count": 8145696,
+          "lift": 46.042107535452956,
+          "mass_share": 9.369419143499266e-06,
+          "phase": 190
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05226763869102724,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9477323613089728,
+      "forced_majority_minus_max_bucket_share": 0.9236952056345041,
+      "h": 1540,
+      "max_bucket_fiber_cover_share": 0.024037155674468635,
+      "min_actual_buckets_by_fiber": 42,
+      "normalized_signature_signal": 0.22308725624210649,
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.234428678759135,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.17081961755107924,
+      "signature_signal_to_ambiguity_ratio": 4.268171699143619,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 2321967288,
+          "key": "13:0"
+        },
+        {
+          "count": 2034563040,
+          "key": "13:12"
+        },
+        {
+          "count": 1941590088,
+          "key": "13:4"
+        },
+        {
+          "count": 1887633432,
+          "key": "13:3"
+        },
+        {
+          "count": 1744498056,
+          "key": "13:8"
+        },
+        {
+          "count": 1343265720,
+          "key": "13:1"
+        },
+        {
+          "count": 1271526312,
+          "key": "13:9"
+        },
+        {
+          "count": 1267962720,
+          "key": "13:7"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 124
+        },
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.13143465954568,
+          "mass_share": 6.508732335591711e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.13143465954568,
+          "mass_share": 5.3741349985966334e-05,
+          "phase": 937
+        }
+      ]
+    },
+    {
+      "alpha": 0.0,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05226763869102724,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9477323613089728,
+      "forced_majority_minus_max_bucket_share": 0.9143602080724365,
+      "h": 1540,
+      "max_bucket_fiber_cover_share": 0.03337215323653627,
+      "min_actual_buckets_by_fiber": 30,
+      "normalized_signature_signal": 0.2110281575802994,
+      "p": 47,
+      "pair_count": 125486,
+      "phase_bucket_mutual_info": 1.1677009889803636,
+      "phase_count": 1512,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.15876051888927217,
+      "signature_signal_to_ambiguity_ratio": 4.03745343897708,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 3223719528,
+          "key": "13:5"
+        },
+        {
+          "count": 2155771800,
+          "key": "13:4"
+        },
+        {
+          "count": 2093107392,
+          "key": "13:3"
+        },
+        {
+          "count": 1798528608,
+          "key": "13:2"
+        },
+        {
+          "count": 1773357672,
+          "key": "19:5"
+        },
+        {
+          "count": 1700231592,
+          "key": "19:6"
+        },
+        {
+          "count": 1690455816,
+          "key": "13:11"
+        },
+        {
+          "count": 1627545024,
+          "key": "13:12"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:4",
+          "count": 33480000,
+          "lift": 51.79737097738458,
+          "mass_share": 3.8509680808657164e-05,
+          "phase": 1402
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 148
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1180
+        },
+        {
+          "bucket": "43:4",
+          "count": 10035360,
+          "lift": 46.042107535452956,
+          "mass_share": 1.154296626045298e-05,
+          "phase": 1618
+        },
+        {
+          "bucket": "43:4",
+          "count": 8145696,
+          "lift": 46.042107535452956,
+          "mass_share": 9.369419143499266e-06,
+          "phase": 190
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.054594884829823,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.945405115170177,
+      "forced_majority_minus_max_bucket_share": 0.9241756950711316,
+      "h": 1001,
+      "max_bucket_fiber_cover_share": 0.02122942009904542,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.2267991967392625,
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.25496829128888,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1722043119094395,
+      "signature_signal_to_ambiguity_ratio": 4.1542206279254055,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 1683419664,
+          "key": "13:8"
+        },
+        {
+          "count": 1564410312,
+          "key": "13:12"
+        },
+        {
+          "count": 1501957488,
+          "key": "13:0"
+        },
+        {
+          "count": 1457593584,
+          "key": "13:4"
+        },
+        {
+          "count": 1363035096,
+          "key": "13:9"
+        },
+        {
+          "count": 1125798312,
+          "key": "13:7"
+        },
+        {
+          "count": 1103870280,
+          "key": "13:1"
+        },
+        {
+          "count": 1096296720,
+          "key": "13:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 9.920932882209435,
+          "mass_share": 0.0004100528050662505,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 9.605229283460138,
+          "mass_share": 0.0004100528050662505,
+          "phase": 468
+        },
+        {
+          "bucket": "31:12",
+          "count": 213042960,
+          "lift": 9.566635667775795,
+          "mass_share": 0.0002985179244700493,
+          "phase": 565
+        },
+        {
+          "bucket": "43:28",
+          "count": 292641936,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0004100528050662505,
+          "phase": 440
+        },
+        {
+          "bucket": "43:28",
+          "count": 213042960,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0002985179244700493,
+          "phase": 1183
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.054594884829823,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.25,
+      "forced_gamma_share_lower_bound": 0.945405115170177,
+      "forced_majority_minus_max_bucket_share": 0.9020749304754171,
+      "h": 1001,
+      "max_bucket_fiber_cover_share": 0.043330184694759896,
+      "min_actual_buckets_by_fiber": 24,
+      "normalized_signature_signal": 0.21982728942695584,
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.2163900126505798,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16523240459713284,
+      "signature_signal_to_ambiguity_ratio": 4.026518054066358,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 3435933936,
+          "key": "13:4"
+        },
+        {
+          "count": 2678407992,
+          "key": "13:3"
+        },
+        {
+          "count": 2664156168,
+          "key": "13:5"
+        },
+        {
+          "count": 1654258152,
+          "key": "19:5"
+        },
+        {
+          "count": 1612248312,
+          "key": "19:4"
+        },
+        {
+          "count": 1584711768,
+          "key": "19:6"
+        },
+        {
+          "count": 1428101136,
+          "key": "13:6"
+        },
+        {
+          "count": 1328762952,
+          "key": "19:3"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "43:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.054594884829823,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.945405115170177,
+      "forced_majority_minus_max_bucket_share": 0.9241756950711316,
+      "h": 1309,
+      "max_bucket_fiber_cover_share": 0.02122942009904542,
+      "min_actual_buckets_by_fiber": 48,
+      "normalized_signature_signal": 0.2267991967392625,
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.25496829128888,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.1722043119094395,
+      "signature_signal_to_ambiguity_ratio": 4.1542206279254055,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 1683419664,
+          "key": "13:8"
+        },
+        {
+          "count": 1564410312,
+          "key": "13:12"
+        },
+        {
+          "count": 1501957488,
+          "key": "13:0"
+        },
+        {
+          "count": 1457593584,
+          "key": "13:4"
+        },
+        {
+          "count": 1363035096,
+          "key": "13:9"
+        },
+        {
+          "count": 1125798312,
+          "key": "13:7"
+        },
+        {
+          "count": 1103870280,
+          "key": "13:1"
+        },
+        {
+          "count": 1096296720,
+          "key": "13:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 292641936,
+          "lift": 9.920932882209435,
+          "mass_share": 0.0004100528050662505,
+          "phase": 1843
+        },
+        {
+          "bucket": "43:18",
+          "count": 292641936,
+          "lift": 9.605229283460138,
+          "mass_share": 0.0004100528050662505,
+          "phase": 468
+        },
+        {
+          "bucket": "31:12",
+          "count": 213042960,
+          "lift": 9.566635667775795,
+          "mass_share": 0.0002985179244700493,
+          "phase": 565
+        },
+        {
+          "bucket": "43:28",
+          "count": 292641936,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0004100528050662505,
+          "phase": 440
+        },
+        {
+          "bucket": "43:28",
+          "count": 213042960,
+          "lift": 8.80715406606196,
+          "mass_share": 0.0002985179244700493,
+          "phase": 1183
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.054594884829823,
+      "bucket_count": 253,
+      "bucket_kind": "column_residue",
+      "direction": 0.75,
+      "forced_gamma_share_lower_bound": 0.945405115170177,
+      "forced_majority_minus_max_bucket_share": 0.9020749304754171,
+      "h": 1309,
+      "max_bucket_fiber_cover_share": 0.043330184694759896,
+      "min_actual_buckets_by_fiber": 24,
+      "normalized_signature_signal": 0.21982728942695584,
+      "p": 47,
+      "pair_count": 60618,
+      "phase_bucket_mutual_info": 1.2163900126505798,
+      "phase_count": 757,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16523240459713284,
+      "signature_signal_to_ambiguity_ratio": 4.026518054066358,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 3435933936,
+          "key": "13:4"
+        },
+        {
+          "count": 2678407992,
+          "key": "13:3"
+        },
+        {
+          "count": 2664156168,
+          "key": "13:5"
+        },
+        {
+          "count": 1654258152,
+          "key": "19:5"
+        },
+        {
+          "count": 1612248312,
+          "key": "19:4"
+        },
+        {
+          "count": 1584711768,
+          "key": "19:6"
+        },
+        {
+          "count": 1428101136,
+          "key": "13:6"
+        },
+        {
+          "count": 1328762952,
+          "key": "19:3"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "43:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 1527
+        },
+        {
+          "bucket": "37:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        },
+        {
+          "bucket": "41:15",
+          "count": 56586384,
+          "lift": 33.35359069530049,
+          "mass_share": 7.92894067231567e-05,
+          "phase": 2187
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9242262403638519,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.02379183638679858,
+      "min_actual_buckets_by_fiber": 43,
+      "normalized_signature_signal": 0.22178303087580442,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272118918263073,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16980110762645495,
+      "signature_signal_to_ambiguity_ratio": 4.266541463114871,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 1596157344,
+          "key": "13:12"
+        },
+        {
+          "count": 1555144464,
+          "key": "13:9"
+        },
+        {
+          "count": 1462357272,
+          "key": "13:8"
+        },
+        {
+          "count": 1191867672,
+          "key": "13:4"
+        },
+        {
+          "count": 1129329144,
+          "key": "13:0"
+        },
+        {
+          "count": 1008869352,
+          "key": "13:5"
+        },
+        {
+          "count": 999889728,
+          "key": "13:11"
+        },
+        {
+          "count": 918573648,
+          "key": "13:2"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1374
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1830
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 2264
+        },
+        {
+          "bucket": "43:24",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 1058
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9179385558871703,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.030079520863480255,
+      "min_actual_buckets_by_fiber": 34,
+      "normalized_signature_signal": 0.18271512547032862,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775031,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.13073320222097914,
+      "signature_signal_to_ambiguity_ratio": 3.51497432278278,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 2017988328,
+          "key": "13:4"
+        },
+        {
+          "count": 2017988328,
+          "key": "13:5"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:10"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:12"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:6"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:4"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:3"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "23:0",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "29:17",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "31:15",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "37:9",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "41:5",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9242262403638519,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.02379183638679858,
+      "min_actual_buckets_by_fiber": 43,
+      "normalized_signature_signal": 0.22178298521804704,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272116391841525,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16980106196869757,
+      "signature_signal_to_ambiguity_ratio": 4.266540584775738,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 1596157344,
+          "key": "13:0"
+        },
+        {
+          "count": 1555144464,
+          "key": "13:3"
+        },
+        {
+          "count": 1462276632,
+          "key": "13:4"
+        },
+        {
+          "count": 1191867672,
+          "key": "13:8"
+        },
+        {
+          "count": 1129329144,
+          "key": "13:12"
+        },
+        {
+          "count": 1008869352,
+          "key": "13:7"
+        },
+        {
+          "count": 999889728,
+          "key": "13:1"
+        },
+        {
+          "count": 918573648,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1107
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 937
+        },
+        {
+          "bucket": "43:18",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 607
+        }
+      ]
+    },
+    {
+      "alpha": 0.5,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9179385558871703,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.030079520863480255,
+      "min_actual_buckets_by_fiber": 34,
+      "normalized_signature_signal": 0.18271512547033333,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775277,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.13073320222098386,
+      "signature_signal_to_ambiguity_ratio": 3.514974322782871,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 2017988328,
+          "key": "13:4"
+        },
+        {
+          "count": 2017988328,
+          "key": "13:3"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:9"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:11"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:3"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:5"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:2"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "23:22",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "29:16",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "31:14",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "37:8",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "41:4",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9242262403638519,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.02379183638679858,
+      "min_actual_buckets_by_fiber": 43,
+      "normalized_signature_signal": 0.22178303087580442,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272118918263073,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16980110762645495,
+      "signature_signal_to_ambiguity_ratio": 4.266541463114871,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 1596157344,
+          "key": "13:12"
+        },
+        {
+          "count": 1555144464,
+          "key": "13:9"
+        },
+        {
+          "count": 1462357272,
+          "key": "13:8"
+        },
+        {
+          "count": 1191867672,
+          "key": "13:4"
+        },
+        {
+          "count": 1129329144,
+          "key": "13:0"
+        },
+        {
+          "count": 1008869352,
+          "key": "13:5"
+        },
+        {
+          "count": 999889728,
+          "key": "13:11"
+        },
+        {
+          "count": 918573648,
+          "key": "13:2"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1374
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1830
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 2264
+        },
+        {
+          "bucket": "43:24",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 1058
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9179385558871703,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.030079520863480255,
+      "min_actual_buckets_by_fiber": 34,
+      "normalized_signature_signal": 0.18271512547032862,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775031,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.13073320222097914,
+      "signature_signal_to_ambiguity_ratio": 3.51497432278278,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 2017988328,
+          "key": "13:4"
+        },
+        {
+          "count": 2017988328,
+          "key": "13:5"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:10"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:12"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:6"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:4"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:3"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "23:0",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "29:17",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "31:15",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "37:9",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "41:5",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9242262403638519,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.02379183638679858,
+      "min_actual_buckets_by_fiber": 43,
+      "normalized_signature_signal": 0.22178298521804704,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272116391841525,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16980106196869757,
+      "signature_signal_to_ambiguity_ratio": 4.266540584775738,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 1596157344,
+          "key": "13:0"
+        },
+        {
+          "count": 1555144464,
+          "key": "13:3"
+        },
+        {
+          "count": 1462276632,
+          "key": "13:4"
+        },
+        {
+          "count": 1191867672,
+          "key": "13:8"
+        },
+        {
+          "count": 1129329144,
+          "key": "13:12"
+        },
+        {
+          "count": 1008869352,
+          "key": "13:7"
+        },
+        {
+          "count": 999889728,
+          "key": "13:1"
+        },
+        {
+          "count": 918573648,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1107
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 937
+        },
+        {
+          "bucket": "43:18",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 607
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9179385558871703,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.030079520863480255,
+      "min_actual_buckets_by_fiber": 34,
+      "normalized_signature_signal": 0.18271512547033333,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775277,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.13073320222098386,
+      "signature_signal_to_ambiguity_ratio": 3.514974322782871,
+      "source": "top_by_mass",
+      "top_fiber_buckets": [
+        {
+          "count": 2017988328,
+          "key": "13:4"
+        },
+        {
+          "count": 2017988328,
+          "key": "13:3"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:9"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:11"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:3"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:5"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:2"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "23:22",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "29:16",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "31:14",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "37:8",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "41:4",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9242262403638519,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.02379183638679858,
+      "min_actual_buckets_by_fiber": 43,
+      "normalized_signature_signal": 0.22178303087580442,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272118918263073,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16980110762645495,
+      "signature_signal_to_ambiguity_ratio": 4.266541463114871,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 1596157344,
+          "key": "13:12"
+        },
+        {
+          "count": 1555144464,
+          "key": "13:9"
+        },
+        {
+          "count": 1462357272,
+          "key": "13:8"
+        },
+        {
+          "count": 1191867672,
+          "key": "13:4"
+        },
+        {
+          "count": 1129329144,
+          "key": "13:0"
+        },
+        {
+          "count": 1008869352,
+          "key": "13:5"
+        },
+        {
+          "count": 999889728,
+          "key": "13:11"
+        },
+        {
+          "count": 918573648,
+          "key": "13:2"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:24",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1204
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1374
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 1830
+        },
+        {
+          "bucket": "43:24",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 2264
+        },
+        {
+          "bucket": "43:24",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 1058
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.0,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9179385558871703,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.030079520863480255,
+      "min_actual_buckets_by_fiber": 34,
+      "normalized_signature_signal": 0.18271512547032862,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775031,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.13073320222097914,
+      "signature_signal_to_ambiguity_ratio": 3.51497432278278,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 2017988328,
+          "key": "13:4"
+        },
+        {
+          "count": 2017988328,
+          "key": "13:5"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:10"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:12"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:6"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:4"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:3"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:6"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "23:0",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "29:17",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "31:15",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "37:9",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        },
+        {
+          "bucket": "41:5",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 516
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 3,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 253,
+      "bucket_kind": "residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9242262403638519,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.02379183638679858,
+      "min_actual_buckets_by_fiber": 43,
+      "normalized_signature_signal": 0.22178298521804704,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 1.2272116391841525,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.16980106196869757,
+      "signature_signal_to_ambiguity_ratio": 4.266540584775738,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 1596157344,
+          "key": "13:0"
+        },
+        {
+          "count": 1555144464,
+          "key": "13:3"
+        },
+        {
+          "count": 1462276632,
+          "key": "13:4"
+        },
+        {
+          "count": 1191867672,
+          "key": "13:8"
+        },
+        {
+          "count": 1129329144,
+          "key": "13:12"
+        },
+        {
+          "count": 1008869352,
+          "key": "13:7"
+        },
+        {
+          "count": 999889728,
+          "key": "13:1"
+        },
+        {
+          "count": 918573648,
+          "key": "13:10"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "43:18",
+          "count": 56586384,
+          "lift": 9.159104219619502,
+          "mass_share": 9.371771627439513e-05,
+          "phase": 1107
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 47
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 481
+        },
+        {
+          "bucket": "43:18",
+          "count": 46722288,
+          "lift": 9.159104219619502,
+          "mass_share": 7.738091429334972e-05,
+          "phase": 937
+        },
+        {
+          "bucket": "43:18",
+          "count": 33480000,
+          "lift": 9.159104219619502,
+          "mass_share": 5.544918970024218e-05,
+          "phase": 607
+        }
+      ]
+    },
+    {
+      "alpha": 0.9,
+      "ambiguous_escape_bucket_lower_bound": 2,
+      "ambiguous_gamma_share_upper_bound": 0.05198192324934947,
+      "bucket_count": 187,
+      "bucket_kind": "column_residue",
+      "direction": 0.5,
+      "forced_gamma_share_lower_bound": 0.9480180767506505,
+      "forced_majority_minus_max_bucket_share": 0.9179385558871703,
+      "h": 1155,
+      "max_bucket_fiber_cover_share": 0.030079520863480255,
+      "min_actual_buckets_by_fiber": 34,
+      "normalized_signature_signal": 0.18271512547033333,
+      "p": 47,
+      "pair_count": 94478,
+      "phase_bucket_mutual_info": 0.9558026672775277,
+      "phase_count": 1133,
+      "q": 2310,
+      "route": "ForcedMajorityFiniteSignatureOrSmallAmbiguousCleanKLSAdmission",
+      "signature_signal_minus_ambiguous_budget": 0.13073320222098386,
+      "signature_signal_to_ambiguity_ratio": 3.514974322782871,
+      "source": "top_by_size",
+      "top_fiber_buckets": [
+        {
+          "count": 2017988328,
+          "key": "13:4"
+        },
+        {
+          "count": 2017988328,
+          "key": "13:3"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:9"
+        },
+        {
+          "count": 1534441776,
+          "key": "13:11"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:3"
+        },
+        {
+          "count": 1500185664,
+          "key": "19:5"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:2"
+        },
+        {
+          "count": 1369719168,
+          "key": "13:5"
+        }
+      ],
+      "top_lift_rows": [
+        {
+          "bucket": "23:22",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "29:16",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "31:14",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "37:8",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        },
+        {
+          "bucket": "41:4",
+          "count": 66313032,
+          "lift": 6.040557641783837,
+          "mass_share": 0.00010982687846374642,
+          "phase": 1499
+        }
+      ]
+    }
+  ],
+  "signature_matrix_row_count": 48,
+  "source_hashes": {
+    "fiber_consistent_payment_json": "919c9e6ae9af3cd70c974151a22086dceb1357ef37b7f12ba34e874c60b5ebbf",
+    "fiber_dominance_json": "3ad62e3310dfe89ff72d8b89b592bd05107c2627a360f845fb71915f38a89a2a",
+    "gamma_freedom_json": "8a61e8d91cefcd18a9ca1b647809fcfffdfd6c3b8534cf9412db4eb740329f0e",
+    "mfu_candidate_json": "bf0ea37541ed6f51e0d4a1a7bc936d15d4d2fb83959088bbe49fb1cd71487505",
+    "script": "6ccd953f9fe242473ce02a238a221c9ab973f8962bbde8dcf8c706cd905e24ae"
+  },
+  "status": "forced_gamma_signature_pressure_materialized",
+  "structural_law": "写 Gamma=Gamma_forced union Gamma_amb，且 Gamma_amb 的质量至多为 aD。任何超过 a 预算的持久有限签名都不能纯由选择自由解释，其持久部分必须来自 forced fiber 主体，于是路由到 MFU/PDEC。若没有有限签名在 a 预算以上持久，则剩余责任是小自由度、多桶、分散的，准入 CleanKLS/DLS。"
+}

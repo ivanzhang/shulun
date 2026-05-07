@@ -1,0 +1,300 @@
+{
+  "source_parameters": {
+    "p_list": [
+      5003,
+      10007,
+      20011,
+      50021,
+      100003,
+      200003
+    ],
+    "alpha": 0.43,
+    "y_factor": 4.0,
+    "tail_factor": 10.0,
+    "top_n": 8,
+    "q_window_scale": 1.0,
+    "qwindow_excess_share": 0.5,
+    "phase_share": 0.35,
+    "centered_return_share": 0.75,
+    "w_list": [
+      30,
+      210
+    ]
+  },
+  "parameters": {
+    "cosine_threshold": 0.75
+  },
+  "summary": {
+    "multi_true_row_count": 3,
+    "pair_count": 3,
+    "pair_route_counts": {
+      "kls_multishell_candidate": 2,
+      "lowmod_multiband_sync_candidate": 1
+    },
+    "max_multirow_true_excess_over_required": 0.18718812069641283,
+    "max_pair_lowmod_cosine": 0.8348168363146491,
+    "min_pair_q_shell_gap": 2525
+  },
+  "rows": [
+    {
+      "p": 10007,
+      "y": 75,
+      "true_band_count": 2,
+      "total_true_excess": 24.763520347231832,
+      "required_tail_excess": 132.29215751032638,
+      "total_true_excess_over_required": 0.18718812069641283,
+      "bands": [
+        {
+          "band": "[4y,8y)",
+          "excess": 15.894240184848428,
+          "q_shell": [
+            1237,
+            2444
+          ],
+          "excess_over_required": 0.12014499184207322
+        },
+        {
+          "band": "[1y,2y)",
+          "excess": 8.869280162383404,
+          "q_shell": [
+            4970,
+            9500
+          ],
+          "excess_over_required": 0.06704312885433962
+        }
+      ],
+      "pairs": [
+        {
+          "left_band": "[4y,8y)",
+          "right_band": "[1y,2y)",
+          "left_q_shell": [
+            1237,
+            2444
+          ],
+          "right_q_shell": [
+            4970,
+            9500
+          ],
+          "q_shell_overlap": 0,
+          "q_shell_gap": 2525,
+          "q_window_cosine": 0.0,
+          "qmod_cosine": {
+            "30": 0.43262017985582896,
+            "210": 0.049093252604736674
+          },
+          "dmod_cosine": {
+            "30": 0.4004095354557207,
+            "210": 0.06773148401035718
+          },
+          "max_lowmod_cosine": 0.43262017985582896,
+          "max_lowmod_kind": "q_mod",
+          "max_lowmod_w": 30,
+          "route": "kls_multishell_candidate"
+        }
+      ]
+    },
+    {
+      "p": 50021,
+      "y": 128,
+      "true_band_count": 2,
+      "total_true_excess": 34.74874513534144,
+      "required_tail_excess": 489.72294223944175,
+      "total_true_excess_over_required": 0.07095592658256886,
+      "bands": [
+        {
+          "band": "[1y,2y)",
+          "excess": 24.341283044570446,
+          "q_shell": [
+            25310,
+            48875
+          ],
+          "excess_over_required": 0.0497041917890569
+        },
+        {
+          "band": "[4y,8y)",
+          "excess": 10.407462090770991,
+          "q_shell": [
+            6223,
+            12289
+          ],
+          "excess_over_required": 0.02125173479351196
+        }
+      ],
+      "pairs": [
+        {
+          "left_band": "[1y,2y)",
+          "right_band": "[4y,8y)",
+          "left_q_shell": [
+            25310,
+            48875
+          ],
+          "right_q_shell": [
+            6223,
+            12289
+          ],
+          "q_shell_overlap": 0,
+          "q_shell_gap": 13020,
+          "q_window_cosine": 0.0,
+          "qmod_cosine": {
+            "30": -0.2846274258375773,
+            "210": 0.007964115777706074
+          },
+          "dmod_cosine": {
+            "30": 0.24405398508723794,
+            "210": -0.15615670559943404
+          },
+          "max_lowmod_cosine": 0.24405398508723794,
+          "max_lowmod_kind": "d_mod",
+          "max_lowmod_w": 30,
+          "route": "kls_multishell_candidate"
+        }
+      ]
+    },
+    {
+      "p": 100003,
+      "y": 131,
+      "true_band_count": 2,
+      "total_true_excess": 46.16664024932584,
+      "required_tail_excess": 897.2947780959919,
+      "total_true_excess_over_required": 0.05145091822253641,
+      "bands": [
+        {
+          "band": "[4y,8y)",
+          "excess": 23.08745911047731,
+          "q_shell": [
+            12513,
+            24215
+          ],
+          "excess_over_required": 0.025730071849373266
+        },
+        {
+          "band": "[1y,2y)",
+          "excess": 23.079181138848526,
+          "q_shell": [
+            50586,
+            87922
+          ],
+          "excess_over_required": 0.02572084637316315
+        }
+      ],
+      "pairs": [
+        {
+          "left_band": "[4y,8y)",
+          "right_band": "[1y,2y)",
+          "left_q_shell": [
+            12513,
+            24215
+          ],
+          "right_q_shell": [
+            50586,
+            87922
+          ],
+          "q_shell_overlap": 0,
+          "q_shell_gap": 26370,
+          "q_window_cosine": 0.0,
+          "qmod_cosine": {
+            "30": 0.8348168363146491,
+            "210": 0.26710369943102524
+          },
+          "dmod_cosine": {
+            "30": -0.3553430629641188,
+            "210": -0.28663773484936633
+          },
+          "max_lowmod_cosine": 0.8348168363146491,
+          "max_lowmod_kind": "q_mod",
+          "max_lowmod_w": 30,
+          "route": "lowmod_multiband_sync_candidate"
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "p": 100003,
+      "y": 131,
+      "left_band": "[4y,8y)",
+      "right_band": "[1y,2y)",
+      "left_q_shell": [
+        12513,
+        24215
+      ],
+      "right_q_shell": [
+        50586,
+        87922
+      ],
+      "q_shell_overlap": 0,
+      "q_shell_gap": 26370,
+      "q_window_cosine": 0.0,
+      "qmod_cosine": {
+        "30": 0.8348168363146491,
+        "210": 0.26710369943102524
+      },
+      "dmod_cosine": {
+        "30": -0.3553430629641188,
+        "210": -0.28663773484936633
+      },
+      "max_lowmod_cosine": 0.8348168363146491,
+      "max_lowmod_kind": "q_mod",
+      "max_lowmod_w": 30,
+      "route": "lowmod_multiband_sync_candidate"
+    },
+    {
+      "p": 10007,
+      "y": 75,
+      "left_band": "[4y,8y)",
+      "right_band": "[1y,2y)",
+      "left_q_shell": [
+        1237,
+        2444
+      ],
+      "right_q_shell": [
+        4970,
+        9500
+      ],
+      "q_shell_overlap": 0,
+      "q_shell_gap": 2525,
+      "q_window_cosine": 0.0,
+      "qmod_cosine": {
+        "30": 0.43262017985582896,
+        "210": 0.049093252604736674
+      },
+      "dmod_cosine": {
+        "30": 0.4004095354557207,
+        "210": 0.06773148401035718
+      },
+      "max_lowmod_cosine": 0.43262017985582896,
+      "max_lowmod_kind": "q_mod",
+      "max_lowmod_w": 30,
+      "route": "kls_multishell_candidate"
+    },
+    {
+      "p": 50021,
+      "y": 128,
+      "left_band": "[1y,2y)",
+      "right_band": "[4y,8y)",
+      "left_q_shell": [
+        25310,
+        48875
+      ],
+      "right_q_shell": [
+        6223,
+        12289
+      ],
+      "q_shell_overlap": 0,
+      "q_shell_gap": 13020,
+      "q_window_cosine": 0.0,
+      "qmod_cosine": {
+        "30": -0.2846274258375773,
+        "210": 0.007964115777706074
+      },
+      "dmod_cosine": {
+        "30": 0.24405398508723794,
+        "210": -0.15615670559943404
+      },
+      "max_lowmod_cosine": 0.24405398508723794,
+      "max_lowmod_kind": "d_mod",
+      "max_lowmod_w": 30,
+      "route": "kls_multishell_candidate"
+    }
+  ]
+}

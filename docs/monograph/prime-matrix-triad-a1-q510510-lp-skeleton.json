@@ -1,0 +1,116 @@
+{
+  "certificate_type": "triad_a1_lhb_lp_skeleton",
+  "status": "lp_skeleton_materialized_dual_comparison_open",
+  "q": 510510,
+  "p_values": [
+    19,
+    23
+  ],
+  "source_hashes": {
+    "lp_skeleton_script": "3c4617e3b0b37b769216569a0c89b5e97c5ed0d7b3fde5d95173c7ee9ada38fb",
+    "multiplicity_cap_json": "400fadeec3a97b7cd6c22ed0bd5e1271c703ebda07ee074db7db549d43d9b4fd",
+    "phase_blocks_json": "c23421c9ddd39473292f9ac29056bb8aa802c931b3f3252e661b5f4e70bfbddd"
+  },
+  "same_set_law": "所有行都作用在同一个 LHB-typed 坏窗推前计数 g(t) 上。使用这些行必须先证明 S subset Z_LHB(p,Q)。",
+  "prime_results": [
+    {
+      "p": 19,
+      "q": 510510,
+      "row_generators": {
+        "nonnegativity": "g(t)>=0 for all t",
+        "phase_caps": "g(t)<=M_p(t) for all t",
+        "zero_block_caps": "sum_{t in C} g(t)<=0 for WHOLEDEF/BRIDGED blocks",
+        "mass": "0<=sum_t g(t)<=sum_t M_p(t); persistent lower mass must be supplied by theta"
+      },
+      "counts": {
+        "phase_count": 510510,
+        "phase_cap_rows": 510510,
+        "zero_m_phase_count": 510014,
+        "nonzero_m_phase_count": 496,
+        "total_allowed_rows": 496,
+        "max_m": 1
+      },
+      "block_reports": [
+        {
+          "block_name": "whole_deficit_phases",
+          "phase_count": 510014,
+          "bound_from_m": 0,
+          "all_m_zero": true,
+          "row_status": "A-ready-zero-cap"
+        },
+        {
+          "block_name": "bridged_critical_phases",
+          "phase_count": 0,
+          "bound_from_m": 0,
+          "all_m_zero": true,
+          "row_status": "A-ready-zero-cap"
+        }
+      ],
+      "box_only_obstruction": {
+        "exists": true,
+        "phase": 3659,
+        "available_multiplicity": 1,
+        "per_unit_fourier_abs": 1.0,
+        "meaning": "仅 box 容量可行：g 可支撑在一个非零 M 相位上。单靠 M(t) 上界不能推出 Fourier 抵消。"
+      },
+      "closed_subbranch": "若 PDEC 强制坏相位支撑包含于 WHOLEDEF union BRIDGED，则该 LHB 分支上的 S 质量为零。",
+      "open_requirements": [
+        "theta-specific persistent lower mass |S| or range",
+        "direction support of F or cap set relative to M(t)",
+        "column/tail/cofactor phase-compatible rows",
+        "full direction-arc dual certificate U_CRT<L_PDEC"
+      ]
+    },
+    {
+      "p": 23,
+      "q": 510510,
+      "row_generators": {
+        "nonnegativity": "g(t)>=0 for all t",
+        "phase_caps": "g(t)<=M_p(t) for all t",
+        "zero_block_caps": "sum_{t in C} g(t)<=0 for WHOLEDEF/BRIDGED blocks",
+        "mass": "0<=sum_t g(t)<=sum_t M_p(t); persistent lower mass must be supplied by theta"
+      },
+      "counts": {
+        "phase_count": 510510,
+        "phase_cap_rows": 510510,
+        "zero_m_phase_count": 507918,
+        "nonzero_m_phase_count": 2592,
+        "total_allowed_rows": 3456,
+        "max_m": 19
+      },
+      "block_reports": [
+        {
+          "block_name": "whole_deficit_phases",
+          "phase_count": 507918,
+          "bound_from_m": 0,
+          "all_m_zero": true,
+          "row_status": "A-ready-zero-cap"
+        },
+        {
+          "block_name": "bridged_critical_phases",
+          "phase_count": 0,
+          "bound_from_m": 0,
+          "all_m_zero": true,
+          "row_status": "A-ready-zero-cap"
+        }
+      ],
+      "box_only_obstruction": {
+        "exists": true,
+        "phase": 59,
+        "available_multiplicity": 1,
+        "per_unit_fourier_abs": 1.0,
+        "meaning": "仅 box 容量可行：g 可支撑在一个非零 M 相位上。单靠 M(t) 上界不能推出 Fourier 抵消。"
+      },
+      "closed_subbranch": "若 PDEC 强制坏相位支撑包含于 WHOLEDEF union BRIDGED，则该 LHB 分支上的 S 质量为零。",
+      "open_requirements": [
+        "theta-specific persistent lower mass |S| or range",
+        "direction support of F or cap set relative to M(t)",
+        "column/tail/cofactor phase-compatible rows",
+        "full direction-arc dual certificate U_CRT<L_PDEC"
+      ]
+    }
+  ],
+  "all_zero_blocks_ready": true,
+  "box_only_global_closure": false,
+  "review_conclusion": "LHB 分支现在已有机器可读的 g(t)<=M(t) 行生成器和 WHOLEDEF/BRIDGED 零容量行。这些行只能闭合强制支撑落在零容量块内的 PDEC 方向。由于仍存在非零 M 相位，仅靠 box 容量不能证明全局 Fourier 抵消；下一证明义务是带有额外结构行的 theta 级 LP/对偶证书。"
+}

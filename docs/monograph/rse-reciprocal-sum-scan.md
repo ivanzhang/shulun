@@ -24,6 +24,25 @@ e\left(\frac{hX}{\ell m}\right)
 - 临界区 `1<=hP_m/ell<10` 同时缺少强振荡且振幅未完全衰减，是当前 `RSE` 的最小硬核。
 - 因此下一步应把 `RSE` 拆成 `RSE-OSC`、`RSE-AMP`、`RSE-CRIT` 三个子接口；真正需要新想法的是 `RSE-CRIT`。
 
+## 平方后端点特例
+
+新增 `docs/monograph/prime-matrix-diagonal-postsquare-carry-reciprocal-frequency.md` 后，
+`x=P` 平方后端点的 `CarryDiscrepancy` 也落入同一倒数相位框架。其频率对象为
+
+\[
+S_r(P)=\sum_{P/e<a<P}e(rP^2/a)(1-e(rP/a)).
+\]
+
+这对应本页模型中的
+
+```text
+X=P^2, H=P, m=a~P, ell=1。
+```
+
+因此 `hP_m/ell=rP`，属于明显的 `RSE-OSC` 端点振荡区，而非 `RSE-CRIT` 临界带。
+这给平方后端点一个更窄的审稿对象：先攻 `ell=1,m~P` 的倒数和 B-process/van der Corput
+界；若失败，再把异常低频集中路由到 `HyperbolicDisc/PDEC`。
+
 ## 分样本摘要
 
 ### P=1009，M=P^1.0，Y=22，P_m=736.57，rough=171

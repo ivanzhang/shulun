@@ -104,18 +104,19 @@ G_y(h) > T_y(h),  y=max(2,floor(p/e)).
 
 ## 4. 实验支持
 
-审计见 `docs/monograph/prime-matrix-terminal-sae-split-audit.md`。当前参数：
+审计见 `docs/monograph/prime-matrix-terminal-sae-split-audit.md` 与
+`docs/terminal_sae_split_audit_p2000_20260505.md`。最新扩展参数：
 
 ```text
-max_p = 1000
+max_p = 2000
 y = max(2, floor(p/e))
 ```
 
 结果：
 
 ```text
-prime_count = 167
-split_certified_records = 167
+prime_count = 302
+split_certified_records = 302
 unresolved_records_p_ge_7 = 0
 min_margin_p_ge_7 = 1
 min_margin_p_ge_19 = 1

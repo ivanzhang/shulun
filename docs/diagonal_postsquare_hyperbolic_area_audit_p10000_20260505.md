@@ -1,0 +1,58 @@
+# 平方后端点双曲窄带面积审计
+
+**状态：** `experimental_hyperbolic_area_support_not_a_proof`
+
+## 参数
+
+- `max_p`: `10000`
+- `y_ratio`: `0.36787944117144233`
+
+## 总结
+
+- 检查 `p>=23` 奇素数个数：`1221`。
+- 最大 `X(P)/P`：`1.0530973451327434`。
+- 最大 `X(P)-P`：`90`。
+- 最大切片长度：`3`。
+- 全局 offset 分布：`{'1': 3625440, '2': 1863953, '3': 243913}`。
+- 全局 `floor(P/a)` 分布：`{'1': 3973611, '2': 1759695}`。
+
+## 阈值账本
+
+| threshold | max ratio record | max excess record |
+|---:|---|---|
+| 23 | {'p': 113, 'area': 119, 'area_ratio': 1.0530973451327434, 'area_minus_p': 6} | {'p': 8209, 'area': 8299, 'area_ratio': 1.0109635765623097, 'area_minus_p': 90} |
+| 101 | {'p': 113, 'area': 119, 'area_ratio': 1.0530973451327434, 'area_minus_p': 6} | {'p': 8209, 'area': 8299, 'area_ratio': 1.0109635765623097, 'area_minus_p': 90} |
+| 251 | {'p': 311, 'area': 325, 'area_ratio': 1.045016077170418, 'area_minus_p': 14} | {'p': 8209, 'area': 8299, 'area_ratio': 1.0109635765623097, 'area_minus_p': 90} |
+| 501 | {'p': 887, 'area': 912, 'area_ratio': 1.0281848928974069, 'area_minus_p': 25} | {'p': 8209, 'area': 8299, 'area_ratio': 1.0109635765623097, 'area_minus_p': 90} |
+| 1009 | {'p': 1063, 'area': 1089, 'area_ratio': 1.024459078080903, 'area_minus_p': 26} | {'p': 8209, 'area': 8299, 'area_ratio': 1.0109635765623097, 'area_minus_p': 90} |
+| 2003 | {'p': 2221, 'area': 2265, 'area_ratio': 1.019810895992796, 'area_minus_p': 44} | {'p': 8209, 'area': 8299, 'area_ratio': 1.0109635765623097, 'area_minus_p': 90} |
+| 5003 | {'p': 6091, 'area': 6168, 'area_ratio': 1.0126416023641438, 'area_minus_p': 77} | {'p': 8209, 'area': 8299, 'area_ratio': 1.0109635765623097, 'area_minus_p': 90} |
+
+## 最大比例样本
+
+| p | y | X(P) | X/P | X-P | offsets | quotients | samples |
+|---:|---:|---:|---:|---:|---|---|---|
+| 113 | 41 | 119 | 1.053097 | 6 | {'1': 71, '2': 43, '3': 5} | {'1': 84, '2': 35} | [{'a': 42, 'b': 305, 'offset': 1, 'column': 41, 'quotient_floor_p_over_a': 2}, {'a': 42, 'b': 306, 'offset': 2, 'column': 83, 'quotient_floor_p_over_a': 2}, {'a': 43, 'b': 297, 'offset': 1, 'column': 2, 'quotient_floor_p_over_a': 2}, {'a': 43, 'b': 298, 'offset': 2, 'column': 45, 'quotient_floor_p_over_a': 2}, {'a': 43, 'b': 299, 'offset': 3, 'column': 88, 'quotient_floor_p_over_a': 2}] |
+| 61 | 22 | 64 | 1.049180 | 3 | {'1': 38, '2': 22, '3': 4} | {'1': 44, '2': 20} | [{'a': 23, 'b': 162, 'offset': 1, 'column': 5, 'quotient_floor_p_over_a': 2}, {'a': 23, 'b': 163, 'offset': 2, 'column': 28, 'quotient_floor_p_over_a': 2}, {'a': 23, 'b': 164, 'offset': 3, 'column': 51, 'quotient_floor_p_over_a': 2}, {'a': 24, 'b': 156, 'offset': 1, 'column': 23, 'quotient_floor_p_over_a': 2}, {'a': 24, 'b': 157, 'offset': 2, 'column': 47, 'quotient_floor_p_over_a': 2}] |
+| 43 | 15 | 45 | 1.046512 | 2 | {'1': 27, '2': 15, '3': 3} | {'1': 30, '2': 15} | [{'a': 16, 'b': 116, 'offset': 1, 'column': 7, 'quotient_floor_p_over_a': 2}, {'a': 16, 'b': 117, 'offset': 2, 'column': 23, 'quotient_floor_p_over_a': 2}, {'a': 16, 'b': 118, 'offset': 3, 'column': 39, 'quotient_floor_p_over_a': 2}, {'a': 17, 'b': 109, 'offset': 1, 'column': 4, 'quotient_floor_p_over_a': 2}, {'a': 17, 'b': 110, 'offset': 2, 'column': 21, 'quotient_floor_p_over_a': 2}] |
+| 241 | 88 | 252 | 1.045643 | 11 | {'1': 152, '2': 86, '3': 14} | {'1': 174, '2': 78} | [{'a': 89, 'b': 653, 'offset': 1, 'column': 36, 'quotient_floor_p_over_a': 2}, {'a': 89, 'b': 654, 'offset': 2, 'column': 125, 'quotient_floor_p_over_a': 2}, {'a': 89, 'b': 655, 'offset': 3, 'column': 214, 'quotient_floor_p_over_a': 2}, {'a': 90, 'b': 646, 'offset': 1, 'column': 59, 'quotient_floor_p_over_a': 2}, {'a': 90, 'b': 647, 'offset': 2, 'column': 149, 'quotient_floor_p_over_a': 2}] |
+| 311 | 114 | 325 | 1.045016 | 14 | {'1': 196, '2': 111, '3': 18} | {'1': 225, '2': 100} | [{'a': 115, 'b': 842, 'offset': 1, 'column': 109, 'quotient_floor_p_over_a': 2}, {'a': 115, 'b': 843, 'offset': 2, 'column': 224, 'quotient_floor_p_over_a': 2}, {'a': 116, 'b': 834, 'offset': 1, 'column': 23, 'quotient_floor_p_over_a': 2}, {'a': 116, 'b': 835, 'offset': 2, 'column': 139, 'quotient_floor_p_over_a': 2}, {'a': 116, 'b': 836, 'offset': 3, 'column': 255, 'quotient_floor_p_over_a': 2}] |
+| 73 | 26 | 76 | 1.041096 | 3 | {'1': 46, '2': 26, '3': 4} | {'1': 52, '2': 24} | [{'a': 27, 'b': 198, 'offset': 1, 'column': 17, 'quotient_floor_p_over_a': 2}, {'a': 27, 'b': 199, 'offset': 2, 'column': 44, 'quotient_floor_p_over_a': 2}, {'a': 27, 'b': 200, 'offset': 3, 'column': 71, 'quotient_floor_p_over_a': 2}, {'a': 28, 'b': 191, 'offset': 1, 'column': 19, 'quotient_floor_p_over_a': 2}, {'a': 28, 'b': 192, 'offset': 2, 'column': 47, 'quotient_floor_p_over_a': 2}] |
+| 421 | 154 | 438 | 1.040380 | 17 | {'1': 266, '2': 150, '3': 22} | {'1': 304, '2': 134} | [{'a': 155, 'b': 1144, 'offset': 1, 'column': 79, 'quotient_floor_p_over_a': 2}, {'a': 155, 'b': 1145, 'offset': 2, 'column': 234, 'quotient_floor_p_over_a': 2}, {'a': 155, 'b': 1146, 'offset': 3, 'column': 389, 'quotient_floor_p_over_a': 2}, {'a': 156, 'b': 1137, 'offset': 1, 'column': 131, 'quotient_floor_p_over_a': 2}, {'a': 156, 'b': 1138, 'offset': 2, 'column': 287, 'quotient_floor_p_over_a': 2}] |
+| 479 | 176 | 494 | 1.031315 | 15 | {'1': 302, '2': 166, '3': 26} | {'1': 342, '2': 152} | [{'a': 177, 'b': 1297, 'offset': 1, 'column': 128, 'quotient_floor_p_over_a': 2}, {'a': 177, 'b': 1298, 'offset': 2, 'column': 305, 'quotient_floor_p_over_a': 2}, {'a': 178, 'b': 1289, 'offset': 1, 'column': 1, 'quotient_floor_p_over_a': 2}, {'a': 178, 'b': 1290, 'offset': 2, 'column': 179, 'quotient_floor_p_over_a': 2}, {'a': 178, 'b': 1291, 'offset': 3, 'column': 357, 'quotient_floor_p_over_a': 2}] |
+| 887 | 326 | 912 | 1.028185 | 25 | {'1': 560, '2': 306, '3': 46} | {'1': 632, '2': 280} | [{'a': 327, 'b': 2407, 'offset': 1, 'column': 320, 'quotient_floor_p_over_a': 2}, {'a': 327, 'b': 2408, 'offset': 2, 'column': 647, 'quotient_floor_p_over_a': 2}, {'a': 328, 'b': 2399, 'offset': 1, 'column': 103, 'quotient_floor_p_over_a': 2}, {'a': 328, 'b': 2400, 'offset': 2, 'column': 431, 'quotient_floor_p_over_a': 2}, {'a': 328, 'b': 2401, 'offset': 3, 'column': 759, 'quotient_floor_p_over_a': 2}] |
+| 1063 | 391 | 1089 | 1.024459 | 26 | {'1': 671, '2': 369, '3': 49} | {'1': 760, '2': 329} | [{'a': 392, 'b': 2883, 'offset': 1, 'column': 167, 'quotient_floor_p_over_a': 2}, {'a': 392, 'b': 2884, 'offset': 2, 'column': 559, 'quotient_floor_p_over_a': 2}, {'a': 392, 'b': 2885, 'offset': 3, 'column': 951, 'quotient_floor_p_over_a': 2}, {'a': 393, 'b': 2876, 'offset': 1, 'column': 299, 'quotient_floor_p_over_a': 2}, {'a': 393, 'b': 2877, 'offset': 2, 'column': 692, 'quotient_floor_p_over_a': 2}] |
+| 1873 | 689 | 1917 | 1.023492 | 44 | {'1': 1183, '2': 647, '3': 87} | {'1': 1336, '2': 581} | [{'a': 690, 'b': 5085, 'offset': 1, 'column': 521, 'quotient_floor_p_over_a': 2}, {'a': 690, 'b': 5086, 'offset': 2, 'column': 1211, 'quotient_floor_p_over_a': 2}, {'a': 691, 'b': 5077, 'offset': 1, 'column': 78, 'quotient_floor_p_over_a': 2}, {'a': 691, 'b': 5078, 'offset': 2, 'column': 769, 'quotient_floor_p_over_a': 2}, {'a': 691, 'b': 5079, 'offset': 3, 'column': 1460, 'quotient_floor_p_over_a': 2}] |
+| 397 | 146 | 406 | 1.022670 | 9 | {'1': 250, '2': 138, '3': 18} | {'1': 284, '2': 122} | [{'a': 147, 'b': 1073, 'offset': 1, 'column': 122, 'quotient_floor_p_over_a': 2}, {'a': 147, 'b': 1074, 'offset': 2, 'column': 269, 'quotient_floor_p_over_a': 2}, {'a': 148, 'b': 1065, 'offset': 1, 'column': 11, 'quotient_floor_p_over_a': 2}, {'a': 148, 'b': 1066, 'offset': 2, 'column': 159, 'quotient_floor_p_over_a': 2}, {'a': 148, 'b': 1067, 'offset': 3, 'column': 307, 'quotient_floor_p_over_a': 2}] |
+| 313 | 115 | 320 | 1.022364 | 7 | {'1': 197, '2': 107, '3': 16} | {'1': 222, '2': 98} | [{'a': 116, 'b': 845, 'offset': 1, 'column': 51, 'quotient_floor_p_over_a': 2}, {'a': 116, 'b': 846, 'offset': 2, 'column': 167, 'quotient_floor_p_over_a': 2}, {'a': 116, 'b': 847, 'offset': 3, 'column': 283, 'quotient_floor_p_over_a': 2}, {'a': 117, 'b': 838, 'offset': 1, 'column': 77, 'quotient_floor_p_over_a': 2}, {'a': 117, 'b': 839, 'offset': 2, 'column': 194, 'quotient_floor_p_over_a': 2}] |
+| 317 | 116 | 324 | 1.022082 | 7 | {'1': 200, '2': 106, '3': 18} | {'1': 222, '2': 102} | [{'a': 117, 'b': 859, 'offset': 1, 'column': 14, 'quotient_floor_p_over_a': 2}, {'a': 117, 'b': 860, 'offset': 2, 'column': 131, 'quotient_floor_p_over_a': 2}, {'a': 117, 'b': 861, 'offset': 3, 'column': 248, 'quotient_floor_p_over_a': 2}, {'a': 118, 'b': 852, 'offset': 1, 'column': 47, 'quotient_floor_p_over_a': 2}, {'a': 118, 'b': 853, 'offset': 2, 'column': 165, 'quotient_floor_p_over_a': 2}] |
+| 619 | 227 | 632 | 1.021002 | 13 | {'1': 391, '2': 213, '3': 28} | {'1': 440, '2': 192} | [{'a': 228, 'b': 1681, 'offset': 1, 'column': 107, 'quotient_floor_p_over_a': 2}, {'a': 228, 'b': 1682, 'offset': 2, 'column': 335, 'quotient_floor_p_over_a': 2}, {'a': 228, 'b': 1683, 'offset': 3, 'column': 563, 'quotient_floor_p_over_a': 2}, {'a': 229, 'b': 1674, 'offset': 1, 'column': 185, 'quotient_floor_p_over_a': 2}, {'a': 229, 'b': 1675, 'offset': 2, 'column': 414, 'quotient_floor_p_over_a': 2}] |
+| 1103 | 405 | 1126 | 1.020852 | 23 | {'1': 697, '2': 371, '3': 58} | {'1': 776, '2': 350} | [{'a': 406, 'b': 2997, 'offset': 1, 'column': 173, 'quotient_floor_p_over_a': 2}, {'a': 406, 'b': 2998, 'offset': 2, 'column': 579, 'quotient_floor_p_over_a': 2}, {'a': 406, 'b': 2999, 'offset': 3, 'column': 985, 'quotient_floor_p_over_a': 2}, {'a': 407, 'b': 2990, 'offset': 1, 'column': 321, 'quotient_floor_p_over_a': 2}, {'a': 407, 'b': 2991, 'offset': 2, 'column': 728, 'quotient_floor_p_over_a': 2}] |
+| 2221 | 817 | 2265 | 1.019811 | 44 | {'1': 1403, '2': 751, '3': 111} | {'1': 1568, '2': 697} | [{'a': 818, 'b': 6031, 'offset': 1, 'column': 517, 'quotient_floor_p_over_a': 2}, {'a': 818, 'b': 6032, 'offset': 2, 'column': 1335, 'quotient_floor_p_over_a': 2}, {'a': 818, 'b': 6033, 'offset': 3, 'column': 2153, 'quotient_floor_p_over_a': 2}, {'a': 819, 'b': 6024, 'offset': 1, 'column': 815, 'quotient_floor_p_over_a': 2}, {'a': 819, 'b': 6025, 'offset': 2, 'column': 1634, 'quotient_floor_p_over_a': 2}] |
+| 211 | 77 | 215 | 1.018957 | 4 | {'1': 133, '2': 70, '3': 12} | {'1': 147, '2': 68} | [{'a': 78, 'b': 571, 'offset': 1, 'column': 17, 'quotient_floor_p_over_a': 2}, {'a': 78, 'b': 572, 'offset': 2, 'column': 95, 'quotient_floor_p_over_a': 2}, {'a': 78, 'b': 573, 'offset': 3, 'column': 173, 'quotient_floor_p_over_a': 2}, {'a': 79, 'b': 564, 'offset': 1, 'column': 35, 'quotient_floor_p_over_a': 2}, {'a': 79, 'b': 565, 'offset': 2, 'column': 114, 'quotient_floor_p_over_a': 2}] |
+| 853 | 313 | 869 | 1.018757 | 16 | {'1': 539, '2': 288, '3': 42} | {'1': 601, '2': 268} | [{'a': 314, 'b': 2318, 'offset': 1, 'column': 243, 'quotient_floor_p_over_a': 2}, {'a': 314, 'b': 2319, 'offset': 2, 'column': 557, 'quotient_floor_p_over_a': 2}, {'a': 315, 'b': 2310, 'offset': 1, 'column': 41, 'quotient_floor_p_over_a': 2}, {'a': 315, 'b': 2311, 'offset': 2, 'column': 356, 'quotient_floor_p_over_a': 2}, {'a': 315, 'b': 2312, 'offset': 3, 'column': 671, 'quotient_floor_p_over_a': 2}] |
+| 271 | 99 | 276 | 1.018450 | 5 | {'1': 171, '2': 92, '3': 13} | {'1': 191, '2': 85} | [{'a': 100, 'b': 735, 'offset': 1, 'column': 59, 'quotient_floor_p_over_a': 2}, {'a': 100, 'b': 736, 'offset': 2, 'column': 159, 'quotient_floor_p_over_a': 2}, {'a': 100, 'b': 737, 'offset': 3, 'column': 259, 'quotient_floor_p_over_a': 2}, {'a': 101, 'b': 728, 'offset': 1, 'column': 87, 'quotient_floor_p_over_a': 2}, {'a': 101, 'b': 729, 'offset': 2, 'column': 188, 'quotient_floor_p_over_a': 2}] |
+
+## 审稿解释
+
+该面积是 RFP 二维上筛的母集合体量。样本若支持 `X(P)<=1.02P`，则 `RFP-Upper` 的主要压力转移到二维 Selberg 主常数与双曲地板模分布误差。

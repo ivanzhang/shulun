@@ -1,0 +1,147 @@
+{
+  "all_layers_have_valid_accounting": true,
+  "all_layers_monotone": true,
+  "all_layers_resparse": true,
+  "certificate_type": "triad_a1_newlayer_tower_gate",
+  "layer_classes": [
+    "FiberDeletionLayer",
+    "FiberDeletionLayer"
+  ],
+  "layers": [
+    {
+      "all_classified_resparse": true,
+      "all_monotone_lift_support": true,
+      "all_support_identities_hold": true,
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q2310-q30030.json",
+      "audit_sha256": "a0cf1d6b5560d5568754bf9fb23462924bcf53453889cc2e3fa85357b576e504",
+      "fiber_size": 13,
+      "layer_class": "FiberDeletionLayer",
+      "max_entropy": 0.5768929144822342,
+      "max_slot_survival_rate": 0.3128205128205128,
+      "min_density_drop_factor": 3.1967213114754096,
+      "p_values": [
+        17,
+        19,
+        23,
+        29
+      ],
+      "prime_rows": [
+        {
+          "avg_normalized_entropy_by_lift_mass": 0.0,
+          "classification": "ReSparsifiedByFiberDeletion",
+          "density_drop_factor": 13.0,
+          "lift_support_count": 28,
+          "old_support_count": 28,
+          "p": 17,
+          "slot_deletion_rate": 0.9230769230769231,
+          "slot_survival_rate": 0.07692307692307693,
+          "support_count_histogram": {
+            "1": 28
+          }
+        },
+        {
+          "avg_normalized_entropy_by_lift_mass": 0.45502256100093114,
+          "classification": "ReSparsifiedByFiberDeletion",
+          "density_drop_factor": 4.945652173913044,
+          "lift_support_count": 368,
+          "old_support_count": 140,
+          "p": 19,
+          "slot_deletion_rate": 0.7978021978021979,
+          "slot_survival_rate": 0.2021978021978022,
+          "support_count_histogram": {
+            "13": 8,
+            "2": 132
+          }
+        },
+        {
+          "avg_normalized_entropy_by_lift_mass": 0.5658785805357283,
+          "classification": "ReSparsifiedByFiberDeletion",
+          "density_drop_factor": 3.2222222222222223,
+          "lift_support_count": 936,
+          "old_support_count": 232,
+          "p": 23,
+          "slot_deletion_rate": 0.6896551724137931,
+          "slot_survival_rate": 0.3103448275862069,
+          "support_count_histogram": {
+            "13": 24,
+            "3": 208
+          }
+        },
+        {
+          "avg_normalized_entropy_by_lift_mass": 0.5768929144822342,
+          "classification": "ReSparsifiedByFiberDeletion",
+          "density_drop_factor": 3.1967213114754096,
+          "lift_support_count": 610,
+          "old_support_count": 150,
+          "p": 29,
+          "slot_deletion_rate": 0.6871794871794872,
+          "slot_survival_rate": 0.3128205128205128,
+          "support_count_histogram": {
+            "1": 20,
+            "13": 8,
+            "3": 2,
+            "4": 120
+          }
+        }
+      ],
+      "q": 2310,
+      "q_lift": 30030
+    },
+    {
+      "all_classified_resparse": true,
+      "all_monotone_lift_support": true,
+      "all_support_identities_hold": true,
+      "audit_path": "/opt/code/shulun/docs/monograph/prime-matrix-triad-a1-newlayer-fiber-audit-q30030-q510510.json",
+      "audit_sha256": "f07a7ba629db204c7b1d948851b52f35ac7f76697d434f68ea8dad21afdf31ed",
+      "fiber_size": 17,
+      "layer_class": "FiberDeletionLayer",
+      "max_entropy": 0.4614866378281773,
+      "max_slot_survival_rate": 0.16289592760180996,
+      "min_density_drop_factor": 6.138888888888888,
+      "p_values": [
+        19,
+        23
+      ],
+      "prime_rows": [
+        {
+          "avg_normalized_entropy_by_lift_mass": 0.27419354838709675,
+          "classification": "ReSparsifiedByFiberDeletion",
+          "density_drop_factor": 12.612903225806452,
+          "lift_support_count": 496,
+          "old_support_count": 368,
+          "p": 19,
+          "slot_deletion_rate": 0.9207161125319693,
+          "slot_survival_rate": 0.0792838874680307,
+          "support_count_histogram": {
+            "1": 360,
+            "17": 8
+          }
+        },
+        {
+          "avg_normalized_entropy_by_lift_mass": 0.4614866378281773,
+          "classification": "ReSparsifiedByFiberDeletion",
+          "density_drop_factor": 6.138888888888888,
+          "lift_support_count": 2592,
+          "old_support_count": 936,
+          "p": 23,
+          "slot_deletion_rate": 0.8371040723981901,
+          "slot_survival_rate": 0.16289592760180996,
+          "support_count_histogram": {
+            "17": 48,
+            "2": 888
+          }
+        }
+      ],
+      "q": 30030,
+      "q_lift": 510510
+    }
+  ],
+  "review_conclusion": "已物化两层提升均为 FiberDeletionLayer：支撑恒等式成立、投影单调、且新层通过 fiber 删除重新稀疏。投影单调性已可由同一全周期完成集合 C_P 解释；这给出递归剥离路线的第二层证据；全局闭合仍需证明任意后继层的同一门控必然可验收。",
+  "source_hashes": {
+    "audit_1": "a0cf1d6b5560d5568754bf9fb23462924bcf53453889cc2e3fa85357b576e504",
+    "audit_2": "f07a7ba629db204c7b1d948851b52f35ac7f76697d434f68ea8dad21afdf31ed",
+    "tower_gate_script": "f9a476f360a0f778b782802b85d31916e3eb6399860c2875d4e1988bb45686e9"
+  },
+  "status": "newlayer_tower_gate_materialized_not_global_proof",
+  "tower_gate_law": "每次 Q->rQ 升层必须落入 FiberDeletion、ProjectionStitching、PDECEntropy 或 CleanKLS 之一。对同一 LHB allowed-set 的 M_Q 支撑，ProjectionStitching 已由投影单调性引理排除。该文件只汇总已物化层，不声称覆盖所有未来层。"
+}
