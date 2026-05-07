@@ -32,6 +32,7 @@ DEFAULT_BRIDGE = DOCS / "prime-matrix-triad-a1-continuous-columntail-bridge.json
 DEFAULT_ACTUAL_PAYMENT = DOCS / "prime-matrix-triad-a1-continuous-actual-payment-selection.json"
 DEFAULT_TERMINAL_DICHOTOMY = DOCS / "prime-matrix-triad-a1-continuous-terminal-dichotomy-router.json"
 DEFAULT_PDEC_SIGNATURE = DOCS / "prime-matrix-triad-a1-continuous-pdec-signature-input-ledger.json"
+DEFAULT_PRIME_LIFT = DOCS / "prime-matrix-triad-a1-continuous-prime-lift-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -92,6 +93,7 @@ def build_frontier_rows(
     actual_payment: dict[str, Any],
     terminal_dichotomy: dict[str, Any],
     pdec_signature: dict[str, Any],
+    prime_lift: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -199,6 +201,16 @@ def build_frontier_rows(
             ),
             "next_action": "对这些 g_b(t) 证明 U_CRT<L_PDEC；失败则输出更窄 DualCap/缺失行/KLS 回流。",
         },
+        {
+            "frontier": "ContinuousPrimeLiftCongruence",
+            "status": "prime_lift_deletion_kl_ready_with_selective_commutation_gap",
+            "evidence": (
+                f"positive-limsup 签名均满足 prime-lift 同余；"
+                f"route_counts={prime_lift['route_counts']}；"
+                f"promoted_prime_counts={prime_lift['promoted_prime_counts']}。"
+            ),
+            "next_action": "39 行接标准晋升删除/KL；1 行补选择性晋升交换律或 cofactor-order PDEC。",
+        },
     ]
 
 
@@ -214,6 +226,7 @@ def run(
     actual_payment_path: Path,
     terminal_dichotomy_path: Path,
     pdec_signature_path: Path,
+    prime_lift_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -227,6 +240,7 @@ def run(
     actual_payment = load_json(actual_payment_path)
     terminal_dichotomy = load_json(terminal_dichotomy_path)
     pdec_signature = load_json(pdec_signature_path)
+    prime_lift = load_json(prime_lift_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -239,6 +253,7 @@ def run(
         actual_payment,
         terminal_dichotomy,
         pdec_signature,
+        prime_lift,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -251,6 +266,7 @@ def run(
         "actual_payment_measure_constructed",
         "terminal_dichotomy_admission_closed_capacity_open",
         "positive_limsup_pdec_inputs_materialized_capacity_open",
+        "prime_lift_deletion_kl_ready_with_selective_commutation_gap",
         "closed",
         "no_fourth_exit",
     }
@@ -271,6 +287,7 @@ def run(
             "continuous_actual_payment_selection_json": file_sha256(actual_payment_path),
             "continuous_terminal_dichotomy_json": file_sha256(terminal_dichotomy_path),
             "continuous_pdec_signature_input_json": file_sha256(pdec_signature_path),
+            "continuous_prime_lift_json": file_sha256(prime_lift_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -281,21 +298,23 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "PDECCapacityOrKLSLargeSieve",
+        "terminal_dual_gap": "PrimeLiftDeletionKLOrKLSLargeSieve",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
             "连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。"
             "actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。"
             "positive-limsup 有限签名的 PDEC 输入账本已物化。"
-            "最终缺口只剩 PDEC 容量不等式或 CleanKLS/DLS 大筛估计。"
+            "这些签名又进一步满足 prime-lift 同余。最终缺口转成标准晋升删除/KL、"
+            "选择性晋升交换律，或 CleanKLS/DLS 大筛估计。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
             "当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，"
             "连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。"
             "终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。"
-            "下一步不再是路由，而是证明 PDEC-CAP 或 KLS-EXT。"
+            "prime-lift 刚性显示这些输入可升层路由；下一步不再是路由，而是证明晋升删除/KL、"
+            "选择性晋升交换律或 KLS-EXT。"
         ),
     }
 
@@ -323,7 +342,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  actual payment concentration returns to PDEC；",
         "  recursive diffusion returns to CleanKLS/DLS；",
         "  no third terminal route remains after finite-projection dichotomy；",
-        "  positive-limsup finite signatures materialize legal PDEC input rows。",
+        "  positive-limsup finite signatures materialize legal PDEC input rows；",
+        "  finite signatures force prime-lift congruence rows。",
         "```",
         "",
         "## 2. 汇总",
@@ -368,11 +388,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "canonical actual payment measure constructed；",
             "terminal finite-projection dichotomy closed；",
             "positive-limsup PDEC input rows materialized；",
-            "remaining gap is PDEC-CAP or KLS-EXT。",
+            "prime-lift congruence routed；",
+            "remaining gap is prime-lift deletion/KL, selective commutation, or KLS-EXT。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "直接证明 column-tail PDEC 容量不等式，或证明/接入 diffuse CleanKLS/DLS 大筛估计。",
+            "证明标准 prime-lift 晋升删除/KL；补选择性晋升交换律；或证明/接入 diffuse CleanKLS/DLS 大筛估计。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -395,6 +416,7 @@ def main() -> None:
         "--terminal-dichotomy-json", type=Path, default=DEFAULT_TERMINAL_DICHOTOMY
     )
     parser.add_argument("--pdec-signature-json", type=Path, default=DEFAULT_PDEC_SIGNATURE)
+    parser.add_argument("--prime-lift-json", type=Path, default=DEFAULT_PRIME_LIFT)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -411,6 +433,7 @@ def main() -> None:
         actual_payment_path=args.actual_payment_json,
         terminal_dichotomy_path=args.terminal_dichotomy_json,
         pdec_signature_path=args.pdec_signature_json,
+        prime_lift_path=args.prime_lift_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

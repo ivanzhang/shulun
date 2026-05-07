@@ -3435,3 +3435,67 @@ KLS-EXT:
 ```
 
 除此之外，连续 actual-payment 分支当前没有剩余路由缺口。
+
+## 69. A1 positive-limsup 签名 Prime-Lift 刚性
+
+在 `experiments/prime_matrix_triad_a1_continuous_pdec_signature_input_ledger.py` 中补入同余字段后，
+所有 positive-limsup PDEC 输入签名都满足唯一 prime-lift 同余：
+
+```text
+signature b=(ell,y,c)；
+row=t+Qy；
+(row-1)P+c=0 mod ell；
+therefore t=1-cP^{-1}-Qy mod ell。
+```
+
+随后新增 `experiments/prime_matrix_triad_a1_continuous_prime_lift_router.py`，把这些有限签名路由到升层接口。
+
+机器结果：
+
+```text
+status=continuous_pdec_signatures_routed_to_prime_lift_gate；
+signature_row_count=40；
+all_signature_rows_have_prime_lift_congruence=True；
+promoted_prime_counts={13: 39, 17: 1}；
+route_counts={
+  StandardNextPrimePromotionDeletionKLReady: 39,
+  SelectivePrimePromotionNeedsCommutationBeforeDeletionKL: 1
+}。
+```
+
+结构意义：
+
+```text
+positive-limsup finite signature
+=> 不是自由 PDEC 尖峰
+=> 是新增素数 ell 的 residue 锁定
+=> 标准下一素数行接 PromotionDeletionPotential / NoDeletion-KL / CleanKLS；
+=> 选择性素数行需补晋升交换律，或回流 cofactor-order/PDEC。
+```
+
+唯一选择性行是：
+
+```text
+P=29, signature=17:8:6；
+next_high_prime=13；
+promoted_prime=17；
+signature_payment_mass=204；
+fourier_abs_over_total=1。
+```
+
+前沿路由器同步更新后：
+
+```text
+ContinuousPrimeLiftCongruence => prime_lift_deletion_kl_ready_with_selective_commutation_gap；
+terminal_dual_gap => PrimeLiftDeletionKLOrKLSLargeSieve。
+```
+
+当前剩余硬点因此再次缩窄为：
+
+```text
+1. 标准 ell=13 晋升行：证明当前连续签名版本的 promotion deletion/KL 接线；
+2. 选择性 ell=17 行：证明先晋升 13 再晋升 17 与直接晋升 17 的终端路由交换律；
+3. diffuse 分支：证明/接入 CleanKLS/DLS 大筛估计。
+```
+
+这一步没有完成最终行命题，但把 positive-limsup PDEC-CAP 的抽象容量缺口转化为更具体的升层刚性缺口。

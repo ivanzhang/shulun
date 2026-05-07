@@ -20,6 +20,8 @@ positive-limsup finite signature b=(prime,residue,column-residue)
 - `cap_count=8`。
 - `signature_row_count=40`。
 - `route_counts={'FiniteSignaturePDECInputMaterialized': 40}`。
+- `all_signature_rows_have_prime_lift_congruence=True`。
+- `promoted_prime_counts={13: 39, 17: 1}`。
 - `global_min_signature_fourier_abs_over_total=0.986379`。
 - `global_max_signature_fourier_abs_over_total=1`。
 
@@ -38,48 +40,48 @@ positive-limsup finite signature b=(prime,residue,column-residue)
 
 ## 4. 签名行
 
-| P | signature | mass | phases | best h | Fourier/total | route |
-| ---: | --- | ---: | ---: | ---: | ---: | --- |
-| 17 | `13:1:7` | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 17 | `13:2:8` | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 17 | `13:5:6` | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 17 | `13:4:12` | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 17 | `13:10:3` | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 19 | `13:11:10` | 19 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 19 | `13:1:9` | 19 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 19 | `13:4:11` | 18 | 2 | 616 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 19 | `13:8:8` | 18 | 2 | 77 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 19 | `13:10:9` | 17 | 1 | 5 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 23 | `13:0:1` | 76 | 5 | 533 | 0.998745 | `FiniteSignaturePDECInputMaterialized` |
-| 23 | `13:12:9` | 76 | 5 | 533 | 0.998745 | `FiniteSignaturePDECInputMaterialized` |
-| 23 | `13:8:12` | 72 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 23 | `13:4:11` | 72 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 23 | `13:10:11` | 70 | 2 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 29 | `13:0:2` | 272 | 7 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 29 | `13:12:1` | 272 | 7 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 29 | `17:8:6` | 204 | 2 | 770 | 1 | `FiniteSignaturePDECInputMaterialized` |
-| 29 | `13:0:4` | 148 | 7 | 533 | 0.997989 | `FiniteSignaturePDECInputMaterialized` |
-| 29 | `13:12:12` | 148 | 7 | 533 | 0.997989 | `FiniteSignaturePDECInputMaterialized` |
-| 31 | `13:2:4` | 10780 | 13 | 533 | 0.999216 | `FiniteSignaturePDECInputMaterialized` |
-| 31 | `13:7:2` | 10732 | 11 | 533 | 0.998868 | `FiniteSignaturePDECInputMaterialized` |
-| 31 | `13:5:3` | 10732 | 11 | 533 | 0.998868 | `FiniteSignaturePDECInputMaterialized` |
-| 31 | `13:10:1` | 10708 | 11 | 533 | 0.999307 | `FiniteSignaturePDECInputMaterialized` |
-| 31 | `13:12:4` | 3120 | 10 | 533 | 0.992125 | `FiniteSignaturePDECInputMaterialized` |
-| 37 | `13:7:2` | 62508 | 8 | 241 | 0.998607 | `FiniteSignaturePDECInputMaterialized` |
-| 37 | `13:5:9` | 62508 | 8 | 241 | 0.998607 | `FiniteSignaturePDECInputMaterialized` |
-| 37 | `13:8:8` | 62388 | 8 | 241 | 0.998488 | `FiniteSignaturePDECInputMaterialized` |
-| 37 | `13:4:3` | 62388 | 8 | 241 | 0.998488 | `FiniteSignaturePDECInputMaterialized` |
-| 37 | `13:3:10` | 60132 | 10 | 533 | 0.999552 | `FiniteSignaturePDECInputMaterialized` |
-| 43 | `13:5:1` | 11760408 | 42 | 533 | 0.986379 | `FiniteSignaturePDECInputMaterialized` |
-| 43 | `13:7:3` | 11755368 | 41 | 533 | 0.986382 | `FiniteSignaturePDECInputMaterialized` |
-| 43 | `13:0:1` | 11450880 | 48 | 1777 | 0.986633 | `FiniteSignaturePDECInputMaterialized` |
-| 43 | `13:12:3` | 11450160 | 47 | 1777 | 0.986633 | `FiniteSignaturePDECInputMaterialized` |
-| 43 | `13:2:2` | 11323512 | 42 | 533 | 0.990446 | `FiniteSignaturePDECInputMaterialized` |
-| 47 | `13:4:4` | 682835712 | 50 | 533 | 0.99489 | `FiniteSignaturePDECInputMaterialized` |
-| 47 | `13:8:4` | 681090552 | 52 | 533 | 0.994881 | `FiniteSignaturePDECInputMaterialized` |
-| 47 | `13:0:5` | 618189720 | 53 | 1777 | 0.996031 | `FiniteSignaturePDECInputMaterialized` |
-| 47 | `13:12:3` | 618149400 | 52 | 533 | 0.996034 | `FiniteSignaturePDECInputMaterialized` |
-| 47 | `13:12:12` | 406006896 | 40 | 533 | 0.989948 | `FiniteSignaturePDECInputMaterialized` |
+| P | signature | ell | t mod ell | lift mod ell | mass | phases | best h | Fourier/total | route |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 17 | `13:1:7` | 13 | 0 | 9 | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 17 | `13:2:8` | 13 | 7 | 12 | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 17 | `13:5:6` | 13 | 0 | 6 | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 17 | `13:4:12` | 13 | 1 | 11 | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 17 | `13:10:3` | 13 | 11 | 10 | 1 | 1 | 1 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 19 | `13:11:10` | 13 | 0 | 8 | 19 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 19 | `13:1:9` | 13 | 10 | 6 | 19 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 19 | `13:4:11` | 13 | 0 | 10 | 18 | 2 | 616 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 19 | `13:8:8` | 13 | 10 | 4 | 18 | 2 | 77 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 19 | `13:10:9` | 13 | 7 | 6 | 17 | 1 | 5 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 23 | `13:0:1` | 13 | 10 | 10 | 76 | 5 | 533 | 0.998745 | `FiniteSignaturePDECInputMaterialized` |
+| 23 | `13:12:9` | 13 | 0 | 4 | 76 | 5 | 533 | 0.998745 | `FiniteSignaturePDECInputMaterialized` |
+| 23 | `13:8:12` | 13 | 11 | 5 | 72 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 23 | `13:4:11` | 13 | 12 | 9 | 72 | 3 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 23 | `13:10:11` | 13 | 10 | 9 | 70 | 2 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 29 | `13:0:2` | 13 | 9 | 9 | 272 | 7 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 29 | `13:12:1` | 13 | 1 | 5 | 272 | 7 | 1155 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 29 | `17:8:6` | 17 | 8 | 9 | 204 | 2 | 770 | 1 | `FiniteSignaturePDECInputMaterialized` |
+| 29 | `13:0:4` | 13 | 4 | 4 | 148 | 7 | 533 | 0.997989 | `FiniteSignaturePDECInputMaterialized` |
+| 29 | `13:12:12` | 13 | 6 | 10 | 148 | 7 | 533 | 0.997989 | `FiniteSignaturePDECInputMaterialized` |
+| 31 | `13:2:4` | 13 | 3 | 8 | 10780 | 13 | 533 | 0.999216 | `FiniteSignaturePDECInputMaterialized` |
+| 31 | `13:7:2` | 13 | 0 | 11 | 10732 | 11 | 533 | 0.998868 | `FiniteSignaturePDECInputMaterialized` |
+| 31 | `13:5:3` | 13 | 10 | 3 | 10732 | 11 | 533 | 0.998868 | `FiniteSignaturePDECInputMaterialized` |
+| 31 | `13:10:1` | 13 | 7 | 6 | 10708 | 11 | 533 | 0.999307 | `FiniteSignaturePDECInputMaterialized` |
+| 31 | `13:12:4` | 13 | 4 | 8 | 3120 | 10 | 533 | 0.992125 | `FiniteSignaturePDECInputMaterialized` |
+| 37 | `13:7:2` | 13 | 4 | 2 | 62508 | 8 | 241 | 0.998607 | `FiniteSignaturePDECInputMaterialized` |
+| 37 | `13:5:9` | 13 | 6 | 12 | 62508 | 8 | 241 | 0.998607 | `FiniteSignaturePDECInputMaterialized` |
+| 37 | `13:8:8` | 13 | 11 | 5 | 62388 | 8 | 241 | 0.998488 | `FiniteSignaturePDECInputMaterialized` |
+| 37 | `13:4:3` | 13 | 12 | 9 | 62388 | 8 | 241 | 0.998488 | `FiniteSignaturePDECInputMaterialized` |
+| 37 | `13:3:10` | 13 | 5 | 6 | 60132 | 10 | 533 | 0.999552 | `FiniteSignaturePDECInputMaterialized` |
+| 43 | `13:5:1` | 13 | 11 | 4 | 11760408 | 42 | 533 | 0.986379 | `FiniteSignaturePDECInputMaterialized` |
+| 43 | `13:7:3` | 13 | 12 | 10 | 11755368 | 41 | 533 | 0.986382 | `FiniteSignaturePDECInputMaterialized` |
+| 43 | `13:0:1` | 13 | 4 | 4 | 11450880 | 48 | 1777 | 0.986633 | `FiniteSignaturePDECInputMaterialized` |
+| 43 | `13:12:3` | 13 | 6 | 10 | 11450160 | 47 | 1777 | 0.986633 | `FiniteSignaturePDECInputMaterialized` |
+| 43 | `13:2:2` | 13 | 2 | 7 | 11323512 | 42 | 533 | 0.990446 | `FiniteSignaturePDECInputMaterialized` |
+| 47 | `13:4:4` | 13 | 10 | 7 | 682835712 | 50 | 533 | 0.99489 | `FiniteSignaturePDECInputMaterialized` |
+| 47 | `13:8:4` | 13 | 0 | 7 | 681090552 | 52 | 533 | 0.994881 | `FiniteSignaturePDECInputMaterialized` |
+| 47 | `13:0:5` | 13 | 2 | 2 | 618189720 | 53 | 1777 | 0.996031 | `FiniteSignaturePDECInputMaterialized` |
+| 47 | `13:12:3` | 13 | 8 | 12 | 618149400 | 52 | 533 | 0.996034 | `FiniteSignaturePDECInputMaterialized` |
+| 47 | `13:12:12` | 13 | 2 | 6 | 406006896 | 40 | 533 | 0.989948 | `FiniteSignaturePDECInputMaterialized` |
 
 ## 5. 当前硬点
 

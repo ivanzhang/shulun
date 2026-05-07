@@ -75,6 +75,25 @@ def max_fourier_profile(g_by_phase: dict[int, int], q: int) -> dict[str, Any]:
     }
 
 
+def signature_congruence(p: int, q: int, signature: str) -> dict[str, Any]:
+    """计算 payment signature 强制的旧相位与升层相位同余类。"""
+    prime_raw, residue_raw, column_raw = signature.split(":")
+    prime = int(prime_raw)
+    residue = int(residue_raw)
+    column_residue = int(column_raw)
+    inverse_p = pow(p, -1, prime)
+    lifted_phase_residue = (1 - column_residue * inverse_p) % prime
+    old_phase_residue = (lifted_phase_residue - (q % prime) * residue) % prime
+    return {
+        "promoted_prime": prime,
+        "fiber_residue": residue,
+        "column_residue": column_residue,
+        "forced_old_phase_residue_mod_prime": old_phase_residue,
+        "forced_lifted_phase_residue_mod_prime": lifted_phase_residue,
+        "promoted_q": q * prime,
+    }
+
+
 def phase_profile_for_signature(
     p: int,
     q: int,
@@ -99,9 +118,23 @@ def phase_profile_for_signature(
         phase_hole_hist[len(row["holes"])] += 1
     fourier = max_fourier_profile(g_by_phase, q)
     total = sum(g_by_phase.values())
+    congruence = signature_congruence(p, q, signature)
+    prime = congruence["promoted_prime"]
+    all_old_phase_congruent = all(
+        phase % prime == congruence["forced_old_phase_residue_mod_prime"]
+        for phase in g_by_phase
+    )
+    all_lifted_phase_congruent = all(
+        (phase + q * congruence["fiber_residue"]) % prime
+        == congruence["forced_lifted_phase_residue_mod_prime"]
+        for phase in g_by_phase
+    )
     return {
         "signature": signature,
         "signature_parts": signature.split(":"),
+        "signature_congruence": congruence,
+        "all_old_phase_congruent": all_old_phase_congruent,
+        "all_lifted_phase_congruent": all_lifted_phase_congruent,
         "signature_payment_mass": total,
         "signature_phase_count": len(g_by_phase),
         "signature_phase_mass_sample": [
@@ -151,10 +184,24 @@ def phase_profiles_for_signatures(
         g_by_phase = profiles[signature]["g_by_phase"]
         fourier = max_fourier_profile(g_by_phase, q)
         total = sum(g_by_phase.values())
+        congruence = signature_congruence(p, q, signature)
+        prime = congruence["promoted_prime"]
+        all_old_phase_congruent = all(
+            phase % prime == congruence["forced_old_phase_residue_mod_prime"]
+            for phase in g_by_phase
+        )
+        all_lifted_phase_congruent = all(
+            (phase + q * congruence["fiber_residue"]) % prime
+            == congruence["forced_lifted_phase_residue_mod_prime"]
+            for phase in g_by_phase
+        )
         rows.append(
             {
                 "signature": signature,
                 "signature_parts": signature.split(":"),
+                "signature_congruence": congruence,
+                "all_old_phase_congruent": all_old_phase_congruent,
+                "all_lifted_phase_congruent": all_lifted_phase_congruent,
                 "signature_payment_mass": total,
                 "signature_phase_count": len(g_by_phase),
                 "signature_phase_mass_sample": [
@@ -250,6 +297,18 @@ def run(
         "cap_count": len(cap_rows),
         "signature_row_count": len(all_signature_rows),
         "route_counts": dict(sorted(route_counts.items())),
+        "all_signature_rows_have_prime_lift_congruence": all(
+            row["all_old_phase_congruent"] and row["all_lifted_phase_congruent"]
+            for row in all_signature_rows
+        ),
+        "promoted_prime_counts": dict(
+            sorted(
+                Counter(
+                    row["signature_congruence"]["promoted_prime"]
+                    for row in all_signature_rows
+                ).items()
+            )
+        ),
         "global_min_signature_fourier_abs_over_total": min(
             (
                 row["fourier"]["best_abs_over_total"]
@@ -305,6 +364,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"- `cap_count={result['cap_count']}`。",
         f"- `signature_row_count={result['signature_row_count']}`。",
         f"- `route_counts={result['route_counts']}`。",
+        f"- `all_signature_rows_have_prime_lift_congruence={result['all_signature_rows_have_prime_lift_congruence']}`。",
+        f"- `promoted_prime_counts={result['promoted_prime_counts']}`。",
         f"- `global_min_signature_fourier_abs_over_total={fmt_float(result['global_min_signature_fourier_abs_over_total'])}`。",
         f"- `global_max_signature_fourier_abs_over_total={fmt_float(result['global_max_signature_fourier_abs_over_total'])}`。",
         "",
@@ -323,16 +384,20 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 签名行",
             "",
-            "| P | signature | mass | phases | best h | Fourier/total | route |",
-            "| ---: | --- | ---: | ---: | ---: | ---: | --- |",
+            "| P | signature | ell | t mod ell | lift mod ell | mass | phases | best h | Fourier/total | route |",
+            "| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
         ]
     )
     for cap in result["cap_rows"]:
         for row in cap["signature_rows"]:
+            congruence = row["signature_congruence"]
             lines.append(
-                "| {p} | `{sig}` | {mass} | {phases} | {h} | {ratio} | `{route}` |".format(
+                "| {p} | `{sig}` | {ell} | {old_res} | {lift_res} | {mass} | {phases} | {h} | {ratio} | `{route}` |".format(
                     p=cap["p"],
                     sig=row["signature"],
+                    ell=congruence["promoted_prime"],
+                    old_res=congruence["forced_old_phase_residue_mod_prime"],
+                    lift_res=congruence["forced_lifted_phase_residue_mod_prime"],
                     mass=row["signature_payment_mass"],
                     phases=row["signature_phase_count"],
                     h=row["fourier"]["best_h"],
@@ -388,6 +453,9 @@ def main() -> None:
                 "status": result["status"],
                 "signature_row_count": result["signature_row_count"],
                 "route_counts": result["route_counts"],
+                "all_signature_rows_have_prime_lift_congruence": result[
+                    "all_signature_rows_have_prime_lift_congruence"
+                ],
                 "global_min_signature_fourier_abs_over_total": result[
                     "global_min_signature_fourier_abs_over_total"
                 ],
