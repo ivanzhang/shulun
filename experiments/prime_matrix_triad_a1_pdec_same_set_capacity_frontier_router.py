@@ -173,6 +173,9 @@ DEFAULT_DIBFI_NEW_FULL_S_THEOREM_INPUT = (
 DEFAULT_DIBFI_FULL_S_COMPLETION_REDUCTION = (
     DOCS / "prime-matrix-triad-a1-dibfi-full-s-completion-reduction-router.json"
 )
+DEFAULT_DIBFI_COMPLETED_WEIGHT_SPECTRAL_GAP = (
+    DOCS / "prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -284,6 +287,7 @@ def build_frontier_rows(
     dibfi_ap_source_lift_nogo: dict[str, Any],
     dibfi_new_full_s_theorem_input: dict[str, Any],
     dibfi_full_s_completion_reduction: dict[str, Any],
+    dibfi_completed_weight_spectral_gap: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -955,6 +959,16 @@ def build_frontier_rows(
             ),
             "next_action": "证明或引用 ModulusDependentCompletedFullSKLSInput。",
         },
+        {
+            "frontier": "A1DIBFICompletedWeightSpectralGapRouter",
+            "status": "modulus_dependent_completed_kls_reduced_to_c_dependent_residue_spectral_input_open",
+            "evidence": (
+                f"完成型权重的 L2/Weil、普通大筛和平坦 residue 捷径已排除；"
+                f"open_spectral_gap_gates={dibfi_completed_weight_spectral_gap['open_spectral_gap_gates']}；"
+                f"terminal_gap={dibfi_completed_weight_spectral_gap['terminal_gap_after_router']}。"
+            ),
+            "next_action": "证明或引用 CDependentResidueWeightSpectralCancellationInput。",
+        },
     ]
 
 
@@ -1021,6 +1035,7 @@ def run(
     dibfi_ap_source_lift_nogo_path: Path,
     dibfi_new_full_s_theorem_input_path: Path,
     dibfi_full_s_completion_reduction_path: Path,
+    dibfi_completed_weight_spectral_gap_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1099,6 +1114,9 @@ def run(
     dibfi_full_s_completion_reduction = load_json(
         dibfi_full_s_completion_reduction_path
     )
+    dibfi_completed_weight_spectral_gap = load_json(
+        dibfi_completed_weight_spectral_gap_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1162,6 +1180,7 @@ def run(
         dibfi_ap_source_lift_nogo,
         dibfi_new_full_s_theorem_input,
         dibfi_full_s_completion_reduction,
+        dibfi_completed_weight_spectral_gap,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1227,13 +1246,14 @@ def run(
         "ap_source_lift_rejected_new_full_s_theorem_input_open",
         "new_full_s_theorem_input_reduced_to_full_s_nonap_wfd_kls_input_open",
         "full_s_nonap_wfd_kls_input_reduced_to_modulus_dependent_completed_kls_open",
+        "modulus_dependent_completed_kls_reduced_to_c_dependent_residue_spectral_input_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_modulus_dependent_completed_full_s_kls_input_open",
+        "status": "same_set_capacity_frontier_c_dependent_residue_spectral_input_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1364,6 +1384,9 @@ def run(
             "a1_dibfi_full_s_completion_reduction_json": file_sha256(
                 dibfi_full_s_completion_reduction_path
             ),
+            "a1_dibfi_completed_weight_spectral_gap_json": file_sha256(
+                dibfi_completed_weight_spectral_gap_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1374,7 +1397,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "ModulusDependentCompletedFullSKLSInput",
+        "terminal_dual_gap": "CDependentResidueWeightSpectralCancellationInput",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1433,7 +1456,8 @@ def run(
             " full-S、未中心化、无投影 non-AP WFD 窗口的 Kloosterman 大筛/dispersion 定理；"
             "由于 S≈P 而 C≈P/log^O P，s 窗口可按模 c 完成，终端进一步压成"
             " ModulusDependentCompletedFullSKLSInput：处理 B_{c,x}=sum_k beta_{x+kc} 的"
-            "模数依赖 residue 权重。"
+            "模数依赖 residue 权重；点态 Weil/L2、普通大筛和平坦 residue 捷径均不足，"
+            "所以最终压成 CDependentResidueWeightSpectralCancellationInput。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1464,10 +1488,11 @@ def run(
             "都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；"
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
-            "该合取证书现已继续压成 `ModulusDependentCompletedFullSKLSInput`："
+            "该合取证书现已继续压成 `CDependentResidueWeightSpectralCancellationInput`："
             "`APSourceLift` 已被当前分支合同排除，`NewFullSTheoremInput` 也已具体化为"
             "唯一 full-S non-AP WFD KLS 定理原子；full-S 完成分解又把它缩到模数依赖"
-            "完整 Kloosterman 权重原子。"
+            "完整 Kloosterman 权重原子；朴素完成估计被尺度账本排除后，只剩 c,h 族上的"
+            "谱/dispersion 平均抵消。"
         ),
     }
 
@@ -1547,7 +1572,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  APSourceLift is rejected by the AP/non-AP branch contract。",
         "  NewFullSTheoremInput is refined to FullSNonAPWFDKLSTheoremInput。",
         "  FullSNonAPWFDKLSTheoremInput completes s modulo c into B_{c,x} weights。",
-        "  The remaining terminal is ModulusDependentCompletedFullSKLSInput。",
+        "  Pointwise Weil/L2 and ordinary large sieve do not close the completed weights。",
+        "  The remaining terminal is CDependentResidueWeightSpectralCancellationInput。",
         "```",
         "",
         "## 2. 汇总",
@@ -1643,7 +1669,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIAPSourceLiftNoGo router materialized；",
             "DIBFINewFullSTheoremInput router materialized；",
             "DIBFIFullSCompletionReduction router materialized；",
-            "remaining independent gap is ModulusDependentCompletedFullSKLSInput。",
+            "DIBFICompletedWeightSpectralGap router materialized；",
+            "remaining independent gap is CDependentResidueWeightSpectralCancellationInput。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1651,7 +1678,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩未中心化无投影恒等式"
             "与 DI Kloosterman 窗口代入账本；"
             "APSourceLift 已被当前合同排除；完全自足/主来源逐项版仍只剩"
-            " ModulusDependentCompletedFullSKLSInput。",
+            " CDependentResidueWeightSpectralCancellationInput。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1901,6 +1928,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_FULL_S_COMPLETION_REDUCTION,
     )
+    parser.add_argument(
+        "--dibfi-completed-weight-spectral-gap-json",
+        type=Path,
+        default=DEFAULT_DIBFI_COMPLETED_WEIGHT_SPECTRAL_GAP,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1989,6 +2021,9 @@ def main() -> None:
         ),
         dibfi_full_s_completion_reduction_path=(
             args.dibfi_full_s_completion_reduction_json
+        ),
+        dibfi_completed_weight_spectral_gap_path=(
+            args.dibfi_completed_weight_spectral_gap_json
         ),
     )
     args.json_out.write_text(
