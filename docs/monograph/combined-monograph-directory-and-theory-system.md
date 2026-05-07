@@ -2386,6 +2386,34 @@ LocalSurvivor 当前包与已知入口不再构成独立全局阻塞；
 NC-BLK 不再构成独立内部终端。
 ```
 
+再进一步新增：
+
+```text
+experiments/prime_matrix_self_contained_terminal_bottleneck_router.py
+docs/monograph/prime-matrix-self-contained-terminal-bottleneck-router.md/json
+```
+
+该路由器把完全自足路线中的 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 再收缩一层：
+
+```text
+closed_nonfinal_reductions=true；
+internal_clean_kls_independent_blocker_collapsed=true；
+self_contained_terminal_bottleneck_is_pdec_cap=true；
+open_final_gates=[
+  PDEC_CAP_SameSetGlobalDualCertificate,
+  DStructureRankinReferee
+]；
+narrowest_self_contained_hardpoint=PDEC_CAP_SameSetGlobalDualCertificate。
+```
+
+结构含义是：在当前 canonical-source 自足边界内，内部 `CleanKLS` 不再是平行独立黑箱。
+若 clean large-sieve 失败，它输出对偶集中对象并回流 `PDEC/SAE`；
+若处在 canonical NC-BLK/CleanKLS 分支，它已被 same-set capacity 边界吸收；
+若要求 unrestricted generic full-S WFD，则该命题已被 moving-delta no-go 反证隔离。
+所以完全自足路线的唯一独立数学硬点现在是同一坏窗集合上的全局 PDEC 容量对偶证书
+`U_CRT<L_PDEC`；完整行/列无条件定理仍需单独通过 D-structure/Tail-log4/finite Rankin
+referee 晋级门。
+
 因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明二选一解析终端：
 
 ```text

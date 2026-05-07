@@ -118,6 +118,26 @@ DStructureRankinReferee:
 PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
 ```
 
+最新自足瓶颈路由又把这一项压窄：
+
+```text
+experiments/prime_matrix_self_contained_terminal_bottleneck_router.py
+docs/monograph/prime-matrix-self-contained-terminal-bottleneck-router.md/json
+
+closed_nonfinal_reductions=true；
+internal_clean_kls_independent_blocker_collapsed=true；
+self_contained_terminal_bottleneck_is_pdec_cap=true；
+narrowest_self_contained_hardpoint=PDEC_CAP_SameSetGlobalDualCertificate。
+```
+
+通俗说，`CleanKLS` 现在不再作为完全自足路线里的平行独立终端硬点：它失败时会给出对偶集中并回到 `PDEC/SAE`，在 canonical-source 分支中已经被同集容量边界吸收，而 unrestricted generic 版本已经被反证隔离。剩下的自足核心就是同一批坏窗上的全局容量不等式：
+
+```text
+U_CRT < L_PDEC
+```
+
+这仍不是完整行/列无条件定理闭合，因为还必须通过 `DStructureRankinReferee` 晋级门。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

@@ -1,0 +1,85 @@
+{
+  "bottleneck_law": "The fully self-contained route no longer needs to carry InternalCleanKLS as an independent minimal blocker inside the current canonical-source boundary. A clean large-sieve failure gives a dual concentration object and returns to PDEC/SAE; the canonical-source NC-BLK/KLS chain is already absorbed by the closed same-set boundary; and the unrestricted generic self-contained KLS/WFD route is refuted and not claimed. Therefore the remaining independent self-contained hardpoint is the global same-set PDEC capacity certificate U_CRT<L_PDEC, plus the separate referee-promotion interface.",
+  "certificate_type": "prime_matrix_self_contained_terminal_bottleneck_router",
+  "closed_nonfinal_reductions": true,
+  "internal_clean_kls_independent_blocker_collapsed": true,
+  "narrowest_self_contained_hardpoint": "PDEC_CAP_SameSetGlobalDualCertificate",
+  "open_final_gates": [
+    "PDEC_CAP_SameSetGlobalDualCertificate",
+    "DStructureRankinReferee"
+  ],
+  "pdec_cap_closed": false,
+  "review_conclusion": "完全自足路线继续收窄：`InternalCleanKLS_LargeSieve` 不再是当前 canonical-source 边界内的独立最窄硬点；它要么被 NC-BLK/canonical same-set 边界吸收，要么失败回流 PDEC/SAE，要么属于已反证隔离的 unrestricted generic 自足版。当前唯一独立自足数学硬点是`PDEC_CAP_SameSetGlobalDualCertificate`，即对全部 PDEC family 提交同一坏窗集合上的`U_CRT<L_PDEC` 全局对偶证书。完整行/列无条件定理仍未闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+      "gate": "PreviousSelfContainedSplitAccepted",
+      "meaning": "上一轮已把完全自足路线压成 PDEC-CAP 或内部 CleanKLS 大筛。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "large-sieve fail => dual concentration => PDEC/SAE",
+      "gate": "CleanKLSFailureDualReturnsToPDEC",
+      "meaning": "CleanKLS 失败不是独立数学出口；其对偶集中对象回流到 PDEC/SAE。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "canonical_boundary=True; ncblk_reconciled=True",
+      "gate": "CanonicalCleanBranchAbsorbed",
+      "meaning": "canonical-source CleanKLS/NC-BLK 分支已由既有同集容量边界吸收。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "Unrestricted generic full-S well-factorable WFD self-contained theorem.",
+      "gate": "GenericSelfContainedKLSNotAClaim",
+      "meaning": "unrestricted generic 自足版已反证隔离，不能作为完全自足路线的剩余门。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "clean=open_at_kuznetsov_ls_atom_sc9; sc9=NCBLKOrExternalDIBFIOriginalDispersion",
+      "gate": "SC9RouteAccounted",
+      "meaning": "SC-9 已展开到 NC-BLK 或外部 DI/BFI，不再保留宽泛 KLS 黑箱。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "cleankls_reduced_to_flat_large_sieve_certificate_or_pdec_not_closed",
+      "gate": "InternalCleanKLSIndependentBlockerCollapsed",
+      "meaning": "在当前 canonical-source 自足边界内，内部 CleanKLS 不再是独立最窄瓶颈；它要么被边界吸收，要么失败回流到 PDEC/SAE，要么属于已隔离 generic 外部路线。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "triad_a1_capacity_upper_route_not_closed",
+      "gate": "PDEC_CAP_SameSetGlobalDualCertificate",
+      "meaning": "剩余独立自足硬点是全部 PDEC family 的同坏窗 U_CRT<L_PDEC 全局对偶证书。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "BLOCK-REFEREE",
+      "gate": "DStructureRankinReferee",
+      "meaning": "完整行/列定理最终升级仍需 D-structure/Tail-log4/finite Rankin 接口被接受。"
+    }
+  ],
+  "self_contained_terminal_bottleneck_is_pdec_cap": true,
+  "source_hashes": {
+    "clean_contract": "8dd2eef4693fda091d0f2310ec2a98f620b8cdf5ba05165345c22fbdf44f3893",
+    "clean_router": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
+    "kuznetsov_frontier": "0cdee5539c39e8ab496aaeaa4d484d4e4cdd9e6626f887d9b11728ab38d09646",
+    "line_referee": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
+    "ncblk_reconciliation": "fde3b713f0fdfb0c54b1be823034b7b8763cf63887b3c4a60207d905f19f01f4",
+    "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
+    "same_set_capacity_frontier": "5e90ebbde60cece165620ec326e67d71904fb4c64459b1ef1b44918416ba2a7d",
+    "script": "5c8cabe9b04649299839472abed7d7f080e93af71c4db8fc2ec441fe0f4f4057",
+    "split_router": "f9a5e6a0583a20578b3a98952382fe6a149b6c46ad57591974e4268bd8d9a03b"
+  },
+  "status": "self_contained_terminal_bottleneck_reduced_to_pdec_cap_not_closed"
+}
