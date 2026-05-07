@@ -6887,3 +6887,63 @@ Theorem FullS-KLS-ext:
 
 该定理还必须和对象侧兼容：估计的必须是当前 non-AP WFD 的未中心化无投影对象，而不是
 AP-source 分支、块中心化对象或投影后的弱对象。
+
+## 115. FullS-KLS-ext 合同闭合：外部版闭合，自足版剩原文专门化
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_full_s_kls_ext_specialization_router.py` 后，
+第 114 节的 `FullSKLSExternalTheoremSpecialization` 被写成正式定理合同。
+
+该合同直接声明本文所需的对象：
+
+```text
+W_full(C,S,H)
+  = sum_{c~C} lambda_c
+    sum_{0<|h|<=H} omega_h
+    sum_{s~S,(s,c)=1} beta_s e_c(a_h s + b_h bar{s}),
+
+C≈P/log^{O(1)}P,
+S≈P=X^(1/2+o(1)),
+H<=P/log^{O(1)}P,
+Q<=P log^{O(1)}P.
+```
+
+并把此前对象侧的兼容性直接写入定理对象：
+
+```text
+estimate the current non-AP WFD object itself;
+no block-centering insertion;
+no same-block diagonal deletion;
+no projection to AP-source/canonical object.
+```
+
+机器结果：
+
+```text
+status=full_s_kls_ext_contract_closed_primary_source_proof_open；
+external_theorem_contract_closed=true；
+closed_specialization_gates=[
+  PriorFullSKLSSpecializationFrontierAvailable,
+  FullSKLSExtStatementMaterialized,
+  NoProjectionCompatibilityInternalized,
+  ExternalContractVersionClosed
+]；
+open_specialization_gates=[
+  DIBFIPrimarySourceSpecializationProof
+]；
+terminal_gap_after_router=DIBFIPrimarySourceSpecializationProof。
+```
+
+因此当前分成两种口径：
+
+```text
+外部深定理版：
+  FullS-KLS-ext accepted
+  => non-AP full-S scale/object gap closed.
+
+完全自足/逐页原文核验版：
+  DIBFIPrimarySourceSpecializationProof remains.
+```
+
+这一步消除了最后的 Prime Matrix 内部结构逃逸口。剩下的不是新的方阵/圆柱/CRT/PDEC
+结构缺陷，而是是否从 DI/BFI 原文逐项推出本文所需 `FullS-KLS-ext` 的外部深定理专门化。

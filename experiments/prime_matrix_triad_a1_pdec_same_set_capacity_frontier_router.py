@@ -158,6 +158,9 @@ DEFAULT_DIBFI_FULL_S_DISPERSION_ATOM = (
 DEFAULT_DIBFI_EXTERNAL_FULL_S_MATCH = (
     DOCS / "prime-matrix-triad-a1-dibfi-external-full-s-match-router.json"
 )
+DEFAULT_DIBFI_FULL_S_KLS_EXT_SPECIALIZATION = (
+    DOCS / "prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -264,6 +267,7 @@ def build_frontier_rows(
     dibfi_short_s_subwindow_nogo: dict[str, Any],
     dibfi_full_s_dispersion_atom: dict[str, Any],
     dibfi_external_full_s_match: dict[str, Any],
+    dibfi_full_s_kls_ext_specialization: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -884,6 +888,17 @@ def build_frontier_rows(
             ),
             "next_action": "写出 FullS-KLS-ext 精确定理专门化，并证明无隐藏投影兼容。",
         },
+        {
+            "frontier": "A1DIBFIFullSKLSExtSpecializationRouter",
+            "status": "full_s_kls_ext_contract_closed_primary_source_proof_open",
+            "evidence": (
+                f"FullS-KLS-ext 外部合同已闭合；"
+                f"external_contract_closed={dibfi_full_s_kls_ext_specialization['external_theorem_contract_closed']}；"
+                f"open_gates={dibfi_full_s_kls_ext_specialization['open_specialization_gates']}；"
+                f"terminal_gap={dibfi_full_s_kls_ext_specialization['terminal_gap_after_router']}。"
+            ),
+            "next_action": "若要求完全自足或原文逐项核验，补 DIBFIPrimarySourceSpecializationProof。",
+        },
     ]
 
 
@@ -945,6 +960,7 @@ def run(
     dibfi_short_s_subwindow_nogo_path: Path,
     dibfi_full_s_dispersion_atom_path: Path,
     dibfi_external_full_s_match_path: Path,
+    dibfi_full_s_kls_ext_specialization_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1012,6 +1028,9 @@ def run(
     dibfi_short_s_subwindow_nogo = load_json(dibfi_short_s_subwindow_nogo_path)
     dibfi_full_s_dispersion_atom = load_json(dibfi_full_s_dispersion_atom_path)
     dibfi_external_full_s_match = load_json(dibfi_external_full_s_match_path)
+    dibfi_full_s_kls_ext_specialization = load_json(
+        dibfi_full_s_kls_ext_specialization_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1070,6 +1089,7 @@ def run(
         dibfi_short_s_subwindow_nogo,
         dibfi_full_s_dispersion_atom,
         dibfi_external_full_s_match,
+        dibfi_full_s_kls_ext_specialization,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1130,13 +1150,14 @@ def run(
         "short_s_subwindow_decomposition_rejected_full_s_atom_open",
         "full_s_dispersion_atom_reduced_to_external_dibfi_match_open",
         "external_full_s_match_reduced_to_kls_specialization_open",
+        "full_s_kls_ext_contract_closed_primary_source_proof_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_full_s_kls_specialization_open",
+        "status": "same_set_capacity_frontier_external_contract_closed_primary_source_proof_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1252,6 +1273,9 @@ def run(
             "a1_dibfi_external_full_s_match_json": file_sha256(
                 dibfi_external_full_s_match_path
             ),
+            "a1_dibfi_full_s_kls_ext_specialization_json": file_sha256(
+                dibfi_full_s_kls_ext_specialization_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1262,7 +1286,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "NonAPWFDNoProjectionAndFullSKLSExternalSpecialization",
+        "terminal_dual_gap": "DIBFIPrimarySourceSpecializationProof",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1312,7 +1336,8 @@ def run(
             "短 S 子窗口退路也被排除：小区间宽度不能替代 Maynard-S 的实际量级，真实短量级"
             "又离开当前 full-S dyadic 块。因此尺度侧剩余曾单点化为新增 full-S 原始 dispersion 原子；"
             "该原子现在又被精确改写为 ExternalFullSDIBFIAtomMatch；外部匹配层继续压成"
-            " FullSKLSExternalTheoremSpecialization 与无投影兼容性。"
+            " FullSKLSExternalTheoremSpecialization 与无投影兼容性；FullS-KLS-ext 精确定理合同"
+            "已把外部深定理版闭合，完全自足版只剩 DI/BFI 原文逐项专门化证明。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1344,7 +1369,7 @@ def run(
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
             "该合取证书现已继续压成 "
-            "`NonAPWFDNoProjectionAndFullSKLSExternalSpecialization`。"
+            "`DIBFIPrimarySourceSpecializationProof`。"
         ),
     }
 
@@ -1419,6 +1444,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  Short-S subwindow decomposition is rejected; scale side reduces to NewFullSDispersionAtom。",
         "  NewFullSDispersionAtom is refined to ExternalFullSDIBFIAtomMatch。",
         "  ExternalFullSDIBFIAtomMatch reduces to FullSKLSExternalTheoremSpecialization。",
+        "  FullS-KLS-ext contract closes the external-theorem version; primary-source proof remains。",
         "```",
         "",
         "## 2. 汇总",
@@ -1509,7 +1535,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIShortSSubwindowNoGo router materialized；",
             "DIBFIFullSDispersionAtom router materialized；",
             "DIBFIExternalFullSMatch router materialized；",
-            "remaining independent gap is NonAPWFDNoProjectionAndFullSKLSExternalSpecialization。",
+            "DIBFIFullSKLSExtSpecialization router materialized；",
+            "remaining independent gap is DIBFIPrimarySourceSpecializationProof。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1741,6 +1768,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_EXTERNAL_FULL_S_MATCH,
     )
+    parser.add_argument(
+        "--dibfi-full-s-kls-ext-specialization-json",
+        type=Path,
+        default=DEFAULT_DIBFI_FULL_S_KLS_EXT_SPECIALIZATION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1816,6 +1848,9 @@ def main() -> None:
         ),
         dibfi_external_full_s_match_path=(
             args.dibfi_external_full_s_match_json
+        ),
+        dibfi_full_s_kls_ext_specialization_path=(
+            args.dibfi_full_s_kls_ext_specialization_json
         ),
     )
     args.json_out.write_text(

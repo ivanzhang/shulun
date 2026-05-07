@@ -1,0 +1,65 @@
+{
+  "certificate_type": "triad_a1_dibfi_full_s_kls_ext_specialization_router",
+  "closed_specialization_gates": [
+    "PriorFullSKLSSpecializationFrontierAvailable",
+    "FullSKLSExtStatementMaterialized",
+    "NoProjectionCompatibilityInternalized",
+    "ExternalContractVersionClosed"
+  ],
+  "external_theorem_contract_closed": true,
+  "open_specialization_gates": [
+    "DIBFIPrimarySourceSpecializationProof"
+  ],
+  "previous_terminal_gap": "FullSKLSExternalTheoremSpecialization",
+  "review_conclusion": "FullS-KLS-ext 外部合同版已闭合：它直接覆盖 full-S 窗口并把无投影兼容写入定理对象。若坚持完全自足或原文逐项核验，唯一剩余单点是 `DIBFIPrimarySourceSpecializationProof`。",
+  "self_contained_primary_source_proof_closed": false,
+  "source_hashes": {
+    "external_full_s_match_json": "1cb81c03845ce32374579b89dbf0b8ce3dbf1bafd8945688bc0ac6d99b527584",
+    "nonap_object_ledger_json": "b94ec49a04e4779d893a2026565e29ceaee42f481cd2aaedfc5246bead7ed280",
+    "script": "eeba671765c19880d65ff44f1f71622eadb3ed497d4329112ae250e046fb4ea8",
+    "specialization_note_md": "1da7af54405bb244358e58b35ec6efe03a7cd428c58c26e186fafd4e7166f0b2"
+  },
+  "specialization_rows": [
+    {
+      "closed": true,
+      "evidence": "上一层已把 ExternalFullSDIBFIAtomMatch 压成 FullSKLSExternalTheoremSpecialization。",
+      "gate": "PriorFullSKLSSpecializationFrontierAvailable",
+      "next_target": "FullSKLSExtStatementMaterialized",
+      "remaining": "none at prior-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "FullS-KLS-ext 已写成含 C,S,H、well-factorable 权、自然 WFD 尺度和 log-saving 的定理合同。",
+      "gate": "FullSKLSExtStatementMaterialized",
+      "next_target": "ExternalContractVersionClosed",
+      "remaining": "none for external-contract statement"
+    },
+    {
+      "closed": true,
+      "evidence": "定理合同直接要求估计当前 non-AP WFD 未中心化无投影对象；内部对象账本仍 open=['DispersionCauchyNoCenteringIdentity', 'KE13DyadicExhaustionNoProjection']，但已被外部合同吸收。",
+      "gate": "NoProjectionCompatibilityInternalized",
+      "next_target": "ExternalContractVersionClosed",
+      "remaining": "若不用外部合同，仍需内部证明 UncenteredWFDToKE13NoProjectionIdentity。"
+    },
+    {
+      "closed": true,
+      "evidence": "在接受 FullS-KLS-ext 作为外部深输入的版本中，full-S scale/object 合同已经闭合。",
+      "gate": "ExternalContractVersionClosed",
+      "next_target": "DIBFIPrimarySourceSpecializationProof",
+      "remaining": "该 closed 只属于外部定理版，不属于完全自足版。"
+    },
+    {
+      "closed": false,
+      "evidence": "仓库尚未逐页从 DI/BFI 原文定理推出 FullS-KLS-ext 专门化。",
+      "gate": "DIBFIPrimarySourceSpecializationProof",
+      "next_target": "DIBFIPrimarySourceSpecializationProof",
+      "remaining": "若要求完全自足或完全原文核验，必须补这一单点证明。"
+    }
+  ],
+  "status": "full_s_kls_ext_contract_closed_primary_source_proof_open",
+  "structural_law": "The external-theorem version and the self-contained version now separate cleanly. By stating FullS-KLS-ext directly for the uncentered non-projected non-AP WFD object, the external contract absorbs the former scale and no-projection compatibility gaps. The only remaining non-contract gap is a primary-source derivation of this exact specialization from DI/BFI, which is a bibliographic/deep-theorem proof task rather than another prime-matrix structural escape.",
+  "terminal_gap_after_router": "DIBFIPrimarySourceSpecializationProof",
+  "terminal_gap_expansion": [
+    "DIBFIPrimarySourceSpecializationProof"
+  ]
+}
