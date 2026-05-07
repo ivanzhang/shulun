@@ -146,7 +146,7 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_OccupancySaturationOrSC9。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -168,24 +168,63 @@ docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
 diffuse_terminal_split_closed=true；
 self_contained_diffuse_terminal_closed=false；
 narrowest_diffuse_hardpoint=
-  GlobalDeletionDivergenceOrSupportExhaustion_OR_SelfContainedKuznetsovLSAtomSC9。
+  OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
 ```
 
 通俗说，不持久分支不再只是“删除势 / NoDeletion / CleanKLS”这个宽口径描述。现在链条已经拆成：
 
 ```text
-持续删除 -> 需要证明全局删除势发散会耗尽可覆盖支撑；
+持续删除 -> 若删除势发散，则支撑耗尽或回流命名 sparse/PDEC；
 删除停止 + KL/互信息偏斜 -> 回流 refined/new-layer PDEC；
 删除停止 + KL/互信息平坦 -> CleanKLS/DLS；
 CleanKLS 的 K1--K9 任一失败 -> 回流 PDEC/SAE/Multiplicity/Promotion；
 K1--K9 全过 -> 外部 KLS 版可引用深定理，自足版剩 SC-9。
 ```
 
+进一步桥接“发散删除势为什么足以耗尽 diffuse 责任”：
+
+```text
+experiments/prime_matrix_pdec_cap_deletion_support_exhaustion_bridge.py
+docs/monograph/prime-matrix-pdec-cap-deletion-support-exhaustion-bridge.md/json
+
+deletion_support_exhaustion_bridge_closed=true；
+narrowest_deletion_hardpoint=GlobalDeletionPotentialDivergenceLowerBound。
+```
+
+这一步关闭的是后半段逻辑：同源投影塔上 `density(A_QN)=density(A_Q0)*prod a_n`，所以
+`sum -log a_n=infinity` 时活跃支撑密度趋零；若 actual-payment 仍有正责任质量，它只能被耗尽，
+或集中成已命名的 sparse/PDEC/ColumnCRT/CleanKLS 回流，不能继续作为 diffuse 无名终端。
+
+继续从删除发散下界向内拆，新增：
+
+```text
+experiments/prime_matrix_pdec_cap_deletion_divergence_lower_bound_router.py
+docs/monograph/prime-matrix-pdec-cap-deletion-divergence-lower-bound-router.md/json
+
+deletion_divergence_lower_bound_reduced=true；
+narrowest_deletion_hardpoint=OccupancySaturationPDECOrColumnCRT。
+```
+
+这一步使用 HRO 引理：
+
+```text
+S_t subset Occ_t union TI_t。
+```
+
+如果删除势不发散，就必须在某个正质量子列上 `Occ/r + TI/r -> 1`。其中 `TI/r -> 1`
+就是 promoted prime 非必要，已经回流 NoDeletion-KL/CleanKLS；所以删除侧真正剩余只剩：
+
+```text
+OccupancySaturation:
+  旧洞 residue 在新增素数层近满占用
+  => 需要证明触发低层容量矛盾、PDEC 或 ColumnCRT。
+```
+
 所以当前真正剩余是更窄的二选一终端估计：
 
 ```text
 持久 Gamma：证明 U_CRT^multi < L_PDEC^multi；
-不持久 Gamma：证明 GlobalDeletionDivergenceOrSupportExhaustion，
+不持久 Gamma：证明 OccupancySaturationPDECOrColumnCRT，
               或证明 SelfContainedKuznetsovLSAtomSC9。
 ```
 

@@ -2428,9 +2428,9 @@ closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
   SameSetPDECDualComparisonForPersistentMFU,
-  DiffuseGlobalDeletionOrSelfContainedSC9
+  DiffuseOccupancySaturationOrSelfContainedSC9
 ]；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_OccupancySaturationOrSC9。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2454,11 +2454,11 @@ docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
 diffuse_terminal_split_closed=true；
 self_contained_diffuse_terminal_closed=false；
 open_final_gates=[
-  GlobalDeletionDivergenceOrSupportExhaustion,
+  OccupancySaturationPDECOrColumnCRT,
   SelfContainedKuznetsovLSAtomSC9
 ]；
 narrowest_diffuse_hardpoint=
-  GlobalDeletionDivergenceOrSupportExhaustion_OR_SelfContainedKuznetsovLSAtomSC9。
+  OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
 ```
 
 结构含义是：`FiberDeletion/NoDeletion-KL/CleanKLS` 不再是宽口径未命名剩余。持续删除必须支付全局删除势；
@@ -2466,14 +2466,53 @@ narrowest_diffuse_hardpoint=
 而 `CleanKLS` 的 K1--K9 admission 失败项全部回流 `PDEC/SAE/Multiplicity/Promotion`。外部深定理版
 可在明确引用窗口化 KLS/DI/BFI/Kuznetsov 输入时吸收 flat clean 分支；完全自足版仍剩命名原子 `SC-9`。
 
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_deletion_support_exhaustion_bridge.py
+docs/monograph/prime-matrix-pdec-cap-deletion-support-exhaustion-bridge.md/json
+```
+
+该桥接关闭了删除势发散后的后半段：
+
+```text
+deletion_support_exhaustion_bridge_closed=true；
+global_deletion_divergence_closed=false；
+narrowest_deletion_hardpoint=GlobalDeletionPotentialDivergenceLowerBound。
+```
+
+结构含义是：同源投影塔乘法公式给出 `sum -log a_n=infinity => density(A_QN)->0`；
+actual-payment 账本给出正需求责任。二者不能继续作为 diffuse 正责任终端共存：若责任被耗尽，则删除侧闭合；
+若剩余质量集中或稀疏化，则回流已命名 `LocalSurvivor/SAE/PDEC/ColumnCRT/CleanKLS` 入口。因此删除侧真正还要证明的只剩
+全局删除势发散下界。
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_deletion_divergence_lower_bound_router.py
+docs/monograph/prime-matrix-pdec-cap-deletion-divergence-lower-bound-router.md/json
+```
+
+该路由器把全局删除势发散下界继续压缩：
+
+```text
+deletion_divergence_lower_bound_reduced=true；
+global_deletion_divergence_closed=false；
+narrowest_deletion_hardpoint=OccupancySaturationPDECOrColumnCRT。
+```
+
+结构含义是：HRO 引理给出 `S_t subset Occ_t union TI_t`。若删除势不发散，则在某个正质量子列上
+`Occ/r+TI/r->1`；其中 `TI/r->1` 已是 promoted prime 非必要，并回流 NoDeletion-KL/CleanKLS。
+所以删除侧唯一新剩余是 `OccupancySaturation`：旧洞 residue 在新增素数层近满占用必须触发容量/PDEC/ColumnCRT。
+
 因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明更窄的二选一解析终端：
 
 ```text
 Persistent-MFU PDEC:
   持久 Gamma 分支给出多桶同集 LP/对偶容量证书 U_CRT^multi<L_PDEC^multi；
 
-Diffuse GlobalDeletion/SC9:
-  无持久 Gamma 分支证明全局删除势发散/支撑耗尽耦合，
+Diffuse OccupancySaturation/SC9:
+  无持久 Gamma 分支证明占用饱和触发 PDEC/ColumnCRT，
   或证明 KL 平坦 clean residual 的自足 Kuznetsov-LS atom SC-9；
 
 Referee promotion:

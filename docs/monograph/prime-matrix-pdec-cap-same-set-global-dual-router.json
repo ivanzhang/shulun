@@ -1,14 +1,14 @@
 {
   "certificate_type": "prime_matrix_pdec_cap_same_set_global_dual_router",
   "closed_current_materialized_pdec_gates": true,
-  "frontier_law": "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed further to global deletion exhaustion or the self-contained Kuznetsov-LS atom SC-9. The remaining global final gates are the persistent same-set PDEC dual comparison and the narrowed diffuse terminal estimates, not an unnamed APS exit.",
-  "narrowest_next_hardpoint": "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9",
+  "frontier_law": "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed further to OccupancySaturation/PDEC/ColumnCRT or the self-contained Kuznetsov-LS atom SC-9. The remaining global final gates are the persistent same-set PDEC dual comparison and the narrowed diffuse terminal estimates, not an unnamed APS exit.",
+  "narrowest_next_hardpoint": "SameSetPDECDualComparisonForPersistentMFU_OR_OccupancySaturationOrSC9",
   "open_final_gates": [
     "SameSetPDECDualComparisonForPersistentMFU",
-    "DiffuseGlobalDeletionOrSelfContainedSC9"
+    "DiffuseOccupancySaturationOrSelfContainedSC9"
   ],
   "pdec_cap_same_set_global_dual_closed": false,
-  "review_conclusion": "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；diffuse 分支又被压到全局删除势/支撑耗尽或自足 SC-9。但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 `GlobalDeletionDivergenceOrSupportExhaustion` 或 `SelfContainedKuznetsovLSAtomSC9`。",
+  "review_conclusion": "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；diffuse 分支又被压到 OccupancySaturation/PDEC/ColumnCRT 或自足 SC-9。但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 `OccupancySaturationPDECOrColumnCRT` 或 `SelfContainedKuznetsovLSAtomSC9`。",
   "row_column_unconditional_closed": false,
   "rows": [
     {
@@ -98,16 +98,16 @@
     {
       "blocks_final": false,
       "closed": true,
-      "evidence": "GlobalDeletionDivergenceOrSupportExhaustion_OR_SelfContainedKuznetsovLSAtomSC9",
+      "evidence": "OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
       "gate": "DiffuseTerminalSplitRouted",
       "meaning": "不持久 Gamma 分支已合成为删除势/NoDeletion-KL/CleanKLS 的终端分裂，无名 diffuse 出口关闭。"
     },
     {
       "blocks_final": true,
       "closed": false,
-      "evidence": "['GlobalDeletionDivergenceOrSupportExhaustion', 'SelfContainedKuznetsovLSAtomSC9']",
-      "gate": "DiffuseGlobalDeletionOrSelfContainedSC9",
-      "meaning": "不持久 Gamma 分支剩余自足义务：全局删除势发散/支撑耗尽耦合，或 KL 平坦 clean 残余的 SC-9 谱大筛原子。"
+      "evidence": "['OccupancySaturationPDECOrColumnCRT', 'SelfContainedKuznetsovLSAtomSC9']",
+      "gate": "DiffuseOccupancySaturationOrSelfContainedSC9",
+      "meaning": "不持久 Gamma 分支剩余自足义务：占用饱和触发 PDEC/ColumnCRT，或 KL 平坦 clean 残余的 SC-9 谱大筛原子。"
     },
     {
       "blocks_final": false,
@@ -120,16 +120,16 @@
   "source_hashes": {
     "actual_payment_stitching": "14087651c52f19675e3253aaa3c8f856c0872ae18903f69da7636baa70fd7d2f",
     "aps_contract": "5f86eb483338ddd0a0c3b7317b68c89e5967368a1d2dded81328b338b1d44855",
-    "diffuse_terminal": "f10ed542328f82fa9e14524e660f91bf707d1397843b273cc31da8f88cb59334",
+    "diffuse_terminal": "8cb3630cfd57387f94cfbf1e97c369a0af03339a835e4b0ba8af74c7ff2cac49",
     "dualcap": "b6bf0fc2a4305656fa7aef8cac33aa9b7dd1867617611fe7b96a23e8ba251c53",
     "forced": "0f6779ef51c2603e7e1e9d9fe79fbc40bef1920665ec3ca3d92cc73db19814ab",
     "mass_source": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
     "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
     "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
     "persistent": "590f92a0eb6cf5886038f8684d8577af29edf0fad7c46f75ae58983b72440703",
-    "profinite_aps": "828aa0fd5b9c8aa09f7fb01fb45bb03df6baeb501c2fd0a3e463dae2bf561f02",
+    "profinite_aps": "9dd25bf39da64914853df12d391b95389b927f3838bbf70d0bc2ab256319b9c8",
     "projection": "a518f15194644cb07603f00246db122aac8cfd1f655ddf983c7bc7b4d0d390ef",
-    "script": "c7db6278c792e79375832e723eda406734dd9e2a006b1c70b6a911c48e8382a6",
+    "script": "4e02645b8d63926a14dd533b0f931c39ba7aba815a6c462c35fe2a4c70205aec",
     "self_bottleneck": "efa40265600dc3d24976379f5605492932c3b23abe70e0a0b0c936454b3aa197",
     "tower": "c59e17f45bd93129864e54c07eb5c27a5fbb96bdd6fe1fdedcff94a7d5249597"
   },

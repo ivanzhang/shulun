@@ -1,0 +1,97 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_deletion_divergence_lower_bound_router",
+  "deletion_divergence_lower_bound_reduced": true,
+  "deletion_summary": {
+    "all_deletion_positive": true,
+    "max_survival_rate": 0.3128205128205128,
+    "min_deletion_potential": 1.1621256943904354,
+    "min_deletion_rate": 0.6871794871794872,
+    "row_count": 6
+  },
+  "global_deletion_divergence_closed": false,
+  "hro_summary": {
+    "all_certified_deletion_positive": true,
+    "all_nonempty_survival_bounded_by_union": true,
+    "max_occupied_rate": 0.30256410256410254,
+    "max_tail_independent_rate": 0.08753315649867374,
+    "max_union_bound_rate": 0.3435897435897436,
+    "min_certified_deletion_lb_rate": 0.6564102564102564,
+    "row_count": 6
+  },
+  "narrowest_deletion_hardpoint": "OccupancySaturationPDECOrColumnCRT",
+  "open_final_gates": [
+    "OccupancySaturationPDECOrColumnCRT"
+  ],
+  "review_conclusion": "全局删除势发散下界继续压窄：HRO 引理证明若删除势不发散，就必须出现 `OccupancySaturation` 或 `TailIndependence`。后者已由 NoDeletion-KL/CleanKLS 路由吸收；因此删除侧真正剩余是排斥占用饱和，或把占用饱和送入 PDEC/ColumnCRT。",
+  "router_law": "HRO gives S_t subset Occ_t union TI_t. If the deletion potential does not diverge, then on a positive subsequence the average Occ/r + TI/r must tend to one. The TI branch is precisely promoted-prime non-necessity and is already routed to NoDeletion-KL/PDEC or CleanKLS/SC9. Therefore the deletion-divergence lower-bound problem is reduced to excluding OccupancySaturation: near-full old-hole residue occupancy must imply a lower-level capacity contradiction, PDEC, or ColumnCRT.",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "GlobalDeletionPotentialDivergenceLowerBound",
+      "gate": "DeletionDivergenceHardpointActive",
+      "meaning": "上一层已把删除侧压到全局删除势发散下界。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'row_count': 6, 'min_deletion_rate': 0.6871794871794872, 'min_deletion_potential': 1.1621256943904354, 'max_survival_rate': 0.3128205128205128, 'all_deletion_positive': True}",
+      "gate": "PromotedPrimeEssentialityMaterialized",
+      "meaning": "当前物化层中 promoted prime 的必要性删除势为正；删除不是统计噪声。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "S_t subset Occ_t union TI_t",
+      "gate": "HROBarrierRegistered",
+      "meaning": "HRO 引理给出幸存 fiber 只能来自旧洞 residue 占用或 Tail 独立完成。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'row_count': 6, 'min_certified_deletion_lb_rate': 0.6564102564102564, 'max_union_bound_rate': 0.3435897435897436, 'max_occupied_rate': 0.30256410256410254, 'max_tail_independent_rate': 0.08753315649867374, 'all_nonempty_survival_bounded_by_union': True, 'all_certified_deletion_positive': True}",
+      "gate": "CurrentHROLayersDelete",
+      "meaning": "当前 HRO 物化层中 union bound 严格控制幸存率，且认证删除下界均为正。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "if sum D_n finite, Occ/r + TI/r -> 1 on a positive subsequence",
+      "gate": "DivergenceFailureForcesSaturationOrTailIndependence",
+      "meaning": "若删除势不可发散，则 HRO 迫使占用近满或 Tail 独立近满，没有第三种删除逃逸。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "CleanKLSDLSLargeSieveOrExternalKLSInput",
+      "gate": "TailIndependenceRoutedToNoDeletionKLClean",
+      "meaning": "Tail 独立近满就是 promoted prime 非必要，已进入 NoDeletion-KL/PDEC 或 CleanKLS/SC9 分支。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "only OccupancySaturation remains on deletion side",
+      "gate": "DeletionDivergenceLowerBoundReduced",
+      "meaning": "删除发散下界已压到 OccupancySaturation 排斥；TailIndependence 已回流 NoDeletion/CleanKLS。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "near-full old-hole residues not globally excluded",
+      "gate": "OccupancySaturationPDECOrColumnCRT",
+      "meaning": "仍需证明 |Occ_t|/r -> 1 的占用饱和会触发低层容量矛盾、PDEC 或 ColumnCRT。"
+    }
+  ],
+  "source_hashes": {
+    "deletion_bridge": "49b8f46bbbd5d90a05845b28f5f469324e9c189dfea194e7822881d57ac50eeb",
+    "deletion_profile_1": "8b34995a901e333ad2888c86387bcc4c323f6be27749470dbeb8c93c16c6cec8",
+    "deletion_profile_2": "a42fc64a8f8741a8628133ddea496778cc07d2158f1a09b381adba01b92376f1",
+    "hro_audit_1": "69deae251f17fe9bd22a2d38e093325f608fbe4b17de0e6da98efc00ee7f33e9",
+    "hro_audit_2": "4c42aa7915919e83b3e2ef3e04891b282e1b9d78f80a0d80caa429888d4bba04",
+    "hro_lemma": "5a8c2d8487c31679a7118992498474074b6c160af6a3ac6007d792812c7baeed",
+    "nodeletion_terminal": "7c747233fa3af53c52530da304d0493326c7a6f32531e22db0d16d1e1100184b",
+    "script": "2edd0eeb47324e82faf903727dfccd6d7e72b55da6aad341a5efbc9a2371315b"
+  },
+  "status": "deletion_divergence_lower_bound_reduced_to_occupancy_saturation"
+}
