@@ -1,0 +1,92 @@
+{
+  "certificate_type": "triad_a1_dibfi_self_contained_antiatom_nogo_router",
+  "closed_nogo_gates": [
+    "PriorSelfContainedAntiAtomInputPinned",
+    "AntiAtomContractPinned",
+    "MovingDeltaCountermodelAdmissible",
+    "ProjectionRepairRoutesBlocked",
+    "ExternalFullSKLSExtStillAvailable",
+    "SelfContainedGenericAntiAtomRefuted",
+    "RouteClassificationClosed"
+  ],
+  "external_contract_version_closed": true,
+  "moving_delta_counterexample": {
+    "antiatom_left_side": "max M_{u,v}/sum M_{u,v}=1",
+    "antiatom_required": "log^{-2A}",
+    "model": "one moving same-(u,v) block carries all final source capacity",
+    "verdict": "violates anti-atom for large P"
+  },
+  "nogo_rows": [
+    {
+      "closed": true,
+      "evidence": "previous terminal=NewFullSNonAPSourceAntiAtomTheoremInput; open=['NewFullSNonAPSourceAntiAtomTheoremInput']; self_contained_closed=False.",
+      "gate": "PriorSelfContainedAntiAtomInputPinned",
+      "next_target": "AntiAtomTheoremValidityTest",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "For the final full-S non-AP WFD source capacity measure M_{u,v}, prove max_{u,v} M_{u,v}/sum_{u,v}M_{u,v} <= log^{-2A} for every A.",
+      "gate": "AntiAtomContractPinned",
+      "next_target": "MovingDeltaCountermodel",
+      "remaining": "none at statement level"
+    },
+    {
+      "closed": true,
+      "evidence": "SourceBlockEntropy records moving-delta models: formal well-factorable, Type-I/II, and Fourier-smoothing templates may all pass while one moving (u,v) block carries all capacity.",
+      "gate": "MovingDeltaCountermodelAdmissible",
+      "next_target": "SelfContainedGenericAntiAtomRefuted",
+      "remaining": "anti-atom is false for the current generic template class"
+    },
+    {
+      "closed": true,
+      "evidence": "K4/K6 do not imply moving factor support, and naive factor-residue incidence is blocked by the internal atom fiber.",
+      "gate": "ProjectionRepairRoutesBlocked",
+      "next_target": "SelfContainedGenericAntiAtomRefuted",
+      "remaining": "no existing internal projection route repairs the countermodel"
+    },
+    {
+      "closed": true,
+      "evidence": "FullS-KLS-ext external theorem contract is already closed.",
+      "gate": "ExternalFullSKLSExtStillAvailable",
+      "next_target": "ExternalContractOnlyOrStrengthenedSource",
+      "remaining": "this is an external-contract closure, not a self-contained proof"
+    },
+    {
+      "closed": true,
+      "evidence": "The demanded anti-atom inequality fails on the admissible moving-delta capacity model: max M_{u,v}/sum M_{u,v}=1, not log^{-2A}.",
+      "gate": "SelfContainedGenericAntiAtomRefuted",
+      "next_target": "StrengthenedSourceAxiomOrExternalContract",
+      "remaining": "current generic full-S self-contained branch cannot be closed as stated"
+    },
+    {
+      "closed": true,
+      "evidence": "The branch is classified completely: external-contract version is closed; current generic self-contained version is refuted unless the source contract is strengthened.",
+      "gate": "RouteClassificationClosed",
+      "next_target": "NoCurrentSelfContainedGenericClosureWithoutNewAxiom",
+      "remaining": "none at route-classification level"
+    }
+  ],
+  "open_nogo_gates": [],
+  "previous_terminal_gap": "NewFullSNonAPSourceAntiAtomTheoremInput",
+  "review_conclusion": "自足版 generic full-S 反原子输入被 moving-delta 模型反证；外部合同版已由 FullS-KLS-ext 闭合。当前 generic 自足版若不增强源头假设，不存在有效闭合证明。",
+  "self_contained_generic_version_closed_as_proof": false,
+  "self_contained_generic_version_refuted": true,
+  "source_hashes": {
+    "exact_factor_support_json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "factor_residue_incidence_json": "be50163987cdc54179f3e439e32c390bc8df4dbde950f12a04ecad09b5f06e80",
+    "full_s_kls_ext_json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "script": "95f1db16524dd1f2db4767760d3602af20cfbabb6924bf066c852a7fd711fea8",
+    "source_antiatom_json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "source_block_entropy_json": "2a70d49f65ae40245a6233d66fdefeba4e5dbb1a41bcb2c3e6c3e059a0868758",
+    "terminal_split_json": "68cbb58cee80000dafab75f8a8bcd7bcb66fb3ddf498986d81d418df7a610404"
+  },
+  "status": "self_contained_generic_full_s_antiatom_refuted_external_contract_closed",
+  "structural_law": "The current generic full-S non-AP self-contained branch is not merely unproved; its final anti-atom theorem is false under the recorded formal WFD/Type/Fourier hypotheses. A moving-delta capacity measure passes those formal templates while violating the required log-power anti-atom bound. Therefore no self-contained closure exists for the current generic statement without adding a strengthened source anti-atom axiom, restricting the source branch, or accepting FullS-KLS-ext externally.",
+  "terminal_gap_after_router": "NoCurrentSelfContainedGenericFullSClosureWithoutNewSourceAxiom",
+  "terminal_gap_expansion": [
+    "AcceptExternalFullSKLSExt",
+    "AddStrengthenedSourceAntiAtomAxiom",
+    "RestrictToCanonicalSourceBranch"
+  ]
+}
