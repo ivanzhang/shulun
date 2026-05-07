@@ -70,6 +70,7 @@ DEFAULT_SQUAREFREE_BUCHSTAB_SUPPORT = (
 )
 DEFAULT_LAYER_TRANSFER = DOCS / "prime-matrix-triad-a1-layer-transfer-router.json"
 DEFAULT_SELECTOR_RETENTION = DOCS / "prime-matrix-triad-a1-selector-retention-router.json"
+DEFAULT_PATH_PARTITION = DOCS / "prime-matrix-triad-a1-path-partition-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -146,6 +147,7 @@ def build_frontier_rows(
     squarefree_buchstab_support: dict[str, Any],
     layer_transfer: dict[str, Any],
     selector_retention: dict[str, Any],
+    path_partition: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -436,6 +438,18 @@ def build_frontier_rows(
             ),
             "next_action": "把 K6/polylog 标签提升为 exact path partition，证明无抵消；失败块回 PDEC/SAE。",
         },
+        {
+            "frontier": "A1PathPartitionNoCancellationRouter",
+            "status": "exact_decision_tree_formula_or_external_dibfi_required"
+            if path_partition["next_internal_target"]
+            == "ExactRIWDecisionTreeFormulaOrCleanReturn"
+            else "path_partition_gap",
+            "evidence": (
+                f"无抵消已化为完整 RIW/Buchstab 决策树公式与路径预算；"
+                f"terminal_gap={path_partition['terminal_gap_after_router']}。"
+            ),
+            "next_action": "写出 canonical RIW/Buchstab exact decision-tree 系数公式；超预算或非互斥块回 PDEC/SAE。",
+        },
     ]
 
 
@@ -467,6 +481,7 @@ def run(
     squarefree_buchstab_support_path: Path,
     layer_transfer_path: Path,
     selector_retention_path: Path,
+    path_partition_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -496,6 +511,7 @@ def run(
     squarefree_buchstab_support = load_json(squarefree_buchstab_support_path)
     layer_transfer = load_json(layer_transfer_path)
     selector_retention = load_json(selector_retention_path)
+    path_partition = load_json(path_partition_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -524,6 +540,7 @@ def run(
         squarefree_buchstab_support,
         layer_transfer,
         selector_retention,
+        path_partition,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -552,6 +569,7 @@ def run(
         "layer_transfer_thin_return_or_external_dibfi_required",
         "selector_retention_clean_return_or_external_dibfi_required",
         "finite_signature_no_cancellation_or_external_dibfi_required",
+        "exact_decision_tree_formula_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -596,6 +614,7 @@ def run(
             ),
             "a1_layer_transfer_json": file_sha256(layer_transfer_path),
             "a1_selector_retention_json": file_sha256(selector_retention_path),
+            "a1_path_partition_json": file_sha256(path_partition_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -607,7 +626,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "FiniteSignatureNoCancellationOrCleanReturn"
+            "ExactRIWDecisionTreeFormulaOrCleanReturn"
             "OrExternalDIBFIOriginalDispersion"
         ),
         "structural_law": (
@@ -629,7 +648,8 @@ def run(
             "Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；"
             "exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；"
             "selector 保留率又被 finite-signature pigeonhole 压成 exact path partition、无抵消与 clean 退出；"
-            "当前无黑箱版只剩 FiniteSignatureNoCancellationOrCleanReturn，"
+            "无抵消进一步化为完整 RIW/Buchstab 决策树公式、路径数预算与 clean 退出；"
+            "当前无黑箱版只剩 ExactRIWDecisionTreeFormulaOrCleanReturn，"
             "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
@@ -650,8 +670,10 @@ def run(
             "Squarefree Buchstab 的普通厚区间计数层已被压下去。"
             "exact 层转移又被压缩为 selector 保留率/clean 退出合同。"
             "selector 保留率已由有限签名 pigeonhole 处理到条件形式。"
-            "下一步不再是普通计数或保留率常数，而是把 K6 有限标签提升为 exact path partition，"
-            "证明所选路径无抵消；失败块必须回 PDEC/SAE。或者给出外部 DI/BFI 原始 dispersion 引用。"
+            "无抵消已被决策树分割条件化。"
+            "下一步不再是普通计数、保留率常数或谱估计，而是写出 canonical RIW/Buchstab exact "
+            "decision-tree 系数公式，并证明完整路径数仍在 K6/polylog 预算内；失败块必须回 PDEC/SAE。"
+            "或者给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
 
@@ -695,7 +717,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  CanonicalRIW support reduces to squarefree Buchstab layer support；",
         "  thick squarefree Buchstab counting is paid; exact layer transfer and thin return remain；",
         "  layer transfer reduces to canonical selector retention or clean return；",
-        "  selector retention reduces to finite signatures, no-cancellation and clean return。",
+        "  selector retention reduces to finite signatures, no-cancellation and clean return；",
+        "  no-cancellation reduces to exact RIW/Buchstab decision tree formula or clean return。",
         "```",
         "",
         "## 2. 汇总",
@@ -756,11 +779,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "SquarefreeBuchstabSupport router materialized；",
             "CanonicalLayerTransfer router materialized；",
             "CanonicalSelectorRetention router materialized；",
-            "remaining independent gap is finite-signature no-cancellation/clean return or external DI/BFI original dispersion。",
+            "PathPartitionNoCancellation router materialized；",
+            "remaining independent gap is exact RIW/Buchstab decision-tree formula/clean return or external DI/BFI original dispersion。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是 exact path partition、无抵消与 clean 退出合同：",
-            "证明 FiniteSignatureNoCancellationOrCleanReturn，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "所以下一步唯一值得硬攻的 A1 目标是 exact RIW/Buchstab 决策树公式与 clean 退出合同：",
+            "证明 ExactRIWDecisionTreeFormulaOrCleanReturn，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -839,6 +863,7 @@ def main() -> None:
     parser.add_argument(
         "--selector-retention-json", type=Path, default=DEFAULT_SELECTOR_RETENTION
     )
+    parser.add_argument("--path-partition-json", type=Path, default=DEFAULT_PATH_PARTITION)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -871,6 +896,7 @@ def main() -> None:
         squarefree_buchstab_support_path=args.squarefree_buchstab_support_json,
         layer_transfer_path=args.layer_transfer_json,
         selector_retention_path=args.selector_retention_json,
+        path_partition_path=args.path_partition_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

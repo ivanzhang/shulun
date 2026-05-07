@@ -4628,3 +4628,79 @@ terminal_dual_gap => FiniteSignatureNoCancellationOrCleanReturnOrExternalDIBFIOr
 这一步把 selector retention 的数量问题化为有限签名 pigeonhole。继续无黑箱硬攻时，重点不再是
 找新的统计常数，而是把 RIW/Buchstab 递归写成 disjoint exact path partition，并证明所选路径
 没有系数抵消；若做不到，必须由 clean 准入的反向合同把该块送回已有 PDEC/SAE 出口。
+
+## 85. A1 有限签名无抵消化为 exact RIW/Buchstab 决策树公式
+
+新增 `experiments/prime_matrix_triad_a1_path_partition_router.py` 后，第 84 节留下的
+`FiniteSignatureNoCancellationOrCleanReturn` 被继续压缩。核心结论是：无抵消不是新的谱估计；
+若把签名细化到完整的 RIW/Buchstab 决策轨迹，则路径天然互斥，同一路径系数是非零局部分支因子的乘积。
+
+机器结果：
+
+```text
+status=finite_signature_no_cancellation_reduced_to_exact_decision_tree_or_clean_return；
+next_internal_target=ExactRIWDecisionTreeFormulaOrCleanReturn；
+terminal_gap_after_router=ExactRIWDecisionTreeFormulaOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+决策树无抵消律：
+
+```text
+refine signature to the complete RIW/Buchstab decision trace;
+complete traces are disjoint by deterministic branch history;
+same-trace coefficient is a nonzero product of local branch factors;
+therefore no-cancellation is structural, not spectral;
+remaining issue: exact formula + path-count budget, or clean return.
+```
+
+本步条件闭合的部分是：
+
+```text
+DisjointPathPartition:
+  一旦签名记录完整分支历史，每个 squarefree product 至多落入一条完整路径；
+
+SamePathNonzeroCoefficient:
+  同一路径上的系数由固定奇偶、截断与局部分支因子相乘得到；
+  若局部分支因子非零，则不存在同一路径内部抵消。
+```
+
+仍未闭合的 exact 门控是：
+
+```text
+CompleteDecisionTraceSignature:
+  当前有限标签必须细化为完整 RIW/Buchstab 分支轨迹；
+
+FullSignatureCountBudget:
+  细化后的完整路径数仍必须 <= log^J，且 E+J <= C；
+
+NonDecisionTreeCleanReturn:
+  若 exact 权重不能写成互斥决策树，或完整路径数超预算，
+  则该块必须触发 tail-label/PDEC/SAE 退出。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+ExactRIWDecisionTreeFormulaOrCleanReturn:
+  write the canonical RIW/Buchstab coefficients as a complete disjoint decision-tree expansion;
+  prove the complete trace count stays within the K6/polylog budget;
+  otherwise return over-budget/non-disjoint/cancelling blocks to edge/PDEC/SAE.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1PathPartitionNoCancellationRouter => exact_decision_tree_formula_or_external_dibfi_required；
+terminal_dual_gap => ExactRIWDecisionTreeFormulaOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把“无抵消”从解析硬点降成 exact 系数公式硬点。继续无黑箱硬攻时，必须直接写出
+canonical RIW/Buchstab 系数的完整决策树展开，并把路径数账本与 K6/polylog 预算接死；否则只能
+把超预算、非互斥或抵消块送回已有 PDEC/SAE 出口，或采用外部 DI/BFI 原始 dispersion。

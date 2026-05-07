@@ -2,11 +2,11 @@
 
 **状态：** `same_set_capacity_frontier_materialized_terminal_dual_open`
 
-Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的普通厚区间计数层已被压下去。exact 层转移又被压缩为 selector 保留率/clean 退出合同。selector 保留率已由有限签名 pigeonhole 处理到条件形式。下一步不再是普通计数或保留率常数，而是把 K6 有限标签提升为 exact path partition，证明所选路径无抵消；失败块必须回 PDEC/SAE。或者给出外部 DI/BFI 原始 dispersion 引用。
+Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的普通厚区间计数层已被压下去。exact 层转移又被压缩为 selector 保留率/clean 退出合同。selector 保留率已由有限签名 pigeonhole 处理到条件形式。无抵消已被决策树分割条件化。下一步不再是普通计数、保留率常数或谱估计，而是写出 canonical RIW/Buchstab exact decision-tree 系数公式，并证明完整路径数仍在 K6/polylog 预算内；失败块必须回 PDEC/SAE。或者给出外部 DI/BFI 原始 dispersion 引用。
 
 ## 1. 结构律
 
-同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；selector 保留率又被 finite-signature pigeonhole 压成 exact path partition、无抵消与 clean 退出；当前无黑箱版只剩 FiniteSignatureNoCancellationOrCleanReturn，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。
+同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；selector 保留率又被 finite-signature pigeonhole 压成 exact path partition、无抵消与 clean 退出；无抵消进一步化为完整 RIW/Buchstab 决策树公式、路径数预算与 clean 退出；当前无黑箱版只剩 ExactRIWDecisionTreeFormulaOrCleanReturn，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。
 
 ```text
 Same-set capacity upper:
@@ -34,14 +34,15 @@ Same-set capacity upper:
   CanonicalRIW support reduces to squarefree Buchstab layer support；
   thick squarefree Buchstab counting is paid; exact layer transfer and thin return remain；
   layer transfer reduces to canonical selector retention or clean return；
-  selector retention reduces to finite signatures, no-cancellation and clean return。
+  selector retention reduces to finite signatures, no-cancellation and clean return；
+  no-cancellation reduces to exact RIW/Buchstab decision tree formula or clean return。
 ```
 
 ## 2. 汇总
 
 - `all_known_frontiers_routed=True`。
-- `terminal_dual_gap=FiniteSignatureNoCancellationOrCleanReturnOrExternalDIBFIOriginalDispersion`。
-- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'canonical_riw_factor_support_or_external_dibfi_required': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'exact_factor_support_or_external_dibfi_required': 1, 'exact_wfd_source_entropy_or_external_dibfi_required': 1, 'external_kls_input_registered_self_contained_atom_open': 1, 'factor_residue_incidence_or_canonical_riw_support_required': 1, 'finite_signature_no_cancellation_or_external_dibfi_required': 1, 'layer_transfer_thin_return_or_external_dibfi_required': 1, 'moving_block_spread_or_external_dibfi_required': 1, 'no_fourth_exit': 1, 'nodeletion_terminal_routed_clean_kls_open': 1, 'positive_deletion_potential_or_nodeletion_kl': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'sc9_routed_to_ncblk_or_external_dibfi': 1, 'selective_promotion_resolved_by_finite_split': 1, 'selector_retention_clean_return_or_external_dibfi_required': 1, 'source_block_entropy_or_external_dibfi_required': 1, 'squarefree_buchstab_support_or_external_dibfi_required': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
+- `terminal_dual_gap=ExactRIWDecisionTreeFormulaOrCleanReturnOrExternalDIBFIOriginalDispersion`。
+- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'canonical_riw_factor_support_or_external_dibfi_required': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'exact_decision_tree_formula_or_external_dibfi_required': 1, 'exact_factor_support_or_external_dibfi_required': 1, 'exact_wfd_source_entropy_or_external_dibfi_required': 1, 'external_kls_input_registered_self_contained_atom_open': 1, 'factor_residue_incidence_or_canonical_riw_support_required': 1, 'finite_signature_no_cancellation_or_external_dibfi_required': 1, 'layer_transfer_thin_return_or_external_dibfi_required': 1, 'moving_block_spread_or_external_dibfi_required': 1, 'no_fourth_exit': 1, 'nodeletion_terminal_routed_clean_kls_open': 1, 'positive_deletion_potential_or_nodeletion_kl': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'sc9_routed_to_ncblk_or_external_dibfi': 1, 'selective_promotion_resolved_by_finite_split': 1, 'selector_retention_clean_return_or_external_dibfi_required': 1, 'source_block_entropy_or_external_dibfi_required': 1, 'squarefree_buchstab_support_or_external_dibfi_required': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
 - `lp_summary={'q': 2310, 'p_count': 9, 'all_zero_blocks_ready': True, 'box_only_global_closure': False, 'box_only_obstruction_count': 9, 'row_generators_ready': ['nonnegativity', 'phase_caps_g_le_M', 'WHOLEDEF_zero_block', 'BRIDGED_zero_block']}`。
 - `fourier_summary={'q': 2310, 'p_count': 9, 'class_counts': {'EmptyCap': 8267, 'PersistentCap': 192813, 'SparseCap': 48292}, 'has_persistent_cap': True}`。
 - `dualcap_summary={'aggregate_class_counts': {'ForcedPersistentByDensityBarrier': 24, 'PersistentCap': 68, 'SparseCap': 16}, 'aggregate_route_counts': {'LiftOrColumnTailOrCleanKLS': 24, 'LocalSurvivorOrExplicitPDEC': 16, 'RefinedPDECOrColumnTailRows': 68}}`。
@@ -77,6 +78,7 @@ Same-set capacity upper:
 | `A1SquarefreeBuchstabSupportRouter` | `layer_transfer_thin_return_or_external_dibfi_required` | 厚区间 squarefree 计数层已由 Mertens/Buchstab 支付；terminal_gap=CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturnOrExternalDIBFIOriginalDispersion。 | 证明 exact canonical 层承认/非零转移，并把薄或未承认块送回 PDEC/SAE；外部版引用 DI/BFI。 |
 | `A1CanonicalLayerTransferRouter` | `selector_retention_clean_return_or_external_dibfi_required` | exact 层转移已化为 selector 保留率或 clean 退出合同；terminal_gap=CanonicalSelectorRetentionOrCleanReturnOrExternalDIBFIOriginalDispersion。 | 固定 exact RIW/Buchstab selector，证明其保留 log-power 支撑；失败块回 PDEC/SAE。 |
 | `A1CanonicalSelectorRetentionRouter` | `finite_signature_no_cancellation_or_external_dibfi_required` | selector 保留率已化为有限签名 pigeonhole 加无抵消/退出合同；terminal_gap=FiniteSignatureNoCancellationOrCleanReturnOrExternalDIBFIOriginalDispersion。 | 把 K6/polylog 标签提升为 exact path partition，证明无抵消；失败块回 PDEC/SAE。 |
+| `A1PathPartitionNoCancellationRouter` | `exact_decision_tree_formula_or_external_dibfi_required` | 无抵消已化为完整 RIW/Buchstab 决策树公式与路径预算；terminal_gap=ExactRIWDecisionTreeFormulaOrCleanReturnOrExternalDIBFIOriginalDispersion。 | 写出 canonical RIW/Buchstab exact decision-tree 系数公式；超预算或非互斥块回 PDEC/SAE。 |
 
 ## 4. 当前结论
 
@@ -110,8 +112,9 @@ CanonicalRIWFactorSupport router materialized；
 SquarefreeBuchstabSupport router materialized；
 CanonicalLayerTransfer router materialized；
 CanonicalSelectorRetention router materialized；
-remaining independent gap is finite-signature no-cancellation/clean return or external DI/BFI original dispersion。
+PathPartitionNoCancellation router materialized；
+remaining independent gap is exact RIW/Buchstab decision-tree formula/clean return or external DI/BFI original dispersion。
 ```
 
-所以下一步唯一值得硬攻的 A1 目标是 exact path partition、无抵消与 clean 退出合同：
-证明 FiniteSignatureNoCancellationOrCleanReturn，或给出可复核的外部 DI/BFI 原始 dispersion 引用。
+所以下一步唯一值得硬攻的 A1 目标是 exact RIW/Buchstab 决策树公式与 clean 退出合同：
+证明 ExactRIWDecisionTreeFormulaOrCleanReturn，或给出可复核的外部 DI/BFI 原始 dispersion 引用。
