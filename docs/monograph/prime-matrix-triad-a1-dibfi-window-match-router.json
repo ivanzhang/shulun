@@ -1,0 +1,79 @@
+{
+  "all_gates_closed": false,
+  "certificate_type": "triad_a1_dibfi_window_match_router",
+  "gate_rows": [
+    {
+      "available": "BFI Theorem 10 and DI Theorem 12 are registered",
+      "closed": true,
+      "gap": "none",
+      "gate": "TheoremLocationsPinned",
+      "needed": "do not spend proof effort on theorem-number search",
+      "route": "use theorem-location router output"
+    },
+    {
+      "available": "previous router fixes the generic noncanonical WFD external branch",
+      "closed": true,
+      "gap": "none",
+      "gate": "GenericWFDContractReady",
+      "needed": "avoid reopening canonical RIW/Buchstab support branch",
+      "route": "stay on generic WFD external branch"
+    },
+    {
+      "available": "SOURCE-CEN no-go blocks free centering; generic router chooses direct uncentered estimate",
+      "closed": true,
+      "gap": "none at target-choice level",
+      "gate": "UncenteredTargetPreserved",
+      "needed": "external theorem application must estimate the original uncentered target",
+      "route": "direct original dispersion, no SOURCE-CEN insertion"
+    },
+    {
+      "available": "KLS template records CRT phase, smooth windows, gcd and B(A) log ledger",
+      "closed": true,
+      "gap": "none at checklist level",
+      "gate": "KloostermanPhaseAndSmoothLedgerReady",
+      "needed": "local variables can be compared row-by-row to DI Theorem 12",
+      "route": "use template as the DI hypothesis table"
+    },
+    {
+      "available": "KZ-E spine states well-factorable lambda_c, divisor-bounded beta_s, smooth omega_h",
+      "closed": true,
+      "gap": "none at formal coefficient-class level",
+      "gate": "CoefficientClassReady",
+      "needed": "coefficient class must match BFI/DI admissible weights",
+      "route": "lambda_c/beta_s/omega_h enter the external theorem hypotheses"
+    },
+    {
+      "available": "KZ-E spine has a dispersion identity from AP discrepancy to WFD-core",
+      "closed": false,
+      "gap": "not yet written as a theorem-by-theorem implication",
+      "gate": "OriginalAPToWFDTargetTransfer",
+      "needed": "prove this transfer uses exactly BFI Theorem 10/DI Theorem 12 without changing target",
+      "route": "write AP discrepancy -> dispersion -> KE-13 transfer lemma"
+    },
+    {
+      "available": "KLS template names C,S,H; KZ-E spine names R0,L0/completion lengths",
+      "closed": false,
+      "gap": "current docs name ranges qualitatively but do not yet prove the exact exponent inequalities",
+      "gate": "WindowScaleInequalities",
+      "needed": "derive explicit inequalities putting current dyadic windows in BFI/DI admissible ranges",
+      "route": "compute C,S,H,Q,N,M against BFI x^(4/7-eps) and DI J-scale terms"
+    }
+  ],
+  "next_external_target": "DIBFIWindowScaleAndTargetTransferMatch",
+  "open_gates": [
+    "OriginalAPToWFDTargetTransfer",
+    "WindowScaleInequalities"
+  ],
+  "review_conclusion": "当前窗口假设匹配已被压成两个最小硬点：一是 AP discrepancy 到 KE-13/WFD-core 的对象不变转移；二是 C,S,H,Q,N,M 等 dyadic 尺度满足 BFI/DI 的显式范围。",
+  "source_hashes": {
+    "dibfi_theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4",
+    "generic_wfd_dibfi_json": "f3d583dd214fa6c1b982c05d8a9795681b00f71b6f38ed63094501e491aba972",
+    "kls_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "457c9cb840bd1e741d731dc293c23e53f457531f757578d441d5b6b48c9877d8",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb"
+  },
+  "status": "dibfi_window_match_reduced_to_target_transfer_and_scale_inequalities",
+  "structural_law": "The current-window match is not a vague citation issue anymore. All fixed interfaces are ready: theorem locations, generic-WFD branch selection, uncentered target choice, Kloosterman phase/smoothing ledger, and formal coefficient class. The remaining proof has exactly two active obligations: show the AP discrepancy to KE-13/WFD transfer is a target-preserving application of BFI/DI, and prove the dyadic window scale inequalities fit the BFI/DI admissible ranges.",
+  "terminal_gap_after_router": "DIBFIWindowScaleAndTargetTransferMatch"
+}

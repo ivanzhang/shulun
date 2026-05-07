@@ -5240,3 +5240,60 @@ terminal_dual_gap => DIBFIOriginalDispersionCurrentWindowHypothesisMatch。
 这一步把“找定理号”的书目硬点剥掉，剩余成为纯粹的假设匹配硬点。下一步必须逐行检查当前
 `KE-13/WFD-core` 是否真的落入 BFI/DI 的定理范围；不能再用“外部 DI/BFI”四个字遮盖对象、
 level 或窗口范围的错配。
+
+## 93. 当前 DI/BFI 窗口匹配压缩为对象转移与尺度不等式
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_window_match_router.py` 后，第 92 节留下的
+`DIBFIOriginalDispersionCurrentWindowHypothesisMatch` 被继续压缩。结论是：定理位置、generic
+WFD 外部分支、未中心化对象、Kloosterman 相位、平滑/gcd 账本和形式系数类都已固定；真正仍活跃的
+只剩两个硬点。
+
+机器结果：
+
+```text
+status=dibfi_window_match_reduced_to_target_transfer_and_scale_inequalities；
+open_gates=[OriginalAPToWFDTargetTransfer, WindowScaleInequalities]；
+terminal_gap_after_router=DIBFIWindowScaleAndTargetTransferMatch。
+```
+
+已经固定的门控是：
+
+```text
+TheoremLocationsPinned:
+  BFI Theorem 10 与 DI Theorem 12 已定位；
+
+GenericWFDContractReady:
+  仍在 generic noncanonical WFD 外部分支，不回退到 canonical support；
+
+UncenteredTargetPreserved:
+  SOURCE-CEN 不能免费插入，目标保持未中心化原始对象；
+
+KloostermanPhaseAndSmoothLedgerReady:
+  CRT 相位归一、平滑窗口、gcd 层与 B(A) 损失账本已可用；
+
+CoefficientClassReady:
+  KZ-E spine 已登记 well-factorable lambda_c、divisor-bounded beta_s 与 smooth omega_h。
+```
+
+仍未闭合的两个硬点是：
+
+```text
+OriginalAPToWFDTargetTransfer:
+  写出 AP discrepancy -> dispersion -> KE-13/WFD-core 的对象不变转移引理，
+  证明调用 BFI/DI 时没有改变原目标、没有免费中心化、没有丢失块对角项；
+
+WindowScaleInequalities:
+  明确 C,S,H,Q,N,M 与 x/P/y 的关系，
+  证明所有 dyadic 窗口满足 BFI Theorem 10 与 DI Theorem 12 的范围，
+  并核查 DI 的 J-scale 项足以给当前所需 log-saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFIWindowMatchRouter => dibfi_window_match_reduced_to_target_transfer_and_scale_inequalities；
+terminal_dual_gap => DIBFIWindowScaleAndTargetTransferMatch。
+```
+
+这一步避免继续泛化拆分：当前外部 DI/BFI 版只剩一个合取命题，即“对象不变转移 + 尺度不等式”
+同时成立。下一步应优先写出这两个子式的共同变量表，否则不能诚实宣称 generic WFD 外部引用版闭合。
