@@ -146,7 +146,7 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -159,11 +159,34 @@ narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCle
 若删除停止但 KL/互信息偏斜，则回流 new-layer/refined PDEC。
 ```
 
-所以当前真正剩余是二选一的终端估计：
+继续攻入不持久 `Gamma` 分支后，新增 diffuse 终端分裂路由器：
+
+```text
+experiments/prime_matrix_pdec_cap_diffuse_terminal_split_router.py
+docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
+
+diffuse_terminal_split_closed=true；
+self_contained_diffuse_terminal_closed=false；
+narrowest_diffuse_hardpoint=
+  GlobalDeletionDivergenceOrSupportExhaustion_OR_SelfContainedKuznetsovLSAtomSC9。
+```
+
+通俗说，不持久分支不再只是“删除势 / NoDeletion / CleanKLS”这个宽口径描述。现在链条已经拆成：
+
+```text
+持续删除 -> 需要证明全局删除势发散会耗尽可覆盖支撑；
+删除停止 + KL/互信息偏斜 -> 回流 refined/new-layer PDEC；
+删除停止 + KL/互信息平坦 -> CleanKLS/DLS；
+CleanKLS 的 K1--K9 任一失败 -> 回流 PDEC/SAE/Multiplicity/Promotion；
+K1--K9 全过 -> 外部 KLS 版可引用深定理，自足版剩 SC-9。
+```
+
+所以当前真正剩余是更窄的二选一终端估计：
 
 ```text
 持久 Gamma：证明 U_CRT^multi < L_PDEC^multi；
-不持久 Gamma：证明删除势发散、NoDeletion-KL 回流 PDEC，或 KL 平坦 CleanKLS/DLS。
+不持久 Gamma：证明 GlobalDeletionDivergenceOrSupportExhaustion，
+              或证明 SelfContainedKuznetsovLSAtomSC9。
 ```
 
 ## 7. 已并入合著的文件

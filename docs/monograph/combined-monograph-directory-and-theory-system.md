@@ -2428,9 +2428,9 @@ closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
   SameSetPDECDualComparisonForPersistentMFU,
-  GlobalFiberDeletionOrNoDeletionKLCleanKLS
+  DiffuseGlobalDeletionOrSelfContainedSC9
 ]；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2441,15 +2441,40 @@ NoDeletion-KL/PDEC/CleanKLS；ForcedCap 已进入多桶 ActualPaymentStitching�
 若所有有限签名都不持久，则进入分散 `CleanKLS/DLS` 输入，或由 FiberDeletion /
 NoDeletion-KL 回流剥离。
 
-因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明二选一解析终端：
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_diffuse_terminal_split_router.py
+docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
+```
+
+该路由器进一步压缩不持久 `Gamma` 分支：
+
+```text
+diffuse_terminal_split_closed=true；
+self_contained_diffuse_terminal_closed=false；
+open_final_gates=[
+  GlobalDeletionDivergenceOrSupportExhaustion,
+  SelfContainedKuznetsovLSAtomSC9
+]；
+narrowest_diffuse_hardpoint=
+  GlobalDeletionDivergenceOrSupportExhaustion_OR_SelfContainedKuznetsovLSAtomSC9。
+```
+
+结构含义是：`FiberDeletion/NoDeletion-KL/CleanKLS` 不再是宽口径未命名剩余。持续删除必须支付全局删除势；
+删除停止时 KL/互信息偏斜回流 refined/new-layer `PDEC`；只有 KL/互信息平坦才进入 `CleanKLS/DLS`，
+而 `CleanKLS` 的 K1--K9 admission 失败项全部回流 `PDEC/SAE/Multiplicity/Promotion`。外部深定理版
+可在明确引用窗口化 KLS/DI/BFI/Kuznetsov 输入时吸收 flat clean 分支；完全自足版仍剩命名原子 `SC-9`。
+
+因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明更窄的二选一解析终端：
 
 ```text
 Persistent-MFU PDEC:
   持久 Gamma 分支给出多桶同集 LP/对偶容量证书 U_CRT^multi<L_PDEC^multi；
 
-Diffuse CleanKLS/DLS:
-  无持久 Gamma 分支证明删除势发散、NoDeletion-KL/PDEC 回流，
-  或对 KL 平坦 clean residual 给出内部大筛吸收/外部 KLS 适配；
+Diffuse GlobalDeletion/SC9:
+  无持久 Gamma 分支证明全局删除势发散/支撑耗尽耦合，
+  或证明 KL 平坦 clean residual 的自足 Kuznetsov-LS atom SC-9；
 
 Referee promotion:
   D-structure/Tail-log4/finite Rankin 接口被独立接受。

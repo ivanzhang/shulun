@@ -91,10 +91,13 @@ def build_rows(
     no_cycle_text: str,
 ) -> list[dict[str, Any]]:
     """生成 APS 投影塔二分审查表。"""
-    pdec_cap_requests_aps = (
-        pdec_cap["narrowest_next_hardpoint"]
-        == "ProfiniteActualPaymentStitchingDichotomy"
-    )
+    pdec_cap_frontier = pdec_cap["narrowest_next_hardpoint"]
+    # APS 闭合后，上一层前沿会推进到两侧终端估计；重跑时不能把这个稳定状态误判成未请求 APS。
+    pdec_cap_requests_aps = pdec_cap_frontier in {
+        "ProfiniteActualPaymentStitchingDichotomy",
+        "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS",
+        "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9",
+    }
     aps_contract_has_dichotomy = has_all(
         aps_contract_text,
         [
@@ -151,8 +154,8 @@ def build_rows(
         audit_row(
             "PDECCapRequestsAPS",
             pdec_cap_requests_aps,
-            pdec_cap["narrowest_next_hardpoint"],
-            "上一层 PDEC-CAP 前沿已经把最窄逻辑门定位为 APS 投影塔二分。",
+            pdec_cap_frontier,
+            "上一层 PDEC-CAP 前沿已经把 APS 投影塔二分定位为当前门，或已越过 APS 推进到两侧终端估计。",
             False,
         ),
         audit_row(

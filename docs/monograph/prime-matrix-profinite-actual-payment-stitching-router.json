@@ -7,16 +7,16 @@
     "DiffuseCleanKLSDLSEstimateOrFiberDeletionNoDeletionKL"
   ],
   "pdec_cap_same_set_global_dual_closed": false,
-  "profinite_aps_dichotomy_closed": false,
+  "profinite_aps_dichotomy_closed": true,
   "review_conclusion": "APS 的投影塔二分逻辑已闭合：真实支付图 `Gamma_n` 在任意无限反例塔上，要么某个有限签名正 limsup 持久，进入多桶 MFU/PDEC；要么每个固定有限签名质量趋零，进入分散 CleanKLS/DLS 输入，期间若删除势或 KL 偏斜出现则回流 PDEC。这一步关闭的是无名 APS 出口；全局 PDEC-CAP 仍需两侧终端估计。",
   "row_column_unconditional_closed": false,
   "rows": [
     {
       "blocks_final": false,
-      "closed": false,
-      "evidence": "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS",
+      "closed": true,
+      "evidence": "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9",
       "gate": "PDECCapRequestsAPS",
-      "meaning": "上一层 PDEC-CAP 前沿已经把最窄逻辑门定位为 APS 投影塔二分。"
+      "meaning": "上一层 PDEC-CAP 前沿已经把 APS 投影塔二分定位为当前门，或已越过 APS 推进到两侧终端估计。"
     },
     {
       "blocks_final": false,
@@ -62,7 +62,7 @@
     },
     {
       "blocks_final": false,
-      "closed": false,
+      "closed": true,
       "evidence": "finite projection compactness / pigeonhole dichotomy",
       "gate": "ProfiniteActualPaymentStitchingDichotomyClosed",
       "meaning": "APS 的全局二分逻辑闭合；这只排除无名 APS 出口，不证明两侧终端估计。"
@@ -86,9 +86,9 @@
     "aps_contract": "5f86eb483338ddd0a0c3b7317b68c89e5967368a1d2dded81328b338b1d44855",
     "aps_router": "14087651c52f19675e3253aaa3c8f856c0872ae18903f69da7636baa70fd7d2f",
     "continuous_terminal_dichotomy": "9b6c7123864a39f7245ba82e59f8ff5654a725d1b74d690bc0893f668b532609",
-    "pdec_cap_router": "e37b1d917d7ed3e8a661da8b1e5c4dbddc723a32ef4a2ad1ba6fef16fff3df83",
+    "pdec_cap_router": "52ea340fa94680457d94388767d7e3149743a8462fb9d228c8e60797a6be90d5",
     "pdec_no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
-    "script": "1fd265a045a948c538a340c2d320082313c586a82e26e56ffedd0f10bf8d1b62",
+    "script": "329f80c4e9dfaa316ba9b4afadf9e3de1e097c8f456beefbb0041a3383c0c2ef",
     "small_ambiguous": "e27c0c1fbb5fc28d55e466cc4b4b1a635e5d6dc0dc5e8bb42e1bd9f01697cc8d"
   },
   "status": "profinite_actual_payment_stitching_dichotomy_closed_terminal_estimates_open"

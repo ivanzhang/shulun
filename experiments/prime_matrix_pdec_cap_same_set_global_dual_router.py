@@ -37,6 +37,9 @@ DEFAULT_PROJECTION = (
 )
 DEFAULT_APS_CONTRACT = DOCS / "prime-matrix-triad-a1-actual-payment-stitching-contract.md"
 DEFAULT_PROFINITE_APS = DOCS / "prime-matrix-profinite-actual-payment-stitching-router.json"
+DEFAULT_DIFFUSE_TERMINAL = (
+    DOCS / "prime-matrix-pdec-cap-diffuse-terminal-split-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.md"
 
@@ -101,6 +104,7 @@ def build_rows(
     projection_text: str,
     aps_contract_text: str,
     profinite_aps: dict[str, Any],
+    diffuse_terminal: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 PDEC-CAP 前沿审查表。"""
     self_bottleneck_accepts_pdec = (
@@ -181,6 +185,13 @@ def build_rows(
         profinite_aps["status"]
         == "profinite_actual_payment_stitching_dichotomy_closed_terminal_estimates_open"
         and profinite_aps["profinite_aps_dichotomy_closed"]
+    )
+    diffuse_terminal_split_closed = (
+        diffuse_terminal["status"]
+        == "pdec_cap_diffuse_terminal_split_reduced_to_global_deletion_or_sc9"
+        and diffuse_terminal["diffuse_terminal_split_closed"]
+        and diffuse_terminal["narrowest_diffuse_hardpoint"]
+        == "GlobalDeletionDivergenceOrSupportExhaustion_OR_SelfContainedKuznetsovLSAtomSC9"
     )
 
     return [
@@ -269,10 +280,17 @@ def build_rows(
             True,
         ),
         row(
-            "GlobalFiberDeletionOrNoDeletionKLCleanKLS",
+            "DiffuseTerminalSplitRouted",
+            diffuse_terminal_split_closed,
+            diffuse_terminal["narrowest_diffuse_hardpoint"],
+            "不持久 Gamma 分支已合成为删除势/NoDeletion-KL/CleanKLS 的终端分裂，无名 diffuse 出口关闭。",
             False,
-            "new-layer tower finite evidence only",
-            "若 Gamma 不持久或升层继续推进，需证明删除势发散，或 NoDeletion-KL 回流 PDEC，或 KL 平坦进 CleanKLS/DLS。",
+        ),
+        row(
+            "DiffuseGlobalDeletionOrSelfContainedSC9",
+            False,
+            str(diffuse_terminal["open_final_gates"]),
+            "不持久 Gamma 分支剩余自足义务：全局删除势发散/支撑耗尽耦合，或 KL 平坦 clean 残余的 SC-9 谱大筛原子。",
             True,
         ),
         row(
@@ -298,6 +316,7 @@ def run(
     projection_path: Path,
     aps_contract_path: Path,
     profinite_aps_path: Path,
+    diffuse_terminal_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC-CAP 前沿审查。"""
     self_bottleneck = load_json(self_bottleneck_path)
@@ -312,6 +331,7 @@ def run(
     projection_text = read_text(projection_path)
     aps_contract_text = read_text(aps_contract_path)
     profinite_aps = load_json(profinite_aps_path)
+    diffuse_terminal = load_json(diffuse_terminal_path)
 
     rows = build_rows(
         self_bottleneck=self_bottleneck,
@@ -326,6 +346,7 @@ def run(
         projection_text=projection_text,
         aps_contract_text=aps_contract_text,
         profinite_aps=profinite_aps,
+        diffuse_terminal=diffuse_terminal,
     )
     closed_current_materialized = all(
         item["closed"] for item in rows if not item["blocks_final"]
@@ -348,13 +369,14 @@ def run(
             "projection": file_sha256(projection_path),
             "aps_contract": file_sha256(aps_contract_path),
             "profinite_aps": file_sha256(profinite_aps_path),
+            "diffuse_terminal": file_sha256(diffuse_terminal_path),
         },
         "closed_current_materialized_pdec_gates": closed_current_materialized,
         "pdec_cap_same_set_global_dual_closed": False,
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
         "narrowest_next_hardpoint": (
-            "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS"
+            "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseGlobalDeletionOrSC9"
         ),
         "rows": rows,
         "frontier_law": (
@@ -365,14 +387,17 @@ def run(
             "payment stitching. The profinite ActualPaymentStitching dichotomy for the real "
             "payment graph Gamma is now closed as a routing law. Persistent Gamma gives a "
             "multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter "
-            "FiberDeletion/NoDeletion-KL/CleanKLS. The remaining global final gates are the "
-            "two terminal estimates, not an unnamed APS exit."
+            "FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed "
+            "further to global deletion exhaustion or the self-contained Kuznetsov-LS atom "
+            "SC-9. The remaining global final gates are the persistent same-set PDEC dual "
+            "comparison and the narrowed diffuse terminal estimates, not an unnamed APS exit."
         ),
         "review_conclusion": (
             "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
-            "但全局同集对偶证书仍未闭合。最新最窄剩余是两侧终端估计：持久 `Gamma` 的"
-            "多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的"
-            " FiberDeletion、NoDeletion-KL/PDEC 或 KL 平坦 CleanKLS/DLS 吸收。"
+            "diffuse 分支又被压到全局删除势/支撑耗尽或自足 SC-9。"
+            "但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 "
+            "PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 "
+            "`GlobalDeletionDivergenceOrSupportExhaustion` 或 `SelfContainedKuznetsovLSAtomSC9`。"
         ),
     }
 
@@ -397,7 +422,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> current ForcedCap routed to multi-bucket ActualPaymentStitching;",
         "  -> APS profinite dichotomy routed;",
         "  -> remaining terminal estimates:",
-        "       persistent MFU PDEC or diffuse CleanKLS/DLS.",
+        "       persistent MFU PDEC or diffuse global deletion / SC-9.",
         "```",
         "",
         "## 2. 汇总",
@@ -429,8 +454,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "## 4. 下一步",
             "",
             "下一步直接攻两侧终端估计：持久 `Gamma` 分支的多桶同集 PDEC 对偶容量证书 "
-            "`U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的删除势发散、"
-            "NoDeletion-KL/PDEC 或 KL 平坦 CleanKLS/DLS 大筛证书。",
+            "`U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的全局删除势/支撑耗尽耦合 "
+            "或自足 `SelfContainedKuznetsovLSAtomSC9`。",
             "",
         ]
     )
@@ -453,6 +478,7 @@ def main() -> None:
     parser.add_argument("--projection-md", type=Path, default=DEFAULT_PROJECTION)
     parser.add_argument("--aps-contract-md", type=Path, default=DEFAULT_APS_CONTRACT)
     parser.add_argument("--profinite-aps-json", type=Path, default=DEFAULT_PROFINITE_APS)
+    parser.add_argument("--diffuse-terminal-json", type=Path, default=DEFAULT_DIFFUSE_TERMINAL)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -470,6 +496,7 @@ def main() -> None:
         projection_path=args.projection_md,
         aps_contract_path=args.aps_contract_md,
         profinite_aps_path=args.profinite_aps_json,
+        diffuse_terminal_path=args.diffuse_terminal_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
