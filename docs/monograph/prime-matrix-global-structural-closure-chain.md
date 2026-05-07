@@ -5820,3 +5820,79 @@ terminal_dual_gap
 
 因此当前已经不是 AP 源等式问题。AP-source 版本已可用直接 BFI 闭合；若最终命题仍要覆盖
 broader generic WFD 非 AP 源对象，最后剩余变成一个外部原始 dispersion 定理假设匹配问题。
+
+## 101. 非 AP-source fallback：接回既有原始 dispersion 链，终端缩回量化无投影证书
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_nonap_dispersion_router.py` 后，第 100 节留下的
+`DIBFIOriginalDispersionTheoremLocationAndHypothesisMatchForNonAPSource` 不再作为泛泛外部引用问题
+保留。它被接回此前已经建立的原始 dispersion 链条：
+
+```text
+generic WFD original dispersion contract
+  -> DI/BFI theorem locations pinned
+  -> current-window match
+  -> common variable table
+  -> transfer/scale certificate。
+```
+
+机器结果：
+
+```text
+status=nonap_source_dispersion_reduced_to_quantified_no_projection_certificate_open；
+open_transfer_gates=[
+  APErrorRepresentation,
+  DispersionCauchyNoCenteringIdentity,
+  KE13DyadicExhaustionNoProjection
+]；
+open_scale_gates=[
+  BFILevelQuantified,
+  KLSModulusWindowQuantified,
+  InverseVariableWindowQuantified,
+  DIJScaleDominanceSubstitution
+]；
+open_terminal_targets=[
+  NoProjectionUncenteredDispersionIdentity,
+  QuantifiedDIBFIWindowSubstitution
+]；
+terminal_gap_after_router=DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource。
+```
+
+已接线部分：
+
+```text
+NonAPSourceDetected:
+  非 AP generic WFD 分支确认为 AP-source 的补集；
+
+GenericWFDOriginalDispersionContract:
+  generic WFD 外部合同已物化；
+
+TheoremLocationPinned:
+  BFI1987 Theorem 10 与 DI1982 Theorem 12 已定位；
+
+CurrentWindowMatch:
+  当前窗口匹配已压成对象转移与尺度不等式；
+
+CommonVariableTable:
+  X,Q,N,M,C,S,H,lambda,beta,omega,g,A,B(A) 已锁到同一表。
+```
+
+剩余合取证书：
+
+```text
+DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource
+  = NoProjectionUncenteredDispersionIdentity
+    + QuantifiedDIBFIWindowSubstitution。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFINonAPDispersionRouter
+  => nonap_source_dispersion_reduced_to_quantified_no_projection_certificate_open；
+
+terminal_dual_gap
+  => DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource。
+```
+
+这一步的意义是排除继续搜索定理号、重复 AP-source 账本或泛泛引用 DI/BFI 的退路。非 AP-source
+fallback 的真实剩余就是两个内容：未中心化无投影恒等式，以及对 BFI/DI 窗口参数的量化代入。

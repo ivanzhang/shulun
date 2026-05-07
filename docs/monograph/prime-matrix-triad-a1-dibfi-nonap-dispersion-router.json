@@ -1,0 +1,71 @@
+{
+  "certificate_type": "triad_a1_dibfi_nonap_dispersion_router",
+  "chain_rows": [
+    {
+      "closed": true,
+      "evidence": "open_branches=['NonAPSourceGenericWFD']",
+      "next": "GenericWFDOriginalDispersionContract",
+      "stage": "NonAPSourceDetected"
+    },
+    {
+      "closed": true,
+      "evidence": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch",
+      "next": "TheoremLocationPinned",
+      "stage": "GenericWFDOriginalDispersionContract"
+    },
+    {
+      "closed": true,
+      "evidence": "DIBFIOriginalDispersionCurrentWindowHypothesisMatch",
+      "next": "CurrentWindowMatch",
+      "stage": "TheoremLocationPinned"
+    },
+    {
+      "closed": true,
+      "evidence": "open_gates=['OriginalAPToWFDTargetTransfer', 'WindowScaleInequalities']",
+      "next": "CommonVariableTable",
+      "stage": "CurrentWindowMatch"
+    },
+    {
+      "closed": true,
+      "evidence": "DIBFICommonVariableTransferScaleCertificate",
+      "next": "TransferScaleCertificate",
+      "stage": "CommonVariableTable"
+    },
+    {
+      "closed": false,
+      "evidence": "open_transfer=['APErrorRepresentation', 'DispersionCauchyNoCenteringIdentity', 'KE13DyadicExhaustionNoProjection']; open_scale=['BFILevelQuantified', 'KLSModulusWindowQuantified', 'InverseVariableWindowQuantified', 'DIJScaleDominanceSubstitution']",
+      "next": "DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource",
+      "stage": "TransferScaleCertificate"
+    }
+  ],
+  "nonap_dispersion_closed": false,
+  "open_scale_gates": [
+    "BFILevelQuantified",
+    "KLSModulusWindowQuantified",
+    "InverseVariableWindowQuantified",
+    "DIJScaleDominanceSubstitution"
+  ],
+  "open_terminal_targets": [
+    "NoProjectionUncenteredDispersionIdentity",
+    "QuantifiedDIBFIWindowSubstitution"
+  ],
+  "open_transfer_gates": [
+    "APErrorRepresentation",
+    "DispersionCauchyNoCenteringIdentity",
+    "KE13DyadicExhaustionNoProjection"
+  ],
+  "previous_terminal_gap": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatchForNonAPSource",
+  "review_conclusion": "非 AP-source 分支已接回既有原始 dispersion 链条。定理位置、窗口接口与共同变量表都已路由；当前真正剩余是 `NoProjectionUncenteredDispersionIdentity` 与 `QuantifiedDIBFIWindowSubstitution` 的合取证书。",
+  "source_hashes": {
+    "ap_source_branch_json": "81dc79aa0b5f3b6ea295cff13186e2b522f16e701a70cadabced721ac884d0bc",
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "generic_wfd_dibfi_json": "f3d583dd214fa6c1b982c05d8a9795681b00f71b6f38ed63094501e491aba972",
+    "script": "6c5ff013c45982e301480f57d6e4e8c40c329f0323b0fd6879cad457a36fcd9d",
+    "theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4",
+    "transfer_scale_json": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd",
+    "window_match_json": "3f49966a545dcdff76f7a661a3584bc9784f0fb23f6967d213993eb62b105701"
+  },
+  "status": "nonap_source_dispersion_reduced_to_quantified_no_projection_certificate_open",
+  "structural_law": "The non-AP-source branch is not a new undefined gap. It reconnects to the already materialized original-dispersion chain: generic WFD contract, pinned DI/BFI theorem locations, current-window match, common variable table, and the transfer/scale certificate. All earlier stages are routed; the remaining fallback terminal is exactly the quantified no-projection window certificate for the non-AP source.",
+  "terminal_gap_after_router": "DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource"
+}
