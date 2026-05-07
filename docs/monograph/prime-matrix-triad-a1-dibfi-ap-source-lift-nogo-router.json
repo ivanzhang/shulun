@@ -1,0 +1,96 @@
+{
+  "ap_source_lift_available": false,
+  "ap_source_lift_rejected": true,
+  "certificate_type": "triad_a1_dibfi_ap_source_lift_nogo_router",
+  "closed_nogo_gates": [
+    "PriorDualGapContainsAPSourceLift",
+    "ExplicitAPNonAPDichotomy",
+    "SourceIdentityRequiredAndStillMissing",
+    "TransferScaleDoesNotProvideAPRepresentation",
+    "NonAPObjectLedgerRemovesAPError",
+    "ProjectionCenteringShortcutBlocked",
+    "APSourceLiftRejected"
+  ],
+  "nogo_rows": [
+    {
+      "closed": true,
+      "evidence": "previous=NewFullSTheoremInputOrAPSourceLift; open=['NewFullSTheoremInput', 'APSourceLift']",
+      "gate": "PriorDualGapContainsAPSourceLift",
+      "next_target": "APSourceLift",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "AP-source branch is closed only when source identity is declared upstream; open_branches=['NonAPSourceGenericWFD'].",
+      "gate": "ExplicitAPNonAPDichotomy",
+      "next_target": "NoSilentAPUpgrade",
+      "remaining": "non-AP branch is the complement, not an implicit AP branch."
+    },
+    {
+      "closed": true,
+      "evidence": "AP identity open_gates=['UpstreamCleanA1ResidualDefinition', 'MainTermAndCoefficientMatch']; NoDownstreamBackProjectionShortcut is closed.",
+      "gate": "SourceIdentityRequiredAndStillMissing",
+      "next_target": "NewSourceIdentityOrNewFullSTheoremInput",
+      "remaining": "APSourceLift would have to add a new upstream source identity."
+    },
+    {
+      "closed": true,
+      "evidence": "open_transfer_gates=['APErrorRepresentation', 'DispersionCauchyNoCenteringIdentity', 'KE13DyadicExhaustionNoProjection']",
+      "gate": "TransferScaleDoesNotProvideAPRepresentation",
+      "next_target": "NewSourceIdentityOrNewFullSTheoremInput",
+      "remaining": "APErrorRepresentation remains an open transfer gate, not a proved lift."
+    },
+    {
+      "closed": true,
+      "evidence": "removed=['APErrorRepresentation']; terminal=UncenteredWFDToKE13NoProjectionIdentity",
+      "gate": "NonAPObjectLedgerRemovesAPError",
+      "next_target": "NewFullSTheoremInput",
+      "remaining": "non-AP object side is uncentered WFD-to-KE13 no-projection identity."
+    },
+    {
+      "closed": true,
+      "evidence": "SOURCE-CEN and BD-CEN block free centering/projection/back-projection.",
+      "gate": "ProjectionCenteringShortcutBlocked",
+      "next_target": "NewFullSTheoremInput",
+      "remaining": "no silent route from non-AP WFD object to prime-AP discrepancy."
+    },
+    {
+      "closed": true,
+      "evidence": "A lift from the declared non-AP generic WFD complement to AP-source would contradict the current branch split unless a new source identity theorem is added.",
+      "gate": "APSourceLiftRejected",
+      "next_target": "NewFullSTheoremInput",
+      "remaining": "APSourceLift is rejected under the current contracts."
+    },
+    {
+      "closed": false,
+      "evidence": "No current DI/BFI primary-source theorem covers the full-S non-AP WFD kernel.",
+      "gate": "NewFullSTheoremInput",
+      "next_target": "NewFullSTheoremInput",
+      "remaining": "需要新增 full-S 外部深定理或新解析证明。"
+    }
+  ],
+  "open_terminal_gates": [
+    "NewFullSTheoremInput"
+  ],
+  "previous_terminal_gap": "NewFullSTheoremInputOrAPSourceLift",
+  "rejected_gates": [
+    "APSourceLift"
+  ],
+  "review_conclusion": "`APSourceLift` 被当前分支定义和对象账本阻断：AP-source 只能作为上游源等式分支使用，non-AP generic WFD 补集不能无损回提为 BFI prime-AP discrepancy。剩余单点压成 `NewFullSTheoremInput`。",
+  "source_hashes": {
+    "ap_residual_identity_json": "5c62fa3f0c1d62f5cd8e09f6329d4af7eea1c96b27797cc2d837a708b28d1355",
+    "ap_source_branch_json": "8a27509b420910b95ab35bf9a20adc3afac4dff78628538d8536469e792b49d9",
+    "bd_cen_audit_md": "62e7ad886124a8d904d7e6a235db4bfe2c0743783e2a4064dbebaddcbd06639f",
+    "nonap_object_ledger_json": "b94ec49a04e4779d893a2026565e29ceaee42f481cd2aaedfc5246bead7ed280",
+    "primary_source_nogo_json": "23fcf1606c36412403096fed957e44d7b3ece1fc8f2c6d5290cd1e29bce7bda8",
+    "script": "df00b09da4beb6964f7d0bbed8c229afecdaa5c8594b33c33ff860c4fb056e4e",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb",
+    "transfer_scale_json": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd"
+  },
+  "status": "ap_source_lift_rejected_new_full_s_theorem_input_open",
+  "structural_law": "APSourceLift is not an estimate; it is a source-level reclassification. The AP branch is legal only when the clean residual is declared before Cauchy/dispersion as a BFI prime-AP discrepancy with matching main term and coefficients. The non-AP generic WFD branch is the complement: its object ledger removes APErrorRepresentation and leaves only uncentered WFD-to-KE13 no-projection identities. SOURCE-CEN and BD-CEN block the free centering/projection shortcut. Therefore the current contracts reject a silent lift from non-AP WFD back to AP-source.",
+  "terminal_gap_after_router": "NewFullSTheoremInput",
+  "terminal_gap_expansion": [
+    "NewFullSTheoremInput"
+  ]
+}

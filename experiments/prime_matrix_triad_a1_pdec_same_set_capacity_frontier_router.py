@@ -164,6 +164,9 @@ DEFAULT_DIBFI_FULL_S_KLS_EXT_SPECIALIZATION = (
 DEFAULT_DIBFI_PRIMARY_SOURCE_SPECIALIZATION_NOGO = (
     DOCS / "prime-matrix-triad-a1-dibfi-primary-source-specialization-nogo-router.json"
 )
+DEFAULT_DIBFI_AP_SOURCE_LIFT_NOGO = (
+    DOCS / "prime-matrix-triad-a1-dibfi-ap-source-lift-nogo-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -272,6 +275,7 @@ def build_frontier_rows(
     dibfi_external_full_s_match: dict[str, Any],
     dibfi_full_s_kls_ext_specialization: dict[str, Any],
     dibfi_primary_source_specialization_nogo: dict[str, Any],
+    dibfi_ap_source_lift_nogo: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -913,6 +917,16 @@ def build_frontier_rows(
             ),
             "next_action": "新增 full-S 定理输入，或证明 non-AP WFD 残差可无损提升回 AP-source。",
         },
+        {
+            "frontier": "A1DIBFIAPSourceLiftNoGoRouter",
+            "status": "ap_source_lift_rejected_new_full_s_theorem_input_open",
+            "evidence": (
+                f"APSourceLift 被分支定义和对象账本阻断；"
+                f"rejected={dibfi_ap_source_lift_nogo['rejected_gates']}；"
+                f"terminal_gap={dibfi_ap_source_lift_nogo['terminal_gap_after_router']}。"
+            ),
+            "next_action": "唯一剩余为 NewFullSTheoremInput：新增 full-S 外部深定理或新解析证明。",
+        },
     ]
 
 
@@ -976,6 +990,7 @@ def run(
     dibfi_external_full_s_match_path: Path,
     dibfi_full_s_kls_ext_specialization_path: Path,
     dibfi_primary_source_specialization_nogo_path: Path,
+    dibfi_ap_source_lift_nogo_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1049,6 +1064,7 @@ def run(
     dibfi_primary_source_specialization_nogo = load_json(
         dibfi_primary_source_specialization_nogo_path
     )
+    dibfi_ap_source_lift_nogo = load_json(dibfi_ap_source_lift_nogo_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1109,6 +1125,7 @@ def run(
         dibfi_external_full_s_match,
         dibfi_full_s_kls_ext_specialization,
         dibfi_primary_source_specialization_nogo,
+        dibfi_ap_source_lift_nogo,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1171,13 +1188,14 @@ def run(
         "external_full_s_match_reduced_to_kls_specialization_open",
         "full_s_kls_ext_contract_closed_primary_source_proof_open",
         "dibfi_primary_source_specialization_rejected_new_theorem_or_ap_lift_open",
+        "ap_source_lift_rejected_new_full_s_theorem_input_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_primary_source_nogo_new_theorem_or_ap_lift_open",
+        "status": "same_set_capacity_frontier_ap_lift_nogo_new_full_s_theorem_input_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1299,6 +1317,9 @@ def run(
             "a1_dibfi_primary_source_specialization_nogo_json": file_sha256(
                 dibfi_primary_source_specialization_nogo_path
             ),
+            "a1_dibfi_ap_source_lift_nogo_json": file_sha256(
+                dibfi_ap_source_lift_nogo_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1309,7 +1330,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "NewFullSTheoremInputOrAPSourceLift",
+        "terminal_dual_gap": "NewFullSTheoremInput",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1360,7 +1381,10 @@ def run(
             "又离开当前 full-S dyadic 块。因此尺度侧剩余曾单点化为新增 full-S 原始 dispersion 原子；"
             "该原子现在又被精确改写为 ExternalFullSDIBFIAtomMatch；外部匹配层继续压成"
             " FullSKLSExternalTheoremSpecialization 与无投影兼容性；FullS-KLS-ext 精确定理合同"
-            "已把外部深定理版闭合，完全自足版只剩 DI/BFI 原文逐项专门化证明。"
+            "已把外部深定理版闭合，完全自足版只剩 DI/BFI 原文逐项专门化证明；"
+            "但现有 DI/BFI 主来源不能推出 full-S KLS-ext，曾留下 NewFullSTheoremInputOrAPSourceLift。"
+            "现在 APSourceLift 又被 AP/non-AP 分支定义、上游源等式缺失、non-AP 对象账本和"
+            " SOURCE-CEN/BD-CEN no-go 同时阻断，所以终端压成唯一单点 NewFullSTheoremInput。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1391,8 +1415,8 @@ def run(
             "都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；"
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
-            "该合取证书现已继续压成 "
-            "`NewFullSTheoremInputOrAPSourceLift`。"
+            "该合取证书现已继续压成 `NewFullSTheoremInput`："
+            "`APSourceLift` 已被当前分支合同排除，唯一剩余是新增 full-S 定理输入。"
         ),
     }
 
@@ -1469,6 +1493,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  ExternalFullSDIBFIAtomMatch reduces to FullSKLSExternalTheoremSpecialization。",
         "  FullS-KLS-ext contract closes the external-theorem version; primary-source proof remains。",
         "  Primary-source specialization from existing DI/BFI is rejected for full-S。",
+        "  APSourceLift is rejected by the AP/non-AP branch contract。",
+        "  The remaining terminal is NewFullSTheoremInput。",
         "```",
         "",
         "## 2. 汇总",
@@ -1561,14 +1587,15 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIExternalFullSMatch router materialized；",
             "DIBFIFullSKLSExtSpecialization router materialized；",
             "DIBFIPrimarySourceSpecializationNoGo router materialized；",
-            "remaining independent gap is NewFullSTheoremInputOrAPSourceLift。",
+            "DIBFIAPSourceLiftNoGo router materialized；",
+            "remaining independent gap is NewFullSTheoremInput。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
             "DI/BFI 定理位置已固定为 BFI Theorem 10 与 DI Theorem 12；"
             "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩未中心化无投影恒等式"
             "与 DI Kloosterman 窗口代入账本；"
-            "完全自足版仍未证明原始 dispersion。",
+            "APSourceLift 已被当前合同排除；完全自足/主来源逐项版仍只剩 NewFullSTheoremInput。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1803,6 +1830,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_PRIMARY_SOURCE_SPECIALIZATION_NOGO,
     )
+    parser.add_argument(
+        "--dibfi-ap-source-lift-nogo-json",
+        type=Path,
+        default=DEFAULT_DIBFI_AP_SOURCE_LIFT_NOGO,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1885,6 +1917,7 @@ def main() -> None:
         dibfi_primary_source_specialization_nogo_path=(
             args.dibfi_primary_source_specialization_nogo_json
         ),
+        dibfi_ap_source_lift_nogo_path=args.dibfi_ap_source_lift_nogo_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
