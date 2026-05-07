@@ -34,6 +34,7 @@ DEFAULT_TERMINAL_DICHOTOMY = DOCS / "prime-matrix-triad-a1-continuous-terminal-d
 DEFAULT_PDEC_SIGNATURE = DOCS / "prime-matrix-triad-a1-continuous-pdec-signature-input-ledger.json"
 DEFAULT_PRIME_LIFT = DOCS / "prime-matrix-triad-a1-continuous-prime-lift-router.json"
 DEFAULT_SELECTIVE_COMMUTATION = DOCS / "prime-matrix-triad-a1-selective-promotion-commutation.json"
+DEFAULT_STANDARD_DELETION = DOCS / "prime-matrix-triad-a1-standard-prime-lift-deletion.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -96,6 +97,7 @@ def build_frontier_rows(
     pdec_signature: dict[str, Any],
     prime_lift: dict[str, Any],
     selective_commutation: dict[str, Any],
+    standard_deletion: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -223,6 +225,16 @@ def build_frontier_rows(
             ),
             "next_action": "选择性行回到标准 prime-lift 或 diffuse KLS；继续攻标准晋升删除/KL 或 KLS-EXT。",
         },
+        {
+            "frontier": "StandardPrimeLiftDeletion",
+            "status": "positive_deletion_potential_or_nodeletion_kl",
+            "evidence": (
+                f"标准 prime-lift 删除势已物化；deletion_rows={standard_deletion['deletion_row_count']}；"
+                f"min_D={standard_deletion['global_min_deletion_potential_lower_bound']:.6f}；"
+                f"route_counts={standard_deletion['route_counts']}。"
+            ),
+            "next_action": "无限标准晋升支付删除势；若删除停止则进入 NoDeletion-KL/PDEC 或 diffuse KLS。",
+        },
     ]
 
 
@@ -240,6 +252,7 @@ def run(
     pdec_signature_path: Path,
     prime_lift_path: Path,
     selective_commutation_path: Path,
+    standard_deletion_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -255,6 +268,7 @@ def run(
     pdec_signature = load_json(pdec_signature_path)
     prime_lift = load_json(prime_lift_path)
     selective_commutation = load_json(selective_commutation_path)
+    standard_deletion = load_json(standard_deletion_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -269,6 +283,7 @@ def run(
         pdec_signature,
         prime_lift,
         selective_commutation,
+        standard_deletion,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -283,6 +298,7 @@ def run(
         "positive_limsup_pdec_inputs_materialized_capacity_open",
         "prime_lift_deletion_kl_ready_with_selective_commutation_gap",
         "selective_promotion_resolved_by_finite_split",
+        "positive_deletion_potential_or_nodeletion_kl",
         "closed",
         "no_fourth_exit",
     }
@@ -305,6 +321,7 @@ def run(
             "continuous_pdec_signature_input_json": file_sha256(pdec_signature_path),
             "continuous_prime_lift_json": file_sha256(prime_lift_path),
             "selective_promotion_commutation_json": file_sha256(selective_commutation_path),
+            "standard_prime_lift_deletion_json": file_sha256(standard_deletion_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -315,23 +332,23 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "StandardPrimeLiftDeletionKLOrKLSLargeSieve",
+        "terminal_dual_gap": "NoDeletionKLOrKLSLargeSieve",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
             "连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。"
             "actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。"
             "positive-limsup 有限签名的 PDEC 输入账本已物化。"
-            "这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分。"
-            "最终缺口转成标准晋升删除/KL，或 CleanKLS/DLS 大筛估计。"
+            "这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；"
+            "标准 prime-lift 已接入正删除势。最终缺口转成 NoDeletion-KL/PDEC 或 CleanKLS/DLS 大筛估计。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
             "当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，"
             "连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。"
             "终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。"
-            "prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分。"
-            "下一步不再是路由，而是证明标准晋升删除/KL 或 KLS-EXT。"
+            "prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，"
+            "标准晋升支付正删除势。下一步不再是路由，而是证明 NoDeletion-KL/PDEC 或 KLS-EXT。"
         ),
     }
 
@@ -361,7 +378,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  no third terminal route remains after finite-projection dichotomy；",
         "  positive-limsup finite signatures materialize legal PDEC input rows；",
         "  finite signatures force prime-lift congruence rows；",
-        "  selective promotion commutes after finite splitting。",
+        "  selective promotion commutes after finite splitting；",
+        "  standard prime-lift pays positive deletion potential。",
         "```",
         "",
         "## 2. 汇总",
@@ -408,11 +426,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "positive-limsup PDEC input rows materialized；",
             "prime-lift congruence routed；",
             "selective promotion commutation resolved；",
-            "remaining gap is standard prime-lift deletion/KL or KLS-EXT。",
+            "standard prime-lift deletion potential materialized；",
+            "remaining gap is NoDeletion-KL/PDEC or KLS-EXT。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "证明标准 prime-lift 晋升删除/KL；或证明/接入 diffuse CleanKLS/DLS 大筛估计。",
+            "证明删除停止时的 NoDeletion-KL/PDEC，或证明/接入 diffuse CleanKLS/DLS 大筛估计。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -439,6 +458,7 @@ def main() -> None:
     parser.add_argument(
         "--selective-commutation-json", type=Path, default=DEFAULT_SELECTIVE_COMMUTATION
     )
+    parser.add_argument("--standard-deletion-json", type=Path, default=DEFAULT_STANDARD_DELETION)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -457,6 +477,7 @@ def main() -> None:
         pdec_signature_path=args.pdec_signature_json,
         prime_lift_path=args.prime_lift_json,
         selective_commutation_path=args.selective_commutation_json,
+        standard_deletion_path=args.standard_deletion_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

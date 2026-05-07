@@ -3559,3 +3559,69 @@ terminal_dual_gap => StandardPrimeLiftDeletionKLOrKLSLargeSieve。
 ```
 
 选择性晋升交换律不再是独立障碍。
+
+## 71. A1 标准 Prime-Lift 删除势账本
+
+新增 `experiments/prime_matrix_triad_a1_standard_prime_lift_deletion.py` 后，
+标准 prime-lift 分支被接入删除势账本。
+
+删除势律：
+
+```text
+fixed residue modulo ell
+=> survival <= 1/ell after promoting ell
+=> deletion potential D >= log(ell)。
+```
+
+机器结果：
+
+```text
+status=standard_prime_lift_positive_deletion_potential_materialized；
+standard_row_count=39；
+commuted_successor_row_count=13；
+deletion_row_count=52；
+route_counts={PositiveDeletionPotentialOrNoDeletionKL: 52}；
+promoted_prime_counts={13: 39, 17: 13}；
+global_min_deletion_potential_lower_bound=2.564949；
+global_max_survival_upper_bound=0.0769231。
+```
+
+结构意义：
+
+```text
+positive-limsup finite signature
+=> prime-lift fixed residue；
+=> 当前标准行支付正删除势；
+=> 若无限层持续标准固定 residue，则删除势发散；
+=> 若删除停止，则进入 NoDeletion-KL/PDEC 或 diffuse CleanKLS/DLS。
+```
+
+前沿路由器同步更新后：
+
+```text
+StandardPrimeLiftDeletion => positive_deletion_potential_or_nodeletion_kl；
+terminal_dual_gap => NoDeletionKLOrKLSLargeSieve。
+```
+
+于是 A1 连续 actual-payment 分支的 `positive-limsup` 侧已经从：
+
+```text
+PDEC-CAP abstract capacity
+```
+
+被递归剥离为：
+
+```text
+positive deletion potential
+  or NoDeletion-KL/PDEC
+  or diffuse CleanKLS/DLS。
+```
+
+当前剩余硬点为：
+
+```text
+1. 删除停止时的 NoDeletion-KL/PDEC 终端；
+2. diffuse CleanKLS/DLS 大筛估计。
+```
+
+这一步仍不是最终闭合；它把正 limsup PDEC 侧的容量硬点转成删除势/无删除-KL硬点。

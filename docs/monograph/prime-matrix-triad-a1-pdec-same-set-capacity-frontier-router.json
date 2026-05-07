@@ -101,6 +101,12 @@
       "frontier": "SelectivePromotionCommutation",
       "next_action": "选择性行回到标准 prime-lift 或 diffuse KLS；继续攻标准晋升删除/KL 或 KLS-EXT。",
       "status": "selective_promotion_resolved_by_finite_split"
+    },
+    {
+      "evidence": "标准 prime-lift 删除势已物化；deletion_rows=52；min_D=2.564949；route_counts={'PositiveDeletionPotentialOrNoDeletionKL': 52}。",
+      "frontier": "StandardPrimeLiftDeletion",
+      "next_action": "无限标准晋升支付删除势；若删除停止则进入 NoDeletion-KL/PDEC 或 diffuse KLS。",
+      "status": "positive_deletion_potential_or_nodeletion_kl"
     }
   ],
   "lp_summary": {
@@ -116,7 +122,7 @@
       "BRIDGED_zero_block"
     ]
   },
-  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分。下一步不再是路由，而是证明标准晋升删除/KL 或 KLS-EXT。",
+  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势。下一步不再是路由，而是证明 NoDeletion-KL/PDEC 或 KLS-EXT。",
   "source_hashes": {
     "continuous_actual_payment_selection_json": "40b5e4849328bb8434be285105482d4b3d046b61ec2fa69bf5ef8d77af361874",
     "continuous_columntail_bridge_json": "48fed9b4cfd6f9f3a851a2a77389978fd81299e0e075bb9e56140e6df77e4067",
@@ -129,8 +135,9 @@
     "fourier_cap_scan_json": "fe47050ce4b60f5c5651228f7e940eb20898506149f830d86448375984b7e502",
     "lhb_lp_skeleton_json": "77be4c32509e121013a11d5cc0668c314ceece3aa7f3e114bae2dc69cbdb8021",
     "pdec_mass_source_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
-    "script": "2a53adf364cd9ca137f119fdd371b99aa88bcf858e32e85d38965176920a08ce",
+    "script": "d4d7ed867c3431f724bc086878e9492f27ea77d97cfc9b6f38c7d5c6ca6c1df1",
     "selective_promotion_commutation_json": "ca61b2488fdb1bc63ea571bd9223377c685918b584af13763c65d5d3438528e4",
+    "standard_prime_lift_deletion_json": "733c195ae3c6c88ba29951bb2ee4a90da9e02899f606aacbd4c55bfb85291c5f",
     "terminal_confluence_json": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c"
   },
   "status": "same_set_capacity_frontier_materialized_terminal_dual_open",
@@ -142,6 +149,7 @@
     "continuous_dualcap_materialized_not_closed": 1,
     "dualcap_materialized": 1,
     "no_fourth_exit": 1,
+    "positive_deletion_potential_or_nodeletion_kl": 1,
     "positive_limsup_pdec_inputs_materialized_capacity_open": 1,
     "prime_lift_deletion_kl_ready_with_selective_commutation_gap": 1,
     "ready_current_lhb_branch": 1,
@@ -149,6 +157,6 @@
     "structurally_insufficient": 1,
     "terminal_dichotomy_admission_closed_capacity_open": 1
   },
-  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分。最终缺口转成标准晋升删除/KL，或 CleanKLS/DLS 大筛估计。",
-  "terminal_dual_gap": "StandardPrimeLiftDeletionKLOrKLSLargeSieve"
+  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势。最终缺口转成 NoDeletion-KL/PDEC 或 CleanKLS/DLS 大筛估计。",
+  "terminal_dual_gap": "NoDeletionKLOrKLSLargeSieve"
 }
