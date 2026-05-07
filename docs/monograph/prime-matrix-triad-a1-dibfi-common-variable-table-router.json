@@ -1,0 +1,271 @@
+{
+  "all_scale_inequalities_closed": false,
+  "all_transfer_steps_target_preserving": false,
+  "certificate_type": "triad_a1_dibfi_common_variable_table_router",
+  "common_variable_table_materialized": true,
+  "gate_rows": [
+    {
+      "available": "DIBFIWindowScaleAndTargetTransferMatch",
+      "closed": true,
+      "gap": "none",
+      "gate": "PreviousFrontierIsWindowMatch",
+      "needed": "start exactly from DIBFIWindowScaleAndTargetTransferMatch",
+      "route": "common variable table"
+    },
+    {
+      "available": "DIBFIOriginalDispersionCurrentWindowHypothesisMatch",
+      "closed": true,
+      "gap": "none",
+      "gate": "TheoremLocationsStillPinned",
+      "needed": "BFI Theorem 10 and DI Theorem 12 remain fixed",
+      "route": "reuse theorem-location certificate"
+    },
+    {
+      "available": "one table contains AP, WFD and DI/BFI roles for every active symbol",
+      "closed": true,
+      "gap": "none after this router",
+      "gate": "NoVariableFork",
+      "needed": "target transfer and scale inequalities must use the same symbols",
+      "route": "common variable table"
+    },
+    {
+      "available": "SOURCE-CEN no-go keeps the uncentered WFD target",
+      "closed": true,
+      "gap": "none at table level",
+      "gate": "TargetNotChangedByCentering",
+      "needed": "the table cannot add a hidden block-centering variable",
+      "route": "uncentered target row"
+    },
+    {
+      "available": "KZ-E spine and KLS template contain KE-5, KE-8, KE-13 and variable adaptation",
+      "closed": true,
+      "gap": "none at table level",
+      "gate": "LocalFormulasAvailable",
+      "needed": "common rows must reference existing local formulas",
+      "route": "transfer rows plus scale rows"
+    },
+    {
+      "available": "common variables are fixed",
+      "closed": false,
+      "gap": "the actual certificate is not yet proved",
+      "gate": "TransferAndScaleCertificate",
+      "needed": "prove transfer equations and scale inequalities using this table",
+      "route": "DIBFICommonVariableTransferScaleCertificate"
+    }
+  ],
+  "next_external_target": "DIBFICommonVariableTransferScaleCertificate",
+  "no_variable_fork": true,
+  "open_gates": [
+    "TransferAndScaleCertificate"
+  ],
+  "review_conclusion": "共同变量表已建立，两个硬点被锁到同一套变量上。当前不再是两个发散任务，而是一个合取证书：同一变量表上同时证明对象不变转移与尺度不等式。",
+  "scale_rows": [
+    {
+      "closed": false,
+      "inequality": "TypeProduct",
+      "needed_for": "BFI AP discrepancy and Type-I/II dispersion",
+      "statement": "N*M≈X",
+      "status": "named_not_quantified",
+      "variables": "X,N,M"
+    },
+    {
+      "closed": false,
+      "inequality": "BFILevel",
+      "needed_for": "BFI1987-Theorem10",
+      "statement": "Q<=X^(4/7-eps) or an explicitly stronger admitted range",
+      "status": "named_not_quantified",
+      "variables": "X,Q,eps"
+    },
+    {
+      "closed": false,
+      "inequality": "KLSModulusWindow",
+      "needed_for": "DI1982-Theorem12",
+      "statement": "C is a dyadic sublevel of Q and matches the DI modulus family",
+      "status": "named_not_quantified",
+      "variables": "C,Q,X"
+    },
+    {
+      "closed": false,
+      "inequality": "InverseVariableWindow",
+      "needed_for": "DI1982-Theorem12",
+      "statement": "S matches the DI inverse-variable length after completion",
+      "status": "named_not_quantified",
+      "variables": "S,N,M,C"
+    },
+    {
+      "closed": false,
+      "inequality": "FrequencyWindow",
+      "needed_for": "DI/BFI plus sawtooth completion",
+      "statement": "0<|h|<=H and Fourier tail is absorbed by B(A)",
+      "status": "named_not_quantified",
+      "variables": "H,X,C,S,A"
+    },
+    {
+      "closed": false,
+      "inequality": "DIJScaleDominance",
+      "needed_for": "KE-13 log-saving",
+      "statement": "DI Theorem 12 J-scale bound is <= natural WFD scale/log^A after substitution",
+      "status": "main_remaining_scale_certificate",
+      "variables": "C,S,H,N,M,Q,A"
+    },
+    {
+      "closed": false,
+      "inequality": "LogLossAbsorption",
+      "needed_for": "final arbitrary log-saving",
+      "statement": "B(A)=A+C0+10 absorbs dyadic, gcd, endpoint, coefficient and smoothing costs",
+      "status": "ledger_ready_needs_C0_extraction",
+      "variables": "A,B(A),C0,g,lambda,beta,omega"
+    }
+  ],
+  "source_hashes": {
+    "dibfi_theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4",
+    "dibfi_window_match_json": "3f49966a545dcdff76f7a661a3584bc9784f0fb23f6967d213993eb62b105701",
+    "kls_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "d6c3f23f21b7640c9c80ab8a2efd154c3c073d82c46a62a497b03a42360018e5",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb"
+  },
+  "status": "dibfi_common_variable_table_materialized_certificate_open",
+  "structural_law": "The two remaining DI/BFI obligations now live on one variable table. Target transfer and scale inequalities cannot be solved independently with different symbols: X,Q,N,M,C,S,H,lambda,beta,omega,g,A,B(A) are shared across AP discrepancy, KE-13/WFD-core and DI/BFI theorem inputs. Therefore the next proof target is a single certificate: prove the listed transfer equations and scale inequalities on this common table.",
+  "target_transfer_and_scale_share_variables": true,
+  "terminal_gap_after_router": "DIBFICommonVariableTransferScaleCertificate",
+  "transfer_rows": [
+    {
+      "formula": "E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm)",
+      "remaining_proof": "把 clean A1 generic WFD 残差精确写成该 AP error 或其 dyadic 总和",
+      "same_variables": "X,Q,N,M,lambda,alpha,beta",
+      "step": "APError",
+      "target_preserved": true
+    },
+    {
+      "formula": "E_AP=sum_{N*M≈X} E_{N,M}+log^O endpoint errors",
+      "remaining_proof": "证明 Vaughan/Heath-Brown 分解后的端点误差均进入 log budget",
+      "same_variables": "X,N,M,alpha,beta",
+      "step": "TypeDecomposition",
+      "target_preserved": true
+    },
+    {
+      "formula": "E_{N,M} -> E_disp(r1,r2,s1,s2,h) without block-centering insertion",
+      "remaining_proof": "写出从 BFI 原始 dispersion 到 KE-5 的逐项恒等式，确认未删同块对角",
+      "same_variables": "Q,N,M,c,s,h,lambda,beta,omega",
+      "step": "DispersionCauchy",
+      "target_preserved": false
+    },
+    {
+      "formula": "phase(r1,r2,s1,s2,h)=e_c(a_h*s+b_h*bar(s))",
+      "remaining_proof": "已有模板；最终稿中需把符号与 KE-13 完全统一",
+      "same_variables": "c,s,h,g",
+      "step": "CRTPhase",
+      "target_preserved": true
+    },
+    {
+      "formula": "E_disp main nonzero-frequency blocks = WFD_core(C,S,H,lambda,beta,omega)",
+      "remaining_proof": "证明所有 dyadic 主块完全覆盖且无额外中心化/投影项",
+      "same_variables": "C,S,H,lambda,beta,omega,A",
+      "step": "KE13Identification",
+      "target_preserved": false
+    }
+  ],
+  "variable_rows": [
+    {
+      "ap_role": "BFI prime-AP discrepancy 的 ambient length",
+      "dibfi_role": "BFI Theorem 10 的 x 参数",
+      "fixed_by_table": true,
+      "prime_matrix_role": "clean A1/HLC 分支交给解析 dispersion 的总长度尺度",
+      "scale_use": "所有 Q,N,M,C,S,H 的上界都归一到 X",
+      "symbol": "X",
+      "transfer_use": "保持原始误差对象的总质量尺度",
+      "wfd_role": "Type-I/II 分块满足 N*M≈X"
+    },
+    {
+      "ap_role": "q<=Q 的 AP 模数范围",
+      "dibfi_role": "BFI well-factorable level",
+      "fixed_by_table": true,
+      "prime_matrix_role": "clean branch 的 well-factorable 模数总 level",
+      "scale_use": "需证明 Q<=X^(4/7-eps) 或当前引用版允许的等价范围",
+      "symbol": "Q",
+      "transfer_use": "AP 模权不换成 canonical support 权",
+      "wfd_role": "lambda_q 或 lambda_c 的总支撑 level"
+    },
+    {
+      "ap_role": "nm≡a mod q 的双变量",
+      "dibfi_role": "BFI dispersion 的 Dirichlet polynomial blocks",
+      "fixed_by_table": true,
+      "prime_matrix_role": "Vaughan/Heath-Brown 后的素数/互补因子 dyadic 块",
+      "scale_use": "需证明每个 dyadic 块落入 BFI/DI 处理范围",
+      "symbol": "N,M",
+      "transfer_use": "把 AP 误差拆块但不改变求和对象",
+      "wfd_role": "Type-I/II 输入，N*M≈X"
+    },
+    {
+      "ap_role": "由 q 或 q 的因子组合产生的模数块",
+      "dibfi_role": "DI Theorem 12 的 Kloosterman modulus family",
+      "fixed_by_table": true,
+      "prime_matrix_role": "CRT/gcd 剥离后的有效 Kloosterman 模数 dyadic 块",
+      "scale_use": "需证明 C 与 Q、X 的关系满足 DI J-scale 估计",
+      "symbol": "c,C",
+      "transfer_use": "dispersion 后保留同一模数责任，不切到 canonical 分支",
+      "wfd_role": "KE-13 中 c~C 的 well-factorable 模数变量"
+    },
+    {
+      "ap_role": "Type block 中进入逆元相位的变量",
+      "dibfi_role": "DI Kloosterman 分子中的可逆类变量",
+      "fixed_by_table": true,
+      "prime_matrix_role": "completion 后的可逆类或尾素/互补单位变量",
+      "scale_use": "需证明 S 的 dyadic 范围与 DI estimate 的 N/R/S 参数匹配",
+      "symbol": "s,S",
+      "transfer_use": "CRT 合并 s1,s2 后得到同一 s 变量",
+      "wfd_role": "KE-13 中 s~S, (s,c)=1 的逆元变量"
+    },
+    {
+      "ap_role": "AP discrepancy 完成后的非主频",
+      "dibfi_role": "DI/BFI Kloosterman/Bessel frequency parameter",
+      "fixed_by_table": true,
+      "prime_matrix_role": "sawtooth/Fourier 非零频率",
+      "scale_use": "需证明 H 截断尾项和 DI 频率范围同时满足",
+      "symbol": "h,H",
+      "transfer_use": "h=0 主项扣除，h!=0 保留原始误差频率",
+      "wfd_role": "KE-13 中 0<|h|<=H 的频率变量"
+    },
+    {
+      "ap_role": "BFI Theorem 10 的 lambda_q",
+      "dibfi_role": "well-factorable weight",
+      "fixed_by_table": true,
+      "prime_matrix_role": "generic WFD 分支的 well-factorable 模权",
+      "scale_use": "level 与分解层数只产生 log^O 损失",
+      "symbol": "lambda",
+      "transfer_use": "不替换为 canonical RIW/Buchstab support 证明",
+      "wfd_role": "KE-13 的 lambda_c"
+    },
+    {
+      "ap_role": "Dirichlet polynomial coefficients and smooth cutoffs",
+      "dibfi_role": "DI/BFI 二范数与平滑权输入",
+      "fixed_by_table": true,
+      "prime_matrix_role": "Type 系数与平滑频率权",
+      "scale_use": "二范数、导数和平滑损失进入 log^C 账本",
+      "symbol": "alpha,beta,omega",
+      "transfer_use": "系数由分解/平滑产生，不能加入块中心化均值扣除",
+      "wfd_role": "divisor-bounded beta_s 与 smooth omega_h"
+    },
+    {
+      "ap_role": "q 因子或 r1,r2 的 gcd stratum",
+      "dibfi_role": "非互素层的 divisor/gcd 损失",
+      "fixed_by_table": true,
+      "prime_matrix_role": "非互素模数层",
+      "scale_use": "sum_g tau(g)^C/g 进入 log^C",
+      "symbol": "g",
+      "transfer_use": "不相容层为零，相容层不改变目标对象",
+      "wfd_role": "(r1,r2)=g 强迫 s1≡s2 mod g"
+    },
+    {
+      "ap_role": "x/log^A x 目标强度",
+      "dibfi_role": "外部定理给任意 log-saving 后吸收损失",
+      "fixed_by_table": true,
+      "prime_matrix_role": "最终任意对数节省目标与损失预算",
+      "scale_use": "选择 B(A)=A+C0+10",
+      "symbol": "A,B(A),C0",
+      "transfer_use": "所有转移损失只允许进入 log^C0",
+      "wfd_role": "KE-13 的 log^{-A} 节省"
+    }
+  ]
+}

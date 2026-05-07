@@ -5297,3 +5297,108 @@ terminal_dual_gap => DIBFIWindowScaleAndTargetTransferMatch。
 
 这一步避免继续泛化拆分：当前外部 DI/BFI 版只剩一个合取命题，即“对象不变转移 + 尺度不等式”
 同时成立。下一步应优先写出这两个子式的共同变量表，否则不能诚实宣称 generic WFD 外部引用版闭合。
+
+## 94. DI/BFI 共同变量表：对象转移与尺度不等式合并为单一证书
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_common_variable_table_router.py` 后，第 93 节留下的
+`DIBFIWindowScaleAndTargetTransferMatch` 被继续压缩。结论是：对象不变转移与尺度不等式不能再
+作为两条互不相干的路线推进；它们必须使用同一套变量，并在同一证书中同时成立。
+
+机器结果：
+
+```text
+status=dibfi_common_variable_table_materialized_certificate_open；
+no_variable_fork=true；
+terminal_gap_after_router=DIBFICommonVariableTransferScaleCertificate。
+```
+
+共同变量表固定的核心符号为：
+
+```text
+X:
+  BFI prime-AP discrepancy 的 ambient length；
+  Type-I/II 中 N*M≈X；
+
+Q:
+  generic WFD branch 的 well-factorable level；
+  BFI Theorem 10 的 q<=Q 范围；
+
+N,M:
+  Vaughan/Heath-Brown 后的 Type blocks；
+
+c,C:
+  CRT/gcd 剥离后的 Kloosterman 模数 dyadic block；
+
+s,S:
+  completion 后的逆元变量；
+
+h,H:
+  sawtooth/Fourier 非零频率；
+
+lambda, alpha, beta, omega:
+  well-factorable 模权、Type 系数、逆元变量系数和平滑频率权；
+
+g:
+  非互素 gcd stratum；
+
+A,B(A),C0:
+  任意 log-saving 目标与损失吸收预算。
+```
+
+对象转移链被统一写成：
+
+```text
+APError:
+  E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm);
+
+TypeDecomposition:
+  E_AP=sum_{N*M≈X} E_{N,M}+log^O endpoint errors;
+
+DispersionCauchy:
+  E_{N,M} -> E_disp(r1,r2,s1,s2,h) without block-centering insertion;
+
+CRTPhase:
+  phase(r1,r2,s1,s2,h)=e_c(a_h*s+b_h*bar(s));
+
+KE13Identification:
+  E_disp main nonzero-frequency blocks = WFD_core(C,S,H,lambda,beta,omega).
+```
+
+其中 `DispersionCauchy` 与 `KE13Identification` 仍标为未闭合，因为它们正是要证明“没有改变对象、
+没有免费中心化、没有漏掉块对角/端点项”的位置。
+
+尺度不等式被统一写成：
+
+```text
+TypeProduct:
+  N*M≈X;
+
+BFILevel:
+  Q<=X^(4/7-eps) or an explicitly stronger admitted range;
+
+KLSModulusWindow:
+  C is a dyadic sublevel of Q and matches the DI modulus family;
+
+InverseVariableWindow:
+  S matches the DI inverse-variable length after completion;
+
+FrequencyWindow:
+  0<|h|<=H and Fourier tail is absorbed by B(A);
+
+DIJScaleDominance:
+  DI Theorem 12 J-scale bound is <= natural WFD scale/log^A after substitution;
+
+LogLossAbsorption:
+  B(A)=A+C0+10 absorbs dyadic, gcd, endpoint, coefficient and smoothing costs.
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFICommonVariableTableRouter => dibfi_common_variable_table_materialized_certificate_open；
+terminal_dual_gap => DIBFICommonVariableTransferScaleCertificate。
+```
+
+这一步完成了用户要求的共同变量表攻坚。下一步不能再把剩余拆回“对象转移”和“尺度范围”两条路；
+必须直接证明共同变量表上的单一合取证书：所有对象转移方程成立，并且所有尺度不等式同时满足
+BFI Theorem 10 与 DI Theorem 12 的输入范围。

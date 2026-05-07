@@ -95,6 +95,9 @@ DEFAULT_DIBFI_THEOREM_LOCATION = (
 DEFAULT_DIBFI_WINDOW_MATCH = (
     DOCS / "prime-matrix-triad-a1-dibfi-window-match-router.json"
 )
+DEFAULT_DIBFI_COMMON_VARIABLE_TABLE = (
+    DOCS / "prime-matrix-triad-a1-dibfi-common-variable-table-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -180,6 +183,7 @@ def build_frontier_rows(
     generic_wfd_dibfi: dict[str, Any],
     dibfi_theorem_location: dict[str, Any],
     dibfi_window_match: dict[str, Any],
+    dibfi_common_variable_table: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -579,6 +583,19 @@ def build_frontier_rows(
             ),
             "next_action": "同时完成 AP->KE-13 对象不变转移与 C,S,H,Q,N,M 尺度不等式。",
         },
+        {
+            "frontier": "A1DIBFICommonVariableTableRouter",
+            "status": "dibfi_common_variable_table_materialized_certificate_open"
+            if dibfi_common_variable_table["no_variable_fork"]
+            else "dibfi_common_variable_table_gap",
+            "evidence": (
+                f"DI/BFI 共同变量表已建立；"
+                f"target_transfer_and_scale_share_variables="
+                f"{dibfi_common_variable_table['target_transfer_and_scale_share_variables']}；"
+                f"terminal_gap={dibfi_common_variable_table['terminal_gap_after_router']}。"
+            ),
+            "next_action": "在共同变量表上同时证明对象转移方程和尺度不等式。",
+        },
     ]
 
 
@@ -619,6 +636,7 @@ def run(
     generic_wfd_dibfi_path: Path,
     dibfi_theorem_location_path: Path,
     dibfi_window_match_path: Path,
+    dibfi_common_variable_table_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -657,6 +675,7 @@ def run(
     generic_wfd_dibfi = load_json(generic_wfd_dibfi_path)
     dibfi_theorem_location = load_json(dibfi_theorem_location_path)
     dibfi_window_match = load_json(dibfi_window_match_path)
+    dibfi_common_variable_table = load_json(dibfi_common_variable_table_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -694,6 +713,7 @@ def run(
         generic_wfd_dibfi,
         dibfi_theorem_location,
         dibfi_window_match,
+        dibfi_common_variable_table,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -731,6 +751,7 @@ def run(
         "generic_wfd_external_dibfi_contract_materialized_theorem_location_open",
         "dibfi_theorem_locations_pinned_current_window_hypothesis_match_open",
         "dibfi_window_match_reduced_to_target_transfer_and_scale_inequalities",
+        "dibfi_common_variable_table_materialized_certificate_open",
         "closed",
         "no_fourth_exit",
     }
@@ -790,6 +811,9 @@ def run(
                 dibfi_theorem_location_path
             ),
             "a1_dibfi_window_match_json": file_sha256(dibfi_window_match_path),
+            "a1_dibfi_common_variable_table_json": file_sha256(
+                dibfi_common_variable_table_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -800,7 +824,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "DIBFIWindowScaleAndTargetTransferMatch",
+        "terminal_dual_gap": "DIBFICommonVariableTransferScaleCertificate",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -828,7 +852,8 @@ def run(
             "分支陈述已落实：canonical source branch 在 source-lock 链条上无剩余内部缺口；"
             "generic WFD 宽口径的外部 DI/BFI 原始 dispersion 已物化为外部合同；"
             "DI/BFI 原文定理位置已定位为 BFI Theorem 10 与 DI Theorem 12；"
-            "当前窗口假设匹配又被压成 AP 到 KE-13 的对象不变转移与 dyadic 尺度不等式。"
+            "当前窗口假设匹配又被压成 AP 到 KE-13 的对象不变转移与 dyadic 尺度不等式；"
+            "二者现在已锁到同一张共同变量表。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -857,7 +882,8 @@ def run(
             "不再有内部缺口。generic noncanonical WFD 的外部 DI/BFI 合同也已物化："
             "未中心化原始对象、相位归一化、well-factorable level、Type-I/II 范围与损失账本"
             "都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；"
-            "当前 KE-13/WFD 窗口假设匹配已化为两个硬点：对象不变转移与尺度不等式。"
+            "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
+            "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
         ),
     }
 
@@ -911,6 +937,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  generic WFD external DI/BFI contract is materialized;",
         "  DI/BFI theorem locations are pinned;",
         "  current WFD-window match reduces to target transfer and scale inequalities。",
+        "  target transfer and scale inequalities now share one common variable table。",
         "```",
         "",
         "## 2. 汇总",
@@ -980,12 +1007,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "GenericWFDDIBFI router materialized；",
             "DIBFITheoremLocation router materialized；",
             "DIBFIWindowMatch router materialized；",
-            "remaining independent gap is AP->KE13 target transfer plus dyadic scale inequalities。",
+            "DIBFICommonVariableTable router materialized；",
+            "remaining independent gap is common-variable transfer/scale certificate。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
             "DI/BFI 定理位置已固定为 BFI Theorem 10 与 DI Theorem 12；"
-            "generic WFD 外部引用版只剩 AP->KE13 对象不变转移和 dyadic 尺度不等式；"
+            "generic WFD 外部引用版只剩共同变量表上的对象转移/尺度合取证书；"
             "完全自足版仍未证明原始 dispersion。",
         ]
     )
@@ -1106,6 +1134,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_WINDOW_MATCH,
     )
+    parser.add_argument(
+        "--dibfi-common-variable-table-json",
+        type=Path,
+        default=DEFAULT_DIBFI_COMMON_VARIABLE_TABLE,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1147,6 +1180,7 @@ def main() -> None:
         generic_wfd_dibfi_path=args.generic_wfd_dibfi_json,
         dibfi_theorem_location_path=args.dibfi_theorem_location_json,
         dibfi_window_match_path=args.dibfi_window_match_json,
+        dibfi_common_variable_table_path=args.dibfi_common_variable_table_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
