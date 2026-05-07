@@ -1,0 +1,186 @@
+{
+  "admission_rows": [
+    {
+      "a1_source": "A1 clean residual is decomposed into dyadic formal units before KLS invocation",
+      "condition": "dyadic ranges for m, ell, d, R and h",
+      "failure_route": "range/high-lcm failure returns to PDEC/SAE/gcd-stratum ledger",
+      "key": "K1",
+      "status": "ExternalTemplateRegistered",
+      "verified": true
+    },
+    {
+      "a1_source": "finite-projection dichotomy: positive-limsup finite signature returns to PDEC; diffuse branch has all fixed atoms vanish",
+      "condition": "lowmod orthogonality; no fixed low residue atom persists",
+      "failure_route": "positive finite lowmod signature -> column-tail/refined PDEC",
+      "key": "K2",
+      "status": "RoutedToPDECOrSatisfiedOnDiffuseBranch",
+      "verified": true
+    },
+    {
+      "a1_source": "current P x P exits are closed by mass-source/LFTE routing; future short-window failure is a named LocalSurvivor/SAE/PDEC exit",
+      "condition": "no short-window cap or early P x P local survivor gap",
+      "failure_route": "short-window cap -> LocalSurvivor/SAE/refined PDEC",
+      "key": "K3",
+      "status": "CurrentExitsClosedFailureNamed",
+      "verified": true
+    },
+    {
+      "a1_source": "continuous column-tail bridge and actual-payment dichotomy: persistent column-tail signature returns to PDEC",
+      "condition": "no column/tail displacement cap persists",
+      "failure_route": "column/tail displacement atom -> PDEC/ColumnCRT",
+      "key": "K4",
+      "status": "RoutedToPDECOrCleanDiffuse",
+      "verified": true
+    },
+    {
+      "a1_source": "diffuse terminal branch supplies max-atom and L2-flat admission language",
+      "condition": "coefficient L2-flat on all fixed finite projections",
+      "failure_route": "large coefficient atom -> finite signature PDEC/SAE",
+      "key": "K5",
+      "status": "L2FlatOnCleanBranch",
+      "verified": true
+    },
+    {
+      "a1_source": "external HLC-KLS template supplies the admissible unit/gcd bookkeeping; failure is not clean",
+      "condition": "gcd/unit strata and dyadic splitting are polylog-accounted",
+      "failure_route": "gcd/unit overrun -> gcd-stratum PDEC or finite exception",
+      "key": "K6",
+      "status": "ExternalTemplateRegistered",
+      "verified": true
+    },
+    {
+      "a1_source": "canonical actual payment measure and column-tail bridge share the same formal payment unit",
+      "condition": "same formal unit as PDEC/SAE/payment ledgers",
+      "failure_route": "口径不一致 -> Multiplicity/Stitching absorption",
+      "key": "K7",
+      "status": "FormalUnitVerified",
+      "verified": true
+    },
+    {
+      "a1_source": "prime-lift deletion potential and NoDeletion terminal router exhaust promotable fixed residues",
+      "condition": "no promotable top-prime or fixed promoted residue remains",
+      "failure_route": "promotable residue -> prime-lift deletion/PDEC/NoDeletion router",
+      "key": "K8",
+      "status": "PromotionDeletedOrNoDeletionRouted",
+      "verified": true
+    },
+    {
+      "a1_source": "KL chain identity exact; persistent KL/MI returns to refined PDEC, flat KL/MI is the clean branch",
+      "condition": "no persistent phase-residue mutual information",
+      "failure_route": "I(T;B) or KL(B||U_B) persists -> refined/new-layer PDEC",
+      "key": "K9",
+      "status": "MutualInformationRoutedOrFlat",
+      "verified": true
+    }
+  ],
+  "all_admission_verified_or_routed": true,
+  "certificate_type": "triad_a1_clean_kls_external_input_router",
+  "current_numeric_context": {
+    "current_nodeletion_triggered": false,
+    "global_max_actual_signature_share": 0.03571428571428571,
+    "global_min_inverse_l2_signature_support": 28.0,
+    "nodeletion_shape_route_counts": {
+      "PhaseResidueMutualPDECWitness": 6
+    },
+    "terminal_route_counts": {
+      "NoTailDemandSparseOrLocalSurvivor": 1,
+      "PositiveLimsupPDECOrDiffuseCleanKLSDichotomy": 8
+    }
+  },
+  "external_deep_theorem_version_status": "closed_for_a1_clean_branch_if_windowed_kloosterman_spectral_dispersion_input_is_accepted",
+  "external_kls_input_registered": true,
+  "external_reduction_rows": [
+    {
+      "input": "K1--K9 all verified or failures routed",
+      "output": "clean A1 dyadic formal unit",
+      "stage": "A1-CleanKLS admission",
+      "status": "materialized_by_this_router"
+    },
+    {
+      "input": "m, ell, d, R, h, smooth W and L2-flat coefficients",
+      "output": "standard inverse-phase Kloosterman/dispersion block",
+      "stage": "A1 clean unit -> Kloosterman window",
+      "status": "external_template_registered"
+    },
+    {
+      "input": "windowed Kloosterman spectral/dispersion large sieve",
+      "output": "O(q/log^2 y) clean residual bound",
+      "stage": "External DI/BFI/Kuznetsov input",
+      "status": "closed_if_external_deep_theorem_is_accepted"
+    },
+    {
+      "input": "do not cite external DI/BFI/Kuznetsov",
+      "output": "prove Kuznetsov-LS atom (SC-9)",
+      "stage": "Self-contained version",
+      "status": "self_contained_atom_open"
+    }
+  ],
+  "external_variable_map": [
+    {
+      "a1_object": "Omega",
+      "kls_object": "一个 clean dyadic/Type block 的 formal unit B",
+      "meaning": "同一 continuous actual-payment clean residual formal unit",
+      "status": "formal_unit_registered"
+    },
+    {
+      "a1_object": "ell",
+      "kls_object": "Kloosterman 可逆变量 x 或 prime-variable block",
+      "meaning": "支付尾素数或升层 promoted prime 的单位变量",
+      "status": "inverse_variable_ready"
+    },
+    {
+      "a1_object": "m",
+      "kls_object": "线性相位/Poisson 后的 m-block",
+      "meaning": "互补因子，满足 Py-d=ell*m 的 completion 变量",
+      "status": "linear_variable_ready"
+    },
+    {
+      "a1_object": "d",
+      "kls_object": "频率/模数标签中的 residue datum",
+      "meaning": "列位移或 completion displacement",
+      "status": "column_displacement_routed_or_clean"
+    },
+    {
+      "a1_object": "R",
+      "kls_object": "Kloosterman 模数/dispersion level",
+      "meaning": "低模 CRT、gcd/unit 剥离后的有效模数或 lcm 层",
+      "status": "external_level_template_registered"
+    },
+    {
+      "a1_object": "h",
+      "kls_object": "Kuznetsov/Bessel 频率参数",
+      "meaning": "非零 Fourier/Bohr 频率",
+      "status": "frequency_template_registered"
+    },
+    {
+      "a1_object": "W(m,ell)",
+      "kls_object": "smooth compact window with polylog derivative loss",
+      "meaning": "行窗口、尾标签与 dyadic 平滑权重",
+      "status": "smooth_partition_registered"
+    },
+    {
+      "a1_object": "a_ell,b_m,gamma",
+      "kls_object": "spectral large-sieve coefficient vectors",
+      "meaning": "diffuse payment residual 产生的 L2-flat 系数",
+      "status": "l2_flat_coefficients_ready_on_clean_branch"
+    }
+  ],
+  "review_conclusion": "A1 的 CleanKLS/DLS 口已经从泛泛的大筛缺口压成外部输入登记表：K1--K9 的失败项都回流到 PDEC/SAE/Multiplicity/Promotion，全部通过时才调用 Kloosterman/dispersion 大筛。外部深定理版可在接受窗口化 DI/BFI/Kuznetsov 输入时闭合；完全自足版仍卡在单一 Kuznetsov-LS atom (SC-9)。",
+  "self_contained_version_status": "open_at_kuznetsov_ls_atom_sc9",
+  "source_hashes": {
+    "actual_payment_json": "40b5e4849328bb8434be285105482d4b3d046b61ec2fa69bf5ef8d77af361874",
+    "clean_contract_md": "8dd2eef4693fda091d0f2310ec2a98f620b8cdf5ba05165345c22fbdf44f3893",
+    "columntail_bridge_json": "48fed9b4cfd6f9f3a851a2a77389978fd81299e0e075bb9e56140e6df77e4067",
+    "hlc_core_reduction_md": "22e104b87bf3aa4a44abed15b005bbcff6aaa2569ebd21b0d9913c5ecd9aac70",
+    "hlc_external_adaptation_md": "aa0d2dea3d0e9cd6bfd6ccfdbb0ebe94994e4f8dffa106828e49cda0fd3d932e",
+    "hlc_self_contained_spine_md": "2e7fabe7bfe1990742ba1605f7ba93b2083d192a63107f10b11c7f6599931b78",
+    "nodeletion_terminal_json": "7c747233fa3af53c52530da304d0493326c7a6f32531e22db0d16d1e1100184b",
+    "pdec_mass_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
+    "script": "a8fabd773877f453ae49f7d8076c9fdd8a23d5a5e6064c95234255a067d0b612",
+    "small_ambiguous_json": "e27c0c1fbb5fc28d55e466cc4b4b1a635e5d6dc0dc5e8bb42e1bd9f01697cc8d",
+    "terminal_dichotomy_json": "9b6c7123864a39f7245ba82e59f8ff5654a725d1b74d690bc0893f668b532609"
+  },
+  "status": "a1_clean_kls_external_input_registered_self_contained_atom_open",
+  "structural_law": "A1 clean branch is invoked only after all finite signatures, column/tail caps, promotable prime residues, and phase-residue mutual-information peaks have been routed away. Under those K1--K9 admission conditions the residual is a dyadic L2-flat Kloosterman/dispersion formal unit. If a windowed DI/BFI/Kuznetsov large-sieve input is accepted, the clean branch is absorbed. Without external input, the remaining self-contained task is exactly the Kuznetsov-LS atom (SC-9).",
+  "terminal_gap_after_router": "KuznetsovLSAtomSC9OrExternalCitation"
+}

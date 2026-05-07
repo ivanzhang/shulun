@@ -1,0 +1,86 @@
+{
+  "a1_clean_input_status": "a1_clean_kls_external_input_registered_self_contained_atom_open",
+  "a1_external_kls_input_registered": true,
+  "all_sc9_subatoms_routed": true,
+  "blocking_rows": [
+    {
+      "candidate": "BD-CEN identity",
+      "reason": "h=0 frequency centering is not same-(u,v) block centering",
+      "verdict": "blocked"
+    },
+    {
+      "candidate": "SOURCE-CEN identity",
+      "reason": "it changes the current WFD target rather than rewriting it",
+      "verdict": "refuted"
+    },
+    {
+      "candidate": "raw BLK-energy-core",
+      "reason": "single-block single-atom test defeats arbitrary log saving",
+      "verdict": "false_for_arbitrary_coefficient_arrays"
+    },
+    {
+      "candidate": "NC-BLK",
+      "reason": "must prove actual WFD coefficients are block-nonconcentrated",
+      "verdict": "remaining_internal_route"
+    },
+    {
+      "candidate": "external DI/BFI",
+      "reason": "original dispersion theorem may supply the needed block variance subtraction",
+      "verdict": "remaining_external_route"
+    }
+  ],
+  "certificate_type": "triad_a1_kuznetsov_ls_atom_frontier_router",
+  "external_deep_theorem_version_status": "closed_for_a1_clean_branch_if_original_di_bfi_dispersion_or_equivalent_windowed_kls_is_accepted",
+  "external_terminal_gap": "ExternalDIBFIOriginalDispersionCitation",
+  "review_conclusion": "A1 的 SC-9 谱大筛口已经继续压缩：不是泛泛的 Kuznetsov 大筛缺口，而是 KZ-E 内部路线的真实阻断 `NC-BLK`，或明确转入外部 DI/BFI 原始 dispersion 引用。",
+  "self_contained_terminal_gap": "NCBLKActualWFDCoefficientBlockNonConcentration",
+  "self_contained_version_status": "open_at_ncblk_actual_block_nonconcentration",
+  "source_hashes": {
+    "a1_clean_kls_external_input_json": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
+    "bd_cen_no_go_md": "927b69a25bee6a459b19561c111fb5797931d27d2b8673170ba9ab83c6a01b99",
+    "blk_energy_obstruction_md": "c424b1aed6378b1e476c86e238dfe7e02cf59f983efffcb6a8b9b7bf18715ca7",
+    "kls_core_self_contained_spine_md": "2e7fabe7bfe1990742ba1605f7ba93b2083d192a63107f10b11c7f6599931b78",
+    "kuznetsov_ls_atom_expansion_md": "5d1ab938c9e1ac9973e114a3da4820c1fb7834a9c767b30e418bb4e34d930fac",
+    "kz_b_trace_specialization_md": "7ffaf4f8b21097311483389cc8cd3e967469c8af6deca3d9eae97e4393242f5e",
+    "kz_c_bessel_decay_md": "bdd7e1b1ecfdcf9f14bbb036aeb50faccfc5788ff2ddec16b9446a6522745ac7",
+    "kz_d_spectral_large_sieve_md": "09713f98650842391f0ba949eac526173c4088657d27cae417028f607cc529f8",
+    "kz_e_dispersion_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "ccd8e47472a84da474bd6eea54636188ff8087632edebd655a41169758441af1",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb"
+  },
+  "status": "a1_sc9_frontier_routed_to_ncblk_or_external_dibfi",
+  "structural_law": "The A1 clean branch reaches SC-9 only after K1--K9 admission. Existing HLC/KLS documents expand SC-9 into KZ-A--KZ-E. KZ-A--KZ-D are routed by smoothing, trace specialization, Bessel decay, and spectral large-sieve/pretrace chains. KZ-E is not closed internally: block-centering identities and raw block-energy estimates have been refuted, leaving NC-BLK for actual WFD coefficients or an external DI/BFI original dispersion theorem.",
+  "subatom_rows": [
+    {
+      "remaining": "none",
+      "role": "Kloosterman modulus smoothing and L2 bookkeeping",
+      "status": "closed_elementary_smoothing",
+      "subatom": "KZ-A"
+    },
+    {
+      "remaining": "none",
+      "role": "Kuznetsov trace formula specialization",
+      "status": "closed_by_trace_specialization_document",
+      "subatom": "KZ-B"
+    },
+    {
+      "remaining": "none",
+      "role": "Bessel transform window decay",
+      "status": "closed_by_bessel_decay_document",
+      "subatom": "KZ-C"
+    },
+    {
+      "remaining": "none",
+      "role": "spectral large sieve with oldform/Eisenstein bookkeeping",
+      "status": "closed_by_pretrace_kernel_chain",
+      "subatom": "KZ-D"
+    },
+    {
+      "remaining": "NC-BLK actual block non-concentration or external DI/BFI original dispersion",
+      "role": "well-factorable dispersion logarithmic saving",
+      "status": "reduced_to_ncblk_or_external_dibfi",
+      "subatom": "KZ-E"
+    }
+  ],
+  "terminal_gap_after_router": "NCBLKOrExternalDIBFIOriginalDispersion"
+}

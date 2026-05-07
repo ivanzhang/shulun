@@ -3728,3 +3728,179 @@ PDEC 偏斜分支回到递归 PDEC family；
 
 这仍不是最终行命题闭合。下一步必须直接构造 `CleanKLS/DLS-Cert`，
 或者把可用的外部大筛定理精确适配到当前 formal unit。
+
+## 73. A1 CleanKLS 外部输入与自足原子压缩
+
+新增 `experiments/prime_matrix_triad_a1_clean_kls_external_input_router.py` 后，
+第 72 节留下的 `CleanKLS/DLS 大筛证书或外部输入` 被进一步压缩。
+
+机器结果：
+
+```text
+status=a1_clean_kls_external_input_registered_self_contained_atom_open；
+external_kls_input_registered=True；
+all_admission_verified_or_routed=True；
+terminal_gap_after_router=KuznetsovLSAtomSC9OrExternalCitation。
+```
+
+该路由器不是把外部谱大筛当作已自证，而是把 A1 clean 分支的准入条件逐项登记：
+
+```text
+K1 dyadic ranges；
+K2 lowmod orthogonality；
+K3 no short-window cap；
+K4 no column/tail cap；
+K5 coefficient L2-flat；
+K6 gcd/unit strata；
+K7 same formal unit；
+K8 no promotable top-prime residue；
+K9 no phase-residue mutual information。
+```
+
+每一项的失败出口均已命名：
+
+```text
+K2 fail => finite signature PDEC；
+K3 fail => LocalSurvivor / SAE / refined PDEC；
+K4 fail => ColumnCRT / tail-anchor PDEC；
+K5 fail => coefficient concentration PDEC / SAE；
+K6 fail => gcd-stratum PDEC or finite exception；
+K7 fail => Multiplicity/Stitching absorption；
+K8 fail => prime-lift deletion / NoDeletion router；
+K9 fail => refined phase-residue PDEC。
+```
+
+因此真正的 clean 输入只在所有低维、列尾、升层、互信息峰都被剥离后出现。此时 A1 residual
+可写成同一 formal unit 上的 Kloosterman/dispersion 型变量表：
+
+```text
+ell          => Kloosterman 可逆变量；
+m            => 互补因子 / linear completion 变量；
+d            => column displacement；
+R            => CRT/gcd 剥离后的有效模数；
+h            => 非零 Fourier/Bohr 频率；
+W(m,ell)     => dyadic/smooth window；
+a_ell,b_m    => L2-flat coefficients。
+```
+
+外部深定理版的闭合语义：
+
+```text
+接受窗口化 DI/BFI/Kuznetsov spectral/dispersion large sieve
+=> clean A1 Kloosterman block = O(q/log^2 y)
+=> 不能承载 q/log y 级 clean residual
+=> A1 clean branch absorbed。
+```
+
+完全自足版的真实剩余：
+
+```text
+prove Kuznetsov-LS atom (SC-9)
+```
+
+也就是已有
+`prime-matrix-h3-dsb-hlc-kls-core-self-contained-spine.md` 中的唯一未内联谱大筛原子。
+前沿路由器同步更新后：
+
+```text
+A1CleanKLSExternalInput => external_kls_input_registered_self_contained_atom_open；
+terminal_dual_gap => KuznetsovLSAtomSC9OrExternalCitation。
+```
+
+于是 A1 内部路由硬点已经不再是：
+
+```text
+NoDeletion-KL；
+CleanKLS admission；
+generic large sieve。
+```
+
+而是单一终端：
+
+```text
+Kuznetsov-LS atom (SC-9)，
+或给出可复核的外部 DI/BFI/Kuznetsov 引用。
+```
+
+这一步仍不是完全自足行命题证明；它完成的是 A1 clean 分支到唯一谱大筛原子的硬压缩。
+
+## 74. A1 Kuznetsov-LS 原子前沿压缩
+
+新增 `experiments/prime_matrix_triad_a1_kuznetsov_ls_atom_frontier_router.py` 后，
+第 73 节的 `Kuznetsov-LS atom (SC-9)` 不再只是一个大名词，而被接到既有谱链条的最窄阻断点。
+
+机器结果：
+
+```text
+status=a1_sc9_frontier_routed_to_ncblk_or_external_dibfi；
+all_sc9_subatoms_routed=True；
+terminal_gap_after_router=NCBLKOrExternalDIBFIOriginalDispersion。
+```
+
+`SC-9` 已展开为：
+
+```text
+KZ-A: Kloosterman modulus smoothing and L2 bookkeeping；
+KZ-B: Kuznetsov trace formula specialization；
+KZ-C: Bessel transform window decay；
+KZ-D: spectral large sieve with oldform/Eisenstein bookkeeping；
+KZ-E: well-factorable dispersion logarithmic saving。
+```
+
+其中当前状态为：
+
+```text
+KZ-A => elementary smoothing closed；
+KZ-B => trace specialization document closed；
+KZ-C => Bessel decay document closed；
+KZ-D => pretrace/spectral large-sieve chain closed；
+KZ-E => reduced to NC-BLK or external DI/BFI。
+```
+
+KZ-E 内部路线已经排除的伪出口：
+
+```text
+BD-CEN identity:
+  h=0 frequency centering is not same-(u,v) block centering；
+
+SOURCE-CEN identity:
+  changes the WFD target rather than rewriting it；
+
+raw BLK-energy-core:
+  false for arbitrary coefficient arrays by single-block single-atom test。
+```
+
+所以完全自足版的真实剩余不是：
+
+```text
+generic Kuznetsov；
+generic spectral large sieve；
+raw block energy；
+source centering identity。
+```
+
+而是：
+
+```text
+NC-BLK:
+prove actual WFD coefficients are block-nonconcentrated strongly enough
+to give arbitrary logarithmic saving in the same-(u,v) block energy。
+```
+
+外部深定理版则为：
+
+```text
+cite original DI/BFI dispersion theorem
+or an equivalent windowed Kloosterman spectral/dispersion theorem
+that already contains the required block variance subtraction。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1KuznetsovLSAtomFrontier => sc9_routed_to_ncblk_or_external_dibfi；
+terminal_dual_gap => NCBLKOrExternalDIBFIOriginalDispersion。
+```
+
+这一步继续保持边界：没有宣称完全自足闭合；但已经把 A1 clean 分支从 `CleanKLS`、
+`SC-9` 这样的大缺口压成一个具体可审稿命题 `NC-BLK`，或明确的外部 DI/BFI 引用义务。

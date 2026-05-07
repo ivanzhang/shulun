@@ -38,6 +38,12 @@ DEFAULT_STANDARD_DELETION = DOCS / "prime-matrix-triad-a1-standard-prime-lift-de
 DEFAULT_NODELETION_TERMINAL = (
     DOCS / "prime-matrix-triad-a1-continuous-nodeletion-terminal-router.json"
 )
+DEFAULT_CLEAN_KLS_EXTERNAL = (
+    DOCS / "prime-matrix-triad-a1-clean-kls-external-input-router.json"
+)
+DEFAULT_KUZNETSOV_FRONTIER = (
+    DOCS / "prime-matrix-triad-a1-kuznetsov-ls-atom-frontier-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -102,6 +108,8 @@ def build_frontier_rows(
     selective_commutation: dict[str, Any],
     standard_deletion: dict[str, Any],
     nodeletion_terminal: dict[str, Any],
+    clean_kls_external: dict[str, Any],
+    kuznetsov_frontier: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -251,6 +259,30 @@ def build_frontier_rows(
             ),
             "next_action": "NoDeletion-KL 不再是独立出口；继续提交 CleanKLS/DLS 大筛证书或外部 KLS 输入。",
         },
+        {
+            "frontier": "A1CleanKLSExternalInput",
+            "status": "external_kls_input_registered_self_contained_atom_open"
+            if clean_kls_external["external_kls_input_registered"]
+            else "clean_kls_external_input_gap",
+            "evidence": (
+                f"A1 clean KLS 外部输入已登记；"
+                f"all_admission_verified_or_routed={clean_kls_external['all_admission_verified_or_routed']}；"
+                f"terminal_gap={clean_kls_external['terminal_gap_after_router']}。"
+            ),
+            "next_action": "外部深定理版接入 DI/BFI/Kuznetsov；完全自足版只剩证明 Kuznetsov-LS atom (SC-9)。",
+        },
+        {
+            "frontier": "A1KuznetsovLSAtomFrontier",
+            "status": "sc9_routed_to_ncblk_or_external_dibfi"
+            if kuznetsov_frontier["all_sc9_subatoms_routed"]
+            else "sc9_subatom_gap",
+            "evidence": (
+                f"SC-9 已展开并路由；"
+                f"terminal_gap={kuznetsov_frontier['terminal_gap_after_router']}；"
+                f"self_contained={kuznetsov_frontier['self_contained_version_status']}。"
+            ),
+            "next_action": "无黑箱版直接证明 NC-BLK；外部版引用 DI/BFI 原始 dispersion 或等价窗口 KLS。",
+        },
     ]
 
 
@@ -270,6 +302,8 @@ def run(
     selective_commutation_path: Path,
     standard_deletion_path: Path,
     nodeletion_terminal_path: Path,
+    clean_kls_external_path: Path,
+    kuznetsov_frontier_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -287,6 +321,8 @@ def run(
     selective_commutation = load_json(selective_commutation_path)
     standard_deletion = load_json(standard_deletion_path)
     nodeletion_terminal = load_json(nodeletion_terminal_path)
+    clean_kls_external = load_json(clean_kls_external_path)
+    kuznetsov_frontier = load_json(kuznetsov_frontier_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -303,6 +339,8 @@ def run(
         selective_commutation,
         standard_deletion,
         nodeletion_terminal,
+        clean_kls_external,
+        kuznetsov_frontier,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -319,6 +357,8 @@ def run(
         "selective_promotion_resolved_by_finite_split",
         "positive_deletion_potential_or_nodeletion_kl",
         "nodeletion_terminal_routed_clean_kls_open",
+        "external_kls_input_registered_self_contained_atom_open",
+        "sc9_routed_to_ncblk_or_external_dibfi",
         "closed",
         "no_fourth_exit",
     }
@@ -343,6 +383,8 @@ def run(
             "selective_promotion_commutation_json": file_sha256(selective_commutation_path),
             "standard_prime_lift_deletion_json": file_sha256(standard_deletion_path),
             "continuous_nodeletion_terminal_json": file_sha256(nodeletion_terminal_path),
+            "a1_clean_kls_external_input_json": file_sha256(clean_kls_external_path),
+            "a1_kuznetsov_ls_atom_frontier_json": file_sha256(kuznetsov_frontier_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -353,7 +395,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "CleanKLSDLSLargeSieveOrExternalKLSInput",
+        "terminal_dual_gap": "NCBLKOrExternalDIBFIOriginalDispersion",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -362,7 +404,9 @@ def run(
             "positive-limsup 有限签名的 PDEC 输入账本已物化。"
             "这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；"
             "标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到"
-            " KL/PDEC 或 CleanKLS/DLS。最终独立缺口压到 CleanKLS/DLS 大筛估计或外部 KLS 输入。"
+            " KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记："
+            "外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，"
+            "当前无黑箱版只剩 NC-BLK，外部版只剩 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -371,7 +415,8 @@ def run(
             "终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。"
             "prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，"
             "标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。"
-            "下一步不再是路由，而是提交 CleanKLS/DLS 大筛证书或外部 KLS 输入。"
+            "A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。"
+            "下一步不再是 A1 内部路由，而是证明 NC-BLK 或给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
 
@@ -403,7 +448,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  finite signatures force prime-lift congruence rows；",
         "  selective promotion commutes after finite splitting；",
         "  standard prime-lift pays positive deletion potential；",
-        "  NoDeletion-KL is routed to recursive PDEC or CleanKLS/DLS。",
+        "  NoDeletion-KL is routed to recursive PDEC or CleanKLS/DLS；",
+        "  A1 clean KLS is reduced to Kuznetsov-LS atom or external citation；",
+        "  SC-9 is reduced to NC-BLK or external DI/BFI dispersion。",
         "```",
         "",
         "## 2. 汇总",
@@ -452,11 +499,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "selective promotion commutation resolved；",
             "standard prime-lift deletion potential materialized；",
             "NoDeletion terminal routed；",
-            "remaining independent gap is CleanKLS/DLS large sieve or external KLS input。",
+            "A1 clean KLS external input registered；",
+            "SC-9 routed to NC-BLK / external DI-BFI；",
+            "remaining independent gap is NC-BLK or external DI/BFI original dispersion。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "提交 diffuse CleanKLS/DLS 大筛证书，或登记可复核的外部 KLS/DI/BFI 输入。",
+            "证明 NC-BLK 实际块非集中，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -487,6 +536,12 @@ def main() -> None:
     parser.add_argument(
         "--nodeletion-terminal-json", type=Path, default=DEFAULT_NODELETION_TERMINAL
     )
+    parser.add_argument(
+        "--clean-kls-external-json", type=Path, default=DEFAULT_CLEAN_KLS_EXTERNAL
+    )
+    parser.add_argument(
+        "--kuznetsov-frontier-json", type=Path, default=DEFAULT_KUZNETSOV_FRONTIER
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -507,6 +562,8 @@ def main() -> None:
         selective_commutation_path=args.selective_commutation_json,
         standard_deletion_path=args.standard_deletion_json,
         nodeletion_terminal_path=args.nodeletion_terminal_json,
+        clean_kls_external_path=args.clean_kls_external_json,
+        kuznetsov_frontier_path=args.kuznetsov_frontier_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
