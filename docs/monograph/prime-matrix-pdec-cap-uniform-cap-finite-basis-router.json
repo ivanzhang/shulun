@@ -1,0 +1,79 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_uniform_cap_finite_basis_router",
+  "finite_basis_law": "The apparent continuum of cap-stability tests is finite at every fixed formal unit. For a nontrivial character chi_h on the finite signature group G, the coefficients Re(zeta chi_h(a)) are points on a finite cyclic image. Varying zeta and alpha only selects preimages of circular arcs in that image; the cap set changes only when an endpoint crosses one of the finitely many image points. Thus uniform cap stability is equivalent to finite cyclic-arc cap mass bounds for every nontrivial character. Any arc whose mass exceeds the localization threshold is already a named cap return.",
+  "finite_cyclic_arc_cap_mass_bounds_closed": false,
+  "narrowest_next_hardpoint": "FiniteCyclicArcCapMassBoundsForRankTwoPrimitiveKernels",
+  "open_final_gates": [
+    "FiniteCyclicArcCapMassBoundsForRankTwoPrimitiveKernels"
+  ],
+  "review_conclusion": "统一帽稳定证书已从连续的 `(h,zeta,alpha)` 搜索压成有限循环弧 cap 质量界。固定 formal unit 后，字符像是有限循环集，方向帽只是循环弧预像；高质量弧 cap 回流 `SAE/refined PDEC/ColumnCRT/multiplicity`，反复细化也无同层循环。最新最窄剩余是有限循环弧 cap 质量界全集。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "UniformCapStabilityCertificateForRankTwoPrimitiveKernels",
+      "gate": "UniformCapStabilityActive",
+      "meaning": "上一层已把二秩 primitive 核不等式改写为统一帽稳定证书。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "finite signature group G and count function g",
+      "gate": "FiniteSignatureGroupRegistered",
+      "meaning": "每个 PDEC formal unit 的帽都发生在有限签名群或有限签名集上。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "all h!=0 and zeta directions in U_CRT",
+      "gate": "AllDirectionsUseCharacters",
+      "meaning": "需要检查的方向来自非平凡字符及外向实方向，而不是无限维自由函数。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "preimage of a circular arc under chi_h",
+      "gate": "ZetaAlphaContinuumReducedToCyclicArcs",
+      "meaning": "固定非平凡字符后，任意方向帽都是字符像有限循环序上的弧预像；阈值只在有限临界弧上改变。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "SAE / refined PDEC / ColumnCRT / Multiplicity",
+      "gate": "HighArcCapRoutesNamed",
+      "meaning": "若某个有限循环弧 cap 质量达到帽定位阈值，它必须回流命名出口，不能保留为 cap-stable 核。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "finite Boolean algebra of cap arcs or new-layer entropy",
+      "gate": "FiniteArcRefinementNoCycle",
+      "meaning": "有限弧 cap 反复细化只会生成有限 Boolean 分区；升层则进入 new-layer PDEC/CleanKLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "all zeta/alpha caps reduce to finite cyclic arc cap basis",
+      "gate": "UniformCapFiniteBasisDerived",
+      "meaning": "统一帽稳定证书已从连续方向帽族压成有限循环弧 cap 质量界。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "global mass bounds for every finite character-arc cap not submitted",
+      "gate": "FiniteCyclicArcCapMassBoundsForRankTwoPrimitiveKernels",
+      "meaning": "剩余全球硬点是证明所有二秩 primitive 同 formal unit 核的有限循环弧 cap 质量低于阈值，或输出命名回流。"
+    }
+  ],
+  "source_hashes": {
+    "capstable": "b58e2d370206d79c4cb4a8df05ab7e8a287a18999a02988fd44e9af34a838da2",
+    "dual_absorb": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b",
+    "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
+    "script": "aeca0631b76371088542aa8aefc8d10ad2e358d8e3e15668174995d0f1927667",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547"
+  },
+  "status": "uniform_cap_stability_reduced_to_finite_cyclic_arc_cap_bounds",
+  "uniform_cap_finite_basis_closed": true
+}

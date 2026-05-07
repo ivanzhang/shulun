@@ -1,0 +1,79 @@
+{
+  "capstable_law": "For a rank-at-least-two primitive same-formal-unit PDEC kernel, fix one direction (h,zeta). The same-set LP computes U_CRT on the same count vector g. If U_CRT reaches L_PDEC, cap localization gives a direction cap C_alpha(h,zeta) with mass at least (L_PDEC-alpha M)/(1-alpha). Such a cap is not allowed to remain inside a cap-stable kernel: sparse caps route to SAE, persistent caps route to refined PDEC or ColumnCRT, and mismatched caps route to multiplicity normalization. Conversely, if every legal cap is certified below the corresponding threshold, then no direction can reach L_PDEC, hence U_CRT<L_PDEC for the kernel.",
+  "certificate_type": "prime_matrix_pdec_cap_ranktwo_capstable_kernel_router",
+  "narrowest_next_hardpoint": "UniformCapStabilityCertificateForRankTwoPrimitiveKernels",
+  "open_final_gates": [
+    "UniformCapStabilityCertificateForRankTwoPrimitiveKernels"
+  ],
+  "ranktwo_capstable_kernel_inequality_closed": true,
+  "review_conclusion": "二秩 cap-stable primitive 核的不等式本身已被改写为 cap localization 的逆否命题：只要所有合法方向帽都低于阈值，就自动得到 `U_CRT<L_PDEC`；若某个方向帽达到阈值，该对象就不再是 cap-stable 核，而必须回流 `SAE/refined PDEC/ColumnCRT/multiplicity`。因此最新最窄剩余不是抽象核不等式，而是统一帽稳定证书。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "RankTwoCapStablePrimitivePDECKernelInequality",
+      "gate": "RankTwoCapStableKernelActive",
+      "meaning": "上一层已把 primitive 多原子终端压成二秩以上且无可回流 cap 的核。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "U_CRT(h,zeta;theta) over P_theta",
+      "gate": "SameSetLPDirectionProtocolRegistered",
+      "meaning": "每个方向上界都必须在同一坏窗计数多面体 P_theta 上计算。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "g(C_alpha)>=(U-alpha M)/(1-alpha)",
+      "gate": "CapLocalizationThresholdRegistered",
+      "meaning": "若某方向线性泛函达到 L_PDEC，则存在对应方向帽的强质量下界。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "SAE / refined PDEC / ColumnCRT / Multiplicity",
+      "gate": "CapFailureRoutesNamed",
+      "meaning": "超过阈值的方向帽不能留在 cap-stable 核内，必须回流到已命名路线。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "finite Boolean algebra or new-layer entropy dichotomy",
+      "gate": "CapRefinementNoCycleRegistered",
+      "meaning": "持久帽细化不会产生同层无限循环；升层也进入命名 new-layer PDEC/CleanKLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "terminal triad PDEC family contract",
+      "gate": "PDECTerminalInterfaceRegistered",
+      "meaning": "cap 失败只允许回到三终端合同中的 PDEC/SAE/CleanKLS 路线，不能形成第四出口。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "if every legal cap is below threshold then every direction has U_CRT<L_PDEC",
+      "gate": "RankTwoCapStableKernelInequalityByContrapositive",
+      "meaning": "二秩 cap-stable 核不等式本身由 cap localization 逆否命题闭合；真正难点转为证明统一帽稳定阈值。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "global legal cap bounds for every rank>=2 primitive same-formal-unit kernel not submitted",
+      "gate": "UniformCapStabilityCertificateForRankTwoPrimitiveKernels",
+      "meaning": "剩余全球硬点是为所有二秩以上 primitive 核提交合法方向帽上界，或输出命名 cap 回流证书。"
+    }
+  ],
+  "source_hashes": {
+    "dual_absorb": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b",
+    "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
+    "rank_router": "00c4e46f6a181722f7b3af844911f5b08ba14d106b88da1b5e5888a5066907c7",
+    "script": "8b640e9df20957138d26c34a62e8e6d2b4d3c52ec065e24623500bacb2893441",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547"
+  },
+  "status": "ranktwo_capstable_kernel_inequality_reduced_to_uniform_cap_stability",
+  "uniform_cap_stability_certificate_closed": false
+}

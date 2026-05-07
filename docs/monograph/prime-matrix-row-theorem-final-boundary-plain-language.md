@@ -146,7 +146,7 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=PrimitiveMultiAtomSameFormalUnitPDECCertificate。
+narrowest_next_hardpoint=TransverseQuotientCleanLargeSieveAtom。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -320,11 +320,109 @@ narrowest_next_hardpoint=PrimitiveMultiAtomSameFormalUnitPDECCertificate。
 多重口径要先规范化；当前已物化 primitive 非二点候选为 `0`。未来只有同 formal unit、去重后三点以上、
 非二点 tautology、未被 SAE/Endpoint 吸收的对象才准入最终证书。
 
-因此当前真正剩余已压成单一终端估计：
+继续新增 primitive 多原子秩边界路由器后，这个准入证书又被拆掉一层：
 
 ```text
-PrimitiveMultiAtomSameFormalUnitPDECCertificate:
-  证明所有准入后的 primitive 多原子同 formal unit PDEC 满足 U_CRT<L_PDEC。
+experiments/prime_matrix_pdec_cap_primitive_multiatom_rank_router.py
+docs/monograph/prime-matrix-pdec-cap-primitive-multiatom-rank-router.md/json
+
+primitive_multiatom_rank_boundary_closed=true；
+current_materialized_primitive_multiatom_instances_closed=true；
+narrowest_next_hardpoint=RankTwoCapStablePrimitivePDECKernelInequality。
+```
+
+也就是说，`PrimitiveMultiAtomSameFormalUnitPDECCertificate` 现在不是黑箱终端。零秩/一秩
+原子结构只能回到重复口径、二点 Fourier tautology、固定壳 `PDEC/ColumnCRT` 或 `SAE`；
+若容量比较失败，则必须先输出 cap，并按 `SAE/refined PDEC/ColumnCRT/multiplicity` 回流。
+
+因此当前真正剩余已压成更窄的单一终端估计：
+
+```text
+RankTwoCapStablePrimitivePDECKernelInequality:
+  对所有二秩以上、同 formal unit、且无可回流 cap 的 primitive PDEC 核，
+  证明同一坏窗集合上的 U_CRT<L_PDEC。
+```
+
+继续新增二秩 cap-stable 核路由器后，连这个核不等式本身也被写成 cap localization 的逆否命题：
+
+```text
+experiments/prime_matrix_pdec_cap_ranktwo_capstable_kernel_router.py
+docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.md/json
+
+ranktwo_capstable_kernel_inequality_closed=true；
+narrowest_next_hardpoint=UniformCapStabilityCertificateForRankTwoPrimitiveKernels。
+```
+
+通俗说：如果某个方向的 `U_CRT` 达到 `L_PDEC`，帽定位立刻给出一个方向帽质量下界
+`(L_PDEC-alpha M)/(1-alpha)`；这个帽若稀疏就进 `SAE`，若持久就进 refined `PDEC/ColumnCRT`，
+若口径不一致就进 multiplicity 规范化。因此留在 cap-stable 核中的对象，必须所有合法方向帽都低于阈值。
+
+所以最新真正剩余是：
+
+```text
+UniformCapStabilityCertificateForRankTwoPrimitiveKernels:
+  对每个二秩以上 primitive 同 formal unit 核、每个合法方向和每个阈值 alpha，
+  证明方向帽质量低于帽定位阈值；
+  或输出 SAE / refined PDEC / ColumnCRT / multiplicity 回流证书。
+```
+
+继续新增统一帽稳定有限基路由器后，连续方向帽族不再是无限搜索：
+
+```text
+experiments/prime_matrix_pdec_cap_uniform_cap_finite_basis_router.py
+docs/monograph/prime-matrix-pdec-cap-uniform-cap-finite-basis-router.md/json
+
+uniform_cap_finite_basis_closed=true；
+narrowest_next_hardpoint=FiniteCyclicArcCapMassBoundsForRankTwoPrimitiveKernels。
+```
+
+固定一个 finite formal unit 后，非平凡字符 `chi_h` 的像是有限循环集；改变 `zeta` 和
+`alpha` 只是在这个有限循环集上移动弧端点。因此所有方向帽只需检查有限个循环弧预像。
+
+继续新增有限弧横向路由器后，高质量有限弧也不再是黑箱：
+
+```text
+experiments/prime_matrix_pdec_cap_finite_arc_transverse_router.py
+docs/monograph/prime-matrix-pdec-cap-finite-arc-transverse-router.md/json
+
+finite_arc_no_unnamed_exit_closed=true；
+narrowest_next_hardpoint=TransverseFiberExpansionForFiniteArcCaps。
+```
+
+也就是说，有限字符弧是一个秩一薄片。若弧内横向支撑低，则进入 `SAE/ColumnCRT/固定壳PDEC`；
+若横向偏斜持久，则进入 refined `PDEC`；若横向平坦分散，则进入 `CleanKLS/DLS` 或外部大筛输入。
+
+所以最新真正剩余是：
+
+```text
+TransverseFiberExpansionForFiniteArcCaps:
+  对每个高质量有限字符弧，证明弧内横向纤维无法同时保持
+  primitive 二秩、同 formal unit、cap-stable 和足够质量；
+  若证明失败，必须输出 SAE / refined PDEC / ColumnCRT / CleanKLS 回流证书。
+```
+
+继续新增横向 clean 归约路由器后，横向扩张硬点又压成一个 clean 大筛原子：
+
+```text
+experiments/prime_matrix_pdec_cap_transverse_clean_reduction_router.py
+docs/monograph/prime-matrix-pdec-cap-transverse-clean-reduction-router.md/json
+
+transverse_expansion_reduced_to_clean_atom=true；
+narrowest_next_hardpoint=TransverseQuotientCleanLargeSieveAtom。
+```
+
+也就是说，有限弧只固定一个字符方向；二秩以上 primitive 核在弧内仍留下横向商变量。
+横向低支撑、横向持久偏斜、横向列/壳集中都已经回流命名出口。若这些都没有，剩下的就是
+横向商上的 `L2-flat clean residual`。
+
+所以最新真正剩余是：
+
+```text
+TransverseQuotientCleanLargeSieveAtom:
+  证明高质量有限弧的横向商在 K1--K9 clean admission 后
+  满足内部 LargeSieve/DLS/KLS 界；
+  或明确登记外部 KLS/DI/BFI/Kuznetsov 输入；
+  若任一 clean admission 失败，则回流 PDEC / SAE / ColumnCRT / Multiplicity。
 ```
 
 ## 7. 已并入合著的文件

@@ -49,6 +49,21 @@ DEFAULT_SC9_RECONCILIATION = (
 DEFAULT_PERSISTENT_TERMINAL_ADMISSION = (
     DOCS / "prime-matrix-pdec-cap-persistent-terminal-admission-router.json"
 )
+DEFAULT_PRIMITIVE_MULTIATOM_RANK = (
+    DOCS / "prime-matrix-pdec-cap-primitive-multiatom-rank-router.json"
+)
+DEFAULT_RANKTWO_CAPSTABLE_KERNEL = (
+    DOCS / "prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.json"
+)
+DEFAULT_UNIFORM_CAP_FINITE_BASIS = (
+    DOCS / "prime-matrix-pdec-cap-uniform-cap-finite-basis-router.json"
+)
+DEFAULT_FINITE_ARC_TRANSVERSE = (
+    DOCS / "prime-matrix-pdec-cap-finite-arc-transverse-router.json"
+)
+DEFAULT_TRANSVERSE_CLEAN_REDUCTION = (
+    DOCS / "prime-matrix-pdec-cap-transverse-clean-reduction-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.md"
 
@@ -117,6 +132,11 @@ def build_rows(
     persistent_signature_unification: dict[str, Any],
     sc9_reconciliation: dict[str, Any],
     persistent_terminal_admission: dict[str, Any],
+    primitive_multiatom_rank: dict[str, Any],
+    ranktwo_capstable_kernel: dict[str, Any],
+    uniform_cap_finite_basis: dict[str, Any],
+    finite_arc_transverse: dict[str, Any],
+    transverse_clean_reduction: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 PDEC-CAP 前沿审查表。"""
     self_bottleneck_accepts_pdec = (
@@ -225,6 +245,41 @@ def build_rows(
         and persistent_terminal_admission["persistent_terminal_admission_boundary_closed"]
         and persistent_terminal_admission["narrowest_next_hardpoint"]
         == "PrimitiveMultiAtomSameFormalUnitPDECCertificate"
+    )
+    primitive_multiatom_rank_boundary_closed = (
+        primitive_multiatom_rank["status"]
+        == "primitive_multiatom_pdec_reduced_to_rank_two_cap_stable_kernel"
+        and primitive_multiatom_rank["primitive_multiatom_rank_boundary_closed"]
+        and primitive_multiatom_rank["narrowest_next_hardpoint"]
+        == "RankTwoCapStablePrimitivePDECKernelInequality"
+    )
+    ranktwo_capstable_kernel_closed = (
+        ranktwo_capstable_kernel["status"]
+        == "ranktwo_capstable_kernel_inequality_reduced_to_uniform_cap_stability"
+        and ranktwo_capstable_kernel["ranktwo_capstable_kernel_inequality_closed"]
+        and ranktwo_capstable_kernel["narrowest_next_hardpoint"]
+        == "UniformCapStabilityCertificateForRankTwoPrimitiveKernels"
+    )
+    uniform_cap_finite_basis_closed = (
+        uniform_cap_finite_basis["status"]
+        == "uniform_cap_stability_reduced_to_finite_cyclic_arc_cap_bounds"
+        and uniform_cap_finite_basis["uniform_cap_finite_basis_closed"]
+        and uniform_cap_finite_basis["narrowest_next_hardpoint"]
+        == "FiniteCyclicArcCapMassBoundsForRankTwoPrimitiveKernels"
+    )
+    finite_arc_transverse_closed = (
+        finite_arc_transverse["status"]
+        == "finite_arc_cap_bounds_reduced_to_transverse_expansion"
+        and finite_arc_transverse["finite_arc_no_unnamed_exit_closed"]
+        and finite_arc_transverse["narrowest_next_hardpoint"]
+        == "TransverseFiberExpansionForFiniteArcCaps"
+    )
+    transverse_clean_reduction_closed = (
+        transverse_clean_reduction["status"]
+        == "transverse_expansion_reduced_to_clean_large_sieve_atom"
+        and transverse_clean_reduction["transverse_expansion_reduced_to_clean_atom"]
+        and transverse_clean_reduction["narrowest_next_hardpoint"]
+        == "TransverseQuotientCleanLargeSieveAtom"
     )
 
     return [
@@ -341,10 +396,45 @@ def build_rows(
             False,
         ),
         row(
-            "PrimitiveMultiAtomSameFormalUnitPDECCertificate",
+            "PrimitiveMultiAtomRankBoundary",
+            primitive_multiatom_rank_boundary_closed,
+            primitive_multiatom_rank["narrowest_next_hardpoint"],
+            "primitive 多原子同 formal unit 终端已进一步拆成低秩退化、cap 失败回流或二秩以上 cap-stable 核。",
             False,
-            "global U_CRT<L_PDEC for admitted primitive multi-atom formal units not submitted",
-            "剩余终端是所有准入后的 primitive 多原子同 formal unit PDEC 容量证书。",
+        ),
+        row(
+            "RankTwoCapStablePrimitivePDECKernelInequality",
+            ranktwo_capstable_kernel_closed,
+            ranktwo_capstable_kernel["narrowest_next_hardpoint"],
+            "二秩 cap-stable primitive 核不等式已由 cap localization 逆否命题改写；真正剩余是统一帽稳定证书。",
+            False,
+        ),
+        row(
+            "UniformCapStabilityFiniteBasis",
+            uniform_cap_finite_basis_closed,
+            uniform_cap_finite_basis["narrowest_next_hardpoint"],
+            "统一帽稳定证书已从连续 zeta/alpha 方向族压成有限字符循环弧 cap 质量界。",
+            False,
+        ),
+        row(
+            "FiniteArcTransverseSplit",
+            finite_arc_transverse_closed,
+            finite_arc_transverse["narrowest_next_hardpoint"],
+            "有限循环弧 cap 已拆成低横向支撑、持久横向偏斜或横向平坦分散三路，无第四出口。",
+            False,
+        ),
+        row(
+            "TransverseCleanReduction",
+            transverse_clean_reduction_closed,
+            transverse_clean_reduction["narrowest_next_hardpoint"],
+            "高质量有限弧内的横向纤维扩张已压成横向商 clean 大筛原子，非平坦横向缺陷回流命名出口。",
+            False,
+        ),
+        row(
+            "TransverseQuotientCleanLargeSieveAtom",
+            False,
+            "self-contained transverse clean large-sieve estimate not submitted",
+            "剩余终端是证明横向商上的 clean 大筛原子，或明确外部输入；不能误称为完整行列定理闭合。",
             True,
         ),
     ]
@@ -367,6 +457,11 @@ def run(
     persistent_signature_unification_path: Path,
     sc9_reconciliation_path: Path,
     persistent_terminal_admission_path: Path,
+    primitive_multiatom_rank_path: Path,
+    ranktwo_capstable_kernel_path: Path,
+    uniform_cap_finite_basis_path: Path,
+    finite_arc_transverse_path: Path,
+    transverse_clean_reduction_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC-CAP 前沿审查。"""
     self_bottleneck = load_json(self_bottleneck_path)
@@ -385,6 +480,11 @@ def run(
     persistent_signature_unification = load_json(persistent_signature_unification_path)
     sc9_reconciliation = load_json(sc9_reconciliation_path)
     persistent_terminal_admission = load_json(persistent_terminal_admission_path)
+    primitive_multiatom_rank = load_json(primitive_multiatom_rank_path)
+    ranktwo_capstable_kernel = load_json(ranktwo_capstable_kernel_path)
+    uniform_cap_finite_basis = load_json(uniform_cap_finite_basis_path)
+    finite_arc_transverse = load_json(finite_arc_transverse_path)
+    transverse_clean_reduction = load_json(transverse_clean_reduction_path)
 
     rows = build_rows(
         self_bottleneck=self_bottleneck,
@@ -403,6 +503,11 @@ def run(
         persistent_signature_unification=persistent_signature_unification,
         sc9_reconciliation=sc9_reconciliation,
         persistent_terminal_admission=persistent_terminal_admission,
+        primitive_multiatom_rank=primitive_multiatom_rank,
+        ranktwo_capstable_kernel=ranktwo_capstable_kernel,
+        uniform_cap_finite_basis=uniform_cap_finite_basis,
+        finite_arc_transverse=finite_arc_transverse,
+        transverse_clean_reduction=transverse_clean_reduction,
     )
     closed_current_materialized = all(
         item["closed"] for item in rows if not item["blocks_final"]
@@ -433,12 +538,19 @@ def run(
             "persistent_terminal_admission": file_sha256(
                 persistent_terminal_admission_path
             ),
+            "primitive_multiatom_rank": file_sha256(primitive_multiatom_rank_path),
+            "ranktwo_capstable_kernel": file_sha256(ranktwo_capstable_kernel_path),
+            "uniform_cap_finite_basis": file_sha256(uniform_cap_finite_basis_path),
+            "finite_arc_transverse": file_sha256(finite_arc_transverse_path),
+            "transverse_clean_reduction": file_sha256(
+                transverse_clean_reduction_path
+            ),
         },
         "closed_current_materialized_pdec_gates": closed_current_materialized,
         "pdec_cap_same_set_global_dual_closed": False,
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
-        "narrowest_next_hardpoint": "PrimitiveMultiAtomSameFormalUnitPDECCertificate",
+        "narrowest_next_hardpoint": "TransverseQuotientCleanLargeSieveAtom",
         "rows": rows,
         "frontier_law": (
             "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier "
@@ -458,9 +570,22 @@ def run(
             "and generic WFD is not imported into the self-contained claim. The remaining "
             "persistent terminal is then normalized through the admission router: raw "
             "ColumnCRT, dual failure, multiplicity mismatch, and two-point tautology are not "
-            "terminal objects. The remaining global final gate is the admitted "
-            "PrimitiveMultiAtomSameFormalUnitPDECCertificate, not an unnamed APS/diffuse/SC-9 "
-            "or raw persistent-signature exit."
+            "terminal objects. The primitive multi-atom rank router then removes another "
+            "layer of ambiguity: rank-zero or rank-one primitive remnants are reuse, "
+            "two-point, fixed-shell PDEC/ColumnCRT, or SAE objects, while any failed "
+            "capacity comparison must first return a cap. The remaining global final gate "
+            "is then sharpened again by the cap-stable kernel router: the rank-two kernel "
+            "inequality follows by the contrapositive of cap localization once all legal "
+            "direction caps are below threshold. The uniform-cap finite-basis router then "
+            "removes the zeta/alpha continuum: at fixed finite signature group, every "
+            "direction cap is the preimage of a finite cyclic arc under a nontrivial "
+            "character. The finite-arc transverse router then splits high arc mass into "
+            "low transverse support, persistent transverse bias, or transverse-flat "
+            "dispersion. The transverse clean reduction then observes that a rank-one arc "
+            "inside a rank-at-least-two primitive kernel leaves a transverse quotient; all "
+            "nonflat transverse defects are named returns, and the flat residual is a clean "
+            "large-sieve atom. The remaining final gate is the transverse quotient clean "
+            "large-sieve atom, not an unnamed APS/diffuse/SC-9 or raw persistent-signature exit."
         ),
         "review_conclusion": (
             "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
@@ -468,8 +593,14 @@ def run(
             "新增持久有限签名统一路由后，持久 MFU 与固定壳低模持久不再是两个平行硬点。"
             "新增 SC-9 边界调和后，canonical-source 完全自足路线中的 flat clean SC-9 也不再是独立阻塞。"
             "新增持久终端准入路由后，裸持久有限签名还必须先通过 primitive 多原子同 formal unit 准入门。"
+            "新增 primitive 多原子秩边界路由后，低秩退化与 cap 失败也不再是终端。"
+            "新增二秩 cap-stable 核路由后，核不等式本身由 cap localization 逆否命题闭合，"
+            "真正剩余转为统一帽稳定证书。"
+            "新增统一帽稳定有限基路由后，连续方向帽族被压成有限循环弧 cap 质量界。"
+            "新增有限弧横向路由后，高质量弧没有第四出口，只剩横向纤维扩张估计。"
+            "新增横向 clean 归约后，横向纤维扩张进一步压成横向商 clean 大筛原子。"
             "但全局同集对偶证书仍未闭合。最新最窄剩余是 "
-            "`PrimitiveMultiAtomSameFormalUnitPDECCertificate`。"
+            "`TransverseQuotientCleanLargeSieveAtom`。"
         ),
     }
 
@@ -496,8 +627,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> persistent MFU and fixed-shell persistence unified;",
         "  -> canonical SC-9 boundary reconciled;",
         "  -> persistent terminal admission normalized;",
+        "  -> primitive multi-atom rank boundary derived;",
+        "  -> rank-two cap-stable kernel inequality reduced;",
+        "  -> uniform cap stability reduced to finite cyclic arcs;",
+        "  -> finite arc caps split by transverse structure;",
+        "  -> transverse expansion reduced to clean large-sieve atom;",
         "  -> remaining terminal estimates:",
-        "       PrimitiveMultiAtomSameFormalUnitPDECCertificate.",
+        "       TransverseQuotientCleanLargeSieveAtom.",
         "```",
         "",
         "## 2. 汇总",
@@ -528,8 +664,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 下一步",
             "",
-            "下一步直接攻准入后的 primitive 多原子同 formal unit PDEC 容量证书 "
-            "`PrimitiveMultiAtomSameFormalUnitPDECCertificate`。",
+            "下一步直接攻横向商上的 clean 大筛原子 "
+            "`TransverseQuotientCleanLargeSieveAtom`。",
             "",
         ]
     )
@@ -566,6 +702,31 @@ def main() -> None:
         type=Path,
         default=DEFAULT_PERSISTENT_TERMINAL_ADMISSION,
     )
+    parser.add_argument(
+        "--primitive-multiatom-rank-json",
+        type=Path,
+        default=DEFAULT_PRIMITIVE_MULTIATOM_RANK,
+    )
+    parser.add_argument(
+        "--ranktwo-capstable-kernel-json",
+        type=Path,
+        default=DEFAULT_RANKTWO_CAPSTABLE_KERNEL,
+    )
+    parser.add_argument(
+        "--uniform-cap-finite-basis-json",
+        type=Path,
+        default=DEFAULT_UNIFORM_CAP_FINITE_BASIS,
+    )
+    parser.add_argument(
+        "--finite-arc-transverse-json",
+        type=Path,
+        default=DEFAULT_FINITE_ARC_TRANSVERSE,
+    )
+    parser.add_argument(
+        "--transverse-clean-reduction-json",
+        type=Path,
+        default=DEFAULT_TRANSVERSE_CLEAN_REDUCTION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -587,6 +748,11 @@ def main() -> None:
         persistent_signature_unification_path=args.persistent_signature_unification_json,
         sc9_reconciliation_path=args.sc9_reconciliation_json,
         persistent_terminal_admission_path=args.persistent_terminal_admission_json,
+        primitive_multiatom_rank_path=args.primitive_multiatom_rank_json,
+        ranktwo_capstable_kernel_path=args.ranktwo_capstable_kernel_json,
+        uniform_cap_finite_basis_path=args.uniform_cap_finite_basis_json,
+        finite_arc_transverse_path=args.finite_arc_transverse_json,
+        transverse_clean_reduction_path=args.transverse_clean_reduction_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

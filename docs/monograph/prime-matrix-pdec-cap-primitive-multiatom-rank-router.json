@@ -1,0 +1,83 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_primitive_multiatom_rank_router",
+  "current_materialized_primitive_multiatom_instances_closed": true,
+  "narrowest_next_hardpoint": "RankTwoCapStablePrimitivePDECKernelInequality",
+  "open_final_gates": [
+    "RankTwoCapStablePrimitivePDECKernelInequality"
+  ],
+  "primitive_multiatom_rank_boundary_closed": true,
+  "primitive_rank_two_cap_stable_kernel_closed": false,
+  "rank_boundary_law": "PrimitiveMultiAtomSameFormalUnitPDECCertificate is not admitted as a raw terminal label. After the same-formal-unit and same-set capacity protocol is fixed, quotient the physical primitive atoms by already registered duplicate, cross-chart, and two-point tautology relations. Rank 0 is non-primitive or reuse. Rank 1 is a one-dimensional shell/column/displacement signature and therefore routes to fixed-shell PDEC, ColumnCRT, or SAE; the current two-point case is already absorbed. If a higher-rank candidate fails U_CRT<L_PDEC, the dual-failure contract outputs a cap; sparse caps route to SAE, persistent caps to refined PDEC/ColumnCRT, and mismatched caps to multiplicity normalization. PDEC cap refinement has no fixed-level cycle. Therefore the only remaining kernel is rank at least two, cap-stable, same-formal-unit primitive PDEC.",
+  "review_conclusion": "primitive 多原子同 formal unit PDEC 已不再作为黑箱终端保留。低秩退化、二点 Fourier tautology、固定壳/ColumnCRT、对偶 cap 失败和口径不一致都必须先回流到已命名路线。当前已物化 primitive 多原子实例仍为零；未来真正剩余只可能是二秩以上、cap-stable、同 formal unit 的 primitive PDEC 核不等式。该项没有证明完整行/列无条件定理。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "PrimitiveMultiAtomSameFormalUnitPDECCertificate",
+      "gate": "PrimitiveMultiAtomAdmissionGateActive",
+      "meaning": "上一层已经证明裸持久签名不能直接作为终端，只能先进入 primitive 多原子同 formal unit 准入门。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "formal unit + Same-Set Law + U_CRT<L_PDEC",
+      "gate": "SameFormalUnitCapacityProtocolRegistered",
+      "meaning": "容量比较必须在同一 formal unit、同一坏窗计数函数和同一相位映射上进行。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "current primitive candidate count=0; future admission requires >=3 atoms",
+      "gate": "DegenerateOneTwoAtomCasesAbsorbed",
+      "meaning": "一原子、重复原子、物理二点 Fourier tautology 和当前二点 SAE/Endpoint 已不再是 PDEC 终端。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "duplicate / two-point / fixed-shell / ColumnCRT routes",
+      "gate": "RankZeroOnePrimitiveBranchNamed",
+      "meaning": "若去重后原子只生成零秩或一秩相位结构，它不是真正多原子核：只能回到重复口径、二点 tautology、固定壳 PDEC/ColumnCRT 或 SAE。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "CapSparse / CapPersistent / CapColumn / Multiplicity-Stitching",
+      "gate": "DualCapFailureAbsorbedBeforeTerminal",
+      "meaning": "任何尚未证明 U_CRT<L_PDEC 的方向，若失败，必须先输出帽集中并回流 SAE、refined PDEC、ColumnCRT 或口径规范化。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "finite Boolean algebra refinement or new-layer entropy dichotomy",
+      "gate": "CapRefinementNoCycleBeforeTerminal",
+      "meaning": "持久帽细化不能在固定签名群内无限循环；升层也必须命名为 new-layer PDEC 或 CleanKLS/DLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "rank 0/1 and cap-failure exits removed before final kernel",
+      "gate": "PrimitiveRankBoundaryDerived",
+      "meaning": "primitive 多原子同 formal unit 终端已被规范化为低秩退化、cap 失败回流、或真正二秩以上 cap-stable 核三类。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "global U_CRT<L_PDEC for rank>=2 cap-stable primitive kernels not submitted",
+      "gate": "RankTwoCapStablePrimitivePDECKernelInequality",
+      "meaning": "剩余全球硬点是证明所有二秩以上且无可回流 cap 的 primitive 同 formal unit 核满足严格容量排斥。"
+    }
+  ],
+  "source_hashes": {
+    "columncrt_absorb": "f674ce4f51911edeab0dcce641763860c87ef8f94141971a60fd948e7c008a7c",
+    "common_variable": "168ee258c9b39fc7aefdc3094843750d4ea6614987df4730ce1a01d809c0005f",
+    "dual_absorb": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b",
+    "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "nontautological_admission": "b961bfc655c98c310e90496c3d86bfc5ed8e1e9a765474d07dd413345f00dbbb",
+    "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
+    "persistent_terminal_admission": "1993c57c8ba939c0c678e9d70c5a9c49314659b594746e5ff4a3fa1335f41d2e",
+    "script": "2b5cd9420d0ec406ff746531589b873208a479ad154f1b38abebc1001c13fe39",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547"
+  },
+  "status": "primitive_multiatom_pdec_reduced_to_rank_two_cap_stable_kernel"
+}

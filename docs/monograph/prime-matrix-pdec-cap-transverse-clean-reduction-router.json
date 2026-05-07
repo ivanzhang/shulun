@@ -1,0 +1,72 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_transverse_clean_reduction_router",
+  "clean_reduction_law": "Inside a high finite character arc, the arc condition is only rank one. A rank-at-least-two primitive kernel therefore leaves a transverse quotient. If that quotient has sparse support, persistent bias, or column/shell concentration, the branch is SAE, refined PDEC, or ColumnCRT. If none of those named transverse defects occurs, the residual is L2-flat in the transverse quotient and must enter the CleanKLS/DLS large-sieve atom, with the already registered SC-9/NC-BLK boundary.",
+  "narrowest_next_hardpoint": "TransverseQuotientCleanLargeSieveAtom",
+  "open_final_gates": [
+    "TransverseQuotientCleanLargeSieveAtom"
+  ],
+  "review_conclusion": "横向纤维扩张已压成横向商上的 clean 大筛原子：非平坦横向缺陷全部回流命名出口，剩下的只能是 L2-flat clean residual。最新最窄剩余是 `TransverseQuotientCleanLargeSieveAtom`。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "TransverseFiberExpansionForFiniteArcCaps",
+      "gate": "TransverseExpansionActive",
+      "meaning": "上一层已把有限弧 cap 质量界压成高质量弧内的横向纤维扩张估计。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "finite arc is rank-one slice inside rank>=2 primitive kernel",
+      "gate": "RankOneArcLeavesTransverseQuotient",
+      "meaning": "有限字符弧只钉住一个字符方向；二秩以上 primitive 核在弧内仍有非平凡横向商变量。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "CapSparse / CapPersistent / CapColumn",
+      "gate": "NonFlatTransverseRoutesNamed",
+      "meaning": "横向低支撑、横向持久偏斜或列/壳集中均已回流 SAE、refined PDEC 或 ColumnCRT。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "K1-K9 clean admission + LargeSieve/DLS/KLS",
+      "gate": "TransverseFlatnessAdmitsCleanKLS",
+      "meaning": "若横向所有命名偏斜都被剥离，剩余正是横向 L2-flat clean residual。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "canonical SC-9 reconciled; generic external/not claimed",
+      "gate": "SC9BoundaryRegisteredForCleanResidual",
+      "meaning": "横向 clean 原子必须遵守既有 SC-9/NC-BLK 边界，不能作为新的无名出口。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "nonflat routes named; flat residual is clean large-sieve atom",
+      "gate": "TransverseExpansionReducedToCleanAtom",
+      "meaning": "横向纤维扩张硬点已压成横向 clean 大筛原子或命名回流。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "self-contained transverse clean large-sieve estimate not submitted",
+      "gate": "TransverseQuotientCleanLargeSieveAtom",
+      "meaning": "剩余全球硬点是证明横向商上的 clean 大筛原子，或明确外部输入；不能把它误称为已闭合行列定理。"
+    }
+  ],
+  "source_hashes": {
+    "diffuse": "b65c75bec3aaba9a2d33679219b518196fe543fa4b62b4fb490af0623a11f70e",
+    "dual_absorb": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b",
+    "sc9": "d1c6068a0a10840e76ec2069c5c4df65fc26b53ee92edee624afe142a0a07aaa",
+    "script": "146ef5c807ce7d95257fb5d041bad184cd1861263f3cf3e4e13cc09e3c0e7046",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547",
+    "transverse": "fcfa8a645382e1845e6d3b3f548185d5ccb4c9339016cb752a4bb066064c8b85"
+  },
+  "status": "transverse_expansion_reduced_to_clean_large_sieve_atom",
+  "transverse_expansion_reduced_to_clean_atom": true,
+  "transverse_quotient_clean_large_sieve_closed": false
+}

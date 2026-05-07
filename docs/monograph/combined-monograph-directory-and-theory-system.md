@@ -2427,9 +2427,9 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
-  PrimitiveMultiAtomSameFormalUnitPDECCertificate
+  TransverseQuotientCleanLargeSieveAtom
 ]；
-narrowest_next_hardpoint=PrimitiveMultiAtomSameFormalUnitPDECCertificate。
+narrowest_next_hardpoint=TransverseQuotientCleanLargeSieveAtom。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2620,6 +2620,120 @@ PrimitiveMultiAtomSameFormalUnitPDECCertificate:
   非二点 tautology；
   未被 LocalSurvivor/SAE/Endpoint 吸收；
   需要证明 U_CRT<L_PDEC。
+```
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_primitive_multiatom_rank_router.py
+docs/monograph/prime-matrix-pdec-cap-primitive-multiatom-rank-router.md/json
+```
+
+该路由器把 `PrimitiveMultiAtomSameFormalUnitPDECCertificate` 继续拆成秩边界：
+
+```text
+primitive_multiatom_rank_boundary_closed=true；
+current_materialized_primitive_multiatom_instances_closed=true；
+narrowest_next_hardpoint=RankTwoCapStablePrimitivePDECKernelInequality。
+```
+
+结构含义是：准入后的 primitive 多原子对象还不能直接当作最终黑箱。零秩/一秩分支只能是
+重复口径、二点 Fourier tautology、固定壳 `PDEC/ColumnCRT` 或 `SAE`；若某方向的
+`U_CRT<L_PDEC` 失败，则必须先输出 cap，并按 `SAE/refined PDEC/ColumnCRT/multiplicity`
+回流；cap refinement 在固定签名群内无循环。因此当前真正剩余被进一步压成：
+
+```text
+RankTwoCapStablePrimitivePDECKernelInequality:
+  对所有二秩以上、同 formal unit、且无可回流 cap 的 primitive PDEC 核，
+  证明同一坏窗集合上的 U_CRT<L_PDEC。
+```
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_ranktwo_capstable_kernel_router.py
+docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.md/json
+```
+
+该路由器把二秩 cap-stable 核不等式本身改写为 cap localization 的逆否命题：
+
+```text
+ranktwo_capstable_kernel_inequality_closed=true；
+narrowest_next_hardpoint=UniformCapStabilityCertificateForRankTwoPrimitiveKernels。
+```
+
+结构含义是：若某方向的 `U_CRT` 达到 `L_PDEC`，帽定位给出质量至少
+`(L_PDEC-alpha M)/(1-alpha)` 的方向帽；该帽若稀疏则进 `SAE`，若持久则进 refined
+`PDEC/ColumnCRT`，若口径不一致则进 multiplicity 规范化。因此真正留在 cap-stable 核内的对象，
+必须所有合法方向帽都低于阈值。
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_uniform_cap_finite_basis_router.py
+docs/monograph/prime-matrix-pdec-cap-uniform-cap-finite-basis-router.md/json
+```
+
+该路由器把统一帽稳定的连续方向族压成有限基：
+
+```text
+uniform_cap_finite_basis_closed=true；
+narrowest_next_hardpoint=FiniteCyclicArcCapMassBoundsForRankTwoPrimitiveKernels。
+```
+
+结构含义是：固定 finite formal unit 后，非平凡字符像是有限循环集，任意方向帽都是该有限循环集上
+某个弧的预像；`zeta/alpha` 的连续变化只会在有限端点处改变 cap 集合。因此统一帽稳定不再是连续参数
+搜索，而是有限循环弧 cap 质量界全集。
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_finite_arc_transverse_router.py
+docs/monograph/prime-matrix-pdec-cap-finite-arc-transverse-router.md/json
+```
+
+该路由器把有限循环弧 cap 质量界继续拆成横向结构：
+
+```text
+finite_arc_no_unnamed_exit_closed=true；
+narrowest_next_hardpoint=TransverseFiberExpansionForFiniteArcCaps。
+```
+
+结构含义是：有限字符弧是秩一薄片。若高质量弧只有低横向支撑，则进入
+`SAE/ColumnCRT/固定壳PDEC/Hall deletion`；若横向偏斜持久，则把弧指标并入签名并进入
+refined `PDEC`；若横向平坦分散，则进入 `CleanKLS/DLS` 或外部大筛输入。因此当前真正剩余是：
+
+```text
+TransverseFiberExpansionForFiniteArcCaps:
+  对每个高质量有限字符弧，证明弧内横向纤维无法同时保持
+  primitive 二秩、同 formal unit、cap-stable 和足够质量；
+  若证明失败，必须输出 SAE / refined PDEC / ColumnCRT / CleanKLS 回流证书。
+```
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_transverse_clean_reduction_router.py
+docs/monograph/prime-matrix-pdec-cap-transverse-clean-reduction-router.md/json
+```
+
+该路由器把横向纤维扩张进一步压成横向商 clean 大筛原子：
+
+```text
+transverse_expansion_reduced_to_clean_atom=true；
+narrowest_next_hardpoint=TransverseQuotientCleanLargeSieveAtom。
+```
+
+结构含义是：有限字符弧只固定一个字符方向；二秩以上 primitive 核在弧内仍留下横向商变量。
+横向低支撑、横向持久偏斜、横向列/壳集中已经分别回流 `SAE/refined PDEC/ColumnCRT`。
+若这些非平坦横向缺陷都不存在，剩余就是横向商上的 `L2-flat clean residual`，必须进入
+内部 `LargeSieve/DLS/KLS` 证明或明确外部 KLS/DI/BFI/Kuznetsov 输入。因此当前真正剩余是：
+
+```text
+TransverseQuotientCleanLargeSieveAtom:
+  证明高质量有限弧的横向商在 K1--K9 clean admission 后满足内部大筛界；
+  或明确登记外部输入；
+  若任一 clean admission 失败，则回流 PDEC / SAE / ColumnCRT / Multiplicity。
 ```
 
 这一步继续保持诚实边界：它关闭的是全局终端家族剩余中的“未命名或局部样本硬点”，不是完整行/列

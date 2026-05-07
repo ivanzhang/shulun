@@ -1,0 +1,73 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_finite_arc_transverse_router",
+  "finite_arc_no_unnamed_exit_closed": true,
+  "narrowest_next_hardpoint": "TransverseFiberExpansionForFiniteArcCaps",
+  "open_final_gates": [
+    "TransverseFiberExpansionForFiniteArcCaps"
+  ],
+  "review_conclusion": "有限循环弧 cap 质量界已被拆成横向结构：低横向支撑回 `SAE/ColumnCRT/固定壳PDEC`，横向偏斜持久回 refined PDEC，横向平坦分散进入 `CleanKLS/DLS` 或外部大筛输入。因此最新最窄剩余是高质量有限弧内的统一横向纤维扩张估计。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "FiniteCyclicArcCapMassBoundsForRankTwoPrimitiveKernels",
+      "gate": "FiniteArcCapBoundsActive",
+      "meaning": "上一层已把连续帽稳定压成有限循环弧 cap 质量界。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "character arc preimage",
+      "gate": "FiniteArcIsRankOneSlice",
+      "meaning": "每个有限循环弧 cap 是一个非平凡字符方向上的秩一薄片，横向变量仍可被审查。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "CapSparse / CapColumn / fixed-shell / Hall deletion",
+      "gate": "LowTransverseSupportRoutesNamed",
+      "meaning": "若高质量弧只由低横向支撑或固定壳承担，则进入 SAE、ColumnCRT、固定壳 PDEC 或容量/Hall 删除。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "CapPersistent + finite cap no-cycle",
+      "gate": "PersistentTransverseBiasRoutesToRefinedPDEC",
+      "meaning": "若弧内横向偏斜持久，就把弧指标并入签名，得到 refined PDEC；固定层细化不能无限循环。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "Flat => CleanKLS/DLS admission",
+      "gate": "FlatTransverseDispersionRoutesToClean",
+      "meaning": "若弧内既无低横向支撑也无持久偏斜，则剩余是横向平坦分散输入，进入 CleanKLS/DLS 或已登记外部输入。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "low support / persistent bias / flat transverse dispersion",
+      "gate": "FiniteArcNoUnnamedExit",
+      "meaning": "有限循环弧 cap 没有第四类出口；剩余只是真正横向扩张或平坦大筛估计。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "uniform transverse expansion or clean large-sieve estimate not submitted",
+      "gate": "TransverseFiberExpansionForFiniteArcCaps",
+      "meaning": "剩余全球硬点是在每个高质量有限弧内证明横向纤维扩张不足以支持反例，或把失败送入命名 PDEC/SAE/ColumnCRT/CleanKLS。"
+    }
+  ],
+  "source_hashes": {
+    "common_variable": "168ee258c9b39fc7aefdc3094843750d4ea6614987df4730ce1a01d809c0005f",
+    "diffuse": "b65c75bec3aaba9a2d33679219b518196fe543fa4b62b4fb490af0623a11f70e",
+    "dual_absorb": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b",
+    "finite_basis": "7b5af35dd57b30e836f3bcc0989985f57a3bffc90d4e7206e1d83740641e63c7",
+    "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "script": "973f3a0ed6a225fd15ac6f691e83a4721fd77960dccad85ef2df9550b4827935",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547"
+  },
+  "status": "finite_arc_cap_bounds_reduced_to_transverse_expansion",
+  "transverse_fiber_expansion_closed": false,
+  "transverse_law": "A finite cyclic-arc cap is a rank-one slice of the finite signature space. If a high-mass arc has low transverse support, it is sparse/SAE, fixed-shell PDEC, ColumnCRT, or Hall deletion. If the transverse bias persists, the arc indicator becomes a refined PDEC signature, and fixed-level refinement has no cycle. If neither happens, the cap mass is genuinely transverse and flat, so the branch is a CleanKLS/DLS or external large-sieve input. Hence finite arc caps have no unnamed exit; the remaining estimate is transverse fiber expansion."
+}
