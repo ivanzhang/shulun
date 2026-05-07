@@ -6187,3 +6187,89 @@ NonAPWFDNoProjectionAndW4ParameterLedger
 的 `S` 不应直接等同于 DI 公式的 `S_DI`，而是进入 `Z=s1*s2` 与
 `Y=a*f*(h1*s1-h2*s2)` 的 off-diagonal 参数表。下一步只能证明当前未中心化 WFD 块确实逐项
 生成这些 W4 参数，并核算 `B,C,Z,Y` 的 dyadic 范围与 `J^2` 三项支配。
+
+## 106. Maynard-W4 parameter ledger：模板与 J-bound 简化固定，尺度侧压成三条 Maynard 条件
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-maynard-w4-parameter-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_w4_parameter_ledger_router.py` 后，第 105 节中的
+`CurrentWFDToMaynardW4ParameterLedger` 继续被压缩。Maynard-W4 参数模板为：
+
+```text
+B << N_May R_May；
+C << N_May R_May S_May；
+F << N_May / Q_May；
+Z ≍ S_May^2；
+Y << x^o N_May R_May^2 S_May^3 / M_May。
+```
+
+在 `M_May > R_May^2 S_May N_May` 下，W4 的 J-bound 简化为：
+
+```text
+J^2 << x^eps (
+  N_May^2 R_May^2 S_May^5
+  + N_May^3 R_May^3 S_May^4
+)。
+```
+
+机器结果：
+
+```text
+status=w4_parameter_ledger_reduced_to_current_wfd_maynard_conditions_open；
+closed_w4_gates=[
+  MaynardW4TemplateExtracted,
+  W4JBoundSimplified,
+  SourceSymbolsReadyForTranslation
+]；
+open_w4_gates=[
+  CurrentWFDMatchesW4OffDiagonalForm,
+  CurrentWFDMaynardVariableTranslation,
+  MaynardDiagonalCondition,
+  MaynardOffDiagonalCondition1,
+  MaynardOffDiagonalCondition2,
+  JBoundDominanceAfterW4Substitution
+]；
+terminal_gap_after_router=CurrentWFDSatisfiesMaynardW4Conditions。
+```
+
+所以尺度侧的最窄剩余进一步变为：
+
+```text
+CurrentWFDSatisfiesMaynardW4Conditions
+  = CurrentWFDMatchesW4OffDiagonalForm
+    + CurrentWFDMaynardVariableTranslation
+    + MaynardDiagonalCondition
+    + MaynardOffDiagonalCondition1
+    + MaynardOffDiagonalCondition2。
+```
+
+三条显式条件为：
+
+```text
+MaynardDiagonalCondition:
+  N_May^2 R_May^2 S_May << x^(1-7 eps)；
+
+MaynardOffDiagonalCondition1:
+  N_May R_May^2 S_May^5 Q_May < x^(2-14 eps)；
+
+MaynardOffDiagonalCondition2:
+  N_May^2 R_May^3 S_May^4 Q_May < x^(2-14 eps)。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndMaynardW4Conditions。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndMaynardW4Conditions
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDSatisfiesMaynardW4Conditions。
+```
+
+当前不再需要搜索 DI 定理号、DI 公式、R/D/N 抽象映射或 W4 模板。剩余是最硬的当前对象问题：
+证明未中心化 WFD 块确实等于 W4 非对角展开，并把当前窗口变量非冲突地翻译到
+`N_May,R_May,S_May,M_May,Q_May` 后推出上面三条条件。
