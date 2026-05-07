@@ -5092,3 +5092,77 @@ canonical RIW/Buchstab source
 
 剩余若还要处理 generic noncanonical WFD 宽命题，则只能继续攻外部 DI/BFI 原始 dispersion，
 不能再借 canonical 支撑链偷换。
+
+## 91. generic WFD 外部 DI/BFI 原始 dispersion 合同物化
+
+新增 `experiments/prime_matrix_triad_a1_generic_wfd_dibfi_router.py` 后，第 90 节留下的
+`ExternalDIBFIOriginalDispersionForGenericWFDBranchOnly` 被继续压缩。关键结论是：这个剩余不再是
+canonical-source 内部数学链条，而是 generic noncanonical WFD 宽口径的外部原始 dispersion 引用合同。
+
+机器结果：
+
+```text
+status=generic_wfd_external_dibfi_contract_materialized_theorem_location_open；
+external_dibfi_contract_materialized=true；
+terminal_gap_after_router=DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch。
+```
+
+对象二分现在固定为：
+
+```text
+canonical RIW/Buchstab source branch:
+  已由内部 support/source-lock 链条处理；
+
+generic noncanonical WFD branch:
+  不能借用 canonical support lower bound；
+  只能走 direct original DI/BFI dispersion 或回 PDEC/SAE；
+
+uncentered WFD target:
+  必须估计 KE-13/WFD-core 的原始未中心化对象；
+  不能把 SOURCE-CEN 或 BD-CEN 当作免费恒等式插入。
+```
+
+本步已经闭合或登记的门控是：
+
+```text
+OriginalUncenteredWFDTargetMatch:
+  当前对象锁定为 KE-13/WFD-core 的未中心化 generic WFD 目标；
+
+NoCenteringShortcut:
+  SOURCE-CEN 与 BD-CEN 均不能免费替代原始对象；
+
+KloostermanPhaseNormalization:
+  CRT 逆元相位已由 KLS 模板归一化为标准 Kloosterman 相位；
+
+WellFactorableLevelMatch:
+  lambda_c 的 well-factorable level 接入 BFI dispersion 接口；
+
+TypeIITwoVariableRangeMatch:
+  KZ-E 的 Type-I/II dyadic block 与 KLS 模板范围对齐；
+
+SmoothDyadicEndpointGcdBudget:
+  gcd 层、端点、sawtooth、平滑与 dyadic 损失进入 log^C 账本；
+
+ArbitraryLogSavingAbsorption:
+  通过选择 B(A) 吸收所有多对数损失。
+```
+
+仍未闭合的单点是：
+
+```text
+DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch:
+  给出 DI/BFI 原文或现代等价定理的精确 theorem/proposition/page；
+  逐条核对相位、模数、频率、well-factorable level、Type-I/II 范围、
+  gcd/unit 层、平滑权和任意对数节省强度。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1GenericWFDDIBFIRouter => generic_wfd_external_dibfi_contract_materialized_theorem_location_open；
+terminal_dual_gap => DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch。
+```
+
+这一步把“外部 DI/BFI 原始 dispersion”从一句话压成了审稿可执行的核查表。它仍不是 generic WFD
+宽口径的完全自足证明；但除精确外部定理定位与假设匹配外，generic WFD 外部引用版所需的对象、
+相位和损失接口已经登记完成。

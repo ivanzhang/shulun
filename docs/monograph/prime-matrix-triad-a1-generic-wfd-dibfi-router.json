@@ -1,0 +1,113 @@
+{
+  "all_gates_closed": false,
+  "branch_statement_status": "canonical_source_branch_statement_adopted_generic_wfd_external_only",
+  "certificate_type": "triad_a1_generic_wfd_dibfi_router",
+  "closed_except_precise_external_citation": true,
+  "external_deep_theorem_version_status": "contract_ready_pending_precise_dibfi_theorem_location_and_hypothesis_match",
+  "external_dibfi_contract_materialized": true,
+  "gate_rows": [
+    {
+      "available": "KZ-E spine identifies KE-13/WFD-core as the current generic WFD target",
+      "closed": true,
+      "gap": "none at object-identification level",
+      "gate": "OriginalUncenteredWFDTargetMatch",
+      "needed": "external theorem must estimate the uncentered original dispersion object",
+      "route": "use original dispersion estimate, not a centered replacement"
+    },
+    {
+      "available": "SOURCE-CEN and BD-CEN audits block free local-variance subtraction",
+      "closed": true,
+      "gap": "none after routing: choose direct uncentered external estimate",
+      "gate": "NoCenteringShortcut",
+      "needed": "do not insert block centering unless the original dispersion identity provides it",
+      "route": "direct DI/BFI original dispersion branch"
+    },
+    {
+      "available": "KLS template converts CRT inverse phase to standard Kloosterman phase",
+      "closed": true,
+      "gap": "none at template level",
+      "gate": "KloostermanPhaseNormalization",
+      "needed": "match the generic WFD phase to DI/BFI inverse phase notation",
+      "route": "CRT phase normalization then dyadic Kloosterman window"
+    },
+    {
+      "available": "external index records BFI well-factorable weights; KZ-E uses well-factorable lambda_c",
+      "closed": true,
+      "gap": "exact theorem hypotheses still need page/theorem-level check",
+      "gate": "WellFactorableLevelMatch",
+      "needed": "level and factorization ranges must be within BFI admissible ranges",
+      "route": "match lambda_c level to BFI dispersion theorem"
+    },
+    {
+      "available": "KZ-E spine records Type-I/II dispersion reduction; KLS template records C,S,H ranges",
+      "closed": true,
+      "gap": "exact theorem hypotheses still need page/theorem-level check",
+      "gate": "TypeIITwoVariableRangeMatch",
+      "needed": "balanced two-variable blocks must match the quoted DI/BFI range",
+      "route": "dyadic Type-I/II block by block"
+    },
+    {
+      "available": "KLS template has gcd strata, dyadic, sawtooth and smoothing log-loss ledger",
+      "closed": true,
+      "gap": "none at ledger level",
+      "gate": "SmoothDyadicEndpointGcdBudget",
+      "needed": "all endpoint and gcd costs must be absorbed before final log saving",
+      "route": "charge all costs to log^C and choose larger B(A)"
+    },
+    {
+      "available": "template chooses B(A)=A+C0+10",
+      "closed": true,
+      "gap": "depends on the precise cited external theorem statement",
+      "gate": "ArbitraryLogSavingAbsorption",
+      "needed": "external theorem must provide arbitrary log saving after loss absorption",
+      "route": "choose B(A) after dyadic/gcd/smoothing budgets"
+    },
+    {
+      "available": "bibliographic DI/BFI sources and functional adaptation are registered",
+      "closed": false,
+      "gap": "not yet pinned in the repository",
+      "gate": "ExternalCitationPreciseTheoremLocation",
+      "needed": "exact theorem/proposition/page and hypothesis-by-hypothesis match",
+      "route": "audit original DI/BFI statements or quote a modern theorem with identical hypotheses"
+    }
+  ],
+  "generic_wfd_self_contained_gap_closed": false,
+  "next_external_target": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch",
+  "object_rows": [
+    {
+      "can_use_this_router": false,
+      "object": "canonical RIW/Buchstab source branch",
+      "route": "internal support chain",
+      "scope": "lambda_c equals the canonical decision-tree sieve coefficient",
+      "status": "already_closed_in_source_lock_chain"
+    },
+    {
+      "can_use_this_router": true,
+      "object": "generic noncanonical WFD branch",
+      "route": "external DI/BFI original dispersion or PDEC/SAE return",
+      "scope": "lambda_c is only well-factorable; no canonical support lower bound is assumed",
+      "status": "current_remaining_branch"
+    },
+    {
+      "can_use_this_router": true,
+      "object": "uncentered WFD target",
+      "route": "must be estimated directly by original dispersion, not by SOURCE-CEN",
+      "scope": "the original KE-13/WFD-core linear Kloosterman window before block-centering",
+      "status": "target_locked_as_uncentered"
+    }
+  ],
+  "review_conclusion": "generic noncanonical WFD 分支已经从一个含混的“外部 DI/BFI”压成精确外部合同：对象必须是未中心化原始 WFD；不能靠 SOURCE-CEN/BD-CEN 免费中心化；CRT 相位、well-factorable level、Type-I/II 范围、gcd/端点和平滑损失都已进入门控表。当前剩余不再是 canonical-source 内部数学链条，而是 DI/BFI 原文定理位置与假设逐项匹配。",
+  "self_contained_version_status": "open_for_generic_noncanonical_wfd_branch",
+  "source_hashes": {
+    "bd_cen_audit_md": "62e7ad886124a8d904d7e6a235db4bfe2c0743783e2a4064dbebaddcbd06639f",
+    "branch_statement_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "external_theorem_index_md": "1b15acd8310e40430f170f88581617e7f755203fdfe0aa715b5899611450dc6c",
+    "kls_window_di_bfi_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "kze_wfd_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "c69334c3e79f0a59238f8c41b5f7b123200f62b681a1bdad4917dee4735c5bd0",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb"
+  },
+  "status": "generic_wfd_external_dibfi_contract_materialized_theorem_location_open",
+  "structural_law": "The remaining generic WFD branch is not a canonical-source support problem. Its legitimate external route is a direct original DI/BFI dispersion estimate for the uncentered WFD target. SOURCE-CEN/BD-CEN cannot be inserted as free centering. The available repository material already fixes the target object, phase normalization, well-factorable level interface, Type-I/II dyadic ranges, gcd/endpoint smoothing ledger, and log-loss absorption. The only remaining external-theorem obligation is to pin the precise DI/BFI theorem location and check every hypothesis against this target.",
+  "terminal_gap_after_router": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch"
+}

@@ -86,6 +86,9 @@ DEFAULT_CANONICAL_BRANCH_ADMISSION = (
 DEFAULT_BRANCH_STATEMENT_COVERAGE = (
     DOCS / "prime-matrix-triad-a1-branch-statement-coverage-router.json"
 )
+DEFAULT_GENERIC_WFD_DIBFI = (
+    DOCS / "prime-matrix-triad-a1-generic-wfd-dibfi-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -168,6 +171,7 @@ def build_frontier_rows(
     source_lock_contract: dict[str, Any],
     canonical_branch_admission: dict[str, Any],
     branch_statement_coverage: dict[str, Any],
+    generic_wfd_dibfi: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -530,6 +534,18 @@ def build_frontier_rows(
             ),
             "next_action": "canonical 源头分支无 source-lock 内部缺口；若要求 generic WFD 自足，只剩外部 DI/BFI。",
         },
+        {
+            "frontier": "A1GenericWFDDIBFIRouter",
+            "status": "generic_wfd_external_dibfi_contract_materialized_theorem_location_open"
+            if generic_wfd_dibfi["external_dibfi_contract_materialized"]
+            else "generic_wfd_dibfi_contract_gap",
+            "evidence": (
+                f"generic WFD 外部 DI/BFI 合同已物化；"
+                f"closed_except_precise_external_citation={generic_wfd_dibfi['closed_except_precise_external_citation']}；"
+                f"terminal_gap={generic_wfd_dibfi['terminal_gap_after_router']}。"
+            ),
+            "next_action": "核对 DI/BFI 原文精确定理位置与假设逐项匹配；不再回退到 canonical 支撑链。",
+        },
     ]
 
 
@@ -567,6 +583,7 @@ def run(
     source_lock_contract_path: Path,
     canonical_branch_admission_path: Path,
     branch_statement_coverage_path: Path,
+    generic_wfd_dibfi_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -602,6 +619,7 @@ def run(
     source_lock_contract = load_json(source_lock_contract_path)
     canonical_branch_admission = load_json(canonical_branch_admission_path)
     branch_statement_coverage = load_json(branch_statement_coverage_path)
+    generic_wfd_dibfi = load_json(generic_wfd_dibfi_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -636,6 +654,7 @@ def run(
         source_lock_contract,
         canonical_branch_admission,
         branch_statement_coverage,
+        generic_wfd_dibfi,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -670,13 +689,14 @@ def run(
         "canonical_source_branch_admission_or_external_dibfi_required",
         "canonical_branch_statement_coverage_or_external_dibfi_required",
         "canonical_source_branch_internal_gap_closed_generic_external_only",
+        "generic_wfd_external_dibfi_contract_materialized_theorem_location_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_terminal_dual_open",
+        "status": "same_set_capacity_frontier_materialized_dibfi_contract_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -724,6 +744,7 @@ def run(
             "a1_branch_statement_coverage_json": file_sha256(
                 branch_statement_coverage_path
             ),
+            "a1_generic_wfd_dibfi_json": file_sha256(generic_wfd_dibfi_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -734,9 +755,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": (
-            "ExternalDIBFIOriginalDispersionForGenericWFDBranchOnly"
-        ),
+        "terminal_dual_gap": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -762,7 +781,8 @@ def run(
             "source lock 合同已严格二分为 canonical 源头分支准入或 generic WFD 外部路由；"
             "canonical 分支准入又被压成主定理/账本分支陈述与覆盖合同；"
             "分支陈述已落实：canonical source branch 在 source-lock 链条上无剩余内部缺口；"
-            "当前只剩 generic WFD 宽口径的外部 DI/BFI 原始 dispersion 缺口。"
+            "generic WFD 宽口径的外部 DI/BFI 原始 dispersion 已物化为外部合同；"
+            "当前只剩 DI/BFI 原文精确定理位置与假设逐项匹配。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -788,8 +808,9 @@ def run(
             "source lock 已分裂成 canonical 内部分支和 generic WFD 外部分支。"
             "canonical 分支准入已被压成 theorem/ledger 分支陈述覆盖合同。"
             "分支陈述覆盖已落实。canonical RIW/Buchstab clean branch 在当前 source-lock 链条上"
-            "不再有内部缺口；若仍要求 generic noncanonical WFD 版本自足，唯一剩余是外部 "
-            "DI/BFI 原始 dispersion。"
+            "不再有内部缺口。generic noncanonical WFD 的外部 DI/BFI 合同也已物化："
+            "未中心化原始对象、相位归一化、well-factorable level、Type-I/II 范围与损失账本"
+            "都已登记；剩余单点是 DI/BFI 原文定理位置与假设匹配。"
         ),
     }
 
@@ -839,7 +860,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  source identification reduces to canonical RIW/Buchstab source lock contract；",
         "  source lock contract splits into canonical source branch admission or generic external route；",
         "  canonical branch admission reduces to theorem/ledger branch statement and coverage；",
-        "  canonical source branch now has no source-lock internal gap; generic WFD remains external。",
+        "  canonical source branch now has no source-lock internal gap;",
+        "  generic WFD external DI/BFI contract is materialized;",
+        "  remaining terminal target is exact DI/BFI theorem location and hypothesis match。",
         "```",
         "",
         "## 2. 汇总",
@@ -906,11 +929,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "SourceLockContract router materialized；",
             "CanonicalBranchAdmission router materialized；",
             "BranchStatementCoverage router materialized；",
-            "remaining independent gap is external DI/BFI original dispersion for the generic WFD branch only。",
+            "GenericWFDDIBFI router materialized；",
+            "remaining independent gap is exact DI/BFI theorem location and hypothesis match。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
-            "若继续要求 generic WFD 宽口径完全自足，剩余目标是外部 DI/BFI 原始 dispersion。",
+            "generic WFD 外部引用版已压成 DI/BFI 原文定理位置与假设匹配；"
+            "完全自足版仍未证明 generic noncanonical WFD 原始 dispersion。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1015,6 +1040,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_BRANCH_STATEMENT_COVERAGE,
     )
+    parser.add_argument(
+        "--generic-wfd-dibfi-json",
+        type=Path,
+        default=DEFAULT_GENERIC_WFD_DIBFI,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1053,6 +1083,7 @@ def main() -> None:
         source_lock_contract_path=args.source_lock_contract_json,
         canonical_branch_admission_path=args.canonical_branch_admission_json,
         branch_statement_coverage_path=args.branch_statement_coverage_json,
+        generic_wfd_dibfi_path=args.generic_wfd_dibfi_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

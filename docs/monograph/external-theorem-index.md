@@ -372,3 +372,21 @@ or a theorem implying NC-BLK block non-concentration for the actual WFD coeffici
 ```
 
 只给普通跨块 Kloosterman 平均而未处理同 `(u,v)` 块能量的外部定理，不能闭合当前接口。
+
+新增 `experiments/prime_matrix_triad_a1_generic_wfd_dibfi_router.py` 后，A1 的 generic noncanonical
+WFD 外部接口已从“引用 DI/BFI 原始 dispersion”压缩为以下单点：
+
+```text
+DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch.
+```
+
+外部引用版现在需要最终补齐：
+
+1. 精确指出 DI/BFI 原文或现代等价版本中的 theorem/proposition/page；
+2. 逐条核对该定理是否估计未中心化的原始 WFD 目标，而不是事后插入 SOURCE-CEN/BD-CEN；
+3. 核对 Kloosterman 逆元相位、well-factorable level、Type-I/II 双变量范围、gcd/unit 层、
+   dyadic/平滑端点和任意 `log^{-A}` 节省是否全部匹配；
+4. 若外部定理只给中心化、跨块或不同权重的版本，必须另写转移引理，不能直接标记为闭合。
+
+因此当前外部定理索引的最新任务不是再寻找新的内部 canonical support，而是完成 DI/BFI 原始
+dispersion 的精确引用定位与假设对账。
