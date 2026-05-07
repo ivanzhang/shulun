@@ -4783,3 +4783,78 @@ terminal_dual_gap => ActualKZESourceCoefficientIdentificationOrCleanReturnOrExte
 实际 `lambda_c` 是 canonical RIW/Buchstab 系数，则内部支撑链可继续；若只是任意形式
 well-factorable 分解，则此前多次识别出的“形式 WFD 不强制源头熵”问题会复现，必须回到
 PDEC/SAE 缺失行或外部 DI/BFI 原始 dispersion。
+
+## 87. A1 实际源头系数识别化为 canonical source lock 合同
+
+新增 `experiments/prime_matrix_triad_a1_source_identification_router.py` 后，第 86 节留下的
+`ActualKZESourceCoefficientIdentificationOrCleanReturn` 被继续压缩。结论是：实际源头识别不能
+被“`\lambda_c` 是 well-factorable”替代；内部支撑链只在 A1/KZ-E 的实际 `lambda_c` 在
+Cauchy/dispersion 之前已经锁定为 canonical RIW/Buchstab 决策树系数时可用。
+
+机器结果：
+
+```text
+status=source_identification_reduced_to_canonical_source_lock_contract；
+next_internal_target=CanonicalRIWBuchstabSourceLockContract；
+terminal_gap_after_router=CanonicalRIWBuchstabSourceLockContractOrExternalDIBFIOriginalDispersion。
+```
+
+源头锁定律：
+
+```text
+well-factorable(lambda_c) is not enough;
+internal support route requires:
+  lambda_c == canonical RIW/Buchstab decision-tree coefficient
+  before Cauchy/dispersion/source transformations;
+if not locked:
+  return to missing-row/PDEC/SAE or external DI/BFI.
+```
+
+本步已经关闭的伪出口是：
+
+```text
+FormalWFDSourceRejected:
+  形式 well-factorable、Type/Fourier 平滑和 dyadic 分块不强制 source entropy；
+  因此不能从 well-factorability alone 识别 lambda_c。
+```
+
+仍未闭合的 exact 门控是：
+
+```text
+CanonicalRIWBuchstabSourceLock:
+  必须证明实际 A1/KZ-E lambda_c 等于 canonical RIW/Buchstab 决策树系数；
+
+SourceLockPreservesUpstreamBlocks:
+  该锁定不能偷偷替换原 WFD/KZ-E 目标，必须在 Cauchy/dispersion 前保持同一对象；
+
+UnlockedSourceCleanReturn:
+  若源头未锁定，则本内部支撑路线不可用，必须回 missing-row/PDEC/SAE 或外部 DI/BFI。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+CanonicalRIWBuchstabSourceLockContract:
+  prove the A1/KZ-E lambda_c is locked to the canonical RIW/Buchstab decision-tree coefficient;
+  prove this lock preserves the original upstream WFD/KZ-E target;
+  otherwise route to PDEC/SAE missing-row or external DI/BFI.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1SourceIdentificationRouter => canonical_source_lock_or_external_dibfi_required；
+terminal_dual_gap => CanonicalRIWBuchstabSourceLockContractOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把终端硬点压到一个单一、可审稿的源头合同：如果能在原始 A1/KZ-E 对象里证明
+`lambda_c` 就是 canonical RIW/Buchstab 决策树系数，则此前从 Buchstab 厚支撑到 exact factor
+support 的整条内部链可以接上；如果不能，内部路线必须诚实退出，不能再用形式 WFD 伪装成
+canonical 支撑。

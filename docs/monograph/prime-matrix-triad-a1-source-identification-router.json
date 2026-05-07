@@ -1,0 +1,62 @@
+{
+  "canonical_source_lock_closed": false,
+  "certificate_type": "triad_a1_source_identification_router",
+  "conditional_source_lock_implies_internal_support_chain": true,
+  "decision_tree_input_next_target": "ActualKZESourceCoefficientIdentificationOrCleanReturn",
+  "decision_tree_input_status": "decision_tree_formula_reduced_to_source_coefficient_identification",
+  "formal_wfd_source_rejected": true,
+  "gate_rows": [
+    {
+      "available": "previous routers showed formal WFD/Type/Fourier inputs do not force source entropy",
+      "closed": true,
+      "gap": "none: this false shortcut has already been blocked",
+      "gate": "FormalWFDSourceRejected",
+      "needed": "do not identify lambda_c from well-factorability alone",
+      "route": "arbitrary well-factorable lambda_c cannot use canonical support proof"
+    },
+    {
+      "available": "decision-tree formula exists algebraically for canonical RIW/Buchstab weights",
+      "closed": false,
+      "gap": "current A1 ledger still treats lambda_c as an exact source to be identified, not as a locked formula",
+      "gate": "CanonicalRIWBuchstabSourceLock",
+      "needed": "the actual A1/KZ-E lambda_c is declared and proved equal to that canonical coefficient",
+      "route": "add a source-lock contract before invoking the support chain"
+    },
+    {
+      "available": "dyadic/K6 bookkeeping and Type/Fourier wrappers already exist",
+      "closed": false,
+      "gap": "must verify source-lock is not silently replacing the original target",
+      "gate": "SourceLockPreservesUpstreamBlocks",
+      "needed": "locking lambda_c to the canonical tree does not change the upstream WFD/KZ-E object",
+      "route": "show equality before Cauchy/dispersion, not after changing coefficients"
+    },
+    {
+      "available": "external DI/BFI and PDEC/SAE exits exist",
+      "closed": false,
+      "gap": "the missing source-lock exit must be recorded as a clean failure",
+      "gate": "UnlockedSourceCleanReturn",
+      "needed": "if source lock is absent, clean A1 cannot use the internal support proof",
+      "route": "unlocked source returns to missing-row/PDEC/SAE or external DI/BFI"
+    },
+    {
+      "available": "all downstream reductions from canonical source to support are conditional",
+      "closed": true,
+      "gap": "conditional implication is direct; source lock remains",
+      "gate": "SourceLockImpliesInternalSupportChain",
+      "needed": "source lock + path budget",
+      "route": "Canonical source lock feeds the already built decision-tree/support chain"
+    }
+  ],
+  "next_internal_target": "CanonicalRIWBuchstabSourceLockContract",
+  "reduction_law": "Actual source identification cannot be replaced by the statement that lambda_c is well-factorable. The internal support chain applies only if the A1/KZ-E coefficient is locked to the canonical RIW/Buchstab decision-tree coefficient before dispersion and Cauchy steps. If the source is merely an arbitrary well-factorable coefficient, the earlier sparse formal-factor obstruction returns, so the block must exit to a missing-row/PDEC/SAE contract or use external DI/BFI original dispersion.",
+  "review_conclusion": "ActualKZESourceCoefficientIdentification 已被压成 canonical source lock 合同：必须证明 A1/KZ-E 实际 lambda_c 在进入 Cauchy/dispersion 前就等于 RIW/Buchstab 决策树系数；仅有 well-factorable 性质不够。若没有该锁定，内部支撑证明不可用，必须回 PDEC/SAE 或外部 DI/BFI。",
+  "source_hashes": {
+    "decision_tree_formula_json": "d761fdc37db29bbb195d8f557abfac398e78fbf5f4bf71ea51952c137d4874e8",
+    "script": "2f446cfa64063e4607bd7aac8d77b676e85c0a1c824560e9fb1a421ff18736e7"
+  },
+  "source_identification_closed": false,
+  "source_lock_preserves_upstream_blocks_closed": false,
+  "status": "source_identification_reduced_to_canonical_source_lock_contract",
+  "terminal_gap_after_router": "CanonicalRIWBuchstabSourceLockContractOrExternalDIBFIOriginalDispersion",
+  "unlocked_source_clean_return_closed": false
+}
