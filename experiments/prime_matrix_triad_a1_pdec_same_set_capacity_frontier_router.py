@@ -47,6 +47,9 @@ DEFAULT_KUZNETSOV_FRONTIER = (
 DEFAULT_NCBLK_PROJECTION = (
     DOCS / "prime-matrix-triad-a1-ncblk-projection-gap-router.json"
 )
+DEFAULT_MOVING_BLOCK_OBSTRUCTION = (
+    DOCS / "prime-matrix-triad-a1-moving-block-spread-obstruction.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -114,6 +117,7 @@ def build_frontier_rows(
     clean_kls_external: dict[str, Any],
     kuznetsov_frontier: dict[str, Any],
     ncblk_projection: dict[str, Any],
+    moving_block_obstruction: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -298,6 +302,17 @@ def build_frontier_rows(
             ),
             "next_action": "内部版证明 MovingBlockSpreadNCBLK；外部版引用带局部方差扣除的 DI/BFI dispersion。",
         },
+        {
+            "frontier": "A1MovingBlockSpreadObstruction",
+            "status": "source_block_entropy_or_external_dibfi_required"
+            if moving_block_obstruction["next_internal_target"] == "SourceBlockEntropyNCBLK"
+            else "moving_block_spread_gap",
+            "evidence": (
+                f"MovingBlockSpread 不能由 fixed-projection diffuse 直接推出；"
+                f"terminal_gap={moving_block_obstruction['terminal_gap_after_router']}。"
+            ),
+            "next_action": "内部版证明 SourceBlockEntropyNCBLK；外部版引用 DI/BFI 原始 dispersion。",
+        },
     ]
 
 
@@ -320,6 +335,7 @@ def run(
     clean_kls_external_path: Path,
     kuznetsov_frontier_path: Path,
     ncblk_projection_path: Path,
+    moving_block_obstruction_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -340,6 +356,7 @@ def run(
     clean_kls_external = load_json(clean_kls_external_path)
     kuznetsov_frontier = load_json(kuznetsov_frontier_path)
     ncblk_projection = load_json(ncblk_projection_path)
+    moving_block_obstruction = load_json(moving_block_obstruction_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -359,6 +376,7 @@ def run(
         clean_kls_external,
         kuznetsov_frontier,
         ncblk_projection,
+        moving_block_obstruction,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -378,6 +396,7 @@ def run(
         "external_kls_input_registered_self_contained_atom_open",
         "sc9_routed_to_ncblk_or_external_dibfi",
         "moving_block_spread_or_external_dibfi_required",
+        "source_block_entropy_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -405,6 +424,9 @@ def run(
             "a1_clean_kls_external_input_json": file_sha256(clean_kls_external_path),
             "a1_kuznetsov_ls_atom_frontier_json": file_sha256(kuznetsov_frontier_path),
             "a1_ncblk_projection_gap_json": file_sha256(ncblk_projection_path),
+            "a1_moving_block_spread_obstruction_json": file_sha256(
+                moving_block_obstruction_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -415,7 +437,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion",
+        "terminal_dual_gap": "SourceBlockEntropyNCBLKOrExternalDIBFIOriginalDispersion",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -427,7 +449,8 @@ def run(
             " KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记："
             "外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，"
             "NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。"
-            "当前无黑箱版只剩 MovingBlockSpreadNCBLK，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
+            "MovingBlockSpread 进一步被投影不可见模型阻断，当前无黑箱版只剩 SourceBlockEntropyNCBLK，"
+            "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -438,7 +461,8 @@ def run(
             "标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。"
             "A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。"
             "NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。"
-            "下一步不再是 A1 内部路由，而是证明 MovingBlockSpreadNCBLK 或给出外部 DI/BFI 原始 dispersion 引用。"
+            "MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。"
+            "下一步不再是 A1 内部路由，而是证明 SourceBlockEntropyNCBLK 或给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
 
@@ -473,7 +497,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  NoDeletion-KL is routed to recursive PDEC or CleanKLS/DLS；",
         "  A1 clean KLS is reduced to Kuznetsov-LS atom or external citation；",
         "  SC-9 is reduced to NC-BLK or external DI/BFI dispersion；",
-        "  NC-BLK needs moving-block spread or external original dispersion。",
+        "  NC-BLK needs moving-block spread or external original dispersion；",
+        "  MovingBlockSpread needs source-block entropy or external DI/BFI。",
         "```",
         "",
         "## 2. 汇总",
@@ -525,11 +550,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "A1 clean KLS external input registered；",
             "SC-9 routed to NC-BLK / external DI-BFI；",
             "NC-BLK projection gap named；",
-            "remaining independent gap is MovingBlockSpreadNCBLK or external DI/BFI original dispersion。",
+            "MovingBlockSpread obstruction materialized；",
+            "remaining independent gap is SourceBlockEntropyNCBLK or external DI/BFI original dispersion。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "证明 MovingBlockSpreadNCBLK，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "证明 SourceBlockEntropyNCBLK，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -569,6 +595,11 @@ def main() -> None:
     parser.add_argument(
         "--ncblk-projection-json", type=Path, default=DEFAULT_NCBLK_PROJECTION
     )
+    parser.add_argument(
+        "--moving-block-obstruction-json",
+        type=Path,
+        default=DEFAULT_MOVING_BLOCK_OBSTRUCTION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -592,6 +623,7 @@ def main() -> None:
         clean_kls_external_path=args.clean_kls_external_json,
         kuznetsov_frontier_path=args.kuznetsov_frontier_json,
         ncblk_projection_path=args.ncblk_projection_json,
+        moving_block_obstruction_path=args.moving_block_obstruction_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

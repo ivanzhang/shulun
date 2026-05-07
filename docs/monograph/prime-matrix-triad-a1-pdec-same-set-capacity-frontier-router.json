@@ -131,6 +131,12 @@
       "frontier": "A1NCBLKProjectionGap",
       "next_action": "内部版证明 MovingBlockSpreadNCBLK；外部版引用带局部方差扣除的 DI/BFI dispersion。",
       "status": "moving_block_spread_or_external_dibfi_required"
+    },
+    {
+      "evidence": "MovingBlockSpread 不能由 fixed-projection diffuse 直接推出；terminal_gap=SourceBlockEntropyNCBLKOrExternalDIBFIOriginalDispersion。",
+      "frontier": "A1MovingBlockSpreadObstruction",
+      "next_action": "内部版证明 SourceBlockEntropyNCBLK；外部版引用 DI/BFI 原始 dispersion。",
+      "status": "source_block_entropy_or_external_dibfi_required"
     }
   ],
   "lp_summary": {
@@ -146,10 +152,11 @@
       "BRIDGED_zero_block"
     ]
   },
-  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。下一步不再是 A1 内部路由，而是证明 MovingBlockSpreadNCBLK 或给出外部 DI/BFI 原始 dispersion 引用。",
+  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。下一步不再是 A1 内部路由，而是证明 SourceBlockEntropyNCBLK 或给出外部 DI/BFI 原始 dispersion 引用。",
   "source_hashes": {
     "a1_clean_kls_external_input_json": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
     "a1_kuznetsov_ls_atom_frontier_json": "2b58d9ba6bd9d40316404ba92c78de7189a5326cf5f22b124b79bf4f10cb388f",
+    "a1_moving_block_spread_obstruction_json": "5fc83fe68233235095bfa96c437a16b9a1384fc92ae27b046744f83abe4918be",
     "a1_ncblk_projection_gap_json": "c38a567ab8b649086817dfdb34ed8816a02c9a6306ffb8218b396e51c0d3cc1f",
     "continuous_actual_payment_selection_json": "40b5e4849328bb8434be285105482d4b3d046b61ec2fa69bf5ef8d77af361874",
     "continuous_columntail_bridge_json": "48fed9b4cfd6f9f3a851a2a77389978fd81299e0e075bb9e56140e6df77e4067",
@@ -163,7 +170,7 @@
     "fourier_cap_scan_json": "fe47050ce4b60f5c5651228f7e940eb20898506149f830d86448375984b7e502",
     "lhb_lp_skeleton_json": "77be4c32509e121013a11d5cc0668c314ceece3aa7f3e114bae2dc69cbdb8021",
     "pdec_mass_source_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
-    "script": "9827c0084d2d42133bed0a23dad1b1b517b1e2f96e7b62976cd719464d19ca76",
+    "script": "ef3fa0fd97956457d71162ef68dfdaa80119360a8676bc487c98c47ac5d2be45",
     "selective_promotion_commutation_json": "ca61b2488fdb1bc63ea571bd9223377c685918b584af13763c65d5d3438528e4",
     "standard_prime_lift_deletion_json": "733c195ae3c6c88ba29951bb2ee4a90da9e02899f606aacbd4c55bfb85291c5f",
     "terminal_confluence_json": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c"
@@ -186,9 +193,10 @@
     "ready_current_lhb_branch": 1,
     "sc9_routed_to_ncblk_or_external_dibfi": 1,
     "selective_promotion_resolved_by_finite_split": 1,
+    "source_block_entropy_or_external_dibfi_required": 1,
     "structurally_insufficient": 1,
     "terminal_dichotomy_admission_closed_capacity_open": 1
   },
-  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。当前无黑箱版只剩 MovingBlockSpreadNCBLK，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。",
-  "terminal_dual_gap": "MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion"
+  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断，当前无黑箱版只剩 SourceBlockEntropyNCBLK，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。",
+  "terminal_dual_gap": "SourceBlockEntropyNCBLKOrExternalDIBFIOriginalDispersion"
 }

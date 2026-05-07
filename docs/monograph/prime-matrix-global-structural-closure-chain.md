@@ -3971,3 +3971,73 @@ terminal_dual_gap => MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion。
 
 这一步是负向但关键的硬推进：它排除了“fixed-projection flat => NC-BLK”的隐藏跳步，
 把自足版最后硬点改写为更准确的 `MovingBlockSpreadNCBLK`。
+
+## 76. A1 MovingBlockSpread 投影不可见性阻断
+
+新增 `experiments/prime_matrix_triad_a1_moving_block_spread_obstruction.py` 后，
+第 75 节的 `MovingBlockSpreadNCBLK` 被直接硬攻。结论是：它不能由当前 fixed-projection
+diffuse ledger 自动推出。
+
+机器结果：
+
+```text
+status=moving_block_spread_not_implied_by_fixed_projection_diffuse；
+next_internal_target=SourceBlockEntropyNCBLK；
+terminal_gap_after_router=SourceBlockEntropyNCBLKOrExternalDIBFIOriginalDispersion。
+```
+
+核心模型是投影不可见性：
+
+```text
+fixed projection ledger sees only total mass per fixed signature；
+moving-block NC-BLK needs energy per growing block b=(u,v)；
+hidden moving fibers can concentrate while fixed signatures keep diffusing。
+```
+
+具体地，对每个尺度取一批新 fixed signatures，每个 signature 下有随尺度增长的 hidden
+moving-block fiber。构造两种模型：
+
+```text
+Spread model:
+  每个 fixed signature 的质量均匀分散到 hidden moving blocks；
+
+Concentrated model:
+  每个 fixed signature 的质量集中到一个 moving block。
+```
+
+二者在 fixed-projection ledger 上相同，但 moving-block 二能量相差 `hidden_fiber_size` 倍。
+并且 concentrated model 仍可让任意命名 fixed signature 最终不再出现，从而不违反
+fixed-projection diffuse 语义。
+
+这说明：
+
+```text
+fixed-projection diffuse
+  does not imply arbitrary-log moving-block energy saving。
+```
+
+因此 `MovingBlockSpreadNCBLK` 还不是最终原子。真正内部目标变为：
+
+```text
+SourceBlockEntropyNCBLK:
+actual WFD/Type-I-II/Fourier/well-factorable coefficients distribute over
+moving same-(u,v) blocks with enough entropy to force block-energy log saving。
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+引用原始 DI/BFI dispersion，且必须直接提供未中心化 WFD 目标的估计，
+或包含同 `(u,v)` 块局部方差扣除。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1MovingBlockSpreadObstruction => source_block_entropy_or_external_dibfi_required；
+terminal_dual_gap => SourceBlockEntropyNCBLKOrExternalDIBFIOriginalDispersion。
+```
+
+这一步不是后退，而是排除另一个隐藏跳步：`fixed projection flat` 只控制可命名的固定签名，
+不控制随尺度移动的内部 factorization block。继续无黑箱硬攻时，必须直接证明源头块熵。
