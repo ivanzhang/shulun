@@ -31,6 +31,7 @@ DEFAULT_CONTINUOUS = DOCS / "prime-matrix-triad-a1-continuous-direction-arc-dual
 DEFAULT_BRIDGE = DOCS / "prime-matrix-triad-a1-continuous-columntail-bridge.json"
 DEFAULT_ACTUAL_PAYMENT = DOCS / "prime-matrix-triad-a1-continuous-actual-payment-selection.json"
 DEFAULT_TERMINAL_DICHOTOMY = DOCS / "prime-matrix-triad-a1-continuous-terminal-dichotomy-router.json"
+DEFAULT_PDEC_SIGNATURE = DOCS / "prime-matrix-triad-a1-continuous-pdec-signature-input-ledger.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -90,6 +91,7 @@ def build_frontier_rows(
     bridge: dict[str, Any],
     actual_payment: dict[str, Any],
     terminal_dichotomy: dict[str, Any],
+    pdec_signature: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -186,6 +188,17 @@ def build_frontier_rows(
             ),
             "next_action": "直接攻 PDEC-CAP 容量不等式，或攻/引用 KLS-EXT 大筛估计。",
         },
+        {
+            "frontier": "ContinuousPDECSignatureInput",
+            "status": "positive_limsup_pdec_inputs_materialized_capacity_open",
+            "evidence": (
+                f"positive-limsup 有限签名已生成 PDEC 输入账本；"
+                f"signature_rows={pdec_signature['signature_row_count']}；"
+                f"route_counts={pdec_signature['route_counts']}；"
+                f"min Fourier/total={pdec_signature['global_min_signature_fourier_abs_over_total']:.6f}。"
+            ),
+            "next_action": "对这些 g_b(t) 证明 U_CRT<L_PDEC；失败则输出更窄 DualCap/缺失行/KLS 回流。",
+        },
     ]
 
 
@@ -200,6 +213,7 @@ def run(
     bridge_path: Path,
     actual_payment_path: Path,
     terminal_dichotomy_path: Path,
+    pdec_signature_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -212,6 +226,7 @@ def run(
     bridge = load_json(bridge_path)
     actual_payment = load_json(actual_payment_path)
     terminal_dichotomy = load_json(terminal_dichotomy_path)
+    pdec_signature = load_json(pdec_signature_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -223,6 +238,7 @@ def run(
         bridge,
         actual_payment,
         terminal_dichotomy,
+        pdec_signature,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -234,6 +250,7 @@ def run(
         "actual_payment_selection_materialized",
         "actual_payment_measure_constructed",
         "terminal_dichotomy_admission_closed_capacity_open",
+        "positive_limsup_pdec_inputs_materialized_capacity_open",
         "closed",
         "no_fourth_exit",
     }
@@ -253,6 +270,7 @@ def run(
             "continuous_columntail_bridge_json": file_sha256(bridge_path),
             "continuous_actual_payment_selection_json": file_sha256(actual_payment_path),
             "continuous_terminal_dichotomy_json": file_sha256(terminal_dichotomy_path),
+            "continuous_pdec_signature_input_json": file_sha256(pdec_signature_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -269,13 +287,15 @@ def run(
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
             "连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。"
             "actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。"
+            "positive-limsup 有限签名的 PDEC 输入账本已物化。"
             "最终缺口只剩 PDEC 容量不等式或 CleanKLS/DLS 大筛估计。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
             "当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，"
             "连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。"
-            "终端二分已说明没有第三出口；下一步不再是路由，而是证明 PDEC-CAP 或 KLS-EXT。"
+            "终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。"
+            "下一步不再是路由，而是证明 PDEC-CAP 或 KLS-EXT。"
         ),
     }
 
@@ -302,7 +322,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  canonical actual payment measure is constructed；",
         "  actual payment concentration returns to PDEC；",
         "  recursive diffusion returns to CleanKLS/DLS；",
-        "  no third terminal route remains after finite-projection dichotomy。",
+        "  no third terminal route remains after finite-projection dichotomy；",
+        "  positive-limsup finite signatures materialize legal PDEC input rows。",
         "```",
         "",
         "## 2. 汇总",
@@ -346,6 +367,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "continuous column-tail bridge materialized；",
             "canonical actual payment measure constructed；",
             "terminal finite-projection dichotomy closed；",
+            "positive-limsup PDEC input rows materialized；",
             "remaining gap is PDEC-CAP or KLS-EXT。",
             "```",
             "",
@@ -372,6 +394,7 @@ def main() -> None:
     parser.add_argument(
         "--terminal-dichotomy-json", type=Path, default=DEFAULT_TERMINAL_DICHOTOMY
     )
+    parser.add_argument("--pdec-signature-json", type=Path, default=DEFAULT_PDEC_SIGNATURE)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -387,6 +410,7 @@ def main() -> None:
         bridge_path=args.bridge_json,
         actual_payment_path=args.actual_payment_json,
         terminal_dichotomy_path=args.terminal_dichotomy_json,
+        pdec_signature_path=args.pdec_signature_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

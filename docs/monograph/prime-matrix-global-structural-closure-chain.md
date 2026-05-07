@@ -3378,3 +3378,60 @@ terminal_dual_gap => PDECCapacityOrKLSLargeSieve。
 
 所以接下来的真正终端硬攻不能再停留在路由、归档或候选定义上，
 必须直接攻击 `PDEC-CAP` 的容量不等式，或 `KLS-EXT` 的 clean 大筛估计。
+
+## 68. A1 positive-limsup PDEC 输入账本
+
+新增 `experiments/prime_matrix_triad_a1_continuous_pdec_signature_input_ledger.py` 后，
+上一节的 positive-limsup 有限签名不再只是抽象分支，而被物化为具体的 column-tail PDEC 输入行。
+
+输入律：
+
+```text
+positive-limsup finite signature b=(prime,residue,column-residue)
+=> g_b(t)=# canonical actual payments at phase t using b
+=> finite column-tail formal row
+=> PDEC capacity comparison U_CRT<L_PDEC still required。
+```
+
+机器结果：
+
+```text
+status=continuous_positive_limsup_pdec_inputs_materialized_capacity_open；
+cap_count=8；
+signature_row_count=40；
+route_counts={FiniteSignaturePDECInputMaterialized: 40}；
+global_min_signature_fourier_abs_over_total=0.986379；
+global_max_signature_fourier_abs_over_total=1。
+```
+
+读法：
+
+```text
+正 limsup 签名的合法性问题已关闭：
+  它来自真实完成态、真实低洞、真实 canonical payment bucket；
+
+每个 top finite signature 都有极强非零 Fourier 相位剖面：
+  因而确实是 PDEC 输入，而不是 diffuse KLS 输入；
+
+仍未完成的是容量比较：
+  U_CRT(g_b;h,zeta)<L_PDEC(g_b)。
+```
+
+前沿路由器同步更新后：
+
+```text
+ContinuousPDECSignatureInput => positive_limsup_pdec_inputs_materialized_capacity_open；
+terminal_dual_gap => PDECCapacityOrKLSLargeSieve。
+```
+
+当前终端硬点被压到最硬的两个估计本体：
+
+```text
+PDEC-CAP:
+  对已物化的 g_b(t) 证明同集容量上界 U_CRT<L_PDEC；
+
+KLS-EXT:
+  对 diffuse actual-payment 测度证明 CleanKLS/DLS 大筛吸收。
+```
+
+除此之外，连续 actual-payment 分支当前没有剩余路由缺口。
