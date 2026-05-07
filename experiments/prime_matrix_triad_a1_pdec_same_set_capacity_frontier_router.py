@@ -143,6 +143,9 @@ DEFAULT_DIBFI_MAYNARD_VARIABLE_TRANSLATION = (
 DEFAULT_DIBFI_MAYNARD_S_COMPRESSION_BARRIER = (
     DOCS / "prime-matrix-triad-a1-dibfi-maynard-s-compression-barrier-router.json"
 )
+DEFAULT_DIBFI_ALTERNATE_W4_REROUTE_AUDIT = (
+    DOCS / "prime-matrix-triad-a1-dibfi-alternate-w4-reroute-audit-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -244,6 +247,7 @@ def build_frontier_rows(
     dibfi_maynard_exponent_cone: dict[str, Any],
     dibfi_maynard_variable_translation: dict[str, Any],
     dibfi_maynard_s_compression_barrier: dict[str, Any],
+    dibfi_alternate_w4_reroute_audit: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -814,6 +818,16 @@ def build_frontier_rows(
             ),
             "next_action": "证明 Maynard-S 压缩映射，或给出替代 W4 对象路由。",
         },
+        {
+            "frontier": "A1DIBFIAlternateW4RerouteAuditRouter",
+            "status": "alternate_w4_reroute_rejected_maynard_s_compression_open",
+            "evidence": (
+                f"替代 W4 对象路由已审计；"
+                f"open_reroute_gates={dibfi_alternate_w4_reroute_audit['open_reroute_gates']}；"
+                f"terminal_gap={dibfi_alternate_w4_reroute_audit['terminal_gap_after_router']}。"
+            ),
+            "next_action": "直接构造 MaynardSCompressionMap，证明 S_May<=X^(3/10-o(1))。",
+        },
     ]
 
 
@@ -870,6 +884,7 @@ def run(
     dibfi_maynard_exponent_cone_path: Path,
     dibfi_maynard_variable_translation_path: Path,
     dibfi_maynard_s_compression_barrier_path: Path,
+    dibfi_alternate_w4_reroute_audit_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -928,6 +943,9 @@ def run(
     dibfi_maynard_s_compression_barrier = load_json(
         dibfi_maynard_s_compression_barrier_path
     )
+    dibfi_alternate_w4_reroute_audit = load_json(
+        dibfi_alternate_w4_reroute_audit_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -981,6 +999,7 @@ def run(
         dibfi_maynard_exponent_cone,
         dibfi_maynard_variable_translation,
         dibfi_maynard_s_compression_barrier,
+        dibfi_alternate_w4_reroute_audit,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1036,13 +1055,14 @@ def run(
         "maynard_w4_conditions_reduced_to_current_wfd_exponent_cone_open",
         "maynard_exponent_cone_reduced_to_wfd_translation_matrix_open",
         "maynard_s_common_inverse_direct_identification_rejected_open",
+        "alternate_w4_reroute_rejected_maynard_s_compression_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_nonap_wfd_maynard_s_compression_open",
+        "status": "same_set_capacity_frontier_materialized_nonap_wfd_maynard_s_compression_map_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1143,6 +1163,9 @@ def run(
             "a1_dibfi_maynard_s_compression_barrier_json": file_sha256(
                 dibfi_maynard_s_compression_barrier_path
             ),
+            "a1_dibfi_alternate_w4_reroute_audit_json": file_sha256(
+                dibfi_alternate_w4_reroute_audit_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1153,7 +1176,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "NonAPWFDNoProjectionAndMaynardSCompression",
+        "terminal_dual_gap": "NonAPWFDNoProjectionAndMaynardSCompressionMap",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1197,7 +1220,8 @@ def run(
             "Maynard-W4 参数模板和 J-bound 简化也已固定；三条 Maynard 条件又统一压成"
             "当前 WFD 指数锥准入；指数锥准入再被压成 WFD 非对角对象等式、WFD 指数向量提交"
             "与带正余量的线性翻译矩阵；朴素把共同逆元窗口 S_common 直接当作 Maynard-S 的路线"
-            "又被指数锥排除，必须给出 Maynard-S 压缩映射或替代 W4 对象路由。"
+            "又被指数锥排除；已登记替代 W4 对象路由也被审计为不可绕开非 AP generic WFD，"
+            "尺度侧剩余单点化为 Maynard-S 压缩映射。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1229,7 +1253,7 @@ def run(
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
             "该合取证书现已继续压成 "
-            "`NonAPWFDNoProjectionAndMaynardSCompression`。"
+            "`NonAPWFDNoProjectionAndMaynardSCompressionMap`。"
         ),
     }
 
@@ -1299,6 +1323,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  Maynard-W4 conditions reduce to current WFD exponent-cone admission。",
         "  Maynard exponent-cone admission reduces to WFD object identity and translation matrix。",
         "  Direct S_common=S_May identification is rejected; Maynard-S compression is required。",
+        "  Registered alternate W4 reroutes are rejected; scale side reduces to MaynardSCompressionMap。",
         "```",
         "",
         "## 2. 汇总",
@@ -1384,7 +1409,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIMaynardExponentCone router materialized；",
             "DIBFIMaynardVariableTranslation router materialized；",
             "DIBFIMaynardSCompressionBarrier router materialized；",
-            "remaining independent gap is NonAPWFDNoProjectionAndMaynardSCompression。",
+            "DIBFIAlternateW4RerouteAudit router materialized；",
+            "remaining independent gap is NonAPWFDNoProjectionAndMaynardSCompressionMap。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1591,6 +1617,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_MAYNARD_S_COMPRESSION_BARRIER,
     )
+    parser.add_argument(
+        "--dibfi-alternate-w4-reroute-audit-json",
+        type=Path,
+        default=DEFAULT_DIBFI_ALTERNATE_W4_REROUTE_AUDIT,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1651,6 +1682,9 @@ def main() -> None:
         ),
         dibfi_maynard_s_compression_barrier_path=(
             args.dibfi_maynard_s_compression_barrier_json
+        ),
+        dibfi_alternate_w4_reroute_audit_path=(
+            args.dibfi_alternate_w4_reroute_audit_json
         ),
     )
     args.json_out.write_text(

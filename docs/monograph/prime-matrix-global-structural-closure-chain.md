@@ -6517,3 +6517,70 @@ NonAPWFDNoProjectionAndMaynardSCompression
 这一步是实质收缩：后续不能再尝试把 `S_common≈P` 直接塞入 Maynard-W4 的 `S_May`。
 必须证明从 `s1,s2,h,completion` 结构中产生了一个更短的 Maynard-S 参数
 `S_May<=X^(3/10-o(1))`，或者证明当前 WFD 非对角对象应进入另一个外部 dispersion 原子。
+
+## 110. Alternate W4 reroute audit：替代对象路由排除，尺度侧单点化为 MaynardSCompressionMap
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-alternate-w4-reroute-audit-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_alternate_w4_reroute_audit_router.py` 后，
+第 109 节留下的 `AlternateW4ObjectRerouting` 被审计。当前已登记资料中没有可绕开
+`MaynardSCompressionMap` 的闭合出口：
+
+```text
+DirectBFIPrimeAPAtom:
+  只在 AP-source 分支闭合；
+  非 AP generic WFD 不能静默升级为 prime-AP discrepancy。
+
+HLCWindowedKLSAtom:
+  只覆盖 clean HLC 分支；
+  不是 generic WFD 共同变量表的直接替代品。
+
+NonAP fallback:
+  回到 NoProjectionUncenteredDispersionIdentity
+  + QuantifiedDIBFIWindowSubstitution；
+  即当前 KE-13/DI/Maynard 同一路线。
+```
+
+机器结果：
+
+```text
+status=alternate_w4_reroute_rejected_maynard_s_compression_open；
+closed_reroute_gates=[
+  PriorSCompressionBarrierAvailable,
+  DirectBFIAtomScopeAPOnly,
+  HLCWindowedKLSAtomScopeCleanOnly,
+  NonAPFallbackReturnsToSameKE13Route,
+  NoRegisteredClosedAlternateW4Route
+]；
+open_reroute_gates=[
+  MaynardSCompressionMap
+]；
+terminal_gap_after_router=MaynardSCompressionMap。
+```
+
+因此当前尺度侧不再是“压缩或替代”二选一，而是：
+
+```text
+MaynardSCompressionMap:
+  construct S_May from s1,s2,h,completion；
+  prove S_May <= X^(3/10-o(1))。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndMaynardSCompressionMap。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndMaynardSCompressionMap
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDMatchesW4OffDiagonalForm
+    + MaynardSCompressionMap。
+```
+
+这一步排除了“换一个已登记外部原子绕开 S 压缩”的退路。下一硬点已经非常窄：
+要么从当前非对角结构中真实构造压缩后的 `S_May`，要么必须新增一个此前未登记的外部
+原始 dispersion 原子并重新审计其适用条件。

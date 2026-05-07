@@ -1,0 +1,74 @@
+{
+  "alternate_w4_reroute_closed": false,
+  "certificate_type": "triad_a1_dibfi_alternate_w4_reroute_audit_router",
+  "closed_reroute_gates": [
+    "PriorSCompressionBarrierAvailable",
+    "DirectBFIAtomScopeAPOnly",
+    "HLCWindowedKLSAtomScopeCleanOnly",
+    "NonAPFallbackReturnsToSameKE13Route",
+    "NoRegisteredClosedAlternateW4Route"
+  ],
+  "open_reroute_gates": [
+    "MaynardSCompressionMap"
+  ],
+  "previous_terminal_gap": "MaynardSCompressionMapOrAlternateW4Rerouting",
+  "reroute_rows": [
+    {
+      "closed": true,
+      "evidence": "上游已把朴素 S_common=S_May 同一化排除，并留下压缩/替代二选一。",
+      "gate": "PriorSCompressionBarrierAvailable",
+      "next_target": "NoRegisteredClosedAlternateW4Route",
+      "remaining": "none at prior-barrier level"
+    },
+    {
+      "closed": true,
+      "evidence": "直接 BFI 原子只在 AP-source 分支闭合；非 AP generic WFD 不能静默升级。",
+      "gate": "DirectBFIAtomScopeAPOnly",
+      "next_target": "NoRegisteredClosedAlternateW4Route",
+      "remaining": "若要用直接 BFI，必须重新证明源头 AP residual identity。"
+    },
+    {
+      "closed": true,
+      "evidence": "HLCWindowedKLSAtom 只覆盖 clean HLC 分支，不替代 generic WFD 共同变量表。",
+      "gate": "HLCWindowedKLSAtomScopeCleanOnly",
+      "next_target": "NoRegisteredClosedAlternateW4Route",
+      "remaining": "none for current non-AP generic WFD route"
+    },
+    {
+      "closed": true,
+      "evidence": "非 AP fallback 回到无投影 KE-13/量化窗口代入；这正是当前 Maynard-W4 链条。",
+      "gate": "NonAPFallbackReturnsToSameKE13Route",
+      "next_target": "NoRegisteredClosedAlternateW4Route",
+      "remaining": "不是独立闭合出口。"
+    },
+    {
+      "closed": true,
+      "evidence": "当前已登记原子中没有可绕开 Maynard-S 压缩并闭合非 AP generic WFD 的替代路由。",
+      "gate": "NoRegisteredClosedAlternateW4Route",
+      "next_target": "MaynardSCompressionMap",
+      "remaining": "只有新增外部原始 dispersion 原子才会重开该出口。"
+    },
+    {
+      "closed": false,
+      "evidence": "仍需从 s1,s2,h,completion 结构中构造 S_May<=X^(3/10-o(1))。",
+      "gate": "MaynardSCompressionMap",
+      "next_target": "MaynardSCompressionMap",
+      "remaining": "当前最终尺度硬点。"
+    }
+  ],
+  "review_conclusion": "替代 W4 对象路由在当前合同下被排除；非 AP generic WFD 的尺度侧剩余单点化为 `MaynardSCompressionMap`。",
+  "source_hashes": {
+    "ap_source_branch_json": "81dc79aa0b5f3b6ea295cff13186e2b522f16e701a70cadabced721ac884d0bc",
+    "audit_note_md": "604068ddc118754f2b42a38b54a78f49ffede874c296a518c8ecf3c7b4aadf7f",
+    "direct_bfi_atom_json": "daa5db7d52fa40b9a14b672fd0966b69ca803fee412dca1285127ee3fd4682ad",
+    "nonap_dispersion_json": "84002b30235b4d02a8af38771960fea962992168a77a15239adbf350850aac0f",
+    "s_compression_barrier_json": "3fb2070e3533870b600c158a3c9551fb2144a6a0c0343e798bfee7e1a64a83d0",
+    "script": "1b1a62f4bf0048e53d224e37226f01c5c8628d3c1adc855529542e2525f6a1aa"
+  },
+  "status": "alternate_w4_reroute_rejected_maynard_s_compression_open",
+  "structural_law": "No registered closed alternate W4 object route is available for the non-AP generic WFD branch. Direct BFI is AP-source only, HLCWindowedKLS is clean-HLC only, and the non-AP fallback returns to the same KE-13/DI-Maynard chain. The remaining scale hard point is MaynardSCompressionMap.",
+  "terminal_gap_after_router": "MaynardSCompressionMap",
+  "terminal_gap_expansion": [
+    "MaynardSCompressionMap"
+  ]
+}
