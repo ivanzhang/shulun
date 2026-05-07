@@ -1,0 +1,65 @@
+{
+  "all_reconciliation_gates_passed": true,
+  "canonical_closed_statement": "Triad-A1 same-set capacity / full-S terminal on the canonical RIW/Buchstab source branch.",
+  "canonical_ncblk_absorbed_by_existing_boundary": true,
+  "certificate_type": "prime_matrix_ncblk_boundary_reconciliation_router",
+  "generic_ncblk_self_contained_not_claimed": true,
+  "not_claimed_statement": "Unrestricted generic full-S well-factorable WFD self-contained theorem.",
+  "reconciliation_law": "NC-BLK must be read through the theorem boundary. On the canonical RIW/Buchstab source branch, the existing same-set capacity frontier and final boundary review have already absorbed the NC-BLK clean-KLS chain. On the broader full-S non-AP generic WFD branch, NC-BLK is still an external/exact-source-entropy route and must not be imported into the self-contained claim. Therefore this reconciles the NC-BLK label but does not close the full row/column theorem.",
+  "remaining_global_obligations": [
+    "PDEC family certificates",
+    "LocalSurvivorCert family",
+    "CleanKLS/DLS certificates or explicit ExternalKLS input",
+    "D-structure/Tail-log4/Rankin/referee-block interfaces"
+  ],
+  "review_conclusion": "NC-BLK 不是新的无名 CleanKLS 出口：在 canonical-source A1 分支中，它已经被既有同集容量最终边界吸收；在 generic full-S non-AP 分支中，它仍保持外部/精确源熵路线，不能冒充自足闭合。完整行/列无条件定理仍未闭合。",
+  "row_column_unconditional_closed": false,
+  "row_frontier_before_reconciliation": "NonTautologicalPDECOrNCBLK",
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "NonTautologicalPDECOrNCBLK",
+      "gate": "RowFrontierPinsNCBLK",
+      "meaning": "总前沿已把 CleanKLS 宽口径压到 NC-BLK 或非二点 PDEC。"
+    },
+    {
+      "closed": true,
+      "evidence": "NoFurtherCanonicalSourceSelfContainedGap_GenericUnrestrictedRefuted",
+      "gate": "CanonicalSameSetBoundaryClosed",
+      "meaning": "canonical RIW/Buchstab source branch 的同集容量/Full-S 终端已闭合。"
+    },
+    {
+      "closed": true,
+      "evidence": "self_contained_theorem_boundary_review_passed",
+      "gate": "BoundaryReviewNoOpenGate",
+      "meaning": "定理边界审查无剩余门。"
+    },
+    {
+      "closed": true,
+      "evidence": "Unrestricted generic full-S well-factorable WFD self-contained theorem.",
+      "gate": "GenericUnrestrictedNotImported",
+      "meaning": "generic WFD 自足版保持反证，不能偷渡进 canonical 闭合。"
+    },
+    {
+      "closed": true,
+      "evidence": "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov",
+      "gate": "NCBLKGenericBranchStillExternal",
+      "meaning": "full-S non-AP generic NC-BLK 仍只能走 exact source entropy 或外部定理。"
+    },
+    {
+      "closed": true,
+      "evidence": "PDEC family certificates, LocalSurvivorCert family, CleanKLS/DLS certificates or explicit ExternalKLS input, D-structure/Tail-log4/Rankin/referee-block interfaces",
+      "gate": "NoGlobalRowColumnUpgrade",
+      "meaning": "完整行/列无条件定理仍需独立终端证书，不能由 canonical 边界替代。"
+    }
+  ],
+  "source_hashes": {
+    "boundary_merge": "b454fcf02a28a64540f88759fe85ca639443b9a7b49c3d18211475c99b0e4ac5",
+    "boundary_review": "bd259691f3aba483373a28d47db1c2f26b6671c1c640790a70b797e832b44f30",
+    "ncblk_branch_alignment": "3006ac19a18cf8402ca96b39b084a98424095983c116453ed451e9b3b31710b1",
+    "row_frontier": "3b09c5abb2cb3ae9d68fc6e6198ebc1a4e49a6cf795be23bd873705e20f2c83c",
+    "same_set_capacity_frontier": "5e90ebbde60cece165620ec326e67d71904fb4c64459b1ef1b44918416ba2a7d",
+    "script": "3d6e0d1b7a14bda6b9f9d806756a6139f748b916f9824681c0ea5e8e3715c542"
+  },
+  "status": "ncblk_reconciled_with_canonical_boundary_global_not_closed"
+}

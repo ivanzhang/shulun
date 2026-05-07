@@ -2279,3 +2279,18 @@ KZ-E:       剩 NC-BLK actual block non-concentration
 ```text
 NonTautologicalPDECOrNCBLK。
 ```
+
+新增 `prime-matrix-ncblk-boundary-reconciliation-router.md` 后，这个 `NC-BLK` 标签的边界读法被固定：
+
+```text
+canonical source branch:
+  NC-BLK clean-KLS chain is absorbed by the existing same-set capacity boundary;
+
+generic full-S non-AP branch:
+  NC-BLK remains exact source entropy or external DI/BFI/Kuznetsov.
+```
+
+因此 `NC-BLK` 不再是无名 CleanKLS 出口，也不能被误读成全局行/列定理闭合。它的作用是把
+canonical-source 边界闭合与 generic noncanonical 外部路线分开；完整行/列无条件定理仍需独立
+终端证书，尤其是 PDEC family、LocalSurvivorCert family、CleanKLS/ExternalKLS 和
+D-structure/Rankin/referee-block 接口。
