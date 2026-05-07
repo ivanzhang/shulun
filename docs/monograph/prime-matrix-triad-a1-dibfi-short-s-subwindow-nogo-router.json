@@ -1,0 +1,82 @@
+{
+  "certificate_type": "triad_a1_dibfi_short_s_subwindow_nogo_router",
+  "closed_subwindow_gates": [
+    "PriorShortSOrFullSAtomFrontierAvailable",
+    "MaynardSIsMagnitudeNotIntervalWidth",
+    "CurrentBlockIsFullCommonS",
+    "ShortSWidthDoesNotReduceMaynardMagnitude",
+    "SmallMagnitudeSSelectionLosesFullSBlock",
+    "ShortSSubwindowDecompositionRejected"
+  ],
+  "open_subwindow_gates": [
+    "NewFullSDispersionAtom"
+  ],
+  "previous_terminal_gap": "ShortSSubwindowOrNewFullSDispersionAtom",
+  "review_conclusion": "短 S 子窗口分解被排除：小区间宽度不能替代 Maynard-S 的实际量级；当前尺度侧剩余单点化为 `NewFullSDispersionAtom`。",
+  "short_s_subwindow_closed": false,
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "di_rdn_substitution_json": "d5611a1991e1ba9c6be55eaea0f559e3bc8d9af0b7d55422f45d2079603a329d",
+    "s_compression_nogo_json": "980b3cce2da33b14c1590365cb582816a522fb6c458ced7cc9e35a5848b1f519",
+    "script": "303accd67037a0bf9ce3093261b2669c70ab65a3b7cfa745ff84ea63b5c228aa",
+    "subwindow_note_md": "7f9e0fe05faee166f50bdbfc0df2a3ccb19ea64d722bb761fd4d6f5ed02e32d0",
+    "w4_parameter_note_md": "416be3daca1c07959fcc88032838255a17db1957a6555fe2dacab1e1708e9519"
+  },
+  "status": "short_s_subwindow_decomposition_rejected_full_s_atom_open",
+  "structural_law": "Short interval width does not reduce the Maynard S parameter. In W4, S_May is tied to the magnitude of z=s1*s2 via Z≈S_May^2. A subinterval inside s≈X^(1/2) still has s magnitude X^(1/2), so it still forces S_May≈X^(1/2). A true S_May<=X^(3/10) selection leaves the current full-S dyadic block. Thus the remaining scale route requires a new full-S dispersion atom.",
+  "subwindow_rows": [
+    {
+      "closed": true,
+      "evidence": "上游已排除完整 S 窗口下的 Maynard-S 压缩，并留下短 S 子窗口/full-S 原子二选一。",
+      "gate": "PriorShortSOrFullSAtomFrontierAvailable",
+      "next_target": "ShortSWidthDoesNotReduceMaynardMagnitude",
+      "remaining": "none at prior-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "W4 使用 z=s1*s2 且 Z≈S_May^2；S_May 控制乘积变量的量级，不是局部区间宽度。",
+      "gate": "MaynardSIsMagnitudeNotIntervalWidth",
+      "next_target": "ShortSWidthDoesNotReduceMaynardMagnitude",
+      "remaining": "none at notation level"
+    },
+    {
+      "closed": true,
+      "evidence": "当前 KE-13/common table 的逆元变量仍在 full-S dyadic 块 S_common≈X^(1/2)。",
+      "gate": "CurrentBlockIsFullCommonS",
+      "next_target": "ShortSWidthDoesNotReduceMaynardMagnitude",
+      "remaining": "none unless the target object is changed to a genuinely smaller dyadic S block"
+    },
+    {
+      "closed": true,
+      "evidence": "把 s≈X^(1/2) 的窗口切成短宽度区间后，s 的量级仍是 X^(1/2)，故 z=s1*s2≈X。",
+      "gate": "ShortSWidthDoesNotReduceMaynardMagnitude",
+      "next_target": "ShortSSubwindowDecompositionRejected",
+      "remaining": "不能用区间宽度 L<=X^(3/10) 替代 S_May。"
+    },
+    {
+      "closed": true,
+      "evidence": "若真实要求 s1,s2<=X^(3/10)，则已经离开当前 S_common≈X^(1/2) dyadic 块。",
+      "gate": "SmallMagnitudeSSelectionLosesFullSBlock",
+      "next_target": "ShortSSubwindowDecompositionRejected",
+      "remaining": "必须另证目标质量不在 full-S 块；当前合同没有该事实。"
+    },
+    {
+      "closed": true,
+      "evidence": "短宽度分解不能降低 Maynard-S 量级；真实短量级选择又会丢失当前 full-S dyadic 目标块。",
+      "gate": "ShortSSubwindowDecompositionRejected",
+      "next_target": "NewFullSDispersionAtom",
+      "remaining": "当前资料下短 S 子窗口出口不可用。"
+    },
+    {
+      "closed": false,
+      "evidence": "仍需新增并证明适配 S_common≈X^(1/2)、z≈X 的 full-S 原始 dispersion 原子。",
+      "gate": "NewFullSDispersionAtom",
+      "next_target": "NewFullSDispersionAtom",
+      "remaining": "当前最新终端硬点。"
+    }
+  ],
+  "terminal_gap_after_router": "NewFullSDispersionAtom",
+  "terminal_gap_expansion": [
+    "NewFullSDispersionAtom"
+  ]
+}

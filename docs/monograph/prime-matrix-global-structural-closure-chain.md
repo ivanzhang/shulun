@@ -6672,3 +6672,90 @@ NonAPWFDNoProjectionAndShortSOrFullSAtom
 这一步不是行命题闭合，而是排除了一个看似自然的闭合尝试：完整 `S_common` 窗口不可能同时满足
 Maynard-W4 对象等式和 Maynard 指数锥。下一步只能证明一个不丢目标质量的短 S 子窗口分解，
 或承认需要新增一个真正适配 full-S 窗口的原始 dispersion 原子。
+
+## 112. Short-S subwindow no-go：小宽度不能替代 Maynard-S 的实际量级
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-short-s-subwindow-nogo-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_short_s_subwindow_nogo_router.py` 后，第 111 节中的
+`ShortSSubwindowDecomposition` 被继续审计。关键点是：Maynard-W4 的 `S_May` 由
+
+```text
+Z_window≈S_May^2
+```
+
+和
+
+```text
+z=s1*s2
+```
+
+共同确定，控制的是变量实际量级，不是局部子区间宽度。
+
+若当前 dyadic 块为：
+
+```text
+s1,s2≈S_common≈X^(1/2)，
+```
+
+即使切成短区间
+
+```text
+s_i in [u,u+L],  L<=X^(3/10)，  u≈X^(1/2)，
+```
+
+仍有：
+
+```text
+s_i≈X^(1/2)，
+z=s1*s2≈X，
+S_May≈X^(1/2)。
+```
+
+所以“短宽度”不能关闭 `S_May<=X^(3/10-o(1))`。若改为真实短量级
+`s_i<=X^(3/10-o(1))`，则已经离开当前 `S_common≈X^(1/2)` dyadic 块，不能在不丢失当前
+full-S 目标块的前提下完成证明。
+
+机器结果：
+
+```text
+status=short_s_subwindow_decomposition_rejected_full_s_atom_open；
+closed_subwindow_gates=[
+  PriorShortSOrFullSAtomFrontierAvailable,
+  MaynardSIsMagnitudeNotIntervalWidth,
+  CurrentBlockIsFullCommonS,
+  ShortSWidthDoesNotReduceMaynardMagnitude,
+  SmallMagnitudeSSelectionLosesFullSBlock,
+  ShortSSubwindowDecompositionRejected
+]；
+open_subwindow_gates=[
+  NewFullSDispersionAtom
+]；
+terminal_gap_after_router=NewFullSDispersionAtom。
+```
+
+因此当前尺度侧剩余单点化为：
+
+```text
+NewFullSDispersionAtom:
+  prove a full-S original dispersion atom for S_common≈X^(1/2), z≈X。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndNewFullSDispersionAtom。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndNewFullSDispersionAtom
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDMatchesW4OffDiagonalForm
+    + NewFullSDispersionAtom。
+```
+
+这一步说明：当前 Maynard-W4 指数锥路线在 full-S non-AP generic WFD 块上不能由变量重命名、
+局部切窗或已登记替代原子闭合。若要继续外部解析路线，必须新增一个真正覆盖 full-S
+窗口的原始 dispersion 原子，并重新审计其对象、相位、level、频率和损失账本。
