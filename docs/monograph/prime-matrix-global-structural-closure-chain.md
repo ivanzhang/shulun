@@ -6351,3 +6351,87 @@ NonAPWFDNoProjectionAndMaynardExponentCone
 这一步的意义是：DI 定理号、DI 公式、R/D/N 代入、W4 参数模板、J-bound 简化与三条
 Maynard 条件的代数改写均已退出终端缺口；剩余只允许集中到两个事实层问题：
 未中心化 WFD 是否逐项生成 W4 非对角对象，以及当前 WFD 的变量翻译是否落入上述指数锥并保留正余量。
+
+## 108. Maynard variable translation matrix：指数锥准入压成 WFD 对象等式与线性矩阵
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-maynard-variable-translation-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_maynard_variable_translation_router.py` 后，
+`CurrentWFDMaynardVariableTranslation` 不再保留为“找一套变量翻译”的开放口号，而被压成有限
+线性矩阵证书。
+
+两套变量必须分离：
+
+```text
+共同变量表:
+  X,Q,N,M,C,S,H,lambda,beta,omega,g,A,B(A)；
+
+Maynard-W4:
+  N_May=x^n, R_May=x^r, S_May=x^s, M_May=x^m, Q_May=x^q。
+```
+
+提交当前 WFD 指数向量
+
+```text
+v_WFD=(x_B,x_C,x_F,x_Z,x_Y,x_Q)
+```
+
+后，必须证明存在 `n,r,s,m,q,eta>0` 使：
+
+```text
+n+m=1；
+q=x_Q；
+x_B <= n+r；
+x_C <= n+r+s；
+x_F <= n-q；
+x_Z = 2s；
+x_Y <= n+2r+3s-m；
+2n+2r+s <= 1-eta；
+n+2r+5s+q <= 2-eta；
+2n+3r+4s+q <= 2-eta。
+```
+
+机器结果：
+
+```text
+status=maynard_exponent_cone_reduced_to_wfd_translation_matrix_open；
+closed_translation_gates=[
+  CommonVariableTableAvailable,
+  MaynardExponentConeAvailable,
+  NoSymbolCollisionDiscipline,
+  W4ParameterAnchorsLinearized
+]；
+open_translation_gates=[
+  CurrentWFDMatchesW4OffDiagonalForm,
+  WFDWindowExponentVectorSubmitted,
+  CurrentWFDMaynardTranslationMatrixFeasibleWithSlack
+]；
+terminal_gap_after_router=CurrentWFDW4ObjectTranslationMatrixAdmission。
+```
+
+因此当前尺度侧最窄剩余为：
+
+```text
+CurrentWFDW4ObjectTranslationMatrixAdmission
+  = CurrentWFDMatchesW4OffDiagonalForm
+    + WFDWindowExponentVectorSubmitted
+    + CurrentWFDMaynardTranslationMatrixFeasibleWithSlack。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndW4ObjectTranslationMatrix。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndW4ObjectTranslationMatrix
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDW4ObjectTranslationMatrixAdmission。
+```
+
+这一步把最后尺度侧关口进一步刚性化：若后续不能提交 `v_WFD` 或线性矩阵无正余量，则失败位置
+会具体落在某条锚点/锥约束上；若矩阵可行，则尺度侧只剩 W4 非对角对象等式与外层
+`UncenteredWFDToKE13NoProjectionIdentity` 的事实证明。

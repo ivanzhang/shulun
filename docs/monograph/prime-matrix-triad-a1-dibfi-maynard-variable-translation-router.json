@@ -1,0 +1,94 @@
+{
+  "certificate_type": "triad_a1_dibfi_maynard_variable_translation_router",
+  "closed_translation_gates": [
+    "CommonVariableTableAvailable",
+    "MaynardExponentConeAvailable",
+    "NoSymbolCollisionDiscipline",
+    "W4ParameterAnchorsLinearized"
+  ],
+  "open_translation_gates": [
+    "CurrentWFDMatchesW4OffDiagonalForm",
+    "WFDWindowExponentVectorSubmitted",
+    "CurrentWFDMaynardTranslationMatrixFeasibleWithSlack"
+  ],
+  "previous_terminal_gap": "CurrentWFDMaynardExponentConeAdmission",
+  "review_conclusion": "Maynard 指数锥准入已继续压成 WFD 非对角对象等式、WFD 指数向量提交、以及一张带正余量的线性翻译矩阵。",
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "exponent_cone_json": "8a7b60d137e60fe109cdd92f80e3bd20ae94277f4519702c12cc4f51434228a7",
+    "script": "a7e80a9b4948b8a10a38d7630be0165fe9b0d21c8a0fe785da1be4f144081480",
+    "translation_note_md": "61f144c10220ce72a9c62afbd420c35b14120678698016808ffd5f52c22303b5"
+  },
+  "status": "maynard_exponent_cone_reduced_to_wfd_translation_matrix_open",
+  "structural_law": "CurrentWFDMaynardVariableTranslation is now a finite linear feasibility certificate. Once the WFD dyadic exponent vector is supplied, the Maynard translation and exponent-cone admission are checked by one matrix with positive slack; the separate object identity CurrentWFDMatchesW4OffDiagonalForm remains independent.",
+  "terminal_gap_after_router": "CurrentWFDW4ObjectTranslationMatrixAdmission",
+  "terminal_gap_expansion": [
+    "CurrentWFDMatchesW4OffDiagonalForm",
+    "WFDWindowExponentVectorSubmitted",
+    "CurrentWFDMaynardTranslationMatrixFeasibleWithSlack"
+  ],
+  "translation_constraints": [
+    "n+m=1",
+    "q=x_Q",
+    "x_B <= n+r",
+    "x_C <= n+r+s",
+    "x_F <= n-q",
+    "x_Z = 2s",
+    "x_Y <= n+2r+3s-m",
+    "2n+2r+s <= 1-eta",
+    "n+2r+5s+q <= 2-eta",
+    "2n+3r+4s+q <= 2-eta"
+  ],
+  "translation_matrix_closed": false,
+  "translation_rows": [
+    {
+      "closed": true,
+      "evidence": "共同变量表已有 X,Q,N,M,C,S,H 与 Type-I/II、模数、逆元、频率接口。",
+      "gate": "CommonVariableTableAvailable",
+      "next_target": "WFDWindowExponentVectorSubmitted",
+      "remaining": "none at table-availability level"
+    },
+    {
+      "closed": true,
+      "evidence": "上游已把三条 Maynard 条件压成 CurrentWFDMaynardExponentConeAdmission。",
+      "gate": "MaynardExponentConeAvailable",
+      "next_target": "CurrentWFDMaynardTranslationMatrixFeasibleWithSlack",
+      "remaining": "none at cone-algebra level"
+    },
+    {
+      "closed": true,
+      "evidence": "记录明确分离共同变量表的 N,M,C,S,H 与 Maynard 的 N_May,R_May,S_May,M_May,Q_May。",
+      "gate": "NoSymbolCollisionDiscipline",
+      "next_target": "WFDWindowExponentVectorSubmitted",
+      "remaining": "none at notation-discipline level"
+    },
+    {
+      "closed": true,
+      "evidence": "B,C,F,Z,Y 的 W4 参数锚点已写成 x_B,x_C,x_F,x_Z,x_Y 的线性约束。",
+      "gate": "W4ParameterAnchorsLinearized",
+      "next_target": "CurrentWFDMaynardTranslationMatrixFeasibleWithSlack",
+      "remaining": "none until current WFD exponent vector is supplied"
+    },
+    {
+      "closed": false,
+      "evidence": "仍需证明当前 WFD 非对角块逐项生成 z=s1*s2、y=a*f*(h1*s1-h2*s2)、b,c 窗口。",
+      "gate": "CurrentWFDMatchesW4OffDiagonalForm",
+      "next_target": "CurrentWFDW4ObjectTranslationMatrixAdmission",
+      "remaining": "对象等式未提交；该项独立于线性尺度矩阵。"
+    },
+    {
+      "closed": false,
+      "evidence": "矩阵需要输入 v_WFD=(x_B,x_C,x_F,x_Z,x_Y,x_Q)，当前尚无逐项 dyadic 指数向量。",
+      "gate": "WFDWindowExponentVectorSubmitted",
+      "next_target": "CurrentWFDMaynardTranslationMatrixFeasibleWithSlack",
+      "remaining": "从当前 WFD 窗口定义抽取 B,C,F,Z,Y,Q 的指数上界。"
+    },
+    {
+      "closed": false,
+      "evidence": "必须存在 n,r,s,m,q,eta>0 同时满足 W4 参数锚点与 Maynard 指数锥。",
+      "gate": "CurrentWFDMaynardTranslationMatrixFeasibleWithSlack",
+      "next_target": "CurrentWFDW4ObjectTranslationMatrixAdmission",
+      "remaining": "待 v_WFD 提交后检查线性可行性和正余量 eta。"
+    }
+  ]
+}

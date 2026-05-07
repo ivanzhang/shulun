@@ -137,6 +137,9 @@ DEFAULT_DIBFI_W4_PARAMETER_LEDGER = (
 DEFAULT_DIBFI_MAYNARD_EXPONENT_CONE = (
     DOCS / "prime-matrix-triad-a1-dibfi-maynard-exponent-cone-router.json"
 )
+DEFAULT_DIBFI_MAYNARD_VARIABLE_TRANSLATION = (
+    DOCS / "prime-matrix-triad-a1-dibfi-maynard-variable-translation-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -236,6 +239,7 @@ def build_frontier_rows(
     dibfi_di_rdn_substitution: dict[str, Any],
     dibfi_w4_parameter_ledger: dict[str, Any],
     dibfi_maynard_exponent_cone: dict[str, Any],
+    dibfi_maynard_variable_translation: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -786,6 +790,16 @@ def build_frontier_rows(
             ),
             "next_action": "补当前 WFD 的非对角 W4 对象等式和 n/r/s/m/q 翻译表，检查指数锥正余量。",
         },
+        {
+            "frontier": "A1DIBFIMaynardVariableTranslationRouter",
+            "status": "maynard_exponent_cone_reduced_to_wfd_translation_matrix_open",
+            "evidence": (
+                f"Maynard 变量翻译已压成线性矩阵；"
+                f"open_translation_gates={dibfi_maynard_variable_translation['open_translation_gates']}；"
+                f"terminal_gap={dibfi_maynard_variable_translation['terminal_gap_after_router']}。"
+            ),
+            "next_action": "提交当前 WFD 的 B/C/F/Z/Y/Q 指数向量，并证明 W4 非对角对象等式与矩阵正余量。",
+        },
     ]
 
 
@@ -840,6 +854,7 @@ def run(
     dibfi_di_rdn_substitution_path: Path,
     dibfi_w4_parameter_ledger_path: Path,
     dibfi_maynard_exponent_cone_path: Path,
+    dibfi_maynard_variable_translation_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -892,6 +907,9 @@ def run(
     dibfi_di_rdn_substitution = load_json(dibfi_di_rdn_substitution_path)
     dibfi_w4_parameter_ledger = load_json(dibfi_w4_parameter_ledger_path)
     dibfi_maynard_exponent_cone = load_json(dibfi_maynard_exponent_cone_path)
+    dibfi_maynard_variable_translation = load_json(
+        dibfi_maynard_variable_translation_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -943,6 +961,7 @@ def run(
         dibfi_di_rdn_substitution,
         dibfi_w4_parameter_ledger,
         dibfi_maynard_exponent_cone,
+        dibfi_maynard_variable_translation,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -996,13 +1015,14 @@ def run(
         "di_rdn_substitution_reduced_to_current_wfd_maynard_w4_parameter_ledger_open",
         "w4_parameter_ledger_reduced_to_current_wfd_maynard_conditions_open",
         "maynard_w4_conditions_reduced_to_current_wfd_exponent_cone_open",
+        "maynard_exponent_cone_reduced_to_wfd_translation_matrix_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_nonap_wfd_no_projection_exponent_cone_open",
+        "status": "same_set_capacity_frontier_materialized_nonap_wfd_object_translation_matrix_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1097,6 +1117,9 @@ def run(
             "a1_dibfi_maynard_exponent_cone_json": file_sha256(
                 dibfi_maynard_exponent_cone_path
             ),
+            "a1_dibfi_maynard_variable_translation_json": file_sha256(
+                dibfi_maynard_variable_translation_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1107,7 +1130,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "NonAPWFDNoProjectionAndMaynardExponentCone",
+        "terminal_dual_gap": "NonAPWFDNoProjectionAndW4ObjectTranslationMatrix",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1149,7 +1172,8 @@ def run(
             "对象侧也已剥离 APErrorRepresentation，只剩未中心化 WFD 到 KE-13 的无投影恒等式；"
             "DI 侧又把 Theorem 12 的 J^2 公式固定下来，且 R/D/N 已代入 Maynard-W4 正规形；"
             "Maynard-W4 参数模板和 J-bound 简化也已固定；三条 Maynard 条件又统一压成"
-            "当前 WFD 指数锥准入。"
+            "当前 WFD 指数锥准入；指数锥准入再被压成 WFD 非对角对象等式、WFD 指数向量提交"
+            "与带正余量的线性翻译矩阵。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1181,7 +1205,7 @@ def run(
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
             "该合取证书现已继续压成 "
-            "`NonAPWFDNoProjectionAndMaynardExponentCone`。"
+            "`NonAPWFDNoProjectionAndW4ObjectTranslationMatrix`。"
         ),
     }
 
@@ -1249,6 +1273,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  DI R/D/N variables reduce to current WFD -> Maynard-W4 parameter ledger。",
         "  Maynard-W4 parameter ledger reduces to current WFD satisfying three Maynard conditions。",
         "  Maynard-W4 conditions reduce to current WFD exponent-cone admission。",
+        "  Maynard exponent-cone admission reduces to WFD object identity and translation matrix。",
         "```",
         "",
         "## 2. 汇总",
@@ -1332,7 +1357,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIDIRDNSubstitution router materialized；",
             "DIBFIW4ParameterLedger router materialized；",
             "DIBFIMaynardExponentCone router materialized；",
-            "remaining independent gap is NonAPWFDNoProjectionAndMaynardExponentCone。",
+            "DIBFIMaynardVariableTranslation router materialized；",
+            "remaining independent gap is NonAPWFDNoProjectionAndW4ObjectTranslationMatrix。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1529,6 +1555,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_MAYNARD_EXPONENT_CONE,
     )
+    parser.add_argument(
+        "--dibfi-maynard-variable-translation-json",
+        type=Path,
+        default=DEFAULT_DIBFI_MAYNARD_VARIABLE_TRANSLATION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1584,6 +1615,9 @@ def main() -> None:
         dibfi_di_rdn_substitution_path=args.dibfi_di_rdn_substitution_json,
         dibfi_w4_parameter_ledger_path=args.dibfi_w4_parameter_ledger_json,
         dibfi_maynard_exponent_cone_path=args.dibfi_maynard_exponent_cone_json,
+        dibfi_maynard_variable_translation_path=(
+            args.dibfi_maynard_variable_translation_json
+        ),
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
