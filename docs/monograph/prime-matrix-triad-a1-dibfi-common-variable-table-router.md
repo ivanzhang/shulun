@@ -63,7 +63,7 @@ next certificate:
 | inequality | statement | variables | needed for | status | closed |
 | --- | --- | --- | --- | --- | --- |
 | `TypeProduct` | `N*M≈X` | X,N,M | BFI AP discrepancy and Type-I/II dispersion | `named_not_quantified` | `false` |
-| `BFILevel` | `Q<=X^(4/7-eps) or an explicitly stronger admitted range` | X,Q,eps | BFI1987-Theorem10 | `named_not_quantified` | `false` |
+| `BFILevel` | `Q<=X^(4/7-eps) or an explicitly stronger admitted range` | X,Q,eps | BFI1986-Theorem10 | `named_not_quantified` | `false` |
 | `KLSModulusWindow` | `C is a dyadic sublevel of Q and matches the DI modulus family` | C,Q,X | DI1982-Theorem12 | `named_not_quantified` | `false` |
 | `InverseVariableWindow` | `S matches the DI inverse-variable length after completion` | S,N,M,C | DI1982-Theorem12 | `named_not_quantified` | `false` |
 | `FrequencyWindow` | `0<\|h\|<=H and Fourier tail is absorbed by B(A)` | H,X,C,S,A | DI/BFI plus sawtooth completion | `named_not_quantified` | `false` |

@@ -26,12 +26,15 @@
 
 ## 2. BFI dispersion 与 well-factorable 权重
 
-- **来源**：Bombieri, E.; Friedlander, J. B.; Iwaniec, H., *Primes in Arithmetic Progressions to Large Moduli. II*, Mathematische Annalen 277(3), 361--393, 1987, DOI `10.1007/BF01458321`.
+- **主来源**：Bombieri, E.; Friedlander, J. B.; Iwaniec, H., *Primes in Arithmetic Progressions to Large Moduli*, Acta Mathematica 156(3--4), 203--251, 1986, Theorem 10.
+- **相关续篇**：Bombieri, E.; Friedlander, J. B.; Iwaniec, H., *Primes in Arithmetic Progressions to Large Moduli. II*, Mathematische Annalen 277(3), 361--393, 1987, DOI `10.1007/BF01458321`.
 - **状态**：`required` for external-theorem version.
 - **用于**：把 DI Kloosterman 平均接入 well-factorable Rosser/Buchstab 权重和 Dirichlet 多项式卷积。
 - **对应链条**：`BFI + DI => KLS-window => WBE2`.
-- **当前定位**：`BFI1987-Theorem10`，即 well-factorable 加权素数等差级数分布估计；Maynard
-  `arXiv:2006.07088` 的 Theorem A 明确引用该结果为 `[BFI, Theorem 10]`。
+- **当前定位**：`BFI1986-Theorem10`，即 well-factorable 加权素数等差级数分布估计；Maynard
+  `arXiv:2006.07088` 的 Theorem A 明确引用该结果为 `[BFI1, Theorem 10]`，其中 `BFI1`
+  是 1986 年 Acta Mathematica 论文。旧标识 `BFI1987-Theorem10` 只保留为历史兼容别名，
+  不再作为该 AP 定理的主来源。
 - **必须核对**：
   - `lambda_d` 的 well-factorable level；
   - `E_2` 受限卷积是否落入 BFI 处理的 convolution/Dirichlet polynomial 框架；
@@ -397,9 +400,12 @@ dispersion 的精确引用定位与假设对账。
 单点中剥离：
 
 ```text
+BFI1986-Theorem10:
+  Bombieri--Friedlander--Iwaniec, Acta Math. 156(3--4), 203--251, 1986;
+
 BFI1987-Theorem10:
-  Bombieri--Friedlander--Iwaniec, Math. Ann. 277(3), 361--393, 1987,
-  DOI 10.1007/BF01458321;
+  historical compatibility alias only; do not use as the primary location for the
+  well-factorable AP Theorem 10 unless the exact theorem statement is separately checked;
 
 DI1982-Theorem12:
   Deshouillers--Iwaniec, Invent. Math. 70, 219--288, 1982,
@@ -416,4 +422,4 @@ DIBFIOriginalDispersionCurrentWindowHypothesisMatch.
 ```
 
 也就是说，下一步不再是寻找定理号，而是把当前未中心化 `KE-13/WFD-core` 窗口逐项放进
-`BFI1987-Theorem10 + DI1982-Theorem12` 的假设中。
+`BFI1986-Theorem10 + DI1982-Theorem12` 的假设中。

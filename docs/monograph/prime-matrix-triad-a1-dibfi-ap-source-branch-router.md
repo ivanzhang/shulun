@@ -33,7 +33,7 @@ no silent AP upgrade.
 
 | branch | scope | closed | evidence | remaining | route |
 | --- | --- | --- | --- | --- | --- |
-| `APSourceDirectBFI` | R_clean is defined upstream as dyadic BFI prime-AP discrepancy with matching main term and coefficients | `true` | BFI atom is pinned; BFI level ledger is closed; the remaining AP identity gates are definitional on this branch. | none on AP-source branch | use BFI1987-Theorem10 as one prime-AP atom |
+| `APSourceDirectBFI` | R_clean is defined upstream as dyadic BFI prime-AP discrepancy with matching main term and coefficients | `true` | BFI atom is pinned; BFI level ledger is closed; the remaining AP identity gates are definitional on this branch. | none on AP-source branch | use BFI1986-Theorem10 as one prime-AP atom |
 | `NonAPSourceGenericWFD` | the clean residual is only an uncentered WFD/KE-13 window, not an upstream AP discrepancy | `false` | SOURCE-CEN no-go and AP residual router block downstream back-projection; direct BFI AP atom cannot be used. | SeparateKE13DIBFIWindow or external original-dispersion theorem | fallback |
 | `CoverageDichotomy` | a source object is either declared/proved AP-source before Cauchy, or it is not | `true` | AP residual router isolated exactly the two source-definition gates; branch coverage pattern is already used in A1 source statements. | none after explicit branch statement | AP-source vs non-AP-source dichotomy |
 | `NoSilentAPUpgrade` | generic WFD cannot be silently upgraded to prime-AP discrepancy | `true` | AP residual identity router records that downstream WFD identification is diagnostic, not a source identity. | none | non-AP source stays fallback |

@@ -76,7 +76,7 @@ def build_branch_rows(
             "closed": direct_bfi_available and level_closed,
             "evidence": "BFI atom is pinned; BFI level ledger is closed; the remaining AP identity gates are definitional on this branch.",
             "remaining": "none on AP-source branch",
-            "route": "use BFI1987-Theorem10 as one prime-AP atom",
+            "route": "use BFI1986-Theorem10 as one prime-AP atom",
         },
         {
             "branch": "NonAPSourceGenericWFD",

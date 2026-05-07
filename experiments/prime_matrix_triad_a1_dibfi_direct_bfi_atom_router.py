@@ -73,8 +73,8 @@ def build_route_rows(
     source_ids = {row["source_id"] for row in theorem_location["source_rows"]}
     bfi_pinned = (
         bool(theorem_location["theorem_locations_pinned"])
-        and "BFI1987-Theorem10" in source_ids
-        and contains_all(external_index_path, ["BFI1987-Theorem10", "well-factorable"])
+        and "BFI1986-Theorem10" in source_ids
+        and contains_all(external_index_path, ["BFI1986-Theorem10", "well-factorable"])
     )
     kze_has_type = contains_all(kze_spine_path, ["Vaughan/Heath-Brown", "Type-I/II"])
     source_cen_blocked = contains_all(

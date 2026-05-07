@@ -13,7 +13,7 @@ previous gap:
   DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch;
 
 theorem locations:
-  BFI1987 Theorem 10;
+  BFI1986 Theorem 10;
   DI1982 Theorem 12;
   Maynard2020 cross-check;
 
@@ -32,7 +32,7 @@ remaining gap:
 
 | source | paper | location | DOI/arXiv | role | located |
 | --- | --- | --- | --- | --- | --- |
-| `BFI1987-Theorem10` | Bombieri--Friedlander--Iwaniec, Primes in arithmetic progressions to large moduli. II | Mathematische Annalen 277(3), 361--393, 1987, Theorem 10 | `10.1007/BF01458321` | well-factorable weighted prime AP dispersion estimate | `true` |
+| `BFI1986-Theorem10` | Bombieri--Friedlander--Iwaniec, Primes in arithmetic progressions to large moduli | Acta Mathematica 156(3--4), 203--251, 1986, Theorem 10 | `ActaMath1986` | well-factorable weighted prime AP dispersion estimate | `true` |
 | `DI1982-Theorem12` | Deshouillers--Iwaniec, Kloosterman sums and Fourier coefficients of cusp forms | Inventiones Mathematicae 70, 219--288, 1982, Theorem 12 | `10.1007/BF01390728` | spectral Kloosterman estimate used inside the dispersion method | `true` |
 | `Maynard2020-CrossCheck` | Maynard, Primes in arithmetic progressions to large moduli II: Well-factorable estimates | arXiv:2006.07088, Theorem A cites BFI Theorem 10; Lemma 6.12 cites DI Theorem 12 | `arXiv:2006.07088` | modern public cross-check of theorem numbering and DI estimate formula | `true` |
 
@@ -40,7 +40,7 @@ remaining gap:
 
 | gate | available | needed | gap | route | closed |
 | --- | --- | --- | --- | --- | --- |
-| `BFITheorem10Located` | BFI II theorem number, DOI and pages are pinned | well-factorable weighted AP dispersion source | none at theorem-location level | cite BFI1987 Theorem 10 | `true` |
+| `BFITheorem10Located` | BFI Acta Math theorem number and pages are pinned | well-factorable weighted AP dispersion source | none at theorem-location level | cite BFI1986 Theorem 10 | `true` |
 | `DITheorem12Located` | DI theorem number, DOI and pages are pinned | spectral Kloosterman estimate source | none at theorem-location level | cite DI1982 Theorem 12 | `true` |
 | `ModernCrossCheckRegistered` | Maynard arXiv source cross-checks BFI Theorem 10 and DI Theorem 12 numbering | publicly inspectable theorem numbering check | none at numbering cross-check level | use Maynard2020 as a numbering audit, not as a replacement for DI/BFI | `true` |
 | `CurrentGenericWFDContractReady` | previous router materialized uncentered generic WFD DI/BFI contract | do not reopen canonical support branch | none | continue only with current-window hypothesis match | `true` |

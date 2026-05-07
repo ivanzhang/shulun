@@ -94,7 +94,7 @@ def build_match_rows(
     index_has_required_sources = contains_all(
         external_index_path,
         [
-            "BFI1987-Theorem10",
+            "BFI1986-Theorem10",
             "DI1982-Theorem12",
             "KLS-window",
         ],

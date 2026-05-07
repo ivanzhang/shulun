@@ -59,10 +59,10 @@ def build_source_rows() -> list[dict[str, Any]]:
     """列出精确定理位置。"""
     return [
         {
-            "source_id": "BFI1987-Theorem10",
-            "paper": "Bombieri--Friedlander--Iwaniec, Primes in arithmetic progressions to large moduli. II",
-            "location": "Mathematische Annalen 277(3), 361--393, 1987, Theorem 10",
-            "doi": "10.1007/BF01458321",
+            "source_id": "BFI1986-Theorem10",
+            "paper": "Bombieri--Friedlander--Iwaniec, Primes in arithmetic progressions to large moduli",
+            "location": "Acta Mathematica 156(3--4), 203--251, 1986, Theorem 10",
+            "doi": "ActaMath1986",
             "role": "well-factorable weighted prime AP dispersion estimate",
             "located": True,
         },
@@ -94,7 +94,7 @@ def build_gate_rows(
     index_updated = contains_all(
         external_index_path,
         [
-            "BFI1987-Theorem10",
+            "BFI1986-Theorem10",
             "DI1982-Theorem12",
             "DIBFIOriginalDispersionCurrentWindowHypothesisMatch",
         ],
@@ -110,10 +110,10 @@ def build_gate_rows(
     return [
         {
             "gate": "BFITheorem10Located",
-            "available": "BFI II theorem number, DOI and pages are pinned",
+            "available": "BFI Acta Math theorem number and pages are pinned",
             "needed": "well-factorable weighted AP dispersion source",
             "gap": "none at theorem-location level",
-            "route": "cite BFI1987 Theorem 10",
+            "route": "cite BFI1986 Theorem 10",
             "closed": index_updated,
         },
         {
@@ -223,7 +223,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"  {result['previous_terminal_gap']};",
         "",
         "theorem locations:",
-        "  BFI1987 Theorem 10;",
+        "  BFI1986 Theorem 10;",
         "  DI1982 Theorem 12;",
         "  Maynard2020 cross-check;",
         "",

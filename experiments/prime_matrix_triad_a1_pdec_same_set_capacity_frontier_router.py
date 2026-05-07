@@ -161,6 +161,9 @@ DEFAULT_DIBFI_EXTERNAL_FULL_S_MATCH = (
 DEFAULT_DIBFI_FULL_S_KLS_EXT_SPECIALIZATION = (
     DOCS / "prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json"
 )
+DEFAULT_DIBFI_PRIMARY_SOURCE_SPECIALIZATION_NOGO = (
+    DOCS / "prime-matrix-triad-a1-dibfi-primary-source-specialization-nogo-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -268,6 +271,7 @@ def build_frontier_rows(
     dibfi_full_s_dispersion_atom: dict[str, Any],
     dibfi_external_full_s_match: dict[str, Any],
     dibfi_full_s_kls_ext_specialization: dict[str, Any],
+    dibfi_primary_source_specialization_nogo: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -899,6 +903,16 @@ def build_frontier_rows(
             ),
             "next_action": "若要求完全自足或原文逐项核验，补 DIBFIPrimarySourceSpecializationProof。",
         },
+        {
+            "frontier": "A1DIBFIPrimarySourceSpecializationNoGoRouter",
+            "status": "dibfi_primary_source_specialization_rejected_new_theorem_or_ap_lift_open",
+            "evidence": (
+                f"现有 DI/BFI 主来源不能推出 full-S KLS-ext；"
+                f"open_nogo_gates={dibfi_primary_source_specialization_nogo['open_nogo_gates']}；"
+                f"terminal_gap={dibfi_primary_source_specialization_nogo['terminal_gap_after_router']}。"
+            ),
+            "next_action": "新增 full-S 定理输入，或证明 non-AP WFD 残差可无损提升回 AP-source。",
+        },
     ]
 
 
@@ -961,6 +975,7 @@ def run(
     dibfi_full_s_dispersion_atom_path: Path,
     dibfi_external_full_s_match_path: Path,
     dibfi_full_s_kls_ext_specialization_path: Path,
+    dibfi_primary_source_specialization_nogo_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1031,6 +1046,9 @@ def run(
     dibfi_full_s_kls_ext_specialization = load_json(
         dibfi_full_s_kls_ext_specialization_path
     )
+    dibfi_primary_source_specialization_nogo = load_json(
+        dibfi_primary_source_specialization_nogo_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1090,6 +1108,7 @@ def run(
         dibfi_full_s_dispersion_atom,
         dibfi_external_full_s_match,
         dibfi_full_s_kls_ext_specialization,
+        dibfi_primary_source_specialization_nogo,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1151,13 +1170,14 @@ def run(
         "full_s_dispersion_atom_reduced_to_external_dibfi_match_open",
         "external_full_s_match_reduced_to_kls_specialization_open",
         "full_s_kls_ext_contract_closed_primary_source_proof_open",
+        "dibfi_primary_source_specialization_rejected_new_theorem_or_ap_lift_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_external_contract_closed_primary_source_proof_open",
+        "status": "same_set_capacity_frontier_primary_source_nogo_new_theorem_or_ap_lift_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1276,6 +1296,9 @@ def run(
             "a1_dibfi_full_s_kls_ext_specialization_json": file_sha256(
                 dibfi_full_s_kls_ext_specialization_path
             ),
+            "a1_dibfi_primary_source_specialization_nogo_json": file_sha256(
+                dibfi_primary_source_specialization_nogo_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1286,7 +1309,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "DIBFIPrimarySourceSpecializationProof",
+        "terminal_dual_gap": "NewFullSTheoremInputOrAPSourceLift",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1369,7 +1392,7 @@ def run(
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
             "该合取证书现已继续压成 "
-            "`DIBFIPrimarySourceSpecializationProof`。"
+            "`NewFullSTheoremInputOrAPSourceLift`。"
         ),
     }
 
@@ -1445,6 +1468,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  NewFullSDispersionAtom is refined to ExternalFullSDIBFIAtomMatch。",
         "  ExternalFullSDIBFIAtomMatch reduces to FullSKLSExternalTheoremSpecialization。",
         "  FullS-KLS-ext contract closes the external-theorem version; primary-source proof remains。",
+        "  Primary-source specialization from existing DI/BFI is rejected for full-S。",
         "```",
         "",
         "## 2. 汇总",
@@ -1536,7 +1560,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIFullSDispersionAtom router materialized；",
             "DIBFIExternalFullSMatch router materialized；",
             "DIBFIFullSKLSExtSpecialization router materialized；",
-            "remaining independent gap is DIBFIPrimarySourceSpecializationProof。",
+            "DIBFIPrimarySourceSpecializationNoGo router materialized；",
+            "remaining independent gap is NewFullSTheoremInputOrAPSourceLift。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1773,6 +1798,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_FULL_S_KLS_EXT_SPECIALIZATION,
     )
+    parser.add_argument(
+        "--dibfi-primary-source-specialization-nogo-json",
+        type=Path,
+        default=DEFAULT_DIBFI_PRIMARY_SOURCE_SPECIALIZATION_NOGO,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1851,6 +1881,9 @@ def main() -> None:
         ),
         dibfi_full_s_kls_ext_specialization_path=(
             args.dibfi_full_s_kls_ext_specialization_json
+        ),
+        dibfi_primary_source_specialization_nogo_path=(
+            args.dibfi_primary_source_specialization_nogo_json
         ),
     )
     args.json_out.write_text(

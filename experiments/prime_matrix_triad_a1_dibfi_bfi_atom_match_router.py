@@ -70,7 +70,7 @@ def build_gate_rows(
     transfer_steps = {row["step"]: row for row in common_variable_table["transfer_rows"]}
     variable_symbols = {row["symbol"] for row in common_variable_table["variable_rows"]}
     bfi_pinned = bool(theorem_location["theorem_locations_pinned"]) and any(
-        row["source_id"] == "BFI1987-Theorem10" for row in theorem_location["source_rows"]
+        row["source_id"] == "BFI1986-Theorem10" for row in theorem_location["source_rows"]
     )
     kze_type_ready = contains_all(
         kze_spine_path,
@@ -78,7 +78,7 @@ def build_gate_rows(
     )
     external_bfi_ready = contains_all(
         external_index_path,
-        ["BFI1987-Theorem10", "lambda_d", "well-factorable"],
+        ["BFI1986-Theorem10", "lambda_d", "well-factorable"],
     )
     direct_available = bool(direct_bfi_atom["direct_bfi_atom_available"])
     generic_contract_ready = bool(generic_wfd_dibfi["external_dibfi_contract_materialized"])
@@ -87,7 +87,7 @@ def build_gate_rows(
             "gate": "BFIAtomPinned",
             "status": "closed",
             "closed": bfi_pinned and direct_available,
-            "evidence": "BFI1987-Theorem10 已由定理定位路由固定，直接 BFI 原子可用。",
+            "evidence": "BFI1986-Theorem10 已由定理定位路由固定，直接 BFI 原子可用。",
             "remaining": "none",
             "next_target": "none",
         },

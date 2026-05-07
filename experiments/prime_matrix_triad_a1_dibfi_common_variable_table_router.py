@@ -221,7 +221,7 @@ def build_scale_rows() -> list[dict[str, Any]]:
             "inequality": "BFILevel",
             "statement": "Q<=X^(4/7-eps) or an explicitly stronger admitted range",
             "variables": "X,Q,eps",
-            "needed_for": "BFI1987-Theorem10",
+            "needed_for": "BFI1986-Theorem10",
             "status": "named_not_quantified",
             "closed": False,
         },

@@ -30,7 +30,7 @@ open terminal targets:
 
 | gate | status | closed | evidence | remaining | next target |
 | --- | --- | --- | --- | --- | --- |
-| `BFIAtomPinned` | `closed` | `true` | BFI1987-Theorem10 已由定理定位路由固定，直接 BFI 原子可用。 | none | `none` |
+| `BFIAtomPinned` | `closed` | `true` | BFI1986-Theorem10 已由定理定位路由固定，直接 BFI 原子可用。 | none | `none` |
 | `APErrorFormulaNamed` | `formula_available_not_source_identification` | `true` | E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm) | 公式已命名；仍需证明当前残差等于该对象。 | `OriginalResidualEqualsBFIAPError` |
 | `PrimeAPResidualRepresentation` | `open_main_object_identity` | `false` | 共同变量表只给 APError 接口，尚未给 clean A1 残差到该接口的逐项等式。 | 必须从原始行/triad clean 残差出发写出 E_AP(X,Q) 的等号，而不是从 KE-13 子窗口倒推。 | `OriginalResidualEqualsBFIAPError` |
 | `TypeDecompositionToBFIInput` | `closed_conditioned_on_ap_identity` | `true` | KZ-E spine 已登记 Vaughan/Heath-Brown、Type-I/II、dyadic 与 well-factorable 账本。 | 该行只说明 AP 对象一旦建立，可进入 BFI 的 Type/dispersion 框架。 | `none` |

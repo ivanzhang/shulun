@@ -6947,3 +6947,64 @@ terminal_gap_after_router=DIBFIPrimarySourceSpecializationProof。
 
 这一步消除了最后的 Prime Matrix 内部结构逃逸口。剩下的不是新的方阵/圆柱/CRT/PDEC
 结构缺陷，而是是否从 DI/BFI 原文逐项推出本文所需 `FullS-KLS-ext` 的外部深定理专门化。
+
+## 116. Primary-source specialization no-go：现有 DI/BFI 不推出 full-S KLS-ext
+
+进一步核查 Maynard 公开 TeX 与 BFI 主来源后，发现此前定理定位需要修正：
+
+```text
+BFI Theorem 10 primary source:
+  BFI1986-Theorem10,
+  Acta Math. 156(3--4), 203--251, 1986.
+
+BFI1987-Theorem10:
+  只保留为历史兼容别名，不作为当前 well-factorable AP Theorem 10 的主定位。
+```
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-primary-source-specialization-nogo-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_primary_source_specialization_nogo_router.py` 后，
+最后单点被严格审计。结果是：现有 DI/BFI 主来源不能推出第 115 节自定义的 full-S KLS-ext。
+
+理由分两层：
+
+```text
+BFI1986-Theorem10:
+  直接关闭 AP-source well-factorable prime-AP discrepancy；
+  但 non-AP generic WFD fallback 不是 AP-source 对象。
+
+DI1982-Theorem12 / Maynard DI estimate:
+  提供 Kloosterman J-scale；
+  但 full-S 的 q=s=1/2 使
+    n+2r+5s+q <= 2
+  在 n,r>=0 前已经失败，因为 5/2+1/2=3>2。
+```
+
+机器结果：
+
+```text
+status=dibfi_primary_source_specialization_rejected_new_theorem_or_ap_lift_open；
+closed_nogo_gates=[
+  PriorPrimarySourceGapAvailable,
+  BFIPrimarySourceCorrected,
+  BFIAPAtomOnly,
+  DIJScaleFullSObstruction,
+  DIBFIPrimarySourceSpecializationRejected
+]；
+open_nogo_gates=[
+  NewFullSTheoremInput,
+  APSourceLift
+]；
+terminal_gap_after_router=NewFullSTheoremInputOrAPSourceLift。
+```
+
+因此当前真实最窄剩余不是“补 DI/BFI 原文页码”，而是：
+
+```text
+NewFullSTheoremInputOrAPSourceLift
+  = NewFullSTheoremInput
+    + APSourceLift.
+```
+
+这一步是一个负向突破：它排除了“现有 DI/BFI 主来源可直接推出 full-S KLS-ext”的最后隐含跳步。
+若不能新增强 full-S 定理输入，就必须反向证明当前 non-AP WFD 残差其实可无损提升回
+BFI prime-AP discrepancy；否则行命题不能诚实宣称完全闭合。

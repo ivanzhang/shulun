@@ -92,7 +92,7 @@ def build_level_rows(
     well_factorable_support = contains_all(
         kze_spine_path,
         ["well-factorable", "R_{\\max}", "lambda_R"],
-    ) and contains_all(external_index_path, ["BFI1987-Theorem10", "lambda_d"])
+    ) and contains_all(external_index_path, ["BFI1986-Theorem10", "lambda_d"])
     log_budget_ready = contains_all(kls_template_path, ["B(A)=A+C_0+10", "log^{C_0}P"])
     q_row_ready = "Q" in symbols and "lambda" in symbols
 
