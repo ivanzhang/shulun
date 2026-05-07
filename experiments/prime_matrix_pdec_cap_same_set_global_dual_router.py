@@ -64,6 +64,9 @@ DEFAULT_FINITE_ARC_TRANSVERSE = (
 DEFAULT_TRANSVERSE_CLEAN_REDUCTION = (
     DOCS / "prime-matrix-pdec-cap-transverse-clean-reduction-router.json"
 )
+DEFAULT_TRANSVERSE_CLEAN_ATOM_FRONTIER = (
+    DOCS / "prime-matrix-pdec-cap-transverse-clean-atom-frontier-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.md"
 
@@ -137,6 +140,7 @@ def build_rows(
     uniform_cap_finite_basis: dict[str, Any],
     finite_arc_transverse: dict[str, Any],
     transverse_clean_reduction: dict[str, Any],
+    transverse_clean_atom_frontier: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 PDEC-CAP 前沿审查表。"""
     self_bottleneck_accepts_pdec = (
@@ -280,6 +284,18 @@ def build_rows(
         and transverse_clean_reduction["transverse_expansion_reduced_to_clean_atom"]
         and transverse_clean_reduction["narrowest_next_hardpoint"]
         == "TransverseQuotientCleanLargeSieveAtom"
+    )
+    transverse_clean_atom_frontier_routed = (
+        transverse_clean_atom_frontier["status"]
+        == "transverse_clean_atom_routed_to_source_support_or_external_dibfi_frontier"
+        and transverse_clean_atom_frontier[
+            "transverse_clean_atom_routed_to_named_frontier"
+        ]
+        and transverse_clean_atom_frontier["narrowest_next_hardpoint"]
+        == (
+            "TransverseSourceSupportNonconcentrationCertificate_OR_"
+            "DIBFIQuantifiedNoProjectionWindowCertificate"
+        )
     )
 
     return [
@@ -431,10 +447,24 @@ def build_rows(
             False,
         ),
         row(
-            "TransverseQuotientCleanLargeSieveAtom",
+            "TransverseCleanAtomFrontierRouted",
+            transverse_clean_atom_frontier_routed,
+            transverse_clean_atom_frontier["narrowest_next_hardpoint"],
+            "横向商 clean 大筛原子已接入 A1 CleanKLS/SC-9 前沿；剩余改写为源支撑/NC-BLK 或外部 DI/BFI 量化证书。",
             False,
-            "self-contained transverse clean large-sieve estimate not submitted",
-            "剩余终端是证明横向商上的 clean 大筛原子，或明确外部输入；不能误称为完整行列定理闭合。",
+        ),
+        row(
+            "TransverseSourceSupportNonconcentrationCertificate",
+            False,
+            "canonical RIW/Buchstab source support or actual transverse NC-BLK not submitted",
+            "自足路线还需证明横向商系数继承 canonical 源支撑下界，或直接证明实际块非集中。",
+            True,
+        ),
+        row(
+            "DIBFIQuantifiedNoProjectionWindowCertificate",
+            False,
+            "external original DI/BFI quantified no-projection certificate not submitted",
+            "外部原始 DI/BFI 路线仍需无投影对象恒等式与量化尺度代入；直接接受窗口化 KLS 属于外部输入版。",
             True,
         ),
     ]
@@ -462,6 +492,7 @@ def run(
     uniform_cap_finite_basis_path: Path,
     finite_arc_transverse_path: Path,
     transverse_clean_reduction_path: Path,
+    transverse_clean_atom_frontier_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC-CAP 前沿审查。"""
     self_bottleneck = load_json(self_bottleneck_path)
@@ -485,6 +516,7 @@ def run(
     uniform_cap_finite_basis = load_json(uniform_cap_finite_basis_path)
     finite_arc_transverse = load_json(finite_arc_transverse_path)
     transverse_clean_reduction = load_json(transverse_clean_reduction_path)
+    transverse_clean_atom_frontier = load_json(transverse_clean_atom_frontier_path)
 
     rows = build_rows(
         self_bottleneck=self_bottleneck,
@@ -508,6 +540,7 @@ def run(
         uniform_cap_finite_basis=uniform_cap_finite_basis,
         finite_arc_transverse=finite_arc_transverse,
         transverse_clean_reduction=transverse_clean_reduction,
+        transverse_clean_atom_frontier=transverse_clean_atom_frontier,
     )
     closed_current_materialized = all(
         item["closed"] for item in rows if not item["blocks_final"]
@@ -545,12 +578,18 @@ def run(
             "transverse_clean_reduction": file_sha256(
                 transverse_clean_reduction_path
             ),
+            "transverse_clean_atom_frontier": file_sha256(
+                transverse_clean_atom_frontier_path
+            ),
         },
         "closed_current_materialized_pdec_gates": closed_current_materialized,
         "pdec_cap_same_set_global_dual_closed": False,
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
-        "narrowest_next_hardpoint": "TransverseQuotientCleanLargeSieveAtom",
+        "narrowest_next_hardpoint": (
+            "TransverseSourceSupportNonconcentrationCertificate_OR_"
+            "DIBFIQuantifiedNoProjectionWindowCertificate"
+        ),
         "rows": rows,
         "frontier_law": (
             "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier "
@@ -584,8 +623,12 @@ def run(
             "dispersion. The transverse clean reduction then observes that a rank-one arc "
             "inside a rank-at-least-two primitive kernel leaves a transverse quotient; all "
             "nonflat transverse defects are named returns, and the flat residual is a clean "
-            "large-sieve atom. The remaining final gate is the transverse quotient clean "
-            "large-sieve atom, not an unnamed APS/diffuse/SC-9 or raw persistent-signature exit."
+            "large-sieve atom. The transverse clean-atom frontier router then imports the "
+            "A1 CleanKLS/SC-9 grammar: the residual is not a fourth exit, but self-contained "
+            "closure still needs a transverse source-support/nonconcentration certificate, "
+            "while the original external DI/BFI route still needs the quantified no-projection "
+            "window certificate. The remaining final gate is no longer a vague large-sieve "
+            "label."
         ),
         "review_conclusion": (
             "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
@@ -599,8 +642,10 @@ def run(
             "新增统一帽稳定有限基路由后，连续方向帽族被压成有限循环弧 cap 质量界。"
             "新增有限弧横向路由后，高质量弧没有第四出口，只剩横向纤维扩张估计。"
             "新增横向 clean 归约后，横向纤维扩张进一步压成横向商 clean 大筛原子。"
+            "新增横向 clean 原子前沿路由后，该原子接入 A1 CleanKLS/SC-9；"
+            "自足剩余变成横向源支撑/实际 NC-BLK 非集中证书，外部原始 DI/BFI 剩余变成量化无投影窗口证书。"
             "但全局同集对偶证书仍未闭合。最新最窄剩余是 "
-            "`TransverseQuotientCleanLargeSieveAtom`。"
+            "`TransverseSourceSupportNonconcentrationCertificate_OR_DIBFIQuantifiedNoProjectionWindowCertificate`。"
         ),
     }
 
@@ -632,8 +677,10 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> uniform cap stability reduced to finite cyclic arcs;",
         "  -> finite arc caps split by transverse structure;",
         "  -> transverse expansion reduced to clean large-sieve atom;",
+        "  -> transverse clean atom routed to A1 CleanKLS/SC-9 frontier;",
         "  -> remaining terminal estimates:",
-        "       TransverseQuotientCleanLargeSieveAtom.",
+        "       TransverseSourceSupportNonconcentrationCertificate",
+        "       or DIBFIQuantifiedNoProjectionWindowCertificate.",
         "```",
         "",
         "## 2. 汇总",
@@ -664,8 +711,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 下一步",
             "",
-            "下一步直接攻横向商上的 clean 大筛原子 "
-            "`TransverseQuotientCleanLargeSieveAtom`。",
+            "下一步直接攻自足路线的 `TransverseSourceSupportNonconcentrationCertificate`："
+            "证明横向商系数继承 canonical RIW/Buchstab 源支撑下界，或直接证明实际 transverse NC-BLK 块非集中。"
+            "外部原始 DI/BFI 路线则必须闭合 `DIBFIQuantifiedNoProjectionWindowCertificate`。",
             "",
         ]
     )
@@ -727,6 +775,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_TRANSVERSE_CLEAN_REDUCTION,
     )
+    parser.add_argument(
+        "--transverse-clean-atom-frontier-json",
+        type=Path,
+        default=DEFAULT_TRANSVERSE_CLEAN_ATOM_FRONTIER,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -753,6 +806,7 @@ def main() -> None:
         uniform_cap_finite_basis_path=args.uniform_cap_finite_basis_json,
         finite_arc_transverse_path=args.finite_arc_transverse_json,
         transverse_clean_reduction_path=args.transverse_clean_reduction_json,
+        transverse_clean_atom_frontier_path=args.transverse_clean_atom_frontier_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

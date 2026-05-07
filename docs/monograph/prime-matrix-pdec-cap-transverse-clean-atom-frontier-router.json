@@ -1,0 +1,99 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_transverse_clean_atom_frontier_router",
+  "external_windowed_kls_version_closed_if_accepted": true,
+  "frontier_law": "The transverse quotient clean large-sieve atom is not a fourth terminal. Once transverse sparse support, persistent transverse bias, and shell/column concentration have been removed, the residual satisfies the same K1--K9 clean admission grammar as the A1 CleanKLS branch. Hence it routes to the SC-9 frontier: self-contained actual-coefficient NC-BLK or external DI/BFI. The canonical NC-BLK branch is already absorbed only when canonical RIW/Buchstab source support is proved. K4/K6 flatness alone does not imply that support, and the naive factor-residue incidence bridge is blocked by the internal fiber obstruction. Therefore the self-contained next certificate is a transverse source-support/nonconcentration certificate. The external original DI/BFI route remains the quantified no-projection window certificate.",
+  "narrowest_external_hardpoint": "DIBFIQuantifiedNoProjectionWindowCertificate",
+  "narrowest_next_hardpoint": "TransverseSourceSupportNonconcentrationCertificate_OR_DIBFIQuantifiedNoProjectionWindowCertificate",
+  "narrowest_self_contained_hardpoint": "TransverseSourceSupportNonconcentrationCertificate",
+  "open_final_gates": [
+    "TransverseSourceSupportNonconcentrationCertificate",
+    "DIBFIQuantifiedNoProjectionWindowCertificate"
+  ],
+  "review_conclusion": "`TransverseQuotientCleanLargeSieveAtom` 已被拆成可审查前沿：它接入 A1 CleanKLS/SC-9，不再是无名大筛黑箱。自足路线不能直接调用 canonical 吸收，因为横向商系数的 canonical RIW/Buchstab 源支撑或实际 NC-BLK 非集中尚未证明；朴素 factor-residue incidence 桥已被内部 fiber 反例阻断。外部 DI/BFI 路线则压到 `DIBFIQuantifiedNoProjectionWindowCertificate`。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "TransverseQuotientCleanLargeSieveAtom",
+      "gate": "TransverseCleanAtomActive",
+      "meaning": "上一层已把横向纤维扩张压成横向商 L2-flat clean residual。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "KuznetsovLSAtomSC9OrExternalCitation",
+      "gate": "A1CleanKLSAdmissionAvailable",
+      "meaning": "K1--K9 clean admission 已登记：失败回流 PDEC/SAE/Multiplicity/Promotion，通过才进入 KLS/SC-9。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "transverse quotient L2-flat residual -> Kloosterman/dispersion formal unit",
+      "gate": "TransverseAtomSpecializesA1CleanUnit",
+      "meaning": "横向商 clean 原子不是第四出口；它是 A1 clean KLS/SC-9 formal unit 的横向特化。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "NCBLKOrExternalDIBFIOriginalDispersion",
+      "gate": "SC9FrontierNamed",
+      "meaning": "SC-9 已展开成实际系数 NC-BLK 或外部 DI/BFI 原始 dispersion。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "Triad-A1 same-set capacity / full-S terminal on the canonical RIW/Buchstab source branch.",
+      "gate": "CanonicalBoundaryAvailableButNotGenericUpgrade",
+      "meaning": "canonical NC-BLK 可由已闭合边界吸收；generic WFD 不能偷渡为自足证明。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupportOrExternalDIBFIOriginalDispersion",
+      "gate": "ExactFactorSupportNotAutomatic",
+      "meaning": "K4/K6 clean 平坦性不能自动推出因子支撑下界；还需源支撑/非集中证书。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion",
+      "gate": "NaiveFactorResidueIncidenceBlocked",
+      "meaning": "单个 moving factor-pair 内有增长的内部 fiber，朴素 incidence 桥不能闭合自足版。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "A1 CleanKLS/SC-9 + NC-BLK boundary + source-support obstruction",
+      "gate": "TransverseCleanAtomRoutedToNamedFrontier",
+      "meaning": "横向 clean 大筛原子已接入既有前沿；剩余不再是宽泛 LargeSieve 标签。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "canonical RIW/Buchstab support lower bound or actual transverse NC-BLK not submitted",
+      "gate": "TransverseSourceSupportNonconcentrationCertificate",
+      "meaning": "完全自足路线还需证明横向商系数具有 canonical 源支撑下界，或直接证明实际块非集中。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "DIBFIQuantifiedNoProjectionWindowCertificate",
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate",
+      "meaning": "外部原始 DI/BFI 路线还需无投影对象恒等式与量化尺度代入；直接接受窗口化 KLS 外部定理则属于外部输入版。"
+    }
+  ],
+  "source_hashes": {
+    "a1_clean": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
+    "dibfi_transfer": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd",
+    "exact_factor_support": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "factor_incidence": "be50163987cdc54179f3e439e32c390bc8df4dbde950f12a04ecad09b5f06e80",
+    "ncblk_boundary": "fde3b713f0fdfb0c54b1be823034b7b8763cf63887b3c4a60207d905f19f01f4",
+    "sc9_frontier": "0cdee5539c39e8ab496aaeaa4d484d4e4cdd9e6626f887d9b11728ab38d09646",
+    "script": "c82afb751276c3359a1939f9fb108bc950c068d5bd11f0ff5a7f99427c0619dd",
+    "transverse_clean": "ba18388fb792eb7c9c7b6709f1cacaaea0ed56b206fedeead0e8420badb493a7"
+  },
+  "status": "transverse_clean_atom_routed_to_source_support_or_external_dibfi_frontier",
+  "transverse_clean_atom_routed_to_named_frontier": true,
+  "transverse_quotient_clean_large_sieve_closed": false
+}

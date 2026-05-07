@@ -146,7 +146,8 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=TransverseQuotientCleanLargeSieveAtom。
+narrowest_next_hardpoint=
+  TransverseSourceSupportNonconcentrationCertificate_OR_DIBFIQuantifiedNoProjectionWindowCertificate。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -423,6 +424,36 @@ TransverseQuotientCleanLargeSieveAtom:
   满足内部 LargeSieve/DLS/KLS 界；
   或明确登记外部 KLS/DI/BFI/Kuznetsov 输入；
   若任一 clean admission 失败，则回流 PDEC / SAE / ColumnCRT / Multiplicity。
+```
+
+继续新增横向 clean 原子前沿路由器后，这个大筛原子不再作为宽泛黑箱保留：
+
+```text
+experiments/prime_matrix_pdec_cap_transverse_clean_atom_frontier_router.py
+docs/monograph/prime-matrix-pdec-cap-transverse-clean-atom-frontier-router.md/json
+
+transverse_clean_atom_routed_to_named_frontier=true；
+narrowest_next_hardpoint=
+  TransverseSourceSupportNonconcentrationCertificate_OR_DIBFIQuantifiedNoProjectionWindowCertificate。
+```
+
+通俗说，横向商 clean residual 已经接入既有 A1 `CleanKLS/SC-9` 语法：K1--K9 失败就回流
+`PDEC/SAE/ColumnCRT/Multiplicity`，K1--K9 通过才进入 `SC-9`。`SC-9` 又已展开为实际系数
+`NC-BLK` 或外部 `DI/BFI`。但这里不能直接把 canonical-source 边界拿来吸收，因为还缺一条关键桥：
+横向商系数必须被证明继承 canonical `RIW/Buchstab` 源支撑下界，或必须直接证明实际 transverse
+`NC-BLK` 块非集中。朴素的 factor-residue incidence 桥已经被内部 fiber 反例阻断。
+
+所以最新真正剩余是：
+
+```text
+自足路线：
+  TransverseSourceSupportNonconcentrationCertificate
+  = 证明横向商系数有 canonical RIW/Buchstab 源支撑下界，
+    或直接证明实际 transverse NC-BLK 块非集中；
+
+外部原始 DI/BFI 路线：
+  DIBFIQuantifiedNoProjectionWindowCertificate
+  = 无投影对象恒等式 + 量化尺度代入。
 ```
 
 ## 7. 已并入合著的文件
