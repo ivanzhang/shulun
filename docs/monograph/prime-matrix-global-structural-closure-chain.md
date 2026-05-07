@@ -3084,7 +3084,7 @@ all_known_frontiers_routed=True；
 terminal_dual_gap=ContinuousDirectionArcDual。
 ```
 
-当前前沿表：
+连续方向弧提交前的前沿表：
 
 ```text
 SameSetAttachment        => ready_current_lhb_branch；
@@ -3117,7 +3117,7 @@ box-only 容量行在结构上不可能闭合 A1；
 其 Fourier 模长不产生抵消。
 ```
 
-所以 A1 不能继续靠调常数或固定低模层 box cap 推进。下一唯一有效目标是：
+所以 A1 不能继续靠调常数或固定低模层 box cap 推进。当时的下一唯一有效目标是：
 
 ```text
 ContinuousDirectionArcDual：
@@ -3131,4 +3131,51 @@ ContinuousDirectionArcDual：
 all_current_pxP_exits_closed=True；
 all_materialized_branches_routed_to_terminal_triad=True；
 no_fourth_exit_current_a1_chain=True。
+```
+
+## 64. A1 连续方向弧前沿已物化
+
+新增 `experiments/prime_matrix_triad_a1_continuous_direction_arc_dual.py` 后，
+`ContinuousDirectionArcDual` 不再只是“未提交”的方向缺口，而被精确审计为当前 box 行下的连续半平面支持函数：
+
+```text
+U_box(h,zeta)=sum_t M(t) max(0, Re(e^{i zeta}e(ht)))；
+U_box(h)=max_zeta U_box(h,zeta)。
+```
+
+运行结果：
+
+```text
+status=continuous_direction_arc_box_dual_materialized_not_closed；
+route_counts={
+  PersistentContinuousDualCapNeedsColumnTailOrCleanKLS: 8,
+  SparseContinuousDualCapToLocalSurvivor: 1
+}；
+global_max_box_dual_value_over_total_m=0.998391；
+global_min_best_cap_phase_count=4。
+```
+
+因此这一步给出的不是最终 PDEC 闭合，而是一个更窄的结构结论：
+
+```text
+方向采样密度不是失败原因；
+仅 0<=g(t)<=M(t) 的 box 同集容量行不能推出 U_CRT<L_PDEC；
+失败对象已经是连续方向 persistent cap；
+下一硬点必须加入 column/tail/cofactor 同集合法结构行，
+或证明剩余平坦残差进入 CleanKLS/DLS。
+```
+
+前沿路由器同步更新后：
+
+```text
+ContinuousDirectionArcDual => continuous_dualcap_materialized_not_closed；
+terminal_dual_gap => ColumnTailCofactorOrCleanKLSStructureRows。
+```
+
+这把 A1 当前最窄入口从“补连续方向对偶”推进到：
+
+```text
+把连续弧 persistent cap 与真实支付图的 column/displacement compatibility、
+tail/cofactor nonreuse、actual Gamma forced-signature 约束接起来；
+若这些约束无法制造 PDEC 抵消，则剩余对象必须是 flat residual CleanKLS/DLS。
 ```

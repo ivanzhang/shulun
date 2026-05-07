@@ -27,6 +27,7 @@ DEFAULT_FOURIER = DOCS / "prime-matrix-triad-a1-lhb-fourier-cap-scan.json"
 DEFAULT_DUALCAP = DOCS / "prime-matrix-triad-a1-pdec-dualcap-extractor.json"
 DEFAULT_MASS = DOCS / "prime-matrix-triad-a1-pdec-mass-source-router.json"
 DEFAULT_CONFLUENCE = DOCS / "prime-matrix-triad-a1-terminal-confluence-router.json"
+DEFAULT_CONTINUOUS = DOCS / "prime-matrix-triad-a1-continuous-direction-arc-dual.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -82,6 +83,7 @@ def build_frontier_rows(
     dualcap: dict[str, Any],
     mass: dict[str, Any],
     confluence: dict[str, Any],
+    continuous: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -144,11 +146,12 @@ def build_frontier_rows(
         },
         {
             "frontier": "ContinuousDirectionArcDual",
-            "status": "not_submitted",
+            "status": "continuous_dualcap_materialized_not_closed",
             "evidence": (
-                "Fourier cap 扫描只覆盖离散 alpha/direction 压力测试，不是连续方向弧对偶证书。"
+                f"连续方向弧精确审计已提交；route_counts={continuous['route_counts']}；"
+                f"max U_box/M={continuous['global_max_box_dual_value_over_total_m']:.6f}。"
             ),
-            "next_action": "若要完成 A:PDEC，必须提交方向弧 LP/dual 上界或输出更窄 DualCap。",
+            "next_action": "方向采样退路关闭；下一步补 column/tail/cofactor 同集结构行或转 CleanKLS。",
         },
     ]
 
@@ -160,6 +163,7 @@ def run(
     dualcap_path: Path,
     mass_path: Path,
     confluence_path: Path,
+    continuous_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -168,20 +172,21 @@ def run(
     dualcap = load_json(dualcap_path)
     mass = load_json(mass_path)
     confluence = load_json(confluence_path)
-    frontier_rows = build_frontier_rows(lp, direction, fourier, dualcap, mass, confluence)
+    continuous = load_json(continuous_path)
+    frontier_rows = build_frontier_rows(
+        lp, direction, fourier, dualcap, mass, confluence, continuous
+    )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
         "ready_current_lhb_branch",
         "closed_subbranch",
         "structurally_insufficient",
         "dualcap_materialized",
+        "continuous_dualcap_materialized_not_closed",
         "closed",
         "no_fourth_exit",
     }
-    all_known_frontiers_routed = all(
-        row["status"] in ready_or_routed or row["frontier"] == "ContinuousDirectionArcDual"
-        for row in frontier_rows
-    )
+    all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
         "status": "same_set_capacity_frontier_materialized_terminal_dual_open",
@@ -193,6 +198,7 @@ def run(
             "dualcap_extractor_json": file_sha256(dualcap_path),
             "pdec_mass_source_json": file_sha256(mass_path),
             "terminal_confluence_json": file_sha256(confluence_path),
+            "continuous_direction_arc_json": file_sha256(continuous_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -203,16 +209,18 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "ContinuousDirectionArcDual",
+        "terminal_dual_gap": "ColumnTailCofactorOrCleanKLSStructureRows",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
-            "最终缺口是连续方向弧 LP/dual 上界，或由其失败输出更窄 DualCap。"
+            "连续方向弧精确审计已排除离散采样不足这一退路；最终缺口变成 column/tail/cofactor "
+            "同集结构行，或 flat residual CleanKLS/DLS。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
-            "当前合法行足以闭合零块子支并输出/路由 DualCap，但不足以给完整 U_CRT<L_PDEC。"
-            "下一步必须提交方向弧对偶证书或生成更窄的 column/tail/cofactor 行。"
+            "当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，"
+            "但仍不足以给完整 U_CRT<L_PDEC。下一步必须提交 column/tail/cofactor 同集结构行，"
+            "或把剩余平坦残差送入 CleanKLS。"
         ),
     }
 
@@ -275,11 +283,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DualCap materialized and routed；",
             "P×P exits closed；",
             "no fourth exit in current A1 chain；",
-            "continuous direction-arc dual still not submitted。",
+            "continuous direction-arc dual materialized but not closed；",
+            "remaining gap is column/tail/cofactor same-set structure or CleanKLS。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是 `ContinuousDirectionArcDual`：",
-            "给出连续方向弧上的 `U_CRT<L_PDEC`，或让失败自动输出更窄的 column/tail/cofactor DualCap。",
+            "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
+            "把连续弧 persistent cap 与 column/tail/cofactor 非复用约束接起来，或证明其平坦残差进入 CleanKLS。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -295,6 +304,7 @@ def main() -> None:
     parser.add_argument("--dualcap-json", type=Path, default=DEFAULT_DUALCAP)
     parser.add_argument("--mass-json", type=Path, default=DEFAULT_MASS)
     parser.add_argument("--confluence-json", type=Path, default=DEFAULT_CONFLUENCE)
+    parser.add_argument("--continuous-json", type=Path, default=DEFAULT_CONTINUOUS)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -306,6 +316,7 @@ def main() -> None:
         dualcap_path=args.dualcap_json,
         mass_path=args.mass_json,
         confluence_path=args.confluence_json,
+        continuous_path=args.continuous_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
