@@ -5402,3 +5402,91 @@ terminal_dual_gap => DIBFICommonVariableTransferScaleCertificate。
 这一步完成了用户要求的共同变量表攻坚。下一步不能再把剩余拆回“对象转移”和“尺度范围”两条路；
 必须直接证明共同变量表上的单一合取证书：所有对象转移方程成立，并且所有尺度不等式同时满足
 BFI Theorem 10 与 DI Theorem 12 的输入范围。
+
+## 95. DI/BFI 转移/尺度证书：账本行关闭，终端变为量化无投影窗口证书
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_transfer_scale_certificate_router.py` 后，第 94 节留下的
+`DIBFICommonVariableTransferScaleCertificate` 被逐行审计。结论是：共同变量表上的若干账本行已经
+关闭，但真正的证明内容不能由定性适配表替代；它被压成一个更小的合取证书。
+
+机器结果：
+
+```text
+status=dibfi_transfer_scale_certificate_reduced_to_quantified_no_projection_certificate_open；
+all_certificate_rows_closed=false；
+terminal_gap_after_router=DIBFIQuantifiedNoProjectionWindowCertificate。
+```
+
+对象转移侧，已关闭或不再独立的账本行为：
+
+```text
+TypeDecompositionLogBudget:
+  Vaughan/Heath-Brown、Type-I/II、dyadic/log 损失账本已登记；
+
+CRTPhaseSymbolUnification:
+  KE-8 与 KLS 相位模板同归一到 e_c(a s+b bar{s})。
+```
+
+仍未闭合的对象转移行为：
+
+```text
+APErrorRepresentation:
+  需把 clean A1 generic WFD 残差精确写成 AP error 或 dyadic 总和；
+
+DispersionCauchyNoCenteringIdentity:
+  SOURCE-CEN 已反证，不能免费中心化或删同块对角；
+
+KE13DyadicExhaustionNoProjection:
+  需证明所有 dyadic 主块完全覆盖，且没有投影、中心化、端点或块对角遗漏。
+```
+
+尺度侧，已关闭或不再独立的账本行为：
+
+```text
+TypeProductQuantified:
+  N*M≈X 作为 Type 分块恒等式关闭；
+
+FrequencyWindowAndTail:
+  Fourier 尾项账本已关闭；
+
+LogLossC0Extraction:
+  B(A)=A+C0+10 的符号化损失吸收已关闭。
+```
+
+仍未闭合的尺度行为：
+
+```text
+BFILevelQuantified:
+  需给出 X,Q 与 prime-matrix 参数的显式关系，并代入 BFI Theorem 10；
+
+KLSModulusWindowQuantified:
+  需把 C 的 dyadic level 精确匹配到 DI/BFI 模数族；
+
+InverseVariableWindowQuantified:
+  需从 completion 后的 s 变量长度推出 DI 逆元变量窗口；
+
+DIJScaleDominanceSubstitution:
+  需把 DI Theorem 12 的 J-scale 项代入 C,S,H,N,M,Q 并压到 WFD 自然尺度/log^A。
+```
+
+因此新终端不是一个新的大口号，而是：
+
+```text
+DIBFIQuantifiedNoProjectionWindowCertificate
+  = NoProjectionUncenteredDispersionIdentity
+    + QuantifiedDIBFIWindowSubstitution。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFITransferScaleCertificateRouter
+  => dibfi_transfer_scale_certificate_reduced_to_quantified_no_projection_certificate_open；
+
+terminal_dual_gap
+  => DIBFIQuantifiedNoProjectionWindowCertificate。
+```
+
+这一步的关键收获是排除了继续横向分拆的退路：剩余已经是“原始未中心化对象是否逐项保持”
+与“外部 DI/BFI 定理尺度是否可量化代入”的合取问题。二者未同时完成前，不能诚实宣称
+generic WFD 外部 DI/BFI 分支闭合。

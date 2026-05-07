@@ -1,0 +1,183 @@
+{
+  "all_certificate_rows_closed": false,
+  "all_scale_closed": false,
+  "all_transfer_closed": false,
+  "certificate_type": "triad_a1_dibfi_transfer_scale_certificate_router",
+  "next_external_target": "DIBFIQuantifiedNoProjectionWindowCertificate",
+  "open_scale_gates": [
+    "BFILevelQuantified",
+    "KLSModulusWindowQuantified",
+    "InverseVariableWindowQuantified",
+    "DIJScaleDominanceSubstitution"
+  ],
+  "open_terminal_targets": [
+    "NoProjectionUncenteredDispersionIdentity",
+    "QuantifiedDIBFIWindowSubstitution"
+  ],
+  "open_transfer_gates": [
+    "APErrorRepresentation",
+    "DispersionCauchyNoCenteringIdentity",
+    "KE13DyadicExhaustionNoProjection"
+  ],
+  "previous_terminal_gap": "DIBFICommonVariableTransferScaleCertificate",
+  "review_conclusion": "共同变量表的合取证书已被继续压缩：账本型行已经关闭，真正剩余不是新的统计实验，而是 `NoProjectionUncenteredDispersionIdentity` 与 `QuantifiedDIBFIWindowSubstitution` 两项合并证书。二者同时成立才可把 generic WFD 外部 DI/BFI 分支标记闭合。",
+  "scale_certificate_rows": [
+    {
+      "closed": true,
+      "common_inequality": "TypeProduct",
+      "evidence": "N*M≈X",
+      "gate": "TypeProductQuantified",
+      "next_target": "none",
+      "remaining": "N*M≈X 本身已是 Type 分块恒等式；仍不决定 Q,C,S,H 的外部定理范围。",
+      "status": "closed_at_dyadic_product_level"
+    },
+    {
+      "closed": false,
+      "common_inequality": "BFILevel",
+      "evidence": "Q<=X^(4/7-eps) or an explicitly stronger admitted range",
+      "gate": "BFILevelQuantified",
+      "next_target": "QuantifiedDIBFIWindowSubstitution",
+      "remaining": "需要给出 X、Q 与 prime-matrix 参数的显式关系，并代入 BFI Theorem 10 的 level 条件。",
+      "status": "open_exact_x_q_exponent_substitution_missing"
+    },
+    {
+      "closed": false,
+      "common_inequality": "KLSModulusWindow",
+      "evidence": "C is a dyadic sublevel of Q and matches the DI modulus family",
+      "gate": "KLSModulusWindowQuantified",
+      "next_target": "QuantifiedDIBFIWindowSubstitution",
+      "remaining": "当前 C≈P/log^{O(1)}P 只是定性窗口，需匹配 DI/BFI 原文模数族与 dyadic level。",
+      "status": "open_qualitative_range_only"
+    },
+    {
+      "closed": false,
+      "common_inequality": "InverseVariableWindow",
+      "evidence": "S matches the DI inverse-variable length after completion",
+      "gate": "InverseVariableWindowQuantified",
+      "next_target": "QuantifiedDIBFIWindowSubstitution",
+      "remaining": "需从 completion 后的 s 变量长度推出 DI 逆元变量窗口允许范围。",
+      "status": "open_completion_length_substitution_missing"
+    },
+    {
+      "closed": true,
+      "common_inequality": "FrequencyWindow",
+      "evidence": "0<|h|<=H and Fourier tail is absorbed by B(A)",
+      "gate": "FrequencyWindowAndTail",
+      "next_target": "QuantifiedDIBFIWindowSubstitution",
+      "remaining": "Fourier 尾项账本已关；h 作为 DI/BFI 频率参数的精确范围并入量化代入证书。",
+      "status": "tail_ledger_closed_di_range_still_in_quantified_substitution"
+    },
+    {
+      "closed": false,
+      "common_inequality": "DIJScaleDominance",
+      "evidence": "DI Theorem 12 J-scale bound is <= natural WFD scale/log^A after substitution",
+      "gate": "DIJScaleDominanceSubstitution",
+      "next_target": "QuantifiedDIBFIWindowSubstitution",
+      "remaining": "需把 DI Theorem 12 的 J-scale 项逐项代入 C,S,H,N,M,Q，并证明小于 WFD 自然尺度/log^A。",
+      "status": "open_main_scale_blocker"
+    },
+    {
+      "closed": true,
+      "common_inequality": "LogLossAbsorption",
+      "evidence": "B(A)=A+C0+10 absorbs dyadic, gcd, endpoint, coefficient and smoothing costs",
+      "gate": "LogLossC0Extraction",
+      "next_target": "none",
+      "remaining": "C0 仍可保持符号化；若最终稿要求显式常数，再逐项抽取 C_i。",
+      "status": "closed_symbolic_log_ledger"
+    }
+  ],
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "dibfi_theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4",
+    "external_theorem_index_md": "7a0ef97946a854b0763d0800c765c9e9c1a462fef1b40241e604b46a8c579f5a",
+    "hlc_kls_external_adaptation_md": "aa0d2dea3d0e9cd6bfd6ccfdbb0ebe94994e4f8dffa106828e49cda0fd3d932e",
+    "kls_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "e6b207aba209b4c45440487bdc9690dea5f9bffd9e2f90b29b688800019ef83a",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb"
+  },
+  "status": "dibfi_transfer_scale_certificate_reduced_to_quantified_no_projection_certificate_open",
+  "structural_law": "The common-variable certificate cannot be closed by another qualitative checklist. The local ledger rows split cleanly: Type decomposition, CRT phase, Fourier tail and symbolic log-loss absorption are closed at ledger level. The true remaining content is exactly twofold: an uncentered no-projection dispersion identity, and a quantified substitution of X,Q,N,M,C,S,H into BFI Theorem 10 and DI Theorem 12, including the DI J-scale dominance.",
+  "terminal_gap_after_router": "DIBFIQuantifiedNoProjectionWindowCertificate",
+  "terminal_rows": [
+    {
+      "closed": false,
+      "covers": [
+        "APErrorRepresentation",
+        "DispersionCauchyNoCenteringIdentity",
+        "KE13DyadicExhaustionNoProjection"
+      ],
+      "reason": "对象转移仍必须证明原始未中心化目标在 BFI dispersion 展开中逐项保持。",
+      "status": "open",
+      "terminal": "NoProjectionUncenteredDispersionIdentity"
+    },
+    {
+      "closed": false,
+      "covers": [
+        "BFILevelQuantified",
+        "KLSModulusWindowQuantified",
+        "InverseVariableWindowQuantified",
+        "DIJScaleDominanceSubstitution"
+      ],
+      "reason": "尺度侧仍缺少把 X,Q,N,M,C,S,H 代入 BFI Theorem 10 与 DI Theorem 12 的逐项不等式。",
+      "status": "open",
+      "terminal": "QuantifiedDIBFIWindowSubstitution"
+    },
+    {
+      "closed": true,
+      "covers": [
+        "HLC-KLS-core / CORE-5"
+      ],
+      "reason": "HLC clean 分支已有外部深定理适配；但当前 generic WFD 共同变量表仍要求原始未中心化对象与量化尺度的同表证书，不能直接替代。",
+      "status": "available_for_hlc_clean_branch_not_generic_wfd_certificate",
+      "terminal": "ExternalWindowedKLSAlternative"
+    }
+  ],
+  "transfer_certificate_rows": [
+    {
+      "closed": false,
+      "common_step": "APError",
+      "evidence": "E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm)",
+      "gate": "APErrorRepresentation",
+      "next_target": "APToUncenteredDispersionIdentity",
+      "remaining": "仍需把 clean A1 generic WFD 残差逐项写成该 AP error 或其 dyadic 总和。",
+      "status": "interface_named_but_exact_residual_identity_open"
+    },
+    {
+      "closed": true,
+      "common_step": "TypeDecomposition",
+      "evidence": "KZ-E spine 已登记 Vaughan/Heath-Brown、Type-I/II 与 dyadic/log 账本。",
+      "gate": "TypeDecompositionLogBudget",
+      "next_target": "none",
+      "remaining": "该行只关闭分解账本；不替代 APErrorRepresentation。",
+      "status": "ledger_closed_conditioned_on_ap_error_identity"
+    },
+    {
+      "closed": false,
+      "common_step": "DispersionCauchy",
+      "evidence": "SOURCE-CEN 已反证，不能免费插入块中心化或删同块对角。",
+      "gate": "DispersionCauchyNoCenteringIdentity",
+      "next_target": "NoProjectionUncenteredDispersionIdentity",
+      "remaining": "必须从 BFI 原始 dispersion 写出 Cauchy 展开到 KE-5 的逐项恒等式。",
+      "status": "open_no_centering_shortcut_available"
+    },
+    {
+      "closed": true,
+      "common_step": "CRTPhase",
+      "evidence": "KZ-E 的 KE-8 与 KLS 模板的相位归一化同指向标准 e_c(a s+b bar{s})。",
+      "gate": "CRTPhaseSymbolUnification",
+      "next_target": "none",
+      "remaining": "最终稿只需统一符号；不再是独立数学缺口。",
+      "status": "closed"
+    },
+    {
+      "closed": false,
+      "common_step": "KE13Identification",
+      "evidence": "E_disp main nonzero-frequency blocks = WFD_core(C,S,H,lambda,beta,omega)",
+      "gate": "KE13DyadicExhaustionNoProjection",
+      "next_target": "NoProjectionUncenteredDispersionIdentity",
+      "remaining": "需证明所有 dyadic 主块完全覆盖，且没有额外中心化、投影、块对角删除或端点遗漏。",
+      "status": "open_main_target_transfer_blocker"
+    }
+  ]
+}
