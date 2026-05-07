@@ -1,0 +1,68 @@
+{
+  "canonical_source_self_contained_closed": true,
+  "certificate_type": "triad_a1_dibfi_self_contained_final_closure_router",
+  "closed_final_gates": [
+    "CanonicalSourceSelfContainedTheoremClosed",
+    "UnrestrictedGenericSelfContainedRefuted",
+    "BranchBoundaryNoOverlapNoGap",
+    "CanonicalClosureUsesInternalSourcePath",
+    "FinalSelfContainedClosureCertificate"
+  ],
+  "external_contract_version_closed": true,
+  "final_rows": [
+    {
+      "closed": true,
+      "evidence": "frontier terminal is NoFurtherActualSourceProvenanceGap and provenance has no open gates.",
+      "gate": "CanonicalSourceSelfContainedTheoremClosed",
+      "next_target": "SelfContainedBoundary",
+      "remaining": "none for canonical-source self-contained theorem"
+    },
+    {
+      "closed": true,
+      "evidence": "moving-delta no-go refutes the current generic full-S WFD anti-atom under recorded formal hypotheses.",
+      "gate": "UnrestrictedGenericSelfContainedRefuted",
+      "next_target": "SelfContainedBoundary",
+      "remaining": "do not claim unrestricted generic self-contained proof"
+    },
+    {
+      "closed": true,
+      "evidence": "branch coverage separates canonical source branch from generic noncanonical WFD complement.",
+      "gate": "BranchBoundaryNoOverlapNoGap",
+      "next_target": "SelfContainedBoundary",
+      "remaining": "none at statement-boundary level"
+    },
+    {
+      "closed": true,
+      "evidence": "selected source path is canonical RIW/Buchstab; FullS-KLS-ext is not needed for this branch.",
+      "gate": "CanonicalClosureUsesInternalSourcePath",
+      "next_target": "FinalSelfContainedClosureCertificate",
+      "remaining": "none for canonical-source internal path"
+    },
+    {
+      "closed": true,
+      "evidence": "The exact self-contained theorem boundary is closed: canonical-source version is proved by the internal chain; unrestricted generic version is refuted, not open.",
+      "gate": "FinalSelfContainedClosureCertificate",
+      "next_target": "NoFurtherCanonicalSourceSelfContainedGap",
+      "remaining": "none, provided the theorem statement is canonical-source self-contained"
+    }
+  ],
+  "open_final_gates": [],
+  "review_conclusion": "完整自足版的可闭合陈述已闭合：canonical RIW/Buchstab source branch 走内部链条，来源账本无剩余缺口；unrestricted generic WFD 自足版被 moving-delta 反证，不能被写成自足闭合。",
+  "source_hashes": {
+    "antiatom_nogo_json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4",
+    "branch_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "provenance_json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "script": "7ef4731dcacd01ce013a8d79030623ec85df8afadd520f5919f243e798a89830",
+    "taxonomy_json": "c17dfbff54f991a819fcaa607f001860adcc8e3f950de77c233c4dff834227ad"
+  },
+  "status": "canonical_source_self_contained_final_closed_generic_unrestricted_refuted",
+  "structural_law": "The final self-contained closure is a theorem-boundary closure. The canonical-source branch is fully internal after source provenance is closed. The unrestricted generic WFD branch is not an open self-contained gap; it is false under the current formal hypotheses. Therefore the only honest final statement is canonical-source self-contained closure plus explicit generic-unrestricted refutation.",
+  "terminal_gap_after_router": "NoFurtherCanonicalSourceSelfContainedGap_GenericUnrestrictedRefuted",
+  "theorem_boundary": {
+    "closed_self_contained_statement": "Triad-A1 same-set capacity / full-S terminal on the canonical RIW/Buchstab source branch.",
+    "not_claimed_reason": "moving-delta no-go refutes the generic anti-atom input.",
+    "not_claimed_statement": "Unrestricted generic full-S well-factorable WFD self-contained theorem."
+  },
+  "unrestricted_generic_self_contained_closed": false,
+  "unrestricted_generic_self_contained_refuted": true
+}

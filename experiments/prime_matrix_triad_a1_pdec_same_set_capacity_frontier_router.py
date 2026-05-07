@@ -211,6 +211,10 @@ DEFAULT_DIBFI_ACTUAL_SOURCE_PROVENANCE_LEDGER = (
     DOCS
     / "prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json"
 )
+DEFAULT_DIBFI_SELF_CONTAINED_FINAL_CLOSURE = (
+    DOCS
+    / "prime-matrix-triad-a1-dibfi-self-contained-final-closure-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -333,6 +337,7 @@ def build_frontier_rows(
     dibfi_self_contained_closure_taxonomy: dict[str, Any],
     dibfi_actual_source_bridge_priority: dict[str, Any],
     dibfi_actual_source_provenance_ledger: dict[str, Any],
+    dibfi_self_contained_final_closure: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -1162,6 +1167,22 @@ def build_frontier_rows(
                 "在原始 A1/KZ-E 源头定义处证明 actual lambda_c 等于 canonical RIW/Buchstab。"
             ),
         },
+        {
+            "frontier": "A1DIBFISelfContainedFinalClosureRouter",
+            "status": dibfi_self_contained_final_closure["status"],
+            "evidence": (
+                f"最终自足边界已闭合；canonical_closed="
+                f"{dibfi_self_contained_final_closure['canonical_source_self_contained_closed']}；"
+                f"generic_refuted="
+                f"{dibfi_self_contained_final_closure['unrestricted_generic_self_contained_refuted']}；"
+                f"terminal_gap="
+                f"{dibfi_self_contained_final_closure['terminal_gap_after_router']}。"
+            ),
+            "next_action": (
+                "最终陈述保持为 canonical-source self-contained closure；"
+                "unrestricted generic WFD 自足命题已反证，不作为闭合声明。"
+            ),
+        },
     ]
 
 
@@ -1239,6 +1260,7 @@ def run(
     dibfi_self_contained_closure_taxonomy_path: Path,
     dibfi_actual_source_bridge_priority_path: Path,
     dibfi_actual_source_provenance_ledger_path: Path,
+    dibfi_self_contained_final_closure_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1342,6 +1364,9 @@ def run(
     dibfi_actual_source_provenance_ledger = load_json(
         dibfi_actual_source_provenance_ledger_path
     )
+    dibfi_self_contained_final_closure = load_json(
+        dibfi_self_contained_final_closure_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1416,6 +1441,7 @@ def run(
         dibfi_self_contained_closure_taxonomy,
         dibfi_actual_source_bridge_priority,
         dibfi_actual_source_provenance_ledger,
+        dibfi_self_contained_final_closure,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1493,6 +1519,7 @@ def run(
         "actual_source_bridge_best_direction_selected",
         "actual_source_provenance_reduced_to_original_source_definition_open",
         "actual_source_provenance_closed",
+        "canonical_source_self_contained_final_closed_generic_unrestricted_refuted",
         "closed",
         "no_fourth_exit",
     }
@@ -1500,11 +1527,14 @@ def run(
     actual_source_provenance_closed = dibfi_actual_source_provenance_ledger[
         "actual_source_provenance_closed"
     ]
+    self_contained_final_closed = dibfi_self_contained_final_closure[
+        "canonical_source_self_contained_closed"
+    ]
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
         "status": (
-            "same_set_capacity_frontier_canonical_source_self_contained_closed"
-            if actual_source_provenance_closed
+            "same_set_capacity_frontier_final_self_contained_boundary_closed"
+            if self_contained_final_closed
             else "same_set_capacity_frontier_actual_source_definition_provenance_open"
         ),
         "source_hashes": {
@@ -1670,6 +1700,9 @@ def run(
             "a1_dibfi_actual_source_provenance_ledger_json": file_sha256(
                 dibfi_actual_source_provenance_ledger_path
             ),
+            "a1_dibfi_self_contained_final_closure_json": file_sha256(
+                dibfi_self_contained_final_closure_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1720,10 +1753,20 @@ def run(
         "open_provenance_gates": dibfi_actual_source_provenance_ledger[
             "open_provenance_gates"
         ],
+        "self_contained_final_boundary_closed": self_contained_final_closed,
+        "unrestricted_generic_self_contained_refuted": dibfi_self_contained_final_closure[
+            "unrestricted_generic_self_contained_refuted"
+        ],
+        "closed_self_contained_statement": dibfi_self_contained_final_closure[
+            "theorem_boundary"
+        ]["closed_self_contained_statement"],
+        "not_claimed_self_contained_statement": dibfi_self_contained_final_closure[
+            "theorem_boundary"
+        ]["not_claimed_statement"],
         "terminal_gap_expansion": dibfi_self_contained_closure_taxonomy[
             "terminal_gap_expansion"
         ],
-        "terminal_dual_gap": dibfi_actual_source_provenance_ledger[
+        "terminal_dual_gap": dibfi_self_contained_final_closure[
             "terminal_gap_after_router"
         ],
         "structural_law": (
@@ -1802,6 +1845,8 @@ def run(
             "来源账本审计又显示：当前 KZ-E spine 仍是 generic well-factorable lambda 口径；"
             "现在无黑箱自足分支已在原始源头定义处声明 actual lambda_c 等于 canonical "
             "RIW/Buchstab 决策树系数；generic noncanonical 补集仍外部路由。"
+            "最终闭合证书进一步固定陈述边界：canonical-source 自足版无剩余终端；"
+            "unrestricted generic WFD 自足版已反证，不能作为本闭合结论。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1848,6 +1893,8 @@ def run(
             "两个候选方向中最优路线是证明实际源头为 canonical RIW/Buchstab，"
             "终端先压成 actual lambda_c 来源账本，并进一步定位到"
             "原始 A1/KZ-E 源头定义；该来源账本已在 canonical-source 自足分支上闭合。"
+            "最终结论是 canonical-source self-contained closure；unrestricted generic WFD "
+            "自足命题保持反证边界。"
         ),
     }
 
@@ -1940,6 +1987,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  Best next direction is canonical source lock, reduced to coefficient provenance ledger。",
         "  Coefficient provenance ledger reduces to original A1/KZ-E source definition。",
         "  Canonical-source provenance is now closed by pre-Cauchy source definition。",
+        "  Final self-contained boundary is closed: canonical source closed, generic unrestricted refuted。",
         "```",
         "",
         "## 2. 汇总",
@@ -1960,6 +2008,10 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"- `original_source_definition_declares_canonical={result['original_source_definition_declares_canonical']}`。",
         f"- `pre_cauchy_lambda_equality_closed={result['pre_cauchy_lambda_equality_closed']}`。",
         f"- `open_provenance_gates={result['open_provenance_gates']}`。",
+        f"- `self_contained_final_boundary_closed={result['self_contained_final_boundary_closed']}`。",
+        f"- `unrestricted_generic_self_contained_refuted={result['unrestricted_generic_self_contained_refuted']}`。",
+        f"- `closed_self_contained_statement={result['closed_self_contained_statement']}`。",
+        f"- `not_claimed_self_contained_statement={result['not_claimed_self_contained_statement']}`。",
         f"- `terminal_gap_expansion={result['terminal_gap_expansion']}`。",
         f"- `status_counts={result['status_counts']}`。",
         f"- `lp_summary={result['lp_summary']}`。",
@@ -2061,7 +2113,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFISelfContainedClosureTaxonomy router materialized；",
             "DIBFIActualSourceBridgePriority router materialized；",
             "DIBFIActualSourceProvenanceLedger router materialized；",
+            "DIBFISelfContainedFinalClosure router materialized；",
             "canonical-source actual provenance gap is closed。",
+            "final terminal is NoFurtherCanonicalSourceSelfContainedGap_GenericUnrestrictedRefuted。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -2071,6 +2125,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "APSourceLift 已被当前合同排除；外部合同版可接受 FullS-KLS-ext；"
             "generic 自足版被 moving-delta 反证；canonical-restricted 自足版闭合；"
             "无黑箱自足分支的 actual lambda_c 来源账本已在原始 A1/KZ-E 源头定义处闭合；"
+            "最终自足边界也已闭合：canonical-source 自足版闭合，"
             "generic noncanonical WFD 仍只能外部路由，不能被本结论冒充为自足闭合。",
         ]
     )
@@ -2376,6 +2431,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_ACTUAL_SOURCE_PROVENANCE_LEDGER,
     )
+    parser.add_argument(
+        "--dibfi-self-contained-final-closure-json",
+        type=Path,
+        default=DEFAULT_DIBFI_SELF_CONTAINED_FINAL_CLOSURE,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -2489,6 +2549,9 @@ def main() -> None:
         ),
         dibfi_actual_source_provenance_ledger_path=(
             args.dibfi_actual_source_provenance_ledger_json
+        ),
+        dibfi_self_contained_final_closure_path=(
+            args.dibfi_self_contained_final_closure_json
         ),
     )
     args.json_out.write_text(
