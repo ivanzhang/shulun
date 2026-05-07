@@ -62,6 +62,9 @@ DEFAULT_EXACT_FACTOR_SUPPORT = (
 DEFAULT_FACTOR_RESIDUE_INCIDENCE = (
     DOCS / "prime-matrix-triad-a1-factor-residue-incidence-router.json"
 )
+DEFAULT_CANONICAL_RIW_SUPPORT = (
+    DOCS / "prime-matrix-triad-a1-canonical-riw-support-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -134,6 +137,7 @@ def build_frontier_rows(
     exact_wfd_source_entropy: dict[str, Any],
     exact_factor_support: dict[str, Any],
     factor_residue_incidence: dict[str, Any],
+    canonical_riw_support: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -376,6 +380,18 @@ def build_frontier_rows(
             ),
             "next_action": "内部版直接证明 canonical RIW/Buchstab factor support；外部版引用 DI/BFI。",
         },
+        {
+            "frontier": "A1CanonicalRIWFactorSupportRouter",
+            "status": "squarefree_buchstab_support_or_external_dibfi_required"
+            if canonical_riw_support["next_internal_target"]
+            == "SquarefreeBuchstabLayerSupportLowerBound"
+            else "canonical_riw_support_gap",
+            "evidence": (
+                f"canonical RIW support 已化为 squarefree Buchstab 层局部支撑；"
+                f"terminal_gap={canonical_riw_support['terminal_gap_after_router']}。"
+            ),
+            "next_action": "内部版证明 squarefree Buchstab layer support；外部版引用 DI/BFI。",
+        },
     ]
 
 
@@ -403,6 +419,7 @@ def run(
     exact_wfd_source_entropy_path: Path,
     exact_factor_support_path: Path,
     factor_residue_incidence_path: Path,
+    canonical_riw_support_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -428,6 +445,7 @@ def run(
     exact_wfd_source_entropy = load_json(exact_wfd_source_entropy_path)
     exact_factor_support = load_json(exact_factor_support_path)
     factor_residue_incidence = load_json(factor_residue_incidence_path)
+    canonical_riw_support = load_json(canonical_riw_support_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -452,6 +470,7 @@ def run(
         exact_wfd_source_entropy,
         exact_factor_support,
         factor_residue_incidence,
+        canonical_riw_support,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -476,6 +495,7 @@ def run(
         "exact_factor_support_or_external_dibfi_required",
         "factor_residue_incidence_or_canonical_riw_support_required",
         "canonical_riw_factor_support_or_external_dibfi_required",
+        "squarefree_buchstab_support_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -514,6 +534,7 @@ def run(
             "a1_factor_residue_incidence_json": file_sha256(
                 factor_residue_incidence_path
             ),
+            "a1_canonical_riw_support_json": file_sha256(canonical_riw_support_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -525,7 +546,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion"
+            "SquarefreeBuchstabLayerSupportLowerBoundOrExternalDIBFIOriginalDispersion"
         ),
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
@@ -542,7 +563,8 @@ def run(
             "但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为"
             "精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。"
             "朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。"
-            "当前无黑箱版只剩 CanonicalRIWFactorSupportLowerBound，"
+            "CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。"
+            "当前无黑箱版只剩 SquarefreeBuchstabLayerSupportLowerBound，"
             "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
@@ -559,7 +581,8 @@ def run(
             "ExactWFDSourceEntropy 已化为精确因子支撑下界。"
             "ExactFactorSupport 不能由 K4/K6 自动推出。"
             "FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。"
-            "下一步不再是 A1 内部路由，而是证明 CanonicalRIWFactorSupportLowerBound "
+            "CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。"
+            "下一步不再是 A1 内部路由，而是证明 SquarefreeBuchstabLayerSupportLowerBound "
             "或给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
@@ -600,7 +623,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  SourceBlockEntropy needs exact WFD source entropy or external DI/BFI；",
         "  ExactWFDSourceEntropy needs exact factor support lower bound or external DI/BFI；",
         "  ExactFactorSupport needs factor-residue incidence or canonical RIW support；",
-        "  FactorResidueIncidence is blocked; remaining internal target is canonical RIW support。",
+        "  FactorResidueIncidence is blocked; remaining internal target is canonical RIW support；",
+        "  CanonicalRIW support reduces to squarefree Buchstab layer support。",
         "```",
         "",
         "## 2. 汇总",
@@ -657,11 +681,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "ExactWFDSourceEntropy router materialized；",
             "ExactFactorSupport router materialized；",
             "FactorResidueIncidence router materialized；",
-            "remaining independent gap is CanonicalRIWFactorSupportLowerBound or external DI/BFI original dispersion。",
+            "CanonicalRIWFactorSupport router materialized；",
+            "remaining independent gap is SquarefreeBuchstabLayerSupportLowerBound or external DI/BFI original dispersion。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是 canonical RIW/Buchstab 因子支撑：",
-            "证明 CanonicalRIWFactorSupportLowerBound，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "所以下一步唯一值得硬攻的 A1 目标是 squarefree Buchstab 层局部支撑下界：",
+            "证明 SquarefreeBuchstabLayerSupportLowerBound，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -726,6 +751,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_FACTOR_RESIDUE_INCIDENCE,
     )
+    parser.add_argument(
+        "--canonical-riw-support-json",
+        type=Path,
+        default=DEFAULT_CANONICAL_RIW_SUPPORT,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -754,6 +784,7 @@ def main() -> None:
         exact_wfd_source_entropy_path=args.exact_wfd_source_entropy_json,
         exact_factor_support_path=args.exact_factor_support_json,
         factor_residue_incidence_path=args.factor_residue_incidence_json,
+        canonical_riw_support_path=args.canonical_riw_support_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

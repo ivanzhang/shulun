@@ -1,0 +1,152 @@
+{
+  "all_model_rows_support_lemma_suffices": true,
+  "canonical_riw_support_closed": false,
+  "certificate_type": "triad_a1_canonical_riw_support_router",
+  "conditional_squarefree_support_implies_riw_support": true,
+  "gate_rows": [
+    {
+      "available": "WFD ledger uses existence of well-factorable splitting",
+      "closed": false,
+      "gap": "support statements are meaningless until the splitting is fixed",
+      "gate": "CanonicalFactorizationFixed",
+      "needed": "a specified canonical Rosser/Iwaniec-Buchstab splitting alpha*delta",
+      "route": "define the exact RIW/Buchstab factorization used in KZ-E"
+    },
+    {
+      "available": "not present as a local lower-bound lemma",
+      "closed": false,
+      "gap": "this is a short multiplicative interval support theorem, not a Kloosterman estimate",
+      "gate": "SquarefreeBuchstabLayerSupport",
+      "needed": "many squarefree products in each surviving balanced dyadic factor interval",
+      "route": "prove by Buchstab recursion/Mertens product or route thin intervals to edge/PDEC"
+    },
+    {
+      "available": "RIW factors are divisor-bounded",
+      "closed": false,
+      "gap": "parity/layer truncation can zero out a combinatorial class unless layer admission is recorded",
+      "gate": "NonzeroCoefficientTransfer",
+      "needed": "squarefree products counted by the support lemma carry nonzero canonical coefficients",
+      "route": "record layer support and parity nonvanishing for the exact construction"
+    },
+    {
+      "available": "K1/K3/K6 and finite PDEC/SAE exits exist",
+      "closed": false,
+      "gap": "threshold return is not yet connected to canonical support",
+      "gate": "SmallOrThinIntervalReturn",
+      "needed": "balanced intervals too short for support lemma do not remain in clean branch",
+      "route": "prove thin support => edge/endpoint/tail-label failure"
+    },
+    {
+      "available": "elementary once previous gates hold",
+      "closed": true,
+      "gap": "conditional implication is clear; hypotheses remain",
+      "gate": "SupportLemmaImpliesRIWSupport",
+      "needed": "sum |alpha_u| >= U/log^C and sum |delta_v| >= V/log^C",
+      "route": "SquarefreeBuchstabLayerSupport + NonzeroCoefficientTransfer"
+    }
+  ],
+  "incidence_input_status": "factor_residue_incidence_bridge_blocked_by_internal_atom_fiber",
+  "next_internal_target": "SquarefreeBuchstabLayerSupportLowerBound",
+  "parameters": {
+    "divisor_loss_power_C": 3.0,
+    "max_k": 9,
+    "min_k": 3,
+    "prime_density_loss_E": 2.0,
+    "scale": "y=10^k",
+    "support_power_B": 7.0
+  },
+  "reduction_law": "Canonical RIW support is not a spectral problem. Once the exact factorization is fixed, it follows from a local lower bound for squarefree Buchstab-layer products in every surviving balanced dyadic interval, plus nonzero transfer of those products into the canonical alpha and delta coefficients.",
+  "review_conclusion": "CanonicalRIWFactorSupportLowerBound 已被压缩为一个更初等的组合筛支撑命题：固定 exact Rosser/Iwaniec-Buchstab 分解后，只需证明 surviving balanced dyadic factor interval 中有足够多非零 squarefree Buchstab-layer products，并把薄区间返回 edge/PDEC/SAE。当前 ledger 尚未提供这个局部支撑下界。",
+  "rows": [
+    {
+      "divisor_loss_power_C": 3.0,
+      "expected_squarefree_products": 15728.406215343151,
+      "k": 3,
+      "log_y": 6.907755278982137,
+      "model_interval_size": 750513.6647456809,
+      "prime_density_loss_E": 2.0,
+      "required_absolute_mass": 2276.920009485447,
+      "support_lemma_suffices": true,
+      "support_power_B": 7.0,
+      "y": 1000
+    },
+    {
+      "divisor_loss_power_C": 3.0,
+      "expected_squarefree_products": 66279.37433955308,
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "model_interval_size": 5622503.833193071,
+      "prime_density_loss_E": 2.0,
+      "required_absolute_mass": 7196.1916349169705,
+      "support_lemma_suffices": true,
+      "support_power_B": 7.0,
+      "y": 10000
+    },
+    {
+      "divisor_loss_power_C": 3.0,
+      "expected_squarefree_products": 202268.59844834305,
+      "k": 5,
+      "log_y": 11.512925464970229,
+      "model_interval_size": 26810187.498059597,
+      "prime_density_loss_E": 2.0,
+      "required_absolute_mass": 17568.827233684005,
+      "support_lemma_suffices": true,
+      "support_power_B": 7.0,
+      "y": 100000
+    },
+    {
+      "divisor_loss_power_C": 3.0,
+      "expected_squarefree_products": 503308.99889098085,
+      "k": 6,
+      "log_y": 13.815510557964274,
+      "model_interval_size": 96065749.08744715,
+      "prime_density_loss_E": 2.0,
+      "required_absolute_mass": 36430.72015176715,
+      "support_lemma_suffices": true,
+      "support_power_B": 7.0,
+      "y": 1000000
+    },
+    {
+      "divisor_loss_power_C": 3.0,
+      "expected_squarefree_products": 1087849.0669188167,
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "model_interval_size": 282615580.70674556,
+      "prime_density_loss_E": 2.0,
+      "required_absolute_mass": 67492.40670092047,
+      "support_lemma_suffices": true,
+      "support_power_B": 7.0,
+      "y": 10000000
+    },
+    {
+      "divisor_loss_power_C": 3.0,
+      "expected_squarefree_products": 2120939.9788656984,
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "model_interval_size": 719680490.6487131,
+      "prime_density_loss_E": 2.0,
+      "required_absolute_mass": 115139.06615867153,
+      "support_lemma_suffices": true,
+      "support_power_B": 7.0,
+      "y": 100000000
+    },
+    {
+      "divisor_loss_power_C": 3.0,
+      "expected_squarefree_products": 3822002.7103283857,
+      "k": 9,
+      "log_y": 20.72326583694641,
+      "model_interval_size": 1641373384.798804,
+      "prime_density_loss_E": 2.0,
+      "required_absolute_mass": 184430.52076832118,
+      "support_lemma_suffices": true,
+      "support_power_B": 7.0,
+      "y": 1000000000
+    }
+  ],
+  "source_hashes": {
+    "factor_residue_incidence_json": "be50163987cdc54179f3e439e32c390bc8df4dbde950f12a04ecad09b5f06e80",
+    "script": "da6f977205558aacf10f3f9f9a30da8dfe3ff783169db4caa40625d54b9ba36b"
+  },
+  "status": "canonical_riw_support_reduced_to_squarefree_buchstab_layer_support",
+  "terminal_gap_after_router": "SquarefreeBuchstabLayerSupportLowerBoundOrExternalDIBFIOriginalDispersion"
+}

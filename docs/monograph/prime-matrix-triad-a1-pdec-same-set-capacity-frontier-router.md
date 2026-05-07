@@ -2,11 +2,11 @@
 
 **状态：** `same_set_capacity_frontier_materialized_terminal_dual_open`
 
-Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。下一步不再是 A1 内部路由，而是证明 CanonicalRIWFactorSupportLowerBound 或给出外部 DI/BFI 原始 dispersion 引用。
+Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。下一步不再是 A1 内部路由，而是证明 SquarefreeBuchstabLayerSupportLowerBound 或给出外部 DI/BFI 原始 dispersion 引用。
 
 ## 1. 结构律
 
-同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。当前无黑箱版只剩 CanonicalRIWFactorSupportLowerBound，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。
+同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。当前无黑箱版只剩 SquarefreeBuchstabLayerSupportLowerBound，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。
 
 ```text
 Same-set capacity upper:
@@ -30,14 +30,15 @@ Same-set capacity upper:
   SourceBlockEntropy needs exact WFD source entropy or external DI/BFI；
   ExactWFDSourceEntropy needs exact factor support lower bound or external DI/BFI；
   ExactFactorSupport needs factor-residue incidence or canonical RIW support；
-  FactorResidueIncidence is blocked; remaining internal target is canonical RIW support。
+  FactorResidueIncidence is blocked; remaining internal target is canonical RIW support；
+  CanonicalRIW support reduces to squarefree Buchstab layer support。
 ```
 
 ## 2. 汇总
 
 - `all_known_frontiers_routed=True`。
-- `terminal_dual_gap=CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion`。
-- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'canonical_riw_factor_support_or_external_dibfi_required': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'exact_factor_support_or_external_dibfi_required': 1, 'exact_wfd_source_entropy_or_external_dibfi_required': 1, 'external_kls_input_registered_self_contained_atom_open': 1, 'factor_residue_incidence_or_canonical_riw_support_required': 1, 'moving_block_spread_or_external_dibfi_required': 1, 'no_fourth_exit': 1, 'nodeletion_terminal_routed_clean_kls_open': 1, 'positive_deletion_potential_or_nodeletion_kl': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'sc9_routed_to_ncblk_or_external_dibfi': 1, 'selective_promotion_resolved_by_finite_split': 1, 'source_block_entropy_or_external_dibfi_required': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
+- `terminal_dual_gap=SquarefreeBuchstabLayerSupportLowerBoundOrExternalDIBFIOriginalDispersion`。
+- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'canonical_riw_factor_support_or_external_dibfi_required': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'exact_factor_support_or_external_dibfi_required': 1, 'exact_wfd_source_entropy_or_external_dibfi_required': 1, 'external_kls_input_registered_self_contained_atom_open': 1, 'factor_residue_incidence_or_canonical_riw_support_required': 1, 'moving_block_spread_or_external_dibfi_required': 1, 'no_fourth_exit': 1, 'nodeletion_terminal_routed_clean_kls_open': 1, 'positive_deletion_potential_or_nodeletion_kl': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'sc9_routed_to_ncblk_or_external_dibfi': 1, 'selective_promotion_resolved_by_finite_split': 1, 'source_block_entropy_or_external_dibfi_required': 1, 'squarefree_buchstab_support_or_external_dibfi_required': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
 - `lp_summary={'q': 2310, 'p_count': 9, 'all_zero_blocks_ready': True, 'box_only_global_closure': False, 'box_only_obstruction_count': 9, 'row_generators_ready': ['nonnegativity', 'phase_caps_g_le_M', 'WHOLEDEF_zero_block', 'BRIDGED_zero_block']}`。
 - `fourier_summary={'q': 2310, 'p_count': 9, 'class_counts': {'EmptyCap': 8267, 'PersistentCap': 192813, 'SparseCap': 48292}, 'has_persistent_cap': True}`。
 - `dualcap_summary={'aggregate_class_counts': {'ForcedPersistentByDensityBarrier': 24, 'PersistentCap': 68, 'SparseCap': 16}, 'aggregate_route_counts': {'LiftOrColumnTailOrCleanKLS': 24, 'LocalSurvivorOrExplicitPDEC': 16, 'RefinedPDECOrColumnTailRows': 68}}`。
@@ -69,6 +70,7 @@ Same-set capacity upper:
 | `A1ExactWFDSourceEntropyRouter` | `exact_factor_support_or_external_dibfi_required` | ExactWFDSourceEntropy 已化为精确因子支撑下界；terminal_gap=ExactFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion。 | 内部版证明 exact factor support lower bound；外部版引用 DI/BFI 原始 dispersion。 |
 | `A1ExactFactorSupportRouter` | `factor_residue_incidence_or_canonical_riw_support_required` | K4/K6 不能自动推出 moving factor support；terminal_gap=FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupportOrExternalDIBFIOriginalDispersion。 | 证明 factor-residue incidence bridge，或直接证明 canonical RIW factor support。 |
 | `A1FactorResidueIncidenceRouter` | `canonical_riw_factor_support_or_external_dibfi_required` | 朴素 incidence bridge 被内部 fiber 阻断；terminal_gap=CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion。 | 内部版直接证明 canonical RIW/Buchstab factor support；外部版引用 DI/BFI。 |
+| `A1CanonicalRIWFactorSupportRouter` | `squarefree_buchstab_support_or_external_dibfi_required` | canonical RIW support 已化为 squarefree Buchstab 层局部支撑；terminal_gap=SquarefreeBuchstabLayerSupportLowerBoundOrExternalDIBFIOriginalDispersion。 | 内部版证明 squarefree Buchstab layer support；外部版引用 DI/BFI。 |
 
 ## 4. 当前结论
 
@@ -98,8 +100,9 @@ SourceBlockEntropy router materialized；
 ExactWFDSourceEntropy router materialized；
 ExactFactorSupport router materialized；
 FactorResidueIncidence router materialized；
-remaining independent gap is CanonicalRIWFactorSupportLowerBound or external DI/BFI original dispersion。
+CanonicalRIWFactorSupport router materialized；
+remaining independent gap is SquarefreeBuchstabLayerSupportLowerBound or external DI/BFI original dispersion。
 ```
 
-所以下一步唯一值得硬攻的 A1 目标是 canonical RIW/Buchstab 因子支撑：
-证明 CanonicalRIWFactorSupportLowerBound，或给出可复核的外部 DI/BFI 原始 dispersion 引用。
+所以下一步唯一值得硬攻的 A1 目标是 squarefree Buchstab 层局部支撑下界：
+证明 SquarefreeBuchstabLayerSupportLowerBound，或给出可复核的外部 DI/BFI 原始 dispersion 引用。

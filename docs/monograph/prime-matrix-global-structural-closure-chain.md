@@ -4330,3 +4330,77 @@ terminal_dual_gap => CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalD
 这一步把“从 clean K4/K6 反推 factor support”的最后伪出口排除。继续完全无黑箱硬攻时，
 不能再依赖 residue 投影、dyadic 分块或 incidence 口径，必须直接证明 exact
 Rosser-Iwaniec/Buchstab 因子本身的平衡支撑下界。
+
+## 81. A1 CanonicalRIWFactorSupport 化为 squarefree Buchstab 层支撑
+
+新增 `experiments/prime_matrix_triad_a1_canonical_riw_support_router.py` 后，
+第 80 节留下的 `CanonicalRIWFactorSupportLowerBound` 被继续压缩。结论是：这不是谱大筛问题，
+而是一个局部组合筛支撑问题。
+
+机器结果：
+
+```text
+status=canonical_riw_support_reduced_to_squarefree_buchstab_layer_support；
+next_internal_target=SquarefreeBuchstabLayerSupportLowerBound；
+terminal_gap_after_router=SquarefreeBuchstabLayerSupportLowerBoundOrExternalDIBFIOriginalDispersion。
+```
+
+归约律：
+
+```text
+fix canonical RIW/Buchstab factorization alpha*delta;
+prove many squarefree Buchstab-layer products in each surviving balanced interval;
+prove those products carry nonzero alpha/delta coefficients;
+then sum |alpha_u|, sum |delta_v| have log-power lower bounds.
+```
+
+也就是说，若 canonical Rosser-Iwaniec/Buchstab 分解已经固定，则要证明
+
+```text
+sum |alpha_u| >= U/log^C,
+sum |delta_v| >= V/log^C,
+```
+
+只需证明每个 surviving balanced dyadic factor interval 中有足够多属于相应 Buchstab 层的
+squarefree products，并确认这些 product 在 exact construction 中对应非零系数。
+
+当前未闭合的门控是：
+
+```text
+CanonicalFactorizationFixed:
+  支撑陈述必须依附于一个固定的 exact RIW/Buchstab 分解；
+
+SquarefreeBuchstabLayerSupport:
+  每个 surviving balanced interval 内必须有局部 squarefree product 下界；
+
+NonzeroCoefficientTransfer:
+  被计数的 squarefree products 必须确实携带非零 alpha/delta 系数；
+
+SmallOrThinIntervalReturn:
+  太短或太靠边的区间必须回到 edge/PDEC/SAE，而不能留在 clean branch。
+```
+
+因此当前最窄内部目标为：
+
+```text
+SquarefreeBuchstabLayerSupportLowerBound:
+  every surviving balanced dyadic factor interval contains enough nonzero
+  squarefree products in the canonical RIW/Buchstab layer.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1CanonicalRIWFactorSupportRouter => squarefree_buchstab_support_or_external_dibfi_required；
+terminal_dual_gap => SquarefreeBuchstabLayerSupportLowerBoundOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把 canonical RIW 因子支撑问题降到最具体的乘法组合支撑下界。继续无黑箱硬攻时，
+下一步应直接证明 squarefree Buchstab 层在 surviving balanced interval 中的局部非稀薄性。
