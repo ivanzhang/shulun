@@ -101,6 +101,9 @@ DEFAULT_DIBFI_COMMON_VARIABLE_TABLE = (
 DEFAULT_DIBFI_TRANSFER_SCALE_CERTIFICATE = (
     DOCS / "prime-matrix-triad-a1-dibfi-transfer-scale-certificate-router.json"
 )
+DEFAULT_DIBFI_DIRECT_BFI_ATOM = (
+    DOCS / "prime-matrix-triad-a1-dibfi-direct-bfi-atom-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -188,6 +191,7 @@ def build_frontier_rows(
     dibfi_window_match: dict[str, Any],
     dibfi_common_variable_table: dict[str, Any],
     dibfi_transfer_scale_certificate: dict[str, Any],
+    dibfi_direct_bfi_atom: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -613,6 +617,17 @@ def build_frontier_rows(
             ),
             "next_action": "直接证明无投影未中心化 dispersion 恒等式，并完成 DI/BFI 量化窗口代入。",
         },
+        {
+            "frontier": "A1DIBFIDirectBFIAtomRouter",
+            "status": "dibfi_quantified_no_projection_reduced_to_direct_bfi_atom_or_ke13_fallback_open",
+            "evidence": (
+                f"量化无投影终端已分叉为直接 BFI-AP 原子或 KE-13 fallback；"
+                f"direct_bfi_atom_available={dibfi_direct_bfi_atom['direct_bfi_atom_available']}；"
+                f"open_gates={dibfi_direct_bfi_atom['open_gates']}；"
+                f"terminal_gap={dibfi_direct_bfi_atom['terminal_gap_after_router']}。"
+            ),
+            "next_action": "优先证明 PrimeAPResidualRepresentation、BFILevelSubstitution 与 WellFactorableLambdaLevel。",
+        },
     ]
 
 
@@ -655,6 +670,7 @@ def run(
     dibfi_window_match_path: Path,
     dibfi_common_variable_table_path: Path,
     dibfi_transfer_scale_certificate_path: Path,
+    dibfi_direct_bfi_atom_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -695,6 +711,7 @@ def run(
     dibfi_window_match = load_json(dibfi_window_match_path)
     dibfi_common_variable_table = load_json(dibfi_common_variable_table_path)
     dibfi_transfer_scale_certificate = load_json(dibfi_transfer_scale_certificate_path)
+    dibfi_direct_bfi_atom = load_json(dibfi_direct_bfi_atom_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -734,6 +751,7 @@ def run(
         dibfi_window_match,
         dibfi_common_variable_table,
         dibfi_transfer_scale_certificate,
+        dibfi_direct_bfi_atom,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -774,13 +792,14 @@ def run(
         "dibfi_common_variable_table_materialized_certificate_open",
         "dibfi_transfer_scale_certificate_reduced_to_quantified_no_projection_certificate_open",
         "dibfi_transfer_scale_certificate_closed",
+        "dibfi_quantified_no_projection_reduced_to_direct_bfi_atom_or_ke13_fallback_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_quantified_no_projection_open",
+        "status": "same_set_capacity_frontier_materialized_direct_bfi_atom_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -839,6 +858,9 @@ def run(
             "a1_dibfi_transfer_scale_certificate_json": file_sha256(
                 dibfi_transfer_scale_certificate_path
             ),
+            "a1_dibfi_direct_bfi_atom_json": file_sha256(
+                dibfi_direct_bfi_atom_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -849,7 +871,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "DIBFIQuantifiedNoProjectionWindowCertificate",
+        "terminal_dual_gap": "DIBFIDirectBFIAPAtomMatchOrKE13NoProjection",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -879,7 +901,8 @@ def run(
             "DI/BFI 原文定理位置已定位为 BFI Theorem 10 与 DI Theorem 12；"
             "当前窗口假设匹配又被压成 AP 到 KE-13 的对象不变转移与 dyadic 尺度不等式；"
             "二者现在已锁到同一张共同变量表；共同变量表合取证书又被逐行审计为"
-            "无投影未中心化 dispersion 恒等式与 DI/BFI 量化窗口代入。"
+            "无投影未中心化 dispersion 恒等式与 DI/BFI 量化窗口代入；该终端又分叉为"
+            "直接 BFI prime-AP 原子匹配，或保留 KE-13 无投影 fallback。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -910,7 +933,7 @@ def run(
             "都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；"
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
-            "该合取证书现已继续压成 `DIBFIQuantifiedNoProjectionWindowCertificate`。"
+            "该合取证书现已继续压成 `DIBFIDirectBFIAPAtomMatchOrKE13NoProjection`。"
         ),
     }
 
@@ -966,6 +989,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  current WFD-window match reduces to target transfer and scale inequalities。",
         "  target transfer and scale inequalities now share one common variable table。",
         "  common-variable certificate reduces to quantified no-projection window certificate。",
+        "  quantified no-projection terminal reduces to direct BFI-AP atom or KE-13 fallback。",
         "```",
         "",
         "## 2. 汇总",
@@ -1037,12 +1061,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIWindowMatch router materialized；",
             "DIBFICommonVariableTable router materialized；",
             "DIBFITransferScaleCertificate router materialized；",
-            "remaining independent gap is quantified no-projection window certificate。",
+            "DIBFIDirectBFIAtom router materialized；",
+            "remaining independent gap is direct BFI-AP atom match or KE-13 no-projection fallback。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
             "DI/BFI 定理位置已固定为 BFI Theorem 10 与 DI Theorem 12；"
-            "generic WFD 外部引用版只剩无投影对象恒等式与 DI/BFI 量化窗口代入证书；"
+            "generic WFD 外部引用版优先剩 direct BFI-AP 原子匹配；若失败才回到 KE-13 无投影路线；"
             "完全自足版仍未证明原始 dispersion。",
         ]
     )
@@ -1173,6 +1198,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_TRANSFER_SCALE_CERTIFICATE,
     )
+    parser.add_argument(
+        "--dibfi-direct-bfi-atom-json",
+        type=Path,
+        default=DEFAULT_DIBFI_DIRECT_BFI_ATOM,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1216,6 +1246,7 @@ def main() -> None:
         dibfi_window_match_path=args.dibfi_window_match_json,
         dibfi_common_variable_table_path=args.dibfi_common_variable_table_json,
         dibfi_transfer_scale_certificate_path=args.dibfi_transfer_scale_certificate_json,
+        dibfi_direct_bfi_atom_path=args.dibfi_direct_bfi_atom_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

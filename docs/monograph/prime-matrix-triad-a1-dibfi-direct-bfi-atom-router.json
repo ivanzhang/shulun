@@ -1,0 +1,115 @@
+{
+  "certificate_type": "triad_a1_dibfi_direct_bfi_atom_router",
+  "common_table_terminal": "DIBFICommonVariableTransferScaleCertificate",
+  "direct_bfi_atom_available": true,
+  "direct_bfi_atom_closed": false,
+  "gate_rows": [
+    {
+      "closed": true,
+      "gate": "BFIAtomAvailable",
+      "if_fail": "cannot use direct BFI route",
+      "needed": "BFI Theorem 10 is pinned as a well-factorable prime-AP dispersion atom"
+    },
+    {
+      "closed": false,
+      "gate": "PrimeAPResidualRepresentation",
+      "if_fail": "fall back to SeparateKE13DIBFIWindow",
+      "needed": "把当前 clean A1/generic WFD 残差提升为 BFI prime-AP discrepancy，而不是只给一个孤立 KE-13 子窗口。"
+    },
+    {
+      "closed": false,
+      "gate": "BFILevelSubstitution",
+      "if_fail": "direct BFI route not closed",
+      "needed": "显式证明 Q <= X^(4/7-eps) 或采用已定位定理允许的等价更强范围。"
+    },
+    {
+      "closed": false,
+      "gate": "WellFactorableLambdaLevel",
+      "if_fail": "direct BFI route not closed",
+      "needed": "证明 lambda_q 的 level 与 well-factorable 分解正是 BFI Theorem 10 输入。"
+    },
+    {
+      "closed": true,
+      "gate": "KE13FallbackStillAvailable",
+      "if_fail": "both external routes malformed",
+      "needed": "若直接 BFI 不可用，保留 KE-13 无投影逐项路线。"
+    }
+  ],
+  "ke13_fallback_open": true,
+  "next_external_target": "DIBFIDirectBFIAPAtomMatchOrKE13NoProjection",
+  "open_gates": [
+    "PrimeAPResidualRepresentation",
+    "BFILevelSubstitution",
+    "WellFactorableLambdaLevel"
+  ],
+  "previous_terminal_gap": "DIBFIQuantifiedNoProjectionWindowCertificate",
+  "review_conclusion": "量化无投影终端已被继续压缩为一个分叉：首选路线是直接 BFI prime-AP 原子，只剩 prime-AP 残差表示、BFI level 代入和 well-factorable level；若不能提升回 AP 原子，则回到 KE-13 无投影逐项路线。",
+  "route_rows": [
+    {
+      "absorbs": [
+        "DispersionCauchyNoCenteringIdentity",
+        "KE13DyadicExhaustionNoProjection",
+        "KLSModulusWindowQuantified",
+        "InverseVariableWindowQuantified",
+        "DIJScaleDominanceSubstitution"
+      ],
+      "available": true,
+      "closed": false,
+      "reason": "若直接引用 BFI Theorem 10，则 dispersion/DI J-scale 是定理证明内部内容；外部引用版不应再要求本文重证 KE-13 的无投影逐项展开。",
+      "role": "preferred_if_source_can_be_lifted_to_prime_ap_error",
+      "route": "DirectBFIPrimeAPAtom",
+      "still_needs": [
+        "PrimeAPResidualRepresentation",
+        "BFILevelSubstitution",
+        "WellFactorableLambdaLevel"
+      ]
+    },
+    {
+      "absorbs": [],
+      "available": true,
+      "closed": false,
+      "reason": "若上游只能给出孤立 KE-13/WFD-core 窗口，而不能提升回 BFI prime-AP 误差，则必须继续证明无中心化、无投影、无 dyadic 主块遗漏，并逐项代入 DI/BFI 尺度。",
+      "role": "fallback_if_only_ke13_window_is_available",
+      "route": "SeparateKE13DIBFIWindow",
+      "still_needs": [
+        "NoProjectionUncenteredDispersionIdentity",
+        "QuantifiedDIBFIWindowSubstitution"
+      ]
+    },
+    {
+      "absorbs": [
+        "CleanHLCWindow"
+      ],
+      "available": true,
+      "closed": true,
+      "reason": "A1 clean/HLC 分支已有窗口化外部 KLS 适配；但它不是 generic WFD 共同变量表的直接替代品。",
+      "role": "closed_for_clean_hlc_branch_only",
+      "route": "HLCWindowedKLSAtom",
+      "still_needs": []
+    },
+    {
+      "absorbs": [],
+      "available": true,
+      "closed": false,
+      "reason": "上一轮终端被本轮二分为 DirectBFIPrimeAPAtom 或 SeparateKE13DIBFIWindow。",
+      "role": "input_being_reduced",
+      "route": "CurrentTransferScaleFrontier",
+      "still_needs": [
+        "NoProjectionUncenteredDispersionIdentity",
+        "QuantifiedDIBFIWindowSubstitution"
+      ]
+    }
+  ],
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "dibfi_theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4",
+    "external_theorem_index_md": "7a0ef97946a854b0763d0800c765c9e9c1a462fef1b40241e604b46a8c579f5a",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "ce58cdfd15ec3584548259e8e19e53be2a5ce4579c31d5131db40efd369bb7d1",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb",
+    "transfer_scale_json": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd"
+  },
+  "status": "dibfi_quantified_no_projection_reduced_to_direct_bfi_atom_or_ke13_fallback_open",
+  "structural_law": "If the current residual can be represented at the prime-AP level, BFI Theorem 10 should be used as one atom: its internal dispersion and DI/Kloosterman estimates absorb the no-projection and J-scale obligations. If the proof only has an isolated KE-13/WFD window, those obligations remain external and must be proved separately.",
+  "terminal_gap_after_router": "DIBFIDirectBFIAPAtomMatchOrKE13NoProjection"
+}

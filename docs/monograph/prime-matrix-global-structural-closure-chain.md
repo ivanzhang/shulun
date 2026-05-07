@@ -5490,3 +5490,71 @@ terminal_dual_gap
 这一步的关键收获是排除了继续横向分拆的退路：剩余已经是“原始未中心化对象是否逐项保持”
 与“外部 DI/BFI 定理尺度是否可量化代入”的合取问题。二者未同时完成前，不能诚实宣称
 generic WFD 外部 DI/BFI 分支闭合。
+
+## 96. 直接 BFI-AP 原子：优先回到原始素数等差误差，KE-13 逐项路线降为 fallback
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_direct_bfi_atom_router.py` 后，第 95 节留下的
+`DIBFIQuantifiedNoProjectionWindowCertificate` 被继续压缩。关键逻辑调整是：如果允许直接引用
+BFI Theorem 10，那么不应把 DI 的 J-scale 与 KE-13 的逐项无投影展开作为本文还需重证的并列义务；
+这些是 BFI 原子证明内部的 dispersion/Kloosterman 内容。本文真正需要先证明的是当前残差是否能提升回
+BFI 的 prime-AP 原始误差对象。
+
+机器结果：
+
+```text
+status=dibfi_quantified_no_projection_reduced_to_direct_bfi_atom_or_ke13_fallback_open；
+direct_bfi_atom_available=true；
+terminal_gap_after_router=DIBFIDirectBFIAPAtomMatchOrKE13NoProjection。
+```
+
+新分叉为：
+
+```text
+DirectBFIPrimeAPAtom:
+  preferred route；
+  absorbs:
+    DispersionCauchyNoCenteringIdentity；
+    KE13DyadicExhaustionNoProjection；
+    KLSModulusWindowQuantified；
+    InverseVariableWindowQuantified；
+    DIJScaleDominanceSubstitution；
+
+  still needs:
+    PrimeAPResidualRepresentation；
+    BFILevelSubstitution；
+    WellFactorableLambdaLevel。
+
+SeparateKE13DIBFIWindow:
+  fallback route；
+  used only if the current object cannot be lifted to prime-AP error；
+  then still needs:
+    NoProjectionUncenteredDispersionIdentity；
+    QuantifiedDIBFIWindowSubstitution。
+```
+
+因此下一最窄硬点不是继续同时硬攻全部 KE-13 子项，而是优先证明三行：
+
+```text
+PrimeAPResidualRepresentation:
+  把当前 clean A1/generic WFD 残差提升为 BFI prime-AP discrepancy；
+
+BFILevelSubstitution:
+  显式证明 Q<=X^(4/7-eps) 或当前引用版允许的等价范围；
+
+WellFactorableLambdaLevel:
+  证明 lambda_q 的 level 与 well-factorable 分解正是 BFI Theorem 10 输入。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFIDirectBFIAtomRouter
+  => dibfi_quantified_no_projection_reduced_to_direct_bfi_atom_or_ke13_fallback_open；
+
+terminal_dual_gap
+  => DIBFIDirectBFIAPAtomMatchOrKE13NoProjection。
+```
+
+这一步的结构意义是把“证明 BFI 内部机制”与“使用 BFI 外部原子”分开：外部引用版优先只需完成
+BFI prime-AP 原子匹配；完全自足版或无法提升回 AP 原子的版本，才继续承担 KE-13 无投影与 DI
+尺度代入的完整证明。
