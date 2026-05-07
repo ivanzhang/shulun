@@ -2,12 +2,12 @@
   "certificate_type": "prime_matrix_pdec_cap_diffuse_terminal_split_router",
   "diffuse_terminal_split_closed": true,
   "external_deep_theorem_version_closed_if_accepted": true,
-  "narrowest_diffuse_hardpoint": "OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
+  "narrowest_diffuse_hardpoint": "DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
   "open_final_gates": [
-    "OccupancySaturationPDECOrColumnCRT",
+    "DenseOldHoleKernelCapacityPDECOrColumnCRT",
     "SelfContainedKuznetsovLSAtomSC9"
   ],
-  "review_conclusion": "不持久 Gamma 分支已经不再是 `FiberDeletion/NoDeletion/CleanKLS` 的宽口径黑箱。现有账本合成后，非终端门全部接线：持续删除进入删除势账本，删除停止时 KL/MI 偏斜回流 PDEC，只有 KL/MI 平坦才进入 CleanKLS；而 CleanKLS 的 K1--K9 失败项也全部回流命名出口。删除势发散后的支撑耗尽桥也已闭合；全局删除势发散下界又被 HRO 压到占用饱和排斥。剩余自足硬点压成两项：`OccupancySaturationPDECOrColumnCRT`，或 flat clean 分支的 SC-9 谱大筛原子。",
+  "review_conclusion": "不持久 Gamma 分支已经不再是 `FiberDeletion/NoDeletion/CleanKLS` 的宽口径黑箱。现有账本合成后，非终端门全部接线：持续删除进入删除势账本，删除停止时 KL/MI 偏斜回流 PDEC，只有 KL/MI 平坦才进入 CleanKLS；而 CleanKLS 的 K1--K9 失败项也全部回流命名出口。删除势发散后的支撑耗尽桥也已闭合；全局删除势发散下界又被 HRO 压到占用饱和排斥。占位饱和再由 HRO 注入界压成稠密旧洞选择核。剩余自足硬点压成两项：`DenseOldHoleKernelCapacityPDECOrColumnCRT`，或 flat clean 分支的 SC-9 谱大筛原子。",
   "row_column_unconditional_closed": false,
   "rows": [
     {
@@ -74,11 +74,18 @@
       "meaning": "全局删除势发散下界已由 HRO 压到占用饱和排斥；TailIndependence 已回流 NoDeletion/CleanKLS。"
     },
     {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "DenseOldHoleKernelCapacityPDECOrColumnCRT",
+      "gate": "OccupancySaturationKernelReduction",
+      "meaning": "占位饱和已由 HRO 注入界压成近满旧洞选择核；稀疏旧洞子情形已自动排除。"
+    },
+    {
       "blocks_final": true,
       "closed": false,
-      "evidence": "near-full old-hole residues not globally excluded",
-      "gate": "OccupancySaturationPDECOrColumnCRT",
-      "meaning": "还需证明旧洞 residue 在 promoted prime 层近满占用会触发低层容量矛盾、PDEC 或 ColumnCRT。"
+      "evidence": "near-full selector kernel not globally excluded",
+      "gate": "DenseOldHoleKernelCapacityPDECOrColumnCRT",
+      "meaning": "还需证明近满旧洞选择核触发低层容量矛盾、PDEC 相位偏斜或 ColumnCRT 列位移刚性。"
     },
     {
       "blocks_final": true,
@@ -95,10 +102,11 @@
     "deletion_divergence": "e865b80e6c7e674a57b59ed142c86521c4ed0b24e268bdb9ac1d1df9a1b867e5",
     "infinite_tower": "5d31543f88f0dcac735a61dff0d26d836d0ad038dda7895c109674279bc79082",
     "nodeletion_terminal": "7c747233fa3af53c52530da304d0493326c7a6f32531e22db0d16d1e1100184b",
-    "profinite_aps": "9dd25bf39da64914853df12d391b95389b927f3838bbf70d0bc2ab256319b9c8",
+    "occupancy_kernel": "28539dfd44e2c2bd1d09259a8105ce2eabd1a14cc43ad8f86fd29aa5fcddc14a",
+    "profinite_aps": "6b477c191f5b96e81011db53e3756aa1ae708a4d3dfd4d0210a9b2050f7b4a5f",
     "sc9_frontier": "0cdee5539c39e8ab496aaeaa4d484d4e4cdd9e6626f887d9b11728ab38d09646",
-    "script": "e27d20fd87077dbb1f90c9ce54814f0e5d2b6de54bd5cf7f6f8bac8ed09b15bf"
+    "script": "fb19a5e0115144bd9ad6ba3cf5ecd384a1c2ad59741d2d3dfc30bfd765c6d46d"
   },
-  "split_law": "For the nonpersistent Gamma branch, the inverse finite-signature tower gives diffuse payment. Along any same-source lift tower, either the deletion potential sum diverges and the support density is exhausted, or deletion is summable and the branch is NoDeletion. In NoDeletion, persistent KL or phase-residue mutual information returns to refined/new-layer PDEC; only the flat KL/MI case is admitted to CleanKLS/DLS. K1--K9 then route all non-clean failures back to PDEC/SAE/Multiplicity/Promotion. The support-exhaustion bridge closes the implication from divergent deletion to exhaustion or named sparse/PDEC return. The deletion-divergence router then reduces the lower bound to OccupancySaturation, because TailIndependence is already NoDeletion-KL/CleanKLS. Thus the self-contained diffuse terminal is reduced to OccupancySaturation/PDEC/ColumnCRT or the named Kuznetsov-LS atom SC-9; an external DI/BFI/Kuznetsov input would close the flat clean branch only as an external-theorem version.",
-  "status": "pdec_cap_diffuse_terminal_split_reduced_to_occupancy_saturation_or_sc9"
+  "split_law": "For the nonpersistent Gamma branch, the inverse finite-signature tower gives diffuse payment. Along any same-source lift tower, either the deletion potential sum diverges and the support density is exhausted, or deletion is summable and the branch is NoDeletion. In NoDeletion, persistent KL or phase-residue mutual information returns to refined/new-layer PDEC; only the flat KL/MI case is admitted to CleanKLS/DLS. K1--K9 then route all non-clean failures back to PDEC/SAE/Multiplicity/Promotion. The support-exhaustion bridge closes the implication from divergent deletion to exhaustion or named sparse/PDEC return. The deletion-divergence router then reduces the lower bound to OccupancySaturation, because TailIndependence is already NoDeletion-KL/CleanKLS. The occupancy kernel router further removes the sparse-old-hole subcase and turns saturation into a dense old-hole selector kernel. Thus the self-contained diffuse terminal is reduced to DenseOldHoleKernel/Capacity/PDEC/ColumnCRT or the named Kuznetsov-LS atom SC-9; an external DI/BFI/Kuznetsov input would close the flat clean branch only as an external-theorem version.",
+  "status": "pdec_cap_diffuse_terminal_split_reduced_to_dense_old_hole_kernel_or_sc9"
 }

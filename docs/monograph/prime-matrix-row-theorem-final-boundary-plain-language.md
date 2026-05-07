@@ -146,7 +146,7 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_OccupancySaturationOrSC9。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DenseOldHoleKernelOrSC9。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -168,7 +168,7 @@ docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
 diffuse_terminal_split_closed=true；
 self_contained_diffuse_terminal_closed=false；
 narrowest_diffuse_hardpoint=
-  OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+  DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
 ```
 
 通俗说，不持久分支不再只是“删除势 / NoDeletion / CleanKLS”这个宽口径描述。现在链条已经拆成：
@@ -220,11 +220,37 @@ OccupancySaturation:
   => 需要证明触发低层容量矛盾、PDEC 或 ColumnCRT。
 ```
 
+继续用 HRO 的注入界向内压缩：
+
+```text
+experiments/prime_matrix_pdec_cap_occupancy_saturation_kernel_router.py
+docs/monograph/prime-matrix-pdec-cap-occupancy-saturation-kernel-router.md/json
+
+occupancy_saturation_reduced_to_dense_kernel=true；
+narrowest_occupancy_hardpoint=DenseOldHoleKernelCapacityPDECOrColumnCRT。
+```
+
+这一步的关键是：
+
+```text
+|Occ_t| <= min(|H_Q(t)|, r)。
+```
+
+所以只要旧洞数或旧洞 residue 数低于 `(1-eta)r`，占位饱和就不可能发生，HRO 自动给出删除缺口。
+若占位仍近满，则必须存在近满 promoted residue 的旧洞选择核：几乎每个新增素数 residue 都能选到一个旧洞列，
+并且这些列同时避开所有低层素因子的同余禁类。于是硬点从宽口径“占位饱和”压成更具体的：
+
+```text
+DenseOldHoleKernel:
+  近满旧洞选择核
+  => 需要证明触发低层容量过载、PDEC 相位偏斜或 ColumnCRT 列位移刚性。
+```
+
 所以当前真正剩余是更窄的二选一终端估计：
 
 ```text
 持久 Gamma：证明 U_CRT^multi < L_PDEC^multi；
-不持久 Gamma：证明 OccupancySaturationPDECOrColumnCRT，
+不持久 Gamma：证明 DenseOldHoleKernelCapacityPDECOrColumnCRT，
               或证明 SelfContainedKuznetsovLSAtomSC9。
 ```
 

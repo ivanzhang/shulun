@@ -1,0 +1,76 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_occupancy_saturation_kernel_router",
+  "hro_saturation_summary": {
+    "current_layers_far_from_occupancy_saturation": true,
+    "dense_phase_count_at_0_9": 0,
+    "max_avg_occupied_ratio": 0.30256410256410254,
+    "max_old_hole_count": 5,
+    "max_phase_occupied_ratio": 0.3076923076923077,
+    "max_promoted_prime": 17,
+    "max_union_bound_rate": 0.3435897435897436,
+    "min_promoted_prime": 13,
+    "min_saturation_gap": 0.6923076923076923,
+    "row_count": 6
+  },
+  "kernel_law": "HRO already gives |Occ_t| <= min(|H_Q(t)|, r). Hence near-full occupancy |Occ_t|/r -> 1 is impossible in every sparse old-hole regime |H_Q(t)| <= (1-eta)r, and more generally unless the old holes occupy (1-o(1))r distinct promoted-prime residues. In the remaining case one can choose a selector c_b in H_Q(t) for (1-o(1))r residues b, satisfying ((t+bQ-1)P+c_b)=0 mod r while c_b avoids every low-prime forbidden class mod q|Q. Thus the true hardpoint is not generic occupancy saturation, but a dense old-hole selector kernel; it must be discharged by a low-level capacity contradiction, persistent phase-residue PDEC, or ColumnCRT displacement rigidity.",
+  "narrowest_occupancy_hardpoint": "DenseOldHoleKernelCapacityPDECOrColumnCRT",
+  "occupancy_saturation_closed": false,
+  "occupancy_saturation_reduced_to_dense_kernel": true,
+  "open_final_gates": [
+    "DenseOldHoleKernelCapacityPDECOrColumnCRT"
+  ],
+  "review_conclusion": "`OccupancySaturation` 已被严格压缩：稀疏旧洞情形由 HRO 注入界直接排除；若占位仍近满，则必须存在近满 promoted residue 的旧洞选择核。因此下一硬点不再是宽口径占位饱和，而是 `DenseOldHoleKernelCapacityPDECOrColumnCRT`。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "OccupancySaturationPDECOrColumnCRT",
+      "gate": "OccupancyHardpointActive",
+      "meaning": "上一层已把删除侧真正剩余压到 HRO 占位饱和出口。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "|Occ_t| <= min(|H_Q(t)|, r)",
+      "gate": "HROInjectionBoundRegistered",
+      "meaning": "每个旧洞列在 promoted prime residue 上最多贡献一个占位；占位近满必须先有旧洞 residue 近满。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "if |H_Q(t)| <= (1-eta)r then |Occ_t|/r <= 1-eta",
+      "gate": "SparseOldHoleCaseExcluded",
+      "meaning": "只要旧洞数或旧洞 residue 数有固定缺口，占位饱和不可能发生，HRO 自动给出删除缺口。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "exists B_t with |B_t|=(1-o(1))r and c_b in H_Q(t)",
+      "gate": "NearFullOccupancyForcesSelectorKernel",
+      "meaning": "占位饱和等价于存在近满 residue 选择核：对几乎每个 promoted residue，可选一个旧洞列同时避开全部低层素因子同余禁类。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'row_count': 6, 'max_phase_occupied_ratio': 0.3076923076923077, 'max_avg_occupied_ratio': 0.30256410256410254, 'max_union_bound_rate': 0.3435897435897436, 'min_saturation_gap': 0.6923076923076923, 'max_old_hole_count': 5, 'min_promoted_prime': 13, 'max_promoted_prime': 17, 'dense_phase_count_at_0_9': 0, 'current_layers_far_from_occupancy_saturation': True}",
+      "gate": "CurrentAuditsFarFromSaturation",
+      "meaning": "当前物化层的最大相位占位率远低于 1；这是 sanity check，不是全局证明。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "near-full selector kernel not globally excluded",
+      "gate": "DenseOldHoleKernelCapacityPDECOrColumnCRT",
+      "meaning": "剩余硬点已经从一般占位饱和压成稠密旧洞选择核：需证明它触发低层容量矛盾、PDEC 相位偏斜或 ColumnCRT 列位移刚性。"
+    }
+  ],
+  "source_hashes": {
+    "deletion_divergence": "e865b80e6c7e674a57b59ed142c86521c4ed0b24e268bdb9ac1d1df9a1b867e5",
+    "hro_audit_1": "69deae251f17fe9bd22a2d38e093325f608fbe4b17de0e6da98efc00ee7f33e9",
+    "hro_audit_2": "4c42aa7915919e83b3e2ef3e04891b282e1b9d78f80a0d80caa429888d4bba04",
+    "hro_lemma": "5a8c2d8487c31679a7118992498474074b6c160af6a3ac6007d792812c7baeed",
+    "script": "b64a5772ae78c036a515c59401c7620638f37f87513988a0fe6f54be984d2e07"
+  },
+  "status": "occupancy_saturation_reduced_to_dense_old_hole_kernel"
+}

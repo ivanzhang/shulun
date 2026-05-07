@@ -2428,9 +2428,9 @@ closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
   SameSetPDECDualComparisonForPersistentMFU,
-  DiffuseOccupancySaturationOrSelfContainedSC9
+  DiffuseDenseOldHoleKernelOrSelfContainedSC9
 ]；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_OccupancySaturationOrSC9。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DenseOldHoleKernelOrSC9。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2454,11 +2454,11 @@ docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
 diffuse_terminal_split_closed=true；
 self_contained_diffuse_terminal_closed=false；
 open_final_gates=[
-  OccupancySaturationPDECOrColumnCRT,
+  DenseOldHoleKernelCapacityPDECOrColumnCRT,
   SelfContainedKuznetsovLSAtomSC9
 ]；
 narrowest_diffuse_hardpoint=
-  OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+  DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
 ```
 
 结构含义是：`FiberDeletion/NoDeletion-KL/CleanKLS` 不再是宽口径未命名剩余。持续删除必须支付全局删除势；
@@ -2505,14 +2505,34 @@ narrowest_deletion_hardpoint=OccupancySaturationPDECOrColumnCRT。
 `Occ/r+TI/r->1`；其中 `TI/r->1` 已是 promoted prime 非必要，并回流 NoDeletion-KL/CleanKLS。
 所以删除侧唯一新剩余是 `OccupancySaturation`：旧洞 residue 在新增素数层近满占用必须触发容量/PDEC/ColumnCRT。
 
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_occupancy_saturation_kernel_router.py
+docs/monograph/prime-matrix-pdec-cap-occupancy-saturation-kernel-router.md/json
+```
+
+该路由器用 HRO 注入界继续压缩占位饱和：
+
+```text
+occupancy_saturation_reduced_to_dense_kernel=true；
+occupancy_saturation_closed=false；
+narrowest_occupancy_hardpoint=DenseOldHoleKernelCapacityPDECOrColumnCRT。
+```
+
+结构含义是：`|Occ_t| <= min(|H_Q(t)|,r)`，所以旧洞稀疏或 residue 不满时，占位饱和自动失败并给出删除缺口。
+若占位仍近满，则必须存在近满旧洞选择核；也就是几乎每个 promoted residue 都能选到一个同时避开全部低层同余禁类的旧洞列。
+因此删除侧硬点从宽口径 `OccupancySaturationPDECOrColumnCRT` 压成
+`DenseOldHoleKernelCapacityPDECOrColumnCRT`。
+
 因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明更窄的二选一解析终端：
 
 ```text
 Persistent-MFU PDEC:
   持久 Gamma 分支给出多桶同集 LP/对偶容量证书 U_CRT^multi<L_PDEC^multi；
 
-Diffuse OccupancySaturation/SC9:
-  无持久 Gamma 分支证明占用饱和触发 PDEC/ColumnCRT，
+Diffuse DenseOldHoleKernel/SC9:
+  无持久 Gamma 分支证明稠密旧洞选择核触发容量/PDEC/ColumnCRT，
   或证明 KL 平坦 clean residual 的自足 Kuznetsov-LS atom SC-9；
 
 Referee promotion:

@@ -188,10 +188,10 @@ def build_rows(
     )
     diffuse_terminal_split_closed = (
         diffuse_terminal["status"]
-        == "pdec_cap_diffuse_terminal_split_reduced_to_occupancy_saturation_or_sc9"
+        == "pdec_cap_diffuse_terminal_split_reduced_to_dense_old_hole_kernel_or_sc9"
         and diffuse_terminal["diffuse_terminal_split_closed"]
         and diffuse_terminal["narrowest_diffuse_hardpoint"]
-        == "OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
+        == "DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
     )
 
     return [
@@ -287,10 +287,10 @@ def build_rows(
             False,
         ),
         row(
-            "DiffuseOccupancySaturationOrSelfContainedSC9",
+            "DiffuseDenseOldHoleKernelOrSelfContainedSC9",
             False,
             str(diffuse_terminal["open_final_gates"]),
-            "不持久 Gamma 分支剩余自足义务：占用饱和触发 PDEC/ColumnCRT，或 KL 平坦 clean 残余的 SC-9 谱大筛原子。",
+            "不持久 Gamma 分支剩余自足义务：稠密旧洞选择核触发容量/PDEC/ColumnCRT，或 KL 平坦 clean 残余的 SC-9 谱大筛原子。",
             True,
         ),
         row(
@@ -376,7 +376,7 @@ def run(
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
         "narrowest_next_hardpoint": (
-            "SameSetPDECDualComparisonForPersistentMFU_OR_OccupancySaturationOrSC9"
+            "SameSetPDECDualComparisonForPersistentMFU_OR_DenseOldHoleKernelOrSC9"
         ),
         "rows": rows,
         "frontier_law": (
@@ -388,17 +388,17 @@ def run(
             "payment graph Gamma is now closed as a routing law. Persistent Gamma gives a "
             "multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter "
             "FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed "
-            "further to OccupancySaturation/PDEC/ColumnCRT or the self-contained "
+            "further to DenseOldHoleKernel/Capacity/PDEC/ColumnCRT or the self-contained "
             "Kuznetsov-LS atom SC-9. The remaining global final gates are "
             "the persistent same-set PDEC dual comparison and the narrowed diffuse terminal "
             "estimates, not an unnamed APS exit."
         ),
         "review_conclusion": (
             "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
-            "diffuse 分支又被压到 OccupancySaturation/PDEC/ColumnCRT 或自足 SC-9。"
+            "diffuse 分支又被压到 DenseOldHoleKernel/Capacity/PDEC/ColumnCRT 或自足 SC-9。"
             "但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 "
             "PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 "
-            "`OccupancySaturationPDECOrColumnCRT` 或 `SelfContainedKuznetsovLSAtomSC9`。"
+            "`DenseOldHoleKernelCapacityPDECOrColumnCRT` 或 `SelfContainedKuznetsovLSAtomSC9`。"
         ),
     }
 
@@ -423,7 +423,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> current ForcedCap routed to multi-bucket ActualPaymentStitching;",
         "  -> APS profinite dichotomy routed;",
         "  -> remaining terminal estimates:",
-        "       persistent MFU PDEC or diffuse OccupancySaturation / SC-9.",
+        "       persistent MFU PDEC or diffuse DenseOldHoleKernel / SC-9.",
         "```",
         "",
         "## 2. 汇总",
@@ -455,7 +455,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "## 4. 下一步",
             "",
             "下一步直接攻两侧终端估计：持久 `Gamma` 分支的多桶同集 PDEC 对偶容量证书 "
-            "`U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的占用饱和 PDEC/ColumnCRT "
+            "`U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的稠密旧洞选择核容量/PDEC/ColumnCRT "
             "或自足 `SelfContainedKuznetsovLSAtomSC9`。",
             "",
         ]

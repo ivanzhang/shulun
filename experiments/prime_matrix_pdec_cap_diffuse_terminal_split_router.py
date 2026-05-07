@@ -34,6 +34,9 @@ DEFAULT_DELETION_BRIDGE = (
 DEFAULT_DELETION_DIVERGENCE = (
     DOCS / "prime-matrix-pdec-cap-deletion-divergence-lower-bound-router.json"
 )
+DEFAULT_OCCUPANCY_KERNEL = (
+    DOCS / "prime-matrix-pdec-cap-occupancy-saturation-kernel-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-diffuse-terminal-split-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-diffuse-terminal-split-router.md"
 
@@ -83,6 +86,7 @@ def build_rows(
     sc9_frontier: dict[str, Any],
     deletion_bridge: dict[str, Any],
     deletion_divergence: dict[str, Any],
+    occupancy_kernel: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 diffuse 终端分裂审查表。"""
     nodeletion_gates = nodeletion_terminal["nodeletion_gates"]
@@ -136,6 +140,13 @@ def build_rows(
         and deletion_divergence["deletion_divergence_lower_bound_reduced"]
         and deletion_divergence["narrowest_deletion_hardpoint"]
         == "OccupancySaturationPDECOrColumnCRT"
+    )
+    occupancy_kernel_reduced = (
+        occupancy_kernel["status"]
+        == "occupancy_saturation_reduced_to_dense_old_hole_kernel"
+        and occupancy_kernel["occupancy_saturation_reduced_to_dense_kernel"]
+        and occupancy_kernel["narrowest_occupancy_hardpoint"]
+        == "DenseOldHoleKernelCapacityPDECOrColumnCRT"
     )
 
     return [
@@ -203,10 +214,17 @@ def build_rows(
             False,
         ),
         row(
-            "OccupancySaturationPDECOrColumnCRT",
+            "OccupancySaturationKernelReduction",
+            occupancy_kernel_reduced,
+            occupancy_kernel["narrowest_occupancy_hardpoint"],
+            "占位饱和已由 HRO 注入界压成近满旧洞选择核；稀疏旧洞子情形已自动排除。",
             False,
-            "near-full old-hole residues not globally excluded",
-            "还需证明旧洞 residue 在 promoted prime 层近满占用会触发低层容量矛盾、PDEC 或 ColumnCRT。",
+        ),
+        row(
+            "DenseOldHoleKernelCapacityPDECOrColumnCRT",
+            False,
+            "near-full selector kernel not globally excluded",
+            "还需证明近满旧洞选择核触发低层容量矛盾、PDEC 相位偏斜或 ColumnCRT 列位移刚性。",
             True,
         ),
         row(
@@ -227,6 +245,7 @@ def run(
     sc9_frontier_path: Path,
     deletion_bridge_path: Path,
     deletion_divergence_path: Path,
+    occupancy_kernel_path: Path,
 ) -> dict[str, Any]:
     """运行 diffuse 终端分裂路由。"""
     profinite_aps = load_json(profinite_aps_path)
@@ -236,6 +255,7 @@ def run(
     sc9_frontier = load_json(sc9_frontier_path)
     deletion_bridge = load_json(deletion_bridge_path)
     deletion_divergence = load_json(deletion_divergence_path)
+    occupancy_kernel = load_json(occupancy_kernel_path)
     rows = build_rows(
         profinite_aps=profinite_aps,
         infinite_tower=infinite_tower,
@@ -244,12 +264,13 @@ def run(
         sc9_frontier=sc9_frontier,
         deletion_bridge=deletion_bridge,
         deletion_divergence=deletion_divergence,
+        occupancy_kernel=occupancy_kernel,
     )
     split_closed = all(item["closed"] for item in rows if not item["blocks_final"])
     open_final_gates = [item["gate"] for item in rows if item["blocks_final"]]
     return {
         "certificate_type": "prime_matrix_pdec_cap_diffuse_terminal_split_router",
-        "status": "pdec_cap_diffuse_terminal_split_reduced_to_occupancy_saturation_or_sc9",
+        "status": "pdec_cap_diffuse_terminal_split_reduced_to_dense_old_hole_kernel_or_sc9",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "profinite_aps": file_sha256(profinite_aps_path),
@@ -259,6 +280,7 @@ def run(
             "sc9_frontier": file_sha256(sc9_frontier_path),
             "deletion_bridge": file_sha256(deletion_bridge_path),
             "deletion_divergence": file_sha256(deletion_divergence_path),
+            "occupancy_kernel": file_sha256(occupancy_kernel_path),
         },
         "diffuse_terminal_split_closed": split_closed,
         "external_deep_theorem_version_closed_if_accepted": True,
@@ -266,7 +288,7 @@ def run(
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
         "narrowest_diffuse_hardpoint": (
-            "OccupancySaturationPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
+            "DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
         ),
         "rows": rows,
         "split_law": (
@@ -280,16 +302,19 @@ def run(
             "bridge closes the implication from divergent deletion to exhaustion or named "
             "sparse/PDEC return. The deletion-divergence router then reduces the lower bound "
             "to OccupancySaturation, because TailIndependence is already NoDeletion-KL/CleanKLS. "
-            "Thus the self-contained diffuse terminal is reduced to OccupancySaturation/PDEC/"
-            "ColumnCRT or the named Kuznetsov-LS atom SC-9; an external DI/BFI/Kuznetsov input "
-            "would close the flat clean branch only as an external-theorem version."
+            "The occupancy kernel router further removes the sparse-old-hole subcase and "
+            "turns saturation into a dense old-hole selector kernel. Thus the self-contained "
+            "diffuse terminal is reduced to DenseOldHoleKernel/Capacity/PDEC/ColumnCRT or "
+            "the named Kuznetsov-LS atom SC-9; an external DI/BFI/Kuznetsov input would close "
+            "the flat clean branch only as an external-theorem version."
         ),
         "review_conclusion": (
             "不持久 Gamma 分支已经不再是 `FiberDeletion/NoDeletion/CleanKLS` 的宽口径黑箱。"
             "现有账本合成后，非终端门全部接线：持续删除进入删除势账本，删除停止时 KL/MI 偏斜回流 PDEC，"
             "只有 KL/MI 平坦才进入 CleanKLS；而 CleanKLS 的 K1--K9 失败项也全部回流命名出口。"
             "删除势发散后的支撑耗尽桥也已闭合；全局删除势发散下界又被 HRO 压到占用饱和排斥。"
-            "剩余自足硬点压成两项：`OccupancySaturationPDECOrColumnCRT`，或 flat clean 分支的 SC-9 谱大筛原子。"
+            "占位饱和再由 HRO 注入界压成稠密旧洞选择核。"
+            "剩余自足硬点压成两项：`DenseOldHoleKernelCapacityPDECOrColumnCRT`，或 flat clean 分支的 SC-9 谱大筛原子。"
         ),
     }
 
@@ -323,7 +348,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "all K1--K9 pass",
         "  => external KLS if cited, or self-contained SC-9.",
         "deletion-side remaining hardpoint",
-        "  => OccupancySaturationPDECOrColumnCRT.",
+        "  => DenseOldHoleKernelCapacityPDECOrColumnCRT.",
         "```",
         "",
         "## 2. 汇总",
@@ -357,7 +382,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "本路由器关闭的是 diffuse 分支中的无名逃逸和 NoDeletion-KL 第三出口。"
             "它不证明完整行/列无条件定理，也不证明 PDEC-CAP 同集全局对偶证书。"
-            "完全自足版仍需提交 `OccupancySaturationPDECOrColumnCRT` 或 "
+            "完全自足版仍需提交 `DenseOldHoleKernelCapacityPDECOrColumnCRT` 或 "
             "`SelfContainedKuznetsovLSAtomSC9` 的最终证明；外部深定理版必须明确登记所引用的 KLS/DI/BFI/Kuznetsov 输入。",
             "",
         ]
@@ -378,6 +403,7 @@ def main() -> None:
     parser.add_argument("--sc9-frontier-json", type=Path, default=DEFAULT_SC9_FRONTIER)
     parser.add_argument("--deletion-bridge-json", type=Path, default=DEFAULT_DELETION_BRIDGE)
     parser.add_argument("--deletion-divergence-json", type=Path, default=DEFAULT_DELETION_DIVERGENCE)
+    parser.add_argument("--occupancy-kernel-json", type=Path, default=DEFAULT_OCCUPANCY_KERNEL)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -390,6 +416,7 @@ def main() -> None:
         sc9_frontier_path=args.sc9_frontier_json,
         deletion_bridge_path=args.deletion_bridge_json,
         deletion_divergence_path=args.deletion_divergence_json,
+        occupancy_kernel_path=args.occupancy_kernel_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
