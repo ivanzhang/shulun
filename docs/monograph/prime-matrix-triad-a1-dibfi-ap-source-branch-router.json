@@ -1,0 +1,69 @@
+{
+  "ap_source_branch_closed": true,
+  "branch_rows": [
+    {
+      "branch": "APSourceDirectBFI",
+      "closed": true,
+      "evidence": "BFI atom is pinned; BFI level ledger is closed; the remaining AP identity gates are definitional on this branch.",
+      "remaining": "none on AP-source branch",
+      "route": "use BFI1987-Theorem10 as one prime-AP atom",
+      "scope": "R_clean is defined upstream as dyadic BFI prime-AP discrepancy with matching main term and coefficients"
+    },
+    {
+      "branch": "NonAPSourceGenericWFD",
+      "closed": false,
+      "evidence": "SOURCE-CEN no-go and AP residual router block downstream back-projection; direct BFI AP atom cannot be used.",
+      "remaining": "SeparateKE13DIBFIWindow or external original-dispersion theorem",
+      "route": "fallback",
+      "scope": "the clean residual is only an uncentered WFD/KE-13 window, not an upstream AP discrepancy"
+    },
+    {
+      "branch": "CoverageDichotomy",
+      "closed": true,
+      "evidence": "AP residual router isolated exactly the two source-definition gates; branch coverage pattern is already used in A1 source statements.",
+      "remaining": "none after explicit branch statement",
+      "route": "AP-source vs non-AP-source dichotomy",
+      "scope": "a source object is either declared/proved AP-source before Cauchy, or it is not"
+    },
+    {
+      "branch": "NoSilentAPUpgrade",
+      "closed": true,
+      "evidence": "AP residual identity router records that downstream WFD identification is diagnostic, not a source identity.",
+      "remaining": "none",
+      "route": "non-AP source stays fallback",
+      "scope": "generic WFD cannot be silently upgraded to prime-AP discrepancy"
+    },
+    {
+      "branch": "GenericFallbackRegistered",
+      "closed": true,
+      "evidence": "generic WFD DI/BFI contract is materialized except for exact citation/hypothesis match.",
+      "remaining": "precise external theorem match or self-contained KE-13 no-projection",
+      "route": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch",
+      "scope": "non-AP generic WFD has an external route already materialized at contract level"
+    }
+  ],
+  "certificate_type": "triad_a1_dibfi_ap_source_branch_router",
+  "closed_branches": [
+    "APSourceDirectBFI",
+    "CoverageDichotomy",
+    "NoSilentAPUpgrade",
+    "GenericFallbackRegistered"
+  ],
+  "generic_nonap_fallback_closed": false,
+  "open_branches": [
+    "NonAPSourceGenericWFD"
+  ],
+  "previous_terminal_gap": "UpstreamCleanA1APSourceDefinition",
+  "review_conclusion": "AP-source 分支已按定义性合同闭合：若原始 clean A1 残差在 Cauchy/dispersion 前就是 BFI prime-AP discrepancy 的 dyadic 总和，则直接 BFI 原子可用且 level 已闭合。非 AP-source generic WFD 不能偷用该结论，剩余转为原始 dispersion 外部定理匹配。",
+  "source_hashes": {
+    "ap_residual_identity_json": "5c62fa3f0c1d62f5cd8e09f6329d4af7eea1c96b27797cc2d837a708b28d1355",
+    "bfi_level_ledger_json": "66c8366dd553edde5e44719df034cdb4b10c012676c7d0d140ce722e1d13fb9c",
+    "branch_statement_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "direct_bfi_atom_json": "daa5db7d52fa40b9a14b672fd0966b69ca803fee412dca1285127ee3fd4682ad",
+    "generic_wfd_dibfi_json": "f3d583dd214fa6c1b982c05d8a9795681b00f71b6f38ed63094501e491aba972",
+    "script": "f77d6eb69a7baa40f6252346e04e8abe223066fda879e2b06f2cab3403ef9113"
+  },
+  "status": "ap_source_direct_bfi_branch_closed_nonap_fallback_open",
+  "structural_law": "The upstream AP source identity can be closed only as an explicit branch statement: on the AP-source branch, R_clean is defined before Cauchy/dispersion as the dyadic BFI prime-AP discrepancy with matching Delta_q, lambda_q and Type coefficients, so BFI Theorem 10 applies directly. The complement is not lost or silently upgraded; a non-AP generic WFD source must use the KE-13 no-projection/original-dispersion fallback. Thus the direct BFI route is closed for AP-source inputs, while the broader generic non-AP branch remains a precise external theorem match.",
+  "terminal_gap_after_router": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatchForNonAPSource"
+}

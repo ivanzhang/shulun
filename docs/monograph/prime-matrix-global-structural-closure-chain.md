@@ -5751,3 +5751,72 @@ terminal_dual_gap
 这一步把当前最窄剩余从“泛泛的 BFI 适配”变成一个可审稿的源定义等式。若能在上游原始残差处
 写出该等式，直接 BFI 外部引用路线即可继续闭合；若不能写出，则不能诚实使用 BFI prime-AP 原子，
 只能回到 KE-13 无投影 fallback 或另行声明一个外部原始 dispersion 定理。
+
+## 100. AP-source 分支：直接 BFI 分支闭合，非 AP generic WFD 回到原始 dispersion 匹配
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_ap_source_branch_router.py` 后，第 99 节留下的
+`UpstreamCleanA1APSourceDefinition` 被整理成显式分支陈述，而不是继续把 generic WFD 偷换成
+AP 源对象。
+
+分支律为：
+
+```text
+AP-source branch:
+  R_clean 在 Cauchy/dispersion 前定义为 BFI prime-AP discrepancy 的 dyadic 总和；
+  Delta_q、lambda_q、alpha/beta、dyadic 权与主项扣除同源；
+  BFI atom 与 level ledger 已闭合；
+
+non-AP generic WFD branch:
+  只有未中心化 WFD/KE-13 窗口；
+  不能从下游倒推 AP 源等式；
+  必须走 KE-13 无投影 / 原始 dispersion 外部定理 fallback。
+```
+
+机器结果：
+
+```text
+status=ap_source_direct_bfi_branch_closed_nonap_fallback_open；
+ap_source_branch_closed=true；
+generic_nonap_fallback_closed=false；
+closed_branches=[
+  APSourceDirectBFI,
+  CoverageDichotomy,
+  NoSilentAPUpgrade,
+  GenericFallbackRegistered
+]；
+open_branches=[
+  NonAPSourceGenericWFD
+]；
+terminal_gap_after_router=DIBFIOriginalDispersionTheoremLocationAndHypothesisMatchForNonAPSource。
+```
+
+这一步关闭的是 AP-source 直接 BFI 分支：
+
+```text
+APSourceDirectBFI:
+  BFI1987-Theorem10 已定位；
+  BFI level 指数账本已关闭；
+  上游源定义若声明为 AP discrepancy，则直接 BFI 原子可用。
+```
+
+同时保留非 AP 分支：
+
+```text
+NonAPSourceGenericWFD:
+  当前 generic WFD 只锁定到未中心化 WFD/KE-13 对象；
+  SOURCE-CEN no-go 禁止免费中心化或下游投影回推；
+  剩余为原始 dispersion 外部定理位置与假设匹配，或完全自足 KE-13 无投影证明。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFIAPSourceBranchRouter
+  => ap_source_direct_bfi_branch_closed_nonap_fallback_open；
+
+terminal_dual_gap
+  => DIBFIOriginalDispersionTheoremLocationAndHypothesisMatchForNonAPSource。
+```
+
+因此当前已经不是 AP 源等式问题。AP-source 版本已可用直接 BFI 闭合；若最终命题仍要覆盖
+broader generic WFD 非 AP 源对象，最后剩余变成一个外部原始 dispersion 定理假设匹配问题。
