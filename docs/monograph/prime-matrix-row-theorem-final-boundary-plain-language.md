@@ -499,6 +499,26 @@ narrowest_next_hardpoint=
 这条链已经由 canonical-source final boundary 闭合。剩余的 `DIBFIQuantifiedNoProjectionWindowCertificate`
 只属于 generic/external 原始 DI/BFI 路线；完整行/列无条件定理仍没有因此闭合。
 
+继续新增 PDEC-CAP 自足边界提升路由器后：
+
+```text
+experiments/prime_matrix_self_contained_pdec_cap_boundary_lift_router.py
+docs/monograph/prime-matrix-self-contained-pdec-cap-boundary-lift-router.md/json
+
+canonical_source_self_contained_pdec_bottleneck_closed=true；
+narrowest_self_contained_boundary=
+  NoFurtherCanonicalSourceSelfContainedPDECCapGap；
+generic_external_dibfi_boundary_open=true；
+open_final_gates=[
+  GlobalTerminalFamiliesStillOpen,
+  DStructureRankinRefereeStillOpen
+]。
+```
+
+这一步的通俗结论是：如果限定在 canonical RIW/Buchstab 来源分支内，PDEC-CAP 已没有新的自足缺口；
+如果要证明完整行/列无条件定理，还必须处理“所有未来终端家族都能被排斥”的全局晋级问题，以及
+`DStructureRankinReferee`。如果要走 generic/external 路线，则另需提交 DI/BFI 无投影量化证书。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

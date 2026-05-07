@@ -2835,3 +2835,30 @@ open_external_gates=[DIBFIQuantifiedNoProjectionWindowCertificate]。
 
 这一步继续保持诚实边界：它关闭的是全局终端家族剩余中的“未命名或局部样本硬点”，不是完整行/列
 无条件证明。
+
+继续新增：
+
+```text
+experiments/prime_matrix_self_contained_pdec_cap_boundary_lift_router.py
+docs/monograph/prime-matrix-self-contained-pdec-cap-boundary-lift-router.md/json
+```
+
+该路由器把 PDEC-CAP 的 canonical-source 闭合结论向上提升到自足终端瓶颈层：
+
+```text
+closed_nonfinal_lift_gates=true；
+canonical_source_self_contained_pdec_bottleneck_closed=true；
+pdec_cap_same_set_global_dual_closed=false；
+generic_external_dibfi_boundary_open=true；
+row_column_unconditional_closed=false；
+narrowest_self_contained_boundary=
+  NoFurtherCanonicalSourceSelfContainedPDECCapGap；
+narrowest_global_next_hardpoint=
+  GlobalTerminalFamilyPromotionReview_OR_DStructureRankinReferee。
+```
+
+结构含义是：旧的 `PDEC_CAP_SameSetGlobalDualCertificate` 已不再是 canonical-source 自足分支的
+开门；它已经由横向来源嵌入、canonical 层转移和既有 A1 来源边界闭合。剩余的
+`DIBFIQuantifiedNoProjectionWindowCertificate` 只属于 generic/external 原始 `DI/BFI` 路线。
+完整行/列无条件命题仍需全局终端家族晋级审查与 `DStructureRankinReferee`，不能由这次
+PDEC-CAP 自足边界提升替代。

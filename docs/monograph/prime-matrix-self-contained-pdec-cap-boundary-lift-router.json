@@ -1,0 +1,86 @@
+{
+  "canonical_source_self_contained_pdec_bottleneck_closed": true,
+  "certificate_type": "prime_matrix_self_contained_pdec_cap_boundary_lift_router",
+  "closed_nonfinal_lift_gates": true,
+  "d_structure_rankin_referee_open": true,
+  "external_next_hardpoint": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "generic_external_dibfi_boundary_open": true,
+  "global_terminal_family_exclusion_closed": false,
+  "lift_law": "The former self-contained PDEC-CAP bottleneck is closed only after restricting to the canonical RIW/Buchstab source branch and using the transverse source embedding plus canonical layer transfer. The remaining DIBFI gate is an external/generic branch, not a canonical-source self-contained gap. This does not close the full row/column theorem, because global terminal-family promotion and the D-structure/Rankin referee interface remain open.",
+  "narrowest_global_next_hardpoint": "GlobalTerminalFamilyPromotionReview_OR_DStructureRankinReferee",
+  "narrowest_self_contained_boundary": "NoFurtherCanonicalSourceSelfContainedPDECCapGap",
+  "open_final_gates": [
+    "GlobalTerminalFamiliesStillOpen",
+    "DStructureRankinRefereeStillOpen"
+  ],
+  "pdec_cap_same_set_global_dual_closed": false,
+  "review_conclusion": "PDEC-CAP 的旧自足瓶颈已经完成边界提升：在 canonical-source 分支内，`PDEC_CAP_SameSetGlobalDualCertificate` 不再是开放硬点；最新剩余 `DIBFIQuantifiedNoProjectionWindowCertificate` 只属于 generic/external 原始 DI/BFI 路线。完整行/列无条件定理仍未闭合，剩余是全局终端家族晋级审查与 `DStructureRankinReferee`。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "boundary_warning": "这是旧瓶颈定位，不是最终全局定理。",
+      "closed": true,
+      "evidence": "PDEC_CAP_SameSetGlobalDualCertificate",
+      "gate": "PreviousSelfContainedPDECBottleneckAccepted",
+      "lifted_meaning": "上一层已经把 canonical-source 自足路线的独立数学瓶颈压到 PDEC-CAP。"
+    },
+    {
+      "blocks_final": false,
+      "boundary_warning": "闭合范围只限 canonical RIW/Buchstab source branch。",
+      "closed": true,
+      "evidence": "canonical=True; materialized=True",
+      "gate": "CanonicalSourcePDECCapBranchClosed",
+      "lifted_meaning": "PDEC-CAP 内部的来源嵌入、横向商、canonical 层转移和已物化门控已经闭合。"
+    },
+    {
+      "blocks_final": false,
+      "boundary_warning": "`DIBFIQuantifiedNoProjectionWindowCertificate` 只属于 generic/external 原始 DI/BFI 路线。",
+      "closed": true,
+      "evidence": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "gate": "NoFurtherCanonicalSelfContainedPDECGate",
+      "lifted_meaning": "旧 `PDEC_CAP_SameSetGlobalDualCertificate` 不再是 canonical-source 自足分支的开门。"
+    },
+    {
+      "blocks_final": false,
+      "boundary_warning": "若要关闭 generic/external 版本，仍需提交无投影对象恒等式与量化尺度代入。",
+      "closed": true,
+      "evidence": "DIBFIQuantifiedNoProjectionWindowCertificate",
+      "gate": "GenericExternalDIBFIBoundarySeparated",
+      "lifted_meaning": "外部 DI/BFI 量化证书被保留为外部分支，不再污染 canonical-source 自足声明。"
+    },
+    {
+      "blocks_final": false,
+      "boundary_warning": "不能把 PDEC-CAP 的 canonical 闭合升级为行/列无条件定理。",
+      "closed": true,
+      "evidence": "CurrentMaterializedFrontierExhausted_GlobalTerminalFamiliesOpen",
+      "gate": "RowFrontierBoundaryDisciplinePreserved",
+      "lifted_meaning": "行列前沿仍区分已闭合 canonical 边界、已反证 generic 分支和未闭合全局命题。"
+    },
+    {
+      "blocks_final": true,
+      "boundary_warning": "PDEC、LocalSurvivor、CleanKLS/DLS 的全局生成/排斥仍是最终晋级前沿。",
+      "closed": false,
+      "evidence": "PDEC_CAP_OR_KLS_EXT_OR_REFEREE",
+      "gate": "GlobalTerminalFamiliesStillOpen",
+      "lifted_meaning": "完整行/列命题仍需全局终端家族排斥或外部输入。"
+    },
+    {
+      "blocks_final": true,
+      "boundary_warning": "该门不能由 A1/PDEC-CAP canonical 边界替代。",
+      "closed": false,
+      "evidence": "BLOCK-REFEREE",
+      "gate": "DStructureRankinRefereeStillOpen",
+      "lifted_meaning": "最终定理升级仍需 D-structure/Tail-log4/finite Rankin 接口通过独立审稿。"
+    }
+  ],
+  "source_hashes": {
+    "global_terminal_family_split": "f9a5e6a0583a20578b3a98952382fe6a149b6c46ad57591974e4268bd8d9a03b",
+    "line_referee": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
+    "pdec_cap_same_set_global_dual": "2fd26731f4162835ebbe74514a7e8a5db980ca2d03a37a101a94b5a1bf5ec2ca",
+    "row_column_unconditional_frontier": "c1a72dd2f85620642d3496873d4b509f3e3813532bc55ddb2dd58ab81d13d033",
+    "script": "6e3a51fa56afe24c13b291b76db4b3b3739c2133fa9d453f141d74d610a96744",
+    "self_contained_terminal_bottleneck": "efa40265600dc3d24976379f5605492932c3b23abe70e0a0b0c936454b3aa197"
+  },
+  "status": "self_contained_pdec_cap_boundary_lifted_global_not_closed"
+}
