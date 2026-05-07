@@ -2,11 +2,11 @@
 
 **状态：** `same_set_capacity_frontier_materialized_terminal_dual_open`
 
-Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。下一步不再是 A1 内部路由，而是证明 NC-BLK 或给出外部 DI/BFI 原始 dispersion 引用。
+Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。下一步不再是 A1 内部路由，而是证明 MovingBlockSpreadNCBLK 或给出外部 DI/BFI 原始 dispersion 引用。
 
 ## 1. 结构律
 
-同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，当前无黑箱版只剩 NC-BLK，外部版只剩 DI/BFI 原始 dispersion 引用。
+同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。当前无黑箱版只剩 MovingBlockSpreadNCBLK，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。
 
 ```text
 Same-set capacity upper:
@@ -24,14 +24,15 @@ Same-set capacity upper:
   standard prime-lift pays positive deletion potential；
   NoDeletion-KL is routed to recursive PDEC or CleanKLS/DLS；
   A1 clean KLS is reduced to Kuznetsov-LS atom or external citation；
-  SC-9 is reduced to NC-BLK or external DI/BFI dispersion。
+  SC-9 is reduced to NC-BLK or external DI/BFI dispersion；
+  NC-BLK needs moving-block spread or external original dispersion。
 ```
 
 ## 2. 汇总
 
 - `all_known_frontiers_routed=True`。
-- `terminal_dual_gap=NCBLKOrExternalDIBFIOriginalDispersion`。
-- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'external_kls_input_registered_self_contained_atom_open': 1, 'no_fourth_exit': 1, 'nodeletion_terminal_routed_clean_kls_open': 1, 'positive_deletion_potential_or_nodeletion_kl': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'sc9_routed_to_ncblk_or_external_dibfi': 1, 'selective_promotion_resolved_by_finite_split': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
+- `terminal_dual_gap=MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion`。
+- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'external_kls_input_registered_self_contained_atom_open': 1, 'moving_block_spread_or_external_dibfi_required': 1, 'no_fourth_exit': 1, 'nodeletion_terminal_routed_clean_kls_open': 1, 'positive_deletion_potential_or_nodeletion_kl': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'sc9_routed_to_ncblk_or_external_dibfi': 1, 'selective_promotion_resolved_by_finite_split': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
 - `lp_summary={'q': 2310, 'p_count': 9, 'all_zero_blocks_ready': True, 'box_only_global_closure': False, 'box_only_obstruction_count': 9, 'row_generators_ready': ['nonnegativity', 'phase_caps_g_le_M', 'WHOLEDEF_zero_block', 'BRIDGED_zero_block']}`。
 - `fourier_summary={'q': 2310, 'p_count': 9, 'class_counts': {'EmptyCap': 8267, 'PersistentCap': 192813, 'SparseCap': 48292}, 'has_persistent_cap': True}`。
 - `dualcap_summary={'aggregate_class_counts': {'ForcedPersistentByDensityBarrier': 24, 'PersistentCap': 68, 'SparseCap': 16}, 'aggregate_route_counts': {'LiftOrColumnTailOrCleanKLS': 24, 'LocalSurvivorOrExplicitPDEC': 16, 'RefinedPDECOrColumnTailRows': 68}}`。
@@ -57,6 +58,7 @@ Same-set capacity upper:
 | `ContinuousNoDeletionTerminal` | `nodeletion_terminal_routed_clean_kls_open` | NoDeletion 终端已接入 KL/PDEC/CleanKLS 门控；route_counts={'PositiveDeletionPotentialOrNoDeletionPDECOrCleanKLS': 52}；terminal_gap=CleanKLSDLSLargeSieveOrExternalKLSInput。 | NoDeletion-KL 不再是独立出口；继续提交 CleanKLS/DLS 大筛证书或外部 KLS 输入。 |
 | `A1CleanKLSExternalInput` | `external_kls_input_registered_self_contained_atom_open` | A1 clean KLS 外部输入已登记；all_admission_verified_or_routed=True；terminal_gap=KuznetsovLSAtomSC9OrExternalCitation。 | 外部深定理版接入 DI/BFI/Kuznetsov；完全自足版只剩证明 Kuznetsov-LS atom (SC-9)。 |
 | `A1KuznetsovLSAtomFrontier` | `sc9_routed_to_ncblk_or_external_dibfi` | SC-9 已展开并路由；terminal_gap=NCBLKOrExternalDIBFIOriginalDispersion；self_contained=open_at_ncblk_actual_block_nonconcentration。 | 无黑箱版直接证明 NC-BLK；外部版引用 DI/BFI 原始 dispersion 或等价窗口 KLS。 |
+| `A1NCBLKProjectionGap` | `moving_block_spread_or_external_dibfi_required` | fixed-projection diffuse 到 moving-block NC-BLK 存在缺口；terminal_gap=MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion。 | 内部版证明 MovingBlockSpreadNCBLK；外部版引用带局部方差扣除的 DI/BFI dispersion。 |
 
 ## 4. 当前结论
 
@@ -80,8 +82,9 @@ standard prime-lift deletion potential materialized；
 NoDeletion terminal routed；
 A1 clean KLS external input registered；
 SC-9 routed to NC-BLK / external DI-BFI；
-remaining independent gap is NC-BLK or external DI/BFI original dispersion。
+NC-BLK projection gap named；
+remaining independent gap is MovingBlockSpreadNCBLK or external DI/BFI original dispersion。
 ```
 
 所以下一步唯一值得硬攻的 A1 目标是同集结构行：
-证明 NC-BLK 实际块非集中，或给出可复核的外部 DI/BFI 原始 dispersion 引用。
+证明 MovingBlockSpreadNCBLK，或给出可复核的外部 DI/BFI 原始 dispersion 引用。

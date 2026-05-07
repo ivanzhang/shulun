@@ -44,6 +44,9 @@ DEFAULT_CLEAN_KLS_EXTERNAL = (
 DEFAULT_KUZNETSOV_FRONTIER = (
     DOCS / "prime-matrix-triad-a1-kuznetsov-ls-atom-frontier-router.json"
 )
+DEFAULT_NCBLK_PROJECTION = (
+    DOCS / "prime-matrix-triad-a1-ncblk-projection-gap-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -110,6 +113,7 @@ def build_frontier_rows(
     nodeletion_terminal: dict[str, Any],
     clean_kls_external: dict[str, Any],
     kuznetsov_frontier: dict[str, Any],
+    ncblk_projection: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -283,6 +287,17 @@ def build_frontier_rows(
             ),
             "next_action": "无黑箱版直接证明 NC-BLK；外部版引用 DI/BFI 原始 dispersion 或等价窗口 KLS。",
         },
+        {
+            "frontier": "A1NCBLKProjectionGap",
+            "status": "moving_block_spread_or_external_dibfi_required"
+            if ncblk_projection["fixed_projection_gap_exists"]
+            else "ncblk_projection_gap_closed",
+            "evidence": (
+                f"fixed-projection diffuse 到 moving-block NC-BLK 存在缺口；"
+                f"terminal_gap={ncblk_projection['terminal_gap_after_router']}。"
+            ),
+            "next_action": "内部版证明 MovingBlockSpreadNCBLK；外部版引用带局部方差扣除的 DI/BFI dispersion。",
+        },
     ]
 
 
@@ -304,6 +319,7 @@ def run(
     nodeletion_terminal_path: Path,
     clean_kls_external_path: Path,
     kuznetsov_frontier_path: Path,
+    ncblk_projection_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -323,6 +339,7 @@ def run(
     nodeletion_terminal = load_json(nodeletion_terminal_path)
     clean_kls_external = load_json(clean_kls_external_path)
     kuznetsov_frontier = load_json(kuznetsov_frontier_path)
+    ncblk_projection = load_json(ncblk_projection_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -341,6 +358,7 @@ def run(
         nodeletion_terminal,
         clean_kls_external,
         kuznetsov_frontier,
+        ncblk_projection,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -359,6 +377,7 @@ def run(
         "nodeletion_terminal_routed_clean_kls_open",
         "external_kls_input_registered_self_contained_atom_open",
         "sc9_routed_to_ncblk_or_external_dibfi",
+        "moving_block_spread_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -385,6 +404,7 @@ def run(
             "continuous_nodeletion_terminal_json": file_sha256(nodeletion_terminal_path),
             "a1_clean_kls_external_input_json": file_sha256(clean_kls_external_path),
             "a1_kuznetsov_ls_atom_frontier_json": file_sha256(kuznetsov_frontier_path),
+            "a1_ncblk_projection_gap_json": file_sha256(ncblk_projection_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -395,7 +415,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "NCBLKOrExternalDIBFIOriginalDispersion",
+        "terminal_dual_gap": "MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -406,7 +426,8 @@ def run(
             "标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到"
             " KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记："
             "外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，"
-            "当前无黑箱版只剩 NC-BLK，外部版只剩 DI/BFI 原始 dispersion 引用。"
+            "NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。"
+            "当前无黑箱版只剩 MovingBlockSpreadNCBLK，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -416,7 +437,8 @@ def run(
             "prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，"
             "标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。"
             "A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。"
-            "下一步不再是 A1 内部路由，而是证明 NC-BLK 或给出外部 DI/BFI 原始 dispersion 引用。"
+            "NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。"
+            "下一步不再是 A1 内部路由，而是证明 MovingBlockSpreadNCBLK 或给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
 
@@ -450,7 +472,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  standard prime-lift pays positive deletion potential；",
         "  NoDeletion-KL is routed to recursive PDEC or CleanKLS/DLS；",
         "  A1 clean KLS is reduced to Kuznetsov-LS atom or external citation；",
-        "  SC-9 is reduced to NC-BLK or external DI/BFI dispersion。",
+        "  SC-9 is reduced to NC-BLK or external DI/BFI dispersion；",
+        "  NC-BLK needs moving-block spread or external original dispersion。",
         "```",
         "",
         "## 2. 汇总",
@@ -501,11 +524,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "NoDeletion terminal routed；",
             "A1 clean KLS external input registered；",
             "SC-9 routed to NC-BLK / external DI-BFI；",
-            "remaining independent gap is NC-BLK or external DI/BFI original dispersion。",
+            "NC-BLK projection gap named；",
+            "remaining independent gap is MovingBlockSpreadNCBLK or external DI/BFI original dispersion。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "证明 NC-BLK 实际块非集中，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "证明 MovingBlockSpreadNCBLK，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -542,6 +566,9 @@ def main() -> None:
     parser.add_argument(
         "--kuznetsov-frontier-json", type=Path, default=DEFAULT_KUZNETSOV_FRONTIER
     )
+    parser.add_argument(
+        "--ncblk-projection-json", type=Path, default=DEFAULT_NCBLK_PROJECTION
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -564,6 +591,7 @@ def main() -> None:
         nodeletion_terminal_path=args.nodeletion_terminal_json,
         clean_kls_external_path=args.clean_kls_external_json,
         kuznetsov_frontier_path=args.kuznetsov_frontier_json,
+        ncblk_projection_path=args.ncblk_projection_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

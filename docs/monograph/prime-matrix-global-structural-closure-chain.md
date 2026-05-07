@@ -3904,3 +3904,70 @@ terminal_dual_gap => NCBLKOrExternalDIBFIOriginalDispersion。
 
 这一步继续保持边界：没有宣称完全自足闭合；但已经把 A1 clean 分支从 `CleanKLS`、
 `SC-9` 这样的大缺口压成一个具体可审稿命题 `NC-BLK`，或明确的外部 DI/BFI 引用义务。
+
+## 75. A1 NC-BLK 投影缺口审计
+
+新增 `experiments/prime_matrix_triad_a1_ncblk_projection_gap_router.py` 后，
+第 74 节留下的 `NC-BLK` 被进一步检查其能否由 A1 diffuse 的 fixed-projection 平坦直接推出。
+
+机器结果：
+
+```text
+status=ncblk_requires_moving_block_spread_or_external_dibfi；
+fixed_projection_gap_exists=True；
+current_internal_ncblk_closed=False；
+terminal_gap_after_router=MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion。
+```
+
+核心发现：
+
+```text
+A1 diffuse branch controls fixed finite signatures；
+NC-BLK asks for moving same-(u,v) block non-concentration；
+fixed projection flatness does not control moving labels。
+```
+
+也就是说，沿无限层：
+
+```text
+每个固定有限投影原子质量趋零
+```
+
+并不能推出：
+
+```text
+所有随尺度移动的 balanced block b=(u,v) 都有 log^{-A} 块能量节省。
+```
+
+原因是 `(u,v)` 块标签随 `y,Q,R` 增长而移动；一个反例族可以避开任意固定投影检测，
+却始终把责任转移到新的移动块上。这个缺口正是 `NC-BLK` 的真实内容。
+
+当前已排除的内部伪路线仍然有效：
+
+```text
+BD-CEN identity 不成立；
+SOURCE-CEN 会改变目标对象；
+raw BLK-energy-core 被单块单原子测试阻断。
+```
+
+因此可接受的下一输入只有两类：
+
+```text
+MovingBlockSpread:
+  从实际 WFD/Type-I-II/Fourier/well-factorable 系数来源证明
+  每个 moving same-(u,v) block 的局部均值/块能量足够分散；
+
+ExternalDIBFIOriginalDispersion:
+  引用原始 DI/BFI dispersion 定理，且该定理必须直接处理未中心化 WFD 目标，
+  或已经包含同 `(u,v)` 块局部方差扣除。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1NCBLKProjectionGap => moving_block_spread_or_external_dibfi_required；
+terminal_dual_gap => MovingBlockSpreadNCBLKOrExternalDIBFIOriginalDispersion。
+```
+
+这一步是负向但关键的硬推进：它排除了“fixed-projection flat => NC-BLK”的隐藏跳步，
+把自足版最后硬点改写为更准确的 `MovingBlockSpreadNCBLK`。
