@@ -1,0 +1,69 @@
+{
+  "canonical_branch_input_next_target": "A1CanonicalSourceBranchStatementAndCoverage",
+  "canonical_branch_input_status": "canonical_branch_admission_reduced_to_branch_statement_and_coverage",
+  "canonical_internal_branch_statement_adopted": true,
+  "canonical_source_branch_internal_gap_closed": true,
+  "certificate_type": "triad_a1_branch_statement_coverage_router",
+  "coverage_no_overlap_no_gap": true,
+  "gate_rows": [
+    {
+      "available": "canonical source branch is legal and all downstream support routers are conditional",
+      "closed": true,
+      "gap": "none after this branch statement is adopted",
+      "gate": "CanonicalInternalBranchStatement",
+      "needed": "state internal no-black-box branch only for lambda_c^RIW-tree",
+      "route": "canonical RIW/Buchstab source branch uses internal support chain"
+    },
+    {
+      "available": "generic WFD source is broader than canonical source",
+      "closed": true,
+      "gap": "none after this branch statement is adopted",
+      "gate": "GenericComplementStatement",
+      "needed": "state generic noncanonical branch is not internally closed",
+      "route": "generic WFD branch uses ExternalDIBFIOriginalDispersion or PDEC/SAE"
+    },
+    {
+      "available": "source is either canonical RIW/Buchstab or noncanonical",
+      "closed": true,
+      "gap": "none by source dichotomy",
+      "gate": "CoverageNoOverlapNoGap",
+      "needed": "the two branches cover the source alternatives",
+      "route": "canonical vs noncanonical source dichotomy"
+    },
+    {
+      "available": "generic WFD source failed the support route",
+      "closed": true,
+      "gap": "none after explicit branch statement",
+      "gate": "NoSilentGenericUpgrade",
+      "needed": "do not claim self-contained closure for generic WFD",
+      "route": "generic closure requires external DI/BFI"
+    },
+    {
+      "available": "canonical source branch feeds all previous internal routers",
+      "closed": true,
+      "gap": "none in the current routed chain",
+      "gate": "CanonicalBranchInternalGap",
+      "needed": "no remaining source-lock/selector/support gap on canonical branch",
+      "route": "source branch statement closes the source-lock terminal for canonical branch"
+    },
+    {
+      "available": "external DI/BFI route is registered",
+      "closed": false,
+      "gap": "still external/deep; not solved by canonical branch",
+      "gate": "GenericSelfContainedGap",
+      "needed": "generic WFD self-contained proof if one wants the broader theorem",
+      "route": "ExternalDIBFIOriginalDispersion"
+    }
+  ],
+  "generic_complement_statement_adopted": true,
+  "generic_wfd_self_contained_gap_closed": false,
+  "next_internal_target": "NoFurtherInternalGapForCanonicalSourceBranch",
+  "reduction_law": "The branch statement is now explicit. The no-black-box internal A1 clean proof is a canonical-source statement: lambda_c must be the canonical RIW/Buchstab decision-tree coefficient. The generic noncanonical well-factorable WFD branch is not silently upgraded; it remains an external DI/BFI original-dispersion branch or returns to PDEC/SAE. Thus the source-lock terminal is closed for the canonical branch, while the broader generic WFD theorem remains external.",
+  "review_conclusion": "A1CanonicalSourceBranchStatementAndCoverage 已落实为显式二分陈述：canonical RIW/Buchstab source branch 走内部支撑链，generic noncanonical WFD branch 不再假装内部闭合，只保留外部 DI/BFI 或 PDEC/SAE 路由。因此 canonical 源头分支的 source-lock 终端已闭合；剩余外部缺口只属于 broader generic WFD 版本。",
+  "source_hashes": {
+    "canonical_branch_admission_json": "80d6a38882ba2326054e52702f82ae67bee05fc0aed3e94fb58b53287c7debff",
+    "script": "ab407acd20f9142e93a45c5eda56c2f8f6521c1c15157c1803a95bc583d20659"
+  },
+  "status": "canonical_source_branch_statement_adopted_generic_wfd_external_only",
+  "terminal_gap_after_router": "ExternalDIBFIOriginalDispersionForGenericWFDBranchOnly"
+}

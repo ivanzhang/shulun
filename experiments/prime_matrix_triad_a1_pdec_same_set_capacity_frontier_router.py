@@ -83,6 +83,9 @@ DEFAULT_SOURCE_LOCK_CONTRACT = (
 DEFAULT_CANONICAL_BRANCH_ADMISSION = (
     DOCS / "prime-matrix-triad-a1-canonical-branch-admission-router.json"
 )
+DEFAULT_BRANCH_STATEMENT_COVERAGE = (
+    DOCS / "prime-matrix-triad-a1-branch-statement-coverage-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -164,6 +167,7 @@ def build_frontier_rows(
     source_identification: dict[str, Any],
     source_lock_contract: dict[str, Any],
     canonical_branch_admission: dict[str, Any],
+    branch_statement_coverage: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -514,6 +518,18 @@ def build_frontier_rows(
             ),
             "next_action": "明确 canonical 内部分支与 generic 外部分支覆盖关系；避免静默 generic 内部闭合。",
         },
+        {
+            "frontier": "A1BranchStatementCoverageRouter",
+            "status": "canonical_source_branch_internal_gap_closed_generic_external_only"
+            if branch_statement_coverage["next_internal_target"]
+            == "NoFurtherInternalGapForCanonicalSourceBranch"
+            else "branch_statement_coverage_gap",
+            "evidence": (
+                f"canonical source branch 陈述已采用；generic WFD 仅保留外部缺口；"
+                f"terminal_gap={branch_statement_coverage['terminal_gap_after_router']}。"
+            ),
+            "next_action": "canonical 源头分支无 source-lock 内部缺口；若要求 generic WFD 自足，只剩外部 DI/BFI。",
+        },
     ]
 
 
@@ -550,6 +566,7 @@ def run(
     source_identification_path: Path,
     source_lock_contract_path: Path,
     canonical_branch_admission_path: Path,
+    branch_statement_coverage_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -584,6 +601,7 @@ def run(
     source_identification = load_json(source_identification_path)
     source_lock_contract = load_json(source_lock_contract_path)
     canonical_branch_admission = load_json(canonical_branch_admission_path)
+    branch_statement_coverage = load_json(branch_statement_coverage_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -617,6 +635,7 @@ def run(
         source_identification,
         source_lock_contract,
         canonical_branch_admission,
+        branch_statement_coverage,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -650,6 +669,7 @@ def run(
         "canonical_source_lock_or_external_dibfi_required",
         "canonical_source_branch_admission_or_external_dibfi_required",
         "canonical_branch_statement_coverage_or_external_dibfi_required",
+        "canonical_source_branch_internal_gap_closed_generic_external_only",
         "closed",
         "no_fourth_exit",
     }
@@ -701,6 +721,9 @@ def run(
             "a1_canonical_branch_admission_json": file_sha256(
                 canonical_branch_admission_path
             ),
+            "a1_branch_statement_coverage_json": file_sha256(
+                branch_statement_coverage_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -712,8 +735,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "A1CanonicalSourceBranchStatementAndCoverage"
-            "OrExternalDIBFIOriginalDispersion"
+            "ExternalDIBFIOriginalDispersionForGenericWFDBranchOnly"
         ),
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
@@ -739,8 +761,8 @@ def run(
             "实际源头识别又被压成 canonical RIW/Buchstab source lock 合同；"
             "source lock 合同已严格二分为 canonical 源头分支准入或 generic WFD 外部路由；"
             "canonical 分支准入又被压成主定理/账本分支陈述与覆盖合同；"
-            "当前无黑箱版只剩 A1CanonicalSourceBranchStatementAndCoverage，"
-            "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
+            "分支陈述已落实：canonical source branch 在 source-lock 链条上无剩余内部缺口；"
+            "当前只剩 generic WFD 宽口径的外部 DI/BFI 原始 dispersion 缺口。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -765,10 +787,9 @@ def run(
             "源头识别又被压成 canonical source lock 合同。"
             "source lock 已分裂成 canonical 内部分支和 generic WFD 外部分支。"
             "canonical 分支准入已被压成 theorem/ledger 分支陈述覆盖合同。"
-            "下一步不再是普通计数、保留率常数、无抵消、决策树、谱估计、源头锁定语义或分支准入，"
-            "而是明确主定理/账本：canonical RIW/Buchstab clean branch 走内部证明，"
-            "generic noncanonical WFD branch 走外部 DI/BFI 或 PDEC/SAE。"
-            "或者给出外部 DI/BFI 原始 dispersion 引用。"
+            "分支陈述覆盖已落实。canonical RIW/Buchstab clean branch 在当前 source-lock 链条上"
+            "不再有内部缺口；若仍要求 generic noncanonical WFD 版本自足，唯一剩余是外部 "
+            "DI/BFI 原始 dispersion。"
         ),
     }
 
@@ -817,7 +838,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  decision-tree formula reduces to A1/KZ-E source coefficient identification；",
         "  source identification reduces to canonical RIW/Buchstab source lock contract；",
         "  source lock contract splits into canonical source branch admission or generic external route；",
-        "  canonical branch admission reduces to theorem/ledger branch statement and coverage。",
+        "  canonical branch admission reduces to theorem/ledger branch statement and coverage；",
+        "  canonical source branch now has no source-lock internal gap; generic WFD remains external。",
         "```",
         "",
         "## 2. 汇总",
@@ -883,11 +905,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "SourceIdentification router materialized；",
             "SourceLockContract router materialized；",
             "CanonicalBranchAdmission router materialized；",
-            "remaining independent gap is A1 canonical source branch statement/coverage or external DI/BFI original dispersion。",
+            "BranchStatementCoverage router materialized；",
+            "remaining independent gap is external DI/BFI original dispersion for the generic WFD branch only。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是 canonical source branch 陈述与覆盖合同：",
-            "证明 A1CanonicalSourceBranchStatementAndCoverage，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
+            "若继续要求 generic WFD 宽口径完全自足，剩余目标是外部 DI/BFI 原始 dispersion。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -987,6 +1010,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_CANONICAL_BRANCH_ADMISSION,
     )
+    parser.add_argument(
+        "--branch-statement-coverage-json",
+        type=Path,
+        default=DEFAULT_BRANCH_STATEMENT_COVERAGE,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1024,6 +1052,7 @@ def main() -> None:
         source_identification_path=args.source_identification_json,
         source_lock_contract_path=args.source_lock_contract_json,
         canonical_branch_admission_path=args.canonical_branch_admission_json,
+        branch_statement_coverage_path=args.branch_statement_coverage_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

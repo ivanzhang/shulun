@@ -5015,3 +5015,80 @@ terminal_dual_gap => A1CanonicalSourceBranchStatementAndCoverageOrExternalDIBFIO
 这一步把“当前 clean A1 是否 canonical”再压成一个可执行的定理陈述合同：自足内部版本必须明确只处理
 canonical RIW/Buchstab 源头；generic well-factorable 版本必须保留为外部 DI/BFI 或 PDEC/SAE 路由。
 这避免了把一个合法子分支证明误升级为 generic WFD 完全自足证明。
+
+## 90. A1 分支陈述覆盖落实：canonical-source 分支无 source-lock 内部缺口
+
+新增 `experiments/prime_matrix_triad_a1_branch_statement_coverage_router.py` 后，第 89 节留下的
+`A1CanonicalSourceBranchStatementAndCoverage` 被落实为显式分支陈述。结论是：canonical
+RIW/Buchstab source branch 走内部支撑链；generic noncanonical WFD branch 不再假装内部闭合，
+只保留外部 DI/BFI 或 PDEC/SAE 路由。
+
+机器结果：
+
+```text
+status=canonical_source_branch_statement_adopted_generic_wfd_external_only；
+next_internal_target=NoFurtherInternalGapForCanonicalSourceBranch；
+terminal_gap_after_router=ExternalDIBFIOriginalDispersionForGenericWFDBranchOnly。
+```
+
+显式分支陈述：
+
+```text
+canonical branch:
+  lambda_c = canonical RIW/Buchstab decision-tree coefficient;
+  internal support chain applies;
+
+generic noncanonical WFD branch:
+  no internal support closure claimed;
+  use external DI/BFI or PDEC/SAE;
+
+there is no silent generic upgrade.
+```
+
+本步已经闭合的部分是：
+
+```text
+CanonicalInternalBranchStatement:
+  internal no-black-box branch 明确限定为 lambda_c^RIW-tree；
+
+GenericComplementStatement:
+  generic noncanonical WFD branch 明确保留为 external DI/BFI 或 PDEC/SAE；
+
+CoverageNoOverlapNoGap:
+  source alternative 被 canonical / noncanonical 二分覆盖；
+
+CanonicalBranchInternalGap:
+  canonical source branch 在 source-lock 链条上无剩余内部缺口。
+```
+
+仍未闭合的宽口径外部缺口是：
+
+```text
+ExternalDIBFIOriginalDispersionForGenericWFDBranchOnly:
+  若要求 generic well-factorable WFD theorem 也完全自足，
+  仍需外部 DI/BFI 原始 dispersion 或另行证明。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1BranchStatementCoverageRouter => canonical_source_branch_internal_gap_closed_generic_external_only；
+terminal_dual_gap => ExternalDIBFIOriginalDispersionForGenericWFDBranchOnly。
+```
+
+这一步不是宣称全部行命题无条件闭合，而是精确关闭了本轮从
+`SquarefreeBuchstabLayerSupportLowerBound` 一路压下来的 canonical-source 内部链条：
+
+```text
+canonical RIW/Buchstab source
+=> decision-tree support
+=> no cancellation / selector retention
+=> squarefree Buchstab thick support
+=> canonical RIW factor support
+=> exact factor support
+=> exact WFD source entropy
+=> A1 clean internal branch.
+```
+
+剩余若还要处理 generic noncanonical WFD 宽命题，则只能继续攻外部 DI/BFI 原始 dispersion，
+不能再借 canonical 支撑链偷换。
