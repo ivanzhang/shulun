@@ -220,6 +220,21 @@ def effective_support(value: int, denominator: int) -> float | None:
     return denominator / value
 
 
+def l2_energy(counter: Counter[str], denominator: int) -> float | None:
+    """计算归一化二范数能量。"""
+    if denominator == 0:
+        return None
+    return sum(value * value for value in counter.values()) / (denominator * denominator)
+
+
+def inverse_l2_support(counter: Counter[str], denominator: int) -> float | None:
+    """二范数有效支撑数。"""
+    energy = l2_energy(counter, denominator)
+    if not energy:
+        return None
+    return 1.0 / energy
+
+
 def analyze_continuous_cap(
     prime_row: dict[str, Any],
     mult_item: dict[str, Any],
@@ -322,6 +337,28 @@ def analyze_continuous_cap(
         "max_column_residue_payment_share": ratio(max_colres, total_hole_demand),
         "max_payment_signature": max_signature,
         "max_payment_signature_share": ratio(max_signature, total_hole_demand),
+        "distinct_prime_payment_count": len(prime_payment),
+        "distinct_residue_payment_count": len(residue_payment),
+        "distinct_column_residue_payment_count": len(column_residue_payment),
+        "distinct_payment_signature_count": len(payment_signature),
+        "prime_payment_l2_energy": l2_energy(prime_payment, total_hole_demand),
+        "residue_payment_l2_energy": l2_energy(residue_payment, total_hole_demand),
+        "column_residue_payment_l2_energy": l2_energy(
+            column_residue_payment, total_hole_demand
+        ),
+        "payment_signature_l2_energy": l2_energy(
+            payment_signature, total_hole_demand
+        ),
+        "inverse_l2_prime_support": inverse_l2_support(prime_payment, total_hole_demand),
+        "inverse_l2_residue_support": inverse_l2_support(
+            residue_payment, total_hole_demand
+        ),
+        "inverse_l2_column_residue_support": inverse_l2_support(
+            column_residue_payment, total_hole_demand
+        ),
+        "inverse_l2_payment_signature_support": inverse_l2_support(
+            payment_signature, total_hole_demand
+        ),
         "effective_prime_support": effective_support(max_prime, total_hole_demand),
         "effective_residue_support": effective_support(max_residue, total_hole_demand),
         "effective_column_residue_support": effective_support(max_colres, total_hole_demand),
@@ -381,6 +418,14 @@ def run(
                         row["effective_payment_signature_support"]
                         for row in positive
                         if row["effective_payment_signature_support"] is not None
+                    ),
+                    default=None,
+                ),
+                "min_inverse_l2_payment_signature_support": min(
+                    (
+                        row["inverse_l2_payment_signature_support"]
+                        for row in positive
+                        if row["inverse_l2_payment_signature_support"] is not None
                     ),
                     default=None,
                 ),
@@ -467,17 +512,18 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "",
         "## 4. P 级 actual payment 读数",
         "",
-        "| P | caps | positive demand caps | max actual sig share | min effective sig support | routes |",
-        "| ---: | ---: | ---: | ---: | ---: | --- |",
+        "| P | caps | positive demand caps | max actual sig share | min effective sig support | min L2 sig support | routes |",
+        "| ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for row in result["p_level_rows"]:
         lines.append(
-            "| {p} | {caps} | {positive} | {share} | {support} | `{routes}` |".format(
+            "| {p} | {caps} | {positive} | {share} | {support} | {l2support} | `{routes}` |".format(
                 p=row["p"],
                 caps=row["cap_count"],
                 positive=row["positive_demand_cap_count"],
                 share=fmt_float(row["max_payment_signature_share"]),
                 support=fmt_float(row["min_effective_payment_signature_support"]),
+                l2support=fmt_float(row["min_inverse_l2_payment_signature_support"]),
                 routes=row["routes"],
             )
         )
@@ -487,13 +533,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 5. Cap 明细",
             "",
-            "| P | h | phases | mass share | demand | payment count | max sig share | eff sig support | route |",
-            "| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+            "| P | h | phases | mass share | demand | payment count | max sig share | eff sig support | L2 sig support | route |",
+            "| ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
         ]
     )
     for row in result["cap_reports"]:
         lines.append(
-            "| {p} | {h} | {phases} | {mass} | {demand} | {payments} | {share} | {support} | `{route}` |".format(
+            "| {p} | {h} | {phases} | {mass} | {demand} | {payments} | {share} | {support} | {l2support} | `{route}` |".format(
                 p=row["p"],
                 h=row["h"],
                 phases=row["recomputed_cap_phase_count"],
@@ -502,6 +548,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
                 payments=row["total_payment_count"],
                 share=fmt_float(row["max_payment_signature_share"]),
                 support=fmt_float(row["effective_payment_signature_support"]),
+                l2support=fmt_float(row["inverse_l2_payment_signature_support"]),
                 route=row["structural_route"],
             )
         )
@@ -514,6 +561,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
                 "",
                 f"- `phase_count_by_holes={row['phase_count_by_holes']}`。",
                 f"- `max_dp_state_count={row['max_dp_state_count']}`。",
+                f"- `distinct_payment_signature_count={row['distinct_payment_signature_count']}`。",
+                f"- `payment_signature_l2_energy={fmt_float(row['payment_signature_l2_energy'])}`。",
+                f"- `inverse_l2_payment_signature_support={fmt_float(row['inverse_l2_payment_signature_support'])}`。",
                 f"- top payment signatures: `{row['top_payment_signature']}`。",
                 f"- top residues: `{row['top_residue_payment']}`。",
                 f"- top column residues: `{row['top_column_residue_payment']}`。",

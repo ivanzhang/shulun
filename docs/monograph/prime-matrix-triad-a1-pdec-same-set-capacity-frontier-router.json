@@ -77,6 +77,12 @@
       "frontier": "ContinuousActualPaymentSelection",
       "next_action": "终端只剩两引理：positive-limsup finite signature=>PDEC；diffuse=>CleanKLS/DLS。",
       "status": "actual_payment_measure_constructed"
+    },
+    {
+      "evidence": "终端二分已路由；route_counts={'NoTailDemandSparseOrLocalSurvivor': 1, 'PositiveLimsupPDECOrDiffuseCleanKLSDichotomy': 8}；open=['PDEC-CAP: prove the resulting column-tail PDEC capacity inequality U_CRT<L_PDEC', 'KLS-EXT: prove or import the CleanKLS/DLS large-sieve bound for diffuse payment measures']。",
+      "frontier": "ContinuousTerminalDichotomy",
+      "next_action": "直接攻 PDEC-CAP 容量不等式，或攻/引用 KLS-EXT 大筛估计。",
+      "status": "terminal_dichotomy_admission_closed_capacity_open"
     }
   ],
   "lp_summary": {
@@ -92,17 +98,18 @@
       "BRIDGED_zero_block"
     ]
   },
-  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。下一步不再是构造支付测度，而是证明 PDEC/CleanKLS 终端二分。",
+  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；下一步不再是路由，而是证明 PDEC-CAP 或 KLS-EXT。",
   "source_hashes": {
-    "continuous_actual_payment_selection_json": "832c767e7be6b85127dc0277294f9feeda9d9cd306dde7df00ea2b6cc9d20d49",
+    "continuous_actual_payment_selection_json": "40b5e4849328bb8434be285105482d4b3d046b61ec2fa69bf5ef8d77af361874",
     "continuous_columntail_bridge_json": "48fed9b4cfd6f9f3a851a2a77389978fd81299e0e075bb9e56140e6df77e4067",
     "continuous_direction_arc_json": "9828aae526d3fd0d1baec4e7b729ca725ce163ab9c23d11051668642db010134",
+    "continuous_terminal_dichotomy_json": "9b6c7123864a39f7245ba82e59f8ff5654a725d1b74d690bc0893f668b532609",
     "direction_support_json": "fbdf2704a83255fb771d044287350368d7c75b43a277b0eb8a67e8862351c571",
     "dualcap_extractor_json": "b6bf0fc2a4305656fa7aef8cac33aa9b7dd1867617611fe7b96a23e8ba251c53",
     "fourier_cap_scan_json": "fe47050ce4b60f5c5651228f7e940eb20898506149f830d86448375984b7e502",
     "lhb_lp_skeleton_json": "77be4c32509e121013a11d5cc0668c314ceece3aa7f3e114bae2dc69cbdb8021",
     "pdec_mass_source_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
-    "script": "c4fb2ae88ee3add5593cdf7337091bfc59c28a5f8000865889bab6374c691811",
+    "script": "7949dab155a0904398db0dc50659a94ffb8bf9698d0f4ef65baa86825d5c7596",
     "terminal_confluence_json": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c"
   },
   "status": "same_set_capacity_frontier_materialized_terminal_dual_open",
@@ -115,8 +122,9 @@
     "dualcap_materialized": 1,
     "no_fourth_exit": 1,
     "ready_current_lhb_branch": 1,
-    "structurally_insufficient": 1
+    "structurally_insufficient": 1,
+    "terminal_dichotomy_admission_closed_capacity_open": 1
   },
-  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造。最终缺口只剩两个终端引理：positive-limsup finite signature 给 PDEC，diffuse 极限给 CleanKLS/DLS。",
-  "terminal_dual_gap": "PositiveLimsupPDECOrDiffuseCleanKLS"
+  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。最终缺口只剩 PDEC 容量不等式或 CleanKLS/DLS 大筛估计。",
+  "terminal_dual_gap": "PDECCapacityOrKLSLargeSieve"
 }

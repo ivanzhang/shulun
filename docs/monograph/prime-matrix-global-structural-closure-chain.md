@@ -3309,3 +3309,72 @@ terminal_dual_gap => PositiveLimsupPDECOrDiffuseCleanKLS。
 
 这一步完成了 `ActualPaymentSelection` 的构造部分；剩余不是“如何定义真实支付”，
 而是证明上述两个终端分支都不能支持 `P×P` 内零行反例。
+
+## 67. A1 连续 actual-payment 终端二分闭合
+
+新增 `experiments/prime_matrix_triad_a1_continuous_terminal_dichotomy_router.py` 后，
+`PositiveLimsupPDECOrDiffuseCleanKLS` 被压成确定性的有限投影塔二分。
+
+二分律：
+
+```text
+canonical payment measures mu_i on finite projection B_i；
+either exists b in B_i with limsup mu_i(b)>0
+  => positive-limsup finite signature => column-tail PDEC；
+or for every fixed finite projection atom b, mu_i(b)->0
+  => max atom -> 0 and L2 -> 0 on finite projections => CleanKLS/DLS admission。
+```
+
+该二分只用有限集合鸽巢与逆系统投影，不使用固定全局常数。
+因此它关闭的是逻辑出口，而不是替代终端估计。
+
+运行结果：
+
+```text
+status=continuous_terminal_dichotomy_admission_closed_capacity_open；
+route_counts={
+  NoTailDemandSparseOrLocalSurvivor: 1,
+  PositiveLimsupPDECOrDiffuseCleanKLSDichotomy: 8
+}；
+global_max_actual_signature_share=0.0357143；
+global_min_effective_signature_support=28；
+global_min_inverse_l2_signature_support=28。
+```
+
+已闭合子命题：
+
+```text
+canonical actual payment measure constructed；
+payment_count equals low-hole demand；
+no third terminal route in the finite-projection dichotomy；
+diffuse branch supplies L2-flat admission language；
+positive-limsup branch supplies legal finite column-tail PDEC row input。
+```
+
+剩余终端义务被进一步削成：
+
+```text
+PDEC-CAP:
+  prove the resulting column-tail PDEC capacity inequality U_CRT<L_PDEC；
+
+KLS-EXT:
+  prove or import the CleanKLS/DLS large-sieve bound for diffuse payment measures。
+```
+
+前沿路由器同步更新后：
+
+```text
+ContinuousTerminalDichotomy => terminal_dichotomy_admission_closed_capacity_open；
+terminal_dual_gap => PDECCapacityOrKLSLargeSieve。
+```
+
+这一步说明当前 A1 连续 actual-payment 分支已经没有“第三逃逸口”：
+
+```text
+集中 => PDEC-CAP；
+完全分散 => KLS-EXT；
+无 tail demand => Sparse/LocalSurvivor。
+```
+
+所以接下来的真正终端硬攻不能再停留在路由、归档或候选定义上，
+必须直接攻击 `PDEC-CAP` 的容量不等式，或 `KLS-EXT` 的 clean 大筛估计。

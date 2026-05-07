@@ -30,6 +30,7 @@ DEFAULT_CONFLUENCE = DOCS / "prime-matrix-triad-a1-terminal-confluence-router.js
 DEFAULT_CONTINUOUS = DOCS / "prime-matrix-triad-a1-continuous-direction-arc-dual.json"
 DEFAULT_BRIDGE = DOCS / "prime-matrix-triad-a1-continuous-columntail-bridge.json"
 DEFAULT_ACTUAL_PAYMENT = DOCS / "prime-matrix-triad-a1-continuous-actual-payment-selection.json"
+DEFAULT_TERMINAL_DICHOTOMY = DOCS / "prime-matrix-triad-a1-continuous-terminal-dichotomy-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -88,6 +89,7 @@ def build_frontier_rows(
     continuous: dict[str, Any],
     bridge: dict[str, Any],
     actual_payment: dict[str, Any],
+    terminal_dichotomy: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -175,6 +177,15 @@ def build_frontier_rows(
             ),
             "next_action": "终端只剩两引理：positive-limsup finite signature=>PDEC；diffuse=>CleanKLS/DLS。",
         },
+        {
+            "frontier": "ContinuousTerminalDichotomy",
+            "status": "terminal_dichotomy_admission_closed_capacity_open",
+            "evidence": (
+                f"终端二分已路由；route_counts={terminal_dichotomy['route_counts']}；"
+                f"open={terminal_dichotomy['open_terminal_obligations']}。"
+            ),
+            "next_action": "直接攻 PDEC-CAP 容量不等式，或攻/引用 KLS-EXT 大筛估计。",
+        },
     ]
 
 
@@ -188,6 +199,7 @@ def run(
     continuous_path: Path,
     bridge_path: Path,
     actual_payment_path: Path,
+    terminal_dichotomy_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -199,8 +211,18 @@ def run(
     continuous = load_json(continuous_path)
     bridge = load_json(bridge_path)
     actual_payment = load_json(actual_payment_path)
+    terminal_dichotomy = load_json(terminal_dichotomy_path)
     frontier_rows = build_frontier_rows(
-        lp, direction, fourier, dualcap, mass, confluence, continuous, bridge, actual_payment
+        lp,
+        direction,
+        fourier,
+        dualcap,
+        mass,
+        confluence,
+        continuous,
+        bridge,
+        actual_payment,
+        terminal_dichotomy,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -211,6 +233,7 @@ def run(
         "continuous_dualcap_materialized_not_closed",
         "actual_payment_selection_materialized",
         "actual_payment_measure_constructed",
+        "terminal_dichotomy_admission_closed_capacity_open",
         "closed",
         "no_fourth_exit",
     }
@@ -229,6 +252,7 @@ def run(
             "continuous_direction_arc_json": file_sha256(continuous_path),
             "continuous_columntail_bridge_json": file_sha256(bridge_path),
             "continuous_actual_payment_selection_json": file_sha256(actual_payment_path),
+            "continuous_terminal_dichotomy_json": file_sha256(terminal_dichotomy_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -239,19 +263,19 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "PositiveLimsupPDECOrDiffuseCleanKLS",
+        "terminal_dual_gap": "PDECCapacityOrKLSLargeSieve",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
             "连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。"
-            "actual payment measure 已由 canonical 选择律构造。最终缺口只剩两个终端引理："
-            "positive-limsup finite signature 给 PDEC，diffuse 极限给 CleanKLS/DLS。"
+            "actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。"
+            "最终缺口只剩 PDEC 容量不等式或 CleanKLS/DLS 大筛估计。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
             "当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，"
             "连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。"
-            "下一步不再是构造支付测度，而是证明 PDEC/CleanKLS 终端二分。"
+            "终端二分已说明没有第三出口；下一步不再是路由，而是证明 PDEC-CAP 或 KLS-EXT。"
         ),
     }
 
@@ -277,7 +301,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  continuous cap exposes column-tail payment buckets；",
         "  canonical actual payment measure is constructed；",
         "  actual payment concentration returns to PDEC；",
-        "  recursive diffusion returns to CleanKLS/DLS。",
+        "  recursive diffusion returns to CleanKLS/DLS；",
+        "  no third terminal route remains after finite-projection dichotomy。",
         "```",
         "",
         "## 2. 汇总",
@@ -320,11 +345,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "continuous direction-arc dual materialized but not closed；",
             "continuous column-tail bridge materialized；",
             "canonical actual payment measure constructed；",
-            "remaining gap is positive-limsup PDEC or diffuse CleanKLS。",
+            "terminal finite-projection dichotomy closed；",
+            "remaining gap is PDEC-CAP or KLS-EXT。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "证明 positive-limsup 有限签名产生合法 PDEC 行；若所有有限签名递归消散，则满足 CleanKLS/DLS 输入。",
+            "直接证明 column-tail PDEC 容量不等式，或证明/接入 diffuse CleanKLS/DLS 大筛估计。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -343,6 +369,9 @@ def main() -> None:
     parser.add_argument("--continuous-json", type=Path, default=DEFAULT_CONTINUOUS)
     parser.add_argument("--bridge-json", type=Path, default=DEFAULT_BRIDGE)
     parser.add_argument("--actual-payment-json", type=Path, default=DEFAULT_ACTUAL_PAYMENT)
+    parser.add_argument(
+        "--terminal-dichotomy-json", type=Path, default=DEFAULT_TERMINAL_DICHOTOMY
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -357,6 +386,7 @@ def main() -> None:
         continuous_path=args.continuous_json,
         bridge_path=args.bridge_json,
         actual_payment_path=args.actual_payment_json,
+        terminal_dichotomy_path=args.terminal_dichotomy_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
