@@ -5690,3 +5690,64 @@ terminal_dual_gap
 这一步的意义是把尺度侧从终端硬点中剥离出去。现在直接 BFI 外部引用路线只剩一个真正核心：
 必须从原始 clean A1/generic WFD 残差出发，逐项证明它就是 BFI prime-AP discrepancy 的 dyadic
 总和。如果这一步失败，才需要回到 KE-13 无投影 fallback。
+
+## 99. AP 残差源等式：终端硬点压成 Cauchy/dispersion 前的上游定义合同
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_ap_residual_identity_router.py` 后，第 98 节留下的
+`OriginalResidualEqualsBFIAPError` 继续被定位。关键结论是否定一个错误捷径：不能从已经形成的
+KE-13/WFD 下游 Kloosterman 窗口反推它必然来自 BFI prime-AP discrepancy。直接 BFI 原子要求的
+是源头等式，必须发生在 Cauchy、dispersion、KE-13、中心化或投影之前。
+
+机器结果：
+
+```text
+status=ap_residual_identity_reduced_to_upstream_source_definition_open；
+ap_residual_identity_closed=false；
+open_gates=[
+  UpstreamCleanA1ResidualDefinition,
+  MainTermAndCoefficientMatch
+]；
+terminal_gap_after_router=UpstreamCleanA1APSourceDefinition。
+```
+
+已经固定的事实：
+
+```text
+APErrorFormulaAvailable:
+  E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm) 已命名；
+
+DownstreamWFDObjectIdentified:
+  KZ-E spine 与 generic WFD 合同锁定了下游未中心化 WFD/KE-13 对象；
+
+NoDownstreamBackProjectionShortcut:
+  SOURCE-CEN no-go 排除了从下游中心化/投影对象免费回推源等式；
+
+TransferScaleAlreadyMarksAPRepresentationOpen:
+  早前 transfer-scale 证书已把 APErrorRepresentation 记录为未闭合。
+```
+
+仍未闭合的源头合同：
+
+```text
+UpstreamCleanA1APSourceDefinition:
+  R_clean
+  = sum_dyadic E_AP(X,Q; lambda_q, alpha, beta, Delta_q)
+    + endpoint/log-budget errors；
+
+MainTermAndCoefficientMatch:
+  Delta_q 的主项扣除、残基类 a(q)、lambda_q、alpha/beta、dyadic 权和端点误差必须同源。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFIAPResidualIdentityRouter
+  => ap_residual_identity_reduced_to_upstream_source_definition_open；
+
+terminal_dual_gap
+  => UpstreamCleanA1APSourceDefinition。
+```
+
+这一步把当前最窄剩余从“泛泛的 BFI 适配”变成一个可审稿的源定义等式。若能在上游原始残差处
+写出该等式，直接 BFI 外部引用路线即可继续闭合；若不能写出，则不能诚实使用 BFI prime-AP 原子，
+只能回到 KE-13 无投影 fallback 或另行声明一个外部原始 dispersion 定理。

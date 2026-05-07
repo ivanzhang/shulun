@@ -110,6 +110,9 @@ DEFAULT_DIBFI_BFI_ATOM_MATCH = (
 DEFAULT_DIBFI_BFI_LEVEL_LEDGER = (
     DOCS / "prime-matrix-triad-a1-dibfi-bfi-level-ledger-router.json"
 )
+DEFAULT_DIBFI_AP_RESIDUAL_IDENTITY = (
+    DOCS / "prime-matrix-triad-a1-dibfi-ap-residual-identity-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -200,6 +203,7 @@ def build_frontier_rows(
     dibfi_direct_bfi_atom: dict[str, Any],
     dibfi_bfi_atom_match: dict[str, Any],
     dibfi_bfi_level_ledger: dict[str, Any],
+    dibfi_ap_residual_identity: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -659,6 +663,16 @@ def build_frontier_rows(
             ),
             "next_action": "直接证明 OriginalResidualEqualsBFIAPError，即原始 clean A1 残差等于 BFI prime-AP discrepancy。",
         },
+        {
+            "frontier": "A1DIBFIAPResidualIdentityRouter",
+            "status": "ap_residual_identity_reduced_to_upstream_source_definition_open",
+            "evidence": (
+                f"AP 残差对象等式已压成源头定义合同；"
+                f"open_gates={dibfi_ap_residual_identity['open_gates']}；"
+                f"terminal_gap={dibfi_ap_residual_identity['terminal_gap_after_router']}。"
+            ),
+            "next_action": "在 Cauchy/dispersion 前写出 UpstreamCleanA1APSourceDefinition；失败则走 KE-13 fallback。",
+        },
     ]
 
 
@@ -704,6 +718,7 @@ def run(
     dibfi_direct_bfi_atom_path: Path,
     dibfi_bfi_atom_match_path: Path,
     dibfi_bfi_level_ledger_path: Path,
+    dibfi_ap_residual_identity_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -747,6 +762,7 @@ def run(
     dibfi_direct_bfi_atom = load_json(dibfi_direct_bfi_atom_path)
     dibfi_bfi_atom_match = load_json(dibfi_bfi_atom_match_path)
     dibfi_bfi_level_ledger = load_json(dibfi_bfi_level_ledger_path)
+    dibfi_ap_residual_identity = load_json(dibfi_ap_residual_identity_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -789,6 +805,7 @@ def run(
         dibfi_direct_bfi_atom,
         dibfi_bfi_atom_match,
         dibfi_bfi_level_ledger,
+        dibfi_ap_residual_identity,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -833,13 +850,14 @@ def run(
         "dibfi_direct_bfi_atom_match_reduced_to_ap_identity_and_level_ledger_open",
         "bfi_level_exponent_ledger_closed_ap_identity_open",
         "bfi_level_exponent_ledger_support_normalization_open",
+        "ap_residual_identity_reduced_to_upstream_source_definition_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_ap_residual_identity_open",
+        "status": "same_set_capacity_frontier_materialized_upstream_ap_source_definition_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -907,6 +925,9 @@ def run(
             "a1_dibfi_bfi_level_ledger_json": file_sha256(
                 dibfi_bfi_level_ledger_path
             ),
+            "a1_dibfi_ap_residual_identity_json": file_sha256(
+                dibfi_ap_residual_identity_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -917,7 +938,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "OriginalResidualEqualsBFIAPError",
+        "terminal_dual_gap": "UpstreamCleanA1APSourceDefinition",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -951,7 +972,8 @@ def run(
             "直接 BFI prime-AP 原子匹配，或保留 KE-13 无投影 fallback；直接 BFI 原子匹配"
             "又被压成 AP 源对象等式和 BFI level 指数账本；BFI level 指数账本在"
             "X≈P^2、Q<=P log^O P 与 well-factorable support 下已有正指数余量，"
-            "所以最窄剩余变为 AP 源对象等式。"
+            "所以最窄剩余变为 AP 源对象等式；AP 源对象等式又被压成 Cauchy/dispersion "
+            "之前的原始 clean A1 残差定义合同。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -982,7 +1004,7 @@ def run(
             "都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；"
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
-            "该合取证书现已继续压成 `OriginalResidualEqualsBFIAPError`。"
+            "该合取证书现已继续压成 `UpstreamCleanA1APSourceDefinition`。"
         ),
     }
 
@@ -1041,6 +1063,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  quantified no-projection terminal reduces to direct BFI-AP atom or KE-13 fallback。",
         "  direct BFI-AP atom match reduces to AP identity and BFI level ledger。",
         "  BFI level ledger has exponent slack; remaining gap is AP source identity。",
+        "  AP source identity reduces to upstream clean A1 AP source definition。",
         "```",
         "",
         "## 2. 汇总",
@@ -1115,12 +1138,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIDirectBFIAtom router materialized；",
             "DIBFIBFIAtomMatch router materialized；",
             "DIBFIBFILevelLedger router materialized；",
-            "remaining independent gap is OriginalResidualEqualsBFIAPError。",
+            "DIBFIAPResidualIdentity router materialized；",
+            "remaining independent gap is UpstreamCleanA1APSourceDefinition。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
             "DI/BFI 定理位置已固定为 BFI Theorem 10 与 DI Theorem 12；"
-            "generic WFD 外部引用版优先剩 AP 源对象等式；"
+            "generic WFD 外部引用版优先剩上游 AP 源定义等式；"
             "若 AP 对象等式失败才回到 KE-13 无投影路线；"
             "完全自足版仍未证明原始 dispersion。",
         ]
@@ -1267,6 +1291,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_BFI_LEVEL_LEDGER,
     )
+    parser.add_argument(
+        "--dibfi-ap-residual-identity-json",
+        type=Path,
+        default=DEFAULT_DIBFI_AP_RESIDUAL_IDENTITY,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1313,6 +1342,7 @@ def main() -> None:
         dibfi_direct_bfi_atom_path=args.dibfi_direct_bfi_atom_json,
         dibfi_bfi_atom_match_path=args.dibfi_bfi_atom_match_json,
         dibfi_bfi_level_ledger_path=args.dibfi_bfi_level_ledger_json,
+        dibfi_ap_residual_identity_path=args.dibfi_ap_residual_identity_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

@@ -1,0 +1,76 @@
+{
+  "ap_residual_identity_closed": false,
+  "certificate_type": "triad_a1_dibfi_ap_residual_identity_router",
+  "identity_rows": [
+    {
+      "closed": true,
+      "evidence": "E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm)",
+      "gate": "APErrorFormulaAvailable",
+      "next_target": "none",
+      "remaining": "公式已命名，但不等于源对象等式。",
+      "status": "closed_formula_only"
+    },
+    {
+      "closed": true,
+      "evidence": "KZ-E spine 与 generic WFD 合同锁定当前下游对象为未中心化 WFD/KE-13 核。",
+      "gate": "DownstreamWFDObjectIdentified",
+      "next_target": "UpstreamCleanA1APSourceDefinition",
+      "remaining": "这只能说明下游对象是什么，不能从下游反推出 AP 源等式。",
+      "status": "closed_as_diagnostic_not_identity"
+    },
+    {
+      "closed": true,
+      "evidence": "SOURCE-CEN no-go 排除免费中心化/投影替换；下游 KE-13 不能自动替代原始 AP 残差。",
+      "gate": "NoDownstreamBackProjectionShortcut",
+      "next_target": "UpstreamCleanA1APSourceDefinition",
+      "remaining": "必须从 Cauchy/dispersion 之前的原始残差定义写等式。",
+      "status": "closed_negative_shortcut_blocked"
+    },
+    {
+      "closed": true,
+      "evidence": "open_transfer_gates=['APErrorRepresentation', 'DispersionCauchyNoCenteringIdentity', 'KE13DyadicExhaustionNoProjection']",
+      "gate": "TransferScaleAlreadyMarksAPRepresentationOpen",
+      "next_target": "UpstreamCleanA1APSourceDefinition",
+      "remaining": "上游证书明确把 APErrorRepresentation 作为未闭合项。",
+      "status": "open_confirmed_by_previous_certificate"
+    },
+    {
+      "closed": false,
+      "evidence": "尚未找到 clean A1 原始残差在进入 Cauchy/dispersion 前等于 AP discrepancy 的逐项定义。",
+      "gate": "UpstreamCleanA1ResidualDefinition",
+      "next_target": "UpstreamCleanA1APSourceDefinition",
+      "remaining": "需给出 R_clean = dyadic sum of E_AP(X,Q) + acceptable endpoints 的源头等式。",
+      "status": "open_source_definition_missing"
+    },
+    {
+      "closed": false,
+      "evidence": "AP 公式中的 Delta_q(nm) 已命名，但主项扣除、残基类 a(q) 与 lambda_q 符号尚未逐项接到 clean A1 残差。",
+      "gate": "MainTermAndCoefficientMatch",
+      "next_target": "UpstreamCleanA1APSourceDefinition",
+      "remaining": "需核对主项、端点、dyadic 权、lambda_q 与 alpha/beta 系数完全同源。",
+      "status": "open_delta_q_main_term_match_missing"
+    }
+  ],
+  "ke13_fallback_condition": "If UpstreamCleanA1APSourceDefinition cannot be proved, direct BFI AP atom cannot close this branch; the legal route returns to KE-13 no-projection fallback or a separately stated external original-dispersion theorem.",
+  "open_gates": [
+    "UpstreamCleanA1ResidualDefinition",
+    "MainTermAndCoefficientMatch"
+  ],
+  "previous_remaining_targets": [
+    "OriginalResidualEqualsBFIAPError"
+  ],
+  "previous_terminal_gap": "OriginalResidualEqualsBFIAPError",
+  "review_conclusion": "唯一剩余 AP 对象等式被压成源头定义合同：必须证明原始 clean A1 残差在进入 Cauchy/dispersion 前就是 BFI prime-AP discrepancy 的 dyadic 总和。不能从 KE-13/WFD 下游窗口倒推该等式；若源头等式失败，直接 BFI 路线必须退回 fallback。",
+  "source_hashes": {
+    "bfi_level_ledger_json": "66c8366dd553edde5e44719df034cdb4b10c012676c7d0d140ce722e1d13fb9c",
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "generic_wfd_dibfi_json": "f3d583dd214fa6c1b982c05d8a9795681b00f71b6f38ed63094501e491aba972",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "667ff7862a02f42b251f6cfe4f4e7b80f799a181b121fc2a57ea7d744bbb42bf",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb",
+    "transfer_scale_json": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd"
+  },
+  "status": "ap_residual_identity_reduced_to_upstream_source_definition_open",
+  "structural_law": "OriginalResidualEqualsBFIAPError is a source-level identity, not a downstream Kloosterman-window estimate. The AP formula, WFD-core, phase normalization and level ledger are all available, but they do not prove that the clean A1 residual before Cauchy/dispersion is exactly the BFI prime-AP discrepancy. That equality must be written at the upstream definition layer, including Delta_q main term, lambda_q, dyadic weights, endpoint losses and coefficient provenance.",
+  "terminal_gap_after_router": "UpstreamCleanA1APSourceDefinition"
+}
