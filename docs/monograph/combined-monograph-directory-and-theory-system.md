@@ -2294,3 +2294,24 @@ generic full-S non-AP branch:
 canonical-source 边界闭合与 generic noncanonical 外部路线分开；完整行/列无条件定理仍需独立
 终端证书，尤其是 PDEC family、LocalSurvivorCert family、CleanKLS/ExternalKLS 和
 D-structure/Rankin/referee-block 接口。
+
+新增 `prime-matrix-nontautological-pdec-admission-audit.md` 后，PDEC 侧当前已物化候选也被审计到
+零：
+
+```text
+raw three-point signal:
+  not admissible without same formal unit and independence;
+
+nested / weighted / cross-q reductions:
+  duplicate mass and chart overlap are blocked;
+
+physical primitive remnant:
+  two-point Fourier tautology;
+
+two atoms:
+  absorbed by LocalSurvivor/SAE witnesses.
+```
+
+因此当前没有已物化的非二点 primitive PDEC 候选。这个结论不关闭全局 `PDEC family`；它只固定
+未来候选的准入门槛：同一 formal unit、去重后三个以上物理 primitive 原子、非二点 tautology、
+非 cross-q 图重叠，并且未被 SAE/Endpoint witness 吸收。

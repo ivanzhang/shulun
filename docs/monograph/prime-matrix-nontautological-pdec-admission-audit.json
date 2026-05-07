@@ -1,0 +1,71 @@
+{
+  "all_current_routes_blocked_or_absorbed": true,
+  "audit_law": "A non-tautological primitive PDEC candidate must survive every quotient already introduced by the FO-PDEC audits: same-formal-unit legality, nested duplicate removal, weighted Hall non-recovery, cross-q physical deduplication, and the two-point tautology test. The current materialized frontier has no such survivor: the raw three-point signal is not an admissible primitive unit, and the physical primitive remnant has only two atoms, both absorbed by SAE/Endpoint witnesses.",
+  "certificate_type": "prime_matrix_nontautological_pdec_admission_audit",
+  "current_materialized_nontautological_pdec_candidate_count": 0,
+  "future_admission_requirements": [
+    "same formal unit with one fixed phase map",
+    "at least three physical primitive atoms after deduplication",
+    "not a two-point Fourier tautology",
+    "not nested duplicate mass or weighted-Hall duplicate recovery",
+    "not cross-q coordinate chart overlap",
+    "not absorbed by LocalSurvivor/SAE/Endpoint witness"
+  ],
+  "global_pdec_family_closed": false,
+  "review_conclusion": "当前已物化前沿没有非二点 primitive PDEC 候选。raw 三点强信号已被同 formal unit、嵌套重复、weighted Hall 与 cross-q 图重叠逐层降口径；物理 primitive 只剩二点 Fourier tautology，且二点原子已由 LocalSurvivor witness 吸收。该项不关闭全局 PDEC family，只给未来新候选固定准入门槛。",
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "raw support=3, Fourier=3.959247567099438",
+      "gate": "RawLibraryThreePointSignal",
+      "verdict": "not_admissible_without_same_formal_unit_and_independence"
+    },
+    {
+      "closed": true,
+      "evidence": "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC",
+      "gate": "NestedDuplicateUnitMass",
+      "verdict": "nested coordinate repeats cannot count as independent PDEC atoms"
+    },
+    {
+      "closed": true,
+      "evidence": "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass",
+      "gate": "WeightedHallDuplicateRecovery",
+      "verdict": "fractional weighted Hall cannot recover the duplicate mass"
+    },
+    {
+      "closed": true,
+      "evidence": "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC",
+      "gate": "CrossQCoordinatePersistence",
+      "verdict": "cross-q reuse is chart overlap, not persistent independent atoms"
+    },
+    {
+      "closed": true,
+      "evidence": "physical_event_count=2; bound=1.9997507790353146",
+      "gate": "PhysicalPrimitiveAtomCount",
+      "verdict": "physical primitive branch is two-point tautology, not non-tautological PDEC"
+    },
+    {
+      "closed": true,
+      "evidence": "physical_atom_count=2; witnessed=True",
+      "gate": "TwoAtomSAEEndpointAbsorption",
+      "verdict": "remaining two atoms are absorbed by local survivor witnesses"
+    },
+    {
+      "closed": true,
+      "evidence": "finite_pdec_atom_count=25; open=0",
+      "gate": "MaterializedLedgerNoOpenPDECObligation",
+      "verdict": "current materialized PDEC/SAE packets have no open local obligation"
+    }
+  ],
+  "source_hashes": {
+    "cross_q": "60ff0aaa2335146d6c7167cef36e5fd2fb0316626c575901b1b4d363915fbc1d",
+    "materialized_ledger": "cb6f92ca35cee664d441df6e75ad018bf116f89e859c8f3afcc8e9b67f8640cf",
+    "nested": "8a1f4e4af359ab84b429b30880534dce7938a950bac13d410e828394d9ed89c7",
+    "sae_endpoint": "a706939ad36e26cd746690cd864de49307284e002adf7b8e7f055fd66c847347",
+    "script": "607158310e94bd21457244a55176e2afd5d7a74653b0cc22665c30fd880bcb58",
+    "stitching": "84a96301e485505aec62f3bae15cfd1956429ebd538de50d850c08673196d750",
+    "tautology": "d68f7ce681ef06f42b1573925d8a0f9c065f3ff1e96b9627df0a0d2611dcde46",
+    "weighted": "afc2619146b3b83e566956da20c8fca57cb968ab7f28b04445d78e63bc32b254"
+  },
+  "status": "no_current_materialized_nontautological_primitive_pdec"
+}
