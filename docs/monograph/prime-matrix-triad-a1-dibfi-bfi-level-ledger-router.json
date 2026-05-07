@@ -1,0 +1,64 @@
+{
+  "bfi_level_exponent_ledger_closed": true,
+  "certificate_type": "triad_a1_dibfi_bfi_level_ledger_router",
+  "level_rows": [
+    {
+      "closed": true,
+      "evidence": "行/方阵高度约束把当前 AP ambient length 归一到 X≈P^2。",
+      "exponent_in_P": "2",
+      "gate": "AmbientLengthXEqualsP2",
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "evidence": "KLS 模板登记 C,d≈P/log^{O(1)}P，共同变量表把 Q 作为 lambda 总支撑 level。",
+      "exponent_in_P": "1+o(1)",
+      "gate": "ModulusSupportQAtMostPPolylog",
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "evidence": "Q<=P log^O P 等价于 Q<=X^{1/2+o(1)}；取 eps=1/56 时 BFI 允许 X^{31/56}，仍留 X^{3/56} 指数余量。",
+      "exponent_in_X": "1/2 <= 31/56",
+      "gate": "BFIExponentSlack",
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "evidence": "KZ-E spine 给 lambda_R well-factorable 分解；外部索引把 lambda_d 接到 BFI Theorem 10。",
+      "exponent_in_P": "same Q-level",
+      "gate": "WellFactorableLambdaSupportLevel",
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "evidence": "KLS 模板以 B(A)=A+C0+10 吸收 dyadic、gcd、端点、平滑和分解层数损失。",
+      "exponent_in_P": "polylog only",
+      "gate": "DyadicAndLogLossAbsorption",
+      "remaining": "none"
+    }
+  ],
+  "open_level_gates": [],
+  "previous_open_terminal_targets": [
+    "OriginalResidualEqualsBFIAPError",
+    "BFILevelExponentLedger"
+  ],
+  "previous_terminal_gap": "BFIAPResidualIdentityAndLevelLedger",
+  "remaining_terminal_targets": [
+    "OriginalResidualEqualsBFIAPError"
+  ],
+  "review_conclusion": "BFI level 指数账本已在结构层关闭：X≈P^2、Q<=P log^O P 与 well-factorable lambda support 给出 Q<=X^{1/2+o(1)}，低于 BFI 的 X^{4/7-eps} 门槛。当前最窄剩余只剩 `OriginalResidualEqualsBFIAPError`。",
+  "source_hashes": {
+    "bfi_atom_match_json": "2e16ab478fb7d7adc4059be3f7f0120201339bd02d856249ab9ad8d7f2c4b83f",
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "external_theorem_index_md": "7a0ef97946a854b0763d0800c765c9e9c1a462fef1b40241e604b46a8c579f5a",
+    "final_proof_review_md": "312fb0248d3d582d9e722e39dcfd506c8ddb318e208259f3627652cbed848a3d",
+    "kls_window_di_bfi_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "9ce20f559840fa3d075458c878ec82027c0c54c97e2fae693193fb1c4b53c41d",
+    "zero_row_position_rigidity_md": "6ff5cfd37a5772e41c3588436729671879bbb4711aab53a2d4e1c689ea76620d"
+  },
+  "status": "bfi_level_exponent_ledger_closed_ap_identity_open",
+  "structural_law": "The BFI level side has positive exponent slack once the prime-matrix normalization X≈P^2 and Q<=P log^O P is fixed. In X-exponents the current modulus support is 1/2+o(1), whereas BFI Theorem 10 allows 4/7-eps; choosing eps=1/56 leaves slack 3/56. Thus the level ledger is not the terminal hard point; the remaining terminal is the original residual identity with the BFI prime-AP error object.",
+  "terminal_gap_after_router": "OriginalResidualEqualsBFIAPError"
+}

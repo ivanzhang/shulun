@@ -5625,3 +5625,68 @@ terminal_dual_gap
 这一步把三个表面门控压成两个不可再混淆的终端：对象等式负责“是不是同一个 AP 残差”，
 level 账本负责“这个 AP 残差是否落进 BFI Theorem 10 的允许范围”。在这两项完成前，不能诚实宣称
 generic WFD 外部 DI/BFI 分支已经完全闭合。
+
+## 98. BFI level 指数账本：利用 X≈P^2 与 Q<=P log^O P 的正余量关闭尺度侧
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_bfi_level_ledger_router.py` 后，第 97 节留下的
+`BFIAPResidualIdentityAndLevelLedger` 继续缩小。关键观察是：level 侧并不是终端硬点。
+在 prime-matrix 标准归一化下，AP ambient length 为 `X≈P^2`；而 KLS/DI-BFI 适配模板中
+模数与 well-factorable support 处在 `Q<=P log^O P` 的层级。因此
+
+```text
+Q <= P log^O P = X^{1/2+o(1)}。
+```
+
+BFI Theorem 10 当前使用的 level 门槛为
+
+```text
+Q <= X^{4/7-eps}。
+```
+
+取 `eps=1/56`，允许指数为 `31/56`，而当前 support 指数是 `1/2=28/56`，仍有
+`3/56` 的 X-指数余量，足以吸收固定多对数损失。
+
+机器结果：
+
+```text
+status=bfi_level_exponent_ledger_closed_ap_identity_open；
+bfi_level_exponent_ledger_closed=true；
+open_level_gates=[]；
+remaining_terminal_targets=[
+  OriginalResidualEqualsBFIAPError
+]；
+terminal_gap_after_router=OriginalResidualEqualsBFIAPError。
+```
+
+账本闭合行为：
+
+```text
+AmbientLengthXEqualsP2:
+  X≈P^2；
+
+ModulusSupportQAtMostPPolylog:
+  Q<=P log^O P；
+
+BFIExponentSlack:
+  X^{1/2+o(1)} < X^{4/7-eps}，取 eps=1/56 后余量为 X^{3/56}；
+
+WellFactorableLambdaSupportLevel:
+  lambda 的 well-factorable support 与 Q-level 同表；
+
+DyadicAndLogLossAbsorption:
+  B(A)=A+C0+10 吸收 dyadic、gcd、端点、平滑与分解层数损失。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFIBFILevelLedgerRouter
+  => bfi_level_exponent_ledger_closed_ap_identity_open；
+
+terminal_dual_gap
+  => OriginalResidualEqualsBFIAPError。
+```
+
+这一步的意义是把尺度侧从终端硬点中剥离出去。现在直接 BFI 外部引用路线只剩一个真正核心：
+必须从原始 clean A1/generic WFD 残差出发，逐项证明它就是 BFI prime-AP discrepancy 的 dyadic
+总和。如果这一步失败，才需要回到 KE-13 无投影 fallback。
