@@ -6435,3 +6435,85 @@ NonAPWFDNoProjectionAndW4ObjectTranslationMatrix
 这一步把最后尺度侧关口进一步刚性化：若后续不能提交 `v_WFD` 或线性矩阵无正余量，则失败位置
 会具体落在某条锚点/锥约束上；若矩阵可行，则尺度侧只剩 W4 非对角对象等式与外层
 `UncenteredWFDToKE13NoProjectionIdentity` 的事实证明。
+
+## 109. Maynard S-compression barrier：朴素 S 同一化被指数锥排除
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-maynard-s-compression-barrier-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_maynard_s_compression_barrier_router.py` 后，
+变量翻译矩阵中的一个关键错误路线被排除：共同变量表中的逆元窗口 `S_common` 不能直接当作
+Maynard-W4 指数锥中的 `S_May`。
+
+已知当前 level 为：
+
+```text
+X≈P^2；
+Q<=P log^O P，因此 q=x_Q=1/2+o(1)；
+S_common≈P，因此 x_S_common=1/2+o(1)。
+```
+
+但 Maynard 指数锥的第二条非对角条件给出：
+
+```text
+n+2r+5s+q <= 2-eta。
+```
+
+由于 `n,r>=0`，必有：
+
+```text
+s <= (2-q)/5 - eta/5。
+```
+
+代入 `q=1/2+o(1)` 得：
+
+```text
+s <= 3/10 - eta/5 + o(1)。
+```
+
+所以若设 `S_May=S_common≈X^(1/2)`，就与 `S_May<=X^(3/10-o(1))` 矛盾。更强地说，
+即使 `q>=0`，锥内也强制 `s<=2/5-o(1)`，仍不能容纳 `S_common` 的 `1/2` 指数。
+
+机器结果：
+
+```text
+status=maynard_s_common_inverse_direct_identification_rejected_open；
+closed_barrier_gates=[
+  PriorTranslationMatrixFrontierAvailable,
+  QExponentPinnedAtHalf,
+  CommonInverseSExponentPinnedAtHalf,
+  MaynardSUpperBoundFromCone,
+  NaiveCommonSToMaynardSRejected
+]；
+open_barrier_gates=[
+  MaynardSCompressionMap,
+  AlternateW4ObjectRerouting
+]；
+terminal_gap_after_router=MaynardSCompressionMapOrAlternateW4Rerouting。
+```
+
+因此当前尺度侧最窄剩余变为：
+
+```text
+MaynardSCompressionMapOrAlternateW4Rerouting
+  = MaynardSCompressionMap
+    + AlternateW4ObjectRerouting。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndMaynardSCompression。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndMaynardSCompression
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDMatchesW4OffDiagonalForm
+    + MaynardSCompressionMapOrAlternateW4Rerouting。
+```
+
+这一步是实质收缩：后续不能再尝试把 `S_common≈P` 直接塞入 Maynard-W4 的 `S_May`。
+必须证明从 `s1,s2,h,completion` 结构中产生了一个更短的 Maynard-S 参数
+`S_May<=X^(3/10-o(1))`，或者证明当前 WFD 非对角对象应进入另一个外部 dispersion 原子。
