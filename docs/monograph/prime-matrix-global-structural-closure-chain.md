@@ -4704,3 +4704,82 @@ terminal_dual_gap => ExactRIWDecisionTreeFormulaOrCleanReturnOrExternalDIBFIOrig
 这一步把“无抵消”从解析硬点降成 exact 系数公式硬点。继续无黑箱硬攻时，必须直接写出
 canonical RIW/Buchstab 系数的完整决策树展开，并把路径数账本与 K6/polylog 预算接死；否则只能
 把超预算、非互斥或抵消块送回已有 PDEC/SAE 出口，或采用外部 DI/BFI 原始 dispersion。
+
+## 86. A1 exact 决策树公式化为实际 KZ-E 源头系数识别
+
+新增 `experiments/prime_matrix_triad_a1_decision_tree_formula_router.py` 后，第 85 节留下的
+`ExactRIWDecisionTreeFormulaOrCleanReturn` 被继续压缩。关键结论是：RIW/Buchstab 递归展开本身
+是代数公式，不是新的深估计；真正剩余是 A1/KZ-E 实际进入 WFD 的 `lambda_c` 是否就是该
+canonical RIW/Buchstab 决策树系数。
+
+机器结果：
+
+```text
+status=decision_tree_formula_reduced_to_source_coefficient_identification；
+next_internal_target=ActualKZESourceCoefficientIdentificationOrCleanReturn；
+terminal_gap_after_router=ActualKZESourceCoefficientIdentificationOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+源头系数识别律：
+
+```text
+RIW/Buchstab recursion => finite complete decision-tree expansion;
+complete traces => disjoint support and nonzero same-path coefficients;
+if actual KZ-E lambda_c is this canonical tree coefficient:
+  ExactRIWDecisionTreeFormula follows;
+else:
+  this internal support route is unavailable; return or use external DI/BFI.
+```
+
+本步条件闭合的部分是：
+
+```text
+RIWBuchstabRecursiveFormula:
+  RIW/Buchstab 筛权由递归 inclusion-exclusion 分支生成；
+  展开成 complete branch traces 是代数操作；
+
+TraceDisjointnessAndNonzero:
+  第 85 节已经说明 complete traces 互斥且同路径系数非零。
+```
+
+仍未闭合的 exact 门控是：
+
+```text
+TraceCountWithinK6Budget:
+  exact 截断深度与分支字母表必须给出完整路径数 <= log^J；
+
+ActualKZESourceCoefficientIdentification:
+  A1/KZ-E 中实际使用的 lambda_c 必须等于 canonical RIW/Buchstab 决策树系数；
+
+NonCanonicalSourceCleanReturn:
+  若实际源头只是形式 well-factorable 权重，而不是 canonical 决策树系数，
+  则本内部支撑路线不可用，必须返回 PDEC/SAE 或采用外部 DI/BFI。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+ActualKZESourceCoefficientIdentificationOrCleanReturn:
+  prove the A1/KZ-E lambda_c is exactly the canonical RIW/Buchstab decision-tree coefficient;
+  prove the complete trace count fits the K6/polylog budget;
+  otherwise route the block to PDEC/SAE or external DI/BFI.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DecisionTreeFormulaRouter => source_coefficient_identification_or_external_dibfi_required；
+terminal_dual_gap => ActualKZESourceCoefficientIdentificationOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+这一步排除了又一个伪硬点：不需要重新证明“决策树无抵消”本身；现在必须核对源头。若 KZ-E
+实际 `lambda_c` 是 canonical RIW/Buchstab 系数，则内部支撑链可继续；若只是任意形式
+well-factorable 分解，则此前多次识别出的“形式 WFD 不强制源头熵”问题会复现，必须回到
+PDEC/SAE 缺失行或外部 DI/BFI 原始 dispersion。
