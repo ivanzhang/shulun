@@ -100,6 +100,7 @@ def build_rows(
         "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseDeletionDivergenceOrSC9",
         "SameSetPDECDualComparisonForPersistentMFU_OR_OccupancySaturationOrSC9",
         "SameSetPDECDualComparisonForPersistentMFU_OR_DenseOldHoleKernelOrSC9",
+        "SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9",
     }
     aps_contract_has_dichotomy = has_all(
         aps_contract_text,

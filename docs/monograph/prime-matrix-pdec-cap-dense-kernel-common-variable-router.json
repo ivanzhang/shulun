@@ -1,0 +1,99 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_dense_kernel_common_variable_router",
+  "common_variable_law": "For a dense old-hole selector kernel, write the selected column as c_b=rho_b+r k_b, where rho_b is the affine residue forced by ((t+bQ-1)P+c_b)=0 mod r. For every old prime q|Q, the old-hole condition is equivalent to one forbidden shell residue k_b != r^{-1}(a_q(t)-rho_b) mod q. Thus all low-prime constraints are stored in the same variable k_b. If many b have no legal shell, capacity/Hall deletion fires. If a fixed shell or finite shell packet has positive mass, the low-mod signature is persistent and routes to PDEC or ColumnCRT. If no shell packet persists, the mass is genuinely multishell; non-flat multishell frequency returns to PDEC/ColumnCRT, while the flat case is exactly the self-contained SC-9 large-sieve atom.",
+  "dense_kernel_exclusion_closed": false,
+  "dense_kernel_no_unnamed_escape_closed": true,
+  "multishell_summary": {
+    "multishell_interfaces_materialized": true,
+    "sn3c_pair_count": 3,
+    "sn3c_pair_route_counts": {
+      "kls_multishell_candidate": 2,
+      "lowmod_multiband_sync_candidate": 1
+    },
+    "sn3d_kls_multishell_record_count": 2,
+    "sn3d_max_partial_fourier_l2_over_excess": 14.275461495589605,
+    "sn3d_max_top_frequency_abs_over_excess": 2.0561747296635677
+  },
+  "narrowest_dense_kernel_hardpoint": "FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
+  "open_final_gates": [
+    "FixedShellLowModPersistencePDECOrColumnCRT",
+    "SelfContainedKuznetsovLSAtomSC9"
+  ],
+  "review_conclusion": "稠密旧洞选择核已经化为共同变量表：所有低层同余禁类都作用在同一个壳号变量 `k_b` 上。因此它没有未命名逃逸：无合法壳是容量/Hall 删除，固定壳正密度是 PDEC/ColumnCRT，无固定壳则是多壳分散，非平坦回 PDEC/ColumnCRT，平坦进入自足 SC-9。这仍不排除 PDEC/ColumnCRT 或 SC-9 终端，所以不是完整行/列无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "DenseOldHoleKernelCapacityPDECOrColumnCRT",
+      "gate": "DenseOldHoleKernelActive",
+      "meaning": "上一层已把占位饱和压成稠密旧洞选择核。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "c_b = rho_b + r k_b; k_b != r^{-1}(a_q(t)-rho_b) mod q",
+      "gate": "CommonVariableTableDerived",
+      "meaning": "对每个近满 occupied residue，列选择可唯一拆成仿射余数 rho_b 与壳号 k_b；低层每个素数只禁止 k_b 的一个线性残基。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'row_count': 6, 'consistency_mismatch_count': 0, 'max_hall_uncertified_dead_slots': 0, 'min_hall_certified_dead_rate': 0.6871794871794872, 'max_survivor_kl_floor': 7.121387069923752, 'all_current_dead_slots_named_by_capacity_or_hall': True}",
+      "gate": "CapacityFailureBranchNamed",
+      "meaning": "若共同变量表在大量 b 上没有合法 k，或 residual holes 的 Tail set-cover/Hall 条件失败，则直接支付删除势或容量失败。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "positive shell mass gives persistent low-mod phase/residue signature",
+      "gate": "FixedShellConcentrationRoutesToPDECColumnCRT",
+      "meaning": "若某个有限壳或有限壳簇承载正密度 b，则共同变量表在低模上持久复现，成为 PDEC 相位偏斜或 ColumnCRT 列位移输入。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "{'sn3c_pair_route_counts': {'kls_multishell_candidate': 2, 'lowmod_multiband_sync_candidate': 1}, 'sn3c_pair_count': 3, 'sn3d_kls_multishell_record_count': 2, 'sn3d_max_top_frequency_abs_over_excess': 2.0561747296635677, 'sn3d_max_partial_fourier_l2_over_excess': 14.275461495589605, 'multishell_interfaces_materialized': True}",
+      "gate": "MultishellDispersionRoutesToSC9OrHighFreqColumnPDEC",
+      "meaning": "若没有固定壳集中，选择核只能跨多壳分散；多壳同步若有低模/高频峰则回 PDEC/ColumnCRT，若平坦则进入自足 SC-9 大筛原子。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "capacity / fixed-shell PDEC-ColumnCRT / multishell SC9",
+      "gate": "DenseKernelNoUnnamedEscape",
+      "meaning": "稠密旧洞选择核已经没有未命名第四出口；剩余是命名终端证书而非局部样本或概率缺口。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "terminal PDEC/ColumnCRT exclusion not submitted",
+      "gate": "FixedShellLowModPersistencePDECOrColumnCRT",
+      "meaning": "固定壳低模持久偏斜仍需提交同 formal unit 的 PDEC 或 ColumnCRT 排斥证书。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "flat multishell clean atom remains open",
+      "gate": "SelfContainedKuznetsovLSAtomSC9",
+      "meaning": "多壳完全平坦时仍落入自足 SC-9 谱大筛原子；外部深定理版不能冒充自足闭合。"
+    }
+  ],
+  "source_hashes": {
+    "occupancy_kernel": "28539dfd44e2c2bd1d09259a8105ce2eabd1a14cc43ad8f86fd29aa5fcddc14a",
+    "script": "390c1e2b0128567b266ab7d10d135423ac9a1074cd28b9132d0bc3182381536d",
+    "sn3c": "068dde5a8611eb934124de3e2c1783f29b4a059fb6eedab5001a46e3aabdd758",
+    "sn3d": "079567fc23567567a4ebd708bb5ebf5e48c21e2932946f41ad8496d57e76afa6",
+    "tail_pressure_1": "17e00964a8d3bfd4b75a3c9d9ba943600eb24419a9881e5a105d87c6a24797af",
+    "tail_pressure_2": "d08e44f727ca7b006fddcc672f1cd3066405f66e5987ce360f09642490767428"
+  },
+  "status": "dense_old_hole_kernel_reduced_to_common_variable_shell_dichotomy",
+  "tail_pressure_summary": {
+    "all_current_dead_slots_named_by_capacity_or_hall": true,
+    "consistency_mismatch_count": 0,
+    "max_hall_uncertified_dead_slots": 0,
+    "max_survivor_kl_floor": 7.121387069923752,
+    "min_hall_certified_dead_rate": 0.6871794871794872,
+    "row_count": 6
+  }
+}

@@ -2428,9 +2428,9 @@ closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
   SameSetPDECDualComparisonForPersistentMFU,
-  DiffuseDenseOldHoleKernelOrSelfContainedSC9
+  DiffuseFixedShellPDECColumnCRTOrSelfContainedSC9
 ]；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DenseOldHoleKernelOrSC9。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2454,11 +2454,11 @@ docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
 diffuse_terminal_split_closed=true；
 self_contained_diffuse_terminal_closed=false；
 open_final_gates=[
-  DenseOldHoleKernelCapacityPDECOrColumnCRT,
+  FixedShellLowModPersistencePDECOrColumnCRT,
   SelfContainedKuznetsovLSAtomSC9
 ]；
 narrowest_diffuse_hardpoint=
-  DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+  FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
 ```
 
 结构含义是：`FiberDeletion/NoDeletion-KL/CleanKLS` 不再是宽口径未命名剩余。持续删除必须支付全局删除势；
@@ -2525,14 +2525,36 @@ narrowest_occupancy_hardpoint=DenseOldHoleKernelCapacityPDECOrColumnCRT。
 因此删除侧硬点从宽口径 `OccupancySaturationPDECOrColumnCRT` 压成
 `DenseOldHoleKernelCapacityPDECOrColumnCRT`。
 
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_dense_kernel_common_variable_router.py
+docs/monograph/prime-matrix-pdec-cap-dense-kernel-common-variable-router.md/json
+```
+
+该路由器把稠密旧洞核写成共同变量表：
+
+```text
+dense_kernel_no_unnamed_escape_closed=true；
+dense_kernel_exclusion_closed=false；
+narrowest_dense_kernel_hardpoint=
+  FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+```
+
+结构含义是：对近满 occupied residue 选择列 `c_b`，写成 `c_b=rho_b+r k_b`。
+其中 `rho_b` 由 promoted prime 的仿射方程唯一决定；所有旧素数 `q|Q` 的禁类都变成
+同一个壳号变量 `k_b` 上的一条线性禁止残基。于是无合法壳号是容量/Hall 删除；固定壳或有限壳包正密度
+是低模持久 `PDEC/ColumnCRT`；无固定壳持久就是多壳分散，非平坦频率回 `PDEC/ColumnCRT`，
+平坦频率进入自足 `SC-9`。这关闭的是稠密旧洞核的无名逃逸，不是终端排斥。
+
 因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明更窄的二选一解析终端：
 
 ```text
 Persistent-MFU PDEC:
   持久 Gamma 分支给出多桶同集 LP/对偶容量证书 U_CRT^multi<L_PDEC^multi；
 
-Diffuse DenseOldHoleKernel/SC9:
-  无持久 Gamma 分支证明稠密旧洞选择核触发容量/PDEC/ColumnCRT，
+Diffuse FixedShell/SC9:
+  无持久 Gamma 分支证明固定壳低模持久偏斜触发 PDEC/ColumnCRT，
   或证明 KL 平坦 clean residual 的自足 Kuznetsov-LS atom SC-9；
 
 Referee promotion:

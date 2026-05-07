@@ -146,7 +146,7 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DenseOldHoleKernelOrSC9。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -168,7 +168,7 @@ docs/monograph/prime-matrix-pdec-cap-diffuse-terminal-split-router.md/json
 diffuse_terminal_split_closed=true；
 self_contained_diffuse_terminal_closed=false；
 narrowest_diffuse_hardpoint=
-  DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+  FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
 ```
 
 通俗说，不持久分支不再只是“删除势 / NoDeletion / CleanKLS”这个宽口径描述。现在链条已经拆成：
@@ -246,11 +246,40 @@ DenseOldHoleKernel:
   => 需要证明触发低层容量过载、PDEC 相位偏斜或 ColumnCRT 列位移刚性。
 ```
 
+继续把这个选择核写成共同变量表：
+
+```text
+experiments/prime_matrix_pdec_cap_dense_kernel_common_variable_router.py
+docs/monograph/prime-matrix-pdec-cap-dense-kernel-common-variable-router.md/json
+
+dense_kernel_no_unnamed_escape_closed=true；
+narrowest_dense_kernel_hardpoint=
+  FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+```
+
+共同变量表的核心是把每个被选择的列写成：
+
+```text
+c_b = rho_b + r k_b,
+rho_b == -((t+bQ-1)P) mod r。
+```
+
+于是对每个旧素数 `q|Q`，旧洞条件等价于：
+
+```text
+k_b != r^{-1}(a_q(t)-rho_b) mod q。
+```
+
+也就是说，所有低层同余禁类都作用在同一个壳号变量 `k_b` 上。这样就只有三种出口：
+大量 `b` 无合法壳号时，容量/Hall 删除；某个固定壳或有限壳包承载正密度时，形成低模持久
+`PDEC/ColumnCRT`；没有固定壳持久时，只能是多壳分散，非平坦频率回 `PDEC/ColumnCRT`，
+平坦频率进入自足 `SC-9`。
+
 所以当前真正剩余是更窄的二选一终端估计：
 
 ```text
 持久 Gamma：证明 U_CRT^multi < L_PDEC^multi；
-不持久 Gamma：证明 DenseOldHoleKernelCapacityPDECOrColumnCRT，
+不持久 Gamma：证明 FixedShellLowModPersistencePDECOrColumnCRT，
               或证明 SelfContainedKuznetsovLSAtomSC9。
 ```
 

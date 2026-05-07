@@ -2,11 +2,11 @@
 
 **状态：** `pdec_cap_same_set_global_dual_frontier_reduced_to_terminal_estimates_not_closed`
 
-PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；diffuse 分支又被压到 DenseOldHoleKernel/Capacity/PDEC/ColumnCRT 或自足 SC-9。但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 `DenseOldHoleKernelCapacityPDECOrColumnCRT` 或 `SelfContainedKuznetsovLSAtomSC9`。
+PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；diffuse 分支又被压到固定壳低模 PDEC/ColumnCRT 持久偏斜或自足 SC-9。但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 `FixedShellLowModPersistencePDECOrColumnCRT` 或 `SelfContainedKuznetsovLSAtomSC9`。
 
 ## 1. 前沿律
 
-The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed further to DenseOldHoleKernel/Capacity/PDEC/ColumnCRT or the self-contained Kuznetsov-LS atom SC-9. The remaining global final gates are the persistent same-set PDEC dual comparison and the narrowed diffuse terminal estimates, not an unnamed APS exit.
+The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed further to fixed-shell low-mod PDEC/ColumnCRT persistence or the self-contained Kuznetsov-LS atom SC-9. The remaining global final gates are the persistent same-set PDEC dual comparison and the narrowed diffuse terminal estimates, not an unnamed APS exit.
 
 ```text
 PDEC_CAP_SameSetGlobalDualCertificate
@@ -15,7 +15,7 @@ PDEC_CAP_SameSetGlobalDualCertificate
   -> current ForcedCap routed to multi-bucket ActualPaymentStitching;
   -> APS profinite dichotomy routed;
   -> remaining terminal estimates:
-       persistent MFU PDEC or diffuse DenseOldHoleKernel / SC-9.
+       persistent MFU PDEC or diffuse FixedShellPDECColumnCRT / SC-9.
 ```
 
 ## 2. 汇总
@@ -23,8 +23,8 @@ PDEC_CAP_SameSetGlobalDualCertificate
 - `closed_current_materialized_pdec_gates=true`。
 - `pdec_cap_same_set_global_dual_closed=false`。
 - `row_column_unconditional_closed=false`。
-- `narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DenseOldHoleKernelOrSC9`。
-- `open_final_gates=['SameSetPDECDualComparisonForPersistentMFU', 'DiffuseDenseOldHoleKernelOrSelfContainedSC9']`。
+- `narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9`。
+- `open_final_gates=['SameSetPDECDualComparisonForPersistentMFU', 'DiffuseFixedShellPDECColumnCRTOrSelfContainedSC9']`。
 
 ## 3. 审查表
 
@@ -42,10 +42,10 @@ PDEC_CAP_SameSetGlobalDualCertificate
 | `FiniteTowerEvidenceRegistered` | `true` | `false` | ['FiberDeletionLayer', 'FiberDeletionLayer'] | 已物化两层均为 FiberDeletionLayer，但这仍只是有限塔证据，不是全局证明。 |
 | `ProfiniteActualPaymentStitchingDichotomy` | `true` | `false` | finite projection compactness / pigeonhole dichotomy | 真实支付图 Gamma 的 PersistentStitching / NoPersistentStitching 二分逻辑已闭合到两侧终端估计。 |
 | `SameSetPDECDualComparisonForPersistentMFU` | `false` | `true` | U_CRT^multi<L_PDEC^multi not submitted for all persistent MFU | 若 Gamma 持久缝合成多桶 formal unit，仍需提交同集多桶 PDEC 对偶容量证书。 |
-| `DiffuseTerminalSplitRouted` | `true` | `false` | DenseOldHoleKernelCapacityPDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9 | 不持久 Gamma 分支已合成为删除势/NoDeletion-KL/CleanKLS 的终端分裂，无名 diffuse 出口关闭。 |
-| `DiffuseDenseOldHoleKernelOrSelfContainedSC9` | `false` | `true` | ['DenseOldHoleKernelCapacityPDECOrColumnCRT', 'SelfContainedKuznetsovLSAtomSC9'] | 不持久 Gamma 分支剩余自足义务：稠密旧洞选择核触发容量/PDEC/ColumnCRT，或 KL 平坦 clean 残余的 SC-9 谱大筛原子。 |
+| `DiffuseTerminalSplitRouted` | `true` | `false` | FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9 | 不持久 Gamma 分支已合成为删除势/NoDeletion-KL/CleanKLS 的终端分裂，无名 diffuse 出口关闭。 |
+| `DiffuseFixedShellPDECColumnCRTOrSelfContainedSC9` | `false` | `true` | ['FixedShellLowModPersistencePDECOrColumnCRT', 'SelfContainedKuznetsovLSAtomSC9'] | 不持久 Gamma 分支剩余自足义务：固定壳低模持久偏斜的 PDEC/ColumnCRT 排斥，或 KL/多壳平坦 clean 残余的 SC-9 谱大筛原子。 |
 | `ActualPaymentStitchingContractSupersededByProfiniteDichotomy` | `true` | `false` | contract open text superseded by profinite APS router | 原 APS 合同中的二分缺口已由投影塔二分路由器闭合；它不再是独立终端阻塞。 |
 
 ## 4. 下一步
 
-下一步直接攻两侧终端估计：持久 `Gamma` 分支的多桶同集 PDEC 对偶容量证书 `U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的稠密旧洞选择核容量/PDEC/ColumnCRT 或自足 `SelfContainedKuznetsovLSAtomSC9`。
+下一步直接攻两侧终端估计：持久 `Gamma` 分支的多桶同集 PDEC 对偶容量证书 `U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的固定壳低模持久 PDEC/ColumnCRT 或自足 `SelfContainedKuznetsovLSAtomSC9`。
