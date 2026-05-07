@@ -2,25 +2,27 @@
 
 **状态：** `same_set_capacity_frontier_materialized_terminal_dual_open`
 
-Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，但仍不足以给完整 U_CRT<L_PDEC。下一步必须提交 column/tail/cofactor 同集结构行，或把剩余平坦残差送入 CleanKLS。
+Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，但仍不足以给完整 U_CRT<L_PDEC。下一步必须把暴露候选桶提升为真实支付测度，并完成 PDEC/CleanKLS 二分。
 
 ## 1. 结构律
 
-同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；最终缺口变成 column/tail/cofactor 同集结构行，或 flat residual CleanKLS/DLS。
+同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。最终缺口变成真实支付选择：集中签名给 PDEC，递归扩散给 CleanKLS/DLS。
 
 ```text
 Same-set capacity upper:
   only rows on the same g(t) are legal；
   box-only rows are insufficient；
   failure must output DualCap or missing row；
-  routed DualCap returns to PDEC/LocalSurvivor/CleanKLS。
+  continuous cap exposes column-tail payment buckets；
+  actual payment concentration returns to PDEC；
+  recursive diffusion returns to CleanKLS/DLS。
 ```
 
 ## 2. 汇总
 
 - `all_known_frontiers_routed=True`。
-- `terminal_dual_gap=ColumnTailCofactorOrCleanKLSStructureRows`。
-- `status_counts={'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'no_fourth_exit': 1, 'ready_current_lhb_branch': 1, 'structurally_insufficient': 1}`。
+- `terminal_dual_gap=ActualPaymentSelectionOrCleanKLSAdmission`。
+- `status_counts={'actual_payment_selection_materialized': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'no_fourth_exit': 1, 'ready_current_lhb_branch': 1, 'structurally_insufficient': 1}`。
 - `lp_summary={'q': 2310, 'p_count': 9, 'all_zero_blocks_ready': True, 'box_only_global_closure': False, 'box_only_obstruction_count': 9, 'row_generators_ready': ['nonnegativity', 'phase_caps_g_le_M', 'WHOLEDEF_zero_block', 'BRIDGED_zero_block']}`。
 - `fourier_summary={'q': 2310, 'p_count': 9, 'class_counts': {'EmptyCap': 8267, 'PersistentCap': 192813, 'SparseCap': 48292}, 'has_persistent_cap': True}`。
 - `dualcap_summary={'aggregate_class_counts': {'ForcedPersistentByDensityBarrier': 24, 'PersistentCap': 68, 'SparseCap': 16}, 'aggregate_route_counts': {'LiftOrColumnTailOrCleanKLS': 24, 'LocalSurvivorOrExplicitPDEC': 16, 'RefinedPDECOrColumnTailRows': 68}}`。
@@ -36,6 +38,7 @@ Same-set capacity upper:
 | `CurrentPXPExit` | `closed` | 当前 DualCap 的 P×P 早期出口由 SparseLocalSurvivor/BTLS/LFTE 接住。 | 剩余不是 P 行出口，而是终端 PDEC/LocalSurvivor/CleanKLS 证书。 |
 | `TerminalConfluence` | `no_fourth_exit` | APS、DualCap、升层删除、NoDeletion-KL、promotion 均汇入三终端。 | 直接攻三终端证书；首要为 PDEC same-set U_CRT<L_PDEC。 |
 | `ContinuousDirectionArcDual` | `continuous_dualcap_materialized_not_closed` | 连续方向弧精确审计已提交；route_counts={'PersistentContinuousDualCapNeedsColumnTailOrCleanKLS': 8, 'SparseContinuousDualCapToLocalSurvivor': 1}；max U_box/M=0.998391。 | 方向采样退路关闭；下一步补 column/tail/cofactor 同集结构行或转 CleanKLS。 |
+| `ContinuousColumnTailBridge` | `actual_payment_selection_materialized` | 连续 cap 已接到 column-tail 暴露账本；route_counts={'ContinuousCapActualPaymentSelectionDichotomy': 8, 'NoTailDemandSparseOrLocalSurvivor': 1}；all_cap_recomputations_match=True。 | 从暴露候选桶提升到真实支付测度：集中给 PDEC，递归扩散给 CleanKLS/DLS。 |
 
 ## 4. 当前结论
 
@@ -49,8 +52,9 @@ DualCap materialized and routed；
 P×P exits closed；
 no fourth exit in current A1 chain；
 continuous direction-arc dual materialized but not closed；
-remaining gap is column/tail/cofactor same-set structure or CleanKLS。
+continuous column-tail bridge materialized；
+remaining gap is ActualPaymentSelection or CleanKLS admission。
 ```
 
 所以下一步唯一值得硬攻的 A1 目标是同集结构行：
-把连续弧 persistent cap 与 column/tail/cofactor 非复用约束接起来，或证明其平坦残差进入 CleanKLS。
+把暴露候选桶提升为真实支付测度；若集中则提交 PDEC，若递归扩散则进入 CleanKLS/DLS。

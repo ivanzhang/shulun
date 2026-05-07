@@ -28,6 +28,7 @@ DEFAULT_DUALCAP = DOCS / "prime-matrix-triad-a1-pdec-dualcap-extractor.json"
 DEFAULT_MASS = DOCS / "prime-matrix-triad-a1-pdec-mass-source-router.json"
 DEFAULT_CONFLUENCE = DOCS / "prime-matrix-triad-a1-terminal-confluence-router.json"
 DEFAULT_CONTINUOUS = DOCS / "prime-matrix-triad-a1-continuous-direction-arc-dual.json"
+DEFAULT_BRIDGE = DOCS / "prime-matrix-triad-a1-continuous-columntail-bridge.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -84,6 +85,7 @@ def build_frontier_rows(
     mass: dict[str, Any],
     confluence: dict[str, Any],
     continuous: dict[str, Any],
+    bridge: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -153,6 +155,15 @@ def build_frontier_rows(
             ),
             "next_action": "方向采样退路关闭；下一步补 column/tail/cofactor 同集结构行或转 CleanKLS。",
         },
+        {
+            "frontier": "ContinuousColumnTailBridge",
+            "status": "actual_payment_selection_materialized",
+            "evidence": (
+                f"连续 cap 已接到 column-tail 暴露账本；route_counts={bridge['route_counts']}；"
+                f"all_cap_recomputations_match={bridge['all_cap_recomputations_match']}。"
+            ),
+            "next_action": "从暴露候选桶提升到真实支付测度：集中给 PDEC，递归扩散给 CleanKLS/DLS。",
+        },
     ]
 
 
@@ -164,6 +175,7 @@ def run(
     mass_path: Path,
     confluence_path: Path,
     continuous_path: Path,
+    bridge_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -173,8 +185,9 @@ def run(
     mass = load_json(mass_path)
     confluence = load_json(confluence_path)
     continuous = load_json(continuous_path)
+    bridge = load_json(bridge_path)
     frontier_rows = build_frontier_rows(
-        lp, direction, fourier, dualcap, mass, confluence, continuous
+        lp, direction, fourier, dualcap, mass, confluence, continuous, bridge
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -183,6 +196,7 @@ def run(
         "structurally_insufficient",
         "dualcap_materialized",
         "continuous_dualcap_materialized_not_closed",
+        "actual_payment_selection_materialized",
         "closed",
         "no_fourth_exit",
     }
@@ -199,6 +213,7 @@ def run(
             "pdec_mass_source_json": file_sha256(mass_path),
             "terminal_confluence_json": file_sha256(confluence_path),
             "continuous_direction_arc_json": file_sha256(continuous_path),
+            "continuous_columntail_bridge_json": file_sha256(bridge_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -209,18 +224,18 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "ColumnTailCofactorOrCleanKLSStructureRows",
+        "terminal_dual_gap": "ActualPaymentSelectionOrCleanKLSAdmission",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
-            "连续方向弧精确审计已排除离散采样不足这一退路；最终缺口变成 column/tail/cofactor "
-            "同集结构行，或 flat residual CleanKLS/DLS。"
+            "连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。"
+            "最终缺口变成真实支付选择：集中签名给 PDEC，递归扩散给 CleanKLS/DLS。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
             "当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，"
-            "但仍不足以给完整 U_CRT<L_PDEC。下一步必须提交 column/tail/cofactor 同集结构行，"
-            "或把剩余平坦残差送入 CleanKLS。"
+            "连续 cap 已接入 column-tail 暴露账本，但仍不足以给完整 U_CRT<L_PDEC。"
+            "下一步必须把暴露候选桶提升为真实支付测度，并完成 PDEC/CleanKLS 二分。"
         ),
     }
 
@@ -243,7 +258,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  only rows on the same g(t) are legal；",
         "  box-only rows are insufficient；",
         "  failure must output DualCap or missing row；",
-        "  routed DualCap returns to PDEC/LocalSurvivor/CleanKLS。",
+        "  continuous cap exposes column-tail payment buckets；",
+        "  actual payment concentration returns to PDEC；",
+        "  recursive diffusion returns to CleanKLS/DLS。",
         "```",
         "",
         "## 2. 汇总",
@@ -284,11 +301,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "P×P exits closed；",
             "no fourth exit in current A1 chain；",
             "continuous direction-arc dual materialized but not closed；",
-            "remaining gap is column/tail/cofactor same-set structure or CleanKLS。",
+            "continuous column-tail bridge materialized；",
+            "remaining gap is ActualPaymentSelection or CleanKLS admission。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "把连续弧 persistent cap 与 column/tail/cofactor 非复用约束接起来，或证明其平坦残差进入 CleanKLS。",
+            "把暴露候选桶提升为真实支付测度；若集中则提交 PDEC，若递归扩散则进入 CleanKLS/DLS。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -305,6 +323,7 @@ def main() -> None:
     parser.add_argument("--mass-json", type=Path, default=DEFAULT_MASS)
     parser.add_argument("--confluence-json", type=Path, default=DEFAULT_CONFLUENCE)
     parser.add_argument("--continuous-json", type=Path, default=DEFAULT_CONTINUOUS)
+    parser.add_argument("--bridge-json", type=Path, default=DEFAULT_BRIDGE)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -317,6 +336,7 @@ def main() -> None:
         mass_path=args.mass_json,
         confluence_path=args.confluence_json,
         continuous_path=args.continuous_json,
+        bridge_path=args.bridge_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

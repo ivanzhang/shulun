@@ -3179,3 +3179,70 @@ terminal_dual_gap => ColumnTailCofactorOrCleanKLSStructureRows。
 tail/cofactor nonreuse、actual Gamma forced-signature 约束接起来；
 若这些约束无法制造 PDEC 抵消，则剩余对象必须是 flat residual CleanKLS/DLS。
 ```
+
+## 65. A1 连续弧 ColumnTail 桥接
+
+新增 `experiments/prime_matrix_triad_a1_continuous_columntail_bridge.py` 后，
+连续方向弧 persistent cap 已经接到低洞的 column-tail 暴露账本。
+
+核心接口不再使用固定阈值常数，而使用递归剥离二分：
+
+```text
+continuous cap C
+=> low-hole demand D_C
+=> actual tail payment measure mu_C on (prime,residue,column-residue)
+=> limsup positive signature -> column/tail PDEC
+=> all fixed signatures vanish -> diffuse CleanKLS/DLS。
+```
+
+运行结果：
+
+```text
+status=continuous_dualcap_columntail_bridge_materialized；
+cap_report_count=9；
+all_cap_recomputations_match=True；
+route_counts={
+  ContinuousCapActualPaymentSelectionDichotomy: 8,
+  NoTailDemandSparseOrLocalSurvivor: 1
+}。
+```
+
+P 级读数显示，除 `P=13` 的无 tail demand 稀疏/局部分支外，
+所有最强连续弧 cap 都有正低洞需求，并进入真实支付选择二分：
+
+```text
+P=17 max_payment_signature_share=0.0357143；
+P=19 max_payment_signature_share=0.0441176；
+P=23 max_payment_signature_share=0.0274159；
+P=29 max_payment_signature_share=0.0357788；
+P=31 max_payment_signature_share=0.0249140；
+P=37 max_payment_signature_share=0.0195775；
+P=43 max_payment_signature_share=0.0105805；
+P=47 max_payment_signature_share=0.0164943。
+```
+
+这些数值不是闭合常数，而是提示当前暴露候选桶高度分散。结构性结论是：
+
+```text
+若真实支付在无限反例子族中反复集中于某个签名，
+  则该签名给出 column/tail PDEC 输入；
+
+若所有固定签名都能被递归剥离到零质量，
+  则支付测度扩散，进入 CleanKLS/DLS 输入。
+```
+
+前沿路由器同步更新后：
+
+```text
+ContinuousColumnTailBridge => actual_payment_selection_materialized；
+terminal_dual_gap => ActualPaymentSelectionOrCleanKLSAdmission。
+```
+
+因此当前最窄硬点已经从“补 column-tail 结构行”推进为：
+
+```text
+ActualPaymentSelection:
+  从暴露候选桶提升到真实支付测度；
+  证明 limsup 正质量签名产生合法 PDEC 行；
+  证明所有签名递归剥离为 0 时满足 CleanKLS/DLS 输入条件。
+```
