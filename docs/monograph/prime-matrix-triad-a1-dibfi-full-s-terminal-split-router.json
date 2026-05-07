@@ -1,0 +1,84 @@
+{
+  "certificate_type": "triad_a1_dibfi_full_s_terminal_split_router",
+  "closed_split_gates": [
+    "PriorSourceAntiAtomTerminalPinned",
+    "ExternalFullSKLSExtContractAvailable",
+    "PrimarySourceSpecializationRejected",
+    "APSourceLiftRejected",
+    "SourceAntiAtomIsNewTheoremInput",
+    "TerminalSplitClosedAtRoutingLevel"
+  ],
+  "external_contract": "FullS-KLS-ext",
+  "external_contract_version_closed": true,
+  "open_split_gates": [
+    "NewFullSNonAPSourceAntiAtomTheoremInput"
+  ],
+  "previous_terminal_gap": "FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov",
+  "review_conclusion": "full-S 终端已拆分：外部合同版由 `FullS-KLS-ext` 闭合；完全自足/主来源逐项版只剩 `NewFullSNonAPSourceAntiAtomTheoremInput`。",
+  "self_contained_boundary": "External-contract version may accept FullS-KLS-ext. Fully self-contained or primary-source-specialized version still needs a new source anti-atom theorem.",
+  "self_contained_version_closed": false,
+  "source_hashes": {
+    "ap_source_lift_nogo_json": "e23282e2d3de3d5f70d70dde5013a0f0e8788656d98d04e13e0856dccece5d0f",
+    "full_s_kls_ext_json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "primary_source_nogo_json": "23fcf1606c36412403096fed957e44d7b3ece1fc8f2c6d5290cd1e29bce7bda8",
+    "script": "a7ced03292b39c07c09fa742b81450b7774a8ae6e807d61cad82079a93d69dff",
+    "source_antiatom_json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66"
+  },
+  "split_rows": [
+    {
+      "closed": true,
+      "evidence": "previous terminal=FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov; open=['FullSNonAPStrengthenedSourceAntiAtomContractOrExternalDIBFIKuznetsov'].",
+      "gate": "PriorSourceAntiAtomTerminalPinned",
+      "next_target": "ExternalContractOrSelfContainedInputSplit",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "FullS-KLS-ext is already materialized as an external theorem contract for the current uncentered no-projection full-S non-AP WFD object.",
+      "gate": "ExternalFullSKLSExtContractAvailable",
+      "next_target": "ExternalContractVersionClosed",
+      "remaining": "closed only for the external-theorem version"
+    },
+    {
+      "closed": true,
+      "evidence": "Existing DI/BFI primary sources do not imply the custom full-S KLS-ext theorem.",
+      "gate": "PrimarySourceSpecializationRejected",
+      "next_target": "NewFullSSourceAntiAtomTheoremInput",
+      "remaining": "no primary-source self-contained derivation is available"
+    },
+    {
+      "closed": true,
+      "evidence": "APSourceLift was rejected; non-AP full-S WFD cannot return to the AP-source BFI branch.",
+      "gate": "APSourceLiftRejected",
+      "next_target": "NewFullSSourceAntiAtomTheoremInput",
+      "remaining": "no AP lift shortcut remains"
+    },
+    {
+      "closed": true,
+      "evidence": "Since formal WFD/K4/K6/incidence/canonical shortcuts are blocked and AP lift is rejected, the strengthened anti-atom contract is a genuinely new source theorem input.",
+      "gate": "SourceAntiAtomIsNewTheoremInput",
+      "next_target": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "remaining": "prove or assume this new source theorem for the self-contained route"
+    },
+    {
+      "closed": true,
+      "evidence": "The full-S branch is now separated into external-contract closure and self-contained new-input obligation.",
+      "gate": "TerminalSplitClosedAtRoutingLevel",
+      "next_target": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "remaining": "none at split-definition level"
+    },
+    {
+      "closed": false,
+      "evidence": "The repository still lacks a proof of the source anti-atom theorem for the final full-S non-AP WFD capacity measure.",
+      "gate": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "next_target": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "remaining": "prove this new anti-atom theorem, or explicitly accept FullS-KLS-ext as external input"
+    }
+  ],
+  "status": "full_s_external_contract_closed_self_contained_antiatom_input_open",
+  "structural_law": "The current full-S terminal is no longer a hidden structural ambiguity. If FullS-KLS-ext is accepted as an external theorem, the external branch is closed. If the proof must be self-contained or derived from existing DI/BFI primary sources, the only remaining input is a new anti-atom theorem for the final full-S non-AP source measure.",
+  "terminal_gap_after_router": "NewFullSNonAPSourceAntiAtomTheoremInput",
+  "terminal_gap_expansion": [
+    "NewFullSNonAPSourceAntiAtomTheoremInput"
+  ]
+}
