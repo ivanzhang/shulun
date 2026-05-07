@@ -199,6 +199,10 @@ DEFAULT_DIBFI_FULL_S_TERMINAL_SPLIT = (
 DEFAULT_DIBFI_SELF_CONTAINED_ANTIATOM_NOGO = (
     DOCS / "prime-matrix-triad-a1-dibfi-self-contained-antiatom-nogo-router.json"
 )
+DEFAULT_DIBFI_SELF_CONTAINED_CLOSURE_TAXONOMY = (
+    DOCS
+    / "prime-matrix-triad-a1-dibfi-self-contained-closure-taxonomy-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -318,6 +322,7 @@ def build_frontier_rows(
     dibfi_full_s_source_antiatom: dict[str, Any],
     dibfi_full_s_terminal_split: dict[str, Any],
     dibfi_self_contained_antiatom_nogo: dict[str, Any],
+    dibfi_self_contained_closure_taxonomy: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -1099,6 +1104,24 @@ def build_frontier_rows(
                 "或限制到 canonical source branch。"
             ),
         },
+        {
+            "frontier": "A1DIBFISelfContainedClosureTaxonomyRouter",
+            "status": dibfi_self_contained_closure_taxonomy["status"],
+            "evidence": (
+                f"自足闭合路线已分类；canonical_restricted_closed="
+                f"{dibfi_self_contained_closure_taxonomy['canonical_restricted_self_contained_version_closed']}；"
+                f"generic_refuted="
+                f"{dibfi_self_contained_closure_taxonomy['generic_self_contained_version_refuted']}；"
+                f"actual_source_bridge_pinned="
+                f"{dibfi_self_contained_closure_taxonomy['actual_source_bridge_pinned']}；"
+                f"terminal_gap="
+                f"{dibfi_self_contained_closure_taxonomy['terminal_gap_after_router']}。"
+            ),
+            "next_action": (
+                "直接证明实际 full-S non-AP 源头为 canonical RIW/Buchstab，"
+                "或证明该实际源头满足 strengthened source anti-atom。"
+            ),
+        },
     ]
 
 
@@ -1173,6 +1196,7 @@ def run(
     dibfi_full_s_source_antiatom_path: Path,
     dibfi_full_s_terminal_split_path: Path,
     dibfi_self_contained_antiatom_nogo_path: Path,
+    dibfi_self_contained_closure_taxonomy_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1267,6 +1291,9 @@ def run(
     dibfi_self_contained_antiatom_nogo = load_json(
         dibfi_self_contained_antiatom_nogo_path
     )
+    dibfi_self_contained_closure_taxonomy = load_json(
+        dibfi_self_contained_closure_taxonomy_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1338,6 +1365,7 @@ def run(
         dibfi_full_s_source_antiatom,
         dibfi_full_s_terminal_split,
         dibfi_self_contained_antiatom_nogo,
+        dibfi_self_contained_closure_taxonomy,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1411,13 +1439,14 @@ def run(
         "full_s_support_capacity_reduced_to_source_antiatom_or_external_open",
         "full_s_external_contract_closed_self_contained_antiatom_input_open",
         "self_contained_generic_full_s_antiatom_refuted_external_contract_closed",
+        "self_contained_closure_taxonomy_closed_actual_source_bridge_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_external_closed_self_contained_generic_refuted",
+        "status": "same_set_capacity_frontier_self_contained_taxonomy_closed_actual_source_bridge_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1572,6 +1601,9 @@ def run(
             "a1_dibfi_self_contained_antiatom_nogo_json": file_sha256(
                 dibfi_self_contained_antiatom_nogo_path
             ),
+            "a1_dibfi_self_contained_closure_taxonomy_json": file_sha256(
+                dibfi_self_contained_closure_taxonomy_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1591,10 +1623,22 @@ def run(
         "self_contained_generic_version_closed_as_proof": dibfi_self_contained_antiatom_nogo[
             "self_contained_generic_version_closed_as_proof"
         ],
-        "terminal_gap_expansion": dibfi_self_contained_antiatom_nogo[
+        "canonical_restricted_self_contained_version_closed": dibfi_self_contained_closure_taxonomy[
+            "canonical_restricted_self_contained_version_closed"
+        ],
+        "original_unrestricted_self_contained_version_closed": dibfi_self_contained_closure_taxonomy[
+            "original_unrestricted_self_contained_version_closed"
+        ],
+        "actual_source_bridge_pinned": dibfi_self_contained_closure_taxonomy[
+            "actual_source_bridge_pinned"
+        ],
+        "actual_source_bridge_theorem_closed": dibfi_self_contained_closure_taxonomy[
+            "actual_source_bridge_theorem_closed"
+        ],
+        "terminal_gap_expansion": dibfi_self_contained_closure_taxonomy[
             "terminal_gap_expansion"
         ],
-        "terminal_dual_gap": "NoCurrentSelfContainedGenericFullSClosureWithoutNewSourceAxiom",
+        "terminal_dual_gap": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1662,7 +1706,10 @@ def run(
             "现在 moving-delta 容量模型显示当前 generic 自足反原子命题在既有形式假设下为假："
             "单个移动 (u,v) 块可承载全部容量，导致 max M_{u,v}/sum M_{u,v}=1。"
             "因此外部 FullS-KLS-ext 合同版闭合；generic 自足版只能通过新增源头反原子公理、"
-            "限制到 canonical source branch，或接受外部合同继续。"
+            "限制到 canonical source branch，或接受外部合同继续。最新分类账本又把这三条路"
+            "精确分开：外部 generic 合同版闭合，canonical-restricted 自足分支闭合，"
+            "unrestricted generic 自足版被反证；真正剩余是实际源头桥，即证明实际 full-S non-AP "
+            "源头为 canonical RIW/Buchstab，或证明实际源头满足 strengthened source anti-atom。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1704,8 +1751,9 @@ def run(
             "支撑+容量兼容又被压成 source capacity measure 的反原子合同；最后 full-S 终端"
             "已拆成外部合同版与自足版。若接受 FullS-KLS-ext，外部合同版闭合；"
             "当前 generic 自足版反原子输入则被 moving-delta 模型反证。"
-            "这一步完成的是路线分类闭合：不能把外部合同版伪装为自足证明；"
-            "若坚持完全自足，只能新增并证明 source anti-atom 公理，或限制到 canonical source branch。"
+            "最新分类进一步说明：canonical-restricted 自足版已由分支链闭合，"
+            "unrestricted generic 自足版不能闭合；若坚持把实际对象完全自足化，"
+            "终端只剩 `ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput`。"
         ),
     }
 
@@ -1793,7 +1841,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  Factor support plus capacity compatibility reduces to source anti-atom contract。",
         "  Full-S external contract version closes by FullS-KLS-ext。",
         "  Generic self-contained anti-atom is refuted by the moving-delta model。",
-        "  Remaining legal exits: external FullS-KLS-ext, strengthened source anti-atom axiom, or canonical source branch。",
+        "  Canonical-restricted self-contained branch is closed by the source-branch chain。",
+        "  Remaining actual-source bridge: source lock or strengthened anti-atom。",
         "```",
         "",
         "## 2. 汇总",
@@ -1803,6 +1852,10 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"- `external_contract_version_closed={result['external_contract_version_closed']}`。",
         f"- `self_contained_generic_version_refuted={result['self_contained_generic_version_refuted']}`。",
         f"- `self_contained_generic_version_closed_as_proof={result['self_contained_generic_version_closed_as_proof']}`。",
+        f"- `canonical_restricted_self_contained_version_closed={result['canonical_restricted_self_contained_version_closed']}`。",
+        f"- `original_unrestricted_self_contained_version_closed={result['original_unrestricted_self_contained_version_closed']}`。",
+        f"- `actual_source_bridge_pinned={result['actual_source_bridge_pinned']}`。",
+        f"- `actual_source_bridge_theorem_closed={result['actual_source_bridge_theorem_closed']}`。",
         f"- `terminal_gap_expansion={result['terminal_gap_expansion']}`。",
         f"- `status_counts={result['status_counts']}`。",
         f"- `lp_summary={result['lp_summary']}`。",
@@ -1900,7 +1953,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIFullSSupportRange router materialized；",
             "DIBFIFullSSourceAntiAtom router materialized；",
             "DIBFIFullSTerminalSplit router materialized；",
-            "remaining self-contained gap is NewFullSNonAPSourceAntiAtomTheoremInput。",
+            "DIBFISelfContainedAntiAtomNoGo router materialized；",
+            "DIBFISelfContainedClosureTaxonomy router materialized；",
+            "remaining actual-source gap is ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1908,7 +1963,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩未中心化无投影恒等式"
             "与 DI Kloosterman 窗口代入账本；"
             "APSourceLift 已被当前合同排除；外部合同版可接受 FullS-KLS-ext；"
-            "完全自足/主来源逐项版仍只剩 NewFullSNonAPSourceAntiAtomTheoremInput。",
+            "generic 自足版被 moving-delta 反证；canonical-restricted 自足版闭合；"
+            "若要把实际对象完全自足化，当前唯一剩余是证明实际源头锁定或实际源头反原子。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -2198,6 +2254,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_SELF_CONTAINED_ANTIATOM_NOGO,
     )
+    parser.add_argument(
+        "--dibfi-self-contained-closure-taxonomy-json",
+        type=Path,
+        default=DEFAULT_DIBFI_SELF_CONTAINED_CLOSURE_TAXONOMY,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -2302,6 +2363,9 @@ def main() -> None:
         dibfi_full_s_terminal_split_path=args.dibfi_full_s_terminal_split_json,
         dibfi_self_contained_antiatom_nogo_path=(
             args.dibfi_self_contained_antiatom_nogo_json
+        ),
+        dibfi_self_contained_closure_taxonomy_path=(
+            args.dibfi_self_contained_closure_taxonomy_json
         ),
     )
     args.json_out.write_text(
