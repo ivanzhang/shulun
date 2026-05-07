@@ -1,9 +1,39 @@
 # 交接给新 codex 会话
 
-> 旧 codex 会话因模型限流卡死。Claude 接手完成它最后一句任务后，写下此交接文档。
-> **接手时间**: 2026-05-05
-> **覆盖范围**: 仅完成 codex 最后一句明确任务 (运行 95% 热门带分类器并取回结果)，
-> 其它工作 (论文主线、§242/§243/§244 行命题分析等) 留给新 codex 会话继续。
+> 旧 codex 会话因模型限流卡死。Claude 接手并连续硬攻最小硬点。
+> **首次接手**: 2026-05-05 — 完成 codex 最后一句任务 (运行 95% 热门带分类器)
+> **第二轮接手**: 2026-05-07 — 硬攻 §4.1 + §4.2 (SlackFloorExit 统一处理合同 + β/P 扩展验证)
+> **覆盖范围**: 不动论文主线 (§242/§243/§244 行命题分析)，仅在 C13 支线推进出口处理
+> 与跨 β/P 稳定性。
+
+## 0. 第二轮接手新闭合 (2026-05-07)
+
+**§4.1 SlackFloorExit 统一处理合同已闭合**：
+- handler 文件：`experiments/prime_matrix_alpha_tail_tailpair_c13_hotband_slack_floor_exit_handler.py`
+- 集成 alpha-tail 能量承载 + endpoint persistence 失败路由两条独立备援链
+- contract_pass 判据：`all_alpha_tail_carrier ∧ all_failure_mass_routed`
+
+**§4.2 跨 β/P 稳定性已验证** (4 组配置全部 contract_pass=True，零真空洞):
+
+| 配置 | 出口 | NoFailure | PDEC | SAE | 出口类型唯一 |
+|------|------|-----------|------|-----|--------------|
+| β=0.95, P∈{5003,10007} | 7 | 6 | 1 | 0 | 全 SlackFloorExit |
+| β=0.90, P∈{5003,10007} | 27 | 24 | 3 | 0 | 全 SlackFloorExit |
+| β=0.85, P∈{5003,10007} | 53 | 37 | 16 | 0 | 全 SlackFloorExit |
+| β=0.95, P∈{5003,10007,20011} | 10 | 9 | 1 | 0 | 全 SlackFloorExit |
+
+详细分析见 `docs/c13_hotband_slack_floor_exit_handler_analysis_20260507.md`。
+四份运行结果在 `docs/c13_hotband_slack_floor_exit_handler_*.txt`。
+
+**剩余硬点 (新 codex 会话直接接手)**：
+1. PDEC 残余债务的全局闭合 — β=0.85 时 16 个 PDEC 残余，需要 PDEC 链一个独立的
+   "全局总闭合"分层证书。
+2. `min_pdec_top_excess` 解析下界化 — 当前 PDEC 顶部 excess 值已有 60+ 数值证据，
+   需升级为 P 解析下界 (≥ c·log P)。
+3. β 临界扫描 — 验证 β → 0.5 时 PDEC 占比是否上升至 50% 以上；
+   若是则需把 PDEC 路由前置成主链。
+
+下方 1–7 节是首次接手 (2026-05-05) 的状态，保留作为历史脉络。
 
 ---
 
