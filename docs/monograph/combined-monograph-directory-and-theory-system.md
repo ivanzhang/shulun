@@ -2085,3 +2085,45 @@ D-structure/Tail-log4/Rankin/referee-block interfaces。
 
 这与主稿 `paper/contradiction-field-monograph/contradiction-field-monograph.tex` 的新节
 `Triad-A1 Self-Contained Theorem-Boundary Closure` 保持一致。
+
+## 18. 行列无条件自足前沿路由与 FO-PDEC 嵌套重复子门
+
+新增：
+
+```text
+experiments/prime_matrix_wsh_fo_pdec_nested_duplicate_dominance_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-nested-duplicate-dominance-audit.md/json
+experiments/prime_matrix_row_column_unconditional_frontier_router.py
+docs/monograph/prime-matrix-row-column-unconditional-frontier-router.md/json
+```
+
+本轮没有把完整 Prime Matrix 行/列命题升级为无条件定理；相反，前沿路由器把边界进一步压清：
+
+```text
+canonical-source Triad-A1 自足边界：已闭合；
+unrestricted generic WFD 自足版：已反证且不声明；
+终端三证书接口：无第四出口，但三终端证书全集未提交；
+当前最窄硬点：A1-FO-PDEC-SameFormalUnit。
+```
+
+其中 FO-PDEC 的 `ell=199,h=95` 强信号仍是库级诊断：
+
+```text
+raw Fourier = 3.959247567099438；
+q-row coordinate dedup best = 1.0；
+block-local best = 1.0。
+```
+
+新的嵌套重复支配审计闭合了一个子门：当前 7 个 exact nested duplicates 全部是同一正式坐标上的
+嵌套支撑重复，且 `factor=199` 的关键重复也在其中。因此这些重复不能按单位权作为两个独立 PDEC
+事件计数。若要保留权重，必须给出同一多重 formal unit 上的 fractional Weighted Hall dual；
+否则应坐标商掉，转入 primitive PDEC 阈值或 SAE/Endpoint 吸收。
+
+因此下一步不应回到泛化 generic WFD，也不应直接调 `U_CRT,199` 常数。最窄可攻路线是：
+
+```text
+fractional Weighted Hall dual independence；
+或 coordinate quotient / primitive PDEC threshold；
+或 exact duplicate SAE/Endpoint absorption；
+或 cross-q persistence theorem / cross-level reuse rejection。
+```

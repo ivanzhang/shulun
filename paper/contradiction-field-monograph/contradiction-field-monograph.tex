@@ -2128,6 +2128,27 @@ For the RH program, the RH manuscript has completed U1--U5: statement wording, A
 The status table and the referee audit in \path{docs/monograph/} record exactly which pieces are proved, reduced, external, computational, or awaiting review.  Thus the monograph's logical boundary is explicit and closed, while promotion to final theorem status remains conditional on external verification.
 \end{proof}
 
+\begin{theorem}[Prime-matrix frontier]
+The current prime-matrix row/column unconditional theorem is routed to named terminal gates but is not closed.  The canonical-source Triad-A1 self-contained boundary is closed, and the unrestricted generic WFD self-contained theorem is refuted and not claimed.  The current narrowest open terminal is the same-formal-unit FO-PDEC gate: before the numerical comparison $U_{\rm CRT,199}<3.959247567099438$ can be used, the bad-window vector must be a single legal formal unit.  In the audited FO-PDEC sample, all exact nested duplicates are same-coordinate nested-support repeats, so they cannot be counted twice with unit weight.
+\end{theorem}
+\begin{proof}
+The frontier router
+\[
+  \texttt{docs/monograph/prime-matrix-row-column-unconditional-frontier-router.md}
+\]
+checks the merged boundary audit, the Triad-A1 terminal confluence router, the terminal triad contract, the formal-unit audit, the stitching feasibility audit, the nested-duplicate dominance audit, the line-by-line referee matrix, and the claim-status table.  It records
+\[
+  \texttt{row\_column\_unconditional\_closed=false},
+\]
+while preserving the closed canonical-source boundary and the refuted generic branch.  The terminal triad has no fourth exit, so any final counterexample must be absorbed by PDEC, LocalSurvivor, or CleanKLS/DLS certificates, together with the still guarded D-structure/Tail-log4/Rankin interfaces.
+
+The nested-duplicate dominance audit
+\[
+  \texttt{docs/monograph/prime-matrix-wsh-fo-pdec-nested-duplicate-dominance-audit.md}
+\]
+shows that the seven current exact nested duplicates, including the factor-$199$ duplicate responsible for the strongest Fourier signal, are all the same formal coordinate repeated across nested Hall supports.  Hence unit-weight multiplicity is not a legal PDEC lower bound.  The remaining alternatives are a fractional weighted Hall dual, coordinate quotient followed by a primitive PDEC threshold, SAE/Endpoint absorption, or a cross-$q$ persistence theorem.  These are theorem-level obligations, not formatting tasks.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
