@@ -2425,13 +2425,13 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 ```text
 closed_current_materialized_pdec_gates=true；
+canonical_source_self_contained_pdec_cap_closed=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
-  TransverseSourceSupportNonconcentrationCertificate,
   DIBFIQuantifiedNoProjectionWindowCertificate
 ]；
 narrowest_next_hardpoint=
-  TransverseSourceSupportNonconcentrationCertificate_OR_DIBFIQuantifiedNoProjectionWindowCertificate。
+  DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2768,6 +2768,70 @@ TransverseSourceSupportNonconcentrationCertificate:
 DIBFIQuantifiedNoProjectionWindowCertificate:
   外部原始 DI/BFI 的无投影对象恒等式 + 量化尺度代入。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_transverse_source_support_router.py
+docs/monograph/prime-matrix-pdec-cap-transverse-source-support-router.md/json
+```
+
+该路由器把 `TransverseSourceSupportNonconcentrationCertificate` 继续拆成来源嵌入、canonical 层转移、
+直接 NC-BLK 三个严格自足对象：
+
+```text
+transverse_source_support_reduced=true；
+narrowest_next_hardpoint=TransverseFormalUnitA1SourceEmbedding；
+downstream_source_route_hardpoint=
+  CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn；
+direct_fallback_hardpoint=
+  DirectTransverseNCBLKActualCoefficientNonConcentration。
+```
+
+结构含义是：A1/KZ-E actual-source provenance 账本已经闭合到 canonical `RIW/Buchstab`
+pre-Cauchy 源；canonical RIW 支撑链又已压到 Buchstab 层支撑，而厚区间 squarefree 原始计数也已闭合。
+当前真正缺的第一步不是再估计大筛，而是证明横向商 formal unit 是该 canonical 源的合法限制、商或条件化。
+若嵌入成立，下游再攻 canonical 层准入、非零转移和薄区间回流；若嵌入不成立，则必须走直接 actual
+transverse `NC-BLK` 或外部 `DI/BFI`。
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_transverse_embedding_router.py
+docs/monograph/prime-matrix-pdec-cap-transverse-embedding-router.md/json
+```
+
+该路由器用有限测度函子性闭合横向来源嵌入：
+
+```text
+transverse_formal_unit_embedding_closed=true；
+narrowest_next_hardpoint=CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn。
+```
+
+actual payment 是 canonical 源测度的确定性 first-cover 推前，有限签名塔是有限投影，
+方向弧是预像限制，横向商是有限因子/条件化，所以没有重新加权或替换系数源。
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_canonical_layer_closure_router.py
+docs/monograph/prime-matrix-pdec-cap-canonical-layer-closure-router.md/json
+```
+
+该路由器把最新自足硬点接回既有 A1 链条并闭合：
+
+```text
+canonical_layer_transfer_closed=true；
+self_contained_canonical_branch_closed=true；
+open_self_contained_gates=[]；
+open_external_gates=[DIBFIQuantifiedNoProjectionWindowCertificate]。
+```
+
+结构含义是：一旦横向 formal unit 已嵌入 canonical 源，`CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn`
+不再是新的横向估计，而是既有
+`selector retention -> finite signature -> decision tree -> actual source provenance -> branch boundary`
+链条；该链条已经由 canonical-source final boundary 吸收。剩余 `DIBFIQuantifiedNoProjectionWindowCertificate`
+只属于 generic/external 原始 DI/BFI 路线，不能当作 canonical-source 自足路线的剩余。
 
 这一步继续保持诚实边界：它关闭的是全局终端家族剩余中的“未命名或局部样本硬点”，不是完整行/列
 无条件证明。

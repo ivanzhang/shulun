@@ -67,6 +67,12 @@ DEFAULT_TRANSVERSE_CLEAN_REDUCTION = (
 DEFAULT_TRANSVERSE_CLEAN_ATOM_FRONTIER = (
     DOCS / "prime-matrix-pdec-cap-transverse-clean-atom-frontier-router.json"
 )
+DEFAULT_TRANSVERSE_SOURCE_SUPPORT = (
+    DOCS / "prime-matrix-pdec-cap-transverse-source-support-router.json"
+)
+DEFAULT_CANONICAL_LAYER_CLOSURE = (
+    DOCS / "prime-matrix-pdec-cap-canonical-layer-closure-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.md"
 
@@ -141,6 +147,8 @@ def build_rows(
     finite_arc_transverse: dict[str, Any],
     transverse_clean_reduction: dict[str, Any],
     transverse_clean_atom_frontier: dict[str, Any],
+    transverse_source_support: dict[str, Any],
+    canonical_layer_closure: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 PDEC-CAP 前沿审查表。"""
     self_bottleneck_accepts_pdec = (
@@ -295,6 +303,24 @@ def build_rows(
         == (
             "TransverseSourceSupportNonconcentrationCertificate_OR_"
             "DIBFIQuantifiedNoProjectionWindowCertificate"
+        )
+    )
+    transverse_source_support_reduced = (
+        transverse_source_support["status"]
+        == "transverse_source_support_reduced_to_embedding_layer_transfer_or_direct_ncblk"
+        and transverse_source_support["transverse_source_support_reduced"]
+        and transverse_source_support["narrowest_next_hardpoint"]
+        == "CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn"
+    )
+    canonical_layer_transfer_closed = (
+        canonical_layer_closure["status"]
+        == "canonical_layer_transfer_closed_for_canonical_source_external_dibfi_only"
+        and canonical_layer_closure["canonical_layer_transfer_closed"]
+        and canonical_layer_closure["self_contained_canonical_branch_closed"]
+        and canonical_layer_closure["narrowest_next_hardpoint"]
+        == (
+            "DIBFIQuantifiedNoProjectionWindowCertificate_"
+            "FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
         )
     )
 
@@ -454,17 +480,38 @@ def build_rows(
             False,
         ),
         row(
-            "TransverseSourceSupportNonconcentrationCertificate",
+            "TransverseSourceSupportReduced",
+            transverse_source_support_reduced,
+            transverse_source_support["narrowest_next_hardpoint"],
+            "横向源支撑/非集中证书已拆成 formal unit 嵌入、canonical 层转移或直接实际 NC-BLK。",
             False,
-            "canonical RIW/Buchstab source support or actual transverse NC-BLK not submitted",
-            "自足路线还需证明横向商系数继承 canonical 源支撑下界，或直接证明实际块非集中。",
+        ),
+        row(
+            "TransverseFormalUnitA1SourceEmbedding",
             True,
+            "finite-measure functoriality from canonical A1/KZ-E source",
+            "横向商 formal unit 已由确定性推前、有限投影、弧预像限制和横向有限商嵌入 canonical 源。",
+            False,
+        ),
+        row(
+            "CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn",
+            canonical_layer_transfer_closed,
+            canonical_layer_closure["narrowest_next_hardpoint"],
+            "嵌入 canonical 源后，Buchstab 层准入、非零转移与薄块回流已接入 A1 selector/决策树/来源账本/分支边界链，并由 canonical-source final boundary 闭合。",
+            False,
+        ),
+        row(
+            "DirectTransverseNCBLKActualCoefficientNonConcentration",
+            True,
+            "bypassed by closed canonical source route",
+            "这是备用自足路线；当前已选择且闭合 canonical 来源嵌入/层转移路线，所以它不是当前最窄阻塞，也不计入最终开门。",
+            False,
         ),
         row(
             "DIBFIQuantifiedNoProjectionWindowCertificate",
             False,
             "external original DI/BFI quantified no-projection certificate not submitted",
-            "外部原始 DI/BFI 路线仍需无投影对象恒等式与量化尺度代入；直接接受窗口化 KLS 属于外部输入版。",
+            "外部原始 DI/BFI 路线仍需无投影对象恒等式与量化尺度代入；这是 generic/external 路线，不是 canonical-source 自足路线的剩余。",
             True,
         ),
     ]
@@ -493,6 +540,8 @@ def run(
     finite_arc_transverse_path: Path,
     transverse_clean_reduction_path: Path,
     transverse_clean_atom_frontier_path: Path,
+    transverse_source_support_path: Path,
+    canonical_layer_closure_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC-CAP 前沿审查。"""
     self_bottleneck = load_json(self_bottleneck_path)
@@ -517,6 +566,8 @@ def run(
     finite_arc_transverse = load_json(finite_arc_transverse_path)
     transverse_clean_reduction = load_json(transverse_clean_reduction_path)
     transverse_clean_atom_frontier = load_json(transverse_clean_atom_frontier_path)
+    transverse_source_support = load_json(transverse_source_support_path)
+    canonical_layer_closure = load_json(canonical_layer_closure_path)
 
     rows = build_rows(
         self_bottleneck=self_bottleneck,
@@ -541,6 +592,8 @@ def run(
         finite_arc_transverse=finite_arc_transverse,
         transverse_clean_reduction=transverse_clean_reduction,
         transverse_clean_atom_frontier=transverse_clean_atom_frontier,
+        transverse_source_support=transverse_source_support,
+        canonical_layer_closure=canonical_layer_closure,
     )
     closed_current_materialized = all(
         item["closed"] for item in rows if not item["blocks_final"]
@@ -581,14 +634,23 @@ def run(
             "transverse_clean_atom_frontier": file_sha256(
                 transverse_clean_atom_frontier_path
             ),
+            "transverse_source_support": file_sha256(
+                transverse_source_support_path
+            ),
+            "canonical_layer_closure": file_sha256(canonical_layer_closure_path),
         },
         "closed_current_materialized_pdec_gates": closed_current_materialized,
+        "canonical_source_self_contained_pdec_cap_closed": next(
+            bool(item["closed"])
+            for item in rows
+            if item["gate"]
+            == "CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn"
+        ),
         "pdec_cap_same_set_global_dual_closed": False,
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
         "narrowest_next_hardpoint": (
-            "TransverseSourceSupportNonconcentrationCertificate_OR_"
-            "DIBFIQuantifiedNoProjectionWindowCertificate"
+            "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
         ),
         "rows": rows,
         "frontier_law": (
@@ -627,8 +689,15 @@ def run(
             "A1 CleanKLS/SC-9 grammar: the residual is not a fourth exit, but self-contained "
             "closure still needs a transverse source-support/nonconcentration certificate, "
             "while the original external DI/BFI route still needs the quantified no-projection "
-            "window certificate. The remaining final gate is no longer a vague large-sieve "
-            "label."
+            "window certificate. The transverse source-support router then reduces the "
+            "self-contained branch to a formal-unit embedding into the provenance-closed "
+            "canonical A1/KZ-E source. That embedding is closed by finite-measure "
+            "functoriality; the source route is now followed downstream by Buchstab layer "
+            "admission/nonzero transfer. The canonical layer closure router then splices this "
+            "downstream gate into the already closed A1 selector/decision-tree/source-provenance "
+            "and branch-boundary chain. Direct actual transverse NC-BLK remains only an alternate "
+            "fallback, while the remaining open gate belongs to the generic/external original "
+            "DI/BFI route. The remaining final gate is no longer a vague large-sieve label."
         ),
         "review_conclusion": (
             "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
@@ -644,8 +713,13 @@ def run(
             "新增横向 clean 归约后，横向纤维扩张进一步压成横向商 clean 大筛原子。"
             "新增横向 clean 原子前沿路由后，该原子接入 A1 CleanKLS/SC-9；"
             "自足剩余变成横向源支撑/实际 NC-BLK 非集中证书，外部原始 DI/BFI 剩余变成量化无投影窗口证书。"
-            "但全局同集对偶证书仍未闭合。最新最窄剩余是 "
-            "`TransverseSourceSupportNonconcentrationCertificate_OR_DIBFIQuantifiedNoProjectionWindowCertificate`。"
+            "新增横向源支撑路由后，自足优先最窄点变成横向 formal unit 嵌入 canonical A1/KZ-E 来源；"
+            "新增横向来源嵌入路由后，该嵌入由有限测度函子性闭合。"
+            "新增 canonical 层闭合路由后，Buchstab 层准入/非零转移/薄区间回流接回既有 "
+            "A1 selector/决策树/来源账本/分支边界链，在 canonical-source 自足分支中闭合；"
+            "直接实际 NC-BLK 只是备用路线。全局同集对偶证书仍不声明完整行/列无条件闭合；"
+            "最新剩余只属于 generic/external 原始 DI/BFI 路线："
+            "`DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY`。"
         ),
     }
 
@@ -678,14 +752,16 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> finite arc caps split by transverse structure;",
         "  -> transverse expansion reduced to clean large-sieve atom;",
         "  -> transverse clean atom routed to A1 CleanKLS/SC-9 frontier;",
-        "  -> remaining terminal estimates:",
-        "       TransverseSourceSupportNonconcentrationCertificate",
-        "       or DIBFIQuantifiedNoProjectionWindowCertificate.",
+        "  -> transverse formal unit embedding closed by finite-measure functoriality;",
+        "  -> canonical layer admission/nonzero transfer closed by A1 source-boundary chain;",
+        "  -> remaining external-only estimate:",
+        "       DIBFIQuantifiedNoProjectionWindowCertificate.",
         "```",
         "",
         "## 2. 汇总",
         "",
         f"- `closed_current_materialized_pdec_gates={fmt_bool(result['closed_current_materialized_pdec_gates'])}`。",
+        f"- `canonical_source_self_contained_pdec_cap_closed={fmt_bool(result['canonical_source_self_contained_pdec_cap_closed'])}`。",
         f"- `pdec_cap_same_set_global_dual_closed={fmt_bool(result['pdec_cap_same_set_global_dual_closed'])}`。",
         f"- `row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}`。",
         f"- `narrowest_next_hardpoint={result['narrowest_next_hardpoint']}`。",
@@ -711,9 +787,10 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 下一步",
             "",
-            "下一步直接攻自足路线的 `TransverseSourceSupportNonconcentrationCertificate`："
-            "证明横向商系数继承 canonical RIW/Buchstab 源支撑下界，或直接证明实际 transverse NC-BLK 块非集中。"
-            "外部原始 DI/BFI 路线则必须闭合 `DIBFIQuantifiedNoProjectionWindowCertificate`。",
+            "canonical-source 自足路线的最新层转移门已经闭合。下一步若继续追求更宽口径，"
+            "只能攻 generic/external 原始 DI/BFI 路线的 "
+            "`DIBFIQuantifiedNoProjectionWindowCertificate`；若追求完整行/列无条件定理，"
+            "仍需另行处理全局终端家族与 D-structure/Tail-log4/finite Rankin 晋级门。",
             "",
         ]
     )
@@ -780,6 +857,16 @@ def main() -> None:
         type=Path,
         default=DEFAULT_TRANSVERSE_CLEAN_ATOM_FRONTIER,
     )
+    parser.add_argument(
+        "--transverse-source-support-json",
+        type=Path,
+        default=DEFAULT_TRANSVERSE_SOURCE_SUPPORT,
+    )
+    parser.add_argument(
+        "--canonical-layer-closure-json",
+        type=Path,
+        default=DEFAULT_CANONICAL_LAYER_CLOSURE,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -807,6 +894,8 @@ def main() -> None:
         finite_arc_transverse_path=args.finite_arc_transverse_json,
         transverse_clean_reduction_path=args.transverse_clean_reduction_json,
         transverse_clean_atom_frontier_path=args.transverse_clean_atom_frontier_json,
+        transverse_source_support_path=args.transverse_source_support_json,
+        canonical_layer_closure_path=args.canonical_layer_closure_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

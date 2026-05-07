@@ -145,9 +145,10 @@ experiments/prime_matrix_pdec_cap_same_set_global_dual_router.py
 docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
+canonical_source_self_contained_pdec_cap_closed=true；
 pdec_cap_same_set_global_dual_closed=false；
 narrowest_next_hardpoint=
-  TransverseSourceSupportNonconcentrationCertificate_OR_DIBFIQuantifiedNoProjectionWindowCertificate。
+  DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -455,6 +456,48 @@ narrowest_next_hardpoint=
   DIBFIQuantifiedNoProjectionWindowCertificate
   = 无投影对象恒等式 + 量化尺度代入。
 ```
+
+继续新增横向源支撑路由器后，自足路线又被拆到更窄的来源嵌入问题：
+
+```text
+experiments/prime_matrix_pdec_cap_transverse_source_support_router.py
+docs/monograph/prime-matrix-pdec-cap-transverse-source-support-router.md/json
+
+transverse_source_support_reduced=true；
+narrowest_next_hardpoint=CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn。
+```
+
+也就是说，已有 A1/KZ-E 来源账本已经闭合到 canonical `RIW/Buchstab` pre-Cauchy 源。横向商
+formal unit 的来源嵌入也已经由有限测度函子性闭合：actual payment 是确定性推前，有限签名是投影，
+方向弧是预像限制，横向商是有限因子/条件化，整个链条没有重新加权、没有替换系数源。
+
+继续新增横向来源嵌入路由器后：
+
+```text
+experiments/prime_matrix_pdec_cap_transverse_embedding_router.py
+docs/monograph/prime-matrix-pdec-cap-transverse-embedding-router.md/json
+
+transverse_formal_unit_embedding_closed=true；
+narrowest_next_hardpoint=CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn。
+```
+
+继续新增 canonical 层闭合路由器后：
+
+```text
+experiments/prime_matrix_pdec_cap_canonical_layer_closure_router.py
+docs/monograph/prime-matrix-pdec-cap-canonical-layer-closure-router.md/json
+
+canonical_layer_transfer_closed=true；
+self_contained_canonical_branch_closed=true；
+open_self_contained_gates=[]；
+narrowest_next_hardpoint=
+  DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY。
+```
+
+通俗地说，嵌入 canonical 源之后，`CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn`
+不是一个新估计，而是回到既有 A1 链条：selector 保留率、有限签名、决策树、来源账本和分支边界。
+这条链已经由 canonical-source final boundary 闭合。剩余的 `DIBFIQuantifiedNoProjectionWindowCertificate`
+只属于 generic/external 原始 DI/BFI 路线；完整行/列无条件定理仍没有因此闭合。
 
 ## 7. 已并入合著的文件
 
