@@ -1,0 +1,201 @@
+{
+  "acceptable_inputs": [
+    {
+      "input": "CanonicalRIWFactorSupportLowerBound",
+      "statement": "the exact Rosser/Iwaniec-Buchstab well-factorable factors used in KZ-E have log-power lower absolute support in every surviving balanced block",
+      "status": "not_present_in_current_ledger",
+      "would_imply": "ExactFactorSupportLowerBound directly"
+    },
+    {
+      "input": "FactorResidueIncidenceBridge",
+      "statement": "if moving factor support is too small, then K4 coefficient concentration or K6 tail-label concentration is triggered",
+      "status": "not_present_in_current_ledger",
+      "would_imply": "ExactFactorSupportLowerBound on the clean branch by contrapositive"
+    },
+    {
+      "input": "ExternalDIBFIOriginalDispersion",
+      "statement": "original DI/BFI dispersion supplies block variance saving without proving internal support",
+      "status": "acceptable_external_route",
+      "would_imply": "A1 clean branch closed in external theorem version"
+    }
+  ],
+  "all_rows_k4_flat_but_factor_support_fails": true,
+  "certificate_type": "triad_a1_exact_factor_support_router",
+  "conditional_closure_law": "ExactFactorSupport can still be closed internally in either of two ways: prove the canonical Rosser/Iwaniec-Buchstab factor support lower bound directly, or prove that any failure of factor support triggers existing clean-branch failures through a FactorResidueIncidenceBridge.",
+  "current_internal_exact_factor_support_closed": false,
+  "exact_wfd_input_status": "exact_wfd_source_entropy_reduced_to_factor_support_lower_bound",
+  "gate_rows": [
+    {
+      "available": "L2 flatness on fixed residue/phase atoms, support A_B >= R/C_flat",
+      "closed": false,
+      "gap": "a single moving factor pair may split into many residue atoms unless incidence is bounded",
+      "gate": "K4ResidueFlatness",
+      "needed": "many moving factor pairs (u,v) carry the exact WFD capacity",
+      "route": "prove FactorResidueIncidenceBridge or use direct canonical factor support"
+    },
+    {
+      "available": "dyadic/tail-label split count is polylog and over-splitting is routed",
+      "closed": false,
+      "gap": "polylog many blocks does not imply lower support inside a block",
+      "gate": "K6DyadicBookkeeping",
+      "needed": "each surviving dyadic block has broad internal u- and v-support",
+      "route": "small internal support must be named as a failure route or proved impossible for exact weights"
+    },
+    {
+      "available": "not recorded for the exact Rosser/Iwaniec-Buchstab factorization used by KZ-E",
+      "closed": false,
+      "gap": "well-factorable existence alone permits sparse formal factors",
+      "gate": "CanonicalRIWFactorSupport",
+      "needed": "sum |alpha_u| >= U/log^C and sum |delta_v| >= V/log^C",
+      "route": "prove direct exact sieve-factor support lemma"
+    },
+    {
+      "available": "not present in current ledger",
+      "closed": false,
+      "gap": "without this bridge, residue flatness and factor support live on different sigma-algebras",
+      "gate": "FactorResidueIncidenceBridge",
+      "needed": "bounded multiplicity from one moving (u,v) block into K4 residue atoms",
+      "route": "prove concentration on few factor pairs triggers coefficient/tail-label PDEC/SAE failure"
+    },
+    {
+      "available": "clean branch routes coefficient concentration and tail-label concentration",
+      "closed": false,
+      "gap": "the implication is not yet proved; it is exactly the incidence bridge",
+      "gate": "SupportFailureReturn",
+      "needed": "factor-support failure is shown to be one of those named failures",
+      "route": "FactorResidueIncidenceBridge"
+    }
+  ],
+  "k4_k6_imply_exact_factor_support": false,
+  "next_internal_target": "FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupport",
+  "parameters": {
+    "divisor_loss_power_C": 2.0,
+    "max_k": 9,
+    "min_k": 3,
+    "saving_exponent_A": 2.0,
+    "scale": "y=10^k",
+    "support_power_B": 7.0
+  },
+  "projection_mismatch_law": "K4 controls residue/phase atoms, while ExactFactorSupport controls moving factor-pair atoms. K6 controls how many dyadic blocks exist, not how much support each block contains. Without an incidence bridge bounding how many residue atoms one moving factor pair can hide behind, K4/K6 do not imply factor support lower bounds.",
+  "review_conclusion": "ExactFactorSupportLowerBound 不能从当前 K4/K6 clean admission 自动推出：存在 residue-flat 但 factor-concentrated 的投影错配模型。下一步必须证明 factor-residue incidence 桥，说明少数 moving factor pairs 会触发既有 K4/K6 失败；或者直接证明 canonical Rosser/Iwaniec-Buchstab 因子支撑下界。",
+  "rows": [
+    {
+      "divisor_loss_power_C": 2.0,
+      "exact_factor_support_fails": true,
+      "exact_factor_support_needed": 108648,
+      "incidence_multiplicity_needed_to_hide": 750514,
+      "k": 3,
+      "k4_flat_enough_for_A": true,
+      "log_y": 6.907755278982137,
+      "max_residue_share": 1.332420181369035e-06,
+      "moving_factor_pair_count": 1,
+      "moving_factor_pair_share": 1.0,
+      "residue_atoms_in_k4_model": 750514,
+      "saving_exponent_A": 2.0,
+      "support_power_B": 7.0,
+      "y": 1000
+    },
+    {
+      "divisor_loss_power_C": 2.0,
+      "exact_factor_support_fails": true,
+      "exact_factor_support_needed": 610456,
+      "incidence_multiplicity_needed_to_hide": 5622504,
+      "k": 4,
+      "k4_flat_enough_for_A": true,
+      "log_y": 9.210340371976184,
+      "max_residue_share": 1.7785669872355803e-07,
+      "moving_factor_pair_count": 1,
+      "moving_factor_pair_share": 1.0,
+      "residue_atoms_in_k4_model": 5622504,
+      "saving_exponent_A": 2.0,
+      "support_power_B": 7.0,
+      "y": 10000
+    },
+    {
+      "divisor_loss_power_C": 2.0,
+      "exact_factor_support_fails": true,
+      "exact_factor_support_needed": 2328704,
+      "incidence_multiplicity_needed_to_hide": 26810188,
+      "k": 5,
+      "k4_flat_enough_for_A": true,
+      "log_y": 11.512925464970229,
+      "max_residue_share": 3.7299253552418206e-08,
+      "moving_factor_pair_count": 1,
+      "moving_factor_pair_share": 1.0,
+      "residue_atoms_in_k4_model": 26810188,
+      "saving_exponent_A": 2.0,
+      "support_power_B": 7.0,
+      "y": 100000
+    },
+    {
+      "divisor_loss_power_C": 2.0,
+      "exact_factor_support_fails": true,
+      "exact_factor_support_needed": 6953471,
+      "incidence_multiplicity_needed_to_hide": 96065750,
+      "k": 6,
+      "k4_flat_enough_for_A": true,
+      "log_y": 13.815510557964274,
+      "max_residue_share": 1.040953721799913e-08,
+      "moving_factor_pair_count": 1,
+      "moving_factor_pair_share": 1.0,
+      "residue_atoms_in_k4_model": 96065750,
+      "saving_exponent_A": 2.0,
+      "support_power_B": 7.0,
+      "y": 1000000
+    },
+    {
+      "divisor_loss_power_C": 2.0,
+      "exact_factor_support_fails": true,
+      "exact_factor_support_needed": 17534056,
+      "incidence_multiplicity_needed_to_hide": 282615581,
+      "k": 7,
+      "k4_flat_enough_for_A": true,
+      "log_y": 16.11809565095832,
+      "max_residue_share": 3.5383753311180674e-09,
+      "moving_factor_pair_count": 1,
+      "moving_factor_pair_share": 1.0,
+      "residue_atoms_in_k4_model": 282615581,
+      "saving_exponent_A": 2.0,
+      "support_power_B": 7.0,
+      "y": 10000000
+    },
+    {
+      "divisor_loss_power_C": 2.0,
+      "exact_factor_support_fails": true,
+      "exact_factor_support_needed": 39069159,
+      "incidence_multiplicity_needed_to_hide": 719680491,
+      "k": 8,
+      "k4_flat_enough_for_A": true,
+      "log_y": 18.420680743952367,
+      "max_residue_share": 1.3895054993230322e-09,
+      "moving_factor_pair_count": 1,
+      "moving_factor_pair_share": 1.0,
+      "residue_atoms_in_k4_model": 719680491,
+      "saving_exponent_A": 2.0,
+      "support_power_B": 7.0,
+      "y": 100000000
+    },
+    {
+      "divisor_loss_power_C": 2.0,
+      "exact_factor_support_fails": true,
+      "exact_factor_support_needed": 79204379,
+      "incidence_multiplicity_needed_to_hide": 1641373385,
+      "k": 9,
+      "k4_flat_enough_for_A": true,
+      "log_y": 20.72326583694641,
+      "max_residue_share": 6.092458968438799e-10,
+      "moving_factor_pair_count": 1,
+      "moving_factor_pair_share": 1.0,
+      "residue_atoms_in_k4_model": 1641373385,
+      "saving_exponent_A": 2.0,
+      "support_power_B": 7.0,
+      "y": 1000000000
+    }
+  ],
+  "source_hashes": {
+    "exact_wfd_source_entropy_json": "8f0b7a24ce90e50406e4c95bcb5abab2451df1e1c2562dd6a61be018e76f9ab0",
+    "script": "3d545bba003e840c1d44bc641132b3b53ba4cd55355d30922452d3f2a2a469d1"
+  },
+  "status": "exact_factor_support_not_implied_by_k4_k6_without_incidence_bridge",
+  "terminal_gap_after_router": "FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupportOrExternalDIBFIOriginalDispersion"
+}

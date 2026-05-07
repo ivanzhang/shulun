@@ -4202,3 +4202,69 @@ terminal_dual_gap => ExactFactorSupportLowerBoundOrExternalDIBFIOriginalDispersi
 
 这一步把“精确源头熵”从抽象熵命题降为初等但必须逐项证明的筛权支撑命题。继续无黑箱硬攻时，
 下一步不应回到数值统计或谱大筛，而应证明精确筛权因子在平衡区间内不能退化为 moving atom。
+
+## 79. A1 ExactFactorSupport 的 K4/K6 投影错配
+
+新增 `experiments/prime_matrix_triad_a1_exact_factor_support_router.py` 后，
+第 78 节留下的 `ExactFactorSupportLowerBound` 被继续审计。结论是：它不能由当前
+`K4` residue-flat 和 `K6` dyadic-bookkeeping 自动推出。
+
+机器结果：
+
+```text
+status=exact_factor_support_not_implied_by_k4_k6_without_incidence_bridge；
+next_internal_target=FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupport；
+terminal_gap_after_router=FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupportOrExternalDIBFIOriginalDispersion。
+```
+
+核心阻断是投影错配：
+
+```text
+K4 flatness lives on residue/phase atoms;
+ExactFactorSupport lives on moving factor-pair atoms b=(u,v);
+K6 limits the number of dyadic blocks, not the internal support of each block;
+therefore K4+K6 need an incidence bridge before they can imply factor support.
+```
+
+构造模型如下：
+
+```text
+residue layer:
+  有 log(y)^B 个 residue atoms，质量均匀分布，因此 K4-flat 成立；
+
+factor-pair layer:
+  所有 residue atoms 都来自同一个 moving factor pair (u_y,v_y)，
+  因此 moving factor share = 1，ExactFactorSupport 失败。
+```
+
+这个模型不违背 K6，因为 K6 只限制 dyadic/tail-label 分块数为多对数级，并不说明每个 surviving
+dyadic block 内部必须有多少 `u`、`v` 支撑。
+
+因此当前可接受的内部输入只有两类：
+
+```text
+CanonicalRIWFactorSupportLowerBound:
+  直接证明 exact Rosser/Iwaniec-Buchstab well-factorable factors
+  在每个 surviving balanced block 内有 log-power 绝对支撑下界；
+
+FactorResidueIncidenceBridge:
+  证明若 moving factor support 太小，则必触发既有 K4 coefficient concentration
+  或 K6 tail-label concentration，从而不能留在 clean branch。
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving，绕过内部支撑证明。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1ExactFactorSupportRouter => factor_residue_incidence_or_canonical_riw_support_required；
+terminal_dual_gap => FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupportOrExternalDIBFIOriginalDispersion。
+```
+
+这一步排除了“residue 平坦 + dyadic 账本 = moving factor 支撑”的偷换。继续无黑箱硬攻时，
+下一步必须证明因子-残基 incidence 桥，或直接证明 canonical Rosser-Iwaniec/Buchstab 因子支撑下界。
