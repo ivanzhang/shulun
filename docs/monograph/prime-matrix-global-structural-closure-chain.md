@@ -4934,3 +4934,84 @@ terminal_dual_gap => A1CleanBranchCanonicalSourceAdmissionOrExternalDIBFIOrigina
 这一步把 source lock 从“待证明的等式”降为“当前 clean 分支是否准入 canonical source branch”的
 单点问题。若答案是肯定的，内部链可接；若答案是否定或未登记，则不能继续假装自足，必须走
 外部 DI/BFI 原始 dispersion 或回 PDEC/SAE 缺失行。
+
+## 89. A1 canonical 分支准入化为主定理/账本分支陈述覆盖合同
+
+新增 `experiments/prime_matrix_triad_a1_canonical_branch_admission_router.py` 后，第 88 节留下的
+`A1CleanBranchCanonicalSourceAdmission` 被继续压缩。关键结论是：当前上游 KZ-E/WFD 文本仍是
+generic well-factorable `lambda_c` 口径，而此前内部支撑链只适用于 canonical RIW/Buchstab
+源头子分支。因此不能静默把 generic clean 分支也标为内部闭合；必须把主定理/账本陈述改成
+显式分支覆盖。
+
+机器结果：
+
+```text
+status=canonical_branch_admission_reduced_to_branch_statement_and_coverage；
+next_internal_target=A1CanonicalSourceBranchStatementAndCoverage；
+terminal_gap_after_router=A1CanonicalSourceBranchStatementAndCoverageOrExternalDIBFIOriginalDispersion。
+```
+
+分支陈述覆盖律：
+
+```text
+current KZ-E/WFD statement: generic well-factorable lambda_c;
+internal support proof: canonical RIW/Buchstab lambda_c only;
+therefore:
+  canonical source branch => internal support chain;
+  generic noncanonical branch => external DI/BFI or PDEC/SAE;
+no silent generic internal closure.
+```
+
+本步已经闭合的部分是：
+
+```text
+CurrentKZEStatementIsGenericWFD:
+  当前 KZ-E/WFD-core 陈述确实比 canonical 源头更泛化；
+
+CanonicalSourceBranchIsLegalSubcase:
+  RIW/Buchstab 权重是合法 well-factorable 权重；
+
+InternalCanonicalBranchClosedConditionally:
+  canonical 分支一旦被采用，此前内部支撑链可接入；
+
+NoSilentGenericClosure:
+  generic WFD 分支不能被误标为内部闭合。
+```
+
+仍未闭合的门控是：
+
+```text
+OriginalCleanObjectCoveredByBranchSplit:
+  证明陈述必须同时覆盖 canonical 内部分支与 noncanonical 外部分支；
+
+CanonicalBranchStatementAdopted:
+  A1 theorem/ledger 必须明确声明：
+  internal no-black-box branch = canonical-source branch only。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+A1CanonicalSourceBranchStatementAndCoverage:
+  state the canonical RIW/Buchstab clean branch as the internal no-black-box branch;
+  state the generic noncanonical WFD branch as external DI/BFI or PDEC/SAE;
+  then the canonical internal support chain is eligible for closure.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1CanonicalBranchAdmissionRouter => canonical_branch_statement_coverage_or_external_dibfi_required；
+terminal_dual_gap => A1CanonicalSourceBranchStatementAndCoverageOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把“当前 clean A1 是否 canonical”再压成一个可执行的定理陈述合同：自足内部版本必须明确只处理
+canonical RIW/Buchstab 源头；generic well-factorable 版本必须保留为外部 DI/BFI 或 PDEC/SAE 路由。
+这避免了把一个合法子分支证明误升级为 generic WFD 完全自足证明。

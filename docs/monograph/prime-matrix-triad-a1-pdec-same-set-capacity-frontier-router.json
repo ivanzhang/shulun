@@ -209,6 +209,12 @@
       "frontier": "A1SourceLockContractRouter",
       "next_action": "证明当前 clean A1 分支使用 canonical RIW/Buchstab 源头；否则走外部 DI/BFI 或 PDEC/SAE。",
       "status": "canonical_source_branch_admission_or_external_dibfi_required"
+    },
+    {
+      "evidence": "canonical 分支准入已化为主定理/账本分支陈述覆盖合同；terminal_gap=A1CanonicalSourceBranchStatementAndCoverageOrExternalDIBFIOriginalDispersion。",
+      "frontier": "A1CanonicalBranchAdmissionRouter",
+      "next_action": "明确 canonical 内部分支与 generic 外部分支覆盖关系；避免静默 generic 内部闭合。",
+      "status": "canonical_branch_statement_coverage_or_external_dibfi_required"
     }
   ],
   "lp_summary": {
@@ -224,8 +230,9 @@
       "BRIDGED_zero_block"
     ]
   },
-  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的普通厚区间计数层已被压下去。exact 层转移又被压缩为 selector 保留率/clean 退出合同。selector 保留率已由有限签名 pigeonhole 处理到条件形式。无抵消已被决策树分割条件化。决策树公式已被压成源头系数识别。源头识别又被压成 canonical source lock 合同。source lock 已分裂成 canonical 内部分支和 generic WFD 外部分支。下一步不再是普通计数、保留率常数、无抵消、决策树、谱估计或源头锁定语义，而是证明当前被攻击的 clean A1 分支确实准入 canonical RIW/Buchstab source branch；否则必须走外部 DI/BFI 或回 PDEC/SAE。或者给出外部 DI/BFI 原始 dispersion 引用。",
+  "review_conclusion": "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分，标准晋升支付正删除势；NoDeletion-KL 已作为独立出口消除。A1 clean KLS 外部输入已登记，SC-9 也已展开路由到 NC-BLK/外部 DI-BFI。NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。ExactWFDSourceEntropy 已化为精确因子支撑下界。ExactFactorSupport 不能由 K4/K6 自动推出。FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 已化为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的普通厚区间计数层已被压下去。exact 层转移又被压缩为 selector 保留率/clean 退出合同。selector 保留率已由有限签名 pigeonhole 处理到条件形式。无抵消已被决策树分割条件化。决策树公式已被压成源头系数识别。源头识别又被压成 canonical source lock 合同。source lock 已分裂成 canonical 内部分支和 generic WFD 外部分支。canonical 分支准入已被压成 theorem/ledger 分支陈述覆盖合同。下一步不再是普通计数、保留率常数、无抵消、决策树、谱估计、源头锁定语义或分支准入，而是明确主定理/账本：canonical RIW/Buchstab clean branch 走内部证明，generic noncanonical WFD branch 走外部 DI/BFI 或 PDEC/SAE。或者给出外部 DI/BFI 原始 dispersion 引用。",
   "source_hashes": {
+    "a1_canonical_branch_admission_json": "80d6a38882ba2326054e52702f82ae67bee05fc0aed3e94fb58b53287c7debff",
     "a1_canonical_riw_support_json": "6a39cce23e2f9eb8dceb2c8742539fcddb8c3d83cea4ae69fd7703d0eea8f7b8",
     "a1_clean_kls_external_input_json": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
     "a1_decision_tree_formula_json": "d761fdc37db29bbb195d8f557abfac398e78fbf5f4bf71ea51952c137d4874e8",
@@ -254,7 +261,7 @@
     "fourier_cap_scan_json": "fe47050ce4b60f5c5651228f7e940eb20898506149f830d86448375984b7e502",
     "lhb_lp_skeleton_json": "77be4c32509e121013a11d5cc0668c314ceece3aa7f3e114bae2dc69cbdb8021",
     "pdec_mass_source_json": "05cf31a4947b8ccfa32e98cda2ae354b23d2793395711f82866777c746479ec7",
-    "script": "d7ea11d65ce8602a45f52166c060928f2bd141b7b203bf692c545f7e61d91671",
+    "script": "4d4e380e7b89399f53a23d4cb314bad12de10c5c23fbd416873f0731d9825f73",
     "selective_promotion_commutation_json": "ca61b2488fdb1bc63ea571bd9223377c685918b584af13763c65d5d3438528e4",
     "standard_prime_lift_deletion_json": "733c195ae3c6c88ba29951bb2ee4a90da9e02899f606aacbd4c55bfb85291c5f",
     "terminal_confluence_json": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c"
@@ -263,6 +270,7 @@
   "status_counts": {
     "actual_payment_measure_constructed": 1,
     "actual_payment_selection_materialized": 1,
+    "canonical_branch_statement_coverage_or_external_dibfi_required": 1,
     "canonical_riw_factor_support_or_external_dibfi_required": 1,
     "canonical_source_branch_admission_or_external_dibfi_required": 1,
     "canonical_source_lock_or_external_dibfi_required": 1,
@@ -293,6 +301,6 @@
     "structurally_insufficient": 1,
     "terminal_dichotomy_admission_closed_capacity_open": 1
   },
-  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；selector 保留率又被 finite-signature pigeonhole 压成 exact path partition、无抵消与 clean 退出；无抵消进一步化为完整 RIW/Buchstab 决策树公式、路径数预算与 clean 退出；决策树公式本身又被压成 A1/KZ-E 实际源头系数识别；实际源头识别又被压成 canonical RIW/Buchstab source lock 合同；source lock 合同已严格二分为 canonical 源头分支准入或 generic WFD 外部路由；当前无黑箱版只剩 A1CleanBranchCanonicalSourceAdmission，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。",
-  "terminal_dual_gap": "A1CleanBranchCanonicalSourceAdmissionOrExternalDIBFIOriginalDispersion"
+  "structural_law": "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分；标准 prime-lift 已接入正删除势；删除势停止后的 NoDeletion 口也已路由到 KL/PDEC 或 CleanKLS/DLS。A1 clean KLS 外部输入也已登记：外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。CanonicalRIWFactorSupportLowerBound 又被压缩为 squarefree Buchstab 层局部支撑下界。Squarefree Buchstab 的厚区间计数层已由 Mertens/Buchstab 支付；exact 层承认与非零转移已进一步化为 canonical selector 保留率或 clean 退出合同；selector 保留率又被 finite-signature pigeonhole 压成 exact path partition、无抵消与 clean 退出；无抵消进一步化为完整 RIW/Buchstab 决策树公式、路径数预算与 clean 退出；决策树公式本身又被压成 A1/KZ-E 实际源头系数识别；实际源头识别又被压成 canonical RIW/Buchstab source lock 合同；source lock 合同已严格二分为 canonical 源头分支准入或 generic WFD 外部路由；canonical 分支准入又被压成主定理/账本分支陈述与覆盖合同；当前无黑箱版只剩 A1CanonicalSourceBranchStatementAndCoverage，外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。",
+  "terminal_dual_gap": "A1CanonicalSourceBranchStatementAndCoverageOrExternalDIBFIOriginalDispersion"
 }
