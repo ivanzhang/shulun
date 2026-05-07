@@ -2261,3 +2261,21 @@ Bohr-cap、tail/cofactor、descent/seam 等所有可能产生孤窗的来源都�
 ```text
 NonTautologicalPDECOrCleanKLS。
 ```
+
+再把已存在的 CleanKLS/DLS 路由接入总前沿后，这个宽口径继续收缩。`A1 CleanKLS` 只有在
+K1--K9 准入全部通过时才可调用；失败项已经回流
+`PDEC/SAE/Multiplicity/Promotion`。全部通过时进入 `SC-9`，而 `SC-9` 又由
+`prime-matrix-triad-a1-kuznetsov-ls-atom-frontier-router.md` 展开为：
+
+```text
+KZ-A--KZ-D: 已由平滑、trace specialization、Bessel decay、
+            spectral large-sieve/pretrace 链路由；
+KZ-E:       剩 NC-BLK actual block non-concentration
+            或外部 DI/BFI original dispersion。
+```
+
+所以总前沿中的 CleanKLS 不再是一个未定义黑箱。当前真实最窄硬点更新为：
+
+```text
+NonTautologicalPDECOrNCBLK。
+```

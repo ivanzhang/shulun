@@ -45,6 +45,12 @@ DEFAULT_PACKET_EXTRACTOR_COVERAGE = (
 DEFAULT_NEW_SPARSE_ADMISSION = (
     DOCS / "prime-matrix-new-sparse-entry-admission-audit.json"
 )
+DEFAULT_CLEAN_KLS = (
+    DOCS / "prime-matrix-triad-a1-clean-kls-external-input-router.json"
+)
+DEFAULT_KUZNETSOV_FRONTIER = (
+    DOCS / "prime-matrix-triad-a1-kuznetsov-ls-atom-frontier-router.json"
+)
 DEFAULT_LINE_REF = DOCS / "line-by-line-internal-referee-matrix.md"
 DEFAULT_CLAIM_STATUS = DOCS / "claim-status-table.md"
 DEFAULT_MAIN_TEX = PAPER / "contradiction-field-monograph.tex"
@@ -110,6 +116,8 @@ def build_frontier_rows(
     local_survivor_ledger: dict[str, Any],
     packet_extractor_coverage: dict[str, Any],
     new_sparse_admission: dict[str, Any],
+    clean_kls: dict[str, Any],
+    kuznetsov_frontier: dict[str, Any],
     line_ref_text: str,
     claim_status_text: str,
     main_tex: str,
@@ -185,6 +193,22 @@ def build_frontier_rows(
         == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
         and new_sparse_admission["no_additional_unnamed_local_survivor_entry_route"]
         and new_sparse_admission["missing_admission_count"] == 0
+    )
+    clean_kls_registered = (
+        clean_kls["status"]
+        == "a1_clean_kls_external_input_registered_self_contained_atom_open"
+        and clean_kls["all_admission_verified_or_routed"]
+        and clean_kls["external_kls_input_registered"]
+        and clean_kls["terminal_gap_after_router"]
+        == "KuznetsovLSAtomSC9OrExternalCitation"
+    )
+    clean_kls_sc9_routed = (
+        clean_kls_registered
+        and kuznetsov_frontier["status"]
+        == "a1_sc9_frontier_routed_to_ncblk_or_external_dibfi"
+        and kuznetsov_frontier["all_sc9_subatoms_routed"]
+        and kuznetsov_frontier["terminal_gap_after_router"]
+        == "NCBLKOrExternalDIBFIOriginalDispersion"
     )
     referee_guarded = has_all(
         line_ref_text,
@@ -304,10 +328,27 @@ def build_frontier_rows(
         ),
         frontier_row(
             gate="C:CleanKLS-DLS",
-            status="open_terminal_or_external",
-            evidence="; ".join(confluence["terminal_open_obligations"][2:3]),
-            remaining="所有 clean residual 仍需内部大筛证书或明确 ExternalKLS 输入。",
-            next_action="只有在 PDEC/SAE/column/tail/fiber 峰全部剥离后才调用。",
+            status=(
+                "routed_to_ncblk_or_external_dibfi"
+                if clean_kls_sc9_routed
+                else "open_terminal_or_external"
+            ),
+            evidence=(
+                f"clean_admission={clean_kls['terminal_gap_after_router']}; "
+                f"sc9_frontier={kuznetsov_frontier['terminal_gap_after_router']}"
+            ),
+            remaining=(
+                "CleanKLS 宽口径已收缩：K1--K9 失败项回流 PDEC/SAE/Multiplicity/Promotion；"
+                "全通过时进入 SC-9；SC-9 的自足版只剩 actual WFD 系数的 NC-BLK 块非集中，"
+                "外部版是 DI/BFI 原始 dispersion 或等价窗口 KLS。"
+                if clean_kls_sc9_routed
+                else "所有 clean residual 仍需内部大筛证书或明确 ExternalKLS 输入。"
+            ),
+            next_action=(
+                "自足路线攻 NC-BLK actual block non-concentration；外部路线精确匹配 DI/BFI 原始 dispersion。"
+                if clean_kls_sc9_routed
+                else "只有在 PDEC/SAE/column/tail/fiber 峰全部剥离后才调用。"
+            ),
             blocks_global=True,
         ),
         frontier_row(
@@ -343,6 +384,8 @@ def run(
     local_survivor_ledger_path: Path,
     packet_extractor_coverage_path: Path,
     new_sparse_admission_path: Path,
+    clean_kls_path: Path,
+    kuznetsov_frontier_path: Path,
     line_ref_path: Path,
     claim_status_path: Path,
     main_tex_path: Path,
@@ -361,6 +404,8 @@ def run(
     local_survivor_ledger = load_json(local_survivor_ledger_path)
     packet_extractor_coverage = load_json(packet_extractor_coverage_path)
     new_sparse_admission = load_json(new_sparse_admission_path)
+    clean_kls = load_json(clean_kls_path)
+    kuznetsov_frontier = load_json(kuznetsov_frontier_path)
     line_ref_text = read_text(line_ref_path)
     claim_status_text = read_text(claim_status_path)
     main_tex = read_text(main_tex_path)
@@ -379,6 +424,8 @@ def run(
         local_survivor_ledger,
         packet_extractor_coverage,
         new_sparse_admission,
+        clean_kls,
+        kuznetsov_frontier,
         line_ref_text,
         claim_status_text,
         main_tex,
@@ -418,6 +465,10 @@ def run(
                 packet_extractor_coverage_path
             ),
             "new_sparse_entry_admission_audit": file_sha256(new_sparse_admission_path),
+            "clean_kls_external_input_router": file_sha256(clean_kls_path),
+            "kuznetsov_ls_atom_frontier_router": file_sha256(
+                kuznetsov_frontier_path
+            ),
             "line_referee_matrix": file_sha256(line_ref_path),
             "claim_status_table": file_sha256(claim_status_path),
             "main_tex": file_sha256(main_tex_path),
@@ -436,7 +487,7 @@ def run(
         "open_global_gates": open_global_gates,
         "narrowest_next_hardpoint": {
             "name": (
-                "NonTautologicalPDECOrCleanKLS"
+                "NonTautologicalPDECOrNCBLK"
                 if new_sparse_admission["closed_subgate"]
                 == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
                 else (
@@ -499,13 +550,15 @@ def run(
                 "当前已审计 FO-PDEC 强信号链已被逐层降口径，最后两个物理原子由"
                 "同固定偏移纤维的本地素数见证吸收；已物化 LocalSurvivor/SAE 包总账"
                 "也无开放窗口；已知 packet extractor 入口全覆盖，且无未命名新 sparse 入口。"
-                "LocalSurvivor 当前分支只剩未来显式新增入口的条件义务；当前主硬点转向非二点 "
-                "primitive PDEC 或 CleanKLS/DLS。"
+                "LocalSurvivor 当前分支只剩未来显式新增入口的条件义务；CleanKLS/DLS 宽口径"
+                "已由 K1--K9 准入和 SC-9 展开压成 NC-BLK 或外部 DI/BFI。因此当前主硬点转向"
+                "非二点 primitive PDEC 或 actual WFD 块非集中 NC-BLK。"
             ),
             "next_routes": [
                 "PacketExtractorCompleteness for any newly admitted sparse route",
                 "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints",
-                "CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion",
+                "NC-BLK actual WFD block non-concentration, or precise external DI/BFI original dispersion matching",
+                "D-structure/Rankin referee inputs for final theorem promotion",
             ],
         },
         "review_conclusion": (
@@ -514,7 +567,8 @@ def run(
             "已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和"
             "二点 SAE/Endpoint 本地 witness 吸收；已物化 LocalSurvivor/SAE 包总账也全部闭合。"
             "已知 LocalSurvivor packet extractor 入口也全部覆盖，且无未命名新 sparse 入口。"
-            "下一步应攻非二点 primitive PDEC formal unit 或 CleanKLS/DLS。"
+            "CleanKLS/DLS 宽口径也已由现有路由压到 NC-BLK 或外部 DI/BFI。"
+            "下一步应攻非二点 primitive PDEC formal unit 或 actual WFD 块非集中 NC-BLK。"
         ),
     }
 
@@ -610,6 +664,10 @@ def main() -> None:
     parser.add_argument("--local-survivor-ledger", type=Path, default=DEFAULT_LOCAL_SURVIVOR_LEDGER)
     parser.add_argument("--packet-extractor-coverage", type=Path, default=DEFAULT_PACKET_EXTRACTOR_COVERAGE)
     parser.add_argument("--new-sparse-admission", type=Path, default=DEFAULT_NEW_SPARSE_ADMISSION)
+    parser.add_argument("--clean-kls", type=Path, default=DEFAULT_CLEAN_KLS)
+    parser.add_argument(
+        "--kuznetsov-frontier", type=Path, default=DEFAULT_KUZNETSOV_FRONTIER
+    )
     parser.add_argument("--line-ref", type=Path, default=DEFAULT_LINE_REF)
     parser.add_argument("--claim-status", type=Path, default=DEFAULT_CLAIM_STATUS)
     parser.add_argument("--main-tex", type=Path, default=DEFAULT_MAIN_TEX)
@@ -631,6 +689,8 @@ def main() -> None:
         args.local_survivor_ledger,
         args.packet_extractor_coverage,
         args.new_sparse_admission,
+        args.clean_kls,
+        args.kuznetsov_frontier,
         args.line_ref,
         args.claim_status,
         args.main_tex,
