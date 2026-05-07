@@ -1,0 +1,194 @@
+{
+  "absorption_rows": [
+    {
+      "atom_candidate": 250541,
+      "block_index": 2,
+      "column": 89,
+      "factor": 199,
+      "factor_199_load_in_fiber": 1,
+      "fiber_allowed_load": 4,
+      "fiber_max_factor_load": 1,
+      "fiber_missing_candidates": 3,
+      "fiber_prime_candidates": 1,
+      "has_local_survivor_witness": true,
+      "local_prime_witnesses": [
+        {
+          "candidate": 250543,
+          "factors_le_p": [],
+          "same_as_atom": false,
+          "semiprime": 250519
+        }
+      ],
+      "mirror_candidate_span": [
+        346986,
+        347022
+      ],
+      "offset": 24,
+      "p": 769,
+      "q": 773,
+      "residue": 126,
+      "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+      "row": 325,
+      "semiprime": 250517,
+      "tail_factors": [
+        479,
+        523
+      ]
+    },
+    {
+      "atom_candidate": 250541,
+      "block_index": 3,
+      "column": 88,
+      "factor": 199,
+      "factor_199_load_in_fiber": 1,
+      "fiber_allowed_load": 4,
+      "fiber_max_factor_load": 1,
+      "fiber_missing_candidates": 3,
+      "fiber_prime_candidates": 1,
+      "has_local_survivor_witness": true,
+      "local_prime_witnesses": [
+        {
+          "candidate": 250543,
+          "factors_le_p": [],
+          "same_as_atom": false,
+          "semiprime": 250519
+        }
+      ],
+      "mirror_candidate_span": [
+        684546,
+        684582
+      ],
+      "offset": 24,
+      "p": 953,
+      "q": 967,
+      "residue": 61,
+      "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+      "row": 260,
+      "semiprime": 250517,
+      "tail_factors": [
+        479,
+        523
+      ]
+    },
+    {
+      "atom_candidate": 1664237,
+      "block_index": 1,
+      "column": 82,
+      "factor": 199,
+      "factor_199_load_in_fiber": 1,
+      "fiber_allowed_load": 5,
+      "fiber_max_factor_load": 1,
+      "fiber_missing_candidates": 4,
+      "fiber_prime_candidates": 1,
+      "has_local_survivor_witness": true,
+      "local_prime_witnesses": [
+        {
+          "candidate": 1664227,
+          "factors_le_p": [],
+          "same_as_atom": false,
+          "semiprime": 1664197
+        }
+      ],
+      "mirror_candidate_span": [
+        2307800,
+        2307822
+      ],
+      "offset": 30,
+      "p": 1987,
+      "q": 1993,
+      "residue": 40,
+      "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+      "row": 836,
+      "semiprime": 1664207,
+      "tail_factors": [
+        967,
+        1721
+      ]
+    },
+    {
+      "atom_candidate": 1664237,
+      "block_index": 4,
+      "column": 82,
+      "factor": 199,
+      "factor_199_load_in_fiber": 1,
+      "fiber_allowed_load": 4,
+      "fiber_max_factor_load": 1,
+      "fiber_missing_candidates": 3,
+      "fiber_prime_candidates": 1,
+      "has_local_survivor_witness": true,
+      "local_prime_witnesses": [
+        {
+          "candidate": 1664227,
+          "factors_le_p": [],
+          "same_as_atom": false,
+          "semiprime": 1664197
+        }
+      ],
+      "mirror_candidate_span": [
+        2307810,
+        2307822
+      ],
+      "offset": 30,
+      "p": 1987,
+      "q": 1993,
+      "residue": 40,
+      "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+      "row": 836,
+      "semiprime": 1664207,
+      "tail_factors": [
+        967,
+        1721
+      ]
+    }
+  ],
+  "all_factor_199_fibers_are_sparse_load_one": true,
+  "all_sources_have_local_survivor_witness": true,
+  "certificate_type": "fo_pdec_sae_endpoint_absorption_audit",
+  "closed_subgate": "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses",
+  "input_subgate": "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology",
+  "physical_atom_count": 2,
+  "remaining_after_subgate": [
+    "global LocalSurvivorCert family for unaudited sparse windows",
+    "future primitive PDEC only for at least three non-tautological physical atoms or an extra fixed-frequency constraint",
+    "CleanKLS/DLS and D-structure/Rankin referee inputs for the full row-column theorem"
+  ],
+  "review_conclusion": "当前 physical/primitive PDEC 只剩两个物理原子；二点 Fourier 阈值已退化为恒等式。把这两个原子送入 SAE/Endpoint 后，审计发现每个关联固定偏移纤维都有本地素数见证，且 factor=199 在每个纤维内负载至多为 1。因此当前有限二点分支被 LocalSurvivor 见证吸收；这关闭的是已审计样本子门，不是完整 LocalSurvivor/PDEC 终端全集。",
+  "source_hashes": {
+    "fixed_offset_pdec_ledger": "725ea25495482e57f28e1ff2db45c6773cb51cdee5caeb8232d8b198dbafad10",
+    "physical_primitive_tautology_audit": "d68f7ce681ef06f42b1573925d8a0f9c065f3ff1e96b9627df0a0d2611dcde46",
+    "script": "9b302217f7c672e2825c72c79424e79ee558a4a3f0768b3ae501467b5c1b6d9e"
+  },
+  "source_row_count": 4,
+  "status": "audited_two_physical_primitive_atoms_absorbed_by_local_survivor_witnesses",
+  "unique_fixed_offset_fiber_count": 4,
+  "unique_fixed_offset_fibers": [
+    {
+      "block_index": 1,
+      "offset": 30,
+      "q": 1993,
+      "row": 836
+    },
+    {
+      "block_index": 2,
+      "offset": 24,
+      "q": 773,
+      "row": 325
+    },
+    {
+      "block_index": 3,
+      "offset": 24,
+      "q": 967,
+      "row": 260
+    },
+    {
+      "block_index": 4,
+      "offset": 30,
+      "q": 1993,
+      "row": 836
+    }
+  ],
+  "unique_physical_atoms": [
+    250541,
+    1664237
+  ]
+}

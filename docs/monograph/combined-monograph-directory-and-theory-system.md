@@ -2099,6 +2099,12 @@ docs/monograph/prime-matrix-wsh-fo-pdec-weighted-hall-dual-dominance.md
 experiments/prime_matrix_wsh_fo_pdec_cross_q_chart_overlap_audit.py
 docs/monograph/prime-matrix-wsh-fo-pdec-cross-q-chart-overlap-audit.md/json
 docs/monograph/prime-matrix-wsh-fo-pdec-cross-q-chart-overlap-dominance.md
+experiments/prime_matrix_wsh_fo_pdec_physical_primitive_tautology_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-physical-primitive-tautology-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-physical-primitive-tautology.md
+experiments/prime_matrix_wsh_fo_pdec_sae_endpoint_absorption_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-sae-endpoint-absorption-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-sae-endpoint-absorption.md
 experiments/prime_matrix_row_column_unconditional_frontier_router.py
 docs/monograph/prime-matrix-row-column-unconditional-frontier-router.md/json
 ```
@@ -2160,4 +2166,37 @@ same candidate / semiprime / offset / factor = true。
 ```text
 physical/primitive PDEC threshold U_CRT < 1.9997507790353146；
 或 SAE/Endpoint absorption for physical cross-chart reuses。
+```
+
+physical/primitive 子门继续审计后，发现 `1.9997507790353146` 不是新的结构缺陷阈值，而是
+二点 Fourier 恒等式：
+
+```text
+2*cos(pi/199)=1.9997507790353146。
+```
+
+原因是模素数上任意两个不同残基都可由某个非零频率送成相邻对偶点。因此当前两个 physical
+primitive 原子不能继续作为非退化 PDEC 下界。进一步送入 `SAE/Endpoint` 后，每个来源行在同一
+固定偏移纤维里都有本地素数见证：
+
+```text
+250541  -> witness 250543；
+1664237 -> witness 1664227。
+```
+
+且 `factor=199` 在这些纤维中的负载均为 `1`。所以当前已审计的 `ell=199` 强信号链已经完整降口径：
+
+```text
+raw library signal      -> nested duplicate / weighted Hall 阻断；
+coordinate-cap signal   -> cross-q 坐标图重叠阻断；
+physical two-point      -> Fourier tautology；
+two physical atoms      -> LocalSurvivor witness 吸收。
+```
+
+新的最窄剩余不再是继续优化当前 `U_CRT` 常数，而是：
+
+```text
+global LocalSurvivorCert family；
+or future primitive PDEC with >=3 non-tautological physical atoms or extra constraints；
+plus CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion。
 ```

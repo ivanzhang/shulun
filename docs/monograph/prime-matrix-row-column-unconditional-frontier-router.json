@@ -36,11 +36,11 @@
     },
     {
       "blocks_global": true,
-      "evidence": "raw ell=199, h=95, Fourier=3.959247567099438; coordinate-cap Fourier=2.9698366905785227; physical-cap Fourier=1.9997507790353146; q-row dedup best=1.0; block-local best=1.0; nested_unit_blocked=True; weighted_full_duplicate_blocked=True; cross_q_chart_overlap_blocked=True",
+      "evidence": "raw ell=199, h=95, Fourier=3.959247567099438; coordinate-cap Fourier=2.9698366905785227; physical-cap Fourier=1.9997507790353146; q-row dedup best=1.0; block-local best=1.0; nested_unit_blocked=True; weighted_full_duplicate_blocked=True; cross_q_chart_overlap_blocked=True; physical_two_point_tautology=True; two_atom_sae_endpoint_absorbed=True",
       "gate": "A1-FO-PDEC-SameFormalUnit",
-      "next_action": "转攻 physical/primitive U_CRT<1.9997507790353146，或证明物理 cross-chart 复用进入 SAE/Endpoint 吸收。",
-      "remaining": "global_library_raw 强阈值尚未是单分支 PDEC 下界；嵌套单位重复、fractional weighted full duplicate 和当前 cross-q coordinate persistence 均已被支配；剩余是 physical/primitive 阈值或 SAE/Endpoint。",
-      "status": "current_narrowest_open"
+      "next_action": "停止优化当前 U_CRT 常数；转向全局 LocalSurvivorCert 家族，或寻找至少三点非退化 primitive PDEC formal unit。",
+      "remaining": "当前已审计 FO-PDEC 样本链中，raw、coordinate-cap、physical 二点阈值和二点 SAE/Endpoint 均已被降口径或本地 witness 吸收；但完整 PDEC family 对未来 非二点、非同图重叠 formal unit 仍未闭合。",
+      "status": "audited_current_sample_subgates_closed_global_family_open"
     },
     {
       "blocks_global": true,
@@ -98,11 +98,11 @@
         }
       ]
     },
-    "name": "A1-FO-PDEC-SameFormalUnit",
+    "name": "GlobalLocalSurvivorOrNonTautologicalPDEC",
     "next_routes": [
-      "physical/primitive PDEC threshold U_CRT < 1.9997507790353146",
-      "SAE/Endpoint absorption for rejected cross-level reuses",
-      "future non-overlap cross-q persistence theorem if a new family appears"
+      "global LocalSurvivorCert family for unaudited sparse windows",
+      "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints",
+      "CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion"
     ],
     "physical_cap_best": {
       "factor": 199,
@@ -142,8 +142,8 @@
       ],
       "support": 3
     },
-    "reason": "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；但 U_CRT 常数比较必须先在同一 formal unit 上合法；本轮已排除当前 cross-q 坐标图重叠作为独立持久化质量。",
-    "subgate_closed_this_round": "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+    "reason": "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；当前已审计 FO-PDEC 强信号链已被逐层降口径，最后两个物理原子由同固定偏移纤维的本地素数见证吸收。下一硬点不再是当前 ell=199 常数，而是全局 LocalSurvivor 证书族或未来非二点 primitive PDEC 家族。",
+    "subgate_closed_this_round": "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
   },
   "open_global_gates": [
     "TerminalTriadNoFourthExit",
@@ -153,17 +153,19 @@
     "C:CleanKLS-DLS",
     "D-structure/Tail-log4/RankinReferee"
   ],
-  "review_conclusion": "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；已排除的是 unrestricted generic WFD 自足版；当前最窄硬点是 A:PDEC 端口内同一 formal unit 的 FO-PDEC 合法性。嵌套块单位重复、fractional weighted full duplicate 恢复路线、以及当前 cross-q 坐标图持久化路线均已被阻断；下一步应攻 physical/primitive PDEC 阈值，或 SAE/Endpoint 吸收。",
+  "review_conclusion": "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；已排除的是 unrestricted generic WFD 自足版；当前已审计 FO-PDEC ell=199 强信号链已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和二点 SAE/Endpoint 本地 witness 吸收。下一步应攻全局 LocalSurvivorCert 家族，或寻找未来非二点 primitive PDEC formal unit。",
   "row_column_unconditional_closed": false,
   "source_hashes": {
     "boundary_merge": "b454fcf02a28a64540f88759fe85ca639443b9a7b49c3d18211475c99b0e4ac5",
-    "claim_status_table": "41820dc4ee13cf620be2f6510a31a09121e7ea3888153c1786eedb4df83721b1",
+    "claim_status_table": "bdb3420209ca1f8871693cd7f95e4756603845cf6909386df84e06652e4231ca",
     "cross_q_chart_overlap_audit": "60ff0aaa2335146d6c7167cef36e5fd2fb0316626c575901b1b4d363915fbc1d",
     "formal_unit_audit": "f79dd27d21604a35528746cad584911c8064fcd862766f90031b81041742e756",
     "line_referee_matrix": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
-    "main_tex": "64e39fa0321867ca068b393311df03f4e5ba94b314ac53d81fe58920fcc9bbd1",
+    "main_tex": "6e7031bc41b0f55af42df5c34e5e885eaa67d2535e49e00185e6bf3cd5112fd7",
     "nested_duplicate_dominance": "8a1f4e4af359ab84b429b30880534dce7938a950bac13d410e828394d9ed89c7",
-    "script": "f72cfac1b6622ef1edb47599d64afa497e57c6d9fa0d6327e0cb4187deedf6c2",
+    "physical_primitive_tautology_audit": "d68f7ce681ef06f42b1573925d8a0f9c065f3ff1e96b9627df0a0d2611dcde46",
+    "sae_endpoint_absorption_audit": "a706939ad36e26cd746690cd864de49307284e002adf7b8e7f055fd66c847347",
+    "script": "219cb220c6a216c0be2edc42513648cd61b09b05f3ac08dbdcb48815f699dd04",
     "stitching_audit": "84a96301e485505aec62f3bae15cfd1956429ebd538de50d850c08673196d750",
     "terminal_confluence": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c",
     "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547",

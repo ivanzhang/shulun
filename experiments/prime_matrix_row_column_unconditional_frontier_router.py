@@ -30,6 +30,12 @@ DEFAULT_STITCHING = DOCS / "prime-matrix-wsh-fo-pdec-stitching-feasibility-audit
 DEFAULT_NESTED = DOCS / "prime-matrix-wsh-fo-pdec-nested-duplicate-dominance-audit.json"
 DEFAULT_WEIGHTED = DOCS / "prime-matrix-wsh-fo-pdec-weighted-hall-dual-audit.json"
 DEFAULT_CROSS_Q = DOCS / "prime-matrix-wsh-fo-pdec-cross-q-chart-overlap-audit.json"
+DEFAULT_PHYSICAL_TAUTOLOGY = (
+    DOCS / "prime-matrix-wsh-fo-pdec-physical-primitive-tautology-audit.json"
+)
+DEFAULT_SAE_ENDPOINT = (
+    DOCS / "prime-matrix-wsh-fo-pdec-sae-endpoint-absorption-audit.json"
+)
 DEFAULT_LINE_REF = DOCS / "line-by-line-internal-referee-matrix.md"
 DEFAULT_CLAIM_STATUS = DOCS / "claim-status-table.md"
 DEFAULT_MAIN_TEX = PAPER / "contradiction-field-monograph.tex"
@@ -90,6 +96,8 @@ def build_frontier_rows(
     nested: dict[str, Any],
     weighted: dict[str, Any],
     cross_q: dict[str, Any],
+    physical_tautology: dict[str, Any],
+    sae_endpoint: dict[str, Any],
     line_ref_text: str,
     claim_status_text: str,
     main_tex: str,
@@ -135,6 +143,17 @@ def build_frontier_rows(
         == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
         and cross_q["all_cross_level_reuses_chart_overlap_blocked"]
     )
+    physical_tautology_subgate_closed = (
+        physical_tautology["closed_subgate"]
+        == "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
+        and physical_tautology["all_residue_choices_are_two_point_tautology"]
+    )
+    sae_endpoint_subgate_closed = (
+        sae_endpoint["closed_subgate"]
+        == "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
+        and sae_endpoint["all_sources_have_local_survivor_witness"]
+        and sae_endpoint["all_factor_199_fibers_are_sparse_load_one"]
+    )
     referee_guarded = has_all(
         line_ref_text,
         ["PM-16", "BLOCK-REFEREE", "Tail-log4", "finite"],
@@ -152,6 +171,7 @@ def build_frontier_rows(
             "行命题最终边界合并审查",
             "PDEC family certificates",
             "LocalSurvivorCert family",
+            "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses",
         ],
     )
     raw_best = stitching["summary"]["raw_best"]
@@ -196,7 +216,11 @@ def build_frontier_rows(
         ),
         frontier_row(
             gate="A1-FO-PDEC-SameFormalUnit",
-            status="current_narrowest_open",
+            status=(
+                "audited_current_sample_subgates_closed_global_family_open"
+                if sae_endpoint_subgate_closed
+                else "current_narrowest_open"
+            ),
             evidence=(
                 f"raw ell={raw_best['factor']}, h={raw_best['frequency']}, "
                 f"Fourier={raw_best['fourier']}; "
@@ -206,16 +230,18 @@ def build_frontier_rows(
                 f"block-local best={block_best['fourier']}; "
                 f"nested_unit_blocked={nested_subgate_closed}; "
                 f"weighted_full_duplicate_blocked={weighted_subgate_closed}; "
-                f"cross_q_chart_overlap_blocked={cross_q_subgate_closed}"
+                f"cross_q_chart_overlap_blocked={cross_q_subgate_closed}; "
+                f"physical_two_point_tautology={physical_tautology_subgate_closed}; "
+                f"two_atom_sae_endpoint_absorbed={sae_endpoint_subgate_closed}"
             ),
             remaining=(
-                "global_library_raw 强阈值尚未是单分支 PDEC 下界；"
-                "嵌套单位重复、fractional weighted full duplicate 和当前 cross-q coordinate persistence "
-                "均已被支配；剩余是 physical/primitive 阈值或 SAE/Endpoint。"
+                "当前已审计 FO-PDEC 样本链中，raw、coordinate-cap、physical 二点阈值和二点 "
+                "SAE/Endpoint 均已被降口径或本地 witness 吸收；但完整 PDEC family 对未来 "
+                "非二点、非同图重叠 formal unit 仍未闭合。"
             ),
             next_action=(
-                "转攻 physical/primitive U_CRT<1.9997507790353146，"
-                "或证明物理 cross-chart 复用进入 SAE/Endpoint 吸收。"
+                "停止优化当前 U_CRT 常数；转向全局 LocalSurvivorCert 家族，或寻找至少三点"
+                "非退化 primitive PDEC formal unit。"
             ),
             blocks_global=True,
         ),
@@ -263,6 +289,8 @@ def run(
     nested_path: Path,
     weighted_path: Path,
     cross_q_path: Path,
+    physical_tautology_path: Path,
+    sae_endpoint_path: Path,
     line_ref_path: Path,
     claim_status_path: Path,
     main_tex_path: Path,
@@ -276,6 +304,8 @@ def run(
     nested = load_json(nested_path)
     weighted = load_json(weighted_path)
     cross_q = load_json(cross_q_path)
+    physical_tautology = load_json(physical_tautology_path)
+    sae_endpoint = load_json(sae_endpoint_path)
     line_ref_text = read_text(line_ref_path)
     claim_status_text = read_text(claim_status_path)
     main_tex = read_text(main_tex_path)
@@ -289,6 +319,8 @@ def run(
         nested,
         weighted,
         cross_q,
+        physical_tautology,
+        sae_endpoint,
         line_ref_text,
         claim_status_text,
         main_tex,
@@ -319,6 +351,8 @@ def run(
             "nested_duplicate_dominance": file_sha256(nested_path),
             "weighted_hall_dual_audit": file_sha256(weighted_path),
             "cross_q_chart_overlap_audit": file_sha256(cross_q_path),
+            "physical_primitive_tautology_audit": file_sha256(physical_tautology_path),
+            "sae_endpoint_absorption_audit": file_sha256(sae_endpoint_path),
             "line_referee_matrix": file_sha256(line_ref_path),
             "claim_status_table": file_sha256(claim_status_path),
             "main_tex": file_sha256(main_tex_path),
@@ -336,19 +370,29 @@ def run(
         "frontier_rows": rows,
         "open_global_gates": open_global_gates,
         "narrowest_next_hardpoint": {
-            "name": "A1-FO-PDEC-SameFormalUnit",
+            "name": "GlobalLocalSurvivorOrNonTautologicalPDEC",
             "subgate_closed_this_round": (
-                "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
-                if cross_q["closed_subgate"]
-                == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
+                if sae_endpoint["closed_subgate"]
+                == "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
                 else (
-                    "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
-                    if weighted["closed_subgate"]
-                    == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                    "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
+                    if physical_tautology["closed_subgate"]
+                    == "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
                     else (
-                        "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
-                        if nested_closed
-                        else "NestedBlockMultiplicityStillOpen"
+                        "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                        if cross_q["closed_subgate"]
+                        == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                        else (
+                            "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                            if weighted["closed_subgate"]
+                            == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                            else (
+                                "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
+                                if nested_closed
+                                else "NestedBlockMultiplicityStillOpen"
+                            )
+                        )
                     )
                 )
             ),
@@ -357,21 +401,22 @@ def run(
             "physical_cap_best": physical_cap_best,
             "reason": (
                 "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；"
-                "但 U_CRT 常数比较必须先在同一 formal unit 上合法；"
-                "本轮已排除当前 cross-q 坐标图重叠作为独立持久化质量。"
+                "当前已审计 FO-PDEC 强信号链已被逐层降口径，最后两个物理原子由"
+                "同固定偏移纤维的本地素数见证吸收。下一硬点不再是当前 ell=199 常数，"
+                "而是全局 LocalSurvivor 证书族或未来非二点 primitive PDEC 家族。"
             ),
             "next_routes": [
-                "physical/primitive PDEC threshold U_CRT < 1.9997507790353146",
-                "SAE/Endpoint absorption for rejected cross-level reuses",
-                "future non-overlap cross-q persistence theorem if a new family appears",
+                "global LocalSurvivorCert family for unaudited sparse windows",
+                "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints",
+                "CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion",
             ],
         },
         "review_conclusion": (
             "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；"
-            "已排除的是 unrestricted generic WFD 自足版；当前最窄硬点是 A:PDEC 端口内"
-            "同一 formal unit 的 FO-PDEC 合法性。嵌套块单位重复、fractional weighted full duplicate "
-            "恢复路线、以及当前 cross-q 坐标图持久化路线均已被阻断；下一步应攻 "
-            "physical/primitive PDEC 阈值，或 SAE/Endpoint 吸收。"
+            "已排除的是 unrestricted generic WFD 自足版；当前已审计 FO-PDEC ell=199 强信号链"
+            "已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和"
+            "二点 SAE/Endpoint 本地 witness 吸收。下一步应攻全局 LocalSurvivorCert 家族，"
+            "或寻找未来非二点 primitive PDEC formal unit。"
         ),
     }
 
@@ -462,6 +507,8 @@ def main() -> None:
     parser.add_argument("--nested", type=Path, default=DEFAULT_NESTED)
     parser.add_argument("--weighted", type=Path, default=DEFAULT_WEIGHTED)
     parser.add_argument("--cross-q", type=Path, default=DEFAULT_CROSS_Q)
+    parser.add_argument("--physical-tautology", type=Path, default=DEFAULT_PHYSICAL_TAUTOLOGY)
+    parser.add_argument("--sae-endpoint", type=Path, default=DEFAULT_SAE_ENDPOINT)
     parser.add_argument("--line-ref", type=Path, default=DEFAULT_LINE_REF)
     parser.add_argument("--claim-status", type=Path, default=DEFAULT_CLAIM_STATUS)
     parser.add_argument("--main-tex", type=Path, default=DEFAULT_MAIN_TEX)
@@ -478,6 +525,8 @@ def main() -> None:
         args.nested,
         args.weighted,
         args.cross_q,
+        args.physical_tautology,
+        args.sae_endpoint,
         args.line_ref,
         args.claim_status,
         args.main_tex,

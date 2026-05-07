@@ -1,0 +1,208 @@
+{
+  "all_residue_choices_are_two_point_tautology": true,
+  "ambiguous_phase_event_count": 1,
+  "ambiguous_phase_events": [
+    {
+      "candidate": 250541,
+      "factor": 199,
+      "multiplicity": 2,
+      "offset_set": [
+        24
+      ],
+      "q_layers": [
+        773,
+        967
+      ],
+      "residue_set": [
+        61,
+        126
+      ],
+      "semiprime_set": [
+        250517
+      ],
+      "sources": [
+        {
+          "block_index": 2,
+          "column": 89,
+          "offset": 24,
+          "offset_row_index": 5,
+          "p": 769,
+          "q": 773,
+          "row": 325,
+          "semiprime": 250517,
+          "tail_factors": [
+            479,
+            523
+          ],
+          "target_residue": 126
+        },
+        {
+          "block_index": 3,
+          "column": 88,
+          "offset": 24,
+          "offset_row_index": 7,
+          "p": 953,
+          "q": 967,
+          "row": 260,
+          "semiprime": 250517,
+          "tail_factors": [
+            479,
+            523
+          ],
+          "target_residue": 61
+        }
+      ]
+    }
+  ],
+  "certificate_type": "fo_pdec_physical_primitive_tautology_audit",
+  "closed_subgate": "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology",
+  "cross_q_current_sample_blocked": true,
+  "factor": 199,
+  "physical_event_count": 2,
+  "physical_events": [
+    {
+      "candidate": 250541,
+      "factor": 199,
+      "multiplicity": 2,
+      "offset_set": [
+        24
+      ],
+      "q_layers": [
+        773,
+        967
+      ],
+      "residue_set": [
+        61,
+        126
+      ],
+      "semiprime_set": [
+        250517
+      ],
+      "sources": [
+        {
+          "block_index": 2,
+          "column": 89,
+          "offset": 24,
+          "offset_row_index": 5,
+          "p": 769,
+          "q": 773,
+          "row": 325,
+          "semiprime": 250517,
+          "tail_factors": [
+            479,
+            523
+          ],
+          "target_residue": 126
+        },
+        {
+          "block_index": 3,
+          "column": 88,
+          "offset": 24,
+          "offset_row_index": 7,
+          "p": 953,
+          "q": 967,
+          "row": 260,
+          "semiprime": 250517,
+          "tail_factors": [
+            479,
+            523
+          ],
+          "target_residue": 61
+        }
+      ]
+    },
+    {
+      "candidate": 1664237,
+      "factor": 199,
+      "multiplicity": 2,
+      "offset_set": [
+        30
+      ],
+      "q_layers": [
+        1993
+      ],
+      "residue_set": [
+        40
+      ],
+      "semiprime_set": [
+        1664207
+      ],
+      "sources": [
+        {
+          "block_index": 1,
+          "column": 82,
+          "offset": 30,
+          "offset_row_index": 2,
+          "p": 1987,
+          "q": 1993,
+          "row": 836,
+          "semiprime": 1664207,
+          "tail_factors": [
+            967,
+            1721
+          ],
+          "target_residue": 40
+        },
+        {
+          "block_index": 4,
+          "column": 82,
+          "offset": 30,
+          "offset_row_index": 9,
+          "p": 1987,
+          "q": 1993,
+          "row": 836,
+          "semiprime": 1664207,
+          "tail_factors": [
+            967,
+            1721
+          ],
+          "target_residue": 40
+        }
+      ]
+    }
+  ],
+  "remaining_after_subgate": [
+    "SAE/Endpoint absorption for the two physical primitive atoms",
+    "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints"
+  ],
+  "residue_choice_audit": [
+    {
+      "chosen_residues": [
+        61,
+        40
+      ],
+      "difference": 178,
+      "dual_residues": [
+        35,
+        36
+      ],
+      "fourier": 1.999750779035315,
+      "frequency": 180,
+      "matches_two_point_tautology": true,
+      "tautology_bound": 1.9997507790353146
+    },
+    {
+      "chosen_residues": [
+        126,
+        40
+      ],
+      "difference": 113,
+      "dual_residues": [
+        142,
+        143
+      ],
+      "fourier": 1.9997507790353144,
+      "frequency": 118,
+      "matches_two_point_tautology": true,
+      "tautology_bound": 1.9997507790353146
+    }
+  ],
+  "review_conclusion": "物理去重后当前 factor=199 前沿只剩两个物理候选。模素数上任意两个不同残基都可由某个 非零频率送成相邻对偶点，从而 Fourier 达到 2*cos(pi/ell)。因此 U_CRT < 1.9997507790353146 不是可攻的 PDEC 缺陷阈值，而是二点 Fourier tautology。 当前分支应转入 SAE/Endpoint，除非未来出现至少三点且同一 formal unit 的 primitive PDEC 家族。",
+  "source_hashes": {
+    "cross_q_chart_overlap_audit": "60ff0aaa2335146d6c7167cef36e5fd2fb0316626c575901b1b4d363915fbc1d",
+    "lowmod_audit": "bf25b175f016672b63ba0d0531a205470742777f05e235149f53c3acbebb8577",
+    "script": "e5406de525b6bfcca649e801d26f3cfb1b19e5993760ff0e3f84f3841e3d4041"
+  },
+  "status": "physical_primitive_pdec_threshold_degenerates_to_two_point_tautology",
+  "two_point_tautology_bound": 1.9997507790353146
+}
