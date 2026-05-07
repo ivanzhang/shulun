@@ -3499,3 +3499,63 @@ terminal_dual_gap => PrimeLiftDeletionKLOrKLSLargeSieve。
 ```
 
 这一步没有完成最终行命题，但把 positive-limsup PDEC-CAP 的抽象容量缺口转化为更具体的升层刚性缺口。
+
+## 70. A1 选择性晋升交换律闭合
+
+新增 `experiments/prime_matrix_triad_a1_selective_promotion_commutation.py` 后，
+上一节唯一的选择性晋升行也被吸收。
+
+选择性行：
+
+```text
+P=29；
+original signature=17:8:6；
+first smaller tail prime r=13；
+promoted prime ell=17。
+```
+
+交换律：
+
+```text
+original signature: (ell,y,c) at Q；
+first promote r<ell；
+new phase: t'=t+Qs；
+need t'+Qr*y' == t+Qy mod ell；
+therefore y'=(y-s)r^{-1} mod ell。
+```
+
+机器结果：
+
+```text
+status=selective_promotion_commutation_resolved_by_finite_split；
+selective_row_count=1；
+route_counts={FiniteSplitThenStandardPromotionOrDiffuseKLS: 1}；
+all_crt_orders_commute=True；
+max_successor_count=13。
+```
+
+结构意义：
+
+```text
+选择性晋升不是新终端；
+它先按较小尾素数 r 的 residue 拆成 r 个后继签名；
+若原签名有正 limsup 质量，有限鸽巢给出某个后继签名正 limsup；
+该后继回到标准 prime-lift promotion deletion/KL；
+若所有后继都不持久，则进入 diffuse CleanKLS/DLS。
+```
+
+前沿路由器同步更新后：
+
+```text
+SelectivePromotionCommutation => selective_promotion_resolved_by_finite_split；
+terminal_dual_gap => StandardPrimeLiftDeletionKLOrKLSLargeSieve。
+```
+
+于是当前 A1 连续 actual-payment 分支的剩余硬点进一步缩成：
+
+```text
+1. 标准 prime-lift 晋升删除/KL：证明 39 个 ell=13 行以及选择性拆分后继行接入删除势或 NoDeletion-KL；
+2. diffuse 分支：证明/接入 CleanKLS/DLS 大筛估计。
+```
+
+选择性晋升交换律不再是独立障碍。

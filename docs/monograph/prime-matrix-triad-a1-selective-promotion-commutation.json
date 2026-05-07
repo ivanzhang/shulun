@@ -1,0 +1,86 @@
+{
+  "all_crt_orders_commute": true,
+  "certificate_type": "triad_a1_selective_promotion_commutation",
+  "commutation_law": "若 signature (ell,y,c) 跳过较小尾素数 r，则先晋升 r。对 r 的每个 residue s，原 ell-fiber residue 在 Qr 层变为 y'=(y-s)r^{-1} mod ell。于是选择性签名被有限拆成 r 个标准后继签名。若原签名有正 limsup 质量，则有限鸽巢给出某个后继签名正 limsup；若所有后继都不持久，则该质量进入 diffuse CleanKLS/DLS。",
+  "commutation_rows": [
+    {
+      "crt_orders_commute": true,
+      "final_q_direct": 510510,
+      "final_q_ordered": 510510,
+      "first_prime": 13,
+      "p": 29,
+      "promoted_prime": 17,
+      "q": 2310,
+      "route": "FiniteSplitThenStandardPromotionOrDiffuseKLS",
+      "signature": "17:8:6",
+      "signature_payment_mass": 204,
+      "signature_phase_count": 2,
+      "successor_count": 13,
+      "successor_signatures": [
+        {
+          "first_prime_residue": 0,
+          "successor_signature": "17:15:6"
+        },
+        {
+          "first_prime_residue": 1,
+          "successor_signature": "17:11:6"
+        },
+        {
+          "first_prime_residue": 2,
+          "successor_signature": "17:7:6"
+        },
+        {
+          "first_prime_residue": 3,
+          "successor_signature": "17:3:6"
+        },
+        {
+          "first_prime_residue": 4,
+          "successor_signature": "17:16:6"
+        },
+        {
+          "first_prime_residue": 5,
+          "successor_signature": "17:12:6"
+        },
+        {
+          "first_prime_residue": 6,
+          "successor_signature": "17:8:6"
+        },
+        {
+          "first_prime_residue": 7,
+          "successor_signature": "17:4:6"
+        },
+        {
+          "first_prime_residue": 8,
+          "successor_signature": "17:0:6"
+        },
+        {
+          "first_prime_residue": 9,
+          "successor_signature": "17:13:6"
+        },
+        {
+          "first_prime_residue": 10,
+          "successor_signature": "17:9:6"
+        },
+        {
+          "first_prime_residue": 11,
+          "successor_signature": "17:5:6"
+        },
+        {
+          "first_prime_residue": 12,
+          "successor_signature": "17:1:6"
+        }
+      ]
+    }
+  ],
+  "max_successor_count": 13,
+  "review_conclusion": "唯一选择性晋升缺口已由 CRT 交换律和有限拆分吸收：它不再是独立终端。后继要么回到标准 prime-lift promotion deletion/KL，要么进入 diffuse KLS。",
+  "route_counts": {
+    "FiniteSplitThenStandardPromotionOrDiffuseKLS": 1
+  },
+  "selective_row_count": 1,
+  "source_hashes": {
+    "continuous_prime_lift_json": "cf1eb83cbb57eeab352e73bba1638db86494ead8159b4a350ec5b490fdef2d96",
+    "script": "022f7741b9f6dcd88d961c1a0a71d071c1a020ea25bdfa7186e3261050641cc6"
+  },
+  "status": "selective_promotion_commutation_resolved_by_finite_split"
+}

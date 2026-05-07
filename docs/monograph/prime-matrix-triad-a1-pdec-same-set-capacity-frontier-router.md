@@ -2,11 +2,11 @@
 
 **状态：** `same_set_capacity_frontier_materialized_terminal_dual_open`
 
-Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由；下一步不再是路由，而是证明晋升删除/KL、选择性晋升交换律或 KLS-EXT。
+Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。终端二分已说明没有第三出口；positive-limsup 分支也已生成具体 PDEC 输入行。prime-lift 刚性显示这些输入可升层路由，选择性晋升也已回到有限拆分。下一步不再是路由，而是证明标准晋升删除/KL 或 KLS-EXT。
 
 ## 1. 结构律
 
-同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余。最终缺口转成标准晋升删除/KL、选择性晋升交换律，或 CleanKLS/DLS 大筛估计。
+同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造，终端投影塔二分也已闭合。positive-limsup 有限签名的 PDEC 输入账本已物化。这些签名又进一步满足 prime-lift 同余；唯一选择性晋升已由 CRT 交换律有限拆分。最终缺口转成标准晋升删除/KL，或 CleanKLS/DLS 大筛估计。
 
 ```text
 Same-set capacity upper:
@@ -19,14 +19,15 @@ Same-set capacity upper:
   recursive diffusion returns to CleanKLS/DLS；
   no third terminal route remains after finite-projection dichotomy；
   positive-limsup finite signatures materialize legal PDEC input rows；
-  finite signatures force prime-lift congruence rows。
+  finite signatures force prime-lift congruence rows；
+  selective promotion commutes after finite splitting。
 ```
 
 ## 2. 汇总
 
 - `all_known_frontiers_routed=True`。
-- `terminal_dual_gap=PrimeLiftDeletionKLOrKLSLargeSieve`。
-- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'no_fourth_exit': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
+- `terminal_dual_gap=StandardPrimeLiftDeletionKLOrKLSLargeSieve`。
+- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'no_fourth_exit': 1, 'positive_limsup_pdec_inputs_materialized_capacity_open': 1, 'prime_lift_deletion_kl_ready_with_selective_commutation_gap': 1, 'ready_current_lhb_branch': 1, 'selective_promotion_resolved_by_finite_split': 1, 'structurally_insufficient': 1, 'terminal_dichotomy_admission_closed_capacity_open': 1}`。
 - `lp_summary={'q': 2310, 'p_count': 9, 'all_zero_blocks_ready': True, 'box_only_global_closure': False, 'box_only_obstruction_count': 9, 'row_generators_ready': ['nonnegativity', 'phase_caps_g_le_M', 'WHOLEDEF_zero_block', 'BRIDGED_zero_block']}`。
 - `fourier_summary={'q': 2310, 'p_count': 9, 'class_counts': {'EmptyCap': 8267, 'PersistentCap': 192813, 'SparseCap': 48292}, 'has_persistent_cap': True}`。
 - `dualcap_summary={'aggregate_class_counts': {'ForcedPersistentByDensityBarrier': 24, 'PersistentCap': 68, 'SparseCap': 16}, 'aggregate_route_counts': {'LiftOrColumnTailOrCleanKLS': 24, 'LocalSurvivorOrExplicitPDEC': 16, 'RefinedPDECOrColumnTailRows': 68}}`。
@@ -47,6 +48,7 @@ Same-set capacity upper:
 | `ContinuousTerminalDichotomy` | `terminal_dichotomy_admission_closed_capacity_open` | 终端二分已路由；route_counts={'NoTailDemandSparseOrLocalSurvivor': 1, 'PositiveLimsupPDECOrDiffuseCleanKLSDichotomy': 8}；open=['PDEC-CAP: prove the resulting column-tail PDEC capacity inequality U_CRT<L_PDEC', 'KLS-EXT: prove or import the CleanKLS/DLS large-sieve bound for diffuse payment measures']。 | 直接攻 PDEC-CAP 容量不等式，或攻/引用 KLS-EXT 大筛估计。 |
 | `ContinuousPDECSignatureInput` | `positive_limsup_pdec_inputs_materialized_capacity_open` | positive-limsup 有限签名已生成 PDEC 输入账本；signature_rows=40；route_counts={'FiniteSignaturePDECInputMaterialized': 40}；min Fourier/total=0.986379。 | 对这些 g_b(t) 证明 U_CRT<L_PDEC；失败则输出更窄 DualCap/缺失行/KLS 回流。 |
 | `ContinuousPrimeLiftCongruence` | `prime_lift_deletion_kl_ready_with_selective_commutation_gap` | positive-limsup 签名均满足 prime-lift 同余；route_counts={'SelectivePrimePromotionNeedsCommutationBeforeDeletionKL': 1, 'StandardNextPrimePromotionDeletionKLReady': 39}；promoted_prime_counts={'13': 39, '17': 1}。 | 39 行接标准晋升删除/KL；1 行补选择性晋升交换律或 cofactor-order PDEC。 |
+| `SelectivePromotionCommutation` | `selective_promotion_resolved_by_finite_split` | 选择性晋升行已由 CRT 交换律有限拆分；route_counts={'FiniteSplitThenStandardPromotionOrDiffuseKLS': 1}；max_successor_count=13。 | 选择性行回到标准 prime-lift 或 diffuse KLS；继续攻标准晋升删除/KL 或 KLS-EXT。 |
 
 ## 4. 当前结论
 
@@ -65,8 +67,9 @@ canonical actual payment measure constructed；
 terminal finite-projection dichotomy closed；
 positive-limsup PDEC input rows materialized；
 prime-lift congruence routed；
-remaining gap is prime-lift deletion/KL, selective commutation, or KLS-EXT。
+selective promotion commutation resolved；
+remaining gap is standard prime-lift deletion/KL or KLS-EXT。
 ```
 
 所以下一步唯一值得硬攻的 A1 目标是同集结构行：
-证明标准 prime-lift 晋升删除/KL；补选择性晋升交换律；或证明/接入 diffuse CleanKLS/DLS 大筛估计。
+证明标准 prime-lift 晋升删除/KL；或证明/接入 diffuse CleanKLS/DLS 大筛估计。
