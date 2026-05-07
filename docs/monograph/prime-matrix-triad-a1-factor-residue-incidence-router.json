@@ -1,0 +1,157 @@
+{
+  "all_rows_k4_flat_inside_one_factor_pair": true,
+  "certificate_type": "triad_a1_factor_residue_incidence_router",
+  "factor_residue_incidence_bridge_closed": false,
+  "factor_support_input_status": "exact_factor_support_not_implied_by_k4_k6_without_incidence_bridge",
+  "gate_rows": [
+    {
+      "available": "not present",
+      "closed": false,
+      "gap": "actual Kloosterman expansion has many h,ell,x,z atoms inside one (u,v) block",
+      "gate": "BoundedIncidenceMultiplicity",
+      "needed": "one moving (u,v) block hits only polylog-small residue/phase atoms",
+      "route": "cannot be assumed; must be proved as arithmetic incidence, and naive form is false"
+    },
+    {
+      "available": "K4 returns if a residue/phase atom is large",
+      "closed": false,
+      "gap": "a single factor pair can distribute its mass over many internal atoms and stay K4-flat",
+      "gate": "K4ConcentrationReturn",
+      "needed": "small factor support creates a large residue/phase atom",
+      "route": "requires block-level capacity, which is NC-BLK/DI-BFI again"
+    },
+    {
+      "available": "K6 returns if dyadic/tail-label splitting is excessive",
+      "closed": false,
+      "gap": "one factor pair inside one dyadic block is not excessive splitting",
+      "gate": "K6TailLabelReturn",
+      "needed": "small factor support creates excessive splitting",
+      "route": "K6 does not see missing internal support"
+    },
+    {
+      "available": "still logically possible",
+      "closed": false,
+      "gap": "not yet proved or cited",
+      "gate": "CanonicalSupportFallback",
+      "needed": "direct support theorem for exact RIW/Buchstab factors",
+      "route": "CanonicalRIWFactorSupportLowerBound"
+    }
+  ],
+  "internal_fiber_obstruction_law": "A moving factor-pair b=(u,v) is not a single K4 atom. It contains a growing internal fiber of h, ell, completion and Kloosterman variables. Mass can be flat on that internal fiber while remaining completely concentrated on one moving factor pair. Therefore small factor support does not force K4 coefficient concentration or K6 tail-label concentration.",
+  "naive_incidence_bridge_valid": false,
+  "next_internal_target": "CanonicalRIWFactorSupportLowerBound",
+  "parameters": {
+    "internal_power_B": 7.0,
+    "max_k": 9,
+    "min_k": 3,
+    "saving_exponent_A": 2.0,
+    "scale": "y=10^k"
+  },
+  "review_conclusion": "FactorResidueIncidenceBridge 的朴素形式被内部 fiber 阻断：一个 moving `(u,v)` 块内可含许多 residue/phase 原子，质量在内部原子上平坦，但在 factor-pair 层仍完全集中。因此 clean K4/K6 不能通过 incidence 桥推出 ExactFactorSupport。内部路线只剩直接证明 CanonicalRIWFactorSupportLowerBound，否则走外部 DI/BFI。",
+  "rows": [
+    {
+      "factor_pair_share": 1.0,
+      "factor_support_fails": true,
+      "incidence_multiplicity": 750514,
+      "internal_power_B": 7.0,
+      "internal_residue_phase_atoms": 750514,
+      "k": 3,
+      "k4_flat_enough": true,
+      "log_y": 6.907755278982137,
+      "max_internal_atom_share": 1.332420181369035e-06,
+      "moving_factor_pair_count": 1,
+      "saving_exponent_A": 2.0,
+      "y": 1000
+    },
+    {
+      "factor_pair_share": 1.0,
+      "factor_support_fails": true,
+      "incidence_multiplicity": 5622504,
+      "internal_power_B": 7.0,
+      "internal_residue_phase_atoms": 5622504,
+      "k": 4,
+      "k4_flat_enough": true,
+      "log_y": 9.210340371976184,
+      "max_internal_atom_share": 1.7785669872355803e-07,
+      "moving_factor_pair_count": 1,
+      "saving_exponent_A": 2.0,
+      "y": 10000
+    },
+    {
+      "factor_pair_share": 1.0,
+      "factor_support_fails": true,
+      "incidence_multiplicity": 26810188,
+      "internal_power_B": 7.0,
+      "internal_residue_phase_atoms": 26810188,
+      "k": 5,
+      "k4_flat_enough": true,
+      "log_y": 11.512925464970229,
+      "max_internal_atom_share": 3.7299253552418206e-08,
+      "moving_factor_pair_count": 1,
+      "saving_exponent_A": 2.0,
+      "y": 100000
+    },
+    {
+      "factor_pair_share": 1.0,
+      "factor_support_fails": true,
+      "incidence_multiplicity": 96065750,
+      "internal_power_B": 7.0,
+      "internal_residue_phase_atoms": 96065750,
+      "k": 6,
+      "k4_flat_enough": true,
+      "log_y": 13.815510557964274,
+      "max_internal_atom_share": 1.040953721799913e-08,
+      "moving_factor_pair_count": 1,
+      "saving_exponent_A": 2.0,
+      "y": 1000000
+    },
+    {
+      "factor_pair_share": 1.0,
+      "factor_support_fails": true,
+      "incidence_multiplicity": 282615581,
+      "internal_power_B": 7.0,
+      "internal_residue_phase_atoms": 282615581,
+      "k": 7,
+      "k4_flat_enough": true,
+      "log_y": 16.11809565095832,
+      "max_internal_atom_share": 3.5383753311180674e-09,
+      "moving_factor_pair_count": 1,
+      "saving_exponent_A": 2.0,
+      "y": 10000000
+    },
+    {
+      "factor_pair_share": 1.0,
+      "factor_support_fails": true,
+      "incidence_multiplicity": 719680491,
+      "internal_power_B": 7.0,
+      "internal_residue_phase_atoms": 719680491,
+      "k": 8,
+      "k4_flat_enough": true,
+      "log_y": 18.420680743952367,
+      "max_internal_atom_share": 1.3895054993230322e-09,
+      "moving_factor_pair_count": 1,
+      "saving_exponent_A": 2.0,
+      "y": 100000000
+    },
+    {
+      "factor_pair_share": 1.0,
+      "factor_support_fails": true,
+      "incidence_multiplicity": 1641373385,
+      "internal_power_B": 7.0,
+      "internal_residue_phase_atoms": 1641373385,
+      "k": 9,
+      "k4_flat_enough": true,
+      "log_y": 20.72326583694641,
+      "max_internal_atom_share": 6.092458968438799e-10,
+      "moving_factor_pair_count": 1,
+      "saving_exponent_A": 2.0,
+      "y": 1000000000
+    }
+  ],
+  "source_hashes": {
+    "exact_factor_support_json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "script": "a8add81738abbe2276663e28f7b54d2703f64696d6d7828db997718cefe6fe04"
+  },
+  "status": "factor_residue_incidence_bridge_blocked_by_internal_atom_fiber",
+  "terminal_gap_after_router": "CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion"
+}

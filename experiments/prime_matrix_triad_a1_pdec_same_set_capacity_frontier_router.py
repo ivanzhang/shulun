@@ -59,6 +59,9 @@ DEFAULT_EXACT_WFD_SOURCE_ENTROPY = (
 DEFAULT_EXACT_FACTOR_SUPPORT = (
     DOCS / "prime-matrix-triad-a1-exact-factor-support-router.json"
 )
+DEFAULT_FACTOR_RESIDUE_INCIDENCE = (
+    DOCS / "prime-matrix-triad-a1-factor-residue-incidence-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -130,6 +133,7 @@ def build_frontier_rows(
     source_block_entropy: dict[str, Any],
     exact_wfd_source_entropy: dict[str, Any],
     exact_factor_support: dict[str, Any],
+    factor_residue_incidence: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -360,6 +364,18 @@ def build_frontier_rows(
             ),
             "next_action": "证明 factor-residue incidence bridge，或直接证明 canonical RIW factor support。",
         },
+        {
+            "frontier": "A1FactorResidueIncidenceRouter",
+            "status": "canonical_riw_factor_support_or_external_dibfi_required"
+            if factor_residue_incidence["next_internal_target"]
+            == "CanonicalRIWFactorSupportLowerBound"
+            else "factor_residue_incidence_gap",
+            "evidence": (
+                f"朴素 incidence bridge 被内部 fiber 阻断；"
+                f"terminal_gap={factor_residue_incidence['terminal_gap_after_router']}。"
+            ),
+            "next_action": "内部版直接证明 canonical RIW/Buchstab factor support；外部版引用 DI/BFI。",
+        },
     ]
 
 
@@ -386,6 +402,7 @@ def run(
     source_block_entropy_path: Path,
     exact_wfd_source_entropy_path: Path,
     exact_factor_support_path: Path,
+    factor_residue_incidence_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -410,6 +427,7 @@ def run(
     source_block_entropy = load_json(source_block_entropy_path)
     exact_wfd_source_entropy = load_json(exact_wfd_source_entropy_path)
     exact_factor_support = load_json(exact_factor_support_path)
+    factor_residue_incidence = load_json(factor_residue_incidence_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -433,6 +451,7 @@ def run(
         source_block_entropy,
         exact_wfd_source_entropy,
         exact_factor_support,
+        factor_residue_incidence,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -456,6 +475,7 @@ def run(
         "exact_wfd_source_entropy_or_external_dibfi_required",
         "exact_factor_support_or_external_dibfi_required",
         "factor_residue_incidence_or_canonical_riw_support_required",
+        "canonical_riw_factor_support_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -491,6 +511,9 @@ def run(
                 exact_wfd_source_entropy_path
             ),
             "a1_exact_factor_support_json": file_sha256(exact_factor_support_path),
+            "a1_factor_residue_incidence_json": file_sha256(
+                factor_residue_incidence_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -502,7 +525,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupportOrExternalDIBFIOriginalDispersion"
+            "CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion"
         ),
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
@@ -518,7 +541,8 @@ def run(
             "MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，"
             "但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为"
             "精确因子支撑下界；ExactFactorSupport 又被 K4/K6 投影错配模型阻断。"
-            "当前无黑箱版只剩 FactorResidueIncidenceBridge 或 CanonicalRIWFactorSupport，"
+            "朴素 FactorResidueIncidenceBridge 又被内部 fiber 阻断。"
+            "当前无黑箱版只剩 CanonicalRIWFactorSupportLowerBound，"
             "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
@@ -534,7 +558,8 @@ def run(
             "SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。"
             "ExactWFDSourceEntropy 已化为精确因子支撑下界。"
             "ExactFactorSupport 不能由 K4/K6 自动推出。"
-            "下一步不再是 A1 内部路由，而是证明 FactorResidueIncidenceBridge/CanonicalRIWFactorSupport "
+            "FactorResidueIncidenceBridge 的朴素形式也被内部 fiber 阻断。"
+            "下一步不再是 A1 内部路由，而是证明 CanonicalRIWFactorSupportLowerBound "
             "或给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
@@ -574,7 +599,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  MovingBlockSpread needs source-block entropy or external DI/BFI；",
         "  SourceBlockEntropy needs exact WFD source entropy or external DI/BFI；",
         "  ExactWFDSourceEntropy needs exact factor support lower bound or external DI/BFI；",
-        "  ExactFactorSupport needs factor-residue incidence or canonical RIW support。",
+        "  ExactFactorSupport needs factor-residue incidence or canonical RIW support；",
+        "  FactorResidueIncidence is blocked; remaining internal target is canonical RIW support。",
         "```",
         "",
         "## 2. 汇总",
@@ -630,11 +656,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "SourceBlockEntropy router materialized；",
             "ExactWFDSourceEntropy router materialized；",
             "ExactFactorSupport router materialized；",
-            "remaining independent gap is FactorResidueIncidenceBridge or CanonicalRIWFactorSupport or external DI/BFI original dispersion。",
+            "FactorResidueIncidence router materialized；",
+            "remaining independent gap is CanonicalRIWFactorSupportLowerBound or external DI/BFI original dispersion。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是因子-残基投影桥或 canonical RIW 支撑：",
-            "证明 FactorResidueIncidenceBridge/CanonicalRIWFactorSupport，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "所以下一步唯一值得硬攻的 A1 目标是 canonical RIW/Buchstab 因子支撑：",
+            "证明 CanonicalRIWFactorSupportLowerBound，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -694,6 +721,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_EXACT_FACTOR_SUPPORT,
     )
+    parser.add_argument(
+        "--factor-residue-incidence-json",
+        type=Path,
+        default=DEFAULT_FACTOR_RESIDUE_INCIDENCE,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -721,6 +753,7 @@ def main() -> None:
         source_block_entropy_path=args.source_block_entropy_json,
         exact_wfd_source_entropy_path=args.exact_wfd_source_entropy_json,
         exact_factor_support_path=args.exact_factor_support_json,
+        factor_residue_incidence_path=args.factor_residue_incidence_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

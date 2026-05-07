@@ -4268,3 +4268,65 @@ terminal_dual_gap => FactorResidueIncidenceBridgeOrCanonicalRIWFactorSupportOrEx
 
 这一步排除了“residue 平坦 + dyadic 账本 = moving factor 支撑”的偷换。继续无黑箱硬攻时，
 下一步必须证明因子-残基 incidence 桥，或直接证明 canonical Rosser-Iwaniec/Buchstab 因子支撑下界。
+
+## 80. A1 FactorResidueIncidence 被内部 fiber 阻断
+
+新增 `experiments/prime_matrix_triad_a1_factor_residue_incidence_router.py` 后，
+第 79 节留下的 `FactorResidueIncidenceBridge` 被直接审计。结论是：朴素的 bounded-incidence
+桥不能成立，因为一个 moving `(u,v)` 块内部本来就含有随尺度增长的 residue/phase fiber。
+
+机器结果：
+
+```text
+status=factor_residue_incidence_bridge_blocked_by_internal_atom_fiber；
+next_internal_target=CanonicalRIWFactorSupportLowerBound；
+terminal_gap_after_router=CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion。
+```
+
+内部 fiber 阻断律：
+
+```text
+one moving factor pair b=(u,v)
+  contains many internal atoms (h, ell, x, z, completion labels);
+mass can be flat on those internal K4 atoms
+  while remaining concentrated on b;
+therefore K4/K6 do not imply ExactFactorSupport through naive incidence.
+```
+
+也就是说，若某个 `(u_y,v_y)` 块承载全部 factor-pair 质量，它仍可以把质量均匀摊到该块内部的
+`h,ell,x,z` 或 completion 原子上，使 K4 residue/phase 层看起来完全平坦。因此：
+
+```text
+small moving factor support
+  does not force K4 coefficient concentration；
+small moving factor support
+  does not force K6 tail-label over-splitting。
+```
+
+K6 也不能排除它，因为该模型只使用一个 dyadic block，并没有产生过多分块。
+
+所以当前无黑箱内部路线只剩一个真正入口：
+
+```text
+CanonicalRIWFactorSupportLowerBound:
+  prove exact Rosser/Iwaniec-Buchstab well-factorable factors
+  have broad balanced support in every surviving block.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1FactorResidueIncidenceRouter => canonical_riw_factor_support_or_external_dibfi_required；
+terminal_dual_gap => CanonicalRIWFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把“从 clean K4/K6 反推 factor support”的最后伪出口排除。继续完全无黑箱硬攻时，
+不能再依赖 residue 投影、dyadic 分块或 incidence 口径，必须直接证明 exact
+Rosser-Iwaniec/Buchstab 因子本身的平衡支撑下界。
