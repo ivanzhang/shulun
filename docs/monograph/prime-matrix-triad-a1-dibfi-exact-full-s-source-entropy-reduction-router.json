@@ -1,0 +1,127 @@
+{
+  "blocked_shortcuts": [
+    "canonical RIW/Buchstab support imported into generic full-S WFD",
+    "K4 residue flatness implies moving factor support without incidence",
+    "K6 dyadic bookkeeping implies internal block support"
+  ],
+  "certificate_type": "triad_a1_dibfi_exact_full_s_source_entropy_reduction_router",
+  "closed_reduction_gates": [
+    "PriorExactFullSSourceEntropyPinned",
+    "FullSNonAPObjectBoundaryPinned",
+    "SupportLowerBoundImpliesEntropyImported",
+    "DivisorBoundedFactorBudgetAvailable",
+    "ExactFactorSupportLowerBoundStillOpen",
+    "BalancedRangeThresholdStillOpen",
+    "TypeFourierCapacityCompatibilityStillOpen",
+    "K4K6ProjectionMismatchStillBlocks",
+    "NoCanonicalBranchImport",
+    "ReductionToExactFactorSupportPackage"
+  ],
+  "exact_full_s_source_entropy_reduction_closed": false,
+  "open_reduction_gates": [
+    "FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov"
+  ],
+  "previous_terminal_gap": "ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov",
+  "reduction_rows": [
+    {
+      "closed": true,
+      "evidence": "previous terminal=ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov; open=['ExactFullSNonAPWFDSourceEntropyOrExternalDIBFIKuznetsov'].",
+      "gate": "PriorExactFullSSourceEntropyPinned",
+      "next_target": "ExactFullSFactorSupportPackage",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "The full-S non-AP WFD object remains uncentered, no-projection, and cannot use AP-source lift or Maynard-W4 compression.",
+      "gate": "FullSNonAPObjectBoundaryPinned",
+      "next_target": "ExactFullSFactorSupportPackage",
+      "remaining": "the factor-support package must apply to this exact object"
+    },
+    {
+      "closed": true,
+      "evidence": "Existing ExactWFDSourceEntropy ledger proves the elementary max-pair-share bound: broad factor support plus divisor bounds implies moving-block entropy.",
+      "gate": "SupportLowerBoundImpliesEntropyImported",
+      "next_target": "ExactFullSFactorSupportPackage",
+      "remaining": "support hypotheses are not yet proved for full-S non-AP coefficients"
+    },
+    {
+      "closed": true,
+      "evidence": "Divisor-bounded alpha_u and delta_v cost only a fixed log power.",
+      "gate": "DivisorBoundedFactorBudgetAvailable",
+      "next_target": "ExactFullSFactorSupportPackage",
+      "remaining": "none at divisor-bound level"
+    },
+    {
+      "closed": true,
+      "evidence": "The source-entropy ledger records no exact factor support theorem for the surviving balanced full-S blocks.",
+      "gate": "ExactFactorSupportLowerBoundStillOpen",
+      "next_target": "FullSNonAPExactFactorSupportLowerBound",
+      "remaining": "prove lower absolute support in u and v for exact full-S non-AP factors"
+    },
+    {
+      "closed": true,
+      "evidence": "Balanced U,V ranges are plausible but exact log-power lower thresholds and small-range returns are not recorded for this branch.",
+      "gate": "BalancedRangeThresholdStillOpen",
+      "next_target": "FullSNonAPBalancedRangeThreshold",
+      "remaining": "record U,V >= log^B or route small ranges to PDEC/SAE/external"
+    },
+    {
+      "closed": true,
+      "evidence": "Type-I/II splitting and h/Fourier smoothing must not hide a single factor pair behind an unrecorded capacity multiplier.",
+      "gate": "TypeFourierCapacityCompatibilityStillOpen",
+      "next_target": "FullSNonAPTypeFourierCapacityCompatibility",
+      "remaining": "prove capacity compatibility or include it in exact factor support"
+    },
+    {
+      "closed": true,
+      "evidence": "ExactFactorSupport ledger shows K4 residue flatness and K6 dyadic bookkeeping do not imply moving factor-pair support.",
+      "gate": "K4K6ProjectionMismatchStillBlocks",
+      "next_target": "FullSNonAPFactorResidueIncidenceOrDirectSupport",
+      "remaining": "need factor-residue incidence, direct exact support, or external theorem"
+    },
+    {
+      "closed": true,
+      "evidence": "The branch-alignment router explicitly blocks silent import of canonical RIW/Buchstab support into generic full-S non-AP WFD.",
+      "gate": "NoCanonicalBranchImport",
+      "next_target": "FullSNonAPExactFactorSupportPackageOrExternal",
+      "remaining": "direct support must be proved for this exact full-S source"
+    },
+    {
+      "closed": true,
+      "evidence": "Exact source entropy has been reduced to its necessary support package: factor support, range threshold, and Type/Fourier capacity compatibility.",
+      "gate": "ReductionToExactFactorSupportPackage",
+      "next_target": "FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov",
+      "remaining": "none at reduction level"
+    },
+    {
+      "closed": false,
+      "evidence": "The repository still lacks this full-S non-AP exact support package and still lacks a fully matched external dispersion theorem.",
+      "gate": "FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov",
+      "next_target": "FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov",
+      "remaining": "prove exact support package or cite/match external DI/BFI/Kuznetsov dispersion"
+    }
+  ],
+  "review_conclusion": "`ExactFullSNonAPWFDSourceEntropy` 已压成 `FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov`：需要同时证明精确 u/v 因子支撑、balanced range 阈值和 Type/Fourier 容量兼容。",
+  "source_hashes": {
+    "exact_factor_support_json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "exact_wfd_source_entropy_json": "8f0b7a24ce90e50406e4c95bcb5abab2451df1e1c2562dd6a61be018e76f9ab0",
+    "ncblk_branch_alignment_json": "3006ac19a18cf8402ca96b39b084a98424095983c116453ed451e9b3b31710b1",
+    "new_full_s_input_json": "5a24752ca3d01eb90414bd498d9be025bebda93809eaaaebb396296d2f68ba68",
+    "script": "7afc30e4b7dbe7968e026988b4a85cf76d4823811aa08fafcb3338c22c92935f"
+  },
+  "status": "exact_full_s_source_entropy_reduced_to_factor_support_package_open",
+  "structural_law": "Exact full-S source entropy is no longer a spectral problem at this level. With divisor-bounded factors, it follows from broad support of the exact u and v factors plus range and capacity compatibility. The full-S non-AP branch cannot silently borrow canonical support, so the next honest atom is a support package for this exact source or a matched external DI/BFI/Kuznetsov dispersion theorem.",
+  "support_package_clauses": [
+    "sum_u |alpha_u| >= U/log^C on every surviving full-S non-AP balanced block",
+    "sum_v |delta_v| >= V/log^C on every surviving full-S non-AP balanced block",
+    "U,V >= log^B or small ranges return to PDEC/SAE/external route",
+    "Type/Fourier capacity does not concentrate on one moving factor pair"
+  ],
+  "terminal_gap_after_router": "FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov",
+  "terminal_gap_expansion": [
+    "FullSNonAPExactFactorSupportLowerBound",
+    "FullSNonAPBalancedRangeThreshold",
+    "FullSNonAPTypeFourierCapacityCompatibility",
+    "ExternalDIBFIKuznetsovDispersionTheoremMatch"
+  ]
+}
