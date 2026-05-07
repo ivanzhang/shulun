@@ -1,0 +1,103 @@
+{
+  "certificate_type": "triad_a1_dibfi_new_full_s_theorem_input_router",
+  "closed_input_gates": [
+    "PriorSingleGapIsNewFullSTheoremInput",
+    "ExistingDIBFIPrimarySourcesRejected",
+    "ExternalFullSContractAlreadyPinsStatement",
+    "MaynardAndShortSRoutesBlocked",
+    "NonAPUncenteredNoProjectionObjectPinned",
+    "SelfContainedCompletionKernelStillOpen",
+    "FullSNonAPWFDKLSTheoremInputPinned"
+  ],
+  "new_full_s_theorem_input_closed": false,
+  "open_input_gates": [
+    "FullSNonAPWFDKLSTheoremInput"
+  ],
+  "previous_terminal_gap": "NewFullSTheoremInput",
+  "required_theorem_clauses": [
+    "object: current non-AP uncentered no-projection WFD window",
+    "range: X≈P^2, C≈P/log^O P, S≈P, 0<|h|<=H<=P/log^O P",
+    "weights: lambda well-factorable, beta divisor-bounded, omega smooth",
+    "loss: dyadic/gcd/smoothing endpoints absorbed into B(A)",
+    "strength: NaturalWFDScale/log^A P for every A>0",
+    "boundary: no AP-source lift, no Maynard-W4 compression, no hidden centering/projection"
+  ],
+  "review_conclusion": "`NewFullSTheoremInput` 已被压成唯一可审稿原子 `FullSNonAPWFDKLSTheoremInput`。这一步没有证明新定理；它完成了目标定义层闭合，把剩余变成一个必须引用或新证的 full-S non-AP WFD KLS 定理。",
+  "source_hashes": {
+    "ap_source_lift_nogo_json": "e23282e2d3de3d5f70d70dde5013a0f0e8788656d98d04e13e0856dccece5d0f",
+    "bd_cen_audit_md": "62e7ad886124a8d904d7e6a235db4bfe2c0743783e2a4064dbebaddcbd06639f",
+    "full_s_kls_note_md": "1da7af54405bb244358e58b35ec6efe03a7cd428c58c26e186fafd4e7166f0b2",
+    "full_s_kls_specialization_json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "maynard_s_nogo_json": "980b3cce2da33b14c1590365cb582816a522fb6c458ced7cc9e35a5848b1f519",
+    "nonap_object_ledger_json": "b94ec49a04e4779d893a2026565e29ceaee42f481cd2aaedfc5246bead7ed280",
+    "primary_source_nogo_json": "23fcf1606c36412403096fed957e44d7b3ece1fc8f2c6d5290cd1e29bce7bda8",
+    "script": "a2998e12a971b93f898906b588a01fefc71fcf2ee8ea3e746d5980798d8c4d53",
+    "short_s_nogo_json": "1b3ac13f1107c043063956c3e20aef904bafba68e72d76b2c737fe727e721ce1",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb"
+  },
+  "status": "new_full_s_theorem_input_reduced_to_full_s_nonap_wfd_kls_input_open",
+  "structural_law": "NewFullSTheoremInput is not another combinatorial branch. All old exits are blocked: existing DI/BFI primary sources do not imply the full-S non-AP WFD kernel; APSourceLift is rejected; Maynard-W4 and short-S routes are rejected; SOURCE-CEN/BD-CEN block hidden projection. The remaining atom is therefore a single theorem input: a Kloosterman large sieve/dispersion estimate for the current full-S, uncentered, non-projected non-AP WFD window with arbitrary log saving.",
+  "terminal_gap_after_router": "FullSNonAPWFDKLSTheoremInput",
+  "terminal_gap_expansion": [
+    "FullSNonAPWFDKLSTheoremInput"
+  ],
+  "theorem_input_rows": [
+    {
+      "closed": true,
+      "evidence": "APSourceLift rejected=True; terminal=NewFullSTheoremInput.",
+      "gate": "PriorSingleGapIsNewFullSTheoremInput",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "BFI AP theorem and DI/Maynard J-scale do not imply the full-S non-AP WFD kernel.",
+      "gate": "ExistingDIBFIPrimarySourcesRejected",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "不能把 NewFullSTheoremInput 写成现有 DI/BFI 主来源逐项推论。"
+    },
+    {
+      "closed": true,
+      "evidence": "FullS-KLS-ext 已写明 C≈P/log^O P, S≈P, H<=P/log^O P 和未中心化无投影对象。",
+      "gate": "ExternalFullSContractAlreadyPinsStatement",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "外部合同版可引用；完全自足版仍需要新证明。"
+    },
+    {
+      "closed": true,
+      "evidence": "Maynard-S compression conflicts with full S; short-width subwindows do not reduce the Maynard magnitude.",
+      "gate": "MaynardAndShortSRoutesBlocked",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "不能回到 W4 cone 或短 S 子窗口分解。"
+    },
+    {
+      "closed": true,
+      "evidence": "non-AP object ledger removes APErrorRepresentation and leaves UncenteredWFDToKE13NoProjectionIdentity.",
+      "gate": "NonAPUncenteredNoProjectionObjectPinned",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "新定理必须直接估计当前 non-AP WFD 对象，不得换对象。"
+    },
+    {
+      "closed": true,
+      "evidence": "KZ-E 已把内联账本压到 WFD-core；SOURCE-CEN/BD-CEN 阻断免费中心化投影。",
+      "gate": "SelfContainedCompletionKernelStillOpen",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "完成型/Kuznetsov 自足证明仍等价于新增 full-S 深定理。"
+    },
+    {
+      "closed": true,
+      "evidence": "所有旧出口已分类；唯一剩余是一个直接作用于 full-S non-AP WFD 的 KLS 定理输入。",
+      "gate": "FullSNonAPWFDKLSTheoremInputPinned",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "none at target-definition level"
+    },
+    {
+      "closed": false,
+      "evidence": "仓库尚无该新定理的外部主来源引用或自足解析证明。",
+      "gate": "FullSNonAPWFDKLSTheoremInput",
+      "next_target": "FullSNonAPWFDKLSTheoremInput",
+      "remaining": "提交外部深定理引用，或证明完整 full-S non-AP WFD KLS 估计。"
+    }
+  ]
+}
