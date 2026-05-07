@@ -1,0 +1,80 @@
+{
+  "certificate_type": "triad_a1_dibfi_maynard_exponent_cone_router",
+  "closed_cone_gates": [
+    "W4ConditionsConvertedToExponentCone",
+    "DiagonalEqualsFactorCondition"
+  ],
+  "cone_rows": [
+    {
+      "closed": true,
+      "evidence": "三条 Maynard 乘法条件已改写为 n,r,s,q 的线性不等式。",
+      "gate": "W4ConditionsConvertedToExponentCone",
+      "next_target": "CurrentWFDFitsMaynardExponentCone",
+      "remaining": "none at algebraic conversion level"
+    },
+    {
+      "closed": true,
+      "evidence": "n+m=1 时，M_May>R_May^2 S_May N_May 等价于 2n+2r+s<1。",
+      "gate": "DiagonalEqualsFactorCondition",
+      "next_target": "CurrentWFDFitsMaynardExponentCone",
+      "remaining": "仍需当前 WFD 给出 n,m,r,s 翻译和正余量 eta。"
+    },
+    {
+      "closed": false,
+      "evidence": "上游 W4 ledger 仍将该项列为 open；指数锥只处理尺度，不处理对象等式。",
+      "gate": "CurrentWFDMatchesW4OffDiagonalForm",
+      "next_target": "CurrentWFDSatisfiesMaynardW4Conditions",
+      "remaining": "证明 z=s1*s2、y=a*f*(h1*s1-h2*s2)、b,c 窗口来自当前 WFD 非对角展开。"
+    },
+    {
+      "closed": false,
+      "evidence": "必须给出 N_May,R_May,S_May,M_May,Q_May 与当前 X,Q,N,M,C,S,H 的非冲突翻译。",
+      "gate": "CurrentWFDMaynardVariableTranslation",
+      "next_target": "CurrentWFDFitsMaynardExponentCone",
+      "remaining": "没有该翻译，指数锥不能代入。"
+    },
+    {
+      "closed": false,
+      "evidence": "需要同时满足 n+m=1、2n+2r+s<=1-eta、n+2r+5s+q<=2-eta、2n+3r+4s+q<=2-eta。",
+      "gate": "CurrentWFDFitsMaynardExponentCone",
+      "next_target": "CurrentWFDSatisfiesMaynardW4Conditions",
+      "remaining": "当前 WFD 的 n,r,s,m,q 尚未提交，因此不能关闭该 cone admission。"
+    },
+    {
+      "closed": false,
+      "evidence": "上游 open_w4_gates=['CurrentWFDMatchesW4OffDiagonalForm', 'CurrentWFDMaynardVariableTranslation', 'MaynardDiagonalCondition', 'MaynardOffDiagonalCondition1', 'MaynardOffDiagonalCondition2', 'JBoundDominanceAfterW4Substitution']；三条件已合并为 exponent cone。",
+      "gate": "JBoundDominanceAfterW4Substitution",
+      "next_target": "CurrentWFDFitsMaynardExponentCone",
+      "remaining": "只有 CurrentWFDFitsMaynardExponentCone 关闭后，J-bound dominance 才关闭。"
+    }
+  ],
+  "exponent_cone": [
+    "n+m=1",
+    "2n+2r+s <= 1-eta",
+    "n+2r+5s+q <= 2-eta",
+    "2n+3r+4s+q <= 2-eta"
+  ],
+  "maynard_exponent_cone_closed": false,
+  "open_cone_gates": [
+    "CurrentWFDMatchesW4OffDiagonalForm",
+    "CurrentWFDMaynardVariableTranslation",
+    "CurrentWFDFitsMaynardExponentCone",
+    "JBoundDominanceAfterW4Substitution"
+  ],
+  "previous_terminal_gap": "CurrentWFDSatisfiesMaynardW4Conditions",
+  "review_conclusion": "Maynard-W4 的三条条件已统一压成指数锥；剩余为当前 WFD 的 W4 非对角对象等式、变量翻译表，以及指数锥准入。",
+  "source_hashes": {
+    "exponent_cone_note_md": "de9b3229b835f3e210ffdeda3ad4263a3b5bcd33ed41700da785c75d254b9e59",
+    "script": "35be5b035a4beb40a8f6a9f00d3dddb0720c8220f1ecd6111bd99898f89f3bab",
+    "w4_parameter_ledger_json": "24d952fc9286b08497650f9c1f2955f0606220ba02d42e853b60e264ad6cefc7",
+    "w4_parameter_note_md": "416be3daca1c07959fcc88032838255a17db1957a6555fe2dacab1e1708e9519"
+  },
+  "status": "maynard_w4_conditions_reduced_to_current_wfd_exponent_cone_open",
+  "structural_law": "The three Maynard W4 multiplicative conditions are one linear exponent-cone admission after writing N=x^n, R=x^r, S=x^s, M=x^m, Q=x^q. The diagonal condition is exactly the factor condition under n+m=1. The remaining task is to supply the current WFD variable translation and prove the translated exponents lie inside this cone with positive slack.",
+  "terminal_gap_after_router": "CurrentWFDMaynardExponentConeAdmission",
+  "terminal_gap_expansion": [
+    "CurrentWFDMatchesW4OffDiagonalForm",
+    "CurrentWFDMaynardVariableTranslation",
+    "CurrentWFDFitsMaynardExponentCone"
+  ]
+}

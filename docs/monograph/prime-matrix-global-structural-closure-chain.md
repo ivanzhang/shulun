@@ -6273,3 +6273,81 @@ NonAPWFDNoProjectionAndMaynardW4Conditions
 当前不再需要搜索 DI 定理号、DI 公式、R/D/N 抽象映射或 W4 模板。剩余是最硬的当前对象问题：
 证明未中心化 WFD 块确实等于 W4 非对角展开，并把当前窗口变量非冲突地翻译到
 `N_May,R_May,S_May,M_May,Q_May` 后推出上面三条条件。
+
+## 107. Maynard exponent cone：三条 W4 条件统一压成当前 WFD 指数锥准入
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-maynard-exponent-cone-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_maynard_exponent_cone_router.py` 后，第 106 节的
+三条 Maynard 条件不再作为三个分散硬点保留，而是统一写成一个线性指数锥。令
+
+```text
+N_May=x^n；
+R_May=x^r；
+S_May=x^s；
+M_May=x^m；
+Q_May=x^q；
+n+m=1。
+```
+
+则三条条件等价压缩为：
+
+```text
+CurrentWFDFitsMaynardExponentCone:
+  n+m=1；
+  2n+2r+s <= 1-eta；
+  n+2r+5s+q <= 2-eta；
+  2n+3r+4s+q <= 2-eta。
+```
+
+其中第一条还可从 Maynard factor condition 直接读出：
+
+```text
+M_May > R_May^2 S_May N_May
+<=> 1-n > 2r+s+n
+<=> 2n+2r+s < 1。
+```
+
+机器结果：
+
+```text
+status=maynard_w4_conditions_reduced_to_current_wfd_exponent_cone_open；
+closed_cone_gates=[
+  W4ConditionsConvertedToExponentCone,
+  DiagonalEqualsFactorCondition
+]；
+open_cone_gates=[
+  CurrentWFDMatchesW4OffDiagonalForm,
+  CurrentWFDMaynardVariableTranslation,
+  CurrentWFDFitsMaynardExponentCone,
+  JBoundDominanceAfterW4Substitution
+]；
+terminal_gap_after_router=CurrentWFDMaynardExponentConeAdmission。
+```
+
+因此当前尺度侧的最窄剩余变为：
+
+```text
+CurrentWFDMaynardExponentConeAdmission
+  = CurrentWFDMatchesW4OffDiagonalForm
+    + CurrentWFDMaynardVariableTranslation
+    + CurrentWFDFitsMaynardExponentCone。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndMaynardExponentCone。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndMaynardExponentCone
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDMaynardExponentConeAdmission。
+```
+
+这一步的意义是：DI 定理号、DI 公式、R/D/N 代入、W4 参数模板、J-bound 简化与三条
+Maynard 条件的代数改写均已退出终端缺口；剩余只允许集中到两个事实层问题：
+未中心化 WFD 是否逐项生成 W4 非对角对象，以及当前 WFD 的变量翻译是否落入上述指数锥并保留正余量。
