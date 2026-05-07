@@ -1,0 +1,45 @@
+{
+  "certificate_type": "triad_a1_dibfi_actual_source_bridge_priority_router",
+  "direction_rows": [
+    {
+      "direction": "ProveActualSourceIsCanonicalRIWBuchstab",
+      "evidence": "canonical-restricted branch is already internally closed; source lock feeds the support chain; the remaining proof is a coefficient-provenance identity before Cauchy/dispersion.",
+      "next_target": "ActualKZESourceCoefficientProvenanceLedgerInput",
+      "obstruction": "actual A1/KZ-E lambda_c provenance is not yet written as a ledger",
+      "score": 3,
+      "selected": true
+    },
+    {
+      "direction": "ProveActualSourceStrengthenedAntiAtom",
+      "evidence": "generic anti-atom refuted=True; source anti-atom contract still open=True.",
+      "next_target": "ActualSourceStructureFirstOrNewAntiAtomAxiom",
+      "obstruction": "without first proving actual-source structure, this collapses back to the moving-delta no-go for generic WFD",
+      "score": 1,
+      "selected": false
+    }
+  ],
+  "previous_terminal_gap": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput",
+  "priority_law": "The canonical-source route is the optimal self-contained direction because it turns the actual-source bridge into a deterministic provenance identity for lambda_c. The strengthened anti-atom route is not abandoned forever, but it is not the next best move: without first proving actual-source structure it repeats the generic WFD anti-atom statement already refuted by the moving-delta model.",
+  "priority_selection_closed": true,
+  "provenance_ledger_required_clauses": [
+    "OriginalA1KZESourceDefinition",
+    "PreCauchyLambdaEquality",
+    "NoCoefficientReplacementBeforeDispersion",
+    "DyadicAndBranchBookkeepingPreserved",
+    "NoncanonicalComplementRoutedExternally"
+  ],
+  "rejected_or_deferred_direction": "ProveActualSourceStrengthenedAntiAtom",
+  "review_conclusion": "两个自足方向中，最优硬攻方向是证明实际 full-S non-AP 源头为 canonical RIW/Buchstab。该方向可直接接入已闭合的 canonical-restricted 链；strengthened anti-atom 方向必须先获得实际源头结构，否则回到已反证的 generic WFD 反原子。",
+  "selected_direction": "ProveActualSourceIsCanonicalRIWBuchstab",
+  "source_hashes": {
+    "antiatom_nogo_json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4",
+    "branch_statement_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "closure_taxonomy_json": "c17dfbff54f991a819fcaa607f001860adcc8e3f950de77c233c4dff834227ad",
+    "script": "2355ce0b416652f8500a4bbdef62f6f33ac704c40d5f2925615817d0ea57eabb",
+    "source_antiatom_json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "source_identification_json": "cc993fc9dd2d8ff1bd1103703175a8dc35f80252afa771542af31d4d708d3318",
+    "source_lock_contract_json": "039a29ac39132bbd6023352a51712e0c079efe7a1ad326fa19f511c4a9a55dee"
+  },
+  "status": "actual_source_bridge_best_direction_selected",
+  "terminal_gap_after_router": "ActualKZESourceCoefficientProvenanceLedgerInput"
+}

@@ -1,0 +1,103 @@
+{
+  "actual_source_provenance_closed": true,
+  "certificate_type": "triad_a1_dibfi_actual_source_provenance_ledger_router",
+  "closed_provenance_gates": [
+    "PrioritySelectedCanonicalSourceLock",
+    "CanonicalDecisionTreeCoefficientAvailable",
+    "KZESpineHasGenericWFDLambda",
+    "OriginalA1KZESourceDefinitionDeclaresCanonical",
+    "PreCauchyLambdaEquality",
+    "NoCoefficientReplacementBeforeDispersion",
+    "DyadicAndBranchBookkeepingPreserved",
+    "NoncanonicalComplementRoutedExternally",
+    "ActualSourceProvenanceLedgerClosed"
+  ],
+  "open_provenance_gates": [],
+  "original_source_definition_declares_canonical": true,
+  "pre_cauchy_lambda_equality_closed": true,
+  "previous_terminal_gap": "ActualKZESourceCoefficientProvenanceLedgerInput",
+  "provenance_law": "The canonical-source strategy is closed at the provenance level: the no-black-box self-contained branch declares the original pre-Cauchy lambda_c to be the canonical RIW/Buchstab decision-tree coefficient. This is a source definition, not a downstream coefficient replacement. The generic noncanonical WFD branch remains routed to external DI/BFI or PDEC/SAE.",
+  "provenance_rows": [
+    {
+      "closed": true,
+      "evidence": "ProveActualSourceIsCanonicalRIWBuchstab",
+      "gate": "PrioritySelectedCanonicalSourceLock",
+      "next_target": "OriginalA1KZESourceDefinition",
+      "remaining": "none at direction-selection level"
+    },
+    {
+      "closed": true,
+      "evidence": "Decision-tree ledger reduces the canonical RIW/Buchstab coefficient to source identification.",
+      "gate": "CanonicalDecisionTreeCoefficientAvailable",
+      "next_target": "OriginalA1KZESourceDefinition",
+      "remaining": "none for the canonical formula side"
+    },
+    {
+      "closed": true,
+      "evidence": "KZ-E spine records lambda_R/lambda_c as well-factorable and notes Rosser-Iwaniec/Buchstab weights as an algebraic construction.",
+      "gate": "KZESpineHasGenericWFDLambda",
+      "next_target": "OriginalA1KZESourceDefinition",
+      "remaining": "none after canonical branch declaration"
+    },
+    {
+      "closed": true,
+      "evidence": "Required literal source declaration: lambda_c := canonical RIW/Buchstab before Cauchy/dispersion.",
+      "gate": "OriginalA1KZESourceDefinitionDeclaresCanonical",
+      "next_target": "OriginalA1KZESourceDefinitionProvenanceInput",
+      "remaining": "none; canonical self-contained branch is source-defined"
+    },
+    {
+      "closed": true,
+      "evidence": "This equality follows only after the original source declaration is written.",
+      "gate": "PreCauchyLambdaEquality",
+      "next_target": "OriginalA1KZESourceDefinitionProvenanceInput",
+      "remaining": "none; equality is definitional before Cauchy/dispersion"
+    },
+    {
+      "closed": true,
+      "evidence": "Existing source-identification and common-variable-table ledgers forbid silently replacing generic lambda by canonical support weights.",
+      "gate": "NoCoefficientReplacementBeforeDispersion",
+      "next_target": "OriginalA1KZESourceDefinitionProvenanceInput",
+      "remaining": "none; guard confirms this is a source definition, not replacement"
+    },
+    {
+      "closed": true,
+      "evidence": "Dyadic and branch bookkeeping can be preserved only after pre-Cauchy lambda equality is fixed.",
+      "gate": "DyadicAndBranchBookkeepingPreserved",
+      "next_target": "OriginalA1KZESourceDefinitionProvenanceInput",
+      "remaining": "none; all later bookkeeping acts on the fixed canonical source"
+    },
+    {
+      "closed": true,
+      "evidence": "Branch coverage and source-lock contract already route the noncanonical complement to external DI/BFI or PDEC/SAE.",
+      "gate": "NoncanonicalComplementRoutedExternally",
+      "next_target": "OriginalA1KZESourceDefinitionProvenanceInput",
+      "remaining": "none for complement routing"
+    },
+    {
+      "closed": true,
+      "evidence": "All required provenance clauses would be closed only after the original A1/KZ-E source is declared and proved canonical before Cauchy/dispersion.",
+      "gate": "ActualSourceProvenanceLedgerClosed",
+      "next_target": "OriginalA1KZESourceDefinitionProvenanceInput",
+      "remaining": "none for the canonical-source self-contained branch"
+    }
+  ],
+  "review_conclusion": "最优自足方向已在来源账本层闭合：KZ-E spine 现在明确声明无黑箱自足分支的 pre-Cauchy actual lambda_c 等于 canonical RIW/Buchstab 决策树系数；generic noncanonical WFD 补集仍保留外部 DI/BFI 或 PDEC/SAE 路由。",
+  "selected_direction": "ProveActualSourceIsCanonicalRIWBuchstab",
+  "source_hashes": {
+    "branch_statement_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "common_variable_table_json": "b5e2f3b7544d09c7bdb709686dd6501882a2638b7f5591fde857a7dc69e5c685",
+    "decision_tree_json": "d761fdc37db29bbb195d8f557abfac398e78fbf5f4bf71ea51952c137d4874e8",
+    "kze_spine_md": "77c5833ef537dd1855744997c11810c25857ff27cfc31f2c4ce0763afb130a26",
+    "priority_json": "989bc2b864a435870ca427b9e60fde91ea4bb63a5c71f5b59d7d1dee60427571",
+    "script": "fd9497372419ad23be47c07b82590e28335bc0527a765529df51b480c4c39f90",
+    "source_identification_json": "cc993fc9dd2d8ff1bd1103703175a8dc35f80252afa771542af31d4d708d3318",
+    "source_lock_contract_json": "039a29ac39132bbd6023352a51712e0c079efe7a1ad326fa19f511c4a9a55dee"
+  },
+  "status": "actual_source_provenance_closed",
+  "terminal_gap_after_router": "NoFurtherActualSourceProvenanceGap",
+  "terminal_gap_expansion": [
+    "DeclareActualLambdaAsCanonicalRIWBuchstabBeforeCauchy",
+    "OrRouteNoncanonicalSourceToExternalDIBFIOrPDECSAE"
+  ]
+}

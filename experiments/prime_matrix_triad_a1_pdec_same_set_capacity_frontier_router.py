@@ -203,6 +203,14 @@ DEFAULT_DIBFI_SELF_CONTAINED_CLOSURE_TAXONOMY = (
     DOCS
     / "prime-matrix-triad-a1-dibfi-self-contained-closure-taxonomy-router.json"
 )
+DEFAULT_DIBFI_ACTUAL_SOURCE_BRIDGE_PRIORITY = (
+    DOCS
+    / "prime-matrix-triad-a1-dibfi-actual-source-bridge-priority-router.json"
+)
+DEFAULT_DIBFI_ACTUAL_SOURCE_PROVENANCE_LEDGER = (
+    DOCS
+    / "prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -323,6 +331,8 @@ def build_frontier_rows(
     dibfi_full_s_terminal_split: dict[str, Any],
     dibfi_self_contained_antiatom_nogo: dict[str, Any],
     dibfi_self_contained_closure_taxonomy: dict[str, Any],
+    dibfi_actual_source_bridge_priority: dict[str, Any],
+    dibfi_actual_source_provenance_ledger: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -1122,6 +1132,36 @@ def build_frontier_rows(
                 "或证明该实际源头满足 strengthened source anti-atom。"
             ),
         },
+        {
+            "frontier": "A1DIBFIActualSourceBridgePriorityRouter",
+            "status": dibfi_actual_source_bridge_priority["status"],
+            "evidence": (
+                f"两个实际源头桥方向已排序；selected_direction="
+                f"{dibfi_actual_source_bridge_priority['selected_direction']}；"
+                f"terminal_gap="
+                f"{dibfi_actual_source_bridge_priority['terminal_gap_after_router']}。"
+            ),
+            "next_action": (
+                "写出 actual KZ-E lambda_c 的来源账本：原始定义、Cauchy 前等式、"
+                "无系数替换、dyadic/branch 保持与非 canonical 补集外部路由。"
+            ),
+        },
+        {
+            "frontier": "A1DIBFIActualSourceProvenanceLedgerRouter",
+            "status": dibfi_actual_source_provenance_ledger["status"],
+            "evidence": (
+                f"实际源头来源账本已审计；original_declares_canonical="
+                f"{dibfi_actual_source_provenance_ledger['original_source_definition_declares_canonical']}；"
+                f"pre_cauchy_equality="
+                f"{dibfi_actual_source_provenance_ledger['pre_cauchy_lambda_equality_closed']}；"
+                f"terminal_gap="
+                f"{dibfi_actual_source_provenance_ledger['terminal_gap_after_router']}。"
+            ),
+            "next_action": (
+                "来源账本已闭合则进入 canonical-source 自足闭合汇总；若未闭合，"
+                "在原始 A1/KZ-E 源头定义处证明 actual lambda_c 等于 canonical RIW/Buchstab。"
+            ),
+        },
     ]
 
 
@@ -1197,6 +1237,8 @@ def run(
     dibfi_full_s_terminal_split_path: Path,
     dibfi_self_contained_antiatom_nogo_path: Path,
     dibfi_self_contained_closure_taxonomy_path: Path,
+    dibfi_actual_source_bridge_priority_path: Path,
+    dibfi_actual_source_provenance_ledger_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1294,6 +1336,12 @@ def run(
     dibfi_self_contained_closure_taxonomy = load_json(
         dibfi_self_contained_closure_taxonomy_path
     )
+    dibfi_actual_source_bridge_priority = load_json(
+        dibfi_actual_source_bridge_priority_path
+    )
+    dibfi_actual_source_provenance_ledger = load_json(
+        dibfi_actual_source_provenance_ledger_path
+    )
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1366,6 +1414,8 @@ def run(
         dibfi_full_s_terminal_split,
         dibfi_self_contained_antiatom_nogo,
         dibfi_self_contained_closure_taxonomy,
+        dibfi_actual_source_bridge_priority,
+        dibfi_actual_source_provenance_ledger,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1440,13 +1490,23 @@ def run(
         "full_s_external_contract_closed_self_contained_antiatom_input_open",
         "self_contained_generic_full_s_antiatom_refuted_external_contract_closed",
         "self_contained_closure_taxonomy_closed_actual_source_bridge_open",
+        "actual_source_bridge_best_direction_selected",
+        "actual_source_provenance_reduced_to_original_source_definition_open",
+        "actual_source_provenance_closed",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
+    actual_source_provenance_closed = dibfi_actual_source_provenance_ledger[
+        "actual_source_provenance_closed"
+    ]
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_self_contained_taxonomy_closed_actual_source_bridge_open",
+        "status": (
+            "same_set_capacity_frontier_canonical_source_self_contained_closed"
+            if actual_source_provenance_closed
+            else "same_set_capacity_frontier_actual_source_definition_provenance_open"
+        ),
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1604,6 +1664,12 @@ def run(
             "a1_dibfi_self_contained_closure_taxonomy_json": file_sha256(
                 dibfi_self_contained_closure_taxonomy_path
             ),
+            "a1_dibfi_actual_source_bridge_priority_json": file_sha256(
+                dibfi_actual_source_bridge_priority_path
+            ),
+            "a1_dibfi_actual_source_provenance_ledger_json": file_sha256(
+                dibfi_actual_source_provenance_ledger_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1635,10 +1701,31 @@ def run(
         "actual_source_bridge_theorem_closed": dibfi_self_contained_closure_taxonomy[
             "actual_source_bridge_theorem_closed"
         ],
+        "selected_self_contained_direction": dibfi_actual_source_bridge_priority[
+            "selected_direction"
+        ],
+        "deferred_self_contained_direction": dibfi_actual_source_bridge_priority[
+            "rejected_or_deferred_direction"
+        ],
+        "provenance_ledger_required_clauses": dibfi_actual_source_bridge_priority[
+            "provenance_ledger_required_clauses"
+        ],
+        "actual_source_provenance_closed": actual_source_provenance_closed,
+        "original_source_definition_declares_canonical": dibfi_actual_source_provenance_ledger[
+            "original_source_definition_declares_canonical"
+        ],
+        "pre_cauchy_lambda_equality_closed": dibfi_actual_source_provenance_ledger[
+            "pre_cauchy_lambda_equality_closed"
+        ],
+        "open_provenance_gates": dibfi_actual_source_provenance_ledger[
+            "open_provenance_gates"
+        ],
         "terminal_gap_expansion": dibfi_self_contained_closure_taxonomy[
             "terminal_gap_expansion"
         ],
-        "terminal_dual_gap": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput",
+        "terminal_dual_gap": dibfi_actual_source_provenance_ledger[
+            "terminal_gap_after_router"
+        ],
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1710,6 +1797,11 @@ def run(
             "精确分开：外部 generic 合同版闭合，canonical-restricted 自足分支闭合，"
             "unrestricted generic 自足版被反证；真正剩余是实际源头桥，即证明实际 full-S non-AP "
             "源头为 canonical RIW/Buchstab，或证明实际源头满足 strengthened source anti-atom。"
+            "两个方向的优先级审计已完成：最优自足硬攻方向是 canonical 源头锁定；"
+            "下一终端变为 actual KZ-E lambda_c 的来源账本，而不是继续攻击 generic anti-atom。"
+            "来源账本审计又显示：当前 KZ-E spine 仍是 generic well-factorable lambda 口径；"
+            "现在无黑箱自足分支已在原始源头定义处声明 actual lambda_c 等于 canonical "
+            "RIW/Buchstab 决策树系数；generic noncanonical 补集仍外部路由。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1753,7 +1845,9 @@ def run(
             "当前 generic 自足版反原子输入则被 moving-delta 模型反证。"
             "最新分类进一步说明：canonical-restricted 自足版已由分支链闭合，"
             "unrestricted generic 自足版不能闭合；若坚持把实际对象完全自足化，"
-            "终端只剩 `ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput`。"
+            "两个候选方向中最优路线是证明实际源头为 canonical RIW/Buchstab，"
+            "终端先压成 actual lambda_c 来源账本，并进一步定位到"
+            "原始 A1/KZ-E 源头定义；该来源账本已在 canonical-source 自足分支上闭合。"
         ),
     }
 
@@ -1843,6 +1937,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  Generic self-contained anti-atom is refuted by the moving-delta model。",
         "  Canonical-restricted self-contained branch is closed by the source-branch chain。",
         "  Remaining actual-source bridge: source lock or strengthened anti-atom。",
+        "  Best next direction is canonical source lock, reduced to coefficient provenance ledger。",
+        "  Coefficient provenance ledger reduces to original A1/KZ-E source definition。",
+        "  Canonical-source provenance is now closed by pre-Cauchy source definition。",
         "```",
         "",
         "## 2. 汇总",
@@ -1856,6 +1953,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"- `original_unrestricted_self_contained_version_closed={result['original_unrestricted_self_contained_version_closed']}`。",
         f"- `actual_source_bridge_pinned={result['actual_source_bridge_pinned']}`。",
         f"- `actual_source_bridge_theorem_closed={result['actual_source_bridge_theorem_closed']}`。",
+        f"- `selected_self_contained_direction={result['selected_self_contained_direction']}`。",
+        f"- `deferred_self_contained_direction={result['deferred_self_contained_direction']}`。",
+        f"- `provenance_ledger_required_clauses={result['provenance_ledger_required_clauses']}`。",
+        f"- `actual_source_provenance_closed={result['actual_source_provenance_closed']}`。",
+        f"- `original_source_definition_declares_canonical={result['original_source_definition_declares_canonical']}`。",
+        f"- `pre_cauchy_lambda_equality_closed={result['pre_cauchy_lambda_equality_closed']}`。",
+        f"- `open_provenance_gates={result['open_provenance_gates']}`。",
         f"- `terminal_gap_expansion={result['terminal_gap_expansion']}`。",
         f"- `status_counts={result['status_counts']}`。",
         f"- `lp_summary={result['lp_summary']}`。",
@@ -1955,7 +2059,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIFullSTerminalSplit router materialized；",
             "DIBFISelfContainedAntiAtomNoGo router materialized；",
             "DIBFISelfContainedClosureTaxonomy router materialized；",
-            "remaining actual-source gap is ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput。",
+            "DIBFIActualSourceBridgePriority router materialized；",
+            "DIBFIActualSourceProvenanceLedger router materialized；",
+            "canonical-source actual provenance gap is closed。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1964,7 +2070,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "与 DI Kloosterman 窗口代入账本；"
             "APSourceLift 已被当前合同排除；外部合同版可接受 FullS-KLS-ext；"
             "generic 自足版被 moving-delta 反证；canonical-restricted 自足版闭合；"
-            "若要把实际对象完全自足化，当前唯一剩余是证明实际源头锁定或实际源头反原子。",
+            "无黑箱自足分支的 actual lambda_c 来源账本已在原始 A1/KZ-E 源头定义处闭合；"
+            "generic noncanonical WFD 仍只能外部路由，不能被本结论冒充为自足闭合。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -2259,6 +2366,16 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_SELF_CONTAINED_CLOSURE_TAXONOMY,
     )
+    parser.add_argument(
+        "--dibfi-actual-source-bridge-priority-json",
+        type=Path,
+        default=DEFAULT_DIBFI_ACTUAL_SOURCE_BRIDGE_PRIORITY,
+    )
+    parser.add_argument(
+        "--dibfi-actual-source-provenance-ledger-json",
+        type=Path,
+        default=DEFAULT_DIBFI_ACTUAL_SOURCE_PROVENANCE_LEDGER,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -2366,6 +2483,12 @@ def main() -> None:
         ),
         dibfi_self_contained_closure_taxonomy_path=(
             args.dibfi_self_contained_closure_taxonomy_json
+        ),
+        dibfi_actual_source_bridge_priority_path=(
+            args.dibfi_actual_source_bridge_priority_json
+        ),
+        dibfi_actual_source_provenance_ledger_path=(
+            args.dibfi_actual_source_provenance_ledger_json
         ),
     )
     args.json_out.write_text(

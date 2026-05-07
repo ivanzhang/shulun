@@ -63,6 +63,27 @@ Rosser--Iwaniec/Buchstab 型线性筛权具有该性质；在本文内部使用�
 代数定义，而不是作为解析黑箱。`(KE-4)` 的证明只需从递归构造筛权的卷积定义展开；每层
 除数损失为 `\log^{O(1)}y`。
 
+### 2.1 自足分支的源头定义
+
+在完全自足、无外部 DI/BFI 黑箱的内部证明分支中，KZ-E 不再把 `\lambda_c` 当作任意
+well-factorable 系数族。该分支的源头在进入 Cauchy--Schwarz、dispersion 恒等式和
+Kloosterman 相位归一化之前固定为
+
+```text
+lambda_c := canonical RIW/Buchstab decision-tree coefficient.
+```
+
+这里的 canonical RIW/Buchstab decision-tree coefficient 是由 Rosser--Iwaniec/Buchstab
+递归筛权逐层展开得到的完整互斥路径系数；dyadic 分块、Type-I/II 分解和 Fourier 平滑只
+作用在这一已固定源头之后。因此该自足分支中的 pre-Cauchy `lambda_c` 与 canonical
+RIW/Buchstab 决策树源头逐项相同，不允许在 dispersion 之后再把 generic 系数替换成
+canonical 支撑权。
+
+generic noncanonical well-factorable `lambda_c` 仍是合法的外部分支输入，但不属于本文无黑箱
+内部闭合分支；它必须继续走外部 DI/BFI 原始 dispersion 合同，或回到 PDEC/SAE 缺失行路由。
+这条分支声明不把 generic WFD 定理改写成自足定理，只关闭 canonical-source self-contained
+版本的源头来源缺口。
+
 ## 3. 可内联部分 B：dispersion 恒等式
 
 把 clean block 的模数权按 `(KE-4)` 分解，并把 von Mangoldt 权用 Vaughan/Heath-Brown
