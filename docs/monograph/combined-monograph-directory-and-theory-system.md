@@ -2354,3 +2354,51 @@ CleanKLS/DLS internal large-sieve certificate，
 
 该结论仍不是完整行/列无条件定理；它关闭的是“当前已物化前沿还有可局部消元对象”的可能，
 并把唯一剩余固定为全局终端家族全集排斥。
+
+进一步新增：
+
+```text
+experiments/prime_matrix_global_terminal_family_exclusion_split_router.py
+docs/monograph/prime-matrix-global-terminal-family-exclusion-split-router.md/json
+```
+
+这个拆分路由器把 `GlobalTerminalFamilyExclusionCertificates` 再压成更小的终局门：
+
+```text
+closed_nonfinal_reductions=true；
+open_final_gates=[
+  PDEC_CAP,
+  KLS_EXT_OR_INTERNAL_LARGE_SIEVE,
+  DStructureRankinReferee
+]；
+narrowest_next_hardpoint=PDEC_CAP_OR_KLS_EXT_OR_REFEREE；
+self_contained_next_hardpoint=PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve。
+```
+
+其中已经关闭的非终局门包括：
+
+```text
+当前已物化前沿耗尽；
+终端三证书无第四出口；
+LocalSurvivor 当前包与已知入口不再构成独立全局阻塞；
+连续终端二分：正 limsup 有限签名 -> PDEC-CAP，
+               有限签名消散 -> CleanKLS/DLS；
+NC-BLK 不再构成独立内部终端。
+```
+
+因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明二选一解析终端：
+
+```text
+PDEC-CAP:
+  同一坏窗集合上给出全局 LP/对偶容量证书 U_CRT<L_PDEC；
+
+CleanKLS/DLS:
+  对 L2-flat clean residual 给出内部大筛吸收，
+  或逐项登记外部 KLS/DI/BFI 变量适配；
+
+Referee promotion:
+  D-structure/Tail-log4/finite Rankin 接口被独立接受。
+```
+
+这一步继续保持诚实边界：它关闭的是全局终端家族剩余中的“未命名或局部样本硬点”，不是完整行/列
+无条件证明。

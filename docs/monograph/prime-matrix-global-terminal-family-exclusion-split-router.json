@@ -1,0 +1,93 @@
+{
+  "certificate_type": "prime_matrix_global_terminal_family_exclusion_split_router",
+  "closed_nonfinal_reductions": true,
+  "global_terminal_family_exclusion_closed": false,
+  "narrowest_next_hardpoint": "PDEC_CAP_OR_KLS_EXT_OR_REFEREE",
+  "open_final_gates": [
+    "PDEC_CAP",
+    "KLS_EXT_OR_INTERNAL_LARGE_SIEVE",
+    "DStructureRankinReferee"
+  ],
+  "review_conclusion": "全局终端家族排斥已经进一步拆窄：LocalSurvivor 当前与已知入口不再构成独立终端，NC-BLK 不再构成独立终端，连续终端二分把所有剩余质量送入 PDEC-CAP 或 CleanKLS/DLS。因此完全自足路线的真实剩余是 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`；若允许外部/审稿输入，还需 `KLS_EXT` 与 `DStructureRankinReferee`。完整行/列定理仍未闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "name=CurrentMaterializedFrontierExhausted_GlobalTerminalFamiliesOpen; subgate=NoCurrentMaterializedNonTautologicalPDECAndNCBLKReconciled",
+      "gate": "MaterializedFrontierAlreadyExhausted",
+      "next_action": "进入全局家族证书，不再优化当前 ell=199 或旧 NC-BLK 标签。",
+      "reduction": "不再存在当前样本层可继续局部消元的 PDEC/LocalSurvivor/NC-BLK 对象。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "Terminal Triad Reduction",
+      "gate": "TerminalSchemaNoFourthExit",
+      "next_action": "只允许在三类证书内继续推进。",
+      "reduction": "任何最小反例终端对象只能是 PDEC、LocalSurvivor 或 CleanKLS/DLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "open_materialized=0; missing_extractors=0; missing_admission=0; frontier_status=materialized_packets_closed_global_generation_open",
+      "gate": "LocalSurvivorNoIndependentGlobalBlocker",
+      "next_action": "未来新增 sparse 路线必须同时提交 extractor schema 与有限账本。",
+      "reduction": "当前孤窗包与已知入口均闭合；未来 sparse 路线若复现则回 PDEC，若升层逃逸则进 CleanKLS/DLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "PDEC-CAP: prove the resulting column-tail PDEC capacity inequality U_CRT<L_PDEC; KLS-EXT: prove or import the CleanKLS/DLS large-sieve bound for diffuse payment measures",
+      "gate": "ContinuousTerminalDichotomy",
+      "next_action": "剩余只攻 PDEC-CAP 或 KLS-EXT。",
+      "reduction": "正 limsup 有限签名给 PDEC 输入；全部有限签名消散给 L2-flat CleanKLS/DLS 输入。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "ncblk_reconciled=True; frontier_status=ncblk_reconciled_with_boundary_global_family_open",
+      "gate": "NCBLKNoIndependentGlobalBlocker",
+      "next_action": "不再把 NC-BLK 当成新的内部终端家族。",
+      "reduction": "canonical-source NC-BLK 已吸收；generic NC-BLK 保持外部/精确源熵路线。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "triad_a1_capacity_upper_route_not_closed",
+      "gate": "PDEC_CAP",
+      "next_action": "提交全局 LP/对偶容量证书，或把失败 DualCap 回流到 LocalSurvivor/CleanKLS。",
+      "reduction": "PDEC 家族排斥等价于同一坏窗集合上的 U_CRT<L_PDEC 容量证书。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "cleankls_reduced_to_flat_large_sieve_certificate_or_pdec_not_closed",
+      "gate": "KLS_EXT_OR_INTERNAL_LARGE_SIEVE",
+      "next_action": "证明 L2-flat clean residual 的大筛吸收，或逐项登记外部定理变量适配。",
+      "reduction": "CleanKLS/DLS 家族排斥等价于内部大筛界，或明确外部 KLS/DI/BFI 输入。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "BLOCK-REFEREE",
+      "gate": "DStructureRankinReferee",
+      "next_action": "保持为最终晋级门，不由三终端局部边界替代。",
+      "reduction": "最终升级仍需 D-structure/Tail-log4/finite Rankin 接口被独立接受。"
+    }
+  ],
+  "self_contained_next_hardpoint": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "source_hashes": {
+    "clean_kls_contract": "8dd2eef4693fda091d0f2310ec2a98f620b8cdf5ba05165345c22fbdf44f3893",
+    "continuous_dichotomy": "9b6c7123864a39f7245ba82e59f8ff5654a725d1b74d690bc0893f668b532609",
+    "global_boundary": "97ff7b128737940da2354e87190a58701c32c1298bcf0a5dfd6ed90c4ca6c9a6",
+    "line_referee": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
+    "local_packet_contract": "b07a043cb6ebfee2e413a8d5c9cc768f3670ca3f9b75a7cee05c2def043c496c",
+    "ncblk": "fde3b713f0fdfb0c54b1be823034b7b8763cf63887b3c4a60207d905f19f01f4",
+    "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
+    "script": "e319cc6bf85ec812f30f714f8010930beb043f85a356f2062328dfa5149a4269",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547"
+  },
+  "split_law": "After the current materialized frontier is exhausted, the terminal family problem has no independent fourth route and no independent current LocalSurvivor or NC-BLK blocker. The finite-projection dichotomy sends positive-limsup terminal mass to PDEC-CAP and diffuse terminal mass to CleanKLS/DLS. Therefore the self-contained mathematical remainder is exactly PDEC-CAP or internal CleanKLS large-sieve; final promotion additionally needs the D-structure/Rankin referee interface.",
+  "status": "global_terminal_family_exclusion_reduced_not_closed"
+}

@@ -98,6 +98,26 @@ GlobalTerminalFamilyExclusionCertificates
 
 也就是必须证明所有未来可能出现的 `PDEC family`、`LocalSurvivorCert family`、`CleanKLS/DLS` 终端对象都能被证书排除，或明确引用外部/referee 输入。这仍不是最终行/列无条件定理闭合，但它把“最后剩余是什么”压到了当前最窄、最清晰的形式。
 
+继续拆分后，这个唯一大门又被压成更具体的三项：
+
+```text
+PDEC_CAP:
+  证明同一坏窗集合上的容量上界 U_CRT<L_PDEC；
+
+KLS_EXT_OR_INTERNAL_LARGE_SIEVE:
+  证明 L2-flat clean residual 的内部大筛吸收，
+  或明确外部 KLS/DI/BFI 输入；
+
+DStructureRankinReferee:
+  D-structure/Tail-log4/finite Rankin 接口通过独立审稿。
+```
+
+其中 LocalSurvivor 当前包、已知 sparse 入口、NC-BLK 旧出口和连续终端二分都不再是独立剩余。完全自足路线的最窄目标现在是：
+
+```text
+PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+```
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
