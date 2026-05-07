@@ -4041,3 +4041,80 @@ terminal_dual_gap => SourceBlockEntropyNCBLKOrExternalDIBFIOriginalDispersion。
 
 这一步不是后退，而是排除另一个隐藏跳步：`fixed projection flat` 只控制可命名的固定签名，
 不控制随尺度移动的内部 factorization block。继续无黑箱硬攻时，必须直接证明源头块熵。
+
+## 77. A1 SourceBlockEntropy 条件闭合与形式输入阻断
+
+新增 `experiments/prime_matrix_triad_a1_source_block_entropy_router.py` 后，
+第 76 节留下的 `SourceBlockEntropyNCBLK` 被拆成一个正向闭合律和一个负向阻断律。
+
+机器结果：
+
+```text
+status=source_block_entropy_not_forced_by_formal_wfd_inputs；
+next_internal_target=ExactWFDSourceEntropy；
+terminal_gap_after_router=ExactWFDSourceEntropyOrExternalDIBFIOriginalDispersion。
+```
+
+正向闭合律是：
+
+```text
+M_b = Cauchy capacity of moving block b=(u,v)
+M   = sum_b M_b
+if max_b M_b/M <= log(y)^(-2A), then
+  sum_b |S_b|^2 <= sum_b M_b^2 <= log(y)^(-2A) M^2.
+```
+
+因此 `SourceBlockEntropyNCBLK` 是一个正确的充分条件：若能从实际源头系数证明每个 moving
+same-`(u,v)` 块的容量份额都有任意对数小上界，则 `NC-BLK` 立即闭合。
+
+但负向阻断同时说明：
+
+```text
+formal WFD/Type-I-II/Fourier inputs do not imply SourceBlockEntropyNCBLK.
+```
+
+原因是当前形式模板只提供：
+
+```text
+well-factorable convolution permits bounded point-supported factors at template level；
+Type-I/II decomposition is algebraic and does not create block entropy；
+Fourier smoothing controls h, not the moving block b=(u,v)；
+fixed-projection diffuse cannot see a block label moving with the scale。
+```
+
+构造 moving-delta well-factorable 模型：每个尺度选择一个新的 `(u_y,v_y)`，令有界卷积因子
+集中在该因子对上。它在形式 WFD 模板、Type 分块和 Fourier 平滑层面没有被禁止，却使
+
+```text
+max moving block capacity share = 1
+```
+
+从而与所需的
+
+```text
+max moving block capacity share <= log(y)^(-2A)
+```
+
+直接矛盾。该模型还可随尺度移动，避开所有固定有限投影检测。
+
+所以当前终端被继续压缩为：
+
+```text
+ExactWFDSourceEntropy:
+  prove the exact Rosser/Iwaniec-Buchstab + Type-I/II + Fourier coefficients
+  cannot concentrate on a moving same-(u,v) block；
+
+ExternalDIBFIOriginalDispersion:
+  cite an original DI/BFI dispersion theorem that supplies the needed block variance saving directly.
+```
+
+前沿路由器同步更新后：
+
+```text
+A1SourceBlockEntropyRouter => exact_wfd_source_entropy_or_external_dibfi_required；
+terminal_dual_gap => ExactWFDSourceEntropyOrExternalDIBFIOriginalDispersion。
+```
+
+这一步完成了 `SourceBlockEntropy => NC-BLK` 的条件证明，同时排除了“形式 well-factorable
+结构自动给源头熵”的隐藏跳步。继续无黑箱硬攻时，不能再停留在抽象 WFD 模板，必须进入精确筛权
+与 Type/Fourier 系数的反集中证明。

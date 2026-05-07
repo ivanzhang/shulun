@@ -1,0 +1,194 @@
+{
+  "acceptable_inputs": [
+    {
+      "input": "ExactWFDSourceEntropy",
+      "statement": "for the exact Rosser/Iwaniec-Buchstab + Type-I/II + Fourier coefficients, max moving same-(u,v) block capacity share is <= log(y)^(-2A)",
+      "status": "not_present_in_current_ledger",
+      "would_imply": "SourceBlockEntropyNCBLK, hence NC-BLK via the Cauchy capacity inequality"
+    },
+    {
+      "input": "StrengthenedCleanAdmissionWithMovingEntropy",
+      "statement": "upgrade K1--K9 clean admission to include scale-uniform moving-block entropy",
+      "status": "would_be_sufficient_but_unproved",
+      "would_imply": "internal A1 clean branch closure after proving the upgraded admission from prior routes"
+    },
+    {
+      "input": "ExternalDIBFIOriginalDispersion",
+      "statement": "original DI/BFI dispersion theorem supplies the needed block variance saving directly",
+      "status": "acceptable_external_route",
+      "would_imply": "A1 clean branch closed in external-deep-theorem version"
+    }
+  ],
+  "all_moving_delta_models_violate_source_entropy": true,
+  "all_spread_models_satisfy_source_entropy": true,
+  "certificate_type": "triad_a1_source_block_entropy_router",
+  "conditional_implication_law": "若实际源块满足 max_b M_b/M <= log(y)^(-2A)，则 sum_b |S_b|^2 <= sum_b M_b^2 <= max_b(M_b/M) M^2，从而得到 NC-BLK 所需的任意对数块能量节省。",
+  "conditional_source_entropy_implies_ncblk": true,
+  "current_internal_source_entropy_closed": false,
+  "gate_rows": [
+    {
+      "available": "lambda_c admits bounded convolution factorizations after choosing dyadic ranges",
+      "closed": false,
+      "gap": "bounded convolution factors may be point-supported on a moving u and v",
+      "gate": "WellFactorableConvolution",
+      "needed": "each moving same-(u,v) block has max capacity share <= log(y)^(-2A)",
+      "route": "prove exact sieve weights have anti-atom entropy, not merely well-factorability"
+    },
+    {
+      "available": "Vaughan/Heath-Brown blocks with divisor-bounded coefficients",
+      "closed": false,
+      "gap": "Type decomposition is algebraic and does not forbid one dyadic factor-pair from carrying the mass",
+      "gate": "TypeITypeIIDecomposition",
+      "needed": "entropy across factor-pair blocks after every Type split",
+      "route": "add a genuine source anti-concentration theorem for the produced coefficients"
+    },
+    {
+      "available": "smooth h-window and finite nonzero Fourier frequencies",
+      "closed": false,
+      "gap": "frequency smoothing acts in h, not in the factorization block coordinate",
+      "gate": "FourierSmoothing",
+      "needed": "non-concentration in the moving block coordinate b=(u,v)",
+      "route": "prove block entropy before or inside the dispersion identity"
+    },
+    {
+      "available": "every fixed finite signature eventually has small mass",
+      "closed": false,
+      "gap": "a moving-delta block can evade every fixed projection while staying concentrated",
+      "gate": "FixedProjectionDiffuse",
+      "needed": "uniform control of growing labels b_y=(u_y,v_y)",
+      "route": "replace fixed-projection diffuse by scale-uniform moving-block entropy"
+    },
+    {
+      "available": "Cauchy capacity identity sum_b M_b^2 <= max_b(M_b/M) M^2",
+      "closed": true,
+      "gap": "the implication is valid, but the hypothesis is not yet proved upstream",
+      "gate": "ConditionalImplicationToNCBLK",
+      "needed": "max_b M_b/M <= log(y)^(-2A) for actual source blocks",
+      "route": "ExactWFDSourceEntropy or external original dispersion"
+    }
+  ],
+  "moving_block_input_status": "moving_block_spread_not_implied_by_fixed_projection_diffuse",
+  "moving_delta_obstruction_law": "形式 well-factorable/Type/Fourier 模板只限制因子可分解性、系数大小与频率平滑，不禁止每个尺度选择一个新的 moving block b_y=(u_y,v_y) 承载全部容量。因此 SourceBlockEntropy 不能由当前形式输入自动推出。",
+  "next_internal_target": "ExactWFDSourceEntropy",
+  "parameters": {
+    "max_k": 9,
+    "min_k": 3,
+    "saving_exponent_A": 2.0,
+    "scale": "y=10^k"
+  },
+  "review_conclusion": "SourceBlockEntropy 是足够强的正确入口：一旦证明，即可推出 NC-BLK。但它不由当前形式 WFD/Type-I-II/Fourier 准入条件强制；moving-delta well-factorable 模型在每个尺度集中到一个新 `(u,v)` 块，仍能通过形式模板。内部无黑箱路线必须继续证明 exact WFD source entropy，外部路线仍是 DI/BFI 原始 dispersion。",
+  "rows": [
+    {
+      "formal_wfd_delta_factors_admissible_at_template_level": true,
+      "k": 3,
+      "log_y": 6.907755278982137,
+      "moving_delta_model_max_block_share": 1.0,
+      "moving_delta_model_min_entropy_nats": 0.0,
+      "moving_delta_violates_source_entropy": true,
+      "required_max_block_capacity_share": 0.00043918978085926986,
+      "required_min_entropy_nats": 7.730578935664262,
+      "saving_exponent_A": 2.0,
+      "spread_block_count_needed": 2277,
+      "spread_model_max_block_share": 0.0004391743522178305,
+      "spread_model_satisfies_source_entropy": true,
+      "y": 1000
+    },
+    {
+      "formal_wfd_delta_factors_admissible_at_template_level": true,
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "moving_delta_model_max_block_share": 1.0,
+      "moving_delta_model_min_entropy_nats": 0.0,
+      "moving_delta_violates_source_entropy": true,
+      "required_max_block_capacity_share": 0.00013896239160000328,
+      "required_min_entropy_nats": 8.881307225471387,
+      "saving_exponent_A": 2.0,
+      "spread_block_count_needed": 7197,
+      "spread_model_max_block_share": 0.00013894678338196472,
+      "spread_model_satisfies_source_entropy": true,
+      "y": 10000
+    },
+    {
+      "formal_wfd_delta_factors_admissible_at_template_level": true,
+      "k": 5,
+      "log_y": 11.512925464970229,
+      "moving_delta_model_max_block_share": 1.0,
+      "moving_delta_model_min_entropy_nats": 0.0,
+      "moving_delta_violates_source_entropy": true,
+      "required_max_block_capacity_share": 5.691899559936136e-05,
+      "required_min_entropy_nats": 9.773881430728224,
+      "saving_exponent_A": 2.0,
+      "spread_block_count_needed": 17569,
+      "spread_model_max_block_share": 5.691843588138198e-05,
+      "spread_model_satisfies_source_entropy": true,
+      "y": 100000
+    },
+    {
+      "formal_wfd_delta_factors_admissible_at_template_level": true,
+      "k": 6,
+      "log_y": 13.815510557964274,
+      "moving_delta_model_max_block_share": 1.0,
+      "moving_delta_model_min_entropy_nats": 0.0,
+      "moving_delta_violates_source_entropy": true,
+      "required_max_block_capacity_share": 2.7449361303704366e-05,
+      "required_min_entropy_nats": 10.503167657904044,
+      "saving_exponent_A": 2.0,
+      "spread_block_count_needed": 36431,
+      "spread_model_max_block_share": 2.744915044879361e-05,
+      "spread_model_satisfies_source_entropy": true,
+      "y": 1000000
+    },
+    {
+      "formal_wfd_delta_factors_admissible_at_template_level": true,
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "moving_delta_model_max_block_share": 1.0,
+      "moving_delta_model_min_entropy_nats": 0.0,
+      "moving_delta_violates_source_entropy": true,
+      "required_max_block_capacity_share": 1.4816481570012849e-05,
+      "required_min_entropy_nats": 11.119770377213076,
+      "saving_exponent_A": 2.0,
+      "spread_block_count_needed": 67493,
+      "spread_model_max_block_share": 1.4816351325322626e-05,
+      "spread_model_satisfies_source_entropy": true,
+      "y": 10000000
+    },
+    {
+      "formal_wfd_delta_factors_admissible_at_template_level": true,
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "moving_delta_model_max_block_share": 1.0,
+      "moving_delta_model_min_entropy_nats": 0.0,
+      "moving_delta_violates_source_entropy": true,
+      "required_max_block_capacity_share": 8.685149475000205e-06,
+      "required_min_entropy_nats": 11.653895947711167,
+      "saving_exponent_A": 2.0,
+      "spread_block_count_needed": 115140,
+      "spread_model_max_block_share": 8.685079034219211e-06,
+      "spread_model_satisfies_source_entropy": true,
+      "y": 100000000
+    },
+    {
+      "formal_wfd_delta_factors_admissible_at_template_level": true,
+      "k": 9,
+      "log_y": 20.72326583694641,
+      "moving_delta_model_max_block_share": 1.0,
+      "moving_delta_model_min_entropy_nats": 0.0,
+      "moving_delta_violates_source_entropy": true,
+      "required_max_block_capacity_share": 5.422096059990986e-06,
+      "required_min_entropy_nats": 12.1250280903367,
+      "saving_exponent_A": 2.0,
+      "spread_block_count_needed": 184431,
+      "spread_model_max_block_share": 5.422081971035238e-06,
+      "spread_model_satisfies_source_entropy": true,
+      "y": 1000000000
+    }
+  ],
+  "source_entropy_gap_exists": true,
+  "source_hashes": {
+    "moving_block_spread_obstruction_json": "5fc83fe68233235095bfa96c437a16b9a1384fc92ae27b046744f83abe4918be",
+    "script": "6cc84992fc31c0ae62447c8ace1f2881856a379ea06554cbc4e0b7665485ddbb"
+  },
+  "status": "source_block_entropy_not_forced_by_formal_wfd_inputs",
+  "terminal_gap_after_router": "ExactWFDSourceEntropyOrExternalDIBFIOriginalDispersion"
+}
