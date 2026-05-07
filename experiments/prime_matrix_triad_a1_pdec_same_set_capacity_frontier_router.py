@@ -119,6 +119,9 @@ DEFAULT_DIBFI_AP_SOURCE_BRANCH = (
 DEFAULT_DIBFI_NONAP_DISPERSION = (
     DOCS / "prime-matrix-triad-a1-dibfi-nonap-dispersion-router.json"
 )
+DEFAULT_DIBFI_NONAP_SCALE_LEDGER = (
+    DOCS / "prime-matrix-triad-a1-dibfi-nonap-scale-ledger-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -212,6 +215,7 @@ def build_frontier_rows(
     dibfi_ap_residual_identity: dict[str, Any],
     dibfi_ap_source_branch: dict[str, Any],
     dibfi_nonap_dispersion: dict[str, Any],
+    dibfi_nonap_scale_ledger: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -702,6 +706,16 @@ def build_frontier_rows(
             ),
             "next_action": "直接攻 NoProjectionUncenteredDispersionIdentity 与 QuantifiedDIBFIWindowSubstitution。",
         },
+        {
+            "frontier": "A1DIBFINonAPScaleLedgerRouter",
+            "status": "nonap_scale_ledger_reduced_to_di_kloosterman_window_substitution_open",
+            "evidence": (
+                f"非 AP-source 尺度侧已压成 DI Kloosterman 窗口代入；"
+                f"open_scale_gates={dibfi_nonap_scale_ledger['open_scale_gates']}；"
+                f"terminal_gap={dibfi_nonap_scale_ledger['terminal_gap_after_router']}。"
+            ),
+            "next_action": "对象侧攻 NoProjectionUncenteredDispersionIdentity；尺度侧攻 DIKloostermanWindowSubstitutionLedger。",
+        },
     ]
 
 
@@ -750,6 +764,7 @@ def run(
     dibfi_ap_residual_identity_path: Path,
     dibfi_ap_source_branch_path: Path,
     dibfi_nonap_dispersion_path: Path,
+    dibfi_nonap_scale_ledger_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -796,6 +811,7 @@ def run(
     dibfi_ap_residual_identity = load_json(dibfi_ap_residual_identity_path)
     dibfi_ap_source_branch = load_json(dibfi_ap_source_branch_path)
     dibfi_nonap_dispersion = load_json(dibfi_nonap_dispersion_path)
+    dibfi_nonap_scale_ledger = load_json(dibfi_nonap_scale_ledger_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -841,6 +857,7 @@ def run(
         dibfi_ap_residual_identity,
         dibfi_ap_source_branch,
         dibfi_nonap_dispersion,
+        dibfi_nonap_scale_ledger,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -888,13 +905,14 @@ def run(
         "ap_residual_identity_reduced_to_upstream_source_definition_open",
         "ap_source_direct_bfi_branch_closed_nonap_fallback_open",
         "nonap_source_dispersion_reduced_to_quantified_no_projection_certificate_open",
+        "nonap_scale_ledger_reduced_to_di_kloosterman_window_substitution_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_nonap_quantified_no_projection_open",
+        "status": "same_set_capacity_frontier_materialized_nonap_no_projection_di_window_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -971,6 +989,9 @@ def run(
             "a1_dibfi_nonap_dispersion_json": file_sha256(
                 dibfi_nonap_dispersion_path
             ),
+            "a1_dibfi_nonap_scale_ledger_json": file_sha256(
+                dibfi_nonap_scale_ledger_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -981,7 +1002,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource",
+        "terminal_dual_gap": "NonAPNoProjectionAndDIWindowLedger",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1018,7 +1039,8 @@ def run(
             "所以最窄剩余变为 AP 源对象等式；AP 源对象等式又被压成 Cauchy/dispersion "
             "之前的原始 clean A1 残差定义合同；该合同作为 AP-source 分支已经允许直接 BFI "
             "闭合，非 AP generic WFD 分支则必须走原始 dispersion 外部定理匹配或 KE-13 fallback；"
-            "非 AP 分支已接回既有原始 dispersion 链条，剩余为量化无投影窗口证书。"
+            "非 AP 分支已接回既有原始 dispersion 链条，剩余为量化无投影窗口证书；"
+            "其中尺度侧又被压成 DI Kloosterman 窗口代入账本，BFI level 不再是终端。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1050,7 +1072,7 @@ def run(
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
             "该合取证书现已继续压成 "
-            "`DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource`。"
+            "`NonAPNoProjectionAndDIWindowLedger`。"
         ),
     }
 
@@ -1112,6 +1134,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  AP source identity reduces to upstream clean A1 AP source definition。",
         "  AP-source branch closes by direct BFI; non-AP source returns to original dispersion match。",
         "  non-AP source dispersion match reduces to quantified no-projection window certificate。",
+        "  non-AP scale side reduces to DI Kloosterman window substitution ledger。",
         "```",
         "",
         "## 2. 汇总",
@@ -1189,12 +1212,14 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFIAPResidualIdentity router materialized；",
             "DIBFIAPSourceBranch router materialized；",
             "DIBFINonAPDispersion router materialized；",
-            "remaining independent gap is DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource。",
+            "DIBFINonAPScaleLedger router materialized；",
+            "remaining independent gap is NonAPNoProjectionAndDIWindowLedger。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
             "DI/BFI 定理位置已固定为 BFI Theorem 10 与 DI Theorem 12；"
-            "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩量化无投影窗口证书；"
+            "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩未中心化无投影恒等式"
+            "与 DI Kloosterman 窗口代入账本；"
             "完全自足版仍未证明原始 dispersion。",
         ]
     )
@@ -1355,6 +1380,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_NONAP_DISPERSION,
     )
+    parser.add_argument(
+        "--dibfi-nonap-scale-ledger-json",
+        type=Path,
+        default=DEFAULT_DIBFI_NONAP_SCALE_LEDGER,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1404,6 +1434,7 @@ def main() -> None:
         dibfi_ap_residual_identity_path=args.dibfi_ap_residual_identity_json,
         dibfi_ap_source_branch_path=args.dibfi_ap_source_branch_json,
         dibfi_nonap_dispersion_path=args.dibfi_nonap_dispersion_json,
+        dibfi_nonap_scale_ledger_path=args.dibfi_nonap_scale_ledger_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

@@ -1,0 +1,88 @@
+{
+  "certificate_type": "triad_a1_dibfi_nonap_scale_ledger_router",
+  "closed_scale_gates": [
+    "TypeProductQuantified",
+    "BFILevelQuantified",
+    "FrequencyWindowAndTail",
+    "LogLossAbsorption",
+    "TemplateHasAllVariables"
+  ],
+  "open_scale_gates": [
+    "KLSModulusWindowQuantified",
+    "InverseVariableWindowQuantified",
+    "DIJScaleDominanceSubstitution"
+  ],
+  "previous_terminal_gap": "DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource",
+  "quantified_window_substitution_closed": false,
+  "review_conclusion": "非 AP-source 的尺度侧已压成 DI Kloosterman 窗口代入账本：BFI level、Type product、频率尾项与 log 损失不再是终端；剩余是 C/S/H 模数-逆元-频率窗口和 DI J-scale 的精确代入。",
+  "scale_rows": [
+    {
+      "closed": true,
+      "evidence": "N*M≈X 已由 transfer-scale 证书按 dyadic product 关闭。",
+      "gate": "TypeProductQuantified",
+      "next_target": "none",
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "evidence": "同一 X≈P^2、Q<=P log^O P 账本给 Q<=X^{1/2+o(1)}<X^{4/7-eps}。",
+      "gate": "BFILevelQuantified",
+      "next_target": "none",
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "evidence": "transfer-scale 证书已把 Fourier tail 和 B(A) 吸收关闭。",
+      "gate": "FrequencyWindowAndTail",
+      "next_target": "DIKloostermanWindowSubstitutionLedger",
+      "remaining": "h 作为 DI 频率参数的精确范围仍并入 DIKloostermanWindowSubstitution。"
+    },
+    {
+      "closed": true,
+      "evidence": "B(A)=A+C0+10 的 symbolic log ledger 已关闭。",
+      "gate": "LogLossAbsorption",
+      "next_target": "none",
+      "remaining": "若最终稿要求显式 C_i，再抽常数；当前非终端。"
+    },
+    {
+      "closed": false,
+      "evidence": "C≈P/log^{O(1)}P 已命名，但尚未逐项代入 DI Theorem 12 的模数变量。",
+      "gate": "KLSModulusWindowQuantified",
+      "next_target": "DIKloostermanWindowSubstitutionLedger",
+      "remaining": "需把 C 与 DI 模数 family、dyadic support 和 gcd 剥离后的 level 精确同一化。"
+    },
+    {
+      "closed": false,
+      "evidence": "S≈P / completion length 已命名，但尚未与 DI 逆元变量窗口逐项匹配。",
+      "gate": "InverseVariableWindowQuantified",
+      "next_target": "DIKloostermanWindowSubstitutionLedger",
+      "remaining": "需从 completion 后的 s 变量长度推出 DI Theorem 12 允许范围。"
+    },
+    {
+      "closed": false,
+      "evidence": "C,S,H,N,M,Q 已在共同变量表中固定，但 DI J-scale bound 尚未代入并压到自然 WFD 尺度/log^A。",
+      "gate": "DIJScaleDominanceSubstitution",
+      "next_target": "DIKloostermanWindowSubstitutionLedger",
+      "remaining": "需写出 DI Theorem 12 的 J-scale 项，并逐项比较到 WFD 自然尺度。"
+    },
+    {
+      "closed": true,
+      "evidence": "KLS 模板与 KZ-E spine 已给 C,S,H 的定性窗口；共同变量表固定 C,S,H。",
+      "gate": "TemplateHasAllVariables",
+      "next_target": "DIKloostermanWindowSubstitutionLedger",
+      "remaining": "该行只是资料可用性，不关闭 DI 精确代入。"
+    }
+  ],
+  "source_hashes": {
+    "bfi_level_ledger_json": "66c8366dd553edde5e44719df034cdb4b10c012676c7d0d140ce722e1d13fb9c",
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "kls_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "nonap_dispersion_json": "84002b30235b4d02a8af38771960fea962992168a77a15239adbf350850aac0f",
+    "script": "ac6980fa9685cb5e6876c0e3dd786671c08fe17448db688041fc0a6a93a8c772",
+    "transfer_scale_json": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd"
+  },
+  "status": "nonap_scale_ledger_reduced_to_di_kloosterman_window_substitution_open",
+  "structural_law": "The non-AP scale side no longer needs the BFI prime-AP level ledger: Q<=P log^O P and X≈P^2 give positive BFI exponent slack. Type product, frequency tail and log loss are also ledger-closed. The remaining scale content is specifically DI-side: match C,S,H and the J-scale term of DI Theorem 12 to the current WFD natural scale.",
+  "terminal_gap_after_router": "DIKloostermanWindowSubstitutionLedger"
+}

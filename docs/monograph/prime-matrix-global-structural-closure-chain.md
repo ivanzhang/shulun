@@ -5896,3 +5896,79 @@ terminal_dual_gap
 
 这一步的意义是排除继续搜索定理号、重复 AP-source 账本或泛泛引用 DI/BFI 的退路。非 AP-source
 fallback 的真实剩余就是两个内容：未中心化无投影恒等式，以及对 BFI/DI 窗口参数的量化代入。
+
+## 102. 非 AP-source scale ledger：BFI level 剥离，尺度侧压成 DI Kloosterman 窗口代入
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_nonap_scale_ledger_router.py` 后，第 101 节中的
+`QuantifiedDIBFIWindowSubstitution` 被进一步压缩。关键是：非 AP fallback 的尺度侧不应再把
+BFI prime-AP level 当成终端硬点。此前 `X≈P^2`、`Q<=P log^O P` 已给
+`Q<=X^{1/2+o(1)}<X^{4/7-eps}` 的正指数余量；Type product、Fourier tail 与 log-loss 也已经是
+账本级关闭。
+
+机器结果：
+
+```text
+status=nonap_scale_ledger_reduced_to_di_kloosterman_window_substitution_open；
+closed_scale_gates=[
+  TypeProductQuantified,
+  BFILevelQuantified,
+  FrequencyWindowAndTail,
+  LogLossAbsorption,
+  TemplateHasAllVariables
+]；
+open_scale_gates=[
+  KLSModulusWindowQuantified,
+  InverseVariableWindowQuantified,
+  DIJScaleDominanceSubstitution
+]；
+terminal_gap_after_router=DIKloostermanWindowSubstitutionLedger。
+```
+
+已关闭的尺度行：
+
+```text
+TypeProductQuantified:
+  N*M≈X 是 dyadic product 恒等式；
+
+BFILevelQuantified:
+  Q<=P log^O P, X≈P^2，故 Q<=X^{1/2+o(1)}<X^{4/7-eps}；
+
+FrequencyWindowAndTail:
+  Fourier tail 已由 B(A) 账本吸收；
+
+LogLossAbsorption:
+  B(A)=A+C0+10 已关闭 symbolic log ledger；
+
+TemplateHasAllVariables:
+  KLS 模板、KZ-E spine 与共同变量表已给 C,S,H 的同表接口。
+```
+
+仍未闭合的 DI 侧：
+
+```text
+DIKloostermanWindowSubstitutionLedger:
+  KLSModulusWindowQuantified;
+  InverseVariableWindowQuantified;
+  DIJScaleDominanceSubstitution.
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFINonAPScaleLedgerRouter
+  => nonap_scale_ledger_reduced_to_di_kloosterman_window_substitution_open；
+
+terminal_dual_gap
+  => NonAPNoProjectionAndDIWindowLedger。
+```
+
+其中
+
+```text
+NonAPNoProjectionAndDIWindowLedger
+  = NoProjectionUncenteredDispersionIdentity
+    + DIKloostermanWindowSubstitutionLedger。
+```
+
+因此非 AP-source fallback 的终端现在只剩对象侧“未中心化无投影恒等式”和 DI 侧“模数/逆元/频率
+J-scale 精确代入”两块；BFI level、Type product 与 log-loss 已不再是障碍。
