@@ -89,6 +89,9 @@ DEFAULT_BRANCH_STATEMENT_COVERAGE = (
 DEFAULT_GENERIC_WFD_DIBFI = (
     DOCS / "prime-matrix-triad-a1-generic-wfd-dibfi-router.json"
 )
+DEFAULT_DIBFI_THEOREM_LOCATION = (
+    DOCS / "prime-matrix-triad-a1-dibfi-theorem-location-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -172,6 +175,7 @@ def build_frontier_rows(
     canonical_branch_admission: dict[str, Any],
     branch_statement_coverage: dict[str, Any],
     generic_wfd_dibfi: dict[str, Any],
+    dibfi_theorem_location: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -546,6 +550,18 @@ def build_frontier_rows(
             ),
             "next_action": "核对 DI/BFI 原文精确定理位置与假设逐项匹配；不再回退到 canonical 支撑链。",
         },
+        {
+            "frontier": "A1DIBFITheoremLocationRouter",
+            "status": "dibfi_theorem_locations_pinned_current_window_hypothesis_match_open"
+            if dibfi_theorem_location["theorem_locations_pinned"]
+            else "dibfi_theorem_location_gap",
+            "evidence": (
+                f"BFI Theorem 10 与 DI Theorem 12 已定位；"
+                f"theorem_locations_pinned={dibfi_theorem_location['theorem_locations_pinned']}；"
+                f"terminal_gap={dibfi_theorem_location['terminal_gap_after_router']}。"
+            ),
+            "next_action": "逐项证明当前未中心化 KE-13/WFD 窗口满足 BFI/DI 假设。",
+        },
     ]
 
 
@@ -584,6 +600,7 @@ def run(
     canonical_branch_admission_path: Path,
     branch_statement_coverage_path: Path,
     generic_wfd_dibfi_path: Path,
+    dibfi_theorem_location_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -620,6 +637,7 @@ def run(
     canonical_branch_admission = load_json(canonical_branch_admission_path)
     branch_statement_coverage = load_json(branch_statement_coverage_path)
     generic_wfd_dibfi = load_json(generic_wfd_dibfi_path)
+    dibfi_theorem_location = load_json(dibfi_theorem_location_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -655,6 +673,7 @@ def run(
         canonical_branch_admission,
         branch_statement_coverage,
         generic_wfd_dibfi,
+        dibfi_theorem_location,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -690,6 +709,7 @@ def run(
         "canonical_branch_statement_coverage_or_external_dibfi_required",
         "canonical_source_branch_internal_gap_closed_generic_external_only",
         "generic_wfd_external_dibfi_contract_materialized_theorem_location_open",
+        "dibfi_theorem_locations_pinned_current_window_hypothesis_match_open",
         "closed",
         "no_fourth_exit",
     }
@@ -745,6 +765,9 @@ def run(
                 branch_statement_coverage_path
             ),
             "a1_generic_wfd_dibfi_json": file_sha256(generic_wfd_dibfi_path),
+            "a1_dibfi_theorem_location_json": file_sha256(
+                dibfi_theorem_location_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -755,7 +778,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch",
+        "terminal_dual_gap": "DIBFIOriginalDispersionCurrentWindowHypothesisMatch",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -782,7 +805,8 @@ def run(
             "canonical 分支准入又被压成主定理/账本分支陈述与覆盖合同；"
             "分支陈述已落实：canonical source branch 在 source-lock 链条上无剩余内部缺口；"
             "generic WFD 宽口径的外部 DI/BFI 原始 dispersion 已物化为外部合同；"
-            "当前只剩 DI/BFI 原文精确定理位置与假设逐项匹配。"
+            "DI/BFI 原文定理位置已定位为 BFI Theorem 10 与 DI Theorem 12；"
+            "当前只剩当前未中心化 KE-13/WFD 窗口对这些定理的假设逐项匹配。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -810,7 +834,8 @@ def run(
             "分支陈述覆盖已落实。canonical RIW/Buchstab clean branch 在当前 source-lock 链条上"
             "不再有内部缺口。generic noncanonical WFD 的外部 DI/BFI 合同也已物化："
             "未中心化原始对象、相位归一化、well-factorable level、Type-I/II 范围与损失账本"
-            "都已登记；剩余单点是 DI/BFI 原文定理位置与假设匹配。"
+            "都已登记。DI/BFI 定理位置已进一步固定为 BFI Theorem 10 与 DI Theorem 12；"
+            "剩余单点是当前 KE-13/WFD 窗口的假设逐项匹配。"
         ),
     }
 
@@ -862,7 +887,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  canonical branch admission reduces to theorem/ledger branch statement and coverage；",
         "  canonical source branch now has no source-lock internal gap;",
         "  generic WFD external DI/BFI contract is materialized;",
-        "  remaining terminal target is exact DI/BFI theorem location and hypothesis match。",
+        "  DI/BFI theorem locations are pinned;",
+        "  remaining terminal target is current WFD-window hypothesis match。",
         "```",
         "",
         "## 2. 汇总",
@@ -930,12 +956,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "CanonicalBranchAdmission router materialized；",
             "BranchStatementCoverage router materialized；",
             "GenericWFDDIBFI router materialized；",
-            "remaining independent gap is exact DI/BFI theorem location and hypothesis match。",
+            "DIBFITheoremLocation router materialized；",
+            "remaining independent gap is current KE-13/WFD window hypothesis match。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
-            "generic WFD 外部引用版已压成 DI/BFI 原文定理位置与假设匹配；"
-            "完全自足版仍未证明 generic noncanonical WFD 原始 dispersion。",
+            "DI/BFI 定理位置已固定为 BFI Theorem 10 与 DI Theorem 12；"
+            "generic WFD 外部引用版只剩当前窗口假设匹配，完全自足版仍未证明原始 dispersion。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1045,6 +1072,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_GENERIC_WFD_DIBFI,
     )
+    parser.add_argument(
+        "--dibfi-theorem-location-json",
+        type=Path,
+        default=DEFAULT_DIBFI_THEOREM_LOCATION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1084,6 +1116,7 @@ def main() -> None:
         canonical_branch_admission_path=args.canonical_branch_admission_json,
         branch_statement_coverage_path=args.branch_statement_coverage_json,
         generic_wfd_dibfi_path=args.generic_wfd_dibfi_json,
+        dibfi_theorem_location_path=args.dibfi_theorem_location_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

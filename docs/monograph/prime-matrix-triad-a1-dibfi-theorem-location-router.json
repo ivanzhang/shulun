@@ -1,0 +1,93 @@
+{
+  "all_gates_closed": false,
+  "certificate_type": "triad_a1_dibfi_theorem_location_router",
+  "gate_rows": [
+    {
+      "available": "BFI II theorem number, DOI and pages are pinned",
+      "closed": true,
+      "gap": "none at theorem-location level",
+      "gate": "BFITheorem10Located",
+      "needed": "well-factorable weighted AP dispersion source",
+      "route": "cite BFI1987 Theorem 10"
+    },
+    {
+      "available": "DI theorem number, DOI and pages are pinned",
+      "closed": true,
+      "gap": "none at theorem-location level",
+      "gate": "DITheorem12Located",
+      "needed": "spectral Kloosterman estimate source",
+      "route": "cite DI1982 Theorem 12"
+    },
+    {
+      "available": "Maynard arXiv source cross-checks BFI Theorem 10 and DI Theorem 12 numbering",
+      "closed": true,
+      "gap": "none at numbering cross-check level",
+      "gate": "ModernCrossCheckRegistered",
+      "needed": "publicly inspectable theorem numbering check",
+      "route": "use Maynard2020 as a numbering audit, not as a replacement for DI/BFI"
+    },
+    {
+      "available": "previous router materialized uncentered generic WFD DI/BFI contract",
+      "closed": true,
+      "gap": "none",
+      "gate": "CurrentGenericWFDContractReady",
+      "needed": "do not reopen canonical support branch",
+      "route": "continue only with current-window hypothesis match"
+    },
+    {
+      "available": "local KLS template records phase, level, frequency, gcd and log-loss budgets",
+      "closed": true,
+      "gap": "none at checklist level",
+      "gate": "KLSWindowTemplateReady",
+      "needed": "use it as the checklist for the final hypothesis match",
+      "route": "compare each KLS-template row against BFI/DI hypotheses"
+    },
+    {
+      "available": "theorem locations and local checklist are now fixed",
+      "closed": false,
+      "gap": "not yet checked theorem-by-theorem inside the repository",
+      "gate": "CurrentWindowHypothesisMatch",
+      "needed": "prove current KE-13/WFD window satisfies every cited DI/BFI hypothesis",
+      "route": "match uncentered target, level, phase, Type-I/II range, gcd, smoothing and log saving"
+    }
+  ],
+  "next_external_target": "DIBFIOriginalDispersionCurrentWindowHypothesisMatch",
+  "previous_terminal_gap": "DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch",
+  "review_conclusion": "DI/BFI 原始 dispersion 的“定理位置”部分已从缺口中剥离：BFI 取 Theorem 10，DI 取 Theorem 12，并用 Maynard 公开源码作编号交叉核验。当前剩余改写为当前 KE-13/WFD 窗口对这些定理的假设逐项匹配。",
+  "source_hashes": {
+    "external_theorem_index_md": "7a0ef97946a854b0763d0800c765c9e9c1a462fef1b40241e604b46a8c579f5a",
+    "generic_wfd_dibfi_json": "f3d583dd214fa6c1b982c05d8a9795681b00f71b6f38ed63094501e491aba972",
+    "kls_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "script": "771bc1f0fdada63e61a5034a7053212f2dcaefd65b7ce9616e7fc2c6ed49450c"
+  },
+  "source_rows": [
+    {
+      "doi": "10.1007/BF01458321",
+      "located": true,
+      "location": "Mathematische Annalen 277(3), 361--393, 1987, Theorem 10",
+      "paper": "Bombieri--Friedlander--Iwaniec, Primes in arithmetic progressions to large moduli. II",
+      "role": "well-factorable weighted prime AP dispersion estimate",
+      "source_id": "BFI1987-Theorem10"
+    },
+    {
+      "doi": "10.1007/BF01390728",
+      "located": true,
+      "location": "Inventiones Mathematicae 70, 219--288, 1982, Theorem 12",
+      "paper": "Deshouillers--Iwaniec, Kloosterman sums and Fourier coefficients of cusp forms",
+      "role": "spectral Kloosterman estimate used inside the dispersion method",
+      "source_id": "DI1982-Theorem12"
+    },
+    {
+      "doi": "arXiv:2006.07088",
+      "located": true,
+      "location": "arXiv:2006.07088, Theorem A cites BFI Theorem 10; Lemma 6.12 cites DI Theorem 12",
+      "paper": "Maynard, Primes in arithmetic progressions to large moduli II: Well-factorable estimates",
+      "role": "modern public cross-check of theorem numbering and DI estimate formula",
+      "source_id": "Maynard2020-CrossCheck"
+    }
+  ],
+  "status": "dibfi_theorem_locations_pinned_current_window_hypothesis_match_open",
+  "structural_law": "The theorem-location part of the DI/BFI original-dispersion gap is now separated from the mathematical hypothesis match. BFI Theorem 10 supplies the well-factorable prime-AP dispersion location; DI Theorem 12 supplies the Kloosterman spectral estimate location; Maynard's public well-factorable paper cross-checks the numbering. The only remaining task is to prove that the current uncentered KE-13/WFD window satisfies the hypotheses of those located theorems without changing the target object.",
+  "terminal_gap_after_router": "DIBFIOriginalDispersionCurrentWindowHypothesisMatch",
+  "theorem_locations_pinned": true
+}

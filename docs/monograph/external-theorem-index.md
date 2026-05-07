@@ -26,10 +26,12 @@
 
 ## 2. BFI dispersion 与 well-factorable 权重
 
-- **来源**：Bombieri, E.; Friedlander, J. B.; Iwaniec, H., *Primes in Arithmetic Progressions to Large Moduli. II*, Mathematische Annalen 277, 361--394, 1987.
+- **来源**：Bombieri, E.; Friedlander, J. B.; Iwaniec, H., *Primes in Arithmetic Progressions to Large Moduli. II*, Mathematische Annalen 277(3), 361--393, 1987, DOI `10.1007/BF01458321`.
 - **状态**：`required` for external-theorem version.
 - **用于**：把 DI Kloosterman 平均接入 well-factorable Rosser/Buchstab 权重和 Dirichlet 多项式卷积。
 - **对应链条**：`BFI + DI => KLS-window => WBE2`.
+- **当前定位**：`BFI1987-Theorem10`，即 well-factorable 加权素数等差级数分布估计；Maynard
+  `arXiv:2006.07088` 的 Theorem A 明确引用该结果为 `[BFI, Theorem 10]`。
 - **必须核对**：
   - `lambda_d` 的 well-factorable level；
   - `E_2` 受限卷积是否落入 BFI 处理的 convolution/Dirichlet polynomial 框架；
@@ -390,3 +392,28 @@ DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch.
 
 因此当前外部定理索引的最新任务不是再寻找新的内部 canonical support，而是完成 DI/BFI 原始
 dispersion 的精确引用定位与假设对账。
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_theorem_location_router.py` 后，定理定位部分已从该
+单点中剥离：
+
+```text
+BFI1987-Theorem10:
+  Bombieri--Friedlander--Iwaniec, Math. Ann. 277(3), 361--393, 1987,
+  DOI 10.1007/BF01458321;
+
+DI1982-Theorem12:
+  Deshouillers--Iwaniec, Invent. Math. 70, 219--288, 1982,
+  DOI 10.1007/BF01390728;
+
+Maynard2020-CrossCheck:
+  arXiv:2006.07088 quotes BFI Theorem 10 and DI Theorem 12.
+```
+
+因此最新外部剩余改为：
+
+```text
+DIBFIOriginalDispersionCurrentWindowHypothesisMatch.
+```
+
+也就是说，下一步不再是寻找定理号，而是把当前未中心化 `KE-13/WFD-core` 窗口逐项放进
+`BFI1987-Theorem10 + DI1982-Theorem12` 的假设中。

@@ -5166,3 +5166,77 @@ terminal_dual_gap => DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch。
 这一步把“外部 DI/BFI 原始 dispersion”从一句话压成了审稿可执行的核查表。它仍不是 generic WFD
 宽口径的完全自足证明；但除精确外部定理定位与假设匹配外，generic WFD 外部引用版所需的对象、
 相位和损失接口已经登记完成。
+
+## 92. DI/BFI 定理位置剥离：只剩当前 WFD 窗口假设匹配
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_theorem_location_router.py` 后，第 91 节留下的
+`DIBFIOriginalDispersionTheoremLocationAndHypothesisMatch` 被继续拆开。关键推进是：定理位置
+不再作为终端硬点，已固定到 BFI 与 DI 的具体定理号；剩余只是真正数学性的当前窗口假设匹配。
+
+机器结果：
+
+```text
+status=dibfi_theorem_locations_pinned_current_window_hypothesis_match_open；
+theorem_locations_pinned=true；
+terminal_gap_after_router=DIBFIOriginalDispersionCurrentWindowHypothesisMatch。
+```
+
+定位表：
+
+```text
+BFI1987-Theorem10:
+  Bombieri--Friedlander--Iwaniec,
+  Primes in arithmetic progressions to large moduli. II,
+  Math. Ann. 277(3), 361--393, 1987,
+  DOI 10.1007/BF01458321.
+
+DI1982-Theorem12:
+  Deshouillers--Iwaniec,
+  Kloosterman sums and Fourier coefficients of cusp forms,
+  Invent. Math. 70, 219--288, 1982,
+  DOI 10.1007/BF01390728.
+
+Maynard2020-CrossCheck:
+  arXiv:2006.07088 的 Theorem A 引用 BFI Theorem 10，
+  Lemma 6.12 引用 DI Theorem 12。
+```
+
+本步已经闭合的部分是：
+
+```text
+BFITheorem10Located:
+  well-factorable 加权 prime AP dispersion 的外部位置已固定；
+
+DITheorem12Located:
+  Kloosterman spectral estimate 的外部位置已固定；
+
+ModernCrossCheckRegistered:
+  Maynard 公开源码对定理编号作了交叉核验；
+
+CurrentGenericWFDContractReady:
+  前一层未中心化 generic WFD 外部合同已物化；
+
+KLSWindowTemplateReady:
+  本文已有相位、level、频率、gcd、端点和平滑损失核查表。
+```
+
+仍未闭合的单点是：
+
+```text
+DIBFIOriginalDispersionCurrentWindowHypothesisMatch:
+  把当前未中心化 KE-13/WFD-core 窗口逐项放进
+  BFI Theorem 10 与 DI Theorem 12 的输入假设中；
+  核查对象不变、相位归一、well-factorable level、Type-I/II 范围、
+  gcd/unit 层、平滑权和任意 log-saving 强度。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFITheoremLocationRouter => dibfi_theorem_locations_pinned_current_window_hypothesis_match_open；
+terminal_dual_gap => DIBFIOriginalDispersionCurrentWindowHypothesisMatch。
+```
+
+这一步把“找定理号”的书目硬点剥掉，剩余成为纯粹的假设匹配硬点。下一步必须逐行检查当前
+`KE-13/WFD-core` 是否真的落入 BFI/DI 的定理范围；不能再用“外部 DI/BFI”四个字遮盖对象、
+level 或窗口范围的错配。
