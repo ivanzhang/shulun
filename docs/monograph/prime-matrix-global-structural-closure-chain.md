@@ -3625,3 +3625,106 @@ positive deletion potential
 ```
 
 这一步仍不是最终闭合；它把正 limsup PDEC 侧的容量硬点转成删除势/无删除-KL硬点。
+
+## 72. A1 连续 NoDeletion 终端路由
+
+新增 `experiments/prime_matrix_triad_a1_continuous_nodeletion_terminal_router.py` 后，
+第 71 节留下的 `NoDeletion-KL` 不再作为独立出口停留。
+
+输入账本：
+
+```text
+prime-matrix-triad-a1-standard-prime-lift-deletion.json；
+prime-matrix-triad-a1-nodeletion-kl-gate.json；
+prime-matrix-triad-a1-nodeletion-kl-witness-extractor.json；
+prime-matrix-triad-a1-small-ambiguous-clean-admission-router.json；
+prime-matrix-triad-a1-all-phase-residue-terminal-audit.json。
+```
+
+机器结果：
+
+```text
+status=continuous_prime_lift_nodeletion_terminal_routed_clean_kls_open；
+deletion_row_count=52；
+route_counts={PositiveDeletionPotentialOrNoDeletionPDECOrCleanKLS: 52}；
+global_min_deletion_potential_lower_bound=2.564949；
+global_max_survival_upper_bound=0.0769231；
+no_independent_nodeletion_gap=True；
+terminal_dual_gap_after_router=CleanKLSDLSLargeSieveOrExternalKLSInput。
+```
+
+核心结构链：
+
+```text
+positive-limsup finite signature
+  => prime-lift fixed residue；
+
+fixed residue promoted by ell
+  => survival <= 1/ell
+  => deletion potential D >= log(ell)；
+
+sum D_n = infinity
+  => support density is exhausted；
+
+sum D_n < infinity
+  => a_n -> 1
+  => NoDeletion。
+```
+
+进入 `NoDeletion` 后，不再允许无名逃逸。KL 链式恒等式给出：
+
+```text
+E_t KL(B|t || U_B)
+  = KL(B || U_B) + I(T;B)。
+```
+
+于是：
+
+```text
+KL(B||U_B) 持久累计
+  => GlobalResidue / new-layer PDEC；
+
+I(T;B) 持久累计
+  => refined (old_phase,residue) PDEC；
+
+二者同时趋零
+  => CleanKLS/DLS admission。
+```
+
+当前有限层证据：
+
+```text
+current_layers_delete_before_nodeletion=True；
+gate_counts={FiberDeletion: 6}；
+shape_route_counts={PhaseResidueMutualPDECWitness: 6}；
+kl_chain_identity_exact=True；
+phase_residue_atoms_terminalized_beyond_p=True；
+total_terminal_le_p_count=0。
+```
+
+解释：
+
+```text
+当前层本身仍由 FiberDeletion 推进；
+若未来删除停止，KL/互信息偏斜会回流 refined PDEC；
+只有 KL/互信息平坦时才进入 CleanKLS/DLS。
+```
+
+前沿路由器同步更新后：
+
+```text
+ContinuousNoDeletionTerminal => nodeletion_terminal_routed_clean_kls_open；
+terminal_dual_gap => CleanKLSDLSLargeSieveOrExternalKLSInput。
+```
+
+这一步的意义是：
+
+```text
+NoDeletion-KL 不是第三终端；
+PDEC 偏斜分支回到递归 PDEC family；
+真正剩余独立终端硬点压到 CleanKLS/DLS 大筛证书，
+或一个明确登记、可复核的外部 KLS/DI/BFI 输入。
+```
+
+这仍不是最终行命题闭合。下一步必须直接构造 `CleanKLS/DLS-Cert`，
+或者把可用的外部大筛定理精确适配到当前 formal unit。
