@@ -2,11 +2,11 @@
 
 **状态：** `same_set_capacity_frontier_materialized_terminal_dual_open`
 
-Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，但仍不足以给完整 U_CRT<L_PDEC。下一步必须把暴露候选桶提升为真实支付测度，并完成 PDEC/CleanKLS 二分。
+Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿：当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。下一步不再是构造支付测度，而是证明 PDEC/CleanKLS 终端二分。
 
 ## 1. 结构律
 
-同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。最终缺口变成真实支付选择：集中签名给 PDEC，递归扩散给 CleanKLS/DLS。
+同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。actual payment measure 已由 canonical 选择律构造。最终缺口只剩两个终端引理：positive-limsup finite signature 给 PDEC，diffuse 极限给 CleanKLS/DLS。
 
 ```text
 Same-set capacity upper:
@@ -14,6 +14,7 @@ Same-set capacity upper:
   box-only rows are insufficient；
   failure must output DualCap or missing row；
   continuous cap exposes column-tail payment buckets；
+  canonical actual payment measure is constructed；
   actual payment concentration returns to PDEC；
   recursive diffusion returns to CleanKLS/DLS。
 ```
@@ -21,8 +22,8 @@ Same-set capacity upper:
 ## 2. 汇总
 
 - `all_known_frontiers_routed=True`。
-- `terminal_dual_gap=ActualPaymentSelectionOrCleanKLSAdmission`。
-- `status_counts={'actual_payment_selection_materialized': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'no_fourth_exit': 1, 'ready_current_lhb_branch': 1, 'structurally_insufficient': 1}`。
+- `terminal_dual_gap=PositiveLimsupPDECOrDiffuseCleanKLS`。
+- `status_counts={'actual_payment_measure_constructed': 1, 'actual_payment_selection_materialized': 1, 'closed': 1, 'closed_subbranch': 1, 'continuous_dualcap_materialized_not_closed': 1, 'dualcap_materialized': 1, 'no_fourth_exit': 1, 'ready_current_lhb_branch': 1, 'structurally_insufficient': 1}`。
 - `lp_summary={'q': 2310, 'p_count': 9, 'all_zero_blocks_ready': True, 'box_only_global_closure': False, 'box_only_obstruction_count': 9, 'row_generators_ready': ['nonnegativity', 'phase_caps_g_le_M', 'WHOLEDEF_zero_block', 'BRIDGED_zero_block']}`。
 - `fourier_summary={'q': 2310, 'p_count': 9, 'class_counts': {'EmptyCap': 8267, 'PersistentCap': 192813, 'SparseCap': 48292}, 'has_persistent_cap': True}`。
 - `dualcap_summary={'aggregate_class_counts': {'ForcedPersistentByDensityBarrier': 24, 'PersistentCap': 68, 'SparseCap': 16}, 'aggregate_route_counts': {'LiftOrColumnTailOrCleanKLS': 24, 'LocalSurvivorOrExplicitPDEC': 16, 'RefinedPDECOrColumnTailRows': 68}}`。
@@ -39,6 +40,7 @@ Same-set capacity upper:
 | `TerminalConfluence` | `no_fourth_exit` | APS、DualCap、升层删除、NoDeletion-KL、promotion 均汇入三终端。 | 直接攻三终端证书；首要为 PDEC same-set U_CRT<L_PDEC。 |
 | `ContinuousDirectionArcDual` | `continuous_dualcap_materialized_not_closed` | 连续方向弧精确审计已提交；route_counts={'PersistentContinuousDualCapNeedsColumnTailOrCleanKLS': 8, 'SparseContinuousDualCapToLocalSurvivor': 1}；max U_box/M=0.998391。 | 方向采样退路关闭；下一步补 column/tail/cofactor 同集结构行或转 CleanKLS。 |
 | `ContinuousColumnTailBridge` | `actual_payment_selection_materialized` | 连续 cap 已接到 column-tail 暴露账本；route_counts={'ContinuousCapActualPaymentSelectionDichotomy': 8, 'NoTailDemandSparseOrLocalSurvivor': 1}；all_cap_recomputations_match=True。 | 从暴露候选桶提升到真实支付测度：集中给 PDEC，递归扩散给 CleanKLS/DLS。 |
+| `ContinuousActualPaymentSelection` | `actual_payment_measure_constructed` | canonical actual payment measure 已构造；route_counts={'ActualPaymentMeasureDichotomySubmitted': 8, 'NoTailDemandSparseOrLocalSurvivor': 1}；all_payment_counts_match_demand=True。 | 终端只剩两引理：positive-limsup finite signature=>PDEC；diffuse=>CleanKLS/DLS。 |
 
 ## 4. 当前结论
 
@@ -53,8 +55,9 @@ P×P exits closed；
 no fourth exit in current A1 chain；
 continuous direction-arc dual materialized but not closed；
 continuous column-tail bridge materialized；
-remaining gap is ActualPaymentSelection or CleanKLS admission。
+canonical actual payment measure constructed；
+remaining gap is positive-limsup PDEC or diffuse CleanKLS。
 ```
 
 所以下一步唯一值得硬攻的 A1 目标是同集结构行：
-把暴露候选桶提升为真实支付测度；若集中则提交 PDEC，若递归扩散则进入 CleanKLS/DLS。
+证明 positive-limsup 有限签名产生合法 PDEC 行；若所有有限签名递归消散，则满足 CleanKLS/DLS 输入。

@@ -29,6 +29,7 @@ DEFAULT_MASS = DOCS / "prime-matrix-triad-a1-pdec-mass-source-router.json"
 DEFAULT_CONFLUENCE = DOCS / "prime-matrix-triad-a1-terminal-confluence-router.json"
 DEFAULT_CONTINUOUS = DOCS / "prime-matrix-triad-a1-continuous-direction-arc-dual.json"
 DEFAULT_BRIDGE = DOCS / "prime-matrix-triad-a1-continuous-columntail-bridge.json"
+DEFAULT_ACTUAL_PAYMENT = DOCS / "prime-matrix-triad-a1-continuous-actual-payment-selection.json"
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -86,6 +87,7 @@ def build_frontier_rows(
     confluence: dict[str, Any],
     continuous: dict[str, Any],
     bridge: dict[str, Any],
+    actual_payment: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -164,6 +166,15 @@ def build_frontier_rows(
             ),
             "next_action": "从暴露候选桶提升到真实支付测度：集中给 PDEC，递归扩散给 CleanKLS/DLS。",
         },
+        {
+            "frontier": "ContinuousActualPaymentSelection",
+            "status": "actual_payment_measure_constructed",
+            "evidence": (
+                f"canonical actual payment measure 已构造；route_counts={actual_payment['route_counts']}；"
+                f"all_payment_counts_match_demand={actual_payment['all_payment_counts_match_demand']}。"
+            ),
+            "next_action": "终端只剩两引理：positive-limsup finite signature=>PDEC；diffuse=>CleanKLS/DLS。",
+        },
     ]
 
 
@@ -176,6 +187,7 @@ def run(
     confluence_path: Path,
     continuous_path: Path,
     bridge_path: Path,
+    actual_payment_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -186,8 +198,9 @@ def run(
     confluence = load_json(confluence_path)
     continuous = load_json(continuous_path)
     bridge = load_json(bridge_path)
+    actual_payment = load_json(actual_payment_path)
     frontier_rows = build_frontier_rows(
-        lp, direction, fourier, dualcap, mass, confluence, continuous, bridge
+        lp, direction, fourier, dualcap, mass, confluence, continuous, bridge, actual_payment
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -197,6 +210,7 @@ def run(
         "dualcap_materialized",
         "continuous_dualcap_materialized_not_closed",
         "actual_payment_selection_materialized",
+        "actual_payment_measure_constructed",
         "closed",
         "no_fourth_exit",
     }
@@ -214,6 +228,7 @@ def run(
             "terminal_confluence_json": file_sha256(confluence_path),
             "continuous_direction_arc_json": file_sha256(continuous_path),
             "continuous_columntail_bridge_json": file_sha256(bridge_path),
+            "continuous_actual_payment_selection_json": file_sha256(actual_payment_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -224,18 +239,19 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "ActualPaymentSelectionOrCleanKLSAdmission",
+        "terminal_dual_gap": "PositiveLimsupPDECOrDiffuseCleanKLS",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
             "连续方向弧精确审计已排除离散采样不足这一退路；连续 cap 也已接到 column-tail 暴露账本。"
-            "最终缺口变成真实支付选择：集中签名给 PDEC，递归扩散给 CleanKLS/DLS。"
+            "actual payment measure 已由 canonical 选择律构造。最终缺口只剩两个终端引理："
+            "positive-limsup finite signature 给 PDEC，diffuse 极限给 CleanKLS/DLS。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
             "当前合法行足以闭合零块子支并输出/路由 DualCap，连续方向弧也已精确物化为 persistent cap，"
-            "连续 cap 已接入 column-tail 暴露账本，但仍不足以给完整 U_CRT<L_PDEC。"
-            "下一步必须把暴露候选桶提升为真实支付测度，并完成 PDEC/CleanKLS 二分。"
+            "连续 cap 已接入 column-tail 暴露账本，且 canonical actual payment measure 已精确构造。"
+            "下一步不再是构造支付测度，而是证明 PDEC/CleanKLS 终端二分。"
         ),
     }
 
@@ -259,6 +275,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  box-only rows are insufficient；",
         "  failure must output DualCap or missing row；",
         "  continuous cap exposes column-tail payment buckets；",
+        "  canonical actual payment measure is constructed；",
         "  actual payment concentration returns to PDEC；",
         "  recursive diffusion returns to CleanKLS/DLS。",
         "```",
@@ -302,11 +319,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "no fourth exit in current A1 chain；",
             "continuous direction-arc dual materialized but not closed；",
             "continuous column-tail bridge materialized；",
-            "remaining gap is ActualPaymentSelection or CleanKLS admission。",
+            "canonical actual payment measure constructed；",
+            "remaining gap is positive-limsup PDEC or diffuse CleanKLS。",
             "```",
             "",
             "所以下一步唯一值得硬攻的 A1 目标是同集结构行：",
-            "把暴露候选桶提升为真实支付测度；若集中则提交 PDEC，若递归扩散则进入 CleanKLS/DLS。",
+            "证明 positive-limsup 有限签名产生合法 PDEC 行；若所有有限签名递归消散，则满足 CleanKLS/DLS 输入。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -324,6 +342,7 @@ def main() -> None:
     parser.add_argument("--confluence-json", type=Path, default=DEFAULT_CONFLUENCE)
     parser.add_argument("--continuous-json", type=Path, default=DEFAULT_CONTINUOUS)
     parser.add_argument("--bridge-json", type=Path, default=DEFAULT_BRIDGE)
+    parser.add_argument("--actual-payment-json", type=Path, default=DEFAULT_ACTUAL_PAYMENT)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -337,6 +356,7 @@ def main() -> None:
         confluence_path=args.confluence_json,
         continuous_path=args.continuous_json,
         bridge_path=args.bridge_json,
+        actual_payment_path=args.actual_payment_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

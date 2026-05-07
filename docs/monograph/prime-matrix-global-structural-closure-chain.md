@@ -3246,3 +3246,66 @@ ActualPaymentSelection:
   证明 limsup 正质量签名产生合法 PDEC 行；
   证明所有签名递归剥离为 0 时满足 CleanKLS/DLS 输入条件。
 ```
+
+## 66. A1 连续弧 ActualPaymentSelection 构造完成
+
+新增 `experiments/prime_matrix_triad_a1_continuous_actual_payment_selection.py` 后，
+上一节的“暴露候选桶”已经提升为真实支付测度。
+
+构造律：
+
+```text
+completion y=(y_ell)_ell；
+hole c in H_low(t)；
+pay(c,y)=first ell such that ell covers c under y_ell；
+mu_C(bucket)=# canonical payments in bucket。
+```
+
+该规则对每个完成态和每个低洞都选择唯一支付桶，因此得到恒等式：
+
+```text
+payment_count=sum_phase M(phase)*|H_low(phase)|。
+```
+
+运行结果：
+
+```text
+status=continuous_actual_payment_measure_constructed；
+cap_report_count=9；
+all_cap_recomputations_match=True；
+all_payment_counts_match_demand=True；
+route_counts={
+  ActualPaymentMeasureDichotomySubmitted: 8,
+  NoTailDemandSparseOrLocalSurvivor: 1
+}。
+```
+
+P 级 actual payment 读数：
+
+```text
+P=17 max_actual_signature_share=0.0357143，effective_support=28；
+P=19 max_actual_signature_share=0.0254011，effective_support=39.3684；
+P=23 max_actual_signature_share=0.0103149，effective_support=96.9474；
+P=29 max_actual_signature_share=0.0122877，effective_support=81.3824；
+P=31 max_actual_signature_share=0.0180444，effective_support=55.4189；
+P=37 max_actual_signature_share=0.0122645，effective_support=81.5362；
+P=43 max_actual_signature_share=0.00316956，effective_support=315.501；
+P=47 max_actual_signature_share=0.00598387，effective_support=167.116。
+```
+
+这些数值说明当前 canonical 支付测度高度分散，但仍不是最终证明。结构上，当前硬点已经缩成两个终端引理：
+
+```text
+A. positive-limsup finite signature -> legal column/tail PDEC row；
+B. all finite signatures vanish -> CleanKLS/DLS admission + large-sieve close。
+```
+
+前沿路由器同步更新后：
+
+```text
+ContinuousActualPaymentSelection => actual_payment_measure_constructed；
+terminal_dual_gap => PositiveLimsupPDECOrDiffuseCleanKLS。
+```
+
+这一步完成了 `ActualPaymentSelection` 的构造部分；剩余不是“如何定义真实支付”，
+而是证明上述两个终端分支都不能支持 `P×P` 内零行反例。
