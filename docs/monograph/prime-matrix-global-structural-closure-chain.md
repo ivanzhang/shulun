@@ -6112,3 +6112,78 @@ NonAPWFDNoProjectionAndDIFormulaLedger
 
 这一步关闭了“DI 公式未固定”的退路；剩余必须直接补 `R,D,N` 变量抽取表，并把 `J^2` 三项
 逐项支配到当前 WFD 自然尺度与任意 `log^{-A}` 节省预算中。
+
+## 105. DI RDN substitution：R/D/N 抽象变量消去，尺度侧压成当前 WFD 到 Maynard-W4 参数账本
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_di_rdn_substitution_router.py` 后，第 104 节中的
+`DITheorem12RDNVariableSubstitutionLedger` 又被压缩。关键代入来自 Maynard 对 DI Theorem 12
+的实际调用：
+
+```text
+R_DI = Z；
+S_DI = 1；
+N_DI = Y；
+D_DI = B；
+C_DI = C。
+```
+
+代入后，DI 的 `J^2` 三项变成 Maynard-W4 正规形：
+
+```text
+J^2 <= C(Z+Y)(C+B Z)
+       + C^2 B sqrt((Z+Y)Z)
+       + B^2 Y Z。
+```
+
+机器结果：
+
+```text
+status=di_rdn_substitution_reduced_to_current_wfd_maynard_w4_parameter_ledger_open；
+closed_substitution_gates=[
+  DIToMaynardW4Alias,
+  JBoundAfterAlias,
+  DIAdditionalVariablesRDNMapped,
+  KZEHasW4ShapeInputs
+]；
+open_substitution_gates=[
+  CurrentWFDMatchesW4OffDiagonalForm,
+  MaynardW4ParameterBoundsForCurrentWFD,
+  JBoundDominanceAfterW4Substitution
+]；
+terminal_gap_after_router=CurrentWFDToMaynardW4ParameterLedger。
+```
+
+因此旧问题：
+
+```text
+DIAdditionalVariablesRDNMapped
+```
+
+已经不再是抽象变量缺口；它被替换为更具体的当前对象问题：
+
+```text
+CurrentWFDToMaynardW4ParameterLedger
+  = CurrentWFDMatchesW4OffDiagonalForm
+    + MaynardW4ParameterBoundsForCurrentWFD
+    + JBoundDominanceAfterW4Substitution。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndW4ParameterLedger。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndW4ParameterLedger
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDToMaynardW4ParameterLedger。
+```
+
+这一步的意义是消去一个符号层误差：DI 的 `S` 变量在该调用中是平凡窗口 `1`，当前 WFD 内部
+的 `S` 不应直接等同于 DI 公式的 `S_DI`，而是进入 `Z=s1*s2` 与
+`Y=a*f*(h1*s1-h2*s2)` 的 off-diagonal 参数表。下一步只能证明当前未中心化 WFD 块确实逐项
+生成这些 W4 参数，并核算 `B,C,Z,Y` 的 dyadic 范围与 `J^2` 三项支配。

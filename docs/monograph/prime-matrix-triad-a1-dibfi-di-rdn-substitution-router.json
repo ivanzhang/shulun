@@ -1,0 +1,91 @@
+{
+  "certificate_type": "triad_a1_dibfi_di_rdn_substitution_router",
+  "closed_substitution_gates": [
+    "DIToMaynardW4Alias",
+    "JBoundAfterAlias",
+    "DIAdditionalVariablesRDNMapped",
+    "KZEHasW4ShapeInputs"
+  ],
+  "di_rdn_substitution_closed": false,
+  "di_to_w4_alias": {
+    "C_DI": "C",
+    "D_DI": "B",
+    "N_DI": "Y",
+    "R_DI": "Z",
+    "S_DI": "1"
+  },
+  "open_substitution_gates": [
+    "CurrentWFDMatchesW4OffDiagonalForm",
+    "MaynardW4ParameterBoundsForCurrentWFD",
+    "JBoundDominanceAfterW4Substitution"
+  ],
+  "previous_terminal_gap": "DITheorem12RDNVariableSubstitutionLedger",
+  "review_conclusion": "DI 的 R/D/N 变量已在公式层代入到 Maynard-W4 正规形；剩余不再是 DI 定理变量不明，而是当前 WFD 块到 W4 参数表的逐项生成与 J-bound 三项支配。",
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "di_formula_ledger_json": "68f6a0be6499b2d1b5d8ac3b1cd5559aef32ed6ef3fdd59304253586393125d9",
+    "di_formula_note_md": "330d70a56782a2a3fd39588f0a5c06b3d31dc9a1314535fdd738ab8c79500f7b",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "4f7a97d69e94ac4733db5c9b254e16f65f5556b9b7b7fa78f6874d631bdbd7f6"
+  },
+  "status": "di_rdn_substitution_reduced_to_current_wfd_maynard_w4_parameter_ledger_open",
+  "structural_law": "The extra DI variables R,D,N are no longer abstract: under the standard Maynard application of DI Theorem 12, they alias to Z,B,Y with S_DI=1. The remaining scale work is not theorem-formula work but current-object work: prove that the present uncentered WFD block has the W4 off-diagonal variables z=s1*s2, y=a*f*(h1*s1-h2*s2), with the required dyadic bounds, and then dominate the three W4 J-bound terms.",
+  "substitution_rows": [
+    {
+      "closed": true,
+      "evidence": "DI Theorem 12 取 r=z, s=1, n=y, d=b, c=c，得到 Maynard W4 的 J-bound。",
+      "gate": "DIToMaynardW4Alias",
+      "next_target": "MaynardW4ParameterBoundsForCurrentWFD",
+      "remaining": "none at pure formula-alias level"
+    },
+    {
+      "closed": true,
+      "evidence": "J^2 被代入为 C(Z+Y)(C+B Z)+C^2 B sqrt((Z+Y)Z)+B^2 Y Z。",
+      "gate": "JBoundAfterAlias",
+      "next_target": "MaynardW4ParameterBoundsForCurrentWFD",
+      "remaining": "none before current-window substitution"
+    },
+    {
+      "closed": true,
+      "evidence": "R_DI,D_DI,N_DI 已分别映到 Z,B,Y；S_DI 为平凡窗口 1。",
+      "gate": "DIAdditionalVariablesRDNMapped",
+      "next_target": "CurrentWFDToMaynardW4ParameterLedger",
+      "remaining": "仍需把当前 WFD 的内部 S/H/frequency 变量压到 Z,Y,B,C。"
+    },
+    {
+      "closed": true,
+      "evidence": "KZ-E spine 与共同变量表含 s1/s2、h、C/S/H 和 Kloosterman 逆元相位接口。",
+      "gate": "KZEHasW4ShapeInputs",
+      "next_target": "CurrentWFDToMaynardW4ParameterLedger",
+      "remaining": "形状接口可用，但尚未证明当前块等于 Maynard W4 的 off-diagonal 结构。"
+    },
+    {
+      "closed": false,
+      "evidence": "Maynard W4 使用 z=s1*s2、y=a*f*(h1*s1-h2*s2)、b,c 两个模数窗口；当前账本尚未逐项生成这些变量。",
+      "gate": "CurrentWFDMatchesW4OffDiagonalForm",
+      "next_target": "CurrentWFDToMaynardW4ParameterLedger",
+      "remaining": "从当前 E_disp/WFD_core 写出 z,y,b,c 的 dyadic 分解和 off-diagonal ell!=0 归约。"
+    },
+    {
+      "closed": false,
+      "evidence": "Maynard 应用需要 B<=NR、C<=NRS、Z≈S^2、Y<=N R^2 S^3/M 等参数界。",
+      "gate": "MaynardW4ParameterBoundsForCurrentWFD",
+      "next_target": "CurrentWFDToMaynardW4ParameterLedger",
+      "remaining": "把这些 Maynard 参数界翻译为当前 X,Q,N,M,C,S,H 的非冲突变量表。"
+    },
+    {
+      "closed": false,
+      "evidence": "上游 open_formula_gates=['DIAdditionalVariablesRDNMapped', 'KLSModulusWindowQuantified', 'InverseVariableWindowQuantified', 'DIJScaleDominanceSubstitution']；J-bound 公式已降维但还未比较目标尺度。",
+      "gate": "JBoundDominanceAfterW4Substitution",
+      "next_target": "CurrentWFDToMaynardW4ParameterLedger",
+      "remaining": "证明 C(Z+Y)(C+BZ)、C^2B sqrt((Z+Y)Z)、B^2YZ 均被 WFD 自然尺度/log^A 吸收。"
+    }
+  ],
+  "terminal_gap_after_router": "CurrentWFDToMaynardW4ParameterLedger",
+  "terminal_gap_expansion": [
+    "CurrentWFDMatchesW4OffDiagonalForm",
+    "MaynardW4ParameterBoundsForCurrentWFD",
+    "JBoundDominanceAfterW4Substitution"
+  ],
+  "w4_j_bound": "J^2 <= C(Z+Y)(C+B Z)+C^2 B sqrt((Z+Y)Z)+B^2 Y Z"
+}

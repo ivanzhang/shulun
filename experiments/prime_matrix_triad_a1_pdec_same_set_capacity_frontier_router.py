@@ -128,6 +128,9 @@ DEFAULT_DIBFI_NONAP_OBJECT_LEDGER = (
 DEFAULT_DIBFI_DI_FORMULA_LEDGER = (
     DOCS / "prime-matrix-triad-a1-dibfi-di-formula-ledger-router.json"
 )
+DEFAULT_DIBFI_DI_RDN_SUBSTITUTION = (
+    DOCS / "prime-matrix-triad-a1-dibfi-di-rdn-substitution-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -224,6 +227,7 @@ def build_frontier_rows(
     dibfi_nonap_scale_ledger: dict[str, Any],
     dibfi_nonap_object_ledger: dict[str, Any],
     dibfi_di_formula_ledger: dict[str, Any],
+    dibfi_di_rdn_substitution: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -744,6 +748,16 @@ def build_frontier_rows(
             ),
             "next_action": "补 R/D/N 变量抽取表，并把 J^2 三项逐项压到 WFD 自然尺度/log^A。",
         },
+        {
+            "frontier": "A1DIBFIDIRDNSubstitutionRouter",
+            "status": "di_rdn_substitution_reduced_to_current_wfd_maynard_w4_parameter_ledger_open",
+            "evidence": (
+                f"DI R/D/N 已代入 Maynard-W4 正规形；"
+                f"open_substitution_gates={dibfi_di_rdn_substitution['open_substitution_gates']}；"
+                f"terminal_gap={dibfi_di_rdn_substitution['terminal_gap_after_router']}。"
+            ),
+            "next_action": "证明当前 WFD off-diagonal 块逐项生成 W4 的 z/y/b/c 参数，并完成 J-bound 三项支配。",
+        },
     ]
 
 
@@ -795,6 +809,7 @@ def run(
     dibfi_nonap_scale_ledger_path: Path,
     dibfi_nonap_object_ledger_path: Path,
     dibfi_di_formula_ledger_path: Path,
+    dibfi_di_rdn_substitution_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -844,6 +859,7 @@ def run(
     dibfi_nonap_scale_ledger = load_json(dibfi_nonap_scale_ledger_path)
     dibfi_nonap_object_ledger = load_json(dibfi_nonap_object_ledger_path)
     dibfi_di_formula_ledger = load_json(dibfi_di_formula_ledger_path)
+    dibfi_di_rdn_substitution = load_json(dibfi_di_rdn_substitution_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -892,6 +908,7 @@ def run(
         dibfi_nonap_scale_ledger,
         dibfi_nonap_object_ledger,
         dibfi_di_formula_ledger,
+        dibfi_di_rdn_substitution,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -942,13 +959,14 @@ def run(
         "nonap_scale_ledger_reduced_to_di_kloosterman_window_substitution_open",
         "nonap_object_ledger_reduced_to_uncentered_wfd_no_projection_identity_open",
         "di_kloosterman_formula_extracted_rd_n_substitution_open",
+        "di_rdn_substitution_reduced_to_current_wfd_maynard_w4_parameter_ledger_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_materialized_nonap_wfd_no_projection_di_formula_open",
+        "status": "same_set_capacity_frontier_materialized_nonap_wfd_no_projection_w4_parameter_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1034,6 +1052,9 @@ def run(
             "a1_dibfi_di_formula_ledger_json": file_sha256(
                 dibfi_di_formula_ledger_path
             ),
+            "a1_dibfi_di_rdn_substitution_json": file_sha256(
+                dibfi_di_rdn_substitution_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1044,7 +1065,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "NonAPWFDNoProjectionAndDIFormulaLedger",
+        "terminal_dual_gap": "NonAPWFDNoProjectionAndW4ParameterLedger",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -1084,7 +1105,8 @@ def run(
             "非 AP 分支已接回既有原始 dispersion 链条，剩余为量化无投影窗口证书；"
             "其中尺度侧又被压成 DI Kloosterman 窗口代入账本，BFI level 不再是终端；"
             "对象侧也已剥离 APErrorRepresentation，只剩未中心化 WFD 到 KE-13 的无投影恒等式；"
-            "DI 侧又把 Theorem 12 的 J^2 公式固定下来，剩余变成 R/D/N 变量抽取与 J^2 三项支配。"
+            "DI 侧又把 Theorem 12 的 J^2 公式固定下来，且 R/D/N 已代入 Maynard-W4 正规形；"
+            "剩余变成当前 WFD 块到 W4 参数表的逐项生成和 J-bound 三项支配。"
         ),
         "review_conclusion": (
             "Triad-A1 的 PDEC same-set capacity 已被压到一个明确前沿："
@@ -1116,7 +1138,7 @@ def run(
             "当前 KE-13/WFD 窗口假设匹配已化为共同变量表上的单一合取证书："
             "对象不变转移与尺度不等式必须在同一变量表上同时成立。"
             "该合取证书现已继续压成 "
-            "`NonAPWFDNoProjectionAndDIFormulaLedger`。"
+            "`NonAPWFDNoProjectionAndW4ParameterLedger`。"
         ),
     }
 
@@ -1181,6 +1203,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  non-AP scale side reduces to DI Kloosterman window substitution ledger。",
         "  non-AP object side reduces to uncentered WFD-to-KE13 no-projection identity。",
         "  DI Kloosterman side reduces to DI Theorem 12 R/D/N variable substitution ledger。",
+        "  DI R/D/N variables reduce to current WFD -> Maynard-W4 parameter ledger。",
         "```",
         "",
         "## 2. 汇总",
@@ -1261,7 +1284,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFINonAPScaleLedger router materialized；",
             "DIBFINonAPObjectLedger router materialized；",
             "DIBFIDIFormulaLedger router materialized；",
-            "remaining independent gap is NonAPWFDNoProjectionAndDIFormulaLedger。",
+            "DIBFIDIRDNSubstitution router materialized；",
+            "remaining independent gap is NonAPWFDNoProjectionAndW4ParameterLedger。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1443,6 +1467,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_DI_FORMULA_LEDGER,
     )
+    parser.add_argument(
+        "--dibfi-di-rdn-substitution-json",
+        type=Path,
+        default=DEFAULT_DIBFI_DI_RDN_SUBSTITUTION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -1495,6 +1524,7 @@ def main() -> None:
         dibfi_nonap_scale_ledger_path=args.dibfi_nonap_scale_ledger_json,
         dibfi_nonap_object_ledger_path=args.dibfi_nonap_object_ledger_json,
         dibfi_di_formula_ledger_path=args.dibfi_di_formula_ledger_json,
+        dibfi_di_rdn_substitution_path=args.dibfi_di_rdn_substitution_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
