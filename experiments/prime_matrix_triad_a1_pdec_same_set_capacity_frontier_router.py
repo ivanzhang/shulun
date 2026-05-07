@@ -53,6 +53,9 @@ DEFAULT_MOVING_BLOCK_OBSTRUCTION = (
 DEFAULT_SOURCE_BLOCK_ENTROPY = (
     DOCS / "prime-matrix-triad-a1-source-block-entropy-router.json"
 )
+DEFAULT_EXACT_WFD_SOURCE_ENTROPY = (
+    DOCS / "prime-matrix-triad-a1-exact-wfd-source-entropy-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -122,6 +125,7 @@ def build_frontier_rows(
     ncblk_projection: dict[str, Any],
     moving_block_obstruction: dict[str, Any],
     source_block_entropy: dict[str, Any],
+    exact_wfd_source_entropy: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -328,6 +332,18 @@ def build_frontier_rows(
             ),
             "next_action": "内部版证明 exact WFD/source 筛权反集中；外部版引用 DI/BFI 原始 dispersion。",
         },
+        {
+            "frontier": "A1ExactWFDSourceEntropyRouter",
+            "status": "exact_factor_support_or_external_dibfi_required"
+            if exact_wfd_source_entropy["next_internal_target"]
+            == "ExactFactorSupportLowerBound"
+            else "exact_wfd_source_entropy_gap",
+            "evidence": (
+                f"ExactWFDSourceEntropy 已化为精确因子支撑下界；"
+                f"terminal_gap={exact_wfd_source_entropy['terminal_gap_after_router']}。"
+            ),
+            "next_action": "内部版证明 exact factor support lower bound；外部版引用 DI/BFI 原始 dispersion。",
+        },
     ]
 
 
@@ -352,6 +368,7 @@ def run(
     ncblk_projection_path: Path,
     moving_block_obstruction_path: Path,
     source_block_entropy_path: Path,
+    exact_wfd_source_entropy_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -374,6 +391,7 @@ def run(
     ncblk_projection = load_json(ncblk_projection_path)
     moving_block_obstruction = load_json(moving_block_obstruction_path)
     source_block_entropy = load_json(source_block_entropy_path)
+    exact_wfd_source_entropy = load_json(exact_wfd_source_entropy_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -395,6 +413,7 @@ def run(
         ncblk_projection,
         moving_block_obstruction,
         source_block_entropy,
+        exact_wfd_source_entropy,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -416,6 +435,7 @@ def run(
         "moving_block_spread_or_external_dibfi_required",
         "source_block_entropy_or_external_dibfi_required",
         "exact_wfd_source_entropy_or_external_dibfi_required",
+        "exact_factor_support_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -447,6 +467,9 @@ def run(
                 moving_block_obstruction_path
             ),
             "a1_source_block_entropy_json": file_sha256(source_block_entropy_path),
+            "a1_exact_wfd_source_entropy_json": file_sha256(
+                exact_wfd_source_entropy_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -457,7 +480,7 @@ def run(
         "frontier_rows": frontier_rows,
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
-        "terminal_dual_gap": "ExactWFDSourceEntropyOrExternalDIBFIOriginalDispersion",
+        "terminal_dual_gap": "ExactFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion",
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
             "DualCap 输出、P×P 出口和终端回流均已接线；box-only 行结构上不足，"
@@ -470,7 +493,8 @@ def run(
             "外部深定理版接入窗口化 DI/BFI/Kuznetsov；SC-9 又已展开到 KZ-A--KZ-E，"
             "NC-BLK 又被核查为 fixed-projection diffuse 到 moving-block spread 的真实缺口。"
             "MovingBlockSpread 进一步被投影不可见模型阻断。SourceBlockEntropy 可推出 NC-BLK，"
-            "但形式 WFD/Type-I-II/Fourier 输入不强制该熵；当前无黑箱版只剩 ExactWFDSourceEntropy，"
+            "但形式 WFD/Type-I-II/Fourier 输入不强制该熵。ExactWFDSourceEntropy 又被压缩为"
+            "精确因子支撑下界；当前无黑箱版只剩 ExactFactorSupportLowerBound，"
             "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
@@ -484,7 +508,8 @@ def run(
             "NC-BLK 的 fixed-projection 到 moving-block 缺口也已命名。"
             "MovingBlockSpread 不能由 fixed-projection diffuse 直接推出。"
             "SourceBlockEntropy 虽能推出 NC-BLK，但不由当前形式 WFD 输入自动推出。"
-            "下一步不再是 A1 内部路由，而是证明 ExactWFDSourceEntropy 或给出外部 DI/BFI 原始 dispersion 引用。"
+            "ExactWFDSourceEntropy 已化为精确因子支撑下界。"
+            "下一步不再是 A1 内部路由，而是证明 ExactFactorSupportLowerBound 或给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
 
@@ -521,7 +546,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  SC-9 is reduced to NC-BLK or external DI/BFI dispersion；",
         "  NC-BLK needs moving-block spread or external original dispersion；",
         "  MovingBlockSpread needs source-block entropy or external DI/BFI；",
-        "  SourceBlockEntropy needs exact WFD source entropy or external DI/BFI。",
+        "  SourceBlockEntropy needs exact WFD source entropy or external DI/BFI；",
+        "  ExactWFDSourceEntropy needs exact factor support lower bound or external DI/BFI。",
         "```",
         "",
         "## 2. 汇总",
@@ -575,11 +601,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "NC-BLK projection gap named；",
             "MovingBlockSpread obstruction materialized；",
             "SourceBlockEntropy router materialized；",
-            "remaining independent gap is ExactWFDSourceEntropy or external DI/BFI original dispersion。",
+            "ExactWFDSourceEntropy router materialized；",
+            "remaining independent gap is ExactFactorSupportLowerBound or external DI/BFI original dispersion。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是精确源头结构行：",
-            "证明 ExactWFDSourceEntropy，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "所以下一步唯一值得硬攻的 A1 目标是精确因子支撑行：",
+            "证明 ExactFactorSupportLowerBound，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -629,6 +656,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_SOURCE_BLOCK_ENTROPY,
     )
+    parser.add_argument(
+        "--exact-wfd-source-entropy-json",
+        type=Path,
+        default=DEFAULT_EXACT_WFD_SOURCE_ENTROPY,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -654,6 +686,7 @@ def main() -> None:
         ncblk_projection_path=args.ncblk_projection_json,
         moving_block_obstruction_path=args.moving_block_obstruction_json,
         source_block_entropy_path=args.source_block_entropy_json,
+        exact_wfd_source_entropy_path=args.exact_wfd_source_entropy_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

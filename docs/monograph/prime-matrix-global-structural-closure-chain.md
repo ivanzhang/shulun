@@ -4118,3 +4118,87 @@ terminal_dual_gap => ExactWFDSourceEntropyOrExternalDIBFIOriginalDispersion。
 这一步完成了 `SourceBlockEntropy => NC-BLK` 的条件证明，同时排除了“形式 well-factorable
 结构自动给源头熵”的隐藏跳步。继续无黑箱硬攻时，不能再停留在抽象 WFD 模板，必须进入精确筛权
 与 Type/Fourier 系数的反集中证明。
+
+## 78. A1 ExactWFDSourceEntropy 化为精确因子支撑下界
+
+新增 `experiments/prime_matrix_triad_a1_exact_wfd_source_entropy_router.py` 后，
+第 77 节留下的 `ExactWFDSourceEntropy` 被继续压缩。关键发现是：这一步不再是谱相消问题；
+若精确 well-factorable 因子在每个 surviving balanced block 内有足够支撑，则单块容量份额
+自动为任意对数小。
+
+机器结果：
+
+```text
+status=exact_wfd_source_entropy_reduced_to_factor_support_lower_bound；
+next_internal_target=ExactFactorSupportLowerBound；
+terminal_gap_after_router=ExactFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion。
+```
+
+闭合律如下。令 `L=log y`，若
+
+```text
+|alpha_u|, |delta_v| <= L^C；
+sum_u |alpha_u| >= U/L^C；
+sum_v |delta_v| >= V/L^C；
+```
+
+则任一 moving pair 的容量份额满足
+
+```text
+max_{u,v} |alpha_u delta_v| / (sum|alpha| sum|delta|)
+  <= L^(4C)/(UV).
+```
+
+因此若 balanced ranges 满足
+
+```text
+U,V >= L^B,   B >= A+2C,
+```
+
+就得到
+
+```text
+max moving block share <= L^(-2A),
+```
+
+从而推出：
+
+```text
+ExactFactorSupportLowerBound
+  => ExactWFDSourceEntropy
+  => SourceBlockEntropyNCBLK
+  => NC-BLK.
+```
+
+当前仍未闭合的原因也很明确：
+
+```text
+当前 A1/KLS ledger 有 balanced dyadic range、divisor bound、fixed-residue L2-flat；
+但没有逐 surviving balanced block 的 exact factor support lower bound；
+K4 的 fixed-residue L2-flat 也不是 moving factor-pair support theorem。
+```
+
+所以新的最窄内部目标是：
+
+```text
+ExactFactorSupportLowerBound:
+  for exact Rosser/Iwaniec-Buchstab factors and the attached Type/Fourier capacities,
+  prove surviving balanced u- and v-ranges have enough absolute support/mass.
+```
+
+外部路线保持不变：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  cite a matched original DI/BFI dispersion theorem supplying the needed block variance saving.
+```
+
+前沿路由器同步更新后：
+
+```text
+A1ExactWFDSourceEntropyRouter => exact_factor_support_or_external_dibfi_required；
+terminal_dual_gap => ExactFactorSupportLowerBoundOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把“精确源头熵”从抽象熵命题降为初等但必须逐项证明的筛权支撑命题。继续无黑箱硬攻时，
+下一步不应回到数值统计或谱大筛，而应证明精确筛权因子在平衡区间内不能退化为 moving atom。
