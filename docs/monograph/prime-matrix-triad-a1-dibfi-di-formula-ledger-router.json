@@ -1,0 +1,77 @@
+{
+  "certificate_type": "triad_a1_dibfi_di_formula_ledger_router",
+  "closed_formula_gates": [
+    "DITheorem12FormulaExtracted",
+    "KLSInterfaceRowsReady"
+  ],
+  "di_formula_ledger_closed": false,
+  "formula_rows": [
+    {
+      "closed": true,
+      "evidence": "Maynard 公开源码中的 DI 引理已记录 J^2 三项；定理位置仍为 DI1982-Theorem12。",
+      "gate": "DITheorem12FormulaExtracted",
+      "next_target": "DITheorem12RDNVariableSubstitutionLedger",
+      "remaining": "none at formula-extraction level"
+    },
+    {
+      "closed": true,
+      "evidence": "KLS 模板与共同变量表已有 C/S/H、相位、gcd、平滑和 log-loss 接口。",
+      "gate": "KLSInterfaceRowsReady",
+      "next_target": "DITheorem12RDNVariableSubstitutionLedger",
+      "remaining": "模板只有 C/S/H 接口，尚未给出 DI 公式中的 R,D,N 分拆。"
+    },
+    {
+      "closed": false,
+      "evidence": "DI Theorem 12 的 J^2 需要 R,D,N；当前共同变量表只有 X,Q,N,M,C,S,H。",
+      "gate": "DIAdditionalVariablesRDNMapped",
+      "next_target": "DITheorem12RDNVariableSubstitutionLedger",
+      "remaining": "必须把 r~R、d~D、n~N 从当前 dispersion/WFD 块中逐项抽出并固定。"
+    },
+    {
+      "closed": false,
+      "evidence": "C 窗口已命名，但 DI 公式使用 C,D,R 的组合模数结构 C+D*R。",
+      "gate": "KLSModulusWindowQuantified",
+      "next_target": "DITheorem12RDNVariableSubstitutionLedger",
+      "remaining": "证明当前模数族可唯一分解为 DI 的 c~C,d~D,r~R 三个窗口。"
+    },
+    {
+      "closed": false,
+      "evidence": "S 窗口已命名，但 DI 公式要求 (r,s)=1 且相位 e(n*bar(dr)/(cs))。",
+      "gate": "InverseVariableWindowQuantified",
+      "next_target": "DITheorem12RDNVariableSubstitutionLedger",
+      "remaining": "证明当前 CRT 合并变量 s、可逆条件和频率/系数 n 与 DI 的 S,N 完全同一。"
+    },
+    {
+      "closed": false,
+      "evidence": "旧 open_scale_gates=['KLSModulusWindowQuantified', 'InverseVariableWindowQuantified', 'DIJScaleDominanceSubstitution']；J^2 三项已记录但未代入。",
+      "gate": "DIJScaleDominanceSubstitution",
+      "next_target": "DITheorem12RDNVariableSubstitutionLedger",
+      "remaining": "把 J^2 三项逐项比较到 WFD 自然二范数尺度/log^A。"
+    }
+  ],
+  "open_formula_gates": [
+    "DIAdditionalVariablesRDNMapped",
+    "KLSModulusWindowQuantified",
+    "InverseVariableWindowQuantified",
+    "DIJScaleDominanceSubstitution"
+  ],
+  "previous_terminal_gap": "DIKloostermanWindowSubstitutionLedger",
+  "review_conclusion": "DI 侧已从描述性 `DIKloostermanWindowSubstitutionLedger` 压成 `DITheorem12RDNVariableSubstitutionLedger`。公式已固定；未闭合的是 R/D/N 变量抽取和 J^2 三项逐项支配。",
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "di_formula_note_md": "330d70a56782a2a3fd39588f0a5c06b3d31dc9a1314535fdd738ab8c79500f7b",
+    "kls_template_md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "nonap_scale_ledger_json": "3f699f8a003f2f1a743ca3af2dea79ea438d4423bde66c31990dec9c5bec3a5d",
+    "script": "3ee2ea864b63057e3f515ec3ea26610fb61b9ec4c14d4c73c6cc27e5e8f26eb6",
+    "theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4"
+  },
+  "status": "di_kloosterman_formula_extracted_rd_n_substitution_open",
+  "structural_law": "The DI-side scale gap is now formula-level. The old C/S/H wording is insufficient because DI Theorem 12 uses variables R,S,N,D,C and the three-term J^2 expression. The remaining task is one substitution ledger: extract R,D,N from the current dispersion/WFD block, then compare each J^2 term to the WFD natural norm with the log-saving budget.",
+  "terminal_gap_after_router": "DITheorem12RDNVariableSubstitutionLedger",
+  "terminal_gap_expansion": [
+    "DIAdditionalVariablesRDNMapped",
+    "KLSModulusWindowQuantified",
+    "InverseVariableWindowQuantified",
+    "DIJScaleDominanceSubstitution"
+  ]
+}

@@ -6042,3 +6042,73 @@ NonAPWFDNoProjectionAndDIWindowLedger
 因此当前最窄剩余已经不再含 AP-source 身份、BFI level、Type product、Fourier tail 或 log-loss。
 剩余是两个硬核证书的合取：对象侧证明原始未中心化 WFD 到 KE-13 的无投影恒等式，尺度侧证明
 DI Kloosterman 模数/逆元/频率 J-scale 的精确代入。
+
+## 104. DI formula ledger：固定 Theorem 12 的 J-scale 公式，尺度侧压成 R/D/N 变量代入
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-di-theorem12-formula-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_di_formula_ledger_router.py` 后，第 103 节中的尺度侧
+不再停留在“DI Kloosterman 窗口代入”这一描述性口号。Maynard 公开源码对
+Deshouillers--Iwaniec Theorem 12 的转写给出实际需要代入的 `J^2` 三项：
+
+```text
+J^2 =
+  C*S*(R*S+N)*(C+D*R)
+  + C^2*D*S*sqrt((R*S+N)*R)
+  + D^2*N*R.
+```
+
+机器结果：
+
+```text
+status=di_kloosterman_formula_extracted_rd_n_substitution_open；
+closed_formula_gates=[
+  DITheorem12FormulaExtracted,
+  KLSInterfaceRowsReady
+]；
+open_formula_gates=[
+  DIAdditionalVariablesRDNMapped,
+  KLSModulusWindowQuantified,
+  InverseVariableWindowQuantified,
+  DIJScaleDominanceSubstitution
+]；
+terminal_gap_after_router=DITheorem12RDNVariableSubstitutionLedger。
+```
+
+这说明旧的 `C,S,H` 共同变量表还不够。DI Theorem 12 的实际输入需要：
+
+```text
+DIFormulaVariableTable:
+  C: c~C；
+  D: d~D；
+  R: r~R；
+  S: s~S, (r,s)=1；
+  N: n~N。
+```
+
+因此尺度侧最窄剩余变成：
+
+```text
+DITheorem12RDNVariableSubstitutionLedger
+  = DIAdditionalVariablesRDNMapped
+    + KLSModulusWindowQuantified
+    + InverseVariableWindowQuantified
+    + DIJScaleDominanceSubstitution。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndDIFormulaLedger。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndDIFormulaLedger
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + DITheorem12RDNVariableSubstitutionLedger。
+```
+
+这一步关闭了“DI 公式未固定”的退路；剩余必须直接补 `R,D,N` 变量抽取表，并把 `J^2` 三项
+逐项支配到当前 WFD 自然尺度与任意 `log^{-A}` 节省预算中。
