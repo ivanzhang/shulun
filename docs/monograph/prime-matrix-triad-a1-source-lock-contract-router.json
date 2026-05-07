@@ -1,0 +1,72 @@
+{
+  "a1_clean_branch_canonical_admission_closed": false,
+  "branch_split_preserves_original_target": true,
+  "canonical_branch_feeds_support_chain": true,
+  "canonical_source_branch_defined": true,
+  "certificate_type": "triad_a1_source_lock_contract_router",
+  "gate_rows": [
+    {
+      "available": "formal WFD source has already been rejected as insufficient",
+      "closed": true,
+      "gap": "none; this prevents a false closure",
+      "gate": "GenericWFDNotEligibleForInternalSupport",
+      "needed": "generic well-factorable lambda_c must not enter the canonical support chain",
+      "route": "generic WFD branch uses external DI/BFI original dispersion"
+    },
+    {
+      "available": "KZ-E spine notes RIW/Buchstab weights may be used as algebraic definition",
+      "closed": true,
+      "gap": "definition must be explicit in the A1 ledger",
+      "gate": "CanonicalSourceBranchDefinition",
+      "needed": "define the internal branch object with lambda_c := lambda_c^RIW-tree before Cauchy/dispersion",
+      "route": "create a canonical source branch, not a generic WFD theorem"
+    },
+    {
+      "available": "two legal routes exist: canonical internal support or generic external DI/BFI",
+      "closed": true,
+      "gap": "must record that noncanonical source exits to external DI/BFI/PDEC",
+      "gate": "BranchSplitPreservesOriginalTarget",
+      "needed": "the split must not replace a generic theorem by a narrower one without routing the complement",
+      "route": "prove a dichotomy: canonical source branch or generic WFD branch"
+    },
+    {
+      "available": "current ledger wants the actual A1/KZ-E source identified",
+      "closed": false,
+      "gap": "this is now the only internal branch-admission obligation",
+      "gate": "A1CleanBranchCanonicalAdmission",
+      "needed": "the clean A1 branch under attack is admitted into the canonical RIW/Buchstab source branch",
+      "route": "show the original row/triad clean construction chooses the canonical source weight"
+    },
+    {
+      "available": "all previous routers are conditional on canonical source lock",
+      "closed": true,
+      "gap": "conditional implication is direct",
+      "gate": "CanonicalBranchFeedsSupportChain",
+      "needed": "once admitted, the internal support chain applies without further source ambiguity",
+      "route": "canonical branch => decision-tree support => factor support => A1 chain"
+    },
+    {
+      "available": "external DI/BFI route is already registered",
+      "closed": true,
+      "gap": "none after branch split",
+      "gate": "NoncanonicalBranchExternalReturn",
+      "needed": "if A1 clean branch is not canonical, no internal support proof is claimed",
+      "route": "route to ExternalDIBFIOriginalDispersion or PDEC/SAE missing-row"
+    }
+  ],
+  "generic_wfd_not_eligible_for_internal_support": true,
+  "global_internal_a1_closed": false,
+  "next_internal_target": "A1CleanBranchCanonicalSourceAdmission",
+  "noncanonical_branch_external_return": true,
+  "reduction_law": "The source-lock contract is resolved as a rigorous branch split. The internal support chain is valid on the canonical RIW/Buchstab source branch, where lambda_c is defined as the decision-tree coefficient before any Cauchy or dispersion operation. It is not valid for a generic well-factorable WFD theorem. The complement is not ignored: a noncanonical source must go to external DI/BFI original dispersion or a PDEC/SAE missing-row return. Thus the only remaining internal obligation is branch admission: prove the A1 clean branch under attack is the canonical source branch.",
+  "review_conclusion": "CanonicalRIWBuchstabSourceLockContract 已被严格二分：canonical 源头分支上，source lock 按定义成立并可接入此前完整内部支撑链；generic well-factorable 分支不能偷用该链，必须走外部 DI/BFI 或回 PDEC/SAE。剩余内部目标只剩证明当前 A1 clean 分支确实属于 canonical RIW/Buchstab source branch。",
+  "source_hashes": {
+    "script": "1de38ba32613338d7902fa3e1611afd3e5bcbd8f1254e611712b5b3160903269",
+    "source_identification_json": "cc993fc9dd2d8ff1bd1103703175a8dc35f80252afa771542af31d4d708d3318"
+  },
+  "source_identification_input_next_target": "CanonicalRIWBuchstabSourceLockContract",
+  "source_identification_input_status": "source_identification_reduced_to_canonical_source_lock_contract",
+  "source_lock_contract_closed_for_canonical_branch": true,
+  "status": "source_lock_contract_split_into_canonical_branch_admission_or_external_dibfi",
+  "terminal_gap_after_router": "A1CleanBranchCanonicalSourceAdmissionOrExternalDIBFIOriginalDispersion"
+}

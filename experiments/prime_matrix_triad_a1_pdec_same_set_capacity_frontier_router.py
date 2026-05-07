@@ -77,6 +77,9 @@ DEFAULT_DECISION_TREE_FORMULA = (
 DEFAULT_SOURCE_IDENTIFICATION = (
     DOCS / "prime-matrix-triad-a1-source-identification-router.json"
 )
+DEFAULT_SOURCE_LOCK_CONTRACT = (
+    DOCS / "prime-matrix-triad-a1-source-lock-contract-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -156,6 +159,7 @@ def build_frontier_rows(
     path_partition: dict[str, Any],
     decision_tree_formula: dict[str, Any],
     source_identification: dict[str, Any],
+    source_lock_contract: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -482,6 +486,18 @@ def build_frontier_rows(
             ),
             "next_action": "锁定 KZ-E lambda_c 为 canonical RIW/Buchstab 决策树系数；否则回 PDEC/SAE 或外部 DI/BFI。",
         },
+        {
+            "frontier": "A1SourceLockContractRouter",
+            "status": "canonical_source_branch_admission_or_external_dibfi_required"
+            if source_lock_contract["next_internal_target"]
+            == "A1CleanBranchCanonicalSourceAdmission"
+            else "source_lock_contract_gap",
+            "evidence": (
+                f"source lock 已二分为 canonical 分支准入或 generic WFD 外部路由；"
+                f"terminal_gap={source_lock_contract['terminal_gap_after_router']}。"
+            ),
+            "next_action": "证明当前 clean A1 分支使用 canonical RIW/Buchstab 源头；否则走外部 DI/BFI 或 PDEC/SAE。",
+        },
     ]
 
 
@@ -516,6 +532,7 @@ def run(
     path_partition_path: Path,
     decision_tree_formula_path: Path,
     source_identification_path: Path,
+    source_lock_contract_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -548,6 +565,7 @@ def run(
     path_partition = load_json(path_partition_path)
     decision_tree_formula = load_json(decision_tree_formula_path)
     source_identification = load_json(source_identification_path)
+    source_lock_contract = load_json(source_lock_contract_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -579,6 +597,7 @@ def run(
         path_partition,
         decision_tree_formula,
         source_identification,
+        source_lock_contract,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -610,6 +629,7 @@ def run(
         "exact_decision_tree_formula_or_external_dibfi_required",
         "source_coefficient_identification_or_external_dibfi_required",
         "canonical_source_lock_or_external_dibfi_required",
+        "canonical_source_branch_admission_or_external_dibfi_required",
         "closed",
         "no_fourth_exit",
     }
@@ -657,6 +677,7 @@ def run(
             "a1_path_partition_json": file_sha256(path_partition_path),
             "a1_decision_tree_formula_json": file_sha256(decision_tree_formula_path),
             "a1_source_identification_json": file_sha256(source_identification_path),
+            "a1_source_lock_contract_json": file_sha256(source_lock_contract_path),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -668,7 +689,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "CanonicalRIWBuchstabSourceLockContract"
+            "A1CleanBranchCanonicalSourceAdmission"
             "OrExternalDIBFIOriginalDispersion"
         ),
         "structural_law": (
@@ -693,7 +714,8 @@ def run(
             "无抵消进一步化为完整 RIW/Buchstab 决策树公式、路径数预算与 clean 退出；"
             "决策树公式本身又被压成 A1/KZ-E 实际源头系数识别；"
             "实际源头识别又被压成 canonical RIW/Buchstab source lock 合同；"
-            "当前无黑箱版只剩 CanonicalRIWBuchstabSourceLockContract，"
+            "source lock 合同已严格二分为 canonical 源头分支准入或 generic WFD 外部路由；"
+            "当前无黑箱版只剩 A1CleanBranchCanonicalSourceAdmission，"
             "外部版只剩带局部方差扣除的 DI/BFI 原始 dispersion 引用。"
         ),
         "review_conclusion": (
@@ -717,9 +739,10 @@ def run(
             "无抵消已被决策树分割条件化。"
             "决策树公式已被压成源头系数识别。"
             "源头识别又被压成 canonical source lock 合同。"
-            "下一步不再是普通计数、保留率常数、无抵消、决策树或谱估计，而是证明 A1/KZ-E "
-            "在 Cauchy/dispersion 之前实际锁定 lambda_c 为 canonical RIW/Buchstab 决策树系数；"
-            "未锁定块必须回 PDEC/SAE。"
+            "source lock 已分裂成 canonical 内部分支和 generic WFD 外部分支。"
+            "下一步不再是普通计数、保留率常数、无抵消、决策树、谱估计或源头锁定语义，"
+            "而是证明当前被攻击的 clean A1 分支确实准入 canonical RIW/Buchstab source branch；"
+            "否则必须走外部 DI/BFI 或回 PDEC/SAE。"
             "或者给出外部 DI/BFI 原始 dispersion 引用。"
         ),
     }
@@ -767,7 +790,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  selector retention reduces to finite signatures, no-cancellation and clean return；",
         "  no-cancellation reduces to exact RIW/Buchstab decision tree formula or clean return；",
         "  decision-tree formula reduces to A1/KZ-E source coefficient identification；",
-        "  source identification reduces to canonical RIW/Buchstab source lock contract。",
+        "  source identification reduces to canonical RIW/Buchstab source lock contract；",
+        "  source lock contract splits into canonical source branch admission or generic external route。",
         "```",
         "",
         "## 2. 汇总",
@@ -831,11 +855,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "PathPartitionNoCancellation router materialized；",
             "DecisionTreeFormula router materialized；",
             "SourceIdentification router materialized；",
-            "remaining independent gap is canonical RIW/Buchstab source lock contract or external DI/BFI original dispersion。",
+            "SourceLockContract router materialized；",
+            "remaining independent gap is clean A1 canonical source branch admission or external DI/BFI original dispersion。",
             "```",
             "",
-            "所以下一步唯一值得硬攻的 A1 目标是 canonical RIW/Buchstab source lock 合同：",
-            "证明 CanonicalRIWBuchstabSourceLockContract，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
+            "所以下一步唯一值得硬攻的 A1 目标是 clean A1 canonical source branch 准入：",
+            "证明 A1CleanBranchCanonicalSourceAdmission，或给出可复核的外部 DI/BFI 原始 dispersion 引用。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -925,6 +950,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_SOURCE_IDENTIFICATION,
     )
+    parser.add_argument(
+        "--source-lock-contract-json",
+        type=Path,
+        default=DEFAULT_SOURCE_LOCK_CONTRACT,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -960,6 +990,7 @@ def main() -> None:
         path_partition_path=args.path_partition_json,
         decision_tree_formula_path=args.decision_tree_formula_json,
         source_identification_path=args.source_identification_json,
+        source_lock_contract_path=args.source_lock_contract_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

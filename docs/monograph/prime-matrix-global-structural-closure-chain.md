@@ -4858,3 +4858,79 @@ terminal_dual_gap => CanonicalRIWBuchstabSourceLockContractOrExternalDIBFIOrigin
 `lambda_c` 就是 canonical RIW/Buchstab 决策树系数，则此前从 Buchstab 厚支撑到 exact factor
 support 的整条内部链可以接上；如果不能，内部路线必须诚实退出，不能再用形式 WFD 伪装成
 canonical 支撑。
+
+## 88. A1 source lock 合同二分为 canonical 分支准入或 generic 外部路由
+
+新增 `experiments/prime_matrix_triad_a1_source_lock_contract_router.py` 后，第 87 节留下的
+`CanonicalRIWBuchstabSourceLockContract` 被继续压缩。关键结论是：source lock 本身不应再作为
+模糊缺口保留；它必须被处理为严格分支二分。
+
+机器结果：
+
+```text
+status=source_lock_contract_split_into_canonical_branch_admission_or_external_dibfi；
+next_internal_target=A1CleanBranchCanonicalSourceAdmission；
+terminal_gap_after_router=A1CleanBranchCanonicalSourceAdmissionOrExternalDIBFIOriginalDispersion。
+```
+
+分支锁定二分律：
+
+```text
+if lambda_c is the canonical RIW/Buchstab decision-tree coefficient:
+  source lock is definitional;
+  internal support chain applies;
+else:
+  generic well-factorable WFD cannot use canonical support;
+  route to external DI/BFI or PDEC/SAE missing-row.
+```
+
+本步已经闭合的部分是：
+
+```text
+GenericWFDNotEligibleForInternalSupport:
+  generic well-factorable lambda_c 不能使用 canonical support proof；
+
+CanonicalSourceBranchDefinition:
+  在 canonical RIW/Buchstab 源头分支上，lambda_c := lambda_c^RIW-tree 是定义；
+
+BranchSplitPreservesOriginalTarget:
+  分支二分不偷换命题；noncanonical complement 被路由到 external DI/BFI 或 PDEC/SAE；
+
+CanonicalBranchFeedsSupportChain:
+  一旦 clean A1 准入 canonical branch，此前全部内部支撑链可接入。
+```
+
+仍未闭合的唯一内部门控是：
+
+```text
+A1CleanBranchCanonicalAdmission:
+  必须证明当前被攻击的 clean A1 分支实际使用 canonical RIW/Buchstab source weight；
+  若不是，则不能继续内部支撑路线。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+A1CleanBranchCanonicalSourceAdmission:
+  prove the clean A1 branch under attack uses the canonical RIW/Buchstab source weight;
+  then the complete internal support chain applies;
+  otherwise route to external DI/BFI or PDEC/SAE.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1SourceLockContractRouter => canonical_source_branch_admission_or_external_dibfi_required；
+terminal_dual_gap => A1CleanBranchCanonicalSourceAdmissionOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把 source lock 从“待证明的等式”降为“当前 clean 分支是否准入 canonical source branch”的
+单点问题。若答案是肯定的，内部链可接；若答案是否定或未登记，则不能继续假装自足，必须走
+外部 DI/BFI 原始 dispersion 或回 PDEC/SAE 缺失行。
