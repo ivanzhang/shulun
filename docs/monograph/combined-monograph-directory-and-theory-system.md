@@ -2427,10 +2427,11 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
-  SameSetPDECDualComparisonForPersistentMFU,
-  DiffuseFixedShellPDECColumnCRTOrSelfContainedSC9
+  PersistentFiniteSignaturePDECColumnCRT,
+  SelfContainedKuznetsovLSAtomSC9
 ]；
-narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9。
+narrowest_next_hardpoint=
+  PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2547,15 +2548,35 @@ narrowest_dense_kernel_hardpoint=
 是低模持久 `PDEC/ColumnCRT`；无固定壳持久就是多壳分散，非平坦频率回 `PDEC/ColumnCRT`，
 平坦频率进入自足 `SC-9`。这关闭的是稠密旧洞核的无名逃逸，不是终端排斥。
 
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_persistent_signature_unification_router.py
+docs/monograph/prime-matrix-pdec-cap-persistent-signature-unification-router.md/json
+```
+
+该路由器把持久 `Gamma` 的多桶 MFU 与固定壳低模持久统一为同一类对象：
+
+```text
+persistent_signature_unification_closed=true；
+narrowest_next_hardpoint=
+  PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+```
+
+结构含义是：二者都只是同一个 formal unit 上的有限签名正密度。MFU 侧的有限签名是
+phase-bucket/tail-column formal unit；固定壳侧的有限签名是 shell/displacement formal unit。
+`ColumnCRT` 位移已吸收到 displacement PDEC，PDEC 对偶失败已吸收到 cap refinement，口径不一致
+已由 Multiplicity-Stitching 吸收到 weighted/primitive PDEC 或复用缺陷。因此这两个持久类分支
+不能再作为平行硬点保留。
+
 因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明更窄的二选一解析终端：
 
 ```text
-Persistent-MFU PDEC:
-  持久 Gamma 分支给出多桶同集 LP/对偶容量证书 U_CRT^multi<L_PDEC^multi；
+PersistentFiniteSignaturePDECColumnCRT:
+  证明所有持久有限签名 formal unit 的 PDEC/ColumnCRT 对偶容量排斥；
 
-Diffuse FixedShell/SC9:
-  无持久 Gamma 分支证明固定壳低模持久偏斜触发 PDEC/ColumnCRT，
-  或证明 KL 平坦 clean residual 的自足 Kuznetsov-LS atom SC-9；
+SelfContainedKuznetsovLSAtomSC9:
+  无持久有限签名且多壳平坦时，证明自足 Kuznetsov-LS atom SC-9；
 
 Referee promotion:
   D-structure/Tail-log4/finite Rankin 接口被独立接受。

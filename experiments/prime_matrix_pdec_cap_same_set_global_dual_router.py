@@ -40,6 +40,9 @@ DEFAULT_PROFINITE_APS = DOCS / "prime-matrix-profinite-actual-payment-stitching-
 DEFAULT_DIFFUSE_TERMINAL = (
     DOCS / "prime-matrix-pdec-cap-diffuse-terminal-split-router.json"
 )
+DEFAULT_PERSISTENT_SIGNATURE_UNIFICATION = (
+    DOCS / "prime-matrix-pdec-cap-persistent-signature-unification-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.md"
 
@@ -105,6 +108,7 @@ def build_rows(
     aps_contract_text: str,
     profinite_aps: dict[str, Any],
     diffuse_terminal: dict[str, Any],
+    persistent_signature_unification: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 PDEC-CAP 前沿审查表。"""
     self_bottleneck_accepts_pdec = (
@@ -193,6 +197,13 @@ def build_rows(
         and diffuse_terminal["narrowest_diffuse_hardpoint"]
         == "FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
     )
+    persistent_signature_unification_closed = (
+        persistent_signature_unification["status"]
+        == "persistent_signature_unified_to_pdec_columncrt_or_sc9_terminal_estimates_open"
+        and persistent_signature_unification["persistent_signature_unification_closed"]
+        and persistent_signature_unification["narrowest_next_hardpoint"]
+        == "PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
+    )
 
     return [
         row(
@@ -273,13 +284,6 @@ def build_rows(
             False,
         ),
         row(
-            "SameSetPDECDualComparisonForPersistentMFU",
-            False,
-            "U_CRT^multi<L_PDEC^multi not submitted for all persistent MFU",
-            "若 Gamma 持久缝合成多桶 formal unit，仍需提交同集多桶 PDEC 对偶容量证书。",
-            True,
-        ),
-        row(
             "DiffuseTerminalSplitRouted",
             diffuse_terminal_split_closed,
             diffuse_terminal["narrowest_diffuse_hardpoint"],
@@ -287,11 +291,11 @@ def build_rows(
             False,
         ),
         row(
-            "DiffuseFixedShellPDECColumnCRTOrSelfContainedSC9",
+            "PersistentMFUAndFixedShellUnified",
+            persistent_signature_unification_closed,
+            persistent_signature_unification["narrowest_next_hardpoint"],
+            "持久 Gamma 的 MFU 分支与不持久 Gamma 内部冒出的固定壳低模持久分支，已经统一为同 formal unit 的有限签名 PDEC/ColumnCRT 证书对象。",
             False,
-            str(diffuse_terminal["open_final_gates"]),
-            "不持久 Gamma 分支剩余自足义务：固定壳低模持久偏斜的 PDEC/ColumnCRT 排斥，或 KL/多壳平坦 clean 残余的 SC-9 谱大筛原子。",
-            True,
         ),
         row(
             "ActualPaymentStitchingContractSupersededByProfiniteDichotomy",
@@ -299,6 +303,20 @@ def build_rows(
             "contract open text superseded by profinite APS router",
             "原 APS 合同中的二分缺口已由投影塔二分路由器闭合；它不再是独立终端阻塞。",
             False,
+        ),
+        row(
+            "PersistentFiniteSignaturePDECColumnCRT",
+            False,
+            "terminal U_CRT<L_PDEC or displacement PDEC exclusion not submitted",
+            "所有持久有限签名 formal unit 仍需提交同集 PDEC/ColumnCRT 对偶容量排斥证书。",
+            True,
+        ),
+        row(
+            "SelfContainedKuznetsovLSAtomSC9",
+            False,
+            "flat multishell clean atom remains open",
+            "无持久有限签名且多壳完全平坦时，完全自足版仍需证明 SC-9 谱大筛原子。",
+            True,
         ),
     ]
 
@@ -317,6 +335,7 @@ def run(
     aps_contract_path: Path,
     profinite_aps_path: Path,
     diffuse_terminal_path: Path,
+    persistent_signature_unification_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC-CAP 前沿审查。"""
     self_bottleneck = load_json(self_bottleneck_path)
@@ -332,6 +351,7 @@ def run(
     aps_contract_text = read_text(aps_contract_path)
     profinite_aps = load_json(profinite_aps_path)
     diffuse_terminal = load_json(diffuse_terminal_path)
+    persistent_signature_unification = load_json(persistent_signature_unification_path)
 
     rows = build_rows(
         self_bottleneck=self_bottleneck,
@@ -347,6 +367,7 @@ def run(
         aps_contract_text=aps_contract_text,
         profinite_aps=profinite_aps,
         diffuse_terminal=diffuse_terminal,
+        persistent_signature_unification=persistent_signature_unification,
     )
     closed_current_materialized = all(
         item["closed"] for item in rows if not item["blocks_final"]
@@ -370,13 +391,16 @@ def run(
             "aps_contract": file_sha256(aps_contract_path),
             "profinite_aps": file_sha256(profinite_aps_path),
             "diffuse_terminal": file_sha256(diffuse_terminal_path),
+            "persistent_signature_unification": file_sha256(
+                persistent_signature_unification_path
+            ),
         },
         "closed_current_materialized_pdec_gates": closed_current_materialized,
         "pdec_cap_same_set_global_dual_closed": False,
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
         "narrowest_next_hardpoint": (
-            "SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9"
+            "PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
         ),
         "rows": rows,
         "frontier_law": (
@@ -386,19 +410,22 @@ def run(
             "NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual "
             "payment stitching. The profinite ActualPaymentStitching dichotomy for the real "
             "payment graph Gamma is now closed as a routing law. Persistent Gamma gives a "
-            "multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter "
+            "finite-signature formal unit; nonpersistent Gamma must enter "
             "FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed "
             "further to fixed-shell low-mod PDEC/ColumnCRT persistence or the self-contained "
-            "Kuznetsov-LS atom SC-9. The remaining global final gates are "
-            "the persistent same-set PDEC dual comparison and the narrowed diffuse terminal "
-            "estimates, not an unnamed APS exit."
+            "Kuznetsov-LS atom SC-9. The persistent-signature unification router identifies "
+            "persistent MFU and fixed-shell low-mod persistence as the same finite-signature "
+            "formal-unit grammar. The remaining global final gates are the unified "
+            "PersistentFiniteSignaturePDECColumnCRT terminal and the separate flat SC-9 atom, "
+            "not an unnamed APS/diffuse exit."
         ),
         "review_conclusion": (
             "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
             "diffuse 分支又被压到固定壳低模 PDEC/ColumnCRT 持久偏斜或自足 SC-9。"
-            "但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 "
-            "PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 "
-            "`FixedShellLowModPersistencePDECOrColumnCRT` 或 `SelfContainedKuznetsovLSAtomSC9`。"
+            "新增持久有限签名统一路由后，持久 MFU 与固定壳低模持久不再是两个平行硬点。"
+            "但全局同集对偶证书仍未闭合。最新最窄剩余是：统一的 "
+            "`PersistentFiniteSignaturePDECColumnCRT` 终端排斥，或无持久多壳平坦分支的 "
+            "`SelfContainedKuznetsovLSAtomSC9`。"
         ),
     }
 
@@ -422,8 +449,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> current PersistentCap routed by promotion deletion / NoDeletion-KL;",
         "  -> current ForcedCap routed to multi-bucket ActualPaymentStitching;",
         "  -> APS profinite dichotomy routed;",
+        "  -> persistent MFU and fixed-shell persistence unified;",
         "  -> remaining terminal estimates:",
-        "       persistent MFU PDEC or diffuse FixedShellPDECColumnCRT / SC-9.",
+        "       PersistentFiniteSignaturePDECColumnCRT or SC-9.",
         "```",
         "",
         "## 2. 汇总",
@@ -454,9 +482,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 下一步",
             "",
-            "下一步直接攻两侧终端估计：持久 `Gamma` 分支的多桶同集 PDEC 对偶容量证书 "
-            "`U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的固定壳低模持久 PDEC/ColumnCRT "
-            "或自足 `SelfContainedKuznetsovLSAtomSC9`。",
+            "下一步直接攻两侧终端估计：统一持久有限签名 formal unit 的 "
+            "`PersistentFiniteSignaturePDECColumnCRT` 对偶容量证书；以及无持久、多壳平坦时的自足 "
+            "`SelfContainedKuznetsovLSAtomSC9`。",
             "",
         ]
     )
@@ -480,6 +508,11 @@ def main() -> None:
     parser.add_argument("--aps-contract-md", type=Path, default=DEFAULT_APS_CONTRACT)
     parser.add_argument("--profinite-aps-json", type=Path, default=DEFAULT_PROFINITE_APS)
     parser.add_argument("--diffuse-terminal-json", type=Path, default=DEFAULT_DIFFUSE_TERMINAL)
+    parser.add_argument(
+        "--persistent-signature-unification-json",
+        type=Path,
+        default=DEFAULT_PERSISTENT_SIGNATURE_UNIFICATION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -498,6 +531,7 @@ def main() -> None:
         aps_contract_path=args.aps_contract_md,
         profinite_aps_path=args.profinite_aps_json,
         diffuse_terminal_path=args.diffuse_terminal_json,
+        persistent_signature_unification_path=args.persistent_signature_unification_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

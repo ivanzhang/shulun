@@ -29,7 +29,7 @@ Gamma_n on inverse finite signature tower
 
 | gate | closed | blocks final | evidence | meaning |
 | --- | --- | --- | --- | --- |
-| `PDECCapRequestsAPS` | `true` | `false` | SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9 | 上一层 PDEC-CAP 前沿已经把 APS 投影塔二分定位为当前门，或已越过 APS 推进到两侧终端估计。 |
+| `PDECCapRequestsAPS` | `true` | `false` | PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9 | 上一层 PDEC-CAP 前沿已经把 APS 投影塔二分定位为当前门，或已越过 APS 推进到两侧终端估计。 |
 | `APSContractContainsTwoWaySplit` | `true` | `false` | PersistentStitching / NoPersistentStitching | APS 合同已经写明真实支付图只能进入持久缝合或无持久缝合两路。 |
 | `CurrentForcedRowsRoutedToAPS` | `true` | `false` | ActualPaymentStitchingPersistentMFUOrDistributedCleanKLS | 当前 forced 多桶行已全部进入 APS，且有限候选行与 forced/ambiguous 门控已接线。 |
 | `FiniteProjectionDichotomyAvailable` | `true` | `false` | continuous_terminal_dichotomy_admission_closed_capacity_open | 有限投影空间有限，因此正 limsup 原子或全部原子消散二分可复用到 Gamma 投影塔。 |

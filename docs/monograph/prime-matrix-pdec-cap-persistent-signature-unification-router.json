@@ -1,0 +1,105 @@
+{
+  "certificate_type": "prime_matrix_pdec_cap_persistent_signature_unification_router",
+  "narrowest_next_hardpoint": "PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
+  "open_final_gates": [
+    "PersistentFiniteSignaturePDECColumnCRT",
+    "SelfContainedKuznetsovLSAtomSC9"
+  ],
+  "persistent_finite_signature_pdec_columncrt_closed": false,
+  "persistent_signature_unification_closed": true,
+  "review_conclusion": "持久 MFU 与固定壳低模持久已经统一：二者本质上都是同一 formal unit 上的有限签名正密度。ColumnCRT 位移、PDEC 对偶失败和口径不一致都已有吸收合同，所以它们不能作为新的平行终端。剩余自足硬点因此压成两项：`PersistentFiniteSignaturePDECColumnCRT` 的终端排斥，以及无持久且多壳平坦时的 `SelfContainedKuznetsovLSAtomSC9`。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "['SameSetPDECDualComparisonForPersistentMFU', 'DiffuseCleanKLSDLSEstimateOrFiberDeletionNoDeletionKL']",
+      "gate": "APSPositiveBranchIsFiniteSignature",
+      "meaning": "APS 投影塔的持久分支已经被定义为某个有限签名正 limsup 持久，而不是自由选择出口。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "rows=48; min_margin=0.130733",
+      "gate": "ForcedGammaFiniteSignatureMaterialized",
+      "meaning": "当前 forced Gamma 的有限层 phase-bucket 签名已物化；超过 ambiguous 预算的持久质量必须进入 MFU/PDEC。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "signature_rows=40; route_counts={'FiniteSignaturePDECInputMaterialized': 40}",
+      "gate": "PositiveLimsupPDECInputsMaterialized",
+      "meaning": "正 limsup 有限签名已登记为同集 PDEC 输入行；剩余只是不等式 U_CRT<L_PDEC。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "Persistent Formal Unit / Distributed Payment dichotomy",
+      "gate": "MFUFormalUnitProtocolRegistered",
+      "meaning": "多桶对象只有在投影兼容且长期承担正质量时才是 formal unit；否则进入分散 CleanKLS/DLS。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
+      "gate": "FixedShellIsFiniteShellSignature",
+      "meaning": "固定壳或有限壳包正密度等价于同一壳号变量上的有限 shell signature 持久。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "ColumnCRT => displacement PDEC / SAE / quotient",
+      "gate": "ColumnCRTAbsorbedAsDisplacementPDEC",
+      "meaning": "固定壳若表现为列位移持久，不是独立终端，而是 displacement PDEC 或合法商后的 primitive PDEC。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "dual failure => cap concentration => refined PDEC/ColumnCRT/SAE/MS",
+      "gate": "PDECFailureAbsorbsCaps",
+      "meaning": "持久有限签名的对偶失败只能产生帽集中并回流 PDEC family；它不能生成新的低模黑箱。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "WeightedDualIndependence / CoordinateQuotient / ReuseDefect",
+      "gate": "MultiplicitySameFormalUnitAbsorbed",
+      "meaning": "若 MFU、固定壳、ColumnCRT 使用的口径不一致，必须先规范化到同一 formal unit 或回流复用缺陷。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "persistent MFU and fixed-shell low-mod persistence share finite-signature formal-unit grammar",
+      "gate": "PersistentFiniteSignatureUnificationClosed",
+      "meaning": "持久 Gamma 与固定壳低模持久不再是两个平行无名硬点；二者统一为同一 formal unit 上的有限签名 PDEC/ColumnCRT 终端证书。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "terminal U_CRT<L_PDEC or displacement PDEC exclusion not submitted",
+      "gate": "PersistentFiniteSignaturePDECColumnCRT",
+      "meaning": "仍需证明所有持久有限签名 formal unit 的 PDEC/ColumnCRT 对偶容量排斥。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "flat multishell clean atom remains open",
+      "gate": "SelfContainedKuznetsovLSAtomSC9",
+      "meaning": "没有持久有限签名且多壳频率平坦时，自足版仍需证明 SC-9 谱大筛原子。"
+    }
+  ],
+  "self_contained_sc9_closed": false,
+  "source_hashes": {
+    "columncrt_absorb": "f674ce4f51911edeab0dcce641763860c87ef8f94141971a60fd948e7c008a7c",
+    "continuous_signature": "fc3651f558667e54356e1ad791af7aea5a817a8a9ff761fc57c733dcc3b241a0",
+    "dense_kernel_cvt": "1aa4c8a3e1416de4536e14e9a3e4dd1ba6b3ac150e3f249400353d693030136e",
+    "gamma_signature": "5d1e1e55d68ce913f395db41890de6b436df802e07412e10dff904284c65a9b2",
+    "mfu_dichotomy": "fbaca32eed98eb597a6cc83fc3127878ca3bdaba5c265a568eb7c3861dac2493",
+    "multiplicity_absorb": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "pdec_dual_absorb": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b",
+    "profinite_aps": "edc126136514137f1f744ab5636af303c313065dc946bf2d14452de990469388",
+    "script": "026ef86f59501145e33557f666cfd73c99107b3f050c0745ec28185610980c8d"
+  },
+  "status": "persistent_signature_unified_to_pdec_columncrt_or_sc9_terminal_estimates_open",
+  "unification_law": "Persistent Gamma and fixed-shell low-mod persistence are the same kind of object after the common-variable rewrite. Both are positive-limsup mass on a finite signature inside one formal unit: a phase-bucket/tail-column signature for MFU, or a shell/displacement signature for fixed-shell persistence. If the signature persists, it must submit a same-formal-unit PDEC/ColumnCRT dual capacity certificate. If it does not persist, the mass is diffuse and has already been routed to deletion/NoDeletion-KL/CleanKLS, with the flat clean case named as SC-9. ColumnCRT is absorbed as displacement PDEC, PDEC dual failure is absorbed as cap refinement, and multiplicity mismatch is absorbed by formal-unit normalization. Hence the two previous persistent gates collapse to one terminal family: PersistentFiniteSignaturePDECColumnCRT, plus the separate flat SC-9 atom."
+}

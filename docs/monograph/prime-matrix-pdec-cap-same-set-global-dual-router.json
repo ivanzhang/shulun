@@ -1,14 +1,14 @@
 {
   "certificate_type": "prime_matrix_pdec_cap_same_set_global_dual_router",
   "closed_current_materialized_pdec_gates": true,
-  "frontier_law": "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed further to fixed-shell low-mod PDEC/ColumnCRT persistence or the self-contained Kuznetsov-LS atom SC-9. The remaining global final gates are the persistent same-set PDEC dual comparison and the narrowed diffuse terminal estimates, not an unnamed APS exit.",
-  "narrowest_next_hardpoint": "SameSetPDECDualComparisonForPersistentMFU_OR_FixedShellPDECColumnCRTOrSC9",
+  "frontier_law": "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a finite-signature formal unit; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The diffuse terminal split is now routed further to fixed-shell low-mod PDEC/ColumnCRT persistence or the self-contained Kuznetsov-LS atom SC-9. The persistent-signature unification router identifies persistent MFU and fixed-shell low-mod persistence as the same finite-signature formal-unit grammar. The remaining global final gates are the unified PersistentFiniteSignaturePDECColumnCRT terminal and the separate flat SC-9 atom, not an unnamed APS/diffuse exit.",
+  "narrowest_next_hardpoint": "PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
   "open_final_gates": [
-    "SameSetPDECDualComparisonForPersistentMFU",
-    "DiffuseFixedShellPDECColumnCRTOrSelfContainedSC9"
+    "PersistentFiniteSignaturePDECColumnCRT",
+    "SelfContainedKuznetsovLSAtomSC9"
   ],
   "pdec_cap_same_set_global_dual_closed": false,
-  "review_conclusion": "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；diffuse 分支又被压到固定壳低模 PDEC/ColumnCRT 持久偏斜或自足 SC-9。但全局同集对偶证书仍未闭合。最新最窄剩余是：持久 `Gamma` 的多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 `FixedShellLowModPersistencePDECOrColumnCRT` 或 `SelfContainedKuznetsovLSAtomSC9`。",
+  "review_conclusion": "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；diffuse 分支又被压到固定壳低模 PDEC/ColumnCRT 持久偏斜或自足 SC-9。新增持久有限签名统一路由后，持久 MFU 与固定壳低模持久不再是两个平行硬点。但全局同集对偶证书仍未闭合。最新最窄剩余是：统一的 `PersistentFiniteSignaturePDECColumnCRT` 终端排斥，或无持久多壳平坦分支的 `SelfContainedKuznetsovLSAtomSC9`。",
   "row_column_unconditional_closed": false,
   "rows": [
     {
@@ -89,13 +89,6 @@
       "meaning": "真实支付图 Gamma 的 PersistentStitching / NoPersistentStitching 二分逻辑已闭合到两侧终端估计。"
     },
     {
-      "blocks_final": true,
-      "closed": false,
-      "evidence": "U_CRT^multi<L_PDEC^multi not submitted for all persistent MFU",
-      "gate": "SameSetPDECDualComparisonForPersistentMFU",
-      "meaning": "若 Gamma 持久缝合成多桶 formal unit，仍需提交同集多桶 PDEC 对偶容量证书。"
-    },
-    {
       "blocks_final": false,
       "closed": true,
       "evidence": "FixedShellLowModPersistencePDECOrColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
@@ -103,11 +96,11 @@
       "meaning": "不持久 Gamma 分支已合成为删除势/NoDeletion-KL/CleanKLS 的终端分裂，无名 diffuse 出口关闭。"
     },
     {
-      "blocks_final": true,
-      "closed": false,
-      "evidence": "['FixedShellLowModPersistencePDECOrColumnCRT', 'SelfContainedKuznetsovLSAtomSC9']",
-      "gate": "DiffuseFixedShellPDECColumnCRTOrSelfContainedSC9",
-      "meaning": "不持久 Gamma 分支剩余自足义务：固定壳低模持久偏斜的 PDEC/ColumnCRT 排斥，或 KL/多壳平坦 clean 残余的 SC-9 谱大筛原子。"
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9",
+      "gate": "PersistentMFUAndFixedShellUnified",
+      "meaning": "持久 Gamma 的 MFU 分支与不持久 Gamma 内部冒出的固定壳低模持久分支，已经统一为同 formal unit 的有限签名 PDEC/ColumnCRT 证书对象。"
     },
     {
       "blocks_final": false,
@@ -115,6 +108,20 @@
       "evidence": "contract open text superseded by profinite APS router",
       "gate": "ActualPaymentStitchingContractSupersededByProfiniteDichotomy",
       "meaning": "原 APS 合同中的二分缺口已由投影塔二分路由器闭合；它不再是独立终端阻塞。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "terminal U_CRT<L_PDEC or displacement PDEC exclusion not submitted",
+      "gate": "PersistentFiniteSignaturePDECColumnCRT",
+      "meaning": "所有持久有限签名 formal unit 仍需提交同集 PDEC/ColumnCRT 对偶容量排斥证书。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "flat multishell clean atom remains open",
+      "gate": "SelfContainedKuznetsovLSAtomSC9",
+      "meaning": "无持久有限签名且多壳完全平坦时，完全自足版仍需证明 SC-9 谱大筛原子。"
     }
   ],
   "source_hashes": {
@@ -127,9 +134,10 @@
     "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
     "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
     "persistent": "590f92a0eb6cf5886038f8684d8577af29edf0fad7c46f75ae58983b72440703",
-    "profinite_aps": "ff34ee9dc81920855533d08b35623546c1b259bd9f85202cbf76e688810db4c2",
+    "persistent_signature_unification": "ca59b6c0b20f384a0ce77f92b4bcfa643c5d728798c9827c3f7dad3801ab2a2c",
+    "profinite_aps": "edc126136514137f1f744ab5636af303c313065dc946bf2d14452de990469388",
     "projection": "a518f15194644cb07603f00246db122aac8cfd1f655ddf983c7bc7b4d0d390ef",
-    "script": "5619c88c1c82cf1abf9c3d37f4a8969560b1fad0a2c104bbc197443313a3a0fb",
+    "script": "6812b8d7d046dcddd79f0f8c91f7f3f4787355cac4f7a513797746667d012195",
     "self_bottleneck": "efa40265600dc3d24976379f5605492932c3b23abe70e0a0b0c936454b3aa197",
     "tower": "c59e17f45bd93129864e54c07eb5c27a5fbb96bdd6fe1fdedcff94a7d5249597"
   },
