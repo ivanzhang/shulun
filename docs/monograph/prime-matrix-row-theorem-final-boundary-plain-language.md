@@ -80,7 +80,25 @@ unrestricted generic 自足版已反证；
 整条 Prime Matrix 行/列无条件定理仍需剩余终端证书排斥。
 ```
 
-## 6. 已并入合著的文件
+## 6. 最新前沿边界
+
+继续接入 `NC-BLK` 边界核查、非二点 `PDEC` 准入审计和全局终端家族边界路由器后，当前前沿进一步压成：
+
+```text
+CurrentMaterializedFrontierExhausted_GlobalTerminalFamiliesOpen
+```
+
+通俗地说：现在已经没有一个“当前已物化的局部样本”可继续消元。`PDEC` 侧当前合法非二点候选为 `0`，`LocalSurvivor` 侧开放包为 `0`，已知 sparse 入口全部有准入路线，`NC-BLK` 也不再是无名出口。
+
+剩下的唯一大门是：
+
+```text
+GlobalTerminalFamilyExclusionCertificates
+```
+
+也就是必须证明所有未来可能出现的 `PDEC family`、`LocalSurvivorCert family`、`CleanKLS/DLS` 终端对象都能被证书排除，或明确引用外部/referee 输入。这仍不是最终行/列无条件定理闭合，但它把“最后剩余是什么”压到了当前最窄、最清晰的形式。
+
+## 7. 已并入合著的文件
 
 主稿已并入：
 

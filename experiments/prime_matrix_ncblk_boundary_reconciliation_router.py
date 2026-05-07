@@ -49,6 +49,14 @@ def table_cell(value: Any) -> str:
     return str(value).replace("|", r"\|")
 
 
+def find_frontier_row(row_frontier: dict[str, Any], gate: str) -> dict[str, Any]:
+    """按 gate 查找总前沿行。"""
+    for row in row_frontier.get("frontier_rows", []):
+        if row.get("gate") == gate:
+            return row
+    return {}
+
+
 def build_rows(
     row_frontier: dict[str, Any],
     same_set: dict[str, Any],
@@ -57,13 +65,22 @@ def build_rows(
     ncblk_alignment: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成边界核查行。"""
+    clean_kls_row = find_frontier_row(row_frontier, "C:CleanKLS-DLS")
+    frontier_name = row_frontier["narrowest_next_hardpoint"]["name"]
+    ncblk_pinned_by_frontier = (
+        frontier_name == "NonTautologicalPDECOrNCBLK"
+        or clean_kls_row.get("status")
+        == "ncblk_reconciled_with_boundary_global_family_open"
+    )
     return [
         {
             "gate": "RowFrontierPinsNCBLK",
-            "closed": row_frontier["narrowest_next_hardpoint"]["name"]
-            == "NonTautologicalPDECOrNCBLK",
-            "evidence": row_frontier["narrowest_next_hardpoint"]["name"],
-            "meaning": "总前沿已把 CleanKLS 宽口径压到 NC-BLK 或非二点 PDEC。",
+            "closed": ncblk_pinned_by_frontier,
+            "evidence": (
+                f"frontier={frontier_name}; "
+                f"clean_kls_status={clean_kls_row.get('status', 'missing')}"
+            ),
+            "meaning": "总前沿已把 CleanKLS 宽口径压到 NC-BLK，并在升级后记录为已核查边界。",
         },
         {
             "gate": "CanonicalSameSetBoundaryClosed",

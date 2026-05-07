@@ -51,6 +51,12 @@ DEFAULT_CLEAN_KLS = (
 DEFAULT_KUZNETSOV_FRONTIER = (
     DOCS / "prime-matrix-triad-a1-kuznetsov-ls-atom-frontier-router.json"
 )
+DEFAULT_NCBLK_RECONCILIATION = (
+    DOCS / "prime-matrix-ncblk-boundary-reconciliation-router.json"
+)
+DEFAULT_NONTAUTOLOGICAL_PDEC = (
+    DOCS / "prime-matrix-nontautological-pdec-admission-audit.json"
+)
 DEFAULT_LINE_REF = DOCS / "line-by-line-internal-referee-matrix.md"
 DEFAULT_CLAIM_STATUS = DOCS / "claim-status-table.md"
 DEFAULT_MAIN_TEX = PAPER / "contradiction-field-monograph.tex"
@@ -118,6 +124,8 @@ def build_frontier_rows(
     new_sparse_admission: dict[str, Any],
     clean_kls: dict[str, Any],
     kuznetsov_frontier: dict[str, Any],
+    ncblk_reconciliation: dict[str, Any],
+    nontautological_pdec: dict[str, Any],
     line_ref_text: str,
     claim_status_text: str,
     main_tex: str,
@@ -210,6 +218,22 @@ def build_frontier_rows(
         and kuznetsov_frontier["terminal_gap_after_router"]
         == "NCBLKOrExternalDIBFIOriginalDispersion"
     )
+    ncblk_boundary_reconciled = (
+        ncblk_reconciliation["status"]
+        == "ncblk_reconciled_with_canonical_boundary_global_not_closed"
+        and ncblk_reconciliation["all_reconciliation_gates_passed"]
+        and ncblk_reconciliation["canonical_ncblk_absorbed_by_existing_boundary"]
+        and ncblk_reconciliation["generic_ncblk_self_contained_not_claimed"]
+    )
+    no_current_nontautological_pdec = (
+        nontautological_pdec["status"]
+        == "no_current_materialized_nontautological_primitive_pdec"
+        and nontautological_pdec["all_current_routes_blocked_or_absorbed"]
+        and nontautological_pdec[
+            "current_materialized_nontautological_pdec_candidate_count"
+        ]
+        == 0
+    )
     referee_guarded = has_all(
         line_ref_text,
         ["PM-16", "BLOCK-REFEREE", "Tail-log4", "finite"],
@@ -231,6 +255,8 @@ def build_frontier_rows(
             "MaterializedLocalSurvivorPacketsExhausted",
             "KnownLocalSurvivorEntryExtractorsCovered",
             "NoAdditionalUnnamedLocalSurvivorEntryRoute",
+            "NC-BLK边界核查",
+            "非二点PDEC准入审计",
         ],
     )
     raw_best = stitching["summary"]["raw_best"]
@@ -276,7 +302,9 @@ def build_frontier_rows(
         frontier_row(
             gate="A1-FO-PDEC-SameFormalUnit",
             status=(
-                "audited_current_sample_subgates_closed_global_family_open"
+                "current_materialized_nontautological_pdec_absent_global_family_open"
+                if no_current_nontautological_pdec
+                else "audited_current_sample_subgates_closed_global_family_open"
                 if sae_endpoint_subgate_closed
                 else "current_narrowest_open"
             ),
@@ -295,12 +323,13 @@ def build_frontier_rows(
             ),
             remaining=(
                 "当前已审计 FO-PDEC 样本链中，raw、coordinate-cap、physical 二点阈值和二点 "
-                "SAE/Endpoint 均已被降口径或本地 witness 吸收；但完整 PDEC family 对未来非二点、"
-                "非同图重叠 formal unit 仍未闭合。"
+                "SAE/Endpoint 均已被降口径或本地 witness 吸收；非二点 PDEC 准入审计进一步确认"
+                "当前已物化的合法非二点 primitive PDEC 候选数为 0。但完整 PDEC family 对未来"
+                "非二点、非同图重叠 formal unit 仍未闭合。"
             ),
             next_action=(
-                "停止优化当前 U_CRT 常数；转向 packet-generation，或寻找至少三点非退化 "
-                "primitive PDEC formal unit。"
+                "停止优化当前 U_CRT 常数；若未来出现新 PDEC 候选，必须先通过同 formal unit、"
+                "三物理原子、非 tautology、非图重叠和非 SAE witness 的准入门。"
             ),
             blocks_global=True,
         ),
@@ -329,23 +358,34 @@ def build_frontier_rows(
         frontier_row(
             gate="C:CleanKLS-DLS",
             status=(
-                "routed_to_ncblk_or_external_dibfi"
+                "ncblk_reconciled_with_boundary_global_family_open"
+                if ncblk_boundary_reconciled
+                else "routed_to_ncblk_or_external_dibfi"
                 if clean_kls_sc9_routed
                 else "open_terminal_or_external"
             ),
             evidence=(
                 f"clean_admission={clean_kls['terminal_gap_after_router']}; "
-                f"sc9_frontier={kuznetsov_frontier['terminal_gap_after_router']}"
+                f"sc9_frontier={kuznetsov_frontier['terminal_gap_after_router']}; "
+                f"ncblk_reconciled={ncblk_boundary_reconciled}"
             ),
             remaining=(
-                "CleanKLS 宽口径已收缩：K1--K9 失败项回流 PDEC/SAE/Multiplicity/Promotion；"
-                "全通过时进入 SC-9；SC-9 的自足版只剩 actual WFD 系数的 NC-BLK 块非集中，"
-                "外部版是 DI/BFI 原始 dispersion 或等价窗口 KLS。"
+                "CleanKLS 宽口径已收缩并核查边界：canonical-source 分支中的 NC-BLK 已由既有"
+                "同集容量边界吸收；generic full-S non-AP 分支仍是外部/精确源熵路线，不能冒充"
+                "自足闭合。"
+                if ncblk_boundary_reconciled
+                else (
+                    "CleanKLS 宽口径已收缩：K1--K9 失败项回流 PDEC/SAE/Multiplicity/Promotion；"
+                    "全通过时进入 SC-9；SC-9 的自足版只剩 actual WFD 系数的 NC-BLK 块非集中，"
+                    "外部版是 DI/BFI 原始 dispersion 或等价窗口 KLS。"
+                )
                 if clean_kls_sc9_routed
                 else "所有 clean residual 仍需内部大筛证书或明确 ExternalKLS 输入。"
             ),
             next_action=(
-                "自足路线攻 NC-BLK actual block non-concentration；外部路线精确匹配 DI/BFI 原始 dispersion。"
+                "不再把 NC-BLK 当无名出口；剩余提升只能来自全局终端家族排斥或外部/referee 接口。"
+                if ncblk_boundary_reconciled
+                else "自足路线攻 NC-BLK actual block non-concentration；外部路线精确匹配 DI/BFI 原始 dispersion。"
                 if clean_kls_sc9_routed
                 else "只有在 PDEC/SAE/column/tail/fiber 峰全部剥离后才调用。"
             ),
@@ -386,6 +426,8 @@ def run(
     new_sparse_admission_path: Path,
     clean_kls_path: Path,
     kuznetsov_frontier_path: Path,
+    ncblk_reconciliation_path: Path,
+    nontautological_pdec_path: Path,
     line_ref_path: Path,
     claim_status_path: Path,
     main_tex_path: Path,
@@ -406,6 +448,8 @@ def run(
     new_sparse_admission = load_json(new_sparse_admission_path)
     clean_kls = load_json(clean_kls_path)
     kuznetsov_frontier = load_json(kuznetsov_frontier_path)
+    ncblk_reconciliation = load_json(ncblk_reconciliation_path)
+    nontautological_pdec = load_json(nontautological_pdec_path)
     line_ref_text = read_text(line_ref_path)
     claim_status_text = read_text(claim_status_path)
     main_tex = read_text(main_tex_path)
@@ -426,6 +470,8 @@ def run(
         new_sparse_admission,
         clean_kls,
         kuznetsov_frontier,
+        ncblk_reconciliation,
+        nontautological_pdec,
         line_ref_text,
         claim_status_text,
         main_tex,
@@ -469,6 +515,10 @@ def run(
             "kuznetsov_ls_atom_frontier_router": file_sha256(
                 kuznetsov_frontier_path
             ),
+            "ncblk_boundary_reconciliation": file_sha256(ncblk_reconciliation_path),
+            "nontautological_pdec_admission_audit": file_sha256(
+                nontautological_pdec_path
+            ),
             "line_referee_matrix": file_sha256(line_ref_path),
             "claim_status_table": file_sha256(claim_status_path),
             "main_tex": file_sha256(main_tex_path),
@@ -487,7 +537,19 @@ def run(
         "open_global_gates": open_global_gates,
         "narrowest_next_hardpoint": {
             "name": (
-                "NonTautologicalPDECOrNCBLK"
+                "CurrentMaterializedFrontierExhausted_GlobalTerminalFamiliesOpen"
+                if (
+                    new_sparse_admission["closed_subgate"]
+                    == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
+                    and ncblk_reconciliation[
+                        "all_reconciliation_gates_passed"
+                    ]
+                    and nontautological_pdec[
+                        "current_materialized_nontautological_pdec_candidate_count"
+                    ]
+                    == 0
+                )
+                else "NonTautologicalPDECOrNCBLK"
                 if new_sparse_admission["closed_subgate"]
                 == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
                 else (
@@ -503,7 +565,19 @@ def run(
                 )
             ),
             "subgate_closed_this_round": (
-                "NoAdditionalUnnamedLocalSurvivorEntryRoute"
+                "NoCurrentMaterializedNonTautologicalPDECAndNCBLKReconciled"
+                if (
+                    new_sparse_admission["closed_subgate"]
+                    == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
+                    and ncblk_reconciliation[
+                        "all_reconciliation_gates_passed"
+                    ]
+                    and nontautological_pdec[
+                        "current_materialized_nontautological_pdec_candidate_count"
+                    ]
+                    == 0
+                )
+                else "NoAdditionalUnnamedLocalSurvivorEntryRoute"
                 if new_sparse_admission["closed_subgate"]
                 == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
                 else (
@@ -551,14 +625,16 @@ def run(
                 "同固定偏移纤维的本地素数见证吸收；已物化 LocalSurvivor/SAE 包总账"
                 "也无开放窗口；已知 packet extractor 入口全覆盖，且无未命名新 sparse 入口。"
                 "LocalSurvivor 当前分支只剩未来显式新增入口的条件义务；CleanKLS/DLS 宽口径"
-                "已由 K1--K9 准入和 SC-9 展开压成 NC-BLK 或外部 DI/BFI。因此当前主硬点转向"
-                "非二点 primitive PDEC 或 actual WFD 块非集中 NC-BLK。"
+                "已由 K1--K9 准入和 SC-9 展开压成 NC-BLK，并由边界核查说明 canonical-source "
+                "分支已吸收、generic 分支仍外部化；非二点 PDEC 准入审计也确认当前已物化合法候选为 0。"
+                "因此当前没有新的已物化终端硬点可继续局部消元；真正剩余上升为全局终端家族的普遍生成/"
+                "排斥，以及 D-structure/Rankin/referee 接口。"
             ),
             "next_routes": [
-                "PacketExtractorCompleteness for any newly admitted sparse route",
-                "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints",
-                "NC-BLK actual WFD block non-concentration, or precise external DI/BFI original dispersion matching",
-                "D-structure/Rankin referee inputs for final theorem promotion",
+                "prove a universal terminal-generation theorem that every future counterexample emits one of the existing certificate schemas",
+                "prove global PDEC-family exclusion beyond the currently materialized zero-candidate frontier",
+                "admit any future sparse route only with extractor schema and finite ledger",
+                "settle D-structure/Rankin/referee interfaces before final theorem promotion",
             ],
         },
         "review_conclusion": (
@@ -567,8 +643,9 @@ def run(
             "已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和"
             "二点 SAE/Endpoint 本地 witness 吸收；已物化 LocalSurvivor/SAE 包总账也全部闭合。"
             "已知 LocalSurvivor packet extractor 入口也全部覆盖，且无未命名新 sparse 入口。"
-            "CleanKLS/DLS 宽口径也已由现有路由压到 NC-BLK 或外部 DI/BFI。"
-            "下一步应攻非二点 primitive PDEC formal unit 或 actual WFD 块非集中 NC-BLK。"
+            "CleanKLS/DLS 宽口径已由现有路由压到 NC-BLK，并已通过边界核查消除无名出口歧义。"
+            "非二点 PDEC 准入审计确认当前已物化合法候选为 0。下一步应攻全局终端家族的普遍生成/"
+            "排斥，而不是继续复用当前已耗尽的局部样本。"
         ),
     }
 
@@ -668,6 +745,12 @@ def main() -> None:
     parser.add_argument(
         "--kuznetsov-frontier", type=Path, default=DEFAULT_KUZNETSOV_FRONTIER
     )
+    parser.add_argument(
+        "--ncblk-reconciliation", type=Path, default=DEFAULT_NCBLK_RECONCILIATION
+    )
+    parser.add_argument(
+        "--nontautological-pdec", type=Path, default=DEFAULT_NONTAUTOLOGICAL_PDEC
+    )
     parser.add_argument("--line-ref", type=Path, default=DEFAULT_LINE_REF)
     parser.add_argument("--claim-status", type=Path, default=DEFAULT_CLAIM_STATUS)
     parser.add_argument("--main-tex", type=Path, default=DEFAULT_MAIN_TEX)
@@ -691,6 +774,8 @@ def main() -> None:
         args.new_sparse_admission,
         args.clean_kls,
         args.kuznetsov_frontier,
+        args.ncblk_reconciliation,
+        args.nontautological_pdec,
         args.line_ref,
         args.claim_status,
         args.main_tex,

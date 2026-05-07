@@ -23,13 +23,13 @@ therefore:
 - `canonical_ncblk_absorbed_by_existing_boundary=true`。
 - `generic_ncblk_self_contained_not_claimed=true`。
 - `row_column_unconditional_closed=false`。
-- `row_frontier_before_reconciliation=NonTautologicalPDECOrNCBLK`。
+- `row_frontier_before_reconciliation=CurrentMaterializedFrontierExhausted_GlobalTerminalFamiliesOpen`。
 
 ## 3. 核查表
 
 | gate | closed | evidence | meaning |
 | --- | --- | --- | --- |
-| `RowFrontierPinsNCBLK` | `true` | NonTautologicalPDECOrNCBLK | 总前沿已把 CleanKLS 宽口径压到 NC-BLK 或非二点 PDEC。 |
+| `RowFrontierPinsNCBLK` | `true` | frontier=CurrentMaterializedFrontierExhausted_GlobalTerminalFamiliesOpen; clean_kls_status=ncblk_reconciled_with_boundary_global_family_open | 总前沿已把 CleanKLS 宽口径压到 NC-BLK，并在升级后记录为已核查边界。 |
 | `CanonicalSameSetBoundaryClosed` | `true` | NoFurtherCanonicalSourceSelfContainedGap_GenericUnrestrictedRefuted | canonical RIW/Buchstab source branch 的同集容量/Full-S 终端已闭合。 |
 | `BoundaryReviewNoOpenGate` | `true` | self_contained_theorem_boundary_review_passed | 定理边界审查无剩余门。 |
 | `GenericUnrestrictedNotImported` | `true` | Unrestricted generic full-S well-factorable WFD self-contained theorem. | generic WFD 自足版保持反证，不能偷渡进 canonical 闭合。 |

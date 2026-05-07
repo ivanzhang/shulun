@@ -2315,3 +2315,42 @@ two atoms:
 因此当前没有已物化的非二点 primitive PDEC 候选。这个结论不关闭全局 `PDEC family`；它只固定
 未来候选的准入门槛：同一 formal unit、去重后三个以上物理 primitive 原子、非二点 tautology、
 非 cross-q 图重叠，并且未被 SAE/Endpoint witness 吸收。
+
+继续接入总路由器后，`NonTautologicalPDECOrNCBLK` 已不再是最新终点。`NC-BLK` 被边界核查吸收或
+外部化，当前已物化 PDEC 候选数为零，LocalSurvivor 已物化包也为零。因此最新前沿为：
+
+```text
+CurrentMaterializedFrontierExhausted_GlobalTerminalFamiliesOpen。
+```
+
+新增：
+
+```text
+experiments/prime_matrix_global_terminal_family_boundary_router.py
+docs/monograph/prime-matrix-global-terminal-family-boundary-router.md/json
+```
+
+该路由器给出新的边界审查：
+
+```text
+materialized_frontier_exhausted=true；
+terminal_generation_contract_closed=true；
+current_terminal_instances_exhausted=true；
+global_terminal_family_exclusion_closed=false；
+row_column_unconditional_closed=false；
+narrowest_next_hardpoint=GlobalTerminalFamilyExclusionCertificates。
+```
+
+这一步的结构意义是：当前机器总账能触及的局部终端样本已经耗尽；继续攻关不能再回到优化
+`ell=199`、二点 Fourier 阈值、无名孤窗或旧 `NC-BLK` 标签。真正剩余是全局家族定理：
+
+```text
+每个未来最小反例产生的终端对象，
+必须被 PDEC-family exclusion、
+LocalSurvivor witness/deficit certificate、
+CleanKLS/DLS internal large-sieve certificate，
+或明确外部/referee 输入吸收。
+```
+
+该结论仍不是完整行/列无条件定理；它关闭的是“当前已物化前沿还有可局部消元对象”的可能，
+并把唯一剩余固定为全局终端家族全集排斥。
