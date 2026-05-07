@@ -5972,3 +5972,73 @@ NonAPNoProjectionAndDIWindowLedger
 
 因此非 AP-source fallback 的终端现在只剩对象侧“未中心化无投影恒等式”和 DI 侧“模数/逆元/频率
 J-scale 精确代入”两块；BFI level、Type product 与 log-loss 已不再是障碍。
+
+## 103. 非 AP-source object ledger：APError 剥离，对象侧压成未中心化 WFD 到 KE-13 无投影恒等式
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_nonap_object_ledger_router.py` 后，第 102 节中的
+对象侧剩余进一步被清账。关键是：`APErrorRepresentation` 只属于 AP-source 直接 BFI 分支，
+不能继续作为非 AP generic WFD fallback 的终端门控；非 AP 分支必须保留原始未中心化 WFD/KE-13
+对象，并从原始 dispersion/Cauchy 展开中逐项证明对象没有被中心化、投影或删同块对角。
+
+机器结果：
+
+```text
+status=nonap_object_ledger_reduced_to_uncentered_wfd_no_projection_identity_open；
+removed_nonap_transfer_gates=[
+  APErrorRepresentation
+]；
+closed_object_gates=[
+  APErrorRepresentationSeparated,
+  NoSilentProjectionOrCentering,
+  ObjectTerminalDefined
+]；
+open_object_gates=[
+  DispersionCauchyNoCenteringIdentity,
+  KE13DyadicExhaustionNoProjection
+]；
+terminal_gap_after_router=UncenteredWFDToKE13NoProjectionIdentity。
+```
+
+已经排除的退路：
+
+```text
+APErrorRepresentationSeparated:
+  AP-source 直接 BFI 分支已闭合；非 AP generic WFD 是补集；
+
+NoSilentProjectionOrCentering:
+  SOURCE-CEN 会改变目标对象；
+  BD-CEN 只证明 h=0 主项抵消，不能推出块中心化扣除；
+
+ObjectTerminalDefined:
+  非 AP 对象侧只保留两个未闭合恒等式。
+```
+
+真实对象侧终端为：
+
+```text
+UncenteredWFDToKE13NoProjectionIdentity
+  = DispersionCauchyNoCenteringIdentity
+    + KE13DyadicExhaustionNoProjection。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFINonAPObjectLedgerRouter
+  => nonap_object_ledger_reduced_to_uncentered_wfd_no_projection_identity_open；
+
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndDIWindowLedger。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndDIWindowLedger
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + DIKloostermanWindowSubstitutionLedger。
+```
+
+因此当前最窄剩余已经不再含 AP-source 身份、BFI level、Type product、Fourier tail 或 log-loss。
+剩余是两个硬核证书的合取：对象侧证明原始未中心化 WFD 到 KE-13 的无投影恒等式，尺度侧证明
+DI Kloosterman 模数/逆元/频率 J-scale 的精确代入。

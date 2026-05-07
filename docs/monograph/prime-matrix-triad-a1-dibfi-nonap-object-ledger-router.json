@@ -1,0 +1,72 @@
+{
+  "ap_error_representation_not_nonap_terminal": true,
+  "certificate_type": "triad_a1_dibfi_nonap_object_ledger_router",
+  "closed_object_gates": [
+    "APErrorRepresentationSeparated",
+    "NoSilentProjectionOrCentering",
+    "ObjectTerminalDefined"
+  ],
+  "nonap_object_ledger_closed": false,
+  "object_rows": [
+    {
+      "closed": true,
+      "evidence": "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 是其补集，不能把 APErrorRepresentation 当作非 AP fallback 的对象终端。",
+      "gate": "APErrorRepresentationSeparated",
+      "next_target": "UncenteredWFDToKE13NoProjectionIdentity",
+      "remaining": "none for non-AP object ledger"
+    },
+    {
+      "closed": true,
+      "evidence": "SOURCE-CEN 会改变 WFD 目标对象；BD-CEN 只证明 h=0 主项抵消，未证明同块中心化扣除。",
+      "gate": "NoSilentProjectionOrCentering",
+      "next_target": "DispersionCauchyNoCenteringIdentity",
+      "remaining": "不能免费插入块中心化、投影或删同块对角。"
+    },
+    {
+      "closed": false,
+      "evidence": "该门仍在 transfer-scale open_transfer_gates 中；需要从 BFI 原始 dispersion/Cauchy 展开逐项得到当前未中心化对象。",
+      "gate": "DispersionCauchyNoCenteringIdentity",
+      "next_target": "UncenteredWFDToKE13NoProjectionIdentity",
+      "remaining": "写出 E_{N,M}->E_disp 的逐项恒等式，确认没有块中心化插入和同块对角删除。"
+    },
+    {
+      "closed": false,
+      "evidence": "共同变量表已定位 KE13Identification 为 target_preserved=false；所有 dyadic 主块是否完全覆盖 WFD_core 尚未证明。",
+      "gate": "KE13DyadicExhaustionNoProjection",
+      "next_target": "UncenteredWFDToKE13NoProjectionIdentity",
+      "remaining": "证明主非零频块完全等于 WFD_core(C,S,H,lambda,beta,omega)，且无端点遗漏。"
+    },
+    {
+      "closed": true,
+      "evidence": "nonap terminal targets=['NoProjectionUncenteredDispersionIdentity', 'QuantifiedDIBFIWindowSubstitution']；对象侧只保留两个未闭合恒等式。",
+      "gate": "ObjectTerminalDefined",
+      "next_target": "UncenteredWFDToKE13NoProjectionIdentity",
+      "remaining": "two object identities remain open"
+    }
+  ],
+  "open_object_gates": [
+    "DispersionCauchyNoCenteringIdentity",
+    "KE13DyadicExhaustionNoProjection"
+  ],
+  "previous_terminal_gap": "DIBFIQuantifiedNoProjectionWindowCertificateForNonAPSource",
+  "removed_nonap_transfer_gates": [
+    "APErrorRepresentation"
+  ],
+  "review_conclusion": "非 AP-source 对象侧已压成 `UncenteredWFDToKE13NoProjectionIdentity`：`APErrorRepresentation` 已归入 AP-source 直接 BFI 分支；非 AP fallback 只剩 `DispersionCauchyNoCenteringIdentity` 与 `KE13DyadicExhaustionNoProjection`。",
+  "source_hashes": {
+    "ap_source_branch_json": "81dc79aa0b5f3b6ea295cff13186e2b522f16e701a70cadabced721ac884d0bc",
+    "bd_cen_audit_md": "62e7ad886124a8d904d7e6a235db4bfe2c0743783e2a4064dbebaddcbd06639f",
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "nonap_dispersion_json": "84002b30235b4d02a8af38771960fea962992168a77a15239adbf350850aac0f",
+    "script": "3bd9f8ef6c4a59ef9cf5de65cd923cd6e99fd8243bdb3c51d60174149bc098b3",
+    "source_cen_no_go_md": "e08b2c131b84faa674e7e4a0f5ecec8b48f0283b0d7b902b344d6ee24d896afb",
+    "transfer_scale_json": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd"
+  },
+  "status": "nonap_object_ledger_reduced_to_uncentered_wfd_no_projection_identity_open",
+  "structural_law": "The non-AP fallback object is not a prime-AP discrepancy. APErrorRepresentation belongs to the AP-source/direct-BFI branch and is removed from the non-AP terminal. SOURCE-CEN and BD-CEN block any free centering/projection shortcut. Therefore the non-AP object side is exactly the uncentered WFD-to-KE13 no-projection identity: derive the raw dispersion/Cauchy object without centering, then prove KE-13 dyadic exhaustion without projection or endpoint loss.",
+  "terminal_gap_after_router": "UncenteredWFDToKE13NoProjectionIdentity",
+  "terminal_gap_expansion": [
+    "DispersionCauchyNoCenteringIdentity",
+    "KE13DyadicExhaustionNoProjection"
+  ]
+}
