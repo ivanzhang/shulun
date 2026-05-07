@@ -146,10 +146,10 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=ProfiniteActualPaymentStitchingDichotomy。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS。
 ```
 
-通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。真正剩余变成：
+通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
 
 ```text
 真实支付图 Gamma 在无穷投影塔中，
@@ -157,6 +157,13 @@ narrowest_next_hardpoint=ProfiniteActualPaymentStitchingDichotomy。
 要么对所有有限候选签名都不持久 -> 分散 CleanKLS/DLS；
 若升层持续删除，则递推剥离；
 若删除停止但 KL/互信息偏斜，则回流 new-layer/refined PDEC。
+```
+
+所以当前真正剩余是二选一的终端估计：
+
+```text
+持久 Gamma：证明 U_CRT^multi < L_PDEC^multi；
+不持久 Gamma：证明删除势发散、NoDeletion-KL 回流 PDEC，或 KL 平坦 CleanKLS/DLS。
 ```
 
 ## 7. 已并入合著的文件

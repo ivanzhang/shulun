@@ -1,29 +1,30 @@
 # Prime Matrix PDEC-CAP 同集全局对偶前沿路由器
 
-**状态：** `pdec_cap_same_set_global_dual_frontier_reduced_to_aps_not_closed`
+**状态：** `pdec_cap_same_set_global_dual_frontier_reduced_to_terminal_estimates_not_closed`
 
-PDEC-CAP 的当前已物化中间门全部可路由，但全局同集对偶证书仍未闭合。最窄下一步不再是固定 Q 常数优化，而是 `ProfiniteActualPaymentStitchingDichotomy`：对无限反例塔中的真实支付图 `Gamma` 证明持久缝合或无持久缝合。持久则进入多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`；不持久则必须由 FiberDeletion、NoDeletion-KL/PDEC 或 KL 平坦的 CleanKLS/DLS 吸收。
+PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；但全局同集对偶证书仍未闭合。最新最窄剩余是两侧终端估计：持久 `Gamma` 的多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 FiberDeletion、NoDeletion-KL/PDEC 或 KL 平坦 CleanKLS/DLS 吸收。
 
 ## 1. 前沿律
 
-The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The next self-contained hardpoint is the profinite ActualPaymentStitching dichotomy for the real payment graph Gamma. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. None of these global final gates is closed here.
+The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The remaining global final gates are the two terminal estimates, not an unnamed APS exit.
 
 ```text
 PDEC_CAP_SameSetGlobalDualCertificate
   -> current DualCap families routed;
   -> current PersistentCap routed by promotion deletion / NoDeletion-KL;
   -> current ForcedCap routed to multi-bucket ActualPaymentStitching;
-  -> remaining global gate:
-       ProfiniteActualPaymentStitchingDichotomy.
+  -> APS profinite dichotomy routed;
+  -> remaining terminal estimates:
+       persistent MFU PDEC or diffuse CleanKLS/DLS.
 ```
 
 ## 2. 汇总
 
-- `closed_current_materialized_pdec_gates=true`。
+- `closed_current_materialized_pdec_gates=false`。
 - `pdec_cap_same_set_global_dual_closed=false`。
 - `row_column_unconditional_closed=false`。
-- `narrowest_next_hardpoint=ProfiniteActualPaymentStitchingDichotomy`。
-- `open_final_gates=['ProfiniteActualPaymentStitchingDichotomy', 'SameSetPDECDualComparisonForPersistentMFU', 'GlobalFiberDeletionOrNoDeletionKLCleanKLS', 'ActualPaymentStitchingContractStillOpen']`。
+- `narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS`。
+- `open_final_gates=['SameSetPDECDualComparisonForPersistentMFU', 'GlobalFiberDeletionOrNoDeletionKLCleanKLS']`。
 
 ## 3. 审查表
 
@@ -39,11 +40,11 @@ PDEC_CAP_SameSetGlobalDualCertificate
 | `LHBProjectionStitchingRemoved` | `true` | `false` | pi(A_Q') subset A_Q for same C_P support | 同一 LHB 全周期完成集合口径下，升层坏项 N 为空，ProjectionStitching 不再是当前分支出口。 |
 | `PDECCapNoCycleRegistered` | `true` | `false` | finite Boolean algebra refinement; new-layer entropy contract | 固定有限签名群内 PDEC cap 细化不能无限循环；升层必须进入 new-layer PDEC 或 CleanKLS。 |
 | `FiniteTowerEvidenceRegistered` | `true` | `false` | ['FiberDeletionLayer', 'FiberDeletionLayer'] | 已物化两层均为 FiberDeletionLayer，但这仍只是有限塔证据，不是全局证明。 |
-| `ProfiniteActualPaymentStitchingDichotomy` | `false` | `true` | APS contract open | 必须对无限反例塔中的真实支付图 Gamma 证明 PersistentStitching 或 NoPersistentStitching 二分。 |
+| `ProfiniteActualPaymentStitchingDichotomy` | `false` | `false` | finite projection compactness / pigeonhole dichotomy | 真实支付图 Gamma 的 PersistentStitching / NoPersistentStitching 二分逻辑已闭合到两侧终端估计。 |
 | `SameSetPDECDualComparisonForPersistentMFU` | `false` | `true` | U_CRT^multi<L_PDEC^multi not submitted for all persistent MFU | 若 Gamma 持久缝合成多桶 formal unit，仍需提交同集多桶 PDEC 对偶容量证书。 |
 | `GlobalFiberDeletionOrNoDeletionKLCleanKLS` | `false` | `true` | new-layer tower finite evidence only | 若 Gamma 不持久或升层继续推进，需证明删除势发散，或 NoDeletion-KL 回流 PDEC，或 KL 平坦进 CleanKLS/DLS。 |
-| `ActualPaymentStitchingContractStillOpen` | `false` | `true` | actual_payment_stitching_contract_open | APS 合同仍是 open；不能把当前有限层 APS 路由误写成全局 PDEC-CAP 闭合。 |
+| `ActualPaymentStitchingContractSupersededByProfiniteDichotomy` | `false` | `false` | contract open text superseded by profinite APS router | 原 APS 合同中的二分缺口已由投影塔二分路由器闭合；它不再是独立终端阻塞。 |
 
 ## 4. 下一步
 
-直接攻 `ProfiniteActualPaymentStitchingDichotomy`。形式化目标是：给定反例塔中的真实支付图 `Gamma_n` 与有限候选签名族 `R_{j,n}`，证明存在正 limsup 持久签名，从而进入多桶 `PDEC`；或证明每个有限签名质量趋零，从而给出分散 `CleanKLS/DLS` 输入。若升层删除势持续为正，则由 FiberDeletion 递推剥离；若删除势停止但 KL/互信息不平坦，则回流 new-layer/refined PDEC。
+下一步直接攻两侧终端估计：持久 `Gamma` 分支的多桶同集 PDEC 对偶容量证书 `U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的删除势发散、NoDeletion-KL/PDEC 或 KL 平坦 CleanKLS/DLS 大筛证书。

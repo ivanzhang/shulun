@@ -1,16 +1,14 @@
 {
   "certificate_type": "prime_matrix_pdec_cap_same_set_global_dual_router",
-  "closed_current_materialized_pdec_gates": true,
-  "frontier_law": "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The next self-contained hardpoint is the profinite ActualPaymentStitching dichotomy for the real payment graph Gamma. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. None of these global final gates is closed here.",
-  "narrowest_next_hardpoint": "ProfiniteActualPaymentStitchingDichotomy",
+  "closed_current_materialized_pdec_gates": false,
+  "frontier_law": "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier constant search. Materialized DualCaps have same-M_Q mass sources and closed early P-row exits; current PersistentCaps route to promotion deletion or NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual payment stitching. The profinite ActualPaymentStitching dichotomy for the real payment graph Gamma is now closed as a routing law. Persistent Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter FiberDeletion/NoDeletion-KL/CleanKLS. The remaining global final gates are the two terminal estimates, not an unnamed APS exit.",
+  "narrowest_next_hardpoint": "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS",
   "open_final_gates": [
-    "ProfiniteActualPaymentStitchingDichotomy",
     "SameSetPDECDualComparisonForPersistentMFU",
-    "GlobalFiberDeletionOrNoDeletionKLCleanKLS",
-    "ActualPaymentStitchingContractStillOpen"
+    "GlobalFiberDeletionOrNoDeletionKLCleanKLS"
   ],
   "pdec_cap_same_set_global_dual_closed": false,
-  "review_conclusion": "PDEC-CAP 的当前已物化中间门全部可路由，但全局同集对偶证书仍未闭合。最窄下一步不再是固定 Q 常数优化，而是 `ProfiniteActualPaymentStitchingDichotomy`：对无限反例塔中的真实支付图 `Gamma` 证明持久缝合或无持久缝合。持久则进入多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`；不持久则必须由 FiberDeletion、NoDeletion-KL/PDEC 或 KL 平坦的 CleanKLS/DLS 吸收。",
+  "review_conclusion": "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；但全局同集对偶证书仍未闭合。最新最窄剩余是两侧终端估计：持久 `Gamma` 的多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的 FiberDeletion、NoDeletion-KL/PDEC 或 KL 平坦 CleanKLS/DLS 吸收。",
   "row_column_unconditional_closed": false,
   "rows": [
     {
@@ -84,11 +82,11 @@
       "meaning": "已物化两层均为 FiberDeletionLayer，但这仍只是有限塔证据，不是全局证明。"
     },
     {
-      "blocks_final": true,
+      "blocks_final": false,
       "closed": false,
-      "evidence": "APS contract open",
+      "evidence": "finite projection compactness / pigeonhole dichotomy",
       "gate": "ProfiniteActualPaymentStitchingDichotomy",
-      "meaning": "必须对无限反例塔中的真实支付图 Gamma 证明 PersistentStitching 或 NoPersistentStitching 二分。"
+      "meaning": "真实支付图 Gamma 的 PersistentStitching / NoPersistentStitching 二分逻辑已闭合到两侧终端估计。"
     },
     {
       "blocks_final": true,
@@ -105,11 +103,11 @@
       "meaning": "若 Gamma 不持久或升层继续推进，需证明删除势发散，或 NoDeletion-KL 回流 PDEC，或 KL 平坦进 CleanKLS/DLS。"
     },
     {
-      "blocks_final": true,
+      "blocks_final": false,
       "closed": false,
-      "evidence": "actual_payment_stitching_contract_open",
-      "gate": "ActualPaymentStitchingContractStillOpen",
-      "meaning": "APS 合同仍是 open；不能把当前有限层 APS 路由误写成全局 PDEC-CAP 闭合。"
+      "evidence": "contract open text superseded by profinite APS router",
+      "gate": "ActualPaymentStitchingContractSupersededByProfiniteDichotomy",
+      "meaning": "原 APS 合同中的二分缺口已由投影塔二分路由器闭合；它不再是独立终端阻塞。"
     }
   ],
   "source_hashes": {
@@ -121,10 +119,11 @@
     "no_cycle": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
     "pdec_route": "6b20c050e98d742bd3833af5e01c84341dfe0606f992ab79b8346a273166c03d",
     "persistent": "590f92a0eb6cf5886038f8684d8577af29edf0fad7c46f75ae58983b72440703",
+    "profinite_aps": "49d6febb7965800b1b231d898ba1ad31d0f8e4f8eee9292c78b330eda1a9ecc2",
     "projection": "a518f15194644cb07603f00246db122aac8cfd1f655ddf983c7bc7b4d0d390ef",
-    "script": "7a43b7ab747f37c0f0a4733bf9ea1e928f90d3b0001c45b24589bb629b8e4fa4",
+    "script": "ef1e1b32f4333e99b202e36ff40326b1794af095a882221e2ffdbde71f217e31",
     "self_bottleneck": "efa40265600dc3d24976379f5605492932c3b23abe70e0a0b0c936454b3aa197",
     "tower": "c59e17f45bd93129864e54c07eb5c27a5fbb96bdd6fe1fdedcff94a7d5249597"
   },
-  "status": "pdec_cap_same_set_global_dual_frontier_reduced_to_aps_not_closed"
+  "status": "pdec_cap_same_set_global_dual_frontier_reduced_to_terminal_estimates_not_closed"
 }

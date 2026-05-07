@@ -2427,30 +2427,29 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
-  ProfiniteActualPaymentStitchingDichotomy,
   SameSetPDECDualComparisonForPersistentMFU,
-  GlobalFiberDeletionOrNoDeletionKLCleanKLS,
-  ActualPaymentStitchingContractStillOpen
+  GlobalFiberDeletionOrNoDeletionKLCleanKLS
 ]；
-narrowest_next_hardpoint=ProfiniteActualPaymentStitchingDichotomy。
+narrowest_next_hardpoint=SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
 都有同一 `M_Q` 质量来源并关闭早期 `P` 行出口；PersistentCap 已进入晋升删除势或
-NoDeletion-KL/PDEC/CleanKLS；ForcedCap 已进入多桶 ActualPaymentStitching。剩余全局门是
-真实支付图 `Gamma_n` 的投影塔二分：若某有限候选签名正 limsup 持久，则进入多桶同集
-`PDEC` 对偶比较；若所有有限签名都不持久，则必须给出分散 `CleanKLS/DLS` 输入，或由
-FiberDeletion / NoDeletion-KL 回流剥离。
+NoDeletion-KL/PDEC/CleanKLS；ForcedCap 已进入多桶 ActualPaymentStitching。新增
+`prime-matrix-profinite-actual-payment-stitching-router.md/json` 后，真实支付图 `Gamma_n`
+的投影塔二分也已闭合：若某有限候选签名正 limsup 持久，则进入多桶同集 `PDEC` 对偶比较；
+若所有有限签名都不持久，则进入分散 `CleanKLS/DLS` 输入，或由 FiberDeletion /
+NoDeletion-KL 回流剥离。
 
 因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明二选一解析终端：
 
 ```text
-PDEC-CAP:
-  同一坏窗集合上给出全局 LP/对偶容量证书 U_CRT<L_PDEC；
+Persistent-MFU PDEC:
+  持久 Gamma 分支给出多桶同集 LP/对偶容量证书 U_CRT^multi<L_PDEC^multi；
 
-CleanKLS/DLS:
-  对 L2-flat clean residual 给出内部大筛吸收，
-  或逐项登记外部 KLS/DI/BFI 变量适配；
+Diffuse CleanKLS/DLS:
+  无持久 Gamma 分支证明删除势发散、NoDeletion-KL/PDEC 回流，
+  或对 KL 平坦 clean residual 给出内部大筛吸收/外部 KLS 适配；
 
 Referee promotion:
   D-structure/Tail-log4/finite Rankin 接口被独立接受。

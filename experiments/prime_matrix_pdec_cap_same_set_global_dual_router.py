@@ -36,6 +36,7 @@ DEFAULT_PROJECTION = (
     DOCS / "prime-matrix-triad-a1-newlayer-projection-monotonicity-lemma.md"
 )
 DEFAULT_APS_CONTRACT = DOCS / "prime-matrix-triad-a1-actual-payment-stitching-contract.md"
+DEFAULT_PROFINITE_APS = DOCS / "prime-matrix-profinite-actual-payment-stitching-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.md"
 
@@ -99,6 +100,7 @@ def build_rows(
     no_cycle_text: str,
     projection_text: str,
     aps_contract_text: str,
+    profinite_aps: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 PDEC-CAP 前沿审查表。"""
     self_bottleneck_accepts_pdec = (
@@ -175,6 +177,11 @@ def build_rows(
             "APS-1",
         ],
     )
+    profinite_aps_dichotomy_closed = (
+        profinite_aps["status"]
+        == "profinite_actual_payment_stitching_dichotomy_closed_terminal_estimates_open"
+        and profinite_aps["profinite_aps_dichotomy_closed"]
+    )
 
     return [
         row(
@@ -249,10 +256,10 @@ def build_rows(
         ),
         row(
             "ProfiniteActualPaymentStitchingDichotomy",
+            profinite_aps_dichotomy_closed,
+            "finite projection compactness / pigeonhole dichotomy",
+            "真实支付图 Gamma 的 PersistentStitching / NoPersistentStitching 二分逻辑已闭合到两侧终端估计。",
             False,
-            "APS contract open",
-            "必须对无限反例塔中的真实支付图 Gamma 证明 PersistentStitching 或 NoPersistentStitching 二分。",
-            True,
         ),
         row(
             "SameSetPDECDualComparisonForPersistentMFU",
@@ -269,11 +276,11 @@ def build_rows(
             True,
         ),
         row(
-            "ActualPaymentStitchingContractStillOpen",
-            not aps_contract_open,
-            "actual_payment_stitching_contract_open",
-            "APS 合同仍是 open；不能把当前有限层 APS 路由误写成全局 PDEC-CAP 闭合。",
-            aps_contract_open,
+            "ActualPaymentStitchingContractSupersededByProfiniteDichotomy",
+            aps_contract_open and profinite_aps_dichotomy_closed,
+            "contract open text superseded by profinite APS router",
+            "原 APS 合同中的二分缺口已由投影塔二分路由器闭合；它不再是独立终端阻塞。",
+            False,
         ),
     ]
 
@@ -290,6 +297,7 @@ def run(
     no_cycle_path: Path,
     projection_path: Path,
     aps_contract_path: Path,
+    profinite_aps_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC-CAP 前沿审查。"""
     self_bottleneck = load_json(self_bottleneck_path)
@@ -303,6 +311,7 @@ def run(
     no_cycle_text = read_text(no_cycle_path)
     projection_text = read_text(projection_path)
     aps_contract_text = read_text(aps_contract_path)
+    profinite_aps = load_json(profinite_aps_path)
 
     rows = build_rows(
         self_bottleneck=self_bottleneck,
@@ -316,6 +325,7 @@ def run(
         no_cycle_text=no_cycle_text,
         projection_text=projection_text,
         aps_contract_text=aps_contract_text,
+        profinite_aps=profinite_aps,
     )
     closed_current_materialized = all(
         item["closed"] for item in rows if not item["blocks_final"]
@@ -323,7 +333,7 @@ def run(
     open_final_gates = [item["gate"] for item in rows if item["blocks_final"]]
     return {
         "certificate_type": "prime_matrix_pdec_cap_same_set_global_dual_router",
-        "status": "pdec_cap_same_set_global_dual_frontier_reduced_to_aps_not_closed",
+        "status": "pdec_cap_same_set_global_dual_frontier_reduced_to_terminal_estimates_not_closed",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "self_bottleneck": file_sha256(self_bottleneck_path),
@@ -337,30 +347,32 @@ def run(
             "no_cycle": file_sha256(no_cycle_path),
             "projection": file_sha256(projection_path),
             "aps_contract": file_sha256(aps_contract_path),
+            "profinite_aps": file_sha256(profinite_aps_path),
         },
         "closed_current_materialized_pdec_gates": closed_current_materialized,
         "pdec_cap_same_set_global_dual_closed": False,
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
-        "narrowest_next_hardpoint": "ProfiniteActualPaymentStitchingDichotomy",
+        "narrowest_next_hardpoint": (
+            "SameSetPDECDualComparisonForPersistentMFU_OR_DiffuseCleanKLS"
+        ),
         "rows": rows,
         "frontier_law": (
             "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier "
             "constant search. Materialized DualCaps have same-M_Q mass sources and closed "
             "early P-row exits; current PersistentCaps route to promotion deletion or "
             "NoDeletion-KL/CleanKLS/PDEC; current ForcedCaps route to multi-bucket actual "
-            "payment stitching. The next self-contained hardpoint is the profinite "
-            "ActualPaymentStitching dichotomy for the real payment graph Gamma. Persistent "
-            "Gamma gives a multi-bucket same-set PDEC dual comparison; nonpersistent Gamma "
-            "must enter FiberDeletion/NoDeletion-KL/CleanKLS. None of these global final "
-            "gates is closed here."
+            "payment stitching. The profinite ActualPaymentStitching dichotomy for the real "
+            "payment graph Gamma is now closed as a routing law. Persistent Gamma gives a "
+            "multi-bucket same-set PDEC dual comparison; nonpersistent Gamma must enter "
+            "FiberDeletion/NoDeletion-KL/CleanKLS. The remaining global final gates are the "
+            "two terminal estimates, not an unnamed APS exit."
         ),
         "review_conclusion": (
-            "PDEC-CAP 的当前已物化中间门全部可路由，但全局同集对偶证书仍未闭合。"
-            "最窄下一步不再是固定 Q 常数优化，而是 `ProfiniteActualPaymentStitchingDichotomy`："
-            "对无限反例塔中的真实支付图 `Gamma` 证明持久缝合或无持久缝合。持久则进入"
-            "多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`；不持久则必须由 FiberDeletion、"
-            "NoDeletion-KL/PDEC 或 KL 平坦的 CleanKLS/DLS 吸收。"
+            "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
+            "但全局同集对偶证书仍未闭合。最新最窄剩余是两侧终端估计：持久 `Gamma` 的"
+            "多桶同集 PDEC 对偶比较 `U_CRT^multi<L_PDEC^multi`，以及不持久 `Gamma` 的"
+            " FiberDeletion、NoDeletion-KL/PDEC 或 KL 平坦 CleanKLS/DLS 吸收。"
         ),
     }
 
@@ -383,8 +395,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> current DualCap families routed;",
         "  -> current PersistentCap routed by promotion deletion / NoDeletion-KL;",
         "  -> current ForcedCap routed to multi-bucket ActualPaymentStitching;",
-        "  -> remaining global gate:",
-        "       ProfiniteActualPaymentStitchingDichotomy.",
+        "  -> APS profinite dichotomy routed;",
+        "  -> remaining terminal estimates:",
+        "       persistent MFU PDEC or diffuse CleanKLS/DLS.",
         "```",
         "",
         "## 2. 汇总",
@@ -415,10 +428,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 下一步",
             "",
-            "直接攻 `ProfiniteActualPaymentStitchingDichotomy`。形式化目标是：给定反例塔中的真实支付图 "
-            "`Gamma_n` 与有限候选签名族 `R_{j,n}`，证明存在正 limsup 持久签名，从而进入多桶 "
-            "`PDEC`；或证明每个有限签名质量趋零，从而给出分散 `CleanKLS/DLS` 输入。若升层删除势持续为正，"
-            "则由 FiberDeletion 递推剥离；若删除势停止但 KL/互信息不平坦，则回流 new-layer/refined PDEC。",
+            "下一步直接攻两侧终端估计：持久 `Gamma` 分支的多桶同集 PDEC 对偶容量证书 "
+            "`U_CRT^multi<L_PDEC^multi`；以及无持久 `Gamma` 分支中的删除势发散、"
+            "NoDeletion-KL/PDEC 或 KL 平坦 CleanKLS/DLS 大筛证书。",
             "",
         ]
     )
@@ -440,6 +452,7 @@ def main() -> None:
     parser.add_argument("--no-cycle-md", type=Path, default=DEFAULT_NO_CYCLE)
     parser.add_argument("--projection-md", type=Path, default=DEFAULT_PROJECTION)
     parser.add_argument("--aps-contract-md", type=Path, default=DEFAULT_APS_CONTRACT)
+    parser.add_argument("--profinite-aps-json", type=Path, default=DEFAULT_PROFINITE_APS)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -456,6 +469,7 @@ def main() -> None:
         no_cycle_path=args.no_cycle_md,
         projection_path=args.projection_md,
         aps_contract_path=args.aps_contract_md,
+        profinite_aps_path=args.profinite_aps_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
