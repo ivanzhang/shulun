@@ -1,0 +1,77 @@
+{
+  "approved_self_contained_theorem": "Triad-A1 same-set capacity / full-S terminal on the canonical RIW/Buchstab source branch.",
+  "certificate_type": "triad_a1_self_contained_theorem_boundary_review",
+  "dependency_classification": {
+    "canonical_source_branch": "self-contained internal chain",
+    "external_full_s_kls_ext": "closed external contract, separated from theorem claim",
+    "unrestricted_generic_wfd_branch": "refuted as self-contained statement"
+  },
+  "open_review_gates": [],
+  "passed_review_gates": [
+    "TheoremStatementBoundaryExact",
+    "FinalClosureCertificateClosed",
+    "FrontierAbsorbsFinalBoundary",
+    "CanonicalSourceProvenanceClosed",
+    "BranchCoverageNoSilentUpgrade",
+    "GenericUnrestrictedNoFalseClaim",
+    "ExternalContractSeparatedFromSelfContainedClaim"
+  ],
+  "rejected_not_claimed_theorem": "Unrestricted generic full-S well-factorable WFD self-contained theorem.",
+  "review_conclusion": "最终定理审查通过：可确认的自足闭合命题只限于 canonical RIW/Buchstab source branch 上的 Triad-A1 same-set capacity / full-S terminal；unrestricted generic WFD 自足版被 moving-delta no-go 反证，不能作为闭合定理声明。",
+  "review_rows": [
+    {
+      "evidence": "approved theorem is canonical-source only; unrestricted generic WFD self-contained theorem is explicitly not claimed.",
+      "gate": "TheoremStatementBoundaryExact",
+      "passed": true,
+      "required_action": "approve exact boundary statement"
+    },
+    {
+      "evidence": "final status=canonical_source_self_contained_final_closed_generic_unrestricted_refuted; terminal=NoFurtherCanonicalSourceSelfContainedGap_GenericUnrestrictedRefuted; open_final_gates=[].",
+      "gate": "FinalClosureCertificateClosed",
+      "passed": true,
+      "required_action": "no remaining final closure gate"
+    },
+    {
+      "evidence": "frontier status=same_set_capacity_frontier_final_self_contained_boundary_closed; all_known_frontiers_routed=True.",
+      "gate": "FrontierAbsorbsFinalBoundary",
+      "passed": true,
+      "required_action": "frontier accepts final theorem boundary"
+    },
+    {
+      "evidence": "actual source provenance selects canonical RIW/Buchstab and has NoFurtherActualSourceProvenanceGap.",
+      "gate": "CanonicalSourceProvenanceClosed",
+      "passed": true,
+      "required_action": "canonical source branch is internally sourced"
+    },
+    {
+      "evidence": "canonical and generic noncanonical branches are separated with coverage_no_overlap_no_gap=true.",
+      "gate": "BranchCoverageNoSilentUpgrade",
+      "passed": true,
+      "required_action": "no generic branch is silently imported"
+    },
+    {
+      "evidence": "moving-delta no-go refutes the unrestricted generic self-contained anti-atom input under the recorded formal hypotheses.",
+      "gate": "GenericUnrestrictedNoFalseClaim",
+      "passed": true,
+      "required_action": "record as refuted, not as closed theorem"
+    },
+    {
+      "evidence": "external FullS-KLS-ext contract remains available but is not used to inflate the canonical-source self-contained theorem.",
+      "gate": "ExternalContractSeparatedFromSelfContainedClaim",
+      "passed": true,
+      "required_action": "keep external and self-contained claims disjoint"
+    }
+  ],
+  "source_hashes": {
+    "antiatom_nogo_json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4",
+    "branch_coverage_json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "final_closure_json": "ee06624e115009c2c310b2bdd8aa7c331cbc5de987b9ea66ecfefbb6188c2697",
+    "frontier_json": "5e90ebbde60cece165620ec326e67d71904fb4c64459b1ef1b44918416ba2a7d",
+    "provenance_json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "script": "b4d1fbc6c672f599273fe854ce39a183e5b65ae6313d388021f80760439bf58b",
+    "taxonomy_json": "c17dfbff54f991a819fcaa607f001860adcc8e3f950de77c233c4dff834227ad"
+  },
+  "status": "self_contained_theorem_boundary_review_passed",
+  "terminal_gap_after_review": "NoFurtherTheoremBoundaryReviewGap",
+  "theorem_review_verdict": "APPROVE_CANONICAL_SOURCE_SELF_CONTAINED_BOUNDARY"
+}

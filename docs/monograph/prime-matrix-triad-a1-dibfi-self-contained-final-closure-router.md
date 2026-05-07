@@ -35,7 +35,7 @@ terminal:
 
 | gate | closed | evidence | remaining | next target |
 | --- | --- | --- | --- | --- |
-| `CanonicalSourceSelfContainedTheoremClosed` | `true` | frontier terminal is NoFurtherActualSourceProvenanceGap and provenance has no open gates. | none for canonical-source self-contained theorem | `SelfContainedBoundary` |
+| `CanonicalSourceSelfContainedTheoremClosed` | `true` | provenance terminal is NoFurtherActualSourceProvenanceGap and provenance has no open gates. | none for canonical-source self-contained theorem | `SelfContainedBoundary` |
 | `UnrestrictedGenericSelfContainedRefuted` | `true` | moving-delta no-go refutes the current generic full-S WFD anti-atom under recorded formal hypotheses. | do not claim unrestricted generic self-contained proof | `SelfContainedBoundary` |
 | `BranchBoundaryNoOverlapNoGap` | `true` | branch coverage separates canonical source branch from generic noncanonical WFD complement. | none at statement-boundary level | `SelfContainedBoundary` |
 | `CanonicalClosureUsesInternalSourcePath` | `true` | selected source path is canonical RIW/Buchstab; FullS-KLS-ext is not needed for this branch. | none for canonical-source internal path | `FinalSelfContainedClosureCertificate` |

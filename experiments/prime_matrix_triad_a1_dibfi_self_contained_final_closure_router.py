@@ -106,7 +106,7 @@ def build_rows(
             "gate": "CanonicalSourceSelfContainedTheoremClosed",
             "closed": canonical_source_closed,
             "evidence": (
-                "frontier terminal is NoFurtherActualSourceProvenanceGap and provenance "
+                "provenance terminal is NoFurtherActualSourceProvenanceGap and provenance "
                 "has no open gates."
             ),
             "remaining": "none for canonical-source self-contained theorem",
