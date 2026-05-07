@@ -6584,3 +6584,91 @@ NonAPWFDNoProjectionAndMaynardSCompressionMap
 这一步排除了“换一个已登记外部原子绕开 S 压缩”的退路。下一硬点已经非常窄：
 要么从当前非对角结构中真实构造压缩后的 `S_May`，要么必须新增一个此前未登记的外部
 原始 dispersion 原子并重新审计其适用条件。
+
+## 111. Maynard S-compression no-go：完整 S 窗口与 W4 对象等式冲突
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-maynard-s-compression-nogo-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_maynard_s_compression_nogo_router.py` 后，
+第 110 节的 `MaynardSCompressionMap` 被继续硬攻。结论是：如果保留当前完整共同逆元窗口，
+并同时坚持 W4 对象等式 `z=s1*s2`，则 Maynard-S 压缩映射本身不可能存在。
+
+当前共同变量表/KE-13 给出：
+
+```text
+s1,s2 ~ S_common；
+S_common≈P=X^(1/2+o(1))。
+```
+
+而 W4 对象等式要求：
+
+```text
+z=s1*s2；
+Z_window≈S_May^2。
+```
+
+所以完整 S 窗口会强制：
+
+```text
+Z_window≈S_common^2≈X；
+S_May≈X^(1/2)。
+```
+
+但第 109 节已由 Maynard 指数锥推出：
+
+```text
+q=1/2+o(1)  =>  S_May<=X^(3/10-o(1))
+              =>  Z_window<=X^(3/5-o(1))。
+```
+
+于是：
+
+```text
+Z_fullS≈X  >  X^(3/5-o(1))。
+```
+
+机器结果：
+
+```text
+status=maynard_s_compression_map_rejected_full_s_window_open；
+closed_nogo_gates=[
+  PriorSingleMaynardSCompressionTerminalAvailable,
+  FullCommonSWindowPinned,
+  W4ZEqualsS1S2ObjectRequirement,
+  MaynardConeForcesSmallSAndZ,
+  FullCommonSProductForcesLargeZ,
+  FullCommonSProductContradictsMaynardZBound
+]；
+open_nogo_gates=[
+  ShortSSubwindowDecomposition,
+  NewFullSDispersionAtom
+]；
+terminal_gap_after_router=ShortSSubwindowOrNewFullSDispersionAtom。
+```
+
+因此当前尺度侧剩余变为：
+
+```text
+ShortSSubwindowOrNewFullSDispersionAtom
+  = ShortSSubwindowDecomposition
+    + NewFullSDispersionAtom。
+```
+
+前沿路由器同步更新后：
+
+```text
+terminal_dual_gap
+  => NonAPWFDNoProjectionAndShortSOrFullSAtom。
+```
+
+其中
+
+```text
+NonAPWFDNoProjectionAndShortSOrFullSAtom
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + CurrentWFDMatchesW4OffDiagonalForm
+    + ShortSSubwindowOrNewFullSDispersionAtom。
+```
+
+这一步不是行命题闭合，而是排除了一个看似自然的闭合尝试：完整 `S_common` 窗口不可能同时满足
+Maynard-W4 对象等式和 Maynard 指数锥。下一步只能证明一个不丢目标质量的短 S 子窗口分解，
+或承认需要新增一个真正适配 full-S 窗口的原始 dispersion 原子。

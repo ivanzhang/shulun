@@ -1,0 +1,95 @@
+{
+  "certificate_type": "triad_a1_dibfi_maynard_s_compression_nogo_router",
+  "closed_nogo_gates": [
+    "PriorSingleMaynardSCompressionTerminalAvailable",
+    "FullCommonSWindowPinned",
+    "W4ZEqualsS1S2ObjectRequirement",
+    "MaynardConeForcesSmallSAndZ",
+    "FullCommonSProductForcesLargeZ",
+    "FullCommonSProductContradictsMaynardZBound"
+  ],
+  "forced_full_z_exponent": "1+o(1)",
+  "full_common_s_exponent": "1/2+o(1)",
+  "maynard_s_compression_map_closed": false,
+  "maynard_s_upper_bound_when_q_half": "3/10-o(1)",
+  "maynard_z_upper_bound_when_q_half": "3/5-o(1)",
+  "nogo_rows": [
+    {
+      "closed": true,
+      "evidence": "上游已排除已登记替代 W4 路由，尺度侧单点化为 MaynardSCompressionMap。",
+      "gate": "PriorSingleMaynardSCompressionTerminalAvailable",
+      "next_target": "FullCommonSProductForcesLargeZ",
+      "remaining": "none at prior-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "共同变量表固定 KE-13 逆元窗口 s,S；当前 non-AP 账本记录 S_common≈P=X^(1/2+o(1))。",
+      "gate": "FullCommonSWindowPinned",
+      "next_target": "ShortSSubwindowDecomposition",
+      "remaining": "若要压缩，必须证明合法短子窗口分解，而非直接使用完整 S_common。"
+    },
+    {
+      "closed": true,
+      "evidence": "DI RDN/W4 账本要求当前 WFD 对象逐项生成 z=s1*s2。",
+      "gate": "W4ZEqualsS1S2ObjectRequirement",
+      "next_target": "FullCommonSProductForcesLargeZ",
+      "remaining": "该对象等式尚未证明，但一旦坚持它，就固定 Z 的尺度。"
+    },
+    {
+      "closed": true,
+      "evidence": "q=1/2 时 S_May<=3/10，故 Z≈S_May^2<=3/5。",
+      "gate": "MaynardConeForcesSmallSAndZ",
+      "next_target": "FullCommonSProductContradictsMaynardZBound",
+      "remaining": "none at cone consequence level"
+    },
+    {
+      "closed": true,
+      "evidence": "s1,s2~X^1/2 and z=s1*s2 force Z~X^1/1 and S_May~X^1/2。",
+      "gate": "FullCommonSProductForcesLargeZ",
+      "next_target": "FullCommonSProductContradictsMaynardZBound",
+      "remaining": "none if full S window is preserved"
+    },
+    {
+      "closed": true,
+      "evidence": "full-S object gives Z exponent 1/1；Maynard cone allows at most 3/5。",
+      "gate": "FullCommonSProductContradictsMaynardZBound",
+      "next_target": "ShortSSubwindowOrNewFullSDispersionAtom",
+      "remaining": "MaynardSCompressionMap cannot preserve the full common S window and the W4 z=s1*s2 object simultaneously."
+    },
+    {
+      "closed": false,
+      "evidence": "需要证明 KE-13/WFD 的 s1,s2 窗口可合法切成 S_short<=X^(3/10-o(1)) 并不丢目标质量。",
+      "gate": "ShortSSubwindowDecomposition",
+      "next_target": "ShortSSubwindowOrNewFullSDispersionAtom",
+      "remaining": "尚未建立；这是新的具体硬点。"
+    },
+    {
+      "closed": false,
+      "evidence": "若不能短窗分解，必须新增适配 S_common≈X^(1/2) 的 full-S 原始 dispersion 原子。",
+      "gate": "NewFullSDispersionAtom",
+      "next_target": "ShortSSubwindowOrNewFullSDispersionAtom",
+      "remaining": "当前仓库没有该已登记闭合原子。"
+    }
+  ],
+  "open_nogo_gates": [
+    "ShortSSubwindowDecomposition",
+    "NewFullSDispersionAtom"
+  ],
+  "previous_terminal_gap": "MaynardSCompressionMap",
+  "review_conclusion": "Maynard-S 压缩映射在完整共同 S 窗口和 W4 对象等式同时保留时被排除；剩余转为短 S 子窗口分解，或新增 full-S 原始 dispersion 原子。",
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "di_rdn_substitution_json": "d5611a1991e1ba9c6be55eaea0f559e3bc8d9af0b7d55422f45d2079603a329d",
+    "nogo_note_md": "0c7419bcb695f630c12f92a304f666610a00bc5ab32ebe52c0435ffcc9e0f14e",
+    "reroute_audit_json": "b65b3e3303e0d0083b151ae14e38c721f94acedaff442afc120627736cc9a860",
+    "s_barrier_json": "3fb2070e3533870b600c158a3c9551fb2144a6a0c0343e798bfee7e1a64a83d0",
+    "script": "5c0895e8454acd4be11ab4c876d83b0826b278163c1eebcf3090e7f2bb087745"
+  },
+  "status": "maynard_s_compression_map_rejected_full_s_window_open",
+  "structural_law": "If the current WFD keeps the full common inverse window S_common≈X^(1/2) and also matches the Maynard W4 object z=s1*s2, then Z≈X and S_May≈X^(1/2). The Maynard cone with q=1/2 permits only S_May<=X^(3/10-o(1)). Therefore MaynardSCompressionMap is impossible without a genuine short-S subwindow decomposition, or else a new full-S dispersion atom.",
+  "terminal_gap_after_router": "ShortSSubwindowOrNewFullSDispersionAtom",
+  "terminal_gap_expansion": [
+    "ShortSSubwindowDecomposition",
+    "NewFullSDispersionAtom"
+  ]
+}
