@@ -1,0 +1,77 @@
+{
+  "approved_self_contained_theorem": "Triad-A1 same-set capacity / full-S terminal on the canonical RIW/Buchstab source branch.",
+  "audit_rows": [
+    {
+      "evidence": "APPROVE_CANONICAL_SOURCE_SELF_CONTAINED_BOUNDARY",
+      "gate": "BoundaryReviewPassed",
+      "passed": true,
+      "remaining": "none for theorem-boundary review"
+    },
+    {
+      "evidence": "NoFurtherCanonicalSourceSelfContainedGap_GenericUnrestrictedRefuted",
+      "gate": "FinalClosureCertificateStillClosed",
+      "passed": true,
+      "remaining": "none for canonical-source final closure"
+    },
+    {
+      "evidence": "main TeX contains theorem-boundary section and no-overclaim wording",
+      "gate": "MainTexAbsorbsBoundary",
+      "passed": true,
+      "remaining": "none if passed"
+    },
+    {
+      "evidence": "combined overview contains section 17 and terminal review gap",
+      "gate": "CombinedOverviewAbsorbsBoundary",
+      "passed": true,
+      "remaining": "none if passed"
+    },
+    {
+      "evidence": "claim-status table records closed canonical boundary and refuted generic branch",
+      "gate": "ClaimStatusAbsorbsBoundary",
+      "passed": true,
+      "remaining": "none if passed"
+    },
+    {
+      "evidence": "plain-language boundary note distinguishes closed and not-claimed statements",
+      "gate": "PlainLanguageExplanationPresent",
+      "passed": true,
+      "remaining": "none if passed"
+    },
+    {
+      "evidence": "main TeX still blocks promotion to final unconditional row/column theorem",
+      "gate": "NoGlobalOverclaimGuardPresent",
+      "passed": true,
+      "remaining": "global terminal certificates remain separate obligations"
+    }
+  ],
+  "certificate_type": "prime_matrix_row_theorem_boundary_merge_audit",
+  "merged_boundary_verdict": "CANONICAL_SOURCE_BOUNDARY_MERGED_NO_GLOBAL_OVERCLAIM",
+  "not_claimed_theorem": "Unrestricted generic full-S well-factorable WFD self-contained theorem.",
+  "open_gates": [],
+  "passed_gates": [
+    "BoundaryReviewPassed",
+    "FinalClosureCertificateStillClosed",
+    "MainTexAbsorbsBoundary",
+    "CombinedOverviewAbsorbsBoundary",
+    "ClaimStatusAbsorbsBoundary",
+    "PlainLanguageExplanationPresent",
+    "NoGlobalOverclaimGuardPresent"
+  ],
+  "remaining_global_obligations": [
+    "PDEC family certificates",
+    "LocalSurvivorCert family",
+    "CleanKLS/DLS certificates or explicit ExternalKLS input",
+    "D-structure/Tail-log4/Rankin/referee-block interfaces"
+  ],
+  "review_conclusion": "合并审查通过：canonical-source 自足边界已经并入主稿、总览、状态表和通俗说明；unrestricted generic WFD 自足版保持反证且不声明；完整行/列无条件定理仍需单独终端证书。",
+  "source_hashes": {
+    "claim_status_table": "6a4c092e5edb724e2adc439bc7189db39f9be066be857af6dc06590046cd56be",
+    "combined_overview": "29a6e898111451238c1f47dd43a34dffbeabcb12d6fafcbbba69f335bf172934",
+    "final_closure_json": "ee06624e115009c2c310b2bdd8aa7c331cbc5de987b9ea66ecfefbb6188c2697",
+    "main_tex": "b4a25d6b52dc76111b0a716005bb4f073de8b6fecde6fd3fa8d36667342cdc8f",
+    "plain_language_note": "bddff4d7420920a085a4e37999338ff923fa9e2459d92331e410be7bde21619d",
+    "review_json": "bd259691f3aba483373a28d47db1c2f26b6671c1c640790a70b797e832b44f30",
+    "script": "17bb5294108c02d38618731d9b38ce7d610aa1652537bc64ed9a4006d1ace7cb"
+  },
+  "status": "row_theorem_boundary_merge_audit_passed"
+}

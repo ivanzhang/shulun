@@ -2008,3 +2008,80 @@ m >= G(h)-P+2+2T。
 子族 `Emax_{h,N}` 已材料化：脚本从 Ziller--Morack 的最长覆盖块模表示重建 CRT 左端相位，并
 验证 `1197` 个最长块的覆盖性与边界非覆盖，验证失败数为 `0`。审稿边界保持不变：这不是完整
 `E_{h,N}` 枚举；下一义务是证明任意长度 `>=N` 的覆盖块可归入最长块相位族，或生成完整覆盖块证书。
+
+## 17. Triad-A1 自足边界最终评审并入
+
+最新最终评审文件为：
+
+```text
+docs/monograph/prime-matrix-triad-a1-self-contained-theorem-boundary-review.md
+docs/monograph/prime-matrix-row-theorem-final-boundary-plain-language.md
+```
+
+该评审把“已经闭合的命题”和“不能声明的更强命题”彻底分开。
+
+### 17.1 通俗边界
+
+已经闭合的是：
+
+```text
+Triad-A1 same-set capacity / full-S terminal
+on the canonical RIW/Buchstab source branch.
+```
+
+直观解释是：只要 A1 链条的实际来源固定为 canonical RIW/Buchstab 决策树权重，那么同一坏窗集合上的容量上界、来源账本、分支覆盖、最终闭合证书和定理边界评审已经全部对齐。该分支不再需要借用外部 FullS-KLS-ext 作为自足证明的一部分。
+
+不能声明的是：
+
+```text
+Unrestricted generic full-S well-factorable WFD self-contained theorem.
+```
+
+原因是 moving-delta no-go 已经反证当前 generic WFD 反原子输入。也就是说，generic WFD 宽口径不是“还剩一个普通证明缺口”，而是在当前形式假设下可被移动块容量模型击穿。
+
+### 17.2 七门评审结论
+
+最终评审裁定为：
+
+```text
+APPROVE_CANONICAL_SOURCE_SELF_CONTAINED_BOUNDARY
+```
+
+通过的七个门控为：
+
+1. `TheoremStatementBoundaryExact`：闭合定理只限 canonical-source 分支；
+2. `FinalClosureCertificateClosed`：final closure 证书无开放门；
+3. `FrontierAbsorbsFinalBoundary`：same-set capacity frontier 已吸收最终边界；
+4. `CanonicalSourceProvenanceClosed`：实际来源已闭合到 canonical RIW/Buchstab；
+5. `BranchCoverageNoSilentUpgrade`：canonical 与 generic 分支没有静默混用；
+6. `GenericUnrestrictedNoFalseClaim`：generic 自足版被反证，不写成闭合；
+7. `ExternalContractSeparatedFromSelfContainedClaim`：外部 FullS-KLS-ext 合同与自足证明分离。
+
+终端状态为：
+
+```text
+NoFurtherTheoremBoundaryReviewGap
+```
+
+### 17.3 对合著总状态的影响
+
+合著稿中应新增如下状态规则：
+
+```text
+Triad-A1 canonical-source self-contained boundary: closed.
+Triad-A1 unrestricted generic self-contained theorem: refuted and not claimed.
+unrestricted generic WFD 自足版已反证，不能作为闭合命题声明。
+Prime Matrix full row/column theorem: not promoted by this boundary alone.
+```
+
+因此，Triad-A1 的 canonical-source 边界已从“最窄剩余”升级为“已闭合边界”；但完整 Prime Matrix 行/列无条件定理仍必须单独完成终端证书排斥：
+
+```text
+PDEC family certificates；
+LocalSurvivorCert family；
+CleanKLS/DLS certificates or explicit ExternalKLS input；
+D-structure/Tail-log4/Rankin/referee-block interfaces。
+```
+
+这与主稿 `paper/contradiction-field-monograph/contradiction-field-monograph.tex` 的新节
+`Triad-A1 Self-Contained Theorem-Boundary Closure` 保持一致。
