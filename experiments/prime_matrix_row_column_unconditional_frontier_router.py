@@ -29,6 +29,7 @@ DEFAULT_FORMAL_UNIT = DOCS / "prime-matrix-wsh-fo-pdec-formal-unit-audit.json"
 DEFAULT_STITCHING = DOCS / "prime-matrix-wsh-fo-pdec-stitching-feasibility-audit.json"
 DEFAULT_NESTED = DOCS / "prime-matrix-wsh-fo-pdec-nested-duplicate-dominance-audit.json"
 DEFAULT_WEIGHTED = DOCS / "prime-matrix-wsh-fo-pdec-weighted-hall-dual-audit.json"
+DEFAULT_CROSS_Q = DOCS / "prime-matrix-wsh-fo-pdec-cross-q-chart-overlap-audit.json"
 DEFAULT_LINE_REF = DOCS / "line-by-line-internal-referee-matrix.md"
 DEFAULT_CLAIM_STATUS = DOCS / "claim-status-table.md"
 DEFAULT_MAIN_TEX = PAPER / "contradiction-field-monograph.tex"
@@ -88,6 +89,7 @@ def build_frontier_rows(
     stitching: dict[str, Any],
     nested: dict[str, Any],
     weighted: dict[str, Any],
+    cross_q: dict[str, Any],
     line_ref_text: str,
     claim_status_text: str,
     main_tex: str,
@@ -127,6 +129,11 @@ def build_frontier_rows(
         weighted["closed_subgate"]
         == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
         and weighted["all_nested_full_extra_unit_weight_blocked"]
+    )
+    cross_q_subgate_closed = (
+        cross_q["closed_subgate"]
+        == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+        and cross_q["all_cross_level_reuses_chart_overlap_blocked"]
     )
     referee_guarded = has_all(
         line_ref_text,
@@ -198,16 +205,17 @@ def build_frontier_rows(
                 f"q-row dedup best={q_row_best['fourier']}; "
                 f"block-local best={block_best['fourier']}; "
                 f"nested_unit_blocked={nested_subgate_closed}; "
-                f"weighted_full_duplicate_blocked={weighted_subgate_closed}"
+                f"weighted_full_duplicate_blocked={weighted_subgate_closed}; "
+                f"cross_q_chart_overlap_blocked={cross_q_subgate_closed}"
             ),
             remaining=(
                 "global_library_raw 强阈值尚未是单分支 PDEC 下界；"
-                "嵌套单位重复和 fractional weighted full duplicate 均已被支配，"
-                "剩余是 cross-q persistence、coordinate-cap 阈值、primitive 阈值或 SAE/Endpoint。"
+                "嵌套单位重复、fractional weighted full duplicate 和当前 cross-q coordinate persistence "
+                "均已被支配；剩余是 physical/primitive 阈值或 SAE/Endpoint。"
             ),
             next_action=(
-                "优先攻 cross-q persistence；若成立则攻 coordinate-cap U_CRT<2.9698366905785227，"
-                "若失败则转 primitive PDEC 或 SAE/Endpoint 吸收。"
+                "转攻 physical/primitive U_CRT<1.9997507790353146，"
+                "或证明物理 cross-chart 复用进入 SAE/Endpoint 吸收。"
             ),
             blocks_global=True,
         ),
@@ -254,6 +262,7 @@ def run(
     stitching_path: Path,
     nested_path: Path,
     weighted_path: Path,
+    cross_q_path: Path,
     line_ref_path: Path,
     claim_status_path: Path,
     main_tex_path: Path,
@@ -266,6 +275,7 @@ def run(
     stitching = load_json(stitching_path)
     nested = load_json(nested_path)
     weighted = load_json(weighted_path)
+    cross_q = load_json(cross_q_path)
     line_ref_text = read_text(line_ref_path)
     claim_status_text = read_text(claim_status_path)
     main_tex = read_text(main_tex_path)
@@ -278,6 +288,7 @@ def run(
         stitching,
         nested,
         weighted,
+        cross_q,
         line_ref_text,
         claim_status_text,
         main_tex,
@@ -307,6 +318,7 @@ def run(
             "stitching_audit": file_sha256(stitching_path),
             "nested_duplicate_dominance": file_sha256(nested_path),
             "weighted_hall_dual_audit": file_sha256(weighted_path),
+            "cross_q_chart_overlap_audit": file_sha256(cross_q_path),
             "line_referee_matrix": file_sha256(line_ref_path),
             "claim_status_table": file_sha256(claim_status_path),
             "main_tex": file_sha256(main_tex_path),
@@ -326,13 +338,18 @@ def run(
         "narrowest_next_hardpoint": {
             "name": "A1-FO-PDEC-SameFormalUnit",
             "subgate_closed_this_round": (
-                "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
-                if weighted["closed_subgate"]
-                == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                if cross_q["closed_subgate"]
+                == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
                 else (
-                    "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
-                    if nested_closed
-                    else "NestedBlockMultiplicityStillOpen"
+                    "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                    if weighted["closed_subgate"]
+                    == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                    else (
+                        "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
+                        if nested_closed
+                        else "NestedBlockMultiplicityStillOpen"
+                    )
                 )
             ),
             "raw_best": raw_best,
@@ -341,21 +358,20 @@ def run(
             "reason": (
                 "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；"
                 "但 U_CRT 常数比较必须先在同一 formal unit 上合法；"
-                "本轮已排除嵌套重复通过 fractional weighted dual 恢复完整第二单位质量。"
+                "本轮已排除当前 cross-q 坐标图重叠作为独立持久化质量。"
             ),
             "next_routes": [
-                "cross-q persistence theorem",
-                "coordinate-cap PDEC threshold U_CRT < 2.9698366905785227",
                 "physical/primitive PDEC threshold U_CRT < 1.9997507790353146",
                 "SAE/Endpoint absorption for rejected cross-level reuses",
+                "future non-overlap cross-q persistence theorem if a new family appears",
             ],
         },
         "review_conclusion": (
             "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；"
             "已排除的是 unrestricted generic WFD 自足版；当前最窄硬点是 A:PDEC 端口内"
-            "同一 formal unit 的 FO-PDEC 合法性。嵌套块单位重复及其 fractional weighted full duplicate "
-            "恢复路线均已被阻断；下一步应攻 cross-q persistence，或转入 coordinate-cap/primitive PDEC "
-            "与 SAE/Endpoint 吸收。"
+            "同一 formal unit 的 FO-PDEC 合法性。嵌套块单位重复、fractional weighted full duplicate "
+            "恢复路线、以及当前 cross-q 坐标图持久化路线均已被阻断；下一步应攻 "
+            "physical/primitive PDEC 阈值，或 SAE/Endpoint 吸收。"
         ),
     }
 
@@ -445,6 +461,7 @@ def main() -> None:
     parser.add_argument("--stitching", type=Path, default=DEFAULT_STITCHING)
     parser.add_argument("--nested", type=Path, default=DEFAULT_NESTED)
     parser.add_argument("--weighted", type=Path, default=DEFAULT_WEIGHTED)
+    parser.add_argument("--cross-q", type=Path, default=DEFAULT_CROSS_Q)
     parser.add_argument("--line-ref", type=Path, default=DEFAULT_LINE_REF)
     parser.add_argument("--claim-status", type=Path, default=DEFAULT_CLAIM_STATUS)
     parser.add_argument("--main-tex", type=Path, default=DEFAULT_MAIN_TEX)
@@ -460,6 +477,7 @@ def main() -> None:
         args.stitching,
         args.nested,
         args.weighted,
+        args.cross_q,
         args.line_ref,
         args.claim_status,
         args.main_tex,

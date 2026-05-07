@@ -36,10 +36,10 @@
     },
     {
       "blocks_global": true,
-      "evidence": "raw ell=199, h=95, Fourier=3.959247567099438; coordinate-cap Fourier=2.9698366905785227; physical-cap Fourier=1.9997507790353146; q-row dedup best=1.0; block-local best=1.0; nested_unit_blocked=True; weighted_full_duplicate_blocked=True",
+      "evidence": "raw ell=199, h=95, Fourier=3.959247567099438; coordinate-cap Fourier=2.9698366905785227; physical-cap Fourier=1.9997507790353146; q-row dedup best=1.0; block-local best=1.0; nested_unit_blocked=True; weighted_full_duplicate_blocked=True; cross_q_chart_overlap_blocked=True",
       "gate": "A1-FO-PDEC-SameFormalUnit",
-      "next_action": "优先攻 cross-q persistence；若成立则攻 coordinate-cap U_CRT<2.9698366905785227，若失败则转 primitive PDEC 或 SAE/Endpoint 吸收。",
-      "remaining": "global_library_raw 强阈值尚未是单分支 PDEC 下界；嵌套单位重复和 fractional weighted full duplicate 均已被支配，剩余是 cross-q persistence、coordinate-cap 阈值、primitive 阈值或 SAE/Endpoint。",
+      "next_action": "转攻 physical/primitive U_CRT<1.9997507790353146，或证明物理 cross-chart 复用进入 SAE/Endpoint 吸收。",
+      "remaining": "global_library_raw 强阈值尚未是单分支 PDEC 下界；嵌套单位重复、fractional weighted full duplicate 和当前 cross-q coordinate persistence 均已被支配；剩余是 physical/primitive 阈值或 SAE/Endpoint。",
       "status": "current_narrowest_open"
     },
     {
@@ -100,10 +100,9 @@
     },
     "name": "A1-FO-PDEC-SameFormalUnit",
     "next_routes": [
-      "cross-q persistence theorem",
-      "coordinate-cap PDEC threshold U_CRT < 2.9698366905785227",
       "physical/primitive PDEC threshold U_CRT < 1.9997507790353146",
-      "SAE/Endpoint absorption for rejected cross-level reuses"
+      "SAE/Endpoint absorption for rejected cross-level reuses",
+      "future non-overlap cross-q persistence theorem if a new family appears"
     ],
     "physical_cap_best": {
       "factor": 199,
@@ -143,8 +142,8 @@
       ],
       "support": 3
     },
-    "reason": "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；但 U_CRT 常数比较必须先在同一 formal unit 上合法；本轮已排除嵌套重复通过 fractional weighted dual 恢复完整第二单位质量。",
-    "subgate_closed_this_round": "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+    "reason": "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；但 U_CRT 常数比较必须先在同一 formal unit 上合法；本轮已排除当前 cross-q 坐标图重叠作为独立持久化质量。",
+    "subgate_closed_this_round": "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
   },
   "open_global_gates": [
     "TerminalTriadNoFourthExit",
@@ -154,16 +153,17 @@
     "C:CleanKLS-DLS",
     "D-structure/Tail-log4/RankinReferee"
   ],
-  "review_conclusion": "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；已排除的是 unrestricted generic WFD 自足版；当前最窄硬点是 A:PDEC 端口内同一 formal unit 的 FO-PDEC 合法性。嵌套块单位重复及其 fractional weighted full duplicate 恢复路线均已被阻断；下一步应攻 cross-q persistence，或转入 coordinate-cap/primitive PDEC 与 SAE/Endpoint 吸收。",
+  "review_conclusion": "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；已排除的是 unrestricted generic WFD 自足版；当前最窄硬点是 A:PDEC 端口内同一 formal unit 的 FO-PDEC 合法性。嵌套块单位重复、fractional weighted full duplicate 恢复路线、以及当前 cross-q 坐标图持久化路线均已被阻断；下一步应攻 physical/primitive PDEC 阈值，或 SAE/Endpoint 吸收。",
   "row_column_unconditional_closed": false,
   "source_hashes": {
     "boundary_merge": "b454fcf02a28a64540f88759fe85ca639443b9a7b49c3d18211475c99b0e4ac5",
-    "claim_status_table": "bfc8a97a79dd21f8512bc4022564a63a463fe8ce673222535d89592732a58e69",
+    "claim_status_table": "41820dc4ee13cf620be2f6510a31a09121e7ea3888153c1786eedb4df83721b1",
+    "cross_q_chart_overlap_audit": "60ff0aaa2335146d6c7167cef36e5fd2fb0316626c575901b1b4d363915fbc1d",
     "formal_unit_audit": "f79dd27d21604a35528746cad584911c8064fcd862766f90031b81041742e756",
     "line_referee_matrix": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
-    "main_tex": "e37bd49ea67e8968b4ee368f112c7bf2f017b5c34db0f79fd84432f038ecc0b1",
+    "main_tex": "64e39fa0321867ca068b393311df03f4e5ba94b314ac53d81fe58920fcc9bbd1",
     "nested_duplicate_dominance": "8a1f4e4af359ab84b429b30880534dce7938a950bac13d410e828394d9ed89c7",
-    "script": "0aa2a3e9640b793103c8ee97e5ca4882767fa24f22c4d823a3f425ed4ac2da92",
+    "script": "f72cfac1b6622ef1edb47599d64afa497e57c6d9fa0d6327e0cb4187deedf6c2",
     "stitching_audit": "84a96301e485505aec62f3bae15cfd1956429ebd538de50d850c08673196d750",
     "terminal_confluence": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c",
     "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547",

@@ -2096,6 +2096,9 @@ docs/monograph/prime-matrix-wsh-fo-pdec-nested-duplicate-dominance-audit.md/json
 experiments/prime_matrix_wsh_fo_pdec_weighted_hall_dual_audit.py
 docs/monograph/prime-matrix-wsh-fo-pdec-weighted-hall-dual-audit.md/json
 docs/monograph/prime-matrix-wsh-fo-pdec-weighted-hall-dual-dominance.md
+experiments/prime_matrix_wsh_fo_pdec_cross_q_chart_overlap_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-cross-q-chart-overlap-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-cross-q-chart-overlap-dominance.md
 experiments/prime_matrix_row_column_unconditional_frontier_router.py
 docs/monograph/prime-matrix-row-column-unconditional-frontier-router.md/json
 ```
@@ -2139,4 +2142,22 @@ single formal branch:    1.0
 cross-q persistence theorem；
 若成立，攻 coordinate-cap PDEC threshold U_CRT < 2.9698366905785227；
 若失败，转 physical/primitive PDEC threshold 或 SAE/Endpoint absorption。
+```
+
+最新 cross-q 坐标图审计进一步关闭了当前样本的 cross-q persistence 路线。9 个跨 `q` 复用全部是
+同一物理候选在 `q=773,row=325` 与 `q=967,row=260` 两张重叠坐标图中的表示，满足：
+
+```text
+base_gap = 1；
+column_gap = -1；
+candidate_gap = 0；
+same candidate / semiprime / offset / factor = true。
+```
+
+关键 `factor=199` 复用 `250541=199*1259` 也在其中。因此 coordinate-cap `2.9698366905785227`
+不能作为当前正式分支下界；前沿继续降到：
+
+```text
+physical/primitive PDEC threshold U_CRT < 1.9997507790353146；
+或 SAE/Endpoint absorption for physical cross-chart reuses。
 ```
