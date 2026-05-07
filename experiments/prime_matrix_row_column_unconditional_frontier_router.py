@@ -36,6 +36,9 @@ DEFAULT_PHYSICAL_TAUTOLOGY = (
 DEFAULT_SAE_ENDPOINT = (
     DOCS / "prime-matrix-wsh-fo-pdec-sae-endpoint-absorption-audit.json"
 )
+DEFAULT_LOCAL_SURVIVOR_LEDGER = (
+    DOCS / "prime-matrix-local-survivor-materialized-packet-ledger.json"
+)
 DEFAULT_LINE_REF = DOCS / "line-by-line-internal-referee-matrix.md"
 DEFAULT_CLAIM_STATUS = DOCS / "claim-status-table.md"
 DEFAULT_MAIN_TEX = PAPER / "contradiction-field-monograph.tex"
@@ -98,6 +101,7 @@ def build_frontier_rows(
     cross_q: dict[str, Any],
     physical_tautology: dict[str, Any],
     sae_endpoint: dict[str, Any],
+    local_survivor_ledger: dict[str, Any],
     line_ref_text: str,
     claim_status_text: str,
     main_tex: str,
@@ -154,6 +158,14 @@ def build_frontier_rows(
         and sae_endpoint["all_sources_have_local_survivor_witness"]
         and sae_endpoint["all_factor_199_fibers_are_sparse_load_one"]
     )
+    materialized_local_survivor_closed = (
+        local_survivor_ledger["closed_subgate"]
+        == "MaterializedLocalSurvivorPacketsExhausted"
+        and local_survivor_ledger[
+            "current_materialized_local_survivor_packets_closed"
+        ]
+        and local_survivor_ledger["open_materialized_obligation_count"] == 0
+    )
     referee_guarded = has_all(
         line_ref_text,
         ["PM-16", "BLOCK-REFEREE", "Tail-log4", "finite"],
@@ -172,6 +184,7 @@ def build_frontier_rows(
             "PDEC family certificates",
             "LocalSurvivorCert family",
             "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses",
+            "MaterializedLocalSurvivorPacketsExhausted",
         ],
     )
     raw_best = stitching["summary"]["raw_best"]
@@ -236,21 +249,32 @@ def build_frontier_rows(
             ),
             remaining=(
                 "当前已审计 FO-PDEC 样本链中，raw、coordinate-cap、physical 二点阈值和二点 "
-                "SAE/Endpoint 均已被降口径或本地 witness 吸收；但完整 PDEC family 对未来 "
-                "非二点、非同图重叠 formal unit 仍未闭合。"
+                "SAE/Endpoint 均已被降口径或本地 witness 吸收；但完整 PDEC family 对未来非二点、"
+                "非同图重叠 formal unit 仍未闭合。"
             ),
             next_action=(
-                "停止优化当前 U_CRT 常数；转向全局 LocalSurvivorCert 家族，或寻找至少三点"
-                "非退化 primitive PDEC formal unit。"
+                "停止优化当前 U_CRT 常数；转向 packet-generation，或寻找至少三点非退化 "
+                "primitive PDEC formal unit。"
             ),
             blocks_global=True,
         ),
         frontier_row(
             gate="B:LocalSurvivorFamily",
-            status="open_terminal",
-            evidence="; ".join(confluence["terminal_open_obligations"][1:2]),
-            remaining="所有 sparse/孤窗候选集仍需 witness 或 blocker 覆盖不足证书。",
-            next_action="接收 PDEC 失败后的稀疏重复、Endpoint 和短弧对象，逐窗给 witness/deficit。",
+            status=(
+                "materialized_packets_closed_global_generation_open"
+                if materialized_local_survivor_closed
+                else "open_terminal"
+            ),
+            evidence=(
+                f"materialized_packets={local_survivor_ledger['materialized_packet_count']}; "
+                f"witnesses={local_survivor_ledger['local_survivor_witness_count']}; "
+                f"open_materialized={local_survivor_ledger['open_materialized_obligation_count']}"
+            ),
+            remaining=(
+                "当前已物化 LocalSurvivor/SAE 包全部闭合；全局剩余是 packet-generation："
+                "证明任意未来 sparse escape 必物化为同类有限包或持久化为 PDEC/ColumnCRT/CleanKLS。"
+            ),
+            next_action="攻 LocalSurvivor packet-generation theorem，禁止在已闭合物化包上重复找缺口。",
             blocks_global=True,
         ),
         frontier_row(
@@ -291,6 +315,7 @@ def run(
     cross_q_path: Path,
     physical_tautology_path: Path,
     sae_endpoint_path: Path,
+    local_survivor_ledger_path: Path,
     line_ref_path: Path,
     claim_status_path: Path,
     main_tex_path: Path,
@@ -306,6 +331,7 @@ def run(
     cross_q = load_json(cross_q_path)
     physical_tautology = load_json(physical_tautology_path)
     sae_endpoint = load_json(sae_endpoint_path)
+    local_survivor_ledger = load_json(local_survivor_ledger_path)
     line_ref_text = read_text(line_ref_path)
     claim_status_text = read_text(claim_status_path)
     main_tex = read_text(main_tex_path)
@@ -321,6 +347,7 @@ def run(
         cross_q,
         physical_tautology,
         sae_endpoint,
+        local_survivor_ledger,
         line_ref_text,
         claim_status_text,
         main_tex,
@@ -353,6 +380,9 @@ def run(
             "cross_q_chart_overlap_audit": file_sha256(cross_q_path),
             "physical_primitive_tautology_audit": file_sha256(physical_tautology_path),
             "sae_endpoint_absorption_audit": file_sha256(sae_endpoint_path),
+            "local_survivor_materialized_packet_ledger": file_sha256(
+                local_survivor_ledger_path
+            ),
             "line_referee_matrix": file_sha256(line_ref_path),
             "claim_status_table": file_sha256(claim_status_path),
             "main_tex": file_sha256(main_tex_path),
@@ -370,27 +400,37 @@ def run(
         "frontier_rows": rows,
         "open_global_gates": open_global_gates,
         "narrowest_next_hardpoint": {
-            "name": "GlobalLocalSurvivorOrNonTautologicalPDEC",
+            "name": (
+                "LocalSurvivorPacketGenerationOrNonTautologicalPDEC"
+                if local_survivor_ledger["closed_subgate"]
+                == "MaterializedLocalSurvivorPacketsExhausted"
+                else "GlobalLocalSurvivorOrNonTautologicalPDEC"
+            ),
             "subgate_closed_this_round": (
-                "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
-                if sae_endpoint["closed_subgate"]
-                == "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
+                "MaterializedLocalSurvivorPacketsExhausted"
+                if local_survivor_ledger["closed_subgate"]
+                == "MaterializedLocalSurvivorPacketsExhausted"
                 else (
-                    "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
-                    if physical_tautology["closed_subgate"]
-                    == "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
+                    "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
+                    if sae_endpoint["closed_subgate"]
+                    == "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
                     else (
-                        "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
-                        if cross_q["closed_subgate"]
-                        == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                        "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
+                        if physical_tautology["closed_subgate"]
+                        == "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
                         else (
-                            "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
-                            if weighted["closed_subgate"]
-                            == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                            "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                            if cross_q["closed_subgate"]
+                            == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
                             else (
-                                "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
-                                if nested_closed
-                                else "NestedBlockMultiplicityStillOpen"
+                                "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                                if weighted["closed_subgate"]
+                                == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                                else (
+                                    "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
+                                    if nested_closed
+                                    else "NestedBlockMultiplicityStillOpen"
+                                )
                             )
                         )
                     )
@@ -402,11 +442,12 @@ def run(
             "reason": (
                 "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；"
                 "当前已审计 FO-PDEC 强信号链已被逐层降口径，最后两个物理原子由"
-                "同固定偏移纤维的本地素数见证吸收。下一硬点不再是当前 ell=199 常数，"
-                "而是全局 LocalSurvivor 证书族或未来非二点 primitive PDEC 家族。"
+                "同固定偏移纤维的本地素数见证吸收；已物化 LocalSurvivor/SAE 包总账"
+                "也无开放窗口。下一硬点不再是已物化样本，而是 packet-generation 定理"
+                "或未来非二点 primitive PDEC 家族。"
             ),
             "next_routes": [
-                "global LocalSurvivorCert family for unaudited sparse windows",
+                "LocalSurvivor packet-generation theorem for unaudited sparse windows",
                 "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints",
                 "CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion",
             ],
@@ -415,8 +456,8 @@ def run(
             "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；"
             "已排除的是 unrestricted generic WFD 自足版；当前已审计 FO-PDEC ell=199 强信号链"
             "已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和"
-            "二点 SAE/Endpoint 本地 witness 吸收。下一步应攻全局 LocalSurvivorCert 家族，"
-            "或寻找未来非二点 primitive PDEC formal unit。"
+            "二点 SAE/Endpoint 本地 witness 吸收；已物化 LocalSurvivor/SAE 包总账也全部闭合。"
+            "下一步应攻 LocalSurvivor packet-generation 定理，或寻找未来非二点 primitive PDEC formal unit。"
         ),
     }
 
@@ -509,6 +550,7 @@ def main() -> None:
     parser.add_argument("--cross-q", type=Path, default=DEFAULT_CROSS_Q)
     parser.add_argument("--physical-tautology", type=Path, default=DEFAULT_PHYSICAL_TAUTOLOGY)
     parser.add_argument("--sae-endpoint", type=Path, default=DEFAULT_SAE_ENDPOINT)
+    parser.add_argument("--local-survivor-ledger", type=Path, default=DEFAULT_LOCAL_SURVIVOR_LEDGER)
     parser.add_argument("--line-ref", type=Path, default=DEFAULT_LINE_REF)
     parser.add_argument("--claim-status", type=Path, default=DEFAULT_CLAIM_STATUS)
     parser.add_argument("--main-tex", type=Path, default=DEFAULT_MAIN_TEX)
@@ -527,6 +569,7 @@ def main() -> None:
         args.cross_q,
         args.physical_tautology,
         args.sae_endpoint,
+        args.local_survivor_ledger,
         args.line_ref,
         args.claim_status,
         args.main_tex,

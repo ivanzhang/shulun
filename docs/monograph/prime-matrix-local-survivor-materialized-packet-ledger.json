@@ -1,0 +1,242 @@
+{
+  "certificate_type": "local_survivor_materialized_packet_ledger",
+  "closed_subgate": "MaterializedLocalSurvivorPacketsExhausted",
+  "current_materialized_local_survivor_packets_closed": true,
+  "finite_pdec_atom_count": 25,
+  "local_survivor_witness_count": 5,
+  "materialized_packet_count": 9,
+  "materialized_phase_atom_count": 32,
+  "materialized_source_count": 3,
+  "next_narrowest_hardpoint": "LocalSurvivorPacketGenerationOrNonTautologicalPDEC",
+  "open_materialized_obligation_count": 0,
+  "open_sources": [],
+  "remaining_after_subgate": [
+    "LocalSurvivor packet-generation theorem for unaudited sparse windows",
+    "future primitive PDEC with at least three non-tautological physical atoms or a fixed-frequency constraint",
+    "CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion"
+  ],
+  "review_conclusion": "当前已经物化到机器账本的 LocalSurvivor/SAE 包全部闭合：SparseCap 的 P×P 早期出口无完成冲突，FO-PDEC 二点原子由同纤维本地素数见证吸收，RPZ Endpoint-SAE 当前账本实际负载为零。剩余不再是这些已物化窗口本身，而是全局 packet-generation 定理：证明任何未来 sparse escape 都必须物化为同类有限包并给 witness/deficit，或持久化为非二点 PDEC/ColumnCRT/CleanKLS 输入。",
+  "source_hashes": {
+    "fo_pdec_sae_endpoint_absorption": "a706939ad36e26cd746690cd864de49307284e002adf7b8e7f055fd66c847347",
+    "rpz_endpoint_sae_finite": "3d58559ca06db95de16df5b0c56f88432a7c456b6f007a3a273ff9adffef6bf1",
+    "script": "7776cf67995868c42c89b3d6edccbdcbe4870bc671f270ce2e47acc68240b0e4",
+    "sparsecap_local_survivor": "b65eaf7458e9bcc8591109eab724cb5a90861f97181dfe59267a53a55716cc6c"
+  },
+  "sources": [
+    {
+      "closed_for_current_pxP": true,
+      "early_conflicts": [],
+      "finite_pdec_atom_count": 25,
+      "finite_pdec_packets_sample": [
+        {
+          "first_completion_row": 169,
+          "p": 13,
+          "phase": 169,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 702,
+          "p": 13,
+          "phase": 702,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 1609,
+          "p": 13,
+          "phase": 1609,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 2142,
+          "p": 13,
+          "phase": 2142,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 4744,
+          "p": 17,
+          "phase": 124,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 11810,
+          "p": 17,
+          "phase": 260,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 14471,
+          "p": 17,
+          "phase": 611,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 19093,
+          "p": 17,
+          "phase": 613,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 14688,
+          "p": 17,
+          "phase": 828,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 21754,
+          "p": 17,
+          "phase": 964,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 28820,
+          "p": 17,
+          "phase": 1100,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        },
+        {
+          "first_completion_row": 1211,
+          "p": 17,
+          "phase": 1211,
+          "q": 2310,
+          "route": "FinitePDECAtomBeyondP",
+          "row_le_p_phase": false
+        }
+      ],
+      "local_survivor_witness_count": 1,
+      "materialized_packet_count": 3,
+      "materialized_phase_atom_count": 26,
+      "open_current_obligation_count": 0,
+      "route": "ClosedForPxPThenFinitePDEC",
+      "source": "Triad-A1 SparseCap",
+      "status": "sparsecap_atoms_routed_to_local_survivor_or_finite_pdec",
+      "witness_rows": [
+        {
+          "low_holes": [
+            7
+          ],
+          "p": 17,
+          "phase": 13,
+          "q": 2310,
+          "route": "LocalSurvivorWitnessAtRowLeP",
+          "witness_col": 7
+        }
+      ]
+    },
+    {
+      "closed_for_current_pxP": true,
+      "finite_pdec_atom_count": 0,
+      "local_survivor_witness_count": 4,
+      "materialized_packet_count": 4,
+      "materialized_phase_atom_count": 4,
+      "open_current_obligation_count": 0,
+      "route": "TwoAtomsAbsorbedByLocalSurvivor",
+      "source": "FO-PDEC two physical atoms",
+      "status": "audited_two_physical_primitive_atoms_absorbed_by_local_survivor_witnesses",
+      "witness_rows": [
+        {
+          "atom": 250541,
+          "block": 2,
+          "offset": 24,
+          "q": 773,
+          "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+          "row": 325,
+          "witness_primes": [
+            250543
+          ]
+        },
+        {
+          "atom": 250541,
+          "block": 3,
+          "offset": 24,
+          "q": 967,
+          "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+          "row": 260,
+          "witness_primes": [
+            250543
+          ]
+        },
+        {
+          "atom": 1664237,
+          "block": 1,
+          "offset": 30,
+          "q": 1993,
+          "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+          "row": 836,
+          "witness_primes": [
+            1664227
+          ]
+        },
+        {
+          "atom": 1664237,
+          "block": 4,
+          "offset": 30,
+          "q": 1993,
+          "route": "LocalSurvivorWitnessInSameFixedOffsetFiber",
+          "row": 836,
+          "witness_primes": [
+            1664227
+          ]
+        }
+      ]
+    },
+    {
+      "closed_for_current_pxP": true,
+      "finite_pdec_atom_count": 0,
+      "local_survivor_witness_count": 0,
+      "materialized_packet_count": 2,
+      "materialized_phase_atom_count": 2,
+      "open_current_obligation_count": 0,
+      "route": "VacuousCurrentLedgerClosed",
+      "source": "RPZ Endpoint-SAE finite ledger",
+      "status": "rpz_endpoint_sae_finite_certificate_current_ledger",
+      "vacuous_rows": [
+        {
+          "actual_load": 0,
+          "phase_key": [
+            11,
+            8,
+            2,
+            2
+          ],
+          "possible_load": 1,
+          "route": "vacuous_current_ledger_closed"
+        },
+        {
+          "actual_load": 0,
+          "phase_key": [
+            11,
+            8,
+            3,
+            1
+          ],
+          "possible_load": 1,
+          "route": "vacuous_current_ledger_closed"
+        }
+      ]
+    }
+  ],
+  "status": "current_materialized_local_survivor_packets_exhausted_not_global_proof"
+}

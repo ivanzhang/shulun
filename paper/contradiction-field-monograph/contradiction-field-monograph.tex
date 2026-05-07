@@ -824,6 +824,38 @@ This closes only the current finite $\ell=199$ FO--PDEC sample chain:
 \]
 It does not close the global prime-matrix theorem.  The next honest frontier is the global LocalSurvivor certificate family, or a future non-tautological primitive PDEC family with at least three physical atoms or an extra fixed-frequency constraint.
 
+\section{Materialized LocalSurvivor Packet Ledger}
+
+The current LocalSurvivor packet ledger is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-local-survivor-materialized-packet-ledger.md}.
+\]
+It combines the Triad-A1 SparseCap ledger, the FO--PDEC two-atom SAE/Endpoint absorption ledger, and the RPZ Endpoint-SAE finite ledger.  The combined current ledger records
+\[
+\begin{array}{c|c}
+\text{quantity} & \text{value}\\
+\hline
+\text{materialized packets} & 9\\
+\text{materialized phase atoms} & 32\\
+\text{local survivor witnesses} & 5\\
+\text{finite PDEC atoms} & 25\\
+\text{open materialized obligations} & 0.
+\end{array}
+\]
+Thus every LocalSurvivor/SAE packet currently materialized by the proof frontier is either witnessed, vacuous in the current ledger, or routed to a finite PDEC packet beyond the early $P\times P$ rows.
+
+The packet-generation contract is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md}.
+\]
+It records the structural dichotomy for any future sparse escape.  If the window data can be extracted, it is a finite LocalSurvivor packet and must be checked by a witness or blocker-deficit certificate.  If the same finite signature persists along an infinite counterexample family, it is no longer a sparse terminal: according to the repeated signature it returns to PDEC, ColumnCRT, endpoint PDEC, TailAnchor, or CofactorAnchor.  If the finite signatures do not persist and the layers keep escaping, the branch enters CleanKLS/DLS admission.
+
+Consequently the next narrow frontier is
+\[
+  \text{LocalSurvivorPacketGenerationOrNonTautologicalPDEC}.
+\]
+This is still not a final unconditional theorem.  It says that the current materialized LocalSurvivor obligations are exhausted and that no unnamed LocalSurvivor terminal remains; the remaining work is packet-extractor completeness, a genuinely non-tautological primitive PDEC family, or the CleanKLS/DLS and referee inputs.
+
 \section{Triad-A1 Self-Contained Theorem-Boundary Closure}
 
 The final Triad-A1 review separates the exact theorem that is now closed from a stronger statement that is not true under the recorded hypotheses.  In plain terms, the closed result is the following.  Once the source of the A1 payment measure is fixed to the canonical RIW/Buchstab decision-tree source, every remaining same-set capacity gate in the full-$S$ terminal chain is internally accounted for.  The proof no longer needs to borrow the external FullS--KLS theorem for this canonical-source branch.

@@ -2105,6 +2105,9 @@ docs/monograph/prime-matrix-wsh-fo-pdec-physical-primitive-tautology.md
 experiments/prime_matrix_wsh_fo_pdec_sae_endpoint_absorption_audit.py
 docs/monograph/prime-matrix-wsh-fo-pdec-sae-endpoint-absorption-audit.md/json
 docs/monograph/prime-matrix-wsh-fo-pdec-sae-endpoint-absorption.md
+experiments/prime_matrix_local_survivor_materialized_packet_ledger.py
+docs/monograph/prime-matrix-local-survivor-materialized-packet-ledger.md/json
+docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md
 experiments/prime_matrix_row_column_unconditional_frontier_router.py
 docs/monograph/prime-matrix-row-column-unconditional-frontier-router.md/json
 ```
@@ -2200,3 +2203,33 @@ global LocalSurvivorCert family；
 or future primitive PDEC with >=3 non-tautological physical atoms or extra constraints；
 plus CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion。
 ```
+
+继续合并 LocalSurvivor 总账后，当前已经物化到机器账本的孤窗包也被清空：
+
+```text
+materialized packets: 9；
+materialized phase atoms: 32；
+local survivor witnesses: 5；
+finite PDEC atoms: 25；
+open materialized obligations: 0。
+```
+
+这合并了三类当前来源：Triad-A1 SparseCap、FO-PDEC 二点 SAE/Endpoint、RPZ Endpoint-SAE 有限
+账本。于是 `LocalSurvivor` 的剩余从“逐个已知孤窗找 witness”改写为生成问题：
+
+```text
+PacketExtractorCompleteness:
+  every future sparse escape emits a finite LocalSurvivor packet;
+
+NonTautologicalPDEC:
+  same formal unit has >=3 physical atoms
+  or fixed-frequency constraints defeat two-point tautology;
+
+CleanKLS/DLS:
+  signature layers escape every finite packet.
+```
+
+`prime-matrix-local-survivor-packet-generation-contract.md` 同时证明无名孤窗不能作为第四终端停留：
+同签名无限复现进入 `PDEC/ColumnCRT/TailAnchor/CofactorAnchor`，签名层级逃逸进入 `CleanKLS/DLS`，
+下降或 seam 路线回到已命名包。因此新的最窄硬点更新为
+`LocalSurvivorPacketGenerationOrNonTautologicalPDEC`。
