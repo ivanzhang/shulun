@@ -4404,3 +4404,77 @@ terminal_dual_gap => SquarefreeBuchstabLayerSupportLowerBoundOrExternalDIBFIOrig
 
 这一步把 canonical RIW 因子支撑问题降到最具体的乘法组合支撑下界。继续无黑箱硬攻时，
 下一步应直接证明 squarefree Buchstab 层在 surviving balanced interval 中的局部非稀薄性。
+
+## 82. A1 SquarefreeBuchstabSupport 化为 exact 层承认与薄块回流
+
+新增 `experiments/prime_matrix_triad_a1_squarefree_buchstab_support_router.py` 后，
+第 81 节留下的 `SquarefreeBuchstabLayerSupportLowerBound` 被继续拆开。关键结论是：
+普通厚区间的 squarefree/Buchstab 计数不是终端硬点；真正硬点在 exact canonical 层是否承认这些
+product，并且薄区间是否强制返回已有出口。
+
+机器结果：
+
+```text
+status=raw_thick_squarefree_support_closed_layer_transfer_open；
+next_internal_target=CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn；
+terminal_gap_after_router=CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturnOrExternalDIBFIOriginalDispersion。
+```
+
+结构二分律：
+
+```text
+if balanced interval is thick and admitted by the canonical layer:
+  Mertens/Buchstab gives many squarefree products;
+  nonzero coefficient transfer gives alpha/delta absolute support;
+else:
+  the interval is thin or layer-rejected and must return to edge/PDEC/SAE.
+```
+
+本步已经闭合的部分是：
+
+```text
+ThickMertensBuchstabSupport:
+  在厚的 surviving balanced interval 中，
+  Mertens/Buchstab 型下界给出 interval/log^E 级 squarefree products；
+  该体量足以支付 RIW support 所需的 log-power 损失。
+```
+
+仍未闭合的 exact 门控是：
+
+```text
+CanonicalLayerAdmission:
+  exact RIW/Buchstab 层必须承认被 Mertens/Buchstab 计数的 product；
+
+NonzeroCoefficientTransfer:
+  被承认的 product 必须携带非零 alpha/delta 系数，不能被 parity/sign 规则清零；
+
+ThinBalancedIntervalReturn:
+  低于厚度阈值或未被 canonical 层承认的块，必须严格回到 edge/PDEC/SAE，
+  不能继续留在 clean A1 分支。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturn:
+  prove the exact canonical layer admits the thick Buchstab products with nonzero coefficients,
+  and prove every non-thick/non-admitted block exits to edge/PDEC/SAE.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1SquarefreeBuchstabSupportRouter => layer_transfer_thin_return_or_external_dibfi_required；
+terminal_dual_gap => CanonicalLayerAdmissionNonzeroTransferAndThinIntervalReturnOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把“是否有足够 squarefree 产品”的计数硬点排除掉。继续无黑箱硬攻时，不能再停留在
+Mertens/Buchstab 密度层，必须进入 exact canonical RIW/Buchstab 层选择、系数非零转移、
+以及薄块/拒绝块回流的结构刚性证明。
