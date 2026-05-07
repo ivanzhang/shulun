@@ -2108,6 +2108,10 @@ docs/monograph/prime-matrix-wsh-fo-pdec-sae-endpoint-absorption.md
 experiments/prime_matrix_local_survivor_materialized_packet_ledger.py
 docs/monograph/prime-matrix-local-survivor-materialized-packet-ledger.md/json
 docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md
+experiments/prime_matrix_local_survivor_packet_extractor_coverage.py
+docs/monograph/prime-matrix-local-survivor-packet-extractor-coverage.md/json
+experiments/prime_matrix_new_sparse_entry_admission_audit.py
+docs/monograph/prime-matrix-new-sparse-entry-admission-audit.md/json
 experiments/prime_matrix_row_column_unconditional_frontier_router.py
 docs/monograph/prime-matrix-row-column-unconditional-frontier-router.md/json
 ```
@@ -2233,3 +2237,27 @@ CleanKLS/DLS:
 同签名无限复现进入 `PDEC/ColumnCRT/TailAnchor/CofactorAnchor`，签名层级逃逸进入 `CleanKLS/DLS`，
 下降或 seam 路线回到已命名包。因此新的最窄硬点更新为
 `LocalSurvivorPacketGenerationOrNonTautologicalPDEC`。
+
+进一步新增 extractor 覆盖审计与新入口准入审计后，LocalSurvivor 分支继续收缩：
+
+```text
+KnownLocalSurvivorEntryExtractorsCovered:
+  entry_count=8；
+  materialized_script_entry_count=4；
+  contract_entry_count=4；
+  missing_or_open_count=0。
+
+NoAdditionalUnnamedLocalSurvivorEntryRoute:
+  admission_source_count=8；
+  missing_admission_count=0。
+```
+
+含义是：Triad-A1 SparseCap、FO-PDEC 二点 SAE/Endpoint、RPZ Endpoint-SAE 与聚合总账都有机器
+extractor；generic SAE、持久签名、升层 clean 和 descent/seam 都有合同回流。短窗、endpoint、
+Bohr-cap、tail/cofactor、descent/seam 等所有可能产生孤窗的来源都已命名到
+`SAE/LocalSurvivor/PDEC/ColumnCRT/CleanKLS`。因此 LocalSurvivor 当前分支只剩条件性义务：
+若未来提出新的显式 sparse 路线，必须同时提交 extractor schema 与有限账本。当前主硬点转为：
+
+```text
+NonTautologicalPDECOrCleanKLS。
+```

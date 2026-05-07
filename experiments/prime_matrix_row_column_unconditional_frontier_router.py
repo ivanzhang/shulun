@@ -39,6 +39,12 @@ DEFAULT_SAE_ENDPOINT = (
 DEFAULT_LOCAL_SURVIVOR_LEDGER = (
     DOCS / "prime-matrix-local-survivor-materialized-packet-ledger.json"
 )
+DEFAULT_PACKET_EXTRACTOR_COVERAGE = (
+    DOCS / "prime-matrix-local-survivor-packet-extractor-coverage.json"
+)
+DEFAULT_NEW_SPARSE_ADMISSION = (
+    DOCS / "prime-matrix-new-sparse-entry-admission-audit.json"
+)
 DEFAULT_LINE_REF = DOCS / "line-by-line-internal-referee-matrix.md"
 DEFAULT_CLAIM_STATUS = DOCS / "claim-status-table.md"
 DEFAULT_MAIN_TEX = PAPER / "contradiction-field-monograph.tex"
@@ -102,6 +108,8 @@ def build_frontier_rows(
     physical_tautology: dict[str, Any],
     sae_endpoint: dict[str, Any],
     local_survivor_ledger: dict[str, Any],
+    packet_extractor_coverage: dict[str, Any],
+    new_sparse_admission: dict[str, Any],
     line_ref_text: str,
     claim_status_text: str,
     main_tex: str,
@@ -166,6 +174,18 @@ def build_frontier_rows(
         ]
         and local_survivor_ledger["open_materialized_obligation_count"] == 0
     )
+    known_packet_extractors_covered = (
+        packet_extractor_coverage["closed_subgate"]
+        == "KnownLocalSurvivorEntryExtractorsCovered"
+        and packet_extractor_coverage["known_entry_extractor_coverage_closed"]
+        and packet_extractor_coverage["missing_or_open_count"] == 0
+    )
+    no_new_sparse_entry = (
+        new_sparse_admission["closed_subgate"]
+        == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
+        and new_sparse_admission["no_additional_unnamed_local_survivor_entry_route"]
+        and new_sparse_admission["missing_admission_count"] == 0
+    )
     referee_guarded = has_all(
         line_ref_text,
         ["PM-16", "BLOCK-REFEREE", "Tail-log4", "finite"],
@@ -185,6 +205,8 @@ def build_frontier_rows(
             "LocalSurvivorCert family",
             "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses",
             "MaterializedLocalSurvivorPacketsExhausted",
+            "KnownLocalSurvivorEntryExtractorsCovered",
+            "NoAdditionalUnnamedLocalSurvivorEntryRoute",
         ],
     )
     raw_best = stitching["summary"]["raw_best"]
@@ -268,13 +290,16 @@ def build_frontier_rows(
             evidence=(
                 f"materialized_packets={local_survivor_ledger['materialized_packet_count']}; "
                 f"witnesses={local_survivor_ledger['local_survivor_witness_count']}; "
-                f"open_materialized={local_survivor_ledger['open_materialized_obligation_count']}"
+                f"open_materialized={local_survivor_ledger['open_materialized_obligation_count']}; "
+                f"known_extractors_covered={known_packet_extractors_covered}; "
+                f"no_new_sparse_entry={no_new_sparse_entry}"
             ),
             remaining=(
                 "当前已物化 LocalSurvivor/SAE 包全部闭合；全局剩余是 packet-generation："
-                "证明任意未来 sparse escape 必物化为同类有限包或持久化为 PDEC/ColumnCRT/CleanKLS。"
+                "已知入口 extractor 均覆盖；当前也不存在未命名新 sparse 入口。未来若新增显式"
+                " sparse 路线，必须提交同类 extractor。"
             ),
-            next_action="攻 LocalSurvivor packet-generation theorem，禁止在已闭合物化包上重复找缺口。",
+            next_action="LocalSurvivor 当前分支转为条件闭合；主攻非二点 PDEC 或 CleanKLS/DLS。",
             blocks_global=True,
         ),
         frontier_row(
@@ -316,6 +341,8 @@ def run(
     physical_tautology_path: Path,
     sae_endpoint_path: Path,
     local_survivor_ledger_path: Path,
+    packet_extractor_coverage_path: Path,
+    new_sparse_admission_path: Path,
     line_ref_path: Path,
     claim_status_path: Path,
     main_tex_path: Path,
@@ -332,6 +359,8 @@ def run(
     physical_tautology = load_json(physical_tautology_path)
     sae_endpoint = load_json(sae_endpoint_path)
     local_survivor_ledger = load_json(local_survivor_ledger_path)
+    packet_extractor_coverage = load_json(packet_extractor_coverage_path)
+    new_sparse_admission = load_json(new_sparse_admission_path)
     line_ref_text = read_text(line_ref_path)
     claim_status_text = read_text(claim_status_path)
     main_tex = read_text(main_tex_path)
@@ -348,6 +377,8 @@ def run(
         physical_tautology,
         sae_endpoint,
         local_survivor_ledger,
+        packet_extractor_coverage,
+        new_sparse_admission,
         line_ref_text,
         claim_status_text,
         main_tex,
@@ -383,6 +414,10 @@ def run(
             "local_survivor_materialized_packet_ledger": file_sha256(
                 local_survivor_ledger_path
             ),
+            "local_survivor_packet_extractor_coverage": file_sha256(
+                packet_extractor_coverage_path
+            ),
+            "new_sparse_entry_admission_audit": file_sha256(new_sparse_admission_path),
             "line_referee_matrix": file_sha256(line_ref_path),
             "claim_status_table": file_sha256(claim_status_path),
             "main_tex": file_sha256(main_tex_path),
@@ -401,35 +436,55 @@ def run(
         "open_global_gates": open_global_gates,
         "narrowest_next_hardpoint": {
             "name": (
-                "LocalSurvivorPacketGenerationOrNonTautologicalPDEC"
-                if local_survivor_ledger["closed_subgate"]
-                == "MaterializedLocalSurvivorPacketsExhausted"
-                else "GlobalLocalSurvivorOrNonTautologicalPDEC"
+                "NonTautologicalPDECOrCleanKLS"
+                if new_sparse_admission["closed_subgate"]
+                == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
+                else (
+                    "NewSparseEntryAdmissionOrNonTautologicalPDEC"
+                    if packet_extractor_coverage["closed_subgate"]
+                    == "KnownLocalSurvivorEntryExtractorsCovered"
+                    else (
+                        "LocalSurvivorPacketGenerationOrNonTautologicalPDEC"
+                        if local_survivor_ledger["closed_subgate"]
+                        == "MaterializedLocalSurvivorPacketsExhausted"
+                        else "GlobalLocalSurvivorOrNonTautologicalPDEC"
+                    )
+                )
             ),
             "subgate_closed_this_round": (
-                "MaterializedLocalSurvivorPacketsExhausted"
-                if local_survivor_ledger["closed_subgate"]
-                == "MaterializedLocalSurvivorPacketsExhausted"
+                "NoAdditionalUnnamedLocalSurvivorEntryRoute"
+                if new_sparse_admission["closed_subgate"]
+                == "NoAdditionalUnnamedLocalSurvivorEntryRoute"
                 else (
-                    "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
-                    if sae_endpoint["closed_subgate"]
-                    == "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
+                    "KnownLocalSurvivorEntryExtractorsCovered"
+                    if packet_extractor_coverage["closed_subgate"]
+                    == "KnownLocalSurvivorEntryExtractorsCovered"
                     else (
-                        "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
-                        if physical_tautology["closed_subgate"]
-                        == "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
+                        "MaterializedLocalSurvivorPacketsExhausted"
+                        if local_survivor_ledger["closed_subgate"]
+                        == "MaterializedLocalSurvivorPacketsExhausted"
                         else (
-                            "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
-                            if cross_q["closed_subgate"]
-                            == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                            "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
+                            if sae_endpoint["closed_subgate"]
+                            == "TwoPhysicalPrimitiveAtomsAbsorbedByLocalSurvivorWitnesses"
                             else (
-                                "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
-                                if weighted["closed_subgate"]
-                                == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                                "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
+                                if physical_tautology["closed_subgate"]
+                                == "PhysicalPrimitivePDECThresholdDegeneratesToTwoPointTautology"
                                 else (
-                                    "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
-                                    if nested_closed
-                                    else "NestedBlockMultiplicityStillOpen"
+                                    "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                                    if cross_q["closed_subgate"]
+                                    == "CrossQCoordinatePersistenceRejectedForAuditedFO-PDEC"
+                                    else (
+                                        "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                                        if weighted["closed_subgate"]
+                                        == "FractionalWeightedHallCannotRecoverFullNestedDuplicateMass"
+                                        else (
+                                            "NestedBlockFullMultiplicityRejectedForAuditedFO-PDEC"
+                                            if nested_closed
+                                            else "NestedBlockMultiplicityStillOpen"
+                                        )
+                                    )
                                 )
                             )
                         )
@@ -443,11 +498,12 @@ def run(
                 "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；"
                 "当前已审计 FO-PDEC 强信号链已被逐层降口径，最后两个物理原子由"
                 "同固定偏移纤维的本地素数见证吸收；已物化 LocalSurvivor/SAE 包总账"
-                "也无开放窗口。下一硬点不再是已物化样本，而是 packet-generation 定理"
-                "或未来非二点 primitive PDEC 家族。"
+                "也无开放窗口；已知 packet extractor 入口全覆盖，且无未命名新 sparse 入口。"
+                "LocalSurvivor 当前分支只剩未来显式新增入口的条件义务；当前主硬点转向非二点 "
+                "primitive PDEC 或 CleanKLS/DLS。"
             ),
             "next_routes": [
-                "LocalSurvivor packet-generation theorem for unaudited sparse windows",
+                "PacketExtractorCompleteness for any newly admitted sparse route",
                 "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints",
                 "CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion",
             ],
@@ -457,7 +513,8 @@ def run(
             "已排除的是 unrestricted generic WFD 自足版；当前已审计 FO-PDEC ell=199 强信号链"
             "已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和"
             "二点 SAE/Endpoint 本地 witness 吸收；已物化 LocalSurvivor/SAE 包总账也全部闭合。"
-            "下一步应攻 LocalSurvivor packet-generation 定理，或寻找未来非二点 primitive PDEC formal unit。"
+            "已知 LocalSurvivor packet extractor 入口也全部覆盖，且无未命名新 sparse 入口。"
+            "下一步应攻非二点 primitive PDEC formal unit 或 CleanKLS/DLS。"
         ),
     }
 
@@ -551,6 +608,8 @@ def main() -> None:
     parser.add_argument("--physical-tautology", type=Path, default=DEFAULT_PHYSICAL_TAUTOLOGY)
     parser.add_argument("--sae-endpoint", type=Path, default=DEFAULT_SAE_ENDPOINT)
     parser.add_argument("--local-survivor-ledger", type=Path, default=DEFAULT_LOCAL_SURVIVOR_LEDGER)
+    parser.add_argument("--packet-extractor-coverage", type=Path, default=DEFAULT_PACKET_EXTRACTOR_COVERAGE)
+    parser.add_argument("--new-sparse-admission", type=Path, default=DEFAULT_NEW_SPARSE_ADMISSION)
     parser.add_argument("--line-ref", type=Path, default=DEFAULT_LINE_REF)
     parser.add_argument("--claim-status", type=Path, default=DEFAULT_CLAIM_STATUS)
     parser.add_argument("--main-tex", type=Path, default=DEFAULT_MAIN_TEX)
@@ -570,6 +629,8 @@ def main() -> None:
         args.physical_tautology,
         args.sae_endpoint,
         args.local_survivor_ledger,
+        args.packet_extractor_coverage,
+        args.new_sparse_admission,
         args.line_ref,
         args.claim_status,
         args.main_tex,

@@ -44,10 +44,10 @@
     },
     {
       "blocks_global": true,
-      "evidence": "materialized_packets=9; witnesses=5; open_materialized=0",
+      "evidence": "materialized_packets=9; witnesses=5; open_materialized=0; known_extractors_covered=True; no_new_sparse_entry=True",
       "gate": "B:LocalSurvivorFamily",
-      "next_action": "攻 LocalSurvivor packet-generation theorem，禁止在已闭合物化包上重复找缺口。",
-      "remaining": "当前已物化 LocalSurvivor/SAE 包全部闭合；全局剩余是 packet-generation：证明任意未来 sparse escape 必物化为同类有限包或持久化为 PDEC/ColumnCRT/CleanKLS。",
+      "next_action": "LocalSurvivor 当前分支转为条件闭合；主攻非二点 PDEC 或 CleanKLS/DLS。",
+      "remaining": "当前已物化 LocalSurvivor/SAE 包全部闭合；全局剩余是 packet-generation：已知入口 extractor 均覆盖；当前也不存在未命名新 sparse 入口。未来若新增显式 sparse 路线，必须提交同类 extractor。",
       "status": "materialized_packets_closed_global_generation_open"
     },
     {
@@ -98,9 +98,9 @@
         }
       ]
     },
-    "name": "LocalSurvivorPacketGenerationOrNonTautologicalPDEC",
+    "name": "NonTautologicalPDECOrCleanKLS",
     "next_routes": [
-      "LocalSurvivor packet-generation theorem for unaudited sparse windows",
+      "PacketExtractorCompleteness for any newly admitted sparse route",
       "future primitive PDEC only if a same-formal-unit family has at least three non-tautological physical atoms or extra constraints",
       "CleanKLS/DLS and D-structure/Rankin referee inputs for final theorem promotion"
     ],
@@ -142,8 +142,8 @@
       ],
       "support": 3
     },
-    "reason": "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；当前已审计 FO-PDEC 强信号链已被逐层降口径，最后两个物理原子由同固定偏移纤维的本地素数见证吸收；已物化 LocalSurvivor/SAE 包总账也无开放窗口。下一硬点不再是已物化样本，而是 packet-generation 定理或未来非二点 primitive PDEC 家族。",
-    "subgate_closed_this_round": "MaterializedLocalSurvivorPacketsExhausted"
+    "reason": "PDEC 是三终端中最直接连接 A1 已闭合边界的端口；当前已审计 FO-PDEC 强信号链已被逐层降口径，最后两个物理原子由同固定偏移纤维的本地素数见证吸收；已物化 LocalSurvivor/SAE 包总账也无开放窗口；已知 packet extractor 入口全覆盖，且无未命名新 sparse 入口。LocalSurvivor 当前分支只剩未来显式新增入口的条件义务；当前主硬点转向非二点 primitive PDEC 或 CleanKLS/DLS。",
+    "subgate_closed_this_round": "NoAdditionalUnnamedLocalSurvivorEntryRoute"
   },
   "open_global_gates": [
     "TerminalTriadNoFourthExit",
@@ -153,20 +153,22 @@
     "C:CleanKLS-DLS",
     "D-structure/Tail-log4/RankinReferee"
   ],
-  "review_conclusion": "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；已排除的是 unrestricted generic WFD 自足版；当前已审计 FO-PDEC ell=199 强信号链已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和二点 SAE/Endpoint 本地 witness 吸收；已物化 LocalSurvivor/SAE 包总账也全部闭合。下一步应攻 LocalSurvivor packet-generation 定理，或寻找未来非二点 primitive PDEC formal unit。",
+  "review_conclusion": "行列无条件自足版尚未闭合。已闭合的是 canonical-source Triad-A1 边界；已排除的是 unrestricted generic WFD 自足版；当前已审计 FO-PDEC ell=199 强信号链已经依次通过嵌套重复、weighted Hall、cross-q 坐标图、physical 二点 tautology 和二点 SAE/Endpoint 本地 witness 吸收；已物化 LocalSurvivor/SAE 包总账也全部闭合。已知 LocalSurvivor packet extractor 入口也全部覆盖，且无未命名新 sparse 入口。下一步应攻非二点 primitive PDEC formal unit 或 CleanKLS/DLS。",
   "row_column_unconditional_closed": false,
   "source_hashes": {
     "boundary_merge": "b454fcf02a28a64540f88759fe85ca639443b9a7b49c3d18211475c99b0e4ac5",
-    "claim_status_table": "53513743281f4595cee0a2d98b3f93aed44f1e331b86d3091e5a7f79b76de7fb",
+    "claim_status_table": "8d44d670529ca09ca05f47731ae889c13542b9ef75879cb9999fbb9b44299302",
     "cross_q_chart_overlap_audit": "60ff0aaa2335146d6c7167cef36e5fd2fb0316626c575901b1b4d363915fbc1d",
     "formal_unit_audit": "f79dd27d21604a35528746cad584911c8064fcd862766f90031b81041742e756",
     "line_referee_matrix": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
     "local_survivor_materialized_packet_ledger": "cb6f92ca35cee664d441df6e75ad018bf116f89e859c8f3afcc8e9b67f8640cf",
-    "main_tex": "07ca47bfff30a4764da8a0b600212a1bf59c6fe3d49a9dec75667d9e396bc1f8",
+    "local_survivor_packet_extractor_coverage": "afddef8e8251f7b5e39bc14881f0986f47f6ec1f88d25d572d1048ce927a4636",
+    "main_tex": "d49a1eeb676950f7b04a737f9bead1f75643868239f5a369dc25f61a987ddda5",
     "nested_duplicate_dominance": "8a1f4e4af359ab84b429b30880534dce7938a950bac13d410e828394d9ed89c7",
+    "new_sparse_entry_admission_audit": "60947ae361bfc707679b9e204f3f3d5d84a278e1d8ec47effd5fbae36d05eca9",
     "physical_primitive_tautology_audit": "d68f7ce681ef06f42b1573925d8a0f9c065f3ff1e96b9627df0a0d2611dcde46",
     "sae_endpoint_absorption_audit": "a706939ad36e26cd746690cd864de49307284e002adf7b8e7f055fd66c847347",
-    "script": "c608edb15fac86b3c89976fb34e8bff7848883e93ad6cbb67ac7f4603147ddbe",
+    "script": "ee999d3c33bd5956eade7fefa7bf9fb89840b3bc6141ca77fe205f9a2e6d207c",
     "stitching_audit": "84a96301e485505aec62f3bae15cfd1956429ebd538de50d850c08673196d750",
     "terminal_confluence": "1113f1967cabffd709586d627be4569cd2c0301e3ca559174ea58b0bab75622c",
     "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547",

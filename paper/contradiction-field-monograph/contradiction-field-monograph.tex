@@ -856,6 +856,24 @@ Consequently the next narrow frontier is
 \]
 This is still not a final unconditional theorem.  It says that the current materialized LocalSurvivor obligations are exhausted and that no unnamed LocalSurvivor terminal remains; the remaining work is packet-extractor completeness, a genuinely non-tautological primitive PDEC family, or the CleanKLS/DLS and referee inputs.
 
+The known-entry extractor audit is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-local-survivor-packet-extractor-coverage.md}.
+\]
+It checks eight currently named LocalSurvivor entry types.  Four are covered by machine extractors: Triad-A1 SparseCap, FO--PDEC two-atom SAE/Endpoint, RPZ Endpoint-SAE, and the materialized packet aggregator.  Four are covered by contract routes: generic SAE, persistent finite signatures, layer escape to CleanKLS/DLS, and descent/seam return.  The audit has no missing or open known entry.
+
+The new-entry admission audit is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-new-sparse-entry-admission-audit.md}.
+\]
+It checks the possible sources of a future sparse entrance: short-window or endpoint sparse packets, PDEC dual sparse caps, endpoint seams, Bohr caps, column-tail/cofactor sparse packets, descent seams, persistent signatures, and layer escape.  Each is already admitted to a named route: SAE/LocalSurvivor, PDEC, ColumnCRT, TailAnchor/CofactorAnchor, or CleanKLS/DLS.  Hence there is no additional unnamed LocalSurvivor entry route in the current contract system.
+
+After these two audits the LocalSurvivor branch is conditionally exhausted: any future explicitly introduced sparse route must bring its own extractor schema and finite ledger.  The current narrow frontier is therefore
+\[
+  \text{NonTautologicalPDECOrCleanKLS}.
+\]
+This remains a reduction boundary, not the final prime-matrix theorem.
+
 \section{Triad-A1 Self-Contained Theorem-Boundary Closure}
 
 The final Triad-A1 review separates the exact theorem that is now closed from a stronger statement that is not true under the recorded hypotheses.  In plain terms, the closed result is the following.  Once the source of the A1 payment measure is fixed to the canonical RIW/Buchstab decision-tree source, every remaining same-set capacity gate in the full-$S$ terminal chain is internally accounted for.  The proof no longer needs to borrow the external FullS--KLS theorem for this canonical-source branch.

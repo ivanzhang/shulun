@@ -1,0 +1,170 @@
+{
+  "certificate_type": "local_survivor_packet_extractor_coverage",
+  "closed_subgate": "KnownLocalSurvivorEntryExtractorsCovered",
+  "contract_entry_count": 4,
+  "entries": [
+    {
+      "closed_for_current_materialized_input": true,
+      "coverage_status": "covered_closed",
+      "entry_id": "TriadA1SparseCapExtractor",
+      "entry_route": "DualCap SparseCap -> LocalSurvivor or finite PDEC",
+      "entry_type": "materialized_script_extractor",
+      "ledger": "docs/monograph/prime-matrix-triad-a1-sparsecap-local-survivor.json",
+      "ledger_exists": true,
+      "packet_fields": [
+        "phase",
+        "low_holes",
+        "completion_rows",
+        "local_survivor_witness_col",
+        "finite_pdec_packet"
+      ],
+      "route_if_not_packet": "FinitePDECAtomBeyondP or LocalSurvivorWitnessAtRowLeP",
+      "script": "experiments/prime_matrix_triad_a1_sparsecap_local_survivor_audit.py",
+      "script_exists": true
+    },
+    {
+      "closed_for_current_materialized_input": true,
+      "coverage_status": "covered_closed",
+      "entry_id": "FOPDECTwoAtomSAEEndpointExtractor",
+      "entry_route": "physical two-point PDEC tautology -> SAE/Endpoint",
+      "entry_type": "materialized_script_extractor",
+      "ledger": "docs/monograph/prime-matrix-wsh-fo-pdec-sae-endpoint-absorption-audit.json",
+      "ledger_exists": true,
+      "packet_fields": [
+        "fixed_offset_fiber",
+        "atom_candidate",
+        "local_prime_witnesses",
+        "factor_load"
+      ],
+      "route_if_not_packet": "PDEC if persistent, LocalSurvivor witness if sparse",
+      "script": "experiments/prime_matrix_wsh_fo_pdec_sae_endpoint_absorption_audit.py",
+      "script_exists": true
+    },
+    {
+      "closed_for_current_materialized_input": true,
+      "coverage_status": "covered_closed",
+      "entry_id": "RPZEndpointSAEFiniteExtractor",
+      "entry_route": "RPZ endpoint low-load candidate -> SAE finite ledger",
+      "entry_type": "materialized_script_extractor",
+      "ledger": "docs/monograph/prime-matrix-rpz-endpoint-sae-finite-certificate.json",
+      "ledger_exists": true,
+      "packet_fields": [
+        "phase_key",
+        "possible_load",
+        "actual_load",
+        "candidate_windows"
+      ],
+      "route_if_not_packet": "Endpoint PDEC or ColumnCRT if global load appears",
+      "script": "experiments/prime_matrix_rpz_endpoint_sae_finite_certificate.py",
+      "script_exists": true
+    },
+    {
+      "closed_for_current_materialized_input": true,
+      "coverage_status": "covered_closed",
+      "entry_id": "MaterializedPacketLedgerAggregator",
+      "entry_route": "known materialized packets -> combined LocalSurvivor ledger",
+      "entry_type": "materialized_script_extractor",
+      "ledger": "docs/monograph/prime-matrix-local-survivor-materialized-packet-ledger.json",
+      "ledger_exists": true,
+      "packet_fields": [
+        "materialized_packet_count",
+        "local_survivor_witness_count",
+        "open_materialized_obligation_count"
+      ],
+      "route_if_not_packet": "Close materialized packet before global generation",
+      "script": "experiments/prime_matrix_local_survivor_materialized_packet_ledger.py",
+      "script_exists": true
+    },
+    {
+      "contract_present": true,
+      "contracts": [
+        "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md",
+        "docs/monograph/prime-matrix-sae-local-certificate-reduction.md"
+      ],
+      "coverage_status": "covered_by_contract_route",
+      "entry_id": "GenericSAELocalWindowContract",
+      "entry_route": "generic sparse/single-window escape",
+      "entry_type": "contract_route_not_materialized_packet",
+      "required_phrases": [
+        "LocalSurvivorCert",
+        "same signature persists",
+        "PDEC family"
+      ],
+      "route_if_not_packet": "packet extractor, persistent PDEC, smaller SAE, or CleanKLS/DLS"
+    },
+    {
+      "contract_present": true,
+      "contracts": [
+        "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md",
+        "docs/monograph/prime-matrix-terminal-certificate-triad.md"
+      ],
+      "coverage_status": "covered_by_contract_route",
+      "entry_id": "PersistentSignatureFallbackContract",
+      "entry_route": "same finite signature repeats in an infinite family",
+      "entry_type": "contract_route_not_materialized_packet",
+      "required_phrases": [
+        "有限签名",
+        "PDEC family",
+        "无第四出口"
+      ],
+      "route_if_not_packet": "PDEC/ColumnCRT/TailAnchor/CofactorAnchor"
+    },
+    {
+      "contract_present": true,
+      "contracts": [
+        "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md",
+        "docs/monograph/prime-matrix-terminal-certificate-triad.md"
+      ],
+      "coverage_status": "covered_by_contract_route",
+      "entry_id": "LayerEscapeCleanKLSContract",
+      "entry_route": "signature layer escapes every finite packet",
+      "entry_type": "contract_route_not_materialized_packet",
+      "required_phrases": [
+        "CleanKLS/DLS",
+        "admission",
+        "Flat"
+      ],
+      "route_if_not_packet": "CleanKLS/DLS or explicit ExternalKLS"
+    },
+    {
+      "contract_present": true,
+      "contracts": [
+        "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md",
+        "docs/monograph/prime-matrix-terminal-certificate-triad.md"
+      ],
+      "coverage_status": "covered_by_contract_route",
+      "entry_id": "DescentSeamReturnContract",
+      "entry_route": "descent/seam route lowers to named packet",
+      "entry_type": "contract_route_not_materialized_packet",
+      "required_phrases": [
+        "descent/seam",
+        "already named PDEC/LocalSurvivor/ColumnCRT packet",
+        "TotalDescent/RPZ"
+      ],
+      "route_if_not_packet": "PDEC/LocalSurvivor/ColumnCRT packet after descent"
+    }
+  ],
+  "entry_count": 8,
+  "known_entry_extractor_coverage_closed": true,
+  "materialized_script_entry_count": 4,
+  "missing_or_open_count": 0,
+  "missing_or_open_entries": [],
+  "remaining_after_subgate": [
+    "NewSparseEntryAdmission: prove no additional unnamed LocalSurvivor entry route exists",
+    "PacketExtractorCompleteness for any newly admitted sparse route",
+    "NonTautologicalPDEC for >=3 physical atoms or fixed-frequency constraints",
+    "CleanKLS/DLS or explicit ExternalKLS for layer-escape branches"
+  ],
+  "review_conclusion": "当前所有已知 LocalSurvivor packet 入口均有覆盖：三个机器 extractor 分别处理 Triad-A1 SparseCap、FO-PDEC 二点 SAE/Endpoint、RPZ Endpoint-SAE，聚合总账已清零物化义务；generic SAE、持久签名、升层 clean 和 descent/seam 入口均有合同回流到 PDEC/ColumnCRT/LocalSurvivor/CleanKLS。该子门只关闭已知入口覆盖，不证明未来不会出现新 sparse 入口；剩余是 NewSparseEntryAdmission。",
+  "source_hashes": {
+    "fo_sae_endpoint_ledger": "a706939ad36e26cd746690cd864de49307284e002adf7b8e7f055fd66c847347",
+    "materialized_packet_ledger": "cb6f92ca35cee664d441df6e75ad018bf116f89e859c8f3afcc8e9b67f8640cf",
+    "packet_generation_contract": "b07a043cb6ebfee2e413a8d5c9cc768f3670ca3f9b75a7cee05c2def043c496c",
+    "rpz_endpoint_sae_ledger": "3d58559ca06db95de16df5b0c56f88432a7c456b6f007a3a273ff9adffef6bf1",
+    "sae_local_reduction": "927714d839c2ba0a20380dbea99fc5ab474dbf096bdd4f14fe770c9a523c60c7",
+    "script": "6f6e9f8a7f556bdd089e53194221a5763d2174fcb08f28b24e9b87b5cbf30116",
+    "sparsecap_ledger": "b65eaf7458e9bcc8591109eab724cb5a90861f97181dfe59267a53a55716cc6c",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547"
+  },
+  "status": "known_local_survivor_entry_extractors_covered_not_global_proof"
+}

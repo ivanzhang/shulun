@@ -1,0 +1,124 @@
+{
+  "admission_source_count": 8,
+  "certificate_type": "new_sparse_entry_admission_audit",
+  "closed_subgate": "NoAdditionalUnnamedLocalSurvivorEntryRoute",
+  "known_extractors_closed": true,
+  "missing_admission_count": 0,
+  "missing_rows": [],
+  "no_additional_unnamed_local_survivor_entry_route": true,
+  "remaining_after_subgate": [
+    "PacketExtractorCompleteness for any future explicitly admitted sparse route",
+    "NonTautologicalPDEC for >=3 physical atoms or fixed-frequency constraints",
+    "CleanKLS/DLS or explicit ExternalKLS for layer-escape branches",
+    "D-structure/Tail-log4/Rankin referee inputs for final theorem promotion"
+  ],
+  "review_conclusion": "无名 sparse 入口在当前合同体系中已经没有独立位置：短窗、endpoint、Bohr-cap、tail/cofactor、descent/seam 都被命名到 SAE/LocalSurvivor/PDEC/ColumnCRT；同签名持久复现不是 sparse，而是 PDEC/ColumnCRT/TailAnchor/CofactorAnchor；层级逃逸不是 sparse，而是 CleanKLS/DLS admission。结合已知 extractor 覆盖，当前剩余不再是 NewSparseEntryAdmission，而是未来若新增显式 sparse 路线时必须提交 extractor schema。",
+  "source_hashes": {
+    "clean_kls_contract": "8dd2eef4693fda091d0f2310ec2a98f620b8cdf5ba05165345c22fbdf44f3893",
+    "extractor_coverage": "afddef8e8251f7b5e39bc14881f0986f47f6ec1f88d25d572d1048ce927a4636",
+    "named_exit_absorption": "515e251e01ac03658e9132aec43562196b4c351bb0ff41ee5edb635236cdc3c6",
+    "packet_generation_contract": "b07a043cb6ebfee2e413a8d5c9cc768f3670ca3f9b75a7cee05c2def043c496c",
+    "sae_local_reduction": "927714d839c2ba0a20380dbea99fc5ab474dbf096bdd4f14fe770c9a523c60c7",
+    "script": "24a07d7d56135f776cebb50a6a0ed3e11b86348cba52f7f2c832ad3ba450e7c8",
+    "terminal_triad": "6fba5271fbb39440a7f8d9b4b2cc44c0d2dfb72b1896575f0804ca568eca3547",
+    "unnamed_escape_closure": "3526bed7e59d40e711f896bdd3244e5cf8ecf3c8c1219b21f42425193dfd965a"
+  },
+  "source_rows": [
+    {
+      "admitted": true,
+      "required_fragments": [
+        "短窗",
+        "SAE",
+        "LocalSurvivorCert"
+      ],
+      "source_class": "Sparse",
+      "source_id": "ShortWindowOrEndpointSparse",
+      "target_route": "LocalSurvivor packet extractor or SAE-Cert",
+      "verdict": "admitted_named_route"
+    },
+    {
+      "admitted": true,
+      "required_fragments": [
+        "sparse cap",
+        "LocalSurvivorCert",
+        "PDEC-Dual"
+      ],
+      "source_class": "SparseFromPDECDualFailure",
+      "source_id": "PDECDualSparseCap",
+      "target_route": "LocalSurvivor packet or refined PDEC",
+      "verdict": "admitted_named_route"
+    },
+    {
+      "admitted": true,
+      "required_fragments": [
+        "EndpointSeam",
+        "PDEC/ColumnCRT/SAE"
+      ],
+      "source_class": "EndpointSeam",
+      "source_id": "EndpointSeamSparse",
+      "target_route": "Endpoint PDEC, ColumnCRT, or SAE packet",
+      "verdict": "admitted_named_route"
+    },
+    {
+      "admitted": true,
+      "required_fragments": [
+        "BohrCap",
+        "孤立帽",
+        "SAE"
+      ],
+      "source_class": "BohrCap",
+      "source_id": "BohrCapSparse",
+      "target_route": "SAE packet or persistent PDEC/ColumnCRT",
+      "verdict": "admitted_named_route"
+    },
+    {
+      "admitted": true,
+      "required_fragments": [
+        "CofactorAnchor",
+        "TailAnchor",
+        "PDEC/ColumnCRT/SAE"
+      ],
+      "source_class": "ColumnTailCofactor",
+      "source_id": "ColumnTailCofactorSparse",
+      "target_route": "Tail/Cofactor PDEC or SAE packet",
+      "verdict": "admitted_named_route"
+    },
+    {
+      "admitted": true,
+      "required_fragments": [
+        "TotalDescent/RPZ",
+        "descent/seam",
+        "already named"
+      ],
+      "source_class": "DescentSeam",
+      "source_id": "DescentSeamSparse",
+      "target_route": "named PDEC/LocalSurvivor/ColumnCRT packet",
+      "verdict": "admitted_named_route"
+    },
+    {
+      "admitted": true,
+      "required_fragments": [
+        "有限签名",
+        "PDEC family",
+        "same signature persists"
+      ],
+      "source_class": "Persistent",
+      "source_id": "PersistentSignatureNotSparse",
+      "target_route": "PDEC/ColumnCRT/TailAnchor/CofactorAnchor",
+      "verdict": "admitted_named_route"
+    },
+    {
+      "admitted": true,
+      "required_fragments": [
+        "CleanKLS/DLS",
+        "admission",
+        "Flat"
+      ],
+      "source_class": "Flat",
+      "source_id": "LayerEscapeNotSparse",
+      "target_route": "CleanKLS/DLS or ExternalKLS",
+      "verdict": "admitted_named_route"
+    }
+  ],
+  "status": "no_additional_unnamed_local_survivor_entry_route_not_global_proof"
+}
