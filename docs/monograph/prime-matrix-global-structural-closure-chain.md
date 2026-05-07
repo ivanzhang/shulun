@@ -4553,3 +4553,78 @@ terminal_dual_gap => CanonicalSelectorRetentionOrCleanReturnOrExternalDIBFIOrigi
 这一步把当前硬点压到可审稿的 exact selector 合同：要么直接展示 canonical 筛权选择器在所有
 clean 厚块上具有对数幂保留率，要么证明任何低保留率块都会破坏 clean 准入并返回已有
 PDEC/SAE 出口。
+
+## 84. A1 selector 保留率化为有限签名无抵消或 clean 退出
+
+新增 `experiments/prime_matrix_triad_a1_selector_retention_router.py` 后，第 83 节留下的
+`CanonicalSelectorRetentionOrCleanReturn` 被继续压缩。核心结论是：selector 保留率不需要新的
+密度估计；若 raw Buchstab 支撑被有限个 exact RIW path signatures 分割，则最大签名自动保留
+一个对数幂比例。这正是用户强调的“全局层叠结构”在当前 A1 终端中的可用形式。
+
+机器结果：
+
+```text
+status=selector_retention_reduced_to_finite_signature_no_cancellation_or_clean_return；
+next_internal_target=FiniteSignatureNoCancellationOrCleanReturn；
+terminal_gap_after_router=FiniteSignatureNoCancellationOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+有限签名保留律：
+
+```text
+raw support S is partitioned into at most log^J exact signatures;
+max signature support >= S/log^J;
+if raw S >= interval/log^E and E+J<=C:
+  retained support >= interval/log^C;
+remaining issue: unique path/no cancellation, or clean return.
+```
+
+本步条件闭合的部分是：
+
+```text
+MaxSignatureRetention:
+  一旦 exact 签名数 <= log^J，
+  最大签名至少承载 raw support/log^J；
+  若 E+J <= C，则该签名已足以支付 canonical support 的 log-power 下界。
+```
+
+仍未闭合的 exact 门控是：
+
+```text
+FiniteSignaturePartition:
+  K6/polylog tail labels 必须提升为 exact RIW coefficient path partition；
+
+UniquePathNoCancellation:
+  被选 product 必须属于唯一签名路径，或同签名系数必须非零，不能被多路径符号抵消；
+
+SelectorRetentionCleanReturn:
+  若有限签名分割、无抵消或保留率失败，则该块必须触发 edge/PDEC/SAE，
+  不能继续作为 clean A1 块使用。
+```
+
+因此当前最窄内部目标更新为：
+
+```text
+FiniteSignatureNoCancellationOrCleanReturn:
+  promote K6/polylog labels to an exact RIW path-signature partition;
+  prove selected path signatures are disjoint or non-cancelling;
+  otherwise return the failed block to edge/PDEC/SAE.
+```
+
+外部路线仍为：
+
+```text
+ExternalDIBFIOriginalDispersion:
+  原始 DI/BFI dispersion 直接提供 block variance saving。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1CanonicalSelectorRetentionRouter => finite_signature_no_cancellation_or_external_dibfi_required；
+terminal_dual_gap => FiniteSignatureNoCancellationOrCleanReturnOrExternalDIBFIOriginalDispersion。
+```
+
+这一步把 selector retention 的数量问题化为有限签名 pigeonhole。继续无黑箱硬攻时，重点不再是
+找新的统计常数，而是把 RIW/Buchstab 递归写成 disjoint exact path partition，并证明所选路径
+没有系数抵消；若做不到，必须由 clean 准入的反向合同把该块送回已有 PDEC/SAE 出口。
