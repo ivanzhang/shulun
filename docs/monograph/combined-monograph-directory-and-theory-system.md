@@ -2427,11 +2427,9 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
 open_final_gates=[
-  PersistentFiniteSignaturePDECColumnCRT,
-  SelfContainedKuznetsovLSAtomSC9
+  PrimitiveMultiAtomSameFormalUnitPDECCertificate
 ]；
-narrowest_next_hardpoint=
-  PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+narrowest_next_hardpoint=PrimitiveMultiAtomSameFormalUnitPDECCertificate。
 ```
 
 结构含义是：当前 PDEC-CAP 已不再是“寻找固定 `Q` Fourier 常数”的问题。现有 DualCap
@@ -2569,17 +2567,59 @@ phase-bucket/tail-column formal unit；固定壳侧的有限签名是 shell/disp
 已由 Multiplicity-Stitching 吸收到 weighted/primitive PDEC 或复用缺陷。因此这两个持久类分支
 不能再作为平行硬点保留。
 
-因此新的真实硬点不是“继续找一个未命名终端”，而是直接证明更窄的二选一解析终端：
+此阶段的真实硬点不是“继续找一个未命名终端”，而是先压成更窄的二选一解析终端：
 
 ```text
 PersistentFiniteSignaturePDECColumnCRT:
   证明所有持久有限签名 formal unit 的 PDEC/ColumnCRT 对偶容量排斥；
 
-SelfContainedKuznetsovLSAtomSC9:
-  无持久有限签名且多壳平坦时，证明自足 Kuznetsov-LS atom SC-9；
-
 Referee promotion:
   D-structure/Tail-log4/finite Rankin 接口被独立接受。
+```
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_sc9_boundary_reconciliation_router.py
+docs/monograph/prime-matrix-pdec-cap-sc9-boundary-reconciliation-router.md/json
+```
+
+该路由器把 PDEC-CAP 终端里重新出现的 flat clean `SC-9` 与 canonical-source 边界调和：
+
+```text
+pdec_cap_sc9_boundary_reconciled=true；
+narrowest_next_hardpoint=PersistentFiniteSignaturePDECColumnCRT。
+```
+
+结构含义是：`SC-9` 在此处只来自无持久有限签名后的 flat clean residual。clean 估计失败会输出对偶集中并回流
+`PDEC/SAE`；进入 `SC-9` 后又已展开到 `NC-BLK` 或外部 DI/BFI；而 canonical `NC-BLK` 已由同集容量边界吸收，
+generic WFD 分支不能纳入自足声明。因此在当前 canonical-source 完全自足 PDEC-CAP 边界内，`SC-9` 不再是独立终端阻塞。
+
+继续新增：
+
+```text
+experiments/prime_matrix_pdec_cap_persistent_terminal_admission_router.py
+docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.md/json
+```
+
+该路由器继续把 `PersistentFiniteSignaturePDECColumnCRT` 压到准入门：
+
+```text
+persistent_terminal_admission_boundary_closed=true；
+narrowest_next_hardpoint=PrimitiveMultiAtomSameFormalUnitPDECCertificate。
+```
+
+结构含义是：裸持久签名、裸列位移、PDEC 对偶失败和多重口径都不能直接作为终端。列位移先吸收为
+displacement/primitive PDEC 或 SAE；对偶失败先输出 cap refinement、ColumnCRT、SAE 或口径义务；
+多重拼接先规范化到同一 formal unit；二点 Fourier tautology 与当前 SAE/Endpoint 已吸收。因此真正准入的剩余对象只剩：
+
+```text
+PrimitiveMultiAtomSameFormalUnitPDECCertificate:
+  same formal unit；
+  去重后三个以上 physical primitive atoms；
+  非二点 tautology；
+  未被 LocalSurvivor/SAE/Endpoint 吸收；
+  需要证明 U_CRT<L_PDEC。
 ```
 
 这一步继续保持诚实边界：它关闭的是全局终端家族剩余中的“未命名或局部样本硬点”，不是完整行/列

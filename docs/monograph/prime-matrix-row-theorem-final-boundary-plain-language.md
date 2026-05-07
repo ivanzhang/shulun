@@ -146,8 +146,7 @@ docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md/json
 
 closed_current_materialized_pdec_gates=true；
 pdec_cap_same_set_global_dual_closed=false；
-narrowest_next_hardpoint=
-  PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9。
+narrowest_next_hardpoint=PrimitiveMultiAtomSameFormalUnitPDECCertificate。
 ```
 
 通俗地说，当前已经不是继续调一个固定低模层上的 Fourier 常数。已知的 PDEC 失败帽都能追到同一质量来源，早期行出口已经接线；持久帽进入升层删除势或 NoDeletion-KL；强制持久帽进入多桶实际支付缝合。继续新增的 APS 投影塔二分路由器又把“真实支付图会不会持久缝合”的逻辑二分闭合了：
@@ -293,14 +292,39 @@ narrowest_next_hardpoint=
 PDEC 对偶失败已吸收为 cap refinement，口径不一致已吸收为 formal-unit normalization；
 所以它们不是两个平行终端。
 
-因此当前真正剩余是更窄的二选一终端估计：
+继续新增 SC-9 边界调和路由器后，flat clean 的 SC-9 不再是 canonical-source 完全自足路线中的独立阻塞：
 
 ```text
-PersistentFiniteSignaturePDECColumnCRT:
-  证明所有持久有限签名 formal unit 的同集 PDEC/ColumnCRT 对偶容量排斥；
+experiments/prime_matrix_pdec_cap_sc9_boundary_reconciliation_router.py
+docs/monograph/prime-matrix-pdec-cap-sc9-boundary-reconciliation-router.md/json
 
-SelfContainedKuznetsovLSAtomSC9:
-  无持久有限签名且多壳完全平坦时，证明自足谱大筛原子 SC-9。
+pdec_cap_sc9_boundary_reconciled=true；
+narrowest_next_hardpoint=PersistentFiniteSignaturePDECColumnCRT。
+```
+
+原因是：clean 估计失败会回流 PDEC/SAE；clean 成功进入的 SC-9 已展开到 NC-BLK/外部 DI-BFI；
+canonical NC-BLK 已被同集容量边界吸收；generic WFD 分支不能偷渡成自足声明。
+
+继续新增持久终端准入路由器后，裸持久有限签名也不能直接作为终端；它必须先通过 primitive 多原子同
+formal unit 的准入门：
+
+```text
+experiments/prime_matrix_pdec_cap_persistent_terminal_admission_router.py
+docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.md/json
+
+persistent_terminal_admission_boundary_closed=true；
+narrowest_next_hardpoint=PrimitiveMultiAtomSameFormalUnitPDECCertificate。
+```
+
+也就是说，列位移要先吸收为 displacement PDEC/SAE，对偶失败要先变成 cap refinement 或 SAE，
+多重口径要先规范化；当前已物化 primitive 非二点候选为 `0`。未来只有同 formal unit、去重后三点以上、
+非二点 tautology、未被 SAE/Endpoint 吸收的对象才准入最终证书。
+
+因此当前真正剩余已压成单一终端估计：
+
+```text
+PrimitiveMultiAtomSameFormalUnitPDECCertificate:
+  证明所有准入后的 primitive 多原子同 formal unit PDEC 满足 U_CRT<L_PDEC。
 ```
 
 ## 7. 已并入合著的文件

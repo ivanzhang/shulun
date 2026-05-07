@@ -43,6 +43,12 @@ DEFAULT_DIFFUSE_TERMINAL = (
 DEFAULT_PERSISTENT_SIGNATURE_UNIFICATION = (
     DOCS / "prime-matrix-pdec-cap-persistent-signature-unification-router.json"
 )
+DEFAULT_SC9_RECONCILIATION = (
+    DOCS / "prime-matrix-pdec-cap-sc9-boundary-reconciliation-router.json"
+)
+DEFAULT_PERSISTENT_TERMINAL_ADMISSION = (
+    DOCS / "prime-matrix-pdec-cap-persistent-terminal-admission-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-pdec-cap-same-set-global-dual-router.md"
 
@@ -109,6 +115,8 @@ def build_rows(
     profinite_aps: dict[str, Any],
     diffuse_terminal: dict[str, Any],
     persistent_signature_unification: dict[str, Any],
+    sc9_reconciliation: dict[str, Any],
+    persistent_terminal_admission: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成 PDEC-CAP 前沿审查表。"""
     self_bottleneck_accepts_pdec = (
@@ -203,6 +211,20 @@ def build_rows(
         and persistent_signature_unification["persistent_signature_unification_closed"]
         and persistent_signature_unification["narrowest_next_hardpoint"]
         == "PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
+    )
+    sc9_boundary_reconciled = (
+        sc9_reconciliation["status"]
+        == "pdec_cap_sc9_reconciled_persistent_signature_pdec_only_not_closed"
+        and sc9_reconciliation["pdec_cap_sc9_boundary_reconciled"]
+        and sc9_reconciliation["narrowest_next_hardpoint"]
+        == "PersistentFiniteSignaturePDECColumnCRT"
+    )
+    persistent_terminal_admission_closed = (
+        persistent_terminal_admission["status"]
+        == "persistent_terminal_reduced_to_primitive_multiatom_pdec_certificate"
+        and persistent_terminal_admission["persistent_terminal_admission_boundary_closed"]
+        and persistent_terminal_admission["narrowest_next_hardpoint"]
+        == "PrimitiveMultiAtomSameFormalUnitPDECCertificate"
     )
 
     return [
@@ -305,17 +327,24 @@ def build_rows(
             False,
         ),
         row(
-            "PersistentFiniteSignaturePDECColumnCRT",
+            "SC9BoundaryReconciledForCanonicalPDECCap",
+            sc9_boundary_reconciled,
+            sc9_reconciliation["narrowest_next_hardpoint"],
+            "PDEC-CAP 终端中的 flat clean SC-9 已与 canonical-source 边界调和：canonical NC-BLK 被吸收，generic WFD 不纳入自足声明。",
             False,
-            "terminal U_CRT<L_PDEC or displacement PDEC exclusion not submitted",
-            "所有持久有限签名 formal unit 仍需提交同集 PDEC/ColumnCRT 对偶容量排斥证书。",
-            True,
         ),
         row(
-            "SelfContainedKuznetsovLSAtomSC9",
+            "PersistentTerminalAdmissionBoundary",
+            persistent_terminal_admission_closed,
+            persistent_terminal_admission["narrowest_next_hardpoint"],
+            "持久有限签名终端已先经过 formal unit、ColumnCRT、PDEC dual failure、Multiplicity 与非二点 primitive 准入筛。",
             False,
-            "flat multishell clean atom remains open",
-            "无持久有限签名且多壳完全平坦时，完全自足版仍需证明 SC-9 谱大筛原子。",
+        ),
+        row(
+            "PrimitiveMultiAtomSameFormalUnitPDECCertificate",
+            False,
+            "global U_CRT<L_PDEC for admitted primitive multi-atom formal units not submitted",
+            "剩余终端是所有准入后的 primitive 多原子同 formal unit PDEC 容量证书。",
             True,
         ),
     ]
@@ -336,6 +365,8 @@ def run(
     profinite_aps_path: Path,
     diffuse_terminal_path: Path,
     persistent_signature_unification_path: Path,
+    sc9_reconciliation_path: Path,
+    persistent_terminal_admission_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC-CAP 前沿审查。"""
     self_bottleneck = load_json(self_bottleneck_path)
@@ -352,6 +383,8 @@ def run(
     profinite_aps = load_json(profinite_aps_path)
     diffuse_terminal = load_json(diffuse_terminal_path)
     persistent_signature_unification = load_json(persistent_signature_unification_path)
+    sc9_reconciliation = load_json(sc9_reconciliation_path)
+    persistent_terminal_admission = load_json(persistent_terminal_admission_path)
 
     rows = build_rows(
         self_bottleneck=self_bottleneck,
@@ -368,6 +401,8 @@ def run(
         profinite_aps=profinite_aps,
         diffuse_terminal=diffuse_terminal,
         persistent_signature_unification=persistent_signature_unification,
+        sc9_reconciliation=sc9_reconciliation,
+        persistent_terminal_admission=persistent_terminal_admission,
     )
     closed_current_materialized = all(
         item["closed"] for item in rows if not item["blocks_final"]
@@ -394,14 +429,16 @@ def run(
             "persistent_signature_unification": file_sha256(
                 persistent_signature_unification_path
             ),
+            "sc9_reconciliation": file_sha256(sc9_reconciliation_path),
+            "persistent_terminal_admission": file_sha256(
+                persistent_terminal_admission_path
+            ),
         },
         "closed_current_materialized_pdec_gates": closed_current_materialized,
         "pdec_cap_same_set_global_dual_closed": False,
         "row_column_unconditional_closed": False,
         "open_final_gates": open_final_gates,
-        "narrowest_next_hardpoint": (
-            "PersistentFiniteSignaturePDECColumnCRT_OR_SelfContainedKuznetsovLSAtomSC9"
-        ),
+        "narrowest_next_hardpoint": "PrimitiveMultiAtomSameFormalUnitPDECCertificate",
         "rows": rows,
         "frontier_law": (
             "The current same-set PDEC-CAP obligation is no longer an unnamed Fourier "
@@ -415,17 +452,24 @@ def run(
             "further to fixed-shell low-mod PDEC/ColumnCRT persistence or the self-contained "
             "Kuznetsov-LS atom SC-9. The persistent-signature unification router identifies "
             "persistent MFU and fixed-shell low-mod persistence as the same finite-signature "
-            "formal-unit grammar. The remaining global final gates are the unified "
-            "PersistentFiniteSignaturePDECColumnCRT terminal and the separate flat SC-9 atom, "
-            "not an unnamed APS/diffuse exit."
+            "formal-unit grammar. The SC-9 boundary reconciliation then removes flat clean "
+            "SC-9 as an independent blocker in the canonical-source PDEC-CAP boundary: clean "
+            "failure returns to PDEC/SAE, canonical NC-BLK is absorbed by the same-set boundary, "
+            "and generic WFD is not imported into the self-contained claim. The remaining "
+            "persistent terminal is then normalized through the admission router: raw "
+            "ColumnCRT, dual failure, multiplicity mismatch, and two-point tautology are not "
+            "terminal objects. The remaining global final gate is the admitted "
+            "PrimitiveMultiAtomSameFormalUnitPDECCertificate, not an unnamed APS/diffuse/SC-9 "
+            "or raw persistent-signature exit."
         ),
         "review_conclusion": (
             "PDEC-CAP 的当前已物化中间门全部可路由，APS 投影塔二分也已闭合；"
             "diffuse 分支又被压到固定壳低模 PDEC/ColumnCRT 持久偏斜或自足 SC-9。"
             "新增持久有限签名统一路由后，持久 MFU 与固定壳低模持久不再是两个平行硬点。"
-            "但全局同集对偶证书仍未闭合。最新最窄剩余是：统一的 "
-            "`PersistentFiniteSignaturePDECColumnCRT` 终端排斥，或无持久多壳平坦分支的 "
-            "`SelfContainedKuznetsovLSAtomSC9`。"
+            "新增 SC-9 边界调和后，canonical-source 完全自足路线中的 flat clean SC-9 也不再是独立阻塞。"
+            "新增持久终端准入路由后，裸持久有限签名还必须先通过 primitive 多原子同 formal unit 准入门。"
+            "但全局同集对偶证书仍未闭合。最新最窄剩余是 "
+            "`PrimitiveMultiAtomSameFormalUnitPDECCertificate`。"
         ),
     }
 
@@ -450,8 +494,10 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  -> current ForcedCap routed to multi-bucket ActualPaymentStitching;",
         "  -> APS profinite dichotomy routed;",
         "  -> persistent MFU and fixed-shell persistence unified;",
+        "  -> canonical SC-9 boundary reconciled;",
+        "  -> persistent terminal admission normalized;",
         "  -> remaining terminal estimates:",
-        "       PersistentFiniteSignaturePDECColumnCRT or SC-9.",
+        "       PrimitiveMultiAtomSameFormalUnitPDECCertificate.",
         "```",
         "",
         "## 2. 汇总",
@@ -482,9 +528,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 下一步",
             "",
-            "下一步直接攻两侧终端估计：统一持久有限签名 formal unit 的 "
-            "`PersistentFiniteSignaturePDECColumnCRT` 对偶容量证书；以及无持久、多壳平坦时的自足 "
-            "`SelfContainedKuznetsovLSAtomSC9`。",
+            "下一步直接攻准入后的 primitive 多原子同 formal unit PDEC 容量证书 "
+            "`PrimitiveMultiAtomSameFormalUnitPDECCertificate`。",
             "",
         ]
     )
@@ -513,6 +558,14 @@ def main() -> None:
         type=Path,
         default=DEFAULT_PERSISTENT_SIGNATURE_UNIFICATION,
     )
+    parser.add_argument(
+        "--sc9-reconciliation-json", type=Path, default=DEFAULT_SC9_RECONCILIATION
+    )
+    parser.add_argument(
+        "--persistent-terminal-admission-json",
+        type=Path,
+        default=DEFAULT_PERSISTENT_TERMINAL_ADMISSION,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -532,6 +585,8 @@ def main() -> None:
         profinite_aps_path=args.profinite_aps_json,
         diffuse_terminal_path=args.diffuse_terminal_json,
         persistent_signature_unification_path=args.persistent_signature_unification_json,
+        sc9_reconciliation_path=args.sc9_reconciliation_json,
+        persistent_terminal_admission_path=args.persistent_terminal_admission_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
