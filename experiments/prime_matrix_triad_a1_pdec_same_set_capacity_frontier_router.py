@@ -187,6 +187,9 @@ DEFAULT_DIBFI_EXACT_FULL_S_SOURCE_ENTROPY_REDUCTION = (
     DOCS
     / "prime-matrix-triad-a1-dibfi-exact-full-s-source-entropy-reduction-router.json"
 )
+DEFAULT_DIBFI_FULL_S_SUPPORT_RANGE = (
+    DOCS / "prime-matrix-triad-a1-dibfi-full-s-support-range-router.json"
+)
 DEFAULT_JSON = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-triad-a1-pdec-same-set-capacity-frontier-router.md"
 
@@ -302,6 +305,7 @@ def build_frontier_rows(
     dibfi_c_dependent_residue_spectral_reduction: dict[str, Any],
     dibfi_ncblk_branch_alignment: dict[str, Any],
     dibfi_exact_full_s_source_entropy_reduction: dict[str, Any],
+    dibfi_full_s_support_range: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成同集容量前沿行。"""
     lp_summary = summarize_lp(lp)
@@ -1026,6 +1030,19 @@ def build_frontier_rows(
                 "Type/Fourier 容量兼容，或完成外部定理匹配。"
             ),
         },
+        {
+            "frontier": "A1DIBFIFullSSupportRangeRouter",
+            "status": "full_s_support_range_closed_factor_support_capacity_open",
+            "evidence": (
+                f"full-S balanced range 阈值已由 C≈P/log^O P 与 U,V≈C^1/2log^O 闭合；"
+                f"open_range_gates={dibfi_full_s_support_range['open_range_gates']}；"
+                f"terminal_gap={dibfi_full_s_support_range['terminal_gap_after_router']}。"
+            ),
+            "next_action": (
+                "证明 full-S non-AP 精确 u/v 因子支撑与 Type/Fourier 容量兼容，"
+                "或完成外部定理匹配。"
+            ),
+        },
     ]
 
 
@@ -1096,6 +1113,7 @@ def run(
     dibfi_c_dependent_residue_spectral_reduction_path: Path,
     dibfi_ncblk_branch_alignment_path: Path,
     dibfi_exact_full_s_source_entropy_reduction_path: Path,
+    dibfi_full_s_support_range_path: Path,
 ) -> dict[str, Any]:
     """运行 PDEC 同集容量前沿路由。"""
     lp = load_json(lp_path)
@@ -1184,6 +1202,7 @@ def run(
     dibfi_exact_full_s_source_entropy_reduction = load_json(
         dibfi_exact_full_s_source_entropy_reduction_path
     )
+    dibfi_full_s_support_range = load_json(dibfi_full_s_support_range_path)
     frontier_rows = build_frontier_rows(
         lp,
         direction,
@@ -1251,6 +1270,7 @@ def run(
         dibfi_c_dependent_residue_spectral_reduction,
         dibfi_ncblk_branch_alignment,
         dibfi_exact_full_s_source_entropy_reduction,
+        dibfi_full_s_support_range,
     )
     status_counts = Counter(row["status"] for row in frontier_rows)
     ready_or_routed = {
@@ -1320,13 +1340,14 @@ def run(
         "c_dependent_residue_spectral_input_reduced_to_kfls_ncblk_or_external_open",
         "ncblk_branch_alignment_reduced_to_exact_full_s_source_entropy_or_external_open",
         "exact_full_s_source_entropy_reduced_to_factor_support_package_open",
+        "full_s_support_range_closed_factor_support_capacity_open",
         "closed",
         "no_fourth_exit",
     }
     all_known_frontiers_routed = all(row["status"] in ready_or_routed for row in frontier_rows)
     return {
         "certificate_type": "triad_a1_pdec_same_set_capacity_frontier_router",
-        "status": "same_set_capacity_frontier_full_s_factor_support_package_or_external_open",
+        "status": "same_set_capacity_frontier_full_s_factor_support_capacity_or_external_open",
         "source_hashes": {
             "script": file_sha256(Path(__file__).resolve()),
             "lhb_lp_skeleton_json": file_sha256(lp_path),
@@ -1469,6 +1490,9 @@ def run(
             "a1_dibfi_exact_full_s_source_entropy_reduction_json": file_sha256(
                 dibfi_exact_full_s_source_entropy_reduction_path
             ),
+            "a1_dibfi_full_s_support_range_json": file_sha256(
+                dibfi_full_s_support_range_path
+            ),
         },
         "lp_summary": summarize_lp(lp),
         "fourier_summary": summarize_fourier(fourier),
@@ -1480,7 +1504,7 @@ def run(
         "status_counts": dict(sorted(status_counts.items())),
         "all_known_frontiers_routed": all_known_frontiers_routed,
         "terminal_dual_gap": (
-            "FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov"
+            "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov"
         ),
         "structural_law": (
             "同集容量上界只允许作用在同一个 g(t) 上。当前 LHB 分支的 Attachment、零块容量行、"
@@ -1582,8 +1606,9 @@ def run(
             "谱/dispersion 平均抵消；最新路由把该抵消输入与 `BWFD -> BSC -> KFLS` "
             "完成链精确对齐，并继续把 full-S non-AP NC-BLK 对齐到 exact source entropy/"
             "外部定理二分；source entropy 又被压成精确因子支撑、balanced range 阈值与"
-            " Type/Fourier 容量兼容组成的支撑包。当前终端为 "
-            "`FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov`。"
+            " Type/Fourier 容量兼容组成的支撑包；balanced range 阈值已由 full-S 尺度闭合。"
+            "当前终端为 "
+            "`FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov`。"
         ),
     }
 
@@ -1667,7 +1692,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         "  C-dependent residue weights are Fourier-dual to the BWFD/BSC/KFLS completion chain。",
         "  Full-S non-AP NC-BLK cannot silently import the canonical source branch。",
         "  Exact full-S source entropy reduces to factor support package。",
-        "  The remaining terminal is FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov。",
+        "  Full-S balanced range threshold is closed by C≈P/log^O P。",
+        "  The remaining terminal is FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov。",
         "```",
         "",
         "## 2. 汇总",
@@ -1767,7 +1793,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "DIBFICDependentResidueSpectralReduction router materialized；",
             "DIBFINCBLKBranchAlignment router materialized；",
             "DIBFIExactFullSSourceEntropyReduction router materialized；",
-            "remaining independent gap is FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov。",
+            "DIBFIFullSSupportRange router materialized；",
+            "remaining independent gap is FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov。",
             "```",
             "",
             "因此 canonical RIW/Buchstab source branch 的 source-lock 链条已闭合；",
@@ -1775,7 +1802,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "AP-source 直接 BFI 分支已闭合；非 AP generic WFD 外部引用版剩未中心化无投影恒等式"
             "与 DI Kloosterman 窗口代入账本；"
             "APSourceLift 已被当前合同排除；完全自足/主来源逐项版仍只剩"
-            " FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov。",
+            " FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov。",
         ]
     )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -2045,6 +2072,11 @@ def main() -> None:
         type=Path,
         default=DEFAULT_DIBFI_EXACT_FULL_S_SOURCE_ENTROPY_REDUCTION,
     )
+    parser.add_argument(
+        "--dibfi-full-s-support-range-json",
+        type=Path,
+        default=DEFAULT_DIBFI_FULL_S_SUPPORT_RANGE,
+    )
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     args = parser.parse_args()
@@ -2144,6 +2176,7 @@ def main() -> None:
         dibfi_exact_full_s_source_entropy_reduction_path=(
             args.dibfi_exact_full_s_source_entropy_reduction_json
         ),
+        dibfi_full_s_support_range_path=args.dibfi_full_s_support_range_json,
     )
     args.json_out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n",

@@ -1,0 +1,96 @@
+{
+  "balanced_range_threshold_closed": true,
+  "certificate_type": "triad_a1_dibfi_full_s_support_range_router",
+  "closed_range_gates": [
+    "PriorSupportPackagePinned",
+    "FullSScalePinned",
+    "CompletionRatioPolylogPinned",
+    "BalancedFactorizationPinned",
+    "PolynomialScaleBeatsAnyFixedLogThreshold",
+    "FiniteInitialRangeReturnLegal",
+    "FullSNonAPBalancedRangeThreshold"
+  ],
+  "closed_support_package_clause": "FullSNonAPBalancedRangeThreshold",
+  "open_range_gates": [
+    "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov"
+  ],
+  "previous_terminal_gap": "FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov",
+  "range_rows": [
+    {
+      "closed": true,
+      "evidence": "previous terminal=FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov; open=['FullSNonAPExactFactorSupportPackageOrExternalDIBFIKuznetsov'].",
+      "gate": "PriorSupportPackagePinned",
+      "next_target": "FullSNonAPBalancedRangeThreshold",
+      "remaining": "none at previous-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "Full-S theorem input fixes X≈P^2, C≈P/log^O P and S≈P.",
+      "gate": "FullSScalePinned",
+      "next_target": "FullSNonAPBalancedRangeThreshold",
+      "remaining": "none at qualitative scale level"
+    },
+    {
+      "closed": true,
+      "evidence": "Full-S completion records L_c=S/c=log^O(P).",
+      "gate": "CompletionRatioPolylogPinned",
+      "next_target": "FullSNonAPBalancedRangeThreshold",
+      "remaining": "none; this confirms C is within a polylog factor of P"
+    },
+    {
+      "closed": true,
+      "evidence": "C-dependent residue reduction imports c=uv with U,V=C^{1/2}log^O.",
+      "gate": "BalancedFactorizationPinned",
+      "next_target": "FullSNonAPBalancedRangeThreshold",
+      "remaining": "none at factorization-shape level"
+    },
+    {
+      "closed": true,
+      "evidence": "For any fixed B,K, P^{1/2}/log^K(P) >= log^B(P) for all sufficiently large P.",
+      "gate": "PolynomialScaleBeatsAnyFixedLogThreshold",
+      "next_target": "FullSNonAPBalancedRangeThreshold",
+      "remaining": "only finite initial P below the threshold"
+    },
+    {
+      "closed": true,
+      "evidence": "Finite pre-asymptotic failures are not the analytic full-S hard point; they return to finite verification/PDEC/SAE bookkeeping.",
+      "gate": "FiniteInitialRangeReturnLegal",
+      "next_target": "FullSNonAPBalancedRangeThreshold",
+      "remaining": "none for asymptotic proof search"
+    },
+    {
+      "closed": true,
+      "evidence": "Since C≈P/log^O P and U,V=C^{1/2}log^O, every surviving balanced full-S block has U,V above any fixed log^B threshold for large P.",
+      "gate": "FullSNonAPBalancedRangeThreshold",
+      "next_target": "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternal",
+      "remaining": "none; remove range threshold from the terminal package"
+    },
+    {
+      "closed": false,
+      "evidence": "After range closure, the support package only needs exact u/v factor support and Type/Fourier capacity compatibility, unless an external theorem is matched.",
+      "gate": "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov",
+      "next_target": "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov",
+      "remaining": "prove exact support plus capacity compatibility, or cite/match external dispersion"
+    }
+  ],
+  "remaining_support_package_clauses": [
+    "FullSNonAPExactFactorSupportLowerBound",
+    "FullSNonAPTypeFourierCapacityCompatibility"
+  ],
+  "review_conclusion": "`FullSNonAPBalancedRangeThreshold` 已在 full-S regime 下闭合；当前终端缩为 `FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov`。",
+  "source_hashes": {
+    "c_dependent_reduction_json": "6a720ca520c5652928da6b14bd8c314c28396791e9c16c24a75cf5755980898c",
+    "full_s_completion_json": "bee7ade16ab2e5a8309060c7c4c24cc7f8cb37ab87d94aeb1cefc407183d116e",
+    "new_full_s_input_json": "5a24752ca3d01eb90414bd498d9be025bebda93809eaaaebb396296d2f68ba68",
+    "script": "1c7a63ef043bec6ac2dc265cb4bab21bd8e4e7bb43d17176b1627887fb6cd2c4",
+    "source_entropy_reduction_json": "728b7afab5a9458bc19eb2bc92d973eb254a7e489559a589963372d0cd7fbed1"
+  },
+  "status": "full_s_support_range_closed_factor_support_capacity_open",
+  "structural_law": "The balanced range threshold is not the true terminal hard point in the full-S regime. C≈P/log^O(P) and c=uv with U,V=C^{1/2}log^O(P) force U,V to dominate every fixed logarithmic support threshold. Thus the remaining internal support package is exact factor support plus Type/Fourier capacity compatibility.",
+  "terminal_gap_after_router": "FullSNonAPExactFactorSupportAndCapacityCompatibilityOrExternalDIBFIKuznetsov",
+  "terminal_gap_expansion": [
+    "FullSNonAPExactFactorSupportLowerBound",
+    "FullSNonAPTypeFourierCapacityCompatibility",
+    "ExternalDIBFIKuznetsovDispersionTheoremMatch"
+  ]
+}
