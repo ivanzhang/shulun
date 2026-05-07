@@ -5558,3 +5558,70 @@ terminal_dual_gap
 这一步的结构意义是把“证明 BFI 内部机制”与“使用 BFI 外部原子”分开：外部引用版优先只需完成
 BFI prime-AP 原子匹配；完全自足版或无法提升回 AP 原子的版本，才继续承担 KE-13 无投影与 DI
 尺度代入的完整证明。
+
+## 97. BFI 原子匹配：三门控压成 AP 源等式与 level 指数账本
+
+新增 `experiments/prime_matrix_triad_a1_dibfi_bfi_atom_match_router.py` 后，第 96 节留下的
+`DIBFIDirectBFIAPAtomMatchOrKE13NoProjection` 被继续压缩。关键点是直接 BFI 路线不再把
+`DispersionCauchyNoCenteringIdentity`、`KE13DyadicExhaustionNoProjection` 与
+`DIJScaleDominanceSubstitution` 当作本文的并列终端；这些是 BFI 原子内部证明。本文外部引用版
+只需完成当前残差到 BFI prime-AP 误差对象的源等式，以及 BFI level / well-factorable support
+的显式指数账本。
+
+机器结果：
+
+```text
+status=dibfi_direct_bfi_atom_match_reduced_to_ap_identity_and_level_ledger_open；
+open_gates=[
+  PrimeAPResidualRepresentation,
+  BFILevelSubstitution,
+  WellFactorableLambdaLevel
+]；
+open_terminal_targets=[
+  OriginalResidualEqualsBFIAPError,
+  BFILevelExponentLedger
+]；
+terminal_gap_after_router=BFIAPResidualIdentityAndLevelLedger。
+```
+
+已关闭的账本行为：
+
+```text
+BFIAtomPinned:
+  BFI1987-Theorem10 已由定理定位路由固定；
+
+APErrorFormulaNamed:
+  E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm) 已命名；
+
+TypeDecompositionToBFIInput:
+  Vaughan/Heath-Brown、Type-I/II、dyadic 与 smooth/cutoff 账本已登记；
+
+WellFactorableLambdaClass:
+  lambda 的 well-factorable 权重类别已登记。
+```
+
+仍未闭合的核心：
+
+```text
+OriginalResidualEqualsBFIAPError:
+  从原始 clean A1/generic WFD 残差出发，逐项证明它就是 BFI prime-AP discrepancy 的
+  dyadic 总和；
+
+BFILevelExponentLedger:
+  给出 X、Q、q-support、lambda support level、factorization depth 与 dyadic/log 损失的
+  显式指数账本，并代入 BFI Theorem 10。
+```
+
+前沿路由器同步更新后：
+
+```text
+A1DIBFIBFIAtomMatchRouter
+  => dibfi_direct_bfi_atom_match_reduced_to_ap_identity_and_level_ledger_open；
+
+terminal_dual_gap
+  => BFIAPResidualIdentityAndLevelLedger。
+```
+
+这一步把三个表面门控压成两个不可再混淆的终端：对象等式负责“是不是同一个 AP 残差”，
+level 账本负责“这个 AP 残差是否落进 BFI Theorem 10 的允许范围”。在这两项完成前，不能诚实宣称
+generic WFD 外部 DI/BFI 分支已经完全闭合。

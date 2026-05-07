@@ -1,0 +1,105 @@
+{
+  "bfi_atom_match_closed": false,
+  "certificate_type": "triad_a1_dibfi_bfi_atom_match_router",
+  "gate_rows": [
+    {
+      "closed": true,
+      "evidence": "BFI1987-Theorem10 已由定理定位路由固定，直接 BFI 原子可用。",
+      "gate": "BFIAtomPinned",
+      "next_target": "none",
+      "remaining": "none",
+      "status": "closed"
+    },
+    {
+      "closed": true,
+      "evidence": "E_AP(X,Q)=sum_{q<=Q} lambda_q sum_{nm≈X} a_n b_m Delta_q(nm)",
+      "gate": "APErrorFormulaNamed",
+      "next_target": "OriginalResidualEqualsBFIAPError",
+      "remaining": "公式已命名；仍需证明当前残差等于该对象。",
+      "status": "formula_available_not_source_identification"
+    },
+    {
+      "closed": false,
+      "evidence": "共同变量表只给 APError 接口，尚未给 clean A1 残差到该接口的逐项等式。",
+      "gate": "PrimeAPResidualRepresentation",
+      "next_target": "OriginalResidualEqualsBFIAPError",
+      "remaining": "必须从原始行/triad clean 残差出发写出 E_AP(X,Q) 的等号，而不是从 KE-13 子窗口倒推。",
+      "status": "open_main_object_identity"
+    },
+    {
+      "closed": true,
+      "evidence": "KZ-E spine 已登记 Vaughan/Heath-Brown、Type-I/II、dyadic 与 well-factorable 账本。",
+      "gate": "TypeDecompositionToBFIInput",
+      "next_target": "none",
+      "remaining": "该行只说明 AP 对象一旦建立，可进入 BFI 的 Type/dispersion 框架。",
+      "status": "closed_conditioned_on_ap_identity"
+    },
+    {
+      "closed": true,
+      "evidence": "generic WFD 合同与共同变量表均登记 lambda 为 BFI well-factorable 权重类别。",
+      "gate": "WellFactorableLambdaClass",
+      "next_target": "BFILevelExponentLedger",
+      "remaining": "权重类别已闭合；数值 level 与 q-support 仍属 BFILevelExponentLedger。",
+      "status": "closed_at_weight_class_level"
+    },
+    {
+      "closed": false,
+      "evidence": "当前文档只有 Q<=X^(4/7-eps) 的目标语句，尚未给出 X,Q 的原始参数等式。",
+      "gate": "BFILevelSubstitution",
+      "next_target": "BFILevelExponentLedger",
+      "remaining": "需提交 X、Q、q-support、dyadic loss 的显式不等式账本。",
+      "status": "open_exponent_and_support_ledger_missing"
+    },
+    {
+      "closed": false,
+      "evidence": "lambda 的 well-factorable 类别已登记，但支撑 level 与 BFI 定理输入仍未量化。",
+      "gate": "WellFactorableLambdaLevel",
+      "next_target": "BFILevelExponentLedger",
+      "remaining": "需证明 lambda_q 的 support level、factorization depth 与 BFI Theorem 10 的 level 条件一致。",
+      "status": "open_level_not_class"
+    }
+  ],
+  "next_external_target": "BFIAPResidualIdentityAndLevelLedger",
+  "open_gates": [
+    "PrimeAPResidualRepresentation",
+    "BFILevelSubstitution",
+    "WellFactorableLambdaLevel"
+  ],
+  "open_terminal_targets": [
+    "OriginalResidualEqualsBFIAPError",
+    "BFILevelExponentLedger"
+  ],
+  "previous_terminal_gap": "DIBFIDirectBFIAPAtomMatchOrKE13NoProjection",
+  "review_conclusion": "直接 BFI 原子匹配被压成两个终端硬点：`OriginalResidualEqualsBFIAPError` 与 `BFILevelExponentLedger`。权重类别与 Type 分解账本已关闭；剩余不是 DI/J-scale，而是 AP 源对象等式和 BFI level 指数账本。",
+  "source_hashes": {
+    "common_variable_table_json": "098b27300b7553cd8476dff25b2205ae83a24f0c8dd2cf05ca1dc81dde107437",
+    "dibfi_theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4",
+    "direct_bfi_atom_json": "daa5db7d52fa40b9a14b672fd0966b69ca803fee412dca1285127ee3fd4682ad",
+    "external_theorem_index_md": "7a0ef97946a854b0763d0800c765c9e9c1a462fef1b40241e604b46a8c579f5a",
+    "generic_wfd_dibfi_json": "f3d583dd214fa6c1b982c05d8a9795681b00f71b6f38ed63094501e491aba972",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "script": "bd744ceb519f2b11e093963d412561f72a835ce60cff0bc6fb68a4ea8e9f2037"
+  },
+  "status": "dibfi_direct_bfi_atom_match_reduced_to_ap_identity_and_level_ledger_open",
+  "structural_law": "Direct BFI no longer asks for KE-13 no-projection or DI J-scale. The remaining BFI atom match has exactly two independent contents: first, the original residual must equal the BFI prime-AP discrepancy before Cauchy/dispersion; second, the X,Q and lambda support levels must be quantified against BFI Theorem 10.",
+  "terminal_gap_after_router": "BFIAPResidualIdentityAndLevelLedger",
+  "terminal_rows": [
+    {
+      "closed": false,
+      "covers": [
+        "PrimeAPResidualRepresentation"
+      ],
+      "meaning": "证明当前 clean A1/generic WFD 残差在进入 Cauchy/dispersion 前就是 BFI prime-AP discrepancy 的 dyadic 总和。",
+      "terminal": "OriginalResidualEqualsBFIAPError"
+    },
+    {
+      "closed": false,
+      "covers": [
+        "BFILevelSubstitution",
+        "WellFactorableLambdaLevel"
+      ],
+      "meaning": "给出 X,Q 与 lambda_q support level 的显式指数账本，并核验 BFI Theorem 10 的 level/well-factorable 输入。",
+      "terminal": "BFILevelExponentLedger"
+    }
+  ]
+}
