@@ -6759,3 +6759,69 @@ NonAPWFDNoProjectionAndNewFullSDispersionAtom
 这一步说明：当前 Maynard-W4 指数锥路线在 full-S non-AP generic WFD 块上不能由变量重命名、
 局部切窗或已登记替代原子闭合。若要继续外部解析路线，必须新增一个真正覆盖 full-S
 窗口的原始 dispersion 原子，并重新审计其对象、相位、level、频率和损失账本。
+
+## 113. Full-S dispersion atom：从笼统新原子压成外部 DI/BFI 合同
+
+新增 `docs/monograph/prime-matrix-triad-a1-dibfi-full-s-dispersion-atom-note.md` 与
+`experiments/prime_matrix_triad_a1_dibfi_full_s_dispersion_atom_router.py` 后，第 112 节的
+`NewFullSDispersionAtom` 被进一步精确化。核心判定是：
+
+```text
+full-S 缺口不是参数优化问题；
+full-S 缺口是原始 DI/BFI dispersion 定理合同问题。
+```
+
+已知内部退路状态：
+
+```text
+Maynard-W4 route:
+  rejected, because q≈1/2 forces S_May<=X^(3/10-o(1)).
+
+Short-S subwindow:
+  rejected, because small width does not reduce the magnitude of z=s1*s2.
+
+Existing KE-13/WFD-core:
+  same shape, but explicitly not self-contained closed in current KZ-E spine.
+
+Direct BFI-AP:
+  closes AP-source branch, but current remaining branch is non-AP generic WFD.
+```
+
+机器结果：
+
+```text
+status=full_s_dispersion_atom_reduced_to_external_dibfi_match_open；
+closed_atom_gates=[
+  PriorNewFullSAtomFrontierAvailable,
+  FullSAtomStatementPinned,
+  MaynardW4RouteAlreadyRejected,
+  ExistingKZEWFDCoreIsSameShapeButOpen,
+  DirectBFIAPBranchDoesNotCloseNonAPFullS,
+  OriginalDIBFITheoremLocationsPinned
+]；
+open_atom_gates=[
+  UncenteredNoProjectionCompatibilityStillOpen,
+  ExternalFullSDIBFIAtomMatch
+]；
+terminal_gap_after_router=ExternalFullSDIBFIAtomMatch。
+```
+
+因此当前前沿更新为：
+
+```text
+NonAPWFDNoProjectionAndExternalFullSDIBFIAtomMatch
+  = UncenteredWFDToKE13NoProjectionIdentity
+    + ExternalFullSDIBFIAtomMatch。
+```
+
+其中 `ExternalFullSDIBFIAtomMatch` 的内容是：
+
+```text
+提交或精确引用原始 DI/BFI full-S dispersion 定理；
+证明它覆盖 S_common≈X^(1/2)、z≈X；
+证明应用到当前 non-AP WFD 对象时没有隐藏中心化、投影或 dyadic 主块遗漏。
+```
+
+这一步仍不是行命题闭合；它把最后尺度硬点从“新增 full-S 原子”改成可审稿的
+`ExternalFullSDIBFIAtomMatch` 合同，并与对象侧 `UncenteredWFDToKE13NoProjectionIdentity`
+合成当前最窄剩余。

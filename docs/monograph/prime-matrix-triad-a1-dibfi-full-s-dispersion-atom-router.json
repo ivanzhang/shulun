@@ -1,0 +1,94 @@
+{
+  "atom_rows": [
+    {
+      "closed": true,
+      "evidence": "短 S 子窗口退路已排除，上游终端单点化为 NewFullSDispersionAtom。",
+      "gate": "PriorNewFullSAtomFrontierAvailable",
+      "next_target": "FullSAtomStatementPinned",
+      "remaining": "none at prior-frontier level"
+    },
+    {
+      "closed": true,
+      "evidence": "full-S 原子被固定为 S_common≈X^(1/2)、z≈X 的原始 DI/BFI dispersion 输入。",
+      "gate": "FullSAtomStatementPinned",
+      "next_target": "ExternalFullSDIBFIAtomMatch",
+      "remaining": "none at statement-naming level"
+    },
+    {
+      "closed": true,
+      "evidence": "Maynard W4 路线需要 S_May<=X^(3/10-o(1))；full-S 保留会强制 S_May≈X^(1/2)。",
+      "gate": "MaynardW4RouteAlreadyRejected",
+      "next_target": "ExternalFullSDIBFIAtomMatch",
+      "remaining": "不能再从 Maynard-W4 锥内取得 full-S 结论。"
+    },
+    {
+      "closed": true,
+      "evidence": "KZ-E spine 已有 KE-13/WFD-core 形状，但文档明确标注该核尚未自足证明。",
+      "gate": "ExistingKZEWFDCoreIsSameShapeButOpen",
+      "next_target": "ExternalFullSDIBFIAtomMatch",
+      "remaining": "不能把 KE-13/WFD-core 当作已闭合 full-S 原子。"
+    },
+    {
+      "closed": true,
+      "evidence": "AP-source 直接 BFI 分支已闭合；当前剩余是 non-AP generic WFD fallback。",
+      "gate": "DirectBFIAPBranchDoesNotCloseNonAPFullS",
+      "next_target": "ExternalFullSDIBFIAtomMatch",
+      "remaining": "必须给出 non-AP full-S 原始 dispersion 假设匹配，或回到无投影对象恒等式。"
+    },
+    {
+      "closed": true,
+      "evidence": "外部 DI/BFI 定理位置已固定为 BFI Theorem 10 与 DI Theorem 12。",
+      "gate": "OriginalDIBFITheoremLocationsPinned",
+      "next_target": "ExternalFullSDIBFIAtomMatch",
+      "remaining": "定理位置不是问题；问题是 full-S 当前窗口假设逐项匹配。"
+    },
+    {
+      "closed": false,
+      "evidence": "non-AP 对象账本仍开放：['DispersionCauchyNoCenteringIdentity', 'KE13DyadicExhaustionNoProjection']。",
+      "gate": "UncenteredNoProjectionCompatibilityStillOpen",
+      "next_target": "UncenteredWFDToKE13NoProjectionIdentity",
+      "remaining": "证明 full-S 外部原子应用时没有隐藏中心化、投影或 dyadic 主块遗漏。"
+    },
+    {
+      "closed": false,
+      "evidence": "NC-BLK 外部路由也要求 precise DI/BFI original dispersion citation；external_dibfi_open=True。",
+      "gate": "ExternalFullSDIBFIAtomMatch",
+      "next_target": "ExternalFullSDIBFIAtomMatch",
+      "remaining": "需要写出 full-S 原始 dispersion 定理/引用合同，并逐项验证当前 S_common≈X^(1/2)、z≈X 窗口满足其假设。"
+    }
+  ],
+  "certificate_type": "triad_a1_dibfi_full_s_dispersion_atom_router",
+  "closed_atom_gates": [
+    "PriorNewFullSAtomFrontierAvailable",
+    "FullSAtomStatementPinned",
+    "MaynardW4RouteAlreadyRejected",
+    "ExistingKZEWFDCoreIsSameShapeButOpen",
+    "DirectBFIAPBranchDoesNotCloseNonAPFullS",
+    "OriginalDIBFITheoremLocationsPinned"
+  ],
+  "full_s_dispersion_atom_closed": false,
+  "open_atom_gates": [
+    "UncenteredNoProjectionCompatibilityStillOpen",
+    "ExternalFullSDIBFIAtomMatch"
+  ],
+  "previous_terminal_gap": "NewFullSDispersionAtom",
+  "review_conclusion": "`NewFullSDispersionAtom` 已被精确改写为 `ExternalFullSDIBFIAtomMatch`：要么提交适配 S_common≈X^(1/2)、z≈X 的原始 DI/BFI full-S 定理合同，要么继续攻 non-AP 对象侧的未中心化无投影恒等式。",
+  "source_hashes": {
+    "ap_source_branch_json": "81dc79aa0b5f3b6ea295cff13186e2b522f16e701a70cadabced721ac884d0bc",
+    "direct_bfi_atom_json": "daa5db7d52fa40b9a14b672fd0966b69ca803fee412dca1285127ee3fd4682ad",
+    "kze_spine_md": "171570f193814cbdfda97559231d9038569bc375a146d7792add5200e0df17b0",
+    "ncblk_projection_json": "c38a567ab8b649086817dfdb34ed8816a02c9a6306ffb8218b396e51c0d3cc1f",
+    "nonap_object_ledger_json": "b94ec49a04e4779d893a2026565e29ceaee42f481cd2aaedfc5246bead7ed280",
+    "note_md": "dbde23367b3192288267fce3ef02aa77f92a0762a85beef96f759d7894a3c6a8",
+    "script": "281f541adfe5c9e6d1885a983adbfbd9ae51609b0a8aaa905cff3ce7d35c202f",
+    "short_s_nogo_json": "1b3ac13f1107c043063956c3e20aef904bafba68e72d76b2c737fe727e721ce1",
+    "theorem_location_json": "7cc787c37de208e240c8e4c81296d1de71957db6c3865aaf7e79708ec7acccf4"
+  },
+  "status": "full_s_dispersion_atom_reduced_to_external_dibfi_match_open",
+  "structural_law": "The latest scale gap is no longer a parameter optimization problem. Maynard-W4 cannot accept S≈X^(1/2) when q≈1/2, short-S subwindows do not change the magnitude of z=s1*s2, and the existing KE-13/WFD-core text is an open deep kernel rather than a closed proof. Thus the honest full-S route is a precise original DI/BFI dispersion atom for the current full-S window, with no hidden centering/projection.",
+  "terminal_gap_after_router": "ExternalFullSDIBFIAtomMatch",
+  "terminal_gap_expansion": [
+    "ExternalFullSDIBFIAtomMatch",
+    "UncenteredWFDToKE13NoProjectionIdentity"
+  ]
+}
