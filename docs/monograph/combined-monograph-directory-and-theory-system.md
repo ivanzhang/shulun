@@ -2093,6 +2093,9 @@ D-structure/Tail-log4/Rankin/referee-block interfaces。
 ```text
 experiments/prime_matrix_wsh_fo_pdec_nested_duplicate_dominance_audit.py
 docs/monograph/prime-matrix-wsh-fo-pdec-nested-duplicate-dominance-audit.md/json
+experiments/prime_matrix_wsh_fo_pdec_weighted_hall_dual_audit.py
+docs/monograph/prime-matrix-wsh-fo-pdec-weighted-hall-dual-audit.md/json
+docs/monograph/prime-matrix-wsh-fo-pdec-weighted-hall-dual-dominance.md
 experiments/prime_matrix_row_column_unconditional_frontier_router.py
 docs/monograph/prime-matrix-row-column-unconditional-frontier-router.md/json
 ```
@@ -2119,11 +2122,21 @@ block-local best = 1.0。
 事件计数。若要保留权重，必须给出同一多重 formal unit 上的 fractional Weighted Hall dual；
 否则应坐标商掉，转入 primitive PDEC 阈值或 SAE/Endpoint 吸收。
 
-因此下一步不应回到泛化 generic WFD，也不应直接调 `U_CRT,199` 常数。最窄可攻路线是：
+进一步的 weighted-Hall 审计显示，fractional Weighted Hall dual 也不能恢复完整第二单位质量：
+每个嵌套对都是 laminar 支撑，差层只增加 `1` 个半素数与 `1` 个邻近素数，`Delta surplus=0`，
+没有新的 Hall 压力可支付重复坐标。因此强阈值必须降口径：
 
 ```text
-fractional Weighted Hall dual independence；
-或 coordinate quotient / primitive PDEC threshold；
-或 exact duplicate SAE/Endpoint absorption；
-或 cross-q persistence theorem / cross-level reuse rejection。
+global_library_raw:      3.959247567099438
+nested_coordinate_cap:   2.9698366905785227
+physical_candidate_cap:  1.9997507790353146
+single formal branch:    1.0
+```
+
+因此下一步不应回到泛化 generic WFD，也不应直接使用 raw `U_CRT,199<3.959...`。最窄可攻路线更新为：
+
+```text
+cross-q persistence theorem；
+若成立，攻 coordinate-cap PDEC threshold U_CRT < 2.9698366905785227；
+若失败，转 physical/primitive PDEC threshold 或 SAE/Endpoint absorption。
 ```
