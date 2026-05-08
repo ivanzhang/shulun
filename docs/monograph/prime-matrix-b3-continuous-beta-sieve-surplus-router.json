@@ -1,0 +1,151 @@
+{
+  "certificate_type": "b3_continuous_beta_sieve_surplus_router",
+  "status": "continuous_beta_surplus_closed_discrete_error_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-beta-sieve-main-coefficient-terminal-attack-router.json": "59c06b196474c72b206d0a4ed00f676bdb5b05ae12d2b56b4b7d9642231dfa8b"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lower_weight_recursive_construction_closed": true,
+  "lower_weight_dominance_proved": true,
+  "continuous_beta_sieve_surplus_proved": true,
+  "discrete_prime_sum_uniform_error_proved": false,
+  "beta_sieve_main_coefficient_99pct_proved": false,
+  "standard_beta_sieve_import_accepted": false,
+  "external_short_interval_rough_lower_bound_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "replacement": {
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043": "CONTINUOUS_LINEAR_SIEVE_F_ALPHA043_CLOSED"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((B3DiscretePrimeSumUniformErrorPGe100000 OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((B3DiscretePrimeSumUniformErrorPGe100000 OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((B3DiscretePrimeSumUniformErrorPGe100000 OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "B3DiscretePrimeSumUniformErrorPGe100000",
+  "conditional_beta_import_priority": "StandardRosserIwaniecBetaSieveTheoremImportAccepted",
+  "external_next_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+  "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "ledger": {
+    "alpha": 0.43,
+    "s": 2.3255813953488373,
+    "s_in_two_to_three": true,
+    "linear_lower_sieve_f": 0.43171768922908227,
+    "continuous_coefficient": 0.43171768922908227,
+    "conservative_fraction": 0.99,
+    "conservative_threshold": 0.42740051233679144,
+    "absolute_surplus_to_99pct": 0.0043171768922908305,
+    "relative_surplus_to_99pct": 0.010000000000000009
+  },
+  "proof_skeleton": [
+    "The continuous linear lower sieve in dimension one is governed by the beta/Buchstab differential-difference system.",
+    "On the interval 2<s<3, the lower function has the explicit solution f(s)=2e^gamma log(s-1)/s.",
+    "For alpha=0.43, s=1/alpha=2.325581..., so this formula applies directly.",
+    "The continuous main coefficient is therefore exactly f(s), while the project only needs 0.99 f(s).",
+    "The remaining 0.01 f(s)=0.004317176892... is the entire budget for discrete prime-sum error."
+  ],
+  "plain_conclusion": "连续主项余量已闭合。alpha=0.43 给 s=2.325581，位于线性下界筛 2<s<3 的显式公式区间；连续主项等于 f(s)=0.431717689229，因此相对 99% 目标保留 1% 的绝对归一误差预算 0.004317176892。当前唯一内部 beta-sieve 剩余变成离散素和统一误差。",
+  "rows": [
+    {
+      "gate": "ContinuousSurplusGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 99% 主系数原子压成连续 beta 主项余量与离散素和误差。",
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步只处理筛权连续主项函数，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "LowerPackageAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "lower weights 构造和逐点支配已闭合，连续主项对象有定义。",
+      "remaining": "无 lower-weight 结构剩余。"
+    },
+    {
+      "gate": "LinearLowerSieveRangeClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "alpha=0.43 给 s=1/alpha=2.325581，处于 2<s<3 的显式公式区间。",
+      "remaining": "无区间剩余。"
+    },
+    {
+      "gate": "ContinuousLinearSieveFormulaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "连续线性下界筛在 2<s<3 满足 f(s)=2e^gamma log(s-1)/s。",
+      "remaining": "离散素和误差仍未处理。"
+    },
+    {
+      "gate": "ContinuousSurplusAbove99PercentClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "连续主项等于 100% f(s)，因此相对 99% 目标留下 1% 误差余量。",
+      "remaining": "B3DiscretePrimeSumUniformErrorPGe100000"
+    },
+    {
+      "gate": "B3ContinuousBetaSieveCoefficientSurplusClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "连续层已经闭合；剩余唯一内部点是离散素和统一误差小于 1% f(s)。",
+      "remaining": "B3DiscretePrimeSumUniformErrorPGe100000"
+    },
+    {
+      "gate": "B3DiscretePrimeSumUniformErrorPGe100000",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要证明 P>=100000 下离散素数乘积和到连续模型的误差不超过 0.01 f(s)。",
+      "remaining": "B3DiscretePrimeSumUniformErrorPGe100000"
+    },
+    {
+      "gate": "StandardRosserIwaniecBetaSieveTheoremImportAccepted",
+      "closed": false,
+      "proved": false,
+      "meaning": "若接受标准 Rosser-Iwaniec beta-sieve 定理，可外部关闭离散误差；但不是内部自足闭合。",
+      "remaining": "StandardRosserIwaniecBetaSieveTheoremImportAccepted"
+    },
+    {
+      "gate": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部短区间 rough-number 下界仍可绕开内部 beta-sieve 包。",
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "closed": false,
+      "proved": false,
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "ContinuousSurplusGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "LowerPackageAvailable",
+    "LinearLowerSieveRangeClosed",
+    "ContinuousLinearSieveFormulaClosed",
+    "ContinuousSurplusAbove99PercentClosed",
+    "B3ContinuousBetaSieveCoefficientSurplusClosed"
+  ],
+  "open_gates": [
+    "B3DiscretePrimeSumUniformErrorPGe100000",
+    "StandardRosserIwaniecBetaSieveTheoremImportAccepted",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
