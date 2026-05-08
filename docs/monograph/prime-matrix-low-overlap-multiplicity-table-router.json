@@ -1,0 +1,158 @@
+{
+  "certificate_type": "prime_matrix_low_overlap_multiplicity_table_certificate",
+  "certificate_scope": "universal_sweepline_multiplicity_generator",
+  "status": "low_overlap_multiplicity_table_closed_coloring_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-anchor-interval-enumeration-router.json": "8226824c34befd9dcf63546bcca75afc9c557599c2ec1a795ebb7fd2d0ed41f4",
+    "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json": "7b3e7de7760295bb4e328cb2b82345c3b7053d1a54b37c88260e3f21a09f7ab1",
+    "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6",
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.md": "bb9f15304067c8580b20ed01595cb9702a43a455551fcd47101241092861f5d9"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "low_overlap_multiplicity_table_ledger_closed": true,
+  "proved": true,
+  "coverage_complete": true,
+  "low_overlap_multiplicity_table": [
+    {
+      "record_type": "endpoint_event",
+      "coverage": "每个非空 anchor interval 产生 left:+1 与 right:-1 两个事件。",
+      "rule": "事件按 (d,event_type,anchor_id) 规范排序；半开端点先处理 right 再处理 left。"
+    },
+    {
+      "record_type": "active_anchor_set",
+      "coverage": "每个核心 d 或最大常值段一条。",
+      "rule": "active(d)={a: left_a<=d<right_a 且 phase_rule(d)=true}。"
+    },
+    {
+      "record_type": "multiplicity_row",
+      "coverage": "每个 d 或最大常值段记录 m(d)。",
+      "rule": "m(d)=|active(d)|，active_anchor_hash=H(sorted(active(d)))。"
+    },
+    {
+      "record_type": "low_overlap_row",
+      "coverage": "m(d)<=Omega 的核心点或段进入低重叠走廊。",
+      "rule": "写 low_overlap_flag=true，并保留 active_anchor_hash。"
+    },
+    {
+      "record_type": "high_overlap_return",
+      "coverage": "m(d)>Omega 的核心点或段必须命名回流。",
+      "rule": "写 return_type=HighOverlapFixedCoreDefect，不得留在低重叠着色域。"
+    },
+    {
+      "record_type": "empty_active_row",
+      "coverage": "m(d)=0 的空活动段显式记录或压缩记录。",
+      "rule": "空活动段不是数据缺口，写 empty_active_flag=true。"
+    }
+  ],
+  "sweep_laws": [
+    {
+      "law": "event_conservation",
+      "formula": "sum(left_events)-sum(right_events)=0 over each source_tuple file.",
+      "meaning": "每条锚区间只进入一次、退出一次，不能制造或丢失 active anchor。"
+    },
+    {
+      "law": "half_open_endpoint_order",
+      "formula": "[left,right) uses right-events before left-events at the same d.",
+      "meaning": "相接区间不被误判为重叠。"
+    },
+    {
+      "law": "phase_filtered_activity",
+      "formula": "active(d) additionally requires phase_rule(d)=true.",
+      "meaning": "相位过滤继承证书文件，不能在多重度表里重选。"
+    },
+    {
+      "law": "omega_split_exact",
+      "formula": "low(d) iff m(d)<=Omega; high(d) iff m(d)>Omega.",
+      "meaning": "低/高重叠二分是互斥且穷尽的。"
+    },
+    {
+      "law": "high_overlap_named_return",
+      "formula": "m(d)>Omega -> HighOverlapFixedCoreDefect(d,active(d)).",
+      "meaning": "高重叠点不能进入 colored corridor，也不能静默删除。"
+    },
+    {
+      "law": "canonical_table_hash",
+      "formula": "table_id=H(source_tuple_hash,Omega,sorted(multiplicity_row_hashes)).",
+      "meaning": "多重度表由锚区间证书和 Omega 唯一决定。"
+    }
+  ],
+  "current_narrowest_atom": "GreedyIntervalColoringExecutionLedger",
+  "downstream_atoms": [
+    "GreedyIntervalColoringExecutionLedger"
+  ],
+  "reduction_formula": "LowOverlapMultiplicityTableLedger => AnchorIntervalEnumeration AND AnchorIntervalCertificateFile AND OmegaDiscipline AND SweepLineEventConservation AND HighOverlapNamedReturn.",
+  "plain_conclusion": "LowOverlapMultiplicityTableLedger 已闭合：从锚区间端点事件可唯一复算 m(d)，m(d)<=Omega 进入低重叠表，m(d)>Omega 强制回流 `HighOverlapFixedCoreDefect`。下一步可攻 `GreedyIntervalColoringExecutionLedger`。",
+  "rows": [
+    {
+      "gate": "LowOverlapMultiplicityGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 low-overlap multiplicity table。",
+      "remaining": "LowOverlapMultiplicityTableLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行链条，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "AnchorIntervalsImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "锚区间枚举账本和证书文件生成律均已闭合，事件域固定。",
+      "remaining": "不能重选 J_a。"
+    },
+    {
+      "gate": "OmegaDisciplineImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "Omega 来自同一 source tuple 的 DCS 高/低重叠二分纪律。",
+      "remaining": "不能后验移动阈值。"
+    },
+    {
+      "gate": "SweepLineMultiplicityDeterministic",
+      "closed": true,
+      "proved": true,
+      "meaning": "按端点事件前缀和可唯一复算每个 d 的 active anchors 与 m(d)。",
+      "remaining": "无多重度选择口。"
+    },
+    {
+      "gate": "HighLowSplitExhaustive",
+      "closed": true,
+      "proved": true,
+      "meaning": "m(d)<=Omega 进入低重叠表；m(d)>Omega 进入命名 high-overlap return。",
+      "remaining": "HighOverlapFixedCoreDefect"
+    },
+    {
+      "gate": "CanonicalMultiplicityHashImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "multiplicity row hash 与 table_id 继承 source_tuple_hash。",
+      "remaining": "表身份稳定。"
+    },
+    {
+      "gate": "LowOverlapMultiplicityTableLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "低重叠多重度表由锚区间事件和 Omega 确定性生成；高重叠点强制命名回流。",
+      "remaining": "GreedyIntervalColoringExecutionLedger"
+    }
+  ],
+  "closed_gates": [
+    "LowOverlapMultiplicityGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "AnchorIntervalsImported",
+    "OmegaDisciplineImported",
+    "SweepLineMultiplicityDeterministic",
+    "HighLowSplitExhaustive",
+    "CanonicalMultiplicityHashImported",
+    "LowOverlapMultiplicityTableLedger"
+  ],
+  "open_gates": []
+}
