@@ -1258,3 +1258,39 @@ docs/monograph/combined-monograph-directory-and-theory-system.md
 ```text
 docs/monograph/claim-status-table.md
 ```
+
+## 8. 内外两线共同核心调和
+
+继续新增：
+
+```text
+experiments/prime_matrix_dual_lane_common_core_reconciliation_router.py
+docs/monograph/prime-matrix-dual-lane-common-core-reconciliation-router.md/json
+
+common_core_reconciliation_closed=true；
+self_contained_common_core_proved=false；
+external_contract_accepted_as_final_input=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+通俗地说，外部线和内部线现在不是两个独立自足硬点。外部
+`CDependentResidueWeightSpectralCancellationInput` 若被作为 FullS-KLS/c-dependent 谱定理接受，
+它就是外部黑箱；若坚持从当前材料内部证明它，有限 Fourier completion 会把它送回
+`BWFD/BSC/KFLS`，再送回 actual same-`(u,v)` block non-concentration。这正是内部
+`FullSNonAPStrengthenedSourceAntiAtom` 的 moving-block 源核心。
+
+所以当前最清楚的边界是：
+
+```text
+外部合同版：
+  接受 AcceptedFullSKLSExtOrCDependentResidueWeightSpectralCancellationInput
+  并完成 DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+
+完全自足版：
+  证明 ActualA1FullSSourceLockOrNewFullSNonAPSourceAntiAtomTheoremInput
+  并完成 DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步闭合的是“两条线是否还有独立剩余”的边界：没有。剩余真正压成一个自足源核心和一个独立
+晋级验收门。它仍不是完整行/列无条件定理证明。

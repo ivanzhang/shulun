@@ -3659,3 +3659,44 @@ CDependentResidueWeightSpectralCancellationInput。
  OR CDependentResidueWeightSpectralCancellationInput)
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_dual_lane_common_core_reconciliation_router.py
+docs/monograph/prime-matrix-dual-lane-common-core-reconciliation-router.md/json
+```
+
+该路由器检查上一轮“内部反原子 / 外部 c-dependent 谱输入”是否真是两条独立自足剩余。结论为：
+
+```text
+common_core_reconciliation_closed=true；
+self_contained_common_core_proved=false；
+external_contract_accepted_as_final_input=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+关键调和律是：`CDependentResidueWeightSpectralCancellationInput` 若作为外部 FullS-KLS/c-dependent
+谱定理接受，就是外部合同输入；若不接受黑箱而在当前材料中自证，有限 Fourier completion 会把
+它降回 `BWFD -> BSC -> KFLS`，随后回到 actual same-`(u,v)` block non-concentration。这与内部
+`FullSNonAPStrengthenedSourceAntiAtomContractForActualNoncanonicalSource` 的 moving-block/source
+entropy 核心是同一个数学义务。
+
+因此两线调和后的输入基为：
+
+```text
+((ActualA1FullSSourceLockOrNewFullSNonAPSourceAntiAtomTheoremInput)
+ OR AcceptedFullSKLSExtOrCDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+若坚持完全自足且不接受外部黑箱，则输入基进一步固定为：
+
+```text
+ActualA1FullSSourceLockOrNewFullSNonAPSourceAntiAtomTheoremInput
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步闭合的是外部/内部两线的独立性缺口，不是无条件定理证明。当前材料仍没有证明实际源恒等或
+新 full-S 源反原子，也没有完成 DStructure/Rankin 独立验收。
