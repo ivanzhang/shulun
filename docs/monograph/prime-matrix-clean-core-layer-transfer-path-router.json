@@ -1,0 +1,160 @@
+{
+  "canonical_provenance_closed_but_scoped": true,
+  "certificate_type": "prime_matrix_clean_core_layer_transfer_path_router",
+  "clean_core_exact_layer_transfer_proved": false,
+  "clean_core_layer_transfer_path_boundary_closed": true,
+  "clean_core_path_partition_proved": false,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "external_completed_kls_accepted": false,
+  "latest_conditional_basis": "(CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn OR ModulusDependentCompletedFullSKLSInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_internal_subinput": "CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn",
+  "latest_self_contained_basis": "CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "path_partition_law": "若 actual clean-core 系数能被分割为 polylog 多个互斥 exact 路径签名，且每条路径同号或非零，则 pigeonhole 给出 selector retention；再结合 raw Buchstab support 与 thin/rejected return，即可推出 clean-core exact layer transfer。",
+  "plain_conclusion": "最新真正剩余继续缩小为 clean-core actual 系数的路径分割账本：证明其有 polylog 多条互斥路径、同路径非零/无抵消，并把薄块或路径失败回流到命名出口。当前材料尚未证明该账本。",
+  "previous_input": "CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn",
+  "retention_model": [
+    {
+      "k": 3,
+      "log_y": 6.907755278982138,
+      "path_count": 47.71708299430559,
+      "raw_support": 15728.40621534316,
+      "required_support": 329.61793195154326,
+      "retained_support": 329.6179319515432,
+      "suffices": true
+    },
+    {
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "path_count": 84.83036976765439,
+      "raw_support": 66279.37433955308,
+      "required_support": 781.3165794406951,
+      "retained_support": 781.316579440695,
+      "suffices": true
+    },
+    {
+      "k": 5,
+      "log_y": 11.51292546497023,
+      "path_count": 132.54745276196,
+      "raw_support": 202268.5984483432,
+      "required_support": 1526.0089442201079,
+      "retained_support": 1526.0089442201079,
+      "suffices": true
+    },
+    {
+      "k": 6,
+      "log_y": 13.815510557964275,
+      "path_count": 190.86833197722237,
+      "raw_support": 503308.99889098114,
+      "required_support": 2636.943455612346,
+      "retained_support": 2636.9434556123456,
+      "suffices": true
+    },
+    {
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "path_count": 259.7930074134415,
+      "raw_support": 1087849.0669188167,
+      "required_support": 4187.368542939975,
+      "retained_support": 4187.368542939975,
+      "suffices": true
+    },
+    {
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "path_count": 339.32147907061756,
+      "raw_support": 2120939.9788656984,
+      "required_support": 6250.532635525561,
+      "retained_support": 6250.53263552556,
+      "suffices": true
+    },
+    {
+      "k": 9,
+      "log_y": 20.723265836946414,
+      "path_count": 429.45374694875034,
+      "raw_support": 3822002.710328389,
+      "required_support": 8899.684162691668,
+      "retained_support": 8899.684162691668,
+      "suffices": true
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorLayerTransferInputPinned",
+      "meaning": "上一层已把支撑关联压成 clean-core exact 层承认、非零转移与薄块回流。",
+      "proved": false,
+      "remaining": "继续拆解层承认到底需要哪类系数结构。"
+    },
+    {
+      "closed": true,
+      "gate": "LayerTransferReducesToSelectorRetention",
+      "meaning": "层承认和非零转移可由 selector 保留率加 clean return 合同推出。",
+      "proved": false,
+      "remaining": "为 actual clean-core 系数给出 selector/path 账本。"
+    },
+    {
+      "closed": true,
+      "gate": "SelectorRetentionReducesToFinitePathSignatures",
+      "meaning": "若 raw support 被 polylog 多个 exact 路径签名分割，则最大签名保留 log-power 支撑。",
+      "proved": false,
+      "remaining": "证明 clean-core actual 路径分割、无抵消和失败回流。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalDecisionTreeTemplateAvailable",
+      "meaning": "canonical RIW/Buchstab 递归可展开为有限互斥决策树。",
+      "proved": false,
+      "remaining": "这只是模板，仍需 actual clean-core 系数来源或独立路径公式。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalWFDSourceRejected",
+      "meaning": "仅有 well-factorable 性质不能推出 source entropy 或路径支撑。",
+      "proved": true,
+      "remaining": "clean-core 不能用 generic WFD 形式假设冒充路径账本。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalProvenanceClosedButScoped",
+      "meaning": "canonical 来源账本已闭合，但只覆盖 canonical 分支，不覆盖 noncanonical clean-core。",
+      "proved": true,
+      "remaining": "clean-core 要么证明自己的实际系数路径分割，要么转外部/回流。"
+    },
+    {
+      "closed": false,
+      "gate": "CleanCorePathPartitionCurrentCorpusProved",
+      "meaning": "当前材料没有给出 actual clean-core 系数的有限路径分割、同路径非零和薄块回流合同。",
+      "proved": false,
+      "remaining": "证明 CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalCompletedKLSStillOpen",
+      "meaning": "外部替代仍是 modulus-dependent completed Full-S KLS。",
+      "proved": false,
+      "remaining": "证明或独立接受该 completed KLS 输入。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "scope_law": "canonical RIW/Buchstab 决策树和来源账本已经闭合，但只在 canonical-source 分支内有效。clean-core noncanonical 残余不能导入该来源；它必须给出自己的 actual coefficient path partition，或走 completed KLS/命名回流。",
+  "selector_retention_template_available": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.json": "4d5c17126ea796ee37ae469a3684ef634899dfea0b4af3352c3bf29d0f874e59",
+    "docs/monograph/prime-matrix-clean-core-support-incidence-attack-router.json": "c00df78309943a83448378f4984144a74616b41bfb2c40fd8cc532e45cbff4d4",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-triad-a1-decision-tree-formula-router.json": "d761fdc37db29bbb195d8f557abfac398e78fbf5f4bf71ea51952c137d4874e8",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-completion-reduction-router.json": "bee7ade16ab2e5a8309060c7c4c24cc7f8cb37ab87d94aeb1cefc407183d116e",
+    "docs/monograph/prime-matrix-triad-a1-layer-transfer-router.json": "b669ea834e654bde20e7eda8a7428ac167cbfe682cd6429c63b2727fa3981e32",
+    "docs/monograph/prime-matrix-triad-a1-selector-retention-router.json": "97ee880525ed6220b560f62e8ebe58859633406060813400fa6209b89017792e",
+    "docs/monograph/prime-matrix-triad-a1-source-identification-router.json": "cc993fc9dd2d8ff1bd1103703175a8dc35f80252afa771542af31d4d708d3318"
+  },
+  "status": "clean_core_layer_transfer_reduced_to_path_partition_open"
+}

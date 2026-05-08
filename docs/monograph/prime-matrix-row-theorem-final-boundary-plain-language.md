@@ -1794,3 +1794,43 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 其中最新内部子输入要求三件事：第一，exact clean-core 层承认厚 balanced block 中足够多 Buchstab products；
 第二，这些 products 在 actual `alpha/delta` 中有非零系数并贡献绝对支撑；第三，thin 或 layer-rejected block
 必须回流到 edge/PDEC/SAE/ColumnCRT/CleanKLS 等命名出口。当前材料仍未证明这个层承认与非零转移定理。
+
+## 20. clean-core 层转移路径分割
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_layer_transfer_path_router.py
+docs/monograph/prime-matrix-clean-core-layer-transfer-path-router.md/json
+
+clean_core_layer_transfer_path_boundary_closed=true；
+clean_core_path_partition_proved=false；
+clean_core_exact_layer_transfer_proved=false；
+external_completed_kls_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把上一节的 exact 层承认继续拆开。canonical RIW/Buchstab 决策树和来源账本确实已经闭合，但只在
+canonical-source 分支内有效；clean-core noncanonical 残余不能导入该来源。对 clean-core 来说，真正需要
+的是自己的 actual coefficient path-partition 账本。
+
+最新条件输入基为：
+
+```text
+(CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn
+ OR ModulusDependentCompletedFullSKLSInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这个新输入要求：actual clean-core `alpha/delta` 系数在同一 formal unit 中有 exact 路径签名分割；路径数为
+polylog；同路径贡献非零、无抵消，或继续细分到互斥；thin、路径超预算、抵消或来源失败必须回流到
+PDEC/SAE/ColumnCRT/CleanKLS 或外部 KLS。若这套路径账本成立，selector retention 的 pigeonhole
+保留率会给出 log-power 支撑，从而推出 clean-core exact layer transfer。当前材料尚未证明该路径账本。

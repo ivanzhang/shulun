@@ -3407,6 +3407,29 @@ CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn.
 This input requires exact clean-core layer admission, nonzero transfer to the actual
 \(\alpha/\delta\) coefficients, and return of thin or rejected blocks to the named exits.
 It is still open.
+
+The clean-core layer-transfer path router then separates the available canonical template
+from what is needed for the noncanonical clean-core residual.  It records
+\[
+\begin{gathered}
+  \texttt{clean\_core\_layer\_transfer\_path\_boundary\_closed=true},\\
+  \texttt{clean\_core\_path\_partition\_proved=false},\\
+  \texttt{clean\_core\_exact\_layer\_transfer\_proved=false},\\
+  \texttt{external\_completed\_kls\_accepted=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The canonical RIW/Buchstab decision tree and source-provenance ledger are closed only on
+the canonical-source branch.  The noncanonical clean-core residual must supply its own
+actual coefficient path partition, or leave through the completed KLS or named-return
+interfaces.  The newest internal input is
+\begin{quote}\footnotesize\ttfamily
+CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn.
+\end{quote}
+It asks for a polylogarithmic partition of the actual clean-core \(\alpha/\delta\)
+coefficients into exact path signatures, nonzero same-path contribution without cancellation,
+and return of thin, over-budget, cancelling, or unidentified-source blocks to the named exits.
 \end{proof}
 
 

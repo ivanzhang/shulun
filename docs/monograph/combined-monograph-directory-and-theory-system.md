@@ -4137,3 +4137,45 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 该内部子输入要求 exact clean-core 层承认厚 balanced block 中足够多 Buchstab products、系数非零，并把
 thin 或 layer-rejected block 回流到命名出口。本步没有证明该定理；它关闭的是从 K4/K6、canonical 支撑或
 普通计数偷渡到 clean-core 支撑关联的错误方向。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_layer_transfer_path_router.py
+docs/monograph/prime-matrix-clean-core-layer-transfer-path-router.md/json
+```
+
+该路由器把 `CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn` 继续压成 actual clean-core
+系数路径分割账本。结论为：
+
+```text
+clean_core_layer_transfer_path_boundary_closed=true；
+clean_core_path_partition_proved=false；
+clean_core_exact_layer_transfer_proved=false；
+external_completed_kls_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：canonical RIW/Buchstab 决策树和来源账本已经闭合，但只在 canonical-source 分支内有效。
+clean-core noncanonical 残余不能导入该来源；它必须给出自己的 actual coefficient path partition，或走
+completed KLS/命名回流。若 actual clean-core 系数可被分割成 polylog 多个互斥 exact 路径签名，并且
+同路径非零无抵消，则 pigeonhole 给出 selector retention；再结合 raw Buchstab support 与 thin/rejected
+return，就推出 clean-core exact layer transfer。
+
+最新条件输入基为：
+
+```text
+(CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn
+ OR ModulusDependentCompletedFullSKLSInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明该路径分割账本；它关闭的是 canonical 决策树跨分支偷渡和 generic WFD 形式替代路径账本的错误方向。
