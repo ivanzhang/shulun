@@ -665,6 +665,29 @@ SN 递归剥离都已经不再指向新的无名方向；它们都落到“终�
 分支已经闭合；剩下的全局化困难在 noncanonical 补集和最终晋级门。下一步若要真正完成全局闭合，
 必须直接证明这三包，而不是继续寻找新的固定常数或宽 generic WFD 模板。
 
+继续先补第一包的内部结构后：
+
+```text
+experiments/prime_matrix_terminal_certificate_package_compression_router.py
+docs/monograph/prime-matrix-terminal-certificate-package-compression-router.md/json
+
+terminal_package_compression_closed=true；
+terminal_package_fully_proved=false。
+```
+
+这一步把 `TerminalCertificatePackage` 从五个平行输入压成三个真正独立证书族：
+
+```text
+SAE：全局孤窗/短窗有限证书族；
+PDEC：所有 persistent family 的 U_CRT<L_PDEC 显式或对偶证书；
+ColumnCRT：固定非零列位移排斥，或回流 PDEC/SAE。
+```
+
+其中 `CleanMultishellKLS` 在 canonical-source 分支已被最终边界吸收；非 canonical 的 clean
+分支属于第二包或外部 KLS。`TotalDescent` 也不再是平行终端：能下降就到 `p=2`，不能下降时的
+首个 grid-fail seam 已经被材料化为 `PDEC/ColumnCRT/SAE`。所以第一包下一步的硬攻对象非常明确：
+直接证明 `SAE/PDEC/ColumnCRT` 三类证书族。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

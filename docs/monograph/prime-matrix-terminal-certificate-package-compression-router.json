@@ -1,0 +1,90 @@
+{
+  "certificate_type": "prime_matrix_terminal_certificate_package_compression_router",
+  "compression_law": "The first package no longer has five independent terminal inputs. No-unnamed-escape and named-exit absorption are already contract closed. CleanKLS is absorbed on the canonical branch and belongs to the noncanonical/external package otherwise. TotalDescent either reaches p=2 or produces a first-grid-fail seam already routed to PDEC/ColumnCRT/SAE. Therefore the independent terminal work is compressed to three certificate families: SAE, PDEC, and ColumnCRT.",
+  "independent_terminal_inputs_after_compression": [
+    "Global SAE finite/window certificate family",
+    "PDEC-Dual/Explicit certificates for all persistent families",
+    "ColumnCRT exclusion or PDEC/SAE return certificates"
+  ],
+  "removed_independent_inputs": [
+    "NoUnnamedEscape",
+    "NamedExitAbsorption",
+    "CleanMultishellKLS inside canonical branch",
+    "TotalDescent as separate terminal"
+  ],
+  "review_conclusion": "TerminalCertificatePackage 已从五项独立输入压缩为三类证书族：SAE、PDEC、ColumnCRT。这补齐了第一包的结构压缩，但尚未证明三类证书族本身。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "compression": "所有未命名逃逸必须进入命名出口或下降。",
+      "current_status": "closed",
+      "independent_after_compression": false,
+      "item": "NoUnnamedEscape",
+      "remaining_input": "none; feeds named exits"
+    },
+    {
+      "compression": "Bohr-cap、EndpointSeam、CofactorAnchor 吸收到 SAE/PDEC/ColumnCRT/CleanKLS/TotalDescent。",
+      "current_status": "contract_closed",
+      "independent_after_compression": false,
+      "item": "NamedExitAbsorption",
+      "remaining_input": "none; feeds certificate interfaces"
+    },
+    {
+      "compression": "稀疏/孤立坏窗不能再生成新分支；必须逐窗给 survivor/lift/higher-defect 或有限证书。",
+      "current_status": "interface_open",
+      "independent_after_compression": true,
+      "item": "SAE-Cert",
+      "remaining_input": "Global SAE finite/window certificate family"
+    },
+    {
+      "compression": "所有持久低模/帽/端点/轮筛缺陷统一到同一坏窗集合上的 U_CRT<L_PDEC。",
+      "current_status": "template_ready_not_filled",
+      "independent_after_compression": true,
+      "item": "PDEC-Cert",
+      "remaining_input": "PDEC-Dual/Explicit certificates for all persistent families"
+    },
+    {
+      "compression": "列位移出口已条件路由；固定非零位移负载必须被排斥或回流 PDEC/SAE。",
+      "current_status": "routing_contract_closed_exclusion_open",
+      "independent_after_compression": true,
+      "item": "ColumnCRT-Cert",
+      "remaining_input": "ColumnCRT exclusion or PDEC/SAE return certificates"
+    },
+    {
+      "compression": "canonical-source clean 分支已被最终边界吸收；noncanonical/generic clean 分支属于补集输入包或外部 KLS。",
+      "current_status": "canonical_branch_closed_noncanonical_externalized",
+      "independent_after_compression": false,
+      "item": "CleanMultishellKLS",
+      "remaining_input": "move to NoncanonicalFullSComplementPackage or external KLS"
+    },
+    {
+      "compression": "正式下降路径存在则到 p=2；不存在则首个 grid-fail seam 已材料化为 PDEC/ColumnCRT/SAE。",
+      "current_status": "absorbed_to_p2_or_first_seam",
+      "independent_after_compression": false,
+      "item": "TotalDescent",
+      "remaining_input": "first-seam PDEC/ColumnCRT/SAE, already counted above"
+    },
+    {
+      "compression": "第一包经压缩后只剩 SAE/PDEC/ColumnCRT 三个真正独立证书族。",
+      "current_status": "listed",
+      "independent_after_compression": false,
+      "item": "TerminalPackagePresence",
+      "remaining_input": "SAE + PDEC + ColumnCRT certificate families"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/h4-pdec-certificate-template.md": "6cc441f072b84210293d3d2f61e0279b4e8663d69c58612f13bf2bafc539882e",
+    "docs/monograph/h4-pdec-column-defect-routing-contract.md": "0f7afe16275924cd9059f649155d793b1df600e73eafa721cfce0f0dd5ba9af7",
+    "docs/monograph/prime-matrix-canonical-source-self-contained-final-theorem-router.json": "8d45dd95c52f37a36fd0e35002ffbebe3977ffabacead69021dc5ef19bfad9c0",
+    "docs/monograph/prime-matrix-closure-input-atlas-router.json": "53caeb5789e6697c37cb7949329cd32c8015736a8cccd27ed93b38a1bcb38a83",
+    "docs/monograph/prime-matrix-named-exit-absorption-contract.md": "515e251e01ac03658e9132aec43562196b4c351bb0ff41ee5edb635236cdc3c6",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.json": "a6f8b9718c0c8d6a2854b37e3850d548798ca4aafa708c08b894bb4066ae3d52",
+    "docs/monograph/prime-matrix-rpz-dual-track-closure-route.md": "f47201903026c72f2e84976644cb131058d995e767e0a6b3ea174b2b7a4dfb37",
+    "docs/monograph/prime-matrix-rpz-first-grid-fail-seam-certificate.md": "1541d02c3002968363aee01d6708c7db24287cd9faa7698fed3091db35a276d5",
+    "docs/monograph/prime-matrix-total-zero-row-recursive-descent-route.md": "9f91e36a40da259d216c8ff0fd6a0be71ae1126611ebdf804c6677d44cdf7e90",
+    "docs/monograph/prime-matrix-unnamed-escape-closure-machine.md": "3526bed7e59d40e711f896bdd3244e5cf8ecf3c8c1219b21f42425193dfd965a"
+  },
+  "status": "terminal_package_compressed_to_sae_pdec_columncrt_certificates",
+  "terminal_package_compression_closed": true,
+  "terminal_package_fully_proved": false
+}

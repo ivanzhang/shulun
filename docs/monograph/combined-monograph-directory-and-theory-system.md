@@ -3088,3 +3088,46 @@ DStructureRankinPromotionPackage:
 ```
 
 这份图谱说明继续突破不应再寻找新无名分支或固定常数，而应逐项证明这三包。
+
+继续新增：
+
+```text
+experiments/prime_matrix_terminal_certificate_package_compression_router.py
+docs/monograph/prime-matrix-terminal-certificate-package-compression-router.md/json
+```
+
+该路由器先补第一包的结构压缩：
+
+```text
+terminal_package_compression_closed=true；
+terminal_package_fully_proved=false；
+row_column_unconditional_closed=false。
+```
+
+压缩后的结论是：
+
+```text
+NoUnnamedEscape:
+  已闭合为命名出口；
+
+NamedExitAbsorption:
+  已闭合为证书接口；
+
+CleanMultishellKLS:
+  canonical-source 分支已由最终边界吸收；
+  noncanonical/generic 分支移入 NoncanonicalFullSComplementPackage 或外部 KLS；
+
+TotalDescent:
+  正式下降路径存在则到 p=2；
+  不存在则首个 grid-fail seam 已材料化为 PDEC/ColumnCRT/SAE。
+```
+
+因此 `TerminalCertificatePackage` 不再有五个平行独立输入；真正剩余只有：
+
+```text
+Global SAE finite/window certificate family；
+PDEC-Dual/Explicit certificates for all persistent families；
+ColumnCRT exclusion or PDEC/SAE return certificates。
+```
+
+这一步补齐的是第一包的结构压缩，不是三类证书族本身的排斥。
