@@ -3736,3 +3736,46 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 或证明其 final source capacity measure 没有 moving same-`(u,v)` 大原子；该命题不能替换成
 unrestricted generic WFD 模板。此步闭合 source-lock/global-complement 歧义，但没有证明
 noncanonical actual source core，也没有完成 DStructure/Rankin 独立验收。
+
+继续新增：
+
+```text
+experiments/prime_matrix_noncanonical_source_core_atomization_router.py
+docs/monograph/prime-matrix-noncanonical-source-core-atomization-router.md/json
+```
+
+该路由器把上一轮的 `ActualNoncanonicalFullSSourceEntropyOrStrengthenedAntiAtomTheoremInput`
+继续原子化。结论为：
+
+```text
+source_core_atomization_closed=true；
+entropy_antiatom_duality_removed=true；
+balanced_range_threshold_closed=true；
+k4_k6_or_naive_incidence_suffices=false；
+canonical_import_allowed=false；
+actual_support_capacity_core_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：actual noncanonical source entropy 与 strengthened anti-atom 不是两条独立路线，而是同一个
+source-capacity 核心的两种命名。`ExactFullSNonAPWFDSourceEntropy` 已降为精确支撑包；full-S regime
+中 balanced range 阈值已经由 `C≈P/log^O(P)` 与 `U,V≈C^{1/2}log^O(P)` 支付；强化反原子正是 final
+source capacity measure 无 moving same-`(u,v)` 大原子。
+
+同时，K4/K6、朴素 incidence 和 canonical 支撑偷渡都被阻断：K4/K6 控制固定 residue/phase 或
+dyadic bookkeeping，不控制 moving factor-pair 支撑；一个 `(u,v)` 块可含增长的内部
+`h,ell,x,z` fiber，使质量在内部原子上平坦但仍集中在同一 factor pair；canonical RIW/Buchstab 支撑只
+属于 canonical 分支，不属于 noncanonical 补集。
+
+因此完全自足最新输入基为：
+
+```text
+ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+其中 `ActualNoncanonicalFullSFactorSupportCapacityTheoremInput` 要求：对每个幸存 actual noncanonical
+full-S non-AP balanced block，证明精确 `u`、`v` 因子有对数幂级绝对支撑下界，并证明
+Type/Fourier 容量兼容，使任何 moving `(u,v)` 对不能获得未登记的容量乘子。该步闭合命名二义性
+和伪捷径排除，仍没有证明 actual 支撑/容量核心，也没有完成 DStructure/Rankin 独立验收。

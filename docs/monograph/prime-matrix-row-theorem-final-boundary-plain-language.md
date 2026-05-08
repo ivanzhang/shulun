@@ -1333,3 +1333,47 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 也就是两件事：第一，证明 actual noncanonical full-S non-AP 源没有 moving same-`(u,v)` 大原子，
 或等价证明它的 exact source entropy；第二，完成 DStructure/Rankin 独立晋级验收。当前材料仍只完成
 边界压缩，没有证明这两个剩余输入。
+
+## 10. noncanonical 源核心原子化
+
+继续新增：
+
+```text
+experiments/prime_matrix_noncanonical_source_core_atomization_router.py
+docs/monograph/prime-matrix-noncanonical-source-core-atomization-router.md/json
+
+source_core_atomization_closed=true；
+entropy_antiatom_duality_removed=true；
+balanced_range_threshold_closed=true；
+k4_k6_or_naive_incidence_suffices=false；
+canonical_import_allowed=false；
+actual_support_capacity_core_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把 `source entropy` 与 `strengthened anti-atom` 的双名彻底合并。它们不是两条独立可选路线：
+在 actual noncanonical full-S non-AP 源上，二者共同要求同一个支撑/容量事实：
+
+```text
+ActualNoncanonicalFullSFactorSupportCapacityTheoremInput。
+```
+
+该输入的内容是：对每个幸存的 actual noncanonical full-S non-AP balanced block，证明精确 `u`、`v`
+因子有对数幂级绝对支撑下界，并证明 Type/Fourier 容量兼容，使任何 moving `(u,v)` 对都不能获得
+未登记的容量乘子。
+
+同时，三个伪捷径也被排除：`balanced range` 已在 full-S regime 中闭合，不是剩余；K4/K6 只能控制
+固定 residue/phase 与 dyadic bookkeeping，不能推出 moving factor support；朴素 factor-residue
+incidence 被单个 `(u,v)` 块内的大内部 fiber 阻断；canonical RIW/Buchstab 支撑只能服务 canonical
+分支，不能偷渡到 noncanonical 补集。
+
+所以完全自足最新输入基为：
+
+```text
+ActualNoncanonicalFullSFactorSupportCapacityTheoremInput
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这仍是边界压缩，不是最终证明。下一步真正硬攻点已经极窄：直接证明 actual 支撑/容量核心，或承认
+当前材料无法无条件自足闭合该核心；另外 Rankin/DStructure 验收门仍独立存在。
