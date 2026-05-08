@@ -1,0 +1,143 @@
+{
+  "certificate_type": "early_zero_terminal_schema_reconciliation_router",
+  "closed_gates": [
+    "EarlyZeroTerminalPackageReopenedByMovingBlock",
+    "CounterexampleBranchGuardPreserved",
+    "AbstractTerminalPackageReducedToNamedChildren",
+    "AnchorStackSpecificGapsRemoved",
+    "CompositeCofactorSpecificGapRemoved",
+    "EarlyBandSpecificGapRemoved",
+    "DLSSpecificNamedReturnGapsRemoved",
+    "SignedSourceLoopCannotCloseTerminalPackage",
+    "EarlyZeroTerminalPackageReconciledToGlobalTerminalGate"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "early_zero_terminal_abstract_package_reconciled": true,
+  "early_zero_terminal_package_fully_proved": false,
+  "empirical_absence_not_used": true,
+  "exact_model_gap_dprc_compatibility_proved": false,
+  "global_pdec_or_sparse_terminal_exclusion_proved": false,
+  "hypothetical_chain_only": true,
+  "latest_conditional_basis": "((GlobalPDECorSparseTerminalExclusion AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "GlobalPDECorSparseTerminalExclusion AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "named_return_schema_reconciliation_closed": true,
+  "next_priority": "GlobalPDECorSparseTerminalExclusion",
+  "open_gates": [
+    "GlobalPDECorSparseTerminalExclusion",
+    "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把 moving-block 路由重新打开的 EarlyZeroTerminalExclusionPackage 与后续已闭合的命名回流 schema 调和。anchor、复合 cofactor、early-band、DLS short-window、point-load/ColumnCRT 与 fixed-wheel 都没有专属无名出口；signed/source 路线若被用来闭合终端包，会落入已切断的来源环并最终返回 moving-block/终端包。因此抽象终端包被收缩为全局 PDEC/sparse 终端排斥门，仍未得到无条件矛盾。",
+  "replacement": {
+    "EarlyZeroTerminalExclusionPackage": "GlobalPDECorSparseTerminalExclusion"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EarlyZeroTerminalPackageReopenedByMovingBlock",
+      "meaning": "moving-block 路由把 actual same-(u,v) clean-core 逃逸压回 EarlyZeroTerminalExclusionPackage。",
+      "proved": false,
+      "remaining": "调和这个重新打开的抽象终端包。"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只在 Assume EarlyZeroRowWithinP 的假设链条中整理终端义务。",
+      "proved": true,
+      "remaining": "不使用真实样本缺席，也不宣布无条件闭合。"
+    },
+    {
+      "closed": true,
+      "gate": "AbstractTerminalPackageReducedToNamedChildren",
+      "meaning": "EarlyZeroTerminalExclusionPackage 已压成 anchor-collar、复合 cofactor 和 early-band 三个命名子项。",
+      "proved": true,
+      "remaining": "这些子项需要与后续 schema 结果调和。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorStackSpecificGapsRemoved",
+      "meaning": "anchor-collar 容量失败已桥接到端点 PDEC 或 fiber 饱和；低模、tail-core、fiber 饱和专属无名出口均已删除。",
+      "proved": true,
+      "remaining": "只剩全局 PDEC/SAE/ColumnCRT/sparse 终端排斥，不能保留 anchor 专属第四出口。"
+    },
+    {
+      "closed": true,
+      "gate": "CompositeCofactorSpecificGapRemoved",
+      "meaning": "复合 cofactor 递归壳 well-founded，持久进 PDEC，孤立进 SAE/LocalSurvivor。",
+      "proved": true,
+      "remaining": "只剩全局 PDEC/sparse 终端排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyBandSpecificGapRemoved",
+      "meaning": "early-band LocalSurvivor/SAE 专属无名出口已删除。",
+      "proved": true,
+      "remaining": "全局 short-window/packet/PDEC 终端仍归总终端门处理。"
+    },
+    {
+      "closed": true,
+      "gate": "DLSSpecificNamedReturnGapsRemoved",
+      "meaning": "short-window、point-load/ColumnCRT、fixed-wheel 的专属无名出口均已删除。",
+      "proved": true,
+      "remaining": "这些路由不等于数值 bound 或终端家族无条件排斥已证明。"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSourceLoopCannotCloseTerminalPackage",
+      "meaning": "若终端包经 fixed-wheel/signed/source 路线回到 clean-core 来源，它形成已切断的 signed/source 环，最终又回到 moving-block/终端包。",
+      "proved": true,
+      "remaining": "不能把这个环当作证明；必须落到全局终端排斥或外部条件分支。"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroTerminalPackageReconciledToGlobalTerminalGate",
+      "meaning": "抽象 EarlyZeroTerminalExclusionPackage 不再是独立剩余；所有子路线要么已命名回流，要么被来源环纪律阻断。",
+      "proved": true,
+      "remaining": "GlobalPDECorSparseTerminalExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "GlobalPDECorSparseTerminalExclusion",
+      "meaning": "仍未无条件排斥实际物化的 persistent PDEC、displacement/ColumnCRT、SAE/LocalSurvivor 或 sparse packet 终端证书。",
+      "proved": false,
+      "remaining": "FutureExplicitPrimitivePDECSchema / FutureExplicitSparsePacketExtractorSchema / terminal family exclusion。"
+    },
+    {
+      "closed": false,
+      "gate": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+      "meaning": "moving-block 到终端包的替换仍需与 ExplicitModelGapAndFiniteDPRCLedger 的模型余量和有限 DPRC 账本口径一致化。",
+      "proved": false,
+      "remaining": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-collar-endpoint-bridge-router.json": "e59be8c810561e677437eab131437fd0821324cf38726552bb4a88505f88c472",
+    "docs/monograph/prime-matrix-anchor-fiber-saturation-return-schema-router.json": "6e7d174d6649f03d695ac95a003085dca32c2b6254448aab859e9e6edc7fa8c5",
+    "docs/monograph/prime-matrix-anchor-lowmod-fixedwheel-admission-router.json": "58433be988cca2fa0cd9b53410f67bcd9f89660473cad63f02708b4bc16e9e8f",
+    "docs/monograph/prime-matrix-anchor-tailcore-fiber-saturation-router.json": "3fa1ecd6034961650e95bb42e0a451513b2d88e65ea863996e3454bc2790fcac",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-composite-cofactor-descent-schema-router.json": "84a77af08b5dfac05a75ac9b572c0926443baa76da6fd55d50808bfff8df128c",
+    "docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.json": "9a0eb43daa02d6e29155b0b0a15b98778c0ad12c698cc75b6d3db8d689959d8d",
+    "docs/monograph/prime-matrix-dls-fixedwheel-pdec-return-schema-router.json": "21fcbffa863b000c0d35748caf262362ea070bcfbeed0c244c5c156328b8e410",
+    "docs/monograph/prime-matrix-dls-pointload-columncrt-return-schema-router.json": "f1f98361610b84a0f4b96621002db9cf45f49260af4c53dcd92e7ef341487451",
+    "docs/monograph/prime-matrix-dls-shortwindow-sae-return-schema-router.json": "3f99116a38989d61bc75b46e0a7106fcef0a52c3aabec00f3d2f595de68572b0",
+    "docs/monograph/prime-matrix-early-band-local-survivor-return-schema-router.json": "2d73378013a2c7cbf4c2551ed2393cb1a5d350e73f2fe571f3b0d6d12c1f098d",
+    "docs/monograph/prime-matrix-early-zero-terminal-package-reduction-router.json": "d53ae12d44d1a8d376d29589a9df6eb26aa48a35ad18f88c0372eba62ad03395",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-independent-precauchy-identity-taxonomy-router.json": "98673babcd5fc127e58a8f5bb1bb3b78236f770b332e937674a938dfdca50534",
+    "docs/monograph/prime-matrix-signed-geometric-variation-compatibility-merger.json": "35865105acae9f92010fd1fadea09d793a5b7fec32c89fbce14e5ebd6fc7100e"
+  },
+  "source_loop_reimport_blocked": true,
+  "status": "early_zero_terminal_package_reconciled_to_global_terminal_frontier_open",
+  "terminal_gap_after_router": "GlobalPDECorSparseTerminalExclusion AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+  "terminal_gap_before_router": "EarlyZeroTerminalExclusionPackage AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock"
+}
