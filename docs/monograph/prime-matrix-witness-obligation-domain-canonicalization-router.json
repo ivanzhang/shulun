@@ -1,0 +1,125 @@
+{
+  "certificate_type": "prime_matrix_witness_obligation_domain_canonicalization_router",
+  "status": "witness_obligation_domain_canonicalized_partition_key_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "40c09ca287f47e82b21e34e698f0073685aa1003b4edd1f896bd8c8949d0c5dd",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-early-zero-carry-shell-router.json": "8c3d8d20f74f2f6d7b1c1af5b8c4f8d4e6e098df3dbd8069cd5ed26a5cde3384",
+    "docs/monograph/prime-matrix-early-zero-cofactor-depth-router.json": "66fb9cfb87cadd8546be04af7f386322e04b9cf684a08010bda5be62115f6c5c",
+    "docs/monograph/prime-matrix-early-zero-terminal-package-reduction-router.json": "d53ae12d44d1a8d376d29589a9df6eb26aa48a35ad18f88c0372eba62ad03395",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "witness_obligation_domain_canonicalization_lemma": true,
+  "proved": true,
+  "coverage_complete": true,
+  "witness_obligation_domain_canonicalization_closed": true,
+  "formal_unit_partition_coverage_lemma_closed": false,
+  "domain_components": [
+    {
+      "component": "physical_filler_atoms",
+      "definition": "对每个 c in R_x=F_x，取 q_*(c)=min{q: x<q<P, q divides xP+c}，m_*(c)=(xP+c)/q_*(c)。"
+    },
+    {
+      "component": "phase_defect_record",
+      "definition": "同一 formal unit 中登记 Omega=R_x、tau(c)=q_*(c)、w(c)=1 与 phase(c,ell)。"
+    },
+    {
+      "component": "carry_cofactor_record",
+      "definition": "把 q_*(c)=P-a、m_*(c)=P-b 写入 carry-shell 与 cofactor-depth 字段。"
+    },
+    {
+      "component": "named_return_records",
+      "definition": "稳定复现、边界相位、anchor-collar、复合 cofactor、SAE/ColumnCRT/PDEC 均只作为命名回流记录。"
+    },
+    {
+      "component": "quotient_records",
+      "definition": "重复物理原子按同坐标 quotient 或 weighted/reuse return 处理，不能重复计数。"
+    }
+  ],
+  "current_narrowest_atom": "FiniteFormalUnitPartitionKeyLemma",
+  "reduction_formula": "WitnessObligationDomainCanonicalizationLemma => WitnessObligationDomainCanonicalizationClosed AND FiniteFormalUnitPartitionKeyLemma.",
+  "plain_conclusion": "WitnessObligationDomainCanonicalizationLemma 已闭合：任意早期零行 witness 的 O(w) 可规范化为有限 physical filler atoms、phase/carry/cofactor 字段、命名 return records 与 quotient records。下一最窄点是 `FiniteFormalUnitPartitionKeyLemma`。",
+  "rows": [
+    {
+      "gate": "WitnessDomainGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 O(w) 义务域规范化。",
+      "remaining": "WitnessObligationDomainCanonicalizationLemma"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在任意假设早期零行 witness 下工作，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "PartitionInterfaceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "partition coverage 已要求先构造有限 O(w) 再切分。",
+      "remaining": "本步只处理 O(w)。"
+    },
+    {
+      "gate": "CanonicalHighPrimeFillerAtomSelectorClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对每个 c in R_x=F_x，有限非空高素因子集合有最小元 q_*(c)，因此 tau 可规范化。",
+      "remaining": "CanonicalHighPrimeFillerAtomSelectorClosed"
+    },
+    {
+      "gate": "CarryCofactorFieldsImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical q_*(c),m_*(c) 可写入 carry-shell 与 cofactor-depth 字段。",
+      "remaining": "容量排斥仍不在本步证明。"
+    },
+    {
+      "gate": "TerminalReturnObligationDomainSchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "终端包已被压到命名回流 schema；O(w) 可把它们作为 return records 而非无名出口。",
+      "remaining": "TerminalReturnObligationDomainSchemaClosed"
+    },
+    {
+      "gate": "PhysicalAtomQuotientDeduplicationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Multiplicity-Stitching 合同给出同坐标 quotient、weighted 或 reuse return 的规范化方式。",
+      "remaining": "PhysicalAtomQuotientDeduplicationClosed"
+    },
+    {
+      "gate": "WitnessObligationDomainCanonicalizationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "O(w) 被规范化为 physical atoms、phase/carry/cofactor 字段、命名回流和 quotient records 的有限对象。",
+      "remaining": "WitnessObligationDomainCanonicalizationClosed"
+    },
+    {
+      "gate": "WitnessObligationDomainCanonicalizationLemma",
+      "closed": true,
+      "proved": true,
+      "meaning": "义务域规范化已闭合；下一步才是对每个 obligation 指派有限 formal-unit key。",
+      "remaining": "FiniteFormalUnitPartitionKeyLemma"
+    }
+  ],
+  "closed_gates": [
+    "WitnessDomainGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "PartitionInterfaceImported",
+    "CanonicalHighPrimeFillerAtomSelectorClosed",
+    "CarryCofactorFieldsImported",
+    "TerminalReturnObligationDomainSchemaClosed",
+    "PhysicalAtomQuotientDeduplicationClosed",
+    "WitnessObligationDomainCanonicalizationClosed",
+    "WitnessObligationDomainCanonicalizationLemma"
+  ],
+  "open_gates": []
+}
