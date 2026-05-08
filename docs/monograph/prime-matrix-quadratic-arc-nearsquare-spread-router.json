@@ -1,0 +1,304 @@
+{
+  "certificate_type": "quadratic_arc_nearsquare_spread_router",
+  "status": "quadratic_arc_discrepancy_compressed_to_signed_nearsquare_strip_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exact-residue-sawtooth-normal-form-router.json": "d23bf9a260cc9ae3555b0cf65dc0e083298ea2a3276fcadc018d38b9ed44424f"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "arc_hit_iff_nearsquare_multiple_proved": true,
+  "nearsquare_lift_to_quotient_residue_strip_proved": true,
+  "quadratic_arc_discrepancy_compressed": true,
+  "rosser_weight_quotient_residue_support_ledger_proved": false,
+  "signed_nearsquare_strip_discrepancy_proved": false,
+  "external_well_factorable_sawtooth_dispersion_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000": "(RosserWeightQuotientResidueSupportLedgerAlpha043 AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000)"
+  },
+  "replacement_with_external_dispersion": {
+    "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000": "((RosserWeightQuotientResidueSupportLedgerAlpha043 AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000) OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) AND (RosserWeightQuotientResidueSupportLedgerAlpha043 AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND ((RosserWeightQuotientResidueSupportLedgerAlpha043 AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000) OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043))) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND ((RosserWeightQuotientResidueSupportLedgerAlpha043 AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000) OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "RosserWeightQuotientResidueSupportLedgerAlpha043",
+  "secondary_priority": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
+  "external_next_priority": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+  "rough_fallback_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+  "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "normal_forms": {
+    "minus_lower": "0 < t^2-floor(t^2/d)d < t",
+    "plus_upper": "0 < ceil(t^2/d)d-t^2 < t",
+    "quotient_residue_lift": "P=hd+t, d=(P-t)/h, so both sides become 0<±(h t^2-a(P-t))<h t",
+    "geometric_meaning": "圆柱斜线端点偏差等价于商余平面中的近平方窄条带穿越。"
+  },
+  "identity_samples": [
+    {
+      "side": "minus/lower",
+      "P": 101,
+      "d": 7,
+      "h=floor(P/d)": 14,
+      "t=P mod d": 3,
+      "a=floor(t^2/d)": 1,
+      "rho": 2,
+      "arc_event": true,
+      "near_square_event": true,
+      "strip_delta": 28,
+      "strip_event": true,
+      "all_equivalent": true
+    },
+    {
+      "side": "plus/upper",
+      "P": 101,
+      "d": 7,
+      "h=floor(P/d)": 14,
+      "t=P mod d": 3,
+      "a=ceil(t^2/d)": 2,
+      "rho": 5,
+      "arc_event": false,
+      "near_square_event": false,
+      "strip_delta": 70,
+      "strip_event": false,
+      "all_equivalent": true
+    },
+    {
+      "side": "minus/lower",
+      "P": 101,
+      "d": 13,
+      "h=floor(P/d)": 7,
+      "t=P mod d": 10,
+      "a=floor(t^2/d)": 7,
+      "rho": 9,
+      "arc_event": true,
+      "near_square_event": true,
+      "strip_delta": 63,
+      "strip_event": true,
+      "all_equivalent": true
+    },
+    {
+      "side": "plus/upper",
+      "P": 101,
+      "d": 13,
+      "h=floor(P/d)": 7,
+      "t=P mod d": 10,
+      "a=ceil(t^2/d)": 8,
+      "rho": 4,
+      "arc_event": true,
+      "near_square_event": true,
+      "strip_delta": 28,
+      "strip_event": true,
+      "all_equivalent": true
+    },
+    {
+      "side": "minus/lower",
+      "P": 103,
+      "d": 11,
+      "h=floor(P/d)": 9,
+      "t=P mod d": 4,
+      "a=floor(t^2/d)": 1,
+      "rho": 5,
+      "arc_event": false,
+      "near_square_event": false,
+      "strip_delta": 45,
+      "strip_event": false,
+      "all_equivalent": true
+    },
+    {
+      "side": "plus/upper",
+      "P": 103,
+      "d": 11,
+      "h=floor(P/d)": 9,
+      "t=P mod d": 4,
+      "a=ceil(t^2/d)": 2,
+      "rho": 6,
+      "arc_event": false,
+      "near_square_event": false,
+      "strip_delta": 54,
+      "strip_event": false,
+      "all_equivalent": true
+    },
+    {
+      "side": "minus/lower",
+      "P": 107,
+      "d": 15,
+      "h=floor(P/d)": 7,
+      "t=P mod d": 2,
+      "a=floor(t^2/d)": 0,
+      "rho": 4,
+      "arc_event": false,
+      "near_square_event": false,
+      "strip_delta": 28,
+      "strip_event": false,
+      "all_equivalent": true
+    },
+    {
+      "side": "plus/upper",
+      "P": 107,
+      "d": 15,
+      "h=floor(P/d)": 7,
+      "t=P mod d": 2,
+      "a=ceil(t^2/d)": 1,
+      "rho": 11,
+      "arc_event": false,
+      "near_square_event": false,
+      "strip_delta": 77,
+      "strip_event": false,
+      "all_equivalent": true
+    },
+    {
+      "side": "minus/lower",
+      "P": 109,
+      "d": 28,
+      "h=floor(P/d)": 3,
+      "t=P mod d": 25,
+      "a=floor(t^2/d)": 22,
+      "rho": 9,
+      "arc_event": true,
+      "near_square_event": true,
+      "strip_delta": 27,
+      "strip_event": true,
+      "all_equivalent": true
+    },
+    {
+      "side": "plus/upper",
+      "P": 109,
+      "d": 28,
+      "h=floor(P/d)": 3,
+      "t=P mod d": 25,
+      "a=ceil(t^2/d)": 23,
+      "rho": 19,
+      "arc_event": true,
+      "near_square_event": true,
+      "strip_delta": 57,
+      "strip_event": true,
+      "all_equivalent": true
+    },
+    {
+      "side": "minus/lower",
+      "P": 127,
+      "d": 45,
+      "h=floor(P/d)": 2,
+      "t=P mod d": 37,
+      "a=floor(t^2/d)": 30,
+      "rho": 19,
+      "arc_event": true,
+      "near_square_event": true,
+      "strip_delta": 38,
+      "strip_event": true,
+      "all_equivalent": true
+    },
+    {
+      "side": "plus/upper",
+      "P": 127,
+      "d": 45,
+      "h=floor(P/d)": 2,
+      "t=P mod d": 37,
+      "a=ceil(t^2/d)": 31,
+      "rho": 26,
+      "arc_event": true,
+      "near_square_event": true,
+      "strip_delta": 52,
+      "strip_event": true,
+      "all_equivalent": true
+    }
+  ],
+  "rows": [
+    {
+      "gate": "QuadraticArcDiscrepancyGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "最新内部最窄点是 Rosser 权重下的二次圆弧偏差。",
+      "remaining": "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行反例链条内改写余项，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ArcHitIffNearSquareMultipleClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "rho=±t^2 mod d 落入开弧 (0,t) 等价于 t^2 距某个 d 的倍数小于 t。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "NearSquareLiftToQuotientResidueStripClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "再写 P=hd+t，近平方事件等价于 |h t^2-a(P-t)|<h t 的有向窄条带。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "QuadraticArcCompressedToSignedNearSquareStrip",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧二次圆弧偏差原子被压成带 Rosser 权重支撑账本的有符号近平方条带非集中。",
+      "remaining": "RosserWeightQuotientResidueSupportLedgerAlpha043 AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000"
+    },
+    {
+      "gate": "RosserWeightQuotientResidueSupportLedgerAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要把 lower weights 在 (h,t,a) 商余坐标中的支撑、符号和 well-factorable 分块登记清楚。",
+      "remaining": "RosserWeightQuotientResidueSupportLedgerAlpha043"
+    },
+    {
+      "gate": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
+      "closed": false,
+      "proved": false,
+      "meaning": "证明有符号 Rosser 质量不能在 |h t^2-a(P-t)|<h t 的窄条带上产生 0.90M 级负偏差。",
+      "remaining": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000"
+    },
+    {
+      "gate": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部解析路线仍可直接给 well-factorable sawtooth/条带分散估计。",
+      "remaining": "ExternalWellFactorableSawtoothDispersionBoundAlpha043"
+    },
+    {
+      "gate": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "短区间 rough-number 下界仍可绕过内部 sawtooth 与条带分析。",
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "closed": false,
+      "proved": false,
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "QuadraticArcDiscrepancyGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ArcHitIffNearSquareMultipleClosed",
+    "NearSquareLiftToQuotientResidueStripClosed",
+    "QuadraticArcCompressedToSignedNearSquareStrip"
+  ],
+  "open_gates": [
+    "RosserWeightQuotientResidueSupportLedgerAlpha043",
+    "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
+    "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把二次圆弧偏差进一步压成近平方条带扩散。对 minus 侧，rho=t^2 mod d 落入 (0,t) 等价于 t^2 在某个 d 倍数上方距离小于 t；对 plus 侧，-t^2 mod d 落入 (0,t) 等价于 t^2 在某个 d 倍数下方距离小于 t。再用 P=hd+t 提升后，危险事件就是商余坐标中的有向窄条带 |h t^2-a(P-t)|<h t。因此剩余不是抽象相消，而是 Rosser 权重支撑在这些窄条带上的有符号非集中。"
+}
