@@ -4706,6 +4706,69 @@ AND SignedGeometricLedgerVariationBranchLiftAndReturn
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
+继续新增：
+
+```text
+experiments/prime_matrix_early_zero_phase_defect_schema_router.py
+docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.md/json
+```
+
+该路由器接上“假设早期零行”的条件二分，直接处理开放项：
+
+```text
+EarlyZeroPhaseDefectSchemaAdmission
+  = RegisteredSameFormalUnitRxFxLedger
+    AND StableShortRecurrenceCertificateOrNoStableAutomorphism
+    AND BoundaryPhaseNoncoverageDefectToPDECOrSAEOrColumnCRT。
+```
+
+结论为：
+
+```text
+early_zero_phase_defect_schema_admission_closed=true；
+registered_same_formal_unit_rxf_ledger=true；
+stable_short_recurrence_certificate_or_no_stable_automorphism_closed=true；
+boundary_phase_defect_to_named_families_closed=true；
+early_zero_branch_unconditional_contradiction=false；
+row_column_unconditional_closed=false。
+```
+
+证明要点如下。若 `1<=x<P` 是早期零行，则 CLB 分解给出 `R_x=F_x`。把它正式登记为同一个
+formal unit：
+
+```text
+Omega=R_x；
+tau(c)=q(c), 其中 x<q(c)<P 且 q(c)|xP+c；
+w(c)=1；
+physical_atom(c)=(c,q(c),m(c)), xP+c=q(c)m(c), m(c)>x。
+```
+
+这里 `m(c)>x` 来自 `c in R_x`：否则 `m(c)` 会有不超过 `x` 的素因子，使 `xP+c` 已被低骨架删去。
+同一 formal unit 的短移自同构由全部活动标签相位保持决定。因为 `gcd(P,ell)=1`，条件
+`dP=0 mod ell` 等价于 `ell|d`，所以短移集合由活动标签的 `lcm` 判定：
+
+```text
+Aut_short(S_x)={0<|d|<P : lcm(active labels)|d}。
+```
+
+若该集合非空，输出稳定短复现证书，并按固定列位移/端点复用进入 `ColumnCRT/SAE/PDEC` 吸收路线；
+若为空，则输出 no-stable-automorphism 证书，`R_x=F_x` 被登记为一次性边界相位锁定缺陷。持久、
+多原子、同口径、非二点且二秩以上的缺陷进入 `PDEC family`；孤立短窗或端点逃逸进入
+`SAE/LocalSurvivorCert`；固定列位移先进入 `ColumnCRT` 并由位移 PDEC/SAE 吸收。
+
+因此早期零行相位缺陷没有第四类未命名出口；但准入不是排斥。完全排斥早期零行时，新的早期零行
+分支剩余是三类终端都要关闭的义务包：
+
+```text
+EarlyZeroTerminalExclusionPackage
+  = EarlyZeroPrimitivePDECBudgetInequality
+    AND EarlyZeroLocalSurvivorPacketOrSAEExclusion
+    AND StableRecurrenceDisplacementPDECBudgetOrColumnSAEExclusion。
+```
+
+该 overlay 不改变当前 new-layer/DLS/source/DStructure 完全自足输入基；它只是把“P 行以内零行”
+反例分支压入已有终端排斥义务。
+
 条件输入基为：
 
 ```text

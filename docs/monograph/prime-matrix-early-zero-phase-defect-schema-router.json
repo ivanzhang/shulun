@@ -1,0 +1,140 @@
+{
+  "boundary_phase_defect_to_named_families_closed": true,
+  "certificate_type": "early_zero_phase_defect_schema_router",
+  "closed_gates": [
+    "ConditionalEarlyZeroDichotomyImported",
+    "RegisteredSameFormalUnitRxFxLedger",
+    "FillerAtomPhysicalLedger",
+    "StableShortRecurrenceCertificateOrNoStableAutomorphism",
+    "StableBranchNamedReturn",
+    "NoAutomorphismPhaseDefectRegistered",
+    "BoundaryPhaseNoncoverageDefectToPDECOrSAEOrColumnCRT",
+    "EarlyZeroPhaseDefectSchemaAdmission",
+    "CurrentMainBasisUnchanged",
+    "DStructureRankinStillIndependent"
+  ],
+  "early_zero_branch_remaining": "EarlyZeroTerminalExclusionPackage",
+  "early_zero_branch_remaining_expansion": [
+    "EarlyZeroPrimitivePDECBudgetInequality",
+    "EarlyZeroLocalSurvivorPacketOrSAEExclusion",
+    "StableRecurrenceDisplacementPDECBudgetOrColumnSAEExclusion"
+  ],
+  "early_zero_branch_unconditional_contradiction": false,
+  "early_zero_phase_defect_schema_admission_closed": true,
+  "formal_unit_register": {
+    "Omega": "R_x={1<=c<P: ell does not divide xP+c for every ell<=x}",
+    "phase_map": "phi_c(ell)=c+xP mod ell, with active labels ell<=x and q(c)",
+    "short_automorphism_test": "0<|d|<P and dP=0 mod ell for every active ell; since gcd(P,ell)=1, this is ell|d",
+    "tau": "tau(c)=q(c), where x<q(c)<P and q(c) divides xP+c",
+    "weight": "w(c)=1 before quotient; duplicated physical atoms require quotient or weighted-dual discipline",
+    "zero_row_condition": "R_x=F_x"
+  },
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "main_terminal_gap_after_router": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema",
+  "open_gates": [
+    "EarlyZeroTerminalExclusion"
+  ],
+  "plain_conclusion": "`EarlyZeroPhaseDefectSchemaAdmission` 已作为 schema 准入层闭合：早期零行反例分支不会产生第四类未命名出口。它要么给稳定短复现证书，要么给 no-automorphism 相位缺陷证书；两者都可同口径登记并进入 PDEC、SAE/LocalSurvivor 或 ColumnCRT 吸收路线。该步骤仍不排斥这些终端，所以行列无条件命题仍未闭合。",
+  "previous_gap_expansion": [
+    "RegisteredSameFormalUnitRxFxLedger",
+    "StableShortRecurrenceCertificateOrNoStableAutomorphism",
+    "BoundaryPhaseNoncoverageDefectToPDECOrSAEOrColumnCRT"
+  ],
+  "previous_terminal_gap": "EarlyZeroPhaseDefectSchemaAdmission",
+  "registered_same_formal_unit_rxf_ledger": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ConditionalEarlyZeroDichotomyImported",
+      "meaning": "已在假设反例内证明：早期零行给出稳定短复现，或给出同 formal unit 相位缺陷。",
+      "output": "只处理 schema 准入，不重证二分。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredSameFormalUnitRxFxLedger",
+      "meaning": "固定 Omega=R_x，tau(c)=q(c)，w(c)=1，phase map 由 c -> -xP mod q(c) 给出。",
+      "output": "R_x=F_x 是同一 formal unit 的补洞证书，不允许跨口径拼接。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "FillerAtomPhysicalLedger",
+      "meaning": "若 c in R_x=F_x，则存在 x<q(c)<P 与 m(c)>x 使 xP+c=q(c)m(c)。",
+      "output": "每个补洞点产生物理原子 (c,q(c),m(c))，重复必须 quotient 或 weighted。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "StableShortRecurrenceCertificateOrNoStableAutomorphism",
+      "meaning": "同 formal unit 的短移自同构由 dP=0 mod ell 对全部活动 ell 判定；等价于 d 被活动标签 lcm 整除。",
+      "output": "若存在 0<|d|<P 的解则输出 StableShortRecurrence；否则输出 no-stable-automorphism 证书。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "StableBranchNamedReturn",
+      "meaning": "稳定复现若带固定列位移或端点复用，则不是新出口，按 ColumnCRT/SAE/PDEC 吸收。",
+      "output": "StableShortRecurrence -> displacement PDEC or SAE/endpoint or PDEC dual row。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "NoAutomorphismPhaseDefectRegistered",
+      "meaning": "无短移自同构时，R_x=F_x 是一次性相位锁定缺陷，必须作为有限签名进入终端家族。",
+      "output": "BoundaryPhaseNoncoverageDefectSameFormalUnit is registered。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "BoundaryPhaseNoncoverageDefectToPDECOrSAEOrColumnCRT",
+      "meaning": "持久多原子同口径缺陷进 PDEC；孤窗/端点进 SAE/LocalSurvivor；固定列位移先经 ColumnCRT 吸收。",
+      "output": "早期零行相位缺陷没有第四类未命名出口。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroPhaseDefectSchemaAdmission",
+      "meaning": "三项 schema 字段已全部登记：同 formal unit、稳定/无自同构、PDEC/SAE/ColumnCRT 命名回流。",
+      "output": "schema admission closed; terminal exclusion still open。",
+      "proved": true
+    },
+    {
+      "closed": false,
+      "gate": "EarlyZeroTerminalExclusion",
+      "meaning": "准入不是排斥。还需证明准入后的 PDEC 容量不等式，或给出 SAE/LocalSurvivor 排斥。",
+      "output": "EarlyZeroTerminalExclusionPackage。",
+      "proved": false
+    },
+    {
+      "closed": true,
+      "gate": "CurrentMainBasisUnchanged",
+      "meaning": "该早期零行分支是附加 overlay，不替代当前 new-layer/DLS/source/DStructure 输入基。",
+      "output": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema",
+      "proved": false
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "即使早期零行分支完成，DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "output": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。",
+      "proved": false
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-boundary-phase-noncoverage-audit.md": "fd4ae7bed73f4bb7d0ab181b4402fa37a8cfc40917496ef72757d4b55094870b",
+    "docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.json": "df0a83ffa87ff7e582b7492d6aa935042a4a0b1f27d88df5ea42ce43798d9cab",
+    "docs/monograph/prime-matrix-columncrt-displacement-pdec-absorption.md": "f674ce4f51911edeab0dcce641763860c87ef8f94141971a60fd948e7c008a7c",
+    "docs/monograph/prime-matrix-conditional-early-zero-stability-router.json": "d37aeac61cc0cd25235aaf8cb82a6aa96524650d6f4ddd11acbd175ba41d3e15",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.md": "6b1498eb0c46eb3302ed336a68c479b7f4f7bbff0b7b971d5b3fc05346d1707d",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-sae-local-certificate-reduction.md": "927714d839c2ba0a20380dbea99fc5ab474dbf096bdd4f14fe770c9a523c60c7"
+  },
+  "stable_short_recurrence_certificate_or_no_stable_automorphism_closed": true,
+  "status": "early_zero_phase_defect_schema_admission_closed_terminal_exclusion_open",
+  "structural_law": "Assume an early zero row x<P. CLB gives R_x=F_x, so all last holes are patched inside one formal unit Omega=R_x. The active phase-preserving shifts are exactly short multiples of the lcm of all registered labels. If such a shift exists, the cover is a stable recurrence and is routed through displacement PDEC/SAE/ColumnCRT. If no such shift exists, the equality R_x=F_x is a registered boundary phase-lock defect. Persistent primitive multi-atom defects enter PDEC; isolated defects enter SAE/LocalSurvivor; fixed displacement defects enter ColumnCRT and are absorbed. Thus EarlyZeroPhaseDefectSchemaAdmission is closed as a routing theorem, but the terminal PDEC budget and SAE survivor exclusions remain open."
+}
