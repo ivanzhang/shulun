@@ -6209,3 +6209,83 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 下一步最窄目标更新为 `EarlyZeroL2FlatKLSCounterexampleSpectralExclusion`：在假设早期零行存在的反例分支中，证明 L2-flat 高频 KLS 残余不能继续支付零行余量；若证明失败，必须输出同 formal unit 的高频 Bohr/PDEC/SAE/ColumnCRT 证书，或明确接受/匹配 `CDependentResidueWeightSpectralCancellationInput`。
+
+## Prime Matrix 早期零行 L2-flat KLS 逃逸排除路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_early_zero_l2flat_kls_exclusion_router.py
+docs/monograph/prime-matrix-early-zero-l2flat-kls-exclusion-router.md/json
+```
+
+该路由器直接攻击 `EarlyZeroL2FlatKLSCounterexampleSpectralExclusion`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+early_zero_l2flat_kls_counterexample_spectral_exclusion_closed=true；
+pure_l2flat_escape_as_unnamed_branch_removed=true；
+general_dls_flat_highmod_large_sieve_absorption_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=EarlyZeroL2FlatKLSCounterexampleSpectralExclusion；
+terminal_gap_after_router=EarlyZeroTerminalExclusionPackage_OR_CDependentResidueWeightSpectralCancellationInput。
+```
+
+核心结构碰撞为：
+
+```text
+Assume EarlyZeroRowWithinP；
+CLB gives R_x=F_x in one formal unit；
+Early-zero phase schema gives stable recurrence OR no-automorphism phase defect；
+flat/KLS admission requires all registered low-dimensional defects routed away；
+therefore pure L2-flat KLS cannot be the final unnamed counterexample branch；
+remaining task is terminal exclusion for the registered early-zero defect。
+```
+
+这一步仍然只在反例分支内工作，不使用真实样本未见早期零行作为证明。它比较的是两个已登记合同：早期零行合同强制同 formal unit 的 registered defect；flat/KLS 准入合同要求这种 registered 低维缺陷已经删除或命名回流。因此 pure L2-flat KLS 不能作为最后无名逃逸。
+
+替换律为：
+
+```text
+EarlyZeroL2FlatKLSCounterexampleSpectralExclusion
+  =>
+EarlyZeroTerminalExclusionPackage。
+```
+
+注意：本步不证明一般 `DLSFlatHighModLargeSieveAbsorption`，也不排斥早期零行终端家族本身。它只关闭无名 flat 谱逃逸口。
+
+已经闭合的门为：
+
+```text
+CounterexampleBasisPinned；
+L2FlatEscapeIsActiveLastGate；
+FlatAdmissionNamedReturnDiscipline；
+EarlyZeroPhaseDefectSchemaImported；
+StableOrNoAutomorphismDichotomyImported；
+PureL2FlatCounterexampleCollision；
+EarlyZeroL2FlatKLSCounterexampleSpectralExclusion；
+DStructureRankinStillIndependent。
+```
+
+唯一数学开放门为：
+
+```text
+EarlyZeroTerminalExclusionPackage。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND EarlyZeroTerminalExclusionPackage
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `EarlyZeroTerminalExclusionPackage`：排斥准入后的早期零行终端家族，即 primitive PDEC 容量、SAE/LocalSurvivor packet，或稳定复现位移缺陷。完成该包后仍需 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`。
