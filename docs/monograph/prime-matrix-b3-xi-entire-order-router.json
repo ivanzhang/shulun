@@ -1,0 +1,85 @@
+{
+  "certificate_type": "b3_xi_entire_order_router",
+  "status": "xi_entire_order_one_growth_closed",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-theta-mellin-functional-equation-router.json": "ec0893b4116159d3ce000f45a67c35adee936a620784098260413e62df51d3cf"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "xi_entire_order_one_growth_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "XiEntireOrderOneGrowthLedger": "XiEntireOrderOneGrowthClosed"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeLedger) AND EulerProductLogDerivativePositiveRealPartLedger AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityLedger AND ExplicitZeroFreeRegionConstantNumericalLedger AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "HadamardFactorizationLogDerivativeLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "growth_bound": "max_{|s|<=r}|xi(s)| <= exp(C*r*log(r+3))",
+  "order_conclusion": "rho(xi)<=1",
+  "plain_conclusion": "xi 的整函数性与一阶以内增长已由 theta-Mellin 对称积分公式闭合。这让 zeta-xi 基础包只剩 Hadamard 分解和对数导数部分分式。",
+  "rows": [
+    {
+      "gate": "XiEntireOrderGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是 xi 的整函数性与一阶增长账本。",
+      "remaining": "XiEntireOrderOneGrowthLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍是解析基础，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ThetaMellinFunctionalEquationAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已闭合 Lambda(s) 的对称积分公式与函数方程。",
+      "remaining": "ThetaMellinZetaContinuationFunctionalEquationClosed"
+    },
+    {
+      "gate": "XiEntireCancellationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "xi(s)=1/2*s*(s-1)*Lambda(s) 消去 Lambda 在 s=0,1 的显式极点，积分项整。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "XiOrderAtMostOneGrowthClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 |s|=r，用 theta_0(t)<<exp(-pi t) 控制积分为 exp(O(r log(r+3)))，故 xi 阶至多一。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "XiEntireOrderOneGrowthLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "待证 atom 已闭合为 xi 整函数与一阶以内增长。",
+      "remaining": "XiEntireOrderOneGrowthClosed"
+    },
+    {
+      "gate": "HadamardFactorizationStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "下一步用一阶整函数的 Hadamard 分解得到 xi'/xi 的零点部分分式。",
+      "remaining": "HadamardFactorizationLogDerivativeLedger"
+    }
+  ],
+  "closed_gates": [
+    "XiEntireOrderGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ThetaMellinFunctionalEquationAvailable",
+    "XiEntireCancellationClosed",
+    "XiOrderAtMostOneGrowthClosed",
+    "XiEntireOrderOneGrowthLedger"
+  ],
+  "open_gates": [
+    "HadamardFactorizationStillNext"
+  ]
+}
