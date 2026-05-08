@@ -563,6 +563,28 @@ Prime Matrix canonical-source terminal theorem boundary:
 也就是说，在这个精确边界内已经没有剩余自足硬点。仍不声明的是 unrestricted generic WFD 自足版和
 完整 Prime Matrix 行/列无条件定理；它们分别需要另走 generic/external DI/BFI 路线或最终独立审稿晋级。
 
+继续新增完整全局无条件自足闭合阻断路由器后：
+
+```text
+experiments/prime_matrix_global_unconditional_self_contained_obstruction_router.py
+docs/monograph/prime-matrix-global-unconditional-self-contained-obstruction-router.md/json
+
+current_corpus_global_unconditional_self_contained_closure_possible=false；
+row_column_unconditional_closed=false。
+```
+
+这给出最后判定：完整全局无条件版现在不能由当前材料直接闭合。若要继续越过这个边界，至少必须新增：
+
+```text
+ActualA1FullSSourceLockTheorem_OR_FullSNonAPStrengthenedSourceAntiAtom；
+NoProjectionUncenteredDispersionIdentity；
+QuantifiedDIBFIWindowSubstitution；
+DStructureTailLog4FiniteRankinIndependentAcceptance。
+```
+
+所以当前最终结论不是“全局行命题已经无条件证明”，而是“canonical-source 精确自足命题已经闭合；
+完整全局无条件版被上述命名门阻断”。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
