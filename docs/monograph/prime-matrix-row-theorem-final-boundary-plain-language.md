@@ -1118,6 +1118,39 @@ DStructure/Rankin 晋级验收不能由作者侧自验收。
 
 所以最终结论不是“已经无条件证明”，而是“所有隐藏出口已清零，终局输入基已经不可再压缩”。
 
+再继续审查外部输入名称后，最新精化为：
+
+```text
+experiments/prime_matrix_irreducible_math_input_refinement_router.py
+docs/monograph/prime-matrix-irreducible-math-input-refinement-router.md/json
+
+refinement_boundary_closed=true；
+existing_primary_dibfi_match_rejected=true；
+ap_source_lift_rejected=true；
+new_full_s_kls_theorem_proved_or_cited_in_current_corpus=false；
+row_column_unconditional_closed=false。
+```
+
+这一步说明，“精确匹配外部 DI/BFI/Kuznetsov”这个名字仍然太宽。已有主来源核查显示：现有
+BFI AP 定理、DI/Maynard J-scale 和 APSourceLift 都不能覆盖当前 full-S、non-AP、未中心化、
+无投影 WFD 对象。因此外部路线必须改名为一个明确的新输入：
+
+```text
+FullSNonAPWFDKLSTheoremInput。
+```
+
+最新最终输入基是：
+
+```text
+(MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients
+ OR FullSNonAPWFDKLSTheoremInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+通俗地说：内部路要证明真实系数源不会集中到随尺度移动的块；外部路要新增、证明或明确引用一个
+真正覆盖本文对象的 full-S Kloosterman 大筛/dispersion 定理；最后还要 DStructure/Rankin
+晋级包被独立验收。缺其中任何一项，都不能把行/列命题宣布为完整无条件定理。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

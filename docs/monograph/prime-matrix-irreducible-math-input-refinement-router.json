@@ -1,0 +1,70 @@
+{
+  "all_required_inputs_proved_or_accepted": false,
+  "ap_source_lift_rejected": true,
+  "certificate_type": "prime_matrix_irreducible_math_input_refinement_router",
+  "existing_primary_dibfi_match_rejected": true,
+  "independent_promotion_acceptance_completed": false,
+  "internal_moving_block_proof_found_in_current_corpus": false,
+  "new_full_s_kls_theorem_proved_or_cited_in_current_corpus": false,
+  "plain_conclusion": "终局数学输入边界可再精化一层：内部路仍是 actual moving-block spread；外部路不是已经逐项匹配的现有 DI/BFI/Kuznetsov 推论，而是必须新增、证明或明确引用的 FullSNonAPWFDKLSTheoremInput。再加上 DStructure/Rankin 独立验收未完成，当前材料仍不能声明完整行/列无条件定理。",
+  "previous_math_input": "MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients OR PreciselyMatchedExternalDIBFIKuznetsovDispersionTheorem",
+  "refined_external_input": "FullSNonAPWFDKLSTheoremInput",
+  "refined_final_unconditional_basis": "(MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients OR FullSNonAPWFDKLSTheoremInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "refined_math_input": "MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients OR FullSNonAPWFDKLSTheoremInput",
+  "refinement_boundary_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousIrreducibleBasisPinned",
+      "meaning": "上一轮已把数学输入压成 moving-block spread 或精确外部 DIBFI/Kuznetsov。",
+      "proved_or_accepted": false,
+      "refinement": "继续审查外部标签是否真能由现有 DI/BFI 主来源逐项匹配。"
+    },
+    {
+      "closed": true,
+      "gate": "InternalLaneIsActualMovingBlockSpread",
+      "meaning": "内部路不是 fixed-projection diffuse，而是 actual full-S non-AP WFD 系数的 moving same-(u,v) 块扩散。",
+      "proved_or_accepted": false,
+      "refinement": "保留为 MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients。"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingPrimaryDIBFISourceMatchRejected",
+      "meaning": "现有 BFI AP 定理和 DI/Maynard J-scale 不能推出当前 full-S non-AP KLS-ext。",
+      "proved_or_accepted": false,
+      "refinement": "外部路不能再写成已经匹配的现有 DI/BFI/Kuznetsov 推论。"
+    },
+    {
+      "closed": true,
+      "gate": "APSourceLiftRejected",
+      "meaning": "non-AP WFD 补集不能无损回提为 AP-source discrepancy。",
+      "proved_or_accepted": false,
+      "refinement": "外部路剩余不能借 APSourceLift 逃回 BFI AP 定理。"
+    },
+    {
+      "closed": true,
+      "gate": "FullSNonAPWFDKLSAtomPinned",
+      "meaning": "新增 full-S 定理输入已被精确定义为当前 non-AP、未中心化、无投影 WFD 窗口的 KLS/dispersion 估计。",
+      "proved_or_accepted": false,
+      "refinement": "把 PreciselyMatchedExternalDIBFIKuznetsovDispersionTheorem 精化为 FullSNonAPWFDKLSTheoremInput。"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentPromotionStillRequired",
+      "meaning": "DStructure/Tail-log4/finite Rankin 晋级包边界已闭合，但尚未独立接受。",
+      "proved_or_accepted": false,
+      "refinement": "完整行/列无条件定理仍需独立晋级验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-ap-source-lift-nogo-router.json": "e23282e2d3de3d5f70d70dde5013a0f0e8788656d98d04e13e0856dccece5d0f",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-new-full-s-theorem-input-router.json": "5a24752ca3d01eb90414bd498d9be025bebda93809eaaaebb396296d2f68ba68",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-primary-source-specialization-nogo-router.json": "23fcf1606c36412403096fed957e44d7b3ece1fc8f2c6d5290cd1e29bce7bda8",
+    "docs/monograph/prime-matrix-triad-a1-ncblk-projection-gap-router.json": "c38a567ab8b649086817dfdb34ed8816a02c9a6306ffb8218b396e51c0d3cc1f",
+    "docs/monograph/prime-matrix-unconditional-closure-final-attempt-router.json": "772db99fb29c0da6b4c2880dea9c2229bf1321d54f400b96930dcbe1e93e1082"
+  },
+  "status": "irreducible_math_input_refined_to_full_s_kls_or_moving_block_open",
+  "structural_law": "The old external label is too broad after primary-source specialization. Existing BFI AP discrepancy and DI/Maynard J-scale estimates do not cover the current full-S non-AP uncentered no-projection WFD object, and APSourceLift is rejected. Hence the honest external branch is a new or independently cited FullSNonAPWFDKLSTheoremInput, while the internal branch remains actual moving-block spread."
+}

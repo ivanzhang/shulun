@@ -3541,3 +3541,40 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 当前材料没有证明 moving-block spread，也没有给出 full-S/non-AP/未中心化/无投影对象的外部定理
 逐项匹配；同时 DStructure/Rankin 独立验收未完成。因此本轮完成的是终局输入边界闭合，而不是
 完整全局无条件定理闭合。
+
+继续新增：
+
+```text
+experiments/prime_matrix_irreducible_math_input_refinement_router.py
+docs/monograph/prime-matrix-irreducible-math-input-refinement-router.md/json
+```
+
+该路由器把上一轮的外部标签进一步精化：
+
+```text
+refinement_boundary_closed=true；
+existing_primary_dibfi_match_rejected=true；
+ap_source_lift_rejected=true；
+internal_moving_block_proof_found_in_current_corpus=false；
+new_full_s_kls_theorem_proved_or_cited_in_current_corpus=false；
+row_column_unconditional_closed=false。
+```
+
+精化原因是：现有 BFI AP discrepancy、DI/Maynard J-scale 和 APSourceLift 均不能逐项覆盖当前
+full-S、non-AP、未中心化、无投影 WFD 对象。因此 `PreciselyMatchedExternalDIBFIKuznetsovDispersionTheorem`
+不能继续作为“已匹配现有主来源”的宽标签使用，必须改写成必须新增、证明或明确引用的：
+
+```text
+FullSNonAPWFDKLSTheoremInput。
+```
+
+最新不可约输入基为：
+
+```text
+(MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients
+ OR FullSNonAPWFDKLSTheoremInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步关闭的是输入命名精度缺口，不是证明缺口。当前材料仍没有内部 moving-block spread 证明，
+没有 full-S non-AP WFD KLS 新定理证明或外部逐项引用，也没有完成 DStructure/Rankin 独立验收。
