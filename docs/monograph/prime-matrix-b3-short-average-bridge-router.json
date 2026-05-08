@@ -1,0 +1,88 @@
+{
+  "certificate_type": "b3_short_average_bridge_router",
+  "status": "backlund_short_average_bridge_closed_formal_half",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-pointwise-bridge-router.json": "e770aaa66b2d1a85b6e75b58f3bc2eb31b84bb2b3d2aa6b2d5f4aabfd77d131a"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "backlund_short_average_bridge_closed": true,
+  "bridge_factor": 0.5,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "BacklundShortAveragePointwiseBridgeLedger": "BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND ((ArgumentPrincipleXiRectangleCountingClosed AND GammaMainTermLocalDifferenceNumericalClosedCmain4 AND (BacklundLittlewoodRectangleArgumentClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND (HorizontalZeroIndentationConventionClosed AND HorizontalPoleRemovalBudgetClosed AND (CriticalStripPhragmenLindelofThreeLinesClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND CriticalStripConvexityClosedC2) AND HorizontalVariationConstantClosedC8) AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND (BacklundBoundaryConstantSumClosedC16 AND (BacklundArgumentBranchNormalizationClosed AND BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability AND BacklundArgumentSpikeExclusionLogDerivativeLedger) AND BacklundCS8SlackAfterBridgeLedger)) AND EndpointZeroAvoidanceMultiplicityConventionLedger AND RVMToCN16LocalInequalityLedger) AND XiBoundaryLogMajorantNumericalLedger AND JensenDiskLowerAnchorNumericalLedger AND LocalZeroCountCNConventionLedger) AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "BacklundArgumentSpikeExclusionLogDerivativeLedger",
+  "secondary_priority": "BacklundCS8SlackAfterBridgeLedger",
+  "post_backlund_priority": "EndpointZeroAvoidanceMultiplicityConventionLedger",
+  "post_endpoint_priority": "RVMToCN16LocalInequalityLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "core_lemma": "For a continuous branch A(t), if |A(u)-A(T)|<=|A(T)|/2 on an interval I around T, then |I|^{-1} int_I |A(u)| du >= |A(T)|/2.",
+  "plain_conclusion": "短平均点态桥的形式部分已闭合，桥接因子为 1/2。该层没有证明局部稳定性；所有尖峰风险仍由下一账本处理。",
+  "rows": [
+    {
+      "gate": "ShortAverageBridgeGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是短平均点态桥。",
+      "remaining": "BacklundShortAveragePointwiseBridgeLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "BranchAndBoundaryAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "arg 分支归一化和边界常数合计已可用。",
+      "remaining": "无形式输入剩余。"
+    },
+    {
+      "gate": "HalfMassShortAverageLemmaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 |A(t)-A(T)|<=|A(T)|/2 在短邻域成立，则该邻域平均至少保留 |A(T)|/2。",
+      "remaining": "BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability"
+    },
+    {
+      "gate": "BacklundShortAveragePointwiseBridgeLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "短平均桥的形式部分闭合；它把剩余全部交给局部稳定/尖峰排斥。",
+      "remaining": "BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability"
+    },
+    {
+      "gate": "SpikeExclusionStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "下一步必须证明辐角不会形成比短平均更窄的尖峰。",
+      "remaining": "BacklundArgumentSpikeExclusionLogDerivativeLedger"
+    },
+    {
+      "gate": "CS8SlackStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "尖峰排斥完成后再验收 C_S=8。",
+      "remaining": "BacklundCS8SlackAfterBridgeLedger"
+    }
+  ],
+  "closed_gates": [
+    "ShortAverageBridgeGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "BranchAndBoundaryAvailable",
+    "HalfMassShortAverageLemmaClosed",
+    "BacklundShortAveragePointwiseBridgeLedger"
+  ],
+  "open_gates": [
+    "SpikeExclusionStillNext",
+    "CS8SlackStillDownstream"
+  ]
+}
