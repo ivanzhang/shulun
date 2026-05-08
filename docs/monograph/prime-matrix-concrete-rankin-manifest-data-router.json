@@ -1,11 +1,12 @@
 {
   "certificate_type": "prime_matrix_concrete_rankin_manifest_data_router",
-  "status": "concrete_rankin_manifest_emitter_closed_color_set_missing",
+  "status": "concrete_rankin_manifest_emitter_closed_per_color_rankin_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-formal-rankin-batch-manifest-router.json": "faa9431378d3bccc24855a1af5a222d01dc23396b76cd96453488e38c986834d",
     "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
     "docs/monograph/prime-matrix-allowed-budget-allocation-router.json": "ecd9a0d5cac0b228844b544094df0655d69b7185cea225374155f9b427a1cf73",
-    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b"
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b",
+    "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json": "ed9a95a6eb7e9a37f7fea38e2a42e2405207dc649f15bb005e59a4f7de35a464"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
@@ -13,7 +14,13 @@
   "row_column_unconditional_closed": false,
   "concrete_rankin_batch_manifest_emitter_closed": true,
   "concrete_rankin_batch_manifest_data_closed": false,
-  "color_set_like_json": [],
+  "color_set_like_json": [
+    {
+      "path": "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json",
+      "status": "concrete_color_set_enumeration_closed_rankin_open",
+      "row_count": 9
+    }
+  ],
   "rankin_certificate_like_json": [
     {
       "path": "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json",
@@ -52,14 +59,14 @@
       "meaning": "写出 batch manifest，并声明 color_set_exact 与 all_rows_pass_or_return。"
     }
   ],
-  "current_narrowest_atom": "ConcreteColorSetEnumerationLedger",
+  "current_narrowest_atom": "PerColorRankinCertificateFileLedger",
   "secondary_narrowest_atom": "PerColorRankinCertificateFileLedger",
   "tertiary_narrowest_atom": "FailedRankinReturnPacketLedger",
   "downstream_atoms": [
     "PDECOrSAEUnifiedExclusionLedger"
   ],
   "reduction_formula": "ConcreteRankinBatchManifestDataLedger => ConcreteRankinBatchManifestEmitterClosed AND ConcreteColorSetEnumerationLedger AND PerColorRankinCertificateFileLedger.",
-  "plain_conclusion": "ConcreteRankinBatchManifestDataLedger 的发射流程已闭合：给定 concrete color set 后，可逐颜色生成 Rankin 证书并组装 manifest。当前真正缺口不是 manifest 规则，而是没有 concrete color set 枚举；新的最窄点是 `ConcreteColorSetEnumerationLedger`。",
+  "plain_conclusion": "ConcreteRankinBatchManifestDataLedger 的发射流程已闭合：给定 concrete color set 后，可逐颜色生成 Rankin 证书并组装 manifest。当前 color set 已回收，新的最窄点是 `PerColorRankinCertificateFileLedger`。",
   "rows": [
     {
       "gate": "ConcreteRankinManifestDataGateActive",
@@ -91,9 +98,9 @@
     },
     {
       "gate": "ConcreteColorSetEnumerationAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现 concrete color set 枚举；没有它无法定义 manifest 全集行。",
+      "meaning": "已发现 concrete color set 枚举闭合证书，可定义 manifest 全集行。",
       "remaining": "ConcreteColorSetEnumerationLedger"
     },
     {
@@ -114,8 +121,8 @@
       "gate": "ConcreteRankinBatchManifestDataLedger",
       "closed": false,
       "proved": false,
-      "meaning": "Concrete manifest 数据不能由发射规则关闭；真正前置缺口是 concrete color set 枚举。",
-      "remaining": "ConcreteColorSetEnumerationLedger AND PerColorRankinCertificateFileLedger"
+      "meaning": "Concrete manifest 数据不能由发射规则关闭；仍需逐颜色 Rankin 证书和 manifest。",
+      "remaining": "PerColorRankinCertificateFileLedger"
     }
   ],
   "closed_gates": [
@@ -123,10 +130,10 @@
     "CounterexampleBranchGuardPreserved",
     "ManifestEmitterInputsReady",
     "ConcreteRankinBatchManifestEmitterClosed",
+    "ConcreteColorSetEnumerationAvailable",
     "PerColorRankinCertificateFilesAvailable"
   ],
   "open_gates": [
-    "ConcreteColorSetEnumerationAvailable",
     "FailedRankinReturnPacketsAvailable",
     "ConcreteRankinBatchManifestDataLedger"
   ]

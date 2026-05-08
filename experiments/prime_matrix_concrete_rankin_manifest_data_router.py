@@ -71,7 +71,9 @@ def is_color_set_like(payload: dict[str, Any]) -> bool:
         payload.get("certificate_type") in {
             "prime_matrix_colored_corridor_color_set",
             "prime_matrix_interval_graph_coloring_coverage_certificate",
+            "prime_matrix_concrete_color_set_enumeration_router",
         }
+        or payload.get("concrete_color_set_enumeration_closed") is True
         or "colored_corridor_color_set" in keys
         or "color_classes" in keys
         or "coloring_coverage_records" in keys
@@ -108,6 +110,7 @@ def scan_json_corpus(root: Path) -> dict[str, list[dict[str, Any]]]:
                 payload.get("colored_corridor_color_set")
                 or payload.get("color_classes")
                 or payload.get("coloring_coverage_records")
+                or payload.get("enumeration_fields")
                 or []
             )
             color_sets.append(
@@ -219,6 +222,11 @@ def build_rows(
     color_set_found = bool(scan["color_sets"])
     rankin_cert_found = bool(scan["rankin_certs"])
     return_packet_found = bool(scan["return_packets"])
+    color_set_meaning = (
+        "已发现 concrete color set 枚举闭合证书，可定义 manifest 全集行。"
+        if color_set_found
+        else "仓库尚未发现 concrete color set 枚举；没有它无法定义 manifest 全集行。"
+    )
     return [
         row(
             "ConcreteRankinManifestDataGateActive",
@@ -252,7 +260,7 @@ def build_rows(
             "ConcreteColorSetEnumerationAvailable",
             color_set_found,
             False,
-            "仓库尚未发现 concrete color set 枚举；没有它无法定义 manifest 全集行。",
+            color_set_meaning,
             COLOR_SET_ATOM,
         ),
         row(
@@ -273,8 +281,8 @@ def build_rows(
             OLD_ATOM,
             False,
             False,
-            "Concrete manifest 数据不能由发射规则关闭；真正前置缺口是 concrete color set 枚举。",
-            f"{COLOR_SET_ATOM} AND {CERT_ATOM}",
+            "Concrete manifest 数据不能由发射规则关闭；仍需逐颜色 Rankin 证书和 manifest。",
+            CERT_ATOM if color_set_found else f"{COLOR_SET_ATOM} AND {CERT_ATOM}",
         ),
     ]
 
@@ -289,9 +297,18 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     rows = build_rows(previous, coloring, budget, sample, scan)
     emitter_closed = next(item["closed"] for item in rows if item["gate"] == EMITTER_ATOM)
     evidence_paths = list(paths.values())
+    for records in scan.values():
+        evidence_paths.extend(ROOT / item["path"] for item in records)
+    evidence_paths = list(dict.fromkeys(evidence_paths))
+    current_narrowest = CERT_ATOM if scan["color_sets"] else COLOR_SET_ATOM
+    status = (
+        "concrete_rankin_manifest_emitter_closed_per_color_rankin_open"
+        if scan["color_sets"]
+        else "concrete_rankin_manifest_emitter_closed_color_set_missing"
+    )
     return {
         "certificate_type": "prime_matrix_concrete_rankin_manifest_data_router",
-        "status": "concrete_rankin_manifest_emitter_closed_color_set_missing",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
@@ -303,15 +320,21 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "rankin_certificate_like_json": scan["rankin_certs"],
         "return_packet_like_json": scan["return_packets"],
         "materialization_steps": materialization_steps(),
-        "current_narrowest_atom": COLOR_SET_ATOM,
+        "current_narrowest_atom": current_narrowest,
         "secondary_narrowest_atom": CERT_ATOM,
         "tertiary_narrowest_atom": RETURN_ATOM,
         "downstream_atoms": [PDEC_SAE_ATOM],
         "reduction_formula": f"{OLD_ATOM} => {EMITTER_ATOM} AND {COLOR_SET_ATOM} AND {CERT_ATOM}.",
         "plain_conclusion": (
             "ConcreteRankinBatchManifestDataLedger 的发射流程已闭合：给定 concrete color set 后，可逐颜色生成 "
-            "Rankin 证书并组装 manifest。当前真正缺口不是 manifest 规则，而是没有 concrete color set "
-            f"枚举；新的最窄点是 `{COLOR_SET_ATOM}`。"
+            "Rankin 证书并组装 manifest。当前 color set 已回收，新的最窄点是 "
+            f"`{CERT_ATOM}`。"
+            if scan["color_sets"]
+            else (
+                "ConcreteRankinBatchManifestDataLedger 的发射流程已闭合：给定 concrete color set 后，可逐颜色生成 "
+                "Rankin 证书并组装 manifest。当前真正缺口不是 manifest 规则，而是没有 concrete color set "
+                f"枚举；新的最窄点是 `{COLOR_SET_ATOM}`。"
+            )
         ),
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -321,6 +344,13 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
+    if result["current_narrowest_atom"] == result["secondary_narrowest_atom"]:
+        next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。"
+    else:
+        next_note = (
+            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；"
+            f"随后才是 `{result['secondary_narrowest_atom']}`。"
+        )
     lines = [
         "# Prime Matrix concrete Rankin batch manifest 数据路由器",
         "",
@@ -392,10 +422,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 5. 下一步",
             "",
-            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；"
-            f"随后才是 `{result['secondary_narrowest_atom']}`。",
+            next_note,
             "",
-            "审稿边界：本步只关闭 manifest 数据发射流程，不提交 concrete color set 或全量 Rankin manifest。",
+            "审稿边界：本步回收 concrete color set 并保持全量 Rankin manifest 打开；不关闭行列无条件定理。",
             "",
         ]
     )
@@ -424,7 +453,7 @@ def main() -> None:
         "sample": args.sample,
     }
     result = run(paths)
-    args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     write_markdown(result, args.md)
     print(f"wrote {args.json}")
     print(f"wrote {args.md}")
