@@ -1,0 +1,74 @@
+{
+  "certificate_type": "prime_matrix_dual_lane_terminal_reduction_router",
+  "external_lane_closed": false,
+  "external_terminal_contract": "Prove or cite spectral DI/BFI/Kuznetsov cancellation for completed Kloosterman sums with c-dependent residue weights B_{c,x}, keeping the current uncentered no-projection non-AP WFD target and arbitrary log saving.",
+  "external_terminal_input": "CDependentResidueWeightSpectralCancellationInput",
+  "internal_lane_closed": false,
+  "internal_terminal_contract": "For the final full-S non-AP WFD source capacity measure M_{u,v}, prove max_{u,v} M_{u,v}/sum M_{u,v} <= log^{-2A} for every A.",
+  "internal_terminal_input": "FullSNonAPStrengthenedSourceAntiAtomContractForActualNoncanonicalSource",
+  "plain_conclusion": "内外两条线继续压窄但仍未闭合：内部线的 balanced range 已消去，支撑+容量兼容等价于 actual noncanonical source 的强化反原子；外部线的 full-S 窗口已完成，剩余是 c-dependent residue 权重的谱抵消。当前材料没有证明任一输入，也没有完成 DStructure/Rankin 独立验收。",
+  "previous_basis": "(FullSNonAPExactFactorSupportPackageForActualNoncanonicalSource OR FullSNonAPWFDKLSTheoremInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rankin_promotion_accepted": false,
+  "refined_final_basis": "(FullSNonAPStrengthenedSourceAntiAtomContractForActualNoncanonicalSource OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "JointFrontierPinned",
+      "lane": "joint-frontier",
+      "meaning": "上一轮已把内外两线固定为 exact support 包或 Full-S KLS 输入。",
+      "proved_or_accepted": false,
+      "remaining": "分别压缩这两个包内部的真实终端。"
+    },
+    {
+      "closed": true,
+      "gate": "BalancedRangeRemoved",
+      "lane": "internal",
+      "meaning": "full-S regime 下 U,V 多项式级大于任意固定对数阈值，balanced range 不再是硬点。",
+      "proved_or_accepted": false,
+      "remaining": "内部路只剩 exact factor support 与 Type/Fourier capacity compatibility。"
+    },
+    {
+      "closed": true,
+      "gate": "SupportCapacityEqualsSourceAntiAtom",
+      "lane": "internal",
+      "meaning": "exact factor support 与容量兼容合并为最终 source capacity measure 无 moving same-(u,v) atom。",
+      "proved_or_accepted": false,
+      "remaining": "证明 actual noncanonical source 的强化反原子，或改走外部谱/dispersion。"
+    },
+    {
+      "closed": true,
+      "gate": "FullSWindowCompleted",
+      "lane": "external",
+      "meaning": "S≈P 且 C≈P/log^O P，s-window 可按模 c 完成；full-S 长度本身不是终端硬点。",
+      "proved_or_accepted": false,
+      "remaining": "处理完成后依赖 c 的 residue 权重 B_{c,x}。"
+    },
+    {
+      "closed": true,
+      "gate": "CompletedWeightSpectralAtomPinned",
+      "lane": "external",
+      "meaning": "点态 Weil、L2、普通大筛和平坦 residue 捷径不足；必须有 c,h 谱/dispersion 平均抵消。",
+      "proved_or_accepted": false,
+      "remaining": "证明或引用 CDependentResidueWeightSpectralCancellationInput。"
+    },
+    {
+      "closed": true,
+      "gate": "RankinPromotionStillIndependent",
+      "lane": "promotion",
+      "meaning": "DStructure/Tail-log4/finite Rankin 晋级包边界已闭合但未独立验收。",
+      "proved_or_accepted": false,
+      "remaining": "即使二线数学输入闭合，也还需独立晋级接受。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-fulls-kls-movingblock-joint-attack-router.json": "cd539a117dfbb1b86be70636fbb6988e3d0c67566d97a08d0a454437675af15f",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-completion-reduction-router.json": "bee7ade16ab2e5a8309060c7c4c24cc7f8cb37ab87d94aeb1cefc407183d116e",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-support-range-router.json": "f2816bc3d999d89883a123b655d62d2c774412f1728d7216c2bc62c21c680e0a"
+  },
+  "status": "dual_lane_reduced_to_source_antiatom_or_c_dependent_spectral_input_open",
+  "terminal_reduction_boundary_closed": true
+}

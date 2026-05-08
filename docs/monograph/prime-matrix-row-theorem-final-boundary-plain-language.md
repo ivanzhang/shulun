@@ -1190,6 +1190,55 @@ BFI、DI、Maynard 的外部论文给出重要的 AP/dispersion/Kuznetsov 技术
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
+继续进入两条线内部后，最新终端归约为：
+
+```text
+experiments/prime_matrix_dual_lane_terminal_reduction_router.py
+docs/monograph/prime-matrix-dual-lane-terminal-reduction-router.md/json
+
+terminal_reduction_boundary_closed=true；
+internal_lane_closed=false；
+external_lane_closed=false；
+rankin_promotion_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+内部线：`FullSNonAPBalancedRangeThreshold` 已经闭合，因为 full-S regime 下 `C≈P/log^O(P)`，
+平衡因子 `U,V` 是多项式级，必然超过任何固定对数阈值。剩下的 exact factor support 与
+Type/Fourier 容量兼容不是两个独立硬点，而是同一个源层反原子合同：
+
+```text
+FullSNonAPStrengthenedSourceAntiAtomContractForActualNoncanonicalSource。
+```
+
+也就是对最终 full-S non-AP WFD 源容量测度 `M_{u,v}` 证明：
+
+```text
+max_{u,v} M_{u,v} / sum_{u,v} M_{u,v} <= log^{-2A}
+```
+
+对每个 `A` 成立。
+
+外部线：full-S 窗口本身已可按模 `c` 完成，真正剩余不再是窗口长度，而是完成后权重
+
+```text
+B_{c,x}=sum_k beta_{x+k c}
+```
+
+依赖 `c` 且不能免费中心化或平坦化。因此外部终端输入压成：
+
+```text
+CDependentResidueWeightSpectralCancellationInput。
+```
+
+最新输入基进一步变成：
+
+```text
+(FullSNonAPStrengthenedSourceAntiAtomContractForActualNoncanonicalSource
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

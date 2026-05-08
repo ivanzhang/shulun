@@ -3619,3 +3619,43 @@ BFI、DI、Maynard 主来源提供 AP/dispersion/Kuznetsov 技术，但现有审
  OR FullSNonAPWFDKLSTheoremInput)
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_dual_lane_terminal_reduction_router.py
+docs/monograph/prime-matrix-dual-lane-terminal-reduction-router.md/json
+```
+
+该路由器继续拆开两线终端：
+
+```text
+terminal_reduction_boundary_closed=true；
+internal_lane_closed=false；
+external_lane_closed=false；
+rankin_promotion_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+内部线中 `FullSNonAPBalancedRangeThreshold` 已闭合，因为 full-S 下 `C≈P/log^O(P)`，
+`c=uv` 的平衡因子大小超过任意固定对数阈值；剩下的 exact factor support 与
+Type/Fourier capacity compatibility 等价于最终源容量测度无 moving same-`(u,v)` 原子：
+
+```text
+FullSNonAPStrengthenedSourceAntiAtomContractForActualNoncanonicalSource。
+```
+
+外部线中 full-S 窗口可按模 `c` 完成，真正剩余变成完成后权重
+`B_{c,x}=sum_k beta_{x+k c}` 的谱/dispersion 抵消：
+
+```text
+CDependentResidueWeightSpectralCancellationInput。
+```
+
+因此最新输入基为：
+
+```text
+(FullSNonAPStrengthenedSourceAntiAtomContractForActualNoncanonicalSource
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
