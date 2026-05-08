@@ -1080,6 +1080,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 这已经是当前材料能达到的最窄结构边界：证明链条条件闭合，但无条件闭合还需要上面这个数学二选一
 输入和独立晋级验收输入。
 
+最后把数学二选一继续合并审查：
+
+```text
+experiments/prime_matrix_unconditional_closure_final_attempt_router.py
+docs/monograph/prime-matrix-unconditional-closure-final-attempt-router.md/json
+
+final_attempt_boundary_closed=true；
+math_lanes_collapsed_to_common_core=true；
+internal_math_proof_found_in_current_corpus=false；
+external_math_match_found_in_current_corpus=false；
+independent_promotion_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一步说明：前面所谓“数学二选一”并不是两个互不相干的深洞。第二条
+`CDependentResidueWeightSpectralCancellationInput` 经有限 Fourier 反演、`BWFD -> BSC -> KFLS`
+完成链后，又回到 actual same-`(u,v)` block non-concentration 或外部 DI/BFI/Kuznetsov 定理。
+第一条 actual-source 反原子本身也正是 moving-block spread/source entropy。
+
+因此最后不可再压缩输入基是：
+
+```text
+(MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients
+ OR PreciselyMatchedExternalDIBFIKuznetsovDispersionTheorem)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+当前材料为什么不能直接无条件闭合：
+
+```text
+generic 反原子被 moving-delta 反证；
+fixed-projection diffuse 不能控制随尺度移动的 same-(u,v) 块；
+仓库没有 full-S/non-AP/未中心化/无投影对象的外部定理逐项匹配；
+DStructure/Rankin 晋级验收不能由作者侧自验收。
+```
+
+所以最终结论不是“已经无条件证明”，而是“所有隐藏出口已清零，终局输入基已经不可再压缩”。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

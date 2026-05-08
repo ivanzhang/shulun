@@ -3501,3 +3501,43 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 当前材料没有证明该二选一数学输入，也没有完成独立晋级验收，所以完整全局无条件定理仍未成立。
+
+继续新增：
+
+```text
+experiments/prime_matrix_unconditional_closure_final_attempt_router.py
+docs/monograph/prime-matrix-unconditional-closure-final-attempt-router.md/json
+```
+
+该路由器执行最终无条件闭合尝试：
+
+```text
+final_attempt_boundary_closed=true；
+math_lanes_collapsed_to_common_core=true；
+internal_math_proof_found_in_current_corpus=false；
+external_math_match_found_in_current_corpus=false；
+independent_promotion_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+关键合并是：`CDependentResidueWeightSpectralCancellationInput` 并不是新的独立终端；有限 Fourier
+反演把 `B_{c,x}` 接入 `BWFD -> BSC -> KFLS`，而 KFLS 自足剩余又回到 actual same-`(u,v)`
+block non-concentration 或外部 DI/BFI/Kuznetsov。另一方面，actual-source 反原子也正是
+moving-block spread/source entropy。于是数学终局输入汇合为：
+
+```text
+MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients
+OR PreciselyMatchedExternalDIBFIKuznetsovDispersionTheorem。
+```
+
+再加上不可自验收的晋级输入，最终不可再压缩输入基为：
+
+```text
+(MovingBlockSpreadNCBLKForActualFullSNonAPWFDCoefficients
+ OR PreciselyMatchedExternalDIBFIKuznetsovDispersionTheorem)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+当前材料没有证明 moving-block spread，也没有给出 full-S/non-AP/未中心化/无投影对象的外部定理
+逐项匹配；同时 DStructure/Rankin 独立验收未完成。因此本轮完成的是终局输入边界闭合，而不是
+完整全局无条件定理闭合。
