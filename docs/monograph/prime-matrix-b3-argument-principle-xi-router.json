@@ -1,0 +1,95 @@
+{
+  "certificate_type": "b3_argument_principle_xi_router",
+  "status": "argument_principle_xi_rectangle_counting_closed",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-rvm-local-count-router.json": "0e5f92816a6ca4408f3bed8a07c9d274b4ba56ee5bab58ebeef038a0b035ee6e"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "argument_principle_xi_rectangle_counting_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "ArgumentPrincipleXiRectangleCountingLedger": "ArgumentPrincipleXiRectangleCountingClosed"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND ((ArgumentPrincipleXiRectangleCountingClosed AND GammaMainTermLocalDifferenceNumericalLedger AND BacklundZetaArgumentBoundNumericalLedger AND EndpointZeroAvoidanceMultiplicityConventionLedger AND RVMToCN16LocalInequalityLedger) AND XiBoundaryLogMajorantNumericalLedger AND JensenDiskLowerAnchorNumericalLedger AND LocalZeroCountCNConventionLedger) AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "GammaMainTermLocalDifferenceNumericalLedger",
+  "secondary_priority": "BacklundZetaArgumentBoundNumericalLedger",
+  "tertiary_priority": "EndpointZeroAvoidanceMultiplicityConventionLedger",
+  "quaternary_priority": "RVMToCN16LocalInequalityLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "core_formula": "N(R)=1/(2*pi*i) int_{partial R} xi'(s)/xi(s) ds = Delta_{partial R} arg xi / (2*pi)",
+  "plain_conclusion": "xi 矩形 argument principle 计数恒等式已闭合。它只是形式计数层，不给任何数值上界；下一步仍要数值化 Gamma 主项、Backlund 辐角和端点 convention。",
+  "rows": [
+    {
+      "gate": "ArgumentPrincipleXiGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是 xi 矩形 argument principle 计数。",
+      "remaining": "ArgumentPrincipleXiRectangleCountingLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "XiEntireFunctionAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "xi 已闭合为整函数，argument principle 可直接应用。",
+      "remaining": "无整函数性剩余。"
+    },
+    {
+      "gate": "BoundaryPerturbationConventionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若矩形边界穿过零点，先取 epsilon 扰动并在极限中按重数计数。",
+      "remaining": "端点统一记账仍留给 EndpointZeroAvoidanceMultiplicityConventionLedger。"
+    },
+    {
+      "gate": "XiRectangleArgumentCountingClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "矩形内零点数等于 (1/2pi i) int_{partial R} xi'(s)/xi(s) ds，即边界辐角变化除以 2pi。",
+      "remaining": "ArgumentPrincipleXiRectangleCountingClosed"
+    },
+    {
+      "gate": "ArgumentPrincipleXiRectangleCountingLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "待证 atom 已闭合为 xi 矩形 argument principle 计数恒等式。",
+      "remaining": "ArgumentPrincipleXiRectangleCountingClosed"
+    },
+    {
+      "gate": "GammaMainTermStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "下一步需要把边界辐角分解中的 Gamma/主项差数值化。",
+      "remaining": "GammaMainTermLocalDifferenceNumericalLedger"
+    },
+    {
+      "gate": "BacklundAndEndpointStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "arg zeta、端点 convention 与 CN16 合并仍未闭合。",
+      "remaining": "BacklundZetaArgumentBoundNumericalLedger AND EndpointZeroAvoidanceMultiplicityConventionLedger AND RVMToCN16LocalInequalityLedger"
+    }
+  ],
+  "closed_gates": [
+    "ArgumentPrincipleXiGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "XiEntireFunctionAvailable",
+    "BoundaryPerturbationConventionClosed",
+    "XiRectangleArgumentCountingClosed",
+    "ArgumentPrincipleXiRectangleCountingLedger"
+  ],
+  "open_gates": [
+    "GammaMainTermStillNext",
+    "BacklundAndEndpointStillDownstream"
+  ]
+}
