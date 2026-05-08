@@ -1,13 +1,14 @@
 {
   "certificate_type": "prime_matrix_concrete_coloring_coverage_data_router",
-  "status": "concrete_coloring_coverage_schema_closed_GreedyIntervalColoringExecutionLedger_open",
+  "status": "concrete_coloring_coverage_schema_closed_CoverageEquationCertificateDataLedger_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json": "20b065a8b231febc8a74b790922fe934988fe9daaec4a5c549e38101b41c0154",
     "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
     "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
     "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510",
     "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json": "7b3e7de7760295bb4e328cb2b82345c3b7053d1a54b37c88260e3f21a09f7ab1",
-    "docs/monograph/prime-matrix-low-overlap-multiplicity-table-router.json": "474c9979828338364b2283150cf893f5f0563749c365a6a594da8a2e2b253726"
+    "docs/monograph/prime-matrix-low-overlap-multiplicity-table-router.json": "474c9979828338364b2283150cf893f5f0563749c365a6a594da8a2e2b253726",
+    "docs/monograph/prime-matrix-greedy-interval-coloring-execution-router.json": "1682ad62d31841fa429e8d5a08e339cb87f1dd24047a0465b3dec21ffe0c4d16"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
@@ -34,13 +35,21 @@
         "source_tuple_hash": null
       }
     ],
-    "GreedyIntervalColoringExecutionLedger": [],
+    "GreedyIntervalColoringExecutionLedger": [
+      {
+        "path": "docs/monograph/prime-matrix-greedy-interval-coloring-execution-router.json",
+        "status": "greedy_interval_coloring_execution_closed_coverage_equation_open",
+        "record_count": 6,
+        "coverage_complete": true,
+        "source_tuple_hash": null
+      }
+    ],
     "CoverageEquationCertificateDataLedger": []
   },
   "component_complete": {
     "ConcreteAnchorIntervalEnumerationLedger": true,
     "LowOverlapMultiplicityTableLedger": true,
-    "GreedyIntervalColoringExecutionLedger": false,
+    "GreedyIntervalColoringExecutionLedger": true,
     "CoverageEquationCertificateDataLedger": false
   },
   "required_components": [
@@ -65,7 +74,7 @@
       "equation": "multiset(colored intervals)=multiset((a,d): d in J_a, m(d)<=Omega)。"
     }
   ],
-  "current_narrowest_atom": "GreedyIntervalColoringExecutionLedger",
+  "current_narrowest_atom": "CoverageEquationCertificateDataLedger",
   "downstream_atoms": [
     "LowOverlapMultiplicityTableLedger",
     "GreedyIntervalColoringExecutionLedger",
@@ -73,7 +82,7 @@
     "PerColorRankinCertificateFileLedger"
   ],
   "reduction_formula": "ConcreteColoringCoverageDataLedger => ConcreteColoringCoverageDataSchemaClosed AND ConcreteAnchorIntervalEnumerationLedger AND LowOverlapMultiplicityTableLedger AND GreedyIntervalColoringExecutionLedger AND CoverageEquationCertificateDataLedger.",
-  "plain_conclusion": "ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合；已完成的组件会被扫描回收。当前最窄点是 `GreedyIntervalColoringExecutionLedger`。",
+  "plain_conclusion": "ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合；已完成的组件会被扫描回收。当前最窄点是 `CoverageEquationCertificateDataLedger`。",
   "rows": [
     {
       "gate": "ConcreteColoringCoverageGateActive",
@@ -119,9 +128,9 @@
     },
     {
       "gate": "GreedyColoringExecutionAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现贪心区间着色执行 transcript。",
+      "meaning": "已发现 greedy interval coloring execution transcript 生成律，可复算颜色分配。",
       "remaining": "GreedyIntervalColoringExecutionLedger"
     },
     {
@@ -136,14 +145,14 @@
       "closed": false,
       "proved": false,
       "meaning": "四个组件必须同 source tuple/hash 完整覆盖后，才可枚举 concrete color set。",
-      "remaining": "ConcreteAnchorIntervalEnumerationLedger AND LowOverlapMultiplicityTableLedger AND GreedyIntervalColoringExecutionLedger AND CoverageEquationCertificateDataLedger"
+      "remaining": "CoverageEquationCertificateDataLedger"
     },
     {
       "gate": "ConcreteColoringCoverageDataLedger",
       "closed": false,
       "proved": false,
-      "meaning": "ConcreteColoringCoverageDataLedger 仍需提交 `GreedyIntervalColoringExecutionLedger`。",
-      "remaining": "GreedyIntervalColoringExecutionLedger"
+      "meaning": "ConcreteColoringCoverageDataLedger 仍需提交 `CoverageEquationCertificateDataLedger`。",
+      "remaining": "CoverageEquationCertificateDataLedger"
     }
   ],
   "closed_gates": [
@@ -152,10 +161,10 @@
     "UpstreamSchemasImported",
     "ConcreteColoringCoverageDataSchemaClosed",
     "ConcreteAnchorIntervalsAvailable",
-    "LowOverlapMultiplicityTableAvailable"
+    "LowOverlapMultiplicityTableAvailable",
+    "GreedyColoringExecutionAvailable"
   ],
   "open_gates": [
-    "GreedyColoringExecutionAvailable",
     "CoverageEquationCertificateAvailable",
     "AllCoverageComponentsComplete",
     "ConcreteColoringCoverageDataLedger"

@@ -234,6 +234,16 @@ def build_rows(
         if data_available[MULTIPLICITY_ATOM]
         else "仓库尚未发现 m(d) 与 low/high overlap 分流表。"
     )
+    coloring_meaning = (
+        "已发现 greedy interval coloring execution transcript 生成律，可复算颜色分配。"
+        if data_available[COLORING_ATOM]
+        else "仓库尚未发现贪心区间着色执行 transcript。"
+    )
+    equation_meaning = (
+        "已发现 coverage equation 数据证书，可验收有色多重集与低重叠走廊多重集相等。"
+        if data_available[EQUATION_ATOM]
+        else "仓库尚未发现多重集相等的 coverage equation 数据证书。"
+    )
     ledger_meaning = (
         "四个 concrete coverage 组件均已闭合；coverage 数据账本闭合。"
         if ledger_closed
@@ -286,14 +296,14 @@ def build_rows(
             "GreedyColoringExecutionAvailable",
             data_available[COLORING_ATOM],
             False,
-            "仓库尚未发现贪心区间着色执行 transcript。",
+            coloring_meaning,
             COLORING_ATOM,
         ),
         row(
             "CoverageEquationCertificateAvailable",
             data_available[EQUATION_ATOM],
             False,
-            "仓库尚未发现多重集相等的 coverage equation 数据证书。",
+            equation_meaning,
             EQUATION_ATOM,
         ),
         row(
@@ -301,7 +311,7 @@ def build_rows(
             all_components_available and all_components_complete,
             False,
             "四个组件必须同 source tuple/hash 完整覆盖后，才可枚举 concrete color set。",
-            f"{ANCHOR_ATOM} AND {MULTIPLICITY_ATOM} AND {COLORING_ATOM} AND {EQUATION_ATOM}",
+            RANKIN_ATOM if all_components_complete else next_atom,
         ),
         row(
             OLD_ATOM,
