@@ -1,0 +1,121 @@
+{
+  "certificate_type": "rosser_weight_support_functor_router",
+  "status": "rosser_weight_support_absorbed_into_upstream_beta_sieve_boundary_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-quadratic-arc-nearsquare-spread-router.json": "d5aad2f36c93b6a6780d05d3b8d037fc1f387e36bf50a16039b7284c0ae5bc3d"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "quotient_residue_coordinate_lift_proved": true,
+  "rosser_weight_support_functorially_absorbed": true,
+  "rosser_weight_support_independent_input_remaining": false,
+  "signed_nearsquare_strip_discrepancy_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "replacement": {
+    "RosserWeightQuotientResidueSupportLedgerAlpha043 AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND (SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000 OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043))) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND (SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000 OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
+  "external_next_priority": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+  "rough_fallback_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+  "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "coordinate_lift": {
+    "d_to_h_t": "h=floor(P/d), t=P-hd, 0<t<d",
+    "minus_a": "a=floor(t^2/d)",
+    "plus_a": "a=ceil(t^2/d)",
+    "support_transfer": "lambda_d^- is unchanged; only its index d is rewritten as (h,t,a,side).",
+    "no_new_estimate": "所有 squarefree/support/well-factorable 信息仍来自 beta-sieve 权重构造。"
+  },
+  "rows": [
+    {
+      "gate": "RosserSupportFunctorGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "最新最窄点要求把 Rosser lower weights 的支撑搬到商余条带坐标。",
+      "remaining": "RosserWeightQuotientResidueSupportLedgerAlpha043"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行反例链条中做坐标搬运，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "UpstreamBetaWeightSupportAvailable",
+      "closed": true,
+      "proved": false,
+      "meaning": "上游 beta-sieve 自足构造或标准导入一旦成立，已经给出 squarefree、d<=P、p|d=>p<z 的权重支撑。",
+      "remaining": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix OR StandardRosserIwaniecBetaSieveTheoremImportAccepted"
+    },
+    {
+      "gate": "QuotientResidueCoordinateLiftClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个 d>1 唯一写成 h=floor(P/d)、t=P-hd；a=floor/ceil(t^2/d) 由 side 唯一确定。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "RosserWeightSupportFunctorialAbsorption",
+      "closed": true,
+      "proved": false,
+      "meaning": "该支撑账本不是新的数学输入；它被上游 beta-sieve 权重构造函子式吸收。",
+      "remaining": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000"
+    },
+    {
+      "gate": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
+      "closed": false,
+      "proved": false,
+      "meaning": "真正剩余是有符号 Rosser 质量在近平方条带上的非集中。",
+      "remaining": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000"
+    },
+    {
+      "gate": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部解析路线仍可直接给 well-factorable sawtooth/条带分散估计。",
+      "remaining": "ExternalWellFactorableSawtoothDispersionBoundAlpha043"
+    },
+    {
+      "gate": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "短区间 rough-number 下界仍可绕过内部 sawtooth 与条带分析。",
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "closed": false,
+      "proved": false,
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "RosserSupportFunctorGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "UpstreamBetaWeightSupportAvailable",
+    "QuotientResidueCoordinateLiftClosed",
+    "RosserWeightSupportFunctorialAbsorption"
+  ],
+  "open_gates": [
+    "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
+    "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把 Rosser 权重商余支撑账本从真正剩余中剥离。给定上游 beta-sieve lower weights，d 到 (h,t,a,side) 的映射是唯一坐标变换，不会新增估计义务。因此当前真正剩余压缩为一个原子：SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000。"
+}
