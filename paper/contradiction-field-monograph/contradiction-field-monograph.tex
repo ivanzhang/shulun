@@ -3209,6 +3209,41 @@ If the exact-support theorem is supplied, the already closed multiplier discipli
 the final capacity anti-atom by the recorded inequality.  Without that theorem, and
 without independent D-structure/Rankin acceptance, the unrestricted row-column theorem
 cannot yet be stated as unconditional.
+
+The ExactUVSupport failure-packetization router then rewrites the remaining source input
+in its contrapositive finite form.  It records
+\[
+\begin{gathered}
+  \texttt{failure\_packetization\_closed=true},\\
+  \texttt{exact\_uv\_support\_proved=false},\\
+  \texttt{actual\_support\_failure\_packet\_exclusion\_proved=false},\\
+  \texttt{actual\_final\_capacity\_antiatom\_proved=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+After the actual noncanonical clean block, exact \(u,v\)-support notion, and registered
+multiplier threshold are fixed, the positive lower-bound input
+\begin{quote}\small\ttfamily
+ActualNoncanonicalExactUVSupportLowerBound
+\end{quote}
+is equivalent to the absence of a positive-mass support-failure packet:
+\begin{quote}\small\ttfamily
+ActualNoncanonicalSupportFailurePacketExclusion.
+\end{quote}
+Such a packet must carry the source class, formal-unit id, block key, exact \(u\)- and
+\(v\)-support sets, the \(L^{2A+4C+E}\) threshold, the registered capacity profile,
+return tests to the named exits, and a reproducible certificate.  Hence support failure
+can no longer remain an unnamed obstruction.  This packetization is an equivalent
+boundary reformulation, not a proof of packet exclusion.  The latest self-contained input
+basis can therefore be written as
+\begin{quote}\small\ttfamily
+ActualNoncanonicalSupportFailurePacketExclusion\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The manuscript still lacks a proof that all such packets are absent or must return to the
+PDEC, SAE, ColumnCRT, CleanKLS, or external KLS exits, and it still lacks independent
+D-structure/Rankin acceptance.
 \end{proof}
 
 

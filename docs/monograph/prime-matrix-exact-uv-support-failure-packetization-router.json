@@ -1,0 +1,174 @@
+{
+  "actual_final_capacity_antiatom_proved": false,
+  "actual_support_failure_packet_exclusion_proved": false,
+  "certificate_type": "prime_matrix_exact_uv_support_failure_packetization_router",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "equivalence_law": "在已固定 actual noncanonical clean block、exact u/v 支撑定义和 registered multiplier 阈值后，ActualNoncanonicalExactUVSupportLowerBound 等价于不存在正质量 ActualNoncanonicalSupportFailurePacket。",
+  "equivalent_packet_input": "ActualNoncanonicalSupportFailurePacketExclusion",
+  "exact_uv_support_proved": false,
+  "failure_packetization_closed": true,
+  "latest_self_contained_basis": "ActualNoncanonicalSupportFailurePacketExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "packet_schema_fields": [
+    {
+      "field": "source_class",
+      "meaning": "固定为 actual noncanonical full-S non-AP balanced source。",
+      "why_needed": "防止 canonical 支撑链或 generic WFD 模板偷渡。"
+    },
+    {
+      "field": "formal_unit_id",
+      "meaning": "与 registered multiplier discipline 的同一 formal unit 对齐。",
+      "why_needed": "防止账外 Type/Fourier/fiber 乘子重入。"
+    },
+    {
+      "field": "block_key",
+      "meaning": "记录 P、窗口、dyadic U,V、phase_key、path/tail 标签。",
+      "why_needed": "使 moving block 不再是无名变量。"
+    },
+    {
+      "field": "exact_u_support/exact_v_support",
+      "meaning": "列出或证明精确 u、v 支撑集合及其绝对权重非零性。",
+      "why_needed": "ExactUVSupport 失败正是这些集合乘积低于阈值。"
+    },
+    {
+      "field": "support_threshold",
+      "meaning": "登记 L^(2A+4C+E) 或更强阈值。",
+      "why_needed": "与 final M_{u,v} 反原子不等式直接相连。"
+    },
+    {
+      "field": "registered_capacity_profile",
+      "meaning": "给出 packet 内 M_{u,v}、总质量、最大 pair 质量和 log-power 乘子。",
+      "why_needed": "区分 raw support 失败和最终容量反原子失败。"
+    },
+    {
+      "field": "return_tests",
+      "meaning": "逐项测试 canonical、PDEC、SAE/LocalSurvivor、ColumnCRT、CleanKLS/DLS、外部 KLS。",
+      "why_needed": "若不能直接排斥 packet，必须回流到已命名出口。"
+    },
+    {
+      "field": "reproducible_certificate",
+      "meaning": "脚本、JSON 字段、范围、哈希和 open_obligation_count。",
+      "why_needed": "使未来新增 sparse 支撑失败路线不能作为隐藏终端。"
+    }
+  ],
+  "packetization_law": "若 ExactUVSupport 失败，则失败不再是无名硬点：它必须给出一个 finite sparse packet，携带 source_class、formal_unit_id、block_key、exact u/v 支撑、阈值、容量剖面、回流测试和可复现证书。若不能给出这样的 packet，则支撑失败命题无准入。",
+  "plain_conclusion": "最后源侧输入被进一步包化：不再把 `ActualNoncanonicalExactUVSupportLowerBound` 当作抽象正下界，而是等价改写为排斥所有 actual noncanonical 支撑失败 packet。这关闭了“支撑失败仍可无名停留”的边界，但当前材料仍未证明 packet 全部不存在或必回流，所以完整无条件行/列命题仍未闭合。",
+  "previous_source_input": "ActualNoncanonicalExactUVSupportLowerBound",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ExactSupportTerminalPinned",
+      "meaning": "上一层已把唯一源侧微输入固定为 ActualNoncanonicalExactUVSupportLowerBound。",
+      "proved": true,
+      "remaining": "只能攻击该输入本身，不能回到已排除伪路线。"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredCapacityAttached",
+      "meaning": "所有 Type/Fourier/fiber 成本已经登记为同一 formal unit 的 log-power 乘子。",
+      "proved": true,
+      "remaining": "支撑失败不能再解释为账外乘子问题。"
+    },
+    {
+      "closed": true,
+      "gate": "FailureEquivalencePacketized",
+      "meaning": "ExactUVSupport 失败等价于存在一个正质量 actual noncanonical clean block，其 exact u/v 支撑乘积低于登记阈值。",
+      "proved": true,
+      "remaining": "必须排斥这些 packet，或证明它们回流到已命名出口。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalAndGenericEscapeBlocked",
+      "meaning": "canonical RIW/Buchstab 支撑链和 generic WFD 点支撑模型都不能替代该 packet 排斥。",
+      "proved": true,
+      "remaining": "packet 必须在 actual noncanonical 补集内处理。"
+    },
+    {
+      "closed": true,
+      "gate": "SparseSchemaInterfaceReady",
+      "meaning": "未来 sparse 路线已经有显式 packet extractor schema 准入规则。",
+      "proved": true,
+      "remaining": "Actual support-failure packet 是一个新增 source class，仍需证明排斥或提交全集证书。"
+    },
+    {
+      "closed": true,
+      "gate": "NoHiddenSupportFailure",
+      "meaning": "支撑失败不能继续作为抽象硬点存在；它必须物化为带字段、阈值、回流测试和哈希的 packet。",
+      "proved": true,
+      "remaining": "当前材料还没有排斥所有这种 packet。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualSupportFailurePacketExclusionCurrentCorpusProved",
+      "meaning": "当前材料没有证明所有 actual noncanonical 支撑失败 packet 都不存在或必回流。",
+      "proved": false,
+      "remaining": "证明 ActualNoncanonicalSupportFailurePacketExclusion，或给直接 final capacity anti-atom。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧 packet 排斥完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-exact-uv-support-terminal-attack-router.json": "25a56fd099c2bd4db85c40db63b5d7555583d6f7e7a9d967e33869dcf59848b3",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3",
+    "docs/monograph/prime-matrix-noncanonical-source-core-atomization-router.json": "cc605d7c0c26af7b1ff8ab3644629dc9821d805e817dd4fb141943a9830a0a08",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805"
+  },
+  "status": "exact_uv_support_failure_packetized_packet_exclusion_open",
+  "threshold_rows": [
+    {
+      "failure_packet_condition": "S_u*S_v < L^17",
+      "k": 3,
+      "log_y": 6.907755278982138,
+      "required_pair_support": 185664143359702,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "failure_packet_condition": "S_u*S_v < L^17",
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "required_pair_support": 24699408928878996,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "failure_packet_condition": "S_u*S_v < L^17",
+      "k": 5,
+      "log_y": 11.51292546497023,
+      "required_pair_support": 1096874099498946944,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "failure_packet_condition": "S_u*S_v < L^17",
+      "k": 6,
+      "log_y": 13.815510557964275,
+      "required_pair_support": 24335370598442758144,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "failure_packet_condition": "S_u*S_v < L^17",
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "required_pair_support": 334451684862452432896,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "failure_packet_condition": "S_u*S_v < L^17",
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "required_pair_support": 3237400927126027763712,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "failure_packet_condition": "S_u*S_v < L^17",
+      "k": 9,
+      "log_y": 20.723265836946414,
+      "required_pair_support": 23976697736727197908992,
+      "required_pair_support_power": 17.0
+    }
+  ]
+}

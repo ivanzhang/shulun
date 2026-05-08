@@ -1517,3 +1517,48 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 若未来证明 `ActualNoncanonicalExactUVSupportLowerBound`，则结合已闭合的 registered multiplier
 discipline，最终 `M_{u,v}` 容量反原子立即由条件不等式得到；再加 DStructure/Rankin 独立验收，
 当前边界链才可升级为完整行/列闭合。当前还不能声明完整无条件定理。
+
+## 14. ExactUVSupport 失败包化
+
+继续新增：
+
+```text
+experiments/prime_matrix_exact_uv_support_failure_packetization_router.py
+docs/monograph/prime-matrix-exact-uv-support-failure-packetization-router.md/json
+
+failure_packetization_closed=true；
+exact_uv_support_proved=false；
+actual_support_failure_packet_exclusion_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层不是证明 `ExactUVSupport`，而是把它的否定完全物化。也就是说，不再允许“支撑失败”作为抽象
+硬点停留：若 `ActualNoncanonicalExactUVSupportLowerBound` 失败，就必须给出一个正质量 actual
+noncanonical clean block，其 exact `u/v` 支撑乘积低于 registered multiplier 阈值，并且携带
+`source_class`、`formal_unit_id`、`block_key`、exact `u/v` 支撑、容量剖面、回流测试和可复现证书。
+
+因此上一层源输入：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+```
+
+被等价改写为包化输入：
+
+```text
+ActualNoncanonicalSupportFailurePacketExclusion。
+```
+
+连同独立晋级门，最新完全自足输入基写成：
+
+```text
+ActualNoncanonicalSupportFailurePacketExclusion
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+通俗说：最后的源侧硬点已经不是“有没有足够多 `u/v` 支撑”这句抽象话，而是“能否排斥所有可写成
+有限证书的 actual noncanonical 支撑失败包”。若无法排斥，就必须证明这些包回流到
+`PDEC/SAE/ColumnCRT/CleanKLS/外部 KLS`，或直接证明最终容量反原子。当前材料只闭合了包化准入边界，
+尚未证明所有 packet 不存在或必回流，所以完整无条件行/列命题仍不能声明已证。

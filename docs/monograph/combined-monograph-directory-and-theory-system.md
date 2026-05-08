@@ -3902,3 +3902,38 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 若以后证明 `ActualNoncanonicalExactUVSupportLowerBound`，则结合已闭合的 registered multiplier
 discipline 可推出 final capacity anti-atom ledger；再加 DStructure/Rankin 独立验收后，当前边界链
 才可升级。当前材料完成的是终端边界审查，不是无条件证明。
+
+继续新增：
+
+```text
+experiments/prime_matrix_exact_uv_support_failure_packetization_router.py
+docs/monograph/prime-matrix-exact-uv-support-failure-packetization-router.md/json
+```
+
+该路由器把 `ActualNoncanonicalExactUVSupportLowerBound` 的失败完全包化。结论为：
+
+```text
+failure_packetization_closed=true；
+exact_uv_support_proved=false；
+actual_support_failure_packet_exclusion_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：在 actual noncanonical clean block、exact `u/v` 支撑定义和 registered multiplier 阈值都已固定后，
+`ActualNoncanonicalExactUVSupportLowerBound` 等价于不存在正质量
+`ActualNoncanonicalSupportFailurePacket`。若支撑失败，它必须物化为 finite sparse packet，并携带
+`source_class`、`formal_unit_id`、`block_key`、exact `u/v` 支撑、`L^(2A+4C+E)` 阈值、registered
+capacity profile、回流测试和可复现证书；否则该失败命题无准入。
+
+因此最新完全自足输入基可等价写成：
+
+```text
+ActualNoncanonicalSupportFailurePacketExclusion
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步关闭“支撑失败还能无名停留”的边界，但没有证明所有 packet 不存在或必回流。下一步的源侧最窄硬点是
+`ActualNoncanonicalSupportFailurePacketExclusion`，或直接证明 final capacity anti-atom；最终仍需
+DStructure/Rankin 独立验收。
