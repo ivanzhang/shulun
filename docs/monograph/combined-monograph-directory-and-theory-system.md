@@ -4179,3 +4179,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 本步没有证明该路径分割账本；它关闭的是 canonical 决策树跨分支偷渡和 generic WFD 形式替代路径账本的错误方向。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_path_source_firewall_router.py
+docs/monograph/prime-matrix-clean-core-path-source-firewall-router.md/json
+```
+
+该路由器把 `CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn` 继续压到 pre-Cauchy
+系数来源律。结论为：
+
+```text
+clean_core_path_source_firewall_boundary_closed=true；
+clean_core_precauchy_source_law_proved=false；
+clean_core_path_partition_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+来源律是：路径分割账本必须建立在 Cauchy/dispersion 前的 actual clean-core `alpha/delta` 系数公式上；
+该公式要给出 exact 来源、polylog 路径签名、同路径非零/无抵消，以及路径超预算或薄块的命名回流。
+防火墙律是：canonical 决策树只能作为模板，不能跨分支导入；generic WFD 形式已被 moving-delta 阻断。
+
+最新条件输入基为：
+
+```text
+(CleanCorePreCauchyCoefficientSourceLawAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCorePreCauchyCoefficientSourceLawAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明 clean-core 来源律；它只是关闭 canonical 决策树偷渡和 generic WFD 形式替代 actual source law
+这两个错误方向。

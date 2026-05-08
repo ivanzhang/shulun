@@ -1834,3 +1834,43 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 polylog；同路径贡献非零、无抵消，或继续细分到互斥；thin、路径超预算、抵消或来源失败必须回流到
 PDEC/SAE/ColumnCRT/CleanKLS 或外部 KLS。若这套路径账本成立，selector retention 的 pigeonhole
 保留率会给出 log-power 支撑，从而推出 clean-core exact layer transfer。当前材料尚未证明该路径账本。
+
+## 21. clean-core 路径来源防火墙
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_path_source_firewall_router.py
+docs/monograph/prime-matrix-clean-core-path-source-firewall-router.md/json
+
+clean_core_path_source_firewall_boundary_closed=true；
+clean_core_precauchy_source_law_proved=false；
+clean_core_path_partition_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把路径分割账本继续压到来源层：路径签名、无抵消和路径数预算必须作用在 Cauchy/dispersion 之前的
+actual clean-core `alpha/delta` 系数公式上。canonical RIW/Buchstab 决策树可以作为模板，但其来源账本只
+覆盖 canonical-source 分支；generic WFD 形式也已被 moving-delta 阻断，不能替代 actual 来源公式。
+
+最新条件输入基为：
+
+```text
+(CleanCorePreCauchyCoefficientSourceLawAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCorePreCauchyCoefficientSourceLawAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+`CleanCorePreCauchyCoefficientSourceLawAndReturn` 要求在 Cauchy、Type/Fourier、completion 之前写出
+actual clean-core 系数来源公式；由该公式导出 polylog exact path signatures；证明同路径非零无抵消；
+source-law 失败、路径超预算、thin/rejected block 必须回流到 PDEC/SAE/ColumnCRT/CleanKLS，或进入外部
+谱输入。当前材料尚未证明该来源律。
