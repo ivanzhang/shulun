@@ -3559,6 +3559,39 @@ The source-side input asks for a pre-Cauchy definition of the actual noncanonica
 clean-core coefficients, a deterministic summand emitter for \(\alpha/\delta\), branch keys,
 \(u/v\) maps, signs and local factors, and compatibility with the same formal unit used by
 the support, capacity and return ledgers.  This formula is not proved here.
+
+Finally, the external-lemma parameter-match router compares this remaining self-contained
+atom with the available DI/BFI/Kuznetsov tools.  It records
+\[
+\begin{gathered}
+  \texttt{external\_lemma\_parameter\_match\_boundary\_closed=true},\\
+  \texttt{external\_lemmas\_match\_constructor\_formula=false},\\
+  \texttt{external\_lemmas\_close\_self\_contained\_remainder=false},\\
+  \texttt{external\_spectral\_atom\_accepted=false},\\
+  \texttt{actual\_noncanonical\_primitive\_constructor\_formula\_proved=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The comparison is structural.  DI/Kuznetsov and BFI act after coefficients, residue weights,
+or Kloosterman phases have already been produced: they give spectral or AP-distribution
+control.  The current self-contained atom is earlier in the chain: it asks for the
+pre-Cauchy actual noncanonical source constructor and summand emitter.  Therefore those
+external lemmas cannot replace the constructor formula.  They remain relevant only to the
+external spectral branch, whose narrow target is
+\begin{quote}\footnotesize\ttfamily
+CDependentResidueWeightSpectralCancellationInput.
+\end{quote}
+The conditional basis is unchanged:
+\begin{quote}\footnotesize\ttfamily
+(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn\\
+OR CDependentResidueWeightSpectralCancellationInput)\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The fully self-contained basis remains
+\begin{quote}\footnotesize\ttfamily
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
 \end{proof}
 
 

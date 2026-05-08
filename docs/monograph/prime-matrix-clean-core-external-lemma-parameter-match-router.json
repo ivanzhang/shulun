@@ -1,0 +1,158 @@
+{
+  "actual_noncanonical_primitive_constructor_formula_proved": false,
+  "certificate_type": "prime_matrix_clean_core_external_lemma_parameter_match_router",
+  "comparison_law": "外部 DI/BFI/Kuznetsov 引理与当前自足原子处在不同层级：外部引理处理 completion 之后的 Kloosterman/AP/谱平均，要求系数或 residue 权重已经给定；当前自足原子要求在 Cauchy/dispersion 前写出 actual noncanonical alpha/delta 的 primitive constructor。因此外部引理不能替代该公式，只能作为 external_spectral 分支的候选。",
+  "external_lemma_parameter_match_boundary_closed": true,
+  "external_lemmas_close_self_contained_remainder": false,
+  "external_lemmas_match_constructor_formula": false,
+  "external_primary_sources_identified": true,
+  "external_sources": [
+    {
+      "not_usable_for": "pre-Cauchy source constructor 或 actual summand emitter。",
+      "object": "Kloosterman sums and Fourier coefficients of cusp forms",
+      "source": "Deshouillers-Iwaniec 1982/83",
+      "url": "https://eudml.org/doc/142975",
+      "usable_for": "谱 Kloosterman 大筛、Kuznetsov/trace formula 后的平均抵消。"
+    },
+    {
+      "not_usable_for": "non-AP clean-core primitive constructor formula。",
+      "object": "Primes in arithmetic progressions to large moduli, Theorem 10",
+      "source": "Bombieri-Friedlander-Iwaniec 1986",
+      "url": "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/6385-11511_2006_Article_BF02399204.pdf",
+      "usable_for": "well-factorable AP discrepancy / dispersion framework。"
+    },
+    {
+      "not_usable_for": "c-dependent completed residue weights 或 pre-Cauchy source emitter。",
+      "object": "well-factorable AP estimates to larger moduli",
+      "source": "Maynard 2020",
+      "url": "https://arxiv.org/abs/2006.07088",
+      "usable_for": "更强 AP/well-factorable 分布背景。"
+    }
+  ],
+  "external_spectral_atom_accepted": false,
+  "latest_conditional_basis": "(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinput": "ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn",
+  "latest_self_contained_basis": "ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "match_rows": [
+    {
+      "lemma_family": "DI_Kuznetsov_KLS",
+      "matches_constructor_formula": false,
+      "parameter_match": "partial",
+      "reason": "DI/Kuznetsov 处理的是已给定系数向量后的 Kloosterman 模数/频率平均；当前自足原子要求 Cauchy 前生成 alpha/delta summand。",
+      "route": "只能进入 external_spectral 或 KLS-window 分支。",
+      "structure_match": "post_completion_inverse_phase_average"
+    },
+    {
+      "lemma_family": "BFI1986_Theorem10",
+      "matches_constructor_formula": false,
+      "parameter_match": "AP_source_only",
+      "reason": "BFI Theorem 10 的对象是 AP discrepancy 与 well-factorable 模权；当前对象是 non-AP clean-core primitive source constructor。",
+      "route": "若能证明 APSourceLift 才可回接；当前 APSourceLift 未证。",
+      "structure_match": "well_factorable_AP_discrepancy"
+    },
+    {
+      "lemma_family": "Maynard_WellFactorable_AP",
+      "matches_constructor_formula": false,
+      "parameter_match": "not_c_dependent_completed_weight",
+      "reason": "Maynard 扩展 AP/well-factorable 平均范围，但仍不是 actual noncanonical summand emitter，也不处理当前 B_{c,x} 依赖。",
+      "route": "可作外部谱路线背景，不能替代自足公式。",
+      "structure_match": "stronger_AP_level_background"
+    },
+    {
+      "lemma_family": "KLS_Window_Template",
+      "matches_constructor_formula": false,
+      "parameter_match": "matched_for_two_point_or_clean_KLS_template",
+      "reason": "仓库 KLS-window 模板已把相位、模数、频率和 well-factorable 权重对齐到外部 KLS，但它从已给定系数开始，不生成 noncanonical clean-core 系数。",
+      "route": "KuznetsovLSAtomSC9OrExternalCitation",
+      "structure_match": "phase_modulus_frequency_match_after_CRT"
+    },
+    {
+      "lemma_family": "Completed_CDependentResidueSpectral",
+      "matches_constructor_formula": false,
+      "parameter_match": "open",
+      "reason": "After full-S completion, the remaining obstacle is not the length of the s-window. The residue weights B_{c,x} have an L2 budget, but they are c-dependent and not flat or centered. Pointwise Weil with Cauchy reaches only the natural/root scale and ordinary large sieve lacks the required c,h dispersion structure. Therefore the next honest atom is a spectral cancellation theorem for c-dependent completed residue weights.",
+      "route": "CDependentResidueWeightSpectralCancellationInput",
+      "structure_match": "closest_external_target"
+    },
+    {
+      "lemma_family": "Existing_DI_BFI_Primary_Source_Specialization",
+      "matches_constructor_formula": false,
+      "parameter_match": "blocked_by_scale_or_object",
+      "reason": "The final primary-source check is not a missing citation. BFI Theorem 10, correctly located in the 1986 Acta Math paper, closes AP-source discrepancies with positive level slack, but the current remaining branch is non-AP WFD. The DI/Maynard Kloosterman J-scale cannot supply the custom full-S KLS-ext theorem when s=q=1/2, since n+2r+5s+q<=2 already fails before adding n and r. Therefore deriving FullS-KLS-ext from existing DI/BFI primary sources is rejected.",
+      "route": "NewFullSTheoremInputOrAPSourceLift",
+      "structure_match": "rejected_for_full_S_non_AP"
+    }
+  ],
+  "plain_conclusion": "与外部引理逐项对比后，最新完全自足剩余没有被外部定理消掉：DI/BFI/Kuznetsov 只能处理完成后的谱平均或 AP/well-factorable 分布，不能生成 pre-Cauchy actual noncanonical summand emitter。完全自足剩余仍是 ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn。",
+  "previous_input": "ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CurrentSelfContainedAtomPinned",
+      "meaning": "上一层已把完全自足源侧剩余压成 actual noncanonical constructor formula。",
+      "proved": false,
+      "remaining": "核对外部引理是否可替代该公式。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalPrimarySourcesIdentified",
+      "meaning": "外部索引已定位 DI Kloosterman 与 BFI well-factorable AP 主来源。",
+      "proved": true,
+      "remaining": "这些来源的对象是否匹配当前原子。"
+    },
+    {
+      "closed": true,
+      "gate": "KLSWindowAdaptationAvailable",
+      "meaning": "KLS-window 已有相位、模数、频率、权重和损失适配模板。",
+      "proved": true,
+      "remaining": "模板属于 completion 后谱平均，不是 source constructor。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalLemmasDoNotEmitPreCauchySummands",
+      "meaning": "DI/BFI/Kuznetsov 输入都从已给定系数或完成型权重开始，不能生成 alpha/delta summand emitter。",
+      "proved": true,
+      "remaining": "自足 constructor formula 仍需内部证明。"
+    },
+    {
+      "closed": true,
+      "gate": "PrimarySourceSpecializationNoGoRetained",
+      "meaning": "现有 DI/BFI 主来源不能直接推出 full-S non-AP KLS-ext。",
+      "proved": true,
+      "remaining": "若走外部路线，仍需新 Full-S 定理或 APSourceLift。"
+    },
+    {
+      "closed": true,
+      "gate": "CDependentResidueExternalTargetStillOpen",
+      "meaning": "最接近的外部谱目标仍是 c-dependent residue weight cancellation。",
+      "proved": false,
+      "remaining": "证明或接受该外部谱输入。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualNoncanonicalConstructorFormulaStillOpen",
+      "meaning": "外部引理匹配不能替代 actual noncanonical primitive source constructor formula。",
+      "proved": false,
+      "remaining": "证明 ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/external-theorem-index.md": "8869177a4748f67e281ec33533ac2704242ae1ab32384476b73e888535caf4a1",
+    "docs/monograph/kls-window-di-bfi-adaptation-template.md": "cd3acedb20cfeb4c8dd31d9804d46102bad1665e467ac86c40436b20b6531941",
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-triad-a1-clean-kls-external-input-router.json": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-primary-source-specialization-nogo-router.json": "23fcf1606c36412403096fed957e44d7b3ece1fc8f2c6d5290cd1e29bce7bda8"
+  },
+  "status": "external_lemmas_do_not_close_self_contained_constructor_formula"
+}

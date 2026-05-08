@@ -4354,3 +4354,51 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明 actual noncanonical primitive constructor formula。它闭合的是来源分类防火墙：canonical、generic、
 unregistered 和 external 类都已按边界处理，唯一自足剩余是 actual noncanonical 显式公式。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_external_lemma_parameter_match_router.py
+docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.md/json
+```
+
+该路由器把最新自足原子与 DI/BFI/Kuznetsov 外部引理逐项做结构和参数匹配。结论为：
+
+```text
+external_lemma_parameter_match_boundary_closed=true；
+external_lemmas_match_constructor_formula=false；
+external_lemmas_close_self_contained_remainder=false；
+external_spectral_atom_accepted=false；
+actual_noncanonical_primitive_constructor_formula_proved=false；
+row_column_unconditional_closed=false。
+```
+
+对比律是：外部 DI/BFI/Kuznetsov 引理与当前自足原子处在不同层级。外部引理处理 completion 之后的
+Kloosterman/AP/谱平均，要求系数或 residue 权重已经给定；当前自足原子要求在 Cauchy/dispersion 前写出
+actual noncanonical `alpha/delta` 的 primitive constructor。故外部引理不能替代该公式，只能作为
+`external_spectral` 分支候选。
+
+参数匹配矩阵的核心结论如下：
+
+| 引理族 | 匹配处 | 不匹配处 | 路由 |
+| --- | --- | --- | --- |
+| DI/Kuznetsov KLS | 完成后逆元相位、模数/频率平均 | 不生成 pre-Cauchy summand emitter | external KLS |
+| BFI Theorem 10 | well-factorable AP discrepancy | 当前对象为 non-AP constructor | APSourceLift 或外部 |
+| Maynard well-factorable AP | 更强 AP 分布背景 | 不处理 `B_{c,x}` 依赖或 source emitter | 背景，不闭合 |
+| KLS-window template | CRT 相位、模数、频率已匹配 | 从已给定系数开始 | CleanKLS/external |
+| C-dependent completed residue spectral | 最接近外部目标 | 尚无接受定理 | `CDependentResidueWeightSpectralCancellationInput` |
+
+因此最新输入基保持：
+
+```text
+(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基仍为：
+
+```text
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```

@@ -2004,3 +2004,47 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 这个新输入要求在 Cauchy/dispersion 前写出 actual noncanonical clean-core 系数定义，给出确定性 summand
 emitter，输出 `alpha/delta`、branch key、`u/v` map、符号和 local factor，并证明它与后续支撑、容量和回流账本
 处于同一个 formal unit。当前材料尚未证明该显式公式。
+
+## 25. clean-core 外部引理参数匹配
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_external_lemma_parameter_match_router.py
+docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.md/json
+
+external_lemma_parameter_match_boundary_closed=true；
+external_lemmas_match_constructor_formula=false；
+external_lemmas_close_self_contained_remainder=false；
+external_spectral_atom_accepted=false；
+actual_noncanonical_primitive_constructor_formula_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把当前自足原子与 DI/BFI/Kuznetsov 等外部引理逐项对比。结论是：外部引理与当前自足原子不在同一层级。
+外部引理处理的是 completion 之后的 Kloosterman/AP/谱平均问题，要求系数向量或 residue 权重已经给定；而当前
+`ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn` 要求在 Cauchy/dispersion 前写出 actual
+noncanonical `alpha/delta` 的 primitive constructor 和 summand emitter。
+
+参数匹配后的结论：
+
+- DI/Kuznetsov Kloosterman 大筛：可处理完成后逆元相位平均，不能生成 pre-Cauchy summand；
+- BFI Theorem 10：对象是 well-factorable AP discrepancy，不能直接覆盖 non-AP clean-core constructor；
+- Maynard 类 well-factorable AP 强化：仍属于 AP/well-factorable 分布背景，不处理 `B_{c,x}` 依赖或 source emitter；
+- KLS-window 模板：相位、模数、频率匹配的是完成后谱分支，不是 constructor 公式；
+- 最接近的外部目标仍是 `CDependentResidueWeightSpectralCancellationInput`，但它尚未证明或接受。
+
+因此最新完全自足输入基不变：
+
+```text
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+外部路线的条件输入基也不变：
+
+```text
+(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
