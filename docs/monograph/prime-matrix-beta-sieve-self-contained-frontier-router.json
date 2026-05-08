@@ -1,0 +1,193 @@
+{
+  "certificate_type": "beta_sieve_self_contained_frontier_router",
+  "status": "beta_sieve_frontier_split_to_three_self_contained_atoms_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-nearsquare-canonical-terminal-absorption-router.json": "0733e7755d853ea4be0af2810de9e45d75980eaf92faa543fb1cca57c2a52e83",
+    "docs/monograph/prime-matrix-explicit-rosser-lower-weight-ledger-router.json": "4a79d8c4c1e7a2c0042188c2fdb432e5b868c7397ccc72a2e1c070e1b9045ef3"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "beta_sieve_frontier_split_closed": true,
+  "self_contained_beta_sieve_appendix_proved": false,
+  "beta_sieve_main_coefficient_99pct_proved": false,
+  "standard_beta_sieve_import_accepted": false,
+  "external_short_interval_rough_lower_bound_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained_pair": {
+    "(SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000)": "(BetaSieveLowerWeightRecursiveConstructionLedger AND BetaSieveLowerBoundDominanceProof AND BetaSieveMainCoefficientExplicit99PercentPGe100000)"
+  },
+  "replacement_with_standard_import": {
+    "(SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000)": "((BetaSieveLowerWeightRecursiveConstructionLedger AND BetaSieveLowerBoundDominanceProof AND BetaSieveMainCoefficientExplicit99PercentPGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted)"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND (((BetaSieveLowerWeightRecursiveConstructionLedger AND BetaSieveLowerBoundDominanceProof AND BetaSieveMainCoefficientExplicit99PercentPGe100000) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (((BetaSieveLowerWeightRecursiveConstructionLedger AND BetaSieveLowerBoundDominanceProof AND BetaSieveMainCoefficientExplicit99PercentPGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (((BetaSieveLowerWeightRecursiveConstructionLedger AND BetaSieveLowerBoundDominanceProof AND BetaSieveMainCoefficientExplicit99PercentPGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "BetaSieveLowerWeightRecursiveConstructionLedger",
+  "secondary_priority": "BetaSieveLowerBoundDominanceProof",
+  "tertiary_priority": "BetaSieveMainCoefficientExplicit99PercentPGe100000",
+  "conditional_beta_import_priority": "StandardRosserIwaniecBetaSieveTheoremImportAccepted",
+  "external_next_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+  "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "constants": {
+    "tail_start": 100000,
+    "alpha": 0.43,
+    "level_D_choice": "D=P",
+    "s_logD_over_logz": 2.3255813953488373,
+    "linear_sieve_f": 0.43171768922908227,
+    "model_main_at_tail_start": 4896.256003716197,
+    "target_s": 401,
+    "target_ratio_of_model_main": 0.08189931239209021,
+    "sawtooth_loss_fraction_budget": 0.9,
+    "minimum_main_fraction_after_90pct_sawtooth_loss": 0.9818993123920903,
+    "conservative_main_fraction": 0.99,
+    "conservative_allowed_normalized_error_1pct_f": 0.004317176892290826,
+    "z_at_tail_start": 141.25375446227542,
+    "floor_z_at_tail_start": 141,
+    "s_with_floor_z": 2.3264263613505904,
+    "v_model": 0.11341337466295243,
+    "ten_percent_main_at_tail_start": 489.62560037161967,
+    "required_normalized_coefficient_after_90pct_loss": 0.423903302201538,
+    "conservative_normalized_coefficient_99pct": 0.42740051233679144,
+    "allowed_normalized_coefficient_error_after_90pct_loss": 0.007814387027544271,
+    "tail_main_monotone_after_e": true,
+    "ten_percent_main_exceeds_target": true,
+    "s_in_linear_lower_sieve_range_2_to_3": true,
+    "floor_z_preserves_s_gt_2": true,
+    "conservative_surplus_fraction": 0.008100687607909718,
+    "conservative_surplus_count_at_tail_start": 39.66304033445735
+  },
+  "self_contained_subatoms": [
+    "BetaSieveLowerWeightRecursiveConstructionLedger",
+    "BetaSieveLowerBoundDominanceProof",
+    "BetaSieveMainCoefficientExplicit99PercentPGe100000"
+  ],
+  "construction_contract": [
+    "定义有限递归 lower weights lambda_d^-，并证明 lambda_1^-=1、lambda_d^- in {-1,0,1}。",
+    "证明 lambda_d^- 只支撑在 squarefree d<=P 且所有素因子 <P^0.43 的 d 上。",
+    "递归必须完全有限化；不能直接引用标准 beta-sieve 定理作为自足证明。"
+  ],
+  "dominance_contract": [
+    "对任意整数 n，按 n 的小素因子集合做有限归纳。",
+    "证明 lower weights 的 alternating 递归给出筛剩余指示函数的下界。",
+    "该证明只依赖递归结构，不依赖真实零行缺席或统计实验。"
+  ],
+  "main_coefficient_contract": [
+    "把 W^-(P)=sum lambda_d^-/d 与 V(z)f(s) 比较。",
+    "在 P>=100000、s=1/0.43 下证明 W^-(P)>=0.99 V(z)f(s)。",
+    "等价归一误差目标为 <=0.004317176892290826。"
+  ],
+  "plain_conclusion": "本步把 beta-sieve 双输入拆成三枚可审查原子。参数、支撑与容量乘子已经由上一层账本固定：D=P、z=P^0.43、s=2.325581，且 99% 主系数足以覆盖 90% sawtooth 损失后的 401 目标。真正自足剩余现在是：有限递归 lower weights 构造、lower-bound 支配证明、以及 P>=100000 的 1% 显式主系数误差。",
+  "rows": [
+    {
+      "gate": "BetaSieveFrontierGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "最新 canonical 自足输入基正卡在 beta-sieve 自足构造与 99% 主系数双原子。",
+      "remaining": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行反例链条内整理尾段筛输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "SupportLevelAndSAlreadyPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已固定 D=P、z=P^0.43、s=1/0.43，且权重支撑只允许 squarefree d<=P、p|d=>p<z。",
+      "remaining": "无新的参数自由度。"
+    },
+    {
+      "gate": "CapacityMultiplierDisciplinePreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "90% sawtooth 损失预算要求主系数至少保留 0.981899...；99% 目标在 P=100000 仍有正余量。",
+      "remaining": "BetaSieveMainCoefficientExplicit99PercentPGe100000"
+    },
+    {
+      "gate": "SelfContainedAppendixSplitToConstructionAndDominance",
+      "closed": true,
+      "proved": false,
+      "meaning": "自足 beta-sieve 附录不再是单一黑箱；它必须拆成 finite recursive lower weights 与 lower-bound 支配证明。",
+      "remaining": "BetaSieveLowerWeightRecursiveConstructionLedger AND BetaSieveLowerBoundDominanceProof"
+    },
+    {
+      "gate": "MainCoefficientAtomRenormalizedToOnePercent",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧 99% 主系数输入被重写为一个明确的 1% 归一误差账本。",
+      "remaining": "BetaSieveMainCoefficientExplicit99PercentPGe100000"
+    },
+    {
+      "gate": "StandardBetaSieveImportBoundaryMarked",
+      "closed": true,
+      "proved": false,
+      "meaning": "标准 Rosser-Iwaniec beta-sieve 定理可作为 conditional 导入，但不能算作自足闭合。",
+      "remaining": "StandardRosserIwaniecBetaSieveTheoremImportAccepted"
+    },
+    {
+      "gate": "BetaSieveLowerWeightRecursiveConstructionLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要逐行给出 beta-sieve lower weights 的有限递归、截断、符号与支撑。",
+      "remaining": "BetaSieveLowerWeightRecursiveConstructionLedger"
+    },
+    {
+      "gate": "BetaSieveLowerBoundDominanceProof",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要证明对任意整数 n 有 sum_{d|(n,P(z))} lambda_d^- <= 1_{(n,P(z))=1}。",
+      "remaining": "BetaSieveLowerBoundDominanceProof"
+    },
+    {
+      "gate": "BetaSieveMainCoefficientExplicit99PercentPGe100000",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要把离散权重主系数与连续 f(1/0.43) 的误差显式压到 1% 以内，且 P>=100000 全尾段有效。",
+      "remaining": "BetaSieveMainCoefficientExplicit99PercentPGe100000"
+    },
+    {
+      "gate": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部短区间 rough-number 下界仍可绕开整个内部 beta-sieve 包。",
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "closed": false,
+      "proved": false,
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "BetaSieveFrontierGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "SupportLevelAndSAlreadyPinned",
+    "CapacityMultiplierDisciplinePreserved",
+    "SelfContainedAppendixSplitToConstructionAndDominance",
+    "MainCoefficientAtomRenormalizedToOnePercent",
+    "StandardBetaSieveImportBoundaryMarked"
+  ],
+  "open_gates": [
+    "BetaSieveLowerWeightRecursiveConstructionLedger",
+    "BetaSieveLowerBoundDominanceProof",
+    "BetaSieveMainCoefficientExplicit99PercentPGe100000",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
