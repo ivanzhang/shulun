@@ -6126,3 +6126,86 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 下一步最窄目标更新为 `DLSFlatHighModLargeSieveAbsorption`：证明经过 PointLoad/ShortWindow/LowPhase/new-layer
 cap 删除后的高模平坦残余满足大筛吸收界；若失败，必须输出对偶高频缺陷并回流
 PDEC/SAE/ColumnCRT/外部谱输入。
+
+## Prime Matrix 早期零行反例 flat-DLS 最后逃逸路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_early_zero_flatdls_counterexample_router.py
+docs/monograph/prime-matrix-early-zero-flatdls-counterexample-router.md/json
+```
+
+该路由器把 `DLSFlatHighModLargeSieveAbsorption` 放回“假设 P 行以内早期零行存在”的反例分支中解释。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+early_zero_flatdls_last_escape_boundary_closed=true；
+dls_flat_highmod_large_sieve_absorption_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=DLSFlatHighModLargeSieveAbsorption；
+terminal_gap_after_router=EarlyZeroL2FlatKLSCounterexampleSpectralExclusion_OR_CDependentResidueWeightSpectralCancellationInput。
+```
+
+反例分支链条固定为：
+
+```text
+Assume EarlyZeroRowWithinP；
+named low-dimensional exits removed；
+flat-DLS residual must pay remaining zero-row budget；
+SN3-A/B low projection peak => SAE/PDEC/ColumnCRT；
+SN3-C multiband sync => ShellOverlap/LowModSync/KLS-Multishell；
+SN3-D KLS-Multishell => HighFrequencyColumn or L2FlatKLS；
+SN3-E HighFrequencyColumn => Bohr-cap PDEC/ColumnCRT/SAE or L2-flat CleanKLS；
+only last escape: L2-flat KLS spectral/NC-BLK input。
+```
+
+注意：这一步不使用真实样本中未见早期零行作为证明，也不证明 flat high-mod 大筛吸收界。它只证明在反例支付压力下，短窗、低模、列频率或 Bohr-cap 集中都不能作为无名逃逸，必须回流 `SAE/PDEC/ColumnCRT`；真正剩余只有反例专属的 L2-flat KLS 谱逃逸。
+
+替换律为：
+
+```text
+DLSFlatHighModLargeSieveAbsorption
+  =>
+EarlyZeroL2FlatKLSCounterexampleSpectralExclusion。
+```
+
+条件/外部版仍可由 `CDependentResidueWeightSpectralCancellationInput` 承担。
+
+已经闭合的门为：
+
+```text
+EarlyZeroCounterexampleAssumptionPinned；
+FlatDLSGateActiveInCounterexampleBasis；
+EmpiricalShortcutExplicitlyBlocked；
+SN3LowProjectionPeelingInherited；
+SN3MultibandSyncSplitInherited；
+SN3ColumnFrequencyDichotomyInherited；
+HighFrequencyBohrCapNoCycleInherited；
+CleanKLSAdmissionAndExternalInterfaceRegistered；
+CDependentSpectralReductionKnownButOpen；
+EarlyZeroFlatDLSLastEscapeBoundaryClosed。
+```
+
+唯一开放门为：
+
+```text
+EarlyZeroL2FlatKLSCounterexampleSpectralExclusion。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND EarlyZeroL2FlatKLSCounterexampleSpectralExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `EarlyZeroL2FlatKLSCounterexampleSpectralExclusion`：在假设早期零行存在的反例分支中，证明 L2-flat 高频 KLS 残余不能继续支付零行余量；若证明失败，必须输出同 formal unit 的高频 Bohr/PDEC/SAE/ColumnCRT 证书，或明确接受/匹配 `CDependentResidueWeightSpectralCancellationInput`。

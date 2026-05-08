@@ -1,0 +1,134 @@
+{
+  "certificate_type": "early_zero_flatdls_counterexample_router",
+  "closed_gates": [
+    "EarlyZeroCounterexampleAssumptionPinned",
+    "FlatDLSGateActiveInCounterexampleBasis",
+    "EmpiricalShortcutExplicitlyBlocked",
+    "SN3LowProjectionPeelingInherited",
+    "SN3MultibandSyncSplitInherited",
+    "SN3ColumnFrequencyDichotomyInherited",
+    "HighFrequencyBohrCapNoCycleInherited",
+    "CleanKLSAdmissionAndExternalInterfaceRegistered",
+    "CDependentSpectralReductionKnownButOpen",
+    "EarlyZeroFlatDLSLastEscapeBoundaryClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "counterexample_chain": [
+    "Assume EarlyZeroRowWithinP",
+    "named low-dimensional exits removed",
+    "flat-DLS residual must pay remaining zero-row budget",
+    "SN3-A/B low projection peak => SAE/PDEC/ColumnCRT",
+    "SN3-C multiband sync => ShellOverlap/LowModSync/KLS-Multishell",
+    "SN3-D KLS-Multishell => HighFrequencyColumn or L2FlatKLS",
+    "SN3-E HighFrequencyColumn => Bohr-cap PDEC/ColumnCRT/SAE or L2-flat CleanKLS",
+    "only last escape: L2-flat KLS spectral/NC-BLK input"
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "dls_flat_highmod_large_sieve_absorption_proved": false,
+  "early_zero_flatdls_last_escape_boundary_closed": true,
+  "empirical_absence_not_used": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND EarlyZeroL2FlatKLSCounterexampleSpectralExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND EarlyZeroL2FlatKLSCounterexampleSpectralExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "EarlyZeroL2FlatKLSCounterexampleSpectralExclusion",
+  "open_gates": [
+    "EarlyZeroL2FlatKLSCounterexampleSpectralExclusion"
+  ],
+  "plain_conclusion": "本步把 DLSFlatHighModLargeSieveAbsorption 放回早期零行反例分支中解释：反例若仍靠高模平坦残余支付零行，任何短窗、低模、列频率或 Bohr-cap 集中都会回流 SAE/PDEC/ColumnCRT；真正剩下的唯一逃逸是 L2-flat KLS 谱逃逸。因此下一步不是证明真实分布本身，而是排斥这个反例专属的 L2-flat 谱逃逸。",
+  "replacement": {
+    "DLSFlatHighModLargeSieveAbsorption": "EarlyZeroL2FlatKLSCounterexampleSpectralExclusion"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EarlyZeroCounterexampleAssumptionPinned",
+      "meaning": "本路由只在假设存在 P 行以内早期零行的反例分支中工作。",
+      "proved": true,
+      "remaining": "不使用真实样本未见零行作为证明。"
+    },
+    {
+      "closed": true,
+      "gate": "FlatDLSGateActiveInCounterexampleBasis",
+      "meaning": "上一层已把 new-layer 无集中 residual 准入到 DLSFlatHighModLargeSieveAbsorption。",
+      "proved": true,
+      "remaining": "现在必须把它解释为反例最后支付压力，而不是普通真实分布估计。"
+    },
+    {
+      "closed": true,
+      "gate": "EmpiricalShortcutExplicitlyBlocked",
+      "meaning": "早期零行矛盾矩阵已声明：真实样本中未见早期零行不能替代假设分支证明。",
+      "proved": true,
+      "remaining": "所有结论必须从反例支付压力推出。"
+    },
+    {
+      "closed": true,
+      "gate": "SN3LowProjectionPeelingInherited",
+      "meaning": "若 flat-DLS 支付出现短窗、q 低模或 d 低模峰，则 SN3-A/B 直接回流 SAE/PDEC/ColumnCRT。",
+      "proved": true,
+      "remaining": "剩余才是 TrueDistributedDLS。"
+    },
+    {
+      "closed": true,
+      "gate": "SN3MultibandSyncSplitInherited",
+      "meaning": "同行多真分散带若有 ShellOverlap 或 LowModSync，分别回流 SAE 或 PDEC/ColumnCRT。",
+      "proved": true,
+      "remaining": "剩余才是 KLS-Multishell。"
+    },
+    {
+      "closed": true,
+      "gate": "SN3ColumnFrequencyDichotomyInherited",
+      "meaning": "KLS-Multishell 的有限列 Fourier 二分给出 HighFrequencyColumn 或 L2FlatKLS。",
+      "proved": true,
+      "remaining": "非零列频率不是无名 flat-DLS 质量。"
+    },
+    {
+      "closed": true,
+      "gate": "HighFrequencyBohrCapNoCycleInherited",
+      "meaning": "HighFrequencyColumn 必须成为 Bohr-cap，并回流 PDEC/ColumnCRT/SAE，或退化为 L2-flat CleanKLS。",
+      "proved": true,
+      "remaining": "高频出口不能形成无名循环。"
+    },
+    {
+      "closed": true,
+      "gate": "CleanKLSAdmissionAndExternalInterfaceRegistered",
+      "meaning": "L2-flat CleanKLS 只有在 K1--K9 准入通过后才能调用；外部 KLS 输入已登记。",
+      "proved": false,
+      "remaining": "自足版仍需实际谱/dispersion 估计。"
+    },
+    {
+      "closed": true,
+      "gate": "CDependentSpectralReductionKnownButOpen",
+      "meaning": "完成型 c-dependent residue 谱输入已接到 BWFD/BSC/KFLS/NC-BLK 核心链。",
+      "proved": false,
+      "remaining": "NCBLKActualBlockNonConcentrationOrExternalDIBFI 仍未证明或接受。"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroFlatDLSLastEscapeBoundaryClosed",
+      "meaning": "早期零行反例的 flat-DLS 最后逃逸已被压成唯一 L2-flat KLS 谱逃逸或命名 Bohr/PDEC/SAE/ColumnCRT 回流。",
+      "proved": true,
+      "remaining": "它不再是直接真实分布证明口。"
+    },
+    {
+      "closed": false,
+      "gate": "EarlyZeroL2FlatKLSCounterexampleSpectralExclusion",
+      "meaning": "尚未证明早期零行反例所需的 L2-flat 高频残余谱吸收或实际 NC-BLK 排斥。",
+      "proved": false,
+      "remaining": "下一步最窄目标。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-early-zero-contradiction-matrix-router.json": "cea1b53a99a6d5e6f0fb6fa9a9d95476b1beb107cbcec68113454428eb68ebf1",
+    "docs/monograph/prime-matrix-newlayer-no-concentration-flat-admission-router.json": "1e59ee2065f6e837ddccdfcfc2cb3812aca4e726e6b85816848f0addd8cd1d8c",
+    "docs/monograph/prime-matrix-sn3a-centered-lowmod-return-certificate.md": "d9a68006753ba43c8d248c8b33f74cc6d6171972c45d7f8a454224eee434e42f",
+    "docs/monograph/prime-matrix-sn3b-true-distributed-residual-target.md": "c9618862238a04893eabd8d5d10ce5473b48cd6dcb5a2f90ac8d31573a4e919b",
+    "docs/monograph/prime-matrix-sn3c-multiband-sync-split.md": "1672612ad67d2dcbcb0f08a533d0fcebb3519d5a3f4f009a2736915284b7e6db",
+    "docs/monograph/prime-matrix-sn3d-kls-multishell-frequency-bridge.md": "43ef73be715fb041b21ec1b0810ef1c7a868050aff568100e2bac530b44f8067",
+    "docs/monograph/prime-matrix-sn3e-highfreq-bohrcap-no-cycle.md": "eac281a2e6fce6faaf4c89be47bab9f19fc76253e9483fa4cb2bbb960c48dd2a",
+    "docs/monograph/prime-matrix-triad-a1-clean-kls-external-input-router.json": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-c-dependent-residue-spectral-reduction-router.json": "6a720ca520c5652928da6b14bd8c314c28396791e9c16c24a75cf5755980898c"
+  },
+  "status": "early_zero_flatdls_reduced_to_l2flat_kls_spectral_escape",
+  "terminal_gap_after_router": "EarlyZeroL2FlatKLSCounterexampleSpectralExclusion_OR_CDependentResidueWeightSpectralCancellationInput",
+  "terminal_gap_before_router": "DLSFlatHighModLargeSieveAbsorption"
+}
