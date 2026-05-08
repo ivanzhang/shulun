@@ -2862,3 +2862,37 @@ narrowest_global_next_hardpoint=
 `DIBFIQuantifiedNoProjectionWindowCertificate` 只属于 generic/external 原始 `DI/BFI` 路线。
 完整行/列无条件命题仍需全局终端家族晋级审查与 `DStructureRankinReferee`，不能由这次
 PDEC-CAP 自足边界提升替代。
+
+继续新增：
+
+```text
+experiments/prime_matrix_canonical_terminal_promotion_closure_router.py
+docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.md/json
+```
+
+该路由器复核最新自足硬点，并把上层旧拆分中的 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`
+按最新边界重新分类：
+
+```text
+latest_self_contained_hardpoint_closed=true；
+canonical_source_terminal_promotion_closed=true；
+canonical_source_self_contained_boundary_closed=true；
+open_self_contained_gates=[]；
+open_external_gates=[
+  DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY
+]；
+open_final_gates=[
+  DStructureRankinRefereeStillOpen
+]；
+row_column_unconditional_closed=false；
+narrowest_self_contained_boundary=
+  NoFurtherCanonicalSourceTerminalPromotionGap；
+narrowest_global_next_hardpoint=
+  DStructureRankinReferee_FOR_FINAL_PROMOTION。
+```
+
+结构含义是：在 canonical `RIW/Buchstab` 来源分支内，终端晋级已经没有新的自足数学开门。
+当前已物化终端前沿耗尽，三终端无第四出口，PDEC-CAP 由边界提升闭合，canonical
+`CleanKLS/NC-BLK` 被吸收或回流 `PDEC/SAE`。这完成的是 canonical-source 自足终端晋级边界，
+不是 unrestricted/global 终端家族排斥定理，也不是完整行/列无条件命题。外部/generic
+`DI/BFI` 与最终 `DStructureRankinReferee` 仍在该闭合边界之外。

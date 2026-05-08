@@ -519,6 +519,27 @@ open_final_gates=[
 如果要证明完整行/列无条件定理，还必须处理“所有未来终端家族都能被排斥”的全局晋级问题，以及
 `DStructureRankinReferee`。如果要走 generic/external 路线，则另需提交 DI/BFI 无投影量化证书。
 
+继续新增 canonical 终端晋级闭合路由器后：
+
+```text
+experiments/prime_matrix_canonical_terminal_promotion_closure_router.py
+docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.md/json
+
+latest_self_contained_hardpoint_closed=true；
+canonical_source_terminal_promotion_closed=true；
+open_self_contained_gates=[]；
+narrowest_self_contained_boundary=
+  NoFurtherCanonicalSourceTerminalPromotionGap；
+open_final_gates=[
+  DStructureRankinRefereeStillOpen
+]。
+```
+
+通俗说，最后一个 canonical-source 自足硬点已经闭合：当前已物化终端前沿耗尽，三终端无第四出口，
+PDEC-CAP 已由 canonical 边界提升闭合，canonical `CleanKLS/NC-BLK` 也不再是平行硬点。
+剩下的不是自足证明内部的数学开门，而是完整行/列定理升级所需的独立审稿门，以及 generic/external
+版本的 DI/BFI 输入。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
