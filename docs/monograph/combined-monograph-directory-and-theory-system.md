@@ -7453,3 +7453,86 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标为 `IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn`：提交独立的
 pre-Cauchy 算术来源恒等式，或证明任何候选恒等式都必回流到 PDEC/SAE/ColumnCRT/CleanKLS/external spectral。
+
+## Prime Matrix 独立 pre-Cauchy 来源恒等式分类路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_independent_precauchy_identity_taxonomy_router.py
+docs/monograph/prime-matrix-independent-precauchy-identity-taxonomy-router.md/json
+```
+
+该路由器穷尽 `IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn` 的合法来源类。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+hypothetical_chain_only=true；
+identity_taxonomy_closed=true；
+canonical_source_identity_blocked=true；
+generic_wfd_identity_rejected=true；
+ap_source_lift_rejected=true；
+external_spectral_self_contained_identity_proved=false；
+actual_moving_block_spread_proved=false；
+precisely_matched_external_spectral_accepted=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn；
+terminal_gap_after_router=ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn。
+```
+
+分类律为：
+
+```text
+independent pre-Cauchy source identity
+  in {canonical, generic_wfd, AP/external, actual_noncanonical}
+canonical       -> scoped out of noncanonical clean-core
+generic_wfd     -> rejected
+AP/external     -> not self-contained source identity
+actual_noncanonical -> moving-block spread / NC-BLK core。
+```
+
+这一步继续分清假设链条与真实链条：假设早期零行不能自己制造 signed source；即使要求一个独立
+pre-Cauchy 来源恒等式，它也不能走 canonical 偷渡、generic WFD、APSourceLift 或外部谱自足化。自足内部剩余必须落到
+actual noncanonical same-`(u,v)` moving block spread/NC-BLK 核心；外部谱匹配只在条件分支保留。
+
+替换律为：
+
+```text
+IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn
+  =>
+ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn。
+```
+
+已经闭合的门为：
+
+```text
+NoHiddenFourthRouteImported；
+CanonicalSourceIdentityBlockedForNoncanonical；
+GenericWFDIdentityRejected；
+APSourceLiftRejected；
+ExternalSpectralNotSelfContainedSourceIdentity；
+RemainingActualSourceCoreIdentified；
+IndependentPreCauchyIdentityTaxonomyClosed。
+```
+
+仍开放的全局守门项为：
+
+```text
+ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn；
+ExplicitModelGapAndFiniteDPRCLedger；
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步仍不是行/列命题无条件证明；它删除的是“独立来源恒等式”作为新黑箱的可能。更新后的完全自足输入基为：
+
+```text
+ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标为 `ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn`：在假设早期零行反例分支中，
+证明 actual same-`(u,v)` moving block 不能集中到足以支付零行；若改走外部条件分支，则必须精确匹配并接受
+`CDependentResidueWeightSpectralCancellationInput`；否则给出命名 PDEC/SAE/ColumnCRT/CleanKLS 回流证书。

@@ -1,0 +1,127 @@
+{
+  "actual_moving_block_spread_proved": false,
+  "ap_source_lift_rejected": true,
+  "canonical_source_identity_blocked": true,
+  "certificate_type": "independent_precauchy_identity_taxonomy_router",
+  "closed_gates": [
+    "IndependentPreCauchyIdentityGateActive",
+    "NoHiddenFourthRouteImported",
+    "CanonicalSourceIdentityBlockedForNoncanonical",
+    "GenericWFDIdentityRejected",
+    "APSourceLiftRejected",
+    "ExternalSpectralNotSelfContainedSourceIdentity",
+    "RemainingActualSourceCoreIdentified",
+    "IndependentPreCauchyIdentityTaxonomyClosed",
+    "ExplicitModelGapAndFiniteDPRCLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_spectral_self_contained_identity_proved": false,
+  "generic_wfd_identity_rejected": true,
+  "hypothetical_chain_only": true,
+  "identity_taxonomy_closed": true,
+  "latest_conditional_basis": "((ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn",
+  "open_gates": [
+    "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步穷尽 IndependentPreCauchyArithmeticSourceIdentity 的合法来源类：canonical 来源只在 canonical 分支内闭合，generic WFD 来源被 moving-delta/防火墙阻断，APSourceLift 被对象账本拒绝，外部谱定理不能作为完全自足 pre-Cauchy source identity。剩余不再是新恒等式黑箱，而是 actual noncanonical moving-block spread/NC-BLK 数学输入；精确外部谱匹配仍留在条件分支。",
+  "precisely_matched_external_spectral_accepted": false,
+  "replacement": {
+    "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "IndependentPreCauchyIdentityGateActive",
+      "meaning": "最新最窄点要求独立于早期零行覆盖图的 pre-Cauchy 算术来源恒等式。",
+      "proved": false,
+      "remaining": "分类它的所有合法来源类。"
+    },
+    {
+      "closed": true,
+      "gate": "NoHiddenFourthRouteImported",
+      "meaning": "noncanonical full-S 补集合同已声明没有第四条可自足偷渡路线。",
+      "proved": true,
+      "remaining": "候选恒等式必须落入 canonical、generic、external/AP 或 actual-source 类。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalSourceIdentityBlockedForNoncanonical",
+      "meaning": "canonical RIW/Buchstab 来源只在 canonical 分支内闭合。",
+      "proved": true,
+      "remaining": "不能导入 noncanonical clean-core。"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDIdentityRejected",
+      "meaning": "generic WFD/source 模板已被 moving-delta 和来源防火墙阻断。",
+      "proved": true,
+      "remaining": "不能作为 pre-Cauchy source identity。"
+    },
+    {
+      "closed": true,
+      "gate": "APSourceLiftRejected",
+      "meaning": "AP-source lift 是 source-level reclassification；non-AP clean-core 不能静默升级为 AP 源。",
+      "proved": true,
+      "remaining": "若走 AP/DI-BFI 必须新增 full-S theorem 或新 source identity。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralNotSelfContainedSourceIdentity",
+      "meaning": "DI/BFI/Kuznetsov 处理 completion 后系数平均，不能生成 pre-Cauchy summand emitter。",
+      "proved": true,
+      "remaining": "它只能作为精确外部谱输入分支。"
+    },
+    {
+      "closed": true,
+      "gate": "RemainingActualSourceCoreIdentified",
+      "meaning": "所有伪来源恒等式删除后，自足数学核心与 moving-block spread/NC-BLK 汇合；外部谱只保留在条件分支。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentPreCauchyIdentityTaxonomyClosed",
+      "meaning": "独立来源恒等式的合法类别已穷尽；它不能成为新隐藏终端。",
+      "proved": true,
+      "remaining": "剩余是 actual moving-block spread/NC-BLK；精确外部谱输入保留在条件分支。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn",
+      "meaning": "当前材料尚未证明 actual noncanonical moving-block spread/NC-BLK。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "模型余量/有限 DPRC 账本仍在输入基中，未由本步处理。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.md": "7c1963bc7f0d5292df250e13ecc7fe66d4601565dd4050f5cabe8182659058b6",
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.md": "8795cb999b66a3422a5e96a7638dbdc6338c6e6d082cca5d1cf758485058d579",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.md": "ff3fea8fb8aca261b2430ca89e996cb631459e0f19a9387dcf548667b9abcf76",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-ap-source-lift-nogo-router.md": "fd7f6c35a781a6fa78dfd5f033da57a63230f9537c853e7c0a7b263edf05a3c6",
+    "docs/monograph/prime-matrix-unconditional-closure-final-attempt-router.md": "c528bcd72b38a0156f808bf90cd0d3dc5a12f37a8ebd8c9162aced5fe33d5a90"
+  },
+  "status": "independent_precauchy_identity_taxonomy_closed_actual_spread_open",
+  "terminal_gap_after_router": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn",
+  "terminal_gap_before_router": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn"
+}
