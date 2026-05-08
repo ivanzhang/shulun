@@ -29,7 +29,7 @@ DEFAULT_MD = DOCS / "prime-matrix-explicit-rosser-lower-weight-ledger-router.md"
 OLD_ATOM = "ExplicitRosserIwaniecLowerWeightLedgerAlpha043PGe100000"
 SAWTOOTH_ATOM = "ExactResidueWeightedFloorSawtoothTenPercentBound"
 SELF_BETA_ATOM = "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix"
-MAIN_ERROR_ATOM = "BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000"
+MAIN_ERROR_ATOM = "BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000"
 STD_IMPORT_ATOM = "StandardRosserIwaniecBetaSieveTheoremImportAccepted"
 EXTERNAL_ROUGH_ATOM = "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
 EXTERNAL_DIBFI_ATOM = "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
@@ -39,6 +39,8 @@ ALPHA = 0.43
 TAIL_START = 100_000
 TARGET_S = 401
 TEN_PERCENT = 0.10
+SAWTOOTH_LOSS_FRACTION = 0.90
+CONSERVATIVE_MAIN_FRACTION = 0.99
 EULER_GAMMA = 0.5772156649015329
 
 
@@ -84,8 +86,12 @@ def constant_ledger(p: int) -> dict[str, Any]:
     v_model = math.exp(-EULER_GAMMA) / (ALPHA * math.log(p))
     model_main = p * v_model * f_value
     ten_percent_main = TEN_PERCENT * model_main
-    required_normalized_coefficient = TEN_PERCENT * f_value
-    allowed_normalized_error = (1.0 - TEN_PERCENT) * f_value
+    target_ratio = TARGET_S / model_main
+    minimum_main_fraction_after_sawtooth = SAWTOOTH_LOSS_FRACTION + target_ratio
+    required_normalized_coefficient = minimum_main_fraction_after_sawtooth * f_value
+    conservative_normalized_coefficient = CONSERVATIVE_MAIN_FRACTION * f_value
+    allowed_normalized_error = (1.0 - minimum_main_fraction_after_sawtooth) * f_value
+    conservative_allowed_normalized_error = (1.0 - CONSERVATIVE_MAIN_FRACTION) * f_value
     return {
         "tail_start": p,
         "alpha": ALPHA,
@@ -99,9 +105,14 @@ def constant_ledger(p: int) -> dict[str, Any]:
         "model_main_at_tail_start": model_main,
         "ten_percent_main_at_tail_start": ten_percent_main,
         "target_s": TARGET_S,
-        "target_ratio_of_model_main": TARGET_S / model_main,
-        "required_normalized_coefficient_10pct_f": required_normalized_coefficient,
-        "allowed_normalized_error_90pct_f": allowed_normalized_error,
+        "target_ratio_of_model_main": target_ratio,
+        "sawtooth_loss_fraction_budget": SAWTOOTH_LOSS_FRACTION,
+        "minimum_main_fraction_after_90pct_sawtooth_loss": minimum_main_fraction_after_sawtooth,
+        "conservative_main_fraction": CONSERVATIVE_MAIN_FRACTION,
+        "required_normalized_coefficient_after_90pct_loss": required_normalized_coefficient,
+        "conservative_normalized_coefficient_99pct": conservative_normalized_coefficient,
+        "allowed_normalized_coefficient_error_after_90pct_loss": allowed_normalized_error,
+        "conservative_allowed_normalized_error_1pct_f": conservative_allowed_normalized_error,
         "tail_main_monotone_after_e": True,
         "ten_percent_main_exceeds_target": ten_percent_main > TARGET_S,
         "s_in_linear_lower_sieve_range_2_to_3": 2.0 < sieve_s < 3.0,
@@ -196,7 +207,7 @@ def build_rows(previous: dict[str, Any], constants: dict[str, Any]) -> list[dict
             MAIN_ERROR_ATOM,
             False,
             False,
-            "还需显式证明主系数 normalized error 不超过 0.9 f(s)，等价于 W^->=0.1 V(z)f(s)。",
+            "若 sawtooth 只保证最多吞掉 90% 模型主项，则主系数需至少保留 0.981899... 模型主项；保守目标是 99%。",
             MAIN_ERROR_ATOM,
         ),
         row(
@@ -276,7 +287,7 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
             "lambda_1^-=1; lambda_d^- in {-1,0,1}",
             "lambda_d^-=0 unless d is squarefree, d<=D=P, and every prime divisor of d is <z=P^0.43",
             "sum_{d|(n,P(z))} lambda_d^- <= 1_{(n,P(z))=1} for every integer n",
-            "W^-(P)=sum_{d|P(z)} lambda_d^-/d >= 0.1 V(z) f(1/0.43) for P>=100000",
+            "W^-(P)=sum_{d|P(z)} lambda_d^-/d >= 0.99 V(z) f(1/0.43) for P>=100000, or at least (0.9+401/M(P))V(z)f(1/0.43)",
         ],
         "standard_sources": [
             {
@@ -298,7 +309,9 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
             "参数层已闭合：D=P、z=P^0.43 给 s=1/0.43=2.325581，"
             f"f(s)={constants['linear_sieve_f']:.12f}，P=100000 处 10% 模型主项 "
             f"{constants['ten_percent_main_at_tail_start']:.6f}>401。"
-            "真正剩余不是参数选择，而是：若走自足路线，必须证明 beta-sieve lower weights 构造及其主系数误差；"
+            "但主系数与 sawtooth 的容量必须匹配：若 sawtooth 允许吃掉 90% 模型主项，"
+            f"权重主系数至少需保留 {constants['minimum_main_fraction_after_90pct_sawtooth_loss']:.6f} 模型主项。"
+            "真正剩余不是参数选择，而是：若走自足路线，必须证明 beta-sieve lower weights 构造及其 99% 主系数误差；"
             "若接受标准 Rosser-Iwaniec beta-sieve 定理，则权重账本可外部关闭，下一硬点转为精确加权 floor/sawtooth 余项。"
         ),
     }
@@ -354,8 +367,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"| 10% model main | {constants['ten_percent_main_at_tail_start']:.6f} |",
         f"| target S | {constants['target_s']} |",
         f"| target/main | {constants['target_ratio_of_model_main']:.6f} |",
-        f"| required coefficient 0.1 f(s) | {constants['required_normalized_coefficient_10pct_f']:.12f} |",
-        f"| allowed normalized error 0.9 f(s) | {constants['allowed_normalized_error_90pct_f']:.12f} |",
+        f"| sawtooth loss budget | {constants['sawtooth_loss_fraction_budget']:.6f} main |",
+        f"| minimum main fraction after 90% loss | {constants['minimum_main_fraction_after_90pct_sawtooth_loss']:.6f} |",
+        f"| conservative main fraction | {constants['conservative_main_fraction']:.6f} |",
+        f"| required coefficient after 90% loss | {constants['required_normalized_coefficient_after_90pct_loss']:.12f} |",
+        f"| conservative 99% coefficient | {constants['conservative_normalized_coefficient_99pct']:.12f} |",
+        f"| allowed coefficient error after 90% loss | {constants['allowed_normalized_coefficient_error_after_90pct_loss']:.12f} |",
+        f"| conservative allowed error 1% f(s) | {constants['conservative_allowed_normalized_error_1pct_f']:.12f} |",
         "",
         "## 2. 权重对象",
         "",
@@ -365,7 +383,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         *result["required_weight_properties"],
         "```",
         "",
-        "这比完整最优线性筛常数弱：这里只要求主系数至少达到标准模型的 10%。",
+        "注意容量匹配：10% 结论来自“约 100% 主系数 - 至多 90% sawtooth 损失”，不是来自“10% 主系数 - 90% 损失”。",
         "",
         "## 3. 拆分律",
         "",

@@ -17,16 +17,16 @@
   "direct_unconditional_contradiction_found": false,
   "row_column_unconditional_closed": false,
   "replacement_self_contained": {
-    "ExplicitRosserIwaniecLowerWeightLedgerAlpha043PGe100000": "(SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000)"
+    "ExplicitRosserIwaniecLowerWeightLedgerAlpha043PGe100000": "(SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000)"
   },
   "replacement_with_standard_import": {
-    "ExplicitRosserIwaniecLowerWeightLedgerAlpha043PGe100000": "((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted)"
+    "ExplicitRosserIwaniecLowerWeightLedgerAlpha043PGe100000": "((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted)"
   },
-  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000) AND ExactResidueWeightedFloorSawtoothTenPercentBound) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
-  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND ExactResidueWeightedFloorSawtoothTenPercentBound) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043))) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
-  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND ExactResidueWeightedFloorSawtoothTenPercentBound) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) AND ExactResidueWeightedFloorSawtoothTenPercentBound) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND ExactResidueWeightedFloorSawtoothTenPercentBound) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043))) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND ExactResidueWeightedFloorSawtoothTenPercentBound) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
   "next_priority": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix",
-  "secondary_priority": "BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000",
+  "secondary_priority": "BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000",
   "after_import_next_priority": "ExactResidueWeightedFloorSawtoothTenPercentBound",
   "external_next_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
   "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
@@ -45,8 +45,13 @@
     "ten_percent_main_at_tail_start": 489.62560037161967,
     "target_s": 401,
     "target_ratio_of_model_main": 0.08189931239209021,
-    "required_normalized_coefficient_10pct_f": 0.04317176892290823,
-    "allowed_normalized_error_90pct_f": 0.3885459203061741,
+    "sawtooth_loss_fraction_budget": 0.9,
+    "minimum_main_fraction_after_90pct_sawtooth_loss": 0.9818993123920903,
+    "conservative_main_fraction": 0.99,
+    "required_normalized_coefficient_after_90pct_loss": 0.423903302201538,
+    "conservative_normalized_coefficient_99pct": 0.42740051233679144,
+    "allowed_normalized_coefficient_error_after_90pct_loss": 0.007814387027544271,
+    "conservative_allowed_normalized_error_1pct_f": 0.004317176892290826,
     "tail_main_monotone_after_e": true,
     "ten_percent_main_exceeds_target": true,
     "s_in_linear_lower_sieve_range_2_to_3": true,
@@ -56,7 +61,7 @@
     "lambda_1^-=1; lambda_d^- in {-1,0,1}",
     "lambda_d^-=0 unless d is squarefree, d<=D=P, and every prime divisor of d is <z=P^0.43",
     "sum_{d|(n,P(z))} lambda_d^- <= 1_{(n,P(z))=1} for every integer n",
-    "W^-(P)=sum_{d|P(z)} lambda_d^-/d >= 0.1 V(z) f(1/0.43) for P>=100000"
+    "W^-(P)=sum_{d|P(z)} lambda_d^-/d >= 0.99 V(z) f(1/0.43) for P>=100000, or at least (0.9+401/M(P))V(z)f(1/0.43)"
   ],
   "standard_sources": [
     {
@@ -104,7 +109,7 @@
       "closed": true,
       "proved": false,
       "meaning": "显式权重原子被压成：自足 beta-sieve 构造与主系数误差，或接受标准 Rosser-Iwaniec beta-sieve 定理。",
-      "remaining": "(SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted"
+      "remaining": "(SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted"
     },
     {
       "gate": "StandardBetaSieveSourceLocated",
@@ -121,11 +126,11 @@
       "remaining": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix"
     },
     {
-      "gate": "BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000",
+      "gate": "BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000",
       "closed": false,
       "proved": false,
-      "meaning": "还需显式证明主系数 normalized error 不超过 0.9 f(s)，等价于 W^->=0.1 V(z)f(s)。",
-      "remaining": "BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000"
+      "meaning": "若 sawtooth 只保证最多吞掉 90% 模型主项，则主系数需至少保留 0.981899... 模型主项；保守目标是 99%。",
+      "remaining": "BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000"
     },
     {
       "gate": "ExactResidueWeightedFloorSawtoothTenPercentBound",
@@ -166,11 +171,11 @@
   ],
   "open_gates": [
     "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix",
-    "BetaSieveMainCoefficientTenPercentExplicitErrorAlpha043PGe100000",
+    "BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000",
     "ExactResidueWeightedFloorSawtoothTenPercentBound",
     "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
     "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
     "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
   ],
-  "plain_conclusion": "本步把显式 Rosser-Iwaniec 下界权重输入继续压窄。参数层已闭合：D=P、z=P^0.43 给 s=1/0.43=2.325581，f(s)=0.431717689229，P=100000 处 10% 模型主项 489.625600>401。真正剩余不是参数选择，而是：若走自足路线，必须证明 beta-sieve lower weights 构造及其主系数误差；若接受标准 Rosser-Iwaniec beta-sieve 定理，则权重账本可外部关闭，下一硬点转为精确加权 floor/sawtooth 余项。"
+  "plain_conclusion": "本步把显式 Rosser-Iwaniec 下界权重输入继续压窄。参数层已闭合：D=P、z=P^0.43 给 s=1/0.43=2.325581，f(s)=0.431717689229，P=100000 处 10% 模型主项 489.625600>401。但主系数与 sawtooth 的容量必须匹配：若 sawtooth 允许吃掉 90% 模型主项，权重主系数至少需保留 0.981899 模型主项。真正剩余不是参数选择，而是：若走自足路线，必须证明 beta-sieve lower weights 构造及其 99% 主系数误差；若接受标准 Rosser-Iwaniec beta-sieve 定理，则权重账本可外部关闭，下一硬点转为精确加权 floor/sawtooth 余项。"
 }
