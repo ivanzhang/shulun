@@ -1,0 +1,87 @@
+{
+  "anchor_fiber_saturation_proved": false,
+  "anchor_tailcore_independent_input_removed": true,
+  "certificate_type": "anchor_tailcore_fiber_saturation_router",
+  "closed_gates": [
+    "AnchorTailCoreGateActive",
+    "BESDLSNamedAlphabetImported",
+    "HighFrequencyNoCycleImported",
+    "AnchorFiberGeometryPinned",
+    "ExistingGlobalInputsCoverNonFiberTail",
+    "AnchorTailCoreIndependentInputRemoved"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND AnchorFiberSaturationPDECOrSAEReturn AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND AnchorFiberSaturationPDECOrSAEReturn AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "AnchorFiberSaturationPDECOrSAEReturn",
+  "open_gates": [
+    "AnchorFiberSaturationPDECOrSAEReturn"
+  ],
+  "plain_conclusion": "本步删除 anchor tail-core 的独立性：高模 tail 若非 fiber saturation，则已经落入全局 DLS PointLoad/ShortWindow/LowPhase 或 Bohr-cap 命名出口。anchor 专属剩余只剩 canonical q-fiber 近饱和是否必回流 PDEC/SAE。",
+  "replacement": {
+    "AnchorEndpointTailCorePDECOrFiberSaturation": "AnchorFiberSaturationPDECOrSAEReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AnchorTailCoreGateActive",
+      "meaning": "上一层 anchor 专属最窄目标是 AnchorEndpointTailCorePDECOrFiberSaturation。",
+      "proved": true,
+      "remaining": "本步只处理高模 tail-core。"
+    },
+    {
+      "closed": true,
+      "gate": "BESDLSNamedAlphabetImported",
+      "meaning": "高模 tail-core 若承担强负缺陷，必须显化为 PointLoad、ShortWindow 或 LowPhase。",
+      "proved": true,
+      "remaining": "这些不是 anchor 新出口。"
+    },
+    {
+      "closed": true,
+      "gate": "HighFrequencyNoCycleImported",
+      "meaning": "非零列频率/Bohr-cap 不能形成无名循环，只能回流 PDEC/SAE/ColumnCRT 或 L2-flat。",
+      "proved": true,
+      "remaining": "L2-flat 已在早期零行反例分支中关闭为终端包。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorFiberGeometryPinned",
+      "meaning": "anchor 专属剩余只能是 canonical q-fiber 短素数窗口的近饱和支付。",
+      "proved": true,
+      "remaining": "即 AnchorFiberSaturation。"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingGlobalInputsCoverNonFiberTail",
+      "meaning": "PointLoad、ShortWindow、FixedWheel 已在全局输入基中保留。",
+      "proved": false,
+      "remaining": "它们尚未证明，但不再是 anchor 专属新增项。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorTailCoreIndependentInputRemoved",
+      "meaning": "AnchorEndpointTailCorePDECOrFiberSaturation 被压成已有 DLS 命名出口或真正 anchor-fiber 饱和。",
+      "proved": true,
+      "remaining": "AnchorFiberSaturationPDECOrSAEReturn"
+    },
+    {
+      "closed": false,
+      "gate": "AnchorFiberSaturationPDECOrSAEReturn",
+      "meaning": "尚未证明 canonical q-fiber 近饱和必然给出 PDEC/SAE，或不能持续支付早期零行。",
+      "proved": false,
+      "remaining": "下一步最窄目标。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-lowmod-fixedwheel-admission-router.json": "58433be988cca2fa0cd9b53410f67bcd9f89660473cad63f02708b4bc16e9e8f",
+    "docs/monograph/prime-matrix-clean-core-bes-dls-named-return-router.md": "cad3cb3612620cf77ca311739ff0829a1f9ba142b1f51b1ceb0e0e095a321b80",
+    "docs/monograph/prime-matrix-early-zero-anchor-collar-router.md": "2f6233065a68dbb21860e4021d18d26d97be6f30fb13496e2764c5824bfb7454",
+    "docs/monograph/prime-matrix-sn3e-highfreq-bohrcap-no-cycle.md": "eac281a2e6fce6faaf4c89be47bab9f19fc76253e9483fa4cb2bbb960c48dd2a"
+  },
+  "status": "anchor_tailcore_reduced_to_fiber_saturation",
+  "terminal_gap_after_router": "AnchorFiberSaturationPDECOrSAEReturn",
+  "terminal_gap_before_router": "AnchorEndpointTailCorePDECOrFiberSaturation"
+}

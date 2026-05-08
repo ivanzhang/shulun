@@ -6600,3 +6600,69 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 anchor 专属最窄目标更新为 `AnchorEndpointTailCorePDECOrFiberSaturation`。全局层面仍需证明既有 `DLSFixedWheelUnitPeakDilutionOrPDECReturn`。
+
+## Prime Matrix anchor tail-core 到纤维饱和路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_anchor_tailcore_fiber_saturation_router.py
+docs/monograph/prime-matrix-anchor-tailcore-fiber-saturation-router.md/json
+```
+
+该路由器直接攻击 `AnchorEndpointTailCorePDECOrFiberSaturation`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+anchor_tailcore_independent_input_removed=true；
+anchor_fiber_saturation_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=AnchorEndpointTailCorePDECOrFiberSaturation；
+terminal_gap_after_router=AnchorFiberSaturationPDECOrSAEReturn。
+```
+
+高模 tail 若承担强负缺陷但不是 anchor q-fiber 近饱和，则必须显化为全局 DLS 字母表中的 `PointLoad/ShortWindow/LowPhase`，或 SN3-E 的 Bohr-cap 命名出口。这些不是 anchor 专属新原子，已经在全局输入基中保留。因此 anchor 专属剩余只有 canonical q-fiber 近饱和是否必回流 PDEC/SAE。
+
+替换律为：
+
+```text
+AnchorEndpointTailCorePDECOrFiberSaturation
+  =>
+AnchorFiberSaturationPDECOrSAEReturn。
+```
+
+已经闭合的门为：
+
+```text
+AnchorTailCoreGateActive；
+BESDLSNamedAlphabetImported；
+HighFrequencyNoCycleImported；
+AnchorFiberGeometryPinned；
+ExistingGlobalInputsCoverNonFiberTail；
+AnchorTailCoreIndependentInputRemoved。
+```
+
+唯一开放门为：
+
+```text
+AnchorFiberSaturationPDECOrSAEReturn。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND AnchorFiberSaturationPDECOrSAEReturn
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `AnchorFiberSaturationPDECOrSAEReturn`：证明 canonical q-fiber 近饱和不能持续支付早期零行，或从近饱和中抽取同 formal unit 的 PDEC/SAE 证书。
