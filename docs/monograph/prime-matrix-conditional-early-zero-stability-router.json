@@ -1,0 +1,96 @@
+{
+  "certificate_type": "conditional_early_zero_stability_router",
+  "closed_gates": [
+    "EarlyZeroAssumptionFormalized",
+    "SameFormalUnitFromCLB",
+    "ActivationShadowRemoved",
+    "StableRecurrenceBranchDefinition",
+    "NoStableRecurrenceImpliesPhaseDefect",
+    "DefectHasNamedReturn",
+    "PDECSchemaAdmissionStillOpen"
+  ],
+  "conditional_lemma_proved": true,
+  "current_remaining_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "open_gates": [
+    "UnconditionalClosure"
+  ],
+  "phase_defect_forced_if_no_stable_recurrence": true,
+  "plain_conclusion": "在假设反例内，可以证明一个条件稳定性二分：P 行以内零行若存在，要么同一覆盖证书有短移自同构并稳定复现；要么没有短移自同构，那它本身就是同一 R_x/F_x formal unit 上的早期边界相位缺陷。这还不是最终矛盾；剩余是把该缺陷登记成可验收的 PDEC/SAE/ColumnCRT 证书。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EarlyZeroAssumptionFormalized",
+      "meaning": "假设存在 x<P 使 xP+1,...,xP+P-1 全被 <P 素数覆盖。",
+      "output": "完整覆盖证书 S_x。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SameFormalUnitFromCLB",
+      "meaning": "用已完成低斜线残洞 R_x 与未完成高斜线补洞 F_x 定义同一个 formal unit。",
+      "output": "早期零行等价于 R_x=F_x，即边界相位非覆盖失败。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "ActivationShadowRemoved",
+      "meaning": "q^2 前的 q 命中不是独立覆盖；零行的最后补洞必须来自已激活的相位锁定标签。",
+      "output": "排除“未画完斜线”作为独立出口。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "StableRecurrenceBranchDefinition",
+      "meaning": "若存在非零短移 d 保持证书 S_x 的全部覆盖标签相位，则 x+d 是同 formal unit 稳定复现零行。",
+      "output": "StableShortRecurrence。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "NoStableRecurrenceImpliesPhaseDefect",
+      "meaning": "若无这种短移，则早期零行不能由稳定轨道解释，只能是高素数补洞标签在 R_x 上的相位锁定缺陷。",
+      "output": "BoundaryPhaseNoncoverageFailure / early diagonal phase defect。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "DefectHasNamedReturn",
+      "meaning": "上一轮已确认该缺陷必须进入 BoundaryPhaseNoncoverage 或稳定复现 PDEC/SAE/ColumnCRT 路线。",
+      "output": "BoundaryPhaseNoncoverageOrStableRecurrencePDEC",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PDECSchemaAdmissionStillOpen",
+      "meaning": "要把相位缺陷升级成最终矛盾，仍需正式登记同 formal unit 的 PDEC/SAE/ColumnCRT 证书字段。",
+      "output": "EarlyZeroPhaseDefectSchemaAdmission。",
+      "proved": false
+    },
+    {
+      "closed": false,
+      "gate": "UnconditionalClosure",
+      "meaning": "条件稳定性二分闭合，但相位缺陷终端尚未排斥。",
+      "output": "row_column_unconditional_closed=false。",
+      "proved": false
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-boundary-phase-noncoverage-audit.md": "fd4ae7bed73f4bb7d0ab181b4402fa37a8cfc40917496ef72757d4b55094870b",
+    "docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.json": "df0a83ffa87ff7e582b7492d6aa935042a4a0b1f27d88df5ea42ce43798d9cab",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-line-activation-cover-threshold.md": "889f3a912300cf9799ebc0187c881d6ead7e71eb3448d8e7e221afd77eddffb0",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "docs/monograph/prime-matrix-near-zero-mirror-contradiction-router.json": "25f4b29b53c5fd7f8491f2360b6393525bc92f91eadf1861e20c42672ff731b6",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa"
+  },
+  "stable_recurrence_forced_unconditionally": false,
+  "status": "conditional_stability_dichotomy_closed_defect_schema_open",
+  "structural_law": "Under the counterexample assumption x<P is a zero row, the CLB decomposition puts all last holes in the same formal unit R_x and forces R_x=F_x. If the cover certificate has a short phase-preserving automorphism, it repeats as a stable zero row. If no such automorphism exists, the early zero row is already a boundary phase-lock defect: high-prime filler labels patch every low-skeleton hole at a representative x<P without forming a stable orbit. Thus the desired stability lemma is true as a dichotomy, but the defect branch still requires formal PDEC/SAE/ColumnCRT admission to become a contradiction.",
+  "terminal_gap_after_router": "EarlyZeroPhaseDefectSchemaAdmission",
+  "terminal_gap_expansion": [
+    "RegisteredSameFormalUnitRxFxLedger",
+    "StableShortRecurrenceCertificateOrNoStableAutomorphism",
+    "BoundaryPhaseNoncoverageDefectToPDECOrSAEOrColumnCRT"
+  ]
+}

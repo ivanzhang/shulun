@@ -4950,6 +4950,48 @@ CRT 最小代表延迟。该回顾不改变当前 new-layer/DLS/source 输入基
 继续新增：
 
 ```text
+experiments/prime_matrix_conditional_early_zero_stability_router.py
+docs/monograph/prime-matrix-conditional-early-zero-stability-router.md/json
+```
+
+该路由器不再用真实零行统计反推，而是在假设反例分支内证明条件稳定性二分。结论为：
+
+```text
+conditional_lemma_proved=true；
+stable_recurrence_forced_unconditionally=false；
+phase_defect_forced_if_no_stable_recurrence=true；
+row_column_unconditional_closed=false。
+```
+
+条件引理为：
+
+```text
+EarlyZeroRowWithinP
+  => StableShortRecurrence
+     OR BoundaryPhaseNoncoverageDefectSameFormalUnit。
+```
+
+证明骨架如下。假设 `1<=x<P` 且第 `x` 条边界行 `xP+c,1<=c<P` 是零行。由 CLB 分解，
+低斜线留下 `R_x`，高斜线只在 `R_x` 内补洞；零行等价于 `U_x=R_x\F_x` 为空，即 `R_x=F_x`。
+于是可用 `Omega=R_x`、补洞标签 `tau(c)=q(c)`、权重 `w(c)=1` 固定同一个 formal unit。
+若存在非零短移 `d` 保持全部必要标签相位，则同一覆盖证书在 `x+d` 行稳定复现。若不存在这种短移，
+则该早期零行不能由稳定轨道解释，只能是高素数补洞标签在 `R_x` 上一次性锁定全部残洞的边界相位缺陷。
+
+因此你的思路在反例分支内可以闭合成一个严格二分；但要把它变成最终矛盾，还必须补：
+
+```text
+EarlyZeroPhaseDefectSchemaAdmission
+  = RegisteredSameFormalUnitRxFxLedger
+    AND StableShortRecurrenceCertificateOrNoStableAutomorphism
+    AND BoundaryPhaseNoncoverageDefectToPDECOrSAEOrColumnCRT。
+```
+
+也就是说，下一步不再是证明“真实零行是否短复现”，而是把假设早期零行产生的
+`BoundaryPhaseNoncoverageDefectSameFormalUnit` 完整登记为可验收的 `PDEC/SAE/ColumnCRT` 证书字段。
+
+继续新增：
+
+```text
 experiments/prime_matrix_clean_core_newlayer_pdec_projection_router.py
 docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.md/json
 ```
