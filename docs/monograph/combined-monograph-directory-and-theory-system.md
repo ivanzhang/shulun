@@ -4909,3 +4909,55 @@ AND DLSFlatHighModLargeSieveAbsorption
 AND SignedGeometricLedgerVariationBranchLiftAndReturn
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_newlayer_pdec_projection_router.py
+docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.md/json
+```
+
+该路由器直接攻击 `ExactNewLayerFiberPDECProjectionMorphism`。结论为：
+
+```text
+newlayer_projection_slicer_closed_schema_admission_open；
+exact_newlayer_projection_morphism_closed=false；
+row_column_unconditional_closed=false。
+```
+
+本步真正压下了两个结构硬点：
+
+```text
+SameCPProjectionMonotonicity=true；
+FourierToFiberCapSlicer=true。
+```
+
+第一，同一全周期完成集合 `C_P` 下，`Q -> rQ` 升层不会在旧投影支撑外产生新支撑；
+第二，在新增 fiber 上若有强 `r∤h` Fourier 系数，旋转相位并用层蛋糕分解，必能切出一个循环弧/
+半平面 cap，其质量偏差至少为该 Fourier 强度的绝对常数倍。这是有限群 Fourier 对偶，不是概率实验。
+
+因此：
+
+```text
+ExactNewLayerFiberPDECProjectionMorphism
+  => RegisteredNewLayerPDECFormalUnitAndCapStableSchema。
+```
+
+剩余已经不是“能否从 Fourier 看见 PDEC”这一几何问题，而是正式准入问题：必须固定同一个
+`Omega,tau,w` 和相位图，证明该 new-layer cap 非二点 tautology、非 ColumnCRT/SAE 复用、二秩以上且
+cap-stable，并且 PDEC 下界与 CRT 上界按同一 formal unit 计量。
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema
+AND NewLayerNoConcentrationImpliesFlatAdmission
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```

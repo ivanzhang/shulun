@@ -1,0 +1,108 @@
+{
+  "certificate_type": "clean_core_newlayer_pdec_projection_router",
+  "closed_gates": [
+    "SameCPProjectionMonotonicity",
+    "FourierNewLayerFrequencyPinned",
+    "FourierToFiberCapSlicer",
+    "TowerEntropyReturnAvailable",
+    "PDECExplicitSchemaBoundaryKnown",
+    "FormalUnitHazardsNamed",
+    "DStructureRankinStillIndependent"
+  ],
+  "closed_sublemmas": [
+    "SameCPProjectionMonotonicity",
+    "FourierToFiberCapSlicer",
+    "FormalUnitMismatchNamedReturn"
+  ],
+  "exact_newlayer_projection_morphism_closed": false,
+  "fourier_slicer_constant_required": "absolute_constant_c>0",
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "open_gates": [
+    "ExactNewLayerProjectionMorphismClosed"
+  ],
+  "plain_conclusion": "本步把 `ExactNewLayerFiberPDECProjectionMorphism` 中真正的几何/Fourier 部分压下去了：同一 C_P 投影不会新增旧层外支撑，强新增 Fourier 频率必能切出一个相位 cap。剩下的不是外部 KLS，也不是统计问题，而是把该 cap 登记成合法 PDEC schema。",
+  "previous_expansion": [
+    "ExactNewLayerFiberPDECProjectionMorphism",
+    "NewLayerNoConcentrationImpliesFlatAdmission"
+  ],
+  "previous_terminal_gap": "ExactNewLayerFiberPDECProjectionMorphismAndFlatAdmission",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SameCPProjectionMonotonicity",
+      "meaning": "同一全周期完成集合 C_P 下，新层支撑投影必落在旧层支撑中。",
+      "proved": true,
+      "remaining": "none for LHB M_Q support; outside same C_P returns to stitching/source duty。"
+    },
+    {
+      "closed": true,
+      "gate": "FourierNewLayerFrequencyPinned",
+      "meaning": "新增层频率就是 W=rW0 中 r 不整除 h 的 Fourier 方向。",
+      "proved": true,
+      "remaining": "把强 Fourier 方向切成 PDEC cap。"
+    },
+    {
+      "closed": true,
+      "gate": "FourierToFiberCapSlicer",
+      "meaning": "有限循环群上，若中心化 fiber 分布存在大小 eta 的非零 Fourier 系数，旋转相位并用层蛋糕分解，可取一个循环弧/半平面 cap 使质量偏差至少 c eta。",
+      "proved": true,
+      "remaining": "该 cap 是否可作为正式 PDEC schema 仍需准入。"
+    },
+    {
+      "closed": true,
+      "gate": "TowerEntropyReturnAvailable",
+      "meaning": "若新增层偏斜沿塔持续，熵/能量账要求它进入 finite/profinite new-layer PDEC 或 CleanKLS。",
+      "proved": false,
+      "remaining": "把本层 cap 接到正式 PDEC 准入 schema。"
+    },
+    {
+      "closed": true,
+      "gate": "PDECExplicitSchemaBoundaryKnown",
+      "meaning": "未来 PDEC 候选必须同 formal unit、非二点、二秩以上、cap-stable。",
+      "proved": false,
+      "remaining": "当前 new-layer cap 必须提交这些字段。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitHazardsNamed",
+      "meaning": "若 cap 跨层、重复或不在同一 formal unit，已有 Stitching/quotient/reuse 回流纪律。",
+      "proved": true,
+      "remaining": "对当前 new-layer cap 固定 Omega、tau、w 与 phase map。"
+    },
+    {
+      "closed": false,
+      "gate": "ExactNewLayerProjectionMorphismClosed",
+      "meaning": "投影单调和 Fourier 切片已闭合，但正式 PDEC 准入字段尚未给出。",
+      "proved": false,
+      "remaining": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立门。",
+      "proved": false,
+      "remaining": "所有 new-layer/DLS/source 输入完成后仍需验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-newlayer-external-lemma-match-router.json": "c7d766a5142ff5bb791eb2a443a6b0250b9f28aaac50a4c7458b77e1a15a6ee7",
+    "docs/monograph/prime-matrix-dprc-fourier-inheritance-classifier.md": "affe3f52689bb12c9cf96ec1f9537cd1dfbdfaa5aaca1b937c7e7bcc04c0f90a",
+    "docs/monograph/prime-matrix-dprc-newlayer-energy-dispersion.md": "9b9917e7a67aba9683ac50b66b3ec7b31f51aa4ea7527c65e1c8d2b741e30888",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "docs/monograph/prime-matrix-newlayer-pdec-tower-entropy-contract.md": "4b7a182dfd863d72d76011fb55e8acf306f9e8d0726148465e0a6109c7692f5e",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-triad-a1-newlayer-projection-monotonicity-lemma.md": "a518f15194644cb07603f00246db122aac8cfd1f655ddf983c7bc7b4d0d390ef",
+    "docs/monograph/prime-matrix-wsh-fo-pdec-formal-unit-audit.md": "07275e31032828379aee825ad9db6adfe4a898ac2c4dc869d0699679b93a59f4"
+  },
+  "status": "newlayer_projection_slicer_closed_schema_admission_open",
+  "structural_law": "The geometric projection part of the new-layer morphism is closed on the same C_P formal unit: lifting to Q'=rQ cannot create support outside the old projection. The analytic-to-combinatorial part is also deterministic: a large new-layer Fourier coefficient on the r-fiber slices to a phase cap with comparable signed mass discrepancy. What remains is not the projection or Fourier step, but formal PDEC admission: the cap must be registered with the same Omega,tau,w, must be non-tautological and cap-stable, and its lower and upper budgets must be computed in that same unit.",
+  "terminal_gap_after_router": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema",
+  "terminal_gap_expansion": [
+    "RegisteredSameFormalUnitOmegaTauWeight",
+    "NewLayerCapStableRankAtLeastTwoNonTautology",
+    "PDECCapBudgetLowerUpperSameUnitLedger"
+  ]
+}
