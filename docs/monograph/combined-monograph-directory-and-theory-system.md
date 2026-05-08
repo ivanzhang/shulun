@@ -4841,6 +4841,65 @@ CarryShellPrimitiveCapacityBoundOrPDECReturn
 新的最窄未闭合点是 `CarryShellPrimitiveCapacityBound`：证明每个 `h` 壳的双高因子可用列容量
 不能吃掉整个 `R_x`，或者一旦吃掉就强制产生可排斥的 PDEC/SAE/ColumnCRT 证书。
 
+继续新增：
+
+```text
+experiments/prime_matrix_early_zero_cofactor_depth_router.py
+docs/monograph/prime-matrix-early-zero-cofactor-depth-router.md/json
+```
+
+该路由器修正并强化 carry-shell 口径：在恒等式
+
+```text
+xP+c=q m,   x<q<P,   x<m<P
+```
+
+中，`m=P-b` 是 `x`-rough cofactor，不必总是素数。由于 `c in R_x`，`m` 的每个素因子也都
+大于 `x`。若 `Omega(m)=d` 是带重数素因子深度，则
+
+```text
+m > x^d,   m<P,   因而 d < log(P)/log(x)。
+```
+
+特别地，当 `x>=sqrt(P)` 时，复合 `m` 至少含两个大于 `x` 的素因子，于是
+
+```text
+m > x^2 >= P
+```
+
+矛盾。所以：
+
+```text
+x>=sqrt(P)  =>  m is prime。
+```
+
+这把 carry-shell 剩余分成两块：
+
+```text
+1. x>=sqrt(P)：真双素 carry-shell 容量；
+2. x<sqrt(P)：复合 cofactor 的有限深度递归壳。
+```
+
+复合 cofactor 壳不是新出口。若这种壳在反例族中持久集中，它就是同 formal unit 的 PDEC 支撑；
+若只孤立出现，则进入 `SAE/LocalSurvivor`。样本审计 `P=101,499,997` 验证所有复合 cofactor
+都只出现在 `x<sqrt(P)`：
+
+```text
+all_composite_only_before_sqrt_gate=true。
+```
+
+于是上一轮剩余进一步拆成：
+
+```text
+PrimePairCarryShellCapacityAndCompositeCofactorDepthDescent
+  = PrimePairCarryShellCapacityBoundOrPDECReturn
+    AND CompositeCofactorDepthDescentOrNamedReturn
+    AND EarlyBandLocalSurvivorOrSAEExclusion。
+```
+
+第一项处理 `x>=sqrt(P)` 的真双素壳，第二项处理 `x<sqrt(P)` 的复合 cofactor 递归壳，第三项处理
+递归不能持久化时的孤窗证书。该步骤仍是结构压缩，不是最终容量排斥。
+
 条件输入基为：
 
 ```text

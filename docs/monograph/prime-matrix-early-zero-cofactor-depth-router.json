@@ -1,0 +1,514 @@
+{
+  "certificate_type": "early_zero_cofactor_depth_router",
+  "closed_gates": [
+    "CarryShellImported",
+    "CofactorWindowAndRoughness",
+    "DepthBound",
+    "SqrtGatePrimeCofactor",
+    "CompositeCofactorRecursiveReturn",
+    "SchemaCompatibility",
+    "SampleDepthAudit"
+  ],
+  "cofactor_depth_gate_closed": true,
+  "open_gates": [
+    "PrimePairCarryShellCapacity",
+    "RecursiveCofactorCapacity"
+  ],
+  "plain_conclusion": "本步修正并强化 carry-shell 口径：`m=P-b` 是 x-rough cofactor，不必总是素数；但一旦 `x>=sqrt(P)`，它必为素数。因此早期零行剩余被拆成两块：大范围真双素 carry-shell 容量，以及 `x<sqrt(P)` 的复合 cofactor 递归下降/命名回流。",
+  "previous_terminal_gap": "CarryShellPrimitiveCapacityBoundOrPDECReturn",
+  "primepair_carry_shell_capacity_closed": false,
+  "recursive_cofactor_capacity_closed": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CarryShellImported",
+      "meaning": "上一轮已把高补洞支撑压到带进位壳。",
+      "output": "继续分解 cofactor m 的乘法深度。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "CofactorWindowAndRoughness",
+      "meaning": "若 c in R_x 且 xP+c=q m，则 x<m<P，且 m 没有 <=x 的素因子。",
+      "output": "m 是小于 P 的 x-rough cofactor。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "DepthBound",
+      "meaning": "若 Omega(m)=d，则 m>x^d 且 m<P，所以 d<log(P)/log(x)。",
+      "output": "cofactor 深度随 x 增大快速塌缩。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SqrtGatePrimeCofactor",
+      "meaning": "当 x>=sqrt(P) 时，复合 m 至少含两个 >x 因子，导致 m>x^2>=P，矛盾。",
+      "output": "x>=sqrt(P) 的 carry-shell 是真 prime-pair shell。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "CompositeCofactorRecursiveReturn",
+      "meaning": "若 x<sqrt(P) 且 m 复合，则 m 的全部因子仍在同一 x-rough 递归壳内；持久集中进入 PDEC，孤立进入 SAE。",
+      "output": "CompositeCofactorDepthRecursivePDECReturnOrSAE。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SchemaCompatibility",
+      "meaning": "cofactor 深度分层仍使用上一轮同 formal unit 和 SAE/LocalSurvivor 回流纪律。",
+      "output": "不是新终端。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SampleDepthAudit",
+      "meaning": "样本中所有复合 cofactor 都只出现在 x<sqrt(P) 的早期带；这只是审计。",
+      "output": "cofactor_depth_gate_sample_verified_theorem_algebraic_recursive_capacity_open",
+      "proved": false
+    },
+    {
+      "closed": false,
+      "gate": "PrimePairCarryShellCapacity",
+      "meaning": "尚未证明 x>=sqrt(P) 的真双素 carry-shell 容量不能覆盖全部 R_x。",
+      "output": "PrimePairCarryShellCapacityBoundOrPDECReturn。",
+      "proved": false
+    },
+    {
+      "closed": false,
+      "gate": "RecursiveCofactorCapacity",
+      "meaning": "尚未证明 x<sqrt(P) 的复合 cofactor 递归壳必下降到 survivor 或命名 PDEC/SAE 排斥。",
+      "output": "CompositeCofactorDepthDescentOrNamedReturn。",
+      "proved": false
+    }
+  ],
+  "sample_audit": {
+    "all_composite_only_before_sqrt_gate": true,
+    "p_values": [
+      101,
+      499,
+      997
+    ],
+    "rows": [
+      {
+        "composite_after_sqrt_gate": 0,
+        "composite_cofactor_hits": 71,
+        "composite_only_before_sqrt_gate": true,
+        "depth_histogram": {
+          "1": 291,
+          "2": 43,
+          "3": 15,
+          "4": 9,
+          "5": 2,
+          "6": 2
+        },
+        "max_cofactor_depth": 6,
+        "p": 101,
+        "prime_cofactor_hits": 291,
+        "sample_composite_hits": [
+          {
+            "cofactor": 51,
+            "cofactor_factors": [
+              3,
+              17
+            ],
+            "column": 1,
+            "depth": 2,
+            "h": 100,
+            "q": 2,
+            "value": 102,
+            "x": 1
+          },
+          {
+            "cofactor": 52,
+            "cofactor_factors": [
+              2,
+              2,
+              13
+            ],
+            "column": 3,
+            "depth": 3,
+            "h": 100,
+            "q": 2,
+            "value": 104,
+            "x": 1
+          },
+          {
+            "cofactor": 35,
+            "cofactor_factors": [
+              5,
+              7
+            ],
+            "column": 4,
+            "depth": 2,
+            "h": 100,
+            "q": 3,
+            "value": 105,
+            "x": 1
+          },
+          {
+            "cofactor": 54,
+            "cofactor_factors": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "column": 7,
+            "depth": 4,
+            "h": 100,
+            "q": 2,
+            "value": 108,
+            "x": 1
+          },
+          {
+            "cofactor": 55,
+            "cofactor_factors": [
+              5,
+              11
+            ],
+            "column": 9,
+            "depth": 2,
+            "h": 100,
+            "q": 2,
+            "value": 110,
+            "x": 1
+          }
+        ],
+        "sample_gate_rows": [
+          {
+            "composite_hits": 51,
+            "h": 100,
+            "hits": 80,
+            "max_depth": 6,
+            "x": 1,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 12,
+            "h": 99,
+            "hits": 34,
+            "max_depth": 4,
+            "x": 2,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 3,
+            "h": 98,
+            "hits": 17,
+            "max_depth": 2,
+            "x": 3,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 3,
+            "h": 97,
+            "hits": 16,
+            "max_depth": 2,
+            "x": 4,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 1,
+            "h": 96,
+            "hits": 12,
+            "max_depth": 2,
+            "x": 5,
+            "x_ge_sqrt_p": false
+          }
+        ],
+        "sqrt_p": 10,
+        "total_high_filler_hits": 362
+      },
+      {
+        "composite_after_sqrt_gate": 0,
+        "composite_cofactor_hits": 466,
+        "composite_only_before_sqrt_gate": true,
+        "depth_histogram": {
+          "1": 4312,
+          "2": 278,
+          "3": 105,
+          "4": 46,
+          "5": 23,
+          "6": 7,
+          "7": 5,
+          "8": 2
+        },
+        "max_cofactor_depth": 8,
+        "p": 499,
+        "prime_cofactor_hits": 4312,
+        "sample_composite_hits": [
+          {
+            "cofactor": 250,
+            "cofactor_factors": [
+              2,
+              5,
+              5,
+              5
+            ],
+            "column": 1,
+            "depth": 4,
+            "h": 498,
+            "q": 2,
+            "value": 500,
+            "x": 1
+          },
+          {
+            "cofactor": 252,
+            "cofactor_factors": [
+              2,
+              2,
+              3,
+              3,
+              7
+            ],
+            "column": 5,
+            "depth": 5,
+            "h": 498,
+            "q": 2,
+            "value": 504,
+            "x": 1
+          },
+          {
+            "cofactor": 253,
+            "cofactor_factors": [
+              11,
+              23
+            ],
+            "column": 7,
+            "depth": 2,
+            "h": 498,
+            "q": 2,
+            "value": 506,
+            "x": 1
+          },
+          {
+            "cofactor": 169,
+            "cofactor_factors": [
+              13,
+              13
+            ],
+            "column": 8,
+            "depth": 2,
+            "h": 498,
+            "q": 3,
+            "value": 507,
+            "x": 1
+          },
+          {
+            "cofactor": 254,
+            "cofactor_factors": [
+              2,
+              127
+            ],
+            "column": 9,
+            "depth": 2,
+            "h": 498,
+            "q": 2,
+            "value": 508,
+            "x": 1
+          }
+        ],
+        "sample_gate_rows": [
+          {
+            "composite_hits": 280,
+            "h": 498,
+            "hits": 425,
+            "max_depth": 8,
+            "x": 1,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 80,
+            "h": 497,
+            "hits": 179,
+            "max_depth": 5,
+            "x": 2,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 24,
+            "h": 496,
+            "hits": 103,
+            "max_depth": 3,
+            "x": 3,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 30,
+            "h": 495,
+            "hits": 100,
+            "max_depth": 3,
+            "x": 4,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 11,
+            "h": 494,
+            "hits": 72,
+            "max_depth": 2,
+            "x": 5,
+            "x_ge_sqrt_p": false
+          }
+        ],
+        "sqrt_p": 22,
+        "total_high_filler_hits": 4778
+      },
+      {
+        "composite_after_sqrt_gate": 0,
+        "composite_cofactor_hits": 1058,
+        "composite_only_before_sqrt_gate": true,
+        "depth_histogram": {
+          "1": 13730,
+          "2": 650,
+          "3": 225,
+          "4": 100,
+          "5": 46,
+          "6": 23,
+          "7": 7,
+          "8": 5,
+          "9": 2
+        },
+        "max_cofactor_depth": 9,
+        "p": 997,
+        "prime_cofactor_hits": 13730,
+        "sample_composite_hits": [
+          {
+            "cofactor": 333,
+            "cofactor_factors": [
+              3,
+              3,
+              37
+            ],
+            "column": 2,
+            "depth": 3,
+            "h": 996,
+            "q": 3,
+            "value": 999,
+            "x": 1
+          },
+          {
+            "cofactor": 500,
+            "cofactor_factors": [
+              2,
+              2,
+              5,
+              5,
+              5
+            ],
+            "column": 3,
+            "depth": 5,
+            "h": 996,
+            "q": 2,
+            "value": 1000,
+            "x": 1
+          },
+          {
+            "cofactor": 143,
+            "cofactor_factors": [
+              11,
+              13
+            ],
+            "column": 4,
+            "depth": 2,
+            "h": 996,
+            "q": 7,
+            "value": 1001,
+            "x": 1
+          },
+          {
+            "cofactor": 501,
+            "cofactor_factors": [
+              3,
+              167
+            ],
+            "column": 5,
+            "depth": 2,
+            "h": 996,
+            "q": 2,
+            "value": 1002,
+            "x": 1
+          },
+          {
+            "cofactor": 502,
+            "cofactor_factors": [
+              2,
+              251
+            ],
+            "column": 7,
+            "depth": 2,
+            "h": 996,
+            "q": 2,
+            "value": 1004,
+            "x": 1
+          }
+        ],
+        "sample_gate_rows": [
+          {
+            "composite_hits": 585,
+            "h": 996,
+            "hits": 863,
+            "max_depth": 9,
+            "x": 1,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 180,
+            "h": 995,
+            "hits": 370,
+            "max_depth": 6,
+            "x": 2,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 61,
+            "h": 994,
+            "hits": 212,
+            "max_depth": 4,
+            "x": 3,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 63,
+            "h": 993,
+            "hits": 215,
+            "max_depth": 4,
+            "x": 4,
+            "x_ge_sqrt_p": false
+          },
+          {
+            "composite_hits": 29,
+            "h": 992,
+            "hits": 150,
+            "max_depth": 3,
+            "x": 5,
+            "x_ge_sqrt_p": false
+          }
+        ],
+        "sqrt_p": 31,
+        "total_high_filler_hits": 14788
+      }
+    ],
+    "skipped_nonprimes": [],
+    "status": "cofactor_depth_gate_sample_verified_theorem_algebraic_recursive_capacity_open"
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-early-zero-carry-shell-router.json": "8c3d8d20f74f2f6d7b1c1af5b8c4f8d4e6e098df3dbd8069cd5ed26a5cde3384",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-sae-local-certificate-reduction.md": "927714d839c2ba0a20380dbea99fc5ab474dbf096bdd4f14fe770c9a523c60c7"
+  },
+  "sqrt_gate_prime_cofactor_closed": true,
+  "status": "cofactor_depth_gate_closed_primepair_and_recursive_capacity_open",
+  "structural_law": "In a high-filler atom xP+c=q m with c in R_x, the cofactor m is an x-rough integer in (x,P). If x>=sqrt(P), this forces m to be prime, so the carry shell is a genuine prime-pair shell. Composite cofactors can occur only in the early band x<sqrt(P), and then their prime factors are all >x, giving a finite recursive depth bounded by log P/log x. Persistent recursive concentration is a PDEC object; sparse recursive escape is SAE/LocalSurvivor.",
+  "terminal_gap_after_router": "PrimePairCarryShellCapacityAndCompositeCofactorDepthDescent",
+  "terminal_gap_expansion": [
+    "PrimePairCarryShellCapacityBoundOrPDECReturn",
+    "CompositeCofactorDepthDescentOrNamedReturn",
+    "EarlyBandLocalSurvivorOrSAEExclusion"
+  ]
+}
