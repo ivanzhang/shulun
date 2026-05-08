@@ -7231,3 +7231,71 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标为 `RegisteredPrimitivePrePushforwardFiberEmitterAndReturn`：在推前前逐纤维列出 primitive
 summand、系数恒等式、branch key、`u/v` map、符号和 local factor；无法登记或超预算者必须命名回流。
+
+## Prime Matrix pre-pushforward emitter 到原始生成账本压缩路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_prepushforward_emitter_origin_ledger_router.py
+docs/monograph/prime-matrix-prepushforward-emitter-origin-ledger-router.md/json
+```
+
+该路由器继续攻击 `RegisteredPrimitivePrePushforwardFiberEmitterAndReturn` 的来源黑箱性。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+hypothetical_chain_only=true；
+prepushforward_emitter_reduction_closed=true；
+registered_primitive_prepushforward_fiber_emitter_proved=false；
+clean_core_original_generation_ledger_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=RegisteredPrimitivePrePushforwardFiberEmitterAndReturn；
+terminal_gap_after_router=CleanCoreOriginalCoefficientGenerationLedgerAndReturn。
+```
+
+这里的分界仍然是两条链：假设链条中，早期零行反例若要保留 clean-core 支付链，必须提交
+Cauchy/dispersion 前的 actual clean-core `alpha/delta` 原始生成表；真实链条中，payment skeleton、
+有限投影塔、斜线覆盖图或样本缺席都不能反向唯一恢复 primitive source。
+
+替换律为：
+
+```text
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn
+  =>
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn。
+```
+
+已经闭合的门为：
+
+```text
+PrePushforwardEmitterGateActive；
+ReversePhiRouteBlocked；
+PaymentSkeletonClosedButSignedLiftOpen；
+PreCauchyOriginLedgerAtomPinned；
+ConstructorAdmissionIsLedgerEntry；
+SourceClassFirewallPreventsCanonicalLeak；
+EmitterReducedToOriginGenerationLedger；
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn；
+ExplicitModelGapAndFiniteDPRCLedger；
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步只压缩 pre-pushforward emitter，不证明原始账本存在。更新后的完全自足输入基为：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标为 `CleanCoreOriginalCoefficientGenerationLedgerAndReturn`：提交 actual clean-core
+`alpha/delta` 的完整 pre-Cauchy 原始生成表；缺失来源、路径超预算、thin block 或抵消必须命名回流。
