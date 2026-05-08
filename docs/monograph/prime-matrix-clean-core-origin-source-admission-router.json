@@ -1,0 +1,124 @@
+{
+  "canonical_constructor_scoped_only": true,
+  "certificate_type": "prime_matrix_clean_core_origin_source_admission_router",
+  "clean_core_origin_source_admission_boundary_closed": true,
+  "clean_core_original_coefficient_generation_ledger_proved": false,
+  "clean_core_primitive_source_constructor_admission_proved": false,
+  "compression_law": "原始生成账本的入口不是估计，而是来源准入：必须先证明 actual clean-core alpha/delta 由某个 pre-Cauchy primitive source constructor 生成。构造器准入后，emitted summand schema 可展开为原始生成账本；构造器缺失则必须作为未登记来源回流，不能继续当作 clean-core 终端。",
+  "constructor_admission_implies_origin_ledger": true,
+  "constructor_requirements": [
+    {
+      "field": "source_constructor",
+      "requirement": "在 Cauchy/dispersion 前声明系数由哪个原始构造器生成。",
+      "why": "没有构造器就没有可审查的 summand 表。"
+    },
+    {
+      "field": "formal_unit_id",
+      "requirement": "构造器输出必须落在同一个 actual formal unit。",
+      "why": "避免把不同口径的系数拼成一张伪账本。"
+    },
+    {
+      "field": "branch_admission",
+      "requirement": "标明 canonical、noncanonical actual、external spectral 或 named return。",
+      "why": "canonical 账本不能跨分支导入，generic WFD 不能冒充来源。"
+    },
+    {
+      "field": "emitted_summand_schema",
+      "requirement": "给出 summand、branch key、u/v map、符号和 local factor 的生成规则。",
+      "why": "该 schema 才能展开成原始生成账本。"
+    },
+    {
+      "field": "failure_return_tag",
+      "requirement": "构造器缺失、口径冲突、超预算或 thin block 必须带回流标签。",
+      "why": "未登记来源不能成为新的隐藏终端。"
+    }
+  ],
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "external_spectral_atom_accepted": false,
+  "generic_wfd_constructor_blocked": true,
+  "latest_conditional_basis": "(CleanCorePrimitiveSourceConstructorAdmissionAndReturn OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinput": "CleanCorePrimitiveSourceConstructorAdmissionAndReturn",
+  "latest_self_contained_basis": "CleanCorePrimitiveSourceConstructorAdmissionAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "origin_ledger_needs_constructor_admission": true,
+  "plain_conclusion": "最新完全自足剩余继续压缩为 clean-core primitive source constructor 准入：先找到并登记实际来源构造器，才能生成 alpha/delta 原始账本。canonical 构造器已闭合但作用域有限，generic WFD 不是构造器；当前材料尚未证明 noncanonical clean-core 的构造器准入或未登记来源吸收。",
+  "previous_input": "CleanCoreOriginalCoefficientGenerationLedgerAndReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorOriginGenerationLedgerPinned",
+      "meaning": "上一层已把 pre-Cauchy 来源律压到 actual 原始生成账本。",
+      "proved": false,
+      "remaining": "继续判断生成账本最小入口是什么。"
+    },
+    {
+      "closed": true,
+      "gate": "OriginLedgerNeedsSourceConstructorAdmission",
+      "meaning": "一张 summand 表必须先有 pre-Cauchy 原始构造器；否则无法审查其来源。",
+      "proved": true,
+      "remaining": "证明 clean-core 候选都有合法构造器，或未登记来源回流。"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorAdmissionImpliesOriginLedger",
+      "meaning": "若构造器准入并给出 emitted summand schema，原始生成账本由有限展开得到。",
+      "proved": true,
+      "remaining": "该推出不证明 clean-core 构造器存在。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalConstructorAlreadyScoped",
+      "meaning": "canonical RIW/Buchstab 构造器已闭合，但只在 canonical-source 分支内有效。",
+      "proved": true,
+      "remaining": "noncanonical clean-core 不能使用该构造器偷渡。"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDNotAConstructor",
+      "meaning": "well-factorable 性质是形式约束，不是生成 summand 的原始构造器。",
+      "proved": true,
+      "remaining": "必须提交 actual noncanonical 构造器或外部谱输入。"
+    },
+    {
+      "closed": true,
+      "gate": "ReturnAlphabetCanAbsorbUnregisteredSource",
+      "meaning": "非 clean-core packet 的回流字母表已闭合，但未登记来源是否总能落入这些出口仍需准入账本标注。",
+      "proved": false,
+      "remaining": "把 unregistered source 具体标到 PDEC/SAE/ColumnCRT/CleanKLS 或外部谱输入。"
+    },
+    {
+      "closed": false,
+      "gate": "CleanCorePrimitiveSourceConstructorAdmissionCurrentCorpusProved",
+      "meaning": "当前材料尚未证明 noncanonical clean-core 候选都有 pre-Cauchy primitive source constructor。",
+      "proved": false,
+      "remaining": "证明 CleanCorePrimitiveSourceConstructorAdmissionAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralAtomStillOpen",
+      "meaning": "外部路线仍是 c-dependent residue weight 谱抵消输入。",
+      "proved": false,
+      "remaining": "证明或接受 CDependentResidueWeightSpectralCancellationInput。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.json": "a6f8b9718c0c8d6a2854b37e3850d548798ca4aafa708c08b894bb4066ae3d52",
+    "docs/monograph/prime-matrix-support-failure-packet-return-dichotomy-router.json": "9c0b1a6aa36b240b6a9cd9772bde88e6e3319e083b90c738573fc28f9a8a5fa7",
+    "docs/monograph/prime-matrix-triad-a1-branch-statement-coverage-router.json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f",
+    "docs/monograph/prime-matrix-triad-a1-source-lock-contract-router.json": "039a29ac39132bbd6023352a51712e0c079efe7a1ad326fa19f511c4a9a55dee"
+  },
+  "status": "clean_core_origin_ledger_reduced_to_primitive_source_constructor_admission_open",
+  "unregistered_source_return_absorbed": false
+}

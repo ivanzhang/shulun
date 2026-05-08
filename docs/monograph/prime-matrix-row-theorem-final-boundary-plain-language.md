@@ -1915,3 +1915,46 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 当前材料尚未提交 noncanonical clean-core 的完整原始生成账本；canonical RIW/Buchstab 账本只覆盖
 canonical-source 分支，generic WFD 形式也不能替代 actual 来源。
+
+## 23. clean-core 原始来源准入
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_origin_source_admission_router.py
+docs/monograph/prime-matrix-clean-core-origin-source-admission-router.md/json
+
+clean_core_origin_source_admission_boundary_closed=true；
+constructor_admission_implies_origin_ledger=true；
+unregistered_source_return_absorbed=false；
+clean_core_primitive_source_constructor_admission_proved=false；
+clean_core_original_coefficient_generation_ledger_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把 `CleanCoreOriginalCoefficientGenerationLedgerAndReturn` 再压缩成
+`CleanCorePrimitiveSourceConstructorAdmissionAndReturn`。通俗地说，要写出 actual clean-core
+`alpha/delta` 的原始生成表，先要知道这些系数到底由哪个 Cauchy/dispersion 前的原始构造器生成。
+有构造器和 emitted summand schema，原始账本只是有限展开；没有构造器，就不是合法 clean-core 终端，
+必须作为未登记来源回流。
+
+最新条件输入基为：
+
+```text
+(CleanCorePrimitiveSourceConstructorAdmissionAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCorePrimitiveSourceConstructorAdmissionAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+当前材料尚未证明 noncanonical clean-core 候选都有 primitive source constructor，也没有证明未登记来源总能被
+PDEC/SAE/ColumnCRT/CleanKLS 或外部谱输入吸收。canonical 构造器仍只服务 canonical-source 分支，generic WFD
+仍不是来源构造器。

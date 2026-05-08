@@ -4263,3 +4263,47 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明 clean-core 原始生成账本。它闭合的是逻辑压缩：canonical 来源表不能跨分支导入，
 generic WFD 形式不能替代 actual 来源；noncanonical clean-core 若要自足闭合，必须提交自己的原始生成账本。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_origin_source_admission_router.py
+docs/monograph/prime-matrix-clean-core-origin-source-admission-router.md/json
+```
+
+该路由器把 `CleanCoreOriginalCoefficientGenerationLedgerAndReturn` 继续压成 primitive source constructor
+准入。结论为：
+
+```text
+clean_core_origin_source_admission_boundary_closed=true；
+constructor_admission_implies_origin_ledger=true；
+unregistered_source_return_absorbed=false；
+clean_core_primitive_source_constructor_admission_proved=false；
+clean_core_original_coefficient_generation_ledger_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+压缩律是：原始生成账本的入口不是估计，而是来源准入。必须先证明 actual clean-core `alpha/delta`
+由某个 pre-Cauchy primitive source constructor 生成；构造器准入后，emitted summand schema 可展开为原始生成账本。
+构造器缺失、口径冲突、超预算或 thin block 必须带 return tag，落到 PDEC/SAE/ColumnCRT/CleanKLS
+或外部谱输入；否则未登记来源会成为新的隐藏终端。
+
+最新条件输入基为：
+
+```text
+(CleanCorePrimitiveSourceConstructorAdmissionAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCorePrimitiveSourceConstructorAdmissionAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明 primitive source constructor 准入，也没有吸收未登记来源。它只把原始生成账本的最小入口压成
+来源构造器准入：没有构造器，就没有合法 clean-core 原始账本。
