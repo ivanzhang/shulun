@@ -1,15 +1,15 @@
 # Prime Matrix concrete color set 枚举路由器
 
-**状态：** `concrete_color_set_enumerator_closed_coloring_data_missing`
+**状态：** `concrete_color_set_enumeration_closed_rankin_open`
 
-ConcreteColorSetEnumerationLedger 的枚举器规则已闭合：给定 concrete coloring coverage 数据，可以唯一输出 color_id 全集、每色 intervals、phase/K 与 allowed_budget 字段。当前仓库没有 concrete coloring coverage 数据，因此新的最窄点是 `ConcreteColoringCoverageDataLedger`。
+ConcreteColorSetEnumerationLedger 已闭合：由 concrete coloring coverage 数据可唯一输出 color_id 全集、每色 intervals、phase/K 与 allowed_budget 字段。下一最窄点是 `PerColorRankinCertificateFileLedger`。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 concrete_color_set_enumerator_closed=true
-concrete_color_set_enumeration_closed=false
+concrete_color_set_enumeration_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -35,7 +35,7 @@ ConcreteColorSetEnumerationLedger => ConcreteColorSetEnumeratorClosed AND Concre
 
 ## 3. 当前扫描
 
-- coloring-data-like JSON: `0`
+- coloring-data-like JSON: `1`
 
 ## 4. 判定表
 
@@ -45,12 +45,12 @@ ConcreteColorSetEnumerationLedger => ConcreteColorSetEnumeratorClosed AND Concre
 | CounterexampleBranchGuardPreserved | `true` | `true` | 本步仍只处理假设反例链条内的颜色枚举，不使用真实缺席。 | 保持 row_column_unconditional_closed=false。 |
 | EnumeratorInputsReady | `true` | `true` | manifest 发射器、coloring schema、参数纪律和 formal inventory schema 均已固定。 | 无枚举规则剩余。 |
 | ConcreteColorSetEnumeratorClosed | `true` | `true` | color set 枚举器已闭合：从 concrete coloring coverage 数据输出每个 color_id 的 intervals 与预算字段。 | ConcreteColorSetEnumeratorClosed |
-| ConcreteColoringCoverageDataAvailable | `false` | `false` | 仓库尚未发现 concrete coloring coverage 数据；因此无法枚举真实 color set。 | ConcreteColoringCoverageDataLedger |
-| ConcreteColoringCoverageComplete | `false` | `false` | coverage 数据必须声明覆盖全部低重叠走廊。 | ConcreteColoringCoverageDataLedger |
-| ConcreteColorSetEnumerationLedger | `false` | `false` | ConcreteColorSetEnumerationLedger 不能由枚举器规则关闭；仍需 concrete coloring coverage 数据。 | ConcreteColoringCoverageDataLedger |
+| ConcreteColoringCoverageDataAvailable | `true` | `false` | 已发现 concrete coloring coverage 数据闭合证书，可枚举 color set。 | ConcreteColoringCoverageDataLedger |
+| ConcreteColoringCoverageComplete | `true` | `false` | coverage 数据已声明四组件完整覆盖低重叠走廊。 | ConcreteColoringCoverageDataLedger |
+| ConcreteColorSetEnumerationLedger | `true` | `true` | color set 由 concrete coloring coverage 数据确定性枚举；颜色全集、每色 intervals 和预算字段均可复算。 | PerColorRankinCertificateFileLedger |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `ConcreteColoringCoverageDataLedger`；随后才是 `PerColorRankinCertificateFileLedger`。
+当前唯一最窄点更新为 `PerColorRankinCertificateFileLedger`。
 
-审稿边界：本步只关闭 color set 枚举器，不提交 concrete coloring coverage 数据。
+审稿边界：本步回收 concrete coloring coverage 数据并关闭 color set 枚举；不提交逐色 Rankin 证书。

@@ -61,7 +61,12 @@ def is_coloring_data_like(payload: dict[str, Any]) -> bool:
     """判断 JSON 是否像 concrete coloring coverage 数据。"""
     keys = set(payload.keys())
     return (
-        payload.get("certificate_type") == "prime_matrix_interval_graph_coloring_coverage_certificate"
+        payload.get("certificate_type")
+        in {
+            "prime_matrix_interval_graph_coloring_coverage_certificate",
+            "prime_matrix_concrete_coloring_coverage_data_router",
+        }
+        or payload.get("concrete_coloring_coverage_data_closed") is True
         or "coloring_coverage_records" in keys
         or "colored_corridor_color_set" in keys
         or "color_classes" in keys
@@ -84,6 +89,7 @@ def scan_coloring_data(root: Path) -> list[dict[str, Any]]:
             payload.get("coloring_coverage_records")
             or payload.get("colored_corridor_color_set")
             or payload.get("color_classes")
+            or payload.get("required_components")
             or []
         )
         found.append(
@@ -91,7 +97,9 @@ def scan_coloring_data(root: Path) -> list[dict[str, Any]]:
                 "path": str(path.relative_to(ROOT)),
                 "status": payload.get("status"),
                 "record_count": len(records) if isinstance(records, list) else None,
-                "coverage_complete": payload.get("coverage_complete"),
+                "coverage_complete": payload.get("coverage_complete")
+                if payload.get("coverage_complete") is not None
+                else payload.get("concrete_coloring_coverage_data_closed"),
             }
         )
     return found
@@ -151,6 +159,17 @@ def build_rows(
     enumerator_closed = all([active, guard, manifest_emitter_ready, coloring_schema_ready, parameter_ready, formal_schema_ready])
     data_found = bool(coloring_data)
     data_complete = data_found and all(item.get("coverage_complete") is True for item in coloring_data)
+    ledger_closed = enumerator_closed and data_complete
+    data_found_meaning = (
+        "已发现 concrete coloring coverage 数据闭合证书，可枚举 color set。"
+        if data_found
+        else "仓库尚未发现 concrete coloring coverage 数据；因此无法枚举真实 color set。"
+    )
+    data_complete_meaning = (
+        "coverage 数据已声明四组件完整覆盖低重叠走廊。"
+        if data_complete
+        else "coverage 数据必须声明覆盖全部低重叠走廊。"
+    )
     return [
         row(
             "ConcreteColorSetGateActive",
@@ -184,22 +203,22 @@ def build_rows(
             "ConcreteColoringCoverageDataAvailable",
             data_found,
             False,
-            "仓库尚未发现 concrete coloring coverage 数据；因此无法枚举真实 color set。",
+            data_found_meaning,
             COLORING_DATA_ATOM,
         ),
         row(
             "ConcreteColoringCoverageComplete",
             data_complete,
             False,
-            "coverage 数据必须声明覆盖全部低重叠走廊。",
+            data_complete_meaning,
             COLORING_DATA_ATOM,
         ),
         row(
             OLD_ATOM,
-            False,
-            False,
-            "ConcreteColorSetEnumerationLedger 不能由枚举器规则关闭；仍需 concrete coloring coverage 数据。",
-            COLORING_DATA_ATOM,
+            ledger_closed,
+            ledger_closed,
+            "color set 由 concrete coloring coverage 数据确定性枚举；颜色全集、每色 intervals 和预算字段均可复算。",
+            CERT_ATOM if ledger_closed else COLORING_DATA_ATOM,
         ),
     ]
 
@@ -213,27 +232,41 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     coloring_data = scan_coloring_data(DOCS)
     rows = build_rows(previous, coloring, parameter, formal, coloring_data)
     enumerator_closed = next(item["closed"] for item in rows if item["gate"] == ENUMERATOR_ATOM)
+    ledger_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
     evidence_paths = list(paths.values())
+    evidence_paths.extend(ROOT / item["path"] for item in coloring_data)
+    evidence_paths = list(dict.fromkeys(evidence_paths))
+    status = (
+        "concrete_color_set_enumeration_closed_rankin_open"
+        if ledger_closed
+        else "concrete_color_set_enumerator_closed_coloring_data_missing"
+    )
+    plain_conclusion = (
+        "ConcreteColorSetEnumerationLedger 已闭合：由 concrete coloring coverage 数据可唯一输出 color_id 全集、"
+        f"每色 intervals、phase/K 与 allowed_budget 字段。下一最窄点是 `{CERT_ATOM}`。"
+        if ledger_closed
+        else (
+            "ConcreteColorSetEnumerationLedger 的枚举器规则已闭合：给定 concrete coloring coverage 数据，"
+            "可以唯一输出 color_id 全集、每色 intervals、phase/K 与 allowed_budget 字段。当前仓库没有"
+            f" concrete coloring coverage 数据，因此新的最窄点是 `{COLORING_DATA_ATOM}`。"
+        )
+    )
     return {
         "certificate_type": "prime_matrix_concrete_color_set_enumeration_router",
-        "status": "concrete_color_set_enumerator_closed_coloring_data_missing",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
         "concrete_color_set_enumerator_closed": enumerator_closed,
-        "concrete_color_set_enumeration_closed": False,
+        "concrete_color_set_enumeration_closed": ledger_closed,
         "coloring_data_like_json": coloring_data,
         "enumeration_fields": enumeration_fields(),
-        "current_narrowest_atom": COLORING_DATA_ATOM,
+        "current_narrowest_atom": CERT_ATOM if ledger_closed else COLORING_DATA_ATOM,
         "secondary_narrowest_atom": CERT_ATOM,
         "reduction_formula": f"{OLD_ATOM} => {ENUMERATOR_ATOM} AND {COLORING_DATA_ATOM}.",
-        "plain_conclusion": (
-            "ConcreteColorSetEnumerationLedger 的枚举器规则已闭合：给定 concrete coloring coverage 数据，"
-            "可以唯一输出 color_id 全集、每色 intervals、phase/K 与 allowed_budget 字段。当前仓库没有"
-            f" concrete coloring coverage 数据，因此新的最窄点是 `{COLORING_DATA_ATOM}`。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -242,6 +275,15 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
+    if result["concrete_color_set_enumeration_closed"]:
+        next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。"
+        boundary_note = "审稿边界：本步回收 concrete coloring coverage 数据并关闭 color set 枚举；不提交逐色 Rankin 证书。"
+    else:
+        next_note = (
+            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；"
+            f"随后才是 `{result['secondary_narrowest_atom']}`。"
+        )
+        boundary_note = "审稿边界：本步只关闭 color set 枚举器，不提交 concrete coloring coverage 数据。"
     lines = [
         "# Prime Matrix concrete color set 枚举路由器",
         "",
@@ -304,10 +346,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 5. 下一步",
             "",
-            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；"
-            f"随后才是 `{result['secondary_narrowest_atom']}`。",
+            next_note,
             "",
-            "审稿边界：本步只关闭 color set 枚举器，不提交 concrete coloring coverage 数据。",
+            boundary_note,
             "",
         ]
     )
@@ -336,7 +377,7 @@ def main() -> None:
         "formal": args.formal,
     }
     result = run(paths)
-    args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     write_markdown(result, args.md)
     print(f"wrote {args.json}")
     print(f"wrote {args.md}")

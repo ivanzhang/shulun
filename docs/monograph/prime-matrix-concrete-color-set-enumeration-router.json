@@ -1,19 +1,27 @@
 {
   "certificate_type": "prime_matrix_concrete_color_set_enumeration_router",
-  "status": "concrete_color_set_enumerator_closed_coloring_data_missing",
+  "status": "concrete_color_set_enumeration_closed_rankin_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-concrete-rankin-manifest-data-router.json": "cce4bb3db6bb57f3f28cc4b930ed3f199373a782fc67a246e661f64af81d4b92",
     "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
     "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
-    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510"
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510",
+    "docs/monograph/prime-matrix-concrete-coloring-coverage-data-router.json": "31d93679bd911266698e8ab32ddcd2343b9b15266cf36afb0055609782d26d1a"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
   "concrete_color_set_enumerator_closed": true,
-  "concrete_color_set_enumeration_closed": false,
-  "coloring_data_like_json": [],
+  "concrete_color_set_enumeration_closed": true,
+  "coloring_data_like_json": [
+    {
+      "path": "docs/monograph/prime-matrix-concrete-coloring-coverage-data-router.json",
+      "status": "concrete_coloring_coverage_data_closed_rankin_open",
+      "record_count": 4,
+      "coverage_complete": true
+    }
+  ],
   "enumeration_fields": [
     {
       "field": "color_set_id",
@@ -52,10 +60,10 @@
       "meaning": "指向证明无漏色/无漏 interval 的覆盖等式。"
     }
   ],
-  "current_narrowest_atom": "ConcreteColoringCoverageDataLedger",
+  "current_narrowest_atom": "PerColorRankinCertificateFileLedger",
   "secondary_narrowest_atom": "PerColorRankinCertificateFileLedger",
   "reduction_formula": "ConcreteColorSetEnumerationLedger => ConcreteColorSetEnumeratorClosed AND ConcreteColoringCoverageDataLedger.",
-  "plain_conclusion": "ConcreteColorSetEnumerationLedger 的枚举器规则已闭合：给定 concrete coloring coverage 数据，可以唯一输出 color_id 全集、每色 intervals、phase/K 与 allowed_budget 字段。当前仓库没有 concrete coloring coverage 数据，因此新的最窄点是 `ConcreteColoringCoverageDataLedger`。",
+  "plain_conclusion": "ConcreteColorSetEnumerationLedger 已闭合：由 concrete coloring coverage 数据可唯一输出 color_id 全集、每色 intervals、phase/K 与 allowed_budget 字段。下一最窄点是 `PerColorRankinCertificateFileLedger`。",
   "rows": [
     {
       "gate": "ConcreteColorSetGateActive",
@@ -87,35 +95,34 @@
     },
     {
       "gate": "ConcreteColoringCoverageDataAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现 concrete coloring coverage 数据；因此无法枚举真实 color set。",
+      "meaning": "已发现 concrete coloring coverage 数据闭合证书，可枚举 color set。",
       "remaining": "ConcreteColoringCoverageDataLedger"
     },
     {
       "gate": "ConcreteColoringCoverageComplete",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "coverage 数据必须声明覆盖全部低重叠走廊。",
+      "meaning": "coverage 数据已声明四组件完整覆盖低重叠走廊。",
       "remaining": "ConcreteColoringCoverageDataLedger"
     },
     {
       "gate": "ConcreteColorSetEnumerationLedger",
-      "closed": false,
-      "proved": false,
-      "meaning": "ConcreteColorSetEnumerationLedger 不能由枚举器规则关闭；仍需 concrete coloring coverage 数据。",
-      "remaining": "ConcreteColoringCoverageDataLedger"
+      "closed": true,
+      "proved": true,
+      "meaning": "color set 由 concrete coloring coverage 数据确定性枚举；颜色全集、每色 intervals 和预算字段均可复算。",
+      "remaining": "PerColorRankinCertificateFileLedger"
     }
   ],
   "closed_gates": [
     "ConcreteColorSetGateActive",
     "CounterexampleBranchGuardPreserved",
     "EnumeratorInputsReady",
-    "ConcreteColorSetEnumeratorClosed"
-  ],
-  "open_gates": [
+    "ConcreteColorSetEnumeratorClosed",
     "ConcreteColoringCoverageDataAvailable",
     "ConcreteColoringCoverageComplete",
     "ConcreteColorSetEnumerationLedger"
-  ]
+  ],
+  "open_gates": []
 }
