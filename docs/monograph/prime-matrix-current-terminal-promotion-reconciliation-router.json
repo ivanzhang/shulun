@@ -1,0 +1,132 @@
+{
+  "canonical_source_terminal_promotion_closed": true,
+  "certificate_type": "current_terminal_promotion_reconciliation_router",
+  "closed_gates": [
+    "CurrentTerminalPromotionGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "SelfContainedTerminalBottleneckReducedToPDECCap",
+    "PDECCapCanonicalSourceRouteClosed",
+    "CanonicalPDECCapBoundaryLiftClosed",
+    "CanonicalTerminalPromotionClosed",
+    "GlobalOverclaimBlocked",
+    "CurrentTerminalPromotionReconciled"
+  ],
+  "counterexample_assumption_only": true,
+  "current_terminal_promotion_reconciled": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_model_gap_dprc_compatibility_proved": false,
+  "external_branch_replacement": {
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+  },
+  "external_gap_after_router": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "generic_external_dibfi_open": true,
+  "hypothetical_chain_only": true,
+  "latest_canonical_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_canonical_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+  "open_gates": [
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把当前终端侧最新硬点接到已有 canonical 终端晋级闭合路由。在 canonical-source 自足边界内，PDEC-CAP 与内部 CleanKLS 终端晋级已无新数学开门；但 generic/external DI/BFI 仍是外部分支，完整行列无条件命题仍未闭合。当前假设早期零行链条内，下一步应优先攻 ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock。",
+  "replacement": {
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve": "NoFurtherCanonicalSourceTerminalPromotionGap"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CurrentTerminalPromotionGateActive",
+      "meaning": "上一层把当前终端门压成 PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve。",
+      "proved": false,
+      "remaining": "接入已有 canonical 终端晋级闭合路由。"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只整理假设早期零行反例链条，不从真实样本缺席取证。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedTerminalBottleneckReducedToPDECCap",
+      "meaning": "内部 CleanKLS 不再是独立自足瓶颈；旧二选一压成 PDEC_CAP 同集全局对偶证书。",
+      "proved": true,
+      "remaining": "PDEC_CAP_SameSetGlobalDualCertificate。"
+    },
+    {
+      "closed": true,
+      "gate": "PDECCapCanonicalSourceRouteClosed",
+      "meaning": "PDEC-CAP 同集全局对偶前沿在 canonical-source 自足分支内闭合，剩余只属于 generic/external DI/BFI。",
+      "proved": true,
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalPDECCapBoundaryLiftClosed",
+      "meaning": "旧 PDEC-CAP 自足瓶颈已提升为 canonical-source 边界内无进一步开门。",
+      "proved": true,
+      "remaining": "NoFurtherCanonicalSourceSelfContainedPDECCapGap。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalTerminalPromotionClosed",
+      "meaning": "在 canonical-source 形式系统内，终端晋级已无新的自足数学开门。",
+      "proved": true,
+      "remaining": "NoFurtherCanonicalSourceTerminalPromotionGap"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalOverclaimBlocked",
+      "meaning": "generic/external DI/BFI 与最终 DStructure/Rankin 仍在 canonical 闭合边界外。",
+      "proved": true,
+      "remaining": "不能把 canonical 终端闭合升级成完整行/列无条件定理。"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentTerminalPromotionReconciled",
+      "meaning": "当前终端侧在 canonical-source 自足边界内已接到闭合路由；宽口径外部/generic 仍单列。",
+      "proved": true,
+      "remaining": "NoFurtherCanonicalSourceTerminalPromotionGap"
+    },
+    {
+      "closed": false,
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "meaning": "generic/external 原始 DI/BFI 路线仍需无投影对象恒等式与量化尺度代入；它不是 canonical 自足缺口。",
+      "proved": false,
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": false,
+      "gate": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+      "meaning": "当前早期零行反例链条还需要证明 moving-block 到终端门替换与模型余量/有限 DPRC 账本完全同口径。",
+      "proved": false,
+      "remaining": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "最终定理晋级仍需 DStructure/Tail-log4/finite Rankin 独立验收。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.json": "c67d3c6cb5962117acda677dcefaf3cb6155ce0ccacca645a8352d3682981311",
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078",
+    "docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.json": "2fd26731f4162835ebbe74514a7e8a5db980ca2d03a37a101a94b5a1bf5ec2ca",
+    "docs/monograph/prime-matrix-self-contained-pdec-cap-boundary-lift-router.json": "4ae01bb268aece12cceb9ace727f711e7a33fecbbc7de3bdcac08ab7e8382b76",
+    "docs/monograph/prime-matrix-self-contained-terminal-bottleneck-router.json": "efa40265600dc3d24976379f5605492932c3b23abe70e0a0b0c936454b3aa197"
+  },
+  "status": "current_terminal_promotion_reconciled_canonical_closed_external_final_open",
+  "terminal_gap_after_router": "NoFurtherCanonicalSourceTerminalPromotionGap",
+  "terminal_gap_before_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+}
