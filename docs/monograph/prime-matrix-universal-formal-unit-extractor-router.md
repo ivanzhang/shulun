@@ -1,8 +1,8 @@
 # Prime Matrix 普遍 formal unit 抽取定理路由器
 
-**状态：** `universal_extractor_interface_closed_partition_lemma_open`
+**状态：** `universal_extractor_interface_closed_SourceFamilyAssignmentTotalityLemma_open`
 
-UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合：它必须从任意早期零行 witness 产出有限、无漏、可哈希的 formal unit records。真正尚未闭合的是第一子门 `FormalUnitPartitionCoverageLemma`，即如何证明 witness 诱导义务可被有限 formal units 覆盖。
+UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。下一最窄点是 `SourceFamilyAssignmentTotalityLemma`。
 
 ```text
 counterexample_assumption_only=true
@@ -31,7 +31,7 @@ UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheor
 ## 3. 当前扫描
 
 - UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger: `0`
-- FormalUnitPartitionCoverageLemma: `0`
+- FormalUnitPartitionCoverageLemma: `1`
 - SourceFamilyAssignmentTotalityLemma: `0`
 - NoLossReturnAccountingLemma: `0`
 - CanonicalFormalUnitHashStabilityLemma: `0`
@@ -44,14 +44,14 @@ UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheor
 | CounterexampleBranchGuardPreserved | `true` | `true` | 本步只从假设 witness 推导，不使用真实缺席。 | 保持 row_column_unconditional_closed=false。 |
 | TaxonomyAndEmitterImported | `true` | `true` | 来源族 taxonomy、记录发射器和源记录 schema 均已闭合。 | 无来源格式剩余。 |
 | UniversalExtractorTheoremInterfaceClosed | `true` | `true` | 普遍抽取定理的输入、输出和四个子门已固定。 | UniversalExtractorTheoremInterfaceClosed |
-| FormalUnitPartitionCoverageAvailable | `false` | `false` | 尚未发现 partition coverage 子引理证明。 | FormalUnitPartitionCoverageLemma |
-| SourceFamilyAssignmentTotalityAvailable | `false` | `false` | 尚未发现 source family assignment totality 子引理证明。 | SourceFamilyAssignmentTotalityLemma |
-| NoLossReturnAccountingAvailable | `false` | `false` | 尚未发现 no-loss return accounting 子引理证明。 | NoLossReturnAccountingLemma |
-| CanonicalHashStabilityAvailable | `false` | `false` | 尚未发现 canonical formal unit hash stability 子引理证明。 | CanonicalFormalUnitHashStabilityLemma |
-| UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger | `false` | `false` | 四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。 | FormalUnitPartitionCoverageLemma |
+| FormalUnitPartitionCoverageAvailable | `true` | `true` | partition coverage 子引理证明状态。 | FormalUnitPartitionCoverageLemma |
+| SourceFamilyAssignmentTotalityAvailable | `false` | `false` | source family assignment totality 子引理证明状态。 | SourceFamilyAssignmentTotalityLemma |
+| NoLossReturnAccountingAvailable | `false` | `false` | no-loss return accounting 子引理证明状态。 | NoLossReturnAccountingLemma |
+| CanonicalHashStabilityAvailable | `false` | `false` | canonical formal unit hash stability 子引理证明状态。 | CanonicalFormalUnitHashStabilityLemma |
+| UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger | `false` | `false` | 四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。 | SourceFamilyAssignmentTotalityLemma |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `FormalUnitPartitionCoverageLemma`。
+当前唯一最窄点更新为 `SourceFamilyAssignmentTotalityLemma`。
 
-审稿边界：本步只关闭普遍抽取定理接口，不证明 partition coverage，也不关闭行列无条件定理。
+审稿边界：本步只更新普遍抽取定理的子门进度，不排斥 PDEC/SAE/Rankin 终端，也不关闭行列无条件定理。

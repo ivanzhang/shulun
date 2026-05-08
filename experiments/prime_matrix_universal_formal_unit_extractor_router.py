@@ -188,6 +188,24 @@ def build_rows(
     theorem_closed = proof_closed(proofs[OLD_ATOM]) or all(
         [partition_closed, assignment_closed, noloss_closed, hash_closed]
     )
+    first_open = next(
+        (
+            atom
+            for atom, closed in [
+                (PARTITION_ATOM, partition_closed),
+                (ASSIGNMENT_ATOM, assignment_closed),
+                (NOLOSS_ATOM, noloss_closed),
+                (HASH_ATOM, hash_closed),
+            ]
+            if not closed
+        ),
+        OLD_ATOM,
+    )
+    theorem_meaning = (
+        "四个子门已全部闭合，得到任意早期零行 witness 的 formal unit records。"
+        if theorem_closed
+        else "四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。"
+    )
     return [
         row(
             "UniversalExtractorGateActive",
@@ -220,37 +238,37 @@ def build_rows(
         row(
             "FormalUnitPartitionCoverageAvailable",
             partition_closed,
-            False,
-            "尚未发现 partition coverage 子引理证明。",
+            partition_closed,
+            "partition coverage 子引理证明状态。",
             PARTITION_ATOM,
         ),
         row(
             "SourceFamilyAssignmentTotalityAvailable",
             assignment_closed,
-            False,
-            "尚未发现 source family assignment totality 子引理证明。",
+            assignment_closed,
+            "source family assignment totality 子引理证明状态。",
             ASSIGNMENT_ATOM,
         ),
         row(
             "NoLossReturnAccountingAvailable",
             noloss_closed,
-            False,
-            "尚未发现 no-loss return accounting 子引理证明。",
+            noloss_closed,
+            "no-loss return accounting 子引理证明状态。",
             NOLOSS_ATOM,
         ),
         row(
             "CanonicalHashStabilityAvailable",
             hash_closed,
-            False,
-            "尚未发现 canonical formal unit hash stability 子引理证明。",
+            hash_closed,
+            "canonical formal unit hash stability 子引理证明状态。",
             HASH_ATOM,
         ),
         row(
             OLD_ATOM,
             theorem_closed,
-            False,
-            "四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。",
-            PARTITION_ATOM,
+            theorem_closed,
+            theorem_meaning,
+            first_open,
         ),
     ]
 
@@ -265,29 +283,57 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     interface_closed = next(item["closed"] for item in rows if item["gate"] == INTERFACE_ATOM)
     theorem_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
     evidence_paths = list(paths.values())
+    partition_closed = proof_closed(proofs[PARTITION_ATOM])
+    assignment_closed = proof_closed(proofs[ASSIGNMENT_ATOM])
+    noloss_closed = proof_closed(proofs[NOLOSS_ATOM])
+    hash_closed = proof_closed(proofs[HASH_ATOM])
+    current_narrowest = next(
+        (
+            atom
+            for atom, closed in [
+                (PARTITION_ATOM, partition_closed),
+                (ASSIGNMENT_ATOM, assignment_closed),
+                (NOLOSS_ATOM, noloss_closed),
+                (HASH_ATOM, hash_closed),
+            ]
+            if not closed
+        ),
+        OLD_ATOM,
+    )
+    status = (
+        "universal_extractor_closed"
+        if theorem_closed
+        else f"universal_extractor_interface_closed_{current_narrowest}_open"
+    )
+    plain_conclusion = (
+        "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 已闭合：四个子门全部闭合，任意早期零行"
+        " witness 都可产出有限、无漏、可哈希的 formal unit records。"
+        if theorem_closed
+        else "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。"
+        f"下一最窄点是 `{current_narrowest}`。"
+    )
     return {
         "certificate_type": "prime_matrix_universal_formal_unit_extractor_router",
-        "status": "universal_extractor_interface_closed_partition_lemma_open",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
+        "universal_formal_unit_extractor_theorem": theorem_closed,
+        "proved": theorem_closed,
+        "coverage_complete": theorem_closed,
         "universal_extractor_theorem_interface_closed": interface_closed,
         "universal_extractor_theorem_closed": theorem_closed,
         "proof_like_json": proofs,
         "theorem_sublemmas": theorem_sublemmas(),
-        "current_narrowest_atom": PARTITION_ATOM,
+        "current_narrowest_atom": current_narrowest,
         "downstream_atoms": [ASSIGNMENT_ATOM, NOLOSS_ATOM, HASH_ATOM],
         "reduction_formula": (
             f"{OLD_ATOM} => {INTERFACE_ATOM} AND {PARTITION_ATOM} AND {ASSIGNMENT_ATOM} "
             f"AND {NOLOSS_ATOM} AND {HASH_ATOM}."
         ),
-        "plain_conclusion": (
-            "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合：它必须从任意早期零行"
-            " witness 产出有限、无漏、可哈希的 formal unit records。真正尚未闭合的是第一子门 "
-            f"`{PARTITION_ATOM}`，即如何证明 witness 诱导义务可被有限 formal units 覆盖。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -365,7 +411,11 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。",
             "",
-            "审稿边界：本步只关闭普遍抽取定理接口，不证明 partition coverage，也不关闭行列无条件定理。",
+            (
+                "审稿边界：本步关闭普遍抽取定理，但不排斥 PDEC/SAE/Rankin 终端，也不关闭行列无条件定理。"
+                if result["universal_extractor_theorem_closed"]
+                else "审稿边界：本步只更新普遍抽取定理的子门进度，不排斥 PDEC/SAE/Rankin 终端，也不关闭行列无条件定理。"
+            ),
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

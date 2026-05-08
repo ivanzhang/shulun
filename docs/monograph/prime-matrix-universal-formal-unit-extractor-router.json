@@ -1,6 +1,6 @@
 {
   "certificate_type": "prime_matrix_universal_formal_unit_extractor_router",
-  "status": "universal_extractor_interface_closed_partition_lemma_open",
+  "status": "universal_extractor_interface_closed_SourceFamilyAssignmentTotalityLemma_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "75b1b9cea00a74f818c3b3079038a0e46322c263ff0d71758bbef9048210e47b",
     "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.json": "8358aa6fd3a6bb4c28847b40ecef3177f22939e9114a86ef962b633509c7e2ab",
@@ -10,11 +10,21 @@
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
+  "universal_formal_unit_extractor_theorem": false,
+  "proved": false,
+  "coverage_complete": false,
   "universal_extractor_theorem_interface_closed": true,
   "universal_extractor_theorem_closed": false,
   "proof_like_json": {
     "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger": [],
-    "FormalUnitPartitionCoverageLemma": [],
+    "FormalUnitPartitionCoverageLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json",
+        "status": "formal_unit_partition_coverage_closed_assignment_totality_open",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ],
     "SourceFamilyAssignmentTotalityLemma": [],
     "NoLossReturnAccountingLemma": [],
     "CanonicalFormalUnitHashStabilityLemma": []
@@ -37,14 +47,14 @@
       "meaning": "formal_unit_id、source_hash 与下游 source_tuple_hash 在分割和回流下稳定。"
     }
   ],
-  "current_narrowest_atom": "FormalUnitPartitionCoverageLemma",
+  "current_narrowest_atom": "SourceFamilyAssignmentTotalityLemma",
   "downstream_atoms": [
     "SourceFamilyAssignmentTotalityLemma",
     "NoLossReturnAccountingLemma",
     "CanonicalFormalUnitHashStabilityLemma"
   ],
   "reduction_formula": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheoremInterfaceClosed AND FormalUnitPartitionCoverageLemma AND SourceFamilyAssignmentTotalityLemma AND NoLossReturnAccountingLemma AND CanonicalFormalUnitHashStabilityLemma.",
-  "plain_conclusion": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合：它必须从任意早期零行 witness 产出有限、无漏、可哈希的 formal unit records。真正尚未闭合的是第一子门 `FormalUnitPartitionCoverageLemma`，即如何证明 witness 诱导义务可被有限 formal units 覆盖。",
+  "plain_conclusion": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。下一最窄点是 `SourceFamilyAssignmentTotalityLemma`。",
   "rows": [
     {
       "gate": "UniversalExtractorGateActive",
@@ -76,30 +86,30 @@
     },
     {
       "gate": "FormalUnitPartitionCoverageAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "尚未发现 partition coverage 子引理证明。",
+      "closed": true,
+      "proved": true,
+      "meaning": "partition coverage 子引理证明状态。",
       "remaining": "FormalUnitPartitionCoverageLemma"
     },
     {
       "gate": "SourceFamilyAssignmentTotalityAvailable",
       "closed": false,
       "proved": false,
-      "meaning": "尚未发现 source family assignment totality 子引理证明。",
+      "meaning": "source family assignment totality 子引理证明状态。",
       "remaining": "SourceFamilyAssignmentTotalityLemma"
     },
     {
       "gate": "NoLossReturnAccountingAvailable",
       "closed": false,
       "proved": false,
-      "meaning": "尚未发现 no-loss return accounting 子引理证明。",
+      "meaning": "no-loss return accounting 子引理证明状态。",
       "remaining": "NoLossReturnAccountingLemma"
     },
     {
       "gate": "CanonicalHashStabilityAvailable",
       "closed": false,
       "proved": false,
-      "meaning": "尚未发现 canonical formal unit hash stability 子引理证明。",
+      "meaning": "canonical formal unit hash stability 子引理证明状态。",
       "remaining": "CanonicalFormalUnitHashStabilityLemma"
     },
     {
@@ -107,17 +117,17 @@
       "closed": false,
       "proved": false,
       "meaning": "四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。",
-      "remaining": "FormalUnitPartitionCoverageLemma"
+      "remaining": "SourceFamilyAssignmentTotalityLemma"
     }
   ],
   "closed_gates": [
     "UniversalExtractorGateActive",
     "CounterexampleBranchGuardPreserved",
     "TaxonomyAndEmitterImported",
-    "UniversalExtractorTheoremInterfaceClosed"
+    "UniversalExtractorTheoremInterfaceClosed",
+    "FormalUnitPartitionCoverageAvailable"
   ],
   "open_gates": [
-    "FormalUnitPartitionCoverageAvailable",
     "SourceFamilyAssignmentTotalityAvailable",
     "NoLossReturnAccountingAvailable",
     "CanonicalHashStabilityAvailable",
