@@ -1,0 +1,145 @@
+{
+  "certificate_type": "b3_euler_product_positive_kernel_router",
+  "status": "euler_product_log_derivative_positive_kernel_closed",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-hadamard-factorization-router.json": "3a78eec44d5ea047d64633e68024afa29cc90ca7f3234a6c173746edd4dab09f"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "euler_product_log_derivative_positive_real_part_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "EulerProductLogDerivativePositiveRealPartLedger": "EulerProductLogDerivativePositiveRealPartClosed"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityLedger AND ExplicitZeroFreeRegionConstantNumericalLedger AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "DeLaValleePoussinZeroRepulsionInequalityLedger",
+  "secondary_priority": "ExplicitZeroFreeRegionConstantNumericalLedger",
+  "tertiary_priority": "FiniteLowHeightZeroCheckLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "positive_kernel_samples": [
+    {
+      "sigma": 1.2,
+      "t": 0.0,
+      "finite_sum": 25.147031493770953,
+      "min_kernel_seen": 8.0
+    },
+    {
+      "sigma": 1.2,
+      "t": 0.1,
+      "finite_sum": 23.71054207714932,
+      "min_kernel_seen": 6.372515161597632
+    },
+    {
+      "sigma": 1.2,
+      "t": 0.7,
+      "finite_sum": 7.1555317226467166,
+      "min_kernel_seen": 2.1094237467877974e-14
+    },
+    {
+      "sigma": 1.2,
+      "t": 1.3,
+      "finite_sum": 8.20187778060188,
+      "min_kernel_seen": 1.7514987804556625e-07
+    },
+    {
+      "sigma": 1.2,
+      "t": 2.0,
+      "finite_sum": 8.221302623031752,
+      "min_kernel_seen": 4.0481383634105583e-07
+    },
+    {
+      "sigma": 1.2,
+      "t": 3.5,
+      "finite_sum": 8.272466699757196,
+      "min_kernel_seen": 1.3137047005784552e-11
+    }
+  ],
+  "min_finite_sum_sample": 7.1555317226467166,
+  "core_formula": {
+    "log_derivative": "F(s)=-zeta'/zeta(s)=sum_{n>=1} Lambda(n)n^(-s), Re s>1",
+    "positive_kernel": "3+4*cos(u)+cos(2u)=2*(1+cos(u))^2>=0",
+    "real_part_inequality": "3F(sigma)+4 Re F(sigma+i t)+Re F(sigma+2 i t)>=0, sigma>1"
+  },
+  "plain_conclusion": "Euler product 对数导数正性已闭合。该层只给 sigma>1 处的正核不等式；它本身还不是零点自由区，下一步必须同 Hadamard 零点部分分式合并，证明 de la Vallee Poussin 零点排斥。",
+  "rows": [
+    {
+      "gate": "EulerProductPositiveKernelGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是 Euler product 对数导数正性。",
+      "remaining": "EulerProductLogDerivativePositiveRealPartLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只补假设链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "HadamardInputAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已给出 xi'/xi 的零点部分分式，供下一排斥层使用。",
+      "remaining": "HadamardFactorizationLogDerivativeClosed"
+    },
+    {
+      "gate": "TrigKernelIdentityAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "三角核 3+4cos u+cos 2u=2(1+cos u)^2>=0 已在零点自由区常数路由中闭合。",
+      "remaining": "DeLaValleePoussinTrigonometricKernelIdentityClosed"
+    },
+    {
+      "gate": "EulerProductLogDerivativeSeriesClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 sigma>1，Euler product 给 -zeta'/zeta(s)=sum Lambda(n)n^{-s}，绝对收敛。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "PositiveRealPartKernelClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "逐项乘以正核并求和，得 3F(sigma)+4Re F(sigma+it)+Re F(sigma+2it)>=0。",
+      "remaining": "EulerProductLogDerivativePositiveRealPartClosed"
+    },
+    {
+      "gate": "EulerProductLogDerivativePositiveRealPartLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "待证 atom 已闭合为 Euler product 对数导数正性不等式。",
+      "remaining": "EulerProductLogDerivativePositiveRealPartClosed"
+    },
+    {
+      "gate": "ZeroRepulsionInequalityStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "下一步要把 Hadamard 部分分式与 Euler 正性合并，推出 de la Vallee Poussin 零点排斥。",
+      "remaining": "DeLaValleePoussinZeroRepulsionInequalityLedger"
+    },
+    {
+      "gate": "ExplicitConstantsStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "排斥不等式之后仍需显式常数账本与低高度零点核验。",
+      "remaining": "ExplicitZeroFreeRegionConstantNumericalLedger AND FiniteLowHeightZeroCheckLedger"
+    }
+  ],
+  "closed_gates": [
+    "EulerProductPositiveKernelGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "HadamardInputAvailable",
+    "TrigKernelIdentityAvailable",
+    "EulerProductLogDerivativeSeriesClosed",
+    "PositiveRealPartKernelClosed",
+    "EulerProductLogDerivativePositiveRealPartLedger"
+  ],
+  "open_gates": [
+    "ZeroRepulsionInequalityStillNext",
+    "ExplicitConstantsStillDownstream"
+  ]
+}
