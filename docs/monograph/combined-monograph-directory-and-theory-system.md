@@ -6289,3 +6289,86 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 下一步最窄目标更新为 `EarlyZeroTerminalExclusionPackage`：排斥准入后的早期零行终端家族，即 primitive PDEC 容量、SAE/LocalSurvivor packet，或稳定复现位移缺陷。完成该包后仍需 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`。
+
+## Prime Matrix 早期零行终端排斥包压缩路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_early_zero_terminal_package_reduction_router.py
+docs/monograph/prime-matrix-early-zero-terminal-package-reduction-router.md/json
+```
+
+该路由器直接攻击抽象 `EarlyZeroTerminalExclusionPackage`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+early_zero_terminal_package_reduced=true；
+early_zero_terminal_package_fully_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=EarlyZeroTerminalExclusionPackage；
+terminal_gap_after_router=AnchorCollarPrimeFiberCapacityBoundOrPDECReturn AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion。
+```
+
+结构链为：
+
+```text
+EarlyZeroTerminalExclusionPackage
+=> registered stable recurrence or boundary phase defect
+=> exact carry-shell primitive support
+=> cofactor depth split
+=> x>=sqrt(P): canonical anchor collar short prime fibers
+=> x<sqrt(P): composite cofactor descent or SAE/PDEC return。
+```
+
+这一步删除的是“抽象终端包”的无名性，不是完成终端排斥。它把大行段压成真双素 canonical anchor-collar 短素数纤维容量，把早期段压成复合 cofactor 深度下降或 LocalSurvivor/SAE 排斥。
+
+替换律为：
+
+```text
+EarlyZeroTerminalExclusionPackage
+  =>
+AnchorCollarPrimeFiberCapacityBoundOrPDECReturn
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion。
+```
+
+已经闭合的门为：
+
+```text
+EarlyZeroTerminalPackageActive；
+PhaseDefectNoFourthExit；
+StableRecurrenceDisplacementAbsorbed；
+CarryShellPrimitiveSupportClosed；
+CofactorDepthSplitClosed；
+AnchorCollarPrimePairReductionClosed；
+ContradictionMatrixFrontierCompatible；
+EarlyZeroTerminalPackageReduced。
+```
+
+开放门为：
+
+```text
+AnchorCollarPrimeFiberCapacityBoundOrPDECReturn；
+CompositeCofactorDepthDescentOrNamedReturn；
+EarlyBandLocalSurvivorOrSAEExclusion。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND AnchorCollarPrimeFiberCapacityBoundOrPDECReturn
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `AnchorCollarPrimeFiberCapacityBoundOrPDECReturn`：证明 canonical anchor collar 中长度 `<sqrt(P)` 的短素数纤维总容量不能覆盖 `R_x`，或证明任何过载都会产生 PDEC/SAE/ColumnCRT 命名证书。
