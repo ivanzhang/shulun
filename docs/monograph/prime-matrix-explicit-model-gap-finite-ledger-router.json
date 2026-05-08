@@ -1,0 +1,131 @@
+{
+  "certificate_type": "explicit_model_gap_finite_ledger_router",
+  "closed_gates": [
+    "ExplicitModelGapFiniteLedgerGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "RSMIdentityInterfacePinned",
+    "FiniteDPRCAlpha043PBelow2003Certificate",
+    "HighSegmentC3AuditMaterialized",
+    "ExplicitModelGapAndFiniteDPRCLedger"
+  ],
+  "closed_subinput": "FiniteDPRCAlpha043PBelow2003Certificate",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "explicit_model_gap_and_finite_dprc_ledger_split_closed": true,
+  "external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "finite_dprc_alpha043_p_below_2003_certificate_closed": true,
+  "high_segment_model_gap_alpha043_c3_analytic_ledger_proved": false,
+  "hypothetical_chain_only": true,
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND HighSegmentModelGapAlpha043C3AnalyticLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND HighSegmentModelGapAlpha043C3AnalyticLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND HighSegmentModelGapAlpha043C3AnalyticLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "metrics": {
+    "finite_low_segment": {
+      "capacity_fail": 0,
+      "max_prime": 1999,
+      "min_capacity_margin": 1,
+      "prime_count": 298,
+      "record_count": 596,
+      "sides": [
+        "minus",
+        "plus"
+      ]
+    },
+    "high_segment_2003": {
+      "c_certificate_pass": true,
+      "capacity_fail": 0,
+      "count": 18578,
+      "max_positive_discrepancy_over_sqrt": 2.468627445570715,
+      "min_capacity_margin": 48,
+      "min_model_gap_over_sqrt": 3.579478577823086
+    }
+  },
+  "next_priority": "HighSegmentModelGapAlpha043C3AnalyticLedger",
+  "open_gates": [
+    "HighSegmentModelGapAlpha043C3AnalyticLedger",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把 ExplicitModelGapAndFiniteDPRCLedger 拆开。低段 P<2003 已由有限枚举账本闭合：298 个素数、双侧 596 条记录全部 capacity_pass。高段 P>=2003 的数据账本显示 C=3 余量存在，但这仍不是解析证明。因此活动最窄点从原混合原子压成 HighSegmentModelGapAlpha043C3AnalyticLedger。",
+  "replacement": {
+    "ExplicitModelGapAndFiniteDPRCLedger": "HighSegmentModelGapAlpha043C3AnalyticLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ExplicitModelGapFiniteLedgerGateActive",
+      "meaning": "最新活动最窄点已转为显式模型余量与有限 DPRC 账本。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只整理假设早期零行反例链条中的 DPRC 账本，不用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "RSMIdentityInterfacePinned",
+      "meaning": "RSM 恒等式把 DPRC 容量账本拆成模型余量 S(1-H) 与正偏差 D_+。",
+      "proved": true,
+      "remaining": "本原子只处理有限账本与模型余量，不处理 D_+ 相对筛偏差。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteDPRCAlpha043PBelow2003Certificate",
+      "meaning": "P<2003 的 298 个素数、plus/minus 共 596 条记录已全部枚举，capacity_fail=0。",
+      "proved": true,
+      "remaining": "有限段从活动解析硬点中移除。"
+    },
+    {
+      "closed": true,
+      "gate": "HighSegmentC3AuditMaterialized",
+      "meaning": "审计显示 P>=2003 时 S(1-H)>3sqrt(S)，且 C=3 数据账本通过。",
+      "proved": false,
+      "remaining": "仍需解析证明，不能把审计当无条件定理。"
+    },
+    {
+      "closed": false,
+      "gate": "HighSegmentModelGapAlpha043C3AnalyticLedger",
+      "meaning": "剩余真正原子是 P>=2003 的显式解析模型余量：证明 S_Y(P)(1-H_Y(P))>3sqrt(S_Y(P))。",
+      "proved": false,
+      "remaining": "HighSegmentModelGapAlpha043C3AnalyticLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "原混合账本已分解：有限段闭合，高段模型余量成为唯一活动子输入；这不是原不等式整体证明。",
+      "proved": false,
+      "remaining": "HighSegmentModelGapAlpha043C3AnalyticLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "proved": false,
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/dprc_relative_sieve_margin_alpha043_p100000_20260506.json": "34860c79b0b9834a8625cf434b5869078c4d76c75381522bc452a0341d46d501",
+    "docs/dynamic_promoted_rough_capacity_audit_alpha043_p100000_20260506.json": "bcf59b855586af801870feaec670c9adf1a498e72a51ae0bcdd25f83d90570d9",
+    "docs/monograph/prime-matrix-clean-core-dprc-centered-discrepancy-router.json": "c4153b21eeb7aaf24284a11032dbdb1fe7e0d1a2b5875740dc369510919048ef",
+    "docs/monograph/prime-matrix-dprc-relative-sieve-margin.md": "75a554cebae6ad124abadd4f1fe19f7b4df681d23203c496cff1b3576c33475f",
+    "docs/monograph/prime-matrix-moving-block-dprc-ledger-compatibility-router.json": "c58be99083b0ddf69b3f7254bf9f4e8b9fc1df7ce16d5feeb38e727d865cef73"
+  },
+  "status": "explicit_model_gap_finite_ledger_split_finite_closed_high_model_open",
+  "terminal_atom_preserved": "NoFurtherCanonicalSourceTerminalPromotionGap",
+  "terminal_gap_after_router": "HighSegmentModelGapAlpha043C3AnalyticLedger"
+}
