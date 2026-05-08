@@ -1562,3 +1562,47 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 有限证书的 actual noncanonical 支撑失败包”。若无法排斥，就必须证明这些包回流到
 `PDEC/SAE/ColumnCRT/CleanKLS/外部 KLS`，或直接证明最终容量反原子。当前材料只闭合了包化准入边界，
 尚未证明所有 packet 不存在或必回流，所以完整无条件行/列命题仍不能声明已证。
+
+## 15. 支撑失败 packet 回流二分
+
+继续新增：
+
+```text
+experiments/prime_matrix_support_failure_packet_return_dichotomy_router.py
+docs/monograph/prime-matrix-support-failure-packet-return-dichotomy-router.md/json
+
+support_failure_packet_return_dichotomy_closed=true；
+clean_core_packet_exclusion_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层继续攻击上一节的 `ActualNoncanonicalSupportFailurePacketExclusion`。核心结论是：支撑失败 packet
+不能成为新的第五类终端。任何这样的 packet 若不是最终 clean-core，就必须落入以下回流之一：
+
+- 孤立有限包：进入 `LocalSurvivor/SAE` packet 证书；
+- 持久有限签名：进入显式 primitive `PDEC` schema；
+- 列/位移/endpoint/cofactor 负载：进入 `ColumnCRT` 吸收到的 `PDEC/SAE`；
+- 所有有限签名都不持久的漂移块：进入 `CleanKLS/DLS`、exact source entropy 或外部 KLS；
+- canonical 或 generic 逃逸：已由上一层 ExactUVSupport 终端审计阻断。
+
+因此真正源侧剩余进一步压成：
+
+```text
+ActualNoncanonicalCleanCoreSupportFailurePacketExclusion。
+```
+
+这里的 clean-core packet 指：通过所有回流测试后仍保留的正质量 actual noncanonical full-S non-AP
+balanced block；它同 formal unit、低于 exact `u/v` 支撑阈值、无 canonical 导入、无有限 sparse
+witness、无持久 PDEC 签名、无列位移缺陷，也未进入外部或 generic CleanKLS。
+
+最新完全自足输入基为：
+
+```text
+ActualNoncanonicalCleanCoreSupportFailurePacketExclusion
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步闭合的是回流完备性，不是 clean-core 排斥证明。下一步必须直接证明 clean-core packet 不存在，
+或直接证明最终容量反原子；最终仍需 DStructure/Rankin 独立验收。

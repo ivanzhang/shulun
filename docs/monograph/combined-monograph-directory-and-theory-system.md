@@ -3937,3 +3937,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 这一步关闭“支撑失败还能无名停留”的边界，但没有证明所有 packet 不存在或必回流。下一步的源侧最窄硬点是
 `ActualNoncanonicalSupportFailurePacketExclusion`，或直接证明 final capacity anti-atom；最终仍需
 DStructure/Rankin 独立验收。
+
+继续新增：
+
+```text
+experiments/prime_matrix_support_failure_packet_return_dichotomy_router.py
+docs/monograph/prime-matrix-support-failure-packet-return-dichotomy-router.md/json
+```
+
+该路由器继续攻击 `ActualNoncanonicalSupportFailurePacketExclusion`。结论为：
+
+```text
+support_failure_packet_return_dichotomy_closed=true；
+clean_core_packet_exclusion_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：支撑失败 packet 不能成为第五类隐藏终端。若它不是 clean-core packet，就必须按有限孤立
+packet、持久有限签名、ColumnCRT/位移、漂移 CleanKLS/DLS 或已阻断逃逸之一回流。孤立有限包进入
+`LocalSurvivor/SAE` packet 证书；持久有限签名进入显式 primitive `PDEC` schema；列/位移/endpoint/cofactor
+负载进入 `ColumnCRT` 吸收到的 `PDEC/SAE`；所有有限签名都不持久的 moving block 进入
+`CleanKLS/DLS`、exact source entropy 或外部 KLS。
+
+因此最新源侧最窄微输入压成：
+
+```text
+ActualNoncanonicalCleanCoreSupportFailurePacketExclusion。
+```
+
+连同独立晋级门，最新完全自足输入基为：
+
+```text
+ActualNoncanonicalCleanCoreSupportFailurePacketExclusion
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+clean-core packet 是通过所有回流测试后仍保留的正质量 actual noncanonical full-S non-AP balanced block：
+同 formal unit、低于 exact `u/v` 支撑阈值、无 canonical 导入、无有限 sparse witness、无持久 PDEC 签名、
+无列位移缺陷，也未进入外部或 generic CleanKLS。本步闭合回流完备性；当前材料仍未证明 clean-core
+packet 不存在或必然矛盾。

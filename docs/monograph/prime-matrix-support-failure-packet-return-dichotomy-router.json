@@ -1,0 +1,120 @@
+{
+  "actual_final_capacity_antiatom_proved": false,
+  "certificate_type": "prime_matrix_support_failure_packet_return_dichotomy_router",
+  "clean_core_definition": "clean-core support-failure packet 是通过所有回流测试后仍保留的正质量 actual noncanonical full-S non-AP balanced block：同 formal unit、低于 exact u/v 支撑阈值、无 canonical 导入、无有限 sparse witness、无持久 PDEC 签名、无列位移缺陷、也未进入外部或 generic CleanKLS。",
+  "clean_core_packet_exclusion_proved": false,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "latest_self_contained_basis": "ActualNoncanonicalCleanCoreSupportFailurePacketExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "new_source_microinput": "ActualNoncanonicalCleanCoreSupportFailurePacketExclusion",
+  "plain_conclusion": "支撑失败 packet 的回流字母表已闭合：孤立、持久、列位移和漂移四类都不能成为新的隐藏终端。源侧最窄剩余进一步压成 clean-core support-failure packet 排斥。当前材料仍未证明该 clean-core packet 不存在，所以完整无条件行/列命题仍未闭合。",
+  "previous_basis": "ActualNoncanonicalSupportFailurePacketExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "return_branches": [
+    {
+      "branch": "IsolatedFinitePacket",
+      "new_terminal": "false",
+      "route": "LocalSurvivor/SAE packet certificate",
+      "trigger": "有限窗口内可抽取 witness 或 blocker-deficit，但签名不持久。"
+    },
+    {
+      "branch": "PersistentFiniteSignature",
+      "new_terminal": "false",
+      "route": "FutureExplicitPrimitivePDECSchema",
+      "trigger": "同一 block_key 或其有限投影签名在无穷层持久复现。"
+    },
+    {
+      "branch": "ColumnOrDisplacementLoad",
+      "new_terminal": "false",
+      "route": "ColumnCRT absorbed into displacement/endpoint/cofactor PDEC or SAE",
+      "trigger": "失败 packet 的负载固定位移、列半径或 endpoint/cofactor 坐标。"
+    },
+    {
+      "branch": "DriftingMovingBlock",
+      "new_terminal": "false",
+      "route": "CleanKLS/DLS, exact source entropy, or explicit external KLS",
+      "trigger": "所有有限签名都不持久，moving block 随尺度漂移。"
+    },
+    {
+      "branch": "CanonicalOrGenericEscape",
+      "new_terminal": "false",
+      "route": "blocked by previous ExactUVSupport terminal audit",
+      "trigger": "试图调用 canonical RIW/Buchstab 支撑或 generic WFD 点支撑模板。"
+    },
+    {
+      "branch": "CleanCorePacket",
+      "new_terminal": "true_source_microinput",
+      "route": "ActualNoncanonicalCleanCoreSupportFailurePacketExclusion",
+      "trigger": "以上所有回流测试均不触发，仍有正质量 actual noncanonical 支撑失败。"
+    }
+  ],
+  "return_law": "任意 ActualNoncanonicalSupportFailurePacket 若不是 clean-core packet，就必须按有限孤立 packet、持久有限签名、ColumnCRT/位移、漂移 CleanKLS/DLS 或已阻断逃逸之一回流；因此它不能作为第五类终端。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SupportFailurePacketInputPinned",
+      "meaning": "上一层已把 ExactUVSupport 失败物化为支撑失败 packet 排斥。",
+      "proved": true,
+      "remaining": "审查 packet 是否可作为新终端停留。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteSparsePacketRouteClosed",
+      "meaning": "孤立有限 packet 必须成为 LocalSurvivor/SAE 证书或显式 future sparse schema。",
+      "proved": true,
+      "remaining": "不是源侧 clean-core 微输入。"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentSignatureRouteClosed",
+      "meaning": "持久有限签名必须进入显式 primitive PDEC schema。",
+      "proved": true,
+      "remaining": "未来 PDEC 需另交全集证书；不能作为隐藏支撑失败终端。"
+    },
+    {
+      "closed": true,
+      "gate": "ColumnDisplacementRouteClosed",
+      "meaning": "ColumnCRT/位移/endpoint/cofactor 负载已吸收到 PDEC 或 SAE。",
+      "proved": true,
+      "remaining": "列缺陷不是第三类独立源侧终端。"
+    },
+    {
+      "closed": true,
+      "gate": "DriftingBlockRouteClosed",
+      "meaning": "所有有限签名都不持久时，只能进入 CleanKLS/DLS、exact source entropy 或外部 KLS。",
+      "proved": true,
+      "remaining": "generic CleanKLS 不能偷渡为自足证明。"
+    },
+    {
+      "closed": true,
+      "gate": "ReturnAlphabetComplete",
+      "meaning": "支撑失败 packet 的非 clean-core 出口已被有限包、持久签名、列位移、漂移块和阻断逃逸覆盖。",
+      "proved": true,
+      "remaining": "只剩通过全部回流测试的 clean-core packet。"
+    },
+    {
+      "closed": false,
+      "gate": "CleanCorePacketExclusionCurrentCorpusProved",
+      "meaning": "当前材料没有证明 clean-core support-failure packet 不存在。",
+      "proved": false,
+      "remaining": "证明 ActualNoncanonicalCleanCoreSupportFailurePacketExclusion，或直接 final capacity anti-atom。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧 clean-core 完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.md": "5e3df47871aa9953a3f778c2a8c18421a7c3e1c122c770cc467729d61d2bcd8b",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-exact-uv-support-failure-packetization-router.json": "7df63dfa6af7929bcc8e9d7ae1883dcd0d8aa5c4f87f78cf2d52994fd75debed",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3",
+    "docs/monograph/prime-matrix-ncblk-boundary-reconciliation-router.md": "9c9da22b4bf209e1d307037cb3235d619f8bd2f1a5afcde5e675fdd8a5d21220",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.json": "5f1d45f2c03345dc1ef62e02c75bde6cebcdf211fc746b6c67b0bb10bfef8e0d"
+  },
+  "status": "support_failure_packet_return_dichotomy_closed_clean_core_open",
+  "support_failure_packet_return_dichotomy_closed": true
+}

@@ -3244,6 +3244,43 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
 The manuscript still lacks a proof that all such packets are absent or must return to the
 PDEC, SAE, ColumnCRT, CleanKLS, or external KLS exits, and it still lacks independent
 D-structure/Rankin acceptance.
+
+The support-failure packet return-dichotomy router then closes the return alphabet for
+these packets.  It records
+\[
+\begin{gathered}
+  \texttt{support\_failure\_packet\_return\_dichotomy\_closed=true},\\
+  \texttt{clean\_core\_packet\_exclusion\_proved=false},\\
+  \texttt{actual\_final\_capacity\_antiatom\_proved=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+An actual noncanonical support-failure packet cannot be a fifth terminal family.  If it is
+not a clean-core packet, then it must return through one of the existing named interfaces:
+an isolated finite packet gives a LocalSurvivor/SAE certificate; a persistent finite
+signature gives an explicit primitive PDEC schema; a column, displacement, endpoint or
+cofactor load returns through the ColumnCRT-to-PDEC/SAE absorption; and a drifting moving
+block enters CleanKLS/DLS, exact source entropy, or an explicit external KLS input.  The
+canonical and generic-template escapes have already been blocked by the ExactUVSupport
+audit.
+
+Thus the latest source-side micro-input is
+\begin{quote}\small\ttfamily
+ActualNoncanonicalCleanCoreSupportFailurePacketExclusion.
+\end{quote}
+A clean-core packet is a positive-mass actual noncanonical full-\(S\) non-AP balanced
+block, in the same formal unit, below the exact \(u,v\)-support threshold, with no
+canonical import, no finite sparse witness, no persistent PDEC signature, no column or
+displacement defect, and no external or generic CleanKLS exit.  The latest self-contained
+input basis is therefore
+\begin{quote}\small\ttfamily
+ActualNoncanonicalCleanCoreSupportFailurePacketExclusion\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+This closes return completeness, not clean-core exclusion.  The manuscript still lacks a
+proof that such clean-core packets are impossible, or a direct proof of the final capacity
+anti-atom.
 \end{proof}
 
 
