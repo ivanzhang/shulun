@@ -2458,3 +2458,65 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步没有证明 BES/DLS 危险交集排斥；但它把 DPRC 的解析输入从原始覆盖不等式压成了一个有限/模型余量账本
 和一个三出口结构排斥命题。
+
+## 33. clean-core BES-DLS 命名回流
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_bes_dls_named_return_router.py
+docs/monograph/prime-matrix-clean-core-bes-dls-named-return-router.md/json
+
+bes_dls_named_return_boundary_closed=true；
+dls_kernel_and_danger_algebra_closed=true；
+bes_dls_named_return_input_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层攻击 `BESDangerIntersectionExclusionOrDLSNamedReturn`。它关闭的是命名边界：如果六个 beta 桶真的出现
+高 `L1` 正和与高 `L2` 能量同步，不能再说成无名异常，必须落入三类结构：
+
+```text
+PointLoad   -> ColumnCRT / tail-anchor / displacement PDEC；
+ShortWindow -> SAE / LocalSurvivor / persistent sparse PDEC；
+LowPhase    -> W-unit PDEC / new-layer PDEC / flat DLS。
+```
+
+近危险审计只用于定位优先级，不是证明：
+
+```text
+record_count=10；
+max_l1/sqrt=2.468627；
+max_l2/sqrt=1.233496；
+max_point_load=4；
+max_short_window_positive=0.381667sqrt(S)；
+max_low_phase_positive=0.902430sqrt(S)；
+all_top_low_phase_residues_are_units=true。
+```
+
+这说明当前最有结构信号的是 `LowPhase`，即单位类内部或新增轮层 Fourier 方向的同步偏斜。PointLoad 与
+ShortWindow 在代表样本中不强，但仍需要正式排斥或命名回流证明。
+
+因此：
+
+```text
+BESDangerIntersectionExclusionOrDLSNamedReturn
+  => DLSPointLoadColumnCRTBoundOrNamedReturn
+     AND DLSShortWindowSAEBoundOrNamedReturn
+     AND DLSLowPhasePDECNewLayerOrFlatDLSBound。
+```
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSLowPhasePDECNewLayerOrFlatDLSBound
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步没有证明三类微输入；但它把 BES-DLS 大口径同步失败压成三个可分别攻的终端，下一步最窄优先级是
+`DLSLowPhasePDECNewLayerOrFlatDLSBound`。

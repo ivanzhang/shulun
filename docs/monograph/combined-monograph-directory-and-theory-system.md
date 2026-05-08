@@ -4770,3 +4770,47 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 该步把 DPRC 解析锁从原始容量不等式压成一个可独立验收的有限/模型余量账本和一个 BES-DLS 三出口结构命题。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_bes_dls_named_return_router.py
+docs/monograph/prime-matrix-clean-core-bes-dls-named-return-router.md/json
+```
+
+该路由器直接攻击 `BESDangerIntersectionExclusionOrDLSNamedReturn`。结论为：
+
+```text
+bes_dls_named_return_boundary_closed=true；
+dls_kernel_and_danger_algebra_closed=true；
+bes_dls_named_return_input_proved=false；
+row_column_unconditional_closed=false。
+```
+
+新的压缩律是：
+
+```text
+BESDangerIntersectionExclusionOrDLSNamedReturn
+  => DLSPointLoadColumnCRTBoundOrNamedReturn
+     AND DLSShortWindowSAEBoundOrNamedReturn
+     AND DLSLowPhasePDECNewLayerOrFlatDLSBound。
+```
+
+中心化核、危险交集、尖峰桶鸽巢和二次能量展开已登记；若危险交集出现，它必须通过 `PointLoad`、
+`ShortWindow` 或 `LowPhase` 支付。ColumnCRT 已被位移 PDEC/SAE 吸收，SAE 已被 LocalSurvivor/PDEC
+吸收，LowPhase 已接入 W-unit/new-layer PDEC 与 flat DLS 二分。近危险审计显示最稳定结构信号是单位类内部
+LowPhase，因此下一步最窄自足攻点是 `DLSLowPhasePDECNewLayerOrFlatDLSBound`。
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSLowPhasePDECNewLayerOrFlatDLSBound
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+该步删除了 BES-DLS 无名同步失败口子，但尚未证明三类微输入。

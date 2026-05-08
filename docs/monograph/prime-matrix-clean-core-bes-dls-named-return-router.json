@@ -1,0 +1,133 @@
+{
+  "bes_dls_named_return_boundary_closed": true,
+  "bes_dls_named_return_input_proved": false,
+  "certificate_type": "prime_matrix_clean_core_bes_dls_named_return_router",
+  "core_reduction_law": "BES-DLS 输入的作用是删除高 L1/高 L2 同步失败的无名出口。中心化核与危险交集代数已固定；若危险交集出现，二次能量只能通过 PointLoad、ShortWindow 或 LowPhase 三种可登记形态承担。PointLoad 回流 ColumnCRT/displacement PDEC，ShortWindow 回流 SAE/LocalSurvivor 或持久 PDEC，LowPhase 回流 W-unit/new-layer PDEC 或 flat DLS。因此最新剩余不是 BES 大口径，而是这三类出口的实际排斥或命名回流证明。",
+  "dls_kernel_and_danger_algebra_closed": true,
+  "exit_rows": [
+    {
+      "closed": false,
+      "diagnostic": "nearmiss max point load = 4",
+      "exit": "PointLoad",
+      "meaning": "若单点高素标签负载可持续超阈值，则固定列位移或尾锚签名必须回流 ColumnCRT/PDEC；否则不能支付 BES 危险交集。",
+      "micro_input": "DLSPointLoadColumnCRTBoundOrNamedReturn",
+      "route": "ColumnCRT / tail-anchor / displacement PDEC"
+    },
+    {
+      "closed": false,
+      "diagnostic": "nearmiss max short-window positive = 0.381667 sqrt(S)",
+      "exit": "ShortWindow",
+      "meaning": "若短 q 子窗承担固定比例正偏差，则必须生成有限 LocalSurvivor/SAE packet，或持久化为 PDEC。",
+      "micro_input": "DLSShortWindowSAEBoundOrNamedReturn",
+      "route": "SAE / LocalSurvivor / persistent sparse PDEC"
+    },
+    {
+      "closed": false,
+      "diagnostic": "nearmiss max low-phase positive = 0.902430 sqrt(S); top residues unit=true",
+      "exit": "LowPhase",
+      "meaning": "若分散正偏差在单位类或新增轮层 Fourier 方向同步，则给出 PDEC；若每层分散，则必须由高模 DLS 大筛吸收。",
+      "micro_input": "DLSLowPhasePDECNewLayerOrFlatDLSBound",
+      "route": "W-unit PDEC / new-layer PDEC / flat DLS"
+    }
+  ],
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSLowPhasePDECNewLayerOrFlatDLSBound AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinputs": [
+    "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn",
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "DLSPointLoadColumnCRTBoundOrNamedReturn",
+    "DLSShortWindowSAEBoundOrNamedReturn",
+    "DLSLowPhasePDECNewLayerOrFlatDLSBound",
+    "SignedGeometricLedgerVariationBranchLiftAndReturn"
+  ],
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSLowPhasePDECNewLayerOrFlatDLSBound AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "nearmiss_summary": {
+    "all_top_low_phase_residues_are_units": true,
+    "max_effective_dimension": 5.938250191088904,
+    "max_l1_over_sqrt": 2.4686274455707147,
+    "max_l2_over_sqrt": 1.2334964654574674,
+    "max_low_phase_positive_over_sqrt": 0.9024299014675716,
+    "max_point_load": 4,
+    "max_short_window_positive_over_sqrt": 0.38166660271097874,
+    "record_count": 10
+  },
+  "previous_bes_dls_input": "BESDangerIntersectionExclusionOrDLSNamedReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousBESDLSInputPinned",
+      "meaning": "上一层已把 DPRC 正偏差锁压到 BES 危险交集排斥或 DLS 命名回流。",
+      "proved": true,
+      "remaining": "单独攻击 BES-DLS 输入。"
+    },
+    {
+      "closed": true,
+      "gate": "DLSKernelAndDangerAlgebraClosed",
+      "meaning": "中心化核、危险交集、尖峰桶鸽巢和二次能量展开已经形式化。",
+      "proved": true,
+      "remaining": "把二次能量超额严格送入三出口。"
+    },
+    {
+      "closed": true,
+      "gate": "DLSPointShortLowAlphabetClosed",
+      "meaning": "DLS 失败字母表已固定为 PointLoad、ShortWindow、LowPhase。",
+      "proved": false,
+      "remaining": "证明该三分覆盖所有 BES 危险失败，而非只是证明路线。"
+    },
+    {
+      "closed": true,
+      "gate": "NearmissThreeExitDiagnosticsMaterialized",
+      "meaning": "近危险审计显示 PointLoad 不爆炸，ShortWindow 不够强，最稳定信号是单位类内部 LowPhase。",
+      "proved": false,
+      "remaining": "审计不能替代全局排斥证明。"
+    },
+    {
+      "closed": true,
+      "gate": "ColumnCRTIndependentExitAbsorbed",
+      "meaning": "PointLoad 若形成列位移持久过载，不是独立终端，而是 displacement PDEC 或 SAE。",
+      "proved": false,
+      "remaining": "仍需证明 DLSPointLoadColumnCRTBoundOrNamedReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "SAEIndependentExitAbsorbed",
+      "meaning": "ShortWindow 若形成孤窗逃逸，不是独立终端，而是 LocalSurvivor packet 或持久 PDEC。",
+      "proved": false,
+      "remaining": "仍需证明 DLSShortWindowSAEBoundOrNamedReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "LowPhaseLayeredPDECRouteClosed",
+      "meaning": "LowPhase 已接入 W-unit/new-layer PDEC 与 flat DLS 二分。",
+      "proved": false,
+      "remaining": "证明 DLSLowPhasePDECNewLayerOrFlatDLSBound。"
+    },
+    {
+      "closed": false,
+      "gate": "BESDLSNamedReturnInputProved",
+      "meaning": "BES-DLS 输入未闭合；它被拆成三出口微输入。",
+      "proved": false,
+      "remaining": "DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSLowPhasePDECNewLayerOrFlatDLSBound"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "BES-DLS、signed 源锁和模型余量完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/dprc_bes_nearmiss_structure_audit_extended_20260506.json": "7e937150480665c2d24f7d3bb494b55873010ba1640a7afcacfa6916eded5a1a",
+    "docs/monograph/prime-matrix-clean-core-dprc-centered-discrepancy-router.json": "c4153b21eeb7aaf24284a11032dbdb1fe7e0d1a2b5875740dc369510919048ef",
+    "docs/monograph/prime-matrix-columncrt-displacement-pdec-absorption.md": "f674ce4f51911edeab0dcce641763860c87ef8f94141971a60fd948e7c008a7c",
+    "docs/monograph/prime-matrix-dprc-bes-dual-large-sieve-route.md": "5ba17834f604bc7474691195c84fd3c3f6c8f669affda8d0c2030b3174642ac6",
+    "docs/monograph/prime-matrix-dprc-fourier-inheritance-classifier.md": "affe3f52689bb12c9cf96ec1f9537cd1dfbdfaa5aaca1b937c7e7bcc04c0f90a",
+    "docs/monograph/prime-matrix-dprc-newlayer-energy-dispersion.md": "9b9917e7a67aba9683ac50b66b3ec7b31f51aa4ea7527c65e1c8d2b741e30888",
+    "docs/monograph/prime-matrix-dprc-wheel-unit-phase-balance.md": "d14775ed1e6a9146dd5b86c95a7f1ab9993f10245bf522e5cc8022392f3f3cc7",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md": "e15e466ba60f244fd2d19513951fe6ef9cf0c06fd7a73fbc7ef53fad2d95c79b"
+  },
+  "status": "bes_dls_named_return_reduced_to_three_exit_microinputs"
+}
