@@ -1,0 +1,121 @@
+{
+  "canonical_origin_ledger_scoped_only": true,
+  "certificate_type": "prime_matrix_clean_core_precauchy_source_law_atom_router",
+  "clauses": [
+    {
+      "clause": "SameFormalUnitBeforeCauchy",
+      "ledger_requirement": "所有 actual alpha/delta summand 在 Cauchy、Type/Fourier、completion 前登记到同一 formal unit。",
+      "source_law_output": "来源公式不是后验替换，而是原始系数恒等式。"
+    },
+    {
+      "clause": "PrimitivePathKey",
+      "ledger_requirement": "每个 summand 记录 source class、branch key、u/v map、dyadic/truncation state、sign 和 local factor。",
+      "source_law_output": "branch key 直接给出 exact path signature。"
+    },
+    {
+      "clause": "PolylogPathBudget",
+      "ledger_requirement": "branch alphabet 和 truncation depth 均为 K6/tail-label 已登记的 log^O 成本。",
+      "source_law_output": "路径数预算可用于 selector pigeonhole。"
+    },
+    {
+      "clause": "PrimitiveNonzeroOrSignSplit",
+      "ledger_requirement": "同一完整 branch key 的 local factors 非零；若同一 key 有相反号，必须先按 sign/refinement 细分。",
+      "source_law_output": "同路径非零、无抵消，或抵消被命名回流。"
+    },
+    {
+      "clause": "NamedReturnDiscipline",
+      "ledger_requirement": "缺失来源、路径超预算、thin/rejected block、未消除抵消均带 return tag。",
+      "source_law_output": "失败回流到 PDEC/SAE/ColumnCRT/CleanKLS 或外部谱输入。"
+    }
+  ],
+  "clean_core_original_coefficient_generation_ledger_proved": false,
+  "clean_core_precauchy_source_law_atom_boundary_closed": true,
+  "clean_core_precauchy_source_law_proved": false,
+  "compression_theorem": "CleanCorePreCauchyCoefficientSourceLawAndReturn 的真正原子是 CleanCoreOriginalCoefficientGenerationLedgerAndReturn：若在 Cauchy/dispersion 前列出 actual clean-core alpha/delta 的同一 formal unit 原始生成表，则路径签名、polylog 路径预算、同路径非零/无抵消和失败回流都由账本纪律推出；反过来，任何来源律证明都必须至少给出这张表。",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "external_spectral_atom_accepted": false,
+  "generic_wfd_origin_ledger_blocked": true,
+  "latest_conditional_basis": "(CleanCoreOriginalCoefficientGenerationLedgerAndReturn OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinput": "CleanCoreOriginalCoefficientGenerationLedgerAndReturn",
+  "latest_self_contained_basis": "CleanCoreOriginalCoefficientGenerationLedgerAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "origin_generation_ledger_implication_closed": true,
+  "plain_conclusion": "最新真正剩余继续压缩：pre-Cauchy 来源律不是一个新的统计估计，而是 actual clean-core alpha/delta 的原始生成账本问题。canonical 账本只闭合 canonical-source 分支，generic WFD 不给原始来源；当前材料尚未提交 noncanonical clean-core 的完整生成表。",
+  "previous_input": "CleanCorePreCauchyCoefficientSourceLawAndReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorPreCauchySourceLawPinned",
+      "meaning": "上一层已把路径来源防火墙压到 clean-core pre-Cauchy 来源律。",
+      "proved": false,
+      "remaining": "判断该来源律还能否继续拆成更小的必要账本。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLawIsOriginLedgerBundle",
+      "meaning": "pre-Cauchy 来源律的四项内容等价于原始生成账本：公式、路径、非零和回流。",
+      "proved": false,
+      "remaining": "提交 actual clean-core alpha/delta 的原始生成账本。"
+    },
+    {
+      "closed": true,
+      "gate": "OriginLedgerImpliesPreCauchySourceLaw",
+      "meaning": "若同一 formal unit 的原始生成表存在，branch key 给出路径签名，非零/回流由表项纪律推出。",
+      "proved": true,
+      "remaining": "该推出只处理逻辑结构，不证明生成表存在。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLedgerClosedButScoped",
+      "meaning": "canonical RIW/Buchstab 原始来源账本已闭合，但只服务 canonical-source 分支。",
+      "proved": true,
+      "remaining": "不能把 canonical 账本导入 noncanonical clean-core。"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDOriginLedgerRejected",
+      "meaning": "well-factorable/generic WFD 只给形式分解，不给 actual 原始生成表。",
+      "proved": true,
+      "remaining": "clean-core 必须给出自己的 actual source ledger 或走外部。"
+    },
+    {
+      "closed": true,
+      "gate": "NoncanonicalComplementNeedsOwnActualSource",
+      "meaning": "canonical 分支扣除后，noncanonical 补集只剩实际源定理、强化反原子或外部谱路线。",
+      "proved": true,
+      "remaining": "当前 clean-core 来源律必须落到自己的原始生成账本。"
+    },
+    {
+      "closed": false,
+      "gate": "CleanCoreOriginalCoefficientGenerationLedgerCurrentCorpusProved",
+      "meaning": "当前材料尚未列出 actual clean-core alpha/delta 的完整 pre-Cauchy 原始生成表。",
+      "proved": false,
+      "remaining": "证明 CleanCoreOriginalCoefficientGenerationLedgerAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralAtomStillOpen",
+      "meaning": "外部 completed KLS 路线仍压在 c-dependent residue weight 谱抵消输入上。",
+      "proved": false,
+      "remaining": "证明或接受 CDependentResidueWeightSpectralCancellationInput。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.json": "a6f8b9718c0c8d6a2854b37e3850d548798ca4aafa708c08b894bb4066ae3d52",
+    "docs/monograph/prime-matrix-triad-a1-branch-statement-coverage-router.json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f",
+    "docs/monograph/prime-matrix-triad-a1-source-identification-router.json": "cc993fc9dd2d8ff1bd1103703175a8dc35f80252afa771542af31d4d708d3318"
+  },
+  "status": "clean_core_precauchy_source_law_reduced_to_origin_generation_ledger_open"
+}

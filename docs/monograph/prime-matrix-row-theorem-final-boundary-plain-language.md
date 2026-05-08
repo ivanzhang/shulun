@@ -1874,3 +1874,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 actual clean-core 系数来源公式；由该公式导出 polylog exact path signatures；证明同路径非零无抵消；
 source-law 失败、路径超预算、thin/rejected block 必须回流到 PDEC/SAE/ColumnCRT/CleanKLS，或进入外部
 谱输入。当前材料尚未证明该来源律。
+
+## 22. clean-core pre-Cauchy 来源律原子化
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_precauchy_source_law_atom_router.py
+docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.md/json
+
+clean_core_precauchy_source_law_atom_boundary_closed=true；
+origin_generation_ledger_implication_closed=true；
+clean_core_original_coefficient_generation_ledger_proved=false；
+clean_core_precauchy_source_law_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把 `CleanCorePreCauchyCoefficientSourceLawAndReturn` 再压缩成
+`CleanCoreOriginalCoefficientGenerationLedgerAndReturn`。通俗地说，pre-Cauchy 来源律不是靠统计逼近证明的；
+它首先需要一张“原始生成表”：在 Cauchy、dispersion、Type/Fourier、completion 之前，把 actual clean-core
+`alpha/delta` 的每个 summand、branch key、`u/v` map、符号和 local factor 都登记在同一个 actual formal unit
+里。若这张表存在，branch key 就是 exact path signature，路径数预算、同路径非零/无抵消和失败回流都可从表项纪律推出。
+
+最新条件输入基为：
+
+```text
+(CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+当前材料尚未提交 noncanonical clean-core 的完整原始生成账本；canonical RIW/Buchstab 账本只覆盖
+canonical-source 分支，generic WFD 形式也不能替代 actual 来源。

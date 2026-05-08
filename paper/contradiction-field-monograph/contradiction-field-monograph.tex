@@ -3459,6 +3459,41 @@ CleanCorePreCauchyCoefficientSourceLawAndReturn.
 It requires an exact source formula before Cauchy, Type/Fourier and completion, plus
 polylog path signatures, same-path nonzero contribution, and named return for source-law
 failure, over-budget paths, or thin/rejected blocks.
+
+The clean-core pre-Cauchy source-law atom router then compresses this source-law input to
+an origin-generation ledger.  It records
+\[
+\begin{gathered}
+  \texttt{clean\_core\_precauchy\_source\_law\_atom\_boundary\_closed=true},\\
+  \texttt{origin\_generation\_ledger\_implication\_closed=true},\\
+  \texttt{clean\_core\_original\_coefficient\_generation\_ledger\_proved=false},\\
+  \texttt{clean\_core\_precauchy\_source\_law\_proved=false},\\
+  \texttt{external\_spectral\_atom\_accepted=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The compression theorem is that a pre-Cauchy source law is exactly an origin ledger for the
+actual clean-core \(\alpha/\delta\) coefficients in one formal unit before Cauchy,
+dispersion, Type/Fourier and completion.  If that ledger lists every summand, branch key,
+\(u/v\) map, sign and local factor, then the branch keys give the exact path signatures,
+the registered K6/tail-label costs give the polylog path budget, and same-key nonzero or
+sign-split refinement gives no cancellation.  Missing source entries, over-budget paths,
+thin/rejected blocks or unresolved cancellation must return to the named exits or to the
+external spectral input.  The latest conditional basis is
+\begin{quote}\footnotesize\ttfamily
+(CleanCoreOriginalCoefficientGenerationLedgerAndReturn\\
+OR CDependentResidueWeightSpectralCancellationInput)\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The self-contained source-side input is
+\begin{quote}\footnotesize\ttfamily
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn.
+\end{quote}
+This input is not proved here.  The router only shows that the former source-law input has
+no smaller honest self-contained evidence than the actual origin ledger; the canonical
+RIW/Buchstab ledger remains scoped to the canonical-source branch, and generic WFD
+well-factorability cannot replace it.
 \end{proof}
 
 

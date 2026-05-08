@@ -4220,3 +4220,46 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明 clean-core 来源律；它只是关闭 canonical 决策树偷渡和 generic WFD 形式替代 actual source law
 这两个错误方向。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_precauchy_source_law_atom_router.py
+docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.md/json
+```
+
+该路由器把 `CleanCorePreCauchyCoefficientSourceLawAndReturn` 再压缩到原始生成账本。结论为：
+
+```text
+clean_core_precauchy_source_law_atom_boundary_closed=true；
+origin_generation_ledger_implication_closed=true；
+clean_core_original_coefficient_generation_ledger_proved=false；
+clean_core_precauchy_source_law_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+压缩定理是：pre-Cauchy 来源律的真正原子是
+`CleanCoreOriginalCoefficientGenerationLedgerAndReturn`。若在 Cauchy/dispersion 前列出 actual clean-core
+`alpha/delta` 的同一 formal unit 原始生成表，则 branch key 给出 exact path signature，K6/tail-label
+给出 polylog 路径预算，同一完整 key 的 local factors 给出非零/无抵消；缺失来源、路径超预算、thin/rejected
+block 或未消除抵消必须带 return tag 回流到 PDEC/SAE/ColumnCRT/CleanKLS 或外部谱输入。
+
+最新条件输入基为：
+
+```text
+(CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明 clean-core 原始生成账本。它闭合的是逻辑压缩：canonical 来源表不能跨分支导入，
+generic WFD 形式不能替代 actual 来源；noncanonical clean-core 若要自足闭合，必须提交自己的原始生成账本。
