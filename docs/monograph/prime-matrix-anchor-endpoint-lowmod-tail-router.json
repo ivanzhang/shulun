@@ -1,0 +1,104 @@
+{
+  "anchor_endpoint_pdec_dichotomy_closed": true,
+  "anchor_endpoint_pdec_exclusion_fully_proved": false,
+  "certificate_type": "anchor_endpoint_lowmod_tail_router",
+  "closed_gates": [
+    "AnchorEndpointDefectGateActive",
+    "EndpointBridgeImported",
+    "DLS13LowTailTemplateImported",
+    "AnchorEndpointLowTailDichotomy",
+    "LowModFinitePhasePDECRoute",
+    "TailCoreNamedReturnRoute",
+    "AnchorEndpointPDECDichotomyClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "dichotomy_formula": "If E_x<=-G_x, then for any D and theta either E_{x,<=D}<=-theta G_x or E_{x,>D}<=-(1-theta)G_x.",
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND ((AnchorEndpointLowModPDECFinitePhaseExclusion AND AnchorEndpointTailCorePDECOrFiberSaturation) OR AnchorFiberSaturationPDECOrSAEReturn) AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND ((AnchorEndpointLowModPDECFinitePhaseExclusion AND AnchorEndpointTailCorePDECOrFiberSaturation) OR AnchorFiberSaturationPDECOrSAEReturn) AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "AnchorEndpointLowModPDECFinitePhaseExclusion",
+  "open_gates": [
+    "AnchorEndpointLowModPDECFinitePhaseExclusion",
+    "AnchorEndpointTailCorePDECOrFiberSaturation"
+  ],
+  "plain_conclusion": "本步把 anchor-collar 端点 PDEC 从一个整体强负误差拆成低模有限 CRT 相位坏集与高模 tail-core/纤维饱和两项。它不排斥端点缺陷，只删除整体黑箱形态，让下一步可直接攻固定低模相位坏集。",
+  "replacement": {
+    "AnchorCollarEndpointDefectPDECExclusion": "(AnchorEndpointLowModPDECFinitePhaseExclusion AND AnchorEndpointTailCorePDECOrFiberSaturation)"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AnchorEndpointDefectGateActive",
+      "meaning": "上一层最新最窄目标是 AnchorCollarEndpointDefectPDECExclusion。",
+      "proved": true,
+      "remaining": "本步只处理该端点缺陷。"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointBridgeImported",
+      "meaning": "早期零行若触发 anchor 主项间隙，则 E_x<=-G_x。",
+      "proved": true,
+      "remaining": "需要排斥该强负端点缺陷。"
+    },
+    {
+      "closed": true,
+      "gate": "DLS13LowTailTemplateImported",
+      "meaning": "DLS13 已有同型低模/尾项精确二分，可逐字迁移到 E_x。",
+      "proved": true,
+      "remaining": "不新增概率假设。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorEndpointLowTailDichotomy",
+      "meaning": "对任意 D 与 0<theta<1，E_x<=-G_x 强制 E_{x,<=D}<=-theta G_x 或 E_{x,>D}<=-(1-theta)G_x。",
+      "proved": true,
+      "remaining": "端点缺陷不能作为整体黑箱保留。"
+    },
+    {
+      "closed": true,
+      "gate": "LowModFinitePhasePDECRoute",
+      "meaning": "低模项是有限 CRT 相位函数；若承担强负缺陷，则给 fixed-wheel/lowphase PDEC 坏相位。",
+      "proved": false,
+      "remaining": "仍需排斥该有限相位坏集。"
+    },
+    {
+      "closed": true,
+      "gate": "TailCoreNamedReturnRoute",
+      "meaning": "尾项若承担强负缺陷，必须显化为 PointLoad、ShortWindow、LowPhase 或 anchor-fiber 饱和。",
+      "proved": false,
+      "remaining": "仍需排斥尾项 core 或回流 PDEC/SAE。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorEndpointPDECDichotomyClosed",
+      "meaning": "AnchorCollarEndpointDefectPDECExclusion 已压成低模有限相位排斥与高模尾项 core/纤维饱和排斥。",
+      "proved": true,
+      "remaining": "(AnchorEndpointLowModPDECFinitePhaseExclusion AND AnchorEndpointTailCorePDECOrFiberSaturation)"
+    },
+    {
+      "closed": false,
+      "gate": "AnchorEndpointLowModPDECFinitePhaseExclusion",
+      "meaning": "尚未证明固定 D 低模坏相位不能持续命中早期零行反例族。",
+      "proved": false,
+      "remaining": "下一步最窄目标。"
+    },
+    {
+      "closed": false,
+      "gate": "AnchorEndpointTailCorePDECOrFiberSaturation",
+      "meaning": "尚未证明高模尾项强负只能回流已可排斥 PDEC/SAE 或短纤维饱和。",
+      "proved": false,
+      "remaining": "第二剩余。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-collar-endpoint-bridge-router.json": "e59be8c810561e677437eab131437fd0821324cf38726552bb4a88505f88c472",
+    "docs/monograph/prime-matrix-clean-core-bes-dls-named-return-router.md": "cad3cb3612620cf77ca311739ff0829a1f9ba142b1f51b1ceb0e0e095a321b80",
+    "docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.md": "aaf7e9075dab7deee685b6b539b88e48b409eadafc3994fd4ecfdbee8e7f765a",
+    "docs/monograph/prime-matrix-eda-dls13-lowmod-tail-dichotomy.md": "e46eed04ac20cf0fe5957a70dcce0a5cff25f5742f96d1638339fa444f6d845a"
+  },
+  "status": "anchor_endpoint_pdec_reduced_to_lowmod_tail_dichotomy",
+  "terminal_gap_after_router": "(AnchorEndpointLowModPDECFinitePhaseExclusion AND AnchorEndpointTailCorePDECOrFiberSaturation)",
+  "terminal_gap_before_router": "AnchorCollarEndpointDefectPDECExclusion"
+}

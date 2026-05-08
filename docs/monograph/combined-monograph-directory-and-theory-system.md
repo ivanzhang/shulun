@@ -6452,3 +6452,83 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 下一步最窄目标更新为 `AnchorCollarEndpointDefectPDECExclusion`：排斥早期零行强制产生的 `E_x<=-G_x` 级同 formal unit 端点相位缺陷；若主项间隙失败，则进入 `AnchorFiberSaturationPDECOrSAEReturn`。
+
+## Prime Matrix anchor 端点 PDEC 低模/尾项二分路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_anchor_endpoint_lowmod_tail_router.py
+docs/monograph/prime-matrix-anchor-endpoint-lowmod-tail-router.md/json
+```
+
+该路由器直接攻击 `AnchorCollarEndpointDefectPDECExclusion`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+anchor_endpoint_pdec_dichotomy_closed=true；
+anchor_endpoint_pdec_exclusion_fully_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=AnchorCollarEndpointDefectPDECExclusion；
+terminal_gap_after_router=(AnchorEndpointLowModPDECFinitePhaseExclusion AND AnchorEndpointTailCorePDECOrFiberSaturation)。
+```
+
+二分公式为：
+
+```text
+If E_x<=-G_x, then for any D and theta either
+E_{x,<=D}<=-theta G_x
+or
+E_{x,>D}<=-(1-theta)G_x。
+```
+
+其中低模项是有限 CRT 相位函数；若它承担强负缺陷，就必须形成 fixed-wheel/lowphase PDEC 坏相位。尾项若承担强负缺陷，则必须显化为 `PointLoad/ShortWindow/LowPhase` 或 anchor-fiber 饱和，回流 PDEC/SAE/LocalSurvivor。
+
+替换律为：
+
+```text
+AnchorCollarEndpointDefectPDECExclusion
+  =>
+(AnchorEndpointLowModPDECFinitePhaseExclusion
+ AND AnchorEndpointTailCorePDECOrFiberSaturation)。
+```
+
+已经闭合的门为：
+
+```text
+AnchorEndpointDefectGateActive；
+EndpointBridgeImported；
+DLS13LowTailTemplateImported；
+AnchorEndpointLowTailDichotomy；
+LowModFinitePhasePDECRoute；
+TailCoreNamedReturnRoute；
+AnchorEndpointPDECDichotomyClosed。
+```
+
+开放门为：
+
+```text
+AnchorEndpointLowModPDECFinitePhaseExclusion；
+AnchorEndpointTailCorePDECOrFiberSaturation。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND ((AnchorEndpointLowModPDECFinitePhaseExclusion
+      AND AnchorEndpointTailCorePDECOrFiberSaturation)
+     OR AnchorFiberSaturationPDECOrSAEReturn)
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `AnchorEndpointLowModPDECFinitePhaseExclusion`：固定 `D` 后，低模项是有限 CRT 相位函数；若它能持续承担 `-theta G_x` 级负缺陷，就必须形成 fixed-wheel/lowphase PDEC 坏相位。下一步要排斥这个坏相位，或把它登记为可处理 PDEC 证书。
