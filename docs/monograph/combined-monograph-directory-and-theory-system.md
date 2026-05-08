@@ -6049,3 +6049,80 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 下一步最窄目标更新为 `NewLayerNoConcentrationImpliesFlatAdmission`。必须证明：删除/回流所有可登记
 PDEC cap 后，剩余新增层对象确实满足 flat-DLS/KLS 准入；否则必须输出新的命名
 PDEC/SAE/ColumnCRT/multiplicity 证书。
+
+## Prime Matrix new-layer 无集中 flat 准入路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_newlayer_no_concentration_flat_admission_router.py
+docs/monograph/prime-matrix-newlayer-no-concentration-flat-admission-router.md/json
+```
+
+该路由器直接攻击 `NewLayerNoConcentrationImpliesFlatAdmission`。结论为：
+
+```text
+newlayer_no_concentration_flat_admission_boundary_closed=true；
+newlayer_no_concentration_independent_input_removed=true；
+dls_flat_highmod_large_sieve_absorption_proved=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=NewLayerNoConcentrationImpliesFlatAdmission；
+terminal_gap_after_router=DLSFlatHighModLargeSieveAbsorption。
+```
+
+Admission 逆否律为：
+
+```text
+NewLayerNoConcentrationImpliesFlatAdmission
+  means all registered low-dimensional defects have been removed:
+    finite arc PDEC cap, short-window SAE, column/Bohr cap,
+    promotable top-prime residue, phase-residue mutual information；
+  any failure of K1--K9 returns to a named gate；
+  all K1--K9 passed residual enters DLSFlatHighModLargeSieveAbsorption。
+```
+
+替换律为：
+
+```text
+NewLayerNoConcentrationImpliesFlatAdmission
+  => DLSFlatHighModLargeSieveAbsorption admission gate already present。
+```
+
+注意：本步只证明 flat admission 边界，不证明 flat 大筛吸收界。
+
+已经闭合的门为：
+
+```text
+NewLayerNoConcentrationGateActive；
+CleanKLSAdmissionContractRegistered；
+LowPhasePointShortFlatContextInherited；
+NoConcentrationDefinitionPinned；
+K1ToK9RegisteredOrRouted；
+LowModL2MIFlatnessFromNoConcentration；
+NamedFailureReturnDisciplinePreserved；
+FlatDLSInterfaceReady；
+NewLayerNoConcentrationFlatAdmissionBoundaryClosed。
+```
+
+唯一开放门为：
+
+```text
+DLSFlatHighModLargeSieveAbsorption。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `DLSFlatHighModLargeSieveAbsorption`：证明经过 PointLoad/ShortWindow/LowPhase/new-layer
+cap 删除后的高模平坦残余满足大筛吸收界；若失败，必须输出对偶高频缺陷并回流
+PDEC/SAE/ColumnCRT/外部谱输入。
