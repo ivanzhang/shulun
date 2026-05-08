@@ -1,0 +1,126 @@
+{
+  "certificate_type": "lowmod_pdec_capacity_failure_router",
+  "closed_gates": [
+    "LowModFuturePDECImported",
+    "SameFormalUnitPinned",
+    "PDECLowerBoundImported",
+    "SameSetDualCertificateProtocolRegistered",
+    "MultiplierDisciplineNoEscape",
+    "CapLocalizationFailureOutput",
+    "FiniteArcBasisForLowModCaps",
+    "SparseLowRankColumnReturn",
+    "PersistentCapNoSameLayerCycle"
+  ],
+  "failure_witness_shape": {
+    "bad_count": "g_B(t)=1_{sign*f_B(t)>=kappa_B} or the corresponding multiplicity count",
+    "dual_failure": "exists nontrivial character h and finite cyclic arc A with g_B(A)>=(L-alpha M)/(1-alpha)",
+    "dual_success": "U_CRT(G_B,g_B)<L_lowmod excludes the persistent LowMod PDEC branch",
+    "formal_unit": "G_B=Z/Q_BZ with phase x mod Q_B",
+    "lower_bound": "L_lowmod=kappa_B*beta/(sqrt(Q_B-1)*||f_B||_2)",
+    "named_returns": "Sparse SAE / displacement ColumnCRT / refined PDEC / new-layer PDEC / CleanKLS"
+  },
+  "logic_chain": [
+    "persistent LowMod bad rows force a same-formal-unit Fourier lower bound",
+    "same-set PDEC dual certificate would exclude the branch if U_CRT<L_PDEC",
+    "if U_CRT<L_PDEC fails, cap localization forces a finite cyclic-arc DualCap witness",
+    "sparse, low-rank, displacement and refinement cases already return to named interfaces",
+    "the only remaining unproved input is the global finite-arc cap mass bound for future LowMod primitive schemas"
+  ],
+  "lowmod_capacity_multiplier_discipline_closed": true,
+  "lowmod_pdec_inequality_closed": false,
+  "lowmod_same_set_capacity_protocol_closed": true,
+  "new_atomic_input": "FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas",
+  "open_gates": [
+    "PersistentLowModPDECInequality"
+  ],
+  "plain_conclusion": "本步把 PersistentLowModPDECInequality 从抽象容量不等式压成失败定位定理：若同一 LowMod formal unit 上的 U_CRT<L_PDEC 不能成立，失败必须显化为有限循环弧 DualCap，并立即进入 SAE、ColumnCRT、refined PDEC、new-layer PDEC 或 CleanKLS。真正未闭合的是未来 LowMod primitive schema 的全局有限弧 cap 质量上界。",
+  "previous_terminal_gap": "LowModFuturePDECSchemaExclusionOrSparseSAE",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LowModFuturePDECImported",
+      "meaning": "上一层已把 LowMod endpoint 缺陷压成 future PDEC schema 或 sparse SAE。",
+      "output": "本步只攻击 persistent LowMod PDEC 容量比较分支。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SameFormalUnitPinned",
+      "meaning": "LowMod 坏行集合、相位图、测试函数都固定在同一个 Q_B 周期 formal unit 上。",
+      "output": "U_CRT 与 L_PDEC 必须作用在同一个 g_B=1_S 或计数向量上。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PDECLowerBoundImported",
+      "meaning": "持续 LowMod 坏行给出非零 Fourier 下界 L_lowmod。",
+      "output": "L_lowmod = kappa_B beta /(sqrt(Q_B-1)||f_B||_2)。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SameSetDualCertificateProtocolRegistered",
+      "meaning": "若同集 CRT 对偶上界 U_CRT 小于 PDEC 下界，则 persistent 分支被排除。",
+      "output": "容量成功支已经是标准 PDEC dual certificate。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "MultiplierDisciplineNoEscape",
+      "meaning": "已知 Type/Fourier/fiber 成本均登记为同 formal unit 的 log-power 乘子。",
+      "output": "LowMod 容量失败不能归因于账外乘子或口径错配。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "CapLocalizationFailureOutput",
+      "meaning": "若某方向 U_CRT 达到 L_PDEC，则必须输出方向帽质量集中。",
+      "output": "LowModDualCap(B,h,zeta,alpha) with mass >= (L-alpha M)/(1-alpha)。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "FiniteArcBasisForLowModCaps",
+      "meaning": "固定 Q_B 后，所有方向帽都化为有限字符循环弧预像。",
+      "output": "连续 zeta/alpha 搜索被压成有限 LowMod arc cap 质量界。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SparseLowRankColumnReturn",
+      "meaning": "稀疏帽、低秩帽、列位移帽不能作为新 LowMod 终端。",
+      "output": "回流 SAE / ColumnCRT-as-PDEC / primitive rank boundary。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PersistentCapNoSameLayerCycle",
+      "meaning": "持久帽细化不能在同一有限 Q_B 层无穷循环。",
+      "output": "有限步进入 refined PDEC、ColumnCRT、SAE、new-layer PDEC 或 CleanKLS。",
+      "proved": true
+    },
+    {
+      "closed": false,
+      "gate": "PersistentLowModPDECInequality",
+      "meaning": "尚未提交所有未来 LowMod primitive schema 的有限循环弧 cap 质量上界。",
+      "output": "LowModFiniteArcDualCapStabilityOrSparseSAE。",
+      "proved": false
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-bpn-pdec-dual-certificate-framework.md": "51470e1be391c87ec5f25e2807c93e7334e3cc7aac3381f81cd7a75214677079",
+    "docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.md": "5e3df47871aa9953a3f778c2a8c18421a7c3e1c122c770cc467729d61d2bcd8b",
+    "docs/monograph/prime-matrix-dec-ospc-exclusion-hardpoint.md": "d62bb2237dda0a3dffd3d085f6b0375fbef7a203f4bf8f82b6eb73a2fbe3a963",
+    "docs/monograph/prime-matrix-lowmod-endpoint-formal-unit-router.json": "3604b1f2a13c353a8cf0e9e4a5d67a439d0c4b19e05e8ba3c10b739f9e654bb5",
+    "docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.md": "448b66c41b3dbda24bda8f810bffa1b4fb74131f6ddfb8b8c830c4f5082b38c2",
+    "docs/monograph/prime-matrix-pdec-cap-refinement-no-cycle.md": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "docs/monograph/prime-matrix-pdec-cap-uniform-cap-finite-basis-router.md": "9902f9c083fc7f4675f2b7d7fa1554c5a202d5e4ac6f1908dfba15e67aa63445",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md": "e15e466ba60f244fd2d19513951fe6ef9cf0c06fd7a73fbc7ef53fad2d95c79b"
+  },
+  "status": "lowmod_pdec_capacity_failure_localized_to_finite_arc_dualcap",
+  "terminal_gap_after_router": "LowModFiniteArcDualCapStabilityOrSparseSAE",
+  "terminal_gap_before_router": "PersistentLowModPDECInequality_UCRT_LT_LPDEC"
+}

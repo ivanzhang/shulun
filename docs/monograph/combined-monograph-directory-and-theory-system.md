@@ -5677,3 +5677,76 @@ LowModFuturePDECSchemaExclusionOrSparseSAE
 ```
 
 这一步仍不是无条件闭合；它把 LowMod 分支从泛称出口压成 future PDEC schema 与 sparse SAE 两个可验收输入。
+
+## Prime Matrix LowMod PDEC 容量失败定位路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_lowmod_pdec_capacity_failure_router.py
+docs/monograph/prime-matrix-lowmod-pdec-capacity-failure-router.md/json
+```
+
+该路由器直接攻击 `PersistentLowModPDECInequality_UCRT_LT_LPDEC`。结论为：
+
+```text
+lowmod_same_set_capacity_protocol_closed=true；
+lowmod_capacity_multiplier_discipline_closed=true；
+lowmod_pdec_inequality_closed=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=PersistentLowModPDECInequality_UCRT_LT_LPDEC；
+terminal_gap_after_router=LowModFiniteArcDualCapStabilityOrSparseSAE；
+new_atomic_input=FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas。
+```
+
+失败见证形状被固定为：
+
+```text
+formal_unit  = G_B=Z/Q_BZ with phase x mod Q_B；
+bad_count    = g_B(t)=1_{sign*f_B(t)>=kappa_B} 或对应 multiplicity count；
+lower_bound  = L_lowmod=kappa_B*beta/(sqrt(Q_B-1)*||f_B||_2)；
+dual_success = U_CRT(G_B,g_B)<L_lowmod 排除 persistent LowMod PDEC；
+dual_failure = 存在非平凡字符 h 与有限循环弧 A，
+               使 g_B(A)>=(L-alpha M)/(1-alpha)；
+named_returns= Sparse SAE / displacement ColumnCRT / refined PDEC /
+               new-layer PDEC / CleanKLS。
+```
+
+本步的结构律是逆否定位：若同一 LowMod formal unit 上的 `U_CRT<L_PDEC` 不能成立，
+失败不能停留为抽象容量缺口，必须显化为有限循环弧 `LowModDualCap(B,h,zeta,alpha)`。
+固定 `Q_B` 后，方向帽只是有限字符循环弧预像，所以连续 `zeta/alpha` 搜索退路被消掉。
+
+已经闭合的门为：
+
+```text
+LowModFuturePDECImported；
+SameFormalUnitPinned；
+PDECLowerBoundImported；
+SameSetDualCertificateProtocolRegistered；
+MultiplierDisciplineNoEscape；
+CapLocalizationFailureOutput；
+FiniteArcBasisForLowModCaps；
+SparseLowRankColumnReturn；
+PersistentCapNoSameLayerCycle。
+```
+
+唯一开放门为：
+
+```text
+PersistentLowModPDECInequality。
+```
+
+新的最窄剩余为：
+
+```text
+PersistentLowModPDECInequality_UCRT_LT_LPDEC
+  <= same formal unit PDEC lower bound
+     + same-set dual protocol
+     + finite cyclic-arc DualCap localization
+     + named return absorption
+     + FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas。
+```
+
+其中前四项已经由现有材料和本路由器接线；最后一项仍未证明。
+这一步仍不是无条件闭合；它排除了“PDEC 不等式失败但不给结构见证”的无名出口，
+把下一步推进目标压到未来 LowMod primitive schema 的全局有限弧 cap 质量界。
