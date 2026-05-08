@@ -7377,3 +7377,79 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标为 `AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn`：给出不依赖 downstream payment 图的
 pre-Cauchy 源种子，或证明任何此类种子都会触发 PDEC/SAE/ColumnCRT/CleanKLS/external spectral 回流。
+
+## Prime Matrix 假设早期零行源种子 no-go 路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_hypothetical_zero_row_seed_no_go_router.py
+docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.md/json
+```
+
+该路由器直接审查一个最容易混淆的方向：能否从“假设早期零行存在”本身抽取无环 pre-Cauchy 源种子。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+hypothetical_chain_only=true；
+zero_row_crt_equivalence_used=true；
+zero_row_seed_extraction_blocked=true；
+geometry_source_extraction_blocked=true；
+downstream_reverse_source_blocked=true；
+independent_precauchy_arithmetic_source_identity_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn；
+terminal_gap_after_router=IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn。
+```
+
+核心 no-go 为：
+
+```text
+early zero row assumption
+  => complete covering CRT certificate tau
+  => unsigned payment / cylindrical / wheel geometry
+  != pre-Cauchy signed alpha/delta source seed。
+```
+
+这一步严格分清假设链条和真实链条：假设早期零行提供的是覆盖事实、CRT 相容性和几何 payment 基底；
+pre-Cauchy 源种子要求 signed `alpha/delta` 系数生成恒等式。几何模型可以提供 Phi 基底、容量形状和命名回流场，
+但不定义 signed source；来源环切断又禁止从 downstream payment skeleton 反推 primitive source。
+
+替换律为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+  =>
+IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn。
+```
+
+已经闭合的门为：
+
+```text
+ZeroRowCRTEquivalenceClosed；
+HypotheticalZeroRowDataUnsigned；
+GeometryPaymentBaseNoSourceMeasure；
+DownstreamReverseSourceBlocked；
+HypotheticalZeroRowCannotSupplyAcyclicSeed。
+```
+
+仍开放的全局守门项为：
+
+```text
+IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn；
+ExplicitModelGapAndFiniteDPRCLedger；
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步仍不是行/列命题无条件证明；它删除的是“由反例覆盖图自己制造 signed 源”的伪路径。更新后的完全自足输入基为：
+
+```text
+IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标为 `IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn`：提交独立的
+pre-Cauchy 算术来源恒等式，或证明任何候选恒等式都必回流到 PDEC/SAE/ColumnCRT/CleanKLS/external spectral。

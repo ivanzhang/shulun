@@ -1,0 +1,107 @@
+{
+  "certificate_type": "hypothetical_zero_row_seed_no_go_router",
+  "closed_gates": [
+    "AcyclicSeedGateActive",
+    "ZeroRowCRTEquivalenceClosed",
+    "HypotheticalZeroRowDataUnsigned",
+    "GeometryPaymentBaseNoSourceMeasure",
+    "DownstreamReverseSourceBlocked",
+    "HypotheticalZeroRowCannotSupplyAcyclicSeed",
+    "ExplicitModelGapAndFiniteDPRCLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "downstream_reverse_source_blocked": true,
+  "empirical_absence_not_used": true,
+  "geometry_source_extraction_blocked": true,
+  "hypothetical_chain_only": true,
+  "independent_precauchy_arithmetic_source_identity_proved": false,
+  "latest_conditional_basis": "((IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn",
+  "open_gates": [
+    "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步严格区分假设链条与真实链条：假设早期零行只给完整覆盖 CRT 证书和 unsigned payment/geometry 数据，不能生成 pre-Cauchy signed alpha/delta 源种子。几何模型提供 Phi 基底和回流形状，但不定义 signed source；来源环切断又禁止从 downstream payment skeleton 反推来源。因此保留的 clean-core 分支必须提交独立算术来源恒等式，或命名回流。",
+  "replacement": {
+    "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AcyclicSeedGateActive",
+      "meaning": "最新最窄点要求无环 pre-Cauchy noncanonical primitive source seed。",
+      "proved": false,
+      "remaining": "判断早期零行假设本身能否提供该 seed。"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowCRTEquivalenceClosed",
+      "meaning": "早期零行严格等价于完整覆盖 CRT 证书和最小代表条件。",
+      "proved": true,
+      "remaining": "这只是覆盖/残基数据。"
+    },
+    {
+      "closed": true,
+      "gate": "HypotheticalZeroRowDataUnsigned",
+      "meaning": "假设零行给出 tau、q_k、列覆盖和 CRT 残基；它不含 alpha/delta signed source 字段。",
+      "proved": true,
+      "remaining": "不能从 unsigned cover 直接得到 signed pre-Cauchy seed。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometryPaymentBaseNoSourceMeasure",
+      "meaning": "斜线覆盖、圆柱环绕、P列锚和层叠轮只给 payment/Phi 基底与预算形状。",
+      "proved": true,
+      "remaining": "几何模型不生成 signed alpha/delta 源测度。"
+    },
+    {
+      "closed": true,
+      "gate": "DownstreamReverseSourceBlocked",
+      "meaning": "来源环切断已拒绝从 payment skeleton 或有限投影反推 primitive source。",
+      "proved": true,
+      "remaining": "不能把假设链的输出当作 pre-Cauchy 输入。"
+    },
+    {
+      "closed": true,
+      "gate": "HypotheticalZeroRowCannotSupplyAcyclicSeed",
+      "meaning": "在反例假设链中，早期零行本身只能提供 downstream unsigned covering data。",
+      "proved": true,
+      "remaining": "必须另给独立算术来源恒等式或命名回流。"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn",
+      "meaning": "当前材料尚未提交独立于早期零行覆盖图的 pre-Cauchy arithmetic source identity。",
+      "proved": false,
+      "remaining": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "模型余量/有限 DPRC 账本仍在输入基中，未由本步处理。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-geometric-phi-budget-bridge-router.md": "92c41b23f4597555059078876f3b5691130d7d405baebe7064bb3e56cce900b0",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.md": "0cbd38f4d56d73a134ee106f50b1fe71d007f4273e00df7cac4c244fc57d451d",
+    "docs/monograph/prime-matrix-zero-row-full-crt-diagonal-minrep.md": "8fed996d49bd3da39370eb919cac7601759d12152d44d2a39854f3fd236515ab"
+  },
+  "status": "hypothetical_zero_row_seed_extraction_blocked_independent_identity_open",
+  "terminal_gap_after_router": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn",
+  "terminal_gap_before_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn",
+  "zero_row_crt_equivalence_used": true,
+  "zero_row_seed_extraction_blocked": true
+}
