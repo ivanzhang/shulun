@@ -1,15 +1,15 @@
 # Prime Matrix concrete coloring coverage 数据路由器
 
-**状态：** `concrete_coloring_coverage_schema_closed_CoverageEquationCertificateDataLedger_open`
+**状态：** `concrete_coloring_coverage_data_closed_rankin_open`
 
-ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合；已完成的组件会被扫描回收。当前最窄点是 `CoverageEquationCertificateDataLedger`。
+ConcreteColoringCoverageDataLedger 已闭合：锚区间、多重度表、贪心着色执行和覆盖等式四个组件均已齐备。下一最窄点是 `PerColorRankinCertificateFileLedger`。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 concrete_coloring_coverage_data_schema_closed=true
-concrete_coloring_coverage_data_closed=false
+concrete_coloring_coverage_data_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -33,7 +33,7 @@ ConcreteColoringCoverageDataLedger => ConcreteColoringCoverageDataSchemaClosed A
 - ConcreteAnchorIntervalEnumerationLedger: `1`
 - LowOverlapMultiplicityTableLedger: `1`
 - GreedyIntervalColoringExecutionLedger: `1`
-- CoverageEquationCertificateDataLedger: `0`
+- CoverageEquationCertificateDataLedger: `1`
 
 ## 4. 判定表
 
@@ -46,12 +46,12 @@ ConcreteColoringCoverageDataLedger => ConcreteColoringCoverageDataSchemaClosed A
 | ConcreteAnchorIntervalsAvailable | `true` | `false` | 已发现 anchor interval 证书文件生成律，可按 source tuple 生成 J_a。 | ConcreteAnchorIntervalEnumerationLedger |
 | LowOverlapMultiplicityTableAvailable | `true` | `false` | 已发现 low-overlap multiplicity table 生成律，可复算 m(d) 并分流高重叠 return。 | LowOverlapMultiplicityTableLedger |
 | GreedyColoringExecutionAvailable | `true` | `false` | 已发现 greedy interval coloring execution transcript 生成律，可复算颜色分配。 | GreedyIntervalColoringExecutionLedger |
-| CoverageEquationCertificateAvailable | `false` | `false` | 仓库尚未发现多重集相等的 coverage equation 数据证书。 | CoverageEquationCertificateDataLedger |
-| AllCoverageComponentsComplete | `false` | `false` | 四个组件必须同 source tuple/hash 完整覆盖后，才可枚举 concrete color set。 | CoverageEquationCertificateDataLedger |
-| ConcreteColoringCoverageDataLedger | `false` | `false` | ConcreteColoringCoverageDataLedger 仍需提交 `CoverageEquationCertificateDataLedger`。 | CoverageEquationCertificateDataLedger |
+| CoverageEquationCertificateAvailable | `true` | `false` | 已发现 coverage equation 数据证书，可验收有色多重集与低重叠走廊多重集相等。 | CoverageEquationCertificateDataLedger |
+| AllCoverageComponentsComplete | `true` | `false` | 四个组件必须同 source tuple/hash 完整覆盖后，才可枚举 concrete color set。 | PerColorRankinCertificateFileLedger |
+| ConcreteColoringCoverageDataLedger | `true` | `true` | 四个 concrete coverage 组件均已闭合；coverage 数据账本闭合。 | PerColorRankinCertificateFileLedger |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `CoverageEquationCertificateDataLedger`；随后依次验收 `PerColorRankinCertificateFileLedger`。
+当前唯一最窄点更新为 `PerColorRankinCertificateFileLedger`。
 
 审稿边界：本步只回收已闭合的 concrete coverage 组件；未提交的组件仍保持打开，也不关闭行列无条件定理。
