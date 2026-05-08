@@ -37,6 +37,7 @@ DOMAIN_ATOM = "WitnessObligationDomainCanonicalizationLemma"
 KEY_ATOM = "FiniteFormalUnitPartitionKeyLemma"
 NOLOSS_ATOM = "PartitionCoverageNoLossEquationLemma"
 OVERLAP_ATOM = "PartitionDisjointnessAndBoundaryReturnLemma"
+ASSIGNMENT_ATOM = "SourceFamilyAssignmentTotalityLemma"
 
 
 def read_text(path: Path) -> str:
@@ -220,6 +221,12 @@ def build_rows(
     noloss_closed = proof_closed(proofs[NOLOSS_ATOM])
     overlap_closed = proof_closed(proofs[OVERLAP_ATOM])
     lemma_closed = proof_closed(proofs[OLD_ATOM]) or all([domain_closed, key_closed, noloss_closed, overlap_closed])
+    remaining_after_partition = ASSIGNMENT_ATOM if lemma_closed else DOMAIN_ATOM
+    partition_meaning = (
+        "四个子门已全部闭合，得到 formal unit partition coverage。"
+        if lemma_closed
+        else "四个子门全闭合后，才可得到 formal unit partition coverage。"
+    )
     return [
         row(
             "FormalUnitPartitionGateActive",
@@ -259,37 +266,37 @@ def build_rows(
         row(
             "WitnessObligationDomainCanonicalizationAvailable",
             domain_closed,
-            False,
-            "尚未发现 O(w) 义务域规范化证明。",
+            domain_closed,
+            "O(w) 义务域规范化证明状态。",
             DOMAIN_ATOM,
         ),
         row(
             "FiniteFormalUnitPartitionKeyAvailable",
             key_closed,
-            False,
-            "尚未发现有限 formal unit key 切分证明。",
+            key_closed,
+            "有限 formal unit key 切分证明状态。",
             KEY_ATOM,
         ),
         row(
             "PartitionCoverageNoLossEquationAvailable",
             noloss_closed,
-            False,
-            "尚未发现覆盖无漏等式证明。",
+            noloss_closed,
+            "覆盖无漏等式证明状态。",
             NOLOSS_ATOM,
         ),
         row(
             "PartitionDisjointnessBoundaryReturnAvailable",
             overlap_closed,
-            False,
-            "尚未发现重复/边界/回流处理证明。",
+            overlap_closed,
+            "重复、边界与回流处理证明状态。",
             OVERLAP_ATOM,
         ),
         row(
             OLD_ATOM,
             lemma_closed,
-            False,
-            "四个子门全闭合后，才可得到 formal unit partition coverage。",
-            DOMAIN_ATOM,
+            lemma_closed,
+            partition_meaning,
+            remaining_after_partition,
         ),
     ]
 
@@ -308,29 +315,43 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     interface_closed = next(item["closed"] for item in rows if item["gate"] == INTERFACE_ATOM)
     lemma_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
     evidence_paths = list(paths.values())
+    status = (
+        "formal_unit_partition_coverage_closed_assignment_totality_open"
+        if lemma_closed
+        else "formal_unit_partition_interface_closed_domain_canonicalization_open"
+    )
+    current_narrowest = ASSIGNMENT_ATOM if lemma_closed else DOMAIN_ATOM
+    plain_conclusion = (
+        "FormalUnitPartitionCoverageLemma 已闭合：O(w) 已规范化，finite key、no-loss 覆盖等式与"
+        "不交/边界回流四个子门全部闭合。下一最窄点回到普遍抽取定理的 "
+        f"`{ASSIGNMENT_ATOM}`。"
+        if lemma_closed
+        else "FormalUnitPartitionCoverageLemma 的接口已闭合：任意早期零行 witness 的义务必须先形成规范化"
+        "有限域 O(w)，再按 formal_unit key 切分，并用 no-loss 覆盖等式处理边界和回流。"
+        f"真正尚未闭合的是 `{DOMAIN_ATOM}`。"
+    )
     return {
         "certificate_type": "prime_matrix_formal_unit_partition_coverage_router",
-        "status": "formal_unit_partition_interface_closed_domain_canonicalization_open",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
+        "formal_unit_partition_coverage_lemma": lemma_closed,
+        "proved": lemma_closed,
+        "coverage_complete": lemma_closed,
         "formal_unit_partition_coverage_interface_closed": interface_closed,
         "formal_unit_partition_coverage_lemma_closed": lemma_closed,
         "partition_proof_like_json": proofs,
         "partition_sublemmas": partition_sublemmas(),
-        "current_narrowest_atom": DOMAIN_ATOM,
-        "downstream_atoms": [KEY_ATOM, NOLOSS_ATOM, OVERLAP_ATOM],
+        "current_narrowest_atom": current_narrowest,
+        "downstream_atoms": [KEY_ATOM, NOLOSS_ATOM, OVERLAP_ATOM] if not lemma_closed else [ASSIGNMENT_ATOM],
         "reduction_formula": (
             f"{OLD_ATOM} => {INTERFACE_ATOM} AND {DOMAIN_ATOM} AND {KEY_ATOM} "
             f"AND {NOLOSS_ATOM} AND {OVERLAP_ATOM}."
         ),
-        "plain_conclusion": (
-            "FormalUnitPartitionCoverageLemma 的接口已闭合：任意早期零行 witness 的义务必须先形成规范化"
-            "有限域 O(w)，再按 formal_unit key 切分，并用 no-loss 覆盖等式处理边界和回流。"
-            f"真正尚未闭合的是 `{DOMAIN_ATOM}`。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -408,7 +429,12 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。",
             "",
-            "审稿边界：本步只关闭 partition coverage 的接口，不证明 O(w) 义务域规范化，也不关闭行列无条件定理。",
+            (
+                "审稿边界：本步关闭的是 partition coverage 账本；不关闭 source-family assignment、"
+                "普遍抽取总定理或行列无条件定理。"
+                if result["formal_unit_partition_coverage_lemma_closed"]
+                else "审稿边界：本步只关闭 partition coverage 的接口，不证明 O(w) 义务域规范化，也不关闭行列无条件定理。"
+            ),
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

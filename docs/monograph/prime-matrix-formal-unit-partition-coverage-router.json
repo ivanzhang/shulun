@@ -1,6 +1,6 @@
 {
   "certificate_type": "prime_matrix_formal_unit_partition_coverage_router",
-  "status": "formal_unit_partition_interface_closed_domain_canonicalization_open",
+  "status": "formal_unit_partition_coverage_closed_assignment_totality_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.json": "ea087fde6e8d572bb91c0211581f6b73e9e50cc2d4be63e6a47f3fcf3930a62a",
     "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
@@ -14,14 +14,52 @@
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
+  "formal_unit_partition_coverage_lemma": true,
+  "proved": true,
+  "coverage_complete": true,
   "formal_unit_partition_coverage_interface_closed": true,
-  "formal_unit_partition_coverage_lemma_closed": false,
+  "formal_unit_partition_coverage_lemma_closed": true,
   "partition_proof_like_json": {
-    "FormalUnitPartitionCoverageLemma": [],
-    "WitnessObligationDomainCanonicalizationLemma": [],
-    "FiniteFormalUnitPartitionKeyLemma": [],
-    "PartitionCoverageNoLossEquationLemma": [],
-    "PartitionDisjointnessAndBoundaryReturnLemma": []
+    "FormalUnitPartitionCoverageLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json",
+        "status": "formal_unit_partition_coverage_closed_assignment_totality_open",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ],
+    "WitnessObligationDomainCanonicalizationLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-witness-obligation-domain-canonicalization-router.json",
+        "status": "witness_obligation_domain_canonicalized_partition_key_open",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ],
+    "FiniteFormalUnitPartitionKeyLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-finite-formal-unit-partition-key-router.json",
+        "status": "finite_formal_unit_partition_key_closed_no_loss_equation_open",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ],
+    "PartitionCoverageNoLossEquationLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-partition-coverage-no-loss-equation-router.json",
+        "status": "partition_no_loss_equation_closed_disjointness_open",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ],
+    "PartitionDisjointnessAndBoundaryReturnLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-partition-disjointness-boundary-return-router.json",
+        "status": "partition_disjointness_boundary_return_closed_partition_ready",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ]
   },
   "partition_sublemmas": [
     {
@@ -41,14 +79,12 @@
       "meaning": "处理边界重叠、quotient 和复用：重复原子只能合并或回流，不能重复计数。"
     }
   ],
-  "current_narrowest_atom": "WitnessObligationDomainCanonicalizationLemma",
+  "current_narrowest_atom": "SourceFamilyAssignmentTotalityLemma",
   "downstream_atoms": [
-    "FiniteFormalUnitPartitionKeyLemma",
-    "PartitionCoverageNoLossEquationLemma",
-    "PartitionDisjointnessAndBoundaryReturnLemma"
+    "SourceFamilyAssignmentTotalityLemma"
   ],
   "reduction_formula": "FormalUnitPartitionCoverageLemma => FormalUnitPartitionCoverageInterfaceClosed AND WitnessObligationDomainCanonicalizationLemma AND FiniteFormalUnitPartitionKeyLemma AND PartitionCoverageNoLossEquationLemma AND PartitionDisjointnessAndBoundaryReturnLemma.",
-  "plain_conclusion": "FormalUnitPartitionCoverageLemma 的接口已闭合：任意早期零行 witness 的义务必须先形成规范化有限域 O(w)，再按 formal_unit key 切分，并用 no-loss 覆盖等式处理边界和回流。真正尚未闭合的是 `WitnessObligationDomainCanonicalizationLemma`。",
+  "plain_conclusion": "FormalUnitPartitionCoverageLemma 已闭合：O(w) 已规范化，finite key、no-loss 覆盖等式与不交/边界回流四个子门全部闭合。下一最窄点回到普遍抽取定理的 `SourceFamilyAssignmentTotalityLemma`。",
   "rows": [
     {
       "gate": "FormalUnitPartitionGateActive",
@@ -87,38 +123,38 @@
     },
     {
       "gate": "WitnessObligationDomainCanonicalizationAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "尚未发现 O(w) 义务域规范化证明。",
+      "closed": true,
+      "proved": true,
+      "meaning": "O(w) 义务域规范化证明状态。",
       "remaining": "WitnessObligationDomainCanonicalizationLemma"
     },
     {
       "gate": "FiniteFormalUnitPartitionKeyAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "尚未发现有限 formal unit key 切分证明。",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限 formal unit key 切分证明状态。",
       "remaining": "FiniteFormalUnitPartitionKeyLemma"
     },
     {
       "gate": "PartitionCoverageNoLossEquationAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "尚未发现覆盖无漏等式证明。",
+      "closed": true,
+      "proved": true,
+      "meaning": "覆盖无漏等式证明状态。",
       "remaining": "PartitionCoverageNoLossEquationLemma"
     },
     {
       "gate": "PartitionDisjointnessBoundaryReturnAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "尚未发现重复/边界/回流处理证明。",
+      "closed": true,
+      "proved": true,
+      "meaning": "重复、边界与回流处理证明状态。",
       "remaining": "PartitionDisjointnessAndBoundaryReturnLemma"
     },
     {
       "gate": "FormalUnitPartitionCoverageLemma",
-      "closed": false,
-      "proved": false,
-      "meaning": "四个子门全闭合后，才可得到 formal unit partition coverage。",
-      "remaining": "WitnessObligationDomainCanonicalizationLemma"
+      "closed": true,
+      "proved": true,
+      "meaning": "四个子门已全部闭合，得到 formal unit partition coverage。",
+      "remaining": "SourceFamilyAssignmentTotalityLemma"
     }
   ],
   "closed_gates": [
@@ -126,13 +162,12 @@
     "CounterexampleBranchGuardPreserved",
     "EarlyZeroObligationSourcesImported",
     "FiniteTaxonomyAndEmitterImported",
-    "FormalUnitPartitionCoverageInterfaceClosed"
-  ],
-  "open_gates": [
+    "FormalUnitPartitionCoverageInterfaceClosed",
     "WitnessObligationDomainCanonicalizationAvailable",
     "FiniteFormalUnitPartitionKeyAvailable",
     "PartitionCoverageNoLossEquationAvailable",
     "PartitionDisjointnessBoundaryReturnAvailable",
     "FormalUnitPartitionCoverageLemma"
-  ]
+  ],
+  "open_gates": []
 }
