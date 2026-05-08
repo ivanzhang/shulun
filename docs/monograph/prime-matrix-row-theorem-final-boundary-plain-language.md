@@ -898,6 +898,61 @@ DStructureRankinPromotion。
 剩余都必须穿过四个显式输入防火墙”。这已经完成边界闭合和无隐藏出口闭合；完全无条件闭合还需要
 证明/接受上述开放输入。
 
+继续逐项硬攻这四类输入后：
+
+```text
+experiments/prime_matrix_four_open_inputs_closure_attack_router.py
+docs/monograph/prime-matrix-four-open-inputs-closure-attack-router.md/json
+
+current_materialized_frontier_zero=true；
+no_hidden_terminal_remaining=true；
+conditional_closure_chain_complete=true；
+all_current_obligations_closed=false；
+unconditional_closure_possible_from_current_corpus=false。
+```
+
+结论进一步变细：
+
+```text
+FutureExplicitPrimitivePDECSchema：
+  当前没有已物化合法非二点 primitive PDEC 候选；
+  只有未来新增 PDEC family 时才触发。
+
+FutureExplicitSparsePacketExtractorSchema：
+  当前 sparse/LocalSurvivor 物化前沿清零；
+  只有未来新增 sparse route 时才触发。
+
+NoncanonicalFullSComplementTrilemma：
+  canonical 实际源分支已闭合；
+  unrestricted noncanonical 补集未闭合；
+  现有 DI/BFI 主来源不能推出所需 full-S non-AP WFD KLS 估计。
+
+DStructureRankinPromotion：
+  晋级包边界闭合，Rankin 样本通过；
+  正式全集和独立验收未完成，作者侧不能自我升级。
+```
+
+所以当前已经得到一条严格的条件闭合定理：
+
+```text
+若未来 PDEC/sparse 新路线均按显式 schema 消解或没有新增；
+且 noncanonical full-S 补集三歧中至少一支被证明/接受；
+且 DStructureRankinPromotion 被独立接受；
+则当前无隐藏终端链可把行/列命题升级为完整闭合。
+```
+
+同时也得到当前材料不可能性定理：
+
+```text
+不新增 FullSNonAPWFDKLSTheoremInput / APSourceLift / 强化实际源反原子；
+且不取得 DStructureRankinPromotion 独立接受；
+则当前材料不能诚实推出完整行/列无条件定理。
+```
+
+下一最优硬攻点已经不是 PDEC 或 sparse，而是 `NoncanonicalFullSComplementTrilemma`：优先尝试
+`APSourceLift` 或实际源强化反原子；若不能新增深解析定理，就只能走显式外部
+`FullSNonAPWFDKLSTheoremInput`。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

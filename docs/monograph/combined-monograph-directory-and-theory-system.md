@@ -3365,3 +3365,34 @@ DStructureRankinPromotion。
 
 这一步闭合的是边界和命名性，不是完整无条件定理。完整行/列命题要升级，还必须证明或独立接受这些
 显式输入。
+
+继续新增：
+
+```text
+experiments/prime_matrix_four_open_inputs_closure_attack_router.py
+docs/monograph/prime-matrix-four-open-inputs-closure-attack-router.md/json
+```
+
+该路由器逐项硬攻四类最终输入：
+
+```text
+current_materialized_frontier_zero=true；
+no_hidden_terminal_remaining=true；
+conditional_closure_chain_complete=true；
+all_current_obligations_closed=false；
+unconditional_closure_possible_from_current_corpus=false。
+```
+
+细化结论是：
+
+```text
+FutureExplicitPrimitivePDECSchema      当前无已物化义务，只在未来新增 PDEC family 时触发；
+FutureExplicitSparsePacketExtractorSchema 当前无已物化义务，只在未来新增 sparse route 时触发；
+NoncanonicalFullSComplementTrilemma    当前真实开放，现有 DI/BFI 主来源不足以推出所需 full-S non-AP WFD KLS；
+DStructureRankinPromotion              当前真实开放，需独立接受晋级包。
+```
+
+因此形成条件闭合定理：若未来 `PDEC/sparse` 新路线均按 schema 消解或没有新增，且 noncanonical 三歧
+至少一支被证明/接受，且 `DStructureRankinPromotion` 被独立接受，则无隐藏终端链可升级为完整闭合。
+同时形成当前材料不可能性定理：没有 `FullSNonAPWFDKLSTheoremInput/APSourceLift/强化实际源反原子`
+和 `DStructureRankinPromotion` 独立接受时，当前材料不能诚实推出完整行/列无条件定理。
