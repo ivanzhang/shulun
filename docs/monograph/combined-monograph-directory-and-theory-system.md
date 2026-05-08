@@ -7022,3 +7022,74 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标转到 `DLSFixedWheelUnitPeakDilutionOrPDECReturn`：证明固定轮单位类峰被层叠轮稀释，
 或把持久单位峰登记为 `PDEC`。
+
+## Prime Matrix DLS fixed-wheel 单位峰命名回流 schema 路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_dls_fixedwheel_pdec_return_schema_router.py
+docs/monograph/prime-matrix-dls-fixedwheel-pdec-return-schema-router.md/json
+```
+
+该路由器直接攻击 `DLSFixedWheelUnitPeakDilutionOrPDECReturn`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+dls_fixedwheel_return_schema_closed=true；
+dls_fixedwheel_specific_gap_removed=true；
+fixedwheel_numeric_dilution_proved=false；
+wunit_pdec_terminal_exclusion_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=DLSFixedWheelUnitPeakDilutionOrPDECReturn；
+terminal_gap_after_router=NoDLSFixedWheelSpecificGap_AfterWUnitPDECOrLayeredDilutionReturn。
+```
+
+固定轮单位峰不能作为终局规律停留。固定 `W` 时，单位类 `U_W` 与中心化偏差 `E_a(W)` 是有限
+formal unit 对象；若同一单位峰持久同步，则必须登记为 `W-unit PDEC`。若升层后峰继续集中，则进入
+new-layer PDEC/flat admission；若固定轮和新增层缺陷都被剥离，则 flat/L2-flat 逃逸已在早期零行
+反例分支回到终端包。
+
+替换律为：
+
+```text
+DLSFixedWheelUnitPeakDilutionOrPDECReturn
+  =>
+NoDLSFixedWheelSpecificGap_AfterWUnitPDECOrLayeredDilutionReturn。
+```
+
+已经闭合的门为：
+
+```text
+DLSFixedWheelGateActive；
+FixedWheelAtomPinned；
+FiniteWheelFormalUnit；
+FixedWheelNotTerminalLaw；
+LayeredWheelDilutionOrPDEC；
+PersistentWUnitPeakAdmitsPDEC；
+LayerEscapeUsesNewLayerReturn；
+FlatEscapeAlreadyCounterexampleRouted；
+NoDLSFixedWheelSpecificFourthExit；
+DLSFixedWheelUnitPeakDilutionOrPDECReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+SignedGeometricLedgerVariationBranchLiftAndReturn；
+GlobalPDECorSparseTerminalExclusion。
+```
+
+这一步只删除 fixed-wheel 专属 gap，不证明数值稀释界，也不排斥 `W-unit PDEC` 或终端包。更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标转到 `SignedGeometricLedgerVariationBranchLiftAndReturn`：证明 actual signed source 的
+总变差和 branch key 复杂度确由几何账本支配，或把超预算质量回流 `PDEC/SAE/ColumnCRT/CleanKLS`。

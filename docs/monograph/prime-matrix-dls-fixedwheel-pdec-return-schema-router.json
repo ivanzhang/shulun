@@ -1,0 +1,133 @@
+{
+  "certificate_type": "dls_fixedwheel_pdec_return_schema_router",
+  "closed_gates": [
+    "DLSFixedWheelGateActive",
+    "FixedWheelAtomPinned",
+    "FiniteWheelFormalUnit",
+    "FixedWheelNotTerminalLaw",
+    "LayeredWheelDilutionOrPDEC",
+    "PersistentWUnitPeakAdmitsPDEC",
+    "LayerEscapeUsesNewLayerReturn",
+    "FlatEscapeAlreadyCounterexampleRouted",
+    "NoDLSFixedWheelSpecificFourthExit",
+    "DLSFixedWheelUnitPeakDilutionOrPDECReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dls_fixedwheel_return_schema_closed": true,
+  "dls_fixedwheel_specific_gap_removed": true,
+  "empirical_absence_not_used": true,
+  "fixedwheel_numeric_dilution_proved": false,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "SignedGeometricLedgerVariationBranchLiftAndReturn",
+  "open_gates": [
+    "SignedGeometricLedgerVariationBranchLiftAndReturn",
+    "GlobalPDECorSparseTerminalExclusion"
+  ],
+  "plain_conclusion": "本步闭合的是 DLS fixed-wheel 单位峰的专属命名回流 schema：固定轮峰若持久，必须登记为 W-unit PDEC；若升层后继续集中，进入 new-layer PDEC/flat admission；若固定轮和新增层缺陷都被剥离，则 flat/L2-flat 逃逸已在早期零行反例分支回到终端包。因此 fixed-wheel 专属 gap 被删除；但 W-unit PDEC、终端包和 signed 几何账本仍未无条件排斥。",
+  "remaining_global_terminal_guard": "FutureExplicitPrimitivePDECSchema_OR_FutureExplicitSparsePacketExtractorSchema_if_materialized",
+  "replacement": {
+    "DLSFixedWheelUnitPeakDilutionOrPDECReturn": "NoDLSFixedWheelSpecificGap_AfterWUnitPDECOrLayeredDilutionReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DLSFixedWheelGateActive",
+      "meaning": "当前输入基仍含 DLSFixedWheelUnitPeakDilutionOrPDECReturn。",
+      "proved": true,
+      "remaining": "本步只攻击 fixed-wheel 专属无名出口。"
+    },
+    {
+      "closed": true,
+      "gate": "FixedWheelAtomPinned",
+      "meaning": "LowPhase 已把固定轮单位类峰定位为 W-unit PDEC 或稀释回流。",
+      "proved": true,
+      "remaining": "不能继续作为未定义低模规律。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteWheelFormalUnit",
+      "meaning": "固定 W 的单位类 U_W 与中心化偏差 E_a(W) 是有限 formal unit 对象。",
+      "proved": true,
+      "remaining": "持久峰可登记为 W-unit PDEC。"
+    },
+    {
+      "closed": true,
+      "gate": "FixedWheelNotTerminalLaw",
+      "meaning": "W=30 单位峰真实存在但没有固定单位类长期主导，不能作为终局规律停留。",
+      "proved": true,
+      "remaining": "样本只定位结构，不作证明。"
+    },
+    {
+      "closed": true,
+      "gate": "LayeredWheelDilutionOrPDEC",
+      "meaning": "升层后若峰继续同步则给 PDEC；若不同步，单类峰被稀释并进入新增层/flat 分支。",
+      "proved": true,
+      "remaining": "数值稀释本身不是无条件证明。"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentWUnitPeakAdmitsPDEC",
+      "meaning": "固定单位峰若在同 formal unit 上持久复现，必须作为显式 W-unit PDEC schema 准入。",
+      "proved": true,
+      "remaining": "PDEC family 无条件排斥仍开放。"
+    },
+    {
+      "closed": true,
+      "gate": "LayerEscapeUsesNewLayerReturn",
+      "meaning": "固定轮峰若升层为新增因子 Fourier 集中，已有 new-layer PDEC/flat admission 接线。",
+      "proved": true,
+      "remaining": "new-layer 终端证书仍按既有边界处理。"
+    },
+    {
+      "closed": true,
+      "gate": "FlatEscapeAlreadyCounterexampleRouted",
+      "meaning": "固定轮与新增层均被剥离后的 flat/L2-flat 逃逸已在早期零行反例分支回到终端包。",
+      "proved": true,
+      "remaining": "终端包本身仍未无条件排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "NoDLSFixedWheelSpecificFourthExit",
+      "meaning": "fixed-wheel 只有持久 W-unit PDEC、升层 new-layer/flat 回流或稀释不足三类归宿。",
+      "proved": true,
+      "remaining": "NoDLSFixedWheelSpecificGap_AfterWUnitPDECOrLayeredDilutionReturn"
+    },
+    {
+      "closed": true,
+      "gate": "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+      "meaning": "该硬点作为 fixed-wheel 命名回流 schema 已闭合。",
+      "proved": true,
+      "remaining": "不等于 W-unit PDEC 或终端包已排斥。"
+    },
+    {
+      "closed": false,
+      "gate": "SignedGeometricLedgerVariationBranchLiftAndReturn",
+      "meaning": "DLS 微输入删除后，下一步回到 signed 几何账本变差/分支提升锁。",
+      "proved": false,
+      "remaining": "SignedGeometricLedgerVariationBranchLiftAndReturn"
+    },
+    {
+      "closed": false,
+      "gate": "GlobalPDECorSparseTerminalExclusion",
+      "meaning": "若实际产生新 persistent PDEC 或 sparse packet，仍需提交并排斥相应证书。",
+      "proved": false,
+      "remaining": "FutureExplicitPrimitivePDECSchema / FutureExplicitSparsePacketExtractorSchema。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.md": "aaf7e9075dab7deee685b6b539b88e48b409eadafc3994fd4ecfdbee8e7f765a",
+    "docs/monograph/prime-matrix-dls-pointload-columncrt-return-schema-router.json": "f1f98361610b84a0f4b96621002db9cf45f49260af4c53dcd92e7ef341487451",
+    "docs/monograph/prime-matrix-dprc-cylindrical-layered-wheel-clamp.md": "d5282b1dfcb5831e15fa7ed5f358880f4cce7fbcec43ec5a1b3ad8859fc4631d",
+    "docs/monograph/prime-matrix-dprc-wheel-unit-phase-balance.md": "d14775ed1e6a9146dd5b86c95a7f1ab9993f10245bf522e5cc8022392f3f3cc7",
+    "docs/monograph/prime-matrix-early-zero-l2flat-kls-exclusion-router.md": "942995ce190996c845d56ab7fa9ed4a7786e06365b8c18005126a2eb04ad75e8",
+    "docs/monograph/prime-matrix-lowmod-newlayer-bridge-router.md": "832dcb97100c779bef0dbba122ab27efb4c2e03ba4945a62db32188a237ffd36",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa"
+  },
+  "status": "dls_fixedwheel_return_schema_closed_terminal_exclusion_open",
+  "terminal_gap_after_router": "NoDLSFixedWheelSpecificGap_AfterWUnitPDECOrLayeredDilutionReturn",
+  "terminal_gap_before_router": "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+  "wunit_pdec_terminal_exclusion_proved": false
+}
