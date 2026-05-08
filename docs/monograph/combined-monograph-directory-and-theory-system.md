@@ -4900,6 +4900,71 @@ PrimePairCarryShellCapacityAndCompositeCofactorDepthDescent
 第一项处理 `x>=sqrt(P)` 的真双素壳，第二项处理 `x<sqrt(P)` 的复合 cofactor 递归壳，第三项处理
 递归不能持久化时的孤窗证书。该步骤仍是结构压缩，不是最终容量排斥。
 
+继续新增：
+
+```text
+experiments/prime_matrix_early_zero_anchor_collar_router.py
+docs/monograph/prime-matrix-early-zero-anchor-collar-router.md/json
+```
+
+该路由器继续攻击 `x>=sqrt(P)` 的真双素 carry-shell。关键新刚性是 canonical 最小高素锚：
+
+```text
+xP+c=q m,   x<q,m<P,   q,m prime。
+```
+
+取 `q` 为最小高素因子，则 `q<=m`，所以
+
+```text
+q^2 <= xP+c < (x+1)P。
+```
+
+因此
+
+```text
+x < q < sqrt((x+1)P)。
+```
+
+这把原本的高素选择区间 `(x,P)` 压成窄的 canonical anchor collar。用 carry-shell 坐标看，
+它等价于只取 `q<=m` 的半边，去掉 `q,m` 互换重复，平方点只计一次。
+
+固定 collar 中的 `q` 后，`m` 必须落在短素数纤维：
+
+```text
+ceil((xP+1)/q) <= m <= floor((xP+P-1)/q),
+m prime, q<=m<P。
+```
+
+该窗口长度严格小于 `P/q`，而 `q>x>=sqrt(P)`，所以每条 q-fiber 长度 `<sqrt(P)`。于是全覆盖压力
+不能再表述为“高素很多”，而必须表述为很多极短素数纤维同时满载。
+
+样本审计 `P=101,499,997` 验证所有 canonical anchors 均落入 collar：
+
+```text
+all_anchor_hits_in_collar=true。
+```
+
+并给出量级信号：
+
+```text
+P=101: max_fiber_load=2, max_primepair_share=0.500000；
+P=499: max_fiber_load=4, max_primepair_share≈0.420290；
+P=997: max_fiber_load=5, max_primepair_share≈0.413333。
+```
+
+因此 `PrimePairCarryShellCapacityBoundOrPDECReturn` 进一步压成：
+
+```text
+AnchorCollarPrimeFiberCapacityBoundOrPDECReturn
+  = AnchorCollarShortPrimeFiberUpperBound
+    AND NoPersistentAnchorFiberConcentrationPDEC
+    AND NoSparseAnchorFiberSAE
+    AND NoColumnDisplacementReuseInAnchorFibers。
+```
+
+真正未闭合的是 `AnchorCollarShortPrimeFiberUpperBound`：证明 collar 中所有短素数纤维的容量总和
+不能吃掉整个 `R_x`；若某些纤维承担异常大负载，则已经进入 PDEC/SAE/ColumnCRT 命名回流。
+
 条件输入基为：
 
 ```text

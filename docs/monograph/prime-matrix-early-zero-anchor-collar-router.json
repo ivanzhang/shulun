@@ -1,0 +1,1306 @@
+{
+  "anchor_collar_prime_fiber_capacity_closed": false,
+  "canonical_anchor_collar_closed": true,
+  "certificate_type": "early_zero_anchor_collar_router",
+  "closed_gates": [
+    "PrimePairBranchImported",
+    "CarryShellIdentityImported",
+    "CanonicalLeastAnchorCollar",
+    "PairDuplicationQuotiented",
+    "FiberShortPrimeInterval",
+    "SampleAnchorAudit",
+    "NamedReturnCompatibility"
+  ],
+  "fiber_short_interval_reduction_closed": true,
+  "open_gates": [
+    "AnchorCollarPrimeFiberCapacity"
+  ],
+  "plain_conclusion": "本步把真双素 carry-shell 再压窄：取最小高素因子后，anchor `q` 不在整个 `(x,P)`，而只能在 `x<q<sqrt((x+1)P)` 的 canonical collar 中；固定 q 后，cofactor `m` 只来自长度 `<P/q<=sqrt(P)` 的短素数纤维。剩余变成 anchor-collar 短素数纤维容量，或过载时的 PDEC/SAE/ColumnCRT 回流。",
+  "previous_terminal_gap": "PrimePairCarryShellCapacityAndCompositeCofactorDepthDescent",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PrimePairBranchImported",
+      "meaning": "上一轮已把 x>=sqrt(P) 分支化为真双素 carry-shell 容量问题。",
+      "output": "继续规范化 q anchor。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "CarryShellIdentityImported",
+      "meaning": "已有 h=a+b-floor(ab/P), c=ab mod P 的带进位壳恒等式。",
+      "output": "可在壳上取 canonical anchor。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLeastAnchorCollar",
+      "meaning": "取 q 为 xP+c 的最小高素因子，则 q<=sqrt(xP+c)<sqrt((x+1)P)。",
+      "output": "x<q<sqrt((x+1)P)，高素 anchor 只在窄 collar 内。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PairDuplicationQuotiented",
+      "meaning": "canonical q<=m 删除 q,m 互换重复；平方点只计一次。",
+      "output": "primitive physical atom 口径更窄。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "FiberShortPrimeInterval",
+      "meaning": "固定 q 后，m 必须是长度 <P/q<=sqrt(P) 的短区间内素数。",
+      "output": "q-fiber capacity replaces unconstrained high-prime coverage。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "SampleAnchorAudit",
+      "meaning": "样本中所有 canonical anchors 均落入 collar；审计只复核实现口径。",
+      "output": "canonical_anchor_collar_sample_verified_capacity_open",
+      "proved": false
+    },
+    {
+      "closed": true,
+      "gate": "NamedReturnCompatibility",
+      "meaning": "若少数 q-fiber 持久过载则进入 PDEC；孤立短窗进入 SAE；固定列位移进入 ColumnCRT。",
+      "output": "AnchorCollarPDECSAEColumnReturn。",
+      "proved": true
+    },
+    {
+      "closed": false,
+      "gate": "AnchorCollarPrimeFiberCapacity",
+      "meaning": "尚未证明所有 collar q-fiber 的短素数容量总和不能覆盖 R_x。",
+      "output": "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn。",
+      "proved": false
+    }
+  ],
+  "sample_audit": {
+    "all_anchor_hits_in_collar": true,
+    "p_values": [
+      101,
+      499,
+      997
+    ],
+    "rows": [
+      {
+        "all_anchor_hits_in_collar": true,
+        "max_anchor_width": 26,
+        "max_bad_anchor_hits": 0,
+        "max_fiber_load": 2,
+        "max_primepair_share": 0.5,
+        "min_prime_holes": 7,
+        "p": 101,
+        "row_count": 91,
+        "sqrt_p": 10,
+        "strongest_semiprime_rows": [
+          {
+            "anchor_top": 37,
+            "anchor_width": 24,
+            "anchor_width_over_h": 0.2727272727272727,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 6,
+            "h": 88,
+            "max_fiber_load": 2,
+            "prime_holes": 9,
+            "primepair_share": 0.5,
+            "rough_holes": 18,
+            "saturated_fiber_count": 3,
+            "semiprime_holes": 9,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 17
+              },
+              {
+                "load": 2,
+                "q": 19
+              },
+              {
+                "load": 2,
+                "q": 23
+              },
+              {
+                "load": 1,
+                "q": 29
+              },
+              {
+                "load": 1,
+                "q": 31
+              }
+            ],
+            "x": 13
+          },
+          {
+            "anchor_top": 34,
+            "anchor_width": 23,
+            "anchor_width_over_h": 0.25555555555555554,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 5,
+            "h": 90,
+            "max_fiber_load": 2,
+            "prime_holes": 11,
+            "primepair_share": 0.3888888888888889,
+            "rough_holes": 18,
+            "saturated_fiber_count": 2,
+            "semiprime_holes": 7,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 17
+              },
+              {
+                "load": 2,
+                "q": 19
+              },
+              {
+                "load": 1,
+                "q": 13
+              },
+              {
+                "load": 1,
+                "q": 29
+              },
+              {
+                "load": 1,
+                "q": 31
+              }
+            ],
+            "x": 11
+          },
+          {
+            "anchor_top": 41,
+            "anchor_width": 25,
+            "anchor_width_over_h": 0.29411764705882354,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 6,
+            "h": 85,
+            "max_fiber_load": 2,
+            "prime_holes": 12,
+            "primepair_share": 0.3684210526315789,
+            "rough_holes": 19,
+            "saturated_fiber_count": 1,
+            "semiprime_holes": 7,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 23
+              },
+              {
+                "load": 1,
+                "q": 17
+              },
+              {
+                "load": 1,
+                "q": 19
+              },
+              {
+                "load": 1,
+                "q": 29
+              },
+              {
+                "load": 1,
+                "q": 31
+              }
+            ],
+            "x": 16
+          },
+          {
+            "anchor_top": 50,
+            "anchor_width": 26,
+            "anchor_width_over_h": 0.33766233766233766,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 4,
+            "h": 77,
+            "max_fiber_load": 1,
+            "prime_holes": 9,
+            "primepair_share": 0.3076923076923077,
+            "rough_holes": 13,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 4,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 31
+              },
+              {
+                "load": 1,
+                "q": 37
+              },
+              {
+                "load": 1,
+                "q": 41
+              },
+              {
+                "load": 1,
+                "q": 47
+              }
+            ],
+            "x": 24
+          },
+          {
+            "anchor_top": 43,
+            "anchor_width": 25,
+            "anchor_width_over_h": 0.30120481927710846,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 4,
+            "h": 83,
+            "max_fiber_load": 2,
+            "prime_holes": 13,
+            "primepair_share": 0.2777777777777778,
+            "rough_holes": 18,
+            "saturated_fiber_count": 1,
+            "semiprime_holes": 5,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 31
+              },
+              {
+                "load": 1,
+                "q": 19
+              },
+              {
+                "load": 1,
+                "q": 23
+              },
+              {
+                "load": 1,
+                "q": 43
+              }
+            ],
+            "x": 18
+          }
+        ],
+        "weakest_prime_rows": [
+          {
+            "anchor_top": 86,
+            "anchor_width": 13,
+            "anchor_width_over_h": 0.4642857142857143,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 1,
+            "h": 28,
+            "max_fiber_load": 1,
+            "prime_holes": 7,
+            "primepair_share": 0.125,
+            "rough_holes": 8,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 1,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 83
+              }
+            ],
+            "x": 73
+          }
+        ],
+        "widest_anchor_rows": [
+          {
+            "anchor_top": 46,
+            "anchor_width": 26,
+            "anchor_width_over_h": 0.32098765432098764,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 4,
+            "h": 81,
+            "max_fiber_load": 2,
+            "prime_holes": 13,
+            "primepair_share": 0.2777777777777778,
+            "rough_holes": 18,
+            "saturated_fiber_count": 1,
+            "semiprime_holes": 5,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 29
+              },
+              {
+                "load": 1,
+                "q": 23
+              },
+              {
+                "load": 1,
+                "q": 31
+              },
+              {
+                "load": 1,
+                "q": 43
+              }
+            ],
+            "x": 20
+          },
+          {
+            "anchor_top": 47,
+            "anchor_width": 26,
+            "anchor_width_over_h": 0.325,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 4,
+            "h": 80,
+            "max_fiber_load": 1,
+            "prime_holes": 12,
+            "primepair_share": 0.25,
+            "rough_holes": 16,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 4,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 31
+              },
+              {
+                "load": 1,
+                "q": 37
+              },
+              {
+                "load": 1,
+                "q": 41
+              },
+              {
+                "load": 1,
+                "q": 47
+              }
+            ],
+            "x": 21
+          },
+          {
+            "anchor_top": 48,
+            "anchor_width": 26,
+            "anchor_width_over_h": 0.3291139240506329,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 5,
+            "h": 79,
+            "max_fiber_load": 1,
+            "prime_holes": 13,
+            "primepair_share": 0.2777777777777778,
+            "rough_holes": 18,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 5,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 23
+              },
+              {
+                "load": 1,
+                "q": 29
+              },
+              {
+                "load": 1,
+                "q": 31
+              },
+              {
+                "load": 1,
+                "q": 37
+              },
+              {
+                "load": 1,
+                "q": 43
+              }
+            ],
+            "x": 22
+          },
+          {
+            "anchor_top": 49,
+            "anchor_width": 26,
+            "anchor_width_over_h": 0.3333333333333333,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 2,
+            "h": 78,
+            "max_fiber_load": 1,
+            "prime_holes": 16,
+            "primepair_share": 0.1111111111111111,
+            "rough_holes": 18,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 2,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 29
+              },
+              {
+                "load": 1,
+                "q": 41
+              }
+            ],
+            "x": 23
+          },
+          {
+            "anchor_top": 50,
+            "anchor_width": 26,
+            "anchor_width_over_h": 0.33766233766233766,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 4,
+            "h": 77,
+            "max_fiber_load": 1,
+            "prime_holes": 9,
+            "primepair_share": 0.3076923076923077,
+            "rough_holes": 13,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 4,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 31
+              },
+              {
+                "load": 1,
+                "q": 37
+              },
+              {
+                "load": 1,
+                "q": 41
+              },
+              {
+                "load": 1,
+                "q": 47
+              }
+            ],
+            "x": 24
+          }
+        ],
+        "x_range": [
+          10,
+          100
+        ]
+      },
+      {
+        "all_anchor_hits_in_collar": true,
+        "max_anchor_width": 125,
+        "max_bad_anchor_hits": 0,
+        "max_fiber_load": 4,
+        "max_primepair_share": 0.42028985507246375,
+        "min_prime_holes": 29,
+        "p": 499,
+        "row_count": 477,
+        "sqrt_p": 22,
+        "strongest_semiprime_rows": [
+          {
+            "anchor_top": 137,
+            "anchor_width": 100,
+            "anchor_width_over_h": 0.21645021645021645,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 19,
+            "h": 462,
+            "max_fiber_load": 3,
+            "prime_holes": 40,
+            "primepair_share": 0.42028985507246375,
+            "rough_holes": 69,
+            "saturated_fiber_count": 8,
+            "semiprime_holes": 29,
+            "top_fibers": [
+              {
+                "load": 3,
+                "q": 43
+              },
+              {
+                "load": 3,
+                "q": 67
+              },
+              {
+                "load": 2,
+                "q": 41
+              },
+              {
+                "load": 2,
+                "q": 47
+              },
+              {
+                "load": 2,
+                "q": 53
+              }
+            ],
+            "x": 37
+          },
+          {
+            "anchor_top": 120,
+            "anchor_width": 92,
+            "anchor_width_over_h": 0.19532908704883228,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 21,
+            "h": 471,
+            "max_fiber_load": 3,
+            "prime_holes": 46,
+            "primepair_share": 0.4177215189873418,
+            "rough_holes": 79,
+            "saturated_fiber_count": 10,
+            "semiprime_holes": 33,
+            "top_fibers": [
+              {
+                "load": 3,
+                "q": 31
+              },
+              {
+                "load": 3,
+                "q": 37
+              },
+              {
+                "load": 2,
+                "q": 29
+              },
+              {
+                "load": 2,
+                "q": 41
+              },
+              {
+                "load": 2,
+                "q": 53
+              }
+            ],
+            "x": 28
+          },
+          {
+            "anchor_top": 107,
+            "anchor_width": 85,
+            "anchor_width_over_h": 0.17819706498951782,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 19,
+            "h": 477,
+            "max_fiber_load": 3,
+            "prime_holes": 51,
+            "primepair_share": 0.3855421686746988,
+            "rough_holes": 83,
+            "saturated_fiber_count": 10,
+            "semiprime_holes": 32,
+            "top_fibers": [
+              {
+                "load": 3,
+                "q": 23
+              },
+              {
+                "load": 3,
+                "q": 29
+              },
+              {
+                "load": 3,
+                "q": 41
+              },
+              {
+                "load": 2,
+                "q": 31
+              },
+              {
+                "load": 2,
+                "q": 43
+              }
+            ],
+            "x": 22
+          },
+          {
+            "anchor_top": 157,
+            "anchor_width": 108,
+            "anchor_width_over_h": 0.24,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 18,
+            "h": 450,
+            "max_fiber_load": 2,
+            "prime_holes": 42,
+            "primepair_share": 0.38235294117647056,
+            "rough_holes": 68,
+            "saturated_fiber_count": 8,
+            "semiprime_holes": 26,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 53
+              },
+              {
+                "load": 2,
+                "q": 59
+              },
+              {
+                "load": 2,
+                "q": 61
+              },
+              {
+                "load": 2,
+                "q": 71
+              },
+              {
+                "load": 2,
+                "q": 79
+              }
+            ],
+            "x": 49
+          },
+          {
+            "anchor_top": 116,
+            "anchor_width": 90,
+            "anchor_width_over_h": 0.19027484143763213,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 16,
+            "h": 473,
+            "max_fiber_load": 4,
+            "prime_holes": 52,
+            "primepair_share": 0.37349397590361444,
+            "rough_holes": 83,
+            "saturated_fiber_count": 9,
+            "semiprime_holes": 31,
+            "top_fibers": [
+              {
+                "load": 4,
+                "q": 29
+              },
+              {
+                "load": 4,
+                "q": 31
+              },
+              {
+                "load": 3,
+                "q": 43
+              },
+              {
+                "load": 3,
+                "q": 47
+              },
+              {
+                "load": 2,
+                "q": 37
+              }
+            ],
+            "x": 26
+          }
+        ],
+        "weakest_prime_rows": [
+          {
+            "anchor_top": 425,
+            "anchor_width": 63,
+            "anchor_width_over_h": 0.45985401459854014,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 0,
+            "h": 137,
+            "max_fiber_load": 0,
+            "prime_holes": 29,
+            "primepair_share": 0.0,
+            "rough_holes": 29,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 0,
+            "top_fibers": [],
+            "x": 362
+          }
+        ],
+        "widest_anchor_rows": [
+          {
+            "anchor_top": 231,
+            "anchor_width": 125,
+            "anchor_width_over_h": 0.31806615776081426,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 14,
+            "h": 393,
+            "max_fiber_load": 2,
+            "prime_holes": 47,
+            "primepair_share": 0.24193548387096775,
+            "rough_holes": 62,
+            "saturated_fiber_count": 1,
+            "semiprime_holes": 15,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 197
+              },
+              {
+                "load": 1,
+                "q": 109
+              },
+              {
+                "load": 1,
+                "q": 127
+              },
+              {
+                "load": 1,
+                "q": 137
+              },
+              {
+                "load": 1,
+                "q": 139
+              }
+            ],
+            "x": 106
+          },
+          {
+            "anchor_top": 232,
+            "anchor_width": 125,
+            "anchor_width_over_h": 0.31887755102040816,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 9,
+            "h": 392,
+            "max_fiber_load": 1,
+            "prime_holes": 46,
+            "primepair_share": 0.16363636363636364,
+            "rough_holes": 55,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 9,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 109
+              },
+              {
+                "load": 1,
+                "q": 127
+              },
+              {
+                "load": 1,
+                "q": 131
+              },
+              {
+                "load": 1,
+                "q": 149
+              },
+              {
+                "load": 1,
+                "q": 173
+              }
+            ],
+            "x": 107
+          },
+          {
+            "anchor_top": 233,
+            "anchor_width": 125,
+            "anchor_width_over_h": 0.319693094629156,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 12,
+            "h": 391,
+            "max_fiber_load": 1,
+            "prime_holes": 42,
+            "primepair_share": 0.2222222222222222,
+            "rough_holes": 54,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 12,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 113
+              },
+              {
+                "load": 1,
+                "q": 137
+              },
+              {
+                "load": 1,
+                "q": 139
+              },
+              {
+                "load": 1,
+                "q": 151
+              },
+              {
+                "load": 1,
+                "q": 163
+              }
+            ],
+            "x": 108
+          },
+          {
+            "anchor_top": 234,
+            "anchor_width": 125,
+            "anchor_width_over_h": 0.32051282051282054,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 9,
+            "h": 390,
+            "max_fiber_load": 2,
+            "prime_holes": 49,
+            "primepair_share": 0.1694915254237288,
+            "rough_holes": 59,
+            "saturated_fiber_count": 1,
+            "semiprime_holes": 10,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 157
+              },
+              {
+                "load": 1,
+                "q": 127
+              },
+              {
+                "load": 1,
+                "q": 131
+              },
+              {
+                "load": 1,
+                "q": 149
+              },
+              {
+                "load": 1,
+                "q": 173
+              }
+            ],
+            "x": 109
+          },
+          {
+            "anchor_top": 235,
+            "anchor_width": 125,
+            "anchor_width_over_h": 0.3213367609254499,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 11,
+            "h": 389,
+            "max_fiber_load": 1,
+            "prime_holes": 44,
+            "primepair_share": 0.2,
+            "rough_holes": 55,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 11,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 113
+              },
+              {
+                "load": 1,
+                "q": 127
+              },
+              {
+                "load": 1,
+                "q": 131
+              },
+              {
+                "load": 1,
+                "q": 137
+              },
+              {
+                "load": 1,
+                "q": 139
+              }
+            ],
+            "x": 110
+          }
+        ],
+        "x_range": [
+          22,
+          498
+        ]
+      },
+      {
+        "all_anchor_hits_in_collar": true,
+        "max_anchor_width": 250,
+        "max_bad_anchor_hits": 0,
+        "max_fiber_load": 5,
+        "max_primepair_share": 0.41333333333333333,
+        "min_prime_holes": 54,
+        "p": 997,
+        "row_count": 966,
+        "sqrt_p": 31,
+        "strongest_semiprime_rows": [
+          {
+            "anchor_top": 189,
+            "anchor_width": 154,
+            "anchor_width_over_h": 0.1600831600831601,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 28,
+            "h": 962,
+            "max_fiber_load": 4,
+            "prime_holes": 88,
+            "primepair_share": 0.41333333333333333,
+            "rough_holes": 150,
+            "saturated_fiber_count": 20,
+            "semiprime_holes": 62,
+            "top_fibers": [
+              {
+                "load": 4,
+                "q": 41
+              },
+              {
+                "load": 4,
+                "q": 43
+              },
+              {
+                "load": 4,
+                "q": 47
+              },
+              {
+                "load": 4,
+                "q": 53
+              },
+              {
+                "load": 4,
+                "q": 59
+              }
+            ],
+            "x": 35
+          },
+          {
+            "anchor_top": 202,
+            "anchor_width": 162,
+            "anchor_width_over_h": 0.16927899686520376,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 31,
+            "h": 957,
+            "max_fiber_load": 4,
+            "prime_holes": 87,
+            "primepair_share": 0.40816326530612246,
+            "rough_holes": 147,
+            "saturated_fiber_count": 20,
+            "semiprime_holes": 60,
+            "top_fibers": [
+              {
+                "load": 4,
+                "q": 43
+              },
+              {
+                "load": 4,
+                "q": 47
+              },
+              {
+                "load": 3,
+                "q": 41
+              },
+              {
+                "load": 3,
+                "q": 53
+              },
+              {
+                "load": 3,
+                "q": 59
+              }
+            ],
+            "x": 40
+          },
+          {
+            "anchor_top": 209,
+            "anchor_width": 166,
+            "anchor_width_over_h": 0.1740041928721174,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 28,
+            "h": 954,
+            "max_fiber_load": 5,
+            "prime_holes": 83,
+            "primepair_share": 0.39855072463768115,
+            "rough_holes": 138,
+            "saturated_fiber_count": 19,
+            "semiprime_holes": 55,
+            "top_fibers": [
+              {
+                "load": 5,
+                "q": 53
+              },
+              {
+                "load": 4,
+                "q": 59
+              },
+              {
+                "load": 4,
+                "q": 67
+              },
+              {
+                "load": 3,
+                "q": 71
+              },
+              {
+                "load": 2,
+                "q": 47
+              }
+            ],
+            "x": 43
+          },
+          {
+            "anchor_top": 197,
+            "anchor_width": 159,
+            "anchor_width_over_h": 0.16579770594369134,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 30,
+            "h": 959,
+            "max_fiber_load": 5,
+            "prime_holes": 90,
+            "primepair_share": 0.3959731543624161,
+            "rough_holes": 149,
+            "saturated_fiber_count": 17,
+            "semiprime_holes": 59,
+            "top_fibers": [
+              {
+                "load": 5,
+                "q": 47
+              },
+              {
+                "load": 4,
+                "q": 41
+              },
+              {
+                "load": 4,
+                "q": 59
+              },
+              {
+                "load": 4,
+                "q": 83
+              },
+              {
+                "load": 3,
+                "q": 53
+              }
+            ],
+            "x": 38
+          },
+          {
+            "anchor_top": 178,
+            "anchor_width": 147,
+            "anchor_width_over_h": 0.15217391304347827,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 26,
+            "h": 966,
+            "max_fiber_load": 4,
+            "prime_holes": 94,
+            "primepair_share": 0.3935483870967742,
+            "rough_holes": 155,
+            "saturated_fiber_count": 20,
+            "semiprime_holes": 61,
+            "top_fibers": [
+              {
+                "load": 4,
+                "q": 37
+              },
+              {
+                "load": 4,
+                "q": 41
+              },
+              {
+                "load": 4,
+                "q": 43
+              },
+              {
+                "load": 4,
+                "q": 47
+              },
+              {
+                "load": 4,
+                "q": 53
+              }
+            ],
+            "x": 31
+          }
+        ],
+        "weakest_prime_rows": [
+          {
+            "anchor_top": 956,
+            "anchor_width": 40,
+            "anchor_width_over_h": 0.49382716049382713,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 1,
+            "h": 81,
+            "max_fiber_load": 1,
+            "prime_holes": 54,
+            "primepair_share": 0.01818181818181818,
+            "rough_holes": 55,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 1,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 941
+              }
+            ],
+            "x": 916
+          }
+        ],
+        "widest_anchor_rows": [
+          {
+            "anchor_top": 483,
+            "anchor_width": 250,
+            "anchor_width_over_h": 0.32722513089005234,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 23,
+            "h": 764,
+            "max_fiber_load": 2,
+            "prime_holes": 77,
+            "primepair_share": 0.24509803921568626,
+            "rough_holes": 102,
+            "saturated_fiber_count": 2,
+            "semiprime_holes": 25,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 281
+              },
+              {
+                "load": 2,
+                "q": 283
+              },
+              {
+                "load": 1,
+                "q": 241
+              },
+              {
+                "load": 1,
+                "q": 251
+              },
+              {
+                "load": 1,
+                "q": 257
+              }
+            ],
+            "x": 233
+          },
+          {
+            "anchor_top": 484,
+            "anchor_width": 250,
+            "anchor_width_over_h": 0.32765399737876805,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 17,
+            "h": 763,
+            "max_fiber_load": 1,
+            "prime_holes": 77,
+            "primepair_share": 0.18085106382978725,
+            "rough_holes": 94,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 17,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 239
+              },
+              {
+                "load": 1,
+                "q": 241
+              },
+              {
+                "load": 1,
+                "q": 257
+              },
+              {
+                "load": 1,
+                "q": 271
+              },
+              {
+                "load": 1,
+                "q": 283
+              }
+            ],
+            "x": 234
+          },
+          {
+            "anchor_top": 485,
+            "anchor_width": 250,
+            "anchor_width_over_h": 0.32808398950131235,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 16,
+            "h": 762,
+            "max_fiber_load": 1,
+            "prime_holes": 83,
+            "primepair_share": 0.16161616161616163,
+            "rough_holes": 99,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 16,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 239
+              },
+              {
+                "load": 1,
+                "q": 251
+              },
+              {
+                "load": 1,
+                "q": 283
+              },
+              {
+                "load": 1,
+                "q": 313
+              },
+              {
+                "load": 1,
+                "q": 331
+              }
+            ],
+            "x": 235
+          },
+          {
+            "anchor_top": 486,
+            "anchor_width": 250,
+            "anchor_width_over_h": 0.328515111695138,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 20,
+            "h": 761,
+            "max_fiber_load": 1,
+            "prime_holes": 69,
+            "primepair_share": 0.2247191011235955,
+            "rough_holes": 89,
+            "saturated_fiber_count": 0,
+            "semiprime_holes": 20,
+            "top_fibers": [
+              {
+                "load": 1,
+                "q": 241
+              },
+              {
+                "load": 1,
+                "q": 251
+              },
+              {
+                "load": 1,
+                "q": 257
+              },
+              {
+                "load": 1,
+                "q": 269
+              },
+              {
+                "load": 1,
+                "q": 277
+              }
+            ],
+            "x": 236
+          },
+          {
+            "anchor_top": 487,
+            "anchor_width": 250,
+            "anchor_width_over_h": 0.32894736842105265,
+            "bad_anchor_hits": 0,
+            "distinct_anchor_count": 12,
+            "h": 760,
+            "max_fiber_load": 2,
+            "prime_holes": 81,
+            "primepair_share": 0.13829787234042554,
+            "rough_holes": 94,
+            "saturated_fiber_count": 1,
+            "semiprime_holes": 13,
+            "top_fibers": [
+              {
+                "load": 2,
+                "q": 383
+              },
+              {
+                "load": 1,
+                "q": 239
+              },
+              {
+                "load": 1,
+                "q": 241
+              },
+              {
+                "load": 1,
+                "q": 269
+              },
+              {
+                "load": 1,
+                "q": 293
+              }
+            ],
+            "x": 237
+          }
+        ],
+        "x_range": [
+          31,
+          996
+        ]
+      }
+    ],
+    "skipped_nonprimes": [],
+    "status": "canonical_anchor_collar_sample_verified_capacity_open"
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-columncrt-displacement-pdec-absorption.md": "f674ce4f51911edeab0dcce641763860c87ef8f94141971a60fd948e7c008a7c",
+    "docs/monograph/prime-matrix-early-zero-carry-shell-router.json": "8c3d8d20f74f2f6d7b1c1af5b8c4f8d4e6e098df3dbd8069cd5ed26a5cde3384",
+    "docs/monograph/prime-matrix-early-zero-cofactor-depth-router.json": "66fb9cfb87cadd8546be04af7f386322e04b9cf684a08010bda5be62115f6c5c",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-sae-local-certificate-reduction.md": "927714d839c2ba0a20380dbea99fc5ab474dbf096bdd4f14fe770c9a523c60c7"
+  },
+  "status": "canonical_anchor_collar_closed_prime_fiber_capacity_open",
+  "structural_law": "In the x>=sqrt(P) branch every high filler is a product of two primes in (x,P). Choosing the least high prime factor gives a canonical anchor q with x<q<sqrt((x+1)P). Hence the anchor is confined to a narrow collar, and each q-fiber asks for primes m in an interval of length <P/q<=sqrt(P). Full early zero coverage would require these short prime fibers to cover all R_x; any persistent fiber overload is a PDEC object, while sparse fiber escapes route to SAE/LocalSurvivor or ColumnCRT.",
+  "terminal_gap_after_router": "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn",
+  "terminal_gap_expansion": [
+    "AnchorCollarShortPrimeFiberUpperBound",
+    "NoPersistentAnchorFiberConcentrationPDEC",
+    "NoSparseAnchorFiberSAE",
+    "NoColumnDisplacementReuseInAnchorFibers"
+  ]
+}
