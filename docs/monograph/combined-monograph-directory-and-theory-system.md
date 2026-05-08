@@ -4566,3 +4566,58 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明 noncanonical 字典；它把“系数提升”变成一个可检查的 signed 解积分证据对象，并明确 canonical
 模板、generic WFD 与未登记来源都不能替代该对象。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_disintegration_automaticity_router.py
+docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.md/json
+```
+
+该路由器继续审查 signed 解积分字典是否本身仍是数学硬点。结论为：
+
+```text
+disintegration_automaticity_boundary_closed=true；
+discrete_payment_base_map_closed=true；
+signed_fiber_disintegration_formal=true；
+pushforward_identity_is_real_gate=true；
+actual_signed_source_measure_phi_compatibility_budget_proved=false；
+row_column_unconditional_closed=false。
+```
+
+自动性律是：在离散 first-cover payment map `Phi` 已闭合后，若 actual signed 源测度 `nu` 已给出，则
+`nu=sum_a nu|_{Phi^{-1}(a)}` 形式给出逐纤维 signed 字典。故 disintegration 步骤不是新的解析估计。
+真正剩余是证明 `nu` 是同一 formal unit 内的 actual noncanonical `alpha/delta` 源测度，证明 `Phi_*nu`
+等于目标 payment-side 系数，并完成总变差、绝对支撑与 branch key 预算。
+
+最新内部输入为：
+
+```text
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。
+```
+
+该输入要求：
+
+- pre-Cauchy actual noncanonical signed `alpha/delta` 源测度；
+- `Phi` 兼容推前恒等式；
+- 总变差与绝对支撑预算；
+- branch key / sign refinement / local factor 的 polylog/K6 复杂度；
+- 源测度缺失、`Phi` 不兼容、超预算、branch 爆炸或抵消回流。
+
+最新条件输入基为：
+
+```text
+(ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明源测度与预算；它只是关闭“字典分解技巧”这个伪硬点，把真正硬点定位到 actual signed source
+与 `Phi` 兼容预算。

@@ -2218,3 +2218,57 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 这一步没有证明 signed 字典，但把剩余从“抽象系数提升”压成一个具体的字典式证据对象。
+
+## 29. clean-core 解积分自动性
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_disintegration_automaticity_router.py
+docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.md/json
+
+disintegration_automaticity_boundary_closed=true；
+discrete_payment_base_map_closed=true；
+signed_fiber_disintegration_formal=true；
+pushforward_identity_is_real_gate=true；
+actual_signed_source_measure_phi_compatibility_budget_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层排除了另一个误区：逐纤维 disintegration 本身不是新的解析估计。因为 first-cover payment map
+`Phi` 的基底是离散/有限签名层，只要 signed 源测度 `nu` 给定，就有形式恒等式：
+
+```text
+nu = sum_a nu restricted to Phi^{-1}(a)。
+```
+
+因此字典构造本身不再是最窄硬点。真正剩余是：
+
+```text
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。
+```
+
+它要求：
+
+- 在 Cauchy/dispersion 前定义 actual noncanonical signed `alpha/delta` 源测度；
+- 证明 `Phi_*nu` 等于目标 payment-side 系数；
+- 证明总变差和绝对支撑不超 registered clean-core 容量预算；
+- 证明纤维内 branch key、sign refinement 和 local factor 表为 polylog/K6 可登记复杂度；
+- 源测度缺失、`Phi` 不兼容、变差超预算、branch 爆炸或抵消都必须命名回流。
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基为：
+
+```text
+(ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步没有证明 actual signed source 或 `Phi` 兼容预算，但把“解积分字典”继续压成源测度和预算恒等式。
