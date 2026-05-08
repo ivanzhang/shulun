@@ -1377,3 +1377,50 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这仍是边界压缩，不是最终证明。下一步真正硬攻点已经极窄：直接证明 actual 支撑/容量核心，或承认
 当前材料无法无条件自足闭合该核心；另外 Rankin/DStructure 验收门仍独立存在。
+
+## 11. actual 容量账本微原子
+
+继续新增：
+
+```text
+experiments/prime_matrix_actual_capacity_ledger_microatom_router.py
+docs/monograph/prime-matrix-actual-capacity-ledger-microatom-router.md/json
+
+microatom_boundary_closed=true；
+support_only_suffices=false；
+registered_multiplier_discipline_would_suffice_with_support=true；
+exact_uv_support_proved=false；
+registered_multiplier_discipline_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把上一节的 `ActualNoncanonicalFullSFactorSupportCapacityTheoremInput` 再校准一次口径。最关键的
+结论是：`支撑宽` 本身不是 source anti-atom。即使有很多 `u/v` factor pair，只要
+Type/Fourier/fiber 阶段允许某个 moving `(u,v)` 对获得未登记容量乘子，最终容量测度
+`M_{u,v}` 仍可能集中到一个块上。
+
+因此最锐利的完全自足单原子不再写成 raw support-only lemma，而应写成：
+
+```text
+ActualFinalCapacityAntiAtomLedgerForNoncanonicalFullS。
+```
+
+可行证明包则是：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline。
+```
+
+其中第二项要求所有 Type/Fourier/fiber 成本都登记在同一个 formal unit 的容量账本中，不能让某个
+moving `(u,v)` 对获得账外放大。条件不等式为：若 `L=log y`，`|alpha_u|,|delta_v|<=L^C`，
+登记乘子 `W_{u,v}<=L^E`，且 `S_u*S_v>=L^(2A+4C+E)`，则
+
+```text
+max M_{u,v} / sum M_{u,v} <= L^(-2A)。
+```
+
+这一步闭合的是支撑与容量口径偷换：支撑下界必须和已登记乘子纪律一起使用，或者直接证明最终
+`M_{u,v}` 容量反原子账本。当前材料仍未证明这两个微输入，也未完成 DStructure/Rankin 独立验收。

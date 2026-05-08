@@ -3105,6 +3105,44 @@ The first input asks for log-power lower absolute support of the exact \(u\)- an
 together with Type/Fourier capacity compatibility so that no moving \((u,v)\) pair
 receives an unrecorded capacity multiplier.  This closes a naming and shortcut boundary,
 but it is not yet a proof of that support-capacity theorem.
+
+The actual capacity-ledger microatom router then checks one last possible shortcut inside
+that support-capacity statement.  It records
+\[
+\begin{gathered}
+  \texttt{microatom\_boundary\_closed=true},\\
+  \texttt{support\_only\_suffices=false},\\
+  \texttt{registered\_multiplier\_discipline\_would\_suffice\_with\_support=true},\\
+  \texttt{exact\_uv\_support\_proved=false},\\
+  \texttt{registered\_multiplier\_discipline\_proved=false},\\
+  \texttt{actual\_final\_capacity\_antiatom\_proved=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The correction is that raw support width is not itself a source anti-atom.  A model with
+many raw \((u,v)\) pairs but one unrecorded Type/Fourier/fiber multiplier can still
+concentrate the final capacity measure on a single moving pair.  Conversely, if all such
+multipliers are registered in the same formal unit and bounded by a fixed logarithmic
+power, then exact support does imply the final anti-atom: with \(L=\log y\),
+\(|\alpha_u|,|\delta_v|\le L^C\), registered multipliers \(W_{u,v}\le L^E\), and
+\(S_uS_v\ge L^{2A+4C+E}\), one obtains
+\[
+  \max_{u,v} M_{u,v}/\sum M_{u,v}\le L^{-2A}.
+\]
+Thus the sharp self-contained input is best stated as
+\begin{quote}\small\ttfamily
+ActualFinalCapacityAntiAtomLedgerForNoncanonicalFullS\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+A proof may supply the package
+\begin{quote}\small\ttfamily
+ActualNoncanonicalExactUVSupportLowerBound\\
+AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline.
+\end{quote}
+This closes the support-only shortcut and fixes the conditional implication, but it still
+does not prove the final actual capacity anti-atom ledger or the independent
+D-structure/Rankin acceptance.
 \end{proof}
 
 

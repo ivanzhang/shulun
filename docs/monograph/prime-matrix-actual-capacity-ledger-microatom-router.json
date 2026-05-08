@@ -1,0 +1,149 @@
+{
+  "actual_final_capacity_antiatom_proved": false,
+  "certificate_type": "prime_matrix_actual_capacity_ledger_microatom_router",
+  "conditional_inequality": "若 |alpha_u|,|delta_v| <= L^C，登记乘子 W_{u,v} <= L^E，且 S_u*S_v >= L^(2A+4C+E)，则 max M_{u,v}/sum M_{u,v} <= L^(-2A)。",
+  "derivation_package": "ActualNoncanonicalExactUVSupportLowerBound AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "exact_uv_support_proved": false,
+  "latest_self_contained_basis": "ActualFinalCapacityAntiAtomLedgerForNoncanonicalFullS AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "microatom_boundary_closed": true,
+  "plain_conclusion": "最窄自足源核心继续收紧：`支撑宽` 不是充分条件，必须同时证明所有 Type/Fourier/fiber 容量乘子已在同一 formal unit 账本中登记且不会让单个 moving `(u,v)` 对额外放大。因此最新单原子是 `ActualFinalCapacityAntiAtomLedgerForNoncanonicalFullS`；可行证明包是 `ActualNoncanonicalExactUVSupportLowerBound` 加 `ActualTypeFourierRegisteredCapacityMultiplierDiscipline`。当前二者仍未证明，DStructure/Rankin 晋级验收也仍独立开放。",
+  "previous_basis": "ActualNoncanonicalFullSFactorSupportCapacityTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "registered_multiplier_discipline_proved": false,
+  "registered_multiplier_discipline_would_suffice_with_support": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "boundary_closed": true,
+      "consequence": "可继续检查该合同内部是否还有支撑与容量口径偷换。",
+      "gate": "PreviousActualSupportCapacityCorePinned",
+      "meaning": "上一层已把完全自足源核心压到 actual noncanonical 支撑/容量合同。",
+      "proved": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "不能把 exact u/v 支撑下界单独当作 source anti-atom 证明。",
+      "gate": "SupportOnlyDoesNotImplyAntiAtom",
+      "meaning": "存在支撑很宽但单个 moving pair 获得隐藏容量乘子的模型。",
+      "proved": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "证明路线应写成 exact 支撑下界 + 已登记容量乘子纪律。",
+      "gate": "RegisteredMultiplierDisciplineWouldRestoreImplication",
+      "meaning": "若所有 Type/Fourier/fiber 乘子都登记进同一 formal unit 且至多多对数损失，则支撑下界可推出最终容量反原子。",
+      "proved": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "该支撑下界仍是一个真实微输入，不能由 K4/K6 或朴素 incidence 免费推出。",
+      "gate": "ExactUVSupportStillOpen",
+      "meaning": "当前 ledger 尚无 actual noncanonical exact u/v 支撑下界。",
+      "proved": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "未登记乘子必须被证明不存在，或直接在最终 M_{u,v} 容量测度上证明无大原子。",
+      "gate": "TypeFourierMultiplierDisciplineStillOpen",
+      "meaning": "Type/Fourier capacity compatibility 仍未作为同一 actual formal unit 乘子账本证明。",
+      "proved": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "最新单原子应表述为 actual final capacity anti-atom ledger，而不是 raw support-only lemma。",
+      "gate": "FinalCapacityMeasureIsSharpStatement",
+      "meaning": "把所有已登记 Type/Fourier/fiber 成本吸收到最终 M_{u,v} 后，最锐利命题就是 max M_{u,v}/sum M <= log^{-2A}。",
+      "proved": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "即使源容量微原子完成，也还需要独立验收才能升级为完整行/列定理。",
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-noncanonical-source-core-atomization-router.json": "cc605d7c0c26af7b1ff8ab3644629dc9821d805e817dd4fb141943a9830a0a08",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "docs/monograph/prime-matrix-triad-a1-exact-factor-support-router.json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "docs/monograph/prime-matrix-triad-a1-exact-wfd-source-entropy-router.json": "8f0b7a24ce90e50406e4c95bcb5abab2451df1e1c2562dd6a61be018e76f9ab0"
+  },
+  "status": "actual_capacity_ledger_microatom_boundary_closed_core_open",
+  "structural_law": "ActualNoncanonicalFullSFactorSupportCapacityTheoremInput 的最锐利表述应是最终 actual 容量测度 M_{u,v} 的反原子账本。证明它可以走两步：exact u/v 支撑下界加 registered Type/Fourier capacity multiplier discipline。当前材料二者都没有完成；但支撑-only 偷换已被阻断，且条件蕴含公式已固定。",
+  "support_only_failure_law": "raw u/v 支撑下界只控制有多少 factor pair；若 Type/Fourier/fiber 阶段允许某个 moving pair 获得未登记容量乘子，则最终 M_{u,v} 仍可集中。",
+  "support_only_model_rows": [
+    {
+      "antiatom_violated": true,
+      "hidden_multiplier": 563271264196,
+      "k": 3,
+      "log_y": 6.907755278982138,
+      "raw_support_broad": true,
+      "required_share": 0.00043918978085926965,
+      "support_pairs": 750514,
+      "top_capacity_share": 0.9999986675833693
+    },
+    {
+      "antiatom_violated": true,
+      "hidden_multiplier": 31612551230016,
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "raw_support_broad": true,
+      "required_share": 0.00013896239160000328,
+      "support_pairs": 5622504,
+      "top_capacity_share": 0.9999998221433646
+    },
+    {
+      "antiatom_violated": true,
+      "hidden_multiplier": 718786180595344,
+      "k": 5,
+      "log_y": 11.51292546497023,
+      "raw_support_broad": true,
+      "required_share": 5.691899559936133e-05,
+      "support_pairs": 26810188,
+      "top_capacity_share": 0.9999999627007492
+    },
+    {
+      "antiatom_violated": true,
+      "hidden_multiplier": 9228628323062500,
+      "k": 6,
+      "log_y": 13.815510557964275,
+      "raw_support_broad": true,
+      "required_share": 2.7449361303704353e-05,
+      "support_pairs": 96065750,
+      "top_capacity_share": 0.999999989590463
+    },
+    {
+      "antiatom_violated": true,
+      "hidden_multiplier": 79871566623967561,
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "raw_support_broad": true,
+      "required_share": 1.4816481570012849e-05,
+      "support_pairs": 282615581,
+      "top_capacity_share": 0.9999999964616247
+    },
+    {
+      "antiatom_violated": true,
+      "hidden_multiplier": 517940009126001081,
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "raw_support_broad": true,
+      "required_share": 8.685149475000205e-06,
+      "support_pairs": 719680491,
+      "top_capacity_share": 0.9999999986104945
+    },
+    {
+      "antiatom_violated": true,
+      "hidden_multiplier": 2694106588986358225,
+      "k": 9,
+      "log_y": 20.723265836946414,
+      "raw_support_broad": true,
+      "required_share": 5.422096059990982e-06,
+      "support_pairs": 1641373385,
+      "top_capacity_share": 0.9999999993907541
+    }
+  ],
+  "support_only_suffices": false
+}

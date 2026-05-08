@@ -3779,3 +3779,45 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 full-S non-AP balanced block，证明精确 `u`、`v` 因子有对数幂级绝对支撑下界，并证明
 Type/Fourier 容量兼容，使任何 moving `(u,v)` 对不能获得未登记的容量乘子。该步闭合命名二义性
 和伪捷径排除，仍没有证明 actual 支撑/容量核心，也没有完成 DStructure/Rankin 独立验收。
+
+继续新增：
+
+```text
+experiments/prime_matrix_actual_capacity_ledger_microatom_router.py
+docs/monograph/prime-matrix-actual-capacity-ledger-microatom-router.md/json
+```
+
+该路由器把 actual 支撑/容量核心再向内校准为最终容量账本命题。结论为：
+
+```text
+microatom_boundary_closed=true；
+support_only_suffices=false；
+registered_multiplier_discipline_would_suffice_with_support=true；
+exact_uv_support_proved=false；
+registered_multiplier_discipline_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+关键结构律是：raw `u/v` 支撑宽不等于最终 source anti-atom。若 Type/Fourier/fiber 步骤允许某个
+moving `(u,v)` 对获得未登记容量乘子，则最终容量测度 `M_{u,v}` 仍可集中。反过来，若
+`|alpha_u|,|delta_v|<=L^C`，所有登记乘子 `W_{u,v}<=L^E`，并且
+`S_u*S_v>=L^(2A+4C+E)`，则 `max M_{u,v}/sum M_{u,v}<=L^(-2A)`。
+
+因此最新完全自足单原子表述为：
+
+```text
+ActualFinalCapacityAntiAtomLedgerForNoncanonicalFullS
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+可行证明包是：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline。
+```
+
+这一步闭合支撑-only 偷换和条件蕴含公式；它仍没有证明 actual final capacity anti-atom ledger，
+也没有完成 DStructure/Rankin 独立验收。
