@@ -1,0 +1,133 @@
+{
+  "certificate_type": "prime_matrix_concrete_rankin_manifest_data_router",
+  "status": "concrete_rankin_manifest_emitter_closed_color_set_missing",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-formal-rankin-batch-manifest-router.json": "faa9431378d3bccc24855a1af5a222d01dc23396b76cd96453488e38c986834d",
+    "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
+    "docs/monograph/prime-matrix-allowed-budget-allocation-router.json": "ecd9a0d5cac0b228844b544094df0655d69b7185cea225374155f9b427a1cf73",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "concrete_rankin_batch_manifest_emitter_closed": true,
+  "concrete_rankin_batch_manifest_data_closed": false,
+  "color_set_like_json": [],
+  "rankin_certificate_like_json": [
+    {
+      "path": "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json",
+      "p": 1009,
+      "k": 9,
+      "interval_count": 4,
+      "rankin_budget_pass": true,
+      "exact_budget_pass": true
+    }
+  ],
+  "return_packet_like_json": [],
+  "materialization_steps": [
+    {
+      "step": "enumerate_color_set",
+      "output": "ConcreteColorSetEnumerationLedger",
+      "meaning": "从 concrete coloring coverage 证书取完整 color_id 集合与每色 intervals。"
+    },
+    {
+      "step": "generate_per_color_rankin",
+      "output": "PerColorRankinCertificateFileLedger",
+      "meaning": "对每个 color_id 运行单颜色 Rankin 审计，写出证书路径和 hash。"
+    },
+    {
+      "step": "classify_each_row",
+      "output": "pass/lowmod_core_crtdefect/constant_gap",
+      "meaning": "按 allowed_budget 纪律判定 pass 或失败回流类型。"
+    },
+    {
+      "step": "attach_failed_returns",
+      "output": "FailedRankinReturnPacketLedger",
+      "meaning": "失败行必须有 PDEC/SAE 回流包或 constant-gap refinement 包。"
+    },
+    {
+      "step": "emit_manifest",
+      "output": "ConcreteRankinBatchManifestDataLedger",
+      "meaning": "写出 batch manifest，并声明 color_set_exact 与 all_rows_pass_or_return。"
+    }
+  ],
+  "current_narrowest_atom": "ConcreteColorSetEnumerationLedger",
+  "secondary_narrowest_atom": "PerColorRankinCertificateFileLedger",
+  "tertiary_narrowest_atom": "FailedRankinReturnPacketLedger",
+  "downstream_atoms": [
+    "PDECOrSAEUnifiedExclusionLedger"
+  ],
+  "reduction_formula": "ConcreteRankinBatchManifestDataLedger => ConcreteRankinBatchManifestEmitterClosed AND ConcreteColorSetEnumerationLedger AND PerColorRankinCertificateFileLedger.",
+  "plain_conclusion": "ConcreteRankinBatchManifestDataLedger 的发射流程已闭合：给定 concrete color set 后，可逐颜色生成 Rankin 证书并组装 manifest。当前真正缺口不是 manifest 规则，而是没有 concrete color set 枚举；新的最窄点是 `ConcreteColorSetEnumerationLedger`。",
+  "rows": [
+    {
+      "gate": "ConcreteRankinManifestDataGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 concrete Rankin batch manifest 数据。",
+      "remaining": "ConcreteRankinBatchManifestDataLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设反例链条内的数据生成，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ManifestEmitterInputsReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "manifest schema、coloring schema、budget discipline 与单证书执行格式均已固定。",
+      "remaining": "无发射规则剩余。"
+    },
+    {
+      "gate": "ConcreteRankinBatchManifestEmitterClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "concrete manifest 的生成流程已固定为颜色枚举、逐色证书、逐行分类、失败回流、manifest 发射。",
+      "remaining": "ConcreteRankinBatchManifestEmitterClosed"
+    },
+    {
+      "gate": "ConcreteColorSetEnumerationAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库尚未发现 concrete color set 枚举；没有它无法定义 manifest 全集行。",
+      "remaining": "ConcreteColorSetEnumerationLedger"
+    },
+    {
+      "gate": "PerColorRankinCertificateFilesAvailable",
+      "closed": true,
+      "proved": false,
+      "meaning": "仓库只发现样本/局部 Rankin 证书，尚非逐颜色全集。",
+      "remaining": "PerColorRankinCertificateFileLedger"
+    },
+    {
+      "gate": "FailedRankinReturnPacketsAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "若 manifest 存在失败行，仍需正式回流包；当前未发现。",
+      "remaining": "FailedRankinReturnPacketLedger"
+    },
+    {
+      "gate": "ConcreteRankinBatchManifestDataLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "Concrete manifest 数据不能由发射规则关闭；真正前置缺口是 concrete color set 枚举。",
+      "remaining": "ConcreteColorSetEnumerationLedger AND PerColorRankinCertificateFileLedger"
+    }
+  ],
+  "closed_gates": [
+    "ConcreteRankinManifestDataGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ManifestEmitterInputsReady",
+    "ConcreteRankinBatchManifestEmitterClosed",
+    "PerColorRankinCertificateFilesAvailable"
+  ],
+  "open_gates": [
+    "ConcreteColorSetEnumerationAvailable",
+    "FailedRankinReturnPacketsAvailable",
+    "ConcreteRankinBatchManifestDataLedger"
+  ]
+}
