@@ -2100,3 +2100,60 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 因此这一步是真正的边界推进：它排除了“从 Gamma 自动反推来源”的错误路线，并把自足剩余压到一个
 可审查、可验收、可失败回流的 pre-pushforward 纤维 emitter 输入。当前材料仍未证明该 emitter，
 所以行/列无条件命题仍未闭合。
+
+## 27. clean-core 纤维 emitter 字段审计
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_fiber_emitter_field_audit_router.py
+docs/monograph/prime-matrix-clean-core-fiber-emitter-field-audit-router.md/json
+
+fiber_emitter_field_audit_boundary_closed=true；
+payment_fiber_skeleton_closed=true；
+first_cover_payment_map_closed=true；
+payment_count_identity_closed=true；
+alpha_delta_coefficient_lift_proved=false；
+polylog_branch_schema_proved=false；
+registered_primitive_prepushforward_fiber_emitter_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层继续把 `RegisteredPrimitivePrePushforwardFiberEmitterAndReturn` 拆字段。已有材料已经闭合
+payment-level 骨架：
+
+```text
+completion y + low hole c
+  -- first-cover pay(c,y) --> payment atom in Gamma；
+payment_count=sum_phase M(phase)*|H_low(phase)|。
+```
+
+同时 `ActualPaymentStitching` 已说明真实 `Gamma` 在 payment 层只会进入持久 PDEC 或分散
+CleanKLS/DLS，不产生第四出口；未登记 formal unit 与 canonical/noncanonical 混用也已被回流纪律阻断。
+
+剩余并不是 Gamma 选择，也不是 payment 计数，而是更深一层的系数提升：
+
+```text
+ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn。
+```
+
+它必须把 completion-hole payment 骨架提升为同一 formal unit 内的 signed `alpha/delta` primitive
+summand，给出 polylog branch key、`u/v` map、phase/sign/local factor 和系数恒等式；不能提升者必须命名回流。
+
+最新完全自足输入基变为：
+
+```text
+ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基变为：
+
+```text
+(ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步继续缩窄了终端硬点：payment 几何骨架已可用，真正未闭合的是 signed primitive 系数提升和
+polylog 分支压缩。

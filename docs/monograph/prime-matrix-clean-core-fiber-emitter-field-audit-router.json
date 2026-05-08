@@ -1,0 +1,133 @@
+{
+  "actual_gamma_stitching_gate_closed": true,
+  "alpha_delta_coefficient_lift_proved": false,
+  "canonical_noncanonical_separation_closed": true,
+  "certificate_type": "prime_matrix_clean_core_fiber_emitter_field_audit_router",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "fiber_emitter_field_audit_boundary_closed": true,
+  "field_law": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn 的 payment-level 骨架已经由 ActualPaymentSelection 给出：completion-hole 对、first-cover map 和 payment count identity 均可审查；ActualPaymentStitching 又排除 payment 层第四出口。但这只给出计数型 Gamma 骨架，不给出 clean-core signed alpha/delta primitive summand。在 canonical/noncanonical 分支隔离和未登记回流纪律下，真正剩余被压成 ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn。",
+  "field_rows": [
+    {
+      "closed": true,
+      "evidence": "completion y, low hole c, pay(c,y)=first ell",
+      "field": "payment_fiber_domain",
+      "meaning": "completion-hole 对和 first-cover payment map 已给出 payment-level preimage 骨架。",
+      "proved": true,
+      "remaining": "这还不是 signed alpha/delta primitive source。"
+    },
+    {
+      "closed": true,
+      "evidence": "all_payment_counts_match_demand",
+      "field": "payment_count_identity",
+      "meaning": "payment_count=sum_phase M(phase)*|H_low(phase)| 的计数恒等式已闭合。",
+      "proved": true,
+      "remaining": "需提升为 alpha/delta signed coefficient identity。"
+    },
+    {
+      "closed": true,
+      "evidence": "ActualPaymentStitchingPersistentMFUOrDistributedCleanKLS",
+      "field": "actual_gamma_stitching_gate",
+      "meaning": "真实 Gamma 已被路由到持久 PDEC 或分散 CleanKLS/DLS，payment 层没有第四出口。",
+      "proved": true,
+      "remaining": "该门控不生成 clean-core primitive coefficient emitter。"
+    },
+    {
+      "closed": true,
+      "evidence": "unregistered_source_return_absorbed",
+      "field": "formal_unit_return_discipline",
+      "meaning": "未登记或混合 formal unit 的来源不能留作 clean-core 终端。",
+      "proved": true,
+      "remaining": "保留者仍需同一 formal unit 的系数提升。"
+    },
+    {
+      "closed": true,
+      "evidence": "NoncanonicalBranchExternalReturn",
+      "field": "canonical_branch_separation",
+      "meaning": "canonical 支撑链与 noncanonical clean-core 残余已分离，不能跨分支偷用 RIW/Buchstab 表。",
+      "proved": true,
+      "remaining": "noncanonical 残余需要自己的 alpha/delta lift。"
+    },
+    {
+      "closed": false,
+      "evidence": "not in current corpus",
+      "field": "alpha_delta_coefficient_lift",
+      "meaning": "当前材料尚未把 payment-level completion-hole 骨架提升为 clean-core alpha/delta primitive 系数。",
+      "proved": false,
+      "remaining": "证明 ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn。"
+    },
+    {
+      "closed": false,
+      "evidence": "not in current corpus",
+      "field": "polylog_branch_schema",
+      "meaning": "当前材料尚未给出 noncanonical clean-core 纤维的 log^O(1) branch key 压缩与同路径无抵消。",
+      "proved": false,
+      "remaining": "同属 ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn。"
+    }
+  ],
+  "first_cover_payment_map_closed": true,
+  "formal_unit_return_discipline_closed": true,
+  "latest_conditional_basis": "(ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinput": "ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn",
+  "latest_self_contained_basis": "ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "payment_count_identity_closed": true,
+  "payment_fiber_skeleton_closed": true,
+  "plain_conclusion": "已有模型已经闭合 registered fiber emitter 的 payment 骨架字段；剩余不再是 Gamma 选择或支付计数，而是把该骨架提升为同一 formal unit 内的 actual noncanonical alpha/delta primitive 系数和 polylog branch schema。",
+  "polylog_branch_schema_proved": false,
+  "previous_input": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn",
+  "registered_primitive_prepushforward_fiber_emitter_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorFiberEmitterPinned",
+      "meaning": "上一层已把公式剩余改写为已登记 pre-pushforward 纤维 emitter。",
+      "proved": false,
+      "remaining": "拆分该 emitter 的字段，找出已闭合骨架和真正未闭合字段。"
+    },
+    {
+      "closed": true,
+      "gate": "PaymentLevelFiberSkeletonClosed",
+      "meaning": "completion-hole 域、first-cover map 与 payment count identity 已闭合。",
+      "proved": true,
+      "remaining": "它只是 payment skeleton，不是 alpha/delta source formula。"
+    },
+    {
+      "closed": true,
+      "gate": "NoPaymentLayerFourthExit",
+      "meaning": "Actual Gamma 的持久/消散二分已排除 payment 层第四出口。",
+      "proved": true,
+      "remaining": "不能由此推出 primitive coefficient lift。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitAndCanonicalSeparationClosed",
+      "meaning": "同一 formal unit 纪律和 canonical/noncanonical 分支隔离已闭合。",
+      "proved": true,
+      "remaining": "剩余是 noncanonical clean-core 自己的系数提升。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaDeltaLiftCurrentCorpusProved",
+      "meaning": "当前材料没有从 payment skeleton 到 actual alpha/delta primitive summand 的系数提升公式。",
+      "proved": false,
+      "remaining": "证明 ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-triad-a1-actual-payment-stitching-router.json": "14087651c52f19675e3253aaa3c8f856c0872ae18903f69da7636baa70fd7d2f",
+    "docs/monograph/prime-matrix-triad-a1-continuous-actual-payment-selection.json": "40b5e4849328bb8434be285105482d4b3d046b61ec2fa69bf5ef8d77af361874",
+    "docs/monograph/prime-matrix-triad-a1-source-lock-contract-router.json": "039a29ac39132bbd6023352a51712e0c079efe7a1ad326fa19f511c4a9a55dee"
+  },
+  "status": "payment_fiber_skeleton_closed_alpha_delta_lift_open"
+}

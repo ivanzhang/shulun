@@ -4455,3 +4455,56 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明该 emitter；它关闭的是反向来源的边界误差：不能把下游 payment/profinite 几何结构误当作
 上游 constructor 公式，但可以把最终自足硬点压成一个具体、可验收、可失败回流的纤维分解输入。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_fiber_emitter_field_audit_router.py
+docs/monograph/prime-matrix-clean-core-fiber-emitter-field-audit-router.md/json
+```
+
+该路由器把 `RegisteredPrimitivePrePushforwardFiberEmitterAndReturn` 逐字段拆开。结论为：
+
+```text
+fiber_emitter_field_audit_boundary_closed=true；
+payment_fiber_skeleton_closed=true；
+first_cover_payment_map_closed=true；
+payment_count_identity_closed=true；
+alpha_delta_coefficient_lift_proved=false；
+polylog_branch_schema_proved=false；
+registered_primitive_prepushforward_fiber_emitter_proved=false；
+row_column_unconditional_closed=false。
+```
+
+字段律是：`ActualPaymentSelection` 已经给出 completion-hole 域、first-cover `pay(c,y)` 和
+`payment_count=sum_phase M(phase)*|H_low(phase)|` 的计数恒等式；`ActualPaymentStitching`
+又排除 payment 层第四出口。因此 registered fiber emitter 的 payment 骨架已经闭合。可是该骨架只是
+计数型 `Gamma`，它不等于 clean-core signed `alpha/delta` primitive summand。
+
+在未登记来源回流、同一 formal unit 纪律和 canonical/noncanonical 分支隔离都闭合后，最新真正未闭合字段为：
+
+```text
+ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn。
+```
+
+该输入要求把 payment skeleton 提升为同一 formal unit 内的 actual noncanonical `alpha/delta` 预 Cauchy
+primitive 系数，给出 polylog branch key、`u/v` map、phase/sign/local factor 和系数恒等式；无法提升者
+必须命名回流。
+
+最新条件输入基为：
+
+```text
+(ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明 alpha/delta lift；它把最后自足硬点从“纤维 emitter 是否存在”进一步缩为“已闭合 payment 骨架
+能否精确提升为 signed primitive 系数和 polylog 分支表”。
