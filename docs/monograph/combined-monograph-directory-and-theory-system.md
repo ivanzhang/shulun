@@ -3821,3 +3821,49 @@ AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline。
 
 这一步闭合支撑-only 偷换和条件蕴含公式；它仍没有证明 actual final capacity anti-atom ledger，
 也没有完成 DStructure/Rankin 独立验收。
+
+继续新增：
+
+```text
+experiments/prime_matrix_registered_capacity_multiplier_discipline_router.py
+docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.md/json
+```
+
+该路由器直接攻击 `ActualTypeFourierRegisteredCapacityMultiplierDiscipline`。结论为：
+
+```text
+registered_capacity_multiplier_discipline_closed=true；
+exact_uv_support_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：Type/Fourier/fiber 乘子纪律是账本门，不是新的谱相消输入。Type/Vaughan-Heath-Brown
+分解、dyadic 求和、CRT 相位归一化、Fourier `h` 窗口和尾项、系数/gcd/端点/平滑、full-S
+completion fiber 与 tail-label bookkeeping 都已有同一 actual formal unit 的登记行，且统一付出
+`log^O` 成本。本步不调用外部 DI/BFI no-projection，不关闭 external theorem-match 分支，也不证明
+`ExactUVSupport`。
+
+因此完全自足源核心从：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline
+```
+
+压成：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound。
+```
+
+最新输入基为：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步完成两个源微输入中的乘子纪律项；当前唯一源侧微输入是 `ActualNoncanonicalExactUVSupportLowerBound`，
+但完整行/列无条件定理仍需 DStructure/Rankin 独立验收。

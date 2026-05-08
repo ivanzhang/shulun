@@ -1,0 +1,182 @@
+{
+  "actual_final_capacity_antiatom_proved": false,
+  "certificate_type": "prime_matrix_registered_capacity_multiplier_discipline_router",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "exact_uv_support_proved": false,
+  "latest_self_contained_basis": "ActualNoncanonicalExactUVSupportLowerBound AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "multiplier_rows": [
+    {
+      "bound": "log^C",
+      "evidence": "TypeDecompositionLogBudget + TypeProductQuantified",
+      "registered": true,
+      "role": "分解层数和 dyadic 求和进入同一 formal unit 的 log-loss 账本。",
+      "source": "Type/Vaughan-Heath-Brown/dyadic"
+    },
+    {
+      "bound": "1",
+      "evidence": "CRTPhaseSymbolUnification",
+      "registered": true,
+      "role": "相位归一化是恒等式，不产生容量乘子。",
+      "source": "CRT phase normalization"
+    },
+    {
+      "bound": "log^C",
+      "evidence": "FrequencyWindowAndTail",
+      "registered": true,
+      "role": "非零频窗口与尾项截断由 B(A) 吸收，不允许账外频率质量。",
+      "source": "Fourier h-window and tail"
+    },
+    {
+      "bound": "log^C",
+      "evidence": "LogLossC0Extraction",
+      "registered": true,
+      "role": "系数、gcd、端点和平滑损失统一进入符号化 C0。",
+      "source": "coefficient/gcd/endpoint/smoothing"
+    },
+    {
+      "bound": "log^C",
+      "evidence": "CompletionRatioPolylogPinned",
+      "registered": true,
+      "role": "completion fiber 长度为 S/c=log^O(P)，是登记乘子而非新相消输入。",
+      "source": "full-S completion fiber"
+    },
+    {
+      "bound": "shape-only",
+      "evidence": "BalancedFactorizationPinned",
+      "registered": true,
+      "role": "c=uv 与 U,V=C^{1/2}log^O 固定同一个 moving pair 坐标。",
+      "source": "balanced factorization shape"
+    },
+    {
+      "bound": "log^C",
+      "evidence": "K6DyadicBookkeeping available polylog split count",
+      "registered": true,
+      "role": "K6 不能证明支撑下界，但足以说明尾标签数量是已登记 log 乘子。",
+      "source": "dyadic/tail-label bookkeeping"
+    }
+  ],
+  "plain_conclusion": "容量乘子纪律已作为账本门闭合：Type 分解、dyadic、CRT、Fourier 尾项、gcd、平滑、full-S completion fiber 与 tail-label 成本都已登记为同一 formal unit 中的 log-power 乘子。本步没有调用外部 DI/BFI 无投影相消，也没有证明支撑下界。因此完全自足源核心剩余从两个微输入压成单个 `ActualNoncanonicalExactUVSupportLowerBound`，另加 DStructure/Rankin 独立验收。",
+  "previous_basis": "ActualFinalCapacityAntiAtomLedgerForNoncanonicalFullS AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "registered_capacity_multiplier_discipline_closed": true,
+  "registered_multiplier_law": "Type/Fourier/fiber 乘子纪律是账本门而不是新的相消定理：所有已知乘子已经在同一个 actual formal unit 中登记，并被统一吸收到最终 M_{u,v} 的 log^E 成本里。本步不使用外部 DI/BFI no-projection 证明。",
+  "remaining_source_microinput": "ActualNoncanonicalExactUVSupportLowerBound",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousMicroatomPinned",
+      "meaning": "上一层已把支撑-only 偷换排除，并命名乘子纪律微输入。",
+      "proved": true,
+      "remaining": "可直接审查该乘子纪律是否只是账本门。"
+    },
+    {
+      "closed": true,
+      "gate": "KnownMultipliersRegistered",
+      "meaning": "Type、dyadic、CRT、Fourier、gcd、smoothing、completion 与 tail-label 乘子均有同 formal-unit 登记行。",
+      "proved": true,
+      "remaining": "无账外乘子；所有成本并入最终 M_{u,v} 或 log-loss 指数 E。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalNoProjectionNotUsed",
+      "meaning": "本步只关闭内部乘子账本，不调用外部 DI/BFI 无投影相消。",
+      "proved": true,
+      "remaining": "外部 theorem-match 分支仍按原状态开放，不能被本步偷渡关闭。"
+    },
+    {
+      "closed": true,
+      "gate": "MultiplierDisciplineClosed",
+      "meaning": "所有已知 Type/Fourier/fiber 成本都成为最终容量测度的登记乘子，并统一受 log^E 控制。",
+      "proved": true,
+      "remaining": "若要推出 final anti-atom，现在只缺 actual exact u/v 支撑下界。"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVSupportStillOpen",
+      "meaning": "ExactUVSupport 仍未证明，且不能由 K4/K6 或朴素 incidence 推出。",
+      "proved": false,
+      "remaining": "证明 actual noncanonical exact u/v 支撑下界，或直接证明 final capacity anti-atom。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "完整行/列定理仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-capacity-ledger-microatom-router.json": "985de26054e8d0f938fbbd839576b2c3fb4b3c8a6d239f854cf261be9d6f7101",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-support-range-router.json": "f2816bc3d999d89883a123b655d62d2c774412f1728d7216c2bc62c21c680e0a",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-transfer-scale-certificate-router.json": "be63950a09273dd4cd6839dc2a728e0db9d5b42203f949c68f61ccd8b5cb6dfd",
+    "docs/monograph/prime-matrix-triad-a1-exact-factor-support-router.json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1"
+  },
+  "status": "registered_capacity_multiplier_discipline_closed_exact_uv_support_open",
+  "support_to_antiatom_after_closure": "乘子纪律闭合后，若证明 actual exact u/v 支撑满足 S_u*S_v >= L^(2A+4C+E)，则 final capacity anti-atom max M_{u,v}/sum M_{u,v} <= L^(-2A) 立即成立。",
+  "threshold_rows": [
+    {
+      "A": 2.0,
+      "C": 2.0,
+      "E": 5.0,
+      "k": 3,
+      "log_y": 6.907755278982138,
+      "required_pair_support": 185664143359702,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "A": 2.0,
+      "C": 2.0,
+      "E": 5.0,
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "required_pair_support": 24699408928878996,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "A": 2.0,
+      "C": 2.0,
+      "E": 5.0,
+      "k": 5,
+      "log_y": 11.51292546497023,
+      "required_pair_support": 1096874099498946944,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "A": 2.0,
+      "C": 2.0,
+      "E": 5.0,
+      "k": 6,
+      "log_y": 13.815510557964275,
+      "required_pair_support": 24335370598442758144,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "A": 2.0,
+      "C": 2.0,
+      "E": 5.0,
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "required_pair_support": 334451684862452432896,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "A": 2.0,
+      "C": 2.0,
+      "E": 5.0,
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "required_pair_support": 3237400927126027763712,
+      "required_pair_support_power": 17.0
+    },
+    {
+      "A": 2.0,
+      "C": 2.0,
+      "E": 5.0,
+      "k": 9,
+      "log_y": 20.723265836946414,
+      "required_pair_support": 23976697736727197908992,
+      "required_pair_support_power": 17.0
+    }
+  ]
+}

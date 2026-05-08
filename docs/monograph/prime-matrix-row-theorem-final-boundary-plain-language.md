@@ -1424,3 +1424,55 @@ max M_{u,v} / sum M_{u,v} <= L^(-2A)。
 
 这一步闭合的是支撑与容量口径偷换：支撑下界必须和已登记乘子纪律一起使用，或者直接证明最终
 `M_{u,v}` 容量反原子账本。当前材料仍未证明这两个微输入，也未完成 DStructure/Rankin 独立验收。
+
+## 12. 注册容量乘子纪律
+
+继续新增：
+
+```text
+experiments/prime_matrix_registered_capacity_multiplier_discipline_router.py
+docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.md/json
+
+registered_capacity_multiplier_discipline_closed=true；
+exact_uv_support_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一步直接攻击上一节两个微输入中的第二个：
+
+```text
+ActualTypeFourierRegisteredCapacityMultiplierDiscipline。
+```
+
+结论是它已经可以作为账本门闭合，而不是新的相消定理。证据是：Type/Vaughan-Heath-Brown 分解、
+dyadic 求和、CRT 相位归一化、Fourier `h` 窗口和尾项、系数/gcd/端点/平滑、full-S completion
+fiber、tail-label bookkeeping 都已有同一 formal unit 的登记行，且成本均为 `log^O`。这些成本应被
+吸收到最终容量测度 `M_{u,v}` 的登记乘子 `W_{u,v}` 中，而不是作为账外放大。
+
+需要特别说明：本步没有调用外部 DI/BFI no-projection，也没有证明 full-S KLS 相消；外部 theorem-match
+分支仍按原来的开放状态存在。本步只说明，在完全自足源核心内部，Type/Fourier/fiber 乘子不会再作为
+独立开放微输入。
+
+因此完全自足源核心从：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline
+```
+
+压成：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound。
+```
+
+连同最终晋级门，当前最新输入基为：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这仍不是完整无条件证明：`ExactUVSupport` 没有被证明；DStructure/Rankin 也没有独立验收。

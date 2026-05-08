@@ -3143,6 +3143,43 @@ AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline.
 This closes the support-only shortcut and fixes the conditional implication, but it still
 does not prove the final actual capacity anti-atom ledger or the independent
 D-structure/Rankin acceptance.
+
+The registered capacity-multiplier discipline router then attacks the second micro-input
+in that package.  It records
+\[
+\begin{gathered}
+  \texttt{registered\_capacity\_multiplier\_discipline\_closed=true},\\
+  \texttt{exact\_uv\_support\_proved=false},\\
+  \texttt{actual\_final\_capacity\_antiatom\_proved=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+This is a bookkeeping closure, not a new cancellation theorem.  The Type decomposition,
+dyadic summation, CRT phase normalization, the Fourier \(h\)-window and tail, the
+coefficient, gcd, endpoint and smoothing losses, the full-\(S\) completion fiber, and
+tail-label bookkeeping are all registered inside the same actual formal unit and cost
+only fixed logarithmic powers.  These costs are absorbed into the final capacity measure
+\(M_{u,v}\), or equivalently into a registered multiplier \(W_{u,v}\le L^E\).  The router
+does not use the external DI/BFI no-projection theorem-match branch and does not prove
+factor support.
+
+Consequently the fully self-contained source-side basis is reduced from
+\begin{quote}\small\ttfamily
+ActualNoncanonicalExactUVSupportLowerBound\\
+AND ActualTypeFourierRegisteredCapacityMultiplierDiscipline
+\end{quote}
+to the single source micro-input
+\begin{quote}\small\ttfamily
+ActualNoncanonicalExactUVSupportLowerBound.
+\end{quote}
+Together with the independent promotion gate, the latest basis is
+\begin{quote}\small\ttfamily
+ActualNoncanonicalExactUVSupportLowerBound\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+This closes the multiplier-discipline item, but the exact \(u,v\)-support theorem and the
+independent D-structure/Rankin acceptance remain open.
 \end{proof}
 
 
