@@ -1,0 +1,126 @@
+{
+  "certificate_type": "prime_matrix_universal_formal_unit_extractor_router",
+  "status": "universal_extractor_interface_closed_partition_lemma_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "75b1b9cea00a74f818c3b3079038a0e46322c263ff0d71758bbef9048210e47b",
+    "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.json": "8358aa6fd3a6bb4c28847b40ecef3177f22939e9114a86ef962b633509c7e2ab",
+    "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "universal_extractor_theorem_interface_closed": true,
+  "universal_extractor_theorem_closed": false,
+  "proof_like_json": {
+    "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger": [],
+    "FormalUnitPartitionCoverageLemma": [],
+    "SourceFamilyAssignmentTotalityLemma": [],
+    "NoLossReturnAccountingLemma": [],
+    "CanonicalFormalUnitHashStabilityLemma": []
+  },
+  "theorem_sublemmas": [
+    {
+      "atom": "FormalUnitPartitionCoverageLemma",
+      "meaning": "任意早期零行 witness 诱导的窗口/核心/走廊义务可分割成有限 formal units，且无遗漏。"
+    },
+    {
+      "atom": "SourceFamilyAssignmentTotalityLemma",
+      "meaning": "每个 formal unit 都能归入已闭合 taxonomy 的有限来源族之一。"
+    },
+    {
+      "atom": "NoLossReturnAccountingLemma",
+      "meaning": "未进入某来源族的义务必须显式回流 PDEC/SAE/Rankin/constant-gap，不能消失。"
+    },
+    {
+      "atom": "CanonicalFormalUnitHashStabilityLemma",
+      "meaning": "formal_unit_id、source_hash 与下游 source_tuple_hash 在分割和回流下稳定。"
+    }
+  ],
+  "current_narrowest_atom": "FormalUnitPartitionCoverageLemma",
+  "downstream_atoms": [
+    "SourceFamilyAssignmentTotalityLemma",
+    "NoLossReturnAccountingLemma",
+    "CanonicalFormalUnitHashStabilityLemma"
+  ],
+  "reduction_formula": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheoremInterfaceClosed AND FormalUnitPartitionCoverageLemma AND SourceFamilyAssignmentTotalityLemma AND NoLossReturnAccountingLemma AND CanonicalFormalUnitHashStabilityLemma.",
+  "plain_conclusion": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合：它必须从任意早期零行 witness 产出有限、无漏、可哈希的 formal unit records。真正尚未闭合的是第一子门 `FormalUnitPartitionCoverageLemma`，即如何证明 witness 诱导义务可被有限 formal units 覆盖。",
+  "rows": [
+    {
+      "gate": "UniversalExtractorGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到普遍 early-zero-row formal unit 抽取定理。",
+      "remaining": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步只从假设 witness 推导，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "TaxonomyAndEmitterImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "来源族 taxonomy、记录发射器和源记录 schema 均已闭合。",
+      "remaining": "无来源格式剩余。"
+    },
+    {
+      "gate": "UniversalExtractorTheoremInterfaceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "普遍抽取定理的输入、输出和四个子门已固定。",
+      "remaining": "UniversalExtractorTheoremInterfaceClosed"
+    },
+    {
+      "gate": "FormalUnitPartitionCoverageAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未发现 partition coverage 子引理证明。",
+      "remaining": "FormalUnitPartitionCoverageLemma"
+    },
+    {
+      "gate": "SourceFamilyAssignmentTotalityAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未发现 source family assignment totality 子引理证明。",
+      "remaining": "SourceFamilyAssignmentTotalityLemma"
+    },
+    {
+      "gate": "NoLossReturnAccountingAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未发现 no-loss return accounting 子引理证明。",
+      "remaining": "NoLossReturnAccountingLemma"
+    },
+    {
+      "gate": "CanonicalHashStabilityAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未发现 canonical formal unit hash stability 子引理证明。",
+      "remaining": "CanonicalFormalUnitHashStabilityLemma"
+    },
+    {
+      "gate": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。",
+      "remaining": "FormalUnitPartitionCoverageLemma"
+    }
+  ],
+  "closed_gates": [
+    "UniversalExtractorGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "TaxonomyAndEmitterImported",
+    "UniversalExtractorTheoremInterfaceClosed"
+  ],
+  "open_gates": [
+    "FormalUnitPartitionCoverageAvailable",
+    "SourceFamilyAssignmentTotalityAvailable",
+    "NoLossReturnAccountingAvailable",
+    "CanonicalHashStabilityAvailable",
+    "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger"
+  ]
+}
