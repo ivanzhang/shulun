@@ -1,0 +1,115 @@
+{
+  "certificate_type": "prime_matrix_formal_unit_source_record_router",
+  "status": "formal_unit_source_record_schema_closed_universal_extractor_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "5ff47e3e7922a88d6707bd020c1cccb3a9aa39a59b20340313cc1905843b537e",
+    "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.json": "8358aa6fd3a6bb4c28847b40ecef3177f22939e9114a86ef962b633509c7e2ab",
+    "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "formal_unit_source_record_schema_closed": true,
+  "concrete_formal_unit_source_record_closed": false,
+  "formal_unit_record_like_json": [],
+  "required_theorem_clauses": [
+    {
+      "clause": "witness_input",
+      "meaning": "输入任意假设早期零行 witness，例如 (P,n,row_signature)，而不是使用真实零行缺席。"
+    },
+    {
+      "clause": "finite_partition",
+      "meaning": "把 witness 诱导的窗口、端点、尾锚、核心与走廊分成有限 formal units。"
+    },
+    {
+      "clause": "source_family_assignment",
+      "meaning": "每个 formal unit 必须落入已闭合 taxonomy 的有限 source_family_id。"
+    },
+    {
+      "clause": "coverage_no_loss",
+      "meaning": "所有坏窗/走廊义务要么被某个 formal unit 覆盖，要么显式回流 PDEC/SAE/Rankin。"
+    },
+    {
+      "clause": "same_unit_hash",
+      "meaning": "每条记录输出 canonical formal_unit_id 和 source_hash，供下游 A、D0、phase 重构。"
+    }
+  ],
+  "current_narrowest_atom": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger",
+  "secondary_narrowest_atom": "FormalUnitPartitionCoverageLemma",
+  "downstream_atoms": [
+    "AnchorSetReconstructionCertificateLedger"
+  ],
+  "reduction_formula": "ConcreteFormalUnitSourceRecordLedger => FormalUnitSourceRecordSchemaClosed AND UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger.",
+  "plain_conclusion": "ConcreteFormalUnitSourceRecordLedger 的 schema 层已闭合，但反证路线不能依赖真实反例数据。因此剩余被改写成普遍抽取输入：必须证明任意早期零行 witness 都能产生有限、无漏、同 formal unit 的 source records。新的最窄点是 `UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger`。",
+  "rows": [
+    {
+      "gate": "ConcreteFormalUnitSourceRecordGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 concrete formal unit 源记录。",
+      "remaining": "ConcreteFormalUnitSourceRecordLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行分支内工作，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "UpstreamSourceSchemasImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "source tuple schema、来源族 taxonomy 和记录发射器均已闭合。",
+      "remaining": "无来源类型剩余。"
+    },
+    {
+      "gate": "FormalUnitSourceRecordSchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal unit source record 的输入、输出字段和 coverage/no-loss 义务已固定。",
+      "remaining": "FormalUnitSourceRecordSchemaClosed"
+    },
+    {
+      "gate": "ConcreteFormalUnitSourceRecordDataAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库尚未发现逐 formal unit 的 concrete source record 数据。",
+      "remaining": "ConcreteFormalUnitSourceRecordLedger"
+    },
+    {
+      "gate": "ConcreteFormalUnitSourceRecordDataComplete",
+      "closed": false,
+      "proved": false,
+      "meaning": "固定数据若存在，必须覆盖全部假设反例链诱导的 formal units。",
+      "remaining": "ConcreteFormalUnitSourceRecordLedger"
+    },
+    {
+      "gate": "UniversalExtractorTheoremAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "反证路线真正需要的是任意早期零行 witness 到 formal unit records 的普遍抽取定理。",
+      "remaining": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger"
+    },
+    {
+      "gate": "ConcreteFormalUnitSourceRecordLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "没有实际反例数据时，ledger 只能由 universal extractor theorem 关闭；该定理尚未提交。",
+      "remaining": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger"
+    }
+  ],
+  "closed_gates": [
+    "ConcreteFormalUnitSourceRecordGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "UpstreamSourceSchemasImported",
+    "FormalUnitSourceRecordSchemaClosed"
+  ],
+  "open_gates": [
+    "ConcreteFormalUnitSourceRecordDataAvailable",
+    "ConcreteFormalUnitSourceRecordDataComplete",
+    "UniversalExtractorTheoremAvailable",
+    "ConcreteFormalUnitSourceRecordLedger"
+  ]
+}
