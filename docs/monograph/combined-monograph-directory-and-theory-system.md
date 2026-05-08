@@ -4718,3 +4718,55 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 该步的实质推进是把“几何预算证书”拆成几何解析与 signed-source 绝对变差两个不可混淆的输入，避免继续
 在 unsigned 覆盖图上误判 signed 预算已经闭合。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_dprc_centered_discrepancy_router.py
+docs/monograph/prime-matrix-clean-core-dprc-centered-discrepancy-router.md/json
+```
+
+该路由器直接攻击 `DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn`。结论为：
+
+```text
+dprc_centered_discrepancy_boundary_closed=true；
+rsm_identity_closed=true；
+bes_compression_closed=true；
+dprc_centered_discrepancy_input_proved=false；
+row_column_unconditional_closed=false。
+```
+
+新的压缩律是：
+
+```text
+DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+  => ExplicitModelGapAndFiniteDPRCLedger
+     AND BESDangerIntersectionExclusionOrDLSNamedReturn。
+```
+
+RSM 恒等式把 `T_Y<S_Y` 写成模型余量和正偏差比较；BES 把正偏差平方根界写成六个 beta 桶的高正和与高能量
+不能同步；DLS 则规定同步失败必须显化为 `PointLoad/ColumnCRT`、`ShortWindow/SAE` 或
+`LowPhase/PDEC`，尤其新增轮层 Fourier 同步必须成为 new-layer PDEC，而不是无名低模异常。
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND BESDangerIntersectionExclusionOrDLSNamedReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基为：
+
+```text
+((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+  AND ExplicitModelGapAndFiniteDPRCLedger
+  AND BESDangerIntersectionExclusionOrDLSNamedReturn
+  AND SignedGeometricLedgerVariationBranchLiftAndReturn)
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+该步把 DPRC 解析锁从原始容量不等式压成一个可独立验收的有限/模型余量账本和一个 BES-DLS 三出口结构命题。

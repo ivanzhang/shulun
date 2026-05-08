@@ -2391,3 +2391,70 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步没有证明 DPRC 全局解析界，也没有证明 signed 变差/branch 提升纪律；它把预算侧剩余压到两个
 不能再用几何直觉绕过的精确输入。
+
+## 32. clean-core DPRC 中心化偏差攻关
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_dprc_centered_discrepancy_router.py
+docs/monograph/prime-matrix-clean-core-dprc-centered-discrepancy-router.md/json
+
+dprc_centered_discrepancy_boundary_closed=true；
+rsm_identity_closed=true；
+bes_compression_closed=true；
+dprc_centered_discrepancy_input_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层继续攻击上一节的第一把锁 `DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn`。核心压缩律为：
+
+```text
+DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+  => ExplicitModelGapAndFiniteDPRCLedger
+     AND BESDangerIntersectionExclusionOrDLSNamedReturn。
+```
+
+第一项支付两件事：
+
+- `P<2003` 的有限段正式验收；
+- `P>=2003` 的模型余量 `S(1-H)>3sqrt(S)`。
+
+第二项支付正偏差平方根界。RSM 恒等式已经把容量写成：
+
+```text
+S-T = S(1-H) - (T-HS)。
+```
+
+所以只要 `D_+=max(0,T-HS)<=3sqrt(S)` 且模型余量大于 `3sqrt(S)`，就得到 `T<S`。BES 又把
+`D_+<=3sqrt(S)` 压成六个 beta 桶的同步问题：高 `L1` 正和与高 `L2` 能量不能同时发生。
+
+若 BES 危险交集发生，DLS 路线要求它显化为三类命名出口：
+
+- `PointLoad`：同一个点被过多高素标签命中，回流 `ColumnCRT/tail-anchor`；
+- `ShortWindow`：某个短 `q` 子窗承担固定比例正偏差，回流 `SAE`；
+- `LowPhase`：分散偏差在低模/新增轮层 Fourier 上同步，回流 `PDEC/new-layer PDEC`。
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND BESDangerIntersectionExclusionOrDLSNamedReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基为：
+
+```text
+((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+  AND ExplicitModelGapAndFiniteDPRCLedger
+  AND BESDangerIntersectionExclusionOrDLSNamedReturn
+  AND SignedGeometricLedgerVariationBranchLiftAndReturn)
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步没有证明 BES/DLS 危险交集排斥；但它把 DPRC 的解析输入从原始覆盖不等式压成了一个有限/模型余量账本
+和一个三出口结构排斥命题。

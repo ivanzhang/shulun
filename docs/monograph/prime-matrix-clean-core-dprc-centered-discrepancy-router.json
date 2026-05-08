@@ -1,0 +1,103 @@
+{
+  "bes_compression_closed": true,
+  "certificate_type": "prime_matrix_clean_core_dprc_centered_discrepancy_router",
+  "core_reduction_law": "DPRC 的中心化偏差锁不再是原始 T_Y<S_Y。RSM 恒等式把它拆成显式模型余量/有限证书与 D_+ 平方根界；BES 又把 D_+ 平方根界拆成六个 beta 桶的高 L1 与高 L2 不能同步。若同步失败不能直接排斥，DLS 路线要求它显化为 PointLoad、ShortWindow 或 LowPhase，分别回流 ColumnCRT、SAE 或 PDEC/new-layer PDEC。",
+  "dprc_centered_discrepancy_boundary_closed": true,
+  "dprc_centered_discrepancy_input_proved": false,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND BESDangerIntersectionExclusionOrDLSNamedReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinputs": [
+    "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn",
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "BESDangerIntersectionExclusionOrDLSNamedReturn",
+    "SignedGeometricLedgerVariationBranchLiftAndReturn"
+  ],
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND BESDangerIntersectionExclusionOrDLSNamedReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "previous_dprc_input": "DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousDPRCInputPinned",
+      "meaning": "上一层已把几何预算的解析锁命名为 DPRC alpha=0.43 中心化偏差或层叠回流。",
+      "proved": true,
+      "remaining": "把 DPRC 输入继续原子化。"
+    },
+    {
+      "closed": true,
+      "gate": "RSMIdentityClosed",
+      "meaning": "DPRC 容量闭合已等价降到模型余量 S(1-H) 与正偏差 D_+ 的比较。",
+      "proved": true,
+      "remaining": "提交显式 ModelGap/finite 证书与 D_+ 平方根界。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteCapacityAuditMaterialized",
+      "meaning": "P<2003 和全扫到 P<=100000 的容量失败为零，有限证书数据已物化。",
+      "proved": false,
+      "remaining": "把 P<2003 固化为正式有限验收表。"
+    },
+    {
+      "closed": true,
+      "gate": "HighSegmentC3AuditMaterialized",
+      "meaning": "审计显示 P>=2003 时 C=3 同时支付模型余量和正偏差。",
+      "proved": false,
+      "remaining": "证明 ExplicitModelGapAndFiniteDPRCLedger，而不是只引用实验。"
+    },
+    {
+      "closed": true,
+      "gate": "BESCompressionClosed",
+      "meaning": "D_+<=3sqrt(S) 被压成六个 beta 桶的高 L1 与高 L2 不能同步。",
+      "proved": true,
+      "remaining": "证明 BES 危险交集不存在或命名回流。"
+    },
+    {
+      "closed": true,
+      "gate": "BESDangerAuditClear",
+      "meaning": "P<=100000 审计中两个 BES 危险交集均为零。",
+      "proved": false,
+      "remaining": "需要解析排斥，不可作为无条件证明。"
+    },
+    {
+      "closed": true,
+      "gate": "DLSNamedReturnGrammarClosed",
+      "meaning": "若 BES 危险交集发生，当前路线把失败拆成 PointLoad/ShortWindow/LowPhase 三出口。",
+      "proved": false,
+      "remaining": "证明三出口必然性，且分别吸收到 ColumnCRT/SAE/PDEC。"
+    },
+    {
+      "closed": true,
+      "gate": "NewLayerDispersionEvidenceAvailable",
+      "meaning": "新增层 Fourier 能量强但高 BES 压力处峰值分散，支持 LowPhase=>new-layer PDEC 或 DLS 吸收。",
+      "proved": false,
+      "remaining": "证明相位维数下界或低维集中必给 new-layer PDEC。"
+    },
+    {
+      "closed": false,
+      "gate": "DPRCAlpha043CenteredDiscrepancyInputProved",
+      "meaning": "DPRC 输入未闭合；已压成 ModelGap/finite 账本与 BES/DLS 命名回流。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger AND BESDangerIntersectionExclusionOrDLSNamedReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "DPRC 与 signed 源锁完成后仍需独立验收。"
+    }
+  ],
+  "rsm_identity_closed": true,
+  "source_hashes": {
+    "docs/dprc_block_envelope_scan_alpha043_p100000_20260506.json": "c50b92964be2712e787438ff18ee36b6efe8e9534a02c82089fe82a86e9f5d7e",
+    "docs/dprc_newlayer_energy_scan_p100000_20260506.json": "acba30c3ca213f6425ccde728f566b0307edcc80f9ef7810e73a289f1a59e439",
+    "docs/dprc_relative_sieve_margin_alpha043_p100000_20260506.json": "34860c79b0b9834a8625cf434b5869078c4d76c75381522bc452a0341d46d501",
+    "docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.json": "7036cd75920ab730517c0113314d7f88a9b2489b8bc98eedd9d576d686d39b91",
+    "docs/monograph/prime-matrix-dprc-bes-dual-large-sieve-route.md": "5ba17834f604bc7474691195c84fd3c3f6c8f669affda8d0c2030b3174642ac6",
+    "docs/monograph/prime-matrix-dprc-bucket-energy-synchronization.md": "8a67808b3856ee1d4cf147c2556650ca546f94a282262342f7e4461029b23278",
+    "docs/monograph/prime-matrix-dprc-newlayer-energy-dispersion.md": "9b9917e7a67aba9683ac50b66b3ec7b31f51aa4ea7527c65e1c8d2b741e30888",
+    "docs/monograph/prime-matrix-dprc-relative-sieve-margin.md": "75a554cebae6ad124abadd4f1fe19f7b4df681d23203c496cff1b3576c33475f",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb"
+  },
+  "status": "dprc_centered_discrepancy_reduced_to_modelgap_and_bes_dls"
+}
