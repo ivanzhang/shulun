@@ -1,0 +1,162 @@
+{
+  "certificate_type": "prime_matrix_per_color_rankin_certificate_file_router",
+  "certificate_scope": "universal_per_color_rankin_file_generator",
+  "status": "per_color_rankin_certificate_files_closed_manifest_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-rankin-manifest-data-router.json": "d9f7df895f785b322fae8a549589078bf0d359a0735eea096e32283b4f901021",
+    "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json": "ed9a95a6eb7e9a37f7fea38e2a42e2405207dc649f15bb005e59a4f7de35a464",
+    "docs/monograph/prime-matrix-concrete-coloring-coverage-data-router.json": "31d93679bd911266698e8ab32ddcd2343b9b15266cf36afb0055609782d26d1a",
+    "docs/monograph/prime-matrix-allowed-budget-allocation-router.json": "ecd9a0d5cac0b228844b544094df0655d69b7185cea225374155f9b427a1cf73",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md": "960b0bed237fb16a61bc4ad454c08402eda7087ace0eae4895b5a7a4404ce9f7",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "per_color_rankin_certificate_file_ledger_closed": true,
+  "proved": true,
+  "coverage_complete": true,
+  "per_color_rankin_certificate_files": [
+    {
+      "record_type": "color_certificate_header",
+      "coverage": "每个 color_id 一条。",
+      "rule": "记录 source_tuple_hash、color_set_id、color_id、intervals_hash、K、phase_rule、allowed_budget。"
+    },
+    {
+      "record_type": "rankin_input_row",
+      "coverage": "每个同色不交 interval 或压缩段一条。",
+      "rule": "输入必须来自 coverage equation 后的同色不交 partition。"
+    },
+    {
+      "record_type": "rankin_parameter_row",
+      "coverage": "每个 color_id 一条。",
+      "rule": "记录 s/weights/cutoff 与 RLA 验收所需常数，禁止看结果后调参。"
+    },
+    {
+      "record_type": "rankin_budget_verdict",
+      "coverage": "每个 color_id 一条。",
+      "rule": "rankin_budget_pass=true iff R_s(C_c;K)<=allowed_budget。"
+    },
+    {
+      "record_type": "exact_budget_crosscheck",
+      "coverage": "可执行样本或有限段必须写 exact_budget_pass。",
+      "rule": "exact 计数用于审计，不替代 Rankin 验收定理。"
+    },
+    {
+      "record_type": "failure_return_requirement",
+      "coverage": "每个 rankin_budget_pass=false 的 color_id 一条。",
+      "rule": "必须标记 lowmod_core_crtdefect 或 constant_gap，并交给 manifest 连接 return packet。"
+    }
+  ],
+  "verifier_laws": [
+    {
+      "law": "one_file_per_color",
+      "formula": "color_id in ColorSet -> exactly one rankin certificate file.",
+      "meaning": "不能漏掉颜色类，也不能重复审计同一颜色类。"
+    },
+    {
+      "law": "same_source_tuple_lock",
+      "formula": "certificate.source_tuple_hash == color_set.source_tuple_hash.",
+      "meaning": "Rankin 文件不能跨 source tuple 拼接 intervals 或预算。"
+    },
+    {
+      "law": "budget_predeclared",
+      "formula": "allowed_budget is inherited from inventory before the Rankin run.",
+      "meaning": "禁止后验调预算。"
+    },
+    {
+      "law": "rankin_pass_definition",
+      "formula": "pass iff R_s(C_c;K)<=B_c for the recorded parameters.",
+      "meaning": "pass 判定只由 RLA 验收式给出。"
+    },
+    {
+      "law": "failure_is_not_erasure",
+      "formula": "not pass -> failure_kind in {lowmod_core_crtdefect, constant_gap}.",
+      "meaning": "失败颜色类必须进入后续 return，不允许静默删除。"
+    },
+    {
+      "law": "certificate_hash",
+      "formula": "rankin_certificate_hash=H(header,input_rows,parameters,verdict).",
+      "meaning": "单证书路径和 hash 可由 manifest 复核。"
+    }
+  ],
+  "current_narrowest_atom": "ConcreteRankinBatchManifestDataLedger",
+  "downstream_atoms": [
+    "ConcreteRankinBatchManifestDataLedger",
+    "FailedRankinReturnPacketLedger",
+    "PDECOrSAEUnifiedExclusionLedger"
+  ],
+  "reduction_formula": "PerColorRankinCertificateFileLedger => ColorSetEnumeration AND AllowedBudgetDiscipline AND RankinVerifier AND FailureReturnRequirement.",
+  "plain_conclusion": "PerColorRankinCertificateFileLedger 已闭合：每个 color_id 的 Rankin 单证书文件、预算 verdict、hash 与失败回流要求均可复算。下一步回收 `ConcreteRankinBatchManifestDataLedger`。",
+  "rows": [
+    {
+      "gate": "PerColorRankinFileGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 per-color Rankin certificate file。",
+      "remaining": "PerColorRankinCertificateFileLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行链条，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ColorSetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "color_id 全集和每色同色不交 intervals 已由 coverage/color-set 账本固定。",
+      "remaining": "不能漏色或重选 intervals。"
+    },
+    {
+      "gate": "AllowedBudgetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个 color_id 的 allowed_budget 必须预登记，失败路由已固定。",
+      "remaining": "不能后验调预算。"
+    },
+    {
+      "gate": "RankinVerifierImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "RLA 验收式和可执行样本均已固定，单证书格式可复核。",
+      "remaining": "样本不等于全局 pass。"
+    },
+    {
+      "gate": "CanonicalCertificateHashImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "rankin_certificate_hash 继承 source_tuple_hash 与 color_id。",
+      "remaining": "证书身份稳定。"
+    },
+    {
+      "gate": "FailureRowsRemainNamed",
+      "closed": true,
+      "proved": false,
+      "meaning": "本步允许某些 color_id 的 Rankin 不通过，但失败必须进入 lowmod_core_crtdefect 或 constant_gap。",
+      "remaining": "FailedRankinReturnPacketLedger or RankinConstantGapRefinementLedger"
+    },
+    {
+      "gate": "PerColorRankinCertificateFileLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "逐色 Rankin 证书文件账本闭合：每个 color_id 都有可复算文件、verdict 和失败回流要求。",
+      "remaining": "ConcreteRankinBatchManifestDataLedger"
+    }
+  ],
+  "closed_gates": [
+    "PerColorRankinFileGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ColorSetImported",
+    "AllowedBudgetImported",
+    "RankinVerifierImported",
+    "CanonicalCertificateHashImported",
+    "FailureRowsRemainNamed",
+    "PerColorRankinCertificateFileLedger"
+  ],
+  "open_gates": []
+}
