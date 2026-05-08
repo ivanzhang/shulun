@@ -1,0 +1,114 @@
+{
+  "certificate_type": "composite_cofactor_descent_schema_router",
+  "closed_gates": [
+    "CompositeCofactorGateActive",
+    "XRoughDepthBoundImported",
+    "SqrtGateTerminatesPrimePair",
+    "CarryShellSupportInherited",
+    "WellFoundedDescentMeasure",
+    "PersistentCompositeCofactorAdmitsPDEC",
+    "IsolatedCompositeCofactorAdmitsSparseSAE",
+    "NoUnnamedCompositeCofactorDescent",
+    "CompositeCofactorDepthDescentOrNamedReturn"
+  ],
+  "composite_cofactor_descent_schema_closed": true,
+  "composite_cofactor_specific_gap_removed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "EarlyBandLocalSurvivorOrSAEExclusion",
+  "open_gates": [
+    "GlobalPDECorSparseTerminalExclusion"
+  ],
+  "pdec_or_sae_terminal_exclusion_proved": false,
+  "plain_conclusion": "本步闭合的是复合 cofactor 递归壳的命名回流 schema：由于 m<P 且 x-rough 深度有限，无穷递归循环不可能；持久复合签名必须进 PDEC，孤立复合签名必须进 SAE/LocalSurvivor。因此复合 cofactor 专属 gap 被删除，但 PDEC/SAE 终端排斥本身仍未证明。",
+  "remaining_global_terminal_guard": "FutureExplicitPrimitivePDECSchema_OR_FutureExplicitSparsePacketExtractorSchema_if_materialized",
+  "replacement": {
+    "CompositeCofactorDepthDescentOrNamedReturn": "NoCompositeCofactorUnnamedDescentGap_AfterWellFoundedNamedReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CompositeCofactorGateActive",
+      "meaning": "当前输入基仍包含 CompositeCofactorDepthDescentOrNamedReturn。",
+      "proved": true,
+      "remaining": "本步只攻击复合 cofactor 递归壳。"
+    },
+    {
+      "closed": true,
+      "gate": "XRoughDepthBoundImported",
+      "meaning": "若 xP+c=q m 且 m 复合，则 m<P 且所有素因子 >x，深度 d<log(P)/log(x)。",
+      "proved": true,
+      "remaining": "递归深度有限。"
+    },
+    {
+      "closed": true,
+      "gate": "SqrtGateTerminatesPrimePair",
+      "meaning": "一旦 x>=sqrt(P)，复合 cofactor 不可能存在，只剩真双素/anchor 分支。",
+      "proved": true,
+      "remaining": "递归不能跨过 sqrt 门继续无名存在。"
+    },
+    {
+      "closed": true,
+      "gate": "CarryShellSupportInherited",
+      "meaning": "复合 cofactor 仍来自同一个 carry-shell 高补洞支撑。",
+      "proved": true,
+      "remaining": "不能换口径计数。"
+    },
+    {
+      "closed": true,
+      "gate": "WellFoundedDescentMeasure",
+      "meaning": "每次真正递归都把顶层 P 换成更小 cofactor m<P，或降低 cofactor 乘法深度。",
+      "proved": true,
+      "remaining": "不存在无穷递归循环。"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentCompositeCofactorAdmitsPDEC",
+      "meaning": "若同一复合 cofactor 签名持久复现，它必须提交同 formal unit primitive PDEC schema。",
+      "proved": true,
+      "remaining": "PDEC 终端排斥仍未证明。"
+    },
+    {
+      "closed": true,
+      "gate": "IsolatedCompositeCofactorAdmitsSparseSAE",
+      "meaning": "若复合 cofactor 只孤立出现，它必须提交有限 sparse/SAE packet schema。",
+      "proved": true,
+      "remaining": "SAE/sparse 终端排斥仍未证明。"
+    },
+    {
+      "closed": true,
+      "gate": "NoUnnamedCompositeCofactorDescent",
+      "meaning": "复合 cofactor 只有下降、持久 PDEC 或孤立 SAE 三种命名归宿。",
+      "proved": true,
+      "remaining": "NoCompositeCofactorUnnamedDescentGap_AfterWellFoundedNamedReturn"
+    },
+    {
+      "closed": true,
+      "gate": "CompositeCofactorDepthDescentOrNamedReturn",
+      "meaning": "该硬点作为 well-founded 命名回流 schema 已闭合。",
+      "proved": true,
+      "remaining": "终端家族本身仍未无条件排斥。"
+    },
+    {
+      "closed": false,
+      "gate": "GlobalPDECorSparseTerminalExclusion",
+      "meaning": "若实际产生新 persistent PDEC 或 sparse packet，仍需提交并排斥相应证书。",
+      "proved": false,
+      "remaining": "FutureExplicitPrimitivePDECSchema / FutureExplicitSparsePacketExtractorSchema。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-fiber-saturation-return-schema-router.json": "6e7d174d6649f03d695ac95a003085dca32c2b6254448aab859e9e6edc7fa8c5",
+    "docs/monograph/prime-matrix-early-zero-carry-shell-router.md": "1d03003a82b99c176473187b180db7be87c0daea95b134e8369a3c49fd778f08",
+    "docs/monograph/prime-matrix-early-zero-cofactor-depth-router.md": "6e945d58d812da4782bc0436369a532d077e9503b3bd14dd2df8201f73327682",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.md": "9e7718a47c3527572bbc41c31c9a2d08a79989ab200041bde1c74bb55ec5292a",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa"
+  },
+  "status": "composite_cofactor_descent_schema_closed_terminal_exclusion_open",
+  "terminal_gap_after_router": "NoCompositeCofactorUnnamedDescentGap_AfterWellFoundedNamedReturn",
+  "terminal_gap_before_router": "CompositeCofactorDepthDescentOrNamedReturn"
+}

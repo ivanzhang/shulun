@@ -6735,3 +6735,75 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 anchor 专属 fiber gap 已删除。下一步最窄目标回到 `CompositeCofactorDepthDescentOrNamedReturn`。
+
+## Prime Matrix 复合 cofactor 下降命名回流 schema 路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_composite_cofactor_descent_schema_router.py
+docs/monograph/prime-matrix-composite-cofactor-descent-schema-router.md/json
+```
+
+该路由器直接攻击 `CompositeCofactorDepthDescentOrNamedReturn`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+composite_cofactor_descent_schema_closed=true；
+composite_cofactor_specific_gap_removed=true；
+pdec_or_sae_terminal_exclusion_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=CompositeCofactorDepthDescentOrNamedReturn；
+terminal_gap_after_router=NoCompositeCofactorUnnamedDescentGap_AfterWellFoundedNamedReturn。
+```
+
+若 `xP+c=q m` 且 `m` 复合，则 `m<P` 且所有素因子 `>x`，所以 x-rough 乘法深度满足
+`d<log(P)/log(x)`。一旦 `x>=sqrt(P)`，复合 cofactor 不可能存在，只剩真双素/anchor 分支。每次真正递归都把顶层 `P` 换成更小的 cofactor `m<P`，或降低 cofactor 乘法深度，因此不存在无穷递归循环。
+
+替换律为：
+
+```text
+CompositeCofactorDepthDescentOrNamedReturn
+  =>
+NoCompositeCofactorUnnamedDescentGap_AfterWellFoundedNamedReturn。
+```
+
+已经闭合的门为：
+
+```text
+CompositeCofactorGateActive；
+XRoughDepthBoundImported；
+SqrtGateTerminatesPrimePair；
+CarryShellSupportInherited；
+WellFoundedDescentMeasure；
+PersistentCompositeCofactorAdmitsPDEC；
+IsolatedCompositeCofactorAdmitsSparseSAE；
+NoUnnamedCompositeCofactorDescent；
+CompositeCofactorDepthDescentOrNamedReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+GlobalPDECorSparseTerminalExclusion。
+```
+
+这不是新的 cofactor 专属 gap：若未来实际物化新的 persistent PDEC 或 sparse packet，必须由
+`FutureExplicitPrimitivePDECSchema` 或 `FutureExplicitSparsePacketExtractorSchema` 接管。
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+复合 cofactor 专属 gap 已删除。下一步最窄目标回到 `EarlyBandLocalSurvivorOrSAEExclusion`。
