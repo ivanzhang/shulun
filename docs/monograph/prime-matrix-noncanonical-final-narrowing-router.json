@@ -1,0 +1,93 @@
+{
+  "ap_source_lift_rejected": true,
+  "certificate_type": "prime_matrix_noncanonical_final_narrowing_router",
+  "exact_source_entropy_closed": false,
+  "external_full_s_contract_closed_if_accepted": true,
+  "generic_self_contained_antiatom_refuted": true,
+  "narrowing_law": "noncanonical full-S 补集的可行路线继续压窄：APSourceLift 被拒绝，generic 自足反原子被 moving-delta 反证，canonical 分支已经移出。当前只剩两个真实输入：证明 exact/actual source entropy 或强化实际源反原子；或者接受/证明 FullSNonAPWFDKLSTheoremInput。",
+  "noncanonical_narrowing_boundary_closed": true,
+  "remaining_noncanonical_choices": [
+    "InternalNewTheorem: prove ExactWFDSourceEntropy / FullSNonAPStrengthenedSourceAntiAtom for the actual source",
+    "ExternalDeepInput: accept or prove FullSNonAPWFDKLSTheoremInput"
+  ],
+  "review_conclusion": "Noncanonical 补集已从三歧继续压成两项真实输入：内部新增 exact source entropy/强化反原子，或外部/新证 FullSNonAPWFDKLSTheoremInput。APSourceLift 与 generic 反原子路线不再可用；当前材料仍未闭合 self-contained noncanonical 包。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "consequence": "canonical RIW/Buchstab 分支已闭合，不能再当作 noncanonical 缺口。",
+      "evidence": "actual-source global reconciliation",
+      "gate": "CanonicalBranchRemoved",
+      "remaining": "noncanonical complement only",
+      "verdict": "closed_for_canonical_only"
+    },
+    {
+      "closed": true,
+      "consequence": "non-AP generic WFD 补集不能无损回提为 BFI prime-AP discrepancy。",
+      "evidence": "AP-source lift no-go router",
+      "gate": "APSourceLiftRejected",
+      "remaining": "NewFullSTheoremInput or strengthened source theorem",
+      "verdict": "route_rejected"
+    },
+    {
+      "closed": true,
+      "consequence": "形式 WFD/Type/Fourier 假设下的 generic 反原子命题为假。",
+      "evidence": "moving-delta anti-atom no-go router",
+      "gate": "GenericSelfContainedAntiAtomRefuted",
+      "remaining": "strengthen actual source, restrict source, or accept external theorem",
+      "verdict": "generic_statement_false"
+    },
+    {
+      "closed": true,
+      "consequence": "支撑+容量兼容已等价压成最终 source capacity measure 无 moving atom。",
+      "evidence": "full-S source anti-atom router",
+      "gate": "SourceAntiAtomReductionPinned",
+      "remaining": "prove strengthened source anti-atom or external dispersion match",
+      "verdict": "reduced_open"
+    },
+    {
+      "closed": true,
+      "consequence": "ExactWFDSourceEntropy 一旦成立可推出 NC-BLK，但不由当前形式输入强制。",
+      "evidence": "source block entropy router",
+      "gate": "ExactWFDSourceEntropyNotForced",
+      "remaining": "prove exact entropy for actual coefficients",
+      "verdict": "sufficient_but_unproved"
+    },
+    {
+      "closed": true,
+      "consequence": "外部/新深定理路线已压成一个未中心化、无投影、full-S non-AP WFD KLS 输入。",
+      "evidence": "new full-S theorem input router",
+      "gate": "FullSNonAPWFDKLSInputPinned",
+      "remaining": "prove or accept FullSNonAPWFDKLSTheoremInput",
+      "verdict": "single_external_or_new_deep_theorem_atom"
+    },
+    {
+      "closed": true,
+      "consequence": "接受 FullS-KLS-ext 时对象/尺度/无投影兼容已经写入合同。",
+      "evidence": "FullS-KLS-ext specialization router",
+      "gate": "ExternalContractReadyIfAccepted",
+      "remaining": "explicit external acceptance or new proof",
+      "verdict": "conditional_external_closed"
+    },
+    {
+      "closed": true,
+      "consequence": "三歧边界闭合，但自足 noncanonical 补集没有由当前材料证明。",
+      "evidence": "noncanonical complement trilemma router",
+      "gate": "TrilemmaBoundaryStillHonest",
+      "remaining": "two real choices remain",
+      "verdict": "boundary_closed_not_theorem"
+    }
+  ],
+  "self_contained_noncanonical_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.json": "4d5c17126ea796ee37ae469a3684ef634899dfea0b4af3352c3bf29d0f874e59",
+    "docs/monograph/prime-matrix-noncanonical-complement-trilemma-router.json": "e8971555d7c4efa29a49d35224a8fe379bb467af258621dfc7289ef27b0d392b",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-ap-source-lift-nogo-router.json": "e23282e2d3de3d5f70d70dde5013a0f0e8788656d98d04e13e0856dccece5d0f",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-new-full-s-theorem-input-router.json": "5a24752ca3d01eb90414bd498d9be025bebda93809eaaaebb396296d2f68ba68",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-antiatom-nogo-router.json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4",
+    "docs/monograph/prime-matrix-triad-a1-source-block-entropy-router.json": "2a70d49f65ae40245a6233d66fdefeba4e5dbb1a41bcb2c3e6c3e059a0868758"
+  },
+  "status": "noncanonical_final_narrowed_to_exact_source_entropy_or_full_s_kls_input"
+}

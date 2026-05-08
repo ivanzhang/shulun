@@ -3396,3 +3396,36 @@ DStructureRankinPromotion              当前真实开放，需独立接受晋�
 至少一支被证明/接受，且 `DStructureRankinPromotion` 被独立接受，则无隐藏终端链可升级为完整闭合。
 同时形成当前材料不可能性定理：没有 `FullSNonAPWFDKLSTheoremInput/APSourceLift/强化实际源反原子`
 和 `DStructureRankinPromotion` 独立接受时，当前材料不能诚实推出完整行/列无条件定理。
+
+继续新增：
+
+```text
+experiments/prime_matrix_noncanonical_final_narrowing_router.py
+docs/monograph/prime-matrix-noncanonical-final-narrowing-router.md/json
+```
+
+该路由器把 noncanonical 三歧继续压成两项真实输入：
+
+```text
+noncanonical_narrowing_boundary_closed=true；
+ap_source_lift_rejected=true；
+generic_self_contained_antiatom_refuted=true；
+exact_source_entropy_closed=false；
+external_full_s_contract_closed_if_accepted=true；
+self_contained_noncanonical_closed=false。
+```
+
+结构含义是：canonical 分支已经由实际源头调和移出；`APSourceLift` 被 AP/non-AP 分支定义、
+对象账本和 SOURCE-CEN/BD-CEN 阻断；generic 自足反原子被 moving-delta 容量模型反证；
+支撑+容量兼容已精确压成 source capacity measure 无 moving atom。最终只剩：
+
+```text
+InternalNewTheorem:
+  prove ExactWFDSourceEntropy / FullSNonAPStrengthenedSourceAntiAtom for the actual source；
+
+ExternalDeepInput:
+  accept or prove FullSNonAPWFDKLSTheoremInput。
+```
+
+这一步进一步删除了 `APSourceLift` 和 generic 反原子两个不可用方向，但仍没有自足证明
+noncanonical 包。

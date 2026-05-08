@@ -953,6 +953,42 @@ DStructureRankinPromotion：
 `APSourceLift` 或实际源强化反原子；若不能新增深解析定理，就只能走显式外部
 `FullSNonAPWFDKLSTheoremInput`。
 
+继续硬攻 noncanonical 后，三歧又压成两项真实输入：
+
+```text
+experiments/prime_matrix_noncanonical_final_narrowing_router.py
+docs/monograph/prime-matrix-noncanonical-final-narrowing-router.md/json
+
+noncanonical_narrowing_boundary_closed=true；
+ap_source_lift_rejected=true；
+generic_self_contained_antiatom_refuted=true；
+exact_source_entropy_closed=false；
+external_full_s_contract_closed_if_accepted=true；
+self_contained_noncanonical_closed=false。
+```
+
+也就是说：
+
+```text
+canonical 分支：已闭合并移出 noncanonical；
+APSourceLift：被 AP/non-AP 分支定义和对象账本阻断；
+generic 自足反原子：被 moving-delta 模型反证；
+source anti-atom：已精确化，但尚未证明；
+FullSNonAPWFDKLSTheoremInput：已精确化，接受外部合同则对象/尺度/无投影兼容已闭合。
+```
+
+所以 noncanonical 的最窄剩余现在只剩：
+
+```text
+InternalNewTheorem:
+  prove ExactWFDSourceEntropy / FullSNonAPStrengthenedSourceAntiAtom for the actual source；
+
+ExternalDeepInput:
+  accept or prove FullSNonAPWFDKLSTheoremInput。
+```
+
+这比“四开放输入”又少了一层分叉：`APSourceLift` 和 generic 反原子都不再是可用终端路线。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
