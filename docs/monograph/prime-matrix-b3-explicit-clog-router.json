@@ -1,0 +1,116 @@
+{
+  "certificate_type": "b3_explicit_clog_router",
+  "status": "explicit_clog_reduced_to_four_micro_ledgers_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-explicit-zero-free-constants-router.json": "816be0371ea941e008a5812fcea46b817b2112b821eaa2be5691c6ab2bca70e9"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "explicit_clog_reduced": true,
+  "explicit_clog_self_contained_proved": false,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "ExplicitCLogHadamardStirlingJensenNumericalLedger": "(GammaDigammaStirlingUniformNumericalLedger AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger)"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalLedger AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "GammaDigammaStirlingUniformNumericalLedger",
+  "secondary_priority": "JensenZeroCountingLocalNumericalLedger",
+  "tertiary_priority": "HadamardPartialFractionRemainderNumericalLedger",
+  "quaternary_priority": "CLogAggregationAndRangeConventionLedger",
+  "post_clog_priority": "ZeroRepulsionParameterNumericalOptimizationLedger",
+  "post_optimization_priority": "ZeroFreeRegionToExplicitPNTContourConstantLedger",
+  "post_pnt_priority": "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "candidate_budget": {
+    "C_log_candidate": 64.0,
+    "a_candidate": 0.00390625,
+    "c_candidate": 0.00078125,
+    "anchor_x": 20000.0,
+    "log_anchor": 9.903487552536127,
+    "sqrt_log_anchor": 3.1469807041887194,
+    "target_a_for_C1_at_anchor": 3.3360453943473765,
+    "candidate_vs_target_a_ratio": 0.0011709223161707521
+  },
+  "plain_conclusion": "C_log 数值账本尚未闭合，但已压成四个必须逐项核算的微账本。保守候选 C_log=64 可作为预算 convention，但只有四个微账本全部闭合后才能使用。",
+  "rows": [
+    {
+      "gate": "ExplicitCLogGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是 Hadamard/Stirling/Jensen 剩余项的 C_log 数值上界。",
+      "remaining": "ExplicitCLogHadamardStirlingJensenNumericalLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "SymbolicRepulsionInputAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "符号排斥不等式已闭合，C_log 只负责把 O(log T) 剩余项数值化。",
+      "remaining": "无符号层剩余。"
+    },
+    {
+      "gate": "GammaDigammaNumericalLedgerMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "还需给出 Gamma/digamma/Stirling 项在 sigma∈[1,2]、任意 t 下的显式 log(|t|+3) 上界。",
+      "remaining": "GammaDigammaStirlingUniformNumericalLedger"
+    },
+    {
+      "gate": "JensenZeroCountingNumericalLedgerMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "还需给出局部零点计数 N(t+1)-N(t-1)<=C_N log(|t|+3) 的可复算常数。",
+      "remaining": "JensenZeroCountingLocalNumericalLedger"
+    },
+    {
+      "gate": "HadamardPartialFractionRemainderMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "还需把远零点和 1/rho 项在 de la Vallee Poussin 组合中压入同一 C_log。",
+      "remaining": "HadamardPartialFractionRemainderNumericalLedger"
+    },
+    {
+      "gate": "CLogAggregationConventionMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "还需固定 sigma、t 范围、低高度交界和总 C_log 的加法预算。",
+      "remaining": "CLogAggregationAndRangeConventionLedger"
+    },
+    {
+      "gate": "ExplicitCLogReducedToFourMicroLedgers",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧 C_log 原子已压成 Gamma、Jensen 零点计数、Hadamard 余项、聚合约定四个微账本。",
+      "remaining": "(GammaDigammaStirlingUniformNumericalLedger AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger)"
+    },
+    {
+      "gate": "ZeroRepulsionParameterNumericalOptimizationStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "C_log 聚合后，才能数值推出 c、T0 与零点自由带。",
+      "remaining": "ZeroRepulsionParameterNumericalOptimizationLedger"
+    }
+  ],
+  "closed_gates": [
+    "ExplicitCLogGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "SymbolicRepulsionInputAvailable",
+    "ExplicitCLogReducedToFourMicroLedgers"
+  ],
+  "open_gates": [
+    "GammaDigammaNumericalLedgerMissing",
+    "JensenZeroCountingNumericalLedgerMissing",
+    "HadamardPartialFractionRemainderMissing",
+    "CLogAggregationConventionMissing",
+    "ZeroRepulsionParameterNumericalOptimizationStillNext"
+  ]
+}
