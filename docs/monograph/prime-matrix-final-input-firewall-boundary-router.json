@@ -1,0 +1,65 @@
+{
+  "all_final_inputs_independently_accepted": false,
+  "certificate_type": "prime_matrix_final_input_firewall_boundary_router",
+  "current_materialized_terminal_frontier_closed": true,
+  "final_input_firewall_boundary_closed": true,
+  "final_open_inputs": [
+    "FutureExplicitPrimitivePDECSchema：若未来新增 PDEC family，必须提交同 formal unit、三物理原子以上、二秩以上、cap-stable schema",
+    "FutureExplicitSparsePacketExtractorSchema：若未来新增 sparse route，必须提交有限 packet extractor schema",
+    "NoncanonicalFullSComplementTrilemma：证明实际源恒等、强化实际源反原子，或接受/证明 FullS-KLS-ext",
+    "DStructureRankinPromotion：D-structure/Tail-log4/finite Rankin 晋级包必须独立接受"
+  ],
+  "firewall_law": "当前已物化 PDEC 与 sparse/LocalSurvivor 前沿均已清零，且 noncanonical 与最终晋级门已压成命名输入。因此剩余不能再作为无名终端或口头硬点进入；必须以四类显式输入之一提交。但这些输入并未全部独立证明或接受，所以完整行/列无条件定理仍未闭合。",
+  "no_hidden_terminal_remaining": true,
+  "review_conclusion": "最终输入防火墙边界已闭合：当前材料没有剩余已物化 PDEC 或 sparse 终端，noncanonical 分支和 DStructure/Rankin 晋级门也已命名。最终定理尚未闭合，因为四类输入中至少 noncanonical 合法闭合模式与 DStructure/Rankin 独立接受仍未完成；未来 PDEC/sparse 新路线也必须先提交显式 schema。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "boundary_closed": true,
+      "consequence": "当前已物化 PDEC 前沿清零；未来 PDEC 不能作为泛称终端进入。",
+      "evidence": "PDEC family explicit input boundary router",
+      "gate": "FirstPackagePDECExplicitSchemaFirewall",
+      "independently_accepted": false,
+      "remaining": "FutureExplicitPrimitivePDECSchema if a new PDEC family is proposed"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "当前已物化 sparse/LocalSurvivor 前沿清零；未来 sparse 必须给有限 extractor schema。",
+      "evidence": "future sparse packet extractor schema boundary router",
+      "gate": "FirstPackageSparseExtractorSchemaFirewall",
+      "independently_accepted": false,
+      "remaining": "FutureExplicitSparsePacketExtractorSchema if a new sparse route is proposed"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "generic 自足反原子被排除；noncanonical 分支只能走实际源恒等、强化实际源反原子或 FullS-KLS-ext。",
+      "evidence": "noncanonical complement trilemma router",
+      "gate": "SecondPackageNoncanonicalTrilemmaFirewall",
+      "independently_accepted": false,
+      "remaining": "choose and prove/accept one legal noncanonical closure mode"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "最终晋级门已命名为 D-structure/Tail-log4/finite Rankin 独立验收包。",
+      "evidence": "DStructure/Rankin promotion acceptance router",
+      "gate": "ThirdPackageDStructureRankinPromotionFirewall",
+      "independently_accepted": false,
+      "remaining": "independent acceptance of the promotion package"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "当前材料中没有未命名终端可继续偷渡；每个剩余必须以显式 schema 或外部验收进入。",
+      "evidence": "four firewall inputs",
+      "gate": "NoHiddenTerminalAfterFirewall",
+      "independently_accepted": false,
+      "remaining": "named inputs still open; not a final unconditional theorem"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3",
+    "docs/monograph/prime-matrix-noncanonical-complement-trilemma-router.json": "e8971555d7c4efa29a49d35224a8fe379bb467af258621dfc7289ef27b0d392b",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa"
+  },
+  "status": "final_input_firewall_boundary_closed_current_frontier_zero_final_inputs_open"
+}

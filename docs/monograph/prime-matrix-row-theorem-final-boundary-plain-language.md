@@ -861,6 +861,43 @@ phase_key、window_shape、formal_unit_id 与去重规则；
 packet extractor 证书。当前前沿清零，但最终晋级仍受 noncanonical/external 输入和 `DStructure/Rankin`
 独立验收限制。
 
+最后，把四类剩余输入合成“最终输入防火墙”：
+
+```text
+experiments/prime_matrix_final_input_firewall_boundary_router.py
+docs/monograph/prime-matrix-final-input-firewall-boundary-router.md/json
+
+final_input_firewall_boundary_closed=true；
+current_materialized_terminal_frontier_closed=true；
+no_hidden_terminal_remaining=true；
+all_final_inputs_independently_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+这句话的准确含义是：
+
+```text
+当前已物化 PDEC 前沿：清零；
+当前已物化 sparse/LocalSurvivor 前沿：清零；
+noncanonical 分支：已压成三歧输入；
+DStructure/Rankin 晋级门：已压成独立验收输入；
+隐藏终端：没有剩余；
+完整无条件定理：仍未闭合。
+```
+
+最终开放输入只剩四类：
+
+```text
+FutureExplicitPrimitivePDECSchema；
+FutureExplicitSparsePacketExtractorSchema；
+NoncanonicalFullSComplementTrilemma；
+DStructureRankinPromotion。
+```
+
+因此当前最强结论不是“行列无条件定理已证”，而是“当前材料里的已物化终端前沿已清零，且所有未来
+剩余都必须穿过四个显式输入防火墙”。这已经完成边界闭合和无隐藏出口闭合；完全无条件闭合还需要
+证明/接受上述开放输入。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

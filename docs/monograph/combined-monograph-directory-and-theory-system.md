@@ -3334,3 +3334,34 @@ phase_key/window_shape/formal_unit_id 与去重规则；
 不给该 schema 的 sparse 说法不能作为终端；若同签名持久复现则进入 `PDEC/ColumnCRT/Tail/Cofactor`
 schema，若有限包升层逃逸则进入 `CleanKLS/DLS` 或显式外部大筛输入。至此第一包的当前已物化前沿
 清零，并且两个未来输入都被约束成显式 schema 边界；这仍不是完整行/列无条件闭合。
+
+继续新增：
+
+```text
+experiments/prime_matrix_final_input_firewall_boundary_router.py
+docs/monograph/prime-matrix-final-input-firewall-boundary-router.md/json
+```
+
+该路由器把当前全部剩余合成最终输入防火墙：
+
+```text
+final_input_firewall_boundary_closed=true；
+current_materialized_terminal_frontier_closed=true；
+no_hidden_terminal_remaining=true；
+all_final_inputs_independently_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+防火墙的含义是：当前材料没有剩余已物化 `PDEC` 或 sparse/`LocalSurvivor` 终端，noncanonical 分支
+和 `DStructure/Rankin` 晋级门也已命名；因此剩余不能再作为无名终端或口头硬点进入。最终开放输入
+只剩：
+
+```text
+FutureExplicitPrimitivePDECSchema；
+FutureExplicitSparsePacketExtractorSchema；
+NoncanonicalFullSComplementTrilemma；
+DStructureRankinPromotion。
+```
+
+这一步闭合的是边界和命名性，不是完整无条件定理。完整行/列命题要升级，还必须证明或独立接受这些
+显式输入。
