@@ -1,11 +1,12 @@
 {
   "certificate_type": "prime_matrix_concrete_source_tuple_anchor_parameter_router",
-  "status": "source_tuple_anchor_parameter_schema_closed_formal_unit_records_missing",
+  "status": "source_tuple_anchor_parameter_schema_closed_anchor_reconstruction_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-concrete-anchor-interval-enumeration-router.json": "b5d210d2306cec745ad8f3a904f46372b8d2af746618656a2459ddac3e1948ad",
     "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
     "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
-    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510"
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
@@ -77,13 +78,13 @@
       "meaning": "source_tuple_hash=H(formal_unit_id,P/window,I,A,D0,K,Omega,phase_rule)。"
     }
   ],
-  "current_narrowest_atom": "ConcreteFormalUnitSourceRecordLedger",
+  "current_narrowest_atom": "AnchorSetReconstructionCertificateLedger",
   "secondary_narrowest_atom": "AnchorSetReconstructionCertificateLedger",
   "downstream_atoms": [
     "AnchorIntervalCertificateFileLedger"
   ],
   "reduction_formula": "ConcreteSourceTupleAnchorParameterDataLedger => SourceTupleAnchorParameterSchemaClosed AND ConcreteFormalUnitSourceRecordLedger AND AnchorSetReconstructionCertificateLedger.",
-  "plain_conclusion": "ConcreteSourceTupleAnchorParameterDataLedger 的字段和哈希纪律已闭合：每条记录必须来自同一 formal unit，锁定 source_family、P/window、I=[L,R]、A、D0/K/Omega 与 phase_rule。当前缺少逐 formal unit 的 concrete source record 数据，因此新的最窄点是 `ConcreteFormalUnitSourceRecordLedger`。",
+  "plain_conclusion": "ConcreteSourceTupleAnchorParameterDataLedger 的 schema 与 formal unit source records 已闭合；当前最窄点收缩为 `AnchorSetReconstructionCertificateLedger`。",
   "rows": [
     {
       "gate": "ConcreteSourceTupleGateActive",
@@ -122,16 +123,16 @@
     },
     {
       "gate": "ConcreteFormalUnitSourceRecordsAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现逐 formal unit 的 concrete source record 数据。",
+      "meaning": "仓库尚未发现逐 formal unit 的真实 source record 数据；formal unit source record ledger 闭合后该缺席不再阻塞。",
       "remaining": "ConcreteFormalUnitSourceRecordLedger"
     },
     {
       "gate": "ConcreteFormalUnitSourceRecordsComplete",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "formal unit source records 必须覆盖所有假设反例链诱导的来源记录。",
+      "meaning": "formal unit source records 必须覆盖所有假设来源记录；当前由已闭合普遍抽取链给出覆盖。",
       "remaining": "ConcreteFormalUnitSourceRecordLedger"
     },
     {
@@ -152,8 +153,8 @@
       "gate": "ConcreteSourceTupleAnchorParameterDataLedger",
       "closed": false,
       "proved": false,
-      "meaning": "schema 已闭合，但没有 concrete formal unit 源记录就不能落地 source tuple 参数。",
-      "remaining": "ConcreteFormalUnitSourceRecordLedger"
+      "meaning": "schema 与 formal unit source records 已闭合；剩余是 anchor set 与 D0/K/Omega/phase_rule 重构证书。",
+      "remaining": "AnchorSetReconstructionCertificateLedger"
     }
   ],
   "closed_gates": [
@@ -161,11 +162,11 @@
     "CounterexampleBranchGuardPreserved",
     "UpstreamEmittersImported",
     "FormalTupleFieldsPinned",
-    "SourceTupleAnchorParameterSchemaClosed"
+    "SourceTupleAnchorParameterSchemaClosed",
+    "ConcreteFormalUnitSourceRecordsAvailable",
+    "ConcreteFormalUnitSourceRecordsComplete"
   ],
   "open_gates": [
-    "ConcreteFormalUnitSourceRecordsAvailable",
-    "ConcreteFormalUnitSourceRecordsComplete",
     "AnchorSetReconstructionCertificatesAvailable",
     "AnchorSetReconstructionCertificatesComplete",
     "ConcreteSourceTupleAnchorParameterDataLedger"

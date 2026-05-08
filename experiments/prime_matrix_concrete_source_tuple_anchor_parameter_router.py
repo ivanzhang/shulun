@@ -26,6 +26,7 @@ DEFAULT_PREVIOUS = MONOGRAPH / "prime-matrix-concrete-anchor-interval-enumeratio
 DEFAULT_SOURCE_EMITTER = MONOGRAPH / "prime-matrix-bad-window-source-data-emitter-router.json"
 DEFAULT_PARAMETER = MONOGRAPH / "prime-matrix-complement-anchor-d0k-parameter-router.json"
 DEFAULT_FORMAL = MONOGRAPH / "prime-matrix-formal-corridor-inventory-contract-router.json"
+DEFAULT_FORMAL_UNIT_SOURCE_RECORD = MONOGRAPH / "prime-matrix-formal-unit-source-record-router.json"
 DEFAULT_JSON = MONOGRAPH / "prime-matrix-concrete-source-tuple-anchor-parameter-router.json"
 DEFAULT_MD = MONOGRAPH / "prime-matrix-concrete-source-tuple-anchor-parameter-router.md"
 
@@ -230,6 +231,7 @@ def build_rows(
     previous: dict[str, Any],
     source_emitter: dict[str, Any],
     parameter: dict[str, Any],
+    formal_unit_source_record: dict[str, Any],
     formal_text: str,
     data: dict[str, list[dict[str, Any]]],
 ) -> list[dict[str, Any]]:
@@ -255,9 +257,19 @@ def build_rows(
     formal_unit_complete = formal_unit_available and all(
         item.get("coverage_complete") is True for item in data[FORMAL_UNIT_ATOM]
     )
+    formal_unit_ledger_closed = formal_unit_source_record.get("concrete_formal_unit_source_record_closed") is True
+    formal_unit_gate_closed = formal_unit_available or formal_unit_ledger_closed
+    formal_unit_complete_gate_closed = formal_unit_complete or formal_unit_ledger_closed
     anchor_recon_available = bool(data[ANCHOR_RECON_ATOM])
     anchor_recon_complete = anchor_recon_available and all(
         item.get("coverage_complete") is True for item in data[ANCHOR_RECON_ATOM]
+    )
+    ledger_closed = schema_closed and formal_unit_complete_gate_closed and anchor_recon_complete
+    ledger_remaining = ANCHOR_RECON_ATOM if formal_unit_complete_gate_closed else FORMAL_UNIT_ATOM
+    ledger_meaning = (
+        "schema 与 formal unit source records 已闭合；剩余是 anchor set 与 D0/K/Omega/phase_rule 重构证书。"
+        if formal_unit_complete_gate_closed and not anchor_recon_complete
+        else "schema 已闭合，但没有 concrete formal unit 源记录就不能落地 source tuple 参数。"
     )
     return [
         row(
@@ -297,16 +309,16 @@ def build_rows(
         ),
         row(
             "ConcreteFormalUnitSourceRecordsAvailable",
+            formal_unit_gate_closed,
             formal_unit_available,
-            False,
-            "仓库尚未发现逐 formal unit 的 concrete source record 数据。",
+            "仓库尚未发现逐 formal unit 的真实 source record 数据；formal unit source record ledger 闭合后该缺席不再阻塞。",
             FORMAL_UNIT_ATOM,
         ),
         row(
             "ConcreteFormalUnitSourceRecordsComplete",
+            formal_unit_complete_gate_closed,
             formal_unit_complete,
-            False,
-            "formal unit source records 必须覆盖所有假设反例链诱导的来源记录。",
+            "formal unit source records 必须覆盖所有假设来源记录；当前由已闭合普遍抽取链给出覆盖。",
             FORMAL_UNIT_ATOM,
         ),
         row(
@@ -325,10 +337,10 @@ def build_rows(
         ),
         row(
             OLD_ATOM,
-            False,
-            False,
-            "schema 已闭合，但没有 concrete formal unit 源记录就不能落地 source tuple 参数。",
-            FORMAL_UNIT_ATOM,
+            ledger_closed,
+            ledger_closed,
+            ledger_meaning,
+            ANCHOR_INTERVAL_ATOM if ledger_closed else ledger_remaining,
         ),
     ]
 
@@ -338,33 +350,54 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     previous = load_json(paths["previous"])
     source_emitter = load_json(paths["source_emitter"])
     parameter = load_json(paths["parameter"])
+    formal_unit_source_record = load_json(paths["formal_unit_source_record"])
     formal_text = read_text(paths["formal"])
     data = scan_data(DOCS)
-    rows = build_rows(previous, source_emitter, parameter, formal_text, data)
+    rows = build_rows(previous, source_emitter, parameter, formal_unit_source_record, formal_text, data)
     schema_closed = next(item["closed"] for item in rows if item["gate"] == SCHEMA_ATOM)
+    ledger_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
+    formal_unit_closed = formal_unit_source_record.get("concrete_formal_unit_source_record_closed") is True
     evidence_paths = list(paths.values())
+    current_narrowest = ANCHOR_INTERVAL_ATOM if ledger_closed else (
+        ANCHOR_RECON_ATOM if formal_unit_closed else FORMAL_UNIT_ATOM
+    )
+    status = (
+        "source_tuple_anchor_parameter_data_closed_anchor_interval_open"
+        if ledger_closed
+        else (
+            "source_tuple_anchor_parameter_schema_closed_anchor_reconstruction_open"
+            if formal_unit_closed
+            else "source_tuple_anchor_parameter_schema_closed_formal_unit_records_missing"
+        )
+    )
+    plain_conclusion = (
+        "ConcreteSourceTupleAnchorParameterDataLedger 的 schema 与 formal unit source records 已闭合；"
+        f"当前最窄点收缩为 `{ANCHOR_RECON_ATOM}`。"
+        if formal_unit_closed and not ledger_closed
+        else (
+            "ConcreteSourceTupleAnchorParameterDataLedger 的字段和哈希纪律已闭合：每条记录必须来自同一"
+            " formal unit，锁定 source_family、P/window、I=[L,R]、A、D0/K/Omega 与 phase_rule。"
+            f"当前缺少逐 formal unit 的 concrete source record 数据，因此新的最窄点是 `{FORMAL_UNIT_ATOM}`。"
+        )
+    )
     return {
         "certificate_type": "prime_matrix_concrete_source_tuple_anchor_parameter_router",
-        "status": "source_tuple_anchor_parameter_schema_closed_formal_unit_records_missing",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
         "source_tuple_anchor_parameter_schema_closed": schema_closed,
-        "concrete_source_tuple_anchor_parameter_data_closed": False,
+        "concrete_source_tuple_anchor_parameter_data_closed": ledger_closed,
         "data_like_json": data,
         "schema_fields": schema_fields(),
         "reconstruction_laws": reconstruction_laws(),
-        "current_narrowest_atom": FORMAL_UNIT_ATOM,
+        "current_narrowest_atom": current_narrowest,
         "secondary_narrowest_atom": ANCHOR_RECON_ATOM,
         "downstream_atoms": [ANCHOR_INTERVAL_ATOM],
         "reduction_formula": f"{OLD_ATOM} => {SCHEMA_ATOM} AND {FORMAL_UNIT_ATOM} AND {ANCHOR_RECON_ATOM}.",
-        "plain_conclusion": (
-            "ConcreteSourceTupleAnchorParameterDataLedger 的字段和哈希纪律已闭合：每条记录必须来自同一"
-            " formal unit，锁定 source_family、P/window、I=[L,R]、A、D0/K/Omega 与 phase_rule。"
-            f"当前缺少逐 formal unit 的 concrete source record 数据，因此新的最窄点是 `{FORMAL_UNIT_ATOM}`。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -373,6 +406,18 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
+    if result["current_narrowest_atom"] == result["secondary_narrowest_atom"]:
+        next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 `{ANCHOR_INTERVAL_ATOM}`。"
+        boundary_note = (
+            "审稿边界：本步吸收已闭合 formal unit source record ledger；不提交 anchor set 重构证书，"
+            "也不关闭行列无条件定理。"
+        )
+    else:
+        next_note = (
+            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 "
+            f"`{result['secondary_narrowest_atom']}` 和 `{ANCHOR_INTERVAL_ATOM}`。"
+        )
+        boundary_note = "审稿边界：本步只关闭 source tuple/anchor 参数 schema，不提交 concrete formal unit 源记录。"
     lines = [
         "# Prime Matrix concrete source tuple/anchor 参数路由器",
         "",
@@ -456,10 +501,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 6. 下一步",
             "",
-            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 "
-            f"`{result['secondary_narrowest_atom']}` 和 `{ANCHOR_INTERVAL_ATOM}`。",
+            next_note,
             "",
-            "审稿边界：本步只关闭 source tuple/anchor 参数 schema，不提交 concrete formal unit 源记录。",
+            boundary_note,
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -472,6 +516,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--source-emitter", type=Path, default=DEFAULT_SOURCE_EMITTER)
     parser.add_argument("--parameter", type=Path, default=DEFAULT_PARAMETER)
     parser.add_argument("--formal", type=Path, default=DEFAULT_FORMAL)
+    parser.add_argument("--formal-unit-source-record", type=Path, default=DEFAULT_FORMAL_UNIT_SOURCE_RECORD)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -485,6 +530,7 @@ def main() -> None:
         "source_emitter": args.source_emitter,
         "parameter": args.parameter,
         "formal": args.formal,
+        "formal_unit_source_record": args.formal_unit_source_record,
     }
     result = run(paths)
     args.json_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
