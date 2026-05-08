@@ -7536,3 +7536,84 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 下一步最窄目标为 `ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn`：在假设早期零行反例分支中，
 证明 actual same-`(u,v)` moving block 不能集中到足以支付零行；若改走外部条件分支，则必须精确匹配并接受
 `CDependentResidueWeightSpectralCancellationInput`；否则给出命名 PDEC/SAE/ColumnCRT/CleanKLS 回流证书。
+
+## Prime Matrix 反例分支 moving-block 到早期零行终端包路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_counterexample_moving_block_terminal_router.py
+docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.md/json
+```
+
+该路由器只在假设早期零行反例分支内工作。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+hypothetical_chain_only=true；
+moving_block_to_terminal_reduction_closed=true；
+actual_moving_block_spread_proved=false；
+early_zero_terminal_package_fully_proved=false；
+exact_model_gap_dprc_compatibility_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn；
+terminal_gap_after_router=EarlyZeroTerminalExclusionPackage AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock。
+```
+
+反例二分为：
+
+```text
+Assume EarlyZeroRowWithinP
+actual moving same-(u,v) atom
+  -> registered finite/low-dimensional signature
+       -> PDEC / SAE / ColumnCRT / EarlyZeroTerminalExclusionPackage
+  -> no registered signature
+       -> pure L2-flat / NC-BLK escape
+       -> EarlyZeroTerminalExclusionPackage。
+```
+
+这一步把用户强调的“假设链条 vs 真实链条”继续落到形式账本上：如果 moving block 有登记低维签名，
+它不是 clean-core 无名源，而是终端缺陷；如果它没有任何登记签名，它就是 pure L2-flat/NC-BLK 逃逸，
+而早期零行反例分支已经证明 pure L2-flat 逃逸与早期零行强制的稳定/相位缺陷合同冲突，必须回到
+`EarlyZeroTerminalExclusionPackage`。
+
+替换律为：
+
+```text
+ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn
+  =>
+EarlyZeroTerminalExclusionPackage AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock。
+```
+
+已经闭合的门为：
+
+```text
+SourceEntropyImplicationImported；
+SharpMovingAtomPinned；
+RegisteredOrPureFlatDichotomy；
+PureL2FlatEscapeAlreadyRemovedInEarlyZeroBranch；
+EarlyZeroTerminalPackageAlreadyReduced；
+CounterexampleMovingBlockReducedToTerminalPackage。
+```
+
+仍开放的全局守门项为：
+
+```text
+EarlyZeroTerminalExclusionPackage；
+ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock；
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步仍不是行/列命题无条件证明；它删除的是 moving-block 作为独立无名 clean-core 出口的可能。更新后的完全自足输入基为：
+
+```text
+EarlyZeroTerminalExclusionPackage
+AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标回到 `EarlyZeroTerminalExclusionPackage`：排斥 primitive PDEC 容量、SAE/LocalSurvivor packet
+或稳定复现位移缺陷；同时核对模型余量/DPRC 账本是否与该替换口径兼容。
