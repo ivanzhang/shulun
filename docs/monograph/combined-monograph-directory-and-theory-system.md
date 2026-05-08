@@ -5815,3 +5815,69 @@ FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas
 
 这一步仍不是终端证明；它关闭的是输入分类边界，说明 LowMod 有限弧 cap 不再额外增加一个
 独立开放原子。真正要继续硬攻的是 LowPhase 三微输入，或对具体 LowModDualCap 抽取回流证书。
+
+## Prime Matrix LowMod-new-layer 桥接路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_lowmod_newlayer_bridge_router.py
+docs/monograph/prime-matrix-lowmod-newlayer-bridge-router.md/json
+```
+
+该路由器把 LowMod 有限弧路径中的新增层子口接入既有 new-layer 投影切片链。结论为：
+
+```text
+lowmod_newlayer_bridge_closed=true；
+newlayer_schema_proved=false；
+newlayer_flat_admission_proved=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=DLSNewLayerFourierConcentrationPDECReturn；
+terminal_gap_after_router=RegisteredNewLayerPDECFormalUnitAndCapStableSchema_AND_NewLayerNoConcentrationImpliesFlatAdmission。
+```
+
+替换律为：
+
+```text
+DLSNewLayerFourierConcentrationPDECReturn
+  =>
+RegisteredNewLayerPDECFormalUnitAndCapStableSchema
+AND NewLayerNoConcentrationImpliesFlatAdmission。
+```
+
+结构含义是：强新增层 Fourier 集中若存在，必须通过确定性切片形成同 formal unit 的 PDEC cap；
+若不存在可登记的低维集中，则剩余对象必须满足 flat-DLS/KLS 准入，而不能停在“无集中”这句话上。
+
+已经闭合的门为：
+
+```text
+LowModFiniteArcReducedToLowPhase；
+LowPhaseNewLayerAtomPinned；
+ExternalLemmaDirectShortcutRejected；
+ProjectionSlicerClosedToSchema；
+NewLayerAtomBridgeClosed。
+```
+
+唯一开放门为：
+
+```text
+NewLayerSchemaAndFlatAdmissionStillOpen。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema
+AND NewLayerNoConcentrationImpliesFlatAdmission
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄优先目标为 `RegisteredNewLayerPDECFormalUnitAndCapStableSchema`。这一步仍不闭合行/列
+无条件命题；它只关闭 LowMod 有限弧路径与 new-layer 子口之间的接线缺口。

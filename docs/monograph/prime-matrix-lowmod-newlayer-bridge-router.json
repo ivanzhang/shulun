@@ -1,0 +1,77 @@
+{
+  "certificate_type": "lowmod_newlayer_bridge_router",
+  "closed_gates": [
+    "LowModFiniteArcReducedToLowPhase",
+    "LowPhaseNewLayerAtomPinned",
+    "ExternalLemmaDirectShortcutRejected",
+    "ProjectionSlicerClosedToSchema",
+    "NewLayerAtomBridgeClosed"
+  ],
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lowmod_newlayer_bridge_closed": true,
+  "newlayer_flat_admission_proved": false,
+  "newlayer_schema_proved": false,
+  "next_priority": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema",
+  "open_gates": [
+    "NewLayerSchemaAndFlatAdmissionStillOpen"
+  ],
+  "plain_conclusion": "本步把 LowMod 有限弧路径中的新增层子口接入既有 new-layer 投影切片链：DLSNewLayerFourierConcentrationPDECReturn 不再作为整块终端保留，而被替换为合法 new-layer PDEC schema 准入与无集中 flat admission 两项。",
+  "replacement": {
+    "DLSNewLayerFourierConcentrationPDECReturn": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LowModFiniteArcReducedToLowPhase",
+      "meaning": "上一层已把 LowMod 有限弧 cap 并入 LowPhase 三微输入。",
+      "proved": true,
+      "remaining": "接入已存在的 new-layer 子口压缩结果。"
+    },
+    {
+      "closed": true,
+      "gate": "LowPhaseNewLayerAtomPinned",
+      "meaning": "LowPhase 路由中新增层子口仍以 DLSNewLayerFourierConcentrationPDECReturn 出现。",
+      "proved": true,
+      "remaining": "用 new-layer 外部匹配/投影切片链替换它。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalLemmaDirectShortcutRejected",
+      "meaning": "外部 KLS/FullS 引理不能直接替代新增层子口。",
+      "proved": true,
+      "remaining": "必须先给投影/PDEC 准入或无集中 flat admission。"
+    },
+    {
+      "closed": true,
+      "gate": "ProjectionSlicerClosedToSchema",
+      "meaning": "投影单调与 Fourier-to-cap 确定性切片已闭合。",
+      "proved": true,
+      "remaining": "剩余为合法 new-layer PDEC schema 准入。"
+    },
+    {
+      "closed": true,
+      "gate": "NewLayerAtomBridgeClosed",
+      "meaning": "DLSNewLayerFourierConcentrationPDECReturn 已被替换为两个更原子的输入。",
+      "proved": true,
+      "remaining": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission。"
+    },
+    {
+      "closed": false,
+      "gate": "NewLayerSchemaAndFlatAdmissionStillOpen",
+      "meaning": "new-layer PDEC schema 准入和无集中 flat admission 尚未证明。",
+      "proved": false,
+      "remaining": "先攻 RegisteredNewLayerPDECFormalUnitAndCapStableSchema；随后攻 NewLayerNoConcentrationImpliesFlatAdmission。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.json": "b302c89081f83756adf00c2dc14abce2af16b999ac2acdec4d861d246e97fc9d",
+    "docs/monograph/prime-matrix-clean-core-newlayer-external-lemma-match-router.json": "c7d766a5142ff5bb791eb2a443a6b0250b9f28aaac50a4c7458b77e1a15a6ee7",
+    "docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.json": "df0a83ffa87ff7e582b7492d6aa935042a4a0b1f27d88df5ea42ce43798d9cab",
+    "docs/monograph/prime-matrix-lowmod-finite-arc-cap-reduction-router.json": "503735143bd98d63dfc3c5e106a343239c416b94684d7a0eb513879280cb6a42"
+  },
+  "status": "lowmod_newlayer_atom_bridged_to_schema_and_flat_admission",
+  "terminal_gap_after_router": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema_AND_NewLayerNoConcentrationImpliesFlatAdmission",
+  "terminal_gap_before_router": "DLSNewLayerFourierConcentrationPDECReturn"
+}
