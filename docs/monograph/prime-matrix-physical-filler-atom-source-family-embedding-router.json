@@ -1,0 +1,109 @@
+{
+  "certificate_type": "prime_matrix_physical_filler_atom_source_family_embedding_router",
+  "status": "physical_filler_atom_source_family_embedding_closed_assignment_ready",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-source-family-assignment-totality-router.json": "742ced5b0e1bebe137bc2ac783fcabd59ba9a2f7f46ddddb895e9eb08bec5e4e",
+    "docs/monograph/prime-matrix-witness-obligation-domain-canonicalization-router.json": "e84a7ea1de151624f4e63e3aef8ddd626c56bf569863916ec0e312f9a8109c21",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "physical_filler_atom_source_family_embedding_lemma": true,
+  "proved": true,
+  "coverage_complete": true,
+  "physical_filler_atom_source_family_embedding_closed": true,
+  "source_family_assignment_totality_closed": false,
+  "embedding_laws": [
+    {
+      "law": "parent_phase_record",
+      "meaning": "每个 raw physical filler atom (c,q_*(c),m_*(c)) 都是同一 BoundaryPhaseDefect/phase record 的 payload。"
+    },
+    {
+      "law": "no_standalone_family",
+      "meaning": "raw physical atom 不新增 source_family_id；它继承父级 phase/return record 的归宿。"
+    },
+    {
+      "law": "canonical_payload_lock",
+      "meaning": "q_*(c) 与 m_*(c) 由 O(w) 规范化锁定，不能后验改标签。"
+    },
+    {
+      "law": "named_return_inheritance",
+      "meaning": "父级 phase defect 已闭合到 PDEC/SAE/ColumnCRT 命名回流；raw atom 作为 payload 随父记录回流。"
+    }
+  ],
+  "current_narrowest_atom": "SourceFamilyAssignmentTotalityLemma",
+  "reduction_formula": "PhysicalFillerAtomSourceFamilyEmbeddingLemma => PhysicalFillerAtomSourceFamilyEmbeddingClosed AND SourceFamilyAssignmentTotalityLemma.",
+  "plain_conclusion": "PhysicalFillerAtomSourceFamilyEmbeddingLemma 已闭合：raw physical filler atom 不新增来源族，而是作为父级 BoundaryPhaseDefect/phase record 的 canonical payload，继承 PDEC/SAE/ColumnCRT 命名回流。下一步可回收 `SourceFamilyAssignmentTotalityLemma`。",
+  "rows": [
+    {
+      "gate": "PhysicalFillerEmbeddingGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 raw physical filler atom 的来源族嵌入。",
+      "remaining": "PhysicalFillerAtomSourceFamilyEmbeddingLemma"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行 witness 的 raw physical atoms，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "AssignmentInterfaceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "source family assignment 接口已要求 raw atom 只能作为 payload 或 named return 字段进入。",
+      "remaining": "不能新增来源族。"
+    },
+    {
+      "gate": "CanonicalDomainImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "O(w) 已给出 canonical q_*(c),m_*(c) 与 phase/carry/cofactor 字段。",
+      "remaining": "raw atom 标签固定。"
+    },
+    {
+      "gate": "ParentPhaseRecordImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "EarlyZeroPhaseDefectSchemaAdmission 已把 physical atom 登记到同一 formal unit phase defect。",
+      "remaining": "raw atom 有父级 return record。"
+    },
+    {
+      "gate": "NamedReturnInheritanceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "父级 phase/terminal record 已按 PDEC/SAE/ColumnCRT 命名回流。",
+      "remaining": "raw atom 作为 payload 继承归宿。"
+    },
+    {
+      "gate": "PhysicalFillerAtomSourceFamilyEmbeddingClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "raw physical filler atom 不作为独立来源族；它嵌入父级 BoundaryPhaseDefect named return payload。",
+      "remaining": "PhysicalFillerAtomSourceFamilyEmbeddingClosed"
+    },
+    {
+      "gate": "PhysicalFillerAtomSourceFamilyEmbeddingLemma",
+      "closed": true,
+      "proved": true,
+      "meaning": "physical filler atom source-family embedding 已闭合；可回收 source assignment totality。",
+      "remaining": "SourceFamilyAssignmentTotalityLemma"
+    }
+  ],
+  "closed_gates": [
+    "PhysicalFillerEmbeddingGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "AssignmentInterfaceImported",
+    "CanonicalDomainImported",
+    "ParentPhaseRecordImported",
+    "NamedReturnInheritanceImported",
+    "PhysicalFillerAtomSourceFamilyEmbeddingClosed",
+    "PhysicalFillerAtomSourceFamilyEmbeddingLemma"
+  ],
+  "open_gates": []
+}
