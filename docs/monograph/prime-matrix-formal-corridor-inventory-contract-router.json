@@ -1,0 +1,147 @@
+{
+  "certificate_type": "prime_matrix_formal_corridor_inventory_contract_router",
+  "status": "formal_corridor_inventory_schema_closed_data_missing",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-full-rankin-ledger-inventory-router.json": "c9c3ffe297a878434705a359ee28332c1b1219c4f32a406005e65bace60801bf",
+    "docs/monograph/prime-matrix-bpn-distributed-corridor-saturation-reduction.md": "2bad4b1a92dc32c460a7ec1d295599fb373592c5a77e2ce546f9683db8a91e6b",
+    "docs/monograph/prime-matrix-bpn-colored-corridor-core-sieve-budget.md": "d2d4d092544736ea1f6a0863a40afd29c6812544ce2bf72bb2c142904995081a",
+    "docs/monograph/prime-matrix-bpn-final-exit-acceptance-contract.md": "9403e41997299f4b82882f624db4a54a14d278e113a5e5fcbd05f253a9b805d5"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "formal_corridor_inventory_schema_closed": true,
+  "formal_colored_corridor_inventory_closed": false,
+  "inventory_schema_fields": [
+    {
+      "field": "family_id",
+      "meaning": "坏窗族或分支家族的稳定编号。"
+    },
+    {
+      "field": "color_id",
+      "meaning": "区间图着色后的颜色编号。"
+    },
+    {
+      "field": "P_or_P_range",
+      "meaning": "该证书覆盖的素数或素数范围。"
+    },
+    {
+      "field": "K",
+      "meaning": "smooth squarefree core 的 omega 截断。"
+    },
+    {
+      "field": "D0",
+      "meaning": "核心尺度，所有 d 走廊落在 [D0,2D0)。"
+    },
+    {
+      "field": "Omega",
+      "meaning": "低重叠阈值；高重叠分支必须回流 PDEC/SAE。"
+    },
+    {
+      "field": "anchor_set_hash",
+      "meaning": "互补锚集合 A 的可复算来源哈希。"
+    },
+    {
+      "field": "intervals",
+      "meaning": "同色两两不交的 [A_j,B_j] 整数走廊。"
+    },
+    {
+      "field": "phase_moduli",
+      "meaning": "低模相位检查模数，例如 30、210 或正式指定模数。"
+    },
+    {
+      "field": "phase_rule",
+      "meaning": "sigma_K(d) 中 phase(d) 的有限判定规则。"
+    },
+    {
+      "field": "allowed_budget",
+      "meaning": "该颜色类可用预算，供 Rankin 证书验收。"
+    },
+    {
+      "field": "coverage_equation",
+      "meaning": "证明这些 intervals 正好覆盖该颜色类低重叠走廊。"
+    },
+    {
+      "field": "failure_return",
+      "meaning": "Rankin 失败时回流 PDEC/SAE 或常数调参的路径。"
+    }
+  ],
+  "current_narrowest_atom": "BadWindowSourceFamilyExtractionLedger",
+  "secondary_narrowest_atom": "ComplementAnchorSetAndD0KParameterLedger",
+  "tertiary_narrowest_atom": "IntervalGraphColoringCoverageCertificateLedger",
+  "quaternary_narrowest_atom": "AllowedBudgetAllocationLedger",
+  "downstream_atom": "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+  "reduction_formula": "FormalColoredCorridorInventoryLedger => FormalColoredCorridorInventorySchemaClosed AND BadWindowSourceFamilyExtractionLedger AND ComplementAnchorSetAndD0KParameterLedger AND IntervalGraphColoringCoverageCertificateLedger AND AllowedBudgetAllocationLedger.",
+  "plain_conclusion": "FormalColoredCorridorInventoryLedger 的 schema 层已闭合：清单必须逐条给出坏窗族、互补锚、D0/K/Omega、同色不相交 intervals、相位规则、预算和覆盖等式。但全量 corridor records 尚未提交，因此正式 inventory 本身仍未闭合。新的最窄输入是从反例链抽取全部坏窗族与走廊来源的 `BadWindowSourceFamilyExtractionLedger`。",
+  "rows": [
+    {
+      "gate": "FormalInventoryGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一最窄点是正式着色走廊全集清单。",
+      "remaining": "FormalColoredCorridorInventoryLedger"
+    },
+    {
+      "gate": "DistributedCorridorSourceLawAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "DCS-1 已把分布式走廊饱和拆成高重叠缺陷或低重叠着色走廊。",
+      "remaining": "无结构二分剩余。"
+    },
+    {
+      "gate": "ColoredCorridorRankinLawAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "CCB-1 已把每个颜色类预算写成 finite Rankin 或 low-mod core CRTDefect。",
+      "remaining": "无 Rankin 逻辑格式剩余。"
+    },
+    {
+      "gate": "FinalExitContractAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "FXA-3 已规定 Rankin 失败必须回流 PDEC/SAE 或保留常数缺口。",
+      "remaining": "PDECOrSAEUnifiedExclusionLedger"
+    },
+    {
+      "gate": "InventorySchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "正式清单字段、覆盖等式和失败回流字段已经足以定义可审稿 inventory。",
+      "remaining": "FormalColoredCorridorInventorySchemaClosed"
+    },
+    {
+      "gate": "InventoryDataStillMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "清单 schema 已闭合，但仓库仍没有正式反例链诱导出的全量 corridor records。",
+      "remaining": "BadWindowSourceFamilyExtractionLedger"
+    },
+    {
+      "gate": "FormalColoredCorridorInventoryLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "FormalColoredCorridorInventoryLedger 不能由 schema 单独关闭；仍需提交全量数据和来源证明。",
+      "remaining": "BadWindowSourceFamilyExtractionLedger AND ComplementAnchorSetAndD0KParameterLedger AND IntervalGraphColoringCoverageCertificateLedger AND AllowedBudgetAllocationLedger"
+    },
+    {
+      "gate": "BatchRankinStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "inventory 数据齐备后，才可逐条执行 Rankin 审计并处理失败回流。",
+      "remaining": "BatchRankinCertificatesAllPassOrReturnToPDECSAE"
+    }
+  ],
+  "closed_gates": [
+    "FormalInventoryGateActive",
+    "DistributedCorridorSourceLawAvailable",
+    "ColoredCorridorRankinLawAvailable",
+    "FinalExitContractAvailable",
+    "InventorySchemaClosed"
+  ],
+  "open_gates": [
+    "InventoryDataStillMissing",
+    "FormalColoredCorridorInventoryLedger",
+    "BatchRankinStillDownstream"
+  ]
+}
