@@ -5440,3 +5440,88 @@ PrimeSurvivorLowerBoundOrPDECSAEColumnReturn
 ```
 
 这一步不是终局闭合；它把 anchor-collar 的容量语言压成了精确的素数幸存/维数差语言。
+
+继续新增：
+
+```text
+experiments/prime_matrix_variable_row_dimension_gap_router.py
+docs/monograph/prime-matrix-variable-row-dimension-gap-router.md/json
+```
+
+该路由器直接攻击变量行维数差 `G_x(P)>B_x(P)`。结论为：
+
+```text
+variable_row_dimension_gap_identity_closed=true；
+endpoint_dimension_gap_uniform_lift_rejected=true；
+uniform_dimension_gap_constants_proved=false；
+row_column_unconditional_closed=false；
+terminal_gap_after_router=AlignedPrimeMainBuchstabBranchLowerBoundOrDefectReturn。
+```
+
+对 `sqrt(P)<=x<P`，精确公式为：
+
+```text
+G_x(P)=#R_x；
+B_x(P)=#SemiprimeFibers_x；
+PrimeSurvivors_x=G_x(P)-B_x(P)。
+```
+
+双素纤维也有精确求和式：
+
+```text
+B_x(P)=sum_{q prime, x<q<=sqrt((x+1)P)}
+  #{m prime: max(q,ceil((xP+1)/q))<=m<=floor((xP+P-1)/q)}。
+```
+
+本步排除了一个危险捷径：不能把对角端点 `x=P` 的维数差常数合同直接外推到全部变量行。
+端点中双素覆盖被三条倒数地板曲线压到 `P/log^2 P` 型对象；但在变量行，尤其
+`x≈sqrt(P)` 时，collar 中的 `m` 窗口长度可达 `sqrt(P)`，双素纤维仍有 `P/log P`
+量级，与粗骨架同阶。因此端点维数差是 `alpha=1` 的退化口，不是 `alpha in [1/2,1]`
+的统一证明。
+
+已经闭合的结构门为：
+
+```text
+PrimeSurvivorIdentityImported；
+ExactVariableFiberFormula；
+EndpointDimensionGapDoesNotUniformlyLift；
+TwoBranchSupportShape；
+EndpointContractCompatibility；
+EDADualCompatibility。
+```
+
+其中 `TwoBranchSupportShape` 是严格支撑事实：因 `x>=sqrt(P)` 且 `xP+c<P^2`，`R_x` 的合数
+只能有两个 `>x` 素因子；支撑上只有一素分支与双素分支。尚未闭合的是：
+
+```text
+UniformBuchstabConstants；
+UniformDimensionGapConstants。
+```
+
+样本只用于定位危险区间；默认审计给出：
+
+```text
+all_identity_holds=true；
+global_min_prime=7；
+global_max_semiprime_share=0.500000。
+```
+
+分桶读数显示危险最大处在 `alpha=log x/log P` 接近 `0.5` 的平方根带；随着 `alpha` 接近 `1`，
+双素纤维占比下降，端点合同逐渐接管。这说明下一步不能继续攻击端点三曲线，而应直接攻击
+统一的一素分支正性或缺陷回流。
+
+新的最窄剩余为：
+
+```text
+AlignedPrimeMainBuchstabBranchLowerBoundOrDefectReturn
+  = UniformBuchstabOnePrimeBranchLowerBound
+    AND VariableRowRoughSkeletonLowerBound
+    AND VariableRowPrimePairFiberUpperBound
+    AND LowModSkeletonDeficitPDEC
+    AND PrimePairFiberConcentrationTailPDEC
+    AND SparsePrimeSurvivorSAE
+    AND ColumnDisplacementReusePDEC。
+```
+
+含义是：若不能直接证明每行一素分支为正，就必须把失败转成同 formal unit 的低模亏损、
+素对纤维集中、孤立幸存者逃逸或固定列位移复用。该路由仍未给出无条件闭合。
