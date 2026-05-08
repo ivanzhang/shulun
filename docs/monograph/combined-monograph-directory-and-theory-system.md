@@ -5299,3 +5299,72 @@ AND DLSFlatHighModLargeSieveAbsorption
 AND SignedGeometricLedgerVariationBranchLiftAndReturn
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_early_zero_contradiction_matrix_router.py
+docs/monograph/prime-matrix-early-zero-contradiction-matrix-router.md/json
+```
+
+该路由器把“假设早期零行存在”与当前已有成果逐项对齐，形成早期零行矛盾矩阵。结论为：
+
+```text
+direct_unconditional_contradiction_found=false；
+no_unnamed_exit_for_early_zero=true；
+row_column_unconditional_closed=false；
+strongest_current_frontier=AnchorCollarPrimeFiberCapacityBoundOrPDECReturn。
+```
+
+目前可确定的严格结构是：早期零行不再能作为自由斜线覆盖现象存在。它必须同时通过八个夹击面：
+
+```text
+CLB residual-filler front；
+same-formal-unit front；
+carry-shell front；
+cofactor-depth front；
+anchor-collar short-fiber front；
+mirror-stability front；
+P-column layered-wheel front；
+terminal no-fourth-exit front。
+```
+
+这些夹击面的合成链为：
+
+```text
+EarlyZeroRowWithinP
+  => CLB residual equality R_x=F_x
+  => same-formal-unit phase ledger
+  => ExactCarryShellIdentity
+  => CofactorDepth split
+  => CanonicalAnchorCollar short prime fibers for x>=sqrt(P)
+  => AnchorCollar capacity deficit OR PDEC/SAE/ColumnCRT named return。
+```
+
+因此，若早期零行存在，它会与以下已登记成果发生条件性冲突。第一，CLB 要求剩余洞与补洞容量比较，
+早期零行强制 `R_x=F_x`。第二，formal unit 准入禁止跨窗口、跨 q 层或跨重复口径随意拼接补洞。
+第三，carry-shell 恒等式把每个高补洞限制到
+`h=a+b-floor(ab/P), c=ab mod P`。第四，cofactor 深度门说明 `x>=sqrt(P)` 时 cofactor 必为素数，
+复合 cofactor 只能留在浅层递归壳。第五，canonical anchor collar 把真双素分支压到
+`x<q<sqrt((x+1)P)`，固定锚后的素数纤维长度 `<sqrt(P)`。第六，镜像对称不能直接给矛盾，
+只能路由到稳定复现缺陷或边界相位缺陷。第七，P 列锚与层叠轮要求补洞支付进入同一
+`Phi/payment` 字母表。第八，集中、孤立和固定列位移复用都已经进入 `PDEC/SAE/ColumnCRT`
+命名终端。
+
+不可再直接作为终局矛盾的路线也被明确登记：真实样本中未见早期零行不能替代反例分支证明；
+完整 CRT 镜像对称只给等价边界短间隔；从一个零行自动推出下一个零行很近没有已证机制；
+`P^2±k` 或层叠轮同余刚性只限制补洞通道，单独还不是容量排斥。
+
+剩余闭合包保持为：
+
+```text
+AnchorCollarShortPrimeFiberUpperBound
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND PrimitivePDECBudgetForPersistentConcentration
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+其中当前最窄优先级是 `AnchorCollarPrimeFiberCapacityBoundOrPDECReturn`：证明 anchor collar
+中所有长度 `<sqrt(P)` 的短素数纤维总容量不能覆盖整个 `R_x`，或证明任何覆盖级过载都会进入
+已命名且可排斥的 `PDEC/SAE/ColumnCRT`。
