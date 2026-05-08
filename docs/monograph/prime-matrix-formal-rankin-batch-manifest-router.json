@@ -1,0 +1,121 @@
+{
+  "certificate_type": "prime_matrix_formal_rankin_batch_manifest_router",
+  "status": "formal_rankin_batch_manifest_schema_closed_data_missing",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-batch-rankin-pass-return-router.json": "bf6aa15d2ea57ce36b44cd1ecb25df1e6e984035a532bf124ed787a78bfc0675",
+    "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
+    "docs/monograph/prime-matrix-allowed-budget-allocation-router.json": "ecd9a0d5cac0b228844b544094df0655d69b7185cea225374155f9b427a1cf73",
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "formal_rankin_batch_manifest_schema_closed": true,
+  "formal_rankin_batch_manifest_closed": false,
+  "manifest_like_json": [],
+  "manifest_like_json_count": 0,
+  "integrity_rules": [
+    {
+      "rule": "color_set_exact",
+      "meaning": "manifest 的 color_id 集合必须等于 coloring coverage 证书中的颜色全集。"
+    },
+    {
+      "rule": "no_duplicate_color",
+      "meaning": "每个 color_id 只能出现一次；重复行必须合并或报错。"
+    },
+    {
+      "rule": "source_tuple_hash_match",
+      "meaning": "每行 source_tuple_hash 必须与 coloring/budget 源一致。"
+    },
+    {
+      "rule": "certificate_hash_match",
+      "meaning": "每行 rankin_certificate_hash 必须等于单证书文件实际 sha256。"
+    },
+    {
+      "rule": "pass_or_return_total",
+      "meaning": "每行只能是 pass、lowmod_core_crtdefect return 或 constant_gap return。"
+    },
+    {
+      "rule": "all_pass_empty_return_allowed",
+      "meaning": "若所有行 pass，return packet 可为空，但 manifest 必须显式声明 all_pass。"
+    }
+  ],
+  "current_narrowest_atom": "ConcreteRankinBatchManifestDataLedger",
+  "secondary_narrowest_atom": "FailedRankinReturnPacketLedger",
+  "downstream_atoms": [
+    "PDECOrSAEUnifiedExclusionLedger"
+  ],
+  "reduction_formula": "FormalRankinBatchManifestLedger => FormalRankinBatchManifestSchemaClosed AND ConcreteRankinBatchManifestDataLedger.",
+  "plain_conclusion": "FormalRankinBatchManifestLedger 的 schema 层已闭合：正式 manifest 必须精确覆盖 coloring 证书中的 color_id 全集，禁止重复，所有 hash 必须对齐，并且每行必须 pass 或合法回流。仓库当前未发现 concrete manifest，因此新的最窄点是 `ConcreteRankinBatchManifestDataLedger`。",
+  "rows": [
+    {
+      "gate": "FormalRankinManifestGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到正式 Rankin batch manifest。",
+      "remaining": "FormalRankinBatchManifestLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设反例链条内的 manifest，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "UpstreamSchemasImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "batch schema、coloring coverage、allowed_budget 与 formal inventory schema 均已固定。",
+      "remaining": "无 manifest 格式上游剩余。"
+    },
+    {
+      "gate": "FormalRankinBatchManifestSchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "manifest 完整性规则已固定为无漏色、无重复、hash 对齐和 pass/return 全覆盖。",
+      "remaining": "FormalRankinBatchManifestSchemaClosed"
+    },
+    {
+      "gate": "ConcreteManifestAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库尚未发现正式 batch manifest 数据文件。",
+      "remaining": "ConcreteRankinBatchManifestDataLedger"
+    },
+    {
+      "gate": "ConcreteManifestComplete",
+      "closed": false,
+      "proved": false,
+      "meaning": "manifest 必须声明覆盖全部 color_id。",
+      "remaining": "ConcreteRankinBatchManifestDataLedger"
+    },
+    {
+      "gate": "ConcreteManifestRowsPassOrReturn",
+      "closed": false,
+      "proved": false,
+      "meaning": "manifest 每行必须 pass 或引用合法回流 packet。",
+      "remaining": "ConcreteRankinBatchManifestDataLedger OR FailedRankinReturnPacketLedger"
+    },
+    {
+      "gate": "FormalRankinBatchManifestLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "FormalRankinBatchManifestLedger 不能由 schema 关闭；仍需提交 concrete manifest 数据。",
+      "remaining": "ConcreteRankinBatchManifestDataLedger"
+    }
+  ],
+  "closed_gates": [
+    "FormalRankinManifestGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "UpstreamSchemasImported",
+    "FormalRankinBatchManifestSchemaClosed"
+  ],
+  "open_gates": [
+    "ConcreteManifestAvailable",
+    "ConcreteManifestComplete",
+    "ConcreteManifestRowsPassOrReturn",
+    "FormalRankinBatchManifestLedger"
+  ]
+}
