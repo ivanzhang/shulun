@@ -1,0 +1,144 @@
+{
+  "certificate_type": "prime_matrix_failed_rankin_return_packet",
+  "certificate_scope": "all_pass_or_failed_rankin_named_return_generator",
+  "status": "failed_rankin_return_packet_closed_batch_rankin_ready",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-rankin-manifest-data-router.json": "7e4fd3e653f18ab92f358a8f7f4dfe3db3c058c987109bdcf1795f3d374d961e",
+    "docs/monograph/prime-matrix-per-color-rankin-certificate-file-router.json": "96396434ac61259eceff783f0b18da5523c1bd920e0e1661c2cc1471dcd631fe",
+    "docs/monograph/prime-matrix-batch-rankin-pass-return-router.json": "bf6aa15d2ea57ce36b44cd1ecb25df1e6e984035a532bf124ed787a78bfc0675",
+    "docs/monograph/prime-matrix-bpn-lowmod-core-crtdefect-bridge.md": "c799d63e80f7f6acf563e7ca24d99911d1b75dc8c141db3f9ca5a79df61d0bee",
+    "docs/monograph/prime-matrix-bpn-final-exit-acceptance-contract.md": "9403e41997299f4b82882f624db4a54a14d278e113a5e5fcbd05f253a9b805d5",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "failed_rankin_return_packet_ledger_closed": true,
+  "proved": true,
+  "coverage_complete": true,
+  "all_pass_empty_return_allowed": true,
+  "failed_rankin_return_packets": [
+    {
+      "record_type": "all_pass_empty_return_declaration",
+      "coverage": "若 manifest 没有失败行，则必须显式写 all_pass=true。",
+      "rule": "空 packet 不是缺失；它是 manifest 全 pass 的可复核声明。"
+    },
+    {
+      "record_type": "failed_color_header",
+      "coverage": "每个 rankin_budget_pass=false 的 color_id 一条。",
+      "rule": "记录 color_id、rankin_certificate_hash、failure_kind 和 source_tuple_hash。"
+    },
+    {
+      "record_type": "lowmod_core_crtdefect_packet",
+      "coverage": "failure_kind=lowmod_core_crtdefect 的失败行。",
+      "rule": "写 directed core、residue spike、low-mod witness，并转入 PDEC/SAE。"
+    },
+    {
+      "record_type": "constant_gap_packet",
+      "coverage": "failure_kind=constant_gap 的失败行。",
+      "rule": "写 no-spike 证据和常数缺口账本引用，转入 constant-gap refinement。"
+    },
+    {
+      "record_type": "packet_hash_row",
+      "coverage": "每个 packet 一条。",
+      "rule": "return_packet_id=H(source_tuple_hash,color_id,failure_kind,payload_hash)。"
+    }
+  ],
+  "return_laws": [
+    {
+      "law": "pass_rows_need_no_packet",
+      "formula": "rankin_budget_pass=true -> no failed packet required.",
+      "meaning": "pass 行不会制造伪回流。"
+    },
+    {
+      "law": "all_pass_empty_packet",
+      "formula": "no failed rows -> all_pass_empty_return_declaration.",
+      "meaning": "全 pass 情况必须显式声明，避免把缺 packet 误解成漏账。"
+    },
+    {
+      "law": "failed_rows_total",
+      "formula": "rankin_budget_pass=false -> exactly one failed return packet.",
+      "meaning": "每个失败颜色类必须有命名去向。"
+    },
+    {
+      "law": "two_exit_classification",
+      "formula": "failure_kind in {lowmod_core_crtdefect, constant_gap}.",
+      "meaning": "Rankin 失败不能产生第三种无名出口。"
+    },
+    {
+      "law": "pdec_sae_not_closed_here",
+      "formula": "lowmod_core_crtdefect -> PDEC/SAE terminal remains downstream.",
+      "meaning": "本步只回流，不排斥 PDEC/SAE。"
+    }
+  ],
+  "current_narrowest_atom": "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+  "downstream_atoms": [
+    "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+    "PDECOrSAEUnifiedExclusionLedger",
+    "RankinConstantGapRefinementLedger"
+  ],
+  "reduction_formula": "FailedRankinReturnPacketLedger => ManifestRows AND PerColorVerdicts AND AllPassEmptyDeclaration OR NamedFailurePackets.",
+  "plain_conclusion": "FailedRankinReturnPacketLedger 已闭合：Rankin 失败行不会消失；要么 manifest 全 pass 并写空声明，要么每个失败 color_id 进入 PDEC/SAE 或 constant-gap packet。下一步回收 `BatchRankinCertificatesAllPassOrReturnToPDECSAE`。",
+  "rows": [
+    {
+      "gate": "FailedRankinReturnGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 failed Rankin return packet。",
+      "remaining": "FailedRankinReturnPacketLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行链条，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ManifestAndPerColorFilesImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "manifest 行与逐色 Rankin verdict 已固定。",
+      "remaining": "失败行全集固定。"
+    },
+    {
+      "gate": "BatchReturnSchemaImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "批量 Rankin schema 已要求每行 pass 或合法回流。",
+      "remaining": "pass-or-return 字段固定。"
+    },
+    {
+      "gate": "LowModAndFinalExitImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "low-mod spike 回流 PDEC/SAE；无 spike 进入 constant-gap refinement。",
+      "remaining": "PDECOrSAEUnifiedExclusionLedger or RankinConstantGapRefinementLedger"
+    },
+    {
+      "gate": "CanonicalReturnHashImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "return_packet_id 继承 source_tuple_hash、color_id 与 failure_kind。",
+      "remaining": "packet 身份稳定。"
+    },
+    {
+      "gate": "FailedRankinReturnPacketLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "失败 Rankin 行要么不存在并写 all-pass 空声明，要么逐行生成命名回流 packet。",
+      "remaining": "BatchRankinCertificatesAllPassOrReturnToPDECSAE"
+    }
+  ],
+  "closed_gates": [
+    "FailedRankinReturnGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ManifestAndPerColorFilesImported",
+    "BatchReturnSchemaImported",
+    "LowModAndFinalExitImported",
+    "CanonicalReturnHashImported",
+    "FailedRankinReturnPacketLedger"
+  ],
+  "open_gates": []
+}
