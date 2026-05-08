@@ -4402,3 +4402,56 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_reverse_provenance_functor_router.py
+docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.md/json
+```
+
+该路由器把前面所有正向来源保持模型反向审查：actual payment graph、有限投影塔、方向弧限制、
+横向商和来源分类防火墙都能保持同一 formal unit 的来源兼容，但它们都是正向推前或有限因子，
+不能从 `Gamma` 反推出唯一 pre-Cauchy primitive summand。结论为：
+
+```text
+reverse_provenance_functor_boundary_closed=true；
+payment_pushforward_functoriality_available=true；
+pushforward_reverse_uniqueness_rejected=true；
+finite_projection_recovers_gamma_not_source=true；
+constructor_formula_equivalent_to_registered_fiber_emitter=true；
+registered_primitive_prepushforward_fiber_emitter_proved=false；
+actual_noncanonical_primitive_constructor_formula_proved=false；
+row_column_unconditional_closed=false。
+```
+
+反向函子律是：`Gamma` 及其所有有限投影最多恢复下游 payment 质量，不恢复被推前前的 primitive
+source；不同来源纤维分解可以给出同一个 payment graph。若要把当前 clean-core 残余变成自足证明，
+必须提供同一 formal unit 内的已登记 pre-pushforward 纤维分解 emitter。该 emitter 对每个正质量
+clean-core payment atom 输出有限/polylog 个 primitive preimage summand，并证明 `alpha/delta`、
+branch key、`u/v` map、符号、local factor 和系数恒等式；无法登记、空纤维、超预算或 thin block
+必须回流。
+
+于是最新内部输入从“直接写公式”改写为更可审查的：
+
+```text
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。
+```
+
+最新条件输入基为：
+
+```text
+(RegisteredPrimitivePrePushforwardFiberEmitterAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明该 emitter；它关闭的是反向来源的边界误差：不能把下游 payment/profinite 几何结构误当作
+上游 constructor 公式，但可以把最终自足硬点压成一个具体、可验收、可失败回流的纤维分解输入。

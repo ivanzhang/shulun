@@ -2048,3 +2048,55 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
  OR CDependentResidueWeightSpectralCancellationInput)
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
+
+## 26. clean-core 反向来源函子边界
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_reverse_provenance_functor_router.py
+docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.md/json
+
+reverse_provenance_functor_boundary_closed=true；
+payment_pushforward_functoriality_available=true；
+pushforward_reverse_uniqueness_rejected=true；
+finite_projection_recovers_gamma_not_source=true；
+constructor_formula_equivalent_to_registered_fiber_emitter=true；
+registered_primitive_prepushforward_fiber_emitter_proved=false；
+actual_noncanonical_primitive_constructor_formula_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把已有的支付图、方阵/圆柱覆盖后的 payment 结构、有限投影塔、弧限制和横向商一起纳入审查。
+结论很关键：这些对象都是 pre-Cauchy 来源测度的正向推前或有限因子，它们能保证来源没有被重加权、
+没有跨 formal unit 偷换，但不能从 `Gamma` 反向唯一恢复 primitive summand。换句话说，只看下游
+payment atom，不足以推出 actual noncanonical constructor 公式。
+
+有效的新压缩是：在已闭合的回流纪律下，当前公式剩余等价改写为：
+
+```text
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。
+```
+
+它要求在推前之前，逐个正质量 clean-core payment atom 给出已登记的 primitive preimage summand：
+包括 `alpha/delta`、branch key、`u/v` map、phase/sign/local factor、同一 formal unit 注册和系数恒等式。
+若空纤维、口径冲突、超预算、thin block 或来源未登记，则必须给出命名 return tag，不能留作新的 clean-core 终端。
+
+最新完全自足输入基变为：
+
+```text
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+外部路线的条件输入基变为：
+
+```text
+(RegisteredPrimitivePrePushforwardFiberEmitterAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+因此这一步是真正的边界推进：它排除了“从 Gamma 自动反推来源”的错误路线，并把自足剩余压到一个
+可审查、可验收、可失败回流的 pre-pushforward 纤维 emitter 输入。当前材料仍未证明该 emitter，
+所以行/列无条件命题仍未闭合。
