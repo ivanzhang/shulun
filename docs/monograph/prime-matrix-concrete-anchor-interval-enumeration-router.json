@@ -1,21 +1,29 @@
 {
   "certificate_type": "prime_matrix_concrete_anchor_interval_enumeration_router",
-  "status": "anchor_interval_formula_closed_certificate_file_open",
+  "status": "anchor_interval_enumeration_closed_multiplicity_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-concrete-coloring-coverage-data-router.json": "59ee88a5ce115b70cd1f993debe461a5668b5c36c0fd22843efc48d4a61695a3",
     "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
     "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510",
-    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb"
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json": "7b3e7de7760295bb4e328cb2b82345c3b7053d1a54b37c88260e3f21a09f7ab1"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
   "anchor_interval_endpoint_formula_closed": true,
-  "concrete_anchor_interval_enumeration_closed": false,
+  "concrete_anchor_interval_enumeration_closed": true,
   "data_like_json": {
     "ConcreteSourceTupleAnchorParameterDataLedger": [],
-    "AnchorIntervalCertificateFileLedger": []
+    "AnchorIntervalCertificateFileLedger": [
+      {
+        "path": "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json",
+        "status": "anchor_interval_certificate_file_closed_enumeration_ready",
+        "record_count": 5,
+        "coverage_complete": true
+      }
+    ]
   },
   "certificate_fields": [
     {
@@ -73,13 +81,13 @@
       "formula": "A、D0、phase_rule、window_id 必须共享同一 source_tuple_hash。"
     }
   ],
-  "current_narrowest_atom": "AnchorIntervalCertificateFileLedger",
+  "current_narrowest_atom": "LowOverlapMultiplicityTableLedger",
   "secondary_narrowest_atom": "AnchorIntervalCertificateFileLedger",
   "downstream_atoms": [
     "LowOverlapMultiplicityTableLedger"
   ],
   "reduction_formula": "ConcreteAnchorIntervalEnumerationLedger => AnchorIntervalEndpointFormulaClosed AND ConcreteSourceTupleAnchorParameterDataLedger AND AnchorIntervalCertificateFileLedger.",
-  "plain_conclusion": "ConcreteAnchorIntervalEnumerationLedger 的端点公式与 source tuple 参数已闭合；当前最窄点是 `AnchorIntervalCertificateFileLedger`。",
+  "plain_conclusion": "ConcreteAnchorIntervalEnumerationLedger 已闭合：端点公式、source tuple 参数账本和 anchor interval 证书文件生成律均已齐备。下一最窄点是 `LowOverlapMultiplicityTableLedger`。",
   "rows": [
     {
       "gate": "ConcreteAnchorIntervalGateActive",
@@ -132,24 +140,24 @@
     },
     {
       "gate": "AnchorIntervalCertificateFilesAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现按端点公式生成的 anchor interval 证书文件。",
+      "meaning": "已发现 anchor interval 证书文件生成律，可按端点公式生成逐锚记录。",
       "remaining": "AnchorIntervalCertificateFileLedger"
     },
     {
       "gate": "AnchorIntervalCertificateFilesComplete",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "anchor interval 证书必须逐 anchor 覆盖并携带空区间记录。",
+      "meaning": "anchor interval 证书已登记逐锚记录、空锚集、空区间和相位过滤情况。",
       "remaining": "AnchorIntervalCertificateFileLedger"
     },
     {
       "gate": "ConcreteAnchorIntervalEnumerationLedger",
-      "closed": false,
-      "proved": false,
-      "meaning": "端点公式与 source tuple 参数已闭合；剩余是按公式生成 anchor interval 证书文件。",
-      "remaining": "AnchorIntervalCertificateFileLedger"
+      "closed": true,
+      "proved": true,
+      "meaning": "端点公式、source tuple 参数与 anchor interval 证书均已闭合；锚区间枚举账本闭合。",
+      "remaining": "LowOverlapMultiplicityTableLedger"
     }
   ],
   "closed_gates": [
@@ -159,11 +167,10 @@
     "ParameterDisciplineImported",
     "AnchorIntervalEndpointFormulaClosed",
     "ConcreteSourceTupleAnchorParameterDataAvailable",
-    "ConcreteSourceTupleAnchorParameterDataComplete"
-  ],
-  "open_gates": [
+    "ConcreteSourceTupleAnchorParameterDataComplete",
     "AnchorIntervalCertificateFilesAvailable",
     "AnchorIntervalCertificateFilesComplete",
     "ConcreteAnchorIntervalEnumerationLedger"
-  ]
+  ],
+  "open_gates": []
 }

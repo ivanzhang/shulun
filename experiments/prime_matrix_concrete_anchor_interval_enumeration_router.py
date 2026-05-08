@@ -237,6 +237,16 @@ def build_rows(
     source_complete_gate_closed = source_data_complete or source_tuple_closed
     cert_available = bool(data[CERT_ATOM])
     cert_complete = cert_available and all(item.get("coverage_complete") is True for item in data[CERT_ATOM])
+    cert_available_meaning = (
+        "已发现 anchor interval 证书文件生成律，可按端点公式生成逐锚记录。"
+        if cert_available
+        else "仓库尚未发现按端点公式生成的 anchor interval 证书文件。"
+    )
+    cert_complete_meaning = (
+        "anchor interval 证书已登记逐锚记录、空锚集、空区间和相位过滤情况。"
+        if cert_complete
+        else "anchor interval 证书必须逐 anchor 覆盖并携带空区间记录。"
+    )
     ledger_closed = formula_closed and source_complete_gate_closed and cert_complete
     ledger_remaining = CERT_ATOM if source_complete_gate_closed else SOURCE_ATOM
     ledger_meaning = (
@@ -302,14 +312,14 @@ def build_rows(
             "AnchorIntervalCertificateFilesAvailable",
             cert_available,
             False,
-            "仓库尚未发现按端点公式生成的 anchor interval 证书文件。",
+            cert_available_meaning,
             CERT_ATOM,
         ),
         row(
             "AnchorIntervalCertificateFilesComplete",
             cert_complete,
             False,
-            "anchor interval 证书必须逐 anchor 覆盖并携带空区间记录。",
+            cert_complete_meaning,
             CERT_ATOM,
         ),
         row(
@@ -348,13 +358,18 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         )
     )
     plain_conclusion = (
-        "ConcreteAnchorIntervalEnumerationLedger 的端点公式与 source tuple 参数已闭合；"
-        f"当前最窄点是 `{CERT_ATOM}`。"
-        if source_tuple_closed and not ledger_closed
+        "ConcreteAnchorIntervalEnumerationLedger 已闭合：端点公式、source tuple 参数账本和 anchor interval 证书文件生成律均已齐备。"
+        f"下一最窄点是 `{MULTIPLICITY_ATOM}`。"
+        if ledger_closed
         else (
+            "ConcreteAnchorIntervalEnumerationLedger 的端点公式与 source tuple 参数已闭合；"
+            f"当前最窄点是 `{CERT_ATOM}`。"
+            if source_tuple_closed
+            else (
             "ConcreteAnchorIntervalEnumerationLedger 的端点公式已经闭合：在同一 source tuple 下，"
             "每个 anchor a 的 J_a 由 [L,R]、[D0,2D0) 与 phase_rule 唯一确定。当前缺的不是公式，"
             f"而是逐 formal unit 的 concrete source tuple/anchor 参数数据；新的最窄点是 `{SOURCE_ATOM}`。"
+            )
         )
     )
     return {
@@ -383,6 +398,27 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
+    if result["concrete_anchor_interval_enumeration_closed"]:
+        next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。"
+        boundary_note = (
+            "审稿边界：本步回收 anchor interval 证书文件并关闭锚区间枚举账本；"
+            "仍不关闭行列无条件定理。"
+        )
+    elif result["current_narrowest_atom"] == CERT_ATOM:
+        next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 `{MULTIPLICITY_ATOM}`。"
+        boundary_note = (
+            "审稿边界：本步吸收已闭合 source tuple 参数账本；仍不提交 anchor interval 证书文件，"
+            "也不关闭行列无条件定理。"
+        )
+    else:
+        next_note = (
+            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 "
+            f"`{result['secondary_narrowest_atom']}` 和 `{MULTIPLICITY_ATOM}`。"
+        )
+        boundary_note = (
+            "审稿边界：本步只关闭锚区间端点公式，不提交 concrete source tuple 数据，"
+            "也不关闭行列无条件定理。"
+        )
     lines = [
         "# Prime Matrix concrete 锚区间枚举路由器",
         "",
@@ -466,9 +502,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 6. 下一步",
             "",
-            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 `{MULTIPLICITY_ATOM}`。",
+            next_note,
             "",
-            "审稿边界：本步吸收已闭合 source tuple 参数账本；仍不提交 anchor interval 证书文件，也不关闭行列无条件定理。",
+            boundary_note,
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

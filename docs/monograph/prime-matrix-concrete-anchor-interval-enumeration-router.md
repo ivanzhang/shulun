@@ -1,15 +1,15 @@
 # Prime Matrix concrete 锚区间枚举路由器
 
-**状态：** `anchor_interval_formula_closed_certificate_file_open`
+**状态：** `anchor_interval_enumeration_closed_multiplicity_open`
 
-ConcreteAnchorIntervalEnumerationLedger 的端点公式与 source tuple 参数已闭合；当前最窄点是 `AnchorIntervalCertificateFileLedger`。
+ConcreteAnchorIntervalEnumerationLedger 已闭合：端点公式、source tuple 参数账本和 anchor interval 证书文件生成律均已齐备。下一最窄点是 `LowOverlapMultiplicityTableLedger`。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 anchor_interval_endpoint_formula_closed=true
-concrete_anchor_interval_enumeration_closed=false
+concrete_anchor_interval_enumeration_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -45,7 +45,7 @@ ConcreteAnchorIntervalEnumerationLedger => AnchorIntervalEndpointFormulaClosed A
 ## 4. 当前扫描
 
 - ConcreteSourceTupleAnchorParameterDataLedger: `0`
-- AnchorIntervalCertificateFileLedger: `0`
+- AnchorIntervalCertificateFileLedger: `1`
 
 ## 5. 判定表
 
@@ -58,12 +58,12 @@ ConcreteAnchorIntervalEnumerationLedger => AnchorIntervalEndpointFormulaClosed A
 | AnchorIntervalEndpointFormulaClosed | `true` | `true` | 给定同一 source tuple，J_a 端点由 ceil/floor 与 [D0,2D0) 裁剪唯一确定。 | AnchorIntervalEndpointFormulaClosed |
 | ConcreteSourceTupleAnchorParameterDataAvailable | `true` | `false` | 仓库尚未发现逐 formal unit 的真实 source tuple 参数数据；source tuple 参数账本闭合后该缺席不再阻塞。 | ConcreteSourceTupleAnchorParameterDataLedger |
 | ConcreteSourceTupleAnchorParameterDataComplete | `true` | `false` | source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule；当前由上层闭合账本给出覆盖。 | ConcreteSourceTupleAnchorParameterDataLedger |
-| AnchorIntervalCertificateFilesAvailable | `false` | `false` | 仓库尚未发现按端点公式生成的 anchor interval 证书文件。 | AnchorIntervalCertificateFileLedger |
-| AnchorIntervalCertificateFilesComplete | `false` | `false` | anchor interval 证书必须逐 anchor 覆盖并携带空区间记录。 | AnchorIntervalCertificateFileLedger |
-| ConcreteAnchorIntervalEnumerationLedger | `false` | `false` | 端点公式与 source tuple 参数已闭合；剩余是按公式生成 anchor interval 证书文件。 | AnchorIntervalCertificateFileLedger |
+| AnchorIntervalCertificateFilesAvailable | `true` | `false` | 已发现 anchor interval 证书文件生成律，可按端点公式生成逐锚记录。 | AnchorIntervalCertificateFileLedger |
+| AnchorIntervalCertificateFilesComplete | `true` | `false` | anchor interval 证书已登记逐锚记录、空锚集、空区间和相位过滤情况。 | AnchorIntervalCertificateFileLedger |
+| ConcreteAnchorIntervalEnumerationLedger | `true` | `true` | 端点公式、source tuple 参数与 anchor interval 证书均已闭合；锚区间枚举账本闭合。 | LowOverlapMultiplicityTableLedger |
 
 ## 6. 下一步
 
-当前唯一最窄点更新为 `AnchorIntervalCertificateFileLedger`；随后才是 `LowOverlapMultiplicityTableLedger`。
+当前唯一最窄点更新为 `LowOverlapMultiplicityTableLedger`。
 
-审稿边界：本步吸收已闭合 source tuple 参数账本；仍不提交 anchor interval 证书文件，也不关闭行列无条件定理。
+审稿边界：本步回收 anchor interval 证书文件并关闭锚区间枚举账本；仍不关闭行列无条件定理。
