@@ -6879,3 +6879,75 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标转到 `DLSShortWindowSAEBoundOrNamedReturn`：证明 short-window SAE 不能持续支付
 DLS/BES 危险交集，或把它物化为有限 packet / persistent PDEC schema。
+
+## Prime Matrix DLS short-window SAE 命名回流 schema 路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_dls_shortwindow_sae_return_schema_router.py
+docs/monograph/prime-matrix-dls-shortwindow-sae-return-schema-router.md/json
+```
+
+该路由器直接攻击 `DLSShortWindowSAEBoundOrNamedReturn`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+dls_shortwindow_return_schema_closed=true；
+dls_shortwindow_specific_gap_removed=true；
+dls_shortwindow_numeric_bound_proved=false；
+pdec_or_sae_terminal_exclusion_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=DLSShortWindowSAEBoundOrNamedReturn；
+terminal_gap_after_router=NoDLSShortWindowSpecificSAEGap_AfterLocalPacketOrPDECReturn。
+```
+
+DLS/BES 危险交集若落入 short-window 字母表，不能作为无名同步失败停留。固定短窗是有限局部覆盖对象，
+有候选集 `C(I)` 与 blocker 投影；孤立时必须提交 `LocalSurvivor/SAE` packet，持久同签名复现时必须
+提交同 formal unit 的 `PDEC` schema，层级逃逸时必须进入 `CleanKLS/DLS` 或下降回流。
+
+替换律为：
+
+```text
+DLSShortWindowSAEBoundOrNamedReturn
+  =>
+NoDLSShortWindowSpecificSAEGap_AfterLocalPacketOrPDECReturn。
+```
+
+已经闭合的门为：
+
+```text
+DLSShortWindowGateActive；
+ShortWindowAlphabetPinned；
+FiniteLocalWindowObject；
+SAELocalDescentWellFounded；
+PacketGenerationDichotomy；
+FutureSparsePacketBoundaryImported；
+PersistentShortWindowAdmitsPDEC；
+NoDLSShortWindowSpecificFourthExit；
+DLSShortWindowSAEBoundOrNamedReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+DLSPointLoadColumnCRTBoundOrNamedReturn；
+DLSFixedWheelUnitPeakDilutionOrPDECReturn；
+GlobalPDECorSparseTerminalExclusion。
+```
+
+这一步只删除 short-window 专属 gap，不证明数值 short-window bound。更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标转到 `DLSPointLoadColumnCRTBoundOrNamedReturn`：证明 point-load 不能持续支付
+DLS/BES 危险交集，或把它物化为 `ColumnCRT/displacement PDEC` 或 sparse packet 回流。

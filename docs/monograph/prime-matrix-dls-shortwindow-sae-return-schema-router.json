@@ -1,0 +1,132 @@
+{
+  "certificate_type": "dls_shortwindow_sae_return_schema_router",
+  "closed_gates": [
+    "DLSShortWindowGateActive",
+    "ShortWindowAlphabetPinned",
+    "FiniteLocalWindowObject",
+    "SAELocalDescentWellFounded",
+    "PacketGenerationDichotomy",
+    "FutureSparsePacketBoundaryImported",
+    "PersistentShortWindowAdmitsPDEC",
+    "NoDLSShortWindowSpecificFourthExit",
+    "DLSShortWindowSAEBoundOrNamedReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dls_shortwindow_numeric_bound_proved": false,
+  "dls_shortwindow_return_schema_closed": true,
+  "dls_shortwindow_specific_gap_removed": true,
+  "empirical_absence_not_used": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "DLSPointLoadColumnCRTBoundOrNamedReturn",
+  "open_gates": [
+    "DLSPointLoadColumnCRTBoundOrNamedReturn",
+    "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+    "GlobalPDECorSparseTerminalExclusion"
+  ],
+  "pdec_or_sae_terminal_exclusion_proved": false,
+  "plain_conclusion": "本步闭合的是 DLS short-window SAE 的专属命名回流 schema：固定短窗是有限局部覆盖对象，孤立时必须提交 LocalSurvivor/SAE packet，持久时必须提交 PDEC schema，层级逃逸时必须进入 CleanKLS/DLS 或下降回流。因此 short-window 专属无名出口被删除；但数值 short-window bound、PDEC/sparse 终端排斥和其他 DLS 微输入仍未证明。",
+  "remaining_global_terminal_guard": "FutureExplicitPrimitivePDECSchema_OR_FutureExplicitSparsePacketExtractorSchema_if_materialized",
+  "replacement": {
+    "DLSShortWindowSAEBoundOrNamedReturn": "NoDLSShortWindowSpecificSAEGap_AfterLocalPacketOrPDECReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DLSShortWindowGateActive",
+      "meaning": "当前输入基仍含 DLSShortWindowSAEBoundOrNamedReturn，且它来自 BES/DLS 三出口字母表。",
+      "proved": true,
+      "remaining": "本步只攻击 short-window 专属无名出口。"
+    },
+    {
+      "closed": true,
+      "gate": "ShortWindowAlphabetPinned",
+      "meaning": "DLS 危险交集若落入 short-window，只允许 SAE/LocalSurvivor 或 persistent sparse PDEC。",
+      "proved": true,
+      "remaining": "不能再作为 BES 同步失败黑箱。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteLocalWindowObject",
+      "meaning": "固定孤窗 I 有有限候选集 C(I) 与 blocker 投影，可形成 LocalSurvivorCert。",
+      "proved": true,
+      "remaining": "证书未填时仍需 packet/schema。"
+    },
+    {
+      "closed": true,
+      "gate": "SAELocalDescentWellFounded",
+      "meaning": "固定孤窗内局部势函数有限下降；沿无限反例族复现则由鸽巢转为 PDEC。",
+      "proved": true,
+      "remaining": "PDEC 排斥仍未证明。"
+    },
+    {
+      "closed": true,
+      "gate": "PacketGenerationDichotomy",
+      "meaning": "不可立即核验的孤窗只剩 finite packet、持久签名 PDEC、层级逃逸 CleanKLS/DLS 或下降回流。",
+      "proved": true,
+      "remaining": "未来 packet 必须显式提交。"
+    },
+    {
+      "closed": true,
+      "gate": "FutureSparsePacketBoundaryImported",
+      "meaning": "当前 sparse/LocalSurvivor 前沿清零；未来新增 sparse route 必须提交 extractor schema。",
+      "proved": true,
+      "remaining": "不是全局 sparse family 无条件排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentShortWindowAdmitsPDEC",
+      "meaning": "short-window 若在同 formal unit 上持久复现，必须作为显式 PDEC schema 准入。",
+      "proved": true,
+      "remaining": "PDEC family 无条件排斥仍开放。"
+    },
+    {
+      "closed": true,
+      "gate": "NoDLSShortWindowSpecificFourthExit",
+      "meaning": "short-window 只有有限 packet、持久 PDEC、CleanKLS/DLS 或下降回流，没有专属第四出口。",
+      "proved": true,
+      "remaining": "NoDLSShortWindowSpecificSAEGap_AfterLocalPacketOrPDECReturn"
+    },
+    {
+      "closed": true,
+      "gate": "DLSShortWindowSAEBoundOrNamedReturn",
+      "meaning": "该硬点作为 short-window 命名回流 schema 已闭合。",
+      "proved": true,
+      "remaining": "不等于数值 short-window bound 已证明。"
+    },
+    {
+      "closed": false,
+      "gate": "DLSPointLoadColumnCRTBoundOrNamedReturn",
+      "meaning": "PointLoad/ColumnCRT 微输入仍在最新输入基中，下一步优先攻击。",
+      "proved": false,
+      "remaining": "DLSPointLoadColumnCRTBoundOrNamedReturn"
+    },
+    {
+      "closed": false,
+      "gate": "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+      "meaning": "Fixed-wheel 单位类峰稀释或 PDEC 回流仍是独立全局微输入。",
+      "proved": false,
+      "remaining": "DLSFixedWheelUnitPeakDilutionOrPDECReturn"
+    },
+    {
+      "closed": false,
+      "gate": "GlobalPDECorSparseTerminalExclusion",
+      "meaning": "若实际产生新 persistent PDEC 或 sparse packet，仍需提交并排斥相应证书。",
+      "proved": false,
+      "remaining": "FutureExplicitPrimitivePDECSchema / FutureExplicitSparsePacketExtractorSchema。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-bes-dls-named-return-router.md": "cad3cb3612620cf77ca311739ff0829a1f9ba142b1f51b1ceb0e0e095a321b80",
+    "docs/monograph/prime-matrix-early-band-local-survivor-return-schema-router.json": "2d73378013a2c7cbf4c2551ed2393cb1a5d350e73f2fe571f3b0d6d12c1f098d",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.md": "9e7718a47c3527572bbc41c31c9a2d08a79989ab200041bde1c74bb55ec5292a",
+    "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md": "b07a043cb6ebfee2e413a8d5c9cc768f3670ca3f9b75a7cee05c2def043c496c",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-sae-local-certificate-reduction.md": "927714d839c2ba0a20380dbea99fc5ab474dbf096bdd4f14fe770c9a523c60c7"
+  },
+  "status": "dls_shortwindow_sae_return_schema_closed_numeric_bound_open",
+  "terminal_gap_after_router": "NoDLSShortWindowSpecificSAEGap_AfterLocalPacketOrPDECReturn",
+  "terminal_gap_before_router": "DLSShortWindowSAEBoundOrNamedReturn"
+}
