@@ -7299,3 +7299,81 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标为 `CleanCoreOriginalCoefficientGenerationLedgerAndReturn`：提交 actual clean-core
 `alpha/delta` 的完整 pre-Cauchy 原始生成表；缺失来源、路径超预算、thin block 或抵消必须命名回流。
+
+## Prime Matrix clean-core 来源环切断路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_clean_core_source_loop_cut_router.py
+docs/monograph/prime-matrix-clean-core-source-loop-cut-router.md/json
+```
+
+该路由器审查 `CleanCoreOriginalCoefficientGenerationLedgerAndReturn` 是否已经能被既有材料自我闭合。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+hypothetical_chain_only=true；
+source_loop_detected=true；
+circular_reverse_derivation_rejected=true；
+source_loop_cut_closed=true；
+acyclic_pre_cauchy_source_seed_proved=false；
+clean_core_original_generation_ledger_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=CleanCoreOriginalCoefficientGenerationLedgerAndReturn；
+terminal_gap_after_router=AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn。
+```
+
+检测到的来源环为：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+  -> CleanCorePrimitiveSourceConstructorAdmissionAndReturn
+  -> ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+  -> RegisteredPrimitivePrePushforwardFiberEmitterAndReturn
+  -> CleanCoreOriginalCoefficientGenerationLedgerAndReturn。
+```
+
+这给出一个真正有用的切断：假设早期零行反例不能把自身 payment skeleton、有限投影塔、斜线覆盖图或样本缺席
+当作 primitive source 的生成证明。若 clean-core 分支仍要保留，必须给出无环的 pre-Cauchy actual
+noncanonical primitive source seed；否则它不是合法 clean-core 终端，只能命名回流。
+
+替换律为：
+
+```text
+CleanCoreOriginalCoefficientGenerationLedgerAndReturn
+  =>
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn。
+```
+
+已经闭合的门为：
+
+```text
+OriginLedgerToConstructorAdmission；
+ConstructorAdmissionToActualNoncanonicalFormula；
+ActualFormulaToRegisteredEmitter；
+RegisteredEmitterBackToOriginLedger；
+CleanCoreSourceLoopDetected；
+CircularReverseDerivationRejected。
+```
+
+仍开放的全局守门项为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn；
+ExplicitModelGapAndFiniteDPRCLedger；
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步仍不是行/列命题无条件证明；它只删除“循环来源证明”这个伪闭合路径。更新后的完全自足输入基为：
+
+```text
+AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标为 `AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn`：给出不依赖 downstream payment 图的
+pre-Cauchy 源种子，或证明任何此类种子都会触发 PDEC/SAE/ColumnCRT/CleanKLS/external spectral 回流。

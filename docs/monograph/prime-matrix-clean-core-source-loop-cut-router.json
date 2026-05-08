@@ -1,0 +1,116 @@
+{
+  "acyclic_pre_cauchy_source_seed_proved": false,
+  "certificate_type": "clean_core_source_loop_cut_router",
+  "circular_reverse_derivation_rejected": true,
+  "clean_core_original_generation_ledger_proved": false,
+  "closed_gates": [
+    "OriginLedgerGateActive",
+    "OriginLedgerToConstructorAdmission",
+    "ConstructorAdmissionToActualNoncanonicalFormula",
+    "ActualFormulaToRegisteredEmitter",
+    "RegisteredEmitterBackToOriginLedger",
+    "CleanCoreSourceLoopDetected",
+    "CircularReverseDerivationRejected",
+    "ExplicitModelGapAndFiniteDPRCLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "latest_conditional_basis": "((AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn",
+  "open_gates": [
+    "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把 CleanCoreOriginalCoefficientGenerationLedgerAndReturn 的循环来源证明路径切断。现有路由只形成 origin ledger -> constructor admission -> actual noncanonical formula -> registered emitter -> origin ledger 的等价环；假设早期零行反例若要保留 clean-core 分支，必须提交不依赖 downstream payment skeleton 的无环 pre-Cauchy noncanonical primitive source seed。若提交不了，该分支不能作为 clean-core 终端，必须回流到 PDEC/SAE/ColumnCRT/CleanKLS 或外部谱输入。",
+  "replacement": {
+    "CleanCoreOriginalCoefficientGenerationLedgerAndReturn": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "OriginLedgerGateActive",
+      "meaning": "最新假设链最窄点已回到 CleanCoreOriginalCoefficientGenerationLedgerAndReturn。",
+      "proved": false,
+      "remaining": "检查它是否能靠既有路由自我闭合。"
+    },
+    {
+      "closed": true,
+      "gate": "OriginLedgerToConstructorAdmission",
+      "meaning": "原始账本必须先给 pre-Cauchy primitive source constructor 准入。",
+      "proved": true,
+      "remaining": "该方向不生成构造器，只说明账本入口。"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorAdmissionToActualNoncanonicalFormula",
+      "meaning": "来源分类防火墙把 canonical/generic/unregistered/external 分流后，只剩 actual noncanonical 公式。",
+      "proved": true,
+      "remaining": "仍需 actual noncanonical primitive formula。"
+    },
+    {
+      "closed": true,
+      "gate": "ActualFormulaToRegisteredEmitter",
+      "meaning": "反向来源函子只给等价改写：actual formula 等价为 registered pre-pushforward emitter。",
+      "proved": true,
+      "remaining": "不能从 payment 图反推来源。"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredEmitterBackToOriginLedger",
+      "meaning": "pre-pushforward emitter 已压回 actual alpha/delta 原始生成账本。",
+      "proved": true,
+      "remaining": "闭合成来源环，但没有生成源种子。"
+    },
+    {
+      "closed": true,
+      "gate": "CleanCoreSourceLoopDetected",
+      "meaning": "现有源侧路由形成 origin ledger -> constructor -> formula -> emitter -> origin ledger 的循环。",
+      "proved": true,
+      "remaining": "循环本身不是证明，必须切断。"
+    },
+    {
+      "closed": true,
+      "gate": "CircularReverseDerivationRejected",
+      "meaning": "假设反例链不能把自身 payment skeleton 或有限投影当作 primitive source 的来源证明。",
+      "proved": true,
+      "remaining": "需要无环 pre-Cauchy 源种子或命名回流。"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn",
+      "meaning": "当前材料尚未提交不依赖 downstream payment 图的 actual noncanonical primitive source seed。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "模型余量/有限 DPRC 账本仍在输入基中，未由来源环切断处理。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.md": "7c1963bc7f0d5292df250e13ecc7fe66d4601565dd4050f5cabe8182659058b6",
+    "docs/monograph/prime-matrix-clean-core-origin-source-admission-router.md": "722a20507f2403281116997119ab7af7755211e05ffe9dbaca2f572861ab5f89",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.md": "f4f0f9eaf0e724404389e74f4eb380f972d74c7422e797c9fe0ec14b231df4ad",
+    "docs/monograph/prime-matrix-prepushforward-emitter-origin-ledger-router.json": "8064030c4c78a35fcc4a07142b7a326f29d1775c590e3901178318445ce3ade4",
+    "docs/monograph/prime-matrix-prepushforward-emitter-origin-ledger-router.md": "b8a89620f8861ba7247e4b2fc98d2e68541eb72d469c020d1faf09343a8b2f44"
+  },
+  "source_loop_cut_closed": true,
+  "source_loop_detected": true,
+  "status": "clean_core_source_loop_cut_to_acyclic_seed_open",
+  "terminal_gap_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn",
+  "terminal_gap_before_router": "CleanCoreOriginalCoefficientGenerationLedgerAndReturn"
+}
