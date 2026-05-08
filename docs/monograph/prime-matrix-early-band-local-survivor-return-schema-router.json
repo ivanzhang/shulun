@@ -1,0 +1,125 @@
+{
+  "certificate_type": "early_band_local_survivor_return_schema_router",
+  "closed_gates": [
+    "EarlyBandLocalSurvivorGateActive",
+    "EarlyZeroCounterexampleBranchGuard",
+    "SAEIndependentTerminalAbsorbed",
+    "LocalSurvivorPacketGenerationDichotomy",
+    "FutureSparsePacketBoundaryImported",
+    "PersistentEarlyBandSignatureAdmitsPDEC",
+    "ShortWindowGlobalInputPreserved",
+    "NoEarlyBandSpecificFourthExit",
+    "EarlyBandLocalSurvivorOrSAEExclusion"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dls_shortwindow_global_input_proved": false,
+  "early_band_local_survivor_return_schema_closed": true,
+  "early_band_specific_gap_removed": true,
+  "empirical_absence_not_used": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "DLSShortWindowSAEBoundOrNamedReturn",
+  "open_gates": [
+    "DLSShortWindowSAEBoundOrNamedReturn",
+    "GlobalPDECorSparseTerminalExclusion"
+  ],
+  "pdec_or_sae_terminal_exclusion_proved": false,
+  "plain_conclusion": "本步闭合的是 early-band LocalSurvivor/SAE 的专属无名出口：在早期零行反例分支中，孤立 early-band 窗口必须物化为有限 LocalSurvivor/SAE packet，持久同签名必须进入 PDEC，层级逃逸必须进入 CleanKLS/DLS。因此 early-band 专属 gap 被删除；但全局 DLSShortWindowSAEBoundOrNamedReturn 与 PDEC/sparse 终端排斥仍未证明。",
+  "remaining_global_terminal_guard": "FutureExplicitPrimitivePDECSchema_OR_FutureExplicitSparsePacketExtractorSchema_if_materialized",
+  "replacement": {
+    "EarlyBandLocalSurvivorOrSAEExclusion": "NoEarlyBandSpecificLocalSurvivorSAEGap_AfterNamedReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EarlyBandLocalSurvivorGateActive",
+      "meaning": "当前输入基仍含 EarlyBandLocalSurvivorOrSAEExclusion，且它来自早期零行反例分支。",
+      "proved": true,
+      "remaining": "本步只攻击 early-band 专属无名出口。"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroCounterexampleBranchGuard",
+      "meaning": "沿用 Assume EarlyZeroRowWithinP；不使用真实样本缺席，也不宣布无条件闭合。",
+      "proved": true,
+      "remaining": "保持反例分支口径。"
+    },
+    {
+      "closed": true,
+      "gate": "SAEIndependentTerminalAbsorbed",
+      "meaning": "SAE 已不是独立终端，只能成为 LocalSurvivor packet、持久 PDEC 或 CleanKLS/DLS 回流。",
+      "proved": true,
+      "remaining": "终端排斥本身仍未证明。"
+    },
+    {
+      "closed": true,
+      "gate": "LocalSurvivorPacketGenerationDichotomy",
+      "meaning": "孤窗若能抽取就是有限 packet；若同签名持久复现则进 PDEC；若层级逃逸则进 CleanKLS/DLS。",
+      "proved": true,
+      "remaining": "未来新增 packet 仍需提交 schema。"
+    },
+    {
+      "closed": true,
+      "gate": "FutureSparsePacketBoundaryImported",
+      "meaning": "当前 sparse/LocalSurvivor 前沿清零；未来新增 sparse 路线必须带 extractor schema。",
+      "proved": true,
+      "remaining": "不是全局 sparse family 无条件排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentEarlyBandSignatureAdmitsPDEC",
+      "meaning": "若 early-band 局部签名在 formal 反例族中持久复现，必须提交同 formal unit PDEC schema。",
+      "proved": true,
+      "remaining": "PDEC 终端家族仍开放。"
+    },
+    {
+      "closed": true,
+      "gate": "ShortWindowGlobalInputPreserved",
+      "meaning": "early-band 孤窗属于 short-window/SAE 字母表；全局 DLSShortWindow 微输入继续保留。",
+      "proved": true,
+      "remaining": "DLSShortWindowSAEBoundOrNamedReturn"
+    },
+    {
+      "closed": true,
+      "gate": "NoEarlyBandSpecificFourthExit",
+      "meaning": "early-band LocalSurvivor/SAE 没有专属第四出口：孤立进 packet，持久进 PDEC，升层进 DLS。",
+      "proved": true,
+      "remaining": "NoEarlyBandSpecificLocalSurvivorSAEGap_AfterNamedReturn"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyBandLocalSurvivorOrSAEExclusion",
+      "meaning": "该硬点作为 early-band 专属命名回流 schema 已闭合。",
+      "proved": true,
+      "remaining": "不等于全局 short-window/SAE 微输入已证明。"
+    },
+    {
+      "closed": false,
+      "gate": "DLSShortWindowSAEBoundOrNamedReturn",
+      "meaning": "全局 short-window SAE bound 或命名回流仍需证明；本步只是删掉 early-band 专属 gap。",
+      "proved": false,
+      "remaining": "DLSShortWindowSAEBoundOrNamedReturn"
+    },
+    {
+      "closed": false,
+      "gate": "GlobalPDECorSparseTerminalExclusion",
+      "meaning": "若实际产生新 persistent PDEC 或 sparse packet，仍需提交并排斥相应证书。",
+      "proved": false,
+      "remaining": "FutureExplicitPrimitivePDECSchema / FutureExplicitSparsePacketExtractorSchema。"
+    }
+  ],
+  "sae_independent_terminal_absorbed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-bes-dls-named-return-router.md": "cad3cb3612620cf77ca311739ff0829a1f9ba142b1f51b1ceb0e0e095a321b80",
+    "docs/monograph/prime-matrix-composite-cofactor-descent-schema-router.json": "84a77af08b5dfac05a75ac9b572c0926443baa76da6fd55d50808bfff8df128c",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.md": "9e7718a47c3527572bbc41c31c9a2d08a79989ab200041bde1c74bb55ec5292a",
+    "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md": "b07a043cb6ebfee2e413a8d5c9cc768f3670ca3f9b75a7cee05c2def043c496c",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md": "e15e466ba60f244fd2d19513951fe6ef9cf0c06fd7a73fbc7ef53fad2d95c79b"
+  },
+  "status": "early_band_local_survivor_schema_closed_global_shortwindow_open",
+  "terminal_gap_after_router": "NoEarlyBandSpecificLocalSurvivorSAEGap_AfterNamedReturn",
+  "terminal_gap_before_router": "EarlyBandLocalSurvivorOrSAEExclusion"
+}

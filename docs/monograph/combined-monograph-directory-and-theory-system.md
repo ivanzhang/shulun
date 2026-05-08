@@ -6807,3 +6807,75 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 复合 cofactor 专属 gap 已删除。下一步最窄目标回到 `EarlyBandLocalSurvivorOrSAEExclusion`。
+
+## Prime Matrix early-band LocalSurvivor/SAE 命名回流 schema 路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_early_band_local_survivor_return_schema_router.py
+docs/monograph/prime-matrix-early-band-local-survivor-return-schema-router.md/json
+```
+
+该路由器直接攻击 `EarlyBandLocalSurvivorOrSAEExclusion`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+early_band_local_survivor_return_schema_closed=true；
+early_band_specific_gap_removed=true；
+pdec_or_sae_terminal_exclusion_proved=false；
+dls_shortwindow_global_input_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=EarlyBandLocalSurvivorOrSAEExclusion；
+terminal_gap_after_router=NoEarlyBandSpecificLocalSurvivorSAEGap_AfterNamedReturn。
+```
+
+在早期零行反例分支中，early-band 的孤窗不能作为独立终端保留：若窗口可抽取，则必须物化为有限
+`LocalSurvivor/SAE` packet；若同一局部签名沿 formal 反例族持久复现，则必须提交同 formal unit
+`PDEC` schema；若签名层级逃逸，则进入 `CleanKLS/DLS` admission。由此没有 early-band 专属第四出口。
+
+替换律为：
+
+```text
+EarlyBandLocalSurvivorOrSAEExclusion
+  =>
+NoEarlyBandSpecificLocalSurvivorSAEGap_AfterNamedReturn。
+```
+
+已经闭合的门为：
+
+```text
+EarlyBandLocalSurvivorGateActive；
+EarlyZeroCounterexampleBranchGuard；
+SAEIndependentTerminalAbsorbed；
+LocalSurvivorPacketGenerationDichotomy；
+FutureSparsePacketBoundaryImported；
+PersistentEarlyBandSignatureAdmitsPDEC；
+ShortWindowGlobalInputPreserved；
+NoEarlyBandSpecificFourthExit；
+EarlyBandLocalSurvivorOrSAEExclusion。
+```
+
+仍开放的全局守门项为：
+
+```text
+DLSShortWindowSAEBoundOrNamedReturn；
+GlobalPDECorSparseTerminalExclusion。
+```
+
+这一步只删除 early-band 专属 gap，不证明全局 short-window/SAE 微输入。更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标转到 `DLSShortWindowSAEBoundOrNamedReturn`：证明 short-window SAE 不能持续支付
+DLS/BES 危险交集，或把它物化为有限 packet / persistent PDEC schema。
