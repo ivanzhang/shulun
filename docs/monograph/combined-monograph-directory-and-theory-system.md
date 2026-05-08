@@ -7093,3 +7093,71 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标转到 `SignedGeometricLedgerVariationBranchLiftAndReturn`：证明 actual signed source 的
 总变差和 branch key 复杂度确由几何账本支配，或把超预算质量回流 `PDEC/SAE/ColumnCRT/CleanKLS`。
+
+## Prime Matrix signed 几何变差锁兼容预算合并路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_signed_geometric_variation_compatibility_merger.py
+docs/monograph/prime-matrix-signed-geometric-variation-compatibility-merger.md/json
+```
+
+该路由器直接攻击 `SignedGeometricLedgerVariationBranchLiftAndReturn` 的独立性。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+signed_variation_independent_atom_removed=true；
+actual_signed_source_phi_compatibility_budget_proved=false；
+actual_noncanonical_constructor_formula_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn；
+terminal_gap_after_router=ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。
+```
+
+`SignedGeometricLedgerVariationBranchLiftAndReturn` 不是独立原子。几何层只给 unsigned payment 账本；
+signed 总变差、绝对支撑、sign refinement 和 branch key 复杂度必须跟 actual signed source 与 `Phi`
+推前恒等式一起审查。逐纤维解积分本身形式闭合，真实硬点是同一 formal unit 内的 actual signed source
+兼容预算。
+
+替换律为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+  =>
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。
+```
+
+已经闭合的门为：
+
+```text
+SignedVariationGateActive；
+SourceIdentityPairedInSameBasis；
+GeometricBudgetSplitImported；
+DisintegrationAutomaticityPinsCombinedGate；
+AlphaDeltaDictionaryFieldsCoverVariation；
+ConstructorSourceFieldsCoverBranchKeys；
+NoIndependentSignedVariationAtom；
+SignedGeometricLedgerVariationBranchLiftAndReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn；
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步只合并输入边界，不证明兼容预算。更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标为 `ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn`：给出 actual noncanonical signed source、
+`Phi` 推前恒等式、总变差/支撑预算和 branch key 预算，或把失败者命名回流。

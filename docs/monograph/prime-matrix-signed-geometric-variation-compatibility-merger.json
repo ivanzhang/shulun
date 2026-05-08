@@ -1,0 +1,113 @@
+{
+  "actual_noncanonical_constructor_formula_proved": false,
+  "actual_signed_source_phi_compatibility_budget_proved": false,
+  "certificate_type": "signed_geometric_variation_compatibility_merger",
+  "closed_gates": [
+    "SignedVariationGateActive",
+    "SourceIdentityPairedInSameBasis",
+    "GeometricBudgetSplitImported",
+    "DisintegrationAutomaticityPinsCombinedGate",
+    "AlphaDeltaDictionaryFieldsCoverVariation",
+    "ConstructorSourceFieldsCoverBranchKeys",
+    "NoIndependentSignedVariationAtom",
+    "SignedGeometricLedgerVariationBranchLiftAndReturn"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn",
+  "open_gates": [
+    "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步没有证明 signed source 兼容预算；它关闭的是一个边界误差：SignedGeometricLedgerVariationBranchLiftAndReturn 不是独立原子，而是 actual signed source、Phi 推前恒等式、总变差/支撑预算和 branch key 预算同一个兼容包的字段。因此 source identity 与 signed variation 合并为 ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。",
+  "replacement": {
+    "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SignedVariationGateActive",
+      "meaning": "当前输入基仍含 SignedGeometricLedgerVariationBranchLiftAndReturn。",
+      "proved": true,
+      "remaining": "检查它是否应独立保留。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceIdentityPairedInSameBasis",
+      "meaning": "同一输入基中已经有 ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn。",
+      "proved": true,
+      "remaining": "signed 变差不能脱离 source/Phi 恒等式单独证明。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometricBudgetSplitImported",
+      "meaning": "几何层只给 unsigned payment 账本；signed 总变差与 branch key 是 source 层字段。",
+      "proved": true,
+      "remaining": "不能由斜线/轮筛几何自动推出。"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationAutomaticityPinsCombinedGate",
+      "meaning": "逐纤维解积分形式上闭合，真实硬点是 actual signed source、Phi 推前、总变差和 branch 预算合包。",
+      "proved": true,
+      "remaining": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaDeltaDictionaryFieldsCoverVariation",
+      "meaning": "alpha/delta 解积分字典已经把 pushforward、variation/support、sign refinement 列为同一字段组。",
+      "proved": true,
+      "remaining": "字段尚未填，不是已经证明。"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorSourceFieldsCoverBranchKeys",
+      "meaning": "actual noncanonical 构造器公式必须发出 branch key、u/v、sign 和 local factor。",
+      "proved": true,
+      "remaining": "构造器公式仍未证明。"
+    },
+    {
+      "closed": true,
+      "gate": "NoIndependentSignedVariationAtom",
+      "meaning": "signed variation lift 不应作为独立原子；它是 actual signed source/Phi compatibility budget 的字段。",
+      "proved": true,
+      "remaining": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "SignedGeometricLedgerVariationBranchLiftAndReturn",
+      "meaning": "该硬点作为独立输入已合并到 ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。",
+      "proved": true,
+      "remaining": "合并不证明兼容预算。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn",
+      "meaning": "当前材料尚未给出 actual signed source、Phi 推前恒等式、总变差和 branch key 预算。",
+      "proved": false,
+      "remaining": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "源侧预算完成后仍需 DStructure/Tail-log4/finite Rankin 独立验收。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "signed_variation_independent_atom_removed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.md": "f72148d267646684a075e08beb4839f4e68a85370f92b769cf1a27d7ee173026",
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.md": "7c1963bc7f0d5292df250e13ecc7fe66d4601565dd4050f5cabe8182659058b6",
+    "docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.md": "d3eaac8258b2e9dd107dadf5012ef56968ddd5b28029520bc887ffe78763cff0",
+    "docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.md": "89adb4e8b44fbc1a46063d29ad9f9e4d6a6db1c322304753284de70b2d79dd7d",
+    "docs/monograph/prime-matrix-dls-fixedwheel-pdec-return-schema-router.json": "21fcbffa863b000c0d35748caf262362ea070bcfbeed0c244c5c156328b8e410"
+  },
+  "status": "signed_variation_independent_atom_merged_compatibility_budget_open",
+  "terminal_gap_after_router": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn",
+  "terminal_gap_before_router": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn"
+}
