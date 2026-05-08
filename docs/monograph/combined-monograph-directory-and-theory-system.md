@@ -6532,3 +6532,71 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 下一步最窄目标更新为 `AnchorEndpointLowModPDECFinitePhaseExclusion`：固定 `D` 后，低模项是有限 CRT 相位函数；若它能持续承担 `-theta G_x` 级负缺陷，就必须形成 fixed-wheel/lowphase PDEC 坏相位。下一步要排斥这个坏相位，或把它登记为可处理 PDEC 证书。
+
+## Prime Matrix anchor 低模端点相位 fixed-wheel 准入路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_anchor_lowmod_fixedwheel_admission_router.py
+docs/monograph/prime-matrix-anchor-lowmod-fixedwheel-admission-router.md/json
+```
+
+该路由器直接攻击 `AnchorEndpointLowModPDECFinitePhaseExclusion`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+anchor_lowmod_independent_input_removed=true；
+dls_fixedwheel_input_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=AnchorEndpointLowModPDECFinitePhaseExclusion；
+terminal_gap_after_router=DLSFixedWheelUnitPeakDilutionOrPDECReturn。
+```
+
+固定 `D` 后，`E_{x,<=D}` 是有限 CRT 相位函数，必须放入同一个 lowmod formal unit `G_B=Z/Q_BZ`。LowMod 有限弧 cap 已经归约到 fixed-wheel/new-layer/flat DLS 三类；本分支是固定轮切片，所以准入既有 fixed-wheel/LowPhase PDEC 输入，而不是新增 anchor 专属低模原子。
+
+替换律为：
+
+```text
+AnchorEndpointLowModPDECFinitePhaseExclusion
+  =>
+DLSFixedWheelUnitPeakDilutionOrPDECReturn。
+```
+
+已经闭合的门为：
+
+```text
+AnchorLowModGateActive；
+FiniteCRTPhasePinned；
+SameFormalUnitLowModProtocolImported；
+FiniteArcReductionImported；
+FixedWheelLowPhaseTargetAvailable；
+AnchorLowModIndependentInputRemoved。
+```
+
+开放门为：
+
+```text
+DLSFixedWheelUnitPeakDilutionOrPDECReturn；
+AnchorEndpointTailCorePDECOrFiberSaturation。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND (AnchorEndpointTailCorePDECOrFiberSaturation
+     OR AnchorFiberSaturationPDECOrSAEReturn)
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+anchor 专属最窄目标更新为 `AnchorEndpointTailCorePDECOrFiberSaturation`。全局层面仍需证明既有 `DLSFixedWheelUnitPeakDilutionOrPDECReturn`。

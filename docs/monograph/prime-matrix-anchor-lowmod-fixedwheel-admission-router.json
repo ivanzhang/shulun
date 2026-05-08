@@ -1,0 +1,96 @@
+{
+  "anchor_lowmod_independent_input_removed": true,
+  "certificate_type": "anchor_lowmod_fixedwheel_admission_router",
+  "closed_gates": [
+    "AnchorLowModGateActive",
+    "FiniteCRTPhasePinned",
+    "SameFormalUnitLowModProtocolImported",
+    "FiniteArcReductionImported",
+    "FixedWheelLowPhaseTargetAvailable",
+    "AnchorLowModIndependentInputRemoved"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dls_fixedwheel_input_proved": false,
+  "empirical_absence_not_used": true,
+  "global_open_input_reused": "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND (AnchorEndpointTailCorePDECOrFiberSaturation OR AnchorFiberSaturationPDECOrSAEReturn) AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND (AnchorEndpointTailCorePDECOrFiberSaturation OR AnchorFiberSaturationPDECOrSAEReturn) AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "AnchorEndpointTailCorePDECOrFiberSaturation",
+  "open_gates": [
+    "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+    "AnchorEndpointTailCorePDECOrFiberSaturation"
+  ],
+  "plain_conclusion": "本步证明 anchor 低模端点坏相位不是新输入：固定 D 后它是有限 CRT 相位函数，按同 formal unit 准入既有 fixed-wheel/LowPhase PDEC 输入。该步删除独立 anchor 低模剩余，但不证明 DLSFixedWheelUnitPeakDilutionOrPDECReturn。",
+  "replacement": {
+    "AnchorEndpointLowModPDECFinitePhaseExclusion": "DLSFixedWheelUnitPeakDilutionOrPDECReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AnchorLowModGateActive",
+      "meaning": "上一层最新最窄目标是 AnchorEndpointLowModPDECFinitePhaseExclusion。",
+      "proved": true,
+      "remaining": "本步只判断它是否是独立新输入。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteCRTPhasePinned",
+      "meaning": "固定 D 后，E_{x,<=D} 是有限 CRT 相位函数。",
+      "proved": true,
+      "remaining": "可放入固定轮 formal unit。"
+    },
+    {
+      "closed": true,
+      "gate": "SameFormalUnitLowModProtocolImported",
+      "meaning": "LowMod PDEC 容量失败已有同 formal unit 协议 G_B=Z/Q_BZ。",
+      "proved": true,
+      "remaining": "anchor 低模坏相位不允许跨口径拼接。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteArcReductionImported",
+      "meaning": "LowMod 有限弧 cap 已归约到 fixed-wheel/new-layer/flat DLS 三类。",
+      "proved": true,
+      "remaining": "固定 D 的 anchor 低模坏相位属于 fixed-wheel slice。"
+    },
+    {
+      "closed": true,
+      "gate": "FixedWheelLowPhaseTargetAvailable",
+      "meaning": "既有 LowPhase 路由已经把 fixed-wheel 单位类峰命名为 DLSFixedWheelUnitPeakDilutionOrPDECReturn。",
+      "proved": false,
+      "remaining": "该目标尚未证明。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorLowModIndependentInputRemoved",
+      "meaning": "AnchorEndpointLowModPDECFinitePhaseExclusion 不是独立剩余，准入既有 fixed-wheel PDEC/稀释输入。",
+      "proved": true,
+      "remaining": "DLSFixedWheelUnitPeakDilutionOrPDECReturn"
+    },
+    {
+      "closed": false,
+      "gate": "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+      "meaning": "仍未证明 fixed-wheel 单位峰不能持续支付反例缺陷，或失败必给 PDEC 回流。",
+      "proved": false,
+      "remaining": "既有全局 LowPhase 微输入。"
+    },
+    {
+      "closed": false,
+      "gate": "AnchorEndpointTailCorePDECOrFiberSaturation",
+      "meaning": "低模独立性删除后，anchor 端点分支仍需处理高模 tail-core 或纤维饱和。",
+      "proved": false,
+      "remaining": "下一步 anchor 专属最窄目标。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-endpoint-lowmod-tail-router.json": "9e44366b4e55c88e0c65f4f70299e9458c50267c0b082a960edebd868c48b2e9",
+    "docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.md": "aaf7e9075dab7deee685b6b539b88e48b409eadafc3994fd4ecfdbee8e7f765a",
+    "docs/monograph/prime-matrix-lowmod-finite-arc-cap-reduction-router.md": "247dbdecbcd9d09fdc94548a1d77c505cebaab1a8cb51403fa78d93eff858198",
+    "docs/monograph/prime-matrix-lowmod-pdec-capacity-failure-router.md": "a7577b978f7c78be298ac3b9fc1609ea105bd881f0bcb31ffef74899735a63c3"
+  },
+  "status": "anchor_lowmod_endpoint_phase_admitted_to_fixedwheel_pdec",
+  "terminal_gap_after_router": "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+  "terminal_gap_before_router": "AnchorEndpointLowModPDECFinitePhaseExclusion"
+}
