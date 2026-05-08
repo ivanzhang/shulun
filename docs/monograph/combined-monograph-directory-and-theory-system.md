@@ -4769,6 +4769,78 @@ EarlyZeroTerminalExclusionPackage
 该 overlay 不改变当前 new-layer/DLS/source/DStructure 完全自足输入基；它只是把“P 行以内零行”
 反例分支压入已有终端排斥义务。
 
+继续新增：
+
+```text
+experiments/prime_matrix_early_zero_carry_shell_router.py
+docs/monograph/prime-matrix-early-zero-carry-shell-router.md/json
+```
+
+该路由器继续攻击早期零行终端包中的 primitive PDEC 容量项。核心是把未完成高素斜线补洞从
+“任意高素覆盖”压成一个精确的双高因子带进位壳。
+
+若 `1<=x<P`，`c in R_x`，且该残洞被未完成高素斜线补掉，则
+
+```text
+xP+c = q m,   x<q<P。
+```
+
+由于 `c in R_x`，`xP+c` 没有不超过 `x` 的素因子，所以 `m>x`；又 `q>=x+1`，故
+
+```text
+m < (x+1)P/(x+1)=P。
+```
+
+令
+
+```text
+h=P-x,  q=P-a,  m=P-b,  k=floor(ab/P)。
+```
+
+则 `1<=a,b<h`，且
+
+```text
+(P-a)(P-b)=P(P-a-b+k)+(ab mod P)。
+```
+
+与 `xP+c=(P-h)P+c` 比较得到精确恒等式：
+
+```text
+h = a+b-k；
+c = ab mod P；
+k = floor(ab/P)。
+```
+
+这说明早期零行的高补洞支撑不再是任意列集合，而只能落在由 `h,k` 索引的有限 carry shell 上。
+当 `h<sqrt(P)` 时，`ab<h^2<P`，所以 `k=0`，立即恢复底部带二次缺口曲线：
+
+```text
+a+b=h；
+c=ab=a(h-a)。
+```
+
+样本审计 `P=101,499,997` 的全行高补洞原子均满足：
+
+```text
+all_factor_windows_ok=true；
+all_carry_identities_ok=true；
+all_bottom_bands_have_zero_carry=true。
+```
+
+该样本只用于防止口径错误；恒等式本身由代数比较证明。于是
+`EarlyZeroPrimitivePDECBudgetInequality` 被进一步改写为：
+
+```text
+CarryShellPrimitiveCapacityBoundOrPDECReturn
+  = CarryShellPrimitiveCapacityBound
+    OR CarryShellPersistentConcentrationPDECReturn
+    OR CarryShellSparseLocalSurvivorOrSAEReturn
+    OR CarryShellDisplacementColumnCRTReturn。
+```
+
+新的最窄未闭合点是 `CarryShellPrimitiveCapacityBound`：证明每个 `h` 壳的双高因子可用列容量
+不能吃掉整个 `R_x`，或者一旦吃掉就强制产生可排斥的 PDEC/SAE/ColumnCRT 证书。
+
 条件输入基为：
 
 ```text
