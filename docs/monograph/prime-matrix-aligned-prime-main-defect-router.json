@@ -1,0 +1,101 @@
+{
+  "buchstab_constants_standalone_rejected": true,
+  "certificate_type": "aligned_prime_main_defect_router",
+  "closed_gates": [
+    "VariableRowDimensionGapImported",
+    "PrimeFreeRowImpliesEDAFailure",
+    "PositiveMainEndpointDefectImported",
+    "BuchstabConstantsNotStandalone",
+    "BKDECBridgeCompatibility",
+    "TailCoreBucketCompatibility",
+    "DirectedEndpointDefectSchema"
+  ],
+  "exact_implication": [
+    "PrimeSurvivors_x=0",
+    "=> EDA failure at the same aligned row x",
+    "=> positive-main endpoint defect by EDA-BK",
+    "=> LowMod endpoint CRTDefect OR Tail/Core concentration",
+    "=> named PDEC/SAE/ColumnCRT/Tail-anchor exits; no unnamed Buchstab exit"
+  ],
+  "lowmod_tail_defect_exclusions_closed": false,
+  "open_gates": [
+    "LowModAndTailExclusion"
+  ],
+  "plain_conclusion": "本步把 `UniformBuchstabOnePrimeBranchLowerBound` 从模型常数问题改写为精确缺陷二分：若某个对齐行的一素分支为零，它就是 EDA 失败行；EDA-BK 已迫使该行产生正主项端点缺陷，并进入 LowMod endpoint CRTDefect 或 Tail/Core concentration。因此 Buchstab 常数本身不是终局证明，真正剩余是排斥这两个命名出口。",
+  "previous_terminal_gap": "AlignedPrimeMainBuchstabBranchLowerBoundOrDefectReturn",
+  "prime_free_row_to_edabk_defect_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "VariableRowDimensionGapImported",
+      "meaning": "上一轮已证明 PrimeSurvivors_x=G_x(P)-B_x(P)。",
+      "output": "一素主分支为零就是变量行维数差失败。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PrimeFreeRowImpliesEDAFailure",
+      "meaning": "若 sqrt(P)<=x<P 且 PrimeSurvivors_x=0，则该 P 对齐行没有素数，正是 EDA 失败行。",
+      "output": "可直接调用 EDA-BK endpoint defect dichotomy。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PositiveMainEndpointDefectImported",
+      "meaning": "EDA-BK 已证明任一失败行给出正主项端点缺陷，并二分为 LowMod 或 Tail。",
+      "output": "LowMod endpoint CRTDefect or Tail/Core concentration。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "BuchstabConstantsNotStandalone",
+      "meaning": "普通 Buchstab/Brun/Selberg 常数只给模型主项；在 H=P,z=P 时普通下界筛 level 不足。",
+      "output": "不能把 UniformBuchstabConstants 当成独立闭合证明。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "BKDECBridgeCompatibility",
+      "meaning": "BPN-BK 链条已把大端点 sawtooth 缺陷桥接到 Directed Endpoint CRTDefect。",
+      "output": "LowMod 分支可接 PDEC/SAE/DEC 审稿门。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "TailCoreBucketCompatibility",
+      "meaning": "大尾项失败已定位为 TailCoreBucket/CoreK-Density，再进入 Tail-anchor 或 distributed corridor。",
+      "output": "Tail/Core 分支不再是自由误差。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "DirectedEndpointDefectSchema",
+      "meaning": "DEC/OSPC 文档已给出有向端点 CRT 缺陷的 schema；但 schema 不是排斥。",
+      "output": "DirectedEndpointCRTDefectPDECSAEExclusion remains open。",
+      "proved": true
+    },
+    {
+      "closed": false,
+      "gate": "LowModAndTailExclusion",
+      "meaning": "尚未证明 LowMod endpoint CRTDefect 与 Tail/Core concentration 均不可持续或必被 SAE/PDEC 排除。",
+      "output": "LowModEndpointCRTDefectExclusion AND TailCoreConcentrationAbsorption。",
+      "proved": false
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-bpn-bk-selberg-route.md": "377e0c33124ac43a187c69652174aba917da18e179a0e9be2f59590e7a9c2dbf",
+    "docs/monograph/prime-matrix-dec-ospc-exclusion-hardpoint.md": "d62bb2237dda0a3dffd3d085f6b0375fbef7a203f4bf8f82b6eb73a2fbe3a963",
+    "docs/monograph/prime-matrix-eda-bk-lowmod-tail-dichotomy.md": "47a873deea7309953622f8ce20dca1ce8db8fd415037da45289c1215b5c86380",
+    "docs/monograph/prime-matrix-variable-row-dimension-gap-router.json": "d59eda9a689ca6c0eff85fd2338d7a698c149c43db1e2b88f4bc9abbd0afa724"
+  },
+  "status": "aligned_prime_main_reduced_to_lowmod_tail_defect_exclusions",
+  "terminal_gap_after_router": "LowModTailCoreDefectExclusionPackage",
+  "terminal_gap_expansion": [
+    "LowModEndpointCRTDefectExclusionOrPDEC",
+    "TailCoreConcentrationAbsorptionOrTailAnchorPDEC",
+    "SparseSingleWindowSAEExclusion",
+    "ColumnDisplacementReusePDEC",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}

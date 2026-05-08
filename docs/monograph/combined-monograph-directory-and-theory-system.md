@@ -5525,3 +5525,67 @@ AlignedPrimeMainBuchstabBranchLowerBoundOrDefectReturn
 
 含义是：若不能直接证明每行一素分支为正，就必须把失败转成同 formal unit 的低模亏损、
 素对纤维集中、孤立幸存者逃逸或固定列位移复用。该路由仍未给出无条件闭合。
+
+继续新增：
+
+```text
+experiments/prime_matrix_aligned_prime_main_defect_router.py
+docs/monograph/prime-matrix-aligned-prime-main-defect-router.md/json
+```
+
+该路由器直接攻击 `UniformBuchstabOnePrimeBranchLowerBound`。结论为：
+
+```text
+prime_free_row_to_edabk_defect_closed=true；
+buchstab_constants_standalone_rejected=true；
+lowmod_tail_defect_exclusions_closed=false；
+row_column_unconditional_closed=false；
+terminal_gap_after_router=LowModTailCoreDefectExclusionPackage。
+```
+
+精确二分链为：
+
+```text
+PrimeSurvivors_x=0
+=> EDA failure at the same aligned row x
+=> positive-main endpoint defect by EDA-BK
+=> LowMod endpoint CRTDefect OR Tail/Core concentration
+=> named PDEC/SAE/ColumnCRT/Tail-anchor exits; no unnamed Buchstab exit。
+```
+
+这一步关闭了一个概念出口：`Buchstab` 常数本身不能作为终局证明。正主项为正只说明若行为空，
+必须产生端点缺陷或尾项集中；它本身不排斥这些缺陷。已闭合的门为：
+
+```text
+VariableRowDimensionGapImported；
+PrimeFreeRowImpliesEDAFailure；
+PositiveMainEndpointDefectImported；
+BuchstabConstantsNotStandalone；
+BKDECBridgeCompatibility；
+TailCoreBucketCompatibility；
+DirectedEndpointDefectSchema。
+```
+
+其中 `PrimeFreeRowImpliesEDAFailure` 说明 `sqrt(P)<=x<P` 的一素分支为零就是同一对齐行的
+`EDA` 失败；`PositiveMainEndpointDefectImported` 由 `EDA-BK` 给出正主项端点缺陷二分；
+`BKDECBridgeCompatibility` 与 `TailCoreBucketCompatibility` 说明 LowMod 与 Tail 失败已经分别
+接到 Directed Endpoint CRTDefect 与 TailCore/Tail-anchor 命名对象。
+
+唯一开放门为：
+
+```text
+LowModAndTailExclusion。
+```
+
+新的最窄剩余是：
+
+```text
+LowModTailCoreDefectExclusionPackage
+  = LowModEndpointCRTDefectExclusionOrPDEC
+    AND TailCoreConcentrationAbsorptionOrTailAnchorPDEC
+    AND SparseSingleWindowSAEExclusion
+    AND ColumnDisplacementReusePDEC
+    AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步仍不是无条件闭合；它把“证明一素分支正性”的任务改写为两个命名出口的排斥任务。
