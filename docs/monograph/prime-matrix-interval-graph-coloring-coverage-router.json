@@ -1,0 +1,135 @@
+{
+  "certificate_type": "prime_matrix_interval_graph_coloring_coverage_router",
+  "status": "interval_graph_coloring_coverage_closed_budget_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.md": "bb9f15304067c8580b20ed01595cb9702a43a455551fcd47101241092861f5d9",
+    "docs/monograph/prime-matrix-bpn-distributed-corridor-saturation-reduction.md": "2bad4b1a92dc32c460a7ec1d295599fb373592c5a77e2ce546f9683db8a91e6b",
+    "docs/monograph/prime-matrix-bpn-colored-corridor-core-sieve-budget.md": "d2d4d092544736ea1f6a0863a40afd29c6812544ce2bf72bb2c142904995081a"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "interval_graph_coloring_coverage_closed": true,
+  "formal_colored_corridor_inventory_closed": false,
+  "certificate_fields": [
+    {
+      "field": "source_tuple_hash",
+      "meaning": "锁定 P/range、window_id、A、D0、K、Omega、phase_rule。"
+    },
+    {
+      "field": "anchor_intervals",
+      "meaning": "每个 anchor a 的 J_a=[ceil(L/a),floor(R/a)] 与 [D0,2D0) 的交。"
+    },
+    {
+      "field": "low_overlap_filter",
+      "meaning": "只保留 m(d)<=Omega 的走廊部分；m(d)>Omega 已回流 high-overlap defect。"
+    },
+    {
+      "field": "coloring_algorithm",
+      "meaning": "按左端点扫描的贪心 interval coloring；活动区间颜色复用。"
+    },
+    {
+      "field": "color_count_bound",
+      "meaning": "最大同时活动区间数 <= Omega，因此 color_id in {1,...,Omega}。"
+    },
+    {
+      "field": "per_color_disjointness",
+      "meaning": "每个颜色类内 intervals 两两不交。"
+    },
+    {
+      "field": "coverage_equation",
+      "meaning": "有色 interval 多重集精确等于低重叠 anchor interval 多重集。"
+    },
+    {
+      "field": "failure_return",
+      "meaning": "若重叠界或覆盖等式失败，回流 high-overlap defect 或 source tuple 错配。"
+    }
+  ],
+  "current_narrowest_atom": "AllowedBudgetAllocationLedger",
+  "downstream_atoms": [
+    "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+    "PDECOrSAEUnifiedExclusionLedger"
+  ],
+  "reduction_formula": "IntervalGraphColoringCoverageCertificateLedger => IntervalGraphColoringCoverageCertificateClosed AND AllowedBudgetAllocationLedger.",
+  "plain_conclusion": "IntervalGraphColoringCoverageCertificateLedger 已闭合为确定性证书：固定 source tuple 后，anchor intervals 的低重叠部分按整数区间图贪心着色，颜色数不超过 Omega；每个颜色类内 intervals 两两不交，coverage_equation 记录有色多重集等于低重叠走廊多重集。新的最窄点是 `AllowedBudgetAllocationLedger`。",
+  "rows": [
+    {
+      "gate": "IntervalColoringGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到区间图着色和覆盖等式证书。",
+      "remaining": "IntervalGraphColoringCoverageCertificateLedger"
+    },
+    {
+      "gate": "ParameterTupleImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "A、D0、K、Omega 与 phase_rule 已由上一层固定。",
+      "remaining": "不能重选参数。"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设反例链条内的 formal corridor 证书，不用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "FormalCoverageFieldsPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "正式 inventory 已要求 color_id、intervals 与 coverage_equation。",
+      "remaining": "字段格式无剩余。"
+    },
+    {
+      "gate": "IntervalGraphPerfectColoringImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "DCS 已证明最大重叠度 <= Omega 的整数区间族可用 Omega 色贪心着色。",
+      "remaining": "无着色存在性剩余。"
+    },
+    {
+      "gate": "PerColorRankinObjectReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "CCB 的 Rankin 账本对象正是同色不相交走廊并集。",
+      "remaining": "AllowedBudgetAllocationLedger"
+    },
+    {
+      "gate": "IntervalGraphColoringCoverageCertificateClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "着色和覆盖等式可由 source tuple 确定性复算；无额外数学出口。",
+      "remaining": "IntervalGraphColoringCoverageCertificateClosed"
+    },
+    {
+      "gate": "IntervalGraphColoringCoverageCertificateLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "区间图着色覆盖证书闭合；下一步只剩 allowed budget 分配纪律。",
+      "remaining": "AllowedBudgetAllocationLedger"
+    },
+    {
+      "gate": "AllowedBudgetStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "每个颜色类的 allowed_budget 分配和 Rankin 批量验收尚未提交。",
+      "remaining": "AllowedBudgetAllocationLedger AND BatchRankinCertificatesAllPassOrReturnToPDECSAE"
+    }
+  ],
+  "closed_gates": [
+    "IntervalColoringGateActive",
+    "ParameterTupleImported",
+    "CounterexampleBranchGuardPreserved",
+    "FormalCoverageFieldsPinned",
+    "IntervalGraphPerfectColoringImported",
+    "PerColorRankinObjectReady",
+    "IntervalGraphColoringCoverageCertificateClosed",
+    "IntervalGraphColoringCoverageCertificateLedger"
+  ],
+  "open_gates": [
+    "AllowedBudgetStillDownstream"
+  ]
+}
