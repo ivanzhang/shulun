@@ -1,0 +1,133 @@
+{
+  "boundary_law": "PDEC family 不再是模糊终端输入。当前已物化 PDEC 候选已经耗尽；canonical-source PDEC-CAP 路线已经由横向来源嵌入和 canonical 层转移闭合；每一种 cap 失败、低秩、重复、二点、ColumnCRT、sparse 或 clean 残差都有命名回流。因此未来若出现 PDEC 障碍，必须作为显式 primitive 同 formal unit、二秩以上、cap-stable schema 引入。generic/external 分支已由 noncanonical 三歧包接管，最终定理晋级仍受 DStructure/Rankin 验收阻断。",
+  "canonical_source_pdec_cap_closed": true,
+  "certificate_type": "prime_matrix_pdec_family_explicit_input_boundary_router",
+  "current_materialized_pdec_frontier_closed": true,
+  "future_pdec_schema_required": [
+    "同一个 formal unit，且只有一个固定 phase map",
+    "全部去重后至少有三个物理 primitive 原子",
+    "不是二点 Fourier tautology",
+    "不是尚未吸收的 ColumnCRT/displacement",
+    "商去 shell/column 退化后秩至少为 2",
+    "对每个有限循环弧 localization 都 cap-stable",
+    "横向支撑既非 sparse，也非持久偏斜，也未进入 clean 外部化"
+  ],
+  "global_pdec_family_unconditional_closed": false,
+  "pdec_family_explicit_input_boundary_closed": true,
+  "remaining_after_pdec_boundary": [
+    "若未来引入真正可准入的 PDEC family，必须提交 FutureExplicitPrimitivePDECSchema",
+    "generic/external 分支进入 NoncanonicalFullSComplementTrilemma 输入",
+    "最终定理晋级需要 DStructureRankinPromotion 独立接受"
+  ],
+  "review_conclusion": "广义 PDEC family 的当前边界已闭合：当前已物化合法非二点 primitive PDEC 候选为零，canonical-source PDEC-CAP 已接回最终自足边界；未来若出现真正 PDEC 障碍，必须以显式 primitive 同 formal unit、二秩以上、cap-stable schema 进入。完整行/列无条件命题仍未闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "SAE absorption router",
+      "gate": "SAEIndependentTerminalRemoved",
+      "meaning": "第一包当前只需处理广义 PDEC 与未来显式 sparse schema。",
+      "remaining": "PDEC boundary, future explicit sparse schema"
+    },
+    {
+      "closed": true,
+      "evidence": "persistent terminal admission router",
+      "gate": "PersistentPDECAdmissionBoundary",
+      "meaning": "裸持久签名、裸 ColumnCRT、对偶失败和口径错配都不能直接准入。",
+      "remaining": "primitive multi-atom same-formal-unit PDEC only"
+    },
+    {
+      "closed": true,
+      "evidence": "non-tautological PDEC admission audit",
+      "gate": "NoCurrentMaterializedNonTautologicalCandidate",
+      "meaning": "当前已物化前沿没有合法非二点 primitive PDEC 候选。",
+      "remaining": "future candidate must pass admission schema"
+    },
+    {
+      "closed": true,
+      "evidence": "primitive multi-atom rank router",
+      "gate": "PrimitiveRankBoundary",
+      "meaning": "零秩/一秩/二点/固定壳/ColumnCRT/cap 失败全部回流命名路线。",
+      "remaining": "rank >= 2 cap-stable primitive kernel"
+    },
+    {
+      "closed": true,
+      "evidence": "rank-two cap-stable kernel router",
+      "gate": "RankTwoKernelInverseBoundary",
+      "meaning": "二秩核不等式已逆否化为统一 cap-stability 证书。",
+      "remaining": "uniform cap stability certificate"
+    },
+    {
+      "closed": true,
+      "evidence": "uniform cap finite basis router",
+      "gate": "UniformCapFiniteBasis",
+      "meaning": "连续方向帽搜索压成有限循环弧 cap 质量界。",
+      "remaining": "finite cyclic-arc cap mass bounds"
+    },
+    {
+      "closed": true,
+      "evidence": "finite arc transverse router",
+      "gate": "FiniteArcNoUnnamedExit",
+      "meaning": "高质量有限弧若失败，回流 SAE/refined PDEC/ColumnCRT/CleanKLS。",
+      "remaining": "transverse fiber expansion or named return"
+    },
+    {
+      "closed": true,
+      "evidence": "transverse clean reduction router",
+      "gate": "TransverseCleanReduction",
+      "meaning": "横向非平坦缺陷全部命名；平坦残差只进入 clean 大筛原子。",
+      "remaining": "CleanKLS/SC-9 frontier"
+    },
+    {
+      "closed": true,
+      "evidence": "transverse clean atom frontier router",
+      "gate": "CleanFrontierNamed",
+      "meaning": "clean 原子不是第四终端；自足入 canonical source，外部入 DI/BFI。",
+      "remaining": "canonical source transfer or external FullS-KLS/DI-BFI"
+    },
+    {
+      "closed": true,
+      "evidence": "canonical layer closure router",
+      "gate": "CanonicalPDECCapClosed",
+      "meaning": "canonical-source 分支内的 PDEC-CAP 已经闭合到 A1 最终边界。",
+      "remaining": "generic/external branch only"
+    },
+    {
+      "closed": true,
+      "evidence": "self-contained PDEC-CAP boundary lift router",
+      "gate": "PDECBoundaryLifted",
+      "meaning": "旧 PDEC-CAP 自足瓶颈已提升；全局终端家族仍不是无条件闭合。",
+      "remaining": "global family promotion / final inputs"
+    },
+    {
+      "closed": true,
+      "evidence": "noncanonical complement trilemma",
+      "gate": "GenericExternalBranchAccounted",
+      "meaning": "generic/external 分支已归入第二包三歧输入。",
+      "remaining": "source identity, strengthened anti-atom, or FullS-KLS-ext"
+    },
+    {
+      "closed": true,
+      "evidence": "DStructure/Rankin promotion acceptance router",
+      "gate": "FinalPromotionAccounted",
+      "meaning": "最终晋级门已命名但未独立接受。",
+      "remaining": "DStructure/Rankin independent acceptance"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-noncanonical-complement-trilemma-router.json": "e8971555d7c4efa29a49d35224a8fe379bb467af258621dfc7289ef27b0d392b",
+    "docs/monograph/prime-matrix-nontautological-pdec-admission-audit.json": "b961bfc655c98c310e90496c3d86bfc5ed8e1e9a765474d07dd413345f00dbbb",
+    "docs/monograph/prime-matrix-pdec-cap-canonical-layer-closure-router.json": "b51fadba1fe1d82d0693e4302c84ad3a6ed9c6b47495ee7e37c872c04a9efe45",
+    "docs/monograph/prime-matrix-pdec-cap-finite-arc-transverse-router.json": "fcfa8a645382e1845e6d3b3f548185d5ccb4c9339016cb752a4bb066064c8b85",
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.json": "1993c57c8ba939c0c678e9d70c5a9c49314659b594746e5ff4a3fa1335f41d2e",
+    "docs/monograph/prime-matrix-pdec-cap-primitive-multiatom-rank-router.json": "00c4e46f6a181722f7b3af844911f5b08ba14d106b88da1b5e5888a5066907c7",
+    "docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.json": "b58e2d370206d79c4cb4a8df05ab7e8a287a18999a02988fd44e9af34a838da2",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-clean-atom-frontier-router.json": "035032cd6eb0596048ecf48cb1ce0cf2674d4b6f818fcaea9264617fd6a94bd4",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-clean-reduction-router.json": "ba18388fb792eb7c9c7b6709f1cacaaea0ed56b206fedeead0e8420badb493a7",
+    "docs/monograph/prime-matrix-pdec-cap-uniform-cap-finite-basis-router.json": "7b5af35dd57b30e836f3bcc0989985f57a3bffc90d4e7206e1d83740641e63c7",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.json": "5f1d45f2c03345dc1ef62e02c75bde6cebcdf211fc746b6c67b0bb10bfef8e0d",
+    "docs/monograph/prime-matrix-self-contained-pdec-cap-boundary-lift-router.json": "4ae01bb268aece12cceb9ace727f711e7a33fecbbc7de3bdcac08ab7e8382b76"
+  },
+  "status": "pdec_family_boundary_closed_current_frontier_zero_future_schema_required"
+}

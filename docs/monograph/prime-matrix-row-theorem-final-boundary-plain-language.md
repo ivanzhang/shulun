@@ -794,6 +794,42 @@ FutureExplicitSparsePacketExtractorSchema：若未来新增真正 sparse 路线�
 这仍不是完整行/列无条件闭合；它只是把 `SAE` 从独立终端列表中删除，把真正硬点推回广义 `PDEC`
 证书族和未来显式 sparse schema 义务。
 
+继续推进广义 `PDEC` 证书族后：
+
+```text
+experiments/prime_matrix_pdec_family_explicit_input_boundary_router.py
+docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md/json
+
+pdec_family_explicit_input_boundary_closed=true；
+current_materialized_pdec_frontier_closed=true；
+canonical_source_pdec_cap_closed=true；
+global_pdec_family_unconditional_closed=false。
+```
+
+通俗说，`PDEC family` 也不再是泛称黑箱。当前已物化的合法非二点 primitive `PDEC` 候选为 `0`；
+canonical-source 分支内的 `PDEC-CAP` 已经经横向来源嵌入和 canonical 层转移接回最终自足边界。
+未来若还要提出真正 `PDEC` 障碍，必须先提交完整字段：
+
+```text
+同一个 formal unit，且只有一个固定 phase map；
+全部去重后至少三个物理 primitive 原子；
+不是二点 Fourier tautology；
+不是尚未吸收的 ColumnCRT/displacement；
+商去 shell/column 退化后秩至少为 2；
+对每个有限循环弧 localization 都 cap-stable；
+横向支撑既非 sparse，也非持久偏斜，也未进入 clean 外部化。
+```
+
+所以第一包当前已经压成：
+
+```text
+FutureExplicitPrimitivePDECSchema；
+FutureExplicitSparsePacketExtractorSchema。
+```
+
+也就是：当前已知和已物化终端前沿清零；未来若新增 `PDEC` 或 sparse 路线，必须以显式 schema
+作为新输入进入，不能作为隐藏终端继续使用。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
