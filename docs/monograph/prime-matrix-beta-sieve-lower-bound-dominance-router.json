@@ -1,0 +1,134 @@
+{
+  "certificate_type": "beta_sieve_lower_bound_dominance_router",
+  "status": "lower_bound_dominance_closed_main_coefficient_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-beta-sieve-lower-weight-recursion-router.json": "f1e59ca50a7822442a2515675149c4997e7daf786139146586956469560647ae"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lower_weight_recursive_construction_closed": true,
+  "lower_weight_dominance_proved": true,
+  "beta_sieve_main_coefficient_99pct_proved": false,
+  "standard_beta_sieve_import_accepted": false,
+  "external_short_interval_rough_lower_bound_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "replacement": {
+    "BetaSieveLowerBoundDominanceProof": "BUCHSTAB_TREE_PARITY_PRUNING_DOMINANCE_CLOSED"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((BetaSieveMainCoefficientExplicit99PercentPGe100000 OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((BetaSieveMainCoefficientExplicit99PercentPGe100000 OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((BetaSieveMainCoefficientExplicit99PercentPGe100000 OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "BetaSieveMainCoefficientExplicit99PercentPGe100000",
+  "conditional_beta_import_priority": "StandardRosserIwaniecBetaSieveTheoremImportAccepted",
+  "external_next_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+  "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "dominance_statement": "For every integer n, with P(z)=prod_{p<z} p, sum_{d|(n,P(z))} lambda_d^- <= 1_{(n,P(z))=1}.",
+  "proof_skeleton": [
+    "Let A be the finite set of primes p<z dividing n.",
+    "The complete descending subset tree has alternating sum sum_{T subset A} (-1)^|T| = 1 if A is empty and 0 otherwise.",
+    "The lower word rule defines a pruned subtree: even-depth words retain every odd child; odd-depth words retain only even children passing the Rosser gate.",
+    "For an even prefix w, every odd child remains admissible because the previous even Rosser gate and B>=2 imply the extended product stays below D.",
+    "Inductively, a retained child subtree is no larger than its complete alternating subtree.",
+    "At odd depth, discarded even child subtrees have complete alternating contribution 0 or +1, hence deleting them can only decrease the total.",
+    "Therefore the pruned lower sum is at most the complete alternating sum, giving the desired pointwise lower-bound dominance."
+  ],
+  "no_external_input_used": true,
+  "plain_conclusion": "本步关闭 beta-sieve lower-bound 支配原子。证明是纯组合的 Buchstab 树截断：完整降序子集树给出 1_{A=empty}，lower word rule 只在奇层删除偶子树；这些偶子树完整贡献非负，而偶层的奇子节点全部保留，所以截断和不超过完整和。因此显式 lambda_d^- 确实逐点下界筛剩余指示函数。当前唯一内部 beta-sieve 剩余前移到 99% 主系数显式误差。",
+  "rows": [
+    {
+      "gate": "DominanceGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层最新最窄点是证明显式 lower word rule 对筛剩余指示函数逐点给出下界。",
+      "remaining": "BetaSieveLowerBoundDominanceProof"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行反例链条内证明筛权代数恒等式，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ExplicitLowerWordRuleAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已经固定 lambda_d^- 的有限降序 word rule、符号、squarefree 支撑和 d<P。",
+      "remaining": "无定义层剩余。"
+    },
+    {
+      "gate": "ExactBuchstabTreeIdentity",
+      "closed": true,
+      "proved": true,
+      "meaning": "对任意有限小素因子集合 A，完整降序子集树的交错和等于 1_{A=empty}。",
+      "remaining": "无解析估计。"
+    },
+    {
+      "gate": "ParityPruningDominanceLemma",
+      "closed": true,
+      "proved": true,
+      "meaning": "偶层完整保留所有奇子节点；奇层只保留通过 Rosser 门的偶子节点。删去的偶子树完整贡献非负，故截断和不超过完整和。",
+      "remaining": "无统计输入。"
+    },
+    {
+      "gate": "BetaSieveLowerBoundDominanceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "因此对每个整数 n，sum_{d|(n,P(z))} lambda_d^- <= 1_{(n,P(z))=1}。",
+      "remaining": "BetaSieveMainCoefficientExplicit99PercentPGe100000"
+    },
+    {
+      "gate": "BetaSieveMainCoefficientExplicit99PercentPGe100000",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需证明该具体 lower word rule 的主系数在 P>=100000 尾段达到 99% 归一目标。",
+      "remaining": "BetaSieveMainCoefficientExplicit99PercentPGe100000"
+    },
+    {
+      "gate": "StandardRosserIwaniecBetaSieveTheoremImportAccepted",
+      "closed": false,
+      "proved": false,
+      "meaning": "若允许标准 Rosser-Iwaniec beta-sieve 定理导入，可替代内部支配与主系数；但本步已经自足关闭支配层。",
+      "remaining": "StandardRosserIwaniecBetaSieveTheoremImportAccepted"
+    },
+    {
+      "gate": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部短区间 rough-number 下界仍可绕开内部 beta-sieve 包。",
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "closed": false,
+      "proved": false,
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "DominanceGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ExplicitLowerWordRuleAvailable",
+    "ExactBuchstabTreeIdentity",
+    "ParityPruningDominanceLemma",
+    "BetaSieveLowerBoundDominanceClosed"
+  ],
+  "open_gates": [
+    "BetaSieveMainCoefficientExplicit99PercentPGe100000",
+    "StandardRosserIwaniecBetaSieveTheoremImportAccepted",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
