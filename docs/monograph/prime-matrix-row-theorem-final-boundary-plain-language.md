@@ -712,6 +712,35 @@ SAE 证书族；
 PDEC 证书族，包含 endpoint / displacement / cofactor / primitive 等全部持久有限签名。
 ```
 
+继续吸收 `SAE` 后，第一包还能进一步压窄：
+
+```text
+experiments/prime_matrix_sae_to_local_survivor_pdec_absorption_router.py
+docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md/json
+
+sae_independent_terminal_removed=true；
+terminal_package_fully_proved=false。
+```
+
+通俗说，`SAE` 不是“所有孤窗都已直接证明不存在”，而是不能继续作为独立终端命运：
+
+```text
+可抽取的孤窗      => LocalSurvivor packet，并给 witness 或 blocker-deficit；
+同有限签名持久复现 => PDEC / ColumnCRT / TailAnchor / CofactorAnchor；
+层级持续逃逸      => CleanKLS/DLS 或外部输入包。
+```
+
+当前已物化的 `LocalSurvivor/SAE` 包全部清零，已知入口都有 extractor 或合同回流，且当前合同体系内
+没有额外无名 sparse 入口。所以第一包的当前结构剩余变成：
+
+```text
+PDEC family：包含 endpoint / displacement / cofactor / primitive / non-tautological 证书；
+FutureExplicitSparsePacketExtractorSchema：若未来新增真正 sparse 路线，必须同步提交 extractor schema。
+```
+
+这仍不是完整行/列无条件闭合；它只是把 `SAE` 从独立终端列表中删除，把真正硬点推回广义 `PDEC`
+证书族和未来显式 sparse schema 义务。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

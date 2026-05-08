@@ -3168,3 +3168,32 @@ balanced displacement load
 Global SAE finite/window/local-survivor certificate family；
 PDEC family including displacement/endpoint/cofactor/primitive certificates。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_sae_to_local_survivor_pdec_absorption_router.py
+docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md/json
+```
+
+该路由器把 `SAE` 从独立终端中删除：
+
+```text
+sae_independent_terminal_removed=true；
+terminal_package_fully_proved=false；
+row_column_unconditional_closed=false。
+```
+
+证明边界是：
+
+```text
+sparse/single-window escape
+  => finite LocalSurvivor packet with witness or blocker-deficit；
+  or persistent finite signature => PDEC/ColumnCRT/TailAnchor/CofactorAnchor；
+  or layer escape => CleanKLS/DLS admission / external input。
+```
+
+当前已物化 `LocalSurvivor/SAE` 包清零，已知入口 extractor 覆盖清零，`NewSparseEntryAdmission`
+审计也没有发现无名 sparse 入口。因此 `SAE` 不再是第一包的独立终端；第一包的核心剩余压成
+广义 `PDEC` 证书族，以及未来若新增显式 sparse 路线时必须附带的 extractor schema 义务。
+这仍不是第一包全证明，更不是完整行/列无条件闭合。

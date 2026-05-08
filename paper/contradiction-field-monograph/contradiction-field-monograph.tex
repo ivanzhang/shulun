@@ -2669,6 +2669,34 @@ reduced to
 \]
 This is still not a proof of the terminal certificate package; it is the removal of
 ColumnCRT as an independent terminal.
+
+The SAE branch is also removed as an independent terminal by the SAE absorption router.
+The router checks the SAE local-reduction lemma, the materialized
+LocalSurvivor packet ledger, the known extractor coverage audit, the new-sparse-entry
+admission audit, the packet-generation dichotomy, and the persistent-terminal admission
+boundary.  It records
+\[
+  \texttt{sae\_independent\_terminal\_removed=true}.
+\]
+The absorption law is the following.  A sparse or single-window escape must either emit a
+finite LocalSurvivor packet with a witness or blocker-deficit certificate, or else a finite
+signature persists and returns to PDEC, ColumnCRT, TailAnchor, or CofactorAnchor; if the
+signature layers keep escaping, the branch enters CleanKLS/DLS admission or an external
+input package.  The currently materialized LocalSurvivor/SAE packets are exhausted, the
+known sparse entries have extractors or contract fallbacks, and no additional unnamed
+sparse entry is admitted by the current contract system.  Hence SAE is not a third
+terminal family.  The first terminal package is now reduced to
+\[
+\begin{gathered}
+  \texttt{PDEC\mbox{-}Cert}
+  \quad\text{including endpoint, displacement, cofactor, primitive, and}\\
+  \text{non-tautological variants,}
+\end{gathered}
+\]
+together with the hygiene rule that any genuinely new sparse route must bring an explicit
+packet-extractor schema.  This still does not prove the terminal package or the
+unrestricted row-column theorem; it deletes SAE as an independent terminal and pushes the
+remaining structural burden back to PDEC or to a future explicit sparse schema.
 \end{proof}
 
 

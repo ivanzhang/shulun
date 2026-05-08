@@ -1,0 +1,73 @@
+{
+  "absorption_law": "SAE 不是独立终端族。任意 sparse/single-window escape 必须先输出有限 LocalSurvivor packet，并给出 witness 或 blocker-deficit 数据；否则若有限签名持久复现，就变成 PDEC/ColumnCRT/TailAnchor/CofactorAnchor；若签名层级逃逸，就进入 CleanKLS/DLS admission。当前已物化 LocalSurvivor 包已经耗尽，所有已知 sparse 入口都有命名 extractor 或 fallback 路由。因此未来若出现新的 sparse 路线，它是显式 schema 义务，不是隐藏的第三终端。",
+  "certificate_type": "prime_matrix_sae_to_local_survivor_pdec_absorption_router",
+  "review_conclusion": "SAE 独立终端已吸收到 LocalSurvivor packet 证书、PDEC 持久签名回流和 CleanKLS/DLS 层级逃逸接口。第一包当前不再有独立 SAE 终端；剩余核心是广义 PDEC 证书族，以及未来若新增显式 sparse 路线时必须同时提交 extractor schema。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "ColumnCRT absorption router",
+      "gate": "TerminalTwoFamilyRemainderBeforeSAE",
+      "meaning": "上一轮已经把第一包压成 SAE 与广义 PDEC 两族。",
+      "remaining": "decide whether SAE is genuinely independent"
+    },
+    {
+      "closed": true,
+      "evidence": "prime-matrix-sae-local-certificate-reduction",
+      "gate": "SAELocalReduction",
+      "meaning": "孤窗逃逸只能给 LocalSurvivor packet，或因持久/阻塞集中回流 PDEC、下降或 clean。",
+      "remaining": "fill finite packet or route persistent signature"
+    },
+    {
+      "closed": true,
+      "evidence": "local survivor materialized packet ledger",
+      "gate": "MaterializedLocalSurvivorPacketsExhausted",
+      "meaning": "当前已物化的 LocalSurvivor/SAE 包没有开放局部义务。",
+      "remaining": "not a proof for future unaudited sparse packets"
+    },
+    {
+      "closed": true,
+      "evidence": "local survivor packet extractor coverage",
+      "gate": "KnownEntryExtractorsCovered",
+      "meaning": "已知 LocalSurvivor 入口均有脚本或合同 extractor。",
+      "remaining": "new explicit sparse route must bring its own schema"
+    },
+    {
+      "closed": true,
+      "evidence": "new sparse entry admission audit",
+      "gate": "NoAdditionalUnnamedSparseEntry",
+      "meaning": "当前合同体系内没有额外无名 sparse/LocalSurvivor 入口。",
+      "remaining": "future new route is an explicit new input, not hidden terminal"
+    },
+    {
+      "closed": true,
+      "evidence": "local survivor packet generation contract",
+      "gate": "PacketGenerationDichotomy",
+      "meaning": "无法抽取为有限 packet 时，同签名持久化进入 PDEC，层级逃逸进入 CleanKLS/DLS。",
+      "remaining": "PDEC exclusion or noncanonical/external clean input"
+    },
+    {
+      "closed": true,
+      "evidence": "persistent terminal admission router",
+      "gate": "PersistentSparseFallbackAdmitted",
+      "meaning": "持久 sparse fallback 不能停在 SAE，必须通过 primitive/non-tautological PDEC 准入边界。",
+      "remaining": "primitive/non-tautological PDEC family"
+    }
+  ],
+  "sae_independent_terminal_removed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.json": "7b1085ffb68934838bc7d0789cef94a104b78cf99c426b2fc4dc4160a64ac613",
+    "docs/monograph/prime-matrix-local-survivor-materialized-packet-ledger.json": "cb6f92ca35cee664d441df6e75ad018bf116f89e859c8f3afcc8e9b67f8640cf",
+    "docs/monograph/prime-matrix-local-survivor-packet-extractor-coverage.json": "afddef8e8251f7b5e39bc14881f0986f47f6ec1f88d25d572d1048ce927a4636",
+    "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md": "b07a043cb6ebfee2e413a8d5c9cc768f3670ca3f9b75a7cee05c2def043c496c",
+    "docs/monograph/prime-matrix-new-sparse-entry-admission-audit.json": "60947ae361bfc707679b9e204f3f3d5d84a278e1d8ec47effd5fbae36d05eca9",
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.json": "1993c57c8ba939c0c678e9d70c5a9c49314659b594746e5ff4a3fa1335f41d2e",
+    "docs/monograph/prime-matrix-sae-local-certificate-reduction.md": "927714d839c2ba0a20380dbea99fc5ab474dbf096bdd4f14fe770c9a523c60c7"
+  },
+  "status": "sae_independent_terminal_absorbed_current_contract_remainder_pdec_plus_future_schema",
+  "terminal_package_fully_proved": false,
+  "terminal_package_remainder_after_sae_absorption": [
+    "PDEC family：包含 endpoint / displacement / cofactor / primitive / non-tautological 证书",
+    "FutureExplicitSparsePacketExtractorSchema：若未来新增真正 sparse 路线，必须同步提交 extractor schema"
+  ]
+}
