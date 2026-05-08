@@ -1,0 +1,151 @@
+{
+  "certificate_type": "prime_matrix_bad_window_source_data_emitter_router",
+  "status": "bad_window_source_data_reduced_to_record_emitter_and_anchor_parameters",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.json": "8358aa6fd3a6bb4c28847b40ecef3177f22939e9114a86ef962b633509c7e2ab",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.md": "8650979cbe6575d82f913eeae781931b10466400bd76a6b9cc97f1719f1fb008",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.md": "9e7718a47c3527572bbc41c31c9a2d08a79989ab200041bde1c74bb55ec5292a",
+    "docs/monograph/prime-matrix-bpn-final-exit-acceptance-contract.md": "9403e41997299f4b82882f624db4a54a14d278e113a5e5fcbd05f253a9b805d5",
+    "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.md": "6230a1418722ca91ea34a35069258b84592cb193170af95df7847ec855427c3c"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "bad_window_source_family_record_emitter_closed": true,
+  "bad_window_source_family_data_extraction_closed": true,
+  "concrete_formal_corridor_inventory_records_available": false,
+  "formal_colored_corridor_inventory_closed": false,
+  "emitter_rules": [
+    {
+      "family_id": "EndpointSawtoothDirectedCRTDefect",
+      "emitter_law": "从 BK-DEC 端点块发射 (window_id,Q,test_function_id,tau,kappa)。",
+      "required_inputs": "边界窗 I、端点 sawtooth block、低模 Q、阈值 kappa。",
+      "downstream": "PDECOrSAEUnifiedExclusionLedger"
+    },
+    {
+      "family_id": "TailAnchorConcentration",
+      "emitter_law": "从饱和尾锚集合发射 (anchor a, rho_Q(a), theta, W_a, N_a)。",
+      "required_inputs": "互补锚集合 A、窗口 I、D0/K、饱和阈值 theta。",
+      "downstream": "ComplementAnchorSetAndD0KParameterLedger then PDECOrSAEUnifiedExclusionLedger"
+    },
+    {
+      "family_id": "HighOverlapFixedCoreDefect",
+      "emitter_law": "从重叠函数 m(d)>Omega 发射 (fixed_core d, overlap, anchor_short_window)。",
+      "required_inputs": "核心尺度 D0、重叠阈值 Omega、互补锚集合 A。",
+      "downstream": "ComplementAnchorSetAndD0KParameterLedger or PDECOrSAEUnifiedExclusionLedger"
+    },
+    {
+      "family_id": "ColoredDisjointCorridorBudgetViolation",
+      "emitter_law": "低重叠走廊经区间图着色，逐颜色发射 intervals/K/D0/Omega/allowed_budget。",
+      "required_inputs": "A、D0、K、Omega、phase_rule、allowed_budget、覆盖等式。",
+      "downstream": "ComplementAnchorSetAndD0KParameterLedger -> IntervalGraphColoringCoverageCertificateLedger -> AllowedBudgetAllocationLedger"
+    },
+    {
+      "family_id": "SmoothCoreLowModCRTDefect",
+      "emitter_law": "从 failed Rankin 颜色类的 residue spike 发射 (Q,b,g(b),eta)。",
+      "required_inputs": "颜色类证书、低模 Q、中心化 residue 计数、spike 阈值 eta。",
+      "downstream": "PDECOrSAEUnifiedExclusionLedger"
+    },
+    {
+      "family_id": "SparseSingleWindowEscape",
+      "emitter_law": "从 sparse bad window 发射 SAE packet 字段或 lift/higher-defect 回流字段。",
+      "required_inputs": "window_shape、candidate set、blocker families、phase_key、formal_unit_id。",
+      "downstream": "SAE-Cert or lift to PDEC/SAE."
+    },
+    {
+      "family_id": "RankinConstantGapNoSpike",
+      "emitter_law": "从无尖峰 Rankin 失败发射 constant-gap record，不计作 PDEC/SAE 已排除。",
+      "required_inputs": "ledger、s、Q、allowed_budget、失败余量和细分/调参动作。",
+      "downstream": "AllowedBudgetAllocationLedger"
+    }
+  ],
+  "current_narrowest_atom": "ComplementAnchorSetAndD0KParameterLedger",
+  "downstream_atoms": [
+    "IntervalGraphColoringCoverageCertificateLedger",
+    "AllowedBudgetAllocationLedger",
+    "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+    "PDECOrSAEUnifiedExclusionLedger"
+  ],
+  "reduction_formula": "BadWindowSourceFamilyDataExtractionLedger => BadWindowSourceFamilyRecordEmitterClosed AND ComplementAnchorSetAndD0KParameterLedger.",
+  "plain_conclusion": "BadWindowSourceFamilyDataExtractionLedger 已被压成确定记录发射器：每个已命名来源族都有同 formal unit 的字段来源和失败回流规则。真正还没填的是互补锚集合、D0/K/Omega、相位规则与预算参数；因此新的最窄点推进为 `ComplementAnchorSetAndD0KParameterLedger`。这一步不声称 formal corridor inventory 已有 concrete 全集，也不关闭 PDEC/SAE、Rankin 或行列无条件定理。",
+  "rows": [
+    {
+      "gate": "BadWindowSourceDataGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把当前最窄点推进到坏窗来源族数据抽取。",
+      "remaining": "BadWindowSourceFamilyDataExtractionLedger"
+    },
+    {
+      "gate": "FiniteTaxonomyImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "七个来源族已经固定，数据发射器只需覆盖这些族。",
+      "remaining": "无新来源类型剩余。"
+    },
+    {
+      "gate": "SameFormalUnitEmitterAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "早期零行假设给出同一 Omega=R_x formal unit 与物理原子字段。",
+      "remaining": "禁止跨口径拼接；缺字段回流 schema。"
+    },
+    {
+      "gate": "PDECExplicitBoundaryAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "未来 PDEC 候选必须同 formal unit、非二点、二秩以上且 cap-stable。",
+      "remaining": "最终 PDEC 排斥仍未无条件闭合。"
+    },
+    {
+      "gate": "SparsePacketBoundaryAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "未来 sparse/SAE 路线必须提交有限 packet extractor 字段。",
+      "remaining": "全局 sparse family 排斥仍未无条件闭合。"
+    },
+    {
+      "gate": "FinalExitInterfacesAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "发射出的 persistent、sparse 与 Rankin 失败记录已有 PDEC/SAE/Rankin 验收接口。",
+      "remaining": "PDECOrSAEUnifiedExclusionLedger AND BatchRankinCertificatesAllPassOrReturnToPDECSAE"
+    },
+    {
+      "gate": "BadWindowSourceFamilyRecordEmitterClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个来源族都有确定记录发射规则；不存在需要另开类型的无名数据入口。",
+      "remaining": "BadWindowSourceFamilyRecordEmitterClosed"
+    },
+    {
+      "gate": "BadWindowSourceFamilyDataExtractionLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "数据抽取层已压成记录发射器和下一层参数账本；完整 concrete inventory 仍待下游参数填充。",
+      "remaining": "ComplementAnchorSetAndD0KParameterLedger"
+    },
+    {
+      "gate": "ConcreteInventoryRecordsStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前没有声称已经提交全部 concrete corridor records；A/D0/K/Omega/color/budget 仍需后续账本。",
+      "remaining": "ComplementAnchorSetAndD0KParameterLedger AND IntervalGraphColoringCoverageCertificateLedger AND AllowedBudgetAllocationLedger"
+    }
+  ],
+  "closed_gates": [
+    "BadWindowSourceDataGateActive",
+    "FiniteTaxonomyImported",
+    "SameFormalUnitEmitterAvailable",
+    "PDECExplicitBoundaryAvailable",
+    "SparsePacketBoundaryAvailable",
+    "FinalExitInterfacesAvailable",
+    "BadWindowSourceFamilyRecordEmitterClosed",
+    "BadWindowSourceFamilyDataExtractionLedger"
+  ],
+  "open_gates": [
+    "ConcreteInventoryRecordsStillDownstream"
+  ]
+}
