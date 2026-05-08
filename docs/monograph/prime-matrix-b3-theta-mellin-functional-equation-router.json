@@ -1,0 +1,98 @@
+{
+  "certificate_type": "b3_theta_mellin_functional_equation_router",
+  "status": "theta_mellin_zeta_functional_equation_closed",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-gaussian-poisson-theta-router.json": "b6a35c46249e31e9b75f734f49ef96dc7a8a9c35fa45372e753dceafff67f2f4"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "theta_mellin_zeta_functional_equation_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "ThetaMellinZetaContinuationFunctionalEquationLedger": "ThetaMellinZetaContinuationFunctionalEquationClosed"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthLedger AND HadamardFactorizationLogDerivativeLedger) AND EulerProductLogDerivativePositiveRealPartLedger AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityLedger AND ExplicitZeroFreeRegionConstantNumericalLedger AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "XiEntireOrderOneGrowthLedger",
+  "secondary_priority": "HadamardFactorizationLogDerivativeLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "core_formula": {
+    "theta0": "theta_0(t)=theta(t)-1",
+    "completed_zeta_integral": "Lambda(s)=pi^(-s/2)Gamma(s/2)zeta(s)=1/2 int_0^infty theta_0(t)t^(s/2-1)dt, Re s>1",
+    "symmetric_continuation": "Lambda(s)=1/(s(s-1))+1/2 int_1^infty theta_0(t)(t^(s/2-1)+t^((1-s)/2-1))dt",
+    "functional_equation": "Lambda(s)=Lambda(1-s)"
+  },
+  "plain_conclusion": "theta-Mellin 延拓与 completed zeta 函数方程已由上一层 theta 恒等式闭合。这仍只是 zeta-xi 基础包的一部分；下一步需要 xi 整函数和一阶增长账本。",
+  "rows": [
+    {
+      "gate": "ThetaMellinFunctionalEquationGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是 theta Mellin 延拓与 zeta 函数方程。",
+      "remaining": "ThetaMellinZetaContinuationFunctionalEquationLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍是解析基础恒等式，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "GaussianPoissonThetaIdentityAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已经闭合 theta(t)=t^{-1/2}theta(1/t)。",
+      "remaining": "GaussianPoissonThetaIdentityClosed"
+    },
+    {
+      "gate": "CompletedZetaMellinIntegralClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Re s>1 中 Lambda(s)=1/2 int_0^infty (theta(t)-1)t^{s/2-1}dt。",
+      "remaining": "无剩余；由 Gamma 积分和绝对收敛。"
+    },
+    {
+      "gate": "ContinuationSymmetricIntegralClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "分割积分并使用 theta 变换得到 1/(s(s-1)) 加 [1,infty) 对称积分。",
+      "remaining": "无剩余；该公式给出亚纯延拓。"
+    },
+    {
+      "gate": "FunctionalEquationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对称积分公式在 s 与 1-s 下不变，因此 Lambda(s)=Lambda(1-s)。",
+      "remaining": "ThetaMellinZetaContinuationFunctionalEquationClosed"
+    },
+    {
+      "gate": "ThetaMellinZetaContinuationFunctionalEquationLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "待证 atom 已闭合为 completed zeta 的亚纯延拓和函数方程。",
+      "remaining": "ThetaMellinZetaContinuationFunctionalEquationClosed"
+    },
+    {
+      "gate": "XiEntireOrderOneGrowthStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "下一步要把 xi(s)=1/2*s*(s-1)*Lambda(s) 证明为一阶整函数并给增长账本。",
+      "remaining": "XiEntireOrderOneGrowthLedger"
+    }
+  ],
+  "closed_gates": [
+    "ThetaMellinFunctionalEquationGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "GaussianPoissonThetaIdentityAvailable",
+    "CompletedZetaMellinIntegralClosed",
+    "ContinuationSymmetricIntegralClosed",
+    "FunctionalEquationClosed",
+    "ThetaMellinZetaContinuationFunctionalEquationLedger"
+  ],
+  "open_gates": [
+    "XiEntireOrderOneGrowthStillNext"
+  ]
+}
