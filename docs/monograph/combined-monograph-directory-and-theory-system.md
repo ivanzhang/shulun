@@ -4814,3 +4814,46 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 该步删除了 BES-DLS 无名同步失败口子，但尚未证明三类微输入。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_dls_lowphase_pdec_flat_router.py
+docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.md/json
+```
+
+该路由器直接攻击 `DLSLowPhasePDECNewLayerOrFlatDLSBound`。结论为：
+
+```text
+dls_lowphase_boundary_closed=true；
+lowphase_input_proved=false；
+row_column_unconditional_closed=false。
+```
+
+新的压缩律是：
+
+```text
+DLSLowPhasePDECNewLayerOrFlatDLSBound
+  => DLSFixedWheelUnitPeakDilutionOrPDECReturn
+     AND DLSNewLayerFourierConcentrationPDECReturn
+     AND DLSFlatHighModLargeSieveAbsorption。
+```
+
+固定轮单位类峰持续同步时回流 `W-unit PDEC`；新增 Fourier 频率低维集中时回流 `new-layer PDEC`；
+二者都稀释时，剩余只允许作为高模平坦分散能量进入 `flat DLS/KLS`。层叠轮审计显示单单位类峰从
+`W=30` 的 `1.076781` 降到 `W=2310` 的 `0.293727`，而 Fourier 继承分类显示强频率转入新增因子
+`11` 层。这不是证明，但明确了下一步最窄攻点为 `DLSNewLayerFourierConcentrationPDECReturn`。
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND DLSNewLayerFourierConcentrationPDECReturn
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```

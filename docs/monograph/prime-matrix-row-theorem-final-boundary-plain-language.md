@@ -2520,3 +2520,64 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步没有证明三类微输入；但它把 BES-DLS 大口径同步失败压成三个可分别攻的终端，下一步最窄优先级是
 `DLSLowPhasePDECNewLayerOrFlatDLSBound`。
+
+## 34. clean-core DLS LowPhase PDEC/flat DLS
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_dls_lowphase_pdec_flat_router.py
+docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.md/json
+
+dls_lowphase_boundary_closed=true；
+lowphase_input_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层继续攻击上一节最窄优先项 `DLSLowPhasePDECNewLayerOrFlatDLSBound`。关键结论是：
+`LowPhase` 不是一个固定模规律，也不能只看 `mod30`。它必须分成三层：
+
+```text
+DLSLowPhasePDECNewLayerOrFlatDLSBound
+  => DLSFixedWheelUnitPeakDilutionOrPDECReturn
+     AND DLSNewLayerFourierConcentrationPDECReturn
+     AND DLSFlatHighModLargeSieveAbsorption。
+```
+
+具体含义：
+
+- 固定轮单位类峰若与 BES 危险同步，必须给 `W-unit PDEC`；若不同步，固定轮不能支付 LowPhase 危险质量。
+- 升层后的新增 Fourier 频率若低维集中，必须给 `new-layer PDEC`；若高维分散，则不能形成单位相位尖峰。
+- 若固定轮和新增层均不集中，剩余 LowPhase 只能是真正高模平坦分散能量，必须由 `flat DLS/KLS` 吸收。
+
+审计只作结构定位，不作证明：
+
+```text
+W=30 max peak = 1.076781；
+W=30 high-L1 max peak = 0.902430；
+layered max peak: 30 -> 1.076781, 210 -> 0.617936, 2310 -> 0.293727；
+high-L1 max peak: 30 -> 0.902430, 210 -> 0.331095, 2310 -> 0.175276；
+Fourier W=2310: representative strong frequencies 8/8 are new-layer factor 11；
+W=2310 max centered peak = 0.292146。
+```
+
+这一步把用户提出的“无穷迭代、无穷层叠”落实成一个审稿接口：每升一层，要么同步偏斜成为
+`new-layer PDEC`，要么该层被稀释，剩余只能进入高模平坦大筛。当前最贴近现有材料的下一硬点是：
+
+```text
+DLSNewLayerFourierConcentrationPDECReturn。
+```
+
+最新完全自足输入基相应替换为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND DLSNewLayerFourierConcentrationPDECReturn
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
