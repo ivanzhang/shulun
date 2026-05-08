@@ -3006,3 +3006,35 @@ source-lock 分支拆分和最终自足定理边界吸收；它不再是 canonic
 `NoncanonicalFullSComplementAntiAtomOrExternalDIBFI`：若要闭合完整全局版，仍必须证明
 noncanonical full-`S` 补集的强化反原子，或提交外部/量化 DI/BFI 无投影证书。完整行/列
 无条件定理仍未由当前材料闭合。
+
+继续新增：
+
+```text
+experiments/prime_matrix_noncanonical_complement_input_contract_router.py
+docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.md/json
+```
+
+该路由器把 noncanonical full-`S` 补集的“必要输入边界”固定为：
+
+```text
+contract_boundary_closed=true；
+canonical_branch_removed_from_remainder=true；
+generic_wfd_template_available=false；
+noncanonical_complement_closed_by_current_corpus=false；
+row_column_unconditional_closed=false。
+```
+
+因此当前已经闭合的是输入合同判定，而不是这些输入本身。可继续硬攻的输入族只剩：
+
+```text
+ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab；
+FullSNonAPStrengthenedSourceAntiAtomForActualSource；
+NoProjectionUncenteredDispersionIdentity；
+QuantifiedDIBFIWindowSubstitution；
+DStructureTailLog4FiniteRankinIndependentAcceptance。
+```
+
+结构含义是：在扣除 canonical 分支后，剩余 full-`S` 问题不能再被表述为 generic WFD
+自足引理；该模板已被 moving-delta 模型反证。当前材料下没有第四条可自足偷渡路线：
+要么证明实际源恒等，要么证明实际源强化反原子，要么提交外部/量化 `DI/BFI`，最终还要通过
+`DStructure/Rankin` 晋级门。

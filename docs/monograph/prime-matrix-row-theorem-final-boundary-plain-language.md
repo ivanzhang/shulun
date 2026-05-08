@@ -609,6 +609,32 @@ updated_global_blocking_gates=[
 要么证明强化 source anti-atom，要么走外部/量化 DI/BFI 无投影证书。这个调和只缩窄了全局剩余，
 不把完整行/列无条件命题升级为已证定理。
 
+继续新增 noncanonical full-`S` 补集输入合同路由器后：
+
+```text
+experiments/prime_matrix_noncanonical_complement_input_contract_router.py
+docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.md/json
+
+contract_boundary_closed=true；
+canonical_branch_removed_from_remainder=true；
+generic_wfd_template_available=false；
+noncanonical_complement_closed_by_current_corpus=false；
+row_column_unconditional_closed=false。
+```
+
+这一步把“最后还差什么”说得更窄：不是继续证明一个任意 generic WFD 版本，因为那个版本已经被
+moving-delta 模型挡住；也不是继续检查 canonical 分支，因为它已经闭合。真正剩余只剩必要输入：
+
+```text
+实际 full-S non-AP 源 = canonical RIW/Buchstab 源；
+或实际 noncanonical 源满足强化反原子；
+或外部/量化 DI/BFI 无投影证书；
+并且最终 DStructure/Tail-log4/Rankin 晋级门被接受。
+```
+
+所以当前“自足闭合”的最终诚实表述是：canonical-source 精确命题已闭合，noncanonical 补集的
+必要输入边界也已闭合；但这些必要输入本身还没有被当前材料证明，完整无条件行/列定理仍不能声明。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
