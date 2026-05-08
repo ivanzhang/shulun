@@ -1606,3 +1606,51 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步闭合的是回流完备性，不是 clean-core 排斥证明。下一步必须直接证明 clean-core packet 不存在，
 或直接证明最终容量反原子；最终仍需 DStructure/Rankin 独立验收。
+
+## 16. clean-core moving atom 精确输入
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_moving_atom_sharp_input_router.py
+docs/monograph/prime-matrix-clean-core-moving-atom-sharp-input-router.md/json
+
+clean_core_moving_atom_sharp_boundary_closed=true；
+clean_core_moving_atom_exclusion_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把上一节的 clean-core 低支撑 packet 排斥再校准为最终容量目标真正需要的 sharp 输入。原因是：
+排斥所有低支撑 packet 足够强，但并非必要；若某个低支撑 packet 不导致最终容量测度集中，它不必成为终局障碍。
+真正必须排斥的是通过所有回流测试后仍承载最终 `M_{u,v}` 大原子的 actual moving block。
+
+因此源侧最窄微输入从：
+
+```text
+ActualNoncanonicalCleanCoreSupportFailurePacketExclusion
+```
+
+锐化为：
+
+```text
+ActualNoncanonicalCleanCoreMovingAtomExclusion。
+```
+
+定义上，`ActualNoncanonicalCleanCoreMovingAtom` 是一个通过所有回流测试的正质量 actual noncanonical
+full-S non-AP balanced block 中的 pair `(u,v)`，其最终登记容量
+`M_{u,v}/sum M_{u,v}` 超过所需 `log^{-2A}` 阈值。由于 registered multiplier discipline 已闭合，
+任何这样的最终容量大原子都会由条件不等式的逆否给出一个低支撑 packet；但反过来，低支撑 packet
+未必造成最终容量大原子。所以 moving-atom 排斥是更贴近终局反原子的精确目标。
+
+最新完全自足输入基为：
+
+```text
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+阻断律仍然保留：formal WFD、Type 分解、Fourier 平滑和固定投影 diffuse 不能推出该 sharp 输入；
+moving-delta 模型仍可在每个尺度选择新的 `(u,v)` 标签集中。当前材料尚未证明
+`ActualNoncanonicalCleanCoreMovingAtomExclusion`，所以完整无条件闭合仍未完成。

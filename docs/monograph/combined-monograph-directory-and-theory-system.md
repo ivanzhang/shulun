@@ -3978,3 +3978,43 @@ clean-core packet 是通过所有回流测试后仍保留的正质量 actual non
 同 formal unit、低于 exact `u/v` 支撑阈值、无 canonical 导入、无有限 sparse witness、无持久 PDEC 签名、
 无列位移缺陷，也未进入外部或 generic CleanKLS。本步闭合回流完备性；当前材料仍未证明 clean-core
 packet 不存在或必然矛盾。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_moving_atom_sharp_input_router.py
+docs/monograph/prime-matrix-clean-core-moving-atom-sharp-input-router.md/json
+```
+
+该路由器继续校准 `ActualNoncanonicalCleanCoreSupportFailurePacketExclusion`。结论为：
+
+```text
+clean_core_moving_atom_sharp_boundary_closed=true；
+clean_core_moving_atom_exclusion_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：clean-core 支撑失败 packet 排斥是足够条件，但比最终目标更强。由于 registered multiplier
+discipline 已闭合，final capacity 大原子的逆否会产生低于阈值的 exact `u/v` 支撑失败 packet；因此
+终局真正需要排斥的是 clean-core final capacity measure 的 moving same-`(u,v)` 大原子，而不是所有
+不会造成容量集中的低支撑 packet。
+
+最新源侧 sharp 微输入为：
+
+```text
+ActualNoncanonicalCleanCoreMovingAtomExclusion。
+```
+
+连同独立晋级门，最新完全自足输入基为：
+
+```text
+ActualNoncanonicalCleanCoreMovingAtomExclusion
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+`ActualNoncanonicalCleanCoreMovingAtom` 是通过所有回流测试的正质量 actual noncanonical full-S non-AP
+balanced block 中的 pair `(u,v)`，其最终登记容量 `M_{u,v}/sum M_{u,v}` 超过 `log^{-2A}` 阈值。本步只是
+关闭输入口径，当前材料仍未证明该 moving atom exclusion；formal WFD、Type/Fourier 和固定投影路线仍被
+moving-delta 阻断。

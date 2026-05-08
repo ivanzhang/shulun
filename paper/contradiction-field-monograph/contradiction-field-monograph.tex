@@ -3281,6 +3281,39 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
 This closes return completeness, not clean-core exclusion.  The manuscript still lacks a
 proof that such clean-core packets are impossible, or a direct proof of the final capacity
 anti-atom.
+
+The clean-core moving-atom sharp-input router then corrects one final over-strong
+formulation.  It records
+\[
+\begin{gathered}
+  \texttt{clean\_core\_moving\_atom\_sharp\_boundary\_closed=true},\\
+  \texttt{clean\_core\_moving\_atom\_exclusion\_proved=false},\\
+  \texttt{actual\_final\_capacity\_antiatom\_proved=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+Excluding every clean-core low-support packet is sufficient, but it is stronger than the
+final capacity anti-atom requires.  Once the registered multiplier discipline is closed,
+the contrapositive of the recorded capacity inequality says that any final
+\(M_{u,v}\)-atom produces a low-support packet.  The converse is not needed: a low-support
+packet that does not concentrate final capacity is not a terminal obstruction.  Therefore
+the sharp source-side input is
+\begin{quote}\small\ttfamily
+ActualNoncanonicalCleanCoreMovingAtomExclusion.
+\end{quote}
+Here a clean-core moving atom is a positive-mass actual noncanonical full-\(S\) non-AP
+balanced block, after all return tests, with some pair \((u,v)\) satisfying
+\[
+  M_{u,v}/\sum_{u,v}M_{u,v}>\log^{-2A}.
+\]
+The latest self-contained input basis is
+\begin{quote}\small\ttfamily
+ActualNoncanonicalCleanCoreMovingAtomExclusion\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+This is only a sharp reformulation.  It is not implied by formal WFD, Type decomposition,
+Fourier smoothing, or fixed-projection diffuse; the moving-delta obstruction remains.
 \end{proof}
 
 

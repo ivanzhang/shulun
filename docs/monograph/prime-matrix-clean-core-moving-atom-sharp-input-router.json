@@ -1,0 +1,133 @@
+{
+  "actual_final_capacity_antiatom_proved": false,
+  "certificate_type": "prime_matrix_clean_core_moving_atom_sharp_input_router",
+  "clean_core_moving_atom_exclusion_proved": false,
+  "clean_core_moving_atom_sharp_boundary_closed": true,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "latest_self_contained_basis": "ActualNoncanonicalCleanCoreMovingAtomExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "moving_atom_definition": "ActualNoncanonicalCleanCoreMovingAtom 是一个通过所有回流测试的正质量 actual noncanonical full-S non-AP balanced block 中的 pair (u,v)，其最终登记容量 M_{u,v}/sum M_{u,v} 超过所需 log^{-2A} 阈值。",
+  "new_source_microinput": "ActualNoncanonicalCleanCoreMovingAtomExclusion",
+  "no_go_law": "该 sharp 输入不能由 formal WFD、Type 分解、Fourier 平滑或固定投影 diffuse 免费推出；moving-delta 模型仍可在每个尺度选择新的 (u,v) 标签集中。",
+  "plain_conclusion": "最新最窄剩余从 clean-core 低支撑 packet 排斥校准为 clean-core moving atom 排斥。这更贴近最终容量反原子目标：低支撑但不造成容量集中的 packet 不必作为终局障碍；必须排斥的是通过所有回流测试后仍承载最终 M_{u,v} 大原子的 actual moving block。当前材料尚未证明该 sharp 输入。",
+  "previous_source_microinput": "ActualNoncanonicalCleanCoreSupportFailurePacketExclusion",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CleanCorePacketFrontierPinned",
+      "meaning": "上一层已把非 clean-core 的支撑失败 packet 全部回流到命名出口。",
+      "proved": true,
+      "remaining": "只需处理通过全部回流测试的 clean-core 残余。"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredMultiplierDisciplineAvailable",
+      "meaning": "Type/Fourier/fiber 乘子已登记为同一 formal unit 的 log-power 成本。",
+      "proved": true,
+      "remaining": "最终容量大原子若存在，不能归因于账外乘子。"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityAtomImpliesSupportFailurePacket",
+      "meaning": "由已登记乘子条件不等式的逆否命题，final M_{u,v} 大原子会产生低于阈值的 exact u/v 支撑失败 packet。",
+      "proved": true,
+      "remaining": "该逆否只定位 witness，不证明 witness 不存在。"
+    },
+    {
+      "closed": true,
+      "gate": "SupportPacketExclusionIsSufficientButOverstrong",
+      "meaning": "排斥所有 clean-core 低支撑 packet 足以闭合，但比最终目标更强；最终只需排斥会产生容量大原子的 packet。",
+      "proved": true,
+      "remaining": "把源侧输入改写为 clean-core moving atom exclusion。"
+    },
+    {
+      "closed": true,
+      "gate": "SharpMovingAtomInputPinned",
+      "meaning": "最终 sharp 源侧命题是 clean-core 最终容量测度无 moving same-(u,v) 大原子。",
+      "proved": true,
+      "remaining": "证明该 actual clean-core anti-atom。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalTemplateNoGoRetained",
+      "meaning": "formal WFD/Type/Fourier 与固定投影仍不能推出 moving-block entropy；moving-delta 阻断保留。",
+      "proved": true,
+      "remaining": "不能把 sharp 输入偷换成 generic WFD 引理。"
+    },
+    {
+      "closed": false,
+      "gate": "CleanCoreMovingAtomExclusionCurrentCorpusProved",
+      "meaning": "当前材料没有证明 actual noncanonical clean-core moving atom exclusion。",
+      "proved": false,
+      "remaining": "证明 ActualNoncanonicalCleanCoreMovingAtomExclusion，或接受精确 FullS KLS 外部输入。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧 sharp 输入完成后仍需独立验收。"
+    }
+  ],
+  "sharp_input_law": "clean-core 支撑失败 packet 排斥是足够条件，但不是最终 sharp 目标。在 registered multiplier discipline 已闭合后，final capacity 大原子的逆否会给出支撑失败 packet；因此最终源侧 sharp 输入是排斥 clean-core final capacity measure 的 moving same-(u,v) 大原子。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-capacity-ledger-microatom-router.json": "985de26054e8d0f938fbbd839576b2c3fb4b3c8a6d239f854cf261be9d6f7101",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-support-failure-packet-return-dichotomy-router.json": "9c0b1a6aa36b240b6a9cd9772bde88e6e3319e083b90c738573fc28f9a8a5fa7",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.md": "47049a5816fef4e01f5e4fd38ea3e67dac9bd7a1bd9c76a2f09b96d281bb79f8",
+    "docs/monograph/prime-matrix-triad-a1-source-block-entropy-router.md": "6e7b6bda3db10186897bb6e2f4825bc68000479f2dcbbb3dc4bcf0b2c9d4e212"
+  },
+  "status": "clean_core_moving_atom_sharp_input_pinned_open",
+  "threshold_rows": [
+    {
+      "atom_share_threshold": "L^(-2A)",
+      "k": 3,
+      "log_y": 6.907755278982138,
+      "required_pair_support": 185664143359702,
+      "support_threshold": "L^17"
+    },
+    {
+      "atom_share_threshold": "L^(-2A)",
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "required_pair_support": 24699408928878996,
+      "support_threshold": "L^17"
+    },
+    {
+      "atom_share_threshold": "L^(-2A)",
+      "k": 5,
+      "log_y": 11.51292546497023,
+      "required_pair_support": 1096874099498946944,
+      "support_threshold": "L^17"
+    },
+    {
+      "atom_share_threshold": "L^(-2A)",
+      "k": 6,
+      "log_y": 13.815510557964275,
+      "required_pair_support": 24335370598442758144,
+      "support_threshold": "L^17"
+    },
+    {
+      "atom_share_threshold": "L^(-2A)",
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "required_pair_support": 334451684862452432896,
+      "support_threshold": "L^17"
+    },
+    {
+      "atom_share_threshold": "L^(-2A)",
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "required_pair_support": 3237400927126027763712,
+      "support_threshold": "L^17"
+    },
+    {
+      "atom_share_threshold": "L^(-2A)",
+      "k": 9,
+      "log_y": 20.723265836946414,
+      "required_pair_support": 23976697736727197908992,
+      "support_threshold": "L^17"
+    }
+  ]
+}
