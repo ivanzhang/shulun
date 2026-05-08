@@ -1,0 +1,128 @@
+{
+  "certificate_type": "b3_zeta_xi_hadamard_router",
+  "status": "zeta_xi_hadamard_reduced_to_theta_poisson_package_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-zero-free-constants-router.json": "68119ef8f8137f451eeac7326910fd87789bf4d5babcdbf73d3925dc21a216cb",
+    "docs/rh-pc1-explicit-formula-proof-appendix.md": "de5e7172a4c77554fde727159d5a7b3b88e88f6e8ef5240cd91da58199938ed2",
+    "docs/rh-pc1-analytic-input-theoremization.md": "9e282fc96f4501555fd14f2396dc22c661b2fc0f1a31665b00bbef4aa2da3dcf"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "zeta_xi_hadamard_reduced": true,
+  "zeta_xi_hadamard_self_contained_proved": false,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "CompletedZetaXiFunctionalEquationAndHadamardProductLedger": "(GaussianPoissonSummationThetaIdentityLedger AND ThetaMellinZetaContinuationFunctionalEquationLedger AND XiEntireOrderOneGrowthLedger AND HadamardFactorizationLogDerivativeLedger)"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonSummationThetaIdentityLedger AND ThetaMellinZetaContinuationFunctionalEquationLedger AND XiEntireOrderOneGrowthLedger AND HadamardFactorizationLogDerivativeLedger) AND EulerProductLogDerivativePositiveRealPartLedger AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityLedger AND ExplicitZeroFreeRegionConstantNumericalLedger AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "GaussianPoissonSummationThetaIdentityLedger",
+  "secondary_priority": "ThetaMellinZetaContinuationFunctionalEquationLedger",
+  "tertiary_priority": "XiEntireOrderOneGrowthLedger",
+  "quaternary_priority": "HadamardFactorizationLogDerivativeLedger",
+  "downstream_priority": "EulerProductLogDerivativePositiveRealPartLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "source_audit": {
+    "explicit_formula_uses_zeta_log_derivative": true,
+    "gaussian_poisson_theta_identity_present": false,
+    "theta_mellin_continuation_functional_equation_present": false,
+    "xi_entire_order_one_growth_present": false,
+    "hadamard_factorization_log_derivative_present": false
+  },
+  "core_formula": {
+    "theta_identity": "theta(t)=t^(-1/2) theta(1/t)",
+    "completed_zeta": "Lambda(s)=pi^(-s/2) Gamma(s/2) zeta(s)",
+    "mellin_continuation": "Lambda(s)=1/(s(s-1)) + 1/2 int_1^infty (theta(t)-1)(t^(s/2-1)+t^((1-s)/2-1)) dt",
+    "xi_definition": "xi(s)=1/2*s*(s-1)*Lambda(s), xi(s)=xi(1-s)",
+    "hadamard_log_derivative": "xi'/xi(s)=B + sum_rho (1/(s-rho)+1/rho)"
+  },
+  "plain_conclusion": "当前仓库的显式公式已经使用 zeta 零点语言，但没有把 zeta 的函数方程、xi 整函数阶与 Hadamard 乘积逐行内联。该基础包不能直接给零点自由区；它只是 de la Vallee Poussin 排斥不等式的底座。",
+  "rows": [
+    {
+      "gate": "ZetaXiHadamardGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是完整 zeta-xi 函数方程与 Hadamard 乘积账本。",
+      "remaining": "CompletedZetaXiFunctionalEquationAndHadamardProductLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只补假设链条的解析基础，不用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ExplicitFormulaUsesButDoesNotProveZeta",
+      "closed": true,
+      "proved": true,
+      "meaning": "已有显式公式使用 -zeta'/zeta 和零点，但它把 zeta 解析基础作为背景。",
+      "remaining": "需要下沉到 theta-Poisson 证明包。"
+    },
+    {
+      "gate": "GaussianPoissonThetaIdentityMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要证明 Gaussian Poisson 求和并推出 theta(t)=t^{-1/2}theta(1/t)。",
+      "remaining": "GaussianPoissonSummationThetaIdentityLedger"
+    },
+    {
+      "gate": "ThetaMellinFunctionalEquationMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要由 theta Mellin 积分给出 zeta 延拓与 Lambda(s)=Lambda(1-s)。",
+      "remaining": "ThetaMellinZetaContinuationFunctionalEquationLedger"
+    },
+    {
+      "gate": "XiEntireOrderOneGrowthMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要用 Gamma/Stirling 与 theta 积分控制 xi 为一阶整函数。",
+      "remaining": "XiEntireOrderOneGrowthLedger"
+    },
+    {
+      "gate": "HadamardFactorizationLogDerivativeMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "需要把一阶整函数分解成 Hadamard 乘积并给出 xi'/xi 的可用部分分式。",
+      "remaining": "HadamardFactorizationLogDerivativeLedger"
+    },
+    {
+      "gate": "ZetaXiHadamardReducedToThetaPoissonPackage",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧 zeta-xi-Hadamard 原子被压成 theta-Poisson、Mellin 延拓、xi 增长阶、Hadamard 对数导数四包。",
+      "remaining": "(GaussianPoissonSummationThetaIdentityLedger AND ThetaMellinZetaContinuationFunctionalEquationLedger AND XiEntireOrderOneGrowthLedger AND HadamardFactorizationLogDerivativeLedger)"
+    },
+    {
+      "gate": "EulerProductPositiveKernelStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "zeta-xi 包完成后，仍需 Euler product 对数导数正性接入零点排斥。",
+      "remaining": "EulerProductLogDerivativePositiveRealPartLedger"
+    },
+    {
+      "gate": "ZeroRepulsionAndConstantsStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "随后才是 de la Vallee Poussin 排斥不等式和显式常数账本。",
+      "remaining": "DeLaValleePoussinZeroRepulsionInequalityLedger AND ExplicitZeroFreeRegionConstantNumericalLedger"
+    }
+  ],
+  "closed_gates": [
+    "ZetaXiHadamardGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ExplicitFormulaUsesButDoesNotProveZeta",
+    "ZetaXiHadamardReducedToThetaPoissonPackage"
+  ],
+  "open_gates": [
+    "GaussianPoissonThetaIdentityMissing",
+    "ThetaMellinFunctionalEquationMissing",
+    "XiEntireOrderOneGrowthMissing",
+    "HadamardFactorizationLogDerivativeMissing",
+    "EulerProductPositiveKernelStillNext",
+    "ZeroRepulsionAndConstantsStillDownstream"
+  ]
+}
