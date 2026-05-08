@@ -540,6 +540,29 @@ PDEC-CAP 已由 canonical 边界提升闭合，canonical `CleanKLS/NC-BLK` 也�
 剩下的不是自足证明内部的数学开门，而是完整行/列定理升级所需的独立审稿门，以及 generic/external
 版本的 DI/BFI 输入。
 
+继续新增 canonical-source 自足命题最终闭合路由器后：
+
+```text
+experiments/prime_matrix_canonical_source_self_contained_final_theorem_router.py
+docs/monograph/prime-matrix-canonical-source-self-contained-final-theorem-router.md/json
+
+canonical_source_self_contained_theorem_closed=true；
+open_self_contained_gates=[]；
+terminal_boundary=
+  NoFurtherCanonicalSourceSelfContainedTheoremBoundaryGap。
+```
+
+这就是当前可以完整闭合的自足命题：
+
+```text
+Prime Matrix canonical-source terminal theorem boundary:
+  Triad-A1 same-set/full-S terminal plus canonical terminal promotion
+  on the canonical RIW/Buchstab source branch.
+```
+
+也就是说，在这个精确边界内已经没有剩余自足硬点。仍不声明的是 unrestricted generic WFD 自足版和
+完整 Prime Matrix 行/列无条件定理；它们分别需要另走 generic/external DI/BFI 路线或最终独立审稿晋级。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

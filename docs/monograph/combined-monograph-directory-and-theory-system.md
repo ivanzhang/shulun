@@ -2896,3 +2896,45 @@ narrowest_global_next_hardpoint=
 `CleanKLS/NC-BLK` 被吸收或回流 `PDEC/SAE`。这完成的是 canonical-source 自足终端晋级边界，
 不是 unrestricted/global 终端家族排斥定理，也不是完整行/列无条件命题。外部/generic
 `DI/BFI` 与最终 `DStructureRankinReferee` 仍在该闭合边界之外。
+
+继续新增：
+
+```text
+experiments/prime_matrix_canonical_source_self_contained_final_theorem_router.py
+docs/monograph/prime-matrix-canonical-source-self-contained-final-theorem-router.md/json
+```
+
+该路由器生成最终自足命题边界闭合证书：
+
+```text
+canonical_source_self_contained_theorem_closed=true；
+open_self_contained_gates=[]；
+terminal_boundary=
+  NoFurtherCanonicalSourceSelfContainedTheoremBoundaryGap；
+open_external_gates=[
+  DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY
+]；
+open_final_promotion_gates=[
+  DStructureRankinRefereeStillOpen
+]；
+row_column_unconditional_closed=false。
+```
+
+最终可声明的自足命题是：
+
+```text
+Prime Matrix canonical-source terminal theorem boundary:
+  Triad-A1 same-set/full-S terminal plus canonical terminal promotion
+  on the canonical RIW/Buchstab source branch.
+```
+
+不声明的命题仍是：
+
+```text
+Unrestricted generic full-S well-factorable WFD self-contained theorem；
+Unrestricted/global Prime Matrix row-column unconditional theorem。
+```
+
+因此，当前“自足闭合”已经完成到精确命题边界：
+`NoFurtherCanonicalSourceSelfContainedTheoremBoundaryGap`。完整无条件行/列命题的最终升级仍需外部/独立
+审稿输入，不能由该自足边界证书替代。
