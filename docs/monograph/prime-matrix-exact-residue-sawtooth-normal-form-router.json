@@ -1,0 +1,253 @@
+{
+  "certificate_type": "exact_residue_sawtooth_normal_form_router",
+  "status": "exact_sawtooth_compressed_to_quadratic_arc_discrepancy_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-explicit-rosser-lower-weight-ledger-router.json": "4a79d8c4c1e7a2c0042188c2fdb432e5b868c7397ccc72a2e1c070e1b9045ef3"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "exact_floor_to_quadratic_arc_identity_proved": true,
+  "endpoint_d1_loss_registered": true,
+  "sawtooth_atom_compressed": true,
+  "rosser_weighted_quadratic_arc_discrepancy_proved": false,
+  "near_square_divisor_spread_proved": false,
+  "external_well_factorable_sawtooth_dispersion_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "replacement": {
+    "ExactResidueWeightedFloorSawtoothTenPercentBound": "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000"
+  },
+  "replacement_with_external_dispersion": {
+    "ExactResidueWeightedFloorSawtoothTenPercentBound": "(RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000 OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) AND RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND (RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000 OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043))) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND (RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000 OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000",
+  "internal_geometry_priority": "WellFactorableNearSquareDivisorSpreadBoundAlpha043",
+  "external_next_priority": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+  "rough_fallback_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+  "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "capacity_metrics": {
+    "model_main_at_tail_start": 4896.256003716197,
+    "target_s": 401,
+    "target_ratio_of_model_main": 0.08189931239209021,
+    "conservative_main_fraction": 0.99,
+    "sawtooth_loss_fraction_budget": 0.9,
+    "residual_after_99pct_main_and_90pct_loss": 440.66304033445755,
+    "residual_exceeds_target": true,
+    "d_equals_1_endpoint_loss": 1,
+    "residual_after_endpoint_loss": 439.66304033445755,
+    "residual_after_endpoint_loss_exceeds_target": true
+  },
+  "normal_form": {
+    "interval": "1<=k<P",
+    "d_equals_1": "A_1=P-1, A_1-P=-1",
+    "d_gt_1": "t_d=P mod d, rho_d^±=±t_d^2 mod d in {1,...,d-1}",
+    "count_identity": "A_d^±=floor(P/d)+1_{0<rho_d^±<t_d}",
+    "sawtooth_identity": "A_d^±-P/d=1_{0<rho_d^±<t_d}-t_d/d"
+  },
+  "identity_samples": [
+    {
+      "P": 101,
+      "d": 7,
+      "sign": "minus",
+      "t=P mod d": 3,
+      "rho": 2,
+      "count_direct": 15,
+      "count_formula": 15,
+      "error_direct": 0.5714285714285712,
+      "error_formula": 0.5714285714285714,
+      "identity_holds": true
+    },
+    {
+      "P": 101,
+      "d": 7,
+      "sign": "plus",
+      "t=P mod d": 3,
+      "rho": 5,
+      "count_direct": 14,
+      "count_formula": 14,
+      "error_direct": -0.4285714285714288,
+      "error_formula": -0.42857142857142855,
+      "identity_holds": true
+    },
+    {
+      "P": 101,
+      "d": 13,
+      "sign": "minus",
+      "t=P mod d": 10,
+      "rho": 9,
+      "count_direct": 8,
+      "count_formula": 8,
+      "error_direct": 0.23076923076923084,
+      "error_formula": 0.23076923076923073,
+      "identity_holds": true
+    },
+    {
+      "P": 101,
+      "d": 13,
+      "sign": "plus",
+      "t=P mod d": 10,
+      "rho": 4,
+      "count_direct": 8,
+      "count_formula": 8,
+      "error_direct": 0.23076923076923084,
+      "error_formula": 0.23076923076923073,
+      "identity_holds": true
+    },
+    {
+      "P": 103,
+      "d": 11,
+      "sign": "minus",
+      "t=P mod d": 4,
+      "rho": 5,
+      "count_direct": 9,
+      "count_formula": 9,
+      "error_direct": -0.3636363636363633,
+      "error_formula": -0.36363636363636365,
+      "identity_holds": true
+    },
+    {
+      "P": 103,
+      "d": 11,
+      "sign": "plus",
+      "t=P mod d": 4,
+      "rho": 6,
+      "count_direct": 9,
+      "count_formula": 9,
+      "error_direct": -0.3636363636363633,
+      "error_formula": -0.36363636363636365,
+      "identity_holds": true
+    },
+    {
+      "P": 107,
+      "d": 15,
+      "sign": "minus",
+      "t=P mod d": 2,
+      "rho": 4,
+      "count_direct": 7,
+      "count_formula": 7,
+      "error_direct": -0.13333333333333375,
+      "error_formula": -0.13333333333333333,
+      "identity_holds": true
+    },
+    {
+      "P": 107,
+      "d": 15,
+      "sign": "plus",
+      "t=P mod d": 2,
+      "rho": 11,
+      "count_direct": 7,
+      "count_formula": 7,
+      "error_direct": -0.13333333333333375,
+      "error_formula": -0.13333333333333333,
+      "identity_holds": true
+    }
+  ],
+  "rows": [
+    {
+      "gate": "ExactSawtoothGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "若标准 beta-sieve 权重包被接受，下一硬点就是精确加权 floor/sawtooth 余项。",
+      "remaining": "ExactResidueWeightedFloorSawtoothTenPercentBound"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行反例链条里整理余项标准形，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "FloorToQuadraticArcIdentityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 d>1，令 t=P mod d、rho=±t^2 mod d，则 A_d=floor(P/d)+1_{0<rho<t}。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "EndpointD1LossRegistered",
+      "closed": true,
+      "proved": true,
+      "meaning": "因区间为 1<=k<P，d=1 给 A_1-P=-1；该单点损失已从容量中扣除。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "NinetyNineMainVsNinetySawtoothCapacityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若权重主系数保守达到 99% 模型主项，sawtooth 损失不超过 90% 主项且扣除 d=1 后仍超过目标 401。",
+      "remaining": "无剩余。"
+    },
+    {
+      "gate": "SawtoothAtomCompressedToQuadraticArcDiscrepancy",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧 sawtooth 原子被压成 Rosser 权重下的二次圆弧偏差界。",
+      "remaining": "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000"
+    },
+    {
+      "gate": "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000",
+      "closed": false,
+      "proved": false,
+      "meaning": "证明 sum lambda_d^-(1_{0<±(P mod d)^2 mod d<P mod d}-(P mod d)/d) >= -0.90 M(P)。",
+      "remaining": "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000"
+    },
+    {
+      "gate": "WellFactorableNearSquareDivisorSpreadBoundAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "等价几何形式是 t^2 与 d 的近端余数/近平方除数扩散；这是内部结构路线。",
+      "remaining": "WellFactorableNearSquareDivisorSpreadBoundAlpha043"
+    },
+    {
+      "gate": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部解析路线是 well-factorable 权重下的 sawtooth/分散估计。",
+      "remaining": "ExternalWellFactorableSawtoothDispersionBoundAlpha043"
+    },
+    {
+      "gate": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "短区间 rough-number 下界仍可绕过内部 sawtooth 分析。",
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "closed": false,
+      "proved": false,
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "ExactSawtoothGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "FloorToQuadraticArcIdentityClosed",
+    "EndpointD1LossRegistered",
+    "NinetyNineMainVsNinetySawtoothCapacityClosed",
+    "SawtoothAtomCompressedToQuadraticArcDiscrepancy"
+  ],
+  "open_gates": [
+    "RosserWeightedQuadraticArcDiscrepancyTenPercentAlpha043PGe100000",
+    "WellFactorableNearSquareDivisorSpreadBoundAlpha043",
+    "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把精确 floor 余项压成二次圆弧偏差。对每个 d>1，floor 误差完全由 t=P mod d 与 rho=±t^2 mod d 决定：A_d-P/d=1_{0<rho<t}-t/d。因此剩余不再是抽象 floor 控制，而是 Rosser 权重下的二次相位圆弧非集中命题；内部几何路线可写成近平方除数扩散，外部路线可写成 well-factorable sawtooth dispersion。"
+}
