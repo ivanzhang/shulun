@@ -1294,3 +1294,42 @@ row_column_unconditional_closed=false。
 
 这一步闭合的是“两条线是否还有独立剩余”的边界：没有。剩余真正压成一个自足源核心和一个独立
 晋级验收门。它仍不是完整行/列无条件定理证明。
+
+## 9. 完全自足最窄核心
+
+继续新增：
+
+```text
+experiments/prime_matrix_self_contained_narrowest_core_router.py
+docs/monograph/prime-matrix-self-contained-narrowest-core-router.md/json
+
+narrowest_core_reduction_closed=true；
+canonical_source_lock_absorbed_for_canonical_branch=true；
+source_lock_option_removed_from_global_remainder=true；
+external_black_box_used=false；
+generic_self_contained_antiatom_available=false；
+noncanonical_actual_source_core_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+通俗地说，上一节的完全自足输入基还有一个容易混淆的 `OR`：
+
+```text
+ActualA1FullSSourceLockOrNewFullSNonAPSourceAntiAtomTheoremInput
+```
+
+现在这个 `OR` 被拆开了。`ActualA1FullSSourceLock` 已在 canonical RIW/Buchstab 分支内由来源账本
+吸收，它只关闭 canonical-source 自足命题，不关闭 unrestricted/global 的 noncanonical full-S 补集。
+而 generic 自足反原子又被 moving-delta 模型反证，所以不能继续拿宽 generic WFD 模板补洞。
+
+因此完全自足、无外部黑箱的最新最窄剩余是：
+
+```text
+ActualNoncanonicalFullSSourceEntropyOrStrengthenedAntiAtomTheoremInput
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+也就是两件事：第一，证明 actual noncanonical full-S non-AP 源没有 moving same-`(u,v)` 大原子，
+或等价证明它的 exact source entropy；第二，完成 DStructure/Rankin 独立晋级验收。当前材料仍只完成
+边界压缩，没有证明这两个剩余输入。

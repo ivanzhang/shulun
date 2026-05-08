@@ -3700,3 +3700,39 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步闭合的是外部/内部两线的独立性缺口，不是无条件定理证明。当前材料仍没有证明实际源恒等或
 新 full-S 源反原子，也没有完成 DStructure/Rankin 独立验收。
+
+继续新增：
+
+```text
+experiments/prime_matrix_self_contained_narrowest_core_router.py
+docs/monograph/prime-matrix-self-contained-narrowest-core-router.md/json
+```
+
+该路由器专门处理完全自足版中的 `ActualA1FullSSourceLock OR NewFullSNonAPSourceAntiAtom` 是否仍
+是全局剩余。结论为：
+
+```text
+narrowest_core_reduction_closed=true；
+canonical_source_lock_absorbed_for_canonical_branch=true；
+source_lock_option_removed_from_global_remainder=true；
+external_black_box_used=false；
+generic_self_contained_antiatom_available=false；
+noncanonical_actual_source_core_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：canonical source-lock 已经由 canonical RIW/Buchstab 分支和 actual-source provenance
+账本吸收，不能再作为 unrestricted/global full-S noncanonical 补集的闭合输入；generic 自足反原子
+又被 moving-delta 模型反证。因此外部黑箱被排除后，全局完全自足数学剩余不再是
+`ActualA1FullSSourceLock OR generic anti-atom`，而是：
+
+```text
+ActualNoncanonicalFullSSourceEntropyOrStrengthenedAntiAtomTheoremInput
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这里的源核心合同是：对 actual noncanonical full-S non-AP WFD 系数证明 exact source entropy，
+或证明其 final source capacity measure 没有 moving same-`(u,v)` 大原子；该命题不能替换成
+unrestricted generic WFD 模板。此步闭合 source-lock/global-complement 歧义，但没有证明
+noncanonical actual source core，也没有完成 DStructure/Rankin 独立验收。

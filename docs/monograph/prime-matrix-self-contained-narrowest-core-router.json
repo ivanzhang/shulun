@@ -1,0 +1,63 @@
+{
+  "canonical_source_lock_absorbed_for_canonical_branch": true,
+  "certificate_type": "prime_matrix_self_contained_narrowest_core_router",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "external_black_box_used": false,
+  "generic_self_contained_antiatom_available": false,
+  "narrowest_core_reduction_closed": true,
+  "narrowest_self_contained_basis": "ActualNoncanonicalFullSSourceEntropyOrStrengthenedAntiAtomTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "noncanonical_actual_source_core_proved": false,
+  "noncanonical_source_core_contract": "Prove exact source entropy / no moving same-(u,v) atom for the actual noncanonical full-S non-AP WFD coefficients, not for an unrestricted generic WFD template.",
+  "plain_conclusion": "最后自足剩余又窄了一层：canonical source-lock 已经不是全局剩余，它只关闭 canonical 分支；外部黑箱被排除后，真正剩余是证明 actual noncanonical full-S non-AP 源没有 moving same-(u,v) 大原子，或等价证明 exact source entropy。此外 DStructure/Rankin 晋级验收仍独立开放。",
+  "previous_self_contained_basis": "ActualA1FullSSourceLockOrNewFullSNonAPSourceAntiAtomTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "consequence": "可以继续检查 source-lock 这一支是否仍属于全局剩余。",
+      "gate": "SelfContainedBasisPinned",
+      "meaning": "上一轮已经去掉外部黑箱，把完全自足版压到 source-lock/新反原子 + Rankin。"
+    },
+    {
+      "closed": true,
+      "consequence": "source-lock 不是 canonical 分支内的新缺口。",
+      "gate": "CanonicalSourceLockAbsorbed",
+      "meaning": "canonical RIW/Buchstab 分支的 actual source provenance 已闭合。"
+    },
+    {
+      "closed": true,
+      "consequence": "全局完全自足剩余必须落到 noncanonical actual-source 核心。",
+      "gate": "CanonicalLockDoesNotCloseGlobalComplement",
+      "meaning": "canonical 分支闭合不等于 unrestricted/global full-S noncanonical 补集闭合。"
+    },
+    {
+      "closed": true,
+      "consequence": "不能用宽 generic WFD/Type/Fourier 模板补这个洞。",
+      "gate": "GenericSelfContainedAntiAtomUnavailable",
+      "meaning": "generic full-S 自足反原子已被 moving-delta 模型反证。"
+    },
+    {
+      "closed": true,
+      "consequence": "真正自足数学输入变成 actual noncanonical source theorem。",
+      "gate": "NoncanonicalActualCorePinned",
+      "meaning": "noncanonical 补集已压成实际源 exact entropy / strengthened anti-atom。"
+    },
+    {
+      "closed": true,
+      "consequence": "即使 source core 证明完成，也还要独立验收才能升级全局定理。",
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.json": "4d5c17126ea796ee37ae469a3684ef634899dfea0b4af3352c3bf29d0f874e59",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-dual-lane-common-core-reconciliation-router.json": "6e15d36f4a05256d2e0e16f402b68a9947712e7ba4bce688de0ca2ebaebc2f99",
+    "docs/monograph/prime-matrix-noncanonical-final-narrowing-router.json": "a585c11c3c2f0041c7f7b258ee7753175c83eff3a9e783c544bbf6386f4f99a8",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-antiatom-nogo-router.json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4"
+  },
+  "source_lock_option_removed_from_global_remainder": true,
+  "status": "self_contained_narrowest_core_reduced_to_noncanonical_actual_source_open",
+  "structural_law": "完全自足路线中的 source-lock 选项已经被 canonical RIW/Buchstab 分支吸收。它不能关闭 global/unrestricted noncanonical 补集；而 generic 自足反原子又被 moving-delta 反证。因此全局完全自足数学剩余不再是 ActualA1FullSSourceLock OR generic anti-atom，而是 actual noncanonical full-S source entropy / strengthened anti-atom。"
+}
