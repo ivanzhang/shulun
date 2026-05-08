@@ -1,0 +1,110 @@
+{
+  "certificate_type": "prime_matrix_partition_disjointness_boundary_return_router",
+  "status": "partition_disjointness_boundary_return_closed_partition_ready",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-partition-coverage-no-loss-equation-router.json": "20d9b3b266bf831e12fb91a84c36cc1ac2b020a74ce110581daad032ff8a2b12",
+    "docs/monograph/prime-matrix-witness-obligation-domain-canonicalization-router.json": "e84a7ea1de151624f4e63e3aef8ddd626c56bf569863916ec0e312f9a8109c21",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "partition_disjointness_boundary_return_lemma": true,
+  "proved": true,
+  "coverage_complete": true,
+  "partition_disjointness_boundary_return_closed": true,
+  "formal_unit_partition_coverage_lemma_closed": false,
+  "disjointness_laws": [
+    {
+      "law": "key_fiber_disjointness",
+      "meaning": "若 k1 != k2，则 O_k1 与 O_k2 不交，因为 key 是函数。"
+    },
+    {
+      "law": "same_coordinate_quotient",
+      "meaning": "同一物理坐标重复出现时，O(w) 中只保留 quotient record 或 weighted/reuse return。"
+    },
+    {
+      "law": "boundary_return_not_loss",
+      "meaning": "边界、端点、ColumnCRT、SAE、PDEC 记录仍属于 O(w)，但 branch_type 标记为 return。"
+    },
+    {
+      "law": "no_double_payment",
+      "meaning": "同一 physical filler atom 不能同时作为普通 payment 和 return payment 重复计数。"
+    }
+  ],
+  "current_narrowest_atom": "FormalUnitPartitionCoverageLemma",
+  "secondary_narrowest_atom": "CanonicalFormalUnitHashStabilityLemma",
+  "reduction_formula": "PartitionDisjointnessAndBoundaryReturnLemma => PartitionDisjointnessAndBoundaryReturnClosed AND FormalUnitPartitionCoverageLemma.",
+  "plain_conclusion": "PartitionDisjointnessAndBoundaryReturnLemma 已闭合：key-fibers 按函数纤维不交，重复物理原子由 quotient/weighted/reuse return 处理，边界异常保留为 named return records。下一步可回收关闭 `FormalUnitPartitionCoverageLemma`。",
+  "rows": [
+    {
+      "gate": "PartitionDisjointnessGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 partition disjointness/boundary return。",
+      "remaining": "PartitionDisjointnessAndBoundaryReturnLemma"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只整理假设早期零行 witness 的 partition 账本，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "NoLossEquationImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "key-fibers 已覆盖 O(w) 且不漏。",
+      "remaining": "本步只处理不交化和边界回流。"
+    },
+    {
+      "gate": "CanonicalDomainImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "O(w) 已含 quotient records 与 named return records。",
+      "remaining": "重复对象已有承载位置。"
+    },
+    {
+      "gate": "MultiplicityStitchingImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "同坐标重复只能 quotient、weighted 或 reuse return，不能作为第五出口。",
+      "remaining": "不重复计数。"
+    },
+    {
+      "gate": "NamedBoundaryReturnImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "边界和终端异常已按命名 return schema 登记。",
+      "remaining": "不是无名丢失项。"
+    },
+    {
+      "gate": "PartitionDisjointnessAndBoundaryReturnClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "key-fibers 因 key 函数不交；重复物理原子已 quotient/return；边界项保留为 return records。",
+      "remaining": "PartitionDisjointnessAndBoundaryReturnClosed"
+    },
+    {
+      "gate": "PartitionDisjointnessAndBoundaryReturnLemma",
+      "closed": true,
+      "proved": true,
+      "meaning": "不交化和边界回流引理闭合；partition coverage 四个子门已经齐备。",
+      "remaining": "FormalUnitPartitionCoverageLemma"
+    }
+  ],
+  "closed_gates": [
+    "PartitionDisjointnessGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "NoLossEquationImported",
+    "CanonicalDomainImported",
+    "MultiplicityStitchingImported",
+    "NamedBoundaryReturnImported",
+    "PartitionDisjointnessAndBoundaryReturnClosed",
+    "PartitionDisjointnessAndBoundaryReturnLemma"
+  ],
+  "open_gates": []
+}
