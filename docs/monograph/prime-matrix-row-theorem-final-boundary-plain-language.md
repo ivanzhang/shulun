@@ -1151,6 +1151,45 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 真正覆盖本文对象的 full-S Kloosterman 大筛/dispersion 定理；最后还要 DStructure/Rankin
 晋级包被独立验收。缺其中任何一项，都不能把行/列命题宣布为完整无条件定理。
 
+继续把内部 moving-block 路与外部 Full-S KLS 路放在同一张表中硬攻后，最新路由为：
+
+```text
+experiments/prime_matrix_fulls_kls_movingblock_joint_attack_router.py
+docs/monograph/prime-matrix-fulls-kls-movingblock-joint-attack-router.md/json
+
+joint_attack_boundary_closed=true；
+internal_lane_proved_in_current_corpus=false；
+external_lane_proved_or_cited_in_current_corpus=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一步的新增信息是：canonical RIW/Buchstab 分支确实已经闭合，但它已经从 noncanonical full-S 补集中
+扣除了，不能再拿来证明 noncanonical 的 moving-block 反原子。内部路进一步压成：
+
+```text
+FullSNonAPExactFactorSupportPackageForActualNoncanonicalSource。
+```
+
+也就是要证明 actual noncanonical full-S 源有足够的精确因子支撑、balanced range 阈值、
+Type/Fourier 容量兼容，并且小支撑会通过 factor-residue incidence 回流到已有缺陷出口。
+
+外部路仍是：
+
+```text
+FullSNonAPWFDKLSTheoremInput。
+```
+
+BFI、DI、Maynard 的外部论文给出重要的 AP/dispersion/Kuznetsov 技术来源，但现有审查没有找到一个
+可直接逐项覆盖 `c` 依赖完成 residue 权重、未中心化、无投影、full-S、non-AP、任意对数节省的定理。
+所以最新最窄输入基变成：
+
+```text
+(FullSNonAPExactFactorSupportPackageForActualNoncanonicalSource
+ OR FullSNonAPWFDKLSTheoremInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

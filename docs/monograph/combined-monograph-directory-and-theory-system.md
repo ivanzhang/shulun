@@ -3578,3 +3578,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步关闭的是输入命名精度缺口，不是证明缺口。当前材料仍没有内部 moving-block spread 证明，
 没有 full-S non-AP WFD KLS 新定理证明或外部逐项引用，也没有完成 DStructure/Rankin 独立验收。
+
+继续新增：
+
+```text
+experiments/prime_matrix_fulls_kls_movingblock_joint_attack_router.py
+docs/monograph/prime-matrix-fulls-kls-movingblock-joint-attack-router.md/json
+```
+
+该路由器把内部 `MovingBlockSpreadNCBLK` 与外部 `FullSNonAPWFDKLS` 放在同一审查表中硬攻：
+
+```text
+joint_attack_boundary_closed=true；
+internal_lane_proved_in_current_corpus=false；
+external_lane_proved_or_cited_in_current_corpus=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+关键收束是：canonical RIW/Buchstab 分支已经闭合并从 noncanonical full-S 补集中扣除，不能把
+canonical 支撑结论偷渡到 noncanonical 反原子。内部路线继续降到：
+
+```text
+FullSNonAPExactFactorSupportPackageForActualNoncanonicalSource。
+```
+
+该包包含精确因子支撑下界、balanced range 阈值、Type/Fourier 容量兼容，以及小支撑触发
+factor-residue incidence 或直接支撑定理。外部路线仍是：
+
+```text
+FullSNonAPWFDKLSTheoremInput。
+```
+
+BFI、DI、Maynard 主来源提供 AP/dispersion/Kuznetsov 技术，但现有审查没有发现直接覆盖本文
+`c` 依赖完成 residue 权重、未中心化、无投影、full-S、non-AP 和任意对数节省的现成定理。
+因此最新输入基为：
+
+```text
+(FullSNonAPExactFactorSupportPackageForActualNoncanonicalSource
+ OR FullSNonAPWFDKLSTheoremInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
