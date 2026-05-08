@@ -1,0 +1,93 @@
+{
+  "boundary_law": "未来 sparse 路线不能作为隐藏终端使用。当前已物化 LocalSurvivor/SAE 包清零，已知入口 extractor 覆盖清零，无名 sparse 入口为零；SAE 已不是独立终端。因此未来若新增真正 sparse 障碍，必须同步提交有限 packet extractor schema，否则按持久签名回流 PDEC/ColumnCRT/Tail/Cofactor，或按层级逃逸进入 CleanKLS/DLS。",
+  "certificate_type": "prime_matrix_future_sparse_packet_extractor_schema_boundary_router",
+  "current_materialized_sparse_frontier_closed": true,
+  "future_sparse_packet_schema_boundary_closed": true,
+  "future_sparse_schema_required": [
+    "明确 source class：短窗、endpoint、PDEC dual sparse cap、Bohr cap、tail/cofactor、descent seam 或其他新增来源",
+    "给出有限窗口或固定偏移纤维 I，以及候选集合 C(I)",
+    "给出 blocker 家族 B_low、B_tail、B_col、B_endpoint、B_core 及其命中投影规则",
+    "给出 witness n0 且 cover_count(n0)=0，或给出严格 blocker-deficit 不等式 |union blockers|<|C(I)|",
+    "给出 phase_key、window_shape、formal_unit_id 与去重规则，禁止重复坐标当成独立原子",
+    "给出有限签名 sigma(I) 的持久性测试；若同签名无限复现，必须回流显式 PDEC/ColumnCRT/Tail/Cofactor schema",
+    "给出层级逃逸测试；若有限 packet 不稳定，必须进入 CleanKLS/DLS 或显式外部 KLS 输入",
+    "给出可复现实验/证明账本的脚本、JSON 字段、范围、哈希和 open_obligation_count=0",
+    "给出与已有 PDEC、ColumnCRT、LocalSurvivor、CleanKLS 路由的排他性或回流关系"
+  ],
+  "global_sparse_family_unconditional_closed": false,
+  "remaining_after_sparse_boundary": [
+    "若未来引入真正 sparse route，必须提交 FutureExplicitSparsePacketExtractorSchema",
+    "同有限签名持久复现进入 FutureExplicitPrimitivePDECSchema 或 ColumnCRT/Tail/Cofactor 命名 schema",
+    "层级逃逸进入 CleanKLS/DLS 或 explicit ExternalKLS 输入",
+    "最终定理晋级仍需要 DStructureRankinPromotion 独立接受"
+  ],
+  "review_conclusion": "FutureExplicitSparsePacketExtractorSchema 边界已闭合：当前 sparse/LocalSurvivor 前沿没有开放物化义务，已知入口全部覆盖，当前合同体系无无名 sparse 入口；未来新增 sparse 路线必须先给完整有限 packet extractor schema。这不是全局 sparse family 无条件排斥，也不是完整行/列无条件定理。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "local survivor materialized packet ledger",
+      "gate": "MaterializedLocalSurvivorPacketsExhausted",
+      "meaning": "当前机器物化的 LocalSurvivor/SAE 包没有开放局部义务。",
+      "remaining": "future unaudited sparse windows only"
+    },
+    {
+      "closed": true,
+      "evidence": "local survivor packet extractor coverage",
+      "gate": "KnownEntryExtractorsCovered",
+      "meaning": "已知 sparse/LocalSurvivor 入口均有脚本 extractor 或合同回流。",
+      "remaining": "future newly proposed route must bring extractor schema"
+    },
+    {
+      "closed": true,
+      "evidence": "new sparse entry admission audit",
+      "gate": "NoAdditionalUnnamedSparseEntry",
+      "meaning": "当前合同体系内没有额外无名 sparse 入口。",
+      "remaining": "explicit future sparse input only"
+    },
+    {
+      "closed": true,
+      "evidence": "local survivor packet-generation contract",
+      "gate": "PacketGenerationDichotomyPresent",
+      "meaning": "不能抽取有限 packet 时，只能持久化为 PDEC/ColumnCRT/Tail/Cofactor，或升层到 CleanKLS/DLS，或下降到命名包。",
+      "remaining": "schema must choose one named branch"
+    },
+    {
+      "closed": true,
+      "evidence": "SAE absorption router",
+      "gate": "SAENotIndependentTerminal",
+      "meaning": "SAE 已被吸收到 LocalSurvivor packet、PDEC 持久回流和 CleanKLS/DLS 接口。",
+      "remaining": "not a third terminal"
+    },
+    {
+      "closed": true,
+      "evidence": "PDEC family explicit input boundary router",
+      "gate": "PersistentFallbackNamedByPDECBoundary",
+      "meaning": "同有限签名持久复现不能停在 sparse，必须按显式 PDEC schema 准入。",
+      "remaining": "FutureExplicitPrimitivePDECSchema if new persistent family appears"
+    },
+    {
+      "closed": true,
+      "evidence": "this router",
+      "gate": "FutureSparseSchemaFieldsFixed",
+      "meaning": "未来 sparse 路线的最小字段被固定，不能再作为隐藏终端进入。",
+      "remaining": "submit full finite packet extractor schema"
+    },
+    {
+      "closed": true,
+      "evidence": "SAE/PDEC routers",
+      "gate": "NoOverclaimGuard",
+      "meaning": "本路由只闭合当前 sparse 边界，不声明完整行/列无条件定理。",
+      "remaining": "DStructure/Rankin and external/noncanonical inputs"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-local-survivor-materialized-packet-ledger.json": "cb6f92ca35cee664d441df6e75ad018bf116f89e859c8f3afcc8e9b67f8640cf",
+    "docs/monograph/prime-matrix-local-survivor-packet-extractor-coverage.json": "afddef8e8251f7b5e39bc14881f0986f47f6ec1f88d25d572d1048ce927a4636",
+    "docs/monograph/prime-matrix-local-survivor-packet-generation-contract.md": "b07a043cb6ebfee2e413a8d5c9cc768f3670ca3f9b75a7cee05c2def043c496c",
+    "docs/monograph/prime-matrix-new-sparse-entry-admission-audit.json": "60947ae361bfc707679b9e204f3f3d5d84a278e1d8ec47effd5fbae36d05eca9",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.json": "5f1d45f2c03345dc1ef62e02c75bde6cebcdf211fc746b6c67b0bb10bfef8e0d"
+  },
+  "status": "future_sparse_packet_extractor_schema_boundary_closed_current_frontier_zero"
+}

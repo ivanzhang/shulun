@@ -830,6 +830,37 @@ FutureExplicitSparsePacketExtractorSchema。
 也就是：当前已知和已物化终端前沿清零；未来若新增 `PDEC` 或 sparse 路线，必须以显式 schema
 作为新输入进入，不能作为隐藏终端继续使用。
 
+继续把 `FutureExplicitSparsePacketExtractorSchema` 本身固定成边界后：
+
+```text
+experiments/prime_matrix_future_sparse_packet_extractor_schema_boundary_router.py
+docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.md/json
+
+future_sparse_packet_schema_boundary_closed=true；
+current_materialized_sparse_frontier_closed=true；
+global_sparse_family_unconditional_closed=false。
+```
+
+通俗说，未来的 sparse 路线不能只说“这里有一个孤窗逃逸”。它必须先给出完整有限包：
+
+```text
+有限窗口或固定偏移纤维 I；
+候选集合 C(I)；
+低因子、尾锚、列位移、端点、核心重叠等 blocker 家族；
+blocker 到 C(I) 的命中投影规则；
+witness n0 且 cover_count(n0)=0，或严格不等式 |union blockers|<|C(I)|；
+phase_key、window_shape、formal_unit_id 与去重规则；
+有限签名 sigma(I) 的持久性测试；
+层级逃逸测试；
+可复现脚本、JSON 字段、范围、哈希和 open_obligation_count=0。
+```
+
+若同一有限签名无限复现，它不再是 sparse，而要进入 `PDEC/ColumnCRT/Tail/Cofactor` 命名 schema；
+若有限包不断升层逃逸，则进入 `CleanKLS/DLS` 或显式外部大筛输入。于是第一包当前两个未来输入都
+已经被固定为显式 schema 边界：`PDEC` 需要 primitive 二秩以上 cap-stable 证书，sparse 需要有限
+packet extractor 证书。当前前沿清零，但最终晋级仍受 noncanonical/external 输入和 `DStructure/Rankin`
+独立验收限制。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

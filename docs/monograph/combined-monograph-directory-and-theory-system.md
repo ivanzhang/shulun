@@ -3297,3 +3297,40 @@ FutureExplicitSparsePacketExtractorSchema。
 
 这仍不是全局 PDEC family 无条件排斥；它说明当前材料没有剩余已物化 PDEC 终端，未来 PDEC
 必须作为显式新 schema 输入。
+
+继续新增：
+
+```text
+experiments/prime_matrix_future_sparse_packet_extractor_schema_boundary_router.py
+docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.md/json
+```
+
+该路由器把 `FutureExplicitSparsePacketExtractorSchema` 也从提示性卫生规则固定成准入边界：
+
+```text
+future_sparse_packet_schema_boundary_closed=true；
+current_materialized_sparse_frontier_closed=true；
+global_sparse_family_unconditional_closed=false；
+row_column_unconditional_closed=false。
+```
+
+结构含义是：当前机器物化的 `LocalSurvivor/SAE` 包没有开放局部义务；已知 sparse 入口都有脚本
+extractor 或合同回流；当前合同体系内没有额外无名 sparse 入口；`SAE` 已不再是独立第三终端。
+未来若新增 sparse 路线，必须显式提交：
+
+```text
+source class；
+有限窗口或固定偏移纤维 I；
+候选集合 C(I)；
+blocker 家族及其命中投影；
+witness 或严格 blocker-deficit；
+phase_key/window_shape/formal_unit_id 与去重规则；
+有限签名持久性测试；
+层级逃逸测试；
+可复现脚本、JSON 字段、范围、哈希和 open_obligation_count=0；
+与既有 PDEC/ColumnCRT/LocalSurvivor/CleanKLS 路由的排他性或回流关系。
+```
+
+不给该 schema 的 sparse 说法不能作为终端；若同签名持久复现则进入 `PDEC/ColumnCRT/Tail/Cofactor`
+schema，若有限包升层逃逸则进入 `CleanKLS/DLS` 或显式外部大筛输入。至此第一包的当前已物化前沿
+清零，并且两个未来输入都被约束成显式 schema 边界；这仍不是完整行/列无条件闭合。
