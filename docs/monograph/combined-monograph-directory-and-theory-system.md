@@ -6372,3 +6372,83 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 下一步最窄目标更新为 `AnchorCollarPrimeFiberCapacityBoundOrPDECReturn`：证明 canonical anchor collar 中长度 `<sqrt(P)` 的短素数纤维总容量不能覆盖 `R_x`，或证明任何过载都会产生 PDEC/SAE/ColumnCRT 命名证书。
+
+## Prime Matrix anchor-collar 容量端点缺陷桥路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_anchor_collar_endpoint_bridge_router.py
+docs/monograph/prime-matrix-anchor-collar-endpoint-bridge-router.md/json
+```
+
+该路由器直接攻击 `AnchorCollarPrimeFiberCapacityBoundOrPDECReturn`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+anchor_collar_endpoint_bridge_closed=true；
+anchor_collar_prime_fiber_capacity_fully_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=AnchorCollarPrimeFiberCapacityBoundOrPDECReturn；
+terminal_gap_after_router=(AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn)。
+```
+
+精确桥为：
+
+```text
+H_x(P)=Prime_x(P)+A_x(P) for x>=sqrt(P)；
+Assume EarlyZeroRowWithinP => Prime_x(P)=0 => H_x(P)=A_x(P)；
+H_x(P)=(P-1)V_x(P)+E_x(P)；
+if (P-1)V_x(P)-A_x(P)>=G_x>0 then E_x(P)<=-G_x。
+```
+
+其中 `H_x` 是低骨架粗洞数，`Prime_x` 是素数洞数，`A_x` 是 canonical anchor-collar 真双素容量，`E_x` 是固定相位包含排除端点误差。早期零行反例把 `Prime_x` 强制为零，所以容量不足会转成强负端点 PDEC；若主项间隙失败，则说明短素数纤维接近饱和，进入持久 PDEC 或孤立 SAE/LocalSurvivor 回流。
+
+替换律为：
+
+```text
+AnchorCollarPrimeFiberCapacityBoundOrPDECReturn
+  =>
+(AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn)。
+```
+
+已经闭合的门为：
+
+```text
+AnchorCollarCapacityGateActive；
+AnchorGeometryImported；
+ExactRoughPrimeAnchorIdentity；
+EarlyZeroForcesPrimeVoid；
+EndpointDecompositionImported；
+CapacityFailureBecomesEndpointDefect；
+NoGapMeansFiberSaturation；
+PDECSchemaAvailableForEndpointDefect；
+SampleIdentityAudit；
+AnchorCollarEndpointBridgeClosed。
+```
+
+开放门为：
+
+```text
+AnchorCollarEndpointDefectPDECExclusion；
+AnchorFiberSaturationPDECOrSAEReturn。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND (AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn)
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `AnchorCollarEndpointDefectPDECExclusion`：排斥早期零行强制产生的 `E_x<=-G_x` 级同 formal unit 端点相位缺陷；若主项间隙失败，则进入 `AnchorFiberSaturationPDECOrSAEReturn`。

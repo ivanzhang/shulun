@@ -1,0 +1,343 @@
+{
+  "anchor_collar_endpoint_bridge_closed": true,
+  "anchor_collar_prime_fiber_capacity_fully_proved": false,
+  "certificate_type": "anchor_collar_endpoint_bridge_router",
+  "closed_gates": [
+    "AnchorCollarCapacityGateActive",
+    "AnchorGeometryImported",
+    "ExactRoughPrimeAnchorIdentity",
+    "EarlyZeroForcesPrimeVoid",
+    "EndpointDecompositionImported",
+    "CapacityFailureBecomesEndpointDefect",
+    "NoGapMeansFiberSaturation",
+    "PDECSchemaAvailableForEndpointDefect",
+    "SampleIdentityAudit",
+    "AnchorCollarEndpointBridgeClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "early_zero_implication": "Assume EarlyZeroRowWithinP => Prime_x(P)=0 => H_x(P)=A_x(P)",
+  "empirical_absence_not_used": true,
+  "endpoint_bridge": "H_x(P)=(P-1)V_x(P)+E_x(P); if (P-1)V_x(P)-A_x(P)>=G_x>0 then E_x(P)<=-G_x",
+  "exact_identity": "H_x(P)=Prime_x(P)+A_x(P) for x>=sqrt(P)",
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND (AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn) AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND (AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn) AND CompositeCofactorDepthDescentOrNamedReturn AND EarlyBandLocalSurvivorOrSAEExclusion AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "AnchorCollarEndpointDefectPDECExclusion",
+  "open_gates": [
+    "AnchorCollarEndpointDefectPDECExclusion",
+    "AnchorFiberSaturationPDECOrSAEReturn"
+  ],
+  "plain_conclusion": "本步没有证明 anchor-collar 容量不足；它证明容量不足的失败形态已被精确桥接：早期零行使 Prime_x=0，而精确恒等式 H_x=Prime_x+A_x 将反例转为 H_x=A_x。若低骨架主项超过 anchor 容量，则得到强负端点 PDEC；若不超过，则短素数纤维必须近饱和并进入 PDEC/SAE 命名回流。",
+  "replacement": {
+    "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn": "(AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn)"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AnchorCollarCapacityGateActive",
+      "meaning": "上一层最新最窄硬点就是 AnchorCollarPrimeFiberCapacityBoundOrPDECReturn。",
+      "proved": true,
+      "remaining": "本步只攻击该硬点。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorGeometryImported",
+      "meaning": "canonical collar 与短素数纤维窗口已经闭合。",
+      "proved": true,
+      "remaining": "可定义精确容量 A_x。"
+    },
+    {
+      "closed": true,
+      "gate": "ExactRoughPrimeAnchorIdentity",
+      "meaning": "对 x>=sqrt(P)，每个 x-rough 点要么是素数洞，要么唯一地是 canonical q*m anchor 点。",
+      "proved": true,
+      "remaining": "H_x = Prime_x + A_x。"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroForcesPrimeVoid",
+      "meaning": "若早期零行存在，则所有 x-rough 点必须被高标签覆盖，所以 Prime_x=0。",
+      "proved": true,
+      "remaining": "反例给出 H_x=A_x。"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointDecompositionImported",
+      "meaning": "包含排除给出 H_x=(P-1)V_x+E_x，完全类似 DLS13 端点桥。",
+      "proved": true,
+      "remaining": "若主项超过容量，反例强制 E_x 为负。"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityFailureBecomesEndpointDefect",
+      "meaning": "若 (P-1)V_x-A_x 存在正间隙 G_x，则早期零行推出 E_x<=-G_x。",
+      "proved": true,
+      "remaining": "这就是 anchor-collar 版 PDEC 端点缺陷。"
+    },
+    {
+      "closed": true,
+      "gate": "NoGapMeansFiberSaturation",
+      "meaning": "若没有正间隙，则 A_x 必须接近或超过低骨架主量，短纤维出现近饱和支付。",
+      "proved": true,
+      "remaining": "持久近饱和进入 PDEC；孤立近饱和进入 SAE/LocalSurvivor。"
+    },
+    {
+      "closed": true,
+      "gate": "PDECSchemaAvailableForEndpointDefect",
+      "meaning": "PDEC schema 准入防火墙已存在，但全局 PDEC family 排斥仍未证明。",
+      "proved": false,
+      "remaining": "只能路由，不能宣称终端排斥完成。"
+    },
+    {
+      "closed": true,
+      "gate": "SampleIdentityAudit",
+      "meaning": "样本只复核 H_x=Prime_x+A_x 口径和 canonical anchor 唯一性。",
+      "proved": false,
+      "remaining": "anchor_collar_identity_sample_verified_endpoint_bridge_open"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorCollarEndpointBridgeClosed",
+      "meaning": "anchor-collar 容量硬点已转成端点 PDEC 排斥或短纤维饱和命名回流。",
+      "proved": true,
+      "remaining": "(AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn)"
+    },
+    {
+      "closed": false,
+      "gate": "AnchorCollarEndpointDefectPDECExclusion",
+      "meaning": "尚未排斥早期零行强制产生的 E_x<=-G_x 级端点相位缺陷。",
+      "proved": false,
+      "remaining": "下一步最窄目标。"
+    },
+    {
+      "closed": false,
+      "gate": "AnchorFiberSaturationPDECOrSAEReturn",
+      "meaning": "尚未证明无主项间隙时的短纤维近饱和必然给出可排斥 PDEC/SAE。",
+      "proved": false,
+      "remaining": "备用分支。"
+    }
+  ],
+  "sample_audit": {
+    "all_identities_verified": true,
+    "p_values": [
+      101,
+      499,
+      997
+    ],
+    "rows": [
+      {
+        "identity_verified": true,
+        "max_bad_semiprime": 0,
+        "max_identity_gap": 0,
+        "min_prime_holes": 7,
+        "p": 101,
+        "row_count": 91,
+        "sqrt_p": 10,
+        "strongest_anchor_rows": [
+          {
+            "anchor_capacity": 9,
+            "anchor_top": 37,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 9,
+            "rough_holes": 18,
+            "x": 13
+          },
+          {
+            "anchor_capacity": 7,
+            "anchor_top": 34,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 11,
+            "rough_holes": 18,
+            "x": 11
+          },
+          {
+            "anchor_capacity": 7,
+            "anchor_top": 41,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 12,
+            "rough_holes": 19,
+            "x": 16
+          }
+        ],
+        "weakest_prime_rows": [
+          {
+            "anchor_capacity": 1,
+            "anchor_top": 86,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 7,
+            "rough_holes": 8,
+            "x": 73
+          },
+          {
+            "anchor_capacity": 1,
+            "anchor_top": 84,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 8,
+            "rough_holes": 9,
+            "x": 70
+          },
+          {
+            "anchor_capacity": 1,
+            "anchor_top": 89,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 8,
+            "rough_holes": 9,
+            "x": 79
+          }
+        ]
+      },
+      {
+        "identity_verified": true,
+        "max_bad_semiprime": 0,
+        "max_identity_gap": 0,
+        "min_prime_holes": 29,
+        "p": 499,
+        "row_count": 477,
+        "sqrt_p": 22,
+        "strongest_anchor_rows": [
+          {
+            "anchor_capacity": 29,
+            "anchor_top": 137,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 40,
+            "rough_holes": 69,
+            "x": 37
+          },
+          {
+            "anchor_capacity": 33,
+            "anchor_top": 120,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 46,
+            "rough_holes": 79,
+            "x": 28
+          },
+          {
+            "anchor_capacity": 32,
+            "anchor_top": 107,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 51,
+            "rough_holes": 83,
+            "x": 22
+          }
+        ],
+        "weakest_prime_rows": [
+          {
+            "anchor_capacity": 0,
+            "anchor_top": 425,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 29,
+            "rough_holes": 29,
+            "x": 362
+          },
+          {
+            "anchor_capacity": 2,
+            "anchor_top": 419,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 31,
+            "rough_holes": 33,
+            "x": 351
+          },
+          {
+            "anchor_capacity": 2,
+            "anchor_top": 441,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 31,
+            "rough_holes": 33,
+            "x": 389
+          }
+        ]
+      },
+      {
+        "identity_verified": true,
+        "max_bad_semiprime": 0,
+        "max_identity_gap": 0,
+        "min_prime_holes": 54,
+        "p": 997,
+        "row_count": 966,
+        "sqrt_p": 31,
+        "strongest_anchor_rows": [
+          {
+            "anchor_capacity": 62,
+            "anchor_top": 189,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 88,
+            "rough_holes": 150,
+            "x": 35
+          },
+          {
+            "anchor_capacity": 60,
+            "anchor_top": 202,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 87,
+            "rough_holes": 147,
+            "x": 40
+          },
+          {
+            "anchor_capacity": 55,
+            "anchor_top": 209,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 83,
+            "rough_holes": 138,
+            "x": 43
+          }
+        ],
+        "weakest_prime_rows": [
+          {
+            "anchor_capacity": 1,
+            "anchor_top": 956,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 54,
+            "rough_holes": 55,
+            "x": 916
+          },
+          {
+            "anchor_capacity": 4,
+            "anchor_top": 799,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 59,
+            "rough_holes": 63,
+            "x": 640
+          },
+          {
+            "anchor_capacity": 8,
+            "anchor_top": 696,
+            "bad_semiprime": 0,
+            "identity_gap": 0,
+            "prime_holes": 60,
+            "rough_holes": 68,
+            "x": 486
+          }
+        ]
+      }
+    ],
+    "skipped_nonprimes": [],
+    "status": "anchor_collar_identity_sample_verified_endpoint_bridge_open"
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-early-zero-anchor-collar-router.json": "3f218f902460950075e2477ad50596dfafab7c4611d5c4830045bb4003e54546",
+    "docs/monograph/prime-matrix-early-zero-terminal-package-reduction-router.json": "d53ae12d44d1a8d376d29589a9df6eb26aa48a35ad18f88c0372eba62ad03395",
+    "docs/monograph/prime-matrix-eda-dls13-endpoint-defect-bridge.md": "040ecbd9db839dde682a3be65594222087b6528f8675520a3a81d4b492da7a5b",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa"
+  },
+  "status": "anchor_collar_capacity_reduced_to_endpoint_pdec_or_fiber_saturation",
+  "terminal_gap_after_router": "(AnchorCollarEndpointDefectPDECExclusion OR AnchorFiberSaturationPDECOrSAEReturn)",
+  "terminal_gap_before_router": "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn"
+}
