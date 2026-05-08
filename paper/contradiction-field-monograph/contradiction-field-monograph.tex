@@ -3314,6 +3314,40 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
 \end{quote}
 This is only a sharp reformulation.  It is not implied by formal WFD, Type decomposition,
 Fourier smoothing, or fixed-projection diffuse; the moving-delta obstruction remains.
+
+The clean-core terminal normal-form router then removes the last naming ambiguity around
+that sharp input.  It records
+\[
+\begin{gathered}
+  \texttt{clean\_core\_terminal\_normal\_form\_closed=true},\\
+  \texttt{internal\_exact\_entropy\_proved=false},\\
+  \texttt{external\_completed\_kls\_accepted=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The internal normal form of
+\texttt{ActualNoncanonicalCleanCoreMovingAtomExclusion} is exact clean-core source entropy:
+for every post-return clean-core moving block \(b=(u,v)\),
+\[
+  \max_b M_b/\sum_b M_b\le \log^{-2A}.
+\]
+The external alternative is not a generic DI/BFI or Kuznetsov citation; it is the completed,
+modulus-dependent full-\(S\) input
+\texttt{ModulusDependentCompletedFullSKLSInput}.  Thus the latest conditional terminal
+input basis is
+\begin{quote}\footnotesize\ttfamily
+(ExactCleanCoreFullSNonAPWFDSourceEntropy\\
+OR ModulusDependentCompletedFullSKLSInput)\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The fully self-contained basis is
+\begin{quote}\small\ttfamily
+ExactCleanCoreFullSNonAPWFDSourceEntropy\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+This closes the terminal input normal form only.  It does not prove exact entropy, accept
+the completed KLS input, or complete the independent D-structure/Rankin gate.
 \end{proof}
 
 

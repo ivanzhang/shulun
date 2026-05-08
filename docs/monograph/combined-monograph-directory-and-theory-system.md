@@ -4018,3 +4018,46 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 balanced block 中的 pair `(u,v)`，其最终登记容量 `M_{u,v}/sum M_{u,v}` 超过 `log^{-2A}` 阈值。本步只是
 关闭输入口径，当前材料仍未证明该 moving atom exclusion；formal WFD、Type/Fourier 和固定投影路线仍被
 moving-delta 阻断。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_terminal_normal_form_router.py
+docs/monograph/prime-matrix-clean-core-terminal-normal-form-router.md/json
+```
+
+该路由器把 `ActualNoncanonicalCleanCoreMovingAtomExclusion` 归一化为终局输入标准形。结论为：
+
+```text
+clean_core_terminal_normal_form_closed=true；
+internal_exact_entropy_proved=false；
+external_completed_kls_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+标准形律是：clean-core moving atom 排斥的内部等价表述是 exact clean-core source entropy，即对通过全部
+回流测试后的 clean-core moving block `b=(u,v)`，
+
+```text
+max_b M_b / sum_b M_b <= log^{-2A}。
+```
+
+外部替代标准形也不能再泛称 DI/BFI 或普通 Kuznetsov，而必须是 full-S 完成分解后带 `c`-dependent residue
+weights 的 `ModulusDependentCompletedFullSKLSInput`。因此最新条件终局输入基为：
+
+```text
+(ExactCleanCoreFullSNonAPWFDSourceEntropy
+ OR ModulusDependentCompletedFullSKLSInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+若坚持完全自足路线，则最新输入基为：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步闭合的是终局输入标准形和命名循环，不是 exact entropy 证明，也不是 completed KLS 接受，更不是
+DStructure/Rankin 独立验收完成。

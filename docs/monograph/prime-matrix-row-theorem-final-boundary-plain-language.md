@@ -1654,3 +1654,62 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 阻断律仍然保留：formal WFD、Type 分解、Fourier 平滑和固定投影 diffuse 不能推出该 sharp 输入；
 moving-delta 模型仍可在每个尺度选择新的 `(u,v)` 标签集中。当前材料尚未证明
 `ActualNoncanonicalCleanCoreMovingAtomExclusion`，所以完整无条件闭合仍未完成。
+
+## 17. clean-core 终局输入标准形
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_terminal_normal_form_router.py
+docs/monograph/prime-matrix-clean-core-terminal-normal-form-router.md/json
+
+clean_core_terminal_normal_form_closed=true；
+internal_exact_entropy_proved=false；
+external_completed_kls_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把上一节的 `ActualNoncanonicalCleanCoreMovingAtomExclusion` 归一化成两个标准形输入：
+
+```text
+内部完全自足标准形：
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+
+外部/新深定理标准形：
+ModulusDependentCompletedFullSKLSInput
+```
+
+内部标准形就是：
+
+```text
+max_b M_b/M <= log^{-2A}
+```
+
+其中 `b=(u,v)` 是通过所有回流测试后的 clean-core moving block。这个表述与“无 clean-core moving 大原子”
+完全同义，并且一旦证明就给出 NC-BLK 块能量节省。外部标准形则不是泛称 DI/BFI，而是 full-S 完成分解后的
+模数依赖 residue 权重 KLS 输入，即处理
+
+```text
+B_{c,x}=sum_k beta_{x+kc}
+```
+
+的 completed Kloosterman 平均。
+
+因此最新条件终局输入基为：
+
+```text
+(ExactCleanCoreFullSNonAPWFDSourceEntropy
+ OR ModulusDependentCompletedFullSKLSInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+若坚持完全自足，则最新输入基为：
+
+```text
+ExactCleanCoreFullSNonAPWFDSourceEntropy
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明 exact entropy，也没有接受 completed KLS；它闭合的是终局输入标准形，防止继续在
+moving atom、source entropy、FullS-KLS 这几个名字之间循环。
