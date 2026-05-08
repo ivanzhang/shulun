@@ -2976,3 +2976,33 @@ DStructureTailLog4FiniteRankinIndependentAcceptance。
 
 因此，完整全局无条件自足版目前不能从当前材料直接闭合；当前可闭合且已闭合的是
 canonical-source 精确自足命题。
+
+继续新增：
+
+```text
+experiments/prime_matrix_actual_source_bridge_global_reconciliation_router.py
+docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.md/json
+```
+
+该路由器把旧阻断门 `ActualFullSSourceBridge` 与已经闭合的 actual-source 来源账本重新调和：
+
+```text
+actual_source_bridge_closed_for_canonical_branch=true；
+actual_source_bridge_closes_global_unrestricted=false；
+old_blocker_superseded=ActualFullSSourceBridge；
+updated_global_blocking_gates=[
+  UnrestrictedGenericWFD,
+  NoncanonicalFullSComplementAntiAtomOrExternalDIBFI,
+  FullSNonAPStrengthenedSourceAntiAtom,
+  DIBFIQuantifiedNoProjectionWindowCertificate,
+  DStructureTailLog4FiniteRankinPromotion
+]。
+```
+
+结构含义是：actual-source bridge 已经在 canonical `RIW/Buchstab` 来源分支内被来源账本、
+source-lock 分支拆分和最终自足定理边界吸收；它不再是 canonical-source 自足命题的开门。
+但该闭合只覆盖 canonical 分支，不能偷渡到 unrestricted/global 补集。旧的宽阻断名
+`ActualFullSSourceBridge` 因此应替换为更精确的
+`NoncanonicalFullSComplementAntiAtomOrExternalDIBFI`：若要闭合完整全局版，仍必须证明
+noncanonical full-`S` 补集的强化反原子，或提交外部/量化 DI/BFI 无投影证书。完整行/列
+无条件定理仍未由当前材料闭合。

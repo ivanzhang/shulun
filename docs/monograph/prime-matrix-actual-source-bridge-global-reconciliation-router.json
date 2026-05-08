@@ -1,0 +1,62 @@
+{
+  "actual_source_bridge_closed_for_canonical_branch": true,
+  "actual_source_bridge_closes_global_unrestricted": false,
+  "certificate_type": "prime_matrix_actual_source_bridge_global_reconciliation_router",
+  "old_blocker_superseded": "ActualFullSSourceBridge",
+  "reconciliation_law": "The actual-source bridge has been closed only after restricting the theorem to the canonical RIW/Buchstab source branch. This absorbs the bridge inside the canonical self-contained theorem, but it does not close the noncanonical full-S complement. The former broad blocker ActualFullSSourceBridge should therefore be replaced by the sharper noncanonical complement obligation: strengthened anti-atom or external DI/BFI.",
+  "review_conclusion": "Actual-source bridge 已在 canonical 分支内闭合；旧阻断门 `ActualFullSSourceBridge` 应被替换为更精确的 `NoncanonicalFullSComplementAntiAtomOrExternalDIBFI`。这缩窄了完整全局版剩余，但不闭合完整行/列无条件定理。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "NoFurtherActualSourceProvenanceGap",
+      "gate": "CanonicalActualSourceProvenanceClosed",
+      "global_remainder": "不覆盖 noncanonical/generic 补集。",
+      "meaning": "canonical no-black-box 分支的 pre-Cauchy lambda_c 已声明为 RIW/Buchstab 决策树系数。"
+    },
+    {
+      "closed": true,
+      "evidence": "A1CleanBranchCanonicalSourceAdmissionOrExternalDIBFIOriginalDispersion",
+      "gate": "SourceLockBranchSplitClosed",
+      "global_remainder": "global unrestricted 仍必须处理 noncanonical 补集。",
+      "meaning": "source lock 已严格二分：canonical 分支内部闭合，noncanonical 分支外部化或回流。"
+    },
+    {
+      "closed": true,
+      "evidence": "NoFurtherCanonicalSourceSelfContainedTheoremBoundaryGap",
+      "gate": "CanonicalSourceTheoremAlreadyClosed",
+      "global_remainder": "不能升级为完整行/列无条件定理。",
+      "meaning": "actual-source bridge 对 canonical-source 自足定理已经不再是开门。"
+    },
+    {
+      "closed": true,
+      "evidence": "ActualFullSSourceBridge in previous obstruction list",
+      "gate": "OldActualFullSSourceBridgeBlockerSuperseded",
+      "global_remainder": "FullSNonAPStrengthenedSourceAntiAtom_OR_ExternalDIBFI",
+      "meaning": "旧阻断名应被更精确地替换为 noncanonical full-S 补集问题。"
+    },
+    {
+      "closed": true,
+      "evidence": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput",
+      "gate": "UnrestrictedGenericStillNotClosed",
+      "global_remainder": "必须新增强化反原子或外部 DI/BFI 证书。",
+      "meaning": "unrestricted generic 自足版仍被 moving-delta 反证，不能由 canonical 来源账本偷渡闭合。"
+    }
+  ],
+  "source_hashes": {
+    "final_theorem": "8d45dd95c52f37a36fd0e35002ffbebe3977ffabacead69021dc5ef19bfad9c0",
+    "obstruction": "ae0ce6ecb54599828bbcfc2bfbfb1eb5946e43ebce5fdd1dbdebcac92153ef04",
+    "provenance": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "script": "c9c52d5bafedb07f3835b50d7c5a7e18fb705d8dd10221b61a65e7b4e21daa7d",
+    "source_lock": "039a29ac39132bbd6023352a51712e0c079efe7a1ad326fa19f511c4a9a55dee",
+    "taxonomy": "c17dfbff54f991a819fcaa607f001860adcc8e3f950de77c233c4dff834227ad"
+  },
+  "status": "actual_source_bridge_absorbed_for_canonical_branch_global_complement_open",
+  "updated_global_blocking_gates": [
+    "UnrestrictedGenericWFD",
+    "NoncanonicalFullSComplementAntiAtomOrExternalDIBFI",
+    "FullSNonAPStrengthenedSourceAntiAtom",
+    "DIBFIQuantifiedNoProjectionWindowCertificate",
+    "DStructureTailLog4FiniteRankinPromotion"
+  ]
+}

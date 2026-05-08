@@ -585,6 +585,30 @@ DStructureTailLog4FiniteRankinIndependentAcceptance。
 所以当前最终结论不是“全局行命题已经无条件证明”，而是“canonical-source 精确自足命题已经闭合；
 完整全局无条件版被上述命名门阻断”。
 
+继续新增 actual-source bridge 全局调和路由器后：
+
+```text
+experiments/prime_matrix_actual_source_bridge_global_reconciliation_router.py
+docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.md/json
+
+actual_source_bridge_closed_for_canonical_branch=true；
+actual_source_bridge_closes_global_unrestricted=false；
+old_blocker_superseded=ActualFullSSourceBridge；
+updated_global_blocking_gates=[
+  UnrestrictedGenericWFD,
+  NoncanonicalFullSComplementAntiAtomOrExternalDIBFI,
+  FullSNonAPStrengthenedSourceAntiAtom,
+  DIBFIQuantifiedNoProjectionWindowCertificate,
+  DStructureTailLog4FiniteRankinPromotion
+]。
+```
+
+通俗说，旧清单里的 `ActualFullSSourceBridge` 太宽了。对 canonical 来源分支而言，真实来源已经
+由 provenance ledger、source-lock 拆分和最终自足边界证明闭合；所以它不能继续算作 canonical
+自足命题的剩余硬点。真正还没闭合的是 canonical 分支之外的 noncanonical full-`S` 补集：
+要么证明强化 source anti-atom，要么走外部/量化 DI/BFI 无投影证书。这个调和只缩窄了全局剩余，
+不把完整行/列无条件命题升级为已证定理。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
