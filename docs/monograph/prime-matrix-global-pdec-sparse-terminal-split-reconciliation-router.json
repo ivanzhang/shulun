@@ -1,0 +1,123 @@
+{
+  "certificate_type": "global_pdec_sparse_terminal_split_reconciliation_router",
+  "closed_gates": [
+    "GlobalPDECorSparseTerminalGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "CurrentPDECFrontierBoundaryImported",
+    "CurrentSparseFrontierBoundaryImported",
+    "MaterializedTerminalFrontierExhausted",
+    "GlobalTerminalFamilySplitImported",
+    "GlobalPDECorSparseTerminalReconciledToTerminalSplit"
+  ],
+  "counterexample_assumption_only": true,
+  "current_materialized_frontier_exhausted": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_model_gap_dprc_compatibility_proved": false,
+  "global_pdec_sparse_terminal_split_reconciled": true,
+  "hypothetical_chain_only": true,
+  "latest_conditional_basis": "((PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "open_gates": [
+    "PDEC_CAP",
+    "INTERNAL_CleanKLS_LargeSieve",
+    "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "plain_conclusion": "本步把 GlobalPDECorSparseTerminalExclusion 与既有全局终端家族边界和拆分路由对齐。当前已物化 PDEC 与 sparse/LocalSurvivor 前沿已经清零，不能继续靠局部样本消元；全局终端门被压成完全自足路线的 PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve。这仍不是行列无条件闭合。",
+  "replacement": {
+    "GlobalPDECorSparseTerminalExclusion": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "GlobalPDECorSparseTerminalGateActive",
+      "meaning": "上一层最新最窄点是 GlobalPDECorSparseTerminalExclusion。",
+      "proved": false,
+      "remaining": "把它与既有全局终端家族边界对齐。"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍只在假设早期零行反例链条中工作，不从真实样本缺席取证。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentPDECFrontierBoundaryImported",
+      "meaning": "当前已物化合法非二点 primitive PDEC 候选为零；未来 PDEC 必须提交显式同 formal unit schema。",
+      "proved": true,
+      "remaining": "不是全局 PDEC family 无条件排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentSparseFrontierBoundaryImported",
+      "meaning": "当前 sparse/LocalSurvivor 前沿清零，已知入口 extractor 或合同准入均覆盖。",
+      "proved": true,
+      "remaining": "未来 sparse 路线仍需完整 extractor schema。"
+    },
+    {
+      "closed": true,
+      "gate": "MaterializedTerminalFrontierExhausted",
+      "meaning": "当前物化终端前沿没有可继续局部消元对象。",
+      "proved": true,
+      "remaining": "剩余不是样本层对象，而是全局家族证书。"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalTerminalFamilySplitImported",
+      "meaning": "全局终端家族拆分已把 LocalSurvivor 与 NC-BLK 独立阻塞删除，连续终端二分送入 PDEC-CAP 或 CleanKLS/DLS。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalPDECorSparseTerminalReconciledToTerminalSplit",
+      "meaning": "GlobalPDECorSparseTerminalExclusion 不再作为宽泛终端黑箱保留。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": false,
+      "gate": "PDEC_CAP",
+      "meaning": "尚未证明同一坏窗集合上的全局 U_CRT<L_PDEC 容量证书。",
+      "proved": false,
+      "remaining": "PDEC_CAP。"
+    },
+    {
+      "closed": false,
+      "gate": "INTERNAL_CleanKLS_LargeSieve",
+      "meaning": "尚未证明 diffuse clean residual 的内部大筛吸收；外部 KLS/DI/BFI 只能作为条件分支。",
+      "proved": false,
+      "remaining": "INTERNAL_CleanKLS_LargeSieve 或显式外部输入。"
+    },
+    {
+      "closed": false,
+      "gate": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+      "meaning": "moving-block 到终端门替换仍需与模型余量/有限 DPRC 账本口径兼容。",
+      "proved": false,
+      "remaining": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "最终晋级仍需 DStructure/Tail-log4/finite Rankin 独立验收。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3",
+    "docs/monograph/prime-matrix-global-terminal-family-boundary-router.json": "44274d6f4fb05f658d7ca8a6b8123032efdad658273b003969d8af871f286aad",
+    "docs/monograph/prime-matrix-global-terminal-family-exclusion-split-router.json": "f9a5e6a0583a20578b3a98952382fe6a149b6c46ad57591974e4268bd8d9a03b",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa"
+  },
+  "status": "global_pdec_sparse_terminal_reconciled_to_pdec_cap_or_internal_kls_open",
+  "terminal_gap_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "terminal_gap_before_router": "GlobalPDECorSparseTerminalExclusion"
+}
