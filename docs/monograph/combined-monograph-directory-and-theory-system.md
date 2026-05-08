@@ -3042,6 +3042,34 @@ DStructureTailLog4FiniteRankinIndependentAcceptance。
 继续新增：
 
 ```text
+experiments/prime_matrix_noncanonical_complement_trilemma_router.py
+docs/monograph/prime-matrix-noncanonical-complement-trilemma-router.md/json
+```
+
+该路由器把第二包进一步收束为三歧边界：
+
+```text
+trilemma_boundary_closed=true；
+self_contained_noncanonical_package_closed=false；
+external_contract_package_closed_if_fulls_kls_ext_accepted=true。
+```
+
+三种合法闭合模式为：
+
+```text
+实际源恒等；
+强化实际源反原子；
+接受或证明 FullS-KLS-ext / FullSNonAPWFDKLSTheoremInput。
+```
+
+其中 generic full-S 自足反原子已被 moving-delta capacity 反例排除，不能再由 formal WFD、
+Type/Fourier、K4/K6 或朴素 incidence 修复。外部定理合同版在接受 `FullS-KLS-ext` 时闭合
+scale/object/no-projection，但若坚持完全自足或逐页原文核验，仍需
+`DIBFIPrimarySourceSpecializationProof`。因此第二包的边界闭合了，输入本身仍是条件性的。
+
+继续新增：
+
+```text
 experiments/prime_matrix_closure_input_atlas_router.py
 docs/monograph/prime-matrix-closure-input-atlas-router.md/json
 ```

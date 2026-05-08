@@ -635,6 +635,35 @@ moving-delta 模型挡住；也不是继续检查 canonical 分支，因为它�
 所以当前“自足闭合”的最终诚实表述是：canonical-source 精确命题已闭合，noncanonical 补集的
 必要输入边界也已闭合；但这些必要输入本身还没有被当前材料证明，完整无条件行/列定理仍不能声明。
 
+继续新增 noncanonical 补集三歧边界路由器后：
+
+```text
+experiments/prime_matrix_noncanonical_complement_trilemma_router.py
+docs/monograph/prime-matrix-noncanonical-complement-trilemma-router.md/json
+
+trilemma_boundary_closed=true；
+self_contained_noncanonical_package_closed=false；
+external_contract_package_closed_if_fulls_kls_ext_accepted=true。
+```
+
+也就是说，扣除 canonical `RIW/Buchstab` 分支后，第二包只剩三种合法闭合模式：
+
+```text
+实际源恒等：
+  actual full-S non-AP source = canonical RIW/Buchstab；
+
+强化实际源反原子：
+  最终 source capacity measure 没有 moving same-(u,v) atom；
+
+外部/新深定理：
+  接受或证明 FullS-KLS-ext / FullSNonAPWFDKLSTheoremInput。
+```
+
+这一步的重要负结论是：generic full-S 自足反原子路线不是单纯“还没证明”，而是在当前 formal
+WFD / Type-Fourier / K4-K6 / naive incidence 假设下被 moving-delta capacity 模型反证。故第二包
+若不接受外部 `FullS-KLS-ext`，就必须新增并证明实际源恒等或强化实际源反原子；不能再回到
+generic WFD 自足模板。
+
 继续新增行命题闭合输入图谱后：
 
 ```text

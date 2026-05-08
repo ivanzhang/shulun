@@ -1,0 +1,79 @@
+{
+  "certificate_type": "prime_matrix_noncanonical_complement_trilemma_router",
+  "external_contract_package_closed_if_fulls_kls_ext_accepted": true,
+  "legal_closure_modes": [
+    "实际源恒等：证明 actual full-S non-AP source 等于 canonical RIW/Buchstab",
+    "强化实际源反原子：证明最终 source capacity measure 没有 moving same-(u,v) atom",
+    "外部/新深定理：接受或证明 FullS-KLS-ext / FullSNonAPWFDKLSTheoremInput"
+  ],
+  "open_inputs_after_trilemma": [
+    "ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab OR FullSNonAPStrengthenedSourceAntiAtomForActualSource",
+    "DIBFIPrimarySourceSpecializationProof OR explicit acceptance of FullS-KLS-ext as external theorem",
+    "DStructureTailLog4FiniteRankinIndependentAcceptance for final theorem promotion"
+  ],
+  "review_conclusion": "第二包三歧边界已闭合：扣除 canonical 分支后，generic 自足反原子被 moving-delta 反例排除；外部路线压成 `FullS-KLS-ext`/`FullSNonAPWFDKLSTheoremInput`；自足路线只能新增实际源恒等或强化实际源反原子。当前材料仍未自足证明 noncanonical 补集本身。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "consequence": "canonical RIW/Buchstab 分支已移出 noncanonical 补集。",
+      "evidence": "actual-source bridge + canonical-source final theorem",
+      "gate": "CanonicalBranchSubtracted",
+      "remaining": "none inside canonical branch",
+      "verdict": "closed_for_canonical_branch"
+    },
+    {
+      "closed": true,
+      "consequence": "第二包不是 generic WFD 自足引理，而是实际源/强化反原子/外部定理三歧。",
+      "evidence": "noncanonical complement input contract",
+      "gate": "NoncanonicalContractPinned",
+      "remaining": "choose one legal closure mode",
+      "verdict": "contract_closed"
+    },
+    {
+      "closed": true,
+      "consequence": "支撑与容量兼容已等价压成最终 source capacity measure 的强化反原子。",
+      "evidence": "full-S source anti-atom router",
+      "gate": "SourceAntiAtomReduction",
+      "remaining": "prove strengthened source anti-atom or take external route",
+      "verdict": "reduced_not_proved"
+    },
+    {
+      "closed": true,
+      "consequence": "当前 generic full-S 自足反原子在 moving-delta 模型下为假。",
+      "evidence": "self-contained anti-atom no-go router",
+      "gate": "GenericSelfContainedAntiAtomNoGo",
+      "remaining": "must strengthen source, restrict to canonical, or accept external FullS-KLS-ext",
+      "verdict": "refuted"
+    },
+    {
+      "closed": true,
+      "consequence": "外部/新深定理路线已压成一个 full-S non-AP WFD KLS 定理输入。",
+      "evidence": "new full-S theorem input router",
+      "gate": "FullSNonAPWFDKLSInputPinned",
+      "remaining": "prove or cite exact FullS-KLS-ext",
+      "verdict": "single_external_atom"
+    },
+    {
+      "closed": true,
+      "consequence": "接受 FullS-KLS-ext 时，scale/object/no-projection 合同已经闭合。",
+      "evidence": "FullS-KLS-ext specialization router",
+      "gate": "ExternalContractClosedIfAccepted",
+      "remaining": "primary-source derivation or explicit external acceptance",
+      "verdict": "conditional_external_closed"
+    }
+  ],
+  "self_contained_noncanonical_package_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.json": "4d5c17126ea796ee37ae469a3684ef634899dfea0b4af3352c3bf29d0f874e59",
+    "docs/monograph/prime-matrix-canonical-source-self-contained-final-theorem-router.json": "8d45dd95c52f37a36fd0e35002ffbebe3977ffabacead69021dc5ef19bfad9c0",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.json": "a6f8b9718c0c8d6a2854b37e3850d548798ca4aafa708c08b894bb4066ae3d52",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-new-full-s-theorem-input-router.json": "5a24752ca3d01eb90414bd498d9be025bebda93809eaaaebb396296d2f68ba68",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-antiatom-nogo-router.json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4"
+  },
+  "status": "noncanonical_complement_trilemma_boundary_closed_inputs_still_conditional",
+  "trilemma_boundary_closed": true,
+  "trilemma_law": "扣除 canonical RIW/Buchstab 分支后，noncanonical full-S 补集只有三种合法闭合模式。generic 自足 WFD 反原子路线已被 moving-delta capacity model 反证，所以不能由 formal WFD、Type/Fourier、K4/K6 或朴素 incidence 修复。必须证明实际源恒等、证明强化实际源反原子，或接受/证明直接作用于当前未中心化无投影 non-AP WFD 对象的精确 FullS-KLS-ext 定理。"
+}
