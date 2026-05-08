@@ -1,11 +1,13 @@
 {
   "certificate_type": "prime_matrix_concrete_coloring_coverage_data_router",
-  "status": "concrete_coloring_coverage_schema_closed_anchor_data_missing",
+  "status": "concrete_coloring_coverage_schema_closed_GreedyIntervalColoringExecutionLedger_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json": "20b065a8b231febc8a74b790922fe934988fe9daaec4a5c549e38101b41c0154",
     "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
     "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
-    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510"
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510",
+    "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json": "7b3e7de7760295bb4e328cb2b82345c3b7053d1a54b37c88260e3f21a09f7ab1",
+    "docs/monograph/prime-matrix-low-overlap-multiplicity-table-router.json": "474c9979828338364b2283150cf893f5f0563749c365a6a594da8a2e2b253726"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
@@ -14,10 +16,32 @@
   "concrete_coloring_coverage_data_schema_closed": true,
   "concrete_coloring_coverage_data_closed": false,
   "component_data_like_json": {
-    "ConcreteAnchorIntervalEnumerationLedger": [],
-    "LowOverlapMultiplicityTableLedger": [],
+    "ConcreteAnchorIntervalEnumerationLedger": [
+      {
+        "path": "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json",
+        "status": "anchor_interval_certificate_file_closed_enumeration_ready",
+        "record_count": 5,
+        "coverage_complete": true,
+        "source_tuple_hash": null
+      }
+    ],
+    "LowOverlapMultiplicityTableLedger": [
+      {
+        "path": "docs/monograph/prime-matrix-low-overlap-multiplicity-table-router.json",
+        "status": "low_overlap_multiplicity_table_closed_coloring_open",
+        "record_count": 6,
+        "coverage_complete": true,
+        "source_tuple_hash": null
+      }
+    ],
     "GreedyIntervalColoringExecutionLedger": [],
     "CoverageEquationCertificateDataLedger": []
+  },
+  "component_complete": {
+    "ConcreteAnchorIntervalEnumerationLedger": true,
+    "LowOverlapMultiplicityTableLedger": true,
+    "GreedyIntervalColoringExecutionLedger": false,
+    "CoverageEquationCertificateDataLedger": false
   },
   "required_components": [
     {
@@ -41,7 +65,7 @@
       "equation": "multiset(colored intervals)=multiset((a,d): d in J_a, m(d)<=Omega)。"
     }
   ],
-  "current_narrowest_atom": "ConcreteAnchorIntervalEnumerationLedger",
+  "current_narrowest_atom": "GreedyIntervalColoringExecutionLedger",
   "downstream_atoms": [
     "LowOverlapMultiplicityTableLedger",
     "GreedyIntervalColoringExecutionLedger",
@@ -49,7 +73,7 @@
     "PerColorRankinCertificateFileLedger"
   ],
   "reduction_formula": "ConcreteColoringCoverageDataLedger => ConcreteColoringCoverageDataSchemaClosed AND ConcreteAnchorIntervalEnumerationLedger AND LowOverlapMultiplicityTableLedger AND GreedyIntervalColoringExecutionLedger AND CoverageEquationCertificateDataLedger.",
-  "plain_conclusion": "ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合：先由同一 source tuple 枚举锚区间 J_a，再计算 m(d) 的低/高重叠分流表，再执行区间图贪心着色，最后用覆盖等式证明有色多重集等于低重叠走廊多重集。仓库尚未提交第一类 concrete 锚区间枚举数据，因此新的最窄点是 `ConcreteAnchorIntervalEnumerationLedger`。",
+  "plain_conclusion": "ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合；已完成的组件会被扫描回收。当前最窄点是 `GreedyIntervalColoringExecutionLedger`。",
   "rows": [
     {
       "gate": "ConcreteColoringCoverageGateActive",
@@ -81,16 +105,16 @@
     },
     {
       "gate": "ConcreteAnchorIntervalsAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现逐 source tuple 的 J_a 锚区间枚举数据。",
+      "meaning": "已发现 anchor interval 证书文件生成律，可按 source tuple 生成 J_a。",
       "remaining": "ConcreteAnchorIntervalEnumerationLedger"
     },
     {
       "gate": "LowOverlapMultiplicityTableAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现 m(d) 与 low/high overlap 分流表。",
+      "meaning": "已发现 low-overlap multiplicity table 生成律，可复算 m(d) 并分流高重叠 return。",
       "remaining": "LowOverlapMultiplicityTableLedger"
     },
     {
@@ -118,19 +142,19 @@
       "gate": "ConcreteColoringCoverageDataLedger",
       "closed": false,
       "proved": false,
-      "meaning": "ConcreteColoringCoverageDataLedger 不能由 schema 单独关闭；仍需提交四类 concrete 组件数据。",
-      "remaining": "ConcreteAnchorIntervalEnumerationLedger"
+      "meaning": "ConcreteColoringCoverageDataLedger 仍需提交 `GreedyIntervalColoringExecutionLedger`。",
+      "remaining": "GreedyIntervalColoringExecutionLedger"
     }
   ],
   "closed_gates": [
     "ConcreteColoringCoverageGateActive",
     "CounterexampleBranchGuardPreserved",
     "UpstreamSchemasImported",
-    "ConcreteColoringCoverageDataSchemaClosed"
+    "ConcreteColoringCoverageDataSchemaClosed",
+    "ConcreteAnchorIntervalsAvailable",
+    "LowOverlapMultiplicityTableAvailable"
   ],
   "open_gates": [
-    "ConcreteAnchorIntervalsAvailable",
-    "LowOverlapMultiplicityTableAvailable",
     "GreedyColoringExecutionAvailable",
     "CoverageEquationCertificateAvailable",
     "AllCoverageComponentsComplete",

@@ -1,8 +1,8 @@
 # Prime Matrix concrete coloring coverage 数据路由器
 
-**状态：** `concrete_coloring_coverage_schema_closed_anchor_data_missing`
+**状态：** `concrete_coloring_coverage_schema_closed_GreedyIntervalColoringExecutionLedger_open`
 
-ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合：先由同一 source tuple 枚举锚区间 J_a，再计算 m(d) 的低/高重叠分流表，再执行区间图贪心着色，最后用覆盖等式证明有色多重集等于低重叠走廊多重集。仓库尚未提交第一类 concrete 锚区间枚举数据，因此新的最窄点是 `ConcreteAnchorIntervalEnumerationLedger`。
+ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合；已完成的组件会被扫描回收。当前最窄点是 `GreedyIntervalColoringExecutionLedger`。
 
 ```text
 counterexample_assumption_only=true
@@ -30,8 +30,8 @@ ConcreteColoringCoverageDataLedger => ConcreteColoringCoverageDataSchemaClosed A
 
 ## 3. 当前扫描
 
-- ConcreteAnchorIntervalEnumerationLedger: `0`
-- LowOverlapMultiplicityTableLedger: `0`
+- ConcreteAnchorIntervalEnumerationLedger: `1`
+- LowOverlapMultiplicityTableLedger: `1`
 - GreedyIntervalColoringExecutionLedger: `0`
 - CoverageEquationCertificateDataLedger: `0`
 
@@ -43,15 +43,15 @@ ConcreteColoringCoverageDataLedger => ConcreteColoringCoverageDataSchemaClosed A
 | CounterexampleBranchGuardPreserved | `true` | `true` | 本步仍只处理假设早期零行反例链中的 coverage 数据，不使用真实缺席。 | 保持 row_column_unconditional_closed=false。 |
 | UpstreamSchemasImported | `true` | `true` | color set 枚举器、formal coloring schema、参数纪律和 inventory 字段均已固定。 | 无 coverage 格式剩余。 |
 | ConcreteColoringCoverageDataSchemaClosed | `true` | `true` | Concrete coverage 数据被唯一拆成锚区间、多重度表、着色执行和覆盖等式四个组件。 | ConcreteColoringCoverageDataSchemaClosed |
-| ConcreteAnchorIntervalsAvailable | `false` | `false` | 仓库尚未发现逐 source tuple 的 J_a 锚区间枚举数据。 | ConcreteAnchorIntervalEnumerationLedger |
-| LowOverlapMultiplicityTableAvailable | `false` | `false` | 仓库尚未发现 m(d) 与 low/high overlap 分流表。 | LowOverlapMultiplicityTableLedger |
+| ConcreteAnchorIntervalsAvailable | `true` | `false` | 已发现 anchor interval 证书文件生成律，可按 source tuple 生成 J_a。 | ConcreteAnchorIntervalEnumerationLedger |
+| LowOverlapMultiplicityTableAvailable | `true` | `false` | 已发现 low-overlap multiplicity table 生成律，可复算 m(d) 并分流高重叠 return。 | LowOverlapMultiplicityTableLedger |
 | GreedyColoringExecutionAvailable | `false` | `false` | 仓库尚未发现贪心区间着色执行 transcript。 | GreedyIntervalColoringExecutionLedger |
 | CoverageEquationCertificateAvailable | `false` | `false` | 仓库尚未发现多重集相等的 coverage equation 数据证书。 | CoverageEquationCertificateDataLedger |
 | AllCoverageComponentsComplete | `false` | `false` | 四个组件必须同 source tuple/hash 完整覆盖后，才可枚举 concrete color set。 | ConcreteAnchorIntervalEnumerationLedger AND LowOverlapMultiplicityTableLedger AND GreedyIntervalColoringExecutionLedger AND CoverageEquationCertificateDataLedger |
-| ConcreteColoringCoverageDataLedger | `false` | `false` | ConcreteColoringCoverageDataLedger 不能由 schema 单独关闭；仍需提交四类 concrete 组件数据。 | ConcreteAnchorIntervalEnumerationLedger |
+| ConcreteColoringCoverageDataLedger | `false` | `false` | ConcreteColoringCoverageDataLedger 仍需提交 `GreedyIntervalColoringExecutionLedger`。 | GreedyIntervalColoringExecutionLedger |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `ConcreteAnchorIntervalEnumerationLedger`；随后依次验收 `LowOverlapMultiplicityTableLedger`、`GreedyIntervalColoringExecutionLedger`、`CoverageEquationCertificateDataLedger`，再进入 `PerColorRankinCertificateFileLedger`。
+当前唯一最窄点更新为 `GreedyIntervalColoringExecutionLedger`；随后依次验收 `CoverageEquationCertificateDataLedger`、`PerColorRankinCertificateFileLedger`。
 
-审稿边界：本步只关闭 concrete coloring coverage 的数据分解和验收顺序，不提交 concrete 数据全集。
+审稿边界：本步只回收已闭合的 concrete coverage 组件；未提交的组件仍保持打开，也不关闭行列无条件定理。

@@ -209,10 +209,35 @@ def build_rows(
     )
     schema_closed = all([active, guard, enumerator_ready, coloring_schema_ready, parameter_ready, formal_fields_ready])
     data_available = {atom: bool(records) for atom, records in component_data.items()}
+    component_complete = {
+        atom: bool(records) and all(item.get("coverage_complete") is True for item in records)
+        for atom, records in component_data.items()
+    }
     all_components_available = all(data_available.values())
-    all_components_complete = all(
-        records and all(item.get("coverage_complete") is True for item in records)
-        for records in component_data.values()
+    all_components_complete = all(component_complete.values())
+    next_atom = next(
+        (
+            atom
+            for atom in [ANCHOR_ATOM, MULTIPLICITY_ATOM, COLORING_ATOM, EQUATION_ATOM]
+            if not component_complete[atom]
+        ),
+        RANKIN_ATOM,
+    )
+    ledger_closed = schema_closed and all_components_complete
+    anchor_meaning = (
+        "已发现 anchor interval 证书文件生成律，可按 source tuple 生成 J_a。"
+        if data_available[ANCHOR_ATOM]
+        else "仓库尚未发现逐 source tuple 的 J_a 锚区间枚举数据。"
+    )
+    multiplicity_meaning = (
+        "已发现 low-overlap multiplicity table 生成律，可复算 m(d) 并分流高重叠 return。"
+        if data_available[MULTIPLICITY_ATOM]
+        else "仓库尚未发现 m(d) 与 low/high overlap 分流表。"
+    )
+    ledger_meaning = (
+        "四个 concrete coverage 组件均已闭合；coverage 数据账本闭合。"
+        if ledger_closed
+        else f"ConcreteColoringCoverageDataLedger 仍需提交 `{next_atom}`。"
     )
     return [
         row(
@@ -247,14 +272,14 @@ def build_rows(
             "ConcreteAnchorIntervalsAvailable",
             data_available[ANCHOR_ATOM],
             False,
-            "仓库尚未发现逐 source tuple 的 J_a 锚区间枚举数据。",
+            anchor_meaning,
             ANCHOR_ATOM,
         ),
         row(
             "LowOverlapMultiplicityTableAvailable",
             data_available[MULTIPLICITY_ATOM],
             False,
-            "仓库尚未发现 m(d) 与 low/high overlap 分流表。",
+            multiplicity_meaning,
             MULTIPLICITY_ATOM,
         ),
         row(
@@ -280,10 +305,10 @@ def build_rows(
         ),
         row(
             OLD_ATOM,
-            False,
-            False,
-            "ConcreteColoringCoverageDataLedger 不能由 schema 单独关闭；仍需提交四类 concrete 组件数据。",
-            ANCHOR_ATOM,
+            ledger_closed,
+            ledger_closed,
+            ledger_meaning,
+            RANKIN_ATOM if ledger_closed else next_atom,
         ),
     ]
 
@@ -297,31 +322,58 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     component_data = scan_component_data(DOCS)
     rows = build_rows(previous, coloring, parameter, formal_text, component_data)
     schema_closed = next(item["closed"] for item in rows if item["gate"] == SCHEMA_ATOM)
+    ledger_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
+    component_complete = {
+        atom: bool(records) and all(item.get("coverage_complete") is True for item in records)
+        for atom, records in component_data.items()
+    }
+    current_narrowest = next(
+        (
+            atom
+            for atom in [ANCHOR_ATOM, MULTIPLICITY_ATOM, COLORING_ATOM, EQUATION_ATOM]
+            if not component_complete[atom]
+        ),
+        RANKIN_ATOM,
+    )
+    status = (
+        "concrete_coloring_coverage_data_closed_rankin_open"
+        if ledger_closed
+        else f"concrete_coloring_coverage_schema_closed_{current_narrowest}_open"
+    )
+    if ledger_closed:
+        plain_conclusion = (
+            "ConcreteColoringCoverageDataLedger 已闭合：锚区间、多重度表、贪心着色执行和覆盖等式四个组件均已齐备。"
+            f"下一最窄点是 `{RANKIN_ATOM}`。"
+        )
+    else:
+        plain_conclusion = (
+            "ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合；已完成的组件会被扫描回收。"
+            f"当前最窄点是 `{current_narrowest}`。"
+        )
     evidence_paths = list(paths.values())
+    for records in component_data.values():
+        evidence_paths.extend(ROOT / item["path"] for item in records)
+    evidence_paths = list(dict.fromkeys(evidence_paths))
     return {
         "certificate_type": "prime_matrix_concrete_coloring_coverage_data_router",
-        "status": "concrete_coloring_coverage_schema_closed_anchor_data_missing",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
         "concrete_coloring_coverage_data_schema_closed": schema_closed,
-        "concrete_coloring_coverage_data_closed": False,
+        "concrete_coloring_coverage_data_closed": ledger_closed,
         "component_data_like_json": component_data,
+        "component_complete": component_complete,
         "required_components": required_components(),
-        "current_narrowest_atom": ANCHOR_ATOM,
+        "current_narrowest_atom": current_narrowest,
         "downstream_atoms": [MULTIPLICITY_ATOM, COLORING_ATOM, EQUATION_ATOM, RANKIN_ATOM],
         "reduction_formula": (
             f"{OLD_ATOM} => {SCHEMA_ATOM} AND {ANCHOR_ATOM} AND {MULTIPLICITY_ATOM} "
             f"AND {COLORING_ATOM} AND {EQUATION_ATOM}."
         ),
-        "plain_conclusion": (
-            "ConcreteColoringCoverageDataLedger 的数据格式和依赖顺序已闭合：先由同一 source tuple 枚举"
-            "锚区间 J_a，再计算 m(d) 的低/高重叠分流表，再执行区间图贪心着色，最后用覆盖等式证明"
-            "有色多重集等于低重叠走廊多重集。仓库尚未提交第一类 concrete 锚区间枚举数据，因此新的"
-            f"最窄点是 `{ANCHOR_ATOM}`。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -330,6 +382,19 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
+    order = [ANCHOR_ATOM, MULTIPLICITY_ATOM, COLORING_ATOM, EQUATION_ATOM, RANKIN_ATOM]
+    current = result["current_narrowest_atom"]
+    remaining = order[order.index(current) + 1 :] if current in order else []
+    if remaining:
+        next_note = f"当前唯一最窄点更新为 `{current}`；随后依次验收 " + "、".join(
+            f"`{atom}`" for atom in remaining
+        ) + "。"
+    else:
+        next_note = f"当前唯一最窄点更新为 `{current}`。"
+    boundary_note = (
+        "审稿边界：本步只回收已闭合的 concrete coverage 组件；"
+        "未提交的组件仍保持打开，也不关闭行列无条件定理。"
+    )
     lines = [
         "# Prime Matrix concrete coloring coverage 数据路由器",
         "",
@@ -398,10 +463,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 5. 下一步",
             "",
-            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后依次验收 "
-            f"`{MULTIPLICITY_ATOM}`、`{COLORING_ATOM}`、`{EQUATION_ATOM}`，再进入 `{RANKIN_ATOM}`。",
+            next_note,
             "",
-            "审稿边界：本步只关闭 concrete coloring coverage 的数据分解和验收顺序，不提交 concrete 数据全集。",
+            boundary_note,
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
