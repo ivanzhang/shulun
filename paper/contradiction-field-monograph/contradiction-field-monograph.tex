@@ -3770,6 +3770,43 @@ AND GeometricVariationBranchBudgetCertificateOrNamedReturn\\
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
 \end{quote}
 This again refines the boundary rather than proving the two remaining atoms.
+
+The geometric variation/branch budget router then attacks the second atom.  It records
+\[
+\begin{gathered}
+  \texttt{geometric\_budget\_attack\_boundary\_closed=true},\\
+  \texttt{geometry\_ledger\_alphabet\_closed=true},\\
+  \texttt{dprc\_analytic\_capacity\_bound\_proved=false},\\
+  \texttt{signed\_variation\_branch\_lift\_proved=false},\\
+  \texttt{geometric\_variation\_branch\_budget\_certificate\_proved=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The line-cylinder, bottom-deficit, \(P\)-column anchor, dynamic promoted wheel, layered
+wheel, and input-atlas ledgers close the unsigned support and named-return alphabet.
+They do not control the total variation of the actual signed source, since mass may
+cancel after pushforward along \(\Phi\).  The budget atom therefore splits as
+\begin{quote}\footnotesize\ttfamily
+GeometricVariationBranchBudgetCertificateOrNamedReturn\\
+\quad => DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn\\
+\quad\quad AND SignedGeometricLedgerVariationBranchLiftAndReturn.
+\end{quote}
+The latest self-contained basis is
+\begin{quote}\footnotesize\ttfamily
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn\\
+AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn\\
+AND SignedGeometricLedgerVariationBranchLiftAndReturn\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The conditional basis is
+\begin{quote}\footnotesize\ttfamily
+((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn\\
+AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn\\
+AND SignedGeometricLedgerVariationBranchLiftAndReturn)\\
+OR CDependentResidueWeightSpectralCancellationInput)\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+This closes the budget-side interface, not the two new inputs.
 \end{proof}
 
 

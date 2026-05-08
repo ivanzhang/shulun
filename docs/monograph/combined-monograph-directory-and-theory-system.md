@@ -4665,3 +4665,56 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 该步没有闭合无条件行/列命题；它关闭的是几何模型与 signed-source 证明之间的接口边界，并把下一步内部
 攻击点定位为几何变差/分支预算证书。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_geometric_variation_branch_budget_router.py
+docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.md/json
+```
+
+该路由器直接攻击 `GeometricVariationBranchBudgetCertificateOrNamedReturn`。结论为：
+
+```text
+geometric_budget_attack_boundary_closed=true；
+geometry_ledger_alphabet_closed=true；
+dprc_analytic_capacity_bound_proved=false；
+signed_variation_branch_lift_proved=false；
+geometric_variation_branch_budget_certificate_proved=false；
+row_column_unconditional_closed=false。
+```
+
+新的压缩律是：
+
+```text
+GeometricVariationBranchBudgetCertificateOrNamedReturn
+  => DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+     AND SignedGeometricLedgerVariationBranchLiftAndReturn。
+```
+
+第一把锁是几何解析锁：动态提升轮必须证明 `T_Y<S_Y`，等价地证明正偏差平方根界；若失败，
+层叠轮、短窗或列位移必须回流 `PDEC/SAE/ColumnCRT/CleanKLS`。第二把锁是 signed 提升锁：
+actual signed `alpha/delta` 源的总变差和 branch key 复杂度必须被 payment 几何账本支配，不能在
+`Phi` 纤维内通过正负抵消隐藏出超预算质量。
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基为：
+
+```text
+((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+  AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+  AND SignedGeometricLedgerVariationBranchLiftAndReturn)
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+该步的实质推进是把“几何预算证书”拆成几何解析与 signed-source 绝对变差两个不可混淆的输入，避免继续
+在 unsigned 覆盖图上误判 signed 预算已经闭合。

@@ -2331,3 +2331,63 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步的价值是删除一个伪希望：几何覆盖本身不能替代 signed source；但它把预算侧剩余缩到一个可攻的
 `GeometricVariationBranchBudgetCertificateOrNamedReturn`，这是下一步内部自足路线的最窄入口。
+
+## 31. clean-core 几何变差/分支预算攻关
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_geometric_variation_branch_budget_router.py
+docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.md/json
+
+geometric_budget_attack_boundary_closed=true；
+geometry_ledger_alphabet_closed=true；
+dprc_analytic_capacity_bound_proved=false；
+signed_variation_branch_lift_proved=false；
+geometric_variation_branch_budget_certificate_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层继续硬攻上一节的预算侧原子。结论是：几何账本已经足够完整，不能再把剩余归因于“斜线模型或
+轮筛模型还没建好”。已有模型分别支付：
+
+- 圆柱斜线：低素完成骨架、未完成补洞、最终素数洞的支撑分解；
+- 底部缺口：`c=a(h-a)` 的二次曲线支撑约束；
+- 第P列锚：所有行的轮骨架都是第一行骨架的圆柱平移；
+- 动态提升轮：把全覆盖压力降成 `T_Y<S_Y` 或 `max(0,T-HS)<=3sqrt(S)`；
+- 层叠轮：若相位同步不稀释，则回流 `W-unit PDEC/SAE/ColumnCRT/CleanKLS`；
+- 输入 Atlas：预算失败不得成为无名第五出口。
+
+但预算原子仍有一个 signed-source 层：actual signed `alpha/delta` 源测度的总变差、branch key、
+sign/local factor 和 `Phi` 纤维内绝对质量，不能由 unsigned 几何覆盖自动推出。尤其是
+`Phi_*nu` 的 payment 系数可能较小，而纤维内正负质量的总变差可能较大；这就是隐藏抵消放大的真实风险。
+
+因此：
+
+```text
+GeometricVariationBranchBudgetCertificateOrNamedReturn
+  => DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+     AND SignedGeometricLedgerVariationBranchLiftAndReturn。
+```
+
+最新完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基为：
+
+```text
+((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+  AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn
+  AND SignedGeometricLedgerVariationBranchLiftAndReturn)
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步没有证明 DPRC 全局解析界，也没有证明 signed 变差/branch 提升纪律；它把预算侧剩余压到两个
+不能再用几何直觉绕过的精确输入。

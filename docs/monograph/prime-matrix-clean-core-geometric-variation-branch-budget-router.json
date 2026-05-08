@@ -1,0 +1,125 @@
+{
+  "certificate_type": "prime_matrix_clean_core_geometric_variation_branch_budget_router",
+  "core_reduction_law": "几何模型已经闭合 payment 支撑字母表和命名回流字母表。预算侧真正剩余不是再找一个固定轮或固定常数，而是两把锁：第一，动态提升轮的正偏差必须满足 DPRC 平方根界，或在某层回流 PDEC/SAE/ColumnCRT/CleanKLS；第二，actual signed source 的总变差和 branch key 复杂度必须被这个几何账本支配，不能在 Phi 纤维内靠正负抵消隐藏出超预算质量。",
+  "dprc_analytic_capacity_bound_proved": false,
+  "geometric_budget_attack_boundary_closed": true,
+  "geometric_variation_branch_budget_certificate_proved": false,
+  "geometry_ledger_alphabet_closed": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinputs": [
+    "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn",
+    "DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn",
+    "SignedGeometricLedgerVariationBranchLiftAndReturn"
+  ],
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "ledger_rows": [
+    {
+      "available": true,
+      "ledger": "completed_line_support",
+      "open": "不控制 signed source 的绝对变差。",
+      "pays": "低素完成骨架、未完成补洞和最终素数洞的支撑分解。"
+    },
+    {
+      "available": true,
+      "ledger": "bottom_deficit_pair_curve",
+      "open": "只覆盖底部带，不能单独支付全局行。",
+      "pays": "底部带补洞必须落在二次曲线 c=a(h-a)，给出局部支撑容量上界。"
+    },
+    {
+      "available": true,
+      "ledger": "pcolumn_anchor_phi_skeleton",
+      "open": "锚相位不生成 pre-Cauchy signed branch key。",
+      "pays": "所有行的轮骨架是第一行骨架的圆柱平移，给出统一 payment/Phi 支撑。"
+    },
+    {
+      "available": true,
+      "ledger": "dynamic_promoted_capacity",
+      "open": "全局 DPRC 解析不等式仍未证明，只是最窄解析输入。",
+      "pays": "把全覆盖压力降为动态粗骨架正偏差平方根界或命名回流。"
+    },
+    {
+      "available": true,
+      "ledger": "layered_wheel_return",
+      "open": "未证明所有层的分散峰均由大筛吸收。",
+      "pays": "相位同步失败/未稀释峰回流 W-unit PDEC、SAE、ColumnCRT 或 CleanKLS。"
+    },
+    {
+      "available": true,
+      "ledger": "named_return_discipline",
+      "open": "命名输入包本身仍需证明或独立接受。",
+      "pays": "预算失败不能成为无名第五出口，必须落入命名输入包。"
+    }
+  ],
+  "previous_budget_input": "GeometricVariationBranchBudgetCertificateOrNamedReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousBridgeSplitAvailable",
+      "meaning": "上一层已把 signed source/Phi identity 与 geometric variation/branch budget 分开。",
+      "proved": true,
+      "remaining": "单独攻击预算侧原子。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometryLedgerAlphabetClosed",
+      "meaning": "CLB/PAW/DPRC/LayeredWheel/Atlas 已给出支撑、容量、相位和命名回流字母表。",
+      "proved": true,
+      "remaining": "这只是 payment/geometric 账本。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSupportBudgetShapeClosed",
+      "meaning": "几何层可把覆盖压力写成 S、T、H、正偏差、轮层峰和回流出口。",
+      "proved": true,
+      "remaining": "需证明 DPRC 正偏差平方根界或命名回流。"
+    },
+    {
+      "closed": false,
+      "gate": "DPRCAnalyticCapacityBoundProved",
+      "meaning": "当前材料尚未给出所有 P 的 T_Y<S_Y 或 max(0,T-HS)<=3sqrt(S) 无条件证明。",
+      "proved": false,
+      "remaining": "证明 DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn。"
+    },
+    {
+      "closed": false,
+      "gate": "SignedVariationDominatedByGeometryLedger",
+      "meaning": "signed alpha/delta 源的总变差可能在 Phi 纤维内因正负抵消而大于 payment 几何账本。",
+      "proved": false,
+      "remaining": "证明 SignedGeometricLedgerVariationBranchLiftAndReturn。"
+    },
+    {
+      "closed": false,
+      "gate": "BranchKeyMultiplicityBudgetProved",
+      "meaning": "几何标签 q,m,W,phase 可登记，但 actual source branch key 的 polylog/K6 复杂度尚未由几何自动推出。",
+      "proved": false,
+      "remaining": "与 signed variation lift 同时证明，或把 branch 爆炸命名回流。"
+    },
+    {
+      "closed": false,
+      "gate": "GeometricVariationBranchBudgetCertificateProved",
+      "meaning": "预算侧原子未闭合；它被压成一个几何解析锁和一个 signed 提升锁。",
+      "proved": false,
+      "remaining": "DPRCAlpha043CenteredDiscrepancyOrNamedLayerReturn AND SignedGeometricLedgerVariationBranchLiftAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧和预算侧完成后仍需独立验收。"
+    }
+  ],
+  "signed_variation_branch_lift_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-geometric-phi-budget-bridge-router.json": "22a096c2970a64f75006668179204f9ee7b49e802350b318255c1f543a790df0",
+    "docs/monograph/prime-matrix-closure-input-atlas-router.md": "ec37c7cac9e59936182f4479d999f5da7fd94a29a411e74edc49af5ea94cab61",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-dprc-cylindrical-layered-wheel-clamp.md": "d5282b1dfcb5831e15fa7ed5f358880f4cce7fbcec43ec5a1b3ad8859fc4631d",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-dynamic-promoted-rough-capacity.md": "cdbe72836a9061ec51b3260cd7b6e6605fc0b0421197f5c48550cb3df1f6efda",
+    "docs/monograph/prime-matrix-pcolumn-anchor-wheel-field.md": "0b3c78a0cb94f64f7df2de4110bed960d664bef981cdf1abb0bde3918cd0b4c5"
+  },
+  "status": "geometric_budget_reduced_to_dprc_and_signed_variation_lift"
+}
