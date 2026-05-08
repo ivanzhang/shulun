@@ -1713,3 +1713,38 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明 exact entropy，也没有接受 completed KLS；它闭合的是终局输入标准形，防止继续在
 moving atom、source entropy、FullS-KLS 这几个名字之间循环。
+
+## 18. clean-core exact entropy 原子化
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_exact_entropy_atom_router.py
+docs/monograph/prime-matrix-clean-core-exact-entropy-atom-router.md/json
+
+clean_core_exact_entropy_atom_boundary_closed=true；
+clean_core_terminal_support_incidence_proved=false；
+exact_clean_core_entropy_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层不是宣称已经证明 exact entropy，而是把 exact entropy 失败的最小形态钉死。若
+`ExactCleanCoreFullSNonAPWFDSourceEntropy` 失败，就存在一个通过所有回流测试后的 clean-core moving
+大原子；由于 registered multiplier discipline 已闭合，失败不能再解释成账外容量乘子；由于非
+clean-core packet 已经全部回流，失败也不能再伪装成第五类隐藏终端。
+
+因此完全自足路线的可行动证明包进一步变成：
+
+```text
+CleanCoreTerminalSupportIncidenceTheorem
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+其中 `CleanCoreTerminalSupportIncidenceTheorem` 的含义是：每个通过全部回流测试的正质量 actual
+clean-core full-S non-AP WFD block，在同一 formal unit 内必须给出足够大的 exact `u/v` 支撑乘积，
+足以抵消 divisor bound 和所有 registered capacity multipliers；否则它就是一个可复现的 clean-core
+terminal support atom。
+
+所以最新剩余不再是泛泛的“熵不好证”，而是一个更窄的终端原子排斥问题：证明 clean-core 内部不能存在
+正质量、无回流、同一 moving `(u,v)` 承载过大容量的终端支撑原子。当前材料仍未证明这一点。

@@ -4061,3 +4061,37 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步闭合的是终局输入标准形和命名循环，不是 exact entropy 证明，也不是 completed KLS 接受，更不是
 DStructure/Rankin 独立验收完成。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_exact_entropy_atom_router.py
+docs/monograph/prime-matrix-clean-core-exact-entropy-atom-router.md/json
+```
+
+该路由器把 `ExactCleanCoreFullSNonAPWFDSourceEntropy` 的失败形态原子化。结论为：
+
+```text
+clean_core_exact_entropy_atom_boundary_closed=true；
+clean_core_terminal_support_incidence_proved=false；
+exact_clean_core_entropy_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+原子律是：若 exact clean-core entropy 失败，则存在 clean-core moving 大原子。registered multiplier
+discipline 已闭合，所以失败不能归因于账外 Type/Fourier/fiber 乘子；支撑失败 packetization 已闭合，
+所以支撑失败必须给出 packet；非 clean-core packet 的回流二分已闭合，所以剩余只能是通过全部回流测试的
+clean-core terminal support atom。
+
+因此完全自足路线的可行动证明包进一步写成：
+
+```text
+CleanCoreTerminalSupportIncidenceTheorem
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+`CleanCoreTerminalSupportIncidenceTheorem` 要求每个正质量 actual clean-core full-S non-AP WFD block
+在同一 formal unit 内给出足够 exact `u/v` 支撑乘积，以抵消 divisor bound 与所有 registered capacity
+multipliers。本步没有证明该支撑-关联定理；它只是把 exact entropy 的失败压成可复现的 clean-core
+终端支撑原子。
