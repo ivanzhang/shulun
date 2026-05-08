@@ -1,0 +1,168 @@
+{
+  "certificate_type": "prime_matrix_concrete_anchor_interval_enumeration_router",
+  "status": "anchor_interval_formula_closed_source_tuple_data_missing",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-coloring-coverage-data-router.json": "59ee88a5ce115b70cd1f993debe461a5668b5c36c0fd22843efc48d4a61695a3",
+    "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "anchor_interval_endpoint_formula_closed": true,
+  "concrete_anchor_interval_enumeration_closed": false,
+  "data_like_json": {
+    "ConcreteSourceTupleAnchorParameterDataLedger": [],
+    "AnchorIntervalCertificateFileLedger": []
+  },
+  "certificate_fields": [
+    {
+      "field": "formal_unit_id",
+      "meaning": "假设反例链中同一 formal unit 的稳定编号。"
+    },
+    {
+      "field": "source_tuple_hash",
+      "meaning": "锁定 P/range、window_id、I=[L,R]、A、D0、phase_rule。"
+    },
+    {
+      "field": "anchor_id",
+      "meaning": "互补锚 a 的稳定编号。"
+    },
+    {
+      "field": "a",
+      "meaning": "实际 anchor 值，必须来自 anchor_set_hash 对应的 A。"
+    },
+    {
+      "field": "left_d",
+      "meaning": "max(D0, ceil(L/a))。"
+    },
+    {
+      "field": "right_d_exclusive",
+      "meaning": "min(2D0, floor(R/a)+1)，使用半开整数区间。"
+    },
+    {
+      "field": "phase_filtered_segments",
+      "meaning": "若 phase_rule 非 identity，记录过滤后的子区间或 residue 条件。"
+    },
+    {
+      "field": "empty_interval_flag",
+      "meaning": "若 left_d>=right_d_exclusive，则显式登记空区间。"
+    },
+    {
+      "field": "endpoint_proof_hash",
+      "meaning": "端点公式和 source tuple 的可复算证明哈希。"
+    }
+  ],
+  "endpoint_laws": [
+    {
+      "law": "window_membership",
+      "formula": "ad in [L,R] iff ceil(L/a)<=d<=floor(R/a)。"
+    },
+    {
+      "law": "dyadic_core_clip",
+      "formula": "d in [D0,2D0) gives left=max(D0,ceil(L/a)), right_excl=min(2D0,floor(R/a)+1)。"
+    },
+    {
+      "law": "phase_filter",
+      "formula": "phase_rule(d)=true 的点保留；identity phase 必须显式写出。"
+    },
+    {
+      "law": "same_tuple_guard",
+      "formula": "A、D0、phase_rule、window_id 必须共享同一 source_tuple_hash。"
+    }
+  ],
+  "current_narrowest_atom": "ConcreteSourceTupleAnchorParameterDataLedger",
+  "secondary_narrowest_atom": "AnchorIntervalCertificateFileLedger",
+  "downstream_atoms": [
+    "LowOverlapMultiplicityTableLedger"
+  ],
+  "reduction_formula": "ConcreteAnchorIntervalEnumerationLedger => AnchorIntervalEndpointFormulaClosed AND ConcreteSourceTupleAnchorParameterDataLedger AND AnchorIntervalCertificateFileLedger.",
+  "plain_conclusion": "ConcreteAnchorIntervalEnumerationLedger 的端点公式已经闭合：在同一 source tuple 下，每个 anchor a 的 J_a 由 [L,R]、[D0,2D0) 与 phase_rule 唯一确定。当前缺的不是公式，而是逐 formal unit 的 concrete source tuple/anchor 参数数据；新的最窄点是 `ConcreteSourceTupleAnchorParameterDataLedger`。",
+  "rows": [
+    {
+      "gate": "ConcreteAnchorIntervalGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 concrete anchor interval 枚举。",
+      "remaining": "ConcreteAnchorIntervalEnumerationLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行反例链，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "UpstreamCoverageSchemaImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "coverage 数据已经被拆为锚区间、多重度、着色执行和覆盖等式。",
+      "remaining": "本步只处理第一组件。"
+    },
+    {
+      "gate": "ParameterDisciplineImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "A、D0、phase_rule 与 anchor_set_hash 的来源纪律已固定。",
+      "remaining": "不能后验移动参数。"
+    },
+    {
+      "gate": "AnchorIntervalEndpointFormulaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "给定同一 source tuple，J_a 端点由 ceil/floor 与 [D0,2D0) 裁剪唯一确定。",
+      "remaining": "AnchorIntervalEndpointFormulaClosed"
+    },
+    {
+      "gate": "ConcreteSourceTupleAnchorParameterDataAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库尚未发现逐 formal unit 的 concrete source tuple/anchor 参数数据。",
+      "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
+    },
+    {
+      "gate": "ConcreteSourceTupleAnchorParameterDataComplete",
+      "closed": false,
+      "proved": false,
+      "meaning": "source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule。",
+      "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
+    },
+    {
+      "gate": "AnchorIntervalCertificateFilesAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库尚未发现按端点公式生成的 anchor interval 证书文件。",
+      "remaining": "AnchorIntervalCertificateFileLedger"
+    },
+    {
+      "gate": "AnchorIntervalCertificateFilesComplete",
+      "closed": false,
+      "proved": false,
+      "meaning": "anchor interval 证书必须逐 anchor 覆盖并携带空区间记录。",
+      "remaining": "AnchorIntervalCertificateFileLedger"
+    },
+    {
+      "gate": "ConcreteAnchorIntervalEnumerationLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "锚区间枚举公式已闭合，但没有 concrete source tuple 数据就不能生成真实 J_a 清单。",
+      "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
+    }
+  ],
+  "closed_gates": [
+    "ConcreteAnchorIntervalGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "UpstreamCoverageSchemaImported",
+    "ParameterDisciplineImported",
+    "AnchorIntervalEndpointFormulaClosed"
+  ],
+  "open_gates": [
+    "ConcreteSourceTupleAnchorParameterDataAvailable",
+    "ConcreteSourceTupleAnchorParameterDataComplete",
+    "AnchorIntervalCertificateFilesAvailable",
+    "AnchorIntervalCertificateFilesComplete",
+    "ConcreteAnchorIntervalEnumerationLedger"
+  ]
+}
