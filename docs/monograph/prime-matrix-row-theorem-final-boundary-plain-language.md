@@ -1476,3 +1476,44 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 这仍不是完整无条件证明：`ExactUVSupport` 没有被证明；DStructure/Rankin 也没有独立验收。
+
+## 13. ExactUVSupport 终端攻击
+
+继续新增：
+
+```text
+experiments/prime_matrix_exact_uv_support_terminal_attack_router.py
+docs/monograph/prime-matrix-exact-uv-support-terminal-attack-router.md/json
+
+exact_uv_support_terminal_boundary_closed=true；
+registered_capacity_multiplier_discipline_closed=true；
+exact_uv_support_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层直接攻击剩下的唯一源侧微输入：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound。
+```
+
+结论很窄也很硬：当前材料不能诚实证明它。原因不是还漏了 Type/Fourier 乘子，也不是
+balanced range 或 canonical Buchstab 数量不足；这些都已经处理。真正阻断是：
+
+- `formal WFD` 允许点支撑因子，不能推出 actual `u/v` 支撑；
+- K4/K6 与朴素 incidence 仍看不到 moving factor-pair 支撑；
+- raw Buchstab/Mertens 计数只说明厚区间中有足够 squarefree 产品；
+- canonical RIW/Buchstab 支撑链只关闭 canonical-source 分支，不能偷渡进 noncanonical full-S 补集。
+
+因此最新、最诚实的完全自足输入基固定为：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+若未来证明 `ActualNoncanonicalExactUVSupportLowerBound`，则结合已闭合的 registered multiplier
+discipline，最终 `M_{u,v}` 容量反原子立即由条件不等式得到；再加 DStructure/Rankin 独立验收，
+当前边界链才可升级为完整行/列闭合。当前还不能声明完整无条件定理。

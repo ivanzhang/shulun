@@ -3867,3 +3867,38 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步完成两个源微输入中的乘子纪律项；当前唯一源侧微输入是 `ActualNoncanonicalExactUVSupportLowerBound`，
 但完整行/列无条件定理仍需 DStructure/Rankin 独立验收。
+
+继续新增：
+
+```text
+experiments/prime_matrix_exact_uv_support_terminal_attack_router.py
+docs/monograph/prime-matrix-exact-uv-support-terminal-attack-router.md/json
+```
+
+该路由器直接攻击剩余的 `ActualNoncanonicalExactUVSupportLowerBound`。结论为：
+
+```text
+exact_uv_support_terminal_boundary_closed=true；
+registered_capacity_multiplier_discipline_closed=true；
+exact_uv_support_proved=false；
+actual_final_capacity_antiatom_proved=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+结构律是：ExactUVSupport 已是当前材料的唯一源侧终端输入。它不能由 formal WFD 推出，因为 generic
+WFD 允许点支撑因子；不能由 K4/K6 或朴素 incidence 推出，因为这些投影不控制 moving factor-pair
+支撑；不能由 raw Buchstab 计数推出，因为厚区间数量只是 canonical 层支撑链的一部分；也不能由
+canonical RIW/Buchstab 支撑链偷渡推出，因为那只关闭 canonical-source 分支，不关闭 noncanonical
+full-S 补集。
+
+因此最新输入基仍为：
+
+```text
+ActualNoncanonicalExactUVSupportLowerBound
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+若以后证明 `ActualNoncanonicalExactUVSupportLowerBound`，则结合已闭合的 registered multiplier
+discipline 可推出 final capacity anti-atom ledger；再加 DStructure/Rankin 独立验收后，当前边界链
+才可升级。当前材料完成的是终端边界审查，不是无条件证明。

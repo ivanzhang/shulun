@@ -3180,6 +3180,35 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
 \end{quote}
 This closes the multiplier-discipline item, but the exact \(u,v\)-support theorem and the
 independent D-structure/Rankin acceptance remain open.
+
+The ExactUVSupport terminal-attack router then audits the remaining source micro-input.
+It records
+\[
+\begin{gathered}
+  \texttt{exact\_uv\_support\_terminal\_boundary\_closed=true},\\
+  \texttt{registered\_capacity\_multiplier\_discipline\_closed=true},\\
+  \texttt{exact\_uv\_support\_proved=false},\\
+  \texttt{actual\_final\_capacity\_antiatom\_proved=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The audit removes the remaining shortcut routes.  Formal WFD hypotheses allow
+point-supported factors, so they do not force actual \(u,v\)-support.  K4/K6 and naive
+factor-residue incidence still live on the wrong projections.  Raw Buchstab/Mertens
+counting gives enough squarefree products only after the canonical layer is admitted, and
+the canonical RIW/Buchstab support chain closes only the canonical-source branch.  It
+cannot be imported into the noncanonical full-\(S\) complement.
+
+Thus the current fully self-contained basis is still
+\begin{quote}\small\ttfamily
+ActualNoncanonicalExactUVSupportLowerBound\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+If the exact-support theorem is supplied, the already closed multiplier discipline gives
+the final capacity anti-atom by the recorded inequality.  Without that theorem, and
+without independent D-structure/Rankin acceptance, the unrestricted row-column theorem
+cannot yet be stated as unconditional.
 \end{proof}
 
 

@@ -1,0 +1,134 @@
+{
+  "actual_final_capacity_antiatom_proved": false,
+  "canonical_support_status": "canonical_riw_support_reduced_to_squarefree_buchstab_layer_support",
+  "certificate_type": "prime_matrix_exact_uv_support_terminal_attack_router",
+  "conditional_closure_law": "在 registered multiplier discipline 已闭合后，若证明 ActualNoncanonicalExactUVSupportLowerBound，则 final capacity anti-atom ledger 随条件不等式成立；再加 DStructure/Rankin 独立验收，当前边界链才可升级。",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "exact_uv_support_proved": false,
+  "exact_uv_support_terminal_boundary_closed": true,
+  "latest_self_contained_basis": "ActualNoncanonicalExactUVSupportLowerBound AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "no_go_law": "ExactUVSupport 不能由 formal WFD、K4/K6、朴素 incidence、raw Buchstab 计数或 canonical 支撑链偷渡推出。generic WFD 允许点支撑因子；canonical 支撑只关闭 canonical-source 分支。",
+  "plain_conclusion": "ExactUVSupport 被攻到当前材料的唯一源侧终端输入：乘子纪律已闭合，canonical 分支支撑链已经吸收，但不能导入 noncanonical full-S 补集；generic WFD 点支撑模型阻断形式推论。因此当前不能诚实宣称完整无条件闭合。剩余是新增证明 `ActualNoncanonicalExactUVSupportLowerBound`，或直接证明最终容量反原子；另有 DStructure/Rankin 独立验收门。",
+  "registered_capacity_multiplier_discipline_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RegisteredMultiplierDisciplineClosed",
+      "meaning": "上一轮已把 Type/Fourier/fiber 乘子纪律闭合为账本门。",
+      "proved": true,
+      "remaining": "ExactUVSupport 不再能把失败归因于账外乘子。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalImportBlocked",
+      "meaning": "canonical RIW/Buchstab 支撑不能偷渡到 noncanonical full-S 补集。",
+      "proved": true,
+      "remaining": "必须证明 actual noncanonical 支撑，或直接证明 final anti-atom。"
+    },
+    {
+      "closed": true,
+      "gate": "K4K6AndNaiveIncidenceStillInsufficient",
+      "meaning": "K4/K6 与朴素 factor-residue incidence 不能推出 moving u/v 支撑。",
+      "proved": true,
+      "remaining": "支撑失败不会自动回流为已命名 K4/K6 失败。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalSupportChainNotARecentOpenGap",
+      "meaning": "canonical-source 分支上的层准入/非零转移/薄块回流已由 canonical 边界吸收。",
+      "proved": true,
+      "remaining": "这只关闭 canonical 分支；不关闭 actual noncanonical 补集。"
+    },
+    {
+      "closed": true,
+      "gate": "RawBuchstabCountingNotEnoughForNoncanonical",
+      "meaning": "厚区间 squarefree 数量够，但 exact 层承认和非零系数转移只服务已锁定的 canonical 层。",
+      "proved": true,
+      "remaining": "noncanonical actual 源仍需自己的支撑下界或 final anti-atom。"
+    },
+    {
+      "closed": false,
+      "gate": "ExactUVSupportCurrentCorpusProved",
+      "meaning": "当前材料没有证明 actual noncanonical exact u/v 支撑下界。",
+      "proved": false,
+      "remaining": "这是唯一源侧终端输入。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "即使 ExactUVSupport 完成，仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-noncanonical-source-core-atomization-router.json": "cc605d7c0c26af7b1ff8ab3644629dc9821d805e817dd4fb141943a9830a0a08",
+    "docs/monograph/prime-matrix-pdec-cap-canonical-layer-closure-router.json": "b51fadba1fe1d82d0693e4302c84ad3a6ed9c6b47495ee7e37c872c04a9efe45",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-triad-a1-canonical-riw-support-router.json": "6a39cce23e2f9eb8dceb2c8742539fcddb8c3d83cea4ae69fd7703d0eea8f7b8",
+    "docs/monograph/prime-matrix-triad-a1-exact-factor-support-router.json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "docs/monograph/prime-matrix-triad-a1-squarefree-buchstab-support-router.json": "13edc798e762cafca5ed2e069460bc77ddfc63f709015b53762bc0c8784d6d10"
+  },
+  "sparse_wfd_model_rows": [
+    {
+      "formal_factor_support": 1,
+      "k": 3,
+      "log_y": 6.907755278982138,
+      "passes_well_factorable_template": true,
+      "required_support": 750514,
+      "violates_exact_uv_support": true
+    },
+    {
+      "formal_factor_support": 1,
+      "k": 4,
+      "log_y": 9.210340371976184,
+      "passes_well_factorable_template": true,
+      "required_support": 5622504,
+      "violates_exact_uv_support": true
+    },
+    {
+      "formal_factor_support": 1,
+      "k": 5,
+      "log_y": 11.51292546497023,
+      "passes_well_factorable_template": true,
+      "required_support": 26810188,
+      "violates_exact_uv_support": true
+    },
+    {
+      "formal_factor_support": 1,
+      "k": 6,
+      "log_y": 13.815510557964275,
+      "passes_well_factorable_template": true,
+      "required_support": 96065750,
+      "violates_exact_uv_support": true
+    },
+    {
+      "formal_factor_support": 1,
+      "k": 7,
+      "log_y": 16.11809565095832,
+      "passes_well_factorable_template": true,
+      "required_support": 282615581,
+      "violates_exact_uv_support": true
+    },
+    {
+      "formal_factor_support": 1,
+      "k": 8,
+      "log_y": 18.420680743952367,
+      "passes_well_factorable_template": true,
+      "required_support": 719680491,
+      "violates_exact_uv_support": true
+    },
+    {
+      "formal_factor_support": 1,
+      "k": 9,
+      "log_y": 20.723265836946414,
+      "passes_well_factorable_template": true,
+      "required_support": 1641373385,
+      "violates_exact_uv_support": true
+    }
+  ],
+  "status": "exact_uv_support_is_unique_source_terminal_input_open",
+  "unique_source_terminal_input": "ActualNoncanonicalExactUVSupportLowerBound"
+}
