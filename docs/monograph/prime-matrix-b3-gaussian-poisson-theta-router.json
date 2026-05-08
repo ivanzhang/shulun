@@ -1,0 +1,141 @@
+{
+  "certificate_type": "b3_gaussian_poisson_theta_router",
+  "status": "gaussian_poisson_theta_identity_closed",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-zeta-xi-hadamard-router.json": "48c391a54d2222f81b9d2fad0ab18606f708d72d4a2eb27f064224cc5ae2d045"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "gaussian_poisson_theta_identity_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "GaussianPoissonSummationThetaIdentityLedger": "GaussianPoissonThetaIdentityClosed"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationLedger AND XiEntireOrderOneGrowthLedger AND HadamardFactorizationLogDerivativeLedger) AND EulerProductLogDerivativePositiveRealPartLedger AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityLedger AND ExplicitZeroFreeRegionConstantNumericalLedger AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ThetaMellinZetaContinuationFunctionalEquationLedger",
+  "secondary_priority": "XiEntireOrderOneGrowthLedger",
+  "tertiary_priority": "HadamardFactorizationLogDerivativeLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "theta_numerical_audit": [
+    {
+      "t": 0.05,
+      "theta_t": 4.472135954999579,
+      "transformed": 4.47213595499958,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "t": 0.1,
+      "theta_t": 3.1622776601685225,
+      "transformed": 3.162277660168523,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "t": 0.25,
+      "theta_t": 2.000013949369425,
+      "transformed": 2.000013949369425,
+      "absolute_error": 0.0
+    },
+    {
+      "t": 0.5,
+      "theta_t": 1.4194954880837662,
+      "transformed": 1.4194954880837665,
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "t": 1.0,
+      "theta_t": 1.0864348112133082,
+      "transformed": 1.0864348112133082,
+      "absolute_error": 0.0
+    },
+    {
+      "t": 2.0,
+      "theta_t": 1.0037348854877393,
+      "transformed": 1.0037348854877393,
+      "absolute_error": 0.0
+    },
+    {
+      "t": 4.0,
+      "theta_t": 1.0000069746847124,
+      "transformed": 1.0000069746847124,
+      "absolute_error": 0.0
+    },
+    {
+      "t": 10.0,
+      "theta_t": 1.0000000000000455,
+      "transformed": 1.0000000000000453,
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "t": 20.0,
+      "theta_t": 1.0,
+      "transformed": 0.9999999999999998,
+      "absolute_error": 2.220446049250313e-16
+    }
+  ],
+  "max_theta_audit_error": 8.881784197001252e-16,
+  "proof_outline": [
+    "For t>0 define F_t(x)=sum_{n in Z} exp(-pi*t*(n+x)^2).",
+    "The series and its derivatives converge uniformly on compact x intervals, so F_t is smooth and 1-periodic.",
+    "The m-th Fourier coefficient equals int_R exp(-pi*t*u^2) exp(-2*pi*i*m*u) du.",
+    "The Gaussian Fourier integral gives t^(-1/2) exp(-pi*m^2/t).",
+    "Evaluating the absolutely convergent Fourier series at x=0 gives theta(t)=t^(-1/2)theta(1/t)."
+  ],
+  "plain_conclusion": "Gaussian-Poisson theta 恒等式可以在本文内自足闭合；它只依赖周期高斯的 Fourier 系数计算和高斯积分。闭合后 zeta-xi 包的下一最窄点变为 theta Mellin 延拓与函数方程。",
+  "rows": [
+    {
+      "gate": "GaussianPoissonThetaGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层唯一内部最窄点是 Gaussian Poisson 求和推出 theta 函数变换。",
+      "remaining": "GaussianPoissonSummationThetaIdentityLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步只是解析基础恒等式，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "PeriodicGaussianFourierCoefficientClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "周期高斯 F_t(x)=sum_n exp(-pi t(n+x)^2) 的第 m 个 Fourier 系数为 t^{-1/2}exp(-pi m^2/t)。",
+      "remaining": "无剩余；由高斯 Fourier 积分和绝对一致收敛。"
+    },
+    {
+      "gate": "ThetaModularIdentityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "令 x=0 得 theta(t)=t^{-1/2}theta(1/t)，即 Gaussian-Poisson theta 恒等式。",
+      "remaining": "GaussianPoissonThetaIdentityClosed"
+    },
+    {
+      "gate": "GaussianPoissonSummationThetaIdentityLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "待证 atom 已由周期高斯 Fourier 级数闭合。",
+      "remaining": "GaussianPoissonThetaIdentityClosed"
+    },
+    {
+      "gate": "ThetaMellinFunctionalEquationStillNext",
+      "closed": false,
+      "proved": false,
+      "meaning": "下一步要把 theta 恒等式送入 Mellin 积分，推出 zeta 延拓和 Lambda 函数方程。",
+      "remaining": "ThetaMellinZetaContinuationFunctionalEquationLedger"
+    }
+  ],
+  "closed_gates": [
+    "GaussianPoissonThetaGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "PeriodicGaussianFourierCoefficientClosed",
+    "ThetaModularIdentityClosed",
+    "GaussianPoissonSummationThetaIdentityLedger"
+  ],
+  "open_gates": [
+    "ThetaMellinFunctionalEquationStillNext"
+  ]
+}
