@@ -1,0 +1,128 @@
+{
+  "certificate_type": "b3_self_contained_mertens_tail_router",
+  "status": "self_contained_mertens_tail_reduced_to_explicit_pnt_package_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-signed-delay-multiplier-anchor-router.json": "158728d20ecf491aab9376bc1f29cc0566a9218ffb292b26b5192d8bfb5a12c9",
+    "docs/rh-pc1-explicit-formula-proof-appendix.md": "de5e7172a4c77554fde727159d5a7b3b88e88f6e8ef5240cd91da58199938ed2"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "self_contained_mertens_tail_reduced": true,
+  "self_contained_mertens_tail_proved": false,
+  "external_mertens_route_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372": "(B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000)"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000",
+  "secondary_priority": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "source_audit": {
+    "smooth_explicit_formula_appendix_present": true,
+    "zero_free_region_proof_present": false,
+    "explicit_theta_envelope_present_in_appendix": false,
+    "partial_summation_transfer_formal": true,
+    "meissel_mertens_constant_interval_present": false,
+    "tail_20000_self_contained_proved": false
+  },
+  "plain_conclusion": "完全自足 Mertens 尾段没有从当前几何或 B=3 筛结构自动闭合；它等价于把显式 PNT 机器内联：零点自由区/显式 theta 误差、B1 常数区间，以及分部求和转移。仓库已有平滑显式公式起点和分部求和形式，但缺少零点自由区与 B1 区间证明。因此外部 Dusart 版已经推进到 DStructure，完全自足版的唯一真正剩余是显式 PNT 包。",
+  "rows": [
+    {
+      "gate": "SelfContainedMertensTailGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "完全自足路线的唯一剩余是把 Dusart reciprocal-prime Mertens 定理内联证明。",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条内的筛主系数解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "FinitePromotionTo20000Reusable",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已经把 10372<=x<20000 提升为有限精确阶梯账本；自足尾段只需从 x>=20000 开始。",
+      "remaining": "B3FinitePrimeReciprocalStepLedger10372To19999PGe100000"
+    },
+    {
+      "gate": "SmoothExplicitFormulaAppendixPresent",
+      "closed": true,
+      "proved": true,
+      "meaning": "仓库已有平滑 Chebyshev 显式公式附录，可作为 PNT 型证明链的起点。",
+      "remaining": "还不能推出显式零点自由区或 Dusart 常数。"
+    },
+    {
+      "gate": "PartialSummationTransferClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "一旦给出显式 theta/psi 误差和常数区间，素数倒数和由 Stieltjes 分部求和形式推出。",
+      "remaining": "PrimeReciprocalPartialSummationFromThetaEnvelopeClosed"
+    },
+    {
+      "gate": "ExplicitZeroFreeThetaEnvelopeMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前附录没有 de la Vallee Poussin/Korobov-Vinogradov 型零点自由区与显式 theta 误差证明。",
+      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000"
+    },
+    {
+      "gate": "MeisselMertensConstantIntervalMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前仓库没有自足给出 B1 常数区间并与 x=20000 基点核验对接。",
+      "remaining": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "gate": "SelfContainedMertensTailReducedToPNTPackage",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧 Dusart 原子被压成有限锚点、分部求和、显式零点自由 theta 包、B1 常数区间四项。",
+      "remaining": "(B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000)"
+    },
+    {
+      "gate": "SelfContainedPrimeReciprocalMertensTailXGe20000",
+      "closed": false,
+      "proved": false,
+      "meaning": "等价的简写：从 x>=20000 开始给出自足 reciprocal-prime Mertens 尾段误差。",
+      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "gate": "DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted",
+      "closed": true,
+      "proved": false,
+      "meaning": "若接受 Dusart 外部定理，本分支已经由上一层条件路线关闭。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是外部 Mertens 版最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "SelfContainedMertensTailGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "FinitePromotionTo20000Reusable",
+    "SmoothExplicitFormulaAppendixPresent",
+    "PartialSummationTransferClosed",
+    "SelfContainedMertensTailReducedToPNTPackage",
+    "DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted"
+  ],
+  "open_gates": [
+    "ExplicitZeroFreeThetaEnvelopeMissing",
+    "MeisselMertensConstantIntervalMissing",
+    "SelfContainedPrimeReciprocalMertensTailXGe20000",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
