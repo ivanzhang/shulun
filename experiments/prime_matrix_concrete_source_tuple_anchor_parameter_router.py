@@ -264,12 +264,26 @@ def build_rows(
     anchor_recon_complete = anchor_recon_available and all(
         item.get("coverage_complete") is True for item in data[ANCHOR_RECON_ATOM]
     )
+    anchor_available_meaning = (
+        "已发现 anchor set reconstruction certificate，可复算 A、D0/K/Omega、phase_rule 与 hash。"
+        if anchor_recon_available
+        else "仓库尚未发现 anchor set 与 D0/K/Omega/phase_rule 的重构证书。"
+    )
+    anchor_complete_meaning = (
+        "重构证书已覆盖有限来源族和 source tuple hash 纪律。"
+        if anchor_recon_complete
+        else "重构证书必须逐 source tuple 给出 anchor_set_hash 与 source_tuple_hash。"
+    )
     ledger_closed = schema_closed and formal_unit_complete_gate_closed and anchor_recon_complete
     ledger_remaining = ANCHOR_RECON_ATOM if formal_unit_complete_gate_closed else FORMAL_UNIT_ATOM
     ledger_meaning = (
+        "schema、formal unit source records 与 anchor reconstruction 均已闭合；source tuple 参数数据账本闭合。"
+        if ledger_closed
+        else (
         "schema 与 formal unit source records 已闭合；剩余是 anchor set 与 D0/K/Omega/phase_rule 重构证书。"
         if formal_unit_complete_gate_closed and not anchor_recon_complete
         else "schema 已闭合，但没有 concrete formal unit 源记录就不能落地 source tuple 参数。"
+        )
     )
     return [
         row(
@@ -325,14 +339,14 @@ def build_rows(
             "AnchorSetReconstructionCertificatesAvailable",
             anchor_recon_available,
             False,
-            "仓库尚未发现 anchor set 与 D0/K/Omega/phase_rule 的重构证书。",
+            anchor_available_meaning,
             ANCHOR_RECON_ATOM,
         ),
         row(
             "AnchorSetReconstructionCertificatesComplete",
             anchor_recon_complete,
             False,
-            "重构证书必须逐 source tuple 给出 anchor_set_hash 与 source_tuple_hash。",
+            anchor_complete_meaning,
             ANCHOR_RECON_ATOM,
         ),
         row(
@@ -358,6 +372,9 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     ledger_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
     formal_unit_closed = formal_unit_source_record.get("concrete_formal_unit_source_record_closed") is True
     evidence_paths = list(paths.values())
+    for records in data.values():
+        evidence_paths.extend(ROOT / item["path"] for item in records)
+    evidence_paths = list(dict.fromkeys(evidence_paths))
     current_narrowest = ANCHOR_INTERVAL_ATOM if ledger_closed else (
         ANCHOR_RECON_ATOM if formal_unit_closed else FORMAL_UNIT_ATOM
     )
@@ -371,6 +388,10 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         )
     )
     plain_conclusion = (
+        "ConcreteSourceTupleAnchorParameterDataLedger 已闭合：source tuple schema、formal unit source records "
+        f"与 anchor reconstruction certificate 均已齐备。下一最窄点是 `{ANCHOR_INTERVAL_ATOM}`。"
+        if ledger_closed
+        else (
         "ConcreteSourceTupleAnchorParameterDataLedger 的 schema 与 formal unit source records 已闭合；"
         f"当前最窄点收缩为 `{ANCHOR_RECON_ATOM}`。"
         if formal_unit_closed and not ledger_closed
@@ -378,6 +399,7 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
             "ConcreteSourceTupleAnchorParameterDataLedger 的字段和哈希纪律已闭合：每条记录必须来自同一"
             " formal unit，锁定 source_family、P/window、I=[L,R]、A、D0/K/Omega 与 phase_rule。"
             f"当前缺少逐 formal unit 的 concrete source record 数据，因此新的最窄点是 `{FORMAL_UNIT_ATOM}`。"
+        )
         )
     )
     return {
@@ -406,7 +428,13 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
-    if result["current_narrowest_atom"] == result["secondary_narrowest_atom"]:
+    if result["concrete_source_tuple_anchor_parameter_data_closed"]:
+        next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。"
+        boundary_note = (
+            "审稿边界：本步关闭 source tuple/anchor 参数数据账本；不生成 anchor interval 证书文件，"
+            "也不关闭行列无条件定理。"
+        )
+    elif result["current_narrowest_atom"] == result["secondary_narrowest_atom"]:
         next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 `{ANCHOR_INTERVAL_ATOM}`。"
         boundary_note = (
             "审稿边界：本步吸收已闭合 formal unit source record ledger；不提交 anchor set 重构证书，"

@@ -1,15 +1,15 @@
 # Prime Matrix concrete source tuple/anchor 参数路由器
 
-**状态：** `source_tuple_anchor_parameter_schema_closed_anchor_reconstruction_open`
+**状态：** `source_tuple_anchor_parameter_data_closed_anchor_interval_open`
 
-ConcreteSourceTupleAnchorParameterDataLedger 的 schema 与 formal unit source records 已闭合；当前最窄点收缩为 `AnchorSetReconstructionCertificateLedger`。
+ConcreteSourceTupleAnchorParameterDataLedger 已闭合：source tuple schema、formal unit source records 与 anchor reconstruction certificate 均已齐备。下一最窄点是 `AnchorIntervalCertificateFileLedger`。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 source_tuple_anchor_parameter_schema_closed=true
-concrete_source_tuple_anchor_parameter_data_closed=false
+concrete_source_tuple_anchor_parameter_data_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -46,7 +46,7 @@ ConcreteSourceTupleAnchorParameterDataLedger => SourceTupleAnchorParameterSchema
 ## 4. 当前扫描
 
 - ConcreteFormalUnitSourceRecordLedger: `0`
-- AnchorSetReconstructionCertificateLedger: `0`
+- AnchorSetReconstructionCertificateLedger: `1`
 
 ## 5. 判定表
 
@@ -59,12 +59,12 @@ ConcreteSourceTupleAnchorParameterDataLedger => SourceTupleAnchorParameterSchema
 | SourceTupleAnchorParameterSchemaClosed | `true` | `true` | source tuple/anchor 参数数据的字段、哈希和同 formal unit 纪律已闭合。 | SourceTupleAnchorParameterSchemaClosed |
 | ConcreteFormalUnitSourceRecordsAvailable | `true` | `false` | 仓库尚未发现逐 formal unit 的真实 source record 数据；formal unit source record ledger 闭合后该缺席不再阻塞。 | ConcreteFormalUnitSourceRecordLedger |
 | ConcreteFormalUnitSourceRecordsComplete | `true` | `false` | formal unit source records 必须覆盖所有假设来源记录；当前由已闭合普遍抽取链给出覆盖。 | ConcreteFormalUnitSourceRecordLedger |
-| AnchorSetReconstructionCertificatesAvailable | `false` | `false` | 仓库尚未发现 anchor set 与 D0/K/Omega/phase_rule 的重构证书。 | AnchorSetReconstructionCertificateLedger |
-| AnchorSetReconstructionCertificatesComplete | `false` | `false` | 重构证书必须逐 source tuple 给出 anchor_set_hash 与 source_tuple_hash。 | AnchorSetReconstructionCertificateLedger |
-| ConcreteSourceTupleAnchorParameterDataLedger | `false` | `false` | schema 与 formal unit source records 已闭合；剩余是 anchor set 与 D0/K/Omega/phase_rule 重构证书。 | AnchorSetReconstructionCertificateLedger |
+| AnchorSetReconstructionCertificatesAvailable | `true` | `false` | 已发现 anchor set reconstruction certificate，可复算 A、D0/K/Omega、phase_rule 与 hash。 | AnchorSetReconstructionCertificateLedger |
+| AnchorSetReconstructionCertificatesComplete | `true` | `false` | 重构证书已覆盖有限来源族和 source tuple hash 纪律。 | AnchorSetReconstructionCertificateLedger |
+| ConcreteSourceTupleAnchorParameterDataLedger | `true` | `true` | schema、formal unit source records 与 anchor reconstruction 均已闭合；source tuple 参数数据账本闭合。 | AnchorIntervalCertificateFileLedger |
 
 ## 6. 下一步
 
-当前唯一最窄点更新为 `AnchorSetReconstructionCertificateLedger`；随后才是 `AnchorIntervalCertificateFileLedger`。
+当前唯一最窄点更新为 `AnchorIntervalCertificateFileLedger`。
 
-审稿边界：本步吸收已闭合 formal unit source record ledger；不提交 anchor set 重构证书，也不关闭行列无条件定理。
+审稿边界：本步关闭 source tuple/anchor 参数数据账本；不生成 anchor interval 证书文件，也不关闭行列无条件定理。

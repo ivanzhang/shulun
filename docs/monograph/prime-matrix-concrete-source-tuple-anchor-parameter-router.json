@@ -1,22 +1,30 @@
 {
   "certificate_type": "prime_matrix_concrete_source_tuple_anchor_parameter_router",
-  "status": "source_tuple_anchor_parameter_schema_closed_anchor_reconstruction_open",
+  "status": "source_tuple_anchor_parameter_data_closed_anchor_interval_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-concrete-anchor-interval-enumeration-router.json": "b5d210d2306cec745ad8f3a904f46372b8d2af746618656a2459ddac3e1948ad",
     "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
     "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
     "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510",
-    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f"
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
   "source_tuple_anchor_parameter_schema_closed": true,
-  "concrete_source_tuple_anchor_parameter_data_closed": false,
+  "concrete_source_tuple_anchor_parameter_data_closed": true,
   "data_like_json": {
     "ConcreteFormalUnitSourceRecordLedger": [],
-    "AnchorSetReconstructionCertificateLedger": []
+    "AnchorSetReconstructionCertificateLedger": [
+      {
+        "path": "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json",
+        "status": "anchor_set_reconstruction_certificate_closed_source_tuple_ready",
+        "record_count": 7,
+        "coverage_complete": true
+      }
+    ]
   },
   "schema_fields": [
     {
@@ -78,13 +86,13 @@
       "meaning": "source_tuple_hash=H(formal_unit_id,P/window,I,A,D0,K,Omega,phase_rule)。"
     }
   ],
-  "current_narrowest_atom": "AnchorSetReconstructionCertificateLedger",
+  "current_narrowest_atom": "AnchorIntervalCertificateFileLedger",
   "secondary_narrowest_atom": "AnchorSetReconstructionCertificateLedger",
   "downstream_atoms": [
     "AnchorIntervalCertificateFileLedger"
   ],
   "reduction_formula": "ConcreteSourceTupleAnchorParameterDataLedger => SourceTupleAnchorParameterSchemaClosed AND ConcreteFormalUnitSourceRecordLedger AND AnchorSetReconstructionCertificateLedger.",
-  "plain_conclusion": "ConcreteSourceTupleAnchorParameterDataLedger 的 schema 与 formal unit source records 已闭合；当前最窄点收缩为 `AnchorSetReconstructionCertificateLedger`。",
+  "plain_conclusion": "ConcreteSourceTupleAnchorParameterDataLedger 已闭合：source tuple schema、formal unit source records 与 anchor reconstruction certificate 均已齐备。下一最窄点是 `AnchorIntervalCertificateFileLedger`。",
   "rows": [
     {
       "gate": "ConcreteSourceTupleGateActive",
@@ -137,24 +145,24 @@
     },
     {
       "gate": "AnchorSetReconstructionCertificatesAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现 anchor set 与 D0/K/Omega/phase_rule 的重构证书。",
+      "meaning": "已发现 anchor set reconstruction certificate，可复算 A、D0/K/Omega、phase_rule 与 hash。",
       "remaining": "AnchorSetReconstructionCertificateLedger"
     },
     {
       "gate": "AnchorSetReconstructionCertificatesComplete",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "重构证书必须逐 source tuple 给出 anchor_set_hash 与 source_tuple_hash。",
+      "meaning": "重构证书已覆盖有限来源族和 source tuple hash 纪律。",
       "remaining": "AnchorSetReconstructionCertificateLedger"
     },
     {
       "gate": "ConcreteSourceTupleAnchorParameterDataLedger",
-      "closed": false,
-      "proved": false,
-      "meaning": "schema 与 formal unit source records 已闭合；剩余是 anchor set 与 D0/K/Omega/phase_rule 重构证书。",
-      "remaining": "AnchorSetReconstructionCertificateLedger"
+      "closed": true,
+      "proved": true,
+      "meaning": "schema、formal unit source records 与 anchor reconstruction 均已闭合；source tuple 参数数据账本闭合。",
+      "remaining": "AnchorIntervalCertificateFileLedger"
     }
   ],
   "closed_gates": [
@@ -164,11 +172,10 @@
     "FormalTupleFieldsPinned",
     "SourceTupleAnchorParameterSchemaClosed",
     "ConcreteFormalUnitSourceRecordsAvailable",
-    "ConcreteFormalUnitSourceRecordsComplete"
-  ],
-  "open_gates": [
+    "ConcreteFormalUnitSourceRecordsComplete",
     "AnchorSetReconstructionCertificatesAvailable",
     "AnchorSetReconstructionCertificatesComplete",
     "ConcreteSourceTupleAnchorParameterDataLedger"
-  ]
+  ],
+  "open_gates": []
 }
