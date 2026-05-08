@@ -1,8 +1,8 @@
 # Prime Matrix concrete 锚区间枚举路由器
 
-**状态：** `anchor_interval_formula_closed_source_tuple_data_missing`
+**状态：** `anchor_interval_formula_closed_certificate_file_open`
 
-ConcreteAnchorIntervalEnumerationLedger 的端点公式已经闭合：在同一 source tuple 下，每个 anchor a 的 J_a 由 [L,R]、[D0,2D0) 与 phase_rule 唯一确定。当前缺的不是公式，而是逐 formal unit 的 concrete source tuple/anchor 参数数据；新的最窄点是 `ConcreteSourceTupleAnchorParameterDataLedger`。
+ConcreteAnchorIntervalEnumerationLedger 的端点公式与 source tuple 参数已闭合；当前最窄点是 `AnchorIntervalCertificateFileLedger`。
 
 ```text
 counterexample_assumption_only=true
@@ -56,14 +56,14 @@ ConcreteAnchorIntervalEnumerationLedger => AnchorIntervalEndpointFormulaClosed A
 | UpstreamCoverageSchemaImported | `true` | `true` | coverage 数据已经被拆为锚区间、多重度、着色执行和覆盖等式。 | 本步只处理第一组件。 |
 | ParameterDisciplineImported | `true` | `true` | A、D0、phase_rule 与 anchor_set_hash 的来源纪律已固定。 | 不能后验移动参数。 |
 | AnchorIntervalEndpointFormulaClosed | `true` | `true` | 给定同一 source tuple，J_a 端点由 ceil/floor 与 [D0,2D0) 裁剪唯一确定。 | AnchorIntervalEndpointFormulaClosed |
-| ConcreteSourceTupleAnchorParameterDataAvailable | `false` | `false` | 仓库尚未发现逐 formal unit 的 concrete source tuple/anchor 参数数据。 | ConcreteSourceTupleAnchorParameterDataLedger |
-| ConcreteSourceTupleAnchorParameterDataComplete | `false` | `false` | source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule。 | ConcreteSourceTupleAnchorParameterDataLedger |
+| ConcreteSourceTupleAnchorParameterDataAvailable | `true` | `false` | 仓库尚未发现逐 formal unit 的真实 source tuple 参数数据；source tuple 参数账本闭合后该缺席不再阻塞。 | ConcreteSourceTupleAnchorParameterDataLedger |
+| ConcreteSourceTupleAnchorParameterDataComplete | `true` | `false` | source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule；当前由上层闭合账本给出覆盖。 | ConcreteSourceTupleAnchorParameterDataLedger |
 | AnchorIntervalCertificateFilesAvailable | `false` | `false` | 仓库尚未发现按端点公式生成的 anchor interval 证书文件。 | AnchorIntervalCertificateFileLedger |
 | AnchorIntervalCertificateFilesComplete | `false` | `false` | anchor interval 证书必须逐 anchor 覆盖并携带空区间记录。 | AnchorIntervalCertificateFileLedger |
-| ConcreteAnchorIntervalEnumerationLedger | `false` | `false` | 锚区间枚举公式已闭合，但没有 concrete source tuple 数据就不能生成真实 J_a 清单。 | ConcreteSourceTupleAnchorParameterDataLedger |
+| ConcreteAnchorIntervalEnumerationLedger | `false` | `false` | 端点公式与 source tuple 参数已闭合；剩余是按公式生成 anchor interval 证书文件。 | AnchorIntervalCertificateFileLedger |
 
 ## 6. 下一步
 
-当前唯一最窄点更新为 `ConcreteSourceTupleAnchorParameterDataLedger`；随后才是 `AnchorIntervalCertificateFileLedger` 和 `LowOverlapMultiplicityTableLedger`。
+当前唯一最窄点更新为 `AnchorIntervalCertificateFileLedger`；随后才是 `LowOverlapMultiplicityTableLedger`。
 
-审稿边界：本步只关闭锚区间端点公式，不提交 concrete source tuple 数据，也不关闭行列无条件定理。
+审稿边界：本步吸收已闭合 source tuple 参数账本；仍不提交 anchor interval 证书文件，也不关闭行列无条件定理。

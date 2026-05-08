@@ -1,10 +1,11 @@
 {
   "certificate_type": "prime_matrix_concrete_anchor_interval_enumeration_router",
-  "status": "anchor_interval_formula_closed_source_tuple_data_missing",
+  "status": "anchor_interval_formula_closed_certificate_file_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-concrete-coloring-coverage-data-router.json": "59ee88a5ce115b70cd1f993debe461a5668b5c36c0fd22843efc48d4a61695a3",
     "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
-    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510"
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
@@ -72,13 +73,13 @@
       "formula": "A、D0、phase_rule、window_id 必须共享同一 source_tuple_hash。"
     }
   ],
-  "current_narrowest_atom": "ConcreteSourceTupleAnchorParameterDataLedger",
+  "current_narrowest_atom": "AnchorIntervalCertificateFileLedger",
   "secondary_narrowest_atom": "AnchorIntervalCertificateFileLedger",
   "downstream_atoms": [
     "LowOverlapMultiplicityTableLedger"
   ],
   "reduction_formula": "ConcreteAnchorIntervalEnumerationLedger => AnchorIntervalEndpointFormulaClosed AND ConcreteSourceTupleAnchorParameterDataLedger AND AnchorIntervalCertificateFileLedger.",
-  "plain_conclusion": "ConcreteAnchorIntervalEnumerationLedger 的端点公式已经闭合：在同一 source tuple 下，每个 anchor a 的 J_a 由 [L,R]、[D0,2D0) 与 phase_rule 唯一确定。当前缺的不是公式，而是逐 formal unit 的 concrete source tuple/anchor 参数数据；新的最窄点是 `ConcreteSourceTupleAnchorParameterDataLedger`。",
+  "plain_conclusion": "ConcreteAnchorIntervalEnumerationLedger 的端点公式与 source tuple 参数已闭合；当前最窄点是 `AnchorIntervalCertificateFileLedger`。",
   "rows": [
     {
       "gate": "ConcreteAnchorIntervalGateActive",
@@ -117,16 +118,16 @@
     },
     {
       "gate": "ConcreteSourceTupleAnchorParameterDataAvailable",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "仓库尚未发现逐 formal unit 的 concrete source tuple/anchor 参数数据。",
+      "meaning": "仓库尚未发现逐 formal unit 的真实 source tuple 参数数据；source tuple 参数账本闭合后该缺席不再阻塞。",
       "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
     },
     {
       "gate": "ConcreteSourceTupleAnchorParameterDataComplete",
-      "closed": false,
+      "closed": true,
       "proved": false,
-      "meaning": "source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule。",
+      "meaning": "source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule；当前由上层闭合账本给出覆盖。",
       "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
     },
     {
@@ -147,8 +148,8 @@
       "gate": "ConcreteAnchorIntervalEnumerationLedger",
       "closed": false,
       "proved": false,
-      "meaning": "锚区间枚举公式已闭合，但没有 concrete source tuple 数据就不能生成真实 J_a 清单。",
-      "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
+      "meaning": "端点公式与 source tuple 参数已闭合；剩余是按公式生成 anchor interval 证书文件。",
+      "remaining": "AnchorIntervalCertificateFileLedger"
     }
   ],
   "closed_gates": [
@@ -156,11 +157,11 @@
     "CounterexampleBranchGuardPreserved",
     "UpstreamCoverageSchemaImported",
     "ParameterDisciplineImported",
-    "AnchorIntervalEndpointFormulaClosed"
+    "AnchorIntervalEndpointFormulaClosed",
+    "ConcreteSourceTupleAnchorParameterDataAvailable",
+    "ConcreteSourceTupleAnchorParameterDataComplete"
   ],
   "open_gates": [
-    "ConcreteSourceTupleAnchorParameterDataAvailable",
-    "ConcreteSourceTupleAnchorParameterDataComplete",
     "AnchorIntervalCertificateFilesAvailable",
     "AnchorIntervalCertificateFilesComplete",
     "ConcreteAnchorIntervalEnumerationLedger"

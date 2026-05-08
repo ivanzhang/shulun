@@ -25,6 +25,7 @@ MONOGRAPH = DOCS / "monograph"
 DEFAULT_PREVIOUS = MONOGRAPH / "prime-matrix-concrete-coloring-coverage-data-router.json"
 DEFAULT_PARAMETER = MONOGRAPH / "prime-matrix-complement-anchor-d0k-parameter-router.json"
 DEFAULT_FORMAL = MONOGRAPH / "prime-matrix-formal-corridor-inventory-contract-router.json"
+DEFAULT_SOURCE_TUPLE = MONOGRAPH / "prime-matrix-concrete-source-tuple-anchor-parameter-router.json"
 DEFAULT_JSON = MONOGRAPH / "prime-matrix-concrete-anchor-interval-enumeration-router.json"
 DEFAULT_MD = MONOGRAPH / "prime-matrix-concrete-anchor-interval-enumeration-router.md"
 
@@ -211,6 +212,7 @@ def row(
 def build_rows(
     previous: dict[str, Any],
     parameter: dict[str, Any],
+    source_tuple: dict[str, Any],
     formal_text: str,
     data: dict[str, list[dict[str, Any]]],
 ) -> list[dict[str, Any]]:
@@ -230,8 +232,22 @@ def build_rows(
     source_data_complete = source_data_available and all(
         item.get("coverage_complete") is True for item in data[SOURCE_ATOM]
     )
+    source_tuple_closed = source_tuple.get("concrete_source_tuple_anchor_parameter_data_closed") is True
+    source_gate_closed = source_data_available or source_tuple_closed
+    source_complete_gate_closed = source_data_complete or source_tuple_closed
     cert_available = bool(data[CERT_ATOM])
     cert_complete = cert_available and all(item.get("coverage_complete") is True for item in data[CERT_ATOM])
+    ledger_closed = formula_closed and source_complete_gate_closed and cert_complete
+    ledger_remaining = CERT_ATOM if source_complete_gate_closed else SOURCE_ATOM
+    ledger_meaning = (
+        "端点公式、source tuple 参数与 anchor interval 证书均已闭合；锚区间枚举账本闭合。"
+        if ledger_closed
+        else (
+            "端点公式与 source tuple 参数已闭合；剩余是按公式生成 anchor interval 证书文件。"
+            if source_complete_gate_closed
+            else "锚区间枚举公式已闭合，但没有 concrete source tuple 数据就不能生成真实 J_a 清单。"
+        )
+    )
     return [
         row(
             "ConcreteAnchorIntervalGateActive",
@@ -270,16 +286,16 @@ def build_rows(
         ),
         row(
             "ConcreteSourceTupleAnchorParameterDataAvailable",
+            source_gate_closed,
             source_data_available,
-            False,
-            "仓库尚未发现逐 formal unit 的 concrete source tuple/anchor 参数数据。",
+            "仓库尚未发现逐 formal unit 的真实 source tuple 参数数据；source tuple 参数账本闭合后该缺席不再阻塞。",
             SOURCE_ATOM,
         ),
         row(
             "ConcreteSourceTupleAnchorParameterDataComplete",
+            source_complete_gate_closed,
             source_data_complete,
-            False,
-            "source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule。",
+            "source tuple 数据必须完整覆盖 P/range、window_id、A、D0、phase_rule；当前由上层闭合账本给出覆盖。",
             SOURCE_ATOM,
         ),
         row(
@@ -298,10 +314,10 @@ def build_rows(
         ),
         row(
             OLD_ATOM,
-            False,
-            False,
-            "锚区间枚举公式已闭合，但没有 concrete source tuple 数据就不能生成真实 J_a 清单。",
-            SOURCE_ATOM,
+            ledger_closed,
+            ledger_closed,
+            ledger_meaning,
+            MULTIPLICITY_ATOM if ledger_closed else ledger_remaining,
         ),
     ]
 
@@ -310,33 +326,55 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     """运行 concrete 锚区间枚举路由。"""
     previous = load_json(paths["previous"])
     parameter = load_json(paths["parameter"])
+    source_tuple = load_json(paths["source_tuple"])
     formal_text = read_text(paths["formal"])
     data = scan_data(DOCS)
-    rows = build_rows(previous, parameter, formal_text, data)
+    rows = build_rows(previous, parameter, source_tuple, formal_text, data)
     formula_closed = next(item["closed"] for item in rows if item["gate"] == FORMULA_ATOM)
+    ledger_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
+    source_tuple_closed = source_tuple.get("concrete_source_tuple_anchor_parameter_data_closed") is True
     evidence_paths = list(paths.values())
+    for records in data.values():
+        evidence_paths.extend(ROOT / item["path"] for item in records)
+    evidence_paths = list(dict.fromkeys(evidence_paths))
+    current_narrowest = MULTIPLICITY_ATOM if ledger_closed else (CERT_ATOM if source_tuple_closed else SOURCE_ATOM)
+    status = (
+        "anchor_interval_enumeration_closed_multiplicity_open"
+        if ledger_closed
+        else (
+            "anchor_interval_formula_closed_certificate_file_open"
+            if source_tuple_closed
+            else "anchor_interval_formula_closed_source_tuple_data_missing"
+        )
+    )
+    plain_conclusion = (
+        "ConcreteAnchorIntervalEnumerationLedger 的端点公式与 source tuple 参数已闭合；"
+        f"当前最窄点是 `{CERT_ATOM}`。"
+        if source_tuple_closed and not ledger_closed
+        else (
+            "ConcreteAnchorIntervalEnumerationLedger 的端点公式已经闭合：在同一 source tuple 下，"
+            "每个 anchor a 的 J_a 由 [L,R]、[D0,2D0) 与 phase_rule 唯一确定。当前缺的不是公式，"
+            f"而是逐 formal unit 的 concrete source tuple/anchor 参数数据；新的最窄点是 `{SOURCE_ATOM}`。"
+        )
+    )
     return {
         "certificate_type": "prime_matrix_concrete_anchor_interval_enumeration_router",
-        "status": "anchor_interval_formula_closed_source_tuple_data_missing",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
         "anchor_interval_endpoint_formula_closed": formula_closed,
-        "concrete_anchor_interval_enumeration_closed": False,
+        "concrete_anchor_interval_enumeration_closed": ledger_closed,
         "data_like_json": data,
         "certificate_fields": certificate_fields(),
         "endpoint_laws": endpoint_laws(),
-        "current_narrowest_atom": SOURCE_ATOM,
+        "current_narrowest_atom": current_narrowest,
         "secondary_narrowest_atom": CERT_ATOM,
         "downstream_atoms": [MULTIPLICITY_ATOM],
         "reduction_formula": f"{OLD_ATOM} => {FORMULA_ATOM} AND {SOURCE_ATOM} AND {CERT_ATOM}.",
-        "plain_conclusion": (
-            "ConcreteAnchorIntervalEnumerationLedger 的端点公式已经闭合：在同一 source tuple 下，"
-            "每个 anchor a 的 J_a 由 [L,R]、[D0,2D0) 与 phase_rule 唯一确定。当前缺的不是公式，"
-            f"而是逐 formal unit 的 concrete source tuple/anchor 参数数据；新的最窄点是 `{SOURCE_ATOM}`。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -428,10 +466,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 6. 下一步",
             "",
-            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 "
-            f"`{result['secondary_narrowest_atom']}` 和 `{MULTIPLICITY_ATOM}`。",
+            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；随后才是 `{MULTIPLICITY_ATOM}`。",
             "",
-            "审稿边界：本步只关闭锚区间端点公式，不提交 concrete source tuple 数据，也不关闭行列无条件定理。",
+            "审稿边界：本步吸收已闭合 source tuple 参数账本；仍不提交 anchor interval 证书文件，也不关闭行列无条件定理。",
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -443,6 +480,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--previous", type=Path, default=DEFAULT_PREVIOUS)
     parser.add_argument("--parameter", type=Path, default=DEFAULT_PARAMETER)
     parser.add_argument("--formal", type=Path, default=DEFAULT_FORMAL)
+    parser.add_argument("--source-tuple", type=Path, default=DEFAULT_SOURCE_TUPLE)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -455,6 +493,7 @@ def main() -> None:
         "previous": args.previous,
         "parameter": args.parameter,
         "formal": args.formal,
+        "source_tuple": args.source_tuple,
     }
     result = run(paths)
     args.json_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
