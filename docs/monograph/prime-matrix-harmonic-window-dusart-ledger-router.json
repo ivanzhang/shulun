@@ -1,0 +1,125 @@
+{
+  "certificate_type": "harmonic_window_dusart_ledger_router",
+  "closed_gates": [
+    "HarmonicWindowGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "FiniteHarmonicWindow3001To499999",
+    "DusartPrimeReciprocalTheoremSpecialized",
+    "HarmonicWindowAlpha043PGe3001Upper0850Ledger"
+  ],
+  "closed_input_removed": "HarmonicWindowAlpha043PGe3001Upper0850Ledger",
+  "closed_interface_atom": "DusartPrimeReciprocalWindowAlpha043Upper0850Closed",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dusart_tail_bound": {
+    "alpha": 0.43,
+    "base_log_1_over_alpha": 0.843970070294529,
+    "bound": 0.8492939254895049,
+    "dusart_upper_valid": true,
+    "error_at_p": 0.0006987458984109903,
+    "error_at_y": 0.004625109296564872,
+    "log_start": 13.122363377404328,
+    "log_y_start": 5.642616252283861,
+    "pass": true,
+    "tail_start": 500000,
+    "target": 0.85,
+    "y_start": 282.20006007055105
+  },
+  "dynamic_rough_skeleton_lower401_proved": false,
+  "empirical_absence_not_used": true,
+  "external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "external_standard_theorem_source": "https://arxiv.org/abs/1002.0442",
+  "external_standard_theorem_used": "Dusart reciprocal prime sum explicit estimate",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "finite_audit": {
+    "max_harmonic": 0.8395379897233435,
+    "max_record": {
+      "cutoff": 222,
+      "harmonic": 0.8395379897233435,
+      "p": 289181
+    },
+    "pass": true,
+    "prime_count": 41108,
+    "start": 3001,
+    "stop": 500000,
+    "target": 0.85
+  },
+  "harmonic_window_alpha043_upper0850_closed": true,
+  "hypothetical_chain_only": true,
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND (DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger",
+  "open_gates": [
+    "DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步关闭调和窗口上界。有限段 3001<=P<500000 直接精确枚举，最大值为 0.839537989723；尾段 P>=500000 用 Dusart 素数倒数和显式误差，得到统一上界 0.849293925490<0.850。因此 HarmonicWindowAlpha043PGe3001Upper0850Ledger 可从活动输入基中删除，下一最窄点转为动态粗骨架下界 S_Y(P)>=401。",
+  "replacement": {
+    "HarmonicWindowAlpha043PGe3001Upper0850Ledger": "DusartPrimeReciprocalWindowAlpha043Upper0850Closed"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "HarmonicWindowGateActive",
+      "meaning": "最新最窄点是 P>=3001 的高素窗口调和和上界。",
+      "proved": false,
+      "remaining": "HarmonicWindowAlpha043PGe3001Upper0850Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍在假设早期零行反例链条的模型余量账本内，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteHarmonicWindow3001To499999",
+      "meaning": "3001<=P<500000 的素数窗口已精确枚举，最大调和和仍小于 0.850。",
+      "proved": true,
+      "remaining": "有限段关闭。"
+    },
+    {
+      "closed": true,
+      "gate": "DusartPrimeReciprocalTheoremSpecialized",
+      "meaning": "Dusart 素数倒数和显式误差给出 P>=500000 的窗口上界。",
+      "proved": true,
+      "remaining": "DusartPrimeReciprocalWindowAlpha043Upper0850Closed"
+    },
+    {
+      "closed": true,
+      "gate": "HarmonicWindowAlpha043PGe3001Upper0850Ledger",
+      "meaning": "有限核查与 Dusart 尾段合并，调和窗口 H(P)<=0.850 已闭合。",
+      "proved": true,
+      "remaining": "DusartPrimeReciprocalWindowAlpha043Upper0850Closed"
+    },
+    {
+      "closed": false,
+      "gate": "DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger",
+      "meaning": "动态粗骨架 S_Y(P)>=401 仍是模型余量侧的剩余解析输入。",
+      "proved": false,
+      "remaining": "DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "proved": false,
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-high-segment-model-gap-factorization-router.json": "32115b117e03e8e0c5f98db427c294ae85cd58eebdd323446e1fc79be30e3e43"
+  },
+  "status": "harmonic_window_alpha043_upper0850_closed_skeleton_open"
+}
