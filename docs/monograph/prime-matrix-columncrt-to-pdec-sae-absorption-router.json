@@ -1,0 +1,65 @@
+{
+  "absorption_law": "ColumnCRT is not an independent terminal certificate family. A persistent nonzero displacement overload is a displacement PDEC on an enlarged finite signature; a sparse displacement overload is SAE/endpoint; and balanced displacement loads become admissible PDEC-dual constraints. RPZ unit endpoint gates show why threshold tuning alone cannot close the branch, but they do not prevent absorption into endpoint/displacement PDEC or SAE.",
+  "certificate_type": "prime_matrix_columncrt_to_pdec_sae_absorption_router",
+  "columncrt_independent_terminal_removed": true,
+  "independent_terminal_inputs_after_columncrt_absorption": [
+    "Global SAE finite/window/local-survivor certificate family",
+    "PDEC family including displacement/endpoint/cofactor/primitive certificates"
+  ],
+  "review_conclusion": "ColumnCRT 独立终端已吸收到 PDEC/SAE。第一包的独立剩余进一步压成两族：全局 SAE 证书族与包含 displacement/endpoint/cofactor/primitive 的 PDEC 证书族。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "terminal compression output contains ColumnCRT",
+      "gate": "TerminalPackageStillListsColumnCRT",
+      "meaning": "上一轮压缩后 ColumnCRT 仍暂列独立证书族。",
+      "remaining": "decide whether it is genuinely independent"
+    },
+    {
+      "closed": true,
+      "evidence": "h4-pdec-column-defect-routing-contract",
+      "gate": "ColumnCRTRoutingContractClosed",
+      "meaning": "列位移缺陷已有同口径、相位兼容和条件路由合同。",
+      "remaining": "exclusion not supplied by the contract"
+    },
+    {
+      "closed": true,
+      "evidence": "rpz unit endpoint columncrt gate",
+      "gate": "RPZFixedDisplacementGateMaterialized",
+      "meaning": "RPZ unit seam 的固定非零位移入口已材料化。",
+      "remaining": "exclude the gate or absorb it"
+    },
+    {
+      "closed": true,
+      "evidence": "rpz columncrt threshold obstruction",
+      "gate": "ThresholdTuningDoesNotExclude",
+      "meaning": "调小 L_D 只触发 ColumnCRTDefect，不能给矛盾。",
+      "remaining": "use endpoint-PDEC, avoidance, or independent theorem"
+    },
+    {
+      "closed": true,
+      "evidence": "columncrt displacement pdec absorption",
+      "gate": "ColumnCRTDisplacementAbsorption",
+      "meaning": "持久非零位移过载就是 displacement PDEC；孤立位移过载就是 SAE-column。",
+      "remaining": "prove displacement PDEC or SAE"
+    },
+    {
+      "closed": true,
+      "evidence": "persistent terminal admission router",
+      "gate": "PersistentAdmissionAbsorbsColumnCRT",
+      "meaning": "裸 ColumnCRT 不能准入终端，必须先转成 displacement/primitive PDEC 或 SAE。",
+      "remaining": "primitive same-formal-unit PDEC"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/h4-pdec-column-defect-routing-contract.md": "0f7afe16275924cd9059f649155d793b1df600e73eafa721cfce0f0dd5ba9af7",
+    "docs/monograph/prime-matrix-columncrt-displacement-pdec-absorption.md": "f674ce4f51911edeab0dcce641763860c87ef8f94141971a60fd948e7c008a7c",
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.json": "1993c57c8ba939c0c678e9d70c5a9c49314659b594746e5ff4a3fa1335f41d2e",
+    "docs/monograph/prime-matrix-rpz-columncrt-threshold-obstruction.md": "b1a8bf680ecbe186d6caa3f5e3091f18107d3c3b5810c2b776c6eefaf5342208",
+    "docs/monograph/prime-matrix-rpz-unit-endpoint-columncrt-gate.md": "9d79c475e3d2eb91f2dcf0cf381d3eafbccf72d8578e483e31c7cd4dcede79e6",
+    "docs/monograph/prime-matrix-terminal-certificate-package-compression-router.json": "8e04f4c86be4fdd3d738268fe35868f6b4f223a7e62bb5c89134161e12660cb8"
+  },
+  "status": "columncrt_absorbed_to_pdec_sae_terminal_two_family_remainder",
+  "terminal_package_fully_proved": false
+}

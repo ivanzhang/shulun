@@ -688,6 +688,30 @@ ColumnCRT：固定非零列位移排斥，或回流 PDEC/SAE。
 首个 grid-fail seam 已经被材料化为 `PDEC/ColumnCRT/SAE`。所以第一包下一步的硬攻对象非常明确：
 直接证明 `SAE/PDEC/ColumnCRT` 三类证书族。
 
+继续吸收 `ColumnCRT` 后，第一包还能再压缩：
+
+```text
+experiments/prime_matrix_columncrt_to_pdec_sae_absorption_router.py
+docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.md/json
+
+columncrt_independent_terminal_removed=true。
+```
+
+通俗说，固定非零列位移确实是真结构，但它不是第三种终端命运：
+
+```text
+持久列位移过载  => displacement PDEC；
+孤立列位移过载  => SAE/endpoint；
+列位移负载平衡  => PDEC 对偶证书中的合法约束行。
+```
+
+所以第一包独立剩余现在只剩两族：
+
+```text
+SAE 证书族；
+PDEC 证书族，包含 endpoint / displacement / cofactor / primitive 等全部持久有限签名。
+```
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

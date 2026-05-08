@@ -3131,3 +3131,40 @@ ColumnCRT exclusion or PDEC/SAE return certificates。
 ```
 
 这一步补齐的是第一包的结构压缩，不是三类证书族本身的排斥。
+
+继续新增：
+
+```text
+experiments/prime_matrix_columncrt_to_pdec_sae_absorption_router.py
+docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.md/json
+```
+
+该路由器把 `ColumnCRT` 从独立终端中删除：
+
+```text
+columncrt_independent_terminal_removed=true；
+terminal_package_fully_proved=false；
+row_column_unconditional_closed=false。
+```
+
+理由是：
+
+```text
+persistent nonzero displacement overload
+  => displacement PDEC on enlarged finite signature；
+
+sparse displacement overload
+  => SAE/endpoint；
+
+balanced displacement load
+  => admissible PDEC-dual constraint row。
+```
+
+`RPZ` 的 unit endpoint gate 说明固定非零位移入口是真实结构，并且阈值调小不能直接排斥；
+但这不使它成为第三类独立终端。它只说明必须走 endpoint/displacement `PDEC` 或 `SAE`。
+因此第一包的独立剩余进一步压成：
+
+```text
+Global SAE finite/window/local-survivor certificate family；
+PDEC family including displacement/endpoint/cofactor/primitive certificates。
+```
