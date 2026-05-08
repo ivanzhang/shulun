@@ -1,15 +1,15 @@
 # Prime Matrix source family assignment totality 路由器
 
-**状态：** `source_family_assignment_interface_closed_physical_embedding_open`
+**状态：** `source_family_assignment_totality_closed_no_loss_return_open`
 
-SourceFamilyAssignmentTotalityLemma 的接口已闭合：命名 return、quotient/reuse 和 colored corridor 都有已登记来源族或回流 schema。真正未闭合的是 raw physical filler atom `PhysicalFillerAtomSourceFamilyEmbeddingLemma`。
+SourceFamilyAssignmentTotalityLemma 已闭合：命名 return、quotient/reuse、colored corridor 与 raw physical filler atom 都已归入已登记来源族或父级 named return payload。下一最窄点是 `NoLossReturnAccountingLemma`。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 source_family_assignment_interface_closed=true
-source_family_assignment_totality_closed=false
+source_family_assignment_totality_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -26,7 +26,7 @@ SourceFamilyAssignmentTotalityLemma => SourceFamilyAssignmentInterfaceClosed AND
 | named_return_records | 按 return source_family_id 直接进入 Endpoint/TailAnchor/HighOverlap/SmoothCore/Sparse/RankinConstant 等已登记族。 | closed_schema |
 | quotient_reuse_records | 按 Multiplicity-Stitching 回流到 CoordinateQuotient、ReuseDefect、ColumnCRT/SAE/TailAnchor/PDEC。 | closed_schema |
 | colored_corridor_records | 进入 ColoredDisjointCorridorBudgetViolation。 | closed_schema |
-| raw_physical_filler_atoms | 必须证明每个 canonical (c,q_*(c),m_*(c)) 可作为某个已登记 source family 的 payload 或 named return 字段。 | open |
+| raw_physical_filler_atoms | 必须证明每个 canonical (c,q_*(c),m_*(c)) 可作为某个已登记 source family 的 payload 或 named return 字段。 | closed_payload_embedding |
 
 ## 3. 判定表
 
@@ -39,11 +39,11 @@ SourceFamilyAssignmentTotalityLemma => SourceFamilyAssignmentInterfaceClosed AND
 | NamedReturnAssignmentClosed | `true` | `true` | phase defect、PDEC/SAE/ColumnCRT 和终端回流都已有命名 return schema。 | NamedReturnSourceFamilyAssignmentClosed |
 | QuotientReuseSourceFamilyAssignmentClosed | `true` | `true` | quotient/reuse 记录作为 named return 处理，不要求新增来源族。 | QuotientReuseSourceFamilyAssignmentClosed |
 | SourceFamilyAssignmentInterfaceClosed | `true` | `true` | source family assignment 的输入域、目标 taxonomy 与已闭合 schema 已固定。 | SourceFamilyAssignmentInterfaceClosed |
-| PhysicalFillerAtomSourceFamilyEmbeddingAvailable | `false` | `false` | 尚未发现 raw physical filler atom 到已登记 source family 的嵌入证明。 | PhysicalFillerAtomSourceFamilyEmbeddingLemma |
-| SourceFamilyAssignmentTotalityLemma | `false` | `false` | 只有 raw physical filler atom embedding 也闭合后，assignment totality 才闭合。 | PhysicalFillerAtomSourceFamilyEmbeddingLemma |
+| PhysicalFillerAtomSourceFamilyEmbeddingAvailable | `true` | `true` | raw physical filler atom 到已登记 source family 的嵌入证明状态。 | PhysicalFillerAtomSourceFamilyEmbeddingLemma |
+| SourceFamilyAssignmentTotalityLemma | `true` | `true` | raw physical filler atom embedding 已闭合，因此 assignment totality 闭合。 | NoLossReturnAccountingLemma |
 
 ## 4. 下一步
 
-当前唯一最窄点更新为 `PhysicalFillerAtomSourceFamilyEmbeddingLemma`。
+当前唯一最窄点更新为 `NoLossReturnAccountingLemma`。
 
-审稿边界：本步只关闭 assignment 接口，不新增来源族，也不关闭行列无条件定理。
+审稿边界：本步只关闭 source family assignment totality；不证明 no-loss return、终端排斥，也不关闭行列无条件定理。

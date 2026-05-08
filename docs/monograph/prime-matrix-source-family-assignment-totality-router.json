@@ -1,6 +1,6 @@
 {
   "certificate_type": "prime_matrix_source_family_assignment_totality_router",
-  "status": "source_family_assignment_interface_closed_physical_embedding_open",
+  "status": "source_family_assignment_totality_closed_no_loss_return_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.json": "a6438bc62b7654f3670dd085931c884a0a9bb0bca1cd17b6e4f102891f83f624",
     "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "b381d8b4dac613b3e7011c26ea93da6fe3a81f9976aa2f31f3f412cd2e25aeb8",
@@ -8,20 +8,28 @@
     "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.json": "8358aa6fd3a6bb4c28847b40ecef3177f22939e9114a86ef962b633509c7e2ab",
     "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
     "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
-    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8"
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-physical-filler-atom-source-family-embedding-router.json": "427efb38f0bc71efbe63a25b91ac7ae2f081eae9168d454433043e23f1cb987f"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
   "source_family_assignment_interface_closed": true,
-  "source_family_assignment_totality_lemma": false,
-  "proved": false,
-  "coverage_complete": false,
-  "source_family_assignment_totality_closed": false,
+  "source_family_assignment_totality_lemma": true,
+  "proved": true,
+  "coverage_complete": true,
+  "source_family_assignment_totality_closed": true,
   "assignment_proof_like_json": {
     "SourceFamilyAssignmentTotalityLemma": [],
-    "PhysicalFillerAtomSourceFamilyEmbeddingLemma": []
+    "PhysicalFillerAtomSourceFamilyEmbeddingLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-physical-filler-atom-source-family-embedding-router.json",
+        "status": "physical_filler_atom_source_family_embedding_closed_assignment_ready",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ]
   },
   "assignment_table": [
     {
@@ -42,15 +50,15 @@
     {
       "obligation_kind": "raw_physical_filler_atoms",
       "assignment": "必须证明每个 canonical (c,q_*(c),m_*(c)) 可作为某个已登记 source family 的 payload 或 named return 字段。",
-      "status": "open"
+      "status": "closed_payload_embedding"
     }
   ],
-  "current_narrowest_atom": "PhysicalFillerAtomSourceFamilyEmbeddingLemma",
+  "current_narrowest_atom": "NoLossReturnAccountingLemma",
   "downstream_atoms": [
     "NoLossReturnAccountingLemma"
   ],
   "reduction_formula": "SourceFamilyAssignmentTotalityLemma => SourceFamilyAssignmentInterfaceClosed AND PhysicalFillerAtomSourceFamilyEmbeddingLemma.",
-  "plain_conclusion": "SourceFamilyAssignmentTotalityLemma 的接口已闭合：命名 return、quotient/reuse 和 colored corridor 都有已登记来源族或回流 schema。真正未闭合的是 raw physical filler atom `PhysicalFillerAtomSourceFamilyEmbeddingLemma`。",
+  "plain_conclusion": "SourceFamilyAssignmentTotalityLemma 已闭合：命名 return、quotient/reuse、colored corridor 与 raw physical filler atom 都已归入已登记来源族或父级 named return payload。下一最窄点是 `NoLossReturnAccountingLemma`。",
   "rows": [
     {
       "gate": "SourceFamilyAssignmentGateActive",
@@ -103,17 +111,17 @@
     },
     {
       "gate": "PhysicalFillerAtomSourceFamilyEmbeddingAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "尚未发现 raw physical filler atom 到已登记 source family 的嵌入证明。",
+      "closed": true,
+      "proved": true,
+      "meaning": "raw physical filler atom 到已登记 source family 的嵌入证明状态。",
       "remaining": "PhysicalFillerAtomSourceFamilyEmbeddingLemma"
     },
     {
       "gate": "SourceFamilyAssignmentTotalityLemma",
-      "closed": false,
-      "proved": false,
-      "meaning": "只有 raw physical filler atom embedding 也闭合后，assignment totality 才闭合。",
-      "remaining": "PhysicalFillerAtomSourceFamilyEmbeddingLemma"
+      "closed": true,
+      "proved": true,
+      "meaning": "raw physical filler atom embedding 已闭合，因此 assignment totality 闭合。",
+      "remaining": "NoLossReturnAccountingLemma"
     }
   ],
   "closed_gates": [
@@ -123,10 +131,9 @@
     "FiniteTaxonomyEmitterImported",
     "NamedReturnAssignmentClosed",
     "QuotientReuseSourceFamilyAssignmentClosed",
-    "SourceFamilyAssignmentInterfaceClosed"
-  ],
-  "open_gates": [
+    "SourceFamilyAssignmentInterfaceClosed",
     "PhysicalFillerAtomSourceFamilyEmbeddingAvailable",
     "SourceFamilyAssignmentTotalityLemma"
-  ]
+  ],
+  "open_gates": []
 }

@@ -93,13 +93,16 @@ def proof_closed(records: list[dict[str, Any]]) -> bool:
     )
 
 
-def scan_assignment_proofs(root: Path) -> dict[str, list[dict[str, Any]]]:
+def scan_assignment_proofs(root: Path, exclude_paths: list[Path] | None = None) -> dict[str, list[dict[str, Any]]]:
     """扫描 assignment 证明。"""
+    excluded = {path.resolve() for path in (exclude_paths or [])}
     found: dict[str, list[dict[str, Any]]] = {
         OLD_ATOM: [],
         PHYSICAL_ATOM: [],
     }
     for path in sorted(root.rglob("*.json")):
+        if path.resolve() in excluded:
+            continue
         try:
             payload = load_json(path)
         except (json.JSONDecodeError, UnicodeDecodeError):
@@ -120,7 +123,7 @@ def scan_assignment_proofs(root: Path) -> dict[str, list[dict[str, Any]]]:
     return found
 
 
-def assignment_table() -> list[dict[str, str]]:
+def assignment_table(physical_closed: bool = False) -> list[dict[str, str]]:
     """给出当前可登记 assignment 表。"""
     return [
         {
@@ -141,7 +144,7 @@ def assignment_table() -> list[dict[str, str]]:
         {
             "obligation_kind": "raw_physical_filler_atoms",
             "assignment": "必须证明每个 canonical (c,q_*(c),m_*(c)) 可作为某个已登记 source family 的 payload 或 named return 字段。",
-            "status": "open",
+            "status": "closed_payload_embedding" if physical_closed else "open",
         },
     ]
 
@@ -191,7 +194,12 @@ def build_rows(
         [active, guard, partition_ready, domain_ready, taxonomy_ready, emitter_ready, phase_ready, terminal_ready]
     )
     physical_closed = proof_closed(proofs[PHYSICAL_ATOM])
-    totality_closed = proof_closed(proofs[OLD_ATOM]) or (interface_closed and physical_closed)
+    totality_closed = interface_closed and physical_closed
+    totality_meaning = (
+        "raw physical filler atom embedding 已闭合，因此 assignment totality 闭合。"
+        if totality_closed
+        else "只有 raw physical filler atom embedding 也闭合后，assignment totality 才闭合。"
+    )
     return [
         row(
             "SourceFamilyAssignmentGateActive",
@@ -245,15 +253,15 @@ def build_rows(
         row(
             "PhysicalFillerAtomSourceFamilyEmbeddingAvailable",
             physical_closed,
-            False,
-            "尚未发现 raw physical filler atom 到已登记 source family 的嵌入证明。",
+            physical_closed,
+            "raw physical filler atom 到已登记 source family 的嵌入证明状态。",
             PHYSICAL_ATOM,
         ),
         row(
             OLD_ATOM,
             totality_closed,
             totality_closed,
-            "只有 raw physical filler atom embedding 也闭合后，assignment totality 才闭合。",
+            totality_meaning,
             PHYSICAL_ATOM if not totality_closed else NOLOSS_ATOM,
         ),
     ]
@@ -268,14 +276,47 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     emitter = load_json(paths["emitter"])
     phase = load_json(paths["phase"])
     terminal_reconciliation = load_json(paths["terminal_reconciliation"])
-    proofs = scan_assignment_proofs(DOCS)
+    proofs = scan_assignment_proofs(
+        DOCS,
+        exclude_paths=[DEFAULT_JSON, paths.get("json_out", DEFAULT_JSON)],
+    )
     rows = build_rows(previous, partition, domain, taxonomy, emitter, phase, terminal_reconciliation, proofs)
     interface_closed = next(item["closed"] for item in rows if item["gate"] == INTERFACE_ATOM)
     totality_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
-    evidence_paths = list(paths.values())
+    physical_closed = proof_closed(proofs[PHYSICAL_ATOM])
+    evidence_paths = [
+        paths[key]
+        for key in [
+            "previous",
+            "partition",
+            "domain",
+            "taxonomy",
+            "emitter",
+            "phase",
+            "terminal_reconciliation",
+        ]
+    ]
+    for records in proofs.values():
+        evidence_paths.extend(ROOT / item["path"] for item in records)
+    evidence_paths = list(dict.fromkeys(evidence_paths))
+    status = (
+        "source_family_assignment_totality_closed_no_loss_return_open"
+        if totality_closed
+        else "source_family_assignment_interface_closed_physical_embedding_open"
+    )
+    current_narrowest = NOLOSS_ATOM if totality_closed else PHYSICAL_ATOM
+    plain_conclusion = (
+        "SourceFamilyAssignmentTotalityLemma 已闭合：命名 return、quotient/reuse、colored corridor 与 raw "
+        "physical filler atom 都已归入已登记来源族或父级 named return payload。下一最窄点是 "
+        f"`{NOLOSS_ATOM}`。"
+        if totality_closed
+        else "SourceFamilyAssignmentTotalityLemma 的接口已闭合：命名 return、quotient/reuse 和 colored corridor "
+        "都有已登记来源族或回流 schema。真正未闭合的是 raw physical filler atom "
+        f"`{PHYSICAL_ATOM}`。"
+    )
     return {
         "certificate_type": "prime_matrix_source_family_assignment_totality_router",
-        "status": "source_family_assignment_interface_closed_physical_embedding_open",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
@@ -287,15 +328,11 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "coverage_complete": totality_closed,
         "source_family_assignment_totality_closed": totality_closed,
         "assignment_proof_like_json": proofs,
-        "assignment_table": assignment_table(),
-        "current_narrowest_atom": PHYSICAL_ATOM if not totality_closed else NOLOSS_ATOM,
+        "assignment_table": assignment_table(physical_closed),
+        "current_narrowest_atom": current_narrowest,
         "downstream_atoms": [NOLOSS_ATOM],
         "reduction_formula": f"{OLD_ATOM} => {INTERFACE_ATOM} AND {PHYSICAL_ATOM}.",
-        "plain_conclusion": (
-            "SourceFamilyAssignmentTotalityLemma 的接口已闭合：命名 return、quotient/reuse 和 colored corridor "
-            "都有已登记来源族或回流 schema。真正未闭合的是 raw physical filler atom "
-            f"`{PHYSICAL_ATOM}`。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -304,6 +341,11 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
+    boundary_note = (
+        "审稿边界：本步只关闭 source family assignment totality；不证明 no-loss return、终端排斥，也不关闭行列无条件定理。"
+        if result["source_family_assignment_totality_closed"]
+        else "审稿边界：本步只关闭 assignment 接口，不新增来源族，也不关闭行列无条件定理。"
+    )
     lines = [
         "# Prime Matrix source family assignment totality 路由器",
         "",
@@ -365,7 +407,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。",
             "",
-            "审稿边界：本步只关闭 assignment 接口，不新增来源族，也不关闭行列无条件定理。",
+            boundary_note,
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -397,6 +439,7 @@ def main() -> None:
         "emitter": args.emitter,
         "phase": args.phase,
         "terminal_reconciliation": args.terminal_reconciliation,
+        "json_out": args.json_out,
     }
     result = run(paths)
     args.json_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
