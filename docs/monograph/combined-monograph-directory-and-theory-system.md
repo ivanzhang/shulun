@@ -4857,3 +4857,55 @@ AND DLSFlatHighModLargeSieveAbsorption
 AND SignedGeometricLedgerVariationBranchLiftAndReturn
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_newlayer_external_lemma_match_router.py
+docs/monograph/prime-matrix-clean-core-newlayer-external-lemma-match-router.md/json
+```
+
+该路由器把当前最窄 `DLSNewLayerFourierConcentrationPDECReturn` 与已经登记的外部闭合引理
+`FullS-KLS-ext`、`CleanKLS/DLS` 准入表和 DI/BFI 主来源 no-go 逐项匹配。结论为：
+
+```text
+direct_external_lemma_closes_newlayer=false；
+self_contained_newlayer_closed=false；
+row_column_unconditional_closed=false。
+```
+
+核心结构律是：外部 KLS/FullS 引理只闭合已经完成、已经给定系数、已经通过 clean admission 的
+平坦谱块；当前新增轮层子口还处在更早一层，必须先证明新增素因子 fiber 上的低维 Fourier 集中
+确实给出 `new-layer PDEC` 证书，或者证明删除全部这类集中后，剩余对象满足 flat-KLS/DLS 的准入条件。
+因此该子口被压成两个更原子的输入：
+
+```text
+DLSNewLayerFourierConcentrationPDECReturn
+  => ExactNewLayerFiberPDECProjectionMorphism
+     AND NewLayerNoConcentrationImpliesFlatAdmission。
+```
+
+参数匹配表显示六个不能跳过的差异：证明阶段不同、`r∤h` 新增频率尚未投影到 KLS 逆元变量、
+系数平坦性必须先删除 PDEC 尖峰、FullS 合同中的 no-projection 不是 new-layer 低模单位 fiber 的
+formal-unit 等式、BES 危险阈值需要命名回流兼容、现有 DI/BFI 主来源仍不能给出完全自足 full-S
+non-AP KLS-ext。由此，下一步最窄自足目标不是继续寻找普通外部引用，而是直接证明：
+
+```text
+ExactNewLayerFiberPDECProjectionMorphism；
+NewLayerNoConcentrationImpliesFlatAdmission。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND ExactNewLayerFiberPDECProjectionMorphism
+AND NewLayerNoConcentrationImpliesFlatAdmission
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```

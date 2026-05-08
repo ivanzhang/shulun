@@ -3919,6 +3919,43 @@ AND SignedGeometricLedgerVariationBranchLiftAndReturn\\
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
 \end{quote}
 This closes the LowPhase boundary, not the three new microinputs.
+
+The new-layer external-lemma matching router then compares the most structural LowPhase
+microinput with the already registered external FullS--KLS and CleanKLS/DLS interfaces.  It
+records
+\[
+\begin{gathered}
+  \texttt{direct\_external\_lemma\_closes\_newlayer=false},\\
+  \texttt{self\_contained\_newlayer\_closed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The comparison is not a new numerical experiment.  It is a parameter-level boundary check:
+external KLS/FullS lemmas estimate a prepared, completed, coefficient-given flat spectral
+block.  The current new-layer atom sits one layer earlier.  It must first prove that
+low-dimensional concentration on the added wheel fibre is an actual PDEC certificate, or
+that after deleting all such fibres the remaining object satisfies the clean flat-admission
+hypotheses.  Hence
+\begin{quote}\footnotesize\ttfamily
+DLSNewLayerFourierConcentrationPDECReturn\\
+\quad => ExactNewLayerFiberPDECProjectionMorphism\\
+\quad\quad AND NewLayerNoConcentrationImpliesFlatAdmission.
+\end{quote}
+The latest self-contained basis becomes
+\begin{quote}\footnotesize\ttfamily
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn\\
+AND ExplicitModelGapAndFiniteDPRCLedger\\
+AND DLSPointLoadColumnCRTBoundOrNamedReturn\\
+AND DLSShortWindowSAEBoundOrNamedReturn\\
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn\\
+AND ExactNewLayerFiberPDECProjectionMorphism\\
+AND NewLayerNoConcentrationImpliesFlatAdmission\\
+AND DLSFlatHighModLargeSieveAbsorption\\
+AND SignedGeometricLedgerVariationBranchLiftAndReturn\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+Thus the external theorem can attach only after a new-layer projection/admission morphism;
+it cannot be used directly to erase the self-contained new-layer obligation.
 \end{proof}
 
 
