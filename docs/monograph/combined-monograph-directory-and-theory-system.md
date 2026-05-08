@@ -5881,3 +5881,82 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄优先目标为 `RegisteredNewLayerPDECFormalUnitAndCapStableSchema`。这一步仍不闭合行/列
 无条件命题；它只关闭 LowMod 有限弧路径与 new-layer 子口之间的接线缺口。
+
+## Prime Matrix new-layer PDEC schema 准入路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_newlayer_pdec_schema_admission_router.py
+docs/monograph/prime-matrix-newlayer-pdec-schema-admission-router.md/json
+```
+
+该路由器直接攻击 `RegisteredNewLayerPDECFormalUnitAndCapStableSchema`。结论为：
+
+```text
+newlayer_schema_admission_closed=true；
+registered_same_formal_unit_omega_tau_weight=true；
+lowrank_column_sparse_return_closed=true；
+cap_unstable_return_closed=true；
+newlayer_ranktwo_budget_ledger_closed=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=RegisteredNewLayerPDECFormalUnitAndCapStableSchema；
+terminal_gap_after_router=NewLayerRankTwoCapStablePDECBudgetLedger。
+```
+
+new-layer formal unit 字段被固定为：
+
+```text
+Omega     = Omega'_A=A x F_r inside the same C_P projection tower；
+phase_map = (old phase on W0, new fiber residue b mod r)；
+weight    = w_A(b)=centered signed fiber mass delta_A(b)，
+            or count weight for positive cap；
+cap       = B subset F_r or cyclic arc preimage selected by FourierToFiberCapSlicer；
+invalid   = Multiplicity/Stitching, SAE, ColumnCRT, or refined PDEC。
+```
+
+替换律为：
+
+```text
+RegisteredNewLayerPDECFormalUnitAndCapStableSchema
+  => NewLayerRankTwoCapStablePDECBudgetLedger。
+```
+
+准入层只负责把对象登记成合法证书，或把非法情形回流到命名出口；它不证明最终预算不等式。
+
+已经闭合的门为：
+
+```text
+NewLayerSchemaInputImported；
+SameCPProjectionFormalUnitAvailable；
+RegisteredSameFormalUnitOmegaTauWeight；
+FormalUnitMismatchNamedReturn；
+PrimitiveAdmissionBoundaryInherited；
+LowRankAndColumnCasesNamed；
+CapUnstableCasesNamed；
+NewLayerSchemaAdmissionClosed。
+```
+
+唯一开放门为：
+
+```text
+NewLayerRankTwoCapStablePDECBudgetLedger。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND NewLayerRankTwoCapStablePDECBudgetLedger
+AND NewLayerNoConcentrationImpliesFlatAdmission
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `NewLayerRankTwoCapStablePDECBudgetLedger`。这一步仍不是行/列无条件闭合；
+它把 new-layer 集中支的准入问题压成真正的同单位预算账本。

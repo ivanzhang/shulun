@@ -1,0 +1,115 @@
+{
+  "cap_unstable_return_closed": true,
+  "certificate_type": "newlayer_pdec_schema_admission_router",
+  "closed_gates": [
+    "NewLayerSchemaInputImported",
+    "SameCPProjectionFormalUnitAvailable",
+    "RegisteredSameFormalUnitOmegaTauWeight",
+    "FormalUnitMismatchNamedReturn",
+    "PrimitiveAdmissionBoundaryInherited",
+    "LowRankAndColumnCasesNamed",
+    "CapUnstableCasesNamed",
+    "NewLayerSchemaAdmissionClosed"
+  ],
+  "formal_unit_schema": {
+    "Omega": "Omega'_A=A x F_r inside the same C_P projection tower",
+    "cap": "B subset F_r or cyclic arc preimage selected by FourierToFiberCapSlicer",
+    "named_return_if_invalid": "Multiplicity/Stitching, SAE, ColumnCRT, or refined PDEC",
+    "phase_map": "(old phase on W0, new fiber residue b mod r)",
+    "weight": "w_A(b)=centered signed fiber mass delta_A(b), or count weight for positive cap"
+  },
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND NewLayerRankTwoCapStablePDECBudgetLedger AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND NewLayerRankTwoCapStablePDECBudgetLedger AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lowrank_column_sparse_return_closed": true,
+  "newlayer_ranktwo_budget_ledger_closed": false,
+  "newlayer_schema_admission_closed": true,
+  "next_priority": "NewLayerRankTwoCapStablePDECBudgetLedger",
+  "open_gates": [
+    "NewLayerRankTwoCapStablePDECBudgetLedger"
+  ],
+  "plain_conclusion": "本步闭合 new-layer PDEC schema 的准入层：同一 formal unit 可显式登记，低秩、二点、列位移、稀疏、cap 不稳定和口径错配全部回流命名出口。剩余不再是 schema 准入，而是准入后的二秩 cap-stable 核预算账本。",
+  "registered_same_formal_unit_omega_tau_weight": true,
+  "replacement": {
+    "RegisteredNewLayerPDECFormalUnitAndCapStableSchema": "NewLayerRankTwoCapStablePDECBudgetLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NewLayerSchemaInputImported",
+      "meaning": "上一层已把新增层子口压成 new-layer PDEC schema 准入与 flat admission。",
+      "proved": true,
+      "remaining": "本步只处理 schema 准入支。"
+    },
+    {
+      "closed": true,
+      "gate": "SameCPProjectionFormalUnitAvailable",
+      "meaning": "同一 C_P 投影单调和 Fourier-to-cap 切片已给出确定的新增层 cap 来源。",
+      "proved": true,
+      "remaining": "显式登记 Omega、tau、w 与 phase map。"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredSameFormalUnitOmegaTauWeight",
+      "meaning": "对每个旧层原子 A 和新增 fiber F_r，登记 Omega'=A x F_r，tau=(old_phase,b mod r)，w=delta_A(b)。",
+      "proved": true,
+      "remaining": "若不能保持同一 C_P 或同一权重口径，则回流 Stitching/source duty。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitMismatchNamedReturn",
+      "meaning": "跨层、重复、权重口径错配不准作为新终端。",
+      "proved": true,
+      "remaining": "weighted PDEC / quotient primitive PDEC / ColumnCRT-SAE reuse defect。"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveAdmissionBoundaryInherited",
+      "meaning": "裸持久签名、二点 tautology、ColumnCRT、SAE 和对偶失败不能直接准入。",
+      "proved": true,
+      "remaining": "只有 primitive multi-atom same-formal-unit PDEC 可进入预算支。"
+    },
+    {
+      "closed": true,
+      "gate": "LowRankAndColumnCasesNamed",
+      "meaning": "零秩、一秩、固定壳、列位移和稀疏孤窗全部回流命名出口。",
+      "proved": true,
+      "remaining": "rank>=2 primitive kernel only。"
+    },
+    {
+      "closed": true,
+      "gate": "CapUnstableCasesNamed",
+      "meaning": "若候选不是 cap-stable，方向帽失败回流 SAE/refined PDEC/ColumnCRT/multiplicity，且无同层循环。",
+      "proved": true,
+      "remaining": "rank>=2 cap-stable budget ledger only。"
+    },
+    {
+      "closed": true,
+      "gate": "NewLayerSchemaAdmissionClosed",
+      "meaning": "new-layer schema 准入层闭合：每个候选要么命名回流，要么成为二秩 cap-stable 同单位预算核。",
+      "proved": true,
+      "remaining": "NewLayerRankTwoCapStablePDECBudgetLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "NewLayerRankTwoCapStablePDECBudgetLedger",
+      "meaning": "尚未证明准入后的 new-layer 二秩 cap-stable 核满足同单位 U_CRT<L_PDEC。",
+      "proved": false,
+      "remaining": "PDECCapBudgetLowerUpperSameUnitLedger for new-layer rank-two kernels。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.json": "df0a83ffa87ff7e582b7492d6aa935042a4a0b1f27d88df5ea42ce43798d9cab",
+    "docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.md": "5e3df47871aa9953a3f778c2a8c18421a7c3e1c122c770cc467729d61d2bcd8b",
+    "docs/monograph/prime-matrix-lowmod-newlayer-bridge-router.json": "3234444480f93116b45cb9ead51a2817a239808c62026a4eb3454c2b3dbdf85a",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.md": "6b1498eb0c46eb3302ed336a68c479b7f4f7bbff0b7b971d5b3fc05346d1707d",
+    "docs/monograph/prime-matrix-pdec-cap-primitive-multiatom-rank-router.md": "ad513811f5b13bdeea228ed41c8921a7e6cf20557ca72b7389f0b403faa41efa",
+    "docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.md": "448b66c41b3dbda24bda8f810bffa1b4fb74131f6ddfb8b8c830c4f5082b38c2",
+    "docs/monograph/prime-matrix-pdec-cap-refinement-no-cycle.md": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md": "e15e466ba60f244fd2d19513951fe6ef9cf0c06fd7a73fbc7ef53fad2d95c79b"
+  },
+  "status": "newlayer_pdec_schema_admission_closed_budget_ledger_open",
+  "terminal_gap_after_router": "NewLayerRankTwoCapStablePDECBudgetLedger",
+  "terminal_gap_before_router": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema"
+}
