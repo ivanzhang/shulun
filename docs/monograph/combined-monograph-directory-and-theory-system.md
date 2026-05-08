@@ -4095,3 +4095,45 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 在同一 formal unit 内给出足够 exact `u/v` 支撑乘积，以抵消 divisor bound 与所有 registered capacity
 multipliers。本步没有证明该支撑-关联定理；它只是把 exact entropy 的失败压成可复现的 clean-core
 终端支撑原子。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_support_incidence_attack_router.py
+docs/monograph/prime-matrix-clean-core-support-incidence-attack-router.md/json
+```
+
+该路由器直接攻击 `CleanCoreTerminalSupportIncidenceTheorem`。结论为：
+
+```text
+clean_core_support_incidence_attack_boundary_closed=true；
+clean_core_exact_layer_transfer_proved=false；
+clean_core_terminal_support_incidence_proved=false；
+external_completed_kls_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+攻击结果是：full-S range 阈值、registered capacity budget、厚区间 raw squarefree/Buchstab 计数都已闭合；
+一旦 exact `u/v` 支撑成立，entropy/anti-atom 的初等推出也已闭合。剩余不是数量不足，而是 exact
+clean-core 层是否承认这些 Buchstab products，且其 actual `alpha/delta` 系数非零。
+
+同时三条路线被排除：朴素 factor-residue incidence 被内部 `h,ell,x,z` fiber 阻断；canonical 层支撑不能
+导入 noncanonical clean-core；普通 squarefree 计数不能代替 exact 层承认和非零转移。因此最新条件输入基为：
+
+```text
+(CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+ OR ModulusDependentCompletedFullSKLSInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+该内部子输入要求 exact clean-core 层承认厚 balanced block 中足够多 Buchstab products、系数非零，并把
+thin 或 layer-rejected block 回流到命名出口。本步没有证明该定理；它关闭的是从 K4/K6、canonical 支撑或
+普通计数偷渡到 clean-core 支撑关联的错误方向。

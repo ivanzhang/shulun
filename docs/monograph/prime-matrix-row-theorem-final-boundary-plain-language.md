@@ -1748,3 +1748,49 @@ terminal support atom。
 
 所以最新剩余不再是泛泛的“熵不好证”，而是一个更窄的终端原子排斥问题：证明 clean-core 内部不能存在
 正质量、无回流、同一 moving `(u,v)` 承载过大容量的终端支撑原子。当前材料仍未证明这一点。
+
+## 19. clean-core 支撑关联终端攻击
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_support_incidence_attack_router.py
+docs/monograph/prime-matrix-clean-core-support-incidence-attack-router.md/json
+
+clean_core_support_incidence_attack_boundary_closed=true；
+clean_core_exact_layer_transfer_proved=false；
+clean_core_terminal_support_incidence_proved=false；
+external_completed_kls_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层直接硬攻 `CleanCoreTerminalSupportIncidenceTheorem`。结果是：range 阈值、registered capacity
+multiplier 和厚区间普通 squarefree/Buchstab 计数都不是终端障碍；它们已经足够强，只要 exact `u/v`
+支撑下界真正成立，就会推出 entropy/anti-atom。
+
+但三条伪捷径被关闭：
+
+- 朴素 factor-residue incidence 仍被内部 fiber 阻断：单个 moving `(u,v)` 可以在大量 `h,ell,x,z`
+  内部原子上平坦，K4/K6 固定投影看不见 factor 集中。
+- canonical RIW/Buchstab 层支撑只关闭 canonical-source 分支，不能偷渡到 noncanonical clean-core。
+- 普通 squarefree 数量足够，不等于 exact clean-core 层承认这些 products 且系数非零。
+
+因此最新条件输入基为：
+
+```text
+(CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+ OR ModulusDependentCompletedFullSKLSInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+其中最新内部子输入要求三件事：第一，exact clean-core 层承认厚 balanced block 中足够多 Buchstab products；
+第二，这些 products 在 actual `alpha/delta` 中有非零系数并贡献绝对支撑；第三，thin 或 layer-rejected block
+必须回流到 edge/PDEC/SAE/ColumnCRT/CleanKLS 等命名出口。当前材料仍未证明这个层承认与非零转移定理。

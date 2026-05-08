@@ -1,0 +1,174 @@
+{
+  "balanced_range_closed": true,
+  "certificate_type": "prime_matrix_clean_core_support_incidence_attack_router",
+  "clean_core_exact_layer_transfer_proved": false,
+  "clean_core_support_incidence_attack_boundary_closed": true,
+  "clean_core_terminal_support_incidence_proved": false,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "external_completed_kls_accepted": false,
+  "fiber_obstruction_model": [
+    {
+      "factor_support_fails": true,
+      "internal_atoms": 750514,
+      "k": 3,
+      "k4_flat_possible": true,
+      "log_y": 6.907755278982138,
+      "max_internal_share": 1.332420181369035e-06,
+      "moving_pairs": 1,
+      "required_support": 15728
+    },
+    {
+      "factor_support_fails": true,
+      "internal_atoms": 5622504,
+      "k": 4,
+      "k4_flat_possible": true,
+      "log_y": 9.210340371976184,
+      "max_internal_share": 1.7785669872355803e-07,
+      "moving_pairs": 1,
+      "required_support": 66279
+    },
+    {
+      "factor_support_fails": true,
+      "internal_atoms": 26810187,
+      "k": 5,
+      "k4_flat_possible": true,
+      "log_y": 11.51292546497023,
+      "max_internal_share": 3.7299254943652576e-08,
+      "moving_pairs": 1,
+      "required_support": 202269
+    },
+    {
+      "factor_support_fails": true,
+      "internal_atoms": 96065749,
+      "k": 6,
+      "k4_flat_possible": true,
+      "log_y": 13.815510557964275,
+      "max_internal_share": 1.0409537326357597e-08,
+      "moving_pairs": 1,
+      "required_support": 503309
+    },
+    {
+      "factor_support_fails": true,
+      "internal_atoms": 282615581,
+      "k": 7,
+      "k4_flat_possible": true,
+      "log_y": 16.11809565095832,
+      "max_internal_share": 3.5383753311180674e-09,
+      "moving_pairs": 1,
+      "required_support": 1087849
+    },
+    {
+      "factor_support_fails": true,
+      "internal_atoms": 719680491,
+      "k": 8,
+      "k4_flat_possible": true,
+      "log_y": 18.420680743952367,
+      "max_internal_share": 1.3895054993230322e-09,
+      "moving_pairs": 1,
+      "required_support": 2120940
+    },
+    {
+      "factor_support_fails": true,
+      "internal_atoms": 1641373385,
+      "k": 9,
+      "k4_flat_possible": true,
+      "log_y": 20.723265836946414,
+      "max_internal_share": 6.092458968438799e-10,
+      "moving_pairs": 1,
+      "required_support": 3822003
+    }
+  ],
+  "latest_conditional_basis": "(CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn OR ModulusDependentCompletedFullSKLSInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_internal_subinput": "CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn",
+  "latest_self_contained_basis": "CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "naive_incidence_bridge_blocked": true,
+  "plain_conclusion": "最新真正剩余继续缩小：不是证明普通 squarefree 数量，也不是 K4/K6 incidence，而是证明 clean-core exact 层承认与非零转移。当前材料仍未证明该输入；外部替代仍是 completed、modulus-dependent Full-S KLS。",
+  "previous_input": "CleanCoreTerminalSupportIncidenceTheorem",
+  "raw_thick_squarefree_counting_closed": true,
+  "registered_capacity_budget_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorTerminalAtomPinned",
+      "meaning": "上一层已把 exact entropy 失败压成 clean-core terminal support atom。",
+      "proved": false,
+      "remaining": "攻击该支撑原子是否可由现有材料排除。"
+    },
+    {
+      "closed": true,
+      "gate": "BalancedRangeAlreadyClosed",
+      "meaning": "full-S regime 下 U,V 超过任意固定对数阈值，range 不是终端障碍。",
+      "proved": true,
+      "remaining": "只剩 exact 支撑和层转移。"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredCapacityBudgetClosed",
+      "meaning": "所有 Type/Fourier/fiber 乘子已登记为同一 formal unit 的 log-power 成本。",
+      "proved": true,
+      "remaining": "不能再用账外乘子解释 moving 原子。"
+    },
+    {
+      "closed": true,
+      "gate": "BroadSupportWouldSuffice",
+      "meaning": "一旦 exact u/v 支撑下界成立，已有初等不等式会推出 entropy/anti-atom。",
+      "proved": true,
+      "remaining": "支撑下界本身未证。"
+    },
+    {
+      "closed": true,
+      "gate": "RawThickSquarefreeCountingClosed",
+      "meaning": "厚区间内普通 squarefree/Buchstab 计数足够支付对数支撑需求。",
+      "proved": true,
+      "remaining": "不是数量问题，而是 exact 层是否承认并给出非零系数。"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveIncidenceBridgeBlocked",
+      "meaning": "单个 moving (u,v) 可在内部 h,ell,x,z fiber 上平坦，K4/K6 看不见 factor 集中。",
+      "proved": true,
+      "remaining": "需要非朴素层承认/非零转移，或 completed KLS。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLayerTransferDoesNotImportToCleanCore",
+      "meaning": "canonical RIW/Buchstab 支撑只服务 canonical-source 分支，不能偷渡到 noncanonical clean-core。",
+      "proved": true,
+      "remaining": "必须证明 clean-core 自身的 exact 层承认和非零转移。"
+    },
+    {
+      "closed": false,
+      "gate": "CleanCoreExactLayerAdmissionCurrentCorpusProved",
+      "meaning": "当前材料没有证明 clean-core exact 层承认足够多 Buchstab products 且系数非零。",
+      "proved": false,
+      "remaining": "证明 CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalCompletedKLSNormalFormStillOpen",
+      "meaning": "外部替代仍是 modulus-dependent completed Full-S KLS，不是泛称 DI/BFI。",
+      "proved": false,
+      "remaining": "证明或独立接受 ModulusDependentCompletedFullSKLSInput。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-exact-entropy-atom-router.json": "b4f6fa4f65b2e19e213c7e94753c7c4183a97056dcc793f9809dcf32a7cda3e8",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-completion-reduction-router.json": "bee7ade16ab2e5a8309060c7c4c24cc7f8cb37ab87d94aeb1cefc407183d116e",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-support-range-router.json": "f2816bc3d999d89883a123b655d62d2c774412f1728d7216c2bc62c21c680e0a",
+    "docs/monograph/prime-matrix-triad-a1-exact-factor-support-router.json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "docs/monograph/prime-matrix-triad-a1-factor-residue-incidence-router.json": "be50163987cdc54179f3e439e32c390bc8df4dbde950f12a04ecad09b5f06e80",
+    "docs/monograph/prime-matrix-triad-a1-squarefree-buchstab-support-router.json": "13edc798e762cafca5ed2e069460bc77ddfc63f709015b53762bc0c8784d6d10"
+  },
+  "status": "clean_core_support_incidence_reduced_to_exact_layer_transfer_open",
+  "structural_law": "clean-core 支撑关联的 range、乘子预算和厚区间原始计数都已不是终端障碍。朴素 factor-residue incidence 被内部 fiber 模型阻断；canonical 层支撑不能导入 noncanonical clean-core。故完全自足路线必须证明 clean-core exact 层承认足够多 Buchstab products、系数非零，并把 thin/rejected blocks 回流到命名出口。"
+}

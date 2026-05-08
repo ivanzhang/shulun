@@ -3374,6 +3374,39 @@ Here \texttt{CleanCoreTerminalSupportIncidenceTheorem} means that every positive
 post-return actual clean-core full-\(S\) non-AP WFD block has enough exact \(u/v\) support,
 inside the same formal unit, to absorb the divisor bound and all registered capacity
 multipliers.  This theorem is not proved in the current corpus.
+
+The clean-core support-incidence attack router then audits whether this theorem follows
+from the already closed ingredients.  It records
+\[
+\begin{gathered}
+  \texttt{clean\_core\_support\_incidence\_attack\_boundary\_closed=true},\\
+  \texttt{clean\_core\_exact\_layer\_transfer\_proved=false},\\
+  \texttt{clean\_core\_terminal\_support\_incidence\_proved=false},\\
+  \texttt{external\_completed\_kls\_accepted=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The range threshold, registered capacity budget, and raw squarefree/Buchstab counting in
+thick blocks are no longer the obstruction.  The naive factor-residue incidence bridge is
+still blocked by the internal \(h,\ell,x,z\) fiber, and canonical RIW/Buchstab support cannot
+be imported into the noncanonical clean-core branch.  The remaining internal input is
+\begin{quote}\footnotesize\ttfamily
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn.
+\end{quote}
+The latest conditional basis is therefore
+\begin{quote}\footnotesize\ttfamily
+(CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn\\
+OR ModulusDependentCompletedFullSKLSInput)\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The fully self-contained basis replaces the parenthesized alternative by
+\begin{quote}\footnotesize\ttfamily
+CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn.
+\end{quote}
+This input requires exact clean-core layer admission, nonzero transfer to the actual
+\(\alpha/\delta\) coefficients, and return of thin or rejected blocks to the named exits.
+It is still open.
 \end{proof}
 
 
