@@ -1,15 +1,15 @@
 # Prime Matrix 普遍 formal unit 抽取定理路由器
 
-**状态：** `universal_extractor_interface_closed_CanonicalFormalUnitHashStabilityLemma_open`
+**状态：** `universal_extractor_closed`
 
-UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。下一最窄点是 `CanonicalFormalUnitHashStabilityLemma`。
+UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 已闭合：四个子门全部闭合，任意早期零行 witness 都可产出有限、无漏、可哈希的 formal unit records。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 universal_extractor_theorem_interface_closed=true
-universal_extractor_theorem_closed=false
+universal_extractor_theorem_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -34,7 +34,7 @@ UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheor
 - FormalUnitPartitionCoverageLemma: `1`
 - SourceFamilyAssignmentTotalityLemma: `1`
 - NoLossReturnAccountingLemma: `1`
-- CanonicalFormalUnitHashStabilityLemma: `0`
+- CanonicalFormalUnitHashStabilityLemma: `1`
 
 ## 4. 判定表
 
@@ -47,11 +47,11 @@ UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheor
 | FormalUnitPartitionCoverageAvailable | `true` | `true` | partition coverage 子引理证明状态。 | FormalUnitPartitionCoverageLemma |
 | SourceFamilyAssignmentTotalityAvailable | `true` | `true` | source family assignment totality 子引理证明状态。 | SourceFamilyAssignmentTotalityLemma |
 | NoLossReturnAccountingAvailable | `true` | `true` | no-loss return accounting 子引理证明状态。 | NoLossReturnAccountingLemma |
-| CanonicalHashStabilityAvailable | `false` | `false` | canonical formal unit hash stability 子引理证明状态。 | CanonicalFormalUnitHashStabilityLemma |
-| UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger | `false` | `false` | 四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。 | CanonicalFormalUnitHashStabilityLemma |
+| CanonicalHashStabilityAvailable | `true` | `true` | canonical formal unit hash stability 子引理证明状态。 | CanonicalFormalUnitHashStabilityLemma |
+| UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger | `true` | `true` | 四个子门已全部闭合，得到任意早期零行 witness 的 formal unit records。 | ConcreteFormalUnitSourceRecordLedger |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `CanonicalFormalUnitHashStabilityLemma`。
+当前唯一最窄点更新为 `ConcreteFormalUnitSourceRecordLedger`。
 
-审稿边界：本步只更新普遍抽取定理的子门进度，不排斥 PDEC/SAE/Rankin 终端，也不关闭行列无条件定理。
+审稿边界：本步关闭普遍抽取定理，但不排斥 PDEC/SAE/Rankin 终端，也不关闭行列无条件定理。

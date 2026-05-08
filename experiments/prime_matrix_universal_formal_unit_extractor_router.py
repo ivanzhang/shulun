@@ -34,6 +34,7 @@ PARTITION_ATOM = "FormalUnitPartitionCoverageLemma"
 ASSIGNMENT_ATOM = "SourceFamilyAssignmentTotalityLemma"
 NOLOSS_ATOM = "NoLossReturnAccountingLemma"
 HASH_ATOM = "CanonicalFormalUnitHashStabilityLemma"
+SOURCE_RECORD_ATOM = "ConcreteFormalUnitSourceRecordLedger"
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -202,6 +203,7 @@ def build_rows(
         ),
         OLD_ATOM,
     )
+    remaining_after_theorem = SOURCE_RECORD_ATOM if theorem_closed else first_open
     theorem_meaning = (
         "四个子门已全部闭合，得到任意早期零行 witness 的 formal unit records。"
         if theorem_closed
@@ -269,7 +271,7 @@ def build_rows(
             theorem_closed,
             theorem_closed,
             theorem_meaning,
-            first_open,
+            remaining_after_theorem,
         ),
     ]
 
@@ -294,7 +296,7 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     assignment_closed = proof_closed(proofs[ASSIGNMENT_ATOM])
     noloss_closed = proof_closed(proofs[NOLOSS_ATOM])
     hash_closed = proof_closed(proofs[HASH_ATOM])
-    current_narrowest = next(
+    first_open = next(
         (
             atom
             for atom, closed in [
@@ -307,6 +309,7 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         ),
         OLD_ATOM,
     )
+    current_narrowest = SOURCE_RECORD_ATOM if theorem_closed else first_open
     status = (
         "universal_extractor_closed"
         if theorem_closed
@@ -335,7 +338,7 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "proof_like_json": proofs,
         "theorem_sublemmas": theorem_sublemmas(),
         "current_narrowest_atom": current_narrowest,
-        "downstream_atoms": [ASSIGNMENT_ATOM, NOLOSS_ATOM, HASH_ATOM],
+        "downstream_atoms": [SOURCE_RECORD_ATOM] if theorem_closed else [ASSIGNMENT_ATOM, NOLOSS_ATOM, HASH_ATOM],
         "reduction_formula": (
             f"{OLD_ATOM} => {INTERFACE_ATOM} AND {PARTITION_ATOM} AND {ASSIGNMENT_ATOM} "
             f"AND {NOLOSS_ATOM} AND {HASH_ATOM}."
