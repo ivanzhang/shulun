@@ -1,0 +1,97 @@
+{
+  "certificate_type": "prime_matrix_full_rankin_ledger_inventory_router",
+  "status": "full_rankin_ledger_narrowed_to_formal_inventory_missing",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md": "960b0bed237fb16a61bc4ad454c08402eda7087ace0eae4895b5a7a4404ce9f7",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "dstructure_rankin_full_acceptance_closed": false,
+  "formal_colored_corridor_inventory_found": false,
+  "rankin_like_json_count": 1,
+  "rankin_like_json": [
+    {
+      "path": "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json",
+      "p": 1009,
+      "k": 9,
+      "interval_count": 4,
+      "allowed_budget": 40.0,
+      "rankin_budget_pass": true,
+      "exact_budget_pass": true,
+      "status": "finite_rankin_ledger_computable_with_lowmod_residue_report"
+    }
+  ],
+  "inventory_like_json": [],
+  "parse_error_count": 0,
+  "current_narrowest_atom": "FormalColoredCorridorInventoryLedger",
+  "next_after_inventory": "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+  "failure_return_atom": "PDECOrSAEUnifiedExclusionLedger",
+  "reduction_formula": "FullRankinLedgerStillOpen => FormalColoredCorridorInventoryLedger AND BatchRankinCertificatesAllPassOrReturnToPDECSAE; failed certificates must return to PDECOrSAEUnifiedExclusionLedger.",
+  "plain_conclusion": "DStructure/Rankin 门的当前最窄缺口已从泛称“正式 Rankin 证书全集未提交”压缩为 `FormalColoredCorridorInventoryLedger`：必须先给出正式着色走廊全集清单，才能对每个颜色类运行现有 Rankin 证书审计。仓库当前只发现样本/局部证书，没有发现全集清单，因此不能关闭最终晋级门。",
+  "rows": [
+    {
+      "gate": "FullRankinLedgerGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "DStructure/Rankin 晋级门已收缩到正式 Rankin 证书全集。",
+      "remaining": "FullRankinLedgerStillOpen"
+    },
+    {
+      "gate": "RankinAcceptanceTheoremReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "RLA-1/RLA-2 已把单颜色与多颜色 Rankin 验收写成可检查定理。",
+      "remaining": "无验收格式剩余。"
+    },
+    {
+      "gate": "ExecutableSampleCertificatePasses",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前样本证书通过 exact 与 Rankin 预算，证明脚本格式可复现。",
+      "remaining": "样本不是正式全集。"
+    },
+    {
+      "gate": "FormalColoredCorridorInventoryMissing",
+      "closed": true,
+      "proved": false,
+      "meaning": "仓库未发现正式着色走廊全集清单；没有它就无法定义 all colored corridors 的批量验收域。",
+      "remaining": "FormalColoredCorridorInventoryLedger"
+    },
+    {
+      "gate": "CandidateRankinAuditFilesFound",
+      "closed": true,
+      "proved": false,
+      "meaning": "仓库能找到 Rankin-like JSON，但它们目前只是样本/局部证书，不构成全集。",
+      "remaining": "rankin_like_count=1"
+    },
+    {
+      "gate": "BatchRankinPassOrReturnNotExecutableYet",
+      "closed": false,
+      "proved": false,
+      "meaning": "只有正式清单存在且清单内每个证书通过，或失败者全部回流 PDEC/SAE 后，批量门才关闭。",
+      "remaining": "BatchRankinCertificatesAllPassOrReturnToPDECSAE AND PDECOrSAEUnifiedExclusionLedger"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 独立接受仍不能关闭；当前最小缺口是 formal corridor inventory。",
+      "remaining": "FormalColoredCorridorInventoryLedger"
+    }
+  ],
+  "closed_gates": [
+    "FullRankinLedgerGateActive",
+    "RankinAcceptanceTheoremReady",
+    "ExecutableSampleCertificatePasses",
+    "FormalColoredCorridorInventoryMissing",
+    "CandidateRankinAuditFilesFound"
+  ],
+  "open_gates": [
+    "BatchRankinPassOrReturnNotExecutableYet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
