@@ -1,0 +1,94 @@
+{
+  "certificate_type": "prime_matrix_dstructure_rankin_promotion_acceptance_router",
+  "promotion_law": "第三包是最终晋级验收包，不是另一个隐藏的自足终端。它的边界已经闭合：D-structure/Tail-log4/finite Rankin 接口已命名，Rankin 证书格式可检查，canonical-source 定理边界也明确把这个 referee gate 分离出去。但当前材料还没有独立接受该包，所以它不能把行/列命题升级为完整全局无条件定理。",
+  "promotion_package_boundary_closed": true,
+  "promotion_package_independently_accepted": false,
+  "rankin_sample_allowed_budget": 40.0,
+  "rankin_sample_exact_count": 39,
+  "rankin_sample_pass": true,
+  "required_acceptance_items": [
+    "D-structure / Structured-EHPD 入口与归约被独立接受",
+    "Tail-log4 的 BG/RKS 定理号与适配审计被接受",
+    "有限验证归档与脚本 hash 可复现",
+    "全部正式着色走廊 Rankin 证书通过，或失败者回流 PDEC/SAE",
+    "作者侧 BLOCK-REFEREE 只能由独立审稿接受后升级"
+  ],
+  "review_conclusion": "第三包验收边界已闭合但未被当前材料独立接受：D-structure/Tail-log4/finite Rankin 都是命名晋级门，Rankin 样本证书通过且格式可验收；正式全集、外部定理号、有限验证 hash 和独立审稿仍未完成。因此完整行/列无条件定理仍不能声明。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "closure input atlas",
+      "gate": "PromotionPackageListedAsMinimalInput",
+      "meaning": "第三包已经作为最小输入基的一项独立列出。",
+      "remaining": "accept D-structure/Tail-log4/finite Rankin interfaces"
+    },
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "canonical terminal promotion closure",
+      "gate": "SeparatedFromCanonicalSelfContainedBoundary",
+      "meaning": "DStructureRankinReferee 是最终定理晋级门，不是 canonical 自足边界缺口。",
+      "remaining": "independent final-promotion review"
+    },
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "line-by-line matrix PM-5/PM-16",
+      "gate": "DStructureStructuredEHPDGuarded",
+      "meaning": "行/列反例到 Structured-EHPD 的入口为条件通过，终局保持外审阻断。",
+      "remaining": "independent acceptance of D-group definitions and reductions"
+    },
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "line-by-line matrix PM-7",
+      "gate": "TailLog4Guarded",
+      "meaning": "Tail-log4 已定理化为接口，但 BG/RKS 外部定理号和适配仍需核验。",
+      "remaining": "verify BG/RKS theorem numbers and Tail-log4 adaptation"
+    },
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "line-by-line matrix PM-15",
+      "gate": "FiniteVerificationGuarded",
+      "meaning": "阈值以下有限验证是条件通过，需复现环境和脚本 hash。",
+      "remaining": "reproducible finite-verification archive"
+    },
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "Rankin acceptance theorem + sample audit",
+      "gate": "FiniteRankinSchemaReady",
+      "meaning": "Rankin 账本已从口头常数变为可验收证书格式，样本证书通过。",
+      "remaining": "generate passing certificates for all formal colored corridors"
+    },
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "claim status table",
+      "gate": "FullRankinLedgerStillOpen",
+      "meaning": "状态表仍明确记录正式 Rankin 证书全集尚未提交。",
+      "remaining": "all colored-corridor Rankin certificates pass or route failures to PDEC/SAE"
+    },
+    {
+      "accepted": false,
+      "boundary_closed": true,
+      "evidence": "line-by-line matrix + main theorem boundary",
+      "gate": "NoAuthorSidePromotion",
+      "meaning": "作者侧复核不能替代独立外审，主稿不得升级为最终无条件定理。",
+      "remaining": "external/referee acceptance"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9b373a3b02d5109f489ef396d9488f0dcbc106a8f23cdb79f5d8d02469ea1971",
+    "docs/monograph/line-by-line-internal-referee-matrix.md": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md": "960b0bed237fb16a61bc4ad454c08402eda7087ace0eae4895b5a7a4404ce9f7",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b",
+    "docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.json": "c67d3c6cb5962117acda677dcefaf3cb6155ce0ccacca645a8352d3682981311",
+    "docs/monograph/prime-matrix-closure-input-atlas-router.json": "53caeb5789e6697c37cb7949329cd32c8015736a8cccd27ed93b38a1bcb38a83",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "baff1da1a8e2e0d0a13129b5b02a26567fac8db0a3a3194a0af4855b67b120bd"
+  },
+  "status": "dstructure_rankin_promotion_boundary_closed_referee_acceptance_open"
+}

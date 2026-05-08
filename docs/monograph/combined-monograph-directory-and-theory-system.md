@@ -3120,6 +3120,37 @@ DStructureRankinPromotionPackage:
 继续新增：
 
 ```text
+experiments/prime_matrix_dstructure_rankin_promotion_acceptance_router.py
+docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.md/json
+```
+
+该路由器把第三包固定为最终晋级验收包：
+
+```text
+promotion_package_boundary_closed=true；
+promotion_package_independently_accepted=false；
+row_column_unconditional_closed=false；
+rankin_sample_pass=true。
+```
+
+边界含义是：D-structure/Tail-log4/finite Rankin 不再是无名终端，而是明确的 referee
+promotion gate。Rankin 账本已经有可验收证书格式，样本 `core_count_exact=39`、
+`allowed_budget=40.0` 且 Rankin/exact 均通过；但这只证明格式可复核，不等于正式全集已提交。
+完整晋级仍需：
+
+```text
+D-structure / Structured-EHPD 入口与归约被独立接受；
+Tail-log4 的 BG/RKS 定理号与适配审计被接受；
+有限验证归档与脚本 hash 可复现；
+全部正式着色走廊 Rankin 证书通过，或失败者回流 PDEC/SAE；
+作者侧 BLOCK-REFEREE 只能由独立审稿接受后升级。
+```
+
+因此第三包的验收边界已经闭合，但第三包尚未被当前材料独立接受。
+
+继续新增：
+
+```text
 experiments/prime_matrix_terminal_certificate_package_compression_router.py
 docs/monograph/prime-matrix-terminal-certificate-package-compression-router.md/json
 ```

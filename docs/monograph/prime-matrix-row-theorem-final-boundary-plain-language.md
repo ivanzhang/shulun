@@ -694,6 +694,30 @@ SN 递归剥离都已经不再指向新的无名方向；它们都落到“终�
 分支已经闭合；剩下的全局化困难在 noncanonical 补集和最终晋级门。下一步若要真正完成全局闭合，
 必须直接证明这三包，而不是继续寻找新的固定常数或宽 generic WFD 模板。
 
+继续新增第三包 DStructure/Rankin 晋级验收边界路由器后：
+
+```text
+experiments/prime_matrix_dstructure_rankin_promotion_acceptance_router.py
+docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.md/json
+
+promotion_package_boundary_closed=true；
+promotion_package_independently_accepted=false；
+rankin_sample_pass=true。
+```
+
+通俗说，第三包已经从“模糊的最后障碍”改写成可检查验收清单：
+
+```text
+D-structure / Structured-EHPD 入口与归约被独立接受；
+Tail-log4 的 BG/RKS 定理号与适配审计被接受；
+有限验证归档与脚本 hash 可复现；
+全部正式着色走廊 Rankin 证书通过，或失败者回流 PDEC/SAE；
+作者侧 BLOCK-REFEREE 只能由独立审稿接受后升级。
+```
+
+这一步闭合的是“验收边界”，不是完成独立验收。Rankin 样本证书已经通过，Rankin 格式也已可验收；
+但正式全集、外部定理号、有限验证复现和独立审稿还没有完成，所以完整行/列无条件定理仍不能声明。
+
 继续先补第一包的内部结构后：
 
 ```text

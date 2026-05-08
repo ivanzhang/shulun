@@ -2664,6 +2664,25 @@ D-structure/Rankin promotion package, these are the minimal remaining input basi
 future work should prove these packages directly rather than search for another generic WFD
 template or a fixed numerical constant.
 
+The D-structure/Rankin promotion package is now fixed as an acceptance boundary rather than
+a hidden terminal.  The corresponding router records
+\[
+\begin{gathered}
+  \texttt{promotion\_package\_boundary\_closed=true},\\
+  \texttt{promotion\_package\_independently\_accepted=false},\\
+  \texttt{rankin\_sample\_pass=true}.
+\end{gathered}
+\]
+It checks that the package is listed in the minimal input basis, that it is separated from
+the canonical-source self-contained boundary, that PM-16 remains a BLOCK-REFEREE item in
+the line-by-line matrix, and that the Rankin ledger has a checkable certificate format.
+The current sample has exact smooth-core count \(39\), allowed budget \(40.0\), and both
+the Rankin and exact budget tests passing.  This is a format and sample verification, not a
+global acceptance of the whole promotion package.  Final promotion still requires
+independent acceptance of the D-structure/Structured-EHPD entrance reductions, Tail-log4
+BG/RKS theorem-number and adaptation checks, reproducible finite-verification hashes, and
+Rankin certificates for all formal colored corridors, with failures routed to PDEC/SAE.
+
 The terminal-certificate package has a further compression.  The no-unnamed-escape machine
 and the named-exit absorption contract are already closed at the routing level.  The
 canonical-source clean KLS branch is absorbed by the final canonical boundary, and the
