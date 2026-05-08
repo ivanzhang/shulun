@@ -1,0 +1,153 @@
+{
+  "certificate_type": "prime_matrix_anchor_set_reconstruction_certificate",
+  "status": "anchor_set_reconstruction_certificate_closed_source_tuple_ready",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "842b67f1e7ece208f03e54843cd8b84f96a8a57c59b1fcc519e2720caa474a6b",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
+    "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "anchor_set_reconstruction_certificate_ledger": true,
+  "proved": true,
+  "coverage_complete": true,
+  "anchor_set_reconstruction_records": [
+    {
+      "family_id": "EndpointSawtoothDirectedCRTDefect",
+      "anchor_reconstruction": "A=empty，D0/K/Omega=null，phase_rule=tau endpoint predicate。",
+      "return_if_missing": "EndpointReturnSchema"
+    },
+    {
+      "family_id": "TailAnchorConcentration",
+      "anchor_reconstruction": "A 由 payload 的 anchor a 或 anchor bucket 排序得到；D0/K/Omega 继承 TailCore bucket。",
+      "return_if_missing": "TailAnchorReturn"
+    },
+    {
+      "family_id": "HighOverlapFixedCoreDefect",
+      "anchor_reconstruction": "A 为共享 fixed_core d 的互补锚集合；Omega 为触发高重叠的阈值。",
+      "return_if_missing": "HighOverlapReturn"
+    },
+    {
+      "family_id": "ColoredDisjointCorridorBudgetViolation",
+      "anchor_reconstruction": "A、D0、K、Omega、phase_rule 均由 colored corridor source tuple payload 读取。",
+      "return_if_missing": "DownstreamParameterReturn"
+    },
+    {
+      "family_id": "SmoothCoreLowModCRTDefect",
+      "anchor_reconstruction": "继承失败颜色类的 A/D0/K/Omega；低模相位写入 phase_rule。",
+      "return_if_missing": "SmoothCoreLowModReturn"
+    },
+    {
+      "family_id": "SparseSingleWindowEscape",
+      "anchor_reconstruction": "无锚同步时 A=empty；若 packet 携带 anchor，则按 packet payload 排序取 A。",
+      "return_if_missing": "SAEOrSparsePacketReturn"
+    },
+    {
+      "family_id": "RankinConstantGapNoSpike",
+      "anchor_reconstruction": "继承 Rankin 失败颜色类的 source tuple；常数缺口不允许后验改 A/D0/K/Omega。",
+      "return_if_missing": "RankinConstantGapReturn"
+    }
+  ],
+  "reconstruction_laws": [
+    {
+      "law": "family_total_extractor",
+      "meaning": "每个有限 source_family_id 都有确定 A/D0/K/Omega/phase_rule 抽取规则。"
+    },
+    {
+      "law": "canonical_empty_and_null",
+      "meaning": "不适用锚集合的来源族写 A=empty；不适用参数写 canonical null，仍参与 source_tuple_hash。"
+    },
+    {
+      "law": "sorted_anchor_hash",
+      "meaning": "anchor_set_hash=H(source_tuple_key, sorted(A))，排序消除枚举顺序依赖。"
+    },
+    {
+      "law": "same_formal_unit_lock",
+      "meaning": "A、D0、K、Omega、phase_rule 必须继承同一个 formal_unit_id/source_tuple_hash。"
+    },
+    {
+      "law": "missing_field_return",
+      "meaning": "若某字段不能从 payload 重构，则进入命名 return，不得作为无名数据缺口。"
+    }
+  ],
+  "current_narrowest_atom": "ConcreteSourceTupleAnchorParameterDataLedger",
+  "downstream_atoms": [
+    "ConcreteSourceTupleAnchorParameterDataLedger",
+    "AnchorIntervalCertificateFileLedger"
+  ],
+  "reduction_formula": "AnchorSetReconstructionCertificateLedger => SourceTupleSchema AND FormalUnitSourceRecords AND EmitterFamilyTotality AND ParameterDiscipline AND CanonicalHash.",
+  "plain_conclusion": "AnchorSetReconstructionCertificateLedger 已闭合：A、D0/K/Omega 与 phase_rule 均由同一 formal unit 的有限来源族 payload 可复算；下一步可回收 `ConcreteSourceTupleAnchorParameterDataLedger`。",
+  "rows": [
+    {
+      "gate": "AnchorSetReconstructionGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 anchor set reconstruction certificate。",
+      "remaining": "AnchorSetReconstructionCertificateLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行 witness 的 source tuple，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "SourceTupleSchemaImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "source tuple 已要求 A、D0/K/Omega、phase_rule、anchor_set_hash 与 source_tuple_hash。",
+      "remaining": "字段口径固定。"
+    },
+    {
+      "gate": "FormalUnitSourceRecordsImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "任意假设 witness 的 formal unit source records 已由普遍抽取定理给出。",
+      "remaining": "payload 来源固定。"
+    },
+    {
+      "gate": "EmitterFamilyTotalityImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "七个来源族和各自 payload/downstream 字段已固定。",
+      "remaining": "无新 source family。"
+    },
+    {
+      "gate": "ParameterDisciplineImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "D0/K/Omega/phase_rule 不能后验调参，必须由同一 source tuple 复算。",
+      "remaining": "参数来源固定。"
+    },
+    {
+      "gate": "CanonicalHashImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal_unit_id、source_tuple_hash 与 return hash 已分层稳定。",
+      "remaining": "hash 口径固定。"
+    },
+    {
+      "gate": "AnchorSetReconstructionCertificateLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个 source tuple 的 A 与参数均由有限来源族 payload 确定；缺字段只能命名回流。",
+      "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
+    }
+  ],
+  "closed_gates": [
+    "AnchorSetReconstructionGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "SourceTupleSchemaImported",
+    "FormalUnitSourceRecordsImported",
+    "EmitterFamilyTotalityImported",
+    "ParameterDisciplineImported",
+    "CanonicalHashImported",
+    "AnchorSetReconstructionCertificateLedger"
+  ],
+  "open_gates": []
+}
