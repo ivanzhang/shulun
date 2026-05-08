@@ -1,0 +1,105 @@
+{
+  "certificate_type": "prime_matrix_partition_coverage_no_loss_equation_router",
+  "status": "partition_no_loss_equation_closed_disjointness_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-finite-formal-unit-partition-key-router.json": "0b0ed00b048fe27701d309092dad1c1fc572d451a3ab0dbd4741238ca1e0c370",
+    "docs/monograph/prime-matrix-witness-obligation-domain-canonicalization-router.json": "e84a7ea1de151624f4e63e3aef8ddd626c56bf569863916ec0e312f9a8109c21",
+    "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "40c09ca287f47e82b21e34e698f0073685aa1003b4edd1f896bd8c8949d0c5dd"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "partition_coverage_no_loss_equation_lemma": true,
+  "proved": true,
+  "coverage_complete": true,
+  "partition_coverage_no_loss_equation_closed": true,
+  "formal_unit_partition_coverage_lemma_closed": false,
+  "equations": [
+    {
+      "name": "total_key_map",
+      "formula": "key: O(w) -> K is defined for every obligation after domain canonicalization。"
+    },
+    {
+      "name": "fiber_definition",
+      "formula": "O_k={o in O(w): key(o)=k}。"
+    },
+    {
+      "name": "cover_equation",
+      "formula": "O(w)=union_{k in key(O(w))} O_k。"
+    },
+    {
+      "name": "return_inclusion",
+      "formula": "return records are obligations in O(w) with branch_type in named_return/quotient/reuse。"
+    },
+    {
+      "name": "no_loss_scope",
+      "formula": "本引理只证明覆盖不漏；同一物理原子是否重复计数交给 disjointness/boundary-return 引理。"
+    }
+  ],
+  "current_narrowest_atom": "PartitionDisjointnessAndBoundaryReturnLemma",
+  "secondary_narrowest_atom": "CanonicalFormalUnitHashStabilityLemma",
+  "reduction_formula": "PartitionCoverageNoLossEquationLemma => PartitionCoverageNoLossEquationClosed AND PartitionDisjointnessAndBoundaryReturnLemma.",
+  "plain_conclusion": "PartitionCoverageNoLossEquationLemma 已闭合：因为 canonical key 是 O(w) 上的总函数，O(w) 等于所有 key-fibers 的并，命名回流记录也作为 obligations 保留。下一最窄点是 `PartitionDisjointnessAndBoundaryReturnLemma`。",
+  "rows": [
+    {
+      "gate": "NoLossEquationGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 partition coverage no-loss 等式。",
+      "remaining": "PartitionCoverageNoLossEquationLemma"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行 witness 的 O(w)，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "CanonicalDomainImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "O(w) 已是有限规范义务域。",
+      "remaining": "无义务域格式剩余。"
+    },
+    {
+      "gate": "TotalFiniteKeyImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个 obligation 都有 canonical finite key。",
+      "remaining": "key map 是总函数。"
+    },
+    {
+      "gate": "PartitionInterfaceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "partition coverage 接口已要求 no-loss 覆盖等式。",
+      "remaining": "本步证明覆盖不漏。"
+    },
+    {
+      "gate": "PartitionCoverageNoLossEquationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "由总函数 key 的 fiber 分解，O(w) 等于所有 key-fibers 的并；return records 已包含在 O(w)。",
+      "remaining": "PartitionCoverageNoLossEquationClosed"
+    },
+    {
+      "gate": "PartitionCoverageNoLossEquationLemma",
+      "closed": true,
+      "proved": true,
+      "meaning": "no-loss 覆盖等式已闭合；剩余是同坐标重复、边界交叠和回流记录的不交化。",
+      "remaining": "PartitionDisjointnessAndBoundaryReturnLemma"
+    }
+  ],
+  "closed_gates": [
+    "NoLossEquationGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "CanonicalDomainImported",
+    "TotalFiniteKeyImported",
+    "PartitionInterfaceImported",
+    "PartitionCoverageNoLossEquationClosed",
+    "PartitionCoverageNoLossEquationLemma"
+  ],
+  "open_gates": []
+}
