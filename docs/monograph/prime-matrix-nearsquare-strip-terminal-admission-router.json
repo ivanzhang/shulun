@@ -1,0 +1,141 @@
+{
+  "certificate_type": "nearsquare_strip_terminal_admission_router",
+  "status": "nearsquare_strip_terminal_admitted_to_global_pdec_sparse_split_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-nearsquare-strip-defect-certificate-router.json": "8008bbcd08be7d94e70ea890791c62a951728ebf386c036971a833a15b5c2fbf",
+    "docs/monograph/prime-matrix-global-terminal-family-boundary-router.json": "44274d6f4fb05f658d7ca8a6b8123032efdad658273b003969d8af871f286aad",
+    "docs/monograph/prime-matrix-global-terminal-family-exclusion-split-router.json": "f9a5e6a0583a20578b3a98952382fe6a149b6c46ad57591974e4268bd8d9a03b",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "nearsquare_strip_terminal_admission_closed": true,
+  "nearsquare_strip_independent_terminal_remaining": false,
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "external_well_factorable_sawtooth_dispersion_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "NearSquareStripPDECOrSAEExclusionAlpha043",
+  "terminal_gap_intermediate": "GlobalPDECorSparseTerminalExclusion",
+  "terminal_gap_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "replacement": {
+    "NearSquareStripPDECOrSAEExclusionAlpha043": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043))) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND (((((SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted) AND (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve OR ExternalWellFactorableSawtoothDispersionBoundAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "external_next_priority": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+  "rough_fallback_priority": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+  "generic_external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "admission_chain": [
+    "NearSquareStripPDECOrSAEExclusionAlpha043 -> GlobalPDECorSparseTerminalExclusion",
+    "GlobalPDECorSparseTerminalExclusion -> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+  ],
+  "rows": [
+    {
+      "gate": "NearSquareStripTerminalGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "最新最窄点是排斥 dyadic 近平方条带产生的 PDEC/SAE 证书。",
+      "remaining": "NearSquareStripPDECOrSAEExclusionAlpha043"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行反例链条中做终端准入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "NearSquareStripSameFormalUnitCertificate",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已证明失败态生成同一 dyadic 条带 formal unit，且持久/稀疏二分准入 PDEC/SAE。",
+      "remaining": "GlobalPDECorSparseTerminalExclusion"
+    },
+    {
+      "gate": "CurrentMaterializedTerminalFrontierImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前已物化终端前沿耗尽；未来证书不能靠样本消元，必须进入全局终端家族。",
+      "remaining": "GlobalPDECorSparseTerminalExclusion"
+    },
+    {
+      "gate": "PDECAndSparseBoundaryImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "PDEC 显式输入边界与 future sparse packet 边界均已登记；二者本身仍未无条件排斥。",
+      "remaining": "GlobalPDECorSparseTerminalExclusion"
+    },
+    {
+      "gate": "GlobalTerminalSplitImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "全局终端家族拆分已把 GlobalPDECorSparseTerminalExclusion 压到 PDEC-CAP 或内部 CleanKLS/DLS。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "gate": "NearSquareIndependentTerminalRemoved",
+      "closed": true,
+      "proved": false,
+      "meaning": "近平方条带没有独立第四出口；其终端义务被吸收到全局 PDEC/sparse 终端门。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "gate": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需证明全局 PDEC-CAP 容量证书，或内部 CleanKLS/DLS 大筛吸收。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "gate": "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部解析路线仍可直接给 well-factorable sawtooth/条带分散估计。",
+      "remaining": "ExternalWellFactorableSawtoothDispersionBoundAlpha043"
+    },
+    {
+      "gate": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+      "closed": false,
+      "proved": false,
+      "meaning": "短区间 rough-number 下界仍可绕过内部 sawtooth 与条带分析。",
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "closed": false,
+      "proved": false,
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed": false,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "closed_gates": [
+    "NearSquareStripTerminalGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "NearSquareStripSameFormalUnitCertificate",
+    "CurrentMaterializedTerminalFrontierImported",
+    "PDECAndSparseBoundaryImported",
+    "GlobalTerminalSplitImported",
+    "NearSquareIndependentTerminalRemoved"
+  ],
+  "open_gates": [
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+    "ExternalWellFactorableSawtoothDispersionBoundAlpha043",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步删除了近平方条带的独立终端地位。上一层已把失败态做成同一 dyadic 条带 formal unit 的 PDEC/SAE 证书；既有全局终端家族边界又说明这类证书不能作为第四出口，必须进入全局 PDEC/sparse 终端拆分。因此当前真正剩余改为 PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve。这仍不是行列无条件闭合。"
+}
