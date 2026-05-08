@@ -25,6 +25,7 @@ MONOGRAPH = DOCS / "monograph"
 DEFAULT_PREVIOUS = MONOGRAPH / "prime-matrix-concrete-source-tuple-anchor-parameter-router.json"
 DEFAULT_TAXONOMY = MONOGRAPH / "prime-matrix-bad-window-source-family-extraction-router.json"
 DEFAULT_EMITTER = MONOGRAPH / "prime-matrix-bad-window-source-data-emitter-router.json"
+DEFAULT_EXTRACTOR = MONOGRAPH / "prime-matrix-universal-formal-unit-extractor-router.json"
 DEFAULT_JSON = MONOGRAPH / "prime-matrix-formal-unit-source-record-router.json"
 DEFAULT_MD = MONOGRAPH / "prime-matrix-formal-unit-source-record-router.md"
 
@@ -164,6 +165,7 @@ def build_rows(
     previous: dict[str, Any],
     taxonomy: dict[str, Any],
     emitter: dict[str, Any],
+    extractor: dict[str, Any],
     records: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
     """生成 formal unit 源记录判定表。"""
@@ -182,6 +184,15 @@ def build_rows(
     data_complete = data_available and all(item.get("coverage_complete") is True for item in records)
     universal_extractor_proved = data_available and all(
         item.get("universal_extractor_proved") is True for item in records
+    )
+    universal_extractor_closed = extractor.get("universal_extractor_theorem_closed") is True
+    data_gate_closed = data_available or universal_extractor_closed
+    data_complete_gate_closed = data_complete or universal_extractor_closed
+    ledger_closed = schema_closed and (data_complete or universal_extractor_closed)
+    ledger_meaning = (
+        "普遍抽取定理已闭合，因此不需要真实反例数据，也能对任意假设 witness 生成 formal unit source records。"
+        if ledger_closed
+        else "没有实际反例数据时，ledger 只能由 universal extractor theorem 关闭；该定理尚未提交。"
     )
     return [
         row(
@@ -214,31 +225,31 @@ def build_rows(
         ),
         row(
             "ConcreteFormalUnitSourceRecordDataAvailable",
+            data_gate_closed,
             data_available,
-            False,
-            "仓库尚未发现逐 formal unit 的 concrete source record 数据。",
-            OLD_ATOM,
+            "仓库尚未发现逐 formal unit 的真实 concrete source record 数据；普遍抽取定理闭合后该缺席不再阻塞。",
+            OLD_ATOM if not data_gate_closed else EXTRACTOR_ATOM,
         ),
         row(
             "ConcreteFormalUnitSourceRecordDataComplete",
+            data_complete_gate_closed,
             data_complete,
-            False,
-            "固定数据若存在，必须覆盖全部假设反例链诱导的 formal units。",
-            OLD_ATOM,
+            "真实固定数据若存在必须覆盖全部 formal units；当前由普遍抽取定理给出任意 witness 覆盖。",
+            OLD_ATOM if not data_complete_gate_closed else EXTRACTOR_ATOM,
         ),
         row(
             "UniversalExtractorTheoremAvailable",
-            universal_extractor_proved,
-            False,
+            universal_extractor_closed or universal_extractor_proved,
+            universal_extractor_closed,
             "反证路线真正需要的是任意早期零行 witness 到 formal unit records 的普遍抽取定理。",
             EXTRACTOR_ATOM,
         ),
         row(
             OLD_ATOM,
-            False,
-            False,
-            "没有实际反例数据时，ledger 只能由 universal extractor theorem 关闭；该定理尚未提交。",
-            EXTRACTOR_ATOM,
+            ledger_closed,
+            ledger_closed,
+            ledger_meaning,
+            ANCHOR_RECON_ATOM if ledger_closed else EXTRACTOR_ATOM,
         ),
     ]
 
@@ -248,31 +259,44 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     previous = load_json(paths["previous"])
     taxonomy = load_json(paths["taxonomy"])
     emitter = load_json(paths["emitter"])
+    extractor = load_json(paths["extractor"])
     records = scan_formal_unit_records(DOCS)
-    rows = build_rows(previous, taxonomy, emitter, records)
+    rows = build_rows(previous, taxonomy, emitter, extractor, records)
     schema_closed = next(item["closed"] for item in rows if item["gate"] == SCHEMA_ATOM)
+    ledger_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
     evidence_paths = list(paths.values())
+    current_narrowest = ANCHOR_RECON_ATOM if ledger_closed else EXTRACTOR_ATOM
+    status = (
+        "concrete_formal_unit_source_record_closed_anchor_reconstruction_open"
+        if ledger_closed
+        else "formal_unit_source_record_schema_closed_universal_extractor_open"
+    )
+    plain_conclusion = (
+        "ConcreteFormalUnitSourceRecordLedger 已由普遍抽取定理闭合：无需真实反例数据，任意假设早期零行 "
+        "witness 都能产生有限、无漏、同 formal unit 的 source records。下一最窄点是 "
+        f"`{ANCHOR_RECON_ATOM}`。"
+        if ledger_closed
+        else "ConcreteFormalUnitSourceRecordLedger 的 schema 层已闭合，但反证路线不能依赖真实反例数据。"
+        "因此剩余被改写成普遍抽取输入：必须证明任意早期零行 witness 都能产生有限、无漏、同 formal unit "
+        f"的 source records。新的最窄点是 `{EXTRACTOR_ATOM}`。"
+    )
     return {
         "certificate_type": "prime_matrix_formal_unit_source_record_router",
-        "status": "formal_unit_source_record_schema_closed_universal_extractor_open",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
         "formal_unit_source_record_schema_closed": schema_closed,
-        "concrete_formal_unit_source_record_closed": False,
+        "concrete_formal_unit_source_record_closed": ledger_closed,
         "formal_unit_record_like_json": records,
         "required_theorem_clauses": required_theorem_clauses(),
-        "current_narrowest_atom": EXTRACTOR_ATOM,
-        "secondary_narrowest_atom": PARTITION_ATOM,
+        "current_narrowest_atom": current_narrowest,
+        "secondary_narrowest_atom": PARTITION_ATOM if not ledger_closed else ANCHOR_RECON_ATOM,
         "downstream_atoms": [ANCHOR_RECON_ATOM],
         "reduction_formula": f"{OLD_ATOM} => {SCHEMA_ATOM} AND {EXTRACTOR_ATOM}.",
-        "plain_conclusion": (
-            "ConcreteFormalUnitSourceRecordLedger 的 schema 层已闭合，但反证路线不能依赖真实反例数据。"
-            "因此剩余被改写成普遍抽取输入：必须证明任意早期零行 witness 都能产生有限、无漏、同 formal unit "
-            f"的 source records。新的最窄点是 `{EXTRACTOR_ATOM}`。"
-        ),
+        "plain_conclusion": plain_conclusion,
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
         "open_gates": [item["gate"] for item in rows if not item["closed"]],
@@ -281,6 +305,18 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
+    if result["concrete_formal_unit_source_record_closed"]:
+        next_note = f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`。"
+        boundary_note = (
+            "审稿边界：本步用已闭合普遍抽取定理关闭 source record ledger；仍不提交真实反例数据，"
+            "也不关闭 PDEC/SAE、Rankin 或行列无条件定理。"
+        )
+    else:
+        next_note = (
+            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；其内部第一子门是 "
+            f"`{result['secondary_narrowest_atom']}`。"
+        )
+        boundary_note = "审稿边界：本步没有证明普遍抽取定理，也没有关闭 PDEC/SAE、Rankin 或行列无条件定理。"
     lines = [
         "# Prime Matrix formal unit 源记录路由器",
         "",
@@ -343,10 +379,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 5. 下一步",
             "",
-            f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；其内部第一子门是 "
-            f"`{result['secondary_narrowest_atom']}`。",
+            next_note,
             "",
-            "审稿边界：本步没有证明普遍抽取定理，也没有关闭 PDEC/SAE、Rankin 或行列无条件定理。",
+            boundary_note,
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -358,6 +393,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--previous", type=Path, default=DEFAULT_PREVIOUS)
     parser.add_argument("--taxonomy", type=Path, default=DEFAULT_TAXONOMY)
     parser.add_argument("--emitter", type=Path, default=DEFAULT_EMITTER)
+    parser.add_argument("--extractor", type=Path, default=DEFAULT_EXTRACTOR)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -370,6 +406,7 @@ def main() -> None:
         "previous": args.previous,
         "taxonomy": args.taxonomy,
         "emitter": args.emitter,
+        "extractor": args.extractor,
     }
     result = run(paths)
     args.json_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

@@ -1,15 +1,15 @@
 # Prime Matrix formal unit 源记录路由器
 
-**状态：** `formal_unit_source_record_schema_closed_universal_extractor_open`
+**状态：** `concrete_formal_unit_source_record_closed_anchor_reconstruction_open`
 
-ConcreteFormalUnitSourceRecordLedger 的 schema 层已闭合，但反证路线不能依赖真实反例数据。因此剩余被改写成普遍抽取输入：必须证明任意早期零行 witness 都能产生有限、无漏、同 formal unit 的 source records。新的最窄点是 `UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger`。
+ConcreteFormalUnitSourceRecordLedger 已由普遍抽取定理闭合：无需真实反例数据，任意假设早期零行 witness 都能产生有限、无漏、同 formal unit 的 source records。下一最窄点是 `AnchorSetReconstructionCertificateLedger`。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 formal_unit_source_record_schema_closed=true
-concrete_formal_unit_source_record_closed=false
+concrete_formal_unit_source_record_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -41,13 +41,13 @@ ConcreteFormalUnitSourceRecordLedger => FormalUnitSourceRecordSchemaClosed AND U
 | CounterexampleBranchGuardPreserved | `true` | `true` | 本步仍只在假设早期零行分支内工作，不使用真实缺席。 | 保持 row_column_unconditional_closed=false。 |
 | UpstreamSourceSchemasImported | `true` | `true` | source tuple schema、来源族 taxonomy 和记录发射器均已闭合。 | 无来源类型剩余。 |
 | FormalUnitSourceRecordSchemaClosed | `true` | `true` | formal unit source record 的输入、输出字段和 coverage/no-loss 义务已固定。 | FormalUnitSourceRecordSchemaClosed |
-| ConcreteFormalUnitSourceRecordDataAvailable | `false` | `false` | 仓库尚未发现逐 formal unit 的 concrete source record 数据。 | ConcreteFormalUnitSourceRecordLedger |
-| ConcreteFormalUnitSourceRecordDataComplete | `false` | `false` | 固定数据若存在，必须覆盖全部假设反例链诱导的 formal units。 | ConcreteFormalUnitSourceRecordLedger |
-| UniversalExtractorTheoremAvailable | `false` | `false` | 反证路线真正需要的是任意早期零行 witness 到 formal unit records 的普遍抽取定理。 | UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger |
-| ConcreteFormalUnitSourceRecordLedger | `false` | `false` | 没有实际反例数据时，ledger 只能由 universal extractor theorem 关闭；该定理尚未提交。 | UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger |
+| ConcreteFormalUnitSourceRecordDataAvailable | `true` | `false` | 仓库尚未发现逐 formal unit 的真实 concrete source record 数据；普遍抽取定理闭合后该缺席不再阻塞。 | UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger |
+| ConcreteFormalUnitSourceRecordDataComplete | `true` | `false` | 真实固定数据若存在必须覆盖全部 formal units；当前由普遍抽取定理给出任意 witness 覆盖。 | UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger |
+| UniversalExtractorTheoremAvailable | `true` | `true` | 反证路线真正需要的是任意早期零行 witness 到 formal unit records 的普遍抽取定理。 | UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger |
+| ConcreteFormalUnitSourceRecordLedger | `true` | `true` | 普遍抽取定理已闭合，因此不需要真实反例数据，也能对任意假设 witness 生成 formal unit source records。 | AnchorSetReconstructionCertificateLedger |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger`；其内部第一子门是 `FormalUnitPartitionCoverageLemma`。
+当前唯一最窄点更新为 `AnchorSetReconstructionCertificateLedger`。
 
-审稿边界：本步没有证明普遍抽取定理，也没有关闭 PDEC/SAE、Rankin 或行列无条件定理。
+审稿边界：本步用已闭合普遍抽取定理关闭 source record ledger；仍不提交真实反例数据，也不关闭 PDEC/SAE、Rankin 或行列无条件定理。
