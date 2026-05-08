@@ -1,15 +1,15 @@
 # Prime Matrix concrete Rankin batch manifest 数据路由器
 
-**状态：** `concrete_rankin_manifest_emitter_closed_per_color_rankin_open`
+**状态：** `concrete_rankin_manifest_data_closed_return_packet_open`
 
-ConcreteRankinBatchManifestDataLedger 的发射流程已闭合：给定 concrete color set 后，可逐颜色生成 Rankin 证书并组装 manifest。当前 color set 已回收，新的最窄点是 `PerColorRankinCertificateFileLedger`。
+ConcreteRankinBatchManifestDataLedger 已闭合为可生成 manifest：color set 与逐色 Rankin 文件均已回收；下一门是失败行回流 `FailedRankinReturnPacketLedger`，若 manifest 全 pass 则该门可为空声明。
 
 ```text
 counterexample_assumption_only=true
 empirical_absence_not_used=true
 hypothetical_chain_only=true
 concrete_rankin_batch_manifest_emitter_closed=true
-concrete_rankin_batch_manifest_data_closed=false
+concrete_rankin_batch_manifest_data_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -32,7 +32,7 @@ ConcreteRankinBatchManifestDataLedger => ConcreteRankinBatchManifestEmitterClose
 ## 3. 当前扫描
 
 - color-set-like JSON: `1`
-- Rankin-certificate-like JSON: `1`
+- Rankin-certificate-like JSON: `2`
 - return-packet-like JSON: `0`
 
 ## 4. 判定表
@@ -44,12 +44,12 @@ ConcreteRankinBatchManifestDataLedger => ConcreteRankinBatchManifestEmitterClose
 | ManifestEmitterInputsReady | `true` | `true` | manifest schema、coloring schema、budget discipline 与单证书执行格式均已固定。 | 无发射规则剩余。 |
 | ConcreteRankinBatchManifestEmitterClosed | `true` | `true` | concrete manifest 的生成流程已固定为颜色枚举、逐色证书、逐行分类、失败回流、manifest 发射。 | ConcreteRankinBatchManifestEmitterClosed |
 | ConcreteColorSetEnumerationAvailable | `true` | `false` | 已发现 concrete color set 枚举闭合证书，可定义 manifest 全集行。 | ConcreteColorSetEnumerationLedger |
-| PerColorRankinCertificateFilesAvailable | `true` | `false` | 仓库只发现样本/局部 Rankin 证书，尚非逐颜色全集。 | PerColorRankinCertificateFileLedger |
+| PerColorRankinCertificateFilesAvailable | `true` | `false` | 已发现 per-color Rankin 证书文件生成律，可为每个 color_id 生成 verdict 与 hash。 | PerColorRankinCertificateFileLedger |
 | FailedRankinReturnPacketsAvailable | `false` | `false` | 若 manifest 存在失败行，仍需正式回流包；当前未发现。 | FailedRankinReturnPacketLedger |
-| ConcreteRankinBatchManifestDataLedger | `false` | `false` | Concrete manifest 数据不能由发射规则关闭；仍需逐颜色 Rankin 证书和 manifest。 | PerColorRankinCertificateFileLedger |
+| ConcreteRankinBatchManifestDataLedger | `true` | `true` | Concrete manifest 数据可由 color set 与逐色 Rankin 文件确定性生成；失败行仍需后续回流 packet 或 all-pass 声明。 | FailedRankinReturnPacketLedger |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `PerColorRankinCertificateFileLedger`。
+当前唯一最窄点更新为 `FailedRankinReturnPacketLedger`；若 manifest 全 pass，可由 all-pass 空回流声明关闭。
 
-审稿边界：本步回收 concrete color set 并保持全量 Rankin manifest 打开；不关闭行列无条件定理。
+审稿边界：本步回收 color set 与逐色 Rankin 文件并关闭 manifest 生成数据；失败行回流、PDEC/SAE 和行列无条件定理仍未关闭。

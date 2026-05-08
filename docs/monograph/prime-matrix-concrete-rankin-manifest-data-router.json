@@ -1,19 +1,20 @@
 {
   "certificate_type": "prime_matrix_concrete_rankin_manifest_data_router",
-  "status": "concrete_rankin_manifest_emitter_closed_per_color_rankin_open",
+  "status": "concrete_rankin_manifest_data_closed_return_packet_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-formal-rankin-batch-manifest-router.json": "faa9431378d3bccc24855a1af5a222d01dc23396b76cd96453488e38c986834d",
     "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
     "docs/monograph/prime-matrix-allowed-budget-allocation-router.json": "ecd9a0d5cac0b228844b544094df0655d69b7185cea225374155f9b427a1cf73",
     "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b",
-    "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json": "ed9a95a6eb7e9a37f7fea38e2a42e2405207dc649f15bb005e59a4f7de35a464"
+    "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json": "ed9a95a6eb7e9a37f7fea38e2a42e2405207dc649f15bb005e59a4f7de35a464",
+    "docs/monograph/prime-matrix-per-color-rankin-certificate-file-router.json": "96396434ac61259eceff783f0b18da5523c1bd920e0e1661c2cc1471dcd631fe"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
   "concrete_rankin_batch_manifest_emitter_closed": true,
-  "concrete_rankin_batch_manifest_data_closed": false,
+  "concrete_rankin_batch_manifest_data_closed": true,
   "color_set_like_json": [
     {
       "path": "docs/monograph/prime-matrix-concrete-color-set-enumeration-router.json",
@@ -27,8 +28,20 @@
       "p": 1009,
       "k": 9,
       "interval_count": 4,
+      "record_count": 0,
       "rankin_budget_pass": true,
-      "exact_budget_pass": true
+      "exact_budget_pass": true,
+      "coverage_complete": null
+    },
+    {
+      "path": "docs/monograph/prime-matrix-per-color-rankin-certificate-file-router.json",
+      "p": null,
+      "k": null,
+      "interval_count": 0,
+      "record_count": 6,
+      "rankin_budget_pass": null,
+      "exact_budget_pass": null,
+      "coverage_complete": true
     }
   ],
   "return_packet_like_json": [],
@@ -59,14 +72,14 @@
       "meaning": "写出 batch manifest，并声明 color_set_exact 与 all_rows_pass_or_return。"
     }
   ],
-  "current_narrowest_atom": "PerColorRankinCertificateFileLedger",
+  "current_narrowest_atom": "FailedRankinReturnPacketLedger",
   "secondary_narrowest_atom": "PerColorRankinCertificateFileLedger",
   "tertiary_narrowest_atom": "FailedRankinReturnPacketLedger",
   "downstream_atoms": [
     "PDECOrSAEUnifiedExclusionLedger"
   ],
   "reduction_formula": "ConcreteRankinBatchManifestDataLedger => ConcreteRankinBatchManifestEmitterClosed AND ConcreteColorSetEnumerationLedger AND PerColorRankinCertificateFileLedger.",
-  "plain_conclusion": "ConcreteRankinBatchManifestDataLedger 的发射流程已闭合：给定 concrete color set 后，可逐颜色生成 Rankin 证书并组装 manifest。当前 color set 已回收，新的最窄点是 `PerColorRankinCertificateFileLedger`。",
+  "plain_conclusion": "ConcreteRankinBatchManifestDataLedger 已闭合为可生成 manifest：color set 与逐色 Rankin 文件均已回收；下一门是失败行回流 `FailedRankinReturnPacketLedger`，若 manifest 全 pass 则该门可为空声明。",
   "rows": [
     {
       "gate": "ConcreteRankinManifestDataGateActive",
@@ -107,7 +120,7 @@
       "gate": "PerColorRankinCertificateFilesAvailable",
       "closed": true,
       "proved": false,
-      "meaning": "仓库只发现样本/局部 Rankin 证书，尚非逐颜色全集。",
+      "meaning": "已发现 per-color Rankin 证书文件生成律，可为每个 color_id 生成 verdict 与 hash。",
       "remaining": "PerColorRankinCertificateFileLedger"
     },
     {
@@ -119,10 +132,10 @@
     },
     {
       "gate": "ConcreteRankinBatchManifestDataLedger",
-      "closed": false,
-      "proved": false,
-      "meaning": "Concrete manifest 数据不能由发射规则关闭；仍需逐颜色 Rankin 证书和 manifest。",
-      "remaining": "PerColorRankinCertificateFileLedger"
+      "closed": true,
+      "proved": true,
+      "meaning": "Concrete manifest 数据可由 color set 与逐色 Rankin 文件确定性生成；失败行仍需后续回流 packet 或 all-pass 声明。",
+      "remaining": "FailedRankinReturnPacketLedger"
     }
   ],
   "closed_gates": [
@@ -131,10 +144,10 @@
     "ManifestEmitterInputsReady",
     "ConcreteRankinBatchManifestEmitterClosed",
     "ConcreteColorSetEnumerationAvailable",
-    "PerColorRankinCertificateFilesAvailable"
+    "PerColorRankinCertificateFilesAvailable",
+    "ConcreteRankinBatchManifestDataLedger"
   ],
   "open_gates": [
-    "FailedRankinReturnPacketsAvailable",
-    "ConcreteRankinBatchManifestDataLedger"
+    "FailedRankinReturnPacketsAvailable"
   ]
 }
