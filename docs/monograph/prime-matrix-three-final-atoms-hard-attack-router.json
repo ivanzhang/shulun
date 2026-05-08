@@ -1,0 +1,69 @@
+{
+  "all_three_atoms_proved_or_accepted": false,
+  "author_side_new_unconditional_closure_found": false,
+  "certificate_type": "prime_matrix_three_final_atoms_hard_attack_router",
+  "conditional_logic_chain_complete": true,
+  "irreducibility_law": "三个最后原子继续硬攻后，PDEC/sparse 与 APSourceLift/generic anti-atom 等旧路仍无效。noncanonical 方向只剩两个二选一可用数学输入：actual source 无 moving atom 反原子，或 c-dependent completed residue weight 谱抵消。最终晋级仍需独立 DStructure/Rankin 验收。当前材料没有给出这些新增定理或独立验收，因此完整无条件闭合仍未成立。",
+  "mathematical_final_choice": [
+    "ActualFullSNonAPSourceCapacityAntiAtomForActualSource",
+    "CDependentResidueWeightSpectralCancellationInput"
+  ],
+  "minimum_unconditional_basis": "(ActualFullSNonAPSourceCapacityAntiAtomForActualSource OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "promotion_final_atom": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "attack_status": "reduced_not_proved",
+      "blocked_shortcuts": [
+        "formal well-factorable convolution",
+        "Type-I/II algebraic decomposition",
+        "Fourier h-smoothing",
+        "K4/K6 residue/tail projections",
+        "naive factor-residue incidence",
+        "silent canonical source import"
+      ],
+      "boundary_closed": true,
+      "minimum_completion": "证明 actual source 的无 moving atom 反原子定理；或者把 actual source 锁回 canonical RIW/Buchstab 已闭合分支；否则必须改走外部谱/dispersion 输入。",
+      "original_atom": "ActualFullSNonAPExactSupportAtom",
+      "proved_or_accepted": false,
+      "refined_atom": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource",
+      "structural_reason": "精确因子支撑与 Type/Fourier 容量兼容不是两个独立估计；它们等价于实际 full-S non-AP 源容量测度没有 moving same-(u,v) 原子。generic 版本已被 moving-delta 模型反证，K4/K6 与朴素 incidence 也不能推出该结论。"
+    },
+    {
+      "attack_status": "reduced_not_proved",
+      "blocked_shortcuts": [
+        "pointwise Weil + L2",
+        "ordinary large sieve",
+        "flat or centered residue shortcut"
+      ],
+      "boundary_closed": true,
+      "minimum_completion": "证明或引用 completed、c-dependent residue weight 的 Kuznetsov/DI-BFI 谱平均抵消，并保持 full-S、non-AP、无投影、未中心化目标。",
+      "original_atom": "ModulusDependentCompletedFullSKLSInput",
+      "proved_or_accepted": false,
+      "refined_atom": "CDependentResidueWeightSpectralCancellationInput",
+      "structural_reason": "full-S 长度已可按模 c 完成；剩余不是窗口长度，而是 B_{c,x}=sum_k beta_{x+kc} 这种依赖 c 的未中心化 residue 权重。L2 只到自然尺度，普通大筛没有 c,h dispersion 结构。"
+    },
+    {
+      "attack_status": "boundary_closed_referee_acceptance_open",
+      "blocked_shortcuts": [
+        "author-side self-promotion"
+      ],
+      "boundary_closed": true,
+      "minimum_completion": "提交全部正式着色走廊 Rankin 证书、可复现有限验证归档、Tail-log4 BG/RKS 适配，并取得独立接受；失败项必须回流 PDEC/SAE。",
+      "original_atom": "DStructureRankinIndependentAcceptance",
+      "proved_or_accepted": false,
+      "refined_atom": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "structural_reason": "第三原子不是隐藏数学终端，而是定理晋级验收门。Rankin 样本已通过，格式可审查；但正式全集证书、Tail-log4 外部适配、有限验证 hash 与独立接受仍未完成。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-last-remaining-atoms-router.json": "f137da24fd1186b289f09917ff75a7f778027cce7215af1a2bea8d0c5efac31d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "docs/monograph/prime-matrix-triad-a1-exact-factor-support-router.json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1",
+    "docs/monograph/prime-matrix-triad-a1-factor-residue-incidence-router.json": "be50163987cdc54179f3e439e32c390bc8df4dbde950f12a04ecad09b5f06e80"
+  },
+  "status": "three_final_atoms_reduced_to_two_lane_math_input_plus_independent_promotion_open",
+  "three_atom_attack_boundary_closed": true
+}

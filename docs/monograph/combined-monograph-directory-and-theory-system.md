@@ -3459,3 +3459,45 @@ DStructureRankinIndependentAcceptance。
 D-structure/Tail-log4/finite Rankin 晋级包的独立验收原子。因此逻辑链条已经条件闭合：前两者
 至少一个成立，且第三者成立时，无隐藏终端链可晋级为完整行/列闭合。当前材料没有证明或独立接受
 这些最后原子，所以完整全局无条件定理仍未成立。
+
+继续新增：
+
+```text
+experiments/prime_matrix_three_final_atoms_hard_attack_router.py
+docs/monograph/prime-matrix-three-final-atoms-hard-attack-router.md/json
+```
+
+该路由器继续硬攻三个最终原子，并把它们压成最小无条件输入基：
+
+```text
+three_atom_attack_boundary_closed=true；
+conditional_logic_chain_complete=true；
+all_three_atoms_proved_or_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+最终二选一数学输入为：
+
+```text
+ActualFullSNonAPSourceCapacityAntiAtomForActualSource；
+CDependentResidueWeightSpectralCancellationInput。
+```
+
+第一个输入要求 actual full-S non-AP 源容量测度没有 moving same-(u,v) 大原子；generic 版本已经由
+moving-delta 模型反证，K4/K6 和朴素 incidence 也不能推出。第二个输入要求处理
+`B_{c,x}=sum_k beta_{x+kc}` 的 c-dependent completed residue weight 谱抵消；点态 Weil、L2、
+普通大筛和平坦 residue 捷径都不足。最终晋级输入为：
+
+```text
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+因此最小无条件输入基为：
+
+```text
+(ActualFullSNonAPSourceCapacityAntiAtomForActualSource
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+当前材料没有证明该二选一数学输入，也没有完成独立晋级验收，所以完整全局无条件定理仍未成立。

@@ -1030,6 +1030,56 @@ DStructureRankinIndependentAcceptance：
 完整全局无条件行/列定理尚未成立。
 ```
 
+继续硬攻这三个最终原子后：
+
+```text
+experiments/prime_matrix_three_final_atoms_hard_attack_router.py
+docs/monograph/prime-matrix-three-final-atoms-hard-attack-router.md/json
+
+three_atom_attack_boundary_closed=true；
+conditional_logic_chain_complete=true；
+all_three_atoms_proved_or_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+这一步把最终形态再压窄一层。第一个原子不再写成泛泛的“精确支撑”，而是：
+
+```text
+ActualFullSNonAPSourceCapacityAntiAtomForActualSource
+```
+
+也就是证明实际 full-S non-AP 源容量测度没有移动的单个 `(u,v)` 大原子。generic 版本已经被
+moving-delta 模型反证，K4/K6 和朴素 incidence 也不能推出它，所以它必须是 actual source 的
+新结构定理。
+
+第二个原子不再写成泛泛的 completed KLS，而是：
+
+```text
+CDependentResidueWeightSpectralCancellationInput
+```
+
+也就是证明依赖模数 `c` 的完成权重 `B_{c,x}=sum_k beta_{x+kc}` 在 `c,h` 谱/dispersion 平均中有
+任意对数节省。点态 Weil、L2 预算、普通大筛和平坦 residue 捷径都不足。
+
+第三个原子不再是数学隐藏终端，而是：
+
+```text
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+也就是正式全集 Rankin 证书、Tail-log4 适配、有限验证 hash 和独立验收。作者侧不能自我晋级。
+
+所以最终最小无条件输入基被压成：
+
+```text
+(ActualFullSNonAPSourceCapacityAntiAtomForActualSource
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这已经是当前材料能达到的最窄结构边界：证明链条条件闭合，但无条件闭合还需要上面这个数学二选一
+输入和独立晋级验收输入。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：
