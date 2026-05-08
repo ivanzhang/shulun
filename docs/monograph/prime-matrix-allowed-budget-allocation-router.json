@@ -1,0 +1,127 @@
+{
+  "certificate_type": "prime_matrix_allowed_budget_allocation_router",
+  "status": "allowed_budget_allocation_discipline_closed_batch_rankin_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md": "960b0bed237fb16a61bc4ad454c08402eda7087ace0eae4895b5a7a4404ce9f7",
+    "docs/monograph/prime-matrix-bpn-colored-corridor-core-sieve-budget.md": "d2d4d092544736ea1f6a0863a40afd29c6812544ce2bf72bb2c142904995081a",
+    "docs/monograph/prime-matrix-bpn-final-exit-acceptance-contract.md": "9403e41997299f4b82882f624db4a54a14d278e113a5e5fcbd05f253a9b805d5",
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.md": "bb9f15304067c8580b20ed01595cb9702a43a455551fcd47101241092861f5d9"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "allowed_budget_allocation_discipline_closed": true,
+  "formal_colored_corridor_inventory_closed": false,
+  "budget_rules": [
+    {
+      "rule": "predeclared_budget",
+      "meaning": "每个 color_id 的 B_allow 必须随 source tuple/inventory 一起登记，先于 Rankin 审计。"
+    },
+    {
+      "rule": "sum_budget_guard",
+      "meaning": "多颜色预算必须满足 sum_c B_c 不超过该 source tuple 的主链允许预算。"
+    },
+    {
+      "rule": "single_color_acceptance",
+      "meaning": "若存在 s 使 R_s(C_c;K)<=B_c，则该颜色类核心计数被 RLA-1 验收。"
+    },
+    {
+      "rule": "failed_with_spike_return",
+      "meaning": "Rankin 不通过且 residue spike 超阈值时，登记 low-mod core CRTDefect 并回流 PDEC/SAE。"
+    },
+    {
+      "rule": "failed_without_spike_constant_gap",
+      "meaning": "Rankin 不通过且无 spike 时，只能登记 constant-gap，继续细分或调参，不能标为通过。"
+    },
+    {
+      "rule": "no_posthoc_reallocation",
+      "meaning": "看到 Rankin ledger 后不得把其他颜色类未用预算后验转给失败类，除非重新提交全局预算证书。"
+    }
+  ],
+  "current_narrowest_atom": "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+  "downstream_atoms": [
+    "PDECOrSAEUnifiedExclusionLedger"
+  ],
+  "reduction_formula": "AllowedBudgetAllocationLedger => AllowedBudgetAllocationDisciplineClosed AND BatchRankinCertificatesAllPassOrReturnToPDECSAE.",
+  "plain_conclusion": "AllowedBudgetAllocationLedger 已闭合为预算纪律：每个颜色类预算必须预登记，总预算受主链允许预算约束；Rankin 通过才闭合，失败必须显式登记为 low-mod core CRTDefect/PDEC-SAE 或 constant-gap。新的最窄点是提交全量批量 Rankin 证书：`BatchRankinCertificatesAllPassOrReturnToPDECSAE`。",
+  "rows": [
+    {
+      "gate": "AllowedBudgetGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 allowed_budget 分配纪律。",
+      "remaining": "AllowedBudgetAllocationLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设反例链条内的预算证书，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ColoringCoverageImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "同色不相交走廊对象已由上一层固定。",
+      "remaining": "预算只能分配给这些固定颜色类。"
+    },
+    {
+      "gate": "FormalBudgetFieldsPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "正式 inventory 已要求 allowed_budget 与 failure_return。",
+      "remaining": "字段格式无剩余。"
+    },
+    {
+      "gate": "RankinAcceptanceTheoremImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "RLA-1/RLA-2 给出单颜色和多颜色预算验收不等式。",
+      "remaining": "无预算验收逻辑剩余。"
+    },
+    {
+      "gate": "FailureRoutingImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "预算失败只能进入 low-mod core CRTDefect/PDEC-SAE 或 constant-gap，不可口头吸收。",
+      "remaining": "PDECOrSAEUnifiedExclusionLedger or constant-gap"
+    },
+    {
+      "gate": "AllowedBudgetAllocationDisciplineClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "allowed_budget 分配纪律已闭合：预算预登记、总预算守卫、失败回流三者固定。",
+      "remaining": "AllowedBudgetAllocationDisciplineClosed"
+    },
+    {
+      "gate": "AllowedBudgetAllocationLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "预算分配层闭合为验收纪律；下一步必须提交全量 Rankin 批量证书或失败回流。",
+      "remaining": "BatchRankinCertificatesAllPassOrReturnToPDECSAE"
+    },
+    {
+      "gate": "BatchRankinStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "每个正式颜色类的 concrete Rankin 证书和失败回流列表尚未全集提交。",
+      "remaining": "BatchRankinCertificatesAllPassOrReturnToPDECSAE"
+    }
+  ],
+  "closed_gates": [
+    "AllowedBudgetGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ColoringCoverageImported",
+    "FormalBudgetFieldsPinned",
+    "RankinAcceptanceTheoremImported",
+    "FailureRoutingImported",
+    "AllowedBudgetAllocationDisciplineClosed",
+    "AllowedBudgetAllocationLedger"
+  ],
+  "open_gates": [
+    "BatchRankinStillDownstream"
+  ]
+}
