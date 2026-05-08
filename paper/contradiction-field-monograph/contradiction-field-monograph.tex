@@ -3668,7 +3668,39 @@ The conditional basis is
 OR CDependentResidueWeightSpectralCancellationInput)\\
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
 \end{quote}
-This is a boundary refinement, not a proof of the alpha/delta lift.
+The alpha/delta disintegration router then rewrites this lift in its intrinsic form.  It
+records
+\[
+\begin{gathered}
+  \texttt{alpha\_delta\_disintegration\_boundary\_closed=true},\\
+  \texttt{payment\_base\_map\_closed=true},\\
+  \texttt{lift\_equivalent\_to\_signed\_disintegration\_dictionary=true},\\
+  \texttt{canonical\_decision\_tree\_template\_scoped=true},\\
+  \texttt{generic\_or\_unregistered\_dictionary\_blocked=true},\\
+  \texttt{registered\_alpha\_delta\_disintegration\_dictionary\_proved=false},\\
+  \texttt{exact\_alpha\_delta\_lift\_proved=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+Let \(\Phi\) denote the first-cover payment map from primitive source summands to the
+completion-hole payment skeleton.  An exact alpha/delta lift is equivalent to a registered
+signed disintegration dictionary for the actual noncanonical source measure over
+\(\Phi\): one must list the signed preimage summands, branch keys, \(u/v\) maps, signs,
+local factors, variation/support budgets, and the pushforward identity.  The canonical
+RIW/Buchstab decision tree is a model for such a dictionary only on the canonical branch;
+generic well-factorability or unregistered sources do not provide it.  The latest
+self-contained basis is therefore
+\begin{quote}\footnotesize\ttfamily
+RegisteredAlphaDeltaDisintegrationDictionaryAndReturn\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The conditional basis is
+\begin{quote}\footnotesize\ttfamily
+(RegisteredAlphaDeltaDisintegrationDictionaryAndReturn\\
+OR CDependentResidueWeightSpectralCancellationInput)\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+This is a boundary refinement, not a proof of the signed dictionary.
 \end{proof}
 
 

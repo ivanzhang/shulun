@@ -4508,3 +4508,61 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明 alpha/delta lift；它把最后自足硬点从“纤维 emitter 是否存在”进一步缩为“已闭合 payment 骨架
 能否精确提升为 signed primitive 系数和 polylog 分支表”。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_alpha_delta_disintegration_router.py
+docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.md/json
+```
+
+该路由器把 `ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn` 改写为 signed 源测度沿
+first-cover payment map 的解积分问题。结论为：
+
+```text
+alpha_delta_disintegration_boundary_closed=true；
+payment_base_map_closed=true；
+lift_equivalent_to_signed_disintegration_dictionary=true；
+canonical_decision_tree_template_scoped=true；
+generic_or_unregistered_dictionary_blocked=true；
+registered_alpha_delta_disintegration_dictionary_proved=false；
+exact_alpha_delta_lift_proved=false；
+row_column_unconditional_closed=false。
+```
+
+解积分律是：payment skeleton 提供基底映射 `Phi`；exact lift 等价于给出 actual noncanonical signed
+`alpha/delta` 源测度 `nu` 在 `Phi` 上的已登记逐纤维字典。若 lift 已有，按 payment atom 分组 summand
+即得字典；若字典已有，逐纤维求和和推前恒等式即得 lift。pre-Cauchy 来源账本给出必要字段，
+路径分割给出 polylog branch key 的用途，canonical RIW/Buchstab 决策树只提供作用域内模板。
+
+最新内部输入为：
+
+```text
+RegisteredAlphaDeltaDisintegrationDictionaryAndReturn。
+```
+
+该输入要求：
+
+- pre-Cauchy actual noncanonical signed `alpha/delta` primitive 源测度；
+- primitive summand 到 completion-hole/first-cover payment atom 的基底映射；
+- 每个 payment atom 的 signed preimage summand 字典；
+- branch key、`u/v` map、sign、local factor、总变差/支撑预算与推前恒等式；
+- sign-refinement 和失败回流。
+
+最新条件输入基为：
+
+```text
+(RegisteredAlphaDeltaDisintegrationDictionaryAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+RegisteredAlphaDeltaDisintegrationDictionaryAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明 noncanonical 字典；它把“系数提升”变成一个可检查的 signed 解积分证据对象，并明确 canonical
+模板、generic WFD 与未登记来源都不能替代该对象。

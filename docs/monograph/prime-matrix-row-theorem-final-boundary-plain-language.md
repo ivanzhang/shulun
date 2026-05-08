@@ -2157,3 +2157,64 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 这一步继续缩窄了终端硬点：payment 几何骨架已可用，真正未闭合的是 signed primitive 系数提升和
 polylog 分支压缩。
+
+## 28. clean-core alpha/delta 解积分字典
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_alpha_delta_disintegration_router.py
+docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.md/json
+
+alpha_delta_disintegration_boundary_closed=true；
+payment_base_map_closed=true；
+lift_equivalent_to_signed_disintegration_dictionary=true；
+canonical_decision_tree_template_scoped=true；
+generic_or_unregistered_dictionary_blocked=true；
+registered_alpha_delta_disintegration_dictionary_proved=false；
+exact_alpha_delta_lift_proved=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把“系数提升”改写成更本质的测度解积分问题。payment skeleton 已给出基底映射：
+
+```text
+signed alpha/delta primitive source measure nu
+  -- first-cover payment map Phi --> payment skeleton Gamma。
+```
+
+若 exact `alpha/delta` lift 已证明，把 signed primitive summand 按 `Phi` 的纤维分组，就得到一个
+解积分字典；反过来，若该字典给出 signed 源测度、逐纤维表和推前恒等式，则逐纤维求和就给出
+exact lift。因此最新自足原子变成：
+
+```text
+RegisteredAlphaDeltaDisintegrationDictionaryAndReturn。
+```
+
+这个字典必须包含：
+
+- pre-Cauchy 的 actual noncanonical signed `alpha/delta` 源测度；
+- primitive summand 到 completion-hole/first-cover payment atom 的确定性映射；
+- 每个正质量 payment atom 的 signed preimage summand、branch key、`u/v` map、sign、local factor；
+- 推前恒等式、总变差/支撑预算、sign-refinement；
+- 无源测度、非同一 formal unit、超预算、抵消或推前失败时的命名回流。
+
+canonical RIW/Buchstab 决策树只给出 canonical 分支上的模板，不能跨分支导入 noncanonical clean-core；
+generic WFD 和未登记来源也已被防火墙排除。
+
+最新完全自足输入基变为：
+
+```text
+RegisteredAlphaDeltaDisintegrationDictionaryAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基变为：
+
+```text
+(RegisteredAlphaDeltaDisintegrationDictionaryAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步没有证明 signed 字典，但把剩余从“抽象系数提升”压成一个具体的字典式证据对象。

@@ -1,0 +1,138 @@
+{
+  "alpha_delta_disintegration_boundary_closed": true,
+  "canonical_decision_tree_template_scoped": true,
+  "certificate_type": "prime_matrix_clean_core_alpha_delta_disintegration_router",
+  "dictionary_fields": [
+    {
+      "field": "signed_source_measure",
+      "requirement": "在 Cauchy/dispersion 前给出 actual noncanonical alpha/delta signed primitive 源测度。"
+    },
+    {
+      "field": "payment_base_map",
+      "requirement": "给出 primitive summand 到 completion-hole/first-cover payment atom 的确定性映射。"
+    },
+    {
+      "field": "fiber_dictionary",
+      "requirement": "对每个正质量 payment atom 列出其 signed preimage summand、branch key、u/v map、sign 和 local factor。"
+    },
+    {
+      "field": "pushforward_identity",
+      "requirement": "证明字典沿 payment_base_map 推前后等于目标 alpha/delta payment-side 系数。"
+    },
+    {
+      "field": "variation_and_support_budget",
+      "requirement": "证明总变差、绝对支撑和 branch key 数在注册的 polylog/K6 预算内。"
+    },
+    {
+      "field": "sign_refinement",
+      "requirement": "同一完整 key 内 local factor 非零；若有相反号，必须先细分到 sign-refined key。"
+    },
+    {
+      "field": "failure_return",
+      "requirement": "无源测度、非同一 formal unit、推前不等式失败、超预算或抵消必须命名回流。"
+    }
+  ],
+  "disintegration_law": "ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn 的本质不是新的数值估计，而是 signed 源测度相对于 first-cover payment map 的解积分问题。payment skeleton 提供基底映射；pre-Cauchy 来源账本给出必要字段；路径分割说明 polylog branch key 如何转化为支撑保留；canonical RIW/Buchstab 决策树只提供作用域内模板。因此最新自足原子是 RegisteredAlphaDeltaDisintegrationDictionaryAndReturn：提交 actual noncanonical signed alpha/delta 源测度、逐纤维字典、推前恒等式、总变差/支撑预算、sign-refinement 和失败回流。",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "exact_alpha_delta_lift_proved": false,
+  "generic_or_unregistered_dictionary_blocked": true,
+  "implication_rows": [
+    {
+      "content": "若 ExactAlphaDeltaLift 已证明，则按 first-cover payment atom 分组 signed summand，得到解积分字典。",
+      "direction": "lift_to_dictionary"
+    },
+    {
+      "content": "若字典含 signed 源测度、纤维表和推前恒等式，则逐纤维求和直接给出 ExactAlphaDeltaLift。",
+      "direction": "dictionary_to_lift"
+    },
+    {
+      "content": "RIW/Buchstab 决策树给出了 canonical 分支上的字典模板，但作用域不能跨到 noncanonical clean-core。",
+      "direction": "canonical_template_scoped"
+    }
+  ],
+  "latest_conditional_basis": "(RegisteredAlphaDeltaDisintegrationDictionaryAndReturn OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinput": "RegisteredAlphaDeltaDisintegrationDictionaryAndReturn",
+  "latest_self_contained_basis": "RegisteredAlphaDeltaDisintegrationDictionaryAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lift_equivalent_to_signed_disintegration_dictionary": true,
+  "payment_base_map_closed": true,
+  "plain_conclusion": "alpha/delta lift 被进一步压成 signed 解积分字典。已有模型给出基底映射和 canonical 模板，但当前材料尚未给出 noncanonical clean-core 的实际字典，所以行/列无条件命题仍未闭合。",
+  "previous_input": "ExactAlphaDeltaLiftForRegisteredPaymentFiberSkeletonAndReturn",
+  "registered_alpha_delta_disintegration_dictionary_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorAlphaDeltaLiftPinned",
+      "meaning": "上一层已把最窄自足剩余压成 payment skeleton 到 signed alpha/delta primitive 系数的提升。",
+      "proved": false,
+      "remaining": "把 lift 拆成测度解积分字典字段。"
+    },
+    {
+      "closed": true,
+      "gate": "PaymentBaseMapClosed",
+      "meaning": "completion-hole 域、first-cover map 和 payment count identity 已给出解积分的基底映射。",
+      "proved": true,
+      "remaining": "基底映射不生成 signed 源测度。"
+    },
+    {
+      "closed": true,
+      "gate": "LiftEquivalentToSignedDisintegrationDictionary",
+      "meaning": "Exact alpha/delta lift 与 signed primitive 源测度在 payment map 上的逐纤维解积分字典等价。",
+      "proved": true,
+      "remaining": "等价不证明 actual noncanonical 字典存在。"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchyLedgerShowsNecessaryFields",
+      "meaning": "pre-Cauchy 来源律原子化已说明字段必须包含 formal unit、branch key、u/v map、sign 和 local factor。",
+      "proved": true,
+      "remaining": "当前材料未提交 noncanonical clean-core 的实际字段表。"
+    },
+    {
+      "closed": true,
+      "gate": "PathPartitionShowsBudgetUse",
+      "meaning": "路径分割路由已说明 polylog branch schema 足以转化为 selector 支撑保留。",
+      "proved": true,
+      "remaining": "仍需 actual noncanonical 字典给出这些 branch key。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalDecisionTreeTemplateScoped",
+      "meaning": "canonical RIW/Buchstab 决策树展示了解积分字典的结构模板。",
+      "proved": true,
+      "remaining": "模板只在 canonical 分支内有效，不能导入 noncanonical clean-core。"
+    },
+    {
+      "closed": true,
+      "gate": "GenericOrUnregisteredDictionaryBlocked",
+      "meaning": "generic WFD 和未登记来源不能作为字典；它们已被外部化或命名回流。",
+      "proved": true,
+      "remaining": "保留分支必须给 actual noncanonical registered dictionary。"
+    },
+    {
+      "closed": false,
+      "gate": "RegisteredAlphaDeltaDisintegrationDictionaryCurrentCorpusProved",
+      "meaning": "当前材料尚未给出 actual noncanonical clean-core 的 signed alpha/delta 解积分字典。",
+      "proved": false,
+      "remaining": "证明 RegisteredAlphaDeltaDisintegrationDictionaryAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-fiber-emitter-field-audit-router.json": "2806c0f1a4f31e5b93572ca82ee42239027851acf2b7371bab7de3b60355ebc2",
+    "docs/monograph/prime-matrix-clean-core-layer-transfer-path-router.json": "8a81487e9dec7f7007ac79828b898e439ea316204e4195a6e004e5ab3b217578",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-triad-a1-continuous-actual-payment-selection.json": "40b5e4849328bb8434be285105482d4b3d046b61ec2fa69bf5ef8d77af361874",
+    "docs/monograph/prime-matrix-triad-a1-decision-tree-formula-router.json": "d761fdc37db29bbb195d8f557abfac398e78fbf5f4bf71ea51952c137d4874e8"
+  },
+  "status": "alpha_delta_lift_reduced_to_registered_signed_disintegration_dictionary_open"
+}
