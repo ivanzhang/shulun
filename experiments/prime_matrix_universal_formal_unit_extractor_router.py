@@ -85,8 +85,9 @@ def is_extractor_proof_like(payload: dict[str, Any]) -> str | None:
     return None
 
 
-def scan_proofs(root: Path) -> dict[str, list[dict[str, Any]]]:
+def scan_proofs(root: Path, exclude_paths: list[Path] | None = None) -> dict[str, list[dict[str, Any]]]:
     """扫描普遍抽取定理相关证明。"""
+    excluded = {path.resolve() for path in (exclude_paths or [])}
     found: dict[str, list[dict[str, Any]]] = {
         OLD_ATOM: [],
         PARTITION_ATOM: [],
@@ -96,6 +97,8 @@ def scan_proofs(root: Path) -> dict[str, list[dict[str, Any]]]:
     }
     for path in sorted(root.rglob("*.json")):
         if "__pycache__" in path.parts:
+            continue
+        if path.resolve() in excluded:
             continue
         try:
             payload = load_json(path)
@@ -185,9 +188,7 @@ def build_rows(
     assignment_closed = proof_closed(proofs[ASSIGNMENT_ATOM])
     noloss_closed = proof_closed(proofs[NOLOSS_ATOM])
     hash_closed = proof_closed(proofs[HASH_ATOM])
-    theorem_closed = proof_closed(proofs[OLD_ATOM]) or all(
-        [partition_closed, assignment_closed, noloss_closed, hash_closed]
-    )
+    theorem_closed = all([partition_closed, assignment_closed, noloss_closed, hash_closed])
     first_open = next(
         (
             atom
@@ -278,11 +279,17 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     previous = load_json(paths["previous"])
     taxonomy = load_json(paths["taxonomy"])
     emitter = load_json(paths["emitter"])
-    proofs = scan_proofs(DOCS)
+    proofs = scan_proofs(
+        DOCS,
+        exclude_paths=[DEFAULT_JSON, paths.get("json_out", DEFAULT_JSON)],
+    )
     rows = build_rows(previous, taxonomy, emitter, proofs)
     interface_closed = next(item["closed"] for item in rows if item["gate"] == INTERFACE_ATOM)
     theorem_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
-    evidence_paths = list(paths.values())
+    evidence_paths = [paths[key] for key in ["previous", "taxonomy", "emitter"]]
+    for records in proofs.values():
+        evidence_paths.extend(ROOT / item["path"] for item in records)
+    evidence_paths = list(dict.fromkeys(evidence_paths))
     partition_closed = proof_closed(proofs[PARTITION_ATOM])
     assignment_closed = proof_closed(proofs[ASSIGNMENT_ATOM])
     noloss_closed = proof_closed(proofs[NOLOSS_ATOM])
@@ -439,6 +446,7 @@ def main() -> None:
         "previous": args.previous,
         "taxonomy": args.taxonomy,
         "emitter": args.emitter,
+        "json_out": args.json_out,
     }
     result = run(paths)
     args.json_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

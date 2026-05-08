@@ -1,8 +1,8 @@
 # Prime Matrix 普遍 formal unit 抽取定理路由器
 
-**状态：** `universal_extractor_interface_closed_SourceFamilyAssignmentTotalityLemma_open`
+**状态：** `universal_extractor_interface_closed_NoLossReturnAccountingLemma_open`
 
-UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。下一最窄点是 `SourceFamilyAssignmentTotalityLemma`。
+UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。下一最窄点是 `NoLossReturnAccountingLemma`。
 
 ```text
 counterexample_assumption_only=true
@@ -32,7 +32,7 @@ UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheor
 
 - UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger: `0`
 - FormalUnitPartitionCoverageLemma: `1`
-- SourceFamilyAssignmentTotalityLemma: `0`
+- SourceFamilyAssignmentTotalityLemma: `1`
 - NoLossReturnAccountingLemma: `0`
 - CanonicalFormalUnitHashStabilityLemma: `0`
 
@@ -45,13 +45,13 @@ UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheor
 | TaxonomyAndEmitterImported | `true` | `true` | 来源族 taxonomy、记录发射器和源记录 schema 均已闭合。 | 无来源格式剩余。 |
 | UniversalExtractorTheoremInterfaceClosed | `true` | `true` | 普遍抽取定理的输入、输出和四个子门已固定。 | UniversalExtractorTheoremInterfaceClosed |
 | FormalUnitPartitionCoverageAvailable | `true` | `true` | partition coverage 子引理证明状态。 | FormalUnitPartitionCoverageLemma |
-| SourceFamilyAssignmentTotalityAvailable | `false` | `false` | source family assignment totality 子引理证明状态。 | SourceFamilyAssignmentTotalityLemma |
+| SourceFamilyAssignmentTotalityAvailable | `true` | `true` | source family assignment totality 子引理证明状态。 | SourceFamilyAssignmentTotalityLemma |
 | NoLossReturnAccountingAvailable | `false` | `false` | no-loss return accounting 子引理证明状态。 | NoLossReturnAccountingLemma |
 | CanonicalHashStabilityAvailable | `false` | `false` | canonical formal unit hash stability 子引理证明状态。 | CanonicalFormalUnitHashStabilityLemma |
-| UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger | `false` | `false` | 四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。 | SourceFamilyAssignmentTotalityLemma |
+| UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger | `false` | `false` | 四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。 | NoLossReturnAccountingLemma |
 
 ## 5. 下一步
 
-当前唯一最窄点更新为 `SourceFamilyAssignmentTotalityLemma`。
+当前唯一最窄点更新为 `NoLossReturnAccountingLemma`。
 
 审稿边界：本步只更新普遍抽取定理的子门进度，不排斥 PDEC/SAE/Rankin 终端，也不关闭行列无条件定理。
