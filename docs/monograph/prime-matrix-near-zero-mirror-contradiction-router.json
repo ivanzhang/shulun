@@ -1,0 +1,80 @@
+{
+  "blocked_gates": [
+    "AutomaticNearNextZeroFromOneEarlyZero",
+    "GlobalShortRecurrenceExclusion",
+    "MirrorRecursionToSmallerMatrix",
+    "AnnulusTerminalMirrorToZeroRow"
+  ],
+  "certificate_type": "near_zero_mirror_contradiction_router",
+  "closed_gates": [
+    "FullPeriodMirrorSymmetry",
+    "BoundaryShortWrapExclusion",
+    "UsableWeakRoute"
+  ],
+  "current_remaining_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND RegisteredNewLayerPDECFormalUnitAndCapStableSchema AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "current_terminal_gap": "RegisteredNewLayerPDECFormalUnitAndCapStableSchema",
+  "direct_contradiction_from_near_next_zero_and_mirror": false,
+  "plain_conclusion": "不能直接从“P 行以内有非平凡零行”推出“下一个零行很近并与镜像对称矛盾”。镜像对称是真的，但只给周期内配对；近邻复现没有自动性。可保留的硬攻方向是：证明早期零行若存在就必须产生稳定短复现/PDEC 缺陷，或直接证明首端帽边界相位非覆盖。",
+  "retained_route": "BoundaryPhaseNoncoverageOrStableRecurrencePDEC",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "consequence": "给出镜像配对，但不限制中间还可有多少零行。",
+      "gate": "FullPeriodMirrorSymmetry",
+      "meaning": "完整 CRT 行周期内零行集合关于周期中心镜像对称。",
+      "verdict": "usable_but_period_internal_only"
+    },
+    {
+      "closed": false,
+      "consequence": "P=23 首零行 59 后首次复现为 2612，平移 2553；row 118=2*59 不是零行。",
+      "gate": "AutomaticNearNextZeroFromOneEarlyZero",
+      "meaning": "从一个零行自动推出下一个零行很近，需要额外稳定性。",
+      "verdict": "not_proved_and_p23_warns_against_short_step"
+    },
+    {
+      "closed": false,
+      "consequence": "全局 2P 短复现禁止被 P=23 反例否定；可用弱化是边界跨周期短复现禁止，但该命题在反射对称下等价于首零行大于 P，不能作为独立证明出口。",
+      "gate": "GlobalShortRecurrenceExclusion",
+      "meaning": "任意两个零行都不能在 2P 内复现这一强命题为假。",
+      "verdict": "false"
+    },
+    {
+      "closed": true,
+      "consequence": "边界 2P 短复现禁止等价于首零行 r0>P，不能作为独立证明出口。",
+      "gate": "BoundaryShortWrapExclusion",
+      "meaning": "首尾跨周期间隔由镜像等于 2r0-1。",
+      "verdict": "equivalent_to_target_not_independent"
+    },
+    {
+      "closed": false,
+      "consequence": "样本中有完整周期零行的顶层对 4 个，实际较小方阵早期零行 0 个。",
+      "gate": "MirrorRecursionToSmallerMatrix",
+      "meaning": "完整周期镜像偶性不能递归推出更小素数方阵零行。",
+      "verdict": "blocked"
+    },
+    {
+      "closed": false,
+      "consequence": "环带镜像行号命中 45 次，实际成为更小方阵零行 0 次。",
+      "gate": "AnnulusTerminalMirrorToZeroRow",
+      "meaning": "n -> q^2-n 落到早期区间时，覆盖条件变成 q^2 mod ell 非零类。",
+      "verdict": "nonzero_class_terminal_not_zero_row"
+    },
+    {
+      "closed": true,
+      "consequence": "若没有稳定性，零行复现只是稀疏 CRT 相位证书集；若有稳定性，则形成命名结构缺陷。",
+      "gate": "UsableWeakRoute",
+      "meaning": "可用方向是首端帽边界非覆盖，或证明早期零行强制稳定短复现后回流 PDEC/SAE/ColumnCRT。",
+      "verdict": "boundary_phase_noncoverage_or_stable_recurrence_return"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-annulus-mirror-localization-audit.json": "18c7f06339f5791a564fdfb597b602744d703382a4cbacf83b3556f8ee7f3cca",
+    "docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.json": "df0a83ffa87ff7e582b7492d6aa935042a4a0b1f27d88df5ea42ce43798d9cab",
+    "docs/monograph/prime-matrix-p23-zero-recurrence-audit.json": "bcab27ca2e00a2cf01e7599f52822a980fd9aa6ec96ce154d26ade61dc9c2121",
+    "docs/monograph/prime-matrix-recursive-mirror-descent-audit.json": "e8204beed7557ff7fd3f3eedf870d6b2a623849b57fbaf96797b2dc8d14088b5",
+    "docs/monograph/prime-matrix-short-recurrence-gap-audit.json": "b9ffc4c7fc9ba5d71daf20d8b3a0d3cffcf3e288f4d7b4e1978f11d92232b906"
+  },
+  "status": "direct_near_zero_mirror_contradiction_rejected_boundary_phase_route_retained",
+  "structural_law": "A zero row is a CRT phase certificate, not a point in an arithmetic progression of zero rows. Full-period reflection pairs every certificate with its mirror, but it does not force a nearby second certificate. The strong global no-short-recurrence statement is false, while the boundary no-short-wrap statement is equivalent to the desired first-zero delay. Therefore the proposed contradiction can close only after an additional stability lemma: an early zero row must force a stable short recurrence or a same-formal-unit phase defect. Without that input the correct target is boundary phase noncoverage and high-prime patching delay."
+}

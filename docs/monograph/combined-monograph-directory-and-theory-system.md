@@ -4913,6 +4913,43 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 继续新增：
 
 ```text
+experiments/prime_matrix_near_zero_mirror_contradiction_router.py
+docs/monograph/prime-matrix-near-zero-mirror-contradiction-router.md/json
+```
+
+该路由器专门回顾“P 行以内非平凡零行 -> 下一个零行很近 -> 与 CRT 周期镜像对称矛盾”这条思路。
+结论为：
+
+```text
+direct_contradiction_from_near_next_zero_and_mirror=false；
+row_column_unconditional_closed=false；
+retained_route=BoundaryPhaseNoncoverageOrStableRecurrencePDEC。
+```
+
+可保留的严格事实是：完整 CRT 行周期内零行集合关于周期中心镜像对称；若首零行为 `r0`，则跨周期
+首尾镜像间隔为 `2r0-1`，所以 `r0<=P` 等价于边界出现 `<=2P-1` 的短间隔。但这不是独立矛盾，
+而是目标命题的等价改写。
+
+不能直接使用的跳步有三项。第一，从一个零行自动推出“下一个零行很近”没有已证机制；`P=23` 的
+首零行 `59` 后首次复现为 `2612`，平移 `2553`，且 `118=2*59` 不是零行。第二，全局 `2P` 短复现
+禁止为假；`P=23` 周期内部有多对间隔不超过 `2P` 的零行。第三，镜像递归不会自动给出更小素数
+方阵零行；剥层会复活洞，`q^2-n` 反射落到早期区间时变成非零类终端块，而不是小方阵零行。
+
+因此这条思路的可攻形式应改写为：
+
+```text
+EarlyZeroRowWithinP
+  => StableShortRecurrencePDEC/SAE/ColumnCRT
+     OR BoundaryPhaseNoncoverageFailure。
+```
+
+换言之，若能额外证明“早期零行必然强制稳定短复现”，则稳定性会进入同一 formal unit 的
+`PDEC/SAE/ColumnCRT` 缺陷；若不能证明稳定性，就必须回到首端帽边界相位非覆盖和高素数补洞
+CRT 最小代表延迟。该回顾不改变当前 new-layer/DLS/source 输入基。
+
+继续新增：
+
+```text
 experiments/prime_matrix_clean_core_newlayer_pdec_projection_router.py
 docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.md/json
 ```
