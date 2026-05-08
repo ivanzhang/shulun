@@ -1,0 +1,138 @@
+{
+  "certificate_type": "prime_matrix_no_loss_return_accounting_lemma",
+  "status": "no_loss_return_accounting_closed_hash_stability_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.json": "9312ec5cfc7863e0305027a2aab40955430b7304205bc82fc9e07095fba9fee3",
+    "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "b381d8b4dac613b3e7011c26ea93da6fe3a81f9976aa2f31f3f412cd2e25aeb8",
+    "docs/monograph/prime-matrix-partition-coverage-no-loss-equation-router.json": "20d9b3b266bf831e12fb91a84c36cc1ac2b020a74ce110581daad032ff8a2b12",
+    "docs/monograph/prime-matrix-partition-disjointness-boundary-return-router.json": "dcde794bff6980892b978a0f5fa736700e0847eda7739e7102221078e3eb508b",
+    "docs/monograph/prime-matrix-source-family-assignment-totality-router.json": "65be4731817ec3ae3f85670095cdd83a4052e0e9273d80c41e1f24e4b7e51c72",
+    "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "no_loss_return_accounting_lemma": true,
+  "proved": true,
+  "coverage_complete": true,
+  "no_loss_return_accounting_closed": true,
+  "current_narrowest_atom": "CanonicalFormalUnitHashStabilityLemma",
+  "downstream_atoms": [
+    "CanonicalFormalUnitHashStabilityLemma"
+  ],
+  "reduction_formula": "NoLossReturnAccountingLemma => PartitionNoLossAndDisjointness AND SourceFamilyAssignmentTotality AND EmitterDownstreamReturn AND TerminalSchemaReconciliation AND MultiplicityAbsorption.",
+  "accounting_equation": "O(w)=SourceRecords disjoint_union NamedReturnRecords; Lost(O)=empty.",
+  "accounting_laws": [
+    {
+      "law": "finite_obligation_domain",
+      "formula": "O(w) is finite and canonically partitioned.",
+      "meaning": "partition coverage 给出有限义务域，所有后续记账只在 O(w) 内发生。"
+    },
+    {
+      "law": "total_source_assignment",
+      "formula": "assign: O(w) -> SourceFamilies union NamedReturns is total.",
+      "meaning": "source assignment totality 已保证每个 obligation 有登记来源族或命名回流归宿。"
+    },
+    {
+      "law": "named_return_totality",
+      "formula": "Return(o) in {PDEC, SAE, ColumnCRT, Rankin, ConstantGap, CleanKLS/DLS, DownstreamParameter}.",
+      "meaning": "失败、边界和终端对象保留为命名 return，不允许进入无名 sink。"
+    },
+    {
+      "law": "multiplicity_absorption",
+      "formula": "duplicates -> weighted PDEC or quotient or reuse return.",
+      "meaning": "同坐标重复和跨层复用不会形成第五出口，只能商化、加权或回流。"
+    },
+    {
+      "law": "no_terminal_erasure",
+      "formula": "TerminalNotProved(o) means open return record, not deleted obligation.",
+      "meaning": "PDEC/SAE/Rankin 未排斥时仍作为打开的终端记录存在，不能被当作已证明或丢弃。"
+    },
+    {
+      "law": "conservation_equation",
+      "formula": "O(w)=disjoint_union(SourceRecords) disjoint_union(NamedReturnRecords), Lost(O)=empty.",
+      "meaning": "本引理只证明不漏账；不证明任何终端族不存在。"
+    }
+  ],
+  "plain_conclusion": "NoLossReturnAccountingLemma 已闭合：未进入普通来源族的义务都显式保留为 PDEC/SAE/ColumnCRT/Rankin/constant-gap/downstream-parameter 等命名 return。下一最窄点是 `CanonicalFormalUnitHashStabilityLemma`。",
+  "rows": [
+    {
+      "gate": "NoLossReturnAccountingGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 no-loss return accounting。",
+      "remaining": "NoLossReturnAccountingLemma"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步只整理假设早期零行 witness 的义务账本，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "PartitionNoLossAndDisjointnessImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "O(w) 覆盖不漏、key-fibers 不交，重复和边界项已有 return 承载位置。",
+      "remaining": "无义务域丢失口。"
+    },
+    {
+      "gate": "SourceFamilyAssignmentTotalityImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个 formal unit obligation 已落入已登记来源族或父级 named return payload。",
+      "remaining": "无未分配 obligation。"
+    },
+    {
+      "gate": "EmitterDownstreamReturnImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "七个来源族均有 downstream/return 目标，失败时不进入无名 sink。",
+      "remaining": "具体参数账本仍可下游打开。"
+    },
+    {
+      "gate": "TerminalSchemaReconciliationImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "抽象终端包已调和为全局 PDEC/sparse/SAE/ColumnCRT/Rankin 等命名终端桶。",
+      "remaining": "终端排斥仍未证明。"
+    },
+    {
+      "gate": "MultiplicityStitchingAbsorbed",
+      "closed": true,
+      "proved": true,
+      "meaning": "口径不一致、同坐标重复和跨层复用只允许 weighted/quotient/reuse return。",
+      "remaining": "不产生第五出口。"
+    },
+    {
+      "gate": "TerminalExclusionNotUsed",
+      "closed": true,
+      "proved": false,
+      "meaning": "no-loss 只要求终端对象被保留为打开记录，不要求 PDEC/SAE/Rankin 已被排斥。",
+      "remaining": "GlobalPDECorSparseTerminalExclusion 仍保留给后续。"
+    },
+    {
+      "gate": "NoLossReturnAccountingLemma",
+      "closed": true,
+      "proved": true,
+      "meaning": "所有 obligation 都在 SourceRecords 或 NamedReturnRecords 中守恒；Lost(O)=empty。",
+      "remaining": "CanonicalFormalUnitHashStabilityLemma"
+    }
+  ],
+  "closed_gates": [
+    "NoLossReturnAccountingGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "PartitionNoLossAndDisjointnessImported",
+    "SourceFamilyAssignmentTotalityImported",
+    "EmitterDownstreamReturnImported",
+    "TerminalSchemaReconciliationImported",
+    "MultiplicityStitchingAbsorbed",
+    "TerminalExclusionNotUsed",
+    "NoLossReturnAccountingLemma"
+  ],
+  "open_gates": []
+}
