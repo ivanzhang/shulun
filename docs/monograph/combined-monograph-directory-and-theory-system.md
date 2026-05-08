@@ -6666,3 +6666,72 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
 下一步最窄目标更新为 `AnchorFiberSaturationPDECOrSAEReturn`：证明 canonical q-fiber 近饱和不能持续支付早期零行，或从近饱和中抽取同 formal unit 的 PDEC/SAE 证书。
+
+## Prime Matrix anchor fiber 饱和命名回流 schema 路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_anchor_fiber_saturation_return_schema_router.py
+docs/monograph/prime-matrix-anchor-fiber-saturation-return-schema-router.md/json
+```
+
+该路由器直接攻击 `AnchorFiberSaturationPDECOrSAEReturn`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+anchor_fiber_saturation_return_schema_closed=true；
+anchor_specific_fiber_gap_removed=true；
+pdec_or_sae_terminal_exclusion_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=AnchorFiberSaturationPDECOrSAEReturn；
+terminal_gap_after_router=NoAnchorSpecificFiberSaturationGap_AfterNamedPDECOrSAEReturn。
+```
+
+固定 `q` 后，`m` 位于长度 `<sqrt(P)` 的有限素数窗口，物理原子为 `(x,q,m,c)`，因此 fiber 饱和可登记为有限 formal unit packet。若同一 fiber 签名沿反例族持久近饱和，则必须提交同 formal unit primitive PDEC schema；若只孤立出现，则必须提交有限 LocalSurvivor/SAE packet schema。没有 anchor 专属第四出口。
+
+替换律为：
+
+```text
+AnchorFiberSaturationPDECOrSAEReturn
+  =>
+NoAnchorSpecificFiberSaturationGap_AfterNamedPDECOrSAEReturn。
+```
+
+已经闭合的门为：
+
+```text
+AnchorFiberSaturationGateActive；
+FiniteShortFiberFormalUnit；
+PersistentFiberSaturationAdmitsPDEC；
+IsolatedFiberSaturationAdmitsSparseSAE；
+NoUnnamedFiberSaturationExit；
+AnchorFiberSaturationPDECOrSAEReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+GlobalPDECorSparseTerminalExclusion。
+```
+
+这不是新的 anchor 专属 gap：若未来实际物化新的 persistent PDEC 或 sparse packet，必须由
+`FutureExplicitPrimitivePDECSchema` 或 `FutureExplicitSparsePacketExtractorSchema` 接管。
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND CompositeCofactorDepthDescentOrNamedReturn
+AND EarlyBandLocalSurvivorOrSAEExclusion
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+anchor 专属 fiber gap 已删除。下一步最窄目标回到 `CompositeCofactorDepthDescentOrNamedReturn`。
