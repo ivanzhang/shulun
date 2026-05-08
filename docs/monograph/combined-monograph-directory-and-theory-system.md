@@ -5960,3 +5960,92 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标更新为 `NewLayerRankTwoCapStablePDECBudgetLedger`。这一步仍不是行/列无条件闭合；
 它把 new-layer 集中支的准入问题压成真正的同单位预算账本。
+
+## Prime Matrix new-layer 二秩预算账本路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_newlayer_ranktwo_budget_ledger_router.py
+docs/monograph/prime-matrix-newlayer-ranktwo-budget-ledger-router.md/json
+```
+
+该路由器直接攻击 `NewLayerRankTwoCapStablePDECBudgetLedger`。结论为：
+
+```text
+newlayer_ranktwo_budget_ledger_reduced=true；
+newlayer_ranktwo_budget_independent_input_removed=true；
+newlayer_pdec_budget_inequality_unconditionally_proved=false；
+newlayer_no_concentration_flat_admission_proved=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=NewLayerRankTwoCapStablePDECBudgetLedger；
+terminal_gap_after_router=NewLayerNoConcentrationImpliesFlatAdmission。
+```
+
+核心结构不是数值估计，而是同一 formal unit 上的逆否路由：
+
+```text
+NewLayerRankTwoCapStablePDECBudgetLedger
+  same formal unit Omega'_A=A x F_r；
+  if U_CRT >= L_PDEC:
+    cap localization gives a finite cyclic arc cap；
+    old-axis cap   => old PDEC / ColumnCRT / SAE return；
+    new-fiber cap  => new-layer PDEC cap or flat residual；
+    mixed-axis cap => transverse split, then named return or flat residual；
+  therefore no independent budget-ledger terminal remains。
+```
+
+方向分裂为：
+
+```text
+old_axis       -> projection to old formal unit; old PDEC/ColumnCRT/SAE return；
+new_fiber_axis -> fiber residue b mod r; new-layer cap or flat admission；
+mixed_axis     -> finite character arc in A x F_r; transverse split then flat admission。
+```
+
+替换律为：
+
+```text
+NewLayerRankTwoCapStablePDECBudgetLedger
+  => absorbed by named cap returns OR NewLayerNoConcentrationImpliesFlatAdmission。
+```
+
+注意：这一步删除的是独立预算账本原子，不是宣称 new-layer flat admission 已经完成。
+
+已经闭合的门为：
+
+```text
+NewLayerRankTwoBudgetInputActive；
+SameFormalUnitBudgetLedgerRegistered；
+RankTwoCapLocalizationImported；
+UniformFiniteArcBasisImported；
+ProductCharacterDirectionSplit；
+FiniteArcTransverseTrichotomyInherited；
+TransverseFlatResidualUsesNewLayerFlatGate；
+NoCycleAndNamedReturnPreserved；
+NewLayerRankTwoBudgetIndependentGateRemoved。
+```
+
+唯一开放门为：
+
+```text
+NewLayerNoConcentrationImpliesFlatAdmission。
+```
+
+更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSPointLoadColumnCRTBoundOrNamedReturn
+AND DLSShortWindowSAEBoundOrNamedReturn
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND NewLayerNoConcentrationImpliesFlatAdmission
+AND DLSFlatHighModLargeSieveAbsorption
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标更新为 `NewLayerNoConcentrationImpliesFlatAdmission`。必须证明：删除/回流所有可登记
+PDEC cap 后，剩余新增层对象确实满足 flat-DLS/KLS 准入；否则必须输出新的命名
+PDEC/SAE/ColumnCRT/multiplicity 证书。

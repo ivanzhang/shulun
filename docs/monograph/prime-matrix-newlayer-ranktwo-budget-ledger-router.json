@@ -1,0 +1,121 @@
+{
+  "certificate_type": "newlayer_ranktwo_budget_ledger_router",
+  "closed_gates": [
+    "NewLayerRankTwoBudgetInputActive",
+    "SameFormalUnitBudgetLedgerRegistered",
+    "RankTwoCapLocalizationImported",
+    "UniformFiniteArcBasisImported",
+    "ProductCharacterDirectionSplit",
+    "FiniteArcTransverseTrichotomyInherited",
+    "TransverseFlatResidualUsesNewLayerFlatGate",
+    "NoCycleAndNamedReturnPreserved",
+    "NewLayerRankTwoBudgetIndependentGateRemoved"
+  ],
+  "direction_split": {
+    "mixed_axis": "finite character arc in A x F_r; transverse split then flat admission",
+    "new_fiber_axis": "fiber residue b mod r; new-layer cap or flat admission",
+    "old_axis": "projection to old formal unit; old PDEC/ColumnCRT/SAE return"
+  },
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DLSPointLoadColumnCRTBoundOrNamedReturn AND DLSShortWindowSAEBoundOrNamedReturn AND DLSFixedWheelUnitPeakDilutionOrPDECReturn AND NewLayerNoConcentrationImpliesFlatAdmission AND DLSFlatHighModLargeSieveAbsorption AND SignedGeometricLedgerVariationBranchLiftAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "newlayer_no_concentration_flat_admission_proved": false,
+  "newlayer_pdec_budget_inequality_unconditionally_proved": false,
+  "newlayer_ranktwo_budget_independent_input_removed": true,
+  "newlayer_ranktwo_budget_ledger_reduced": true,
+  "next_priority": "NewLayerNoConcentrationImpliesFlatAdmission",
+  "open_gates": [
+    "NewLayerNoConcentrationImpliesFlatAdmission"
+  ],
+  "plain_conclusion": "本步没有证明所有 new-layer 二秩核的 U_CRT<L_PDEC；它证明更窄的结构事实：若该预算账本失败，则同一 formal unit 内必产生有限字符弧 cap。该 cap 要么回流 SAE/refined PDEC/ColumnCRT/multiplicity，要么在非平坦缺陷剥离后成为 NewLayerNoConcentrationImpliesFlatAdmission 的 flat residual。因此二秩预算账本不再是独立最终输入。",
+  "replacement": {
+    "NewLayerRankTwoCapStablePDECBudgetLedger": "absorbed by named cap returns OR NewLayerNoConcentrationImpliesFlatAdmission"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NewLayerRankTwoBudgetInputActive",
+      "meaning": "上一层已把合法 new-layer schema 的唯一开放门定位为二秩 cap-stable 预算账本。",
+      "proved": true,
+      "remaining": "检查它是否真是独立新原子。"
+    },
+    {
+      "closed": true,
+      "gate": "SameFormalUnitBudgetLedgerRegistered",
+      "meaning": "Omega'_A=A x F_r、phase、weight 与同一 C_P 投影塔已固定，预算比较不换集合不换权重。",
+      "proved": true,
+      "remaining": "若换口径则回流 Stitching/Multiplicity，不进入本账本。"
+    },
+    {
+      "closed": true,
+      "gate": "RankTwoCapLocalizationImported",
+      "meaning": "同 formal unit 二秩 cap-stable 核的预算失败必给方向帽质量下界。",
+      "proved": true,
+      "remaining": "U_CRT>=L_PDEC 不能作为无名失败保留，必须输出 cap witness。"
+    },
+    {
+      "closed": true,
+      "gate": "UniformFiniteArcBasisImported",
+      "meaning": "连续方向帽在有限 formal unit 上等价于有限循环弧 cap 基。",
+      "proved": true,
+      "remaining": "只需处理旧轴、新 fiber、混合轴上的有限字符弧。"
+    },
+    {
+      "closed": true,
+      "gate": "ProductCharacterDirectionSplit",
+      "meaning": "Omega'_A=A x F_r 中每个非平凡方向分成 old-axis、new-fiber 或 mixed-axis，均仍是有限字符弧预像。",
+      "proved": true,
+      "remaining": "old-axis 回旧层 PDEC/ColumnCRT；new/mixed 进入 new-layer cap/flat 分裂。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteArcTransverseTrichotomyInherited",
+      "meaning": "高质量有限弧只有低横向支撑、持久横向偏斜、横向平坦分散三类。",
+      "proved": true,
+      "remaining": "前两类回流 SAE/ColumnCRT/refined PDEC；平坦类进入 clean/flat 门。"
+    },
+    {
+      "closed": true,
+      "gate": "TransverseFlatResidualUsesNewLayerFlatGate",
+      "meaning": "非平坦缺陷剥离后，剩余正是 new-layer 无集中 flat admission 的对象。",
+      "proved": false,
+      "remaining": "仍需证明 NewLayerNoConcentrationImpliesFlatAdmission 及后续 flat DLS/KLS 吸收。"
+    },
+    {
+      "closed": true,
+      "gate": "NoCycleAndNamedReturnPreserved",
+      "meaning": "cap 细化不会在同层无限循环；升层只能进入 profinite/new-layer PDEC 或 CleanKLS/DLS。",
+      "proved": true,
+      "remaining": "不允许新增第五类终端。"
+    },
+    {
+      "closed": true,
+      "gate": "NewLayerRankTwoBudgetIndependentGateRemoved",
+      "meaning": "二秩预算账本失败已被强制材料化为有限弧 cap，并被路由到命名回流或 new-layer flat gate。",
+      "proved": true,
+      "remaining": "它不再作为独立开放输入保留。"
+    },
+    {
+      "closed": false,
+      "gate": "NewLayerNoConcentrationImpliesFlatAdmission",
+      "meaning": "当前材料尚未证明删除所有可登记 PDEC cap 后的 residual 自动满足 flat-DLS/KLS 准入。",
+      "proved": false,
+      "remaining": "下一步最窄目标。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-newlayer-external-lemma-match-router.md": "fca45c761bf393efe014dcd8f60ea7dca6ab1008c44319efc68dc128c6ca566e",
+    "docs/monograph/prime-matrix-clean-core-newlayer-pdec-projection-router.json": "df0a83ffa87ff7e582b7492d6aa935042a4a0b1f27d88df5ea42ce43798d9cab",
+    "docs/monograph/prime-matrix-newlayer-pdec-schema-admission-router.json": "448ce2b5e20fa5fa6d14a1a7e4c0272d64718721b7755d1d7390f377cee04f94",
+    "docs/monograph/prime-matrix-newlayer-pdec-tower-entropy-contract.md": "4b7a182dfd863d72d76011fb55e8acf306f9e8d0726148465e0a6109c7692f5e",
+    "docs/monograph/prime-matrix-pdec-cap-finite-arc-transverse-router.json": "fcfa8a645382e1845e6d3b3f548185d5ccb4c9339016cb752a4bb066064c8b85",
+    "docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.json": "b58e2d370206d79c4cb4a8df05ab7e8a287a18999a02988fd44e9af34a838da2",
+    "docs/monograph/prime-matrix-pdec-cap-refinement-no-cycle.md": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-clean-reduction-router.json": "ba18388fb792eb7c9c7b6709f1cacaaea0ed56b206fedeead0e8420badb493a7",
+    "docs/monograph/prime-matrix-pdec-cap-uniform-cap-finite-basis-router.json": "7b5af35dd57b30e836f3bcc0989985f57a3bffc90d4e7206e1d83740641e63c7",
+    "docs/monograph/prime-matrix-pdec-dual-failure-absorption-contract.md": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b"
+  },
+  "status": "newlayer_ranktwo_budget_ledger_reduced_to_flat_admission_gate",
+  "terminal_gap_after_router": "NewLayerNoConcentrationImpliesFlatAdmission",
+  "terminal_gap_before_router": "NewLayerRankTwoCapStablePDECBudgetLedger"
+}
