@@ -1,12 +1,13 @@
 {
   "certificate_type": "prime_matrix_universal_formal_unit_extractor_router",
-  "status": "universal_extractor_interface_closed_NoLossReturnAccountingLemma_open",
+  "status": "universal_extractor_interface_closed_CanonicalFormalUnitHashStabilityLemma_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "75b1b9cea00a74f818c3b3079038a0e46322c263ff0d71758bbef9048210e47b",
     "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.json": "8358aa6fd3a6bb4c28847b40ecef3177f22939e9114a86ef962b633509c7e2ab",
     "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
     "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "b381d8b4dac613b3e7011c26ea93da6fe3a81f9976aa2f31f3f412cd2e25aeb8",
-    "docs/monograph/prime-matrix-source-family-assignment-totality-router.json": "65be4731817ec3ae3f85670095cdd83a4052e0e9273d80c41e1f24e4b7e51c72"
+    "docs/monograph/prime-matrix-source-family-assignment-totality-router.json": "65be4731817ec3ae3f85670095cdd83a4052e0e9273d80c41e1f24e4b7e51c72",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.json": "85267c016c03c757d219b04712940825a69020299717a6448aa12b1d110215d2"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
@@ -35,7 +36,14 @@
         "coverage_complete": true
       }
     ],
-    "NoLossReturnAccountingLemma": [],
+    "NoLossReturnAccountingLemma": [
+      {
+        "path": "docs/monograph/prime-matrix-no-loss-return-accounting-router.json",
+        "status": "no_loss_return_accounting_closed_hash_stability_open",
+        "proved": true,
+        "coverage_complete": true
+      }
+    ],
     "CanonicalFormalUnitHashStabilityLemma": []
   },
   "theorem_sublemmas": [
@@ -56,14 +64,14 @@
       "meaning": "formal_unit_id、source_hash 与下游 source_tuple_hash 在分割和回流下稳定。"
     }
   ],
-  "current_narrowest_atom": "NoLossReturnAccountingLemma",
+  "current_narrowest_atom": "CanonicalFormalUnitHashStabilityLemma",
   "downstream_atoms": [
     "SourceFamilyAssignmentTotalityLemma",
     "NoLossReturnAccountingLemma",
     "CanonicalFormalUnitHashStabilityLemma"
   ],
   "reduction_formula": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger => UniversalExtractorTheoremInterfaceClosed AND FormalUnitPartitionCoverageLemma AND SourceFamilyAssignmentTotalityLemma AND NoLossReturnAccountingLemma AND CanonicalFormalUnitHashStabilityLemma.",
-  "plain_conclusion": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。下一最窄点是 `NoLossReturnAccountingLemma`。",
+  "plain_conclusion": "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger 的接口已闭合；已吸收当前闭合子门。下一最窄点是 `CanonicalFormalUnitHashStabilityLemma`。",
   "rows": [
     {
       "gate": "UniversalExtractorGateActive",
@@ -109,8 +117,8 @@
     },
     {
       "gate": "NoLossReturnAccountingAvailable",
-      "closed": false,
-      "proved": false,
+      "closed": true,
+      "proved": true,
       "meaning": "no-loss return accounting 子引理证明状态。",
       "remaining": "NoLossReturnAccountingLemma"
     },
@@ -126,7 +134,7 @@
       "closed": false,
       "proved": false,
       "meaning": "四个子门全闭合后，才可得到任意早期零行 witness 的 formal unit records。",
-      "remaining": "NoLossReturnAccountingLemma"
+      "remaining": "CanonicalFormalUnitHashStabilityLemma"
     }
   ],
   "closed_gates": [
@@ -135,10 +143,10 @@
     "TaxonomyAndEmitterImported",
     "UniversalExtractorTheoremInterfaceClosed",
     "FormalUnitPartitionCoverageAvailable",
-    "SourceFamilyAssignmentTotalityAvailable"
+    "SourceFamilyAssignmentTotalityAvailable",
+    "NoLossReturnAccountingAvailable"
   ],
   "open_gates": [
-    "NoLossReturnAccountingAvailable",
     "CanonicalHashStabilityAvailable",
     "UniversalEarlyZeroRowFormalUnitExtractorTheoremLedger"
   ]
