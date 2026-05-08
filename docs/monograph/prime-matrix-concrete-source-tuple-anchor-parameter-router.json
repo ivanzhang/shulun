@@ -1,0 +1,173 @@
+{
+  "certificate_type": "prime_matrix_concrete_source_tuple_anchor_parameter_router",
+  "status": "source_tuple_anchor_parameter_schema_closed_formal_unit_records_missing",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-anchor-interval-enumeration-router.json": "b5d210d2306cec745ad8f3a904f46372b8d2af746618656a2459ddac3e1948ad",
+    "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
+    "docs/monograph/prime-matrix-complement-anchor-d0k-parameter-router.json": "e72e673bc0437631320268e29ddc0dd848bfa445dd2f347861f7cab28a99c8b7",
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.json": "1aacdee2ce450b72c81a03c08aef9ab364494c70d801d3c40a5091ab9073f510"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "source_tuple_anchor_parameter_schema_closed": true,
+  "concrete_source_tuple_anchor_parameter_data_closed": false,
+  "data_like_json": {
+    "ConcreteFormalUnitSourceRecordLedger": [],
+    "AnchorSetReconstructionCertificateLedger": []
+  },
+  "schema_fields": [
+    {
+      "field": "formal_unit_id",
+      "meaning": "同一假设反例链的最小稳定单元。"
+    },
+    {
+      "field": "source_family_id",
+      "meaning": "必须来自已登记的有限坏窗来源族。"
+    },
+    {
+      "field": "P_or_P_range",
+      "meaning": "该记录适用的素数或素数范围。"
+    },
+    {
+      "field": "window_id",
+      "meaning": "坏窗或走廊窗口编号。"
+    },
+    {
+      "field": "L,R",
+      "meaning": "窗口 I=[L,R] 的整数端点。"
+    },
+    {
+      "field": "A",
+      "meaning": "互补锚集合，必须可由 source record 复算。"
+    },
+    {
+      "field": "D0,K,Omega",
+      "meaning": "dyadic core scale、omega 截断和低重叠阈值。"
+    },
+    {
+      "field": "phase_rule",
+      "meaning": "有限相位谓词；无相位过滤时写 identity。"
+    },
+    {
+      "field": "anchor_set_hash",
+      "meaning": "排序后 A 与 source tuple 的哈希。"
+    },
+    {
+      "field": "source_tuple_hash",
+      "meaning": "锁定以上全部字段的 canonical hash。"
+    }
+  ],
+  "reconstruction_laws": [
+    {
+      "law": "same_formal_unit",
+      "meaning": "P/range、window、A、D0、K、Omega、phase_rule 必须来自同一 formal_unit_id。"
+    },
+    {
+      "law": "finite_source_family",
+      "meaning": "source_family_id 必须属于坏窗来源族抽取路由器列出的有限族。"
+    },
+    {
+      "law": "canonical_anchor_hash",
+      "meaning": "anchor_set_hash=H(source_tuple_key, sorted(A))，禁止口头或后验 anchor set。"
+    },
+    {
+      "law": "tuple_hash_lock",
+      "meaning": "source_tuple_hash=H(formal_unit_id,P/window,I,A,D0,K,Omega,phase_rule)。"
+    }
+  ],
+  "current_narrowest_atom": "ConcreteFormalUnitSourceRecordLedger",
+  "secondary_narrowest_atom": "AnchorSetReconstructionCertificateLedger",
+  "downstream_atoms": [
+    "AnchorIntervalCertificateFileLedger"
+  ],
+  "reduction_formula": "ConcreteSourceTupleAnchorParameterDataLedger => SourceTupleAnchorParameterSchemaClosed AND ConcreteFormalUnitSourceRecordLedger AND AnchorSetReconstructionCertificateLedger.",
+  "plain_conclusion": "ConcreteSourceTupleAnchorParameterDataLedger 的字段和哈希纪律已闭合：每条记录必须来自同一 formal unit，锁定 source_family、P/window、I=[L,R]、A、D0/K/Omega 与 phase_rule。当前缺少逐 formal unit 的 concrete source record 数据，因此新的最窄点是 `ConcreteFormalUnitSourceRecordLedger`。",
+  "rows": [
+    {
+      "gate": "ConcreteSourceTupleGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 concrete source tuple/anchor 参数数据。",
+      "remaining": "ConcreteSourceTupleAnchorParameterDataLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设反例链条，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "UpstreamEmittersImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "锚区间端点公式、坏窗来源记录发射器和参数纪律均已固定。",
+      "remaining": "无格式出口剩余。"
+    },
+    {
+      "gate": "FormalTupleFieldsPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "正式 inventory 已要求 family_id、A/hash、D0/K/Omega 和 phase_rule。",
+      "remaining": "字段名和来源口径固定。"
+    },
+    {
+      "gate": "SourceTupleAnchorParameterSchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "source tuple/anchor 参数数据的字段、哈希和同 formal unit 纪律已闭合。",
+      "remaining": "SourceTupleAnchorParameterSchemaClosed"
+    },
+    {
+      "gate": "ConcreteFormalUnitSourceRecordsAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库尚未发现逐 formal unit 的 concrete source record 数据。",
+      "remaining": "ConcreteFormalUnitSourceRecordLedger"
+    },
+    {
+      "gate": "ConcreteFormalUnitSourceRecordsComplete",
+      "closed": false,
+      "proved": false,
+      "meaning": "formal unit source records 必须覆盖所有假设反例链诱导的来源记录。",
+      "remaining": "ConcreteFormalUnitSourceRecordLedger"
+    },
+    {
+      "gate": "AnchorSetReconstructionCertificatesAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库尚未发现 anchor set 与 D0/K/Omega/phase_rule 的重构证书。",
+      "remaining": "AnchorSetReconstructionCertificateLedger"
+    },
+    {
+      "gate": "AnchorSetReconstructionCertificatesComplete",
+      "closed": false,
+      "proved": false,
+      "meaning": "重构证书必须逐 source tuple 给出 anchor_set_hash 与 source_tuple_hash。",
+      "remaining": "AnchorSetReconstructionCertificateLedger"
+    },
+    {
+      "gate": "ConcreteSourceTupleAnchorParameterDataLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "schema 已闭合，但没有 concrete formal unit 源记录就不能落地 source tuple 参数。",
+      "remaining": "ConcreteFormalUnitSourceRecordLedger"
+    }
+  ],
+  "closed_gates": [
+    "ConcreteSourceTupleGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "UpstreamEmittersImported",
+    "FormalTupleFieldsPinned",
+    "SourceTupleAnchorParameterSchemaClosed"
+  ],
+  "open_gates": [
+    "ConcreteFormalUnitSourceRecordsAvailable",
+    "ConcreteFormalUnitSourceRecordsComplete",
+    "AnchorSetReconstructionCertificatesAvailable",
+    "AnchorSetReconstructionCertificatesComplete",
+    "ConcreteSourceTupleAnchorParameterDataLedger"
+  ]
+}
