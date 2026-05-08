@@ -989,6 +989,47 @@ ExternalDeepInput:
 
 这比“四开放输入”又少了一层分叉：`APSourceLift` 和 generic 反原子都不再是可用终端路线。
 
+继续把最后输入原子化后：
+
+```text
+experiments/prime_matrix_last_remaining_atoms_router.py
+docs/monograph/prime-matrix-last-remaining-atoms-router.md/json
+
+last_remaining_atom_boundaries_closed=true；
+conditional_logic_chain_complete=true；
+all_last_atoms_proved_or_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+通俗地说，当前已经没有“没命名的最后硬点”。最后只剩三个原子：
+
+```text
+ActualFullSNonAPExactSupportAtom：
+  内部自足路线需要证明实际 full-S non-AP 源的精确因子支撑和容量兼容；
+
+ModulusDependentCompletedFullSKLSInput：
+  外部/新深定理路线需要完成型、模数依赖权重的 full-S non-AP Kloosterman 大筛输入；
+
+DStructureRankinIndependentAcceptance：
+  最终晋级需要 D-structure/Tail-log4/finite Rankin 包被独立验收。
+```
+
+因此最终边界闭合可以一句话描述：
+
+```text
+若 ActualFullSNonAPExactSupportAtom 或 ModulusDependentCompletedFullSKLSInput 至少一个成立，
+并且 DStructureRankinIndependentAcceptance 成立，
+则当前无隐藏终端链可把行/列命题升级为完整闭合。
+```
+
+但当前材料还没有证明或独立接受这三个最后原子，所以最终状态仍是：
+
+```text
+证明逻辑链条边界闭合；
+条件闭合定理成立；
+完整全局无条件行/列定理尚未成立。
+```
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

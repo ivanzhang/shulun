@@ -3429,3 +3429,33 @@ ExternalDeepInput:
 
 这一步进一步删除了 `APSourceLift` 和 generic 反原子两个不可用方向，但仍没有自足证明
 noncanonical 包。
+
+继续新增：
+
+```text
+experiments/prime_matrix_last_remaining_atoms_router.py
+docs/monograph/prime-matrix-last-remaining-atoms-router.md/json
+```
+
+该路由器把最后开放输入压成三个原子：
+
+```text
+last_remaining_atom_boundaries_closed=true；
+conditional_logic_chain_complete=true；
+all_last_atoms_proved_or_accepted=false；
+row_column_unconditional_closed=false。
+```
+
+最后原子表为：
+
+```text
+ActualFullSNonAPExactSupportAtom；
+ModulusDependentCompletedFullSKLSInput；
+DStructureRankinIndependentAcceptance。
+```
+
+其中前两者是 noncanonical full-S 补集的二选一闭合方式：要么证明实际 full-S non-AP 源的精确
+支撑/源熵自足定理，要么证明或接受模数依赖 completed full-S Kloosterman 大筛输入。第三者是
+D-structure/Tail-log4/finite Rankin 晋级包的独立验收原子。因此逻辑链条已经条件闭合：前两者
+至少一个成立，且第三者成立时，无隐藏终端链可晋级为完整行/列闭合。当前材料没有证明或独立接受
+这些最后原子，所以完整全局无条件定理仍未成立。
