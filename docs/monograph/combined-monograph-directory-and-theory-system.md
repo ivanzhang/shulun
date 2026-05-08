@@ -6951,3 +6951,74 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标转到 `DLSPointLoadColumnCRTBoundOrNamedReturn`：证明 point-load 不能持续支付
 DLS/BES 危险交集，或把它物化为 `ColumnCRT/displacement PDEC` 或 sparse packet 回流。
+
+## Prime Matrix DLS point-load/ColumnCRT 命名回流 schema 路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_dls_pointload_columncrt_return_schema_router.py
+docs/monograph/prime-matrix-dls-pointload-columncrt-return-schema-router.md/json
+```
+
+该路由器直接攻击 `DLSPointLoadColumnCRTBoundOrNamedReturn`。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+dls_pointload_return_schema_closed=true；
+dls_pointload_specific_gap_removed=true；
+columncrt_independent_terminal_removed=true；
+pdec_columncrt_sae_terminal_exclusion_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=DLSPointLoadColumnCRTBoundOrNamedReturn；
+terminal_gap_after_router=NoDLSPointLoadColumnCRTSpecificGap_AfterDisplacementPDECOrSAEReturn。
+```
+
+DLS/BES 危险交集若落入 point-load 字母表，也不能作为无名同步失败停留。单点高负载若平衡，
+不能支付命名缺陷预算；若持久，必给出有限列位移签名或尾锚签名，进入 `displacement PDEC`、
+`ColumnCRT` 或尾锚 `PDEC`；若孤立，则进入 `SAE/LocalSurvivor` packet。
+
+替换律为：
+
+```text
+DLSPointLoadColumnCRTBoundOrNamedReturn
+  =>
+NoDLSPointLoadColumnCRTSpecificGap_AfterDisplacementPDECOrSAEReturn。
+```
+
+已经闭合的门为：
+
+```text
+DLSPointLoadGateActive；
+PointLoadAlphabetPinned；
+ColumnCRTIndependentExitAbsorbed；
+FiniteDisplacementSignature；
+BalancedPointLoadCannotPayDefectBudget；
+TailAnchorPointLoadAbsorbed；
+PersistentPointLoadAdmitsPDEC；
+SparsePointLoadAdmitsSAE；
+NoDLSPointLoadSpecificFourthExit；
+DLSPointLoadColumnCRTBoundOrNamedReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+DLSFixedWheelUnitPeakDilutionOrPDECReturn；
+GlobalPDECorSparseTerminalExclusion。
+```
+
+这一步只删除 point-load 专属 gap，不证明全局 `PDEC/ColumnCRT/SAE` 终端排斥。更新后的完全自足输入基为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DLSFixedWheelUnitPeakDilutionOrPDECReturn
+AND SignedGeometricLedgerVariationBranchLiftAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标转到 `DLSFixedWheelUnitPeakDilutionOrPDECReturn`：证明固定轮单位类峰被层叠轮稀释，
+或把持久单位峰登记为 `PDEC`。
