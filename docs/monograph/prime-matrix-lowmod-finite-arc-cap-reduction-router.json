@@ -1,0 +1,112 @@
+{
+  "certificate_type": "lowmod_finite_arc_cap_reduction_router",
+  "closed_gates": [
+    "LowModFiniteArcInputPinned",
+    "FiniteArcIsRankOneLowPhaseSlice",
+    "LayeredWheelClampAvailable",
+    "FourierInheritanceClassifiesNewLayer",
+    "NewLayerEnergyDispersionAvailable",
+    "NewLayerTowerNoUnnamedEscape",
+    "SparseColumnNamedReturnsPreserved",
+    "LowPhaseSharedMicroInputsImported"
+  ],
+  "lowmod_finite_arc_cap_mass_bounds_closed": false,
+  "lowmod_finite_arc_independent_input_removed": true,
+  "lowphase_three_micro_inputs_proved": false,
+  "open_gates": [
+    "LowModFiniteArcCapMassBoundsClosed"
+  ],
+  "plain_conclusion": "本步把 LowMod 有限弧 cap 质量界从独立新原子移除：固定轮弧、新增层弧和高模平坦弧分别就是既有 LowPhase 三微输入。因此下一步不应另造 LowMod 第四终端，而应直接证明 LowPhase 三微输入，或从具体 LowModDualCap 中抽取 SAE/ColumnCRT/refined PDEC 回流证书。",
+  "previous_terminal_gap": "LowModFiniteArcDualCapStabilityOrSparseSAE",
+  "reduction_map": {
+    "fixed_wheel_arc": "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+    "high_mod_flat_arc": "DLSFlatHighModLargeSieveAbsorption",
+    "new_layer_arc": "DLSNewLayerFourierConcentrationPDECReturn",
+    "sparse_or_displacement": "SAE finite packet or ColumnCRT-as-PDEC"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LowModFiniteArcInputPinned",
+      "meaning": "上一层已把 LowMod PDEC 容量失败压成未来 primitive schema 的有限弧 cap 质量界。",
+      "proved": true,
+      "remaining": "判断该有限弧 cap 是否独立于既有 LowPhase/DLS 体系。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteArcIsRankOneLowPhaseSlice",
+      "meaning": "有限循环弧 cap 是有限签名空间中的非平凡字符秩一薄片。",
+      "proved": true,
+      "remaining": "LowMod 弧帽可按 LowPhase/横向结构二分处理。"
+    },
+    {
+      "closed": true,
+      "gate": "LayeredWheelClampAvailable",
+      "meaning": "层叠轮夹击场已经给出固定轮单位类峰的命名回流口。",
+      "proved": true,
+      "remaining": "若固定轮峰持续同步，必须给 W-unit PDEC/SAE/ColumnCRT；若稀释则转新增层或平坦 DLS。"
+    },
+    {
+      "closed": true,
+      "gate": "FourierInheritanceClassifiesNewLayer",
+      "meaning": "强 Fourier 频率可区分为继承层与新增素因子层。",
+      "proved": true,
+      "remaining": "新增层集中必须给 new-layer PDEC；否则不能作为固定低模峰。"
+    },
+    {
+      "closed": true,
+      "gate": "NewLayerEnergyDispersionAvailable",
+      "meaning": "新增层能量已经与单峰集中区分开。",
+      "proved": true,
+      "remaining": "若新增层高维分散，则剩余弧帽只能进入 flat DLS/KLS 吸收。"
+    },
+    {
+      "closed": true,
+      "gate": "NewLayerTowerNoUnnamedEscape",
+      "meaning": "无限升层不能作为无名逃逸；熵发散给 PDEC，熵可求和给 CleanKLS/DLS。",
+      "proved": true,
+      "remaining": "仍需对应终端估计，而不是新增 LowMod 出口。"
+    },
+    {
+      "closed": true,
+      "gate": "SparseColumnNamedReturnsPreserved",
+      "meaning": "低支撑、孤窗和列位移弧帽不形成第四出口。",
+      "proved": true,
+      "remaining": "回流 SAE finite packet 或 ColumnCRT-as-PDEC。"
+    },
+    {
+      "closed": true,
+      "gate": "LowPhaseSharedMicroInputsImported",
+      "meaning": "LowMod 有限弧 cap 的三种未闭合场景正是 LowPhase 已命名的三微输入。",
+      "proved": false,
+      "remaining": "DLSFixedWheelUnitPeakDilutionOrPDECReturn AND DLSNewLayerFourierConcentrationPDECReturn AND DLSFlatHighModLargeSieveAbsorption。"
+    },
+    {
+      "closed": false,
+      "gate": "LowModFiniteArcCapMassBoundsClosed",
+      "meaning": "上述三微输入尚未证明，因此 LowMod 有限弧 cap 质量界仍未闭合。",
+      "proved": false,
+      "remaining": "证明 LowPhase 三微输入，或提交显式 LowModDualCap 回流证书。"
+    }
+  ],
+  "shared_micro_inputs": [
+    "DLSFixedWheelUnitPeakDilutionOrPDECReturn",
+    "DLSNewLayerFourierConcentrationPDECReturn",
+    "DLSFlatHighModLargeSieveAbsorption"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.json": "b302c89081f83756adf00c2dc14abce2af16b999ac2acdec4d861d246e97fc9d",
+    "docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.md": "5e3df47871aa9953a3f778c2a8c18421a7c3e1c122c770cc467729d61d2bcd8b",
+    "docs/monograph/prime-matrix-dprc-cylindrical-layered-wheel-clamp.md": "d5282b1dfcb5831e15fa7ed5f358880f4cce7fbcec43ec5a1b3ad8859fc4631d",
+    "docs/monograph/prime-matrix-dprc-fourier-inheritance-classifier.md": "affe3f52689bb12c9cf96ec1f9537cd1dfbdfaa5aaca1b937c7e7bcc04c0f90a",
+    "docs/monograph/prime-matrix-dprc-newlayer-energy-dispersion.md": "9b9917e7a67aba9683ac50b66b3ec7b31f51aa4ea7527c65e1c8d2b741e30888",
+    "docs/monograph/prime-matrix-lowmod-pdec-capacity-failure-router.json": "cba6a192a59cda0fccb799e39aeea1efd4846fb2e0fa4ca2cd219fd027f73c36",
+    "docs/monograph/prime-matrix-newlayer-pdec-tower-entropy-contract.md": "4b7a182dfd863d72d76011fb55e8acf306f9e8d0726148465e0a6109c7692f5e",
+    "docs/monograph/prime-matrix-pdec-cap-finite-arc-transverse-router.md": "7b15ed977b12752746cb68214a63b00b195b3141d9cd3353a1bf96fc77ffaaa8",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md": "e15e466ba60f244fd2d19513951fe6ef9cf0c06fd7a73fbc7ef53fad2d95c79b"
+  },
+  "status": "lowmod_finite_arc_cap_reduced_to_lowphase_three_micro_inputs",
+  "terminal_gap_after_router": "LowPhaseThreeMicroInputsOrExplicitLowModDualCapReturn",
+  "terminal_gap_before_router": "FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas"
+}

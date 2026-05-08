@@ -5750,3 +5750,68 @@ PersistentLowModPDECInequality_UCRT_LT_LPDEC
 其中前四项已经由现有材料和本路由器接线；最后一项仍未证明。
 这一步仍不是无条件闭合；它排除了“PDEC 不等式失败但不给结构见证”的无名出口，
 把下一步推进目标压到未来 LowMod primitive schema 的全局有限弧 cap 质量界。
+
+## Prime Matrix LowMod 有限弧 cap 归约路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_lowmod_finite_arc_cap_reduction_router.py
+docs/monograph/prime-matrix-lowmod-finite-arc-cap-reduction-router.md/json
+```
+
+该路由器继续攻击 `FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas`。结论为：
+
+```text
+lowmod_finite_arc_independent_input_removed=true；
+lowmod_finite_arc_cap_mass_bounds_closed=false；
+lowphase_three_micro_inputs_proved=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas；
+terminal_gap_after_router=LowPhaseThreeMicroInputsOrExplicitLowModDualCapReturn。
+```
+
+归约映射为：
+
+```text
+fixed_wheel_arc      -> DLSFixedWheelUnitPeakDilutionOrPDECReturn；
+new_layer_arc        -> DLSNewLayerFourierConcentrationPDECReturn；
+high_mod_flat_arc    -> DLSFlatHighModLargeSieveAbsorption；
+sparse_or_displacement -> SAE finite packet or ColumnCRT-as-PDEC。
+```
+
+结构律是：LowMod 有限循环弧 cap 是有限签名空间中的非平凡字符秩一薄片，不是新的平行终端。
+固定轮单位类峰、升层新增 Fourier 峰、剥离后的高模平坦残余，分别落入既有 LowPhase/DLS
+三微输入；低支撑、孤窗和列位移弧帽则回流 SAE 或 ColumnCRT-as-PDEC。
+
+已经闭合的门为：
+
+```text
+LowModFiniteArcInputPinned；
+FiniteArcIsRankOneLowPhaseSlice；
+LayeredWheelClampAvailable；
+FourierInheritanceClassifiesNewLayer；
+NewLayerEnergyDispersionAvailable；
+NewLayerTowerNoUnnamedEscape；
+SparseColumnNamedReturnsPreserved；
+LowPhaseSharedMicroInputsImported。
+```
+
+唯一开放门为：
+
+```text
+LowModFiniteArcCapMassBoundsClosed。
+```
+
+新的最窄剩余不再是独立 LowMod 输入，而是：
+
+```text
+FiniteCyclicArcCapMassBoundsForFutureLowModPrimitiveSchemas
+  -> DLSFixedWheelUnitPeakDilutionOrPDECReturn
+     AND DLSNewLayerFourierConcentrationPDECReturn
+     AND DLSFlatHighModLargeSieveAbsorption
+  or explicit LowModDualCap return to SAE/ColumnCRT/refined PDEC。
+```
+
+这一步仍不是终端证明；它关闭的是输入分类边界，说明 LowMod 有限弧 cap 不再额外增加一个
+独立开放原子。真正要继续硬攻的是 LowPhase 三微输入，或对具体 LowModDualCap 抽取回流证书。
