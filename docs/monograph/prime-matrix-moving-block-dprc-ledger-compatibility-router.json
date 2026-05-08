@@ -1,0 +1,134 @@
+{
+  "certificate_type": "moving_block_dprc_ledger_compatibility_router",
+  "closed_gates": [
+    "ExactCompatibilityGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "MovingBlockRouterSeparatedTerminalAndLedger",
+    "SchemaReconciliationPreservedDPRCLedgerAtom",
+    "GlobalPDECSparseSplitPreservedDPRCLedgerAtom",
+    "TerminalPromotionPreservedDPRCLedgerAtom",
+    "DPRCModelLedgerObjectPinned",
+    "NoMovingBlockSpecificDPRCRelabelingGap",
+    "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock"
+  ],
+  "closed_input_removed": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+  "closed_interface_atom": "NoAdditionalDPRCLedgerGapAfterTerminalPromotionReconciliation",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_model_gap_dprc_compatibility_proved": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "external_next_priority": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "final_promotion_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hypothetical_chain_only": true,
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ExplicitModelGapAndFiniteDPRCLedger",
+  "no_additional_dprc_ledger_gap_after_terminal_promotion": true,
+  "open_gates": [
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步关闭的是兼容性接口，不是 DPRC 模型余量账本自身。从 moving-block 到早期零行终端包、再到 global PDEC/sparse、PDEC-CAP/internal-KLS、最后到 canonical 终端晋级，所有替换都只发生在终端原子上；ExplicitModelGapAndFiniteDPRCLedger 一直作为同名、同位的独立输入保留。因此 ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock 可从活动输入基中删除，下一最窄目标转为 ExplicitModelGapAndFiniteDPRCLedger 本身。",
+  "replacement": {
+    "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock": "NoAdditionalDPRCLedgerGapAfterTerminalPromotionReconciliation"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ExactCompatibilityGateActive",
+      "meaning": "最新最窄点正是 moving-block 替换与 DPRC 模型账本的精确兼容性。",
+      "proved": false,
+      "remaining": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在假设早期零行反例链条内做账本调和，不用真实样本缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MovingBlockRouterSeparatedTerminalAndLedger",
+      "meaning": "moving-block 路由只把运动块终端压到早期零行终端包，并把兼容性门单列；模型账本仍是独立原子。",
+      "proved": true,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SchemaReconciliationPreservedDPRCLedgerAtom",
+      "meaning": "早期零行终端包到全局 PDEC/sparse 的调和只替换终端原子，兼容性门和模型账本各出现一次。",
+      "proved": true,
+      "remaining": "无额外 DPRC 口径变化。"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalPDECSparseSplitPreservedDPRCLedgerAtom",
+      "meaning": "GlobalPDEC/sparse 到 PDEC-CAP/internal-KLS 的拆分没有重命名或吸收 ExplicitModelGapAndFiniteDPRCLedger。",
+      "proved": true,
+      "remaining": "无 moving-block 专属模型账本。"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalPromotionPreservedDPRCLedgerAtom",
+      "meaning": "当前 canonical 终端晋级只关闭终端侧，不改写模型余量/有限 DPRC 账本。",
+      "proved": true,
+      "remaining": "终端闭合不能被误读为模型账本证明。"
+    },
+    {
+      "closed": true,
+      "gate": "DPRCModelLedgerObjectPinned",
+      "meaning": "DPRC 路由把 ExplicitModelGapAndFiniteDPRCLedger 固定为 RSM 模型余量与有限证书接口。",
+      "proved": true,
+      "remaining": "证明该模型账本自身仍是独立义务。"
+    },
+    {
+      "closed": true,
+      "gate": "NoMovingBlockSpecificDPRCRelabelingGap",
+      "meaning": "从 moving-block 到 canonical 终端晋级，变化只发生在终端原子；DPRC 账本对象同名、同位、同用途保留。",
+      "proved": true,
+      "remaining": "NoAdditionalDPRCLedgerGapAfterTerminalPromotionReconciliation"
+    },
+    {
+      "closed": true,
+      "gate": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+      "meaning": "兼容性门闭合为接口事实：没有新增 moving-block 专属 DPRC 账本缺口。",
+      "proved": true,
+      "remaining": "NoAdditionalDPRCLedgerGapAfterTerminalPromotionReconciliation"
+    },
+    {
+      "closed": false,
+      "gate": "ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "模型余量/有限 DPRC 账本本身尚未由本路由证明；P<2003 有限表与 P>=2003 模型余量仍需正式闭合。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+      "meaning": "generic/external DI/BFI 宽口径仍在 canonical 自足边界外。",
+      "proved": false,
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终晋级独立验收门。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-dprc-centered-discrepancy-router.json": "c4153b21eeb7aaf24284a11032dbdb1fe7e0d1a2b5875740dc369510919048ef",
+    "docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.json": "9a0eb43daa02d6e29155b0b0a15b98778c0ad12c698cc75b6d3db8d689959d8d",
+    "docs/monograph/prime-matrix-current-terminal-promotion-reconciliation-router.json": "b3844a7166966f8b49c81d6abfa3479f6aab777a0fb0509b0bb81d4fe3741f92",
+    "docs/monograph/prime-matrix-dprc-relative-sieve-margin.md": "75a554cebae6ad124abadd4f1fe19f7b4df681d23203c496cff1b3576c33475f",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078"
+  },
+  "status": "moving_block_dprc_ledger_compatibility_closed_modelgap_open"
+}
