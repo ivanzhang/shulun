@@ -7161,3 +7161,73 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标为 `ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn`：给出 actual noncanonical signed source、
 `Phi` 推前恒等式、总变差/支撑预算和 branch key 预算，或把失败者命名回流。
+
+## Prime Matrix actual signed/Phi 兼容预算到 pre-pushforward emitter 压缩路由器
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_actual_signed_phi_budget_emitter_reduction_router.py
+docs/monograph/prime-matrix-actual-signed-phi-budget-emitter-reduction-router.md/json
+```
+
+该路由器直接攻击 `ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn` 的复合黑箱性。结论为：
+
+```text
+counterexample_assumption_only=true；
+empirical_absence_not_used=true；
+hypothetical_chain_only=true；
+actual_signed_phi_budget_reduction_closed=true；
+actual_signed_source_phi_compatibility_budget_proved=false；
+registered_primitive_prepushforward_fiber_emitter_proved=false；
+direct_unconditional_contradiction_found=false；
+row_column_unconditional_closed=false；
+terminal_gap_before_router=ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn；
+terminal_gap_after_router=RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。
+```
+
+这里必须分清两条链：假设链条中，早期零行反例若要保留 clean-core 支付链，就必须在
+Cauchy/dispersion 前给出同 formal unit 的 primitive signed preimage summand、branch key、`u/v`、
+sign/local factor 与推前系数恒等式；真实链条中，payment 图、有限投影塔或真实样本缺席都不能反向唯一恢复
+这个 emitter。
+
+替换律为：
+
+```text
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn
+  =>
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。
+```
+
+已经闭合的门为：
+
+```text
+ActualSignedPhiBudgetGateActive；
+HypotheticalCounterexampleChainGuard；
+DisintegrationFormalPartClosed；
+AlphaDeltaDictionaryFieldsPinned；
+PaymentSkeletonAlreadyClosed；
+ReversePushforwardNoGoImported；
+PreCauchyLedgerFieldsImported；
+CompatibilityBudgetReducedToFiberEmitter；
+ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。
+```
+
+仍开放的全局守门项为：
+
+```text
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn；
+ExplicitModelGapAndFiniteDPRCLedger；
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步只压缩兼容预算，不证明 emitter 存在。更新后的完全自足输入基为：
+
+```text
+RegisteredPrimitivePrePushforwardFiberEmitterAndReturn
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+下一步最窄目标为 `RegisteredPrimitivePrePushforwardFiberEmitterAndReturn`：在推前前逐纤维列出 primitive
+summand、系数恒等式、branch key、`u/v` map、符号和 local factor；无法登记或超预算者必须命名回流。

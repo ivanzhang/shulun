@@ -1,0 +1,131 @@
+{
+  "actual_signed_phi_budget_reduction_closed": true,
+  "actual_signed_source_phi_compatibility_budget_proved": false,
+  "certificate_type": "actual_signed_phi_budget_emitter_reduction_router",
+  "closed_gates": [
+    "ActualSignedPhiBudgetGateActive",
+    "HypotheticalCounterexampleChainGuard",
+    "DisintegrationFormalPartClosed",
+    "AlphaDeltaDictionaryFieldsPinned",
+    "PaymentSkeletonAlreadyClosed",
+    "ReversePushforwardNoGoImported",
+    "PreCauchyLedgerFieldsImported",
+    "CompatibilityBudgetReducedToFiberEmitter",
+    "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn",
+    "ExplicitModelGapAndFiniteDPRCLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "latest_conditional_basis": "((RegisteredPrimitivePrePushforwardFiberEmitterAndReturn AND ExplicitModelGapAndFiniteDPRCLedger) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn",
+  "open_gates": [
+    "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步不证明 actual signed/Phi 兼容预算；它把该复合黑箱压成更原子的 RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。假设早期零行反例若要保留 clean-core 支付链，就必须在 Cauchy/dispersion 前给出同 formal unit 的 primitive signed preimage summand、branch key、u/v、sign/local factor 与推前系数恒等式；否则该对象不能留在假设链条中，必须按未登记来源、口径冲突、thin block、PDEC/SAE/ColumnCRT/CleanKLS 或外部谱输入回流。",
+  "registered_primitive_prepushforward_fiber_emitter_proved": false,
+  "replacement": {
+    "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ActualSignedPhiBudgetGateActive",
+      "meaning": "当前输入基仍含 ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn。",
+      "proved": true,
+      "remaining": "本步判断它的真正原子字段。"
+    },
+    {
+      "closed": true,
+      "gate": "HypotheticalCounterexampleChainGuard",
+      "meaning": "本路由只在假设早期零行反例所需的证书链中工作，不用真实样本缺席。",
+      "proved": true,
+      "remaining": "保持假设链条与真实链条分离。"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationFormalPartClosed",
+      "meaning": "给定 signed source 与 Phi 后，逐纤维解积分形式闭合；真实门是 pushforward identity 与预算。",
+      "proved": true,
+      "remaining": "需要 pre-pushforward signed source。"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaDeltaDictionaryFieldsPinned",
+      "meaning": "字典字段已经固定为 signed source、pushforward、variation/support 和 sign refinement。",
+      "proved": true,
+      "remaining": "字段尚未填。"
+    },
+    {
+      "closed": true,
+      "gate": "PaymentSkeletonAlreadyClosed",
+      "meaning": "completion-hole 域、first-cover map 和 payment count identity 已闭合。",
+      "proved": true,
+      "remaining": "剩余不是 payment 图，而是 signed primitive lift。"
+    },
+    {
+      "closed": true,
+      "gate": "ReversePushforwardNoGoImported",
+      "meaning": "不能从 Gamma 反推唯一 primitive source；必须额外提交 pre-pushforward fiber emitter。",
+      "proved": true,
+      "remaining": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchyLedgerFieldsImported",
+      "meaning": "pre-Cauchy 来源律要求 primitive path key、同 formal unit、非零/符号细分和命名回流。",
+      "proved": true,
+      "remaining": "这些正是 emitter 字段。"
+    },
+    {
+      "closed": true,
+      "gate": "CompatibilityBudgetReducedToFiberEmitter",
+      "meaning": "兼容预算包的未闭合内容等价压成同 formal unit 的 pre-pushforward fiber emitter。",
+      "proved": true,
+      "remaining": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn",
+      "meaning": "该硬点作为复合黑箱已压缩到 RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。",
+      "proved": true,
+      "remaining": "压缩不证明 emitter 存在。"
+    },
+    {
+      "closed": false,
+      "gate": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn",
+      "meaning": "当前材料尚未给出 actual noncanonical primitive pre-pushforward fiber emitter。",
+      "proved": false,
+      "remaining": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "模型余量/有限 DPRC 账本仍在输入基中，未由本步处理。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "源侧 emitter 与模型余量完成后仍需 DStructure/Tail-log4/finite Rankin 独立验收。",
+      "proved": false,
+      "remaining": "DStructureRankinPromotionPackage。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.md": "f72148d267646684a075e08beb4839f4e68a85370f92b769cf1a27d7ee173026",
+    "docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.md": "d3eaac8258b2e9dd107dadf5012ef56968ddd5b28029520bc887ffe78763cff0",
+    "docs/monograph/prime-matrix-clean-core-fiber-emitter-field-audit-router.md": "987e7c9fe3ef209d9af63efa37bddcd52970ccef46302736f39f640baf4a99b9",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.md": "50b5c0eb99a3c56cc54a3c41edfd5241fe5127e3631a3ea648d852700d109a49",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.md": "f4f0f9eaf0e724404389e74f4eb380f972d74c7422e797c9fe0ec14b231df4ad",
+    "docs/monograph/prime-matrix-signed-geometric-variation-compatibility-merger.json": "35865105acae9f92010fd1fadea09d793a5b7fec32c89fbce14e5ebd6fc7100e"
+  },
+  "status": "actual_signed_phi_budget_reduced_to_prepushforward_emitter_open",
+  "terminal_gap_after_router": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn",
+  "terminal_gap_before_router": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn"
+}
