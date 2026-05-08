@@ -4621,3 +4621,47 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明源测度与预算；它只是关闭“字典分解技巧”这个伪硬点，把真正硬点定位到 actual signed source
 与 `Phi` 兼容预算。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_geometric_phi_budget_bridge_router.py
+docs/monograph/prime-matrix-clean-core-geometric-phi-budget-bridge-router.md/json
+```
+
+该路由器把斜线覆盖、圆柱环绕、第P列锚、层叠轮筛和动态容量统一回 clean-core 的 `Phi` 接口。
+结论为：
+
+```text
+geometric_phi_budget_bridge_boundary_closed=true；
+geometric_payment_base_available=true；
+geometry_defines_signed_source_measure=false；
+geometry_proves_phi_pushforward_identity=false；
+geometry_supplies_budget_return_shape=true；
+actual_signed_source_measure_phi_compatibility_budget_proved=false；
+row_column_unconditional_closed=false。
+```
+
+几何模型现在可以诚实承担三件事：给出 payment/Phi 的覆盖-筛除基底，给出总变差/支撑/branch 预算的候选
+证书形状，并把容量失败、相位同步或 branch 爆炸送入 `PDEC/SAE/ColumnCRT/CleanKLS`。它不能承担两件事：
+生成 pre-Cauchy signed `alpha/delta` 源测度，或证明 `Phi_*nu` 等于目标 payment-side 系数。
+
+因此最新自足输入基分裂为：
+
+```text
+ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+AND GeometricVariationBranchBudgetCertificateOrNamedReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+条件输入基为：
+
+```text
+((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn
+  AND GeometricVariationBranchBudgetCertificateOrNamedReturn)
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+该步没有闭合无条件行/列命题；它关闭的是几何模型与 signed-source 证明之间的接口边界，并把下一步内部
+攻击点定位为几何变差/分支预算证书。

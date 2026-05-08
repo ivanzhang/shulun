@@ -1,0 +1,143 @@
+{
+  "actual_signed_source_measure_phi_compatibility_budget_proved": false,
+  "certificate_type": "prime_matrix_clean_core_geometric_phi_budget_bridge_router",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "geometric_bridge_law": "斜线覆盖、圆柱环绕、第P列锚和层叠轮筛共同给出的是 signed source 的几何基底与预算场：它们定义哪些 payment atoms 可以由哪些斜线/锚相位/轮层命中，并说明容量失败、同步尖峰或 branch 爆炸必须回流 PDEC/SAE/ColumnCRT/CleanKLS。但这些几何对象本身不生成 pre-Cauchy signed alpha/delta 源测度，也不自动证明 Phi_*nu 等于目标 payment-side 系数。因此最新输入被拆为源侧 Phi 恒等式和几何预算/回流证书两个原子。",
+  "geometric_payment_base_available": true,
+  "geometric_phi_budget_bridge_boundary_closed": true,
+  "geometry_defines_signed_source_measure": false,
+  "geometry_proves_phi_pushforward_identity": false,
+  "geometry_supplies_budget_return_shape": true,
+  "latest_conditional_basis": "((ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND GeometricVariationBranchBudgetCertificateOrNamedReturn) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinputs": [
+    "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn",
+    "GeometricVariationBranchBudgetCertificateOrNamedReturn"
+  ],
+  "latest_self_contained_basis": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn AND GeometricVariationBranchBudgetCertificateOrNamedReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "model_rows": [
+    {
+      "closed": true,
+      "does_not_provide": "signed alpha/delta 源测度或 local factor 符号。",
+      "field": "payment_base_map / absolute support skeleton",
+      "model": "cylindrical_completed_line",
+      "provides": "低素骨架 R_x、未完成斜线补洞 F_x、最终洞 U_x 的确定性覆盖恒等式。"
+    },
+    {
+      "closed": true,
+      "does_not_provide": "pre-Cauchy signed summand 生成公式。",
+      "field": "support budget / named return",
+      "model": "bottom_pair_deficit",
+      "provides": "底部带补洞点 c=a(h-a) 的二次曲线刚性，可作为支撑/重叠预算证书。"
+    },
+    {
+      "closed": true,
+      "does_not_provide": "Phi_*nu 等于 signed alpha/delta payment-side 系数的恒等式。",
+      "field": "geometric Phi base map",
+      "model": "pcolumn_anchor_wheel_field",
+      "provides": "全行骨架 S_W(P,y) 是第一行骨架的圆柱平移，给出统一覆盖-筛除 Phi 基底。"
+    },
+    {
+      "closed": true,
+      "does_not_provide": "signed 总变差等于覆盖容量的证明。",
+      "field": "variation/support budget candidate",
+      "model": "dynamic_promoted_rough_capacity",
+      "provides": "把低素斜线提升进轮底座后，剩余高素总命中 T_Y 与粗骨架 S_Y 的容量门。"
+    },
+    {
+      "closed": true,
+      "does_not_provide": "noncanonical signed source 的 branch key 表。",
+      "field": "branch budget / phase return",
+      "model": "layered_wheel_phase_clamp",
+      "provides": "若高素补洞在层叠轮单位类中同步，则回流 W-unit PDEC/SAE/ColumnCRT；否则进入分散 KLS 形状。"
+    },
+    {
+      "closed": true,
+      "does_not_provide": "三包本身的无条件证明。",
+      "field": "return discipline",
+      "model": "closure_input_atlas",
+      "provides": "所有几何路线已归入命名输入包，不再允许无名逃逸。"
+    }
+  ],
+  "plain_conclusion": "几何模型提供了可用的 Phi 基底和预算/回流桥，但不能直接闭合 signed source。最新自足剩余分裂为 signed source/Phi identity 与 geometric variation/branch budget 两个未证原子。",
+  "previous_input": "ActualSignedSourceMeasurePhiCompatibilityBudgetAndReturn",
+  "residual_inputs": [
+    {
+      "input": "ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn",
+      "meaning": "定义 actual noncanonical signed alpha/delta 源测度 nu，并证明它沿几何/first-cover Phi 推前为目标 payment-side 系数。"
+    },
+    {
+      "input": "GeometricVariationBranchBudgetCertificateOrNamedReturn",
+      "meaning": "用圆柱骨架、P列锚、层叠轮和动态容量证明总变差/绝对支撑/branch key 在预算内，或命名回流。"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorSourcePhiBudgetPinned",
+      "meaning": "上一层已把自足硬点压成 actual signed 源测度、Phi 兼容恒等式和预算。",
+      "proved": false,
+      "remaining": "判断几何模型能闭合哪些字段。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometricPaymentBaseAvailable",
+      "meaning": "斜线圆柱、P列锚和层叠轮筛给出统一覆盖-筛除 Phi 基底和命名回流场。",
+      "proved": true,
+      "remaining": "这仍是 unsigned/geometric payment 基底。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometryDoesNotDefineSignedSourceMeasure",
+      "meaning": "几何覆盖只告诉哪些数被哪些斜线命中，不定义 pre-Cauchy signed alpha/delta 源测度。",
+      "proved": true,
+      "remaining": "必须提交 actual signed source，或走外部谱输入。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometryDoesNotProvePhiPushforwardIdentity",
+      "meaning": "圆柱/轮筛 Phi 与 signed source 的 Phi_*nu 恒等式不是自动的，需要系数级证明。",
+      "proved": true,
+      "remaining": "证明 ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometrySuppliesBudgetAndReturnShape",
+      "meaning": "现有几何模型给出总变差/支撑/branch 预算的候选证书形状和 PDEC/SAE/ColumnCRT 回流出口。",
+      "proved": false,
+      "remaining": "仍需正式预算不等式或命名回流证书全集。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometricBridgeSplitsLatestInput",
+      "meaning": "最新输入可分解为 signed source/Phi identity 与 geometric variation/branch budget 两个原子。",
+      "proved": true,
+      "remaining": "两个原子当前均未由材料无条件证明。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualSignedSourceMeasurePhiCompatibilityBudgetCurrentCorpusProved",
+      "meaning": "当前材料尚未同时证明 signed source、Phi 恒等式与几何预算。",
+      "proved": false,
+      "remaining": "证明 ActualSignedSourceMeasurePhiIdentityForGeometricPaymentMapAndReturn 和 GeometricVariationBranchBudgetCertificateOrNamedReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.json": "1ed84ceda49fdc1fbafb7ba83824ce9a4438d1d5bad2d580851d9afa690fb7b7",
+    "docs/monograph/prime-matrix-closure-input-atlas-router.md": "ec37c7cac9e59936182f4479d999f5da7fd94a29a411e74edc49af5ea94cab61",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-dprc-cylindrical-layered-wheel-clamp.md": "d5282b1dfcb5831e15fa7ed5f358880f4cce7fbcec43ec5a1b3ad8859fc4631d",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-dynamic-promoted-rough-capacity.md": "cdbe72836a9061ec51b3260cd7b6e6605fc0b0421197f5c48550cb3df1f6efda",
+    "docs/monograph/prime-matrix-pcolumn-anchor-wheel-field.md": "0b3c78a0cb94f64f7df2de4110bed960d664bef981cdf1abb0bde3918cd0b4c5"
+  },
+  "status": "geometric_phi_budget_bridge_closed_signed_source_and_budget_open"
+}
