@@ -3038,3 +3038,53 @@ DStructureTailLog4FiniteRankinIndependentAcceptance。
 自足引理；该模板已被 moving-delta 模型反证。当前材料下没有第四条可自足偷渡路线：
 要么证明实际源恒等，要么证明实际源强化反原子，要么提交外部/量化 `DI/BFI`，最终还要通过
 `DStructure/Rankin` 晋级门。
+
+继续新增：
+
+```text
+experiments/prime_matrix_closure_input_atlas_router.py
+docs/monograph/prime-matrix-closure-input-atlas-router.md/json
+```
+
+该图谱把此前全部主要思路统一成输入基：
+
+```text
+canonical_source_self_contained_closed=true；
+noncanonical_input_contract_closed=true；
+row_column_unconditional_closed=false。
+```
+
+模型回顾结论是：
+
+```text
+Full CRT/MinRep、方阵斜线/圆柱覆盖、第 P 列锚点、层叠轮筛、
+远尾互补因子、SN 递归剥离、命名出口吸收、PDEC cap 细化
+=> 终端证书包；
+
+Triad-A1 canonical-source 分支
+=> 已闭合；
+
+noncanonical full-S 补集
+=> 必要输入边界已闭合，但输入本身仍开。
+```
+
+因此完整全局行/列无条件闭合的最小输入基固定为三包：
+
+```text
+TerminalCertificatePackage:
+  SAE-Cert；
+  PDEC-Cert with U_CRT<L_PDEC；
+  ColumnCRT-Cert or return to PDEC/SAE；
+  CleanMultishellKLS；
+  TotalDescent to p=2 or first-seam absorption；
+
+NoncanonicalFullSComplementPackage:
+  actual full-S non-AP source equals canonical RIW/Buchstab；
+  or strengthened anti-atom for actual noncanonical source；
+  or quantified no-projection DI/BFI route；
+
+DStructureRankinPromotionPackage:
+  D-structure/Tail-log4/finite Rankin 晋级门通过。
+```
+
+这份图谱说明继续突破不应再寻找新无名分支或固定常数，而应逐项证明这三包。

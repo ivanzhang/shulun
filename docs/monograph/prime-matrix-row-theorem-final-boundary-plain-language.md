@@ -635,6 +635,36 @@ moving-delta 模型挡住；也不是继续检查 canonical 分支，因为它�
 所以当前“自足闭合”的最终诚实表述是：canonical-source 精确命题已闭合，noncanonical 补集的
 必要输入边界也已闭合；但这些必要输入本身还没有被当前材料证明，完整无条件行/列定理仍不能声明。
 
+继续新增行命题闭合输入图谱后：
+
+```text
+experiments/prime_matrix_closure_input_atlas_router.py
+docs/monograph/prime-matrix-closure-input-atlas-router.md/json
+
+canonical_source_self_contained_closed=true；
+noncanonical_input_contract_closed=true；
+row_column_unconditional_closed=false。
+```
+
+这份图谱把我们已经探索的所有主路线收束成三类输入：
+
+```text
+1. 终端证书包：
+   SAE-Cert、PDEC-Cert、ColumnCRT-Cert、CleanMultishellKLS、
+   以及无缺陷时 TotalDescent 到 p=2 或首阻断 seam 吸收。
+
+2. noncanonical full-S 补集输入包：
+   实际源恒等、实际源强化反原子，或外部/量化 DI/BFI 无投影路线。
+
+3. DStructure/Rankin 晋级包：
+   D-structure、Tail-log4、finite Rankin 接口通过独立晋级门。
+```
+
+通俗说，方阵斜线、圆柱覆盖、第 `P` 列锚点、`P^2±k` 层叠轮筛、远尾互补因子和
+SN 递归剥离都已经不再指向新的无名方向；它们都落到“终端证书包”。canonical-source
+分支已经闭合；剩下的全局化困难在 noncanonical 补集和最终晋级门。下一步若要真正完成全局闭合，
+必须直接证明这三包，而不是继续寻找新的固定常数或宽 generic WFD 模板。
+
 ## 7. 已并入合著的文件
 
 主稿已并入：

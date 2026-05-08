@@ -1,0 +1,134 @@
+{
+  "atlas_law": "All explored structures now fall into two classes: closed reductions/contracts, or named inputs. The current corpus closes the canonical-source theorem boundary and the no-unnamed-escape logic, but full global unconditional closure still requires the terminal certificate package, the noncanonical full-S complement package, and final D-structure/Rankin promotion.",
+  "canonical_source_self_contained_closed": true,
+  "certificate_type": "prime_matrix_closure_input_atlas_router",
+  "minimal_input_basis": [
+    {
+      "contents": [
+        "SAE-Cert",
+        "PDEC-Cert with U_CRT<L_PDEC",
+        "ColumnCRT-Cert or return to PDEC/SAE",
+        "CleanMultishellKLS",
+        "TotalDescent to p=2 or first-seam absorption"
+      ],
+      "input": "TerminalCertificatePackage",
+      "why_needed": "无名逃逸和命名出口已被压到这些接口；排斥它们即可关闭结构反例出口。"
+    },
+    {
+      "contents": [
+        "Actual full-S non-AP source equals canonical RIW/Buchstab source",
+        "or strengthened anti-atom for the actual noncanonical source",
+        "or quantified no-projection DI/BFI route"
+      ],
+      "input": "NoncanonicalFullSComplementPackage",
+      "why_needed": "canonical 分支已扣除，generic WFD 模板已反证；补集不能偷渡闭合。"
+    },
+    {
+      "contents": [
+        "D-structure/Tail-log4 interface accepted",
+        "finite Rankin and threshold interfaces accepted",
+        "PM final promotion referee block removed"
+      ],
+      "input": "DStructureRankinPromotionPackage",
+      "why_needed": "完整行/列无条件定理晋级仍依赖该独立门。"
+    }
+  ],
+  "models_reviewed": [
+    {
+      "closure_input": "后续必须排斥 MinRep 缺陷，或把它送入容量/端点/PDEC 出口。",
+      "model": "Full CRT / MinRep 零行等价",
+      "output": "把反例固定为具体 tau 与 r_tau^+<=P。",
+      "proved": "零行等价于完整覆盖 CRT 证书与最小代表缺陷。",
+      "status": "reduction_closed"
+    },
+    {
+      "closure_input": "动态容量不等式，或失败进入 SAE/PDEC/ColumnCRT/尾锚。",
+      "model": "方阵斜线 / 圆柱覆盖",
+      "output": "T_Y>=|S_Y| 是零行必要条件。",
+      "proved": "高素斜线补洞可以写成圆柱面残基命中；覆盖需要容量大于剩余洞。",
+      "status": "reduction_closed"
+    },
+    {
+      "closure_input": "证明所有行容量不足；若容量失败，证明近截止/远尾超额必进命名缺陷。",
+      "model": "第 P 列锚点动态轮容量",
+      "output": "全行全列夹击方程 S_Y(P,y)=圆柱平移骨架。",
+      "proved": "T_Y(P,y)<|S_Y(P,y)| 严格推出该行有素数洞。",
+      "status": "input_needed"
+    },
+    {
+      "closure_input": "W-unit PDEC/ColumnCRT 排斥，或高维分散 CleanKLS/DLS。",
+      "model": "P^2±k 与层叠轮筛",
+      "output": "圆柱容量压力与小模相位同步形成夹击。",
+      "proved": "30/210/2310/... 单位类偏斜若不稀释则给 W-unit PDEC；若稀释则进 CleanKLS/DLS。",
+      "status": "input_needed"
+    },
+    {
+      "closure_input": "Self-normalized tail dichotomy：超额必进 cofactor-anchor/SAE/PDEC/ColumnCRT。",
+      "model": "远尾互补因子反演",
+      "output": "正超额不再无结构，落在 m-band/cofactor-anchor。",
+      "proved": "远尾 q 命中等价为 Y-rough 互补因子 m 上的短素数区间计数。",
+      "status": "input_needed"
+    },
+    {
+      "closure_input": "排斥这些命名出口，或证明 CleanMultishellKLS / TotalDescent。",
+      "model": "SN-1/SN-2/SN-3 递归剥离",
+      "output": "反例有限步进入 SAE/PDEC/ColumnCRT/Bohr-cap/CleanKLS/TotalDescent。",
+      "proved": "最小反例不能无限保持无名；低模峰、高频峰、多壳同步都必须命名。",
+      "status": "unnamed_closed_named_open"
+    },
+    {
+      "closure_input": "提交这些证书或证明无缺陷下降到底。",
+      "model": "命名出口吸收合同",
+      "output": "最终出口缩为 SAE-Cert / PDEC-Cert / ColumnCRT-Cert / CleanKLS / p=2 descent。",
+      "proved": "Bohr-cap、EndpointSeam、CofactorAnchor 不再是自由出口，吸收到统一接口。",
+      "status": "contract_closed_certificates_open"
+    },
+    {
+      "closure_input": "完成 U_CRT<L_PDEC，或完成 refined PDEC / SAE / ColumnCRT / stitching。",
+      "model": "PDEC 对偶失败与 cap 细化",
+      "output": "PDEC 失败不能生成新无名分支。",
+      "proved": "PDEC 上界失败只能变成帽集中；持久帽进 refined PDEC，稀疏帽进 SAE。",
+      "status": "no_cycle_closed_certificate_open"
+    },
+    {
+      "closure_input": "无 canonical 内部输入；只需防止误升级。",
+      "model": "Triad-A1 canonical-source 自足分支",
+      "output": "NoFurtherCanonicalSourceSelfContainedTheoremBoundaryGap。",
+      "proved": "canonical RIW/Buchstab 来源分支的 same-set/full-S terminal 与 terminal promotion 已闭合。",
+      "status": "closed"
+    },
+    {
+      "closure_input": "ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab 或 FullSNonAPStrengthenedSourceAntiAtomForActualSource 或 DIBFI no-projection。",
+      "model": "Noncanonical full-S 补集",
+      "output": "补集只能走实际源恒等、实际源强化反原子或外部/量化 DI/BFI。",
+      "proved": "必要输入边界已闭合；generic WFD 模板不可用。",
+      "status": "input_contract_closed_input_open"
+    },
+    {
+      "closure_input": "DStructureTailLog4FiniteRankinIndependentAcceptance。",
+      "model": "D-structure / Tail-log4 / Rankin 晋级门",
+      "output": "PM final promotion remains referee-block。",
+      "proved": "作者侧组织与边界已固定；仍是独立审稿门。",
+      "status": "referee_block"
+    }
+  ],
+  "noncanonical_input_contract_closed": true,
+  "optional_shortcuts": [
+    "外部平方根长度短区间素数输入可直接关闭对角端点，但不是当前自足主路线。",
+    "外部 FullS-KLS / DI / BFI 可关闭 generic 外部合同版，但不能冒充 canonical 自足证明。"
+  ],
+  "review_conclusion": "闭合输入图谱已固定：继续突破不应再寻找无名新分支，而应集中证明终端证书包、noncanonical full-S 补集输入包和 D-structure/Rankin 晋级包。",
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.json": "4d5c17126ea796ee37ae469a3684ef634899dfea0b4af3352c3bf29d0f874e59",
+    "docs/monograph/prime-matrix-canonical-source-self-contained-final-theorem-router.json": "8d45dd95c52f37a36fd0e35002ffbebe3977ffabacead69021dc5ef19bfad9c0",
+    "docs/monograph/prime-matrix-dprc-cylindrical-layered-wheel-clamp.md": "d5282b1dfcb5831e15fa7ed5f358880f4cce7fbcec43ec5a1b3ad8859fc4631d",
+    "docs/monograph/prime-matrix-global-structural-closure-chain.md": "81aaa610fedb7949e8bdfcc55585bd3075de08bb8e4230f00558f64c356f600c",
+    "docs/monograph/prime-matrix-named-exit-absorption-contract.md": "515e251e01ac03658e9132aec43562196b4c351bb0ff41ee5edb635236cdc3c6",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.json": "a6f8b9718c0c8d6a2854b37e3850d548798ca4aafa708c08b894bb4066ae3d52",
+    "docs/monograph/prime-matrix-pcolumn-anchor-dynamic-capacity.md": "17a95e57c505b1831046577744a1e84fd610de2eaa39c86e826cf47c34d75312",
+    "docs/monograph/prime-matrix-pdec-dual-failure-absorption-contract.md": "27ef7aeea73477be9f5aa1b10fcced43aae87deda28edacc9c77bef7cfb4dc8b",
+    "docs/monograph/prime-matrix-unnamed-escape-closure-machine.md": "3526bed7e59d40e711f896bdd3244e5cf8ecf3c8c1219b21f42425193dfd965a"
+  },
+  "status": "closure_input_atlas_complete_global_inputs_still_open"
+}
