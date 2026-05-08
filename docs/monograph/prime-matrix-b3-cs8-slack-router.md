@@ -1,0 +1,68 @@
+# Prime Matrix B=3 Backlund C_S=8 余量验收路由器
+
+**状态：** `backlund_cs8_slack_external_closed_tight`
+
+Backlund C_S=8 余量在外部分支中以紧等号闭合：C_boundary=16，桥接因子 1/2，得到 C_S=8。窗口尺度和凹口成本已在前序账本处理，本步不重复扣减。
+
+```text
+counterexample_assumption_only=true
+empirical_absence_not_used=true
+hypothetical_chain_only=true
+backlund_cs8_slack_external_closed=true
+backlund_cs8_slack_self_contained_closed=false
+C_boundary=16.000000000000
+bridge_factor=0.500000000000
+C_S_target=8.000000000000
+C_S_result=8.000000000000
+slack=0.000000000000
+row_column_unconditional_closed=false
+```
+
+## 1. 外部条件链替换
+
+```text
+BacklundCS8SlackAfterBridgeLedger
+  =>
+BacklundCS8SlackAfterBridgeClosedTightHalf
+```
+
+## 2. 预算表
+
+| component | value | source |
+| --- | ---: | --- |
+| boundary constant | `16.000000000000` | BacklundBoundaryConstantSumClosedC16 |
+| bridge factor | `0.500000000000` | BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability |
+| resulting C_S | `8.000000000000` | C_boundary * bridge_factor |
+| target C_S | `8.000000000000` | Backlund target |
+| slack | `0.000000000000` | target - result |
+
+## 3. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| CS8SlackGateActive | `true` | `false` | 外部 Backlund 分支当前最窄点是 C_S=8 余量验收。 | BacklundCS8SlackAfterBridgeLedger |
+| CounterexampleBranchGuardPreserved | `true` | `true` | 本步仍只处理假设链条内的 Backlund 常数验收，不使用真实零行缺席。 | 保持 row_column_unconditional_closed=false。 |
+| BoundaryBridgeInputsAvailable | `true` | `true` | 边界常数 C16 与半质量桥均已进入外部分支输入基。 | BacklundBoundaryConstantSumClosedC16 AND BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability |
+| WindowAndIndentCostsNotDoubleCounted | `true` | `false` | 窗口尺度与凹口成本已在前两步独立处理；本步不再重复扣减 C_S 预算。 | BacklundVariationWindowScaleClosedH1Over512C192 AND ClassicalBacklundZeroIndentationCostExternalAccepted |
+| CS8TightEqualityPasses | `true` | `true` | 16*1/2=8，目标 C_S=8 是紧等号闭合，没有额外正余量。 | BacklundCS8SlackAfterBridgeClosedTightHalf |
+| BacklundCS8SlackClosed | `true` | `true` | 外部 Backlund 分支的点态 arg 常数验收完成。 | BacklundCS8SlackAfterBridgeClosedTightHalf |
+| EndpointConventionNext | `false` | `false` | 下一步处理端点避零与重数 convention。 | EndpointZeroAvoidanceMultiplicityConventionLedger |
+| RVMToCN16StillDownstream | `false` | `false` | 随后仍需 RVM 到 C_N=16 局部计数不等式。 | RVMToCN16LocalInequalityLedger |
+
+## 4. 最新输入基
+
+canonical 自足链条输入基：
+
+```text
+NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND ((ArgumentPrincipleXiRectangleCountingClosed AND GammaMainTermLocalDifferenceNumericalClosedCmain4 AND (BacklundLittlewoodRectangleArgumentClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND (HorizontalZeroIndentationConventionClosed AND HorizontalPoleRemovalBudgetClosed AND (CriticalStripPhragmenLindelofThreeLinesClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND CriticalStripConvexityClosedC2) AND HorizontalVariationConstantClosedC8) AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND (BacklundBoundaryConstantSumClosedC16 AND (BacklundArgumentBranchNormalizationClosed AND BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability AND (BacklundSpikeNoRVMCircularityDisciplineClosed AND (BacklundHadamardLogDerivativeVariationFormulaClosed AND ((BacklundJensenDiskFormulaClosed AND BacklundIndependentXiDiskBoundaryMajorantClosedSymbolic AND BacklundIndependentJensenCenterLowerAnchorClosedSymbolic AND (BacklundJensenSignedMeanHighHeightZetaOnlyClosedC7 AND (BacklundJensenLowHeightDiskImaginaryRangeClosedT14 AND (BacklundXiZetaNontrivialZeroEquivalenceClosed AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger) AND BacklundJensenLowHeightC16ImmediateGivenNoZeroBelow14) AND BacklundJensenRadiusOptimizationOrCNRelaxationLedger)) AND BacklundZeroDistanceDyadicSummationClosed AND BacklundNearZeroIndentSeparationLedger AND BacklundZeroDistanceSumConstantAggregationLedger) AND BacklundVariationWindowScaleLedger) AND BacklundZeroProximityIndentationCostLedger)) AND BacklundCS8SlackAfterBridgeLedger)) AND EndpointZeroAvoidanceMultiplicityConventionLedger AND RVMToCN16LocalInequalityLedger) AND XiBoundaryLogMajorantNumericalLedger AND JensenDiskLowerAnchorNumericalLedger AND LocalZeroCountCNConventionLedger) AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+conditional/external Backlund 输入基：
+
+```text
+NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND ((ArgumentPrincipleXiRectangleCountingClosed AND GammaMainTermLocalDifferenceNumericalClosedCmain4 AND (BacklundLittlewoodRectangleArgumentClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND (HorizontalZeroIndentationConventionClosed AND HorizontalPoleRemovalBudgetClosed AND (CriticalStripPhragmenLindelofThreeLinesClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND CriticalStripConvexityClosedC2) AND HorizontalVariationConstantClosedC8) AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND (BacklundBoundaryConstantSumClosedC16 AND (BacklundArgumentBranchNormalizationClosed AND BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability AND (BacklundSpikeNoRVMCircularityDisciplineClosed AND (BacklundHadamardLogDerivativeVariationFormulaClosed AND ((BacklundJensenDiskFormulaClosed AND BacklundIndependentXiDiskBoundaryMajorantClosedSymbolic AND BacklundIndependentJensenCenterLowerAnchorClosedSymbolic AND (BacklundJensenSignedMeanHighHeightZetaOnlyClosedC7 AND (BacklundJensenLowHeightDiskImaginaryRangeClosedT14 AND (BacklundXiZetaNontrivialZeroEquivalenceClosed AND ClassicalFirstZetaZeroHeightGT14ExternalAccepted AND BacklundXiNoNontrivialZeroBelow14ExternalClosed) AND BacklundJensenLowHeightC16ImmediateGivenNoZeroBelow14) AND BacklundJensenRadiusOptimizationNotNeededC16ClosedR4)) AND BacklundZeroDistanceDyadicSummationClosed AND BacklundNearZeroIndentSeparationClosedEta1Over16 AND BacklundZeroDistanceSumConstantAggregationClosedC192Eta1Over16) AND BacklundVariationWindowScaleClosedH1Over512C192) AND ClassicalBacklundZeroIndentationCostExternalAccepted)) AND BacklundCS8SlackAfterBridgeClosedTightHalf)) AND EndpointZeroAvoidanceMultiplicityConventionLedger AND RVMToCN16LocalInequalityLedger) AND XiBoundaryLogMajorantNumericalLedger AND JensenDiskLowerAnchorNumericalLedger AND LocalZeroCountCNConventionLedger) AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 5. 下一步
+
+完全自足路线仍先攻 `CriticalLineNoZeroOn0To14FiniteLedger`；外部 Backlund 分支下一步转为 `EndpointZeroAvoidanceMultiplicityConventionLedger`。
