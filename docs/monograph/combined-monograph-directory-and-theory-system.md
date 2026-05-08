@@ -4307,3 +4307,50 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 本步没有证明 primitive source constructor 准入，也没有吸收未登记来源。它只把原始生成账本的最小入口压成
 来源构造器准入：没有构造器，就没有合法 clean-core 原始账本。
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_constructor_source_class_firewall_router.py
+docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.md/json
+```
+
+该路由器把 `CleanCorePrimitiveSourceConstructorAdmissionAndReturn` 按来源类别拆开。结论为：
+
+```text
+constructor_source_class_firewall_boundary_closed=true；
+source_class_partition_closed=true；
+unregistered_source_return_absorbed=true；
+actual_noncanonical_primitive_constructor_formula_proved=false；
+clean_core_primitive_source_constructor_admission_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+来源分类防火墙律是：primitive constructor admission 必须先分成 canonical、generic WFD、未登记/混合
+formal unit、external spectral、actual noncanonical 五类。canonical constructor 已在 canonical-source 分支内闭合；
+generic WFD 不是 constructor；未登记或混合 formal unit 来源经 Multiplicity/Stitching 或 K7 formal-unit 失败回流；
+external spectral 类仍是外部谱输入。因此唯一完全自足源侧原子为：
+
+```text
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn。
+```
+
+最新条件输入基为：
+
+```text
+(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+本步没有证明 actual noncanonical primitive constructor formula。它闭合的是来源分类防火墙：canonical、generic、
+unregistered 和 external 类都已按边界处理，唯一自足剩余是 actual noncanonical 显式公式。

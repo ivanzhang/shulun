@@ -1958,3 +1958,49 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 当前材料尚未证明 noncanonical clean-core 候选都有 primitive source constructor，也没有证明未登记来源总能被
 PDEC/SAE/ColumnCRT/CleanKLS 或外部谱输入吸收。canonical 构造器仍只服务 canonical-source 分支，generic WFD
 仍不是来源构造器。
+
+## 24. clean-core 构造器来源分类防火墙
+
+继续新增：
+
+```text
+experiments/prime_matrix_clean_core_constructor_source_class_firewall_router.py
+docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.md/json
+
+constructor_source_class_firewall_boundary_closed=true；
+source_class_partition_closed=true；
+unregistered_source_return_absorbed=true；
+actual_noncanonical_primitive_constructor_formula_proved=false；
+clean_core_primitive_source_constructor_admission_proved=false；
+external_spectral_atom_accepted=false；
+dstructure_rankin_independent_acceptance_completed=false；
+row_column_unconditional_closed=false。
+```
+
+这一层把 `CleanCorePrimitiveSourceConstructorAdmissionAndReturn` 按来源类拆开。canonical 类已有
+RIW/Buchstab 构造器，但只限 canonical-source 分支；generic WFD 类不是构造器；未登记或混合 formal unit
+来源不再作为 clean-core 终端保留，而是回到 Multiplicity/Stitching 或 K7 formal-unit 失败出口；外部谱类仍是
+`CDependentResidueWeightSpectralCancellationInput`。因此唯一完全自足源侧原子变成：
+
+```text
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn。
+```
+
+最新条件输入基为：
+
+```text
+(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+ OR CDependentResidueWeightSpectralCancellationInput)
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+完全自足输入基为：
+
+```text
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这个新输入要求在 Cauchy/dispersion 前写出 actual noncanonical clean-core 系数定义，给出确定性 summand
+emitter，输出 `alpha/delta`、branch key、`u/v` map、符号和 local factor，并证明它与后续支撑、容量和回流账本
+处于同一个 formal unit。当前材料尚未证明该显式公式。

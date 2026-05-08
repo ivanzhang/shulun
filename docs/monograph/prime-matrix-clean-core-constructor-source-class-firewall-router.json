@@ -1,0 +1,143 @@
+{
+  "actual_noncanonical_primitive_constructor_formula_proved": false,
+  "canonical_constructor_closed_scoped_only": true,
+  "certificate_type": "prime_matrix_clean_core_constructor_source_class_firewall_router",
+  "clean_core_primitive_source_constructor_admission_proved": false,
+  "constructor_source_class_firewall_boundary_closed": true,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "external_spectral_atom_accepted": false,
+  "firewall_law": "primitive constructor admission splits by source class. Canonical constructor is closed only in its own branch; generic WFD is not a constructor; unregistered or mixed formal-unit sources return via Multiplicity/Stitching or K7 formal-unit failure; external spectral class remains external. Therefore the only self-contained source-side atom left is the actual noncanonical primitive constructor formula.",
+  "formula_requirements": [
+    {
+      "field": "pre_cauchy_definition",
+      "requirement": "在 Cauchy/dispersion 前定义 actual noncanonical clean-core 系数。"
+    },
+    {
+      "field": "summand_emitter",
+      "requirement": "给出产生 alpha/delta summand 的确定性 emitter。"
+    },
+    {
+      "field": "branch_key_schema",
+      "requirement": "每个 summand 带有限 branch key、u/v map、sign、local factor。"
+    },
+    {
+      "field": "formal_unit_compatibility",
+      "requirement": "emitter 输出与后续容量、支撑、回流账本使用同一个 formal unit。"
+    },
+    {
+      "field": "return_tags",
+      "requirement": "公式不适用、超预算、thin block 或抵消必须输出命名 return tag。"
+    }
+  ],
+  "generic_wfd_constructor_rejected": true,
+  "latest_conditional_basis": "(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_external_subinput": "CDependentResidueWeightSpectralCancellationInput",
+  "latest_internal_subinput": "ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn",
+  "latest_self_contained_basis": "ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "最新完全自足剩余继续压缩：构造器准入的来源分类防火墙已闭合，未登记来源不再作为 clean-core 终端保留。唯一自足源侧原子变成 actual noncanonical primitive source constructor 的显式公式。",
+  "previous_input": "CleanCorePrimitiveSourceConstructorAdmissionAndReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorPrimitiveConstructorAdmissionPinned",
+      "meaning": "上一层已把原始来源准入压到 primitive source constructor admission。",
+      "proved": false,
+      "remaining": "拆分构造器准入的来源类别。"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorAdmissionSplitsBySourceClass",
+      "meaning": "任一候选来源必须属于 canonical、generic_wfd、unregistered/mixed、external_spectral 或 actual_noncanonical。",
+      "proved": true,
+      "remaining": "逐类路由后只剩 actual noncanonical 公式。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalClassClosedScoped",
+      "meaning": "canonical RIW/Buchstab constructor 已闭合，但只在 canonical-source 分支有效。",
+      "proved": true,
+      "remaining": "不能导入 noncanonical clean-core。"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDClassRejected",
+      "meaning": "generic WFD 只是形式性质，不是 source constructor。",
+      "proved": true,
+      "remaining": "generic 分支只能走外部谱输入或命名回流。"
+    },
+    {
+      "closed": true,
+      "gate": "UnregisteredOrMixedFormalUnitReturnAbsorbed",
+      "meaning": "没有同一 formal unit/source registration 的对象不是 clean-core 终端；口径不一致回到 Multiplicity/Stitching 或 K7 失败出口。",
+      "proved": true,
+      "remaining": "不再把 unregistered source 当作自足剩余。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralClassPinned",
+      "meaning": "外部谱类已压成 c-dependent completed residue spectral cancellation。",
+      "proved": false,
+      "remaining": "证明或接受 CDependentResidueWeightSpectralCancellationInput。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualNoncanonicalPrimitiveConstructorFormulaCurrentCorpusProved",
+      "meaning": "当前材料尚未写出 actual noncanonical clean-core primitive constructor formula。",
+      "proved": false,
+      "remaining": "证明 ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门。",
+      "proved": false,
+      "remaining": "源侧完成后仍需独立验收。"
+    }
+  ],
+  "source_class_partition_closed": true,
+  "source_classes": [
+    {
+      "remaining": "不能覆盖 noncanonical clean-core。",
+      "route": "canonical RIW/Buchstab constructor",
+      "source_class": "canonical",
+      "status": "closed_scoped"
+    },
+    {
+      "remaining": "形式可分解性不给 summand emitter。",
+      "route": "formal well-factorable template",
+      "source_class": "generic_wfd",
+      "status": "rejected_as_constructor"
+    },
+    {
+      "remaining": "不能作为 clean-core 终端保留。",
+      "route": "Multiplicity/Stitching or K7 formal-unit return",
+      "source_class": "unregistered_or_mixed_formal_unit",
+      "status": "absorbed_as_return"
+    },
+    {
+      "remaining": "需证明或接受外部谱输入。",
+      "route": "c-dependent completed residue spectral input",
+      "source_class": "external_spectral",
+      "status": "open_external"
+    },
+    {
+      "remaining": "写出 actual noncanonical constructor formula。",
+      "route": "primitive constructor formula",
+      "source_class": "actual_noncanonical",
+      "status": "open_self_contained"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-origin-source-admission-router.json": "9e4ba4451beaa9fb46e7bce4eeab74dc9edcb62a60d08af58b038222cc07c3c3",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
+    "docs/monograph/prime-matrix-multiplicity-stitching-absorption-contract.md": "8f685dba6fa180747f04e3412ecb4985bbe4bbd4562e3968a7f51da5e782890d",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.json": "a6f8b9718c0c8d6a2854b37e3850d548798ca4aafa708c08b894bb4066ae3d52",
+    "docs/monograph/prime-matrix-triad-a1-branch-statement-coverage-router.json": "570acc92351eb91ab4005f64e028fad0cddddc29e9a935b9f4043ef6aaab4234",
+    "docs/monograph/prime-matrix-triad-a1-clean-kls-external-input-router.json": "50fe87be4c8d5be158d8a0100db4da6ec45aa5accca112a1548e13390f8b7caa",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f"
+  },
+  "status": "constructor_admission_reduced_to_actual_noncanonical_primitive_formula_open",
+  "unregistered_source_return_absorbed": true
+}

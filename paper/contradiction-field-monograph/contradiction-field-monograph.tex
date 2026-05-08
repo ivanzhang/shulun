@@ -3526,6 +3526,39 @@ CleanCorePrimitiveSourceConstructorAdmissionAndReturn.
 This input is still open: the current material proves the canonical constructor only on
 the canonical-source branch and blocks generic WFD as a constructor, but it does not prove
 noncanonical clean-core constructor admission or absorption of every unregistered source.
+
+The clean-core constructor source-class firewall then separates this admission gate by
+source class.  It records
+\[
+\begin{gathered}
+  \texttt{constructor\_source\_class\_firewall\_boundary\_closed=true},\\
+  \texttt{source\_class\_partition\_closed=true},\\
+  \texttt{unregistered\_source\_return\_absorbed=true},\\
+  \texttt{actual\_noncanonical\_primitive\_constructor\_formula\_proved=false},\\
+  \texttt{clean\_core\_primitive\_source\_constructor\_admission\_proved=false},\\
+  \texttt{external\_spectral\_atom\_accepted=false},\\
+  \texttt{dstructure\_rankin\_independent\_acceptance\_completed=false},\\
+  \texttt{row\_column\_unconditional\_closed=false}.
+\end{gathered}
+\]
+The firewall has five classes.  The canonical constructor is already closed but scoped to
+the canonical-source branch.  A generic well-factorable template is not a constructor.
+Unregistered or mixed formal-unit sources return through Multiplicity/Stitching or the K7
+formal-unit failure.  The external spectral class remains the completed
+\(c\)-dependent residue-weight input.  Thus the only self-contained source-side atom is
+\begin{quote}\footnotesize\ttfamily
+ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn.
+\end{quote}
+Equivalently, the latest conditional basis is
+\begin{quote}\footnotesize\ttfamily
+(ActualNoncanonicalPrimitiveSourceConstructorFormulaAndReturn\\
+OR CDependentResidueWeightSpectralCancellationInput)\\
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.
+\end{quote}
+The source-side input asks for a pre-Cauchy definition of the actual noncanonical
+clean-core coefficients, a deterministic summand emitter for \(\alpha/\delta\), branch keys,
+\(u/v\) maps, signs and local factors, and compatibility with the same formal unit used by
+the support, capacity and return ledgers.  This formula is not proved here.
 \end{proof}
 
 
