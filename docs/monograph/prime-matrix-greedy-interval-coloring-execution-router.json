@@ -1,0 +1,158 @@
+{
+  "certificate_type": "prime_matrix_greedy_interval_coloring_execution_certificate",
+  "certificate_scope": "universal_greedy_coloring_transcript_generator",
+  "status": "greedy_interval_coloring_execution_closed_coverage_equation_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-concrete-coloring-coverage-data-router.json": "41136c9e6b618766b441be4a2b8e0faa10a798e454b93d2e8d96232dd364cbe4",
+    "docs/monograph/prime-matrix-low-overlap-multiplicity-table-router.json": "474c9979828338364b2283150cf893f5f0563749c365a6a594da8a2e2b253726",
+    "docs/monograph/prime-matrix-interval-graph-coloring-coverage-router.json": "49342ed7d310b2f34641055db4edb75efabc841f659a09702a5e2a7189bd0b46",
+    "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json": "7b3e7de7760295bb4e328cb2b82345c3b7053d1a54b37c88260e3f21a09f7ab1",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "greedy_interval_coloring_execution_ledger_closed": true,
+  "proved": true,
+  "coverage_complete": true,
+  "greedy_coloring_transcript": [
+    {
+      "record_type": "ordered_interval_input",
+      "coverage": "每个低重叠 interval 一条排序输入记录。",
+      "rule": "按 (left_d,right_d_exclusive,source_tuple_hash,anchor_id) 稳定排序。"
+    },
+    {
+      "record_type": "release_event",
+      "coverage": "扫描到新区间左端点时释放 right_d_exclusive<=left_d 的旧区间颜色。",
+      "rule": "半开端点保证相接区间可复用同色。"
+    },
+    {
+      "record_type": "active_set_before_after",
+      "coverage": "每一步记录 active_before_hash 与 active_after_hash。",
+      "rule": "active set 来自 low-overlap multiplicity table，不能重算出不同活动域。"
+    },
+    {
+      "record_type": "chosen_color",
+      "coverage": "每个 interval 一条颜色选择记录。",
+      "rule": "取最小可用 color_id；无可用色则开新色，但 color_count 必须 <= Omega。"
+    },
+    {
+      "record_type": "same_color_disjointness_check",
+      "coverage": "每个颜色类记录上一右端点。",
+      "rule": "新 interval 的 left_d 必须 >= 同色上一 right_d_exclusive。"
+    },
+    {
+      "record_type": "color_count_bound_row",
+      "coverage": "每个 source tuple 记录 max_color_count。",
+      "rule": "max_color_count <= max_d m(d) <= Omega。"
+    }
+  ],
+  "greedy_laws": [
+    {
+      "law": "stable_interval_order",
+      "formula": "sort by (left,right,source_tuple_hash,anchor_id).",
+      "meaning": "执行 transcript 不依赖文件枚举顺序。"
+    },
+    {
+      "law": "release_before_assign",
+      "formula": "free colors with right<=left before assigning current interval.",
+      "meaning": "半开区间相接不算重叠。"
+    },
+    {
+      "law": "smallest_available_color",
+      "formula": "color(I)=min(free_colors) or next_new_color.",
+      "meaning": "颜色选择是确定性函数。"
+    },
+    {
+      "law": "omega_capacity",
+      "formula": "simultaneous_active_count<=Omega from low-overlap table.",
+      "meaning": "贪心所需颜色数不超过 Omega。"
+    },
+    {
+      "law": "per_color_disjointness",
+      "formula": "same color implies previous_right<=next_left.",
+      "meaning": "同色走廊两两不交。"
+    },
+    {
+      "law": "transcript_hash",
+      "formula": "transcript_id=H(source_tuple_hash,sorted(step_hashes)).",
+      "meaning": "执行记录可复算且稳定。"
+    }
+  ],
+  "current_narrowest_atom": "CoverageEquationCertificateDataLedger",
+  "downstream_atoms": [
+    "CoverageEquationCertificateDataLedger"
+  ],
+  "reduction_formula": "GreedyIntervalColoringExecutionLedger => LowOverlapMultiplicityTable AND IntervalGraphColoringTheorem AND StableGreedyTranscript AND CanonicalTranscriptHash.",
+  "plain_conclusion": "GreedyIntervalColoringExecutionLedger 已闭合：低重叠 intervals 按稳定顺序执行贪心着色，每步释放颜色并取最小可用色，color_count<=Omega。下一步可攻 `CoverageEquationCertificateDataLedger`。",
+  "rows": [
+    {
+      "gate": "GreedyColoringExecutionGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 greedy interval coloring execution。",
+      "remaining": "GreedyIntervalColoringExecutionLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行链条，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "CoverageComponentSchemaImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "coverage 数据已拆成锚区间、多重度、着色执行和覆盖等式四组件。",
+      "remaining": "组件口径固定。"
+    },
+    {
+      "gate": "LowOverlapMultiplicityImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "低重叠表已给出 m(d)<=Omega 的精确活动域。",
+      "remaining": "颜色容量上界固定。"
+    },
+    {
+      "gate": "IntervalGraphColoringTheoremImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "整数区间图贪心着色与 color_count<=Omega 已由上层 formal 证书给出。",
+      "remaining": "无存在性剩余。"
+    },
+    {
+      "gate": "AnchorIntervalInputImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个低重叠 interval 的端点可由 anchor interval 证书复算。",
+      "remaining": "输入区间稳定。"
+    },
+    {
+      "gate": "CanonicalTranscriptHashImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "执行步骤哈希继承 source_tuple_hash。",
+      "remaining": "transcript 身份稳定。"
+    },
+    {
+      "gate": "GreedyIntervalColoringExecutionLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "贪心着色执行 transcript 由排序、释放颜色和最小可用色规则确定性生成。",
+      "remaining": "CoverageEquationCertificateDataLedger"
+    }
+  ],
+  "closed_gates": [
+    "GreedyColoringExecutionGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "CoverageComponentSchemaImported",
+    "LowOverlapMultiplicityImported",
+    "IntervalGraphColoringTheoremImported",
+    "AnchorIntervalInputImported",
+    "CanonicalTranscriptHashImported",
+    "GreedyIntervalColoringExecutionLedger"
+  ],
+  "open_gates": []
+}
