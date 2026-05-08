@@ -1,0 +1,132 @@
+{
+  "certificate_type": "prime_matrix_source_family_assignment_totality_router",
+  "status": "source_family_assignment_interface_closed_physical_embedding_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.json": "a6438bc62b7654f3670dd085931c884a0a9bb0bca1cd17b6e4f102891f83f624",
+    "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "b381d8b4dac613b3e7011c26ea93da6fe3a81f9976aa2f31f3f412cd2e25aeb8",
+    "docs/monograph/prime-matrix-witness-obligation-domain-canonicalization-router.json": "e84a7ea1de151624f4e63e3aef8ddd626c56bf569863916ec0e312f9a8109c21",
+    "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.json": "8358aa6fd3a6bb4c28847b40ecef3177f22939e9114a86ef962b633509c7e2ab",
+    "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.json": "b38bc33611a384f5d925c2005c5e9df9cff5fee0af0b8bc5da4acc8bff88b681",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "source_family_assignment_interface_closed": true,
+  "source_family_assignment_totality_lemma": false,
+  "proved": false,
+  "coverage_complete": false,
+  "source_family_assignment_totality_closed": false,
+  "assignment_proof_like_json": {
+    "SourceFamilyAssignmentTotalityLemma": [],
+    "PhysicalFillerAtomSourceFamilyEmbeddingLemma": []
+  },
+  "assignment_table": [
+    {
+      "obligation_kind": "named_return_records",
+      "assignment": "按 return source_family_id 直接进入 Endpoint/TailAnchor/HighOverlap/SmoothCore/Sparse/RankinConstant 等已登记族。",
+      "status": "closed_schema"
+    },
+    {
+      "obligation_kind": "quotient_reuse_records",
+      "assignment": "按 Multiplicity-Stitching 回流到 CoordinateQuotient、ReuseDefect、ColumnCRT/SAE/TailAnchor/PDEC。",
+      "status": "closed_schema"
+    },
+    {
+      "obligation_kind": "colored_corridor_records",
+      "assignment": "进入 ColoredDisjointCorridorBudgetViolation。",
+      "status": "closed_schema"
+    },
+    {
+      "obligation_kind": "raw_physical_filler_atoms",
+      "assignment": "必须证明每个 canonical (c,q_*(c),m_*(c)) 可作为某个已登记 source family 的 payload 或 named return 字段。",
+      "status": "open"
+    }
+  ],
+  "current_narrowest_atom": "PhysicalFillerAtomSourceFamilyEmbeddingLemma",
+  "downstream_atoms": [
+    "NoLossReturnAccountingLemma"
+  ],
+  "reduction_formula": "SourceFamilyAssignmentTotalityLemma => SourceFamilyAssignmentInterfaceClosed AND PhysicalFillerAtomSourceFamilyEmbeddingLemma.",
+  "plain_conclusion": "SourceFamilyAssignmentTotalityLemma 的接口已闭合：命名 return、quotient/reuse 和 colored corridor 都有已登记来源族或回流 schema。真正未闭合的是 raw physical filler atom `PhysicalFillerAtomSourceFamilyEmbeddingLemma`。",
+  "rows": [
+    {
+      "gate": "SourceFamilyAssignmentGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到 source family assignment totality。",
+      "remaining": "SourceFamilyAssignmentTotalityLemma"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设早期零行 witness 的 formal units，不使用真实缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "PartitionAndDomainImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "partition coverage 与 O(w) 规范化已闭合。",
+      "remaining": "每个 obligation 已有 key 与类型。"
+    },
+    {
+      "gate": "FiniteTaxonomyEmitterImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限来源族 taxonomy 与记录发射器已闭合。",
+      "remaining": "assignment 的目标族固定。"
+    },
+    {
+      "gate": "NamedReturnAssignmentClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "phase defect、PDEC/SAE/ColumnCRT 和终端回流都已有命名 return schema。",
+      "remaining": "NamedReturnSourceFamilyAssignmentClosed"
+    },
+    {
+      "gate": "QuotientReuseSourceFamilyAssignmentClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "quotient/reuse 记录作为 named return 处理，不要求新增来源族。",
+      "remaining": "QuotientReuseSourceFamilyAssignmentClosed"
+    },
+    {
+      "gate": "SourceFamilyAssignmentInterfaceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "source family assignment 的输入域、目标 taxonomy 与已闭合 schema 已固定。",
+      "remaining": "SourceFamilyAssignmentInterfaceClosed"
+    },
+    {
+      "gate": "PhysicalFillerAtomSourceFamilyEmbeddingAvailable",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未发现 raw physical filler atom 到已登记 source family 的嵌入证明。",
+      "remaining": "PhysicalFillerAtomSourceFamilyEmbeddingLemma"
+    },
+    {
+      "gate": "SourceFamilyAssignmentTotalityLemma",
+      "closed": false,
+      "proved": false,
+      "meaning": "只有 raw physical filler atom embedding 也闭合后，assignment totality 才闭合。",
+      "remaining": "PhysicalFillerAtomSourceFamilyEmbeddingLemma"
+    }
+  ],
+  "closed_gates": [
+    "SourceFamilyAssignmentGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "PartitionAndDomainImported",
+    "FiniteTaxonomyEmitterImported",
+    "NamedReturnAssignmentClosed",
+    "QuotientReuseSourceFamilyAssignmentClosed",
+    "SourceFamilyAssignmentInterfaceClosed"
+  ],
+  "open_gates": [
+    "PhysicalFillerAtomSourceFamilyEmbeddingAvailable",
+    "SourceFamilyAssignmentTotalityLemma"
+  ]
+}
