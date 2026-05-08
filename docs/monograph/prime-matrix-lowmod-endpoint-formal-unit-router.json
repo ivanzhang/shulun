@@ -1,0 +1,104 @@
+{
+  "certificate_type": "lowmod_endpoint_formal_unit_router",
+  "closed_gates": [
+    "LowModBranchImported",
+    "FiniteLowModSawtoothUnit",
+    "PersistentSparseDichotomyImported",
+    "PersistentToFourierDefect",
+    "ExplicitPDECSchemaDiscipline",
+    "LowRankColumnSparseAbsorption",
+    "CurrentMaterializedPDECCandidatesDoNotExcludeFutureLowMod"
+  ],
+  "current_pdec_zero_not_future_exclusion": true,
+  "formal_unit_shape": {
+    "Omega": "bad aligned rows x triggering the same LowMod block B and sign",
+    "bad_set": "S={x: sign*f_B(x)>=kappa_B}",
+    "persistent_branch": "|S|>=beta Q_B => nonzero Fourier defect => future primitive PDEC schema",
+    "phase_map": "x mod Q_B where Q_B=lcm(d: d in B)",
+    "sparse_branch": "|S| small => SAE/local survivor or endpoint escape exclusion",
+    "test_function": "f_B(x)=sum_{d in B} mu(d) epsilon_d(x)"
+  },
+  "lowmod_endpoint_exclusion_closed": false,
+  "lowmod_formal_unit_admission_boundary_closed": true,
+  "open_gates": [
+    "LowModEndpointExclusion"
+  ],
+  "plain_conclusion": "本步把 LowMod endpoint CRTDefect 的准入纪律闭合：它不能作为无名出口，也不能被当前 PDEC 候选为零直接排除。若坏行在同一低模块上持续出现，它必须提交同 formal unit 的 future primitive PDEC schema；若只稀疏出现，它必须进入 SAE/local survivor 或 ColumnCRT 位移吸收。真正未闭合的是这些准入后的排斥。",
+  "previous_terminal_gap": "LowModTailCoreDefectExclusionPackage",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LowModBranchImported",
+      "meaning": "上一轮已把一素分支为零路由到 LowMod endpoint CRTDefect 或 Tail/Core concentration。",
+      "output": "本步只处理 LowMod endpoint 分支。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "FiniteLowModSawtoothUnit",
+      "meaning": "LowMod 分支是 d<=D 的有限 squarefree 模 sawtooth 线性组合，依赖同一个 x 相位。",
+      "output": "可定义同一 formal unit Omega=S, tau=d-block, w=mu(d)。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PersistentSparseDichotomyImported",
+      "meaning": "DEC 文档已证明单点 DEC 不能排斥；必须二分为 persistent DEC 或 sparse/local escape。",
+      "output": "PersistentLowModPDECOrSparseSAE。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "PersistentToFourierDefect",
+      "meaning": "若同一低模块坏行有正密度，坏行指示函数产生非零 Fourier/CRT 缺陷。",
+      "output": "可进入 PDEC admission，而不是单点均衡矛盾。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitPDECSchemaDiscipline",
+      "meaning": "未来 LowMod PDEC 必须满足同 formal unit、非二点、至少三物理原子、二秩以上、cap-stable。",
+      "output": "LowModFutureExplicitPrimitivePDECSchemaRequired。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "LowRankColumnSparseAbsorption",
+      "meaning": "若 LowMod 缺陷低秩、单窗、稀疏或固定列位移复用，则不准作为新 PDEC，回流 SAE/ColumnCRT/PDEC 吸收。",
+      "output": "NoFourthLowModExit。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "CurrentMaterializedPDECCandidatesDoNotExcludeFutureLowMod",
+      "meaning": "当前已物化 PDEC 候选为零只说明现有材料清零；假设反例产生的新 LowMod formal unit 仍必须单独验收。",
+      "output": "不能用 current_materialized_pdec_frontier_closed 直接排斥反例。",
+      "proved": true
+    },
+    {
+      "closed": false,
+      "gate": "LowModEndpointExclusion",
+      "meaning": "尚未证明所有准入后的 persistent LowMod PDEC 都满足 U_CRT<L_PDEC，或所有 sparse LowMod 窗口被 SAE 排除。",
+      "output": "LowModFuturePDECSchemaExclusionOrSparseSAE。",
+      "proved": false
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-aligned-prime-main-defect-router.json": "d8f5e61bed71508639889c6ae1aec89cfd41ce3ccc267c9ce2fd6feaad060ff6",
+    "docs/monograph/prime-matrix-columncrt-to-pdec-sae-absorption-router.md": "5e3df47871aa9953a3f778c2a8c18421a7c3e1c122c770cc467729d61d2bcd8b",
+    "docs/monograph/prime-matrix-dec-ospc-exclusion-hardpoint.md": "d62bb2237dda0a3dffd3d085f6b0375fbef7a203f4bf8f82b6eb73a2fbe3a963",
+    "docs/monograph/prime-matrix-eda-bk-lowmod-tail-dichotomy.md": "47a873deea7309953622f8ce20dca1ce8db8fd415037da45289c1215b5c86380",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-sae-to-local-survivor-pdec-absorption-router.md": "e15e466ba60f244fd2d19513951fe6ef9cf0c06fd7a73fbc7ef53fad2d95c79b"
+  },
+  "status": "lowmod_endpoint_routed_to_future_pdec_schema_or_sparse_sae",
+  "terminal_gap_after_router": "LowModFuturePDECSchemaExclusionOrSparseSAE",
+  "terminal_gap_expansion": [
+    "PersistentLowModPrimitivePDECSchemaAdmission",
+    "PersistentLowModPDECInequality_UCRT_LT_LPDEC",
+    "SparseLowModSAELocalSurvivorExclusion",
+    "LowRankOrColumnDisplacementAbsorption",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}

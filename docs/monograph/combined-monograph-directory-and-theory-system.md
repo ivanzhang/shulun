@@ -5589,3 +5589,91 @@ LowModTailCoreDefectExclusionPackage
 ```
 
 这一步仍不是无条件闭合；它把“证明一素分支正性”的任务改写为两个命名出口的排斥任务。
+
+继续新增：
+
+```text
+experiments/prime_matrix_lowmod_endpoint_formal_unit_router.py
+docs/monograph/prime-matrix-lowmod-endpoint-formal-unit-router.md/json
+```
+
+该路由器直接攻击 `LowModEndpointCRTDefectExclusionOrPDEC` 的准入纪律。结论为：
+
+```text
+lowmod_formal_unit_admission_boundary_closed=true；
+current_pdec_zero_not_future_exclusion=true；
+lowmod_endpoint_exclusion_closed=false；
+row_column_unconditional_closed=false；
+terminal_gap_after_router=LowModFuturePDECSchemaExclusionOrSparseSAE。
+```
+
+LowMod endpoint formal unit 的形状被固定为：
+
+```text
+Omega        = bad aligned rows x triggering the same LowMod block B and sign；
+phase_map    = x mod Q_B, where Q_B=lcm(d: d in B)；
+test_function= f_B(x)=sum_{d in B} mu(d) epsilon_d(x)；
+bad_set      = S={x: sign*f_B(x)>=kappa_B}。
+```
+
+关键纪律是：单点 LowMod 端点尖峰不是矛盾；完整 CRT 周期零均值不能排除一个短窗口尖峰。
+只有同一低模块、同一符号、同一相位图上的坏行集合，才能形成可审查的 persistent PDEC 输入。
+若坏行在同一低模块上持续出现：
+
+```text
+|S|>=beta Q_B
+=> nonzero Fourier defect
+=> future primitive PDEC schema。
+```
+
+若坏行只稀疏出现：
+
+```text
+|S| small
+=> SAE/local survivor or endpoint escape exclusion。
+```
+
+本步同时排除一个错误跳步：
+
+```text
+错误：LowMod endpoint CRTDefect 出现
+   => 当前 PDEC 候选为零
+   => 矛盾。
+
+正确：LowMod endpoint CRTDefect 出现
+   => future explicit PDEC schema 或 sparse SAE。
+```
+
+当前 PDEC family 边界只清零现有已物化候选；反例假设若产生新的 LowMod formal unit，仍必须提交
+同 formal unit、非二点、二秩以上、cap-stable 的完整字段，然后再证明 `U_CRT<L_PDEC`。
+
+已经闭合的门为：
+
+```text
+LowModBranchImported；
+FiniteLowModSawtoothUnit；
+PersistentSparseDichotomyImported；
+PersistentToFourierDefect；
+ExplicitPDECSchemaDiscipline；
+LowRankColumnSparseAbsorption；
+CurrentMaterializedPDECCandidatesDoNotExcludeFutureLowMod。
+```
+
+唯一开放门为：
+
+```text
+LowModEndpointExclusion。
+```
+
+新的最窄剩余为：
+
+```text
+LowModFuturePDECSchemaExclusionOrSparseSAE
+  = PersistentLowModPrimitivePDECSchemaAdmission
+    AND PersistentLowModPDECInequality_UCRT_LT_LPDEC
+    AND SparseLowModSAELocalSurvivorExclusion
+    AND LowRankOrColumnDisplacementAbsorption
+    AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+这一步仍不是无条件闭合；它把 LowMod 分支从泛称出口压成 future PDEC schema 与 sparse SAE 两个可验收输入。
