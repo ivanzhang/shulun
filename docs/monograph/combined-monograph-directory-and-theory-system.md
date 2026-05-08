@@ -5368,3 +5368,75 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 其中当前最窄优先级是 `AnchorCollarPrimeFiberCapacityBoundOrPDECReturn`：证明 anchor collar
 中所有长度 `<sqrt(P)` 的短素数纤维总容量不能覆盖整个 `R_x`，或证明任何覆盖级过载都会进入
 已命名且可排斥的 `PDEC/SAE/ColumnCRT`。
+
+继续新增：
+
+```text
+experiments/prime_matrix_anchor_collar_survivor_identity_router.py
+docs/monograph/prime-matrix-anchor-collar-survivor-identity-router.md/json
+```
+
+该路由器直接攻击 `AnchorCollarShortPrimeFiberUpperBound` 的本质。结论为：
+
+```text
+anchor_collar_survivor_identity_closed=true；
+capacity_gap_equals_prime_survivors_closed=true；
+anchor_collar_short_fiber_capacity_closed=false；
+row_column_unconditional_closed=false；
+terminal_gap_after_router=PrimeSurvivorLowerBoundOrPDECSAEColumnReturn。
+```
+
+核心恒等式如下。对 `sqrt(P)<=x<P`，令 `R_x` 为第 `x` 行中没有 `<=x` 素因子的列。由于
+`xP+c<(x+1)P<=P^2`，任一 `c in R_x` 只有两种可能：
+
+```text
+xP+c is prime；
+xP+c=q m,  x<q<=m<P,  q,m prime。
+```
+
+第二种正是 canonical anchor-collar 短纤维的精确支撑，因此：
+
+```text
+R_x = PrimeSurvivors_x disjoint_union SemiprimeFibers_x；
+|R_x|-|SemiprimeFibers_x| = |PrimeSurvivors_x|。
+```
+
+这一步的意义是双重的。第一，短纤维容量硬点没有留下隐藏的计数松弛：
+
+```text
+AnchorCollarShortPrimeFiberUpperBound
+  <=> PrimeSurvivors_x>0 on every sqrt(P)<=x<P row。
+```
+
+第二，继续直接数 q-fiber 总容量不能绕开短区间素数屏障；真正可继续硬攻的非循环方向变成变量行维数差：
+
+```text
+G_x(P)=#R_x                       一维粗骨架；
+B_x(P)=#SemiprimeFibers_x          二维素对纤维；
+PrimeSurvivors_x=G_x(P)-B_x(P)。
+```
+
+若能证明 `G_x(P)>B_x(P)`，则该行闭合；若失败，则失败必须表现为低模骨架亏损、素对纤维过密、
+孤立幸存者逃逸或固定列位移复用，并分别回流 `PDEC/SAE/ColumnCRT`。
+
+样本审计只验证实现口径；恒等式由唯一分解和 `x>=sqrt(P)` 直接证明。默认样本给出：
+
+```text
+all_identity_holds=true；
+all_sqrt_gate_clean=true；
+all_anchor_collar_clean=true；
+P=101,499,997,1999 的最小素数幸存数分别为 7,29,54,110。
+```
+
+新的最窄剩余压成：
+
+```text
+PrimeSurvivorLowerBoundOrPDECSAEColumnReturn
+  = VariableRowRoughSkeletonLowerBound
+    AND VariableRowPrimePairFiberUpperBound
+    AND PrimeFreeIntervalLowModPDECDefectReturn
+    AND SparsePrimeSurvivorOrLocalSAEExclusion
+    AND ColumnDisplacementReusePDECReturn。
+```
+
+这一步不是终局闭合；它把 anchor-collar 的容量语言压成了精确的素数幸存/维数差语言。

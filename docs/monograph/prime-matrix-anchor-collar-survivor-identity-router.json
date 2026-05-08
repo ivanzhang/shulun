@@ -1,0 +1,482 @@
+{
+  "anchor_collar_short_fiber_capacity_closed": false,
+  "anchor_collar_survivor_identity_closed": true,
+  "capacity_gap_equals_prime_survivors_closed": true,
+  "certificate_type": "anchor_collar_survivor_identity_router",
+  "closed_gates": [
+    "AnchorCollarImported",
+    "RoughPrimeSemiprimePartition",
+    "FiberSupportEqualsSemiprimeSet",
+    "CapacityGapEqualsPrimeSurvivors",
+    "EarlyZeroEquivalentPrimeFreeIntervalLargeBranch",
+    "EDABarrierCompatibility",
+    "DimensionGapRouteCompatibility"
+  ],
+  "exact_identity": "For sqrt(P)<=x<P, R_x splits disjointly into actual primes in (xP,(x+1)P) and canonical anchor-collar semiprimes qm with x<q<=m<P. Therefore |R_x|-|SemiprimeFibers_x| equals the prime survivor count.",
+  "open_gates": [
+    "UnconditionalPrimeSurvivorLowerBound"
+  ],
+  "plain_conclusion": "本步把 anchor-collar 短纤维容量硬点做成无损恒等式：`R_x` 精确等于素数幸存列与 canonical 双素纤维的并。因此“短纤维不能覆盖全部 R_x”等价于“该 P 对齐短区间至少有一个素数幸存”。这不是终局证明，但它排除了继续把纤维容量当作更弱纯计数问题的退路；下一步必须证明变量行一维粗骨架和二维素对纤维的维数差，或把素数幸存为零送入 PDEC/SAE/ColumnCRT。",
+  "previous_frontier": "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AnchorCollarImported",
+      "meaning": "上一轮已证明 x>=sqrt(P) 的高补洞只能来自 canonical anchor collar。",
+      "output": "可对 R_x 做无损分解。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "RoughPrimeSemiprimePartition",
+      "meaning": "若 x>=sqrt(P)，n<xP+P<P^2 且没有 <=x 因子，则 n 只能是素数或两个 >x 素数的乘积。",
+      "output": "R_x = PrimeSurvivors_x disjoint_union SemiprimeFibers_x。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "FiberSupportEqualsSemiprimeSet",
+      "meaning": "canonical q-fiber 恰好枚举上述双素乘积列；q,m 互换只计一次。",
+      "output": "短纤维容量不是外估计，而是 SemiprimeFibers_x 的精确支撑。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "CapacityGapEqualsPrimeSurvivors",
+      "meaning": "|R_x|-|canonical fibers| = PrimeSurvivors_x。",
+      "output": "AnchorCollarShortPrimeFiberUpperBound 等价于 PrimeSurvivors_x>0。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroEquivalentPrimeFreeIntervalLargeBranch",
+      "meaning": "在 x>=sqrt(P) 分支，早期零行等价于该 P 对齐短区间没有素数幸存者。",
+      "output": "不能再把短纤维容量当作比 EDA 更弱的纯计数问题。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "EDABarrierCompatibility",
+      "meaning": "该分解与已有 EDA-Gap Barrier 一致：自足闭合仍需要 CRT 对偶下界或缺陷回流。",
+      "output": "AnchorCollarPrimeSurvivorLowerBoundOrDefectReturn。",
+      "proved": true
+    },
+    {
+      "closed": true,
+      "gate": "DimensionGapRouteCompatibility",
+      "meaning": "可用的非循环攻法是证明一维粗骨架下界大于二维素对纤维上界，或失败进入 PDEC/Tail-anchor。",
+      "output": "VariableRowRoughSkeletonVsPrimePairFiberDimensionGap。",
+      "proved": true
+    },
+    {
+      "closed": false,
+      "gate": "UnconditionalPrimeSurvivorLowerBound",
+      "meaning": "尚未证明所有 sqrt(P)<=x<P 均有 PrimeSurvivors_x>0。",
+      "output": "PrimeSurvivorLowerBoundOrPDECSAEColumnReturn。",
+      "proved": false
+    }
+  ],
+  "sample_audit": {
+    "all_anchor_collar_clean": true,
+    "all_identity_holds": true,
+    "all_sqrt_gate_clean": true,
+    "p_values": [
+      101,
+      499,
+      997,
+      1999
+    ],
+    "rows": [
+      {
+        "all_anchor_collar_clean": true,
+        "all_identity_holds": true,
+        "all_sqrt_gate_clean": true,
+        "densest_semiprime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 9,
+            "distinct_anchor_count": 6,
+            "h": 88,
+            "identity_holds": true,
+            "identity_margin": 9,
+            "max_fiber_load": 2,
+            "prime_constant_logp": 0.4112483628868449,
+            "prime_share_of_rough": 0.5,
+            "prime_survivors": 9,
+            "rough_constant_logx": 0.45711968746839265,
+            "rough_count": 18,
+            "semiprime_constant_logp": 0.4112483628868449,
+            "semiprime_share_of_rough": 0.5,
+            "x": 13
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 7,
+            "distinct_anchor_count": 5,
+            "h": 90,
+            "identity_holds": true,
+            "identity_margin": 11,
+            "max_fiber_load": 2,
+            "prime_constant_logp": 0.5026368879728105,
+            "prime_share_of_rough": 0.6111111111111112,
+            "prime_survivors": 11,
+            "rough_constant_logx": 0.4273476723799077,
+            "rough_count": 18,
+            "semiprime_constant_logp": 0.3198598378008794,
+            "semiprime_share_of_rough": 0.3888888888888889,
+            "x": 11
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 7,
+            "distinct_anchor_count": 6,
+            "h": 85,
+            "identity_holds": true,
+            "identity_margin": 12,
+            "max_fiber_load": 2,
+            "prime_constant_logp": 0.5483311505157933,
+            "prime_share_of_rough": 0.631578947368421,
+            "prime_survivors": 12,
+            "rough_constant_logx": 0.5215760962629291,
+            "rough_count": 19,
+            "semiprime_constant_logp": 0.3198598378008794,
+            "semiprime_share_of_rough": 0.3684210526315789,
+            "x": 16
+          }
+        ],
+        "max_fiber_load": 2,
+        "max_semiprime_constant_logp": 0.4112483628868449,
+        "max_semiprime_share": 0.5,
+        "min_prime_survivors": 7,
+        "min_rough_constant_logx": 0.3398383715761102,
+        "p": 101,
+        "row_count": 91,
+        "sqrt_p": 10,
+        "worst_prime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 1,
+            "distinct_anchor_count": 1,
+            "h": 28,
+            "identity_holds": true,
+            "identity_margin": 7,
+            "max_fiber_load": 1,
+            "prime_constant_logp": 0.3198598378008794,
+            "prime_share_of_rough": 0.875,
+            "prime_survivors": 7,
+            "rough_constant_logx": 0.3398383715761102,
+            "rough_count": 8,
+            "semiprime_constant_logp": 0.04569426254298277,
+            "semiprime_share_of_rough": 0.125,
+            "x": 73
+          }
+        ],
+        "x_range": [
+          10,
+          100
+        ]
+      },
+      {
+        "all_anchor_collar_clean": true,
+        "all_identity_holds": true,
+        "all_sqrt_gate_clean": true,
+        "densest_semiprime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 29,
+            "distinct_anchor_count": 19,
+            "h": 462,
+            "identity_holds": true,
+            "identity_margin": 40,
+            "max_fiber_load": 3,
+            "prime_constant_logp": 0.49800449665342833,
+            "prime_share_of_rough": 0.5797101449275363,
+            "prime_survivors": 40,
+            "rough_constant_logx": 0.49930528250992284,
+            "rough_count": 69,
+            "semiprime_constant_logp": 0.36105326007373556,
+            "semiprime_share_of_rough": 0.42028985507246375,
+            "x": 37
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 33,
+            "distinct_anchor_count": 21,
+            "h": 471,
+            "identity_holds": true,
+            "identity_margin": 46,
+            "max_fiber_load": 3,
+            "prime_constant_logp": 0.5727051711514426,
+            "prime_share_of_rough": 0.5822784810126582,
+            "prime_survivors": 46,
+            "rough_constant_logx": 0.5275433994064952,
+            "rough_count": 79,
+            "semiprime_constant_logp": 0.41085370973907837,
+            "semiprime_share_of_rough": 0.4177215189873418,
+            "x": 28
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 32,
+            "distinct_anchor_count": 19,
+            "h": 477,
+            "identity_holds": true,
+            "identity_margin": 51,
+            "max_fiber_load": 3,
+            "prime_constant_logp": 0.6349557332331212,
+            "prime_share_of_rough": 0.6144578313253012,
+            "prime_survivors": 51,
+            "rough_constant_logx": 0.5141413299173151,
+            "rough_count": 83,
+            "semiprime_constant_logp": 0.39840359732274266,
+            "semiprime_share_of_rough": 0.3855421686746988,
+            "x": 22
+          }
+        ],
+        "max_fiber_load": 4,
+        "max_semiprime_constant_logp": 0.41085370973907837,
+        "max_semiprime_share": 0.42028985507246375,
+        "min_prime_survivors": 29,
+        "min_rough_constant_logx": 0.342400164615125,
+        "p": 499,
+        "row_count": 477,
+        "sqrt_p": 22,
+        "worst_prime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 0,
+            "distinct_anchor_count": 0,
+            "h": 137,
+            "identity_holds": true,
+            "identity_margin": 29,
+            "max_fiber_load": 0,
+            "prime_constant_logp": 0.36105326007373556,
+            "prime_share_of_rough": 1.0,
+            "prime_survivors": 29,
+            "rough_constant_logx": 0.342400164615125,
+            "rough_count": 29,
+            "semiprime_constant_logp": 0.0,
+            "semiprime_share_of_rough": 0.0,
+            "x": 362
+          }
+        ],
+        "x_range": [
+          22,
+          498
+        ]
+      },
+      {
+        "all_anchor_collar_clean": true,
+        "all_identity_holds": true,
+        "all_sqrt_gate_clean": true,
+        "densest_semiprime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 62,
+            "distinct_anchor_count": 28,
+            "h": 962,
+            "identity_holds": true,
+            "identity_margin": 88,
+            "max_fiber_load": 4,
+            "prime_constant_logp": 0.6094464069775745,
+            "prime_share_of_rough": 0.5866666666666667,
+            "prime_survivors": 88,
+            "rough_constant_logx": 0.5349069300134524,
+            "rough_count": 150,
+            "semiprime_constant_logp": 0.4293826958251093,
+            "semiprime_share_of_rough": 0.41333333333333333,
+            "x": 35
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 60,
+            "distinct_anchor_count": 31,
+            "h": 957,
+            "identity_holds": true,
+            "identity_margin": 87,
+            "max_fiber_load": 4,
+            "prime_constant_logp": 0.6025208796255567,
+            "prime_share_of_rough": 0.5918367346938775,
+            "prime_survivors": 87,
+            "rough_constant_logx": 0.5438969706667488,
+            "rough_count": 147,
+            "semiprime_constant_logp": 0.41553164112107355,
+            "semiprime_share_of_rough": 0.40816326530612246,
+            "x": 40
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 55,
+            "distinct_anchor_count": 28,
+            "h": 954,
+            "identity_holds": true,
+            "identity_margin": 83,
+            "max_fiber_load": 5,
+            "prime_constant_logp": 0.574818770217485,
+            "prime_share_of_rough": 0.6014492753623188,
+            "prime_survivors": 83,
+            "rough_constant_logx": 0.5206074382805532,
+            "rough_count": 138,
+            "semiprime_constant_logp": 0.38090400436098404,
+            "semiprime_share_of_rough": 0.39855072463768115,
+            "x": 43
+          }
+        ],
+        "max_fiber_load": 5,
+        "max_semiprime_constant_logp": 0.4293826958251093,
+        "max_semiprime_share": 0.41333333333333333,
+        "min_prime_survivors": 54,
+        "min_rough_constant_logx": 0.3762295888235478,
+        "p": 997,
+        "row_count": 966,
+        "sqrt_p": 31,
+        "worst_prime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 1,
+            "distinct_anchor_count": 1,
+            "h": 81,
+            "identity_holds": true,
+            "identity_margin": 54,
+            "max_fiber_load": 1,
+            "prime_constant_logp": 0.37397847700896614,
+            "prime_share_of_rough": 0.9818181818181818,
+            "prime_survivors": 54,
+            "rough_constant_logx": 0.3762295888235478,
+            "rough_count": 55,
+            "semiprime_constant_logp": 0.006925527352017892,
+            "semiprime_share_of_rough": 0.01818181818181818,
+            "x": 916
+          }
+        ],
+        "x_range": [
+          31,
+          996
+        ]
+      },
+      {
+        "all_anchor_collar_clean": true,
+        "all_identity_holds": true,
+        "all_sqrt_gate_clean": true,
+        "densest_semiprime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 114,
+            "distinct_anchor_count": 46,
+            "h": 1955,
+            "identity_holds": true,
+            "identity_margin": 170,
+            "max_fiber_load": 7,
+            "prime_constant_logp": 0.6463573771210945,
+            "prime_share_of_rough": 0.5985915492957746,
+            "prime_survivors": 170,
+            "rough_constant_logx": 0.5376237398863362,
+            "rough_count": 284,
+            "semiprime_constant_logp": 0.43343965289296926,
+            "semiprime_share_of_rough": 0.4014084507042254,
+            "x": 44
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 109,
+            "distinct_anchor_count": 49,
+            "h": 1948,
+            "identity_holds": true,
+            "identity_margin": 163,
+            "max_fiber_load": 5,
+            "prime_constant_logp": 0.6197426615925788,
+            "prime_share_of_rough": 0.5992647058823529,
+            "prime_survivors": 163,
+            "rough_constant_logx": 0.5349957839424795,
+            "rough_count": 272,
+            "semiprime_constant_logp": 0.41442914180117235,
+            "semiprime_share_of_rough": 0.4007352941176471,
+            "x": 51
+          },
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 110,
+            "distinct_anchor_count": 48,
+            "h": 1951,
+            "identity_holds": true,
+            "identity_margin": 167,
+            "max_fiber_load": 6,
+            "prime_constant_logp": 0.6349510704660164,
+            "prime_share_of_rough": 0.6028880866425993,
+            "prime_survivors": 167,
+            "rough_constant_logx": 0.536429554788137,
+            "rough_count": 277,
+            "semiprime_constant_logp": 0.41823124401953177,
+            "semiprime_share_of_rough": 0.3971119133574007,
+            "x": 48
+          }
+        ],
+        "max_fiber_load": 7,
+        "max_semiprime_constant_logp": 0.43343965289296926,
+        "max_semiprime_share": 0.4014084507042254,
+        "min_prime_survivors": 110,
+        "min_rough_constant_logx": 0.41865484244743084,
+        "p": 1999,
+        "row_count": 1955,
+        "sqrt_p": 44,
+        "worst_prime_rows": [
+          {
+            "bad_anchor_after_collar": 0,
+            "bad_composite_after_sqrt_gate": 0,
+            "canonical_semiprime_fibers": 1,
+            "distinct_anchor_count": 1,
+            "h": 118,
+            "identity_holds": true,
+            "identity_margin": 110,
+            "max_fiber_load": 1,
+            "prime_constant_logp": 0.41823124401953177,
+            "prime_share_of_rough": 0.990990990990991,
+            "prime_survivors": 110,
+            "rough_constant_logx": 0.41865484244743084,
+            "rough_count": 111,
+            "semiprime_constant_logp": 0.0038021022183593795,
+            "semiprime_share_of_rough": 0.009009009009009009,
+            "x": 1881
+          }
+        ],
+        "x_range": [
+          44,
+          1998
+        ]
+      }
+    ],
+    "skipped_nonprimes": [],
+    "status": "anchor_collar_survivor_identity_sample_verified"
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-diagonal-postsquare-primepair-dimension-gap.md": "dd371a21974ac3122a738012444d7d9785ee13bc4f5dd84045dfe4b4e710a5d6",
+    "docs/monograph/prime-matrix-early-zero-anchor-collar-router.json": "3f218f902460950075e2477ad50596dfafab7c4611d5c4830045bb4003e54546",
+    "docs/monograph/prime-matrix-early-zero-contradiction-matrix-router.json": "cea1b53a99a6d5e6f0fb6fa9a9d95476b1beb107cbcec68113454428eb68ebf1",
+    "docs/monograph/prime-matrix-eda-gap-barrier-and-dual-route.md": "45e35d087e33aaa2ea78c63777a160a782bad707f3ebaf769187defa43c1b5e4"
+  },
+  "status": "anchor_collar_capacity_reduced_to_prime_survivor_or_named_defect",
+  "terminal_gap_after_router": "PrimeSurvivorLowerBoundOrPDECSAEColumnReturn",
+  "terminal_gap_expansion": [
+    "VariableRowRoughSkeletonLowerBound",
+    "VariableRowPrimePairFiberUpperBound",
+    "PrimeFreeIntervalLowModPDECDefectReturn",
+    "SparsePrimeSurvivorOrLocalSAEExclusion",
+    "ColumnDisplacementReusePDECReturn"
+  ]
+}
