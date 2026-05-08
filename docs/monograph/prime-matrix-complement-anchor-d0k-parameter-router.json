@@ -1,0 +1,135 @@
+{
+  "certificate_type": "prime_matrix_complement_anchor_d0k_parameter_router",
+  "status": "complement_anchor_d0k_parameter_discipline_closed_coloring_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-bad-window-source-data-emitter-router.json": "3f4db8865e5ce64f3229b8b42a3d2131f9496169302e21bb6d6d5f90fb6bf143",
+    "docs/monograph/prime-matrix-formal-corridor-inventory-contract-router.md": "bb9f15304067c8580b20ed01595cb9702a43a455551fcd47101241092861f5d9",
+    "docs/monograph/prime-matrix-bpn-tailcore-corridor-reduction.md": "ccda551551de37e65af9ab94f0944de816d4890e191fdc628c5ceb79a75947de",
+    "docs/monograph/prime-matrix-bpn-distributed-corridor-saturation-reduction.md": "2bad4b1a92dc32c460a7ec1d295599fb373592c5a77e2ce546f9683db8a91e6b",
+    "docs/monograph/prime-matrix-bpn-colored-corridor-core-sieve-budget.md": "d2d4d092544736ea1f6a0863a40afd29c6812544ce2bf72bb2c142904995081a"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "complement_anchor_d0k_parameter_discipline_closed": true,
+  "formal_colored_corridor_inventory_closed": false,
+  "parameter_rules": [
+    {
+      "field": "D0",
+      "discipline": "由 TailCore/CoreK bucket 的 dyadic core scale 固定，使用半开区间 [D0,2D0)。",
+      "forbidden": "不能为通过 Rankin 预算而后验移动 dyadic 边界。"
+    },
+    {
+      "field": "K",
+      "discipline": "由 source record 的 omega 截断固定，sigma_K(d) 使用 omega(d)<=K。",
+      "forbidden": "不能在同一颜色类内混用多个 K，除非拆成不同 records。"
+    },
+    {
+      "field": "Omega",
+      "discipline": "由 DCS 高/低重叠二分固定；m(d)>Omega 立即回流 high-overlap defect。",
+      "forbidden": "不能把高重叠点留在 low-overlap colored corridor 中。"
+    },
+    {
+      "field": "anchor_set_hash",
+      "discipline": "对规范化 source tuple 与排序后的互补锚集合 A 取哈希，作为可复算来源标识。",
+      "forbidden": "不能只给口头 anchor set；必须能由 I、D0、A0、phase_rule 复算。"
+    },
+    {
+      "field": "phase_rule",
+      "discipline": "phase(d) 是 source record 携带的有限谓词；若无相位过滤则显式写 identity。",
+      "forbidden": "不能在 Rankin 失败后临时追加相位过滤来降低计数。"
+    },
+    {
+      "field": "corridor_domain",
+      "discipline": "每个 a 生成 J_a={d:D0<=d<2D0, ad in I}；低重叠仅保留 m(d)<=Omega 部分。",
+      "forbidden": "不能把不属于同一 D0/K/Omega tuple 的走廊合并进同一颜色证书。"
+    }
+  ],
+  "current_narrowest_atom": "IntervalGraphColoringCoverageCertificateLedger",
+  "downstream_atoms": [
+    "AllowedBudgetAllocationLedger",
+    "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
+    "PDECOrSAEUnifiedExclusionLedger"
+  ],
+  "reduction_formula": "ComplementAnchorSetAndD0KParameterLedger => ComplementAnchorSetAndD0KParameterDisciplineClosed AND IntervalGraphColoringCoverageCertificateLedger.",
+  "plain_conclusion": "ComplementAnchorSetAndD0KParameterLedger 的参数纪律已闭合：互补锚集合 A、D0、K、Omega、phase_rule 与 anchor_set_hash 都必须由同一 source tuple 可复算地产生，不能为 Rankin 预算后验调参。剩余不再是参数来源，而是提交区间图着色、同色不相交 intervals 与覆盖等式，即 `IntervalGraphColoringCoverageCertificateLedger`。",
+  "rows": [
+    {
+      "gate": "ComplementAnchorParameterGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把最窄点推进到互补锚、D0/K/Omega 参数账本。",
+      "remaining": "ComplementAnchorSetAndD0KParameterLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设反例链条内的证书参数，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "FormalInventoryFieldsPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "正式 inventory 已要求 K、D0、Omega、anchor_set_hash、phase_rule 与 coverage_equation。",
+      "remaining": "字段格式无剩余。"
+    },
+    {
+      "gate": "TailCoreDyadicSourcePinsD0K",
+      "closed": true,
+      "proved": true,
+      "meaning": "TailCoreBucket 已把核心 d 放入唯一 dyadic D0 桶，并固定 omega 截断 K。",
+      "remaining": "D0/K 不能后验调参。"
+    },
+    {
+      "gate": "DCSOverlapThresholdPinsOmega",
+      "closed": true,
+      "proved": true,
+      "meaning": "DCS 用 Omega 把高重叠点送回缺陷，低重叠点才允许进入着色走廊。",
+      "remaining": "Omega 不能用于隐藏高重叠。"
+    },
+    {
+      "gate": "CCBPhaseRuleAndRankinObjectPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "CCB 的 sigma_K(d) 明确携带 phase(d)，Rankin 证书对象随该 tuple 固定。",
+      "remaining": "预算分配留给下一层。"
+    },
+    {
+      "gate": "ComplementAnchorSetAndD0KParameterDisciplineClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "A、D0、K、Omega、phase_rule 与 hash 的来源纪律已固定，不能再后验选择参数。",
+      "remaining": "ComplementAnchorSetAndD0KParameterDisciplineClosed"
+    },
+    {
+      "gate": "ComplementAnchorSetAndD0KParameterLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "参数账本闭合为 canonical tuple 纪律；下一步应提交区间图着色与覆盖等式。",
+      "remaining": "IntervalGraphColoringCoverageCertificateLedger"
+    },
+    {
+      "gate": "ConcreteColoringStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "同色 intervals、覆盖等式和颜色数证书仍未提交。",
+      "remaining": "IntervalGraphColoringCoverageCertificateLedger"
+    }
+  ],
+  "closed_gates": [
+    "ComplementAnchorParameterGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "FormalInventoryFieldsPinned",
+    "TailCoreDyadicSourcePinsD0K",
+    "DCSOverlapThresholdPinsOmega",
+    "CCBPhaseRuleAndRankinObjectPinned",
+    "ComplementAnchorSetAndD0KParameterDisciplineClosed",
+    "ComplementAnchorSetAndD0KParameterLedger"
+  ],
+  "open_gates": [
+    "ConcreteColoringStillDownstream"
+  ]
+}
