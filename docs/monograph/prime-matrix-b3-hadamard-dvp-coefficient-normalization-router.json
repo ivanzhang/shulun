@@ -1,0 +1,131 @@
+{
+  "certificate_type": "b3_hadamard_dvp_coefficient_normalization_router",
+  "status": "hadamard_dvp_coefficient_normalization_closed_far_zero_sign_discard",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-hadamard-dvp-kernel-envelope-router.json": "502d64b62769d9edb8409cac5a5e8d8d6f3044296f7095645ff95e39a11a53c0"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "dvp_coefficient_normalization_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "HadamardDVPKernelCoefficientNormalizationC2Ledger": "HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND (HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger AND ((HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros AND HadamardFarZeroShellSeparationConventionLedger) AND HadamardCN16UnitIntervalToDyadicShellCountClosed AND HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel) AND HadamardLocalZeroCoreAbsorptionByCN16Ledger AND HadamardRemainderRangeAndKernelConventionLedger) AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "HadamardFarZeroShellSeparationConventionLedger",
+  "secondary_priority": "HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger",
+  "tertiary_priority": "HadamardLocalZeroCoreAbsorptionByCN16Ledger",
+  "quaternary_priority": "HadamardRemainderRangeAndKernelConventionLedger",
+  "post_hadamard_priority": "CLogAggregationAndRangeConventionLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "constant_audit": {
+    "raw_DVP_absolute_coefficient_sum": 8.0,
+    "effective_far_zero_positive_kernel": 0.0,
+    "required_C_kernel": 2.0,
+    "slack": 2.0
+  },
+  "sign_ledger": [
+    {
+      "step": "zero_kernel_nonnegative",
+      "formula": "Re 1/(sigma+iu-rho)=(sigma-beta)/((sigma-beta)^2+(u-gamma)^2)>=0",
+      "meaning": "sigma>1, 0<=beta<=1 时成立。"
+    },
+    {
+      "step": "log_derivative_sign",
+      "formula": "Re(-zeta'/zeta)(s)=pole/gamma terms - sum_rho Re(1/(s-rho)+1/rho)",
+      "meaning": "零点核进入 DVP 右侧时带负号。"
+    },
+    {
+      "step": "positive_coefficients",
+      "formula": "3,4,1 >= 0",
+      "meaning": "DVP 组合不会把负零点贡献翻成正贡献。"
+    },
+    {
+      "step": "far_zero_discard",
+      "formula": "-sum_{rho != target} nonnegative terms <= 0",
+      "meaning": "非目标远零点可丢弃；它们不消耗 C_log 正预算。"
+    }
+  ],
+  "plain_conclusion": "DVP kernel 系数归一化闭合：原始绝对系数和 8 不能作为预算常数；在 Re(-zeta'/zeta) 中，非目标零点核带负号，且 DVP 系数 3,4,1 非负，所以非目标远零点整体非正，可在上界中丢弃。有效远零点正预算常数为 0，满足 C_kernel<=2。",
+  "rows": [
+    {
+      "gate": "DVPCoefficientNormalizationGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层最窄点是把 DVP 原始绝对系数压力归一化到 dyadic 账本允许的有效 C_kernel<=2。",
+      "remaining": "HadamardDVPKernelCoefficientNormalizationC2Ledger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "QuadraticShapeAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "远零点实部核的非负性和二次衰减形状已经闭合。",
+      "remaining": "HadamardFarZeroQuadraticDecayShapeClosed"
+    },
+    {
+      "gate": "RawAbsoluteCoefficientRejected",
+      "closed": true,
+      "proved": true,
+      "meaning": "不能用 3+4+1=8 的绝对值粗付；在 -zeta'/zeta 中非目标零点项带负号，应按符号丢弃。",
+      "remaining": "raw coefficient sum is not the budget coefficient."
+    },
+    {
+      "gate": "FarZeroSignDiscardClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "sigma>1 时每个非目标零点核实部非负，而零点项在 Re(-zeta'/zeta) 中为负，DVP 非负系数组合后仍为非正，可全部丢弃。",
+      "remaining": "HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros"
+    },
+    {
+      "gate": "EffectiveKernelC2Passes",
+      "closed": true,
+      "proved": true,
+      "meaning": "非目标远零点有效正预算常数为 0，满足 dyadic 账本要求的 C_kernel<=2。",
+      "remaining": "0.0<=2.0"
+    },
+    {
+      "gate": "HadamardDVPKernelCoefficientNormalizationC2Ledger",
+      "closed": true,
+      "proved": true,
+      "meaning": "DVP kernel 系数归一化闭合：非目标远零点不消耗正 C_log 预算。",
+      "remaining": "HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros"
+    },
+    {
+      "gate": "ShellSeparationStillNeeded",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需把目标零点、近壳核心和远壳尾项分离，避免与局部核心账本重复扣费。",
+      "remaining": "HadamardFarZeroShellSeparationConventionLedger"
+    },
+    {
+      "gate": "KernelEnvelopeStillNeedsSeparation",
+      "closed": false,
+      "proved": false,
+      "meaning": "系数归一化闭合后，整个 kernel envelope 还差远/近壳分离 convention。",
+      "remaining": "HadamardDVPQuadraticKernelEnvelopeLedger"
+    }
+  ],
+  "closed_gates": [
+    "DVPCoefficientNormalizationGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "QuadraticShapeAvailable",
+    "RawAbsoluteCoefficientRejected",
+    "FarZeroSignDiscardClosed",
+    "EffectiveKernelC2Passes",
+    "HadamardDVPKernelCoefficientNormalizationC2Ledger"
+  ],
+  "open_gates": [
+    "ShellSeparationStillNeeded",
+    "KernelEnvelopeStillNeedsSeparation"
+  ]
+}
