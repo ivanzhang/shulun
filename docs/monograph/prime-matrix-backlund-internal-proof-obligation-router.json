@@ -1,0 +1,145 @@
+{
+  "blocked_routes": [
+    {
+      "reason": "横向权重 beta-a 不能统一支付贴边界点态跳变。",
+      "route": "LittlewoodWeightAbsorption",
+      "status": "blocked"
+    },
+    {
+      "reason": "矩形平均层无法无乘子转成短窗口点态核心。",
+      "route": "PointwiseCoreTransfer",
+      "status": "blocked"
+    },
+    {
+      "reason": "形式跳变公式可闭合，但预算保持正是凹口成本本身。",
+      "route": "BoundaryStieltjesFreeTransfer",
+      "status": "terminal_equivalent"
+    },
+    {
+      "reason": "半平均不能证明原始 trace 奇部为 0。",
+      "route": "HalfMirrorAverageCancellation",
+      "status": "blocked"
+    },
+    {
+      "reason": "奇部修正成本已经归并为 Backlund 近零凹口成本。",
+      "route": "OddCorrectionRoute",
+      "status": "terminal_equivalent"
+    }
+  ],
+  "certificate_type": "prime_matrix_backlund_internal_proof_obligation_router",
+  "closed_gates": [
+    "OldIndentCostRemainingActive",
+    "CounterexampleBranchGuardPreserved",
+    "WeightAbsorptionReducedNotClosed",
+    "PointwiseSupportMismatchClosed",
+    "StieltjesRouteTerminal",
+    "OddCorrectionTerminalImported"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "equivalent_old_remaining": "BacklundZeroProximityIndentationCostLedger",
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "open_gates": [
+    "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+    "RowColumnSelfContainedClosed"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "严格自足路线的唯一剩余已经不能再压成权重吸收、点态转移、Stieltjes 免费转移或镜像抵消。这些路线均已被阻断或终端归并。最新精确定名的剩余是 `ClassicalBacklundZeroIndentationCostInternalProofLedger`，它等价于旧的 `BacklundZeroProximityIndentationCostLedger`，但明确要求作者侧完整重证经典 Backlund 零点缩进成本。在该内部证明或外部引理接受之前，行/列命题不能声明无条件自足闭合。",
+  "proof_obligations": [
+    {
+      "must_prove": "对每个短窗口和每个近零 cluster，给出避零轮廓、缩进弧、极限方向和解析重数登记。",
+      "obligation": "LocalContourDeformationWithZeros",
+      "why_needed": "端点 convention 只定义极限；它不证明移动窗口中的近零核心预算。"
+    },
+    {
+      "must_prove": "未配对 jump 的 log(T) 系数为 0，或等价地证明所有正比例跳变已在同一恒等式中抵消。",
+      "obligation": "BudgetPreservingJumpAccounting",
+      "why_needed": "任何 Jensen C16 规模的未配对 jump 都产生约 50.265 的系数，远超 5/64 余量。"
+    },
+    {
+      "must_prove": "证明不得使用由待证 Backlund C_S 推出的 RVM/C_N=16 局部计数。",
+      "obligation": "NoRVMCircularity",
+      "why_needed": "RVM->CN16 已明确依赖原始 arg zeta 常数 C_S=8；反向调用会循环。"
+    },
+    {
+      "must_prove": "近零点不能同时在 Jensen 计数、RVM 端点计数和凹口成本中重复扣费。",
+      "obligation": "NoDoubleCountingAcrossJensenAndIndent",
+      "why_needed": "C_S=8 是紧等号，窗口稳定余量只有 5/64，没有多余正预算。"
+    },
+    {
+      "must_prove": "缩进内部证明完成后，仍能保持 bridge factor=1/2 与 C_boundary=16 合成 C_S=8。",
+      "obligation": "C8ReaggregationPreserved",
+      "why_needed": "若缩进证明引入任何额外常数，Backlund 外层常数立即失配。"
+    }
+  ],
+  "row_column_external_backlund_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "OldIndentCostRemainingActive",
+      "meaning": "旧最终状态中的严格自足剩余仍是 Backlund 近零凹口成本。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只做假设链条内解析证明义务审查，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "WeightAbsorptionReducedNotClosed",
+      "meaning": "零点权重吸收已压成经典缩进引理内部化，而非直接闭合。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSupportMismatchClosed",
+      "meaning": "点态核心转移的直接乘子路线已被横向支撑/纵向跳变不匹配阻断。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StieltjesRouteTerminal",
+      "meaning": "边界 Stieltjes 形式层闭合，预算层终端等价于经典缩进成本。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "OddCorrectionTerminalImported",
+      "meaning": "原始奇部修正没有新自由度，已归并回凹口成本。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+      "meaning": "当前仓库没有完成经典 Backlund 零点缩进成本的作者侧内部证明。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnSelfContainedClosed",
+      "meaning": "严格自足行/列命题仍未闭合；不能作者侧声明完整无条件证明。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-backlund-boundary-stieltjes-jump-transfer-router.json": "ab127d41025ac9d0f4465afe457cd369d8e1e36af8e9362675cfac0d877c8c71",
+    "docs/monograph/prime-matrix-backlund-final-branch-status-router.json": "278d6d06d4b63511a2d27287116e05fc594c887fbfc9683f4a81ed4ec18817c3",
+    "docs/monograph/prime-matrix-backlund-indent-weight-absorption-router.json": "2486b6f66b0202520c2ff150419c75874f815ba55597c0a55528608785b81d54",
+    "docs/monograph/prime-matrix-backlund-odd-correction-terminal-router.json": "d0df7fdf42e17ff59f43de10770f366f359973601c0d346157977ec2ccc2790c",
+    "docs/monograph/prime-matrix-backlund-pointwise-core-transfer-obstruction-router.json": "c2725ebcf807cf708efe1c77a6442f8ca5bb8e4f42a94c969a24f0eaec38a20c"
+  },
+  "status": "backlund_internal_proof_obligation_unique_remaining_open",
+  "strict_self_contained_unique_remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+}
