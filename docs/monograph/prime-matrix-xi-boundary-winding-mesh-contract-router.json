@@ -1,0 +1,118 @@
+{
+  "audit": {
+    "audit_supports_derivative_contract": true,
+    "audit_supports_node_floor": true,
+    "audit_supports_polygon_winding_zero": true,
+    "derivative_contract": "1/12",
+    "derivative_contract_audit_margin": 0.009459172286605338,
+    "derivative_contract_float": 0.08333333333333333,
+    "edge_count": 32768,
+    "max_adjacent_displacement_ratio": 0.07387416104672799,
+    "max_boundary_step": "7/4096",
+    "max_boundary_step_float": 0.001708984375,
+    "max_step_angle": 0.0029271576400401243,
+    "min_abs_index": 20480,
+    "min_abs_point_im": 14.0,
+    "min_abs_point_re": 0.5,
+    "min_abs_value": 0.00020129444423526628,
+    "node_count": 32769,
+    "node_floor": "1/6000",
+    "node_floor_audit_margin": 3.4627777568599615e-05,
+    "node_floor_float": 0.00016666666666666666,
+    "rounding_error": 1.0646239003956431e-15,
+    "samples_per_side": 8192,
+    "total_angle": -6.689229248638129e-15,
+    "trace_root_hash": "82194b686d5363957b7350e1e39f67559c472945e5b4f3bd98395d1d9eb6cf93",
+    "tube_loss_under_contract": 0.00014241536458333334,
+    "tube_margin_after_node_floor": 2.425130208333332e-05,
+    "winding_float": -1.0646239003956431e-15,
+    "winding_rounded": 0
+  },
+  "certificate_type": "prime_matrix_xi_boundary_winding_mesh_contract_router",
+  "counterexample_assumption_only": true,
+  "downstream_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000",
+  "plain_conclusion": "winding trace 已进一步压缩为三项有限合同：节点 |xi|>=1/6000、边段 |xi'|<=1/12、离散多边形绕数为 0。有理管道余量为正；浮点侦察支持这些常数。严格自足仍需把三包实际 interval trace/hash 物化。",
+  "proof_contract": [
+    "在 32768 条 dyadic 边界小段上登记 xi 节点区间值，并证明每个节点 |xi|>=1/6000。",
+    "在每条小段上登记 xi' 区间包络，并证明 |xi'|<=1/12。",
+    "最大边界小段长度为 14/8192，因此任意段内偏移至多 (1/12)*(14/8192)。",
+    "有理余量 1/6000-(1/12)*(14/8192)>0，所以整段像不穿过 0。",
+    "离散多边形的每步辐角增量由点积/叉积有理区间确定，总和落在 (-pi,pi) 且整数绕数为 0。",
+    "节点下界、导数管道和多边形绕数三项齐备时，XiBoundaryWindingNumberZeroIntervalCertificate0To14 闭合。"
+  ],
+  "replacement_self_contained": {
+    "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000 AND XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12 AND XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "WindingTraceMeshGateActive",
+      "meaning": "上一层已把 winding 压成有限 dyadic argument-variation trace。",
+      "proved": true,
+      "remaining": "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只压缩假设链条中的有限 trace 证书。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FloatAuditSupportsMeshContracts",
+      "meaning": "侦察 min|xi|=2.012944e-04>1/6000，max adjacent ratio=0.073874<1/12，polygon winding=0。",
+      "proved": false,
+      "remaining": "不能作为自足证明，只用于确定合同常数。"
+    },
+    {
+      "closed": true,
+      "gate": "TubeMarginArithmeticClosed",
+      "meaning": "1/6000-(1/12)*(14/8192)>0，节点下界加导数管道足以排除段内穿零。",
+      "proved": true,
+      "remaining": "integer arithmetic closed."
+    },
+    {
+      "closed": false,
+      "gate": "NodeLowerBoundStillMissing",
+      "meaning": "需 interval trace/hash 逐节点证明 |xi|>=1/6000。",
+      "proved": false,
+      "remaining": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000"
+    },
+    {
+      "closed": false,
+      "gate": "DerivativeTubeStillMissing",
+      "meaning": "需 interval trace/hash 逐段证明 |xi'|<=1/12。",
+      "proved": false,
+      "remaining": "XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12"
+    },
+    {
+      "closed": false,
+      "gate": "PolygonWindingIntegerStillMissing",
+      "meaning": "需有理点积/叉积区间累加证明离散多边形绕数整数为 0。",
+      "proved": false,
+      "remaining": "XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768"
+    },
+    {
+      "closed": false,
+      "gate": "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192",
+      "meaning": "winding trace 已压成节点下界、导数管道和多边形整数绕数三包。",
+      "proved": false,
+      "remaining": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000 AND XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12 AND XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768"
+    }
+  ],
+  "secondary_priority": "XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-xi-boundary-winding-trace-router.json": "be2a77a4cc75a6425323428f3a366e8f5ac6292e2d8e68a9a0d14ea9a47af564",
+    "experiments/prime_matrix_xi_boundary_winding_trace_router.py": "b2006ae54c20d42a68ab5fd15f0482502a0e5d62183e36622f42726748cb2214"
+  },
+  "status": "winding_trace_reduced_to_node_tube_polygon_contracts_open",
+  "tertiary_priority": "XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768",
+  "winding_self_contained_closed": false,
+  "winding_trace_mesh_contracts_selected": true
+}
