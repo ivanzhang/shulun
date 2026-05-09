@@ -1,0 +1,80 @@
+{
+  "certificate_type": "prime_matrix_backlund_final_branch_status_router",
+  "closed_gates": [
+    "SelfContainedBacklundIndentStillOpen",
+    "BacklundTerminalEquivalenceClosed",
+    "ExternalBacklundAnalyticBridgeReady",
+    "DStructureRankinBoundaryClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_backlund_acceptance_atom": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "external_branch_remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hypothetical_chain_only": true,
+  "no_author_side_overclaim": true,
+  "open_gates": [
+    "DStructureRankinIndependentlyAccepted",
+    "RowColumnSelfContainedClosed",
+    "RowColumnExternalBacklundClosed"
+  ],
+  "plain_conclusion": "最终分叉状态已固定：严格自足路线没有闭合，唯一剩余是 `BacklundZeroProximityIndentationCostLedger` 的内部替代；此前所有零成本镜像路线均已审查并阻断。若接受 `ClassicalBacklundZeroIndentationCostExternalAccepted`，解析 Backlund 包可接到 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`，但该晋级门仍需独立接受，作者侧不能声明完整无条件闭合。",
+  "row_column_external_backlund_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SelfContainedBacklundIndentStillOpen",
+      "meaning": "零成本、半镜像平均、奇部为零路线均已阻断；自足剩余终端归并回 Backlund 凹口成本。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundTerminalEquivalenceClosed",
+      "meaning": "奇部修正成本与近零缩进成本是同一个剩余，不再产生新的内部逃逸口。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundAnalyticBridgeReady",
+      "meaning": "接受外部经典 Backlund 缩进引理后，CS8、端点、RVM->CN16 均已可接上。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinBoundaryClosed",
+      "meaning": "DStructure/Tail-log4/finite Rankin 晋级包边界已列清，Rankin 子账本 pass-or-return 已闭合。",
+      "proved": true,
+      "remaining": "independent acceptance"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureRankinIndependentlyAccepted",
+      "meaning": "该门明确要求独立审稿/复现接受，作者侧证书不能自审关闭。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnSelfContainedClosed",
+      "meaning": "严格自足闭合仍缺 Backlund 凹口成本内部替代。",
+      "proved": false,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnExternalBacklundClosed",
+      "meaning": "即使接受外部 Backlund 缩进引理，仍缺 DStructure/Rankin 独立接受。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "self_contained_remaining": "BacklundZeroProximityIndentationCostLedger",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-backlund-odd-correction-terminal-router.json": "d0df7fdf42e17ff59f43de10770f366f359973601c0d346157977ec2ccc2790c",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5"
+  },
+  "status": "row_theorem_self_contained_open_external_backlund_referee_open"
+}
