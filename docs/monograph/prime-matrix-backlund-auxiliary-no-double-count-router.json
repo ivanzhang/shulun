@@ -1,0 +1,120 @@
+{
+  "certificate_type": "prime_matrix_backlund_auxiliary_no_double_count_router",
+  "closed_atom": "BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosClosedAsReplacement",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "NoDoubleCountGateActive",
+    "NearZeroPartitionAvailable",
+    "AuxiliaryCountReplacesIndentCost",
+    "XiZeroDistanceRoleSeparated",
+    "EndpointMultiplicitySingleRegistry",
+    "OldExternalIndentStillAvailableButNotStacked",
+    "CS8TightBudgetDisciplinePreserved",
+    "AuxiliaryNoDoubleCountingClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "disciplines": [
+    {
+      "content": "辅助实部 Jensen 计数替换旧 `BacklundZeroProximityIndentationCostLedger`，不能与逐零点 pi 成本叠加。",
+      "rule": "replacement_not_addition"
+    },
+    {
+      "content": "xi 真零点 Jensen 只服务于倒距离/局部零点密度账本；辅助实部零点服务于水平 trace 的 arg/sign-change 账本。",
+      "rule": "separate_roles"
+    },
+    {
+      "content": "端点和重零先进入统一避零极限登记，再按所属账本调用一次，不重复出现在两个成本项中。",
+      "rule": "endpoint_multiplicity_single_registry"
+    }
+  ],
+  "empirical_absence_not_used": true,
+  "external_backlund_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "new_unique_internal_remaining": "BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger",
+  "open_gates": [
+    "OnlyAuxiliaryJensenConstantsRemain"
+  ],
+  "parent_remaining": "BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger AND BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosLedger",
+  "plain_conclusion": "辅助实部 Jensen 与 xi 真零点 Jensen 的无重复扣费纪律已作为账本替换规则闭合：内部路线使用辅助实部 Jensen 来替换旧缩进成本，不把它叠加到逐零点 pi 成本或外部 Backlund 引理上；xi 真零点计数仍只服务于倒距离/密度账本。因此当前内部唯一剩余收缩为辅助实部 Jensen 的 C16 常数聚合。",
+  "row_column_external_route_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只处理解析预算账本的归属，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "NoDoubleCountGateActive",
+      "meaning": "上一层剩余包含辅助实部 Jensen 常数聚合与无重复扣费两项。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NearZeroPartitionAvailable",
+      "meaning": "近零/远零分区已固定：eta 内原本交给缩进账本，eta 外交给倒距离账本。",
+      "proved": true,
+      "remaining": "BacklundNearZeroIndentSeparationClosedEta1Over16"
+    },
+    {
+      "closed": true,
+      "gate": "AuxiliaryCountReplacesIndentCost",
+      "meaning": "在内部 Backlund 路线中，辅助实部 Jensen 计数是缩进成本的替代证明，不是新增成本项。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosClosedAsReplacement"
+    },
+    {
+      "closed": true,
+      "gate": "XiZeroDistanceRoleSeparated",
+      "meaning": "xi 真零点 Jensen 与辅助实部 Jensen 的用途分离：前者控制倒距离，后者控制水平 trace sign-change。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosClosedAsReplacement"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointMultiplicitySingleRegistry",
+      "meaning": "端点和重零只通过统一极限 convention 登记一次，再路由到所属账本。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosClosedAsReplacement"
+    },
+    {
+      "closed": true,
+      "gate": "OldExternalIndentStillAvailableButNotStacked",
+      "meaning": "若选择外部 Backlund，引理整体关闭缩进包；若选择内部辅助 Jensen，则不得再叠加外部缩进成本。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": true,
+      "gate": "CS8TightBudgetDisciplinePreserved",
+      "meaning": "C_S=8 是紧等号；本步的替换纪律正是为了不新增正比例成本。",
+      "proved": true,
+      "remaining": "BacklundCS8SlackAfterBridgeClosedTightHalf"
+    },
+    {
+      "closed": true,
+      "gate": "AuxiliaryNoDoubleCountingClosed",
+      "meaning": "无重复扣费纪律作为账本替换规则闭合。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosClosedAsReplacement"
+    },
+    {
+      "closed": false,
+      "gate": "OnlyAuxiliaryJensenConstantsRemain",
+      "meaning": "现在内部剩余只剩辅助实部 Jensen 常数聚合。",
+      "proved": false,
+      "remaining": "BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-near-zero-indent-separation-router.json": "d27338ae97a041b28360548061e660940c5916f4c7de875d8d67f388baa359b3",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-backlund-auxiliary-realpart-jensen-router.json": "db3236e87771ae70526ae9c280edee441f6a1bafb2c3129f9d66f54ab07ac833"
+  },
+  "status": "backlund_auxiliary_no_double_count_closed_constants_only_open"
+}
