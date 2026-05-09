@@ -1,0 +1,61 @@
+{
+  "certificate_type": "prime_matrix_lowheight_rectangle_count_compression_router",
+  "compression_closed": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "new_single_atom": "LowHeightXiRectangleZeroCountZero0To14Ledger",
+  "next_boundary_priority": "XiBoundaryIntervalNonzeroCertificate0To14",
+  "next_engine_priority": "SelfContainedXiIntervalEvaluationEngine0To14",
+  "next_priority": "LowHeightXiRectangleZeroCountZero0To14Ledger",
+  "next_winding_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "old_lowheight_pair": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger",
+  "plain_conclusion": "低高度零点包可再压缩：不必分别证明临界线无零和离线 Turing 计数。一个自足的 xi 矩形零点计数为 0 证书即可同时关闭二者。这一步只完成逻辑压缩；真正证明仍需 xi 区间求值引擎、边界非零证书和 winding=0 证书。",
+  "replacement": "(CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger) => LowHeightXiRectangleZeroCountZero0To14Ledger",
+  "required_rectangle_certificate_package": "SelfContainedXiIntervalEvaluationEngine0To14 AND XiBoundaryIntervalNonzeroCertificate0To14 AND XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LowHeightSplitActive",
+      "meaning": "当前低高度包确实把自足剩余拆成临界线有限账本与离线 Turing 账本。",
+      "proved": true,
+      "remaining": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": true,
+      "gate": "RectangleCountDominatesBothAtoms",
+      "meaning": "若 xi 在覆盖 0<Im s<=14 的低高度矩形中零点计数为 0，则临界线和离线区域都没有零点，两个旧原子同时关闭。",
+      "proved": true,
+      "remaining": "LowHeightXiRectangleZeroCountZero0To14Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryNonzeroCertificateRequired",
+      "meaning": "argument principle 需要证明矩形边界上 xi 不为 0，避免 winding 数未定义。",
+      "proved": false,
+      "remaining": "XiBoundaryIntervalNonzeroCertificate0To14"
+    },
+    {
+      "closed": false,
+      "gate": "WindingNumberZeroCertificateRequired",
+      "meaning": "需要用区间算术证明 xi(boundary) 曲线绕原点次数为 0，而不是只做浮点采样。",
+      "proved": false,
+      "remaining": "XiBoundaryWindingNumberZeroIntervalCertificate0To14"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedIntervalEngineRequired",
+      "meaning": "必须内联 xi、Gamma、zeta 的区间求值与余项界，不能依赖外部零点表。",
+      "proved": false,
+      "remaining": "SelfContainedXiIntervalEvaluationEngine0To14"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-xi-nozero-below14-router.json": "26311be8c842835adb7a4f7a0e6802403e30cbce77c690cb19dfbfd7a75ddd6b",
+    "docs/monograph/prime-matrix-lowheight-backlund-self-contained-package-router.json": "50622b93922a6a4b64c59af08a053472ee36c9cebb8e70de8ad856a34dcc2013",
+    "docs/monograph/prime-matrix-terminal-two-package-breakthrough-router.json": "734bcfab5a1d7a6ee279f7f5430c119588d63961fa319520452ba8a67e9219d8"
+  },
+  "status": "lowheight_two_zero_atoms_compressed_to_rectangle_count_open",
+  "strict_rectangle_count_closed": false
+}

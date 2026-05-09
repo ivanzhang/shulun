@@ -1,0 +1,87 @@
+{
+  "available_stability_margin": 0.078125,
+  "certificate_type": "prime_matrix_lowheight_backlund_self_contained_package_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "first_zero_reference": 14.134725141734693,
+  "height_margin": 0.13472514173469285,
+  "height_target": 14.0,
+  "hypothetical_chain_only": true,
+  "naive_indentation_coefficient": 50.26548245743669,
+  "naive_margin_deficit": 50.18735745743669,
+  "next_finite_target": "CriticalLineNoZeroOn0To14FiniteLedger",
+  "next_structural_target": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)",
+  "next_turing_target": "CriticalStripNoOffLineZeroBelow14TuringLedger",
+  "plain_conclusion": "低高度-Backlund 自足包被压成两个不可再混淆的任务：一是仓库内构造 0<t<=14 的 Riemann-Siegel/Turing 有限验证；二是证明近零点凹口成本存在零避让或跳变抵消。外部零点表和经典 Backlund 引理可以给条件闭合，但严格自足路线仍开放。",
+  "required_indentation_package": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)",
+  "required_low_height_package": "RiemannSiegelIntervalArithmetic0To14Ledger AND CriticalLineSignSeparationFiniteLedger0To14 AND TuringArgumentPrincipleBoxCount0To14Ledger",
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "evidence": "strict three-input basis attack router",
+      "gate": "PackageIsCurrentNarrowest",
+      "meaning": "三输入基收缩后，当前最窄解析包正是低高度零点 + Backlund 凹口成本。",
+      "proved": true,
+      "remaining": "无定位剩余。"
+    },
+    {
+      "closed": true,
+      "evidence": "B3 xi no-zero-below14 router",
+      "gate": "ExternalLowHeightZeroCertificateAvailable",
+      "meaning": "外部首零点/Turing 证书可关闭 |Im rho|<=14 的低高度无零点输入。",
+      "proved": false,
+      "remaining": "严格自足不能引用外部零点表作为证明主体。"
+    },
+    {
+      "closed": false,
+      "evidence": "B3 xi no-zero-below14 router",
+      "gate": "SelfContainedLowHeightZeroStillMissing",
+      "meaning": "仓库内还没有 Riemann-Siegel 区间算术和 Turing/argument-principle 完整账本。",
+      "proved": false,
+      "remaining": "RiemannSiegelIntervalArithmetic0To14Ledger AND CriticalLineSignSeparationFiniteLedger0To14 AND TuringArgumentPrincipleBoxCount0To14Ledger"
+    },
+    {
+      "closed": true,
+      "evidence": "B3 zero-proximity indentation cost router",
+      "gate": "NaiveIndentationCostRouteBlocked",
+      "meaning": "朴素凹口成本缺口为 50.187357457437，说明逐零点粗付不能闭合 C_S=8 预算。",
+      "proved": true,
+      "remaining": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)"
+    },
+    {
+      "closed": true,
+      "evidence": "B3 zero-proximity indentation cost router",
+      "gate": "ExternalIndentationCostAvailable",
+      "meaning": "经典 Backlund 轮廓缩进可作为外部引理关闭凹口成本。",
+      "proved": false,
+      "remaining": "严格自足仍需零避让或跳变抵消。"
+    },
+    {
+      "closed": false,
+      "evidence": "B3 zero-proximity indentation cost router",
+      "gate": "SelfContainedIndentationCostStillMissing",
+      "meaning": "当前内部材料只证明朴素路线失败，尚未证明可行的零避让/抵消替代。",
+      "proved": false,
+      "remaining": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)"
+    },
+    {
+      "closed": true,
+      "evidence": "B3 CS8 slack + RVM-to-CN16 routers",
+      "gate": "CS8AndRVMClosedOnlyOnExternalBranch",
+      "meaning": "C_S=8 与 RVM->C_N=16 的合并在外部分支可走通，严格自足仍依赖低高度和凹口前置包。",
+      "proved": false,
+      "remaining": "BacklundCS8SlackAfterBridgeLedger AND RVMToCN16LocalInequalityLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-rvm-to-cn16-local-inequality-router.json": "3e7fa721aef0fe9660b70b6e8f9bd3ecb1e926ddbf12ec4b341163199ac0ca13",
+    "docs/monograph/prime-matrix-b3-xi-nozero-below14-router.json": "26311be8c842835adb7a4f7a0e6802403e30cbce77c690cb19dfbfd7a75ddd6b",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-self-contained-three-input-basis-closure-attack-router.json": "1a05011e9402eae0d6209eaf2982a939cfb8986398dca233dab53459f8266c67"
+  },
+  "status": "lowheight_backlund_self_contained_package_open_exact_tasks_pinned",
+  "strict_package_closed": false,
+  "turing_height_required": 14.0
+}

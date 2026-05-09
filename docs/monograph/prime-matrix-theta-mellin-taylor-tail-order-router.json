@@ -1,0 +1,82 @@
+{
+  "certificate_type": "prime_matrix_theta_mellin_taylor_tail_order_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "next_priority": "IntervalOperationTraceHashLedger",
+  "plain_conclusion": "theta-Mellin 超越函数调用的 Taylor 尾阶账本已闭合：log、pi、trig、exp 都给出保守阶数，最大模板尾界小于 1e-60。剩余不再是 Taylor 理论，而是把这些调用实际登记成 trace/hash，并证明 Gaussian theta 尾项和紧致积分分段误差。",
+  "replacement": {
+    "ThetaMellinTaylorTailOrderLedger0To14": "ThetaMellinTaylorTailOrdersClosedLog120Pi120Trig120Exp80"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "TaylorTailOrderGateActive",
+      "meaning": "范围盒闭合后，当前最窄点是为每类 Taylor 调用指定截断阶数与尾界。",
+      "proved": true,
+      "remaining": "ThetaMellinTaylorTailOrderLedger0To14"
+    },
+    {
+      "closed": true,
+      "gate": "RangeBoxesAvailable",
+      "meaning": "log/power/trig/exp 的有理范围盒已闭合。",
+      "proved": true,
+      "remaining": "ThetaMellinCompactRangeBoxClosed0To14T64N20"
+    },
+    {
+      "closed": true,
+      "gate": "LogTailOrderClosed",
+      "meaning": "log 使用 atanh 级数 120 项，缩放后 z<=1/3，尾界 9.637027e-118。",
+      "proved": true,
+      "remaining": "ThetaMellinTaylorTailOrdersClosedLog120Pi120Trig120Exp80"
+    },
+    {
+      "closed": true,
+      "gate": "PiTailOrderClosed",
+      "meaning": "pi 使用 Machin 公式 120 项，主尾界 2.346021e-170。",
+      "proved": true,
+      "remaining": "ThetaMellinTaylorTailOrdersClosedLog120Pi120Trig120Exp80"
+    },
+    {
+      "closed": true,
+      "gate": "TrigTailOrderClosed",
+      "meaning": "sin/cos range reduction 到 |x|<=pi<4 后用 120 阶，尾界 8.731317e-129。",
+      "proved": true,
+      "remaining": "ThetaMellinTaylorTailOrdersClosedLog120Pi120Trig120Exp80"
+    },
+    {
+      "closed": true,
+      "gate": "ExpTailOrderClosed",
+      "meaning": "exp range reduction 到 |r|<=1/2 后用 80 阶，尾界 2.853761e-145。",
+      "proved": true,
+      "remaining": "ThetaMellinTaylorTailOrdersClosedLog120Pi120Trig120Exp80"
+    },
+    {
+      "closed": false,
+      "gate": "TraceThetaQuadratureStillDownstream",
+      "meaning": "尾阶表不替代实际调用轨迹、Gaussian theta 尾项或积分分段误差。",
+      "proved": false,
+      "remaining": "IntervalOperationTraceHashLedger AND GaussianThetaTailBoundLedger AND CompactThetaMellinQuadratureSubdivisionLedger0To14"
+    }
+  ],
+  "secondary_priority": "GaussianThetaTailBoundLedger",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-theta-mellin-range-box-router.json": "7a7f0e6d973fdd8f6a6db6f71e2a0d8028b0b27c138ec201f33abc8bfa30d324"
+  },
+  "status": "theta_mellin_taylor_tail_orders_closed_trace_theta_quadrature_open",
+  "tail_bounds": {
+    "exp_degree": 80,
+    "exp_tail_bound": "2.853761e-145",
+    "log_tail_bound": "9.637027e-118",
+    "log_terms": 120,
+    "max_tail_bound_float": 9.637027274092748e-118,
+    "pi_tail_bound": "2.346021e-170",
+    "pi_terms": 120,
+    "trig_degree": 120,
+    "trig_tail_bound": "8.731317e-129"
+  },
+  "tail_orders_closed": true,
+  "tertiary_priority": "CompactThetaMellinQuadratureSubdivisionLedger0To14",
+  "theta_mellin_transcendental_kernel_closed": false
+}

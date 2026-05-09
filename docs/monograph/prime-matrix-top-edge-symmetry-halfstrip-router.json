@@ -1,0 +1,89 @@
+{
+  "certificate_type": "prime_matrix_top_edge_symmetry_halfstrip_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne",
+  "plain_conclusion": "顶边全段盒覆盖已进一步压缩：左半由函数方程和共轭对称转移，右外段由 Euler product 关闭。严格自足唯一剩余变成 Im(s)=14, 1/2<=Re(s)<=1 的临界半段盒证书。",
+  "replacement_self_contained": {
+    "TopEdgeXiIntervalBoxCoverLedgerT14SigmaMinus1To2": "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "TopEdgeGateActive",
+      "meaning": "上一层已把严格自足边界非零压缩到顶边盒覆盖。",
+      "proved": true,
+      "remaining": "TopEdgeXiIntervalBoxCoverLedgerT14SigmaMinus1To2"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只用 xi 的函数方程、共轭对称和 Euler product，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LeftHalfTopEdgeReducedBySymmetry",
+      "meaning": "顶边 sigma<=1/2 由 xi(s)=xi(1-s) 与共轭对称转移到 sigma>=1/2。",
+      "proved": true,
+      "remaining": "no separate boxes on [-1,1/2]."
+    },
+    {
+      "closed": true,
+      "gate": "RightOuterTopEdgeClosedByEulerProduct",
+      "meaning": "顶边 sigma>1 处 Re(s)>1，zeta Euler product 排除零点。",
+      "proved": true,
+      "remaining": "no boxes needed on (1,2]."
+    },
+    {
+      "closed": false,
+      "gate": "CriticalHalfSegmentStillMissing",
+      "meaning": "严格自足路线只剩顶边临界半段 1/2<=sigma<=1 的有限区间盒覆盖。",
+      "proved": false,
+      "remaining": "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalRouteAlreadyClosesTopEdge",
+      "meaning": "若接受外部低高度无零点证书，顶边全段和 winding 已条件闭合。",
+      "proved": false,
+      "remaining": "TopEdgeXiIntervalBoxCoverLedgerT14SigmaMinus1To2 AND XiBoundaryWindingNumberZeroIntervalCertificate0To14"
+    },
+    {
+      "closed": false,
+      "gate": "TopEdgeXiIntervalBoxCoverLedgerT14SigmaMinus1To2",
+      "meaning": "旧顶边全段账本已被压缩，但严格自足闭合还需临界半段盒证书。",
+      "proved": false,
+      "remaining": "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne"
+    }
+  ],
+  "secondary_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "segment_reductions": [
+    {
+      "reason": "xi(s)=xi(1-s) 且 xi(conj s)=conj xi(s)，非零性转移到 sigma in [1/2,2] 的同一高度。",
+      "segment": "sigma in [-1,1/2]",
+      "status": "reduced_by_functional_and_conjugate_symmetry"
+    },
+    {
+      "reason": "Re(s)>1 时 zeta(s) 的 Euler product 非零，xi 显式因子也非零。",
+      "segment": "sigma in (1,2]",
+      "status": "closed_by_euler_product"
+    },
+    {
+      "reason": "这是顶边穿过临界带的唯一剩余半段，需要有限区间盒逐段证明 0 不在 xi 盒内。",
+      "segment": "sigma in [1/2,1]",
+      "status": "open_self_contained"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-xi-boundary-nonzero-top-edge-reduction-router.json": "a0f39abf141e1b2ca2923987099fb00fd19bbd9a61ababc78802530516856e73"
+  },
+  "status": "top_edge_reduced_to_critical_half_segment_external_still_closed",
+  "top_edge_external_closed": true,
+  "top_edge_full_segment_compressed": true,
+  "top_edge_self_contained_closed": false
+}

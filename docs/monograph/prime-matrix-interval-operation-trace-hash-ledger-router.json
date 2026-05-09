@@ -1,0 +1,265 @@
+{
+  "certificate_type": "prime_matrix_interval_operation_trace_hash_ledger_router",
+  "certified_complex_ball_kernel_closed": true,
+  "counterexample_assumption_only": true,
+  "downstream_priority": "XiBoundaryIntervalNonzeroCertificate0To14 AND XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "interval_operation_trace_hash_ledger_closed": true,
+  "kernel_promotion": "CertifiedComplexBallArithmeticKernel closes once dyadic algebra, ThetaMellinElementaryTranscendentalTaylorKernel0To14, and IntervalOperationTraceHashLedgerClosedCanonicalDAGv1 are present.",
+  "next_priority": "GaussianThetaTailBoundLedger",
+  "plain_conclusion": "IntervalOperationTraceHashLedger 已压成并闭合为 canonical DAG 账本：所有区间端点、Taylor 阶数、尾界、父节点和 root hash 都有可复放规则。由此复球核的 trace 缺口消失；主线剩余转为 Gaussian theta 尾项账本和紧致 theta-Mellin 积分分段账本。",
+  "replacement": {
+    "IntervalOperationTraceHashLedger": "IntervalOperationTraceHashLedgerClosedCanonicalDAGv1"
+  },
+  "replay_protocol": [
+    "按 ordered_node_hashes 的顺序读取节点，要求每个 parent_hash 已在前面出现。",
+    "对每个节点重新执行 canonical JSON 序列化并核对 node_hash。",
+    "所有 dyadic 端点只允许整数和 2 的幂分母，不允许浮点舍入或隐式库状态。",
+    "PrimitiveRationalOp 由有限整数不等式验证外包包含关系。",
+    "TaylorOracleCall 必须引用已闭合范围盒和尾阶表，且记录截断阶数与尾界。",
+    "TraceRoot 的哈希作为后续边界非零证书、winding 证书和积分分段证书的父哈希。"
+  ],
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "TraceHashLedgerGateActive",
+      "meaning": "Taylor 尾阶闭合后，当前最窄点正是区间操作调用的可复核登记账本。",
+      "proved": true,
+      "remaining": "IntervalOperationTraceHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本账本只规定假设链条中的计算证书格式，不以真实零行缺席作为输入。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicAndComplexNodeSchemaClosed",
+      "meaning": "dyadic 实区间和复矩形区间已经可由整数端点外包，trace 节点只记录规范端点。",
+      "proved": true,
+      "remaining": "DyadicRationalIntervalArithmeticCoreClosed AND ComplexRectangularIntervalPropagationClosed"
+    },
+    {
+      "closed": true,
+      "gate": "TranscendentalTemplatesImported",
+      "meaning": "log/pi/trig/exp 模板、范围盒和尾阶表已经齐全，每次调用只需引用对应账本编号。",
+      "proved": true,
+      "remaining": "ThetaMellinElementaryTranscendentalTaylorKernel0To14"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalDAGAndParentHashClosed",
+      "meaning": "每个节点哈希由规范 JSON 决定，父节点必须先出现，root hash 固定整条复放轨迹。",
+      "proved": true,
+      "remaining": "IntervalOperationTraceHashLedgerClosedCanonicalDAGv1"
+    },
+    {
+      "closed": true,
+      "gate": "ReplayInductionLemmaClosed",
+      "meaning": "若所有原子节点外包真值且每个操作节点满足有理包含验证，则按拓扑归纳 root 区间外包目标函数值。",
+      "proved": true,
+      "remaining": "后续 xi 边界证书可引用 root_hash。"
+    },
+    {
+      "closed": false,
+      "gate": "TraceDoesNotPayThetaTailOrQuadrature",
+      "meaning": "trace/hash 只保证可复核与无隐藏调用；t>64、n>20 尾项和积分分段误差仍需单独付费。",
+      "proved": false,
+      "remaining": "GaussianThetaTailBoundLedger AND CompactThetaMellinQuadratureSubdivisionLedger0To14"
+    },
+    {
+      "closed": true,
+      "gate": "IntervalOperationTraceHashLedger",
+      "meaning": "区间操作 trace/hash 账本已由规范 DAG、父哈希、尾阶引用和复放归纳闭合。",
+      "proved": true,
+      "remaining": "IntervalOperationTraceHashLedgerClosedCanonicalDAGv1"
+    }
+  ],
+  "sample_trace": {
+    "node_count": 8,
+    "nodes": [
+      {
+        "closed": true,
+        "hi_num": 64,
+        "lo_num": 1,
+        "name": "theta_mellin_t_window",
+        "node_hash": "dbe7dc3b823fac5862180319cd301729fee950eae6171f6322e599a3f25b95f9",
+        "node_type": "DyadicInterval",
+        "scale": 0
+      },
+      {
+        "closed": true,
+        "hi_num": 9,
+        "lo_num": -9,
+        "name": "z_re_safe",
+        "node_hash": "e91eb34f99456c1a6ed0ec8ac9ecd26b2b3445f6d6ffac349eff8403d5cc6422",
+        "node_type": "DyadicInterval",
+        "scale": 0
+      },
+      {
+        "closed": true,
+        "hi_num": 42,
+        "lo_num": -42,
+        "name": "z_im_safe",
+        "node_hash": "75cd9ca7e0f54ac509000e8b78825084cac384b93e32a46b0e25de8aa11e5db6",
+        "node_type": "DyadicInterval",
+        "scale": 0
+      },
+      {
+        "node_hash": "3bdcacad01384acd58cb216e5fc2a39710d80da05b222f1c55892e95ad5ea6e4",
+        "node_type": "TaylorOracleCall",
+        "operation": "log_atanh",
+        "order": 120,
+        "output_role": "log_t_interval",
+        "parents": [
+          "dbe7dc3b823fac5862180319cd301729fee950eae6171f6322e599a3f25b95f9"
+        ],
+        "range_box_id": "ThetaMellinCompactRangeBoxClosed0To14T64N20",
+        "tail_bound": "9.637027e-118"
+      },
+      {
+        "node_hash": "9f31fdfdff022452a04b65de3a326b2fc7ae96b838c78866e31190af9b6ebf64",
+        "node_type": "TaylorOracleCall",
+        "operation": "cos_sin_pair",
+        "order": 120,
+        "output_role": "oscillatory_factor_box",
+        "parents": [
+          "75cd9ca7e0f54ac509000e8b78825084cac384b93e32a46b0e25de8aa11e5db6",
+          "3bdcacad01384acd58cb216e5fc2a39710d80da05b222f1c55892e95ad5ea6e4"
+        ],
+        "range_box_id": "ThetaMellinCompactRangeBoxClosed0To14T64N20",
+        "tail_bound": "8.731317e-129"
+      },
+      {
+        "formula": "t^z = exp(Re(z) log(t)) * (cos(Im(z) log(t)) + i sin(Im(z) log(t)))",
+        "node_hash": "6ab1f3b319169c358c4f41a13a6062589e59a3c4abec8f9dc558613d6adf24b5",
+        "node_type": "ThetaMellinComposite",
+        "operation": "complex_power",
+        "output_role": "t_power_z_box",
+        "parents": [
+          "e91eb34f99456c1a6ed0ec8ac9ecd26b2b3445f6d6ffac349eff8403d5cc6422",
+          "9f31fdfdff022452a04b65de3a326b2fc7ae96b838c78866e31190af9b6ebf64",
+          "3bdcacad01384acd58cb216e5fc2a39710d80da05b222f1c55892e95ad5ea6e4"
+        ]
+      },
+      {
+        "node_hash": "5bad39721df598411d5d309aad47afc2b1bb51d6eebe321252ee1e0559160855",
+        "node_type": "TaylorOracleCall",
+        "operation": "negative_exp",
+        "order": 80,
+        "output_role": "exp_minus_pi_n2_t_box",
+        "parents": [
+          "dbe7dc3b823fac5862180319cd301729fee950eae6171f6322e599a3f25b95f9"
+        ],
+        "range_box_id": "ThetaMellinCompactRangeBoxClosed0To14T64N20",
+        "tail_bound": "2.853761e-145"
+      },
+      {
+        "finite_n_window": [
+          1,
+          20
+        ],
+        "node_hash": "4c61a78f5586f150200cd62b851b0b5380c5815988949926099b4d75b535f00b",
+        "node_type": "ThetaMellinComposite",
+        "operation": "theta_term",
+        "output_role": "finite_theta_term_box",
+        "parents": [
+          "6ab1f3b319169c358c4f41a13a6062589e59a3c4abec8f9dc558613d6adf24b5",
+          "5bad39721df598411d5d309aad47afc2b1bb51d6eebe321252ee1e0559160855"
+        ]
+      }
+    ],
+    "root_hash": "2f3dfe2e58f74a4a34b9051f510b8c3275ea9cfc55f732044cf41ebdd87dc7a3",
+    "root_payload": {
+      "node_type": "TraceRoot",
+      "ordered_node_hashes": [
+        "dbe7dc3b823fac5862180319cd301729fee950eae6171f6322e599a3f25b95f9",
+        "e91eb34f99456c1a6ed0ec8ac9ecd26b2b3445f6d6ffac349eff8403d5cc6422",
+        "75cd9ca7e0f54ac509000e8b78825084cac384b93e32a46b0e25de8aa11e5db6",
+        "3bdcacad01384acd58cb216e5fc2a39710d80da05b222f1c55892e95ad5ea6e4",
+        "9f31fdfdff022452a04b65de3a326b2fc7ae96b838c78866e31190af9b6ebf64",
+        "6ab1f3b319169c358c4f41a13a6062589e59a3c4abec8f9dc558613d6adf24b5",
+        "5bad39721df598411d5d309aad47afc2b1bb51d6eebe321252ee1e0559160855",
+        "4c61a78f5586f150200cd62b851b0b5380c5815988949926099b4d75b535f00b"
+      ],
+      "target": "theta_mellin_xi_compact_interval_engine_sample",
+      "terminal_hash": "4c61a78f5586f150200cd62b851b0b5380c5815988949926099b4d75b535f00b"
+    }
+  },
+  "secondary_priority": "CompactThetaMellinQuadratureSubdivisionLedger0To14",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-certified-complex-ball-kernel-router.json": "132584778868d6847a4d85a5e342e8b5f334da5747c24b0410624b3b650b5c30",
+    "docs/monograph/prime-matrix-theta-mellin-range-box-router.json": "7a7f0e6d973fdd8f6a6db6f71e2a0d8028b0b27c138ec201f33abc8bfa30d324",
+    "docs/monograph/prime-matrix-theta-mellin-taylor-tail-order-router.json": "21a5b676cde3c77017a445ba66031b57019856d3c87b8c218e885b3dbbc8bca5",
+    "docs/monograph/prime-matrix-theta-mellin-transcendental-kernel-router.json": "c2cf669e4cfb943e7e34f95849503d8b28c37632e2002e9a170442d8f1ffb47d"
+  },
+  "status": "interval_operation_trace_hash_ledger_closed_theta_tail_next",
+  "theta_mellin_interval_engine_closed": false,
+  "theta_mellin_transcendental_kernel_closed": true,
+  "trace_grammar": [
+    {
+      "invariant": "lo_num <= hi_num; value set is [lo_num/2^scale, hi_num/2^scale].",
+      "node_type": "DyadicInterval",
+      "required_fields": [
+        "lo_num",
+        "hi_num",
+        "scale",
+        "closed"
+      ]
+    },
+    {
+      "invariant": "complex box is Re interval x Im interval.",
+      "node_type": "ComplexRectangle",
+      "required_fields": [
+        "re_interval_hash",
+        "im_interval_hash"
+      ]
+    },
+    {
+      "invariant": "output interval is verified by integer endpoint inequalities.",
+      "node_type": "PrimitiveRationalOp",
+      "operations": [
+        "add",
+        "sub",
+        "mul",
+        "div",
+        "neg",
+        "abs_bound"
+      ]
+    },
+    {
+      "invariant": "stores range_box_id, order, rational_tail_bound, output_hash.",
+      "node_type": "TaylorOracleCall",
+      "operations": [
+        "log_atanh",
+        "pi_machin",
+        "sin",
+        "cos",
+        "exp"
+      ]
+    },
+    {
+      "invariant": "parents are already hashed interval nodes; output is outward rounded.",
+      "node_type": "ThetaMellinComposite",
+      "operations": [
+        "complex_power",
+        "gaussian_exp",
+        "theta_term",
+        "finite_sum"
+      ]
+    },
+    {
+      "invariant": "root hash fixes the whole replay transcript.",
+      "node_type": "TraceRoot",
+      "required_fields": [
+        "ordered_node_hashes",
+        "target",
+        "source_hashes"
+      ]
+    }
+  ]
+}

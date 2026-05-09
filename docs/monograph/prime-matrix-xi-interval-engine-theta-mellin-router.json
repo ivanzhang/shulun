@@ -1,0 +1,72 @@
+{
+  "certificate_type": "prime_matrix_xi_interval_engine_theta_mellin_router",
+  "counterexample_assumption_only": true,
+  "downstream_priority": "XiBoundaryIntervalNonzeroCertificate0To14 AND XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "next_priority": "CertifiedComplexBallArithmeticKernel",
+  "plain_conclusion": "xi 区间求值引擎不用再固定为 Riemann-Siegel 路线。由于 theta-Poisson、theta-Mellin 和 xi 整函数层已闭合，低高度紧致矩形可改用 theta-Mellin 对称积分的复球区间引擎。真正剩余变成可实现的球算术核、高斯 theta 尾界和紧致积分分段证书。",
+  "replacement": "SelfContainedXiIntervalEvaluationEngine0To14 => (ThetaMellinXiCompactIntervalEngine0To14 AND CertifiedComplexBallArithmeticKernel AND GaussianThetaTailBoundLedger AND CompactThetaMellinQuadratureSubdivisionLedger0To14)",
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RectangleCountNeedsXiEngine",
+      "meaning": "矩形计数单原子当前首要缺口是 xi 区间求值引擎。",
+      "proved": true,
+      "remaining": "SelfContainedXiIntervalEvaluationEngine0To14"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaMellinAndXiInputsAvailable",
+      "meaning": "theta-Mellin 延拓、函数方程、xi 整函数性和增长层均已在仓库内闭合。",
+      "proved": true,
+      "remaining": "可用 theta-Mellin 紧致积分构造 xi 区间引擎。"
+    },
+    {
+      "closed": true,
+      "gate": "RiemannSiegelEngineNotPrimary",
+      "meaning": "低高度 0<=t<=14 是紧致小盒；用 theta-Mellin 对称积分比从零实现 Riemann-Siegel 更贴合已有自足材料。",
+      "proved": true,
+      "remaining": "ThetaMellinXiCompactIntervalEngine0To14"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedBallArithmeticKernelMissing",
+      "meaning": "仍需复球区间加减乘除、exp/log/Gamma 或 theta 项指数的向外舍入实现与审计。",
+      "proved": false,
+      "remaining": "CertifiedComplexBallArithmeticKernel"
+    },
+    {
+      "closed": false,
+      "gate": "GaussianThetaTailBoundMissing",
+      "meaning": "theta 尾项需要显式高斯尾界，保证截断到有限 n 与有限积分段后仍有严格外包。",
+      "proved": false,
+      "remaining": "GaussianThetaTailBoundLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CompactQuadratureSubdivisionMissing",
+      "meaning": "边界曲线上的 xi 值需要有限分段积分/求和证书，并给每段误差半径。",
+      "proved": false,
+      "remaining": "CompactThetaMellinQuadratureSubdivisionLedger0To14"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryAndWindingStillDownstream",
+      "meaning": "引擎完成后才可证明边界非零和 winding=0。",
+      "proved": false,
+      "remaining": "XiBoundaryIntervalNonzeroCertificate0To14 AND XiBoundaryWindingNumberZeroIntervalCertificate0To14"
+    }
+  ],
+  "secondary_priority": "GaussianThetaTailBoundLedger",
+  "self_contained_xi_interval_engine_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-theta-mellin-functional-equation-router.json": "ec0893b4116159d3ce000f45a67c35adee936a620784098260413e62df51d3cf",
+    "docs/monograph/prime-matrix-b3-xi-entire-order-router.json": "94bd3bc2703290647dff955cb93838018af68fb2fa102d652faefba37ac6419c",
+    "docs/monograph/prime-matrix-lowheight-rectangle-count-compression-router.json": "9018bf50711675734db0d3560954703830c956c637b963742adb77f652f7d7dc"
+  },
+  "status": "xi_interval_engine_routed_to_theta_mellin_open",
+  "tertiary_priority": "CompactThetaMellinQuadratureSubdivisionLedger0To14",
+  "theta_mellin_interval_engine_route_selected": true
+}

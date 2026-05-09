@@ -1,0 +1,77 @@
+{
+  "certificate_type": "prime_matrix_theta_mellin_transcendental_kernel_router",
+  "counterexample_assumption_only": true,
+  "downstream_priority": "IntervalOperationTraceHashLedger AND GaussianThetaTailBoundLedger AND CompactThetaMellinQuadratureSubdivisionLedger0To14",
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "next_priority": "ThetaMellinCompactRangeBoxLedger0To14",
+  "plain_conclusion": "theta-Mellin 超越函数核的通用部分已经可闭合：log/trig、exp range reduction、complex power 和 Gaussian negative exponential 都能由有理 Taylor 外包模板处理。真正剩余不是再找特殊函数黑箱，而是为低高度矩形和积分分段列出有限有理范围盒，再登记每类调用的 Taylor 截断阶数和尾界。",
+  "replacement": "ThetaMellinElementaryTranscendentalTaylorKernel0To14 => (RationalLogTrigTaylorOracleTemplateClosed AND RationalExpTaylorRangeReductionTemplateClosed AND ThetaMellinComplexPowerTemplateClosed AND GaussianRealExpNegativeTemplateClosed AND ThetaMellinCompactRangeBoxLedger0To14 AND ThetaMellinTaylorTailOrderLedger0To14)",
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ThetaMellinTranscendentalKernelGateActive",
+      "meaning": "复球核压缩后首要数学实现点是 theta-Mellin 专用超越函数 Taylor 外包。",
+      "proved": true,
+      "remaining": "ThetaMellinElementaryTranscendentalTaylorKernel0To14"
+    },
+    {
+      "closed": true,
+      "gate": "RationalLogTrigTemplateAvailable",
+      "meaning": "已有 atanh-log、Machin-pi、sin/cos Taylor 有理外包模板，半径远小于当前需求。",
+      "proved": true,
+      "remaining": "RationalLogTrigTaylorOracleTemplateClosed"
+    },
+    {
+      "closed": true,
+      "gate": "RationalExpRangeReductionTemplateClosed",
+      "meaning": "exp 可用有理 range reduction：x=m log2+r，|r|<=log2/2，再对 exp(r) 用正项 Taylor 尾界。",
+      "proved": true,
+      "remaining": "RationalExpTaylorRangeReductionTemplateClosed"
+    },
+    {
+      "closed": true,
+      "gate": "ComplexPowerTemplateClosed",
+      "meaning": "t^z=exp(Re z log t)*(cos(Im z log t)+i sin(Im z log t))，由 log/trig/exp 三模板组合。",
+      "proved": true,
+      "remaining": "ThetaMellinComplexPowerTemplateClosed"
+    },
+    {
+      "closed": true,
+      "gate": "GaussianNegativeExpTemplateClosed",
+      "meaning": "exp(-pi n^2 t) 是负实指数，range reduction 与正项 Taylor 直接给向外上界。",
+      "proved": true,
+      "remaining": "GaussianRealExpNegativeTemplateClosed"
+    },
+    {
+      "closed": false,
+      "gate": "CompactRangeBoxLedgerStillOpen",
+      "meaning": "还需由矩形边界与积分分段给出所有 log t、Im z log t、pi n^2 t 的有限有理范围盒。",
+      "proved": false,
+      "remaining": "ThetaMellinCompactRangeBoxLedger0To14"
+    },
+    {
+      "closed": false,
+      "gate": "TaylorTailOrderLedgerStillOpen",
+      "meaning": "有了范围盒后，还需列出每类调用的截断阶数 N 和统一尾界，形成可复核表。",
+      "proved": false,
+      "remaining": "ThetaMellinTaylorTailOrderLedger0To14"
+    },
+    {
+      "closed": false,
+      "gate": "TraceAndThetaDownstream",
+      "meaning": "超越核实例化后仍需调用轨迹、theta 尾界和紧致积分分段证书。",
+      "proved": false,
+      "remaining": "IntervalOperationTraceHashLedger AND GaussianThetaTailBoundLedger AND CompactThetaMellinQuadratureSubdivisionLedger0To14"
+    }
+  ],
+  "secondary_priority": "ThetaMellinTaylorTailOrderLedger0To14",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-certified-complex-ball-kernel-router.json": "132584778868d6847a4d85a5e342e8b5f334da5747c24b0410624b3b650b5c30",
+    "docs/monograph/trig-log-interval-oracle-audit.json": "3fbb21ce4c877e2f24027c2ed1c98bdb9f5ea92e3366f8f698a73ccc9b69b055"
+  },
+  "status": "theta_mellin_transcendental_templates_closed_range_boxes_open",
+  "theta_mellin_transcendental_kernel_closed": false,
+  "transcendental_templates_closed": true
+}
