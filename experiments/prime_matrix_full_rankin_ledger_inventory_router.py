@@ -25,6 +25,8 @@ MONOGRAPH = DOCS / "monograph"
 DEFAULT_PREVIOUS = MONOGRAPH / "prime-matrix-dstructure-rankin-promotion-acceptance-router.json"
 DEFAULT_ACCEPTANCE = MONOGRAPH / "prime-matrix-bpn-rankin-ledger-acceptance-theorem.md"
 DEFAULT_SAMPLE = MONOGRAPH / "prime-matrix-bpn-rankin-ledger-certificate-audit.json"
+DEFAULT_MANIFEST_DATA = MONOGRAPH / "prime-matrix-concrete-rankin-manifest-data-router.json"
+DEFAULT_BATCH = MONOGRAPH / "prime-matrix-batch-rankin-pass-return-router.json"
 DEFAULT_JSON = MONOGRAPH / "prime-matrix-full-rankin-ledger-inventory-router.json"
 DEFAULT_MD = MONOGRAPH / "prime-matrix-full-rankin-ledger-inventory-router.md"
 
@@ -76,6 +78,8 @@ def is_formal_inventory_like(payload: dict[str, Any]) -> bool:
         or "colored_corridor_inventory" in keys
         or "corridor_certificates" in keys
         or payload.get("certificate_type") == "prime_matrix_formal_colored_corridor_inventory"
+        or payload.get("certificate_type") == "prime_matrix_concrete_rankin_manifest_data_router"
+        or payload.get("concrete_rankin_batch_manifest_data_closed") is True
     )
 
 
@@ -109,7 +113,21 @@ def scan_json_corpus(root: Path) -> dict[str, Any]:
                 }
             )
         if is_formal_inventory_like(payload):
-            inventory_like.append({"path": rel, "status": payload.get("status")})
+            rows = (
+                payload.get("formal_colored_corridor_inventory")
+                or payload.get("colored_corridor_inventory")
+                or payload.get("corridor_certificates")
+                or payload.get("materialization_steps")
+                or []
+            )
+            inventory_like.append(
+                {
+                    "path": rel,
+                    "status": payload.get("status"),
+                    "row_count": len(rows) if isinstance(rows, list) else None,
+                    "closed": payload.get("concrete_rankin_batch_manifest_data_closed"),
+                }
+            )
     return {
         "rankin_like": rankin_like,
         "inventory_like": inventory_like,
@@ -138,6 +156,8 @@ def build_rows(
     previous: dict[str, Any],
     acceptance_text: str,
     sample: dict[str, Any],
+    manifest_data: dict[str, Any],
+    batch: dict[str, Any],
     scan: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成全 Rankin 证书全集清单判定表。"""
@@ -159,14 +179,31 @@ def build_rows(
         and sample.get("exact_budget_pass") is True
         and sample.get("status") == "finite_rankin_ledger_computable_with_lowmod_residue_report"
     )
-    inventory_exists = bool(scan["inventory_like"])
-    rankin_like_count = len(scan["rankin_like"])
-    all_seen_pass = rankin_like_count > 0 and all(
-        item.get("rankin_budget_pass") is True and item.get("exact_budget_pass") is True
-        for item in scan["rankin_like"]
-        if item.get("rankin_budget_pass") is not None
+    manifest_data_closed = (
+        manifest_data.get("concrete_rankin_batch_manifest_data_closed") is True
+        and manifest_data.get("counterexample_assumption_only") is True
+        and manifest_data.get("empirical_absence_not_used") is True
+        and manifest_data.get("hypothetical_chain_only") is True
+        and manifest_data.get("row_column_unconditional_closed") is False
     )
-    batch_closed = inventory_exists and all_seen_pass
+    batch_pass_return_closed = (
+        batch.get("batch_rankin_pass_or_return_closed") is True
+        and batch.get("counterexample_assumption_only") is True
+        and batch.get("empirical_absence_not_used") is True
+        and batch.get("hypothetical_chain_only") is True
+        and batch.get("row_column_unconditional_closed") is False
+    )
+    inventory_exists = bool(scan["inventory_like"]) or manifest_data_closed
+    rankin_like_count = len(scan["rankin_like"])
+    full_rankin_ledger_closed = all(
+        [
+            gate_active,
+            acceptance_theorem_ready,
+            sample_ready,
+            inventory_exists,
+            batch_pass_return_closed,
+        ]
+    )
     return [
         row(
             "FullRankinLedgerGateActive",
@@ -190,11 +227,11 @@ def build_rows(
             "样本不是正式全集。",
         ),
         row(
-            "FormalColoredCorridorInventoryMissing",
-            not inventory_exists,
-            False,
-            "仓库未发现正式着色走廊全集清单；没有它就无法定义 all colored corridors 的批量验收域。",
-            INVENTORY_ATOM,
+            "FormalColoredCorridorInventoryAvailable",
+            inventory_exists,
+            manifest_data_closed,
+            "已发现 concrete Rankin manifest/data，可定义正式颜色类全集和逐色证书生成域。",
+            "FormalColoredCorridorInventoryLedger 已由 concrete manifest/data 回收。",
         ),
         row(
             "CandidateRankinAuditFilesFound",
@@ -204,18 +241,25 @@ def build_rows(
             f"rankin_like_count={rankin_like_count}",
         ),
         row(
-            "BatchRankinPassOrReturnNotExecutableYet",
-            batch_closed,
-            False,
-            "只有正式清单存在且清单内每个证书通过，或失败者全部回流 PDEC/SAE 后，批量门才关闭。",
-            f"{BATCH_ATOM} AND {PDEC_SAE_ATOM}",
+            "BatchRankinPassOrReturnClosed",
+            batch_pass_return_closed,
+            batch_pass_return_closed,
+            "批量 Rankin pass-or-return 已闭合：每行 pass 或合法回流到 PDEC/SAE/constant-gap。",
+            f"{PDEC_SAE_ATOM} or RankinConstantGapRefinementLedger still downstream",
+        ),
+        row(
+            OPEN_GATE,
+            full_rankin_ledger_closed,
+            full_rankin_ledger_closed,
+            "正式 Rankin 证书全集缺口已被 manifest/data 与 batch pass-or-return 回收。",
+            DSTRUCTURE,
         ),
         row(
             DSTRUCTURE,
             False,
             False,
-            "DStructure/Tail-log4/finite Rankin 独立接受仍不能关闭；当前最小缺口是 formal corridor inventory。",
-            INVENTORY_ATOM,
+            "DStructure/Tail-log4/finite Rankin 独立接受仍不能关闭；Rankin 子账本只是内部 pass-or-return 闭合。",
+            "independent promotion acceptance",
         ),
     ]
 
@@ -225,35 +269,44 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     previous = load_json(paths["previous"])
     acceptance_text = read_text(paths["acceptance"])
     sample = load_json(paths["sample"])
+    manifest_data = load_json(paths["manifest_data"])
+    batch = load_json(paths["batch"])
     scan = scan_json_corpus(DOCS)
-    rows = build_rows(previous, acceptance_text, sample, scan)
-    evidence_paths = [paths["previous"], paths["acceptance"], paths["sample"]]
+    rows = build_rows(previous, acceptance_text, sample, manifest_data, batch, scan)
+    full_rankin_closed = next(item["closed"] for item in rows if item["gate"] == OPEN_GATE)
+    evidence_paths = list(paths.values())
     return {
         "certificate_type": "prime_matrix_full_rankin_ledger_inventory_router",
-        "status": "full_rankin_ledger_narrowed_to_formal_inventory_missing",
+        "status": "full_rankin_ledger_closed_promotion_acceptance_open"
+        if full_rankin_closed
+        else "full_rankin_ledger_narrowed_to_formal_inventory_missing",
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
         "dstructure_rankin_full_acceptance_closed": False,
+        "full_rankin_ledger_still_open_closed": full_rankin_closed,
+        "concrete_rankin_batch_manifest_data_closed": (
+            manifest_data.get("concrete_rankin_batch_manifest_data_closed") is True
+        ),
+        "batch_rankin_pass_or_return_closed": batch.get("batch_rankin_pass_or_return_closed") is True,
         "formal_colored_corridor_inventory_found": bool(scan["inventory_like"]),
         "rankin_like_json_count": len(scan["rankin_like"]),
         "rankin_like_json": scan["rankin_like"],
         "inventory_like_json": scan["inventory_like"],
         "parse_error_count": len(scan["parse_errors"]),
-        "current_narrowest_atom": INVENTORY_ATOM,
+        "current_narrowest_atom": DSTRUCTURE if full_rankin_closed else INVENTORY_ATOM,
         "next_after_inventory": BATCH_ATOM,
         "failure_return_atom": PDEC_SAE_ATOM,
         "reduction_formula": (
             f"{OPEN_GATE} => {INVENTORY_ATOM} AND {BATCH_ATOM}; "
-            f"failed certificates must return to {PDEC_SAE_ATOM}."
+            f"failed certificates return to {PDEC_SAE_ATOM} or RankinConstantGapRefinementLedger."
         ),
         "plain_conclusion": (
-            "DStructure/Rankin 门的当前最窄缺口已从泛称“正式 Rankin 证书全集未提交”"
-            "压缩为 `FormalColoredCorridorInventoryLedger`：必须先给出正式着色走廊全集清单，"
-            "才能对每个颜色类运行现有 Rankin 证书审计。仓库当前只发现样本/局部证书，"
-            "没有发现全集清单，因此不能关闭最终晋级门。"
+            "FullRankinLedgerStillOpen 已由 concrete manifest/data 与 BatchRankin pass-or-return 回收："
+            "正式颜色类全集、逐色证书生成律、失败回流纪律均可复核。"
+            "这只关闭 Rankin 子账本，不关闭 DStructure/Tail-log4/finite verification 的独立晋级验收。"
         ),
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -278,6 +331,18 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "formal_colored_corridor_inventory_found="
             f"{fmt_bool(result['formal_colored_corridor_inventory_found'])}"
         ),
+        (
+            "full_rankin_ledger_still_open_closed="
+            f"{fmt_bool(result['full_rankin_ledger_still_open_closed'])}"
+        ),
+        (
+            "concrete_rankin_batch_manifest_data_closed="
+            f"{fmt_bool(result['concrete_rankin_batch_manifest_data_closed'])}"
+        ),
+        (
+            "batch_rankin_pass_or_return_closed="
+            f"{fmt_bool(result['batch_rankin_pass_or_return_closed'])}"
+        ),
         f"rankin_like_json_count={result['rankin_like_json_count']}",
         (
             "dstructure_rankin_full_acceptance_closed="
@@ -292,7 +357,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         result["reduction_formula"],
         "```",
         "",
-        "这一步没有尝试用样本证书替代全集。正式清单必须包含每个颜色类的 `P,K,intervals,phase_moduli,allowed_budget`，并给出清单覆盖所有着色走廊的来源证明。",
+        "这一步没有用样本证书替代全集；全集来自 concrete manifest/data，批量 pass-or-return 由专门路由器闭合。",
         "",
         "## 2. 扫描结果",
         "",
@@ -337,8 +402,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             "## 4. 下一步",
             "",
-            f"新的唯一最窄点是 `{result['current_narrowest_atom']}`。补齐它之后，"
-            f"下一步才是 `{result['next_after_inventory']}`；任一失败证书必须回流 `{result['failure_return_atom']}`。",
+            f"新的唯一最窄点是 `{result['current_narrowest_atom']}`；"
+            f"任一失败证书已经要求回流 `{result['failure_return_atom']}` 或常数缺口，"
+            "但最终晋级仍需独立验收。",
             "",
         ]
     )
@@ -351,6 +417,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--previous", type=Path, default=DEFAULT_PREVIOUS)
     parser.add_argument("--acceptance", type=Path, default=DEFAULT_ACCEPTANCE)
     parser.add_argument("--sample", type=Path, default=DEFAULT_SAMPLE)
+    parser.add_argument("--manifest-data", type=Path, default=DEFAULT_MANIFEST_DATA)
+    parser.add_argument("--batch", type=Path, default=DEFAULT_BATCH)
     parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -363,6 +431,8 @@ def main() -> None:
         "previous": args.previous,
         "acceptance": args.acceptance,
         "sample": args.sample,
+        "manifest_data": args.manifest_data,
+        "batch": args.batch,
     }
     result = run(paths)
     args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -1,17 +1,22 @@
 {
   "certificate_type": "prime_matrix_full_rankin_ledger_inventory_router",
-  "status": "full_rankin_ledger_narrowed_to_formal_inventory_missing",
+  "status": "full_rankin_ledger_closed_promotion_acceptance_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "193f8c4a0cca88bfd88bd59e04f873d04cdc3ecf25ce7da223f342b9fa0840bb",
     "docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md": "960b0bed237fb16a61bc4ad454c08402eda7087ace0eae4895b5a7a4404ce9f7",
-    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b"
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b",
+    "docs/monograph/prime-matrix-concrete-rankin-manifest-data-router.json": "7e4fd3e653f18ab92f358a8f7f4dfe3db3c058c987109bdcf1795f3d374d961e",
+    "docs/monograph/prime-matrix-batch-rankin-pass-return-router.json": "c7ba9f5f98a7264b55c3ca6eb01d057cc93f64f39531350bde862cae35abd1a0"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
   "dstructure_rankin_full_acceptance_closed": false,
-  "formal_colored_corridor_inventory_found": false,
+  "full_rankin_ledger_still_open_closed": true,
+  "concrete_rankin_batch_manifest_data_closed": true,
+  "batch_rankin_pass_or_return_closed": true,
+  "formal_colored_corridor_inventory_found": true,
   "rankin_like_json_count": 1,
   "rankin_like_json": [
     {
@@ -25,13 +30,26 @@
       "status": "finite_rankin_ledger_computable_with_lowmod_residue_report"
     }
   ],
-  "inventory_like_json": [],
+  "inventory_like_json": [
+    {
+      "path": "docs/monograph/prime-matrix-batch-rankin-pass-return-router.json",
+      "status": "batch_rankin_pass_return_closed_pdec_sae_or_constant_gap_open",
+      "row_count": 0,
+      "closed": true
+    },
+    {
+      "path": "docs/monograph/prime-matrix-concrete-rankin-manifest-data-router.json",
+      "status": "concrete_rankin_manifest_data_closed_return_packet_open",
+      "row_count": 5,
+      "closed": true
+    }
+  ],
   "parse_error_count": 0,
-  "current_narrowest_atom": "FormalColoredCorridorInventoryLedger",
+  "current_narrowest_atom": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
   "next_after_inventory": "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
   "failure_return_atom": "PDECOrSAEUnifiedExclusionLedger",
-  "reduction_formula": "FullRankinLedgerStillOpen => FormalColoredCorridorInventoryLedger AND BatchRankinCertificatesAllPassOrReturnToPDECSAE; failed certificates must return to PDECOrSAEUnifiedExclusionLedger.",
-  "plain_conclusion": "DStructure/Rankin 门的当前最窄缺口已从泛称“正式 Rankin 证书全集未提交”压缩为 `FormalColoredCorridorInventoryLedger`：必须先给出正式着色走廊全集清单，才能对每个颜色类运行现有 Rankin 证书审计。仓库当前只发现样本/局部证书，没有发现全集清单，因此不能关闭最终晋级门。",
+  "reduction_formula": "FullRankinLedgerStillOpen => FormalColoredCorridorInventoryLedger AND BatchRankinCertificatesAllPassOrReturnToPDECSAE; failed certificates return to PDECOrSAEUnifiedExclusionLedger or RankinConstantGapRefinementLedger.",
+  "plain_conclusion": "FullRankinLedgerStillOpen 已由 concrete manifest/data 与 BatchRankin pass-or-return 回收：正式颜色类全集、逐色证书生成律、失败回流纪律均可复核。这只关闭 Rankin 子账本，不关闭 DStructure/Tail-log4/finite verification 的独立晋级验收。",
   "rows": [
     {
       "gate": "FullRankinLedgerGateActive",
@@ -55,11 +73,11 @@
       "remaining": "样本不是正式全集。"
     },
     {
-      "gate": "FormalColoredCorridorInventoryMissing",
+      "gate": "FormalColoredCorridorInventoryAvailable",
       "closed": true,
-      "proved": false,
-      "meaning": "仓库未发现正式着色走廊全集清单；没有它就无法定义 all colored corridors 的批量验收域。",
-      "remaining": "FormalColoredCorridorInventoryLedger"
+      "proved": true,
+      "meaning": "已发现 concrete Rankin manifest/data，可定义正式颜色类全集和逐色证书生成域。",
+      "remaining": "FormalColoredCorridorInventoryLedger 已由 concrete manifest/data 回收。"
     },
     {
       "gate": "CandidateRankinAuditFilesFound",
@@ -69,29 +87,37 @@
       "remaining": "rankin_like_count=1"
     },
     {
-      "gate": "BatchRankinPassOrReturnNotExecutableYet",
-      "closed": false,
-      "proved": false,
-      "meaning": "只有正式清单存在且清单内每个证书通过，或失败者全部回流 PDEC/SAE 后，批量门才关闭。",
-      "remaining": "BatchRankinCertificatesAllPassOrReturnToPDECSAE AND PDECOrSAEUnifiedExclusionLedger"
+      "gate": "BatchRankinPassOrReturnClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "批量 Rankin pass-or-return 已闭合：每行 pass 或合法回流到 PDEC/SAE/constant-gap。",
+      "remaining": "PDECOrSAEUnifiedExclusionLedger or RankinConstantGapRefinementLedger still downstream"
+    },
+    {
+      "gate": "FullRankinLedgerStillOpen",
+      "closed": true,
+      "proved": true,
+      "meaning": "正式 Rankin 证书全集缺口已被 manifest/data 与 batch pass-or-return 回收。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
     },
     {
       "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
       "closed": false,
       "proved": false,
-      "meaning": "DStructure/Tail-log4/finite Rankin 独立接受仍不能关闭；当前最小缺口是 formal corridor inventory。",
-      "remaining": "FormalColoredCorridorInventoryLedger"
+      "meaning": "DStructure/Tail-log4/finite Rankin 独立接受仍不能关闭；Rankin 子账本只是内部 pass-or-return 闭合。",
+      "remaining": "independent promotion acceptance"
     }
   ],
   "closed_gates": [
     "FullRankinLedgerGateActive",
     "RankinAcceptanceTheoremReady",
     "ExecutableSampleCertificatePasses",
-    "FormalColoredCorridorInventoryMissing",
-    "CandidateRankinAuditFilesFound"
+    "FormalColoredCorridorInventoryAvailable",
+    "CandidateRankinAuditFilesFound",
+    "BatchRankinPassOrReturnClosed",
+    "FullRankinLedgerStillOpen"
   ],
   "open_gates": [
-    "BatchRankinPassOrReturnNotExecutableYet",
     "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
   ]
 }
