@@ -1,0 +1,86 @@
+{
+  "certificate_type": "prime_matrix_noncanonical_two_lane_final_input_router",
+  "status": "noncanonical_two_lane_pinned_source_or_spectral_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-active-final-inputs-router.json": "33c703c7d7ffd716b44b43b52c3177de87b94883d2c1ac505cf203b0165095d8",
+    "docs/monograph/prime-matrix-noncanonical-complement-trilemma-router.json": "e8971555d7c4efa29a49d35224a8fe379bb467af258621dfc7289ef27b0d392b",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-completed-weight-spectral-gap-router.json": "cdf61edf204d0620243fac7ee0b1a96c6547362ad826938a73db3dfdb3ba853f"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "noncanonical_two_lane_boundary_closed": true,
+  "noncanonical_two_lane_proved_or_accepted": false,
+  "self_contained_priority": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource",
+  "external_or_new_deep_theorem_priority": "CDependentResidueWeightSpectralCancellationInput",
+  "parallel_acceptance_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "minimum_unconditional_basis": "(ActualFullSNonAPSourceCapacityAntiAtomForActualSource OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource",
+  "fallback_priority": "CDependentResidueWeightSpectralCancellationInput",
+  "reduction_formula": "NoncanonicalTwoLaneMathInput => (ActualFullSNonAPSourceCapacityAntiAtomForActualSource OR CDependentResidueWeightSpectralCancellationInput); final theorem still requires DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.",
+  "plain_conclusion": "NoncanonicalTwoLaneMathInput 已拆成两条互斥可审稿 lane：自足路线必须证明实际源反原子或实际源恒等；外部路线必须证明/接受 c-dependent 完成型谱抵消。当前两条 lane 都未证明，所以行列无条件定理仍未闭合。",
+  "rows": [
+    {
+      "lane": "ActiveNoncanonicalGateImported",
+      "active": true,
+      "boundary_closed": true,
+      "proved_or_accepted": true,
+      "role": "最终数学输入已缩为 noncanonical 二选一。",
+      "blocked_shortcuts": [],
+      "required_input": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource OR CDependentResidueWeightSpectralCancellationInput"
+    },
+    {
+      "lane": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource",
+      "active": true,
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "role": "自足 lane：证明实际源没有 moving same-(u,v) 原子，或进一步证明实际源等于 canonical RIW/Buchstab。",
+      "blocked_shortcuts": [
+        "formal well-factorable convolution",
+        "Type-I/II algebraic decomposition",
+        "Fourier h-smoothing",
+        "K4/K6 residue/tail projections",
+        "naive factor-residue incidence",
+        "silent canonical source import"
+      ],
+      "required_input": "For the final full-S non-AP WFD source capacity measure M_{u,v}, prove max_{u,v} M_{u,v}/sum_{u,v}M_{u,v} <= log^{-2A} for every A."
+    },
+    {
+      "lane": "CDependentResidueWeightSpectralCancellationInput",
+      "active": true,
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "role": "外部/新深定理 lane：对 c-dependent、未中心化、无投影 residue 权重取得谱平均抵消。",
+      "blocked_shortcuts": [
+        "pointwise Weil + L2",
+        "ordinary large sieve",
+        "flat or centered residue shortcut"
+      ],
+      "required_input": "handles c-dependent residue weights B_{c,x}; uses well-factorable lambda_c and smooth omega_h over c,h; goes beyond pointwise Weil and ordinary large sieve; keeps the uncentered no-projection non-AP WFD target; delivers NaturalWFDScale/log^A P for every A>0"
+    },
+    {
+      "lane": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "active": true,
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "role": "并行晋级验收 lane：即使 noncanonical 数学输入闭合，也仍需独立接受。",
+      "blocked_shortcuts": [
+        "author-side self-promotion"
+      ],
+      "required_input": "independent promotion acceptance"
+    }
+  ],
+  "closed_lanes": [
+    "ActiveNoncanonicalGateImported",
+    "ActualFullSNonAPSourceCapacityAntiAtomForActualSource",
+    "CDependentResidueWeightSpectralCancellationInput",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "open_lanes": [
+    "ActualFullSNonAPSourceCapacityAntiAtomForActualSource",
+    "CDependentResidueWeightSpectralCancellationInput",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
