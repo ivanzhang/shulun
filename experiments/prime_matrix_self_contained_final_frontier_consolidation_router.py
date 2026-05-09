@@ -34,6 +34,9 @@ DEFAULT_BOUNDARY = MONO / "prime-matrix-b3-alternating-boundary-terminal-router.
 DEFAULT_SAWTOOTH = MONO / "prime-matrix-exact-residue-sawtooth-normal-form-router.json"
 DEFAULT_QUADRATIC = MONO / "prime-matrix-quadratic-arc-nearsquare-spread-router.json"
 DEFAULT_SUPPORT = MONO / "prime-matrix-rosser-weight-support-functor-router.json"
+DEFAULT_NEARSQUARE_DEFECT = MONO / "prime-matrix-nearsquare-strip-defect-certificate-router.json"
+DEFAULT_NEARSQUARE_ADMISSION = MONO / "prime-matrix-nearsquare-strip-terminal-admission-router.json"
+DEFAULT_NEARSQUARE_ABSORPTION = MONO / "prime-matrix-nearsquare-canonical-terminal-absorption-router.json"
 DEFAULT_PROMOTION = MONO / "prime-matrix-final-promotion-gate-irreducibility-router.json"
 DEFAULT_JSON = MONO / "prime-matrix-self-contained-final-frontier-consolidation-router.json"
 DEFAULT_MD = MONO / "prime-matrix-self-contained-final-frontier-consolidation-router.md"
@@ -108,6 +111,9 @@ def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     sawtooth = data["sawtooth"]
     quadratic = data["quadratic"]
     support = data["support"]
+    nearsquare_defect = data["nearsquare_defect"]
+    nearsquare_admission = data["nearsquare_admission"]
+    nearsquare_absorption = data["nearsquare_absorption"]
     promotion = data["promotion"]
 
     final_basis_saved = (
@@ -134,7 +140,12 @@ def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         support.get("quotient_residue_coordinate_lift_proved"),
         support.get("rosser_weight_support_functorially_absorbed"),
     )
-    signed_strip_open = support.get("signed_nearsquare_strip_discrepancy_proved") is False
+    signed_strip_absorbed = (
+        support.get("signed_nearsquare_strip_discrepancy_proved") is False
+        and nearsquare_defect.get("signed_strip_bound_compressed") is True
+        and nearsquare_admission.get("nearsquare_strip_terminal_admission_closed") is True
+        and nearsquare_absorption.get("nearsquare_terminal_absorbed") is True
+    )
     promotion_open = (
         promotion.get("promotion_author_packet_sealed") is True
         and promotion.get("referee_gate_explicitly_accepted") is False
@@ -198,23 +209,23 @@ def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
             SIGNED_STRIP,
         ),
         row(
-            "SignedNearSquareStripStillOpen",
-            signed_strip_open,
+            "SignedNearSquareStripTerminalAbsorbed",
+            signed_strip_absorbed,
             False,
-            "Rosser support functor router",
-            "仍需证明 Rosser 有符号质量不能在近平方窄条带上形成 0.90M 级负偏差。",
-            SIGNED_STRIP,
+            "nearsquare defect/admission/absorption routers",
+            "近平方条带失败态会生成同 formal unit 的 PDEC/SAE 证书；在 canonical 外层边界内已被吸收，不再是独立输入。",
+            f"{B3_MERTENS} AND {B3_VARIATION}",
         ),
         row(
             "HighSegmentModelFrontierConsolidated",
             beta_structural_closed
             and beta_boundary_open
             and sawtooth_structural_closed
-            and signed_strip_open,
+            and signed_strip_absorbed,
             False,
             "combined high-segment subrouters",
-            "高段模型余量的当前自足前沿已不再是抽象 HighSegment，而是 beta 边界余项与 signed strip 偏差。",
-            f"({B3_MERTENS} AND {B3_VARIATION} AND {SIGNED_STRIP}) OR {EXTERNAL_ROUGH}",
+            "高段模型余量的当前自足前沿已不再是抽象 HighSegment；sawtooth/近平方终端被吸收后，只剩 beta 边界余项。",
+            f"({B3_MERTENS} AND {B3_VARIATION}) OR {EXTERNAL_ROUGH}",
         ),
         row(
             "SelfContainedPromotionPackageStillOpen",
@@ -234,11 +245,11 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     structural_frontier_closed = all(item["closed"] for item in rows)
 
     strict_basis = (
-        f"{NO_HIDDEN} AND ({B3_MERTENS} AND {B3_VARIATION} AND {SIGNED_STRIP}) "
+        f"{NO_HIDDEN} AND ({B3_MERTENS} AND {B3_VARIATION}) "
         f"AND {SELF_PROMOTION}"
     )
     with_external_bypass = (
-        f"{NO_HIDDEN} AND ((({B3_MERTENS} AND {B3_VARIATION} AND {SIGNED_STRIP}) "
+        f"{NO_HIDDEN} AND ((({B3_MERTENS} AND {B3_VARIATION}) "
         f"OR {EXTERNAL_ROUGH})) AND {SELF_PROMOTION}"
     )
 
@@ -259,18 +270,17 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "open_strict_self_contained_inputs": [
             B3_MERTENS,
             B3_VARIATION,
-            SIGNED_STRIP,
             SELF_PROMOTION,
         ],
         "optional_external_bypass": EXTERNAL_ROUGH,
-        "next_priority": SIGNED_STRIP,
-        "secondary_priority": B3_VARIATION,
+        "next_priority": B3_VARIATION,
+        "secondary_priority": B3_MERTENS,
         "promotion_priority": SELF_PROMOTION,
         "plain_conclusion": (
             "本步没有宣布无条件闭合，而是把刚提交的两输入总目标继续合并到当前真实前沿："
             "调和窗口、有限桥接、权重构造、逐点支配、连续主项、Stieltjes 表示、floor 到二次圆弧、"
-            "再到近平方条带的结构层均已关闭；真正自足剩余为 B3 Mertens/边界变差、"
-            "signed near-square strip 偏差，以及自足版 DStructure/Tail-log4/finite Rankin 晋级包。"
+            "再到近平方条带终端吸收的结构层均已关闭；真正自足剩余压到 B3 Mertens 包络、"
+            "B3 边界变差乘子，以及自足版 DStructure/Tail-log4/finite Rankin 晋级包。"
         ),
         "rows": rows,
     }
@@ -365,6 +375,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--sawtooth-json", type=Path, default=DEFAULT_SAWTOOTH)
     parser.add_argument("--quadratic-json", type=Path, default=DEFAULT_QUADRATIC)
     parser.add_argument("--support-json", type=Path, default=DEFAULT_SUPPORT)
+    parser.add_argument("--nearsquare-defect-json", type=Path, default=DEFAULT_NEARSQUARE_DEFECT)
+    parser.add_argument("--nearsquare-admission-json", type=Path, default=DEFAULT_NEARSQUARE_ADMISSION)
+    parser.add_argument("--nearsquare-absorption-json", type=Path, default=DEFAULT_NEARSQUARE_ABSORPTION)
     parser.add_argument("--promotion-json", type=Path, default=DEFAULT_PROMOTION)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-out", type=Path, default=DEFAULT_MD)
@@ -388,6 +401,9 @@ def main() -> None:
         "sawtooth": args.sawtooth_json,
         "quadratic": args.quadratic_json,
         "support": args.support_json,
+        "nearsquare_defect": args.nearsquare_defect_json,
+        "nearsquare_admission": args.nearsquare_admission_json,
+        "nearsquare_absorption": args.nearsquare_absorption_json,
         "promotion": args.promotion_json,
         "json_out": args.json_out,
         "md_out": args.md_out,

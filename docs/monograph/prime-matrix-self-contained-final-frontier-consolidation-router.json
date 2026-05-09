@@ -5,17 +5,16 @@
   "frontier_reduction_closed": true,
   "high_segment_model_gap_proved": false,
   "hypothetical_chain_only": true,
-  "latest_strict_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND (B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000) AND SelfContainedDStructureTailLog4FiniteRankinProofPackage",
-  "latest_with_external_rough_bypass_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND (((B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND SelfContainedDStructureTailLog4FiniteRankinProofPackage",
-  "next_priority": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
+  "latest_strict_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND (B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger) AND SelfContainedDStructureTailLog4FiniteRankinProofPackage",
+  "latest_with_external_rough_bypass_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND (((B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND SelfContainedDStructureTailLog4FiniteRankinProofPackage",
+  "next_priority": "B3BoundaryVariationOnePercentTransferLedger",
   "open_strict_self_contained_inputs": [
     "B3PrimeHarmonicMertensUniformEnvelopePGe100000",
     "B3BoundaryVariationOnePercentTransferLedger",
-    "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000",
     "SelfContainedDStructureTailLog4FiniteRankinProofPackage"
   ],
   "optional_external_bypass": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
-  "plain_conclusion": "本步没有宣布无条件闭合，而是把刚提交的两输入总目标继续合并到当前真实前沿：调和窗口、有限桥接、权重构造、逐点支配、连续主项、Stieltjes 表示、floor 到二次圆弧、再到近平方条带的结构层均已关闭；真正自足剩余为 B3 Mertens/边界变差、signed near-square strip 偏差，以及自足版 DStructure/Tail-log4/finite Rankin 晋级包。",
+  "plain_conclusion": "本步没有宣布无条件闭合，而是把刚提交的两输入总目标继续合并到当前真实前沿：调和窗口、有限桥接、权重构造、逐点支配、连续主项、Stieltjes 表示、floor 到二次圆弧、再到近平方条带终端吸收的结构层均已关闭；真正自足剩余压到 B3 Mertens 包络、B3 边界变差乘子，以及自足版 DStructure/Tail-log4/finite Rankin 晋级包。",
   "promotion_priority": "SelfContainedDStructureTailLog4FiniteRankinProofPackage",
   "row_column_self_contained_closed": false,
   "rows": [
@@ -77,19 +76,19 @@
     },
     {
       "closed": true,
-      "evidence": "Rosser support functor router",
-      "gate": "SignedNearSquareStripStillOpen",
-      "meaning": "仍需证明 Rosser 有符号质量不能在近平方窄条带上形成 0.90M 级负偏差。",
+      "evidence": "nearsquare defect/admission/absorption routers",
+      "gate": "SignedNearSquareStripTerminalAbsorbed",
+      "meaning": "近平方条带失败态会生成同 formal unit 的 PDEC/SAE 证书；在 canonical 外层边界内已被吸收，不再是独立输入。",
       "proved": false,
-      "remaining": "SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000"
+      "remaining": "B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger"
     },
     {
       "closed": true,
       "evidence": "combined high-segment subrouters",
       "gate": "HighSegmentModelFrontierConsolidated",
-      "meaning": "高段模型余量的当前自足前沿已不再是抽象 HighSegment，而是 beta 边界余项与 signed strip 偏差。",
+      "meaning": "高段模型余量的当前自足前沿已不再是抽象 HighSegment；sawtooth/近平方终端被吸收后，只剩 beta 边界余项。",
       "proved": false,
-      "remaining": "(B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger AND SignedNearSquareStripDiscrepancyBoundAlpha043PGe100000) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+      "remaining": "(B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
     },
     {
       "closed": true,
@@ -100,7 +99,7 @@
       "remaining": "SelfContainedDStructureTailLog4FiniteRankinProofPackage"
     }
   ],
-  "secondary_priority": "B3BoundaryVariationOnePercentTransferLedger",
+  "secondary_priority": "B3PrimeHarmonicMertensUniformEnvelopePGe100000",
   "self_contained_promotion_package_proved": false,
   "source_hashes": {
     "docs/monograph/prime-matrix-b3-alternating-boundary-terminal-router.json": "a432b838793adc9ea284e5d2ae3c55ed355b11206ed8c80f50bd05957507e4be",
@@ -113,6 +112,9 @@
     "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "6947dfe0e210608ca136303c7a7dab2d288aaec7525e909944cbf91e3cac0de8",
     "docs/monograph/prime-matrix-harmonic-window-dusart-ledger-router.json": "19070e055ced7cecb38b8a23661193fad075069c796ad66df630ebbfbc084b6f",
     "docs/monograph/prime-matrix-linear-lower-sieve-tail-margin-router.json": "de5e6e1f6f2ff1a6bf3bee4b10c45a8380b84d630e24697fec6f8eefee3dd7b5",
+    "docs/monograph/prime-matrix-nearsquare-canonical-terminal-absorption-router.json": "0733e7755d853ea4be0af2810de9e45d75980eaf92faa543fb1cca57c2a52e83",
+    "docs/monograph/prime-matrix-nearsquare-strip-defect-certificate-router.json": "8008bbcd08be7d94e70ea890791c62a951728ebf386c036971a833a15b5c2fbf",
+    "docs/monograph/prime-matrix-nearsquare-strip-terminal-admission-router.json": "5c5f292b62232ab99896e182142cb5853757032fb6a63d9af3e6f93a76819ae5",
     "docs/monograph/prime-matrix-quadratic-arc-nearsquare-spread-router.json": "d5aad2f36c93b6a6780d05d3b8d037fc1f387e36bf50a16039b7284c0ae5bc3d",
     "docs/monograph/prime-matrix-rosser-weight-floor-ledger-router.json": "3fae18f06563ccaec220f3a12b2be5ef42d279c9139b51410cf5370c23adc3a8",
     "docs/monograph/prime-matrix-rosser-weight-support-functor-router.json": "dd11a35aca3e14d1533aaf16b96bca54850a3e05b515f1e37ddf5fe8ab7cbe20",
