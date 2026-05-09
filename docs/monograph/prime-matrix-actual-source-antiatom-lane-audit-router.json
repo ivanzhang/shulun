@@ -1,0 +1,81 @@
+{
+  "certificate_type": "prime_matrix_actual_source_antiatom_lane_audit_router",
+  "status": "actual_source_antiatom_lane_requires_new_axiom_or_spectral_input",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-noncanonical-two-lane-final-input-router.json": "45a261e861ede3d84c835e1774ae1244e67cfe3a0bec9f2dabe4791bfbfc6e7e",
+    "docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.json": "4d5c17126ea796ee37ae469a3684ef634899dfea0b4af3352c3bf29d0f874e59",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-antiatom-nogo-router.json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.json": "de12a79203d9b8264eeefb078253174fa5cc139b6c6188dc7acda079cf1b7f66"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "actual_source_antiatom_lane_boundary_closed": true,
+  "actual_source_antiatom_proved": false,
+  "canonical_branch_closed_only": true,
+  "generic_self_contained_antiatom_refuted": true,
+  "self_contained_source_lane_remaining": "AddStrengthenedActualSourceAntiAtomTheorem",
+  "recommended_next_without_new_source_axiom": "CDependentResidueWeightSpectralCancellationInput",
+  "parallel_acceptance_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "reduction_formula": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource => canonical branch already closed; generic branch refuted; global route needs AddStrengthenedActualSourceAntiAtomTheorem or CDependentResidueWeightSpectralCancellationInput.",
+  "plain_conclusion": "actual-source 反原子 lane 已被进一步压窄：canonical source 分支已经闭合；generic self-contained 反原子为假；因此若不新增强化实际源反原子定理/公理，当前数学硬攻应转向 c-dependent 完成型谱抵消。",
+  "rows": [
+    {
+      "gate": "ActualSourceAntiAtomLaneActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "noncanonical 二选一路由把自足优先点设为 actual-source 反原子。",
+      "remaining": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource"
+    },
+    {
+      "gate": "CanonicalActualSourceBranchClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical RIW/Buchstab source 分支的 actual-source provenance 与 bridge 已闭合。",
+      "remaining": "不覆盖 noncanonical/generic 补集。"
+    },
+    {
+      "gate": "GlobalUnrestrictedStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "actual-source bridge 明确不关闭 global unrestricted/noncanonical 补集。",
+      "remaining": "noncanonical complement remains."
+    },
+    {
+      "gate": "GenericSelfContainedAntiAtomRefuted",
+      "closed": true,
+      "proved": true,
+      "meaning": "generic full-S 自足反原子被 moving-delta capacity model 反证。",
+      "remaining": "不能由 formal WFD/Type/Fourier/K4K6 推出。"
+    },
+    {
+      "gate": "StrengthenedSourceContractPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "剩余 source lane 已精确成为最终容量测度的无 moving same-(u,v) atom 定理。",
+      "remaining": "AddStrengthenedActualSourceAntiAtomTheorem"
+    },
+    {
+      "gate": "NoExistingProofOfActualSourceAntiAtom",
+      "closed": true,
+      "proved": false,
+      "meaning": "现有材料只能给 canonical 分支闭合和 generic 反例；不能推出 global actual-source 反原子。",
+      "remaining": "AddStrengthenedActualSourceAntiAtomTheorem OR CDependentResidueWeightSpectralCancellationInput"
+    }
+  ],
+  "closed_gates": [
+    "ActualSourceAntiAtomLaneActive",
+    "CanonicalActualSourceBranchClosed",
+    "GlobalUnrestrictedStillOpen",
+    "GenericSelfContainedAntiAtomRefuted",
+    "StrengthenedSourceContractPinned",
+    "NoExistingProofOfActualSourceAntiAtom"
+  ],
+  "open_gates": [
+    "ActualSourceAntiAtomLaneActive",
+    "GlobalUnrestrictedStillOpen",
+    "NoExistingProofOfActualSourceAntiAtom"
+  ]
+}
