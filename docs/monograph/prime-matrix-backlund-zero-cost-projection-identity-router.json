@@ -1,0 +1,140 @@
+{
+  "backlund_local_crossing_trace_closed": false,
+  "budget_preserving_doubling_closed": false,
+  "certificate_type": "prime_matrix_backlund_zero_cost_projection_identity_router",
+  "closed_gates": [
+    "ZeroCostProjectionGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ZetaXiJumpTransportAvailable",
+    "LeftRightFunctionalEquationBridgeAvailable",
+    "CoordinateProjectionFalseClosureBlocked",
+    "ZeroCostProjectionReducedToHalfAverageIdentity"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "even_gamma_priority": "BacklundEvenGammaElementaryRemainderBudgetLedger",
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "lower_atoms": [
+    {
+      "atom": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger",
+      "role": "证明原始 Backlund trace 等于 xi 镜像半平均加显式 Gamma/初等偶部余项。"
+    },
+    {
+      "atom": "BacklundMirrorOddJumpCancellationIdentityLedger",
+      "role": "证明 crossing branch_jump 属于镜像奇部，因此在半平均中逐项抵消。"
+    },
+    {
+      "atom": "BacklundEvenGammaElementaryRemainderBudgetLedger",
+      "role": "证明镜像偶部只剩 Gamma/初等连续相位，并已由既有预算吸收。"
+    }
+  ],
+  "next_priority": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger",
+  "odd_jump_priority": "BacklundMirrorOddJumpCancellationIdentityLedger",
+  "open_gates": [
+    "BacklundOriginalTraceHalfMirrorAverageIdentityLedger",
+    "BacklundMirrorOddJumpCancellationIdentityLedger",
+    "BacklundEvenGammaElementaryRemainderBudgetLedger",
+    "BacklundZeroCostMirrorProjectionIdentityLedger"
+  ],
+  "orientation_priority": "BacklundMirrorIndentArcOrientationLedger",
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "零成本镜像投影不能用“坐标投影回原 trace”伪闭合；那样没有任何 crossing 抵消。真正需要证明的是半镜像平均身份：原始 Backlund trace 等于 xi 对称半平均加已预算的 Gamma/初等偶部，同时 crossing branch_jump 全部落入镜像奇部并逐项抵消。",
+  "post_normalization_priority": "BacklundNoDoubleCountingMirrorBoundaryLedger",
+  "post_projection_priority": "BacklundHalfWeightSymmetricTraceNormalizationLedger",
+  "projection_modes": [
+    {
+      "effect": "保留原始 Backlund trace，但镜像不会自动抵消原 trace 的 crossing 成本。",
+      "mode": "coordinate_projection"
+    },
+    {
+      "effect": "可让镜像奇部抵消，但必须先证明半平均严格等于原始目标加已预算的偶部余项。",
+      "mode": "symmetric_half_average"
+    }
+  ],
+  "projection_priority": "BacklundOriginalTraceProjectionNoLossLedger",
+  "replacement_self_contained": {
+    "BacklundZeroCostMirrorProjectionIdentityLedger": "(BacklundOriginalTraceHalfMirrorAverageIdentityLedger AND BacklundMirrorOddJumpCancellationIdentityLedger AND BacklundEvenGammaElementaryRemainderBudgetLedger)"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ZeroCostProjectionGateActive",
+      "meaning": "doubling 容量纪律后，当前最窄点是零成本镜像投影身份。",
+      "proved": true,
+      "remaining": "BacklundZeroCostMirrorProjectionIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条的解析恒等式，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ZetaXiJumpTransportAvailable",
+      "meaning": "zeta branch_jump 已搬运到 xi；因此镜像奇偶分解可以在 xi 语言中表达。",
+      "proved": true,
+      "remaining": "BacklundMirrorOddJumpCancellationIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LeftRightFunctionalEquationBridgeAvailable",
+      "meaning": "左/右边界函数方程桥已闭合，提供半镜像平均的边界身份基础。",
+      "proved": true,
+      "remaining": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CoordinateProjectionFalseClosureBlocked",
+      "meaning": "只投影回原 trace 虽然零成本，但不能带来抵消；必须证明半平均身份。",
+      "proved": true,
+      "remaining": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroCostProjectionReducedToHalfAverageIdentity",
+      "meaning": "零成本投影已压成半镜像平均身份、奇部跳变抵消、偶部 Gamma 余项预算三包。",
+      "proved": false,
+      "remaining": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger AND BacklundMirrorOddJumpCancellationIdentityLedger AND BacklundEvenGammaElementaryRemainderBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger",
+      "meaning": "尚未证明原始 Backlund 目标等于半镜像平均加已预算偶部。",
+      "proved": false,
+      "remaining": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundMirrorOddJumpCancellationIdentityLedger",
+      "meaning": "尚未证明所有 crossing branch_jump 都进入镜像奇部并逐项抵消。",
+      "proved": false,
+      "remaining": "BacklundMirrorOddJumpCancellationIdentityLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundEvenGammaElementaryRemainderBudgetLedger",
+      "meaning": "尚未证明半平均留下的 Gamma/初等偶部不新增预算。",
+      "proved": false,
+      "remaining": "BacklundEvenGammaElementaryRemainderBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundZeroCostMirrorProjectionIdentityLedger",
+      "meaning": "三包闭合后才可继续半权归一化和无重复扣费验收。",
+      "proved": false,
+      "remaining": "BacklundHalfWeightSymmetricTraceNormalizationLedger AND BacklundNoDoubleCountingMirrorBoundaryLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-functional-equation-left-edge-router.json": "d1e5e51311f6d06a1f204d02a5bbf6e97375b0ebcb8145cc78c201fbf8513298",
+    "docs/monograph/prime-matrix-backlund-symmetric-doubling-capacity-router.json": "35b9e95248733e555df9f38da71aa3158e111753a0860a6eac13fea137b7efd3",
+    "docs/monograph/prime-matrix-backlund-zeta-xi-branch-jump-transport-router.json": "d7e97ace1bdee2abe3d40961b35d6aa5c95dd537f6f2eb4a03acd1836e8d7708"
+  },
+  "status": "backlund_zero_cost_projection_reduced_to_half_average_identity_open",
+  "zero_cost_projection_identity_closed": false,
+  "zero_cost_projection_reduction_closed": true
+}
