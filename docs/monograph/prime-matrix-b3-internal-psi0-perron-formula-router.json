@@ -1,0 +1,137 @@
+{
+  "certificate_type": "b3_internal_psi0_perron_formula_router",
+  "status": "internal_psi0_exact_formula_closed_truncation_kernel_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-classical-rvm-external-match-router.json": "168ecaec6d7eb1c804ce0065ad9c862f4f0b31490376a4291c2f7103738e921a"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "internal_psi0_exact_formula_closed": true,
+  "perron_kernel_truncation_constant_closed": false,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "InternalPsi0PerronFormulaAllXGe20000ConstantProofLedger": "InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND (HadamardSymmetricZeroPairingAndOneOverRhoSignDiscardClosed AND ((HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros AND HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic) AND HadamardCN16UnitIntervalToDyadicShellCountClosed AND HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel) AND HadamardLocalZeroCoreAbsorptionClosedBySignDiscard AND HadamardRemainderRangeAndKernelConventionClosed) AND CLogAggregationAndRangeConventionClosedC64ExternalBacklundBranch) AND ZeroRepulsionParameterNumericalOptimizationClosedC64A1Over256C1Over1280T14 AND (((CullyHugillJohnstonRvMExplicitFormulaHighThresholdRegistered OR InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost) AND PerronKernelTruncationConstantForPsi0Ledger AND ChebyshevPsi0EndpointHalfWeightConventionClosed) AND ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger AND PerronTruncationTrivialZeroPrimePowerTailBudgetLedger) AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "PerronKernelTruncationConstantForPsi0Ledger",
+  "secondary_priority": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+  "tail_priority": "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger",
+  "finite_low_height_priority": "FiniteLowHeightZeroCheckLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "theorem_contract": {
+    "domain": "x>1；本项目只需 x>=20000",
+    "psi0": "psi_0(x)=sum_{n<x} Lambda(n)+1/2 Lambda(x) if x is an integer",
+    "closed_formula": "psi_0(x)=x-sum_rho x^rho/rho-log(2*pi)-1/2*log(1-x^-2)",
+    "zero_sum_mode": "对称极限 lim_{T->infty} sum_{|Im rho|<T}",
+    "what_is_not_closed": "截断到有限 T 的 R_T 常数与零点尾和预算仍未闭合"
+  },
+  "proof_steps": [
+    {
+      "step": "Perron半权入口",
+      "closed": true,
+      "reason": "对 -zeta'/zeta(s)=sum Lambda(n)n^-s 使用 Perron 半权公式，得到 psi_0 端点规范。"
+    },
+    {
+      "step": "矩形移线",
+      "closed": true,
+      "reason": "用 zeta 的亚指数竖线增长与端点避零序列，把积分线移到左侧并取对称极限。"
+    },
+    {
+      "step": "留数清单",
+      "closed": true,
+      "reason": "s=1 给 x，非平凡零点给 -x^rho/rho，s=0 给 -log(2*pi)，平凡零点给 -1/2 log(1-x^-2)。"
+    },
+    {
+      "step": "对称零点和",
+      "closed": true,
+      "reason": "按 |Im rho|<T 的共轭对称极限解释零点和，避免条件收敛顺序歧义。"
+    },
+    {
+      "step": "有限截断余项",
+      "closed": false,
+      "reason": "本步不估计 finite T 余项；该任务留给 PerronKernelTruncationConstantForPsi0Ledger。"
+    }
+  ],
+  "plain_conclusion": "内部 psi_0 精确显式公式已经闭合：通过 Perron 半权入口、移线取留数和对称零点和，得到 x>1 上的无截断公式。该结论只关闭公式身份本身；真正数值余项 R_T 和零点尾和预算仍开放，下一最窄点为 PerronKernelTruncationConstantForPsi0Ledger。",
+  "rows": [
+    {
+      "gate": "InternalPsi0FormulaGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把外部高阈值 RvM 候选排除为严格闭合后，当前最窄点是内部 psi_0 公式。",
+      "remaining": "InternalPsi0PerronFormulaAllXGe20000ConstantProofLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ZetaMeromorphicHadamardBasisAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "zeta/xi 函数方程、亚纯延拓、Hadamard/零点结构已经在前序基础包登记。",
+      "remaining": "CompletedZetaXiFunctionalEquationAndHadamardProductClosed"
+    },
+    {
+      "gate": "Psi0EndpointConventionAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "psi_0 半权端点口径已经闭合，跳点不再造成公式歧义。",
+      "remaining": "ChebyshevPsi0EndpointHalfWeightConventionClosed"
+    },
+    {
+      "gate": "ResidueFormulaProofClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Perron 半权入口、矩形移线、留数清单和对称零点和给出无截断精确公式。",
+      "remaining": "InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost"
+    },
+    {
+      "gate": "InternalPsi0PerronFormulaAllXGe20000ConstantProofLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "内部 all-x psi_0 精确公式闭合；但该闭合不含 finite-T 截断常数。",
+      "remaining": "InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost"
+    },
+    {
+      "gate": "PerronKernelTruncationConstantForPsi0Ledger",
+      "closed": false,
+      "proved": false,
+      "meaning": "下一步必须把精确公式截断为 |gamma|<=T 并给出 R_T 常数。",
+      "remaining": "PerronKernelTruncationConstantForPsi0Ledger"
+    },
+    {
+      "gate": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+      "closed": false,
+      "proved": false,
+      "meaning": "截断核常数之后，仍需把 C=1280,T0=14 代入零点尾和预算。",
+      "remaining": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger"
+    },
+    {
+      "gate": "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "平凡零点与素数幂/尾项同口径预算仍是独立子账本。",
+      "remaining": "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger"
+    }
+  ],
+  "closed_gates": [
+    "InternalPsi0FormulaGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ZetaMeromorphicHadamardBasisAvailable",
+    "Psi0EndpointConventionAvailable",
+    "ResidueFormulaProofClosed",
+    "InternalPsi0PerronFormulaAllXGe20000ConstantProofLedger"
+  ],
+  "open_gates": [
+    "PerronKernelTruncationConstantForPsi0Ledger",
+    "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+    "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger"
+  ]
+}
