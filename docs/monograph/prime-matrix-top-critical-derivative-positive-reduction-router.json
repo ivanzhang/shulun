@@ -1,0 +1,95 @@
+{
+  "audit": {
+    "derivative_floor": 0.0625,
+    "endpoint_derivative_imag": 0.097213771725665,
+    "endpoint_derivative_margin": 0.034713771725665005,
+    "endpoint_second_imag": -0.15277651840678894,
+    "endpoint_third_imag": 0.20025762915861958,
+    "height": 14.0,
+    "max_second_derivative_imag": -0.15277651840678894,
+    "max_second_derivative_sigma": 1.0,
+    "min_derivative_imag": 0.097213771725665,
+    "min_derivative_sigma": 1.0,
+    "min_second_derivative_imag": -0.2894841143398342,
+    "min_third_derivative_imag": 0.20025762915861958,
+    "second_ceiling": -0.125,
+    "second_negative_margin": 0.027776518406788936
+  },
+  "certificate_type": "prime_matrix_top_critical_derivative_positive_reduction_router",
+  "counterexample_assumption_only": true,
+  "derivative_positive_reduced_to_endpoint_and_second_negative": true,
+  "downstream_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "TopCriticalImagSecondDerivativeNegativeLedgerT14HalfToOneFloorMinus1Over8",
+  "plain_conclusion": "导数正号输入已进一步压缩：只需端点 Im zeta'(1+14i)>=1/16 和全段 Im zeta''(sigma+14i)<=-1/8。侦察显示端点导数约 0.097214，二阶导数最大约 -0.152777。严格自足仍需这两个 replay 证书。",
+  "proof_contract": [
+    "证明端点导数不等式 Im zeta'(1+14i)>=1/16。",
+    "证明全段二阶导数不等式 Im zeta''(sigma+14i)<=-1/8。",
+    "由二阶导数负号，Im zeta'(sigma+14i) 随 sigma 递减，最小值在 sigma=1。",
+    "因此全段 Im zeta'(sigma+14i)>=Im zeta'(1+14i)>=1/16。"
+  ],
+  "replacement_self_contained": {
+    "TopCriticalImagDerivativePositiveLedgerT14HalfToOneFloor1Over16": "TopEndpointImagDerivativePositiveEMReplaySigma1T14Floor1Over16 AND TopCriticalImagSecondDerivativeNegativeLedgerT14HalfToOneFloorMinus1Over8"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DerivativePositiveGateActive",
+      "meaning": "上一层把中心表压成端点负号和全段导数正号。",
+      "proved": true,
+      "remaining": "TopCriticalImagDerivativePositiveLedgerT14HalfToOneFloor1Over16"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只压缩低高度解析证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FloatAuditSupportsConcavityRoute",
+      "meaning": "侦察端点导数虚部 0.097213771726>1/16，二阶导数虚部最大 -0.152776518407<-1/8。",
+      "proved": false,
+      "remaining": "不能作为自足证明，只用于确定压缩方向。"
+    },
+    {
+      "closed": true,
+      "gate": "DerivativePositiveFromEndpointAndConcavity",
+      "meaning": "端点导数正号加二阶导数负号推出全段导数正号。",
+      "proved": true,
+      "remaining": "TopCriticalImagDerivativePositiveLedgerT14HalfToOneFloor1Over16"
+    },
+    {
+      "closed": false,
+      "gate": "EndpointDerivativeReplayStillMissing",
+      "meaning": "需用有理区间 EM replay 证明 Im zeta'(1+14i)>=1/16。",
+      "proved": false,
+      "remaining": "TopEndpointImagDerivativePositiveEMReplaySigma1T14Floor1Over16"
+    },
+    {
+      "closed": false,
+      "gate": "SecondDerivativeNegativeStillMissing",
+      "meaning": "需用有理区间 EM replay 证明全段 Im zeta''<=-1/8。",
+      "proved": false,
+      "remaining": "TopCriticalImagSecondDerivativeNegativeLedgerT14HalfToOneFloorMinus1Over8"
+    },
+    {
+      "closed": false,
+      "gate": "TopCriticalImagDerivativePositiveLedgerT14HalfToOneFloor1Over16",
+      "meaning": "导数正号账本已压缩为端点导数正号和二阶导数负号。",
+      "proved": false,
+      "remaining": "TopEndpointImagDerivativePositiveEMReplaySigma1T14Floor1Over16 AND TopCriticalImagSecondDerivativeNegativeLedgerT14HalfToOneFloorMinus1Over8"
+    }
+  ],
+  "secondary_priority": "TopEndpointImagDerivativePositiveEMReplaySigma1T14Floor1Over16",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-top-critical-monotone-endpoint-router.json": "85e1118006270e27faee95ba0988897e6430c4a77d4c3cdeb06d0be135b61b98"
+  },
+  "status": "top_derivative_positive_reduced_to_endpoint_derivative_and_second_negative_open",
+  "tertiary_priority": "TopEndpointImagNegativeEMReplayLedgerSigma1T14FloorMinus1Over40",
+  "top_critical_segment_self_contained_closed": false
+}

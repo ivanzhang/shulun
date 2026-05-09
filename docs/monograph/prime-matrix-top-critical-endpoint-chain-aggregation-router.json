@@ -1,0 +1,137 @@
+{
+  "boundary_nonzero_self_contained_closed": true,
+  "certificate_type": "prime_matrix_top_critical_endpoint_chain_aggregation_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "plain_conclusion": "顶边临界半段已由端点单调/Taylor 链闭合，进而顶边全段闭合；结合右、左、底三边结构非零，XiBoundaryIntervalNonzeroCertificate0To14 已自足闭合。当前严格自足路线的唯一剩余更新为 XiBoundaryWindingNumberZeroIntervalCertificate0To14，即边界绕数/低高度零点计数证书。",
+  "proof_chain": [
+    {
+      "input": "端点 EM replay 包",
+      "output": "0、1、2 阶端点不等式，3-10 阶符号梯，11-13 阶例外界全部闭合",
+      "step": "EndpointPackage"
+    },
+    {
+      "input": "端点符号梯 + 例外界 + 14 阶包络",
+      "output": "全段 Im zeta'''(sigma+14i)>=1/8",
+      "step": "ThirdPositive"
+    },
+    {
+      "input": "端点二阶负号 + 全段三阶正号",
+      "output": "全段 Im zeta''(sigma+14i)<=-1/8",
+      "step": "SecondNegative"
+    },
+    {
+      "input": "端点一阶正号 + 全段二阶负号",
+      "output": "全段 Im zeta'(sigma+14i)>=1/16",
+      "step": "DerivativePositive"
+    },
+    {
+      "input": "端点虚部负号 + 全段一阶正号",
+      "output": "全段 Im zeta(sigma+14i)<=-1/40<0",
+      "step": "ImaginaryNegative"
+    },
+    {
+      "input": "临界半段 zeta 虚部严格负",
+      "output": "xi 在顶边临界半段非零",
+      "step": "TopCriticalNonzero"
+    },
+    {
+      "input": "顶边对称压缩 + 右外段 Euler product + 三边结构非零",
+      "output": "XiBoundaryIntervalNonzeroCertificate0To14 闭合",
+      "step": "TopEdgeAndBoundary"
+    }
+  ],
+  "replacement_self_contained": {
+    "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne": "TopCriticalSegmentXiNonzeroClosedByMonotoneEndpointT14HalfToOne",
+    "TopEdgeXiIntervalBoxCoverLedgerT14SigmaMinus1To2": "TopEdgeXiIntervalNonzeroClosedT14SigmaMinus1To2",
+    "XiBoundaryIntervalNonzeroCertificate0To14": "XiBoundaryIntervalNonzeroCertificate0To14Closed"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "聚合只使用假设链条中的解析证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointReplayPackageClosed",
+      "meaning": "端点虚部、一阶、二阶、3-10 阶符号梯和 11-13 阶例外界全部闭合。",
+      "proved": true,
+      "remaining": "endpoint atoms closed."
+    },
+    {
+      "closed": true,
+      "gate": "ThirdDerivativePositiveClosed",
+      "meaning": "端点 Taylor 符号梯与 14 阶包络推出全段三阶导数正号。",
+      "proved": true,
+      "remaining": "TopCriticalImagThirdDerivativePositiveLedgerT14HalfToOneFloor1Over8Closed"
+    },
+    {
+      "closed": true,
+      "gate": "SecondDerivativeNegativeClosed",
+      "meaning": "端点二阶负号加全段三阶正号推出全段二阶负号。",
+      "proved": true,
+      "remaining": "TopCriticalImagSecondDerivativeNegativeLedgerT14HalfToOneFloorMinus1Over8Closed"
+    },
+    {
+      "closed": true,
+      "gate": "DerivativePositiveClosed",
+      "meaning": "端点一阶正号加全段二阶负号推出全段一阶正号。",
+      "proved": true,
+      "remaining": "TopCriticalImagDerivativePositiveLedgerT14HalfToOneFloor1Over16Closed"
+    },
+    {
+      "closed": true,
+      "gate": "MonotoneEndpointImagNegativeClosed",
+      "meaning": "端点虚部负号加全段一阶正号推出临界半段虚部严格负。",
+      "proved": true,
+      "remaining": "TopCriticalSegmentXiNonzeroClosedByMonotoneEndpointT14HalfToOne"
+    },
+    {
+      "closed": true,
+      "gate": "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne",
+      "meaning": "顶边临界半段 1/2<=sigma<=1 已由单调端点链闭合，无需 1024 中心表。",
+      "proved": true,
+      "remaining": "TopCriticalSegmentXiNonzeroClosedByMonotoneEndpointT14HalfToOne"
+    },
+    {
+      "closed": true,
+      "gate": "TopEdgeXiIntervalBoxCoverLedgerT14SigmaMinus1To2",
+      "meaning": "顶边左半由函数方程/共轭对称转移，右外段由 Euler product，临界半段已闭合。",
+      "proved": true,
+      "remaining": "TopEdgeXiIntervalNonzeroClosedT14SigmaMinus1To2"
+    },
+    {
+      "closed": true,
+      "gate": "XiBoundaryIntervalNonzeroCertificate0To14",
+      "meaning": "右、左、底三边结构非零，加顶边闭合，得到整个低高度矩形边界非零。",
+      "proved": true,
+      "remaining": "XiBoundaryIntervalNonzeroCertificate0To14Closed"
+    },
+    {
+      "closed": false,
+      "gate": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+      "meaning": "边界非零不自动给出绕数为 0；低高度零点计数仍需独立 winding/argument certificate。",
+      "proved": false,
+      "remaining": "XiBoundaryWindingNumberZeroIntervalCertificate0To14"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-top-critical-derivative-positive-reduction-router.json": "ad3ef6cc71b6830b2b87493cc2d35ae317779209b6ccd361839047e3892d387d",
+    "docs/monograph/prime-matrix-top-critical-monotone-endpoint-router.json": "85e1118006270e27faee95ba0988897e6430c4a77d4c3cdeb06d0be135b61b98",
+    "docs/monograph/prime-matrix-top-critical-second-derivative-reduction-router.json": "aa5cc4712aba3027ba5dd00780b01b5edcac342131bce1831f51fd1c2923c532",
+    "docs/monograph/prime-matrix-top-critical-third-derivative-taylor-ladder-router.json": "08bd61e3c65e92a780902ea0ef56eda913636a22ab33bde2252f7fd198c85a55",
+    "docs/monograph/prime-matrix-top-edge-symmetry-halfstrip-router.json": "20db999192d46bfbbd7902ba3840fe9aab8b2bd0f3b9a6c77bb6c25a88bd098d",
+    "docs/monograph/prime-matrix-top-endpoint-em-replay-package-router.json": "725976f82a719387add73dc96e248be33038f974daa1728f1babf871470edae3",
+    "docs/monograph/prime-matrix-xi-boundary-nonzero-top-edge-reduction-router.json": "a0f39abf141e1b2ca2923987099fb00fd19bbd9a61ababc78802530516856e73"
+  },
+  "status": "boundary_nonzero_self_contained_closed_winding_next",
+  "top_critical_segment_self_contained_closed": true,
+  "top_edge_self_contained_closed": true
+}

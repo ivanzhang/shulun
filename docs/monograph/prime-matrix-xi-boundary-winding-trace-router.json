@@ -1,0 +1,106 @@
+{
+  "audit": {
+    "audit_supports_winding_zero": true,
+    "finite": true,
+    "max_step_angle": 0.011708228908379453,
+    "min_abs_index": 5120,
+    "min_abs_point_im": 14.0,
+    "min_abs_point_re": 0.5,
+    "min_abs_value": 0.00020129444423526628,
+    "point_count": 8193,
+    "rounding_error": 7.563998180444512e-16,
+    "samples_per_side": 2048,
+    "total_angle": 4.752600223090209e-15,
+    "winding_float": 7.563998180444512e-16,
+    "winding_rounded": 0
+  },
+  "boundary_nonzero_self_contained_closed": true,
+  "certificate_type": "prime_matrix_xi_boundary_winding_trace_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_priority": "ClassicalFirstZetaZeroHeightGT14ExternalAccepted",
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192",
+  "plain_conclusion": "winding 的严格自足剩余已压缩成有限 dyadic 边界辐角 trace。浮点侦察在 8193 个边界点上得到 winding≈7.564e-16，支持绕数为 0；但自足闭合仍需实际 interval trace/hash。外部首零点 >14 路线可条件闭合。",
+  "replacement_external": {
+    "XiBoundaryWindingNumberZeroIntervalCertificate0To14": "XiBoundaryWindingNumberZeroExternalClosedByFirstZeroGT14"
+  },
+  "replacement_self_contained": {
+    "XiBoundaryWindingNumberZeroIntervalCertificate0To14": "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "WindingGateActive",
+      "meaning": "边界非零闭合后，唯一剩余是边界绕数为 0。",
+      "proved": true,
+      "remaining": "XiBoundaryWindingNumberZeroIntervalCertificate0To14"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条的解析证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "BoundaryNonzeroImported",
+      "meaning": "边界非零已闭合，winding 可以由连续辐角 trace 定义。",
+      "proved": true,
+      "remaining": "no boundary zero obstruction."
+    },
+    {
+      "closed": true,
+      "gate": "FloatAuditWindingZero",
+      "meaning": "侦察 winding≈7.564e-16，最大单步角≈0.011708，支持 trace 路线。",
+      "proved": false,
+      "remaining": "不能作为自足证明，只用于确定网格和证书形状。"
+    },
+    {
+      "closed": true,
+      "gate": "TraceDisciplineSpecified",
+      "meaning": "winding trace 的节点、边段、角增量和总和复放规则已明确。",
+      "proved": true,
+      "remaining": "XiBoundaryArgumentVariationTraceDisciplineClosed"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedTraceStillMissing",
+      "meaning": "还需实际生成 dyadic 区间 trace/hash，逐段证明像不穿过 0 且总角变化为 0。",
+      "proved": false,
+      "remaining": "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalFirstZeroRoute",
+      "meaning": "若接受外部首零点高度 >14 或 Turing 完备性证书，则内部无零点，winding=0 条件闭合。",
+      "proved": false,
+      "remaining": "ClassicalFirstZetaZeroHeightGT14ExternalAccepted => XiBoundaryWindingNumberZeroExternalClosedByFirstZeroGT14"
+    },
+    {
+      "closed": false,
+      "gate": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+      "meaning": "严格自足 winding 尚未闭合；已压缩成一个有限 dyadic argument-variation trace。",
+      "proved": false,
+      "remaining": "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-top-critical-endpoint-chain-aggregation-router.json": "4626e69f930aa5198cad1ac8dd5e27ec226366ceaf0e066a182cbd9eb24076da"
+  },
+  "status": "winding_reduced_to_finite_argument_variation_trace_open",
+  "trace_contract": [
+    "用 dyadic 网格沿矩形边界 [-1,2] x [0,14] 逆时针取样，角点 s=0,1 使用 xi 的可去点值。",
+    "每个节点用已闭合 SelfContainedXiIntervalEvaluationEngine0To14 输出 xi(s_j) 的复矩形区间和 trace hash。",
+    "每条边段还需一个 xi' 的区间包络或直接的整段 xi 管道盒，证明该边段像不穿过 0。",
+    "对相邻节点构造有理复数交叉积/点积区间，给出每步辐角增量所在的长度 < pi/2 区间。",
+    "把所有辐角增量区间相加，证明总辐角变化属于 (-pi,pi)，且按端点方向连续为 0。",
+    "这样 winding=0 由有限整数/有理区间 trace 复放给出，不借用真实零点缺席。"
+  ],
+  "winding_external_closed": true,
+  "winding_float_audit_zero": true,
+  "winding_self_contained_closed": false
+}

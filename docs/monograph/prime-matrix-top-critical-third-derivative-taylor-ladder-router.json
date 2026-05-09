@@ -1,0 +1,243 @@
+{
+  "certificate_type": "prime_matrix_top_critical_third_derivative_taylor_ladder_router",
+  "counterexample_assumption_only": true,
+  "downstream_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "empirical_absence_not_used": true,
+  "endpoint_audit": {
+    "endpoint_sigma": 1.0,
+    "height": 14.0,
+    "supports_exception_bounds_11_to_13": true,
+    "supports_sign_ladder_3_to_10": true,
+    "values": [
+      {
+        "alternating_signed_imag": 0.030678124320566443,
+        "imag": -0.030678124320566443,
+        "order": 0
+      },
+      {
+        "alternating_signed_imag": 0.097213771725664,
+        "imag": 0.097213771725664,
+        "order": 1
+      },
+      {
+        "alternating_signed_imag": 0.15277651840678452,
+        "imag": -0.15277651840678452,
+        "order": 2
+      },
+      {
+        "alternating_signed_imag": 0.20025762915859552,
+        "imag": 0.20025762915859552,
+        "order": 3
+      },
+      {
+        "alternating_signed_imag": 0.24048756365926807,
+        "imag": -0.24048756365926807,
+        "order": 4
+      },
+      {
+        "alternating_signed_imag": 0.27230163182747136,
+        "imag": 0.27230163182747136,
+        "order": 5
+      },
+      {
+        "alternating_signed_imag": 0.29246496258257404,
+        "imag": -0.29246496258257404,
+        "order": 6
+      },
+      {
+        "alternating_signed_imag": 0.2955478802439631,
+        "imag": 0.2955478802439631,
+        "order": 7
+      },
+      {
+        "alternating_signed_imag": 0.27388033501800324,
+        "imag": -0.27388033501800324,
+        "order": 8
+      },
+      {
+        "alternating_signed_imag": 0.21777759186813417,
+        "imag": 0.21777759186813417,
+        "order": 9
+      },
+      {
+        "alternating_signed_imag": 0.11632208786698742,
+        "imag": -0.11632208786698742,
+        "order": 10
+      },
+      {
+        "alternating_signed_imag": -0.04089303820950797,
+        "imag": -0.04089303820950797,
+        "order": 11
+      },
+      {
+        "alternating_signed_imag": -0.260517713080265,
+        "imag": 0.260517713080265,
+        "order": 12
+      },
+      {
+        "alternating_signed_imag": -0.5400420421064352,
+        "imag": -0.5400420421064352,
+        "order": 13
+      },
+      {
+        "alternating_signed_imag": -0.8595749989980531,
+        "imag": 0.8595749989980531,
+        "order": 14
+      }
+    ]
+  },
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "TopEndpointImagDerivativeAlternatingSignReplaySigma1T14Orders3To10",
+  "order14_envelope": {
+    "closed_against_contract": true,
+    "contract": 1073741824,
+    "correction_rows": [
+      {
+        "k": 1,
+        "m": 1,
+        "term_order14_bound": 300133.0162006272
+      },
+      {
+        "k": 2,
+        "m": 3,
+        "term_order14_bound": 1613.4262878063703
+      },
+      {
+        "k": 3,
+        "m": 5,
+        "term_order14_bound": 12.889157981250673
+      },
+      {
+        "k": 4,
+        "m": 7,
+        "term_order14_bound": 0.11543138815052408
+      },
+      {
+        "k": 5,
+        "m": 9,
+        "term_order14_bound": 0.001137737550845549
+      },
+      {
+        "k": 6,
+        "m": 11,
+        "term_order14_bound": 1.2425121096368487e-05
+      },
+      {
+        "k": 7,
+        "m": 13,
+        "term_order14_bound": 1.514839330875921e-07
+      },
+      {
+        "k": 8,
+        "m": 15,
+        "term_order14_bound": 2.0715706898856155e-09
+      }
+    ],
+    "correction_total_bound": 301759.4482281192,
+    "endpoint_half_bound": 3188097.028518114,
+    "finite_sum_bound": 39382290.32572771,
+    "order": 14,
+    "pole_tail_bound": 20263796.060915254,
+    "remainder_budget": 100000000.0,
+    "total_bound": 163135942.8633892,
+    "total_without_remainder": 63135942.863389194
+  },
+  "order14_euler_maclaurin_envelope_closed": true,
+  "plain_conclusion": "三阶正号输入不再需要继续做全段逐阶单调递归：10 阶端点 Taylor 符号梯加 14 阶 EM 包络即可推出 Im zeta'''(sigma+14i)>=1/8。14 阶包络已在本路由内闭合到 <2^30；严格自足剩余变成两个端点 replay：3-10 阶交替符号与 11-13 阶粗绝对值界。",
+  "proof_contract": [
+    "令 h=1-sigma，0<=h<=1/2，对 Im zeta'''(1-h+14i) 在 sigma=1 处作 10 阶 Taylor 展开。",
+    "端点 replay 证明 Im zeta'''(1+14i)>=3/16。",
+    "端点 replay 证明 4 到 10 阶虚部导数交替符号，使 Taylor 的 1 到 7 阶修正项全部非负，可直接丢弃。",
+    "端点 replay 证明 |Im zeta^(11)|<=1/16、|Im zeta^(12)|<=1/3、|Im zeta^(13)|<=1。",
+    "Euler-Maclaurin 高阶包络证明全段 |zeta^(14)(sigma+14i)|<=2^30。",
+    "有理预算给 3/16-1/8-exception-remainder>0，因此全段 Im zeta'''(sigma+14i)>=1/8。"
+  ],
+  "quaternary_priority": "TopEndpointImagDerivativePositiveEMReplaySigma1T14Floor1Over16",
+  "quinary_priority": "TopEndpointImagNegativeEMReplayLedgerSigma1T14FloorMinus1Over40",
+  "replacement_self_contained": {
+    "TopCriticalImagThirdDerivativePositiveLedgerT14HalfToOneFloor1Over8": "TopEndpointImagDerivativeAlternatingSignReplaySigma1T14Orders3To10 AND TopEndpointImagDerivativeExceptionBoundReplaySigma1T14Orders11To13 AND TopCriticalDerivativeOrder14EulerMaclaurinEnvelopeBound2Pow30"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ThirdDerivativeGateActive",
+      "meaning": "上一层把二阶负号压成端点二阶负号和全段三阶正号。",
+      "proved": true,
+      "remaining": "TopCriticalImagThirdDerivativePositiveLedgerT14HalfToOneFloor1Over8"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只压缩解析证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FloatAuditSupportsTaylorLadder",
+      "meaning": "侦察支持 3 到 10 阶端点交替符号、11 到 13 阶例外粗界和 14 阶包络。",
+      "proved": false,
+      "remaining": "不能作为自足证明，只用于确定压缩方向。"
+    },
+    {
+      "closed": true,
+      "gate": "Order14EulerMaclaurinEnvelopeClosed",
+      "meaning": "EM 绝对值包络给 order14 总界 163135942.863389<2^30。",
+      "proved": true,
+      "remaining": "TopCriticalDerivativeOrder14EulerMaclaurinEnvelopeBound2Pow30"
+    },
+    {
+      "closed": true,
+      "gate": "TaylorBudgetStrictlyPositive",
+      "meaning": "有理余量 12106823737/245248819200 > 0，足够推出三阶正号地板。",
+      "proved": true,
+      "remaining": "Taylor arithmetic closed once endpoint intervals are supplied."
+    },
+    {
+      "closed": false,
+      "gate": "EndpointSignLadderStillMissing",
+      "meaning": "需端点 EM replay 证明 3 到 10 阶虚部导数的交替符号。",
+      "proved": false,
+      "remaining": "TopEndpointImagDerivativeAlternatingSignReplaySigma1T14Orders3To10"
+    },
+    {
+      "closed": false,
+      "gate": "EndpointExceptionBoundsStillMissing",
+      "meaning": "需端点 EM replay 证明 11 到 13 阶例外项的粗绝对值界。",
+      "proved": false,
+      "remaining": "TopEndpointImagDerivativeExceptionBoundReplaySigma1T14Orders11To13"
+    },
+    {
+      "closed": false,
+      "gate": "TopCriticalImagThirdDerivativePositiveLedgerT14HalfToOneFloor1Over8",
+      "meaning": "三阶正号账本已压缩为端点 Taylor 符号梯、例外界和 14 阶包络。",
+      "proved": false,
+      "remaining": "TopEndpointImagDerivativeAlternatingSignReplaySigma1T14Orders3To10 AND TopEndpointImagDerivativeExceptionBoundReplaySigma1T14Orders11To13 AND TopCriticalDerivativeOrder14EulerMaclaurinEnvelopeBound2Pow30"
+    }
+  ],
+  "secondary_priority": "TopEndpointImagDerivativeExceptionBoundReplaySigma1T14Orders11To13",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-top-critical-second-derivative-reduction-router.json": "aa5cc4712aba3027ba5dd00780b01b5edcac342131bce1831f51fd1c2923c532"
+  },
+  "status": "top_third_derivative_positive_reduced_to_endpoint_taylor_ladder_open",
+  "taylor_budget": {
+    "certified_margin": "12106823737/245248819200",
+    "certified_margin_float": 0.04936547208052776,
+    "closed": true,
+    "endpoint_third_floor": "3/16",
+    "exception_bound": "181/22295347200",
+    "exception_bound_float": 8.118285773993238e-09,
+    "order11_abs_bound": "1/16",
+    "order12_abs_bound": "1/3",
+    "order13_abs_bound": "1",
+    "order14_envelope_contract": 1073741824,
+    "remainder_bound": "2048/155925",
+    "remainder_bound_float": 0.013134519801186469,
+    "target_floor": "1/8"
+  },
+  "tertiary_priority": "TopEndpointImagSecondDerivativeNegativeEMReplaySigma1T14FloorMinus1Over8",
+  "third_derivative_positive_reduced_to_endpoint_taylor_ladder": true,
+  "top_critical_segment_self_contained_closed": false
+}
