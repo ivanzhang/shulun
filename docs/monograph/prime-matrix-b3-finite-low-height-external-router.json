@@ -1,0 +1,144 @@
+{
+  "certificate_type": "b3_finite_low_height_external_router",
+  "status": "finite_low_height_external_closed_self_contained_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-theta-target-dusart-router.json": "9fba67c15b0d5ac49b5c24bf3e4ca4a7e5a20b39519eafa1a7e09fe7ad12ddd9",
+    "docs/monograph/prime-matrix-b3-xi-nozero-below14-router.json": "26311be8c842835adb7a4f7a0e6802403e30cbce77c690cb19dfbfd7a75ddd6b"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "finite_low_height_external_closed": true,
+  "finite_low_height_self_contained_closed": false,
+  "row_column_unconditional_closed": false,
+  "height_target": 14.0,
+  "source_table": [
+    {
+      "item": "height target",
+      "value": 14.0,
+      "meaning": "本主链只需排除 0<|gamma|<=14 的低高度非平凡零点。"
+    },
+    {
+      "item": "first zero reference",
+      "value": 14.134725141734693,
+      "meaning": "外部首个非平凡零点高度参考值。"
+    },
+    {
+      "item": "height margin",
+      "value": 0.13472514173469285,
+      "meaning": "首零点高度相对 14 的安全余量。"
+    },
+    {
+      "item": "LMFDB precision",
+      "value": 1.9721522630525295e-31,
+      "meaning": "零点高度登记精度，远小于安全余量。"
+    },
+    {
+      "item": "Platt-Trudgian height",
+      "value": 3000175332800.0,
+      "meaning": "外部严格验证高度，远高于 14。"
+    }
+  ],
+  "external_sources": [
+    {
+      "name": "LMFDB Riemann zeta zeros source page",
+      "url": "https://www.lmfdb.org/zeros/zeta/Source",
+      "claim": "David Platt computed the zeta-zero database; zero heights are stored with absolute precision +-2^-102 and completeness was checked by rigorous Turing method."
+    },
+    {
+      "name": "Odlyzko first zeta-zero table",
+      "url": "https://www.dtc.umn.edu/~odlyzko/zeta_tables/zeros1",
+      "claim": "The first tabulated zeta zero has imaginary part 14.134725142."
+    },
+    {
+      "name": "Platt-Trudgian partial RH verification",
+      "url": "https://arxiv.org/abs/2004.09765",
+      "claim": "The Riemann hypothesis is rigorously verified up to height 3,000,175,332,800."
+    }
+  ],
+  "replacement_external": {
+    "FiniteLowHeightZeroCheckLedger": "FiniteLowHeightZeroCheckExternalClosedFirstZeroGT14TuringComplete"
+  },
+  "latest_external_titchmarsh_cn16_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND (HadamardSymmetricZeroPairingAndOneOverRhoSignDiscardClosed AND ((HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros AND HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic) AND HadamardCN16UnitIntervalToDyadicShellCountClosed AND HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel) AND HadamardLocalZeroCoreAbsorptionClosedBySignDiscard AND HadamardRemainderRangeAndKernelConventionClosed) AND CLogAggregationAndRangeConventionClosedC64ExternalBacklundBranch) AND ZeroRepulsionParameterNumericalOptimizationClosedC64A1Over256C1Over1280T14 AND (((CullyHugillJohnstonRvMExplicitFormulaHighThresholdRegistered OR InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost) AND (Psi0PerronFiniteRectangleHeightSelectionLedger AND Psi0RightEdgePerronKernelApproximationClosedC128 AND (Psi0ZetaLogDerivativeContourShiftExternalClosedC12000) AND Psi0ZeroBoundaryAvoidanceLimitLedger) AND ChebyshevPsi0EndpointHalfWeightConventionClosed) AND ZeroFreeRegionZeroSumContourBudgetExternalClosedC1280T14C65536 AND PerronTrivialZeroPrimePowerTailBudgetClosedElementaryXGe20000) AND DusartThetaEnvelopeTargetAt20000ExternalClosedOneOver36260) AND FiniteLowHeightZeroCheckExternalClosedFirstZeroGT14TuringComplete) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND (HadamardSymmetricZeroPairingAndOneOverRhoSignDiscardClosed AND ((HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros AND HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic) AND HadamardCN16UnitIntervalToDyadicShellCountClosed AND HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel) AND HadamardLocalZeroCoreAbsorptionClosedBySignDiscard AND HadamardRemainderRangeAndKernelConventionClosed) AND CLogAggregationAndRangeConventionClosedC64ExternalBacklundBranch) AND ZeroRepulsionParameterNumericalOptimizationClosedC64A1Over256C1Over1280T14 AND (((CullyHugillJohnstonRvMExplicitFormulaHighThresholdRegistered OR InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost) AND (Psi0PerronFiniteRectangleHeightSelectionLedger AND Psi0RightEdgePerronKernelApproximationClosedC128 AND (Psi0ContourResidueAndLeftEdgeClosed AND (ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger) AND (ClassicalBacklundZeroIndentationCostInternalProofLedger OR Psi0GoodHeightTStarAveragingContourShiftLedger)) AND Psi0ZeroBoundaryAvoidanceLimitLedger) AND ChebyshevPsi0EndpointHalfWeightConventionClosed) AND ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger AND PerronTrivialZeroPrimePowerTailBudgetClosedElementaryXGe20000) AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion",
+  "secondary_priority": "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold",
+  "mertens_interval_priority": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+  "parallel_self_contained_priorities": [
+    "CriticalLineNoZeroOn0To14FiniteLedger",
+    "CriticalStripNoOffLineZeroBelow14TuringLedger",
+    "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+  ],
+  "final_independent_acceptance_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "外部条件路线下，`FiniteLowHeightZeroCheckLedger` 可由已有 xi 低高度无零点证书聚合关闭：首个非平凡 zeta 零点高度约 `14.134725141734693` 大于 `14`，且外部 Turing/Platt-Trudgian 完备性排除 `0<|gamma|<=14` 的漏零。该步不是仓库内自足证明；严格自足路线仍需内联 Riemann-Siegel/Turing 有限账本。",
+  "rows": [
+    {
+      "gate": "FiniteLowHeightGateActive",
+      "closed": true,
+      "proved": true,
+      "meaning": "Dusart theta 目标之后，外部主链当前最窄点是 T<=14 的有限低高度零点核验。",
+      "remaining": "FiniteLowHeightZeroCheckLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只补假设反例链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ThetaTargetAlreadyClosedExternally",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已经在外部路线中用 Dusart 显式 theta 界关闭 anchor 小误差目标。",
+      "remaining": "DusartThetaEnvelopeTargetAt20000ExternalClosedOneOver36260"
+    },
+    {
+      "gate": "XiNoZeroBelow14ExternalCertificateReady",
+      "closed": true,
+      "proved": false,
+      "meaning": "已有 xi/no-zero-below14 证书登记首零点大于 14、零点表精度余量和 Platt-Trudgian/Turing 完备性。",
+      "remaining": "BacklundXiNoNontrivialZeroBelow14ExternalClosed"
+    },
+    {
+      "gate": "FiniteLowHeightZeroCheckLedger",
+      "closed": true,
+      "proved": false,
+      "meaning": "接受外部低高度零点证书后，0<|gamma|<=14 没有非平凡零点，有限低高度核验在外部条件路线中关闭。",
+      "remaining": "FiniteLowHeightZeroCheckExternalClosedFirstZeroGT14TuringComplete"
+    },
+    {
+      "gate": "SelfContainedLowHeightStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "严格自足路线仍需文内 Riemann-Siegel 区间算术、临界线符号分离和 Turing/argument-principle 计数。",
+      "remaining": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "gate": "SelfContainedBasisUnchanged",
+      "closed": true,
+      "proved": true,
+      "meaning": "本路由只替换外部输入基；自足输入基保留低高度原子，防止误报自足闭合。",
+      "remaining": "FiniteLowHeightZeroCheckLedger"
+    },
+    {
+      "gate": "DStructureRankinGateStillSeparate",
+      "closed": false,
+      "proved": false,
+      "meaning": "低高度解析输入闭合不触动最终行列命题的 DStructure/Rankin 独立验收门。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "closed_gates": [
+    "FiniteLowHeightGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ThetaTargetAlreadyClosedExternally",
+    "XiNoZeroBelow14ExternalCertificateReady",
+    "FiniteLowHeightZeroCheckLedger",
+    "SelfContainedBasisUnchanged"
+  ],
+  "open_gates": [
+    "SelfContainedLowHeightStillOpen",
+    "DStructureRankinGateStillSeparate"
+  ]
+}
