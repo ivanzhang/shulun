@@ -23,11 +23,13 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs" / "monograph"
 
 DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-explicit-zero-free-constants-router.json"
+DEFAULT_GAMMA = DOCS / "prime-matrix-b3-gamma-digamma-clog-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-b3-explicit-clog-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-b3-explicit-clog-router.md"
 
 OLD_ATOM = "ExplicitCLogHadamardStirlingJensenNumericalLedger"
 GAMMA_ATOM = "GammaDigammaStirlingUniformNumericalLedger"
+GAMMA_CLOSED = "GammaDigammaStirlingUniformNumericalClosedCgamma24"
 ZERO_COUNT_ATOM = "JensenZeroCountingLocalNumericalLedger"
 PARTIAL_FRACTION_ATOM = "HadamardPartialFractionRemainderNumericalLedger"
 AGGREGATION_ATOM = "CLogAggregationAndRangeConventionLedger"
@@ -73,9 +75,20 @@ def replacement_pair() -> str:
     return f"({GAMMA_ATOM} AND {ZERO_COUNT_ATOM} AND {PARTIAL_FRACTION_ATOM} AND {AGGREGATION_ATOM})"
 
 
+def current_replacement_pair(gamma_closed: bool) -> str:
+    """写出吸收当前已证 Gamma 账本后的替换包。"""
+    gamma = GAMMA_CLOSED if gamma_closed else GAMMA_ATOM
+    return f"({gamma} AND {ZERO_COUNT_ATOM} AND {PARTIAL_FRACTION_ATOM} AND {AGGREGATION_ATOM})"
+
+
 def replace_atom(text: str) -> str:
     """替换旧 C_log 原子。"""
     return text.replace(OLD_ATOM, replacement_pair())
+
+
+def replace_atom_with_current(text: str, gamma_closed: bool) -> str:
+    """用当前已证状态替换旧 C_log 原子。"""
+    return text.replace(OLD_ATOM, current_replacement_pair(gamma_closed))
 
 
 def candidate_budget() -> dict[str, float]:
@@ -114,7 +127,7 @@ def row(
     }
 
 
-def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
+def build_rows(previous: dict[str, Any], gamma: dict[str, Any]) -> list[dict[str, Any]]:
     """生成 C_log 数值账本判定表。"""
     basis = previous.get("latest_self_contained_basis", "")
     active = previous.get("next_priority") == OLD_ATOM and OLD_ATOM in basis
@@ -125,7 +138,8 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
         and not bool(previous.get("row_column_unconditional_closed"))
     )
     symbolic_available = "DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants" in basis
-    reduced = active and guard and symbolic_available
+    gamma_closed = gamma.get("gamma_digamma_stirling_uniform_closed") is True
+    reduced = active and guard and symbolic_available and gamma_closed
     return [
         row(
             "ExplicitCLogGateActive",
@@ -149,11 +163,11 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
             "无符号层剩余。",
         ),
         row(
-            "GammaDigammaNumericalLedgerMissing",
-            False,
-            False,
-            "还需给出 Gamma/digamma/Stirling 项在 sigma∈[1,2]、任意 t 下的显式 log(|t|+3) 上界。",
-            GAMMA_ATOM,
+            "GammaDigammaNumericalLedgerClosed",
+            gamma_closed,
+            True,
+            "Gamma/digamma/Stirling 项已由 C_gamma=24 的统一 log 上界支付。",
+            GAMMA_CLOSED if gamma_closed else GAMMA_ATOM,
         ),
         row(
             "JensenZeroCountingNumericalLedgerMissing",
@@ -180,8 +194,8 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
             "ExplicitCLogReducedToFourMicroLedgers",
             reduced,
             False,
-            "旧 C_log 原子已压成 Gamma、Jensen 零点计数、Hadamard 余项、聚合约定四个微账本。",
-            replacement_pair(),
+            "旧 C_log 原子已吸收 Gamma 数值账本；剩余为局部零点计数、Hadamard 余项与总常数聚合。",
+            current_replacement_pair(gamma_closed),
         ),
         row(
             "ZeroRepulsionParameterNumericalOptimizationStillNext",
@@ -196,9 +210,11 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
 def run(paths: dict[str, Path]) -> dict[str, Any]:
     """执行 C_log 数值账本路由。"""
     previous = load_json(paths["previous"])
-    rows = build_rows(previous)
+    gamma = load_json(paths["gamma"])
+    rows = build_rows(previous, gamma)
     reduced = next(bool(item["closed"]) for item in rows if item["gate"] == "ExplicitCLogReducedToFourMicroLedgers")
     budget = candidate_budget()
+    gamma_closed = gamma.get("gamma_digamma_stirling_uniform_closed") is True
     return {
         "certificate_type": "b3_explicit_clog_router",
         "status": "explicit_clog_reduced_to_four_micro_ledgers_open",
@@ -210,21 +226,28 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "explicit_clog_self_contained_proved": False,
         "row_column_unconditional_closed": False,
         "replacement_self_contained": {OLD_ATOM: replacement_pair()},
-        "latest_self_contained_basis": replace_atom(previous.get("latest_self_contained_basis", "")),
+        "current_replacement_self_contained": {
+            OLD_ATOM: current_replacement_pair(gamma_closed)
+        },
+        "latest_self_contained_basis": replace_atom_with_current(
+            previous.get("latest_self_contained_basis", ""), gamma_closed
+        ),
         "latest_conditional_basis": previous.get("latest_conditional_basis", ""),
         "latest_global_with_external_basis": previous.get("latest_global_with_external_basis", ""),
-        "next_priority": GAMMA_ATOM,
-        "secondary_priority": ZERO_COUNT_ATOM,
-        "tertiary_priority": PARTIAL_FRACTION_ATOM,
-        "quaternary_priority": AGGREGATION_ATOM,
+        "next_priority": ZERO_COUNT_ATOM,
+        "secondary_priority": PARTIAL_FRACTION_ATOM,
+        "tertiary_priority": AGGREGATION_ATOM,
+        "quaternary_priority": OPT_ATOM,
         "post_clog_priority": OPT_ATOM,
         "post_optimization_priority": PNT_ATOM,
         "post_pnt_priority": TARGET_ATOM,
         "conditional_next_priority": previous.get("conditional_next_priority", DSTRUCTURE),
         "candidate_budget": budget,
+        "proved_route_audit": {"gamma_closed": gamma_closed},
         "plain_conclusion": (
-            "C_log 数值账本尚未闭合，但已压成四个必须逐项核算的微账本。"
-            "保守候选 C_log=64 可作为预算 convention，但只有四个微账本全部闭合后才能使用。"
+            "C_log 数值账本尚未闭合，但 Gamma/digamma/Stirling 分量已由 C_gamma=24 支付。"
+            "当前剩余为 Jensen/RVM 局部零点计数、Hadamard 余项和总常数聚合；"
+            "保守候选 C_log=64 仍只能作为预算 convention。"
         ),
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -235,6 +258,7 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
     replacement = next(iter(result["replacement_self_contained"].items()))
+    current_replacement = next(iter(result["current_replacement_self_contained"].items()))
     budget = result["candidate_budget"]
     lines = [
         "# Prime Matrix B=3 显式 C_log 常数账本路由器",
@@ -258,6 +282,14 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         replacement[0],
         "  =>",
         replacement[1],
+        "```",
+        "",
+        "当前已证状态吸收后：",
+        "",
+        "```text",
+        current_replacement[0],
+        "  =>",
+        current_replacement[1],
         "```",
         "",
         "## 2. 候选预算",
@@ -305,8 +337,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "",
             (
                 f"唯一内部最窄点更新为 `{result['next_priority']}`；"
-                f"随后是 `{result['secondary_priority']}`、`{result['tertiary_priority']}`、"
-                f"`{result['quaternary_priority']}`。"
+                f"随后是 `{result['secondary_priority']}`、`{result['tertiary_priority']}`。"
             ),
             "",
         ]
@@ -318,6 +349,7 @@ def parse_args() -> argparse.Namespace:
     """解析命令行参数。"""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--previous", type=Path, default=DEFAULT_PREVIOUS)
+    parser.add_argument("--gamma", type=Path, default=DEFAULT_GAMMA)
     parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -326,7 +358,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     """命令行入口。"""
     args = parse_args()
-    paths = {"previous": args.previous}
+    paths = {"previous": args.previous, "gamma": args.gamma}
     result = run(paths)
     args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     write_markdown(result, args.md)

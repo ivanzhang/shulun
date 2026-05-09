@@ -22,7 +22,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs" / "monograph"
 
-DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-zero-repulsion-inequality-router.json"
+DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-zero-free-constants-router.json"
 DEFAULT_FINAL_DRAFT = ROOT / "docs" / "final-proof-draft.md"
 DEFAULT_EXTERNAL_INDEX = DOCS / "external-theorem-index.md"
 DEFAULT_JSON = DOCS / "prime-matrix-b3-explicit-zero-free-constants-router.json"

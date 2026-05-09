@@ -2,7 +2,7 @@
 
 **状态：** `explicit_clog_reduced_to_four_micro_ledgers_open`
 
-C_log 数值账本尚未闭合，但已压成四个必须逐项核算的微账本。保守候选 C_log=64 可作为预算 convention，但只有四个微账本全部闭合后才能使用。
+C_log 数值账本尚未闭合，但 Gamma/digamma/Stirling 分量已由 C_gamma=24 支付。当前剩余为 Jensen/RVM 局部零点计数、Hadamard 余项和总常数聚合；保守候选 C_log=64 仍只能作为预算 convention。
 
 ```text
 counterexample_assumption_only=true
@@ -19,6 +19,14 @@ row_column_unconditional_closed=false
 ExplicitCLogHadamardStirlingJensenNumericalLedger
   =>
 (GammaDigammaStirlingUniformNumericalLedger AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger)
+```
+
+当前已证状态吸收后：
+
+```text
+ExplicitCLogHadamardStirlingJensenNumericalLedger
+  =>
+(GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger)
 ```
 
 ## 2. 候选预算
@@ -40,11 +48,11 @@ ExplicitCLogHadamardStirlingJensenNumericalLedger
 | ExplicitCLogGateActive | `true` | `false` | 上一层唯一内部最窄点是 Hadamard/Stirling/Jensen 剩余项的 C_log 数值上界。 | ExplicitCLogHadamardStirlingJensenNumericalLedger |
 | CounterexampleBranchGuardPreserved | `true` | `true` | 本步仍只处理假设链条的解析输入，不使用真实零行缺席。 | 保持 row_column_unconditional_closed=false。 |
 | SymbolicRepulsionInputAvailable | `true` | `true` | 符号排斥不等式已闭合，C_log 只负责把 O(log T) 剩余项数值化。 | 无符号层剩余。 |
-| GammaDigammaNumericalLedgerMissing | `false` | `false` | 还需给出 Gamma/digamma/Stirling 项在 sigma∈[1,2]、任意 t 下的显式 log(\|t\|+3) 上界。 | GammaDigammaStirlingUniformNumericalLedger |
+| GammaDigammaNumericalLedgerClosed | `true` | `true` | Gamma/digamma/Stirling 项已由 C_gamma=24 的统一 log 上界支付。 | GammaDigammaStirlingUniformNumericalClosedCgamma24 |
 | JensenZeroCountingNumericalLedgerMissing | `false` | `false` | 还需给出局部零点计数 N(t+1)-N(t-1)<=C_N log(\|t\|+3) 的可复算常数。 | JensenZeroCountingLocalNumericalLedger |
 | HadamardPartialFractionRemainderMissing | `false` | `false` | 还需把远零点和 1/rho 项在 de la Vallee Poussin 组合中压入同一 C_log。 | HadamardPartialFractionRemainderNumericalLedger |
 | CLogAggregationConventionMissing | `false` | `false` | 还需固定 sigma、t 范围、低高度交界和总 C_log 的加法预算。 | CLogAggregationAndRangeConventionLedger |
-| ExplicitCLogReducedToFourMicroLedgers | `true` | `false` | 旧 C_log 原子已压成 Gamma、Jensen 零点计数、Hadamard 余项、聚合约定四个微账本。 | (GammaDigammaStirlingUniformNumericalLedger AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) |
+| ExplicitCLogReducedToFourMicroLedgers | `true` | `false` | 旧 C_log 原子已吸收 Gamma 数值账本；剩余为局部零点计数、Hadamard 余项与总常数聚合。 | (GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) |
 | ZeroRepulsionParameterNumericalOptimizationStillNext | `false` | `false` | C_log 聚合后，才能数值推出 c、T0 与零点自由带。 | ZeroRepulsionParameterNumericalOptimizationLedger |
 
 ## 4. 最新输入基
@@ -52,9 +60,9 @@ ExplicitCLogHadamardStirlingJensenNumericalLedger
 canonical 自足链条输入基：
 
 ```text
-NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalLedger AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 ## 5. 下一步
 
-唯一内部最窄点更新为 `GammaDigammaStirlingUniformNumericalLedger`；随后是 `JensenZeroCountingLocalNumericalLedger`、`HadamardPartialFractionRemainderNumericalLedger`、`CLogAggregationAndRangeConventionLedger`。
+唯一内部最窄点更新为 `JensenZeroCountingLocalNumericalLedger`；随后是 `HadamardPartialFractionRemainderNumericalLedger`、`CLogAggregationAndRangeConventionLedger`。
