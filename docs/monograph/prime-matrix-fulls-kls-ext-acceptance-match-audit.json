@@ -1,0 +1,99 @@
+{
+  "accepted_as_external_blackbox_input": true,
+  "accepted_external_basis": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "certificate_type": "prime_matrix_fulls_kls_ext_acceptance_match_audit",
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "external_lemma": "FullS-KLS-ext",
+  "external_lemma_content": {
+    "boundary": "no AP-source lift, no canonical import, no hidden centering/projection",
+    "loss_budget": "dyadic/gcd/smoothing/endpoint losses absorbed by B(A)",
+    "object": "W_full(C,S,H)=sum_{c~C} lambda_c sum_{0<|h|<=H} omega_h sum_{s~S,(s,c)=1} beta_s e_c(a_h s + b_h bar{s})",
+    "range": "X≈P^2, C≈P/log^O P, S≈P, 0<|h|<=H<=P/log^O P, Q<=P log^O P",
+    "strength": "|W_full(C,S,H)| <= NaturalWFDScale(C,S,H)/log^A P for every A>0",
+    "weights": "lambda well-factorable, beta divisor-bounded, omega smooth"
+  },
+  "external_math_lane_closed_after_acceptance": true,
+  "plain_conclusion": "FullS-KLS-ext 与当前 non-AP full-S WFD 终端目标严格匹配：对象、相位、尺度、权重、强度和无中心化/无投影边界都逐项对齐。按用户允许的外部黑箱口径，可以接受该合同，并关闭 noncanonical full-S 外部数学 lane。但这不是 DI/BFI 原文逐项推出；无黑箱版本仍需 DIBFIPrimarySourceSpecializationProof 或新证明。完整行/列无条件闭合仍差 DStructure/Rankin 独立验收。",
+  "previous_unified_basis": "((NewFullSNonAPSourceAntiAtomTheoremInput) OR AcceptFullSKLSExtExternalContract OR NewFullSTheoremInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "primary_source_derivation_closed": false,
+  "primary_source_derivation_still_required_for_no_blackbox_version": true,
+  "remaining_after_acceptance": [
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "caveat": "匹配的是外部合同对象；若不用外部合同，内部仍需证明对象恒等式。",
+      "external_lemma_clause": "Theorem 直接估计 W_full(C,S,H)，并声明不插入中心化、不投影到 AP/canonical 对象。",
+      "item": "对象",
+      "match": true,
+      "required": "当前 non-AP、未中心化、无投影 WFD 窗口。"
+    },
+    {
+      "caveat": "最终稿仍应保持符号与 KE-13/共同变量表一致。",
+      "external_lemma_clause": "适配条件显式列出 phase: CRT 相位归一化为 e_c(a_h s + b_h bar{s})。",
+      "item": "相位",
+      "match": true,
+      "required": "CRT 相位必须为 e_c(a_h s + b_h bar{s})。"
+    },
+    {
+      "caveat": "该条作为外部定理合同吸收 DI J-scale 代入；不是 DI 原文逐项证明。",
+      "external_lemma_clause": "Theorem FullS-KLS-ext 逐项列出同一 full-S 窗口。",
+      "item": "尺度",
+      "match": true,
+      "required": "X≈P^2, C≈P/log^O P, S≈P, 0<|h|<=H<=P/log^O P。"
+    },
+    {
+      "caveat": "lambda 不能替换为 canonical RIW/Buchstab 支撑权。",
+      "external_lemma_clause": "Theorem 条款逐项列出 lambda_c、beta_s、omega_h。",
+      "item": "权重",
+      "match": true,
+      "required": "lambda well-factorable, beta divisor-bounded, omega smooth。"
+    },
+    {
+      "caveat": "变量表完成不等于内部 scale certificate 已证明；外部合同可直接吸收该证书。",
+      "external_lemma_clause": "共同变量表已物化，FullS-KLS-ext 使用同一 C,S,H 和 log-saving 预算。",
+      "item": "变量一致性",
+      "match": true,
+      "required": "X,Q,N,M,C,S,H,lambda,beta,omega,A,B(A) 必须共用同一表。"
+    },
+    {
+      "caveat": "所有 dyadic/gcd/smoothing/endpoint 损失由 B(A) 吸收。",
+      "external_lemma_clause": "Theorem 给出 |W_full| <= NaturalWFDScale(C,S,H)/log^A P。",
+      "item": "强度",
+      "match": true,
+      "required": "输出必须是 NaturalWFDScale/log^A P，且 A 任意。"
+    },
+    {
+      "caveat": "这说明合同命题与剩余外部原子同名同对象。",
+      "external_lemma_clause": "NewFullSTheoremInput 已压成 FullSNonAPWFDKLSTheoremInput。",
+      "item": "终端输入",
+      "match": true,
+      "required": "外部无黑箱路线的原子必须正是 FullSNonAPWFDKLSTheoremInput。"
+    },
+    {
+      "caveat": "接受合同不等于完成 DIBFIPrimarySourceSpecializationProof。",
+      "external_lemma_clause": "specialization router 标记 external theorem contract closed。",
+      "item": "外部合同状态",
+      "match": true,
+      "required": "若作为黑箱外部定理接受，应关闭 noncanonical full-S 数学 lane。"
+    }
+  ],
+  "self_contained_remaining_core": [
+    "ActualNoncanonicalCleanCoreMovingAtomExclusion",
+    "or ActualNoncanonicalExactUVSupportLowerBound plus registered multiplier discipline"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5",
+    "docs/monograph/prime-matrix-dual-next-narrowest-attack-router.json": "0be8355976a94a2428c29d9f03fcb92727c2ec763022c0fd0207886518e4ed5e",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-common-variable-table-router.json": "b5e2f3b7544d09c7bdb709686dd6501882a2638b7f5591fde857a7dc69e5c685",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization.md": "1da7af54405bb244358e58b35ec6efe03a7cd428c58c26e186fafd4e7166f0b2",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-new-full-s-theorem-input-router.json": "5a24752ca3d01eb90414bd498d9be025bebda93809eaaaebb396296d2f68ba68",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-nonap-object-ledger-router.json": "b94ec49a04e4779d893a2026565e29ceaee42f481cd2aaedfc5246bead7ed280",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-nonap-scale-ledger-router.json": "3f699f8a003f2f1a743ca3af2dea79ea438d4423bde66c31990dec9c5bec3a5d",
+    "script": "e864bd41d28b7a6dbd2e5282f816fcbc4271c504b490e012188645c494b22431"
+  },
+  "status": "fulls_kls_ext_strict_match_accepted_external_math_lane_closed_rankin_open",
+  "strict_contract_match": true
+}

@@ -1,0 +1,72 @@
+{
+  "all_math_inputs_closed_after_external_acceptance": true,
+  "certificate_type": "prime_matrix_external_kls_accepted_final_promotion_router",
+  "conditional_final_basis": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "external_fulls_kls_accepted": true,
+  "noncanonical_fulls_external_math_lane_closed": true,
+  "plain_conclusion": "接受 FullS-KLS-ext 后，noncanonical full-S 外部数学线已经闭合；Rankin 子账本也已闭合为 pass-or-return。当前唯一剩余是 DStructure/Tail-log4/finite verification/Rankin 整体晋级包的独立接受。该门未接受前，不能诚实声明完整行/列无条件定理；若该门被独立接受，则在外部 KLS 合同版中命题闭合。",
+  "promotion_package_boundary_closed": true,
+  "promotion_package_independently_accepted": false,
+  "rankin_subledger_pass_or_return_closed": true,
+  "remaining_single_gate_after_external_acceptance": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "accepted": true,
+      "closed": true,
+      "evidence": "fulls_kls_ext_strict_match_accepted_external_math_lane_closed_rankin_open",
+      "gate": "ExternalFullSKLSExtAccepted",
+      "meaning": "FullS-KLS-ext 已按黑箱外部定理合同接受，且逐项匹配当前 non-AP full-S WFD 目标。",
+      "remaining": "none on noncanonical full-S external math lane"
+    },
+    {
+      "accepted": true,
+      "closed": true,
+      "evidence": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "gate": "NoncanonicalFullSMathLaneClosed",
+      "meaning": "接受外部 KLS 后，noncanonical full-S 数学输入不再是开放硬点。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "accepted": true,
+      "closed": true,
+      "evidence": "unconditional_closure_endpoint_boundary_closed_inputs_still_open",
+      "gate": "EndpointNoHiddenMathLane",
+      "meaning": "终局边界已证明没有第四条未命名数学路线；剩余只能是已命名晋级门。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "accepted": true,
+      "closed": true,
+      "evidence": "full_rankin_ledger_closed_promotion_acceptance_open",
+      "gate": "RankinSubledgerPassOrReturnClosed",
+      "meaning": "Rankin 子账本已闭合为全集清单与 pass-or-return 纪律。",
+      "remaining": "independent acceptance of the whole promotion package"
+    },
+    {
+      "accepted": false,
+      "closed": true,
+      "evidence": "dstructure_rankin_promotion_boundary_closed_referee_acceptance_open",
+      "gate": "DStructureTailLog4FiniteRankinBoundaryClosed",
+      "meaning": "DStructure/Tail-log4/finite verification/Rankin 晋级包边界已闭合。",
+      "remaining": "independent acceptance, not author-side promotion"
+    },
+    {
+      "accepted": true,
+      "closed": true,
+      "evidence": "row_column_unconditional_frontier_routed_not_closed",
+      "gate": "NoAuthorSideUnconditionalUpgrade",
+      "meaning": "当前材料明确禁止用作者侧路由替代独立晋级验收。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5",
+    "docs/monograph/prime-matrix-full-rankin-ledger-inventory-router.json": "914416c71595e19675adf90d35301cd1f8648a17e67f9676211ab8a2f2f6187b",
+    "docs/monograph/prime-matrix-fulls-kls-ext-acceptance-match-audit.json": "76317b8b3ff81ec7ce1a21fce006e267817a7a401a870a7cfe33637481c90d71",
+    "docs/monograph/prime-matrix-row-column-unconditional-frontier-router.json": "c1a72dd2f85620642d3496873d4b509f3e3813532bc55ddb2dd58ab81d13d033",
+    "docs/monograph/prime-matrix-unconditional-closure-endpoint-verdict-router.json": "a912e362d3addc7dde44ae4203e8c5ff7e371e827e2de2d1ea1c6a8357b41621",
+    "script": "f1d34f6c54a4cf00f5ce4760aa4cea5e5fbf7589082a2af3572313f30444bc23"
+  },
+  "status": "external_kls_math_lane_closed_final_promotion_gate_only_open"
+}

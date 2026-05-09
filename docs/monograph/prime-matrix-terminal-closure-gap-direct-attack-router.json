@@ -1,0 +1,97 @@
+{
+  "certificate_type": "prime_matrix_terminal_closure_gap_direct_attack_router",
+  "status": "terminal_closure_gap_split_to_actual_source_or_external_contract_plus_referee_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-final-open-input-current-attack-router.json": "75b70b201b9ca46d4b7dd7d88341fe1c1e3b7df992f19017fb592eb97a74bde9",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-closure-taxonomy-router.json": "c17dfbff54f991a819fcaa607f001860adcc8e3f950de77c233c4dff834227ad",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-final-closure-router.json": "ee06624e115009c2c310b2bdd8aa7c331cbc5de987b9ea66ecfefbb6188c2697",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "terminal_closure_gap_boundary_closed": true,
+  "canonical_source_self_contained_branch_closed": true,
+  "unrestricted_generic_self_contained_refuted": true,
+  "actual_source_bridge_theorem_closed": false,
+  "external_contract_math_lane_closed_if_accepted": true,
+  "primary_source_specialization_proof_closed": false,
+  "promotion_package_independently_accepted": false,
+  "all_required_inputs_proved_or_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "minimum_full_self_contained_basis": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "minimum_external_contract_basis": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "minimum_no_blackbox_external_basis": "DIBFIPrimarySourceSpecializationProof AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_self_contained_attack_target": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput",
+  "next_no_blackbox_external_attack_target": "DIBFIPrimarySourceSpecializationProof",
+  "parallel_referee_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "CurrentFinalInputBoundaryImported",
+      "closed": true,
+      "proved_or_accepted": false,
+      "meaning": "当前最终输入基已压到 source anti-atom 或外部 DI/BFI/Kuznetsov 匹配，再加独立晋级验收。",
+      "remaining": "判定哪些缺口是真缺口，哪些只是陈述边界。"
+    },
+    {
+      "gate": "CanonicalSourceSelfContainedBranchClosed",
+      "closed": true,
+      "proved_or_accepted": true,
+      "meaning": "canonical RIW/Buchstab source 分支已有内部闭合证书。",
+      "remaining": "只能用于 branch-restricted 陈述，不能升级 generic unrestricted。"
+    },
+    {
+      "gate": "UnrestrictedGenericSelfContainedRefuted",
+      "closed": true,
+      "proved_or_accepted": true,
+      "meaning": "unrestricted generic WFD 自足反原子被 moving-delta 模型反证。",
+      "remaining": "不得继续把 generic 自足版当作待证明命题。"
+    },
+    {
+      "gate": "ActualSourceBridgeIsOnlySelfContainedUpgrade",
+      "closed": true,
+      "proved_or_accepted": false,
+      "meaning": "若要把 canonical 分支闭合升级为实际 full-S non-AP 自足闭合，必须证明实际源锁定或实际源强化反原子。",
+      "remaining": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput"
+    },
+    {
+      "gate": "ExternalFullSKLSExtContractClosesMathLaneIfAccepted",
+      "closed": true,
+      "proved_or_accepted": true,
+      "meaning": "若接受 FullS-KLS-ext 作为外部深定理合同，generic 外部数学 lane 可闭合。",
+      "remaining": "仍需最终晋级验收。"
+    },
+    {
+      "gate": "PrimarySourceSpecializationStillOpenWithoutBlackBox",
+      "closed": true,
+      "proved_or_accepted": false,
+      "meaning": "若不接受外部合同为黑箱，必须从 DI/BFI 原文逐项推出 FullS-KLS-ext。",
+      "remaining": "DIBFIPrimarySourceSpecializationProof"
+    },
+    {
+      "gate": "PromotionBoundaryClosedButNotAccepted",
+      "closed": true,
+      "proved_or_accepted": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 是最终晋级门，边界闭合但当前材料未获独立接受。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "closed_gates": [
+    "CurrentFinalInputBoundaryImported",
+    "CanonicalSourceSelfContainedBranchClosed",
+    "UnrestrictedGenericSelfContainedRefuted",
+    "ActualSourceBridgeIsOnlySelfContainedUpgrade",
+    "ExternalFullSKLSExtContractClosesMathLaneIfAccepted",
+    "PrimarySourceSpecializationStillOpenWithoutBlackBox",
+    "PromotionBoundaryClosedButNotAccepted"
+  ],
+  "open_proof_or_acceptance_gates": [
+    "CurrentFinalInputBoundaryImported",
+    "ActualSourceBridgeIsOnlySelfContainedUpgrade",
+    "PrimarySourceSpecializationStillOpenWithoutBlackBox",
+    "PromotionBoundaryClosedButNotAccepted"
+  ],
+  "plain_conclusion": "最终闭合缺口已拆清：canonical-source 自足版已闭合，unrestricted generic 自足版不是未攻破而是已被 moving-delta 反证。要得到用户目标的全局版本，只剩两条合法路线：证明实际源桥 ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput；或接受 FullS-KLS-ext 外部合同。若不接受外部黑箱，则必须补 DIBFIPrimarySourceSpecializationProof。两条数学路线之后都仍需 DStructure/Tail-log4/finite Rankin 独立晋级验收。"
+}

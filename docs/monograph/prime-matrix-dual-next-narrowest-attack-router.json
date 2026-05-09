@@ -1,0 +1,134 @@
+{
+  "all_required_inputs_proved_or_accepted": false,
+  "certificate_type": "prime_matrix_dual_next_narrowest_attack_router",
+  "closed_boundary_gates": [
+    "TerminalBoundaryImported",
+    "CanonicalActualSourceNoLongerNextTarget",
+    "GenericWFDTemplateForbidden",
+    "SelfContainedNextNarrowestPinned",
+    "ExternalBlackBoxContractAvailable",
+    "PrimarySourceSpecializationRejected",
+    "APSourceLiftRejected",
+    "ExternalNoBlackBoxNextNarrowestPinned",
+    "DStructureRankinRefereeGateStillSeparate"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dual_next_narrowest_boundary_closed": true,
+  "empirical_absence_not_used": true,
+  "external_blackbox_basis": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "external_blackbox_next_target": "AcceptFullSKLSExtExternalContract",
+  "external_no_blackbox_basis": "NewFullSTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "external_no_blackbox_next_target": "NewFullSTheoremInput",
+  "hypothetical_chain_only": true,
+  "open_proof_or_acceptance_gates": [
+    "TerminalBoundaryImported",
+    "SelfContainedNextNarrowestPinned",
+    "ExternalBlackBoxContractAvailable",
+    "PrimarySourceSpecializationRejected",
+    "ExternalNoBlackBoxNextNarrowestPinned",
+    "DStructureRankinRefereeGateStillSeparate"
+  ],
+  "parallel_referee_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "下一最窄目标已经重新压缩：canonical actual-source provenance 已只在 canonical 分支关闭，不能再作为全局剩余继续攻；unrestricted generic WFD 模板已被 moving-delta 阻断。完全自足线只剩 NewFullSNonAPSourceAntiAtomTheoremInput。黑箱外部线可以明确接受 FullS-KLS-ext 合同；若不接受黑箱，则 DI/BFI 主来源特化和 APSourceLift 都已被 no-go 排除，外部线也只剩 NewFullSTheoremInput。三条数学路径之后都必须通过 DStructure/Tail-log4/finite Rankin 独立验收。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "boundary_closed": true,
+      "consequence": "旧终端已拆成自足、外部黑箱、无黑箱外部证明和独立晋级门。",
+      "evidence": "terminal_closure_gap_split_to_actual_source_or_external_contract_plus_referee_open",
+      "gate": "TerminalBoundaryImported",
+      "lane": "both",
+      "next_target": "DualLaneNextNarrowestCompression",
+      "proved_or_accepted": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "canonical 分支来源账本已闭合；继续攻它不能覆盖 noncanonical full-S 补集。",
+      "evidence": "NoFurtherActualSourceProvenanceGap",
+      "gate": "CanonicalActualSourceNoLongerNextTarget",
+      "lane": "self-contained",
+      "next_target": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "proved_or_accepted": true
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "moving-delta no-go 后，不能把 unrestricted generic WFD 当作自足引理继续使用。",
+      "evidence": "generic_wfd_template_available=false",
+      "gate": "GenericWFDTemplateForbidden",
+      "lane": "self-contained",
+      "next_target": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "proved_or_accepted": true
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "完全自足线被压到一个新源定理：实际 noncanonical full-S 源的强化反原子。",
+      "evidence": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "gate": "SelfContainedNextNarrowestPinned",
+      "lane": "self-contained",
+      "next_target": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "proved_or_accepted": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "接受 FullS-KLS-ext 作为外部深定理合同时，外部数学 lane 可关闭；当前未把它登记为最终已接受输入。",
+      "evidence": "full_s_kls_ext_contract_closed_primary_source_proof_open",
+      "gate": "ExternalBlackBoxContractAvailable",
+      "lane": "external-blackbox",
+      "next_target": "AcceptFullSKLSExtExternalContract",
+      "proved_or_accepted": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "现有 DI/BFI 主来源不能逐项推出当前 full-S non-AP KLS-ext。",
+      "evidence": "NewFullSTheoremInputOrAPSourceLift",
+      "gate": "PrimarySourceSpecializationRejected",
+      "lane": "external-no-blackbox",
+      "next_target": "NewFullSTheoremInputOrAPSourceLift",
+      "proved_or_accepted": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "non-AP generic WFD 补集不能无损回提到 AP-source；无黑箱外部线只剩新 full-S 定理证明。",
+      "evidence": "NewFullSTheoremInput",
+      "gate": "APSourceLiftRejected",
+      "lane": "external-no-blackbox",
+      "next_target": "NewFullSTheoremInput",
+      "proved_or_accepted": true
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "若不接受黑箱合同，外部路线也不再是找旧 DI/BFI 引文，而是新增或证明能覆盖 full-S non-AP 对象的定理。",
+      "evidence": "primary_source_no_go + ap_source_lift_no_go",
+      "gate": "ExternalNoBlackBoxNextNarrowestPinned",
+      "lane": "external-no-blackbox",
+      "next_target": "NewFullSTheoremInput",
+      "proved_or_accepted": false
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "任何数学 lane 闭合后，仍需 DStructure/Tail-log4/finite Rankin 独立验收。",
+      "evidence": "dstructure_rankin_promotion_boundary_closed_referee_acceptance_open",
+      "gate": "DStructureRankinRefereeGateStillSeparate",
+      "lane": "referee",
+      "next_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "proved_or_accepted": false
+    }
+  ],
+  "self_contained_basis": "NewFullSNonAPSourceAntiAtomTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "self_contained_next_target": "NewFullSNonAPSourceAntiAtomTheoremInput",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-source-bridge-global-reconciliation-router.json": "4d5c17126ea796ee37ae469a3684ef634899dfea0b4af3352c3bf29d0f874e59",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5",
+    "docs/monograph/prime-matrix-noncanonical-complement-input-contract-router.json": "a6f8b9718c0c8d6a2854b37e3850d548798ca4aafa708c08b894bb4066ae3d52",
+    "docs/monograph/prime-matrix-terminal-closure-gap-direct-attack-router.json": "180d5675de967e6d6eb64136f7eb0e7bbec6203bfd9fa1227ed7b91b80610927",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-ap-source-lift-nogo-router.json": "e23282e2d3de3d5f70d70dde5013a0f0e8788656d98d04e13e0856dccece5d0f",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-terminal-split-router.json": "68cbb58cee80000dafab75f8a8bcd7bcb66fb3ddf498986d81d418df7a610404",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-primary-source-specialization-nogo-router.json": "23fcf1606c36412403096fed957e44d7b3ece1fc8f2c6d5290cd1e29bce7bda8",
+    "script": "34adb16446338d66c77dc0f3a624456aea8af597a01471233e7b2310bdfc2728"
+  },
+  "status": "dual_next_narrowest_reduced_to_new_full_s_source_theorem_or_accepted_external_contract_plus_referee_open",
+  "unified_dual_basis": "((NewFullSNonAPSourceAntiAtomTheoremInput) OR AcceptFullSKLSExtExternalContract OR NewFullSTheoremInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}

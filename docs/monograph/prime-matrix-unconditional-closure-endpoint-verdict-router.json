@@ -1,0 +1,125 @@
+{
+  "all_required_inputs_proved_or_accepted": false,
+  "certificate_type": "prime_matrix_unconditional_closure_endpoint_verdict_router",
+  "closed_boundary_gates": [
+    "ClosureAtlasImported",
+    "DualNextNarrowestBoundaryClosed",
+    "GenericSelfContainedLaneRejected",
+    "NoncanonicalTrilemmaBoundaryClosed",
+    "SelfContainedNewSourceTheoremOpen",
+    "ExternalBlackBoxNotAcceptedAsFinalInput",
+    "ExternalNoBlackBoxNewTheoremOpen",
+    "DStructureRankinPromotionOpen"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "endpoint_boundary_closed": true,
+  "hard_stop_reason": "当前材料已关闭所有无名逃逸和边界分类，但 generic 自足 full-S 反原子被 moving-delta 模型排除；外部合同尚未登记为最终接受输入；无黑箱外部线需要新 full-S 定理；DStructure/Rankin 晋级仍未独立接受。因此不能从当前语料库推出完整无条件闭合。",
+  "hypothetical_chain_only": true,
+  "next_atomic_actions": [
+    "Prove NewFullSNonAPSourceAntiAtomTheoremInput",
+    "Or explicitly accept AcceptFullSKLSExtExternalContract",
+    "Or prove NewFullSTheoremInput",
+    "Then obtain DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "open_proof_or_acceptance_gates": [
+    "DualNextNarrowestBoundaryClosed",
+    "NoncanonicalTrilemmaBoundaryClosed",
+    "SelfContainedNewSourceTheoremOpen",
+    "ExternalBlackBoxNotAcceptedAsFinalInput",
+    "ExternalNoBlackBoxNewTheoremOpen",
+    "DStructureRankinPromotionOpen"
+  ],
+  "plain_conclusion": "终局硬攻结果是负向闭合加输入基闭合：当前材料不能无条件推出行/列命题。原因不是还存在无名结构逃逸，而是所有逃逸已被压成命名输入；其中 generic 自足反原子已被反模型排除，剩余只能由新源定理、外部 FullS-KLS-ext 接受、或新 full-S 无黑箱定理之一闭合，并且还必须通过 DStructure/Rankin 独立验收。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "boundary_closed": true,
+      "consequence": "方阵斜线、圆柱覆盖、P列锚、层叠筛和命名出口已被压成有限输入图谱。",
+      "evidence": "closure_input_atlas_complete_global_inputs_still_open",
+      "gate": "ClosureAtlasImported",
+      "proved_or_accepted": true,
+      "required_action": "继续只攻命名输入，不回到无名分支。",
+      "verdict": "closed_boundary"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "终局只剩自足新源定理、外部合同接受、无黑箱新 full-S 定理三路，加独立晋级门。",
+      "evidence": "((NewFullSNonAPSourceAntiAtomTheoremInput) OR AcceptFullSKLSExtExternalContract OR NewFullSTheoremInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "gate": "DualNextNarrowestBoundaryClosed",
+      "proved_or_accepted": false,
+      "required_action": "prove NewFullSNonAPSourceAntiAtomTheoremInput, accept AcceptFullSKLSExtExternalContract, or prove NewFullSTheoremInput",
+      "verdict": "three_legal_lanes_pinned"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "现有 formal WFD/Type/Fourier/K4K6/incidence 模板下，generic 自足反原子不是未证，而是被 moving-delta 反模型排除。",
+      "evidence": "NoCurrentSelfContainedGenericFullSClosureWithoutNewSourceAxiom",
+      "gate": "GenericSelfContainedLaneRejected",
+      "proved_or_accepted": true,
+      "required_action": "只能加强 actual source 假设、限制到 canonical 分支，或走外部定理。",
+      "verdict": "refuted_not_open"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "扣除 canonical 分支后，noncanonical full-S 补集没有第四条自足逃逸路。",
+      "evidence": "noncanonical_complement_trilemma_boundary_closed_inputs_still_conditional",
+      "gate": "NoncanonicalTrilemmaBoundaryClosed",
+      "proved_or_accepted": false,
+      "required_action": "证明实际源恒等、强化实际源反原子，或接受/证明精确 FullS-KLS-ext。",
+      "verdict": "input_still_conditional"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "无条件自足闭合必须新增并证明实际 noncanonical full-S 源的强化反原子。",
+      "evidence": "NewFullSNonAPSourceAntiAtomTheoremInput",
+      "gate": "SelfContainedNewSourceTheoremOpen",
+      "proved_or_accepted": false,
+      "required_action": "prove NewFullSNonAPSourceAntiAtomTheoremInput",
+      "verdict": "open_new_theorem_input"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "外部合同可关闭数学 lane，但当前证书没有把它登记为最终已接受输入。",
+      "evidence": "AcceptFullSKLSExtExternalContract",
+      "gate": "ExternalBlackBoxNotAcceptedAsFinalInput",
+      "proved_or_accepted": false,
+      "required_action": "explicitly accept AcceptFullSKLSExtExternalContract as an external theorem input",
+      "verdict": "available_but_not_accepted"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "DI/BFI 主来源特化和 APSourceLift 已被 no-go 排除；无黑箱外部线需要新 full-S 定理证明。",
+      "evidence": "NewFullSTheoremInput",
+      "gate": "ExternalNoBlackBoxNewTheoremOpen",
+      "proved_or_accepted": false,
+      "required_action": "prove NewFullSTheoremInput",
+      "verdict": "open_new_external_theorem"
+    },
+    {
+      "boundary_closed": true,
+      "consequence": "即便某条数学 lane 闭合，完整行/列无条件定理仍需独立晋级验收。",
+      "evidence": "dstructure_rankin_promotion_boundary_closed_referee_acceptance_open",
+      "gate": "DStructureRankinPromotionOpen",
+      "proved_or_accepted": false,
+      "required_action": "obtain DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "verdict": "referee_acceptance_open"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-closure-input-atlas-router.json": "53caeb5789e6697c37cb7949329cd32c8015736a8cccd27ed93b38a1bcb38a83",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5",
+    "docs/monograph/prime-matrix-dual-next-narrowest-attack-router.json": "0be8355976a94a2428c29d9f03fcb92727c2ec763022c0fd0207886518e4ed5e",
+    "docs/monograph/prime-matrix-noncanonical-complement-trilemma-router.json": "e8971555d7c4efa29a49d35224a8fe379bb467af258621dfc7289ef27b0d392b",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-antiatom-nogo-router.json": "3a91fb657721093983006356a1bff7ce7e89be6a63c0ec98537453bdcfb495b4",
+    "script": "d4f1d39e7f063bf069a49eec7dde622ba63f9c4563487614255cf66a852d02d0"
+  },
+  "status": "unconditional_closure_endpoint_boundary_closed_inputs_still_open",
+  "unconditional_closure_from_current_corpus": false,
+  "valid_closure_schemas": [
+    "NewFullSNonAPSourceAntiAtomTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+    "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+    "NewFullSTheoremInput AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
