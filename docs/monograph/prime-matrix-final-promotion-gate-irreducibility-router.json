@@ -1,0 +1,90 @@
+{
+  "author_side_direct_attack_exhausted": true,
+  "certificate_type": "prime_matrix_final_promotion_gate_irreducibility_router",
+  "external_kls_math_lane_closed": true,
+  "hard_conclusion": "当前材料已把最后障碍攻成不可约的独立验收事件：所有作者侧证据包均已封装，但独立接受不能由作者侧路由自动产生。未显式接受前，行/列命题仍不是无条件闭合。",
+  "irreducible_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "legal_next_moves": [
+    "explicitly accept the final independent-promotion gate",
+    "replace the gate by a new fully self-contained proof package",
+    "keep the theorem in conditional external-KLS-contract form"
+  ],
+  "promotion_author_packet_sealed": true,
+  "referee_gate_explicitly_accepted": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "accepted": true,
+      "author_sealed": true,
+      "evidence": "final single gate + external KLS final router",
+      "gate": "ExternalKLSMathLane",
+      "hard_conclusion": "外部 KLS 数学线已闭合，不再是当前硬点。",
+      "referee_required": false
+    },
+    {
+      "accepted": false,
+      "author_sealed": true,
+      "evidence": "docs/d-structure-formal-appendix.md + docs/ab-to-d-interface-match.md",
+      "gate": "DStructureAndABInterfaceDossier",
+      "hard_conclusion": "作者侧证明包已封装；最终升级仍需独立接受 D 组定义、归约和常数口径。",
+      "referee_required": true
+    },
+    {
+      "accepted": false,
+      "author_sealed": true,
+      "evidence": "tail-log4 appendix + BG/RKS block match + RKS parameter audit",
+      "gate": "TailLog4AndBGRKSDossier",
+      "hard_conclusion": "Tail-log4 与 BG/RKS 对接已封装；最终升级仍需独立接受外部定理适配。",
+      "referee_required": true
+    },
+    {
+      "accepted": false,
+      "author_sealed": true,
+      "evidence": "finite verification status + rerun result",
+      "gate": "FiniteVerificationSeal",
+      "hard_conclusion": "有限验证可复跑并已封存结果；最终升级仍需独立复现/归档接受。",
+      "referee_required": true
+    },
+    {
+      "accepted": false,
+      "author_sealed": true,
+      "evidence": "full Rankin ledger inventory",
+      "gate": "FullRankinPassOrReturnSeal",
+      "hard_conclusion": "Rankin 子账本已闭合为 pass-or-return；最终升级仍需独立接受整包。",
+      "referee_required": true
+    },
+    {
+      "accepted": true,
+      "author_sealed": true,
+      "evidence": "line-by-line internal referee matrix",
+      "gate": "NoAuthorSidePromotion",
+      "hard_conclusion": "作者侧不能把独立验收事件改写成作者证明步骤。",
+      "referee_required": false
+    },
+    {
+      "accepted": false,
+      "author_sealed": true,
+      "evidence": "not passed",
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "hard_conclusion": "这是当前真正不可约硬点：它只能由独立接受事件关闭，或由新自足证明替换整个门。",
+      "referee_required": true
+    }
+  ],
+  "source_hashes": {
+    "docs/ab-to-d-interface-match.md": "10c8c6e592b1214f0b028d6c939c4d11a153f33bacbaefcfff0c452829f17f61",
+    "docs/bg-rks-block-match.md": "5bf53d6fe732110ef13fb131a61e1ef3d63d45570748bc9a56ec26894768afb9",
+    "docs/d-structure-formal-appendix.md": "be2e04e640bb9e5d32ea910e510dcc3f32672ac436e7487295400737279c38e3",
+    "docs/finite-verification-status.md": "ec453918235b78b296441ba3e1198a27170b73031d159dc63fd16fc15123460e",
+    "docs/monograph/line-by-line-internal-referee-matrix.md": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5",
+    "docs/monograph/prime-matrix-external-kls-accepted-final-promotion-router.json": "b4c3bc55669a6087dfb044abe8d6d0eef5ceb2f53ad31703977ad62497bd7472",
+    "docs/monograph/prime-matrix-final-promotion-subgate-direct-attack-router.json": "3f3cbe2622c3f0ab62408232401998185ca749aa6b2fde2f6f7f1d808dd4b105",
+    "docs/monograph/prime-matrix-final-single-gate-closure-decision-router.json": "fa3461739f8503a72451751c3f1c2a7245c569baed17d86caf5fb0cdd3ef677a",
+    "docs/monograph/prime-matrix-full-rankin-ledger-inventory-router.json": "914416c71595e19675adf90d35301cd1f8648a17e67f9676211ab8a2f2f6187b",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0",
+    "docs/tail-log4-formal-appendix.md": "cc8e105806fbf3428799a0086954ab2d5b354c480ddca04a7591bd9e2cd4c780",
+    "script": "7c1aa5f4c5382f91f7057099d25f2ca9d5642f20e36465ef66e37908bb3a2701"
+  },
+  "status": "final_promotion_gate_irreducible_referee_event_required",
+  "strict_closure_basis": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
