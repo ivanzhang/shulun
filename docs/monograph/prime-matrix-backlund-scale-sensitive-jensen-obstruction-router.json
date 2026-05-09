@@ -1,0 +1,118 @@
+{
+  "certificate_type": "prime_matrix_backlund_scale_sensitive_jensen_obstruction_router",
+  "closed_gates": [
+    "ScaleSensitiveJensenGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "RightEdgeAnchorMechanismIdentified",
+    "BacklundRightAnchorScaleSensitiveJensenRadiusObstructionClosed",
+    "Sigma2CenterEvenWorse",
+    "SmallRadiusRequiresCriticalAnchor",
+    "MovingCenterAvoidanceLoopsToIndent"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "geometry_constants": {
+    "H": 0.001953125,
+    "capsule_half_height_A": 0.064453125,
+    "eta": 0.0625,
+    "right_anchor_min_radius": 0.5,
+    "right_anchor_radius_minus_margin": 0.421875,
+    "right_anchor_radius_over_A": 7.757575757575758,
+    "sigma2_center_radius": 1.5,
+    "sigma2_radius_over_A": 23.272727272727273,
+    "stability_margin": 0.078125
+  },
+  "hypothetical_chain_only": true,
+  "open_gates": [
+    "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parent_remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger",
+  "plain_conclusion": "尺度敏感 Jensen 胶囊计数被现有右边界 anchor 几何阻断。要得到 A=33/512 的小因子，Jensen 半径必须与 A 同阶；但只要圆心放在 sigma>1 以使用 Euler product 下界，覆盖临界线附近零点的半径至少约 1/2，已经远大于 A，不能保留胶囊高度小因子。因此新的最窄内部目标是 `BacklundCriticalLineScaleAnchorAvoidanceLedger`：在靠近临界线的小半径圆盘中建立非循环、非移动成本的圆心 anchor。",
+  "right_anchor_radius_obstruction_closed": true,
+  "route_table": [
+    {
+      "reason": "圆心在 sigma>1 时，为覆盖临界线附近零点，半径至少约 1/2，无法保留 A=33/512 小因子。",
+      "route": "RightEdgeEulerAnchor",
+      "verdict": "geometrically_blocked_for_A_scale"
+    },
+    {
+      "reason": "半径可为 O(A)，但必须给出靠近临界线且避开零点的统一圆心下界。",
+      "route": "CriticalLineSmallDiskAnchor",
+      "verdict": "new_hard_atom"
+    },
+    {
+      "reason": "随 T 移动选择避零圆心会重新引入近零缩进/跳变成本。",
+      "route": "MovingCenterAvoidance",
+      "verdict": "equivalent_to_indent_cost"
+    }
+  ],
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ScaleSensitiveJensenGateActive",
+      "meaning": "上一层把胶囊密度压成尺度敏感 Jensen 胶囊计数。",
+      "proved": true,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的解析几何障碍。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "RightEdgeAnchorMechanismIdentified",
+      "meaning": "现有 Jensen 圆心路线依赖 sigma>1 的 Euler product 下界。",
+      "proved": true,
+      "remaining": "BacklundRightAnchorScaleSensitiveJensenRadiusObstructionClosed"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundRightAnchorScaleSensitiveJensenRadiusObstructionClosed",
+      "meaning": "若圆心在 sigma>1，又要覆盖 sigma=1/2 附近零点，则半径至少约 1/2，不能保留 A=33/512 小尺度。",
+      "proved": true,
+      "remaining": "BacklundCriticalLineScaleAnchorAvoidanceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Sigma2CenterEvenWorse",
+      "meaning": "若沿用 sigma=2 圆心，半径至少 3/2，是 A 的二十多倍。",
+      "proved": true,
+      "remaining": "BacklundCriticalLineScaleAnchorAvoidanceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SmallRadiusRequiresCriticalAnchor",
+      "meaning": "要让 Jensen 半径为 O(A)，圆心必须靠近临界线；这需要新的统一非零下界或避零圆心选择。",
+      "proved": true,
+      "remaining": "BacklundCriticalLineScaleAnchorAvoidanceLedger OR BacklundMovingCenterZeroAvoidanceWithoutCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "MovingCenterAvoidanceLoopsToIndent",
+      "meaning": "若圆心随零点移动避让，避让本身重新产生近零跳变/缩进成本。",
+      "proved": true,
+      "remaining": "BacklundCriticalLineScaleAnchorAvoidanceLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundScaleSensitiveJensenCapsuleDensityLedger",
+      "meaning": "尺度敏感 Jensen 路线被右边界锚半径障碍阻断；下一步必须攻临界线小半径 anchor。",
+      "proved": false,
+      "remaining": "BacklundCriticalLineScaleAnchorAvoidanceLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted"
+    }
+  ],
+  "scale_sensitive_jensen_capsule_density_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-jensen-center-anchor-router.json": "a7f2dbac7e4d18ca409e0f0fa85ae7e730cfc4f90c5ec91657eddc3883f7d9f3",
+    "docs/monograph/prime-matrix-b3-jensen-euler-lower-router.json": "44122c9e7ca97c3962ba9093b9f91bd6d80c08993547d6d9b1677fb2c4a40189",
+    "docs/monograph/prime-matrix-backlund-capsule-density-internal-attack-router.json": "1f84deca5f8f0cabaedd76da185938061bb2d308b53d6931e44a554874e67ec5"
+  },
+  "status": "backlund_scale_sensitive_jensen_blocked_by_anchor_radius_open",
+  "strict_self_contained_unique_remaining": "BacklundCriticalLineScaleAnchorAvoidanceLedger"
+}
