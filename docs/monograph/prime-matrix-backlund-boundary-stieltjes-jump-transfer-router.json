@@ -1,0 +1,136 @@
+{
+  "budget_preserving_stieltjes_jump_transfer_closed": false,
+  "certificate_type": "prime_matrix_backlund_boundary_stieltjes_jump_transfer_router",
+  "closed_gates": [
+    "BoundaryStieltjesJumpGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "BacklundBoundaryStieltjesJumpFormulaClosed",
+    "ZetaXiJumpTransportAlreadyClosed",
+    "HalfMirrorFreeCancellationBlocked",
+    "OddCorrectionEqualsIndentCost",
+    "CS8HasNoResidualBudget"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "formal_stieltjes_jump_formula_closed": true,
+  "hypothetical_chain_only": true,
+  "indent_cost_self_contained_closed": false,
+  "jump_budget_pressure": {
+    "allowed_unpaired_coefficient": 0.02486795985810865,
+    "available_stability_margin": 0.078125,
+    "deficit": 50.18735745743669,
+    "naive_jump_coefficient": 50.26548245743669,
+    "per_unpaired_jump_cost": 3.141592653589793,
+    "zero_count_coefficient": 16.0
+  },
+  "next_priority": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+  "open_gates": [
+    "BacklundBudgetPreservingStieltjesJumpTransferLedger",
+    "BacklundBoundaryStieltjesJumpTransferLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "边界 Stieltjes 跳变公式本身可以自足登记：避零、应用 argument principle、再按重数取极限。但这只说明跳变在哪里，并不支付跳变预算。由于半镜像免费抵消和原始奇部为零都已被阻断，预算保持的 Stieltjes 转移与 Backlund 近零凹口成本等价。因此严格自足路线没有新的更小逃逸口；唯一剩余就是内部证明经典 Backlund 零点缩进成本，或明确接受外部经典 Backlund 缩进引理。",
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "BoundaryStieltjesJumpGateActive",
+      "meaning": "点态支撑不匹配后，唯一剩余被压成边界 Stieltjes 跳变/缩进账本。",
+      "proved": true,
+      "remaining": "BacklundBoundaryStieltjesJumpTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的解析 trace，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundBoundaryStieltjesJumpFormulaClosed",
+      "meaning": "端点避零和重数极限 convention 足以给出跳变测度的形式登记。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingStieltjesJumpTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ZetaXiJumpTransportAlreadyClosed",
+      "meaning": "跳变可从 arg zeta 搬运到 xi 零点重数；Gamma/初等因子不产生 crossing jump。",
+      "proved": true,
+      "remaining": "BacklundSignedCrossingPairingInvolutionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "HalfMirrorFreeCancellationBlocked",
+      "meaning": "半镜像平均只能消掉平均 trace 的奇偶组合，不能证明原始 trace 奇部为零。",
+      "proved": true,
+      "remaining": "BacklundOddMirrorCorrectionCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "OddCorrectionEqualsIndentCost",
+      "meaning": "原始 trace 的未配对跳变成本已终端归并为 Backlund 近零凹口成本。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CS8HasNoResidualBudget",
+      "meaning": "外部 C_S=8 已是 16*1/2 的紧等号；自足路线不能新增任何正比例 Stieltjes 跳变成本。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingStieltjesJumpTransferLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundBudgetPreservingStieltjesJumpTransferLedger",
+      "meaning": "形式跳变公式不等于预算保持；预算保持正是经典 Backlund 缩进成本本身。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundBoundaryStieltjesJumpTransferLedger",
+      "meaning": "Stieltjes 路线没有产生新闭合自由度，终端回到内部证明经典缩进引理或接受外部引理。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-backlund-half-mirror-average-obstruction-router.json": "750fc9ccaa029ea37f6854251ecff51bce624832f71c90e5e2398ddbde18075b",
+    "docs/monograph/prime-matrix-backlund-odd-correction-terminal-router.json": "d0df7fdf42e17ff59f43de10770f366f359973601c0d346157977ec2ccc2790c",
+    "docs/monograph/prime-matrix-backlund-pointwise-core-transfer-obstruction-router.json": "c2725ebcf807cf708efe1c77a6442f8ca5bb8e4f42a94c969a24f0eaec38a20c",
+    "docs/monograph/prime-matrix-backlund-zeta-xi-branch-jump-transport-router.json": "d7e97ace1bdee2abe3d40961b35d6aa5c95dd537f6f2eb4a03acd1836e8d7708"
+  },
+  "status": "backlund_boundary_stieltjes_jump_transfer_terminal_open",
+  "stieltjes_atoms": [
+    {
+      "atom": "BacklundBoundaryStieltjesJumpFormulaClosed",
+      "role": "避零后取极限，把边界 arg 变化写成连续 log-derivative 变差加按重数计的跳变测度。",
+      "status": "closed"
+    },
+    {
+      "atom": "BacklundBudgetPreservingStieltjesJumpTransferLedger",
+      "role": "证明该跳变测度不新增 C_S 或窗口余量成本；这要求精确抵消或外部缩进引理。",
+      "status": "open"
+    },
+    {
+      "atom": "BacklundSignedCrossingPairingInvolutionLedger",
+      "role": "此前半镜像/奇部为零路线已证明不能免费消掉原始 trace 的奇部。",
+      "status": "blocked_by_prior_reviews"
+    },
+    {
+      "atom": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+      "role": "若坚持完全自足，必须直接内部证明经典 Backlund 缩进成本，而不是再做权重或镜像转移。",
+      "status": "only_strict_internal_remaining"
+    }
+  ],
+  "terminal_equivalence": {
+    "BacklundBoundaryStieltjesJumpTransferLedger": "BacklundBoundaryStieltjesJumpFormulaClosed AND BacklundBudgetPreservingStieltjesJumpTransferLedger",
+    "BacklundBudgetPreservingStieltjesJumpTransferLedger": "ClassicalBacklundZeroIndentationCostInternalProofLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted",
+    "ClassicalBacklundZeroIndentationCostInternalProofLedger": "BacklundZeroProximityIndentationCostLedger"
+  }
+}

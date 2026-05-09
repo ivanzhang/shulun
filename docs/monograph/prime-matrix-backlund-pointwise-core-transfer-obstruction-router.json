@@ -1,0 +1,191 @@
+{
+  "certificate_type": "prime_matrix_backlund_pointwise_core_transfer_obstruction_router",
+  "closed_gates": [
+    "PointwiseCoreTransferGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "LittlewoodRectangleWeightAvailable",
+    "NearZeroCoreStillAssignedToIndent",
+    "EndpointLimitConventionAvailable",
+    "BacklundPointwiseCoreSupportMismatchLemmaClosed",
+    "DirectLittlewoodToPointwiseMultiplierBlocked",
+    "C8BudgetCannotAbsorbResidualMultiplier"
+  ],
+  "constant_priority": "BacklundC8BudgetPreservingIndentReaggregationLedger",
+  "counterexample_assumption_only": true,
+  "discipline_priority": "BacklundZeroWeightNoDoubleCountingLedger",
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "indent_cost_self_contained_closed": false,
+  "left_boundary_model": {
+    "littlewood_weight_formula": "2*pi*epsilon",
+    "max_sampled_multiplier": 1885.8662946383236,
+    "needed_multiplier_formula": "atan(H/epsilon)/(pi*epsilon)",
+    "pointwise_jump_formula": "2*atan(H/epsilon)",
+    "setup": "zero rho=a+epsilon+iT, pointwise line sigma=a, window |u|<=H",
+    "unbounded_as_epsilon_to_zero": true,
+    "window_length": 0.001953125
+  },
+  "next_priority": "BacklundBoundaryStieltjesJumpTransferLedger",
+  "obstruction_lemmas": [
+    {
+      "content": "Littlewood 矩形零点项按横向权重 beta-a 计；点态近零核心按高度方向的 arg 跳变计。当 beta-a=epsilon 趋近 0 时，前者趋近 0，后者在固定窗口内可保持正量。",
+      "lemma": "HorizontalWeightVsVerticalJumpMismatch"
+    },
+    {
+      "content": "若试图用 K * 2*pi*(beta-a) 支付点态跳变，则 K 至少随 1/epsilon 发散；因此 RegisteredCapacityMultiplierDiscipline 禁止直接转移。",
+      "lemma": "NoUniformCapacityMultiplier"
+    },
+    {
+      "content": "除非额外证明所有近零核心满足 beta-a>=delta>0，否则权重吸收不能推出点态核心预算；这等于排除贴边界零点，不是当前输入基已有事实。",
+      "lemma": "BoundaryZeroSupportLowerBoundWouldBeTooStrong"
+    },
+    {
+      "content": "剩余不能再是普通零点权重吸收，而必须是局部 Stieltjes 跳变/缩进引理：把边界贴近零点的点态跳变作为同一轮廓极限项登记，并证明不重复扣 Jensen/RVM 预算。",
+      "lemma": "StieltjesJumpTransferIsTheRealAtom"
+    }
+  ],
+  "open_gates": [
+    "BacklundPointwiseNearZeroCoreTransferLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "点态近零核心不能由 Littlewood 矩形零点权重直接吸收。结构原因是支撑不匹配：矩形权重是横向的 beta-a，贴左边界时可任意小；而点态高度跳变在固定短窗口内仍保持正量。所以当前最窄点从普通权重转移改写为局部 Stieltjes 跳变/缩进账本；这仍未关闭严格自足路线，但排除了一个关键伪闭合。",
+  "pointwise_core_transfer_closed": false,
+  "replacement_next": {
+    "BacklundPointwiseNearZeroCoreTransferLedger": "BacklundBoundaryStieltjesJumpTransferLedger"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PointwiseCoreTransferGateActive",
+      "meaning": "凹口成本内部化后的最窄点正是把矩形零点权重吸收转到点态近零核心。",
+      "proved": true,
+      "remaining": "BacklundPointwiseNearZeroCoreTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的解析障碍，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LittlewoodRectangleWeightAvailable",
+      "meaning": "Littlewood 矩形层已有零点横向权重项。",
+      "proved": true,
+      "remaining": "仅可作为矩形平均层输入。"
+    },
+    {
+      "closed": true,
+      "gate": "NearZeroCoreStillAssignedToIndent",
+      "meaning": "eta=1/16 内零点没有被倒距离和吸收，仍属于凹口/点态核心。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointLimitConventionAvailable",
+      "meaning": "端点落零可由极限 convention 定义，但该 convention 不提供点态预算。",
+      "proved": true,
+      "remaining": "BacklundBoundaryStieltjesJumpTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundPointwiseCoreSupportMismatchLemmaClosed",
+      "meaning": "横向权重 beta-a 可趋近 0，而点态高度跳变在同一固定窗口内仍为正量。",
+      "proved": true,
+      "remaining": "BacklundBoundaryStieltjesJumpTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DirectLittlewoodToPointwiseMultiplierBlocked",
+      "meaning": "任何固定容量乘子都无法把 2*pi*(beta-a) 统一转成点态近零跳变预算。",
+      "proved": true,
+      "remaining": "BacklundBoundaryStieltjesJumpTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "C8BudgetCannotAbsorbResidualMultiplier",
+      "meaning": "C_S=8 后续为紧等号，5/64 余量也只属于窗口稳定性；不能容纳发散乘子或正比例残差。",
+      "proved": true,
+      "remaining": "BacklundC8BudgetPreservingIndentReaggregationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundPointwiseNearZeroCoreTransferLedger",
+      "meaning": "直接权重吸收转移已被结构性阻断；必须改证局部 Stieltjes 跳变/缩进账本。",
+      "proved": false,
+      "remaining": "BacklundBoundaryStieltjesJumpTransferLedger AND BacklundZeroWeightNoDoubleCountingLedger AND BacklundC8BudgetPreservingIndentReaggregationLedger"
+    }
+  ],
+  "samples": [
+    {
+      "epsilon": 0.0625,
+      "littlewood_zero_weight": 0.39269908169872414,
+      "needed_capacity_multiplier": 0.1591031651774284,
+      "pointwise_jump_lower_model": 0.062479666860536555,
+      "window_length": 0.001953125
+    },
+    {
+      "epsilon": 0.015625,
+      "littlewood_zero_weight": 0.09817477042468103,
+      "needed_capacity_multiplier": 2.533339146276195,
+      "pointwise_jump_lower_model": 0.24870998909352288,
+      "window_length": 0.001953125
+    },
+    {
+      "epsilon": 0.00390625,
+      "littlewood_zero_weight": 0.02454369260617026,
+      "needed_capacity_multiplier": 37.781406118510915,
+      "pointwise_jump_lower_model": 0.9272952180016122,
+      "window_length": 0.001953125
+    },
+    {
+      "epsilon": 0.0009765625,
+      "littlewood_zero_weight": 0.006135923151542565,
+      "needed_capacity_multiplier": 360.87437552595634,
+      "pointwise_jump_lower_model": 2.214297435588181,
+      "window_length": 0.001953125
+    },
+    {
+      "epsilon": 0.000244140625,
+      "littlewood_zero_weight": 0.0015339807878856412,
+      "needed_capacity_multiplier": 1885.8662946383236,
+      "pointwise_jump_lower_model": 2.89288266449627,
+      "window_length": 0.001953125
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-littlewood-rectangle-router.json": "062778677ccc3375b4405c6e5559feba240610f29ec4fc13dd5b341e43ff64f3",
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-near-zero-indent-separation-router.json": "d27338ae97a041b28360548061e660940c5916f4c7de875d8d67f388baa359b3",
+    "docs/monograph/prime-matrix-b3-variation-window-scale-router.json": "b74131ddb497887ec5cbb0892aca05afba62c6b7f705808b6ae967c0fff75b47",
+    "docs/monograph/prime-matrix-backlund-final-branch-status-router.json": "278d6d06d4b63511a2d27287116e05fc594c887fbfc9683f4a81ed4ec18817c3",
+    "docs/monograph/prime-matrix-backlund-indent-weight-absorption-router.json": "2486b6f66b0202520c2ff150419c75874f815ba55597c0a55528608785b81d54"
+  },
+  "status": "backlund_pointwise_core_transfer_blocked_by_support_mismatch_open",
+  "support_mismatch_obstruction_closed": true,
+  "support_priority": "BacklundBoundaryZeroSupportLowerBoundLedger",
+  "transfer_options": [
+    {
+      "atom": "BacklundBoundaryZeroSupportLowerBoundLedger",
+      "option": "support_lower_bound",
+      "reason": "需要 beta-a>=delta 的统一左边界支撑下界；这会排除或强约束临界线/贴线零点。",
+      "status": "not_available"
+    },
+    {
+      "atom": "BacklundBoundaryStieltjesJumpTransferLedger",
+      "option": "local_stieltjes_jump_transfer",
+      "reason": "用局部轮廓同伦和 Stieltjes 跳变账本替代权重乘子，可能与经典 Backlund 缩进引理等价。",
+      "status": "next_internal_atom"
+    },
+    {
+      "atom": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+      "option": "external_backlund_indent",
+      "reason": "接受经典 Backlund 缩进处理即可关闭本分析缺口，但不是严格自足证明。",
+      "status": "external_escape"
+    }
+  ]
+}
