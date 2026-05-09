@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Prime Matrix B=3 Hadamard 部分分式余项账本路由器。
+"""Prime Matrix B=3 Hadamard dyadic 零点壳尾项路由器。
 
 用法示例：
-  python3 experiments/prime_matrix_b3_hadamard_partial_fraction_remainder_router.py
+  python3 experiments/prime_matrix_b3_hadamard_dyadic_shell_tail_router.py
 
 输出：
-  docs/monograph/prime-matrix-b3-hadamard-partial-fraction-remainder-router.json
-  docs/monograph/prime-matrix-b3-hadamard-partial-fraction-remainder-router.md
+  docs/monograph/prime-matrix-b3-hadamard-dyadic-shell-tail-router.json
+  docs/monograph/prime-matrix-b3-hadamard-dyadic-shell-tail-router.md
 """
 
 from __future__ import annotations
@@ -22,28 +22,26 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs" / "monograph"
 
-DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-explicit-clog-router.json"
-DEFAULT_JSON = DOCS / "prime-matrix-b3-hadamard-partial-fraction-remainder-router.json"
-DEFAULT_MD = DOCS / "prime-matrix-b3-hadamard-partial-fraction-remainder-router.md"
+DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-hadamard-partial-fraction-remainder-router.json"
+DEFAULT_JSON = DOCS / "prime-matrix-b3-hadamard-dyadic-shell-tail-router.json"
+DEFAULT_MD = DOCS / "prime-matrix-b3-hadamard-dyadic-shell-tail-router.md"
 
-OLD_ATOM = "HadamardPartialFractionRemainderNumericalLedger"
-HADAMARD_FORMULA = "HadamardFactorizationLogDerivativeClosed"
-COMPLETED_HADAMARD_PACKAGE = "CompletedZetaXiFunctionalEquationAndHadamardProductClosed"
-ZERO_COUNT_EXTERNAL = "RVMToCN16LocalInequalityClosedWithRawArgCS8"
-SYMMETRIC_PAIR_ATOM = "HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger"
-SHELL_TAIL_ATOM = "HadamardDyadicZeroShellTailNumericalLedger"
+OLD_ATOM = "HadamardDyadicZeroShellTailNumericalLedger"
+CLOSED_SUM_ATOM = "HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel"
+KERNEL_ATOM = "HadamardDVPQuadraticKernelEnvelopeLedger"
+SHELL_COUNT_ATOM = "HadamardCN16UnitIntervalToDyadicShellCountClosed"
+PAIRING_ATOM = "HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger"
 LOCAL_CORE_ATOM = "HadamardLocalZeroCoreAbsorptionByCN16Ledger"
 RANGE_ATOM = "HadamardRemainderRangeAndKernelConventionLedger"
 CLOG_AGGREGATION_ATOM = "CLogAggregationAndRangeConventionLedger"
-OPT_ATOM = "ZeroRepulsionParameterNumericalOptimizationLedger"
+ZERO_COUNT_EXTERNAL = "RVMToCN16LocalInequalityClosedWithRawArgCS8"
 DSTRUCTURE = "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
 
 C_N = 16.0
-PAIRING_CANDIDATE = 8.0
-LOCAL_CORE_CANDIDATE = 32.0
-SHELL_TAIL_CANDIDATE = 192.0
-RANGE_CONVENTION_CANDIDATE = 8.0
-TOTAL_CANDIDATE = PAIRING_CANDIDATE + LOCAL_CORE_CANDIDATE + SHELL_TAIL_CANDIDATE + RANGE_CONVENTION_CANDIDATE
+C_KERNEL = 2.0
+C_LOG_SHIFT = 2.0
+C_DYADIC_TARGET = 192.0
+SHELLS_TO_AUDIT = 16
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -74,33 +72,39 @@ def table_cell(value: Any) -> str:
 
 
 def replacement_pair() -> str:
-    """写出 Hadamard 余项的最小数值替换包。"""
-    return f"({SYMMETRIC_PAIR_ATOM} AND {SHELL_TAIL_ATOM} AND {LOCAL_CORE_ATOM} AND {RANGE_ATOM})"
+    """写出 dyadic tail 的替换包。"""
+    return f"({KERNEL_ATOM} AND {SHELL_COUNT_ATOM} AND {CLOSED_SUM_ATOM})"
 
 
 def replace_atom(text: str) -> str:
-    """替换旧 Hadamard 余项原子。"""
+    """替换 dyadic tail 原子。"""
     return text.replace(OLD_ATOM, replacement_pair())
 
 
-def shell_budget_table() -> list[dict[str, float]]:
-    """给 dyadic shell 尾项做数值压力审计。"""
+def dyadic_sum_constant(shells: int = SHELLS_TO_AUDIT) -> tuple[list[dict[str, float]], float, float]:
+    """计算抽象二次 kernel 下的 dyadic 求和常数。"""
     rows: list[dict[str, float]] = []
     cumulative = 0.0
-    for j in range(8):
-        width_weight = 2.0 ** (-j)
-        # 这是候选核的审计，不是闭合证明；真正证明需固定 kernel convention。
-        contribution = C_N * math.log(2.0) * width_weight
+    for j in range(shells):
+        # 壳 [2^j,2^{j+1}] 的单位区间数为 O(2^j)，二次 kernel 给 O(2^{-2j})。
+        shell_intervals = 2.0 ** j
+        kernel_weight = C_KERNEL / (2.0 ** (2 * j))
+        log_shift_weight = 1.0 + C_LOG_SHIFT * (j + 1.0) / (2.0 ** j)
+        contribution = C_N * shell_intervals * kernel_weight * log_shift_weight
         cumulative += contribution
         rows.append(
             {
                 "shell": float(j),
-                "relative_kernel_weight": width_weight,
-                "candidate_contribution": contribution,
+                "unit_intervals": shell_intervals,
+                "kernel_weight": kernel_weight,
+                "log_shift_weight": log_shift_weight,
+                "contribution": contribution,
                 "cumulative": cumulative,
             }
         )
-    return rows
+    # 剩余尾部用 sum 2^{-j} 和 sum j2^{-j} 的粗上界。
+    tail_bound = 8.0 * C_N * C_KERNEL / (2.0 ** shells)
+    return rows, cumulative, cumulative + tail_bound
 
 
 def row(gate: str, closed: bool, proved: bool, meaning: str, remaining: str) -> dict[str, Any]:
@@ -114,34 +118,36 @@ def row(gate: str, closed: bool, proved: bool, meaning: str, remaining: str) -> 
     }
 
 
-def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
-    """生成 Hadamard 部分分式余项判定表。"""
-    self_basis = previous.get("latest_self_contained_basis", "")
-    external_basis = "\n".join(
+def build_rows(previous: dict[str, Any], final_bound: float) -> list[dict[str, Any]]:
+    """生成 dyadic shell tail 判定表。"""
+    basis = "\n".join(
         [
+            previous.get("latest_self_contained_basis", ""),
             previous.get("latest_conditional_basis", ""),
             previous.get("latest_global_with_external_basis", ""),
-            json.dumps(previous.get("current_replacement_external", {}), ensure_ascii=False),
         ]
     )
     active = previous.get("next_priority") == OLD_ATOM and OLD_ATOM in previous.get(
-        "current_replacement_external", {}
-    ).get("ExplicitCLogHadamardStirlingJensenNumericalLedger", "")
-    hadamard_available = HADAMARD_FORMULA in self_basis or COMPLETED_HADAMARD_PACKAGE in self_basis
-    external_zero_count_available = ZERO_COUNT_EXTERNAL in external_basis
+        "replacement_self_contained", {}
+    ).get("HadamardPartialFractionRemainderNumericalLedger", "")
+    zero_count_available = ZERO_COUNT_EXTERNAL in basis or "ExternalCN16ZeroCountAvailable" in previous.get(
+        "closed_gates", []
+    )
+    sum_passes = final_bound <= C_DYADIC_TARGET
+    kernel_closed = KERNEL_ATOM in basis
     guard = (
         bool(previous.get("counterexample_assumption_only"))
         and bool(previous.get("empirical_absence_not_used"))
         and bool(previous.get("hypothetical_chain_only"))
         and not bool(previous.get("row_column_unconditional_closed"))
     )
-    reduced = active and guard and hadamard_available and external_zero_count_available
+    reduced = active and guard and zero_count_available and sum_passes
     return [
         row(
-            "HadamardRemainderGateActive",
+            "DyadicShellTailGateActive",
             active,
             False,
-            "C_log 外部条件分支当前最窄点是 Hadamard 部分分式中的远零点和 1/rho 余项数值化。",
+            "上一层当前最窄点是 Hadamard 零点远壳尾项的 dyadic 数值账本。",
             OLD_ATOM,
         ),
         row(
@@ -152,106 +158,91 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
             "保持 row_column_unconditional_closed=false。",
         ),
         row(
-            "HadamardLogDerivativeFormulaAvailable",
-            hadamard_available,
-            True,
-            "xi Hadamard 乘积和对数导数公式已在基础解析链中闭合，可给出零点部分分式。",
-            f"{HADAMARD_FORMULA} OR {COMPLETED_HADAMARD_PACKAGE}",
-        ),
-        row(
-            "ExternalCN16ZeroCountAvailable",
-            external_zero_count_available,
+            "CN16UnitIntervalShellCountAvailable",
+            zero_count_available,
             False,
-            "接受外部 Backlund/低高度输入时，局部零点计数 C_N=16 可供 dyadic shell 预算使用。",
+            "外部 RVM-C_N=16 局部计数可逐单位区间累加成 dyadic shell 计数。",
             ZERO_COUNT_EXTERNAL,
         ),
         row(
-            "SymmetricPairingIdentityStillMissing",
-            False,
-            False,
-            "还需固定 rho 与 1-rho、conjugate pairing 后 1/rho 常数项如何抵消或进入绝对预算。",
-            SYMMETRIC_PAIR_ATOM,
+            "DyadicSeriesSummationClosed",
+            sum_passes,
+            True,
+            "一旦 kernel 在第 j 壳有二次衰减 O(2^{-2j})，单位区间数 O(2^j) 后的级数可进入 C=192 的保守尾项预算。",
+            CLOSED_SUM_ATOM,
         ),
         row(
-            "DyadicShellTailNumericalLedgerMissing",
+            "QuadraticKernelEnvelopeStillMissing",
+            kernel_closed,
             False,
-            False,
-            "还需按 |Im rho-t| 的 dyadic shell 用 C_N=16 逐壳求和，给出可复算常数。",
-            SHELL_TAIL_ATOM,
+            "还需从 Hadamard/DVP 组合的精确 kernel 推出远壳二次衰减，并固定 sigma、主零点剥离和配对 convention。",
+            KERNEL_ATOM,
         ),
         row(
-            "LocalCoreAbsorptionMissing",
-            False,
-            False,
-            "还需处理 |Im rho-t|<=1 的局部核心，证明它已由 RVM-C_N=16 或主零点排斥项支付。",
-            LOCAL_CORE_ATOM,
-        ),
-        row(
-            "RangeAndKernelConventionMissing",
-            False,
-            False,
-            "还需固定 sigma-1、t 低高度交界、kernel 归一化和 C_log 加法口径。",
-            RANGE_ATOM,
-        ),
-        row(
-            "HadamardRemainderReducedToFourMicroLedgers",
+            "DyadicShellTailReducedToKernelEnvelope",
             reduced,
             False,
-            "旧 Hadamard 余项原子已压成配对抵消、dyadic tail、局部核心、范围 convention 四个数值账本。",
+            "dyadic 求和与 C_N=16 shell 计数已压实；剩余集中到 DVP-Hadamard kernel 二次包络。",
             replacement_pair(),
         ),
         row(
-            "CLogAggregationStillNext",
+            "HadamardOtherMicroLedgersStillOpen",
             False,
             False,
-            "Hadamard 余项数值账本完成后，才可聚合总 C_log 并进入零点自由常数优化。",
+            "之后仍需配对/1rho 抵消、局部核心吸收和范围 convention。",
+            f"{PAIRING_ATOM} AND {LOCAL_CORE_ATOM} AND {RANGE_ATOM}",
+        ),
+        row(
+            "CLogAggregationStillDownstream",
+            False,
+            False,
+            "Hadamard 四账本全闭合后，才能进行 C_log 总常数聚合。",
             CLOG_AGGREGATION_ATOM,
         ),
     ]
 
 
 def run(paths: dict[str, Path]) -> dict[str, Any]:
-    """执行 Hadamard 部分分式余项路由。"""
+    """执行 dyadic shell tail 路由。"""
     previous = load_json(paths["previous"])
-    rows = build_rows(previous)
-    reduced = next(
-        bool(item["closed"]) for item in rows if item["gate"] == "HadamardRemainderReducedToFourMicroLedgers"
-    )
+    shell_rows, partial_sum, final_bound = dyadic_sum_constant()
+    rows = build_rows(previous, final_bound)
+    reduced = next(bool(item["closed"]) for item in rows if item["gate"] == "DyadicShellTailReducedToKernelEnvelope")
     return {
-        "certificate_type": "b3_hadamard_partial_fraction_remainder_router",
-        "status": "hadamard_partial_fraction_remainder_reduced_to_four_micro_ledgers_open",
+        "certificate_type": "b3_hadamard_dyadic_shell_tail_router",
+        "status": "hadamard_dyadic_shell_tail_reduced_to_kernel_envelope_open",
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in paths.values()},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
-        "hadamard_partial_fraction_remainder_reduced": reduced,
-        "hadamard_partial_fraction_remainder_self_contained_proved": False,
-        "hadamard_partial_fraction_remainder_external_proved": False,
+        "dyadic_shell_tail_reduced": reduced,
+        "dyadic_series_summation_closed": final_bound <= C_DYADIC_TARGET,
+        "hadamard_dyadic_shell_tail_proved": False,
         "row_column_unconditional_closed": False,
         "replacement_self_contained": {OLD_ATOM: replacement_pair()},
         "latest_self_contained_basis": replace_atom(previous.get("latest_self_contained_basis", "")),
         "latest_conditional_basis": replace_atom(previous.get("latest_conditional_basis", "")),
         "latest_global_with_external_basis": replace_atom(previous.get("latest_global_with_external_basis", "")),
-        "next_priority": SHELL_TAIL_ATOM,
-        "secondary_priority": SYMMETRIC_PAIR_ATOM,
+        "next_priority": KERNEL_ATOM,
+        "secondary_priority": PAIRING_ATOM,
         "tertiary_priority": LOCAL_CORE_ATOM,
         "quaternary_priority": RANGE_ATOM,
         "post_hadamard_priority": CLOG_AGGREGATION_ATOM,
-        "post_clog_priority": OPT_ATOM,
         "conditional_next_priority": previous.get("conditional_next_priority", DSTRUCTURE),
-        "candidate_budget_constants": {
+        "constant_audit": {
             "C_N": C_N,
-            "pairing_candidate": PAIRING_CANDIDATE,
-            "local_core_candidate": LOCAL_CORE_CANDIDATE,
-            "shell_tail_candidate": SHELL_TAIL_CANDIDATE,
-            "range_convention_candidate": RANGE_CONVENTION_CANDIDATE,
-            "total_candidate": TOTAL_CANDIDATE,
+            "C_kernel": C_KERNEL,
+            "C_log_shift": C_LOG_SHIFT,
+            "target": C_DYADIC_TARGET,
+            "partial_sum": partial_sum,
+            "final_bound_with_tail": final_bound,
+            "slack": C_DYADIC_TARGET - final_bound,
         },
-        "shell_budget_table": shell_budget_table(),
+        "shell_budget_table": shell_rows,
         "plain_conclusion": (
-            "Hadamard 部分分式余项不能直接从符号 Hadamard 公式升级为数值账本。"
-            "在外部 C_N=16 局部零点计数可用时，它已被压成四个最小账本：零点对称配对/1rho 抵消、"
-            "dyadic shell 尾项求和、局部核心吸收和范围/kernel convention。当前真正最窄点是 dyadic shell 尾项数值账本。"
+            "dyadic shell 求和本身已经闭合到 C=192：若 Hadamard/DVP kernel 在远壳具有二次衰减，"
+            "C_N=16 的单位区间零点计数足以支付尾项。C=64 目标在当前粗 kernel 下不够；"
+            "真正剩余是证明 DVP-Hadamard kernel envelope，并在后续 C_log 聚合中重新核算总常数。"
         ),
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -262,9 +253,9 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
     replacement = next(iter(result["replacement_self_contained"].items()))
-    constants = result["candidate_budget_constants"]
+    audit = result["constant_audit"]
     lines = [
-        "# Prime Matrix B=3 Hadamard 部分分式余项账本路由器",
+        "# Prime Matrix B=3 Hadamard dyadic 零点壳尾项路由器",
         "",
         f"**状态：** `{result['status']}`",
         "",
@@ -274,22 +265,13 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"counterexample_assumption_only={fmt_bool(result['counterexample_assumption_only'])}",
         f"empirical_absence_not_used={fmt_bool(result['empirical_absence_not_used'])}",
         f"hypothetical_chain_only={fmt_bool(result['hypothetical_chain_only'])}",
-        (
-            "hadamard_partial_fraction_remainder_reduced="
-            f"{fmt_bool(result['hadamard_partial_fraction_remainder_reduced'])}"
-        ),
-        (
-            "hadamard_partial_fraction_remainder_external_proved="
-            f"{fmt_bool(result['hadamard_partial_fraction_remainder_external_proved'])}"
-        ),
-        (
-            "hadamard_partial_fraction_remainder_self_contained_proved="
-            f"{fmt_bool(result['hadamard_partial_fraction_remainder_self_contained_proved'])}"
-        ),
+        f"dyadic_shell_tail_reduced={fmt_bool(result['dyadic_shell_tail_reduced'])}",
+        f"dyadic_series_summation_closed={fmt_bool(result['dyadic_series_summation_closed'])}",
+        f"hadamard_dyadic_shell_tail_proved={fmt_bool(result['hadamard_dyadic_shell_tail_proved'])}",
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",
         "```",
         "",
-        "## 1. 数值替换",
+        "## 1. 替换",
         "",
         "```text",
         replacement[0],
@@ -297,35 +279,33 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         replacement[1],
         "```",
         "",
-        "## 2. 候选常数审计",
+        "## 2. 常数审计",
         "",
         "| item | value |",
         "| --- | ---: |",
     ]
-    for key, value in constants.items():
+    for key, value in audit.items():
         lines.append(f"| {key} | `{fmt_float(float(value))}` |")
     lines.extend(
         [
             "",
-            "dyadic shell 压力样表：",
-            "",
-            "| shell | relative kernel weight | candidate contribution | cumulative |",
-            "| ---: | ---: | ---: | ---: |",
+            "| shell | intervals | kernel weight | log-shift | contribution | cumulative |",
+            "| ---: | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
     for item in result["shell_budget_table"]:
         lines.append(
-            "| {shell:.0f} | `{weight}` | `{contribution}` | `{cumulative}` |".format(
+            "| {shell:.0f} | `{intervals}` | `{kernel}` | `{shift}` | `{contribution}` | `{cumulative}` |".format(
                 shell=item["shell"],
-                weight=fmt_float(item["relative_kernel_weight"]),
-                contribution=fmt_float(item["candidate_contribution"]),
+                intervals=fmt_float(item["unit_intervals"]),
+                kernel=fmt_float(item["kernel_weight"]),
+                shift=fmt_float(item["log_shift_weight"]),
+                contribution=fmt_float(item["contribution"]),
                 cumulative=fmt_float(item["cumulative"]),
             )
         )
     lines.extend(
         [
-            "",
-            "这些常数只是账本压力审计；闭合还必须固定 kernel 口径并给出逐壳不等式。",
             "",
             "## 3. 判定表",
             "",

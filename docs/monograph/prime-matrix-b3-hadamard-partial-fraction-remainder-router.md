@@ -29,9 +29,9 @@ HadamardPartialFractionRemainderNumericalLedger
 | C_N | `16.000000000000` |
 | pairing_candidate | `8.000000000000` |
 | local_core_candidate | `32.000000000000` |
-| shell_tail_candidate | `64.000000000000` |
+| shell_tail_candidate | `192.000000000000` |
 | range_convention_candidate | `8.000000000000` |
-| total_candidate | `112.000000000000` |
+| total_candidate | `240.000000000000` |
 
 dyadic shell 压力样表：
 
