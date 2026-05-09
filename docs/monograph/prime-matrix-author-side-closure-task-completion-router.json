@@ -1,0 +1,166 @@
+{
+  "author_side_completable_tasks_done": true,
+  "certificate_type": "prime_matrix_author_side_closure_task_completion_router",
+  "conditional_external_kls_theorem_completed": true,
+  "final_referee_gate_open": true,
+  "highest_valid_author_side_claim": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance => row/column theorem",
+  "non_author_remaining_obligation": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "作者侧可合法完成的条件闭合链已经完成；仍未完成的是最终独立晋级门接受，它不是作者侧可生成的证明步骤。若坚持完全自足，还另需新增 full-S 替代证明和自足替代晋级证明包。",
+  "remaining_author_side_targets_not_fully_completed": [
+    {
+      "author_can_complete": true,
+      "author_completed": false,
+      "evidence": "endpoint verdict: NewFullSTheoremInput or NewFullSNonAPSourceAntiAtomTheoremInput",
+      "final_action": "不属于外部 KLS 合同版剩余；若坚持自足版，需新增深定理证明替代外部 KLS。",
+      "name": "完全自足 full-S 替代证明",
+      "required_for": "完全自足无黑箱闭合",
+      "status": "optional_open_for_self_contained_version",
+      "theorem_promotion_completed": false
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": false,
+      "evidence": "irreducibility router legal next move: replace the gate by a new fully self-contained proof package",
+      "final_action": "需把 DStructure/AB、Tail-log4/BG-RKS、finite verification、Rankin 全部升级为无需外审门的自足定理包。",
+      "name": "作者侧完全自足替代晋级证明",
+      "required_for": "不依赖独立验收事件的自足闭合",
+      "status": "open_new_proof_package_required",
+      "theorem_promotion_completed": false
+    }
+  ],
+  "remaining_non_author_targets": [
+    {
+      "author_can_complete": false,
+      "author_completed": false,
+      "evidence": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "final_action": "只能由显式独立接受关闭，或由全新自足证明包替换该门。",
+      "name": "最终独立晋级门接受",
+      "required_for": "外部 KLS 合同版无条件闭合",
+      "status": "not_author_completable_referee_event_open",
+      "theorem_promotion_completed": false
+    },
+    {
+      "author_can_complete": false,
+      "author_completed": false,
+      "evidence": "final proof logic chain step 7",
+      "final_action": "在独立晋级门未接受或未被新自足证明替换前，必须保持 false。",
+      "name": "最终无条件命题晋级",
+      "required_for": "完整行/列命题无条件闭合",
+      "status": "blocked_by_final_independent_gate",
+      "theorem_promotion_completed": false
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "self_contained_replacement_tasks_open": true,
+  "source_hashes": {
+    "docs/monograph/line-by-line-internal-referee-matrix.md": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "6947dfe0e210608ca136303c7a7dab2d288aaec7525e909944cbf91e3cac0de8",
+    "docs/monograph/prime-matrix-final-promotion-subgate-direct-attack-router.json": "3f3cbe2622c3f0ab62408232401998185ca749aa6b2fde2f6f7f1d808dd4b105",
+    "docs/monograph/prime-matrix-final-proof-logic-chain-status-router.json": "e68919c51ec4d75745d246b72aab08eb8d0ae9a5564a923f22270aff240f50ca",
+    "docs/monograph/prime-matrix-final-single-gate-closure-decision-router.json": "fa3461739f8503a72451751c3f1c2a7245c569baed17d86caf5fb0cdd3ef677a",
+    "script": "1f0cd39fd55d422aa98461e0402be85aec0933330d663545dc216b3aa328e468"
+  },
+  "status": "author_side_conditional_chain_complete_final_referee_gate_open",
+  "tasks": [
+    {
+      "author_can_complete": true,
+      "author_completed": true,
+      "evidence": "final proof logic chain step 1",
+      "final_action": "保持只在假设反例链条内推理，不用真实样本缺席。",
+      "name": "反例链纪律",
+      "required_for": "条件闭合与自足闭合共同前提",
+      "status": "completed",
+      "theorem_promotion_completed": true
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": true,
+      "evidence": "closure atlas + endpoint boundary",
+      "final_action": "不再回到无名分支，只攻命名输入。",
+      "name": "无隐藏终端图谱",
+      "required_for": "条件闭合与自足闭合共同前提",
+      "status": "completed",
+      "theorem_promotion_completed": true
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": true,
+      "evidence": "AcceptFullSKLSExtExternalContract",
+      "final_action": "若接受外部合同，本线已闭合；若要求完全自足，则必须另证 full-S 定理。",
+      "name": "外部 FullS-KLS 数学线",
+      "required_for": "外部合同版闭合",
+      "status": "completed_as_external_contract",
+      "theorem_promotion_completed": true
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": false,
+      "evidence": "endpoint verdict: NewFullSTheoremInput or NewFullSNonAPSourceAntiAtomTheoremInput",
+      "final_action": "不属于外部 KLS 合同版剩余；若坚持自足版，需新增深定理证明替代外部 KLS。",
+      "name": "完全自足 full-S 替代证明",
+      "required_for": "完全自足无黑箱闭合",
+      "status": "optional_open_for_self_contained_version",
+      "theorem_promotion_completed": false
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": true,
+      "evidence": "final promotion subgate + irreducibility router",
+      "final_action": "作者侧已完成可审查证据包；仍需独立接受才可晋级定理。",
+      "name": "DStructure/Tail-log4/finite Rankin 作者侧证据包",
+      "required_for": "最终晋级门验收",
+      "status": "author_packet_sealed_referee_acceptance_open",
+      "theorem_promotion_completed": false
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": true,
+      "evidence": "line-by-line internal referee matrix",
+      "final_action": "保持 PM-16 为 BLOCK-REFEREE，除非独立接受真实发生。",
+      "name": "不偷换纪律",
+      "required_for": "防止条件闭合误报为无条件闭合",
+      "status": "completed",
+      "theorem_promotion_completed": true
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": true,
+      "evidence": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "final_action": "可声明条件定理；不能删去条件。",
+      "name": "条件行/列定理",
+      "required_for": "当前可合法声明的最高版本",
+      "status": "completed_conditional_theorem",
+      "theorem_promotion_completed": true
+    },
+    {
+      "author_can_complete": false,
+      "author_completed": false,
+      "evidence": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "final_action": "只能由显式独立接受关闭，或由全新自足证明包替换该门。",
+      "name": "最终独立晋级门接受",
+      "required_for": "外部 KLS 合同版无条件闭合",
+      "status": "not_author_completable_referee_event_open",
+      "theorem_promotion_completed": false
+    },
+    {
+      "author_can_complete": true,
+      "author_completed": false,
+      "evidence": "irreducibility router legal next move: replace the gate by a new fully self-contained proof package",
+      "final_action": "需把 DStructure/AB、Tail-log4/BG-RKS、finite verification、Rankin 全部升级为无需外审门的自足定理包。",
+      "name": "作者侧完全自足替代晋级证明",
+      "required_for": "不依赖独立验收事件的自足闭合",
+      "status": "open_new_proof_package_required",
+      "theorem_promotion_completed": false
+    },
+    {
+      "author_can_complete": false,
+      "author_completed": false,
+      "evidence": "final proof logic chain step 7",
+      "final_action": "在独立晋级门未接受或未被新自足证明替换前，必须保持 false。",
+      "name": "最终无条件命题晋级",
+      "required_for": "完整行/列命题无条件闭合",
+      "status": "blocked_by_final_independent_gate",
+      "theorem_promotion_completed": false
+    }
+  ]
+}
