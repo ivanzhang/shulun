@@ -131,7 +131,19 @@
 - **用于**：把 `BacklundZeroProximityIndentationCostLedger` 替换为
   `ClassicalBacklundZeroIndentationCostExternalAccepted`，即接受经典 Backlund
   零点避让/缩进 convention 不额外产生本文 `C_S=8` 预算之外的正比例 jump 成本。
+- **内部化后的精确微输入**：
+  `BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger`。当前文内已把经典
+  Backlund 缩进成本压成高幂辅助函数
+  `B_{T,theta,N}(z)=1/2(e^{-iNtheta}xi(z+iT)^N+e^{iNtheta}xi(z-iT)^N)`
+  的对称高度 `max` 溢价不等式。外部 Backlund 引理若被接受，等价于接受该
+  对称 max/高幂 Jensen 常数包；严格自足版则必须在文内证明该溢价的 log 系数
+  不超过 `16 log(4/sqrt(5))-7 = 2.305206478445...`。
 - **对应链条**：
+  `BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger`
+  `=> BacklundHighPowerAuxiliarySignedMeanC16AggregationLedger`
+  `=> BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger`
+  `=> ClassicalBacklundZeroIndentationCostInternalProofLedger`
+  或引用
   `ClassicalBacklundZeroIndentationCostExternalAccepted`
   `=> BacklundCS8SlackAfterBridgeClosedTightHalf`
   `=> EndpointZeroAvoidanceMultiplicityConventionClosedByLimit`
