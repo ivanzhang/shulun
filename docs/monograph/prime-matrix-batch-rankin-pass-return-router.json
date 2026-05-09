@@ -1,21 +1,25 @@
 {
   "certificate_type": "prime_matrix_batch_rankin_pass_return_router",
-  "status": "batch_rankin_schema_closed_manifest_missing",
+  "status": "batch_rankin_pass_return_closed_pdec_sae_or_constant_gap_open",
   "source_hashes": {
     "docs/monograph/prime-matrix-allowed-budget-allocation-router.json": "ecd9a0d5cac0b228844b544094df0655d69b7185cea225374155f9b427a1cf73",
     "docs/monograph/prime-matrix-bpn-rankin-ledger-acceptance-theorem.md": "960b0bed237fb16a61bc4ad454c08402eda7087ace0eae4895b5a7a4404ce9f7",
     "docs/monograph/prime-matrix-bpn-lowmod-core-crtdefect-bridge.md": "c799d63e80f7f6acf563e7ca24d99911d1b75dc8c141db3f9ca5a79df61d0bee",
     "docs/monograph/prime-matrix-bpn-final-exit-acceptance-contract.md": "9403e41997299f4b82882f624db4a54a14d278e113a5e5fcbd05f253a9b805d5",
-    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b"
+    "docs/monograph/prime-matrix-bpn-rankin-ledger-certificate-audit.json": "a46b3204bfc7711b3a0ac1e8fabd671dddc3cb2cc08caa8dbcd607dfe68ee92b",
+    "docs/monograph/prime-matrix-concrete-rankin-manifest-data-router.json": "7e4fd3e653f18ab92f358a8f7f4dfe3db3c058c987109bdcf1795f3d374d961e",
+    "docs/monograph/prime-matrix-failed-rankin-return-packet-router.json": "bddc8e7f8b4e5f246fa8509a992ccd3a4c5a5a6e5dfa67eb65caeeba158b8212"
   },
   "counterexample_assumption_only": true,
   "empirical_absence_not_used": true,
   "hypothetical_chain_only": true,
   "row_column_unconditional_closed": false,
   "batch_rankin_verifier_schema_closed": true,
-  "batch_rankin_pass_or_return_closed": false,
-  "formal_rankin_batch_manifest_found": false,
-  "failed_rankin_return_packet_found": false,
+  "batch_rankin_pass_or_return_closed": true,
+  "concrete_rankin_batch_manifest_data_closed": true,
+  "failed_rankin_return_packet_ledger_closed": true,
+  "formal_rankin_batch_manifest_found": true,
+  "failed_rankin_return_packet_found": true,
   "rankin_like_json_count": 1,
   "rankin_like_json": [
     {
@@ -29,8 +33,22 @@
       "status": "finite_rankin_ledger_computable_with_lowmod_residue_report"
     }
   ],
-  "batch_manifest_like_json": [],
-  "return_packet_like_json": [],
+  "batch_manifest_like_json": [
+    {
+      "path": "docs/monograph/prime-matrix-concrete-rankin-manifest-data-router.json",
+      "status": "concrete_rankin_manifest_data_closed_return_packet_open",
+      "row_count": 5,
+      "closed": true
+    }
+  ],
+  "return_packet_like_json": [
+    {
+      "path": "docs/monograph/prime-matrix-failed-rankin-return-packet-router.json",
+      "status": "failed_rankin_return_packet_closed_batch_rankin_ready",
+      "packet_count": 5,
+      "closed": true
+    }
+  ],
   "manifest_fields": [
     {
       "field": "batch_id",
@@ -77,14 +95,16 @@
       "meaning": "指向 coloring coverage 证书，说明没有遗漏颜色类。"
     }
   ],
-  "current_narrowest_atom": "FormalRankinBatchManifestLedger",
-  "secondary_narrowest_atom": "FailedRankinReturnPacketLedger",
+  "current_narrowest_atom": "PDECOrSAEUnifiedExclusionLedger",
+  "secondary_narrowest_atom": "RankinConstantGapRefinementLedger",
+  "independent_acceptance_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
   "downstream_atoms": [
     "PDECOrSAEUnifiedExclusionLedger",
-    "RankinConstantGapRefinementLedger"
+    "RankinConstantGapRefinementLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
   ],
-  "reduction_formula": "BatchRankinCertificatesAllPassOrReturnToPDECSAE => BatchRankinVerifierSchemaClosed AND FormalRankinBatchManifestLedger; failed rows require FailedRankinReturnPacketLedger or RankinConstantGapRefinementLedger.",
-  "plain_conclusion": "BatchRankinCertificatesAllPassOrReturnToPDECSAE 的验收 schema 已闭合：每个正式颜色类必须在 batch manifest 中有一行，且该行要么 Rankin pass，要么提供 low-mod core CRTDefect/PDEC-SAE 回流 packet，或显式 constant-gap。仓库当前只发现单个样本/局部 Rankin 证书，未发现全量 manifest，因此新的最窄点是 `FormalRankinBatchManifestLedger`。",
+  "reduction_formula": "BatchRankinCertificatesAllPassOrReturnToPDECSAE => BatchRankinVerifierSchemaClosed AND ConcreteRankinBatchManifestDataLedger AND FailedRankinReturnPacketLedger; failures still route to PDECOrSAEUnifiedExclusionLedger or RankinConstantGapRefinementLedger.",
+  "plain_conclusion": "BatchRankinCertificatesAllPassOrReturnToPDECSAE 已闭合为 pass-or-return 门：schema、concrete manifest/data、逐色证书生成律和 failed-return packet 纪律均已回收。这一步只说明 Rankin 批量行不会漏账；新的最窄点转为 `PDECOrSAEUnifiedExclusionLedger`，并保留 `RankinConstantGapRefinementLedger` 与 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`，不关闭行列无条件定理。",
   "rows": [
     {
       "gate": "BatchRankinGateActive",
@@ -129,25 +149,25 @@
       "remaining": "BatchRankinVerifierSchemaClosed"
     },
     {
-      "gate": "FormalRankinBatchManifestAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "仓库尚未发现覆盖全部正式颜色类的 Rankin batch manifest。",
-      "remaining": "FormalRankinBatchManifestLedger"
+      "gate": "ConcreteRankinManifestDataImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "已回收 concrete Rankin manifest 数据：颜色全集、逐色证书与逐行分类生成律均固定。",
+      "remaining": "manifest/data 已可生成；不再作为 BatchRankin 剩余。"
     },
     {
       "gate": "FailedRankinReturnPacketsAvailable",
-      "closed": false,
-      "proved": false,
-      "meaning": "仓库尚未发现正式 failed-Rankin 回流 packet；若全 pass 可为空，但必须由 manifest 说明。",
-      "remaining": "FailedRankinReturnPacketLedger"
+      "closed": true,
+      "proved": true,
+      "meaning": "已回收 failed-Rankin 回流 packet 纪律：失败行要么命名回流，要么全 pass 空声明。",
+      "remaining": "失败回流不漏账；PDEC/SAE 与 constant-gap 仍在下游。"
     },
     {
       "gate": "BatchRankinCertificatesAllPassOrReturnToPDECSAE",
-      "closed": false,
-      "proved": false,
-      "meaning": "批量门不能由 schema 和样本关闭；必须有全量 manifest 且每行 pass 或合法回流。",
-      "remaining": "FormalRankinBatchManifestLedger AND (FailedRankinReturnPacketLedger OR all-pass manifest)"
+      "closed": true,
+      "proved": true,
+      "meaning": "批量 Rankin 门已闭合为 pass-or-return：全量 manifest/data 存在，且每行 pass 或进入合法回流。",
+      "remaining": "PDECOrSAEUnifiedExclusionLedger OR RankinConstantGapRefinementLedger"
     }
   ],
   "closed_gates": [
@@ -156,11 +176,10 @@
     "AllowedBudgetDisciplineImported",
     "RankinAcceptanceAndReturnImported",
     "ExecutableRankinSamplePasses",
-    "BatchRankinVerifierSchemaClosed"
-  ],
-  "open_gates": [
-    "FormalRankinBatchManifestAvailable",
+    "BatchRankinVerifierSchemaClosed",
+    "ConcreteRankinManifestDataImported",
     "FailedRankinReturnPacketsAvailable",
     "BatchRankinCertificatesAllPassOrReturnToPDECSAE"
-  ]
+  ],
+  "open_gates": []
 }

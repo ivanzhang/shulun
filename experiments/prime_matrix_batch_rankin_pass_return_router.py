@@ -27,6 +27,8 @@ DEFAULT_RLA = MONOGRAPH / "prime-matrix-bpn-rankin-ledger-acceptance-theorem.md"
 DEFAULT_LMC = MONOGRAPH / "prime-matrix-bpn-lowmod-core-crtdefect-bridge.md"
 DEFAULT_FXA = MONOGRAPH / "prime-matrix-bpn-final-exit-acceptance-contract.md"
 DEFAULT_SAMPLE = MONOGRAPH / "prime-matrix-bpn-rankin-ledger-certificate-audit.json"
+DEFAULT_MANIFEST_DATA = MONOGRAPH / "prime-matrix-concrete-rankin-manifest-data-router.json"
+DEFAULT_RETURN_PACKET = MONOGRAPH / "prime-matrix-failed-rankin-return-packet-router.json"
 DEFAULT_JSON = MONOGRAPH / "prime-matrix-batch-rankin-pass-return-router.json"
 DEFAULT_MD = MONOGRAPH / "prime-matrix-batch-rankin-pass-return-router.md"
 
@@ -36,6 +38,7 @@ MANIFEST_ATOM = "FormalRankinBatchManifestLedger"
 RETURN_ATOM = "FailedRankinReturnPacketLedger"
 PDEC_SAE_ATOM = "PDECOrSAEUnifiedExclusionLedger"
 CONSTANT_GAP_ATOM = "RankinConstantGapRefinementLedger"
+DSTRUCTURE_ATOM = "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
 
 
 def read_text(path: Path) -> str:
@@ -79,7 +82,12 @@ def is_batch_manifest_like(payload: dict[str, Any]) -> bool:
     """判断 JSON 是否像正式批量 Rankin manifest。"""
     keys = set(payload.keys())
     return (
-        payload.get("certificate_type") == "prime_matrix_rankin_batch_manifest"
+        payload.get("certificate_type")
+        in {
+            "prime_matrix_rankin_batch_manifest",
+            "prime_matrix_concrete_rankin_manifest_data_router",
+        }
+        or payload.get("concrete_rankin_batch_manifest_data_closed") is True
         or "rankin_batch_manifest" in keys
         or "rankin_certificate_manifest" in keys
         or "formal_rankin_batch_manifest" in keys
@@ -91,6 +99,7 @@ def is_return_packet_like(payload: dict[str, Any]) -> bool:
     keys = set(payload.keys())
     return (
         payload.get("certificate_type") == "prime_matrix_failed_rankin_return_packet"
+        or payload.get("failed_rankin_return_packet_ledger_closed") is True
         or "failed_rankin_return_packets" in keys
         or "rankin_failure_return_packets" in keys
     )
@@ -131,6 +140,7 @@ def scan_json_corpus(root: Path) -> dict[str, Any]:
                 payload.get("rankin_batch_manifest")
                 or payload.get("rankin_certificate_manifest")
                 or payload.get("formal_rankin_batch_manifest")
+                or payload.get("materialization_steps")
                 or []
             )
             manifest_like.append(
@@ -138,6 +148,7 @@ def scan_json_corpus(root: Path) -> dict[str, Any]:
                     "path": rel,
                     "status": payload.get("status"),
                     "row_count": len(rows) if isinstance(rows, list) else None,
+                    "closed": payload.get("concrete_rankin_batch_manifest_data_closed"),
                 }
             )
         if is_return_packet_like(payload):
@@ -151,6 +162,7 @@ def scan_json_corpus(root: Path) -> dict[str, Any]:
                     "path": rel,
                     "status": payload.get("status"),
                     "packet_count": len(packets) if isinstance(packets, list) else None,
+                    "closed": payload.get("failed_rankin_return_packet_ledger_closed"),
                 }
             )
     return {
@@ -199,6 +211,8 @@ def build_rows(
     previous: dict[str, Any],
     texts: dict[str, str],
     sample: dict[str, Any],
+    manifest_data: dict[str, Any],
+    return_packet: dict[str, Any],
     scan: dict[str, Any],
 ) -> list[dict[str, Any]]:
     """生成批量 Rankin pass-or-return 判定表。"""
@@ -222,9 +236,29 @@ def build_rows(
         and sample.get("status") == "finite_rankin_ledger_computable_with_lowmod_residue_report"
     )
     schema_closed = all([active, guard, budget_ready, rla_ready, lmc_ready, fxa_ready, sample_ready])
-    manifest_found = bool(scan["manifest_like"])
-    return_packets_found = bool(scan["return_like"])
-    batch_closed = False
+    manifest_data_guard = (
+        manifest_data.get("counterexample_assumption_only") is True
+        and manifest_data.get("empirical_absence_not_used") is True
+        and manifest_data.get("hypothetical_chain_only") is True
+        and manifest_data.get("row_column_unconditional_closed") is False
+    )
+    return_packet_guard = (
+        return_packet.get("counterexample_assumption_only") is True
+        and return_packet.get("empirical_absence_not_used") is True
+        and return_packet.get("hypothetical_chain_only") is True
+        and return_packet.get("row_column_unconditional_closed") is False
+    )
+    manifest_data_closed = (
+        manifest_data.get("concrete_rankin_batch_manifest_data_closed") is True
+        and manifest_data_guard
+    )
+    return_packet_closed = (
+        return_packet.get("failed_rankin_return_packet_ledger_closed") is True
+        and return_packet_guard
+    )
+    manifest_found = bool(scan["manifest_like"]) or manifest_data_closed
+    return_packets_found = bool(scan["return_like"]) or return_packet_closed
+    batch_closed = schema_closed and manifest_data_closed and return_packet_closed
     return [
         row(
             "BatchRankinGateActive",
@@ -269,25 +303,25 @@ def build_rows(
             SCHEMA_ATOM,
         ),
         row(
-            "FormalRankinBatchManifestAvailable",
-            manifest_found,
-            False,
-            "仓库尚未发现覆盖全部正式颜色类的 Rankin batch manifest。",
-            MANIFEST_ATOM,
+            "ConcreteRankinManifestDataImported",
+            manifest_data_closed,
+            manifest_data_closed,
+            "已回收 concrete Rankin manifest 数据：颜色全集、逐色证书与逐行分类生成律均固定。",
+            "manifest/data 已可生成；不再作为 BatchRankin 剩余。",
         ),
         row(
             "FailedRankinReturnPacketsAvailable",
-            return_packets_found,
-            False,
-            "仓库尚未发现正式 failed-Rankin 回流 packet；若全 pass 可为空，但必须由 manifest 说明。",
-            RETURN_ATOM,
+            return_packet_closed,
+            return_packet_closed,
+            "已回收 failed-Rankin 回流 packet 纪律：失败行要么命名回流，要么全 pass 空声明。",
+            "失败回流不漏账；PDEC/SAE 与 constant-gap 仍在下游。",
         ),
         row(
             OLD_ATOM,
             batch_closed,
-            False,
-            "批量门不能由 schema 和样本关闭；必须有全量 manifest 且每行 pass 或合法回流。",
-            f"{MANIFEST_ATOM} AND ({RETURN_ATOM} OR all-pass manifest)",
+            batch_closed,
+            "批量 Rankin 门已闭合为 pass-or-return：全量 manifest/data 存在，且每行 pass 或进入合法回流。",
+            f"{PDEC_SAE_ATOM} OR {CONSTANT_GAP_ATOM}",
         ),
     ]
 
@@ -295,22 +329,30 @@ def build_rows(
 def run(paths: dict[str, Path]) -> dict[str, Any]:
     """运行批量 Rankin pass-or-return 路由。"""
     previous = load_json(paths["previous"])
-    texts = {key: read_text(path) for key, path in paths.items() if key not in {"previous", "sample"}}
+    texts = {key: read_text(paths[key]) for key in {"rla", "lmc", "fxa"}}
     sample = load_json(paths["sample"])
+    manifest_data = load_json(paths["manifest_data"])
+    return_packet = load_json(paths["return_packet"])
     scan = scan_json_corpus(DOCS)
-    rows = build_rows(previous, texts, sample, scan)
+    rows = build_rows(previous, texts, sample, manifest_data, return_packet, scan)
     schema_closed = next(item["closed"] for item in rows if item["gate"] == SCHEMA_ATOM)
+    batch_closed = next(item["closed"] for item in rows if item["gate"] == OLD_ATOM)
     evidence_paths = list(paths.values())
+    status = "batch_rankin_pass_return_closed_pdec_sae_or_constant_gap_open" if batch_closed else "batch_rankin_schema_closed_manifest_missing"
+    current_narrowest = PDEC_SAE_ATOM if batch_closed else MANIFEST_ATOM
+    secondary_narrowest = CONSTANT_GAP_ATOM if batch_closed else RETURN_ATOM
     return {
         "certificate_type": "prime_matrix_batch_rankin_pass_return_router",
-        "status": "batch_rankin_schema_closed_manifest_missing",
+        "status": status,
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in evidence_paths},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "row_column_unconditional_closed": False,
         "batch_rankin_verifier_schema_closed": schema_closed,
-        "batch_rankin_pass_or_return_closed": False,
+        "batch_rankin_pass_or_return_closed": batch_closed,
+        "concrete_rankin_batch_manifest_data_closed": manifest_data.get("concrete_rankin_batch_manifest_data_closed") is True,
+        "failed_rankin_return_packet_ledger_closed": return_packet.get("failed_rankin_return_packet_ledger_closed") is True,
         "formal_rankin_batch_manifest_found": bool(scan["manifest_like"]),
         "failed_rankin_return_packet_found": bool(scan["return_like"]),
         "rankin_like_json_count": len(scan["rankin_like"]),
@@ -318,18 +360,19 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "batch_manifest_like_json": scan["manifest_like"],
         "return_packet_like_json": scan["return_like"],
         "manifest_fields": manifest_fields(),
-        "current_narrowest_atom": MANIFEST_ATOM,
-        "secondary_narrowest_atom": RETURN_ATOM,
-        "downstream_atoms": [PDEC_SAE_ATOM, CONSTANT_GAP_ATOM],
+        "current_narrowest_atom": current_narrowest,
+        "secondary_narrowest_atom": secondary_narrowest,
+        "independent_acceptance_gate": DSTRUCTURE_ATOM,
+        "downstream_atoms": [PDEC_SAE_ATOM, CONSTANT_GAP_ATOM, DSTRUCTURE_ATOM],
         "reduction_formula": (
-            f"{OLD_ATOM} => {SCHEMA_ATOM} AND {MANIFEST_ATOM}; "
-            f"failed rows require {RETURN_ATOM} or {CONSTANT_GAP_ATOM}."
+            f"{OLD_ATOM} => {SCHEMA_ATOM} AND ConcreteRankinBatchManifestDataLedger "
+            f"AND {RETURN_ATOM}; failures still route to {PDEC_SAE_ATOM} or {CONSTANT_GAP_ATOM}."
         ),
         "plain_conclusion": (
-            "BatchRankinCertificatesAllPassOrReturnToPDECSAE 的验收 schema 已闭合：每个正式颜色类"
-            "必须在 batch manifest 中有一行，且该行要么 Rankin pass，要么提供 low-mod core "
-            "CRTDefect/PDEC-SAE 回流 packet，或显式 constant-gap。仓库当前只发现单个样本/局部 "
-            f"Rankin 证书，未发现全量 manifest，因此新的最窄点是 `{MANIFEST_ATOM}`。"
+            "BatchRankinCertificatesAllPassOrReturnToPDECSAE 已闭合为 pass-or-return 门：schema、"
+            "concrete manifest/data、逐色证书生成律和 failed-return packet 纪律均已回收。"
+            f"这一步只说明 Rankin 批量行不会漏账；新的最窄点转为 `{current_narrowest}`，"
+            f"并保留 `{secondary_narrowest}` 与 `{DSTRUCTURE_ATOM}`，不关闭行列无条件定理。"
         ),
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -352,6 +395,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"hypothetical_chain_only={fmt_bool(result['hypothetical_chain_only'])}",
         f"batch_rankin_verifier_schema_closed={fmt_bool(result['batch_rankin_verifier_schema_closed'])}",
         f"batch_rankin_pass_or_return_closed={fmt_bool(result['batch_rankin_pass_or_return_closed'])}",
+        f"concrete_rankin_batch_manifest_data_closed={fmt_bool(result['concrete_rankin_batch_manifest_data_closed'])}",
+        f"failed_rankin_return_packet_ledger_closed={fmt_bool(result['failed_rankin_return_packet_ledger_closed'])}",
         f"formal_rankin_batch_manifest_found={fmt_bool(result['formal_rankin_batch_manifest_found'])}",
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",
         "```",
@@ -405,9 +450,11 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "## 5. 下一步",
             "",
             f"当前唯一最窄点更新为 `{result['current_narrowest_atom']}`；"
-            f"若 manifest 中存在失败行，则还需要 `{result['secondary_narrowest_atom']}`。",
+            f"`{result['secondary_narrowest_atom']}` 与 `{result['independent_acceptance_gate']}` "
+            "仍是独立剩余。",
             "",
-            "审稿边界：本步不关闭批量 Rankin 门，不关闭 PDEC/SAE，也不关闭行列无条件定理。",
+            "审稿边界：本步只关闭批量 Rankin pass-or-return 门，不关闭 PDEC/SAE、"
+            "constant-gap、DStructure/Rankin 独立验收，也不关闭行列无条件定理。",
             "",
         ]
     )
@@ -422,6 +469,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--lmc", type=Path, default=DEFAULT_LMC)
     parser.add_argument("--fxa", type=Path, default=DEFAULT_FXA)
     parser.add_argument("--sample", type=Path, default=DEFAULT_SAMPLE)
+    parser.add_argument("--manifest-data", type=Path, default=DEFAULT_MANIFEST_DATA)
+    parser.add_argument("--return-packet", type=Path, default=DEFAULT_RETURN_PACKET)
     parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -436,6 +485,8 @@ def main() -> None:
         "lmc": args.lmc,
         "fxa": args.fxa,
         "sample": args.sample,
+        "manifest_data": args.manifest_data,
+        "return_packet": args.return_packet,
     }
     result = run(paths)
     args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
