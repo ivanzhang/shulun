@@ -3492,6 +3492,51 @@ moving-delta 模型反证，K4/K6 和朴素 incidence 也不能推出。第二�
 DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 ```
 
+## Prime Matrix 最后守门项完成判定
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_final_guard_gate_completion_verdict_router.py
+docs/monograph/prime-matrix-final-guard-gate-completion-verdict-router.md/json
+```
+
+该路由器把用户要求继续攻的最后守门项压到最终可审查判定。结论为：
+
+```text
+backlund_internal_analytic_package_closed=true；
+author_side_completable_tasks_done=true；
+promotion_author_dossier_complete=true；
+promotion_package_boundary_closed=true；
+promotion_package_independently_accepted=false；
+self_contained_high_segment_model_gap_proved=false；
+self_contained_promotion_package_proved=false；
+row_column_unconditional_closed=false；
+final_non_author_closable_gate=DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
+
+因此最后守门项已经完成为“非作者侧可生成输入”的精确判定：它不是新的无名数学分支，
+也不是 Backlund 或 KLS 之间可继续转换的旧硬点；它是独立接受事件。作者侧归档、用户继续推进
+或同一证明链内部复查都不能替代该事件。
+
+当前最高合法条件命题为：
+
+```text
+AcceptFullSKLSExtExternalContract
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+=> row/column theorem。
+```
+
+若坚持完全自足并不使用独立验收事件，则剩余必须改写为两个新证明包：
+
+```text
+HighSegmentModelGapAlpha043C3AnalyticLedger
+AND SelfContainedDStructureTailLog4FiniteRankinProofPackage。
+```
+
+本判定完成最后守门项的归档，但不把 `BLOCK-REFEREE` 改写为 `PASS-AUTHOR`，也不伪造
+`row_column_unconditional_closed=true`。
+
 因此最小无条件输入基为：
 
 ```text

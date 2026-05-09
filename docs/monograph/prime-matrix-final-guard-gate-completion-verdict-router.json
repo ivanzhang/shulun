@@ -1,0 +1,132 @@
+{
+  "author_side_completable_tasks_done": true,
+  "backlund_internal_analytic_package_closed": true,
+  "certificate_type": "prime_matrix_final_guard_gate_completion_verdict_router",
+  "closed_gates": [
+    "BacklundAnalyticPackageInternallyClosed",
+    "AuthorSideCompletableTasksDone",
+    "PromotionAuthorDossierComplete",
+    "DStructureRankinBoundaryClosed",
+    "NoAuthorSidePromotionSubstitution",
+    "SelfContainedFinalTargetsPinned",
+    "EndpointNoHiddenLaneBoundaryClosed"
+  ],
+  "conditional_closure_statement": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance => row/column theorem",
+  "final_non_author_closable_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "open_gates": [
+    "IndependentPromotionAcceptancePresent",
+    "HighSegmentModelGapSelfContainedProved",
+    "SelfContainedPromotionPackageProved",
+    "RowColumnUnconditionalClosedFromCurrentCorpus"
+  ],
+  "plain_conclusion": "最后守门项已完成到可审查判定：Backlund 解析包和作者侧条件链已闭合，DStructure/Tail-log4/finite Rankin 的边界和作者侧证据包也已完成。但独立接受不是作者侧可生成的证明步骤；当前没有该接受事件，也没有替代它的完全自足证明包。因此不能诚实声明完整无条件命题闭合。",
+  "promotion_author_dossier_complete": true,
+  "promotion_package_boundary_closed": true,
+  "promotion_package_independently_accepted": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "completed": true,
+      "evidence": "backlund_common_envelope_internal_high_height_closed_dstructure_open",
+      "gate": "BacklundAnalyticPackageInternallyClosed",
+      "meaning": "共同高高度包络已关闭 Backlund 对称 max 溢价，解析缩进包不再是最终守门项。",
+      "proves_unconditional": false,
+      "remaining": "无 Backlund 剩余。"
+    },
+    {
+      "completed": true,
+      "evidence": "author_side_conditional_chain_complete_final_referee_gate_open",
+      "gate": "AuthorSideCompletableTasksDone",
+      "meaning": "作者侧可合法完成的条件闭合链已经完成。",
+      "proves_unconditional": false,
+      "remaining": "剩余不是作者侧普通证明步骤。"
+    },
+    {
+      "completed": true,
+      "evidence": "final_promotion_author_dossier_complete_independent_acceptance_open",
+      "gate": "PromotionAuthorDossierComplete",
+      "meaning": "D 组附录、A/B 到 D、Tail-log4、BG/RKS、有限验证与 Rankin pass-or-return 均已有证据包。",
+      "proves_unconditional": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "completed": true,
+      "evidence": "dstructure_rankin_promotion_boundary_closed_referee_acceptance_open",
+      "gate": "DStructureRankinBoundaryClosed",
+      "meaning": "最终晋级门已被压成独立验收事件，而不是新的无名数学分支。",
+      "proves_unconditional": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "completed": false,
+      "evidence": "promotion_package_independently_accepted",
+      "gate": "IndependentPromotionAcceptancePresent",
+      "meaning": "只有显式独立接受发生时，外部 KLS 合同版才能升级为完整闭合。",
+      "proves_unconditional": false,
+      "remaining": "independent acceptance still absent"
+    },
+    {
+      "completed": true,
+      "evidence": "PM-16 BLOCK-REFEREE discipline",
+      "gate": "NoAuthorSidePromotionSubstitution",
+      "meaning": "用户继续推进和作者侧归档不能替代独立审稿/独立接受事件。",
+      "proves_unconditional": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "completed": true,
+      "evidence": "self_contained_final_target_reduced_to_two_open_inputs",
+      "gate": "SelfContainedFinalTargetsPinned",
+      "meaning": "若不使用独立验收事件，完全自足路线已精确压成高段模型余量与自足晋级证明包两项。",
+      "proves_unconditional": false,
+      "remaining": "HighSegmentModelGapAlpha043C3AnalyticLedger AND SelfContainedDStructureTailLog4FiniteRankinProofPackage"
+    },
+    {
+      "completed": false,
+      "evidence": "HighSegmentModelGapAlpha043C3AnalyticLedger",
+      "gate": "HighSegmentModelGapSelfContainedProved",
+      "meaning": "P>=2003 高段模型余量尚未从审计升级为解析证明。",
+      "proves_unconditional": false,
+      "remaining": "HighSegmentModelGapAlpha043C3AnalyticLedger"
+    },
+    {
+      "completed": false,
+      "evidence": "SelfContainedDStructureTailLog4FiniteRankinProofPackage",
+      "gate": "SelfContainedPromotionPackageProved",
+      "meaning": "最终晋级门尚未被完全自足证明包替代。",
+      "proves_unconditional": false,
+      "remaining": "SelfContainedDStructureTailLog4FiniteRankinProofPackage"
+    },
+    {
+      "completed": true,
+      "evidence": "unconditional_closure_endpoint_boundary_closed_inputs_still_open",
+      "gate": "EndpointNoHiddenLaneBoundaryClosed",
+      "meaning": "终局没有第四条无名路线；继续突破只能补齐命名输入或取得独立接受。",
+      "proves_unconditional": false,
+      "remaining": "named inputs only"
+    },
+    {
+      "completed": false,
+      "evidence": "unconditional_closure_from_current_corpus",
+      "gate": "RowColumnUnconditionalClosedFromCurrentCorpus",
+      "meaning": "当前语料库仍不能推出完整行/列无条件定理。",
+      "proves_unconditional": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "self_contained_high_segment_model_gap_proved": false,
+  "self_contained_open_inputs": [
+    "HighSegmentModelGapAlpha043C3AnalyticLedger",
+    "SelfContainedDStructureTailLog4FiniteRankinProofPackage"
+  ],
+  "self_contained_promotion_package_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-author-side-closure-task-completion-router.json": "1a15dfe0778a3ae9acf77c9db9cfa544f056d32da2be09b1079883a7123177b8",
+    "docs/monograph/prime-matrix-backlund-common-envelope-internal-closure-router.json": "2c533c8d724debd7ffc4a0b387aca237a9d36f5d6d62454ea0058e1f88766130",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5",
+    "docs/monograph/prime-matrix-final-promotion-subgate-direct-attack-router.json": "3f3cbe2622c3f0ab62408232401998185ca749aa6b2fde2f6f7f1d808dd4b105",
+    "docs/monograph/prime-matrix-self-contained-final-target-attack-router.json": "4fddbc9221bc00537b88508a13d0e0100b0f07cb7a090b57be16971ae009d7e7",
+    "docs/monograph/prime-matrix-unconditional-closure-endpoint-verdict-router.json": "a912e362d3addc7dde44ae4203e8c5ff7e371e827e2de2d1ea1c6a8357b41621"
+  },
+  "status": "final_guard_gate_completed_as_non_author_closable_open_input"
+}
