@@ -1,0 +1,147 @@
+{
+  "boundary_majorant_transfer_closed_symbolic": true,
+  "certificate_type": "prime_matrix_backlund_auxiliary_realpart_jensen_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "AuxiliaryRealPartJensenGateActive",
+    "AuxiliaryEntireFunctionConstructionClosed",
+    "RealAxisSignChangeIdentityClosed",
+    "RightEdgeCenterGeometryAvailable",
+    "RightEdgePhaseAnchorClosed",
+    "BoundaryMajorantTransferClosedSymbolic",
+    "EndpointMultiplicityCompatible",
+    "ExternalBacklundStillAvailable"
+  ],
+  "construction_steps": [
+    {
+      "content": "B_{T,theta}(z)=1/2*(exp(-i theta) xi(z+iT)+exp(i theta) xi(z-iT))。",
+      "status": "closed_formal",
+      "step": "define_auxiliary_entire"
+    },
+    {
+      "content": "z=x 为实数时，由 xi(conj s)=conj xi(s)，得 B_{T,theta}(x)=Re(exp(-i theta) xi(x+iT))。",
+      "status": "closed_formal",
+      "step": "real_axis_identity"
+    },
+    {
+      "content": "取 theta=arg xi(2+iT)，则 B_{T,theta}(2)=|xi(2+iT)|，圆心不为零。",
+      "status": "closed_given_right_edge_anchor",
+      "step": "right_edge_phase_anchor"
+    },
+    {
+      "content": "|B_{T,theta}(z)| <= (|xi(z+iT)|+|xi(z-iT)|)/2，圆周上界可由既有 xi 边界包转移。",
+      "status": "closed_symbolic",
+      "step": "boundary_transfer"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_backlund_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "formal_construction_closed": true,
+  "hypothetical_chain_only": true,
+  "new_unique_internal_remaining": "BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger AND BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosLedger",
+  "open_gates": [
+    "AuxiliaryJensenConstantAggregationOpen",
+    "AuxiliaryNoDoubleCountingOpen",
+    "SelfContainedAuxiliaryBacklundPackageOpen"
+  ],
+  "parent_remaining": "BacklundAuxiliaryRealPartJensenCountNoDoubleCountLedger",
+  "plain_conclusion": "经典 Backlund 辅助实部函数的形式层已闭合：B_{T,theta}(z)=1/2(e^{-i theta}xi(z+iT)+e^{i theta}xi(z-iT)) 是整函数，在实轴上等于旋转后的实部，故其零点正是 sign-change 计数对象。右边相位 anchor 与 xi 圆周上界可由既有 Jensen 圆心、Euler 下界和 xi 边界包转移。剩余未闭合的是辅助函数 Jensen 常数聚合，以及它与 xi 真零点/缩进登记的无重复扣费纪律。",
+  "right_edge_phase_anchor_closed": true,
+  "row_column_external_route_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只构造经典 Backlund 辅助函数和 Jensen 接口，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "AuxiliaryRealPartJensenGateActive",
+      "meaning": "上一层已证明不能把 sign-change 直接注入 xi 真零点计数，必须构造辅助实部 Jensen 包。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartJensenCountNoDoubleCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AuxiliaryEntireFunctionConstructionClosed",
+      "meaning": "B_{T,theta}(z) 由 xi 的两个平移共轭项组成，是整函数。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartEntireFunctionConstructionClosed"
+    },
+    {
+      "closed": true,
+      "gate": "RealAxisSignChangeIdentityClosed",
+      "meaning": "在实轴上 B_{T,theta}(x) 正是旋转后 xi(x+iT) 的实部，因此其零点计数 sign-change。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartEntireFunctionConstructionClosed"
+    },
+    {
+      "closed": true,
+      "gate": "RightEdgeCenterGeometryAvailable",
+      "meaning": "既有 z0=2、R=4、r=sqrt(5) 的 Jensen 圆心几何可复用到辅助函数。",
+      "proved": true,
+      "remaining": "BacklundJensenRightEdgeCenterChoiceConventionClosedR4"
+    },
+    {
+      "closed": true,
+      "gate": "RightEdgePhaseAnchorClosed",
+      "meaning": "取 theta=arg xi(2+iT) 后圆心值为 |xi(2+iT)|；sigma=2 的 Euler 下界给非零 anchor。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartRightEdgePhaseAnchorClosed"
+    },
+    {
+      "closed": true,
+      "gate": "BoundaryMajorantTransferClosedSymbolic",
+      "meaning": "辅助函数的圆周上界由两个 xi 圆周上界平均控制，形式上不新增零点计数输入。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartBoundaryMajorantTransferredClosed"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointMultiplicityCompatible",
+      "meaning": "端点落在辅助函数零点时仍按避零序列和解析重数取极限。",
+      "proved": true,
+      "remaining": "EndpointZeroAvoidanceMultiplicityConventionClosedByLimit"
+    },
+    {
+      "closed": false,
+      "gate": "AuxiliaryJensenConstantAggregationOpen",
+      "meaning": "还未把辅助函数边界上界、右边 anchor、低高度项聚合成目标 C16 或可被 C_S=8 吸收的常数。",
+      "proved": false,
+      "remaining": "BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "AuxiliaryNoDoubleCountingOpen",
+      "meaning": "还未证明辅助实部零点计数、xi 真零点重数和缩进登记三者没有重复扣费。",
+      "proved": false,
+      "remaining": "BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedAuxiliaryBacklundPackageOpen",
+      "meaning": "形式构造已完成；常数聚合与无重复扣费未完成前，内部经典 Backlund 缩进证明仍开。",
+      "proved": false,
+      "remaining": "BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger AND BacklundAuxiliaryRealPartNoDoubleCountingWithXiZerosLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundStillAvailable",
+      "meaning": "外部经典 Backlund 引理可整体替代辅助实部 Jensen 计数与无重复扣费证明。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-jensen-euler-lower-router.json": "44122c9e7ca97c3962ba9093b9f91bd6d80c08993547d6d9b1677fb2c4a40189",
+    "docs/monograph/prime-matrix-b3-jensen-right-edge-center-router.json": "d043da50d343d2a9a577bcd9718a6afb5680f231e548c36575516b144993fa18",
+    "docs/monograph/prime-matrix-b3-xi-boundary-constant-aggregation-router.json": "99ca19c0feaa96427d8803ee5e30813f4255fb26890075d6aa75113e74b91d07",
+    "docs/monograph/prime-matrix-backlund-signchange-absorption-obstruction-router.json": "448456d5f48fd822109b5d822f68fb25eaf4f7b61eb93865f75d8e688642467c"
+  },
+  "status": "backlund_auxiliary_realpart_jensen_formal_construction_closed_constants_open"
+}
