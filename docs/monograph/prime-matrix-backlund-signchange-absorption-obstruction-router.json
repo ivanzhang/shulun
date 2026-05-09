@@ -1,0 +1,132 @@
+{
+  "certificate_type": "prime_matrix_backlund_signchange_absorption_obstruction_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "SignChangeAbsorptionGateActive",
+    "XiZeroJensenC16AvailableExternally",
+    "LittlewoodZeroWeightIdentityAvailable",
+    "SignChangeNotXiZeroObstructionClosed",
+    "DirectInjectionIntoXiZeroJensenRejected",
+    "AuxiliaryRealPartAnalyticFunctionNeeded",
+    "ExternalBacklundStillClosesThisPackage"
+  ],
+  "counterexample_assumption_only": true,
+  "dstructure_rankin_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "empirical_absence_not_used": true,
+  "external_backlund_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "new_unique_internal_remaining": "BacklundAuxiliaryRealPartJensenCountNoDoubleCountLedger",
+  "obstruction_examples": [
+    {
+      "meaning": "实部过零只说明曲线穿过虚轴，不说明 F 有零点。",
+      "model": "F(x)=x+i",
+      "sign_change_event": "Re F(0)=0 且 F(0)=i != 0"
+    },
+    {
+      "meaning": "sign-change 数可与解析零点数完全脱钩。",
+      "model": "F(x)=e^{ix}",
+      "sign_change_event": "Re F(x)=0 在 x=pi/2+k*pi 出现，但 F(x) 从不为 0"
+    },
+    {
+      "meaning": "重数登记只处理真零点；经典 Backlund 还必须计数非零的实部过零。",
+      "model": "F(s)=(s-rho)^m g(s)",
+      "sign_change_event": "若路径命中 rho，则缩进 jump 按 m 登记；但非零穿轴事件仍可能存在"
+    }
+  ],
+  "open_gates": [
+    "NoDoubleCountConditionStillNeeded",
+    "SelfContainedBacklundIndentStillOpen",
+    "ExternalRouteStillNeedsDStructure"
+  ],
+  "plain_conclusion": "sign-change 吸收不能直接使用 xi 真零点的 Jensen C16 计数：实部过零是曲线穿过一条直线，通常不等于 F=0。因此上一层的无重复吸收命题被进一步压成：必须构造经典 Backlund 的辅助实部解析计数对象，对该对象建立 Jensen 计数，并证明它与真零点、端点重数和缩进登记不重复扣费。这正是外部经典 Backlund 引理可整体接受的内容；严格自足版仍未闭合。",
+  "previous_unique_remaining": "BacklundRealPartSignChangeJensenAbsorptionNoDoubleCountLedger",
+  "rejected_false_route": "BacklundSignChangeZerosInjectIntoXiZeroJensenLedger",
+  "row_column_external_route_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只检查假设链条里的解析计数对象，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "SignChangeAbsorptionGateActive",
+      "meaning": "上一层把内部剩余压成 sign-change 登记表对 Jensen C16 的无重复吸收。",
+      "proved": true,
+      "remaining": "BacklundRealPartSignChangeJensenAbsorptionNoDoubleCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "XiZeroJensenC16AvailableExternally",
+      "meaning": "外部低高度输入下，xi 真零点的 Jensen C16 计数可作为参照。",
+      "proved": false,
+      "remaining": "BacklundIndependentJensenZeroCountC16AggregationExternalClosed"
+    },
+    {
+      "closed": true,
+      "gate": "LittlewoodZeroWeightIdentityAvailable",
+      "meaning": "Littlewood 矩形恒等式登记的是解析零点横向权重，不是所有实部过零。",
+      "proved": true,
+      "remaining": "BacklundLittlewoodRectangleArgumentClosed"
+    },
+    {
+      "closed": true,
+      "gate": "SignChangeNotXiZeroObstructionClosed",
+      "meaning": "Re(e^{-i theta}F) 的零点通常只是曲线穿过一条直线；F 本身可以非零。",
+      "proved": true,
+      "remaining": "BacklundSignChangeZerosInjectIntoXiZeroJensenLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DirectInjectionIntoXiZeroJensenRejected",
+      "meaning": "不能把 sign-change 事件逐项注入 xi 零点 Jensen 计数；这会漏掉非零穿轴事件。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartJensenCountNoDoubleCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AuxiliaryRealPartAnalyticFunctionNeeded",
+      "meaning": "经典 Backlund 必须为实部/旋转实部构造辅助解析计数对象，并对该对象应用 Jensen。",
+      "proved": true,
+      "remaining": "BacklundAuxiliaryRealPartJensenCountNoDoubleCountLedger"
+    },
+    {
+      "closed": false,
+      "gate": "NoDoubleCountConditionStillNeeded",
+      "meaning": "辅助实部 Jensen 计数完成后，还需证明它与 xi 真零点、端点重数和缩进登记不重复扣费。",
+      "proved": false,
+      "remaining": "BacklundAuxiliaryRealPartJensenCountNoDoubleCountLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBacklundIndentStillOpen",
+      "meaning": "内部经典 Backlund 缩进证明仍未闭合；现在精确剩余是辅助实部 Jensen 计数和无重复扣费。",
+      "proved": false,
+      "remaining": "BacklundAuxiliaryRealPartJensenCountNoDoubleCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundStillClosesThisPackage",
+      "meaning": "外部经典 Backlund 引理正是对该辅助实部计数和缩进 convention 的整体引用。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalRouteStillNeedsDStructure",
+      "meaning": "接受外部 Backlund 后仍不能跳过 DStructure/Rankin 独立验收门。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/external-theorem-index.md": "c150d73b245a6c799d9f685523feac205b0f0e0030e95ff9e882a49cb1f6bd67",
+    "docs/monograph/prime-matrix-b3-backlund-littlewood-rectangle-router.json": "062778677ccc3375b4405c6e5559feba240610f29ec4fc13dd5b341e43ff64f3",
+    "docs/monograph/prime-matrix-b3-jensen-radius-contingency-router.json": "39cb556c49dc36822f5b23eff9594850efcd269d8f1ba249f6f22a76ef5fdc24",
+    "docs/monograph/prime-matrix-backlund-classical-indent-spine-router.json": "60bdca07a73159660a16a6280bc16c32f8fa4054cd06c00516dd5d1e3df5ee14"
+  },
+  "status": "backlund_signchange_absorption_reduced_to_auxiliary_realpart_jensen_open"
+}
