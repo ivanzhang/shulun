@@ -1,0 +1,126 @@
+{
+  "capsule_density_reduction_closed": true,
+  "certificate_type": "prime_matrix_backlund_capsule_density_internal_attack_router",
+  "closed_gates": [
+    "CapsuleDensityGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "BacklundNearZeroCapsuleCoverGeometryClosed",
+    "BacklundNoRVMScaleSensitiveDensityDisciplineClosed",
+    "JensenFormalLayerAvailable",
+    "CenterAnchorSymbolicAvailable",
+    "FixedC16RouteRejectedForCapsule"
+  ],
+  "comparison": {
+    "c16_jump_cost": 50.26548245743669,
+    "c16_zero_coefficient": 16.0,
+    "coefficient_overshoot_factor": 779.8765763093207,
+    "cost_overshoot_factor": 779.8765763093207,
+    "cost_slack": 0.013671875,
+    "target_jump_cost": 0.064453125,
+    "target_zero_coefficient": 0.020516066882939634
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "open_gates": [
+    "BacklundScaleSensitiveJensenCapsuleDensityLedger",
+    "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parent_remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger",
+  "plain_conclusion": "胶囊密度目标不能由现有固定半径 Jensen C16 粗计数关闭，也不能直接调用 RVM。C16 跳变成本约为胶囊目标成本的 780 倍。因此当前真正最窄的内部目标是 `BacklundScaleSensitiveJensenCapsuleDensityLedger`：必须在 Jensen/xi 平均中保留胶囊高度 A=33/512 的尺度小因子，同时保持 Gamma 主项相消与 zeta 平均控制。",
+  "route_table": [
+    {
+      "reason": "RVM 局部计数需要 Backlund/arg zeta 端点控制；当前正是在证明该控制。",
+      "route": "RVMLocalDensity",
+      "verdict": "blocked_by_circularity"
+    },
+    {
+      "reason": "C16 没有胶囊高度 A 的小因子，跳变成本约 50.265，远超 5/64。",
+      "route": "FixedRadiusJensenC16",
+      "verdict": "too_coarse"
+    },
+    {
+      "reason": "需要 Jensen/xi 圆周平均保留尺度 A 的 Gamma 主项相消和 zeta 平均控制。",
+      "route": "ScaleSensitiveJensenCapsule",
+      "verdict": "next_internal_atom"
+    }
+  ],
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CapsuleDensityGateActive",
+      "meaning": "上一层已把零系数目标松弛为独立胶囊密度目标。",
+      "proved": true,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的解析计数，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundNearZeroCapsuleCoverGeometryClosed",
+      "meaning": "eta 邻域沿 H 窗口扫出半高 A=eta+H 的胶囊；几何覆盖本身无剩余。",
+      "proved": true,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundNoRVMScaleSensitiveDensityDisciplineClosed",
+      "meaning": "胶囊密度不能直接调用待证 Backlund 后推出的 RVM/CN16。",
+      "proved": true,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "JensenFormalLayerAvailable",
+      "meaning": "Jensen 公式形式层可用，可作为尺度敏感计数的唯一非循环候选工具。",
+      "proved": true,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CenterAnchorSymbolicAvailable",
+      "meaning": "xi 圆心 anchor 已有符号有限常数，但还没有尺度 A 的数值密度聚合。",
+      "proved": true,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FixedC16RouteRejectedForCapsule",
+      "meaning": "固定半径 C16 计数比胶囊目标粗约 780 倍，不能支付跳变预算。",
+      "proved": true,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundScaleSensitiveJensenCapsuleDensityLedger",
+      "meaning": "仍需证明 Jensen 胶囊计数保留 A=33/512 的尺度小因子，且不借用 Backlund/RVM。",
+      "proved": false,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundIndependentCapsuleZeroDensityCoefficientLedger",
+      "meaning": "胶囊密度目标已压成尺度敏感 Jensen 胶囊计数。",
+      "proved": false,
+      "remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+    }
+  ],
+  "scale_sensitive_jensen_capsule_density_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-independent-jensen-router.json": "15a91ea8b8da4147c7a7eb7d0f9654e57aa3fbbb4681b67861e1a053b841164c",
+    "docs/monograph/prime-matrix-b3-backlund-spike-exclusion-router.json": "dcb3933c64a9f5b560006452b2b1e03ec0900208985d4b906839f83d33bf0323",
+    "docs/monograph/prime-matrix-b3-jensen-c16-aggregation-router.json": "02f401dbd85cc691dd463c1ff68fa790094909b6d3dbdaabe3b1f79a2057f469",
+    "docs/monograph/prime-matrix-b3-jensen-center-anchor-aggregation-router.json": "68e0b339acef79fa47483e323e4b22a5d1eb54d1cd6e94f04a07a9c2681936de",
+    "docs/monograph/prime-matrix-backlund-capsule-density-relaxation-router.json": "eb4f20e70ac45ebd9d816c3c5f72303044ecfb415ccddc8de0bec4c0f254bf25"
+  },
+  "status": "backlund_capsule_density_reduced_to_scale_sensitive_jensen_open",
+  "strict_self_contained_unique_remaining": "BacklundScaleSensitiveJensenCapsuleDensityLedger"
+}

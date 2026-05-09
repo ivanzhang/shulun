@@ -1,0 +1,128 @@
+{
+  "candidate_routes": [
+    {
+      "content": "证明未配对跳变 log(T) 系数为 0；足够闭合，但比实际预算需求更强。",
+      "route": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger",
+      "status": "sufficient_but_stronger_than_needed"
+    },
+    {
+      "content": "证明近零胶囊内未配对零点数系数不超过 (eta+H)/pi，并且不调用 Backlund/RVM。",
+      "route": "BacklundIndependentCapsuleZeroDensityCoefficientLedger",
+      "status": "new_best_internal_target"
+    },
+    {
+      "content": "接受经典 Backlund 缩进引理，直接关闭该预算包；不是严格自足路线。",
+      "route": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+      "status": "external_escape"
+    }
+  ],
+  "capsule_density_self_contained_closed": false,
+  "certificate_type": "prime_matrix_backlund_capsule_density_relaxation_router",
+  "closed_gates": [
+    "ZeroCoefficientGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "EtaAndWindowImported",
+    "ZeroCoefficientSufficientButNotNecessary",
+    "CapsuleDensityTargetFitsMargin",
+    "JensenC16StillTooCoarse",
+    "NoRVMCircularityStillRequired"
+  ],
+  "constants": {
+    "allowed_zero_coefficient": 0.02486795985810865,
+    "capsule_half_height_A": 0.064453125,
+    "capsule_target_zero_coefficient": 0.020516066882939634,
+    "coefficient_slack": 0.0043518929751690145,
+    "cost_slack": 0.013671875,
+    "eta": 0.0625,
+    "jensen_c16_jump_cost": 50.26548245743669,
+    "jump_cost_at_capsule_target": 0.064453125,
+    "stability_margin": 0.078125,
+    "window_length_H": 0.001953125
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "open_gates": [
+    "BacklundIndependentCapsuleZeroDensityCoefficientLedger",
+    "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "未配对跳变零系数不是必要条件。利用已固定的 eta=1/16 与 H=1/512，近零胶囊半高 A=eta+H=33/512，若能独立证明未配对胶囊零点密度系数不超过 A/pi，则跳变成本至多 A=33/512，小于稳定余量 5/64=40/512。因此当前更优的严格自足目标是 `BacklundIndependentCapsuleZeroDensityCoefficientLedger`；它必须独立于 Backlund/RVM 证明，不能退回 Jensen C16 粗计数。",
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ZeroCoefficientGateActive",
+      "meaning": "上一层把严格自足唯一剩余压成未配对跳变零系数预算。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条的解析预算，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "EtaAndWindowImported",
+      "meaning": "近零半径 eta=1/16 与短窗口 H=1/512 已固定，因此胶囊半高 A=eta+H=33/512。",
+      "proved": true,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroCoefficientSufficientButNotNecessary",
+      "meaning": "零系数可以闭合预算，但实际只需未配对零点密度低于 5/(64*pi)。",
+      "proved": true,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CapsuleDensityTargetFitsMargin",
+      "meaning": "若未配对胶囊零点系数 <=(eta+H)/pi，则跳变成本 <=eta+H=33/512<5/64。",
+      "proved": true,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "JensenC16StillTooCoarse",
+      "meaning": "Jensen C16 粗数给出 16*pi 的跳变系数，远超余量；必须证明胶囊高度比例密度。",
+      "proved": true,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoRVMCircularityStillRequired",
+      "meaning": "不能直接调用由 Backlund C_S 推出的 RVM/CN16；胶囊密度必须独立证明。",
+      "proved": true,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundIndependentCapsuleZeroDensityCoefficientLedger",
+      "meaning": "当前仓库还没有独立证明近零胶囊未配对零点数具有 (eta+H)/pi 级密度系数。",
+      "proved": false,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger OR BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger",
+      "meaning": "零系数原子被放宽为更优的胶囊密度原子；二者任一闭合即可推进内部缩进成本。",
+      "proved": false,
+      "remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-spike-exclusion-router.json": "dcb3933c64a9f5b560006452b2b1e03ec0900208985d4b906839f83d33bf0323",
+    "docs/monograph/prime-matrix-b3-near-zero-indent-separation-router.json": "d27338ae97a041b28360548061e660940c5916f4c7de875d8d67f388baa359b3",
+    "docs/monograph/prime-matrix-b3-variation-window-scale-router.json": "b74131ddb497887ec5cbb0892aca05afba62c6b7f705808b6ae967c0fff75b47",
+    "docs/monograph/prime-matrix-backlund-internal-proof-atomic-reduction-router.json": "9d12721c50a074ff41f272343d170121b1e38b80e17d9f145a67b3c5f489df10"
+  },
+  "status": "backlund_zero_jump_reduced_to_capsule_density_open",
+  "strict_self_contained_unique_remaining": "BacklundIndependentCapsuleZeroDensityCoefficientLedger",
+  "stronger_sufficient_remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger",
+  "zero_coefficient_relaxation_closed": true
+}
