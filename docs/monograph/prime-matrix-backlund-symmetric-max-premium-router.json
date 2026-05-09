@@ -1,0 +1,109 @@
+{
+  "allowed_c16_numerator": 9.305206478445447,
+  "available_premium_margin": 2.305206478445447,
+  "certificate_type": "prime_matrix_backlund_symmetric_max_premium_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "HighPowerSignedMeanGateActive",
+    "SymmetricBoundaryMaxIdentityClosed",
+    "SignedMeanBaseC7Available",
+    "C16MarginComputed",
+    "NaiveDoubleSignedMeanFails",
+    "LocalVariationPremiumBoundTooLarge",
+    "ExternalBacklundStillAvailable"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_backlund_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "naive_double_numerator": 14.0,
+  "new_unique_internal_remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger",
+  "open_gates": [
+    "SymmetricMaxPremiumStillOpen",
+    "SelfContainedBacklundStillOpen"
+  ],
+  "parent_remaining": "BacklundHighPowerAuxiliarySignedMeanC16AggregationLedger",
+  "plain_conclusion": "高幂辅助函数常数核已压到一个精确溢价问题：单个 signed-mean 圆周分子为 7，而 C16 允许分子为 9.305206...，因此对称 max 额外溢价必须不超过 2.305206...。粗略双计或用局部变差控制都超预算；当前严格自足路线的唯一常数剩余就是证明该对称高度 max 溢价小于 C16 余量。",
+  "row_column_external_route_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审查高幂辅助函数边界平均的常数结构，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "HighPowerSignedMeanGateActive",
+      "meaning": "上一层唯一剩余是高幂辅助函数继承 signed-mean C16 预算。",
+      "proved": true,
+      "remaining": "BacklundHighPowerAuxiliarySignedMeanC16AggregationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SymmetricBoundaryMaxIdentityClosed",
+      "meaning": "N->infty 后边界项为 max(U_T(phi),U_T(-phi))，其中 U_T(-phi) 是共轭高度的同分布项。",
+      "proved": true,
+      "remaining": "BacklundHighPowerBoundarySymmetricMaxIdentityClosed"
+    },
+    {
+      "closed": true,
+      "gate": "SignedMeanBaseC7Available",
+      "meaning": "单个 U_T 圆周 signed-mean 分子系数已为 7。",
+      "proved": true,
+      "remaining": "BacklundJensenSignedMeanHighHeightZetaOnlyClosedC7"
+    },
+    {
+      "closed": true,
+      "gate": "C16MarginComputed",
+      "meaning": "C16 允许分子为 16 log(4/sqrt(5))=9.305206...，扣掉 C7 后只剩 2.305206... 溢价余量。",
+      "proved": true,
+      "remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveDoubleSignedMeanFails",
+      "meaning": "若用 max<=U^+ + U^- 粗估，分子会接近 14，超过 9.305，不能闭合。",
+      "proved": true,
+      "remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LocalVariationPremiumBoundTooLarge",
+      "meaning": "用既有局部变差 C216 控制高度差 8 的对称差会产生远大于 2.305 的预算，不能作为闭合。",
+      "proved": true,
+      "remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SymmetricMaxPremiumStillOpen",
+      "meaning": "仍需证明平均正部差 1/2 int |U_T(phi)-U_T(-phi)| 的 log 系数不超过 2.305206。",
+      "proved": false,
+      "remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBacklundStillOpen",
+      "meaning": "该溢价未闭合前，高幂辅助 Backlund 内部常数不能进入 C16/C_S=8。",
+      "proved": false,
+      "remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundStillAvailable",
+      "meaning": "外部经典 Backlund 引理整体处理了该对称 max/高幂 Jensen 常数。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    }
+  ],
+  "signed_mean_base_numerator": 7.0,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-jensen-signed-mean-router.json": "0f1d7398c476f40e229e0836ef8c2eb0bad2e3d6dce42c5dc3e19cb0d8a45193",
+    "docs/monograph/prime-matrix-b3-variation-window-scale-router.json": "b74131ddb497887ec5cbb0892aca05afba62c6b7f705808b6ae967c0fff75b47",
+    "docs/monograph/prime-matrix-backlund-high-power-auxiliary-router.json": "214abb2a9c32ef3f5274e92c9a658efaf42a119bf28f15bb812f674de082a6f2"
+  },
+  "status": "backlund_symmetric_max_premium_is_unique_constant_obstruction_open",
+  "symmetric_boundary_max_identity_closed": true
+}
