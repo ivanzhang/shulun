@@ -1,0 +1,149 @@
+{
+  "certificate_type": "prime_matrix_backlund_internal_external_merge_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "InternalBacklundTargetLocked",
+    "ExternalBacklundIndentAcceptedForRoute",
+    "ExternalBacklundDownstreamCS8Closed",
+    "ExternalEndpointConventionClosed",
+    "ExternalRVMToCN16Closed",
+    "ExternalAnalyticBacklundPackageMerged",
+    "DStructureRankinBoundaryClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "empirical_absence_not_used": true,
+  "external_analytic_backlund_package_merged": true,
+  "external_backlund_input": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "external_sources": [
+    {
+      "role": "Backlund/Rosser--McCurley 轮廓方法给出 arg zeta/S(t) 的显式上界。",
+      "source": "Trudgian 2012",
+      "url": "https://doi.org/10.1090/S0025-5718-2011-02537-8"
+    },
+    {
+      "role": "现代显式 Backlund 方法与 S(T) 零点处理 convention 的引用入口。",
+      "source": "Trudgian 2014 arXiv:1208.5846",
+      "url": "https://arxiv.org/abs/1208.5846"
+    }
+  ],
+  "external_theorem_index": "docs/monograph/external-theorem-index.md",
+  "hypothetical_chain_only": true,
+  "internal_primary_target": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+  "internal_target_obligations": [
+    {
+      "content": "从局部避零轮廓直接证明近零缩进项被同一 Backlund 轮廓恒等式吸收。",
+      "obligation": "ClassicalContourIndentationProof"
+    },
+    {
+      "content": "端点落零先避开再取极限，零点按解析重数登记，且不新增 C_S 常数。",
+      "obligation": "EndpointAndMultiplicityLimit"
+    },
+    {
+      "content": "证明局部 jump 不作为额外正比例成本进入 C_S=8；这是内部证明的核心。",
+      "obligation": "BudgetPreservingJumpLedger"
+    },
+    {
+      "content": "不再走权重吸收、镜像抵消、胶囊密度、小半径 anchor 或 RVM 反调用。",
+      "obligation": "NoDetourDiscipline"
+    }
+  ],
+  "open_gates": [
+    "DStructureRankinIndependentlyAccepted",
+    "RowColumnExternalRouteClosed",
+    "RowColumnSelfContainedClosed"
+  ],
+  "plain_conclusion": "内部路线现在集中攻 `ClassicalBacklundZeroIndentationCostInternalProofLedger`。外部路线把经典 Backlund/Rosser-McCurley/Trudgian 缩进处理作为引用输入接入后，CS8、端点 convention、RVM->CN16 已合并到最终晋级门前。但完整无条件闭合仍被 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 阻断，作者侧不能把该独立验收门自审关闭。",
+  "row_column_external_route_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "合并仍只处理假设链条中的解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持自足与外部两条链分离。"
+    },
+    {
+      "closed": true,
+      "gate": "InternalBacklundTargetLocked",
+      "meaning": "内部路线集中攻经典 Backlund 零点缩进成本内部证明，不再转移目标。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundIndentAcceptedForRoute",
+      "meaning": "外部路线把经典 Backlund 缩进处理作为引用输入接入。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundDownstreamCS8Closed",
+      "meaning": "接受外部缩进输入后，C_S=8 紧等号验收已闭合。",
+      "proved": true,
+      "remaining": "BacklundCS8SlackAfterBridgeClosedTightHalf"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalEndpointConventionClosed",
+      "meaning": "端点避零与重数极限 convention 已闭合。",
+      "proved": true,
+      "remaining": "EndpointZeroAvoidanceMultiplicityConventionClosedByLimit"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalRVMToCN16Closed",
+      "meaning": "原始 arg zeta 归一化下，RVM 到 C_N=16 合并已闭合。",
+      "proved": true,
+      "remaining": "RVMToCN16LocalInequalityClosedWithRawArgCS8"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalAnalyticBacklundPackageMerged",
+      "meaning": "外部 Backlund 解析包已合并到最终晋级门前。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureRankinBoundaryClosed",
+      "meaning": "DStructure/Tail-log4/finite Rankin 的验收边界已列清。",
+      "proved": true,
+      "remaining": "independent acceptance"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureRankinIndependentlyAccepted",
+      "meaning": "该门仍需独立审稿/复现接受，作者侧不能自审关闭。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnExternalRouteClosed",
+      "meaning": "外部 Backlund 包合并后仍缺 DStructure/Rankin 独立接受。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnSelfContainedClosed",
+      "meaning": "内部经典 Backlund 缩进成本尚未作者侧重证。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/external-theorem-index.md": "c150d73b245a6c799d9f685523feac205b0f0e0030e95ff9e882a49cb1f6bd67",
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-rvm-to-cn16-local-inequality-router.json": "3e7fa721aef0fe9660b70b6e8f9bd3ecb1e926ddbf12ec4b341163199ac0ca13",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-backlund-final-branch-status-router.json": "278d6d06d4b63511a2d27287116e05fc594c887fbfc9683f4a81ed4ec18817c3",
+    "docs/monograph/prime-matrix-backlund-internal-proof-obligation-router.json": "bc2ec3cbdc6ce62a39838066acb5230f03c77aa2a080574ffb5108bccb0c02c0",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5"
+  },
+  "status": "backlund_external_analytic_package_merged_dstructure_open_internal_backlund_target_locked"
+}

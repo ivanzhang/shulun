@@ -122,6 +122,30 @@
   - 参考文献表使用标签 `RS1962`；
   - 若后续改用 Dusart 型更强常数，必须重新运行 `explicit-tail-constant-audit`。
 
+## 8A. 经典 Backlund 缩进成本引理
+
+- **来源**：
+  - Backlund/Rosser--McCurley 方法的现代显式版本：Trudgian, T. S., *An improved upper bound for the argument of the Riemann zeta-function on the critical line II*, Journal of Number Theory 134, 280--292, 2014, arXiv `1208.5846`。
+  - 显式 `S(T)` 上界与 Backlund 轮廓处理：Trudgian, T. S., *An improved upper bound for the argument of the Riemann zeta-function on the critical line*, Mathematics of Computation 81(278), 1053--1061, 2012, DOI `10.1090/S0025-5718-2011-02537-8`。
+- **状态**：`required` for external-Backlund route; `not closed` for fully self-contained route.
+- **用于**：把 `BacklundZeroProximityIndentationCostLedger` 替换为
+  `ClassicalBacklundZeroIndentationCostExternalAccepted`，即接受经典 Backlund
+  零点避让/缩进 convention 不额外产生本文 `C_S=8` 预算之外的正比例 jump 成本。
+- **对应链条**：
+  `ClassicalBacklundZeroIndentationCostExternalAccepted`
+  `=> BacklundCS8SlackAfterBridgeClosedTightHalf`
+  `=> EndpointZeroAvoidanceMultiplicityConventionClosedByLimit`
+  `=> RVMToCN16LocalInequalityClosedWithRawArgCS8`
+  `=> DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`。
+- **必须核对**：
+  - 外部定理使用的是原始 `arg zeta`/`S(T)` 归一化，不能把本文重标度后的 `C_N=16`
+    反向代入 Backlund 证明；
+  - 端点落零必须先取避零序列再取极限，零点按解析重数登记；
+  - 缩进弧、水平边与右/左边界常数不能重复计费；
+  - 引用只关闭外部 Backlund 解析包，不关闭 `DStructure/Rankin` 独立验收门；
+  - 完全自足版仍需在文内重证
+    `ClassicalBacklundZeroIndentationCostInternalProofLedger`。
+
 ## 9. 不能误用的输入
 
 | 输入 | 不能替代什么 | 原因 |
@@ -131,13 +155,17 @@
 | 点态 Weil | KLS-window | 只给单模抵消，不给总平均 `log^{-A}` |
 | 实验扫描 | 证明 | 只能作为常数与结构证据；无限尾段必须接显式外部不等式 |
 | 完整 CRT 周期均衡 | 短窗口真实分布 | 短窗口不等于完整周期 |
+| 外部 Backlund 缩进引理 | 严格自足 Backlund 内部证明 | 它是可接受外部输入，不是作者侧从零重证。 |
+| 外部 Backlund 缩进引理 | DStructure/Rankin 独立验收门 | 它只处理解析 `arg zeta` 缩进成本，不证明 Rankin 晋级包。 |
 
 ## 10. 下一步核查任务
 
 1. `docs/monograph/kls-window-di-bfi-adaptation-template.md` 已把 DI/BFI 到 KLS-window 的相位、模数、频率、逆元变量、权重、gcd 层、端点平滑和 `B(A)` 损失账本写成独立适配模板。
 2. 在主稿中把“引用版闭合”和“完全自足版未闭合”继续分开定理化。
 3. 把 Rosser--Schoenfeld 显式 Mertens/prime-count 常数写入主稿参考文献和定理模板。
-4. 若投稿要求外部文献原文定理号，逐页核对 DI/BFI 的对应定理编号；这属于书目精确化，不改变当前 H7 外部定理版逻辑链。
+4. 把经典 Backlund 缩进成本引理写入主稿解析输入表：外部路线可接受，自足路线继续以
+   `ClassicalBacklundZeroIndentationCostInternalProofLedger` 为唯一内部主攻目标。
+5. 若投稿要求外部文献原文定理号，逐页核对 DI/BFI 与 Backlund 的对应定理编号；这属于书目精确化，不改变当前 H7 外部定理版逻辑链。
 
 ## 11. KLS-window 变量适配核查表
 
