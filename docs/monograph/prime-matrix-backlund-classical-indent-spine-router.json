@@ -1,0 +1,163 @@
+{
+  "budget_pressure": {
+    "available_stability_margin": 0.078125,
+    "deficit_if_double_counted": 50.18735745743669,
+    "jensen_count_coefficient": 16.0,
+    "naive_jump_coefficient": 50.26548245743669,
+    "per_jump_cost": 3.141592653589793
+  },
+  "certificate_type": "prime_matrix_backlund_classical_indent_spine_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ParentInternalTargetStillLocked",
+    "PreviousZeroCoefficientAtomActive",
+    "ClassicalBacklundSignChangeLemmaClosed",
+    "IndentArcLimitRegisteredAsSignChangeZeros",
+    "LittlewoodRectangleIdentityAvailable",
+    "ExternalJensenC16AvailableForAbsorptionTest",
+    "SeparateIndentChargeWouldDoubleCount",
+    "CS8ReaggregationAfterAbsorption",
+    "EndpointMultiplicityCompatible",
+    "ExternalBacklundEscapeStillAvailable"
+  ],
+  "counterexample_assumption_only": true,
+  "deterministic_lemmas": [
+    {
+      "lemma": "BacklundRealTraceVariationBySignChangesClosed",
+      "proof_note": "在两个相邻实部零点之间，曲线留在同一开半平面，arg 净摆幅小于 pi；逐段相加。",
+      "statement": "若连续可微曲线 f(x) 在区间上不为 0，且 arg 分支从右端固定，则 arg f 的净变化/振幅可由 Re(e^{-i theta} f(x)) 的零点/sign-change 次数控制。"
+    },
+    {
+      "lemma": "BacklundIndentArcLimitRegisteredAsSignChangeZerosClosed",
+      "proof_note": "g(rho) 非零只给连续相位；全部离散跳变来自 (s-rho)^m，按解析重数登记。",
+      "statement": "当路径命中解析零点 rho 时，先以小半圆避开再取极限；局部模型 f(s)=(s-rho)^m g(s) 把缩进弧 jump 精确登记为 m 个 sign-change/重数事件。"
+    }
+  ],
+  "dstructure_rankin_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "empirical_absence_not_used": true,
+  "external_backlund_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "indent_arc_registry_closed": true,
+  "new_unique_internal_remaining": "BacklundRealPartSignChangeJensenAbsorptionNoDoubleCountLedger",
+  "open_gates": [
+    "SignChangeToJensenAbsorptionExactness",
+    "InternalClassicalBacklundIndentClosed",
+    "RowColumnExternalRouteStillNeedsDStructure"
+  ],
+  "parent_internal_target": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+  "plain_conclusion": "经典 Backlund 内部化的正确脊柱不是证明近零 jump 消失，而是把水平 trace 的 arg 净变化/振幅改写为实部 sign-change 计数；缩进弧在避零极限中按解析重数登记为同一类事件。本步自足关闭了 sign-change 净变化引理和局部缩进登记引理，排除了逐零点额外付费的重复扣费。严格自足的新唯一剩余是证明该 sign-change 登记表精确注入既有 Jensen C16 局部计数，不遗漏端点、重零、贴线极限，也不调用外部 Backlund 引理。",
+  "previous_unique_remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger",
+  "row_column_external_route_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只重排假设链条里的解析缩进成本，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持自足与外部链条分离。"
+    },
+    {
+      "closed": true,
+      "gate": "ParentInternalTargetStillLocked",
+      "meaning": "内部主攻仍是经典 Backlund 缩进成本内部证明。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PreviousZeroCoefficientAtomActive",
+      "meaning": "上一层把内部硬点写成未配对 jump 的 log(T) 零系数。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ClassicalBacklundSignChangeLemmaClosed",
+      "meaning": "经典 Backlund 的实变量骨架可自足证明：arg 净变化/振幅由实部 sign-change 数控制。",
+      "proved": true,
+      "remaining": "BacklundRealTraceVariationBySignChangesClosed"
+    },
+    {
+      "closed": true,
+      "gate": "IndentArcLimitRegisteredAsSignChangeZeros",
+      "meaning": "局部缩进弧的 jump 不是额外对象；在避零极限中按解析重数登记为同一 sign-change/零点事件。",
+      "proved": true,
+      "remaining": "BacklundIndentArcLimitRegisteredAsSignChangeZerosClosed"
+    },
+    {
+      "closed": true,
+      "gate": "LittlewoodRectangleIdentityAvailable",
+      "meaning": "Littlewood 矩形恒等式已可登记零点横向权重和边界积分。",
+      "proved": true,
+      "remaining": "BacklundLittlewoodRectangleArgumentClosed"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalJensenC16AvailableForAbsorptionTest",
+      "meaning": "外部低高度输入下 Jensen C16 计数可作为对接参照；严格自足低高度仍未全部闭合。",
+      "proved": false,
+      "remaining": "BacklundIndependentJensenZeroCountC16AggregationExternalClosed"
+    },
+    {
+      "closed": true,
+      "gate": "SeparateIndentChargeWouldDoubleCount",
+      "meaning": "若 sign-change 零点已进入 Jensen C16 计数，再额外逐零点付 pi 缩进成本就是重复扣费。",
+      "proved": true,
+      "remaining": "NoDoubleCounting discipline"
+    },
+    {
+      "closed": false,
+      "gate": "SignChangeToJensenAbsorptionExactness",
+      "meaning": "仍需证明 sign-change 登记表逐项注入既有 Jensen C16 局部计数，且不遗漏端点、重零和贴线极限。",
+      "proved": false,
+      "remaining": "BacklundRealPartSignChangeJensenAbsorptionNoDoubleCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CS8ReaggregationAfterAbsorption",
+      "meaning": "若上面的无重复吸收对接闭合，则 C_boundary=16 与桥因子 1/2 的 C_S=8 验收不再新增成本。",
+      "proved": true,
+      "remaining": "BacklundCS8SlackAfterBridgeClosedTightHalf"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointMultiplicityCompatible",
+      "meaning": "端点落零先避开再取极限，正好提供 sign-change 登记的重数 convention。",
+      "proved": true,
+      "remaining": "EndpointZeroAvoidanceMultiplicityConventionClosedByLimit"
+    },
+    {
+      "closed": false,
+      "gate": "InternalClassicalBacklundIndentClosed",
+      "meaning": "经典脊柱已建立，但 sign-change 到 Jensen C16 的精确无重复对接仍未闭合。",
+      "proved": false,
+      "remaining": "BacklundRealPartSignChangeJensenAbsorptionNoDoubleCountLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundEscapeStillAvailable",
+      "meaning": "接受外部经典 Backlund 缩进引理可绕过该内部对接证明。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnExternalRouteStillNeedsDStructure",
+      "meaning": "外部 Backlund 包接上后，最终仍需 DStructure/Rankin 独立验收。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "sign_change_lemma_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-littlewood-rectangle-router.json": "062778677ccc3375b4405c6e5559feba240610f29ec4fc13dd5b341e43ff64f3",
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-jensen-radius-contingency-router.json": "39cb556c49dc36822f5b23eff9594850efcd269d8f1ba249f6f22a76ef5fdc24",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-backlund-internal-external-merge-router.json": "2de58ab23dbc28c8b0bd1d441bb47c56f36942f3a60c39e4cd0744c36671a4ce",
+    "docs/monograph/prime-matrix-backlund-internal-proof-atomic-reduction-router.json": "9d12721c50a074ff41f272343d170121b1e38b80e17d9f145a67b3c5f489df10"
+  },
+  "status": "backlund_classical_indent_spine_reduced_to_sign_change_absorption_open"
+}
