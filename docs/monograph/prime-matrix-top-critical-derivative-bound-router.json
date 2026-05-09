@@ -1,0 +1,139 @@
+{
+  "certificate_type": "prime_matrix_top_critical_derivative_bound_router",
+  "counterexample_assumption_only": true,
+  "derivative_bounds": {
+    "actual_loss_bound": 0.005360689033267469,
+    "closed_against_contract": true,
+    "contract_loss_bound": 0.015625,
+    "correction_rows": [
+      {
+        "coefficient_abs": 0.08333333333333333,
+        "k": 1,
+        "m": 1,
+        "term_derivative_bound": 0.0228547547978184
+      },
+      {
+        "coefficient_abs": 0.001388888888888889,
+        "k": 2,
+        "m": 3,
+        "term_derivative_bound": 7.833094033886265e-05
+      },
+      {
+        "coefficient_abs": 3.3068783068783064e-05,
+        "k": 3,
+        "m": 5,
+        "term_derivative_bound": 4.0894316119989447e-07
+      },
+      {
+        "coefficient_abs": 8.267195767195768e-07,
+        "k": 4,
+        "m": 7,
+        "term_derivative_bound": 2.4621770404722576e-09
+      },
+      {
+        "coefficient_abs": 2.08767569878681e-08,
+        "k": 5,
+        "m": 9,
+        "term_derivative_bound": 1.6806861743969117e-11
+      },
+      {
+        "coefficient_abs": 5.284190138687493e-10,
+        "k": 6,
+        "m": 11,
+        "term_derivative_bound": 1.3088956972261972e-13
+      },
+      {
+        "coefficient_abs": 1.338253653068468e-11,
+        "k": 7,
+        "m": 13,
+        "term_derivative_bound": 1.169926418576533e-15
+      },
+      {
+        "coefficient_abs": 3.3896802963225827e-13,
+        "k": 8,
+        "m": 15,
+        "term_derivative_bound": 1.203258127040902e-17
+      }
+    ],
+    "correction_total_derivative_bound": 0.022933497160434434,
+    "derivative_contract": 64.0,
+    "endpoint_half_derivative_bound": 0.306330669833921,
+    "finite_sum_derivative_bound": 20.198886835612637,
+    "half_cell_width": 0.000244140625,
+    "margin_with_actual_bound_if_centers_pass": 0.09463931096673253,
+    "margin_with_contract_if_centers_pass": 0.084375,
+    "mesh_denominator": 2048,
+    "pole_tail_derivative_bound": 1.4292302776565593,
+    "remainder_derivative_budget": 1e-06,
+    "total_derivative_bound": 21.957382280263552
+  },
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "TopCriticalSegmentCenterValueEMReplayLedgerN32P8Mesh2048Floor0p1",
+  "plain_conclusion": "顶边临界半段的水平导数合同已闭合：Euler-Maclaurin 逐项导数上界约 21.9574，远小于 64。于是剩余不再包含传播控制，只剩 1024 个中心值的有理区间 replay 表。",
+  "proof_lines": [
+    "在 1/2<=sigma<=1, t=14 上，对 Euler-Maclaurin 公式逐项求 s 导数；水平导数就是 d/ds。",
+    "有限和部分由 sum_{n<32} log(n)n^{-sigma} <= sum log(n)/sqrt(n) 控制。",
+    "N^(1-s)/(s-1) 的导数用 |s-1|>=14 与 N^(1-sigma)<=sqrt(N) 控制。",
+    "1/2*N^{-s} 的导数用 (1/2)log(N)/sqrt(N) 控制。",
+    "Bernoulli 修正项 c_k (s)_{2k-1} N^{-s-2k+1} 的导数由 product bound 乘以 sum reciprocal plus log(N) 控制。",
+    "Euler-Maclaurin 余项导数给 1e-6 冗余预算；总上界约 21.9574，小于合同 64。"
+  ],
+  "replacement_self_contained": {
+    "TopCriticalSegmentEulerMaclaurinDyadicReplayLedgerN32P8Mesh2048": "TopCriticalSegmentHorizontalDerivativeBoundClosed64 AND TopCriticalSegmentCenterValueEMReplayLedgerN32P8Mesh2048Floor0p1"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DerivativeBoundGateActive",
+      "meaning": "上一层把顶边临界段压成中心值加导数传播的 Euler-Maclaurin replay。",
+      "proved": true,
+      "remaining": "TopCriticalSegmentEulerMaclaurinDyadicReplayLedgerN32P8Mesh2048"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只证明解析上界，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "EulerMaclaurinDerivativeFormulaBounded",
+      "meaning": "逐项绝对值上界给 |zeta'|<=21.957382280264<64。",
+      "proved": true,
+      "remaining": "TopCriticalSegmentHorizontalDerivativeBoundClosed64"
+    },
+    {
+      "closed": true,
+      "gate": "PropagationMarginImproved",
+      "meaning": "若中心值 >=0.1，实际导数上界带来的半段损失约 0.005360689033，剩余 0.094639310967。",
+      "proved": true,
+      "remaining": "center values remain."
+    },
+    {
+      "closed": false,
+      "gate": "CenterValueReplayStillMissing",
+      "meaning": "还需 1024 个中心点的有理区间 Euler-Maclaurin 值证明 |zeta|>=0.1。",
+      "proved": false,
+      "remaining": "TopCriticalSegmentCenterValueEMReplayLedgerN32P8Mesh2048Floor0p1 AND DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "TopCriticalSegmentEulerMaclaurinDyadicReplayLedgerN32P8Mesh2048",
+      "meaning": "原 replay 账本已关闭导数半边，剩余是中心值 replay 表。",
+      "proved": false,
+      "remaining": "TopCriticalSegmentCenterValueEMReplayLedgerN32P8Mesh2048Floor0p1"
+    }
+  ],
+  "secondary_priority": "DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-top-critical-segment-em-replay-router.json": "3597bcc3e0ddb11a2c58b527623ef5474d7939454884f8141af51adf2dda160f"
+  },
+  "status": "top_critical_derivative_bound_closed_center_values_next",
+  "tertiary_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "top_critical_derivative_bound_closed": true,
+  "top_critical_segment_self_contained_closed": false
+}

@@ -1,0 +1,103 @@
+{
+  "certificate_type": "prime_matrix_em_replay_rounding_discipline_router",
+  "counterexample_assumption_only": true,
+  "em_replay_rounding_discipline_closed": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "TopCriticalSegmentCenterValueEMReplayLedgerN32P8Mesh2048Floor0p1",
+  "operation_map": [
+    {
+      "covered_by": "DyadicRationalIntervalArithmeticCoreClosed",
+      "note": "中心点、网格端点、N=32、p=8、Bernoulli 系数均为有理数据。",
+      "operation": "dyadic centers c_j and height 14"
+    },
+    {
+      "covered_by": "RationalLogTrigTaylorOracleTemplateClosed",
+      "note": "n<=32，atanh-log 模板给向外有理盒。",
+      "operation": "log n"
+    },
+    {
+      "covered_by": "RationalExpTaylorRangeReductionTemplateClosed AND RationalLogTrigTaylorOracleTemplateClosed",
+      "note": "拆成 exp(-sigma log n)*(cos(14 log n)-i sin(14 log n))。",
+      "operation": "n^{-s}=exp(-s log n)"
+    },
+    {
+      "covered_by": "ComplexRectangularIntervalPropagationClosed",
+      "note": "有限复矩形乘法和加法。",
+      "operation": "rising factorial (s)_m"
+    },
+    {
+      "covered_by": "ComplexRectangularIntervalPropagationClosed",
+      "note": "|s-1|>=14，除法零排斥有显式下界。",
+      "operation": "division by s-1"
+    },
+    {
+      "covered_by": "integer endpoint inequality plus Bernoulli periodic bound",
+      "note": "使用标准余项上界写成实半径，加入复盒外包。",
+      "operation": "EM remainder interval"
+    },
+    {
+      "covered_by": "IntervalOperationTraceHashLedgerClosedCanonicalDAGv1",
+      "note": "每个中心值 replay 是 canonical DAG root hash。",
+      "operation": "node ordering and reproducibility"
+    }
+  ],
+  "plain_conclusion": "DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger 已闭合：Euler-Maclaurin 中心值 replay 所需的 dyadic、复矩形、log/trig/exp、除法和余项外包均落入已闭合区间核与 trace/hash 账本。严格自足剩余只剩 1024 个中心值下界表。",
+  "replacement_self_contained": {
+    "DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger": "DyadicComplexIntervalEulerMaclaurinReplayRoundingClosedCanonicalDAGv1"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EMRoundingGateActive",
+      "meaning": "导数门闭合后，并行实现门是 EM 中心值 replay 的舍入纪律。",
+      "proved": true,
+      "remaining": "DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只规定有限中心值证书的可复放计算纪律，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "CertifiedIntervalKernelImported",
+      "meaning": "dyadic、复矩形、log/trig/exp Taylor 尾阶与 trace/hash 账本均已闭合。",
+      "proved": true,
+      "remaining": "all arithmetic primitives available."
+    },
+    {
+      "closed": true,
+      "gate": "EulerMaclaurinOperationMapClosed",
+      "meaning": "EM replay 的每种运算都落入已闭合的区间核或整数不等式。",
+      "proved": true,
+      "remaining": "DyadicComplexIntervalEulerMaclaurinReplayRoundingClosedCanonicalDAGv1"
+    },
+    {
+      "closed": false,
+      "gate": "CenterValuesStillMissing",
+      "meaning": "舍入纪律不替代 1024 个中心值的实际非零下界表。",
+      "proved": false,
+      "remaining": "TopCriticalSegmentCenterValueEMReplayLedgerN32P8Mesh2048Floor0p1"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger",
+      "meaning": "EM replay 舍入纪律已闭合，剩余只是真正的中心值表。",
+      "proved": true,
+      "remaining": "DyadicComplexIntervalEulerMaclaurinReplayRoundingClosedCanonicalDAGv1"
+    }
+  ],
+  "secondary_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-interval-operation-trace-hash-ledger-router.json": "ad3f239950b27f5f50ae3742b5f8954145b02e8738016e0c71f6fa9be7240362",
+    "docs/monograph/prime-matrix-theta-mellin-taylor-tail-order-router.json": "21a5b676cde3c77017a445ba66031b57019856d3c87b8c218e885b3dbbc8bca5",
+    "docs/monograph/prime-matrix-top-critical-derivative-bound-router.json": "5d9e406b2ab28af5c3ce94570b128fea4d24970101b7394ba55094896bcb291a"
+  },
+  "status": "em_replay_rounding_discipline_closed_center_values_only",
+  "top_critical_segment_self_contained_closed": false
+}

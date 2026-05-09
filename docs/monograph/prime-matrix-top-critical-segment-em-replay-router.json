@@ -1,0 +1,106 @@
+{
+  "audit": {
+    "audit_derivative_slack_factor": 82.52663265306597,
+    "audit_margin_over_floor": 0.005472687242049634,
+    "audit_max_derivative_abs": 0.7755072264859012,
+    "audit_max_derivative_sigma": 0.500244140625,
+    "audit_max_em_remainder_bound": 3.0636680244755255e-19,
+    "audit_max_eta_em_cross_error": 2.549937299914325e-15,
+    "audit_min_center_abs": 0.10547268724204964,
+    "audit_min_center_sigma": 0.507080078125,
+    "audit_min_center_value_im": -0.10181793085611816,
+    "audit_min_center_value_re": 0.027524474749538137,
+    "cell_count": 1024,
+    "center_value_floor_contract": 0.1,
+    "certified_margin_if_replay_passes": 0.084375,
+    "derivative_bound_contract": 64.0,
+    "half_cell_width": 0.000244140625,
+    "height": 14.0,
+    "mesh_denominator": 2048,
+    "propagation_loss_contract": 0.015625,
+    "replay_contract_n": 32,
+    "replay_contract_p": 8,
+    "sigma_range": [
+      "1/2",
+      "1"
+    ]
+  },
+  "certificate_type": "prime_matrix_top_critical_segment_em_replay_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "TopCriticalSegmentEulerMaclaurinDyadicReplayLedgerN32P8Mesh2048",
+  "plain_conclusion": "顶边临界半段已压成一个具体有限 replay 账本：1024 个 dyadic 小段、Euler-Maclaurin N=32,p=8 中心值证书与 |zeta'|<=64 导数证书。浮点侦察显示最小 |zeta| 约 0.10547，导数约 0.77566，合同余量很宽；但严格自足仍需把这些值写成有理区间 replay。",
+  "proof_contract": [
+    "把 [1/2,1] 分成 1024 个 dyadic 小段，中心 c_j=1/2+(j+1/2)/2048。",
+    "对每个中心 s_j=c_j+14i，用 Euler-Maclaurin 公式 N=32, p=8 给 zeta(s_j) 的复区间盒。",
+    "每个中心盒必须证明 |zeta(s_j)|>=1/10；xi 的其他因子在顶边上非零，所以 zeta 非零等价于 xi 非零。",
+    "同时用同一 Euler-Maclaurin replay 或 Cauchy 盒证明整段水平导数 |d zeta/d sigma|<=64。",
+    "任意点离中心距离至多 1/4096，因此 |zeta(s)|>=1/10-64/4096=0.084375>0。",
+    "所有中心值、导数界、余项界与父 trace hash 进入 dyadic complex interval replay 账本。"
+  ],
+  "replacement_self_contained": {
+    "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne": "TopCriticalSegmentEulerMaclaurinDyadicReplayLedgerN32P8Mesh2048"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "TopCriticalSegmentGateActive",
+      "meaning": "上一层已把顶边自足剩余压缩到 Im(s)=14, 1/2<=Re(s)<=1。",
+      "proved": true,
+      "remaining": "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理低高度解析证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "SymmetryAndEulerProductCompressionImported",
+      "meaning": "顶边左半和右外段已关闭，只需临界半段。",
+      "proved": true,
+      "remaining": "critical half segment only."
+    },
+    {
+      "closed": true,
+      "gate": "FloatReconnaissanceSupportsWideMargin",
+      "meaning": "侦察最小 |zeta|≈0.105472687242，最大水平导数≈0.775507226486，远优于 0.1/64 合同。",
+      "proved": false,
+      "remaining": "不能作为自足证明，只用于确定可行证书参数。"
+    },
+    {
+      "closed": true,
+      "gate": "CenterDerivativePropagationLemmaClosed",
+      "meaning": "若中心值 >=1/10 且导数 <=64，则每段内 |zeta|>=0.084375，因而 xi 非零。",
+      "proved": true,
+      "remaining": "finite replay remains."
+    },
+    {
+      "closed": false,
+      "gate": "ExactDyadicEulerMaclaurinReplayStillMissing",
+      "meaning": "还需把 1024 个中心值和导数界用有理区间 Euler-Maclaurin replay 实际登记。",
+      "proved": false,
+      "remaining": "TopCriticalSegmentEulerMaclaurinDyadicReplayLedgerN32P8Mesh2048 AND DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "TopCriticalSegmentXiBoxCoverLedgerT14SigmaHalfToOne",
+      "meaning": "旧顶边临界半段盒账本已压缩为有限 Euler-Maclaurin replay，但严格自足尚未闭合。",
+      "proved": false,
+      "remaining": "TopCriticalSegmentEulerMaclaurinDyadicReplayLedgerN32P8Mesh2048"
+    }
+  ],
+  "secondary_priority": "DyadicComplexIntervalEulerMaclaurinReplayRoundingLedger",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-top-edge-symmetry-halfstrip-router.json": "20db999192d46bfbbd7902ba3840fe9aab8b2bd0f3b9a6c77bb6c25a88bd098d"
+  },
+  "status": "top_critical_segment_reduced_to_em_replay_ledger_open",
+  "tertiary_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "top_critical_segment_compressed_to_em_replay": true,
+  "top_critical_segment_self_contained_closed": false
+}
