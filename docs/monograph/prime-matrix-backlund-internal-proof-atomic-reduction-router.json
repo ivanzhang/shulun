@@ -1,0 +1,128 @@
+{
+  "atomic_basis": [
+    {
+      "atom": "BacklundLocalContourDeformationWithZerosClosed",
+      "content": "避零序列、小凹口、解析重数和极限登记都可由端点 convention 与 Stieltjes 形式公式支撑。",
+      "status": "closed"
+    },
+    {
+      "atom": "BacklundSpikeNoRVMCircularityDisciplineClosed",
+      "content": "尖峰排斥链已登记禁止调用待证 Backlund/RVM 局部计数。",
+      "status": "closed"
+    },
+    {
+      "atom": "BacklundIndentJensenEndpointNoDoubleCountingPartitionClosed",
+      "content": "eta 外进入倒距离/Jensen，eta 内进入凹口成本，端点 convention 不新增常数；这关闭的是分区纪律。",
+      "status": "closed_as_partition_discipline"
+    },
+    {
+      "atom": "BacklundC8ReaggregationConditionalOnZeroJumpCoefficientClosed",
+      "content": "若未配对 jump 的 log(T) 系数为 0，则 C_boundary=16 与桥因子 1/2 仍给 C_S=8。",
+      "status": "conditional"
+    },
+    {
+      "atom": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger",
+      "content": "必须证明未配对近零跳变的 log(T) 系数为 0；这是当前唯一数学硬核。",
+      "status": "open"
+    }
+  ],
+  "budget_pressure": {
+    "allowed_fraction_of_jensen_count": 0.0015542474911317905,
+    "allowed_unpaired_coefficient": 0.02486795985810865,
+    "available_margin": 0.078125,
+    "deficit": 50.18735745743669,
+    "jensen_zero_count_coefficient": 16.0,
+    "naive_jump_coefficient": 50.26548245743669,
+    "per_jump_cost": 3.141592653589793
+  },
+  "certificate_type": "prime_matrix_backlund_internal_proof_atomic_reduction_router",
+  "closed_gates": [
+    "InternalProofGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "BacklundLocalContourDeformationWithZerosClosed",
+    "BacklundSpikeNoRVMCircularityDisciplineClosed",
+    "BacklundIndentJensenEndpointNoDoubleCountingPartitionClosed",
+    "BacklundC8ReaggregationConditionalOnZeroJumpCoefficientClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "internal_proof_atomic_reduction_closed": true,
+  "open_gates": [
+    "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger",
+    "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parent_remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+  "plain_conclusion": "经典 Backlund 缩进成本内部证明已进一步压缩：形式轮廓变形、非循环纪律、近零/远零/端点分区、以及 C_S=8 条件重聚合都可由现有账本支撑。剩下的唯一真正数学原子是 `BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger`：必须证明未配对近零 Stieltjes/缩进跳变的 log(T) 系数为 0。该零系数原子未完成前，严格自足闭合仍未成立。",
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "InternalProofGateActive",
+      "meaning": "严格自足路线的唯一剩余已经精确定名为经典 Backlund 缩进成本内部证明。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只审查假设链条的解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundLocalContourDeformationWithZerosClosed",
+      "meaning": "避零、小凹口、极限和重数登记可由端点 convention 与 Stieltjes 形式公式自足完成。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundSpikeNoRVMCircularityDisciplineClosed",
+      "meaning": "非循环纪律已闭合：不能用待由 Backlund 推出的 RVM/CN16 反证 Backlund。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundIndentJensenEndpointNoDoubleCountingPartitionClosed",
+      "meaning": "近零/远零/端点的归属分区已固定；这避免重复扣费，但不支付近零跳变预算。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundC8ReaggregationConditionalOnZeroJumpCoefficientClosed",
+      "meaning": "C_S=8 是紧等号；只要跳变零系数成立，重聚合不新增常数。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger",
+      "meaning": "仍未证明未配对近零 Stieltjes/缩进跳变的 log(T) 系数为 0。",
+      "proved": false,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": false,
+      "gate": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+      "meaning": "内部证明被压成一个零系数预算原子；该原子未闭合前不能声明严格自足证明。",
+      "proved": false,
+      "remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-spike-exclusion-router.json": "dcb3933c64a9f5b560006452b2b1e03ec0900208985d4b906839f83d33bf0323",
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-near-zero-indent-separation-router.json": "d27338ae97a041b28360548061e660940c5916f4c7de875d8d67f388baa359b3",
+    "docs/monograph/prime-matrix-backlund-boundary-stieltjes-jump-transfer-router.json": "ab127d41025ac9d0f4465afe457cd369d8e1e36af8e9362675cfac0d877c8c71",
+    "docs/monograph/prime-matrix-backlund-internal-proof-obligation-router.json": "bc2ec3cbdc6ce62a39838066acb5230f03c77aa2a080574ffb5108bccb0c02c0"
+  },
+  "status": "backlund_internal_proof_reduced_to_zero_coefficient_jump_accounting_open",
+  "strict_self_contained_unique_remaining": "BacklundBudgetPreservingJumpAccountingZeroCoefficientLedger"
+}
