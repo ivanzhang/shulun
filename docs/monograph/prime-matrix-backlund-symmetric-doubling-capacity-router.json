@@ -1,0 +1,135 @@
+{
+  "C_S_result": 8.0,
+  "C_S_slack": 0.0,
+  "C_S_target": 8.0,
+  "backlund_local_crossing_trace_closed": false,
+  "budget_preserving_doubling_closed": false,
+  "certificate_type": "prime_matrix_backlund_symmetric_doubling_capacity_router",
+  "closed_gates": [
+    "SymmetricDoublingCapacityGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "CS8SlackIsTight",
+    "TraceResidualMarginAlreadyTiny",
+    "PaidDoublingForbidden",
+    "DoublingReducedToZeroCostProjection"
+  ],
+  "counterexample_assumption_only": true,
+  "doubling_capacity_reduction_closed": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "grandparent_priority": "BacklundSignedCrossingPairingInvolutionLedger",
+  "hypothetical_chain_only": true,
+  "lower_atoms": [
+    {
+      "atom": "BacklundZeroCostMirrorProjectionIdentityLedger",
+      "role": "证明 xi 对称 doubling 是恒等式级投影，不产生任何新增 log(T) 预算项。"
+    },
+    {
+      "atom": "BacklundHalfWeightSymmetricTraceNormalizationLedger",
+      "role": "若使用 doubled trace，必须同步使用 1/2 归一化，使边界常数不从 16 变 32。"
+    },
+    {
+      "atom": "BacklundNoDoubleCountingMirrorBoundaryLedger",
+      "role": "证明镜像边界、镜像凹口和原边界没有被重复扣费。"
+    }
+  ],
+  "next_priority": "BacklundZeroCostMirrorProjectionIdentityLedger",
+  "no_double_count_priority": "BacklundNoDoubleCountingMirrorBoundaryLedger",
+  "normalization_priority": "BacklundHalfWeightSymmetricTraceNormalizationLedger",
+  "open_gates": [
+    "BacklundZeroCostMirrorProjectionIdentityLedger",
+    "BacklundHalfWeightSymmetricTraceNormalizationLedger",
+    "BacklundNoDoubleCountingMirrorBoundaryLedger",
+    "BacklundBudgetPreservingXiSymmetricContourDoublingLedger"
+  ],
+  "paid_doubling_C_S_result": 16.0,
+  "paid_doubling_multiplier": 2.0,
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parent_priority": "BacklundXiSymmetricFormalUnitContourLedger",
+  "plain_conclusion": "预算保持 xi 对称 doubling 不能按普通双份轮廓付费。因为 Backlund C_S=8 已是紧等号，任何正的 doubling 乘子都会把 C_S 从 8 推到 16。所以当前最窄点被压成 `BacklundZeroCostMirrorProjectionIdentityLedger`：必须证明对称化是在恒等式层完成的零成本投影，并配套半权归一化与无重复扣费纪律。",
+  "post_doubling_priority": "BacklundMirrorIndentArcOrientationLedger",
+  "projection_priority": "BacklundOriginalTraceProjectionNoLossLedger",
+  "replacement_self_contained": {
+    "BacklundBudgetPreservingXiSymmetricContourDoublingLedger": "(BacklundZeroCostMirrorProjectionIdentityLedger AND BacklundHalfWeightSymmetricTraceNormalizationLedger AND BacklundNoDoubleCountingMirrorBoundaryLedger)"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SymmetricDoublingCapacityGateActive",
+      "meaning": "formal unit 路由后，当前最窄点是预算保持的 xi 对称 doubling。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的容量纪律，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "CS8SlackIsTight",
+      "meaning": "Backlund C_S=8 余量是紧等号，slack=0；不能支付任何正的 doubling 乘子。",
+      "proved": true,
+      "remaining": "BacklundZeroCostMirrorProjectionIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TraceResidualMarginAlreadyTiny",
+      "meaning": "crossing trace 容量已证明凹口残余必须是零系数；不能让 doubled unit 新增正比例残留。",
+      "proved": true,
+      "remaining": "BacklundZeroCostMirrorProjectionIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PaidDoublingForbidden",
+      "meaning": "如果 doubling 把边界或凹口预算乘以 2，则 C_S 由 8 变 16，立即破坏闭合目标。",
+      "proved": true,
+      "remaining": "BacklundZeroCostMirrorProjectionIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DoublingReducedToZeroCostProjection",
+      "meaning": "预算保持 doubling 已压成零成本镜像投影、半权归一化、无重复扣费三包。",
+      "proved": false,
+      "remaining": "BacklundZeroCostMirrorProjectionIdentityLedger AND BacklundHalfWeightSymmetricTraceNormalizationLedger AND BacklundNoDoubleCountingMirrorBoundaryLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundZeroCostMirrorProjectionIdentityLedger",
+      "meaning": "尚未证明 doubled formal unit 是恒等式级投影而非新预算项。",
+      "proved": false,
+      "remaining": "BacklundZeroCostMirrorProjectionIdentityLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundHalfWeightSymmetricTraceNormalizationLedger",
+      "meaning": "尚未证明 doubled trace 的 1/2 归一化与原始 Backlund 目标严格等价。",
+      "proved": false,
+      "remaining": "BacklundHalfWeightSymmetricTraceNormalizationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundNoDoubleCountingMirrorBoundaryLedger",
+      "meaning": "尚未证明镜像边界和镜像凹口不会重复扣费。",
+      "proved": false,
+      "remaining": "BacklundNoDoubleCountingMirrorBoundaryLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger",
+      "meaning": "三包闭合后才可继续验收镜像弧方向和原 trace 投影。",
+      "proved": false,
+      "remaining": "BacklundMirrorIndentArcOrientationLedger AND BacklundOriginalTraceProjectionNoLossLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-backlund-crossing-trace-capacity-router.json": "bccb004fcada4ac9ae87fdf203125d449713bce23105665cc061732bd91767c9",
+    "docs/monograph/prime-matrix-backlund-xi-formal-unit-contour-router.json": "3bcc2554b4180f0aa9514d1720b9a0a6a66f5f64ca1746e4e222e4b7bb473ba4"
+  },
+  "status": "backlund_symmetric_doubling_reduced_to_zero_cost_projection_open",
+  "xi_symmetric_formal_unit_closed": false
+}
