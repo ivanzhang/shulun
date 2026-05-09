@@ -29,6 +29,7 @@ DEFAULT_TERMINAL_PROMOTION = (
 DEFAULT_LINE_REF = DOCS / "line-by-line-internal-referee-matrix.md"
 DEFAULT_RANKIN_ACCEPTANCE = DOCS / "prime-matrix-bpn-rankin-ledger-acceptance-theorem.md"
 DEFAULT_RANKIN_AUDIT = DOCS / "prime-matrix-bpn-rankin-ledger-certificate-audit.json"
+DEFAULT_FULL_RANKIN = DOCS / "prime-matrix-full-rankin-ledger-inventory-router.json"
 DEFAULT_CLAIM_STATUS = DOCS / "claim-status-table.md"
 DEFAULT_MAIN_TEX = PAPER / "contradiction-field-monograph.tex"
 DEFAULT_JSON = (
@@ -92,6 +93,7 @@ def build_rows(
     line_ref_text: str,
     rankin_acceptance_text: str,
     rankin_audit: dict[str, Any],
+    full_rankin: dict[str, Any],
     claim_status_text: str,
     main_tex_text: str,
 ) -> list[dict[str, Any]]:
@@ -133,11 +135,13 @@ def build_rows(
         rankin_audit.get("status")
         == "finite_rankin_ledger_computable_with_lowmod_residue_report"
         and rankin_audit.get("rankin_budget_pass") is True
-        and rankin_audit.get("exact_budget_pass") is True
+            and rankin_audit.get("exact_budget_pass") is True
     )
-    full_rankin_ledger_still_open = contains_all(
-        claim_status_text,
-        ["正式 Rankin 证书全集尚未提交", "finite Rankin smooth-core ledger constants"],
+    full_rankin_pass_or_return_closed = (
+        full_rankin.get("full_rankin_ledger_still_open_closed") is True
+        and full_rankin.get("batch_rankin_pass_or_return_closed") is True
+        and full_rankin.get("concrete_rankin_batch_manifest_data_closed") is True
+        and full_rankin.get("row_column_unconditional_closed") is False
     )
     no_author_promotion = contains_all(
         line_ref_text,
@@ -197,15 +201,15 @@ def build_rows(
             accepted=False,
             evidence="Rankin acceptance theorem + sample audit",
             meaning="Rankin 账本已从口头常数变为可验收证书格式，样本证书通过。",
-            remaining="generate passing certificates for all formal colored corridors",
+            remaining="full pass-or-return ledger imported in the next row",
         ),
         row(
-            gate="FullRankinLedgerStillOpen",
-            boundary_closed=full_rankin_ledger_still_open,
+            gate="FullRankinLedgerPassOrReturnClosed",
+            boundary_closed=full_rankin_pass_or_return_closed,
             accepted=False,
-            evidence="claim status table",
-            meaning="状态表仍明确记录正式 Rankin 证书全集尚未提交。",
-            remaining="all colored-corridor Rankin certificates pass or route failures to PDEC/SAE",
+            evidence="full Rankin ledger inventory router",
+            meaning="正式 Rankin 证书全集缺口已由 concrete manifest/data 与 BatchRankin pass-or-return 回收。",
+            remaining="independent acceptance of the Rankin subledger and downstream returns",
         ),
         row(
             gate="NoAuthorSidePromotion",
@@ -224,6 +228,7 @@ def run(
     line_ref_path: Path,
     rankin_acceptance_path: Path,
     rankin_audit_path: Path,
+    full_rankin_path: Path,
     claim_status_path: Path,
     main_tex_path: Path,
 ) -> dict[str, Any]:
@@ -233,6 +238,7 @@ def run(
     line_ref_text = read_text(line_ref_path)
     rankin_acceptance_text = read_text(rankin_acceptance_path)
     rankin_audit = load_json(rankin_audit_path)
+    full_rankin = load_json(full_rankin_path)
     claim_status_text = read_text(claim_status_path)
     main_tex_text = read_text(main_tex_path)
     rows = build_rows(
@@ -241,6 +247,7 @@ def run(
         line_ref_text=line_ref_text,
         rankin_acceptance_text=rankin_acceptance_text,
         rankin_audit=rankin_audit,
+        full_rankin=full_rankin,
         claim_status_text=claim_status_text,
         main_tex_text=main_tex_text,
     )
@@ -252,6 +259,7 @@ def run(
         line_ref_path,
         rankin_acceptance_path,
         rankin_audit_path,
+        full_rankin_path,
         claim_status_path,
         main_tex_path,
     ]
@@ -271,11 +279,17 @@ def run(
         "rankin_sample_pass": bool(
             rankin_audit.get("rankin_budget_pass") and rankin_audit.get("exact_budget_pass")
         ),
+        "full_rankin_ledger_still_open_closed": (
+            full_rankin.get("full_rankin_ledger_still_open_closed") is True
+        ),
+        "batch_rankin_pass_or_return_closed": (
+            full_rankin.get("batch_rankin_pass_or_return_closed") is True
+        ),
         "required_acceptance_items": [
             "D-structure / Structured-EHPD 入口与归约被独立接受",
             "Tail-log4 的 BG/RKS 定理号与适配审计被接受",
             "有限验证归档与脚本 hash 可复现",
-            "全部正式着色走廊 Rankin 证书通过，或失败者回流 PDEC/SAE",
+            "Rankin pass-or-return 子账本及其失败回流被独立接受",
             "作者侧 BLOCK-REFEREE 只能由独立审稿接受后升级",
         ],
         "rows": rows,
@@ -287,8 +301,9 @@ def run(
         ),
         "review_conclusion": (
             "第三包验收边界已闭合但未被当前材料独立接受：D-structure/Tail-log4/finite Rankin "
-            "都是命名晋级门，Rankin 样本证书通过且格式可验收；正式全集、外部定理号、有限验证 "
-            "hash 和独立审稿仍未完成。因此完整行/列无条件定理仍不能声明。"
+            "都是命名晋级门，Rankin pass-or-return 子账本已经内部闭合且格式可验收；"
+            "但 D-structure 归约、Tail-log4 外部适配、有限验证 hash 和独立审稿仍未完成。"
+            "因此完整行/列无条件定理仍不能声明。"
         ),
     }
 
@@ -314,6 +329,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         ),
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",
         f"rankin_sample_pass={fmt_bool(result['rankin_sample_pass'])}",
+        f"full_rankin_ledger_still_open_closed={fmt_bool(result['full_rankin_ledger_still_open_closed'])}",
+        f"batch_rankin_pass_or_return_closed={fmt_bool(result['batch_rankin_pass_or_return_closed'])}",
         "```",
         "",
         "## 2. 审查表",
@@ -359,6 +376,7 @@ def main() -> None:
     parser.add_argument("--line-ref-md", type=Path, default=DEFAULT_LINE_REF)
     parser.add_argument("--rankin-acceptance-md", type=Path, default=DEFAULT_RANKIN_ACCEPTANCE)
     parser.add_argument("--rankin-audit-json", type=Path, default=DEFAULT_RANKIN_AUDIT)
+    parser.add_argument("--full-rankin-json", type=Path, default=DEFAULT_FULL_RANKIN)
     parser.add_argument("--claim-status-md", type=Path, default=DEFAULT_CLAIM_STATUS)
     parser.add_argument("--main-tex", type=Path, default=DEFAULT_MAIN_TEX)
     parser.add_argument("--json-out", type=Path, default=DEFAULT_JSON)
@@ -371,6 +389,7 @@ def main() -> None:
         line_ref_path=args.line_ref_md,
         rankin_acceptance_path=args.rankin_acceptance_md,
         rankin_audit_path=args.rankin_audit_json,
+        full_rankin_path=args.full_rankin_json,
         claim_status_path=args.claim_status_md,
         main_tex_path=args.main_tex,
     )

@@ -2,7 +2,7 @@
 
 **状态：** `dstructure_rankin_promotion_boundary_closed_referee_acceptance_open`
 
-第三包验收边界已闭合但未被当前材料独立接受：D-structure/Tail-log4/finite Rankin 都是命名晋级门，Rankin 样本证书通过且格式可验收；正式全集、外部定理号、有限验证 hash 和独立审稿仍未完成。因此完整行/列无条件定理仍不能声明。
+第三包验收边界已闭合但未被当前材料独立接受：D-structure/Tail-log4/finite Rankin 都是命名晋级门，Rankin pass-or-return 子账本已经内部闭合且格式可验收；但 D-structure 归约、Tail-log4 外部适配、有限验证 hash 和独立审稿仍未完成。因此完整行/列无条件定理仍不能声明。
 
 ## 1. 晋级律
 
@@ -13,6 +13,8 @@ promotion_package_boundary_closed=true
 promotion_package_independently_accepted=false
 row_column_unconditional_closed=false
 rankin_sample_pass=true
+full_rankin_ledger_still_open_closed=true
+batch_rankin_pass_or_return_closed=true
 ```
 
 ## 2. 审查表
@@ -24,8 +26,8 @@ rankin_sample_pass=true
 | `DStructureStructuredEHPDGuarded` | `true` | `false` | line-by-line matrix PM-5/PM-16 | 行/列反例到 Structured-EHPD 的入口为条件通过，终局保持外审阻断。 | independent acceptance of D-group definitions and reductions |
 | `TailLog4Guarded` | `true` | `false` | line-by-line matrix PM-7 | Tail-log4 已定理化为接口，但 BG/RKS 外部定理号和适配仍需核验。 | verify BG/RKS theorem numbers and Tail-log4 adaptation |
 | `FiniteVerificationGuarded` | `true` | `false` | line-by-line matrix PM-15 | 阈值以下有限验证是条件通过，需复现环境和脚本 hash。 | reproducible finite-verification archive |
-| `FiniteRankinSchemaReady` | `true` | `false` | Rankin acceptance theorem + sample audit | Rankin 账本已从口头常数变为可验收证书格式，样本证书通过。 | generate passing certificates for all formal colored corridors |
-| `FullRankinLedgerStillOpen` | `true` | `false` | claim status table | 状态表仍明确记录正式 Rankin 证书全集尚未提交。 | all colored-corridor Rankin certificates pass or route failures to PDEC/SAE |
+| `FiniteRankinSchemaReady` | `true` | `false` | Rankin acceptance theorem + sample audit | Rankin 账本已从口头常数变为可验收证书格式，样本证书通过。 | full pass-or-return ledger imported in the next row |
+| `FullRankinLedgerPassOrReturnClosed` | `true` | `false` | full Rankin ledger inventory router | 正式 Rankin 证书全集缺口已由 concrete manifest/data 与 BatchRankin pass-or-return 回收。 | independent acceptance of the Rankin subledger and downstream returns |
 | `NoAuthorSidePromotion` | `true` | `false` | line-by-line matrix + main theorem boundary | 作者侧复核不能替代独立外审，主稿不得升级为最终无条件定理。 | external/referee acceptance |
 
 ## 3. 必须补齐的验收项
@@ -33,7 +35,7 @@ rankin_sample_pass=true
 - D-structure / Structured-EHPD 入口与归约被独立接受
 - Tail-log4 的 BG/RKS 定理号与适配审计被接受
 - 有限验证归档与脚本 hash 可复现
-- 全部正式着色走廊 Rankin 证书通过，或失败者回流 PDEC/SAE
+- Rankin pass-or-return 子账本及其失败回流被独立接受
 - 作者侧 BLOCK-REFEREE 只能由独立审稿接受后升级
 
 ## 4. 判定
