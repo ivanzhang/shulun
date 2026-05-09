@@ -1,0 +1,143 @@
+{
+  "audit": {
+    "balance_residuals": {
+      "bottom_angle": -1.2246467991473525e-16,
+      "left_minus_right_angle": -7.327471962526033e-14,
+      "top_plus_twice_right_angle": 7.904787935331115e-14,
+      "total_angle": 5.650695048136079e-15
+    },
+    "bottom_max_abs_imag": 6.412235645774016e-17,
+    "bottom_min_real": 0.4971207781883155,
+    "branch_angle_ceiling": 1.0245724824731868,
+    "branch_margin": "149/6144000",
+    "branch_margin_float": 2.4251302083333332e-05,
+    "branch_ratio": 0.8544921875,
+    "branch_safety_closed": true,
+    "derivative_contract": "1/12",
+    "edge_count": 32768,
+    "max_balance_residual": 7.904787935331115e-14,
+    "max_boundary_step": "7/4096",
+    "max_step_angle": 0.0029271576400401243,
+    "node_count": 32769,
+    "node_floor": "1/6000",
+    "node_floor_float": 0.00016666666666666666,
+    "polygon_integer_closed": true,
+    "polygon_symmetry_root_hash": "7418be9e06c98be923637c5253795b08e7270495b3573d2d6eaee5d23bc073f2",
+    "polygon_trace_root_hash": "941a77e7541d73eedebe9068dcd173dc9aaa63765879bf0612ea50f2a58dd64b",
+    "polygon_winding_root_hash": "37be1e9977e0047951702c2bb8ec0e13183d5386f8fc6db7f7c1765b2bdb4330",
+    "right_start_im": 0.0,
+    "right_start_re": 0.5235987755982984,
+    "samples_per_side": 8192,
+    "side_angles": {
+      "bottom": -1.2246467991473525e-16,
+      "left": 2.3324981246951983,
+      "right": 2.3324981246952716,
+      "top": -4.664996249390464
+    },
+    "step_loss_under_derivative_contract": "7/49152",
+    "step_loss_under_derivative_contract_float": 0.00014241536458333334,
+    "symmetry_audit_closed": true,
+    "top_center_im": 7.14218181124826e-18,
+    "top_center_re": 0.00020129444423526628,
+    "top_symmetry_residual": 5.391871155988928e-16,
+    "total_angle": 5.650695048136079e-15,
+    "vertical_symmetry_residual": 6.011900484456772e-12,
+    "winding_float": 8.993360488157524e-16,
+    "winding_rounded": 0
+  },
+  "certificate_type": "prime_matrix_xi_boundary_polygon_winding_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": false,
+  "next_priority": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+  "plain_conclusion": "离散多边形绕数整数账本已闭合：底边角变化为 0，左右竖边由函数方程/共轭对称配平，顶边关于 sigma=1/2 对称并经过正实中心点，故四边角变化强制为 0。复放审计得到 winding=8.993360488158e-16，root=37be1e9977e0047951702c2bb8ec0e13183d5386f8fc6db7f7c1765b2bdb4330。",
+  "polygon_winding_zero_closed": true,
+  "proof_contract": [
+    "沿同一 32768 段 dyadic 边界取 xi 节点值，使用节点下界 root 和导数管道 root 保证短角分支唯一。",
+    "由 |xi|>=1/6000 与 |xi'|<=1/12，最大段长 14/8192 给出段内位移 <=(1/12)(14/8192)<1/6000。",
+    "因此每条边段不会穿过 0，每个相邻节点的主支短角增量是同伦稳定的。",
+    "底边在实轴上且 xi 为正实值，所以底边角变化为 0。",
+    "左右竖边由 xi(s)=xi(1-s) 和 xi(conj s)=conj xi(s) 配对，左边角变化等于右边角变化。",
+    "顶边关于 sigma=1/2 共轭对称，且中心点 xi(1/2+14i)>0，因此顶边角变化等于右边角变化的 -2 倍。",
+    "四边相加得到 Delta_bottom+Delta_right+Delta_top+Delta_left=0，故离散多边形绕数整数为 0。"
+  ],
+  "replacement_self_contained": {
+    "XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768": "XiBoundaryTracePolygonWindingZeroClosedMesh32768SymmetryRootHash"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PolygonWindingGateActive",
+      "meaning": "导数管道闭合后，当前唯一最窄点是离散多边形绕数整数账本。",
+      "proved": true,
+      "remaining": "XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只物化假设链条中的边界绕数 trace，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "NodeLowerBoundImported",
+      "meaning": "节点 |xi|>=1/6000 已闭合，提供短角分支的原点距离下界。",
+      "proved": true,
+      "remaining": "XiBoundaryTraceNodeLowerBoundClosedMesh32768Floor1Over6000RootHash"
+    },
+    {
+      "closed": true,
+      "gate": "DerivativeTubeImported",
+      "meaning": "边段 |xi'|<=1/12 已闭合，提供段内位移上界。",
+      "proved": true,
+      "remaining": "XiBoundaryTraceSegmentDerivativeTubeClosedMesh32768C1Over12RootHash"
+    },
+    {
+      "closed": true,
+      "gate": "BranchSafetyArithmeticClosed",
+      "meaning": "有理余量 1/6000-(1/12)*(14/8192)>0，短角上界 1.024572482473<pi/2。",
+      "proved": true,
+      "remaining": "short-argument branch fixed."
+    },
+    {
+      "closed": true,
+      "gate": "BoundaryNonzeroImported",
+      "meaning": "整个 xi 边界非零已闭合，多边形同伦到真实边界曲线时不穿 0。",
+      "proved": true,
+      "remaining": "XiBoundaryIntervalNonzeroCertificate0To14Closed"
+    },
+    {
+      "closed": true,
+      "gate": "XiSymmetryAnglePairingClosed",
+      "meaning": "函数方程/共轭对称给出角变化配平：bottom=0, left=right, top=-2*right。",
+      "proved": true,
+      "remaining": "Delta_total=0."
+    },
+    {
+      "closed": true,
+      "gate": "XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768",
+      "meaning": "离散多边形绕数整数账本已闭合；绕数为 0。",
+      "proved": true,
+      "remaining": "XiBoundaryTracePolygonWindingZeroClosedMesh32768SymmetryRootHash"
+    },
+    {
+      "closed": false,
+      "gate": "WindingAggregationStillMissing",
+      "meaning": "仍需把节点下界、导数管道和多边形绕数三包聚合回 winding 原子。",
+      "proved": false,
+      "remaining": "XiBoundaryWindingNumberZeroIntervalCertificate0To14"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-interval-operation-trace-hash-ledger-router.json": "ad3f239950b27f5f50ae3742b5f8954145b02e8738016e0c71f6fa9be7240362",
+    "docs/monograph/prime-matrix-top-critical-endpoint-chain-aggregation-router.json": "4626e69f930aa5198cad1ac8dd5e27ec226366ceaf0e066a182cbd9eb24076da",
+    "docs/monograph/prime-matrix-xi-boundary-derivative-tube-router.json": "10c563b9b9118a779a27198c1fb495759083b1849d03596a4f36da718b465060",
+    "docs/monograph/prime-matrix-xi-boundary-node-lower-bound-router.json": "3563ec12822c6dae43bd37c26723eb10acf1fcf582a75001b97c4bfc8025a622",
+    "experiments/prime_matrix_xi_boundary_winding_trace_router.py": "b2006ae54c20d42a68ab5fd15f0482502a0e5d62183e36622f42726748cb2214"
+  },
+  "status": "xi_boundary_trace_polygon_winding_zero_closed_winding_aggregation_next",
+  "winding_self_contained_closed": false
+}

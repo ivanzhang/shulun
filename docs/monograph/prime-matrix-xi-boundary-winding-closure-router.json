@@ -1,0 +1,133 @@
+{
+  "certificate_type": "prime_matrix_xi_boundary_winding_closure_router",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "lowheight_rectangle_count_self_contained_closed": true,
+  "next_priority": "GlobalRowColumnSieveClosureAfterLowHeightXiPackage",
+  "plain_conclusion": "winding 原子已自足闭合：节点下界、导数管道和多边形整数绕数三包完成聚合，真实 xi 边界曲线绕原点次数为 0。结合 xi 整函数、边界非零与 argument principle，低高度矩形 xi 零点计数也闭合为 0。本步不声称完整行列定理闭合，而是关闭此前唯一最窄的低高度 xi/winding 输入包。",
+  "proof_chain": [
+    {
+      "input": "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192",
+      "output": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000 AND XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12 AND XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768",
+      "step": "MeshCompression"
+    },
+    {
+      "input": "32769 个边界节点 xi 区间值",
+      "output": "所有节点 |xi|>=1/6000",
+      "step": "NodeLowerBound"
+    },
+    {
+      "input": "32768 条边段 xi' 区间管道",
+      "output": "所有边段 |xi'|<=1/12",
+      "step": "DerivativeTube"
+    },
+    {
+      "input": "函数方程、共轭对称、底边正实、顶边中心正实",
+      "output": "离散多边形绕数整数为 0",
+      "step": "PolygonInteger"
+    },
+    {
+      "input": "|xi| 下界 + |xi'| 上界 + 多边形绕数 0",
+      "output": "真实边界曲线 winding=0",
+      "step": "Homotopy"
+    },
+    {
+      "input": "xi 整函数 + 边界非零 + winding=0",
+      "output": "低高度矩形内 xi 零点计数为 0",
+      "step": "ArgumentPrinciple"
+    }
+  ],
+  "replacement_self_contained": {
+    "LowHeightXiRectangleZeroCountZero0To14Ledger": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed",
+    "XiBoundaryArgumentVariationDyadicTraceLedger0To14Mesh8192": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000 AND XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12 AND XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768",
+    "XiBoundaryWindingNumberZeroIntervalCertificate0To14": "XiBoundaryWindingNumberZeroSelfContainedClosedMesh32768RootHash"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "WindingAggregationGateActive",
+      "meaning": "多边形包闭合后，当前目标是聚合回原 winding 原子。",
+      "proved": true,
+      "remaining": "XiBoundaryWindingNumberZeroIntervalCertificate0To14"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "聚合仍只使用假设链条中的解析证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MeshCompressionImported",
+      "meaning": "winding trace 已被压缩为节点下界、导数管道、多边形整数绕数三包。",
+      "proved": true,
+      "remaining": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000 AND XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12 AND XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768"
+    },
+    {
+      "closed": true,
+      "gate": "NodeLowerBoundPackageClosed",
+      "meaning": "节点下界 root 已闭合，提供边界离原点的离散距离。",
+      "proved": true,
+      "remaining": "XiBoundaryTraceNodeLowerBoundLedgerMesh32768Floor1Over6000"
+    },
+    {
+      "closed": true,
+      "gate": "DerivativeTubePackageClosed",
+      "meaning": "导数管道 root 已闭合，提供从离散节点到整段曲线的同伦管道。",
+      "proved": true,
+      "remaining": "XiBoundaryTraceSegmentDerivativeTubeLedgerMesh32768C1Over12"
+    },
+    {
+      "closed": true,
+      "gate": "PolygonIntegerWindingClosed",
+      "meaning": "多边形整数绕数由对称角变化配平闭合为 0。",
+      "proved": true,
+      "remaining": "XiBoundaryTracePolygonWindingZeroIntegerLedgerMesh32768"
+    },
+    {
+      "closed": true,
+      "gate": "HomotopyNoCrossingClosed",
+      "meaning": "1/6000-(1/12)*(14/8192)>0，真实边界曲线与离散多边形同伦且不穿过 0。",
+      "proved": true,
+      "remaining": "continuous boundary winding equals polygon winding."
+    },
+    {
+      "closed": true,
+      "gate": "XiBoundaryWindingNumberZeroIntervalCertificate0To14",
+      "meaning": "三包 root 聚合完成，winding=0；聚合 root=a5e0f343cc64fcb63a5689db8c97b0118db96b95a755de6ef3520ad9644419dc。",
+      "proved": true,
+      "remaining": "XiBoundaryWindingNumberZeroSelfContainedClosedMesh32768RootHash"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightRectangleCountZero",
+      "meaning": "xi 区间引擎、边界非零、winding=0、xi 整函数和 argument principle 齐备，低高度矩形零点计数为 0。",
+      "proved": true,
+      "remaining": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnTheoremStillSeparate",
+      "meaning": "这关闭低高度 xi 边界/winding 包；完整行列定理仍需后续筛法全局包接力。",
+      "proved": false,
+      "remaining": "global row-column sieve closure remains outside this xi package."
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-argument-principle-xi-router.json": "e6351dc9e0b109b175aa0cc4abaf23d2155b9a9c66a771a841321dcabafc79bf",
+    "docs/monograph/prime-matrix-b3-xi-entire-order-router.json": "94bd3bc2703290647dff955cb93838018af68fb2fa102d652faefba37ac6419c",
+    "docs/monograph/prime-matrix-compact-theta-mellin-quadrature-router.json": "49566655ca05171dee030d1f931c1bd3dc7b2faf24dca216ac5461ca55bac626",
+    "docs/monograph/prime-matrix-lowheight-rectangle-count-compression-router.json": "9018bf50711675734db0d3560954703830c956c637b963742adb77f652f7d7dc",
+    "docs/monograph/prime-matrix-top-critical-endpoint-chain-aggregation-router.json": "4626e69f930aa5198cad1ac8dd5e27ec226366ceaf0e066a182cbd9eb24076da",
+    "docs/monograph/prime-matrix-xi-boundary-derivative-tube-router.json": "10c563b9b9118a779a27198c1fb495759083b1849d03596a4f36da718b465060",
+    "docs/monograph/prime-matrix-xi-boundary-node-lower-bound-router.json": "3563ec12822c6dae43bd37c26723eb10acf1fcf582a75001b97c4bfc8025a622",
+    "docs/monograph/prime-matrix-xi-boundary-polygon-winding-router.json": "f97f3e9496151dc9b3157412144531a0de189338b84b9a9be6a5666eabb3ef9d",
+    "docs/monograph/prime-matrix-xi-boundary-winding-mesh-contract-router.json": "7c7cc293eb782ebf7f99e6e17667516b329c7847332cb5b74525aee6656bafe6"
+  },
+  "status": "xi_boundary_winding_and_lowheight_rectangle_count_self_contained_closed",
+  "winding_aggregation_root_hash": "a5e0f343cc64fcb63a5689db8c97b0118db96b95a755de6ef3520ad9644419dc",
+  "winding_self_contained_closed": true
+}
