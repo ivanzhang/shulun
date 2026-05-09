@@ -1,0 +1,121 @@
+{
+  "certificate_type": "b3_right_edge_perron_kernel_router",
+  "status": "right_edge_perron_kernel_closed_c128_contour_shift_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-perron-kernel-truncation-router.json": "652feeb38e1fe41cb705f741e51a86a8cabb18b7b57d39763f7e8a1b85044f6d"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "right_edge_perron_kernel_closed": true,
+  "perron_kernel_truncation_constant_closed": false,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "Psi0RightEdgePerronKernelApproximationConstantLedger": "Psi0RightEdgePerronKernelApproximationClosedC128"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND (HadamardSymmetricZeroPairingAndOneOverRhoSignDiscardClosed AND ((HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros AND HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic) AND HadamardCN16UnitIntervalToDyadicShellCountClosed AND HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel) AND HadamardLocalZeroCoreAbsorptionClosedBySignDiscard AND HadamardRemainderRangeAndKernelConventionClosed) AND CLogAggregationAndRangeConventionClosedC64ExternalBacklundBranch) AND ZeroRepulsionParameterNumericalOptimizationClosedC64A1Over256C1Over1280T14 AND (((CullyHugillJohnstonRvMExplicitFormulaHighThresholdRegistered OR InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost) AND (Psi0PerronFiniteRectangleHeightSelectionLedger AND Psi0RightEdgePerronKernelApproximationClosedC128 AND Psi0ZetaLogDerivativeContourShiftBoundLedger AND Psi0ZeroBoundaryAvoidanceLimitLedger) AND ChebyshevPsi0EndpointHalfWeightConventionClosed) AND ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger AND PerronTruncationTrivialZeroPrimePowerTailBudgetLedger) AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "Psi0ZetaLogDerivativeContourShiftBoundLedger",
+  "secondary_priority": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+  "finite_low_height_priority": "FiniteLowHeightZeroCheckLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "constants": {
+    "C_right": 128.0,
+    "C_edge": 4.0
+  },
+  "pressure": {
+    "anchor_x": 20000.0,
+    "anchor_T": 14.0,
+    "log_xT": 12.542544882151386,
+    "base_x_log2_xT_over_T": 224736.33160111704,
+    "C_right": 128.0,
+    "C_edge": 4.0,
+    "right_edge_bound_at_anchor": 28766290.058893193
+  },
+  "proof_components": [
+    {
+      "component": "truncated_kernel_pointwise_bound",
+      "closed": true,
+      "claim": "Perron 核误差由 min(1,1/(T|log(x/n)|)) 控制，端点取 psi_0 半权。"
+    },
+    {
+      "component": "near_shell_bound",
+      "closed": true,
+      "claim": "|n-x|<=x/T 的近壳总 Lambda 质量由 log x 与壳长给出 O(x log x/T+log x)。"
+    },
+    {
+      "component": "far_shell_dyadic_bound",
+      "closed": true,
+      "claim": "远壳按 |log(n/x)| dyadic 求和，使用 -zeta'/zeta(1+1/log x)<=2 log x 的保守界。"
+    },
+    {
+      "component": "constant_aggregation",
+      "closed": true,
+      "claim": "近壳、远壳和端点统一吸收到 C_right=128, C_edge=4。"
+    }
+  ],
+  "plain_conclusion": "右边 Perron 核近似常数闭合为 C_right=128：它只支付 psi_0 与右边截断竖线积分之间的核误差。整个 R_T 常数尚未闭合，因为仍需 -zeta'/zeta 轮廓移线常数。",
+  "rows": [
+    {
+      "gate": "RightEdgePerronKernelGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "Perron 截断核四包中的当前最窄点是右边竖线核近似常数。",
+      "remaining": "Psi0RightEdgePerronKernelApproximationConstantLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "ExactPsi0AndEndpointReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "psi_0 精确公式和半权端点规范已闭合，可使用标准截断 Perron 核。",
+      "remaining": "无端点剩余。"
+    },
+    {
+      "gate": "KernelPointwiseAndShellBoundsClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "截断核点态误差、近壳质量、远壳 dyadic 求和和常数聚合给出 C_right=128。",
+      "remaining": "Psi0RightEdgePerronKernelApproximationClosedC128"
+    },
+    {
+      "gate": "Psi0RightEdgePerronKernelApproximationConstantLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "右边 Perron 核近似常数闭合；它只控制 psi_0 与右边竖线积分的差。",
+      "remaining": "Psi0RightEdgePerronKernelApproximationClosedC128"
+    },
+    {
+      "gate": "Psi0ZetaLogDerivativeContourShiftBoundLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需把右边竖线积分移线为零点留数，并支付 -zeta'/zeta 轮廓边界。",
+      "remaining": "Psi0ZetaLogDerivativeContourShiftBoundLedger"
+    },
+    {
+      "gate": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+      "closed": false,
+      "proved": false,
+      "meaning": "轮廓移线后还需零点自由带下的零点和预算。",
+      "remaining": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger"
+    }
+  ],
+  "closed_gates": [
+    "RightEdgePerronKernelGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ExactPsi0AndEndpointReady",
+    "KernelPointwiseAndShellBoundsClosed",
+    "Psi0RightEdgePerronKernelApproximationConstantLedger"
+  ],
+  "open_gates": [
+    "Psi0ZetaLogDerivativeContourShiftBoundLedger",
+    "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger"
+  ]
+}
