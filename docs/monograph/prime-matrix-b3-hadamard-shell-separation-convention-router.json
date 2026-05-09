@@ -1,0 +1,116 @@
+{
+  "certificate_type": "b3_hadamard_shell_separation_convention_router",
+  "status": "hadamard_shell_separation_convention_closed_half_open_dyadic",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-hadamard-dvp-coefficient-normalization-router.json": "1baab6e22b49d19e45c0a599811de100a738726fa02bc57a03b75d384ba0ade9"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "shell_separation_convention_closed": true,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "HadamardFarZeroShellSeparationConventionLedger": "HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND (HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger AND ((HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros AND HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic) AND HadamardCN16UnitIntervalToDyadicShellCountClosed AND HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel) AND HadamardLocalZeroCoreAbsorptionByCN16Ledger AND HadamardRemainderRangeAndKernelConventionLedger) AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger",
+  "secondary_priority": "HadamardLocalZeroCoreAbsorptionByCN16Ledger",
+  "tertiary_priority": "HadamardRemainderRangeAndKernelConventionLedger",
+  "post_hadamard_priority": "CLogAggregationAndRangeConventionLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "partition": [
+    {
+      "part": "target",
+      "definition": "rho=rho0=beta0+i gamma0",
+      "charged_to": "main negative zero term -4/(sigma-beta0)"
+    },
+    {
+      "part": "local_core",
+      "definition": "rho!=rho0 and |Im rho-gamma0|<1",
+      "charged_to": "HadamardLocalZeroCoreAbsorptionByCN16Ledger"
+    },
+    {
+      "part": "far_shell_j",
+      "definition": "2^j <= |Im rho-gamma0| < 2^(j+1), j>=0",
+      "charged_to": "HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel"
+    },
+    {
+      "part": "boundary",
+      "definition": "exact equality goes to the lower-index half-open shell",
+      "charged_to": "no double counting"
+    }
+  ],
+  "plain_conclusion": "Hadamard 远/近壳分离 convention 已闭合：目标零点、近壳核心和远壳 dyadic tail 用半开区间唯一分配，避免 target、local core 与 far tail 重复扣费。",
+  "rows": [
+    {
+      "gate": "ShellSeparationGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层最窄点是把目标零点、近壳核心和远壳 dyadic tail 分成互斥账本。",
+      "remaining": "HadamardFarZeroShellSeparationConventionLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "KernelShapeAndCoefficientReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "二次衰减形状和远零点系数归一化均已闭合，可安全定义远壳账本。",
+      "remaining": "HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationClosedC0FarZeros"
+    },
+    {
+      "gate": "HalfOpenDyadicPartitionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "零点按 target/local_core/far half-open dyadic shells 唯一归类，边界归低阶壳，避免重复扣费。",
+      "remaining": "HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic"
+    },
+    {
+      "gate": "TargetZeroSeparated",
+      "closed": true,
+      "proved": true,
+      "meaning": "目标零点只进入 de la Vallee Poussin 主负项，不再进入远壳或局部核心余项。",
+      "remaining": "no target double charge"
+    },
+    {
+      "gate": "HadamardFarZeroShellSeparationConventionLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "远/近壳分离 convention 已闭合。",
+      "remaining": "HadamardFarZeroShellSeparationConventionClosedHalfOpenDyadic"
+    },
+    {
+      "gate": "HadamardOtherMicroLedgersStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "Hadamard 余项还需配对/1rho 抵消、局部核心吸收和范围 convention。",
+      "remaining": "HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger AND HadamardLocalZeroCoreAbsorptionByCN16Ledger AND HadamardRemainderRangeAndKernelConventionLedger"
+    },
+    {
+      "gate": "CLogAggregationStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "Hadamard 四账本全闭合后，才能进入 C_log 总常数聚合。",
+      "remaining": "CLogAggregationAndRangeConventionLedger"
+    }
+  ],
+  "closed_gates": [
+    "ShellSeparationGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "KernelShapeAndCoefficientReady",
+    "HalfOpenDyadicPartitionClosed",
+    "TargetZeroSeparated",
+    "HadamardFarZeroShellSeparationConventionLedger"
+  ],
+  "open_gates": [
+    "HadamardOtherMicroLedgersStillOpen",
+    "CLogAggregationStillDownstream"
+  ]
+}
