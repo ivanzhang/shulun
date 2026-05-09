@@ -1,0 +1,113 @@
+{
+  "backlund_indent_self_contained_closed": false,
+  "certificate_type": "prime_matrix_lowheight_xi_backlund_integration_router",
+  "counterexample_assumption_only": true,
+  "critical_line_0_to_14_closed": true,
+  "critical_strip_offline_0_to_14_closed": true,
+  "empirical_absence_not_used": true,
+  "finite_lowheight_zero_check_closed": true,
+  "hypothetical_chain_only": true,
+  "lowheight_xi_rectangle_count_closed": true,
+  "next_priority": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)",
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "低高度 xi 子包已回灌到严格自足三输入基：0<t<=14 的临界线有限账本、离线 Turing 账本和 finite low-height zero check 均由 xi 矩形零点计数 0 关闭。剩余解析最窄点不再是低高度零点，而是 Backlund 近零点凹口成本的内部替代：(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)。DStructure/Rankin 验收门仍并行保留。",
+  "proof_chain": [
+    {
+      "input": "theta-Mellin xi 区间引擎 + 边界非零 + winding=0",
+      "output": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed",
+      "step": "XiBoundaryEngine"
+    },
+    {
+      "input": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed",
+      "output": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger",
+      "step": "CriticalLineAndOffLine"
+    },
+    {
+      "input": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed",
+      "output": "FiniteLowHeightZeroCheckLedger",
+      "step": "FiniteLowHeightCheck"
+    },
+    {
+      "input": "低高度子包已闭合",
+      "output": "下一严格自足缺口转为 BacklundZeroProximityIndentationCostLedger",
+      "step": "BacklundPackageUpdate"
+    }
+  ],
+  "replacement_self_contained": {
+    "BacklundZeroProximityIndentationCostLedger": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)",
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed",
+    "FiniteLowHeightZeroCheckLedger": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LowHeightBacklundPackageActive",
+      "meaning": "上一层严格自足三输入基把主线压到低高度零点 + Backlund 凹口成本包。",
+      "proved": true,
+      "remaining": "低高度子包与凹口成本子包。"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "回灌只使用假设链条中的解析证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "RectangleCompressionImported",
+      "meaning": "低高度临界线和离线 Turing 两原子已压成一个 xi 矩形零点计数证书。",
+      "proved": true,
+      "remaining": "LowHeightXiRectangleZeroCountZero0To14Ledger。"
+    },
+    {
+      "closed": true,
+      "gate": "XiBoundaryWindingImported",
+      "meaning": "边界非零、节点下界、导数管道和多边形绕数已闭合，argument principle 可用。",
+      "proved": true,
+      "remaining": "XiBoundaryWindingNumberZeroSelfContainedClosedMesh32768RootHash。"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightRectangleCountClosed",
+      "meaning": "低高度 xi 矩形内零点计数为 0，关闭临界线有限账本和离线 Turing 账本。",
+      "proved": true,
+      "remaining": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed"
+    },
+    {
+      "closed": true,
+      "gate": "IndentationCostStillOpenSelfContained",
+      "meaning": "低高度无零点不等于高高度 Backlund 凹口成本；后者仍需内部零避让或跳变抵消。",
+      "proved": true,
+      "remaining": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundBranchAvailable",
+      "meaning": "若接受经典 Backlund 凹口成本，CS8/RVM 外部分支可继续；这不是严格自足闭合。",
+      "proved": false,
+      "remaining": "BacklundZeroProximityIndentationCostLedger external accepted, then BacklundCS8SlackAfterBridgeLedger and RVM gates。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictBacklundLowHeightPackageReduced",
+      "meaning": "本步删除低高度有限/Turing 缺口，把严格自足解析最窄点推进到凹口成本内部替代。",
+      "proved": true,
+      "remaining": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-rvm-to-cn16-local-inequality-router.json": "3e7fa721aef0fe9660b70b6e8f9bd3ecb1e926ddbf12ec4b341163199ac0ca13",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-lowheight-backlund-self-contained-package-router.json": "50622b93922a6a4b64c59af08a053472ee36c9cebb8e70de8ad856a34dcc2013",
+    "docs/monograph/prime-matrix-lowheight-rectangle-count-compression-router.json": "9018bf50711675734db0d3560954703830c956c637b963742adb77f652f7d7dc",
+    "docs/monograph/prime-matrix-self-contained-three-input-basis-closure-attack-router.json": "1a05011e9402eae0d6209eaf2982a939cfb8986398dca233dab53459f8266c67",
+    "docs/monograph/prime-matrix-xi-boundary-winding-closure-router.json": "1cc43568264bfbc8a3fd04b82da0966dbb3718946c35dd6f5a0404a69f0585c2"
+  },
+  "status": "lowheight_xi_subpackage_closed_backlund_indent_next",
+  "strict_basis_after_lowheight_xi": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND ((ArgumentPrincipleXiRectangleCountingClosed AND GammaMainTermLocalDifferenceNumericalClosedCmain4 AND (BacklundLittlewoodRectangleArgumentClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND (HorizontalZeroIndentationConventionClosed AND HorizontalPoleRemovalBudgetClosed AND (CriticalStripPhragmenLindelofThreeLinesClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND CriticalStripConvexityClosedC2) AND HorizontalVariationConstantClosedC8) AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND (BacklundBoundaryConstantSumClosedC16 AND (BacklundArgumentBranchNormalizationClosed AND BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability AND (BacklundSpikeNoRVMCircularityDisciplineClosed AND (BacklundHadamardLogDerivativeVariationFormulaClosed AND ((BacklundJensenDiskFormulaClosed AND BacklundIndependentXiDiskBoundaryMajorantClosedSymbolic AND BacklundIndependentJensenCenterLowerAnchorClosedSymbolic AND (BacklundJensenSignedMeanHighHeightZetaOnlyClosedC7 AND (BacklundJensenLowHeightDiskImaginaryRangeClosedT14 AND (BacklundXiZetaNontrivialZeroEquivalenceClosed AND LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed) AND BacklundJensenLowHeightC16ImmediateGivenNoZeroBelow14) AND BacklundJensenRadiusOptimizationOrCNRelaxationLedger)) AND BacklundZeroDistanceDyadicSummationClosed AND BacklundNearZeroIndentSeparationLedger AND BacklundZeroDistanceSumConstantAggregationLedger) AND BacklundVariationWindowScaleLedger) AND BacklundZeroProximityIndentationCostLedger)) AND BacklundCS8SlackAfterBridgeLedger)) AND EndpointZeroAvoidanceMultiplicityConventionLedger AND RVMToCN16LocalInequalityLedger) AND XiBoundaryLogMajorantNumericalLedger AND JensenDiskLowerAnchorNumericalLedger AND LocalZeroCountCNConventionLedger) AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "strict_basis_before": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND ((GaussianPoissonThetaIdentityClosed AND ThetaMellinZetaContinuationFunctionalEquationClosed AND XiEntireOrderOneGrowthClosed AND HadamardFactorizationLogDerivativeClosed) AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND ((ArgumentPrincipleXiRectangleCountingClosed AND GammaMainTermLocalDifferenceNumericalClosedCmain4 AND (BacklundLittlewoodRectangleArgumentClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND (HorizontalZeroIndentationConventionClosed AND HorizontalPoleRemovalBudgetClosed AND (CriticalStripPhragmenLindelofThreeLinesClosed AND ZetaRightEdgeEulerProductArgumentClosedCright2 AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND CriticalStripConvexityClosedC2) AND HorizontalVariationConstantClosedC8) AND FunctionalEquationLeftEdgeArgumentClosedCleft4 AND (BacklundBoundaryConstantSumClosedC16 AND (BacklundArgumentBranchNormalizationClosed AND BacklundShortAveragePointwiseBridgeClosedHalfGivenLocalStability AND (BacklundSpikeNoRVMCircularityDisciplineClosed AND (BacklundHadamardLogDerivativeVariationFormulaClosed AND ((BacklundJensenDiskFormulaClosed AND BacklundIndependentXiDiskBoundaryMajorantClosedSymbolic AND BacklundIndependentJensenCenterLowerAnchorClosedSymbolic AND (BacklundJensenSignedMeanHighHeightZetaOnlyClosedC7 AND (BacklundJensenLowHeightDiskImaginaryRangeClosedT14 AND (BacklundXiZetaNontrivialZeroEquivalenceClosed AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger) AND BacklundJensenLowHeightC16ImmediateGivenNoZeroBelow14) AND BacklundJensenRadiusOptimizationOrCNRelaxationLedger)) AND BacklundZeroDistanceDyadicSummationClosed AND BacklundNearZeroIndentSeparationLedger AND BacklundZeroDistanceSumConstantAggregationLedger) AND BacklundVariationWindowScaleLedger) AND BacklundZeroProximityIndentationCostLedger)) AND BacklundCS8SlackAfterBridgeLedger)) AND EndpointZeroAvoidanceMultiplicityConventionLedger AND RVMToCN16LocalInequalityLedger) AND XiBoundaryLogMajorantNumericalLedger AND JensenDiskLowerAnchorNumericalLedger AND LocalZeroCountCNConventionLedger) AND HadamardPartialFractionRemainderNumericalLedger AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "strict_package_closed": false
+}

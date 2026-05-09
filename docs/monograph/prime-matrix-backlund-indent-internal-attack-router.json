@@ -1,0 +1,153 @@
+{
+  "available_stability_margin": 0.078125,
+  "backlund_indent_self_contained_closed": false,
+  "backlund_local_crossing_trace_closed": false,
+  "certificate_type": "prime_matrix_backlund_indent_internal_attack_router",
+  "counterexample_assumption_only": true,
+  "crossing_trace_schema": [
+    {
+      "field": "window_id",
+      "meaning": "Backlund 短窗口编号，与 h=1/512 的窗口尺度一致。"
+    },
+    {
+      "field": "zero_cluster_box",
+      "meaning": "近零点核心 |s-rho|<eta 的区间盒与 multiplicity 账本。"
+    },
+    {
+      "field": "contour_side",
+      "meaning": "零点相对移动 contour 的左右/上下侧，决定缩进方向。"
+    },
+    {
+      "field": "homotopy_arc",
+      "meaning": "局部缩进圆弧或避让平移的参数化区间。"
+    },
+    {
+      "field": "branch_jump",
+      "meaning": "arg zeta 或 arg xi 的局部跳变量，带符号和重数。"
+    },
+    {
+      "field": "paired_cancellation",
+      "meaning": "若不避让，必须登记与相邻零点/边界/对称点的抵消配对。"
+    },
+    {
+      "field": "residual_cost",
+      "meaning": "抵消后仍需扣除的成本，必须小于全局稳定余量。"
+    },
+    {
+      "field": "trace_hash",
+      "meaning": "窗口、零点盒、缩进弧、跳变量和剩余成本的 canonical hash。"
+    }
+  ],
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "indent_or_package_compressed": true,
+  "naive_indentation_coefficient": 50.26548245743669,
+  "naive_margin_deficit": 50.18735745743669,
+  "next_priority": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger",
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "Backlund 凹口成本的内部二选一已压成一个更窄的统一原子：`BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger`。零避让只是该 trace 的空穿越特例；跳变抵消是非空穿越特例。当前仍未自足闭合，因为还缺每个近零窗口的零点盒、缩进弧、跳变量、抵消配对和残余成本 hash 账本。",
+  "post_trace_priority": "BacklundCS8SlackAfterBridgeLedger",
+  "reduction_laws": [
+    {
+      "new": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger",
+      "old": "BacklundZeroAvoidingShiftWithoutJumpLedger",
+      "reason": "选择避让平移本身必须证明穿越零点集合为空；这正是 crossing trace 的空穿越特例。"
+    },
+    {
+      "new": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger",
+      "old": "BacklundNearZeroJumpCancellationSubHalfLedger",
+      "reason": "跳变抵消必须登记每个近零点的符号、重数和配对；这正是 crossing trace 的非空穿越特例。"
+    },
+    {
+      "new": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger",
+      "old": "BacklundZeroProximityIndentationCostLedger",
+      "reason": "凹口成本不能由零点数量粗付关闭，只能由局部同伦 trace 证明残余成本可预算。"
+    }
+  ],
+  "replacement_self_contained": {
+    "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger",
+    "BacklundZeroProximityIndentationCostLedger": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "IndentInternalAttackActive",
+      "meaning": "低高度 xi 子包闭合后，当前严格自足解析最窄点正是凹口成本内部替代包。",
+      "proved": true,
+      "remaining": "(BacklundZeroAvoidingShiftWithoutJumpLedger OR BacklundNearZeroJumpCancellationSubHalfLedger)"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的解析记账，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightAnchorImported",
+      "meaning": "0<t<=14 的低高度零点计数已闭合，可作为 Backlund/Jensen 低端 anchor。",
+      "proved": true,
+      "remaining": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed。"
+    },
+    {
+      "closed": true,
+      "gate": "NearZeroPartitionImported",
+      "meaning": "eta=1/16 内近零点已从倒距离和切出，交给凹口成本账本。",
+      "proved": false,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointMultiplicityConventionImported",
+      "meaning": "端点碰零按重数与极限 convention 处理，但这不提供数量级预算。",
+      "proved": true,
+      "remaining": "EndpointZeroAvoidanceMultiplicityConventionClosed。"
+    },
+    {
+      "closed": true,
+      "gate": "SafeAnnuliAndWindowImported",
+      "meaning": "eta 外倒距离和与窗口尺度已有外部分支账本；内部缺口只剩 eta 内穿越 trace。",
+      "proved": false,
+      "remaining": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveCostContradictionLocked",
+      "meaning": "朴素逐零点凹口成本缺口为 50.187357457437，所以粗数量界路线被排除。",
+      "proved": true,
+      "remaining": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ShiftOrCancellationUnified",
+      "meaning": "零避让是空穿越 trace；跳变抵消是非空穿越 trace。二选一可压成同一个局部同伦账本。",
+      "proved": true,
+      "remaining": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger",
+      "meaning": "当前尚未给出每个近零窗口的零点盒、缩进弧、跳变量和残余成本 hash 账本。",
+      "proved": false,
+      "remaining": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundIndentCostSelfContainedClosed",
+      "meaning": "只有 crossing trace 证明残余成本小于稳定余量后，内部凹口成本才可关闭。",
+      "proved": false,
+      "remaining": "BacklundLocalZeroCrossingTraceAndIndentHomotopyClosed"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-near-zero-indent-separation-router.json": "d27338ae97a041b28360548061e660940c5916f4c7de875d8d67f388baa359b3",
+    "docs/monograph/prime-matrix-b3-variation-window-scale-router.json": "b74131ddb497887ec5cbb0892aca05afba62c6b7f705808b6ae967c0fff75b47",
+    "docs/monograph/prime-matrix-b3-zero-distance-constant-aggregation-router.json": "cb135916bfd8cbb80d8e4e46362915cbd8efdae1464589e40dcfda429e7901ef",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-lowheight-xi-backlund-integration-router.json": "183c1d656480d1664a48b5a0fde1e744ef389bf734ff1b77720e5e061e963bc8"
+  },
+  "status": "backlund_indent_internal_reduced_to_crossing_trace_open"
+}
