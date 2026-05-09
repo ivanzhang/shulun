@@ -1,0 +1,85 @@
+{
+  "actual_proof_chain": [
+    {
+      "conclusion": "所有后续推理都在假设反例链条内进行，不用真实样本缺席偷换。",
+      "evidence": "unconditional_closure_endpoint_boundary_closed_inputs_still_open",
+      "if_false": "不能宣称反例排斥，因为可能混入统计或真实链条。",
+      "index": 1,
+      "name": "CounterexampleChainDiscipline",
+      "proved_or_accepted": true,
+      "uses": "counterexample assumption only; no empirical absence"
+    },
+    {
+      "conclusion": "方阵斜线、圆柱覆盖、P列锚、层叠筛、PDEC/SAE/CleanKLS 等出口已被压成命名输入图谱。",
+      "evidence": "closure_input_atlas_complete_global_inputs_still_open",
+      "if_false": "还需寻找未命名终端或补全输入图谱。",
+      "index": 2,
+      "name": "NoHiddenTerminalEscape",
+      "proved_or_accepted": true,
+      "uses": "closure atlas + endpoint boundary"
+    },
+    {
+      "conclusion": "noncanonical full-S 数学线在外部 KLS 合同下闭合。",
+      "evidence": "external_kls_math_lane_closed_final_promotion_gate_only_open",
+      "if_false": "还需证明新 full-S 定理或走完全自足 noncanonical 源反原子。",
+      "index": 3,
+      "name": "ExternalFullSKLSMathLaneClosure",
+      "proved_or_accepted": true,
+      "uses": "AcceptFullSKLSExtExternalContract"
+    },
+    {
+      "conclusion": "最终晋级门的作者侧证据包已封装为可审查、可复跑、可提交的验收包。",
+      "evidence": "final_promotion_gate_irreducible_referee_event_required",
+      "if_false": "还需补齐作者侧证明包或复跑证据。",
+      "index": 4,
+      "name": "PromotionAuthorPacketSeal",
+      "proved_or_accepted": true,
+      "uses": "DStructure/AB + Tail-log4/BG-RKS + finite verification + Rankin pass-or-return"
+    },
+    {
+      "conclusion": "作者侧不能把独立验收事件改写为 PASS-AUTHOR。",
+      "evidence": "line-by-line internal referee matrix",
+      "if_false": "可能把条件闭合误报为无条件闭合。",
+      "index": 5,
+      "name": "NoAuthorSidePromotion",
+      "proved_or_accepted": true,
+      "uses": "line-by-line internal referee matrix"
+    },
+    {
+      "conclusion": "若外部 KLS 合同与最终独立晋级门都成立，则行/列命题闭合。",
+      "evidence": "final_single_gate_promotable_but_final_promotion_acceptance_required",
+      "if_false": "条件定理链条尚未完整。",
+      "index": 6,
+      "name": "ConditionalRowColumnTheorem",
+      "proved_or_accepted": true,
+      "uses": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "conclusion": "最终无条件闭合只在独立晋级门被显式接受后成立。",
+      "evidence": "referee gate not accepted",
+      "if_false": "当前最终状态为条件闭合，不是完整无条件闭合。",
+      "index": 7,
+      "name": "FinalUnconditionalPromotion",
+      "proved_or_accepted": false,
+      "uses": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "certificate_type": "prime_matrix_final_proof_logic_chain_status_router",
+  "conditional_external_kls_proof_chain_closed": true,
+  "final_closure_status": "当前达到外部 KLS 合同条件闭合；最终独立晋级门未接受，故无条件闭合状态仍为 false。",
+  "referee_gate_explicitly_accepted": false,
+  "referee_gate_open": true,
+  "row_column_unconditional_closed": false,
+  "self_contained_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/line-by-line-internal-referee-matrix.md": "cded00f5433db53dd4657f9d74ea62481f4d40cc7b204aa52e8fa39672a5b963",
+    "docs/monograph/prime-matrix-closure-input-atlas-router.json": "53caeb5789e6697c37cb7949329cd32c8015736a8cccd27ed93b38a1bcb38a83",
+    "docs/monograph/prime-matrix-external-kls-accepted-final-promotion-router.json": "b4c3bc55669a6087dfb044abe8d6d0eef5ceb2f53ad31703977ad62497bd7472",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "6947dfe0e210608ca136303c7a7dab2d288aaec7525e909944cbf91e3cac0de8",
+    "docs/monograph/prime-matrix-final-single-gate-closure-decision-router.json": "fa3461739f8503a72451751c3f1c2a7245c569baed17d86caf5fb0cdd3ef677a",
+    "docs/monograph/prime-matrix-unconditional-closure-endpoint-verdict-router.json": "a912e362d3addc7dde44ae4203e8c5ff7e371e827e2de2d1ea1c6a8357b41621",
+    "script": "15ad98edef58a24a0166b835fbd2c2ff5898f17b61bd319914b7c5ed70c514f1"
+  },
+  "status": "conditional_external_kls_closure_complete_referee_gate_open",
+  "strict_conditional_basis": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
