@@ -1,0 +1,127 @@
+{
+  "certificate_type": "b3_hadamard_dvp_kernel_envelope_router",
+  "status": "hadamard_dvp_kernel_shape_closed_coefficient_normalization_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-hadamard-dyadic-shell-tail-router.json": "d60da92a438d1a0a5c6d1ba2b9c69c724872721874757ef74c88d7c4fae8de9f"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "dvp_kernel_envelope_reduced": true,
+  "dvp_kernel_shape_closed": true,
+  "dvp_kernel_envelope_closed": false,
+  "row_column_unconditional_closed": false,
+  "replacement_self_contained": {
+    "HadamardDVPQuadraticKernelEnvelopeLedger": "(HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationC2Ledger AND HadamardFarZeroShellSeparationConventionLedger)"
+  },
+  "latest_self_contained_basis": "NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND (B3FinitePrimeReciprocalStepLedger286To10371PGe100000 AND (B3FinitePrimeReciprocalStepLedger10372To19999PGe100000 AND PrimeReciprocalPartialSummationFromThetaEnvelopeClosed AND (SmoothChebyshevExplicitFormulaAppendixClosed AND PrimePowerThetaPsiTransferLedgerClosed AND (CompletedZetaXiFunctionalEquationAndHadamardProductClosed AND EulerProductLogDerivativePositiveRealPartClosed AND DeLaValleePoussinTrigonometricKernelIdentityClosed AND DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants AND ((GammaDigammaStirlingUniformNumericalClosedCgamma24 AND JensenZeroCountingLocalNumericalLedger AND (HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger AND ((HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationC2Ledger AND HadamardFarZeroShellSeparationConventionLedger) AND HadamardCN16UnitIntervalToDyadicShellCountClosed AND HadamardDyadicSeriesSummationClosedC192GivenQuadraticKernel) AND HadamardLocalZeroCoreAbsorptionByCN16Ledger AND HadamardRemainderRangeAndKernelConventionLedger) AND CLogAggregationAndRangeConventionLedger) AND ZeroRepulsionParameterNumericalOptimizationLedger AND ZeroFreeRegionToExplicitPNTContourConstantLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger) AND FiniteLowHeightZeroCheckLedger) AND ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold) AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000))) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_conditional_basis": "((NoFurtherCanonicalSourceTerminalPromotionGap AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_global_with_external_basis": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY AND ((((B3LowPrimeStepFiniteLedgerXLt286PGe100000 AND DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted) AND (B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043)) OR StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043)) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "HadamardDVPKernelCoefficientNormalizationC2Ledger",
+  "secondary_priority": "HadamardFarZeroShellSeparationConventionLedger",
+  "tertiary_priority": "HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger",
+  "quaternary_priority": "HadamardLocalZeroCoreAbsorptionByCN16Ledger",
+  "post_hadamard_priority": "CLogAggregationAndRangeConventionLedger",
+  "conditional_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "constant_audit": {
+    "required_C_kernel_from_dyadic_budget": 2.0,
+    "raw_DVP_absolute_coefficient_sum": 8.0,
+    "coefficient_gap": 6.0
+  },
+  "inequality_audit": [
+    {
+      "claim": "far_zero_real_part",
+      "formula": "Re 1/(sigma+it-rho)=(sigma-beta)/((sigma-beta)^2+(t-gamma)^2)",
+      "status": "closed for |t-gamma|>=1 and 0<=beta<=1, 1<sigma<=2"
+    },
+    {
+      "claim": "quadratic_bound_shape",
+      "formula": "0 <= Re 1/(sigma+it-rho) <= 2/(t-gamma)^2",
+      "status": "shape closed before DVP coefficient normalization"
+    },
+    {
+      "claim": "coefficient_pressure",
+      "formula": "raw DVP coefficient sum 3+4+1=8, required effective kernel constant <=2",
+      "status": "not closed without cancellation/sign discipline"
+    }
+  ],
+  "plain_conclusion": "Hadamard/DVP kernel 的二次衰减形状已经闭合，但这还不足以接回 dyadic C=192 预算。关键剩余是系数归一化：DVP 原始绝对系数和为 8，而前一账本使用的有效 kernel 常数为 2。必须证明符号/配对/主项剥离把有效常数降到 2，或返回上游重算更大的 C_log。",
+  "rows": [
+    {
+      "gate": "DVPKernelEnvelopeGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层剩余集中到 Hadamard/DVP 组合的远零点 kernel 包络。",
+      "remaining": "HadamardDVPQuadraticKernelEnvelopeLedger"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只处理假设链条的解析输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "FarZeroQuadraticDecayShapeClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 |t-gamma|>=1，strip 内零点给 Re 1/(sigma+it-rho)<=2/(t-gamma)^2。",
+      "remaining": "HadamardFarZeroQuadraticDecayShapeClosed"
+    },
+    {
+      "gate": "DVPCoefficientNormalizationStillMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "dyadic C=192 账本使用有效 C_kernel=2；但 DVP 原始权重 3,4,1 的绝对和为 8，必须证明符号/配对后有效常数降到 2 或重算预算。",
+      "remaining": "HadamardDVPKernelCoefficientNormalizationC2Ledger"
+    },
+    {
+      "gate": "FarShellSeparationConventionStillMissing",
+      "closed": false,
+      "proved": false,
+      "meaning": "还需固定 |t-gamma|<1 的局部核心剥离、远壳起点和 sigma 范围，使二次包络不与局部核心重复扣费。",
+      "remaining": "HadamardFarZeroShellSeparationConventionLedger"
+    },
+    {
+      "gate": "DVPKernelEnvelopeReduced",
+      "closed": true,
+      "proved": false,
+      "meaning": "kernel 包络已分解：二次衰减形状闭合；剩余为 DVP 系数归一化和远/近壳分离 convention。",
+      "remaining": "(HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationC2Ledger AND HadamardFarZeroShellSeparationConventionLedger)"
+    },
+    {
+      "gate": "HadamardDVPQuadraticKernelEnvelopeLedger",
+      "closed": false,
+      "proved": false,
+      "meaning": "只有系数归一化与远壳分离同时完成时，才能把 kernel 包络接回 dyadic tail。",
+      "remaining": "(HadamardFarZeroQuadraticDecayShapeClosed AND HadamardDVPKernelCoefficientNormalizationC2Ledger AND HadamardFarZeroShellSeparationConventionLedger)"
+    },
+    {
+      "gate": "HadamardOtherMicroLedgersStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "kernel 包络后仍需配对/1rho 抵消、局部核心吸收和范围 convention。",
+      "remaining": "HadamardSymmetricZeroPairingAndOneOverRhoCancellationLedger AND HadamardLocalZeroCoreAbsorptionByCN16Ledger AND HadamardRemainderRangeAndKernelConventionLedger"
+    },
+    {
+      "gate": "CLogAggregationStillDownstream",
+      "closed": false,
+      "proved": false,
+      "meaning": "Hadamard 四账本全闭合后，才能进入 C_log 总常数聚合。",
+      "remaining": "CLogAggregationAndRangeConventionLedger"
+    }
+  ],
+  "closed_gates": [
+    "DVPKernelEnvelopeGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "FarZeroQuadraticDecayShapeClosed",
+    "DVPKernelEnvelopeReduced"
+  ],
+  "open_gates": [
+    "DVPCoefficientNormalizationStillMissing",
+    "FarShellSeparationConventionStillMissing",
+    "HadamardDVPQuadraticKernelEnvelopeLedger",
+    "HadamardOtherMicroLedgersStillOpen",
+    "CLogAggregationStillDownstream"
+  ]
+}
