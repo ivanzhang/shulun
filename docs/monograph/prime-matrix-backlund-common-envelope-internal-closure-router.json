@@ -1,0 +1,173 @@
+{
+  "allowed_c16_numerator": 9.305206478445447,
+  "certificate_type": "prime_matrix_backlund_common_envelope_internal_closure_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "SymmetricPremiumGateActive",
+    "PointwiseRegionalEnvelopeImported",
+    "GammaCommonSkeletonNoPremium",
+    "MirrorHeightShiftAbsorbedAsConstant",
+    "CommonEnvelopeDominatesBothBranches",
+    "SymmetricPremiumCoefficientZero",
+    "C16BudgetPassesWithCommonEnvelope",
+    "LowHeightRemainsSeparateFiniteGate",
+    "StrictInternalBacklundAnalyticPackageClosed",
+    "ExternalBacklundNoLongerNeededForThisPackage"
+  ],
+  "closed_high_power_atom": "BacklundHighPowerAuxiliarySignedMeanC16AggregationClosedByCommonEnvelope",
+  "closed_internal_backlund_atom": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope",
+  "closed_premium_atom": "BacklundSymmetricHeightMaxPremiumClosedByCommonHighHeightEnvelope",
+  "common_envelope_numerator": 7.0,
+  "counterexample_assumption_only": true,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "empirical_absence_not_used": true,
+  "envelope_components": [
+    {
+      "component": "Gamma/elementary common skeleton",
+      "log_coefficient": 0.0,
+      "role": "两个镜像分支有相同的 sigma 骨架；圆周均值由调和性抵消，高度差只给 O_R(1)。"
+    },
+    {
+      "component": "zeta regional envelope",
+      "log_coefficient": 6.0,
+      "role": "右边 Euler、临界带 C=2、左边函数方程均为点态区域包络，镜像高度共用同一 sigma 区域函数。"
+    },
+    {
+      "component": "center lower anchor",
+      "log_coefficient": 1.0,
+      "role": "圆心取 theta=arg xi(2+iT)，高幂中心为 |xi(2+iT)|^N，除以 N 后沿用同一圆心下界。"
+    },
+    {
+      "component": "symmetric max premium",
+      "log_coefficient": 0.0,
+      "role": "共同包络直接支配两个镜像分支，max 不产生新的 log 系数。"
+    }
+  ],
+  "height_shift": 4.0,
+  "height_shift_log_constant": 0.26826398659467937,
+  "high_height_start": 10.0,
+  "hypothetical_chain_only": true,
+  "latest_global_with_external_basis": "",
+  "latest_self_contained_basis": "",
+  "next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "open_gates": [
+    "DStructureRankinStillIndependent",
+    "RowColumnSelfContainedClosed"
+  ],
+  "outer_radius": 4.0,
+  "plain_conclusion": "对称 max 溢价可由共同高高度包络内部闭合：两个镜像分支共用同一 sigma 分区点态包络，高度 T±4sin(phi) 的差只进入 O(1)，Gamma/初等主骨架不新增 log 系数。因此 avg max 的新增 log 系数为 0，C16 分子仍为 signed-mean 的 7，小于允许的 9.305206。这关闭严格自足 Backlund 解析包；全局行/列命题仍需独立 DStructure/Rankin 晋级验收。",
+  "remaining_c16_margin": 2.305206478445447,
+  "replacement_self_contained": {
+    "BacklundAuxiliaryRealPartJensenC16ConstantAggregationLedger": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope",
+    "BacklundHighPowerAuxiliarySignedMeanC16AggregationLedger": "BacklundHighPowerAuxiliarySignedMeanC16AggregationClosedByCommonEnvelope",
+    "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger": "BacklundSymmetricHeightMaxPremiumClosedByCommonHighHeightEnvelope",
+    "ClassicalBacklundZeroIndentationCostInternalProofLedger": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只处理假设链条里的 Backlund 高幂辅助函数常数，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "SymmetricPremiumGateActive",
+      "meaning": "上一层已把严格自足 Backlund 压成对称 max 溢价微输入。",
+      "proved": true,
+      "remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseRegionalEnvelopeImported",
+      "meaning": "右边 Euler、临界带 C=2 与左边函数方程给出按 sigma 分区的点态 zeta 包络。",
+      "proved": true,
+      "remaining": "无新的 zeta 区域输入。"
+    },
+    {
+      "closed": true,
+      "gate": "GammaCommonSkeletonNoPremium",
+      "meaning": "两个镜像分支在同一 phi 上具有相同 sigma 主骨架；高度 T±4sin(phi) 的差只造成 O_R(1)，均值主项仍由调和性抵消。",
+      "proved": true,
+      "remaining": "Gamma/elementary 不贡献对称 max 的 log 溢价。"
+    },
+    {
+      "closed": true,
+      "gate": "MirrorHeightShiftAbsorbedAsConstant",
+      "meaning": "|T|>=10 时 log(|T±4sin(phi)|+3)<=log(|T|+3)+0.268263986595，所以镜像高度只改 O(1) 常数。",
+      "proved": true,
+      "remaining": "无 log 系数损失。"
+    },
+    {
+      "closed": true,
+      "gate": "CommonEnvelopeDominatesBothBranches",
+      "meaning": "同一个 sigma 分区包络同时支配 U_T(phi) 与 U_T(-phi)，因此 avg max 不需要用双计或局部变差。",
+      "proved": true,
+      "remaining": "BacklundSymmetricHeightMaxPremiumClosedByCommonHighHeightEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "SymmetricPremiumCoefficientZero",
+      "meaning": "max 的新增 log 系数为 0；旧余量 2.305206... 全部保留。",
+      "proved": true,
+      "remaining": "BacklundSymmetricHeightMaxPremiumClosedByCommonHighHeightEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "C16BudgetPassesWithCommonEnvelope",
+      "meaning": "共同包络分子仍为 7.000000，低于 C16 允许分子 9.305206。",
+      "proved": true,
+      "remaining": "BacklundHighPowerAuxiliarySignedMeanC16AggregationClosedByCommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightRemainsSeparateFiniteGate",
+      "meaning": "本步关闭高高度对称 max 溢价；低高度仍按既有 |Im s|<14 有限零点验收门单独处理。",
+      "proved": true,
+      "remaining": "BacklundXiNoNontrivialZeroBelow14FiniteCheckLedger 或外部首零点输入。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictInternalBacklundAnalyticPackageClosed",
+      "meaning": "高幂形式层、无重复扣费与共同包络常数层合并后，作者侧 Backlund 解析缩进包可替换旧内部义务。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundNoLongerNeededForThisPackage",
+      "meaning": "外部 Backlund 仍可作为旁证，但解析 Backlund 包不再必须依赖外部引理。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureRankinStillIndependent",
+      "meaning": "本步只关闭解析 Backlund 包；最终行/列定理仍需 DStructure/Tail-log4/finite Rankin 独立验收。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnSelfContainedClosed",
+      "meaning": "全局行/列命题尚未闭合，因为独立 DStructure/Rankin 晋级门仍未完成。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-convexity-c2-optimization-router.json": "4fb4219b03078612ffbdb00224248cc1affadd1af1fa82a4ffbcb88703d22553",
+    "docs/monograph/prime-matrix-b3-functional-equation-left-edge-router.json": "d1e5e51311f6d06a1f204d02a5bbf6e97375b0ebcb8145cc78c201fbf8513298",
+    "docs/monograph/prime-matrix-b3-jensen-gamma-cancellation-router.json": "3c9dc6607473f6a99b787aae899511422d303cd86b91cc83964a19ad575be763",
+    "docs/monograph/prime-matrix-b3-jensen-low-height-envelope-router.json": "3cb27c45a3894f18a504a7fe0036f79714a70544d87efc361136a47ac74e0ffa",
+    "docs/monograph/prime-matrix-b3-jensen-signed-mean-router.json": "0f1d7398c476f40e229e0836ef8c2eb0bad2e3d6dce42c5dc3e19cb0d8a45193",
+    "docs/monograph/prime-matrix-b3-zeta-right-edge-euler-router.json": "bfc9eeffa99c26a6365e2ce8508c5b1eb7bc7e9231a42739ea7bc7dffa74395a",
+    "docs/monograph/prime-matrix-backlund-symmetric-max-premium-router.json": "1113e26fa3a6e4ab79f973943cac8cff6092feae1c7e9bc303009689f1057836"
+  },
+  "status": "backlund_common_envelope_internal_high_height_closed_dstructure_open",
+  "strict_internal_previous_remaining": "BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger",
+  "strict_self_contained_backlund_closed": true,
+  "symmetric_max_extra_log_coefficient": 0.0
+}

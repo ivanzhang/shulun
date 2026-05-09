@@ -7617,3 +7617,62 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
 
 下一步最窄目标回到 `EarlyZeroTerminalExclusionPackage`：排斥 primitive PDEC 容量、SAE/LocalSurvivor packet
 或稳定复现位移缺陷；同时核对模型余量/DPRC 账本是否与该替换口径兼容。
+
+## Prime Matrix Backlund 共同包络内部闭合更新
+
+对应新增文件：
+
+```text
+experiments/prime_matrix_backlund_common_envelope_internal_closure_router.py
+docs/monograph/prime-matrix-backlund-common-envelope-internal-closure-router.md/json
+```
+
+该路由器把外部 Backlund 引领下的高幂辅助函数内部化推进到闭合状态。关键结论为：
+
+```text
+strict_internal_previous_remaining=BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger；
+closed_premium_atom=BacklundSymmetricHeightMaxPremiumClosedByCommonHighHeightEnvelope；
+closed_high_power_atom=BacklundHighPowerAuxiliarySignedMeanC16AggregationClosedByCommonEnvelope；
+closed_internal_backlund_atom=ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope；
+common_envelope_numerator=7；
+allowed_c16_numerator=9.305206478445；
+symmetric_max_extra_log_coefficient=0；
+strict_self_contained_backlund_closed=true；
+row_column_self_contained_closed=false。
+```
+
+结构理由是：高幂边界项在除以 `N` 后只需控制
+
+```text
+avg_phi max(U_T(phi), U_T(-phi))。
+```
+
+已有 signed-mean C7 证明使用的右边 Euler、临界带 C=2 与左边函数方程都是按
+`sigma=2+4cos(phi)` 分区的点态包络；镜像 `phi` 与 `-phi` 具有相同 `sigma`。
+高度只从 `T+4sin(phi)` 换到 `T-4sin(phi)`，在 `|T|>=10` 时满足
+
+```text
+log(|T±4sin(phi)|+3) <= log(|T|+3)+log(17/13)。
+```
+
+因此两支共用同一个高高度包络；镜像差只进入常数，不进入 `log(T+3)` 系数。
+Gamma/初等因子的主骨架也由同一 `sigma` 控制，圆周均值仍由高高度调和相消支付。
+
+替换律为：
+
+```text
+BacklundSymmetricHeightMaxPremiumBelowC16MarginLedger
+  => BacklundSymmetricHeightMaxPremiumClosedByCommonHighHeightEnvelope
+
+BacklundHighPowerAuxiliarySignedMeanC16AggregationLedger
+  => BacklundHighPowerAuxiliarySignedMeanC16AggregationClosedByCommonEnvelope
+
+ClassicalBacklundZeroIndentationCostInternalProofLedger
+  => ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope。
+```
+
+这一步关闭的是 Backlund 解析缩进包，不关闭最终全局行/列命题。当前最终全局守门项仍为：
+
+```text
+DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance。
+```
