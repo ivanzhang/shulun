@@ -1,0 +1,139 @@
+{
+  "algebra_rows": [
+    {
+      "meaning": "原始 Backlund trace 的局部 branch-jump 贡献。",
+      "symbol": "A"
+    },
+    {
+      "meaning": "xi 镜像 trace 的对应 branch-jump 贡献。",
+      "symbol": "M"
+    },
+    {
+      "meaning": "镜像偶部，也就是半镜像平均能保留的部分。",
+      "symbol": "E=(A+M)/2"
+    },
+    {
+      "meaning": "镜像奇部；若 M=-A，则 O=A，正是原始 crossing 贡献。",
+      "symbol": "O=(A-M)/2"
+    }
+  ],
+  "backlund_local_crossing_trace_closed": false,
+  "certificate_type": "prime_matrix_backlund_half_mirror_average_obstruction_router",
+  "closed_gates": [
+    "HalfMirrorAverageGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ZetaXiJumpTransportAvailable",
+    "TraceCapacityRequiresZeroOddCoefficient",
+    "HalfAverageAlgebraObstructionClosed",
+    "EvenPartIdentityClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "equivalent_old_priority": "BacklundZeroAvoidingShiftWithoutJumpLedger",
+  "even_gamma_priority": "BacklundEvenGammaElementaryRemainderBudgetLedger",
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "fallback_priority": "BacklundOddMirrorCorrectionCostLedger",
+  "half_average_identity_closed": false,
+  "half_average_obstruction_closed": true,
+  "hypothetical_chain_only": true,
+  "next_priority": "BacklundOriginalTraceOddPartZeroLedger",
+  "odd_jump_priority": "BacklundMirrorOddJumpCancellationIdentityLedger",
+  "open_gates": [
+    "BacklundOriginalTraceHalfMirrorAverageIdentityLedger",
+    "BacklundOriginalTraceOddPartZeroLedger",
+    "BacklundOddMirrorCorrectionCostLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parent_priority": "BacklundZeroCostMirrorProjectionIdentityLedger",
+  "plain_conclusion": "半镜像平均路线存在纯代数障碍：设原始 branch-jump 为 A、镜像为 M。半平均只给 E=(A+M)/2；原始 trace 是 E+O，其中 O=(A-M)/2。若镜像抵消条件 M=-A 成立，则 E=0 但 O=A，原始 crossing 成本并没有消失。因此要想零成本闭合，必须另证 `BacklundOriginalTraceOddPartZeroLedger`；否则只能保留奇部修正并回到凹口成本/外部 Backlund 引理。",
+  "replacement_self_contained": {
+    "BacklundOriginalTraceHalfMirrorAverageIdentityLedger": "(BacklundMirrorEvenPartIdentityClosed AND (BacklundOriginalTraceOddPartZeroLedger OR BacklundOddMirrorCorrectionCostLedger))"
+  },
+  "route_options": [
+    {
+      "meaning": "证明原始 trace 的奇部为 0；这等价于无 crossing/零避让在本 formal unit 中成立。",
+      "route": "BacklundOriginalTraceOddPartZeroLedger"
+    },
+    {
+      "meaning": "保留奇部修正并支付其成本；这回到凹口成本/外部 Backlund 引理路线。",
+      "route": "BacklundOddMirrorCorrectionCostLedger"
+    },
+    {
+      "meaning": "接受经典 Backlund 零点缩进引理，绕开内部半平均配对路线。",
+      "route": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    }
+  ],
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "HalfMirrorAverageGateActive",
+      "meaning": "上一层把零成本投影压到原始 trace 与半镜像平均的身份。",
+      "proved": true,
+      "remaining": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只分析假设链条中的解析 trace，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ZetaXiJumpTransportAvailable",
+      "meaning": "branch-jump 已可在 xi 语言中讨论，镜像奇偶分解合法。",
+      "proved": true,
+      "remaining": "无对象搬运剩余。"
+    },
+    {
+      "closed": true,
+      "gate": "TraceCapacityRequiresZeroOddCoefficient",
+      "meaning": "容量收缩已证明任何 Jensen 规模正比例奇部残留都会超出 5/64 余量。",
+      "proved": true,
+      "remaining": "BacklundOriginalTraceOddPartZeroLedger"
+    },
+    {
+      "closed": true,
+      "gate": "HalfAverageAlgebraObstructionClosed",
+      "meaning": "若镜像跳变反号，半平均消掉的是奇部；但原始 trace 等于偶部加奇部，除非奇部先为 0。",
+      "proved": true,
+      "remaining": "BacklundOriginalTraceOddPartZeroLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EvenPartIdentityClosed",
+      "meaning": "A=(A+M)/2+(A-M)/2 是恒等式；只能闭合偶部定义，不能闭合原始 trace。",
+      "proved": true,
+      "remaining": "BacklundMirrorEvenPartIdentityClosed"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger",
+      "meaning": "半镜像平均不能单独替代原始 trace；必须额外证明奇部为 0 或支付奇部修正成本。",
+      "proved": false,
+      "remaining": "BacklundOriginalTraceOddPartZeroLedger OR BacklundOddMirrorCorrectionCostLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOriginalTraceOddPartZeroLedger",
+      "meaning": "尚未证明原始 trace 没有 crossing 奇部；这是新的唯一最窄内部目标。",
+      "proved": false,
+      "remaining": "BacklundZeroAvoidingShiftWithoutJumpLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOddMirrorCorrectionCostLedger",
+      "meaning": "若不能证明奇部为 0，就必须恢复成本账本；这不会给出零成本自足闭合。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-backlund-crossing-trace-capacity-router.json": "bccb004fcada4ac9ae87fdf203125d449713bce23105665cc061732bd91767c9",
+    "docs/monograph/prime-matrix-backlund-zero-cost-projection-identity-router.json": "4c357d157f101ab19c3b6163dce6cd11287d4bd860be202740c4c33e5a337551",
+    "docs/monograph/prime-matrix-backlund-zeta-xi-branch-jump-transport-router.json": "d7e97ace1bdee2abe3d40961b35d6aa5c95dd537f6f2eb4a03acd1836e8d7708"
+  },
+  "status": "backlund_half_mirror_average_obstruction_closed_odd_part_zero_next",
+  "zero_cost_projection_identity_closed": false
+}

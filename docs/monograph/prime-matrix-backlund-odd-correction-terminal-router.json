@@ -1,0 +1,117 @@
+{
+  "certificate_type": "prime_matrix_backlund_odd_correction_terminal_router",
+  "closed_gates": [
+    "OddCorrectionGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "OddCorrectionEqualsIndentCost",
+    "SelfContainedIndentCostStillOpen",
+    "ExternalIndentCostAvailable",
+    "ExternalBacklundDownstreamReady",
+    "ConditionalExternalBacklundPackage"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_backlund_bridge_ready": true,
+  "external_next_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hypothetical_chain_only": true,
+  "indent_cost_self_contained_closed": false,
+  "odd_correction_self_contained_closed": false,
+  "odd_correction_terminal_equivalence_closed": true,
+  "open_gates": [
+    "BacklundOddMirrorCorrectionCostLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "奇部修正成本已终端归并：它与 `BacklundZeroProximityIndentationCostLedger` 是同一个剩余。此前的零成本、半镜像平均、奇部为零路线均已被审查并阻断；因此完全自足路线的唯一未闭合解析输入仍是经典 Backlund 缩进成本的内部替代。若接受外部 `ClassicalBacklundZeroIndentationCostExternalAccepted`，则 CS8、端点、RVM->CN16 均已可接上，外部分支下一门为 DStructure/Rankin 独立验收。",
+  "replacement_external": {
+    "BacklundZeroProximityIndentationCostLedger": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+  },
+  "replacement_self_contained": {
+    "BacklundOddMirrorCorrectionCostLedger": "BacklundZeroProximityIndentationCostLedger"
+  },
+  "row_column_external_backlund_closed": false,
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "OddCorrectionGateActive",
+      "meaning": "原始奇部为零被阻断后，当前剩余是奇部修正成本。",
+      "proved": true,
+      "remaining": "BacklundOddMirrorCorrectionCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的解析成本归并，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "OddCorrectionEqualsIndentCost",
+      "meaning": "奇部修正就是近零 crossing 的缩进成本；它不产生新路线。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedIndentCostStillOpen",
+      "meaning": "仓库内已证明零成本路线失败；自足凹口成本仍未闭合。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalIndentCostAvailable",
+      "meaning": "接受经典 Backlund 缩进引理时，凹口成本可作为外部闭合输入。",
+      "proved": false,
+      "remaining": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBacklundDownstreamReady",
+      "meaning": "外部凹口门后，CS8 紧等号、端点 convention、RVM->CN16 均已有验收。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOddMirrorCorrectionCostLedger",
+      "meaning": "完全自足路线仍缺经典 Backlund 缩进引理的内部替代；当前没有更窄的零成本路径。",
+      "proved": false,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ConditionalExternalBacklundPackage",
+      "meaning": "在接受外部缩进引理后，解析 Backlund 包可推进到 DStructure/Rankin 独立验收门。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "self_contained_remaining": "BacklundZeroProximityIndentationCostLedger",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-rvm-to-cn16-local-inequality-router.json": "3e7fa721aef0fe9660b70b6e8f9bd3ecb1e926ddbf12ec4b341163199ac0ca13",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-backlund-original-trace-odd-zero-router.json": "fbbed7b19345f78eabc0e8a8969d6fecd1ab460b78082413c047122c7a08f202"
+  },
+  "status": "backlund_odd_correction_terminal_equivalent_to_indent_cost_external_ready",
+  "terminal_map": [
+    {
+      "from": "BacklundOddMirrorCorrectionCostLedger",
+      "meaning": "奇部修正正是原始 trace 的未配对 crossing/近零缩进成本，没有新的独立自由度。",
+      "to": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "from": "BacklundZeroProximityIndentationCostLedger",
+      "meaning": "若接受经典 Backlund 缩进引理，该成本门在外部分支关闭。",
+      "to": "ClassicalBacklundZeroIndentationCostExternalAccepted"
+    },
+    {
+      "from": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+      "meaning": "外部凹口门之后，CS8、端点、RVM->CN16 已有验收证书。",
+      "to": "BacklundCS8SlackAfterBridgeClosedTightHalf AND EndpointZeroAvoidanceMultiplicityConventionClosedByLimit AND RVMToCN16LocalInequalityClosedWithRawArgCS8"
+    }
+  ]
+}

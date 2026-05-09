@@ -1,0 +1,125 @@
+{
+  "backlund_local_crossing_trace_closed": false,
+  "blocked_parent": "BacklundOriginalTraceHalfMirrorAverageIdentityLedger",
+  "certificate_type": "prime_matrix_backlund_original_trace_odd_zero_router",
+  "closed_gates": [
+    "OriginalTraceOddZeroGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "ZetaXiJumpTransportAvailable",
+    "LowHeightClosedButIrrelevantToHighTrace",
+    "NearZeroAssignedNotEliminated",
+    "EndpointConventionCountsJumps",
+    "GlobalOddPartZeroRejected"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "equivalent_cost_priority": "BacklundZeroProximityIndentationCostLedger",
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "half_average_identity_closed": false,
+  "hypothetical_chain_only": true,
+  "impossibility_reasons": [
+    {
+      "detail": "zeta/xi 的非平凡零点存在；当高度命中零点 ordinates 时，原始 trace 的 branch jump 不能被宣布为 0。",
+      "reason": "actual_zeros_exist"
+    },
+    {
+      "detail": "端点 convention 只规定避开后取极限并按重数计数，不证明 jump 消失。",
+      "reason": "endpoint_convention_is_not_absence"
+    },
+    {
+      "detail": "eta=1/16 近零分离只是把近零点交给凹口成本账本，不证明近零点集合为空。",
+      "reason": "near_zero_separation_is_assignment"
+    },
+    {
+      "detail": "Jensen C16 是数量上界，允许 O(log T) 个局部零点；它不支持奇部恒为 0。",
+      "reason": "jensen_count_allows_zeros"
+    }
+  ],
+  "next_priority": "BacklundOddMirrorCorrectionCostLedger",
+  "open_gates": [
+    "BacklundOriginalTraceOddPartZeroLedger",
+    "BacklundOddMirrorCorrectionCostLedger"
+  ],
+  "original_trace_odd_zero_closed": false,
+  "original_trace_odd_zero_rejected": true,
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "`BacklundOriginalTraceOddPartZeroLedger` 不能作为全局闭合目标。它等价于原始 Backlund trace 没有 crossing branch jump；但高高度零点、端点重数 convention、近零分离和 Jensen 计数都说明 jump 必须被记账而不是删除。因此内部路线必须回到 `BacklundOddMirrorCorrectionCostLedger`，也就是凹口成本的自足证明；若接受外部经典 Backlund 缩进引理，则可由外部路线继续闭合。",
+  "replacement_self_contained": {
+    "BacklundOriginalTraceOddPartZeroLedger": "rejected_as_global_target; use (BacklundOddMirrorCorrectionCostLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted)"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "OriginalTraceOddZeroGateActive",
+      "meaning": "半镜像平均障碍后，当前候选最窄点是证明原始 trace 奇部为 0。",
+      "proved": true,
+      "remaining": "BacklundOriginalTraceOddPartZeroLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只审查假设链条中的解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ZetaXiJumpTransportAvailable",
+      "meaning": "branch jump 已可无损搬运到 xi，因此奇部为零等价于原始 trace 没有 crossing jump。",
+      "proved": true,
+      "remaining": "BacklundZeroAvoidingShiftWithoutJumpLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightClosedButIrrelevantToHighTrace",
+      "meaning": "0<t<=14 低高度已闭合，但 Backlund 高度 trace 的零点 crossing 仍可能存在。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NearZeroAssignedNotEliminated",
+      "meaning": "近零分离把 eta 内零点交给凹口账本，不证明原始奇部为 0。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointConventionCountsJumps",
+      "meaning": "端点避零与重数 convention 处理落零极限，但按重数保留 jump，而不是删除 jump。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalOddPartZeroRejected",
+      "meaning": "原始奇部为零不能作为全局自足定理；它只有在额外零避让或缩进成本已处理后才成立。",
+      "proved": true,
+      "remaining": "BacklundOddMirrorCorrectionCostLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOriginalTraceOddPartZeroLedger",
+      "meaning": "该目标与高高度零点 crossing 的真实解析结构不兼容，不能关闭父级半平均路线。",
+      "proved": false,
+      "remaining": "BacklundZeroAvoidingShiftWithoutJumpLedger with cost control OR BacklundOddMirrorCorrectionCostLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOddMirrorCorrectionCostLedger",
+      "meaning": "剩余必须转为奇部修正成本，也就是 Backlund 凹口成本的自足证明或外部引理。",
+      "proved": false,
+      "remaining": "BacklundZeroProximityIndentationCostLedger OR ClassicalBacklundZeroIndentationCostExternalAccepted"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-near-zero-indent-separation-router.json": "d27338ae97a041b28360548061e660940c5916f4c7de875d8d67f388baa359b3",
+    "docs/monograph/prime-matrix-backlund-half-mirror-average-obstruction-router.json": "750fc9ccaa029ea37f6854251ecff51bce624832f71c90e5e2398ddbde18075b",
+    "docs/monograph/prime-matrix-backlund-zeta-xi-branch-jump-transport-router.json": "d7e97ace1bdee2abe3d40961b35d6aa5c95dd537f6f2eb4a03acd1836e8d7708",
+    "docs/monograph/prime-matrix-lowheight-xi-backlund-integration-router.json": "183c1d656480d1664a48b5a0fde1e744ef389bf734ff1b77720e5e061e963bc8"
+  },
+  "status": "backlund_original_trace_odd_zero_rejected_indent_correction_next",
+  "trace_parent": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger"
+}
