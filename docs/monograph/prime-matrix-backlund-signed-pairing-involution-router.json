@@ -1,0 +1,143 @@
+{
+  "backlund_local_crossing_trace_closed": false,
+  "backlund_signed_pairing_involution_closed": false,
+  "certificate_type": "prime_matrix_backlund_signed_pairing_involution_router",
+  "closed_gates": [
+    "SignedPairingGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "XiSymmetricZeroOrbitAvailable",
+    "LowHeightWindingPairingImportedAsModelOnly",
+    "DirectLowHeightPairingPortabilityBlocked",
+    "SignedPairingReducedToTransportAndFormalUnit"
+  ],
+  "cluster_support_priority": "BacklundCanonicalNearZeroClusterBoxLedger",
+  "counterexample_assumption_only": true,
+  "direct_pairing_barriers": [
+    {
+      "barrier": "object_mismatch",
+      "detail": "低高度绕数证书处理 xi 边界角变化；Backlund 凹口 trace 的原始硬项是 arg zeta。"
+    },
+    {
+      "barrier": "contour_mismatch",
+      "detail": "低高度是固定矩形且边界非零；Backlund 是随 T 移动的近零缩进/避让同伦。"
+    },
+    {
+      "barrier": "budget_mismatch",
+      "detail": "低高度绕数只证明总 winding；这里需要每个近零 crossing 的局部跳变量和残余成本 hash。"
+    }
+  ],
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hash_priority": "BacklundMirrorOrbitMultiplicityHashLedger",
+  "hypothetical_chain_only": true,
+  "lower_atoms": [
+    {
+      "atom": "BacklundZetaXiBranchJumpTransportLedger",
+      "role": "把 Backlund 原始 arg zeta 的 branch jump 无损搬运到 xi 语言，并把 Gamma/初等项列为无零确定相位。"
+    },
+    {
+      "atom": "BacklundXiSymmetricFormalUnitContourLedger",
+      "role": "登记同一 formal unit 内的 contour/homotopy 对 s->1-s 与共轭对称封闭。"
+    },
+    {
+      "atom": "BacklundMirrorOrbitMultiplicityHashLedger",
+      "role": "对每个近零 cluster 生成 rho,1-rho,conj rho,1-conj rho 的重数 orbit hash。"
+    }
+  ],
+  "next_priority": "BacklundZetaXiBranchJumpTransportLedger",
+  "open_gates": [
+    "BacklundZetaXiBranchJumpTransportLedger",
+    "BacklundXiSymmetricFormalUnitContourLedger",
+    "BacklundMirrorOrbitMultiplicityHashLedger",
+    "BacklundSignedCrossingPairingInvolutionLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "signed crossing 配对不能直接从低高度 xi 绕数证书搬来。低高度证书证明固定非零边界的总角变化配平；当前 Backlund trace 处理的是高高度移动凹口中的 arg zeta 局部跳变。因此真正下层最窄点是先闭合 `BacklundZetaXiBranchJumpTransportLedger`：把 zeta 分支跳变搬运到 xi 对称零点 orbit，再注册 formal unit 配对。",
+  "post_pairing_priority": "BacklundResidualIndentCoefficientZeroLedger",
+  "replacement_self_contained": {
+    "BacklundSignedCrossingPairingInvolutionLedger": "(BacklundZetaXiBranchJumpTransportLedger AND BacklundXiSymmetricFormalUnitContourLedger AND BacklundMirrorOrbitMultiplicityHashLedger)"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SignedPairingGateActive",
+      "meaning": "容量收缩后，当前下层最窄点是带符号 crossing 的配对 involution。",
+      "proved": true,
+      "remaining": "BacklundSignedCrossingPairingInvolutionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在早期零行反例假设链条内处理解析 trace，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "XiSymmetricZeroOrbitAvailable",
+      "meaning": "theta-Mellin 函数方程、xi 整函数性和 Hadamard 乘积给出零点 mirror orbit 的结构底座。",
+      "proved": true,
+      "remaining": "BacklundMirrorOrbitMultiplicityHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightWindingPairingImportedAsModelOnly",
+      "meaning": "低高度 xi 多边形已用函数方程/共轭对称完成角变化配平，但它只能作为结构模型。",
+      "proved": true,
+      "remaining": "不能直接替代高高度 Backlund trace。"
+    },
+    {
+      "closed": true,
+      "gate": "DirectLowHeightPairingPortabilityBlocked",
+      "meaning": "对象、轮廓和预算三重不匹配，直接套用低高度 winding 会混淆假设链条。",
+      "proved": true,
+      "remaining": "BacklundZetaXiBranchJumpTransportLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedPairingReducedToTransportAndFormalUnit",
+      "meaning": "配对 involution 已压成 zeta->xi 跳变搬运、xi 对称 formal unit、mirror orbit hash 三包。",
+      "proved": false,
+      "remaining": "BacklundZetaXiBranchJumpTransportLedger AND BacklundXiSymmetricFormalUnitContourLedger AND BacklundMirrorOrbitMultiplicityHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundZetaXiBranchJumpTransportLedger",
+      "meaning": "尚未证明 arg zeta 的局部 branch jump 可无损改写为 xi 零点跳变加显式无零相位。",
+      "proved": false,
+      "remaining": "BacklundZetaXiBranchJumpTransportLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundXiSymmetricFormalUnitContourLedger",
+      "meaning": "尚未登记 Backlund 移动凹口 contour 在 s->1-s 与共轭下封闭。",
+      "proved": false,
+      "remaining": "BacklundXiSymmetricFormalUnitContourLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundMirrorOrbitMultiplicityHashLedger",
+      "meaning": "尚未给出每个近零 cluster 的 mirror orbit multiplicity hash。",
+      "proved": false,
+      "remaining": "BacklundMirrorOrbitMultiplicityHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundSignedCrossingPairingInvolutionLedger",
+      "meaning": "三包闭合后才可证明 branch_jump 在同一 formal unit 内成对抵消。",
+      "proved": false,
+      "remaining": "BacklundResidualIndentCoefficientZeroLedger"
+    }
+  ],
+  "signed_pairing_reduction_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-hadamard-factorization-router.json": "3a78eec44d5ea047d64633e68024afa29cc90ca7f3234a6c173746edd4dab09f",
+    "docs/monograph/prime-matrix-b3-theta-mellin-functional-equation-router.json": "ec0893b4116159d3ce000f45a67c35adee936a620784098260413e62df51d3cf",
+    "docs/monograph/prime-matrix-b3-xi-entire-order-router.json": "94bd3bc2703290647dff955cb93838018af68fb2fa102d652faefba37ac6419c",
+    "docs/monograph/prime-matrix-backlund-crossing-trace-capacity-router.json": "bccb004fcada4ac9ae87fdf203125d449713bce23105665cc061732bd91767c9",
+    "docs/monograph/prime-matrix-xi-boundary-polygon-winding-router.json": "f97f3e9496151dc9b3157412144531a0de189338b84b9a9be6a5666eabb3ef9d"
+  },
+  "status": "backlund_signed_pairing_reduced_to_zeta_xi_transport_open",
+  "support_priority": "BacklundXiSymmetricFormalUnitContourLedger"
+}

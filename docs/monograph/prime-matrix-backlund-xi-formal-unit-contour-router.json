@@ -1,0 +1,138 @@
+{
+  "backlund_local_crossing_trace_closed": false,
+  "certificate_type": "prime_matrix_backlund_xi_formal_unit_contour_router",
+  "closed_gates": [
+    "XiFormalUnitGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "BacklundRectangleIdentityAvailable",
+    "LeftRightFunctionalEquationBridgeAvailable",
+    "LowHeightXiSymmetricUnitModelAvailable",
+    "MovingIndentDirectSymmetryNotRegistered",
+    "FormalUnitReducedToBudgetPreservingDoubling"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "formal_unit_reduction_closed": true,
+  "hypothetical_chain_only": true,
+  "lower_atoms": [
+    {
+      "atom": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger",
+      "role": "把原始 Backlund 移动凹口 trace 与 xi 镜像 trace 合成同一 formal unit，且不改变目标预算。"
+    },
+    {
+      "atom": "BacklundMirrorIndentArcOrientationLedger",
+      "role": "证明镜像凹口弧的方向与 branch_jump 符号正好相反。"
+    },
+    {
+      "atom": "BacklundOriginalTraceProjectionNoLossLedger",
+      "role": "从对称 doubled unit 投影回原始 Backlund trace 时不丢失、不重复计算成本。"
+    }
+  ],
+  "next_priority": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger",
+  "open_gates": [
+    "BacklundBudgetPreservingXiSymmetricContourDoublingLedger",
+    "BacklundMirrorIndentArcOrientationLedger",
+    "BacklundOriginalTraceProjectionNoLossLedger",
+    "BacklundXiSymmetricFormalUnitContourLedger"
+  ],
+  "orientation_priority": "BacklundMirrorIndentArcOrientationLedger",
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parent_priority": "BacklundSignedCrossingPairingInvolutionLedger",
+  "plain_conclusion": "`BacklundXiSymmetricFormalUnitContourLedger` 不能直接由低高度 xi winding 证书推出。本步把它收缩为一个更窄的预算保持 doubling 问题：必须把原始 Backlund 移动凹口 trace 和 xi 镜像 trace 放入同一 formal unit，并证明镜像弧反向、回投无损且无重复计费。",
+  "post_pairing_priority": "BacklundResidualIndentCoefficientZeroLedger",
+  "projection_priority": "BacklundOriginalTraceProjectionNoLossLedger",
+  "replacement_self_contained": {
+    "BacklundXiSymmetricFormalUnitContourLedger": "(BacklundBudgetPreservingXiSymmetricContourDoublingLedger AND BacklundMirrorIndentArcOrientationLedger AND BacklundOriginalTraceProjectionNoLossLedger)"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "XiFormalUnitGateActive",
+      "meaning": "zeta-xi 跳变搬运闭合后，剩余是把移动凹口注册成 xi 对称 formal unit。",
+      "proved": true,
+      "remaining": "BacklundXiSymmetricFormalUnitContourLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的 contour/homotopy 账本，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundRectangleIdentityAvailable",
+      "meaning": "Littlewood 矩形恒等式已闭合，说明原始 Backlund trace 可以按边界和零点权重精确记账。",
+      "proved": true,
+      "remaining": "无矩形恒等式剩余。"
+    },
+    {
+      "closed": true,
+      "gate": "LeftRightFunctionalEquationBridgeAvailable",
+      "meaning": "左边界可经函数方程回到右边界，这提供 formal unit 对称化的解析桥。",
+      "proved": true,
+      "remaining": "无左边界函数方程剩余。"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightXiSymmetricUnitModelAvailable",
+      "meaning": "低高度 xi 多边形给出成功的对称 formal unit 模型，但不自动覆盖移动凹口。",
+      "proved": true,
+      "remaining": "只能作为模型输入。"
+    },
+    {
+      "closed": true,
+      "gate": "MovingIndentDirectSymmetryNotRegistered",
+      "meaning": "现有账本尚未证明原始移动凹口和其 xi 镜像属于同一预算单位。",
+      "proved": true,
+      "remaining": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitReducedToBudgetPreservingDoubling",
+      "meaning": "formal unit 硬点已压成预算保持的 xi 对称 doubling、镜像弧方向、原 trace 投影三包。",
+      "proved": false,
+      "remaining": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger AND BacklundMirrorIndentArcOrientationLedger AND BacklundOriginalTraceProjectionNoLossLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger",
+      "meaning": "尚未构造预算保持的 doubled contour/homotopy 账本。",
+      "proved": false,
+      "remaining": "BacklundBudgetPreservingXiSymmetricContourDoublingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundMirrorIndentArcOrientationLedger",
+      "meaning": "尚未证明镜像凹口弧方向使 branch_jump 成反号配对。",
+      "proved": false,
+      "remaining": "BacklundMirrorIndentArcOrientationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundOriginalTraceProjectionNoLossLedger",
+      "meaning": "尚未证明 doubled formal unit 回投到原始 trace 时不重复、不漏记。",
+      "proved": false,
+      "remaining": "BacklundOriginalTraceProjectionNoLossLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundXiSymmetricFormalUnitContourLedger",
+      "meaning": "三包闭合后才可把 xi 对称 formal unit 交给 mirror orbit hash 与 signed pairing。",
+      "proved": false,
+      "remaining": "BacklundMirrorOrbitMultiplicityHashLedger AND BacklundSignedCrossingPairingInvolutionLedger"
+    }
+  ],
+  "signed_pairing_involution_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-littlewood-rectangle-router.json": "062778677ccc3375b4405c6e5559feba240610f29ec4fc13dd5b341e43ff64f3",
+    "docs/monograph/prime-matrix-b3-functional-equation-left-edge-router.json": "d1e5e51311f6d06a1f204d02a5bbf6e97375b0ebcb8145cc78c201fbf8513298",
+    "docs/monograph/prime-matrix-backlund-zeta-xi-branch-jump-transport-router.json": "d7e97ace1bdee2abe3d40961b35d6aa5c95dd537f6f2eb4a03acd1836e8d7708",
+    "docs/monograph/prime-matrix-xi-boundary-polygon-winding-router.json": "f97f3e9496151dc9b3157412144531a0de189338b84b9a9be6a5666eabb3ef9d"
+  },
+  "status": "backlund_xi_formal_unit_reduced_to_budget_preserving_doubling_open",
+  "support_priority": "BacklundMirrorOrbitMultiplicityHashLedger",
+  "xi_symmetric_formal_unit_closed": false
+}

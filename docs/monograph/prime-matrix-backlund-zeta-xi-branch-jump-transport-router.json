@@ -1,0 +1,126 @@
+{
+  "backlund_local_crossing_trace_closed": false,
+  "branch_jump_identity": "jump_arg_zeta(rho)=jump_arg_xi(rho), counted with analytic multiplicity",
+  "certificate_type": "prime_matrix_backlund_zeta_xi_branch_jump_transport_router",
+  "closed_gates": [
+    "ZetaXiTransportGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "XiDefinitionAndFunctionalEquationAvailable",
+    "LowHeightSeparatedFromBacklundTrace",
+    "ElementaryGammaFactorNoJumpClosed",
+    "MultiplicityTransportClosed",
+    "EndpointLimitConventionCompatible",
+    "BacklundZetaXiBranchJumpTransportLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "factor_rows": [
+    {
+      "factor": "1/2",
+      "reason": "常数非零，不产生分支跳变。"
+    },
+    {
+      "factor": "s(s-1)",
+      "reason": "高高度 Backlund 轮廓满足 |Im s|>14，避开 s=0,1。"
+    },
+    {
+      "factor": "pi^(-s/2)",
+      "reason": "指数函数处处非零，只贡献连续确定相位。"
+    },
+    {
+      "factor": "Gamma(s/2)",
+      "reason": "Gamma 函数无零点；其极点在非正整数，高高度临界带不相交。"
+    }
+  ],
+  "hypothetical_chain_only": true,
+  "next_priority": "BacklundXiSymmetricFormalUnitContourLedger",
+  "open_gates": [
+    "SignedPairingStillOpenAfterTransport"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parent_priority": "BacklundSignedCrossingPairingInvolutionLedger",
+  "plain_conclusion": "`BacklundZetaXiBranchJumpTransportLedger` 已闭合：在高高度 Backlund 轮廓中，xi=G*zeta 且 G 无零无极点，所以 zeta 的局部零点 branch jump 与 xi 的局部零点 branch jump 按解析重数完全相同。剩余硬点转为注册 xi 对称 formal unit 和 mirror orbit multiplicity hash。",
+  "post_pairing_priority": "BacklundResidualIndentCoefficientZeroLedger",
+  "replacement_self_contained": {
+    "BacklundZetaXiBranchJumpTransportLedger": "BacklundZetaXiBranchJumpTransportClosed"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ZetaXiTransportGateActive",
+      "meaning": "signed pairing 路由后，当前真正最窄点是把 arg zeta 的 crossing 跳变搬运到 xi。",
+      "proved": true,
+      "remaining": "BacklundZetaXiBranchJumpTransportLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只处理假设链条内解析恒等式，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "XiDefinitionAndFunctionalEquationAvailable",
+      "meaning": "theta-Mellin 层已给出 xi(s)=1/2*s*(s-1)*pi^(-s/2)*Gamma(s/2)*zeta(s)。",
+      "proved": true,
+      "remaining": "无 xi 定义剩余。"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightSeparatedFromBacklundTrace",
+      "meaning": "0<t<=14 的低高度 xi 子包已关闭；当前搬运只作用于高高度 Backlund trace。",
+      "proved": true,
+      "remaining": "无低高度混淆。"
+    },
+    {
+      "closed": true,
+      "gate": "ElementaryGammaFactorNoJumpClosed",
+      "meaning": "G(s)=1/2*s*(s-1)*pi^(-s/2)*Gamma(s/2) 在高高度轮廓无零无极点，不能产生零点 crossing 跳变。",
+      "proved": true,
+      "remaining": "只剩连续确定相位预算。"
+    },
+    {
+      "closed": true,
+      "gate": "MultiplicityTransportClosed",
+      "meaning": "xi=G*zeta 且 G 无零无极点，所以 zeta 与 xi 的局部零点重数、branch_jump 完全一致。",
+      "proved": true,
+      "remaining": "BacklundMirrorOrbitMultiplicityHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointLimitConventionCompatible",
+      "meaning": "若端点落零，先避开再取极限，重数由 endpoint convention 吸收，不改变搬运等式。",
+      "proved": true,
+      "remaining": "EndpointZeroAvoidanceMultiplicityConventionClosedByLimit。"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundZetaXiBranchJumpTransportLedger",
+      "meaning": "arg zeta 的局部分支跳变已可无损搬运到 xi 零点跳变；Gamma/初等项不进入 crossing 配对。",
+      "proved": true,
+      "remaining": "BacklundXiSymmetricFormalUnitContourLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SignedPairingStillOpenAfterTransport",
+      "meaning": "搬运只解决对象不匹配；仍需 xi 对称 formal unit 和 mirror orbit hash 才能配对抵消。",
+      "proved": false,
+      "remaining": "BacklundXiSymmetricFormalUnitContourLedger AND BacklundMirrorOrbitMultiplicityHashLedger"
+    }
+  ],
+  "signed_pairing_involution_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-theta-mellin-functional-equation-router.json": "ec0893b4116159d3ce000f45a67c35adee936a620784098260413e62df51d3cf",
+    "docs/monograph/prime-matrix-b3-xi-entire-order-router.json": "94bd3bc2703290647dff955cb93838018af68fb2fa102d652faefba37ac6419c",
+    "docs/monograph/prime-matrix-backlund-signed-pairing-involution-router.json": "6b0df84b7c41591f8ceb7c795f50460c53e688a6ef658be8fa89992833935653",
+    "docs/monograph/prime-matrix-lowheight-xi-backlund-integration-router.json": "183c1d656480d1664a48b5a0fde1e744ef389bf734ff1b77720e5e061e963bc8"
+  },
+  "status": "backlund_zeta_xi_branch_jump_transport_closed_formal_unit_next",
+  "support_priority": "BacklundMirrorOrbitMultiplicityHashLedger",
+  "xi_zeta_factorization": "xi(s)=1/2*s*(s-1)*pi^(-s/2)*Gamma(s/2)*zeta(s)",
+  "zeta_xi_branch_jump_transport_closed": true
+}

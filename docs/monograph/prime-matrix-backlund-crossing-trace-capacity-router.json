@@ -1,0 +1,127 @@
+{
+  "backlund_indent_self_contained_closed": false,
+  "backlund_local_crossing_trace_closed": false,
+  "certificate_type": "prime_matrix_backlund_crossing_trace_capacity_router",
+  "closed_gates": [
+    "CrossingTraceCapacityGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "NaiveResidualBudgetImpossible",
+    "PositiveCoefficientResidualForbidden",
+    "ExactCancellationIsNecessary",
+    "ClusterBoxSchemaAvailable"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "lower_atoms": [
+    {
+      "atom": "BacklundCanonicalNearZeroClusterBoxLedger",
+      "role": "把 eta=1/16 内所有近零点按窗口和重数做 canonical box 账本。"
+    },
+    {
+      "atom": "BacklundSignedCrossingPairingInvolutionLedger",
+      "role": "在同一 formal unit 内给出带符号 crossing 的配对 involution。"
+    },
+    {
+      "atom": "BacklundResidualIndentCoefficientZeroLedger",
+      "role": "由配对证明未配对 crossing 的 log(T) 系数为 0，而不是小的正数。"
+    }
+  ],
+  "next_priority": "BacklundSignedCrossingPairingInvolutionLedger",
+  "numbers": {
+    "allowed_fraction_of_jensen_count": 0.0015542474911317905,
+    "available_stability_margin": 0.078125,
+    "max_unpaired_crossing_coefficient": 0.02486795985810865,
+    "naive_indentation_coefficient": 50.26548245743669,
+    "naive_margin_deficit": 50.18735745743669,
+    "per_unpaired_crossing_cost": 3.141592653589793,
+    "zero_count_coefficient": 16.0
+  },
+  "open_gates": [
+    "BacklundCanonicalNearZeroClusterBoxLedger",
+    "BacklundSignedCrossingPairingInvolutionLedger",
+    "BacklundResidualIndentCoefficientZeroLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "crossing trace 的下层最窄目标已从“付凹口成本”收缩为“证明带符号 crossing 精确配对”。原因是剩余稳定余量只有 5/64，而 Jensen C16 规模的未配对零点按 pi 粗付会产生约 50.187 的系数缺口。所以自足路线不能再走正比例残留预算，只能证明未配对 crossing 的 log(T) 系数为 0，或明确接受外部经典 Backlund 凹口引理。",
+  "post_pairing_priority": "BacklundResidualIndentCoefficientZeroLedger",
+  "post_trace_priority": "BacklundCS8SlackAfterBridgeLedger",
+  "replacement_self_contained": {
+    "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger": "(BacklundCanonicalNearZeroClusterBoxLedger AND BacklundSignedCrossingPairingInvolutionLedger AND BacklundResidualIndentCoefficientZeroLedger)"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CrossingTraceCapacityGateActive",
+      "meaning": "上一层已把凹口成本二选一压成局部 crossing trace 单原子。",
+      "proved": true,
+      "remaining": "BacklundLocalZeroCrossingTraceAndIndentHomotopyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在早期零行反例假设链条内做解析容量收缩，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveResidualBudgetImpossible",
+      "meaning": "若允许 Jensen C16 规模的未配对 crossing 粗付 pi 成本，系数缺口约 50.187。",
+      "proved": true,
+      "remaining": "BacklundSignedCrossingPairingInvolutionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PositiveCoefficientResidualForbidden",
+      "meaning": "余量只允许不到 Jensen 近零数量上界的 0.2% 留作未配对成本；这不是稳健闭合路径。",
+      "proved": true,
+      "remaining": "BacklundSignedCrossingPairingInvolutionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExactCancellationIsNecessary",
+      "meaning": "自足路线若不调用外部 Backlund 凹口引理，就必须证明 log(T) 级未配对 crossing 系数为 0。",
+      "proved": true,
+      "remaining": "BacklundSignedCrossingPairingInvolutionLedger AND BacklundResidualIndentCoefficientZeroLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ClusterBoxSchemaAvailable",
+      "meaning": "上一层 trace schema 已指定 window_id、zero_cluster_box、homotopy_arc、branch_jump 等字段。",
+      "proved": true,
+      "remaining": "BacklundCanonicalNearZeroClusterBoxLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundCanonicalNearZeroClusterBoxLedger",
+      "meaning": "尚未生成每个近零窗口的 canonical cluster box 与 multiplicity hash。",
+      "proved": false,
+      "remaining": "BacklundCanonicalNearZeroClusterBoxLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundSignedCrossingPairingInvolutionLedger",
+      "meaning": "尚未证明所有 branch_jump 都在同一 formal unit 中成对抵消。",
+      "proved": false,
+      "remaining": "BacklundSignedCrossingPairingInvolutionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BacklundResidualIndentCoefficientZeroLedger",
+      "meaning": "只有配对 involution 完成后，残余凹口系数才能降为 0 并落入 5/64 余量。",
+      "proved": false,
+      "remaining": "BacklundResidualIndentCoefficientZeroLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-variation-window-scale-router.json": "b74131ddb497887ec5cbb0892aca05afba62c6b7f705808b6ae967c0fff75b47",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-backlund-indent-internal-attack-router.json": "b2d2851b9e56326fa58aee03b530f8728ee94442412601ef5ff733c64e590850"
+  },
+  "status": "backlund_crossing_trace_capacity_reduced_to_signed_pairing_open",
+  "support_priority": "BacklundCanonicalNearZeroClusterBoxLedger",
+  "trace_capacity_reduction_closed": true
+}
