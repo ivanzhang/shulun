@@ -24,6 +24,7 @@ DOCS = ROOT / "docs" / "monograph"
 
 DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-explicit-zero-free-constants-router.json"
 DEFAULT_GAMMA = DOCS / "prime-matrix-b3-gamma-digamma-clog-router.json"
+DEFAULT_ZERO_COUNT = DOCS / "prime-matrix-b3-jensen-zero-count-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-b3-explicit-clog-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-b3-explicit-clog-router.md"
 
@@ -31,6 +32,10 @@ OLD_ATOM = "ExplicitCLogHadamardStirlingJensenNumericalLedger"
 GAMMA_ATOM = "GammaDigammaStirlingUniformNumericalLedger"
 GAMMA_CLOSED = "GammaDigammaStirlingUniformNumericalClosedCgamma24"
 ZERO_COUNT_ATOM = "JensenZeroCountingLocalNumericalLedger"
+ZERO_COUNT_EXTERNAL_CLOSED = "RVMToCN16LocalInequalityClosedWithRawArgCS8"
+BACKLUND_INDENT_ATOM = "BacklundZeroProximityIndentationCostLedger"
+LOW_HEIGHT_CRITICAL_LINE = "CriticalLineNoZeroOn0To14FiniteLedger"
+LOW_HEIGHT_OFF_LINE = "CriticalStripNoOffLineZeroBelow14TuringLedger"
 PARTIAL_FRACTION_ATOM = "HadamardPartialFractionRemainderNumericalLedger"
 AGGREGATION_ATOM = "CLogAggregationAndRangeConventionLedger"
 OPT_ATOM = "ZeroRepulsionParameterNumericalOptimizationLedger"
@@ -81,6 +86,13 @@ def current_replacement_pair(gamma_closed: bool) -> str:
     return f"({gamma} AND {ZERO_COUNT_ATOM} AND {PARTIAL_FRACTION_ATOM} AND {AGGREGATION_ATOM})"
 
 
+def current_external_replacement_pair(gamma_closed: bool, zero_count_external_closed: bool) -> str:
+    """写出外部 Backlund/低高度分支吸收后的替换包。"""
+    gamma = GAMMA_CLOSED if gamma_closed else GAMMA_ATOM
+    zero_count = ZERO_COUNT_EXTERNAL_CLOSED if zero_count_external_closed else ZERO_COUNT_ATOM
+    return f"({gamma} AND {zero_count} AND {PARTIAL_FRACTION_ATOM} AND {AGGREGATION_ATOM})"
+
+
 def replace_atom(text: str) -> str:
     """替换旧 C_log 原子。"""
     return text.replace(OLD_ATOM, replacement_pair())
@@ -89,6 +101,11 @@ def replace_atom(text: str) -> str:
 def replace_atom_with_current(text: str, gamma_closed: bool) -> str:
     """用当前已证状态替换旧 C_log 原子。"""
     return text.replace(OLD_ATOM, current_replacement_pair(gamma_closed))
+
+
+def replace_atom_with_external(text: str, gamma_closed: bool, zero_count_external_closed: bool) -> str:
+    """用外部条件分支当前状态替换旧 C_log 原子。"""
+    return text.replace(OLD_ATOM, current_external_replacement_pair(gamma_closed, zero_count_external_closed))
 
 
 def candidate_budget() -> dict[str, float]:
@@ -127,7 +144,7 @@ def row(
     }
 
 
-def build_rows(previous: dict[str, Any], gamma: dict[str, Any]) -> list[dict[str, Any]]:
+def build_rows(previous: dict[str, Any], gamma: dict[str, Any], zero_count: dict[str, Any]) -> list[dict[str, Any]]:
     """生成 C_log 数值账本判定表。"""
     basis = previous.get("latest_self_contained_basis", "")
     active = previous.get("next_priority") == OLD_ATOM and OLD_ATOM in basis
@@ -139,6 +156,8 @@ def build_rows(previous: dict[str, Any], gamma: dict[str, Any]) -> list[dict[str
     )
     symbolic_available = "DeLaValleePoussinZeroRepulsionInequalityClosedSymbolicConstants" in basis
     gamma_closed = gamma.get("gamma_digamma_stirling_uniform_closed") is True
+    zero_count_external_closed = bool(zero_count.get("jensen_zero_count_external_closed"))
+    zero_count_self_closed = bool(zero_count.get("jensen_zero_count_self_contained_proved"))
     reduced = active and guard and symbolic_available and gamma_closed
     return [
         row(
@@ -170,11 +189,18 @@ def build_rows(previous: dict[str, Any], gamma: dict[str, Any]) -> list[dict[str
             GAMMA_CLOSED if gamma_closed else GAMMA_ATOM,
         ),
         row(
-            "JensenZeroCountingNumericalLedgerMissing",
+            "JensenZeroCountingExternalClosed",
+            zero_count_external_closed,
             False,
+            "接受外部 Backlund/低高度输入时，局部零点计数已由 RVM-C_N=16 条件关闭。",
+            ZERO_COUNT_EXTERNAL_CLOSED,
+        ),
+        row(
+            "JensenZeroCountingSelfContainedStillOpen",
+            zero_count_self_closed,
             False,
-            "还需给出局部零点计数 N(t+1)-N(t-1)<=C_N log(|t|+3) 的可复算常数。",
-            ZERO_COUNT_ATOM,
+            "严格自足路线仍缺 Backlund 近零凹口成本内部化和 14 以下零点有限核验。",
+            f"{BACKLUND_INDENT_ATOM} AND {LOW_HEIGHT_CRITICAL_LINE} AND {LOW_HEIGHT_OFF_LINE}",
         ),
         row(
             "HadamardPartialFractionRemainderMissing",
@@ -198,6 +224,13 @@ def build_rows(previous: dict[str, Any], gamma: dict[str, Any]) -> list[dict[str
             current_replacement_pair(gamma_closed),
         ),
         row(
+            "ExplicitCLogExternalFrontierAdvanced",
+            reduced and zero_count_external_closed,
+            False,
+            "外部条件分支已越过局部零点计数，当前推进点是 Hadamard 余项与总常数聚合。",
+            current_external_replacement_pair(gamma_closed, zero_count_external_closed),
+        ),
+        row(
             "ZeroRepulsionParameterNumericalOptimizationStillNext",
             False,
             False,
@@ -211,43 +244,65 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     """执行 C_log 数值账本路由。"""
     previous = load_json(paths["previous"])
     gamma = load_json(paths["gamma"])
-    rows = build_rows(previous, gamma)
+    zero_count = load_json(paths["zero_count"])
+    rows = build_rows(previous, gamma, zero_count)
     reduced = next(bool(item["closed"]) for item in rows if item["gate"] == "ExplicitCLogReducedToFourMicroLedgers")
+    external_advanced = next(
+        bool(item["closed"]) for item in rows if item["gate"] == "ExplicitCLogExternalFrontierAdvanced"
+    )
     budget = candidate_budget()
     gamma_closed = gamma.get("gamma_digamma_stirling_uniform_closed") is True
+    zero_count_external_closed = bool(zero_count.get("jensen_zero_count_external_closed"))
+    zero_count_self_closed = bool(zero_count.get("jensen_zero_count_self_contained_proved"))
     return {
         "certificate_type": "b3_explicit_clog_router",
-        "status": "explicit_clog_reduced_to_four_micro_ledgers_open",
+        "status": "explicit_clog_external_frontier_at_hadamard_self_contained_zero_count_open",
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in paths.values()},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "explicit_clog_reduced": reduced,
+        "explicit_clog_external_frontier_advanced": external_advanced,
         "explicit_clog_self_contained_proved": False,
+        "jensen_zero_count_external_closed": zero_count_external_closed,
+        "jensen_zero_count_self_contained_proved": zero_count_self_closed,
         "row_column_unconditional_closed": False,
         "replacement_self_contained": {OLD_ATOM: replacement_pair()},
         "current_replacement_self_contained": {
             OLD_ATOM: current_replacement_pair(gamma_closed)
         },
+        "current_replacement_external": {
+            OLD_ATOM: current_external_replacement_pair(gamma_closed, zero_count_external_closed)
+        },
         "latest_self_contained_basis": replace_atom_with_current(
             previous.get("latest_self_contained_basis", ""), gamma_closed
         ),
-        "latest_conditional_basis": previous.get("latest_conditional_basis", ""),
-        "latest_global_with_external_basis": previous.get("latest_global_with_external_basis", ""),
-        "next_priority": ZERO_COUNT_ATOM,
-        "secondary_priority": PARTIAL_FRACTION_ATOM,
-        "tertiary_priority": AGGREGATION_ATOM,
+        "latest_conditional_basis": replace_atom_with_external(
+            previous.get("latest_conditional_basis", ""), gamma_closed, zero_count_external_closed
+        ),
+        "latest_global_with_external_basis": replace_atom_with_external(
+            previous.get("latest_global_with_external_basis", ""), gamma_closed, zero_count_external_closed
+        ),
+        "next_priority": PARTIAL_FRACTION_ATOM if external_advanced else ZERO_COUNT_ATOM,
+        "self_contained_next_priority": BACKLUND_INDENT_ATOM,
+        "self_contained_low_height_priorities": [LOW_HEIGHT_CRITICAL_LINE, LOW_HEIGHT_OFF_LINE],
+        "secondary_priority": AGGREGATION_ATOM,
+        "tertiary_priority": OPT_ATOM,
         "quaternary_priority": OPT_ATOM,
         "post_clog_priority": OPT_ATOM,
         "post_optimization_priority": PNT_ATOM,
         "post_pnt_priority": TARGET_ATOM,
         "conditional_next_priority": previous.get("conditional_next_priority", DSTRUCTURE),
         "candidate_budget": budget,
-        "proved_route_audit": {"gamma_closed": gamma_closed},
+        "proved_route_audit": {
+            "gamma_closed": gamma_closed,
+            "jensen_zero_count_external_closed": zero_count_external_closed,
+            "jensen_zero_count_self_contained_proved": zero_count_self_closed,
+        },
         "plain_conclusion": (
-            "C_log 数值账本尚未闭合，但 Gamma/digamma/Stirling 分量已由 C_gamma=24 支付。"
-            "当前剩余为 Jensen/RVM 局部零点计数、Hadamard 余项和总常数聚合；"
-            "保守候选 C_log=64 仍只能作为预算 convention。"
+            "C_log 数值账本尚未完整闭合。Gamma/digamma/Stirling 分量已由 C_gamma=24 支付；"
+            "局部零点计数在接受外部 Backlund/低高度输入时已条件关闭，因此外部条件分支下一步推进到 "
+            "Hadamard 余项和总常数聚合。严格自足分支仍卡在 Backlund 近零凹口成本内部化与 14 以下零点核验。"
         ),
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -259,6 +314,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
     replacement = next(iter(result["replacement_self_contained"].items()))
     current_replacement = next(iter(result["current_replacement_self_contained"].items()))
+    external_replacement = next(iter(result["current_replacement_external"].items()))
     budget = result["candidate_budget"]
     lines = [
         "# Prime Matrix B=3 显式 C_log 常数账本路由器",
@@ -272,7 +328,10 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"empirical_absence_not_used={fmt_bool(result['empirical_absence_not_used'])}",
         f"hypothetical_chain_only={fmt_bool(result['hypothetical_chain_only'])}",
         f"explicit_clog_reduced={fmt_bool(result['explicit_clog_reduced'])}",
+        f"explicit_clog_external_frontier_advanced={fmt_bool(result['explicit_clog_external_frontier_advanced'])}",
         f"explicit_clog_self_contained_proved={fmt_bool(result['explicit_clog_self_contained_proved'])}",
+        f"jensen_zero_count_external_closed={fmt_bool(result['jensen_zero_count_external_closed'])}",
+        f"jensen_zero_count_self_contained_proved={fmt_bool(result['jensen_zero_count_self_contained_proved'])}",
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",
         "```",
         "",
@@ -290,6 +349,14 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         current_replacement[0],
         "  =>",
         current_replacement[1],
+        "```",
+        "",
+        "外部 Backlund/低高度分支吸收后：",
+        "",
+        "```text",
+        external_replacement[0],
+        "  =>",
+        external_replacement[1],
         "```",
         "",
         "## 2. 候选预算",
@@ -336,8 +403,10 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "## 5. 下一步",
             "",
             (
-                f"唯一内部最窄点更新为 `{result['next_priority']}`；"
-                f"随后是 `{result['secondary_priority']}`、`{result['tertiary_priority']}`。"
+                f"外部条件分支最窄点更新为 `{result['next_priority']}`；"
+                f"随后是 `{result['secondary_priority']}`。严格自足分支仍需先攻 "
+                f"`{result['self_contained_next_priority']}` 与低高度核验 "
+                f"`{' AND '.join(result['self_contained_low_height_priorities'])}`。"
             ),
             "",
         ]
@@ -350,6 +419,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--previous", type=Path, default=DEFAULT_PREVIOUS)
     parser.add_argument("--gamma", type=Path, default=DEFAULT_GAMMA)
+    parser.add_argument("--zero-count", type=Path, default=DEFAULT_ZERO_COUNT)
     parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -358,7 +428,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     """命令行入口。"""
     args = parse_args()
-    paths = {"previous": args.previous, "gamma": args.gamma}
+    paths = {"previous": args.previous, "gamma": args.gamma, "zero_count": args.zero_count}
     result = run(paths)
     args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     write_markdown(result, args.md)
