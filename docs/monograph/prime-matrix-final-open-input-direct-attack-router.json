@@ -1,0 +1,104 @@
+{
+  "certificate_type": "prime_matrix_final_open_input_direct_attack_router",
+  "status": "final_open_input_reduced_to_exact_uv_or_external_fulls_plus_dstructure_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-final-math-input-compression-router.json": "d47b35816c9aa10f1c826857b855d9de39fa42c2a18b29f6d86242955f235787",
+    "docs/monograph/prime-matrix-actual-source-antiatom-lane-audit-router.json": "c28fff2e1fdb4da76e5abe8c8689a5c5acecb2f91868c47a4117bc1796e24776",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-exact-uv-support-terminal-attack-router.json": "25a56fd099c2bd4db85c40db63b5d7555583d6f7e7a9d967e33869dcf59848b3",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-kls-ext-specialization-router.json": "6a24763e9ec618957f69339a98bdfcc43a625b340589e13eb720fda036cc35be",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "final_open_input_direct_attack_boundary_closed": true,
+  "final_open_input_proved_or_accepted": false,
+  "source_axiom_before_attack": "AddStrengthenedActualSourceAntiAtomTheorem",
+  "self_contained_source_input_after_attack": "ActualNoncanonicalExactUVSupportLowerBound",
+  "external_source_input_after_attack": "FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof",
+  "promotion_input": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "latest_unconditional_basis": "(ActualNoncanonicalExactUVSupportLowerBound OR FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "ActualNoncanonicalExactUVSupportLowerBound",
+  "external_fallback_priority": "FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof",
+  "parallel_acceptance_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "attack_formula": "AddStrengthenedActualSourceAntiAtomTheorem + RegisteredCapacityMultiplierDiscipline => ActualNoncanonicalExactUVSupportLowerBound; hence final basis becomes (ActualNoncanonicalExactUVSupportLowerBound OR FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.",
+  "plain_conclusion": "最终开放输入被继续压窄：`AddStrengthenedActualSourceAntiAtomTheorem` 不再作为一个黑箱大名停留。乘子纪律已经闭合，所以完全自足路线的实质只剩 `ActualNoncanonicalExactUVSupportLowerBound`。外部路线仍是精确 FullS non-AP WFD KLS 或 DI/BFI 主来源专门化；最终晋级仍需 DStructure/Rankin 独立验收。当前没有无条件闭合。",
+  "conditional_closure_statement": "If ActualNoncanonicalExactUVSupportLowerBound is proved, then the registered multiplier ledger gives the final capacity anti-atom for the actual source; with DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance, the current final-input chain can promote. Without ExactUV or external FullS acceptance, it cannot.",
+  "rows": [
+    {
+      "gate": "FinalMathInputCompressionImported",
+      "closed": true,
+      "proved_or_accepted": false,
+      "role": "导入上一层最终数学输入压缩式。",
+      "evidence": "final compression router",
+      "remaining": "(AddStrengthenedActualSourceAntiAtomTheorem OR FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "gate": "SourceLaneRequiresStrengthenedActualSourceAxiom",
+      "closed": true,
+      "proved_or_accepted": false,
+      "role": "actual-source lane 不能由现有 canonical/generic 材料推出，只能新增实际源强化反原子或转外部谱输入。",
+      "evidence": "actual-source antiatom lane audit",
+      "remaining": "AddStrengthenedActualSourceAntiAtomTheorem"
+    },
+    {
+      "gate": "RegisteredCapacityMultiplierDisciplineDischarged",
+      "closed": true,
+      "proved_or_accepted": true,
+      "role": "Type/Fourier/fiber 等成本已在同一 formal unit 登记为 log-power 乘子，不再是开放数学输入。",
+      "evidence": "registered capacity multiplier discipline",
+      "remaining": "ActualNoncanonicalExactUVSupportLowerBound"
+    },
+    {
+      "gate": "StrengthenedActualSourceAxiomReducedToExactUV",
+      "closed": true,
+      "proved_or_accepted": false,
+      "role": "在乘子纪律闭合后，强化实际源反原子等价压到 actual noncanonical exact u/v 支撑下界。",
+      "evidence": "source lane + multiplier + ExactUV terminal audit",
+      "remaining": "ActualNoncanonicalExactUVSupportLowerBound"
+    },
+    {
+      "gate": "ExactUVSupportStillUnproved",
+      "closed": true,
+      "proved_or_accepted": false,
+      "role": "当前材料没有证明 actual noncanonical exact u/v 支撑；K4/K6、朴素 incidence、canonical 支撑链均不能偷渡。",
+      "evidence": "ExactUV terminal attack",
+      "remaining": "prove ActualNoncanonicalExactUVSupportLowerBound or prove final capacity anti-atom directly"
+    },
+    {
+      "gate": "ExternalFullSLaneStillOpen",
+      "closed": true,
+      "proved_or_accepted": false,
+      "role": "外部 FullS-KLS 合同对象已固定，但主来源专门化证明或明确外部接受仍未完成。",
+      "evidence": "FullS-KLS external specialization router",
+      "remaining": "FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof"
+    },
+    {
+      "gate": "DStructureRankinAcceptanceStillIndependent",
+      "closed": true,
+      "proved_or_accepted": false,
+      "role": "DStructure/Tail-log4/finite Rankin 仍是独立晋级验收门，不能由作者侧路由自审关闭。",
+      "evidence": "DStructure/Rankin promotion acceptance router",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "closed_gates": [
+    "FinalMathInputCompressionImported",
+    "SourceLaneRequiresStrengthenedActualSourceAxiom",
+    "RegisteredCapacityMultiplierDisciplineDischarged",
+    "StrengthenedActualSourceAxiomReducedToExactUV",
+    "ExactUVSupportStillUnproved",
+    "ExternalFullSLaneStillOpen",
+    "DStructureRankinAcceptanceStillIndependent"
+  ],
+  "open_gates": [
+    "FinalMathInputCompressionImported",
+    "SourceLaneRequiresStrengthenedActualSourceAxiom",
+    "StrengthenedActualSourceAxiomReducedToExactUV",
+    "ExactUVSupportStillUnproved",
+    "ExternalFullSLaneStillOpen",
+    "DStructureRankinAcceptanceStillIndependent"
+  ]
+}
