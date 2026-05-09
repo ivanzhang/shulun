@@ -81,6 +81,10 @@ def build_attack_rows(
         and dstructure.get("promotion_package_boundary_closed") is True
         and dstructure.get("promotion_package_independently_accepted") is False
     )
+    full_rankin_closed = (
+        dstructure.get("full_rankin_ledger_still_open_closed") is True
+        and dstructure.get("batch_rankin_pass_or_return_closed") is True
+    )
 
     return [
         {
@@ -129,12 +133,13 @@ def build_attack_rows(
             "refined_atom": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
             "blocked_shortcuts": ["author-side self-promotion"],
             "structural_reason": (
-                "第三原子不是隐藏数学终端，而是定理晋级验收门。Rankin 样本已通过，格式可审查；"
-                "但正式全集证书、Tail-log4 外部适配、有限验证 hash 与独立接受仍未完成。"
+                "第三原子不是隐藏数学终端，而是定理晋级验收门。Rankin pass-or-return 子账本"
+                f"{'已内部闭合' if full_rankin_closed else '仍未内部闭合'}；但 D-structure 归约、"
+                "Tail-log4 外部适配、有限验证 hash 与独立接受仍未完成。"
             ),
             "minimum_completion": (
-                "提交全部正式着色走廊 Rankin 证书、可复现有限验证归档、Tail-log4 BG/RKS 适配，"
-                "并取得独立接受；失败项必须回流 PDEC/SAE。"
+                "取得 D-structure/Structured-EHPD 归约、Tail-log4 BG/RKS 适配、有限验证归档 hash、"
+                "以及 Rankin pass-or-return 子账本的独立接受；作者侧不能自审升级。"
             ),
         },
     ]

@@ -1,0 +1,84 @@
+{
+  "certificate_type": "prime_matrix_active_final_inputs_router",
+  "status": "active_final_inputs_reduced_to_noncanonical_math_plus_dstructure_open",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-final-input-firewall-boundary-router.json": "b8db63a47643fdf9b98e860c8e81eec6de92377e87118b274f9ccf63f0008b7b",
+    "docs/monograph/prime-matrix-three-final-atoms-hard-attack-router.json": "bb7fe40452cd5a75239ec656fcab12fe617346db6daa6a05cb636d48f69110fe",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "row_column_unconditional_closed": false,
+  "active_final_inputs_boundary_closed": true,
+  "all_active_final_inputs_proved_or_accepted": false,
+  "currently_active_final_inputs": [
+    "NoncanonicalTwoLaneMathInput",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "inactive_unless_new_materialization": [
+    "FutureExplicitPrimitivePDECSchema",
+    "FutureExplicitSparsePacketExtractorSchema"
+  ],
+  "mathematical_narrowest_atom": "NoncanonicalTwoLaneMathInput",
+  "promotion_narrowest_atom": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "minimum_unconditional_basis": "(ActualFullSNonAPSourceCapacityAntiAtomForActualSource OR CDependentResidueWeightSpectralCancellationInput) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_priority": "NoncanonicalTwoLaneMathInput",
+  "parallel_acceptance_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "reduction_formula": "FinalOpenInputs = inactive_future_schema(PDEC,sparse) + (ActualFullSNonAPSourceCapacityAntiAtomForActualSource OR CDependentResidueWeightSpectralCancellationInput) + DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance.",
+  "plain_conclusion": "最终开放输入已收窄：PDEC 与 sparse 只是未来新增实例时的显式 schema 防火墙，当前没有已物化对象可攻。现在真正活跃的最终输入只剩 noncanonical 二选一数学输入，另加 DStructure/Rankin 晋级独立验收；完整无条件闭合仍未成立。",
+  "rows": [
+    {
+      "gate": "CurrentMaterializedPDECSparseFrontierZero",
+      "active_now": false,
+      "boundary_closed": true,
+      "proved_or_accepted": true,
+      "meaning": "当前已物化 PDEC/sparse 终端前沿清零；它们不是当前活跃硬点。",
+      "remaining": "若未来新增实例，才触发显式 schema。"
+    },
+    {
+      "gate": "FutureExplicitPrimitivePDECSchema",
+      "active_now": false,
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "PDEC future schema 是防火墙义务，不是当前已有待排斥对象。",
+      "remaining": "new materialized PDEC family only if proposed"
+    },
+    {
+      "gate": "FutureExplicitSparsePacketExtractorSchema",
+      "active_now": false,
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "Sparse future schema 是防火墙义务，不是当前已有待排斥对象。",
+      "remaining": "new materialized sparse route only if proposed"
+    },
+    {
+      "gate": "NoncanonicalTwoLaneMathInput",
+      "active_now": true,
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "当前数学硬点是 noncanonical 二选一：实际源反原子，或 c-dependent 完成型谱抵消。",
+      "remaining": "ActualFullSNonAPSourceCapacityAntiAtomForActualSource OR CDependentResidueWeightSpectralCancellationInput"
+    },
+    {
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "active_now": true,
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "最终晋级硬点是 DStructure/Tail-log4/finite verification/Rankin 子账本的独立接受。",
+      "remaining": "independent promotion acceptance"
+    }
+  ],
+  "closed_gates": [
+    "CurrentMaterializedPDECSparseFrontierZero",
+    "FutureExplicitPrimitivePDECSchema",
+    "FutureExplicitSparsePacketExtractorSchema",
+    "NoncanonicalTwoLaneMathInput",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "open_active_gates": [
+    "NoncanonicalTwoLaneMathInput",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ]
+}
