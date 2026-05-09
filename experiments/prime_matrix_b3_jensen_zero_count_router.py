@@ -22,15 +22,21 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs" / "monograph"
 
-DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-gamma-digamma-clog-router.json"
+DEFAULT_PREVIOUS = DOCS / "prime-matrix-b3-explicit-clog-router.json"
+DEFAULT_RVM = DOCS / "prime-matrix-b3-rvm-local-count-router.json"
+DEFAULT_RVM_CN = DOCS / "prime-matrix-b3-rvm-to-cn16-local-inequality-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-b3-jensen-zero-count-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-b3-jensen-zero-count-router.md"
 
 OLD_ATOM = "JensenZeroCountingLocalNumericalLedger"
 RVM_ATOM = "RiemannVonMangoldtExplicitLocalCountingLedger"
+CLOSED_RVM_CN = "RVMToCN16LocalInequalityClosedWithRawArgCS8"
 BOUNDARY_ATOM = "XiBoundaryLogMajorantNumericalLedger"
 ANCHOR_ATOM = "JensenDiskLowerAnchorNumericalLedger"
 LOCAL_ATOM = "LocalZeroCountCNConventionLedger"
+BACKLUND_INDENT_ATOM = "BacklundZeroProximityIndentationCostLedger"
+LOW_HEIGHT_CRITICAL_LINE = "CriticalLineNoZeroOn0To14FiniteLedger"
+LOW_HEIGHT_OFF_LINE = "CriticalStripNoOffLineZeroBelow14TuringLedger"
 PARTIAL_FRACTION_ATOM = "HadamardPartialFractionRemainderNumericalLedger"
 AGGREGATION_ATOM = "CLogAggregationAndRangeConventionLedger"
 DSTRUCTURE = "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
@@ -66,13 +72,30 @@ def table_cell(value: Any) -> str:
 
 
 def replacement_pair() -> str:
-    """写出 Jensen 局部计数的替换包。"""
-    return f"({RVM_ATOM} AND {BOUNDARY_ATOM} AND {ANCHOR_ATOM} AND {LOCAL_ATOM})"
+    """写出 Jensen 局部计数的自足替换包。"""
+    return f"({RVM_ATOM} OR ({BOUNDARY_ATOM} AND {ANCHOR_ATOM} AND {LOCAL_ATOM}))"
+
+
+def chosen_self_contained_pair() -> str:
+    """写出当前主攻的 RVM 直接计数路线。"""
+    return RVM_ATOM
+
+
+def external_replacement_pair() -> str:
+    """写出外部 Backlund/低高度输入下的替换包。"""
+    return CLOSED_RVM_CN
 
 
 def replace_atom(text: str) -> str:
     """替换旧 Jensen 计数原子。"""
     return text.replace(OLD_ATOM, replacement_pair())
+
+
+def replace_atom_by_external(text: str, external_closed: bool) -> str:
+    """外部路线闭合时替换旧 Jensen 计数原子。"""
+    if not external_closed:
+        return text
+    return text.replace(OLD_ATOM, external_replacement_pair())
 
 
 def candidate_table() -> list[dict[str, float]]:
@@ -109,11 +132,14 @@ def row(
     }
 
 
-def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
+def build_rows(previous: dict[str, Any], rvm: dict[str, Any], rvm_cn: dict[str, Any]) -> list[dict[str, Any]]:
     """生成 Jensen 局部零点计数判定表。"""
     basis = previous.get("latest_self_contained_basis", "")
     active = previous.get("next_priority") == OLD_ATOM and OLD_ATOM in basis
     gamma_closed = "GammaDigammaStirlingUniformNumericalClosedCgamma24" in basis
+    rvm_reduced = bool(rvm.get("rvm_local_count_reduced"))
+    rvm_external_closed = bool(rvm_cn.get("rvm_to_cn16_external_closed"))
+    rvm_self_closed = bool(rvm_cn.get("rvm_to_cn16_self_contained_closed"))
     guard = (
         bool(previous.get("counterexample_assumption_only"))
         and bool(previous.get("empirical_absence_not_used"))
@@ -121,6 +147,7 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
         and not bool(previous.get("row_column_unconditional_closed"))
     )
     reduced = active and gamma_closed and guard
+    external_closed = reduced and rvm_reduced and rvm_external_closed
     return [
         row(
             "JensenZeroCountingGateActive",
@@ -144,38 +171,45 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
             "无 Gamma 项剩余。",
         ),
         row(
-            "RiemannVonMangoldtLocalCountingMissing",
+            "RiemannVonMangoldtDirectRouteReduced",
+            rvm_reduced,
             False,
-            False,
-            "还需 argument principle/Riemann-von Mangoldt 显式版本给出局部零点主尺度。",
+            "局部零点计数可走 RVM 直接路线；该路线已被拆成 argument principle、Gamma 主项、Backlund、端点、CN16 合并。",
             RVM_ATOM,
         ),
         row(
-            "XiBoundaryMajorantMissing",
+            "ExternalRVMToCN16RouteClosed",
+            rvm_external_closed,
             False,
-            False,
-            "若走 Jensen 圆盘法，还需 xi 在圆盘边界上的显式 log majorant。",
-            BOUNDARY_ATOM,
+            "接受外部 Backlund 缩进/低高度输入时，RVM 已合并为 C_N=16 局部计数。",
+            CLOSED_RVM_CN,
         ),
         row(
-            "JensenLowerAnchorMissing",
-            False,
-            False,
-            "Jensen 法还需圆心处 xi 不过小的显式下界，避免只给上界无法计数。",
-            ANCHOR_ATOM,
+            "JensenDiskAlternativeNotRequiredForRVMRoute",
+            True,
+            True,
+            "边界上界和圆心下界只属于 Jensen 圆盘替代证明；当前主攻 RVM 直接路线时不作为额外必需项。",
+            f"{BOUNDARY_ATOM} AND {ANCHOR_ATOM}",
         ),
         row(
-            "LocalCNConventionMissing",
+            "JensenZeroCountingExternalClosed",
+            external_closed,
             False,
-            False,
-            "还需把低高度分界、重零点计数 convention 和 C_N=16 聚合成统一账本。",
-            LOCAL_ATOM,
+            "在外部 Backlund/低高度输入下，旧 Jensen 局部计数原子可由 RVM-C_N=16 直接关闭。",
+            CLOSED_RVM_CN,
         ),
         row(
-            "JensenZeroCountingReducedToFourMicroLedgers",
+            "JensenZeroCountingSelfContainedStillOpen",
+            rvm_self_closed,
+            False,
+            "严格自足路线仍缺 Backlund 近零凹口成本内部化与 0<t<=14 的有限零点核验。",
+            f"{BACKLUND_INDENT_ATOM} AND {LOW_HEIGHT_CRITICAL_LINE} AND {LOW_HEIGHT_OFF_LINE}",
+        ),
+        row(
+            "JensenZeroCountingReducedToRVMOrDiskRoute",
             reduced,
             False,
-            "旧 Jensen 局部计数原子已压成 RVM/边界上界/圆心下界/C_N convention 四包。",
+            "旧 Jensen 局部计数原子已压成 RVM 直接计数路线，或 Jensen 圆盘边界/圆心替代路线。",
             replacement_pair(),
         ),
         row(
@@ -191,36 +225,48 @@ def build_rows(previous: dict[str, Any]) -> list[dict[str, Any]]:
 def run(paths: dict[str, Path]) -> dict[str, Any]:
     """执行 Jensen 局部零点计数路由。"""
     previous = load_json(paths["previous"])
-    rows = build_rows(previous)
+    rvm = load_json(paths["rvm"])
+    rvm_cn = load_json(paths["rvm_cn"])
+    rows = build_rows(previous, rvm, rvm_cn)
     reduced = next(
-        bool(item["closed"]) for item in rows if item["gate"] == "JensenZeroCountingReducedToFourMicroLedgers"
+        bool(item["closed"]) for item in rows if item["gate"] == "JensenZeroCountingReducedToRVMOrDiskRoute"
+    )
+    external_closed = next(bool(item["closed"]) for item in rows if item["gate"] == "JensenZeroCountingExternalClosed")
+    self_closed = next(
+        bool(item["closed"]) for item in rows if item["gate"] == "JensenZeroCountingSelfContainedStillOpen"
     )
     return {
         "certificate_type": "b3_jensen_zero_count_router",
-        "status": "jensen_zero_count_reduced_to_four_micro_ledgers_open",
+        "status": "jensen_zero_count_rvm_route_external_closed_self_contained_open",
         "source_hashes": {str(path.relative_to(ROOT)): file_sha256(path) for path in paths.values()},
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
         "hypothetical_chain_only": True,
         "jensen_zero_count_reduced": reduced,
-        "jensen_zero_count_self_contained_proved": False,
+        "jensen_zero_count_external_closed": external_closed,
+        "jensen_zero_count_self_contained_proved": self_closed,
         "C_N_candidate": CN_CANDIDATE,
         "row_column_unconditional_closed": False,
         "replacement_self_contained": {OLD_ATOM: replacement_pair()},
+        "chosen_self_contained_route": chosen_self_contained_pair(),
+        "replacement_external": {OLD_ATOM: external_replacement_pair()},
         "latest_self_contained_basis": replace_atom(previous.get("latest_self_contained_basis", "")),
-        "latest_conditional_basis": previous.get("latest_conditional_basis", ""),
-        "latest_global_with_external_basis": previous.get("latest_global_with_external_basis", ""),
-        "next_priority": RVM_ATOM,
-        "secondary_priority": BOUNDARY_ATOM,
-        "tertiary_priority": ANCHOR_ATOM,
-        "quaternary_priority": LOCAL_ATOM,
+        "latest_conditional_basis": replace_atom_by_external(previous.get("latest_conditional_basis", ""), external_closed),
+        "latest_global_with_external_basis": replace_atom_by_external(
+            previous.get("latest_global_with_external_basis", ""), external_closed
+        ),
+        "next_priority": BACKLUND_INDENT_ATOM,
+        "secondary_priority": LOW_HEIGHT_CRITICAL_LINE,
+        "tertiary_priority": LOW_HEIGHT_OFF_LINE,
+        "alternative_priority": f"{BOUNDARY_ATOM} AND {ANCHOR_ATOM} AND {LOCAL_ATOM}",
         "post_zero_count_priority": PARTIAL_FRACTION_ATOM,
         "post_partial_fraction_priority": AGGREGATION_ATOM,
         "conditional_next_priority": previous.get("conditional_next_priority", DSTRUCTURE),
         "candidate_table": candidate_table(),
         "plain_conclusion": (
-            "Jensen 局部零点计数尚未闭合；它已压成 Riemann-von Mangoldt/边界上界/圆心下界/"
-            "C_N convention 四个微账本。候选 C_N=16 很保守，但必须由这些账本逐项支撑后才能使用。"
+            "Jensen 局部零点计数的主攻路线改为 RVM 直接计数：边界上界和圆心下界只属于 Jensen 圆盘替代证明，"
+            "不再作为 RVM 路线的额外必需项。接受外部 Backlund/低高度输入时，本局部计数已条件闭合；"
+            "严格自足路线仍卡在 Backlund 近零凹口成本内部化与 14 以下零点有限核验。"
         ),
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -231,6 +277,7 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
 def write_markdown(result: dict[str, Any], path: Path) -> None:
     """写 Markdown 报告。"""
     replacement = next(iter(result["replacement_self_contained"].items()))
+    external_replacement = next(iter(result["replacement_external"].items()))
     lines = [
         "# Prime Matrix B=3 Jensen 局部零点计数账本路由器",
         "",
@@ -243,6 +290,7 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         f"empirical_absence_not_used={fmt_bool(result['empirical_absence_not_used'])}",
         f"hypothetical_chain_only={fmt_bool(result['hypothetical_chain_only'])}",
         f"jensen_zero_count_reduced={fmt_bool(result['jensen_zero_count_reduced'])}",
+        f"jensen_zero_count_external_closed={fmt_bool(result['jensen_zero_count_external_closed'])}",
         f"jensen_zero_count_self_contained_proved={fmt_bool(result['jensen_zero_count_self_contained_proved'])}",
         f"C_N_candidate={fmt_float(result['C_N_candidate'])}",
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",
@@ -254,6 +302,14 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
         replacement[0],
         "  =>",
         replacement[1],
+        "```",
+        "",
+        "外部 Backlund/低高度输入下的条件替换：",
+        "",
+        "```text",
+        external_replacement[0],
+        "  =>",
+        external_replacement[1],
         "```",
         "",
         "## 2. 候选预算",
@@ -274,7 +330,8 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
     lines.extend(
         [
             "",
-            "候选 `C_N=16` 明显大于 RVM 局部主尺度，但仍不能代替显式 argument principle 或 Jensen 证明。",
+            "候选 `C_N=16` 明显大于 RVM 局部主尺度；当前选择 RVM 直接计数路线，"
+            "Jensen 圆盘边界/圆心下界保留为替代路线而非额外必要条件。",
             "",
             "## 3. 判定表",
             "",
@@ -306,9 +363,9 @@ def write_markdown(result: dict[str, Any], path: Path) -> None:
             "## 5. 下一步",
             "",
             (
-                f"唯一内部最窄点更新为 `{result['next_priority']}`；"
-                f"随后是 `{result['secondary_priority']}`、`{result['tertiary_priority']}`、"
-                f"`{result['quaternary_priority']}`。"
+                f"严格自足路线的最窄点更新为 `{result['next_priority']}`；"
+                f"并行低高度核验为 `{result['secondary_priority']}`、`{result['tertiary_priority']}`。"
+                f"若改走 Jensen 圆盘替代路线，则需 `{result['alternative_priority']}`。"
             ),
             "",
         ]
@@ -320,6 +377,8 @@ def parse_args() -> argparse.Namespace:
     """解析命令行参数。"""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--previous", type=Path, default=DEFAULT_PREVIOUS)
+    parser.add_argument("--rvm", type=Path, default=DEFAULT_RVM)
+    parser.add_argument("--rvm-cn", type=Path, default=DEFAULT_RVM_CN)
     parser.add_argument("--json", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md", type=Path, default=DEFAULT_MD)
     return parser.parse_args()
@@ -328,7 +387,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     """命令行入口。"""
     args = parse_args()
-    paths = {"previous": args.previous}
+    paths = {"previous": args.previous, "rvm": args.rvm, "rvm_cn": args.rvm_cn}
     result = run(paths)
     args.json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     write_markdown(result, args.md)
