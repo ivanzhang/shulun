@@ -1,0 +1,154 @@
+{
+  "absorption_domains": [
+    {
+      "domain": "Littlewood rectangle boundary",
+      "reason": "边界碰零可由 epsilon/小凹口取极限，零点按重数进入 Littlewood 零点横向权重项。",
+      "verdict": "closed"
+    },
+    {
+      "domain": "horizontal variation convention",
+      "reason": "水平边缩进 convention 已作为形式层闭合，并进入 C_horizontal=8 聚合。",
+      "verdict": "closed"
+    },
+    {
+      "domain": "pointwise bridge near-zero cores",
+      "reason": "当前剩余来自短窗口点态桥/log-derivative 变差中的 eta 内近零核心，不是原始 Littlewood 平均恒等式的边界缩进。",
+      "verdict": "open"
+    },
+    {
+      "domain": "C_S=8 reaggregation",
+      "reason": "C_S=8 为紧等号；若把近零核心再交给零点权重项，必须证明不重复扣 Jensen/RVM 零点预算。",
+      "verdict": "open"
+    }
+  ],
+  "certificate_type": "prime_matrix_backlund_indent_weight_absorption_router",
+  "closed_gates": [
+    "IndentWeightAbsorptionGateActive",
+    "CounterexampleBranchGuardPreserved",
+    "LittlewoodZeroWeightAbsorptionAvailableOnlyInRectangle",
+    "HorizontalIndentConventionAlreadySpent",
+    "NearZeroCoresAssignedDownstream",
+    "NaiveCostStillFails",
+    "C8AndStabilityBudgetTight",
+    "DirectLittlewoodAbsorptionBlockedForPointwiseCore",
+    "IndentCostReducedToClassicalLemmaInternalization"
+  ],
+  "constant_priority": "BacklundC8BudgetPreservingIndentReaggregationLedger",
+  "counterexample_assumption_only": true,
+  "discipline_priority": "BacklundZeroWeightNoDoubleCountingLedger",
+  "empirical_absence_not_used": true,
+  "external_escape": "ClassicalBacklundZeroIndentationCostExternalAccepted",
+  "hypothetical_chain_only": true,
+  "indent_cost_self_contained_closed": false,
+  "indent_weight_absorption_reduction_closed": true,
+  "internalization_atoms": [
+    {
+      "atom": "BacklundLittlewoodZeroWeightAbsorptionForIndentCoresLedger",
+      "role": "证明缩进弧贡献与 Littlewood 零点横向权重在同一恒等式中精确配平。"
+    },
+    {
+      "atom": "BacklundPointwiseNearZeroCoreTransferLedger",
+      "role": "证明这种配平可从矩形平均层转移到短窗口点态桥的近零核心。"
+    },
+    {
+      "atom": "BacklundZeroWeightNoDoubleCountingLedger",
+      "role": "证明近零核心不会同时在 Jensen C16、RVM CN16 和凹口成本中重复扣费。"
+    },
+    {
+      "atom": "BacklundC8BudgetPreservingIndentReaggregationLedger",
+      "role": "重新聚合常数，证明吸收后仍保持 C_S=8 与 5/64 稳定余量纪律。"
+    }
+  ],
+  "next_priority": "BacklundPointwiseNearZeroCoreTransferLedger",
+  "open_gates": [
+    "ClassicalBacklundIndentationLemmaInternalizationLedger"
+  ],
+  "parallel_priority": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "零点权重吸收方向不能直接关闭 Backlund 近零凹口成本。Littlewood 矩形层确实已把边界缩进按零点横向权重吸收；但当前唯一剩余来自短窗口点态桥/log-derivative 变差中的 eta 内近零核心。要严格自足闭合，必须内部化经典 Backlund 缩进引理，证明矩形平均层的零点权重吸收可无损转移到点态近零核心，且不重复扣 Jensen/RVM 零点预算，并保持 C_S=8 与 5/64 稳定余量。",
+  "replacement_self_contained": {
+    "BacklundZeroProximityIndentationCostLedger": "ClassicalBacklundIndentationLemmaInternalizationLedger"
+  },
+  "row_column_self_contained_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "IndentWeightAbsorptionGateActive",
+      "meaning": "当前严格自足唯一剩余是 Backlund 近零凹口成本。",
+      "proved": true,
+      "remaining": "BacklundZeroProximityIndentationCostLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理假设链条中的解析记账，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_self_contained_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LittlewoodZeroWeightAbsorptionAvailableOnlyInRectangle",
+      "meaning": "Littlewood 矩形恒等式已含零点横向权重；边界缩进可在该恒等式中按重数取极限。",
+      "proved": true,
+      "remaining": "BacklundLittlewoodZeroWeightAbsorptionForIndentCoresLedger"
+    },
+    {
+      "closed": true,
+      "gate": "HorizontalIndentConventionAlreadySpent",
+      "meaning": "水平边缩进 convention 已进入水平边常数聚合，不能再作为近零核心的额外免费预算。",
+      "proved": true,
+      "remaining": "BacklundZeroWeightNoDoubleCountingLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NearZeroCoresAssignedDownstream",
+      "meaning": "eta=1/16 内近零点已从倒距离和中剥出，明确交给凹口成本账本。",
+      "proved": true,
+      "remaining": "BacklundPointwiseNearZeroCoreTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveCostStillFails",
+      "meaning": "逐零点付费仍有约 50.187 的 log(T) 系数缺口；吸收必须是恒等式级，不是新预算。",
+      "proved": true,
+      "remaining": "BacklundC8BudgetPreservingIndentReaggregationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "C8AndStabilityBudgetTight",
+      "meaning": "窗口稳定余量只有 5/64；任何正比例未吸收项都会破坏点态桥。",
+      "proved": true,
+      "remaining": "BacklundC8BudgetPreservingIndentReaggregationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DirectLittlewoodAbsorptionBlockedForPointwiseCore",
+      "meaning": "Littlewood 零点权重吸收只在矩形平均恒等式内闭合，尚未转移到短窗口点态桥的近零核心。",
+      "proved": true,
+      "remaining": "BacklundPointwiseNearZeroCoreTransferLedger"
+    },
+    {
+      "closed": true,
+      "gate": "IndentCostReducedToClassicalLemmaInternalization",
+      "meaning": "唯一剩余被压成经典 Backlund 缩进引理的内部化：权重吸收、点态转移、无重复扣费和 C8 重聚合。",
+      "proved": false,
+      "remaining": "ClassicalBacklundIndentationLemmaInternalizationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ClassicalBacklundIndentationLemmaInternalizationLedger",
+      "meaning": "尚未给出完整内部证明；外部引理仍可接受但不是严格自足闭合。",
+      "proved": false,
+      "remaining": "BacklundLittlewoodZeroWeightAbsorptionForIndentCoresLedger AND BacklundPointwiseNearZeroCoreTransferLedger AND BacklundZeroWeightNoDoubleCountingLedger AND BacklundC8BudgetPreservingIndentReaggregationLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-backlund-littlewood-rectangle-router.json": "062778677ccc3375b4405c6e5559feba240610f29ec4fc13dd5b341e43ff64f3",
+    "docs/monograph/prime-matrix-b3-horizontal-variation-router.json": "beaa5f88b86eb5e86cd6bcdfdf6b74d63146d74249d20613fd65307d9249d47d",
+    "docs/monograph/prime-matrix-b3-near-zero-indent-separation-router.json": "d27338ae97a041b28360548061e660940c5916f4c7de875d8d67f388baa359b3",
+    "docs/monograph/prime-matrix-b3-variation-window-scale-router.json": "b74131ddb497887ec5cbb0892aca05afba62c6b7f705808b6ae967c0fff75b47",
+    "docs/monograph/prime-matrix-b3-zero-proximity-indentation-cost-router.json": "f2f78a634602fba8eddae3577439efacfcc62a81395ffa3042d912d319079102",
+    "docs/monograph/prime-matrix-backlund-final-branch-status-router.json": "278d6d06d4b63511a2d27287116e05fc594c887fbfc9683f4a81ed4ec18817c3"
+  },
+  "status": "backlund_indent_weight_absorption_reduced_to_classical_lemma_internalization_open",
+  "support_priority": "BacklundLittlewoodZeroWeightAbsorptionForIndentCoresLedger"
+}
