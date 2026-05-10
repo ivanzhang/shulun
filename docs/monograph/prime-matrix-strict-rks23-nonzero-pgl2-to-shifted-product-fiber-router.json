@@ -1,0 +1,88 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_nonzero_pgl2_to_shifted_product_fiber_router",
+  "closed_gates": [
+    "NonzeroPGL2TargetActive",
+    "ShiftedProductFiberIdentityClosed",
+    "PointwiseFiberBoundWouldCloseSpectrum"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "next_direct_attack_target": "ShiftedIntervalModularProductFiberHighSpectrumPowerSavingForSquareRootCollar",
+  "no_theorem_switch": true,
+  "nonzero_pgl2_target_active": true,
+  "open_gates": [
+    "ShiftedIntervalModularProductFiberHighSpectrumPowerSavingForSquareRootCollar",
+    "UniformShiftedIntervalModularProductFiberSublinearBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_incidence_target": "RudnevRNRSShiftedProductFiberIncidenceEstimate",
+  "parallel_lattice_target": "SelfContainedModularHyperbolaInShiftedIntervalsPointwiseBound",
+  "plain_conclusion": "非零相位剩余继续算术化：对 `s!=0` 取 `c=s^{-1}`，`a^{-1}+b^{-1}=s` 精确等价于 shifted product fiber `(a-c)(b-c)=c^2 mod P`。因此当前最窄剩余不是一般 PGL2 语言，而是平方根颈部区间 `J` 上的 shifted modular hyperbola 纤维高谱。若能证明统一点态界 `r_c<=N^(1-eta)`，非零高谱会直接消失。",
+  "pointwise_fiber_bound_would_close_spectrum": true,
+  "product_fiber": {
+    "change_of_variable": "c=s^(-1)",
+    "fiber_count": "r_J(s)=#{(a,b) in J^2: (a-c)(b-c)=c^2}",
+    "high_spectrum_form": "control c with r_c>N^(1-eta), where c runs over F_P^*",
+    "if_pointwise_fails": "a failing c is a concrete shifted modular hyperbola with too many points in J x J",
+    "nonzero_phase": "s != 0",
+    "original_equation": "a^(-1)+b^(-1)=s with a,b in J",
+    "pointwise_sufficient_bound": "r_c<=N^(1-eta) for all c would kill the whole nonzero high spectrum",
+    "remaining_tools": "finite-field incidence, modular hyperbola in shifted intervals, or PGL2 almost-stabilizer expansion",
+    "shifted_product_equation": "(a-c)(b-c)=c^2 mod P"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NonzeroPGL2TargetActive",
+      "meaning": "上一证书已吸收 `s=0`，剩余只含 `s!=0` 的非仿射 PGL2 高谱。",
+      "proved": true,
+      "remaining": "NonzeroAffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "ShiftedProductFiberIdentityClosed",
+      "meaning": "对 `s!=0`，令 `c=s^{-1}`，高谱纤维等价于 shifted interval 模乘积方程。",
+      "proved": true,
+      "remaining": "ShiftedIntervalModularProductFiberHighSpectrumPowerSavingForSquareRootCollar"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseFiberBoundWouldCloseSpectrum",
+      "meaning": "若每个 shifted modular hyperbola 在 `J x J` 中只有 `N^(1-eta)` 个点，非零高谱立即为空。",
+      "proved": true,
+      "remaining": "UniformShiftedIntervalModularProductFiberSublinearBound"
+    },
+    {
+      "closed": false,
+      "gate": "ShiftedIntervalModularProductFiberHighSpectrumPowerSavingForSquareRootCollar",
+      "meaning": "仓库内尚未证明 shifted product fiber 的高谱固定幂节省。",
+      "proved": false,
+      "remaining": "RudnevRNRSShiftedProductFiberIncidenceEstimate OR SelfContainedModularHyperbolaInShiftedIntervalsPointwiseBound"
+    },
+    {
+      "closed": false,
+      "gate": "UniformShiftedIntervalModularProductFiberSublinearBound",
+      "meaning": "更强的点态纤维上界尚未证明；它是当前最直接的硬攻版本。",
+      "proved": false,
+      "remaining": "SelfContainedModularHyperbolaInShiftedIntervalsPointwiseBound"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只闭合等价变换，未证明 shifted product fiber 上界。",
+      "proved": false,
+      "remaining": "ShiftedIntervalModularProductFiberHighSpectrumPowerSavingForSquareRootCollar"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "shifted_product_fiber_high_spectrum_proved": false,
+  "shifted_product_fiber_identity_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-affine-degenerate-phase-split-router.json": "9d726f4f8138dd06f659f3e9f86e725dc440ce1e07178d914b36df84a8ff8380",
+    "docs/monograph/prime-matrix-strict-rks23-mobius-to-affine-inverse-high-spectrum-router.json": "2cdedf19e4f9e2c0a7a1dadc6c96d8af2cb473fd3dca23f8fbfe4cb7280e0414"
+  },
+  "status": "nonzero_pgl2_high_spectrum_rewritten_as_shifted_interval_modular_product_fiber_spectrum",
+  "stronger_pointwise_attack_target": "UniformShiftedIntervalModularProductFiberSublinearBound",
+  "uniform_shifted_product_fiber_pointwise_bound_proved": false
+}

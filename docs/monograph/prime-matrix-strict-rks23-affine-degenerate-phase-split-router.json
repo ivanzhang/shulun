@@ -1,0 +1,87 @@
+{
+  "affine_inverse_high_spectrum_target_active": true,
+  "certificate_type": "prime_matrix_strict_rks23_affine_degenerate_phase_split_router",
+  "closed_gates": [
+    "AffineInverseHighSpectrumTargetActive",
+    "DegeneratePhaseS0Identified",
+    "DegeneratePhaseS0EnergyAbsorbed",
+    "NonzeroMapsAreGenuinePGL2"
+  ],
+  "counterexample_assumption_only": true,
+  "degenerate_phase_s0_energy_absorbed": true,
+  "degenerate_phase_s0_identified": true,
+  "degenerate_split": {
+    "absorption": "|J|^2 <= |J|^(3-delta) for every fixed delta<1 and |J|>=1",
+    "degenerate_phase": "s=0",
+    "energy_contribution": "r_J(0)^2 <= |J|^2",
+    "equation": "a^(-1)+b^(-1)=0 iff b=-a",
+    "mobius_map": "phi_0(a)=-a is affine, not genuinely non-affine",
+    "pole_issue_for_s_nonzero": "the pole a=s^(-1) contributes no solution and removes at most one point",
+    "possible_size": "r_J(0)=|J cap (-J)| can be as large as O(|J|)",
+    "remaining_scope": "only s != 0, where phi_s(a)=a/(s*a-1) is a genuine non-affine PGL2 map"
+  },
+  "empirical_absence_not_used": true,
+  "next_direct_attack_target": "NonzeroAffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23",
+  "no_theorem_switch": true,
+  "nonzero_affine_inverse_high_spectrum_proved": false,
+  "nonzero_maps_are_genuine_pgl2": true,
+  "open_gates": [
+    "NonzeroAffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_group_expansion_target": "NonzeroPGL2IntervalAlmostStabilizerPowerSavingForMobiusInvolutions",
+  "parallel_incidence_target": "RudnevRNRSAffineProgressionInverseIntersectionIncidenceEstimate",
+  "plain_conclusion": "当前最窄点进一步校正：`s=0` 是真实仿射退化相位，方程退化为 `b=-a`，在对称区间中可产生线性重叠，不能被错误地并入非仿射高谱排斥。但它只有一个相位，能量贡献至多 `N^2`，被任意固定幂目标 `N^(3-delta)` 吸收。因此真正剩余变为 `s!=0` 的非退化 PGL2/Möbius 高谱排斥。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AffineInverseHighSpectrumTargetActive",
+      "meaning": "上一证书已把剩余压成仿射等差段倒数自交高谱。",
+      "proved": true,
+      "remaining": "AffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "DegeneratePhaseS0Identified",
+      "meaning": "`s=0` 是真实存在的仿射退化相位，对应反中心配对 `b=-a`。",
+      "proved": true,
+      "remaining": "single affine phase"
+    },
+    {
+      "closed": true,
+      "gate": "DegeneratePhaseS0EnergyAbsorbed",
+      "meaning": "`s=0` 纵使有线性重叠，也只贡献 `O(N^2)`，低于固定幂能量目标。",
+      "proved": true,
+      "remaining": "removed from high-spectrum hardpoint"
+    },
+    {
+      "closed": true,
+      "gate": "NonzeroMapsAreGenuinePGL2",
+      "meaning": "对 `s!=0`，`phi_s` 有唯一 pole 且不是仿射，剩余确为非退化 PGL2 高谱。",
+      "proved": true,
+      "remaining": "NonzeroAffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": false,
+      "gate": "NonzeroAffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23",
+      "meaning": "仓库内尚未证明非零相位的仿射进度段倒数自交高谱有固定幂节省。",
+      "proved": false,
+      "remaining": "RudnevRNRSAffineProgressionInverseIntersectionIncidenceEstimate OR NonzeroPGL2IntervalAlmostStabilizerPowerSavingForMobiusInvolutions"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只分离并吸收退化相位，未证明非零 PGL2 高谱排斥。",
+      "proved": false,
+      "remaining": "NonzeroAffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-mobius-to-affine-inverse-high-spectrum-router.json": "2cdedf19e4f9e2c0a7a1dadc6c96d8af2cb473fd3dca23f8fbfe4cb7280e0414",
+    "docs/monograph/prime-matrix-strict-rks23-reciprocal-energy-mobius-overlap-router.json": "1ff5cdfddf0924dbf91779052bae59ab5b808168ba2e08327e244bf687c5f63f",
+    "docs/monograph/prime-matrix-strict-rks23-unweighted-energy-power-saving-relaxation-router.json": "06047f6e4d09a2bc121c9fabb5d6309e3c06eacf3da00b536fd893bd025c1b7a"
+  },
+  "status": "s_zero_affine_degenerate_phase_absorbed_nonzero_pgl2_high_spectrum_remains"
+}
