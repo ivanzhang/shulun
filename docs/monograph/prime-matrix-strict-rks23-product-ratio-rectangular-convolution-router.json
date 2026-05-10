@@ -1,0 +1,110 @@
+{
+  "alternate_name_for_same_atom": "MultiplicativeConvolutionOfTwoShortIntervalRatioSpectraCenteredL2PowerSaving",
+  "centered_product_ratio_l2_hardpoint_active": true,
+  "certificate_type": "prime_matrix_strict_rks23_product_ratio_rectangular_convolution_router",
+  "closed_gates": [
+    "CenteredProductRatioL2HardpointActive",
+    "EightVariableEnergyExpansionImported",
+    "RotatedRootBoxSupportGeometryClosed",
+    "DyadicRectangularizationClosedUpToPolylog",
+    "RectangularProductRatioConvolutionIdentityClosed",
+    "SeparateRatioL2MarginalsInsufficient"
+  ],
+  "convolution": {
+    "a_cross_ratio_spectrum": "R_A0,A1(alpha)=#{(a0,a1) in A0 x A1: a1=alpha*a0}",
+    "b_cross_ratio_spectrum": "R_B0,B1(beta)=#{(b0,b1) in B0 x B1: b1=beta*b0}",
+    "centered_packet_pair": "C_R0,R1^circ(rho)=C_R0,R1(rho)-(|R0|*|R1|)/(P-1)",
+    "convolution_identity": "C_R0,R1 = R_A0,A1 *_mult R_B0,B1",
+    "existing_l2_marginals": "divisor lifting gives low L2 for R_A and R_B separately, but this alone does not yield the needed centered convolution L2 saving",
+    "packet_pair_l2_target": "sum_rho |C_R0,R1^circ(rho)|^2 must have the Cauchy-required fixed-power saving",
+    "product_cross_ratio_spectrum": "C_R0,R1(rho)=#{(r0,r1) in R0 x R1: a1*b1=rho*a0*b0}",
+    "rectangular_packet_pair": "R0=A0 x B0 and R1=A1 x B1, with Ai,Bi short intervals/progressions inside F_P^*"
+  },
+  "counterexample_assumption_only": true,
+  "dyadic_rectangular_product_ratio_convolution_l2_saving_proved": false,
+  "dyadic_rectangularization_closed_up_to_polylog": true,
+  "eight_variable_energy_expansion_imported": true,
+  "empirical_absence_not_used": true,
+  "geometry": {
+    "bounded_overlap": "each original support point belongs to O(log^O(P)) packets, harmless for fixed-power targets",
+    "dyadic_cover": "split by signs, parity, and distances to strip boundaries into log^O(P) rectangular packets A_i x B_i",
+    "energy_after_cover": "after expanding mu=sum_i mu_i, it is enough to prove the required L2 saving for every dyadic rectangular packet pair, losing only log^O(P)",
+    "nonzero_condition": "a*b!=0 after the zero-product diagonal has been peeled",
+    "product_coordinates": "a=d-e, b=d+e with d=(a+b)/2 and e=(b-a)/2",
+    "support_shape": "intersection of O(N)-scale linear strips, plus parity and endpoint restrictions",
+    "warning": "this is a support decomposition, not a cancellation estimate"
+  },
+  "next_direct_attack_target": "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "八变量乘积比值能量的支撑现在被正规化：`a=d-e,b=d+e` 把根盒变成短线性根盒，按符号、奇偶和边界距离可拆成 `log^O(P)` 个矩形包。固定幂目标允许这种多对数损失。在每个矩形包对 `A0 x B0, A1 x B1` 上，交叉乘积比值谱不是黑箱对象，而是两个交叉短区间比值谱的乘法卷积。因此下一真正剩余是证明这些 dyadic 矩形卷积的中心化 L2 有 Cauchy 所需的固定幂节省。",
+  "rectangular_product_ratio_convolution_identity_closed": true,
+  "rotated_root_box_support_geometry_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CenteredProductRatioL2HardpointActive",
+      "meaning": "上一证书已把当前剩余固定为 `C_*^circ` 的 L2 节省。",
+      "proved": true,
+      "remaining": "CenteredNonzeroProductRatioL2PowerSavingAtCauchyRequiredScale"
+    },
+    {
+      "closed": true,
+      "gate": "EightVariableEnergyExpansionImported",
+      "meaning": "八变量非零乘积比值能量展开已闭合。",
+      "proved": true,
+      "remaining": "ledger"
+    },
+    {
+      "closed": true,
+      "gate": "RotatedRootBoxSupportGeometryClosed",
+      "meaning": "`a=d-e,b=d+e` 支撑为短线性根盒，可按符号、奇偶和边界距离拆包。",
+      "proved": true,
+      "remaining": "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicRectangularizationClosedUpToPolylog",
+      "meaning": "多对数个矩形包和有限奇偶类只造成 `P^o(1)` 损失，不影响固定幂目标。",
+      "proved": true,
+      "remaining": "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "RectangularProductRatioConvolutionIdentityClosed",
+      "meaning": "在每个矩形包对 `A0 x B0, A1 x B1` 上，交叉乘积比值谱等于两个交叉短区间比值谱的乘法卷积。",
+      "proved": true,
+      "remaining": "MultiplicativeConvolutionOfTwoShortIntervalRatioSpectraCenteredL2PowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "SeparateRatioL2MarginalsInsufficient",
+      "meaning": "分别控制 `R_A`、`R_B` 的 L2 只给边际账本，尚不能推出中心化卷积 L2 固定幂节省。",
+      "proved": true,
+      "remaining": "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale"
+    },
+    {
+      "closed": false,
+      "gate": "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale",
+      "meaning": "仓库内尚未证明所有 dyadic 矩形包的中心化乘法卷积比值谱 L2 固定幂节省。",
+      "proved": false,
+      "remaining": "MultiplicativeConvolutionOfTwoShortIntervalRatioSpectraCenteredL2PowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是支撑矩形化和卷积恒等式，不是卷积 L2 节省本身。",
+      "proved": false,
+      "remaining": "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-centered-product-ratio-l2-reduction-router.json": "791133ea008e46a9da1de5b16580cdd04ef09f12f768e3655909b7980c4ac6b2"
+  },
+  "status": "product_ratio_l2_hardpoint_reduced_to_dyadic_rectangular_ratio_convolution_l2"
+}
