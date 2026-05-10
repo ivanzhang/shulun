@@ -1,0 +1,163 @@
+{
+  "b4_weil_complete_rational_sum_kernel_closed_author_side": false,
+  "b4_weil_kernel_attack_active": true,
+  "burgess_complete_kernel_shape_closed": true,
+  "burgess_proof_components_internalized": false,
+  "certificate_type": "prime_matrix_strict_rks23_burgess_weil_kernel_diagonal_router",
+  "closed_gates": [
+    "B4WeilKernelAttackActive",
+    "BurgessCompleteKernelShapeClosed",
+    "DthPowerCriterionClosed",
+    "ExceptionalPowerTupleDimensionBoundClosed",
+    "ConditionalCompleteMomentBoundClosedIfWeil",
+    "ExternalWeilBoundWouldCloseB4"
+  ],
+  "conditional_complete_moment_bound_closed_if_weil": true,
+  "conditional_moment": {
+    "bound_if_weil_available": "V <= C_r (A^r P + A^(2r) P^(1/2))",
+    "expansion": "V=sum_{u,v} K_chi(u,v)",
+    "moment": "V=sum_x |sum_{a in A} chi(x+a)|^(2r)",
+    "not_yet_unconditional_author_side": "the square-root nonpower estimate still rests on the finite-field Weil bound unless proved internally",
+    "role_in_burgess": "this is the complete-sum moment input needed before Vinogradov shifting and parameter optimization"
+  },
+  "counterexample_assumption_only": true,
+  "diagonal_ledger": {
+    "dimension_reason": "every distinct value used by an exceptional tuple occupies at least two of the 2r signed slots",
+    "exceptional_condition": "d divides every signed multiplicity e_a",
+    "exceptional_contribution": "their complete sums are bounded trivially by P, giving O_r(A^r P)",
+    "free_value_bound": "number of distinct values <= r",
+    "nonexceptional_contribution_if_weil": "Weil gives O_r(P^(1/2)) per tuple, hence O_r(A^(2r) P^(1/2))",
+    "tuple_count": "for any shift interval of length A, exceptional tuples are O_r(A^r)"
+  },
+  "dth_power_criterion_closed": true,
+  "empirical_absence_not_used": true,
+  "exceptional_power_tuple_dimension_bound_closed": true,
+  "exceptional_table": [
+    {
+      "bell_digits": "6",
+      "exceptional_tuple_bound": "Bell(10)*A^5",
+      "free_values_bound": "5",
+      "positions": "10",
+      "r": "5"
+    },
+    {
+      "bell_digits": "12",
+      "exceptional_tuple_bound": "Bell(18)*A^9",
+      "free_values_bound": "9",
+      "positions": "18",
+      "r": "9"
+    },
+    {
+      "bell_digits": "29",
+      "exceptional_tuple_bound": "Bell(34)*A^17",
+      "free_values_bound": "17",
+      "positions": "34",
+      "r": "17"
+    },
+    {
+      "bell_digits": "50",
+      "exceptional_tuple_bound": "Bell(52)*A^26",
+      "free_values_bound": "26",
+      "positions": "52",
+      "r": "26"
+    }
+  ],
+  "external_weil_bound_would_close_b4": true,
+  "kernel_shape": {
+    "character_order": "d=ord(chi)>=2 because chi is nonprincipal",
+    "complete_kernel": "K_chi(u,v)=sum_x chi(prod_i (x+u_i)/prod_j (x+v_j)), omitting denominator zeros",
+    "d_power_criterion": "the rational function is a d-th power in F_P(x) iff d divides e_a for every a",
+    "nonpower_case": "if some e_a is not divisible by d, the kernel is a genuine nonpower rational character sum",
+    "signed_multiplicity": "e_a=#{i:u_i=a}-#{j:v_j=a}",
+    "tuple_variables": "u=(u_1,...,u_r), v=(v_1,...,v_r) from the amplifier shift set"
+  },
+  "next_after_weil_target": "BurgessVinogradovShiftAmplificationLedger",
+  "next_direct_attack_target": "SelfContainedWeilBoundForMultiplicativeCharacterRationalFunctions",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedWeilBoundInternalized",
+    "B4_weil_complete_rational_sum_kernel",
+    "BurgessProofComponentsInternalized",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "Burgess 内部化的首个最窄原子已继续压缩：完整和内核、非幂判据、以及幂型异常对角的 `O_r(A^r)` 计数都可在仓库内部自足写清。因此 B4 不再是一个模糊黑箱；它只剩一个标准但深的点：对非 `d` 次幂有理函数的乘法角色完全和证明 Weil 平方根界。若接受该 Weil 界作为外部已证定理，则 Burgess 的完整和矩估计 `V<=C_r(A^rP+A^(2r)P^(1/2))` 闭合；若坚持作者侧完全自足，下一唯一硬点就是把有限域有理函数角色和 Weil 界本身内部化。行/列命题仍未在作者侧无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "B4WeilKernelAttackActive",
+      "meaning": "上一证书给出的首个内部化原子正是 Burgess 完全有理函数角色和内核。",
+      "proved": true,
+      "remaining": "B4_weil_complete_rational_sum_kernel"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessCompleteKernelShapeClosed",
+      "meaning": "2r 矩展开后的完整和已精确化为 `K_chi(u,v)`。",
+      "proved": true,
+      "remaining": "kernel formula"
+    },
+    {
+      "closed": true,
+      "gate": "DthPowerCriterionClosed",
+      "meaning": "`prod(x+u_i)/prod(x+v_j)` 为 `d` 次幂当且仅当所有签名重数 `e_a` 被 `d` 整除。",
+      "proved": true,
+      "remaining": "finite algebra ledger"
+    },
+    {
+      "closed": true,
+      "gate": "ExceptionalPowerTupleDimensionBoundClosed",
+      "meaning": "幂型异常元组至多有 `r` 个自由值，因此数量为 `O_r(A^r)`。",
+      "proved": true,
+      "remaining": "diagonal ledger"
+    },
+    {
+      "closed": true,
+      "gate": "ConditionalCompleteMomentBoundClosedIfWeil",
+      "meaning": "一旦非幂内核有 Weil 平方根界，即得 `V<=C_r(A^rP+A^(2r)P^(1/2))`。",
+      "proved": true,
+      "remaining": "SelfContainedWeilBoundForMultiplicativeCharacterRationalFunctions"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalWeilBoundWouldCloseB4",
+      "meaning": "若接受有限域有理函数乘法角色和 Weil 界作为外部已证定理，则 B4 完整闭合。",
+      "proved": true,
+      "remaining": "external Weil theorem"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedWeilBoundInternalized",
+      "meaning": "仓库内尚未把该 Weil 界本身的曲线/RH 证明写成自足证明。",
+      "proved": false,
+      "remaining": "SelfContainedWeilBoundForMultiplicativeCharacterRationalFunctions"
+    },
+    {
+      "closed": false,
+      "gate": "B4_weil_complete_rational_sum_kernel",
+      "meaning": "作者侧完全自足闭合还差非幂有理函数角色和的 Weil 平方根界。",
+      "proved": false,
+      "remaining": "SelfContainedWeilBoundForMultiplicativeCharacterRationalFunctions"
+    },
+    {
+      "closed": false,
+      "gate": "BurgessProofComponentsInternalized",
+      "meaning": "B4 尚未作者侧自足闭合，后续 B2/B3/B1 也仍需逐项登记。",
+      "proved": false,
+      "remaining": "BurgessAmplificationMomentWeilLedgerForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是 Burgess-Weil 内核代数和异常对角账本，不声明行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_weil_bound_internalized": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-burgess-pointwise-internalization-router.json": "79ee05b6935a2af35127166d224bbc66adf14c05922800d856bdac3f13f2e851"
+  },
+  "status": "burgess_weil_kernel_shape_and_power_diagonal_ledger_closed_weil_bound_remains"
+}
