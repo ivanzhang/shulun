@@ -1,0 +1,150 @@
+{
+  "actual_signed_alpha_source_measure_proved": false,
+  "acyclic_windowed_kloosterman_dls_internal_estimate_proved": false,
+  "alpha_rows_phi_pushforward_compatibility_proved": false,
+  "alpha_signed_lift_failure_named_return_ledger_closed": true,
+  "alpha_signed_lift_variation_branch_budget_proved": false,
+  "alpha_signed_weight_law_from_precauchy_arithmetic_identity_proved": false,
+  "certificate_type": "prime_matrix_strict_alpha_signed_lift_failure_return_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "failure_return_exclusion_proved": false,
+  "failure_rows": [
+    {
+      "failure": "MissingSignedSourceRow",
+      "named_return": "SourceMissingReturn / PDEC-SAE-ColumnCRTNamedReturn",
+      "trigger": "早期零行只给 unsigned cover，未给 T1 signed alpha source row。"
+    },
+    {
+      "failure": "WeightLawMissingOrZero",
+      "named_return": "AlphaWeightLawFailureNamedReturn",
+      "trigger": "pre-Cauchy 算术权重律缺失、权重为零、符号或 local factor 不同步。"
+    },
+    {
+      "failure": "PhiPushforwardMismatch",
+      "named_return": "PhiCompatibilityReturn / PDEC or SAE endpoint return",
+      "trigger": "alpha rows 沿 Phi 推前后不等于 payment-side alpha 系数。"
+    },
+    {
+      "failure": "VariationOrSupportOverBudget",
+      "named_return": "SparseHistorySAE / HotCore / FixedHistory return",
+      "trigger": "signed 总变差、绝对支撑或 branch-key 数超过几何账本预算。"
+    },
+    {
+      "failure": "CanonicalLeakOrTerminalDependentKey",
+      "named_return": "RegisteredPhaseDefect / TerminalNamedReturn",
+      "trigger": "noncanonical 规则偷用 canonical scoped 模板，或 branch key 依赖 terminal payment/PDEC。"
+    },
+    {
+      "failure": "CleanDiffuseResidual",
+      "named_return": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+      "trigger": "低维缺陷已剥离但仍无法生成 signed lift。"
+    }
+  ],
+  "hypothetical_chain_only": true,
+  "named_return_compression_imported": true,
+  "named_return_exclusion_proved": false,
+  "next_direct_attack_target": "AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger",
+  "no_loss_return_accounting_imported": true,
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger",
+    "AlphaRowsPhiPushforwardCompatibilityLedger",
+    "AlphaSignedLiftVariationBranchBudgetLedger",
+    "NamedReturnExclusion",
+    "AcyclicWindowedKloostermanDLSInternalEstimate",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`AlphaSignedLiftFailureNamedReturnLedger` 已闭合为登记纪律：signed lift 缺失、权重律失败、Phi 不兼容、变差/branch-key 超预算、canonical 泄漏、terminal-dependent key 和 clean diffuse residual 都必须进入同一 formal unit 的命名出口。该步不排斥这些出口；排斥仍需 actual signed source 包、NamedReturnExclusion 或 acyclic windowed DLS。下一最窄点回到 `AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger`。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "FailureReturnTargetImported",
+      "meaning": "上一层把 mismatch forcing 的最窄活动点压成 signed lift 失败命名回流。",
+      "proved": false,
+      "remaining": "AlphaSignedLiftFailureNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "UniversalFormalUnitRecordsImported",
+      "meaning": "任意早期零行 witness 已可抽取有限、无漏、可哈希的 formal unit records。",
+      "proved": true,
+      "remaining": "所有失败都必须留在同一 formal unit 账本内。"
+    },
+    {
+      "closed": true,
+      "gate": "NoLossReturnAccountingImported",
+      "meaning": "no-loss 账本给出 O(w)=SourceRecords disjoint_union NamedReturnRecords，Lost(O)=empty。",
+      "proved": true,
+      "remaining": "失败对象不能消失。"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaPrimitiveFailureAlphabetImported",
+      "meaning": "alpha primitive rule 已列出 canonical 泄漏、未登记、超预算、thin/rejected/cancelling 等失败回流需求。",
+      "proved": true,
+      "remaining": "AlphaPrimitiveRuleFailureNamedReturnLedger remains open as exclusion, not as naming schema."
+    },
+    {
+      "closed": true,
+      "gate": "AlphaWeightFailureAlphabetImported",
+      "meaning": "权重律失败类型已被识别为恒等式缺失、权重为零、符号冲突或 local factor 缺失。",
+      "proved": true,
+      "remaining": "AlphaWeightLawFailureNamedReturnLedger remains open as downstream exclusion."
+    },
+    {
+      "closed": true,
+      "gate": "TerminalDependentSelectionForcedReturn",
+      "meaning": "从 payment skeleton 或 terminal certificate 反推 source 被拒绝；这种失败只能命名回流。",
+      "proved": true,
+      "remaining": "Registered terminal defect."
+    },
+    {
+      "closed": true,
+      "gate": "TerminalDefectAlphabetImported",
+      "meaning": "终端缺陷无自由出口：低模、dyadic、共同核、固定历史、SAE、冷核心预算均已命名。",
+      "proved": true,
+      "remaining": "NamedReturnExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "NamedReturnCompressionImported",
+      "meaning": "命名出口压成持久全局终端包或非持久统一预算；失败不再是无名损失。",
+      "proved": true,
+      "remaining": "Persistent terminal family OR unified budget."
+    },
+    {
+      "closed": true,
+      "gate": "AlphaSignedLiftFailureNamedReturnLedgerProved",
+      "meaning": "signed lift 的所有失败类型都有同 formal unit 的命名出口；本步只证明登记纪律，不证明出口不发生。",
+      "proved": true,
+      "remaining": "NamedReturnExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "FailureReturnExclusionNotProved",
+      "meaning": "命名出口登记后，仍需后续证明命名回流排斥、actual signed source 包或 clean DLS。",
+      "proved": false,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger OR NamedReturnExclusion OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.json": "85267c016c03c757d219b04712940825a69020299717a6448aa12b1d110215d2",
+    "docs/monograph/prime-matrix-strict-acyclic-t1-mismatch-forcing-router.json": "87afa7858eb543442e3537c6195813ca621e25eb40b4035407667e9f0ebbd6ad",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.json": "7e54f4f456a2108e28a8100a147c9491951f9367c633dd51972e908291d127c2",
+    "docs/monograph/prime-matrix-strict-terminal-defect-exhaustion-router.json": "d7b8551217e0b50d171f2eefc7ce67996eff1da16abaa3eab68c4640595c9658",
+    "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.json": "3e210402e7ca3d14e9388e0584ad5f5651435cc05d3ba1d4c1f485b41f01e07e"
+  },
+  "status": "alpha_signed_lift_failure_named_return_ledger_closed_exclusion_open",
+  "terminal_defect_alphabet_imported": true,
+  "terminal_gap_after_router": "(ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger) OR NamedReturnExclusion OR AcyclicWindowedKloostermanDLSInternalEstimate",
+  "terminal_gap_before_router": "AlphaSignedLiftFailureNamedReturnLedger",
+  "universal_formal_unit_records_imported": true
+}
