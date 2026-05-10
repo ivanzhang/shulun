@@ -1,0 +1,124 @@
+{
+  "certificate_type": "prime_matrix_strict_unified_budget_inequality_attack_router",
+  "status": "unified_budget_strict_inequality_normal_form_closed_margin_inputs_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "same_parameter_budget_normal_form_closed": true,
+  "external_b3_prefix_demand_lane_available": true,
+  "strict_self_contained_prefix_demand_closed": false,
+  "terminal_projection_anticollapse_closed": false,
+  "cold_supply_lambda_balance_closed": false,
+  "unified_terminal_budget_strict_inequality_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+  "parallel_attack_targets": [
+    "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance",
+    "FiniteBoundaryAndCommonParameterSynchronizationLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "normal_form_rows": [
+    {
+      "component": "prefix demand",
+      "symbol": "D_prefix=((P-1)W^-(z,D)-TV(lambda^-))/ceil(P/z)",
+      "closed_part": "统一方程和容量乘子归一化已闭合。",
+      "open_part": "PrefixDemandNumeratorSurplusLedger"
+    },
+    {
+      "component": "terminal projection",
+      "symbol": "L_forced >= D_prefix-E_named",
+      "closed_part": "no-loss 投影和命名回流字母表已闭合。",
+      "open_part": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse"
+    },
+    {
+      "component": "cold supply",
+      "symbol": "U_cold <= sum_W (T_PDEC(W)-1)C_core(W)",
+      "closed_part": "非持久历史供给公式和冷/热分裂已闭合。",
+      "open_part": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance"
+    },
+    {
+      "component": "strict gap",
+      "symbol": "D_prefix-E_named-U_cold>0",
+      "closed_part": "代数组合已闭合，若该式成立即 L_forced>U_cold。",
+      "open_part": "FiniteBoundaryAndCommonParameterSynchronizationLedger"
+    }
+  ],
+  "theorem_rows": [
+    {
+      "name": "UnifiedBudgetNormalFormTheorem",
+      "proved": true,
+      "statement": "早期零行反例链的终端预算严格矛盾等价于同参数正余量 D_prefix-E_named-U_cold>0。",
+      "role": "把统一预算从口头供需矛盾改写为单一标量不等式。"
+    },
+    {
+      "name": "ExternalB3PrefixDemandLane",
+      "proved": false,
+      "statement": "若接受外部 Mertens/Dusart 输入，prefix demand 的 B3/TV 部分可条件进入该标量式；严格自足版仍需内联 Mertens 尾段。",
+      "role": "区分外部条件路线与严格自足路线。"
+    },
+    {
+      "name": "UnconditionalUnifiedBudgetGap",
+      "proved": false,
+      "statement": "要证明 UnifiedTerminalBudgetStrictInequality，还必须补齐 PrefixLabelSupportToSparseTerminalHistoryAntiCollapse、ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance 与 FiniteBoundaryAndCommonParameterSynchronizationLedger。",
+      "role": "这是当前终端矛盾的真剩余输入基。"
+    }
+  ],
+  "attack_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "统一预算只在假设早期零行反例链内比较需求与供给。",
+      "remaining": "无。"
+    },
+    {
+      "gate": "SameParameterNormalFormClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "同一 z、D、Lambda schedule、PDEC 阈值下的预算标准形已固定为 D_prefix-E_named-U_cold>0。",
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "gate": "PrefixDemandExternalLaneAvailable",
+      "closed": true,
+      "proved": false,
+      "meaning": "接受外部 Mertens/Dusart 时，B3 TV 项可条件关闭；严格自足仍缺 Mertens 尾段。",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "gate": "TerminalProjectionAntiCollapseClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前仍需证明 prefix 标签支撑不会在 sparse terminal history 投影下大量塌缩。",
+      "remaining": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse"
+    },
+    {
+      "gate": "ColdSupplyLambdaBalanceClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前仍需给出冷核心阈值、历史数和 Lambda schedule 的同参数反超。",
+      "remaining": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance"
+    },
+    {
+      "gate": "UnifiedBudgetStrictInequalityProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "需求下界、投影抗塌缩、命名扣除和冷供给上界尚未合成正余量。",
+      "remaining": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse AND ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance AND FiniteBoundaryAndCommonParameterSynchronizationLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.md": "96762bef5ff783b939f1cb4df719f8cb1eccc7a2d885ebde8ea98c529e6a7423",
+    "docs/monograph/prime-matrix-strict-unified-terminal-budget-equation-router.md": "a2d2ee2fa717b072df98442cf4c0c30f88fe61b2c21ae8d6f3b7e1b1cfccc9fc",
+    "docs/monograph/prime-matrix-strict-b3-remainder-total-variation-budget-router.md": "2348b877052849f2c6526bb5bb369f7e10e1143768411e24ad5b5b237809efb2",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-forced-load-lower-bound-router.md": "c427dcdb5bcc961ef3d21050ff3d688cb3f01adad7ef01a09e9a830ad44fdbaf",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.md": "afef58151409a47666c60499ddbdfecf69d59274a438a061251dc8a990ac61d5",
+    "docs/monograph/prime-matrix-strict-normalized-prefix-potential-router.md": "42b578eca2210c458405e04acd60a7fee7651f6b877601768d302cc3414139b7",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.md": "852406501a752cc240c739530ade68cc4f10448c5da5660c0b3cccb32a402c89",
+    "docs/monograph/claim-status-table.md": "2e4abf4664b04020a87f065eb8d32b7a96a2a2e0c8baa07d8da67cb9afdb305d"
+  },
+  "plain_conclusion": "统一预算严格不等式已压成同参数单标量余量：D_prefix-E_named-U_cold>0。外部 B3/TV 路线可条件供给 prefix demand，但终端投影抗塌缩和冷供给 Lambda 平衡仍未闭合。当前最窄结构硬点是 PrefixLabelSupportToSparseTerminalHistoryAntiCollapse。"
+}

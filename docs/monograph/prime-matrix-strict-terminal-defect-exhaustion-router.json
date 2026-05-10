@@ -1,0 +1,162 @@
+{
+  "certificate_type": "prime_matrix_strict_terminal_defect_exhaustion_router",
+  "status": "terminal_defect_no_free_exit_closed_unconditional_exclusion_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "terminal_defect_no_free_exit_closed": true,
+  "alpha_prefix_tv_endpoint_defect_exhausted_to_named_exits": true,
+  "conditional_terminal_contradiction_after_exhaustion_closed": true,
+  "named_return_exclusion_proved": false,
+  "unified_terminal_budget_strict_inequality_proved": false,
+  "alpha_prefix_tv_or_pdec_defect_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+  "parallel_attack_target": "UnifiedTerminalBudgetStrictInequality",
+  "referee_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "exhaustion_chain": [
+    {
+      "layer": "capacity failure",
+      "input": "No alpha-capacity surplus under EarlyZeroRowWithinP",
+      "forced": "TV_alpha >= (P-1)W^-_alpha-2(pi(P)-pi(alpha P))",
+      "exit": "signed endpoint defect",
+      "status": "closed"
+    },
+    {
+      "layer": "signed endpoint",
+      "input": "E_alpha<=-G_alpha",
+      "forced": "low / dyadic / far-tail split; middle mass gives dyadic PDEC certificate",
+      "exit": "LowMod OR DyadicEndpointPDEC OR FarTailCore/SAE",
+      "status": "closed_as_split"
+    },
+    {
+      "layer": "dyadic endpoint",
+      "input": "positive endpoint hit deficit or negative hit surplus",
+      "forced": "centered zero-mean CRT test function and nonzero Fourier energy",
+      "exit": "Fourier/PDEC or isolated SAE",
+      "status": "closed_as_inputization"
+    },
+    {
+      "layer": "Fourier upper",
+      "input": "large nonzero endpoint spectrum",
+      "forced": "low effective modulus, large-effective geometric decay, or Bohr-cap large spectrum",
+      "exit": "LowEffectiveMod PDEC/ColumnCRT OR decay budget OR Bohr-cap PDEC",
+      "status": "closed_as_three_way_route"
+    },
+    {
+      "layer": "low effective modulus",
+      "input": "many active d with small d/gcd(h,d)",
+      "forced": "weighted reciprocal common-divisor envelope and hot short divisor window",
+      "exit": "short-window divisor density",
+      "status": "closed_as_reduction"
+    },
+    {
+      "layer": "short divisor window",
+      "input": "many g in (Y,2Y] divide the same frequency h",
+      "forced": "LCM explosion or low-multiplier common-kernel recurrence",
+      "exit": "ColumnCRT/PDEC/SAE or dense LCM pressure",
+      "status": "closed_as_dichotomy"
+    },
+    {
+      "layer": "threshold collapse",
+      "input": "kernel recursion loses dense-window mass",
+      "forced": "finite sparse terminal history word",
+      "exit": "fixed-history PDEC or nonpersistent SAE budget",
+      "status": "closed_as_sparse_terminal"
+    },
+    {
+      "layer": "cold-core supply",
+      "input": "nonpersistent sparse terminal histories",
+      "forced": "U_cold <= sum_W (T_PDEC(W)-1)C_core(W)",
+      "exit": "unified terminal budget gap",
+      "status": "closed_as_budget_upper"
+    }
+  ],
+  "theorem_rows": [
+    {
+      "name": "TerminalDefectNoFreeExitTheorem",
+      "proved": true,
+      "statement": "在假设早期零行且容量反超没有发生时，强 TV/端点缺陷不能作为第四类自由逃逸；它必沿低模、dyadic Fourier、共同核、固定历史、SAE 或冷核心预算之一登记。",
+      "role": "把反例链与真实结构链的终端交点从抽象缺陷压成命名出口集合。"
+    },
+    {
+      "name": "ConditionalTerminalContradictionAfterExhaustion",
+      "proved": true,
+      "statement": "若 NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion 被排斥，且 UnifiedTerminalBudgetStrictInequality 成立，则容量失败分支也无法支付早期零行义务，故早期零行反例不存在。",
+      "role": "这是本轮新增的条件闭合口，直接接到统一终端预算方程。"
+    },
+    {
+      "name": "UnconditionalTerminalDefectExclusion",
+      "proved": false,
+      "statement": "要把 AlphaPrefixTotalVariationOrEndpointPDECDefectExclusion 升级为无条件排斥，仍必须证明命名回流排斥和统一预算严格不等式，或取得 DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance 独立晋级。",
+      "role": "这是仍未闭合的作者侧全局命题边界。"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "只在假设早期零行反例链内追踪容量失败后的缺陷，不使用真实零行缺席。",
+      "remaining": "无。"
+    },
+    {
+      "gate": "TerminalDefectNoFreeExitClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "强 TV/端点缺陷已被耗尽到低模、dyadic、共同核、固定历史、SAE、冷核心预算等命名出口。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion OR UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "gate": "NamedReturnAlphabetClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "所有逃逸口都已命名，不存在未登记第四出口；但命名出口本身尚未全部排斥。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "UnifiedBudgetConditionalContradictionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若命名回流消失且统一预算严格反超，则得到 L_forced>U_cold 的终端供需矛盾。",
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "gate": "AlphaPrefixTVOrPDECDefectExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "缺陷已耗尽为命名出口，但尚未证明所有命名出口或预算失败不可能发生。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "gate": "DirectUnconditionalContradictionFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前仍没有单点无条件终端矛盾；全局行/列命题不能升级。",
+      "remaining": "(NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND UnifiedTerminalBudgetStrictInequality) OR DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-terminal-contradiction-hard-attack-router.md": "5ae43483799277dbfae77c4f6e37f1334d023b7a3fa3851d2419839031b86b06",
+    "docs/monograph/prime-matrix-strict-alpha-prefix-load-deficit-pdec-router.md": "cbfbbce682c9c69836d2a6348de852e34eb6a68cd3f3b2252ea219f57f797841",
+    "docs/monograph/prime-matrix-strict-alpha-prefix-signed-endpoint-defect-split-router.md": "1b6528faeb7015177fb9b126549f5d1d0c81fbd77eb2cf89246f40202d39edf4",
+    "docs/monograph/prime-matrix-strict-weighted-dyadic-endpoint-pdec-hdl-router.md": "3e956a303a2da8a7c2352d927de52464ee536a587d3d99466967af169e5afbc5",
+    "docs/monograph/prime-matrix-strict-weighted-positive-endpoint-deficit-fourier-pdec-router.md": "74e22ca0b3dfa9b938fac9640169dcbb47f2cedf162f0cc9c70c1262ab684713",
+    "docs/monograph/prime-matrix-strict-weighted-positive-endpoint-fourier-upper-router.md": "e191497eed3c72ebdb61b17e7124aa6ae8e4d57852b1ca669f81c71ff5e8d8de",
+    "docs/monograph/prime-matrix-strict-low-effective-mod-endpoint-pdec-columncrt-router.md": "df64e106b2cc2722b60bb5587d0211c80802598f776b01fd1195c3c17b724647",
+    "docs/monograph/prime-matrix-strict-weighted-reciprocal-common-divisor-envelope-router.md": "682abcd2a519f6b9fa7a6fb72e6efacc07b84c79be02fd469b008b9b96cd4e51",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.md": "2e9b9276de650d14f1b6fd67fd224ca60caf70e644f5dba1fb2eb2a290cfa392",
+    "docs/monograph/prime-matrix-strict-low-multiplier-common-kernel-router.md": "5cd27f1fce66580cdb37ca1506c3ddcb39eb4499bd16c4237aa39c1a722d8f63",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.md": "69d32de5c9a326374b77ea8b6f4063888e1875332f8dbccd7107d90c88da9428",
+    "docs/monograph/prime-matrix-strict-iterated-threshold-collapse-router.md": "7ca299f90ed965ccc1de8762e5377cfa011703dae9ccd595cfed3a0da8ad9702",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.md": "2d8028d0e2d5a1a32f8182e3cbf1bebb8ddd874ce5bed2670dc4b4e286a18067",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.md": "852406501a752cc240c739530ade68cc4f10448c5da5660c0b3cccb32a402c89",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-forced-load-lower-bound-router.md": "c427dcdb5bcc961ef3d21050ff3d688cb3f01adad7ef01a09e9a830ad44fdbaf",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.md": "afef58151409a47666c60499ddbdfecf69d59274a438a061251dc8a990ac61d5",
+    "docs/monograph/prime-matrix-strict-unified-terminal-budget-equation-router.md": "a2d2ee2fa717b072df98442cf4c0c30f88fe61b2c21ae8d6f3b7e1b1cfccc9fc",
+    "docs/monograph/claim-status-table.md": "ac583d3cff492c6888fee3741f376803415abfa9470d970951894f21639051ba"
+  },
+  "plain_conclusion": "本次硬攻关闭的是“缺陷是否还有自由逃逸”这一层：容量失败后的强 TV/端点缺陷，沿现有真实结构链必进入低模、dyadic Fourier、共同核、固定历史、SAE 或冷核心预算，不存在未命名第四出口。但这不是无条件排斥缺陷；真正剩余压成命名回流排斥与统一终端预算严格不等式。"
+}

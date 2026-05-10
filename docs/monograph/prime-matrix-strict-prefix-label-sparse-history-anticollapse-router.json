@@ -1,0 +1,162 @@
+{
+  "certificate_type": "prime_matrix_strict_prefix_label_sparse_history_anticollapse_router",
+  "collapse_cases": [
+    {
+      "case": "injective_or_low_collision",
+      "formula": "sum_W Load(W)=M#_{x,z}-E_named",
+      "meaning": "不同 prefix atom 即使落到同一历史词，也按终端重数计入负载，而不是消失。",
+      "route": "terminal multiplicity ledger",
+      "status": "closed"
+    },
+    {
+      "case": "bounded_nonpersistent_collision",
+      "formula": "Load(W)<=C_cold(W)(T_PDEC(W)-1)",
+      "meaning": "非持久塌缩可由冷核心/历史重数供给预算支付；剩余是不等式反超。",
+      "route": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance",
+      "status": "open_budget"
+    },
+    {
+      "case": "persistent_same_history_collision",
+      "formula": "Load(W)>C_cold(W)(T_PDEC(W)-1)",
+      "meaning": "同一历史词过阈值持久复现不是自由出口，必须登记为 PDEC、ColumnCRT、固定历史或热核心回流。",
+      "route": "FixedHistoryPDECOrHotCoreNamedReturn",
+      "status": "registered_named_return"
+    },
+    {
+      "case": "quotient_or_phase_drift",
+      "formula": "terminal map undefined or changes phase key",
+      "meaning": "若投影无法稳定落到终端历史，则由 no-loss 账本进入命名回流桶。",
+      "route": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+      "status": "registered_named_return"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只在假设早期零行反例链内工作，不用真实零行缺席或统计样本。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedPrefixAtomDomainImported",
+      "meaning": "prefix 残洞 atom、canonical tau_z 标签与 1/mu_tau 容量权重已由前置路由闭合。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalMapNoLossImported",
+      "meaning": "每个 atom 的出口只能是稀疏终端历史、固定历史、PDEC/SAE/ColumnCRT、热核心或 quotient 回流。",
+      "proved": true,
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "StrongDistinctHistoryInjectionRejectedAsUnneeded",
+      "meaning": "统一预算不需要互异历史词注入；同一历史词的多重命中正是终端负载。",
+      "proved": true,
+      "remaining": "StrongDistinctSparseHistoryInjectionAntiCollapse"
+    },
+    {
+      "closed": true,
+      "gate": "MultiplicityConservationAntiCollapseClosed",
+      "meaning": "按终端历史分组后，总负载等于 prefix 加权质量扣除命名回流。",
+      "proved": true,
+      "remaining": "PrefixLabelSupportToSparseTerminalMultiplicityNoSilentCollapse"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentCollapseRoutedToNamedReturn",
+      "meaning": "若同一历史词过阈值持久复现，它必须进入固定历史/PDEC/热核心命名桶。",
+      "proved": false,
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "NonpersistentCollapseAbsorbedByColdBudget",
+      "meaning": "若所有同历史塌缩均未持久，则总量由冷核心历史重数预算吸收。",
+      "proved": false,
+      "remaining": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapseClosedForBudget",
+      "meaning": "对统一预算所需的投影负载而言，prefix 标签支撑不会塌缩成无负载。",
+      "proved": true,
+      "remaining": "强互异历史注入未证但不再是必要输入。"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedBudgetStrictInequalityProved",
+      "meaning": "抗塌缩已转成重数守恒，但仍缺冷供给平衡、有限参数同步、命名回流排斥与自足 B3 尾段。",
+      "proved": false,
+      "remaining": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance AND FiniteBoundaryAndCommonParameterSynchronizationLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance AND FiniteBoundaryAndCommonParameterSynchronizationLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND NormalizedPrefixResidualPotentialLowerBound",
+  "hardpoint_before_router": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+  "multiplicity_conservation_anticollapse_closed": true,
+  "next_direct_attack_target": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance",
+  "no_theorem_switch": true,
+  "nonpersistent_collapse_absorbed_by_cold_budget": true,
+  "parallel_attack_targets": [
+    "FiniteBoundaryAndCommonParameterSynchronizationLedger",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "NormalizedPrefixResidualPotentialLowerBound",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "persistent_collapse_routed_to_named_return": true,
+  "plain_conclusion": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse 的强注入版本并非统一预算所必需。在早期零行反例链内，每个 prefix 加权 atom 要么投影到某个稀疏终端历史并按重数计入 L_forced，要么进入 PDEC、SAE、ColumnCRT、固定历史、热核心或 quotient 的命名回流桶。因此同一历史词上的塌缩不是负载消失，而是进入冷核心供给预算或命名回流。本步关闭的是终端预算所需的无静默塌缩抗塌缩；最终无条件矛盾仍需冷供给平衡、命名回流排斥、有限参数同步和 prefix 需求下界。",
+  "prefix_label_support_to_sparse_terminal_history_anticollapse_proved_for_budget": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md": "faca65e1e870747b921a9a7641733c24a00ad1e5126d82d3f89a65f38098aa9d",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.md": "96762bef5ff783b939f1cb4df719f8cb1eccc7a2d885ebde8ea98c529e6a7423",
+    "docs/monograph/prime-matrix-strict-prefix-capacity-multiplier-discipline-router.md": "352c86f7f0d64130e7cdf822484877f5cf1ec3e3629d0c8bdef50bcc7ca2ef98",
+    "docs/monograph/prime-matrix-strict-prefix-residual-transfer-router.md": "80f1ad767f371d7a49bc47c9428d8f16c0c0af54f13288db49f2449e8b5e599d",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-forced-load-lower-bound-router.md": "c427dcdb5bcc961ef3d21050ff3d688cb3f01adad7ef01a09e9a830ad44fdbaf",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.md": "2d8028d0e2d5a1a32f8182e3cbf1bebb8ddd874ce5bed2670dc4b4e286a18067",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.md": "852406501a752cc240c739530ade68cc4f10448c5da5660c0b3cccb32a402c89",
+    "docs/monograph/prime-matrix-strict-unified-budget-inequality-attack-router.md": "a28cb0a4566eeee41f56238de5eaa63f19988f3b5b0b0bce62f4e10b3f0bb5d5"
+  },
+  "status": "prefix_label_sparse_history_no_silent_collapse_closed_strong_injection_unneeded_budget_gap_open",
+  "strong_distinct_sparse_history_injection_needed_for_unified_budget": false,
+  "strong_distinct_sparse_history_injection_proved": false,
+  "terminal_map_no_loss_imported": true,
+  "terminal_projection_anticollapse_closed": true,
+  "theorem_rows": [
+    {
+      "name": "NoSilentCollapseTerminalMultiplicityLedger",
+      "proved": true,
+      "role": "把抗塌缩从强互异历史注入改成统一预算真正需要的重数守恒。",
+      "statement": "在早期零行反例链内，prefix 加权义务投影到稀疏终端时不会静默损失；未命名回流的部分按终端历史重数守恒。"
+    },
+    {
+      "name": "StrongDistinctSparseHistoryInjection",
+      "proved": false,
+      "role": "这是过强命题；同一历史多重命中应由容量预算处理。",
+      "statement": "当前不证明 #distinct sparse histories >= M#_{x,z}。"
+    },
+    {
+      "name": "TerminalProjectionAntiCollapseForUnifiedBudget",
+      "proved": true,
+      "role": "关闭 PrefixLabelSupportToSparseTerminalHistoryAntiCollapse 的无静默塌缩版本。",
+      "statement": "统一预算中需要的是 L_forced>=M#_{x,z}-E_named；同历史塌缩只会进入 U_cold 或 E_named，不会削弱该负载守恒。"
+    },
+    {
+      "name": "UnconditionalTerminalContradiction",
+      "proved": false,
+      "role": "行/列命题仍不能升级为作者侧无条件闭合。",
+      "statement": "仍需证明 M# 下界、命名回流排斥、冷供给上界与有限参数同步后得到 D_prefix-E_named-U_cold>0。"
+    }
+  ],
+  "unified_terminal_budget_strict_inequality_proved": false,
+  "weighted_prefix_atom_domain_imported": true
+}
