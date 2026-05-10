@@ -1,0 +1,1031 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_scalar_collapse_residue_matrix_router",
+  "closed_gates": [
+    "PreviousScalarCollapseTargetActive",
+    "ThreeSingularityResidueScalarEquationMatrix",
+    "LowSupportAndExactThreeFirewallImported",
+    "NonQuadraticResidueScalarCollapseExcluded",
+    "PureQuadraticLegendreOnlySurvivingScalarChannel"
+  ],
+  "counterexample_assumption_only": true,
+  "elementary_stepanov_pivot_internalized": false,
+  "empirical_absence_not_used": true,
+  "finite_audit_not_used_as_proof": true,
+  "imported_closed_inputs": {
+    "exact_three": "exactly three visible branches are Jacobi/Gauss and already closed",
+    "four_branch_pairing": "four visible residues either have a Jacobi pair or reduce to pure quadratic Legendre",
+    "legendre_status": "Legendre is not an independent gate, but its internal Wronskian nonzero proof is still needed here",
+    "low_support": "support size <3 is already a PGL2 one-coordinate degeneration, not a rank-two scalar channel"
+  },
+  "low_support_and_exact_three_firewall_imported": true,
+  "next_direct_attack_target": "PureQuadraticLegendreScalarCollapseExclusionLemma",
+  "next_subatom": "LegendrePicardFuchsHasseWronskianNonzeroLemma",
+  "no_theorem_switch": true,
+  "nonquadratic_residue_scalar_collapse_excluded": true,
+  "open_gates": [
+    "PureQuadraticLegendreScalarCollapseExclusionLemma",
+    "RankTwoScalarMonodromyCollapseExclusionLemma",
+    "RankTwoPivotNonzeroDeterminant",
+    "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+    "ElementaryStepanovPivotForRankTwoTraceLemma",
+    "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "order_free_signature_selector_internalized": false,
+  "plain_conclusion": "本轮把三奇点标量塌缩剩余进一步算术化。设四个投影残基为 `a,b,c,delta`，其中 `delta=-(a+b+c)`。三处 lambda 奇点的标量塌缩对应 `a+c=0`、`b+c=0`、`c+delta=0` 三条线性同余。前两条给出 `a=b=-c`，代回 `delta` 得 `delta=c`，第三条给出 `2c=0`。在四可见支路中 `c` 非零，故唯一可能是 `d` 为偶数且 `a=b=c=delta=d/2`，即纯二次 Legendre 型。因此所有非二次残基标量塌缩通道被排除；当前唯一内部自足剩余压缩为 `PureQuadraticLegendreScalarCollapseExclusionLemma`：必须在不调用外部 Hasse/Deligne/Katz 的前提下，用 Legendre 二次特化的 Picard-Fuchs 或 Hasse-Wronskian 计算证明两维局部解不全局成比例。未完成该 Wronskian 非零原子前，pivot determinant、Stepanov、Kummer 迹界、Burgess B4 与行/列命题仍不能作者侧无条件闭合。",
+  "previous_scalar_collapse_target_active": true,
+  "pure_quadratic_legendre_only_surviving_scalar_channel": true,
+  "pure_quadratic_legendre_scalar_collapse_excluded": false,
+  "rank_two_pivot_nonzero_determinant_proved": false,
+  "rank_two_scalar_monodromy_collapse_excluded": false,
+  "rejected_shortcuts": {
+    "external_hasse": "the elliptic Hasse bound would close an external route, not this author-side pivot determinant route",
+    "finite_audit": "the residue enumeration checks the congruence algebra only; it is not the proof of the Legendre Wronskian",
+    "generic_lambda": "lambda values with j=0 or j=1728 are smooth and still must be covered",
+    "legendre_subsumed_means_closed": "previous subsumption removed Legendre as a separate trace gate, but did not prove this internal Wronskian"
+  },
+  "remaining_legendre_atom": {
+    "equivalent_curve_form": "E_lambda: y^2=x(1-x)(1-lambda*x), lambda not in {0,1}",
+    "must_not_use": "external Hasse, Deligne, Katz irreducibility, or a finite point-count audit as a proof",
+    "needed_internal_input": "derive the Picard-Fuchs/Hasse derivative relation and prove its two local solutions are not proportional",
+    "new_atom": "PureQuadraticLegendreScalarCollapseExclusionLemma",
+    "new_subatom": "LegendrePicardFuchsHasseWronskianNonzeroLemma",
+    "statement": "for the pure quadratic pattern a=b=c=delta=d/2, the Legendre rank-two local system is not globally scalar and has a nonzero Hasse-Wronskian pivot seed",
+    "why_this_is_narrower": "all non-quadratic residue scalar-collapse channels are now excluded by three linear congruences"
+  },
+  "residue_matrix": {
+    "lambda_infinity_edge": "a+c == 0 mod d",
+    "lambda_one_edge": "b+c == 0 mod d",
+    "lambda_zero_edge": "c+delta == 0 mod d",
+    "normal_form": "x^a*(1-x)^b*(1-lambda*x)^c has infinity residue delta",
+    "projective_residues": "a,b,c,delta with delta=-(a+b+c) modulo d",
+    "visibility": "a,b,c,delta are nonzero in the exact four-visible rank-two channel"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousScalarCollapseTargetActive",
+      "meaning": "上一证书已把唯一内部剩余压成三奇点 residue signature 标量塌缩排除。",
+      "proved": true,
+      "remaining": "RankTwoScalarMonodromyCollapseExclusionLemma"
+    },
+    {
+      "closed": true,
+      "gate": "ThreeSingularityResidueScalarEquationMatrix",
+      "meaning": "三处局部标量塌缩已写成 a+c、b+c、c+delta 三条线性同余。",
+      "proved": true,
+      "remaining": "PureQuadraticLegendreScalarCollapseExclusionLemma"
+    },
+    {
+      "closed": true,
+      "gate": "LowSupportAndExactThreeFirewallImported",
+      "meaning": "低支撑、exact-three、四分支配对与 Legendre 并入证书已作为防火墙接入。",
+      "proved": true,
+      "remaining": "PureQuadraticLegendreScalarCollapseExclusionLemma"
+    },
+    {
+      "closed": true,
+      "gate": "NonQuadraticResidueScalarCollapseExcluded",
+      "meaning": "三条标量同余强制 a=b=c=delta=d/2，因此所有非二次残基塌缩被排除。",
+      "proved": true,
+      "remaining": "PureQuadraticLegendreScalarCollapseExclusionLemma"
+    },
+    {
+      "closed": true,
+      "gate": "PureQuadraticLegendreOnlySurvivingScalarChannel",
+      "meaning": "唯一还能通过三条标量同余的模式是纯二次 Legendre 型。",
+      "proved": true,
+      "remaining": "PureQuadraticLegendreScalarCollapseExclusionLemma"
+    },
+    {
+      "closed": false,
+      "gate": "PureQuadraticLegendreScalarCollapseExclusionLemma",
+      "meaning": "仍需内部证明 Legendre 二次特化的 Picard-Fuchs/Hasse-Wronskian 非零。",
+      "proved": false,
+      "remaining": "LegendrePicardFuchsHasseWronskianNonzeroLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoScalarMonodromyCollapseExclusionLemma",
+      "meaning": "rank-two 标量塌缩排除等待纯二次 Legendre Wronskian 原子。",
+      "proved": false,
+      "remaining": "PureQuadraticLegendreScalarCollapseExclusionLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoPivotNonzeroDeterminant",
+      "meaning": "pivot 行列式非零等待标量塌缩排除。",
+      "proved": false,
+      "remaining": "RankTwoScalarMonodromyCollapseExclusionLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+      "meaning": "初等 rank-two Stepanov pivot 仍等待 determinant atom。",
+      "proved": false,
+      "remaining": "RankTwoPivotNonzeroDeterminant"
+    },
+    {
+      "closed": false,
+      "gate": "ElementaryStepanovPivotForRankTwoTraceLemma",
+      "meaning": "rank-two trace 的内部 Stepanov pivot 尚未闭合。",
+      "proved": false,
+      "remaining": "RankTwoPivotNonzeroDeterminant"
+    },
+    {
+      "closed": false,
+      "gate": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+      "meaning": "完整阶无关 selector 仍等待 pivot 非零证明与下游粘合。",
+      "proved": false,
+      "remaining": "RankTwoPivotNonzeroDeterminant"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "Stepanov-Kummer 非零秩仍未闭合。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "Stepanov 完整内部证明仍未闭合。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界仍等待内部 pivot/selector 链条闭合或外部路线被接受。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只排除非二次标量塌缩，不声明行/列命题作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "scalar_solution_audit": [
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 2,
+      "solutions": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 3,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 4,
+      "solutions": [
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 5,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 6,
+      "solutions": [
+        [
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 7,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 8,
+      "solutions": [
+        [
+          4,
+          4,
+          4,
+          4
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 9,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 10,
+      "solutions": [
+        [
+          5,
+          5,
+          5,
+          5
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 11,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 12,
+      "solutions": [
+        [
+          6,
+          6,
+          6,
+          6
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 13,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 14,
+      "solutions": [
+        [
+          7,
+          7,
+          7,
+          7
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 15,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 16,
+      "solutions": [
+        [
+          8,
+          8,
+          8,
+          8
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 17,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 18,
+      "solutions": [
+        [
+          9,
+          9,
+          9,
+          9
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 19,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 20,
+      "solutions": [
+        [
+          10,
+          10,
+          10,
+          10
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 21,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 22,
+      "solutions": [
+        [
+          11,
+          11,
+          11,
+          11
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 23,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 24,
+      "solutions": [
+        [
+          12,
+          12,
+          12,
+          12
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 25,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 26,
+      "solutions": [
+        [
+          13,
+          13,
+          13,
+          13
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 27,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 28,
+      "solutions": [
+        [
+          14,
+          14,
+          14,
+          14
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 29,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 30,
+      "solutions": [
+        [
+          15,
+          15,
+          15,
+          15
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 31,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 32,
+      "solutions": [
+        [
+          16,
+          16,
+          16,
+          16
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 33,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 34,
+      "solutions": [
+        [
+          17,
+          17,
+          17,
+          17
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 35,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 36,
+      "solutions": [
+        [
+          18,
+          18,
+          18,
+          18
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 37,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 38,
+      "solutions": [
+        [
+          19,
+          19,
+          19,
+          19
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 39,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 40,
+      "solutions": [
+        [
+          20,
+          20,
+          20,
+          20
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 41,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 42,
+      "solutions": [
+        [
+          21,
+          21,
+          21,
+          21
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 43,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 44,
+      "solutions": [
+        [
+          22,
+          22,
+          22,
+          22
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 45,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 46,
+      "solutions": [
+        [
+          23,
+          23,
+          23,
+          23
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 47,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 48,
+      "solutions": [
+        [
+          24,
+          24,
+          24,
+          24
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 49,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 50,
+      "solutions": [
+        [
+          25,
+          25,
+          25,
+          25
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 51,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 52,
+      "solutions": [
+        [
+          26,
+          26,
+          26,
+          26
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 53,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 54,
+      "solutions": [
+        [
+          27,
+          27,
+          27,
+          27
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 55,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 56,
+      "solutions": [
+        [
+          28,
+          28,
+          28,
+          28
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 57,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 58,
+      "solutions": [
+        [
+          29,
+          29,
+          29,
+          29
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 59,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 60,
+      "solutions": [
+        [
+          30,
+          30,
+          30,
+          30
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 61,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 62,
+      "solutions": [
+        [
+          31,
+          31,
+          31,
+          31
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 63,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 64,
+      "solutions": [
+        [
+          32,
+          32,
+          32,
+          32
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 65,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 66,
+      "solutions": [
+        [
+          33,
+          33,
+          33,
+          33
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 67,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 68,
+      "solutions": [
+        [
+          34,
+          34,
+          34,
+          34
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 69,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 70,
+      "solutions": [
+        [
+          35,
+          35,
+          35,
+          35
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 71,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 72,
+      "solutions": [
+        [
+          36,
+          36,
+          36,
+          36
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 73,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 74,
+      "solutions": [
+        [
+          37,
+          37,
+          37,
+          37
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 75,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 76,
+      "solutions": [
+        [
+          38,
+          38,
+          38,
+          38
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 77,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 78,
+      "solutions": [
+        [
+          39,
+          39,
+          39,
+          39
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 79,
+      "solutions": [],
+      "visible_scalar_solutions": 0
+    },
+    {
+      "all_solutions_pure_quadratic": true,
+      "audit_only_not_proof": true,
+      "order": 80,
+      "solutions": [
+        [
+          40,
+          40,
+          40,
+          40
+        ]
+      ],
+      "visible_scalar_solutions": 1
+    }
+  ],
+  "self_contained_kummer_trace_bound_internalized": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-four-branch-hypergeometric-router.json": "e45a09e20fb05f385f50d87cb3171511419236ce8846d56f2967d0be103a6356",
+    "docs/monograph/prime-matrix-strict-rks23-legendre-subsumption-router.json": "75fd4d2b55818085fac067d5a0806995355c60119b09699ab0ecaf134314adb4",
+    "docs/monograph/prime-matrix-strict-rks23-order-free-signature-selector-router.json": "6c5fdf23dd9dfcc39faa07f6aa7f9ac48f6e35e5cad3fc41342bbd6fdb204396",
+    "docs/monograph/prime-matrix-strict-rks23-pivot-determinant-normal-form-router.json": "ce16a32fa2b126bda0379fd5a26c87067dca747fd27c53ce309761b8b7b7e648",
+    "docs/monograph/prime-matrix-strict-rks23-three-branch-jacobi-router.json": "ba01166c86ee4910252dae0b6df5f22e0d7098f9bcaded5f4f9e5cd7b8375ddb"
+  },
+  "status": "scalar_collapse_reduced_to_pure_quadratic_legendre_wronskian_nonzero",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_kummer_auxiliary_rank_surjectivity_proved": false,
+  "symbolic_derivation": {
+    "closed_nonquadratic_case": "if the residue pattern is not pure quadratic, the all-three scalar collapse equations cannot hold",
+    "from_lambda_infinity": "a == -c",
+    "from_lambda_one": "b == -c",
+    "from_lambda_zero": "c+delta==2c==0",
+    "infinity_residue": "delta=-(a+b+c)==c after substituting a=b=-c",
+    "visible_consequence": "c is nonzero of order two, so d is even and a=b=c=delta=d/2"
+  },
+  "three_singularity_residue_scalar_equation_matrix_closed": true
+}
