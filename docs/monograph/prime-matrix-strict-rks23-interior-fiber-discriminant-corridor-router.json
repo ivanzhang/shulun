@@ -1,0 +1,85 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_interior_fiber_discriminant_corridor_router",
+  "closed_gates": [
+    "InteriorShiftedProductTargetActive",
+    "SumVariableQuadraticCompressionClosed",
+    "DiscriminantCorridorIdentityClosed",
+    "InteriorHighFiberForcesDenseSquareReturnCorridor"
+  ],
+  "compression": {
+    "dimension_drop": "2D shifted product fiber -> 1D discriminant square-return corridor",
+    "discriminant": "Delta_c(t)=t^2-4ct=t(t-4c)",
+    "fiber_reconstruction": "each admissible t gives at most two ordered roots a,b, then the root-localization cut requires a,b in J",
+    "high_fiber_implication": "r_c>N^(1-eta) forces >N^(1-eta)/2 localized t-values with Delta_c(t) a square",
+    "interior_phase_scope": "min(c,P-c)>max J after signed-small phases are absorbed",
+    "quadratic_for_roots": "X^2-tX+c*t=0 mod P",
+    "sum_variable": "t=a+b with t in J+J and, for large P, 0<t<P",
+    "why_this_is_narrower": "the remaining obstruction is no longer arbitrary modular hyperbola incidence, but a localized quadratic character corridor with root cuts"
+  },
+  "counterexample_assumption_only": true,
+  "discriminant_corridor_identity_closed": true,
+  "empirical_absence_not_used": true,
+  "interior_discriminant_corridor_high_spectrum_proved": false,
+  "interior_high_fiber_forces_dense_square_return_corridor": true,
+  "interior_shifted_product_target_active": true,
+  "next_direct_attack_target": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_character_sum_target": "LocalizedQuadraticCharacterCorridorPowerSaving",
+  "parallel_incidence_target": "SumVariableHarmonicMeanCollisionIncidenceBound",
+  "plain_conclusion": "内部 shifted product fiber 可继续降维。对固定内部相位 `c`，令 `t=a+b`，则 `ab=c(a+b)` 等价于 `a,b` 是 `X^2-tX+c*t=0 mod P` 的两根。因此高纤维会强制一维通道 `Delta_c(t)=t(t-4c)` 在 `J+J` 中密集返回平方，并且两根还必须同时落回 `J`。下一最窄点就是排斥这种局部判别式平方返回走廊。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "InteriorShiftedProductTargetActive",
+      "meaning": "上一证书已吸收有符号小相位，真正剩余是内部相位 shifted product 高谱。",
+      "proved": true,
+      "remaining": "InteriorShiftedProductFiberHighSpectrumPowerSavingForSquareRootCollar"
+    },
+    {
+      "closed": true,
+      "gate": "SumVariableQuadraticCompressionClosed",
+      "meaning": "令 `t=a+b` 后，`a,b` 必为 `X^2-tX+c*t=0` 的两根。",
+      "proved": true,
+      "remaining": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "DiscriminantCorridorIdentityClosed",
+      "meaning": "纤维计数被一维条件 `Delta_c(t)=t(t-4c)` 为平方并满足根落回 `J` 控制。",
+      "proved": true,
+      "remaining": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "InteriorHighFiberForcesDenseSquareReturnCorridor",
+      "meaning": "若某内部相位仍高重叠，则对应判别式通道中有密集平方返回。",
+      "proved": true,
+      "remaining": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving",
+      "meaning": "仓库内尚未证明内部相位不可能产生密集局部平方返回通道。",
+      "proved": false,
+      "remaining": "LocalizedQuadraticCharacterCorridorPowerSaving OR SumVariableHarmonicMeanCollisionIncidenceBound"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只完成二维到一维的等价压缩，未证明判别式通道的固定幂排斥。",
+      "proved": false,
+      "remaining": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-shifted-product-fiber-signed-lift-router.json": "e18fd07a281a3b9132f567855559645349ace23b0dfe857754f4431141ee621b"
+  },
+  "status": "interior_shifted_product_fiber_reduced_to_quadratic_discriminant_corridor",
+  "sum_variable_quadratic_compression_closed": true
+}
