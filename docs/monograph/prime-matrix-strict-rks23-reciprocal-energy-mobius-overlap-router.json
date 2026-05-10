@@ -1,0 +1,86 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_reciprocal_energy_mobius_overlap_router",
+  "closed_gates": [
+    "FixedPowerEnergyTargetActive",
+    "MobiusOverlapIdentityClosed",
+    "DyadicSpectrumCriterionClosed",
+    "IncidenceRouteStillMatches"
+  ],
+  "counterexample_assumption_only": true,
+  "dyadic_spectrum_criterion_closed": true,
+  "empirical_absence_not_used": true,
+  "fixed_power_energy_target_active": true,
+  "incidence_route_still_matches": true,
+  "mobius_overlap_identity_closed": true,
+  "mobius_overlap_spectrum_power_saving_proved": false,
+  "mobius_reduction": {
+    "dyadic_spectrum": "Omega_tau={s: tau<=r_J(s)<2tau}",
+    "energy_identity": "E_+(J^(-1))=sum_s r_J(s)^2",
+    "mobius_map": "phi_s(a)=a/(s*a-1), with s*a=1 giving no solution",
+    "next_attack_shape": "prove interval-overlap power saving for the non-affine family a -> a/(s*a-1)",
+    "overlap_identity": "r_J(s)=#{a in J: phi_s(a) in J}",
+    "pair_count": "r_J(s)=#{(a,b) in J^2: a^(-1)+b^(-1)=s}",
+    "structural_reading": "many additive-energy quadruples mean many one-parameter Mobius maps repeatedly send J back into J",
+    "sufficient_spectrum_bound": "for some delta>0, sum_tau |Omega_tau| tau^2 <= |J|^(3-delta)"
+  },
+  "next_direct_attack_target": "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_incidence_target": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving",
+  "plain_conclusion": "固定幂能量核心已改写成完全等价的一参数 Möbius 重叠谱问题：对每个和相位 `s`，解 `a^{-1}+b^{-1}=s` 得到 `b=a/(sa-1)`，因此 `E_+(J^{-1})=Σ_s |{a∈J: a/(sa-1)∈J}|^2`。下一真正最窄输入不是泛泛四元组能量，而是证明这些非仿射 Möbius 图不能在同一区间上形成高重叠 dyadic spectrum。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "FixedPowerEnergyTargetActive",
+      "meaning": "上一证书已把对数能量目标放松为固定幂节省能量目标。",
+      "proved": true,
+      "remaining": "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "MobiusOverlapIdentityClosed",
+      "meaning": "`a^{-1}+b^{-1}=s` 等价于 `b=a/(sa-1)`，能量等于 Möbius 重叠平方和。",
+      "proved": true,
+      "remaining": "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicSpectrumCriterionClosed",
+      "meaning": "固定幂能量节省等价于 dyadic overlap spectrum 的平方加权和节省。",
+      "proved": true,
+      "remaining": "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "IncidenceRouteStillMatches",
+      "meaning": "Rudnev/RNRS incidence 可以视作该 Möbius 图族的高重叠谱控制工具。",
+      "proved": true,
+      "remaining": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving"
+    },
+    {
+      "closed": false,
+      "gate": "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving",
+      "meaning": "仓库内尚未证明一参数非仿射 Möbius 图族对区间的 dyadic overlap spectrum 有固定幂节省。",
+      "proved": false,
+      "remaining": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是能量到 Möbius 重叠谱的等价改写，不是谱估计本身。",
+      "proved": false,
+      "remaining": "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/monograph/prime-matrix-strict-rks23-unweighted-energy-power-saving-relaxation-router.json": "06047f6e4d09a2bc121c9fabb5d6309e3c06eacf3da00b536fd893bd025c1b7a",
+    "docs/monograph/prime-matrix-strict-rks23-weighted-energy-to-unweighted-core-router.json": "fc5aebed9fc1bfd4bf2fdd36a455ef044f0b366acfb7d51d17a1b4398474c4e7"
+  },
+  "status": "reciprocal_interval_energy_rewritten_as_one_parameter_mobius_overlap_spectrum"
+}

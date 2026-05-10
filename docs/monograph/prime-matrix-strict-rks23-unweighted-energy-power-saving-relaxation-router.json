@@ -1,0 +1,77 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_unweighted_energy_power_saving_relaxation_router",
+  "closed_gates": [
+    "LogEnergyTargetActive",
+    "FixedPowerSavingImpliesRequiredLogSaving",
+    "IncidenceSumProductRouteStillAligned"
+  ],
+  "collar_log_power": 236,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "fixed_power_saving_energy_proved": false,
+  "fixed_power_saving_implies_required_log_saving": true,
+  "incidence_sum_product_route_still_aligned": true,
+  "log_energy_target_active": true,
+  "next_direct_attack_target": "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23",
+  "no_theorem_switch": true,
+  "old_required_log_power": 472,
+  "open_gates": [
+    "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_mobius_overlap_target": "OneParameterMobiusIntervalOverlapPowerSavingForReciprocalEnergy",
+  "plain_conclusion": "当前唯一内部自足剩余继续压窄：无需直接证明 `log^-472` 级加性能量节省。由于平衡颈部满足 `|J|>=P^(1/2)/log^236(P)`，任意固定正幂节省 `E_+(J^{-1})<=|J|^(3-delta_E)` 都会在大 P 区间压过全部固定对数损失；小 P 端仍交给既有有限验证/P0 通道。于是下一真正硬点变为固定幂节省版倒数区间能量。",
+  "relaxation": {
+    "absorption_check": "|J|^delta_E >= P^(delta_E/2)/log^(236 delta_E)(P), which dominates every fixed log power for sufficiently large P",
+    "collar_lower_bound": "|J| >= P^(1/2)/log^236(P)",
+    "finite_transition": "large-P transition can be delegated to the existing finite/P0 verification lane once constants are supplied",
+    "new_core_advantage": "the remaining input is power saving, not a huge explicit log^472 saving",
+    "old_required_bound": "E_+(J^{-1}) <= |J|^3/log^(472+C_weight)(P)",
+    "sufficient_new_bound": "there exists fixed delta_E>0 such that E_+(J^{-1}) <= |J|^(3-delta_E)"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LogEnergyTargetActive",
+      "meaning": "上一证书已把唯一剩余写成纯倒数区间加性能量对数节省。",
+      "proved": true,
+      "remaining": "UnweightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "FixedPowerSavingImpliesRequiredLogSaving",
+      "meaning": "在平方根对数颈部，任何固定幂节省最终压过固定对数损失。",
+      "proved": true,
+      "remaining": "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "IncidenceSumProductRouteStillAligned",
+      "meaning": "Rudnev/RNRS/sum-product 路线自然提供的正是固定幂节省形态。",
+      "proved": true,
+      "remaining": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving"
+    },
+    {
+      "closed": false,
+      "gate": "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23",
+      "meaning": "仓库内尚未给出 `E_+(J^{-1}) <= |J|^(3-delta_E)` 的自足证明。",
+      "proved": false,
+      "remaining": "OneParameterMobiusIntervalOverlapPowerSavingForReciprocalEnergy OR RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只把目标从固定对数节省放松为固定幂节省；行/列无条件闭合仍不能声明。",
+      "proved": false,
+      "remaining": "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/monograph/prime-matrix-strict-rks23-weighted-energy-to-unweighted-core-router.json": "fc5aebed9fc1bfd4bf2fdd36a455ef044f0b366acfb7d51d17a1b4398474c4e7",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0"
+  },
+  "status": "unweighted_reciprocal_energy_log_saving_reduced_to_any_fixed_power_saving"
+}
