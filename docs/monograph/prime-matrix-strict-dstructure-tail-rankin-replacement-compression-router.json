@@ -1,0 +1,156 @@
+{
+  "burgess_pointwise_does_not_replace_rks_log": true,
+  "certificate_type": "prime_matrix_strict_dstructure_tail_rankin_replacement_compression_router",
+  "closed_gates": [
+    "ReplacementPackageTargetActive",
+    "FiniteRankinReplacementClosed",
+    "DStructureFormalReplacementShellClosed",
+    "TailLog4FormalDecompositionClosed",
+    "TailLog4SmoothAndMidLedgerCompressed",
+    "RKSLogReciprocalKloostermanAtomIsolated",
+    "BurgessPointwiseDoesNotReplaceRKSLog"
+  ],
+  "counterexample_assumption_only": true,
+  "current_frontier": {
+    "current_internal_replacement_status": "replacement shell closed, analytic core open",
+    "narrowest_math_atom": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input",
+    "parallel_non_internal_route": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+    "row_column_boundary": "false until either the self-contained analytic core is proved or the independent promotion gate is accepted",
+    "supporting_external_family": "SelfContainedExternalAnalyticInputsForDStructureTailLog4"
+  },
+  "dstructure_formal_replacement_shell_closed": true,
+  "empirical_absence_not_used": true,
+  "ext_labels_registered": true,
+  "external_analytic_inputs_self_contained_internalized": false,
+  "final_promotion_gate_accepted": false,
+  "finite_rankin_replacement_closed": true,
+  "next_direct_attack_target": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedRKSLogReciprocalKloostermanTailLog4Input",
+    "SelfContainedExternalAnalyticInputsForDStructureTailLog4",
+    "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_external_acceptance_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "parallel_supporting_target": "SelfContainedExternalAnalyticInputsForDStructureTailLog4",
+  "plain_conclusion": "本轮把 `SelfContainedDStructureTailLog4FiniteRankinReplacementPackage` 继续压缩。finite Rankin 子账本已经由 manifest/data 与 batch pass-or-return 闭合；A/B 到 D 与 D 组结构壳也已附录化。Tail-log4 中，平滑端点和中谱大模数层已拆成可审查账本，真正未内联的数学核心只剩 `RKS-log`：倒数 Kloosterman/BG 型对数节省及相关 EXT 解析输入。新近闭合的 Burgess 乘法角色和不能替代它，因为 RKS-log 是加性倒数相位问题。因此当前唯一内部自足最窄点是证明 `SelfContainedRKSLogReciprocalKloostermanTailLog4Input`；行/列命题仍未无条件闭合。",
+  "promotion_package_boundary_closed": true,
+  "replacement_compression": {
+    "dstructure": "A/B to D matching and D Structured-EHPD formal shell are present; remaining dependence is analytic EXT inputs",
+    "not_replaced": "EXT-BG/RKS-log and the external analytic input family are registered but not self-containedly proved here",
+    "rankin": "full Rankin ledger and batch pass-or-return are closed; no longer the active internal obstruction",
+    "tail_log4": "TL4 is split into smooth, middle, and low-spectrum/RKS-log branches",
+    "tail_low": "TL4-L is compressed to the RKS-log reciprocal Kloosterman log-saving theorem",
+    "tail_mid": "TL4-M large-modulus layer is reduced to Selberg upper sieve plus averaged singular series ledger",
+    "tail_smooth": "TL4-S is elementary smoothing/endpoint bookkeeping and is closed in the formal appendix"
+  },
+  "replacement_package_target_active": true,
+  "rks_log_reciprocal_kloosterman_atom_isolated": true,
+  "rks_log_reciprocal_kloosterman_internalized": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ReplacementPackageTargetActive",
+      "meaning": "上一证书已把唯一内部自足剩余指向 DStructure/Tail-log4/finite Rankin 替代包。",
+      "proved": true,
+      "remaining": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteRankinReplacementClosed",
+      "meaning": "finite Rankin 子账本已有 manifest/data 与 batch pass-or-return，内部替代部分闭合。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureFormalReplacementShellClosed",
+      "meaning": "A/B 到 D 匹配与 D 组 OMR/CGTP/LSMP/FCT 正式接口已经形成作者侧证明壳。",
+      "proved": true,
+      "remaining": "SelfContainedExternalAnalyticInputsForDStructureTailLog4"
+    },
+    {
+      "closed": true,
+      "gate": "TailLog4FormalDecompositionClosed",
+      "meaning": "Tail-log4 已拆成 TL4-S、TL4-M、TL4-L/RKS-log 三个可审查分支。",
+      "proved": true,
+      "remaining": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input"
+    },
+    {
+      "closed": true,
+      "gate": "TailLog4SmoothAndMidLedgerCompressed",
+      "meaning": "平滑端点账本闭合，大模数中谱层不再是独立黑箱。",
+      "proved": true,
+      "remaining": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input"
+    },
+    {
+      "closed": true,
+      "gate": "RKSLogReciprocalKloostermanAtomIsolated",
+      "meaning": "Tail-log4 低谱真正剩余已压成 RKS-log/BG 倒数 Kloosterman 对数节省。",
+      "proved": true,
+      "remaining": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessPointwiseDoesNotReplaceRKSLog",
+      "meaning": "Burgess 角色和处理乘法角色；RKS-log 是加性倒数相位，二者正交对象不同。",
+      "proved": true,
+      "remaining": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input",
+      "meaning": "当前仓库尚未内联证明 BG/RKS-log 倒数 Kloosterman 对数节省。",
+      "proved": false,
+      "remaining": "prove BG/RKS-log or exact self-contained replacement"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedExternalAnalyticInputsForDStructureTailLog4",
+      "meaning": "EXT-KL/BG/Vaaler/Selberg/Vaughan 已登记引用，但没有全部改写成自足附录证明。",
+      "proved": false,
+      "remaining": "internalize or explicitly keep as external theorem package"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+      "meaning": "替代包的形式壳已闭合，但解析核心未自足内联，因此替代包未完整证明。",
+      "proved": false,
+      "remaining": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "最终行/列无条件闭合仍需自足证明解析核心，或走独立晋级接受事件。",
+      "proved": false,
+      "remaining": "SelfContainedRKSLogReciprocalKloostermanTailLog4Input"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_dstructure_tail_log4_finite_rankin_replacement_package_proved": false,
+  "source_hashes": {
+    "docs/ab-to-d-interface-match.md": "10c8c6e592b1214f0b028d6c939c4d11a153f33bacbaefcfff0c452829f17f61",
+    "docs/d-structure-formal-appendix.md": "be2e04e640bb9e5d32ea910e510dcc3f32672ac436e7487295400737279c38e3",
+    "docs/ext-citation-final-audit.md": "c69cdf3e79ff77b0030a1d1d280af7f04bda7f03352d2c9a47fe0158569e61cf",
+    "docs/external-theorem-package.md": "3ce5287aff106543ac157344891d9718004158b70e99a5a3373cf5be2b4c7bd9",
+    "docs/final-top-journal-unconditional-review.md": "6b34ee42c578855168f6d5fdeefb9fcb11cc5625286b26fd0e8cf7c38c1e15e5",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "1b9f5714d1d53cd3fc4d13a112c24df2e91448201522255bc53abf5c809ab940",
+    "docs/monograph/prime-matrix-full-rankin-ledger-inventory-router.json": "914416c71595e19675adf90d35301cd1f8648a17e67f9676211ab8a2f2f6187b",
+    "docs/monograph/prime-matrix-strict-rks23-character-moment-to-promotion-audit-router.json": "76dc6560fda6ab123348ff640a62b339c87efd168ae0d313da4fe3772b948e88",
+    "docs/tail-log4-formal-appendix.md": "cc8e105806fbf3428799a0086954ab2d5b354c480ddca04a7591bd9e2cd4c780",
+    "docs/tail-log4-theoremization.md": "52d31368a1166db9be4be990f356f792e4770e7a765899288be959ad0ce62374"
+  },
+  "status": "self_contained_replacement_package_compressed_to_rks_log_reciprocal_kloosterman_core",
+  "tail_log4_formal_decomposition_closed": true,
+  "tail_log4_mid_large_modulus_reduced": true,
+  "tail_log4_smooth_endpoint_closed": true,
+  "why_burgess_not_enough": {
+    "burgess_closed_object": "multiplicative character sums on intervals modulo P",
+    "consequence": "the newly closed Burgess/RKS23 character moment cannot be reused as a proof of TL4-L/RKS-log",
+    "orthogonality_mismatch": "multiplicative characters diagonalize product ratios; RKS-log needs additive trace/reciprocal phases",
+    "rks_log_object": "additive reciprocal Kloosterman sums e_P(xi/(mn)) with prime/dyadic variables"
+  }
+}
