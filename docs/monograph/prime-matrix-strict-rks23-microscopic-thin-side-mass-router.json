@@ -1,0 +1,150 @@
+{
+  "analytic_reduction": {
+    "conditional_closure": "this weighted side ledger immediately absorbs all microscopic thin packets",
+    "exact_remaining_ledger": "prove sum_s sum_{Q:H_s<T} H_s*prod_{j!=s}H_j^2 <= CauchyScale*P^(-eta) after polylog losses",
+    "micro_union_bound": "sum_{Q:H_min<T} L(Q) <= sum_{s=1}^4 sum_{Q:H_s<T} H_s*prod_{j!=s} H_j^2",
+    "shortest_side_plancherel": "if H_s=H_min(Q), then L(Q)<=H_s*prod_{j!=s} H_j^2",
+    "why_this_is_narrow": "no character cancellation remains in the micro branch after this reduction"
+  },
+  "burgess_pointwise_input_still_open": true,
+  "certificate_type": "prime_matrix_strict_rks23_microscopic_thin_side_mass_router",
+  "closed_gates": [
+    "MicroscopicThinSideAtomActive",
+    "NonmicroscopicComplementAlreadyAbsorbed",
+    "PacketwiseAnalyticReductionToWeightedSideLedgerClosed",
+    "FourSideUnionBoundClosed",
+    "EndpointStripSourceIdentifiedFromRectangularization",
+    "RawBoundedOverlapInsufficient",
+    "BurgessPointwiseInputStillOpen"
+  ],
+  "counterexample_assumption_only": true,
+  "definitions": {
+    "allowed_losses": "dyadic and endpoint labels may cost only P^o(1), already registered as polylog losses",
+    "cauchy_scale": "the centered product-ratio L2 scale required by the earlier Cauchy reduction",
+    "micro_cutoff": "T=P^kappa, with fixed kappa>0 chosen below the needed packing margin",
+    "microscopic_condition": "H_min(Q)=min_j H_j<T",
+    "packet": "Q=(I1,I2,I3,I4) with side lengths H_j=|I_j|",
+    "packet_l2": "L(Q)=(1/(P-1))*sum_{chi!=chi0} prod_j |S_Ij(chi)|^2"
+  },
+  "empirical_absence_not_used": true,
+  "endpoint_strip_multiplicity_bound_proved": false,
+  "endpoint_strip_source_identified_from_rectangularization": true,
+  "four_side_union_bound_closed": true,
+  "geometric_target": {
+    "model_margin": "if the ambient side scale is P^theta and endpoint strips have total width O(T*P^o(1)), then any theta>kappa gives fixed power room",
+    "required_structure": "every H_s<T packet must be charged to an endpoint/boundary strip of comparable width with bounded signed multiplicity",
+    "source": "the previous rectangularization splits by signs, parity, and distances to strip boundaries",
+    "sufficient_bound": "for each side s and T=P^kappa, the total weighted strip mass is <= CauchyScale*P^(-eta) for some eta>0",
+    "unproved_part": "the current corpus has not registered the endpoint-strip multiplicity and ambient-scale margin with exact constants"
+  },
+  "microscopic_side_whitney_packing_mass_ledger_proved": false,
+  "microscopic_thin_side_atom_active": true,
+  "microscopic_thin_side_packet_mass_absorption_proved": false,
+  "next_direct_attack_target": "EndpointStripMultiplicityBoundForMicroscopicProductPackets",
+  "no_theorem_switch": true,
+  "obstruction": {
+    "bounded_overlap_fails": "bounded overlap controls packet membership, not the one-power weighted sum H_s*prod_{j!=s}H_j^2",
+    "naive_small_length_fails": "H_s<T alone does not give fixed power saving when H_s is O(1)",
+    "natural_mass_mismatch": "natural packet mass has H_s^2, while the Plancherel bound has only H_s",
+    "possible_bad_case": "many unit-width side packets repeated across endpoint phases can saturate the Cauchy scale unless strip multiplicity is bounded",
+    "therefore_needed": "EndpointStripMultiplicityBoundForMicroscopicProductPackets"
+  },
+  "open_gates": [
+    "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+    "EndpointStripMultiplicityBoundForMicroscopicProductPackets",
+    "ThinDyadicPacketMassAbsorptionProved",
+    "RowColumnUnconditionalClosed"
+  ],
+  "packetwise_analytic_reduction_to_weighted_side_ledger_closed": true,
+  "parallel_required_target": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+  "plain_conclusion": "微薄边分支的解析部分已被压到底：对最短边做 Plancherel 后，`H_min<P^kappa` 的所有包贡献由四个带权短边和控制，形式为 `sum_{H_s<T} H_s*prod_{j!=s}H_j^2`。因此剩余不再是角色和估计，而是一个精确的 Whitney/端点 strip packing 账本：必须证明微薄边 strip 的带权总质量相对 Cauchy 尺度有固定幂余量。已有 bounded-overlap 不能替代它，因为 Plancherel 后短边只剩一个 `H_s` 幂。",
+  "raw_bounded_overlap_insufficient": true,
+  "reduced_internal_atom": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "MicroscopicThinSideAtomActive",
+      "meaning": "上一证书已把薄包唯一剩余隔离为 `H_min<P^kappa` 的微薄边包。",
+      "proved": true,
+      "remaining": "MicroscopicThinSidePacketMassAbsorptionAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "NonmicroscopicComplementAlreadyAbsorbed",
+      "meaning": "非微观薄包已由最短边 Plancherel 地板吸收。",
+      "proved": true,
+      "remaining": "absorbed"
+    },
+    {
+      "closed": true,
+      "gate": "PacketwiseAnalyticReductionToWeightedSideLedgerClosed",
+      "meaning": "对最短边做 Plancherel 后，微薄包总贡献被精确压到 `H_s*prod_{j!=s}H_j^2` 的带权短边账本。",
+      "proved": true,
+      "remaining": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "FourSideUnionBoundClosed",
+      "meaning": "`H_min<T` 被四个事件 `H_s<T` 覆盖，只损失常数 4。",
+      "proved": true,
+      "remaining": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointStripSourceIdentifiedFromRectangularization",
+      "meaning": "已有矩形化说明短边来自符号、奇偶和边界距离拆包；真正需要的是端点 strip 重数账本。",
+      "proved": true,
+      "remaining": "EndpointStripMultiplicityBoundForMicroscopicProductPackets"
+    },
+    {
+      "closed": true,
+      "gate": "RawBoundedOverlapInsufficient",
+      "meaning": "已有 bounded-overlap/polylog 只控制拆包数，不能替代 `H_s` 单幂带权质量下界。",
+      "proved": true,
+      "remaining": "EndpointStripMultiplicityBoundForMicroscopicProductPackets"
+    },
+    {
+      "closed": false,
+      "gate": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+      "meaning": "仓库内尚未证明微薄边带权 Whitney packing 质量相对 Cauchy 尺度有固定幂余量。",
+      "proved": false,
+      "remaining": "EndpointStripMultiplicityBoundForMicroscopicProductPackets"
+    },
+    {
+      "closed": false,
+      "gate": "EndpointStripMultiplicityBoundForMicroscopicProductPackets",
+      "meaning": "仓库内尚未给出每个微薄边端点/边界 strip 的严格重数和环境尺度余量。",
+      "proved": false,
+      "remaining": "EndpointStripMultiplicityBoundForMicroscopicProductPackets"
+    },
+    {
+      "closed": false,
+      "gate": "ThinDyadicPacketMassAbsorptionProved",
+      "meaning": "薄包分支需要非微观吸收与微薄边账本同时成立；当前只完成前者和解析归约。",
+      "proved": false,
+      "remaining": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessPointwiseInputStillOpen",
+      "meaning": "大包分支的 Burgess 点态角色和输入仍是并行开放项。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步是内部自足线的微薄边压缩证书，不宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "EndpointStripMultiplicityBoundForMicroscopicProductPackets AND SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-product-ratio-rectangular-convolution-router.json": "35164b723a154c0cd10a8cd70eba89513908d70c1a6a330b8cf57850dc8529c5",
+    "docs/monograph/prime-matrix-strict-rks23-thin-packet-plancherel-floor-router.json": "97fbca2972cc824c12d0f9d835e4ccd2120199d784419f6744dc80d71f54ba6b"
+  },
+  "status": "microscopic_thin_side_reduced_to_endpoint_strip_weighted_packing_ledger",
+  "thin_dyadic_packet_mass_absorption_proved": false
+}
