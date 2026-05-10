@@ -1,0 +1,108 @@
+{
+  "acyclic_same_set_scope_match_proved": false,
+  "canonical_source_same_set_pdec_closed_but_scoped": true,
+  "certificate_type": "prime_matrix_strict_direct_acyclic_same_set_pdec_dual_router",
+  "counterexample_assumption_only": true,
+  "current_materialized_pdec_frontier_routed": true,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "direct_acyclic_same_set_pdec_active": true,
+  "direct_acyclic_same_set_pdec_cap_dual_certificate_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "generic_external_dibfi_no_projection_certificate_proved": false,
+  "hardpoint_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+  "hardpoint_before_router": "DirectAcyclicSameSetPDECCapDualCertificate",
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicWindowedKloostermanDLSInternalEstimate",
+    "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`DirectAcyclicSameSetPDECCapDualCertificate` 已完成作用域匹配审查。已有 same-set PDEC 协议和 canonical-source 同集前沿可导入为工具，但 strict acyclic 分支不能自动调用；必须先证明 acyclic 终端证书与 canonical same-set 证书在 formal unit、坏窗集合、U_CRT、L_PDEC 和质量推前上完全同口径。若不能证明该作用域匹配，剩余只能走 acyclic windowed DLS/CleanKLS 或外部 DIBFI 无投影窗口证书。因此 direct PDEC 本轮未闭合，下一最窄点回到 `AcyclicTerminalCanonicalLockToCanonicalSourceBoundary`。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在早期零行反例链的 strict acyclic 终端门内做作用域匹配。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "DirectAcyclicSameSetPDECActive",
+      "meaning": "上一层把 E_named 持久部分的首攻点压成 direct acyclic same-set PDEC 对偶。",
+      "proved": false,
+      "remaining": "DirectAcyclicSameSetPDECCapDualCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "SameSetPDECProtocolImported",
+      "meaning": "同集 PDEC 比较必须作用在同一坏窗推前计数；失败要输出 DualCap 或缺失行。",
+      "proved": true,
+      "remaining": "U_CRT<L_PDEC protocol."
+    },
+    {
+      "closed": true,
+      "gate": "CurrentMaterializedPDECFrontierRouted",
+      "meaning": "当前已物化的 canonical/source PDEC 中间门均已路由，不再是无名 Fourier 常数搜索。",
+      "proved": true,
+      "remaining": "strict acyclic scope still required."
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalSourceSameSetClosedButScoped",
+      "meaning": "canonical-source 口径下的同集 PDEC-CAP 可用，但不能自动导入 acyclic noncanonical 分支。",
+      "proved": true,
+      "remaining": "AcyclicCanonicalExactSameSetPromotionCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicSameSetScopeMatchProved",
+      "meaning": "若要调用 canonical same-set 对偶，必须证明 acyclic 终端证书同 formal unit、同坏窗集合、同 U_CRT/L_PDEC 推前。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "closed": false,
+      "gate": "GenericExternalDIBFIRemainsExternal",
+      "meaning": "不经 canonical scope 的 generic/external 同集路线仍缺 DI/BFI 无投影窗口量化证书。",
+      "proved": false,
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": false,
+      "gate": "DirectCleanFallbackNotClosed",
+      "meaning": "若 direct PDEC 作用域不匹配，fallback 是 acyclic clean KLS/DLS；当前也尚未自足证明。",
+      "proved": false,
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": false,
+      "gate": "DirectAcyclicSameSetPDECCapDualCertificateProved",
+      "meaning": "direct acyclic PDEC 不是已闭合定理；它已压成同集作用域匹配或外部 DI/BFI 证书。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "尚未得到反例链与真实结构链的无条件终端矛盾。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY OR DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_set_pdec_protocol_imported": true,
+  "same_theorem_target_preserved": true,
+  "scope_audit_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.json": "2fd26731f4162835ebbe74514a7e8a5db980ca2d03a37a101a94b5a1bf5ec2ca",
+    "docs/monograph/prime-matrix-strict-acyclic-clean-kls-router.json": "49eebc947860fc995d39bc9fcc0e12e580d342eab32421cd8601a28d26cde5a5",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-attack-router.json": "aa045b0749a832e9af9fe21397aa141f4fa6c0643a8b870d74ba360052eff952",
+    "docs/monograph/prime-matrix-strict-canonical-lock-nonrecursive-exit-attack-router.json": "1fc50ba815f27922f23758ed4799dc2f3e88293050b98961acef8703a283e4b9",
+    "docs/monograph/prime-matrix-strict-named-return-same-parameter-deduction-router.json": "2eee9f35708971c2d184bcc194c94c6be162a4f928834f628380ed747a45e1df"
+  },
+  "status": "direct_acyclic_same_set_pdec_scope_audited_scope_match_or_external_dibfi_open"
+}
