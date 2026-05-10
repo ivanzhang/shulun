@@ -1,0 +1,205 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_rank_two_stepanov_pivot_router",
+  "closed_gates": [
+    "PreviousRankTwoRHOrPivotTargetActive",
+    "InternalRouteLockedToElementaryStepanovPivot",
+    "RankTwoStepanovDegreeMultiplicityLedger",
+    "RankTwoHasseJetConditionLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "degree_multiplicity_ledger": {
+    "closed_part": "once a nonzero pivot exists, standard Stepanov degree-vs-multiplicity contradiction gives sqrt(p)-scale cancellation",
+    "condition_count": "Hasse-jet vanishing consumes O_m(TN) linear conditions",
+    "degree_growth": "degree grows as O_m(D) under the fixed rank-two derivative alphabet",
+    "order_free": "all constants depend only on the fixed branch bound m and not on d",
+    "remaining_dependency": "the only unproved input is determinant nonvanishing for the pivot block"
+  },
+  "determinant_atom": {
+    "if_proved": "rank-two trace bound internalizes, then the order-free selector and downstream Stepanov/Burgess chain can continue",
+    "must_avoid": "generic-position assumptions and any y^0,...,y^{d-1} dimension source",
+    "must_cover": "all smooth lambda, including j=0 and j=1728, and all nontrivial character triples already admitted by the sheaf contract",
+    "new_atom": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+    "statement": "there exists a bounded rank-two Stepanov auxiliary block whose Hasse-jet evaluation determinant is not identically zero on U",
+    "why_not_closed": "the corpus still lacks the determinant nonvanishing proof for the fixed rank-two derivative alphabet"
+  },
+  "elementary_stepanov_pivot_internalized": false,
+  "empirical_absence_not_used": true,
+  "internal_route_locked_to_elementary_stepanov_pivot": true,
+  "next_direct_attack_target": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+  "next_subatom": "RankTwoPivotDeterminantNonvanishing",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RankTwoPivotNonzeroDeterminant",
+    "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma",
+    "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+    "BoundedBranchSignatureHasseJetIndependenceLemma",
+    "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "order_free_signature_selector_internalized": false,
+  "pivot_budget_table": [
+    {
+      "allowed_constant_dependency": "O_4(1)",
+      "branch_bound_m": 4,
+      "forbidden_dependency": "d, p, character order, branch positions",
+      "pivot_unknown": "nonzero determinant only",
+      "rank_bound": 2,
+      "singularities_on_lambda_line": 3
+    },
+    {
+      "allowed_constant_dependency": "O_6(1)",
+      "branch_bound_m": 6,
+      "forbidden_dependency": "d, p, character order, branch positions",
+      "pivot_unknown": "nonzero determinant only",
+      "rank_bound": 2,
+      "singularities_on_lambda_line": 3
+    },
+    {
+      "allowed_constant_dependency": "O_8(1)",
+      "branch_bound_m": 8,
+      "forbidden_dependency": "d, p, character order, branch positions",
+      "pivot_unknown": "nonzero determinant only",
+      "rank_bound": 2,
+      "singularities_on_lambda_line": 3
+    },
+    {
+      "allowed_constant_dependency": "O_10(1)",
+      "branch_bound_m": 10,
+      "forbidden_dependency": "d, p, character order, branch positions",
+      "pivot_unknown": "nonzero determinant only",
+      "rank_bound": 2,
+      "singularities_on_lambda_line": 3
+    }
+  ],
+  "pivot_space": {
+    "auxiliary_family": "bounded-degree functions in lambda and controlled logarithmic/Hasse derivatives along the three singular directions",
+    "nonzero_goal": "prove the auxiliary determinant/pivot block is not identically zero",
+    "rank_two_constraint": "use only a fixed two-dimensional local solution space; do not introduce a d-length Kummer ladder",
+    "trace_function": "T(lambda)=sum_x A(x)B(1-x)C(1-lambda*x) on U=P^1-{0,1,infinity}",
+    "vanishing_goal": "force high multiplicity at all lambda with large trace while keeping total divisor degree smaller than total forced zeros"
+  },
+  "plain_conclusion": "本轮没有证明 rank-two 平方根迹界，但把作者侧内部路线从“RH 内部化或 Stepanov pivot”二选一继续压窄为一个明确的初等 Stepanov pivot 行列式原子。外部 Deligne/Katz 路线仍保持可接受则闭合；但完全自足路线现在锁定为：在 `U=P^1-{0,1,infinity}` 上构造固定秩二辅助块，使用有界 Hasse-jet 派生字母表，通过次数-重数矛盾推出 `sqrt(p)` 级抵消。次数账本与 jet 条件账本已经收束为 `O_m` 常数，不依赖角色阶 `d`，也不使用 `y^0,...,y^{d-1}` 维数来源。唯一真正剩余变成 `RankTwoElementaryStepanovPivotNonzeroDeterminantLemma`：证明这个固定 rank-two 辅助块的 pivot 行列式不恒为零，并覆盖所有光滑 lambda，包括 `j=0` 与 `j=1728`。未完成该行列式非零原子前，Stepanov、Kummer 迹界、Burgess B4 与行/列命题仍不能作者侧无条件闭合。",
+  "previous_rank_two_rh_or_pivot_target_active": true,
+  "rank_two_hasse_jet_condition_ledger_closed": true,
+  "rank_two_pivot_nonzero_determinant_proved": false,
+  "rank_two_rh_trace_bound_internalized": false,
+  "rank_two_stepanov_degree_multiplicity_ledger_closed": true,
+  "rejected_shortcuts": {
+    "dimension_by_d": "do not create auxiliary rank by using d Kummer powers",
+    "generic_lambda": "the determinant must not vanish identically even at special smooth automorphism points",
+    "numerical_pivot": "finite determinant audits may guide but cannot replace symbolic nonvanishing",
+    "rh_as_internal": "do not count external Deligne/Katz as author-side internal proof"
+  },
+  "route_lock": {
+    "chosen_internal_route": "elementary Stepanov pivot on the rank-two trace function",
+    "external_route_status": "Deligne/Katz remains a valid external closure if accepted",
+    "old_two_way_atom": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma",
+    "rh_internalization": "proving rank-two lisse sheaf RH internally is essentially a full Weil/Deligne theorem route",
+    "why_lock": "to continue the self-contained author-side line without repeatedly toggling between external RH and internal pivot"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousRankTwoRHOrPivotTargetActive",
+      "meaning": "上一证书已把唯一剩余压成 rank-two RH 内部化或等价 Stepanov pivot。",
+      "proved": true,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": true,
+      "gate": "InternalRouteLockedToElementaryStepanovPivot",
+      "meaning": "作者侧自足主攻路线锁定为初等 Stepanov pivot，不再在内部证明中来回切换 RH 黑箱。",
+      "proved": true,
+      "remaining": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma"
+    },
+    {
+      "closed": true,
+      "gate": "RankTwoStepanovDegreeMultiplicityLedger",
+      "meaning": "非零 pivot 一旦存在，次数-重数矛盾账本已可按 O_m 常数运行。",
+      "proved": true,
+      "remaining": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma"
+    },
+    {
+      "closed": true,
+      "gate": "RankTwoHasseJetConditionLedger",
+      "meaning": "Hasse-jet 条件消耗保持 O_m(TN)，不依赖角色阶 d。",
+      "proved": true,
+      "remaining": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoPivotNonzeroDeterminant",
+      "meaning": "唯一未证的是固定 rank-two 派生字母表的 pivot 行列式非零。",
+      "proved": false,
+      "remaining": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma",
+      "meaning": "旧二选一原子已压成具体的 Stepanov pivot 行列式非零原子。",
+      "proved": false,
+      "remaining": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+      "meaning": "仍需证明秩二 Stepanov 辅助块存在非零行列式。",
+      "proved": false,
+      "remaining": "RankTwoPivotDeterminantNonvanishing"
+    },
+    {
+      "closed": false,
+      "gate": "BoundedBranchSignatureHasseJetIndependenceLemma",
+      "meaning": "全局 Hasse-jet 独立性等待 rank-two pivot 行列式非零。",
+      "proved": false,
+      "remaining": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma"
+    },
+    {
+      "closed": false,
+      "gate": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+      "meaning": "完整阶无关 selector 等待 rank-two pivot 非零证明。",
+      "proved": false,
+      "remaining": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "Stepanov-Kummer 非零秩仍等待完整 selector。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "Stepanov 完整内部证明仍未闭合。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界仍等待 rank-two pivot 作者侧闭合或外部接受。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只压窄内部原子，不声明行/列命题作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kummer_trace_bound_internalized": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-unified-rank-two-sheaf-contract-router.json": "e48bbb1e261ffd8830183c6bedbedbd8c19d6d0e12162369c9ea4a18d1194a5d"
+  },
+  "status": "rank_two_internal_route_reduced_to_stepanov_pivot_determinant_nonvanishing",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_kummer_auxiliary_rank_surjectivity_proved": false
+}
