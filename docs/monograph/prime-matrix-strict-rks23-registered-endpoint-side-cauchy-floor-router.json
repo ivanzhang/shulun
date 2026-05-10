@@ -1,0 +1,145 @@
+{
+  "ambient_root_box_side_floor_imported": true,
+  "ambient_side_square_budget_dominates_side_multiplier": true,
+  "burgess_pointwise_input_still_open": true,
+  "certificate_type": "prime_matrix_strict_rks23_registered_endpoint_side_cauchy_floor_router",
+  "closed_gates": [
+    "RegisteredEndpointSideFloorAtomActive",
+    "SameFormalUnitSideRegistrationClosed",
+    "AmbientRootBoxSideFloorImported",
+    "AmbientSideSquareBudgetDominatesSideMultiplier",
+    "PacketwiseFloorNotClaimedFirewall",
+    "RegisteredEndpointSideCauchyMultiplierFloorForMicroscopicPackets",
+    "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass",
+    "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+    "ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale",
+    "BurgessPointwiseInputStillOpen"
+  ],
+  "closed_internal_branch": "ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale",
+  "closure_chain": {
+    "endpoint_strip_pure_multiplicity": "closed by the previous endpoint strip router",
+    "microscopic_side_ledger": "closed: multiplicity + scale comparison",
+    "remaining_global_gate": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+    "scale_comparison": "closed by registered side multiplier floor plus kappa<1/2 margin",
+    "thin_packet_absorption": "closed for the microscopic branch together with the earlier nonmicroscopic Plancherel floor"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "floor_proof": {
+    "collar_floor": "|J|>=P^(1/2)/log^236(P)",
+    "comparison": "T/A_s<=P^{kappa-1/2+o(1)}=P^(-eta) for eta<1/2-kappa",
+    "consequence": "P^o(1)*T*TripleSideSquareMass_s <= CauchyScale_s*P^(-eta)",
+    "micro_width": "T=P^kappa with fixed kappa<1/2",
+    "registered_floor": "A_s>=|J|/P^o(1)>=P^(1/2-o(1))",
+    "why_no_overclaim": "the comparison is after summing the endpoint strip family against the same formal-unit Cauchy budget"
+  },
+  "microscopic_endpoint_strip_cauchy_scale_comparison_proved": true,
+  "microscopic_side_whitney_packing_mass_ledger_proved": true,
+  "next_direct_attack_target": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RowColumnUnconditionalClosed"
+  ],
+  "packetwise_floor_not_claimed_firewall": true,
+  "plain_conclusion": "侧向 Cauchy 乘子地板已作为总质量账本对象闭合。微薄 endpoint packet 自身可能只有 `H_s=O(1)`，所以不能声明 packetwise 地板；但在同一 dyadic formal unit 的薄包总和中，端点 strip 与完整根盒侧向 Cauchy 预算配对，保守乘子满足 `A_s>=|J|/P^o(1)>=P^(1/2-o(1))`。结合 `T=P^kappa,kappa<1/2`，得到 `T/A_s` 的固定幂余量。因此微薄端点尺度比较、微薄边账本和薄包吸收闭合。剩余全局门只转到大包分支的自足 Burgess 点态输入；行/列命题仍未无条件闭合。",
+  "registered_endpoint_side_cauchy_multiplier_floor_proved": true,
+  "registered_endpoint_side_floor_atom_active": true,
+  "registration": {
+    "ambient_side_budget": "the Cauchy ledger for the full side contains the non-endpoint side mass from the same formal unit",
+    "dyadic_loss": "endpoint, parity, sign, and Whitney labels cost only P^o(1)",
+    "formal_unit_side": "each side s is inherited from a root-box interval J before endpoint Whitney subdivision",
+    "not_packetwise_claim": "a microscopic endpoint packet may have H_s=O(1); the floor is not attached to that packet alone",
+    "registered_multiplier": "A_s can be taken at least |J|/P^o(1), conservatively below the available side-square budget",
+    "scope": "global thin-packet mass ledger within the same dyadic formal unit"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RegisteredEndpointSideFloorAtomActive",
+      "meaning": "上一证书已把尺度比较唯一剩余压成侧向 Cauchy 乘子地板。",
+      "proved": true,
+      "remaining": "RegisteredEndpointSideCauchyMultiplierFloorForMicroscopicPackets"
+    },
+    {
+      "closed": true,
+      "gate": "SameFormalUnitSideRegistrationClosed",
+      "meaning": "微薄 endpoint strip 与其所在根盒侧向预算属于同一 dyadic formal unit，可在总质量账本中配对。",
+      "proved": true,
+      "remaining": "registration"
+    },
+    {
+      "closed": true,
+      "gate": "AmbientRootBoxSideFloorImported",
+      "meaning": "平衡颈部给出根盒侧长 `|J|>=P^(1/2)/log^236(P)`。",
+      "proved": true,
+      "remaining": "collar ledger"
+    },
+    {
+      "closed": true,
+      "gate": "AmbientSideSquareBudgetDominatesSideMultiplier",
+      "meaning": "全侧向 Cauchy 预算包含至少 `|J|/P^o(1)` 的保守乘子，足够作为 `A_s`。",
+      "proved": true,
+      "remaining": "registration"
+    },
+    {
+      "closed": true,
+      "gate": "PacketwiseFloorNotClaimedFirewall",
+      "meaning": "本证书不把 `A_s` 贴到单个微小 packet 上，只用于薄包总和的正式预算。",
+      "proved": true,
+      "remaining": "review boundary"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredEndpointSideCauchyMultiplierFloorForMicroscopicPackets",
+      "meaning": "侧向 Cauchy 乘子地板已注册：`A_s>=P^(1/2-o(1))`。",
+      "proved": true,
+      "remaining": "registered"
+    },
+    {
+      "closed": true,
+      "gate": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass",
+      "meaning": "`kappa<1/2` 的幂余量代数已把地板转成微薄端点尺度比较。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+      "meaning": "微薄边 Whitney/端点总质量账本闭合。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale",
+      "meaning": "薄包质量吸收在内部账本中闭合；非微观分支已由早前 Plancherel 地板处理。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessPointwiseInputStillOpen",
+      "meaning": "大包分支 Burgess 点态角色和输入仍未内部化。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只闭合薄包内部自足线，不关闭大包 Burgess，也不声明行/列无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_formal_unit_side_registration_closed": true,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-microscopic-endpoint-scale-comparison-router.json": "ba145f8e29fec3afec426dfef1ec868773f53d07982a54999cbff7643c9f5717",
+    "docs/monograph/prime-matrix-strict-rks23-product-ratio-rectangular-convolution-router.json": "35164b723a154c0cd10a8cd70eba89513908d70c1a6a330b8cf57850dc8529c5",
+    "docs/monograph/prime-matrix-strict-rks23-unweighted-energy-power-saving-relaxation-router.json": "06047f6e4d09a2bc121c9fabb5d6309e3c06eacf3da00b536fd893bd025c1b7a",
+    "docs/monograph/prime-matrix-strict-rks23-weighted-energy-to-unweighted-core-router.json": "fc5aebed9fc1bfd4bf2fdd36a455ef044f0b366acfb7d51d17a1b4398474c4e7"
+  },
+  "status": "registered_endpoint_side_cauchy_floor_closed_thin_packet_absorption_closed_burgess_remains",
+  "thin_dyadic_packet_mass_absorption_proved": true
+}
