@@ -1,0 +1,162 @@
+{
+  "certificate_type": "prime_matrix_strict_positive_terminal_budget_margin_attack_router",
+  "status": "positive_terminal_budget_attack_b3_external_front_closed_structural_margin_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hardpoint_before_router": "ExplicitPositiveTerminalBudgetMarginInequality",
+  "continuous_beta_demand_closed": true,
+  "b3_anchor20000_budget_closed": true,
+  "b3_tv_external_closed": true,
+  "b3_mertens_external_closed": true,
+  "b3_discrete_external_front_closed": true,
+  "b3_external_front_no_longer_primary_blocker": true,
+  "b3_strict_self_contained_tail_closed": false,
+  "strict_prefix_demand_proved": false,
+  "finite_boundary_prefix_open": true,
+  "named_return_exclusion_proved": false,
+  "hot_fixed_terminal_exits_closed": false,
+  "rankin_subledger_closed": true,
+  "dstructure_rankin_independently_accepted": false,
+  "explicit_positive_terminal_budget_margin_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_after_router_external_lane": "FinitePrefixNamedReturnCoupledPositiveMarginLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hardpoint_after_router_strict_self_contained_lane": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372 AND FinitePrefixNamedReturnCoupledPositiveMarginLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "FinitePrefixNamedReturnCoupledPositiveMarginLedger",
+  "parallel_attack_targets": [
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-single-parameter-terminal-budget-margin-router.json": "6fa7a1331e7404f58f83cf3955a36d275c8b20a9fffc28b7c611240ede99f225",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.json": "565216b00f151a42a0105b48eb3f09b4d1968f923d698fdb2ba1bdecd906afee",
+    "docs/monograph/prime-matrix-strict-b3-remainder-total-variation-budget-router.json": "44c09f19992bc439f6ccb7ae0d6ade75364a5e33e49da5cc3c70cc10057afe30",
+    "docs/monograph/prime-matrix-b3-signed-delay-multiplier-anchor-router.json": "158728d20ecf491aab9376bc1f29cc0566a9218ffb292b26b5192d8bfb5a12c9",
+    "docs/monograph/prime-matrix-b3-explicit-prime-reciprocal-mertens-router.json": "71470d72dd1ee8fdde68bbf36e4336f43a97a44392775daf638e407e94e5b46f",
+    "docs/monograph/prime-matrix-b3-self-contained-mertens-tail-router.json": "8a4a73bd5523f76b8eb01bd2346e9a800afa2017d693aa22eaa7c1d431e32594",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.json": "7e54f4f456a2108e28a8100a147c9491951f9367c633dd51972e908291d127c2",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "996600a63cb5f147e5bf8b827e596b4c2db033f34a29725cfc2e300104d5abb5",
+    "docs/monograph/prime-matrix-full-rankin-ledger-inventory-router.json": "914416c71595e19675adf90d35301cd1f8648a17e67f9676211ab8a2f2f6187b"
+  },
+  "plain_conclusion": "本轮把 B3 外部条件前沿接入正终端预算余量：接受外部 Mertens/Dusart 或标准 beta-sieve 时，B3 离散误差和长度 P 总变差不再是最窄主阻塞；严格自足线仍缺 Mertens 尾段内联证明。真正终端口收缩为同参数耦合余量 D0(P,z)-E0(P,z)-U0(P,z)>0，并且必须同时处理有限 prefix 证书、命名回流/热核心/固定历史出口和 DStructure/Rankin 独立晋级验收。当前仍未推出直接矛盾。",
+  "b3_front_rows": [
+    {
+      "front": "continuous beta demand",
+      "closed": true,
+      "proved": true,
+      "effect": "连续主项余量可用，不再是正余量主阻塞。",
+      "remaining": "B3DiscretePrimeSumUniformErrorPGe100000"
+    },
+    {
+      "front": "B3 discrete/Stieltjes external lane",
+      "closed": true,
+      "proved": false,
+      "effect": "接受外部 Mertens/Dusart 或标准 beta-sieve 时，离散误差和边界余项可进入条件闭合。",
+      "remaining": "DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted"
+    },
+    {
+      "front": "B3 signed delay anchor",
+      "closed": true,
+      "proved": true,
+      "effect": "锚点提升到 20000 后，delay-kernel BV 乘子预算小于 1% f(s)。",
+      "remaining": "closed under external Mertens tail"
+    },
+    {
+      "front": "strict self-contained B3 tail",
+      "closed": false,
+      "proved": false,
+      "effect": "若坚持完全自足，不接受 Dusart/Rosser-Schoenfeld 外部定理，这一尾段仍未内联。",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    }
+  ],
+  "terminal_rows": [
+    {
+      "slot": "prefix lower bound",
+      "closed": false,
+      "effect_on_margin": "决定 D_prefix 是否能给出统一显式 D0(P,z)。",
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "slot": "named return deduction",
+      "closed": false,
+      "effect_on_margin": "决定 E_named 是否可以被排斥或严格计入同参数预算。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion via PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve or unified budget"
+    },
+    {
+      "slot": "hot/fixed terminal exits",
+      "closed": false,
+      "effect_on_margin": "决定热核心与固定历史是否会吞掉余量。",
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "slot": "coupled positive margin",
+      "closed": false,
+      "effect_on_margin": "需要在同一参数账本下证明 D0(P,z)-E0(P,z)-U0(P,z)>0。",
+      "remaining": "FinitePrefixNamedReturnCoupledPositiveMarginLedger"
+    },
+    {
+      "slot": "independent promotion gate",
+      "closed": false,
+      "effect_on_margin": "即使终端余量闭合，行/列定理仍需 DStructure/Rankin 独立验收晋级。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本轮仍只在 Assume EarlyZeroRowWithinP 的反例链内压缩终端余量，不使用真实零行缺席。",
+      "remaining": "保持 direct_unconditional_contradiction_found=false。"
+    },
+    {
+      "gate": "B3ExternalFrontNoLongerPrimaryBlocker",
+      "closed": true,
+      "proved": false,
+      "meaning": "若接受外部 Mertens/Dusart 或标准 beta-sieve，B3 离散误差/TV 前沿可条件接入终端余量。",
+      "remaining": "严格自足仍需 SelfContainedDusartReciprocalPrimeProofAppendixXGe10372。"
+    },
+    {
+      "gate": "FinitePrefixCertificateStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "正余量不能只靠渐近主项；有限 P 边界必须有机器证书或严格手算证书。",
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "gate": "NamedReturnStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "命名回流字母表已压缩，但持久 PDEC/CleanKLS 与非持久统一预算尚未同时排斥。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "CoupledPositiveMarginStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "终端矛盾的必要充分口仍是同参数 D_prefix-E_named-U_cold>0。",
+      "remaining": "FinitePrefixNamedReturnCoupledPositiveMarginLedger"
+    },
+    {
+      "gate": "DStructureRankinPromotionStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "Rankin 子账本已格式化并 pass-or-return，但独立晋级验收仍未接受。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "gate": "DirectTerminalContradictionReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前还没有从反例链推出与真实结构链的终端直接矛盾。",
+      "remaining": "FinitePrefixNamedReturnCoupledPositiveMarginLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ]
+}
