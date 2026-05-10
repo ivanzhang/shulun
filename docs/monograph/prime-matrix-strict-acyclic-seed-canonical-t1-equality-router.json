@@ -1,0 +1,151 @@
+{
+  "actual_source_entropy_theorem_proved": false,
+  "acyclic_seed_branch_key_lock_proved": false,
+  "acyclic_seed_to_canonical_t1_coefficient_equality_proved": false,
+  "acyclic_windowed_kloosterman_dls_internal_estimate_proved": false,
+  "all_mismatches_force_registered_defect_or_actual_source_proved": false,
+  "canonical_equality_case_absorbed": true,
+  "canonical_equality_not_global_contradiction": true,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_canonical_t1_equality_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "equality_branch_classifier_closed": true,
+  "hypothetical_chain_only": true,
+  "mismatch_cases": [
+    {
+      "case": "MissingT1SourceRow",
+      "description": "acyclic seed 没有独立 T1 系数行，只能从下游覆盖或 payment 读取。",
+      "route": "registered source-missing return / PDEC-SAE-ColumnCRT。"
+    },
+    {
+      "case": "TerminalDependentBranchKey",
+      "description": "branch key、符号或权重依赖 terminal payment、PDEC/SAE 或后验投影。",
+      "route": "registered phase defect / named terminal return。"
+    },
+    {
+      "case": "GenuineNoncanonicalT1Identity",
+      "description": "存在独立 pre-Cauchy 算术恒等式，但不是 canonical RIW/Buchstab 系数。",
+      "route": "actual signed source / ExactUV / source entropy 主线。"
+    },
+    {
+      "case": "CleanDiffuseResidual",
+      "description": "低维缺陷已剥离，但 residual 仍为非 canonical clean diffuse object。",
+      "route": "acyclic windowed DLS / CleanKLS。"
+    }
+  ],
+  "next_direct_attack_target": "AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+    "AcyclicWindowedKloostermanDLSInternalEstimate",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`AcyclicSeedToCanonicalT1CoefficientEqualityAndBranchKeyLock` 已被分支分类：若 acyclic seed 在 T1 逐点等于 canonical RIW/Buchstab 系数并锁住同一 branch key，则该 case 只被吸收到 canonical scoped promotion，不给完整行/列无条件矛盾；若不等，则必须证明 mismatch 强制落入 actual signed source/ExactUV/source entropy、registered terminal defect，或 acyclic windowed DLS。现有早期零行几何与真实结构压力不能直接证明该等式，也不能证明全部 mismatch 已被排斥。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EqualityTargetImported",
+      "meaning": "上一层已把 canonical pre-Cauchy 身份账本压到 acyclic seed 与 canonical T1 系数逐点等式。",
+      "proved": false,
+      "remaining": "AcyclicSeedToCanonicalT1CoefficientEqualityAndBranchKeyLock"
+    },
+    {
+      "closed": true,
+      "gate": "ScopedCanonicalFormulaAvailable",
+      "meaning": "canonical RIW/Buchstab T1 公式在 canonical branch 内已闭合，可作为比较右端。",
+      "proved": true,
+      "remaining": "仍需证明 acyclic seed 等于该右端。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalEqualityCaseAbsorbed",
+      "meaning": "若逐点等式、branch-key lock 和 no terminal dependence 全部成立，该 case 只进入 canonical scoped promotion。",
+      "proved": true,
+      "remaining": "AcyclicSeedEqualsCanonicalT1CaseAbsorbedByScopedCanonicalPromotion"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalEqualityNotGlobalContradiction",
+      "meaning": "canonical scoped promotion 不是完整行/列无条件闭合；它只删除已证明 canonical 的 case。",
+      "proved": true,
+      "remaining": "row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedZeroRowCannotProveEquality",
+      "meaning": "早期零行反例给 unsigned CRT/covering data，不能直接给 canonical signed T1 coefficient equality。",
+      "proved": true,
+      "remaining": "AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLiftStillOpenForMismatch",
+      "meaning": "若 mismatch 是 genuine noncanonical T1 identity，仍需 actual signed source、权重律、Phi 推前和 branch 预算。",
+      "proved": false,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalDependentSelectionRejected",
+      "meaning": "若 equality 只能在 terminal extraction 之后识别，则不是 T1 branch-key lock，必须命名回流。",
+      "proved": true,
+      "remaining": "registered terminal defect / named return。"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexamplePressureNotEnoughForEquality",
+      "meaning": "反例链与真实结构链已有压力场，但目前只产生 unsigned rigidity 和候选矛盾，不产生 canonical T1 等式。",
+      "proved": true,
+      "remaining": "StableShortSameLabelRecurrenceOrRegisteredPhaseDefect OR signed lift。"
+    },
+    {
+      "closed": true,
+      "gate": "ActualSourceLaneRemainsOpen",
+      "meaning": "非 canonical T1 身份若存在，应进入 actual-source 熵/ExactUV 支撑；该主线仍未证明。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CleanDLSLaneRemainsOpen",
+      "meaning": "clean diffuse residual 的解析出口仍未自足闭合。",
+      "proved": false,
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": true,
+      "gate": "EqualityBranchClassifierClosed",
+      "meaning": "等式目标已被分类为 canonical absorbed case 或 mismatch forcing case；不能再把 equality 当作无来源常数填充。",
+      "proved": true,
+      "remaining": "AcyclicSeedEqualsCanonicalT1CaseAbsorbedByScopedCanonicalPromotion OR AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicSeedToCanonicalT1EqualityCurrentCorpusProved",
+      "meaning": "当前材料没有证明 acyclic seed 逐点等于 canonical T1 系数，也没有证明全部 mismatch 都已触发已闭合终端缺陷。",
+      "proved": false,
+      "remaining": "AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "scoped_canonical_formula_available": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-canonical-source-self-contained-final-theorem-router.json": "8d45dd95c52f37a36fd0e35002ffbebe3977ffabacead69021dc5ef19bfad9c0",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.json": "6c1241bb0dd29f19cec15f147b56e495c551fb7e813158491d5a52201848d982",
+    "docs/monograph/prime-matrix-strict-acyclic-canonical-precauchy-identity-router.json": "6d2bd643f425b501df02cac5f35bf460b7ebf5cea40f4c4da35b30222f352838",
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.json": "89f695e1ad123d1461acb338ddf0b371ef49a266baf3b2580961148943c5f594",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-canonical-lock-branch-absorption-router.json": "a9ea94f0d11b05d9fff7e55f8350c0cd060f4a889b4b515e0b0b9d68bcd57e8e",
+    "docs/monograph/prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json": "960a954eca848fa45c0ebb0c0086357477c058bbaf7dc4a3f966117c8c03ce21"
+  },
+  "status": "acyclic_seed_canonical_t1_equality_classified_canonical_case_absorbed_mismatch_open",
+  "strict_active_noncanonical_gap_after_router": "AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem OR AcyclicWindowedKloostermanDLSInternalEstimate",
+  "terminal_dependent_selection_rejected": true,
+  "terminal_gap_after_router": "AcyclicSeedEqualsCanonicalT1CaseAbsorbedByScopedCanonicalPromotion OR AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect",
+  "terminal_gap_before_router": "AcyclicSeedToCanonicalT1CoefficientEqualityAndBranchKeyLock",
+  "unsigned_zero_row_cannot_prove_equality": true
+}
