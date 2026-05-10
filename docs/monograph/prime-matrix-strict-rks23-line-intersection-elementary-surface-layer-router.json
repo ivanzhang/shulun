@@ -1,0 +1,147 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_line_intersection_elementary_surface_layer_router",
+  "closed_gates": [
+    "PreviousLineIntersectionFrontierReady",
+    "InterpolationSurfaceThroughAllLinesClosed",
+    "OffSurfaceBezoutIntersectionCountClosed",
+    "PlaneAndQuadricDegenerateComponentAccountClosed",
+    "ElementarySurfaceLayerClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "elementary_surface_layer_closed": true,
+  "empirical_absence_not_used": true,
+  "interpolation_proof": {
+    "constraints_per_line": "vanishing on one line imposes at most D+1 linear conditions after restricting to a univariate polynomial",
+    "degree_choice": "choose D=C*ceil(sqrt(n)) with C large enough",
+    "dimension_count": "binomial(D+3,3)>n(D+1) for an absolute C, so a nonzero polynomial vanishing on all L exists",
+    "input": "n=|L| affine lines in F^3",
+    "output": "there is a surface S={F=0} of degree O(|L|^(1/2)) containing all lines of L",
+    "unknowns": "dimension of polynomials of degree <=D in three variables is binomial(D+3,3)"
+  },
+  "interpolation_surface_through_all_lines_closed": true,
+  "next_direct_attack_target": "SelfContainedRuledAndNonRuledSurfaceLineCountingWithPositiveCharacteristicCutoff",
+  "next_required_input": "SelfContainedKollarRuledSurfaceExceptionalLineAndNonRuledLineIntersectionTheorems",
+  "no_theorem_switch": true,
+  "off_surface_bezout_intersection_count_closed": true,
+  "off_surface_proof": {
+    "input": "a line m in M not contained in S={F=0}",
+    "intersection_bound": "m meets S in at most D points, counted without multiplicity for incidence purposes",
+    "restriction": "F restricted to m is a nonzero univariate polynomial of degree <=D",
+    "sum": "all such M-lines contribute O(D|M|)=O(|L|^(1/2)|M|)"
+  },
+  "open_gates": [
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前唯一内部自足线继续推进：二分线交点界中的初等曲面层已经闭合。具体闭合了三项：用多项式维数计数构造穿过 L 中全部直线的低次数曲面；用一元 Bézout 控制不含于该曲面的 M 直线；用 quadric 退化假设处理平面/二次曲面分量。真正剩余因此缩为 ruled/non-ruled 曲面分量的 Kollár 型线计数与正特征次数截断。在该包内联前，row_column_unconditional_closed 仍必须保持 false。",
+  "plane_quadric_degenerate_component_account_closed": true,
+  "plane_quadric_proof": {
+    "charge": "each such component contains fewer than s L-lines or fewer than t M-lines; charge at most s|M_i| or t|L_i|",
+    "component_types": "plane or quadric irreducible/reducible components of the interpolating surface",
+    "degeneracy_hypothesis": "no quadric contains s lines of L and t lines of M",
+    "plane_handling": "a plane is contained in a reducible quadric after adjoining another plane, so the same s,t exclusion applies",
+    "sum": "summing over components gives O(t|L|+s|M|)"
+  },
+  "previous_line_intersection_frontier_ready": true,
+  "remaining_ruled_package": {
+    "non_ruled": "need a self-contained proof that a non-ruled component of degree d has O(d^3) line-line intersection points among contained lines",
+    "positive_characteristic_cutoff": "need the degree<characteristic condition, tied to |L|=O(p^2), for the non-ruled line-count theorem",
+    "singly_ruled": "need a self-contained proof that only O(1) exceptional lines per singly ruled component can meet infinitely many component lines, while all other lines meet O(deg S_i) lines",
+    "why_not_closed": "these are algebraic-geometry structure theorems, not consequences of the elementary interpolation/Bézout layer alone"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousLineIntersectionFrontierReady",
+      "meaning": "上一证书已把真正剩余固定为二分 Guth-Katz/Kollár 线交点证明包。",
+      "proved": true,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": true,
+      "gate": "InterpolationSurfaceThroughAllLinesClosed",
+      "meaning": "用三变量多项式维数计数构造次数 O(|L|^1/2) 的曲面穿过 L 中全部直线。",
+      "proved": true,
+      "remaining": "InterpolationSurfaceThroughAllLinesOfL"
+    },
+    {
+      "closed": true,
+      "gate": "OffSurfaceBezoutIntersectionCountClosed",
+      "meaning": "不含于曲面的 M 直线每条至多贡献 deg(S) 个交点，总贡献 O(|L|^1/2|M|)。",
+      "proved": true,
+      "remaining": "OffSurfaceBezoutIntersectionCount"
+    },
+    {
+      "closed": true,
+      "gate": "PlaneAndQuadricDegenerateComponentAccountClosed",
+      "meaning": "平面/二次曲面分量由 quadric 退化假设收费到 t|L|+s|M|。",
+      "proved": true,
+      "remaining": "PlaneAndQuadricDegenerateComponentAccount"
+    },
+    {
+      "closed": true,
+      "gate": "ElementarySurfaceLayerClosed",
+      "meaning": "线交点证明中的初等插值曲面层已经闭合。",
+      "proved": true,
+      "remaining": "elementary layer closed"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "单 ruled 与非 ruled 分量的线计数仍需 Kollár/Guth-Katz 型代数几何包。",
+      "proved": false,
+      "remaining": "SelfContainedRuledAndNonRuledSurfaceLineCountingWithPositiveCharacteristicCutoff"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár ruled-surface 与正特征次数截断尚未完整内联。",
+      "proved": false,
+      "remaining": "SelfContainedRuledAndNonRuledSurfaceLineCountingWithPositiveCharacteristicCutoff"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "二分线交点界还差 ruled/non-ruled 分量计数，不能算闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 依赖二分线交点界，故仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只闭合初等曲面层；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "same_theorem_target_preserved": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-point-plane-dezeeuw-line-intersection-router.json": "955da3d4896f8c3c2db7954f22fd5b0bf734b9e4afd4bd20828d567e07787645",
+    "docs/monograph/prime-matrix-strict-rks23-rudnev-point-plane-to-reciprocal-energy-router.json": "f0e6cf292fe276c2131109a0155285f2f26cadac1c2d0ba909b34191c693b674"
+  },
+  "status": "bipartite_line_intersection_elementary_surface_layer_closed_remaining_ruled_surface_package"
+}
