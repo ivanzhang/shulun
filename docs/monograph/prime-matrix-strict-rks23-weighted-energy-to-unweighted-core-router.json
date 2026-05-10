@@ -1,0 +1,87 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_weighted_energy_to_unweighted_core_router",
+  "closed_gates": [
+    "WeightedEnergyTargetActive",
+    "PreviousL2EnergyReductionClosed",
+    "DivisorWeightedToUnweightedReductionClosed",
+    "IncidenceSumProductRouteRecovered"
+  ],
+  "core_statement": {
+    "collar": "J is a dyadic interval with |J|=N and P^(1/2)/log^236(P)<=N<=P^(1/2)log^236(P)",
+    "equivalent_original_variables": "#{n1^(-1)+n2^(-1)=n3^(-1)+n4^(-1) mod P: ni in J}",
+    "set": "B=J^{-1}={n^{-1} mod P: n in J}",
+    "sufficient_unweighted_bound": "E_+(J^{-1}) <= |J|^3/log^(472+C_weight)(P)",
+    "unweighted_energy": "E_+(B)=#{b1+b2=b3+b4 mod P: bi in B}",
+    "weighted_transfer": "E_+(B;beta)<=log^C(P) E_+(B) for divisor-bounded Vaughan weights after dyadic level splitting",
+    "why_this_is_narrower_than_bg": "It is a single reciprocal-interval four-tuple energy estimate, not the full BG multilinear theorem."
+  },
+  "counterexample_assumption_only": true,
+  "divisor_weighted_to_unweighted_reduction_closed": true,
+  "empirical_absence_not_used": true,
+  "incidence_sum_product_route_recovered": true,
+  "next_direct_attack_target": "UnweightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "UnweightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_incidence_target": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving",
+  "plain_conclusion": "加权能量输入继续剥离成功：divisor-bounded Vaughan 权重只造成固定对数损失，已经由 RKS 账本收费。因此当前真正内部自足剩余可写成纯四元组计数：`J^{-1}` 在 `F_P` 中的加性能量必须满足 `E_+(J^{-1})<=|J|^3/log^(472+C_weight)(P)`。这比完整 BG 多线性定理窄得多，但仓库内仍未给出该能量估计的自足证明。",
+  "previous_l2_energy_reduction_closed": true,
+  "required_weighted_energy_log_power": 472,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "WeightedEnergyTargetActive",
+      "meaning": "上一证书已把平衡颈部压成加权倒数区间加性能量输入。",
+      "proved": true,
+      "remaining": "WeightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "PreviousL2EnergyReductionClosed",
+      "meaning": "Cauchy/L2/correlation/Plancherel 归约已经闭合，能量输入的所需 log 指数为 472。",
+      "proved": true,
+      "remaining": "WeightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "DivisorWeightedToUnweightedReductionClosed",
+      "meaning": "Vaughan/divisor-bounded 权重可由 dyadic level splitting 与 RKS 对数账本吸收。",
+      "proved": true,
+      "remaining": "UnweightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "IncidenceSumProductRouteRecovered",
+      "meaning": "旧材料已定位 Rudnev/RNRS/sum-product 能量路线；它正对应当前纯四元组核心。",
+      "proved": true,
+      "remaining": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving"
+    },
+    {
+      "closed": false,
+      "gate": "UnweightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23",
+      "meaning": "尚未在仓库内给出 `E_+(J^{-1}) <= |J|^3/log^(472+C)(P)` 的自足证明。",
+      "proved": false,
+      "remaining": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving OR SelfContainedBourgainGaraevSumProductEnergyProofForRKS23BalancedCollar"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只去权重并固定纯计数核心；行/列无条件闭合仍不能声明。",
+      "proved": false,
+      "remaining": "UnweightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/bg-rks-block-match.md": "5bf53d6fe732110ef13fb131a61e1ef3d63d45570748bc9a56ec26894768afb9",
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/monograph/prime-matrix-strict-rks23-balanced-collar-l2-energy-reduction-router.json": "ab7aa455de3a5c7890d2041ee1bf11e38933ee49f57edc42320fc1454b9b2a0b",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0"
+  },
+  "status": "weighted_energy_reduced_to_unweighted_reciprocal_interval_fourtuple_energy",
+  "unweighted_reciprocal_interval_energy_proved": false,
+  "weighted_energy_target_active": true
+}
