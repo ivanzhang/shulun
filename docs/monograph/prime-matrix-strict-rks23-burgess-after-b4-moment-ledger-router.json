@@ -1,0 +1,201 @@
+{
+  "b4_weil_complete_rational_sum_kernel_closed_author_side": true,
+  "burgess_after_b4_target_active": true,
+  "burgess_large_packet_implication_closed": true,
+  "burgess_parameter_optimization_closed": true,
+  "burgess_pointwise_input_internalized": true,
+  "burgess_threshold_dichotomy_closure_author_side": true,
+  "burgess_vinogradov_shift_averaging_closed": true,
+  "certificate_type": "prime_matrix_strict_rks23_burgess_after_b4_moment_ledger_router",
+  "closed_gates": [
+    "BurgessAfterB4TargetActive",
+    "B4_weil_complete_rational_sum_kernel",
+    "PolyaVinogradovAndInductionShellClosed",
+    "BurgessVinogradovShiftAveragingClosed",
+    "HolderVinogradovMultiplicityCountClosed",
+    "CompleteMomentWBoundImportedAfterB4",
+    "BurgessParameterOptimizationClosed",
+    "DyadicIntervalUniformConstantsClosed",
+    "SelfContainedClassicalBurgessProofWithUniformDyadicIntervalConstants",
+    "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+    "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment"
+  ],
+  "complete_moment_w_bound_imported_after_b4": true,
+  "counterexample_assumption_only": true,
+  "downstream": {
+    "large_packet": "Burgess pointwise saving now supplies the large side branch of the four-interval character moment",
+    "not_row_column_yet": "the later promotion from RKS23 character moment to row/column theorem remains a separate audit gate",
+    "rks23_character_moment": "large plus thin branches close the RKS23 threshold dichotomy gate author-side",
+    "thin_packet": "thin dyadic packet absorption was already closed by the registered endpoint side Cauchy floor certificate"
+  },
+  "dyadic_interval_uniform_constants_closed": true,
+  "empirical_absence_not_used": true,
+  "exponent_table": [
+    {
+      "chosen_r": "5",
+      "condition": "1/(4r)=1/20<epsilon_B",
+      "delta_B": "1/400",
+      "epsilon_B": "1/16",
+      "positive": "true"
+    },
+    {
+      "chosen_r": "9",
+      "condition": "1/(4r)=1/36<epsilon_B",
+      "delta_B": "1/2592",
+      "epsilon_B": "1/32",
+      "positive": "true"
+    },
+    {
+      "chosen_r": "17",
+      "condition": "1/(4r)=1/68<epsilon_B",
+      "delta_B": "1/18496",
+      "epsilon_B": "1/64",
+      "positive": "true"
+    },
+    {
+      "chosen_r": "26",
+      "condition": "1/(4r)=1/104<epsilon_B",
+      "delta_B": "1/67600",
+      "epsilon_B": "1/100",
+      "positive": "true"
+    }
+  ],
+  "holder_vinogradov_multiplicity_count_closed": true,
+  "moment_equations": {
+    "V1": "V1=sum_x nu(x)=AN",
+    "V2": "V2=sum_x nu(x)^2<=C AN(AN/P+log^2 P)",
+    "V_definition": "V=sum_x nu(x) |sum_{1<=b<=B} chi(x+b)|",
+    "W": "W=sum_x |sum_{1<=b<=B} chi(x+b)|^(2r)<=C_r(B^r P+B^(2r)P^(1/2))",
+    "holder": "V<=V1^(1-1/r) V2^(1/(2r)) W^(1/(2r))",
+    "optimized_bound": "|S(M,N)|<=C_r N^(1-1/r) P^((r+1)/(4r^2))(log P)^(1/r)"
+  },
+  "next_direct_attack_target": "RKS23CharacterMomentToRowColumnPromotionGateAudit",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "B4 闭合后，经典 Burgess 的剩余已不再是黑箱。本证书把 Pólya-Vinogradov/归纳启动、ab 移位平均、Hölder 三账本、Vinogradov 重数计数、B4 完全 2r 矩输入、以及 `A,B,r` 参数优化接成一条作者侧内部链，得到素模非主角色在 `|I|>=P^(1/4+epsilon_B)` 区间上的固定幂节省。结合已闭合薄包吸收，RKS23 四区间角色矩阈值门闭合。审稿边界仍保持清楚：这还不是行/列最终命题无条件闭合，下一步必须审查 RKS23 角色矩到行/列推广门是否已经全部登记。",
+  "polya_vinogradov_and_induction_shell_closed": true,
+  "previous_frontier_matches": true,
+  "proof_ledger": {
+    "B0_pv_induction_shell": "finite Fourier completion gives Polya-Vinogradov |S|<<P^(1/2)log P; trivial bound handles very short N; the middle range is handled by induction on N",
+    "B1_interval_translation": "for H=AB<N, average S(M+ab,N) over 1<=a<=A,1<=b<=B; endpoint discrepancies are shorter sums and are absorbed by the induction majorant E(H)",
+    "B2_vinogradov_shift_amplification": "after multiplying by a inverse mod P, the averaged sum becomes H^(-1) sum_x nu(x) sum_{b<=B} chi(x+b)",
+    "B3_holder_and_vinogradov_count": "Holder gives V<=V1^(1-1/r)V2^(1/(2r))W^(1/(2r)); V1=AN and the standard congruence count gives V2<=C AN(AN/P+log^2 P)",
+    "B4_complete_moment_import": "the previous selector-to-Kummer certificate supplies W<=C_r(B^r P+B^(2r)P^(1/2))",
+    "B5_parameter_choice": "take B about r P^(1/(2r)) and A about N/(C_r P^(1/(2r))); then H=AB is a fixed fraction of N and V/H has Burgess exponent (r+1)/(4r^2)",
+    "B6_dyadic_uniformity": "all endpoint splits, dyadic labels and fixed packet choices add only constants or P^o(1), absorbed into a smaller delta_B for P>=P_0(epsilon_B)"
+  },
+  "rejected_shortcuts": {
+    "no_b4_reopen": "the complete rational-sum kernel remains imported from the selector-to-Kummer closure and is not re-proved here",
+    "no_empirical_input": "no finite runner or absence-of-counterexample audit is used as a proof input",
+    "no_external_burgess_black_box": "the certificate does not count classical Burgess as an imported theorem; it registers the internal proof ledger after B4",
+    "no_row_column_jump": "closing Burgess/RKS23 character moment is not identical to closing every row/column promotion gate"
+  },
+  "rks23_character_moment_closed_author_side_self_contained": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "BurgessAfterB4TargetActive",
+      "meaning": "上一证书已闭合 B4，并把唯一 Burgess 剩余指向 B4 后放大矩账本。",
+      "proved": true,
+      "remaining": "BurgessAmplificationMomentLedgerAfterB4KernelClosure"
+    },
+    {
+      "closed": true,
+      "gate": "B4_weil_complete_rational_sum_kernel",
+      "meaning": "完全有理函数角色和内核已由 selector/Kummer/Stepanov 链闭合。",
+      "proved": true,
+      "remaining": "imported closed"
+    },
+    {
+      "closed": true,
+      "gate": "PolyaVinogradovAndInductionShellClosed",
+      "meaning": "Pólya-Vinogradov 启动门、平凡短区间门和中区间归纳外壳已登记。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessVinogradovShiftAveragingClosed",
+      "meaning": "ab 移位平均和乘法反演把原区间和转成带权短移位和。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "HolderVinogradovMultiplicityCountClosed",
+      "meaning": "Hölder 与 `V1,V2,W` 三账本、以及 `V2` 的 Vinogradov 同余计数已闭合。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteMomentWBoundImportedAfterB4",
+      "meaning": "B4 给出 `W<=C_r(B^rP+B^(2r)P^(1/2))`。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessParameterOptimizationClosed",
+      "meaning": "选择 `B~rP^(1/(2r))`, `A~N/(C_rP^(1/(2r)))` 得到经典 Burgess 指数。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicIntervalUniformConstantsClosed",
+      "meaning": "环绕区间拆分、dyadic 包和多对数损耗均可由固定 `epsilon_B` 的 `delta_B` 吸收。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedClassicalBurgessProofWithUniformDyadicIntervalConstants",
+      "meaning": "经典 Burgess 点态证明组件在 B4 后作者侧闭合。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+      "meaning": "素模非主乘法角色在 `P^(1/4+epsilon_B)` 以上区间的点态幂节省闭合。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment",
+      "meaning": "大包 Burgess 与已闭合薄包吸收合并，RKS23 四区间角色矩阈值门闭合。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本轮关闭 Burgess/RKS23 角色矩输入，但不自动关闭后续行/列推广与最终命题门。",
+      "proved": false,
+      "remaining": "RKS23CharacterMomentToRowColumnPromotionGateAudit"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_classical_burgess_proof_internalized": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-burgess-pointwise-internalization-router.json": "79ee05b6935a2af35127166d224bbc66adf14c05922800d856bdac3f13f2e851",
+    "docs/monograph/prime-matrix-strict-rks23-character-moment-burgess-threshold-router.json": "d1c00d1f2d43e8cf6d1e741ce1dc713cae8532762d9a4dc337c7c14c9566b065",
+    "docs/monograph/prime-matrix-strict-rks23-registered-endpoint-side-cauchy-floor-router.json": "e2eab7543e78b43e1c0ed70f2e77b2c3b0de5ef66e01df199e411f4485a3fa06",
+    "docs/monograph/prime-matrix-strict-rks23-selector-to-kummer-trace-closure-router.json": "9ed811ba99fbfa00f01528f888c4e95f67652f93de968cbaa7702c889a958566"
+  },
+  "status": "burgess_pointwise_internalized_after_b4_moment_ledger_rks23_threshold_closed",
+  "theorem_statement": {
+    "burgess_form": "|sum_{n in I} chi(n)| <= C_r |I|^(1-1/r) P^((r+1)/(4r^2)) (log P)^(1/r)",
+    "character": "nonprincipal multiplicative character chi mod P",
+    "constant_discipline": "C_r and the lower threshold P_0(r) depend only on r, hence only on fixed epsilon_B",
+    "interval": "any consecutive interval I, with a wrapping interval split into at most two intervals",
+    "large_interval_saving": "if |I|>=P^(1/4+epsilon_B), choose r with 1/(4r)<epsilon_B and obtain |S_I|<=|I| P^(-delta_B) for large P",
+    "modulus": "prime P"
+  },
+  "thin_dyadic_packet_mass_absorption_proved": true
+}
