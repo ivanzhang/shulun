@@ -1,0 +1,200 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_ruled_surface_component_accounting_router",
+  "characteristic_cutoff": {
+    "current_reduction": "it is enough to impose or extract an explicit constant c0 with |L|<=c0*p^2 so D<p",
+    "degree_relation": "the interpolation degree D is O(|L|^(1/2))",
+    "needed_condition": "the non-ruled line-count theorem in positive characteristic requires component degree d_i<char(F)",
+    "not_yet_closed": "the manuscript has not fixed the absolute c0 hidden in the O(|L|=O(p^2)) condition"
+  },
+  "closed_gates": [
+    "PreviousRuledFrontierReady",
+    "ComponentAssignmentAndMassLedgerClosed",
+    "DegreeSumLedgerClosed",
+    "SinglyRuledContributionAccountingReduced",
+    "NonRuledContributionAccountingReduced",
+    "PositiveCharacteristicCutoffReducedToExplicitDegreeConstant"
+  ],
+  "component_accounting": {
+    "assignment_rule": "each line contained in S is assigned to one component containing it, e.g. the smallest-index component",
+    "decomposition": "write the interpolation surface S as irreducible components S_i with degrees d_i",
+    "degree_ledger": "sum_i d_i<=deg(S)=O(|L|^(1/2))",
+    "mass_ledger": "sum_i |L_i|=|L| and sum_i |M_i|<=|M|",
+    "why_closed": "this is a finite bookkeeping step after the elementary surface layer"
+  },
+  "component_assignment_closed": true,
+  "counterexample_assumption_only": true,
+  "degree_sum_ledger_closed": true,
+  "empirical_absence_not_used": true,
+  "explicit_degree_less_than_characteristic_constant_closed": false,
+  "final_surface_atoms": [
+    {
+      "atom": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem",
+      "needed_for": "singly ruled component contribution",
+      "status": "open"
+    },
+    {
+      "atom": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem",
+      "needed_for": "non-ruled component contribution",
+      "status": "open"
+    },
+    {
+      "atom": "ExplicitDegreeLessThanCharacteristicCutoffForKollarLineCounting",
+      "needed_for": "positive characteristic self-contained statement with explicit size constant",
+      "status": "open"
+    }
+  ],
+  "next_direct_attack_target": "SelfContainedFlecnodeAndRuledSurfaceLineTheoremPackWithDegreeLessThanCharacteristic",
+  "next_required_input": "SinglyRuledExceptionalLineTheorem + NonRuledFlecnodeLineIntersectionO_d3 + explicit c0 p^2 cutoff",
+  "no_theorem_switch": true,
+  "non_ruled_accounting": {
+    "absorption": "deg(S)^3=O(|L|^(3/2))<=O(|L|^(1/2)|M|) because |L|<=|M|",
+    "closed_scope": "the summation and target absorption are closed once the non-ruled O(d^3) theorem is available",
+    "component_charge": "sum_i O(d_i^3)<=O((sum_i d_i)^3)",
+    "conditional_input": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem",
+    "expected_content": "a non-ruled irreducible surface of degree d_i has O(d_i^3) line-line intersection points among contained lines"
+  },
+  "non_ruled_accounting_reduction_closed": true,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "open_gates": [
+    "SinglyRuledExceptionalLineTheoremClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "ExplicitDegreeLessThanCharacteristicConstantClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前唯一内部自足线继续压窄：ruled/non-ruled 剩余中的分量分配、次数求和、singly-ruled 条件吸收、non-ruled 条件吸收都已闭合为账本。真正剩余不再是整个线交点界，而是三个精确代数曲面输入：singly-ruled 异常线定理、非 ruled 曲面的 O(d^3) 线交点定理、以及正特征下 degree<p 的显式 c0 截断。这些结构定理未内联前，row_column_unconditional_closed 仍必须保持 false。",
+  "positive_characteristic_cutoff_reduced_to_explicit_degree_constant": true,
+  "previous_ruled_frontier_ready": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousRuledFrontierReady",
+      "meaning": "上一证书已把剩余固定为 ruled/non-ruled 曲面线计数与正特征截断。",
+      "proved": true,
+      "remaining": "SelfContainedRuledAndNonRuledSurfaceLineCountingWithPositiveCharacteristicCutoff"
+    },
+    {
+      "closed": true,
+      "gate": "ComponentAssignmentAndMassLedgerClosed",
+      "meaning": "把曲面分解为不可约分量并将每条直线唯一分配，质量账本闭合。",
+      "proved": true,
+      "remaining": "component accounting closed"
+    },
+    {
+      "closed": true,
+      "gate": "DegreeSumLedgerClosed",
+      "meaning": "分量次数和由插值曲面总次数控制。",
+      "proved": true,
+      "remaining": "degree ledger closed"
+    },
+    {
+      "closed": true,
+      "gate": "SinglyRuledContributionAccountingReduced",
+      "meaning": "一旦有 singly-ruled 异常线定理，该分量贡献可吸收到目标主项。",
+      "proved": true,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "NonRuledContributionAccountingReduced",
+      "meaning": "一旦有非 ruled O(d^3) 线交点定理，该分量贡献可吸收到目标主项。",
+      "proved": true,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": true,
+      "gate": "PositiveCharacteristicCutoffReducedToExplicitDegreeConstant",
+      "meaning": "正特征条件已压成显式 c0：需保证插值曲面次数小于 p。",
+      "proved": true,
+      "remaining": "ExplicitDegreeLessThanCharacteristicCutoffForKollarLineCounting"
+    },
+    {
+      "closed": false,
+      "gate": "SinglyRuledExceptionalLineTheoremClosed",
+      "meaning": "尚未作者侧证明 singly-ruled 曲面只有 O(1) 特殊线及普通线 O(d) 相交。",
+      "proved": false,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "meaning": "尚未作者侧证明非 ruled 曲面内部线交点 O(d^3)。",
+      "proved": false,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": false,
+      "gate": "ExplicitDegreeLessThanCharacteristicConstantClosed",
+      "meaning": "正特征版本仍需固定 |L|<=c0 p^2 的显式常数。",
+      "proved": false,
+      "remaining": "ExplicitDegreeLessThanCharacteristicCutoffForKollarLineCounting"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "曲面结构定理包未内联前，ruled/non-ruled 总包不闭合。",
+      "proved": false,
+      "remaining": "SelfContainedFlecnodeAndRuledSurfaceLineTheoremPackWithDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár/Guth-Katz 曲面结构包仍是唯一内部自足剩余。",
+      "proved": false,
+      "remaining": "SelfContainedFlecnodeAndRuledSurfaceLineTheoremPackWithDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "线交点界依赖曲面结构包，仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 依赖线交点界，仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只闭合分量记账和条件吸收；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "same_theorem_target_preserved": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "singly_ruled_accounting": {
+    "closed_scope": "the summation and absorption are closed once the exceptional-line theorem is available",
+    "conditional_input": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem",
+    "exceptional_charge": "O(1) exceptional lines per component contribute O(max(|L_i|,|M_i|)), summing harmlessly under |L|<=|M| and degree/component accounting",
+    "expected_content": "on a singly ruled irreducible component, at most O(1) exceptional lines meet infinitely many component lines; all other contained lines meet O(d_i) contained lines",
+    "ordinary_charge": "ordinary lines contribute O(d_i|L_i|), and O(sum_i d_i |L_i|)<=O(deg(S)|L|)<=O(|L|^(1/2)|M|)"
+  },
+  "singly_ruled_accounting_reduction_closed": true,
+  "singly_ruled_exceptional_line_theorem_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-line-intersection-elementary-surface-layer-router.json": "6d98de51773d42d0b3b80afa3d4ea44925f71f4dd4ffc56930fa3fa70ccca7fd",
+    "docs/monograph/prime-matrix-strict-rks23-point-plane-dezeeuw-line-intersection-router.json": "955da3d4896f8c3c2db7954f22fd5b0bf734b9e4afd4bd20828d567e07787645"
+  },
+  "status": "ruled_surface_component_accounting_closed_remaining_flecnode_structure_theorem_pack"
+}
