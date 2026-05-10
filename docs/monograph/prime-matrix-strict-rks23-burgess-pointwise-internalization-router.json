@@ -1,0 +1,151 @@
+{
+  "burgess_exponent_optimization_ledger_closed": true,
+  "burgess_large_packet_implication_closed": true,
+  "burgess_pointwise_input_internalized": false,
+  "burgess_pointwise_target_active": true,
+  "certificate_type": "prime_matrix_strict_rks23_burgess_pointwise_internalization_router",
+  "classical_burgess_interface": {
+    "choice_of_r": "choose integer r with 1/(4r)<epsilon_B",
+    "delta_choice": "after absorbing C_r and polylog losses for large P, take any delta_B < (epsilon_B-1/(4r))/r",
+    "dyadic_packet_match": "packet intervals are ordinary intervals after at most a two-piece split, so the same bound applies",
+    "large_branch_consequence": "four large sides give the character-moment saving already registered by the Burgess-threshold router",
+    "saving_exponent": "if H>=P^(1/4+epsilon_B), then |S|/H <= C_r P^{-(epsilon_B-1/(4r))/r+o(1)}",
+    "standard_form": "|S_I(chi)| <= C_r H^(1-1/r) P^((r+1)/(4r^2)) up to harmless log/P^o(1) loss"
+  },
+  "closed_gates": [
+    "BurgessPointwiseTargetActive",
+    "NeededInputMatchesClassicalBurgessPrimeModulus",
+    "BurgessExponentOptimizationLedgerClosed",
+    "ExternalClassicalBurgessWouldCloseRKS23LargeBranch"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_classical_burgess_would_close_rks23_large_branch": true,
+  "internalization_frontier": {
+    "B1_interval_completion_and_translation": "elementary normalization; must be written with endpoint/wrap constants",
+    "B2_vinogradov_shift_amplification": "needs a self-contained lemma with A,B,r parameters and no hidden range loss",
+    "B3_amplified_moment_energy_ledger": "needs the exact 2r-th moment expansion and collision-count bound",
+    "B4_weil_complete_rational_sum_kernel": "needs the complete character-sum bound for non-perfect-power rational functions",
+    "B5_parameter_optimization_and_dyadic_uniformity": "the exponent algebra is closed here; constants still depend on B2-B4"
+  },
+  "needed_input_matches_classical_burgess_prime_modulus": true,
+  "needed_pointwise_input": {
+    "character": "nonprincipal multiplicative character chi mod P; for prime P it is primitive",
+    "interval": "any consecutive interval I in a dyadic packet; a wrapping interval splits into at most two ordinary intervals",
+    "length_condition": "|I|>=P^(1/4+epsilon_B)",
+    "modulus": "prime P",
+    "required_bound": "|sum_{n in I} chi(n)| <= |I| P^(-delta_B)",
+    "uniformity": "epsilon_B fixed; constants may depend on epsilon_B but not on P, chi, or the dyadic packet"
+  },
+  "next_atomic_attack_target": "BurgessAmplificationMomentWeilLedgerForLargeDyadicIntervals",
+  "next_attack_order": [
+    "B4_weil_complete_rational_sum_kernel",
+    "B2_vinogradov_shift_amplification",
+    "B3_amplified_moment_energy_ledger",
+    "B1_interval_completion_and_translation",
+    "B5_parameter_optimization_and_dyadic_uniformity"
+  ],
+  "next_direct_attack_target": "SelfContainedClassicalBurgessProofWithUniformDyadicIntervalConstants",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "BurgessProofComponentsInternalized",
+    "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+    "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment",
+    "RowColumnUnconditionalClosed"
+  ],
+  "optimization_table": [
+    {
+      "chosen_r": "5",
+      "delta_B": "1/400",
+      "epsilon_B": "1/16",
+      "positive": "true"
+    },
+    {
+      "chosen_r": "9",
+      "delta_B": "1/2592",
+      "epsilon_B": "1/32",
+      "positive": "true"
+    },
+    {
+      "chosen_r": "17",
+      "delta_B": "1/18496",
+      "epsilon_B": "1/64",
+      "positive": "true"
+    },
+    {
+      "chosen_r": "26",
+      "delta_B": "1/67600",
+      "epsilon_B": "1/100",
+      "positive": "true"
+    }
+  ],
+  "plain_conclusion": "当前唯一内部自足线的真正剩余已精确压缩为经典 Burgess 点态角色和证明的内部化。所需大包输入与素模经典 Burgess 定理严格匹配：对任意非主角色和长度 `H>=P^(1/4+epsilon_B)` 的区间，Burgess 形式经 `1/(4r)<epsilon_B` 的参数选择给出 `|S|<=H P^(-delta_B)`。因此若接受经典 Burgess 作为外部已证定理，RKS23 大包与已闭合薄包可合并闭合；若要求作者侧完全自足，剩余不再是含糊的角色矩黑箱，而是 Burgess 放大、2r 矩能量账本、Weil 完全有理函数角色和界，以及区间/常数统一性的内部证明包。行/列命题仍未在作者侧无条件闭合。",
+  "rks23_character_moment_closed_author_side_self_contained": false,
+  "rks23_character_moment_closed_under_external_burgess": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "BurgessPointwiseTargetActive",
+      "meaning": "薄包分支已闭合，最新全局剩余确认为大包 Burgess 点态角色和输入。",
+      "proved": true,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": true,
+      "gate": "NeededInputMatchesClassicalBurgessPrimeModulus",
+      "meaning": "所需输入正是素模非主角色在长度 `P^(1/4+epsilon_B)` 以上区间的经典 Burgess 点态节省。",
+      "proved": true,
+      "remaining": "classical Burgess theorem"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessExponentOptimizationLedgerClosed",
+      "meaning": "由经典 Burgess 形式选择 `1/(4r)<epsilon_B` 可得到固定正的 `delta_B`。",
+      "proved": true,
+      "remaining": "closed algebra"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalClassicalBurgessWouldCloseRKS23LargeBranch",
+      "meaning": "若接受经典 Burgess 定理作为外部已证定理，则大包分支与已闭合薄包分支合并后闭合 RKS23 角色矩门。",
+      "proved": true,
+      "remaining": "external theorem acceptance"
+    },
+    {
+      "closed": false,
+      "gate": "BurgessProofComponentsInternalized",
+      "meaning": "仓库内尚未把 Burgess 的放大、矩估计与 Weil 完全和证明逐项写成自足证明。",
+      "proved": false,
+      "remaining": "SelfContainedClassicalBurgessProofWithUniformDyadicIntervalConstants"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+      "meaning": "作者侧完全自足闭合仍需完成经典 Burgess 证明组件账本。",
+      "proved": false,
+      "remaining": "BurgessAmplificationMomentWeilLedgerForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment",
+      "meaning": "薄包已闭合；无外部 Burgess 或内部 Burgess 证明前，作者侧不声明该门无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只完成 Burgess 输入的严格匹配和内部化边界压缩，不声明行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-character-moment-burgess-threshold-router.json": "d1c00d1f2d43e8cf6d1e741ce1dc713cae8532762d9a4dc337c7c14c9566b065",
+    "docs/monograph/prime-matrix-strict-rks23-registered-endpoint-side-cauchy-floor-router.json": "e2eab7543e78b43e1c0ed70f2e77b2c3b0de5ef66e01df199e411f4485a3fa06"
+  },
+  "status": "burgess_pointwise_input_strictly_matched_to_classical_burgess_internalization_frontier",
+  "thin_dyadic_packet_mass_absorption_proved": true
+}
