@@ -1,0 +1,115 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_noncircular_rnrs_interface_router",
+  "closed_gates": [
+    "NonCircularEnergyTargetActive",
+    "FixedPowerEnergyReductionImported",
+    "MobiusAndInverseSumproductDictionaryImported",
+    "RNRSRudnevInterfaceStatementClosed",
+    "RNRSParameterSufficiencyClosed",
+    "ExternalRudnevRNRSWouldCloseIfAccepted"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "external_rudnev_rnrs_would_close_if_accepted": true,
+  "fixed_power_energy_reduction_imported": true,
+  "interface": {
+    "accepted_external_route": "AcceptRudnevRNRSReciprocalIntervalEnergyEstimateWithParameterMatch",
+    "collar": "|J|=N with P^(1/2)/log^236(P)<=N<=P^(1/2)log^236(P)",
+    "noncircular_requirement": "the proof must be imported from incidence/sum-product geometry, not from the RKS23 inverse-sumproduct chain itself",
+    "rudnev_input": "point-plane incidence I(R,Pi)<=C_Rud(|R|^(1/2)|Pi|+k|Pi|), plus RNRS reciprocal-energy corollary",
+    "set": "B=J^{-1} in F_P, where J is an integer interval",
+    "sufficient_bound": "E_+(J^{-1}) <= C*N^(5/2)*P^eps, or any E_+<=N^(3-delta_E) with fixed delta_E>0",
+    "target_energy": "E_+(B)=#{b1+b2=b3+b4: bi in B}",
+    "why_sufficient": "N^delta_E dominates every fixed log power in the square-root log collar"
+  },
+  "mobius_and_inverse_sumproduct_dictionary_imported": true,
+  "next_direct_attack_target": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+  "next_required_input": "SelfContainedRudnevPointPlaneIncidenceProofWithReciprocalEnergyCorollary",
+  "no_theorem_switch": true,
+  "noncircular_audit": {
+    "allowed": "a direct self-contained proof of Rudnev point-plane incidence and its reciprocal-energy corollary",
+    "allowed_external": "explicit acceptance of Rudnev/RNRS with parameter match",
+    "cycle_guard": "previous router detected that RKS-log -> balanced energy -> Mobius overlap returns to the same inverse-sumproduct frontier",
+    "not_allowed": "reusing the already cyclic RKS23/slope-conic/character-moment route as the proof of the same energy input"
+  },
+  "noncircular_energy_target_active": true,
+  "open_gates": [
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_external_route": "AcceptRudnevRNRSReciprocalIntervalEnergyEstimateWithParameterMatch",
+  "plain_conclusion": "非循环剩余继续压窄：当前不再需要泛泛地重证 BG/RKS23，而只需一个独立的倒数区间能量定理。精确接口是：对平方根对数颈部中的区间 `J`，证明 `E_+(J^{-1})` 有任意固定幂节省；典型 Rudnev/RNRS 形态 `E_+(J^{-1})<=C|J|^(5/2)P^eps` 已足够。接受外部 Rudnev/RNRS 可闭合这一输入；严格自足路线则必须内联 Rudnev 点-平面 incidence 及其 reciprocal-energy 推论，不能再回用已经检测到回环的 RKS23/inverse-sumproduct 链。",
+  "rnrs_parameter_sufficiency_closed": true,
+  "rnrs_rudnev_interface_statement_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NonCircularEnergyTargetActive",
+      "meaning": "上一证书已把真正剩余固定为非循环倒数区间能量输入。",
+      "proved": true,
+      "remaining": "NonCircularSelfContainedReciprocalIntervalEnergyPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "FixedPowerEnergyReductionImported",
+      "meaning": "只需固定幂节省，不必直接证明 log^-472。",
+      "proved": true,
+      "remaining": "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "MobiusAndInverseSumproductDictionaryImported",
+      "meaning": "倒数能量、Möbius 重叠谱、反演小和集字典已经闭合。",
+      "proved": true,
+      "remaining": "dictionary closed"
+    },
+    {
+      "closed": true,
+      "gate": "RNRSRudnevInterfaceStatementClosed",
+      "meaning": "所需非循环输入已精确为 Rudnev/RNRS 倒数区间能量固定幂节省接口。",
+      "proved": true,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    },
+    {
+      "closed": true,
+      "gate": "RNRSParameterSufficiencyClosed",
+      "meaning": "`E_+(J^{-1})<=C N^(5/2)P^eps` 或任意固定幂节省足以推出当前目标。",
+      "proved": true,
+      "remaining": "parameter ledger closed"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalRudnevRNRSWouldCloseIfAccepted",
+      "meaning": "若接受外部 Rudnev/RNRS 定理并完成参数匹配，本输入可外部闭合。",
+      "proved": true,
+      "remaining": "AcceptRudnevRNRSReciprocalIntervalEnergyEstimateWithParameterMatch"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "严格内部自足版仍未内联 Rudnev 点-平面 incidence 及 RNRS 倒数能量推论。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidenceProofWithReciprocalEnergyCorollary"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是接口和参数充分性；未补入自足 incidence 证明。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "source_hashes": {
+    "docs/bibliography.md": "aaca4ff3eb53e19a7e4ca5b54b29fcecf172593324971cc3d945481774c4ff52",
+    "docs/critical-bucket-single-hit-sieve-attack.md": "85d5d2e0732a9d7de53c8eb7b8e58e64e127f35b5f83587bf08dc656dd8de179",
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/monograph/prime-matrix-strict-rks23-mobius-overlap-sumproduct-frontier-router.json": "fedb9c40a1ee856ff99e5502f06b63241c252ec5b26147551c59d5c30f47a78f",
+    "docs/monograph/prime-matrix-strict-rks23-reciprocal-energy-mobius-overlap-router.json": "1ff5cdfddf0924dbf91779052bae59ab5b808168ba2e08327e244bf687c5f63f",
+    "docs/monograph/prime-matrix-strict-rks23-self-contained-cycle-guard-frontier-router.json": "08174f571d9065b83416fe91a3cea0072502f32b2cec49cfea936a355f448cf9",
+    "docs/monograph/prime-matrix-strict-rks23-unweighted-energy-power-saving-relaxation-router.json": "06047f6e4d09a2bc121c9fabb5d6309e3c06eacf3da00b536fd893bd025c1b7a"
+  },
+  "status": "noncircular_reciprocal_energy_reduced_to_rudnev_rnrs_incidence_interface"
+}
