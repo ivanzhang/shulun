@@ -1,0 +1,177 @@
+{
+  "certificate_type": "strict_rks23_line_germ_closure_cayley_salmon_router",
+  "status": "line_germ_closure_and_cayley_salmon_closed_remaining_incidence_absorption",
+  "previous_line_germ_frontier_ready": true,
+  "line_germ_extends_to_projective_line_closed": true,
+  "grassmannian_incidence_closed": true,
+  "dominant_projection_closed": true,
+  "grassmannian_dimension_dichotomy_closed": true,
+  "algebraic_line_germ_closure_closed": true,
+  "cayley_salmon_flecnode_criterion_closed": true,
+  "non_ruled_line_intersection_theorem_closed": true,
+  "ruled_and_nonruled_component_line_count_closed": true,
+  "self_contained_kollar_ruled_surface_package_closed": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used": true,
+  "counterexample_assumption_only": true,
+  "closure_proof": {
+    "line_germ_extension": "if a projective line germ lies in Z(F), then F restricted to the full line vanishes as a univariate polynomial",
+    "incidence_variety": "I={(x,ell): x in ell and ell subset Z(F)} is algebraic because line containment is finitely many coefficient equations",
+    "dominance": "Monge prolongation gives a line through each generic smooth point, so the projection I -> Z(F) is dominant",
+    "grassmannian_image": "let Gamma be the Zariski closure of the image of I in G(1,3)",
+    "zero_dim_case": "dim Gamma=0 cannot dominate an irreducible surface by finitely many lines",
+    "one_dim_case": "dim Gamma=1 is exactly a one-parameter line family covering a dense open subset",
+    "two_dim_case": "if dim Gamma>=2, a generic point has a positive-dimensional pencil of contained lines; this forces the tangent plane section to have a plane component, hence the irreducible surface is a plane",
+    "conclusion": "in every case the irreducible component is ruled"
+  },
+  "cayley_salmon_transfer": {
+    "input": "F irreducible squarefree, deg(F)<char(k), and Flec(F) vanishes on Z(F)",
+    "monge": "previous certificate turns the flecnode condition into genuine line germs through generic points",
+    "closure": "this certificate globalizes those germs through Grassmannian incidence",
+    "result": "Z(F) is ruled; hence the Cayley-Salmon flecnode criterion is closed in the degree<p regime",
+    "nonruled_exit": "therefore in the non-ruled case Flec(F) is not identically zero on F, so Bezout with deg Flec(F)<=11d gives the O(d^3) line-intersection scale"
+  },
+  "closed_gates": [
+    "PreviousLineGermFrontierReady",
+    "LineGermExtendsToProjectiveLineClosed",
+    "GrassmannianIncidenceClosed",
+    "DominantProjectionClosed",
+    "GrassmannianDimensionDichotomyClosed",
+    "AlgebraicLineGermClosureClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed"
+  ],
+  "open_gates": [
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage",
+      "closed": false,
+      "why_remaining": "requires a separate absorption router connecting the now-closed surface package to the bipartite line bound"
+    },
+    {
+      "atom": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof",
+      "closed": false,
+      "why_remaining": "requires the bipartite line bound absorption before point-plane incidence can be marked closed"
+    }
+  ],
+  "next_direct_attack_target": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage",
+  "next_required_input": "Absorb closed Cayley-Salmon/Kollar surface package into bipartite line-intersection bound",
+  "plain_conclusion": "线芽闭包与 Cayley-Salmon flecnode 判据已在当前证书中闭合。下一步不再是曲面源头，而是把已闭合的曲面包吸收到二分线交点界与点-平面 incidence 链中。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-parabolic-hessian-developable-router.json": "34aeca9b8c3e1eeb4d47c6c25a7ebfdd67e7f6ebca3446e5e40c239d36a25a6c",
+    "docs/monograph/prime-matrix-strict-rks23-flecnode-polynomial-construction-router.json": "9fc0f5ecde0b1c0af3c26a6f574129e51c40daac965671572c7d183745bbb685",
+    "docs/monograph/prime-matrix-strict-rks23-noncone-directrix-bound-router.json": "4d47249c8d3de57f8836df65d8a7bf6cb5a10fd7e2509d3296bfd3483399ae7f"
+  },
+  "rows": [
+    {
+      "gate": "PreviousLineGermFrontierReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已闭合 Monge 延拓，唯一 Cayley-Salmon 剩余是线芽闭包。",
+      "remaining": "SelfContainedAlgebraicLineGermClosureCoveringSurface"
+    },
+    {
+      "gate": "LineGermExtendsToProjectiveLineClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "代数曲面中的线芽使 F 在线上有无穷零点，故整条 projective line 包含于曲面。",
+      "remaining": "line germ -> full line"
+    },
+    {
+      "gate": "GrassmannianIncidenceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "直线包含条件是 Grassmannian 上有限个多项式系数方程。",
+      "remaining": "algebraic incidence"
+    },
+    {
+      "gate": "DominantProjectionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Monge 延拓给出一般点上线，因此 incidence 到曲面的投影支配。",
+      "remaining": "dominant incidence projection"
+    },
+    {
+      "gate": "GrassmannianDimensionDichotomyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Grassmannian 线族像维数为 1 则 ruled；维数至少 2 则一般点有线笔，迫使平面分支。",
+      "remaining": "dimension dichotomy"
+    },
+    {
+      "gate": "AlgebraicLineGermClosureClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "一般点线芽已闭包为覆盖曲面的代数直线族。",
+      "remaining": "SelfContainedAlgebraicLineGermClosureCoveringSurface"
+    },
+    {
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Flec(F) 在曲面上恒零推出曲面 ruled 的 Cayley-Salmon 判据已闭合。",
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "non-ruled 情形 Flec(F) 不恒零，Bezout 给出 O(d^3) 线交点控制。",
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "ruled 分支此前已闭合，non-ruled 分支现由 Cayley-Salmon 闭合。",
+      "remaining": "SelfContainedKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "曲面结构包在作者侧已闭合；后续 incidence/RNRS 仍需独立吸收审计。",
+      "remaining": "SelfContainedKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "曲面结构包已就绪，但二分线交点界仍需单独吸收证书对接。",
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "点-平面 incidence 仍需在吸收证书中从二分线交点界回接。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "closed": false,
+      "proved": false,
+      "meaning": "RNRS/Rudnev 输入仍未在本证书中宣称闭合。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步闭合 Cayley-Salmon 曲面结构源头；未宣称行/列命题无条件闭合。",
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ]
+}
