@@ -1,0 +1,173 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_self_contained_cycle_guard_frontier_router",
+  "character_audit_closes_analytic_branch": true,
+  "closed_gates": [
+    "SlopeConicToFourierPacketChainImported",
+    "SquareDifferenceAndSlopeRatioSpectraImported",
+    "MixedProductRatioRouteImported",
+    "CharacterMomentAuditClosesAnalyticBranch",
+    "SelfContainedReplacementCompressedToRKSLog",
+    "RKSLogToBalancedEnergyImported",
+    "BalancedEnergyReturnsToInverseSumproductFrontier",
+    "SelfContainedCycleDetected"
+  ],
+  "counterexample_assumption_only": true,
+  "cycle_chain": [
+    {
+      "from": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar",
+      "stage": "current-analytic-frontier",
+      "status": "closed reduction only; slope conic still not a standalone proof",
+      "to": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving"
+    },
+    {
+      "from": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving",
+      "stage": "slope-to-character",
+      "status": "Fourier, square-difference, mixed/product-ratio reductions imported",
+      "to": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    },
+    {
+      "from": "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment",
+      "stage": "character-audit",
+      "status": "character branch is author-side closed in the existing audit",
+      "to": "RKS23AnalyticBranchClosedAuthorSide"
+    },
+    {
+      "from": "RKS23AnalyticBranchClosedAuthorSide",
+      "stage": "promotion-replacement",
+      "status": "final promotion is not accepted; self-contained replacement compresses to RKS-log",
+      "to": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving"
+    },
+    {
+      "from": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving",
+      "stage": "rks-log-energy",
+      "status": "balanced collar Cauchy/L2/Plancherel reduction imported",
+      "to": "WeightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    },
+    {
+      "from": "UnweightedReciprocalIntervalAdditiveEnergyFixedPowerSavingForBalancedRKS23",
+      "stage": "energy-inverse-sumproduct",
+      "status": "reciprocal energy becomes Mobius overlap and returns to inverse sum-product frontier",
+      "to": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar"
+    }
+  ],
+  "empirical_absence_not_used": true,
+  "energy_to_inverse_frontier_closed": true,
+  "mixed_product_route_closed_to_character_gate": true,
+  "next_direct_attack_target": "NonCircularSelfContainedReciprocalIntervalEnergyPowerSaving",
+  "next_required_input": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+  "no_theorem_switch": true,
+  "noncircular_reciprocal_energy_input_proved": false,
+  "open_gates": [
+    "NonCircularSelfContainedReciprocalIntervalEnergyPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_external_route": "AcceptRNRSRudnevOrEXTBGWithExplicitParameterMatch",
+  "plain_conclusion": "本轮把当前唯一内部自足线完整串联审计后，得到一个必须保留的循环守门结论：从 inverse-sumproduct/RKS23 解析前沿可以沿 slope-conic、Fourier、平方差谱、乘积比值谱和角色矩审计回传到作者侧解析闭合；但最终自足替代包又把剩余压回 RKS-log，而 RKS-log 经平衡颈部能量归约、Möbius 重叠谱和 inverse-sumproduct 字典又回到同一个解析前沿。因此这条内部路线不能被当作非循环证明闭合。真正剩余是补入独立的倒数区间能量/sum-product/RNRS-Rudnev 型固定幂节省证明，或接受外部定理参数匹配。",
+  "replacement_compressed_to_rks_log": true,
+  "rks_log_to_balanced_energy_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SlopeConicToFourierPacketChainImported",
+      "meaning": "当前 slope-conic 前沿已沿中心化测度、Fourier、三二次谱包压到 Plancherel 后相关问题。",
+      "proved": true,
+      "remaining": "CorrelatedQuadraticFourierEnergyOverlapPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "SquareDifferenceAndSlopeRatioSpectraImported",
+      "meaning": "二次 Fourier 能量与斜率重叠分别打开为平方差谱和低 L2 区间比值谱。",
+      "proved": true,
+      "remaining": "JointNonconcentrationOfSquareDifferenceSpectrumAndIntervalRatioSpectrum"
+    },
+    {
+      "closed": true,
+      "gate": "MixedProductRatioRouteImported",
+      "meaning": "联合非集中路线已归约到中心化非零乘积比值 L2/角色矩门。",
+      "proved": true,
+      "remaining": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "CharacterMomentAuditClosesAnalyticBranch",
+      "meaning": "已有审计把 RKS23 角色矩解析分支向上游回传为作者侧闭合。",
+      "proved": true,
+      "remaining": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedReplacementCompressedToRKSLog",
+      "meaning": "DStructure/Tail-log4/finite Rankin 自足替代包的形式壳已压到 RKS-log 深估计。",
+      "proved": true,
+      "remaining": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving"
+    },
+    {
+      "closed": true,
+      "gate": "RKSLogToBalancedEnergyImported",
+      "meaning": "RKS2/RKS3 深块已压成平衡颈部倒数区间加权加性能量输入。",
+      "proved": true,
+      "remaining": "WeightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "BalancedEnergyReturnsToInverseSumproductFrontier",
+      "meaning": "去权重、固定幂放松、Möbius 重叠谱与 inverse-sumproduct 字典把能量线带回当前解析前沿。",
+      "proved": true,
+      "remaining": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedCycleDetected",
+      "meaning": "若把 RKS-log 再用同一 RKS23/inverse-sumproduct 线证明，会形成回环，不能作为非循环自足证明。",
+      "proved": true,
+      "remaining": "NonCircularSelfContainedReciprocalIntervalEnergyPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "NonCircularSelfContainedReciprocalIntervalEnergyPowerSaving",
+      "meaning": "真正剩余必须是独立于该回环的倒数区间能量/sum-product/RNRS-Rudnev 型证明。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步关闭的是路线审计和循环守门；未补入独立能量定理，因此不宣称无条件闭合。",
+      "proved": false,
+      "remaining": "NonCircularSelfContainedReciprocalIntervalEnergyPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_cycle_detected": true,
+  "slope_chain_to_fourier_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-dstructure-tail-rankin-replacement-compression-router.json": "10f6be174685f161f994d54befcb38711ddbf19fccc2482331a90ceb256e1097",
+    "docs/monograph/prime-matrix-strict-rks-log-internal-hardpoint-direct-attack-router.json": "1243680e8df9a1f815aa543ed439a58a16cbdae645e1f35eb25462250e72de2b",
+    "docs/monograph/prime-matrix-strict-rks23-balanced-collar-l2-energy-reduction-router.json": "ab7aa455de3a5c7890d2041ee1bf11e38933ee49f57edc42320fc1454b9b2a0b",
+    "docs/monograph/prime-matrix-strict-rks23-centered-product-ratio-l2-reduction-router.json": "791133ea008e46a9da1de5b16580cdd04ef09f12f768e3655909b7980c4ac6b2",
+    "docs/monograph/prime-matrix-strict-rks23-centered-square-measure-fourier-router.json": "91929280c9c76741b680a87c49173aa00baf845ec9d84fefecd63b22c824f63d",
+    "docs/monograph/prime-matrix-strict-rks23-character-moment-to-promotion-audit-router.json": "76dc6560fda6ab123348ff640a62b339c87efd168ae0d313da4fe3772b948e88",
+    "docs/monograph/prime-matrix-strict-rks23-final-correlation-atom-router.json": "c90f7e3ed987efd0c38344bfb16849a59ea53272de7a4923f359a03d2e458e0b",
+    "docs/monograph/prime-matrix-strict-rks23-interior-fiber-to-slope-conic-sync-router.json": "bb470aefe128ff29a6b9c6ffae18bf258dfd9e62a872504fc2f48864fe94726a",
+    "docs/monograph/prime-matrix-strict-rks23-internal-weil-barrier-and-bg-frontier-router.json": "47ac460002ba29212029754f1d32c7d79146669a6d077291fd89f02ebbb92152",
+    "docs/monograph/prime-matrix-strict-rks23-inverse-smalldoubling-to-affine-fiber-router.json": "6b9163fece437b4c1f7cd5742079f4a7b6934f18fcd970a77cda4ee3d604bc06",
+    "docs/monograph/prime-matrix-strict-rks23-joint-mixed-incidence-router.json": "d4d2df9a2e599ac7b270183f23dd372f9ebdd25b699f8a625b0fb388a717b936",
+    "docs/monograph/prime-matrix-strict-rks23-mobius-overlap-sumproduct-frontier-router.json": "fedb9c40a1ee856ff99e5502f06b63241c252ec5b26147551c59d5c30f47a78f",
+    "docs/monograph/prime-matrix-strict-rks23-nonzero-product-ratio-centering-router.json": "594aca4b91d07e2a881ce95695fe4e18065c087ccdbd4c5a0665a2eee0b68691",
+    "docs/monograph/prime-matrix-strict-rks23-product-ratio-character-moment-router.json": "0ee5f3e88242c75140d2bc622048673fb1b33541e52db3d094e5fbce002e5f97",
+    "docs/monograph/prime-matrix-strict-rks23-product-ratio-rectangular-convolution-router.json": "35164b723a154c0cd10a8cd70eba89513908d70c1a6a330b8cf57850dc8529c5",
+    "docs/monograph/prime-matrix-strict-rks23-quadratic-energy-square-difference-router.json": "d59596ee53cf601c1b3568ab5585b8d653bbe0901386a328d8622e8658af95ea",
+    "docs/monograph/prime-matrix-strict-rks23-reciprocal-energy-mobius-overlap-router.json": "1ff5cdfddf0924dbf91779052bae59ab5b808168ba2e08327e244bf687c5f63f",
+    "docs/monograph/prime-matrix-strict-rks23-slope-conic-centered-square-measure-router.json": "1996baa1933a829c3a34f27101cc7ba6c1edcd6b5a4adc6adefba40c3c6c715a",
+    "docs/monograph/prime-matrix-strict-rks23-slope-overlap-ratio-spectrum-router.json": "337dc4e521173233c6f4605719f50175cd3fc54e796f70d3b76c0b068660bc21",
+    "docs/monograph/prime-matrix-strict-rks23-square-difference-product-incidence-router.json": "5d4e776cc0fd80025c285053c713826afb325990d24230f770ef921b93c9d8fb",
+    "docs/monograph/prime-matrix-strict-rks23-tri-quadratic-fourier-factorization-router.json": "86295775c01b1252e9de66fc16e99340478ff1a39b98554ea5c2cb792e890496",
+    "docs/monograph/prime-matrix-strict-rks23-tri-quadratic-plancherel-barrier-router.json": "edde794c1370c646e246bfd941b7dcbcd2999ec19d3235513751c8d8fca16a2d",
+    "docs/monograph/prime-matrix-strict-rks23-unweighted-energy-power-saving-relaxation-router.json": "06047f6e4d09a2bc121c9fabb5d6309e3c06eacf3da00b536fd893bd025c1b7a",
+    "docs/monograph/prime-matrix-strict-rks23-weighted-energy-to-unweighted-core-router.json": "fc5aebed9fc1bfd4bf2fdd36a455ef044f0b366acfb7d51d17a1b4398474c4e7",
+    "docs/monograph/prime-matrix-strict-rks23-zero-product-peeling-router.json": "bedcc05ae811b3fa38ec40dacd6d69dde7d26e535162cd31d91be100f36960b4"
+  },
+  "square_difference_and_ratio_ready": true,
+  "status": "self_contained_internal_route_cycle_detected_noncircular_reciprocal_energy_input_remains"
+}
