@@ -1,0 +1,127 @@
+{
+  "acyclic_same_set_scope_match_proved": false,
+  "acyclic_windowed_kloosterman_dls_internal_estimate_proved": false,
+  "certificate_type": "prime_matrix_strict_pdec_clean_kls_terminal_hardpoint_router",
+  "clean_kls_reduced_to_windowed_dls": true,
+  "counterexample_assumption_only": true,
+  "direct_acyclic_same_set_pdec_cap_dual_certificate_proved": false,
+  "direct_pdec_protocol_audited": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_tail_log4_finite_rankin_full_ledger_independent_acceptance_proved": false,
+  "empirical_absence_not_used": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "external_dibfi_no_projection_certificate_proved": false,
+  "global_terminal_family_split_imported": true,
+  "hardpoint_after_router": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks) AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hardpoint_before_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "plain_conclusion": "`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 的终端门已被精确二分：PDEC 手臂需要证明 strict acyclic 证书与 canonical same-set PDEC 证书的同口径作用域匹配；CleanKLS 手臂已经压到 `SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks`。两条手臂当前都未闭合，外部 DI/BFI/Kuznetsov 只能给条件线。因此下一最窄自足主攻点是自足 Kuznetsov/DLS 大筛原子，同时并行保留 PDEC 作用域匹配、模型余量账本和 DStructure/Rankin 验收门。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "TerminalGateActiveFromDownstreamSync",
+      "meaning": "alpha signed 权重律下游同步后，当前首要终端门正是 PDEC-CAP 或内部 CleanKLS/DLS。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalTerminalFamilySplitImported",
+      "meaning": "全局终端家族已把 LocalSurvivor/NC-BLK 等宽泛出口拆成 PDEC-CAP 或 CleanKLS/DLS。",
+      "proved": true,
+      "remaining": "DirectAcyclicSameSetPDECCapDualCertificate OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": true,
+      "gate": "DirectPDECProtocolAuditedButScopeOpen",
+      "meaning": "同集 PDEC 协议可导入，但 strict acyclic 证书与 canonical same-set 证书的作用域匹配仍未证。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "DirectPDECScopeMatchNotProved",
+      "meaning": "要用 PDEC 手臂，必须同 formal unit、同坏窗集合、同 U_CRT/L_PDEC、同质量推前。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "CleanKLSReducedToWindowedDLS",
+      "meaning": "clean KLS/DLS 手臂已剥离低维缺陷，严格自足剩余是 acyclic windowed DLS。",
+      "proved": false,
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": true,
+      "gate": "WindowedDLSNormalFormClosed",
+      "meaning": "窗口双线性型、相位/可逆变量、L2 系数范数和失败回流字母表已固定。",
+      "proved": true,
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKuznetsovDLSAtomNotProved",
+      "meaning": "真正解析原子是自足 Kuznetsov/DLS 大筛不等式；当前语料没有证明。",
+      "proved": false,
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalDIBFINotStrictSelfContained",
+      "meaning": "外部 DI/BFI/Kuznetsov 可成为条件线，但不能替代 strict 自足闭合。",
+      "proved": false,
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": true,
+      "gate": "ModelGapLedgerStillParallel",
+      "meaning": "即使终端门某一手臂证明，ExplicitModelGapAndFiniteDPRCLedger 仍需同口径支付。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PDECCapOrCleanKLSLargeSieveProved",
+      "meaning": "PDEC 手臂和 CleanKLS/DLS 手臂当前均未给出可闭合证明。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "尚未产生足以排除早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kuznetsov_dls_large_sieve_inequality_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078",
+    "docs/monograph/prime-matrix-global-terminal-family-exclusion-split-router.json": "f9a5e6a0583a20578b3a98952382fe6a149b6c46ad57591974e4268bd8d9a03b",
+    "docs/monograph/prime-matrix-moving-block-dprc-ledger-compatibility-router.json": "c58be99083b0ddf69b3f7254bf9f4e8b9fc1df7ce16d5feeb38e727d865cef73",
+    "docs/monograph/prime-matrix-strict-acyclic-clean-kls-router.json": "49eebc947860fc995d39bc9fcc0e12e580d342eab32421cd8601a28d26cde5a5",
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.json": "89f695e1ad123d1461acb338ddf0b371ef49a266baf3b2580961148943c5f594",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-downstream-sync-router.json": "25a526808da942ef0d50d5725ae59e945b6152b345a31cd8e92c16130ee9c362",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993"
+  },
+  "status": "pdec_clean_kls_terminal_split_closed_both_arms_open",
+  "strict_terminal_split": {
+    "clean_kls_arm": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+    "external_conditional_arm": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY",
+    "pdec_arm": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+  },
+  "terminal_gate_active_from_downstream_sync": true,
+  "terminal_split_router_closed": true,
+  "windowed_dls_normal_form_closed": true
+}
