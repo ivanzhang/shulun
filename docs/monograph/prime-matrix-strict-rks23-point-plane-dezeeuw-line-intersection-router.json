@@ -1,0 +1,176 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_point_plane_dezeeuw_line_intersection_router",
+  "closed_gates": [
+    "PreviousPointPlaneFrontierReady",
+    "DeZeeuwDirectRouteSelected",
+    "PointPlaneToLineLineMapFormalized",
+    "RefinedRudnevReductionToBipartiteLineIntersectionClosed",
+    "PositiveCharacteristicCutoffFormalized"
+  ],
+  "counterexample_assumption_only": true,
+  "dezeeuw_direct_route_selected": true,
+  "dezeeuw_map": {
+    "chosen_route": "use de Zeeuw's direct affine map, not the longer Klein-quadric route",
+    "fixed_geometry": "choose lambda as the z-axis and pi as the affine plane x=1 after a generic rotation or extension",
+    "incidence_dictionary": "p in q iff phi(p) intersects psi(q)",
+    "pairwise_disjointness": "generic positioning lets the phi-family and psi-family be pairwise disjoint inside each side, so incidence multiplicity equals bipartite line intersections",
+    "plane_map": "a plane q is sent to a line psi(q) in the same parameter space",
+    "point_map": "a point p is sent to a line phi(p) in the parameter space of lines meeting lambda and pi"
+  },
+  "empirical_absence_not_used": true,
+  "kollar_subatoms": [
+    {
+      "atom": "InterpolationSurfaceThroughAllLinesOfL",
+      "content": "construct a surface of degree O(|L|^(1/2)) containing all lines of L",
+      "status": "open_for_self_contained_writeup"
+    },
+    {
+      "atom": "OffSurfaceBezierIntersectionCount",
+      "content": "count intersections with M-lines not contained in the interpolating surface by degree times |M|",
+      "status": "open_for_self_contained_writeup"
+    },
+    {
+      "atom": "PlaneAndQuadricDegenerateComponentAccount",
+      "content": "charge plane/quadric components to t|L|+s|M| using the refined degeneracy hypothesis",
+      "status": "open_for_self_contained_writeup"
+    },
+    {
+      "atom": "SinglyRuledAndNonRuledComponentLineCount",
+      "content": "use ruled-surface structure and positive-characteristic degree cutoff to bound remaining line intersections",
+      "status": "open_for_self_contained_writeup"
+    }
+  ],
+  "line_intersection_atom": {
+    "line_sets": "finite line families L and M in F^3 with |L|<=|M|",
+    "needed_subpackage": "InterpolationSurfaceAndRuledSurfaceLineCountingPackageWithPositiveCharacteristicDegreeCutoff",
+    "positive_characteristic_size": "if char(F)=p>0, require |L|=O(p^2)",
+    "quadric_degeneracy": "no quadric contains s lines of L and t lines of M",
+    "target_bound": "I(L,M)=O(|L|^(1/2)|M|+t|L|+s|M|)",
+    "why_this_is_now_the_only_internal_gap": "the de Zeeuw map and the reciprocal-energy parameter ledger are elementary reductions once this line-intersection bound is available"
+  },
+  "next_direct_attack_target": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage",
+  "next_required_input": "InterpolationSurfaceAndRuledSurfaceLineCountingPackageWithPositiveCharacteristicDegreeCutoff",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_external_route": "AcceptRudnevRNRSReciprocalIntervalEnergyEstimateWithParameterMatch",
+  "plain_conclusion": "当前唯一内部自足线继续下钻：Rudnev 点-平面 incidence 不再作为整体黑箱，已选定 de Zeeuw 的直接映射路线，把点-平面 incidence 转为两族空间直线的二分交点计数。点-平面到线交点的代数字典、refined Rudnev 退化账本和正特征 |P|=O(p^2) 截断已形成可审查接口。真正剩余缩成二分 Guth-Katz/Kollár 线交点界及其插值曲面/ruled-surface 证明包；因此 row_column_unconditional_closed 仍保持 false。",
+  "point_plane_to_line_line_map_formalized": true,
+  "positive_characteristic_cutoff_formalized": true,
+  "previous_point_plane_frontier_ready": true,
+  "refined_rudnev_reduction_to_bipartite_line_intersection_closed": true,
+  "refined_rudnev_statement": {
+    "input": "finite point set P and plane set Q in F^3 with |P|<=|Q|",
+    "output": "I(P,Q)=O(|P|^(1/2)|Q|+t|P|+s|Q|)",
+    "positive_characteristic_size": "if char(F)=p>0, require |P|=O(p^2)",
+    "refined_degeneracy": "no affine line contains s points of P and is contained in t planes of Q",
+    "standard_rudnev_recovery": "taking s=k and t=1 gives |P|^(1/2)|Q|+|P|+k|Q|, and |P| is absorbed by the main term since |P|<=|Q|"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousPointPlaneFrontierReady",
+      "meaning": "上一证书已把唯一内部自足剩余锁定为 Rudnev 点-平面 incidence 自足证明。",
+      "proved": true,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": true,
+      "gate": "DeZeeuwDirectRouteSelected",
+      "meaning": "选择 de Zeeuw 直接点-平面到线-线交点路线，避免回到 RKS23/inverse-sumproduct 回环。",
+      "proved": true,
+      "remaining": "DeZeeuwPointPlaneToBipartiteLineIntersectionReduction"
+    },
+    {
+      "closed": true,
+      "gate": "PointPlaneToLineLineMapFormalized",
+      "meaning": "点 p 与平面 q 的 incidence 被转写为两条参数空间直线 phi(p), psi(q) 的相交。",
+      "proved": true,
+      "remaining": "map dictionary closed"
+    },
+    {
+      "closed": true,
+      "gate": "RefinedRudnevReductionToBipartiteLineIntersectionClosed",
+      "meaning": "Rudnev 点-平面估计已归约为二分线交点界加 quadric 退化账本。",
+      "proved": true,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": true,
+      "gate": "PositiveCharacteristicCutoffFormalized",
+      "meaning": "|L|=O(p^2) 对应插值曲面次数 O(|L|^1/2)<p 的正特征安全条件。",
+      "proved": true,
+      "remaining": "InterpolationSurfaceAndRuledSurfaceLineCountingPackageWithPositiveCharacteristicDegreeCutoff"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "尚未在合著稿内自足写出二分 Guth-Katz/Kollár 线交点界证明。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "插值曲面、单 ruled/非 ruled 分量和正特征次数截断仍需作者侧内联。",
+      "proved": false,
+      "remaining": "InterpolationSurfaceAndRuledSurfaceLineCountingPackageWithPositiveCharacteristicDegreeCutoff"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面证明已压成线交点证明包，但该包未内联前不能算闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 自足输入仍依赖上述点-平面 incidence 证明包。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步继续压缩唯一剩余；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "source_anchors": [
+    {
+      "name": "de Zeeuw short proof source",
+      "role": "direct map from point-plane incidences to bipartite line intersections",
+      "url": "https://arxiv.org/abs/1612.02719"
+    },
+    {
+      "name": "Rudnev point-plane incidence source",
+      "role": "original incidence theorem and positive-characteristic size condition",
+      "url": "https://arxiv.org/abs/1407.0426"
+    },
+    {
+      "name": "RNRS finite-field sum-product source",
+      "role": "external route from incidence geometry to reciprocal-energy estimates",
+      "url": "https://arxiv.org/abs/1408.0542"
+    }
+  ],
+  "source_hashes": {
+    "docs/bibliography.md": "aaca4ff3eb53e19a7e4ca5b54b29fcecf172593324971cc3d945481774c4ff52",
+    "docs/critical-bucket-single-hit-sieve-attack.md": "85d5d2e0732a9d7de53c8eb7b8e58e64e127f35b5f83587bf08dc656dd8de179",
+    "docs/monograph/prime-matrix-strict-rks23-noncircular-rnrs-interface-router.json": "0059c698ef3de60c81fc149b8414d2ecb7cadfe5fe8f778c49689419c575d018",
+    "docs/monograph/prime-matrix-strict-rks23-rudnev-point-plane-to-reciprocal-energy-router.json": "f0e6cf292fe276c2131109a0155285f2f26cadac1c2d0ba909b34191c693b674"
+  },
+  "status": "point_plane_incidence_self_contained_remainder_reduced_to_bipartite_line_intersection_package"
+}
