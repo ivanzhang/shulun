@@ -1,0 +1,119 @@
+{
+  "burgess_large_packet_implication_closed": true,
+  "burgess_pointwise_input_internalized": false,
+  "certificate_type": "prime_matrix_strict_rks23_character_moment_burgess_threshold_router",
+  "closed_gates": [
+    "FourIntervalCharacterMomentHardpointActive",
+    "DyadicSideLengthLedgerClosed",
+    "BurgessLargePacketImplicationClosed",
+    "ThinPacketBranchIsOnlyNonBurgessBranch"
+  ],
+  "counterexample_assumption_only": true,
+  "dyadic_side_length_ledger_closed": true,
+  "empirical_absence_not_used": true,
+  "four_interval_character_moment_hardpoint_active": true,
+  "four_interval_character_moment_power_saving_proved": false,
+  "large_branch": {
+    "assumed_pointwise_input": "for every nonprincipal chi and every interval I with |I|>=P^(1/4+epsilon_B), |S_I(chi)|<=|I| P^(-delta_B)",
+    "consequence": "large packets satisfy the fixed-power centered convolution L2 saving",
+    "direct_sup_bound": "using the pointwise input on all four factors gives <= P * prod_i |I_i|^2 * P^(-8 delta_B)",
+    "moment": "sum_{chi!=chi0}|S_A0 S_A1 S_B0 S_B1|^2",
+    "normalized_l2": "after the 1/(P-1) Plancherel factor this gives prod_i |I_i|^2 * P^(-8 delta_B+o(1))",
+    "not_yet_internal": "the current corpus has not supplied a self-contained Burgess proof with constants for all packet intervals"
+  },
+  "next_direct_attack_target": "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "BurgessPointwiseInputInternalized",
+    "ThinDyadicPacketMassAbsorptionProved",
+    "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "四短区间非主角色乘积矩进一步压成 Burgess 阈值二分。在四个区间都长于 `P^(1/4+epsilon)` 的大包分支中，只要内部化 Burgess 点态角色和节省，就可直接推出固定幂矩节省。所有剩余包对必含一个短于 Burgess 阈值的薄边；这部分不能凭直觉丢弃，还需要一个 Cauchy 尺度下的薄包总质量吸收账本。因此当前自足闭合还剩两个具体子输入：大包 Burgess 内部化与薄包质量吸收。",
+  "required_subatoms": [
+    "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+    "ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "FourIntervalCharacterMomentHardpointActive",
+      "meaning": "上一证书已把剩余固定为非主角色四短区间乘积矩。",
+      "proved": true,
+      "remaining": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicSideLengthLedgerClosed",
+      "meaning": "每个矩形包对有四个边长，可按 Burgess 阈值做互斥分支。",
+      "proved": true,
+      "remaining": "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessLargePacketImplicationClosed",
+      "meaning": "若四个边长均超过 `P^(1/4+epsilon)` 且 Burgess 点态界可用，则该包对的角色矩有固定幂节省。",
+      "proved": true,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "BurgessPointwiseInputInternalized",
+      "meaning": "仓库内尚未给出适配全部 dyadic 包的自足 Burgess 点态证明与常数账本。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": true,
+      "gate": "ThinPacketBranchIsOnlyNonBurgessBranch",
+      "meaning": "不满足大边长条件的包对必含一个 Burgess 阈值以下的短边。",
+      "proved": true,
+      "remaining": "ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale"
+    },
+    {
+      "closed": false,
+      "gate": "ThinDyadicPacketMassAbsorptionProved",
+      "meaning": "仓库内尚未证明所有薄包对总贡献在 Cauchy 尺度下可固定幂吸收。",
+      "proved": false,
+      "remaining": "ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale"
+    },
+    {
+      "closed": false,
+      "gate": "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment",
+      "meaning": "需要同时内部化大包 Burgess 输入并完成薄包质量吸收，才能闭合四区间角色矩。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals AND ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是 Burgess 阈值分解和大包充分推导，不是最终角色矩节省。",
+      "proved": false,
+      "remaining": "BurgessThresholdDichotomyClosureForFourIntervalCharacterMoment"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-product-ratio-character-moment-router.json": "0ee5f3e88242c75140d2bc622048673fb1b33541e52db3d094e5fbce002e5f97"
+  },
+  "status": "four_interval_character_moment_split_into_large_burgess_packets_and_thin_packets",
+  "thin_branch": {
+    "current_status": "not proved in the current corpus",
+    "definition": "some side length H_i<P^(1/4+epsilon_B)",
+    "needed_ledger": "sum all thin packet-pair contributions and prove they are below the required centered L2 scale by a fixed power",
+    "possible_routes": "geometric packing of Whitney boundary boxes OR a direct small-side divisor/energy estimate",
+    "why_not_automatic": "a thin side reduces packet mass, but without an explicit Cauchy-scale mass ledger it cannot be discarded"
+  },
+  "thin_dyadic_packet_mass_absorption_proved": false,
+  "thin_packet_branch_is_only_non_burgess_branch": true,
+  "threshold": {
+    "burgess_threshold": "H_i >= P^(1/4+epsilon_B) for all four sides",
+    "dichotomy": "every packet pair lies in exactly one of these branches",
+    "four_intervals": "A0,A1,B0,B1 from one dyadic rectangular packet pair",
+    "large_packet_branch": "all four intervals are above the Burgess threshold",
+    "polylog_loss": "dyadic packet counting contributes only P^o(1), harmless after any fixed power saving",
+    "side_lengths": "H_A0,H_A1,H_B0,H_B1",
+    "thin_packet_branch": "at least one side is below P^(1/4+epsilon_B)"
+  }
+}
