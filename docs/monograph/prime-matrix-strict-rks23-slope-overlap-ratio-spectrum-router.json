@@ -1,0 +1,84 @@
+{
+  "alternate_name_for_same_atom": "WeightedSquareDifferenceRatioSpectrumCorrelationWithIntervalRatioSpectrum",
+  "certificate_type": "prime_matrix_strict_rks23_slope_overlap_ratio_spectrum_router",
+  "closed_gates": [
+    "WeightedSquareDifferenceTargetActive",
+    "SlopeOverlapRatioSpectrumIdentityClosed",
+    "SlopeOverlapFirstMomentClosed",
+    "SlopeOverlapL2DivisorLedgerClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "next_direct_attack_target": "SquareDifferenceSpectrumAgainstLowL2IntervalRatioSpectrumPowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SquareDifferenceSpectrumAgainstLowL2IntervalRatioSpectrumPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "斜率重叠也可以完全组合化。`L(lambda)` 就是短区间 `T` 的比值谱 `R_T(lambda)=#{(x,u):u=lambda*x}`。其一阶矩为 `|T|^2`；二阶矩等于短盒乘法能量，可由 `x1*u2-x2*u1=kP` 的整数提升和除数界控制为 `|T|^2 P^o(1)`。因此当前唯一剩余是平方差乘法谱是否能与这个低 L2 斜率比值谱产生异常相关。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "WeightedSquareDifferenceTargetActive",
+      "meaning": "上一证书已把 `M_A(lambda)` 打开为平方差乘法谱。",
+      "proved": true,
+      "remaining": "WeightedSquareDifferenceRatioOverlapAgainstSlopeOverlapPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "SlopeOverlapRatioSpectrumIdentityClosed",
+      "meaning": "`L(lambda)` 精确等于短区间 `T` 的比值谱 `R_T(lambda)`。",
+      "proved": true,
+      "remaining": "SquareDifferenceSpectrumAgainstLowL2IntervalRatioSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "SlopeOverlapFirstMomentClosed",
+      "meaning": "`sum_lambda L(lambda)=|T|^2`。",
+      "proved": true,
+      "remaining": "ledger"
+    },
+    {
+      "closed": true,
+      "gate": "SlopeOverlapL2DivisorLedgerClosed",
+      "meaning": "短盒乘法能量由整数提升和除数界给 `sum L(lambda)^2<=|T|^2 P^o(1)`。",
+      "proved": true,
+      "remaining": "ledger"
+    },
+    {
+      "closed": false,
+      "gate": "SquareDifferenceSpectrumAgainstLowL2IntervalRatioSpectrumPowerSaving",
+      "meaning": "仓库内尚未证明平方差谱不能与这个低 L2 比值谱发生固定幂级异常相关。",
+      "proved": false,
+      "remaining": "WeightedSquareDifferenceRatioSpectrumCorrelationWithIntervalRatioSpectrum"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只闭合斜率谱账本，未证明最终相关节省。",
+      "proved": false,
+      "remaining": "SquareDifferenceSpectrumAgainstLowL2IntervalRatioSpectrumPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "slope_overlap_first_moment_closed": true,
+  "slope_overlap_l2_divisor_ledger_closed": true,
+  "slope_overlap_ratio_spectrum_identity_closed": true,
+  "slope_ratio": {
+    "divisor_l2_bound": "sum_lambda L(lambda)^2 <= |T|^2 P^o(1)",
+    "first_moment": "sum_lambda L(lambda)=|T|^2",
+    "identity": "L(lambda)=R_T(lambda)",
+    "integer_lift": "x1*u2-x2*u1=kP with |k|<=log^O(P) in the square-root collar",
+    "meaning": "the interval slope spectrum has low multiplicative energy; any remaining failure must be true correlation with the square-difference spectrum",
+    "ratio_spectrum": "R_T(lambda)=#{(x,u) in T^2: u=lambda*x mod P}",
+    "second_moment": "sum_lambda L(lambda)^2=#{x1*u2=x2*u1 mod P: xi,ui in T}",
+    "slope_overlap": "L(lambda)=|X_lambda|=#{x in T: lambda*x in T}"
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-quadratic-energy-square-difference-router.json": "d59596ee53cf601c1b3568ab5585b8d653bbe0901386a328d8622e8658af95ea"
+  },
+  "square_difference_against_low_l2_ratio_spectrum_power_saving_proved": false,
+  "status": "slope_overlap_rewritten_as_low_l2_interval_ratio_spectrum",
+  "weighted_square_difference_target_active": true
+}
