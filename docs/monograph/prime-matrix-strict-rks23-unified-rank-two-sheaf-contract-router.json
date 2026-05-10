@@ -1,0 +1,240 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_unified_rank_two_sheaf_contract_router",
+  "closed_gates": [
+    "PreviousUnifiedSmoothRankTwoTargetActive",
+    "UnifiedSmoothRankTwoSheafContractAndConductorLedger",
+    "OrderFreeConductorLedgerClosed",
+    "DeligneKatzRankTwoTraceExternalMatch"
+  ],
+  "conductor_ledger": {
+    "conductor_dependency": "depends only on the number of branch points, not on character order d",
+    "forbidden_dependency": "no y^0,...,y^{d-1} Kummer ladder and no genus O(d) argument",
+    "local_monodromy_source": "multiplicative characters A,B,C and their product at infinity",
+    "rank_bound": "rank <= 2",
+    "singular_point_count": "at most 3 on the lambda-line"
+  },
+  "counterexample_assumption_only": true,
+  "elementary_stepanov_pivot_internalized": false,
+  "empirical_absence_not_used": true,
+  "external_deligne_katz_match_ready": true,
+  "finite_audit_not_used_as_proof": true,
+  "next_direct_attack_target": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma",
+  "next_subatom": "RankTwoRHOrElementaryPivot",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma",
+    "RankTwoLisseSheafRHTraceBoundInternalizationLemma",
+    "ElementaryStepanovPivotForRankTwoTraceLemma",
+    "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma",
+    "BoundedBranchSignatureHasseJetIndependenceLemma",
+    "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "order_free_conductor_ledger_closed": true,
+  "order_free_signature_selector_internalized": false,
+  "plain_conclusion": "本轮没有把作者侧自足 rank-two 迹界证明完结，但完成了最终形态的 sheaf 合同和外部匹配。统一 smooth rank-two 迹函数 `T(lambda)=sum_x A(x)B(1-x)C(1-lambda*x)` 已经被压成 `P^1_lambda-{0,1,infinity}` 上的秩二 lisse hypergeometric/Kummer convolution trace；秩、奇点数和导子只依赖固定分支数，不依赖角色阶 `d`，也不使用整条 `y^d=f(x)` 曲线。因此若接受 Deligne RH for curves 与 Katz hypergeometric sheaf 构造作为外部黑箱，当前 rank-two 输入可以严格对接闭合；但作者侧完全自足路线仍只剩一个原子：`RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma`，即内部证明秩二 lisse sheaf 平方根迹界，或构造等价的初等 Stepanov pivot 块。未完成该内部原子前，Stepanov、Kummer 迹界、Burgess B4 与行/列命题仍不能作者侧无条件闭合。",
+  "previous_unified_smooth_rank_two_target_active": true,
+  "rank_two_rh_trace_bound_internalized": false,
+  "rejected_shortcuts": {
+    "external_as_internal": "Deligne/Katz may close an external route, but it is not an author-side self-contained proof",
+    "finite_audit": "bounded numerical samples do not prove the trace theorem",
+    "full_kummer_curve": "returning to y^d=f(x) would reintroduce d-dependent genus and is forbidden",
+    "generic_lambda": "the sheaf contract includes all smooth lambda, including j=0 and j=1728 special points"
+  },
+  "remaining_internal_atom": {
+    "equivalent_pivot_input": "construct an elementary order-free Stepanov pivot block for the same rank-two trace",
+    "if_external_accepted": "Burgess/Weil/B4 chain may proceed through the matched Deligne-Katz input",
+    "if_self_contained_required": "this rank-two RH/Stepanov atom remains the sole internal hard point",
+    "new_atom": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma",
+    "old_atom": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma",
+    "single_required_input": "self-contained square-root cancellation for rank-two lisse trace functions on P^1-{0,1,infinity}"
+  },
+  "route_options": {
+    "external_route": "Deligne RH for curves plus Katz hypergeometric sheaf construction gives |T(lambda)| <= C*sqrt(p)",
+    "external_status": "matched and available if external black-box lemmas are accepted",
+    "internal_route": "prove the same rank-two trace bound by an elementary Stepanov pivot on the lambda-line",
+    "internal_status": "not yet proved in the corpus",
+    "why_this_is_final_shape": "all earlier support, lambda, Legendre, and d-dependence gates have been eliminated"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousUnifiedSmoothRankTwoTargetActive",
+      "meaning": "上一证书已把唯一剩余压成统一 smooth rank-two 迹界或 pivot。",
+      "proved": true,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": true,
+      "gate": "UnifiedSmoothRankTwoSheafContractAndConductorLedger",
+      "meaning": "统一 smooth rank-two 迹函数已匹配为 lambda 线上秩二 lisse sheaf 合同。",
+      "proved": true,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": true,
+      "gate": "OrderFreeConductorLedgerClosed",
+      "meaning": "秩、奇点数、导子依赖只随分支数有界，不依赖角色阶 d。",
+      "proved": true,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": true,
+      "gate": "DeligneKatzRankTwoTraceExternalMatch",
+      "meaning": "若接受 Deligne/Katz 外部定理，rank-two 迹界接口已严格匹配。",
+      "proved": true,
+      "remaining": "external route closed if accepted"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma",
+      "meaning": "旧表述已收束为秩二 sheaf RH 或等价 Stepanov pivot 原子。",
+      "proved": false,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoLisseSheafRHTraceBoundInternalizationLemma",
+      "meaning": "作者侧自足路线仍需内部证明秩二 lisse sheaf 平方根迹界。",
+      "proved": false,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "ElementaryStepanovPivotForRankTwoTraceLemma",
+      "meaning": "等价内部路线是直接构造秩二 Stepanov pivot 块。",
+      "proved": false,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma",
+      "meaning": "唯一真正剩余：秩二 RH 迹界内部化或等价初等 Stepanov pivot。",
+      "proved": false,
+      "remaining": "RankTwoRHOrElementaryPivot"
+    },
+    {
+      "closed": false,
+      "gate": "BoundedBranchSignatureHasseJetIndependenceLemma",
+      "meaning": "Hasse-jet 秩下界等待 rank-two pivot/RH 输入。",
+      "proved": false,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+      "meaning": "完整阶无关 selector 等待 rank-two 输入作者侧闭合。",
+      "proved": false,
+      "remaining": "RankTwoLisseSheafRHTraceBoundInternalizationOrElementaryStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "Stepanov-Kummer 非零秩仍等待完整 selector。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "Stepanov 完整内部证明仍未闭合。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界仍等待 rank-two 输入作者侧闭合或外部接受。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只完成 sheaf 合同和外部匹配，不声明行/列命题作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kummer_trace_bound_internalized": false,
+  "sheaf_contract": {
+    "legendre_subcase": "quadratic Legendre core is included as the quadratic specialization",
+    "lisse_domain": "U=P^1_lambda minus {0,1,infinity}",
+    "rank": "2",
+    "sheaf_object": "rank-two hypergeometric/Kummer convolution local system on the lambda-line",
+    "singularities": "only 0,1,infinity after previous collision firewall",
+    "trace_function": "T(lambda)=sum_x A(x)B(1-x)C(1-lambda*x), lambda in P^1-{0,1,infinity}",
+    "weight": "1 before normalization, weight 0 after dividing by the Jacobi sqrt(p) kernel"
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-legendre-subsumption-router.json": "75fd4d2b55818085fac067d5a0806995355c60119b09699ab0ecaf134314adb4"
+  },
+  "status": "unified_smooth_rank_two_trace_reduced_to_rank_two_sheaf_rh_or_stepanov_pivot",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_kummer_auxiliary_rank_surjectivity_proved": false,
+  "trace_audit": [
+    {
+      "audit_only_not_proof": true,
+      "exponents_a_b_c": [
+        1,
+        2,
+        3
+      ],
+      "max_abs_trace_over_sqrt_p": 1.808777384271,
+      "max_lambda": 13,
+      "mean_abs_trace_over_sqrt_p": 0.803302696993,
+      "order": 7,
+      "prime": 29,
+      "smooth_lambda_count": 27
+    },
+    {
+      "audit_only_not_proof": true,
+      "exponents_a_b_c": [
+        1,
+        1,
+        2
+      ],
+      "max_abs_trace_over_sqrt_p": 1.824506079915,
+      "max_lambda": 2,
+      "mean_abs_trace_over_sqrt_p": 0.812209083734,
+      "order": 5,
+      "prime": 31,
+      "smooth_lambda_count": 29
+    },
+    {
+      "audit_only_not_proof": true,
+      "exponents_a_b_c": [
+        1,
+        3,
+        2
+      ],
+      "max_abs_trace_over_sqrt_p": 1.76817231105,
+      "max_lambda": 12,
+      "mean_abs_trace_over_sqrt_p": 0.811688812763,
+      "order": 8,
+      "prime": 41,
+      "smooth_lambda_count": 39
+    },
+    {
+      "audit_only_not_proof": true,
+      "exponents_a_b_c": [
+        1,
+        3,
+        4
+      ],
+      "max_abs_trace_over_sqrt_p": 1.879807172183,
+      "max_lambda": 28,
+      "mean_abs_trace_over_sqrt_p": 0.84276852834,
+      "order": 10,
+      "prime": 61,
+      "smooth_lambda_count": 59
+    }
+  ],
+  "unified_rank_two_sheaf_contract_closed": true,
+  "unified_smooth_rank_two_trace_bound_internalized": false
+}
