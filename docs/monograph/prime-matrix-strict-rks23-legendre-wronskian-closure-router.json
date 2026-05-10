@@ -1,0 +1,280 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_legendre_wronskian_closure_router",
+  "closed_gates": [
+    "PreviousPureQuadraticLegendreTargetActive",
+    "LegendrePicardFuchsEquationDerived",
+    "LegendrePicardFuchsHasseWronskianNonzeroLemma",
+    "PureQuadraticLegendreScalarCollapseExclusionLemma",
+    "RankTwoScalarMonodromyCollapseExclusionLemma",
+    "RankTwoPivotNonzeroDeterminant",
+    "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+    "ElementaryStepanovPivotForRankTwoTraceLemma"
+  ],
+  "counterexample_assumption_only": true,
+  "downstream_boundary": {
+    "closed_now": "pure quadratic Legendre scalar collapse, rank-two scalar collapse, and pivot determinant nonzero",
+    "imported_ledgers": "degree/multiplicity and Hasse-jet condition ledgers from the prior Stepanov pivot certificate",
+    "next_frontier": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "no_external_blackbox": "this step uses the explicit Picard-Fuchs/Wronskian calculation, not Deligne/Katz/Hasse as a black box",
+    "why_not_row_column_closed": "the global order-free selector/rank-surjectivity and Burgess-to-row-column promotion gates are still separate"
+  },
+  "elementary_stepanov_pivot_internalized": true,
+  "empirical_absence_not_used": true,
+  "finite_audit_not_used_as_proof": true,
+  "hasse_polynomial_audit": [
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 1,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 3
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 2,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 5
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 3,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 7
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 5,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 11
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 6,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 13
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 8,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 17
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 9,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 19
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 11,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 23
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 14,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 29
+    },
+    {
+      "audit_only_not_proof": true,
+      "constant_coefficient": 1,
+      "degree_m": 15,
+      "derivative_nonzero": true,
+      "hasse_polynomial_nonzero": true,
+      "leading_coefficient": 1,
+      "prime": 31
+    }
+  ],
+  "legendre_picard_fuchs_equation_derived": true,
+  "legendre_picard_fuchs_hasse_wronskian_nonzero_proved": true,
+  "next_direct_attack_target": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+  "next_subatom": "RankTwoPivotOutputToGlobalKummerSelectorSynchronization",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "order_free_signature_selector_internalized": false,
+  "pf_wronskian_identity_check": {
+    "candidate_wronskian": "1/(lambda*(1-lambda))",
+    "cleared_denominator": "lambda^2*(1-lambda)^2",
+    "equation": "lambda*(1-lambda)*y'' + (1-2*lambda)*y' - y/4 = 0",
+    "identity_verified": true,
+    "left_numerator_W_prime": "2*lambda-1",
+    "right_numerator_minus_PW": "2*lambda-1",
+    "standard_form_P": "(1-2*lambda)/(lambda*(1-lambda))"
+  },
+  "picard_fuchs_derivation": {
+    "bad_characteristics": "only characteristic 2 is excluded; the quadratic-character branch is over odd primes",
+    "differential_equation": "lambda*(1-lambda)*F'' + (1-2*lambda)*F' - F/4 = 0",
+    "family": "E_lambda: y^2=x*(1-x)*(1-lambda*x), lambda not in {0,1}",
+    "internal_inputs": "differentiate omega under the integral sign and reduce dx/y powers modulo d(x/y)",
+    "normalized_period": "F(lambda)=2F1(1/2,1/2;1;lambda)",
+    "period_form": "omega=dx/y"
+  },
+  "plain_conclusion": "本轮闭合纯二次 Legendre 标量塌缩。对 `E_lambda: y^2=x(1-x)(1-lambda*x)`，内部微分计算给出 Picard-Fuchs 方程 `lambda(1-lambda)F''+(1-2lambda)F'-F/4=0`。其 Wronskian 满足 `W'=-(1-2lambda)/(lambda(1-lambda))*W`，故 `W=C/(lambda(1-lambda))`。在 `lambda=0` 的 Frobenius 基中存在一个全纯周期和一个对数伴随解，所以 `C!=0`；清除 `lambda(1-lambda)` 后得到非零 Hasse-Wronskian 种子，奇点只在 `0,1,infinity`。这排除了上一轮剩下的纯二次 Legendre 全局标量塌缩；结合非二次 residue 塌缩已排除，rank-two 标量塌缩通道为空，固定 rank-two pivot determinant 非零支路闭合。但全局阶无关 Kummer selector、Stepanov-Kummer 非零秩、Kummer 迹界和行/列命题仍需后续粘合，本证书不声明行/列命题作者侧无条件闭合。",
+  "previous_pure_quadratic_legendre_target_active": true,
+  "pure_quadratic_legendre_scalar_collapse_excluded": true,
+  "rank_two_pivot_nonzero_determinant_proved": true,
+  "rank_two_rh_trace_bound_internalized": false,
+  "rank_two_scalar_monodromy_collapse_excluded": true,
+  "rank_two_trace_bound_internalized_by_elementary_pivot": true,
+  "rejected_shortcuts": {
+    "external_hasse": "elliptic Hasse-Weil is not counted as this internal proof",
+    "finite_audit": "Hasse polynomial samples are consistency checks only",
+    "generic_lambda": "special smooth automorphism points are included because W has poles only at 0,1,infinity",
+    "pointcount_only": "the earlier point-count identity does not by itself prove the Wronskian nonzero; the Picard-Fuchs equation is used here"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousPureQuadraticLegendreTargetActive",
+      "meaning": "上一证书已把唯一内部剩余压成纯二次 Legendre Wronskian 非零。",
+      "proved": true,
+      "remaining": "PureQuadraticLegendreScalarCollapseExclusionLemma"
+    },
+    {
+      "closed": true,
+      "gate": "LegendrePicardFuchsEquationDerived",
+      "meaning": "Legendre 族周期满足显式 Picard-Fuchs 方程。",
+      "proved": true,
+      "remaining": "LegendrePicardFuchsHasseWronskianNonzeroLemma"
+    },
+    {
+      "closed": true,
+      "gate": "LegendrePicardFuchsHasseWronskianNonzeroLemma",
+      "meaning": "Wronskian 为 C/(lambda*(1-lambda)) 且 C 非零，故两维局部解不全局成比例。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "PureQuadraticLegendreScalarCollapseExclusionLemma",
+      "meaning": "纯二次 Legendre 标量塌缩被 Picard-Fuchs Wronskian 排除。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "RankTwoScalarMonodromyCollapseExclusionLemma",
+      "meaning": "非二次 residue 塌缩已排除，纯二次支路本步关闭，因此 rank-two 标量塌缩为空。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "RankTwoPivotNonzeroDeterminant",
+      "meaning": "由上一正规形：无标量塌缩则固定 rank-two pivot 行列式非零。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "RankTwoElementaryStepanovPivotNonzeroDeterminantLemma",
+      "meaning": "结合已关闭的次数/重数和 Hasse-jet 账本，rank-two 初等 pivot 支路闭合。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "ElementaryStepanovPivotForRankTwoTraceLemma",
+      "meaning": "rank-two trace 的初等 Stepanov pivot 已由 determinant 非零支路闭合。",
+      "proved": true,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+      "meaning": "下一步需要把已得 rank-two pivot 输出同步到全局阶无关 Kummer selector/jet-rank 门。",
+      "proved": false,
+      "remaining": "RankTwoPivotOutputToGlobalKummerSelectorSynchronization"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "Stepanov-Kummer 非零秩仍等待完整 selector。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "全局 Stepanov 证明仍未全部作者侧闭合。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界仍等待 selector/rank-surjectivity 全局粘合。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步关闭 pivot determinant 支路，但不声明行/列命题作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "scalar_collapse_exclusion": {
+    "consequence": "the scalar-collapse channel is empty, so the fixed rank-two pivot determinant is nonzero",
+    "contradiction": "a globally scalar rank-two block would have zero Wronskian, but Picard-Fuchs gives W=C/(lambda*(1-lambda)) with C!=0",
+    "previous_residue_reduction": "all non-quadratic scalar-collapse residue patterns are already excluded",
+    "scope": "all smooth lambda, including j=0 and j=1728; only lambda=0,1,infinity are singular and already firewalled",
+    "surviving_pattern": "a=b=c=delta=d/2, the pure quadratic Legendre pattern"
+  },
+  "self_contained_kummer_trace_bound_internalized": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-legendre-subsumption-router.json": "75fd4d2b55818085fac067d5a0806995355c60119b09699ab0ecaf134314adb4",
+    "docs/monograph/prime-matrix-strict-rks23-pivot-determinant-normal-form-router.json": "ce16a32fa2b126bda0379fd5a26c87067dca747fd27c53ce309761b8b7b7e648",
+    "docs/monograph/prime-matrix-strict-rks23-rank-two-stepanov-pivot-router.json": "b2c07443d55cc7731eb2f11931d623716dd84c7ecab160435f983f0c6bd554e3",
+    "docs/monograph/prime-matrix-strict-rks23-scalar-collapse-residue-matrix-router.json": "58afebbbbc5de6073a572671e7255ec2229a2bbae041e83f209fa64d590a2bc4"
+  },
+  "status": "pure_quadratic_legendre_scalar_collapse_closed_by_picard_fuchs_wronskian",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_kummer_auxiliary_rank_surjectivity_proved": false,
+  "upstream_pivot_ledgers_ready": true,
+  "wronskian_closure": {
+    "P(lambda)": "(1-2*lambda)/(lambda*(1-lambda))",
+    "explicit_solution": "W=C/(lambda*(1-lambda))",
+    "hasse_wronskian": "after clearing lambda*(1-lambda), the seed is the nonzero constant C; modulo odd p it remains nonzero",
+    "nonzero_constant": "the Frobenius basis at lambda=0 has one holomorphic period and one logarithmic companion, so C!=0",
+    "standard_form": "F'' + P(lambda)*F' + Q(lambda)*F=0",
+    "wronskian_equation": "W'=-P(lambda)*W"
+  }
+}
