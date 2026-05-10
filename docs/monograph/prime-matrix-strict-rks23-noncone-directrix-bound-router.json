@@ -1,0 +1,201 @@
+{
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "certificate_type": "prime_matrix_strict_rks23_noncone_directrix_bound_router",
+  "closed_gates": [
+    "PreviousNonConeDirectrixFrontierReady",
+    "IntersectingDirectricesReducedToClosedDegeneracies",
+    "SkewThreeDirectricesForceQuadricClosed",
+    "NonConeDirectrixLineBoundClosed",
+    "ExceptionalDirectrixLineBoundClosed",
+    "FanoCurveDegreeAndExceptionalLineBoundClosed",
+    "RuledSurfaceRulingGeometryClosed",
+    "SinglyRuledExceptionalLineTheoremClosed"
+  ],
+  "closure_transfer": {
+    "cone_exceptional": "common-vertex cone/star exceptional branch was closed in the directrix-cone dichotomy certificate",
+    "noncone_exceptional": "this certificate proves at most two non-cone directrix lines",
+    "ordinary_lines": "ordinary line O(d) bound was closed in the Fano degree certificate",
+    "ruled_branch_result": "singly-ruled exceptional-line theorem is now closed for the line-intersection contribution ledger"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "exceptional_directrix_line_bound_closed": true,
+  "fano_curve_degree_and_exceptional_line_bound_closed": true,
+  "flecnode_cayley_salmon_pack_closed": false,
+  "intersecting_directrices_reduced_to_closed_degeneracies": true,
+  "intersection_branch": {
+    "claim": "two distinct non-cone directrix lines cannot intersect outside already closed degeneracies",
+    "cone_exit": "otherwise the ruling family has common vertex O, the cone/star branch already closed",
+    "consequence": "in the remaining non-cone non-plane branch, directrix lines are pairwise skew",
+    "plane_exit": "infinitely many ruling lines in the span plane force a plane component, already separated",
+    "reason": "if directrices ell1 and ell2 meet at O, any ruling line meeting both either lies in the plane span(ell1,ell2) or passes through O"
+  },
+  "next_direct_attack_target": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+  "next_required_input": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+  "no_theorem_switch": true,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "noncone_directrix_line_bound_closed": true,
+  "open_gates": [
+    "CayleySalmonFlecnodeCriterionClosed",
+    "SelfContainedFlecnodeCayleySalmonPackClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前唯一内部自足线继续突破并关闭 ruled/directrix 源头原子。相交 directrix 线会迫使平面或公共顶点锥面分支，均已在前序账本中处理；在剩余非锥分支中 directrix 必 pairwise skew。若存在三条 skew directrix，所有 ruling line 都是三条 skew 线的公共横截线，因而填满唯一 smooth quadric，迫使当前不可约曲面为已分离的二次曲面。故非锥 directrix 至多两条。至此 singly-ruled 分支闭合，唯一内部自足剩余压成 Cayley-Salmon flecnode 判据；row_column_unconditional_closed 仍保持 false。",
+  "previous_noncone_directrix_frontier_ready": true,
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+      "closed": false,
+      "why_remaining": "must prove Flec(F) vanishing identically on the surface forces ruledness"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousNonConeDirectrixFrontierReady",
+      "meaning": "上一证书已关闭锥面分支，只剩非锥 directrix 界与 Cayley-Salmon。",
+      "proved": true,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": true,
+      "gate": "IntersectingDirectricesReducedToClosedDegeneracies",
+      "meaning": "相交 directrix 线迫使平面分支或公共顶点锥面分支，均已闭合。",
+      "proved": true,
+      "remaining": "intersecting directrix branch closed"
+    },
+    {
+      "closed": true,
+      "gate": "SkewThreeDirectricesForceQuadricClosed",
+      "meaning": "三条 pairwise skew directrix 线强迫 ruling 落在唯一 quadric 上，回到已分离的二次曲面分支。",
+      "proved": true,
+      "remaining": "three skew directrices -> quadric"
+    },
+    {
+      "closed": true,
+      "gate": "NonConeDirectrixLineBoundClosed",
+      "meaning": "非锥、非平面、非二次曲面分支中 directrix 异常线至多两条。",
+      "proved": true,
+      "remaining": "SelfContainedNonConeFanoDirectrixLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "ExceptionalDirectrixLineBoundClosed",
+      "meaning": "锥面分支和非锥 directrix 分支均已闭合。",
+      "proved": true,
+      "remaining": "SelfContainedExceptionalDirectrixLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "FanoCurveDegreeAndExceptionalLineBoundClosed",
+      "meaning": "Fano 次数界、普通线界、异常 directrix 界均已闭合。",
+      "proved": true,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "RuledSurfaceRulingGeometryClosed",
+      "meaning": "singly-ruled 分支所需 ruling/异常线几何已闭合。",
+      "proved": true,
+      "remaining": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry"
+    },
+    {
+      "closed": true,
+      "gate": "SinglyRuledExceptionalLineTheoremClosed",
+      "meaning": "singly-ruled 分支的线交点贡献闭合。",
+      "proved": true,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "meaning": "Cayley-Salmon 判据仍未作者侧内联。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedFlecnodeCayleySalmonPackClosed",
+      "meaning": "结构包现在唯一剩余是 Cayley-Salmon flecnode 判据。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "meaning": "non-ruled 分支仍等待 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "ruled 分支已闭合，但 non-ruled 分支仍差 Cayley-Salmon。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár/Guth-Katz 曲面结构包只剩 Cayley-Salmon 原子。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "二分线交点界仍依赖最后 Cayley-Salmon 原子。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合 ruled/directrix 分支；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "ruled_surface_ruling_geometry_closed": true,
+  "same_theorem_target_preserved": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "singly_ruled_exceptional_line_theorem_closed": true,
+  "skew_branch": {
+    "claim": "three pairwise skew directrix lines force the excluded quadric case",
+    "consequence": "after quadrics are separated, at most two non-cone directrix lines remain",
+    "ruling_effect": "every ruling line of S meets all three directrices, so the ruling Fano curve lies in that transversal ruling",
+    "surface_effect": "an infinite ruling family fills the quadric; irreducibility forces S to equal that quadric",
+    "transversal_fact": "common transversals to three skew lines in P^3 form one ruling of a unique smooth quadric"
+  },
+  "skew_three_directrices_force_quadric_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-directrix-cone-dichotomy-router.json": "78e539edae2a81180d74665a7f9a853c32922c224e1489182b4cc129a0b6e2fd",
+    "docs/monograph/prime-matrix-strict-rks23-fano-degree-ordinary-line-router.json": "c31ee6497bdd7ddc88ee93557db72ad00ad493eb3cf3400fef27ba843f065a3b"
+  },
+  "status": "noncone_directrix_and_singly_ruled_branch_closed_remaining_only_cayley_salmon"
+}
