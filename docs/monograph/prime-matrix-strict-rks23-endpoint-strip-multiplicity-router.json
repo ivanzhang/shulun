@@ -1,0 +1,150 @@
+{
+  "burgess_pointwise_input_still_open": true,
+  "certificate_type": "prime_matrix_strict_rks23_endpoint_strip_multiplicity_router",
+  "closed_gates": [
+    "EndpointStripMultiplicityAtomActive",
+    "WhitneyMicroSideChargeClosed",
+    "FiniteEndpointStripFamilyClosed",
+    "PolylogPacketPointMultiplicityClosed",
+    "OneDimensionalThinSideWeightedSumClosed",
+    "EndpointStripPureMultiplicityClosed",
+    "BurgessPointwiseInputStillOpen"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "endpoint_strip_multiplicity_atom_active": true,
+  "endpoint_strip_pure_multiplicity_closed": true,
+  "finite_endpoint_strip_family_closed": true,
+  "microscopic_endpoint_strip_cauchy_scale_comparison_proved": false,
+  "microscopic_side_whitney_packing_mass_ledger_proved": false,
+  "next_atom": {
+    "input_statement": "for every side s and micro width T=P^kappa, the endpoint-compatible triple-side square mass satisfies T*TripleSideSquareMass_s <= CauchyScale*P^(-eta-o(1))",
+    "name": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass",
+    "not_a_theorem_switch": "same RKS2/RKS3 thin-packet mass absorption target is preserved",
+    "remaining_danger": "a dense family of endpoint-compatible packets with large three-side square mass can still saturate the Cauchy scale",
+    "what_would_close": "combined with this file, it closes MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale"
+  },
+  "next_direct_attack_target": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass",
+  "no_theorem_switch": true,
+  "one_dimensional_sum": {
+    "cells_in_width_T_strip_at_scale_H": "O(T/H+1)",
+    "dyadic_scales": "H=1,2,4,...,<T",
+    "interpretation": "Plancherel leaves one H_s power; summing short-side cells inside endpoint strips costs T*polylog, not T^2",
+    "summed_over_scales": "O(T log P)",
+    "weighted_sum_per_scale": "O(T+H)"
+  },
+  "one_dimensional_thin_side_weighted_sum_closed": true,
+  "open_gates": [
+    "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass",
+    "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+    "ThinDyadicPacketMassAbsorptionProved",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_required_target": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+  "plain_conclusion": "端点 strip 的纯重数部分已被分离并登记：在已有 Whitney/矩形化拆包中，`H_s<T` 的微薄边 packet 可充到宽 `O(T)` 的有限端点/边界 strip；每个物理点只有 polylog 重数，且一维短边带权和只花 `O(T log P)`。因此微薄边剩余进一步压成一个更窄的尺度比较：`P^o(1)*T*TripleSideSquareMass_s <= CauchyScale*P^-eta`。当前材料尚未证明该三侧平方质量比较，所以仍不能声明薄包或行/列命题闭合。",
+  "polylog_packet_point_multiplicity_closed": true,
+  "reduced_internal_atom": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EndpointStripMultiplicityAtomActive",
+      "meaning": "上一证书已把微薄边剩余压到端点/边界 strip 重数与尺度余量。",
+      "proved": true,
+      "remaining": "EndpointStripMultiplicityBoundForMicroscopicProductPackets"
+    },
+    {
+      "closed": true,
+      "gate": "WhitneyMicroSideChargeClosed",
+      "meaning": "在按边界距离拆分的 Whitney 矩形化中，`H_s<T` 的短边 packet 可充到宽 `O(T)` 的端点/边界 strip。",
+      "proved": true,
+      "remaining": "pure multiplicity"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteEndpointStripFamilyClosed",
+      "meaning": "根盒边界族、符号和奇偶类数量为固定常数；dyadic 标签只给 polylog 损失。",
+      "proved": true,
+      "remaining": "pure multiplicity"
+    },
+    {
+      "closed": true,
+      "gate": "PolylogPacketPointMultiplicityClosed",
+      "meaning": "已有矩形化 bounded-overlap 登记每个物理点只进入 `O(log^C P)` 个 packet。",
+      "proved": true,
+      "remaining": "pure multiplicity"
+    },
+    {
+      "closed": true,
+      "gate": "OneDimensionalThinSideWeightedSumClosed",
+      "meaning": "宽 `T` strip 内按 dyadic 长度求和，`sum_{H<T} H*(T/H+1)=O(T log P)`。",
+      "proved": true,
+      "remaining": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointStripPureMultiplicityClosed",
+      "meaning": "纯重数账本闭合：微薄边总量只剩 `T` 乘三侧平方质量的 Cauchy 尺度比较。",
+      "proved": true,
+      "remaining": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass"
+    },
+    {
+      "closed": false,
+      "gate": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass",
+      "meaning": "仓库内尚未证明端点兼容三侧平方质量乘 `T` 后仍比 Cauchy 尺度小固定幂。",
+      "proved": false,
+      "remaining": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass"
+    },
+    {
+      "closed": false,
+      "gate": "MicroscopicSideWhitneyPackingMassLedgerAtCauchyScale",
+      "meaning": "微薄边总质量吸收需要纯重数账本和最终尺度比较同时成立。",
+      "proved": false,
+      "remaining": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass"
+    },
+    {
+      "closed": false,
+      "gate": "ThinDyadicPacketMassAbsorptionProved",
+      "meaning": "薄包分支仍缺微薄边尺度比较，因此不能声明薄包总吸收。",
+      "proved": false,
+      "remaining": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessPointwiseInputStillOpen",
+      "meaning": "大包分支的 Burgess 点态输入仍是独立开放项。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只关闭微薄边端点 strip 纯重数账本，不关闭行/列无条件定理。",
+      "proved": false,
+      "remaining": "MicroscopicEndpointStripCauchyScaleComparisonForWeightedSideMass AND SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-microscopic-thin-side-mass-router.json": "0014075104974073e0811f37ce6ef3009d971cf60ec7fcea4a5e678e7d713981",
+    "docs/monograph/prime-matrix-strict-rks23-product-ratio-rectangular-convolution-router.json": "35164b723a154c0cd10a8cd70eba89513908d70c1a6a330b8cf57850dc8529c5"
+  },
+  "status": "endpoint_strip_pure_multiplicity_closed_cauchy_scale_comparison_remains",
+  "strip_model": {
+    "ambient_cover": "rectangularization splits by signs, parity, and distance to finitely many linear strip boundaries",
+    "charge_rule": "charge the packet to a boundary/endpoint strip of width O(T) in side s",
+    "micro_side_event": "H_s<T for one of s=1,2,3,4",
+    "micro_width": "T=P^kappa",
+    "point_multiplicity": "imported bounded-overlap gives O(log^C P) physical packet multiplicity",
+    "strip_family_size": "O(1) boundary families times 4 sides, with only polylog dyadic labels"
+  },
+  "thin_dyadic_packet_mass_absorption_proved": false,
+  "weighted_mass_bound": {
+    "after_strip_multiplicity": "sum_{Q:H_s<T} L(Q) <= P^o(1) * T * TripleSideSquareMass_s(endpoint-compatible packets)",
+    "previous_packet_bound": "L(Q)<=H_s*prod_{j!=s}H_j^2",
+    "required_final_comparison": "P^o(1)*T*TripleSideSquareMass_s <= CauchyScale*P^(-eta)",
+    "triple_side_square_mass": "sum over compatible packets of prod_{j!=s}H_j^2 after side-s strip charge",
+    "why_not_automatic": "the existing corpus has not bounded the endpoint-compatible triple-side square mass against the Cauchy scale"
+  },
+  "whitney_micro_side_charge_closed": true
+}
