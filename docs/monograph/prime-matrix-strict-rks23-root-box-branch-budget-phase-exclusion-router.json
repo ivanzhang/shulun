@@ -1,0 +1,99 @@
+{
+  "branch_budget_envelope_closed": true,
+  "branch_ledger": {
+    "box_height": "U=max J with U<=P^(1/2)log^236(P)",
+    "branch_budget": "B(gamma)<=1+(U^2+2|gamma|U)/P",
+    "divisor_envelope": "r_gamma<=B(gamma)*P^o(1)",
+    "high_threshold": "r_gamma>N^(1-eta) for some fixed eta>0",
+    "integer_lift": "ab-gamma(a+b)=kP",
+    "necessary_central_condition": "|gamma| >= (P/U)*N^(1-eta-o(1)) unless the phase is already absorbed",
+    "per_branch_factorization": "(a-gamma)(b-gamma)=gamma^2+kP",
+    "signed_phase": "gamma is the signed representative of c"
+  },
+  "central_phase_root_localized_graph_box_power_saving_proved": false,
+  "certificate_type": "prime_matrix_strict_rks23_root_box_branch_budget_phase_exclusion_router",
+  "closed_gates": [
+    "RootLocalizedGraphBoxTargetActive",
+    "BranchBudgetEnvelopeClosed",
+    "PerBranchDivisorEnvelopeClosed",
+    "LowBranchBudgetPhaseHighSpectrumExcluded",
+    "HighFiberForcesCentralPhaseCondition"
+  ],
+  "compression": {
+    "absorbed_phases": "all phases with B(gamma)<=N^(1-eta-o(1))",
+    "next_direct_attack": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving",
+    "remaining_phases": "central signed phases whose branch budget itself is high enough to support a high fiber",
+    "still_missing": "large branch supply does not by itself create many root-localized hits; it only keeps the counterexample alive",
+    "why_this_is_narrower": "the proof no longer has to handle every interior phase; only central phases with large lift-branch supply remain"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "high_fiber_forces_central_phase_condition": true,
+  "low_branch_budget_phase_high_spectrum_excluded": true,
+  "next_direct_attack_target": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "per_branch_divisor_envelope_closed": true,
+  "plain_conclusion": "根定位小差盒继续被分支预算压缩。对有符号相位 `gamma`，`ab-gamma(a+b)=kP` 的分支数满足 `B(gamma)<=1+(U^2+2|gamma|U)/P`；固定分支再由除数界控制。因此低分支预算相位不能进入固定幂高谱。任何假设高纤维都被迫满足中央相位必要条件 `|gamma| >= (P/U)N^(1-eta-o(1))`，剩余只剩中央相位的大分支供给是否能同步命中根定位盒。",
+  "root_localized_graph_box_target_active": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RootLocalizedGraphBoxTargetActive",
+      "meaning": "上一证书已把剩余固定为根定位小差盒的有理相位映射高重数排斥。",
+      "proved": true,
+      "remaining": "RootLocalizedQuadraticGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "BranchBudgetEnvelopeClosed",
+      "meaning": "`ab-gamma(a+b)=kP` 给出 `B(gamma)<=1+(U^2+2|gamma|U)/P`。",
+      "proved": true,
+      "remaining": "LowBranchBudgetPhaseHighSpectrumExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "PerBranchDivisorEnvelopeClosed",
+      "meaning": "固定分支化为一条整数乘积方程，所以每分支由除数界控制。",
+      "proved": true,
+      "remaining": "LowBranchBudgetPhaseHighSpectrumExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "LowBranchBudgetPhaseHighSpectrumExcluded",
+      "meaning": "若分支预算低于高谱阈值，则 `r_gamma<=B(gamma)P^o(1)` 直接排除高重数。",
+      "proved": true,
+      "remaining": "absorbed"
+    },
+    {
+      "closed": true,
+      "gate": "HighFiberForcesCentralPhaseCondition",
+      "meaning": "任何幸存高纤维必须满足 `|gamma| >= (P/U)N^(1-eta-o(1))` 的中央相位必要条件。",
+      "proved": true,
+      "remaining": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving",
+      "meaning": "中央相位仍可能有足够分支预算；还需证明这些分支不能同步命中根定位小差盒。",
+      "proved": false,
+      "remaining": "CentralBranchRootBoxIncidencePowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只排除低分支预算相位，没有证明中央相位排斥。",
+      "proved": false,
+      "remaining": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-root-localized-discriminant-corridor-router.json": "84df320a72b4204a5e7cded1558dc3bec9ddba061df00c161bf88ae7d246ac56"
+  },
+  "status": "low_branch_budget_phases_absorbed_central_root_box_high_spectrum_remains"
+}
