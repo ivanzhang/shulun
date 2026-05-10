@@ -1,0 +1,88 @@
+{
+  "affine_inverse_high_spectrum_power_saving_proved": false,
+  "affine_inverse_self_intersection_identity_closed": true,
+  "affine_reduction": {
+    "affine_progression": "A_s=sJ-1={s*a-1: a in J}",
+    "allowed_next_tools": "self-contained incidence on xy=1 against affine progressions, or PGL2 almost-stabilizer expansion",
+    "inverse_self_intersection_identity": "r_J(s)=|A_s cap A_s^(-1)|",
+    "low_overlap_absorption": "for any fixed eta>0, sum_{r_s<=N^(1-eta)} r_s^2 <= N^(1-eta) sum_s r_s = N^(3-eta)",
+    "mobius_overlap": "r_J(s)=#{a in J: a/(s*a-1) in J}",
+    "proof_line": "x=s*a-1 and b=a/(s*a-1) imply s*b-1=x^(-1)",
+    "remaining_high_spectrum": "control s with |A_s cap A_s^(-1)| > N^(1-eta)",
+    "structural_meaning": "a bad spectrum means many affine images of J are unusually stable under inversion"
+  },
+  "certificate_type": "prime_matrix_strict_rks23_mobius_to_affine_inverse_high_spectrum_router",
+  "closed_gates": [
+    "MobiusSpectrumTargetActive",
+    "AffineInverseSelfIntersectionIdentityClosed",
+    "LowOverlapLayerAutomaticallyAbsorbed",
+    "IncidenceAndSumProductRouteStillAligned"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "incidence_and_sum_product_route_still_aligned": true,
+  "low_overlap_layer_automatically_absorbed": true,
+  "mobius_spectrum_target_active": true,
+  "next_direct_attack_target": "AffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "AffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_group_expansion_target": "PGL2IntervalAlmostStabilizerPowerSavingForMobiusInvolutions",
+  "parallel_incidence_target": "RudnevRNRSAffineProgressionInverseIntersectionIncidenceEstimate",
+  "plain_conclusion": "当前唯一内部自足线继续缩窄：`phi_s(a)=a/(sa-1)` 的区间重叠不是一般 Möbius 图问题，而是完全等价于仿射等差段 `A_s=sJ-1` 的倒数自交 `|A_s∩A_s^{-1}|`。同时低重叠层由 `Σ_s r_s=N^2` 自动吸收；真正剩余只剩高重叠谱排斥：证明不能有许多 `s` 使同一个仿射进度段在取倒数后仍大量落回自身。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "MobiusSpectrumTargetActive",
+      "meaning": "上一证书已把固定幂能量核心压成一参数 Möbius interval-overlap 谱。",
+      "proved": true,
+      "remaining": "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "AffineInverseSelfIntersectionIdentityClosed",
+      "meaning": "`phi_s` 重叠完全等价于仿射等差段 `A_s=sJ-1` 与其倒数像自交。",
+      "proved": true,
+      "remaining": "AffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "LowOverlapLayerAutomaticallyAbsorbed",
+      "meaning": "低重叠层由 `sum r_s=N^2` 直接给固定幂节省；只有高重叠谱需要深估计。",
+      "proved": true,
+      "remaining": "AffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23"
+    },
+    {
+      "closed": true,
+      "gate": "IncidenceAndSumProductRouteStillAligned",
+      "meaning": "Rudnev/RNRS/sum-product 路线可解释为 `xy=1` 与仿射进度族的高自交排斥。",
+      "proved": true,
+      "remaining": "RudnevRNRSAffineProgressionInverseIntersectionIncidenceEstimate"
+    },
+    {
+      "closed": false,
+      "gate": "AffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23",
+      "meaning": "仓库内尚未证明许多 `s` 不能使 `|A_s cap A_s^{-1}|` 达到高重叠规模。",
+      "proved": false,
+      "remaining": "RudnevRNRSAffineProgressionInverseIntersectionIncidenceEstimate OR PGL2IntervalAlmostStabilizerPowerSavingForMobiusInvolutions"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是等价改写和低重叠吸收，不是高谱排斥本身。",
+      "proved": false,
+      "remaining": "AffineProgressionInverseSelfIntersectionHighSpectrumPowerSavingForBalancedRKS23"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/monograph/prime-matrix-strict-rks23-reciprocal-energy-mobius-overlap-router.json": "1ff5cdfddf0924dbf91779052bae59ab5b808168ba2e08327e244bf687c5f63f",
+    "docs/monograph/prime-matrix-strict-rks23-unweighted-energy-power-saving-relaxation-router.json": "06047f6e4d09a2bc121c9fabb5d6309e3c06eacf3da00b536fd893bd025c1b7a",
+    "docs/monograph/prime-matrix-strict-rks23-weighted-energy-to-unweighted-core-router.json": "fc5aebed9fc1bfd4bf2fdd36a455ef044f0b366acfb7d51d17a1b4398474c4e7"
+  },
+  "status": "mobius_overlap_spectrum_reduced_to_affine_progression_inverse_self_intersection_high_spectrum"
+}
