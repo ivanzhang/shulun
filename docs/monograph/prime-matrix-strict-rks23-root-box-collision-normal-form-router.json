@@ -1,0 +1,83 @@
+{
+  "central_root_box_target_active": true,
+  "certificate_type": "prime_matrix_strict_rks23_root_box_collision_normal_form_router",
+  "closed_gates": [
+    "CentralRootBoxTargetActive",
+    "RootBoxSamePhaseCollisionIdentityClosed",
+    "SameTAndSignDiagonalAbsorbed",
+    "HighFiberForcesNonDiagonalCollisionMass"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "high_fiber_forces_nondiagonal_collision_mass": true,
+  "next_direct_attack_target": "NonDiagonalRootBoxCubicCollisionPowerSaving",
+  "no_theorem_switch": true,
+  "nondiagonal_root_box_cubic_collision_power_saving_proved": false,
+  "normal_form": {
+    "cleared_denominator_form": "t2(t1^2-d1^2)-t1(t2^2-d2^2)=0 mod P",
+    "diagonal_absorption": "same-t and sign-symmetry collisions contribute only O(N^2), below every N^(3-delta) target",
+    "diagonal_t_collision": "if t1=t2 then d1^2=d2^2, hence d1=±d2 in F_P",
+    "high_fiber_implication": "a fiber of size H produces >=H(H-2) non-diagonal same-phase collisions unless it is absorbed by the diagonal layer",
+    "phase_map": "Phi(t,d)=(t^2-d^2)/(4t) mod P",
+    "remaining_shape": "prove power saving for non-diagonal cubic collisions in the root-localized box",
+    "root_box_variables": "t=a+b in J+J, d=a-b with |d|<|J| and matching parity",
+    "same_phase_collision": "Phi(t1,d1)=Phi(t2,d2)"
+  },
+  "open_gates": [
+    "NonDiagonalRootBoxCubicCollisionPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "中央根定位盒的高重数可改写为同相位碰撞问题。对 `Phi(t,d)=(t^2-d^2)/(4t)`，两点同相位当且仅当 `t2(t1^2-d1^2)-t1(t2^2-d2^2)=0 mod P`。同 `t` 的退化只给 `d1=±d2`，规模为 `O(N^2)`，已低于固定幂能量目标。因此当前最窄剩余变成非对角根定位盒三次碰撞的固定幂节省。",
+  "root_box_same_phase_collision_identity_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CentralRootBoxTargetActive",
+      "meaning": "上一证书已把幸存反例压入中央相位根定位盒。",
+      "proved": true,
+      "remaining": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "RootBoxSamePhaseCollisionIdentityClosed",
+      "meaning": "同相位条件精确等价于清分母三次碰撞式。",
+      "proved": true,
+      "remaining": "RootBoxSamePhaseCollisionEnergyNormalForm"
+    },
+    {
+      "closed": true,
+      "gate": "SameTAndSignDiagonalAbsorbed",
+      "meaning": "`t1=t2` 只允许 `d1=±d2`，该退化层规模 `O(N^2)`。",
+      "proved": true,
+      "remaining": "absorbed"
+    },
+    {
+      "closed": true,
+      "gate": "HighFiberForcesNonDiagonalCollisionMass",
+      "meaning": "若中央相位仍有高纤维，则必须产生大量 `t1!=t2` 的同相位碰撞。",
+      "proved": true,
+      "remaining": "NonDiagonalRootBoxCubicCollisionPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "NonDiagonalRootBoxCubicCollisionPowerSaving",
+      "meaning": "仓库内尚未证明根定位盒中非对角三次碰撞具有固定幂节省。",
+      "proved": false,
+      "remaining": "RootBoxCubicIncidenceOrSumProductPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只把剩余改写为非对角碰撞输入，没有证明该碰撞估计。",
+      "proved": false,
+      "remaining": "NonDiagonalRootBoxCubicCollisionPowerSaving"
+    }
+  ],
+  "same_t_and_sign_diagonal_absorbed": true,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-root-box-branch-budget-phase-exclusion-router.json": "04018bfdc23618c7bcb759733be19b0ec445a61b7223e90f195049c9745e68b7"
+  },
+  "status": "central_root_box_high_fiber_reduced_to_nondiagonal_cubic_collision_power_saving"
+}
