@@ -1,0 +1,219 @@
+{
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "certificate_type": "prime_matrix_strict_rks23_flecnode_polynomial_construction_router",
+  "closed_gates": [
+    "PreviousFlecnodeFrontierReady",
+    "HasseDerivativeContactSetupClosed",
+    "ProjectiveDirectionEliminationClosed",
+    "FlecnodeDegreeBoundClosed",
+    "ContainedLineImpliesFlecnodeLocusClosed",
+    "FlecnodePolynomialConstructionClosed"
+  ],
+  "construction": {
+    "direction": "use a projective direction v=(u:v:w)",
+    "first_contact": "D_v F=0",
+    "flecnode_condition": "a point is flecnodal if the three homogeneous equations in v have a nonzero projective solution",
+    "second_contact": "D_v^2 F=0 using Hasse derivatives in positive characteristic",
+    "surface": "let F(x,y,z) be a squarefree irreducible polynomial of degree d defining a component",
+    "third_contact": "D_v^3 F=0 using Hasse derivatives, valid under the imported degree<p cutoff"
+  },
+  "contained_line": {
+    "consequence": "every contained line lies in Z(F) cap Z(Flec(F)) outside harmless singular/exceptional points",
+    "downstream_use": "if Flec(F) is not identically zero on F, Bezout with deg Flec(F)=O(d) gives the O(d^3) non-ruled line-intersection scale after the remaining Cayley-Salmon criterion",
+    "reason": "restricting F to ell gives the zero univariate polynomial, so the first three Hasse directional derivatives along ell vanish",
+    "statement": "if an affine/projective line ell is contained in Z(F), then every nonsingular point of ell is flecnodal"
+  },
+  "counterexample_assumption_only": true,
+  "elimination": {
+    "classical_sharpening": "the classical Salmon flecnode polynomial has degree 11d-24; the internal chain only needs O(d)",
+    "coefficient_degrees": "the three contact equations have direction degrees 1,2,3 and x-degrees d-1,d-2,d-3",
+    "method": "take the multihomogeneous resultant in the projective direction variables",
+    "result": "obtain a polynomial Flec(F)(x,y,z) vanishing at every flecnodal point of F=0",
+    "safe_degree_bound": "deg Flec(F)<=11d is enough for all downstream Bezout estimates"
+  },
+  "empirical_absence_not_used": true,
+  "external_source_anchors": [
+    {
+      "name": "Guth-Katz flecnode degree statement",
+      "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v181-n1-p02-p.pdf",
+      "used_for": "classical degree 11d-24 calibration; internal certificate uses the weaker safe O(d) bound"
+    },
+    {
+      "name": "Katz flecnode exposition",
+      "url": "https://arxiv.org/abs/1404.3412",
+      "used_for": "Cayley-Salmon/flecnode context and separation of construction from ruledness criterion"
+    }
+  ],
+  "flecnode_cayley_salmon_pack_closed": false,
+  "flecnode_degree_bound_closed": true,
+  "flecnode_polynomial_construction_closed": true,
+  "hasse_derivative_contact_setup_closed": true,
+  "line_containment_implies_flecnode_locus_closed": true,
+  "next_direct_attack_target": "SelfContainedCayleySalmonCriterionAndRuledSurfaceRulingGeometry",
+  "next_required_input": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic + SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry",
+  "no_theorem_switch": true,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "open_gates": [
+    "CayleySalmonFlecnodeCriterionClosed",
+    "RuledSurfaceRulingGeometryClosed",
+    "SelfContainedFlecnodeCayleySalmonPackClosed",
+    "SinglyRuledExceptionalLineTheoremClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前唯一内部自足线继续下钻并关闭一个真实结构原子：flecnode 多项式的构造与次数界。用一、二、三阶 Hasse 方向导数写出三阶接触条件，再对 projective 方向变量消元，得到 Flec(F)；安全次数界 deg Flec(F)<=11d 已足以支撑后续 Bezout。任何包含于 F=0 的直线都会落入 flecnode locus。但 Cayley-Salmon 判据和 singly-ruled 的 ruling/异常线几何仍未内联，所以 row_column_unconditional_closed 仍保持 false。",
+  "previous_flecnode_frontier_ready": true,
+  "projective_direction_elimination_closed": true,
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+      "closed": false,
+      "why_remaining": "must prove Flec(F) vanishing identically on Z(F) forces the surface component to be ruled"
+    },
+    {
+      "atom": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry",
+      "closed": false,
+      "why_remaining": "must prove the ruling-family and exceptional-line geometry for singly ruled components"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousFlecnodeFrontierReady",
+      "meaning": "上一证书已把唯一剩余压成 flecnode/Cayley-Salmon 结构包三个原子。",
+      "proved": true,
+      "remaining": "SelfContainedFlecnodeCayleySalmonRuledSurfaceStructurePack"
+    },
+    {
+      "closed": true,
+      "gate": "HasseDerivativeContactSetupClosed",
+      "meaning": "一、二、三阶接触条件用 Hasse 方向导数统一处理，兼容正特征 degree<p 截断。",
+      "proved": true,
+      "remaining": "directional contact equations closed"
+    },
+    {
+      "closed": true,
+      "gate": "ProjectiveDirectionEliminationClosed",
+      "meaning": "通过方向变量的多重齐次消元得到 flecnode 多项式。",
+      "proved": true,
+      "remaining": "resultant construction closed"
+    },
+    {
+      "closed": true,
+      "gate": "FlecnodeDegreeBoundClosed",
+      "meaning": "得到 deg Flec(F)<=11d 的安全次数界，足够支撑后续 Bezout 账本。",
+      "proved": true,
+      "remaining": "SelfContainedFlecnodePolynomialConstructionAndDegreeBound"
+    },
+    {
+      "closed": true,
+      "gate": "ContainedLineImpliesFlecnodeLocusClosed",
+      "meaning": "整条直线包含于曲面时，沿该直线的一至三阶方向导数恒为零。",
+      "proved": true,
+      "remaining": "contained line -> flecnode locus closed"
+    },
+    {
+      "closed": true,
+      "gate": "FlecnodePolynomialConstructionClosed",
+      "meaning": "flecnode 多项式的构造、次数界和包含线进入 flecnode locus 的部分已自足闭合。",
+      "proved": true,
+      "remaining": "SelfContainedFlecnodePolynomialConstructionAndDegreeBound"
+    },
+    {
+      "closed": false,
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "meaning": "尚未作者侧证明 Flec(F) 在曲面上恒零推出 ruled。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "RuledSurfaceRulingGeometryClosed",
+      "meaning": "尚未作者侧证明 singly-ruled 曲面的 ruling 与异常线几何。",
+      "proved": false,
+      "remaining": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedFlecnodeCayleySalmonPackClosed",
+      "meaning": "结构包还剩 Cayley-Salmon 判据和 ruled 几何，不能关闭总包。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonCriterionAndRuledSurfaceRulingGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "SinglyRuledExceptionalLineTheoremClosed",
+      "meaning": "仍等待 ruled-surface 几何包。",
+      "proved": false,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "meaning": "flecnode 构造已闭合，但仍等待 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "两个剩余结构定理未内联前，ruled/non-ruled 总包仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonCriterionAndRuledSurfaceRulingGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár/Guth-Katz 曲面结构包仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonCriterionAndRuledSurfaceRulingGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "二分线交点界仍依赖曲面结构包。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只闭合 flecnode 多项式构造原子；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "ruled_surface_ruling_geometry_closed": false,
+  "same_theorem_target_preserved": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "singly_ruled_exceptional_line_theorem_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-flecnode-structure-unification-router.json": "739213917bdceeb272a2b2700a2a66ddb08c9219f0190fafa034aa2397523b54",
+    "docs/monograph/prime-matrix-strict-rks23-positive-characteristic-cutoff-router.json": "8a6eef417f941e133d36afc2666de16b18d232309901e56bd4bfea23a7cdd2d6"
+  },
+  "status": "flecnode_polynomial_construction_closed_remaining_cayley_salmon_and_ruled_geometry"
+}
