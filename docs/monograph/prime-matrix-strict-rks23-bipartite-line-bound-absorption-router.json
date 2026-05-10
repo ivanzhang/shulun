@@ -1,0 +1,144 @@
+{
+  "certificate_type": "strict_rks23_bipartite_line_bound_absorption_router",
+  "status": "bipartite_line_intersection_bound_closed_remaining_point_plane_absorption",
+  "previous_bipartite_frontier_ready": true,
+  "positive_characteristic_cutoff_closed": true,
+  "interpolation_surface_layer_imported": true,
+  "off_surface_bezout_imported": true,
+  "plane_quadric_degeneracy_imported": true,
+  "ruled_surface_package_imported": true,
+  "component_summation_closed": true,
+  "self_contained_bipartite_line_intersection_bound_closed": true,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used": true,
+  "counterexample_assumption_only": true,
+  "bound_statement": {
+    "input": "two finite line families L,M in F^3 with |L|<=|M| and |L|=O(p^2) in characteristic p",
+    "degeneracy": "no quadric contains simultaneously s lines of L and t lines of M",
+    "output": "I(L,M)=O(|L|^(1/2)|M| + t|L| + s|M|)",
+    "surface_choice": "interpolate a degree D=O(|L|^(1/2)) surface containing every line in L",
+    "degree_condition": "the imported c0 cutoff guarantees component degrees below characteristic in the positive-characteristic branch"
+  },
+  "absorption_ledger": {
+    "off_surface_M_lines": "each M-line not contained in the interpolating surface contributes at most D points by Bezout",
+    "plane_quadric_components": "charged by the stated s,t quadric degeneracy ledger",
+    "singly_ruled_components": "ordinary contained lines meet O(d_i) peers; exceptional directrix lines are O(1) and already charged",
+    "non_ruled_components": "Cayley-Salmon now gives Flec(F_i) nonzero; Bezout yields O(d_i^3) internal line-intersection scale",
+    "component_degree_sum": "sum d_i<=D and the closed component ledger absorbs O(sum d_i^3) into the same target scale under the previous certificate's accounting",
+    "result": "all contributions match the bipartite Guth-Katz/Kollar target bound"
+  },
+  "closed_gates": [
+    "PreviousBipartiteFrontierReady",
+    "PositiveCharacteristicCutoffImported",
+    "InterpolationSurfaceLayerImported",
+    "OffSurfaceBezoutImported",
+    "PlaneQuadricDegeneracyImported",
+    "RuledSurfacePackageImported",
+    "ComponentSummationClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed"
+  ],
+  "open_gates": [
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof",
+      "closed": false,
+      "why_remaining": "the now-closed line-intersection theorem must be reinserted into de Zeeuw's point-plane incidence reduction"
+    }
+  ],
+  "next_direct_attack_target": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof",
+  "next_required_input": "Absorb closed bipartite line-intersection bound into de Zeeuw point-plane incidence reduction",
+  "plain_conclusion": "二分 Guth-Katz/Kollar 线交点界已由初等曲面层与已闭合 Cayley-Salmon/Kollar 曲面包吸收闭合。下一步是把该线交点界回接到 de Zeeuw 点-平面 incidence 归约。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-point-plane-dezeeuw-line-intersection-router.json": "955da3d4896f8c3c2db7954f22fd5b0bf734b9e4afd4bd20828d567e07787645",
+    "docs/monograph/prime-matrix-strict-rks23-line-intersection-elementary-surface-layer-router.json": "6d98de51773d42d0b3b80afa3d4ea44925f71f4dd4ffc56930fa3fa70ccca7fd",
+    "docs/monograph/prime-matrix-strict-rks23-line-germ-closure-cayley-salmon-router.json": "48e4fc1bbe36bc33c65318193bdda6f68e0d393a5ef675ce86dfb68d37d58749",
+    "docs/monograph/prime-matrix-strict-rks23-positive-characteristic-cutoff-router.json": "8a6eef417f941e133d36afc2666de16b18d232309901e56bd4bfea23a7cdd2d6"
+  },
+  "rows": [
+    {
+      "gate": "PreviousBipartiteFrontierReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "de Zeeuw 归约、初等曲面层和 Cayley-Salmon/Kollar 曲面包均已就绪。",
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "PositiveCharacteristicCutoffImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "正特征 degree<p 截断已从前序证书导入。",
+      "remaining": "degree<p cutoff"
+    },
+    {
+      "gate": "InterpolationSurfaceLayerImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "低次数插值曲面构造已闭合并导入。",
+      "remaining": "interpolation layer"
+    },
+    {
+      "gate": "OffSurfaceBezoutImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "不含于插值曲面的 M 直线由 Bézout 计数控制。",
+      "remaining": "off-surface Bezout"
+    },
+    {
+      "gate": "PlaneQuadricDegeneracyImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "平面/二次曲面退化分量已由 quadric s,t 假设收费。",
+      "remaining": "plane/quadric degeneracy"
+    },
+    {
+      "gate": "RuledSurfacePackageImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "singly-ruled 与 non-ruled 曲面结构包已由 Cayley-Salmon 闭合证书导入。",
+      "remaining": "closed Kollar surface package"
+    },
+    {
+      "gate": "ComponentSummationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "各分量贡献按前序账本求和后落入目标二分线交点界。",
+      "remaining": "component summation"
+    },
+    {
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "二分 Guth-Katz/Kollar 线交点界在作者侧吸收闭合。",
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "点-平面 incidence 还需把 de Zeeuw 字典与本线交点界做最终回接证书。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "closed": false,
+      "proved": false,
+      "meaning": "RNRS/Rudnev 输入仍等待点-平面 incidence 回接。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只闭合二分线交点界；未宣称行/列命题无条件闭合。",
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ]
+}
