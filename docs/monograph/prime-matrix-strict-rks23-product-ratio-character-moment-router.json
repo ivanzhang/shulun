@@ -1,0 +1,110 @@
+{
+  "alternate_name_for_same_atom": "SelfContainedBurgessOrBourgainGaraevCharacterMomentForRKS23Rectangles",
+  "centered_l2_equals_nonprincipal_four_interval_moment": true,
+  "certificate_type": "prime_matrix_strict_rks23_product_ratio_character_moment_router",
+  "closed_gates": [
+    "DyadicRectangularConvolutionHardpointActive",
+    "MultiplicativeFourierOnFStarClosed",
+    "PrincipalCharacterUniformTermRemoved",
+    "CrossRatioFourierFactorizationClosed",
+    "CenteredL2EqualsNonprincipalFourIntervalMoment",
+    "ExternalBurgessBGWouldBeSufficientButNotInternalized"
+  ],
+  "counterexample_assumption_only": true,
+  "cross_ratio_fourier_factorization_closed": true,
+  "dyadic_rectangular_convolution_hardpoint_active": true,
+  "empirical_absence_not_used": true,
+  "factorization": {
+    "a_cross_ratio_transform": "hat R_A0,A1(chi)=S_A1(chi)*conj(S_A0(chi))",
+    "b_cross_ratio_transform": "hat R_B0,B1(chi)=S_B1(chi)*conj(S_B0(chi))",
+    "external_sufficient_route": "classical Burgess/BG-style character-sum input would be sufficient if accepted with the needed uniform packet constants",
+    "internal_gap": "the current corpus has not internalized that character-moment proof for all dyadic rectangle packets",
+    "interval_character_sum": "S_I(chi)=sum_{n in I} chi(n)",
+    "l2_character_moment": "sum_rho |C^circ(rho)|^2=(1/(P-1))*sum_{chi!=chi0} |S_A0(chi)S_A1(chi)S_B0(chi)S_B1(chi)|^2",
+    "product_transform": "hat C(chi)=S_A1(chi)conj(S_A0(chi))S_B1(chi)conj(S_B0(chi))",
+    "required_saving": "prove this nonprincipal four-short-interval character product moment is below the Cauchy scale by a fixed power"
+  },
+  "four_short_interval_character_product_moment_saving_proved": false,
+  "fourier": {
+    "centered_ratio": "C^circ(rho)=C_R0,R1(rho)-(|R0|*|R1|)/(P-1)",
+    "cross_product_ratio": "C_R0,R1(rho)=#{(r0,r1): a1*b1=rho*a0*b0}",
+    "group": "G=F_P^* with |G|=P-1",
+    "multiplicative_fourier": "hat f(chi)=sum_{rho in G} f(rho) chi(rho)",
+    "packet_pair": "R0=A0 x B0 and R1=A1 x B1",
+    "plancherel": "sum_rho |C^circ(rho)|^2=(1/(P-1))*sum_{chi!=chi0}|hat C(chi)|^2",
+    "principal_character": "chi0 gives hat C(chi0)=|R0|*|R1| and is exactly removed by centering"
+  },
+  "multiplicative_fourier_on_fstar_closed": true,
+  "next_direct_attack_target": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "dyadic 矩形卷积 L2 已被精确对角化到乘法角色侧。principal character 恰好产生 `(|R0||R1|)/(P-1)` 的均匀主项，中心化后完全消失。每个非主角色的 Fourier 系数因子化为四个短区间角色和 `S_A0,S_A1,S_B0,S_B1` 的乘积。因此下一真正自足硬点不是抽象卷积，而是证明非主角色四短区间乘积矩具有 Cauchy 所需的固定幂节省。",
+  "principal_character_uniform_term_removed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DyadicRectangularConvolutionHardpointActive",
+      "meaning": "上一证书已把当前剩余固定为 dyadic 矩形包对的中心化乘法卷积 L2 节省。",
+      "proved": true,
+      "remaining": "DyadicRectangularProductRatioConvolutionL2PowerSavingAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "MultiplicativeFourierOnFStarClosed",
+      "meaning": "在 `F_P^*` 上对乘积比值谱做乘法 Fourier 是精确等式。",
+      "proved": true,
+      "remaining": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "PrincipalCharacterUniformTermRemoved",
+      "meaning": "principal character 正好给出 `(|R0||R1|)/(P-1)` 均匀主项，已由中心化扣除。",
+      "proved": true,
+      "remaining": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "CrossRatioFourierFactorizationClosed",
+      "meaning": "乘积交叉比值谱的 Fourier 变换总计因子化为四个短区间角色和的乘积。",
+      "proved": true,
+      "remaining": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "CenteredL2EqualsNonprincipalFourIntervalMoment",
+      "meaning": "中心化卷积 L2 精确等于非主角色上四个短区间角色和乘积的二阶矩。",
+      "proved": true,
+      "remaining": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBurgessBGWouldBeSufficientButNotInternalized",
+      "meaning": "Burgess/BG 型角色和输入若带所需统一常数可作为充分外部闭合；本证书未把它内部化。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessOrBourgainGaraevCharacterMomentForRKS23Rectangles"
+    },
+    {
+      "closed": false,
+      "gate": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving",
+      "meaning": "仓库内尚未给出该非主角色四短区间乘积矩的严格内部固定幂节省证明。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessOrBourgainGaraevCharacterMomentForRKS23Rectangles"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是乘法 Fourier/角色矩等式，不是角色矩节省本身。",
+      "proved": false,
+      "remaining": "FourShortIntervalNonprincipalMultiplicativeCharacterProductMomentPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-product-ratio-rectangular-convolution-router.json": "35164b723a154c0cd10a8cd70eba89513908d70c1a6a330b8cf57850dc8529c5"
+  },
+  "status": "dyadic_rectangular_convolution_l2_reduced_to_nonprincipal_character_product_moment"
+}
