@@ -1,0 +1,180 @@
+{
+  "certificate_type": "strict_rks23_parabolic_hessian_developable_router",
+  "status": "parabolic_hessian_branch_and_monge_prolongation_closed_remaining_line_germ_closure",
+  "previous_parabolic_frontier_ready": true,
+  "degree_less_than_characteristic_imported": true,
+  "hessian_determinant_zero_closed": true,
+  "gradient_rank_one_closed": true,
+  "envelope_representation_closed": true,
+  "developable_line_family_closed": true,
+  "parabolic_hessian_developable_branch_closed": true,
+  "monge_prolongation_closed": true,
+  "algebraic_line_germ_closure_closed": false,
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used": true,
+  "counterexample_assumption_only": true,
+  "hessian_reduction": {
+    "degenerate_condition": "A=f_xy+u f_yy=0 and L2=f_xx+2u f_xy+u^2 f_yy=0",
+    "kernel_equations": "equivalently f_xy+u f_yy=0 and f_xx+u f_xy=0",
+    "determinant": "therefore f_xx f_yy-f_xy^2=0 on the generic branch",
+    "rank_zero_exit": "if the Hessian rank is zero on a dense open set, f is affine and the component is a plane",
+    "rank_one_case": "otherwise the gradient map (f_x,f_y) has one-dimensional image"
+  },
+  "envelope_proof": {
+    "gradient_curve": "write the normalization of the gradient image as t -> (a(t),b(t))",
+    "support_plane": "on the fiber with gradient (a(t),b(t)), z=a(t)x+b(t)y+c(t)",
+    "envelope_equation": "differentiating the support plane gives a'(t)x+b'(t)y+c'(t)=0",
+    "line_in_base": "for fixed t this is an affine line in the (x,y)-chart unless a'=b'=0",
+    "constant_gradient_exception": "if a'=b'=0 then the gradient is locally constant, hence the surface piece is planar",
+    "lift_to_surface_line": "the base line lifts to z=a(t)x+b(t)y+c(t), an affine/projective line contained in the surface",
+    "consequence": "the Hessian-degenerate branch is developable and ruled by these envelope lines"
+  },
+  "closed_gates": [
+    "PreviousParabolicFrontierReady",
+    "DegreeLessThanCharacteristicImported",
+    "ParabolicConditionImpliesHessianZeroClosed",
+    "GradientRankOneClosed",
+    "EnvelopeRepresentationClosed",
+    "DevelopableLineFamilyClosed",
+    "ParabolicHessianDevelopableBranchClosed",
+    "MongeProlongationClosed"
+  ],
+  "open_gates": [
+    "AlgebraicLineGermClosureClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedAlgebraicLineGermClosureCoveringSurface",
+      "closed": false,
+      "why_remaining": "Monge now gives line germs/lines generically; final step must globalize them as an algebraic covering family"
+    }
+  ],
+  "next_direct_attack_target": "SelfContainedAlgebraicLineGermClosureCoveringSurface",
+  "next_required_input": "SelfContainedAlgebraicLineGermClosureCoveringSurface",
+  "plain_conclusion": "Hessian 退化分支已闭合为 developable 直线族，故 Monge 延拓整体闭合。Cayley-Salmon 唯一剩余变为线芽到代数覆盖线族的闭包步骤。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-monge-simple-branch-router.json": "f08e9aa877560de396b3c2f857ee75940d81c14120de62604800561adc217fb4",
+    "docs/monograph/prime-matrix-strict-rks23-cayley-salmon-source-atoms-router.json": "e69e3afc4ed8abe4143f84b5c91795ce6107aea373546a78573579a97dc1aca5",
+    "docs/monograph/prime-matrix-strict-rks23-positive-characteristic-cutoff-router.json": "8a6eef417f941e133d36afc2666de16b18d232309901e56bd4bfea23a7cdd2d6"
+  },
+  "rows": [
+    {
+      "gate": "PreviousParabolicFrontierReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已闭合 Monge 简单根分支，唯一 Monge 剩余为 Hessian 退化分支。",
+      "remaining": "SelfContainedParabolicHessianDevelopableBranchToRuledness"
+    },
+    {
+      "gate": "DegreeLessThanCharacteristicImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "degree<p 排除正特征纯 p 次幂导致的虚假零 Hessian 退化。",
+      "remaining": "degree<p imported"
+    },
+    {
+      "gate": "ParabolicConditionImpliesHessianZeroClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "A=0 与 L2=0 给出 Hessian 行列式为零。",
+      "remaining": "det Hess f=0"
+    },
+    {
+      "gate": "GradientRankOneClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "非平面情形下梯度映射秩为一，梯度像是一条代数曲线。",
+      "remaining": "rank-one gradient map"
+    },
+    {
+      "gate": "EnvelopeRepresentationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "把梯度曲线写成 (a(t),b(t))，曲面是切平面族 z=ax+by+c 的包络。",
+      "remaining": "envelope representation"
+    },
+    {
+      "gate": "DevelopableLineFamilyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "包络方程 a'x+b'y+c'=0 给出覆盖退化分支的直线族。",
+      "remaining": "developable ruling lines"
+    },
+    {
+      "gate": "ParabolicHessianDevelopableBranchClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Hessian 退化分支已转为 developable ruled 分支。",
+      "remaining": "SelfContainedParabolicHessianDevelopableBranchToRuledness"
+    },
+    {
+      "gate": "MongeProlongationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "简单根分支与 Hessian 退化分支均已产生真实直线芽/线族。",
+      "remaining": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces"
+    },
+    {
+      "gate": "AlgebraicLineGermClosureClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需把一般点线芽统一成 Grassmannian 上一维代数族并证明覆盖。",
+      "remaining": "SelfContainedAlgebraicLineGermClosureCoveringSurface"
+    },
+    {
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "Monge 延拓已闭合，但线芽闭包未闭合前仍不能宣称 Cayley-Salmon。",
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "non-ruled O(d^3) 分支仍等待 Cayley-Salmon 判据。",
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "二分线交点界仍依赖 non-ruled 分支。",
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "closed": false,
+      "proved": false,
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只闭合 Monge 延拓；未宣称行/列命题无条件闭合。",
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ]
+}
