@@ -1,0 +1,117 @@
+{
+  "burgess_pointwise_input_still_open": true,
+  "certificate_type": "prime_matrix_strict_rks23_thin_packet_plancherel_floor_router",
+  "closed_gates": [
+    "ThinPacketSubatomActive",
+    "ShortestSidePlancherelEstimateClosed",
+    "NonmicroscopicThinPacketsAbsorbed",
+    "MicroscopicThinPacketsIsolated",
+    "BurgessPointwiseInputStillOpen"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "estimate": {
+    "conclusion": "nonmicroscopic thin packets satisfy the Cauchy-scale fixed-power saving without Burgess",
+    "fixed_power_saving": "if H_min>=P^kappa then normalized L2 <= prod_j H_j^2 * P^(-kappa)",
+    "moment": "M=sum_{chi!=chi0}|S_I1(chi)S_I2(chi)S_I3(chi)S_I4(chi)|^2",
+    "normalized_l2_bound": "(1/(P-1))M <= H_min * prod_{j!=min} H_j^2",
+    "plancherel_on_shortest_side": "sum_chi |S_min(chi)|^2 <= (P-1)H_min",
+    "raw_bound": "M <= (P-1) H_min * prod_{j!=min} H_j^2",
+    "relative_to_natural_packet_scale": "H_min * prod_{j!=min} H_j^2 = (prod_j H_j^2)/H_min",
+    "trivial_on_other_sides": "|S_I(chi)|<=H_I"
+  },
+  "floor": {
+    "burgess_upper_thin_condition": "thin branch has H_min<P^(1/4+epsilon_B)",
+    "four_intervals": "I1,I2,I3,I4 = A0,A1,B0,B1",
+    "microscopic_thin_packet": "H_min<P^kappa",
+    "new_power_floor": "choose fixed kappa>0; split thin packets by H_min>=P^kappa or H_min<P^kappa",
+    "nonmicroscopic_thin_packet": "P^kappa <= H_min < P^(1/4+epsilon_B)",
+    "side_lengths": "H_j=|I_j| and H_min=min_j H_j",
+    "why_this_is_narrower": "all fixed-power-length thin packets are absorbed by Plancherel; only microscopic side packets remain"
+  },
+  "microscopic_thin_packets_isolated": true,
+  "microscopic_thin_side_packet_mass_absorption_proved": false,
+  "next_direct_attack_target": "MicroscopicThinSidePacketMassAbsorptionAtCauchyScale",
+  "no_theorem_switch": true,
+  "nonmicroscopic_thin_packets_absorbed": true,
+  "open_gates": [
+    "MicroscopicThinSidePacketMassAbsorptionAtCauchyScale",
+    "ThinDyadicPacketMassAbsorptionProved",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_required_target": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+  "plain_conclusion": "薄包分支已经进一步缩窄。设四个边长为 `H_j`，最短边为 `H_min`。对最短边用乘法角色 Plancherel、其余三边用平凡上界，得到归一化 L2 `<= (prod H_j^2)/H_min`。因此只要 `H_min>=P^kappa`，就有 `P^-kappa` 固定幂节省，非微观薄包可内部吸收。真正剩余只剩 `H_min<P^kappa` 的微薄边包总质量账本；同时大包分支的 Burgess 点态输入仍需单独内部化。",
+  "remaining": {
+    "global_parallel_open": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals",
+    "microscopic_side_problem": "prove the total contribution of packet pairs with H_min<P^kappa is absorbable",
+    "possible_next_routes": "Whitney packing mass ledger, endpoint strip counting, or divisor-energy estimate for microscopic sides",
+    "why_not_closed_here": "when H_min is below every fixed power, the Plancherel gain 1/H_min is not a fixed power"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ThinPacketSubatomActive",
+      "meaning": "上一证书已把闭合义务之一固定为薄包总质量吸收。",
+      "proved": true,
+      "remaining": "ThinDyadicRectanglePacketMassAbsorptionAtCauchyScale"
+    },
+    {
+      "closed": true,
+      "gate": "ShortestSidePlancherelEstimateClosed",
+      "meaning": "对最短边用角色 Plancherel，其余边用平凡上界，得到 `prod H_j^2/H_min`。",
+      "proved": true,
+      "remaining": "nonmicroscopic thin packets"
+    },
+    {
+      "closed": true,
+      "gate": "NonmicroscopicThinPacketsAbsorbed",
+      "meaning": "若 `H_min>=P^kappa`，则相对自然包尺度得到 `P^-kappa` 固定幂节省。",
+      "proved": true,
+      "remaining": "absorbed"
+    },
+    {
+      "closed": true,
+      "gate": "MicroscopicThinPacketsIsolated",
+      "meaning": "薄包中唯一未被该初等 Plancherel 估计吸收的是 `H_min<P^kappa` 的微薄边包。",
+      "proved": true,
+      "remaining": "MicroscopicThinSidePacketMassAbsorptionAtCauchyScale"
+    },
+    {
+      "closed": false,
+      "gate": "MicroscopicThinSidePacketMassAbsorptionAtCauchyScale",
+      "meaning": "仓库内尚未证明微薄边包对的总贡献可在 Cauchy 尺度下固定幂吸收。",
+      "proved": false,
+      "remaining": "WhitneyBoundaryPacking OR MicroscopicSideDivisorEnergy"
+    },
+    {
+      "closed": true,
+      "gate": "BurgessPointwiseInputStillOpen",
+      "meaning": "大包分支仍需自足 Burgess 点态角色和输入；本证书只推进薄包分支。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    },
+    {
+      "closed": false,
+      "gate": "ThinDyadicPacketMassAbsorptionProved",
+      "meaning": "薄包分支已去掉非微观部分，但微薄边总质量账本尚未完成。",
+      "proved": false,
+      "remaining": "MicroscopicThinSidePacketMassAbsorptionAtCauchyScale"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是非微观薄包吸收，不是 Burgess 阈值总闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals AND MicroscopicThinSidePacketMassAbsorptionAtCauchyScale"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "shortest_side_plancherel_estimate_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-character-moment-burgess-threshold-router.json": "d1c00d1f2d43e8cf6d1e741ce1dc713cae8532762d9a4dc337c7c14c9566b065"
+  },
+  "status": "nonmicroscopic_thin_packets_absorbed_microscopic_side_packets_remain",
+  "thin_dyadic_packet_mass_absorption_proved": false,
+  "thin_packet_subatom_active": true
+}
