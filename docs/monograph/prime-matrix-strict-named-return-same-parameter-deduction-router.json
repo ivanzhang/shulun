@@ -1,0 +1,139 @@
+{
+  "certificate_type": "prime_matrix_strict_named_return_same_parameter_deduction_router",
+  "component_rows": [
+    {
+      "component": "E_persistent",
+      "current_value": "0 only after strict terminal family is proved; otherwise branch returns",
+      "numeric_available": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+      "same_parameter_rule": "persistent PDEC/ColumnCRT/FixedHistory/HotCore must be excluded in the same terminal scope"
+    },
+    {
+      "component": "E_nonpersistent",
+      "current_value": "absorbed by U_cold only after sparse budget gap is proved",
+      "numeric_available": false,
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND ColdSupplySameParameterNumericEnvelope",
+      "same_parameter_rule": "nonpersistent SAE/sparse/hot-core is not a separate E0 term after it is counted in U_cold"
+    },
+    {
+      "component": "E_floor_charge",
+      "current_value": "inherits E_persistent or E_nonpersistent according to persistence",
+      "numeric_available": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+      "same_parameter_rule": "sawtooth/near-square failure uses the same formal-unit terminal alphabet"
+    },
+    {
+      "component": "E_finite_boundary",
+      "current_value": "not counted in E_named",
+      "numeric_available": false,
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate",
+      "same_parameter_rule": "finite prefix undecided is not an E0 deduction; it blocks D0 directly"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "coupled_status_snapshot": {
+    "cold_supply_numeric_bound_present": true,
+    "coupled_margin_schema_closed": true,
+    "finite_boundary_hash_present": false,
+    "named_return_numeric_bound_present": false
+  },
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍只在早期零行反例链内整理命名回流扣除，不使用真实缺席样本。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalChargeImported",
+      "meaning": "Rosser floor/sawtooth 失败态已被强制登记为命名终端收费。",
+      "proved": true,
+      "remaining": "NamedReturnSameParameterDeductionTable"
+    },
+    {
+      "closed": true,
+      "gate": "NamedReturnAlphabetCompressed",
+      "meaning": "命名回流字母表已压成持久全局终端与非持久统一预算二分。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND SparseHistoryDemandExceedsNonpersistentSupplyBudget"
+    },
+    {
+      "closed": true,
+      "gate": "SameParameterDeductionSchemaClosed",
+      "meaning": "同一 parameter_id 下的 E_named 只能由持久终端排斥和非持久预算吸收两类规则生成。",
+      "proved": false,
+      "remaining": "schema closed; numeric fields open."
+    },
+    {
+      "closed": false,
+      "gate": "PersistentNamedReturnNumericZero",
+      "meaning": "只有 strict 终端家族排斥后，持久命名回流才能在 E0 表中记为 0。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "closed": false,
+      "gate": "NonpersistentNamedReturnAbsorbedByBudget",
+      "meaning": "只有非持久 SAE/cold budget 被证明反超，非持久回流才可由 U_cold 吸收。",
+      "proved": false,
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "closed": false,
+      "gate": "NamedReturnSameParameterDeductionTableProved",
+      "meaning": "同参数扣除表 schema 已闭合，但数值表仍未生成。",
+      "proved": false,
+      "remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SparseHistoryDemandExceedsNonpersistentSupplyBudget"
+    },
+    {
+      "closed": false,
+      "gate": "DirectTerminalContradictionReached",
+      "meaning": "仍未形成 D0-E0-U0>0 与 DStructure/Rankin 同时闭合的终端矛盾。",
+      "proved": false,
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR NamedReturnSameParameterDeductionTable) AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "e0_named_return_deduction_available": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "FiniteBoundaryPrefixRoughCountCertificate AND (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR NamedReturnSameParameterDeductionTable) AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hardpoint_before_router": "FiniteBoundaryPrefixRoughCountCertificate AND (RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR SawtoothFailureChargedToNamedTerminalFamily) AND (NamedReturnSameParameterDeductionTable OR PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily) AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hypothetical_chain_only": true,
+  "named_return_compression_imported": true,
+  "named_return_same_parameter_deduction_table_proved": false,
+  "named_return_same_parameter_schema_closed": true,
+  "next_direct_attack_target": "DirectAcyclicSameSetPDECCapDualCertificate",
+  "no_theorem_switch": true,
+  "nonpersistent_named_return_absorbed_by_budget": false,
+  "nonpersistent_return_reduced_to_budget": true,
+  "parallel_attack_targets": [
+    "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+    "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "ColdSupplySameParameterNumericEnvelope",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "parameter_id": "alpha043_pge100000_external_b3_pending_finite_prefix_named_return",
+  "persistent_named_return_numeric_zero_available": false,
+  "persistent_return_reduced_to_terminal_family": true,
+  "plain_conclusion": "`NamedReturnSameParameterDeductionTable` 已被直接展开。它不是一个可凭空填写的常数表；在同一 parameter_id 下，持久命名回流只有在 strict acyclic terminal family 被排斥后才能记为 0，非持久命名回流只有在 SparseHistoryDemandExceedsNonpersistentSupplyBudget 与冷供给同参数上界闭合后才可由 U_cold 吸收。因此本步关闭的是 E_named 的表结构和收费纪律，不是数值表。下一最窄数学主攻点转为同一坏窗集合上的 DirectAcyclicSameSetPDECCapDualCertificate；并行保留 canonical-lock、direct clean KLS、SAE budget、finite prefix 和 DStructure/Rankin。",
+  "row_column_unconditional_closed": false,
+  "same_parameter_cold_discipline_imported": true,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-attack-router.json": "aa045b0749a832e9af9fe21397aa141f4fa6c0643a8b870d74ba360052eff952",
+    "docs/monograph/prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json": "7c34a1965c8ddc44a43cafb902ae668fb7ed21db3fc6f73cb42716be37c213be",
+    "docs/monograph/prime-matrix-strict-concrete-same-parameter-margin-table-certificate-router.json": "e8e2be8c87352d9c984f6f9339c010f851108db941a41c78e477bd0cc4bb1116",
+    "docs/monograph/prime-matrix-strict-finite-prefix-named-return-coupled-margin-ledger-router.json": "c5b1b31d319d0649c2beab036d32e78ce871f0e7ba1c1f2dc62fb1c8cc03cc45",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.json": "7e54f4f456a2108e28a8100a147c9491951f9367c633dd51972e908291d127c2",
+    "docs/monograph/prime-matrix-strict-rosser-floor-terminal-charge-router.json": "5154b715cb43b4b39bdc2b0a134833516f002bfdf1ea9100c6b4bd51e80f1513",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.json": "8f077e91bd0f02d25e6598256b5ebe958579e779abe1ecc41dd6861207e09523"
+  },
+  "sparse_budget_formula_imported": true,
+  "status": "named_return_same_parameter_schema_closed_numeric_table_open",
+  "strict_terminal_family_split_imported": true,
+  "terminal_charge_imported": true
+}
