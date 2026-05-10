@@ -1,0 +1,84 @@
+{
+  "alternate_name_for_same_atom": "ShortSquareFourierWeightAgainstRationalQuadraticRootBoxPhase",
+  "centered_square_measure_target_active": true,
+  "certificate_type": "prime_matrix_strict_rks23_centered_square_measure_fourier_router",
+  "closed_gates": [
+    "CenteredSquareMeasureTargetActive",
+    "FourierExpansionClosed",
+    "ZeroFrequencyRemoved",
+    "NonzeroFourierCoefficientIdentified"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "fourier_expansion_closed": true,
+  "fourier_packet": {
+    "centered_measure": "nu_D=mu_D-|Delta|/P",
+    "deviation_formula": "Dev=(1/P) sum_{r!=0} hat(nu_D)(r) sum_{x,u in T,x!=u} sum_{d1 in Delta} e_P(r*((u/x)*d1^2+u(u-x)))",
+    "nonzero_coefficient": "for r!=0, hat(nu_D)(r)=sum_{d2 in Delta} e_P(-r*d2^2)",
+    "opened_inner_packet": "short quadratic d2-Fourier weight coupled to rational quadratic root-box phase in (x,u,d1)",
+    "phase_argument": "lambda*d1^2+lambda(lambda-1)*x^2 = (u/x)*d1^2+u(u-x)",
+    "slope_to_t_variables": "lambda=u/x with x,u in T and x!=u",
+    "why_narrower": "all main terms and zero frequency are gone; only nonzero oscillatory packets remain",
+    "zero_frequency": "hat(nu_D)(0)=0"
+  },
+  "next_direct_attack_target": "NonzeroFrequencyRootBoxQuadraticFourierPacketPowerSaving",
+  "no_theorem_switch": true,
+  "nonzero_fourier_coefficient_identified": true,
+  "nonzero_frequency_root_box_quadratic_fourier_packet_power_saving_proved": false,
+  "open_gates": [
+    "NonzeroFrequencyRootBoxQuadraticFourierPacketPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "中心化短平方测度偏差可以完全 Fourier 化。由于 `nu_D` 已中心化，零频项为 0；非零频率的系数就是差盒上的短二次和 `sum_{d2 in Delta} e_P(-r*d2^2)`。剩余内层是 `x,u,d1` 根盒上的有理二次相位 `(u/x)d1^2+u(u-x)`。因此当前唯一剩余变成非零频率根盒有理二次 Fourier 谱包的固定幂节省。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CenteredSquareMeasureTargetActive",
+      "meaning": "上一证书已把曲线束剩余压成中心化短平方测度偏差。",
+      "proved": true,
+      "remaining": "CenteredShortSquareMeasureOnSlopeConicBundlePowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "FourierExpansionClosed",
+      "meaning": "中心化偏差可精确展开为 `r!=0` 的 Fourier 谱包。",
+      "proved": true,
+      "remaining": "NonzeroFrequencyRootBoxQuadraticFourierPacketPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroFrequencyRemoved",
+      "meaning": "`nu_D` 的零频为 0；此前均匀主项已完全吸收。",
+      "proved": true,
+      "remaining": "removed"
+    },
+    {
+      "closed": true,
+      "gate": "NonzeroFourierCoefficientIdentified",
+      "meaning": "非零系数就是差盒上的短二次 Fourier 和。",
+      "proved": true,
+      "remaining": "ShortSquareFourierWeightAgainstRationalQuadraticRootBoxPhase"
+    },
+    {
+      "closed": false,
+      "gate": "NonzeroFrequencyRootBoxQuadraticFourierPacketPowerSaving",
+      "meaning": "仓库内尚未证明该非零频率根盒有理二次相位谱包有固定幂节省。",
+      "proved": false,
+      "remaining": "ShortSquareFourierWeightAgainstRationalQuadraticRootBoxPhase"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只完成 Fourier 化与零频移除，未证明非零谱包估计。",
+      "proved": false,
+      "remaining": "NonzeroFrequencyRootBoxQuadraticFourierPacketPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-slope-conic-centered-square-measure-router.json": "1996baa1933a829c3a34f27101cc7ba6c1edcd6b5a4adc6adefba40c3c6c715a"
+  },
+  "status": "centered_square_measure_deviation_reduced_to_nonzero_quadratic_fourier_packets",
+  "zero_frequency_removed": true
+}
