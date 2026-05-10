@@ -1,0 +1,167 @@
+{
+  "branch_rows": [
+    {
+      "branch": "weighted_floor_success",
+      "closed_as_logic": true,
+      "condition": "Rosser floor/sawtooth loss is within the 10% budget",
+      "consequence": "可给 D0，但仍需 finite prefix hash 与 E0/U0 同参数字段。",
+      "proved_now": false,
+      "routed_to": "D0_prefix_lower_bound"
+    },
+    {
+      "branch": "external_rough_success",
+      "closed_as_logic": true,
+      "condition": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043 is accepted",
+      "consequence": "外部 rough 下界可绕过内部 sawtooth，但仍是外部输入。",
+      "proved_now": false,
+      "routed_to": "D0_prefix_lower_bound"
+    },
+    {
+      "branch": "sawtooth_or_strip_failure",
+      "closed_as_logic": true,
+      "condition": "weighted floor bound fails through exact sawtooth / near-square strip",
+      "consequence": "失败态必须登记为同 formal unit 的 PDEC/SAE/ColumnCRT/CleanKLS 终端收费，不能作为无名 D0 损失。",
+      "proved_now": false,
+      "routed_to": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily and then NamedReturnSameParameterDeductionTable"
+    },
+    {
+      "branch": "finite_prefix_absent",
+      "closed_as_logic": true,
+      "condition": "tail lane available but finite boundary prefix certificate is absent",
+      "consequence": "没有有限边界 hash，任何渐近尾段余量都不能升级为全局 D0。",
+      "proved_now": false,
+      "routed_to": "FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "branch": "named_return_not_numeric",
+      "closed_as_logic": true,
+      "condition": "terminal charge exists but same-parameter E_named table is absent",
+      "consequence": "下一步必须给同一 parameter_id 下的命名扣除表，否则收费不能进入 margin_delta。",
+      "proved_now": false,
+      "routed_to": "NamedReturnSameParameterDeductionTable"
+    },
+    {
+      "branch": "cold_supply_not_numeric",
+      "closed_as_logic": true,
+      "condition": "nonpersistent supply can still absorb demand",
+      "consequence": "冷供给上界仍需和 D0-E0 做同参数比较。",
+      "proved_now": false,
+      "routed_to": "ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_rosser_floor_terminal_charge_router",
+  "cold_supply_same_parameter_numeric_envelope_proved": false,
+  "concrete_same_parameter_margin_table_certificate_proved": false,
+  "counterexample_assumption_only": true,
+  "coupled_status_snapshot": {
+    "cold_supply_numeric_bound_present": true,
+    "concrete_parameter_table_present": false,
+    "coupled_margin_schema_closed": true,
+    "finite_boundary_hash_present": false,
+    "named_return_numeric_bound_present": false
+  },
+  "d0_front_after_router": "FiniteBoundaryPrefixRoughCountCertificate AND (RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR SawtoothFailureChargedToNamedTerminalFamily)",
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍在假设早期零行反例链内部收费，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "RosserFloorSplitImported",
+      "meaning": "Rosser floor 旧原子已拆成 lower weights 与 exact sawtooth。",
+      "proved": true,
+      "remaining": "继续接 sawtooth/条带失败态。"
+    },
+    {
+      "closed": true,
+      "gate": "SawtoothFailureNoFreeD0Loss",
+      "meaning": "若 sawtooth/近平方条带估计失败，失败态已经强制变成命名终端家族，不再是无名 D0 黑洞。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR NamedReturnSameParameterDeductionTable"
+    },
+    {
+      "closed": true,
+      "gate": "D0FrontRewritten",
+      "meaning": "D0 前沿由单纯 Rosser floor 证明，改写为 floor 成功、外部 rough 成功、或失败收费三分支。",
+      "proved": false,
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND (RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR SawtoothFailureChargedToNamedTerminalFamily)"
+    },
+    {
+      "closed": false,
+      "gate": "ConcreteD0AvailableNow",
+      "meaning": "本轮没有证明新的 D0 数值下界；只关闭了失败态收费纪律。",
+      "proved": false,
+      "remaining": "RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR charged terminal exclusion"
+    },
+    {
+      "closed": false,
+      "gate": "NamedReturnSameParameterNeeded",
+      "meaning": "收费后真正需要把终端回流写成同一参数行的 E0 扣除表。",
+      "proved": false,
+      "remaining": "NamedReturnSameParameterDeductionTable"
+    },
+    {
+      "closed": false,
+      "gate": "ConcreteSameParameterMarginTableProved",
+      "meaning": "D0/E0/U0 仍未同时数值化，不能推出 margin_delta>0。",
+      "proved": false,
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND (RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR SawtoothFailureChargedToNamedTerminalFamily) AND (NamedReturnSameParameterDeductionTable OR PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily) AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "DirectTerminalContradictionReached",
+      "meaning": "尚未得到反例链与真实结构链的无条件终端矛盾。",
+      "proved": false,
+      "remaining": "NamedReturnSameParameterDeductionTable OR PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR FiniteBoundaryPrefixRoughCountCertificate"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_short_interval_rough_lower_bound_accepted": false,
+  "finite_boundary_prefix_certificate_proved": false,
+  "hardpoint_after_router": "FiniteBoundaryPrefixRoughCountCertificate AND (RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR SawtoothFailureChargedToNamedTerminalFamily) AND (NamedReturnSameParameterDeductionTable OR PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily) AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hardpoint_before_router": "(RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043) AND FiniteBoundaryPrefixRoughCountCertificate AND NamedReturnSameParameterDeductionTable AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hypothetical_chain_only": true,
+  "named_return_compression_imported": true,
+  "named_return_same_parameter_deduction_table_proved": false,
+  "next_direct_attack_target": "NamedReturnSameParameterDeductionTable",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "ColdSupplySameParameterNumericEnvelope",
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "parameter_id": "alpha043_pge100000_external_b3_pending_finite_prefix_named_return",
+  "plain_conclusion": "本步直接硬攻 D0 前沿的 Rosser floor 缺口。结论不是证明 D0 已有数值下界，而是证明一个更窄的收费纪律：内部 sawtooth/近平方条带若失败，不能继续作为无名 D0 损失；它已经由 exact sawtooth 标准形、二次圆弧、近平方条带缺陷证书和 strict high-tail 校准，强制进入同 formal unit 的 PDEC/SAE/ColumnCRT/CleanKLS 终端家族。因此下一步最窄点从“继续盲攻 Rosser floor”转为生成同一 parameter_id 下的 NamedReturnSameParameterDeductionTable；并行保留 strict 终端家族排斥、外部 rough 下界、finite prefix hash、冷供给数值表和 DStructure/Rankin 独立验收门。",
+  "quadratic_nearsquare_compression_imported": true,
+  "rosser_floor_split_imported": true,
+  "rosser_support_absorbed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sawtooth_failure_no_free_d0_loss_closed": true,
+  "sawtooth_normal_form_imported": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-exact-residue-sawtooth-normal-form-router.json": "d23bf9a260cc9ae3555b0cf65dc0e083298ea2a3276fcadc018d38b9ed44424f",
+    "docs/monograph/prime-matrix-nearsquare-strip-defect-certificate-router.json": "8008bbcd08be7d94e70ea890791c62a951728ebf386c036971a833a15b5c2fbf",
+    "docs/monograph/prime-matrix-nearsquare-strip-terminal-admission-router.json": "5c5f292b62232ab99896e182142cb5853757032fb6a63d9af3e6f93a76819ae5",
+    "docs/monograph/prime-matrix-quadratic-arc-nearsquare-spread-router.json": "d5aad2f36c93b6a6780d05d3b8d037fc1f387e36bf50a16039b7284c0ae5bc3d",
+    "docs/monograph/prime-matrix-rosser-weight-floor-ledger-router.json": "3fae18f06563ccaec220f3a12b2be5ef42d279c9139b51410cf5370c23adc3a8",
+    "docs/monograph/prime-matrix-rosser-weight-support-functor-router.json": "dd11a35aca3e14d1533aaf16b96bca54850a3e05b515f1e37ddf5fe8ab7cbe20",
+    "docs/monograph/prime-matrix-strict-concrete-same-parameter-margin-table-certificate-router.json": "e8e2be8c87352d9c984f6f9339c010f851108db941a41c78e477bd0cc4bb1116",
+    "docs/monograph/prime-matrix-strict-finite-prefix-named-return-coupled-margin-ledger-router.json": "c5b1b31d319d0649c2beab036d32e78ce871f0e7ba1c1f2dc62fb1c8cc03cc45",
+    "docs/monograph/prime-matrix-strict-high-tail-corpus-reconciliation-router.json": "6e09be944654bce653382054981fae9662c824384d1397b629ec50f6e553422c",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.json": "7e54f4f456a2108e28a8100a147c9491951f9367c633dd51972e908291d127c2"
+  },
+  "status": "rosser_floor_failure_charged_to_named_terminal_family_margin_table_still_open",
+  "strict_sawtooth_failure_charged": true,
+  "strip_failure_packetized": true,
+  "strip_terminal_admitted": true,
+  "weighted_floor_d0_available": false
+}
