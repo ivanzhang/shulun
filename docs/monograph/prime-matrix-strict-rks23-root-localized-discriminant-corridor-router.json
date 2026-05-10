@@ -1,0 +1,102 @@
+{
+  "alternate_name_for_same_atom": "SmallDifferenceHarmonicMeanMapHighMultiplicityExclusion",
+  "certificate_type": "prime_matrix_strict_rks23_root_localized_discriminant_corridor_router",
+  "closed_gates": [
+    "InteriorDiscriminantTargetActive",
+    "RootLocalizedDifferenceIdentityClosed",
+    "HarmonicMeanPhaseMapIdentityClosed",
+    "QuadraticSquareReturnOnlyRouteInsufficient",
+    "MiddleInteriorBranchDivisorLiftBarrierQuantified"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "harmonic_mean_phase_map_identity_closed": true,
+  "interior_discriminant_target_active": true,
+  "middle_interior_branch_divisor_lift_barrier_quantified": true,
+  "next_direct_attack_target": "RootLocalizedQuadraticGraphBoxFiberPowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RootLocalizedQuadraticGraphBoxFiberPowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "判别式通道还必须加入根定位约束。设 `t=a+b`、`d=a-b`，则真实纤维不是单纯的 `Delta_c(t)` 为平方，而是小差盒中的 `d^2=t(t-4c) mod P`，等价于同一有理相位映射 `c=(t^2-d^2)/(4t)` 出现高重数。因此当前最窄剩余是证明该根定位小盒子映射没有固定幂级高重数；单纯二次字符平方返回路线和朴素分支除数路线都不足以闭合。",
+  "quadratic_square_return_only_route_insufficient": true,
+  "retired_route": "QuadraticSquareReturnOnlyRouteInsufficient",
+  "root_corridor": {
+    "equation": "d^2=t(t-4c) mod P",
+    "fiber_form": "r_c is bounded by the number of (t,d) in the root-localized box with phase_map(t,d)=c",
+    "high_fiber_implication": "r_c>N^(1-eta) forces one value of the harmonic-mean map to have >N^(1-eta) preimages in a thin (t,d) box",
+    "phase_map": "c=(t^2-d^2)/(4t) mod P",
+    "root_cut": "a=(t+d)/2 in J and b=(t-d)/2 in J",
+    "same_target_preserved": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving",
+    "small_difference_box": "|d|<=|J|-1 as an ordinary signed integer",
+    "variables": "t=a+b and d=a-b"
+  },
+  "root_localized_difference_identity_closed": true,
+  "root_localized_graph_box_power_saving_proved": false,
+  "route_audit": {
+    "branch_lift_barrier": "for middle interior c, the lift ab-c(a+b)=kP has O(max J) possible k, so per-branch divisor counting loses the required power",
+    "needed_extra_rigidity": "the square root must equal a small signed difference d=a-b with both reconstructed roots inside J",
+    "next_method": "prove high-multiplicity exclusion for the rational map (t,d)->(t^2-d^2)/(4t) on the short root-localized box",
+    "plain_character_sum_role": "Burgess/Weil cancellation for chi(t(t-4c)) alone does not close the fiber problem",
+    "reason": "Delta_c(t) being a quadratic residue normally occurs on about half of J+J; that is much larger than the desired N^(1-eta) high-spectrum threshold",
+    "square_return_only": "insufficient"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "InteriorDiscriminantTargetActive",
+      "meaning": "上一证书已把剩余压成内部相位的判别式通道。",
+      "proved": true,
+      "remaining": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "RootLocalizedDifferenceIdentityClosed",
+      "meaning": "`a,b in J` 等价给出 `t=a+b` 与小差 `d=a-b`，并满足 `d^2=t(t-4c)`。",
+      "proved": true,
+      "remaining": "RootLocalizedQuadraticGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "HarmonicMeanPhaseMapIdentityClosed",
+      "meaning": "同一相位可写为 `c=(t^2-d^2)/(4t)`，剩余是该有理映射的小盒子高重数排斥。",
+      "proved": true,
+      "remaining": "SmallDifferenceHarmonicMeanMapHighMultiplicityExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "QuadraticSquareReturnOnlyRouteInsufficient",
+      "meaning": "仅证明 `Delta_c(t)` 很少为平方不可能成立到所需强度；必须使用小差根定位。",
+      "proved": true,
+      "remaining": "RootLocalizedQuadraticGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleInteriorBranchDivisorLiftBarrierQuantified",
+      "meaning": "中心内部相位有多达 `O(max J)` 个整数分支，朴素分支除数界不能给固定幂节省。",
+      "proved": true,
+      "remaining": "RootLocalizedQuadraticGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RootLocalizedQuadraticGraphBoxFiberPowerSaving",
+      "meaning": "仓库内尚未证明根定位有理相位映射在短盒子上的高重数固定幂排斥。",
+      "proved": false,
+      "remaining": "SmallDifferenceHarmonicMeanMapHighMultiplicityExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步关闭的是通道精化和假捷径排除；最终高重数排斥仍未证明。",
+      "proved": false,
+      "remaining": "RootLocalizedQuadraticGraphBoxFiberPowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-interior-fiber-discriminant-corridor-router.json": "a6b8e527e6358ee2e2f9e5bf6244f20811c0633329940fd0b2b7efd03196bfd2"
+  },
+  "status": "discriminant_corridor_refined_to_root_localized_small_difference_phase_map"
+}
