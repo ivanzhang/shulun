@@ -1,0 +1,163 @@
+{
+  "adaptive_lambda_no_free_lunch_dichotomy_closed": true,
+  "balance_components": [
+    {
+      "component": "demand",
+      "discipline": "same z,D and same lower-weight convention",
+      "formula": "D_prefix=((P-1)W^-(z,D)-TV(lambda^-))/ceil(P/z)",
+      "status": "open_margin_input"
+    },
+    {
+      "component": "named deduction",
+      "discipline": "same return alphabet, no hidden exit",
+      "formula": "E_named=E_PDEC+E_SAE+E_ColumnCRT+E_hot+E_fixed+E_quotient",
+      "status": "registered_open"
+    },
+    {
+      "component": "cold supply",
+      "discipline": "same Lambda schedule and same PDEC threshold",
+      "formula": "U_cold<=sum_W (T_PDEC(W)-1) C_core(W)",
+      "status": "upper_envelope_closed"
+    },
+    {
+      "component": "strict margin",
+      "discipline": "all three terms evaluated under one parameter ledger",
+      "formula": "D_prefix-E_named-U_cold>0",
+      "status": "open_positive_margin"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_cold_core_nonpersistent_supply_balance_router",
+  "cold_core_nonpersistent_supply_upper_bound_and_adaptive_lambda_balance_proved": false,
+  "cold_supply_upper_bound_beats_load": false,
+  "cold_supply_upper_envelope_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在早期零行反例链内比较终端需求与冷供给。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalNoSilentCollapseImported",
+      "meaning": "prefix 标签投影到稀疏终端历史时按重数守恒，未投影部分进入命名回流。",
+      "proved": true,
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "ColdSupplyEnvelopeClosed",
+      "meaning": "非持久冷供给可统一写成 sum_W (T_PDEC(W)-1)C_core(W)。",
+      "proved": true,
+      "remaining": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance"
+    },
+    {
+      "closed": true,
+      "gate": "AdaptiveLambdaDisciplineClosed",
+      "meaning": "Lambda 与 PDEC 阈值调节不能作为自由优化，必须同步进入 E_named 或 U_cold。",
+      "proved": true,
+      "remaining": "SingleParameterTerminalBudgetMarginLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SingleParameterMarginLedgerClosed",
+      "meaning": "终局矛盾已固定为同参数余量 D_prefix-E_named-U_cold>0。",
+      "proved": false,
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound AND FiniteBoundaryAndCommonParameterSynchronizationLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "ColdBalancePositiveMarginProved",
+      "meaning": "当前仍未证明该余量严格为正。",
+      "proved": false,
+      "remaining": "SingleParameterTerminalBudgetMarginLedger AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedBudgetStrictInequalityProved",
+      "meaning": "同参数纪律已闭合，但最终供需反超还缺正下界、命名回流排斥和有限同步。",
+      "proved": false,
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "SingleParameterTerminalBudgetMarginLedger AND NormalizedPrefixResidualPotentialLowerBound AND FiniteBoundaryAndCommonParameterSynchronizationLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+  "hardpoint_before_router": "ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance",
+  "next_direct_attack_target": "SingleParameterTerminalBudgetMarginLedger",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "NormalizedPrefixResidualPotentialLowerBound",
+    "FiniteBoundaryAndCommonParameterSynchronizationLedger",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "冷核心非持久供给侧的自由调参已经被锁入同一个终端预算余量。缩小 Lambda 或 PDEC 阈值会减少 U_cold，但会把更多质量推入命名回流；放大 Lambda 或阈值会减少回流，却增大历史字母表或单历史允许容量。因此冷供给平衡不再是独立黑箱，而是同参数标量 D_prefix-E_named-U_cold>0 的正余量问题。当前仍未证明该余量为正，所以无条件闭合仍未达成。",
+  "row_column_unconditional_closed": false,
+  "same_parameter_lambda_schedule_closed": true,
+  "same_theorem_target_preserved": true,
+  "single_parameter_margin_ledger_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.md": "afef58151409a47666c60499ddbdfecf69d59274a438a061251dc8a990ac61d5",
+    "docs/monograph/prime-matrix-strict-iterated-threshold-collapse-router.md": "7ca299f90ed965ccc1de8762e5377cfa011703dae9ccd595cfed3a0da8ad9702",
+    "docs/monograph/prime-matrix-strict-prefix-label-sparse-history-anticollapse-router.md": "570bda01827fdda336ccbbaa910d9b38364b5f1938e5539eec11b049d8a41020",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md": "de2224ecfcd95ee99d389df1143ac8174617eb5ddc56c134444c987018fb0ffb",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.md": "852406501a752cc240c739530ade68cc4f10448c5da5660c0b3cccb32a402c89",
+    "docs/monograph/prime-matrix-strict-unified-budget-inequality-attack-router.md": "a28cb0a4566eeee41f56238de5eaa63f19988f3b5b0b0bce62f4e10b3f0bb5d5",
+    "docs/monograph/prime-matrix-strict-unified-terminal-budget-equation-router.md": "a2d2ee2fa717b072df98442cf4c0c30f88fe61b2c21ae8d6f3b7e1b1cfccc9fc"
+  },
+  "status": "cold_core_nonpersistent_supply_balance_same_parameter_ledger_closed_positive_margin_open",
+  "terminal_no_silent_collapse_imported": true,
+  "theorem_rows": [
+    {
+      "name": "SameParameterColdSupplyLedger",
+      "proved": true,
+      "role": "禁止用不同参数口径分别优化需求和供给。",
+      "statement": "冷供给、历史数、PDEC 阈值、命名扣除与 prefix demand 必须在同一 z,D,Lambda,T 账本下比较。"
+    },
+    {
+      "name": "AdaptiveLambdaNoFreeLunchDichotomy",
+      "proved": true,
+      "role": "把调参自由度转成显式预算守恒，而不是新出口。",
+      "statement": "调小 Lambda 或阈值会增加命名回流，调大 Lambda 或阈值会增加 U_cold；两类变化都必须进入同一个余量式。"
+    },
+    {
+      "name": "ColdBalancePositiveMargin",
+      "proved": false,
+      "role": "这是反例链与真实链终端矛盾的剩余标量目标。",
+      "statement": "尚未证明 D_prefix-E_named-U_cold>0。"
+    }
+  ],
+  "tradeoff_rows": [
+    {
+      "cost": "more core windows cross hot threshold and enter E_named",
+      "gain": "history alphabet A_i<=8 Lambda_i^2 shrinks",
+      "knob": "Lambda_i smaller",
+      "no_free_lunch": "cannot lower U_cold without increasing named-return obligations."
+    },
+    {
+      "cost": "history alphabet and U_cold grow at least through product A_i",
+      "gain": "fewer hot-core returns after coarser cold classification",
+      "knob": "Lambda_i larger",
+      "no_free_lunch": "cannot suppress E_named by moving mass into an unbounded cold budget."
+    },
+    {
+      "cost": "nonpersistent allowance (T_PDEC(W)-1)C_core(W) grows",
+      "gain": "fewer histories become persistent PDEC",
+      "knob": "T_PDEC(W) larger",
+      "no_free_lunch": "raising persistence threshold weakens the desired strict margin."
+    },
+    {
+      "cost": "more histories become fixed-history PDEC or ColumnCRT named returns",
+      "gain": "cold supply allowance decreases",
+      "knob": "T_PDEC(W) smaller",
+      "no_free_lunch": "the saved supply reappears as E_named unless that return is excluded."
+    }
+  ],
+  "unified_terminal_budget_strict_inequality_proved": false
+}
