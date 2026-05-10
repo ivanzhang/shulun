@@ -1,0 +1,103 @@
+{
+  "alternate_name_for_same_atom": "EightVariableNonzeroProductRatioEnergyDispersionPowerSaving",
+  "cauchy_gate": {
+    "cauchy_bound": "|S| <= (sum_rho |C_*^circ(rho)|^2)^(1/2) * (sum_lambda L(lambda)^2)^(1/2)",
+    "current_correlation": "S=sum_{lambda in F_P^*} C_*^circ(-lambda)*L(lambda)",
+    "known_l2_l": "sum_lambda L(lambda)^2 <= |T|^2 P^o(1)",
+    "limitation": "Cauchy is sufficient but may be stronger than direct joint nonconcentration",
+    "sufficient_input": "prove sum_rho |C_*^circ(rho)|^2 is below the Cauchy-required scale by a fixed power",
+    "why_no_theorem_switch": "this is the same centered nonzero product-ratio correlation, with the already proved L2(L) ledger inserted"
+  },
+  "cauchy_reduction_to_product_ratio_l2_closed": true,
+  "centered_joint_target_active": true,
+  "centered_nonzero_product_ratio_l2_power_saving_proved": false,
+  "centered_product_ratio_l2_identity_closed": true,
+  "certificate_type": "prime_matrix_strict_rks23_centered_product_ratio_l2_reduction_router",
+  "closed_gates": [
+    "CenteredJointTargetActive",
+    "IntervalRatioL2LedgerImported",
+    "CauchyReductionToProductRatioL2Closed",
+    "CenteredProductRatioL2IdentityClosed",
+    "EightVariableProductRatioEnergyExpansionClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "eight_variable_product_ratio_energy_expansion_closed": true,
+  "empirical_absence_not_used": true,
+  "interval_ratio_l2_ledger_imported": true,
+  "l2_expansion": {
+    "centered_l2_identity": "sum_rho |C_*^circ(rho)|^2=sum_rho C_*(rho)^2-M_*^4/(P-1)",
+    "centered_spectrum": "C_*^circ(rho)=C_*(rho)-M_*^2/(P-1)",
+    "eight_variable_count": "#{z1/z2=z3/z4: zi=a_i*b_i!=0, all variables in the root product boxes}",
+    "multiplicative_equation": "(a1*b1)*(a4*b4)=(a2*b2)*(a3*b3) mod P",
+    "needed_dispersion": "the eight-variable product-ratio energy must equal the uniform term plus a fixed-power-saving error",
+    "nonzero_measure": "mu_*(z)=#{(a,b): a*b=z, z!=0}",
+    "ratio_spectrum": "C_*(rho)=sum_{z!=0} mu_*(z)*mu_*(rho*z)",
+    "raw_l2_count": "sum_rho C_*(rho)^2",
+    "uniform_term": "M_*^4/(P-1)"
+  },
+  "next_direct_attack_target": "CenteredNonzeroProductRatioL2PowerSavingAtCauchyRequiredScale",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CenteredNonzeroProductRatioL2PowerSavingAtCauchyRequiredScale",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前中心化相关没有换题：把已闭合的 `L(lambda)` 低二阶账本代入 Cauchy，可把剩余压成 `C_*^circ` 的二阶能量节省。该二阶能量又精确展开为八变量非零乘积比值能量 `(a1*b1)(a4*b4)=(a2*b2)(a3*b3)` 相对均匀项 `M_*^4/(P-1)` 的偏差。因此下一真正自足硬点是证明这个八变量乘积比值能量具有 Cauchy 所需的固定幂节省。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CenteredJointTargetActive",
+      "meaning": "上一证书已把剩余固定为 `sum C_*^circ(-lambda)L(lambda)` 的中心化相关。",
+      "proved": true,
+      "remaining": "CenteredNonzeroProductRatioSpectrumAgainstIntervalRatioSpectrumJointPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "IntervalRatioL2LedgerImported",
+      "meaning": "短区间比值谱已有 `sum L(lambda)^2<=|T|^2 P^o(1)` 账本。",
+      "proved": true,
+      "remaining": "ledger"
+    },
+    {
+      "closed": true,
+      "gate": "CauchyReductionToProductRatioL2Closed",
+      "meaning": "由 Cauchy，证明 `C_*^circ` 的足够强 L2 节省即可推出当前相关节省。",
+      "proved": true,
+      "remaining": "CenteredNonzeroProductRatioL2PowerSavingAtCauchyRequiredScale"
+    },
+    {
+      "closed": true,
+      "gate": "CenteredProductRatioL2IdentityClosed",
+      "meaning": "`sum |C_*^circ|^2=sum C_*^2-M_*^4/(P-1)`，均匀项口径已固定。",
+      "proved": true,
+      "remaining": "EightVariableNonzeroProductRatioEnergyDispersionPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "EightVariableProductRatioEnergyExpansionClosed",
+      "meaning": "`sum C_*^2` 精确等于八变量非零乘积比值能量。",
+      "proved": true,
+      "remaining": "EightVariableNonzeroProductRatioEnergyDispersionPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "CenteredNonzeroProductRatioL2PowerSavingAtCauchyRequiredScale",
+      "meaning": "仓库内尚未证明该八变量乘积比值能量相对均匀项有固定幂节省。",
+      "proved": false,
+      "remaining": "EightVariableNonzeroProductRatioEnergyDispersionPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是 L2 归约和八变量展开，不是八变量能量节省本身。",
+      "proved": false,
+      "remaining": "CenteredNonzeroProductRatioL2PowerSavingAtCauchyRequiredScale"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-nonzero-product-ratio-centering-router.json": "594aca4b91d07e2a881ce95695fe4e18065c087ccdbd4c5a0665a2eee0b68691",
+    "docs/monograph/prime-matrix-strict-rks23-slope-overlap-ratio-spectrum-router.json": "337dc4e521173233c6f4605719f50175cd3fc54e796f70d3b76c0b068660bc21"
+  },
+  "status": "centered_product_ratio_joint_correlation_reduced_to_product_ratio_l2_energy"
+}
