@@ -1,0 +1,217 @@
+{
+  "certificate_type": "prime_matrix_strict_concrete_same_parameter_margin_table_certificate_router",
+  "status": "concrete_same_parameter_margin_table_attempted_blocked_by_missing_d0_e0_u0_fields",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "candidate_parameter_row": {
+    "parameter_id": "alpha043_pge100000_external_b3_pending_finite_prefix_named_return",
+    "alpha": 0.43,
+    "s": 2.3255813953488373,
+    "p_min": 100000,
+    "z_rule": "z=P^0.43 or equivalent non-circular prefix cutoff inherited from B3 lane",
+    "b3_tail_model_main_at_p_min": 4896.256004,
+    "ten_percent_model_main_at_p_min": 489.6256004,
+    "target_S": 401.0,
+    "ten_percent_minus_target": 88.6256004,
+    "d0_prefix_lower_bound": null,
+    "e0_named_return_deduction": null,
+    "u0_cold_supply_bound": null,
+    "margin_delta": null,
+    "finite_boundary_hash": null,
+    "certificate_row_valid": false
+  },
+  "candidate_parameter_row_generated": true,
+  "b3_external_lane_imported": true,
+  "linear_lower_sieve_tail_ten_percent_margin_pge100000_proved": false,
+  "linear_sieve_tail_split_to_weighted_floor_or_external_rough": true,
+  "explicit_rosser_weight_ledger_compressed": true,
+  "finite_boundary_prefix_certificate_proved": false,
+  "finite_boundary_hash_available": false,
+  "d0_prefix_lower_bound_available": false,
+  "e0_named_return_deduction_available": false,
+  "u0_cold_supply_bound_available": false,
+  "margin_delta_available": false,
+  "concrete_same_parameter_margin_table_certificate_proved": false,
+  "dstructure_rankin_independently_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ConcreteSameParameterMarginTableCertificate",
+  "hardpoint_after_router": "(RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043) AND FiniteBoundaryPrefixRoughCountCertificate AND NamedReturnSameParameterDeductionTable AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "RosserIwaniecWeightedFloorRemainderTenPercentBound",
+  "parallel_attack_targets": [
+    "ExternalShortIntervalRoughNumberLowerBoundForAlpha043",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "NamedReturnSameParameterDeductionTable",
+    "ColdSupplySameParameterNumericEnvelope",
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-finite-prefix-named-return-coupled-margin-ledger-router.json": "c5b1b31d319d0649c2beab036d32e78ce871f0e7ba1c1f2dc62fb1c8cc03cc45",
+    "docs/monograph/prime-matrix-strict-positive-terminal-budget-margin-attack-router.json": "1a60571bab8bb8f65a7f975a83c4d9adeab9481a7ffa1dd8a16a8f967d074570",
+    "docs/monograph/prime-matrix-linear-lower-sieve-tail-margin-router.md": "c7fe681d0e80b32115d7dcedb7df319a2da57b333d4ee59f9e41f64024e5694b",
+    "docs/monograph/prime-matrix-linear-sieve-tail-remainder-gap-router.json": "e11ab42f2beb3e9fc9b2fe711d5224074bf707323774e7cf47378c5bd74f7250",
+    "docs/monograph/prime-matrix-explicit-rosser-lower-weight-ledger-router.json": "4a79d8c4c1e7a2c0042188c2fdb432e5b868c7397ccc72a2e1c070e1b9045ef3",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.json": "565216b00f151a42a0105b48eb3f09b4d1968f923d698fdb2ba1bdecd906afee",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.json": "7e54f4f456a2108e28a8100a147c9491951f9367c633dd51972e908291d127c2",
+    "docs/monograph/prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json": "7c34a1965c8ddc44a43cafb902ae668fb7ed21db3fc6f73cb42716be37c213be",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.json": "dc5db9c8aa57f3b8c29354615714c6c124f8b8326b288d3b8c7cccec57db62cf",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.json": "8f077e91bd0f02d25e6598256b5ebe958579e779abe1ecc41dd6861207e09523"
+  },
+  "plain_conclusion": "`ConcreteSameParameterMarginTableCertificate` 已被直接尝试装配。可以生成唯一候选参数行 `alpha043_pge100000_external_b3_pending_finite_prefix_named_return`，并确认外部 B3 前沿可作为 D0 的解析尾段输入；但当前材料没有 D0_prefix_lower_bound、E0_named_return_deduction、U0_cold_supply_bound 的同参数数值字段，也没有 finite_boundary_hash，因此不能证明 margin_delta>0。直接证明失败不是换命题，而是把下一原子压成 `RosserIwaniecWeightedFloorRemainderTenPercentBound` 或外部短区间 rough 下界，并行保留有限 prefix/命名扣除/冷供给数值表。",
+  "field_rows": [
+    {
+      "field": "parameter_id",
+      "available": true,
+      "source": "canonical alpha=0.43 / P>=100000 candidate row",
+      "blocker": "none"
+    },
+    {
+      "field": "D0_prefix_lower_bound",
+      "available": false,
+      "source": "B3 external lane + finite prefix certificate",
+      "blocker": "(RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043) AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "field": "E0_named_return_deduction",
+      "available": false,
+      "source": "named return exclusion/compression ledger",
+      "blocker": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND NamedReturnSameParameterDeductionTable"
+    },
+    {
+      "field": "U0_cold_supply_bound",
+      "available": false,
+      "source": "cold supply upper envelope + lambda discipline",
+      "blocker": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "field": "margin_delta",
+      "available": false,
+      "source": "D0-E0-U0 under same parameter_id",
+      "blocker": "ConcreteSameParameterMarginTableCertificate"
+    },
+    {
+      "field": "finite_boundary_hash",
+      "available": false,
+      "source": "finite prefix audit/certificate",
+      "blocker": "FiniteBoundaryPrefixRoughCountCertificate"
+    }
+  ],
+  "direct_attempt_rows": [
+    {
+      "attempt": "assemble candidate parameter row",
+      "success": true,
+      "evidence": "alpha043_pge100000_external_b3_pending_finite_prefix_named_return",
+      "meaning": "同一参数行可以命名，但尚不构成证明证书。"
+    },
+    {
+      "attempt": "import external B3 tail margin",
+      "success": true,
+      "evidence": "10% model main at P=100000 is 489.625600",
+      "meaning": "解析尾段有条件可供 D0 使用；仍需有限 prefix 和真实 D0 表。"
+    },
+    {
+      "attempt": "prove D0 lower bound",
+      "success": false,
+      "evidence": "missing weighted floor/sawtooth or external rough input, plus finite prefix hash",
+      "meaning": "无法从当前材料直接给出全局 D0。"
+    },
+    {
+      "attempt": "prove E0 named deduction",
+      "success": false,
+      "evidence": "named compression closed but exclusion/numeric deduction open",
+      "meaning": "无法证明 E_named 不吞掉余量。"
+    },
+    {
+      "attempt": "prove U0 cold dominance",
+      "success": false,
+      "evidence": "upper envelope formula exists; same-parameter numeric value missing",
+      "meaning": "有供给公式，但还不能和 D0-E0 比较。"
+    },
+    {
+      "attempt": "derive margin_delta>0",
+      "success": false,
+      "evidence": "D0/E0/U0 not simultaneously numeric",
+      "meaning": "本轮直接证明失败，失败原因已原子化。"
+    }
+  ],
+  "failure_return_rows": [
+    {
+      "missing_or_failure": "D0 absent or finite prefix undecided",
+      "forced_return": "FiniteBoundaryPrefixRoughCountCertificate",
+      "closed_as_logic": true,
+      "proved_now": false
+    },
+    {
+      "missing_or_failure": "E0 named deduction absent",
+      "forced_return": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve OR NamedReturnSameParameterDeductionTable",
+      "closed_as_logic": true,
+      "proved_now": false
+    },
+    {
+      "missing_or_failure": "U0 too large or unregistered",
+      "forced_return": "SparseHistoryDemandExceedsNonpersistentSupplyBudget OR ColdSupplySameParameterNumericEnvelope",
+      "closed_as_logic": true,
+      "proved_now": false
+    },
+    {
+      "missing_or_failure": "terminal promotion still external",
+      "forced_return": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "closed_as_logic": true,
+      "proved_now": false
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本证书仍只在早期零行反例链内尝试装配终端正余量表。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "CandidateParameterRowGenerated",
+      "closed": true,
+      "proved": false,
+      "meaning": "已生成 alpha=0.43, P>=100000 的候选同参数行；它只是装配目标，不是证明。",
+      "remaining": "fill D0/E0/U0/margin_delta/hash."
+    },
+    {
+      "gate": "ConcreteD0Available",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前不能给出 D0_prefix_lower_bound。",
+      "remaining": "(RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043) AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "gate": "ConcreteE0Available",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前不能给出 E0_named_return_deduction。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND NamedReturnSameParameterDeductionTable"
+    },
+    {
+      "gate": "ConcreteU0Available",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前只有 U_cold 公式，没有同参数数值上界。",
+      "remaining": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "gate": "ConcreteSameParameterMarginTableCertificateProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "D0/E0/U0 未同时数值化，不能推出 margin_delta>0。",
+      "remaining": "(RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043) AND FiniteBoundaryPrefixRoughCountCertificate AND NamedReturnSameParameterDeductionTable AND ColdSupplySameParameterNumericEnvelope AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "gate": "DirectTerminalContradictionReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "还没有得到反例链与真实结构链的终端矛盾。",
+      "remaining": "ConcreteSameParameterMarginTableCertificate AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ]
+}
