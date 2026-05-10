@@ -1,0 +1,200 @@
+{
+  "certificate_type": "strict_rks23_monge_simple_branch_router",
+  "status": "monge_simple_root_branch_closed_remaining_parabolic_hessian_and_line_germ_closure",
+  "previous_monge_frontier_ready": true,
+  "degree_less_than_characteristic_imported": true,
+  "graph_chart_normal_form_closed": true,
+  "contact_equation_normal_form_closed": true,
+  "simple_root_monge_identity_closed": true,
+  "nonparabolic_monge_straight_line_integral_closed": true,
+  "monge_simple_branch_closed": true,
+  "parabolic_hessian_developable_branch_closed": false,
+  "monge_prolongation_closed": false,
+  "algebraic_line_germ_closure_closed": false,
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used": true,
+  "counterexample_assumption_only": true,
+  "normal_form": {
+    "chart": "at a smooth generic point write the surface as z=f(x,y)",
+    "direction": "normalize a tangent projective direction as X=partial_x+u partial_y+(f_x+u f_y) partial_z",
+    "line_test": "the candidate line is s -> (x+s, y+u s, z+s(f_x+u f_y))",
+    "second_contact": "L2=f_xx+2u f_xy+u^2 f_yy=0",
+    "third_contact": "L3=f_xxx+3u f_xxy+3u^2 f_xyy+u^3 f_yyy=0",
+    "simple_root_factor": "A=f_xy+u f_yy=(1/2) partial_u L2"
+  },
+  "monge_identity": {
+    "branch_equation": "L2(x,y,u(x,y))=0 on the dominating contact branch",
+    "differentiate_along_X": "(partial_x+u partial_y)L2 + (X u) partial_u L2 = 0",
+    "expanded_identity": "0=L3+2(X u)A",
+    "simple_root_case": "if A!=0 and L3=0, then X u=0",
+    "straightness": "X(f_x+u f_y)=L2+(X u)f_y=0, so the full projective direction is constant along X-integral curves",
+    "consequence": "each simple-root integral curve is a straight projective line germ contained in the surface"
+  },
+  "degenerate_branch": {
+    "condition": "A=f_xy+u f_yy=0 together with L2=0",
+    "equivalent_shape": "the second fundamental form has a repeated/asymptotic direction; in graph form this is the parabolic Hessian branch",
+    "why_not_closed_here": "the identity 0=L3+2(Xu)A loses the factor that forces Xu=0",
+    "next_needed_fact": "prove the Hessian-degenerate branch is developable and hence ruled, or reduce it to already closed plane/cone/tangent-developable cases"
+  },
+  "closed_gates": [
+    "PreviousMongeFrontierReady",
+    "DegreeLessThanCharacteristicImported",
+    "GraphChartNormalFormClosed",
+    "ContactEquationNormalFormClosed",
+    "SimpleRootMongeIdentityClosed",
+    "NonParabolicStraightLineIntegralClosed",
+    "MongeSimpleRootBranchClosed"
+  ],
+  "open_gates": [
+    "ParabolicHessianDevelopableBranchClosed",
+    "MongeProlongationClosed",
+    "AlgebraicLineGermClosureClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedParabolicHessianDevelopableBranchToRuledness",
+      "closed": false,
+      "why_remaining": "A=0 makes the Monge identity lose the multiplier needed to force Xu=0"
+    },
+    {
+      "atom": "SelfContainedAlgebraicLineGermClosureCoveringSurface",
+      "closed": false,
+      "why_remaining": "straight line germs still need algebraic closure into a covering line family"
+    }
+  ],
+  "next_direct_attack_target": "SelfContainedParabolicHessianDevelopableBranchToRuledness",
+  "next_required_input": "SelfContainedParabolicHessianDevelopableBranchToRuledness + SelfContainedAlgebraicLineGermClosureCoveringSurface",
+  "plain_conclusion": "Monge 延拓已经在简单根/非抛物分支闭合。唯一未穿透的 Monge 源头是 A=0 的 Hessian 退化 developable 分支；之后还要做线芽代数闭包。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-cayley-salmon-source-atoms-router.json": "e69e3afc4ed8abe4143f84b5c91795ce6107aea373546a78573579a97dc1aca5",
+    "docs/monograph/prime-matrix-strict-rks23-flecnode-polynomial-construction-router.json": "9fc0f5ecde0b1c0af3c26a6f574129e51c40daac965671572c7d183745bbb685",
+    "docs/monograph/prime-matrix-strict-rks23-positive-characteristic-cutoff-router.json": "8a6eef417f941e133d36afc2666de16b18d232309901e56bd4bfea23a7cdd2d6"
+  },
+  "rows": [
+    {
+      "gate": "PreviousMongeFrontierReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已把 Cayley-Salmon 的真正剩余压成 Monge 延拓与线芽闭包。",
+      "remaining": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces"
+    },
+    {
+      "gate": "DegreeLessThanCharacteristicImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "degree<p 截断允许使用三阶 Hasse/jet 接触方程。",
+      "remaining": "degree<p imported"
+    },
+    {
+      "gate": "GraphChartNormalFormClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "在光滑一般点把曲面写成 z=f(x,y)，并规范化切向方向。",
+      "remaining": "graph chart normal form"
+    },
+    {
+      "gate": "ContactEquationNormalFormClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "二阶与三阶接触方程化为 L2=0、L3=0。",
+      "remaining": "L2/L3 contact equations"
+    },
+    {
+      "gate": "SimpleRootMongeIdentityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "沿切向方向微分 L2 得到 0=L3+2(Xu)A。",
+      "remaining": "Monge identity"
+    },
+    {
+      "gate": "NonParabolicStraightLineIntegralClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "A!=0 时由 L3=0 推出 Xu=0，从而切向 projective direction 沿积分曲线恒定。",
+      "remaining": "SelfContainedMongeSimpleRootBranchFiniteOrderContactToLine"
+    },
+    {
+      "gate": "MongeSimpleRootBranchClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Monge 延拓的简单根/非抛物分支已产生真实直线芽。",
+      "remaining": "SelfContainedMongeSimpleRootBranchFiniteOrderContactToLine"
+    },
+    {
+      "gate": "ParabolicHessianDevelopableBranchClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "A=0 时强制 Xu 的因子消失，剩余为 Hessian 退化 developable 分支。",
+      "remaining": "SelfContainedParabolicHessianDevelopableBranchToRuledness"
+    },
+    {
+      "gate": "MongeProlongationClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "简单根分支已闭合；整个 Monge 延拓仍等待抛物/Hessian 退化分支。",
+      "remaining": "SelfContainedParabolicHessianDevelopableBranchToRuledness"
+    },
+    {
+      "gate": "AlgebraicLineGermClosureClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "即使产生线芽，仍需后续证明其 Zariski 闭包覆盖曲面。",
+      "remaining": "SelfContainedAlgebraicLineGermClosureCoveringSurface"
+    },
+    {
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "Monge 退化分支和线芽闭包未闭合前，Cayley-Salmon 仍未作者侧自足闭合。",
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "non-ruled O(d^3) 分支仍等待 Cayley-Salmon 判据。",
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "二分线交点界仍依赖 non-ruled 分支。",
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "closed": false,
+      "proved": false,
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只闭合 Monge 简单根分支；未宣称行/列命题无条件闭合。",
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ]
+}
