@@ -1,0 +1,192 @@
+{
+  "certificate_type": "prime_matrix_strict_single_parameter_terminal_budget_margin_router",
+  "cold_supply_same_parameter_discipline_closed": true,
+  "continuous_beta_demand_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍只在 Assume EarlyZeroRowWithinP 的反例链内比较终端需求与供给。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MarginNormalFormClosed",
+      "meaning": "终局矛盾已固定为 D_prefix-E_named-U_cold>0。",
+      "proved": true,
+      "remaining": "ExplicitPositiveTerminalBudgetMarginInequality"
+    },
+    {
+      "closed": true,
+      "gate": "ContinuousBetaDemandClosed",
+      "meaning": "alpha=0.43 的连续线性下界筛主项余量已闭合。",
+      "proved": true,
+      "remaining": "B3DiscretePrimeSumUniformErrorPGe100000"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalB3TVLaneAvailable",
+      "meaning": "接受外部 Mertens/Dusart 时，B3/TV 需求链有条件可用；严格自足仍缺尾段。",
+      "proved": false,
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": false,
+      "gate": "StrictPrefixDemandProved",
+      "meaning": "当前尚未完成统一 prefix 粗筛余下界和有限边界证书。",
+      "proved": false,
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalNoSilentCollapseClosed",
+      "meaning": "prefix 标签到稀疏终端历史的重数守恒已闭合。",
+      "proved": true,
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "NamedReturnExcluded",
+      "meaning": "命名回流已压缩成持久全局终端包与非持久预算，但未全部排斥。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitPositiveTerminalBudgetMarginInequality"
+    },
+    {
+      "closed": true,
+      "gate": "ColdSupplySameParameterDisciplineClosed",
+      "meaning": "冷供给和 Lambda 调参纪律已锁入同一余量账本。",
+      "proved": true,
+      "remaining": "ColdPositiveDominance"
+    },
+    {
+      "closed": false,
+      "gate": "ExplicitPositiveMarginProved",
+      "meaning": "没有同参数数值不等式证明 D_prefix-E_named-U_cold>0。",
+      "proved": false,
+      "remaining": "B3DiscretePrimeSumUniformErrorPGe100000 AND FiniteBoundaryPrefixRoughCountCertificate AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "终端正余量和 DStructure/Rankin 晋级门尚未同时完成。",
+      "proved": false,
+      "remaining": "ExplicitPositiveTerminalBudgetMarginInequality AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "explicit_positive_terminal_budget_margin_proved": false,
+  "external_b3_tv_lane_available": true,
+  "hardpoint_after_router": "ExplicitPositiveTerminalBudgetMarginInequality AND B3DiscretePrimeSumUniformErrorPGe100000 AND FiniteBoundaryPrefixRoughCountCertificate AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hardpoint_before_router": "SingleParameterTerminalBudgetMarginLedger",
+  "margin_formula_rows": [
+    {
+      "formula": "D_prefix=((P-1)W^-(z,D)-TV(lambda^-))/ceil(P/z)",
+      "needed": "explicit lower bound D_prefix >= D0(P,z)>0",
+      "slot": "prefix demand",
+      "status": "open: rough count/finite boundary not fully proved"
+    },
+    {
+      "formula": "L_forced>=D_prefix-E_named",
+      "needed": "no silent collapse and bounded named returns",
+      "slot": "terminal projection",
+      "status": "no-silent-collapse closed; named exclusion open"
+    },
+    {
+      "formula": "U_cold<=sum_W (T_PDEC(W)-1)C_core(W)",
+      "needed": "explicit same-parameter upper bound U_cold<=U0(P,z)",
+      "slot": "cold supply",
+      "status": "envelope and lambda discipline closed; numeric dominance open"
+    },
+    {
+      "formula": "D0(P,z)-E0(P,z)-U0(P,z)>0",
+      "needed": "one signed inequality under one parameter ledger",
+      "slot": "strict margin",
+      "status": "not proved in current corpus"
+    }
+  ],
+  "named_return_exclusion_proved": false,
+  "next_direct_attack_target": "ExplicitPositiveTerminalBudgetMarginInequality",
+  "no_theorem_switch": true,
+  "obstruction_rows": [
+    {
+      "closed": false,
+      "effect_on_margin": "D_prefix 不能升级为严格自足显式 D0。",
+      "obstruction": "B3DiscretePrimeSumUniformErrorPGe100000",
+      "why_it_matters": "连续 beta 主项有 1% 余量，但离散素和误差未内联证明。"
+    },
+    {
+      "closed": false,
+      "effect_on_margin": "TV(lambda^-) 的自足扣除项未定。",
+      "obstruction": "B3RemainderTotalVariationBudgetForLengthP",
+      "why_it_matters": "外部 Mertens/Dusart 可条件关闭 TV；严格自足尾段仍开放。"
+    },
+    {
+      "closed": false,
+      "effect_on_margin": "D0(P,z)>0 不能覆盖所有 P。",
+      "obstruction": "FiniteBoundaryPrefixRoughCountCertificate",
+      "why_it_matters": "显式常数路线留下有限 P 段；没有证书就不能宣称全局。"
+    },
+    {
+      "closed": false,
+      "effect_on_margin": "无法证明 D_prefix-E_named 仍为正。",
+      "obstruction": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+      "why_it_matters": "E_named 目前被压缩但未排斥；它可吞掉正余量。"
+    },
+    {
+      "closed": false,
+      "effect_on_margin": "无法证明 D_prefix-E_named-U_cold>0。",
+      "obstruction": "ColdPositiveDominance",
+      "why_it_matters": "冷供给有上界公式，但还没有同参数数值反超 D_prefix-E_named。"
+    }
+  ],
+  "parallel_attack_targets": [
+    "B3DiscretePrimeSumUniformErrorPGe100000",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "单参数终端预算正余量已被严格固定为 D_prefix-E_named-U_cold>0。现有材料关闭了标准形、终端无静默塌缩和冷供给调参纪律；连续 beta 主项已闭合，B3/TV 有外部条件路线。但当前没有证明同参数显式正余量：离散 B3 误差、有限 prefix 证书、命名回流排斥、热核心/固定历史出口与 DStructure/Rankin 晋级仍未全部完成。因此还不能声明反例链与真实链产生无条件终端矛盾。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "single_parameter_margin_normal_form_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-continuous-beta-sieve-surplus-router.json": "f890f23fc5f9a4820fbe2b1153efc03e071afcc60afaf518b1934132c8f6f66d",
+    "docs/monograph/prime-matrix-strict-b3-remainder-total-variation-budget-router.json": "44c09f19992bc439f6ccb7ae0d6ade75364a5e33e49da5cc3c70cc10057afe30",
+    "docs/monograph/prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json": "7c34a1965c8ddc44a43cafb902ae668fb7ed21db3fc6f73cb42716be37c213be",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.json": "7e54f4f456a2108e28a8100a147c9491951f9367c633dd51972e908291d127c2",
+    "docs/monograph/prime-matrix-strict-prefix-label-sparse-history-anticollapse-router.json": "94229062234848b5e5e20ffaf940e7d4447b8ec957a0b3e8b2bf85d3e55a1a3f",
+    "docs/monograph/prime-matrix-strict-unified-budget-inequality-attack-router.json": "246a3441a95b9cb99ad94ba19ca10aa7e7ed20bd1d2e098196da3f76882058a9",
+    "docs/monograph/prime-matrix-strict-unified-terminal-budget-equation-router.json": "034515ed984e8ce3bac42dc02b08faf7caa43fd58554a3bd9d87f00419f0eded",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.json": "565216b00f151a42a0105b48eb3f09b4d1968f923d698fdb2ba1bdecd906afee"
+  },
+  "status": "single_parameter_margin_normal_form_closed_positive_margin_not_proved",
+  "strict_prefix_demand_proved": false,
+  "terminal_no_silent_collapse_closed": true,
+  "theorem_rows": [
+    {
+      "name": "SingleParameterMarginNormalForm",
+      "proved": true,
+      "role": "这是必要且充分的终端供需闭合口。",
+      "statement": "早期零行反例链的终端矛盾等价于同参数正余量 D_prefix-E_named-U_cold>0。"
+    },
+    {
+      "name": "NoConditionalInputPromotion",
+      "proved": true,
+      "role": "防止把条件接口误认为最终证明。",
+      "statement": "外部 B3/TV 条件、命名回流压缩、冷供给纪律不能自动合成为无条件正余量。"
+    },
+    {
+      "name": "TerminalContradictionCurrentCorpus",
+      "proved": false,
+      "role": "行/列命题仍未作者侧无条件闭合。",
+      "statement": "当前语料尚未证明 D_prefix-E_named-U_cold>0。"
+    }
+  ],
+  "unified_terminal_budget_strict_inequality_proved": false
+}
