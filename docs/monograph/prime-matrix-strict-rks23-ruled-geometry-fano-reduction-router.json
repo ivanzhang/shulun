@@ -1,0 +1,215 @@
+{
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "certificate_type": "prime_matrix_strict_rks23_ruled_geometry_fano_reduction_router",
+  "closed_gates": [
+    "PreviousTwoRemainingFrontierReady",
+    "GrassmannianLineDictionaryClosed",
+    "SchubertIntersectionDictionaryClosed",
+    "OrdinaryLineCountReducedToFanoDegreeClosed",
+    "ExceptionalLineCountReducedToDirectrixBoundClosed",
+    "RuledGeometryReducedToFanoAtom"
+  ],
+  "contribution_transfer": {
+    "already_closed_downstream": "component mass, degree summation, and target absorption were closed in earlier certificates",
+    "exceptional_transfer": "if there are O(1) exceptional lines, their contribution is absorbed exactly as in the prior ruled component accounting",
+    "new_remaining": "only the Fano curve degree and exceptional-line bound remains for the singly-ruled branch",
+    "ordinary_transfer": "if deg(ruling curve)=O(d), every ordinary line meets O(d) contained lines, matching the previous contribution ledger"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "exceptional_line_count_reduced_to_directrix_bound_closed": true,
+  "fano_curve_degree_and_exceptional_line_bound_closed": false,
+  "fano_dictionary": {
+    "fano_locus": "lines contained in S form a closed Fano locus F_1(S) inside G(1,3)",
+    "line_parameter_space": "lines in projective 3-space are points of the Grassmannian G(1,3)",
+    "singly_ruled_meaning": "the relevant one-dimensional component of F_1(S) is the ruling curve; isolated components are finitely many extra lines",
+    "surface_case": "irreducible singly ruled surface S of degree d, after planes/quadrics have already been separated",
+    "why_reduction_is_valid": "counting contained lines meeting a fixed line becomes a Schubert intersection problem in G(1,3)"
+  },
+  "flecnode_cayley_salmon_pack_closed": false,
+  "grassmannian_dictionary_closed": true,
+  "next_direct_attack_target": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack",
+  "next_required_input": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic + SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface",
+  "no_theorem_switch": true,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "open_gates": [
+    "FanoCurveDegreeAndExceptionalLineBoundClosed",
+    "RuledSurfaceRulingGeometryClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "SelfContainedFlecnodeCayleySalmonPackClosed",
+    "SinglyRuledExceptionalLineTheoremClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "ordinary_line_count_reduced_to_fano_degree_closed": true,
+  "plain_conclusion": "当前唯一内部自足线继续深层下钻：ruled-surface 几何不再作为黑箱，已转写为 Grassmannian 中 Fano 曲线与 Schubert divisor 的相交问题。普通线 O(d) 控制被压成 ruling Fano 曲线次数 O(d)，异常线 O(1) 控制被压成 Fano 曲线被 Schubert divisor 包含的 directrix 型界。因此最终结构包的真正源头剩余变成两个原子：Cayley-Salmon flecnode 判据与 Fano 曲线次数/异常线界。row_column_unconditional_closed 仍保持 false。",
+  "previous_two_remaining_frontier_ready": true,
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface",
+      "closed": false,
+      "why_remaining": "must prove the ruling Fano curve has O(d) degree and only O(1) Schubert-contained exceptional lines"
+    },
+    {
+      "atom": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+      "closed": false,
+      "why_remaining": "must prove Flec(F) vanishing identically on the surface forces ruledness"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousTwoRemainingFrontierReady",
+      "meaning": "上一证书已关闭 flecnode 多项式构造，只剩 Cayley-Salmon 判据与 ruled 几何。",
+      "proved": true,
+      "remaining": "SelfContainedCayleySalmonCriterionAndRuledSurfaceRulingGeometry"
+    },
+    {
+      "closed": true,
+      "gate": "GrassmannianLineDictionaryClosed",
+      "meaning": "曲面包含直线的问题已转为 Grassmannian 中 Fano locus 的问题。",
+      "proved": true,
+      "remaining": "Grassmannian dictionary closed"
+    },
+    {
+      "closed": true,
+      "gate": "SchubertIntersectionDictionaryClosed",
+      "meaning": "固定直线相交条件已转为 Schubert divisor 相交条件。",
+      "proved": true,
+      "remaining": "Schubert dictionary closed"
+    },
+    {
+      "closed": true,
+      "gate": "OrdinaryLineCountReducedToFanoDegreeClosed",
+      "meaning": "普通线 O(d) 相交界已压成 ruling Fano 曲线次数 O(d)。",
+      "proved": true,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "ExceptionalLineCountReducedToDirectrixBoundClosed",
+      "meaning": "异常线 O(1) 界已压成 Fano 曲线被 Schubert divisor 包含的 directrix 型界。",
+      "proved": true,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "RuledGeometryReducedToFanoAtom",
+      "meaning": "singly-ruled 几何整体已压成一个 Fano 曲线次数/异常线界原子。",
+      "proved": true,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": false,
+      "gate": "FanoCurveDegreeAndExceptionalLineBoundClosed",
+      "meaning": "尚未作者侧证明 Fano ruling 曲线次数 O(d) 与异常线 O(1)。",
+      "proved": false,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": false,
+      "gate": "RuledSurfaceRulingGeometryClosed",
+      "meaning": "ruled 几何已下钻但仍等待 Fano 原子。",
+      "proved": false,
+      "remaining": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "meaning": "Cayley-Salmon 判据仍未作者侧内联。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedFlecnodeCayleySalmonPackClosed",
+      "meaning": "结构包现在剩 Cayley-Salmon 判据和 Fano 曲线界两个源头原子。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SinglyRuledExceptionalLineTheoremClosed",
+      "meaning": "singly-ruled 分支等待 Fano 曲线界。",
+      "proved": false,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "meaning": "non-ruled 分支等待 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "两个源头原子未内联前，ruled/non-ruled 总包仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár/Guth-Katz 曲面结构包仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "二分线交点界仍依赖曲面结构包。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只把 ruled 几何压成 Fano 原子；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "ruled_geometry_reduced_to_fano_atom": true,
+  "ruled_surface_ruling_geometry_closed": false,
+  "same_theorem_target_preserved": true,
+  "schubert_accounting": {
+    "exceptional_line": "ell is exceptional if the ruling curve is contained in Sigma_ell, so ell meets infinitely many ruling lines",
+    "fixed_line": "for a contained line ell, the set of all lines meeting ell is a Schubert divisor Sigma_ell in G(1,3)",
+    "needed_fano_atom": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface",
+    "ordinary_bound_source": "then the number of ruling lines meeting ell is bounded by deg(ruling curve)*deg(Sigma_ell)",
+    "ordinary_line": "ell is ordinary if the ruling curve is not contained in Sigma_ell"
+  },
+  "schubert_intersection_dictionary_closed": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "singly_ruled_exceptional_line_theorem_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-flecnode-polynomial-construction-router.json": "9fc0f5ecde0b1c0af3c26a6f574129e51c40daac965671572c7d183745bbb685",
+    "docs/monograph/prime-matrix-strict-rks23-flecnode-structure-unification-router.json": "739213917bdceeb272a2b2700a2a66ddb08c9219f0190fafa034aa2397523b54"
+  },
+  "status": "ruled_surface_geometry_reduced_to_fano_curve_schubert_atom"
+}
