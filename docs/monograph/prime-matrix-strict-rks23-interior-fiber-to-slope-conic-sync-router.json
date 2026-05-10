@@ -1,0 +1,178 @@
+{
+  "affine_square_to_slope_conic_imported": true,
+  "central_root_box_to_cubic_collision_imported": true,
+  "certificate_type": "prime_matrix_strict_rks23_interior_fiber_to_slope_conic_sync_router",
+  "closed_gates": [
+    "CurrentInteriorFiberFrontierActive",
+    "InteriorFiberToDiscriminantCorridorImported",
+    "DiscriminantToRootLocalizedMapImported",
+    "RootLocalizedToCentralRootBoxImported",
+    "CentralRootBoxToCubicCollisionImported",
+    "CubicCollisionToDistinctDifferenceImported",
+    "DistinctDifferenceToAffineSquareImported",
+    "AffineSquareToSlopeConicImported",
+    "ReductionChainClosedToSlopeConicFrontier"
+  ],
+  "counterexample_assumption_only": true,
+  "cubic_collision_to_distinct_difference_imported": true,
+  "current_interior_fiber_frontier_active": true,
+  "discriminant_to_root_localized_map_imported": true,
+  "distinct_difference_to_affine_square_imported": true,
+  "empirical_absence_not_used": true,
+  "equivalent_atom_name": "RootBoxSlopeConicIncidencePowerSaving",
+  "interior_fiber_to_discriminant_corridor_imported": true,
+  "interior_shifted_product_high_spectrum_proved": false,
+  "next_direct_attack_target": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving",
+  "next_required_input": "RootBoxSlopeConicIncidencePowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前唯一内部自足线已能严格下钻到斜率局部三元二次曲线束前沿：内部 shifted product fiber 经判别式通道、根定位小差映射、中心根盒、非对角三次碰撞、异差碰撞、仿射平方集自交，最终等价压成 `d2^2=lambda*d1^2+lambda(lambda-1)*x^2` 的非平凡斜率局部曲线束。真正剩余不是前面的 fiber 或碰撞正规形，而是证明该曲线束的总解数固定幂节省。",
+  "reduction_chain": [
+    {
+      "compression": "ab=c(a+b) in the interior phase collar",
+      "next": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving",
+      "step": "interior-shifted-product",
+      "target": "InteriorShiftedProductFiberHighSpectrumPowerSavingForSquareRootCollar"
+    },
+    {
+      "compression": "t=a+b gives X^2-tX+c*t=0 and Delta=t(t-4c)",
+      "next": "RootLocalizedQuadraticGraphBoxFiberPowerSaving",
+      "step": "sum-discriminant",
+      "target": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving"
+    },
+    {
+      "compression": "d=a-b is a short signed root and c=(t^2-d^2)/(4t)",
+      "next": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving",
+      "step": "root-localized-map",
+      "target": "RootLocalizedQuadraticGraphBoxFiberPowerSaving"
+    },
+    {
+      "compression": "low branch budgets are absorbed; high fiber is forced into the central phase box",
+      "next": "NonDiagonalRootBoxCubicCollisionPowerSaving",
+      "step": "central-root-box",
+      "target": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving"
+    },
+    {
+      "compression": "same-phase root-box fibers force non-diagonal cubic collision mass",
+      "next": "FullyNonDiagonalDistinctDifferenceRootBoxCubicCollisionPowerSaving",
+      "step": "cubic-collision",
+      "target": "NonDiagonalRootBoxCubicCollisionPowerSaving"
+    },
+    {
+      "compression": "equal-difference square diagonal is absorbed; true distinct-difference cubic scope remains",
+      "next": "NontrivialAffineSelfIntersectionEnergyOfShortSquareSetPowerSaving",
+      "step": "distinct-difference",
+      "target": "FullyNonDiagonalDistinctDifferenceRootBoxCubicCollisionPowerSaving"
+    },
+    {
+      "compression": "u(x^2-y)-x(u^2-v)=0 becomes v=(u/x)y+u(u-x)",
+      "next": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving",
+      "step": "affine-square-set",
+      "target": "NontrivialAffineSelfIntersectionEnergyOfShortSquareSetPowerSaving"
+    },
+    {
+      "compression": "lambda=u/x forces d2^2=lambda*d1^2+lambda(lambda-1)*x^2",
+      "next": "RootBoxSlopeConicIncidencePowerSaving",
+      "step": "slope-conic",
+      "target": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving"
+    }
+  ],
+  "reduction_chain_closed_to_slope_conic_frontier": true,
+  "root_localized_to_central_root_box_imported": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CurrentInteriorFiberFrontierActive",
+      "meaning": "当前 HEAD 的反演小和集前沿已把唯一剩余压成内部 shifted product fiber 高谱。",
+      "proved": true,
+      "remaining": "InteriorShiftedProductFiberHighSpectrumPowerSavingForSquareRootCollar"
+    },
+    {
+      "closed": true,
+      "gate": "InteriorFiberToDiscriminantCorridorImported",
+      "meaning": "内部纤维已由和变量压成一维判别式平方返回通道。",
+      "proved": true,
+      "remaining": "InteriorQuadraticDiscriminantCorridorHighSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "DiscriminantToRootLocalizedMapImported",
+      "meaning": "判别式通道已加强为根定位小差有理相位映射。",
+      "proved": true,
+      "remaining": "RootLocalizedQuadraticGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "RootLocalizedToCentralRootBoxImported",
+      "meaning": "低分支预算已吸收，高谱只能进入中心相位根盒。",
+      "proved": true,
+      "remaining": "CentralPhaseRootLocalizedGraphBoxFiberPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "CentralRootBoxToCubicCollisionImported",
+      "meaning": "中心根盒高纤维已压成非对角三次碰撞质量。",
+      "proved": true,
+      "remaining": "NonDiagonalRootBoxCubicCollisionPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "CubicCollisionToDistinctDifferenceImported",
+      "meaning": "等差平方退化已吸收，真剩余是完全非对角异差碰撞。",
+      "proved": true,
+      "remaining": "FullyNonDiagonalDistinctDifferenceRootBoxCubicCollisionPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "DistinctDifferenceToAffineSquareImported",
+      "meaning": "真三次碰撞已线性化为短平方集非平凡仿射自交。",
+      "proved": true,
+      "remaining": "NontrivialAffineSelfIntersectionEnergyOfShortSquareSetPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "AffineSquareToSlopeConicImported",
+      "meaning": "仿射自交已压成非平凡斜率局部三元二次曲线束。",
+      "proved": true,
+      "remaining": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "ReductionChainClosedToSlopeConicFrontier",
+      "meaning": "从当前内部 fiber 剩余到斜率二次曲线束前沿的同步链条已闭合。",
+      "proved": true,
+      "remaining": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving",
+      "meaning": "尚未在仓库内证明斜率局部三元二次曲线束总解数固定幂节省。",
+      "proved": false,
+      "remaining": "RootBoxSlopeConicIncidencePowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步完成唯一内部自足线的下钻同步，不宣称行/列无条件闭合。",
+      "proved": false,
+      "remaining": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "slope_conic_bundle_power_saving_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-affine-square-set-intersection-router.json": "1bb5b3b72b5f73a41e06ba9e0169a82ecaa8140ff2489c83f9d76b639d5e7dac",
+    "docs/monograph/prime-matrix-strict-rks23-distinct-difference-collision-router.json": "f92dd1dcc4f85c3d8ccd9f407a5afc2c5efdd01bef89bcb8f5bed46c415fd2cc",
+    "docs/monograph/prime-matrix-strict-rks23-interior-fiber-discriminant-corridor-router.json": "a6b8e527e6358ee2e2f9e5bf6244f20811c0633329940fd0b2b7efd03196bfd2",
+    "docs/monograph/prime-matrix-strict-rks23-inverse-smalldoubling-to-affine-fiber-router.json": "6b9163fece437b4c1f7cd5742079f4a7b6934f18fcd970a77cda4ee3d604bc06",
+    "docs/monograph/prime-matrix-strict-rks23-root-box-branch-budget-phase-exclusion-router.json": "04018bfdc23618c7bcb759733be19b0ec445a61b7223e90f195049c9745e68b7",
+    "docs/monograph/prime-matrix-strict-rks23-root-box-collision-normal-form-router.json": "5a6969ae5b251c7c59cbde00a4778fc11bf2875a0eaa6ccb97700b5bf939671e",
+    "docs/monograph/prime-matrix-strict-rks23-root-localized-discriminant-corridor-router.json": "84df320a72b4204a5e7cded1558dc3bec9ddba061df00c161bf88ae7d246ac56",
+    "docs/monograph/prime-matrix-strict-rks23-slope-conic-bundle-router.json": "77ee981cd45b000a828fc12403bbdb5530b041517947864387622aad54328788"
+  },
+  "status": "current_internal_frontier_synced_to_slope_localized_conic_bundle"
+}
