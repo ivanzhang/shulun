@@ -1,0 +1,220 @@
+{
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "certificate_type": "prime_matrix_strict_rks23_flecnode_structure_unification_router",
+  "closed_gates": [
+    "PreviousTwoAtomFrontierReady",
+    "PositiveCharacteristicCutoffImported",
+    "TwoSurfaceAtomsUnifiedToFlecnodePack",
+    "SinglyRuledReductionToFlecnodePackClosed",
+    "NonRuledReductionToFlecnodePackClosed",
+    "DownstreamAbsorptionLedgerPreserved"
+  ],
+  "counterexample_assumption_only": true,
+  "downstream_absorption_ledger_preserved": true,
+  "empirical_absence_not_used": true,
+  "final_pack_atoms": [
+    {
+      "atom": "SelfContainedFlecnodePolynomialConstructionAndDegreeBound",
+      "closed": false,
+      "role": "construct the flecnode polynomial and bound its degree in the degree<p regime"
+    },
+    {
+      "atom": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+      "closed": false,
+      "role": "prove flecnode-identically-zero implies ruled, with the positive-characteristic cutoff already supplied"
+    },
+    {
+      "atom": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry",
+      "closed": false,
+      "role": "prove the singly-ruled ruling/exceptional-line geometry needed for O(d) ordinary intersections"
+    }
+  ],
+  "flecnode_cayley_salmon_pack_closed": false,
+  "flecnode_polynomial_construction_closed": false,
+  "next_direct_attack_target": "SelfContainedFlecnodeCayleySalmonRuledSurfaceStructurePack",
+  "next_required_input": "SelfContainedFlecnodePolynomialConstructionAndDegreeBound + SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic + SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry",
+  "no_theorem_switch": true,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "non_ruled_path": {
+    "bezout_exit": "otherwise the surface and flecnode polynomial have no common component, so Bezout bounds the line-rich singular/flecnode locus and yields O(d^3) line intersections",
+    "cayley_salmon_exit": "if the flecnode polynomial vanishes identically on the surface, the surface is ruled; this contradicts the non-ruled case",
+    "flecnode_strategy": "construct a flecnode polynomial; every line contained in the surface is contained in the flecnode locus",
+    "remaining_atoms": "SelfContainedFlecnodePolynomialConstructionAndDegreeBound + SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+    "surface_case": "irreducible non-ruled surface component of degree d with d<char(F)"
+  },
+  "non_ruled_reduction_to_flecnode_pack_closed": true,
+  "open_gates": [
+    "FlecnodePolynomialConstructionClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "RuledSurfaceRulingGeometryClosed",
+    "SelfContainedFlecnodeCayleySalmonPackClosed",
+    "SinglyRuledExceptionalLineTheoremClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前唯一内部自足线继续下钻：正特征截断已闭合后，剩余的 singly-ruled 与 non-ruled 两个曲面结构定理已统一到同一个 flecnode/Cayley-Salmon ruled-surface 结构包。这一步闭合的是路径统一、条件归约和下游吸收账本：singly-ruled 分支压成 ruling/异常线几何，non-ruled 分支压成 flecnode polynomial 与 Cayley-Salmon 判据。但这些代数几何结构定理尚未作者侧内联，因此 row_column_unconditional_closed 仍保持 false。",
+  "positive_characteristic_cutoff_imported": true,
+  "previous_two_atom_frontier_ready": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousTwoAtomFrontierReady",
+      "meaning": "上一证书已关闭正特征截断，只剩 singly-ruled 与 non-ruled 两个结构定理。",
+      "proved": true,
+      "remaining": "SelfContainedSinglyRuledAndNonRuledFlecnodeStructureTheorems"
+    },
+    {
+      "closed": true,
+      "gate": "PositiveCharacteristicCutoffImported",
+      "meaning": "degree<p 条件已由 c0=1/54 截断提供，可供 flecnode/Cayley-Salmon 包使用。",
+      "proved": true,
+      "remaining": "degree<p imported"
+    },
+    {
+      "closed": true,
+      "gate": "TwoSurfaceAtomsUnifiedToFlecnodePack",
+      "meaning": "两个剩余结构定理已统一到同一个 flecnode/Cayley-Salmon ruled-surface 结构包。",
+      "proved": true,
+      "remaining": "SelfContainedFlecnodeCayleySalmonRuledSurfaceStructurePack"
+    },
+    {
+      "closed": true,
+      "gate": "SinglyRuledReductionToFlecnodePackClosed",
+      "meaning": "singly-ruled 异常线定理已压成 ruled-surface ruling/exceptional-line 几何输入。",
+      "proved": true,
+      "remaining": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry"
+    },
+    {
+      "closed": true,
+      "gate": "NonRuledReductionToFlecnodePackClosed",
+      "meaning": "non-ruled O(d^3) 线交点界已压成 flecnode polynomial + Cayley-Salmon 输入。",
+      "proved": true,
+      "remaining": "SelfContainedFlecnodePolynomialConstructionAndDegreeBound + SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": true,
+      "gate": "DownstreamAbsorptionLedgerPreserved",
+      "meaning": "前面已闭合的分量记账、次数求和和目标吸收账本仍有效。",
+      "proved": true,
+      "remaining": "downstream ledger preserved"
+    },
+    {
+      "closed": false,
+      "gate": "FlecnodePolynomialConstructionClosed",
+      "meaning": "尚未作者侧内联 flecnode polynomial 的构造与次数界。",
+      "proved": false,
+      "remaining": "SelfContainedFlecnodePolynomialConstructionAndDegreeBound"
+    },
+    {
+      "closed": false,
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "meaning": "尚未作者侧内联 flecnode 恒等为零推出 ruled 的 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "RuledSurfaceRulingGeometryClosed",
+      "meaning": "尚未作者侧内联 singly-ruled 曲面的 ruling 与异常线几何。",
+      "proved": false,
+      "remaining": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedFlecnodeCayleySalmonPackClosed",
+      "meaning": "统一结构包未内联前，两个曲面结构定理仍不能关闭。",
+      "proved": false,
+      "remaining": "SelfContainedFlecnodeCayleySalmonRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SinglyRuledExceptionalLineTheoremClosed",
+      "meaning": "已压缩但未证明；等待 ruled-surface 几何包。",
+      "proved": false,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "meaning": "已压缩但未证明；等待 flecnode/Cayley-Salmon 包。",
+      "proved": false,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "曲面结构源头包未内联前，ruled/non-ruled 总包仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedFlecnodeCayleySalmonRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár/Guth-Katz 曲面结构包仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedFlecnodeCayleySalmonRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "二分线交点界仍依赖曲面结构包。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只统一并下钻曲面结构源头；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "ruled_surface_ruling_geometry_closed": false,
+  "same_theorem_target_preserved": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "singly_ruled_exceptional_line_theorem_closed": false,
+  "singly_ruled_path": {
+    "needed_structure": "a one-dimensional ruling family plus at most O(1) exceptional directrix-type lines",
+    "ordinary_line_control": "a non-exceptional contained line meets only O(d) other contained lines after excluding the ruling-family overlap",
+    "reduction_status": "the contribution ledger is closed from the previous certificate; only the internal ruled-geometry theorem remains",
+    "remaining_atom": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry",
+    "surface_case": "irreducible singly ruled surface component of degree d"
+  },
+  "singly_ruled_reduction_to_flecnode_pack_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-positive-characteristic-cutoff-router.json": "8a6eef417f941e133d36afc2666de16b18d232309901e56bd4bfea23a7cdd2d6",
+    "docs/monograph/prime-matrix-strict-rks23-ruled-surface-component-accounting-router.json": "d73380942d7bd857701a45ef19178b335fb2970a227df64be8efcedac84d7b02"
+  },
+  "status": "two_surface_structure_atoms_unified_to_flecnode_cayley_salmon_pack",
+  "two_surface_atoms_unified_to_flecnode_pack": true,
+  "unification": {
+    "input_state": "positive-characteristic cutoff closed; two open atoms remain",
+    "not_a_theorem_switch": "the target remains Rudnev point-plane incidence inside the RNRS/RKS23 chain; only the algebraic-surface sublemma is being decomposed",
+    "reason": "both singly-ruled exceptional-line control and non-ruled O(d^3) intersection control are consequences of the same ruled-surface structure theory",
+    "unified_pack": "SelfContainedFlecnodeCayleySalmonRuledSurfaceStructurePack"
+  }
+}
