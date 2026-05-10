@@ -1,0 +1,85 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_final_correlation_atom_router",
+  "closed_gates": [
+    "FinalCorrelationTargetActive",
+    "SquareDifferenceSpectrumReady",
+    "IntervalRatioSpectrumL2Ready",
+    "OnlyJointNonconcentrationRemains"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "final_atom": {
+    "closed_marginal_1": "sum_lambda L(lambda)=|T|^2",
+    "closed_marginal_2": "sum_lambda L(lambda)^2<=|T|^2 P^o(1)",
+    "closed_marginal_3": "M_A(lambda)=P*Q(lambda)-|Delta|^4",
+    "forbidden_shortcuts": "do not claim closure from average Q alone, average L alone, or plain Cauchy/Plancherel",
+    "required_joint_saving": "sum_lambda sqrt((P*Q(lambda)-|Delta|^4)*L(lambda)) <= P*N^2*N^(-delta)",
+    "slope_ratio_spectrum": "L(lambda)=#{(x,u) in T^2: u=lambda*x}",
+    "square_difference_measure": "W(h)=#{(d,e) in Delta^2: d^2-e^2=h}",
+    "square_difference_spectrum": "Q(lambda)=sum_h W(h)W(-lambda*h)",
+    "why_single_spectrum_bounds_fail": "Plancherel and the L2 ledger separately reach the natural scale; fixed power saving requires joint nonconcentration"
+  },
+  "final_correlation_target_active": true,
+  "interval_ratio_spectrum_l2_ready": true,
+  "joint_nonconcentration_atom_proved": false,
+  "next_direct_attack_target": "JointNonconcentrationOfSquareDifferenceSpectrumAndIntervalRatioSpectrum",
+  "no_theorem_switch": true,
+  "only_joint_nonconcentration_remains": true,
+  "open_gates": [
+    "JointNonconcentrationOfSquareDifferenceSpectrumAndIntervalRatioSpectrum",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前严格内部 RKS23 线已收束为一个最终相关原子：平方差谱 `Q(lambda)=sum_h W(h)W(-lambda*h)` 与短区间比值谱 `L(lambda)=#{(x,u):u=lambda*x}` 不能在同一批斜率上同时集中。两个边际账本已闭合，但它们单独只给自然尺度；真正剩余是联合非集中。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "FinalCorrelationTargetActive",
+      "meaning": "上一证书已把剩余固定为平方差谱与低 L2 比值谱的相关节省。",
+      "proved": true,
+      "remaining": "SquareDifferenceSpectrumAgainstLowL2IntervalRatioSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "SquareDifferenceSpectrumReady",
+      "meaning": "`M_A(lambda)` 已完全打开为平方差谱 `Q(lambda)`。",
+      "proved": true,
+      "remaining": "closed marginal"
+    },
+    {
+      "closed": true,
+      "gate": "IntervalRatioSpectrumL2Ready",
+      "meaning": "`L(lambda)` 的一阶与二阶账本已由短盒整数提升闭合。",
+      "proved": true,
+      "remaining": "closed marginal"
+    },
+    {
+      "closed": true,
+      "gate": "OnlyJointNonconcentrationRemains",
+      "meaning": "所有边际估计只能到自然尺度；剩余是两个谱不能同位集中。",
+      "proved": true,
+      "remaining": "JointNonconcentrationOfSquareDifferenceSpectrumAndIntervalRatioSpectrum"
+    },
+    {
+      "closed": false,
+      "gate": "JointNonconcentrationOfSquareDifferenceSpectrumAndIntervalRatioSpectrum",
+      "meaning": "仓库内尚未证明平方差谱峰值不能落在区间比值谱的大重叠斜率上。",
+      "proved": false,
+      "remaining": "new internal hardpoint"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只完成最终相关原子收束，未证明该原子。",
+      "proved": false,
+      "remaining": "JointNonconcentrationOfSquareDifferenceSpectrumAndIntervalRatioSpectrum"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-quadratic-energy-square-difference-router.json": "d59596ee53cf601c1b3568ab5585b8d653bbe0901386a328d8622e8658af95ea",
+    "docs/monograph/prime-matrix-strict-rks23-slope-overlap-ratio-spectrum-router.json": "337dc4e521173233c6f4605719f50175cd3fc54e796f70d3b76c0b068660bc21"
+  },
+  "square_difference_spectrum_ready": true,
+  "status": "rks23_strict_internal_frontier_reduced_to_joint_nonconcentration_atom"
+}
