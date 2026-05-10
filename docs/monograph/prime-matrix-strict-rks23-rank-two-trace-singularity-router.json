@@ -1,0 +1,266 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_rank_two_trace_singularity_router",
+  "closed_gates": [
+    "PreviousRankTwoTargetActive",
+    "CrossRatioSingularLambdaReductionFirewall",
+    "SpecialAutomorphismLambdaSmoothnessFirewall"
+  ],
+  "counterexample_assumption_only": true,
+  "crossratio_singular_lambda_firewall_closed": true,
+  "empirical_absence_not_used": true,
+  "finite_audit_not_used_as_proof": true,
+  "lambda_singularity_audit": [
+    {
+      "all_special_points_smooth": true,
+      "expected_smooth_count": 15,
+      "j_1728_smooth_lambdas": [
+        2,
+        9,
+        16
+      ],
+      "j_zero_smooth_lambdas": [],
+      "prime": 17,
+      "singular_lambdas": [
+        0,
+        1
+      ],
+      "smooth_count": 15
+    },
+    {
+      "all_special_points_smooth": true,
+      "expected_smooth_count": 27,
+      "j_1728_smooth_lambdas": [
+        2,
+        15,
+        28
+      ],
+      "j_zero_smooth_lambdas": [],
+      "prime": 29,
+      "singular_lambdas": [
+        0,
+        1
+      ],
+      "smooth_count": 27
+    },
+    {
+      "all_special_points_smooth": true,
+      "expected_smooth_count": 29,
+      "j_1728_smooth_lambdas": [
+        2,
+        16,
+        30
+      ],
+      "j_zero_smooth_lambdas": [
+        6,
+        26
+      ],
+      "prime": 31,
+      "singular_lambdas": [
+        0,
+        1
+      ],
+      "smooth_count": 29
+    },
+    {
+      "all_special_points_smooth": true,
+      "expected_smooth_count": 39,
+      "j_1728_smooth_lambdas": [
+        2,
+        21,
+        40
+      ],
+      "j_zero_smooth_lambdas": [],
+      "prime": 41,
+      "singular_lambdas": [
+        0,
+        1
+      ],
+      "smooth_count": 39
+    },
+    {
+      "all_special_points_smooth": true,
+      "expected_smooth_count": 41,
+      "j_1728_smooth_lambdas": [
+        2,
+        22,
+        42
+      ],
+      "j_zero_smooth_lambdas": [
+        7,
+        37
+      ],
+      "prime": 43,
+      "singular_lambdas": [
+        0,
+        1
+      ],
+      "smooth_count": 41
+    },
+    {
+      "all_special_points_smooth": true,
+      "expected_smooth_count": 51,
+      "j_1728_smooth_lambdas": [
+        2,
+        27,
+        52
+      ],
+      "j_zero_smooth_lambdas": [],
+      "prime": 53,
+      "singular_lambdas": [
+        0,
+        1
+      ],
+      "smooth_count": 51
+    }
+  ],
+  "next_direct_attack_target": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma",
+  "next_subatom": "SmoothRankTwoTraceBoundOrPivot",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RankTwoCrossRatioHypergeometricTraceBoundInternalizationLemma",
+    "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma",
+    "SmoothLegendreQuadraticCoreTraceInput",
+    "SmoothRankTwoHypergeometricTraceInput",
+    "BoundedBranchSignatureHasseJetIndependenceLemma",
+    "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "order_free_signature_selector_internalized": false,
+  "plain_conclusion": "本轮没有证明 rank-two 交比迹界，但把其中的 lambda 边界完全剥离。四分支归一化后的交比参数只需考虑 `lambda notin {0,1,infinity}`：`lambda=0,1,∞` 都是分支碰撞，支撑降到至多三处，已由低支撑和 exact-three Jacobi 支路关闭。对纯二次 Legendre 核 `y^2=x(1-x)(1-lambda*x)`，判别式为 `lambda^2(1-lambda)^2`；因此 `lambda notin {0,1}` 时曲线光滑。`j=0`、`j=1728` 只表示额外自同构，不是新奇异边界，不能再作为未处理特殊情形。所以唯一剩余从含糊的“所有特殊和一般 lambda”压成 `SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma`：在光滑交比域上自足证明 rank-two 迹界，或构造等价的 order-free Stepanov pivot 块。未完成该光滑 rank-two 输入前，Stepanov、Kummer 迹界、Burgess B4 与行/列命题仍不能作者侧无条件闭合。",
+  "previous_rank_two_target_active": true,
+  "rank_two_crossratio_trace_bound_internalized": false,
+  "rank_two_scope": {
+    "closed_boundary": "all branch-collision lambda values are routed back to already closed <=3 visible-branch cases",
+    "new_atom": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma",
+    "old_atom": "RankTwoCrossRatioHypergeometricTraceBoundInternalizationLemma",
+    "remaining_equivalent_pivot": "or construct an order-free Stepanov pivot block on the same smooth lambda domain",
+    "remaining_hypergeometric": "prove the smooth rank-two hypergeometric trace bound for every lambda not in {0,1}",
+    "remaining_legendre": "prove the smooth Legendre quadratic core trace bound for every lambda not in {0,1}"
+  },
+  "rejected_shortcuts": {
+    "finite_audit": "the audit confirms the symbolic discriminant pattern but is not used as proof of the trace bound",
+    "hasse_weil_whole_kummer": "do not return to the full y^d=f(x) curve; the remaining input is rank-two and order-free",
+    "lambda_zero_one": "lambda=0 or 1 must not be counted inside rank-two; they are support-drop cases already closed upstream",
+    "special_j_as_exception": "j=0 and j=1728 may increase automorphisms but are not singular and cannot be left as separate unclosed cases"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousRankTwoTargetActive",
+      "meaning": "上一证书已把唯一剩余压成 rank-two 交比迹界内部化。",
+      "proved": true,
+      "remaining": "RankTwoCrossRatioHypergeometricTraceBoundInternalizationLemma"
+    },
+    {
+      "closed": true,
+      "gate": "CrossRatioSingularLambdaReductionFirewall",
+      "meaning": "lambda=0,1,∞ 都是分支碰撞，回到已闭合的低支撑/三分支支路。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "SpecialAutomorphismLambdaSmoothnessFirewall",
+      "meaning": "j=0 与 j=1728 只是光滑特殊自同构点，不再作为独立未闭合边界。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": false,
+      "gate": "RankTwoCrossRatioHypergeometricTraceBoundInternalizationLemma",
+      "meaning": "rank-two 输入已去掉奇异 lambda 边界，但光滑迹界本身仍未内部证明。",
+      "proved": false,
+      "remaining": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma",
+      "meaning": "仍需在光滑 lambda 域证明 rank-two 交比迹界，或给出等价 Stepanov pivot。",
+      "proved": false,
+      "remaining": "SmoothRankTwoTraceBoundOrPivot"
+    },
+    {
+      "closed": false,
+      "gate": "SmoothLegendreQuadraticCoreTraceInput",
+      "meaning": "纯二次 Legendre 核仍需要光滑椭圆迹界的自足证明。",
+      "proved": false,
+      "remaining": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "SmoothRankTwoHypergeometricTraceInput",
+      "meaning": "非二次归一化超几何核仍需要 rank-two 迹界的自足证明。",
+      "proved": false,
+      "remaining": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "BoundedBranchSignatureHasseJetIndependenceLemma",
+      "meaning": "Hasse-jet 秩下界仍等待光滑 rank-two pivot 块。",
+      "proved": false,
+      "remaining": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+      "meaning": "完整阶无关 selector 仍等待光滑 rank-two 输入。",
+      "proved": false,
+      "remaining": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "Stepanov-Kummer 非零秩仍等待完整 selector。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "Stepanov 完整内部证明仍未闭合。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界仍等待光滑 rank-two 输入内部化。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只剥离奇异 lambda 边界，不声明行/列命题作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kummer_trace_bound_internalized": false,
+  "singular_lambda_firewall": {
+    "consequence": "rank-two trace input only needs smooth lambda not in {0,1,infinity}",
+    "crossratio_domain": "lambda belongs to P^1 minus {0,1,infinity} after PGL2 normalization",
+    "lambda_0": "the fourth branch collides with 0; support drops to at most three and is already closed by low-support/Jacobi routers",
+    "lambda_1": "the fourth branch collides with 1; support drops to at most three and is already closed",
+    "lambda_infinity": "after relabeling, infinity collision is the same support-drop case"
+  },
+  "smoothness_certificate": {
+    "discriminant": "Delta(lambda)=lambda^2*(1-lambda)^2 up to a nonzero square factor",
+    "j_invariant": "j(lambda)=256*(1-lambda+lambda^2)^3/(lambda^2*(1-lambda)^2)",
+    "legendre_core": "y^2=x(1-x)(1-lambda*x)",
+    "smooth_condition": "Delta(lambda)!=0, exactly lambda not in {0,1,infinity}",
+    "special_automorphism_points": "j=0 and j=1728 are smooth when lambda not in {0,1}; they do not create new singular gates"
+  },
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-four-branch-hypergeometric-router.json": "e45a09e20fb05f385f50d87cb3171511419236ce8846d56f2967d0be103a6356"
+  },
+  "special_automorphism_lambda_smoothness_firewall_closed": true,
+  "status": "rank_two_trace_restricted_to_smooth_crossratio_domain",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_kummer_auxiliary_rank_surjectivity_proved": false
+}
