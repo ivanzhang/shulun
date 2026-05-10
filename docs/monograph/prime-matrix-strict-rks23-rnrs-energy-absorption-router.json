@@ -1,0 +1,107 @@
+{
+  "certificate_type": "strict_rks23_rnrs_energy_absorption_router",
+  "status": "self_contained_rnrs_rudnev_input_closed_remaining_row_column_final_audit",
+  "previous_rnrs_frontier_ready": true,
+  "point_plane_incidence_imported": true,
+  "reciprocal_energy_corollary_closed": true,
+  "interval_degeneracy_ledger_closed": true,
+  "balanced_collar_parameter_match_closed": true,
+  "self_contained_rnrs_rudnev_proof_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used": true,
+  "counterexample_assumption_only": true,
+  "rnrs_energy_statement": {
+    "set": "J is an interval in F_P with |J|=N in the square-root logarithmic collar",
+    "object": "B=J^{-1}",
+    "energy": "E_+(B)=#{b1+b2=b3+b4}",
+    "target": "E_+(J^{-1}) <= C_E N^(5/2) P^eps, with eps chosen below the registered collar margin",
+    "use": "this gives a fixed power saving after absorbing the allowed logarithmic losses"
+  },
+  "absorption_ledger": {
+    "collision_model": "x1^{-1}+x2^{-1}=x3^{-1}+x4^{-1}",
+    "clearing_denominators": "nonzero denominators convert the main collisions to a point-plane incidence model",
+    "degenerate_collisions": "zero-denominator, diagonal, and rich-line collisions are handled by the registered interval degeneracy ledger",
+    "incidence_input": "the closed Rudnev point-plane incidence theorem bounds the nondegenerate collisions",
+    "parameter_match": "N^(5/2)P^eps is inside the required saving window for the balanced collar",
+    "conclusion": "the internal RNRS/Rudnev reciprocal-interval energy input is closed"
+  },
+  "closed_gates": [
+    "PreviousRNRSFrontierReady",
+    "PointPlaneIncidenceImported",
+    "ReciprocalEnergyCorollaryClosed",
+    "IntervalDegeneracyLedgerClosed",
+    "BalancedCollarParameterMatchClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+  ],
+  "open_gates": [
+    "RowColumnUnconditionalClosed"
+  ],
+  "remaining_atoms": [
+    {
+      "atom": "RowColumnPromotionAbsorptionAuditAfterSelfContainedRNRSInput",
+      "closed": false,
+      "why_remaining": "after closing RNRS, the manuscript still needs a global absorption audit before row/column unconditional closure can be asserted"
+    }
+  ],
+  "next_direct_attack_target": "RowColumnPromotionAbsorptionAuditAfterSelfContainedRNRSInput",
+  "next_required_input": "Audit all row/column promotion gates now that the self-contained RNRS input is closed",
+  "plain_conclusion": "严格内部 RNRS/Rudnev 倒数区间能量输入已闭合。下一步不是再攻 incidence 源头，而是做行/列推广链的全局吸收审计，确认是否还有独立未闭合门。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-rudnev-point-plane-to-reciprocal-energy-router.json": "f0e6cf292fe276c2131109a0155285f2f26cadac1c2d0ba909b34191c693b674",
+    "docs/monograph/prime-matrix-strict-rks23-point-plane-absorption-router.json": "500add58da5854d0aac72e74670896138a6667f7440d1a8f10ac3537e18469d4",
+    "docs/monograph/prime-matrix-strict-rks23-noncircular-rnrs-interface-router.json": "0059c698ef3de60c81fc149b8414d2ecb7cadfe5fe8f778c49689419c575d018"
+  },
+  "rows": [
+    {
+      "gate": "PreviousRNRSFrontierReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "倒数能量归约、退化账本、参数匹配和点-平面 incidence 均已闭合。",
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    },
+    {
+      "gate": "PointPlaneIncidenceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "Rudnev 点-平面 incidence 作者侧证明已导入。",
+      "remaining": "closed point-plane incidence"
+    },
+    {
+      "gate": "ReciprocalEnergyCorollaryClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "点-平面 incidence 到倒数区间能量推论的归约已闭合。",
+      "remaining": "reciprocal energy corollary"
+    },
+    {
+      "gate": "IntervalDegeneracyLedgerClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "区间模型中的 rich-line、零分母和对角退化项已独立记账。",
+      "remaining": "interval degeneracy ledger"
+    },
+    {
+      "gate": "BalancedCollarParameterMatchClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "N^(5/2)P^eps 形态足以支付当前颈部固定对数损失。",
+      "remaining": "balanced collar parameter match"
+    },
+    {
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "closed": true,
+      "proved": true,
+      "meaning": "RNRS/Rudnev 倒数区间能量输入在作者侧自足链中闭合。",
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只闭合 RNRS/Rudnev 输入；行/列命题仍需最终总账吸收审计。",
+      "remaining": "RowColumnPromotionAbsorptionAuditAfterSelfContainedRNRSInput"
+    }
+  ]
+}
