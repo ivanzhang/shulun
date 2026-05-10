@@ -1,0 +1,205 @@
+{
+  "certificate_type": "strict_rks23_cayley_salmon_source_atoms_router",
+  "status": "cayley_salmon_reduced_to_monge_prolongation_and_line_germ_closure",
+  "previous_cayley_salmon_frontier_ready": true,
+  "degree_less_than_characteristic_imported": true,
+  "smooth_locus_reduction_closed": true,
+  "contact_incidence_defined_closed": true,
+  "dominating_third_order_contact_branch_closed": true,
+  "hasse_to_jet_transfer_closed": true,
+  "cayley_salmon_source_atoms_identified": true,
+  "monge_prolongation_closed": false,
+  "algebraic_line_germ_closure_closed": false,
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used": true,
+  "counterexample_assumption_only": true,
+  "reduction_chain": {
+    "input": "F irreducible, squarefree, deg(F)=d<char(k); Flec(F) vanishes on Z(F)",
+    "generic_locus": "remove singular locus, coordinate hyperplane failures, and vertical direction charts; this does not change ruledness",
+    "contact_incidence": "inside smooth points x of Z(F), impose first, second, and third Hasse directional contact equations in projective direction v",
+    "dominant_branch": "because Flec(F)|Z(F)=0, every generic x has at least one admissible v; an irreducible component of the incidence variety dominates Z(F)",
+    "closed_part": "this gives an algebraic branch of third-order contact directions over a dense open subset",
+    "remaining_part": "must prove this branch is not merely osculating, but integrates/prolongs to actual projective lines contained in the surface"
+  },
+  "closed_subatoms": [
+    {
+      "atom": "SelfContainedFlecnodeZeroDominatingThirdOrderContactBranch",
+      "closed": true,
+      "role": "Flec(F)|Z(F)=0 gives a dominating algebraic third-order contact direction branch"
+    },
+    {
+      "atom": "SelfContainedSmoothGenericLocusAndDegreeLessThanCharacteristicJetTransfer",
+      "closed": true,
+      "role": "the degree<p cutoff lets Hasse directional derivatives serve as the needed jet equations on the generic smooth locus"
+    }
+  ],
+  "source_atoms": [
+    {
+      "atom": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces",
+      "closed": false,
+      "role": "derive from the third-order contact branch the Monge characteristic equations whose integral curves have constant projective direction",
+      "hard_point": "third-order contact at each point is local finite-jet information; contained lines require a propagation theorem along the branch"
+    },
+    {
+      "atom": "SelfContainedAlgebraicLineGermClosureCoveringSurface",
+      "closed": false,
+      "role": "turn the local line germs produced by Monge prolongation into a Zariski one-parameter family of projective lines covering the surface",
+      "hard_point": "exclude isolated or chart-dependent formal germs and show the family survives after closure and exceptional-set removal"
+    }
+  ],
+  "closed_gates": [
+    "PreviousCayleySalmonFrontierReady",
+    "DegreeLessThanCharacteristicImported",
+    "SmoothGenericLocusReductionClosed",
+    "ContactIncidenceDefinedClosed",
+    "DominatingThirdOrderContactBranchClosed",
+    "HasseToJetTransferClosed",
+    "CayleySalmonSourceAtomsIdentified"
+  ],
+  "open_gates": [
+    "MongeProlongationClosed",
+    "AlgebraicLineGermClosureClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces",
+      "closed": false,
+      "role": "derive from the third-order contact branch the Monge characteristic equations whose integral curves have constant projective direction",
+      "hard_point": "third-order contact at each point is local finite-jet information; contained lines require a propagation theorem along the branch"
+    },
+    {
+      "atom": "SelfContainedAlgebraicLineGermClosureCoveringSurface",
+      "closed": false,
+      "role": "turn the local line germs produced by Monge prolongation into a Zariski one-parameter family of projective lines covering the surface",
+      "hard_point": "exclude isolated or chart-dependent formal germs and show the family survives after closure and exceptional-set removal"
+    }
+  ],
+  "next_direct_attack_target": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces",
+  "next_required_input": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces + SelfContainedAlgebraicLineGermClosureCoveringSurface",
+  "plain_conclusion": "Cayley-Salmon 未闭合，但最后缺口已从整条经典判据压缩为两个源头原子：Monge 延拓把三阶接触传播成真实直线，以及局部线芽的代数闭包覆盖曲面。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-noncone-directrix-bound-router.json": "4d47249c8d3de57f8836df65d8a7bf6cb5a10fd7e2509d3296bfd3483399ae7f",
+    "docs/monograph/prime-matrix-strict-rks23-flecnode-polynomial-construction-router.json": "9fc0f5ecde0b1c0af3c26a6f574129e51c40daac965671572c7d183745bbb685",
+    "docs/monograph/prime-matrix-strict-rks23-positive-characteristic-cutoff-router.json": "8a6eef417f941e133d36afc2666de16b18d232309901e56bd4bfea23a7cdd2d6"
+  },
+  "rows": [
+    {
+      "gate": "PreviousCayleySalmonFrontierReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已把唯一剩余压成 Cayley-Salmon flecnode 判据。",
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "gate": "DegreeLessThanCharacteristicImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "degree<p 截断已作为 Hasse/jet 传递前提导入。",
+      "remaining": "degree<p imported"
+    },
+    {
+      "gate": "SmoothGenericLocusReductionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "去掉奇异点和有限个坏 chart 后，ruledness 的稠密开集判定不变。",
+      "remaining": "generic smooth locus"
+    },
+    {
+      "gate": "ContactIncidenceDefinedClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "三阶接触方向的代数 incidence variety 已由 flecnode 构造给出。",
+      "remaining": "third-order contact incidence"
+    },
+    {
+      "gate": "DominatingThirdOrderContactBranchClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Flec(F) 在曲面上恒零推出存在支配曲面的三阶接触方向分支。",
+      "remaining": "SelfContainedFlecnodeZeroDominatingThirdOrderContactBranch"
+    },
+    {
+      "gate": "HasseToJetTransferClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "degree<p 下 Hasse 方向导数与所需三阶 jet 条件一致。",
+      "remaining": "Hasse jet transfer"
+    },
+    {
+      "gate": "CayleySalmonSourceAtomsIdentified",
+      "closed": true,
+      "proved": true,
+      "meaning": "Cayley-Salmon 终端剩余已压成 Monge 延拓与线芽代数闭包两个源头原子。",
+      "remaining": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces + SelfContainedAlgebraicLineGermClosureCoveringSurface"
+    },
+    {
+      "gate": "MongeProlongationClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚需证明三阶接触方向分支沿自身传播并产生真实直线。",
+      "remaining": "SelfContainedMongeProlongationFiniteOrderContactToLineForFlecnodeSurfaces"
+    },
+    {
+      "gate": "AlgebraicLineGermClosureClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚需证明局部线芽闭包为覆盖曲面的代数直线族。",
+      "remaining": "SelfContainedAlgebraicLineGermClosureCoveringSurface"
+    },
+    {
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "两个源头原子未闭合前，不能声称 Cayley-Salmon 作者侧自足闭合。",
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "non-ruled O(d^3) 分支仍等待 Cayley-Salmon 判据。",
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "二分线交点界仍依赖 non-ruled 分支。",
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "closed": false,
+      "proved": false,
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只闭合 Cayley-Salmon 的接触分支入口；未宣称行/列命题无条件闭合。",
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ]
+}
