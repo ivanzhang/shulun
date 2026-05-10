@@ -1,0 +1,85 @@
+{
+  "alternate_name_for_same_atom": "LocalizedQuadraticPushforwardSquareMeasureDeviationPowerSaving",
+  "centered_deviation_is_only_remaining_input": true,
+  "centered_short_square_measure_deviation_power_saving_proved": false,
+  "certificate_type": "prime_matrix_strict_rks23_slope_conic_centered_square_measure_router",
+  "closed_gates": [
+    "SlopeConicBundleTargetActive",
+    "ShortSquareMeasureExpansionClosed",
+    "UniformMainTermAbsorbed",
+    "CenteredDeviationIsOnlyRemainingInput"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "measure_reduction": {
+    "centered_measure": "nu_D(y)=mu_D(y)-|Delta|/P",
+    "conic_count": "R_lambda=sum_{x in X_lambda} sum_{d1 in Delta} mu_D(lambda*d1^2+lambda(lambda-1)*x^2)",
+    "difference_box": "Delta={d: d is an allowed signed root-box difference}, |Delta|=O(N)",
+    "global_main_sum": "sum_lambda main <= |T|^2*|Delta|^2/P = N^{2+o(1)} in the square-root collar",
+    "main_absorption": "N^{2+o(1)} <= N^(3-delta) for every fixed delta<1 and large P",
+    "main_term": "(|Delta|/P)*|X_lambda|*|Delta|",
+    "remaining_deviation": "sum_lambda sum_{x in X_lambda,d1 in Delta} nu_D(lambda*d1^2+lambda(lambda-1)*x^2)",
+    "slope_x_box": "X_lambda={x in T: lambda*x in T}",
+    "square_measure": "mu_D(y)=#{d in Delta: d^2=y mod P}"
+  },
+  "next_direct_attack_target": "CenteredShortSquareMeasureOnSlopeConicBundlePowerSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CenteredShortSquareMeasureOnSlopeConicBundlePowerSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "斜率二次曲线束可拆成短平方测度的均匀主项与中心化偏差。定义 `mu_D(y)=#{d in Delta: d^2=y}`，写作 `mu_D=|Delta|/P+nu_D`。均匀主项在所有斜率上总量至多 `|T|^2|Delta|^2/P=N^{2+o(1)}`，已经被固定幂目标吸收。当前唯一剩余就是中心化短平方测度 `nu_D` 沿相位 `lambda*d1^2+lambda(lambda-1)*x^2` 的局部推前偏差。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SlopeConicBundleTargetActive",
+      "meaning": "上一证书已把剩余压成非平凡斜率局部二次曲线束。",
+      "proved": true,
+      "remaining": "NontrivialSlopeLocalizedTernaryConicBundlePowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "ShortSquareMeasureExpansionClosed",
+      "meaning": "用 `mu_D=|Delta|/P+nu_D` 精确展开 `d2` 的短平方命中测度。",
+      "proved": true,
+      "remaining": "CenteredShortSquareMeasureOnSlopeConicBundlePowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "UniformMainTermAbsorbed",
+      "meaning": "所有斜率主项总和为 `N^{2+o(1)}`，低于固定幂能量目标。",
+      "proved": true,
+      "remaining": "absorbed"
+    },
+    {
+      "closed": true,
+      "gate": "CenteredDeviationIsOnlyRemainingInput",
+      "meaning": "剩余完全是中心化短平方测度沿非退化二次相位的局部推前偏差。",
+      "proved": true,
+      "remaining": "CenteredShortSquareMeasureOnSlopeConicBundlePowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "CenteredShortSquareMeasureOnSlopeConicBundlePowerSaving",
+      "meaning": "仓库内尚未证明该中心化偏差总和有固定幂节省。",
+      "proved": false,
+      "remaining": "LocalizedQuadraticPushforwardSquareMeasureDeviationPowerSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只吸收主项并定位偏差输入，未证明偏差估计。",
+      "proved": false,
+      "remaining": "CenteredShortSquareMeasureOnSlopeConicBundlePowerSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "short_square_measure_expansion_closed": true,
+  "slope_conic_bundle_target_active": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-slope-conic-bundle-router.json": "77ee981cd45b000a828fc12403bbdb5530b041517947864387622aad54328788"
+  },
+  "status": "slope_conic_bundle_reduced_to_centered_short_square_measure_deviation",
+  "uniform_main_term_absorbed": true
+}
