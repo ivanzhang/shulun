@@ -1,0 +1,191 @@
+{
+  "b4_weil_complete_rational_sum_kernel_closed_author_side": false,
+  "certificate_type": "prime_matrix_strict_rks23_stepanov_kummer_trace_frontier_router",
+  "closed_gates": [
+    "KummerTraceTargetActive",
+    "StepanovProblemNormalizationClosed",
+    "StepanovPackageDecompositionClosed",
+    "ValueClassAmplificationInterfaceClosed",
+    "StepanovMultiplicityDegreeContradictionLedger",
+    "StepanovParameterShapeClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "degree_ledger": {
+    "closed_here": "only the bookkeeping shape is fixed; the nonzero rank lemma is still the bottleneck",
+    "contradiction_condition": "T*N > O_m(D)",
+    "parameter_shape": "take D,T on the P^(1/2) scale after the rank lemma supplies a nonzero auxiliary function",
+    "pole_budget": "auxiliary functions have pole divisor degree O_m(D)",
+    "zero_budget": "multipity T at N selected points forces at least T*N zeros"
+  },
+  "empirical_absence_not_used": true,
+  "kummer_trace_target_active": true,
+  "next_after_rank_target": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+  "next_direct_attack_target": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+  "no_theorem_switch": true,
+  "normalized_problem": {
+    "already_closed": "Burgess kernel formula, d-th-power criterion, exceptional diagonal, Kummer conductor ledger",
+    "branch_count": "m=|{places where ord_a(f) not congruent to 0 mod d}| <= 2r",
+    "constant_discipline": "C_m may depend on fixed m but not on d, P, chi, or the root positions",
+    "input": "P prime, nonprincipal chi, f in F_P(x), f not a d-th power for d=ord(chi)",
+    "target": "|sum_x chi(f(x))| <= C_m P^(1/2)"
+  },
+  "open_gates": [
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "SelfContainedWeilBoundForMultiplicativeCharacterRationalFunctions",
+    "B4_weil_complete_rational_sum_kernel",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parameter_table": [
+    {
+      "branch_bound_m": "10",
+      "compatible_with_burgess": "true",
+      "forbidden_dependence": "character_order_d",
+      "r": "5",
+      "rank_space_must_depend_on": "m only",
+      "target_constant_shape": "C(10)"
+    },
+    {
+      "branch_bound_m": "18",
+      "compatible_with_burgess": "true",
+      "forbidden_dependence": "character_order_d",
+      "r": "9",
+      "rank_space_must_depend_on": "m only",
+      "target_constant_shape": "C(18)"
+    },
+    {
+      "branch_bound_m": "34",
+      "compatible_with_burgess": "true",
+      "forbidden_dependence": "character_order_d",
+      "r": "17",
+      "rank_space_must_depend_on": "m only",
+      "target_constant_shape": "C(34)"
+    },
+    {
+      "branch_bound_m": "52",
+      "compatible_with_burgess": "true",
+      "forbidden_dependence": "character_order_d",
+      "r": "26",
+      "rank_space_must_depend_on": "m only",
+      "target_constant_shape": "C(52)"
+    }
+  ],
+  "plain_conclusion": "秩一 Kummer 迹界的初等内部化路线继续缩窄为 Stepanov 辅助多项式的秩/非零问题。本步已经把目标标准化为分支数 `m<=2r` 的阶无关平方根界，并把 Stepanov 路线拆成六包：值类放大、辅助空间、插值条件、秩非零、重数-次数矛盾、参数优化。其中值类接口、重数-次数账本和常数不依赖角色阶 `d` 的纪律已经固定。唯一真正剩余不再是笼统 Weil/RH，而是 `StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity`：必须证明所选辅助函数空间在 Kummer 关系与导数条件下仍有足够非零秩。未证明该秩引理前，作者侧不能声明 Kummer 迹界、Weil 界、B4 或行/列命题无条件闭合。",
+  "rank_gap": {
+    "forbidden_shortcut": "do not count all monomials on y^d=f(x) with d-dependent dimension; this reintroduces the forbidden character-order dependence",
+    "needed_statement": "for every non-dth-power f with m branch places, there is a Stepanov auxiliary space of dimension > imposed conditions and rank loss O_m(1)",
+    "output_if_proved": "SelfContainedRankOneKummerSheafRHTraceBound=true",
+    "precise_gap": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "why_it_is_the_real_gap": "dimension counting alone is not enough; the chosen auxiliary functions must remain nonzero after Kummer/eigenspace relations and derivative conditions"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "KummerTraceTargetActive",
+      "meaning": "上一证书已把唯一剩余压成秩一 Kummer RH/Stepanov 迹界。",
+      "proved": true,
+      "remaining": "SelfContainedRankOneKummerSheafRHTraceBound"
+    },
+    {
+      "closed": true,
+      "gate": "StepanovProblemNormalizationClosed",
+      "meaning": "目标已标准化为分支数 `m<=2r`、常数只依赖 m 的乘法角色和平方根界。",
+      "proved": true,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": true,
+      "gate": "StepanovPackageDecompositionClosed",
+      "meaning": "Stepanov 路线已拆成值类放大、辅助空间、插值条件、秩非零、重数-次数和参数优化六包。",
+      "proved": true,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": true,
+      "gate": "ValueClassAmplificationInterfaceClosed",
+      "meaning": "若角色和超过 `C_m P^(1/2)`，可转成某个 Kummer 值类的过量点集。",
+      "proved": true,
+      "remaining": "standard finite Fourier inversion"
+    },
+    {
+      "closed": true,
+      "gate": "StepanovMultiplicityDegreeContradictionLedger",
+      "meaning": "一旦存在非零辅助函数，重数-次数矛盾账本给出平方根级阈值。",
+      "proved": true,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": true,
+      "gate": "StepanovParameterShapeClosed",
+      "meaning": "参数只允许依赖分支数 m，已排除角色阶 d 进入常数。",
+      "proved": true,
+      "remaining": "parameter ledger"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "仍需证明辅助函数空间在 Kummer 关系和导数条件下有足够非零秩。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "Stepanov 完整证明等待秩/非零引理。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界作者侧仍未完全内部化。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedWeilBoundForMultiplicativeCharacterRationalFunctions",
+      "meaning": "有理函数 Weil 界等待 Kummer/Stepanov 迹界内部化。",
+      "proved": false,
+      "remaining": "SelfContainedRankOneKummerSheafRHTraceBound"
+    },
+    {
+      "closed": false,
+      "gate": "B4_weil_complete_rational_sum_kernel",
+      "meaning": "B4 仍等待 Weil/Kummer/Stepanov 终端输入；接受外部定理时可关闭。",
+      "proved": false,
+      "remaining": "SelfContainedWeilBoundForMultiplicativeCharacterRationalFunctions"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只关闭 Stepanov 路线的精确拆包和参数边界，不声明行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kummer_trace_bound_internalized": false,
+  "self_contained_weil_bound_internalized": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-kummer-sheaf-weil-reduction-router.json": "90218970ebc8d73febe91e4177be1dbde0c7afee83c23ec256b88ea9f1143795"
+  },
+  "status": "rank_one_kummer_trace_bound_reduced_to_stepanov_auxiliary_rank_surjectivity",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_auxiliary_rank_surjectivity_internalized": false,
+  "stepanov_multiplicity_degree_ledger_closed": true,
+  "stepanov_package_decomposition_closed": true,
+  "stepanov_packages": {
+    "S1_value_class_amplification": "large character-sum bias forces one coset/value class of the Kummer torsor to contain P/d + Omega(P^(1/2)) excess after a standard Fourier inversion",
+    "S2_auxiliary_space": "choose an auxiliary function space on P^1 with poles only at the branch divisor B and bounded order depending on m",
+    "S3_interpolation_conditions": "impose vanishing to multiplicity T at every point in the overlarge value class",
+    "S4_nonzero_rank_surjectivity": "prove the interpolation map has a nonzero kernel element not identically zero on the Kummer eigenspace",
+    "S5_degree_multiplicity_contradiction": "a nonzero auxiliary function cannot have more forced zeros than its pole degree permits",
+    "S6_parameter_optimization": "choose degree and multiplicity parameters so the contradiction starts at excess > C_m P^(1/2)"
+  },
+  "stepanov_parameter_shape_closed": true,
+  "stepanov_problem_normalization_closed": true,
+  "value_class_amplification_interface_closed": true
+}
