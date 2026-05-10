@@ -1,0 +1,224 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_legendre_subsumption_router",
+  "closed_gates": [
+    "PreviousSmoothRankTwoTargetActive",
+    "LegendreCoreExactEllipticPointCountIdentity",
+    "LegendreCoreSubsumedIntoUnifiedRankTwoGate",
+    "SmoothLegendreQuadraticCoreTraceInput"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "exact_identity": {
+    "curve": "E_lambda: y^2=x(1-x)(1-lambda*x), with lambda not in {0,1}",
+    "meaning": "bounding the Legendre core is exactly the smooth elliptic trace subcase of the rank-two input",
+    "point_count": "#E_lambda(F_p)=p+1+L_lambda",
+    "quadratic_sum": "L_lambda=sum_x chi(x(1-x)(1-lambda*x))",
+    "trace_identity": "a_p(lambda)=p+1-#E_lambda(F_p)=-L_lambda"
+  },
+  "finite_audit_not_used_as_proof": true,
+  "legendre_core_independent_gate_eliminated": true,
+  "legendre_exact_pointcount_identity_closed": true,
+  "next_direct_attack_target": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma",
+  "next_subatom": "UnifiedSmoothRankTwoTraceBoundOrPivot",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SmoothRankTwoHypergeometricTraceInput",
+    "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma",
+    "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma",
+    "BoundedBranchSignatureHasseJetIndependenceLemma",
+    "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "order_free_signature_selector_internalized": false,
+  "plain_conclusion": "本轮没有证明统一 smooth rank-two 迹界，但消去了一个重复守门项：纯二次 Legendre 核不再作为独立缺口。对 `lambda notin {0,1}`，令 `L_lambda=sum_x chi(x(1-x)(1-lambda*x))`，光滑曲线 `E_lambda: y^2=x(1-x)(1-lambda*x)` 满足精确点数恒等式 `#E_lambda(F_p)=p+1+L_lambda`，因此 `a_p(lambda)=-L_lambda`。这说明 Legendre 核只是统一 smooth rank-two 交比迹界的二次特化；它不应再作为独立的第三个开放输入反复出现。当前唯一真正剩余压成 `UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma`：在光滑交比域 `lambda notin {0,1,infinity}` 上，自足证明统一 rank-two 迹界，或构造等价 order-free Stepanov pivot。未完成该统一输入前，Stepanov、Kummer 迹界、Burgess B4 与行/列命题仍不能作者侧无条件闭合。",
+  "pointcount_audit": [
+    {
+      "abs_sum_over_sqrt_p": 1.455213750218,
+      "identity_trace_equals_negative_sum": true,
+      "lambda": 3,
+      "legendre_sum": 6,
+      "point_count": 24,
+      "prime": 17,
+      "smooth_lambda": true,
+      "trace_p_plus_1_minus_points": -6
+    },
+    {
+      "abs_sum_over_sqrt_p": 0.371390676354,
+      "identity_trace_equals_negative_sum": true,
+      "lambda": 5,
+      "legendre_sum": 2,
+      "point_count": 32,
+      "prime": 29,
+      "smooth_lambda": true,
+      "trace_p_plus_1_minus_points": -2
+    },
+    {
+      "abs_sum_over_sqrt_p": 0.718421208107,
+      "identity_trace_equals_negative_sum": true,
+      "lambda": 3,
+      "legendre_sum": 4,
+      "point_count": 36,
+      "prime": 31,
+      "smooth_lambda": true,
+      "trace_p_plus_1_minus_points": -4
+    },
+    {
+      "abs_sum_over_sqrt_p": 0.312347523777,
+      "identity_trace_equals_negative_sum": true,
+      "lambda": 6,
+      "legendre_sum": -2,
+      "point_count": 40,
+      "prime": 41,
+      "smooth_lambda": true,
+      "trace_p_plus_1_minus_points": 2
+    },
+    {
+      "abs_sum_over_sqrt_p": 1.219988562661,
+      "identity_trace_equals_negative_sum": true,
+      "lambda": 7,
+      "legendre_sum": -8,
+      "point_count": 36,
+      "prime": 43,
+      "smooth_lambda": true,
+      "trace_p_plus_1_minus_points": 8
+    },
+    {
+      "abs_sum_over_sqrt_p": 0.824163383692,
+      "identity_trace_equals_negative_sum": true,
+      "lambda": 11,
+      "legendre_sum": -6,
+      "point_count": 48,
+      "prime": 53,
+      "smooth_lambda": true,
+      "trace_p_plus_1_minus_points": 6
+    }
+  ],
+  "previous_smooth_rank_two_target_active": true,
+  "rank_two_crossratio_trace_bound_internalized": false,
+  "rejected_shortcuts": {
+    "external_hasse_label": "labeling the curve elliptic is not enough for a self-contained route unless the trace bound is proved or accepted as an external lemma",
+    "pointcount_as_hasse": "the exact point-count identity is not a proof of the Hasse bound",
+    "separate_legendre_gate": "do not keep asking for Legendre as an independent third gate; it is a subcase of the unified smooth rank-two input",
+    "whole_kummer_curve": "the forbidden d-dependent Kummer curve route remains excluded"
+  },
+  "remaining_unified_input": {
+    "constant_rule": "constants may depend on the fixed branch bound m, but not on d, p, chi, or branch positions",
+    "domain": "lambda not in {0,1,infinity}, including j=0 and j=1728 smooth points",
+    "normalized_form": "equivalently prove the normalized rank-two trace H_lambda is O_m(1)",
+    "pivot_form": "or construct an order-free Stepanov pivot block whose Hasse-jet losses are O_m(TN)",
+    "trace_form": "prove |sum_x A(x)B(1-x)C(1-lambda*x)| <= C_m*sqrt(p) on the smooth lambda domain"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousSmoothRankTwoTargetActive",
+      "meaning": "上一证书已把唯一剩余压到光滑 rank-two 交比域。",
+      "proved": true,
+      "remaining": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma"
+    },
+    {
+      "closed": true,
+      "gate": "LegendreCoreExactEllipticPointCountIdentity",
+      "meaning": "纯二次 Legendre 和与光滑椭圆曲线点数满足精确恒等式。",
+      "proved": true,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": true,
+      "gate": "LegendreCoreSubsumedIntoUnifiedRankTwoGate",
+      "meaning": "Legendre 核不再作为独立守门项，而是统一 smooth rank-two 输入的二次特化。",
+      "proved": true,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": true,
+      "gate": "SmoothLegendreQuadraticCoreTraceInput",
+      "meaning": "该项作为独立缺口已消去；实际界仍由统一 rank-two 输入承担。",
+      "proved": true,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "SmoothRankTwoHypergeometricTraceInput",
+      "meaning": "非二次与二次特化统一后，仍需证明 smooth rank-two 交比迹界。",
+      "proved": false,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "SmoothRankTwoCrossRatioTraceBoundOrStepanovPivotLemma",
+      "meaning": "旧的 smooth rank-two 表述已去掉独立 Legendre 分支，但统一迹界未证。",
+      "proved": false,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma",
+      "meaning": "仍需自足证明统一 smooth rank-two 迹界，或给出等价 Stepanov pivot。",
+      "proved": false,
+      "remaining": "UnifiedSmoothRankTwoTraceBoundOrPivot"
+    },
+    {
+      "closed": false,
+      "gate": "BoundedBranchSignatureHasseJetIndependenceLemma",
+      "meaning": "Hasse-jet 秩下界仍等待统一 smooth rank-two pivot 块。",
+      "proved": false,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+      "meaning": "完整阶无关 selector 仍等待统一 smooth rank-two 输入。",
+      "proved": false,
+      "remaining": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "Stepanov-Kummer 非零秩仍等待完整 selector。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "Stepanov 完整内部证明仍未闭合。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界仍等待统一 smooth rank-two 输入内部化。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只消去独立 Legendre 分支，不声明行/列命题作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kummer_trace_bound_internalized": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-rank-two-trace-singularity-router.json": "827b82549278f4905f1e4adb226f8c17a3ba4930d91a9b5621c57d306559408a"
+  },
+  "status": "legendre_quadratic_core_subsumed_into_unified_smooth_rank_two_gate",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_kummer_auxiliary_rank_surjectivity_proved": false,
+  "subsumption": {
+    "legendre_role": "quadratic-character specialization of the same smooth cross-ratio trace problem",
+    "new_unified_gate": "UnifiedSmoothRankTwoHypergeometricTraceBoundOrPivotLemma",
+    "not_claimed": "the Hasse/Stepanov trace bound itself is not proved in this certificate",
+    "not_independent": "Legendre no longer remains as a separate gate; it is carried by the unified smooth rank-two trace/pivot lemma",
+    "old_split": "SmoothLegendreQuadraticCoreTraceInput + SmoothRankTwoHypergeometricTraceInput"
+  },
+  "unified_smooth_rank_two_trace_bound_internalized": false
+}
