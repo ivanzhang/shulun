@@ -1,0 +1,231 @@
+{
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "certificate_type": "prime_matrix_strict_rks23_directrix_cone_dichotomy_router",
+  "closed_gates": [
+    "PreviousDirectrixFrontierReady",
+    "SchubertExceptionalDefinitionRefined",
+    "ConeVertexStarBranchIdentified",
+    "ConeVertexStarContributionClosed",
+    "NonConeDirectrixReductionClosed",
+    "OverstrongTwoDirectrixClaimQuarantined"
+  ],
+  "cone_branch": {
+    "case": "all or a one-parameter subfamily of ruling lines share a common vertex point O",
+    "closed_scope": "the cone/star branch no longer needs an O(1) exceptional-line count",
+    "contribution": "one point per irreducible component is O(number of components), already absorbed by the existing component/degree ledger",
+    "intersection_points": "all mutual intersections created by that star contribute the single point O"
+  },
+  "cone_vertex_star_branch_identified": true,
+  "cone_vertex_star_contribution_closed": true,
+  "corrected_exceptional_model": {
+    "cone_countercase": "for a cone, every generator meets every other generator at the vertex, so many generators satisfy the Schubert containment condition",
+    "correct_measure": "the line-intersection theorem counts distinct intersection points, not pairs of lines",
+    "old_risk": "Schubert divisor contains the ruling Fano curve does not always mean only finitely many exceptional lines",
+    "repair": "split exceptional behavior into cone vertex-star collapse and non-cone directrix lines"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "exceptional_directrix_line_bound_closed": false,
+  "fano_curve_degree_and_exceptional_line_bound_closed": false,
+  "flecnode_cayley_salmon_pack_closed": false,
+  "next_direct_attack_target": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack",
+  "next_required_input": "SelfContainedNonConeFanoDirectrixLineBoundForSinglyRuledSurface + SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+  "no_theorem_switch": true,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "noncone_branch": {
+    "case": "the ruling family is not a common-vertex star",
+    "directrix_line": "a line ell with C contained in Sigma_ell meets every ruling line without all intersections collapsing to one vertex",
+    "needed_bound": "only O(1), classically at most two, such directrix lines exist outside plane/quadric/common-vertex cases",
+    "remaining_atom": "SelfContainedNonConeFanoDirectrixLineBoundForSinglyRuledSurface"
+  },
+  "noncone_directrix_line_bound_closed": false,
+  "noncone_directrix_reduction_closed": true,
+  "open_gates": [
+    "NonConeDirectrixLineBoundClosed",
+    "ExceptionalDirectrixLineBoundClosed",
+    "FanoCurveDegreeAndExceptionalLineBoundClosed",
+    "RuledSurfaceRulingGeometryClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "SelfContainedFlecnodeCayleySalmonPackClosed",
+    "SinglyRuledExceptionalLineTheoremClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "当前唯一内部自足线继续下钻并修正 directrix 异常线口径：Schubert divisor 包含 Fano ruling 曲线时，锥面/公共顶点星形分支可能产生一族异常生成线，但这些线的互交贡献塌缩为单个顶点，在线交点计数中已可吸收。因此异常线剩余被正确压成非锥 directrix 数量界，而不是错误地全局宣称异常线至多两条。剩余源头原子仍是非锥 directrix 界与 Cayley-Salmon flecnode 判据；row_column_unconditional_closed 仍保持 false。",
+  "previous_directrix_frontier_ready": true,
+  "previous_overstrong_two_directrix_claim_quarantined": true,
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedNonConeFanoDirectrixLineBoundForSinglyRuledSurface",
+      "closed": false,
+      "why_remaining": "must prove the non-cone Fano curve admits only O(1) Schubert-contained directrix lines"
+    },
+    {
+      "atom": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+      "closed": false,
+      "why_remaining": "must prove Flec(F) vanishing identically on the surface forces ruledness"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousDirectrixFrontierReady",
+      "meaning": "上一证书已关闭 Fano 次数界和普通线界，只剩异常 directrix 与 Cayley-Salmon。",
+      "proved": true,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": true,
+      "gate": "SchubertExceptionalDefinitionRefined",
+      "meaning": "修正异常线定义：Schubert 包含须分离锥面公共顶点塌缩。",
+      "proved": true,
+      "remaining": "exceptional definition refined"
+    },
+    {
+      "closed": true,
+      "gate": "ConeVertexStarBranchIdentified",
+      "meaning": "识别出锥面/公共顶点分支中可有一族 Schubert-异常生成线。",
+      "proved": true,
+      "remaining": "SelfContainedConeVertexStarExceptionalCollapseContribution"
+    },
+    {
+      "closed": true,
+      "gate": "ConeVertexStarContributionClosed",
+      "meaning": "锥面星形分支贡献的是单个交点而非大量不同交点，已由交点计数账本吸收。",
+      "proved": true,
+      "remaining": "SelfContainedConeVertexStarExceptionalCollapseContribution"
+    },
+    {
+      "closed": true,
+      "gate": "NonConeDirectrixReductionClosed",
+      "meaning": "异常线界的真正剩余被压到非锥 directrix 线数量界。",
+      "proved": true,
+      "remaining": "SelfContainedNonConeFanoDirectrixLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "OverstrongTwoDirectrixClaimQuarantined",
+      "meaning": "隔离早先过强的“异常线至多两条”口径；它只适用于非锥 directrix 分支。",
+      "proved": true,
+      "remaining": "safety correction closed"
+    },
+    {
+      "closed": false,
+      "gate": "NonConeDirectrixLineBoundClosed",
+      "meaning": "尚未作者侧证明非锥 ruling Fano 曲线只有 O(1) 条 directrix 线。",
+      "proved": false,
+      "remaining": "SelfContainedNonConeFanoDirectrixLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": false,
+      "gate": "ExceptionalDirectrixLineBoundClosed",
+      "meaning": "锥面分支已闭合，但非锥 directrix 数量界未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedExceptionalDirectrixLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": false,
+      "gate": "FanoCurveDegreeAndExceptionalLineBoundClosed",
+      "meaning": "Fano 次数界和普通线界已闭合，异常 directrix 总界仍差非锥原子。",
+      "proved": false,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": false,
+      "gate": "RuledSurfaceRulingGeometryClosed",
+      "meaning": "ruled 几何仍等待非锥 directrix 原子。",
+      "proved": false,
+      "remaining": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "meaning": "Cayley-Salmon 判据仍未作者侧内联。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedFlecnodeCayleySalmonPackClosed",
+      "meaning": "结构包现在剩非锥 directrix 界和 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SinglyRuledExceptionalLineTheoremClosed",
+      "meaning": "singly-ruled 分支等待非锥 directrix 界。",
+      "proved": false,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "meaning": "non-ruled 分支等待 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "两个源头原子未内联前，ruled/non-ruled 总包仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár/Guth-Katz 曲面结构包仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "二分线交点界仍依赖曲面结构包。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步修正并压缩 directrix 异常线分支；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "ruled_surface_ruling_geometry_closed": false,
+  "same_theorem_target_preserved": true,
+  "schubert_exceptional_definition_refined": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "singly_ruled_exceptional_line_theorem_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-fano-degree-ordinary-line-router.json": "c31ee6497bdd7ddc88ee93557db72ad00ad493eb3cf3400fef27ba843f065a3b",
+    "docs/monograph/prime-matrix-strict-rks23-ruled-geometry-fano-reduction-router.json": "fa955601380d6dcb2a9be3b80efe14dfad06469a5575ed30c087a59052be1eb1"
+  },
+  "status": "cone_vertex_exceptional_branch_closed_remaining_noncone_directrix_and_cayley_salmon"
+}
