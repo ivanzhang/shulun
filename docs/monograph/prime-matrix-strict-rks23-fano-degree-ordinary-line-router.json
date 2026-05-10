@@ -1,0 +1,216 @@
+{
+  "cayley_salmon_flecnode_criterion_closed": false,
+  "certificate_type": "prime_matrix_strict_rks23_fano_degree_ordinary_line_router",
+  "closed_gates": [
+    "PreviousFanoFrontierReady",
+    "GenericSchubertDegreeArgumentClosed",
+    "FanoRulingCurveDegreeBoundClosed",
+    "OrdinaryRuledLineOdIntersectionBoundClosed",
+    "OrdinaryContributionLedgerClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "exceptional_directrix_line_bound_closed": false,
+  "fano_curve_degree_and_exceptional_line_bound_closed": false,
+  "fano_degree_proof": {
+    "bound": "|m cap S|<=d by Bezout, hence deg(C)<=d",
+    "degree_measure": "degree of C is intersection with a generic Schubert divisor Sigma_m of lines meeting a generic line m",
+    "generic_line_argument": "for generic m not contained in S, each ruling line meeting m gives an intersection point in m cap S",
+    "ruling_curve": "let C be the one-dimensional ruling component of F_1(S) in G(1,3)",
+    "scope": "this proves the ordinary-line degree input; it does not bound exceptional lines whose Schubert divisor contains C",
+    "surface": "irreducible singly ruled surface S in P^3 of degree d, excluding plane/quadric cases already handled"
+  },
+  "fano_ruling_curve_degree_bound_closed": true,
+  "flecnode_cayley_salmon_pack_closed": false,
+  "generic_schubert_degree_argument_closed": true,
+  "next_direct_attack_target": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack",
+  "next_required_input": "SelfContainedExceptionalDirectrixLineBoundForSinglyRuledSurface + SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+  "no_theorem_switch": true,
+  "non_ruled_line_intersection_theorem_closed": false,
+  "open_gates": [
+    "ExceptionalDirectrixLineBoundClosed",
+    "FanoCurveDegreeAndExceptionalLineBoundClosed",
+    "RuledSurfaceRulingGeometryClosed",
+    "CayleySalmonFlecnodeCriterionClosed",
+    "SelfContainedFlecnodeCayleySalmonPackClosed",
+    "SinglyRuledExceptionalLineTheoremClosed",
+    "NonRuledLineIntersectionTheoremClosed",
+    "RuledAndNonRuledComponentLineCountClosed",
+    "SelfContainedKollarRuledSurfacePackageClosed",
+    "SelfContainedBipartiteLineIntersectionBoundClosed",
+    "SelfContainedPointPlaneIncidenceProofClosed",
+    "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+    "RowColumnUnconditionalClosed"
+  ],
+  "ordinary_contribution_ledger_closed": true,
+  "ordinary_line_transfer": {
+    "degree_bound": "|C cap Sigma_ell|<=deg(C)<=d, up to harmless multiplicity conventions",
+    "downstream": "the prior component accounting already absorbs ordinary O(d) contributions into O(|L|^(1/2)|M|)",
+    "ordinary_line": "a contained line ell is ordinary if C is not contained in Sigma_ell",
+    "result": "ordinary contained lines meet O(d) ruling lines",
+    "schubert_intersection": "ruling lines meeting ell are C cap Sigma_ell"
+  },
+  "ordinary_ruled_line_od_intersection_bound_closed": true,
+  "plain_conclusion": "当前唯一内部自足线继续下钻并关闭 Fano 原子的一半：ruling Fano 曲线次数界与普通线 O(d) 相交界。用 generic Schubert divisor，也就是与一条 generic line 相交的直线条件，计算 Fano 曲线次数；每条满足该条件的 ruling line 给出 generic line 与曲面 S 的一个交点，所以次数至多 d。因此任何普通 contained line 的 Schubert divisor 与 ruling curve 交数至多 d，普通线贡献闭合。剩余只在异常 directrix 型线界和 Cayley-Salmon flecnode 判据；row_column_unconditional_closed 仍保持 false。",
+  "previous_fano_frontier_ready": true,
+  "remaining_atoms": [
+    {
+      "atom": "SelfContainedExceptionalDirectrixLineBoundForSinglyRuledSurface",
+      "closed": false,
+      "why_remaining": "must prove only O(1) lines have Schubert divisors containing the ruling Fano curve"
+    },
+    {
+      "atom": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic",
+      "closed": false,
+      "why_remaining": "must prove Flec(F) vanishing identically on the surface forces ruledness"
+    }
+  ],
+  "remaining_directrix": {
+    "exceptional_line": "ell is exceptional if C is contained in Sigma_ell, equivalently ell meets every ruling line",
+    "needed_bound": "there are O(1), classically at most two, such directrix-type exceptional lines outside plane/quadric cases",
+    "remaining_atom": "SelfContainedExceptionalDirectrixLineBoundForSinglyRuledSurface",
+    "why_still_open": "this requires a separate directrix/Grassmannian incidence argument; it is not implied by deg(C)<=d alone"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreviousFanoFrontierReady",
+      "meaning": "上一证书已把 ruled 几何压成 Fano 曲线次数/异常线界。",
+      "proved": true,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "GenericSchubertDegreeArgumentClosed",
+      "meaning": "用 generic line 的 Schubert divisor 计算 Fano ruling 曲线次数。",
+      "proved": true,
+      "remaining": "SelfContainedFanoRulingCurveDegreeBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "FanoRulingCurveDegreeBoundClosed",
+      "meaning": "由 generic line 与 S 的 Bezout 交数得到 deg(C)<=d。",
+      "proved": true,
+      "remaining": "SelfContainedFanoRulingCurveDegreeBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": true,
+      "gate": "OrdinaryRuledLineOdIntersectionBoundClosed",
+      "meaning": "若 C 不含于 Sigma_ell，则 ell 只与 O(d) 条 ruling 线相交。",
+      "proved": true,
+      "remaining": "SelfContainedOrdinaryRuledLineOdIntersectionBound"
+    },
+    {
+      "closed": true,
+      "gate": "OrdinaryContributionLedgerClosed",
+      "meaning": "普通线 O(d) 贡献与前序 ruled component 账本严格对接。",
+      "proved": true,
+      "remaining": "ordinary contribution closed"
+    },
+    {
+      "closed": false,
+      "gate": "ExceptionalDirectrixLineBoundClosed",
+      "meaning": "仍需证明 Schubert divisor 包含 C 的 directrix 型异常线只有 O(1)。",
+      "proved": false,
+      "remaining": "SelfContainedExceptionalDirectrixLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": false,
+      "gate": "FanoCurveDegreeAndExceptionalLineBoundClosed",
+      "meaning": "Fano 次数界已闭合，但异常线界未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedFanoCurveDegreeAndExceptionalLineBoundForSinglyRuledSurface"
+    },
+    {
+      "closed": false,
+      "gate": "RuledSurfaceRulingGeometryClosed",
+      "meaning": "ruled 几何仍等待异常 directrix 界。",
+      "proved": false,
+      "remaining": "SelfContainedRuledSurfaceRulingAndExceptionalLineGeometry"
+    },
+    {
+      "closed": false,
+      "gate": "CayleySalmonFlecnodeCriterionClosed",
+      "meaning": "Cayley-Salmon 判据仍未作者侧内联。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonFlecnodeCriterionInDegreeLessThanCharacteristic"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedFlecnodeCayleySalmonPackClosed",
+      "meaning": "结构包现在剩 directrix 异常线界和 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SinglyRuledExceptionalLineTheoremClosed",
+      "meaning": "singly-ruled 分支仍等待异常 directrix 界。",
+      "proved": false,
+      "remaining": "SelfContainedSinglyRuledSurfaceExceptionalLineTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "NonRuledLineIntersectionTheoremClosed",
+      "meaning": "non-ruled 分支等待 Cayley-Salmon 判据。",
+      "proved": false,
+      "remaining": "SelfContainedNonRuledSurfaceLineIntersectionO_d3_Theorem"
+    },
+    {
+      "closed": false,
+      "gate": "RuledAndNonRuledComponentLineCountClosed",
+      "meaning": "两个源头原子未内联前，ruled/non-ruled 总包仍未闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedKollarRuledSurfacePackageClosed",
+      "meaning": "Kollár/Guth-Katz 曲面结构包仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedCayleySalmonAndFanoRuledSurfaceStructurePack"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBipartiteLineIntersectionBoundClosed",
+      "meaning": "二分线交点界仍依赖曲面结构包。",
+      "proved": false,
+      "remaining": "SelfContainedBipartiteGuthKatzLineIntersectionBoundWithKollarRuledSurfacePackage"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedPointPlaneIncidenceProofClosed",
+      "meaning": "点-平面 incidence 仍依赖二分线交点界。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling",
+      "meaning": "RNRS/Rudnev 输入仍未作者侧自足闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevPointPlaneIncidencePolynomialMethodProof"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只闭合 Fano 次数界和普通线界；未宣称行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedRudnevRNRSReciprocalIntervalEnergyEstimateForInverseSmallDoubling"
+    }
+  ],
+  "ruled_and_nonruled_component_line_count_closed": false,
+  "ruled_surface_ruling_geometry_closed": false,
+  "same_theorem_target_preserved": true,
+  "self_contained_bipartite_line_intersection_bound_closed": false,
+  "self_contained_kollar_ruled_surface_package_closed": false,
+  "self_contained_point_plane_incidence_proof_closed": false,
+  "self_contained_rnrs_rudnev_proof_closed": false,
+  "singly_ruled_exceptional_line_theorem_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-ruled-geometry-fano-reduction-router.json": "fa955601380d6dcb2a9be3b80efe14dfad06469a5575ed30c087a59052be1eb1",
+    "docs/monograph/prime-matrix-strict-rks23-ruled-surface-component-accounting-router.json": "d73380942d7bd857701a45ef19178b335fb2970a227df64be8efcedac84d7b02"
+  },
+  "status": "fano_ruling_curve_degree_and_ordinary_line_bound_closed_remaining_directrix_and_cayley_salmon"
+}
