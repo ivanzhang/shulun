@@ -1,0 +1,143 @@
+{
+  "actual_signed_source_package_proved": false,
+  "acyclic_windowed_kloosterman_dls_internal_estimate_proved": false,
+  "all_mismatch_exits_closed_current_corpus": false,
+  "certificate_type": "prime_matrix_strict_acyclic_t1_mismatch_forcing_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "independent_noncanonical_t1_requires_signed_lift": true,
+  "mismatch_forcing_schema_closed": true,
+  "mismatch_partition": [
+    {
+      "cell": "NoIndependentT1Row",
+      "forced_exit": "source-missing named return。",
+      "test": "seed 字段只在 T3/T4 payment 或 terminal certificate 后出现。"
+    },
+    {
+      "cell": "TerminalDependentKey",
+      "forced_exit": "registered phase defect / terminal named return。",
+      "test": "branch key、sign、local factor 或权重依赖 PDEC/SAE/ColumnCRT 结果。"
+    },
+    {
+      "cell": "IndependentNoncanonicalT1Row",
+      "forced_exit": "actual signed source + Phi pushforward + source entropy lane。",
+      "test": "存在 T1 算术恒等式，但右端不是 canonical RIW/Buchstab 系数。"
+    },
+    {
+      "cell": "CleanDiffuseNoLowDefect",
+      "forced_exit": "acyclic windowed DLS / CleanKLS lane。",
+      "test": "低维 terminal defect 已被剥离，但仍不是 canonical T1 row。"
+    }
+  ],
+  "mismatch_partition_exhaustive_by_t1_law": true,
+  "named_defect_alphabet_available_but_not_excluded": true,
+  "named_return_exclusion_proved": false,
+  "next_direct_attack_target": "AlphaSignedLiftFailureNamedReturnLedger",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger",
+    "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+    "AcyclicWindowedKloostermanDLSInternalEstimate",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect` 的无静默出口 schema 已闭合：canonical T1 mismatch 只能进入 actual signed source 包、registered terminal/named return，或 clean DLS。这推进了反例链与真实结构链的统一矛盾场，但尚未排斥全部出口；当前最窄活动点是 `AlphaSignedLiftFailureNamedReturnLedger`，因为没有失败命名回流纪律，signed source 包和命名缺陷都不能完成扣账。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "MismatchForcingTargetImported",
+      "meaning": "上一层已把 canonical equality 失败态压成 mismatch forcing。",
+      "proved": false,
+      "remaining": "AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect"
+    },
+    {
+      "closed": true,
+      "gate": "MismatchPartitionExhaustiveByT1Law",
+      "meaning": "T1 mismatch 只能是无独立 T1 行、terminal-dependent key、独立 noncanonical T1 行或 clean diffuse residual 四类。",
+      "proved": true,
+      "remaining": "无静默第五出口。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedZeroRowFallsInNoT1RowUnlessLifted",
+      "meaning": "早期零行 unsigned cover 若不额外给 signed lift，就属于 NoIndependentT1Row，必须命名回流。",
+      "proved": true,
+      "remaining": "AlphaSignedLiftFailureNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalDependentKeyForcedReturn",
+      "meaning": "branch key 若从下游 payment/PDEC 读取，则违反 T1 时间线，只能登记 terminal defect。",
+      "proved": true,
+      "remaining": "registered terminal defect。"
+    },
+    {
+      "closed": true,
+      "gate": "NamedDefectAlphabetAvailableButNotExcluded",
+      "meaning": "已有命名回流字母表和压缩纪律，但尚未证明所有命名回流被排斥或预算反超。",
+      "proved": false,
+      "remaining": "NamedReturn exclusion / unified budget。"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentNoncanonicalT1RequiresSignedLift",
+      "meaning": "独立 noncanonical T1 行不是坏事，但必须提交 actual signed source、权重律、Phi 推前、变差预算和失败回流。",
+      "proved": false,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ActualSourceEntropyStillOpen",
+      "meaning": "即便 signed source 完成，后续 ExactUV/source entropy 主线仍未闭合。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CleanDiffuseResidualRoutedButOpen",
+      "meaning": "clean diffuse residual 可路由到 windowed DLS/CleanKLS，但该解析原子仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleTrueStructurePressureImported",
+      "meaning": "统一矛盾场能把反例链压到短复现/缺陷/signed lift 候选，但还没给出终端矛盾。",
+      "proved": true,
+      "remaining": "StableShortSameLabelRecurrenceOrRegisteredPhaseDefect OR signed lift。"
+    },
+    {
+      "closed": true,
+      "gate": "MismatchForcingSchemaClosed",
+      "meaning": "mismatch 已无静默出口：必须进入 signed source、registered defect 或 clean DLS。",
+      "proved": true,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger OR AlphaSignedLiftFailureNamedReturnLedger OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": false,
+      "gate": "AllMismatchExitsClosedCurrentCorpus",
+      "meaning": "当前语料未证明 signed source 包、命名回流排斥和 clean DLS 任一完整闭合组合。",
+      "proved": false,
+      "remaining": "(ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger) OR NamedReturnExclusion OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.json": "6c1241bb0dd29f19cec15f147b56e495c551fb7e813158491d5a52201848d982",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-canonical-t1-equality-router.json": "a12e2c72fcb0d411eee5706ffb3d854c2e23ddca4ce32dbd8a11971296713637",
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.json": "89f695e1ad123d1461acb338ddf0b371ef49a266baf3b2580961148943c5f594",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json": "960a954eca848fa45c0ebb0c0086357477c058bbaf7dc4a3f966117c8c03ce21",
+    "docs/monograph/prime-matrix-strict-named-return-exclusion-compression-router.json": "7e54f4f456a2108e28a8100a147c9491951f9367c633dd51972e908291d127c2",
+    "docs/monograph/prime-matrix-strict-terminal-defect-exhaustion-router.json": "d7b8551217e0b50d171f2eefc7ce67996eff1da16abaa3eab68c4640595c9658"
+  },
+  "status": "acyclic_t1_mismatch_no_silent_exit_closed_signed_source_or_defect_open",
+  "terminal_dependent_key_forced_return": true,
+  "terminal_gap_after_router": "(ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger) OR NamedReturnExclusion OR AcyclicWindowedKloostermanDLSInternalEstimate",
+  "terminal_gap_before_router": "AcyclicSeedT1MismatchForcesActualSignedSourceOrRegisteredDefect",
+  "unsigned_zero_row_no_t1_row_forced_return": true
+}
