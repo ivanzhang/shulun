@@ -1,0 +1,171 @@
+{
+  "branch_signature_normal_form_closed": true,
+  "certificate_type": "prime_matrix_strict_rks23_stepanov_rank_signature_router",
+  "closed_gates": [
+    "StepanovRankSurjectivityTargetActive",
+    "RankGapRelocalizedToBranchSignatures",
+    "FullKummerDLadderFirewallClosed",
+    "BranchSignatureNormalFormClosed",
+    "HasseJetBookkeepingClosed"
+  ],
+  "closed_reductions": {
+    "d_ladder_firewall": "any proof using O(d) independent y-powers is rejected because it breaks Burgess uniformity",
+    "degree_bookkeeping_imported": "previous Stepanov degree/multiplicity contradiction applies after selector rank is available",
+    "jet_bookkeeping": "multiplicity T at N points consumes a predictable number of Hasse-jet linear conditions once a selector exists",
+    "rank_gap_relocalized": "the old nonzero-rank gate is now a finite branch-signature selector plus Hasse-jet independence problem"
+  },
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "full_kummer_d_ladder_firewall_closed": true,
+  "hasse_jet_bookkeeping_closed": true,
+  "next_direct_attack_target": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+  "next_subatom": "BoundedBranchSignatureHasseJetIndependenceLemma",
+  "no_theorem_switch": true,
+  "normalized_rank_problem": {
+    "allowed_dimension_source": "use branch valuation signatures and Hasse derivatives whose constants depend only on m",
+    "auxiliary_space_goal": "construct a bounded-pole auxiliary space with dimension growing like c_m*D and rank loss O_m(T*N)",
+    "forbidden_dimension_source": "do not use the full y^d=f(x) monomial ladder; it has d-dependent dimension/genus",
+    "input": "branch divisor B={a_1,...,a_m}, signed exponents e_a, character order d, f not a d-th power",
+    "surjectivity_goal": "after imposing Hasse-jet vanishing conditions, a nonzero function remains on the Kummer eigenspace"
+  },
+  "open_gates": [
+    "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+    "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+    "SelfContainedRankOneKummerSheafRHTraceBound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "order_free_signature_selector_internalized": false,
+  "plain_conclusion": "Stepanov-Kummer 非零秩输入继续缩窄。现在的硬点不再是笼统的辅助多项式存在性，而是一个阶无关的分支签名选择问题：必须在只允许常数依赖分支数 `m<=2r`、不允许依赖角色阶 `d` 的条件下，构造足够多的辅助函数签名，并证明 Hasse-jet 插值条件只造成 `O_m(TN)` 的秩损耗。本步闭合了三件事：把秩问题重定位到分支估值签名，排除使用整条 Kummer 曲线 `y^0,...,y^{d-1}` 全梯子的 d 依赖伪证明，并固定 Hasse-jet 条件的记账接口。唯一剩余变为 `OrderFreeKummerSignatureSelectorAndHasseJetRankLemma`。未证明该签名选择引理前，Stepanov、Kummer 迹界、Weil 界、B4 和行/列命题仍不能作者侧无条件闭合。",
+  "rank_gap_relocalized_to_branch_signatures": true,
+  "remaining_selector": {
+    "if_proved": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity closes, then the Kummer trace and Burgess B4 chain can continue",
+    "jet_statement": "the Hasse-jet evaluation matrix on that family has rank loss bounded by C_m*T*N",
+    "precise_atom": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+    "selector_statement": "for every non-dth-power f with m branch places, find an order-free family of auxiliary signatures with rank >= c_m*D after all Kummer relations",
+    "why_not_closed_here": "the corpus still lacks a proof that such a selector exists uniformly for all exponent residue patterns e_a mod d"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "StepanovRankSurjectivityTargetActive",
+      "meaning": "上一证书已把唯一剩余压成 Stepanov-Kummer 辅助空间非零秩。",
+      "proved": true,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": true,
+      "gate": "RankGapRelocalizedToBranchSignatures",
+      "meaning": "非零秩问题已重定位为分支估值签名选择与 Hasse-jet 独立性。",
+      "proved": true,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": true,
+      "gate": "FullKummerDLadderFirewallClosed",
+      "meaning": "已排除用 `y^0,...,y^{d-1}` 全梯子制造维数的 d 依赖路线。",
+      "proved": true,
+      "remaining": "review firewall"
+    },
+    {
+      "closed": true,
+      "gate": "BranchSignatureNormalFormClosed",
+      "meaning": "辅助函数的可区分性可由分支估值签名记录，碰撞只来自全分支不可见差。",
+      "proved": true,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": true,
+      "gate": "HasseJetBookkeepingClosed",
+      "meaning": "一旦有阶无关签名族，Hasse-jet 条件的秩损耗可按 `O_m(TN)` 记账。",
+      "proved": true,
+      "remaining": "BoundedBranchSignatureHasseJetIndependenceLemma"
+    },
+    {
+      "closed": false,
+      "gate": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma",
+      "meaning": "仍需证明所有 exponent residue pattern 下都存在足够大的阶无关签名选择族。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity",
+      "meaning": "Stepanov-Kummer 非零秩等待签名选择与 Hasse-jet 秩引理。",
+      "proved": false,
+      "remaining": "OrderFreeKummerSignatureSelectorAndHasseJetRankLemma"
+    },
+    {
+      "closed": false,
+      "gate": "StepanovAuxiliaryPolynomialRankBoundForKummerSums",
+      "meaning": "Stepanov 完整证明仍未作者侧闭合。",
+      "proved": false,
+      "remaining": "StepanovKummerAuxiliaryPolynomialNonzeroRankSurjectivity"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRankOneKummerSheafRHTraceBound",
+      "meaning": "秩一 Kummer 迹界仍等待 Stepanov rank gate。",
+      "proved": false,
+      "remaining": "StepanovAuxiliaryPolynomialRankBoundForKummerSums"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只把非零秩问题压成签名选择原子，不声明行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "SelfContainedBurgessPointwiseCharacterSumForLargeDyadicIntervals"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kummer_trace_bound_internalized": false,
+  "signature_normal_form": {
+    "collision_rule": "two auxiliary monomials can collapse only if their signature difference is invisible at every branch place",
+    "local_derivatives": "Hasse derivatives change local signatures by controlled bounded amounts, so jet conditions consume O_m(T) signatures per point",
+    "nonpower_anchor": "because f is not a d-th power, at least one branch coordinate carries a nonzero residue signature",
+    "order_free_requirement": "the chosen signature family must have size and separation bounded below in terms of m, not d",
+    "valuation_signature": "sigma(g)=(ord_{a_1}(g),...,ord_{a_m}(g)) modulo local Kummer equivalence"
+  },
+  "signature_table": [
+    {
+      "branch_bound_m": "10",
+      "next_selector_size": "positive c_m*D after Hasse-jet losses",
+      "r": "5",
+      "rank_constant_may_depend_on": "m<=10",
+      "rank_constant_must_not_depend_on": "d,P,chi,branch_positions",
+      "signature_vector_length": "10"
+    },
+    {
+      "branch_bound_m": "18",
+      "next_selector_size": "positive c_m*D after Hasse-jet losses",
+      "r": "9",
+      "rank_constant_may_depend_on": "m<=18",
+      "rank_constant_must_not_depend_on": "d,P,chi,branch_positions",
+      "signature_vector_length": "18"
+    },
+    {
+      "branch_bound_m": "34",
+      "next_selector_size": "positive c_m*D after Hasse-jet losses",
+      "r": "17",
+      "rank_constant_may_depend_on": "m<=34",
+      "rank_constant_must_not_depend_on": "d,P,chi,branch_positions",
+      "signature_vector_length": "34"
+    },
+    {
+      "branch_bound_m": "52",
+      "next_selector_size": "positive c_m*D after Hasse-jet losses",
+      "r": "26",
+      "rank_constant_may_depend_on": "m<=52",
+      "rank_constant_must_not_depend_on": "d,P,chi,branch_positions",
+      "signature_vector_length": "52"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-stepanov-kummer-trace-frontier-router.json": "d7958fe53af7c5cbffa37610719a5aeb34a092da1011aad9cab8ebf841e2c35d"
+  },
+  "status": "stepanov_nonzero_rank_reduced_to_order_free_branch_signature_selector",
+  "stepanov_auxiliary_polynomial_rank_bound_proved": false,
+  "stepanov_kummer_auxiliary_rank_surjectivity_proved": false,
+  "stepanov_rank_surjectivity_target_active": true
+}
