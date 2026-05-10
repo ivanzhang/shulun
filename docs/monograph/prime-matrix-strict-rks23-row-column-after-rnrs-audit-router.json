@@ -1,0 +1,92 @@
+{
+  "certificate_type": "strict_rks23_row_column_after_rnrs_audit_router",
+  "status": "rnrs_supplies_noncircular_and_balanced_energy_gates_remaining_final_row_column_promotion_audit",
+  "rnrs_input_closed": true,
+  "cycle_guard_ready": true,
+  "balanced_reduction_ready": true,
+  "noncircular_energy_input_closed": true,
+  "weighted_energy_input_closed": true,
+  "balanced_collar_absorption_closed": true,
+  "row_column_final_audit_complete": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used": true,
+  "counterexample_assumption_only": true,
+  "audit_findings": {
+    "rnrs_result": "self-contained RNRS/Rudnev reciprocal-interval energy input is now closed",
+    "cycle_guard_effect": "the previous noncircular input required by the cycle guard is now supplied by RNRS, not by the circular RKS23 route",
+    "balanced_energy_effect": "the RNRS N^(5/2)P^eps bound is strong enough for the balanced-collar weighted energy gate after the registered loss absorption",
+    "why_not_final_row_column": "the row/column theorem still needs one final promotion audit tying this supplied energy gate through every upstream theorem statement and boundary convention",
+    "audit_boundary": "this certificate closes the missing energy supply, not the final theorem statement itself"
+  },
+  "closed_gates": [
+    "SelfContainedRNRSInputClosed",
+    "CycleGuardNonCircularEnergyInputClosed",
+    "WeightedReciprocalIntervalEnergyInputClosed",
+    "BalancedCollarAbsorptionClosed"
+  ],
+  "open_gates": [
+    "RowColumnFinalAuditComplete",
+    "RowColumnUnconditionalClosed"
+  ],
+  "remaining_atoms": [
+    {
+      "atom": "RowColumnUnconditionalTheoremFinalPromotion",
+      "closed": false,
+      "why_remaining": "must run a final promotion audit over the row/column theorem statement before marking unconditional closure"
+    }
+  ],
+  "next_direct_attack_target": "RowColumnUnconditionalTheoremFinalPromotion",
+  "next_required_input": "Final promotion audit from closed balanced/RNRS energy gates to the stated row/column theorem",
+  "plain_conclusion": "RNRS 已补齐循环守门和加权能量门。行/列命题还不能直接标为无条件闭合；下一步是最终推广链审计，逐条核对所有边界与例外项。",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-rks23-rnrs-energy-absorption-router.json": "f0801c051af86f9a7d34e239b3d834d8c8c923c7b60b76bda61ffe3812e9ed39",
+    "docs/monograph/prime-matrix-strict-rks23-self-contained-cycle-guard-frontier-router.json": "08174f571d9065b83416fe91a3cea0072502f32b2cec49cfea936a355f448cf9",
+    "docs/monograph/prime-matrix-strict-rks23-balanced-collar-l2-energy-reduction-router.json": "ab7aa455de3a5c7890d2041ee1bf11e38933ee49f57edc42320fc1454b9b2a0b"
+  },
+  "rows": [
+    {
+      "gate": "SelfContainedRNRSInputClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "RNRS/Rudnev 倒数区间能量输入已闭合。",
+      "remaining": "closed RNRS input"
+    },
+    {
+      "gate": "CycleGuardNonCircularEnergyInputClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "循环守门所需的独立非循环能量输入现在由 RNRS 提供。",
+      "remaining": "NonCircularSelfContainedReciprocalIntervalEnergyPowerSaving"
+    },
+    {
+      "gate": "WeightedReciprocalIntervalEnergyInputClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "平衡颈部所需加权倒数区间能量门由 RNRS 参数吸收闭合。",
+      "remaining": "WeightedReciprocalIntervalAdditiveEnergyLogSavingForBalancedRKS23"
+    },
+    {
+      "gate": "BalancedCollarAbsorptionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "RKS2/RKS3 平衡颈部 L2/能量归约的缺口已由 RNRS 输入补齐。",
+      "remaining": "BalancedCollarRKS23LogSavingAbsorption"
+    },
+    {
+      "gate": "RowColumnFinalAuditComplete",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需逐条核对行/列最终推广链的全部边界、例外项和声明口径。",
+      "remaining": "RowColumnUnconditionalTheoremFinalPromotion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步完成 RNRS 后的能量门补齐审计，但不直接宣称行/列命题无条件闭合。",
+      "remaining": "RowColumnUnconditionalTheoremFinalPromotion"
+    }
+  ]
+}
