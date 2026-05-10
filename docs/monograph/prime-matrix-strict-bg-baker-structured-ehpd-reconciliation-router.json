@@ -1,0 +1,142 @@
+{
+  "author_side_conditional_chain_completed": true,
+  "baker_single_frequency_replacement_insufficient": true,
+  "baker_theorem_extracted_in_prior_work": true,
+  "bg_self_proof_as_unique_hardpoint_rejected": true,
+  "certificate_type": "prime_matrix_strict_bg_baker_structured_ehpd_reconciliation_router",
+  "closed_gates": [
+    "PriorBakerTheoremExtractionRecovered",
+    "BakerSingleFrequencyInsufficiencyPreserved",
+    "EXTBGRKSExternalMatchReady",
+    "StructuredEHPDDecouplesOldBGConstants",
+    "OMRCGTPLSMPNRCFCTPacketPresent",
+    "RowColumnToStructuredEHPDReductionPresent",
+    "ConservativeP0AndFiniteOverlapClosed",
+    "OldBGSelfProofAsUniqueHardpointRejected"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "ext_bg_rks_external_match_ready": true,
+  "fallback_deep_estimate_target": "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving OR BakerFrequencyLargeSieveOrDBGAverageReplacement",
+  "final_promotion_gate_accepted": false,
+  "next_direct_attack_target": "StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_target": "ExplicitIndependentPromotionAcceptanceRecord",
+  "plain_conclusion": "BG/Baker 旧研究已经找到了两件关键事实：Baker 单频率素变量定理可抽取但不能处理 d 层平均，EXT-BG/RKS 外部固定对数节省可与 Tail-log4 参数严格匹配。随后 Structured-EHPD/OMR 保守结构包已把作者侧路线从旧 BG 四常数阻塞中解耦，并由 `log_P0=3.5` 与 `P<=exp(5)` 有限验证形成常数层面闭合。因此当前真正最精确硬点不是继续把 BG 自足重证当作唯一剩余，而是对 `StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance` 做最终接口验收，并保留独立 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 晋级门。",
+  "previous_bg_as_next_direct_attack_target": true,
+  "reconciled_hardpoint_order": [
+    "StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance",
+    "ExplicitIndependentPromotionAcceptanceRecord",
+    "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving OR BakerFrequencyLargeSieveOrDBGAverageReplacement"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PriorBakerTheoremExtractionRecovered",
+      "meaning": "旧材料已抽取 Baker Theorem 1：单频率素变量有显式指数，但仍有常数和 d 平均问题。",
+      "proved": true,
+      "remaining": "history recovered"
+    },
+    {
+      "closed": true,
+      "gate": "BakerSingleFrequencyInsufficiencyPreserved",
+      "meaning": "Baker 点态素变量估计不能直接控制 coherent d 层绝对值平均。",
+      "proved": true,
+      "remaining": "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": true,
+      "gate": "EXTBGRKSExternalMatchReady",
+      "meaning": "BG/RKS 外部路线只需固定对数节省，参数匹配与引用边界已经定位。",
+      "proved": true,
+      "remaining": "Accept EXT-BG if external lane is used"
+    },
+    {
+      "closed": true,
+      "gate": "StructuredEHPDDecouplesOldBGConstants",
+      "meaning": "旧 `delta_BG_*` 四常数阻塞已被 `use_structured_ehpd + use_omr_pack` 路线绕开。",
+      "proved": true,
+      "remaining": "BG reproof is no longer the unique internal route"
+    },
+    {
+      "closed": true,
+      "gate": "OMRCGTPLSMPNRCFCTPacketPresent",
+      "meaning": "D 组结构包已拆成 OMR/CGTP/LSMP、NRC、FCT/Tree-WFE 的可审查定理族。",
+      "proved": true,
+      "remaining": "final symbol/interface audit"
+    },
+    {
+      "closed": true,
+      "gate": "RowColumnToStructuredEHPDReductionPresent",
+      "meaning": "行/列反例到 Structured-EHPD 坏配置的 A/B 归约已经成稿。",
+      "proved": true,
+      "remaining": "A/B-D interface consistency"
+    },
+    {
+      "closed": true,
+      "gate": "ConservativeP0AndFiniteOverlapClosed",
+      "meaning": "保守结构常数包给 log_P0=3.5，有限验证覆盖到 exp(5)，两段重叠。",
+      "proved": true,
+      "remaining": "certificate reproducibility"
+    },
+    {
+      "closed": true,
+      "gate": "OldBGSelfProofAsUniqueHardpointRejected",
+      "meaning": "继续把 BG 自足重证写成唯一剩余会漏掉 Structured-EHPD/OMR 保守替代路线。",
+      "proved": true,
+      "remaining": "StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance",
+      "meaning": "结构路线证据包和常数层面已齐；但顶刊审查口径仍要求把最终接口作为独立接受/最终审稿验收项。",
+      "proved": false,
+      "remaining": "StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance OR ExplicitIndependentPromotionAcceptanceRecord"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 晋级门尚无独立接受记录。",
+      "proved": false,
+      "remaining": "ExplicitIndependentPromotionAcceptanceRecord OR SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步完成路线同步与硬点纠偏；未生成独立验收事件，故不宣称无条件闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/constants-absorption-final-audit.md": "c63533dffb8e17481b0ec53a2e61ddc5579d8edb333fe662e68154aea260b0cb",
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/explicit-p0-constants.structured-conservative.json": "27fe61a23366581778ecc57539c4b622145481c45a7ac8f2530c566ef10423e5",
+    "docs/explicit-p0-structured-conservative-result.json": "dc7fc2bf27f4fa120390e39ad16fa3f6a0465ef6c10e730ebce929dbd99b9980",
+    "docs/ext-citation-final-audit.md": "c69cdf3e79ff77b0030a1d1d280af7f04bda7f03352d2c9a47fe0158569e61cf",
+    "docs/fct-tree-wfe-theoremization.md": "68adcba35e278f2e9b9384c0bab9ee98937cb2ce4f5408ac7633d5e8cd8ae157",
+    "docs/final-interface-index.md": "90072bd2be2ef8d46eafe7e2e43ac3fdd0a78c38978eaa15a1e6b0c522ac10c3",
+    "docs/finite-verify-exp5.json": "e8eed5f8bc499771212b13476438fa8be5ebeb6c4726eb7eb3691659a32e4e87",
+    "docs/monograph/claim-status-table.md": "490292bf12a66df2e16fd8052a8fd5b90e3fd2b2d38baaf781ed007885c4f16a",
+    "docs/monograph/prime-matrix-author-side-closure-task-completion-router.json": "1a15dfe0778a3ae9acf77c9db9cfa544f056d32da2be09b1079883a7123177b8",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "1b9f5714d1d53cd3fc4d13a112c24df2e91448201522255bc53abf5c809ab940",
+    "docs/monograph/prime-matrix-strict-multilinear-reciprocal-kloosterman-fixed-log-saving-router.json": "7c899f9cf3cf1e1e9064005815d666ec58f2d93ed4310149970c7dd2aca83d10",
+    "docs/nrc-theoremization.md": "9b1da2cac11370d33186f2c24605e6d96ed93b83e0c2bc637bd986aab8ab65eb",
+    "docs/omr-cgtp-lsmp-theoremization.md": "98e2ed534bd3061dc0dfcd04e9cb6305a15cf803370227d676b7963faf0606ea",
+    "docs/row-column-reduction-theoremization.md": "6070e2f4de9a9a242fe24a22640476107f4320c0f00563c2e4fa34ef3098e19a",
+    "docs/tail-log4-theoremization.md": "52d31368a1166db9be4be990f356f792e4770e7a765899288be959ad0ce62374",
+    "docs/top-journal-proof-audit.md": "868ab9041b1666cd86fff814427578230056146ae2b27062a3155d5bc614495e"
+  },
+  "status": "bg_baker_history_recovered_structured_ehpd_replacement_lane_restored_final_acceptance_open",
+  "structured_ehpd_decouples_old_bg_constants": true,
+  "structured_final_acceptance_closed": false,
+  "structured_lane_packet_ready": true
+}

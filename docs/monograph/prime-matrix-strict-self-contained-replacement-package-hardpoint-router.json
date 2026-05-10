@@ -1,0 +1,145 @@
+{
+  "author_side_non_rks_replacement_subpackets_closed": true,
+  "baker_single_frequency_replacement_insufficient": true,
+  "certificate_type": "prime_matrix_strict_self_contained_replacement_package_hardpoint_router",
+  "closed_gates": [
+    "SelfReplacementRouteActive",
+    "DABStructuredEHPDInternalPacketClosed",
+    "FiniteAndP0CertificateInternalClosed",
+    "RankinPassOrReturnSchemaClosed",
+    "TailLog4StructureClosedExceptRKSLog",
+    "EXTBGWouldCloseRKSLogIfAccepted",
+    "BakerSingleFrequencyStillInsufficient",
+    "AllNonRKSReplacementSubpacketsClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_internal_hardpoint": {
+    "coefficients": "dyadic interval or divisor-bounded Vaughan coefficients",
+    "modulus": "prime P",
+    "name": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving",
+    "needed_inside": "TL4-L low-spectrum reciprocal window large sieve / RKS-log",
+    "phase": "e_P(xi*(mn)^(-1)) or its Vaughan Type I/II prime-variable specializations",
+    "range": "|I||J| >= P/log^A(P), including RKS2 bilinear and RKS3 multilinear coverage blocks",
+    "required_output": "arbitrary fixed log saving strong enough to leave log^-44 after the RKS loss 74; equivalently use the prior log^-118 block target",
+    "why_baker_is_not_enough": "Baker Theorem 1 is pointwise in one prime variable and does not by itself control the coherent d/frequency average after absolute values."
+  },
+  "ext_bg_would_close_if_accepted": true,
+  "fallback_internal_deep_targets": [
+    "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving",
+    "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+  ],
+  "formal_package_complete_but_not_unconditional": true,
+  "next_direct_attack_target": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving",
+    "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_external_route": "AcceptEXTBGForRKSLogFixedSaving",
+  "plain_conclusion": "唯一内部自足线已经进一步压缩：D/AB Structured-EHPD、有限验证/P0、Rankin pass-or-return 和 Tail-log4 的结构分解均可作为作者侧闭合包处理。真正还没有内部证明的只剩 `SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving`，也就是 TL4-L/RKS-log 所需的 BG 型双/多线性倒数 Kloosterman 任意固定对数节省。接受 EXT-BG 可走外部闭合，但严格内部自足版必须证明该 RKS-log 输入，或证明 Baker 大谱/倒数频率平均替代。",
+  "rks_log_exact_statement_fixed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SelfReplacementRouteActive",
+      "meaning": "上一层已把独立晋级门的内部替代路线固定为完全自足证明包。",
+      "proved": true,
+      "remaining": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    },
+    {
+      "closed": true,
+      "gate": "DABStructuredEHPDInternalPacketClosed",
+      "meaning": "A/B 到 D 匹配与 D 组排斥附录已经形成作者侧内部证明包。",
+      "proved": true,
+      "remaining": "no D/AB atom left before RKS-log"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteAndP0CertificateInternalClosed",
+      "meaning": "有限验证与 P0 抽取证书闭合，覆盖关系 exp(3.5)<exp(5)。",
+      "proved": true,
+      "remaining": "reproducibility only"
+    },
+    {
+      "closed": true,
+      "gate": "RankinPassOrReturnSchemaClosed",
+      "meaning": "Rankin 子账本已经闭合为 pass-or-return 证书格式。",
+      "proved": true,
+      "remaining": "independent acceptance if not replacing gate"
+    },
+    {
+      "closed": true,
+      "gate": "TailLog4StructureClosedExceptRKSLog",
+      "meaning": "Tail-log4 的结构分解、TL4-S/TL4-M 与 RKS 参数账本已闭合；TL4-L 剩 RKS-log 深估计。",
+      "proved": true,
+      "remaining": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving"
+    },
+    {
+      "closed": true,
+      "gate": "EXTBGWouldCloseRKSLogIfAccepted",
+      "meaning": "接受 EXT-BG 时 RKS-log 可外部闭合，但这不是严格内部自足证明。",
+      "proved": true,
+      "remaining": "AcceptEXTBGForRKSLogFixedSaving"
+    },
+    {
+      "closed": true,
+      "gate": "BakerSingleFrequencyStillInsufficient",
+      "meaning": "Baker 单频率素变量定理不能单独替代 RKS-log 的 coherent 双/多线性输入。",
+      "proved": true,
+      "remaining": "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": true,
+      "gate": "AllNonRKSReplacementSubpacketsClosed",
+      "meaning": "除 RKS-log/BG 型深估计外，自足替代包的其它作者侧子包均已闭合或可复现。",
+      "proved": true,
+      "remaining": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving",
+      "meaning": "当前语料没有给出 BG/RKS-log 固定对数节省的内部证明。",
+      "proved": false,
+      "remaining": "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving OR BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+      "meaning": "完全自足替代包尚未闭合；唯一剩余数学原子是 RKS-log/BG 型倒数 Kloosterman 固定对数节省。",
+      "proved": false,
+      "remaining": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只压缩内部自足线，没有接受外部 BG，也没有证明 RKS-log。",
+      "proved": false,
+      "remaining": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_replacement_package_closed": false,
+  "self_contained_rks_log_proved": false,
+  "source_hashes": {
+    "docs/ab-to-d-interface-match.md": "10c8c6e592b1214f0b028d6c939c4d11a153f33bacbaefcfff0c452829f17f61",
+    "docs/bg-rks-block-match.md": "5bf53d6fe732110ef13fb131a61e1ef3d63d45570748bc9a56ec26894768afb9",
+    "docs/d-structure-formal-appendix.md": "be2e04e640bb9e5d32ea910e510dcc3f32672ac436e7487295400737279c38e3",
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/explicit-p0-structured-conservative-result.json": "dc7fc2bf27f4fa120390e39ad16fa3f6a0465ef6c10e730ebce929dbd99b9980",
+    "docs/ext-citation-final-audit.md": "c69cdf3e79ff77b0030a1d1d280af7f04bda7f03352d2c9a47fe0158569e61cf",
+    "docs/final-top-journal-unconditional-review.md": "6b34ee42c578855168f6d5fdeefb9fcb11cc5625286b26fd0e8cf7c38c1e15e5",
+    "docs/finite-verify-exp5.json": "e8eed5f8bc499771212b13476438fa8be5ebeb6c4726eb7eb3691659a32e4e87",
+    "docs/formal-theoremization-review.md": "a1e5fad2ec33c77cbf4a78b4daa1943b00ed73c234b53e44b6898ec78cae9c74",
+    "docs/monograph/claim-status-table.md": "490292bf12a66df2e16fd8052a8fd5b90e3fd2b2d38baaf781ed007885c4f16a",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "1b9f5714d1d53cd3fc4d13a112c24df2e91448201522255bc53abf5c809ab940",
+    "docs/monograph/prime-matrix-strict-structured-ehpd-final-interface-audit-router.json": "e43af88c19ad8230317071c18f31568ade7837ed2b242b4b12902c3d7071bfb3",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0",
+    "docs/tail-log4-theoremization.md": "52d31368a1166db9be4be990f356f792e4770e7a765899288be959ad0ce62374"
+  },
+  "status": "self_contained_replacement_package_reduced_to_tail_log4_rks_log_hardpoint"
+}

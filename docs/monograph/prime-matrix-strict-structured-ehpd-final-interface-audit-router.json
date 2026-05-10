@@ -1,0 +1,124 @@
+{
+  "author_side_structured_interface_audit_closed": true,
+  "certificate_type": "prime_matrix_strict_structured_ehpd_final_interface_audit_router",
+  "closed_gates": [
+    "StructuredAuditTargetActive",
+    "ABFormalReductionClosed",
+    "TailLog4FormalAppendixClosed",
+    "DStructureFormalAppendixClosed",
+    "CrossReferenceAndConstantsClosed",
+    "P0FiniteOverlapCertificateClosed",
+    "AuthorSideStructuredInterfaceAuditClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "final_promotion_gate_accepted": false,
+  "next_direct_attack_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "TopJournalUnconditionalStandardPassed",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_target": "ExplicitIndependentPromotionAcceptanceRecord",
+  "plain_conclusion": "Structured-EHPD 保守路线的作者侧最终接口审计已经可以关闭：A/B 归约、A/B 到 D 匹配、Tail-log4、D 组 OMR/CGTP/LSMP、NRC/FCT、交叉编号、常数编号和两段覆盖证书都已对齐。但这只关闭作者侧接口审计，不把顶刊独立审查或最终晋级门伪造成已发生。真正剩余现在进一步压缩为 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`，即显式独立接受，或以新的完全自足替代包替换该门。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "StructuredAuditTargetActive",
+      "meaning": "上一同步路由已把最窄点改为 Structured-EHPD 保守结构包最终接口验收。",
+      "proved": true,
+      "remaining": "StructuredEHPDConservativePackageFinalInterfaceAuditAndAcceptance"
+    },
+    {
+      "closed": true,
+      "gate": "ABFormalReductionClosed",
+      "meaning": "A/B 行列反例归约和 A/B 到 D 五项标准形式匹配均已附录化。",
+      "proved": true,
+      "remaining": "no AB structural gap"
+    },
+    {
+      "closed": true,
+      "gate": "TailLog4FormalAppendixClosed",
+      "meaning": "Tail-log4 已拆成 TL4-L/S/M 与 RKS-log 引用模式。",
+      "proved": true,
+      "remaining": "external theorem numbering if publishing"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureFormalAppendixClosed",
+      "meaning": "D 组 OMR/CGTP/LSMP、NRC 与 FCT/Tree-WFE 均有正式接口稿。",
+      "proved": true,
+      "remaining": "independent review acceptance"
+    },
+    {
+      "closed": true,
+      "gate": "CrossReferenceAndConstantsClosed",
+      "meaning": "最终交叉编号矩阵与 I1--I7 常数编号不等式已经对齐抽取器。",
+      "proved": true,
+      "remaining": "editorial theorem/page numbers"
+    },
+    {
+      "closed": true,
+      "gate": "P0FiniteOverlapCertificateClosed",
+      "meaning": "理论入口 log_P0=3.5，有限验证到 exp(5)，两段覆盖全部奇素数。",
+      "proved": true,
+      "remaining": "certificate reproducibility"
+    },
+    {
+      "closed": true,
+      "gate": "AuthorSideStructuredInterfaceAuditClosed",
+      "meaning": "作者侧 Structured-EHPD 保守包最终接口审计已完成；它不等同于独立验收。",
+      "proved": true,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "TopJournalUnconditionalStandardPassed",
+      "meaning": "顶刊标准复核仍禁止把当前稿件表述为已无需额外审查义务的无条件证明。",
+      "proved": false,
+      "remaining": "external theorem numbering / independent review acceptance"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "独立晋级门仍未显式接受，作者侧不能自动生成该事件。",
+      "proved": false,
+      "remaining": "ExplicitIndependentPromotionAcceptanceRecord OR SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "结构接口作者侧已审计闭合，但最终无条件命题仍受独立晋级门约束。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_replacement_target": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "source_hashes": {
+    "docs/ab-to-d-interface-match.md": "10c8c6e592b1214f0b028d6c939c4d11a153f33bacbaefcfff0c452829f17f61",
+    "docs/constants-absorption-final-audit.md": "c63533dffb8e17481b0ec53a2e61ddc5579d8edb333fe662e68154aea260b0cb",
+    "docs/constants-numbered-inequalities.md": "c40c4be1a241cc6d25b6b4f3c72adbf452632acba16e23562a1be48a3a89a460",
+    "docs/d-structure-formal-appendix.md": "be2e04e640bb9e5d32ea910e510dcc3f32672ac436e7487295400737279c38e3",
+    "docs/explicit-p0-structured-conservative-result.json": "dc7fc2bf27f4fa120390e39ad16fa3f6a0465ef6c10e730ebce929dbd99b9980",
+    "docs/ext-citation-final-audit.md": "c69cdf3e79ff77b0030a1d1d280af7f04bda7f03352d2c9a47fe0158569e61cf",
+    "docs/fct-tree-wfe-theoremization.md": "68adcba35e278f2e9b9384c0bab9ee98937cb2ce4f5408ac7633d5e8cd8ae157",
+    "docs/final-cross-reference-matrix.md": "95acfb4794aaffc1504346467e702c89395e18b427aa36205a27c6a9677f1e7e",
+    "docs/final-interface-index.md": "90072bd2be2ef8d46eafe7e2e43ac3fdd0a78c38978eaa15a1e6b0c522ac10c3",
+    "docs/final-top-journal-unconditional-review.md": "6b34ee42c578855168f6d5fdeefb9fcb11cc5625286b26fd0e8cf7c38c1e15e5",
+    "docs/finite-verify-exp5.json": "e8eed5f8bc499771212b13476438fa8be5ebeb6c4726eb7eb3691659a32e4e87",
+    "docs/formal-theoremization-review.md": "a1e5fad2ec33c77cbf4a78b4daa1943b00ed73c234b53e44b6898ec78cae9c74",
+    "docs/monograph/claim-status-table.md": "490292bf12a66df2e16fd8052a8fd5b90e3fd2b2d38baaf781ed007885c4f16a",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "1b9f5714d1d53cd3fc4d13a112c24df2e91448201522255bc53abf5c809ab940",
+    "docs/monograph/prime-matrix-strict-bg-baker-structured-ehpd-reconciliation-router.json": "3ffca82cb4ef1782d568582aa7b3de326cfd7d07873eb1939e8d1413ac66e648",
+    "docs/nrc-theoremization.md": "9b1da2cac11370d33186f2c24605e6d96ed93b83e0c2bc637bd986aab8ab65eb",
+    "docs/row-column-reduction-formal-appendix.md": "97a9185e1ef783d0163f39e894fc059a06dff6c8b5f615dcfab1f156b6396f0b",
+    "docs/tail-log4-theoremization.md": "52d31368a1166db9be4be990f356f792e4770e7a765899288be959ad0ce62374"
+  },
+  "status": "structured_ehpd_author_side_interface_audit_closed_final_promotion_gate_open",
+  "top_journal_conditional_package_complete": true,
+  "top_journal_unconditional_standard_passed": false
+}

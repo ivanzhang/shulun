@@ -1,0 +1,138 @@
+{
+  "baker_only_insufficient": true,
+  "certificate_type": "prime_matrix_strict_rks_log_internal_hardpoint_direct_attack_router",
+  "closed_gates": [
+    "RKSLogTargetActive",
+    "RKSLogStatementFixed",
+    "RKS1ShortSideWeilClosed",
+    "RKS4LowVolumeClosed",
+    "RKS2RKS3DeepBlocksIsolated",
+    "EXTBGExternalShortcutReady",
+    "BakerOnlyStillInsufficient",
+    "BakerAverageFrontierKnown"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_atom": {
+    "closed_parts_removed": "RKS1 short-side Weil and RKS4 low-volume/endpoint absorption",
+    "external_shortcut": "EXT-BG closes this if accepted, but strict internal line must prove it or prove Baker-frequency average replacement",
+    "name": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving",
+    "required_strength": "enough fixed log saving to pay RKS loss 74 and leave Tail-log4 log^-44; prior conservative target log^-118 is sufficient",
+    "rks2": "BG bilinear reciprocal Kloosterman log saving for divisor-bounded Vaughan Type II blocks",
+    "rks3": "BG multilinear / Kloost 1/2 reciprocal product log saving for balanced or further split blocks"
+  },
+  "ext_bg_external_shortcut_ready": true,
+  "fallback_internal_deep_targets": [
+    "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving",
+    "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+  ],
+  "log_budget_closed": true,
+  "next_direct_attack_target": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving",
+    "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_external_route": "AcceptEXTBGForRKSLogFixedSaving",
+  "plain_conclusion": "RKS-log 内部自足硬点进一步缩窄：RKS1 短侧 Weil 和 RKS4 低体积/端点吸收已经移出，对数预算 `74<128` 已闭合。唯一真正深点是 RKS2/RKS3 的 BG 型双/多线性倒数 Kloosterman 固定对数节省。外部接受 EXT-BG 可关闭它；严格内部路线只能重证 BG 型深估计，或证明 Baker 大谱/倒数频率平均替代。",
+  "rks1_short_side_weil_closed": true,
+  "rks2_rks3_deep_blocks_isolated": true,
+  "rks2_rks3_self_contained_proved": false,
+  "rks4_low_volume_closed": true,
+  "rks_log_statement_fixed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RKSLogTargetActive",
+      "meaning": "上一层已把唯一内部自足线压成 TL4-L/RKS-log。",
+      "proved": true,
+      "remaining": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving"
+    },
+    {
+      "closed": true,
+      "gate": "RKSLogStatementFixed",
+      "meaning": "RKS-log 已有精确定理模式：素数模数、倒数乘积相位、固定对数节省。",
+      "proved": true,
+      "remaining": "statement fixed"
+    },
+    {
+      "closed": true,
+      "gate": "RKS1ShortSideWeilClosed",
+      "meaning": "短侧变量由完成和/Weil 吸收，不是内部深点。",
+      "proved": true,
+      "remaining": "removed from hardpoint"
+    },
+    {
+      "closed": true,
+      "gate": "RKS4LowVolumeClosed",
+      "meaning": "低体积和端点块由平凡估计/Tail-log4 余量吸收。",
+      "proved": true,
+      "remaining": "removed from hardpoint"
+    },
+    {
+      "closed": true,
+      "gate": "RKS2RKS3DeepBlocksIsolated",
+      "meaning": "剩余深块精确为 RKS2 双线性 BG 与 RKS3 多线性 BG，且对数预算 74<128 已闭合。",
+      "proved": true,
+      "remaining": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving"
+    },
+    {
+      "closed": true,
+      "gate": "EXTBGExternalShortcutReady",
+      "meaning": "接受 EXT-BG 时 RKS2/RKS3 外部闭合。",
+      "proved": true,
+      "remaining": "AcceptEXTBGForRKSLogFixedSaving"
+    },
+    {
+      "closed": true,
+      "gate": "BakerOnlyStillInsufficient",
+      "meaning": "Baker 单频率不能直接替代 coherent 平均；旧 Baker/F4S+ 路线只是备选重证策略。",
+      "proved": true,
+      "remaining": "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": true,
+      "gate": "BakerAverageFrontierKnown",
+      "meaning": "旧研究已定位 Baker 大谱、F4S+ 和临界拼接路径，但未形成完整内部证明。",
+      "proved": true,
+      "remaining": "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving",
+      "meaning": "当前材料没有内部证明 RKS2/RKS3 的 BG 型固定对数节省。",
+      "proved": false,
+      "remaining": "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving OR BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving",
+      "meaning": "RKS-log 自足闭合等价于补上 RKS2/RKS3 深块内部证明。",
+      "proved": false,
+      "remaining": "SelfContainedBGRKS2RKS3ReciprocalKloostermanLogSaving"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只继续压缩唯一内部硬点，未证明 BG 深估计。",
+      "proved": false,
+      "remaining": "SelfContainedTailLog4RKSLogReciprocalKloostermanFixedSaving"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_rks_log_proved": false,
+  "source_hashes": {
+    "docs/bg-rks-block-match.md": "5bf53d6fe732110ef13fb131a61e1ef3d63d45570748bc9a56ec26894768afb9",
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/ext-citation-final-audit.md": "c69cdf3e79ff77b0030a1d1d280af7f04bda7f03352d2c9a47fe0158569e61cf",
+    "docs/monograph/claim-status-table.md": "490292bf12a66df2e16fd8052a8fd5b90e3fd2b2d38baaf781ed007885c4f16a",
+    "docs/monograph/prime-matrix-strict-self-contained-replacement-package-hardpoint-router.json": "30d6ca23c9e10b65784dd3b81cf5b7b1c7073e825e4e9283779c04d13952146b",
+    "docs/rks-bridge-partition.md": "b3ad2f0335e7fd3fdce032d009d24b14d064fd45fc1d9bf43f3b7a99aa384b62",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0",
+    "docs/tail-log4-theoremization.md": "52d31368a1166db9be4be990f356f792e4770e7a765899288be959ad0ce62374"
+  },
+  "status": "rks_log_internal_hardpoint_reduced_to_rks2_rks3_bg_blocks"
+}

@@ -1,0 +1,127 @@
+{
+  "baker_single_frequency_replacement_insufficient": true,
+  "certificate_type": "prime_matrix_strict_ext_bg_rks_tail_log4_replacement_router",
+  "closed_gates": [
+    "FinalHardpointAtomActive",
+    "RKSShortSideWeilAbsorptionClosed",
+    "RKSBlockPartitionClosed",
+    "RKSParameterAuditClosed",
+    "TailLog4AuthorPacketClosed",
+    "EXTBGCitationLaneReady",
+    "BakerSingleFrequencyReplacementInsufficient",
+    "ExternalBGForRKSLogFixedSavingClosedIfAccepted"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "ext_bg_citation_lane_ready": true,
+  "external_bg_for_rks_log_fixed_saving_closed_if_accepted": true,
+  "multilinear_reciprocal_kloosterman_self_contained_reproof_closed": false,
+  "next_direct_attack_target": "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks",
+    "SelfContainedEXTBGRKSMultilinearKloostermanAndTailLog4Replacement",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_target": "BakerFrequencyLargeSieveOrDBGAverageReplacement",
+  "plain_conclusion": "Tail-log4/RKS 原子已进一步压缩：短侧 Weil、端点低体积、RKS 参数账本和 Tail-log4 作者包都已闭合；真正剩余只剩 BG 型双线性/多线性倒数 Kloosterman 固定对数节省。接受 `EXT-BG` 时该原子参数匹配闭合；若坚持严格自足，则必须重证 `MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks`，或者走 Baker 大谱/倒数频率大筛替代来处理 d 层平均。",
+  "rks_block_partition_closed": true,
+  "rks_parameter_audit_closed": true,
+  "rks_short_side_weil_absorption_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "FinalHardpointAtomActive",
+      "meaning": "上一证书已把作者侧自足替代路线压到 EXT-BG/RKS/Tail-log4 原子。",
+      "proved": true,
+      "remaining": "SelfContainedEXTBGRKSMultilinearKloostermanAndTailLog4Replacement"
+    },
+    {
+      "closed": true,
+      "gate": "RKSShortSideWeilAbsorptionClosed",
+      "meaning": "短侧 <=P^(1/18) 的块由逐短变量 Weil/完成和吸收，目标强于 P/log^44P。",
+      "proved": true,
+      "remaining": "no new bridge needed"
+    },
+    {
+      "closed": true,
+      "gate": "RKSBlockPartitionClosed",
+      "meaning": "RKS1--RKS4 覆盖短侧 Weil、BG 双线性、BG 多线性、端点低体积四类块。",
+      "proved": true,
+      "remaining": "BG input still external in RKS2/RKS3"
+    },
+    {
+      "closed": true,
+      "gate": "RKSParameterAuditClosed",
+      "meaning": "总对数损失 74<128，保留至少 54 个对数幂余量。",
+      "proved": true,
+      "remaining": "parameter ledger closed"
+    },
+    {
+      "closed": true,
+      "gate": "TailLog4AuthorPacketClosed",
+      "meaning": "Tail-log4 已有 Theorem C 与 C1-C3 作者侧证明包。",
+      "proved": true,
+      "remaining": "depends on external BG/Selberg/Vaughan/KL labels"
+    },
+    {
+      "closed": true,
+      "gate": "EXTBGCitationLaneReady",
+      "meaning": "外部路线只需接受 BG/Baker 类固定对数节省；不需要最佳幂指数。",
+      "proved": true,
+      "remaining": "AcceptEXTBGForRKSLogFixedSaving"
+    },
+    {
+      "closed": true,
+      "gate": "BakerSingleFrequencyReplacementInsufficient",
+      "meaning": "Baker 单频率素变量定理不能单独处理 d 层绝对值平均；若走显式替代，需 Baker-frequency-large-sieve/DB平均。",
+      "proved": true,
+      "remaining": "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBGForRKSLogFixedSavingClosedIfAccepted",
+      "meaning": "接受 EXT-BG 后，RKS/Tail-log4 所需外部输入与参数吸收闭合。",
+      "proved": true,
+      "remaining": "external theorem acceptance lane"
+    },
+    {
+      "closed": false,
+      "gate": "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks",
+      "meaning": "严格自足版尚未重证 BG 型双线性/多线性倒数 Kloosterman 固定对数节省。",
+      "proved": false,
+      "remaining": "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks OR BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedEXTBGRKSMultilinearKloostermanAndTailLog4Replacement",
+      "meaning": "EXT-BG/RKS/Tail-log4 自足替代包未闭合；当前只闭合了外部接受路线的参数匹配。",
+      "proved": false,
+      "remaining": "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "最终晋级仍需独立接受或自足替代；本步没有产生无条件行/列闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_ext_bg_rks_tail_log4_replacement_closed": false,
+  "source_hashes": {
+    "docs/bg-rks-block-match.md": "5bf53d6fe732110ef13fb131a61e1ef3d63d45570748bc9a56ec26894768afb9",
+    "docs/constants-absorption-final-audit.md": "c63533dffb8e17481b0ec53a2e61ddc5579d8edb333fe662e68154aea260b0cb",
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/ext-citation-final-audit.md": "c69cdf3e79ff77b0030a1d1d280af7f04bda7f03352d2c9a47fe0158569e61cf",
+    "docs/monograph/claim-status-table.md": "490292bf12a66df2e16fd8052a8fd5b90e3fd2b2d38baaf781ed007885c4f16a",
+    "docs/monograph/prime-matrix-strict-final-hardpoint-after-p51-router.json": "ee150cae200f2cce0be7b1cc064af6fe8b827ee7cf5bf37a8fa38cf51ea76e94",
+    "docs/rks-bridge-partition.md": "b3ad2f0335e7fd3fdce032d009d24b14d064fd45fc1d9bf43f3b7a99aa384b62",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0",
+    "docs/tail-log4-formal-appendix.md": "cc8e105806fbf3428799a0086954ab2d5b354c480ddca04a7591bd9e2cd4c780"
+  },
+  "status": "ext_bg_rks_tail_log4_external_parameter_match_closed_self_contained_bg_reproof_open",
+  "tail_log4_author_packet_closed": true
+}

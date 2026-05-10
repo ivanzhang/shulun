@@ -1,0 +1,103 @@
+{
+  "available_saving_power": 128,
+  "baker_single_frequency_replacement_insufficient": true,
+  "certificate_type": "prime_matrix_strict_multilinear_reciprocal_kloosterman_fixed_log_saving_router",
+  "closed_gates": [
+    "KloostermanInputGateActive",
+    "ExactInputTheoremStatementClosed",
+    "LogPowerBudgetClosed",
+    "EXTBGSufficientIfAccepted",
+    "BakerSingleFrequencyNotEnough"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_input_theorem": {
+    "bilinear_block": "S(M,N)=sum_{m~M} sum_{n~N} alpha_m beta_n e_P(xi*(mn)^(-1)), MN≈P",
+    "coefficients": "Vaughan/divisor-bounded coefficients with dyadic losses already charged",
+    "modulus": "prime P",
+    "name": "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks",
+    "phase": "e_P(xi*(mn)^(-1)), xi != 0 mod P",
+    "reason": "After the RKS loss 74, this implies the Tail-log4 target MN/log^44(P).",
+    "required_bound": "|S(M,N)| <= MN/log^118(P) on each charged block",
+    "rks2_range": "min(M,N)>P^(1/18) and long side in BG bilinear coverage; in MN≈P this covers the remaining unbalanced range",
+    "rks3_range": "balanced or further split multilinear blocks satisfying BG Kloost 1/2 product threshold"
+  },
+  "exact_input_theorem_statement_closed": true,
+  "ext_bg_sufficient_if_accepted": true,
+  "log_power_budget_closed": true,
+  "next_direct_attack_target": "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_target": "BakerFrequencyLargeSieveOrDBGAverageReplacement",
+  "plain_conclusion": "最窄自足数学硬点已压成一个精确定理：对 RKS2/RKS3 的 Vaughan/divisor-bounded 倒数乘积相位块，证明 `|S(M,N)|<=MN/log^118(P)`。这个指数来自 Tail-log4 目标 `44` 加 RKS 总损失 `74`；`K_sieve_log_saving=128` 保留 10 个输入侧安全幂和 54 个最终余量。接受 `EXT-BG` 时该输入足够；严格自足版仍需重证 BG 型多线性倒数 Kloosterman 固定对数节省，或证明 Baker 大谱/倒数频率平均替代。",
+  "required_input_log_power": 118,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "KloostermanInputGateActive",
+      "meaning": "上一证书已把唯一自足数学缺口压成多线性倒数 Kloosterman 固定对数节省。",
+      "proved": true,
+      "remaining": "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks"
+    },
+    {
+      "closed": true,
+      "gate": "ExactInputTheoremStatementClosed",
+      "meaning": "所需命题已精确到素数模数、倒数乘积相位、Vaughan/divisor-bounded 双线性块和 RKS2/RKS3 范围。",
+      "proved": true,
+      "remaining": "statement fixed"
+    },
+    {
+      "closed": true,
+      "gate": "LogPowerBudgetClosed",
+      "meaning": "外部输入需提供 log^-118；RKS 损失 74 后剩 log^-44，且 128-74=54 余量为正。",
+      "proved": true,
+      "remaining": "log-power arithmetic closed"
+    },
+    {
+      "closed": true,
+      "gate": "EXTBGSufficientIfAccepted",
+      "meaning": "BG 型固定对数节省强于本输入；接受 EXT-BG 时本原子外部闭合。",
+      "proved": true,
+      "remaining": "AcceptEXTBGForRKSLogFixedSaving"
+    },
+    {
+      "closed": true,
+      "gate": "BakerSingleFrequencyNotEnough",
+      "meaning": "Baker 单频率素变量估计不能直接控制 d 层绝对值平均。",
+      "proved": true,
+      "remaining": "BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": false,
+      "gate": "MultilinearReciprocalKloostermanFixedLogSavingForRKSBlocks",
+      "meaning": "严格自足证明仍未给出；要么重证 BG 多线性定理，要么证明 Baker 大谱/倒数频率平均替代。",
+      "proved": false,
+      "remaining": "SelfContainedProofOfMultilinearReciprocalKloostermanFixedLogSaving OR BakerFrequencyLargeSieveOrDBGAverageReplacement"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步固定了最小输入定理和参数预算，没有发生独立验收或自足重证。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_multilinear_reciprocal_kloosterman_proof_closed": false,
+  "source_hashes": {
+    "docs/bg-rks-block-match.md": "5bf53d6fe732110ef13fb131a61e1ef3d63d45570748bc9a56ec26894768afb9",
+    "docs/constants-absorption-final-audit.md": "c63533dffb8e17481b0ec53a2e61ddc5579d8edb333fe662e68154aea260b0cb",
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/ext-citation-final-audit.md": "c69cdf3e79ff77b0030a1d1d280af7f04bda7f03352d2c9a47fe0158569e61cf",
+    "docs/monograph/claim-status-table.md": "490292bf12a66df2e16fd8052a8fd5b90e3fd2b2d38baaf781ed007885c4f16a",
+    "docs/monograph/prime-matrix-strict-ext-bg-rks-tail-log4-replacement-router.json": "3da8ae13ea87a99b7654bca7c9acefa6088eba83bc15528ca79098b7000eb728",
+    "docs/rks-bridge-partition.md": "b3ad2f0335e7fd3fdce032d009d24b14d064fd45fc1d9bf43f3b7a99aa384b62",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0"
+  },
+  "status": "exact_multilinear_reciprocal_kloosterman_input_statement_closed_self_contained_proof_open"
+}
