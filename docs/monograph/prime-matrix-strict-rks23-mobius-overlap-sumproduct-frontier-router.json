@@ -1,0 +1,126 @@
+{
+  "certificate_type": "prime_matrix_strict_rks23_mobius_overlap_sumproduct_frontier_router",
+  "closed_gates": [
+    "MobiusOverlapSpectrumTargetActive",
+    "EnergyMobiusSumProductDictionaryClosed",
+    "InverseSmallDoublingRigidityClosed",
+    "ElementaryWeilCompletionBarrierConfirmed",
+    "RNRSRudnevExternalRouteMatches"
+  ],
+  "counterexample_assumption_only": true,
+  "elementary_weil_completion_barrier_confirmed": true,
+  "empirical_absence_not_used": true,
+  "energy_mobius_sumproduct_dictionary_closed": true,
+  "finite_identity_sanity": [
+    {
+      "cross_multiplied_energy": 270,
+      "identity_passed": true,
+      "length": 10,
+      "mobius_overlap_energy": 270,
+      "p": 101,
+      "reciprocal_energy": 270,
+      "start": 13
+    },
+    {
+      "cross_multiplied_energy": 506,
+      "identity_passed": true,
+      "length": 14,
+      "mobius_overlap_energy": 506,
+      "p": 211,
+      "reciprocal_energy": 506,
+      "start": 17
+    },
+    {
+      "cross_multiplied_energy": 1450,
+      "identity_passed": true,
+      "length": 22,
+      "mobius_overlap_energy": 1450,
+      "p": 509,
+      "reciprocal_energy": 1450,
+      "start": 25
+    }
+  ],
+  "finite_identity_sanity_passed": true,
+  "inverse_small_doubling_rigidity_closed": true,
+  "mobius_overlap_spectrum_target_active": true,
+  "next_direct_attack_target": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_external_route": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving",
+  "plain_conclusion": "一参数 Möbius 高重叠谱已进一步压缩为反演 sum-product 核心：`sum_s r_J(s)^2` 正是 `A=J^{-1}` 的加性能量，而 `A^{-1}=J` 是区间，所以反演侧天然有 `|A^{-1}+A^{-1}|<=2|A|-1` 的小和集刚性。因此当前真正内部自足剩余是证明：在平方根对数颈部，反演小和集集合不可能有 `E_+(A)` 的近最大能量。该输入可由 RNRS/Rudnev 型外部 sum-product 能量定理关闭；严格自足线仍需把这一定理或其特殊情形内联证明。",
+  "rnrs_rudnev_external_route_matches": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "MobiusOverlapSpectrumTargetActive",
+      "meaning": "上一证书已把唯一内部剩余压成一参数 Möbius 区间重叠谱。",
+      "proved": true,
+      "remaining": "OneParameterMobiusIntervalOverlapDyadicSpectrumPowerSaving"
+    },
+    {
+      "closed": true,
+      "gate": "EnergyMobiusSumProductDictionaryClosed",
+      "meaning": "`r_J(s)`、`E_+(J^{-1})` 与交叉乘法四元组完全等价；小素数只作恒等式自检。",
+      "proved": true,
+      "remaining": "dictionary closed"
+    },
+    {
+      "closed": true,
+      "gate": "InverseSmallDoublingRigidityClosed",
+      "meaning": "令 `A=J^{-1}` 后，`A^{-1}=J` 是区间，故反演侧和集大小至多 `2|J|-1`。",
+      "proved": true,
+      "remaining": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar"
+    },
+    {
+      "closed": true,
+      "gate": "ElementaryWeilCompletionBarrierConfirmed",
+      "meaning": "已有账本确认平方根临界颈部中 Weil/双完成只能给自然尺度，不能给固定幂节省。",
+      "proved": true,
+      "remaining": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar"
+    },
+    {
+      "closed": true,
+      "gate": "RNRSRudnevExternalRouteMatches",
+      "meaning": "Roche-Newton/Rudnev/Shkredov 型反演 sum-product 能量估计正匹配该硬点。",
+      "proved": true,
+      "remaining": "RudnevRNRSReciprocalIntervalEnergyEstimateWithExplicitLogSaving"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar",
+      "meaning": "仓库内尚未内联证明反演小和集情形的固定幂加性能量节省。",
+      "proved": false,
+      "remaining": "internalize inverse sum-product or accept RNRS/Rudnev route"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步闭合的是字典与刚性定位，不是反演 sum-product 定理本身。",
+      "proved": false,
+      "remaining": "SelfContainedInverseSmallDoublingReciprocalEnergyPowerSavingForSquareRootCollar"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_inverse_sumproduct_proved": false,
+  "source_hashes": {
+    "docs/explicit-p0-constants.status.md": "8c9817033ed88df913429c87b7a7b355801bfb0d5a1c1d5a7328669aa0b60632",
+    "docs/monograph/prime-matrix-strict-rks23-reciprocal-energy-mobius-overlap-router.json": "1ff5cdfddf0924dbf91779052bae59ab5b808168ba2e08327e244bf687c5f63f",
+    "docs/monograph/prime-matrix-strict-rks23-unweighted-energy-power-saving-relaxation-router.json": "06047f6e4d09a2bc121c9fabb5d6309e3c06eacf3da00b536fd893bd025c1b7a",
+    "docs/monograph/prime-matrix-strict-rks23-weighted-energy-to-unweighted-core-router.json": "fc5aebed9fc1bfd4bf2fdd36a455ef044f0b366acfb7d51d17a1b4398474c4e7"
+  },
+  "status": "mobius_overlap_spectrum_reduced_to_inverse_sumproduct_energy_frontier",
+  "sumproduct_dictionary": {
+    "contradiction_shape": "large E_+(A) plus small |A^(-1)+A^(-1)| is exactly the inverse sum-product obstruction",
+    "cross_multiplied_quadruple": "(a+b)c d=(c+d)a b mod P",
+    "energy_identity": "sum_s r_J(s)^2 = E_+(J^(-1))",
+    "fiber_equation": "s*a*b-a-b=0, equivalently s=a^(-1)+b^(-1)",
+    "inverse_small_sumset": "A^(-1)=J, hence |A^(-1)+A^(-1)|<=2|J|-1",
+    "needed_power_saving": "E_+(A)<=|A|^(3-delta) for |A| in the square-root log collar",
+    "original_spectrum": "r_J(s)=#{a in J: a/(s*a-1) in J}",
+    "set_substitution": "A=J^(-1)"
+  }
+}
