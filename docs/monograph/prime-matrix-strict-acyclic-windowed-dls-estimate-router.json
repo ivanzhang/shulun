@@ -1,0 +1,120 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_windowed_dls_estimate_router",
+  "status": "acyclic_windowed_dls_reduced_to_self_contained_kuznetsov_large_sieve_atom_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "clean_residual_object_fixed": true,
+  "acyclic_windowed_bilinear_normal_form_closed": true,
+  "phase_invertible_variable_ledger_closed": true,
+  "coefficient_norm_ledger_closed": true,
+  "failure_return_alphabet_closed": true,
+  "external_line_separated": true,
+  "self_contained_kuznetsov_dls_large_sieve_inequality_proved": false,
+  "acyclic_windowed_kloosterman_dls_internal_estimate_proved": false,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicWindowedKloostermanDLSInternalEstimate",
+  "strict_gap_after_router": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+  "conditional_gap_after_router": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (ExactExternalKLSSpecialization AND UncenteredNoProjectionCompatibilityForAcyclicCleanBlock)",
+  "terminal_gap_after_router": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+    "must_prove": [
+      "对所有 acyclic clean dyadic blocks 给出统一窗口化 Kloosterman/DLS 双线性型上界",
+      "上界必须只依赖 L2 范数、模数窗口、频率窗口、平滑导数损失和 polylog 预算",
+      "所得节省必须足以吸收 strict 终端门中剩余 clean residual 质量",
+      "若试图使用外部 DI/BFI/Kuznetsov，必须另证精确专门化和无投影兼容，并标记为条件线"
+    ],
+    "cannot_use_as_proof": [
+      "重复 K1--K9 clean admission 或 L2-flat 账本",
+      "只给 DI/BFI 变量表而不证明 J-scale/谱大筛上界",
+      "把外部定理当成严格自足证明",
+      "把有限数值审计或低维回流字母表当成纯谱不等式"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "WindowedDLSInternalEstimateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 strict acyclic clean KLS/DLS 压成窗口化 Kloosterman/DLS 内部估计。",
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "gate": "CleanResidualObjectFixed",
+      "closed": true,
+      "proved": true,
+      "meaning": "同一 formal unit 中的 PDEC/SAE/ColumnCRT/new-layer 低维缺陷已剥离，只剩 L2-flat clean residual。",
+      "remaining": "无；对象已固定。"
+    },
+    {
+      "gate": "BilinearNormalFormClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "clean residual 可写入窗口化 Kloosterman/dispersion 双线性型，变量为 m, ell, d, R, h 与平滑 W。",
+      "remaining": "大筛不等式本身。"
+    },
+    {
+      "gate": "PhaseAndInvertibleVariableLedgerClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "CRT 相位、可逆变量、gcd/unit 层和非零 Fourier 频率已经由 A1 clean KLS 模板登记。",
+      "remaining": "内部谱估计。"
+    },
+    {
+      "gate": "CoefficientNormLedgerClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "L2-flat 系数、dyadic 分块、平滑导数损失和 polylog 预算均在 clean admission/模板账本内登记。",
+      "remaining": "证明这些范数输入下的 KLS/DLS log-saving。"
+    },
+    {
+      "gate": "FailureReturnAlphabetClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若失败来自 point-load、short-window、low-phase、new-layer 或列/壳集中，已经命名回流。",
+      "remaining": "纯谱大筛不等式无法再靠命名回流删除。"
+    },
+    {
+      "gate": "ExternalLineSeparated",
+      "closed": true,
+      "proved": true,
+      "meaning": "外部 DI/BFI/Kuznetsov 线需要精确专门化和无投影兼容；它可给条件闭合，不给严格自足闭合。",
+      "remaining": "ExactExternalKLSSpecialization AND UncenteredNoProjectionCompatibilityForAcyclicCleanBlock。"
+    },
+    {
+      "gate": "InternalKuznetsovDLSInequalityAtomPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "真正自足剩余是证明 acyclic clean blocks 的窗口化 Kuznetsov/DLS 大筛不等式。",
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "gate": "AcyclicWindowedDLSInternalEstimateProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前语料没有提交该自足谱大筛证明。",
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "gate": "StrictTerminalFamilyProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "strict 终端家族仍未闭合；活动非 canonical 线卡在自足 Kuznetsov/DLS 不等式。",
+      "remaining": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-clean-kls-router.md": "11edd12986d88abf5d0447e816fd8f5097101f8be270845369c9a491224b77c9",
+    "docs/monograph/prime-matrix-triad-a1-clean-kls-external-input-router.md": "936c1b4995e76228a5e75746bb5cebf3e50b530bea4cf9f649ef3f0395af6b8c",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-common-variable-table-router.md": "229ebdb1aa111784638cd1fdad43bf664d18cf4ce4a6ea9e2a84447cfc7bcba9",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-di-formula-ledger-router.md": "aedfc5a3070644b98457e9983bcbb7d81f96e6a527ed20a69d5eb9492a5a1294",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-window-match-router.md": "995cf953922f17b378df074a0b69f8efb847c43b97c66718ade5b0228b33b02d",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-external-full-s-match-router.md": "ed1ea4c0fbb8dcfdde22f28caddc243edf6b95e6d83cbaaa76a7e82f2a7f7900",
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.md": "8795cb999b66a3422a5e96a7638dbdc6338c6e6d082cca5d1cf758485058d579"
+  },
+  "plain_conclusion": "本步继续攻 `AcyclicWindowedKloostermanDLSInternalEstimate`。形式层已压尽：acyclic clean residual 的对象、窗口化双线性型、相位/可逆变量、L2 系数范数和失败回流字母表均可由现有账本关闭。剩下的不是变量命名或 clean 准入，而是一个真正解析原子：`SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks`。外部 DI/BFI/Kuznetsov 只能作为条件线，仍需精确专门化与无投影兼容。"
+}
