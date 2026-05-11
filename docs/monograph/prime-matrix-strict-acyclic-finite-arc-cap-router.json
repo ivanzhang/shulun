@@ -1,0 +1,127 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_finite_arc_cap_router",
+  "status": "acyclic_finite_arc_cap_independent_input_removed_clean_kls_remaining",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "same_set_count_vector_imported": true,
+  "finite_arc_rank_one_slice_imported": true,
+  "low_transverse_support_named_return_closed": true,
+  "persistent_transverse_bias_named_return_closed": true,
+  "lowmod_arc_classification_imported": true,
+  "transverse_flat_residual_clean_admission_closed": true,
+  "acyclic_finite_arc_no_unnamed_exit_closed": true,
+  "acyclic_finite_arc_independent_input_removed": true,
+  "acyclic_finite_arc_cap_mass_bounds_proved": false,
+  "direct_acyclic_same_set_pdec_dual_proved": false,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicFiniteArcCapMassBoundsOrNamedReturn",
+  "terminal_gap_after_router": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+    "must_prove": [
+      "对已剥离 PDEC/SAE/ColumnCRT 的 acyclic clean residual 验证 K1--K9 clean admission",
+      "给出同一 formal unit 上的 L2-flat 系数账本和窗口化 Kloosterman/dispersion 参数映射",
+      "证明内部 DLS/KLS 大筛吸收，或把失败命名回流到 PDEC/SAE/ColumnCRT/Multiplicity",
+      "若使用外部 DI/BFI/Kuznetsov 定理，必须明确标记为外部条件路线，不能声明严格自足闭合"
+    ],
+    "cannot_use_as_proof": [
+      "把有限弧无第四出口当成 clean 大筛估计",
+      "把 canonical-source NC-BLK 吸收直接导入 acyclic/noncanonical clean residual",
+      "把 K1--K9 准入当成大筛证明；准入后仍需 KLS/DLS 界",
+      "用有限实验中弧 cap 消失替代全局横向平坦估计"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "AcyclicFiniteArcCapActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层 direct PDEC 剩余为同一 g_B 上的有限循环弧 cap 质量上界或命名回流。",
+      "remaining": "AcyclicFiniteArcCapMassBoundsOrNamedReturn"
+    },
+    {
+      "gate": "SameSetCountVectorImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "已固定 acyclic formal unit G、坏窗集合 B、同一 count vector g_B 与质量 M。",
+      "remaining": "只允许在同一 g_B 上做弧 cap 判定。"
+    },
+    {
+      "gate": "FiniteArcRankOneSliceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "任意方向帽都是非平凡字符有限像上的循环弧预像，即秩一切片。",
+      "remaining": "检查弧内横向变量。"
+    },
+    {
+      "gate": "LowTransverseSupportNamedReturn",
+      "closed": true,
+      "proved": true,
+      "meaning": "高质量弧若由低横向支撑、孤立短窗、列位移或固定壳承担，则生成 SAE/ColumnCRT/fixed-shell PDEC return。",
+      "remaining": "无；它不保留为 cap-stable PDEC 核。"
+    },
+    {
+      "gate": "PersistentTransverseBiasNamedReturn",
+      "closed": true,
+      "proved": true,
+      "meaning": "高质量弧若有持久横向偏斜，则弧指标并入签名，得到 refined/new-layer PDEC；有限层细化无循环。",
+      "remaining": "无；它回到 PDEC 命名路线。"
+    },
+    {
+      "gate": "LowModArcClassificationImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "固定轮弧、新增层弧、高模平坦弧分别进入 W-unit PDEC、new-layer PDEC、flat DLS/KLS。",
+      "remaining": "高模平坦弧进入 clean DLS，不再是 PDEC 弧 cap 独立输入。"
+    },
+    {
+      "gate": "TransverseFlatResidualCleanAdmission",
+      "closed": true,
+      "proved": true,
+      "meaning": "若弧内没有低支撑、持久偏斜或列/壳集中，则剩余是横向 L2-flat clean residual，准入 DirectAcyclicCleanKLS/DLS。",
+      "remaining": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "FiniteArcNoUnnamedExitClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限弧 cap 不能作为第四类无名出口；它要么命名回流，要么成为 clean DLS/KLS residual。",
+      "remaining": "证明 clean DLS/KLS 吸收。"
+    },
+    {
+      "gate": "AcyclicFiniteArcIndependentInputRemoved",
+      "closed": true,
+      "proved": true,
+      "meaning": "AcyclicFiniteArcCapMassBoundsOrNamedReturn 作为独立 PDEC 剩余已删除；未闭合部分转到 direct clean KLS/DLS。",
+      "remaining": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "DirectAcyclicPDECDualProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "PDEC 分支已无独立有限弧逃逸，但没有证明所有弧质量均低于阈值；平坦弧转入 clean 分支。",
+      "remaining": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "DirectCleanKLSStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前真正最窄终端硬点变成 strict acyclic clean residual 的内部 KLS/DLS 大筛估计或命名回流。",
+      "remaining": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-pdec-input-materialization-router.md": "553b84c58d7955ad5dd78c753359e8df1c418df2956bfc423d637fa2052e7d8b",
+    "docs/monograph/prime-matrix-pdec-cap-finite-arc-transverse-router.md": "7b15ed977b12752746cb68214a63b00b195b3141d9cd3353a1bf96fc77ffaaa8",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-clean-reduction-router.md": "feeff9e8ba0a9bf295f38f220bb28698cafa107e4e2a89a6cadc7bd73da57f86",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-clean-atom-frontier-router.md": "9b919c4ed44ff443d4a271eb9932a64f60f1d813306168a47fd2052b798df930",
+    "docs/monograph/prime-matrix-lowmod-finite-arc-cap-reduction-router.md": "247dbdecbcd9d09fdc94548a1d77c505cebaab1a8cb51403fa78d93eff858198",
+    "docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.md": "aaf7e9075dab7deee685b6b539b88e48b409eadafc3994fd4ecfdbee8e7f765a",
+    "docs/monograph/prime-matrix-triad-a1-clean-kls-external-input-router.md": "936c1b4995e76228a5e75746bb5cebf3e50b530bea4cf9f649ef3f0395af6b8c"
+  },
+  "plain_conclusion": "本步直接攻 `AcyclicFiniteArcCapMassBoundsOrNamedReturn`。有限弧是同一 finite formal unit 中的秩一字符弧；高质量弧若有低横向支撑、持久横向偏斜、列/壳集中或新增层偏斜，都会命名回流到 SAE、ColumnCRT 或 refined/new-layer PDEC；若这些缺陷全部剥离，剩余就是横向 L2-flat clean residual，必须进入 `DirectAcyclicCleanKLSDLSEstimateWithNamedReturn`。因此有限弧 cap 不再是独立剩余，但 clean KLS/DLS 估计仍未证明，完整命题仍未闭合。"
+}
