@@ -1,0 +1,150 @@
+{
+  "actual_signed_alpha_source_measure_proved": false,
+  "alpha_formula_anchor_collar_overload_named_return_proved": false,
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "alpha_rows_phi_pushforward_compatibility_proved": false,
+  "alpha_signed_coefficient_lift_hardpoint_router_closed": true,
+  "alpha_signed_lift_variation_branch_budget_proved": false,
+  "alpha_signed_weight_law_from_precauchy_arithmetic_identity_proved": false,
+  "certificate_type": "prime_matrix_strict_alpha_signed_coefficient_lift_hardpoint_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "failure_naming_discipline_imported_closed": true,
+  "frontier_reduction": "AlphaFormulaSignedCoefficientLiftLedger 在 unsigned skeleton 已闭合后，等价于提交 `PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton`：逐 skeleton row 正向给出 signed alpha weight、算术恒等式来源、Phi atom、变差收费、local factor 非零和命名回流。",
+  "next_direct_attack_target": "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton",
+  "no_theorem_switch": true,
+  "parallel_required_inputs": [
+    "AlphaFormulaAnchorCollarOverloadNamedReturnLedger"
+  ],
+  "plain_conclusion": "本步继续硬攻 signed lift。结论是：unsigned carry-shell/P列/phase skeleton 和失败命名纪律已经够用，真正缺口不是再找 row 形状，而是逐 skeleton row 的 signed 系数值表。没有这张表，actual signed source、pre-Cauchy 权重律、Phi 推前和 signed 变差预算四项不能合取；从零行覆盖或 payment skeleton 反推仍被禁止。",
+  "pointwise_signed_alpha_coefficient_value_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SignedLiftTargetActive",
+      "meaning": "当前真正最窄点是把已闭合 unsigned skeleton 提升为 pre-Cauchy signed alpha coefficient。",
+      "proved": false,
+      "remaining": "AlphaFormulaSignedCoefficientLiftLedger"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonClosedImported",
+      "meaning": "source tuple、carry-shell、P列锚、层叠轮和 anchor-collar 已给出 row skeleton。",
+      "proved": true,
+      "remaining": "row skeleton 不含 signed coefficient value。"
+    },
+    {
+      "closed": true,
+      "gate": "FailureNamingDisciplineClosedImported",
+      "meaning": "signed lift 缺失、Phi 不兼容、变差超预算和 terminal-dependent key 都已有命名出口。",
+      "proved": true,
+      "remaining": "命名出口登记不等于排斥出口。"
+    },
+    {
+      "closed": true,
+      "gate": "WeightLawStillOpen",
+      "meaning": "signed 权重律已被压到独立 pre-Cauchy 算术恒等式和精确权重公式。",
+      "proved": false,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSourceMeasureStillOpen",
+      "meaning": "当前材料没有在 carry-shell skeleton rows 上定义 actual signed alpha source measure。",
+      "proved": false,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "PhiPushforwardStillOpen",
+      "meaning": "几何 Phi/payment base 可用，但 Phi_*nu 等于 payment-side 系数仍需逐 row signed 值表求和。",
+      "proved": false,
+      "remaining": "AlphaRowsPhiPushforwardCompatibilityLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "VariationBudgetStillOpen",
+      "meaning": "unsigned 支撑预算不能控制 signed 总变差和 branch key 复杂度。",
+      "proved": false,
+      "remaining": "AlphaSignedLiftVariationBranchBudgetLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "EmitterReductionDoesNotCreateValues",
+      "meaning": "actual signed/Phi/预算路线被压到 prepushforward emitter，但 emitter 也需要同一 signed row 值表。",
+      "proved": false,
+      "remaining": "RegisteredPrimitivePrePushforwardFiberEmitterAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationFormalAfterValuesOnly",
+      "meaning": "逐纤维解积分只能在 signed source measure 已给定后使用。",
+      "proved": false,
+      "remaining": "先提交 signed coefficient value table。"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseRecoveryBlocked",
+      "meaning": "不能从 downstream payment skeleton 或早期零行 unsigned cover 反推 signed source。",
+      "proved": true,
+      "remaining": "必须正向给出 pre-Cauchy 系数值。"
+    },
+    {
+      "closed": false,
+      "gate": "SignedCoefficientLiftCurrentCorpusProved",
+      "meaning": "当前材料缺少逐 skeleton row 的 signed coefficient value table。",
+      "proved": false,
+      "remaining": "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-signed-phi-budget-emitter-reduction-router.json": "95771e9095c5c2cbd66c2afbd5a1d4de4a0ea5562cdf5504d950b2246696c1e8",
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-geometric-phi-budget-bridge-router.json": "22a096c2970a64f75006668179204f9ee7b49e802350b318255c1f543a790df0",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-signed-lift-failure-return-router.json": "bade91ebe62ab881cacbe69f0dd6b75ea33f6a5b69c3b586301e8c86a7a5a66a",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49"
+  },
+  "status": "alpha_signed_coefficient_lift_reduced_to_pointwise_signed_value_table_open",
+  "target_input_before_router": "AlphaFormulaSignedCoefficientLiftLedger",
+  "unsigned_skeleton_imported_closed": true,
+  "value_table_fields": [
+    {
+      "field": "skeleton_row_id",
+      "meaning": "来自已闭合 unsigned carry-shell/P列/phase skeleton 的规范 row 编号。"
+    },
+    {
+      "field": "source_tuple_hash",
+      "meaning": "绑定同一 formal unit 的 A、D0/K/Omega、phase_rule 和 anchor payload。"
+    },
+    {
+      "field": "signed_alpha_weight",
+      "meaning": "pre-Cauchy 阶段正向给出的 signed alpha 系数值。"
+    },
+    {
+      "field": "arithmetic_identity_ref",
+      "meaning": "该系数值来自哪个独立算术恒等式，而不是来自零行覆盖或 payment 反推。"
+    },
+    {
+      "field": "phi_payment_atom",
+      "meaning": "该 row 推前到的 payment/Phi atom，含重数和符号。"
+    },
+    {
+      "field": "absolute_variation_charge",
+      "meaning": "该 row 在 signed 总变差/branch 预算中的收费。"
+    },
+    {
+      "field": "local_factor_nonzero",
+      "meaning": "local factor 非零证明；失败时必须给 return_tag。"
+    },
+    {
+      "field": "return_tag",
+      "meaning": "无法赋值、Phi 不兼容、变差超预算、canonical 泄漏或 terminal-dependent key 的命名出口。"
+    }
+  ]
+}
