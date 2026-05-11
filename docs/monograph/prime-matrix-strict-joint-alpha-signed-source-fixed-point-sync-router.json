@@ -1,0 +1,250 @@
+{
+  "acyclic_seed_cycle_cut_source_input_proved": false,
+  "acyclic_terminal_return_well_founded_descent_proved": false,
+  "acyclic_terminal_return_well_founded_descent_schema_closed": true,
+  "certificate_type": "prime_matrix_strict_joint_alpha_signed_source_fixed_point_sync_router",
+  "counterexample_assumption_only": true,
+  "cycle_cut_joint_route_returns_to_row_level_fixed_point": true,
+  "descent_input_contract": [
+    {
+      "field": "complexity_vector",
+      "meaning": "给每个 terminal return record 定义有限字典序量，例如 formal unit 层级、未结叶子数、签名秩、payload 维度和回流深度。"
+    },
+    {
+      "field": "return_transition_table",
+      "meaning": "逐类登记 PDEC、SAE、ColumnCRT、CleanKLS、new-layer、sparse packet 和 noncanonical payload 的回流边。"
+    },
+    {
+      "field": "strict_drop_or_leaf",
+      "meaning": "证明每条合法回流边要么复杂度严格下降，要么进入已命名叶子防火墙输入。"
+    },
+    {
+      "field": "leaf_firewall_discharge",
+      "meaning": "对 FutureExplicitPrimitivePDECSchema、FutureExplicitSparsePacketExtractorSchema 与 NoncanonicalFullSComplementLegalClosureMode 给出排斥或接受边界。"
+    },
+    {
+      "field": "no_source_reimport",
+      "meaning": "禁止从 terminal leaf 再后验读回 row-level/signed-source 表来制造自证。"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "frontier_reduction": "`AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput` 经 joint emitter、joint declaration、joint constructor、joint alpha-side 与 same-row identity 后回到 `RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`；而该表的 signed-source 内部展开又回到自身。",
+  "joint_alpha_signed_source_fixed_point_sync_router_closed": true,
+  "joint_basis_word_coefficient_emitter_proved": false,
+  "next_direct_attack_target": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步没有转换命题，而是把最新 cycle-cut/joint-alpha 下钻链与 signed-source 固定点链同步。结果是：所谓 cycle-cut 前置源输入若按内部字段继续展开，会经 joint 发射器、joint 声明、显式 joint alpha/delta 规则、joint alpha-side、same-row 桥接回到逐行原始生成表；该表又落入已登记的 signed-source 固定点。因此当前内部自足线不能再把 cycle-cut 源输入当作新的非循环出口。下一真正非循环硬点是终端回流 well-founded 严格下降证书；下降 schema 已部分整理，但叶子防火墙和 noncanonical full-S 合法模式仍未排斥。",
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchPreserved",
+      "meaning": "本同步仍在早期零行反例链内部工作，不使用真实零行缺席作前提。",
+      "proved": true,
+      "remaining": "direct_unconditional_contradiction_found=false"
+    },
+    {
+      "closed": true,
+      "gate": "CycleCutRouteStartsAtSignedSourceInput",
+      "meaning": "上一前沿把非循环新增输入钉为 primitive basis/coefficient 前置源输入。",
+      "proved": false,
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "closed": true,
+      "gate": "CycleCutRouteReducedToJointEmitter",
+      "meaning": "cycle-cut 输入已排除顺序拆分，压成 Cauchy 前联合发射器。",
+      "proved": false,
+      "remaining": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "JointEmitterRouteReducedToJointDeclaration",
+      "meaning": "联合发射器字段级下钻后，第一生产性原子是 joint declaration line。",
+      "proved": false,
+      "remaining": "PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple"
+    },
+    {
+      "closed": true,
+      "gate": "JointDeclarationRouteReducedToJointConstructor",
+      "meaning": "joint declaration 与 actual constructor 同步后，硬点变成显式 joint alpha/delta constructor rule。",
+      "proved": false,
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "closed": true,
+      "gate": "JointConstructorRouteReducedToAlphaSide",
+      "meaning": "显式 joint rule 的首个生产性字段是 joint alpha-side primitive word/coefficient rule。",
+      "proved": false,
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "closed": true,
+      "gate": "JointAlphaSideReducedToSameRowIdentity",
+      "meaning": "joint alpha-side 的未闭合处是 unsigned word skeleton 与 signed coefficient origin identity 同行同源。",
+      "proved": false,
+      "remaining": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SameRowIdentityReducedToRowLevelTable",
+      "meaning": "same-row 桥接已回收到逐行 clean-core 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "RowLevelTableStillOpen",
+      "meaning": "逐行原始生成表仍未证明，继续内部下钻会进入 seed signed row emitter。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSourceFixedPointImported",
+      "meaning": "signed-source 下钻链已登记为 RowLevel -> ... -> RowLevel 固定点。",
+      "proved": true,
+      "remaining": "不能用固定点自证 row-level 表。"
+    },
+    {
+      "closed": true,
+      "gate": "CoordinateSourceCycleGuardImported",
+      "meaning": "坐标、source tuple、basis word、assignment、origin identity 的来源环已被守卫识别。",
+      "proved": true,
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "JointAlphaSignedSourceRouteIsFixedPoint",
+      "meaning": "cycle-cut/joint-alpha 线与 signed-source 线同步后回到同一个 RowLevel 固定点。",
+      "proved": true,
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalCycleGuardAlreadyPinsDescentNeed",
+      "meaning": "终端家族循环守卫已说明 direct PDEC/CleanKLS 裸路线会自回流，必须给 well-founded descent 或 canonical-lock。",
+      "proved": false,
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalDescentSchemaClosedButLeafOpen",
+      "meaning": "无隐藏循环 schema 已闭合，但叶子防火墙与 noncanonical full-S 合法模式仍未排斥。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "meaning": "当前只完成固定点同步和下一非循环硬点定位，尚未得到终端矛盾。",
+      "proved": false,
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coordinate-source-cycle-guard-router.json": "aef259753937f9d64167d4c7478a6ab2c410d2f1f9d9474fb0e876619b517a29",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-cycle-guard-router.json": "a9a73eff97f26a433496a9923c8a3ad0bca38f7afdaa27d3bbbae6df8ebd9f99",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-descent-firewall-router.json": "983fc82922a3715afc3896388e2fccf5baaf702fbccff57018d674bc55f1ae0b",
+    "docs/monograph/prime-matrix-strict-cycle-cut-joint-basis-coefficient-emitter-router.json": "d422efc8aa59f16b9275498f5d091916fa3fdbd310bbc7463d9f42bc3e88c333",
+    "docs/monograph/prime-matrix-strict-joint-alpha-same-row-origin-identity-router.json": "f0d11204c5ed939ce0081991a49bdb2335240a69676c872bf8bcc96bfb4df66b",
+    "docs/monograph/prime-matrix-strict-joint-alpha-side-word-coefficient-rule-router.json": "6f19bffe8c95ca7879e462c3334714769db3400ed98a08ce3490f76631cc46af",
+    "docs/monograph/prime-matrix-strict-joint-declaration-constructor-sync-router.json": "dbca8167a10b42d83c9734c13100d6376b5f91a905d2ebd3f5c9b8621ada1401",
+    "docs/monograph/prime-matrix-strict-joint-emitter-formula-field-atom-router.json": "c90a834b01badfa0462f3499e347ff99aa2341ee62bb288787db6eca3e9b3463",
+    "docs/monograph/prime-matrix-strict-joint-explicit-alpha-delta-rule-sync-router.json": "adf3886063960c89004c769f0e2b7804edf8ea4fb5d71ee71cb4d12fd2bfbe48",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78",
+    "docs/monograph/prime-matrix-strict-signed-source-cycle-frontier-sync-router.json": "58438c112b5b3b012ba4986a8e5b77a321dfac083b99bba5c866077b35232cc8",
+    "docs/monograph/prime-matrix-strict-signed-source-fixed-point-breaker-router.json": "83a0302ea13debb5c712730c26c17e1c06c7d18693bcd0999bd055e2852b1e16"
+  },
+  "status": "joint_alpha_cycle_cut_route_synced_to_signed_source_fixed_point_terminal_descent_open",
+  "synchronized_route": [
+    {
+      "from": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput",
+      "to": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy"
+    },
+    {
+      "from": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy",
+      "to": "PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple"
+    },
+    {
+      "from": "PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple",
+      "to": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "from": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple",
+      "to": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "from": "JointAlphaSidePrimitiveWordCoefficientRuleLedger",
+      "to": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "from": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "from": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "to": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "from": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+      "to": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "from": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+      "to": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "from": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+      "to": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "from": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+      "to": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "from": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+      "to": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "from": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment",
+      "to": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "from": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility",
+      "to": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "from": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility",
+      "to": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "from": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters",
+      "to": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "from": "AcyclicSeedSignedWeightCoordinateSlotLedger",
+      "to": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "from": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+      "to": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "from": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+      "to": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "from": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula",
+      "to": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "from": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    }
+  ],
+  "terminal_gap_after_router": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
