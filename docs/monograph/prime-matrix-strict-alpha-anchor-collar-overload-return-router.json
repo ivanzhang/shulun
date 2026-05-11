@@ -1,0 +1,137 @@
+{
+  "alpha_formula_anchor_collar_overload_named_return_exclusion_proved": false,
+  "alpha_formula_anchor_collar_overload_named_return_ledger_closed": true,
+  "alpha_formula_anchor_collar_overload_named_return_proved": false,
+  "alpha_formula_anchor_collar_overload_return_router_closed": true,
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "certificate_type": "prime_matrix_strict_alpha_anchor_collar_overload_return_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_tail_log4_finite_rankin_full_ledger_independent_acceptance_proved": false,
+  "empirical_absence_not_used": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "no_theorem_switch": true,
+  "overload_routes": [
+    {
+      "case": "persistent short-fiber saturation",
+      "route": "AnchorFiberSaturationPDECOrSAEReturn -> PDEC/SAE named schema"
+    },
+    {
+      "case": "endpoint phase defect",
+      "route": "AnchorCollarEndpointDefectPDECExclusion -> low-mod finite phase OR tail-core/fiber saturation"
+    },
+    {
+      "case": "isolated sparse fiber escape",
+      "route": "LocalSurvivor/SAE packet -> GlobalPDECorSparseTerminalExclusion"
+    },
+    {
+      "case": "fixed column displacement reuse",
+      "route": "ColumnCRT / refined PDEC -> GlobalPDECorSparseTerminalExclusion"
+    },
+    {
+      "case": "diffuse residual after no finite signature",
+      "route": "internal CleanKLS/DLS admission -> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    }
+  ],
+  "parallel_required_inputs": [
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "plain_conclusion": "`AlphaFormulaAnchorCollarOverloadNamedReturnLedger` 已作为命名回流 schema 闭合：短纤维饱和、端点相位缺陷、孤立 sparse escape 与固定位移复用都不能形成 anchor 专属第四出口，只能进入 PDEC/SAE/ColumnCRT/LocalSurvivor/CleanKLS 的已登记终端门。但终端门本身仍未排斥；下一主攻点回到 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`，并保留 `ExplicitModelGapAndFiniteDPRCLedger` 与 DStructure/Rankin 验收。",
+  "return_law": "Anchor-collar overload is a named-return schema, not a new source of signed alpha coefficients. Persistent short-fiber saturation, endpoint phase defects, sparse escapes and fixed column reuse all have registered PDEC/SAE/ColumnCRT/LocalSurvivor routes; after the global terminal split their exclusion is exactly the PDEC-CAP or internal CleanKLS/DLS terminal problem, plus the explicit model-gap and DStructure gates.",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理早期零行反例链强制出的 anchor-collar 过载，不用真实样本缺席替代排斥。",
+      "proved": true,
+      "remaining": "row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorCollarOverloadTargetActive",
+      "meaning": "carry-shell 同余 row 公式闭合后，下一最窄点是短纤维满载或公式过载的命名回流纪律。",
+      "proved": false,
+      "remaining": "AlphaFormulaAnchorCollarOverloadNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalAnchorCollarImported",
+      "meaning": "最小高素 anchor 已被限制到 x<q<sqrt((x+1)P)，固定 q 后 cofactor 位于短素数纤维。",
+      "proved": true,
+      "remaining": "过载必须发生在有限 formal-unit fiber 上。"
+    },
+    {
+      "closed": true,
+      "gate": "SurvivorIdentityImported",
+      "meaning": "R_x 被无损分解为 prime survivors 与 canonical semiprime fibers；纤维覆盖失败等价于素数幸存为零或命名缺陷。",
+      "proved": true,
+      "remaining": "PrimeSurvivorLowerBoundOrPDECSAEColumnReturn"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointLowTailDichotomyImported",
+      "meaning": "若过载表现为端点强负缺陷，则已拆成低模有限 CRT 相位坏集与高模 tail-core/fiber saturation。",
+      "proved": true,
+      "remaining": "AnchorCollarEndpointDefectPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "FiberSaturationNamedReturnSchemaImported",
+      "meaning": "固定 q 的短纤维近饱和没有 anchor 专属第四出口：持久进 PDEC，孤立进 LocalSurvivor/SAE。",
+      "proved": true,
+      "remaining": "AnchorFiberSaturationPDECOrSAEReturn"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalPDECorSparseSplitImported",
+      "meaning": "PDEC/SAE/ColumnCRT/LocalSurvivor 终端已调和为全局 PDEC-CAP 或内部 CleanKLS/DLS 大筛门。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentMaterializedTerminalFrontierImported",
+      "meaning": "当前已物化终端前沿清零；未来过载必须提交显式同 formal unit schema，而不是无名出口。",
+      "proved": true,
+      "remaining": "future explicit schema discipline。"
+    },
+    {
+      "closed": true,
+      "gate": "NoAnchorSpecificOverloadExit",
+      "meaning": "anchor-collar 过载不能作为独立剩余停留；它只会生成 PDEC/SAE/ColumnCRT/LocalSurvivor/CleanKLS 命名终端。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorCollarOverloadNamedReturnLedgerClosedAsSchema",
+      "meaning": "目标 ledger 作为命名回流 schema 已闭合：过载有登记出口且没有未命名第四类。",
+      "proved": true,
+      "remaining": "终端排斥仍未完成。"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalExclusionStillOpen",
+      "meaning": "本步不证明 PDEC-CAP、内部 CleanKLS/DLS、模型余量或 DStructure/Rankin；它只把 anchor 过载送入这些门。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-collar-survivor-identity-router.json": "827be0e193ab1e0986ac3b9fd6f22c9dfaddf22dd10a2c4277e333a3654f6b57",
+    "docs/monograph/prime-matrix-anchor-endpoint-lowmod-tail-router.json": "9e44366b4e55c88e0c65f4f70299e9458c50267c0b082a960edebd868c48b2e9",
+    "docs/monograph/prime-matrix-anchor-fiber-saturation-return-schema-router.json": "6e7d174d6649f03d695ac95a003085dca32c2b6254448aab859e9e6edc7fa8c5",
+    "docs/monograph/prime-matrix-early-zero-anchor-collar-router.json": "3f218f902460950075e2477ad50596dfafab7c4611d5c4830045bb4003e54546",
+    "docs/monograph/prime-matrix-final-input-firewall-boundary-router.json": "b8db63a47643fdf9b98e860c8e81eec6de92377e87118b274f9ccf63f0008b7b",
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078",
+    "docs/monograph/prime-matrix-strict-alpha-carry-shell-congruence-formula-router.json": "e14fbe40cc8deea93426e43cb5f76ad32d7866365eb23af2de1150715498bd22"
+  },
+  "status": "strict_alpha_anchor_collar_overload_return_schema_closed_terminal_gap_open",
+  "terminal_gap_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "terminal_gap_before_router": "AlphaFormulaAnchorCollarOverloadNamedReturnLedger"
+}
