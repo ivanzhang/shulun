@@ -1,0 +1,132 @@
+{
+  "acyclic_seed_basis_weight_source_formula_router_closed": true,
+  "acyclic_seed_internal_arithmetic_basis_expansion_proved": false,
+  "acyclic_seed_precauchy_basis_weight_source_formula_proved": false,
+  "acyclic_seed_primitive_row_signed_coefficient_law_proved": false,
+  "basis_expansion_fields": [
+    {
+      "field": "basis_alphabet",
+      "meaning": "seed 内部允许的 pre-Cauchy 算术基函数/筛权字母表。"
+    },
+    {
+      "field": "coefficient_assignment",
+      "meaning": "每个 basis word 到 primitive row signed coefficient 的赋值公式。"
+    },
+    {
+      "field": "truncation_layer_rule",
+      "meaning": "截断层、相位层和 branch layer 的确定性规则。"
+    },
+    {
+      "field": "noncanonical_scope_certificate",
+      "meaning": "证明该展开属于 actual noncanonical seed，不偷用 canonical RIW/Buchstab。"
+    },
+    {
+      "field": "pre_cauchy_identity",
+      "meaning": "展开在 Cauchy/dispersion/Phi 前已经等于目标 alpha/delta 系数。"
+    },
+    {
+      "field": "failure_return",
+      "meaning": "缺字母、零赋值、作用域冲突或超预算时命名回流。"
+    }
+  ],
+  "basis_source_requires_internal_arithmetic_expansion": true,
+  "canonical_riw_not_importable": true,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_basis_weight_source_formula_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "external_spectral_does_not_emit_basis": true,
+  "frontier_reduction": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows 不能从 canonical、generic WFD、外部谱、零行覆盖、payment 原像或 source tuple 容器导出；它必须提交 `AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy`。",
+  "generic_wfd_not_basis_source": true,
+  "next_direct_attack_target": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步把 basis weight source formula 继续压到 seed 内部 pre-Cauchy 算术基展开。这张展开必须给出 basis alphabet、coefficient assignment、截断/相位层规则、noncanonical 作用域证书、推前前恒等式和失败回流。当前材料没有该内部基展开，因此当前仍只是更精确地定位破坏输入，还没有形成无条件矛盾。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "BasisWeightSourceTargetActive",
+      "meaning": "上一层已把 primitive coefficient law 压到 seed 内部 basis weight source formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "BasisSourceRequiresInternalArithmeticExpansion",
+      "meaning": "basis weight source 不能只是 source tuple 字段名；必须给出 seed 内部 pre-Cauchy 算术基展开。",
+      "proved": true,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalRIWNotImportable",
+      "meaning": "canonical RIW/Buchstab 只在 canonical-source 分支内有作用域，不能跨入 actual noncanonical seed。",
+      "proved": true,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDNotBasisSource",
+      "meaning": "generic WFD 或形式 well-factorable 条件不是 primitive row 的原始 basis weight source。",
+      "proved": true,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralDoesNotEmitBasis",
+      "meaning": "外部谱估计处理给定系数后的平均，不生成 seed 内部 basis expansion。",
+      "proved": true,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowAndPaymentReverseBlocked",
+      "meaning": "早期零行覆盖和 payment 原像都不能反向产生 basis expansion。",
+      "proved": true,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitSourceTupleContainersInsufficient",
+      "meaning": "formal-unit/source-tuple 容器只给参数与哈希，不给 basis alphabet 或 coefficient assignment。",
+      "proved": false,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonInsufficientForBasisExpansion",
+      "meaning": "unsigned row skeleton 可定位候选几何行，但不定义 seed 的算术基展开。",
+      "proved": false,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicSeedInternalArithmeticBasisExpansionCurrentCorpusProved",
+      "meaning": "当前材料没有提交 actual noncanonical seed 的内部 pre-Cauchy 算术基展开。",
+      "proved": false,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": false,
+      "gate": "BasisWeightSourceFormulaCurrentCorpusProved",
+      "meaning": "没有内部算术基展开，basis weight source formula 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.json": "a4e7b79a90a21e338213ee982a87b8c4caf59b73aa832f740a45dab59b1dabb4",
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-triad-a1-canonical-riw-support-router.md": "aad1216d4df4ba46d6d0aac0dfc68167d9e44b29196077f5bf49c682c488949e"
+  },
+  "status": "acyclic_seed_basis_weight_source_reduced_to_internal_arithmetic_basis_expansion_open",
+  "target_input_before_router": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+  "terminal_return_if_no_basis_expansion": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+}
