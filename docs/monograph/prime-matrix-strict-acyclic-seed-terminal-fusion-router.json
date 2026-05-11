@@ -1,0 +1,142 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_seed_terminal_fusion_router",
+  "status": "strict_acyclic_seed_independent_input_removed_terminal_family_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "seed_exists_branch_covered_by_terminal_family": true,
+  "seed_absent_branch_returned_to_terminal_family": true,
+  "independent_identity_not_fourth_exit": true,
+  "acyclic_pre_cauchy_seed_independent_input_removed": true,
+  "acyclic_pre_cauchy_seed_proved": false,
+  "strict_acyclic_terminal_family_proved": false,
+  "self_contained_mertens_tail_proved": false,
+  "self_contained_dstructure_rankin_replacement_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "terminal_gap_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "strict_self_contained_math_basis_before_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "strict_self_contained_math_basis_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "with_external_mertens_high_tail_removed_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicTerminalFamilyThreeAtomDirectAttack",
+    "terminal_three_atom": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+    "priority_order": [
+      "DirectAcyclicSameSetPDECCapDualCertificate",
+      "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+      "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    ],
+    "must_prove": [
+      "在同一坏窗集合和同一 formal unit 下证明 direct acyclic PDEC 对偶容量证书",
+      "或证明 diffuse clean residual 的 direct acyclic KLS/DLS 吸收并把失败命名回流",
+      "若改用 canonical-lock，必须证明同集推前、无 payload 残留和有限因子图",
+      "继续保持 seed 存在/不存在两支都覆盖",
+      "保留高段尾项与 DStructure/Rankin 替代包的独立状态"
+    ],
+    "cannot_use_as_proof": [
+      "把 seed 融合误写成 seed 已证明存在",
+      "从 unsigned 早期零行覆盖图反推出 signed source seed",
+      "把 canonical-source 终端闭合直接导入 acyclic noncanonical 分支",
+      "把当前已物化样本清零当作全局终端家族排斥",
+      "把外部谱定理或外部 Mertens/theta 当作 strict 自足证明"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "SeedAndTerminalBothActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层 strict 基同时含 acyclic pre-Cauchy seed 与 acyclic terminal family。",
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在假设早期零行反例链内做分支覆盖，不使用真实零行缺席。",
+      "remaining": "所有 seed 缺失或 seed 下游失败必须进入命名终端家族。"
+    },
+    {
+      "gate": "SeedExistsBranchCovered",
+      "closed": true,
+      "proved": true,
+      "meaning": "若反例链确有合法 acyclic pre-Cauchy seed，则 ExactUV/pair-mass/NC-BLK 路由已把失败对象接回终端家族。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "SeedAbsentBranchReturned",
+      "closed": true,
+      "proved": true,
+      "meaning": "若反例链不能给出 seed，来源环切断与早期零行 seed no-go 已禁止 clean-core 偷渡，强制回流 PDEC/SAE/ColumnCRT/CleanKLS。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "IndependentIdentityNotFourthExit",
+      "closed": true,
+      "proved": true,
+      "meaning": "独立 pre-Cauchy 来源恒等式已被分类：canonical scoped、generic rejected、external not-self-contained，actual 分支回到 moving-block/NC-BLK。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "MovingBlockReturnImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "actual moving-block/NC-BLK 若出现大原子，已由 moving-block 与 strict NC-BLK 路由接回早期零行/全局终端门。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "SeedNoLongerIndependentConjunct",
+      "closed": true,
+      "proved": true,
+      "meaning": "seed 不是被证明存在，而是通过存在/不存在两支都落入同一终端家族，故可从最终并列输入基中删除。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "AcyclicPreCauchySeedCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前仍没有构造 acyclic pre-Cauchy seed；本步不声称 seed 定理成立。",
+      "remaining": "seed 已变成分支准入门，不再是独立闭合输入。"
+    },
+    {
+      "gate": "StrictAcyclicTerminalFamilyCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "终端家族本身仍未排斥；这是 seed 融合后的真正数学主攻点。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "HighTailCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "若不接受外部 Mertens/theta 定理，高段 PNT/Mertens 自足尾项仍开放。",
+      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "gate": "DStructureRankinCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 替代包仍未自足证明。",
+      "remaining": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage。"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "seed 融合后仍缺终端家族、高段自足尾项或外部接受、DStructure/Rankin 替代包。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.md": "0cbd38f4d56d73a134ee106f50b1fe71d007f4273e00df7cac4c244fc57d451d",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.md": "ba9cacc35cdceb9bacc306202019ffe7bd8ae141ed6c1d9b4510ad77b81f56a6",
+    "docs/monograph/prime-matrix-independent-precauchy-identity-taxonomy-router.md": "34cef7caf18b1c7a2720a2e6a11557e88caccf15e2d1552b94ae4da3f818f28c",
+    "docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.md": "cd9d38119646ecc9b66d701f6a220922e3575ba3834b1a2af30ccf1bf98aa740",
+    "docs/monograph/prime-matrix-strict-acyclic-ncblk-source-antiatom-router.md": "bc1dfd98e6226e864ddb4c8272212c496c74bfc752fd6195d72e7bc6c55fd869",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-attack-router.md": "7e615b4a1d6c31dfe4fb4c5057d3ab1927e3defcc8ae825f156319506cf00329",
+    "docs/monograph/prime-matrix-strict-global-terminal-scope-router.md": "3ef52eea8517c13add6f883f7d7bdfee1a5d2d9aca81e216fdd639fc46e81cc3",
+    "docs/monograph/prime-matrix-strict-high-tail-corpus-reconciliation-router.md": "91ed333cf2b2dd0dfbcc2b09020d2bea1418b026b8038b19e6c4543a42edad9b"
+  },
+  "plain_conclusion": "本步把 `AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn` 从最终并列输入基中删除，但不是证明 seed 存在。理由是严格二分：若假设早期零行反例链能给出合法 seed，则后续 ExactUV、pair-mass、moving-atom 与 NC-BLK 路由已经把失败态接回 acyclic terminal family；若给不出 seed，来源环切断、早期零行 seed no-go 和独立来源恒等式分类又强制它回流同一 PDEC/SAE/ColumnCRT/CleanKLS 终端家族。因此 seed 不再是独立闭合输入，真正剩余收缩为 acyclic terminal family，另加高段 Mertens/PNT 自足尾项与 DStructure/Rankin 替代包。行/列命题仍未无条件闭合。"
+}
