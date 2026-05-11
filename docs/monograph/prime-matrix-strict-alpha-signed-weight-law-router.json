@@ -1,0 +1,125 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_noncanonical_alpha_side_primitive_rule_proved": false,
+  "actual_noncanonical_delta_side_primitive_rule_proved": false,
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "alpha_delta_pairing_compatibility_before_cauchy_proved": false,
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "alpha_signed_weight_law_from_precauchy_arithmetic_identity_proved": false,
+  "alpha_signed_weight_law_router_closed": true,
+  "alpha_weight_law_failure_named_return_proved": false,
+  "alpha_weight_no_zero_row_geometry_or_payment_recovery_proved": false,
+  "alpha_weight_nonzero_sign_local_factor_proved": false,
+  "certificate_type": "prime_matrix_strict_alpha_signed_weight_law_router",
+  "counterexample_assumption_only": true,
+  "deterministic_alpha_primitive_row_emission_map_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "exact_alpha_signed_weight_formula_proved": false,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "explicit_alpha_delta_primitive_constructor_rule_proved": false,
+  "independent_arithmetic_identity_gate_imported": true,
+  "independent_noncanonical_precauchy_arithmetic_identity_statement_proved": false,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger` 被压成独立 noncanonical pre-Cauchy 算术恒等式陈述、精确 alpha signed 权重公式、非零/符号/local factor、禁止零行或 payment 反推、失败命名回流五项。当前最窄点为 `IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger`。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "primitive_rule_nonzero_sign_local_factor_proved": false,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AlphaSignedWeightLawTargetActive",
+      "meaning": "上一层已把当前最窄点固定为 signed alpha 权重必须来自 pre-Cauchy 算术恒等式。",
+      "proved": false,
+      "remaining": "AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentArithmeticIdentityGateImported",
+      "meaning": "早期零行覆盖图不能提供 signed seed；保留义务是独立 pre-Cauchy arithmetic source identity。",
+      "proved": true,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "OriginalCoefficientGenerationAtomImported",
+      "meaning": "pre-Cauchy 来源律已把问题压成 original coefficient generation ledger。",
+      "proved": true,
+      "remaining": "ExactAlphaSignedWeightFormulaLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "PathPartitionCannotSubstituteWeightLaw",
+      "meaning": "路径分割和非零合同必须在 actual coefficient 给定后使用，不能反过来定义权重律。",
+      "proved": true,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowOrPaymentRecoveryBlocked",
+      "meaning": "从零行几何、payment skeleton 或外部估计恢复权重律均被现有 no-go 排除。",
+      "proved": true,
+      "remaining": "AlphaWeightNoZeroRowGeometryOrPaymentRecoveryLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentIdentityStatementCurrentCorpusProved",
+      "meaning": "当前材料尚未陈述并证明 noncanonical clean-core 的独立 pre-Cauchy 算术恒等式。",
+      "proved": false,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "ExactAlphaSignedWeightFormulaCurrentCorpusProved",
+      "meaning": "当前材料尚未给出每条 alpha row 的 signed 权重精确公式。",
+      "proved": false,
+      "remaining": "ExactAlphaSignedWeightFormulaLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaWeightNonzeroSignLocalFactorCurrentCorpusProved",
+      "meaning": "当前材料尚未证明权重非零、符号和 local factor 与 primitive row 同步。",
+      "proved": false,
+      "remaining": "AlphaWeightNonzeroSignLocalFactorLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaWeightNoRecoveryCurrentCorpusProved",
+      "meaning": "当前材料尚未给出形式证书说明该权重律完全独立于零行几何/payment 反推。",
+      "proved": false,
+      "remaining": "AlphaWeightNoZeroRowGeometryOrPaymentRecoveryLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaWeightLawFailureReturnCurrentCorpusProved",
+      "meaning": "当前材料尚未定义恒等式不适用、权重为零、符号冲突或 local factor 缺失的命名回流。",
+      "proved": false,
+      "remaining": "AlphaWeightLawFailureNamedReturnLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaSignedWeightLawCurrentCorpusProved",
+      "meaning": "独立恒等式、权重公式、非零符号局部因子、反推禁用和失败回流五项尚未合取证明。",
+      "proved": false,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND ExactAlphaSignedWeightFormulaLedger AND AlphaWeightNonzeroSignLocalFactorLedger AND AlphaWeightNoZeroRowGeometryOrPaymentRecoveryLedger AND AlphaWeightLawFailureNamedReturnLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-actual-constructor-formula-line-router.json": "ac19ab81150df61902058d6c890195592b25400f04a32562b1fa32b966a89913",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a"
+  },
+  "status": "strict_alpha_signed_weight_law_reduced_to_independent_identity_formula_nonzero_return_open",
+  "terminal_gap_after_router": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND ExactAlphaSignedWeightFormulaLedger AND AlphaWeightNonzeroSignLocalFactorLedger AND AlphaWeightNoZeroRowGeometryOrPaymentRecoveryLedger AND AlphaWeightLawFailureNamedReturnLedger",
+  "terminal_gap_before_router": "AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger",
+  "weight_law": "A signed alpha weight law must be a forward arithmetic identity before Cauchy/dispersion. It cannot be defined by zero-row covering, payment recovery, path partition, or disintegration after the fact.",
+  "zero_row_or_payment_recovery_blocked_imported": true
+}
