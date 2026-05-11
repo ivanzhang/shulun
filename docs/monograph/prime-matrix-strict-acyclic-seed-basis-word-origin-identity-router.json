@@ -1,0 +1,121 @@
+{
+  "acyclic_seed_coefficient_assignment_on_basis_alphabet_proved": false,
+  "basis_word_origin_equals_row_level_generation": true,
+  "basis_word_origin_identity_router_closed": true,
+  "basis_word_signed_coefficient_origin_identity_proved": false,
+  "basis_word_to_signed_coefficient_value_map_formula_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_basis_word_origin_identity_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward` 与既有 primitive summand 来源恒等式会合；真正共同剩余是 `RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`。",
+  "next_direct_attack_target": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+    "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+    "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+  ],
+  "plain_conclusion": "本步把 basis word signed coefficient 来源恒等式接回统一原始生成表。几何 word 和 source tuple 已经命名，但 signed coefficient 的来源必须由逐行 clean-core 原始生成表给出；当前材料仍没有该表。",
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "row_table_fields": [
+    {
+      "field": "basis_word_id",
+      "meaning": "由已闭合几何坐标产生的 primitive basis word 编号。"
+    },
+    {
+      "field": "origin_source_tuple",
+      "meaning": "同 formal-unit pre-Cauchy 来源 tuple。"
+    },
+    {
+      "field": "signed_coefficient",
+      "meaning": "该 basis word/primitive summand 的 signed coefficient 正向公式。"
+    },
+    {
+      "field": "branch_key_uv_sign_local_factor",
+      "meaning": "branch key、u/v map、sign、local factor 和非零条件。"
+    },
+    {
+      "field": "prepushforward_sum_identity",
+      "meaning": "推前前求和等于目标 alpha/delta 系数贡献。"
+    },
+    {
+      "field": "return_tag",
+      "meaning": "缺来源、零因子、超预算、后验依赖或作用域冲突时的回流。"
+    }
+  ],
+  "rows": [
+    {
+      "closed": true,
+      "gate": "BasisWordOriginIdentityTargetActive",
+      "meaning": "上一层已把 basis word value map 压到 signed coefficient 来源恒等式。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ContainersAndGeometricWordsAvailable",
+      "meaning": "formal-unit/source-tuple 和几何 basis word 输入已闭合。",
+      "proved": true,
+      "remaining": "但它们不产生 signed coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "BasisWordOriginEqualsRowLevelGeneration",
+      "meaning": "basis word 来源恒等式与 primitive summand 来源恒等式是同一需求：逐行原始生成表。",
+      "proved": true,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "RowLevelGenerationTableStillOpen",
+      "meaning": "当前材料没有逐 basis word/primitive summand 的 signed coefficient 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "AcyclicSignedEmitterStillOpen",
+      "meaning": "无环 seed signed row emitter 仍缺 primitive row signed coefficient law。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopAndReverseRecoveryBlocked",
+      "meaning": "不能用来源循环、payment 反推或早期零行 unsigned cover 生成来源恒等式。",
+      "proved": true,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": false,
+      "gate": "RowLevelCleanCoreOriginalCoefficientGenerationTableCurrentCorpusProved",
+      "meaning": "当前材料尚未提交 actual noncanonical primitive summands 的逐行原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": false,
+      "gate": "BasisWordSignedCoefficientOriginIdentityCurrentCorpusProved",
+      "meaning": "没有逐行原始生成表，basis word signed coefficient 来源恒等式仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-anchor-input-rule-router.json": "79facaf8c8b0fbf5ce4ff39304895be967192af6ed4125ff41ccc8ea57e4e522",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-value-map-router.json": "e052b6a7cc215c9ad7eb81002edeb995fcc6ef2ce1290dfaf70f642a21de499c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json": "11dc103e15a970f0c4e27a17ca32b757203b5e4fd443d6d40217854fdb5f0fe3",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "basis_word_origin_identity_reduced_to_row_level_generation_table_open",
+  "target_input_before_router": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+  "terminal_return_if_no_row_generation_table": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+}
