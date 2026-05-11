@@ -1,0 +1,142 @@
+{
+  "alpha_formula_anchor_collar_overload_named_return_proved": false,
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "alpha_row_unsigned_skeleton_router_closed": true,
+  "certificate_type": "prime_matrix_strict_alpha_row_unsigned_skeleton_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "AlphaRowAnchorPhaseEmissionFormulaLedger 的 unsigned 骨架部分已经由 source tuple、carry-shell、anchor-collar、P列锚和 layered-wheel 共同关闭；剩余不是几何 row 形状，而是 `AlphaFormulaSignedCoefficientLiftLedger` 与 `AlphaFormulaAnchorCollarOverloadNamedReturnLedger`。",
+  "next_direct_attack_target": "AlphaFormulaSignedCoefficientLiftLedger",
+  "no_theorem_switch": true,
+  "parallel_required_inputs": [
+    "AlphaFormulaAnchorCollarOverloadNamedReturnLedger"
+  ],
+  "plain_conclusion": "本步继续攻当前最窄硬点，并把 alpha row 发射公式拆成已闭合的 unsigned skeleton 与仍开放的 signed 层。source tuple 可复算 A、D0/K/Omega、phase_rule；carry-shell 给出 h,a,b,c 同余骨架；P列锚和层叠轮给出相位兼容字母表；anchor-collar 给出短纤维限制。因此当前真正剩余不是 row 的 unsigned 形状，而是把这个 skeleton 提升为 pre-Cauchy signed alpha primitive coefficient，并排斥或登记短纤维过载回流。",
+  "pointwise_primitive_kernel_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AlphaRowAnchorPhaseTargetActive",
+      "meaning": "逐点 primitive 核表当前优先卡在 alpha row anchor/phase 发射公式。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTupleAnchorPayloadClosed",
+      "meaning": "source tuple 已给出同 formal-unit 的 A、D0/K/Omega、phase_rule 与 hash。",
+      "proved": true,
+      "remaining": "这只锁定输入参数，不给 signed coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "CarryShellUnsignedFormulaClosed",
+      "meaning": "双高因子补洞满足 h=a+b-floor(ab/P), c=ab mod P。",
+      "proved": true,
+      "remaining": "这是 unsigned row 形状公式。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorCollarUnsignedFiberClosed",
+      "meaning": "最小高素 anchor 被限制到 canonical collar，cofactor 位于短素数纤维。",
+      "proved": true,
+      "remaining": "过载仍需命名回流或容量排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "PColumnLayeredPhaseSkeletonClosed",
+      "meaning": "P列锚、圆柱平移和层叠轮筛给出候选 row 的相位字母表。",
+      "proved": true,
+      "remaining": "相位字母表仍是 unsigned/geometric。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedVariableBindingClosed",
+      "meaning": "A、D0/K/Omega、phase_rule 可作为 carry-shell 变量筛选和锚区间过滤的输入。",
+      "proved": true,
+      "remaining": "不产生 signed alpha source measure。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedCongruenceRowSkeletonClosed",
+      "meaning": "carry-shell 同余和 P列距离坐标给出候选 row skeleton 的确定性索引规则。",
+      "proved": true,
+      "remaining": "不证明该 row skeleton 是 pre-Cauchy alpha primitive row。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedPhaseCompatibilityClosed",
+      "meaning": "phase_rule、P列圆柱平移和 layered-wheel 单位类可在同一 source tuple 中登记。",
+      "proved": true,
+      "remaining": "不控制 signed 变差和 branch key。"
+    },
+    {
+      "closed": true,
+      "gate": "SignedCoefficientLiftStillOpen",
+      "meaning": "已有 signed-lift 审查证明：unsigned carry-shell 命中不能自动定义 actual signed alpha source。",
+      "proved": false,
+      "remaining": "AlphaFormulaSignedCoefficientLiftLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorCollarOverloadReturnStillOpen",
+      "meaning": "短纤维过载已被识别为 PDEC/SAE/ColumnCRT/CleanKLS 回流形状，但排斥未证。",
+      "proved": false,
+      "remaining": "AlphaFormulaAnchorCollarOverloadNamedReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaRowAnchorPhaseEmissionFormulaCurrentCorpusProved",
+      "meaning": "unsigned skeleton 已可登记，但完整 alpha row 发射公式还缺 signed lift 与过载回流排斥。",
+      "proved": false,
+      "remaining": "AlphaFormulaSignedCoefficientLiftLedger AND AlphaFormulaAnchorCollarOverloadNamedReturnLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "skeleton_equations": [
+    {
+      "formula": "n_{x,c}=xP+c=P(x+1)-(P-c)=Py-d, 1<=d<P",
+      "name": "P-column distance coordinate",
+      "role": "把行坐标统一放到第 P 列锚点 Py 左侧距离 d。"
+    },
+    {
+      "formula": "h=a+b-floor(ab/P), c=ab mod P",
+      "name": "carry-shell identity",
+      "role": "把双高因子补洞压到带进位壳变量 h,a,b,c。"
+    },
+    {
+      "formula": "S_W(P,y) == S_W(P,2)+P(y-2) mod W",
+      "name": "wheel skeleton shift",
+      "role": "把 P 列锚相位与第一行轮骨架圆柱平移连接。"
+    },
+    {
+      "formula": "x<q<sqrt((x+1)P), m in interval length < P/q <= sqrt(P)",
+      "name": "anchor collar",
+      "role": "把高素 anchor 和 cofactor 限制到短素数纤维。"
+    },
+    {
+      "formula": "phase_rule(d)=true or named phase return",
+      "name": "phase discipline",
+      "role": "source tuple 的相位过滤不能静默删点。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
+    "docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.md": "89adb4e8b44fbc1a46063d29ad9f9e4d6a6db1c322304753284de70b2d79dd7d",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-dprc-cylindrical-layered-wheel-clamp.md": "d5282b1dfcb5831e15fa7ed5f358880f4cce7fbcec43ec5a1b3ad8859fc4631d",
+    "docs/monograph/prime-matrix-early-zero-anchor-collar-router.json": "3f218f902460950075e2477ad50596dfafab7c4611d5c4830045bb4003e54546",
+    "docs/monograph/prime-matrix-early-zero-carry-shell-router.json": "8c3d8d20f74f2f6d7b1c1af5b8c4f8d4e6e098df3dbd8069cd5ed26a5cde3384",
+    "docs/monograph/prime-matrix-pcolumn-anchor-wheel-field.md": "0b3c78a0cb94f64f7df2de4110bed960d664bef981cdf1abb0bde3918cd0b4c5",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-alpha-row-anchor-phase-formula-router.json": "1da61d631c11df13e21c840516701954072e915d348b1ab4fd6bfb2fd3a0c6d8",
+    "docs/monograph/prime-matrix-strict-pointwise-primitive-kernel-table-router.json": "adb8a9e1e05a33dff6a5f5d1dd03cf2a86b8420d49be536c1ddffa77185afae1"
+  },
+  "status": "alpha_row_unsigned_skeleton_closed_signed_lift_and_overload_return_open",
+  "target_input_before_router": "AlphaRowAnchorPhaseEmissionFormulaLedger",
+  "unsigned_carry_shell_congruence_row_skeleton_closed": true,
+  "unsigned_phase_wheel_compatibility_closed": true,
+  "unsigned_source_tuple_carry_shell_binding_closed": true
+}
