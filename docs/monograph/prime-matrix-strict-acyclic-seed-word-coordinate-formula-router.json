@@ -1,47 +1,47 @@
 {
-  "anchor_input_fields": [
-    {
-      "field": "anchor_selection_function",
-      "meaning": "从重构出的 A 或 A=empty 情形中确定 primitive word 坐标输入的选择函数。"
-    },
-    {
-      "field": "window_endpoint_coupling",
-      "meaning": "说明所选 anchor 如何与窗口端点、P/range 和 formal_unit_id 同步。"
-    },
-    {
-      "field": "phase_filter_pullback",
-      "meaning": "把 phase_rule 拉回到 anchor input，而不是只作用于最终 row。"
-    },
-    {
-      "field": "empty_anchor_case",
-      "meaning": "A=empty 或 null 参数族时的 canonical 输入规则和命名回流。"
-    },
-    {
-      "field": "anchor_input_complexity_charge",
-      "meaning": "anchor 选择带来的分支数、相位数和截断数收费。"
-    },
-    {
-      "field": "anchor_input_failure_return",
-      "meaning": "anchor 缺失、选择多值、跨 formal unit 或读后验数据时的回流。"
-    }
-  ],
-  "anchor_input_rule_is_first_coordinate_gate": true,
-  "anchor_input_rule_proved": false,
-  "anchor_set_reconstructed_but_not_selected": true,
+  "anchor_input_rule_proved": true,
+  "anchor_input_rule_was_previous_frontier": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates",
   "basis_word_formula_from_source_tuple_parameters_proved": false,
   "certificate_type": "prime_matrix_strict_acyclic_seed_word_coordinate_formula_router",
+  "coordinate_domain_closed_after_anchor_input": true,
+  "coordinate_remaining_fields": [
+    {
+      "field": "anchor_input_rule",
+      "meaning": "已由 anchor input rule 路由器闭合：逐锚枚举、端点耦合、相位前置过滤和复杂度收费。"
+    },
+    {
+      "field": "dyadic_phase_coordinate_domain",
+      "meaning": "anchor rule 闭合后，D0/K/Omega 与 phase_rule 的输入域可登记。"
+    },
+    {
+      "field": "signed_weight_coordinate_slot",
+      "meaning": "仍缺承载 signed weight、sign、local factor 和 return_tag 的坐标槽证明。"
+    },
+    {
+      "field": "slot_value_formula_dependency",
+      "meaning": "signed 槽位继续依赖 primitive basis word 上的 signed weight/local factor 赋值公式。"
+    },
+    {
+      "field": "coordinate_nonposthoc_certificate",
+      "meaning": "坐标公式仍不得读取 payment、零行覆盖、推前后投影或 terminal extraction 后数据。"
+    },
+    {
+      "field": "coordinate_failure_return",
+      "meaning": "signed 槽位或赋值公式缺失时回流命名终端家族。"
+    }
+  ],
   "counterexample_assumption_only": true,
   "direct_unconditional_contradiction_found": false,
-  "frontier_reduction": "`AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters` 的第一坐标门是 `AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates`：虽然 A 与参数可复算，但必须先说明 primitive basis word 从哪些 anchor/window/phase 输入产生。",
-  "next_direct_attack_target": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates",
+  "frontier_reduction": "`AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters` 的旧前沿 `AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates` 已闭合；当前第一剩余坐标门是 `AcyclicSeedSignedWeightCoordinateSlotLedger`。",
+  "next_direct_attack_target": "AcyclicSeedSignedWeightCoordinateSlotLedger",
   "no_theorem_switch": true,
   "parallel_attack_targets": [
-    "AcyclicSeedDyadicTruncationCoordinateLedger",
-    "AcyclicSeedPhaseCoordinatePullbackLedger",
-    "AcyclicSeedAnchorInputComplexityChargeLedger"
+    "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+    "AcyclicSeedCoordinateNonposthocCertificateLedger",
+    "AcyclicSeedCoordinateFailureReturnLedger"
   ],
-  "plain_conclusion": "本步把 word_coordinate_formula 再压到 anchor_input_rule。目前材料能重构 anchor 集和参数，但没有给出从这些对象选择 primitive word 输入的函数；后续 dyadic、phase、signed 槽位和复杂度收费都依赖这个选择函数。",
-  "reverse_anchor_selection_blocked": true,
+  "plain_conclusion": "本步同步 word_coordinate_formula 前沿：anchor input rule 已由锚区间和多重度账本闭合，因此不再是当前缺口；完整坐标公式的真正剩余是 signed weight coordinate slot。该槽位仍缺 signed weight/local factor 赋值公式，所以 word_coordinate_formula 仍未证明。",
+  "reverse_coordinate_recovery_blocked": true,
   "row_column_unconditional_closed": false,
   "rows": [
     {
@@ -53,62 +53,50 @@
     },
     {
       "closed": true,
-      "gate": "AnchorSetReconstructedButNotSelected",
-      "meaning": "A、D0/K/Omega、phase_rule 可复算，但还没有从 A 选择 primitive word 输入的规则。",
-      "proved": false,
-      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
-    },
-    {
-      "closed": true,
-      "gate": "AnchorInputRuleIsFirstCoordinateGate",
-      "meaning": "没有 anchor input rule，dyadic/truncation coordinate、phase coordinate 和 signed slot 都没有共同输入。",
+      "gate": "AnchorSetAndInputRuleClosed",
+      "meaning": "A、D0/K/Omega、phase_rule 可复算，且 anchor input rule 已由逐锚枚举、端点耦合和相位前置过滤闭合。",
       "proved": true,
-      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
+      "remaining": "anchor 坐标门不再是当前前沿。"
     },
     {
       "closed": true,
-      "gate": "AnchorIntervalCertificateIsNotInputRule",
-      "meaning": "anchor interval 证书给可用区间或枚举边界，不给 primitive word 的 anchor selection function。",
-      "proved": false,
-      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
-    },
-    {
-      "closed": true,
-      "gate": "UnsignedAnchorPhaseNotArithmeticInput",
-      "meaning": "unsigned anchor/phase 公式只服务几何 row 发射，不能替代 pre-Cauchy basis word 的输入选择。",
-      "proved": false,
-      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
-    },
-    {
-      "closed": true,
-      "gate": "BranchBudgetChargesAfterSelection",
-      "meaning": "分支预算可以收费已选择的输入，但不能定义 anchor selection function 本身。",
-      "proved": false,
-      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
-    },
-    {
-      "closed": true,
-      "gate": "ReverseAnchorSelectionBlocked",
-      "meaning": "不能从 payment、推前后投影或早期零行覆盖反选 anchor input。",
+      "gate": "CoordinateDomainAvailableAfterAnchorInput",
+      "meaning": "anchor rule 闭合后，primitive word 的 anchor/dyadic/phase 输入域已可登记。",
       "proved": true,
-      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
+      "remaining": "仍需 signed weight coordinate slot。"
     },
     {
-      "closed": false,
-      "gate": "AnchorInputRuleCurrentCorpusProved",
-      "meaning": "当前材料没有给出从重构 A/窗口/phase 到 primitive word 输入的选择函数。",
+      "closed": true,
+      "gate": "SignedWeightCoordinateSlotIsFirstRemainingGate",
+      "meaning": "完整 word coordinate formula 还必须给 signed weight、sign、local factor 和 return_tag 槽位。",
+      "proved": true,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSlotValueFormulaStillOpen",
+      "meaning": "signed 槽位继续依赖 primitive basis word 上的 signed weight/local factor 赋值公式。",
       "proved": false,
-      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseCoordinateRecoveryBlocked",
+      "meaning": "不能从 payment、推前后投影或早期零行覆盖反推出 signed coordinate slot 或 signed value formula。",
+      "proved": true,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
     },
     {
       "closed": false,
       "gate": "WordCoordinateFormulaCurrentCorpusProved",
-      "meaning": "没有 anchor input rule，完整 word coordinate formula 仍未证明。",
+      "meaning": "anchor/dyadic/phase 坐标门已同步闭合；因 signed weight coordinate slot 未证明，完整 word coordinate formula 仍未证明。",
       "proved": false,
       "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
     }
   ],
   "same_theorem_target_preserved": true,
+  "signed_weight_coordinate_slot_proved": false,
+  "signed_weight_slot_value_formula_proved": false,
   "source_hashes": {
     "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json": "7b3e7de7760295bb4e328cb2b82345c3b7053d1a54b37c88260e3f21a09f7ab1",
     "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
@@ -117,14 +105,16 @@
     "docs/monograph/prime-matrix-concrete-anchor-interval-enumeration-router.json": "8226824c34befd9dcf63546bcca75afc9c557599c2ec1a795ebb7fd2d0ed41f4",
     "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
     "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-anchor-input-rule-router.json": "79facaf8c8b0fbf5ce4ff39304895be967192af6ed4125ff41ccc8ea57e4e522",
     "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-formula-router.json": "e4bbc63659a0348b1f017f78f0cd7d8b00e38ae91380db83d5002448a1955b2e",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-weight-coordinate-slot-router.json": "0150cfc80fdde353d31c03700be96db1badfbea3f13c4d58e8260cef4901efbf",
     "docs/monograph/prime-matrix-strict-alpha-row-anchor-phase-formula-router.json": "1da61d631c11df13e21c840516701954072e915d348b1ab4fd6bfb2fd3a0c6d8",
     "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87"
   },
   "source_tuple_to_primitive_basis_word_constructor_proved": false,
-  "status": "word_coordinate_formula_reduced_to_anchor_input_rule_open",
+  "status": "word_coordinate_formula_anchor_closed_reduced_to_signed_weight_coordinate_slot_open",
   "target_input_before_router": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters",
-  "terminal_return_if_no_anchor_input_rule": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "terminal_return_if_no_signed_slot": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
   "word_coordinate_formula_proved": false,
   "word_coordinate_formula_router_closed": true
 }
