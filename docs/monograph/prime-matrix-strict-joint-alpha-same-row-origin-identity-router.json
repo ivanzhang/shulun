@@ -1,0 +1,142 @@
+{
+  "certificate_type": "prime_matrix_strict_joint_alpha_same_row_origin_identity_router",
+  "status": "joint_alpha_same_row_origin_identity_reduced_to_row_level_origin_table_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "joint_alpha_same_row_origin_identity_router_closed": true,
+  "primitive_origin_route_imported": true,
+  "basis_word_origin_route_imported": true,
+  "same_row_table_fields_pinned": true,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "acyclic_seed_signed_row_emitter_rule_proved": false,
+  "joint_alpha_same_row_word_coefficient_origin_identity_proved": false,
+  "joint_alpha_side_primitive_word_coefficient_rule_proved": false,
+  "explicit_joint_alpha_delta_constructor_rule_proved": false,
+  "pre_cauchy_joint_declaration_line_proved": false,
+  "joint_basis_word_coefficient_emitter_proved": false,
+  "acyclic_terminal_return_well_founded_descent_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "target_input_before_router": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward",
+  "next_direct_attack_target": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "downstream_next_after_row_level_table": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+  "terminal_return_if_no_row_table": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "strict_basis_after_router": "((RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance); if RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands is attacked internally, next atom is AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+  "same_row_table_fields": [
+    {
+      "field": "same_row_id",
+      "meaning": "同一 actual noncanonical primitive row 的唯一编号。"
+    },
+    {
+      "field": "basis_word_id",
+      "meaning": "由 carry-shell/anchor/phase skeleton 绑定的 primitive basis word。"
+    },
+    {
+      "field": "signed_coefficient",
+      "meaning": "该同一行的 signed coefficient 来源公式。"
+    },
+    {
+      "field": "source_tuple_hash",
+      "meaning": "word 与 coefficient 共享同一 formal unit/source tuple。"
+    },
+    {
+      "field": "uv_branch_sign_local_factor",
+      "meaning": "同一行同步输出 exact `(u,v)`、branch key、sign 和 local factor。"
+    },
+    {
+      "field": "prepushforward_identity",
+      "meaning": "同一行在 Phi/payment 推前前参与 alpha/delta 求和恒等式。"
+    },
+    {
+      "field": "return_tag",
+      "meaning": "缺 word、缺 coefficient、零因子、后验读取或跨来源时命名回流。"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "SameRowOriginIdentityTargetActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把 joint alpha-side 规则压成 same-row word/coefficient 来源恒等式。",
+      "remaining": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "gate": "PrimitiveCoefficientOriginRouteImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "primitive summand signed coefficient 来源恒等式已经压到逐行原始生成表。",
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "gate": "BasisWordOriginRouteImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "basis word signed coefficient 来源恒等式也压到同一逐行原始生成表。",
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "gate": "SameRowTableFieldsPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "逐行原始生成表字段包含 basis_word、source tuple、signed coefficient、u/v、sign/local factor 与推前前恒等式。",
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "gate": "UnsignedWordSkeletonAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "unsigned carry-shell/anchor/phase skeleton 可以给 basis word 候选。",
+      "remaining": "它仍需同一 row 上的 signed coefficient 来源。"
+    },
+    {
+      "gate": "FormalUnitSourceTupleContainersReady",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal unit/source tuple 容器可承载 same-row hash。",
+      "remaining": "容器不能替代逐行表。"
+    },
+    {
+      "gate": "ReverseRecoveryBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "payment、零行覆盖、来源环和有限投影不能反推出 same-row 来源恒等式。",
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "gate": "RowLevelOriginTableStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料仍未证明逐行 clean-core 原始生成表。",
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "gate": "SameRowOriginIdentityCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "没有逐行原始生成表，无法证明 word 与 signed coefficient 是同一 pre-Cauchy primitive row。",
+      "remaining": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "gate": "AfterRowTableNextAtomImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "既有 row-level 表证书已说明若继续下钻，下一原子是无环 seed signed row emitter。",
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-joint-alpha-side-word-coefficient-rule-router.json": "6f19bffe8c95ca7879e462c3334714769db3400ed98a08ce3490f76631cc46af",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-origin-identity-router.json": "7ed10b97fc7ee159a7d08b45a0e26afbbedd6db4518e1c00dfb48b5c13de56ad",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4"
+  },
+  "frontier_reduction": "`JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward` 与 primitive summand 来源恒等式、basis word 来源恒等式会合；共同所需对象是 `RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`。",
+  "plain_conclusion": "本步把 joint same-row word/coefficient 来源恒等式回收到统一逐行原始生成表。这张表必须在同一 row 中同时列出 basis_word_id、signed_coefficient、source_tuple_hash、`(u,v)`、branch key、sign/local factor 和推前前恒等式。已有 unsigned skeleton 与 signed origin 路线分别只给两半，不能证明同一行同源；当前逐行表仍未证明。"
+}
