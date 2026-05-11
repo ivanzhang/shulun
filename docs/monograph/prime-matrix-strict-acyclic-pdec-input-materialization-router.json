@@ -1,0 +1,138 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_pdec_input_materialization_router",
+  "status": "acyclic_same_set_pdec_input_materialized_finite_arc_cap_bounds_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "universal_formal_unit_extractor_imported": true,
+  "formal_unit_source_record_imported": true,
+  "hash_stability_imported": true,
+  "terminal_package_compression_imported": true,
+  "registered_capacity_multiplier_discipline_imported": true,
+  "bad_window_set_defined": true,
+  "finite_signature_group_defined": true,
+  "same_count_vector_constructed": true,
+  "acyclic_same_set_pdec_input_materialized": true,
+  "acyclic_pdec_dual_cap_localization_no_fourth_exit_proved": true,
+  "acyclic_finite_arc_cap_mass_bounds_proved": false,
+  "direct_acyclic_same_set_pdec_dual_proved": false,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "direct_pdec_before_router": "AcyclicSameSetPDECInputMaterializationAndMassLedger AND AcyclicPDECDualCapLocalizationAndNoFourthExit AND AcyclicFiniteArcCapMassBoundsOrNamedReturn",
+  "direct_pdec_after_router": "AcyclicFiniteArcCapMassBoundsOrNamedReturn",
+  "terminal_gap_after_router": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicFiniteArcCapMassBoundsOrNamedReturn OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicFiniteArcCapMassBoundsOrNamedReturn OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicFiniteArcCapMassBoundsOrNamedReturn",
+    "must_prove": [
+      "固定 acyclic formal unit G 与同集 count vector g_B 后，列出所有非平凡字符 chi 与有限循环弧 I",
+      "证明 g_B(chi^{-1}(I)) 低于 PDEC 帽定位阈值 (L_PDEC-alpha M)/(1-alpha)",
+      "若某弧超过阈值，必须把该弧物化为 SAE、refined PDEC、ColumnCRT 或 CleanKLS return",
+      "证明有限弧细化不会产生同层无限循环；升层必须进入 new-layer PDEC/CleanKLS 命名路线"
+    ],
+    "cannot_use_as_proof": [
+      "只说 dual cap 存在；dual cap 是失败证书，不是排斥证书",
+      "使用 canonical-source cap 上界覆盖 acyclic/noncanonical formal unit",
+      "在弧质量估计中更换 B、G、g_B 或 M",
+      "把有限实验样本中没有高质量弧当作全局证明"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "AcyclicPDECInputMaterializationActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 direct acyclic PDEC 的首个原子定为同集输入物化与质量账本。",
+      "remaining": "AcyclicSameSetPDECInputMaterializationAndMassLedger。"
+    },
+    {
+      "gate": "UniversalExtractorImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "任意假设早期零行 witness 都可产出有限、无漏、可哈希的 formal unit records。",
+      "remaining": "把这些 records 专门读取为 PDEC count vector。"
+    },
+    {
+      "gate": "FormalUnitRecordSchemaImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个 formal unit record 含 witness、family、window、phase、branch 和 no-loss return 字段。",
+      "remaining": "在 PDEC 分支中指定坏窗集合 B 与有限签名群 G。"
+    },
+    {
+      "gate": "BadWindowSetDefined",
+      "closed": true,
+      "proved": true,
+      "meaning": "对进入 direct PDEC 的 acyclic terminal certificate，取 B 为同一 formal unit 中未命名回流的坏窗义务集合。",
+      "remaining": "无；改变 B 的操作必须变成 return record。"
+    },
+    {
+      "gate": "FiniteSignatureGroupDefined",
+      "closed": true,
+      "proved": true,
+      "meaning": "取 G 为 formal unit key 中的有限相位/签名商；hash stability 保证分割和回流不改名。",
+      "remaining": "无；跨 G 的项必须重新登记或回流。"
+    },
+    {
+      "gate": "SameCountVectorConstructed",
+      "closed": true,
+      "proved": true,
+      "meaning": "定义 g_B(t)=同一 B 内落在签名 t 的坏窗质量总和；U_CRT、L_PDEC、M 均只作用在此 g_B 上。",
+      "remaining": "无；不同 g 的比较被禁止。"
+    },
+    {
+      "gate": "CapacityMultiplierSameSetDisciplinePreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "容量乘子只登记在同一 g_B、同一 M、同一 formal unit 上；阈值迁移需命名回流。",
+      "remaining": "无；只剩容量估计。"
+    },
+    {
+      "gate": "NoLossReturnProtectsMassLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "删除、投影、quotient、重复合并若不保留 g_B，必须显式进入 PDEC/SAE/ColumnCRT/CleanKLS return。",
+      "remaining": "无；这给出 PDEC 输入账本的同集性。"
+    },
+    {
+      "gate": "AcyclicSameSetPDECInputMaterialized",
+      "closed": true,
+      "proved": true,
+      "meaning": "direct acyclic PDEC 的同集输入物化闭合：B、G、g_B、M、U_CRT、L_PDEC 口径固定。",
+      "remaining": "AcyclicPDECDualCapLocalizationAndNoFourthExit。"
+    },
+    {
+      "gate": "DualCapLocalizationNoFourthExitClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限 LP/帽定位给出 dual cap；终端证书压缩保证它只能回流 PDEC/SAE/ColumnCRT/CleanKLS，不能成为第四出口。",
+      "remaining": "仍需证明有限弧 cap 质量上界，或执行这些命名回流。"
+    },
+    {
+      "gate": "FiniteArcCapEstimateStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "真正剩余是对每个 acyclic formal unit、非平凡字符和有限循环弧证明 cap 质量低于阈值，或输出命名回流。",
+      "remaining": "AcyclicFiniteArcCapMassBoundsOrNamedReturn"
+    },
+    {
+      "gate": "DirectAcyclicPDECCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "direct acyclic PDEC 已越过输入物化和 dual-cap 定位，但未完成有限弧 cap 质量估计。",
+      "remaining": "AcyclicFiniteArcCapMassBoundsOrNamedReturn"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-branch-or-direct-pdec-router.md": "dc47ccf68c1cbaf58274344c47316b4287b01281277f49be3427c886279a1610",
+    "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.md": "c570d3a7b37b7df3089659618b19485f730c50d5fc99393fb19ee38f933a48f1",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.md": "d052f3983bce33e34eabb08cf882edeebc3035f9ab0008850b482a7a0ad8162c",
+    "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.md": "570aa7c39dc8bcbb02743432ca5a62b6c9b6f5553928296fcf44d21b478a66ac",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.md": "59dbffdc406556c93344cb968499b3434dbe601f6907cdd9a513a5d5663ae443",
+    "docs/monograph/prime-matrix-terminal-certificate-package-compression-router.md": "3723a00255be3a63a9939d96c65e440074e26ecc8f912b398dbf9c80e0d15433",
+    "docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.md": "448b66c41b3dbda24bda8f810bffa1b4fb74131f6ddfb8b8c830c4f5082b38c2",
+    "docs/monograph/prime-matrix-pdec-cap-uniform-cap-finite-basis-router.md": "9902f9c083fc7f4675f2b7d7fa1554c5a202d5e4ac6f1908dfba15e67aa63445"
+  },
+  "plain_conclusion": "本步关闭 direct acyclic PDEC 的首个输入物化硬点：由普遍 formal unit 抽取、source record schema、hash stability、no-loss return 和容量乘子纪律，可在假设早期零行分支中定义同一坏窗集合 B、有限签名群 G、同一 count vector g_B 与同一质量 M。有限 LP/帽定位和终端证书压缩也关闭了 dual-cap 无第四出口。direct PDEC 的真正剩余因此压成一个原子：AcyclicFiniteArcCapMassBoundsOrNamedReturn。"
+}
