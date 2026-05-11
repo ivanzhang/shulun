@@ -1,0 +1,135 @@
+{
+  "acyclic_seed_internal_arithmetic_basis_expansion_proved": false,
+  "basis_word_formula_from_source_tuple_parameters_proved": false,
+  "basis_word_formula_is_first_open_field": true,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_source_tuple_word_constructor_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "formula_fields": [
+    {
+      "field": "parameter_domain",
+      "meaning": "公式允许读取的 source tuple 字段：A、D0、K、Omega、phase_rule、窗口端点和 formal_unit_id。"
+    },
+    {
+      "field": "word_coordinate_formula",
+      "meaning": "把 source tuple 参数变成 primitive basis word 坐标的闭式公式或确定性递推。"
+    },
+    {
+      "field": "arithmetic_weight_slot",
+      "meaning": "word 中承载 signed local factor、筛权来源和截断层的槽位。"
+    },
+    {
+      "field": "no_post_payment_input",
+      "meaning": "公式不得读取 Cauchy、dispersion、payment、零行覆盖或 terminal extraction 后的数据。"
+    },
+    {
+      "field": "formula_failure_return",
+      "meaning": "公式未定义、多值、读到后验数据或跨作用域时的命名回流。"
+    }
+  ],
+  "frontier_reduction": "`AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility` 的输入 source tuple 已有字段和哈希纪律；真正首缺口是 `AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility`。也就是说，需要一条只读取 source tuple 参数、发生在 Cauchy/payment 前、能输出 primitive basis word 坐标的公式。",
+  "input_source_tuple_closed": true,
+  "next_direct_attack_target": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility",
+  "no_theorem_switch": true,
+  "noncanonical_precauchy_basis_alphabet_ledger_proved": false,
+  "parallel_attack_targets": [
+    "AcyclicSeedPreCauchyOrderCertificateForBasisWordFormula",
+    "AcyclicSeedNonposthocWordConstructorUniquenessLedger",
+    "AcyclicSeedWordConstructorFailureReturnLedger"
+  ],
+  "plain_conclusion": "本步把 source tuple -> primitive basis word constructor 继续压到 basis_word_formula。现有账本已经锁定输入参数，但没有把 A、D0/K/Omega、phase_rule 等参数变成 primitive basis word 的算术公式；下游 unsigned skeleton、alpha/delta rule 和 payment/零行反推都不能补这个公式。",
+  "post_payment_and_zero_row_inputs_rejected": true,
+  "primitive_basis_word_set_generation_rule_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SourceTupleWordConstructorTargetActive",
+      "meaning": "上一层已把 primitive basis word 生成规则压到 source tuple 到 word constructor。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "InputSourceTupleClosed",
+      "meaning": "formal unit/source tuple 的输入字段、锚集合、D0/K/Omega、phase_rule 与 hash 已锁定。",
+      "proved": true,
+      "remaining": "输入对象不是当前首缺口。"
+    },
+    {
+      "closed": true,
+      "gate": "BasisWordFormulaIsFirstOpenField",
+      "meaning": "constructor 的真正首字段是 basis_word_formula；没有公式，pre-Cauchy 顺序证书和唯一性都无对象。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "SchemaParametersAreNotFormula",
+      "meaning": "A、D0、K、Omega、phase_rule 是参数，不是从参数到 primitive basis word 的算术映射。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLawSpecificationNotFormula",
+      "meaning": "pre-Cauchy source law 规定必须有来源公式和回流纪律，但不提供 word_coordinate_formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "ActualNoncanonicalConstructorFormulaStillMissing",
+      "meaning": "actual noncanonical primitive constructor formula/admission 尚未证明，不能推出 basis word formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "DownstreamRowAndAlphaDeltaRulesCannotDefineFormula",
+      "meaning": "unsigned row skeleton 与 alpha/delta rule 都在 word 或 primitive row 已生成后使用，不能倒置成 formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "PostPaymentAndZeroRowInputsRejected",
+      "meaning": "basis_word_formula 不能读 payment 原像、推前后投影或早期零行覆盖，否则是后验选择循环。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": false,
+      "gate": "BasisWordFormulaFromSourceTupleParametersCurrentCorpusProved",
+      "meaning": "当前材料没有提交从 source tuple 参数到 primitive basis word 坐标的闭式公式或确定性递推。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": false,
+      "gate": "SourceTupleToPrimitiveBasisWordConstructorCurrentCorpusProved",
+      "meaning": "没有 basis_word_formula，constructor 的顺序证书、非后验唯一性和失败回流仍未合取闭合。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "schema_parameters_are_not_formula": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-origin-source-admission-router.json": "9e4ba4451beaa9fb46e7bce4eeab74dc9edcb62a60d08af58b038222cc07c3c3",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-basis-word-generation-router.json": "b3db77f03ae13172aaa975271a89f5f80aa7d5254b7dac12c3a4886edbd1da6e",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-explicit-alpha-delta-rule-router.json": "2de491d0a24986746199d7c96965b56f444643bf6aa15074bd705d7bf544531c"
+  },
+  "source_tuple_to_primitive_basis_word_constructor_proved": false,
+  "source_tuple_word_constructor_router_closed": true,
+  "status": "source_tuple_word_constructor_reduced_to_basis_word_formula_open",
+  "target_input_before_router": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility",
+  "terminal_return_if_no_basis_word_formula": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+}
