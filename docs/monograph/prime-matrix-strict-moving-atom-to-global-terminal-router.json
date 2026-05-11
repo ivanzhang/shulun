@@ -1,0 +1,109 @@
+{
+  "certificate_type": "prime_matrix_strict_moving_atom_to_global_terminal_router",
+  "status": "strict_moving_atom_reduced_to_global_terminal_and_model_dprc_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "strict_moving_atom_boundary_closed": true,
+  "moving_block_terminal_reduction_imported": true,
+  "early_zero_schema_reconciliation_imported": true,
+  "dprc_compatibility_gate_removed": true,
+  "acyclic_pre_cauchy_seed_proved": false,
+  "clean_core_moving_atom_exclusion_proved": false,
+  "global_pdec_sparse_terminal_exclusion_proved": false,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ActualNoncanonicalCleanCoreMovingAtomExclusion",
+  "terminal_gap_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "GlobalPDECorSparseTerminalExclusion_WITH_ExplicitModelGapAndFiniteDPRC",
+    "must_prove": [
+      "排斥已物化的 persistent primitive PDEC 终端证书，或给出全量 PDEC 容量上界",
+      "排斥 ColumnCRT/位移/endpoint/cofactor 终端证书，或证明其必回流到 PDEC/SAE",
+      "排斥 SAE/LocalSurvivor/sparse packet 终端证书，或提交有限全集 extractor",
+      "闭合 P<2003 有限 DPRC 证书与 P>=2003 模型余量账本",
+      "保持所有步骤在假设早期零行反例链内，不使用真实样本缺席"
+    ],
+    "cannot_use_as_proof": [
+      "把 acyclic source seed 当作 moving atom 排斥",
+      "把 EarlyZeroTerminalExclusionPackage 当作已排斥",
+      "重复引用已删除的 ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock",
+      "把外部 KLS/DI/BFI 作为严格自足证明",
+      "把命名回流 schema 当作终端家族不存在的证明"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "StrictMovingAtomInputActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层严格源侧剩余包含 Acyclic seed 与 ActualNoncanonicalCleanCoreMovingAtomExclusion。",
+      "remaining": "攻击 moving atom 排斥本身。"
+    },
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只在 Assume EarlyZeroRowWithinP 的假设链条内推理，不用真实样本缺席。",
+      "remaining": "所有输出必须是反例链内的命名终端或账本。"
+    },
+    {
+      "gate": "AcyclicSeedOnlyProvidesObject",
+      "closed": true,
+      "proved": true,
+      "meaning": "无环 source seed 只保证 actual source 对象准入；它本身不排斥 moving atom。",
+      "remaining": "moving atom 若存在，必须继续通过终端回流测试。"
+    },
+    {
+      "gate": "MovingBlockTerminalReductionImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "actual same-(u,v) moving block 有低维签名则进 PDEC/SAE/ColumnCRT；无签名则进早期零行终端包。",
+      "remaining": "EarlyZeroTerminalExclusionPackage。"
+    },
+    {
+      "gate": "EarlyZeroPackageReconciledImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "抽象 EarlyZeroTerminalExclusionPackage 已与命名 schema 调和，收缩为 GlobalPDECorSparseTerminalExclusion。",
+      "remaining": "GlobalPDECorSparseTerminalExclusion。"
+    },
+    {
+      "gate": "DPRCCompatibilityImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock 已闭合为接口事实，可删除该兼容性门。",
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger 仍保留为独立账本。"
+    },
+    {
+      "gate": "MovingAtomExclusionReducedToGlobalTerminal",
+      "closed": true,
+      "proved": true,
+      "meaning": "在反例链内，排斥 clean-core moving atom 足以转为排斥全局 PDEC/sparse 终端证书并支付模型账本。",
+      "remaining": "GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger。"
+    },
+    {
+      "gate": "GlobalTerminalCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料尚未无条件排斥已物化的 persistent PDEC、ColumnCRT、SAE/LocalSurvivor 或 sparse packet 终端证书。",
+      "remaining": "GlobalPDECorSparseTerminalExclusion。"
+    },
+    {
+      "gate": "ExplicitModelGapDPRCCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "模型余量/有限 DPRC 账本自身仍未闭合。",
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-pair-mass-dispersion-to-moving-atom-router.md": "069987402b233b5f02b56c4b719947e03b36aeecd39a1fa8d34642294b6203b9",
+    "docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.md": "cd9d38119646ecc9b66d701f6a220922e3575ba3834b1a2af30ccf1bf98aa740",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.md": "addfcc1d27403f96c070d1fdc67aaeb9f43d86117e435ac7386594d88c7ba869",
+    "docs/monograph/prime-matrix-moving-block-dprc-ledger-compatibility-router.md": "3e3b6f675f0cbc154f7bd996a488f8f6dc730409518586d4f6ec23d412ceeb0e",
+    "docs/monograph/prime-matrix-clean-core-terminal-normal-form-router.md": "c1b0979aba5d08c8f9c285031ff433d0805b534390374e9fa0453f24a66a1aae"
+  },
+  "plain_conclusion": "严格 moving-atom 输入已经接回反例链：若 acyclic source seed 下仍存在 clean-core moving atom，它作为 actual same-(u,v) moving block 必须进入已登记的低维签名终端，或无签名 L2-flat 终端包；抽象 EarlyZeroTerminalExclusionPackage 已被后续 schema 调和为 GlobalPDECorSparseTerminalExclusion，而 moving-block 专属 DPRC 兼容门已闭合并可删除。因此 moving atom 排斥不再是当前最窄项；剩余转为 GlobalPDECorSparseTerminalExclusion 与 ExplicitModelGapAndFiniteDPRCLedger，另保留 acyclic source seed 和自足 DStructure/Rankin 替代包。当前仍没有无条件闭合。"
+}
