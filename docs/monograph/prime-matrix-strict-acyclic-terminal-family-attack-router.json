@@ -1,0 +1,116 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_terminal_family_attack_router",
+  "status": "strict_acyclic_terminal_family_reduced_to_canonical_lock_or_direct_dual_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "strict_acyclic_terminal_family_boundary_refined": true,
+  "canonical_promotion_scope_guard_preserved": true,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "direct_acyclic_same_set_pdec_dual_proved": false,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "strict_terminal_family_proved": false,
+  "acyclic_pre_cauchy_seed_proved": false,
+  "self_contained_dstructure_rankin_replacement_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "terminal_gap_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND (AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "with_external_mertens_high_tail_removed_basis": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND (AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicTerminalCanonicalLock_THEN_DirectDualIfLockFails",
+    "first_priority": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+    "fallback_priority": "DirectAcyclicSameSetPDECCapDualCertificate",
+    "parallel_priority": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+    "must_preserve": [
+      "同一 formal unit",
+      "同一坏窗集合",
+      "同一推前质量 U_CRT 与 L_PDEC",
+      "不从真实零行缺席取证",
+      "不把 canonical-source 闭合直接导入 noncanonical 分支"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "StrictAcyclicTerminalFamilyGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层 strict 基的全局终端门是 acyclic noncanonical 口径下的 PDEC-CAP 或内部 CleanKLS。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "GlobalSplitImportedButNotProof",
+      "closed": true,
+      "proved": true,
+      "meaning": "GlobalPDECorSparseTerminalExclusion 已被拆成 PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve。",
+      "remaining": "拆分不是排斥证明，仍需同作用域终端估计。"
+    },
+    {
+      "gate": "CanonicalPromotionAvailableOnlyUnderCanonicalSource",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical-source 分支内 PDEC-CAP/CleanKLS 已可接到 NoFurtherCanonicalSourceTerminalPromotionGap。",
+      "remaining": "不能直接导入 acyclic noncanonical 分支。"
+    },
+    {
+      "gate": "CanonicalImportRequiresLock",
+      "closed": true,
+      "proved": false,
+      "meaning": "若要复用 canonical 闭合，必须证明每个 acyclic terminal certificate 保持同集质量、formal unit 和层转移地嵌入 canonical-source 边界。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary。"
+    },
+    {
+      "gate": "DirectPDECCapAlternativePinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "不走 canonical-lock 时，可直接对 acyclic terminal family 证明同一坏窗集合上的 U_CRT<L_PDEC 对偶证书。",
+      "remaining": "DirectAcyclicSameSetPDECCapDualCertificate。"
+    },
+    {
+      "gate": "DirectCleanKLSAlternativePinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "若 terminal family 为 diffuse clean residual，则必须证明 K1--K9 准入后内部 KLS/DLS 大筛吸收，失败要命名回流 PDEC/SAE/ColumnCRT。",
+      "remaining": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn。"
+    },
+    {
+      "gate": "ExternalDIBFINotStrictSelfContained",
+      "closed": true,
+      "proved": false,
+      "meaning": "generic DI/BFI/Kuznetsov 可作为外部条件线，但不能关闭 strict 自足终端门。",
+      "remaining": "DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY。"
+    },
+    {
+      "gate": "AcyclicTerminalFamilyReducedToThreeAtoms",
+      "closed": true,
+      "proved": false,
+      "meaning": "宽终端门被压成 canonical-lock、直接 PDEC 对偶、直接 CleanKLS 三个互斥主攻方向。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "StrictAcyclicTerminalFamilyCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前仓库尚未证明三者之一，故 strict acyclic terminal family 仍未闭合。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "即便接受外部 Mertens 解析线，完整 strict 链还需 acyclic seed、终端三选一和 DStructure/Rankin 替代门。",
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND (AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-global-terminal-scope-router.md": "3ef52eea8517c13add6f883f7d7bdfee1a5d2d9aca81e216fdd639fc46e81cc3",
+    "docs/monograph/prime-matrix-strict-high-tail-corpus-reconciliation-router.md": "91ed333cf2b2dd0dfbcc2b09020d2bea1418b026b8038b19e6c4543a42edad9b",
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.md": "82ebbe8a74de809c846be0263291151977101cfe8f43325acaa4b8c2b6503aaf",
+    "docs/monograph/prime-matrix-current-terminal-promotion-reconciliation-router.md": "b3c204b438913216fcd114117aad49fafcd817fa666c178e63c43a0d7d54f6a8",
+    "docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md": "77f172170e5621eb8e70a8104f954cc69204c63febb842cd4ccaa74e55fe55ea",
+    "docs/monograph/prime-matrix-pdec-cap-sc9-boundary-reconciliation-router.md": "92e5b863b20d207b66836cdd312d2505a454417f9fb5af30f05b58f9fd5aefab",
+    "docs/monograph/prime-matrix-triad-a1-terminal-confluence-router.md": "f6507d2abb040f1340bd907a2403951a5f3c095d152f1abcc2c340634ec3d8c3",
+    "docs/monograph/prime-matrix-profinite-actual-payment-stitching-router.md": "c157cac7f566cbdc0b282af2cf48ea4e79d4d19a9975cc0db9ba5532fcfb516c"
+  },
+  "plain_conclusion": "本步继续主攻 strict acyclic 终端家族。已有 canonical-source PDEC/CleanKLS 闭合不能直接偷渡；要么证明 acyclic terminal certificates canonical-lock 到 canonical-source 边界，要么直接证明 acyclic 同集 PDEC 对偶，要么直接证明 acyclic clean residual 的内部 KLS/DLS 大筛吸收并把失败命名回流。这把宽口径终端门压成三个可审稿原子，但当前仍未完成其中任何一个。"
+}
