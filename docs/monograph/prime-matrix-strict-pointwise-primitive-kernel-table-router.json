@@ -1,0 +1,120 @@
+{
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "alpha_rule_container_ready": true,
+  "certificate_type": "prime_matrix_strict_pointwise_primitive_kernel_table_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate => AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows. 其中 `AlphaRowAnchorPhaseEmissionFormulaLedger` 是当前优先硬点：没有行发射公式，核表连行集合都没有，后续权重、Phi 推前和 rank/multiplicity 都无法绑定。",
+  "independent_noncanonical_precauchy_arithmetic_identity_statement_proved": false,
+  "next_direct_attack_target": "AlphaRowAnchorPhaseEmissionFormulaLedger",
+  "no_theorem_switch": true,
+  "parallel_required_inputs": [
+    "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger",
+    "SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+  ],
+  "plain_conclusion": "逐点 primitive 核表被进一步压成三项必要输入：alpha row anchor/phase 发射公式、独立 pre-Cauchy signed 权重恒等式、同一表上的 ExactUV rank/multiplicity 证书。当前最窄优先点是 alpha row 发射公式；因为没有它，核表没有可赋权的 row，也无法对齐 Phi 或 `(u,v)` fiber。因此自足路线仍未闭合。",
+  "pointwise_kernel_table_router_closed": true,
+  "pointwise_primitive_kernel_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PointwiseKernelTableTargetActive",
+      "meaning": "上一层已把同 formal-unit 核恒等式压成逐点 primitive alpha/delta 核表。",
+      "proved": false,
+      "remaining": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaRuleContainerReady",
+      "meaning": "alpha 侧规则字段和失败分类已被列出。",
+      "proved": true,
+      "remaining": "仍缺逐行生成和值。"
+    },
+    {
+      "closed": true,
+      "gate": "RowEmissionFormulaMissing",
+      "meaning": "确定性发射映射已拒绝后验选择，但没有 A/D0/K/Omega/phase 到 row 的公式。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedWeightIdentityMissing",
+      "meaning": "signed weight 必须来自独立 pre-Cauchy 算术恒等式；当前只有 no-go 和字段分解。",
+      "proved": false,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVRankMultiplicityMissing",
+      "meaning": "ExactUV/fixed-pair/key partition 路线已定位，但没有同一 primitive 核表上的 rank/multiplicity 证书。",
+      "proved": false,
+      "remaining": "SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "EmitterSourceTableWouldNeedSameRows",
+      "meaning": "emitter/source table 路线也需要相同 primitive rows，不能反过来自证核表。",
+      "proved": false,
+      "remaining": "Pointwise primitive rows first; source table second."
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationNotEnoughWithoutRows",
+      "meaning": "逐纤维解积分只是有 rows 后的求和形式。",
+      "proved": false,
+      "remaining": "先提交逐点核表。"
+    },
+    {
+      "closed": false,
+      "gate": "PointwiseKernelTableCurrentCorpusProved",
+      "meaning": "当前材料没有同时给出行公式、权重恒等式和同表 rank/multiplicity 的逐点核表。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    }
+  ],
+  "same_formal_unit_kernel_identity_proved": false,
+  "same_theorem_target_preserved": true,
+  "same_unit_exact_uv_rank_multiplicity_certificate_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-strict-absolute-fiber-mass-dispersion-router.json": "04aea575c70e9001b04b818cd3ad3d38bc43f2c9fbd6078b521475e5dbe204d2",
+    "docs/monograph/prime-matrix-strict-actual-emitter-source-table-router.json": "e327b1a80aef83a36279378e5892334fa305d92d5ac1bcbb8601eaab2f18ab3e",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8",
+    "docs/monograph/prime-matrix-strict-deterministic-alpha-row-emission-map-router.json": "d980647c15a9fd16b0e4255b5af3f2ce69ab5575dbe0d7a80a8b1ade70b0d177",
+    "docs/monograph/prime-matrix-strict-exact-uv-map-rank-incidence-router.json": "101917e6a573efb2d6c921b2056ac92120e41f1b10ae2549f394ac0fa3d1b54c",
+    "docs/monograph/prime-matrix-strict-fixed-pair-fiber-bound-router.json": "ca413ebdcac1df1baf57319fbfe828d92bc272ef1b326215de5cd514316d49bd",
+    "docs/monograph/prime-matrix-strict-same-formal-unit-kernel-identity-attack-router.json": "35260c13e9ffb8d39ce9a61db6f1c2cffbd6cf172690b7aa2b2c8ce26e26a6c0"
+  },
+  "status": "pointwise_primitive_kernel_table_reduced_to_row_formula_weight_identity_rank_certificate_open",
+  "table_axioms": [
+    {
+      "axiom": "row_existence",
+      "meaning": "每个 source tuple 发射有限、有序的 alpha/delta primitive rows。"
+    },
+    {
+      "axiom": "weight_value",
+      "meaning": "每行 signed weight 来自独立 pre-Cauchy 算术恒等式。"
+    },
+    {
+      "axiom": "uv_phi_sync",
+      "meaning": "每行同时输出 exact `(u,v)` 与 Phi/payment atom，且符号和重数同口径。"
+    },
+    {
+      "axiom": "nonzero_local_factor",
+      "meaning": "local factor 非零；零权重、符号冲突和未登记项命名回流。"
+    },
+    {
+      "axiom": "rank_multiplicity",
+      "meaning": "同一表上证明 `(u,v)` fiber 的 bounded multiplicity/rank 或分散。"
+    },
+    {
+      "axiom": "same_unit_no_recovery",
+      "meaning": "全部字段都在同一 formal unit 中正向给出，不从 payment/零行/终端门反向恢复。"
+    }
+  ],
+  "target_input_before_router": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+}
