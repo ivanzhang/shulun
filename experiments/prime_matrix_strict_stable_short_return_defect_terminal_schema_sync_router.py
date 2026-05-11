@@ -31,6 +31,8 @@ HIGH_MODEL_GAP = "HighSegmentModelGapAlpha043C3AnalyticLedger"
 DSTRUCTURE = "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
 ACYCLIC_SEED = "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn"
 CANONICAL_LOCK = "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+CANONICAL_EXACT_CERT = "AcyclicCanonicalExactSameSetPromotionCertificate"
+NEW_ACTUAL_SOURCE_ENTROPY = "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
 INDEPENDENT_NONTERMINAL_ENTROPY = (
     "IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
 )
@@ -52,6 +54,8 @@ SOURCE_FILES = [
     MONOGRAPH / "prime-matrix-strict-alpha-terminal-to-acyclic-cycle-guard-sync-router.json",
     MONOGRAPH / "prime-matrix-strict-independent-actual-source-bridge-concrete-atom-sync-router.json",
     MONOGRAPH / "prime-matrix-strict-source-admission-branch-absorption-router.json",
+    MONOGRAPH / "prime-matrix-strict-canonical-lock-nonrecursive-exit-attack-router.json",
+    MONOGRAPH / "prime-matrix-strict-canonical-lock-branch-absorption-router.json",
     MONOGRAPH / "prime-matrix-strict-exact-entropy-source-law-firewall-router.json",
     MONOGRAPH / "prime-matrix-strict-new-actual-source-entropy-fixed-point-firewall-router.json",
 ]
@@ -104,6 +108,8 @@ def sync_rows(
     alpha_cycle_guard: dict[str, Any],
     source_bridge: dict[str, Any],
     source_admission: dict[str, Any],
+    canonical_lock_exit: dict[str, Any],
+    canonical_branch_absorption: dict[str, Any],
     exact_entropy_firewall: dict[str, Any],
     entropy_fixed_point: dict[str, Any],
 ) -> list[dict[str, Any]]:
@@ -202,11 +208,27 @@ def sync_rows(
         },
         {
             "gate": "ExactEntropySourceLawFirewallImported",
-            "closed": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+            "closed": NEW_ACTUAL_SOURCE_ENTROPY
             in exact_entropy_firewall.get("strict_self_contained_terminal_after_router", ""),
             "proved": True,
             "meaning": "固定投影、formal WFD、早期零行几何和 canonical 支撑链均不能证明 moving hidden fiber 熵律。",
-            "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+            "remaining": f"{CANONICAL_LOCK} OR {NEW_ACTUAL_SOURCE_ENTROPY}",
+        },
+        {
+            "gate": "CanonicalLockExactSameSetFirewallImported",
+            "closed": canonical_lock_exit.get("canonical_lock_refined_to_exact_same_set_certificate")
+            is True,
+            "proved": True,
+            "meaning": "canonical-lock 已被防火墙精炼为五项 exact same-set 晋级证书；缺任一项时不能调用。",
+            "remaining": f"{CANONICAL_EXACT_CERT} OR {NEW_ACTUAL_SOURCE_ENTROPY}",
+        },
+        {
+            "gate": "CanonicalLockBranchAbsorptionImported",
+            "closed": canonical_branch_absorption.get("canonical_lock_branch_absorption_closed")
+            is True,
+            "proved": True,
+            "meaning": "五项证书存在时只处理 scoped canonical case；证书缺失时活动 noncanonical 主线回到 source entropy。",
+            "remaining": NEW_ACTUAL_SOURCE_ENTROPY,
         },
         {
             "gate": "NewActualSourceEntropyFixedPointImported",
@@ -270,6 +292,12 @@ def build_result() -> dict[str, Any]:
     source_admission = load_json(
         MONOGRAPH / "prime-matrix-strict-source-admission-branch-absorption-router.json"
     )
+    canonical_lock_exit = load_json(
+        MONOGRAPH / "prime-matrix-strict-canonical-lock-nonrecursive-exit-attack-router.json"
+    )
+    canonical_branch_absorption = load_json(
+        MONOGRAPH / "prime-matrix-strict-canonical-lock-branch-absorption-router.json"
+    )
     exact_entropy_firewall = load_json(
         MONOGRAPH / "prime-matrix-strict-exact-entropy-source-law-firewall-router.json"
     )
@@ -281,7 +309,8 @@ def build_result() -> dict[str, Any]:
         f"{STRICT_TERMINAL_FAMILY} AND {MODEL_COMPAT} AND {HIGH_MODEL_GAP} AND {DSTRUCTURE}"
     )
     strict_basis_after = f"{ACYCLIC_SEED} AND {terminal_gap_after}"
-    noncycle_exit = f"{CANONICAL_LOCK} OR {INDEPENDENT_NONTERMINAL_ENTROPY}"
+    noncycle_exit = INDEPENDENT_NONTERMINAL_ENTROPY
+    conditional_canonical_branch = CANONICAL_EXACT_CERT
     rows = sync_rows(
         stable=stable,
         boundary=boundary,
@@ -293,6 +322,8 @@ def build_result() -> dict[str, Any]:
         alpha_cycle_guard=alpha_cycle_guard,
         source_bridge=source_bridge,
         source_admission=source_admission,
+        canonical_lock_exit=canonical_lock_exit,
+        canonical_branch_absorption=canonical_branch_absorption,
         exact_entropy_firewall=exact_entropy_firewall,
         entropy_fixed_point=entropy_fixed_point,
     )
@@ -329,8 +360,9 @@ def build_result() -> dict[str, Any]:
         "terminal_gap_after_router": terminal_gap_after,
         "strict_self_contained_basis_after_router": strict_basis_after,
         "noncycle_exit_after_router": noncycle_exit,
-        "next_direct_attack_target": CANONICAL_LOCK,
-        "parallel_direct_attack_target": INDEPENDENT_NONTERMINAL_ENTROPY,
+        "conditional_canonical_branch_after_router": conditional_canonical_branch,
+        "next_direct_attack_target": INDEPENDENT_NONTERMINAL_ENTROPY,
+        "absorbed_conditional_branch": conditional_canonical_branch,
         "forbidden_as_closure_target": "naked PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
         "sync_rows": rows,
         "source_hashes": source_hashes(),
@@ -340,7 +372,8 @@ def build_result() -> dict[str, Any]:
             "`EarlyZeroPhaseDefectSchemaAdmission`：早期零行反例若不产生稳定短复现，就产生登记相位缺陷，"
             "并进入 PDEC/SAE/ColumnCRT/LocalSurvivor 命名回流。真正未闭合的不是这个准入口径，"
             "而是 strict noncanonical 终端家族的排斥，以及模型余量和 DStructure/Rankin 独立门。"
-            "因此下一步不能裸攻 PDEC/CleanKLS 标签，应攻非循环的 canonical-lock 边界或独立非终端来源熵证明。"
+            "同时 canonical-lock 已被后续材料吸收为 scoped exact same-set 条件分支，"
+            "活动 noncanonical 主线的最新最窄点是独立非终端来源熵证明，不能再裸攻 PDEC/CleanKLS 标签。"
         ),
     }
 
@@ -397,6 +430,12 @@ def render_markdown(result: dict[str, Any]) -> str:
         result["noncycle_exit_after_router"],
         "```",
         "",
+        "已吸收的条件 canonical 分支：",
+        "",
+        "```text",
+        result["conditional_canonical_branch_after_router"],
+        "```",
+        "",
         "## 2. 判定表",
         "",
         "| gate | closed | proved | meaning | remaining |",
@@ -423,10 +462,10 @@ def render_markdown(result: dict[str, Any]) -> str:
             result["next_direct_attack_target"],
             "```",
             "",
-            "并行备用：",
+            "已吸收条件分支：",
             "",
             "```text",
-            result["parallel_direct_attack_target"],
+            result["absorbed_conditional_branch"],
             "```",
             "",
             "不能登记为闭合的裸目标：",

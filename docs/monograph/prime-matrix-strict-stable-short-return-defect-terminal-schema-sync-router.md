@@ -2,7 +2,7 @@
 
 **状态：** `stable_short_return_defect_schema_synced_to_strict_terminal_family_open`
 
-`StableShortSameLabelRecurrenceOrRegisteredPhaseDefect` 的准入/命名层已经可以同步为`EarlyZeroPhaseDefectSchemaAdmission`：早期零行反例若不产生稳定短复现，就产生登记相位缺陷，并进入 PDEC/SAE/ColumnCRT/LocalSurvivor 命名回流。真正未闭合的不是这个准入口径，而是 strict noncanonical 终端家族的排斥，以及模型余量和 DStructure/Rankin 独立门。因此下一步不能裸攻 PDEC/CleanKLS 标签，应攻非循环的 canonical-lock 边界或独立非终端来源熵证明。
+`StableShortSameLabelRecurrenceOrRegisteredPhaseDefect` 的准入/命名层已经可以同步为`EarlyZeroPhaseDefectSchemaAdmission`：早期零行反例若不产生稳定短复现，就产生登记相位缺陷，并进入 PDEC/SAE/ColumnCRT/LocalSurvivor 命名回流。真正未闭合的不是这个准入口径，而是 strict noncanonical 终端家族的排斥，以及模型余量和 DStructure/Rankin 独立门。同时 canonical-lock 已被后续材料吸收为 scoped exact same-set 条件分支，活动 noncanonical 主线的最新最窄点是独立非终端来源熵证明，不能再裸攻 PDEC/CleanKLS 标签。
 
 ```text
 same_theorem_target_preserved=true
@@ -44,7 +44,13 @@ AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNA
 非循环出口：
 
 ```text
-AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+```
+
+已吸收的条件 canonical 分支：
+
+```text
+AcyclicCanonicalExactSameSetPromotionCertificate
 ```
 
 ## 2. 判定表
@@ -63,6 +69,8 @@ AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentNonterminalP
 | `LegacyIndependentActualSourceBridgeImported` | `true` | `true` | 旧 actual-source 桥把非 canonical 分支先压到 exact clean-core source entropy。 | ExactCleanCoreFullSNonAPWFDSourceEntropy |
 | `A1SourceAdmissionBranchAbsorbedImported` | `true` | `true` | A1CleanBranchCanonicalSourceAdmission 只是 scoped branch statement，不能作为独立全局 OR。 | AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR ActualNoncanonicalCleanCoreMovingAtomExclusion |
 | `ExactEntropySourceLawFirewallImported` | `true` | `true` | 固定投影、formal WFD、早期零行几何和 canonical 支撑链均不能证明 moving hidden fiber 熵律。 | AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem |
+| `CanonicalLockExactSameSetFirewallImported` | `true` | `true` | canonical-lock 已被防火墙精炼为五项 exact same-set 晋级证书；缺任一项时不能调用。 | AcyclicCanonicalExactSameSetPromotionCertificate OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem |
+| `CanonicalLockBranchAbsorptionImported` | `true` | `true` | 五项证书存在时只处理 scoped canonical case；证书缺失时活动 noncanonical 主线回到 source entropy。 | NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem |
 | `NewActualSourceEntropyFixedPointImported` | `true` | `true` | ExactUV/pair-energy/rate-bearing/terminal/canonical 旧脊柱形成 T -> ... -> T 固定点。 | IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem |
 | `IndependentNonterminalSourceEntropyCurrentCorpusProved` | `false` | `false` | 当前材料尚未给出不经 pair-mass 失败回流和终端标签的独立 actual-source 熵估计。 | IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem |
 | `AdmissionLayerClosedButTerminalExclusionOpen` | `true` | `true` | 本同步只关闭准入/命名回流的重复口径，不关闭终端家族排斥。 | PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock AND HighSegmentModelGapAlpha043C3AnalyticLedger AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage |
@@ -74,13 +82,13 @@ AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentNonterminalP
 首攻：
 
 ```text
-AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
 ```
 
-并行备用：
+已吸收条件分支：
 
 ```text
-IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem
+AcyclicCanonicalExactSameSetPromotionCertificate
 ```
 
 不能登记为闭合的裸目标：

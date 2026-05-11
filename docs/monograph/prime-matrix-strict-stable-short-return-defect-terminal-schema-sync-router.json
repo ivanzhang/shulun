@@ -1,8 +1,10 @@
 {
+  "absorbed_conditional_branch": "AcyclicCanonicalExactSameSetPromotionCertificate",
   "acyclic_terminal_canonical_lock_proved": false,
   "admission_gap_after_router": "closed_as_named_schema_admission_only",
   "admission_gap_before_router": "BoundaryCapFormalUnitTypeCompressionDichotomy OR registered phase defect schema admission",
   "certificate_type": "prime_matrix_strict_stable_short_return_defect_terminal_schema_sync_router",
+  "conditional_canonical_branch_after_router": "AcyclicCanonicalExactSameSetPromotionCertificate",
   "counterexample_assumption_only": true,
   "direct_pdec_clean_routes_count_as_closure": false,
   "direct_unconditional_contradiction_found": false,
@@ -16,13 +18,12 @@
   "hypothetical_chain_only": true,
   "independent_nonterminal_source_entropy_proved": false,
   "missing_sources": [],
-  "next_direct_attack_target": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+  "next_direct_attack_target": "IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
   "no_theorem_switch": true,
-  "noncycle_exit_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
-  "parallel_direct_attack_target": "IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "noncycle_exit_after_router": "IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
   "pdec_cap_or_internal_clean_kls_large_sieve_for_acyclic_noncanonical_terminal_family_proved": false,
   "phase_defect_named_return_schema_closed": true,
-  "plain_conclusion": "`StableShortSameLabelRecurrenceOrRegisteredPhaseDefect` 的准入/命名层已经可以同步为`EarlyZeroPhaseDefectSchemaAdmission`：早期零行反例若不产生稳定短复现，就产生登记相位缺陷，并进入 PDEC/SAE/ColumnCRT/LocalSurvivor 命名回流。真正未闭合的不是这个准入口径，而是 strict noncanonical 终端家族的排斥，以及模型余量和 DStructure/Rankin 独立门。因此下一步不能裸攻 PDEC/CleanKLS 标签，应攻非循环的 canonical-lock 边界或独立非终端来源熵证明。",
+  "plain_conclusion": "`StableShortSameLabelRecurrenceOrRegisteredPhaseDefect` 的准入/命名层已经可以同步为`EarlyZeroPhaseDefectSchemaAdmission`：早期零行反例若不产生稳定短复现，就产生登记相位缺陷，并进入 PDEC/SAE/ColumnCRT/LocalSurvivor 命名回流。真正未闭合的不是这个准入口径，而是 strict noncanonical 终端家族的排斥，以及模型余量和 DStructure/Rankin 独立门。同时 canonical-lock 已被后续材料吸收为 scoped exact same-set 条件分支，活动 noncanonical 主线的最新最窄点是独立非终端来源熵证明，不能再裸攻 PDEC/CleanKLS 标签。",
   "row_column_unconditional_closed": false,
   "same_theorem_target_preserved": true,
   "source_hashes": {
@@ -38,6 +39,8 @@
     "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078",
     "docs/monograph/prime-matrix-strict-alpha-terminal-to-acyclic-cycle-guard-sync-router.json": "9e04c7da91dd0ad9473fea5aefef4e5fab5b2708139c1e08cca40b9ac6c5d93e",
     "docs/monograph/prime-matrix-strict-boundary-cap-type-compression-router.json": "8082425f5f65748dda9d33b3463a4262c38d510dae4fa58952f292fd404ed116",
+    "docs/monograph/prime-matrix-strict-canonical-lock-branch-absorption-router.json": "a9ea94f0d11b05d9fff7e55f8350c0cd060f4a889b4b515e0b0b9d68bcd57e8e",
+    "docs/monograph/prime-matrix-strict-canonical-lock-nonrecursive-exit-attack-router.json": "1fc50ba815f27922f23758ed4799dc2f3e88293050b98961acef8703a283e4b9",
     "docs/monograph/prime-matrix-strict-exact-entropy-source-law-firewall-router.json": "91fc5d3336a58236a1a96d806017f20aa56da290ecb587675a79e81e931a2547",
     "docs/monograph/prime-matrix-strict-global-terminal-scope-router.json": "cb8e05a82c80e38481fd3b97bd57038b21638dafbb0ba0ae97cc54dc574abd9d",
     "docs/monograph/prime-matrix-strict-independent-actual-source-bridge-concrete-atom-sync-router.json": "122b297efd04baa3ba8a3238a5be035cde957fe69af858124d17be2f1e08f2be",
@@ -133,6 +136,20 @@
       "meaning": "固定投影、formal WFD、早期零行几何和 canonical 支撑链均不能证明 moving hidden fiber 熵律。",
       "proved": true,
       "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLockExactSameSetFirewallImported",
+      "meaning": "canonical-lock 已被防火墙精炼为五项 exact same-set 晋级证书；缺任一项时不能调用。",
+      "proved": true,
+      "remaining": "AcyclicCanonicalExactSameSetPromotionCertificate OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLockBranchAbsorptionImported",
+      "meaning": "五项证书存在时只处理 scoped canonical case；证书缺失时活动 noncanonical 主线回到 source entropy。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
     },
     {
       "closed": true,
