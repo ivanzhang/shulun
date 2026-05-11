@@ -1,0 +1,133 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_seed_canonical_embedding_router",
+  "status": "acyclic_seed_canonical_embedding_reduced_to_precauchy_admission_and_factor_map_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "finite_factor_definition_pinned": true,
+  "canonical_source_material_imported_with_scope": true,
+  "source_loop_cut_imported": true,
+  "transverse_embedding_imported_with_scope": true,
+  "acyclic_seed_canonical_branch_admission_proved": false,
+  "acyclic_seed_finite_factor_map_weight_identity_proved": false,
+  "acyclic_seed_no_source_replacement_proved": false,
+  "acyclic_seed_canonical_source_embedding_proved": false,
+  "terminal_certificate_same_set_pushforward_proved": false,
+  "no_noncanonical_payload_survives_projection_proved": false,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding",
+  "seed_embedding_gap_after_router": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation",
+  "terminal_gap_after_router": "((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation) AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND (((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation) AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy_OR_DirectDualFallback",
+    "must_prove_for_canonical_lock": [
+      "acyclic seed 的 lambda 在 Cauchy/dispersion/terminal extraction 之前已被定义为 canonical RIW/Buchstab 决策树系数",
+      "存在有限可测因子图 pi: Omega_c -> Omega_a，且 acyclic 权重等于 canonical 权重的限制、条件化或确定性推前",
+      "formal_unit、branch key、bad-window set、U_CRT、L_PDEC 口径在该因子图下不改变",
+      "所有 noncanonical payload 均被证明只是 canonical 字段的有限商信息，不能新增系数源"
+    ],
+    "fallback_if_any_clause_fails": [
+      "若来源时间线依赖下游 payment/terminal 数据，则进入 DirectAcyclicSameSetPDECCapDualCertificate",
+      "若 residual 已无低维 PDEC 签名但仍为 clean diffuse 对象，则进入 DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+      "若出现 unregistered payload，则先命名回流到 PDEC/SAE/ColumnCRT，再重新判定同集终端门"
+    ],
+    "cannot_use_as_proof": [
+      "只引用 canonical-source 终端闭合",
+      "只引用 formal_unit 哈希稳定",
+      "只引用横向 PDEC-CAP 嵌入而不给当前 seed 的因子图",
+      "从假设早期零行覆盖或 payment skeleton 反推出 pre-Cauchy source"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "AcyclicSeedEmbeddingGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 canonical-lock 的第一原子定为 acyclic seed 是 canonical A1/KZ-E 源的有限测度因子。",
+      "remaining": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding"
+    },
+    {
+      "gate": "FiniteFactorMeaningPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限因子只能由 canonical 源经事件限制、确定性推前、有限投影、有限商或条件化得到。",
+      "remaining": "必须提交具体因子图和权重推前恒等式。"
+    },
+    {
+      "gate": "CanonicalSourceAvailableOnlyByPreCauchyDeclaration",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical 来源账本只在 lambda_c 于 Cauchy/dispersion 之前被声明为 RIW/Buchstab 决策树系数时闭合。",
+      "remaining": "acyclic seed 也必须在同一时间线和同一 formal unit 下满足该来源声明。"
+    },
+    {
+      "gate": "SourceLoopCutBlocksDownstreamRecovery",
+      "closed": true,
+      "proved": true,
+      "meaning": "不能从早期零行覆盖图、payment skeleton、terminal certificate 或有限投影反推出 primitive source。",
+      "remaining": "若 seed 只在下游终端选择后出现，则不能作为 canonical pre-Cauchy 因子。"
+    },
+    {
+      "gate": "HashStabilityNotMeasureFactor",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal unit 哈希稳定只证明记录命名稳定，不证明测度、权重和 sigma 代数可由 canonical 源推前。",
+      "remaining": "仍需 pi_* mu_c = mu_a 的测度等式。"
+    },
+    {
+      "gate": "TransverseEmbeddingScopeGuard",
+      "closed": true,
+      "proved": true,
+      "meaning": "既有横向嵌入只覆盖由 canonical payment 图取弧预像和有限商得到的特定对象。",
+      "remaining": "当前 acyclic noncanonical seed 未证明属于该横向商对象族。"
+    },
+    {
+      "gate": "AcyclicCanonicalAdmissionPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "必须证明假设反例链生成的 acyclic seed 在 pre-Cauchy 层就是 canonical RIW/Buchstab source branch。",
+      "remaining": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy。"
+    },
+    {
+      "gate": "MeasurableFactorMapPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "必须给出从 canonical 源样本空间到 acyclic seed 样本空间的有限可测因子图 pi，并证明权重质量逐纤维守恒。",
+      "remaining": "AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity。"
+    },
+    {
+      "gate": "NoSourceReplacementPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "任何 branch-dependent 新权重、terminal-dependent payload 或 non-AP/WFD 补集不得在投影后作为 canonical 源残留。",
+      "remaining": "AcyclicSeedNoSourceReplacementOrPayloadCreation。"
+    },
+    {
+      "gate": "FactorObstructionCriterionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 acyclic seed 含有不由 canonical source 字段决定的系数或 payload，则按有限因子定义不能走 canonical-lock。",
+      "remaining": "该情形必须转 direct PDEC dual 或 direct CleanKLS/DLS。"
+    },
+    {
+      "gate": "CurrentCorpusEmbeddingProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料给出 canonical 来源、横向嵌入和哈希稳定，但尚未给出 acyclic seed 的 pre-Cauchy canonical 准入与因子图。",
+      "remaining": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-canonical-lock-router.md": "ef7b91f20887c88f7bd87265a5d9bea47d92e062889c49a7ed94c2df41871b60",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.md": "0cbd38f4d56d73a134ee106f50b1fe71d007f4273e00df7cac4c244fc57d451d",
+    "docs/monograph/prime-matrix-triad-a1-source-lock-contract-router.md": "ffc46d9654f87935e9bde429235b461b74131f6c43dd49c3870a1c13e078ef5b",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.md": "72e8f8d9362e6ba765682f3af63674a0b271f8085b481565722e91d4d12db81d",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-embedding-router.md": "70e6d614da47204ad2b611df691fa3f72c20c2aca69974dfd265949debb831a6",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.md": "59dbffdc406556c93344cb968499b3434dbe601f6907cdd9a513a5d5663ae443",
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.md": "8a49a2e5596756a83f457ecaa9bc8e6c44cf6b43f14e44a40d810cca2d1b8114",
+    "docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.md": "e351e006c5117f34ae67064ea0d16ce5e8a557d53e339f1130b4f0f1d6945c53"
+  },
+  "plain_conclusion": "本步没有证明 AcyclicSeedCanonicalSourceFiniteFactorEmbedding；它把该原子压成三个更硬但可审查的必要条件：acyclic seed 必须在 pre-Cauchy 时间线上准入 canonical RIW/Buchstab source branch；必须给出有限可测因子图与权重推前恒等式；必须排除任何 source replacement 或新增 noncanonical payload。当前语料不足以关闭这三项，因此 canonical-lock 路线暂不能导入；若下一步不能证明这些条件，正确路线是直接攻 acyclic 同集 PDEC 对偶或 acyclic CleanKLS/DLS。"
+}
