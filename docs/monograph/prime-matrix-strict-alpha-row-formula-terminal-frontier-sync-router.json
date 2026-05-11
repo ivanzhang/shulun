@@ -1,0 +1,125 @@
+{
+  "alpha_formula_anchor_collar_overload_named_return_ledger_closed": true,
+  "alpha_formula_carry_shell_congruence_row_formula_proved": true,
+  "alpha_formula_phase_wheel_compatibility_imported_closed": true,
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "alpha_formula_source_tuple_to_carry_shell_variable_binding_imported_closed": true,
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "alpha_row_formula_local_frontier_synced_to_terminal": true,
+  "alpha_row_formula_terminal_frontier_sync_router_closed": true,
+  "certificate_type": "prime_matrix_strict_alpha_row_formula_terminal_frontier_sync_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_tail_log4_finite_rankin_full_ledger_independent_acceptance_proved": false,
+  "empirical_absence_not_used": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "local_branch_table": [
+    {
+      "branch": "source tuple variable binding",
+      "remaining": "no local alpha gap",
+      "status": "imported closed through unsigned skeleton/carry formula"
+    },
+    {
+      "branch": "carry-shell congruence row formula",
+      "remaining": "not a signed coefficient theorem",
+      "status": "closed as unsigned geometric indexing theorem"
+    },
+    {
+      "branch": "phase-wheel compatibility",
+      "remaining": "no local phase gap",
+      "status": "imported closed through P-column/layered-wheel registration"
+    },
+    {
+      "branch": "signed coefficient lift",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger",
+      "status": "synced through weight law / identity / moving-block to terminal gap"
+    },
+    {
+      "branch": "anchor-collar overload named return",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger",
+      "status": "closed as named-return schema"
+    }
+  ],
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+  "no_theorem_switch": true,
+  "parallel_required_inputs": [
+    "ExplicitModelGapAndFiniteDPRCLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "plain_conclusion": "`AlphaRowAnchorPhaseEmissionFormulaLedger` 的局部前沿已同步到终端门：source tuple/carry-shell/phase 三个 unsigned 几何分支闭合，signed-lift 分支回流 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger`，anchor-collar 过载分支作为命名回流 schema 闭合。因此下一真正主攻点是全局 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`；行/列命题仍未无条件闭合。",
+  "pointwise_same_formal_unit_primitive_alpha_delta_kernel_table_with_nonzero_rank_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本同步仍只在早期零行反例链内整理局部分支归宿，不从真实缺席或样本审计取证。",
+      "proved": true,
+      "remaining": "direct_unconditional_contradiction_found=false。"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaRowFormulaTargetActive",
+      "meaning": "终端下降到逐点核表后，当前局部目标确为 alpha row anchor/phase emission formula。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedLocalBranchesClosed",
+      "meaning": "source tuple 绑定、carry-shell 同余公式和 phase-wheel 兼容已在 unsigned 几何层闭合。",
+      "proved": true,
+      "remaining": "不产生 signed pre-Cauchy coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLiftBranchTerminalSynced",
+      "meaning": "signed-lift 下钻经权重律、独立恒等式、moving-block/NC-BLK 回到终端容量/模型账本。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorOverloadReturnSchemaClosed",
+      "meaning": "anchor-collar 过载没有独立无名出口，已登记为 PDEC/SAE/ColumnCRT/LocalSurvivor/CleanKLS 回流。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaFormulaLocalFrontierSyncedToTerminal",
+      "meaning": "alpha formula 的局部几何和命名回流分支已同步完成；剩余不再是 alpha 局部公式，而是全局终端门。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalExclusionStillOpen",
+      "meaning": "PDEC-CAP 或内部 CleanKLS/DLS 大筛、模型余量和 DStructure/Rankin 仍未证明。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "meaning": "当前只是把 alpha 局部剩余压到终端前沿；尚未得到反例链与真实链的终端矛盾。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078",
+    "docs/monograph/prime-matrix-strict-actual-moving-block-spread-ncb-lk-router.json": "d042d5ccfeec63bcfba1c16571e404052d7a66cefce94527ce843051b64a2f6e",
+    "docs/monograph/prime-matrix-strict-alpha-anchor-collar-overload-return-router.json": "b600b8c5cfef63321ee08c0fb80504e63d5ac808b3a60b494ff71d518a783d89",
+    "docs/monograph/prime-matrix-strict-alpha-carry-shell-congruence-formula-router.json": "e14fbe40cc8deea93426e43cb5f76ad32d7866365eb23af2de1150715498bd22",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-terminal-sync-router.json": "bf22b3307b4e383ab103ae8fe55cd22a86dea4fd33a3ccc239cb2a5a4724d1f7",
+    "docs/monograph/prime-matrix-strict-alpha-row-anchor-phase-formula-router.json": "1da61d631c11df13e21c840516701954072e915d348b1ab4fd6bfb2fd3a0c6d8",
+    "docs/monograph/prime-matrix-strict-terminal-descent-to-pointwise-kernel-sync-router.json": "64c0baf4ed2c463ec6eb69b95ebb14f16da4c5aa909fc6b7f244035d1db041cf"
+  },
+  "status": "strict_alpha_row_formula_local_frontier_synced_to_terminal_gap_open",
+  "sync_law": "After the signed-lift branch returns to the terminal capacity/model ledger, the unsigned carry-shell and phase branches close locally, and anchor overload is registered as a named return, the alpha row formula no longer contains an independent local nonterminal exit in the current corpus. The remaining obstruction is the global PDEC-CAP or internal CleanKLS/DLS terminal gate, plus model-gap and DStructure acceptance.",
+  "terminal_gap_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "terminal_gap_before_router": "AlphaRowAnchorPhaseEmissionFormulaLedger"
+}
