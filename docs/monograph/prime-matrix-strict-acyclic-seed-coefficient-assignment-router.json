@@ -1,0 +1,124 @@
+{
+  "acyclic_seed_coefficient_assignment_on_basis_alphabet_proved": false,
+  "assignment_fields": [
+    {
+      "field": "assignment_domain",
+      "meaning": "已生成的 actual noncanonical primitive basis words。"
+    },
+    {
+      "field": "value_map_formula",
+      "meaning": "每个 basis word 到 signed coefficient 的赋值公式。"
+    },
+    {
+      "field": "sign_local_factor_projection",
+      "meaning": "从赋值公式投影出 sign、local factor 和非零条件。"
+    },
+    {
+      "field": "basis_source_compatibility",
+      "meaning": "赋值公式与 seed pre-Cauchy basis weight source 是同一对象。"
+    },
+    {
+      "field": "failure_return",
+      "meaning": "无定义、零因子、符号冲突、超预算或作用域冲突时的回流。"
+    }
+  ],
+  "basis_word_to_signed_coefficient_value_map_formula_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_coefficient_assignment_router",
+  "coefficient_assignment_router_closed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger` 的第一开口是 `AcyclicSeedBasisWordToSignedCoefficientValueMapFormula`。几何 basis word 域已可用，但 signed assignment 必须给出 word -> coefficient 的具体赋值公式。",
+  "geometric_basis_word_domain_closed": true,
+  "next_direct_attack_target": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+    "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton",
+    "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+  ],
+  "plain_conclusion": "本步把 coefficient assignment 压到 value map formula。锚/相位/截断输入已经闭合，问题不再是找到 word，而是给每个 word 赋 signed coefficient；这个赋值不能由 payment、零行覆盖或下游解积分反推。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CoefficientAssignmentTargetActive",
+      "meaning": "上一层已把 signed slot value formula 压到 coefficient assignment。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "GeometricBasisWordDomainClosed",
+      "meaning": "anchor/dyadic/phase 输入域已经闭合；可作为 assignment 的 unsigned domain。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": true,
+      "gate": "BasisAlphabetDomainStillNeedsSignedValue",
+      "meaning": "noncanonical basis alphabet 的 signed/local-factor 层仍依赖 coefficient assignment 自身。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": true,
+      "gate": "ValueMapFormulaIsFirstOpenField",
+      "meaning": "assignment 的第一不可替代字段是 basis word 到 signed coefficient 的 value map formula。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingPointwiseValueRoutesStillOpen",
+      "meaning": "逐点 signed value table、非递归 signed weight 公式和 basis coefficient assignment 均未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": true,
+      "gate": "BasisSourceAndCoefficientLawStillOpen",
+      "meaning": "basis weight source 与 primitive row signed coefficient law 仍缺赋值公式支撑。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseAssignmentRecoveryBlocked",
+      "meaning": "不能从 payment、推前后投影或早期零行覆盖反推出 value map formula。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": false,
+      "gate": "BasisWordToSignedCoefficientValueMapFormulaCurrentCorpusProved",
+      "meaning": "当前材料没有给出 actual noncanonical basis word 到 signed coefficient 的赋值公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": false,
+      "gate": "CoefficientAssignmentOnBasisAlphabetCurrentCorpusProved",
+      "meaning": "没有 value map formula，coefficient assignment 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_weight_slot_value_formula_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-anchor-input-rule-router.json": "79facaf8c8b0fbf5ce4ff39304895be967192af6ed4125ff41ccc8ea57e4e522",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-alphabet-ledger-router.json": "01dfdcc9a1f9d9a839331068b413f9ecbb762491ec738916c1d23b1204c3d0a7",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json": "ae82e18347b05aab66be09d91ddb80a71eb30c3c7ce8ae3ba8e3fe1a0e4a5bea",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-slot-value-formula-router.json": "9f4f22bbec38091d306cb0cf8a395c9fa854e78c73e73555f2f40b1e8dee0ba5",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f"
+  },
+  "status": "coefficient_assignment_reduced_to_basis_word_value_map_formula_open",
+  "target_input_before_router": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+  "terminal_return_if_no_value_map_formula": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "value_map_formula_is_first_open_field": true
+}
