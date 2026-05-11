@@ -1,0 +1,120 @@
+{
+  "acyclic_seed_coefficient_assignment_on_basis_alphabet_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_signed_slot_value_formula_router",
+  "coefficient_assignment_is_first_open_field": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords` 的第一不可替代字段是 `AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger`：必须先给出每个 basis word 到 signed coefficient 的赋值，才能定义 sign/local factor 和推前前求和。",
+  "next_direct_attack_target": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+    "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+    "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+  ],
+  "plain_conclusion": "本步把 signed slot value formula 压到 coefficient assignment。几何 primitive word 域已经可用，但该域没有 signed 赋值；现有 basis source、basis alphabet、逐点 signed value table 都仍未闭合，且 payment/零行反推被阻断。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SignedSlotValueFormulaTargetActive",
+      "meaning": "上一层已把 signed weight coordinate slot 压到 primitive basis word 上的 slot value formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveWordDomainAvailableButUnsigned",
+      "meaning": "primitive word 的几何输入域已闭合，但该域仍是 unsigned 坐标域。",
+      "proved": true,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CoefficientAssignmentIsFirstOpenField",
+      "meaning": "slot value formula 的第一字段是 basis word 到 signed coefficient 的赋值；没有它，符号和 local factor 都无定义。",
+      "proved": true,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AlphabetAndAssignmentStillOpen",
+      "meaning": "noncanonical basis alphabet 与 coefficient assignment 尚未共同闭合。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BasisSourceAndCoefficientLawStillOpen",
+      "meaning": "basis weight source formula 与 primitive row signed coefficient law 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedValueFormulaStillOpen",
+      "meaning": "逐点 signed alpha 值表、非递归 signed weight 公式和 primitive summand signed expression 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseCoefficientRecoveryBlocked",
+      "meaning": "不能从 payment、推前后投影或早期零行覆盖反推 coefficient assignment。",
+      "proved": true,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CoefficientAssignmentOnBasisAlphabetCurrentCorpusProved",
+      "meaning": "当前材料没有提交从 actual noncanonical basis word 到 signed coefficient 的赋值公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SignedSlotValueFormulaCurrentCorpusProved",
+      "meaning": "没有 coefficient assignment，slot value formula 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_slot_value_formula_router_closed": true,
+  "signed_weight_coordinate_slot_proved": false,
+  "signed_weight_slot_value_formula_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-alphabet-ledger-router.json": "01dfdcc9a1f9d9a839331068b413f9ecbb762491ec738916c1d23b1204c3d0a7",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json": "ae82e18347b05aab66be09d91ddb80a71eb30c3c7ce8ae3ba8e3fe1a0e4a5bea",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-weight-coordinate-slot-router.json": "0150cfc80fdde353d31c03700be96db1badfbea3f13c4d58e8260cef4901efbf",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff"
+  },
+  "status": "signed_slot_value_formula_reduced_to_coefficient_assignment_open",
+  "target_input_before_router": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+  "terminal_return_if_no_coefficient_assignment": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "value_formula_components": [
+    {
+      "component": "coefficient_assignment",
+      "role": "每个 basis word 到 signed coefficient 的赋值公式，是第一开口。"
+    },
+    {
+      "component": "sign_local_factor_rule",
+      "role": "由 coefficient assignment 诱导符号、local factor 和非零条件。"
+    },
+    {
+      "component": "return_rule",
+      "role": "零值、符号冲突、local factor 缺失或超预算的命名回流。"
+    },
+    {
+      "component": "prepushforward_sum_identity",
+      "role": "证明赋值后的 primitive words 在推前前给出目标 alpha/delta 系数。"
+    }
+  ],
+  "word_coordinate_formula_proved": false
+}
