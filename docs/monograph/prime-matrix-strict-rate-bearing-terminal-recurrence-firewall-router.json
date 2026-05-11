@@ -1,0 +1,109 @@
+{
+  "acyclic_terminal_canonical_lock_proved": false,
+  "alternative_open_exit": "NonrecursiveIndependentProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "certificate_type": "prime_matrix_strict_rate_bearing_terminal_recurrence_firewall_router",
+  "hard_law": "rate-bearing packet 经终端三原子、下降防火墙和 noncanonical 过滤后，回到 `AcyclicTerminalCanonicalLock OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem`。因此 direct PDEC/CleanKLS 标签链不能证明该源熵目标；要继续无循环推进，必须证明 canonical-lock 三子原子，或给出完全独立、不经终端回流的 actual-source 熵证明。",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "AcyclicTerminalCanonicalLockSubatoms_OR_NewIndependentSourceEntropyProof",
+  "nonrecursive_strict_open_exit": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection",
+  "plain_conclusion": "继续深挖后，rate-bearing 大 pair packet 的终端三原子路线被证明不是闭合证明，而是回流链：direct PDEC/direct CleanKLS 经循环守卫、下降防火墙、当前叶子压缩、noncanonical 合法模式过滤、source-admission 吸收和 exact entropy 防火墙，最终又回到 `AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem`。所以不能再把三原子终端标签当作进展本身。当前非循环 strict 出口只剩完成 canonical-lock 三子原子，或给出不经该终端回流链的独立 actual-source 熵证明。行/列命题仍未无条件闭合。",
+  "raw_direct_terminal_routes_rejected_as_closure": true,
+  "recurrence_chain": [
+    "RateBearingLargePairAtomPacketExclusion",
+    "AcyclicTerminalCanonicalLock OR DirectPDEC OR DirectCleanKLS",
+    "CycleGuard: AcyclicTerminalCanonicalLock OR WellFoundedDescent",
+    "DescentFirewall: AcyclicTerminalCanonicalLock OR TerminalLeafFirewallInputs",
+    "CurrentLeaf: AcyclicTerminalCanonicalLock OR NoncanonicalFullSComplementLegalClosureMode",
+    "NoncanonicalLegalMode: AcyclicTerminalCanonicalLock OR ActualA1FullSSourceLockOrStrengthenedAntiAtom",
+    "SourceAdmissionAbsorption: AcyclicTerminalCanonicalLock OR ActualNoncanonicalCleanCoreMovingAtomExclusion",
+    "ExactEntropyFirewall: AcyclicTerminalCanonicalLock OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RateBearingThreeAtomInputActive",
+      "meaning": "上一层把 rate-bearing 大 pair packet 压到 canonical-lock/direct PDEC/direct CleanKLS 三原子门。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "closed": true,
+      "gate": "RawDirectPDECCleanCycleBlocked",
+      "meaning": "裸 direct PDEC 与 direct CleanKLS 会形成 F -> ... -> F 自回流，不能当作闭合证明。",
+      "proved": true,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "DescentSchemaImported",
+      "meaning": "无隐藏终端循环已下降到叶子防火墙输入，但叶子输入本身未排斥。",
+      "proved": true,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentLeafInstanceReduced",
+      "meaning": "当前已物化 PDEC/sparse 前沿为零；未来 schema 是准入纪律，当前活动叶子只剩 noncanonical 合法模式。",
+      "proved": true,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode"
+    },
+    {
+      "closed": true,
+      "gate": "NoncanonicalLegalModeReturnsToActualSource",
+      "meaning": "noncanonical 合法模式严格过滤后回到 actual-source 桥，不产生独立闭合。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput"
+    },
+    {
+      "closed": true,
+      "gate": "SourceAdmissionAbsorbed",
+      "meaning": "A1 source admission 只是分支陈述，不能作为独立 OR 终端；noncanonical 活动叶子仍是 moving atom/exact entropy。",
+      "proved": true,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "ExactEntropyFirewallReturnsToTarget",
+      "meaning": "moving atom/exact entropy 分支经防火墙精确回到同一个新 actual-source 熵定理目标。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalRouteIsRecurrenceNotProof",
+      "meaning": "rate-bearing packet 的 direct-terminal 路线最终回到 canonical-lock 或原源熵目标；不能作为该目标的非递归证明。",
+      "proved": true,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NonrecursiveIndependentProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLockSubatomsStillOpen",
+      "meaning": "唯一当前非递归 strict 出口是完成 canonical-lock 三子原子，或给出全新不经终端回流的源熵证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection"
+    },
+    {
+      "closed": false,
+      "gate": "NewActualSourceEntropyCurrentCorpusProved",
+      "meaning": "终端回流被识别为循环后，新 actual-source 熵定理仍未证明。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-canonical-lock-router.json": "9ba01ca4d88a341ca65d9a18ce6c8417f42e4706beecd85850d1048eeb69d7d8",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-cycle-guard-router.json": "a9a73eff97f26a433496a9923c8a3ad0bca38f7afdaa27d3bbbae6df8ebd9f99",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-descent-firewall-router.json": "983fc82922a3715afc3896388e2fccf5baaf702fbccff57018d674bc55f1ae0b",
+    "docs/monograph/prime-matrix-strict-exact-entropy-source-law-firewall-router.json": "91fc5d3336a58236a1a96d806017f20aa56da290ecb587675a79e81e931a2547",
+    "docs/monograph/prime-matrix-strict-noncanonical-legal-closure-mode-router.json": "39c772b9e02029d14e9d400ba3651f1d51472f3d83e45740fd773e0de29e7130",
+    "docs/monograph/prime-matrix-strict-rate-bearing-large-pair-packet-router.json": "2d8b4f875ebf4cbe7712e4d8f3ac6ad3cda374b0a381788a599587bc7e246872",
+    "docs/monograph/prime-matrix-strict-source-admission-branch-absorption-router.json": "ff738635e2f712ebb777170a718e8775362847a92b7e29c4933da438fd7d64d6",
+    "docs/monograph/prime-matrix-strict-terminal-leaf-firewall-current-instance-router.json": "3323fe284f3293bb2a9fb18f739c41ffb64a5bebb44b847ae97d2d6074568f3f"
+  },
+  "status": "strict_rate_bearing_terminal_route_recurrence_detected_canonical_lock_or_new_independent_source_entropy_open",
+  "strict_self_contained_terminal_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "terminal_recurrence_firewall_closed": true,
+  "terminal_route_returns_to_source_entropy_target": true
+}
