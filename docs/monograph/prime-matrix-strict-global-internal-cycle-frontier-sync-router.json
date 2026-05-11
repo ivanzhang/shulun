@@ -1,0 +1,175 @@
+{
+  "certificate_type": "prime_matrix_strict_global_internal_cycle_frontier_sync_router",
+  "conditional_external_break_input": "AcceptFullSKLSExtExternalContract",
+  "counterexample_assumption_only": true,
+  "cycle_edges": [
+    {
+      "from": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+      "to": "TerminalLeafFirewallInputs_OR_CanonicalLock"
+    },
+    {
+      "from": "TerminalLeafFirewallInputs_OR_CanonicalLock",
+      "to": "NoncanonicalFullSComplementLegalClosureMode"
+    },
+    {
+      "from": "NoncanonicalFullSComplementLegalClosureMode",
+      "to": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput"
+    },
+    {
+      "from": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput",
+      "to": "A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "from": "A1CleanBranchCanonicalSourceAdmission",
+      "to": "ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "from": "ActualNoncanonicalCleanCoreMovingAtomExclusion",
+      "to": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "from": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+      "to": "IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "from": "IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+      "to": "PreTerminalActualFullSFactorSupportCapacityTheorem"
+    },
+    {
+      "from": "PreTerminalActualFullSFactorSupportCapacityTheorem",
+      "to": "PreTerminalExactUVFiberAbsoluteMassDispersionTheorem"
+    },
+    {
+      "from": "PreTerminalExactUVFiberAbsoluteMassDispersionTheorem",
+      "to": "ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger"
+    },
+    {
+      "from": "ActualPreCauchySourceDomainRankAndExactUVNoCollapseLedger",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "from": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "to": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows"
+    },
+    {
+      "from": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows",
+      "to": "SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion"
+    },
+    {
+      "from": "SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion",
+      "to": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    },
+    {
+      "from": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "from": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "to": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "existing_internal_route_counts_as_proof": false,
+  "external_conditional_basis_after_router": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "external_fulls_kls_ext_accepted_as_external_blackbox": true,
+  "final_gate_still_independent": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "internal_terminal_source_cycle_detected": true,
+  "latest_strict_internal_break_input": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate",
+  "missing_sources": [],
+  "next_direct_attack_target": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate",
+  "no_theorem_switch": true,
+  "plain_conclusion": "当前 strict 内部路线已经形成 terminal-source 大闭环：终端叶子回到 actual-source bridge，actual-source bridge 回到 new actual-source entropy，source entropy 下钻到 signed-source 固定点，固定点又回到 terminal descent。这个闭环不能作为证明。若坚持严格自足，真正破环输入必须是`PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate`；若接受外部黑箱，则 FullS-KLS-ext 可关闭外部数学线，但仍需DStructure/Rankin 独立验收。",
+  "pointwise_primitive_kernel_table_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "TerminalRouteReturnsToActualSourceBridge",
+      "meaning": "terminal descent 叶子压缩后，活动 noncanonical 叶子回到 actual-source bridge。",
+      "proved": true,
+      "remaining": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput"
+    },
+    {
+      "closed": true,
+      "gate": "ActualSourceBridgeReturnsToSourceEntropy",
+      "meaning": "A1 source admission 只是 scoped 分支，活动 noncanonical 路线回到 moving atom / new actual-source entropy。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "SourceEntropyReturnsToIndependentNonterminalInput",
+      "meaning": "ExactUV/pair/terminal/canonical 旧脊柱形成固定点，合法内部推进必须走独立非终端源熵输入。",
+      "proved": true,
+      "remaining": "IndependentNonterminalProofOfNewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentSourceEntropyHitsSignedSourceFixedPoint",
+      "meaning": "source-domain/rank/row-level 下钻已登记为 signed-source 固定点。",
+      "proved": true,
+      "remaining": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "NonrecursiveBreakerReducesToKernelIdentity",
+      "meaning": "非递归 constructor/signed-lift 破环包的诚实核心是同 formal-unit pre-Cauchy alpha/delta 核恒等式。",
+      "proved": true,
+      "remaining": "SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion"
+    },
+    {
+      "closed": true,
+      "gate": "KernelIdentityReducesToPointwisePrimitiveTable",
+      "meaning": "核恒等式本身等价于先提交逐 primitive row 的同 formal-unit alpha/delta 核表。",
+      "proved": true,
+      "remaining": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePrimitiveTableCurrentlyLoopsToRowLevel",
+      "meaning": "逐点核表的三输入继续展开会回到 row-level signed-source 固定点；不能把现有内部拆分当证明。",
+      "proved": true,
+      "remaining": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalFullSKLSExtLaneAcceptedOnlyAsExternal",
+      "meaning": "FullS-KLS-ext 可作为外部黑箱合同关闭 noncanonical full-S 数学线，但不是 strict 自足内部证明。",
+      "proved": true,
+      "remaining": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "PointwiseKernelTableCurrentCorpusProved",
+      "meaning": "当前材料没有给出不自回流的逐 primitive alpha/delta 核表。",
+      "proved": false,
+      "remaining": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "meaning": "内部路线仍是闭环；外部合同即使接受，也还需 DStructure/Rankin 独立验收。",
+      "proved": false,
+      "remaining": "(PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate OR AcceptFullSKLSExtExternalContract) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-fulls-kls-ext-acceptance-match-audit.json": "76317b8b3ff81ec7ce1a21fce006e267817a7a401a870a7cfe33637481c90d71",
+    "docs/monograph/prime-matrix-strict-actual-source-bridge-terminal-obstruction-router.json": "a8d5e1712a81352db9bec901a6e1fdfbb6135b745872c6855f43567e892a77b7",
+    "docs/monograph/prime-matrix-strict-exact-entropy-source-law-firewall-router.json": "91fc5d3336a58236a1a96d806017f20aa56da290ecb587675a79e81e931a2547",
+    "docs/monograph/prime-matrix-strict-independent-nonterminal-source-entropy-atomization-router.json": "bb5074bb9ac0497be07b69d600df8e22cd96226bd58bd172abf6c0727c3cc7a3",
+    "docs/monograph/prime-matrix-strict-joint-alpha-signed-source-fixed-point-sync-router.json": "4ddf2b8da70096cdc59370356e727e9f8881bee1c6a927aae3f1af9993b2274b",
+    "docs/monograph/prime-matrix-strict-new-actual-source-entropy-fixed-point-firewall-router.json": "3befb720bb7cfcde411800ed1aa7fc75542f0049992523aa69010f8004e51e94",
+    "docs/monograph/prime-matrix-strict-noncanonical-legal-closure-mode-router.json": "39c772b9e02029d14e9d400ba3651f1d51472f3d83e45740fd773e0de29e7130",
+    "docs/monograph/prime-matrix-strict-nonrecursive-constructor-signed-lift-breaker-router.json": "cfd230650a1f68fc759a7655672c0005c3645fa3bd382621c6927d38b4d629bf",
+    "docs/monograph/prime-matrix-strict-pointwise-primitive-kernel-table-router.json": "adb8a9e1e05a33dff6a5f5d1dd03cf2a86b8420d49be536c1ddffa77185afae1",
+    "docs/monograph/prime-matrix-strict-same-formal-unit-kernel-identity-attack-router.json": "35260c13e9ffb8d39ce9a61db6f1c2cffbd6cf172690b7aa2b2c8ce26e26a6c0",
+    "docs/monograph/prime-matrix-strict-signed-source-fixed-point-breaker-router.json": "a07743b021b11f13f19d791fc43d4268f551878c43f3340bd54664254311185f",
+    "docs/monograph/prime-matrix-strict-source-admission-branch-absorption-router.json": "ff738635e2f712ebb777170a718e8775362847a92b7e29c4933da438fd7d64d6",
+    "docs/monograph/prime-matrix-strict-terminal-leaf-firewall-current-instance-router.json": "3323fe284f3293bb2a9fb18f739c41ffb64a5bebb44b847ae97d2d6074568f3f"
+  },
+  "status": "strict_internal_terminal_source_cycle_synced_to_pointwise_kernel_table_or_external_fulls_kls_open",
+  "strict_internal_basis_after_router": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
