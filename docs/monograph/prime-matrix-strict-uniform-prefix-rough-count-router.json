@@ -1,0 +1,134 @@
+{
+  "b3_main_coefficient_tail_proved": false,
+  "b3_remainder_total_variation_budget_proved": false,
+  "beta_sieve_lower_weight_dominance_imported": true,
+  "certificate_type": "prime_matrix_strict_uniform_prefix_rough_count_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_boundary_prefix_rough_count_certificate_proved": false,
+  "hardpoint_after_router": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND B3RemainderTotalVariationBudgetForLengthP AND FiniteBoundaryPrefixRoughCountCertificate",
+  "hardpoint_before_router": "UniformPrefixRoughCountLowerBound",
+  "main_error_split_closed": true,
+  "next_direct_attack_target": "B3RemainderTotalVariationBudgetForLengthP",
+  "no_theorem_switch": true,
+  "normalized_prefix_residual_potential_lower_bound_proved": false,
+  "parallel_attack_targets": [
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "FormalUnitTypeThresholdLedger",
+    "PrefixLabelSupportToRowFreeTypeAntiCollapse"
+  ],
+  "plain_conclusion": "`UniformPrefixRoughCountLowerBound` 已接到已有 beta-sieve lower-weight 体系：逐点支配性已闭合；对 prefix 序列 A_d(x) 的 CRT 计数误差逐项不超过 1。因此 |R_{x,z}| 的下界等于 beta 主项减 lower weights 总变差。剩余比原命题窄：B3 主系数尾段、总变差预算、有限小 P 证书。",
+  "prefix_sequence_remainder_formula_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "UniformPrefixRoughCountInputActive",
+      "meaning": "上一层把 M# 归一化势的核心输入定为 prefix 粗筛余统一下界。",
+      "proved": false,
+      "remaining": "UniformPrefixRoughCountLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在假设链条里证明筛余计数输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "BetaSieveLowerWeightDominanceImported",
+      "meaning": "已有 beta-sieve lower weights 的逐点支配性：lower sum 不超过筛剩余指示函数。",
+      "proved": true,
+      "remaining": "支配性已不是当前硬点。"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixSequenceRemainderFormulaClosed",
+      "meaning": "对每个 squarefree d<P，因 P mod d 可逆，A_d(x) 是单个 CRT 余类计数，误差绝对值 <=1。",
+      "proved": true,
+      "remaining": "需要总变差预算。"
+    },
+    {
+      "closed": true,
+      "gate": "MainErrorSplitClosed",
+      "meaning": "|R_{x,z}| 被下界为主项 (P-1)W^- 减去 lower weights 总变差。",
+      "proved": true,
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND B3RemainderTotalVariationBudgetForLengthP"
+    },
+    {
+      "closed": false,
+      "gate": "B3MainCoefficientTailCurrentCorpusProved",
+      "meaning": "已有 checkpoint 很强，但尾段证明仍压成连续 beta 主项余量与离散素和误差。",
+      "proved": false,
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError"
+    },
+    {
+      "closed": false,
+      "gate": "B3RemainderTotalVariationCurrentCorpusProved",
+      "meaning": "尚未证明 lower weight 支撑总变差相对 P/log z 足够小；这是从筛主系数到短窗口粗余量的新增必要账本。",
+      "proved": false,
+      "remaining": "B3RemainderTotalVariationBudgetForLengthP"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteBoundaryPrefixRoughCountCurrentCorpusProved",
+      "meaning": "任何显式常数路线都要留下有限 P 段；该边界 prefix 证书尚未生成。",
+      "proved": false,
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "UniformPrefixRoughCountCurrentCorpusProved",
+      "meaning": "统一 prefix 粗筛余下界已接入 beta-sieve 公式，但主系数、总变差和有限段仍未闭合。",
+      "proved": false,
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND B3RemainderTotalVariationBudgetForLengthP AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "DownstreamStillOpen",
+      "meaning": "即便粗筛余下界完成，还需类型阈值比较与标签到类型抗塌缩。",
+      "proved": false,
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound THEN FormalUnitTypeThresholdLedger AND PrefixLabelSupportToRowFreeTypeAntiCollapse"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "sieve_equations": [
+    {
+      "equation": "lower_weight_dominance",
+      "formula": "1_{(n,P(z))=1} >= sum_{d|(n,P(z))} lambda_d^-.",
+      "status": "imported_closed"
+    },
+    {
+      "equation": "prefix_count_lower_sum",
+      "formula": "|R_{x,z}| >= sum_d lambda_d^- A_d(x), A_d(x)=#{1<=c<P: d divides xP+c}.",
+      "status": "closed"
+    },
+    {
+      "equation": "crt_residue_count",
+      "formula": "A_d(x)=(P-1)/d + r_d(x), |r_d(x)|<=1 for squarefree d<P and gcd(d,P)=1.",
+      "status": "closed"
+    },
+    {
+      "equation": "main_error_split",
+      "formula": "|R_{x,z}| >= (P-1)W^-(z,D) - sum_{d in supp lambda^-}|lambda_d^-|.",
+      "status": "closed_as_reduction"
+    },
+    {
+      "equation": "positive_rough_count_contract",
+      "formula": "Need (P-1)W^- - TV(lambda^-) >= c P/log z.",
+      "status": "open"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-beta-sieve-lower-bound-dominance-router.json": "ba91e91d25b9525c2f27748a46bc49dfdde2dadb5b073ee78d5044f3494d6420",
+    "docs/monograph/prime-matrix-beta-sieve-lower-bound-dominance-router.md": "69e7a4953e93d0445f1a03c224db72e769bc59872d40d017f2140ca28256a53a",
+    "docs/monograph/prime-matrix-beta-sieve-main-coefficient-terminal-attack-router.json": "59c06b196474c72b206d0a4ed00f676bdb5b05ae12d2b56b4b7d9642231dfa8b",
+    "docs/monograph/prime-matrix-beta-sieve-main-coefficient-terminal-attack-router.md": "d61b395891d64839ea1854bb8b9d88d0539d358856790749211632ca091c0014",
+    "docs/monograph/prime-matrix-strict-normalized-prefix-potential-router.json": "4f86ea29ee34a43e365527b3c6e030050418f872c893c8ba470d8997ed66d6da"
+  },
+  "status": "uniform_prefix_rough_count_reduced_to_beta_main_total_variation_finite_certificate_open",
+  "uniform_prefix_rough_count_lower_bound_proved": false
+}
