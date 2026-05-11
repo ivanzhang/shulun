@@ -1,0 +1,125 @@
+{
+  "certificate_type": "prime_matrix_strict_b3_remainder_total_variation_budget_router",
+  "status": "b3_remainder_tv_reduced_to_signed_stieltjes_boundary_conditional_external_closed_self_contained_mertens_tail_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "naive_absolute_tv_rejected": true,
+  "crt_remainder_boundary_functional_reduction_closed": true,
+  "prime_word_stieltjes_ledger_imported": true,
+  "alternating_boundary_remainder_reduction_imported": true,
+  "anchor20000_boundary_variation_budget_imported": true,
+  "b3_tv_budget_conditional_external_closed": true,
+  "b3_tv_budget_strict_self_contained_proved": false,
+  "self_contained_mertens_tail_proved": false,
+  "b3_remainder_total_variation_budget_proved": false,
+  "unified_terminal_budget_strict_inequality_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+  "parallel_attack_targets": [
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError",
+    "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+    "ColdCoreNonpersistentSupplyUpperBound"
+  ],
+  "reductions": [
+    {
+      "name": "raw_absolute_tv_rejected",
+      "formula": "sum_d |lambda_d^-| is not the usable B3 remainder budget.",
+      "status": "discipline_closed",
+      "meaning": "裸绝对值会丢失 Rosser word 交错与边界面结构，不能作为自足闭合路径。"
+    },
+    {
+      "name": "crt_remainder_as_boundary_functional",
+      "formula": "A_d(x)-(P-1)/d is an endpoint/face functional after expanding lambda_d^- into prime words.",
+      "status": "closed_reduction",
+      "meaning": "长度 P 的 CRT 余项不是自由符号云，而由 Stieltjes 阶梯测度边界控制。"
+    },
+    {
+      "name": "prime_word_stieltjes_import",
+      "formula": "B3 prime-word sums equal iterated Stieltjes integrals over the B3 admissible polytope.",
+      "status": "imported_closed",
+      "meaning": "离散 prime-word 和到 Stieltjes 对象是精确重写，无解析误差。"
+    },
+    {
+      "name": "alternating_boundary_split",
+      "formula": "B3AlternatingBoundaryRemainderOnePercentLedger => B3PrimeHarmonicMertensUniformEnvelopePGe100000 AND B3BoundaryVariationOnePercentTransferLedger.",
+      "status": "imported_reduction",
+      "meaning": "真正余项是 prime-harmonic/Mertens 一维包络经 B3 边界变差传播。"
+    },
+    {
+      "name": "anchor20000_conditional_budget",
+      "formula": "K_B3 <= 4e^gamma/s = 3.063444558943 and tail error <=0.001294124698.",
+      "status": "conditional_external_closed",
+      "meaning": "若接受外部 Mertens/Dusart 尾段，锚点 20000 后边界变差小于 1% f(s)。"
+    },
+    {
+      "name": "self_contained_tail_boundary",
+      "formula": "Strict self-contained closure still needs SelfContainedDusartReciprocalPrimeProofAppendixXGe10372.",
+      "status": "open_self_contained_input",
+      "meaning": "完全自足版缺的是素数倒数 Mertens 尾段内联证明，不是新的零行几何命题。"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "本步仍只服务早期零行反例链中的 prefix 粗筛余输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "NaiveAbsoluteTVBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "不能把 `sum |lambda_d^-|` 当作最终预算；必须保留 Rosser 交错和 B3 面结构。",
+      "remaining": "Use signed Stieltjes boundary budget."
+    },
+    {
+      "gate": "SignedBoundaryReductionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "长度 P 余项被压成 B3 prime-word Stieltjes 边界余项，而非自由 CRT 误差云。",
+      "remaining": "B3AlternatingBoundaryRemainderOnePercentLedger"
+    },
+    {
+      "gate": "ConditionalExternalB3TVClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "接受外部显式 Mertens/Dusart 尾段时，已有 20000 锚点和 delay-kernel BV 乘子可关闭 B3 TV。",
+      "remaining": "External Mertens/Dusart acceptance, not strict self-contained proof."
+    },
+    {
+      "gate": "StrictSelfContainedB3TVProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "严格自足版仍需内联证明 prime-harmonic Mertens 尾段包络。",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "gate": "UnifiedTerminalBudgetUpdated",
+      "closed": true,
+      "proved": false,
+      "meaning": "统一预算方程的 TV 项现在有条件外部闭合和严格自足剩余边界。",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372 AND FiniteBoundaryPrefixRoughCountCertificate AND downstream terminal/cold-supply inputs"
+    },
+    {
+      "gate": "DirectUnconditionalContradictionReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "B3 TV 的压缩尚未触发统一终端预算严格不等式。",
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND FiniteBoundaryPrefixRoughCountCertificate AND terminal/cold-supply inputs"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.md": "92c48e7d714410ac037b1c880fb2e82bcbf132fe8c02bf9c47686481758eee91",
+    "docs/monograph/prime-matrix-b3-prime-word-stieltjes-integral-router.md": "57b1fd2a5a457a5ea8839dd5b82b60e9e4c623cc16ef2b24343dc03a5b9e4d94",
+    "docs/monograph/prime-matrix-b3-alternating-boundary-terminal-router.md": "8b5c7fd7a43e1a626ab3de4773d44b459fc99a8a83e0578f4d9b1b84d75548b0",
+    "docs/monograph/prime-matrix-b3-boundary-variation-multiplier-router.md": "4bf6e9a168e59a0dd34fef6a0cda222b4f22e4041c7db6b28926087660f8c58e",
+    "docs/monograph/prime-matrix-b3-signed-delay-multiplier-anchor-router.md": "595698545f1dafc720ba1ece140b2ae0267c3dbb506434f38a9ba23df47c54c4",
+    "docs/monograph/prime-matrix-strict-unified-terminal-budget-equation-router.md": "a2d2ee2fa717b072df98442cf4c0c30f88fe61b2c21ae8d6f3b7e1b1cfccc9fc"
+  },
+  "plain_conclusion": "B3 长度 P 余项总变差缺口已经从裸 `sum |lambda_d^-|` 压缩到有符号 Stieltjes 边界预算。关键结构刚性是：CRT 余项不是可任意同号叠加的误差云；Rosser lower weights 展开为 B3 prime words 后，所有余项都落在 ordering/cap/floor/Rosser gate 的边界面上，并由 prime-harmonic 阶梯测度的 Mertens 尾段经 Buchstab delay kernel 传播。接受外部显式 Mertens/Dusart 尾段时，20000 锚点的 B3 边界变差预算已可关闭；严格自足线仍缺该 Mertens 尾段的内联证明。"
+}
