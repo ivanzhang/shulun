@@ -1,0 +1,120 @@
+{
+  "attack_plan": [
+    {
+      "content": "在边界帽内固定 source_family、phase_key、anchor/carry-shell 字段，证明规范类型数小于被迫覆盖实例数；否则超类型增长必须登记为新 layer/phase defect。",
+      "step": "BoundaryCapFormalUnitTypeCompressionDichotomy"
+    },
+    {
+      "content": "对重复的同 formal unit，提取保持的高标签子集 Q；用覆盖无漏和短纤维容量证明 prod(Q) 超过允许位移上界。",
+      "step": "StableReturnLargeLabelSupportProductLowerBound"
+    },
+    {
+      "content": "若不能保持 Q，则记录标签替换、列位移或相位键变化；证明其给出 PDEC/SAE/ColumnCRT 的显式坏窗集合与同账本权重。",
+      "step": "SignatureDriftToRegisteredPhaseDefectTheorem"
+    }
+  ],
+  "backup_parallel_attack_targets": [
+    "StableReturnLargeLabelSupportProductLowerBound",
+    "SignatureDriftToRegisteredPhaseDefectTheorem"
+  ],
+  "boundary_2p_recurrence_not_independent_exit": true,
+  "certificate_type": "prime_matrix_strict_stable_short_return_defect_attack_router",
+  "counterexample_assumption_only": true,
+  "crt_short_recurrence_contradiction_imported": true,
+  "direct_unconditional_contradiction_found": false,
+  "early_zero_forces_stable_short_return_or_defect_proved": false,
+  "empirical_absence_not_used": true,
+  "formal_unit_hash_stability_imported": true,
+  "hardpoint_after_router": "BoundaryCapFormalUnitTypeCompressionDichotomy AND StableReturnLargeLabelSupportProductLowerBound AND SignatureDriftToRegisteredPhaseDefectTheorem",
+  "hardpoint_before_router": "StableShortSameLabelRecurrenceOrRegisteredPhaseDefect",
+  "next_direct_attack_target": "BoundaryCapFormalUnitTypeCompressionDichotomy",
+  "no_theorem_switch": true,
+  "nonclosing_reason": "CRT 短复现矛盾的后半段已清楚；缺的是上游强制机制。若只说边界 2P 短复现，命题与首零行 >P 同强；若只引用实验，不能替代正式证明。",
+  "plain_conclusion": "`StableShortSameLabelRecurrenceOrRegisteredPhaseDefect` 被继续拆开：短稳定同标签复现一旦成立就由 CRT 立刻矛盾，这部分已经不是硬点。真正硬点是证明早期零行强制产生这种复现；形式上需要边界帽 formal-unit 类型压缩、稳定复现保留标签集的乘积下界，以及不复现/漂移时进入已登记相位缺陷。这三项均未由当前语料证明，行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ShortReturnHardpointActive",
+      "meaning": "上一层把直接矛盾首选点压成同 formal unit 短稳定复现或登记相位缺陷。",
+      "proved": false,
+      "remaining": "StableShortSameLabelRecurrenceOrRegisteredPhaseDefect"
+    },
+    {
+      "closed": true,
+      "gate": "CRTPayloadContradictionImported",
+      "meaning": "若同标签稳定复现保留素标签集 Q，则 prod(Q)|Delta；短于 prod(Q) 即矛盾。",
+      "proved": true,
+      "remaining": "要证明的是短复现或相位缺陷的产生机制。"
+    },
+    {
+      "closed": true,
+      "gate": "Boundary2PRecurrenceNotIndependentExit",
+      "meaning": "边界 2P 短复现禁止与首零行超过 P 同强，不能作为独立证明出口。",
+      "proved": true,
+      "remaining": "必须改攻边界帽 formal-unit 类型压缩或相位非覆盖。"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroNamedContradictionMatrixImported",
+      "meaning": "早期零行已进入 CLB、formal unit、carry-shell、anchor-collar、PDEC/SAE/ColumnCRT 命名矩阵。",
+      "proved": true,
+      "remaining": "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitRecordsAvailableButNotCompressed",
+      "meaning": "任意假设 witness 可抽取稳定 formal unit 记录，且哈希命名稳定。",
+      "proved": true,
+      "remaining": "尚未证明边界帽内 formal unit 类型数小于强制实例数。"
+    },
+    {
+      "closed": true,
+      "gate": "PhaseRecurrenceScanImportedAsDiagnosticOnly",
+      "meaning": "诊断显示大标签乘积超过 P 的后半段压力强；但自然短步长不自动给全覆盖复现。",
+      "proved": true,
+      "remaining": "不能用实验样本替代类型压缩证明。"
+    },
+    {
+      "closed": false,
+      "gate": "TypeCompressionDichotomyCurrentCorpusProved",
+      "meaning": "尚未证明边界帽中 forced formal units 的规范类型数足够小，从而鸽巢得到同 formal unit 短复现。",
+      "proved": false,
+      "remaining": "BoundaryCapFormalUnitTypeCompressionDichotomy"
+    },
+    {
+      "closed": false,
+      "gate": "StableReturnLargeLabelProductCurrentCorpusProved",
+      "meaning": "即便得到稳定复现，还需证明被保持的标签集 Q 的乘积超过位移上界。",
+      "proved": false,
+      "remaining": "StableReturnLargeLabelSupportProductLowerBound"
+    },
+    {
+      "closed": false,
+      "gate": "SignatureDriftToDefectCurrentCorpusProved",
+      "meaning": "若类型不复现或标签漂移，尚未证明漂移必产生已登记 PDEC/SAE/ColumnCRT 相位缺陷。",
+      "proved": false,
+      "remaining": "SignatureDriftToRegisteredPhaseDefectTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "StableShortReturnOrDefectCurrentCorpusProved",
+      "meaning": "短复现硬点已拆成类型压缩、标签乘积下界、漂移缺陷三原子；三者尚未合取证明。",
+      "proved": false,
+      "remaining": "BoundaryCapFormalUnitTypeCompressionDichotomy AND StableReturnLargeLabelSupportProductLowerBound AND SignatureDriftToRegisteredPhaseDefectTheorem"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signature_drift_to_registered_phase_defect_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6",
+    "docs/monograph/prime-matrix-early-zero-contradiction-matrix-router.json": "cea1b53a99a6d5e6f0fb6fa9a9d95476b1beb107cbcec68113454428eb68ebf1",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json": "960a954eca848fa45c0ebb0c0086357477c058bbaf7dc4a3f966117c8c03ce21",
+    "docs/monograph/prime-matrix-zero-row-delay-recursive-lemma.md": "e35e648e36119fe95d53519d7fe085501a13ecf4cbccdec27e71e954afd83c77",
+    "docs/phase-recurrence-pressure-scan.json": "7782a0f3b9ed5c62c7df11447fb90c649c7588daf100c6206ee96147d664153a"
+  },
+  "stable_return_large_label_product_proved": false,
+  "status": "stable_short_return_or_phase_defect_reduced_to_type_compression_label_product_drift_defect_open",
+  "type_compression_dichotomy_proved": false
+}
