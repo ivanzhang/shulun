@@ -1,0 +1,147 @@
+{
+  "acyclic_seed_signed_row_emitter_rule_proved": false,
+  "certificate_type": "prime_matrix_strict_row_level_origin_generation_table_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "emitter_fields": [
+    {
+      "field": "acyclic_source_seed",
+      "meaning": "Cauchy/dispersion 前声明的 actual noncanonical primitive source seed。"
+    },
+    {
+      "field": "row_emitter_map",
+      "meaning": "从 seed/source tuple 到有限 alpha/delta primitive rows 的确定性发射映射。"
+    },
+    {
+      "field": "signed_coefficient_law",
+      "meaning": "每条 row 的 signed coefficient 公式，含筛权、符号和 branch/local factor。"
+    },
+    {
+      "field": "prepushforward_sum_identity",
+      "meaning": "这些 row 在 Phi/payment 推前前求和等于 actual alpha/delta 系数。"
+    },
+    {
+      "field": "uv_key_sync",
+      "meaning": "每条 row 同步输出 exact `(u,v)` 和 branch key。"
+    },
+    {
+      "field": "terminal_return_if_missing",
+      "meaning": "seed 缺失、row 缺失、零权重、符号冲突或超预算时进入命名终端家族。"
+    }
+  ],
+  "frontier_reduction": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands 必须由 `AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity` 生成。若该 seed/emitter 不能提交，按 seed 融合与 no-go 纪律回流 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily`；不能从 unsigned skeleton 或 payment 图反推。",
+  "next_direct_attack_target": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步继续攻击逐行 clean-core 原始生成表。结论是：表的真正生成器不是 formal-unit 容器、不是 unsigned carry-shell skeleton，也不是 source table 名称，而是一个无环 pre-Cauchy actual noncanonical source seed 自带的 signed row emitter 规则。该规则必须逐行输出 signed coefficient、sign/local factor、exact `(u,v)`、branch key，并证明推前前求和恒等式。当前材料没有该规则；若无法提交，则只能按已登记纪律回流 acyclic 终端家族。",
+  "primitive_summand_signed_coefficient_origin_identity_proved": false,
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "row_level_origin_generation_table_router_closed": true,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RowLevelOriginTableTargetActive",
+      "meaning": "上一层已把 primitive summand 来源恒等式压到逐行 clean-core 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "TableRequiresAcyclicSeedWithEmitter",
+      "meaning": "逐行表不是后验枚举；必须由无环 pre-Cauchy seed 自带 signed row emitter 规则产生。",
+      "proved": true,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopCutImported",
+      "meaning": "origin/formula/emitter/payment 等价环不能自证逐行表。",
+      "proved": true,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowCannotSupplySeedOrSignedRows",
+      "meaning": "早期零行假设只给 unsigned cover/Phi 数据，不能生成 signed seed 或 signed rows。",
+      "proved": true,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SeedFusionDoesNotProveTable",
+      "meaning": "全局终局中 seed 已通过存在/不存在二分并入终端门；这不等于提交了逐行生成表。",
+      "proved": true,
+      "remaining": "若继续走 signed-source 表路线，仍需 seed+emitter；若缺失则回流终端家族。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitAndSourceTupleContainersReady",
+      "meaning": "formal unit/source tuple/anchor 参数容器可用。",
+      "proved": true,
+      "remaining": "容器不产生 signed coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonReadyButInsufficient",
+      "meaning": "unsigned carry-shell/P列锚/layered-wheel skeleton 已能定位候选几何行。",
+      "proved": false,
+      "remaining": "缺 signed coefficient law。"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLiftStillPointwiseValueTableOpen",
+      "meaning": "signed lift 已压成逐 skeleton row 的 signed value table，但该表未给出。",
+      "proved": false,
+      "remaining": "signed row emitter 必须输出这些值。"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseWeightFormulaStillNeedsOriginRows",
+      "meaning": "逐行 signed alpha weight 公式仍缺 primitive summand 推前前表达式。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SupportSeedIsNotRowEmitter",
+      "meaning": "actual source-support 路线给出支撑能量形式，但不生成 row emitter。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTableRequiresSameRows",
+      "meaning": "actual emitter source table 也需要同一批 primitive rows，不能反过来自证 row table。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": false,
+      "gate": "RowLevelOriginGenerationTableCurrentCorpusProved",
+      "meaning": "当前材料没有提交 seed 自带的 signed row emitter 和推前前求和恒等式。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "seed_fusion_not_table_proof": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-actual-emitter-source-table-router.json": "e327b1a80aef83a36279378e5892334fa305d92d5ac1bcbb8601eaab2f18ab3e",
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.json": "6c1241bb0dd29f19cec15f147b56e495c551fb7e813158491d5a52201848d982",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-terminal-fusion-router.json": "cd82f3da195f2f7649c9c90b49e1322a969af7ed6179e9086b46034c9b31a3dc",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d"
+  },
+  "source_loop_cut_imported": true,
+  "status": "row_level_origin_generation_table_reduced_to_acyclic_seed_signed_row_emitter_open",
+  "table_requires_acyclic_seed_with_emitter": true,
+  "target_input_before_router": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "terminal_return_if_no_emitter": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "zero_row_signed_seed_blocked_imported": true
+}
