@@ -1,0 +1,130 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_kuznetsov_dls_atom_router",
+  "status": "self_contained_kuznetsov_dls_atom_reduced_to_acyclic_ncblk_source_antiatom_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "kz_a_smoothing_closed": true,
+  "kz_b_trace_specialization_closed": true,
+  "kz_c_bessel_decay_closed": true,
+  "kz_d_spectral_large_sieve_closed": true,
+  "kz_e_reduced_to_ncblk_or_external": true,
+  "canonical_ncblk_import_blocked_for_acyclic": true,
+  "generic_antiatom_nogo_imported": true,
+  "self_contained_kuznetsov_dls_large_sieve_inequality_proved": false,
+  "acyclic_ncblk_actual_block_nonconcentration_proved": false,
+  "acyclic_strengthened_source_antiatom_proved": false,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+  "strict_gap_after_router": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom",
+  "conditional_gap_after_router": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom OR AcceptExternalFullSKLSExtWithNoProjectionCompatibility",
+  "terminal_gap_after_router": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom",
+    "must_prove": [
+      "对 acyclic clean residual 的实际系数证明同 moving-block 的最大块质量满足任意 log-power 反原子界",
+      "证明该反原子来自假设早期零行链的实际 pre-Cauchy source，而不是形式 WFD 模板",
+      "排除 moving-delta 单块集中模型，或说明它必回流 PDEC/SAE/ColumnCRT",
+      "若使用外部 FullS-KLS-ext，必须保留条件线并证明无投影兼容"
+    ],
+    "cannot_use_as_proof": [
+      "重复 KZ-A--KZ-D 谱理论闭合",
+      "把 canonical-source NC-BLK 吸收导入 acyclic/noncanonical 分支",
+      "声称形式 well-factorable/Type/Fourier 模板自动给反原子",
+      "把外部 FullS-KLS-ext 写成严格自足证明"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "KuznetsovDLSAtomActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 acyclic windowed DLS 估计压成自足 Kuznetsov/DLS 大筛原子。",
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "gate": "KZAClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Kloosterman 模数平滑和 L2 bookkeeping 已由 H3/KZ-A 普通账本关闭。",
+      "remaining": "无。"
+    },
+    {
+      "gate": "KZBClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Kuznetsov trace formula 专门化已由 Poincare unfolding 与谱 Plancherel 内联推导。",
+      "remaining": "无。"
+    },
+    {
+      "gate": "KZCClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Bessel transform 窗口衰减已由 H3/KZ-C 账本关闭。",
+      "remaining": "无。"
+    },
+    {
+      "gate": "KZDClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "谱大筛 KZ-D 已由 pretrace/LPC/GHLC Schur 链关闭，oldform/Eisenstein 只进入多对数账本。",
+      "remaining": "无。"
+    },
+    {
+      "gate": "KZEReducesToNCBLK",
+      "closed": true,
+      "proved": true,
+      "meaning": "KZ-E/well-factorable dispersion 对数节省不能由裸谱大筛给出；既有 SC-9 前沿已压到 NC-BLK 或外部 DI/BFI。",
+      "remaining": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    },
+    {
+      "gate": "CanonicalNCBLKAbsorptionBlockedForAcyclic",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical-source NC-BLK 已被同集边界吸收，但 strict acyclic/noncanonical 分支不能偷渡该吸收。",
+      "remaining": "需证明 acyclic actual block nonconcentration 或源反原子。"
+    },
+    {
+      "gate": "GenericAntiAtomNoGoImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "generic full-S 自足反原子在 moving-delta 模型下为假；仅靠形式 WFD/Type/Fourier 模板不能推出 NC-BLK。",
+      "remaining": "acyclic seed 必须提供更强的实际来源反原子，或接受外部 FullS-KLS-ext。"
+    },
+    {
+      "gate": "ExternalContractSeparated",
+      "closed": true,
+      "proved": true,
+      "meaning": "FullS-KLS-ext 或 DI/BFI/Kuznetsov 可作为外部合同线，但严格自足线需要内部来源反原子。",
+      "remaining": "AcceptExternalFullSKLSExtWithNoProjectionCompatibility 属于条件线。"
+    },
+    {
+      "gate": "SelfContainedKuznetsovDLSAtomReduced",
+      "closed": true,
+      "proved": false,
+      "meaning": "自足 Kuznetsov/DLS 原子已沿 KZ-A--KZ-E 压到 acyclic NC-BLK/源反原子。",
+      "remaining": "AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    },
+    {
+      "gate": "StrictTerminalFamilyProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "strict 终端家族仍未闭合；活动非 canonical 线卡在 acyclic NC-BLK/源反原子。",
+      "remaining": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.md": "a7abe56b34e70d2349a3d81b8dbdc052161510f4e3ca491781e72301080b6ae3",
+    "docs/monograph/prime-matrix-triad-a1-kuznetsov-ls-atom-frontier-router.md": "ed0efcfaa84aadf0ae5bd3661bcba62909ee00fa80d6f95c87572c0f0fd97bff",
+    "docs/monograph/prime-matrix-h3-dsb-hlc-kuznetsov-ls-atom-expansion.md": "5d1ab938c9e1ac9973e114a3da4820c1fb7834a9c767b30e418bb4e34d930fac",
+    "docs/monograph/prime-matrix-h3-dsb-hlc-kz-b-kuznetsov-trace-specialization.md": "7ffaf4f8b21097311483389cc8cd3e967469c8af6deca3d9eae97e4393242f5e",
+    "docs/monograph/prime-matrix-h3-dsb-hlc-kz-d-spectral-large-sieve-spine.md": "09713f98650842391f0ba949eac526173c4088657d27cae417028f607cc529f8",
+    "docs/monograph/prime-matrix-ncblk-boundary-reconciliation-router.md": "9c9da22b4bf209e1d307037cb3235d619f8bd2f1a5afcde5e675fdd8a5d21220",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-ncblk-branch-alignment-router.md": "5546748f06ddce6c53a92483c64e785027e70356a2c35c8b82e7e48c126197a6",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-self-contained-antiatom-nogo-router.md": "8875843d4bc3b16c2faba6f5d7247a5136a4828a0e0cd93ccc033b806fdf370b"
+  },
+  "plain_conclusion": "本步继续攻 `SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks`。KZ-A 平滑、KZ-B trace formula、KZ-C Bessel 衰减、KZ-D spectral large sieve 已有内部脊柱；真正阻断是 KZ-E 的 well-factorable dispersion log-saving。既有 SC-9 前沿和 NC-BLK 核查显示，该阻断等价于证明 acyclic actual block nonconcentration/source anti-atom，或走外部 FullS-KLS-ext 条件线。因此当前最窄自足剩余更新为 `AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom`。"
+}
