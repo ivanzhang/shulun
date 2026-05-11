@@ -1,0 +1,133 @@
+{
+  "basis_word_formula_from_source_tuple_parameters_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_signed_weight_coordinate_slot_router",
+  "coordinate_domain_closed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`AcyclicSeedSignedWeightCoordinateSlotLedger` 的输入域和槽位 schema 可由已闭合坐标账本声明；真正首缺口是 `AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords`，即每个 primitive basis word 的 signed weight/local factor 赋值公式。",
+  "next_direct_attack_target": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+    "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+    "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+  ],
+  "plain_conclusion": "本步把 signed weight coordinate slot 压到 slot_value_formula。锚、dyadic、phase 输入已闭合，所以几何坐标不再阻塞；剩余是纯 signed 算术：必须正向给出每个 primitive basis word 的 signed weight/local factor，且与 basis source 和 coefficient assignment 兼容。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SignedWeightCoordinateSlotTargetActive",
+      "meaning": "上一层已关闭 anchor input rule，并把 word coordinate formula 的剩余压到 signed weight coordinate slot。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CoordinateDomainClosed",
+      "meaning": "primitive word 的 anchor/dyadic/phase 输入域已由锚区间和多重度账本闭合。",
+      "proved": true,
+      "remaining": "slot_schema 可声明。"
+    },
+    {
+      "closed": true,
+      "gate": "SlotSchemaAvailableButValueMissing",
+      "meaning": "可声明 signed_weight/sign/local_factor 槽位，但还没有每个 word 的实际赋值公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": true,
+      "gate": "SlotValueFormulaIsFirstOpenField",
+      "meaning": "没有 slot_value_formula，非零符号、coefficient assignment 和推前前求和都无从验证。",
+      "proved": true,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedValueTableStillOpen",
+      "meaning": "逐 skeleton row signed value table 与非递归 signed weight formula 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": true,
+      "gate": "BasisSourceAndAssignmentStillOpen",
+      "meaning": "seed basis source、basis alphabet 和 coefficient assignment 尚未闭合，不能给 signed slot 赋值。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedCoordinateCannotFillSignedSlot",
+      "meaning": "anchor/dyadic/phase 坐标只给 unsigned 输入域，不能自动产生 signed weight/local factor。",
+      "proved": true,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseSignedSlotRecoveryBlocked",
+      "meaning": "不能从 payment、推前后投影或早期零行覆盖反推 signed slot value。",
+      "proved": true,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": false,
+      "gate": "SignedWeightSlotValueFormulaCurrentCorpusProved",
+      "meaning": "当前材料没有提交 primitive basis word 上的 signed weight/local factor 赋值公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "closed": false,
+      "gate": "SignedWeightCoordinateSlotCurrentCorpusProved",
+      "meaning": "slot schema 可命名，但缺 value formula、非零符号规则和 assignment 兼容，故坐标槽未闭合。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_weight_coordinate_slot_proved": false,
+  "signed_weight_coordinate_slot_router_closed": true,
+  "signed_weight_slot_value_formula_proved": false,
+  "slot_fields": [
+    {
+      "field": "slot_schema",
+      "meaning": "在 primitive basis word 中声明 signed_weight、sign、local_factor、return_tag 槽位。"
+    },
+    {
+      "field": "slot_value_formula",
+      "meaning": "对每个 primitive basis word 给出 signed weight/local factor 的实际赋值公式。"
+    },
+    {
+      "field": "nonzero_and_sign_rule",
+      "meaning": "证明 local factor 非零、符号口径确定；失败时命名回流。"
+    },
+    {
+      "field": "basis_assignment_compatibility",
+      "meaning": "证明该槽位赋值与 seed coefficient assignment/basis source 是同一公式。"
+    },
+    {
+      "field": "prepushforward_sum_compatibility",
+      "meaning": "证明槽位赋值参与推前前 alpha/delta 求和恒等式。"
+    }
+  ],
+  "slot_schema_available": true,
+  "slot_value_formula_is_first_open_field": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-anchor-input-rule-router.json": "79facaf8c8b0fbf5ce4ff39304895be967192af6ed4125ff41ccc8ea57e4e522",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-alphabet-ledger-router.json": "01dfdcc9a1f9d9a839331068b413f9ecbb762491ec738916c1d23b1204c3d0a7",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json": "ae82e18347b05aab66be09d91ddb80a71eb30c3c7ce8ae3ba8e3fe1a0e4a5bea",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f"
+  },
+  "status": "signed_weight_coordinate_slot_reduced_to_slot_value_formula_open",
+  "target_input_before_router": "AcyclicSeedSignedWeightCoordinateSlotLedger",
+  "terminal_return_if_no_slot_value_formula": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "word_coordinate_formula_proved": false
+}
