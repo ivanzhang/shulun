@@ -1,0 +1,127 @@
+{
+  "actual_noncanonical_moving_block_spread_ncb_lk_proved": false,
+  "certificate_type": "prime_matrix_strict_actual_moving_block_spread_ncb_lk_router",
+  "counterexample_assumption_only": true,
+  "direct_contradiction_need": "若要把早期零行反例链与真实结构链变成直接矛盾，需要再证明：反例强制的终端对象落入可排斥的全局 PDEC-CAP / internal CleanKLS 大筛容量门，并同时支付 ExplicitModelGapAndFiniteDPRCLedger。当前材料只证明无名出口不存在，没有证明这些终端门本身。",
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "global_pdec_sparse_terminal_exclusion_proved": false,
+  "hypothetical_chain_only": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger",
+  "no_theorem_switch": true,
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "plain_conclusion": "`ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn` 在 strict 链中已不能作为独立无名出口保留：有低维签名时进入 PDEC/SAE/ColumnCRT/sparse 终端，无低维签名时进入早期零行L2-flat/终端包；后者已调和为 `GlobalPDECorSparseTerminalExclusion`，再由全局拆分压到 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`。moving-block 专属 DPRC 兼容门可删除，但 `ExplicitModelGapAndFiniteDPRCLedger` 仍是独立账本。因此当前最窄剩余不是 moving-block 本身，而是全局终端容量/内部大筛门与模型余量账本；直接矛盾仍未达到，行/列命题不能宣称无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "StrictActualMovingBlockInputActive",
+      "meaning": "上一层 strict 恒等式分类已把最窄点压成 actual noncanonical moving-block/NC-BLK。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只在 Assume EarlyZeroRowWithinP 的假设链条中传递，不用真实零行缺席作证。",
+      "proved": true,
+      "remaining": "所有输出必须是反例链内的命名终端、模型账本或打开输入。"
+    },
+    {
+      "closed": true,
+      "gate": "MovingBlockTerminalReductionImported",
+      "meaning": "actual same-(u,v) moving block 有登记低维签名则进 PDEC/SAE/ColumnCRT；无签名则进 L2-flat/早期零行终端包。",
+      "proved": true,
+      "remaining": "EarlyZeroTerminalExclusionPackage AND ExactModelGapAndDPRCLedgerCompatibilityForMovingBlock。"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroTerminalSchemaReconciledImported",
+      "meaning": "抽象 EarlyZeroTerminalExclusionPackage 已与 anchor、cofactor、early-band、DLS 回流 schema 调和。",
+      "proved": true,
+      "remaining": "GlobalPDECorSparseTerminalExclusion。"
+    },
+    {
+      "closed": true,
+      "gate": "DPRCCompatibilityGateRemovedImported",
+      "meaning": "moving-block 替换没有引入新的 DPRC 口径；兼容性门可删除，但模型账本自身仍保留。",
+      "proved": true,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalTerminalSplitImported",
+      "meaning": "GlobalPDECorSparseTerminalExclusion 已与全局终端家族拆分对齐。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentMaterializedTerminalFrontierExhausted",
+      "meaning": "当前已物化 PDEC 与 sparse/LocalSurvivor 前沿清零；future schema 只是准入纪律。",
+      "proved": true,
+      "remaining": "这不是未来全局 family 不存在的证明。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictActualMovingBlockNoUnnamedExit",
+      "meaning": "strict moving-block/NC-BLK 不能再作为独立无名出口停留。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DirectContradictionNotYetReached",
+      "meaning": "早期零行反例链已被挤压到命名终端与模型账本，但尚未推出足以闭合命题的直接矛盾。",
+      "proved": false,
+      "remaining": "需证明终端容量/内部大筛，或证明模型余量账本。"
+    },
+    {
+      "closed": false,
+      "gate": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+      "meaning": "仍未证明全局 PDEC-CAP 容量证书或内部 CleanKLS/DLS 大筛吸收。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": false,
+      "gate": "ExplicitModelGapAndFiniteDPRCLedger",
+      "meaning": "P<2003 有限 DPRC 与 P>=2003 模型余量账本仍需正式证明。",
+      "proved": false,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍是最终独立晋级验收门。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.json": "9a0eb43daa02d6e29155b0b0a15b98778c0ad12c698cc75b6d3db8d689959d8d",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.json": "a998f03b4bbb260f47b9b9978b1ff22995ff800329fc75f6faa48bb10a4d14e8",
+    "docs/monograph/prime-matrix-final-input-firewall-boundary-router.json": "b8db63a47643fdf9b98e860c8e81eec6de92377e87118b274f9ccf63f0008b7b",
+    "docs/monograph/prime-matrix-global-pdec-sparse-terminal-split-reconciliation-router.json": "e30d4f506435633e7614c16ee4f1faa1b65bf739dd93fd731050f5972155c078",
+    "docs/monograph/prime-matrix-moving-block-dprc-ledger-compatibility-router.json": "c58be99083b0ddf69b3f7254bf9f4e8b9fc1df7ce16d5feeb38e727d865cef73",
+    "docs/monograph/prime-matrix-strict-independent-identity-statement-taxonomy-router.json": "9f0797afd65cd82b9fb0eff7d4492da3ee0b88822fdf18beee8c8a6c5a361c42",
+    "docs/monograph/prime-matrix-strict-terminal-leaf-firewall-current-instance-router.json": "3323fe284f3293bb2a9fb18f739c41ffb64a5bebb44b847ae97d2d6074568f3f"
+  },
+  "status": "strict_actual_moving_block_reduced_to_global_terminal_modelgap_open",
+  "strict_actual_moving_block_router_closed": true,
+  "strict_self_contained_basis_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "structural_chain": [
+    "Assume EarlyZeroRowWithinP",
+    "ActualNoncanonicalMovingBlockSpreadNCBLK cannot remain unnamed",
+    "registered low-dimensional signature -> PDEC/SAE/ColumnCRT/sparse terminal",
+    "no registered signature -> pure L2-flat/early-zero terminal package",
+    "early-zero terminal schema -> GlobalPDECorSparseTerminalExclusion",
+    "global terminal split -> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve",
+    "DPRC compatibility gate removed, ExplicitModelGapAndFiniteDPRCLedger remains"
+  ],
+  "terminal_gap_after_router": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger",
+  "terminal_gap_before_router": "ActualNoncanonicalMovingBlockSpreadNCBLKForCounterexampleBranchAndReturn"
+}
