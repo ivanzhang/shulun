@@ -1,0 +1,202 @@
+{
+  "adjacent_coprime_dynamics_closed": true,
+  "block_capacity_envelope_closed": true,
+  "certificate_type": "prime_matrix_strict_unified_counterexample_contradiction_field_matrix_router",
+  "contradiction_matrix": [
+    {
+      "closed_part": "CRT 短复现矛盾已闭合。",
+      "counterexample_chain": "类型压缩迫使同 formal unit 同标签短复现。",
+      "field": "stable_same_label_recurrence",
+      "remaining": "BoundaryCap/Prefix 有效实例下界与重复 type -> same label。",
+      "true_rigidity_chain": "同标签短复现要求 prod(Q)|Delta；短 Delta<prod(Q) 不可能。"
+    },
+    {
+      "closed_part": "prefix 加权转移、容量乘子、M# 到粗筛余公式已闭合。",
+      "counterexample_chain": "早期零行迫使每个 prefix 残洞选一个 tau_z(c) in (z,P)。",
+      "field": "prefix_mass_vs_finite_label_supply",
+      "remaining": "B3RemainderTotalVariationBudgetForLengthP AND B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND FiniteBoundaryPrefixRoughCountCertificate",
+      "true_rigidity_chain": "每个 q 在块长 L 中容量 <=ceil(L/q)，总容量是有限素数供给和。"
+    },
+    {
+      "closed_part": "相邻互质、商互质、短距复用禁止均为整数恒等式。",
+      "counterexample_chain": "连续合数链要求每列都有 tau_c m_c 分解并满足 tau_{c+1}m_{c+1}-tau_c m_c=1。",
+      "field": "adjacent_coprime_quotient_dynamics",
+      "remaining": "BlockCoprimeDynamicsCapacitySurplus / FinitePrimeSupplyVsCoprimeDynamicsLoad",
+      "true_rigidity_chain": "相邻列全部因子支撑互质；大标签短距不能复用；商链也相邻互质。"
+    },
+    {
+      "closed_part": "schema 准入与 no-loss accounting 已闭合。",
+      "counterexample_chain": "为避免稳定复现，phase_key、anchor、label skeleton 或 quotient records 必须漂移。",
+      "field": "drift_to_named_defect",
+      "remaining": "SignatureDriftToRegisteredPhaseDefectTheorem and terminal exclusion。",
+      "true_rigidity_chain": "no-loss 账本要求所有漂移进入 PDEC/SAE/ColumnCRT 命名桶。"
+    },
+    {
+      "closed_part": "缺陷路线已定义。",
+      "counterexample_chain": "若 prefix 粗筛余本身不足，反例避开质量压力。",
+      "field": "low_prefix_mass_defect",
+      "remaining": "LowPrefixResidualMassToRegisteredPhaseDefect。",
+      "true_rigidity_chain": "低模端点筛余异常必须登记为 PDEC/SAE/ColumnCRT，而不是自由失败。"
+    },
+    {
+      "closed_part": "二次缺口曲线分解已闭合。",
+      "counterexample_chain": "底部带早期零行要求残洞全部落入 c=a(h-a) 高素对曲线或素数为空。",
+      "field": "bottom_pair_curve",
+      "remaining": "BottomPrimeWindow 或其 PDEC/SAE 回流。",
+      "true_rigidity_chain": "底部精确分解给 |F_{P-h}|<=floor(h/2)，残洞质量若超过即矛盾。"
+    }
+  ],
+  "coprime_dynamics_finite_supply_contradiction_proved": false,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "mass_route_target": "B3RemainderTotalVariationBudgetForLengthP",
+  "next_direct_attack_target": "BlockCoprimeDynamicsCapacitySurplus",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "FormalUnitTypeThresholdLedger",
+    "PrefixLabelSupportToRowFreeTypeAntiCollapse",
+    "SignatureDriftToRegisteredPhaseDefectTheorem"
+  ],
+  "plain_conclusion": "统一矛盾场已把早期零行的连续合数链、相邻互质/商相邻互质动力系统、prefix 残洞强制负载、容量乘子、类型压缩和命名缺陷回流放进同一矩阵。新增的确定刚性是：若 xP+c=tau_c m_c 与 xP+c+1=tau_{c+1}m_{c+1}，则两侧全部因子支撑互质，并满足 tau_{c+1}m_{c+1}-tau_c m_c=1；若同一素标签命中距离 d 的两列，则该标签必须整除 d。这给出有限素因子供给的局部容量场，但尚未证明强制负载超过该容量。行/列命题仍未无条件闭合。",
+  "quotient_cross_coprime_dynamics_closed": true,
+  "rigidity_laws": [
+    {
+      "formula": "gcd(xP+c, xP+c+1)=1.",
+      "law": "adjacent_integer_coprime",
+      "role": "相邻列的全部因子支撑不相交。",
+      "status": "closed"
+    },
+    {
+      "formula": "If xP+c=tau_c m_c and xP+c+1=tau_{c+1}m_{c+1}, then every factor from the first product is coprime to every factor from the second.",
+      "law": "quotient_cross_coprime",
+      "role": "商相邻互质动力系统的基本守恒。",
+      "status": "closed"
+    },
+    {
+      "formula": "tau_{c+1}m_{c+1}-tau_c m_c=1.",
+      "law": "unimodular_neighbor_equation",
+      "role": "把连续合数链写成相邻乘法坐标的刚性差分系统。",
+      "status": "closed"
+    },
+    {
+      "formula": "If a prime q divides both xP+c and xP+c+d, then q divides d; hence q>d cannot be reused at distance d.",
+      "law": "short_distance_label_reuse",
+      "role": "大标签在短块内近似一次性消耗。",
+      "status": "closed"
+    },
+    {
+      "formula": "For a block of length L, a fixed q can cover at most ceil(L/q) canonical prefix atoms.",
+      "law": "block_label_capacity",
+      "role": "有限素因子供给的局部容量上界。",
+      "status": "closed"
+    },
+    {
+      "formula": "|R_{x,z}| >= (P-1)W^- - TV(lambda^-), and M#>=|R_{x,z}|/ceil(P/z).",
+      "law": "prefix_mass_lower_route",
+      "role": "给反例链施加强制输入负载。",
+      "status": "reduced_open"
+    },
+    {
+      "formula": "Every failed or drifting obligation remains as PDEC/SAE/ColumnCRT/quotient/reuse return.",
+      "law": "no_loss_named_return",
+      "role": "防止把矛盾压力静默丢失。",
+      "status": "closed_as_accounting"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "UnifiedFieldInputActive",
+      "meaning": "把当前反例链所有压力源统一到同一个矩阵，而不宣称任一开放出口已排斥。",
+      "proved": false,
+      "remaining": "UnifiedCounterexampleTrueStructureContradictionField"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "所有结论都在假设早期零行下推导；不使用真实零行缺席替代证明。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "AdjacentCoprimeDynamicsClosed",
+      "meaning": "连续整数相邻互质，任意因子分解后的标签与商在相邻列之间全互质。",
+      "proved": true,
+      "remaining": "AdjacentQuotientCoprimeDynamicsLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ShortDistanceLargeLabelReuseForbiddenClosed",
+      "meaning": "同一素标签若命中距离 d 的两列，则必整除 d；所以大于 d 的标签不能短距复用。",
+      "proved": true,
+      "remaining": "可进入 block capacity。"
+    },
+    {
+      "closed": true,
+      "gate": "LocalLabelConflictScanImportedAsDiagnostic",
+      "meaning": "已有扫描支持相邻标签不交与短距大标签不可复用，但该扫描只作诊断，不作全局证明。",
+      "proved": true,
+      "remaining": "正式证明由整数恒等式给出。"
+    },
+    {
+      "closed": true,
+      "gate": "BlockCapacityEnvelopeClosed",
+      "meaning": "块长 L 内，每个 canonical label q 的容量 <=ceil(L/q)，有限供给容量上界可写成 sum_{z<q<P}ceil(L/q)。",
+      "proved": true,
+      "remaining": "BlockCoprimeDynamicsCapacitySurplus"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixMassInputReduced",
+      "meaning": "强制负载 |R_{x,z}| 已压成 beta 主项减总变差；尚未得到全局正下界。",
+      "proved": false,
+      "remaining": "B3RemainderTotalVariationBudgetForLengthP AND B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityMultiplierImported",
+      "meaning": "行内标签复用乘子已精确登记，不能重复计算同一素数供给。",
+      "proved": true,
+      "remaining": "FormalUnitTypeThresholdLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoLossNamedReturnImported",
+      "meaning": "漂移、复用、quotient 与终端失败不允许消失，必须回到命名缺陷桶。",
+      "proved": true,
+      "remaining": "SignatureDriftToRegisteredPhaseDefectTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "CoprimeDynamicsSupplyContradictionCurrentCorpusProved",
+      "meaning": "相邻/商互质刚性本身已闭合，但尚未证明某个块的强制负载超过有限素因子供给容量。",
+      "proved": false,
+      "remaining": "BlockCoprimeDynamicsCapacitySurplus AND FinitePrimeSupplyVsCoprimeDynamicsLoad"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedContradictionFieldCurrentCorpusClosed",
+      "meaning": "统一矩阵已建立；明显直接矛盾仍需在某个交点完成严格不等式或终端排斥。",
+      "proved": false,
+      "remaining": "(B3RemainderTotalVariationBudgetForLengthP AND B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND FiniteBoundaryPrefixRoughCountCertificate AND FormalUnitTypeThresholdLedger AND PrefixLabelSupportToRowFreeTypeAntiCollapse) OR BlockCoprimeDynamicsCapacitySurplus OR SignatureDriftToRegisteredPhaseDefectTheorem"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "short_distance_large_label_reuse_forbidden_closed": true,
+  "source_hashes": {
+    "docs/local-label-conflict-scan.json": "bef9be469da19b1a74c7355877a0e848a1e0a71f55e773cd38488b07f8a0f149",
+    "docs/monograph/prime-matrix-early-zero-phase-defect-schema-router.md": "8650979cbe6575d82f913eeae781931b10466400bd76a6b9cc97f1719f1fb008",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.md": "9215c5f0e251cd7170759c2cc51c02ddfc9fdfda469a0ff35f26b524ea6cc692",
+    "docs/monograph/prime-matrix-strict-counterexample-true-structure-cycle-cut-router.md": "57060935649c117e162207c9d2456877a67c236c0d6586be4bc4bdf4ea73c77e",
+    "docs/monograph/prime-matrix-strict-prefix-capacity-multiplier-discipline-router.md": "352c86f7f0d64130e7cdf822484877f5cf1ec3e3629d0c8bdef50bcc7ca2ef98",
+    "docs/monograph/prime-matrix-strict-stable-short-return-defect-attack-router.md": "920d1576c3513bda700e3eb065ee607d2d4e41a448776dad65ae4c780545837b",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.md": "92c48e7d714410ac037b1c880fb2e82bcbf132fe8c02bf9c47686481758eee91"
+  },
+  "status": "unified_contradiction_field_matrix_built_coprime_dynamics_integrated_intersection_open",
+  "unified_contradiction_field_closed": false
+}
