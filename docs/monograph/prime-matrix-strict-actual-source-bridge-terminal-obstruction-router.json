@@ -1,0 +1,130 @@
+{
+  "certificate_type": "prime_matrix_strict_actual_source_bridge_terminal_obstruction_router",
+  "status": "strict_actual_source_bridge_reduced_to_source_admission_or_moving_atom_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "actual_source_bridge_boundary_sharp": true,
+  "source_lock_free_upgrade_blocked": true,
+  "zero_row_geometry_source_lock_blocked": true,
+  "antiatom_free_upgrade_blocked": true,
+  "support_energy_formal_only": true,
+  "source_lock_concrete_atom_proved": false,
+  "actual_noncanonical_clean_core_moving_atom_exclusion_proved": false,
+  "actual_source_bridge_theorem_closed": false,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "strict_acyclic_terminal_family_proved": false,
+  "strict_terminal_family_proved": false,
+  "self_contained_mertens_tail_proved": false,
+  "self_contained_dstructure_rankin_replacement_proved": false,
+  "row_column_unconditional_closed": false,
+  "bridge_before_router": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput",
+  "strict_self_contained_terminal_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion",
+  "strict_self_contained_math_basis_after_router": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "with_external_mertens_high_tail_removed_basis": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "A1CleanBranchCanonicalSourceAdmission_OR_ActualNoncanonicalCleanCoreMovingAtomExclusion",
+    "must_prove": [
+      "源锁定线：在 Cauchy/dispersion 前证明 clean A1 反例分支选择 canonical RIW/Buchstab 决策树权重",
+      "反原子线：证明通过全部回流测试后的 actual noncanonical clean-core 容量测度没有 moving same-(u,v) 大原子",
+      "若任一失败态出现，必须回到 PDEC/SAE/ColumnCRT/CleanKLS 或外部 FullS-KLS 条件线，不能生成第四终端",
+      "同步保留 DStructure/Rankin 与高段 Mertens/PNT 自足尾项为独立门"
+    ],
+    "cannot_use_as_proof": [
+      "从真实零行缺席、数值样本或覆盖图直接反推 source",
+      "从 canonical 分支闭合静默推出 noncanonical 分支 source lock",
+      "把 Cauchy 支撑能量形式引理当成 actual 最大原子界",
+      "把低支撑 packet 排斥口径替代 sharp moving-atom 排斥而不证明逆否账本",
+      "把外部 FullS-KLS 条件线写成 strict 自足闭合"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "ActualSourceBridgeActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层 strict noncanonical 叶子已过滤到实际源锁定或实际源强化反原子。",
+      "remaining": "ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput"
+    },
+    {
+      "gate": "SourceLockConcreteAtomImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "source-lock 合同显示 canonical 源头链只在 clean A1 分支被证明准入 canonical RIW/Buchstab 时可用。",
+      "remaining": "A1CleanBranchCanonicalSourceAdmission"
+    },
+    {
+      "gate": "SourceLockFreeUpgradeBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "不能从 canonical restricted 分支闭合、KZ-E 泛 well-factorable 记录或后验 payment 图免费推出 source lock。",
+      "remaining": "必须给 pre-Cauchy 分支准入证明。"
+    },
+    {
+      "gate": "ZeroRowGeometryCannotGenerateSourceLock",
+      "closed": true,
+      "proved": true,
+      "meaning": "早期零行假设、斜线覆盖、圆柱环绕和层叠筛只给 unsigned 覆盖/预算形状，不能反推 signed pre-Cauchy source。",
+      "remaining": "A1CleanBranchCanonicalSourceAdmission"
+    },
+    {
+      "gate": "StrengthenedAntiAtomConcreteAtomImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "source anti-atom 合同已精确为最终 full-S non-AP 容量测度无 moving same-(u,v) 大原子。",
+      "remaining": "ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "gate": "AntiAtomFreeUpgradeBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal WFD、Type/Fourier、K4/K6、朴素 incidence 和 canonical 支撑导入均不能推出该反原子。",
+      "remaining": "ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "gate": "SupportEnergyLemmaOnlyFormal",
+      "closed": true,
+      "proved": true,
+      "meaning": "支撑能量/Cauchy 引理只说明最大 pair 原子界可推出支撑下界，不证明 actual source 的最大原子界。",
+      "remaining": "ExactUVPairMassDispersionOrMaxAtomBoundLedger / clean-core moving atom exclusion。"
+    },
+    {
+      "gate": "MovingAtomSharpInputPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "过强的低支撑 packet 排斥已校准为 sharp moving-atom 排斥；该排斥尚未证明。",
+      "remaining": "ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "gate": "CanonicalLockStillParallel",
+      "closed": true,
+      "proved": false,
+      "meaning": "acyclic terminal canonical-lock 仍可作为替代路线，但其同集推前与无 payload 残留仍开放。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "gate": "ActualSourceBridgeCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "实际源桥已压到两个具体原子，但没有一个已由当前材料证明。",
+      "remaining": "A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "仍缺 terminal 三选一、高段自足尾项或外部接受、DStructure/Rankin 替代包。",
+      "remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-noncanonical-legal-closure-mode-router.md": "88dee68ba9eba8ea97e8fb3b218d23b06aefea773310167e112faf0ee3755e67",
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.md": "8a49a2e5596756a83f457ecaa9bc8e6c44cf6b43f14e44a40d810cca2d1b8114",
+    "docs/monograph/prime-matrix-triad-a1-source-lock-contract-router.md": "ffc46d9654f87935e9bde429235b461b74131f6c43dd49c3870a1c13e078ef5b",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-full-s-source-antiatom-router.md": "47049a5816fef4e01f5e4fd38ea3e67dac9bd7a1bd9c76a2f09b96d281bb79f8",
+    "docs/monograph/prime-matrix-clean-core-moving-atom-sharp-input-router.md": "2077f6b4322d13af9ac9bef4ee7d3f9c9c7f4a0e1a03f72151c7c338b6cc33f2",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-canonical-embedding-router.md": "3c1d1ddc643f21d675d36ed2fc48f8f110de779fd9c061b71884919c5be3df82",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.md": "ba9cacc35cdceb9bacc306202019ffe7bd8ae141ed6c1d9b4510ad77b81f56a6"
+  },
+  "plain_conclusion": "本步直接攻击 `ActualA1FullSSourceLockOrStrengthenedAntiAtomTheoremInput`。源锁定线的具体原子是 `A1CleanBranchCanonicalSourceAdmission`：必须在 Cauchy/dispersion 前证明 clean A1 反例分支已经选择 canonical RIW/Buchstab 决策树源，不能从后验覆盖图或 canonical restricted 分支闭合反推。强化反原子线的具体原子是 `ActualNoncanonicalCleanCoreMovingAtomExclusion`：必须排斥通过全部回流测试后的 actual noncanonical clean-core 容量大原子，不能由 formal WFD、Type/Fourier、K4/K6 或支撑能量形式引理免费推出。因此最新 strict 自足终端剩余为 `AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion`。这些原子均未证明，行/列命题仍未无条件闭合。"
+}
