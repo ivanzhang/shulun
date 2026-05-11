@@ -1,0 +1,114 @@
+{
+  "title": "Prime Matrix strict orientation law to complete branch trace router",
+  "status": "orientation_local_factor_law_reduced_to_complete_branch_trace_formula_or_return_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "active_previous_target": "PrimitiveOrientationLocalFactorProductLawBeforePushforward",
+  "complete_branch_trace_would_imply_orientation_law": true,
+  "canonical_branch_trace_scoped_only": true,
+  "generic_wfd_not_a_branch_trace": true,
+  "actual_noncanonical_complete_branch_trace_formula_proved": false,
+  "primitive_orientation_local_factor_product_law_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+  "expanded_next_target": [
+    "ActualNoncanonicalPrimitiveBranchAlphabetLedger",
+    "CompleteOrderedBranchTraceConstructorFormula",
+    "OrientationParityAndLocalFactorProductFromTrace",
+    "ExactUVAndBranchKeyOutputFromTrace",
+    "CompleteActualNoncanonicalTraceBudgetLedger",
+    "CompleteBranchTraceFailureNamedReturnLedger",
+    "NoCanonicalGenericWFDOrDownstreamRecovery"
+  ],
+  "conditional_closure": {
+    "if": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn",
+    "then": "PrimitiveOrientationLocalFactorProductLawBeforePushforward",
+    "reason": "A complete trace records orientation parity, nonzero local factors, signed coefficient, exact (u,v), branch key and return tag before pushforward."
+  },
+  "fallback_if_trace_formula_fails": [
+    "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+    "AcceptFullSKLSExtExternalContract"
+  ],
+  "independent_final_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "gates": [
+    {
+      "gate": "OrientationLawTargetActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "The previous hardpoint is the primitive orientation/local-factor product law.",
+      "remaining": "PrimitiveOrientationLocalFactorProductLawBeforePushforward"
+    },
+    {
+      "gate": "OrientationLawGeneratedByTrace",
+      "closed": true,
+      "proved": true,
+      "meaning": "A complete branch trace would generate orientation, sign, local factor and signed coefficient as trace fields.",
+      "remaining": "Prove the trace formula"
+    },
+    {
+      "gate": "MobiusParityShadowInsufficient",
+      "closed": true,
+      "proved": true,
+      "meaning": "Mobius/parity gives only a local parity shadow, not actual source tuple scope, exact (u,v), branch key or return tags.",
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "gate": "CanonicalDecisionTreeScopedOnly",
+      "closed": true,
+      "proved": true,
+      "meaning": "Canonical RIW/Buchstab decision trees cannot be imported into the noncanonical clean-core branch.",
+      "remaining": "Noncanonical trace needed"
+    },
+    {
+      "gate": "GenericWFDNotBranchTrace",
+      "closed": true,
+      "proved": true,
+      "meaning": "Generic WFD is a formal decomposition constraint, not a primitive branch-trace emitter.",
+      "remaining": "Actual branch trace formula"
+    },
+    {
+      "gate": "CompleteTraceImpliesNoCancellationConditionally",
+      "closed": true,
+      "proved": true,
+      "meaning": "Given complete traces, path disjointness and nonzero local-factor products imply same-trace no-cancellation.",
+      "remaining": "Trace existence, budget and return are still open"
+    },
+    {
+      "gate": "TraceBudgetStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "The number of complete actual noncanonical traces must satisfy a polylog/K6 budget.",
+      "remaining": "CompleteActualNoncanonicalTraceBudgetLedger"
+    },
+    {
+      "gate": "TraceReturnDisciplineStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "Nonunique, zero-factor, cancelling, thin/rejected and over-budget traces must return by name.",
+      "remaining": "CompleteBranchTraceFailureNamedReturnLedger"
+    },
+    {
+      "gate": "ActualNoncanonicalTraceFormulaCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "The current corpus has not supplied an exact actual noncanonical primitive branch-trace constructor formula.",
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "gate": "OrientationLocalFactorLawCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "The orientation law has been reduced to the complete trace formula but remains unproved.",
+      "remaining": "ExactActualNoncanonicalPrimitiveBranchTraceFormulaOrReturn"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "This router compresses the hardpoint but does not close the row/column theorem.",
+      "remaining": "Trace formula or terminal descent / external contract plus DStructure acceptance"
+    }
+  ],
+  "plain_conclusion": "The latest strict internal hardpoint is no longer a standalone orientation/local-factor law. It is the exact actual noncanonical primitive branch-trace constructor formula or named return; complete traces would generate the signed orientation law conditionally, but the current corpus has not proved those traces."
+}
