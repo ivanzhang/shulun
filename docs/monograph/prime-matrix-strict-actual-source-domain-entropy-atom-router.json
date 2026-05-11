@@ -1,0 +1,171 @@
+{
+  "actual_noncanonical_exact_uv_support_closed": false,
+  "actual_precauchy_source_domain_absolute_entropy_ledger_proved": false,
+  "actual_source_domain_entropy_atomization_closed": true,
+  "acyclic_seed_primitive_row_signed_coefficient_law_proved": false,
+  "acyclic_seed_signed_row_emitter_rule_proved": false,
+  "certificate_type": "prime_matrix_strict_actual_source_domain_entropy_atom_router",
+  "closed_gates": [
+    "ActualSourceDomainEntropyTargetActive",
+    "EmitterIncidenceEntropyAligned",
+    "SupportSeedPairMassSpineImported",
+    "RowLevelOriginTableReducedToSeedEmitter",
+    "SeedEmitterReducedToSignedCoefficientLaw",
+    "UnsignedSkeletonAvailableButNotEntropy",
+    "RegisteredMultiplierGivesOnlyRowWeightScale",
+    "DeterministicRowEntropyImplicationClosed",
+    "AlphaWeightLawStillOpen",
+    "PointwiseSignedWeightExpressionStillOpen"
+  ],
+  "counterexample_assumption_only": true,
+  "deterministic_implication": "Let R be the nonzero primitive rows emitted before pushforward in one actual formal unit, with absolute row weights a_r. If M=sum_R a_r>0, either max_r a_r<=M/L^K or sum_R a_r^2<=M^2/L^K, then the effective source-domain support is at least L^K. Thus ActualPreCauchySourceDomainAbsoluteEntropyLedger reduces to a signed row emitter plus row-mass normalization and row-support lower bound. Unsigned geometry can index R, but cannot supply the signed weights a_r.",
+  "deterministic_row_entropy_implication_closed": true,
+  "empirical_absence_not_used": true,
+  "entropy_atoms": [
+    {
+      "atom": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+      "proved": false,
+      "role": "先正向生成 actual noncanonical primitive rows，并给出推前前 signed 求和恒等式。"
+    },
+    {
+      "atom": "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger",
+      "proved": false,
+      "role": "在同一 row table 中登记总绝对质量、单行上界、L2 行能量和零权重命名回流。"
+    },
+    {
+      "atom": "PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger",
+      "proved": false,
+      "role": "证明发射前非零 primitive row 支撑达到可推出源域绝对熵的 log-power 阈值。"
+    }
+  ],
+  "failure_return_if_no_signed_rows": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "hard_law": "源域绝对熵是发射前 row-mass 命题，不是 exact `(u,v)` 映射后的支撑命题。P列锚、斜线覆盖、圆柱螺旋和 layered-wheel 只给 unsigned skeleton；登记乘子只给单行成本；真正缺口是合法 seed 分支内的 signed coefficient law，以及同一表内的 no-heavy-row/L2 行质量账本。",
+  "next_direct_attack_target": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RowMassNormalizationCurrentCorpusProved",
+    "PrimitiveRowSupportLowerBoundCurrentCorpusProved",
+    "ActualSourceDomainEntropyCurrentCorpusProved",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "`ActualPreCauchySourceDomainAbsoluteEntropyLedger` 已被压成 signed row-mass entropy 包：必须先由无环 pre-Cauchy actual noncanonical seed 正向发射 signed primitive rows，再证明同一 formal unit 中的 row-mass normalization/no-heavy-row 与 row support 下界。当前最窄可攻单点是 `AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward`。行/列命题仍未无条件闭合。",
+  "preterminal_exact_uv_fiber_absolute_mass_dispersion_proved": false,
+  "primitive_row_support_lower_bound_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ActualSourceDomainEntropyTargetActive",
+      "meaning": "上一层已把 preterminal fiber 分散源域包的第一优先项定为 actual pre-Cauchy source domain 绝对熵。",
+      "proved": false,
+      "remaining": "ActualPreCauchySourceDomainAbsoluteEntropyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EmitterIncidenceEntropyAligned",
+      "meaning": "actual emitter incidence 路线同样把有界重数拆成 source-domain entropy 与 fixed-pair fiber bound。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SupportSeedPairMassSpineImported",
+      "meaning": "ExactUV 支撑路线已说明：没有无环 pre-Cauchy source seed，任何 pair-mass 或 row-mass 熵都没有对象。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn"
+    },
+    {
+      "closed": true,
+      "gate": "RowLevelOriginTableReducedToSeedEmitter",
+      "meaning": "逐行原始生成表必须由无环 seed 自带 signed row emitter 产生，不能从 payment 或零行覆盖反推。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SeedEmitterReducedToSignedCoefficientLaw",
+      "meaning": "在合法 seed 分支内，真正缺口是每条 primitive row 的 signed coefficient law。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonAvailableButNotEntropy",
+      "meaning": "source tuple、carry-shell、P列锚和层叠轮筛给出 unsigned row skeleton；它只定位候选行，不给绝对质量熵。",
+      "proved": true,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredMultiplierGivesOnlyRowWeightScale",
+      "meaning": "登记乘子纪律控制单行权重尺度的 log 成本，但不证明有足够多非零 signed rows。",
+      "proved": true,
+      "remaining": "PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DeterministicRowEntropyImplicationClosed",
+      "meaning": "若 signed row emitter 给出同 formal unit 的 N 个非零 primitive rows，且行权重可比或满足 L2/no-heavy-row，则 source domain absolute entropy 由 M^2/E2 或 max-row 形式推出。",
+      "proved": true,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity AND SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger AND PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaWeightLawStillOpen",
+      "meaning": "alpha signed 权重律仍未由独立 pre-Cauchy 算术恒等式和精确权重公式证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedWeightExpressionStillOpen",
+      "meaning": "逐行 signed alpha 权重公式仍缺 actual noncanonical primitive summand signed expression before pushforward。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowMassNormalizationCurrentCorpusProved",
+      "meaning": "当前材料没有在同一 row table 中证明总绝对质量、单行上界、L2 行能量和零权重回流。",
+      "proved": false,
+      "remaining": "SameFormalUnitPrimitiveRowMassNormalizationAndNoHeavyRowLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveRowSupportLowerBoundCurrentCorpusProved",
+      "meaning": "当前材料没有证明发射前 primitive row 支撑数达到所需 log-power 阈值。",
+      "proved": false,
+      "remaining": "PrimitiveRowSupportLowerBoundBeforeExactUVProjectionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ActualSourceDomainEntropyCurrentCorpusProved",
+      "meaning": "signed row emitter、row-mass normalization 与 row support 下界未合取证明，源域绝对熵仍未闭合。",
+      "proved": false,
+      "remaining": "ActualPreCauchySourceDomainEntropyFromSignedRowsAndRowMassLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "ExactUV 源域包、complete key、fixed-key multiplicity 与 DStructure/Rankin 独立门未完成前，行/列命题不能闭合。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalExactUVSupportLowerBound AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "same_formal_unit_row_mass_normalization_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d",
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.json": "6c1241bb0dd29f19cec15f147b56e495c551fb7e813158491d5a52201848d982",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json": "11dc103e15a970f0c4e27a17ca32b757203b5e4fd443d6d40217854fdb5f0fe3",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-preterminal-fiber-dispersion-source-atom-router.json": "62c6b5b1712c00216487e7c68b72d8cb97a61e58ba78f08538f697c49232142a",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "strict_actual_source_domain_entropy_reduced_to_signed_row_mass_entropy_open",
+  "terminal_gap_after_router": "ActualPreCauchySourceDomainEntropyFromSignedRowsAndRowMassLedger",
+  "terminal_gap_before_router": "ActualPreCauchySourceDomainAbsoluteEntropyLedger"
+}
