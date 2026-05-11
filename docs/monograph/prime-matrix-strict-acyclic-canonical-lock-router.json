@@ -1,0 +1,110 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_canonical_lock_router",
+  "status": "acyclic_canonical_lock_reduced_to_source_embedding_and_same_set_pushforward_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "acyclic_canonical_lock_boundary_refined": true,
+  "hash_stability_imported": true,
+  "canonical_source_provenance_imported_with_scope": true,
+  "known_transverse_embedding_not_universal": true,
+  "acyclic_seed_canonical_source_embedding_proved": false,
+  "terminal_certificate_same_set_pushforward_proved": false,
+  "no_noncanonical_payload_survives_projection_proved": false,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+  "terminal_gap_after_router": "((AcyclicSeedCanonicalSourceFiniteFactorEmbedding AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn)",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ((AcyclicSeedCanonicalSourceFiniteFactorEmbedding AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding",
+    "must_prove": [
+      "从假设早期零行反例生成的 acyclic pre-Cauchy seed 是 canonical A1/KZ-E 源的有限测度因子",
+      "源因子嵌入保持同一 formal unit 与 branch key",
+      "终端证书的坏窗集合、U_CRT、L_PDEC 和权重质量在推前前后一致",
+      "任何未能嵌入的 noncanonical payload 必须回流 direct PDEC dual 或 direct CleanKLS/DLS"
+    ],
+    "cannot_use_as_proof": [
+      "只给 formal_unit_id 哈希稳定",
+      "只引用 canonical-source 终端闭合",
+      "只证明某个横向 PDEC-CAP 子对象可嵌入",
+      "把 generic WFD 或 noncanonical full-S 补集当成 canonical RIW/Buchstab 源"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "AcyclicCanonicalLockGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层第一优先点是把 acyclic terminal family 锁入 canonical-source 边界。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "gate": "HashStabilityNotEnough",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical formal unit hash stability 只保证记录不改名；它不证明 noncanonical payload 是 canonical 源的因子。",
+      "remaining": "仍需源头因子嵌入。"
+    },
+    {
+      "gate": "CanonicalSourceProvenanceImportedWithScope",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical-source 的来源账本已经闭合，条件是 pre-Cauchy lambda 按定义等于 RIW/Buchstab 决策树系数。",
+      "remaining": "acyclic noncanonical seed 必须证明满足这个条件或被投影成其有限因子。"
+    },
+    {
+      "gate": "KnownTransverseEmbeddingNotUniversal",
+      "closed": true,
+      "proved": true,
+      "meaning": "PDEC-CAP 横向 formal unit 嵌入 canonical 源的函子性已在特定横向商对象上闭合。",
+      "remaining": "不能自动覆盖当前 acyclic clean-core/moving-block terminal family。"
+    },
+    {
+      "gate": "SourceSeedEmbeddingAtomPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "必须证明 acyclic seed 是 canonical A1/KZ-E pre-Cauchy 源的限制、商、条件化或确定性推前。",
+      "remaining": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding。"
+    },
+    {
+      "gate": "SameSetPushforwardAtomPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "即便源可嵌入，还必须证明终端证书下的 U_CRT、L_PDEC、坏窗集合和权重质量推前后完全同口径。",
+      "remaining": "TerminalCertificateSameSetPushforwardIdentity。"
+    },
+    {
+      "gate": "NoNoncanonicalPayloadAtomPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "canonical 投影后不得残留未登记的 moving same-(u,v) 原子、Type/Fourier 容量乘子或 non-AP payload。",
+      "remaining": "NoNoncanonicalPayloadSurvivesCanonicalProjection。"
+    },
+    {
+      "gate": "CanonicalLockReducedToThreeSubatoms",
+      "closed": true,
+      "proved": false,
+      "meaning": "canonical-lock 被压成源因子嵌入、同集推前恒等式、无 noncanonical 残留三项。",
+      "remaining": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection"
+    },
+    {
+      "gate": "CanonicalLockCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料尚未证明这三项，因此不能把 canonical 终端闭合导入 acyclic noncanonical 分支。",
+      "remaining": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-attack-router.md": "7e615b4a1d6c31dfe4fb4c5057d3ab1927e3defcc8ae825f156319506cf00329",
+    "docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.md": "e351e006c5117f34ae67064ea0d16ce5e8a557d53e339f1130b4f0f1d6945c53",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.md": "0cbd38f4d56d73a134ee106f50b1fe71d007f4273e00df7cac4c244fc57d451d",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.md": "59dbffdc406556c93344cb968499b3434dbe601f6907cdd9a513a5d5663ae443",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-embedding-router.md": "70e6d614da47204ad2b611df691fa3f72c20c2aca69974dfd265949debb831a6",
+    "docs/monograph/prime-matrix-triad-a1-source-lock-contract-router.md": "ffc46d9654f87935e9bde429235b461b74131f6c43dd49c3870a1c13e078ef5b",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.md": "72e8f8d9362e6ba765682f3af63674a0b271f8085b481565722e91d4d12db81d",
+    "docs/monograph/prime-matrix-noncanonical-source-core-atomization-router.md": "b078f303a9558ecee2592df05296b5cb64c65823b96184bc6b73db93b8212e6b"
+  },
+  "plain_conclusion": "本步把 acyclic terminal canonical-lock 从宽泛作用域问题压成三个必要子原子：acyclic seed 必须是 canonical A1/KZ-E pre-Cauchy 源的有限测度因子；终端证书必须保持同集推前恒等式；canonical 投影后不能残留未登记 noncanonical payload。哈希稳定和 canonical-source 来源闭合都是可用材料，但它们本身不足以证明当前 acyclic noncanonical 分支已经 canonical-lock。"
+}
