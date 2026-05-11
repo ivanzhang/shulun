@@ -1,0 +1,134 @@
+{
+  "acyclic_seed_internal_arithmetic_basis_expansion_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_primitive_basis_word_generation_router",
+  "constructor_fields": [
+    {
+      "field": "input_source_tuple",
+      "meaning": "同一 formal unit 下的 actual noncanonical seed/source tuple。"
+    },
+    {
+      "field": "basis_word_formula",
+      "meaning": "由 source tuple 参数正向产生 primitive basis word 的闭式公式或递推规则。"
+    },
+    {
+      "field": "pre_cauchy_order_certificate",
+      "meaning": "证明该构造发生在 Cauchy、dispersion、payment 和 terminal extraction 之前。"
+    },
+    {
+      "field": "nonposthoc_uniqueness",
+      "meaning": "排除从零行覆盖、payment 原像或推前后投影反选 word。"
+    },
+    {
+      "field": "constructor_failure_return",
+      "meaning": "source tuple 无法生成 word、生成多值或作用域冲突时的命名回流。"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment` 的第一可检验字段是 `AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility`：必须先有 source tuple 到 primitive basis word 的 pre-Cauchy 正向构造，再谈准入谓词、row anchor、复杂度收费和 coefficient assignment。",
+  "next_direct_attack_target": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility",
+  "no_theorem_switch": true,
+  "noncanonical_precauchy_basis_alphabet_ledger_proved": false,
+  "parallel_attack_targets": [
+    "AcyclicSeedBasisWordAdmissibilityPredicateLedger",
+    "AcyclicSeedWordToRowAnchorCompatibilityLedger",
+    "AcyclicSeedBasisWordComplexityAndMissingReturnLedger"
+  ],
+  "plain_conclusion": "本步把最新真正单点再压到 source tuple -> primitive basis word constructor。现有 formal-unit/source-tuple 只能登记参数，unsigned skeleton 只能在 word 已有时给几何锚，零行/payment/推前后反选已被 no-go 阻断；因此 constructor 仍是未闭合的自足输入。",
+  "posthoc_reverse_selection_blocked": true,
+  "primitive_basis_word_generation_router_closed": true,
+  "primitive_basis_word_set_generation_rule_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PrimitiveBasisWordGenerationTargetActive",
+      "meaning": "上一层已把 basis alphabet 账本压到 primitive basis word set generation rule。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": true,
+      "gate": "WordConstructorPrecedesPredicateAndAnchor",
+      "meaning": "admissible predicate、row anchor、复杂度收费和缺字母回流都以已生成的 word 为定义域。",
+      "proved": true,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTupleAvailableButNoConstructor",
+      "meaning": "source tuple 可登记参数，但当前没有从这些参数到 primitive basis word 的正向公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchySourceLawIsSpecificationNotConstructor",
+      "meaning": "pre-Cauchy source law 说明需要哪些字段，但没有给出 basis_word_formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "ActualPrimitiveConstructorStillMissing",
+      "meaning": "actual noncanonical primitive constructor/admission 未证明，因此不能自动产生 word constructor。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonOnlyAnchorsAfterWord",
+      "meaning": "unsigned skeleton 可在 word 已有时提供几何锚；不能构造带算术权重的 word。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "RowOriginTableMissing",
+      "meaning": "primitive summand 来源恒等式和逐行原始生成表仍未证明，不能作为 constructor 证据。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "PosthocReverseSelectionBlocked",
+      "meaning": "从 payment、推前后投影或早期零行覆盖反选 word 已被既有 no-go 与 reverse firewall 阻断。",
+      "proved": true,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": false,
+      "gate": "SourceTupleToPrimitiveBasisWordConstructorCurrentCorpusProved",
+      "meaning": "当前材料没有提交 source tuple 到 primitive basis word 的 pre-Cauchy 正向构造。",
+      "proved": false,
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveBasisWordSetGenerationRuleCurrentCorpusProved",
+      "meaning": "没有 word constructor，generation rule 的其余字段都只能悬空。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-origin-source-admission-router.json": "9e4ba4451beaa9fb46e7bce4eeab74dc9edcb62a60d08af58b038222cc07c3c3",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-alphabet-ledger-router.json": "01dfdcc9a1f9d9a839331068b413f9ecbb762491ec738916c1d23b1204c3d0a7",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "source_tuple_available_but_no_constructor": true,
+  "source_tuple_to_primitive_basis_word_constructor_proved": false,
+  "status": "primitive_basis_word_generation_reduced_to_source_tuple_word_constructor_open",
+  "target_input_before_router": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment",
+  "terminal_return_if_no_word_constructor": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "word_constructor_precedes_predicate_and_anchor": true
+}
