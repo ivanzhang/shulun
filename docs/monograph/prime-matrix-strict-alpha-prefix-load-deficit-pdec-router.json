@@ -1,0 +1,138 @@
+{
+  "alpha_gap_profiles": [
+    {
+      "alpha": 0.75,
+      "capacity_constant": 0.5,
+      "hit_cap": 2,
+      "mertens_reference_main_constant": 0.5614594835668851,
+      "positive_reference_gap": true,
+      "reference_defect_gap_constant": 0.06145948356688513
+    },
+    {
+      "alpha": 0.8,
+      "capacity_constant": 0.3999999999999999,
+      "hit_cap": 2,
+      "mertens_reference_main_constant": 0.5614594835668851,
+      "positive_reference_gap": true,
+      "reference_defect_gap_constant": 0.16145948356688522
+    },
+    {
+      "alpha": 0.85,
+      "capacity_constant": 0.30000000000000004,
+      "hit_cap": 2,
+      "mertens_reference_main_constant": 0.5614594835668851,
+      "positive_reference_gap": true,
+      "reference_defect_gap_constant": 0.2614594835668851
+    },
+    {
+      "alpha": 0.9,
+      "capacity_constant": 0.19999999999999996,
+      "hit_cap": 2,
+      "mertens_reference_main_constant": 0.5614594835668851,
+      "positive_reference_gap": true,
+      "reference_defect_gap_constant": 0.3614594835668852
+    },
+    {
+      "alpha": 0.95,
+      "capacity_constant": 0.10000000000000009,
+      "hit_cap": 2,
+      "mertens_reference_main_constant": 0.5614594835668851,
+      "positive_reference_gap": true,
+      "reference_defect_gap_constant": 0.46145948356688504
+    }
+  ],
+  "alpha_prefix_load_lower_bound_proved": false,
+  "alpha_prefix_tv_defect_excluded": false,
+  "capacity_failure_to_tv_defect_implication_closed": true,
+  "certificate_type": "prime_matrix_strict_alpha_prefix_load_deficit_pdec_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍只在早期零行假设链条下推出必要缺陷。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityFailureToTVDefectClosed",
+      "meaning": "早期零行若不被容量反超立即击败，则必须满足 TV_alpha 大于主项-容量间隙。",
+      "proved": true,
+      "remaining": "AlphaPrefixTotalVariationOrEndpointPDECDefectExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "PDECRouteRegistered",
+      "meaning": "大 TV/端点偏差已有 LowMod、dyadic endpoint、SAE 路由对象；但尚未全局排斥。",
+      "proved": false,
+      "remaining": "LowMod/DyadicEndpoint/FarTail-Core PDEC exclusion"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaLoadLowerBoundCurrentCorpusProved",
+      "meaning": "主项常数、TV 预算、有限段证书仍未合取闭合。",
+      "proved": false,
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND B3RemainderTotalVariationBudgetForLengthP AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "DirectUnconditionalContradictionFound",
+      "meaning": "已得到二择结构：容量反超直接矛盾，或强缺陷登记；缺陷排斥尚未完成。",
+      "proved": false,
+      "remaining": "AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity OR AlphaPrefixTotalVariationOrEndpointPDECDefectExclusion"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_implications": [
+    {
+      "formula": "Assume EarlyZeroRowWithinP and z=alpha P> P/2. Then |R_alpha(x)|<=2(pi(P)-pi(alpha P)).",
+      "meaning": "来自高标签容量反超路由；这是早期零行的必要条件。",
+      "name": "early_zero_capacity_necessity",
+      "status": "closed_imported"
+    },
+    {
+      "formula": "|R_alpha(x)| >= (P-1) W^-_alpha - TV_alpha.",
+      "meaning": "来自统一 prefix 粗筛余路由；TV 汇总 CRT 端点/筛权总变差。",
+      "name": "lower_weight_main_error",
+      "status": "closed_imported"
+    },
+    {
+      "formula": "If EarlyZeroRowWithinP, then TV_alpha >= (P-1)W^-_alpha - 2(pi(P)-pi(alpha P)).",
+      "meaning": "若没有容量反超矛盾，反例必须支付一个强负端点/总变差缺陷。",
+      "name": "defect_forced_if_no_surplus",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "If TV_alpha < (P-1)W^-_alpha - 2(pi(P)-pi(alpha P)), then early zero row is impossible.",
+      "meaning": "这把当前硬点变成一个明确的 TV/PDEC 排斥输入。",
+      "name": "closure_if_tv_budget_beats_gap",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "Failure of the TV budget must be registered as LowMod/Endpoint/Dyadic PDEC or SAE, not as a free escape.",
+      "meaning": "与既有 LowMod、dyadic endpoint 证书路线对接。",
+      "name": "pdec_registration",
+      "status": "registered_route"
+    }
+  ],
+  "next_direct_attack_target": "AlphaPrefixTotalVariationOrEndpointPDECDefectExclusion",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError",
+    "B3RemainderTotalVariationBudgetForLengthP",
+    "FiniteBoundaryPrefixRoughCountCertificate"
+  ],
+  "pdec_registration_route_defined": true,
+  "plain_conclusion": "容量反超失败不是自由出口。对 z=alpha P>P/2，早期零行迫使 |R_alpha(x)|<=2(pi(P)-pi(alpha P))；而 prefix lower-weight 公式给出 |R_alpha(x)|>=(P-1)W^-_alpha-TV_alpha。因此若不能直接容量反超，就必须有 TV_alpha 至少达到主项减高标签容量的间隙。这正是一个强端点/PDEC/SAE 缺陷，而不是新的无名逃逸。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-eda-alpha-tail-dyadic-pdec-certificate.md": "cfc69a533348a62fec33aeea1e559d2f7dcdab25e8a23636f827436602455f2b",
+    "docs/monograph/prime-matrix-eda-lowmod-pdec-certificate-route.md": "8921dac5eae8d993ce1060b7bc8c07b8fb1f2245cff260fbd66007ab1a7bfa82",
+    "docs/monograph/prime-matrix-strict-block-coprime-dynamics-capacity-surplus-router.md": "d80caf9068f292010aa02188432d5af1985ac6ee5e57538380d95c5470e2f4f1",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.md": "92c48e7d714410ac037b1c880fb2e82bcbf132fe8c02bf9c47686481758eee91"
+  },
+  "status": "alpha_prefix_load_deficit_forces_tv_or_pdec_defect_surplus_open"
+}
