@@ -1,0 +1,133 @@
+{
+  "acyclic_seed_basis_alphabet_ledger_router_closed": true,
+  "acyclic_seed_internal_arithmetic_basis_expansion_proved": false,
+  "alphabet_ledger_requires_generated_word_set": true,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_basis_alphabet_ledger_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "explicit_rule_and_key_partition_are_downstream": true,
+  "formal_unit_source_tuple_containers_do_not_generate_words": true,
+  "frontier_reduction": "`AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger` 继续压缩为 `AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment`：basis alphabet 账本的首要内容不是命名一个 alphabet，而是正向生成实际可用的 primitive basis word 集。容器、unsigned phase alphabet、下游 key partition 或 payment/零行反推都不能替代这个生成规则。",
+  "next_direct_attack_target": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment",
+  "no_theorem_switch": true,
+  "noncanonical_precauchy_basis_alphabet_ledger_proved": false,
+  "parallel_attack_targets": [
+    "AcyclicSeedBasisWordAdmissibilityPredicateLedger",
+    "AcyclicSeedBasisWordFiniteComplexityBoundLedger",
+    "AcyclicSeedMissingBasisWordNamedReturnLedger"
+  ],
+  "plain_conclusion": "本步继续保持同一个反例链目标，把 basis alphabet 账本压到 primitive basis word set generation rule。也就是说，下一步必须给出从 actual noncanonical seed/source tuple 到 basis word 的正向构造、准入谓词、row anchor、复杂度收费和缺字母回流；否则 signed coefficient assignment 仍无定义域。",
+  "primitive_basis_word_set_generation_rule_proved": false,
+  "reverse_recovery_blocked": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "BasisAlphabetTargetActive",
+      "meaning": "上一层已证明内部算术基展开首先缺 noncanonical pre-Cauchy basis alphabet。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AlphabetLedgerRequiresGeneratedWordSet",
+      "meaning": "字母表不是标签名集合；必须给出 actual seed 在 Cauchy 前正向生成的 basis word 集。",
+      "proved": true,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": true,
+      "gate": "ContainersDoNotGenerateWords",
+      "meaning": "formal unit/source tuple 只是容器；没有 word_constructor 和 admissible_word_predicate。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": true,
+      "gate": "SourceGenerationStillOpen",
+      "meaning": "actual noncanonical primitive source constructor 与原始系数生成账本仍未证明，不能导出 basis word 集。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedPhaseAlphabetNotBasisWordSet",
+      "meaning": "unsigned phase wheel/carry-shell 字母是几何相位，不是带 signed local factor 的算术 basis word。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitRuleAndKeyAreDownstream",
+      "meaning": "alpha/delta rule 和 complete key partition 都要求已存在 primitive basis words，不能倒置为字母表来源。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseRecoveryBlocked",
+      "meaning": "payment、推前后投影和早期零行覆盖不能反向选择 basis words，否则会形成后验循环。",
+      "proved": true,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveBasisWordSetGenerationRuleCurrentCorpusProved",
+      "meaning": "当前材料没有给出 word_constructor、admissible predicate、row anchor、复杂度上界和缺字母回流。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "closed": false,
+      "gate": "BasisAlphabetLedgerCurrentCorpusProved",
+      "meaning": "没有正向生成的 basis word 集，basis alphabet 账本仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-origin-source-admission-router.json": "9e4ba4451beaa9fb46e7bce4eeab74dc9edcb62a60d08af58b038222cc07c3c3",
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json": "ae82e18347b05aab66be09d91ddb80a71eb30c3c7ce8ae3ba8e3fe1a0e4a5bea",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8",
+    "docs/monograph/prime-matrix-strict-explicit-alpha-delta-rule-router.json": "2de491d0a24986746199d7c96965b56f444643bf6aa15074bd705d7bf544531c"
+  },
+  "status": "acyclic_seed_basis_alphabet_reduced_to_generated_primitive_basis_word_set_open",
+  "target_input_before_router": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+  "terminal_return_if_no_word_set_generation_rule": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "unsigned_phase_alphabet_not_basis_word_set": true,
+  "word_generation_fields": [
+    {
+      "field": "word_constructor",
+      "meaning": "从 actual noncanonical seed/source tuple 正向生成 basis word 的规则。"
+    },
+    {
+      "field": "admissible_word_predicate",
+      "meaning": "判断 word 是否属于 pre-Cauchy basis alphabet 的算术条件。"
+    },
+    {
+      "field": "word_to_row_anchor",
+      "meaning": "word 到 carry-shell row、phase 和 primitive summand 的锚定。"
+    },
+    {
+      "field": "scope_and_noncanonical_lock",
+      "meaning": "排除 canonical scoped import、post-payment 选择和零行反推。"
+    },
+    {
+      "field": "finite_complexity_bound",
+      "meaning": "字母表复杂度、分支数和截断层数量的可收费上界。"
+    },
+    {
+      "field": "missing_word_return",
+      "meaning": "缺字母、未登记 word 或超预算 word 的命名回流。"
+    }
+  ]
+}
