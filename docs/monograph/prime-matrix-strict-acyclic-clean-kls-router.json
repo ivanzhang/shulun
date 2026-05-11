@@ -1,0 +1,119 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_clean_kls_router",
+  "status": "direct_acyclic_clean_kls_reduced_to_windowed_dls_atom_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "named_defects_peeled": true,
+  "k1_k9_clean_admission_closed": true,
+  "l2_flat_coefficient_ledger_closed": true,
+  "windowed_kloosterman_template_registered": true,
+  "canonical_ncblk_import_blocked": true,
+  "external_dibfi_separated_for_condition_line": true,
+  "acyclic_windowed_kloosterman_dls_internal_estimate_proved": false,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "conditional_gap_after_router": "AcyclicWindowedKloostermanDLSInternalEstimate OR AcceptExternalDIBFIKuznetsovNoProjectionWindowCertificate",
+  "strict_gap_after_router": "AcyclicWindowedKloostermanDLSInternalEstimate",
+  "terminal_gap_after_router": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicWindowedKloostermanDLSInternalEstimate",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicWindowedKloostermanDLSInternalEstimate) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicWindowedKloostermanDLSInternalEstimate",
+    "must_prove": [
+      "把 acyclic clean residual 的 L2-flat 系数精确写入窗口化 Kloosterman/dispersion 双线性型",
+      "给出同一 formal unit 下的模数、长度、光滑权、互素条件和坏窗质量规范化",
+      "证明内部 DLS/Kuznetsov 型大筛界足以吸收 clean residual",
+      "若估计失败，必须输出 point-load、short-window、low-phase 或 new-layer PDEC/SAE/ColumnCRT 命名回流"
+    ],
+    "cannot_use_as_proof": [
+      "只说 K1--K9 已通过",
+      "直接引用 canonical-source NC-BLK 吸收",
+      "把外部 DI/BFI/Kuznetsov 黑箱写成严格自足证明",
+      "把有限数值审计当作窗口化 DLS 全局估计"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "DirectAcyclicCleanKLSActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 finite-arc 平坦剩余转为 strict acyclic clean KLS/DLS 终端。",
+      "remaining": "DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "NamedDefectsAlreadyPeeled",
+      "closed": true,
+      "proved": true,
+      "meaning": "PDEC/SAE/ColumnCRT/Multiplicity/new-layer 低维缺陷已由 finite-arc 与 no-loss return 体系剥离。",
+      "remaining": "只剩 clean residual。"
+    },
+    {
+      "gate": "K1K9AdmissionClosedByConstruction",
+      "closed": true,
+      "proved": true,
+      "meaning": "clean residual 的 K1--K9 准入条件成立；任一失败都按定义回流到已命名出口。",
+      "remaining": "准入不是大筛估计。"
+    },
+    {
+      "gate": "L2FlatCoefficientLedgerClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "所有固定有限投影的高原子、短窗、低相位和新增层集中已剥离，剩余给出 L2-flat 系数账本。",
+      "remaining": "需要把系数映射到标准窗口化 Kloosterman/DLS 模板。"
+    },
+    {
+      "gate": "WindowedKloostermanTemplateRegistered",
+      "closed": true,
+      "proved": true,
+      "meaning": "A1 clean KLS 模板已登记：clean dyadic formal unit 映射到 m, ell, d, R, h 与平滑权重窗口。",
+      "remaining": "提交内部大筛估计或外部证书。"
+    },
+    {
+      "gate": "CanonicalNCBLKImportBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical-source NC-BLK 吸收只在 canonical RIW/Buchstab 来源分支内有效，不能导入 acyclic/noncanonical clean residual。",
+      "remaining": "必须证明 acyclic 窗口化估计或走外部条件线。"
+    },
+    {
+      "gate": "ExternalDIBFISeparated",
+      "closed": true,
+      "proved": true,
+      "meaning": "外部 DI/BFI/Kuznetsov 可形成条件版本，但严格自足路线不能用外部黑箱关闭。",
+      "remaining": "AcceptExternalDIBFIKuznetsovNoProjectionWindowCertificate 只属于外部线。"
+    },
+    {
+      "gate": "DirectCleanKLSReducedToWindowedDLSAtom",
+      "closed": true,
+      "proved": false,
+      "meaning": "direct clean KLS/DLS 的结构准入已闭合，剩余是窗口化 Kloosterman/DLS 内部估计。",
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "gate": "DirectAcyclicCleanKLSDLSEstimateProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前语料尚未提交 acyclic windowed Kloosterman/DLS 自足大筛估计。",
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "gate": "StrictTerminalFamilyProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "strict 终端家族仍未闭合；它现在卡在 canonical package 或 acyclic windowed DLS atom。",
+      "remaining": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-finite-arc-cap-router.md": "bb2ce5d730d8488d19bba40f3543da98a6fba5146cd6341ce378725bb11968d8",
+    "docs/monograph/prime-matrix-triad-a1-clean-kls-external-input-router.md": "936c1b4995e76228a5e75746bb5cebf3e50b530bea4cf9f649ef3f0395af6b8c",
+    "docs/monograph/prime-matrix-pdec-cap-transverse-clean-atom-frontier-router.md": "9b919c4ed44ff443d4a271eb9932a64f60f1d813306168a47fd2052b798df930",
+    "docs/monograph/prime-matrix-clean-core-newlayer-external-lemma-match-router.md": "fca45c761bf393efe014dcd8f60ea7dca6ab1008c44319efc68dc128c6ca566e",
+    "docs/monograph/prime-matrix-clean-core-bes-dls-named-return-router.md": "cad3cb3612620cf77ca311739ff0829a1f9ba142b1f51b1ceb0e0e095a321b80",
+    "docs/monograph/prime-matrix-clean-core-dls-lowphase-pdec-flat-router.md": "aaf7e9075dab7deee685b6b539b88e48b409eadafc3994fd4ecfdbee8e7f765a",
+    "docs/monograph/prime-matrix-ncblk-boundary-reconciliation-router.md": "9c9da22b4bf209e1d307037cb3235d619f8bd2f1a5afcde5e675fdd8a5d21220"
+  },
+  "plain_conclusion": "本步把 `DirectAcyclicCleanKLSDLSEstimateWithNamedReturn` 原子化。PDEC/SAE/ColumnCRT/Multiplicity 等低维缺陷已在上游剥离，所以 K1--K9 clean admission 与 L2-flat 系数账本可作为结构准入关闭；但这仍不是大筛证明。严格自足剩余压成 `AcyclicWindowedKloostermanDLSInternalEstimate`。外部 DI/BFI/Kuznetsov 可作为条件线，不能替代严格自足闭合。"
+}
