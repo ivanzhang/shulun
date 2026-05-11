@@ -1,0 +1,145 @@
+{
+  "anchor_reconstruction_does_not_emit_word_coordinates": true,
+  "basis_word_formula_from_source_tuple_parameters_proved": false,
+  "basis_word_formula_router_closed": true,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_basis_word_formula_router",
+  "coordinate_formula_fields": [
+    {
+      "field": "anchor_input_rule",
+      "meaning": "明确从 A、窗口端点和 phase_rule 选取哪些锚参数作为坐标输入。"
+    },
+    {
+      "field": "dyadic_truncation_coordinate",
+      "meaning": "把 D0、K、Omega 转成 basis word 的 dyadic/truncation 坐标。"
+    },
+    {
+      "field": "phase_coordinate",
+      "meaning": "把 phase_rule 转成 word 的相位坐标，而不是只给 unsigned row phase。"
+    },
+    {
+      "field": "signed_weight_coordinate_slot",
+      "meaning": "为后续 coefficient assignment 预留 signed weight/local factor 槽位。"
+    },
+    {
+      "field": "coordinate_nonposthoc_certificate",
+      "meaning": "证明坐标公式不读取 payment、零行覆盖、推前后投影或 terminal 数据。"
+    },
+    {
+      "field": "coordinate_failure_return",
+      "meaning": "坐标未定义、冲突、多值或超预算时的命名回流。"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility` 已有参数域，真正首缺口是 `AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters`：必须把 A、D0/K/Omega、phase_rule 等 source tuple 参数转成 primitive basis word 的坐标向量。",
+  "next_direct_attack_target": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicSeedSignedWeightCoordinateSlotLedger",
+    "AcyclicSeedCoordinateNonposthocCertificateLedger",
+    "AcyclicSeedCoordinateFailureReturnLedger"
+  ],
+  "parameter_domain_closed": true,
+  "plain_conclusion": "本步把 basis_word_formula 再压到 word_coordinate_formula。参数和锚可以复算，但当前材料没有把这些参数映射为 primitive basis word 坐标；unsigned row 坐标、signed lift、alpha/delta rule 和后验反推都不能替代该公式。",
+  "posthoc_coordinate_recovery_blocked": true,
+  "primitive_basis_word_set_generation_rule_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "BasisWordFormulaTargetActive",
+      "meaning": "上一层已把 source tuple 到 word constructor 压到 basis_word_formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "closed": true,
+      "gate": "ParameterDomainClosed",
+      "meaning": "source tuple 参数域已经锁定；A、D0/K/Omega、phase_rule 和 hash 可读取。",
+      "proved": true,
+      "remaining": "参数域不是当前首缺口。"
+    },
+    {
+      "closed": true,
+      "gate": "WordCoordinateFormulaIsFirstOpenField",
+      "meaning": "有参数域还不够，必须先给出把参数转成 primitive basis word 坐标的公式。",
+      "proved": true,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorReconstructionDoesNotEmitWordCoordinates",
+      "meaning": "anchor reconstruction 可复算 A 与参数，但不输出 basis word coordinate vector。",
+      "proved": false,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLawRequiresFormulaButDoesNotProvideIt",
+      "meaning": "source law 说明需要来源公式；它本身不是 coordinate formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonGivesRowCoordinatesOnly",
+      "meaning": "unsigned skeleton 给 carry-shell row/phase 几何坐标，不给 primitive basis word 的算术坐标和 signed 槽位。",
+      "proved": false,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": true,
+      "gate": "SignedWeightSlotStillOpen",
+      "meaning": "signed coefficient lift 与 local factor 仍未闭合，因此不能把 signed 槽位后验补入 formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": true,
+      "gate": "ActualCoordinateFormulaCurrentCorpusMissing",
+      "meaning": "当前材料没有 actual noncanonical primitive constructor formula，也没有独立 word coordinate formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": true,
+      "gate": "PosthocCoordinateRecoveryBlocked",
+      "meaning": "不能从 payment、推前后投影或早期零行覆盖恢复坐标公式。",
+      "proved": true,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": false,
+      "gate": "WordCoordinateFormulaCurrentCorpusProved",
+      "meaning": "当前材料没有提交从 A、D0/K/Omega、phase_rule 到 primitive basis word 坐标的公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "closed": false,
+      "gate": "BasisWordFormulaCurrentCorpusProved",
+      "meaning": "没有 coordinate formula，arithmetic weight slot、非后验证书和失败回流仍不能合取证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-source-tuple-word-constructor-router.json": "5a07dea4127624cbb836413658616bd5027eef9128200c52547d92e17dd26fd4",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-explicit-alpha-delta-rule-router.json": "2de491d0a24986746199d7c96965b56f444643bf6aa15074bd705d7bf544531c"
+  },
+  "source_tuple_to_primitive_basis_word_constructor_proved": false,
+  "status": "basis_word_formula_reduced_to_word_coordinate_formula_open",
+  "target_input_before_router": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility",
+  "terminal_return_if_no_word_coordinate_formula": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "word_coordinate_formula_is_first_open_field": true,
+  "word_coordinate_formula_proved": false
+}
