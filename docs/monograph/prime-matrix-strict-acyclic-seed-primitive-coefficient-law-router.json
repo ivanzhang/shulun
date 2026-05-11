@@ -1,0 +1,146 @@
+{
+  "acyclic_seed_precauchy_basis_weight_source_formula_proved": false,
+  "acyclic_seed_primitive_coefficient_law_router_closed": true,
+  "acyclic_seed_primitive_row_signed_coefficient_law_proved": false,
+  "acyclic_seed_signed_row_emitter_rule_proved": false,
+  "basis_weight_source_is_first_open_component": true,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_primitive_coefficient_law_router",
+  "coefficient_law_decomposition_closed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward 的首个不可替代字段是 `AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows`。没有 basis weight source，sign/local factor、变差收费和推前前求和恒等式都不能成为数学陈述。",
+  "law_decomposition": [
+    {
+      "component": "basis_weight_source",
+      "role": "给出 seed 内部的 pre-Cauchy 算术基函数/筛权来源。",
+      "status": "first open component"
+    },
+    {
+      "component": "sign_rule",
+      "role": "由 basis weight 与 branch key 决定每行符号。",
+      "status": "depends on basis_weight_source"
+    },
+    {
+      "component": "local_factor_rule",
+      "role": "给出 local factor 闭式公式、非零条件和失败回流。",
+      "status": "depends on basis_weight_source"
+    },
+    {
+      "component": "truncation_phase_charge",
+      "role": "登记截断、相位过滤和 signed branch 变差收费。",
+      "status": "depends on row coefficient value"
+    },
+    {
+      "component": "alpha_delta_prepushforward_sum_identity",
+      "role": "证明 primitive rows 在推前前求和等于 actual alpha/delta 系数。",
+      "status": "depends on all previous components"
+    }
+  ],
+  "next_direct_attack_target": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步把 acyclic seed primitive row signed coefficient law 压到最前置字段：seed 内部 pre-Cauchy basis weight 来源公式。unsigned skeleton、branch key、ExactUV、解积分和 payment 原像选择都只能在系数给定后验证，不能生成该来源公式。当前材料没有这条 basis weight source formula，所以仍未得到无条件终端矛盾。",
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PrimitiveCoefficientLawTargetActive",
+      "meaning": "上一层已把合法 seed 分支内的 signed row emitter 压到 primitive row signed coefficient law。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "CoefficientLawDecomposed",
+      "meaning": "signed coefficient law 可拆为 basis weight source、sign/local factor、收费和推前前求和恒等式。",
+      "proved": true,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "BasisWeightSourceIsFirstOpenComponent",
+      "meaning": "没有 seed 内部 pre-Cauchy basis weight 来源，后续符号、local factor 和求和恒等式无从定义。",
+      "proved": true,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaSignedWeightLawStillOpen",
+      "meaning": "alpha signed weight law 仍缺 exact formula 与独立 pre-Cauchy 算术恒等式。",
+      "proved": false,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaPrimitiveCoefficientFormulaStillOpen",
+      "meaning": "alpha primitive rule 仍缺 primitive coefficient weight formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "PointwisePrimitiveExpressionStillOpen",
+      "meaning": "逐行 signed weight 公式仍缺 primitive summand 推前前表达式。",
+      "proved": false,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "SignedValueTableStillOpen",
+      "meaning": "signed lift 仍缺逐 skeleton row signed value table。",
+      "proved": false,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonCannotSupplyBasisWeight",
+      "meaning": "unsigned skeleton 只给几何 row 位置和相位字母表，不含 basis weight 来源。",
+      "proved": true,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "KeyAndDisintegrationAreAfterCoefficient",
+      "meaning": "branch key、ExactUV 和解积分只能在 signed coefficient 已登记后验证。",
+      "proved": false,
+      "remaining": "不能反向生成 basis weight source。"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseRecoveryBlocked",
+      "meaning": "不能从早期零行覆盖或 payment 原像选择反推 basis weight source。",
+      "proved": true,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicSeedPreCauchyBasisWeightSourceFormulaCurrentCorpusProved",
+      "meaning": "当前材料没有给出 seed 内部的 pre-Cauchy basis weight 来源公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicSeedPrimitiveRowSignedCoefficientLawCurrentCorpusProved",
+      "meaning": "没有 basis weight 来源公式，primitive row signed coefficient law 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json": "11dc103e15a970f0c4e27a17ca32b757203b5e4fd443d6d40217854fdb5f0fe3",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f"
+  },
+  "status": "acyclic_seed_primitive_coefficient_law_reduced_to_basis_weight_source_open",
+  "target_input_before_router": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+  "terminal_return_if_no_basis_weight_source": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+}
