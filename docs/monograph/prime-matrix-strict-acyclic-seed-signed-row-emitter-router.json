@@ -1,0 +1,137 @@
+{
+  "acyclic_seed_primitive_row_signed_coefficient_law_proved": false,
+  "acyclic_seed_signed_row_emitter_router_closed": true,
+  "acyclic_seed_signed_row_emitter_rule_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_signed_row_emitter_router",
+  "coefficient_law_fields": [
+    {
+      "field": "basis_weight_source",
+      "meaning": "系数来自哪个 pre-Cauchy 算术基函数/筛权，而不是 payment 原像。"
+    },
+    {
+      "field": "sign_rule",
+      "meaning": "每行符号由 seed 内部规则决定，并与 branch key 同步。"
+    },
+    {
+      "field": "local_factor_rule",
+      "meaning": "每行 local factor 的闭式公式和非零条件。"
+    },
+    {
+      "field": "truncation_and_phase_charge",
+      "meaning": "截断、相位过滤和 branch 变差收费的同口径登记。"
+    },
+    {
+      "field": "alpha_delta_sum_identity",
+      "meaning": "逐行 signed 系数求和后在推前前等于 actual alpha/delta 系数。"
+    },
+    {
+      "field": "named_return",
+      "meaning": "零系数、符号冲突、local factor 缺失或超预算全部命名回流。"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity 的 seed 缺失分支已回流终端家族；在合法 seed 分支内，真正剩余是 `AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward`。unsigned skeleton、ExactUV key 和解积分都不能反向生成该 law。",
+  "next_direct_attack_target": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步继续下钻 seed signed row emitter。seed 不存在时已有终端回流；若 seed 存在，unsigned skeleton 已能定位候选行，但仍没有每条 primitive row 的 signed coefficient law。该 law 必须给出筛权来源、符号、local factor、截断/相位收费和推前前 alpha/delta 求和恒等式。当前材料未证明该 law，因此行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SeedSignedEmitterTargetActive",
+      "meaning": "上一层已把逐行生成表压成 acyclic seed 自带 signed row emitter。",
+      "proved": false,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SeedAbsentBranchAlreadyTerminalReturn",
+      "meaning": "若合法 seed 无法提交，既有融合证书已把该分支回流终端家族。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowUnsignedSeedNoGoImported",
+      "meaning": "早期零行覆盖不能当作 signed source seed。",
+      "proved": true,
+      "remaining": "只分析合法 seed 已提交的分支。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedRowSkeletonAvailableForSeedBranch",
+      "meaning": "source tuple/carry-shell/P列锚/layered-wheel 已给候选 row 的 unsigned skeleton。",
+      "proved": true,
+      "remaining": "仍缺 signed coefficient law。"
+    },
+    {
+      "closed": true,
+      "gate": "SignedWeightLawStillOpen",
+      "meaning": "alpha signed weight law 已拆开，但 exact signed formula 与 pre-Cauchy 恒等式仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLiftStillNeedsPointwiseValues",
+      "meaning": "signed lift 仍需要逐 skeleton row 的 signed value table。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveSummandExpressionStillOpen",
+      "meaning": "primitive summand 推前前 signed expression 未给出。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "UVKeySyncIsDownstreamAfterCoefficientLaw",
+      "meaning": "complete key 与 ExactUV/rank 只能在 row 的 signed coefficient 已给出后同步验证。",
+      "proved": false,
+      "remaining": "不能反向生成 coefficient law。"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationWaitsForSignedCoefficients",
+      "meaning": "解积分形式需要已登记 signed coefficients 才能求和。",
+      "proved": false,
+      "remaining": "不能由解积分反推 coefficient law。"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicSeedPrimitiveRowSignedCoefficientLawCurrentCorpusProved",
+      "meaning": "当前材料没有给合法 seed 分支内每条 primitive row 的 signed coefficient law。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "SeedSignedEmitterCurrentCorpusProved",
+      "meaning": "没有 signed coefficient law，seed signed row emitter 与推前前求和恒等式仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "seed_absent_branch_terminal_return_imported": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-terminal-fusion-router.json": "cd82f3da195f2f7649c9c90b49e1322a969af7ed6179e9086b46034c9b31a3dc",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8",
+    "docs/monograph/prime-matrix-strict-exact-uv-map-rank-incidence-router.json": "101917e6a573efb2d6c921b2056ac92120e41f1b10ae2549f394ac0fa3d1b54c",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "acyclic_seed_signed_row_emitter_reduced_to_primitive_row_signed_coefficient_law_open",
+  "target_input_before_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+  "terminal_return_if_no_seed_or_law": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "unsigned_row_skeleton_available": true
+}
