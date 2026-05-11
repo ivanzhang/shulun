@@ -1,0 +1,175 @@
+{
+  "acyclic_seed_internal_arithmetic_basis_expansion_proved": false,
+  "acyclic_seed_internal_arithmetic_basis_expansion_router_closed": true,
+  "acyclic_seed_precauchy_basis_weight_source_formula_proved": false,
+  "acyclic_seed_primitive_row_signed_coefficient_law_proved": false,
+  "alphabet_ledger_fields": [
+    {
+      "field": "basis_word_set",
+      "meaning": "seed 内部允许出现的 pre-Cauchy 算术基字母和有限 word 集。"
+    },
+    {
+      "field": "word_to_source_tuple_map",
+      "meaning": "每个 basis word 到 actual noncanonical source tuple 的正向生成映射。"
+    },
+    {
+      "field": "local_factor_domain",
+      "meaning": "每个 word 的 local factor、符号和非零条件所在定义域。"
+    },
+    {
+      "field": "truncation_phase_compatibility",
+      "meaning": "字母表与 carry shell、phase wheel、截断层和 branch key 的兼容规则。"
+    },
+    {
+      "field": "noncanonical_scope_lock",
+      "meaning": "证明这些字母不是 canonical RIW/Buchstab 的跨作用域导入。"
+    },
+    {
+      "field": "failure_return",
+      "meaning": "缺字母、超预算、后验选择或作用域冲突时的命名回流。"
+    }
+  ],
+  "basis_alphabet_is_first_domain_gate": true,
+  "basis_coefficient_assignment_ledger_proved": false,
+  "canonical_alphabet_cross_import_blocked": true,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_internal_arithmetic_basis_expansion_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "external_spectral_does_not_emit_alphabet": true,
+  "frontier_reduction": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy 的第一不可替代字段是 `AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger`。因为字母表先于 coefficient assignment、截断相位规则和 pre-Cauchy 恒等式；现有 canonical、generic WFD、外部谱、零行/payment 反推、formal-unit/source-tuple 容器和 unsigned skeleton 都不能给出 actual noncanonical seed 的 basis word 集。",
+  "generic_wfd_is_not_alphabet": true,
+  "next_direct_attack_target": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+  "no_theorem_switch": true,
+  "noncanonical_precauchy_basis_alphabet_ledger_proved": false,
+  "noncanonical_scope_lock_ledger_proved": false,
+  "parallel_attack_targets": [
+    "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+    "AcyclicSeedTruncationPhaseCompatibilityLedger",
+    "AcyclicSeedPreCauchyBasisExpansionIdentityLedger"
+  ],
+  "plain_conclusion": "本步没有转换命题，只把真正破坏输入继续下钻：内部算术基展开首先缺的是 actual noncanonical pre-Cauchy basis alphabet。没有这张字母表账本，signed coefficient assignment 没有定义域，后续截断/相位层、local factor、Phi 推前前恒等式都不能成为可检验命题。因此当前仍未形成无条件矛盾，下一步应直接攻 basis alphabet 账本。",
+  "pre_cauchy_basis_expansion_identity_proved": false,
+  "reverse_payment_and_zero_row_recovery_blocked": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "InternalArithmeticBasisExpansionTargetActive",
+      "meaning": "上一层已把 basis weight source formula 压到 seed 内部 pre-Cauchy 算术基展开。",
+      "proved": false,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "BasisAlphabetIsFirstDomainGate",
+      "meaning": "没有 basis alphabet，coefficient assignment、截断层规则和 pre-Cauchy 恒等式都没有定义域。",
+      "proved": true,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalAlphabetCrossImportBlocked",
+      "meaning": "canonical RIW/Buchstab 字母表只在 canonical branch 内有作用域，不能作为 actual noncanonical seed 的字母表。",
+      "proved": true,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDIsNotAlphabet",
+      "meaning": "generic WFD 是性质约束，不是逐 primitive row 的算术基字母表。",
+      "proved": true,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralDoesNotEmitAlphabet",
+      "meaning": "外部谱估计接收已给定的系数族；它不生成 seed 内部 basis alphabet。",
+      "proved": true,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ReversePaymentAndZeroRowRecoveryBlocked",
+      "meaning": "不能从 payment 原像、推前后结构或早期零行 unsigned 覆盖反推出 pre-Cauchy 字母表。",
+      "proved": true,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitAndSourceTupleAreContainersOnly",
+      "meaning": "formal unit 与 source tuple 能登记参数、哈希和锚点；它们没有列出可赋权的 basis word 集。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonHasPhaseAlphabetNotArithmeticAlphabet",
+      "meaning": "unsigned skeleton 的相位/几何字母只能定位 row，不能给 signed arithmetic basis alphabet。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalT1ClassifierDoesNotSupplyNoncanonicalAlphabet",
+      "meaning": "canonical T1 分支分类只区分 canonical absorbed 或 mismatch；不提交 noncanonical basis word 集。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitAlphaDeltaRuleRequiresAlphabetUpstream",
+      "meaning": "显式 alpha/delta rule 需要已有 primitive source word 与 local factor 定义，不能反过来定义字母表。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteEmitterKeyPartitionIsDownstream",
+      "meaning": "complete emitter key partition 是 source table 之后的登记纪律，不是 source basis alphabet 的来源。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "NoncanonicalPreCauchyBasisAlphabetCurrentCorpusProved",
+      "meaning": "当前材料尚未提交 actual noncanonical seed 的 pre-Cauchy basis alphabet 账本。",
+      "proved": false,
+      "remaining": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CoefficientAssignmentCurrentCorpusBlockedByMissingAlphabet",
+      "meaning": "没有字母表定义域，coefficient assignment 只能作为并行依赖保留，不能先行闭合。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "InternalArithmeticBasisExpansionCurrentCorpusProved",
+      "meaning": "basis alphabet、coefficient assignment、截断相位规则、作用域锁和推前前恒等式未合取证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.json": "a4e7b79a90a21e338213ee982a87b8c4caf59b73aa832f740a45dab59b1dabb4",
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-canonical-t1-equality-router.json": "a12e2c72fcb0d411eee5706ffb3d854c2e23ddca4ce32dbd8a11971296713637",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8",
+    "docs/monograph/prime-matrix-strict-explicit-alpha-delta-rule-router.json": "2de491d0a24986746199d7c96965b56f444643bf6aa15074bd705d7bf544531c",
+    "docs/monograph/prime-matrix-triad-a1-canonical-riw-support-router.json": "6a39cce23e2f9eb8dceb2c8742539fcddb8c3d83cea4ae69fd7703d0eea8f7b8",
+    "docs/monograph/prime-matrix-triad-a1-canonical-riw-support-router.md": "aad1216d4df4ba46d6d0aac0dfc68167d9e44b29196077f5bf49c682c488949e"
+  },
+  "status": "acyclic_seed_internal_arithmetic_basis_expansion_reduced_to_noncanonical_basis_alphabet_open",
+  "target_input_before_router": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+  "terminal_return_if_no_basis_alphabet": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "truncation_phase_compatibility_ledger_proved": false
+}
