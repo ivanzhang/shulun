@@ -1,0 +1,184 @@
+{
+  "adjacent_quotient_dynamics_integrated": true,
+  "alpha_capacity_profiles": [
+    {
+      "alpha": 0.55,
+      "capacity_beaten_by_mertens_scale": false,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.8999999999999999,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": -0.3385405164331148
+    },
+    {
+      "alpha": 0.6666666666666666,
+      "capacity_beaten_by_mertens_scale": false,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.6666666666666667,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": -0.10520718309978161
+    },
+    {
+      "alpha": 0.7,
+      "capacity_beaten_by_mertens_scale": false,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.6000000000000001,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": -0.03854051643311496
+    },
+    {
+      "alpha": 0.75,
+      "capacity_beaten_by_mertens_scale": true,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.5,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": 0.06145948356688513
+    },
+    {
+      "alpha": 0.8,
+      "capacity_beaten_by_mertens_scale": true,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.3999999999999999,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": 0.16145948356688522
+    },
+    {
+      "alpha": 0.85,
+      "capacity_beaten_by_mertens_scale": true,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.30000000000000004,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": 0.2614594835668851
+    },
+    {
+      "alpha": 0.9,
+      "capacity_beaten_by_mertens_scale": true,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.19999999999999996,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": 0.3614594835668852
+    },
+    {
+      "alpha": 0.95,
+      "capacity_beaten_by_mertens_scale": true,
+      "full_row_hit_cap_for_q_gt_alphaP": 2,
+      "high_label_capacity_constant_target": 0.10000000000000009,
+      "mertens_rough_constant_reference": 0.5614594835668851,
+      "reference_surplus_if_mertens_scale_available": 0.46145948356688504
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_block_coprime_dynamics_capacity_surplus_router",
+  "coprime_dynamics_capacity_surplus_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "所有结论仍在 Assume EarlyZeroRowWithinP 下推导。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ExactBlockCapacityFormulaClosed",
+      "meaning": "块内高标签供给等于各 q 的单余类命中数之和。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "FullRowAlphaHalfCapacityClosed",
+      "meaning": "alpha>1/2 时，全行每个高标签最多命中两列。",
+      "proved": true,
+      "remaining": "HighLabelPrimeCountingUpperBoundForAlphaSlice"
+    },
+    {
+      "closed": true,
+      "gate": "DirectContradictionCriterionClosed",
+      "meaning": "若 alphaP-rough 负载超过高标签容量，早期零行立刻矛盾。",
+      "proved": true,
+      "remaining": "AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity"
+    },
+    {
+      "closed": true,
+      "gate": "AdjacentQuotientDynamicsIntegrated",
+      "meaning": "相邻互质和商相邻互质给出支撑不交、短距不可复用和壳层容量约束。",
+      "proved": true,
+      "remaining": "AdjacentQuotientShellCapacityOrSquareDefectLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CoprimeDynamicsCapacitySurplusCurrentCorpusProved",
+      "meaning": "当前材料尚未证明某个 alpha 或块上 |R| 严格大于 C；互质动力本身不自动给负载下界。",
+      "proved": false,
+      "remaining": "AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity AND HighLabelPrimeCountingUpperBoundForAlphaSlice"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedContradictionFieldPromotedToClosure",
+      "meaning": "容量反超判据已闭合，但反超输入未闭合，所以统一矛盾场不能升级为无条件闭合。",
+      "proved": false,
+      "remaining": "B3RemainderTotalVariationBudgetForLengthP OR AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity OR registered PDEC/SAE defect exclusion"
+    }
+  ],
+  "direct_capacity_surplus_contradiction_criterion_closed": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_block_capacity_formula_closed": true,
+  "exact_laws": [
+    {
+      "formula": "C_{B,z}(x)=sum_{z<q<P} #{c in B: xP+c == 0 mod q}.",
+      "law": "block_high_label_capacity",
+      "meaning": "早期零行中，所有 z-rough 位置必须由这个高标签容量覆盖。",
+      "status": "closed_definition"
+    },
+    {
+      "formula": "C_{B,z}(x)<=sum_{z<q<P} ceil(|B|/q).",
+      "law": "block_capacity_ceiling",
+      "meaning": "同一素标签在短块中只能按同一模 q 余类重复。",
+      "status": "closed"
+    },
+    {
+      "formula": "If z=alpha P and alpha>1/2, then C_{[1,P-1],z}(x)<=2(pi(P)-pi(alpha P)).",
+      "law": "full_row_alpha_half_capacity",
+      "meaning": "高标签每个最多命中两列，给出最清晰的有限供给上界。",
+      "status": "closed"
+    },
+    {
+      "formula": "If |R_{B,z}(x)|>C_{B,z}(x), then an early zero row at x is impossible.",
+      "law": "rough_load_to_contradiction",
+      "meaning": "这是反例链与真实容量链之间的直接矛盾判据。",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "For adjacent rough composites q_c m_c and q_{c+1} m_{c+1}, all prime supports across the two products are disjoint.",
+      "law": "adjacent_quotient_coprime_support",
+      "meaning": "商相邻互质已并入容量场，但还需要负载下界才能产生反超。",
+      "status": "closed"
+    },
+    {
+      "formula": "For alpha>1/2 and n<P^2+P, every alpha P-rough composite has at most two prime factors.",
+      "law": "semiprime_shell_for_alpha_gt_half",
+      "meaning": "粗洞在早期零行下进入高标签-商壳层；平方点作为单独缺陷账本登记。",
+      "status": "closed_with_small_P_boundary"
+    }
+  ],
+  "finite_supply_vs_load_contradiction_proved": false,
+  "full_row_alpha_half_capacity_closed": true,
+  "next_direct_attack_target": "AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "HighLabelPrimeCountingUpperBoundForAlphaSlice",
+    "AdjacentQuotientShellCapacityOrSquareDefectLedger",
+    "B3RemainderTotalVariationBudgetForLengthP"
+  ],
+  "plain_conclusion": "本步把早期零行反例链压成一个明确的容量反超判据：对任意块 B 和 cutoff z，若 z-rough 位置数 |R_{B,z}(x)| 大于 高标签容量 C_{B,z}(x)，则这些位置无法全部由 P 以内素因子覆盖，早期零行矛盾。当 z=alpha P 且 alpha>1/2 时，全行容量有简单上界 2(pi(P)-pi(alpha P))。相邻互质与商相邻互质已并入该容量场，但它们本身不提供 |R| 的正下界；当前真正剩余是证明某个 alpha/块的粗洞负载严格超过有限供给容量，或证明负载不足必登记为 PDEC/SAE 缺陷并被排斥。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/local-label-conflict-scan.md": "63caac3af1f1b528a9f3dc67bcee5756033c1f3d48f47229fa1c7d1f3e4fbfd1",
+    "docs/monograph/prime-matrix-strict-prefix-capacity-multiplier-discipline-router.md": "352c86f7f0d64130e7cdf822484877f5cf1ec3e3629d0c8bdef50bcc7ca2ef98",
+    "docs/monograph/prime-matrix-strict-unified-counterexample-contradiction-field-matrix-router.md": "ff681a8d76683c85cba256233d20aaa3dd8668ac45ccc3e36206e0b75a16b317",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.md": "92c48e7d714410ac037b1c880fb2e82bcbf132fe8c02bf9c47686481758eee91"
+  },
+  "status": "block_capacity_surplus_criterion_closed_load_surplus_input_open"
+}
