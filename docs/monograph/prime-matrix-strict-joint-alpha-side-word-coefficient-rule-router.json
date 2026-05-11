@@ -1,0 +1,166 @@
+{
+  "certificate_type": "prime_matrix_strict_joint_alpha_side_word_coefficient_rule_router",
+  "status": "joint_alpha_side_rule_reduced_to_same_row_word_coefficient_origin_identity_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "joint_alpha_side_word_coefficient_rule_router_closed": true,
+  "broad_alpha_side_rule_imported": true,
+  "unsigned_carry_shell_skeleton_registered": true,
+  "signed_expression_reduced_to_origin_identity": true,
+  "joint_alpha_same_row_word_coefficient_origin_identity_proved": false,
+  "joint_alpha_carry_shell_skeleton_to_primitive_basis_word_binding_proved": false,
+  "primitive_summand_signed_coefficient_origin_identity_proved": false,
+  "joint_alpha_primitive_row_uv_key_sign_local_factor_output_proved": false,
+  "alpha_formula_anchor_collar_overload_named_return_proved": false,
+  "joint_alpha_side_rule_failure_named_return_proved": false,
+  "joint_alpha_side_primitive_word_coefficient_rule_proved": false,
+  "explicit_joint_alpha_delta_constructor_rule_proved": false,
+  "pre_cauchy_joint_declaration_line_proved": false,
+  "joint_basis_word_coefficient_emitter_proved": false,
+  "acyclic_terminal_return_well_founded_descent_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "target_input_before_router": "JointAlphaSidePrimitiveWordCoefficientRuleLedger",
+  "next_direct_attack_target": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward",
+  "parallel_attack_targets": [
+    "JointAlphaCarryShellSkeletonToPrimitiveBasisWordBindingLedger",
+    "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward",
+    "JointAlphaPrimitiveRowUVKeySignLocalFactorOutputLedger",
+    "AlphaFormulaAnchorCollarOverloadNamedReturnLedger",
+    "JointAlphaSideRuleFailureNamedReturnLedger",
+    "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+  ],
+  "productive_basis_after_router": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward AND JointAlphaCarryShellSkeletonToPrimitiveBasisWordBindingLedger AND PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward AND JointAlphaPrimitiveRowUVKeySignLocalFactorOutputLedger AND AlphaFormulaAnchorCollarOverloadNamedReturnLedger AND JointAlphaSideRuleFailureNamedReturnLedger",
+  "strict_basis_after_router": "((JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward AND JointAlphaCarryShellSkeletonToPrimitiveBasisWordBindingLedger AND PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward AND JointAlphaPrimitiveRowUVKeySignLocalFactorOutputLedger AND AlphaFormulaAnchorCollarOverloadNamedReturnLedger AND JointAlphaSideRuleFailureNamedReturnLedger) OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "bridge_fields": [
+    {
+      "field": "same_source_tuple_row_id",
+      "meaning": "同一 formal unit/source tuple 下的 alpha primitive row 标识。"
+    },
+    {
+      "field": "carry_shell_word_binding",
+      "meaning": "把 unsigned carry-shell/anchor/phase skeleton 绑定为 primitive basis word。"
+    },
+    {
+      "field": "signed_coefficient_origin_identity",
+      "meaning": "同一行给出 signed coefficient 的 pre-Cauchy 来源恒等式。"
+    },
+    {
+      "field": "uv_key_sign_local_factor_payload",
+      "meaning": "同一行同步输出 exact `(u,v)`、branch key、sign 和 local factor。"
+    },
+    {
+      "field": "prepushforward_validity",
+      "meaning": "word 与 coefficient 在 Phi/payment 推前之前已经同源成立。"
+    },
+    {
+      "field": "named_return",
+      "meaning": "缺 word、缺 coefficient、零 local factor、过载、后验读取或跨来源泄漏必须命名回流。"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "JointAlphaSideTargetActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层 joint explicit alpha/delta 规则已把首字段压成 joint alpha-side word/coefficient rule。",
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "gate": "BroadAlphaSideRuleImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "普通 alpha-side primitive rule 已拆成定义域、发射映射、权重公式、row payload 和回流。",
+      "remaining": "joint 版需要把 word 与 coefficient 同行合并。"
+    },
+    {
+      "gate": "DeterministicAlphaMapStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "确定性 alpha row map 仍未给出完整 row 发射，但后续 unsigned skeleton 已说明几何骨架可登记。",
+      "remaining": "JointAlphaCarryShellSkeletonToPrimitiveBasisWordBindingLedger"
+    },
+    {
+      "gate": "UnsignedCarryShellSkeletonRegistered",
+      "closed": true,
+      "proved": true,
+      "meaning": "carry-shell、P列锚、anchor-collar 和 layered-wheel 已给出 alpha row 的 unsigned skeleton。",
+      "remaining": "只给 word/skeleton 形状，不给 signed coefficient。"
+    },
+    {
+      "gate": "AnchorPhaseFormulaStillNeedsSignedLiftAndReturn",
+      "closed": true,
+      "proved": false,
+      "meaning": "alpha anchor/phase 公式已压到 signed coefficient lift 与 anchor-collar overload return。",
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward AND AlphaFormulaAnchorCollarOverloadNamedReturnLedger"
+    },
+    {
+      "gate": "SignedExpressionReducedToOriginIdentity",
+      "closed": true,
+      "proved": false,
+      "meaning": "逐 summand signed expression 已被压成 signed coefficient origin identity。",
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "gate": "SignedPayloadStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "signed lift、逐点 signed weight expression 和 origin identity 都未证明。",
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "gate": "SameSourceTupleContainerAvailable",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal unit/source tuple 容器可用于同行绑定 word 与 coefficient。",
+      "remaining": "容器不是桥接证明。"
+    },
+    {
+      "gate": "PointwiseKernelNeedsSameRows",
+      "closed": true,
+      "proved": false,
+      "meaning": "逐点 primitive 核表同样要求行公式、权重恒等式和 rank 证书在同一行上对齐。",
+      "remaining": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "gate": "DownstreamReverseRecoveryBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "payment、零行覆盖、来源环和有限投影不能反推出 same-row signed payload。",
+      "remaining": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "gate": "SameRowBridgeCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前材料没有证明 unsigned primitive word skeleton 与 signed coefficient origin identity 是同一 pre-Cauchy row。",
+      "remaining": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "gate": "JointAlphaSideRuleCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "没有 same-row 桥接，joint alpha-side primitive word/coefficient rule 仍未证明。",
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-joint-explicit-alpha-delta-rule-sync-router.json": "adf3886063960c89004c769f0e2b7804edf8ea4fb5d71ee71cb4d12fd2bfbe48",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-deterministic-alpha-row-emission-map-router.json": "d980647c15a9fd16b0e4255b5af3f2ce69ab5575dbe0d7a80a8b1ade70b0d177",
+    "docs/monograph/prime-matrix-strict-alpha-row-anchor-phase-formula-router.json": "1da61d631c11df13e21c840516701954072e915d348b1ab4fd6bfb2fd3a0c6d8",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "docs/monograph/prime-matrix-strict-pointwise-primitive-kernel-table-router.json": "adb8a9e1e05a33dff6a5f5d1dd03cf2a86b8420d49be536c1ddffa77185afae1",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4"
+  },
+  "frontier_reduction": "`JointAlphaSidePrimitiveWordCoefficientRuleLedger` 的真正难点不是单独生成 alpha unsigned row，也不是单独命名 signed coefficient；而是证明二者在同一 pre-Cauchy primitive row 上同源。因此下一原子为 `JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward`。",
+  "plain_conclusion": "本步继续下钻 joint alpha-side 规则：已有材料可登记 carry-shell/anchor/phase 的 unsigned skeleton，也已把 signed expression 压到 origin identity，但二者尚未在同一 primitive row 上桥接。joint 规则必须证明同一 source tuple 同时产生 primitive basis word、signed coefficient、`(u,v)`、branch key、sign/local factor，并在失败时命名回流。该 same-row 桥接当前未证明，行/列命题仍未无条件闭合。"
+}
