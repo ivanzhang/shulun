@@ -1,0 +1,143 @@
+{
+  "certificate_type": "prime_matrix_strict_joint_explicit_alpha_delta_rule_sync_router",
+  "status": "explicit_joint_alpha_delta_rule_reduced_to_joint_alpha_side_rule_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "joint_explicit_alpha_delta_rule_sync_router_closed": true,
+  "broad_alpha_delta_two_side_split_imported": true,
+  "source_tuple_container_imported_but_not_rule": true,
+  "unsigned_alpha_geometry_imported_but_not_signed_payload": true,
+  "joint_alpha_side_primitive_word_coefficient_rule_proved": false,
+  "joint_delta_side_primitive_word_coefficient_rule_proved": false,
+  "joint_alpha_delta_pairing_compatibility_before_cauchy_proved": false,
+  "joint_primitive_word_coefficient_nonzero_sign_local_factor_proved": false,
+  "joint_alpha_delta_rule_failure_named_return_proved": false,
+  "explicit_joint_alpha_delta_constructor_rule_proved": false,
+  "pre_cauchy_joint_declaration_line_proved": false,
+  "joint_basis_word_coefficient_emitter_proved": false,
+  "acyclic_terminal_return_well_founded_descent_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "target_input_before_router": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple",
+  "next_direct_attack_target": "JointAlphaSidePrimitiveWordCoefficientRuleLedger",
+  "parallel_attack_targets": [
+    "JointDeltaSidePrimitiveWordCoefficientRuleLedger",
+    "JointAlphaDeltaPairingCompatibilityBeforeCauchyLedger",
+    "JointPrimitiveWordCoefficientNonzeroSignLocalFactorLedger",
+    "JointAlphaDeltaRuleFailureNamedReturnLedger",
+    "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+  ],
+  "productive_basis_after_router": "JointAlphaSidePrimitiveWordCoefficientRuleLedger AND JointDeltaSidePrimitiveWordCoefficientRuleLedger AND JointAlphaDeltaPairingCompatibilityBeforeCauchyLedger AND JointPrimitiveWordCoefficientNonzeroSignLocalFactorLedger AND JointAlphaDeltaRuleFailureNamedReturnLedger",
+  "strict_basis_after_router": "((JointAlphaSidePrimitiveWordCoefficientRuleLedger AND JointDeltaSidePrimitiveWordCoefficientRuleLedger AND JointAlphaDeltaPairingCompatibilityBeforeCauchyLedger AND JointPrimitiveWordCoefficientNonzeroSignLocalFactorLedger AND JointAlphaDeltaRuleFailureNamedReturnLedger) OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "joint_rule_fields": [
+    {
+      "field": "joint_alpha_side_rule",
+      "meaning": "从同一 source tuple 正向发射 alpha-side primitive basis word、signed coefficient 与 row payload。"
+    },
+    {
+      "field": "joint_delta_side_rule",
+      "meaning": "从同一 source tuple 正向发射 delta-side primitive basis word、signed coefficient 与 row payload。"
+    },
+    {
+      "field": "same_word_coefficient_payload",
+      "meaning": "每条 primitive row 的 word、coefficient、branch key、u/v、sign 和 local factor 同时产生。"
+    },
+    {
+      "field": "pre_cauchy_pairing_identity",
+      "meaning": "alpha/delta 两侧在 Cauchy 前配对为同一个 actual emitter 系数。"
+    },
+    {
+      "field": "nonzero_and_return_discipline",
+      "meaning": "零 local factor、符号冲突、多值、超预算、后验读取或 unmatched pair 必须命名回流。"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "ExplicitJointRuleTargetActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层 joint declaration/constructor 同步已把首个生产性公式压成 explicit joint alpha/delta rule。",
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "gate": "BroadAlphaDeltaTwoSideSplitImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "已有显式 alpha/delta 规则证书说明普通规则必须拆成 alpha-side、delta-side、pairing 和 nonzero/sign/local factor。",
+      "remaining": "joint 版继承此两侧结构。"
+    },
+    {
+      "gate": "SourceTupleContainerStillOnlyContainer",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal unit/source tuple 只给输入容器和锚参数，不自动给 primitive row 规则。",
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "gate": "UnsignedAlphaGeometryImportedButNotSignedPayload",
+      "closed": true,
+      "proved": true,
+      "meaning": "carry-shell、anchor/phase、P列锚与层叠轮等 unsigned alpha 几何可登记，但不产生 signed coefficient。",
+      "remaining": "signed payload 仍需 joint alpha-side 规则。"
+    },
+    {
+      "gate": "AlphaSideGenericRuleStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "普通 alpha-side primitive rule 和 deterministic alpha row emission map 尚未证明。",
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "gate": "SignedPayloadStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "alpha signed weight law 与逐点 signed weight expression 仍未给出 exact signed coefficient。",
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "gate": "DownstreamRecoveryStillBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "payment 反推、零行覆盖和终端证书不能替代 joint alpha/delta 规则。",
+      "remaining": "JointAlphaDeltaRuleFailureNamedReturnLedger"
+    },
+    {
+      "gate": "JointRuleNeedsPayloadStrongerThanBroadRule",
+      "closed": true,
+      "proved": true,
+      "meaning": "joint 规则比普通 alpha/delta 规则更强：每侧发射时必须同时带 basis word 与 signed coefficient payload。",
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "gate": "JointAlphaSidePrimitiveRuleCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前材料尚未给出 source tuple 到 alpha-side joint primitive word/coefficient row 的正向规则。",
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "gate": "ExplicitJointAlphaDeltaRuleCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "缺 joint alpha-side 首规则时，delta-side、pairing、nonzero/local factor 和回流不能合取闭合。",
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-joint-declaration-constructor-sync-router.json": "dbca8167a10b42d83c9734c13100d6376b5f91a905d2ebd3f5c9b8621ada1401",
+    "docs/monograph/prime-matrix-strict-explicit-alpha-delta-rule-router.json": "2de491d0a24986746199d7c96965b56f444643bf6aa15074bd705d7bf544531c",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-deterministic-alpha-row-emission-map-router.json": "d980647c15a9fd16b0e4255b5af3f2ce69ab5575dbe0d7a80a8b1ade70b0d177",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-row-anchor-phase-formula-router.json": "1da61d631c11df13e21c840516701954072e915d348b1ab4fd6bfb2fd3a0c6d8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4"
+  },
+  "frontier_reduction": "`ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple` 不是普通 alpha/delta 规则的简单复述；它要求 alpha/delta 两侧每条 primitive row 都携带同一 source tuple 下的 basis word 与 signed coefficient payload。因此第一真正单点压成 `JointAlphaSidePrimitiveWordCoefficientRuleLedger`。",
+  "plain_conclusion": "本步把 explicit joint alpha/delta rule 与已有普通 explicit alpha/delta 两侧拆分同步：source tuple 与 unsigned alpha 几何只能提供输入和骨架，不能生成 signed payload。joint 规则必须先给 alpha-side 的 primitive word/coefficient 正向发射规则；没有它，delta-side、Cauchy 前配对、非零/local factor 和回流都无对象。当前仍未闭合行/列命题。"
+}
