@@ -1,0 +1,192 @@
+{
+  "certificate_type": "prime_matrix_strict_signed_source_fixed_point_breaker_router",
+  "counterexample_assumption_only": true,
+  "current_internal_route_is_signed_source_fixed_point": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands` 的当前内部证明脊柱已经形成 signed-source 固定点；真正非循环破坏输入是 `NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows`。",
+  "geometric_anchor_branch_closed": true,
+  "kernel_contract": [
+    {
+      "field": "domain",
+      "meaning": "只读取 actual noncanonical seed/source tuple 及已闭合 primitive basis word 坐标。"
+    },
+    {
+      "field": "signed_coefficient_formula",
+      "meaning": "在 Cauchy/payment/Phi 推前之前正向输出 signed coefficient。"
+    },
+    {
+      "field": "sign_and_local_factor",
+      "meaning": "同步给出 sign、local factor、非零条件和 branch key。"
+    },
+    {
+      "field": "prepushforward_sum_identity",
+      "meaning": "证明输出 rows 的求和已等于目标 alpha/delta 贡献。"
+    },
+    {
+      "field": "no_self_reference",
+      "meaning": "公式不得读取 row-level 表、来源恒等式、payment/Phi 下游结果或早期零行覆盖。"
+    },
+    {
+      "field": "named_return_tags",
+      "meaning": "缺 seed、零局部因子、符号冲突、超预算或作用域冲突必须命名回流。"
+    }
+  ],
+  "next_direct_attack_target": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows",
+  "no_theorem_switch": true,
+  "noncircular_signed_coefficient_emission_kernel_proved": false,
+  "plain_conclusion": "本步没有改换命题，而是把最新一圈下钻结果合并审查。几何锚输入已经闭合，但 signed coefficient 来源链从逐行原始表出发，经 seed/emitter、basis word、assignment、value map、origin identity 后又回到同一逐行原始表。因此不能把这条链当作证明；必须新增一个不读取下游 payment/来源表/早期零行覆盖的 pre-Cauchy signed coefficient 发射核。",
+  "reverse_and_zero_row_recovery_blocked": true,
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RowLevelGenerationTableIsActiveTarget",
+      "meaning": "最新 basis word 来源恒等式已回收到逐行 clean-core 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSourceSpineMaterialized",
+      "meaning": "从 row-level 表到 seed/emitter、coefficient law、basis source、basis word 构造的依赖脊柱已全部登记。",
+      "proved": true,
+      "remaining": "登记脊柱不等于生成 signed coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometricAnchorBranchClosed",
+      "meaning": "锚选择、窗口端点、phase pullback 和低重叠收费已闭合。",
+      "proved": true,
+      "remaining": "几何闭合只给 unsigned word 输入，不给 signed coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "SignedAssignmentSpineReturnsToRowLevel",
+      "meaning": "signed slot、assignment、value map、origin identity 最终回到同一逐行原始生成表。",
+      "proved": true,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseAndZeroRowRecoveryBlocked",
+      "meaning": "来源环、payment 反推、早期零行 unsigned cover 均不能生成 signed seed/rows。",
+      "proved": true,
+      "remaining": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentInternalRouteIsSignedSourceFixedPoint",
+      "meaning": "现有内部路线形成 RowLevel -> ... -> RowLevel 的 signed-source 固定点。",
+      "proved": true,
+      "remaining": "固定点切断后必须提交非循环 signed coefficient emission kernel。"
+    },
+    {
+      "closed": false,
+      "gate": "NoncircularSignedCoefficientEmissionKernelCurrentCorpusProved",
+      "meaning": "当前材料没有不读取下游表/来源恒等式/payment 的 pre-Cauchy signed coefficient 发射核。",
+      "proved": false,
+      "remaining": "NoncircularPreCauchySignedCoefficientEmissionKernelForActualNoncanonicalPrimitiveRows"
+    },
+    {
+      "closed": false,
+      "gate": "RowLevelOriginalGenerationTableCurrentCorpusProved",
+      "meaning": "没有非循环发射核，逐行原始生成表仍未证明。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_assignment_returns_to_row_level_generation_table": true,
+  "signed_source_fixed_point_breaker_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-anchor-input-rule-router.json": "79facaf8c8b0fbf5ce4ff39304895be967192af6ed4125ff41ccc8ea57e4e522",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-alphabet-ledger-router.json": "01dfdcc9a1f9d9a839331068b413f9ecbb762491ec738916c1d23b1204c3d0a7",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-formula-router.json": "e4bbc63659a0348b1f017f78f0cd7d8b00e38ae91380db83d5002448a1955b2e",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-origin-identity-router.json": "7ed10b97fc7ee159a7d08b45a0e26afbbedd6db4518e1c00dfb48b5c13de56ad",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-assignment-router.json": "30d00d415a6bcd62f3f75fc92a7fed670dd493936a39fbd86980ad7a0bcda0bc",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-value-map-router.json": "e052b6a7cc215c9ad7eb81002edeb995fcc6ef2ce1290dfaf70f642a21de499c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json": "ae82e18347b05aab66be09d91ddb80a71eb30c3c7ce8ae3ba8e3fe1a0e4a5bea",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-basis-word-generation-router.json": "b3db77f03ae13172aaa975271a89f5f80aa7d5254b7dac12c3a4886edbd1da6e",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json": "11dc103e15a970f0c4e27a17ca32b757203b5e4fd443d6d40217854fdb5f0fe3",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-slot-value-formula-router.json": "9f4f22bbec38091d306cb0cf8a395c9fa854e78c73e73555f2f40b1e8dee0ba5",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-weight-coordinate-slot-router.json": "0150cfc80fdde353d31c03700be96db1badfbea3f13c4d58e8260cef4901efbf",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-source-tuple-word-constructor-router.json": "5a07dea4127624cbb836413658616bd5027eef9128200c52547d92e17dd26fd4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-word-coordinate-formula-router.json": "6f6fe8cf24a60e6440371368e6150663c4dd16be348cb9ad0f59176ea04b27c0",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "spine_edges": [
+    {
+      "from": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "to": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "from": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+      "to": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "from": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+      "to": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "from": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+      "to": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "from": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+      "to": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "from": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+      "to": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "from": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment",
+      "to": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "from": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility",
+      "to": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "from": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility",
+      "to": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "from": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters",
+      "to": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
+    },
+    {
+      "from": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates",
+      "to": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "from": "AcyclicSeedSignedWeightCoordinateSlotLedger",
+      "to": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "from": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+      "to": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "from": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+      "to": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "from": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula",
+      "to": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "from": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    }
+  ],
+  "status": "signed_source_fixed_point_cut_to_noncircular_emission_kernel_open",
+  "target_input_before_router": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "terminal_return_if_no_kernel": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+}
