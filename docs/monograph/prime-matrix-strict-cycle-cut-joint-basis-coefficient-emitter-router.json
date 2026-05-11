@@ -1,0 +1,137 @@
+{
+  "certificate_type": "prime_matrix_strict_cycle_cut_joint_basis_coefficient_emitter_router",
+  "status": "cycle_cut_source_input_reduced_to_joint_basis_word_coefficient_emitter_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "cycle_cut_input_router_closed": true,
+  "sequential_word_then_coefficient_split_rejected": true,
+  "joint_basis_word_coefficient_emitter_proved": false,
+  "acyclic_seed_cycle_cut_source_input_proved": false,
+  "acyclic_terminal_return_well_founded_descent_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "target_input_before_router": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput",
+  "next_direct_attack_target": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy",
+  "parallel_attack_target": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+  "terminal_return_if_no_joint_emitter": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "strict_basis_after_router": "(AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "emitter_fields": [
+    {
+      "field": "source_tuple_input",
+      "meaning": "只读取同一 formal unit 的 actual noncanonical source tuple 与已闭合锚参数。"
+    },
+    {
+      "field": "basis_word_output",
+      "meaning": "在 Cauchy/payment 前输出 primitive basis word，而不是后验选择 word。"
+    },
+    {
+      "field": "signed_coefficient_output",
+      "meaning": "同一公式同时输出 signed coefficient、sign、local factor 和非零条件。"
+    },
+    {
+      "field": "word_coefficient_identity",
+      "meaning": "证明输出的 word 与 coefficient 是同一个 pre-Cauchy 算术对象的两面。"
+    },
+    {
+      "field": "prepushforward_sum_identity",
+      "meaning": "证明联合发射后的 rows 在 Phi/payment 推前前已经给出目标 alpha/delta 贡献。"
+    },
+    {
+      "field": "no_downstream_read",
+      "meaning": "公式不读取 payment、零行覆盖、origin table、terminal certificate 或外部谱后处理。"
+    },
+    {
+      "field": "named_return_tags",
+      "meaning": "缺 word、零 local factor、符号冲突、多值或超预算时命名回流。"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "CycleCutInputActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层前沿同步已把非循环新增输入钉为 primitive basis 与 signed coefficient 的前置源输入。",
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "gate": "ExistingCycleGuardImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "已登记的 signed 坐标-来源链形成闭合依赖环，不能用环本身证明 signed coefficient。",
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "gate": "WordFirstRouteStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "先生成 basis word 的路线最终仍卡在 word coordinate / signed slot，而不是给出完整源输入。",
+      "remaining": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "gate": "AnchorCoordinatesDoNotCloseSignedSlot",
+      "closed": true,
+      "proved": true,
+      "meaning": "anchor/dyadic/phase 坐标域已闭合，但 signed weight coordinate slot 仍未证明。",
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "gate": "CoefficientFirstRouteStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "先给 coefficient assignment 的路线又要求 basis word value map 与来源恒等式，回到原始行表。",
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "gate": "ValueMapReturnsToOriginLedger",
+      "closed": true,
+      "proved": true,
+      "meaning": "signed coefficient value map 必须是来源恒等式；来源恒等式又要求逐行原始生成表。",
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "gate": "RowTableRequiresEmitterImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "逐行原始表本身要求 seed signed row emitter；这正是被环守卫禁止自证的对象。",
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "gate": "SequentialSplitRejected",
+      "closed": true,
+      "proved": true,
+      "meaning": "word-first 与 coefficient-first 都回到对方或原始表；cycle-cut 输入必须是联合发射公式。",
+      "remaining": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy"
+    },
+    {
+      "gate": "JointEmitterCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前材料没有提交同时输出 basis word 与 signed coefficient 的 Cauchy 前联合发射公式。",
+      "remaining": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy"
+    },
+    {
+      "gate": "TerminalDescentAlternativeStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "若不能提交联合发射器，只能走终端回流严格下降证书；该证书也未证明。",
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-signed-source-cycle-frontier-sync-router.json": "58438c112b5b3b012ba4986a8e5b77a321dfac083b99bba5c866077b35232cc8",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coordinate-source-cycle-guard-router.json": "aef259753937f9d64167d4c7478a6ab2c410d2f1f9d9474fb0e876619b517a29",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-basis-word-generation-router.json": "b3db77f03ae13172aaa975271a89f5f80aa7d5254b7dac12c3a4886edbd1da6e",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-source-tuple-word-constructor-router.json": "5a07dea4127624cbb836413658616bd5027eef9128200c52547d92e17dd26fd4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-formula-router.json": "e4bbc63659a0348b1f017f78f0cd7d8b00e38ae91380db83d5002448a1955b2e",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-word-coordinate-formula-router.json": "6f6fe8cf24a60e6440371368e6150663c4dd16be348cb9ad0f59176ea04b27c0",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-weight-coordinate-slot-router.json": "0150cfc80fdde353d31c03700be96db1badfbea3f13c4d58e8260cef4901efbf",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-slot-value-formula-router.json": "9f4f22bbec38091d306cb0cf8a395c9fa854e78c73e73555f2f40b1e8dee0ba5",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-assignment-router.json": "30d00d415a6bcd62f3f75fc92a7fed670dd493936a39fbd86980ad7a0bcda0bc",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-value-map-router.json": "e052b6a7cc215c9ad7eb81002edeb995fcc6ef2ce1290dfaf70f642a21de499c",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "frontier_reduction": "`AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput` 不能继续拆成“先生成 basis word、再赋 signed coefficient”的顺序链；这两条链已互相回指并回到 row-level origin 表。真正非循环破环输入必须是一条 Cauchy 前联合发射公式，即 `AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy`。",
+  "plain_conclusion": "本步把 cycle-cut 输入进一步压窄：现有 word-first 路线只给 unsigned 坐标域，最终卡在 signed slot；coefficient-first 路线又要求 value map 来源恒等式，并回到逐行原始生成表。因此顺序拆分仍是来源环。要真正破环，必须提交一个同 formal unit、Cauchy/payment 前的联合发射器，同时输出 primitive basis word、signed coefficient、sign/local factor、prepushforward sum identity 和失败回流。该联合发射器当前未证明，行/列命题仍未无条件闭合。"
+}
