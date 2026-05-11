@@ -1,0 +1,143 @@
+{
+  "anchor_input_complexity_charge_closed": true,
+  "anchor_input_rule_proved": true,
+  "anchor_input_rule_router_closed": true,
+  "anchor_selection_function_closed": true,
+  "basis_word_formula_from_source_tuple_parameters_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_anchor_input_rule_router",
+  "closed_anchor_input_laws": [
+    {
+      "law": "anchor_selection_function",
+      "meaning": "选择函数不是单点后验选择，而是 `sorted(A)` 的逐锚全枚举；A=empty 显式登记。"
+    },
+    {
+      "law": "window_endpoint_coupling",
+      "meaning": "每个锚 a 的输入区间为 J_a=[max(D0,ceil(L/a)), min(2D0,floor(R/a)+1))。"
+    },
+    {
+      "law": "phase_filter_pullback",
+      "meaning": "phase_rule 在锚区间证书与 sweep-line 多重度表中前置过滤，不能在下游重选。"
+    },
+    {
+      "law": "empty_and_failure_return",
+      "meaning": "A=empty、J_a=empty、缺字段、m(d)>Omega 均有显式记录或命名回流。"
+    },
+    {
+      "law": "complexity_charge",
+      "meaning": "多重度表用 m(d)<=Omega / m(d)>Omega 给出低重叠收费和高重叠回流。"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dyadic_truncation_coordinate_available": true,
+  "frontier_reduction": "`AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates` 可由锚区间证书、锚区间枚举和低重叠多重度表闭合；word coordinate formula 的下一真正缺口转为 `AcyclicSeedSignedWeightCoordinateSlotLedger`。",
+  "next_direct_attack_target": "AcyclicSeedSignedWeightCoordinateSlotLedger",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicSeedCoordinateNonposthocCertificateLedger",
+    "AcyclicSeedCoordinateFailureReturnLedger",
+    "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+  ],
+  "phase_coordinate_available": true,
+  "phase_filter_pullback_closed": true,
+  "plain_conclusion": "本步利用已有锚区间与多重度证书关闭 anchor input rule：选择函数是 sorted(A) 逐锚全枚举，端点由 J_a 公式固定，phase_rule 前置过滤，空锚集/空区间/高重叠都有记录或回流。因此真正剩余不再是 anchor 输入，而是 primitive basis word 中 signed weight/local factor 的坐标槽。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AnchorInputRuleTargetActive",
+      "meaning": "上一层已把 word coordinate formula 压到 anchor input rule。",
+      "proved": false,
+      "remaining": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorSelectionFunctionClosedBySortedEnumeration",
+      "meaning": "锚输入选择由 `sorted(A)` 逐锚全枚举给出；空锚集显式记录，不靠后验挑选。",
+      "proved": true,
+      "remaining": "anchor_selection_function closed。"
+    },
+    {
+      "closed": true,
+      "gate": "WindowEndpointCouplingClosed",
+      "meaning": "J_a 端点由窗口 [L,R]、D0 与 anchor a 的 ceil/floor 公式唯一确定。",
+      "proved": true,
+      "remaining": "window_endpoint_coupling closed。"
+    },
+    {
+      "closed": true,
+      "gate": "PhaseFilterPullbackClosed",
+      "meaning": "phase_rule 已在锚区间/多重度表中前置过滤；不能在下游重新选择。",
+      "proved": true,
+      "remaining": "phase_filter_pullback closed。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorInputComplexityChargeClosed",
+      "meaning": "low-overlap multiplicity table 给出 m(d)<=Omega 的收费与 m(d)>Omega 的 high-overlap return。",
+      "proved": true,
+      "remaining": "anchor_input_complexity_charge closed。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorInputNonposthocAndFailureReturnClosed",
+      "meaning": "source_tuple_hash、endpoint hash、empty flags 与 high-overlap return 排除后验输入选择。",
+      "proved": true,
+      "remaining": "anchor_input_failure_return closed。"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorInputRuleCurrentCorpusProved",
+      "meaning": "anchor input rule 的选择、端点、相位、空例、复杂度和回流均由既有锚区间/多重度账本闭合。",
+      "proved": true,
+      "remaining": "可进入 word coordinate formula 的下一坐标槽。"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicAndPhaseCoordinatesAvailableAfterAnchorInput",
+      "meaning": "d in [D0,2D0)、J_a 端点和 phase_filtered segments 已给出 dyadic/phase 坐标数据。",
+      "proved": true,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SignedWeightCoordinateSlotCurrentCorpusProved",
+      "meaning": "当前材料仍未给出 primitive basis word 中承载 signed weight/local factor 的坐标槽。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "closed": false,
+      "gate": "WordCoordinateFormulaCurrentCorpusProved",
+      "meaning": "anchor/dyadic/phase 输入已闭合，但缺 signed weight coordinate slot，完整 word coordinate formula 仍未闭合。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedSlotOpenMatchesCoefficientLawGap",
+      "meaning": "signed slot 与后续 coefficient assignment/basis weight source 是同一缺口，不能从 unsigned 输入自动推出。",
+      "proved": false,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_weight_coordinate_slot_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-interval-certificate-file-router.json": "7b3e7de7760295bb4e328cb2b82345c3b7053d1a54b37c88260e3f21a09f7ab1",
+    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-anchor-interval-enumeration-router.json": "8226824c34befd9dcf63546bcca75afc9c557599c2ec1a795ebb7fd2d0ed41f4",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-low-overlap-multiplicity-table-router.json": "474c9979828338364b2283150cf893f5f0563749c365a6a594da8a2e2b253726",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-word-coordinate-formula-router.json": "57440e12c16fd7b917489a38913dbadc471f17ae2ee5d89cb91d8c1cce6ead04",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824"
+  },
+  "status": "anchor_input_rule_closed_word_coordinate_reduced_to_signed_weight_slot_open",
+  "target_input_before_router": "AcyclicSeedAnchorInputRuleForPrimitiveWordCoordinates",
+  "terminal_return_if_no_signed_weight_slot": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "window_endpoint_coupling_closed": true,
+  "word_coordinate_formula_proved": false
+}
