@@ -1,0 +1,140 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_branch_or_direct_pdec_router",
+  "status": "canonical_admission_open_direct_acyclic_pdec_selected_and_atomized",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "canonical_branch_conditional_implication_pinned": true,
+  "acyclic_seed_canonical_branch_admission_proved": false,
+  "acyclic_seed_finite_factor_map_weight_identity_proved": false,
+  "acyclic_seed_no_source_replacement_proved": false,
+  "terminal_certificate_same_set_pushforward_proved": false,
+  "no_noncanonical_payload_survives_projection_proved": false,
+  "direct_acyclic_same_set_pdec_selected": true,
+  "registered_capacity_multiplier_discipline_imported": true,
+  "same_set_pdec_protocol_imported_with_scope": true,
+  "acyclic_same_set_pdec_input_materialized": false,
+  "acyclic_pdec_dual_cap_localization_no_fourth_exit_proved": false,
+  "acyclic_finite_arc_cap_mass_bounds_proved": false,
+  "direct_acyclic_same_set_pdec_dual_proved": false,
+  "direct_acyclic_clean_kls_dls_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "canonical_package": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection",
+  "direct_pdec_before_router": "DirectAcyclicSameSetPDECCapDualCertificate",
+  "direct_pdec_after_router": "AcyclicSameSetPDECInputMaterializationAndMassLedger AND AcyclicPDECDualCapLocalizationAndNoFourthExit AND AcyclicFiniteArcCapMassBoundsOrNamedReturn",
+  "terminal_gap_after_router": "(AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR (AcyclicSameSetPDECInputMaterializationAndMassLedger AND AcyclicPDECDualCapLocalizationAndNoFourthExit AND AcyclicFiniteArcCapMassBoundsOrNamedReturn) OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ((AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection) OR (AcyclicSameSetPDECInputMaterializationAndMassLedger AND AcyclicPDECDualCapLocalizationAndNoFourthExit AND AcyclicFiniteArcCapMassBoundsOrNamedReturn) OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "AcyclicSameSetPDECInputMaterializationAndMassLedger",
+    "must_prove": [
+      "从假设早期零行反例链的 acyclic terminal certificate 中定义唯一坏窗集合 B 和有限 formal unit G",
+      "构造同一 count vector g_B(t)，使 U_CRT、L_PDEC、M、capacity multiplier 全部作用在同一个 g_B 上",
+      "证明删除、投影、回流、quotient 不改变坏窗集合口径；改变则必须命名为 PDEC/SAE/ColumnCRT/CleanKLS return",
+      "若 U_CRT >= L_PDEC，则输出有限方向帽 dual cap，并进入 finite-arc cap mass bounds 或命名回流"
+    ],
+    "cannot_use_as_proof": [
+      "把 canonical-source PDEC-CAP 闭合直接用于 acyclic/noncanonical 分支",
+      "把 source 哈希稳定当成同集 count vector 物化",
+      "在 U_CRT 与 L_PDEC 中使用不同坏窗集合或不同推前质量",
+      "把 dual cap 的存在当成矛盾；必须继续证明 cap 上界或命名回流"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "TwoLaneGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层留下二选一：证明 canonical-lock 的 seed 准入包，或转 direct acyclic same-set PDEC。",
+      "remaining": "canonical package OR DirectAcyclicSameSetPDECCapDualCertificate。"
+    },
+    {
+      "gate": "CanonicalBranchConditionalImplicationPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 seed 因子图、同集推前和无 payload 残留全部成立，则可条件导入 canonical-source 终端闭合。",
+      "remaining": "该项只是条件蕴含，不证明前提。"
+    },
+    {
+      "gate": "CanonicalAdmissionCurrentCorpusStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料未证明 acyclic seed 在 pre-Cauchy 层就是 canonical RIW/Buchstab source branch。",
+      "remaining": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy。"
+    },
+    {
+      "gate": "CanonicalFactorMapCurrentCorpusStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料未提交 pi_* mu_c = mu_a 的同测度有限因子图。",
+      "remaining": "AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity。"
+    },
+    {
+      "gate": "NoPayloadProjectionCurrentCorpusStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料未证明 noncanonical payload 在 canonical 投影后无残留。",
+      "remaining": "AcyclicSeedNoSourceReplacementOrPayloadCreation AND NoNoncanonicalPayloadSurvivesCanonicalProjection。"
+    },
+    {
+      "gate": "DirectPDECSelectedAsLiveStrictBranch",
+      "closed": true,
+      "proved": true,
+      "meaning": "在不偷渡 canonical 前提的 strict acyclic/noncanonical 分支中，下一主攻口必须是 direct same-set PDEC 或 direct CleanKLS；优先攻 PDEC。",
+      "remaining": "DirectAcyclicSameSetPDECCapDualCertificate"
+    },
+    {
+      "gate": "RegisteredCapacityMultiplierImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "容量乘子纪律已在严格二线终局过滤中登记，direct PDEC 必须使用同一阈值和同一坏窗口径。",
+      "remaining": "仍需物化 acyclic PDEC 输入。"
+    },
+    {
+      "gate": "SameSetPDECProtocolImportedWithScope",
+      "closed": true,
+      "proved": true,
+      "meaning": "PDEC 比较的形式协议是同一坏窗计数向量上计算 U_CRT 与 L_PDEC；若失败必须输出 dual cap。",
+      "remaining": "该协议不自动证明 acyclic 终端家族满足输入物化和 cap 上界。"
+    },
+    {
+      "gate": "AcyclicPDECInputMaterializationPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "必须从 acyclic terminal certificate 生成同一 formal unit、同一坏窗集合、同一质量 M 的 PDEC count vector。",
+      "remaining": "AcyclicSameSetPDECInputMaterializationAndMassLedger。"
+    },
+    {
+      "gate": "DualCapLocalizationPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "若 acyclic PDEC 不等式失败，必须定位到有限方向帽 dual cap，并证明它只能命名回流而不能作为第四出口。",
+      "remaining": "AcyclicPDECDualCapLocalizationAndNoFourthExit。"
+    },
+    {
+      "gate": "FiniteArcMassBoundsPinned",
+      "closed": true,
+      "proved": false,
+      "meaning": "direct acyclic PDEC 的真正估计硬点是所有有限循环弧 cap 质量上界，或输出 PDEC/SAE/ColumnCRT/CleanKLS 命名回流。",
+      "remaining": "AcyclicFiniteArcCapMassBoundsOrNamedReturn。"
+    },
+    {
+      "gate": "DirectAcyclicPDECCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料闭合了 canonical-source PDEC 边界，但没有闭合 acyclic/noncanonical 同集 PDEC 证书。",
+      "remaining": "AcyclicSameSetPDECInputMaterializationAndMassLedger AND AcyclicPDECDualCapLocalizationAndNoFourthExit AND AcyclicFiniteArcCapMassBoundsOrNamedReturn"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-seed-canonical-embedding-router.md": "3c1d1ddc643f21d675d36ed2fc48f8f110de779fd9c061b71884919c5be3df82",
+    "docs/monograph/prime-matrix-strict-acyclic-canonical-lock-router.md": "ef7b91f20887c88f7bd87265a5d9bea47d92e062889c49a7ed94c2df41871b60",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-attack-router.md": "7e615b4a1d6c31dfe4fb4c5057d3ab1927e3defcc8ae825f156319506cf00329",
+    "docs/monograph/prime-matrix-strict-self-contained-dual-lane-final-router.md": "7248bf08f19eda5d6e17ff055a6c27ceb2ff8ae3dd432c983d773f959e0372c9",
+    "docs/monograph/prime-matrix-pdec-cap-same-set-global-dual-router.md": "77f172170e5621eb8e70a8104f954cc69204c63febb842cd4ccaa74e55fe55ea",
+    "docs/monograph/prime-matrix-self-contained-pdec-cap-boundary-lift-router.md": "a118c700d564665db4573211d19a420d26588956cf0d6ebebb5b6a1b8f8b1da0",
+    "docs/monograph/prime-matrix-pdec-cap-ranktwo-capstable-kernel-router.md": "448b66c41b3dbda24bda8f810bffa1b4fb74131f6ddfb8b8c830c4f5082b38c2",
+    "docs/monograph/prime-matrix-pdec-cap-uniform-cap-finite-basis-router.md": "9902f9c083fc7f4675f2b7d7fa1554c5a202d5e4ac6f1908dfba15e67aa63445"
+  },
+  "plain_conclusion": "本步把二选一硬点做成严格分叉：canonical 路线只有在 seed 因子图、同集推前、无 payload 残留全部证明后才可导入；当前语料没有证明这些前提。因此 strict acyclic/noncanonical 活动分支优先转入 DirectAcyclicSameSetPDECCapDualCertificate。该证书又被压成三项：先物化同一坏窗集合上的 PDEC 输入和质量账本；再证明 dual-cap 定位无第四出口；最后证明有限循环弧 cap 质量上界或命名回流。命题仍未无条件闭合。"
+}
