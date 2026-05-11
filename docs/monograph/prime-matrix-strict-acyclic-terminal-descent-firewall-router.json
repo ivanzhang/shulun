@@ -1,0 +1,149 @@
+{
+  "certificate_type": "prime_matrix_strict_acyclic_terminal_descent_firewall_router",
+  "status": "strict_acyclic_terminal_descent_schema_closed_leaf_firewall_inputs_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "terminal_return_well_founded_descent_schema_closed": true,
+  "hidden_terminal_cycle_removed": true,
+  "current_materialized_pdec_frontier_closed": true,
+  "current_materialized_sparse_frontier_closed": true,
+  "acyclic_terminal_return_well_founded_descent_proved": false,
+  "terminal_leaf_firewall_inputs_proved_or_accepted": false,
+  "noncanonical_legal_closure_mode_proved": false,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "strict_acyclic_terminal_family_proved": false,
+  "self_contained_mertens_tail_proved": false,
+  "self_contained_dstructure_rankin_replacement_proved": false,
+  "strict_terminal_family_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+  "terminal_gap_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]",
+  "strict_self_contained_math_basis_after_router": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "with_external_mertens_high_tail_removed_basis": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "TerminalLeafFirewallInputs_OR_CanonicalLock",
+    "must_prove": [
+      "若坚持 canonical-lock，证明同集推前、有限因子图和无 noncanonical payload 残留",
+      "若出现未来 PDEC 叶子，提交并排斥 FutureExplicitPrimitivePDECSchema",
+      "若出现未来 sparse 叶子，提交并排斥 FutureExplicitSparsePacketExtractorSchema",
+      "关闭 noncanonical full-S 合法模式：实际源恒等、强化实际源反原子，或明确接受外部 FullS-KLS/DI-BFI",
+      "继续独立处理高段 Mertens/PNT 自足尾项与 DStructure/Rankin 替代包"
+    ],
+    "cannot_use_as_proof": [
+      "把无隐藏循环当作叶子终端已经排斥",
+      "把当前物化前沿为零当作未来全局 family 不存在",
+      "把 future schema firewall 当作 schema 内容本身",
+      "把 noncanonical 外部合同写成 strict 自足证明",
+      "把 DStructure/Rankin 晋级门混入终端叶子排斥"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "WellFoundedDescentInputActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 direct 终端自回流压成 canonical-lock 或 well-founded descent 证书。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "gate": "FixedPDECRefinementNoCycleClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "固定有限签名群内 cap 细化由 Boolean algebra 秩严格上升控制，不能无限循环。",
+      "remaining": "升层或叶子终端仍需处理。"
+    },
+    {
+      "gate": "NewLayerTowerNoUnnamedEscapeClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "无限升层有熵发散 PDEC、有限截断 ColumnCRT/PDEC、熵可和 CleanKLS 或 Multiplicity/Stitching 四归宿。",
+      "remaining": "这些归宿是命名叶子，不是终端排斥证明。"
+    },
+    {
+      "gate": "CompositeCofactorDescentClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "复合 cofactor 递归以 m<P 或粗因子深度下降，不能形成无穷无名链。",
+      "remaining": "持久进 PDEC，孤立进 sparse/SAE。"
+    },
+    {
+      "gate": "LocalSurvivorAndSAESchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "early-band、short-window、point-load 与 fixed-wheel 专属出口均已命名为 finite packet、PDEC/ColumnCRT 或 CleanKLS 回流。",
+      "remaining": "全局 PDEC/sparse 叶子排斥未完成。"
+    },
+    {
+      "gate": "SourceLoopReimportBlocked",
+      "closed": true,
+      "proved": true,
+      "meaning": "若终端包经 signed/source 路线回到 clean-core 来源，会落入已切断来源环并回到 moving-block/终端包。",
+      "remaining": "不能把该环当证明；必须落到终端防火墙输入。"
+    },
+    {
+      "gate": "CurrentMaterializedPDECFrontierZero",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前已物化合法非二点 primitive PDEC 候选为零；未来 PDEC 必须提交显式 primitive schema。",
+      "remaining": "FutureExplicitPrimitivePDECSchema_if_new。"
+    },
+    {
+      "gate": "CurrentMaterializedSparseFrontierZero",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前 sparse/LocalSurvivor 前沿没有开放物化义务；未来 sparse 必须提交有限 packet extractor schema。",
+      "remaining": "FutureExplicitSparsePacketExtractorSchema_if_new。"
+    },
+    {
+      "gate": "TerminalDescentSchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "跨 PDEC/SAE/ColumnCRT/CleanKLS 的无名自回流已被下降 schema 与防火墙边界删除。",
+      "remaining": "AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]"
+    },
+    {
+      "gate": "TerminalLeafExclusionCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "叶子终端仍未全部排斥；当前结论只是要求它们以显式 schema 或 noncanonical 合法模式进入。",
+      "remaining": "AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]"
+    },
+    {
+      "gate": "NoncanonicalLegalClosureModeCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "noncanonical full-S 补集仍需实际源恒等、强化实际源反原子或外部 FullS-KLS/DI-BFI 合同之一。",
+      "remaining": "NoncanonicalFullSComplementLegalClosureMode。"
+    },
+    {
+      "gate": "StrictAcyclicTerminalFamilyCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "终端家族不再有隐藏循环，但叶子防火墙输入尚未全部证明或接受。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "下降防火墙后仍缺终端叶子输入、高段自足尾项或外部接受、DStructure/Rankin 替代包。",
+      "remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicTerminalLeafFirewallInputs[FutureExplicitPrimitivePDECSchema_if_new OR FutureExplicitSparsePacketExtractorSchema_if_new OR NoncanonicalFullSComplementLegalClosureMode]) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-cycle-guard-router.md": "9910292fcdf59a8424e578992877f1ade3d5b3196c2a9430fbc7e3c7fd5280ed",
+    "docs/monograph/prime-matrix-pdec-cap-refinement-no-cycle.md": "cf76301db5f149ad47c2b9dfe590cb864d998e6dd12c2637ddb1e8ed2279f00c",
+    "docs/monograph/prime-matrix-newlayer-pdec-tower-entropy-contract.md": "4b7a182dfd863d72d76011fb55e8acf306f9e8d0726148465e0a6109c7692f5e",
+    "docs/monograph/prime-matrix-composite-cofactor-descent-schema-router.md": "f108535eebccd4fcb2f3d570a883cba5e318b3ed62026c5a99a3d50f09a83dca",
+    "docs/monograph/prime-matrix-early-band-local-survivor-return-schema-router.md": "3c6bb92d3e905c2e0271fd333ec44d0e2ddeb665132a39615b10683d993edb99",
+    "docs/monograph/prime-matrix-dls-shortwindow-sae-return-schema-router.md": "d6cc59fe5e8e27ea9101a7d521738f9f4b8c31cfcfc9c069918c5d4a26e63cb9",
+    "docs/monograph/prime-matrix-dls-pointload-columncrt-return-schema-router.md": "1ace35bccb9c7b92f612c3736f8bcee248ad358856dd984157bd524c1e5ae678",
+    "docs/monograph/prime-matrix-dls-fixedwheel-pdec-return-schema-router.md": "62f0b3678382a8d811f9fac74cf4dbd71cf93e3a1b6c7288413cb814f6c943a0",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.md": "addfcc1d27403f96c070d1fdc67aaeb9f43d86117e435ac7386594d88c7ba869",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.md": "dbe6496a1483d4b5aaeb2ed124929e6136f88b2dbd45829391c06b460b748bfa",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.md": "9e7718a47c3527572bbc41c31c9a2d08a79989ab200041bde1c74bb55ec5292a",
+    "docs/monograph/prime-matrix-final-input-firewall-boundary-router.md": "f37071bfce4543b5fe90189c93f0a9c2f7b04db642b110e0d9ea7a834fc944ba"
+  },
+  "plain_conclusion": "本步把 `AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate` 的无隐藏循环部分关闭为 schema：固定 PDEC 细化、new-layer 塔、复合 cofactor、LocalSurvivor/SAE、short-window、point-load 和 fixed-wheel 都不能形成无名自回流；它们要么下降，要么进入显式 PDEC/sparse 叶子，要么回到 noncanonical 合法闭合模式。但这不是终端叶子排斥证明。当前最窄剩余从“循环”压成 `TerminalLeafFirewallInputs` 或 canonical-lock：未来 PDEC/sparse 必须提交显式 schema，noncanonical 分支必须证明实际源恒等/强化反原子或接受外部合同。行/列命题仍未无条件闭合。"
+}
