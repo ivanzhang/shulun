@@ -1,0 +1,134 @@
+{
+  "actual_signed_alpha_source_measure_proved": false,
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "alpha_rows_phi_pushforward_compatibility_proved": false,
+  "alpha_signed_lift_variation_branch_budget_proved": false,
+  "certificate_type": "prime_matrix_strict_pointwise_signed_alpha_value_table_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "exact_alpha_signed_weight_formula_proved": false,
+  "failure_ledger_names_missing_values": true,
+  "formula_fields": [
+    {
+      "field": "row_domain",
+      "meaning": "输入为已闭合 unsigned carry-shell skeleton row，而不是 payment-side atom。"
+    },
+    {
+      "field": "closed_weight_expression",
+      "meaning": "给出 signed_alpha_weight 的显式表达式或有限递推公式。"
+    },
+    {
+      "field": "identity_proof",
+      "meaning": "证明表达式来自 pre-Cauchy 算术恒等式，早于 Cauchy/dispersion/Phi 推前。"
+    },
+    {
+      "field": "nonzero_sign_local_factor",
+      "meaning": "证明非零、符号和 local factor 与 row 同步；失败时命名回流。"
+    },
+    {
+      "field": "no_reverse_recovery",
+      "meaning": "证明没有使用零行覆盖、payment skeleton、terminal certificate 后验恢复权重。"
+    },
+    {
+      "field": "same_unit_compatibility",
+      "meaning": "权重公式与 source_tuple_hash、Phi atom、variation charge 使用同一 formal unit。"
+    }
+  ],
+  "frontier_reduction": "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton 的真正首字段是 signed_alpha_weight。当前最精确单点为 `PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow`：对每条 unsigned carry-shell skeleton row，给出非递归 signed 权重公式、pre-Cauchy 恒等式证明、非零符号局部因子和同 formal-unit 兼容。",
+  "independent_identity_route_is_fixed_point": true,
+  "next_direct_attack_target": "PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步继续硬攻逐点 signed value table。结论是：表的 Phi atom、变差收费和解积分都只能在 signed weight 已给出后验证；失败命名纪律也已闭合。真正首要缺口是每条 skeleton row 的 signed_alpha_weight 值。现有独立恒等式路线会经 moving-block/NCBLK 回到 PDEC/CleanKLS 固定点，不能作为非递归证明。因此最新最精确单点是逐行非递归 signed alpha 权重公式。",
+  "pointwise_nonrecursive_signed_alpha_weight_formula_proved": false,
+  "pointwise_signed_alpha_coefficient_value_table_proved": false,
+  "pointwise_signed_alpha_value_table_router_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PointwiseValueTableTargetActive",
+      "meaning": "上一层把 signed coefficient lift 压成逐 skeleton row 的 signed alpha value table。",
+      "proved": false,
+      "remaining": "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+    },
+    {
+      "closed": true,
+      "gate": "ValueTableWouldCloseFourLegs",
+      "meaning": "若逐行权重值表存在，则 signed source、权重律、Phi 推前和变差收费可以在同表上合取。",
+      "proved": true,
+      "remaining": "需要先给 signed_alpha_weight 值。"
+    },
+    {
+      "closed": true,
+      "gate": "FailureLedgerAlreadyNamesMissingValues",
+      "meaning": "缺少 signed value、Phi 不兼容、变差超预算已有命名出口。",
+      "proved": true,
+      "remaining": "命名出口尚未被排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "WeightLawDecompositionImported",
+      "meaning": "权重律已经拆成独立恒等式、精确公式、非零符号局部因子、反推禁用和失败回流。",
+      "proved": false,
+      "remaining": "ExactAlphaSignedWeightFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentIdentityRouteIsFixedPoint",
+      "meaning": "现有独立恒等式路线经 actual moving-block/NCBLK 回到 PDEC/CleanKLS 终端门。",
+      "proved": false,
+      "remaining": "不能用该循环证明逐行权重值。"
+    },
+    {
+      "closed": true,
+      "gate": "PhiAndDisintegrationWaitForValues",
+      "meaning": "Phi 基底和解积分形式只有在 signed value 已给出后才能求和验证。",
+      "proved": false,
+      "remaining": "不能反向生成 signed_alpha_weight。"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseRecoveryBlocked",
+      "meaning": "payment skeleton 和早期零行 unsigned cover 都不能作为权重来源。",
+      "proved": true,
+      "remaining": "必须正向给出逐行非递归公式。"
+    },
+    {
+      "closed": false,
+      "gate": "ExactWeightFormulaCurrentCorpusProved",
+      "meaning": "当前材料尚未给出每条 skeleton row 的 exact signed weight 公式。",
+      "proved": false,
+      "remaining": "ExactAlphaSignedWeightFormulaLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "PointwiseNonrecursiveFormulaCurrentCorpusProved",
+      "meaning": "当前材料没有逐 skeleton row 的非递归 signed 权重公式及其恒等式证明。",
+      "proved": false,
+      "remaining": "PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow"
+    },
+    {
+      "closed": false,
+      "gate": "PointwiseSignedValueTableCurrentCorpusProved",
+      "meaning": "没有逐行 signed 权重公式，整张 signed value table 不能成立。",
+      "proved": false,
+      "remaining": "PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-geometric-phi-budget-bridge-router.json": "22a096c2970a64f75006668179204f9ee7b49e802350b318255c1f543a790df0",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-actual-moving-block-spread-ncb-lk-router.json": "d042d5ccfeec63bcfba1c16571e404052d7a66cefce94527ce843051b64a2f6e",
+    "docs/monograph/prime-matrix-strict-alpha-formula-signed-lift-router.json": "bdcb088da6896a5b4ff6653ce0ffecc5c66310e355eece985ac8f635ad48ed7a",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-alpha-signed-lift-failure-return-router.json": "bade91ebe62ab881cacbe69f0dd6b75ea33f6a5b69c3b586301e8c86a7a5a66a",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-downstream-sync-router.json": "25a526808da942ef0d50d5725ae59e945b6152b345a31cd8e92c16130ee9c362",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-independent-identity-statement-taxonomy-router.json": "9f0797afd65cd82b9fb0eff7d4492da3ee0b88822fdf18beee8c8a6c5a361c42"
+  },
+  "status": "pointwise_signed_alpha_value_table_reduced_to_nonrecursive_row_weight_formula_open",
+  "target_input_before_router": "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+}
