@@ -1,0 +1,122 @@
+{
+  "acyclic_seed_coefficient_assignment_on_basis_alphabet_proved": false,
+  "basis_word_signed_coefficient_origin_identity_proved": false,
+  "basis_word_to_signed_coefficient_value_map_formula_proved": false,
+  "certificate_type": "prime_matrix_strict_acyclic_seed_coefficient_value_map_router",
+  "coefficient_value_map_router_closed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "`AcyclicSeedBasisWordToSignedCoefficientValueMapFormula` 继续压到 `AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward`：signed coefficient 的 value map 必须是 pre-Cauchy 来源恒等式，而不是后验赋值表。",
+  "next_direct_attack_target": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+  "no_theorem_switch": true,
+  "origin_identity_fields": [
+    {
+      "field": "origin_source_tuple",
+      "meaning": "产生该 basis word/signed coefficient 的同 formal-unit pre-Cauchy source tuple。"
+    },
+    {
+      "field": "signed_coefficient_expression",
+      "meaning": "signed coefficient 的正向表达式，含筛权、符号、branch/local factor。"
+    },
+    {
+      "field": "origin_to_basis_word_identity",
+      "meaning": "证明来源表达式生成的对象正是该 primitive basis word。"
+    },
+    {
+      "field": "prepushforward_equality",
+      "meaning": "证明在 Phi/payment/Cauchy 推前之前已等于目标 alpha/delta 贡献。"
+    },
+    {
+      "field": "return_tag",
+      "meaning": "来源缺失、零因子、符号冲突或后验依赖时的命名回流。"
+    }
+  ],
+  "parallel_attack_targets": [
+    "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+    "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+    "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+  ],
+  "plain_conclusion": "本步把 basis word -> signed coefficient value map 压到来源恒等式。换言之，必须正向说明每个 basis word 的 signed coefficient 从哪个同 formal-unit pre-Cauchy source tuple 生成，并在推前之前等于 alpha/delta 贡献；当前材料没有这条恒等式。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CoefficientValueMapTargetActive",
+      "meaning": "上一层已把 coefficient assignment 压到 basis word -> signed coefficient value map formula。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": true,
+      "gate": "ValueMapMustBeOriginIdentity",
+      "meaning": "value map 不能只是赋值符号；必须说明 signed coefficient 从哪个 pre-Cauchy 来源恒等式生成。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveSummandOriginRouteStillOpen",
+      "meaning": "primitive summand signed expression 已被压到来源恒等式，但来源恒等式仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "RowLevelOriginGenerationTableStillOpen",
+      "meaning": "逐行原始生成表仍未证明，不能给出 value map 的来源行。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseSignedWeightRoutesStillOpen",
+      "meaning": "逐点 signed value table 和 signed weight expression 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "BasisSourceStillOpen",
+      "meaning": "basis weight source formula 仍未证明；value map 缺其算术来源。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseOriginRecoveryBlocked",
+      "meaning": "不能从 payment、推前后投影或早期零行覆盖反推 signed coefficient 来源。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "BasisWordSignedCoefficientOriginIdentityCurrentCorpusProved",
+      "meaning": "当前材料没有给出每个 basis word 的 signed coefficient pre-Cauchy 来源恒等式。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "BasisWordToSignedCoefficientValueMapFormulaCurrentCorpusProved",
+      "meaning": "没有来源恒等式，value map formula 仍未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-assignment-router.json": "30d00d415a6bcd62f3f75fc92a7fed670dd493936a39fbd86980ad7a0bcda0bc",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "coefficient_value_map_reduced_to_basis_word_origin_identity_open",
+  "target_input_before_router": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula",
+  "terminal_return_if_no_origin_identity": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+  "value_map_must_be_origin_identity": true
+}
