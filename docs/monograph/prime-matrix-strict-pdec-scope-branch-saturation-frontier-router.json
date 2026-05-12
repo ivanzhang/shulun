@@ -1,0 +1,89 @@
+{
+  "canonical_lock_proved": false,
+  "certificate_type": "prime_matrix_strict_pdec_scope_branch_saturation_frontier_router",
+  "conditional_pdec_or_external_basis_retained": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY) AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "missing_sources": [],
+  "new_explicit_joint_constructor_formula_artifact_present": false,
+  "next_direct_attack_target": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact",
+  "no_theorem_switch": true,
+  "pdec_scope_branch_attacked": true,
+  "pdec_scope_branch_saturated_in_current_internal_corpus": true,
+  "pdec_scope_proved": false,
+  "plain_conclusion": "`AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate` 已按当前内部材料攻到边界：direct PDEC 需要 canonical-lock 同口径，canonical-lock 只 scoped，CleanKLS/DLS 又回到终端家族，终端家族三手臂已饱和。因此 PDEC 手臂仍是可接受的新 scope 证书或外部 DIBFI 输入，但在当前 strict 自足内部语料中不再提供独立非循环出口。剩余真正内部破环点压成`NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`，并继续保留模型余量、RatePreservation、DStructure/Rankin 独立验收门。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LatestFrontierContainsPDECScope",
+      "meaning": "seed-cycle-cut 饱和后，strict 自足线只剩 PDEC same-set 作用域匹配或新 joint 公式。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "DirectPDECScopeAuditClosed",
+      "meaning": "direct PDEC 已完成同集协议审计，但 canonical-source 同集结果只能 scoped 使用。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "closed": true,
+      "gate": "PDECRequiresCanonicalLockOrExternalDIBFI",
+      "meaning": "PDEC 作用域匹配不能无条件导入；内部需 canonical lock，外部需 DIBFI，fallback 是 windowed DLS。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLockAttackedButScoped",
+      "meaning": "canonical equality case 只给 scoped canonical promotion，不给 acyclic noncanonical 全局矛盾。",
+      "proved": false,
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": true,
+      "gate": "CleanKLSDLSTerminalReturn",
+      "meaning": "CleanKLS/DLS 形式层已攻到底，但 KZ-E/NC-BLK 回到 acyclic 终端家族而非终端矛盾。",
+      "proved": false,
+      "remaining": "AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalFamilyAlreadySaturated",
+      "meaning": "终端家族三手臂已同步：canonical scoped，direct PDEC open，CleanKLS returns terminal。",
+      "proved": false,
+      "remaining": "Nonrecursive/PDEC/NewJoint fixed frontier."
+    },
+    {
+      "closed": true,
+      "gate": "PDECScopeNotIndependentNonrecursiveExit",
+      "meaning": "PDEC 手臂仍可作为外部或新 scope 证书输入，但在当前内部语料中不是已证非循环出口。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "NewExplicitJointFormulaStillAbsent",
+      "meaning": "剩余内部破环只能提交新的显式 joint alpha/delta 构造公式，否则仍回到 signed-source 固定点。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_kuznetsov_dls_large_sieve_inequality_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-latest-saturation-router.json": "ee2c23863dfa524a59dfb34333d45cef28f4e606a258cd4d7a02f2904455277c",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993",
+    "docs/monograph/prime-matrix-strict-explicit-joint-constructor-direct-attack-router.json": "7124b422ea771e65f65319b24363e617b947c3a3b3e041af5e3cb168b192ff8b",
+    "docs/monograph/prime-matrix-strict-kuznetsov-dls-terminal-sync-router.json": "ac1c3264c5130a87e0f43e77ad6f7c201a4a7efd7942f686e317161c2cddbfa2",
+    "docs/monograph/prime-matrix-strict-nonrecursive-breaker-latest-cycle-sync-router.json": "efaf74faa45fbd33a6a02f482fc1921c6bd2d4c0af2f998dc4e7507c1f221d89",
+    "docs/monograph/prime-matrix-strict-seed-cycle-cut-saturation-frontier-router.json": "d374690b63ed1b8b60b5261607a84a9c83d7dfa19fb0d3803904f5f011d80c56",
+    "docs/monograph/prime-matrix-strict-terminal-canonical-lock-direct-attack-sync-router.json": "26d27f94385e01fda33bd58c3bc487b6fd5870ce4e5a796e7e6f8b257a44e907"
+  },
+  "status": "pdec_scope_branch_saturated_internal_noncycle_exit_reduced_to_new_joint_formula_open",
+  "strict_acyclic_terminal_family_proved": false,
+  "strict_internal_noncycle_basis_after_router": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}

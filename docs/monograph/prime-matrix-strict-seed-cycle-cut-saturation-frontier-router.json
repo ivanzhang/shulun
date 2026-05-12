@@ -1,0 +1,89 @@
+{
+  "acyclic_same_set_scope_match_proved": false,
+  "acyclic_terminal_return_well_founded_descent_proved": false,
+  "certificate_type": "prime_matrix_strict_seed_cycle_cut_saturation_frontier_router",
+  "counterexample_assumption_only": true,
+  "cycle_cut_joint_route_returns_to_row_level_fixed_point": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "joint_basis_word_coefficient_emitter_proved": false,
+  "missing_sources": [],
+  "new_explicit_joint_constructor_formula_artifact_present": false,
+  "next_direct_attack_target": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput` 已按现有材料直接攻完：顺序拆分被排除，联合 basis/coefficient 发射器未证，继续展开回到 row-level/signed-source 固定点；无联合发射器时的 terminal descent 回流也已登记为宏循环。因此 seed-cycle-cut 分支不能作为独立闭合出口。最新 strict 自足前沿压到 PDEC same-set 作用域匹配或新的显式 joint alpha/delta 构造公式，两者之外仍保留模型余量、RatePreservation 与 DStructure/Rankin 守门项。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LatestFrontierContainsSeedCycleCut",
+      "meaning": "上一证书把 strict 自足线压成 seed-cycle-cut、PDEC 作用域匹配、新 joint 公式三选一。",
+      "proved": false,
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "closed": true,
+      "gate": "CoordinateSourceCycleAlreadyGuarded",
+      "meaning": "signed 坐标、basis word、coefficient assignment、origin identity 与 row emitter 已被识别为闭合依赖环。",
+      "proved": true,
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "closed": true,
+      "gate": "SequentialSplitRejected",
+      "meaning": "不能先生成 primitive basis word 再赋 signed coefficient；word-first 与 coefficient-first 都回指来源表。",
+      "proved": true,
+      "remaining": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "JointEmitterNotProved",
+      "meaning": "cycle-cut 输入已压成 Cauchy/payment 前联合 basis/coefficient 发射公式，但该公式未证明。",
+      "proved": false,
+      "remaining": "AcyclicSeedJointPrimitiveBasisWordCoefficientEmitterFormulaBeforeCauchy"
+    },
+    {
+      "closed": true,
+      "gate": "JointEmitterRouteReturnsToRowLevelFixedPoint",
+      "meaning": "继续展开 joint emitter 会经 joint alpha-side 和 same-row origin 回到 row-level 原始生成表固定点。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalReturnIsMacrocycle",
+      "meaning": "若无 joint emitter，回流 terminal descent；但现有 terminal descent 直攻脊柱已登记为宏循环。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "NewExplicitJointFormulaStillAbsent",
+      "meaning": "显式 joint constructor 继续展开仍回到 signed-source 固定点，除非提交新的公式工件。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "DirectPDECScopeStillIndependentOpen",
+      "meaning": "PDEC 手臂不是 seed-cycle-cut 的重复出口；它仍独立卡在 same-set 作用域匹配。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "seed_cycle_cut_branch_attacked": true,
+  "seed_cycle_cut_branch_saturated": true,
+  "seed_cycle_cut_source_input_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coordinate-source-cycle-guard-router.json": "aef259753937f9d64167d4c7478a6ab2c410d2f1f9d9474fb0e876619b517a29",
+    "docs/monograph/prime-matrix-strict-cycle-cut-joint-basis-coefficient-emitter-router.json": "d422efc8aa59f16b9275498f5d091916fa3fdbd310bbc7463d9f42bc3e88c333",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993",
+    "docs/monograph/prime-matrix-strict-explicit-joint-constructor-direct-attack-router.json": "7124b422ea771e65f65319b24363e617b947c3a3b3e041af5e3cb168b192ff8b",
+    "docs/monograph/prime-matrix-strict-joint-alpha-signed-source-fixed-point-sync-router.json": "4ddf2b8da70096cdc59370356e727e9f8881bee1c6a927aae3f1af9993b2274b",
+    "docs/monograph/prime-matrix-strict-nonrecursive-breaker-latest-cycle-sync-router.json": "efaf74faa45fbd33a6a02f482fc1921c6bd2d4c0af2f998dc4e7507c1f221d89",
+    "docs/monograph/prime-matrix-strict-terminal-descent-macrocycle-reconciliation-router.json": "23dfb706049a1477bf3532ad61c07b79cf4bba0bd68bd33da0ed6ae2621e0966"
+  },
+  "status": "seed_cycle_cut_branch_saturated_to_pdec_scope_or_new_joint_formula_open",
+  "strict_active_basis_after_router": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
