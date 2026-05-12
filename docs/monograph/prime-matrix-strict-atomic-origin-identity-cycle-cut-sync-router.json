@@ -1,0 +1,132 @@
+{
+  "atomic_origin_identity_current_corpus_proved": false,
+  "atomic_origin_identity_cycle_cut_sync_closed": true,
+  "certificate_type": "prime_matrix_strict_atomic_origin_identity_cycle_cut_sync_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_rankin_independent_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "empirical_absence_not_used": true,
+  "missing_sources": [],
+  "next_direct_attack_target": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步继续攻击 `NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward`。atomic 限制没有产生新的 signed coefficient 来源；它的内部展开回到 row-level origin ledger，row-level ledger 又要求 acyclic seed signed row emitter，而该 emitter 经 signed coefficient law、basis weight source、basis alphabet 与 word constructor 回到已登记的坐标-来源依赖环。seed-cycle-cut 分支和 seed 存在/不存在二分均已归入 acyclic terminal family；全局前沿也已删除 branch trace 自证与 signed-source 固定点。因此当前 strict 自足线没有新的未展开 signed-source 字段，真正剩余回到 terminal three atoms；其中最贴近反例链终端矛盾的下一主攻是 `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore`。行/列命题仍未无条件闭合。",
+  "recommended_next_attack_target": "ActualNoncanonicalCleanCoreMovingAtomExclusion",
+  "recommended_nonrecursive_form": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+  "row_column_unconditional_closed": false,
+  "row_level_route_returns_to_seed_emitter": true,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AtomicOriginIdentityTargetActive",
+      "meaning": "上一层已把 atomic signed payload 压成非循环 atomic basis word/signed coefficient 来源恒等式。",
+      "proved": false,
+      "remaining": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "AtomicOriginIdentityRequiresRowLevelLedger",
+      "meaning": "该来源恒等式的既有内部路线回到逐行 clean-core 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "RowLevelTableRequiresAcyclicSeedEmitter",
+      "meaning": "逐行表必须由无环 pre-Cauchy source seed 自带 signed row emitter 生成。",
+      "proved": true,
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopCutImported",
+      "meaning": "origin ledger -> constructor -> emitter -> origin ledger 的循环已被切断。",
+      "proved": true,
+      "remaining": "不能由 row-level/source-loop 自证。"
+    },
+    {
+      "closed": true,
+      "gate": "SeedEmitterReducesToSignedCoefficientLaw",
+      "meaning": "合法 seed 分支仍需要每条 primitive row 的 signed coefficient law。",
+      "proved": false,
+      "remaining": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SeedCoordinateSourceCycleDetected",
+      "meaning": "signed coordinate、assignment、origin identity、row emitter、basis alphabet 与 word constructor 构成闭合依赖环。",
+      "proved": true,
+      "remaining": "AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput"
+    },
+    {
+      "closed": true,
+      "gate": "SeedCycleCutBranchAlreadySaturated",
+      "meaning": "cycle-cut 分支已攻到边界：联合 basis/coefficient 发射器未证，继续展开回 row-level 固定点。",
+      "proved": false,
+      "remaining": "PDEC same-set scope or new joint formula。"
+    },
+    {
+      "closed": true,
+      "gate": "SeedIndependentInputRemovedByTerminalFusion",
+      "meaning": "seed 存在/不存在两支都已被送入同一 acyclic terminal family；seed 不再是独立闭合输入。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "closed": true,
+      "gate": "TraceAndSignedSourcePseudoExitsRemoved",
+      "meaning": "全局前沿已删除 branch trace 自证与 signed-source 固定点这两个伪出口。",
+      "proved": true,
+      "remaining": "terminal three atoms。"
+    },
+    {
+      "closed": true,
+      "gate": "GlobalTerminalThreeAtomsPinned",
+      "meaning": "删除当前循环路线后，strict 自足线剩 terminal three atoms。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "MovingAtomRecommendedNextAttack",
+      "meaning": "三原子中最贴近反例链终端矛盾的是 actual noncanonical clean-core moving atom 排斥。",
+      "proved": false,
+      "remaining": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore"
+    },
+    {
+      "closed": false,
+      "gate": "AtomicOriginIdentityCurrentCorpusProved",
+      "meaning": "当前材料没有给出新的非循环 atomic 来源恒等式；内部展开回到已识别循环。",
+      "proved": false,
+      "remaining": "terminal three atoms or new primitive origin input。"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "三原子与 DStructure/Rankin 独立验收仍未闭合。",
+      "proved": false,
+      "remaining": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore OR terminal three atoms; plus DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "seed_coordinate_source_cycle_detected": true,
+  "seed_independent_input_removed_by_terminal_fusion": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coordinate-source-cycle-guard-router.json": "aef259753937f9d64167d4c7478a6ab2c410d2f1f9d9474fb0e876619b517a29",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json": "11dc103e15a970f0c4e27a17ca32b757203b5e4fd443d6d40217854fdb5f0fe3",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-terminal-fusion-router.json": "cd82f3da195f2f7649c9c90b49e1322a969af7ed6179e9086b46034c9b31a3dc",
+    "docs/monograph/prime-matrix-strict-atomic-payload-origin-identity-router.json": "b5e6909a3aab66eef258b360a1dc599dc6bdd28cf415f6c21f630abe989ce65a",
+    "docs/monograph/prime-matrix-strict-current-global-frontier-after-trace-cycle-router.json": "094823b99842eeb4525d7ea868658fa39ba3d5ac0e7c0163499ab2b70b6f4b5b",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78",
+    "docs/monograph/prime-matrix-strict-seed-cycle-cut-saturation-frontier-router.json": "d374690b63ed1b8b60b5261607a84a9c83d7dfa19fb0d3803904f5f011d80c56"
+  },
+  "status": "atomic_origin_identity_synced_to_terminal_three_atoms_open",
+  "strict_author_side_remaining_basis": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR A1CleanBranchCanonicalSourceAdmission OR ActualNoncanonicalCleanCoreMovingAtomExclusion) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "target_input_before_router": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+  "terminal_three_atoms": [
+    "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+    "A1CleanBranchCanonicalSourceAdmission",
+    "ActualNoncanonicalCleanCoreMovingAtomExclusion"
+  ],
+  "terminal_three_atoms_pinned": true
+}
