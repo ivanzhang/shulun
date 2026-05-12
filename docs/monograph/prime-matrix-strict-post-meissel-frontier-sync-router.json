@@ -1,0 +1,104 @@
+{
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_post_meissel_frontier_sync_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_acceptance_present": false,
+  "empirical_absence_not_used": true,
+  "external_b3_chain_reaches_dstructure_gate": true,
+  "external_next_direct_attack_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "external_theta_low_height_bridge_lane_closed": true,
+  "frontier_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "所有输入仍处于早期零行反例假设链审查，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictSelfContainedAnalyticCoreClosed",
+      "meaning": "非平滑 Perron 常数、高高度零点和预算、平凡零点/素数幂尾项已在 strict 自足线上闭合。",
+      "proved": true,
+      "remaining": "不包含 theta@20000、低高度 Turing、有限桥和 B1 区间。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalThetaLowHeightBridgeLaneClosed",
+      "meaning": "theta@20000、低高度零点、theta contour 与有限桥已由外部 Dusart/低高度证书严格匹配。",
+      "proved": false,
+      "remaining": "对应自足证明仍开放。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictThetaLowHeightContourSelfContainedStillOpen",
+      "meaning": "内部 Dusart theta、低高度 Turing、内部 contour 和有限桥尚未自足闭合。",
+      "proved": false,
+      "remaining": "InternalDusartThetaEnvelopeProofLedger AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger AND InternalZeroFreeRegionToThetaContourEnvelopeLedger AND InternalFiniteThetaEnvelopeBridgeHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StrictMeisselMertensExternalMatched",
+      "meaning": "Meissel-Mertens B1 区间已严格对接旧 B3/Dusart 外部证书。",
+      "proved": false,
+      "remaining": "外部匹配不是自足 B1 证明。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictMeisselMertensSelfContainedStillOpen",
+      "meaning": "B1 区间算术和 reciprocal-prime Mertens 尾段仍未在文内自足证明。",
+      "proved": false,
+      "remaining": "SelfContainedMeisselMertensB1IntervalArithmeticLedger AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalB3MertensChainAtDStructureGate",
+      "meaning": "外部 B3/Mertens 解析链当前已经到达 DStructure/Rankin 独立验收门。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureIndependentAcceptanceAbsent",
+      "meaning": "独立验收事件缺席；作者侧外部匹配不能替代最终守门项。",
+      "proved": true,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "当前 post-Meissel 前沿仍不是行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "必须补自足输入或独立验收 DStructure/Rankin。"
+    }
+  ],
+  "meissel_mertens_strict_external_matched": true,
+  "no_theorem_switch": true,
+  "plain_conclusion": "post-Meissel 前沿已经分成两条清楚路线：外部路线中，theta/低高度/contour/有限桥/Meissel-Mertens 都已严格匹配，B3/Mertens 解析链到达 DStructure/Rankin 独立验收门；严格自足路线中，Perron 常数、零点和预算和平凡尾项已闭合，但内部 Dusart theta、低高度 Turing、内部 contour、有限桥、B1 区间与 reciprocal-prime Mertens 尾段仍开放。因此下一步不能宣称行列无条件闭合；最窄选择是外部验收 DStructure/Rankin，或自足线先攻 `InternalDusartThetaEnvelopeProofLedger`。",
+  "remaining_self_contained_inputs": [
+    "InternalDusartThetaEnvelopeProofLedger",
+    "CriticalLineNoZeroOn0To14FiniteLedger",
+    "CriticalStripNoOffLineZeroBelow14TuringLedger",
+    "InternalZeroFreeRegionToThetaContourEnvelopeLedger",
+    "InternalFiniteThetaEnvelopeBridgeHashLedger",
+    "SelfContainedMeisselMertensB1IntervalArithmeticLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "315578e3f8fac32c21d497b165167e724d983f10f14d81beef3d30aa021af977",
+    "docs/monograph/prime-matrix-strict-finite-low-height-external-match-router.json": "e489f5e3c11231acc5a832ae2fa3edb7eab33c28794b919d0652684731b8ec14",
+    "docs/monograph/prime-matrix-strict-global-theta-envelope-external-match-router.json": "d412cf7cfac516ce8ed6b73572b77295ae87783aa5cee7736258292ebdfd291e",
+    "docs/monograph/prime-matrix-strict-meissel-mertens-external-match-router.json": "a5e0a43b79ca84fba8029866861f93c2c844de96bc8e0e3c878458fa0f386c49",
+    "docs/monograph/prime-matrix-strict-theta-target-external-match-self-frontier-router.json": "d3717a7a2777af0b38f25372e2c9c9caf3a09ad124efd6ee88db13e4f03729d9",
+    "docs/monograph/prime-matrix-strict-trivial-tail-prime-power-self-contained-sync-router.json": "66fd7fe2769962317f8aae8c4106d87c60ab2a42cdf2519eab0e27e230267ca9",
+    "docs/monograph/prime-matrix-strict-unsmoothed-perron-final-sync-router.json": "eb09267cd0d957dce6acff54d3d0afb61421d8274dfe6d89506143abf0abb8a7",
+    "docs/monograph/prime-matrix-strict-zero-sum-contour-self-contained-sync-router.json": "4f11042be96ba548afb9fabfbea77592c4ad580508126210520d134b3f41c128"
+  },
+  "status": "post_meissel_frontier_synced_external_at_dstructure_self_contained_inputs_open",
+  "strict_self_contained_analytic_core_closed": true,
+  "strict_self_contained_next_direct_attack_target": "InternalDusartThetaEnvelopeProofLedger"
+}

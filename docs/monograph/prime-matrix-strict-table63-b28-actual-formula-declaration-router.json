@@ -1,0 +1,165 @@
+{
+  "artifact_requirements": [
+    {
+      "field": "formula_convention",
+      "needed": "Table63B28PsiVsPsi0EndpointConventionLedger AND Table63B28KernelTruncationAndSmoothingConventionLedger",
+      "why": "必须知道表值使用 psi 还是 psi_0，以及核、截断、平滑、端点规则。"
+    },
+    {
+      "field": "zero_inputs",
+      "needed": "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger",
+      "why": "必须知道有限零点块和零点自由尾项如何进入同一个公式。"
+    },
+    {
+      "field": "budget",
+      "needed": "Table63B28PsiEpsilonBudgetPartitionLedger",
+      "why": "必须证明所有误差项总和小于 b=28 的 2.224E-5 cap。"
+    },
+    {
+      "field": "output_discipline",
+      "needed": "Table63B28DirectedUpperRoundingAndIntervalPropagationLedger AND Table63B28ReproducibleComputationHashLedger",
+      "why": "必须给出外向舍入、区间传播和可复现输出。"
+    }
+  ],
+  "arxiv_source_boundary_checked": true,
+  "certificate_type": "prime_matrix_strict_table63_b28_actual_formula_declaration_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ActualFormulaDeclarationGateActive",
+    "Table63B28PublishedRowStatementLedger",
+    "Table63B28P51UseSiteLedger",
+    "Dusart10020442SourceBoundaryForTable63Ledger",
+    "Table63B28ExternalAlgorithmArtifactMissingLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "next_direct_attack_target": "IndependentTable63B28RegenerationFromExplicitFormulaLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "DusartEpsSubmittedTableAlgorithmArtifactLedger",
+    "Table63B28PsiVsPsi0EndpointConventionLedger",
+    "Table63B28KernelTruncationAndSmoothingConventionLedger",
+    "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger",
+    "Table63B28ZeroFreeTailConstantsAndStartHeightLedger",
+    "Table63B28PsiEpsilonBudgetPartitionLedger",
+    "Table63B28DirectedUpperRoundingAndIntervalPropagationLedger",
+    "Table63B28ReproducibleComputationHashLedger"
+  ],
+  "plain_conclusion": "arXiv 源文件足以确认 Table 6.3 的 b=28 表行和 Proposition 5.1 的使用点，因此外部表行路线可接受；但它没有给出作者侧可复现的表生成算法。实际闭合只剩二选一：取得 `dusart:eps`/等价外部算法工件，或独立重建 Table 6.3 b=28 的显式公式、零点输入、预算、外向舍入和 hash。下一最窄点为独立重建输入基。",
+  "replacement_self_contained": {
+    "IndependentTable63B28RegenerationFromExplicitFormulaLedger": "Table63B28PsiVsPsi0EndpointConventionLedger AND Table63B28KernelTruncationAndSmoothingConventionLedger AND Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger AND Table63B28PsiEpsilonBudgetPartitionLedger AND Table63B28DirectedUpperRoundingAndIntervalPropagationLedger AND Table63B28ReproducibleComputationHashLedger",
+    "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger": "DusartEpsSubmittedTableAlgorithmArtifactLedger OR IndependentTable63B28RegenerationFromExplicitFormulaLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只审计假设反例链可调用的 Table 6.3 表算法输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ActualFormulaDeclarationGateActive",
+      "meaning": "上一证书已证明零点输入绑定必须先取得 b=28 的实际表公式或外部算法工件。",
+      "proved": true,
+      "remaining": "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table63B28PublishedRowStatementLedger",
+      "meaning": "b=28 的公开表行陈述已经确认：epsilon_psi=2.224E-5。",
+      "proved": false,
+      "remaining": "statement only, not generator"
+    },
+    {
+      "closed": true,
+      "gate": "Table63B28P51UseSiteLedger",
+      "meaning": "该表行在 Proposition 5.1 高尾拼接中可用，外部路线可接受。",
+      "proved": false,
+      "remaining": "external Table 6.3 accepted"
+    },
+    {
+      "closed": true,
+      "gate": "Dusart10020442SourceBoundaryForTable63Ledger",
+      "meaning": "arXiv 源文件给出来源边界：有限 RH 验证、零点自由区、表行和 P5.1 使用点都能定位。",
+      "proved": true,
+      "remaining": "source boundary closed"
+    },
+    {
+      "closed": true,
+      "gate": "Table63B28ExternalAlgorithmArtifactMissingLedger",
+      "meaning": "当前 arXiv 源文件没有给出生成 Table 6.3 的完整显式公式算法、舍入日志或 hash。",
+      "proved": true,
+      "remaining": "DusartEpsSubmittedTableAlgorithmArtifactLedger OR IndependentTable63B28RegenerationFromExplicitFormulaLedger"
+    },
+    {
+      "closed": false,
+      "gate": "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger",
+      "meaning": "实际表公式/算法工件尚未闭合：已知的是表行和使用点，不是可复现生成机制。",
+      "proved": false,
+      "remaining": "DusartEpsSubmittedTableAlgorithmArtifactLedger OR IndependentTable63B28RegenerationFromExplicitFormulaLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "Table 6.3 实际表公式审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_facts": [
+    {
+      "fact": "intro_dependency",
+      "meaning": "文章说明 psi/theta 有效估计依赖有限 RH 验证与显式零点自由区。",
+      "source": "arXiv:1002.0442 source, introduction",
+      "status": "source boundary confirmed"
+    },
+    {
+      "fact": "gourdon_kadiri_boundary",
+      "meaning": "Gourdon 10^13 零点与 Kadiri 零点自由区是外部来源边界。",
+      "source": "arXiv:1002.0442 source, bibliography/introduction",
+      "status": "external inputs identified"
+    },
+    {
+      "fact": "table_eps_b28",
+      "meaning": "表行给出 b=28, epsilon_psi=2.224E-5, epsilon_theta=2.308E-5。",
+      "source": "arXiv:1002.0442 source, table labeled Values of epsilon(x) for psi and theta",
+      "status": "published row statement confirmed"
+    },
+    {
+      "fact": "prop_eta0_use",
+      "meaning": "证明使用中段 1.00002841 与 eps_28<=0.00002224 完成高尾拼接。",
+      "source": "arXiv:1002.0442 source, Proposition theta(x)-x < x/36260 proof",
+      "status": "use site confirmed"
+    },
+    {
+      "fact": "missing_generator",
+      "meaning": "更底层的 psi/theta 大值估计被指向一个 submitted 源，当前 arXiv 源未给出可复现表生成算法。",
+      "source": "arXiv:1002.0442 source, bibliography item dusart:eps",
+      "status": "algorithm artifact absent from this source"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "42d74a43ae7ff311530544f086d932aec3f6ce740be5ffbb10cebcefc0e62141",
+    "docs/monograph/prime-matrix-strict-epsilon-table-generator-audit-router.json": "f32861a5a5441fb737209fe30eda23ee0d4a2503f1d9c3cef4a2d183e15765fb",
+    "docs/monograph/prime-matrix-strict-machine-readable-dusart-table63-router.json": "fdcc2a0b93a1b671207a13b4f3276e6739e788ccceddd10b8fba49cc02f6422c",
+    "docs/monograph/prime-matrix-strict-psi-epsilon-table-algorithm-router.json": "ec4bf5ae2aee8b7f878df4c58bc69cb6f711ed2fa2c5bf7fcc3e463a4e735b5f",
+    "docs/monograph/prime-matrix-strict-table63-b28-zero-input-formula-binding-router.json": "2a2567bca13cc8688983f963b0311284620e30844bb359d5c2f7c5ded85389e0"
+  },
+  "status": "table63_b28_published_row_and_use_site_confirmed_algorithm_artifact_missing",
+  "table63_b28_actual_formula_declaration_closed": false,
+  "table63_b28_external_algorithm_artifact_present": false,
+  "table63_b28_external_row_accepted": true,
+  "table63_b28_independent_regeneration_closed": false,
+  "table63_b28_p51_use_site_closed": true,
+  "table63_b28_published_row_statement_closed": true,
+  "table63_b28_zero_input_binding_closed": false
+}

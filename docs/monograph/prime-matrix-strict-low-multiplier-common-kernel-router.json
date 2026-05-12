@@ -1,0 +1,123 @@
+{
+  "certificate_type": "prime_matrix_strict_low_multiplier_common_kernel_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的热除数窗口分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LowMultiplierKernelImported",
+      "meaning": "从 LCM 乘子纪律导入 K_t>Y/Lambda。",
+      "proved": true,
+      "remaining": "LowMultiplierCommonKernelColumnCRTOrPDECRoute"
+    },
+    {
+      "closed": true,
+      "gate": "KernelSubcoverClosed",
+      "meaning": "大共同核必须由成对 gcd 云覆盖。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "PairOrFanInDichotomyClosed",
+      "meaning": "共同核出口已拆成大成对差值锁与多源扇入两类。",
+      "proved": true,
+      "remaining": "LargePairKernelDifferenceColumnCRTExclusion OR MultiSourceKernelFanInSAEOrPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "LargePairDifferenceLockClosed",
+      "meaning": "大成对共同核强制差值为共同核的小商倍数。",
+      "proved": true,
+      "remaining": "LowQuotientColumnCRTOrPDECRoute"
+    },
+    {
+      "closed": false,
+      "gate": "LargePairColumnCRTExcluded",
+      "meaning": "尚未证明持久差值锁不可能，或其 PDEC/ColumnCRT 证书必被排斥。",
+      "proved": false,
+      "remaining": "LargePairKernelDifferenceColumnCRTExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "FanInSAEOrPDECExcluded",
+      "meaning": "尚未证明多源共同核扇入可全局求和吸收，或持久时被 PDEC 排斥。",
+      "proved": false,
+      "remaining": "MultiSourceKernelFanInSAEOrPDECExclusion"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "fanin_sae_or_pdec_excluded": false,
+  "fanin_sae_pdec_route_registered": true,
+  "kernel_subcover_closed": true,
+  "large_pair_columncrt_excluded": false,
+  "large_pair_columncrt_route_registered": true,
+  "large_pair_difference_lock_closed": true,
+  "lemmas": [
+    {
+      "formula": "mu_t<Lambda implies K_t=gcd(g_t,L_{t-1})>Y/Lambda.",
+      "meaning": "由 LCM 乘子纪律继承大共同核。",
+      "name": "low_multiplier_kernel_materialization",
+      "status": "imported_closed"
+    },
+    {
+      "formula": "K_t divides lcm_{i<t} gcd(g_t,g_i).",
+      "meaning": "新除数与旧 LCM 的共同核完全由它和旧除数的成对共同核覆盖。",
+      "name": "kernel_subcover",
+      "status": "closed"
+    },
+    {
+      "formula": "A large K_t gives either a large pair gcd or a multi-source kernel fan-in cover.",
+      "meaning": "低乘子复现被拆成单对大核与多源扇入两类，不再是无名异常。",
+      "name": "pair_or_fanin_dichotomy",
+      "status": "closed_dichotomy"
+    },
+    {
+      "formula": "If k|g_t and k|g_i with Y<g_i,g_t<=2Y, then k|(g_t-g_i) and 0<|g_t-g_i|<Y.",
+      "meaning": "单对大共同核会把短窗口差值锁到小商倍数。",
+      "name": "large_pair_difference_lock",
+      "status": "closed"
+    },
+    {
+      "formula": "A persistent large-pair kernel with |g_t-g_i|=k a and |a|<Y/k enters LowQuotient ColumnCRT/PDEC.",
+      "meaning": "若这种差值锁反复出现，它就是低商相位集中证书。",
+      "name": "large_pair_to_low_quotient_columncrt",
+      "status": "registered_route_open"
+    },
+    {
+      "formula": "If K_t needs many previous divisors to cover, the minimal cover hypergraph is SAE unless it persists as PDEC.",
+      "meaning": "多源扇入是可登记的结构异常，但排斥仍待证明。",
+      "name": "fanin_to_sae_or_pdec",
+      "status": "registered_route_open"
+    }
+  ],
+  "low_multiplier_common_kernel_excluded": false,
+  "low_multiplier_kernel_imported": true,
+  "next_direct_attack_target": "LargePairKernelDifferenceColumnCRTExclusion",
+  "no_theorem_switch": true,
+  "pair_or_fanin_dichotomy_closed": true,
+  "parallel_targets": [
+    "LowQuotientColumnCRTOrPDECRoute",
+    "HotFrequencyDivisorDensityPDECorSAE",
+    "ShortWindowLCMMultiplierDisciplineForFrequencyH"
+  ],
+  "plain_conclusion": "低乘子共同核已经拆成两个不可再混淆的出口。若新增除数 g_t 的乘子 mu_t<Lambda，则 K_t=gcd(g_t,L_{t-1})>Y/Lambda。由于 L_{t-1} 由旧除数生成，K_t 必被成对共同核 gcd(g_t,g_i) 的 LCM 覆盖。于是只有两种结构：某个旧除数与 g_t 有大成对共同核，进而锁定短差值 g_t-g_i=k a；或没有单一大核，只能由多个旧除数分摊覆盖，形成多源 kernel fan-in。前者应进入低商 ColumnCRT/PDEC，后者进入 SAE/PDEC 容量账本。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "MultiSourceKernelFanInSAEOrPDECExclusion",
+  "source_hashes": {
+    "docs/monograph/h4-pdec-admissible-constraint-table.md": "259d39fdfe4ec8ec232e26a4f2c8b474b58e81ea39ba209c99c772355929d483",
+    "docs/monograph/h4-pdec-column-defect-routing-contract.md": "0f7afe16275924cd9059f649155d793b1df600e73eafa721cfce0f0dd5ba9af7",
+    "docs/monograph/prime-matrix-strict-low-effective-mod-endpoint-pdec-columncrt-router.md": "df64e106b2cc2722b60bb5587d0211c80802598f776b01fd1195c3c17b724647",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.md": "2e9b9276de650d14f1b6fd67fd224ca60caf70e644f5dba1fb2eb2a290cfa392",
+    "docs/monograph/prime-matrix-strict-unified-counterexample-contradiction-field-matrix-router.md": "ff681a8d76683c85cba256233d20aaa3dd8668ac45ccc3e36206e0b75a16b317"
+  },
+  "status": "low_multiplier_common_kernel_split_to_pair_difference_lock_or_fanin_defect_open"
+}

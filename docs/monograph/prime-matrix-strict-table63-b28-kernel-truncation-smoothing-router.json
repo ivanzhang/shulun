@@ -1,0 +1,210 @@
+{
+  "arithmetic": {
+    "coarse_template_gap_factor_high_tail_b28": "2779902555195.0005",
+    "faber_kadiri_gourdon_b25_epsilon": "4.8208e-5",
+    "faber_kadiri_gourdon_b30_epsilon": "5.6646e-6",
+    "faber_kadiri_platt_b25_epsilon": "4.8208e-5",
+    "faber_kadiri_platt_b30_epsilon": "5.6685e-6",
+    "target_1_over_36260": "0.000027578599007170435741864313292884721456150027578599"
+  },
+  "certificate_type": "prime_matrix_strict_table63_b28_kernel_truncation_smoothing_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "KernelConventionGateActive",
+    "Table63B28PsiVsPsi0EndpointConventionLedger",
+    "OriginalDusartB28AlgorithmArtifactMissing",
+    "InternalUnsmoothedPerronKernelAvailable",
+    "InternalUnsmoothedKernelRejectedForB28",
+    "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger",
+    "PublishedB25B30RowsDoNotCloseB28"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_kernel_facts": [
+    {
+      "effect": "旧 Table 6.3 b=28 的自足替代路线应优先接 Faber-Kadiri 型平滑显式公式。",
+      "fact": "moderate_range_points_to_faber_kadiri",
+      "meaning": "正式版说明在较低 b 区间，Faber-Kadiri 的方法和值优于该文全局上界。",
+      "source": "Dusart 2016 Math. Comp. paper"
+    },
+    {
+      "effect": "这给出与 Table 6.3 相同目标函数 psi 的核/平滑 convention。",
+      "fact": "smooth_weight_bounds_psi",
+      "meaning": "引入光滑权 f，并以 S^-(x)<=psi(x)<=S^+(x) 把普通 psi 误差转成光滑显式公式误差。",
+      "source": "Faber-Kadiri 2015 / arXiv:1310.6374"
+    },
+    {
+      "effect": "外部平滑核本身已声明；它不是仓库内部的非平滑 Perron 核。",
+      "fact": "kernel_g_declared",
+      "meaning": "第 3.1 节给出优化核 g(x)=1-((2m+1)!/(m!)^2) int_0^x t^m(1-t)^m dt。",
+      "source": "Faber-Kadiri 2015 / arXiv:1310.6374"
+    },
+    {
+      "effect": "仅识别核不够，b0=28 还需校正版参数包、预算和外向舍入。",
+      "fact": "corrected_budget_formula_required",
+      "meaning": "corrigendum 修正 B5 定义并重列计算表；必须使用校正版 epsilon 公式和表。",
+      "source": "Faber-Kadiri 2015 / corrigendum 2017"
+    },
+    {
+      "effect": "不能靠表行单调性偷换，必须直接计算 b0=28 参数包。",
+      "fact": "bracketing_rows_not_enough",
+      "meaning": "公开表有 b0=25 与 b0=30 行；b0=25 的 epsilon 太弱，b0=30 不能覆盖 x>=e^28。",
+      "source": "Faber-Kadiri table rows"
+    }
+  ],
+  "faber_kadiri_smoothed_kernel_convention_identified": true,
+  "independent_table63_b28_regeneration_closed": false,
+  "internal_unsmoothed_kernel_rejected_for_b28": true,
+  "internal_unsmoothed_perron_kernel_available": true,
+  "kernel_matrix": [
+    {
+      "external_fk": "普通 psi 由 S^- 与 S^+ 光滑上下包络夹住",
+      "field": "base_function",
+      "internal_unsmoothed": "psi_0 半权端点，已由上一证书转为普通 psi 并登记端点税",
+      "status": "function target compatible after endpoint tax"
+    },
+    {
+      "external_fk": "beta 型光滑核 g 及 Mellin transform F",
+      "field": "kernel",
+      "internal_unsmoothed": "非平滑 Perron 竖线核，finite-T 常数 C=12128",
+      "status": "kernel convention differs"
+    },
+    {
+      "external_fk": "按 H, T0, T1, sigma0 分割零点块，使用 B_i 预算函数",
+      "field": "truncation",
+      "internal_unsmoothed": "固定 T 与 contour shift 预算，后接粗 zero-sum 包",
+      "status": "truncation variables differ"
+    },
+    {
+      "external_fk": "有校正版 epsilon 公式，但 b0=28 未直接列成表行",
+      "field": "budget_pressure",
+      "internal_unsmoothed": "现有粗 contour 距 2.224E-5 表值约 2.78e12 倍",
+      "status": "internal rejected, external needs b28 packet"
+    },
+    {
+      "external_fk": "需给出 b0=28 的 m, delta, sigma0, T1, H/R0, corrected B_i 与 hash",
+      "field": "output",
+      "internal_unsmoothed": "已自洽但不能生成 Table 6.3 b=28",
+      "status": "next exact hardpoint"
+    }
+  ],
+  "next_direct_attack_target": "FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "Table63B28KernelTruncationAndSmoothingConventionLedger",
+    "IndependentRegenerationStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "original_dusart_b28_algorithm_artifact_missing": true,
+  "parallel_attack_targets": [
+    "DusartEpsSubmittedTableAlgorithmArtifactLedger",
+    "FaberKadiriB28DirectedRoundingAndComputationHashLedger",
+    "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger",
+    "Table63B28ZeroFreeTailConstantsAndStartHeightLedger",
+    "Table63B28PsiEpsilonBudgetPartitionLedger",
+    "Table63B28DirectedUpperRoundingAndIntervalPropagationLedger",
+    "Table63B28ReproducibleComputationHashLedger"
+  ],
+  "plain_conclusion": "当前最窄点被推进了一层：旧 Dusart Table 6.3 b=28 源只给表行，不给生成核；仓库内部非平滑 Perron 核虽已自足闭合，但因预算差约 2.78e12 倍，不能作为 b=28 表生成器。可严格对接同一 psi 高尾目标的外部核已定位为 Faber-Kadiri 光滑显式公式；它给出 S^-<=psi<=S^+、显式光滑核 g 和校正版 epsilon 公式。剩余真正单点不再是找核，而是直接计算并验收 b0=28 的校正版参数包、预算、外向舍入和 hash。",
+  "published_b25_b30_rows_close_b28": false,
+  "replacement_external_kernel_lane_opened": true,
+  "replacement_self_contained": {
+    "FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger": "compute corrected epsilon_0 at b0=28 with m,delta,sigma0,T1,H,R0,c_i,B_i and prove epsilon_0 < 1/36260 minus endpoint tax",
+    "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger": "FaberKadiriSmoothWeightSminusSplusPsiEnvelope AND ExplicitKernelGFormula AND CorrectedEpsilonFormulaConvention",
+    "Table63B28KernelTruncationAndSmoothingConventionLedger": "DusartEpsSubmittedTableAlgorithmArtifactLedger OR (FaberKadiriSmoothedExplicitFormulaKernelConventionLedger AND FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger AND FaberKadiriB28DirectedRoundingAndComputationHashLedger)"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只处理假设反例链可调用的 psi 高尾输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "KernelConventionGateActive",
+      "meaning": "上一证书已关闭 psi/psi0 端点税，并把下一最窄点压到 b=28 的核/截断/平滑口径。",
+      "proved": true,
+      "remaining": "Table63B28KernelTruncationAndSmoothingConventionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table63B28PsiVsPsi0EndpointConventionLedger",
+      "meaning": "函数目标已经对齐到普通 psi；端点半权税可显式扣除。",
+      "proved": true,
+      "remaining": "endpoint tax registered"
+    },
+    {
+      "closed": true,
+      "gate": "OriginalDusartB28AlgorithmArtifactMissing",
+      "meaning": "旧 arXiv/Dusart Table 6.3 只给出表行与使用点，没有给出 b=28 表生成核、截断高度、平滑规则或 hash。",
+      "proved": true,
+      "remaining": "DusartEpsSubmittedTableAlgorithmArtifactLedger"
+    },
+    {
+      "closed": true,
+      "gate": "InternalUnsmoothedPerronKernelAvailable",
+      "meaning": "仓库内部非平滑 Perron 核和 finite-T 常数 C=12128 已自足闭合。",
+      "proved": true,
+      "remaining": "UnsmoothedChebyshevPerronExplicitFormulaConstantSelfContainedClosedC12128"
+    },
+    {
+      "closed": true,
+      "gate": "InternalUnsmoothedKernelRejectedForB28",
+      "meaning": "现有内部粗核自洽但不能生成 b=28 表值，压力差约 2779902555195.0005 倍，且不是 Dusart/FK 表算法口径。",
+      "proved": true,
+      "remaining": "cannot be used as Table63 b=28 generator"
+    },
+    {
+      "closed": true,
+      "gate": "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger",
+      "meaning": "外部可对接的核/平滑 convention 已定位为 Faber-Kadiri 光滑显式公式：S^-<=psi<=S^+，核 g 显式给出。",
+      "proved": true,
+      "remaining": "external smoothed convention identified"
+    },
+    {
+      "closed": true,
+      "gate": "PublishedB25B30RowsDoNotCloseB28",
+      "meaning": "Faber-Kadiri 表中 b0=25 的界太弱，b0=30 又只覆盖 x>=e^30；不能直接替代 x>=e^28。",
+      "proved": true,
+      "remaining": "FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "Table63B28KernelTruncationAndSmoothingConventionLedger",
+      "meaning": "原始 Table 6.3 b=28 的核口径仍未自足生成；但可替代的外部平滑核已定位，剩余精确压成 b0=28 校正版参数包与预算。",
+      "proved": false,
+      "remaining": "(DusartEpsSubmittedTableAlgorithmArtifactLedger) OR (FaberKadiriSmoothedExplicitFormulaKernelConventionLedger AND FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger AND FaberKadiriB28DirectedRoundingAndComputationHashLedger)"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentRegenerationStillOpen",
+      "meaning": "核/平滑 convention 的外部定位不等于表值重建；仍需有限零点块、尾项、预算、舍入和 hash 同步。",
+      "proved": false,
+      "remaining": "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger AND Table63B28PsiEpsilonBudgetPartitionLedger AND Table63B28DirectedUpperRoundingAndIntervalPropagationLedger AND Table63B28ReproducibleComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步仍只推进 psi 高尾输入，尚未产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "8f989153e72356940e949d9043e273275d316ed71fb718deb2982d75859866d2",
+    "docs/monograph/prime-matrix-strict-same-explicit-formula-convention-router.json": "f0dc06153fa2d7dd33a523f0d79ed6b7907e2e3ddacd03fb805465ef095079b9",
+    "docs/monograph/prime-matrix-strict-table63-b28-actual-formula-declaration-router.json": "6d8f87827e72369f947fbe0c88a2bf119d89d6f5414e5478bef28a730c10eb5b",
+    "docs/monograph/prime-matrix-strict-table63-b28-generation-rounding-router.json": "47de3468ced89bfd5bbee509fd78a9d7d0de0648a7c2f0ef5111a23f3bbb00e1",
+    "docs/monograph/prime-matrix-strict-table63-b28-psi-endpoint-convention-router.json": "92cc59dffed03927a2e7a54e40e81e2d2afcf964a376ad86e58120b9ed1342b7",
+    "docs/monograph/prime-matrix-strict-table63-b28-zero-input-formula-binding-router.json": "2a2567bca13cc8688983f963b0311284620e30844bb359d5c2f7c5ded85389e0",
+    "docs/monograph/prime-matrix-strict-unsmoothed-perron-final-sync-router.json": "eb09267cd0d957dce6acff54d3d0afb61421d8274dfe6d89506143abf0abb8a7"
+  },
+  "status": "table63_b28_kernel_original_open_fk_smoothed_kernel_identified_b28_packet_next",
+  "table63_b28_kernel_truncation_smoothing_convention_closed": false,
+  "table63_b28_psi_vs_psi0_endpoint_convention_closed": true
+}

@@ -1,0 +1,116 @@
+{
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_direct_internal_dusart_pnt_envelope_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "DirectInternalDusartGateActive",
+    "FiniteThetaInterfaceAlreadyClosed",
+    "ShallowContourTuningRuledOut",
+    "ExternalDusartStatementIdentified",
+    "LowHeightStillExternalOnly",
+    "ExternalLaneRemainsConditional"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_internal_dusart_theta_pnt_envelope_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_dusart_statement_identified": true,
+  "external_reference": {
+    "id": "arXiv:1002.0442",
+    "role": "external theorem target only; not counted as self-contained proof",
+    "url": "https://arxiv.org/abs/1002.0442"
+  },
+  "finite_low_height_self_contained_closed": false,
+  "finite_theta_interface_ready": true,
+  "next_direct_attack_target": "DusartProposition51ProofSkeletonFormalizationLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "DirectInternalDusartThetaPNTEnvelopeClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "DusartThetaAnalyticKernelAndThresholdLedger",
+    "DusartThetaMiddleRangeFiniteVerificationLedger",
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+  ],
+  "plain_conclusion": "直接内化 Dusart 型 theta/PNT 包络已被拆成四个作者侧包：证明骨架形式化、解析核与阈值、中段有限验证表、低高度 Turing/无零证书。有限 theta 桥已经提供 `x<=20000` 接口，但仓库内尚无完整 Dusart Proposition 5.1 级证明；外部 arXiv 定理只能维持外部条件路线。",
+  "replacement_self_contained": {
+    "DirectInternalDusartThetaPNTEnvelopeLedger": "DusartProposition51ProofSkeletonFormalizationLedger AND DusartThetaAnalyticKernelAndThresholdLedger AND DusartThetaMiddleRangeFiniteVerificationLedger AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理统一矛盾场中的解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "DirectInternalDusartGateActive",
+      "meaning": "尖锐 contour 可行性证书排除了常数微调后，下一主攻点就是直接内化 Dusart 型 theta/PNT。",
+      "proved": true,
+      "remaining": "DirectInternalDusartThetaPNTEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteThetaInterfaceAlreadyClosed",
+      "meaning": "0<x<=20000 的有限 theta 桥已由素数 log 证书自足关闭，可作为内部化证明的左端接口。",
+      "proved": true,
+      "remaining": "FiniteThetaBridgeBelow20000SelfContainedClosedByPrimeLogCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "ShallowContourTuningRuledOut",
+      "meaning": "沿当前 C_Z/C_region 模板微调无法达到 1/36260 目标，必须换成直接 PNT/theta 机制。",
+      "proved": true,
+      "remaining": "DirectInternalDusartThetaPNTEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalDusartStatementIdentified",
+      "meaning": "外部目标是 Dusart 型显式 theta 上界；仓库可引用但不能当作自足证明。",
+      "proved": false,
+      "remaining": "arXiv:1002.0442: https://arxiv.org/abs/1002.0442"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightStillExternalOnly",
+      "meaning": "低高度零点核验已有外部匹配，但要内化 Dusart 证明仍需文内 Turing/无零证书。",
+      "proved": false,
+      "remaining": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DirectInternalDusartThetaPNTEnvelopeClosed",
+      "meaning": "当前仓库尚无完整内化的 Dusart 证明骨架、解析阈值包和中段有限表。",
+      "proved": false,
+      "remaining": "DusartProposition51ProofSkeletonFormalizationLedger AND DusartThetaAnalyticKernelAndThresholdLedger AND DusartThetaMiddleRangeFiniteVerificationLedger AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalLaneRemainsConditional",
+      "meaning": "外部 Dusart 仍可作为条件路线输入，但不改变自足状态。",
+      "proved": false,
+      "remaining": "ThetaEnvelopeTargetAt20000StrictExternalMatchedDusartOneOver36260"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "内部化拆包不产生最终反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "shallow_contour_tuning_ruled_out": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "74b2641a2de113428bf6bf6a77765470a1f1ed4fdd5b4a0b80e2a8de00159aae",
+    "docs/monograph/prime-matrix-strict-finite-low-height-external-match-router.json": "e489f5e3c11231acc5a832ae2fa3edb7eab33c28794b919d0652684731b8ec14",
+    "docs/monograph/prime-matrix-strict-finite-theta-bridge-self-contained-router.json": "e199bc58d1c05daa01e9a49a70719c34c604b10313cf9ccf6dedd9d3ce7322ce",
+    "docs/monograph/prime-matrix-strict-sharp-theta-contour-feasibility-router.json": "ac5fb58d6dfd420e0734a104222fa86a9d96060fff9c4565e67a4fc3ce541e97"
+  },
+  "status": "direct_internal_dusart_theta_pnt_envelope_reduced_to_four_author_side_packages"
+}

@@ -1,0 +1,105 @@
+{
+  "certificate_type": "prime_matrix_strict_alpha_prefix_signed_endpoint_defect_split_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行假设下推出有符号缺陷。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "SignedEndpointDefectForced",
+      "meaning": "若 lower-weight 主项超过高标签容量，早期零行强制 E_alpha<=-G_alpha。",
+      "proved": true,
+      "remaining": "AlphaLowerWeightMainGapPositiveAgainstHighLabelCapacity"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicSplitClosed",
+      "meaning": "强负缺陷若不由低模或远尾承担，必落入某个中间 dyadic 块。",
+      "proved": true,
+      "remaining": "LowModSignedEndpointDefectExclusion OR DyadicLowerWeightEndpointPDECExclusion OR LowerWeightFarTailCoreOrSAEExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "HighDyadicEndpointLockImported",
+      "meaning": "高块 `d>P-1` 时端点误差是单命中 CRT 偏斜，可接 HDL/CoreLoad。",
+      "proved": true,
+      "remaining": "HDL-9/HDL-10 energy exclusion"
+    },
+    {
+      "closed": false,
+      "gate": "SignedEndpointDefectExcludedCurrentCorpus",
+      "meaning": "低模、dyadic PDEC、远尾 core 三出口尚未全部排斥。",
+      "proved": false,
+      "remaining": "LowModSignedEndpointDefectExclusion AND DyadicLowerWeightEndpointPDECExclusion AND LowerWeightFarTailCoreOrSAEExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnClosed",
+      "meaning": "当前只得到精确缺陷显化，不得到无条件闭合。",
+      "proved": false,
+      "remaining": "AlphaLowerWeightMainGapPositiveAgainstHighLabelCapacity plus exclusion of LowModSignedEndpointDefectExclusion/DyadicLowerWeightEndpointPDECExclusion/LowerWeightFarTailCoreOrSAEExclusion"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "dyadic_pigeonhole_closed": true,
+  "empirical_absence_not_used": true,
+  "high_dyadic_endpoint_lock_imported": true,
+  "implications": [
+    {
+      "formula": "L_alpha(x)=sum_d lambda_d^- A_d(x)=(P-1)W_alpha^-+E_alpha(x), E_alpha=sum_d lambda_d^- epsilon_d(x).",
+      "meaning": "把粗筛 lower sum 精确拆成主项和有符号端点误差。",
+      "name": "lower_weight_exact_endpoint_sum",
+      "status": "closed"
+    },
+    {
+      "formula": "If EarlyZeroRow and G_alpha=(P-1)W_alpha^- - C_alpha(P)>0, then E_alpha(x)<=-G_alpha.",
+      "meaning": "这是比 TV 大更强的同向负端点缺陷。",
+      "name": "capacity_forces_negative_endpoint",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "E_alpha=E_low(D0)+sum_j E_{I_j}+E_far(D1).",
+      "meaning": "缺陷可以按低模、中间 dyadic 块、远尾 core 精确分裂。",
+      "name": "low_middle_far_split",
+      "status": "closed_identity"
+    },
+    {
+      "formula": "If E_alpha<=-G, E_low>-eta0 G, E_far>-eta1 G, then some middle block E_I<=-(1-eta0-eta1)G/J.",
+      "meaning": "强缺陷不能无形分散；不是低模/远尾承担，就必有 dyadic PDEC 证书。",
+      "name": "dyadic_pigeonhole",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "When the defect block has d>P-1, each modulus has at most one endpoint hit.",
+      "meaning": "高块缺陷进一步变成 HDL-9/HDL-10 型端点命中偏斜。",
+      "name": "high_dyadic_lock_import",
+      "status": "imported_closed"
+    }
+  ],
+  "low_middle_far_split_closed": true,
+  "next_direct_attack_target": "DyadicLowerWeightEndpointPDECExclusion",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "LowModSignedEndpointDefectExclusion",
+    "LowerWeightFarTailCoreOrSAEExclusion",
+    "AlphaLowerWeightMainGapPositiveAgainstHighLabelCapacity"
+  ],
+  "plain_conclusion": "上一层的 TV 缺陷可以加强为有符号端点缺陷：lower-weight 和 L_alpha=(P-1)W^-_alpha+E_alpha 精确成立；若早期零行又要求 R_alpha 不超过高标签容量 C_alpha，而主项间隙 G_alpha=(P-1)W^-_alpha-C_alpha 为正，则必须有 E_alpha<=-G_alpha。随后按低模、中间 dyadic、远尾 core 分裂，若低模和远尾不能承担固定比例负缺陷，就得到某个 dyadic 块上的 PDEC 证书。这仍是缺陷显化，不是缺陷排斥。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "signed_endpoint_defect_excluded": false,
+  "signed_endpoint_defect_forced": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-eda-alpha-tail-dyadic-pdec-certificate.md": "cfc69a533348a62fec33aeea1e559d2f7dcdab25e8a23636f827436602455f2b",
+    "docs/monograph/prime-matrix-eda-alpha-tail-hdl-coreload-identity.md": "ed9d570405f9e95ce2c82e6aebed9deba7aafb77f8a8a330fdb92a11791fe901",
+    "docs/monograph/prime-matrix-eda-alpha-tail-highdyadic-endpoint-lock.md": "ad7938d988639d1a064ae383a105a0d2ac4536ddd43944d724bab6ca116a6ed3",
+    "docs/monograph/prime-matrix-strict-alpha-prefix-load-deficit-pdec-router.md": "cbfbbce682c9c69836d2a6348de852e34eb6a68cd3f3b2252ea219f57f797841",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.md": "92c48e7d714410ac037b1c880fb2e82bcbf132fe8c02bf9c47686481758eee91"
+  },
+  "status": "signed_endpoint_defect_forced_and_split_low_dyadic_far_tail_exclusion_open"
+}

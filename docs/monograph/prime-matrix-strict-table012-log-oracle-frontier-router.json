@@ -1,0 +1,83 @@
+{
+  "budget_numbers": {
+    "kahan_compensated_budget_bound": "1.734721597653105533904051144850450743138951417854502301191029251835722326691549352678004382206693664E-7",
+    "log_oracle_budget_if_abs_error_1e_minus_12": "0.030341383527",
+    "max_log_8e11": "27.40787756461433845311947976597366505302",
+    "max_prime_count": "30341383527",
+    "non_log_budget_total": "0.000001173472159765310553390405114485045074313895141785450230119102925183572232669154935267800438220669366",
+    "rhs_auxiliary_rounding_budget": "0.000001",
+    "runner_max_numeric_error_bound": "1.030341383527000000000",
+    "runner_min_guard_margin": "55.07003791407393599",
+    "theta_at_8e11_archive": "799999133776.0847430825",
+    "unit_roundoff": "5.42101086242752217003726400434970855713E-20",
+    "unused_absolute_guard_after_non_log_budget": "0.9999988265278402346894466095948855149549256861048582145497698808970748164277673308450647321995617793"
+  },
+  "certificate_type": "prime_matrix_strict_table012_log_oracle_frontier_router",
+  "certified_log_summation_interval_arithmetic_closed": false,
+  "certified_mpfr_interval_rescan_archive_closed": false,
+  "full_archive_and_budget_imported": true,
+  "independent_theta_extremal_archive_closed": false,
+  "kahan_compensated_positive_log_summation_error_budget_closed": true,
+  "long_double_probe": {
+    "ldbl_epsilon": "1.084202172485504434007452800869941711426e-19",
+    "ldbl_mant_dig": "64",
+    "log_max": "27.40787756461433845311947976597366505302",
+    "mpfr_available": true
+  },
+  "next_direct_attack_target": "StdLogLAbsErrorLe1eMinus12ForIntegerInputsUpTo8e11",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "CertifiedMPFRIntervalThetaExtremalRescanArchive",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "table_012 log-oracle 硬点进一步收缩：完整归档和误差预算传递已导入，Kahan 累计与 RHS 舍入在 long double 模型下可被绝对 1.0 保护项吸收。真正未闭合的单点是 runner 实际 `std::log(long double)` 对所有整数输入到 8e11 是否有绝对误差 <= 1e-12 的形式化证书；或者改走 MPFR 区间 log 全量重扫。",
+  "proof_reduction": [
+    {
+      "closed": false,
+      "gate": "LogOracleOutwardIntervalImplementationOrFormalUlpCertificate",
+      "meaning": "上一层已证明只需给 log 输入提供外向包含；本层继续拆分该原子。",
+      "remaining": "StdLogLAbsErrorLe1eMinus12ForIntegerInputsUpTo8e11 OR CertifiedMPFRIntervalThetaExtremalRescanArchive"
+    },
+    {
+      "closed": true,
+      "gate": "KahanCompensatedPositiveLogSummationErrorBudgetLedger",
+      "meaning": "在 IEEE 64-bit mantissa long double 模型下，Kahan 正项累计误差预算远小于绝对 1.0 保护项。",
+      "remaining": "closed under IEEE rounded-addition model"
+    },
+    {
+      "closed": true,
+      "gate": "RHSLogAndDivisionLongDoubleRoundingBudgetLedger",
+      "meaning": "RHS 中有限个 log/div/mul/add 的 long double 舍入可由绝对 1.0 保护项吸收。",
+      "remaining": "closed as budget allocation; exact log enclosure still open"
+    },
+    {
+      "closed": false,
+      "gate": "StdLogLAbsErrorLe1eMinus12ForIntegerInputsUpTo8e11",
+      "meaning": "需证明 runner 实际调用的 std::log(long double) 对所有整数输入 2..8e11 的绝对误差 <= 1e-12。",
+      "remaining": "libm algorithm proof, exhaustive certified ulp certificate, or replacement oracle"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedMPFRIntervalThetaExtremalRescanArchive",
+      "meaning": "替代路线：用 MPFR/区间 log 重新生成完整 theta 极值归档并登记 hash。",
+      "remaining": "computationally heavy full rescan"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedLogSummationIntervalArithmeticForThetaLedger",
+      "meaning": "只有 logl 误差证书或 MPFR 区间重扫二选一闭合后，table_012 自足 theta 证书才闭合。",
+      "remaining": "StdLogLAbsErrorLe1eMinus12ForIntegerInputsUpTo8e11 OR CertifiedMPFRIntervalThetaExtremalRescanArchive"
+    }
+  ],
+  "rhs_log_and_division_rounding_budget_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/theta-table012-extremal-archive.jsonl": "2d1e955a6fa533c4e68bf9d786617d4d090dc91b52e224447eebaff849ddc1a3",
+    "docs/monograph/prime-matrix-strict-table012-interval-rounding-budget-router.json": "258fb33e902e1901d2aa89729b34000eaa7bf03db2cda3c955d4b9edbe4b1867",
+    "experiments/prime_matrix_table012_theta_extremal_runner.cpp": "0220b7cdc9c5b7ed88acb99571370e72ebc0b046032cc7f4905f9085fca9c392"
+  },
+  "status": "table012_log_oracle_reduced_to_logl_abs_error_or_mpfr_interval_rescan",
+  "std_logl_abs_error_1e_minus_12_closed": false,
+  "theta_less_than_identity_to_8e11_self_contained_closed": false
+}

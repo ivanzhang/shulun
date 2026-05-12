@@ -1,0 +1,128 @@
+{
+  "audit": {
+    "audit_hash": "c74f50421cf92c134eb28ce80a7d8f257b6788967458b57d904ced1e764e9daf",
+    "breakpoint_count": 22453,
+    "checked_intervals": 22452,
+    "closed_with_guard": true,
+    "prime_count": 93118,
+    "prime_limit": 1202615,
+    "rounding_guard": 1000.0,
+    "worst_case": {
+      "next_breakpoint": 904483.0,
+      "required": 904392.5516999998,
+      "surplus": 8173.164500438841,
+      "theta_y": 903321.2385184902,
+      "theta_y_2_over_3": 9244.47768194844,
+      "y_right": 904482.9999999999
+    },
+    "x_interval": {
+      "hi": 1446257064291.475,
+      "lo": 800000000000.0
+    },
+    "y_interval": {
+      "hi": 1202604.2841647768,
+      "lo": 894427.1909999158
+    }
+  },
+  "certificate_type": "prime_matrix_strict_psi_theta_gap_middle_self_contained_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "PsiThetaGapGateActive",
+    "TwoLayerPrimePowerLowerBoundIdentity",
+    "MiddleYIntervalFiniteReduction",
+    "FiniteBreakpointAuditClosed",
+    "PsiMinusThetaLowerGap09999SqrtSelfContainedLedger",
+    "P51PsiInputsRemainClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dusart_p51_full_theta_statement_closed": false,
+  "empirical_absence_not_used": true,
+  "next_direct_attack_target": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "P51StillNeedsThetaFiniteTable",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "P5.1 中段所需的 `psi(x)-theta(x)>0.9999sqrt(x)` 已自足闭合。核心压缩是令 `y=sqrt(x)`，只用平方层和立方层即可：`psi(x)-theta(x)>=theta(y)+theta(y^(2/3))`。有限审计覆盖 `sqrt(8e11)<=y<=e^14` 的全部跳点，最坏 surplus 约为 8173，远大于 1000 的舍入保护。P5.1 当前剩余收窄为 `theta(x)<x` 到 `8e11` 的有限表/证书。",
+  "psi_minus_theta_lower_gap_09999_sqrt_self_contained_closed": true,
+  "psi_theta_gap_scope": "P5.1 middle strip 8e11<=x<=e^28",
+  "replacement_self_contained": {
+    "PsiMinusThetaLowerGap09999SqrtSelfContainedLedger": "FiniteAudit[theta(y)+theta(y^(2/3))>0.9999y for sqrt(8e11)<=y<=e^14]"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只补 P5.1 中段解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "PsiThetaGapGateActive",
+      "meaning": "上一证书已把下一最窄点设为 P5.1 中段 psi-theta 下界。",
+      "proved": true,
+      "remaining": "PsiMinusThetaLowerGap09999SqrtSelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TwoLayerPrimePowerLowerBoundIdentity",
+      "meaning": "令 y=sqrt(x)，则 psi(x)-theta(x)>=theta(y)+theta(y^(2/3))。",
+      "proved": true,
+      "remaining": "uses only prime-square and prime-cube layers"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleYIntervalFiniteReduction",
+      "meaning": "P5.1 中段 8e11<=x<=e^28 等价于 y in [sqrt(8e11), e^14]，只需有限覆盖。",
+      "proved": true,
+      "remaining": "finite breakpoint audit"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteBreakpointAuditClosed",
+      "meaning": "在 theta(y) 与 theta(y^(2/3)) 的所有跳点前检查最坏点，最小 surplus 仍大于 1000。",
+      "proved": true,
+      "remaining": "c74f50421cf92c134eb28ce80a7d8f257b6788967458b57d904ced1e764e9daf"
+    },
+    {
+      "closed": true,
+      "gate": "PsiMinusThetaLowerGap09999SqrtSelfContainedLedger",
+      "meaning": "对 P5.1 中段全体 x，psi(x)-theta(x)>0.9999sqrt(x) 已由两层素数幂有限审计自足闭合。",
+      "proved": true,
+      "remaining": "closed on 8e11<=x<=e^28"
+    },
+    {
+      "closed": true,
+      "gate": "P51PsiInputsRemainClosed",
+      "meaning": "高尾 b=28 与中段 psi 上界输入保持闭合。",
+      "proved": true,
+      "remaining": "psi input pair closed"
+    },
+    {
+      "closed": false,
+      "gate": "P51StillNeedsThetaFiniteTable",
+      "meaning": "P5.1 全段 theta 结论剩余主要非 psi 输入为 theta(x)<x 到 8e11 的有限表/证书。",
+      "proved": false,
+      "remaining": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步关闭的是 P5.1 中段 psi-theta 输入，不直接产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "43df2da2249f78c202689b8d827548e35dcdc8b483b7bf680df4c91cb8b065b5",
+    "docs/monograph/prime-matrix-strict-table63-b28-high-tail-p51-splice-sync-router.json": "5a716da4b244110c5985e21c066cd9d8d3300a7d2c4084ce1446dac872168eb9"
+  },
+  "status": "psi_theta_gap_09999_sqrt_closed_on_p51_middle_by_two_layer_finite_audit"
+}

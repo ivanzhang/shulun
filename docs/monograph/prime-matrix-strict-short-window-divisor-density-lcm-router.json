@@ -1,0 +1,138 @@
+{
+  "certificate_type": "prime_matrix_strict_short_window_divisor_density_lcm_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链产生的低有效模/端点缺陷链条内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ShortWindowDensityMaterialized",
+      "meaning": "上一层已把倒数封套失败物化为 N_h(Y,2Y]>=eta Y。",
+      "proved": true,
+      "remaining": "ShortWindowLCMMultiplierDisciplineForFrequencyH"
+    },
+    {
+      "closed": true,
+      "gate": "LCMAnchorClosed",
+      "meaning": "该窗口全部除数的 LCM 必整除同一个正式频率 h。",
+      "proved": true,
+      "remaining": "FormalFrequencyHeightCeilingForEndpointPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "IncrementalMultiplierDisciplineClosed",
+      "meaning": "高独立乘子数量受 log H/log Lambda 限制；其余强制大共同核。",
+      "proved": true,
+      "remaining": "LowMultiplierCommonKernelColumnCRTOrPDECRoute"
+    },
+    {
+      "closed": true,
+      "gate": "LowMultiplierKernelRouteRegistered",
+      "meaning": "大共同核复现应形成低商 ColumnCRT/PDEC 或孤立 SAE，但排斥未完成。",
+      "proved": false,
+      "remaining": "LowMultiplierCommonKernelColumnCRTOrPDECRoute AND HotFrequencyDivisorDensityPDECorSAE"
+    },
+    {
+      "closed": false,
+      "gate": "DenseLCMAfterKernelCompressionProved",
+      "meaning": "尚未证明排除共同核出口后，任意热窗口必须产生超过频率高度的 LCM 爆炸。",
+      "proved": false,
+      "remaining": "DenseShortWindowLCMLowerBoundAfterKernelCompression AND FormalFrequencyHeightCeilingForEndpointPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "ShortWindowDivisorDensityEnvelopeCurrentCorpusProved",
+      "meaning": "尚未完成正式频率族的短窗口除数密度上界与 PDEC 下界比较。",
+      "proved": false,
+      "remaining": "DenseShortWindowLCMLowerBoundAfterKernelCompression AND LowMultiplierCommonKernelColumnCRTOrPDECRoute AND WeightedPositiveEndpointPDECLowerBoundComparison"
+    }
+  ],
+  "dense_lcm_after_kernel_compression_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "formal_frequency_height_ceiling_matched": false,
+  "high_multiplier_count_bound_closed": true,
+  "hot_density_excluded": false,
+  "incremental_multiplier_discipline_closed": true,
+  "lcm_anchor_closed": true,
+  "lemmas": [
+    {
+      "formula": "If Y<g<g'<=2Y, then g does not divide g'.",
+      "meaning": "同一短乘法窗口中的不同除数互不整除，不能靠简单倍数链解释高密度。",
+      "name": "short_window_antichain",
+      "status": "closed"
+    },
+    {
+      "formula": "For A={g: Y<g<=2Y and g|h}, L(A)=lcm(A) divides h.",
+      "meaning": "热除数窗口被锚定在单个频率 h 上，LCM 不能脱离频率高度预算。",
+      "name": "lcm_anchor_divides_frequency",
+      "status": "closed"
+    },
+    {
+      "formula": "L_t/L_{t-1}=g_t/gcd(g_t,L_{t-1}), and product_t L_t/L_{t-1}=L(A).",
+      "meaning": "每加入一个新除数，要么贡献新 LCM 乘子，要么与旧 LCM 有大共同核。",
+      "name": "incremental_multiplier_identity",
+      "status": "closed"
+    },
+    {
+      "formula": "If L(A)<=H, then #{t: mu_t>=Lambda} <= floor(log H/log Lambda).",
+      "meaning": "频率高度上界直接限制独立新乘子数量。",
+      "name": "high_multiplier_count_bound",
+      "status": "closed"
+    },
+    {
+      "formula": "If mu_t<Lambda, then gcd(g_t,L_{t-1})>Y/Lambda.",
+      "meaning": "不能造成 LCM 爆炸的除数必须与既有除数云共享大共同核。",
+      "name": "low_multiplier_kernel_forcing",
+      "status": "closed"
+    },
+    {
+      "formula": "N_h(Y,2Y]>=eta Y forces either many high multipliers or many low-multiplier kernel recurrences.",
+      "meaning": "短窗口线性密度不再是裸 tau 问题，而被拆成 LCM 爆炸或共同核复现。",
+      "name": "density_to_multiplier_pressure",
+      "status": "closed_dichotomy"
+    },
+    {
+      "formula": "Persistent low-multiplier kernel recurrences must route to ColumnCRT/PDEC; isolated ones route to SAE.",
+      "meaning": "共同核复现已命名为下一个出口，但尚未完成排斥。",
+      "name": "kernel_recurrence_to_registered_defect",
+      "status": "registered_route_open"
+    },
+    {
+      "formula": "After excluding low-multiplier kernel recurrences, dense A should force log L(A)>=c(eta,Lambda)Y.",
+      "meaning": "这是剩余的确定性 LCM 下界输入，不能由普通 tau(h) 粗估计替代。",
+      "name": "dense_lcm_after_kernel_compression",
+      "status": "open_input"
+    }
+  ],
+  "low_multiplier_common_kernel_excluded": false,
+  "low_multiplier_kernel_forcing_closed": true,
+  "low_multiplier_kernel_route_registered": true,
+  "next_direct_attack_target": "LowMultiplierCommonKernelColumnCRTOrPDECRoute",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "FormalFrequencyHeightCeilingForEndpointPDEC",
+    "HotFrequencyDivisorDensityPDECorSAE",
+    "WeightedPositiveEndpointPDECLowerBoundComparison"
+  ],
+  "plain_conclusion": "短窗口高密度除数已经进一步压成 LCM 乘子纪律。若 A={g: Y<g<=2Y, g|h} 且 |A|>=eta Y，则 L(A) 必整除同一正式频率 h。按任意顺序加入 g_t，新增乘子 mu_t=L_t/L_{t-1}=g_t/gcd(g_t,L_{t-1})。若 L(A)<=H，则 mu_t>=Lambda 的次数至多为 log H/log Lambda；剩余大量 g_t 必满足 gcd(g_t,L_{t-1})>Y/Lambda，即出现大共同核复现。因此当前硬点不再是裸除数函数估计，而是二选一：LCM 爆炸超过频率高度，或共同核复现进入 ColumnCRT/PDEC/SAE。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "DenseShortWindowLCMLowerBoundAfterKernelCompression",
+  "short_window_antichain_closed": true,
+  "short_window_density_materialized": true,
+  "short_window_divisor_density_envelope_proved": false,
+  "source_hashes": {
+    "docs/monograph/h4-pdec-admissible-constraint-table.md": "259d39fdfe4ec8ec232e26a4f2c8b474b58e81ea39ba209c99c772355929d483",
+    "docs/monograph/prime-matrix-strict-low-effective-mod-endpoint-pdec-columncrt-router.md": "df64e106b2cc2722b60bb5587d0211c80802598f776b01fd1195c3c17b724647",
+    "docs/monograph/prime-matrix-strict-unified-counterexample-contradiction-field-matrix-router.md": "ff681a8d76683c85cba256233d20aaa3dd8668ac45ccc3e36206e0b75a16b317",
+    "docs/monograph/prime-matrix-strict-weighted-reciprocal-common-divisor-envelope-router.md": "682abcd2a519f6b9fa7a6fb72e6efacc07b84c79be02fd469b008b9b96cd4e51",
+    "docs/monograph/prime-matrix-strict-windowed-reciprocal-divisor-density-router.md": "6568882b07ac3ca18d714d14f28158fe3a6bbff81631fc0007eae434bf2f85d5"
+  },
+  "status": "short_window_divisor_density_reduced_to_lcm_multiplier_or_common_kernel_defect_open"
+}

@@ -1,0 +1,115 @@
+{
+  "budget": {
+    "ln_x_upper_bound_used": "32",
+    "one_point_three_five_ulp_bound": "2.3418766925686895774560980498790740966796875E-18",
+    "required_log_abs_error_bound": "1E-12",
+    "slack_factor_vs_1p35ulp": "427007.9646692025837037037037037037037037037037037037037037037037037037037037037037037037037037037037",
+    "ulp_bound_for_ln_x_less_than_32": "1.73472347597680709441192448139190673828125E-18"
+  },
+  "certificate_type": "prime_matrix_strict_table012_x87_y_ln2_applicability_router",
+  "certified_log_summation_interval_arithmetic_closed": true,
+  "cpu": {
+    "Architecture": "x86_64",
+    "CPU family": "6",
+    "Model": "85",
+    "Model name": "Intel(R) Xeon(R) Gold 6152 CPU @ 2.10GHz",
+    "Stepping": "4",
+    "Vendor ID": "GenuineIntel"
+  },
+  "cpu_pentium_later_intel64_covered": true,
+  "external_references": {
+    "cached_intel_sdm_order": "325462-047US",
+    "intel_sdm_public_landing": "https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html"
+  },
+  "fpu_control": {
+    "extended_precision": true,
+    "fegetround": 0,
+    "round_to_nearest": true,
+    "x87_control_word": 895,
+    "x87_control_word_hex": "0x37f",
+    "x87_precision_control_bits": 3,
+    "x87_round_control_bits": 0
+  },
+  "fyl2x_y_equals_ln2_accuracy_applicability_closed": true,
+  "glibc_y_equals_ln2_path_bound": true,
+  "independent_theta_extremal_archive_closed": true,
+  "manual_evidence": {
+    "contains_1p35_ulps": true,
+    "contains_pentium_later": true,
+    "contains_round_to_nearest": true,
+    "contains_y_not_equal_1": true,
+    "excerpt_path": "data/external-manuals/intel-sdm-325462-047-x87-accuracy-excerpt.txt",
+    "excerpt_sha256": "697b53944b19859637e621995382cddf6468b93dffa290383a69c9d81f23a82f",
+    "hit_line_1_based": 18782,
+    "manual_pdf": "data/external-manuals/intel-sdm-325462-047.pdf",
+    "manual_pdf_sha256": "54415a6ff0f1453ed8636d97bc43215b334524984c9d6bf4ea10e0ac8817a038",
+    "manual_text": "data/external-manuals/intel-sdm-325462-047.txt",
+    "manual_text_sha256": "8778bfc4b2cf4b4528ffb01b61e80cf7e7e4960852377cb38dde18295c56c97a"
+  },
+  "manual_y_not_equal_1_statement_closed": true,
+  "next_direct_attack_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "CertifiedMPFRIntervalThetaExtremalRescanArchive"
+  ],
+  "plain_conclusion": "x87 y=ln2 适用性原子已在 Intel SDM 口径下闭合：手册覆盖 FYL2X/FYL2XP1 的 y!=1 round-to-nearest 误差，并给出 1.35 ulps；当前 glibc logl 使用 fldln2 与 x87 fyl2x/fyl2xp1，当前 FPU 控制字也是 round-to-nearest/extended precision。1.35 ulps 在 ln(x)<32 范围内比 1e-12 小约 4.27e5 倍。因此 table_012 的 log-oracle 与独立 theta 归档在 Intel SDM 硬件规范作为可信计算基的意义下闭合。行/列总命题仍未因此闭合，下一数学目标回到 DStructure/反例链终端矛盾。",
+  "proof_reduction": [
+    {
+      "closed": true,
+      "gate": "FYL2X_FYL2XP1_YEqualsLn2AccuracyApplicabilityLedger",
+      "meaning": "Intel SDM 明确给出 FYL2X/FYL2XP1 在 y!=1、round-to-nearest 下的 1.35 ulps 上界；glibc 使用 y=ln2，当前 x87 控制字为 round-to-nearest。",
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "X87FYL2X_FYL2XP1InstructionAccuracyLedger",
+      "meaning": "1.35 ulps 在 ln(x)<32 范围内远小于 1e-12，因此 x87 指令误差预算闭合。",
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "StdLogLAbsErrorLe1eMinus12ForIntegerInputsUpTo8e11",
+      "meaning": "std::logl 通过 glibc e_logl.S 的 x87 路径得到 <=1e-12 绝对误差证书。",
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "CertifiedLogSummationIntervalArithmeticForThetaLedger",
+      "meaning": "结合前序 Kahan/RHS 预算和完整 theta 归档，严格 log 求和区间输入闭合。",
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentThetaExtremalArchiveForTable012IntervalsLedger",
+      "meaning": "完整 34 行归档、hash、误差预算和 log oracle 已同时闭合。",
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger",
+      "meaning": "table_012 低段 theta<x 到 8e11 的独立自足计算输入闭合；这是计算输入闭合，不是行/列总命题闭合。",
+      "remaining": "closed under Intel SDM x87 trusted-computing-base"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本证书只关闭 table_012 低段 theta 输入，不产生早期零行反例链终端矛盾。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/external-manuals/intel-sdm-325462-047-x87-accuracy-excerpt.txt": "697b53944b19859637e621995382cddf6468b93dffa290383a69c9d81f23a82f",
+    "data/external-manuals/intel-sdm-325462-047.pdf": "54415a6ff0f1453ed8636d97bc43215b334524984c9d6bf4ea10e0ac8817a038",
+    "data/external-manuals/intel-sdm-325462-047.txt": "8778bfc4b2cf4b4528ffb01b61e80cf7e7e4960852377cb38dde18295c56c97a",
+    "docs/monograph/prime-matrix-strict-table012-glibc-logl-source-router.json": "89da6157e64caff4f03e68ae9e2e84f9be8869230291fbc4c3504bf56cdde678",
+    "docs/monograph/prime-matrix-strict-table012-interval-rounding-budget-router.json": "258fb33e902e1901d2aa89729b34000eaa7bf03db2cda3c955d4b9edbe4b1867",
+    "docs/monograph/prime-matrix-strict-table012-x87-accuracy-router.json": "1e4523fdce29e6c9ebb246074ea67e288388e475e6ba486531aa48588aa36a6e"
+  },
+  "status": "x87_y_ln2_applicability_closed_log_oracle_closed_under_intel_sdm",
+  "std_logl_abs_error_1e_minus_12_closed": true,
+  "theta_less_than_identity_to_8e11_self_contained_closed": true,
+  "x87_instruction_accuracy_closed": true,
+  "x87_round_to_nearest_extended_precision_closed": true
+}

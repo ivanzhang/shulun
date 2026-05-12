@@ -1,0 +1,202 @@
+{
+  "certificate_type": "prime_matrix_strict_independent_pair_energy_attack_router",
+  "hard_law": "seed-only 不能产生 log-power pair 能量界；定性有限投影消散也不足以支付任意 A。必须排斥每个超过 `M/L^K` 的 rate-bearing exact pair 大原子 packet，或证明它们全部进入已排斥的 PDEC/SAE/ColumnCRT/CleanKLS 终端。",
+  "independent_exact_pair_l2_or_max_atom_bound_proved": false,
+  "internal_obligation_after_router": "RateBearingLargePairAtomPacketExclusion",
+  "internal_obligation_before_router": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed",
+  "large_pair_failure_packetized": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target_inside_same_theorem": "RateBearingLargePairAtomPacketExclusion",
+  "nonrecursive_guard_imported": true,
+  "nonrecursive_implication_to_target": "RateBearingLargePairAtomPacketExclusion => IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed => ActualNoncanonicalExactUVSupportLowerBound => NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "plain_conclusion": "继续在 `NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem` 内部攻击，`IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed` 被进一步压缩。抽象 seed 本身不足以推出 pair L2/max-atom 界，因为可形式登记一个全部质量集中在单个 exact pair 上的 seed；有限投影二分也只给定性消散，不能给任意 A 所需的 log-power 速率。因此同命题内部真正剩余变为 `RateBearingLargePairAtomPacketExclusion`：排斥所有超过阈值 `M/L^K` 的同 formal unit 大 pair packet，或证明其必回流到已命名终端。当前仍未无条件闭合。",
+  "qualitative_projection_dichotomy_insufficient_for_log_rate": true,
+  "rate_bearing_large_pair_atom_packet_exclusion_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SameSourceEntropyTargetPreserved",
+      "meaning": "继续在 NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem 内部攻击，不改换总命题。",
+      "proved": true,
+      "remaining": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed"
+    },
+    {
+      "closed": true,
+      "gate": "NonrecursiveGuardImported",
+      "meaning": "已禁止用源熵目标本身或 moving-atom 排斥反证 pair-mass 分散。",
+      "proved": true,
+      "remaining": "必须给独立 pair L2/max-atom 账本或命名回流。"
+    },
+    {
+      "closed": true,
+      "gate": "SeedOnlyInsufficientModel",
+      "meaning": "抽象 acyclic seed 字段允许所有质量落在单个 exact pair；所以 seed 名称本身不推出 L2/max-atom 界。",
+      "proved": true,
+      "remaining": "需要阈值大原子 packet 排斥或独立相消估计。"
+    },
+    {
+      "closed": true,
+      "gate": "ElementaryEnergyLemmaImported",
+      "meaning": "一旦有独立 L2/max-pair 界，支撑下界和源熵反原子由初等引理推出。",
+      "proved": true,
+      "remaining": "证明独立 L2/max-pair 界。"
+    },
+    {
+      "closed": true,
+      "gate": "LargePairFailurePacketized",
+      "meaning": "独立能量界失败等价于同一 formal unit 下出现超过阈值的 sign-refined exact pair 大原子 packet。",
+      "proved": true,
+      "remaining": "RateBearingLargePairAtomPacketExclusion。"
+    },
+    {
+      "closed": true,
+      "gate": "NonCleanLargePairReturnsImported",
+      "meaning": "非 clean-core 或带低维签名的大 pair packet 已接回 PDEC/SAE/ColumnCRT/CleanKLS/DLS 终端门。",
+      "proved": true,
+      "remaining": "GlobalPDECorSparseTerminalExclusion AND ExplicitModelGapAndFiniteDPRCLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "SeedBranchFusionImported",
+      "meaning": "seed 存在/不存在两支均进入 acyclic terminal family；seed 不再是可隐藏的独立出口。",
+      "proved": true,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily。"
+    },
+    {
+      "closed": true,
+      "gate": "QualitativeProjectionDichotomyInsufficientForLogRate",
+      "meaning": "有限投影二分只给 positive-limsup 或趋零；本目标需要任意固定 A 的 log-power 速率。",
+      "proved": true,
+      "remaining": "RateBearingAcyclicPairAtomDecayOrTerminalExclusion。"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentPairEnergyCurrentCorpusProved",
+      "meaning": "当前材料没有证明 rate-bearing large-pair packet 全部不存在或必导致已排斥终端。",
+      "proved": false,
+      "remaining": "RateBearingLargePairAtomPacketExclusion。"
+    },
+    {
+      "closed": false,
+      "gate": "NewActualSourceEntropyCurrentCorpusProved",
+      "meaning": "独立 pair 能量界仍未完成，所以新 actual-source 熵定理仍未证明。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem。"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "seed_only_insufficient_model_verified": true,
+  "seed_only_obstruction_rows": [
+    {
+      "k": 3,
+      "l2_energy": 1.0,
+      "log_y": 6.907755278982138,
+      "max_pair_mass": 1.0,
+      "pair_count": 1,
+      "seed_fields_can_be_formally_registered": true,
+      "threshold_L_minus_K": 5.386069608834616e-15,
+      "total_mass": 1.0,
+      "violates_independent_pair_energy": true
+    },
+    {
+      "k": 4,
+      "l2_energy": 1.0,
+      "log_y": 9.210340371976184,
+      "max_pair_mass": 1.0,
+      "pair_count": 1,
+      "seed_fields_can_be_formally_registered": true,
+      "threshold_L_minus_K": 4.0486798808808005e-17,
+      "total_mass": 1.0,
+      "violates_independent_pair_energy": true
+    },
+    {
+      "k": 5,
+      "l2_energy": 1.0,
+      "log_y": 11.51292546497023,
+      "max_pair_mass": 1.0,
+      "pair_count": 1,
+      "seed_fields_can_be_formally_registered": true,
+      "threshold_L_minus_K": 9.116816601438587e-19,
+      "total_mass": 1.0,
+      "violates_independent_pair_energy": true
+    },
+    {
+      "k": 6,
+      "l2_energy": 1.0,
+      "log_y": 13.815510557964275,
+      "max_pair_mass": 1.0,
+      "pair_count": 1,
+      "seed_fields_can_be_formally_registered": true,
+      "threshold_L_minus_K": 4.109245001857465e-20,
+      "total_mass": 1.0,
+      "violates_independent_pair_energy": true
+    },
+    {
+      "k": 7,
+      "l2_energy": 1.0,
+      "log_y": 16.11809565095832,
+      "max_pair_mass": 1.0,
+      "pair_count": 1,
+      "seed_fields_can_be_formally_registered": true,
+      "threshold_L_minus_K": 2.989968492493207e-21,
+      "total_mass": 1.0,
+      "violates_independent_pair_energy": true
+    },
+    {
+      "k": 8,
+      "l2_energy": 1.0,
+      "log_y": 18.420680743952367,
+      "max_pair_mass": 1.0,
+      "pair_count": 1,
+      "seed_fields_can_be_formally_registered": true,
+      "threshold_L_minus_K": 3.088897614197388e-22,
+      "total_mass": 1.0,
+      "violates_independent_pair_energy": true
+    },
+    {
+      "k": 9,
+      "l2_energy": 1.0,
+      "log_y": 20.723265836946414,
+      "max_pair_mass": 1.0,
+      "pair_count": 1,
+      "seed_fields_can_be_formally_registered": true,
+      "threshold_L_minus_K": 4.1707161302209386e-23,
+      "total_mass": 1.0,
+      "violates_independent_pair_energy": true
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.json": "6c1241bb0dd29f19cec15f147b56e495c551fb7e813158491d5a52201848d982",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-terminal-fusion-router.json": "cd82f3da195f2f7649c9c90b49e1322a969af7ed6179e9086b46034c9b31a3dc",
+    "docs/monograph/prime-matrix-strict-moving-atom-to-global-terminal-router.json": "23ef7a5d03efcc2e2a138c6fe4a1c3930a8414837e12bdce1f933c8b42bc8c2d",
+    "docs/monograph/prime-matrix-strict-new-actual-source-entropy-nonrecursive-guard-router.json": "e98a9dd57c529570b1a7fdf42b3481d44ab8787b5cb863f433c00eb0dd59a83e",
+    "docs/monograph/prime-matrix-strict-pair-mass-dispersion-to-moving-atom-router.json": "147492e300e83e0a0dc5da909a8a39c52f3db9990c5ddba367427f75ed6f83cb",
+    "docs/monograph/prime-matrix-triad-a1-continuous-terminal-dichotomy-router.md": "7279ff40b4841efa7092c1c982d813a7cdb03378bb9364ef535a42efccfe97ab"
+  },
+  "status": "strict_independent_pair_energy_reduced_to_rate_bearing_large_pair_packet_exclusion_open",
+  "strict_self_contained_math_basis_after_router": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "strict_self_contained_terminal_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "threshold_packet_fields": [
+    {
+      "field": "formal_unit_id",
+      "meaning": "与 pre-Cauchy seed、registered multipliers 和 terminal ledger 使用同一 formal unit。"
+    },
+    {
+      "field": "pair_key",
+      "meaning": "精确 `(u,v)`、path key、dyadic block、phase key 与 sign-refined branch key。"
+    },
+    {
+      "field": "mass_profile",
+      "meaning": "总绝对质量 M、pair 质量 M_b、L2 能量贡献和阈值 `M/L^K`。"
+    },
+    {
+      "field": "rate_certificate",
+      "meaning": "说明失败是 log-power 阈值失败，而不是仅仅定性 positive-limsup。"
+    },
+    {
+      "field": "return_tests",
+      "meaning": "逐项测试 PDEC、SAE/LocalSurvivor、ColumnCRT、CleanKLS/DLS、canonical-lock 与外部条件线。"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "certificate_type": "prime_matrix_strict_weighted_dyadic_endpoint_pdec_hdl_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链中处理 dyadic 负端点缺陷。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedHDLBridgeClosed",
+      "meaning": "Möbius HDL 已升级为 lower-weight 加权 HDL，避免权重口径偷换。",
+      "proved": true,
+      "remaining": "WeightedDyadicEndpointHDLCoreLoadExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "HighBlockSingleHitCoreLoadClosed",
+      "meaning": "高块缺陷可精确改写为加权逐列 coreload 异常。",
+      "proved": true,
+      "remaining": "WeightedPositiveEndpointHitDeficitPDEC OR WeightedNegativeEndpointHitSurplusCoreLoad"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedCofactorBandProjectionClosed",
+      "meaning": "过剩分支投影到 m<P+2 的互补因子带；单 m 容量仍受一个剩余类限制。",
+      "proved": true,
+      "remaining": "WeightedCofactorLoadCapacityOrColumnCRT"
+    },
+    {
+      "closed": false,
+      "gate": "DyadicEndpointPDECExcludedCurrentCorpus",
+      "meaning": "加权 HDL/CoreLoad 接桥闭合，但正权亏损、负权过剩和低/中块 PDEC 尚未排斥。",
+      "proved": false,
+      "remaining": "LowOrMiddleDyadicEndpointPDECExclusion AND WeightedPositiveEndpointHitDeficitPDEC AND WeightedNegativeEndpointHitSurplusCoreLoad"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnClosed",
+      "meaning": "当前只把 dyadic PDEC 压到加权 HDL/CoreLoad/互补因子出口。",
+      "proved": false,
+      "remaining": "AlphaLowerWeightMainGapPositiveAgainstHighLabelCapacity AND LowOrMiddleDyadicEndpointPDECExclusion AND WeightedDyadicEndpointHDLCoreLoadExclusion AND LowerWeightFarTailCoreOrSAEExclusion"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "dyadic_endpoint_pdec_excluded": false,
+  "empirical_absence_not_used": true,
+  "high_block_single_hit_coreload_closed": true,
+  "implications": [
+    {
+      "formula": "E_I(x)=sum_{d in I} lambda_d^- epsilon_d(x), epsilon_d=A_d-(P-1)/d.",
+      "meaning": "当前链使用 lower-weight，而不是 Möbius 裸权重。",
+      "name": "weighted_endpoint_block",
+      "status": "closed_definition"
+    },
+    {
+      "formula": "lambda_d^{low}=w_d^+ - w_d^-, with w_d^+,w_d^- >=0; E_I=(A_I^+-H R_I^+) - (A_I^--H R_I^-).",
+      "meaning": "任何负缺陷都可拆成正权端点亏损或负权端点过剩。",
+      "name": "positive_negative_weight_split",
+      "status": "closed_identity"
+    },
+    {
+      "formula": "If E_I<=-tau, then A_I^+<=H R_I^+-tau/2 or A_I^->=H R_I^-+tau/2.",
+      "meaning": "这是 HDL-9/HDL-10 的 lower-weight 加权版本。",
+      "name": "weighted_hdl_dichotomy",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "If d>H=P-1, then A_d(x)=1_{rho_d(x)<=H}.",
+      "meaning": "高 dyadic 块中每个模数最多命中一次，端点缺陷变成单命中偏斜。",
+      "name": "high_block_single_hit",
+      "status": "closed_imported"
+    },
+    {
+      "formula": "A_I^sigma=sum_{k<=H} sum_{d in I,d|G_z(k)} w_d^sigma.",
+      "meaning": "加权端点命中偏斜等价于逐列低素 squarefree 核的加权负载异常。",
+      "name": "weighted_coreload_identity",
+      "status": "closed_identity"
+    },
+    {
+      "formula": "For d>H, d|xP+c and m=(xP+c)/d imply m<P+2; weighted load projects to low cofactor band.",
+      "meaning": "奇/负权过剩若不集中为列锚，就必须在低互补因子带分布。",
+      "name": "weighted_cofactor_inversion",
+      "status": "closed_implication"
+    }
+  ],
+  "next_direct_attack_target": "WeightedPositiveEndpointHitDeficitPDEC",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "WeightedNegativeEndpointHitSurplusCoreLoad",
+    "WeightedCofactorLoadCapacityOrColumnCRT",
+    "LowOrMiddleDyadicEndpointPDECExclusion",
+    "LowerWeightFarTailCoreOrSAEExclusion",
+    "AlphaLowerWeightMainGapPositiveAgainstHighLabelCapacity"
+  ],
+  "plain_conclusion": "当前 alpha-prefix 链的 dyadic 端点缺陷带有 Rosser-Iwaniec lower-weight 权重，不能直接套用旧的 Möbius HDL。本文把 HDL-9/HDL-10 升级为加权形式：若某个 dyadic 块有 E_I<=-tau，则要么正权端点命中亏损，要么负权端点命中过剩。若该块在 d>P-1 的高区间，端点命中是单命中 CRT 事件，并精确等价于逐列低素核的加权 coreload 异常；过剩分支还可反演到 m<P+2 的低互补因子带。本步关闭权重口径和结构接桥，但尚未排斥这些加权异常。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-eda-alpha-tail-hcl-cofactor-inversion.md": "cc3d0d045ca2a5400dc3f5ad9153186a542c609271135ca0079cbc3e0abc8831",
+    "docs/monograph/prime-matrix-eda-alpha-tail-hdl-coreload-identity.md": "ed9d570405f9e95ce2c82e6aebed9deba7aafb77f8a8a330fdb92a11791fe901",
+    "docs/monograph/prime-matrix-eda-alpha-tail-highdyadic-endpoint-lock.md": "ad7938d988639d1a064ae383a105a0d2ac4536ddd43944d724bab6ca116a6ed3",
+    "docs/monograph/prime-matrix-strict-alpha-prefix-signed-endpoint-defect-split-router.md": "1b6528faeb7015177fb9b126549f5d1d0c81fbd77eb2cf89246f40202d39edf4"
+  },
+  "status": "weighted_dyadic_endpoint_pdec_reduced_to_hdl_coreload_cofactor_exclusion_open",
+  "weighted_cofactor_band_projection_closed": true,
+  "weighted_hdl_bridge_closed": true
+}

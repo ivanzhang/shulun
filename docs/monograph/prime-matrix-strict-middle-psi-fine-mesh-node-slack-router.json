@@ -1,0 +1,228 @@
+{
+  "anchor_propagation_rows": [
+    {
+      "anchor_aligned_to_mesh": true,
+      "anchor_psi": 800000037979.2747,
+      "anchor_slack": 22690020.725463867,
+      "anchor_x": 800000000000.0,
+      "certified_length": 7000000.0,
+      "certified_start_nodes_by_worst_increment": 7,
+      "gap_start_nodes_to_next_boundary": 100000,
+      "next_boundary": 900000000000.0,
+      "slack_in_required_floor_units": 7.382741515942197,
+      "uncovered_start_nodes_to_next_boundary": 99993
+    },
+    {
+      "anchor_aligned_to_mesh": true,
+      "anchor_psi": 899999777231.8761,
+      "anchor_slack": 25791768.124023438,
+      "anchor_x": 900000000000.0,
+      "certified_length": 8000000.0,
+      "certified_start_nodes_by_worst_increment": 8,
+      "gap_start_nodes_to_next_boundary": 100000,
+      "next_boundary": 1000000000000.0,
+      "slack_in_required_floor_units": 8.39196929798704,
+      "uncovered_start_nodes_to_next_boundary": 99992
+    },
+    {
+      "anchor_aligned_to_mesh": true,
+      "anchor_psi": 1000000040136.7654,
+      "anchor_slack": 28369863.23474121,
+      "anchor_x": 1000000000000.0,
+      "certified_length": 9000000.0,
+      "certified_start_nodes_by_worst_increment": 9,
+      "gap_start_nodes_to_next_boundary": 446258,
+      "next_boundary": 1446257064291.475,
+      "slack_in_required_floor_units": 9.230814270243213,
+      "uncovered_start_nodes_to_next_boundary": 446249
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_middle_psi_fine_mesh_node_slack_router",
+  "certified_short_interval_psi_increment_upper_closed": false,
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "MiddlePsiFineMeshNodeSlackGateActive",
+    "MeshDefinitionAndEndpointLedger",
+    "RequiredNodeSlackFloorImported",
+    "SparseDusartAnchorsCannotReplaceFineMesh",
+    "NodeTableSchemaContractClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "deleglise_rivat_psi_node_data_or_equivalent_hash_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "machine_readable_node_table_present": false,
+  "mesh_completeness_and_index_hash_closed": false,
+  "mesh_definition_endpoint_closed": true,
+  "mesh_profile": {
+    "final_interval_length": 64291.47509765625,
+    "first_start_node": 800000000000.0,
+    "last_start_node": 1446257000000.0,
+    "mesh_h": 1000000.0,
+    "mesh_id_sha256": "7f24359883a054c7ee18ac1c95a12be33282577cb64836c59ae3759abd442294",
+    "regular_endpoint_overshoot": 935708.5249023438,
+    "required_node_slack_floor": 3073386.85452651,
+    "required_record_fields": [
+      "i",
+      "x_i",
+      "psi_upper_or_exact",
+      "target_ratio_x_i_minus_psi_lower_slack",
+      "slack_ge_required_floor",
+      "computation_method",
+      "directed_rounding_mode",
+      "source_or_chunk_hash"
+    ],
+    "start_node_count": 646258,
+    "start_node_rule": "x_i=x_left+i*h for 0<=i<ceil((x_right-x_left)/h), final interval clipped at x_right",
+    "target_ratio": 1.00002841,
+    "x_left": 800000000000.0,
+    "x_right": 1446257064291.475
+  },
+  "middle_psi_fine_mesh_node_slack_floor_hash_closed": false,
+  "middle_psi_upper_directed_rounding_closed": false,
+  "next_direct_attack_target": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger",
+  "no_theorem_switch": true,
+  "node_slack_floor_audit_closed": false,
+  "node_table_presence": {
+    "candidate_paths": [
+      "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-table.json",
+      "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-table.jsonl",
+      "data/middle-psi-fine-mesh-node-table.jsonl"
+    ],
+    "existing_paths": [],
+    "machine_readable_node_table_present": false
+  },
+  "node_table_schema_contract_closed": true,
+  "open_gates": [
+    "MachineReadableNodeTablePresent",
+    "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger",
+    "NodeSlackFloorAuditLedger",
+    "MeshCompletenessAndIndexHashLedger",
+    "MiddlePsiUpperDirectedRoundingLedger",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "BrunTitchmarshShortIntervalPrimeCountUpperLedger",
+    "PrimePowerShortIntervalCorrectionLedger",
+    "NodeSlackFloorAuditLedger",
+    "MeshCompletenessAndIndexHashLedger",
+    "MiddlePsiUpperDirectedRoundingLedger"
+  ],
+  "plain_conclusion": "细网格节点余量/hash 的边界现在清楚了：需要覆盖 646258 个百万网格起始节点。Dusart Table 6.2 的稀疏点值虽然强，但在最坏短区间增量传播下只能从每个锚点推出个位数百万网格的安全余量，无法跨越十万级点间缺口。因此节点表或等价可复算 psi 算法/hash 是不可省略输入。",
+  "replacement_self_contained": {
+    "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger": "machine-readable psi node table or reproducible exact psi computation over the certified mesh",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger AND NodeSlackFloorAuditLedger AND MeshCompletenessAndIndexHashLedger AND MiddlePsiUpperDirectedRoundingLedger"
+  },
+  "required_node_slack_floor_imported": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只补中段解析输入证书，不用真实零行缺席来替代假设反例链。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MiddlePsiFineMeshNodeSlackGateActive",
+      "meaning": "短区间增量账本已把百万网格路线的主要缺口压成节点余量和 hash。",
+      "proved": true,
+      "remaining": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "MeshDefinitionAndEndpointLedger",
+      "meaning": "百万网格端点、起始节点数、最后截断区间和记录字段已经固定。",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "RequiredNodeSlackFloorImported",
+      "meaning": "从短区间增量账本继承每个起始节点至少约 3.073386e6 的绝对余量门槛。",
+      "proved": true,
+      "remaining": "node table must certify every start node above this floor"
+    },
+    {
+      "closed": true,
+      "gate": "SparseDusartAnchorsCannotReplaceFineMesh",
+      "meaning": "Table 6.2 的 8e11、9e11、1e12 稀疏锚点在最坏增量传播下只能覆盖个位数百万网格，不能跨越十万级缺口。",
+      "proved": true,
+      "remaining": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NodeTableSchemaContractClosed",
+      "meaning": "节点表必须逐行给出 i、x_i、psi 上界或精确值、余量、舍入模式和分块 hash。",
+      "proved": true,
+      "remaining": "MeshCompletenessAndIndexHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "MachineReadableNodeTablePresent",
+      "meaning": "仓库当前未发现覆盖 646258 个起始节点的机器可读 psi 节点表。",
+      "proved": false,
+      "remaining": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger",
+      "meaning": "需要 Deléglise-Rivat 数据或等价可复算算法输出，并绑定版本、端点、舍入和 hash。",
+      "proved": false,
+      "remaining": "external data archive or internal exact psi computation certificate"
+    },
+    {
+      "closed": false,
+      "gate": "NodeSlackFloorAuditLedger",
+      "meaning": "需要逐节点检查 target*x_i-psi(x_i) >= required_node_slack_floor。",
+      "proved": false,
+      "remaining": "requires machine-readable node table"
+    },
+    {
+      "closed": false,
+      "gate": "MeshCompletenessAndIndexHashLedger",
+      "meaning": "需要证明索引 0..646257 无缺行、无重复、端点截断一致，并给出整体 hash。",
+      "proved": false,
+      "remaining": "requires canonical table serialization"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiUpperDirectedRoundingLedger",
+      "meaning": "需要外向舍入规则，防止浮点/十进制表值把 4.46e-11 级拼接余量吃掉。",
+      "proved": false,
+      "remaining": "directed rounding proof"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+      "meaning": "本步关闭了网格合同和稀疏锚点失败审计，但没有节点数据/hash，故节点余量守门仍开放。",
+      "proved": false,
+      "remaining": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger AND NodeSlackFloorAuditLedger AND MeshCompletenessAndIndexHashLedger AND MiddlePsiUpperDirectedRoundingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+      "meaning": "即使节点余量未来闭合，短区间总包仍还要 BT 输入和素数幂修正。",
+      "proved": false,
+      "remaining": "BrunTitchmarshShortIntervalPrimeCountUpperLedger AND PrimePowerShortIntervalCorrectionLedger AND MiddlePsiFineMeshNodeSlackFloorAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "细网格节点合同不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c1d163623d398e086c70df9ff14b5005638b8aba941bf1d06b4f66d1fa175fdd",
+    "docs/monograph/prime-matrix-strict-middle-finite-interval-psi-cover-router.json": "e88176a9db7287576c411f9001034f51fd43d4106c03a0155ddc36e7b19a4419",
+    "docs/monograph/prime-matrix-strict-short-interval-psi-increment-router.json": "eb249ee130f441024741a0f9b9f51267eb9b15381017e774af61dd774f673edf"
+  },
+  "sparse_dusart_anchors_cannot_replace_fine_mesh": true,
+  "status": "fine_mesh_node_contract_closed_sparse_anchors_rejected_node_data_hash_open"
+}

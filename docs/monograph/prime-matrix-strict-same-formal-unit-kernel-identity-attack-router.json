@@ -1,0 +1,155 @@
+{
+  "bridge_fields_closed": true,
+  "certificate_type": "prime_matrix_strict_same_formal_unit_kernel_identity_attack_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "formal_unit_no_loss_available": true,
+  "frontier_equivalence": "SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion 不能由 formal-unit 记录守恒、几何 Phi 基底或 signed 解积分形式自动推出；它等价于先提交 `PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate`：逐 primitive row 给出 source tuple、signed weight、exact `(u,v)`、Phi atom、local factor 非零、rank/multiplicity 证书和命名回流。",
+  "kernel_identity_attack_router_closed": true,
+  "kernel_table_fields": [
+    {
+      "field": "formal_unit_id",
+      "requirement": "锁定同一 witness/formal unit，不允许 source、Phi、fiber 分别换口径。"
+    },
+    {
+      "field": "primitive_row_id",
+      "requirement": "alpha/delta primitive row 的规范索引和排序，发射前确定。"
+    },
+    {
+      "field": "source_tuple_hash",
+      "requirement": "连接 source tuple、anchor 参数、branch path 和 local factor。"
+    },
+    {
+      "field": "signed_weight",
+      "requirement": "由 pre-Cauchy 算术恒等式给出，不由零行覆盖或 payment 反推。"
+    },
+    {
+      "field": "uv_map",
+      "requirement": "逐行输出 exact `(u,v)`，并与后续 fiber 分散同口径。"
+    },
+    {
+      "field": "phi_atom",
+      "requirement": "逐行给出 Phi/payment atom，含端点、重数、符号口径。"
+    },
+    {
+      "field": "local_factor_nonzero",
+      "requirement": "证明 local factor 非零；失败必须命名回流。"
+    },
+    {
+      "field": "rank_or_multiplicity_certificate",
+      "requirement": "对同一 `(u,v)`/fiber 给出 rank、bounded multiplicity 或分散证书。"
+    },
+    {
+      "field": "return_tag",
+      "requirement": "字段缺失、超预算、Phi 不等、rank 坍缩、canonical 泄漏均登记命名出口。"
+    }
+  ],
+  "next_direct_attack_target": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步直接攻核恒等式本身。已有 formal unit 抽取、finite key、source record 和 no-loss 账本，可以保证任意假设 witness 的对象被同一账本命名且不丢失；但这些账本不含 alpha/delta 的逐点 signed coefficient value。几何 Phi、解积分和 exact-UV 分散都需要同一张 primitive 核表来对齐。因此真正最窄破坏输入继续压缩为逐点同 formal-unit primitive alpha/delta 核表，而当前仍未闭合。",
+  "pointwise_primitive_kernel_table_proved": false,
+  "reverse_source_recovery_blocked": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "KernelIdentityTargetActive",
+      "meaning": "上一层已把非递归破环包压成同 formal-unit pre-Cauchy alpha/delta 核恒等式。",
+      "proved": false,
+      "remaining": "SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitExtractionAndNoLossAvailable",
+      "meaning": "任意假设 witness 可被分割成有限 formal units，且义务不丢失。",
+      "proved": true,
+      "remaining": "这只保证记录守恒，不给 signed coefficient value。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTupleContainerAvailableButNotCoefficient",
+      "meaning": "source tuple/anchor 参数字段和哈希纪律可用。",
+      "proved": true,
+      "remaining": "容器字段不能替代 primitive row 发射公式或 signed 权重公式。"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveRuleStillNeedsEmissionAndWeight",
+      "meaning": "alpha 侧 primitive rule 已拆成定义域、发射映射、权重公式、输出字段和回流。",
+      "proved": false,
+      "remaining": "缺少逐 primitive row 的显式发射和系数权重。"
+    },
+    {
+      "closed": true,
+      "gate": "EmissionMapOpenAtAnchorPhaseFormula",
+      "meaning": "确定性发射映射已排除 downstream/payment 反选。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger"
+    },
+    {
+      "closed": true,
+      "gate": "WeightLawOpenAtIndependentArithmeticIdentity",
+      "meaning": "signed 权重律已排除零行几何和 payment 反推。",
+      "proved": false,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationFormalButNeedsPointwiseTable",
+      "meaning": "给定 signed source 后，逐纤维解积分只是形式闭合。",
+      "proved": false,
+      "remaining": "必须先有逐 primitive row 核表，才能做 Phi 推前求和。"
+    },
+    {
+      "closed": true,
+      "gate": "PhiGeometryDoesNotCreateEquality",
+      "meaning": "几何 Phi/payment base 和预算形状已知。",
+      "proved": false,
+      "remaining": "Phi_*nu 等于 payment-side 系数仍需要逐点核表求和证明。"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVDispersionStillNeedsSameTableRank",
+      "meaning": "ExactUV fiber 分散已压到 primitive emitter multiplicity。",
+      "proved": false,
+      "remaining": "没有同一 primitive key 表，就无法把 rank/multiplicity 证书与 signed source 对齐。"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseSourceAndZeroRowRecoveryBlocked",
+      "meaning": "不能从 downstream payment skeleton 或早期零行 unsigned cover 反推 source。",
+      "proved": true,
+      "remaining": "核表必须正向提交，不能后验恢复。"
+    },
+    {
+      "closed": false,
+      "gate": "KernelIdentityCurrentCorpusProved",
+      "meaning": "当前材料没有逐 primitive row 的同 formal-unit alpha/delta 核表。",
+      "proved": false,
+      "remaining": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    }
+  ],
+  "same_formal_unit_kernel_identity_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-geometric-phi-budget-bridge-router.json": "22a096c2970a64f75006668179204f9ee7b49e802350b318255c1f543a790df0",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-finite-formal-unit-partition-key-router.json": "0b0ed00b048fe27701d309092dad1c1fc572d451a3ab0dbd4741238ca1e0c370",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.json": "85267c016c03c757d219b04712940825a69020299717a6448aa12b1d110215d2",
+    "docs/monograph/prime-matrix-strict-absolute-fiber-mass-dispersion-router.json": "04aea575c70e9001b04b818cd3ad3d38bc43f2c9fbd6078b521475e5dbe204d2",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-deterministic-alpha-row-emission-map-router.json": "d980647c15a9fd16b0e4255b5af3f2ce69ab5575dbe0d7a80a8b1ade70b0d177",
+    "docs/monograph/prime-matrix-strict-nonrecursive-constructor-signed-lift-breaker-router.json": "cfd230650a1f68fc759a7655672c0005c3645fa3bd382621c6927d38b4d629bf",
+    "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.json": "3e210402e7ca3d14e9388e0584ad5f5651435cc05d3ba1d4c1f485b41f01e07e"
+  },
+  "source_tuple_container_available": true,
+  "status": "same_formal_unit_kernel_identity_reduced_to_pointwise_primitive_kernel_table_open",
+  "target_input_before_router": "SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion",
+  "zero_row_unsigned_recovery_blocked": true
+}

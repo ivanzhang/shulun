@@ -1,0 +1,132 @@
+{
+  "backlund_common_envelope_imported": true,
+  "certificate_type": "prime_matrix_strict_rvm_cn16_self_contained_sync_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "BacklundCommonEnvelopeImported",
+    "CS8BoundaryBridgeAlgebraReady",
+    "CS8SelfContainedSynchronized",
+    "EndpointConventionSelfContained",
+    "LowHeightXiSelfContained",
+    "RawArgNormalizationPassesCN16",
+    "RVMToCN16SelfContainedSynchronized"
+  ],
+  "counterexample_assumption_only": true,
+  "cs8_self_contained_synchronized": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "local_zero_distance_self_contained_proved": false,
+  "next_direct_attack_target": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "LocalZeroDistanceStillNeedsLogDerivativeLedger",
+    "UnsmoothedPerronStrictSelfContainedClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "RVM->C_N=16 的自足同步已完成到证书层：共同包络关闭 Backlund 缩进原子后，CS8 紧等号账本不再需要外部 Backlund；端点 convention 与低高度 xi 子包已自足，RVM 原始 arg 归一化的系数 10.4266<16 可直接接入。但这只关闭局部零点计数输入，尚未关闭 Perron 水平边的内部 log-derivative、局部倒距离和加权预算。",
+  "post_local_target": "Psi0HorizontalWeightedIntegralBudgetLedger",
+  "remaining_after_rvm_sync": [
+    "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger",
+    "Psi0HorizontalLocalZeroDistanceSumConstantLedger",
+    "Psi0HorizontalWeightedIntegralBudgetLedger"
+  ],
+  "replacement_self_contained": {
+    "BacklundCS8SlackAfterBridgeLedger": "BacklundCS8SlackAfterBridgeSelfContainedClosedTightHalfByCommonEnvelope",
+    "RVMToCN16LocalInequalityLedger": "RVMToCN16LocalInequalitySelfContainedClosedWithRawArgCS8CommonEnvelope"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "同步仍只在假设反例链解析输入内部进行，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "BacklundCommonEnvelopeImported",
+      "meaning": "Backlund 缩进内部证明原子已由共同高高度包络调和闭合。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "CS8BoundaryBridgeAlgebraReady",
+      "meaning": "C_boundary=16 与 bridge factor=1/2 的代数验收已给出 C_S=8 紧等号。",
+      "proved": true,
+      "remaining": "16 * 1/2 = 8"
+    },
+    {
+      "closed": true,
+      "gate": "CS8SelfContainedSynchronized",
+      "meaning": "原先 CS8 只因 Backlund 缩进外部输入而标作条件；共同包络替换后，该 CS8 账本可作者侧同步。",
+      "proved": true,
+      "remaining": "BacklundCS8SlackAfterBridgeSelfContainedClosedTightHalfByCommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointConventionSelfContained",
+      "meaning": "端点避零与重数极限 convention 已自足闭合，且不新增 C_S 或 C_N 常数。",
+      "proved": true,
+      "remaining": "EndpointZeroAvoidanceMultiplicityConventionClosedByLimit"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightXiSelfContained",
+      "meaning": "0<t<=14 的低高度零点检查已由 xi 矩形零点计数 0 回灌。",
+      "proved": true,
+      "remaining": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed"
+    },
+    {
+      "closed": true,
+      "gate": "RawArgNormalizationPassesCN16",
+      "meaning": "RVM 中使用原始 arg zeta 常数后，总系数约 10.4266，小于目标 C_N=16；规范化 S 解释已被拒绝。",
+      "proved": true,
+      "remaining": "raw_arg_rvm_coefficient < C_N_target"
+    },
+    {
+      "closed": true,
+      "gate": "RVMToCN16SelfContainedSynchronized",
+      "meaning": "Backlund C8、端点 convention、低高度 xi 与 RVM 原始 arg 代数全部接通后，C_N=16 局部计数可同步为作者侧输入。",
+      "proved": true,
+      "remaining": "RVMToCN16LocalInequalitySelfContainedClosedWithRawArgCS8CommonEnvelope"
+    },
+    {
+      "closed": false,
+      "gate": "LocalZeroDistanceStillNeedsLogDerivativeLedger",
+      "meaning": "C_N=16 同步只给局部零点数量；Perron 水平边还需要内部 log-derivative 展开和局部倒距离常数账本。",
+      "proved": false,
+      "remaining": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger"
+    },
+    {
+      "closed": false,
+      "gate": "UnsmoothedPerronStrictSelfContainedClosed",
+      "meaning": "本步不关闭非平滑 Perron 自足包；加权预算仍等待 pointwise 水平边上界。",
+      "proved": false,
+      "remaining": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只是解析输入同步，不产生全局反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "rvm_cn16_self_contained_resynchronized": true,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "Psi0HorizontalLocalZeroDistanceSumConstantLedger",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "da21654814b78e117b1dc4cd2ba81da8404778f98c41d790ac0b7c09636b2a36",
+    "docs/monograph/prime-matrix-b3-cs8-slack-router.json": "c20bc57f2210c2402bb677b744eae3707a675ef7cec637d1c3999d87868bde20",
+    "docs/monograph/prime-matrix-b3-endpoint-multiplicity-convention-router.json": "f7a59c00e6f495bdcf9e82a0b84664a43dbc18ed931760f1b4103006b4910604",
+    "docs/monograph/prime-matrix-b3-rvm-to-cn16-local-inequality-router.json": "3e7fa721aef0fe9660b70b6e8f9bd3ecb1e926ddbf12ec4b341163199ac0ca13",
+    "docs/monograph/prime-matrix-backlund-common-envelope-internal-closure-router.json": "2c533c8d724debd7ffc4a0b387aca237a9d36f5d6d62454ea0058e1f88766130",
+    "docs/monograph/prime-matrix-lowheight-xi-backlund-integration-router.json": "183c1d656480d1664a48b5a0fde1e744ef389bf734ff1b77720e5e061e963bc8",
+    "docs/monograph/prime-matrix-strict-backlund-internal-closure-reconciliation-router.json": "8f57e8ec22db4d7b6a24a0c84c128e93ec264429f2caddf72ca6a0e51e99db45"
+  },
+  "status": "rvm_cn16_self_contained_synchronized_horizontal_logder_still_open",
+  "unsmoothed_perron_strict_self_contained_closed": false,
+  "weighted_budget_self_contained_proved": false
+}

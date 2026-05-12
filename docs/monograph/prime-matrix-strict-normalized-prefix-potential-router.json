@@ -1,0 +1,125 @@
+{
+  "certificate_type": "prime_matrix_strict_normalized_prefix_potential_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_small_p_boundary_prefix_certificate_proved": false,
+  "formal_unit_type_threshold_ledger_proved": false,
+  "hardpoint_after_router": "UniformPrefixRoughCountLowerBound AND FormalUnitTypeThresholdLedger AND FiniteSmallPBoundaryPrefixCertificate",
+  "hardpoint_before_router": "NormalizedPrefixResidualPotentialLowerBound",
+  "multiplier_to_rough_count_reduction_closed": true,
+  "next_direct_attack_target": "UniformPrefixRoughCountLowerBound",
+  "no_theorem_switch": true,
+  "noncircular_prefix_cutoff_window_identified": true,
+  "normalized_prefix_residual_potential_lower_bound_proved": false,
+  "parallel_attack_targets": [
+    "FormalUnitTypeThresholdLedger",
+    "FiniteSmallPBoundaryPrefixCertificate",
+    "PrefixLabelSupportToRowFreeTypeAntiCollapse"
+  ],
+  "plain_conclusion": "`NormalizedPrefixResidualPotentialLowerBound` 已被压成确定的筛余问题：容量纪律给出 M#_{x,z}>=|R_{x,z}|/ceil(P/z)。因此只要在某个非循环 prefix 窗口 z<=P^(1/2-eps) 证明统一粗筛余下界 |R_{x,z}|>=c P/log z，就得到 M#>=c z/log z。剩余是三件事：证明或引用显式低界筛、给出 formal-unit 类型阈值账本、并补有限小 P 证书；之后仍要做标签到类型的抗塌缩。",
+  "potential_reductions": [
+    {
+      "formula": "M#_{x,z} >= |R_{x,z}| / ceil(P/z).",
+      "reduction": "multiplier_to_rough_count",
+      "status": "closed"
+    },
+    {
+      "formula": "For z<=P^(1/2-eps), a lower-bound sieve would give |R_{x,z}| >= c_eps P/log z after finite constants.",
+      "reduction": "classical_sieve_window",
+      "status": "external_or_internal_input_open"
+    },
+    {
+      "formula": "Combining the two gives M#_{x,z} >= c_eps z/log z.",
+      "reduction": "normalized_growth",
+      "status": "conditional_on_rough_count"
+    },
+    {
+      "formula": "Need c_eps z/log z > T_formal(P,z) on the same row-free type alphabet.",
+      "reduction": "type_threshold_comparison",
+      "status": "open"
+    },
+    {
+      "formula": "Explicit constants leave a finite P range that must be certified separately.",
+      "reduction": "finite_small_p",
+      "status": "open"
+    }
+  ],
+  "prefix_label_support_to_row_free_type_anticollapse_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NormalizedPotentialInputActive",
+      "meaning": "上一层已把容量乘子纪律后的直接硬点定为 M# 归一化势下界。",
+      "proved": false,
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍只在早期零行假设下研究 prefix 残洞势，不使用真实缺席数据。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MultiplierToRoughCountReductionClosed",
+      "meaning": "由 mu_q<=ceil(P/z) 得 M#>=|R_{x,z}|/ceil(P/z)，把归一化势压到 prefix 粗筛余数量。",
+      "proved": true,
+      "remaining": "需要 |R_{x,z}| 下界。"
+    },
+    {
+      "closed": true,
+      "gate": "NoncircularCutoffWindowIdentified",
+      "meaning": "若取 z<=P^(1/2-eps)，筛的 level 可保持在窗口长度 P 内，避免自然 cutoff x~P 的短素数屏障。",
+      "proved": true,
+      "remaining": "需要显式低界筛常数或内部化证明。"
+    },
+    {
+      "closed": false,
+      "gate": "UniformPrefixRoughCountCurrentCorpusProved",
+      "meaning": "当前语料尚未逐行证明 |R_{x,z}|>=c P/log z；这可作为经典低界筛外部输入或内部化目标。",
+      "proved": false,
+      "remaining": "UniformPrefixRoughCountLowerBound"
+    },
+    {
+      "closed": false,
+      "gate": "FormalUnitTypeThresholdLedgerCurrentCorpusProved",
+      "meaning": "尚未给出同一 row-free type alphabet 的阈值 T_formal(P,z)，所以还不能比较 M# 与类型数。",
+      "proved": false,
+      "remaining": "FormalUnitTypeThresholdLedger"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteSmallPBoundaryPrefixCurrentCorpusProved",
+      "meaning": "即使采用显式筛常数，也会留下有限小 P 段；该证书尚未物化。",
+      "proved": false,
+      "remaining": "FiniteSmallPBoundaryPrefixCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "NormalizedPrefixPotentialCurrentCorpusProved",
+      "meaning": "M# 势的内部公式已闭合，但全局下界、阈值比较和有限段证书仍未完成。",
+      "proved": false,
+      "remaining": "UniformPrefixRoughCountLowerBound AND FormalUnitTypeThresholdLedger AND FiniteSmallPBoundaryPrefixCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "StillNeedsAntiCollapseAfterPotential",
+      "meaning": "即便 M# 足够大，仍需证明不同标签支撑不在 row-free type/quotient 中塌缩。",
+      "proved": false,
+      "remaining": "PrefixLabelSupportToRowFreeTypeAntiCollapse"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-meissel-mertens-interval-external-router.md": "bf55e7c61d4cbf103d2447c450d258fd656d9a7b204b7218762a5d08a9abd119",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-eda-alpha-main-gap-constant-package.md": "95b5d6b837241f485c96246cd48b112ee6207865b226425d46d97a1b5292f8ef",
+    "docs/monograph/prime-matrix-eda-dls13-buchstab-barrier.md": "fa84e73c14df6ab719c72b9ba97b5f8a6d74834759c5824ab7a00672477d6bc4",
+    "docs/monograph/prime-matrix-strict-prefix-capacity-multiplier-discipline-router.json": "10d4d7aab7648367047e86acd7069d1986730a138b8c74e4d8a8269378119e65"
+  },
+  "status": "normalized_prefix_potential_reduced_to_rough_count_type_threshold_finite_check_open",
+  "uniform_prefix_rough_count_lower_bound_proved": false
+}

@@ -1,0 +1,213 @@
+{
+  "archive_spec": {
+    "canonical_serialization": "JSONL sorted by i, UTF-8, LF, one record per start node",
+    "expected_node_count": 646258,
+    "first_index": 0,
+    "last_index": 646257,
+    "mesh_h": 1000000.0,
+    "min_records_per_required_archive": 646258,
+    "minimum_required_fields": [
+      "i",
+      "x_i",
+      "psi_value",
+      "psi_upper_for_slack",
+      "slack_lower_bound",
+      "slack_ge_required_floor",
+      "psi_exe_sha256",
+      "source_commit"
+    ],
+    "x_left": 800000000000.0,
+    "x_right": 1446257064291.475
+  },
+  "archive_specification_closed": true,
+  "canonical_batch_psi_node_runner_closed": true,
+  "certificate_type": "prime_matrix_strict_machine_readable_node_archive_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ArchiveSpecificationLedger",
+    "TargetScaleSingleNodeSampleLedger",
+    "AuditCheckerAvailable",
+    "PerNodeCliArchiveRouteRejected",
+    "NativeRangePsiThetaBatchExecutableLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "deleglise_rivat_psi_node_data_or_equivalent_hash_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_precomputed_psi_node_archive_with_hash_closed": false,
+  "full_node_archive_completeness_and_hash_closed": false,
+  "machine_readable_node_archive_closed": false,
+  "middle_psi_fine_mesh_node_slack_floor_hash_closed": false,
+  "native_range_profile": {
+    "native_executable": "/tmp/PsiTheta/psi_range_jsonl",
+    "native_executable_present": true,
+    "native_executable_sha256": "63dfb335717d8872909c3bbe4b202c7ef1dcf1a0fbb7c4be9775d3c96cefb541",
+    "native_sample": "/tmp/middle-psi-native-range-sample.jsonl",
+    "native_sample_all_slack_ok": true,
+    "native_sample_count": 1,
+    "native_sample_present": true,
+    "native_sample_records": [
+      {
+        "i": 0,
+        "psi_precision_decimal_digits": 30,
+        "psi_raw_output": "8.00000037979274743740661814686126645242e+11",
+        "psi_rounding_error_bound": "1.00000000000000000000000000000000000000e-18",
+        "psi_rounding_mode": "MPFR_RNDN_value_wrapped_up_by_one_decimal_ulp_for_slack_lower_bound",
+        "psi_upper_for_slack": "8.00000037979274743740661814687126645242e+11",
+        "psi_value": "8.00000037979274743740661814686126645242e+11",
+        "required_node_slack_floor": "3073386.85452651",
+        "slack_ge_required_floor": true,
+        "slack_lower_bound": "2.26900207252562593381853128733547583280e+07",
+        "source_commit": "21f4f6553851f218801a733f607426c3dba9ba11",
+        "x_i": 800000000000
+      }
+    ],
+    "native_sample_sha256": "f84cd89576611083f75926f730cada3d44e5c6c3fe6b4e56e615e7a13901693c",
+    "native_source": "experiments/prime_matrix_middle_psi_native_range_runner.cpp",
+    "native_source_present": true,
+    "native_source_sha256": "0a9e48ee092d5ab07d8bf86ecfb30df0ff65cd6d59dc85a48f4e4b2e2ac818a0"
+  },
+  "native_range_psi_theta_batch_executable_closed": true,
+  "next_direct_attack_target": "FullNodeArchiveCompletenessAndHashLedger",
+  "no_theorem_switch": true,
+  "node_table_audit_checker_available": true,
+  "open_gates": [
+    "ExternalPrecomputedPsiNodeArchiveWithHashLedger",
+    "FullNodeArchiveCompletenessAndHashLedger",
+    "MachineReadableNodeArchiveLedger",
+    "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "ExternalPrecomputedPsiNodeArchiveWithHashLedger",
+    "SourceAlgorithmToDusartConventionMatch",
+    "FullNodeArchiveCompletenessAndHashLedger"
+  ],
+  "per_node_cli_archive_route_rejected": true,
+  "plain_conclusion": "机器可读节点归档已经压成一个明确的工程-数学证书：规格、目标首节点样本和验收器就绪，但完整 646258 行表尚未生成。单点 CLI 路线不能作为完整归档策略；原生 range 批量可执行文件已跑通样本，下一步应生成完整归档并验收 hash，或导入外部完整归档。",
+  "replacement_after_this": {
+    "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger": "MachineReadableNodeArchiveLedger AND SourceAlgorithmToDusartConventionMatch",
+    "MachineReadableNodeArchiveLedger": "(NativeRangePsiThetaBatchExecutableLedger OR ExternalPrecomputedPsiNodeArchiveWithHashLedger) AND FullNodeArchiveCompletenessAndHashLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只处理 psi 节点归档的机器可读性，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ArchiveSpecificationLedger",
+      "meaning": "完整归档必须覆盖 646258 个百万网格起始节点，并采用稳定 JSONL/hash 口径。",
+      "proved": true,
+      "remaining": "FullNodeArchiveCompletenessAndHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TargetScaleSingleNodeSampleLedger",
+      "meaning": "目标区间首节点样本已生成并过余量门槛，但样本不是完整归档。",
+      "proved": true,
+      "remaining": "MachineReadableNodeArchiveLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AuditCheckerAvailable",
+      "meaning": "已有节点表验收器可检查节点数、索引、x_i、余量和 SHA256。",
+      "proved": true,
+      "remaining": "requires full archive as input"
+    },
+    {
+      "closed": true,
+      "gate": "PerNodeCliArchiveRouteRejected",
+      "meaning": "原单点 CLI 即使可运行，也不能作为完整归档策略；需要原生 range 批量程序或外部预计算归档。",
+      "proved": true,
+      "remaining": "NativeRangePsiThetaBatchExecutableLedger OR ExternalPrecomputedPsiNodeArchiveWithHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NativeRangePsiThetaBatchExecutableLedger",
+      "meaning": "已新增并编译 C++ 原生 range runner，目标首节点样本输出通过余量门槛。",
+      "proved": true,
+      "remaining": "full archive generation still required"
+    },
+    {
+      "closed": false,
+      "gate": "ExternalPrecomputedPsiNodeArchiveWithHashLedger",
+      "meaning": "或者导入外部已计算的完整节点表，并登记来源、版本和整体 SHA256。",
+      "proved": false,
+      "remaining": "precomputed full archive"
+    },
+    {
+      "closed": false,
+      "gate": "FullNodeArchiveCompletenessAndHashLedger",
+      "meaning": "需要完整 646258 行通过 audit 脚本，并固定整体 hash。",
+      "proved": false,
+      "remaining": "full archive must exist"
+    },
+    {
+      "closed": false,
+      "gate": "MachineReadableNodeArchiveLedger",
+      "meaning": "归档规格、样本和验收器已就绪，但完整机器可读节点归档仍未生成。",
+      "proved": false,
+      "remaining": "(NativeRangePsiThetaBatchExecutableLedger OR ExternalPrecomputedPsiNodeArchiveWithHashLedger) AND FullNodeArchiveCompletenessAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger",
+      "meaning": "节点归档未闭合时，等价计算数据/hash 仍不能升级。",
+      "proved": false,
+      "remaining": "MachineReadableNodeArchiveLedger AND SourceAlgorithmToDusartConventionMatch"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+      "meaning": "节点归档未闭合时，节点余量/hash 守门仍开放。",
+      "proved": false,
+      "remaining": "MachineReadableNodeArchiveLedger AND NodeSlackFloorAuditLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "节点归档路由不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "sample_profile": {
+    "sample_all_slack_ok": true,
+    "sample_count": 1,
+    "sample_path": "/tmp/middle-psi-nodes-sample.jsonl",
+    "sample_present": true,
+    "sample_records": [
+      {
+        "i": 0,
+        "psi_exe_sha256": "e35085f321fa472c3e96a1e674e99bb02e603045bb5e3c5f25cf66df696ea4cb",
+        "psi_precision_decimal_digits": 30,
+        "psi_raw_output": "8.00000037979274743740661814686e11",
+        "psi_rounding_error_bound": "1E-18",
+        "psi_rounding_mode": "MPFR_RNDN_output_wrapped_up_by_one_ulp_for_slack_lower_bound",
+        "psi_upper_for_slack": "800000037979.274743740661814687",
+        "psi_value": "800000037979.274743740661814686",
+        "required_node_slack_floor": "3073386.85452651",
+        "slack_ge_required_floor": true,
+        "slack_lower_bound": "22690020.725256259338185313",
+        "source_commit": "21f4f6553851f218801a733f607426c3dba9ba11",
+        "x_i": 800000000000
+      }
+    ],
+    "sample_sha256": "a3e3a64a0e5ddf761d90b043b3896681a42e4df044412ccff03caa57ebbdba11"
+  },
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "f2b5812ae08840270293d96eb87a5c5669c7bcec7549295bbe069c81d7c6730e",
+    "docs/monograph/prime-matrix-strict-deleglise-rivat-psi-node-data-router.json": "e769c94f1d695ebdafaad982a5e79bcd0f2a7c56f29ae91f4dea7311d6ffd70d",
+    "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-slack-router.json": "81d71543d55500a13c1bf982774ebcf6237c2f89d5ce590df1261bde43bf2e0c",
+    "experiments/prime_matrix_middle_psi_native_range_runner.cpp": "0a9e48ee092d5ab07d8bf86ecfb30df0ff65cd6d59dc85a48f4e4b2e2ac818a0"
+  },
+  "status": "node_archive_spec_sample_audit_ready_full_archive_open",
+  "target_scale_single_node_sample_closed": true
+}

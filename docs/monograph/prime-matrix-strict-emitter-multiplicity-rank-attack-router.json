@@ -1,0 +1,87 @@
+{
+  "alpha_delta_dictionary_not_rank_proof": true,
+  "branch_budget_not_map_rank": true,
+  "certificate_type": "prime_matrix_strict_emitter_multiplicity_rank_attack_router",
+  "counterexample_assumption_only": true,
+  "emitter_multiplicity_rank_attack_closed": true,
+  "hard_law": "multiplicity 分散的底层不是 payment count，也不是 alpha/delta 字典存在性，而是 exact `(u,v)` 映射的秩/无坍缩性质。branch key 复杂度小只说明可审计，不说明不同 branch 不会落入同一个 pair；必须直接证明 no-fiber-collapse。",
+  "map_rank_contract": "For the actual pre-Cauchy primitive emitter in one formal unit, prove that the map from emitted primitive summands (including branch key, sign/local factor and source parameters) to exact (u,v) has maximum fiber at most |Domain|/L^K, or equivalently that the exact (u,v) image support has log-power rank/entropy.",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem",
+  "no_theorem_switch": true,
+  "payment_skeleton_not_enough": true,
+  "plain_conclusion": "`PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem` 被进一步压到映射秩层：payment skeleton、alpha/delta 解积分字典、branch 预算和反向来源函子都不能证明 exact `(u,v)` map 没有大原像纤维。最新最窄点是 `PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem`。该秩/无坍缩定理尚未证明，行/列命题仍未无条件闭合。",
+  "pre_cauchy_emitter_exact_uv_map_rank_proved": false,
+  "preterminal_exact_uv_primitive_emitter_multiplicity_dispersion_proved": false,
+  "reverse_functor_no_rank_recovery": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "EmitterMultiplicityTargetActive",
+      "meaning": "上一层已把绝对 fiber 质量分散压成 primitive emitter 原像 multiplicity 分散。",
+      "proved": false,
+      "remaining": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "PaymentSkeletonNotEnough",
+      "meaning": "payment skeleton、first-cover map 和 count identity 只给下游计数骨架，不给 exact `(u,v)` map 的原像秩。",
+      "proved": true,
+      "remaining": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaDeltaDictionaryStillObjectNotRank",
+      "meaning": "signed 解积分字典若存在，只给 source 对象和逐纤维字段；还必须证明这些字段不会坍缩到少数 `(u,v)`。",
+      "proved": true,
+      "remaining": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "BranchBudgetNotMapRank",
+      "meaning": "branch key 与几何变差预算控制复杂度和总变差，但不自动给 exact `(u,v)` 映射秩下界。",
+      "proved": true,
+      "remaining": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseFunctorNoRankRecovery",
+      "meaning": "从推前 payment 图不能恢复 pre-Cauchy 原像，也不能恢复 exact `(u,v)` map 的最大纤维界。",
+      "proved": true,
+      "remaining": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "MultiplicityEquivalentToMapRank",
+      "meaning": "在单 summand 权重已登记后，multiplicity 分散等价于证明 exact `(u,v)` map 的最大 fiber 小，或 image 支撑足够大。",
+      "proved": false,
+      "remaining": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "NoFiberCollapseConditionPinned",
+      "meaning": "必须排除大量 branch/source summands 具有不同内部 key 但同一个 exact `(u,v)` 的坍缩模型。",
+      "proved": false,
+      "remaining": "NoExactUVFiberCollapseForActualEmitter。"
+    },
+    {
+      "closed": false,
+      "gate": "PreCauchyEmitterExactUVMapRankCurrentCorpusProved",
+      "meaning": "当前语料尚未证明 actual pre-Cauchy emitter 的 exact `(u,v)` 映射秩/无坍缩定理。",
+      "proved": false,
+      "remaining": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-fiber-emitter-field-audit-router.json": "2806c0f1a4f31e5b93572ca82ee42239027851acf2b7371bab7de3b60355ebc2",
+    "docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.json": "7036cd75920ab730517c0113314d7f88a9b2489b8bc98eedd9d576d686d39b91",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-strict-absolute-fiber-mass-dispersion-router.json": "04aea575c70e9001b04b818cd3ad3d38bc43f2c9fbd6078b521475e5dbe204d2"
+  },
+  "status": "strict_emitter_multiplicity_reduced_to_exact_uv_map_rank_no_collapse_open",
+  "terminal_gap_after_router": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem",
+  "terminal_gap_before_router": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem"
+}

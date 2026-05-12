@@ -1,0 +1,168 @@
+{
+  "budget_caps": [
+    {
+      "cap": "2.224000000000000000e-5",
+      "cap_type": "psi table relative cap",
+      "consequence": "finite-zero + zero-free-tail + corrections + rounding must fit below eps_psi(28)",
+      "derived_theta_slack": "5.338599007170435742e-6",
+      "site": "high tail x>=e^28"
+    },
+    {
+      "cap": "2.841000000000000000e-5",
+      "cap_type": "psi table relative cap",
+      "consequence": "after psi-theta gap, unbudgeted error must be < middle theta slack",
+      "derived_theta_slack": "4.457340209326913989e-11",
+      "site": "middle strip 8e11<=x<=e^28"
+    },
+    {
+      "cap": "4.457340209326913989e-11",
+      "cap_type": "unallocated splice slack",
+      "consequence": "this is only about 4.46e-11, so no hidden rounding or convention error is tolerable",
+      "derived_theta_slack": "4.457340209326913989e-11",
+      "site": "middle theta splice"
+    }
+  ],
+  "budget_caps_arithmetic_fixed": true,
+  "certificate_type": "prime_matrix_strict_psi_epsilon_budget_partition_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "PsiEpsilonBudgetPartitionGateActive",
+    "BudgetCapsArithmeticFixed",
+    "MiddleSpliceTinySlackGuard",
+    "CurrentCoarseContourRejectedForBudget"
+  ],
+  "coarse_template_gap_factors": {
+    "high_tail_b28": 2779902555195.0005,
+    "middle_left_8e11": 2093733314265.227
+  },
+  "counterexample_assumption_only": true,
+  "current_coarse_contour_rejected_for_budget": true,
+  "direct_unconditional_contradiction_found": false,
+  "directed_rounding_budget_closed": false,
+  "empirical_absence_not_used": true,
+  "finite_verified_zero_main_block_budget_closed": false,
+  "middle_splice_tiny_slack_guard_closed": true,
+  "next_direct_attack_target": "SameExplicitFormulaConventionLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SameExplicitFormulaConventionLedger",
+    "FiniteVerifiedZeroMainBlockNumericalBudgetLedger",
+    "ZeroFreeTailNumericalBudgetLedger",
+    "PrimePowerAndTrivialZeroCorrectionBudgetLedger",
+    "DirectedRoundingAndIntervalPropagationBudgetLedger",
+    "PsiEpsilonBudgetPartitionLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "FiniteVerifiedZeroMainBlockNumericalBudgetLedger",
+    "ZeroFreeTailNumericalBudgetLedger",
+    "DirectedRoundingAndIntervalPropagationBudgetLedger",
+    "TableGeneratorHashInterfaceLedger"
+  ],
+  "plain_conclusion": "psi epsilon 预算分摊的上限已经固定：高尾表值 cap 为 2.224e-5，中段表值 cap 为 2.841e-5，但中段接入 theta(x)-x<x/36260 后只剩约 4.46e-11 的未分配余量。因此不能再用粗 contour 或未登记舍入误差含混通过；必须先固定同一显式公式口径，再逐项给出 finite-zero 主块、zero-free tail、修正项和舍入 hash 的数值账本。",
+  "prime_power_and_trivial_zero_budget_closed": false,
+  "psi_epsilon_budget_partition_closed": false,
+  "replacement_self_contained": {
+    "PsiEpsilonBudgetPartitionLedger": "SameExplicitFormulaConventionLedger AND FiniteVerifiedZeroMainBlockNumericalBudgetLedger AND ZeroFreeTailNumericalBudgetLedger AND PrimePowerAndTrivialZeroCorrectionBudgetLedger AND DirectedRoundingAndIntervalPropagationBudgetLedger AND TableGeneratorHashInterfaceLedger",
+    "SameExplicitFormulaConventionLedger": "must be closed before numerical component budgets can be added"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审查假设反例链可调用的 psi 表预算，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "PsiEpsilonBudgetPartitionGateActive",
+      "meaning": "有限零点到尾项桥接证书已把下一最窄点压到 psi epsilon 预算分摊。",
+      "proved": true,
+      "remaining": "PsiEpsilonBudgetPartitionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BudgetCapsArithmeticFixed",
+      "meaning": "高尾 cap、中段 cap 与中段 theta 拼接余量已被精确固定，不能再用模糊常数吸收误差。",
+      "proved": true,
+      "remaining": "budget caps fixed, component bounds still open"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleSpliceTinySlackGuard",
+      "meaning": "中段 theta 拼接余量约 4.46e-11；任何未登记舍入、尾项或公式差异都会破坏拼接。",
+      "proved": true,
+      "remaining": "SameExplicitFormulaConventionLedger AND DirectedRoundingAndIntervalPropagationBudgetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentCoarseContourRejectedForBudget",
+      "meaning": "既有 C=1280,C_Z=65536 模板失败：高尾约 2.780e+12 倍，中段约 2.094e+12 倍。",
+      "proved": true,
+      "remaining": "FiniteVerifiedZeroMainBlockNumericalBudgetLedger AND ZeroFreeTailNumericalBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SameExplicitFormulaConventionLedger",
+      "meaning": "预算分摊前必须先固定同一显式公式、截断、平滑、prime-power 与 zero-free tail 口径。",
+      "proved": false,
+      "remaining": "without this, component budgets are not comparable"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteVerifiedZeroMainBlockNumericalBudgetLedger",
+      "meaning": "需要有限 verified-zero 主块在 e^28 与 8e11 两个端点及区间传播中的数值上界。",
+      "proved": false,
+      "remaining": "FiniteRHHeightEndpointLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ZeroFreeTailNumericalBudgetLedger",
+      "meaning": "需要零点自由尾项在同一表公式中的数值上界，并证明不与 finite-zero 主块重复扣费。",
+      "proved": false,
+      "remaining": "ZeroFreeTailStartHeightLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PrimePowerAndTrivialZeroCorrectionBudgetLedger",
+      "meaning": "需要素数幂、平凡零点和端点修正在 psi 表口径下的剩余预算。",
+      "proved": false,
+      "remaining": "SameExplicitFormulaConventionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DirectedRoundingAndIntervalPropagationBudgetLedger",
+      "meaning": "需要外向舍入和区间传播误差严格小于中段极薄余量。",
+      "proved": false,
+      "remaining": "TableGeneratorHashInterfaceLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PsiEpsilonBudgetPartitionLedger",
+      "meaning": "当前只固定预算上限和失败模板；尚未给出各组件相加小于 cap 的可复算账本。",
+      "proved": false,
+      "remaining": "SameExplicitFormulaConventionLedger AND FiniteVerifiedZeroMainBlockNumericalBudgetLedger AND ZeroFreeTailNumericalBudgetLedger AND PrimePowerAndTrivialZeroCorrectionBudgetLedger AND DirectedRoundingAndIntervalPropagationBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "psi epsilon 预算分摊不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_explicit_formula_convention_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "d1b49ebc41978f1a326c5c564ae6a2c6f73afa97d05004a5c4b00c3f1cc4b566",
+    "docs/monograph/prime-matrix-strict-dusart-analytic-kernel-threshold-router.json": "66437aaacee8dac94c508da9ce6ac11dab98487bbe6cfe5be4277f1382fb0155",
+    "docs/monograph/prime-matrix-strict-epsilon-table-generator-audit-router.json": "f32861a5a5441fb737209fe30eda23ee0d4a2503f1d9c3cef4a2d183e15765fb",
+    "docs/monograph/prime-matrix-strict-finite-verified-zero-tail-transition-router.json": "773bb760e2d2004c99e8c4d54585659f15adebe2e147ea16b08fa77b78dec30f",
+    "docs/monograph/prime-matrix-strict-psi-epsilon-table-internalization-router.json": "a38651091c9b02e40a19cf7f5bb9729cc8a99f3da29df12bff8402b383596972"
+  },
+  "status": "psi_epsilon_budget_caps_fixed_component_partition_open",
+  "table_generator_hash_interface_closed": false,
+  "zero_free_tail_numerical_budget_closed": false
+}

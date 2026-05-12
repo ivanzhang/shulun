@@ -1,0 +1,152 @@
+{
+  "certificate_type": "prime_matrix_strict_verified_zero_zero_free_tail_input_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "VerifiedZeroZeroFreeTailGateActive",
+    "DusartSchoenfeldZeroInputSourceExtractionLedger",
+    "LowHeightT14IsNotEnoughForPsiTable",
+    "SymbolicZeroFreeRegionNotEnoughForTableTail"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "explicit_zero_free_region_table_tail_closed": false,
+  "finite_verified_zero_to_tail_transition_closed": false,
+  "large_finite_rh_verification_table_input_closed": false,
+  "low_height_t14_external_ready_but_insufficient": true,
+  "next_direct_attack_target": "LargeFiniteRHVerificationForPsiEpsilonTableLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "LargeFiniteRHVerificationForPsiEpsilonTableLedger",
+    "ExplicitZeroFreeRegionForTableTailLedger",
+    "FiniteVerifiedZerosToZeroFreeTailTransitionLedger",
+    "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "ExplicitZeroFreeRegionForTableTailLedger",
+    "FiniteVerifiedZerosToZeroFreeTailTransitionLedger"
+  ],
+  "plain_conclusion": "epsilon 表的零点输入被拆清：它不是仓库已有 `T<=14` 低高度核验，而是大高度有限 RH 验证、显式零点自由区尾项和二者的桥接算法共同支撑。当前只完成外部来源边界抽取；缺少可复现的大高度零点证书、尾段零点自由常数和表生成桥接 hash。",
+  "psi_epsilon_table_self_contained_closed": false,
+  "references": [
+    {
+      "id": "Rosser-Schoenfeld 1975",
+      "input": "first 3,502,500 zeros on the critical line/strip in the classical table lineage",
+      "role": "historical finite RH verification input",
+      "url": "https://www.ams.org/mcom/1975-29-129/S0025-5718-1975-0457373-8/"
+    },
+    {
+      "id": "van de Lune-te Riele-Winter 1986",
+      "input": "first 1,500,000,000 zeros",
+      "role": "larger finite RH verification input cited by Dusart",
+      "url": "https://www.ams.org/mcom/1986-46-174/S0025-5718-1986-0829637-3/"
+    },
+    {
+      "id": "Gourdon 2004",
+      "input": "first 10^13 nontrivial zeros",
+      "role": "largest finite RH verification cited by Dusart for improved tables",
+      "url": "http://numbers.computation.free.fr/Constants/Miscellaneous/zetazeros1e13-1e24.pdf"
+    },
+    {
+      "id": "Kadiri 2004",
+      "input": "explicit zero-free region",
+      "role": "zero-free tail input cited by Dusart",
+      "url": "https://arxiv.org/abs/math/0401238"
+    },
+    {
+      "id": "Dusart arXiv:1002.0442",
+      "input": "source text tying finite RH verification and zero-free regions to psi/theta tables",
+      "role": "boundary statement, not a reproducible table computation artifact",
+      "url": "https://arxiv.org/abs/1002.0442"
+    }
+  ],
+  "replacement_self_contained": {
+    "FiniteVerifiedZerosToZeroFreeTailTransitionLedger": "LargeFiniteRHVerificationForPsiEpsilonTableLedger AND ExplicitZeroFreeRegionForTableTailLedger AND SchoenfeldDusartEpsilonTableGeneratorFormalizationLedger",
+    "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger": "LargeFiniteRHVerificationForPsiEpsilonTableLedger AND ExplicitZeroFreeRegionForTableTailLedger AND FiniteVerifiedZerosToZeroFreeTailTransitionLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审计 epsilon 表所需解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "VerifiedZeroZeroFreeTailGateActive",
+      "meaning": "上一证书把下一最窄点设为表生成器所需的有限零点验证与零点自由尾项输入。",
+      "proved": true,
+      "remaining": "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DusartSchoenfeldZeroInputSourceExtractionLedger",
+      "meaning": "已从 Dusart/Schoenfeld 线索中抽出表值依赖的外部零点验证与零点自由区来源。",
+      "proved": true,
+      "remaining": "Rosser-Schoenfeld, van de Lune, Gourdon, Kadiri, Dusart"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightT14IsNotEnoughForPsiTable",
+      "meaning": "仓库已外部匹配 T<=14 低高度核验，但 psi epsilon 表需要大高度有限 RH 验证和尾项桥接，不能由 T<=14 替代。",
+      "proved": true,
+      "remaining": "LargeFiniteRHVerificationForPsiEpsilonTableLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SymbolicZeroFreeRegionNotEnoughForTableTail",
+      "meaning": "仓库已有符号零点自由区链和部分常数化路线，但表尾项需要明确的可复算数值常数与阈值。",
+      "proved": true,
+      "remaining": "ExplicitZeroFreeRegionForTableTailLedger"
+    },
+    {
+      "closed": false,
+      "gate": "LargeFiniteRHVerificationForPsiEpsilonTableLedger",
+      "meaning": "需要指定表生成实际使用的有限 RH 验证高度/零点数、来源证书、覆盖范围和 hash。",
+      "proved": false,
+      "remaining": "Gourdon10^13 OR equivalent verified-zero certificate with reproducible audit"
+    },
+    {
+      "closed": false,
+      "gate": "ExplicitZeroFreeRegionForTableTailLedger",
+      "meaning": "需要指定尾段使用的显式零点自由区常数、适用高度和同一表算法中的误差预算。",
+      "proved": false,
+      "remaining": "Kadiri/Rosser-Schoenfeld zero-free constants or internal proof"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteVerifiedZerosToZeroFreeTailTransitionLedger",
+      "meaning": "需要证明有限零点验证窗口和零点自由尾项如何拼接成 eps_psi(b) 的整段表值，含阈值选择和余项分配。",
+      "proved": false,
+      "remaining": "LargeFiniteRHVerificationForPsiEpsilonTableLedger AND ExplicitZeroFreeRegionForTableTailLedger AND SchoenfeldDusartEpsilonTableGeneratorFormalizationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger",
+      "meaning": "当前只完成来源边界和缺口分类；没有可复现大高度零点证书、零点自由尾项常数和桥接算法。",
+      "proved": false,
+      "remaining": "LargeFiniteRHVerificationForPsiEpsilonTableLedger AND ExplicitZeroFreeRegionForTableTailLedger AND FiniteVerifiedZerosToZeroFreeTailTransitionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "verified-zero/zero-free 输入审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "6195fc5f1f5987dd8829f70bceec911dbef9a400ace6c7e1a1710af0214dc021",
+    "docs/monograph/prime-matrix-b3-zero-free-constants-router.json": "ad4c7bcaf9eb5f32f21c38739acd2d4b738a844979314c12b192a662a9f78ac5",
+    "docs/monograph/prime-matrix-strict-epsilon-table-generator-audit-router.json": "f32861a5a5441fb737209fe30eda23ee0d4a2503f1d9c3cef4a2d183e15765fb",
+    "docs/monograph/prime-matrix-strict-finite-low-height-external-match-router.json": "e489f5e3c11231acc5a832ae2fa3edb7eab33c28794b919d0652684731b8ec14"
+  },
+  "status": "verified_zero_zero_free_tail_input_sources_extracted_large_height_and_tail_bridge_open",
+  "symbolic_zero_free_ready_but_numeric_table_tail_open": true,
+  "verified_zero_and_zero_free_tail_input_closed": false,
+  "zero_input_source_extraction_closed": true
+}

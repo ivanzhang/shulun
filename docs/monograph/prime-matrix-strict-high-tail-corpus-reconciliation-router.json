@@ -1,0 +1,133 @@
+{
+  "certificate_type": "prime_matrix_strict_high_tail_corpus_reconciliation_router",
+  "status": "strict_high_tail_reconciled_to_mertens_tail_and_strict_terminal_family_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "strict_high_tail_corpus_reconciliation_closed": true,
+  "lower_weight_construction_and_dominance_imported": true,
+  "continuous_and_stieltjes_layers_imported": true,
+  "b3_boundary_variation_anchor20000_imported": true,
+  "external_mertens_high_tail_route_available": true,
+  "self_contained_mertens_tail_proved": false,
+  "exact_sawtooth_normal_form_imported": true,
+  "exact_sawtooth_independent_input_removed": true,
+  "strict_terminal_family_proved": false,
+  "acyclic_pre_cauchy_seed_proved": false,
+  "self_contained_dstructure_rankin_replacement_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound",
+  "strict_self_contained_high_tail_gap_after_router": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "with_external_mertens_high_tail_removed_basis": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "SelfContainedMertensTail_OR_AcyclicTerminalFamily",
+    "strict_self_contained_high_tail_priority": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+    "global_strict_priority": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily",
+    "cannot_use_as_proof": [
+      "把 canonical-source 的 NoFurtherCanonicalSourceTerminalPromotionGap 直接导入 acyclic noncanonical 分支",
+      "把 Dusart/Rosser-Schoenfeld 外部 Mertens 定理冒充为仓库内自足证明",
+      "把 finite checkpoint 余量外推成 P>=100000 全尾段证明",
+      "把 exact sawtooth 标准形本身当作负损失界",
+      "把 DStructure/Rankin 独立验收门改写为已证自足替代包"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "StrictHighTailCorpusReconciliationActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层 strict 高段尾项仍把 beta 构造、99% 主系数和 exact sawtooth 写成三个并列开放输入。",
+      "remaining": "导入已经完成的 beta/B3/sawtooth 语料，并重新校准严格作用域。"
+    },
+    {
+      "gate": "LowerWeightConstructionAndDominanceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "B=3 lower word rule、有限递归、支撑、符号、level 与逐点 lower-bound 支配均已由内部组合证明关闭。",
+      "remaining": "不再把 SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix 作为未拆黑箱。"
+    },
+    {
+      "gate": "ContinuousAndStieltjesLayersImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "连续 f(1/0.43) 余量与 prime-word Stieltjes 精确表示已闭合，离散误差集中到 B=3 边界余项。",
+      "remaining": "B3 交错边界余项的一维 Mertens 尾段。"
+    },
+    {
+      "gate": "BoundaryVariationAnchor20000Imported",
+      "closed": true,
+      "proved": true,
+      "meaning": "10372 到 20000 的有限锚点提升、face 字典和 delay-kernel BV 乘子账本已闭合。",
+      "remaining": "若不用外部 Dusart/Rosser-Schoenfeld，则仍需自足证明 reciprocal-prime Mertens 尾段。"
+    },
+    {
+      "gate": "ExternalMertensHighTailRouteAvailable",
+      "closed": true,
+      "proved": false,
+      "meaning": "接受 Dusart/Rosser-Schoenfeld 型外部显式 Mertens/theta 输入时，B3 高段解析链可接到 DStructure/Rankin 门。",
+      "remaining": "这是外部条件接入，不是严格自足内联证明。"
+    },
+    {
+      "gate": "SelfContainedMertensTailStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "完全自足版必须内联显式 PNT 机器：x>=20000 的 theta/psi 包络和 Meissel-Mertens 常数区间。",
+      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "gate": "ExactSawtoothNormalFormImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "Exact floor/sawtooth 已精确化为二次圆弧，再化为近平方条带 formal unit。",
+      "remaining": "条带失败态是否形成可排除的全局终端家族。"
+    },
+    {
+      "gate": "NearSquareTerminalAdmittedToStrictTerminalFamily",
+      "closed": true,
+      "proved": false,
+      "meaning": "近平方条带失败会生成同一 formal unit 的 PDEC/SAE 证书；在 strict noncanonical 口径中只能并入已开放的 acyclic terminal-family 门，不能用 canonical 吸收偷渡。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily。"
+    },
+    {
+      "gate": "ExactSawtoothIndependentInputRemovedByCharging",
+      "closed": true,
+      "proved": false,
+      "meaning": "Exact sawtooth 不再作为第三个高段独立输入保留；其失败态被收费到 strict 全局终端门。",
+      "remaining": "strict 终端门本身仍未证明。"
+    },
+    {
+      "gate": "StrictHighTailSelfContainedCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧三项已经重新压缩，但严格自足高段尾项还缺 Mertens/PNT 内联证明。",
+      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "即便高段外部解析线可用，完整行/列命题仍受 acyclic seed、strict PDEC/CleanKLS 与 DStructure/Rankin 替代门限制。",
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-high-model-tail-update-router.md": "2d912afa752d835b0e1374e687c794f6a545eab125e3adfd8c7676f96478cc3c",
+    "docs/monograph/prime-matrix-beta-sieve-self-contained-frontier-router.md": "2261cdc29c1f26c5867bdfbf04917a5acf5272e98e8a5390c4290dd1f2c14bbf",
+    "docs/monograph/prime-matrix-beta-sieve-lower-weight-recursion-router.md": "c52f2ef7cd2522559796b0ac8127ed47e0564d4a9696880afe343c9172382e88",
+    "docs/monograph/prime-matrix-beta-sieve-lower-bound-dominance-router.md": "69e7a4953e93d0445f1a03c224db72e769bc59872d40d017f2140ca28256a53a",
+    "docs/monograph/prime-matrix-beta-sieve-main-coefficient-terminal-attack-router.md": "d61b395891d64839ea1854bb8b9d88d0539d358856790749211632ca091c0014",
+    "docs/monograph/prime-matrix-b3-continuous-beta-sieve-surplus-router.md": "063591d4eab14a399b41f05a7846bd91d279ada2530be63c338af28921cca3e1",
+    "docs/monograph/prime-matrix-b3-prime-word-stieltjes-integral-router.md": "57b1fd2a5a457a5ea8839dd5b82b60e9e4c623cc16ef2b24343dc03a5b9e4d94",
+    "docs/monograph/prime-matrix-b3-alternating-boundary-terminal-router.md": "8b5c7fd7a43e1a626ab3de4773d44b459fc99a8a83e0578f4d9b1b84d75548b0",
+    "docs/monograph/prime-matrix-b3-explicit-prime-reciprocal-mertens-router.md": "d7a0900a55a3d0765a9fc8ee80f3e0b492d9266ac0b3ccb61feda4d06ef1ad5f",
+    "docs/monograph/prime-matrix-b3-signed-delay-multiplier-anchor-router.md": "595698545f1dafc720ba1ece140b2ae0267c3dbb506434f38a9ba23df47c54c4",
+    "docs/monograph/prime-matrix-b3-self-contained-mertens-tail-router.md": "5f5f889b038b6171dc7387c34a0bdf7ae2a7252478dc834b6ee6d97b0f795d01",
+    "docs/monograph/prime-matrix-exact-residue-sawtooth-normal-form-router.md": "06f60d5e25b4875ad8709cc2cdd478b69415bf0d585ea3b9430090eae249ef71",
+    "docs/monograph/prime-matrix-quadratic-arc-nearsquare-spread-router.md": "38ebab94da8e6174f50d1e7f5d5c04887d7ce94f2627169433d2c6263f73ae4b",
+    "docs/monograph/prime-matrix-nearsquare-strip-defect-certificate-router.md": "0aa6e3f08a050ea3e82437481a82c15d77a7a2b1d3ff8a53145f5bcdd3fe4e44",
+    "docs/monograph/prime-matrix-nearsquare-strip-terminal-admission-router.md": "b4a1625cbeb6903b97d97fd5c5c43451a0e49b8cfe4926af1e0c044bb4d1ab2f",
+    "docs/monograph/prime-matrix-strict-global-terminal-scope-router.md": "3ef52eea8517c13add6f883f7d7bdfee1a5d2d9aca81e216fdd639fc46e81cc3"
+  },
+  "plain_conclusion": "本步把 strict 高段尾项与已经完成的 beta/B3/sawtooth 语料重新对齐。lower weights 构造、逐点支配、连续主项、Stieltjes 表示和 B=3 delay 乘子账本可导入；exact sawtooth 失败态也不再是独立第三输入，而是并入 strict acyclic noncanonical 终端家族。严格自足高段剩余因此压成 Mertens/PNT 内联证明；若接受外部 Dusart/Rosser-Schoenfeld 输入，高段解析线可移出活动缺口。完整行/列命题仍未无条件闭合。"
+}

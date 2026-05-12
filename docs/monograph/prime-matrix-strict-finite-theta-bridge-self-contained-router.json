@@ -1,0 +1,118 @@
+{
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_finite_theta_bridge_self_contained_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "FinitePrimeLogThetaCertificateBuilt",
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+    "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_theta_audit": {
+    "anchor_gap_theta_minus_x_minus_allowance": "-195.24194767227607582257976518990589202426621856672436431399417300003934100602043",
+    "anchor_passes": true,
+    "anchor_x": 20000,
+    "decimal_precision": 80,
+    "finite_bridge_margin": "1.2083232665689665104947482345591763814413777578997310911661369640947050246903504",
+    "finite_bridge_passes": true,
+    "last_prime": 19997,
+    "max_gap_prime": 3,
+    "max_gap_theta": "1.7917594692280550008124773583807022727229906921830047058553743431308879151883037",
+    "max_gap_theta_minus_slope_x": "-1.2083232665689665104947482345591763814413777578997310911661369640947050246903504",
+    "prime_count": 2262,
+    "proof_reduction": "对任意相邻素数区间 [p_k,p_{k+1})，vartheta(x) 常值而 vartheta(x)-(1+1/36260)x 严格递减；故 0<x<=20000 的最大值只需在素数点扫描。",
+    "target_allowance": "0.55157198014340871483728626585769442912300055157198014340871483728626585769442912",
+    "target_denominator": 36260,
+    "theta_anchor": "19805.309624307867332892257521075951802404856781984847615829414541837246924851674",
+    "theta_minus_x": "-194.690375692132667107742478924048197595143218015152384170585458162753075148326"
+  },
+  "finite_theta_bridge_below_20000_self_contained_closed": true,
+  "internal_dusart_global_theta_envelope_closed": false,
+  "internal_zero_free_region_to_theta_contour_closed": false,
+  "next_direct_attack_target": "InternalZeroFreeRegionToThetaContourEnvelopeLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "InternalDusartGlobalThetaEnvelopeClosed",
+    "SelfContainedMertensTailClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger",
+    "SelfContainedMeisselMertensB1IntervalArithmeticLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "plain_conclusion": "有限 theta 桥可以自足闭合：因为 `vartheta(x)-(1+1/36260)x` 在相邻素数之间严格递减，只需扫描 `p<=20000` 的素数点。高精度证书显示最坏点为 `p=3`，仍有约 `1.208` 的负余量；`x=20000` 处 `vartheta(20000)-20000≈-194.69`，远小于允许值 `20000/36260≈0.5516`。这关闭的是锚点和阈值以下有限桥，不关闭 `x>=20000` 的内部 theta/PNT contour 包络。",
+  "remaining_self_contained_inputs_after_finite_theta": [
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger",
+    "InternalZeroFreeRegionToThetaContourEnvelopeLedger",
+    "SelfContainedMeisselMertensB1IntervalArithmeticLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "replacement_self_contained": {
+    "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold": "FiniteThetaBridgeBelow20000SelfContainedClosedByPrimeLogCertificate",
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger": "ThetaEnvelopeTargetAt20000SelfContainedClosedByPrimeLogCertificate"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只给解析输入的有限核验证书，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FinitePrimeLogThetaCertificateBuilt",
+      "meaning": "用素数点高精度 log 累加与单调性，扫描 0<x<=20000 的 theta 上界。",
+      "proved": true,
+      "remaining": "FiniteThetaBridgeBelow20000SelfContainedClosedByPrimeLogCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+      "meaning": "x=20000 处 theta(x)-x 明显为负，强于 x/36260 允许值。",
+      "proved": true,
+      "remaining": "ThetaEnvelopeTargetAt20000SelfContainedClosedByPrimeLogCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold",
+      "meaning": "最坏素数点 x=3 仍满足 theta(x)-x < x/36260，因此阈值以下有限桥自足闭合。",
+      "proved": true,
+      "remaining": "FiniteThetaBridgeBelow20000SelfContainedClosedByPrimeLogCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "InternalDusartGlobalThetaEnvelopeClosed",
+      "meaning": "有限桥只覆盖 0<x<=20000，不证明 x>=20000 的内部 Dusart/PNT 包络。",
+      "proved": false,
+      "remaining": "InternalZeroFreeRegionToThetaContourEnvelopeLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedMertensTailClosed",
+      "meaning": "有限 theta 桥不关闭 B1 区间、reciprocal-prime Mertens 尾段或 DStructure 门。",
+      "proved": false,
+      "remaining": "SelfContainedMeisselMertensB1IntervalArithmeticLedger AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "该有限桥只补解析输入，不产生最终反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "93e79807102365bba0c758170dd9ca45d0cb4c4e09379675acf5156c946db02f",
+    "docs/monograph/prime-matrix-strict-internal-dusart-theta-budget-obstruction-router.json": "1d355cc0a37ac80d7f0d811b5b35b4e8d674f0f0dd02885c997ae93b933cea19",
+    "docs/monograph/prime-matrix-strict-post-meissel-frontier-sync-router.json": "6d5c61a61da422bb31b11ffae1f833fdb4954d62a11cfe7b33b9577085820e58"
+  },
+  "status": "finite_theta_bridge_and_anchor_self_contained_closed_global_theta_contour_open",
+  "theta_target_at_20000_self_contained_closed": true
+}

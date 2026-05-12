@@ -1,0 +1,110 @@
+{
+  "certificate_type": "prime_matrix_strict_actual_source_support_seed_router",
+  "status": "new_actual_exact_uv_support_reduced_to_acyclic_seed_and_pair_mass_dispersion_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "new_actual_exact_uv_support_boundary_closed": true,
+  "source_loop_cut_imported": true,
+  "disintegration_equivalence_imported": true,
+  "elementary_mass_support_lemma_closed": true,
+  "source_identity_alone_insufficient": true,
+  "acyclic_pre_cauchy_seed_proved": false,
+  "exact_uv_pair_mass_dispersion_proved": false,
+  "support_bearing_actual_seed_proved": false,
+  "actual_exact_uv_support_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "NewActualNoncanonicalExactUVSupportTheoremInput",
+  "terminal_gap_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ExactUVPairMassDispersionOrMaxAtomBoundLedger",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ExactUVPairMassDispersionOrMaxAtomBoundLedger AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "elementary_support_lemma": {
+    "pair_mass_form": "For a sign-refined exact pair family w_omega over Omega, if M=sum|w_omega|>0 and max|w_omega|<=M/L^K, then |Omega|>=L^K.",
+    "l2_form": "If E2=sum|w_omega|^2 and M=sum|w_omega|, then |Omega|>=M^2/E2.",
+    "exact_uv_consequence": "Since |Omega|<=|U_support|*|V_support|, either lower bound implies S_u*S_v>=L^K."
+  },
+  "next_attack_contract": {
+    "name": "ExactUVPairMassDispersionOrMaxAtomBoundLedger_FOR_AcyclicPreCauchySeed",
+    "must_prove": [
+      "提交不依赖 downstream payment 图的 actual noncanonical pre-Cauchy signed source seed",
+      "把 source seed sign-refine 到无抵消 exact path/pair family",
+      "给出总绝对质量下界 M0，且该质量属于同一 formal unit",
+      "证明每个 exact (u,v) pair 的绝对质量至多 M0/L^(2A+4C+E)，或证明等价 L2 能量界",
+      "证明 thin、rejected、path-overbudget、large atom 失败全部命名回流"
+    ],
+    "cannot_use_as_proof": [
+      "从 payment skeleton、CRT 覆盖图或早期零行假设反推 source",
+      "canonical RIW/Buchstab 来源表跨分支导入",
+      "generic WFD、K4/K6 或 raw squarefree count",
+      "只给 source identity 而不给 exact pair 最大原子/能量界",
+      "外部 FullS-KLS 黑箱"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "NewActualExactUVSupportInputActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把严格自足 ExactUV 主攻点定名为 NewActualNoncanonicalExactUVSupportTheoremInput。",
+      "remaining": "把该输入拆成可证明的来源种子与支撑能量原子。"
+    },
+    {
+      "gate": "SourceLoopCutImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "来源环已被切断，不能从 downstream payment skeleton、有限投影塔或几何覆盖图反推 primitive source。",
+      "remaining": "必须提交无环 pre-Cauchy actual noncanonical primitive source seed。"
+    },
+    {
+      "gate": "DisintegrationEquivalenceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "alpha/delta lift 等价于 signed 源测度在 first-cover payment map 上的注册解积分字典。",
+      "remaining": "等价不证明 actual 字典存在；仍需给出 signed source measure 和推前恒等式。"
+    },
+    {
+      "gate": "SourceIdentityAloneInsufficient",
+      "closed": true,
+      "proved": true,
+      "meaning": "即使有 signed source identity，若所有质量集中到一个 exact (u,v)，也不能推出 ExactUV 支撑。",
+      "remaining": "需要 exact pair mass dispersion 或最大原子界。"
+    },
+    {
+      "gate": "ElementaryMassSupportLemmaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "同号/符号细分后，若总绝对质量为 M 且每个 exact pair 质量至多 M/L^K，则 pair 支撑至少 L^K；L2 形式亦由 Cauchy 给出。",
+      "remaining": "证明 actual clean-core 源满足这些 M、max-pair 或 L2 能量界。"
+    },
+    {
+      "gate": "ExactUVPairMassDispersionRequired",
+      "closed": true,
+      "proved": false,
+      "meaning": "支撑下界的真正数值负担是 actual source 在 exact (u,v) 纤维上的最大原子/能量控制。",
+      "remaining": "ExactUVPairMassDispersionOrMaxAtomBoundLedger。"
+    },
+    {
+      "gate": "AcyclicPreCauchySeedStillRequired",
+      "closed": true,
+      "proved": false,
+      "meaning": "能量界必须作用在真实 pre-Cauchy source 上；没有无环源种子时，能量账本没有对象。",
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn。"
+    },
+    {
+      "gate": "CurrentCorpusNoProofOfSupportBearingSeed",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前语料库没有证明 support-bearing actual source seed，也没有证明 exact pair 最大原子界。",
+      "remaining": "新增证明其中两个原子，或转条件外部谱线。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-exact-uv-support-attack-router.md": "b385c545a17e899b748b6397d33cb1b809cc327a164ba96923795441e68bb415",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.md": "0cbd38f4d56d73a134ee106f50b1fe71d007f4273e00df7cac4c244fc57d451d",
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.md": "f72148d267646684a075e08beb4839f4e68a85370f92b769cf1a27d7ee173026",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.md": "50b5c0eb99a3c56cc54a3c41edfd5241fe5127e3631a3ea648d852700d109a49",
+    "docs/monograph/prime-matrix-exact-uv-support-failure-packetization-router.md": "f59d8e1bb48ebe700a651cb6940d757588b8ea79293152fcac012a814c8980ea",
+    "docs/monograph/prime-matrix-support-failure-packet-return-dichotomy-router.md": "7aa8461ea17cf06e2da92987a2a2d4f565fe3a40fcd0fd6568476a9a637bf34e",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.md": "650a64fd37852a88f117a487f6fc2e059e2dce132dcc4093e2b568aa1a77d1a4"
+  },
+  "plain_conclusion": "NewActualNoncanonicalExactUVSupportTheoremInput 已进一步拆成两个不可混淆的数学原子：先要有无环的 pre-Cauchy actual noncanonical source seed；再要证明该 source 在 exact (u,v) 纤维上没有大原子，即满足最大 pair 质量界或 L2 能量界。一般支撑能量引理本身是初等闭合的：总绝对质量除以最大原子，或 Cauchy 的 M^2/E2，给出 pair 支撑下界；pair 支撑再推出 S_u*S_v 下界。当前材料缺的不是这个初等推理，而是 actual source seed 与 exact pair 质量分散账本。因此仍不能声明行/列无条件闭合。"
+}

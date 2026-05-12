@@ -1,0 +1,115 @@
+{
+  "adaptive_lambda_balance_registered": true,
+  "certificate_type": "prime_matrix_strict_iterated_threshold_collapse_router",
+  "collapse_inequality_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的迭代缩频阈值分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "CollapseInequalityClosed",
+      "meaning": "阈值坍缩已写成显式乘积不等式。",
+      "proved": true,
+      "remaining": "AdaptiveLambdaBalanceForIteratedCoreDensity"
+    },
+    {
+      "closed": true,
+      "gate": "SparseTerminalReductionClosed",
+      "meaning": "最早坍缩层后的实际残留只能是稀疏终端历史。",
+      "proved": true,
+      "remaining": "SparseTerminalHistorySAEAbsorptionOrPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentHistoryPDECRouteRegistered",
+      "meaning": "同一商型历史持久复现应进入 PDEC/ColumnCRT。",
+      "proved": false,
+      "remaining": "FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "NonpersistentHistorySAERouteRegistered",
+      "meaning": "非持久终端历史应由有限深度/有限字母表 SAE 账本吸收。",
+      "proved": false,
+      "remaining": "SparseTerminalDescentSAEAbsorptionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ThresholdCollapseExcluded",
+      "meaning": "尚未排斥持久历史 PDEC，也未闭合非持久历史 SAE 总量吸收。",
+      "proved": false,
+      "remaining": "FixedTypeHistoryPDECExclusion AND SparseTerminalDescentSAEAbsorptionLedger"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "effective_core_lower_bound_closed": true,
+  "empirical_absence_not_used": true,
+  "fixed_type_history_pdec_excluded": false,
+  "lemmas": [
+    {
+      "formula": "M_r >= rho_0 Y_0 / prod_{i<=r}(A_i M_i), where A_i<=8Lambda_i^2 and M_i=max(b_i,c_i)<2Lambda_i.",
+      "meaning": "核心数量下界同时登记密度损耗和窗口缩短。",
+      "name": "effective_core_lower_bound",
+      "status": "closed"
+    },
+    {
+      "formula": "Threshold collapse at depth r means prod_{i<=r}(A_i M_i) > rho_0 Y_0.",
+      "meaning": "阈值坍缩等价于显式乘积账本超出初始质量预算。",
+      "name": "collapse_inequality",
+      "status": "closed"
+    },
+    {
+      "formula": "Since A_i M_i <=16 Lambda_i^3, survival is guaranteed if prod_i 16Lambda_i^3 <= rho_0 Y_0.",
+      "meaning": "给出可调 Lambda 纪律；粗界只作充分条件，不当作最终证明。",
+      "name": "coarse_lambda_sufficient_collapse_condition",
+      "status": "closed_sufficient"
+    },
+    {
+      "formula": "At the first depth r with M_r<1, any actual surviving branch is a sparse terminal history, not a dense window.",
+      "meaning": "阈值坍缩不再是第四种高密度出口，而是稀疏终端历史。",
+      "name": "minimal_collapse_sparse_terminal",
+      "status": "closed_reduction"
+    },
+    {
+      "formula": "A sparse terminal history recurring for the same quotient-type history across formal units is a fixed-type-history PDEC.",
+      "meaning": "同一历史若持久，必须进入 PDEC/ColumnCRT，不可作为自由残留。",
+      "name": "persistent_history_to_pdec",
+      "status": "registered_route_open"
+    },
+    {
+      "formula": "Nonpersistent terminal histories are counted by finite depth and finite quotient alphabet, hence route to SAE.",
+      "meaning": "不持久残留是稀疏异常，需由 SAE 总量账本吸收。",
+      "name": "nonpersistent_history_to_sae",
+      "status": "registered_route_open"
+    }
+  ],
+  "next_direct_attack_target": "SparseTerminalHistorySAEAbsorptionOrPDECExclusion",
+  "no_theorem_switch": true,
+  "nonpersistent_history_sae_route_registered": true,
+  "parallel_targets": [
+    "DepthwiseLCMExplosionAgainstScaledFrequencyHeight",
+    "FixedTypeHistoryPDECExclusion",
+    "SparseTerminalDescentSAEAbsorptionLedger"
+  ],
+  "persistent_history_pdec_route_registered": true,
+  "plain_conclusion": "阈值坍缩已经从模糊缺口压成显式乘积账本。第 r 层有效核心数下界为 M_r >= rho_0 Y_0 / prod(A_i M_i)，其中 A_i<=8Lambda_i^2、M_i=max(b_i,c_i)<2Lambda_i。故坍缩等价于 prod(A_i M_i)>rho_0 Y_0。若实际反例链在最早坍缩层后仍有残留，它已不再是高密度窗口，只能是稀疏终端历史。同一历史持久复现进入固定历史 PDEC/ColumnCRT；不持久历史进入 SAE 总量账本。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "AdaptiveLambdaBalanceForIteratedCoreDensity",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-fixed-quotient-density-transfer-router.md": "54fa081949f7becdadac81828375abe86286441b1e404a8645cd14d15829faa2",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.md": "69d32de5c9a326374b77ea8b6f4063888e1875332f8dbccd7107d90c88da9428",
+    "docs/monograph/prime-matrix-strict-iterated-scaled-core-density-router.md": "b6427bd098faf3528b9e3563fe9d6c0d748b6fb73636c25768e0c1b51a242169",
+    "docs/monograph/prime-matrix-strict-large-pair-kernel-difference-router.md": "8f16470e7065b050c189d4a418e604fc6208c7ec8510467a0b721293445b7c6e"
+  },
+  "sparse_terminal_history_absorbed": false,
+  "sparse_terminal_reduction_closed": true,
+  "status": "iterated_threshold_collapse_reduced_to_sparse_terminal_history_pdec_or_sae_open",
+  "threshold_collapse_excluded": false
+}

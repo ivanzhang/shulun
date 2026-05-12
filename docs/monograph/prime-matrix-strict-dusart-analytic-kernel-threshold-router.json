@@ -1,0 +1,175 @@
+{
+  "analytic_kernel_and_threshold_closed": false,
+  "arithmetic_checks": [
+    {
+      "check": "target relative error",
+      "formula": "1/36260",
+      "margin": "baseline",
+      "value": "2.757859900717043574e-5"
+    },
+    {
+      "check": "high tail x>=e^28",
+      "formula": "0.00002224 < 1/36260",
+      "margin": "5.338599007170435742e-6",
+      "value": "2.224000000000000000e-5"
+    },
+    {
+      "check": "middle strip 8e11<=x<=e^28",
+      "formula": "0.00002841 - 0.9999 e^-14 < 1/36260",
+      "margin": "4.457340209326913989e-11",
+      "value": "2.757855443376834247e-5"
+    },
+    {
+      "check": "threshold ordering",
+      "formula": "8e11 < e^28",
+      "margin": "6.462570642914751737e+11",
+      "value": "8.000000000000000000e+11 < 1.446257064291475174e+12"
+    },
+    {
+      "check": "current finite bridge reach",
+      "formula": "20000 < 8e11",
+      "margin": "7.999999800000000000e+11",
+      "value": "2.000000000000000000e+4 < 8.000000000000000000e+11"
+    }
+  ],
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_dusart_analytic_kernel_threshold_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "DusartAnalyticKernelGateActive",
+    "DusartP51ArithmeticSpliceClosed",
+    "HighTailThresholdArithmeticClosed",
+    "MiddleStripArithmeticClosed",
+    "ExistingFiniteThetaBridgeTooShortForDusartP51",
+    "PsiContourCoarseComponentsReadyButNotSharpEnough"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_internal_dusart_theta_pnt_envelope_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "dusart_analytic_kernel_threshold_arithmetic_splice_closed": true,
+  "empirical_absence_not_used": true,
+  "external_reference": {
+    "id": "arXiv:1002.0442",
+    "role": "source boundary for the Dusart Proposition 5.1 proof structure only",
+    "url": "https://arxiv.org/abs/1002.0442"
+  },
+  "finite_low_height_self_contained_closed": false,
+  "middle_range_finite_verification_closed": false,
+  "next_direct_attack_target": "PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "DusartThetaAnalyticKernelAndThresholdLedger",
+    "MiddleRangeFiniteVerificationStillOpen",
+    "LowHeightAuditStillOpen",
+    "DirectInternalDusartThetaPNTEnvelopeClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "PsiMinusThetaLowerGap09999SqrtSelfContainedLedger",
+    "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger",
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+  ],
+  "plain_conclusion": "Dusart P5.1 的解析核与阈值已经被压成严格拼接结构：高尾 `x>=e^28` 只需 `eps_psi(28)<=0.00002224`；中间带 `8e11<=x<=e^28` 由 `0.00002841-0.9999e^-14<1/36260` 接上；而 `x<8e11` 需要 theta 有限表。本步关闭拼接算术，但不关闭 psi 误差表、psi-theta 下界、8e11 有限表和低高度证书。",
+  "replacement_self_contained": {
+    "DusartThetaAnalyticKernelAndThresholdLedger": "DusartP51ArithmeticSpliceClosed AND PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger AND PsiMinusThetaLowerGap09999SqrtSelfContainedLedger AND ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger",
+    "DusartThetaMiddleRangeFiniteVerificationLedger": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger AND PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger AND PsiMinusThetaLowerGap09999SqrtSelfContainedLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只压缩假设反例链所需解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "DusartAnalyticKernelGateActive",
+      "meaning": "上一证书把下一最窄点设为 Dusart theta/PNT 的解析核与阈值。",
+      "proved": true,
+      "remaining": "DusartThetaAnalyticKernelAndThresholdLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DusartP51ArithmeticSpliceClosed",
+      "meaning": "Dusart P5.1 的高尾和中间带数值拼接余量为正；中间带余量很薄但严格为正。",
+      "proved": true,
+      "remaining": "只关闭拼接算术，不关闭输入表和外部定理证明。"
+    },
+    {
+      "closed": true,
+      "gate": "HighTailThresholdArithmeticClosed",
+      "meaning": "若有 psi 相对误差 eps_28<=0.00002224，则 x>=e^28 自动给 theta(x)-x<x/36260。",
+      "proved": true,
+      "remaining": "PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleStripArithmeticClosed",
+      "meaning": "若有 psi 上界 0.00002841 与 psi-theta>0.9999 sqrt(x)，则 8e11<=x<=e^28 接上。",
+      "proved": true,
+      "remaining": "PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger AND PsiMinusThetaLowerGap09999SqrtSelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingFiniteThetaBridgeTooShortForDusartP51",
+      "meaning": "仓库已自足关闭 x<=20000 的 theta 桥，但 Dusart P5.1 的有限表接口要求 theta(x)<x 到 8e11。",
+      "proved": true,
+      "remaining": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PsiContourCoarseComponentsReadyButNotSharpEnough",
+      "meaning": "Perron 常数、高高度零点和、平凡尾项已自足化；它们还没有给出 Dusart 表级 psi 误差。",
+      "proved": true,
+      "remaining": "PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DusartThetaAnalyticKernelAndThresholdLedger",
+      "meaning": "解析核与阈值尚未闭合：关键 psi 误差表、psi-theta 下界、8e11 有限 theta 表仍需作者侧证明或可复现证书。",
+      "proved": false,
+      "remaining": "PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger AND PsiMinusThetaLowerGap09999SqrtSelfContainedLedger AND ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger"
+    },
+    {
+      "closed": false,
+      "gate": "MiddleRangeFiniteVerificationStillOpen",
+      "meaning": "原来的 20000<x<X_A 中段现在被精确压成 20000<x<8e11 的 theta 有限表和 8e11<=x<=e^28 的解析拼接。",
+      "proved": false,
+      "remaining": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger AND PsiRelativeErrorTableEpsilon28AndMiddle2841SelfContainedLedger AND PsiMinusThetaLowerGap09999SqrtSelfContainedLedger"
+    },
+    {
+      "closed": false,
+      "gate": "LowHeightAuditStillOpen",
+      "meaning": "psi 误差表若走零点路线，仍要低高度 Turing/无零证书支撑。",
+      "proved": false,
+      "remaining": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DirectInternalDusartThetaPNTEnvelopeClosed",
+      "meaning": "本步闭合的是拼接结构，不是完整内部 Dusart 定理。",
+      "proved": false,
+      "remaining": "DusartThetaAnalyticKernelAndThresholdLedger AND DusartThetaMiddleRangeFiniteVerificationLedger AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "解析拼接压缩不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "412750d90c29460bd2078e796ea99cf3808c89baa47bbc1913708b15b66d23f2",
+    "docs/monograph/prime-matrix-strict-dusart-proposition51-skeleton-router.json": "89b21f482fa3472f7613f966c42dcc4f2c0553077266129e98e091d55ddaace4",
+    "docs/monograph/prime-matrix-strict-finite-theta-bridge-self-contained-router.json": "e199bc58d1c05daa01e9a49a70719c34c604b10313cf9ccf6dedd9d3ce7322ce",
+    "docs/monograph/prime-matrix-strict-trivial-tail-prime-power-self-contained-sync-router.json": "66fd7fe2769962317f8aae8c4106d87c60ab2a42cdf2519eab0e27e230267ca9",
+    "docs/monograph/prime-matrix-strict-zero-sum-contour-self-contained-sync-router.json": "4f11042be96ba548afb9fabfbea77592c4ad580508126210520d134b3f41c128"
+  },
+  "status": "dusart_analytic_kernel_threshold_arithmetic_splice_closed_inputs_open",
+  "target_statement_for_internalization": "vartheta(x)-x < x/36260 for x>0"
+}

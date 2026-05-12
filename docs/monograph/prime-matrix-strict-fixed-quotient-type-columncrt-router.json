@@ -1,0 +1,128 @@
+{
+  "certificate_type": "prime_matrix_strict_fixed_quotient_type_columncrt_router",
+  "core_interval_bounds_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的固定商型大核分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FixedTypeScaledFrequencyIdentityClosed",
+      "meaning": "固定 `(b,c)` 的每个复现等价于 `k|h/(bc)`。",
+      "proved": true,
+      "remaining": "ScaledCoreDivisorDensityDescentOrFixedTypePDEC"
+    },
+    {
+      "closed": true,
+      "gate": "CoreIntervalBoundsClosed",
+      "meaning": "核心 `k` 落在由 `(b,c)` 决定的有界乘法窗口中。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictHeightDescentClosed",
+      "meaning": "`bc>=2`，固定商型递归每步至少折半频率高度。",
+      "proved": true,
+      "remaining": "无无限循环。"
+    },
+    {
+      "closed": true,
+      "gate": "FixedTypePDECRouteRegistered",
+      "meaning": "跨 formal unit 的同型核心窗口复现应进入固定商型 ColumnCRT/PDEC。",
+      "proved": false,
+      "remaining": "FixedQuotientTypePDECColumnCertificateExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "DensityTransferWithoutLossProved",
+      "meaning": "尚未证明成对复现到核心窗口的密度阈值在递归中保持足够强。",
+      "proved": false,
+      "remaining": "FixedQuotientDensityTransferWithoutLoss"
+    },
+    {
+      "closed": false,
+      "gate": "FixedQuotientTypeExcluded",
+      "meaning": "尚未排斥固定商型 PDEC，也未闭合缩频核心密度递归的无损传递。",
+      "proved": false,
+      "remaining": "FixedQuotientTypePDECColumnCertificateExclusion AND FixedQuotientDensityTransferWithoutLoss"
+    }
+  ],
+  "density_transfer_without_loss_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_descent_depth_closed": true,
+  "fixed_quotient_type_excluded": false,
+  "fixed_type_pdec_excluded": false,
+  "fixed_type_pdec_route_registered": true,
+  "fixed_type_scaled_frequency_identity_closed": true,
+  "lemmas": [
+    {
+      "formula": "For c=b+a and gcd(b,c)=1, g=kb and g'=kc both divide h iff kbc divides h.",
+      "meaning": "固定商型复现精确等价于核心 k 整除缩频 h/(bc)。",
+      "name": "fixed_type_scaled_frequency_identity",
+      "status": "closed"
+    },
+    {
+      "formula": "Y/max(b,c)<k<=2Y/min(b,c).",
+      "meaning": "原短窗口中的成对除数复现转成核心 k 的有界乘法窗口。",
+      "name": "core_interval_bounds",
+      "status": "closed"
+    },
+    {
+      "formula": "bc>=2, hence |h/(bc)|<=|h|/2 for every legal fixed quotient type.",
+      "meaning": "固定商型递归不能无限原地循环；每次都至少折半频率高度。",
+      "name": "strict_height_descent",
+      "status": "closed"
+    },
+    {
+      "formula": "Any chain of fixed quotient descents has length <= floor(log_2 |h|).",
+      "meaning": "若一直不触发 PDEC/SAE，递归链也必须在有限深度终止。",
+      "name": "finite_descent_depth",
+      "status": "closed"
+    },
+    {
+      "formula": "Persistent same (b,c) core intervals across formal units define a fixed quotient-type ColumnCRT/PDEC certificate.",
+      "meaning": "跨 formal unit 的同型复现是命名坏窗，不可当作自由误差。",
+      "name": "persistence_to_fixed_pdec",
+      "status": "registered_route_open"
+    },
+    {
+      "formula": "Many same-type pairs inside one formal unit give a short-window divisor-density packet for h/(bc).",
+      "meaning": "单 formal unit 内的同型复现变成缩频核心除数密度问题。",
+      "name": "single_unit_density_to_scaled_core",
+      "status": "closed_reduction"
+    },
+    {
+      "formula": "The number and weight loss from pairs (g,g') to cores k must be bounded uniformly through descent.",
+      "meaning": "要闭合固定商型出口，还需证明密度阈值不会在递归中被稀释到不可用。",
+      "name": "density_transfer_without_loss",
+      "status": "open_input"
+    }
+  ],
+  "next_direct_attack_target": "FixedQuotientDensityTransferWithoutLoss",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "BoundedQuotientTypeSAEAbsorption",
+    "MultiSourceKernelFanInSAEOrPDECExclusion"
+  ],
+  "plain_conclusion": "固定商型出口已经从相位口号压成精确缩频递归。令 c=b+a。由于 gcd(b,c)=1，若 g=kb 与 g'=kc 都整除 h，则 lcm(g,g')=kbc 也整除 h；反过来 kbc|h 即给出同商型 pair。因此同一商型复现等价于核心 k 整除 h/(bc)。又因为合法商型有 bc>=2，所以每次固定商型递归都会把频率高度至少折半，不能形成无限循环。剩余缺口是：证明 pair 到 core 的密度/权重传递无损，或排斥跨 formal unit 的固定商型 ColumnCRT/PDEC 证书。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "FixedQuotientTypePDECColumnCertificateExclusion",
+  "single_unit_density_to_scaled_core_closed": true,
+  "source_hashes": {
+    "docs/monograph/h4-pdec-admissible-constraint-table.md": "259d39fdfe4ec8ec232e26a4f2c8b474b58e81ea39ba209c99c772355929d483",
+    "docs/monograph/h4-pdec-column-defect-routing-contract.md": "0f7afe16275924cd9059f649155d793b1df600e73eafa721cfce0f0dd5ba9af7",
+    "docs/monograph/prime-matrix-strict-large-pair-kernel-difference-router.md": "8f16470e7065b050c189d4a418e604fc6208c7ec8510467a0b721293445b7c6e",
+    "docs/monograph/prime-matrix-strict-low-multiplier-common-kernel-router.md": "5cd27f1fce66580cdb37ca1506c3ddcb39eb4499bd16c4237aa39c1a722d8f63",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.md": "2e9b9276de650d14f1b6fd67fd224ca60caf70e644f5dba1fb2eb2a290cfa392"
+  },
+  "status": "fixed_quotient_type_reduced_to_scaled_core_descent_or_pdec_open",
+  "strict_height_descent_closed": true
+}

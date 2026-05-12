@@ -1,0 +1,134 @@
+{
+  "certificate_type": "prime_matrix_strict_primitive_summand_origin_identity_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "frontier_reduction": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward 等价于提交 `RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`：在同一 formal unit 内列出 actual noncanonical primitive summand 的逐行原始生成表。已有 unsigned skeleton 只能给几何行，不能给 signed coefficient。",
+  "next_direct_attack_target": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "no_theorem_switch": true,
+  "origin_identity_is_row_level_origin_generation": true,
+  "plain_conclusion": "本步把 signed coefficient 来源恒等式继续压到逐行 clean-core 原始生成表。如果该表存在，来源恒等式、exact signed weight、constructor row 输出和推前前求和恒等式同时得到；但当前材料仍只给 formal-unit/source-tuple 容器和 unsigned skeleton，没有 signed coefficient 的逐行来源表。",
+  "primitive_summand_origin_identity_router_closed": true,
+  "primitive_summand_signed_coefficient_origin_identity_proved": false,
+  "primitive_summand_signed_weight_expression_proved": false,
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "row_table_fields": [
+    {
+      "field": "formal_unit_id",
+      "meaning": "锁定同一反例 witness 的 formal unit。"
+    },
+    {
+      "field": "source_tuple_hash",
+      "meaning": "锁定 pre-Cauchy source tuple 与 anchor 参数。"
+    },
+    {
+      "field": "primitive_row_index",
+      "meaning": "给出 alpha/delta primitive summand 的有限行索引。"
+    },
+    {
+      "field": "signed_coefficient",
+      "meaning": "逐行 signed coefficient 的正向公式。"
+    },
+    {
+      "field": "sign_local_factor",
+      "meaning": "符号与 local factor 非零证明，失败则命名回流。"
+    },
+    {
+      "field": "uv_branch_key",
+      "meaning": "同步输出 exact `(u,v)` 与 branch key。"
+    },
+    {
+      "field": "prepushforward_sum_identity",
+      "meaning": "这些行在 Phi/payment 推前前求和等于 actual alpha/delta 系数。"
+    }
+  ],
+  "rows": [
+    {
+      "closed": true,
+      "gate": "OriginIdentityTargetActive",
+      "meaning": "上一层已把 primitive summand signed expression 压成 signed coefficient 来源恒等式。",
+      "proved": false,
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "OriginIdentityIsRowLevelOriginGeneration",
+      "meaning": "若存在 clean-core 原始生成账本，其逐行限制即可给出来源恒等式。",
+      "proved": true,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "PrepushforwardEmitterAlreadyPointsToOriginLedger",
+      "meaning": "pre-pushforward emitter origin ledger 已把同一缺口指向原始生成账本。",
+      "proved": true,
+      "remaining": "但未给逐行表。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopSelfProofCut",
+      "meaning": "origin ledger、formula、emitter、payment 之间的循环来源证明已被切断。",
+      "proved": true,
+      "remaining": "不能由来源环自证逐行生成表。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitAndSourceTupleContainersReady",
+      "meaning": "formal unit/source tuple/anchor 参数容器可用。",
+      "proved": true,
+      "remaining": "容器不产生 signed coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedSkeletonReadyButNotSignedOrigin",
+      "meaning": "carry-shell、P列锚和 layered-wheel 已给 unsigned row skeleton。",
+      "proved": false,
+      "remaining": "仍需 signed coefficient 来源表。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalAndReverseRoutesRejected",
+      "meaning": "外部谱、payment 反推和早期零行覆盖都不能生成逐行 signed origin。",
+      "proved": true,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": false,
+      "gate": "CleanCoreOriginalGenerationLedgerCurrentCorpusProved",
+      "meaning": "当前 clean-core 原始生成账本仍未证明。",
+      "proved": false,
+      "remaining": "CleanCoreOriginalCoefficientGenerationLedgerAndReturn。"
+    },
+    {
+      "closed": false,
+      "gate": "RowLevelOriginTableCurrentCorpusProved",
+      "meaning": "当前材料没有逐 actual noncanonical primitive summand 的原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveSummandOriginIdentityCurrentCorpusProved",
+      "meaning": "没有逐行原始生成表，signed coefficient 来源恒等式仍未证明。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.json": "a4e7b79a90a21e338213ee982a87b8c4caf59b73aa832f740a45dab59b1dabb4",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-prepushforward-emitter-origin-ledger-router.json": "8064030c4c78a35fcc4a07142b7a326f29d1775c590e3901178318445ce3ade4",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff"
+  },
+  "source_loop_self_proof_cut": true,
+  "status": "primitive_summand_origin_identity_reduced_to_row_level_origin_generation_table_open",
+  "target_input_before_router": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward",
+  "unsigned_skeleton_not_signed_origin": true
+}

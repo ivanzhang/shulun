@@ -1,0 +1,122 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_emitter_source_table_router_closed": true,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "alpha_delta_coefficient_identity_before_pushforward_proved": false,
+  "certificate_type": "prime_matrix_strict_actual_emitter_source_table_router",
+  "counterexample_assumption_only": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "field_law": "The actual emitter source table is not a name for downstream payment data. Its first line must be a pre-Cauchy constructor declaration for the actual noncanonical emitter. Only after that declaration may one list primitive summand rows, prove the alpha/delta coefficient identity before pushforward, and attach return tags for over-budget, unregistered, thin, rejected or cancelling rows.",
+  "hard_law": "若没有 pre-Cauchy declaration line，后面的 summand rows 都只是从 Gamma/覆盖图反推的后验标签；这正是来源环切断和早期零行 seed no-go 已排除的伪证明路径。",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`ActualNoncanonicalPrimitiveEmitterSourceTableLedger` 没有被换成别的命题；它被拆成同一源表内部的四个字段：`PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter`、`PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable`、`AlphaDeltaCoefficientIdentityBeforePushforwardLedger`、`SourceTableNoDownstreamRecoveryAndNamedReturnLedger`。当前最窄点是第一行 declaration，因为没有它，源表不能合法开始。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "primitive_summand_emitter_formula_rows_proved": false,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ActualEmitterSourceTableTargetActive",
+      "meaning": "上一层 complete key 分区已经把首要实际字段压成 actual noncanonical primitive emitter 源表。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveEmitterSourceTableLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTableIsOriginLedgerRestrictedToEmitter",
+      "meaning": "pre-pushforward emitter 的源表本质就是 clean-core 原始生成账本在当前 emitter 支撑上的限制。",
+      "proved": true,
+      "remaining": "这只是对象识别，不证明源表存在。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopCutImported",
+      "meaning": "origin ledger、constructor、formula、registered emitter 之间只形成等价环；不能用该环自证源表。",
+      "proved": true,
+      "remaining": "必须给无环 pre-Cauchy declaration line。"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowCannotSupplySourceTable",
+      "meaning": "假设早期零行只给 unsigned 覆盖/CRT/payment 数据，不能生成 signed pre-Cauchy source table。",
+      "proved": true,
+      "remaining": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceClassFirewallImported",
+      "meaning": "canonical、generic WFD、unregistered 与 external 类已分流；strict 自足表只能来自 actual noncanonical declaration。",
+      "proved": true,
+      "remaining": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentIdentityTaxonomyImported",
+      "meaning": "独立 pre-Cauchy 来源恒等式的伪来源已穷尽；外部谱不能作为自足 source table。",
+      "proved": true,
+      "remaining": "actual noncanonical source declaration 或命名回流。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTableFieldDecompositionPinned",
+      "meaning": "一个合法源表必须包含 declaration line、primitive summand rows、推前前系数恒等式和命名回流栏。",
+      "proved": true,
+      "remaining": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter AND PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable AND AlphaDeltaCoefficientIdentityBeforePushforwardLedger AND SourceTableNoDownstreamRecoveryAndNamedReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PreCauchyDeclarationLineCurrentCorpusProved",
+      "meaning": "当前材料尚未在 Cauchy/dispersion 前声明 actual noncanonical emitter 的 primitive constructor 来源。",
+      "proved": false,
+      "remaining": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveSummandRowsCurrentCorpusProved",
+      "meaning": "没有 declaration line，就不能合法列出 summand、branch key、u/v、sign/local factor 的实际行。",
+      "proved": false,
+      "remaining": "PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable。"
+    },
+    {
+      "closed": false,
+      "gate": "CoefficientIdentityBeforePushforwardCurrentCorpusProved",
+      "meaning": "当前材料没有证明这些 primitive rows 在推前前求和等于 actual alpha/delta 系数。",
+      "proved": false,
+      "remaining": "AlphaDeltaCoefficientIdentityBeforePushforwardLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "NoDownstreamRecoveryReturnLedgerCurrentCorpusProved",
+      "meaning": "未提交源表、后验补表、超预算、thin/rejected 或抵消情形仍需逐项命名回流。",
+      "proved": false,
+      "remaining": "SourceTableNoDownstreamRecoveryAndNamedReturnLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualEmitterSourceTableCurrentCorpusProved",
+      "meaning": "四个源表字段尚未合取证明，所以 actual primitive emitter 源表仍开放。",
+      "proved": false,
+      "remaining": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter AND PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable AND AlphaDeltaCoefficientIdentityBeforePushforwardLedger AND SourceTableNoDownstreamRecoveryAndNamedReturnLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-origin-source-admission-router.json": "9e4ba4451beaa9fb46e7bce4eeab74dc9edcb62a60d08af58b038222cc07c3c3",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-independent-precauchy-identity-taxonomy-router.json": "98673babcd5fc127e58a8f5bb1bb3b78236f770b332e937674a938dfdca50534",
+    "docs/monograph/prime-matrix-prepushforward-emitter-origin-ledger-router.json": "8064030c4c78a35fcc4a07142b7a326f29d1775c590e3901178318445ce3ade4",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8"
+  },
+  "source_loop_cut_imported": true,
+  "source_table_field_decomposition_pinned": true,
+  "source_table_no_downstream_recovery_return_ledger_proved": false,
+  "status": "strict_actual_emitter_source_table_reduced_to_precauchy_declaration_rows_identity_return_open",
+  "terminal_gap_after_router": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter AND PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable AND AlphaDeltaCoefficientIdentityBeforePushforwardLedger AND SourceTableNoDownstreamRecoveryAndNamedReturnLedger",
+  "terminal_gap_before_router": "ActualNoncanonicalPrimitiveEmitterSourceTableLedger",
+  "zero_row_source_table_extraction_blocked": true
+}

@@ -1,0 +1,145 @@
+{
+  "certificate_type": "prime_matrix_strict_epsilon_table_generator_audit_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "EpsilonTableGeneratorGateActive",
+    "DusartTableEpsilonStatementExtractionLedger",
+    "TableValuesAreNotProof",
+    "DusartP51TableRoundingMarginAuditLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "epsilon_table_generator_self_contained_closed": false,
+  "epsilon_table_statement_extraction_closed": true,
+  "external_reference": {
+    "id": "Dusart arXiv:1002.0442",
+    "role": "source boundary for the extracted table values; not a reproducible computation artifact",
+    "url": "https://arxiv.org/abs/1002.0442"
+  },
+  "interval_propagation_closed": false,
+  "next_direct_attack_target": "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "PsiEpsilonTableComputationAlgorithmLedger",
+    "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger",
+    "PsiEpsilonIntervalPropagationAndMonotonicityLedger",
+    "ReproduciblePsiEpsilonTableComputationHashLedger",
+    "SchoenfeldDusartEpsilonTableGeneratorFormalizationLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "PsiEpsilonTableComputationAlgorithmLedger",
+    "PsiEpsilonIntervalPropagationAndMonotonicityLedger",
+    "ReproduciblePsiEpsilonTableComputationHashLedger"
+  ],
+  "plain_conclusion": "Schoenfeld/Dusart epsilon 表生成器被进一步拆成五项：表值提取、计算算法、零点/零点自由尾项输入、区间传播规则和可复现 hash。当前只闭合表值提取；没有原始表生成算法和零点输入证书，所以不能把 `eps_psi(28)` 与 `1.00002841` 当作作者侧自足证明。",
+  "psi_epsilon_table_self_contained_closed": false,
+  "replacement_self_contained": {
+    "PsiEpsilonTableComputationAlgorithmLedger": "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger AND PsiEpsilonIntervalPropagationAndMonotonicityLedger AND ReproduciblePsiEpsilonTableComputationHashLedger",
+    "SchoenfeldDusartEpsilonTableGeneratorFormalizationLedger": "DusartTableEpsilonStatementExtractionLedger AND PsiEpsilonTableComputationAlgorithmLedger AND VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger AND PsiEpsilonIntervalPropagationAndMonotonicityLedger AND ReproduciblePsiEpsilonTableComputationHashLedger"
+  },
+  "reproducible_table_hash_closed": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审计外部表值生成责任，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "EpsilonTableGeneratorGateActive",
+      "meaning": "上一证书把下一最窄点设为 Schoenfeld/Dusart epsilon 表生成器形式化。",
+      "proved": true,
+      "remaining": "SchoenfeldDusartEpsilonTableGeneratorFormalizationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DusartTableEpsilonStatementExtractionLedger",
+      "meaning": "已把 P5.1 需要的两个 psi 表值抽出为机器可读责任项。",
+      "proved": true,
+      "remaining": "eps_psi_28=0.00002224; psi_middle_upper=1.00002841"
+    },
+    {
+      "closed": true,
+      "gate": "TableValuesAreNotProof",
+      "meaning": "表值提取只说明外部论文使用了这些数；作者侧自足证明还需要生成算法、零点输入和可复现工件。",
+      "proved": true,
+      "remaining": "PsiEpsilonTableComputationAlgorithmLedger AND VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger AND ReproduciblePsiEpsilonTableComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PsiEpsilonTableComputationAlgorithmLedger",
+      "meaning": "当前仓库尚无从显式公式、零点验证和零点自由尾项自动生成 eps_psi(b) 表的算法账本。",
+      "proved": false,
+      "remaining": "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger AND PsiEpsilonIntervalPropagationAndMonotonicityLedger AND ReproduciblePsiEpsilonTableComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger",
+      "meaning": "表生成器需要明确使用哪些有限零点验证、高度阈值、零点自由区和尾项常数。",
+      "proved": false,
+      "remaining": "Verified zeros plus zero-free/tail constants with citations or internal proof。"
+    },
+    {
+      "closed": false,
+      "gate": "PsiEpsilonIntervalPropagationAndMonotonicityLedger",
+      "meaning": "需要证明表值如何从离散 b 或有限节点传播到整段 x 区间，包含跳点、端点和单调性规则。",
+      "proved": false,
+      "remaining": "PsiEpsilonTableComputationAlgorithmLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ReproduciblePsiEpsilonTableComputationHashLedger",
+      "meaning": "需要可复现计算文件、版本、输入数据 hash 和输出表 hash；当前只有路由证书，没有原始计算工件。",
+      "proved": false,
+      "remaining": "Reproducible source tables and scripts"
+    },
+    {
+      "closed": true,
+      "gate": "DusartP51TableRoundingMarginAuditLedger",
+      "meaning": "P5.1 拼接余量审查已完成；这只约束表值舍入方向，不证明表值。",
+      "proved": true,
+      "remaining": "DusartP51TableRoundingMarginAuditLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SchoenfeldDusartEpsilonTableGeneratorFormalizationLedger",
+      "meaning": "epsilon 表生成器尚未自足形式化；当前只关闭了表值提取与责任拆包。",
+      "proved": false,
+      "remaining": "DusartTableEpsilonStatementExtractionLedger AND PsiEpsilonTableComputationAlgorithmLedger AND VerifiedZeroAndZeroFreeTailInputForSchoenfeldDusartTableLedger AND PsiEpsilonIntervalPropagationAndMonotonicityLedger AND ReproduciblePsiEpsilonTableComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "表生成器审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "abc98de4d450a3877e736920f42b6e748ef267874aad0e4b382a9c2294e8447a",
+    "docs/monograph/prime-matrix-strict-schoenfeld-dusart-psi-table-router.json": "6ef79f3e1fc1b46aa5f67bd64cdb2e9e4f20e627c430644a070f0f67b3daaad6"
+  },
+  "status": "epsilon_table_generator_audit_extracted_values_algorithm_zero_input_hash_open",
+  "table_computation_algorithm_closed": false,
+  "table_values": [
+    {
+      "needed_by": "PsiEpsilonHighTailB28TableCertificate",
+      "source_role": "high tail x>=e^28",
+      "symbol": "eps_psi_28",
+      "value": 2.224e-05
+    },
+    {
+      "needed_by": "PsiUpperMiddle8e11ToE28TableCertificate",
+      "source_role": "middle strip 8e11<=x<=e^28",
+      "symbol": "psi_middle_upper",
+      "value": 1.00002841
+    }
+  ],
+  "verified_zero_and_zero_free_tail_input_closed": false
+}

@@ -1,0 +1,274 @@
+{
+  "batch_runner_profile": {
+    "batch_runner_script_present": true,
+    "sample_node_table": "/tmp/middle-psi-nodes-sample.jsonl",
+    "sample_node_table_present": true,
+    "sample_output_sha256": "a3e3a64a0e5ddf761d90b043b3896681a42e4df044412ccff03caa57ebbdba11",
+    "sample_record_count": 1,
+    "sample_records": [
+      {
+        "i": 0,
+        "psi_exe_sha256": "e35085f321fa472c3e96a1e674e99bb02e603045bb5e3c5f25cf66df696ea4cb",
+        "psi_precision_decimal_digits": 30,
+        "psi_raw_output": "8.00000037979274743740661814686e11",
+        "psi_rounding_error_bound": "1E-18",
+        "psi_rounding_mode": "MPFR_RNDN_output_wrapped_up_by_one_ulp_for_slack_lower_bound",
+        "psi_upper_for_slack": "800000037979.274743740661814687",
+        "psi_value": "800000037979.274743740661814686",
+        "required_node_slack_floor": "3073386.85452651",
+        "slack_ge_required_floor": true,
+        "slack_lower_bound": "22690020.725256259338185313",
+        "source_commit": "21f4f6553851f218801a733f607426c3dba9ba11",
+        "x_i": 800000000000
+      }
+    ],
+    "sample_slack_ok": true
+  },
+  "binary_profile": {
+    "psi_binary_hash": "e35085f321fa472c3e96a1e674e99bb02e603045bb5e3c5f25cf66df696ea4cb",
+    "psi_binary_present": true,
+    "theta_binary_hash": "c80de3cad924a47f8498683fda1374e3d32e8855badefa6a3c037d6ab5d306bc",
+    "theta_binary_present": true
+  },
+  "brun_titchmarsh_short_interval_input_external_closed": true,
+  "buildable_psi_theta_toolchain_closed": true,
+  "canonical_batch_psi_node_runner_closed": true,
+  "canonical_node_table_audit_checker_closed": true,
+  "certificate_type": "prime_matrix_strict_deleglise_rivat_psi_node_data_router",
+  "certified_short_interval_psi_increment_upper_closed": false,
+  "checkout_profile": {
+    "candidate_checkouts": [
+      "/tmp/PsiTheta",
+      "/opt/code/shulun/external/PsiTheta"
+    ],
+    "checkout_present": true,
+    "chosen_checkout": "/tmp/PsiTheta",
+    "existing_checkouts": [
+      "/tmp/PsiTheta"
+    ],
+    "missing_source_files": [],
+    "required_source_files_present": true,
+    "source_file_hashes": {
+      "README.md": "61d7cd1bfe30996001e13c3e0331f4ac034b9223c515ea1d11270800285e42a9",
+      "makefile": "38e69a4e6dfb98375754f60f411e30e47571b31d112134f5e20a7b91591d71da",
+      "psi.cc": "7f81caa5c0f1e20bf4e32da3cd560e56d2722bf6c2ed1dda92e40ca529636595",
+      "psitheta.h": "a05b847c6960aab55cca16b649e4b948077fbb7f5fc9a3cd1e2234479e13b324",
+      "theta.cc": "c092b5bd38c08111616a4a0b403845b16faca57647750e08fda9ee5d20bf5708",
+      "tst_psi.cpp": "c99c7f65f82d11060e058f5aeb09f5fc8ec9c6dc20d21879434491003a213bf1",
+      "tst_theta.cpp": "af62896a9f17f33fda179a0fac8fe4058e02d8b0c710a9e550de0cf8eeb3b753"
+    }
+  },
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ExternalPsiThetaSourceLocated",
+    "PublishedAlgorithmCitationLocated",
+    "LocalSourceCheckoutSignature",
+    "BuildablePsiThetaToolchain",
+    "PsiThetaSmokeTestLedger",
+    "CanonicalBatchPsiNodeRunnerLedger",
+    "CanonicalNodeTableAuditScriptLedger"
+  ],
+  "compiled_psi_theta_binaries_present": true,
+  "counterexample_assumption_only": true,
+  "deleglise_rivat_psi_node_data_or_equivalent_hash_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_psi_theta_source_identified": true,
+  "external_sources": {
+    "paper_citation": "M. Deléglise and J. Rivat, Computing Psi(x), Mathematics of Computation 67(224), 1998, 1691-1696.",
+    "source_commit_observed": "21f4f6553851f218801a733f607426c3dba9ba11",
+    "source_page": "https://math.univ-lyon1.fr/~deleglis/calculs.html",
+    "source_repo": "https://github.com/mhdeleglise/PsiTheta"
+  },
+  "local_source_checkout_signature_closed": true,
+  "machine_readable_node_archive_closed": false,
+  "middle_psi_fine_mesh_node_slack_floor_hash_closed": false,
+  "next_direct_attack_target": "MachineReadableNodeArchiveLedger",
+  "no_theorem_switch": true,
+  "node_table_profile": {
+    "candidate_paths": [
+      "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-table.json",
+      "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-table.jsonl",
+      "data/middle-psi-fine-mesh-node-table.jsonl"
+    ],
+    "existing_paths": [],
+    "node_table_hashes": {},
+    "node_table_present": false,
+    "node_table_sizes": {}
+  },
+  "open_gates": [
+    "MachineReadableNodeArchiveLedger",
+    "SourceAlgorithmToDusartConventionMatch",
+    "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "CanonicalBatchPsiNodeRunnerLedger",
+    "MachineReadableNodeArchiveLedger",
+    "SourceAlgorithmToDusartConventionMatch"
+  ],
+  "plain_conclusion": "Deléglise-Rivat 等价计算路线向前推进了一层：PsiTheta 源码和论文来源已经可定位，但这还不是节点证书。本环境已可构建并通过基础 smoke test，但仓库没有 646258 个节点的机器可读表；还必须补完整节点归档、节点表 hash，以及与 Dusart psi 口径和外向舍入的一致性证明。",
+  "prime_power_short_interval_correction_closed": true,
+  "psi_theta_smoke_test_closed": true,
+  "published_algorithm_citation_located": true,
+  "replacement_after_this": {
+    "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger": "BuildablePsiThetaToolchain AND PsiThetaSmokeTestLedger AND CanonicalBatchPsiNodeRunnerLedger AND MachineReadableNodeArchiveLedger AND SourceAlgorithmToDusartConventionMatch",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger AND NodeSlackFloorAuditLedger AND MeshCompletenessAndIndexHashLedger AND MiddlePsiUpperDirectedRoundingLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只处理中段 psi 节点数据来源，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalPsiThetaSourceLocated",
+      "meaning": "Deléglise 本人页面与 mhdeleglise/PsiTheta 仓库给出 psi/theta 计算源码入口。",
+      "proved": true,
+      "remaining": "source is identified, not yet a node certificate"
+    },
+    {
+      "closed": true,
+      "gate": "PublishedAlgorithmCitationLocated",
+      "meaning": "源码 README 对应 Deléglise-Rivat Computing Psi(x) 论文，算法来源边界可登记。",
+      "proved": true,
+      "remaining": "paper proof not rederived here"
+    },
+    {
+      "closed": true,
+      "gate": "LocalSourceCheckoutSignature",
+      "meaning": "本地若有源码 checkout，则登记关键源码文件 hash。",
+      "proved": true,
+      "remaining": "checkout or vendored source tree"
+    },
+    {
+      "closed": true,
+      "gate": "BuildablePsiThetaToolchain",
+      "meaning": "当前环境已需要 make、C++ 编译器和 psi/theta 可执行文件共同验收。",
+      "proved": true,
+      "remaining": "install/build toolchain or use a prebuilt audited container"
+    },
+    {
+      "closed": true,
+      "gate": "PsiThetaSmokeTestLedger",
+      "meaning": "README theta 示例和 psi(1e6) 朴素筛对照已作为基础 smoke test。",
+      "proved": true,
+      "remaining": "target-scale and full node table still required"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalBatchPsiNodeRunnerLedger",
+      "meaning": "已新增批处理 runner，并用目标区间首节点生成 JSONL 样本；完整归档仍未生成。",
+      "proved": true,
+      "remaining": "full node archive generation still required"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalNodeTableAuditScriptLedger",
+      "meaning": "已新增机械验收脚本，可检查 JSONL 节点表的索引、x_i、余量下界、节点数和 SHA256。",
+      "proved": true,
+      "remaining": "requires actual node table to pass"
+    },
+    {
+      "closed": false,
+      "gate": "MachineReadableNodeArchiveLedger",
+      "meaning": "仓库当前仍未发现中段百万网格完整节点表。",
+      "proved": false,
+      "remaining": "generate or import node jsonl archive"
+    },
+    {
+      "closed": false,
+      "gate": "SourceAlgorithmToDusartConventionMatch",
+      "meaning": "需要证明源码输出的 psi 口径、端点跳变、舍入方向与 Dusart 表使用口径一致。",
+      "proved": false,
+      "remaining": "MiddlePsiUpperDirectedRoundingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger",
+      "meaning": "算法源已定位，但构建、批量节点生成、节点表 hash、口径/舍入验收尚未闭合。",
+      "proved": false,
+      "remaining": "BuildablePsiThetaToolchain AND PsiThetaSmokeTestLedger AND CanonicalBatchPsiNodeRunnerLedger AND MachineReadableNodeArchiveLedger AND SourceAlgorithmToDusartConventionMatch"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+      "meaning": "节点数据源未闭合时，节点余量/hash 守门不能升级。",
+      "proved": false,
+      "remaining": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger AND NodeSlackFloorAuditLedger AND MeshCompletenessAndIndexHashLedger AND MiddlePsiUpperDirectedRoundingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+      "meaning": "BT 外部输入和素数幂修正已处理，但短区间总包仍卡在节点余量/hash。",
+      "proved": false,
+      "remaining": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "节点数据源定位不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "smoke_test_profile": {
+    "psi_1e6_naive_float": 999586.597495631,
+    "psi_1e6_output": "9.995865974956329220330615e5",
+    "psi_1e6_relative_error": 1.9798789579774675e-15,
+    "smoke_test_closed": true,
+    "theta_readme_expected": "1.234518946373189641192934e9",
+    "theta_readme_match": true,
+    "theta_readme_output": "1.234518946373189641192934e9"
+  },
+  "source_algorithm_to_dusart_convention_match_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "e41c58c1b58574708ccc3d78c4a100a0e060cb183763928bac9c93340d88d800",
+    "docs/monograph/prime-matrix-strict-brun-titchmarsh-short-interval-input-router.json": "81123122d305deb41ea3e2da5e3da01b7638a99f0137194b9abdd0cc3eb3f8c2",
+    "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-slack-router.json": "81d71543d55500a13c1bf982774ebcf6237c2f89d5ce590df1261bde43bf2e0c",
+    "experiments/prime_matrix_middle_psi_node_batch_runner.py": "4be902b32ec6ba908560574bcb810f715bf575d6201a66358bbd2657c1f367a2",
+    "experiments/prime_matrix_middle_psi_node_table_audit.py": "6eedbc9e1cc19bf27898e1ff5bd88bc54a90fd4a2f0d9fcbbaacc8bf1a93d804"
+  },
+  "status": "psi_algorithm_source_built_smoke_passed_batch_node_archive_hash_open",
+  "toolchain_profile": {
+    "clangpp_path": null,
+    "clangpp_present": false,
+    "compiler_present": true,
+    "gpp_path": "/usr/bin/g++",
+    "gpp_present": true,
+    "make_path": "/usr/bin/make",
+    "make_present": true,
+    "note": "GMP/MPFR runtime libraries were observed externally, but headers/compiler must be verified by build.",
+    "requires_gmp_mpfr": true
+  },
+  "workload_profile": {
+    "batch_adapter_required": true,
+    "canonical_output_format": "jsonl, one sorted record per i, UTF-8, LF line ending, SHA256 over exact bytes",
+    "expected_start_node_count": 646258,
+    "first_start_node": 800000000000.0,
+    "last_start_node": 1446257000000.0,
+    "mesh_h": 1000000.0,
+    "required_node_slack_floor": 3073386.85452651,
+    "required_record_fields": [
+      "i",
+      "x_i",
+      "psi_value",
+      "psi_rounding_mode",
+      "psi_precision_decimal_digits",
+      "slack_lower_bound",
+      "slack_ge_required_floor",
+      "source_commit",
+      "source_chunk_hash"
+    ],
+    "single_cli_program_not_sufficient_for_hash_certificate": true,
+    "x_left": 800000000000.0,
+    "x_right": 1446257064291.475
+  }
+}

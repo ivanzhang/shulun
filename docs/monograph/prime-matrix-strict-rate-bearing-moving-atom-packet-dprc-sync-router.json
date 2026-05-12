@@ -1,0 +1,166 @@
+{
+  "active_target_before_router": "RateBearingMovingAtomTerminalPacketExclusionWithExplicitDPRC",
+  "certificate_type": "prime_matrix_strict_rate_bearing_moving_atom_packet_dprc_sync_router",
+  "closed_gates": [
+    "SameTheoremAndCounterexampleGuardPreserved",
+    "RKSLogTailLog4NoLongerActiveBlocker",
+    "MovingAtomFrontierStillActive",
+    "RateBearingPacketTargetPinned",
+    "MovingAtomLowDimOrNoSignatureInterfaceClosed",
+    "DPRCCompatibilityRemovedButLedgerRetained",
+    "ExplicitModelGapSplitImported",
+    "HighSegmentModelGapFactorized",
+    "InternalExpansionCycleObstructionImported"
+  ],
+  "compressed_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "counterexample_assumption_only": true,
+  "cycle_breaker_alternative": "NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage",
+  "direct_unconditional_contradiction_found": false,
+  "dprc_compatibility_removed": true,
+  "empirical_absence_not_used": true,
+  "expanded_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND (HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "explicit_model_gap_split_imported": true,
+  "high_segment_model_gap_factorized": true,
+  "hypothetical_chain_only": true,
+  "interface_sync_closed": true,
+  "moving_atom_low_dim_or_no_signature_interface_closed": true,
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "PDECCapOrInternalCleanKLSRatePacketGateOpen",
+    "RatePreservationLedgerOpen",
+    "DStructureIndependentAcceptanceStillOpen",
+    "RateBearingMovingAtomTerminalPacketExclusionWithExplicitDPRC",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "parallel_attack_targets": [
+    "HarmonicWindowAlpha043PGe3001Upper0850Ledger",
+    "DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步关闭的是速率型 moving atom 终端包的接口同步：RKS-log 已移出活动阻断，moving-block 无名出口被消除，DPRC 兼容性门已删除，模型余量被拆到高段尾段账本。但终端排斥仍未证明；当前严格自足剩余为 PDEC/CleanKLS 速率包、高段模型余量、RatePreservation 和 DStructure 独立验收。",
+  "rate_bearing_moving_atom_packet_exclusion_proved": false,
+  "remaining_atoms": [
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet",
+    "HighSegmentModelGapAlpha043C3AnalyticLedger",
+    "HarmonicWindowAlpha043PGe3001Upper0850Ledger",
+    "DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "SameTheoremAndCounterexampleGuardPreserved",
+      "meaning": "所有导入证书仍在假设早期零行反例链条内同步，不使用真实零行缺席，也不转换命题。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "RKSLogTailLog4NoLongerActiveBlocker",
+      "meaning": "RKS-log/Tail-log4 自足替代包已由 RNRS/Rudnev 倒数能量链回填，不再作为当前活动阻断。",
+      "proved": true,
+      "remaining": "不能替代 moving atom / ExactUV 源侧支撑下界。"
+    },
+    {
+      "closed": true,
+      "gate": "MovingAtomFrontierStillActive",
+      "meaning": "删除 branch-trace、signed-source 与 pair-mass 循环后，actual noncanonical moving atom 仍是三原子前沿之一。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "RateBearingPacketTargetPinned",
+      "meaning": "moving atom 已压到带速率要求的同一 (u,v) 终端包；质性投影二分不足以闭合。",
+      "proved": false,
+      "remaining": "RateBearingMovingAtomTerminalPacketExclusionWithExplicitDPRC"
+    },
+    {
+      "closed": true,
+      "gate": "MovingAtomLowDimOrNoSignatureInterfaceClosed",
+      "meaning": "moving-block/NC-BLK 不能再作为无名出口：有低维签名进 PDEC/SAE/ColumnCRT，无签名进终端包。",
+      "proved": true,
+      "remaining": "这只消除无名出口，不证明终端排斥。"
+    },
+    {
+      "closed": true,
+      "gate": "DPRCCompatibilityRemovedButLedgerRetained",
+      "meaning": "moving-block 替换未新增 DPRC 口径缺口；兼容性门可删，但模型余量账本仍保留。",
+      "proved": true,
+      "remaining": "ExplicitModelGapAndFiniteDPRCLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitModelGapSplitImported",
+      "meaning": "P<2003 有限 DPRC 已闭合；P>=2003 的模型余量仍需解析账本。",
+      "proved": false,
+      "remaining": "HighSegmentModelGapAlpha043C3AnalyticLedger"
+    },
+    {
+      "closed": true,
+      "gate": "HighSegmentModelGapFactorized",
+      "meaning": "高段模型余量已拆成 2003<=P<3001 有限桥与 P>=3001 的两个尾段解析输入。",
+      "proved": false,
+      "remaining": "HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "PDECCapOrInternalCleanKLSRatePacketGateOpen",
+      "meaning": "速率型终端包若落入 PDEC/CleanKLS，仍需同口径 PDEC 作用域匹配或自足 CleanKLS/DLS 大筛证明。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet"
+    },
+    {
+      "closed": true,
+      "gate": "InternalExpansionCycleObstructionImported",
+      "meaning": "从 PDEC/CleanKLS 继续内部展开会回到同一终端门；该循环是障碍，不是证明。",
+      "proved": true,
+      "remaining": "NonrecursiveActualNoncanonicalPreCauchyConstructorRuleAndSignedLiftPackage"
+    },
+    {
+      "closed": false,
+      "gate": "RatePreservationLedgerOpen",
+      "meaning": "终端排斥还必须保存 moving atom 所需的 log-power 速率字段，不能只给定性非集中。",
+      "proved": false,
+      "remaining": "RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureIndependentAcceptanceStillOpen",
+      "meaning": "即使前述数学包都闭合，DStructure/Tail-log4/finite Rankin 仍需独立晋级验收或自足替代验收。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RateBearingMovingAtomTerminalPacketExclusionWithExplicitDPRC",
+      "meaning": "本同步只关闭接口与开放原子定位，不证明速率型 moving atom 终端包排斥。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "当前尚未得到反例链与真实结构链之间足以排除早期零行的终端矛盾。",
+      "proved": false,
+      "remaining": "继续攻 PDEC/CleanKLS 速率包、高段模型余量尾段账本、速率保持和 DStructure 验收。"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-explicit-model-gap-finite-ledger-router.json": "c7a64bd09aae24e52f1a6a6d8048506342358f959952c7678bf91c82dcf20e1a",
+    "docs/monograph/prime-matrix-high-segment-model-gap-factorization-router.json": "32115b117e03e8e0c5f98db427c294ae85cd58eebdd323446e1fc79be30e3e43",
+    "docs/monograph/prime-matrix-moving-block-dprc-ledger-compatibility-router.json": "c58be99083b0ddf69b3f7254bf9f4e8b9fc1df7ce16d5feeb38e727d865cef73",
+    "docs/monograph/prime-matrix-strict-actual-moving-block-spread-ncb-lk-router.json": "d042d5ccfeec63bcfba1c16571e404052d7a66cefce94527ce843051b64a2f6e",
+    "docs/monograph/prime-matrix-strict-current-global-frontier-after-trace-cycle-router.json": "094823b99842eeb4525d7ea868658fa39ba3d5ac0e7c0163499ab2b70b6f4b5b",
+    "docs/monograph/prime-matrix-strict-moving-atom-terminal-packet-frontier-router.json": "fa8f1b0bc5b769aa5932c04ed4915144912213e46b163a1202ca2a5d5fe86ac7",
+    "docs/monograph/prime-matrix-strict-pdec-clean-kls-terminal-hardpoint-router.json": "9c97ae816a9b8840e743496fabd791c8792c136a547c0990010f31ea0a80f19d",
+    "docs/monograph/prime-matrix-strict-rks-log-rnrs-transfer-closure-router.json": "3e37b25128d2be14677b360f2056475767b774515f485f8aaccf26b052d0ff95",
+    "docs/monograph/prime-matrix-strict-self-contained-cycle-obstruction-router.json": "6896d47c63788c83293d95d60514ec6e522d782179745069f8ca8314ebdfcea7"
+  },
+  "status": "rate_bearing_moving_atom_packet_sync_closed_terminal_atoms_open"
+}

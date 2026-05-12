@@ -1,0 +1,137 @@
+{
+  "certificate_type": "prime_matrix_strict_sqrt_kernel_rh_guard_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "SqrtKernelGateActive",
+    "SchoenfeldConstantArithmeticFitsB28",
+    "SchoenfeldKernelIsConditionalRHLevel",
+    "FiniteVerifiedZeroWindowDoesNotControlInfiniteTail",
+    "VerifiedZeroSqrtKernelCanCloseOnlyConditionally",
+    "ReturnToUnconditionalDusartPsiTableRoute"
+  ],
+  "counterexample_assumption_only": true,
+  "diagnostics": {
+    "allowed_sqrt_kernel_c_at_b28": 0.04230375168021126,
+    "schoenfeld_c_1_over_8pi": 0.039788735772973836,
+    "schoenfeld_constant_slack_ratio": 1.0632092439827086,
+    "schoenfeld_margin_relative": 1.6395854374022601e-06,
+    "schoenfeld_relative_at_b28": 2.5939013569768176e-05,
+    "target_relative_1_over_36260": 2.7578599007170437e-05,
+    "x_high": 1446257064291.475
+  },
+  "direct_internal_dusart_theta_pnt_envelope_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_references": [
+    {
+      "id": "Schoenfeld 1976 Math. Comput. 30(134)",
+      "role": "conditional RH square-root psi kernel source boundary",
+      "url": "https://www.ams.org/mcom/1976-30-134/S0025-5718-1976-0457374-X/S0025-5718-1976-0457374-X.pdf"
+    },
+    {
+      "id": "Dusart arXiv:1002.0442",
+      "role": "unconditional explicit psi/theta table route boundary",
+      "url": "https://arxiv.org/abs/1002.0442"
+    }
+  ],
+  "finite_verified_zero_window_controls_infinite_tail": false,
+  "next_direct_attack_target": "SchoenfeldDusartPsiEpsilonTableInternalizationLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "FiniteWindowPlusTailAlternativeOpen",
+    "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "FiniteVerifiedZeroWindowPsiKernelLedger AND UnconditionalHighZeroTailDensityFreeBridgeCLe0p042304Ledger",
+    "GlobalRHOrVonKochEquivalentPNTErrorInput"
+  ],
+  "plain_conclusion": "b=28 平方根核常数门完成守门审查：`1/(8pi)` 的数值确实小于允许常数 `0.042304`，但这种对所有 `x>=e^28` 的平方根级 `psi` 误差是 RH-level 输入。有限 verified-zero 窗口不能单独控制无限高尾；若不接受 RH 或等价 PNT 误差输入，就必须回到 Dusart/Schoenfeld 无条件显式 `psi` 误差表内化路线。",
+  "psi_epsilon_table_self_contained_closed": false,
+  "replacement_self_contained": {
+    "UnconditionalHighTailRoute": "SchoenfeldDusartPsiEpsilonTableInternalizationLedger",
+    "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger": "(SchoenfeldRHConditionalPsiSqrtKernelC1Over8PiLedger AND GlobalRHOrVonKochEquivalentPNTErrorInput) OR (FiniteVerifiedZeroWindowPsiKernelLedger AND UnconditionalHighZeroTailDensityFreeBridgeCLe0p042304Ledger)"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审查高尾解析核输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "SqrtKernelGateActive",
+      "meaning": "上一证书把下一最窄点设为 verified-zero 平方根核常数门。",
+      "proved": true,
+      "remaining": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "SchoenfeldConstantArithmeticFitsB28",
+      "meaning": "若可使用 Schoenfeld RH 型平方根核常数 1/(8pi)，b=28 高尾常数有正余量。",
+      "proved": true,
+      "remaining": "SchoenfeldRHConditionalPsiSqrtKernelC1Over8PiLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SchoenfeldKernelIsConditionalRHLevel",
+      "meaning": "Schoenfeld 的平方根级 psi 误差是 RH 条件型输入；不能作为无条件 verified-zero 结论直接使用。",
+      "proved": true,
+      "remaining": "GlobalRHOrVonKochEquivalentPNTErrorInput"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteVerifiedZeroWindowDoesNotControlInfiniteTail",
+      "meaning": "有限高度零点验证只控制有限窗口；高于验证高度的零点仍需全局 RH、零点密度/零点自由尾项或等价 PNT 误差输入。",
+      "proved": true,
+      "remaining": "UnconditionalHighZeroTailDensityFreeBridgeCLe0p042304Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "VerifiedZeroSqrtKernelCanCloseOnlyConditionally",
+      "meaning": "接受全局 RH 或等价 von-Koch 级 PNT 误差时，该核可条件关闭高尾；作者侧无条件路线不能据此闭合。",
+      "proved": false,
+      "remaining": "SchoenfeldRHConditionalPsiSqrtKernelC1Over8PiLedger AND GlobalRHOrVonKochEquivalentPNTErrorInput"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteWindowPlusTailAlternativeOpen",
+      "meaning": "若不接受 RH，必须给出有限 verified-zero 窗口加无限高零点尾部的无条件合成预算；当前仓库没有该常数级合成。",
+      "proved": false,
+      "remaining": "FiniteVerifiedZeroWindowPsiKernelLedger AND UnconditionalHighZeroTailDensityFreeBridgeCLe0p042304Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger",
+      "meaning": "该平方根核路径被标记为 RH-level 分支；不能作为行命题无条件闭合输入。",
+      "proved": false,
+      "remaining": "(SchoenfeldRHConditionalPsiSqrtKernelC1Over8PiLedger AND GlobalRHOrVonKochEquivalentPNTErrorInput) OR (FiniteVerifiedZeroWindowPsiKernelLedger AND UnconditionalHighZeroTailDensityFreeBridgeCLe0p042304Ledger)"
+    },
+    {
+      "closed": true,
+      "gate": "ReturnToUnconditionalDusartPsiTableRoute",
+      "meaning": "无条件主线应回到 Dusart/Schoenfeld 显式 psi 误差表内化，而不是用 RH 型平方根核冒充自足证明。",
+      "proved": true,
+      "remaining": "SchoenfeldDusartPsiEpsilonTableInternalizationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "RH-level 守门审查不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9158ac4b1c60fad5b006176dc1e8b71f5beecf8fb984176d0f7ff55b69e1ec17",
+    "docs/monograph/prime-matrix-strict-high-tail-b28-relaxed-kernel-router.json": "b2aeceb9d0e0f804535e0e1762389164417a3114b4a188fc94739edad2441aa8"
+  },
+  "sqrt_kernel_constant_arithmetic_fits_b28": true,
+  "sqrt_kernel_marked_rh_level": true,
+  "status": "sqrt_kernel_b28_marked_rh_level_unconditional_route_returns_to_dusart_psi_table",
+  "verified_zero_sqrt_kernel_self_contained_closed": false
+}

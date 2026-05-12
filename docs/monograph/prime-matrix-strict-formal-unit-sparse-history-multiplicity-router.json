@@ -1,0 +1,113 @@
+{
+  "certificate_type": "prime_matrix_strict_formal_unit_sparse_history_multiplicity_router",
+  "cold_core_capacity_inserted": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的稀疏历史 SAE 预算分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "HistoryProductIdentityClosed",
+      "meaning": "历史词给出缩频分母 `D(W)`。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "MultiplicityToDivisorCountClosed",
+      "meaning": "单历史重数已压成缩频终端核心窗口除数计数。",
+      "proved": true,
+      "remaining": "ScaledTerminalCoreDivisorWindowCountCap"
+    },
+    {
+      "closed": true,
+      "gate": "HotCoreRouteRegistered",
+      "meaning": "核心窗口计数过大时回流 PDEC/SAE。",
+      "proved": false,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "closed": true,
+      "gate": "ColdCoreCapacityInserted",
+      "meaning": "无热核心时可把冷核心阈值插回 SAE 预算，但阈值比较未完成。",
+      "proved": false,
+      "remaining": "ScaledTerminalCoreDivisorWindowCountCap AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow"
+    },
+    {
+      "closed": false,
+      "gate": "FormalUnitSparseHistoryMultiplicityCapProved",
+      "meaning": "尚未排斥热核心窗口，也未给出足够强的冷核心容量阈值。",
+      "proved": false,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE AND ScaledTerminalCoreDivisorWindowCountCap"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "fixed_type_history_pdec_excluded": false,
+  "formal_unit_sparse_history_multiplicity_cap_proved": false,
+  "history_product_identity_closed": true,
+  "hot_core_route_registered": true,
+  "lemmas": [
+    {
+      "formula": "For W=((b_i,c_i)), D(W)=prod_i b_i c_i and terminal cores divide h_0/D(W).",
+      "meaning": "历史词决定唯一缩频分母。",
+      "name": "history_product_identity",
+      "status": "closed"
+    },
+    {
+      "formula": "Terminal cores k lie in an explicit interval I_W inherited from the product window ledger.",
+      "meaning": "单历史容量变成缩频上的窗口除数计数。",
+      "name": "terminal_core_interval",
+      "status": "closed"
+    },
+    {
+      "formula": "Mult_U(W) <= N_{h_0/D(W)}(I_W).",
+      "meaning": "同一 formal unit 内同一历史词的重数不超过缩频终端核心除数数。",
+      "name": "multiplicity_to_divisor_count",
+      "status": "closed"
+    },
+    {
+      "formula": "If N_{h_0/D(W)}(I_W) exceeds the cap, it is a terminal core hot divisor window and routes to PDEC/SAE.",
+      "meaning": "单历史容量过大不是自由预算，而是回流到热除数/PDEC/SAE。",
+      "name": "hot_core_route",
+      "status": "registered_route_open"
+    },
+    {
+      "formula": "If no hot core window occurs, Cap(W) is bounded by the registered cold-core threshold C_core(W).",
+      "meaning": "在排除热核心出口后，单历史容量有可插入 SAE 预算的上界。",
+      "name": "cold_core_capacity",
+      "status": "closed_conditional"
+    },
+    {
+      "formula": "Insert Cap(W)<=C_core(W) into U_sparse <= sum_W (T_PDEC(W)-1)Cap(W).",
+      "meaning": "单历史重数上界已接回供需预算缺口。",
+      "name": "cap_to_budget_gap",
+      "status": "closed_reduction"
+    }
+  ],
+  "multiplicity_to_divisor_count_closed": true,
+  "next_direct_attack_target": "ScaledTerminalCoreDivisorWindowCountCap",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow"
+  ],
+  "plain_conclusion": "formal-unit 稀疏历史重数已经压成缩频终端核心除数窗口计数。对历史词 W，令 D(W)=prod b_i c_i，则同一 formal unit 内该历史的终端核心 都必须整除 h_0/D(W)，并落在由窗口乘积账本给出的区间 I_W。因此 Mult_U(W)<=N_{h_0/D(W)}(I_W)。若该窗口计数过大，就回流为 TerminalCoreHotDivisorWindowPDECorSAE；若不过大，冷核心阈值可插入 SAE 预算。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "scaled_terminal_core_divisor_window_count_cap_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.md": "69d32de5c9a326374b77ea8b6f4063888e1875332f8dbccd7107d90c88da9428",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.md": "2d8028d0e2d5a1a32f8182e3cbf1bebb8ddd874ce5bed2670dc4b4e286a18067",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.md": "852406501a752cc240c739530ade68cc4f10448c5da5660c0b3cccb32a402c89"
+  },
+  "status": "formal_unit_sparse_history_multiplicity_reduced_to_scaled_core_divisor_cap_open",
+  "terminal_core_hot_divisor_window_excluded": false,
+  "terminal_core_interval_closed": true
+}

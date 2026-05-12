@@ -1,0 +1,137 @@
+{
+  "boundary_residual_mass_lower_bound_proved": false,
+  "certificate_type": "prime_matrix_strict_prefix_residual_transfer_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "RegisteredPrefixCapacityMultiplierDiscipline AND PrefixWeightedObligationToEffectiveTypeInstanceAntiCollapse",
+  "hardpoint_before_router": "PrefixResidualToBoundaryFormalUnitObligationTransfer",
+  "hardpoint_closed_layer": "PrefixResidualToWeightedFormalUnitObligationInjection",
+  "label_band_dichotomy_closed": true,
+  "next_direct_attack_target": "RegisteredPrefixCapacityMultiplierDiscipline",
+  "no_theorem_switch": true,
+  "parallel_attack_target": "PrefixWeightedObligationToEffectiveTypeInstanceAntiCollapse",
+  "plain_conclusion": "`PrefixResidualToBoundaryFormalUnitObligationTransfer` 可在加权义务层闭合：任意 prefix 残洞 c 在早期零行假设下都有最小覆盖标签 tau_z(c) in (z,P)，并可带着 label_band 与 capacity_multiplier_id 注入 formal-unit obligation 域。这没有完成类型压缩，因为 completed-internal 标签可能高复用，quotient/reuse 也可能塌缩实例数。所以下一真正窄点是容量乘子纪律；并行保留 prefix anti-collapse。",
+  "prefix_residual_selector_closed": true,
+  "prefix_residual_to_boundary_formal_unit_transfer_proved": true,
+  "prefix_residual_to_weighted_formal_unit_obligation_transfer_proved": true,
+  "prefix_transfer_effective_for_type_compression_proved": false,
+  "prefix_weighted_obligation_to_effective_type_instance_anticollapse_proved": false,
+  "registered_prefix_capacity_multiplier_discipline_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PrefixTransferInputActive",
+      "meaning": "上一层把自然残洞质量改写后的直接攻击点定为 prefix 残洞转移。",
+      "proved": false,
+      "remaining": "PrefixResidualToBoundaryFormalUnitObligationTransfer"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍只在任意假设早期零行 witness 下构造义务，不用真实缺席数据。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixResidualSelectorClosed",
+      "meaning": "若 c in R_{x,z} 且该行为早期零行，则存在 q in (z,P) divides xP+c；取最小 q 得 canonical tau_z(c)。",
+      "proved": true,
+      "remaining": "PrefixCanonicalLabelSelectorClosed"
+    },
+    {
+      "closed": true,
+      "gate": "LabelBandDichotomyClosed",
+      "meaning": "canonical tau_z(c) 唯一落在 z<q<=x 或 x<q<P；前者是 completed-internal label，后者是原 CLB 高标签。",
+      "proved": true,
+      "remaining": "后续容量账本必须分别处理两个 label band。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitEmbeddingInterfaceImported",
+      "meaning": "witness obligation 域已有 physical atoms、return records 与 quotient records，可容纳 prefix atom 字段。",
+      "proved": true,
+      "remaining": "需要写入 prefix_cutoff_z 与 capacity_multiplier_id。"
+    },
+    {
+      "closed": true,
+      "gate": "NoLossAccountingImported",
+      "meaning": "义务进入 O_z(w) 后只能成为 source、return 或 quotient/reuse，不允许静默丢失。",
+      "proved": true,
+      "remaining": "no-loss 是加权守恒，不是不同实例下界。"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixResidualWeightedTransferClosed",
+      "meaning": "每个 prefix 残洞 canonically 注入一个加权 formal-unit obligation atom，且保留 label band 与容量乘子字段。",
+      "proved": true,
+      "remaining": "PrefixResidualToWeightedFormalUnitObligationInjection"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixTransferEffectiveForTypeCompressionCurrentCorpusProved",
+      "meaning": "尚未证明这些加权 prefix atoms 可直接提供类型压缩所需的有效不同实例数。",
+      "proved": false,
+      "remaining": "RegisteredPrefixCapacityMultiplierDiscipline AND PrefixWeightedObligationToEffectiveTypeInstanceAntiCollapse"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixCapacityMultiplierCurrentCorpusProved",
+      "meaning": "completed-internal labels q<=x 可在同一行内多次命中；必须证明容量乘子不会吞掉 prefix 势。",
+      "proved": false,
+      "remaining": "RegisteredPrefixCapacityMultiplierDiscipline"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixAntiCollapseCurrentCorpusProved",
+      "meaning": "尚未证明 quotient/reuse 不会把大量 prefix atoms 压成过少 row-free type instances。",
+      "proved": false,
+      "remaining": "PrefixWeightedObligationToEffectiveTypeInstanceAntiCollapse"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixResidualTransferHardpointStatus",
+      "meaning": "原 hardpoint 的加权转移层已闭合；强形式的有效实例转移仍开放。",
+      "proved": true,
+      "remaining": "PrefixResidualEffectiveTypeInstanceTransfer"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.json": "85267c016c03c757d219b04712940825a69020299717a6448aa12b1d110215d2",
+    "docs/monograph/prime-matrix-partition-coverage-no-loss-equation-router.json": "20d9b3b266bf831e12fb91a84c36cc1ac2b020a74ce110581daad032ff8a2b12",
+    "docs/monograph/prime-matrix-strict-boundary-residual-mass-lower-bound-router.json": "a69eeafaf961c34e98960be356afbc5fe598a46ca8c17a412f655682770d67e7",
+    "docs/monograph/prime-matrix-strict-forced-obligation-lower-bound-router.md": "46375c4117cd44e681cacc3d31d90bc0555eaed7a6d12ecf4e511fd91671027b",
+    "docs/monograph/prime-matrix-witness-obligation-domain-canonicalization-router.md": "7959281a926a3805d1b2199f82b182e4f3eea18ac080eb805c8498d447abd574"
+  },
+  "status": "prefix_residual_transfer_closed_as_weighted_injection_capacity_multiplier_open",
+  "transfer_schema": [
+    {
+      "field": "prefix_cutoff_z",
+      "meaning": "记录本次上游残洞势使用的 cutoff；避免把不同 z 的义务混计。"
+    },
+    {
+      "field": "prefix_residual_column_c",
+      "meaning": "记录 c in R_{x,z}，即 no q<=z divides xP+c。"
+    },
+    {
+      "field": "canonical_prefix_label_tau_z",
+      "meaning": "取最小 q in (z,P) with q divides xP+c；早期零行保证其存在。"
+    },
+    {
+      "field": "label_band",
+      "meaning": "区分 completed-internal band z<q<=x 与 incomplete-external band x<q<P。"
+    },
+    {
+      "field": "capacity_multiplier_id",
+      "meaning": "登记 q 在当前 row/prefix 中的复用容量；该字段只登记，不在本步给上界。"
+    },
+    {
+      "field": "formal_unit_payload_hash",
+      "meaning": "把 prefix atom 并入原 O(w) payload，保留 return/quotient/no-loss 账本。"
+    }
+  ]
+}

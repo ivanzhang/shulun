@@ -1,0 +1,111 @@
+{
+  "acyclic_terminal_canonical_lock_proved": false,
+  "acyclic_windowed_dls_proved": false,
+  "certificate_type": "prime_matrix_strict_mainline_canonical_lock_drilldown_router",
+  "conditional_external_remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "counterexample_assumption_only": true,
+  "direct_acyclic_same_set_pdec_scope_audited": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_gate_closed": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "named_return_same_parameter_schema_imported": true,
+  "next_direct_attack_target": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AcyclicWindowedKloostermanDLSInternalEstimate",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步回到 strict 数学主线并下钻最新剩余：Rosser floor 的 sawtooth/近平方条带失败态已经不能免费吞掉 D0，同参数命名回流 schema 已接上；direct same-set PDEC 又被作用域审查压回 canonical-lock。因此当前最窄自足终端口是 `AcyclicTerminalCanonicalLockToCanonicalSourceBoundary`，备线为 `AcyclicWindowedKloostermanDLSInternalEstimate`。但 canonical-lock/windowed DLS、RatePreservation、DStructure 均未全部证明，所以目标行/列命题仍不能声明无条件自足闭合。",
+  "rate_preservation_ledger_proved": false,
+  "rosser_floor_free_loss_exit_closed_as_accounting": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链内推进，不用真实零行缺席或低段样本替代证明。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "RosserFloorFreeLossExitClosedAsAccounting",
+      "meaning": "Rosser floor/sawtooth 若失败，已强制登记为同 formal unit 命名终端收费，不能再作为无名 D0 损失。",
+      "proved": false,
+      "remaining": "RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR terminal charge。"
+    },
+    {
+      "closed": true,
+      "gate": "NamedReturnSameParameterSchemaImported",
+      "meaning": "命名回流的同参数表结构已闭合，但数值 E0 仍依赖持久终端排斥和非持久预算反超。",
+      "proved": false,
+      "remaining": "persistent terminal exclusion AND sparse/cold budget。"
+    },
+    {
+      "closed": true,
+      "gate": "DirectAcyclicSameSetPDECScopeAudited",
+      "meaning": "direct same-set PDEC 不能从 canonical-source 口径自动偷渡；必须先证明 acyclic 同集作用域完全匹配。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalFamilyReducedBackToCanonicalLockOrWindowedDLS",
+      "meaning": "本轮主线最窄终端口回到 canonical-lock 或 windowed clean DLS；这不是换命题，而是 Rosser/direct-PDEC 分支收费后的同一反例链出口。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicTerminalCanonicalLockClosed",
+      "meaning": "尚未证明 acyclic terminal certificate 与 canonical-source same-set 边界完全同口径。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "closed": false,
+      "gate": "AcyclicWindowedDLSClosed",
+      "meaning": "windowed CleanKLS/DLS 作为不走 canonical-lock 的备用终端排斥，当前仍未作者侧闭合。",
+      "proved": false,
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": false,
+      "gate": "RatePreservationLedgerClosed",
+      "meaning": "moving atom 到 rate-bearing packet 的 log-power 速率保持仍未证明。",
+      "proved": false,
+      "remaining": "RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureIndependentGateClosed",
+      "meaning": "DStructure/Tail-log4/finite Rankin 最终晋级门仍需独立验收或严格自足替代验收。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnSelfContainedClosureReached",
+      "meaning": "目标行/列命题尚未达到作者侧严格自足无条件闭合。",
+      "proved": false,
+      "remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-linear-sieve-tail-remainder-gap-router.json": "e11ab42f2beb3e9fc9b2fe711d5224074bf707323774e7cf47378c5bd74f7250",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-attack-router.json": "aa045b0749a832e9af9fe21397aa141f4fa6c0643a8b870d74ba360052eff952",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993",
+    "docs/monograph/prime-matrix-strict-mainline-self-contained-frontier-router.json": "37ea060dc254202c9af7688083a52d1b51f1909fa8fdfb6a4238fdf07364eb39",
+    "docs/monograph/prime-matrix-strict-named-return-same-parameter-deduction-router.json": "2eee9f35708971c2d184bcc194c94c6be162a4f928834f628380ed747a45e1df",
+    "docs/monograph/prime-matrix-strict-rate-bearing-moving-atom-packet-dprc-sync-router.json": "f5135c99d7f964b3c5b29b81681512083ff8bcaca431ff71fda3f2606fa81b9a",
+    "docs/monograph/prime-matrix-strict-rosser-floor-terminal-charge-router.json": "5154b715cb43b4b39bdc2b0a134833516f002bfdf1ea9100c6b4bd51e80f1513"
+  },
+  "status": "strict_mainline_drilled_to_canonical_lock_or_windowed_dls_open",
+  "strict_frontier_basis": "((AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate) AND (RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR SawtoothFailureChargedToNamedTerminalFamily) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance)",
+  "strict_self_contained_remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "terminal_family_reduced_back_to_canonical_lock_or_windowed_dls": true
+}

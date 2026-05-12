@@ -1,0 +1,104 @@
+{
+  "bohrcap_large_spectrum_route_registered": true,
+  "certificate_type": "prime_matrix_strict_weighted_positive_endpoint_fourier_upper_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的正权亏损 PDEC 内部。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FourierCoefficientFormulaClosed",
+      "meaning": "端点弧 Fourier 系数由有限几何级数给出。",
+      "proved": true,
+      "remaining": "WeightedPositiveEndpointFourierPDECUpperBound"
+    },
+    {
+      "closed": true,
+      "gate": "LowEffectiveModRouteClosed",
+      "meaning": "低有效模大谱已命名为 PDEC/ColumnCRT，但尚未排斥。",
+      "proved": false,
+      "remaining": "LowEffectiveModEndpointPDECOrColumnCRT"
+    },
+    {
+      "closed": true,
+      "gate": "LargeEffectiveModDecayTemplateClosed",
+      "meaning": "非共振部分有几何衰减模板，但还需要正权支撑的 l1/l2/复杂度预算。",
+      "proved": false,
+      "remaining": "EndpointArcGeometricDecayLargeEffectiveModBudget"
+    },
+    {
+      "closed": true,
+      "gate": "LargeSpectrumFallbackRegistered",
+      "meaning": "若衰减预算失败，回流 Bohr-cap/PDEC/ColumnCRT。",
+      "proved": false,
+      "remaining": "PositiveWeightSupportLargeSpectrumBohrCapExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "WeightedPositiveEndpointFourierUpperCurrentCorpusProved",
+      "meaning": "三出口尚未全部排斥，也未给出统一数值预算。",
+      "proved": false,
+      "remaining": "LowEffectiveModEndpointPDECOrColumnCRT AND EndpointArcGeometricDecayLargeEffectiveModBudget AND PositiveWeightSupportLargeSpectrumBohrCapExclusion AND DeficitPersistenceOrSAEClassification"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "fourier_coefficient_formula_closed": true,
+  "large_effective_mod_decay_template_closed": true,
+  "low_effective_mod_route_closed": true,
+  "next_direct_attack_target": "LowEffectiveModEndpointPDECOrColumnCRT",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "EndpointArcGeometricDecayLargeEffectiveModBudget",
+    "PositiveWeightSupportLargeSpectrumBohrCapExclusion",
+    "DeficitPersistenceOrSAEClassification"
+  ],
+  "plain_conclusion": "正权端点 PDEC 的 Fourier 上界被压成三部分：低有效模共振、非共振几何衰减、以及衰减失败后的 Bohr-cap 大谱。端点弧单模 Fourier 系数由几何级数严格控制；若一个全局频率在许多 d 上同时低有效分母共振，则这本身就是 LowEffectiveMod PDEC/ColumnCRT。若没有低有效模共振，则需用几何衰减和正权支撑预算给出上界；预算失败则回流 Bohr-cap/PDEC/ColumnCRT。当前仍未排斥这些出口。",
+  "reductions": [
+    {
+      "formula": "|hat phi_d(r)| <= min(H/d, 1/(2d||r/d||)) for r not 0 mod d.",
+      "meaning": "端点弧的非零 Fourier 系数由几何级数精确控制。",
+      "name": "single_mod_endpoint_coefficient",
+      "status": "closed_classical"
+    },
+    {
+      "formula": "A global frequency h only sees d through r_h(d)=h P^{-1} mod d.",
+      "meaning": "大系数要求 h 与许多 d 同时低有效分母共振。",
+      "name": "lifted_frequency_support",
+      "status": "closed"
+    },
+    {
+      "formula": "If many active d have small d/gcd(r_h(d),d), then the frequency is a low-effective-mod PDEC/ColumnCRT.",
+      "meaning": "低有效模大谱不是随机误差，而是命名相位缺陷。",
+      "name": "low_effective_mod_split",
+      "status": "closed_route"
+    },
+    {
+      "formula": "On d/gcd(r_h(d),d)>R, each active d contributes O(w_d^+/R) after endpoint centering.",
+      "meaning": "远离共振的频率可由几何衰减和权重 l1/l2 预算控制。",
+      "name": "large_effective_mod_decay",
+      "status": "closed_template"
+    },
+    {
+      "formula": "If high frequencies still exceed the decay budget, active d lie in a Bohr-cap large spectrum set.",
+      "meaning": "这接入既有 Bohr-cap/PDEC/ColumnCRT 分支。",
+      "name": "bohrcap_large_spectrum_route",
+      "status": "registered_route"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-eda-alpha-tail-bilinear-bohrcap-reduction.md": "2a92efb33520412545fe16f2f181c52a86ca719803fa558aade049482af56a07",
+    "docs/monograph/prime-matrix-eda-alpha-tail-frequency-split-contract.md": "18ead651f1e79312842cb15280c431149ab5d20f2e61f705e26cd5778ae52196",
+    "docs/monograph/prime-matrix-eda-alpha-tail-lowfreq-endpoint-return.md": "93a4d3a1ceedf5fff143789b2d68d101827d8e71b7e07ab98c4dced592c184ad",
+    "docs/monograph/prime-matrix-strict-weighted-positive-endpoint-deficit-fourier-pdec-router.md": "74e22ca0b3dfa9b938fac9640169dcbb47f2cedf162f0cc9c70c1262ab684713"
+  },
+  "status": "weighted_positive_endpoint_fourier_upper_split_to_low_effective_decay_bohrcap_open",
+  "weighted_positive_endpoint_fourier_upper_bound_proved": false
+}

@@ -1,0 +1,116 @@
+{
+  "actual_constructor_formula_line_router_closed": true,
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "certificate_type": "prime_matrix_strict_actual_constructor_formula_line_router",
+  "constructor_domain_clean_core_membership_proved": false,
+  "constructor_formula_emits_uv_key_sign_local_factor_rows_proved": false,
+  "constructor_formula_failure_return_tags_proved": false,
+  "counterexample_assumption_only": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "explicit_alpha_delta_primitive_constructor_rule_proved": false,
+  "external_lemmas_do_not_emit_rows_imported": true,
+  "formula_law": "The actual constructor formula line must be an explicit rule that, before Cauchy/dispersion, maps each admissible source tuple to alpha/delta primitive summands and emits `(u,v)`, branch key, sign and local factor. It cannot be recovered from payment data, zero-row geometry, or external spectral estimates.",
+  "formula_line_field_decomposition_pinned": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter` 被压到显式 `alpha/delta` primitive constructor rule 及其域准入、行输出和失败回流字段。当前最窄点是 `ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter`；没有这个规则，源表第一行仍不能成立。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "reverse_payment_formula_recovery_rejected": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ActualConstructorFormulaLineTargetActive",
+      "meaning": "上一层 declaration line 已把 strict 自足可用来源压到 actual noncanonical constructor formula line。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter"
+    },
+    {
+      "closed": true,
+      "gate": "FormulaLineIsNotExistenceName",
+      "meaning": "公式行必须是可展开的显式 constructor rule，不是“存在某 source”的标签。",
+      "proved": true,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter AND ConstructorDomainCleanCoreMembershipLedger AND ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger AND ConstructorFormulaFailureReturnTagsLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalLemmasDoNotEmitRowsImported",
+      "meaning": "外部 DI/BFI/Kuznetsov 处理给定系数后的平均，不能输出 alpha/delta primitive rows。",
+      "proved": true,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": true,
+      "gate": "ReversePaymentCannotDefineFormulaImported",
+      "meaning": "从 Gamma/payment/fiber skeleton 反推公式不唯一；不能把后验原像选择当 constructor rule。",
+      "proved": true,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowGeometryCannotDefineFormulaImported",
+      "meaning": "早期零行几何只给 unsigned covering/Phi 基底，不定义 signed alpha/delta constructor rule。",
+      "proved": true,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopCannotSelfGenerateFormula",
+      "meaning": "constructor、formula、emitter、origin ledger 的等价环不能生成 formula line。",
+      "proved": true,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualNoncanonicalConstructorFormulaCurrentCorpusProved",
+      "meaning": "当前材料尚未写出 actual noncanonical primitive constructor 的显式 alpha/delta 规则。",
+      "proved": false,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter。"
+    },
+    {
+      "closed": false,
+      "gate": "DomainCleanCoreMembershipCurrentCorpusProved",
+      "meaning": "公式规则的定义域必须正好是当前 clean-core noncanonical emitter 域；当前未证明。",
+      "proved": false,
+      "remaining": "ConstructorDomainCleanCoreMembershipLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "FormulaEmitsUVKeyRowsCurrentCorpusProved",
+      "meaning": "当前未证明公式逐行输出 `(u,v)`、branch key、sign 和 local factor。",
+      "proved": false,
+      "remaining": "ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "FormulaFailureReturnTagsCurrentCorpusProved",
+      "meaning": "公式不适用、超预算、thin/rejected 或抵消分支的 return tags 尚未逐项闭合。",
+      "proved": false,
+      "remaining": "ConstructorFormulaFailureReturnTagsLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualConstructorFormulaLineCurrentCorpusProved",
+      "meaning": "显式规则、域准入、行输出和失败回流四项尚未合取证明。",
+      "proved": false,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter AND ConstructorDomainCleanCoreMembershipLedger AND ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger AND ConstructorFormulaFailureReturnTagsLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.json": "a4e7b79a90a21e338213ee982a87b8c4caf59b73aa832f740a45dab59b1dabb4",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-precauchy-declaration-line-router.json": "5b0f7f24ce0090b5d74ee0d0bc99d6ae97427a37c3090f1689f16d227527289d"
+  },
+  "status": "strict_actual_constructor_formula_line_reduced_to_explicit_alpha_delta_rule_open",
+  "terminal_gap_after_router": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter AND ConstructorDomainCleanCoreMembershipLedger AND ConstructorFormulaEmitsUVKeySignLocalFactorRowsLedger AND ConstructorFormulaFailureReturnTagsLedger",
+  "terminal_gap_before_router": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter",
+  "zero_row_geometry_formula_extraction_blocked": true
+}

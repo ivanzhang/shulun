@@ -1,0 +1,139 @@
+{
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "alpha_primitive_coefficient_weight_formula_proved": false,
+  "certificate_type": "prime_matrix_strict_pointwise_signed_alpha_weight_formula_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "exact_alpha_signed_weight_formula_proved": false,
+  "expression_fields": [
+    {
+      "field": "primitive_summand_row",
+      "meaning": "pre-pushforward、pre-Cauchy 的 actual noncanonical primitive summand 行。"
+    },
+    {
+      "field": "alpha_delta_side",
+      "meaning": "标明该行属于 alpha 侧或 delta 侧，并给出配对规则。"
+    },
+    {
+      "field": "signed_weight_expression",
+      "meaning": "该 summand 的 signed coefficient 的闭式表达式或有限递推式。"
+    },
+    {
+      "field": "local_factor_product",
+      "meaning": "符号、筛因子、截断因子、branch local factor 的乘积口径。"
+    },
+    {
+      "field": "uv_key_output",
+      "meaning": "同一行同时输出 exact `(u,v)` 与 branch key。"
+    },
+    {
+      "field": "identity_before_pushforward",
+      "meaning": "证明表达式在 Phi/payment 推前之前已经成立。"
+    },
+    {
+      "field": "no_canonical_or_external_leak",
+      "meaning": "证明没有借用 canonical scoped 模板、外部谱黑箱或 terminal 反推。"
+    },
+    {
+      "field": "failure_return",
+      "meaning": "公式不适用、local factor 为零、符号冲突或超预算时的命名回流。"
+    }
+  ],
+  "frontier_reduction": "PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow 不能由权重律名称、source table 名称或独立恒等式分类自动推出；它必须先提交 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward`，也就是在 Phi/payment 推前之前给出 actual noncanonical primitive summand 的 signed coefficient 表达式。",
+  "next_direct_attack_target": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步继续硬攻逐行 signed 权重公式。结论是：当前材料只有权重律的字段分解和反推禁令，没有 primitive summand 级 signed coefficient 表达式。source table、constructor formula 和 pre-Cauchy declaration 都指向同一个前推前原始表达式缺口；独立恒等式路线则回到终端固定点。因此最新最精确单点是 actual noncanonical primitive summand signed weight expression before pushforward。",
+  "pointwise_nonrecursive_signed_alpha_weight_formula_proved": false,
+  "pointwise_signed_alpha_coefficient_value_table_proved": false,
+  "pointwise_signed_alpha_weight_formula_router_closed": true,
+  "primitive_summand_signed_weight_expression_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PointwiseWeightFormulaTargetActive",
+      "meaning": "上一层已把 signed value table 的首字段压成逐行 signed alpha 权重公式。",
+      "proved": false,
+      "remaining": "PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow"
+    },
+    {
+      "closed": true,
+      "gate": "ExactWeightFormulaStillOpen",
+      "meaning": "alpha signed weight law 已明确需要 ExactAlphaSignedWeightFormulaLedger。",
+      "proved": false,
+      "remaining": "ExactAlphaSignedWeightFormulaLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveCoefficientFormulaStillOpen",
+      "meaning": "alpha primitive rule 仍缺 coefficient weight formula 和 row/output/local factor 同步。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveCoefficientWeightFormulaLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorFormulaLineStillOpen",
+      "meaning": "actual constructor formula line 尚未给出可发射 signed row 的原始公式。",
+      "proved": false,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchyDeclarationStillOpen",
+      "meaning": "pre-Cauchy declaration line 尚未锁定同 formal-unit 时间戳、noncanonical 来源和无泄漏。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTableNeedsSamePrimitiveRows",
+      "meaning": "actual emitter source table 需要 primitive summand rows 和 alpha/delta coefficient identity before pushforward。",
+      "proved": false,
+      "remaining": "PrimitiveSummandEmitterFormulaRowsForActualNoncanonicalTable AND AlphaDeltaCoefficientIdentityBeforePushforwardLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentIdentityRouteNotProof",
+      "meaning": "独立恒等式陈述已被分类到 actual moving-block/NC-BLK，并回到终端门，不能证明逐行权重公式。",
+      "proved": false,
+      "remaining": "需要非递归 primitive summand expression。"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseRecoveryBlocked",
+      "meaning": "不能从 payment skeleton、零行覆盖或 terminal certificate 反向恢复 signed weight。",
+      "proved": true,
+      "remaining": "必须在 pushforward 前正向给出表达式。"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveSummandSignedWeightExpressionCurrentCorpusProved",
+      "meaning": "当前材料没有 actual noncanonical primitive summand 的 signed weight expression before pushforward。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "PointwiseSignedWeightFormulaCurrentCorpusProved",
+      "meaning": "没有 primitive summand signed expression，就无法给每条 carry-shell skeleton row 赋权。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-actual-constructor-formula-line-router.json": "ac19ab81150df61902058d6c890195592b25400f04a32562b1fa32b966a89913",
+    "docs/monograph/prime-matrix-strict-actual-emitter-source-table-router.json": "e327b1a80aef83a36279378e5892334fa305d92d5ac1bcbb8601eaab2f18ab3e",
+    "docs/monograph/prime-matrix-strict-actual-moving-block-spread-ncb-lk-router.json": "d042d5ccfeec63bcfba1c16571e404052d7a66cefce94527ce843051b64a2f6e",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-independent-identity-statement-taxonomy-router.json": "9f0797afd65cd82b9fb0eff7d4492da3ee0b88822fdf18beee8c8a6c5a361c42",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-precauchy-declaration-line-router.json": "5b0f7f24ce0090b5d74ee0d0bc99d6ae97427a37c3090f1689f16d227527289d"
+  },
+  "status": "pointwise_signed_alpha_weight_formula_reduced_to_primitive_summand_expression_open",
+  "target_input_before_router": "PointwiseNonrecursiveSignedAlphaWeightFormulaForEachCarryShellSkeletonRow"
+}

@@ -1,0 +1,117 @@
+{
+  "certificate_type": "prime_matrix_strict_cold_core_threshold_budget_gap_router",
+  "cold_budget_contradiction_criterion_closed": true,
+  "cold_core_threshold_budget_gap_proved": false,
+  "cold_supply_upper_bound_beats_load": false,
+  "cold_supply_upper_bound_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的冷核心 SAE 预算分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ColdSupplyUpperBoundClosed",
+      "meaning": "非持久冷历史供给 `U_cold` 已有显式求和上界。",
+      "proved": true,
+      "remaining": "ColdCoreNonpersistentSupplyUpperBound"
+    },
+    {
+      "closed": true,
+      "gate": "SupplyDemandContradictionCriterionClosed",
+      "meaning": "`L_forced>U_cold` 时形成反例链供需矛盾。",
+      "proved": true,
+      "remaining": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow"
+    },
+    {
+      "closed": true,
+      "gate": "FailureReasonsNamed",
+      "meaning": "预算未反超时只能归因于需求弱、冷供给大、热核心或持久 PDEC。",
+      "proved": true,
+      "remaining": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow OR ColdCoreNonpersistentSupplyUpperBound OR TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "ColdCoreBudgetGapProved",
+      "meaning": "尚未证明 `L_forced` 严格超过 `U_cold`。",
+      "proved": false,
+      "remaining": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND ColdCoreNonpersistentSupplyUpperBound AND AdaptiveLambdaBalanceForIteratedCoreDensity"
+    },
+    {
+      "closed": true,
+      "gate": "UnifiedFieldUpdatedButNotClosed",
+      "meaning": "新供需因子已进入统一矛盾场，但尚未产生最终直接矛盾。",
+      "proved": false,
+      "remaining": "UnifiedContradictionFieldTerminalHistorySupplyDemandUpdate"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "failure_reasons_named": true,
+  "fixed_type_history_pdec_excluded": false,
+  "forced_load_lower_bound_proved": false,
+  "history_sum_envelope_closed": true,
+  "lemmas": [
+    {
+      "formula": "U_cold <= sum_{W cold} (T_PDEC(W)-1) C_core(W).",
+      "meaning": "冷核心非持久供给有显式上界。",
+      "name": "cold_supply_upper_bound",
+      "status": "closed"
+    },
+    {
+      "formula": "sum_{W cold} <= sum_{r<=R} prod_{i<=r} A_{Lambda_i}, with A_{Lambda_i}<=8Lambda_i^2.",
+      "meaning": "历史词计数已进入供给预算。",
+      "name": "history_sum_envelope",
+      "status": "closed"
+    },
+    {
+      "formula": "If L_forced > U_cold, then early-zero-row terminal obligations exceed all nonpersistent cold supply.",
+      "meaning": "这是当前最直接的供需矛盾口。",
+      "name": "cold_budget_contradiction_criterion",
+      "status": "closed_criterion"
+    },
+    {
+      "formula": "If the gap fails, then either L_forced is too small, cold supply is too large, or hot/PDEC escape occurred.",
+      "meaning": "预算未反超时，失败原因也被命名，不允许成为自由缺口。",
+      "name": "not_gap_then_named_escape",
+      "status": "closed_dichotomy"
+    },
+    {
+      "formula": "Large U_cold must come from large history count, large C_core(W), or large T_PDEC(W).",
+      "meaning": "供给过大被拆成 Lambda、核心阈值、持久阈值三类具体输入。",
+      "name": "cold_supply_too_large_route",
+      "status": "closed_reduction"
+    },
+    {
+      "formula": "Early zero row forces demand; cold sparse histories provide finite supply; hot histories return to PDEC/LCM.",
+      "meaning": "该供需结构已作为新矛盾因子接入统一矛盾场。",
+      "name": "terminal_history_supply_demand_field",
+      "status": "registered_unified_field"
+    }
+  ],
+  "next_direct_attack_target": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "AdaptiveLambdaBalanceForIteratedCoreDensity",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "UnifiedContradictionFieldTerminalHistorySupplyDemandUpdate"
+  ],
+  "plain_conclusion": "冷核心预算缺口已经压成单一供需不等式。非持久冷历史的总供给 U_cold 至多为 sum_W (T_PDEC(W)-1) C_core(W)，历史数由有限深度和 有限字母表控制。若早期零行反例链强制终端负载 L_forced 大于 U_cold，则非持久冷供给无法支付反例义务，形成直接矛盾。若该不等式失败，失败原因只能是需求下界不足、冷供给预算过大、热核心回流或固定历史 PDEC。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "ColdCoreNonpersistentSupplyUpperBound",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md": "de2224ecfcd95ee99d389df1143ac8174617eb5ddc56c134444c987018fb0ffb",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.md": "2d8028d0e2d5a1a32f8182e3cbf1bebb8ddd874ce5bed2670dc4b4e286a18067",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.md": "852406501a752cc240c739530ade68cc4f10448c5da5660c0b3cccb32a402c89",
+    "docs/monograph/prime-matrix-strict-unified-counterexample-contradiction-field-matrix-router.md": "ff681a8d76683c85cba256233d20aaa3dd8668ac45ccc3e36206e0b75a16b317"
+  },
+  "status": "cold_core_budget_gap_reduced_to_forced_load_vs_nonpersistent_supply_open",
+  "terminal_core_hot_divisor_window_excluded": false,
+  "unified_field_terminal_history_factor_registered": true
+}

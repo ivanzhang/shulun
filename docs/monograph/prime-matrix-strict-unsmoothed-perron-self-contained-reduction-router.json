@@ -1,0 +1,104 @@
+{
+  "certificate_type": "prime_matrix_strict_unsmoothed_perron_self_contained_reduction_router",
+  "status": "unsmoothed_perron_external_closed_self_contained_reduced_to_backlund_logder_local_zero_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "unsmoothed_perron_external_conditional_closed": true,
+  "unsmoothed_perron_strict_self_contained_closed": false,
+  "backlund_internal_proved": false,
+  "classical_logder_internal_proved": false,
+  "local_zero_distance_self_contained_proved": false,
+  "weighted_budget_self_contained_proved": false,
+  "good_height_contract_accepted": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+  "secondary_attack_target": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger",
+  "alternative_attack_target": "Psi0GoodHeightTStarAveragingContourShiftLedger",
+  "self_contained_replacement": "ClassicalBacklundZeroIndentationCostInternalProofLedger AND ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger",
+  "external_replacement": "Psi0ZetaLogDerivativeContourShiftExternalClosedC12000 AND PerronKernelTruncationForPsi0ExternalClosedC12128",
+  "rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "仍服务统一矛盾场中的 B3/TV 输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "Psi0ExactFormulaInternalClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "psi_0 无截断显式公式身份已在作者侧闭合。",
+      "remaining": "InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost"
+    },
+    {
+      "gate": "RightPerronKernelClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "右边 Perron 核近似常数 C=128 已闭合。",
+      "remaining": "Psi0RightEdgePerronKernelApproximationClosedC128"
+    },
+    {
+      "gate": "ExternalFixedTIndentAndContourClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "接受外部 Backlund/RVM/Titchmarsh 时，fixed-T 缩进、局部零点距离、加权水平预算和轮廓移线已条件关闭。",
+      "remaining": "Psi0ZetaLogDerivativeContourShiftExternalClosedC12000 AND PerronKernelTruncationForPsi0ExternalClosedC12128"
+    },
+    {
+      "gate": "SelfContainedFixedTIndentClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "严格自足 fixed-T 缩进仍未完成；这是外部条件链不能直接转为作者侧证明的首要原因。",
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger"
+    },
+    {
+      "gate": "SelfContainedLocalZeroDistanceClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "严格自足局部零点倒距离和需自足 C_N=16、避零缩进和内部 log-derivative 展开。",
+      "remaining": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND ClassicalBacklundZeroIndentationCostInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger"
+    },
+    {
+      "gate": "SelfContainedWeightedBudgetClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "加权积分预算的算术常数已在外部条件线下闭合；自足同步仍等局部零点距离和前提。",
+      "remaining": "Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "gate": "GoodHeightAlternativeStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "可改走 T* 好高度平均路线，但必须重写当前 fixed-T Perron 合同，不能无声替换。",
+      "remaining": "Psi0GoodHeightTStarAveragingContourShiftLedger"
+    },
+    {
+      "gate": "UnsmoothedPerronExternalConditionalClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "外部条件链可关闭非平滑 Perron finite-T 层。",
+      "remaining": "PerronKernelTruncationForPsi0ExternalClosedC12128"
+    },
+    {
+      "gate": "UnsmoothedPerronStrictSelfContainedClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "严格自足版尚未关闭；当前已压成 Backlund 缩进、内部 log-derivative/local zero 和加权预算同步。",
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger AND ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-unified-contradiction-field-current-frontier-router.md": "ba029949dedcc12d5d08db319fd400b66d41b900cd7eb68a1510ea51ffd2c3cf",
+    "docs/monograph/prime-matrix-b3-internal-psi0-perron-formula-router.json": "d42cd18b0fd4056ba74ef190287b3f66e2c95048076770c1f69a5f7a3c67465a",
+    "docs/monograph/prime-matrix-b3-right-edge-perron-kernel-router.json": "0d71388fd8482bbad6c655d44aebe7e65d3ff725cda2f7fdbe1637897e4cf13c",
+    "docs/monograph/prime-matrix-b3-psi0-fixed-height-indentation-router.json": "b9e3742e5c10376389865e4baff2701a8888e223b64c1534e034bc60d80e090d",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-local-zero-distance-router.json": "66fe1d2f5e90c4d44b61f75ec8a94cc9c589c532a2876438ae514a567121d426",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-weighted-budget-router.json": "8952699d8b62a89249b5cd5a7c065ed2fb6fd865950b2c67d3b89fdf63a32d0d",
+    "docs/monograph/prime-matrix-b3-psi0-contour-shift-external-aggregation-router.json": "0a711fbafa2e393b78ebfdb736adde1c57d611d56b3d8282c8bff7d796a14db8"
+  },
+  "plain_conclusion": "非平滑 Perron 常数层的外部条件路线已经关闭：外部 fixed-T Backlund 缩进、局部零点距离 C=288、水平加权预算 C=12000 和右边核 C=128 已合并为 Perron C=12128。但严格自足版不能导入这些外部条件；它现在被压缩为固定高度 Backlund 缩进内部证明、内部 zeta log-derivative/local zero 展开，以及由此触发的加权预算同步。最窄主攻点更新为 ClassicalBacklundZeroIndentationCostInternalProofLedger。"
+}

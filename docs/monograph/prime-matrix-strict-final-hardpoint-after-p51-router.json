@@ -1,0 +1,117 @@
+{
+  "author_side_direct_attack_exhausted": true,
+  "certificate_type": "prime_matrix_strict_final_hardpoint_after_p51_router",
+  "closed_gates": [
+    "DusartP51ExternalAnalyticInputClosed",
+    "ExternalMathLaneAlreadyClosed",
+    "PromotionBoundaryClosed",
+    "AuthorPacketSealed",
+    "AuthorSideDirectAttackExhausted",
+    "FirstSelfContainedReplacementAtomIsolated"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dusart_p51_full_theta_statement_external_closed": true,
+  "empirical_absence_not_used": true,
+  "external_math_inputs_closed": true,
+  "first_self_contained_replacement_atom": "SelfContainedEXTBGRKSMultilinearKloostermanAndTailLog4Replacement",
+  "first_self_contained_replacement_atom_isolated": true,
+  "legal_closure_channels": [
+    "ExplicitIndependentPromotionAcceptanceRecord",
+    "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+  ],
+  "next_direct_attack_target": "SelfContainedEXTBGRKSMultilinearKloostermanAndTailLog4Replacement",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "IndependentPromotionAcceptanceRecord",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_target": "ExplicitIndependentPromotionAcceptanceRecord",
+  "plain_conclusion": "P5.1 外部解析输入已经闭合，终局数学线也已收缩到最终晋级门。当前真正剩余不是新的局部常数，而是二选一：要么登记独立晋级验收记录，要么用完整自足包替换该验收门。若坚持继续作者侧自足硬攻，第一不可替代原子是 `SelfContainedEXTBGRKSMultilinearKloostermanAndTailLog4Replacement`：也就是重证或内部替代 Tail-log4/RKS 使用的 BG/Baker/Kloosterman 类外部输入。",
+  "promotion_author_packet_sealed": true,
+  "promotion_package_boundary_closed": true,
+  "promotion_package_independently_accepted": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DusartP51ExternalAnalyticInputClosed",
+      "meaning": "P5.1 解析输入已外部路线全段闭合，不再是当前硬点。",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalMathLaneAlreadyClosed",
+      "meaning": "终局数学线已收缩到最终晋级门；FullS-KLS 外部合同版不再分叉。",
+      "proved": true,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": true,
+      "gate": "PromotionBoundaryClosed",
+      "meaning": "DStructure/Tail-log4/finite verification/Rankin 晋级包边界已闭合。",
+      "proved": true,
+      "remaining": "boundary closed, acceptance open"
+    },
+    {
+      "closed": true,
+      "gate": "AuthorPacketSealed",
+      "meaning": "D 组、A/B 到 D、Tail-log4、BG/RKS 参数、有限验证和 Rankin 子账本均已有作者侧材料。",
+      "proved": true,
+      "remaining": "independent acceptance still required"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentPromotionAcceptanceRecord",
+      "meaning": "当前仓库没有独立验收记录；不能由作者侧路由自动生成。",
+      "proved": false,
+      "remaining": "ExplicitIndependentPromotionAcceptanceRecord"
+    },
+    {
+      "closed": true,
+      "gate": "AuthorSideDirectAttackExhausted",
+      "meaning": "在现有材料内，继续作者侧路由只能重述证据包，不能把 referee gate 改写成 PASS-AUTHOR。",
+      "proved": true,
+      "remaining": "ExplicitIndependentPromotionAcceptanceRecord OR SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    },
+    {
+      "closed": true,
+      "gate": "FirstSelfContainedReplacementAtomIsolated",
+      "meaning": "若拒绝独立验收路线，自足替代的第一原子是把 EXT-BG/RKS/Tail-log4 外部输入整体重证或给出同等内部定理。",
+      "proved": false,
+      "remaining": "SelfContainedEXTBGRKSMultilinearKloostermanAndTailLog4Replacement"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+      "meaning": "唯一剩余闭合口：显式独立接受，或用完整自足替代包替换整个晋级门。",
+      "proved": false,
+      "remaining": "ExplicitIndependentPromotionAcceptanceRecord OR SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "未发生独立验收，也没有新的自足替代证明包；故不能声明行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/ab-to-d-interface-match.md": "10c8c6e592b1214f0b028d6c939c4d11a153f33bacbaefcfff0c452829f17f61",
+    "docs/bg-rks-block-match.md": "5bf53d6fe732110ef13fb131a61e1ef3d63d45570748bc9a56ec26894768afb9",
+    "docs/d-structure-formal-appendix.md": "be2e04e640bb9e5d32ea910e510dcc3f32672ac436e7487295400737279c38e3",
+    "docs/external-theorem-package.md": "3ce5287aff106543ac157344891d9718004158b70e99a5a3373cf5be2b4c7bd9",
+    "docs/monograph/claim-status-table.md": "fbbc584b4950de8d97ce62f9db371e295602a6942fc622fac9deaba32e38d05a",
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.json": "1b9f5714d1d53cd3fc4d13a112c24df2e91448201522255bc53abf5c809ab940",
+    "docs/monograph/prime-matrix-final-promotion-subgate-direct-attack-router.json": "3f3cbe2622c3f0ab62408232401998185ca749aa6b2fde2f6f7f1d808dd4b105",
+    "docs/monograph/prime-matrix-final-single-gate-closure-decision-router.json": "fa3461739f8503a72451751c3f1c2a7245c569baed17d86caf5fb0cdd3ef677a",
+    "docs/monograph/prime-matrix-strict-dusart-p51-theta-upper-full-sync-router.json": "0ba15dc81e2730c34d2e35d6f7d58c481a14563b130fb0527ca26be2cf44b5c7",
+    "docs/rks-parameter-audit.md": "77b3457d19babf6740d8a8e2273d7f2e22efe3715c2dd5768b2201efa95790a0",
+    "docs/tail-log4-formal-appendix.md": "cc8e105806fbf3428799a0086954ab2d5b354c480ddca04a7591bd9e2cd4c780"
+  },
+  "status": "post_p51_final_hardpoint_compressed_to_independent_acceptance_or_self_contained_ext_bg_rks_replacement"
+}

@@ -1,0 +1,123 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_noncanonical_alpha_side_primitive_rule_proved": false,
+  "actual_noncanonical_delta_side_primitive_rule_proved": false,
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "alpha_delta_pairing_compatibility_before_cauchy_proved": false,
+  "alpha_emission_map_named_return_proved": false,
+  "alpha_emission_map_no_downstream_choice_proved": false,
+  "alpha_primitive_row_index_set_proved": false,
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "alpha_row_finite_multiplicity_ordering_proved": false,
+  "certificate_type": "prime_matrix_strict_deterministic_alpha_row_emission_map_router",
+  "concrete_source_tuple_data_imported_but_not_map": true,
+  "counterexample_assumption_only": true,
+  "deterministic_alpha_primitive_row_emission_map_proved": false,
+  "deterministic_alpha_row_emission_map_router_closed": true,
+  "emission_map_law": "A deterministic alpha row emission map must be a pre-pushforward function, not a choice made after payment. It has to define the alpha row index set, provide an explicit anchor/phase emission formula, prove finite multiplicity and canonical ordering, forbid downstream recovery, and return every missing or over-budget case by name.",
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "explicit_alpha_delta_primitive_constructor_rule_proved": false,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "AlphaRowAnchorPhaseEmissionFormulaLedger",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`DeterministicAlphaPrimitiveRowEmissionMapLedger` 被继续压成 alpha row 索引集合、A/D0/K/Omega/phase_rule 到 row 的显式发射公式、有限重数/规范排序、禁止后验选择和命名回流五项。当前最窄点是 `AlphaRowAnchorPhaseEmissionFormulaLedger`；已有 source tuple 字段仍只是输入参数，缺少把参数变成 alpha primitive rows 的实际公式。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "primitive_rule_nonzero_sign_local_factor_proved": false,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "reverse_payment_choice_blocked_imported": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DeterministicAlphaEmissionMapTargetActive",
+      "meaning": "上一层 alpha 侧规则已把当前最窄点固定为确定性 alpha primitive row 发射映射。",
+      "proved": false,
+      "remaining": "DeterministicAlphaPrimitiveRowEmissionMapLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ConcreteSourceTupleDataImportedButNotMap",
+      "meaning": "source tuple 已锁定 P/window、A、D0/K/Omega、phase_rule 与哈希。",
+      "proved": true,
+      "remaining": "这些字段不是 row index set，也不是 row formula。"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchyOutputContractImported",
+      "meaning": "pre-Cauchy 合同要求发射映射在 Cauchy/dispersion 前输出 rows，而非后验解释。",
+      "proved": true,
+      "remaining": "AlphaPrimitiveRowIndexSetLedger AND AlphaRowAnchorPhaseEmissionFormulaLedger AND AlphaRowFiniteMultiplicityOrderingLedger AND AlphaEmissionMapNoDownstreamChoiceLedger AND AlphaEmissionMapNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ReversePaymentChoiceBlocked",
+      "meaning": "不能从 Gamma/payment fiber 反选 alpha rows；反选会破坏确定性。",
+      "proved": true,
+      "remaining": "AlphaEmissionMapNoDownstreamChoiceLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopSelfDefinitionBlocked",
+      "meaning": "constructor/formula/emitter/origin ledger 等价环不能自定义发射映射。",
+      "proved": true,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaPrimitiveRowIndexSetCurrentCorpusProved",
+      "meaning": "当前材料尚未定义 alpha primitive rows 的有限索引集合及其与 source tuple 的关系。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveRowIndexSetLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaRowAnchorPhaseFormulaCurrentCorpusProved",
+      "meaning": "当前材料尚未给出由 A、D0/K/Omega、phase_rule 到 alpha row 的显式发射公式。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaRowFiniteMultiplicityOrderingCurrentCorpusProved",
+      "meaning": "当前材料尚未证明每个 source tuple 只发射有限/polylog 个 rows 且有 canonical ordering。",
+      "proved": false,
+      "remaining": "AlphaRowFiniteMultiplicityOrderingLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaEmissionNoDownstreamChoiceCurrentCorpusProved",
+      "meaning": "当前材料尚未证明 row 选择完全在推前前确定，不依赖 payment 纤维或外部谱后处理。",
+      "proved": false,
+      "remaining": "AlphaEmissionMapNoDownstreamChoiceLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaEmissionMapNamedReturnCurrentCorpusProved",
+      "meaning": "当前材料尚未给出发射公式不可用、索引超预算或字段缺失时的命名回流。",
+      "proved": false,
+      "remaining": "AlphaEmissionMapNamedReturnLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "DeterministicAlphaEmissionMapCurrentCorpusProved",
+      "meaning": "索引集合、发射公式、有限重数、无后验选择和回流五项尚未合取证明。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveRowIndexSetLedger AND AlphaRowAnchorPhaseEmissionFormulaLedger AND AlphaRowFiniteMultiplicityOrderingLedger AND AlphaEmissionMapNoDownstreamChoiceLedger AND AlphaEmissionMapNamedReturnLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-strict-actual-constructor-formula-line-router.json": "ac19ab81150df61902058d6c890195592b25400f04a32562b1fa32b966a89913",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8"
+  },
+  "source_loop_self_definition_blocked_imported": true,
+  "status": "strict_deterministic_alpha_row_emission_map_reduced_to_index_formula_multiplicity_choice_return_open",
+  "terminal_gap_after_router": "AlphaPrimitiveRowIndexSetLedger AND AlphaRowAnchorPhaseEmissionFormulaLedger AND AlphaRowFiniteMultiplicityOrderingLedger AND AlphaEmissionMapNoDownstreamChoiceLedger AND AlphaEmissionMapNamedReturnLedger",
+  "terminal_gap_before_router": "DeterministicAlphaPrimitiveRowEmissionMapLedger"
+}

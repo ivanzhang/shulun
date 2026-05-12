@@ -1,0 +1,135 @@
+{
+  "certificate_type": "prime_matrix_strict_self_contained_mertens_tail_frontier_router",
+  "status": "self_contained_mertens_tail_frontier_compressed_to_unsmoothed_perron_internal_zerosum_theta_bridge_b1_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "finite_prime_steps_to_20000_closed": true,
+  "partial_summation_interface_closed": true,
+  "dvp_symbolic_repulsion_closed": true,
+  "zero_repulsion_c1280_t14_registered": true,
+  "trivial_tail_prime_power_closed": true,
+  "external_mertens_theta_route_closed_to_dstructure": true,
+  "unsmoothed_perron_constant_proved": false,
+  "internal_zero_sum_budget_proved": false,
+  "theta_target_self_contained_proved": false,
+  "finite_theta_bridge_proved": false,
+  "meissel_mertens_b1_interval_proved": false,
+  "self_contained_mertens_tail_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "UnsmoothedChebyshevPerronExplicitFormulaConstantLedger",
+  "parallel_attack_targets": [
+    "InternalZeroSumDyadicContourBudgetLedger",
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+    "FiniteLowHeightZeroCheckLedger",
+    "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold",
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+  ],
+  "frontier_items": [
+    {
+      "name": "finite_prime_steps_to_20000",
+      "status": "closed",
+      "meaning": "286<=x<10372 与 10372<=x<20000 的素数倒数跳点作为精确 Stieltjes 原子保留。",
+      "remaining": "无。"
+    },
+    {
+      "name": "partial_summation_interface",
+      "status": "closed",
+      "meaning": "一旦有 theta/psi 包络和 B1 常数区间，素数倒数尾段由分部求和接口推出。",
+      "remaining": "等待 theta/B1 输入。"
+    },
+    {
+      "name": "dvp_symbolic_and_numeric_region",
+      "status": "partly_closed",
+      "meaning": "DVP 符号零点排斥与 C=64 参数优化给出 beta<=1-1/(1280 log(|gamma|+3)), |gamma|>=14。",
+      "remaining": "FiniteLowHeightZeroCheckLedger AND UnsmoothedChebyshevPerronExplicitFormulaConstantLedger AND InternalZeroSumDyadicContourBudgetLedger"
+    },
+    {
+      "name": "trivial_tail_prime_power",
+      "status": "closed",
+      "meaning": "平凡零点、端点半权、素数幂和截断尾项已有初等归账。",
+      "remaining": "不能替代 theta@20000 小误差。"
+    },
+    {
+      "name": "theta_20000_and_finite_bridge",
+      "status": "open_self_contained",
+      "meaning": "普通 C=1280 零点自由区常数不能自动达到 Dusart 级 theta@20000 目标。",
+      "remaining": "ThetaEnvelopeTargetAt20000NumericalBudgetLedger AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold"
+    },
+    {
+      "name": "meissel_mertens_b1_interval",
+      "status": "open_self_contained",
+      "meaning": "B1 常数区间与 x=20000 基点核验仍需自足算术账本。",
+      "remaining": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "name": "external_route",
+      "status": "conditional_external_closed_to_dstructure",
+      "meaning": "接受 Dusart theta/reciprocal-prime Mertens 外部定理后，B3 解析链推进到 DStructure/Rankin 守门项。",
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "该解析前沿只作为早期零行反例链的 B3/TV 输入，不使用真实缺席样本。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "MertensTailFiniteAndFormalLayersClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限跳点、分部求和接口、DVP 符号链、C=1280/T0=14 参数和初等尾项均已登记。",
+      "remaining": "UnsmoothedChebyshevPerronExplicitFormulaConstantLedger AND InternalZeroSumDyadicContourBudgetLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "gate": "UnsmoothedPerronStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "平滑显式公式不能自动替代非平滑 Chebyshev/Perron 常数账本。",
+      "remaining": "UnsmoothedChebyshevPerronExplicitFormulaConstantLedger"
+    },
+    {
+      "gate": "InternalZeroSumStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "外部零点和预算可条件关闭；自足线仍需文内 dyadic 零点和预算。",
+      "remaining": "InternalZeroSumDyadicContourBudgetLedger"
+    },
+    {
+      "gate": "ThetaAndBridgeStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "x=20000 的小 theta 误差和有限桥不能由普通零点自由区粗常数自动推出。",
+      "remaining": "ThetaEnvelopeTargetAt20000NumericalBudgetLedger AND FiniteThetaEnvelopeBridgeBelowAnalyticThreshold"
+    },
+    {
+      "gate": "B1IntervalStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "Meissel-Mertens 常数区间自足算术仍未完成。",
+      "remaining": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "gate": "SelfContainedMertensTailProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "自足 reciprocal-prime Mertens 尾段仍未闭合。",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-self-contained-mertens-tail-router.md": "5f5f889b038b6171dc7387c34a0bdf7ae2a7252478dc834b6ee6d97b0f795d01",
+    "docs/monograph/prime-matrix-b3-zero-free-constants-router.md": "321bdc48d3f39699df874b48bc06313df181ad6cdea871e47364bce918411a19",
+    "docs/monograph/prime-matrix-b3-zero-repulsion-parameter-optimization-router.md": "671c8933301f981ceb181b2448ce6e02d4156eb52c49216ef831fde750d335a4",
+    "docs/monograph/prime-matrix-b3-pnt-contour-constant-router.md": "6e01423b50abafac79656438eafb2043e252c37d76e87f29e737faf24cb9b7ac",
+    "docs/monograph/prime-matrix-b3-zero-sum-contour-budget-router.md": "90de06276d753bac52eb318b88869cd538c80ca735653d6ff5ed0505c5b495be",
+    "docs/monograph/prime-matrix-b3-trivial-tail-prime-power-budget-router.md": "d9ecde3049050ed53e5b9cd1140ada48f601ef294601aa138f1ec0424fad51fc",
+    "docs/monograph/prime-matrix-strict-b3-remainder-total-variation-budget-router.md": "2348b877052849f2c6526bb5bb369f7e10e1143768411e24ad5b5b237809efb2"
+  },
+  "plain_conclusion": "自足 Mertens 尾段已经压到显式 PNT 机器的当前真实前沿：有限素数倒数跳点、分部求和接口、DVP 符号排斥、C=1280/T0=14 参数和初等尾项均可复用；剩余不再是零行几何，而是非平滑 Perron 常数、内部零点和预算、theta@20000/有限桥、以及 Meissel-Mertens B1 常数区间。外部 Dusart/Mertens 路线可条件推进到 DStructure/Rankin，但严格自足线仍未闭合。"
+}

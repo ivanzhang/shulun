@@ -1,0 +1,141 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_noncanonical_alpha_side_primitive_rule_proved": false,
+  "actual_noncanonical_alpha_source_tuple_domain_proved": false,
+  "actual_noncanonical_delta_side_primitive_rule_proved": false,
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "alpha_delta_pairing_compatibility_before_cauchy_proved": false,
+  "alpha_primitive_coefficient_weight_formula_proved": false,
+  "alpha_primitive_row_uv_key_sign_local_factor_output_proved": false,
+  "alpha_primitive_rule_failure_named_return_proved": false,
+  "alpha_rule_law": "An alpha-side primitive rule is not a source tuple schema and not a disintegration identity. It must, before Cauchy/dispersion and within the same formal unit, take an actual noncanonical source tuple, emit a finite list of alpha primitive rows, assign coefficient weights, output exact `(u,v)`, branch key, sign/local factor, and return every non-admissible case by name.",
+  "alpha_side_primitive_rule_router_closed": true,
+  "canonical_template_leak_blocked_imported": true,
+  "certificate_type": "prime_matrix_strict_alpha_side_primitive_rule_router",
+  "counterexample_assumption_only": true,
+  "deterministic_alpha_primitive_row_emission_map_proved": false,
+  "disintegration_not_row_emitter_imported": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "explicit_alpha_delta_primitive_constructor_rule_proved": false,
+  "formal_unit_anchor_discipline_imported": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "DeterministicAlphaPrimitiveRowEmissionMapLedger",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger` 被继续压成定义域、确定性 alpha row 发射映射、alpha 系数权重公式、逐行 `(u,v)`/key/sign/local-factor 输出和失败命名回流五项。当前最窄点是 `DeterministicAlphaPrimitiveRowEmissionMapLedger`；source tuple 和 formal-unit 数据只锁定输入容器，仍没有生成 alpha primitive rows 的实际规则。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "primitive_rule_nonzero_sign_local_factor_proved": false,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "reverse_payment_recovery_blocked_imported": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AlphaSidePrimitiveRuleTargetActive",
+      "meaning": "上一层显式 alpha/delta 规则已把当前最窄点固定为 alpha 侧 primitive row 规则。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTupleDomainSchemaImported",
+      "meaning": "source tuple/anchor 参数字段、哈希和同 formal unit 纪律可用。",
+      "proved": true,
+      "remaining": "这只是定义域容器，不产生 alpha primitive row。"
+    },
+    {
+      "closed": true,
+      "gate": "FormalUnitAndAnchorDisciplineImported",
+      "meaning": "formal-unit source record 与 anchor reconstruction 可锁定 A、D0/K/Omega、phase_rule。",
+      "proved": true,
+      "remaining": "仍需把这些字段送入 alpha 行生成算子。"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchySourceLawFieldsImported",
+      "meaning": "pre-Cauchy 来源律要求 branch key、u/v、sign/local factor 和命名回流字段。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalAlphaSourceTupleDomainLedger AND DeterministicAlphaPrimitiveRowEmissionMapLedger AND AlphaPrimitiveCoefficientWeightFormulaLedger AND AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger AND AlphaPrimitiveRuleFailureNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationFormalButNotEmitterImported",
+      "meaning": "signed 解积分只在 actual source measure 已给定后形式闭合，不能生成 alpha 行。",
+      "proved": true,
+      "remaining": "DeterministicAlphaPrimitiveRowEmissionMapLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "ReversePaymentRecoveryBlockedImported",
+      "meaning": "不能从 payment Gamma 或有限投影反推唯一 pre-Cauchy primitive summand。",
+      "proved": true,
+      "remaining": "DeterministicAlphaPrimitiveRowEmissionMapLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalTemplateLeakBlocked",
+      "meaning": "canonical RIW/Buchstab 与 formal-unit key 模板只能作作用域内参考，不能跨入 noncanonical alpha 规则。",
+      "proved": true,
+      "remaining": "AlphaPrimitiveRuleFailureNamedReturnLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualNoncanonicalAlphaSourceTupleDomainCurrentCorpusProved",
+      "meaning": "当前材料尚未证明 alpha 规则的定义域正好等于 actual noncanonical clean-core source tuples。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalAlphaSourceTupleDomainLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "DeterministicAlphaPrimitiveRowMapCurrentCorpusProved",
+      "meaning": "当前材料尚未给出从每个 source tuple 到有限 alpha primitive rows 的确定性发射映射。",
+      "proved": false,
+      "remaining": "DeterministicAlphaPrimitiveRowEmissionMapLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaCoefficientWeightFormulaCurrentCorpusProved",
+      "meaning": "当前材料尚未给出 alpha primitive row 的系数权重公式及其与原始构造量的等式。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveCoefficientWeightFormulaLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaRowUVKeySignLocalFactorOutputCurrentCorpusProved",
+      "meaning": "当前材料尚未证明每条 alpha row 同步输出 exact `(u,v)`、branch key、sign 和 local factor。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaFailureNamedReturnCurrentCorpusProved",
+      "meaning": "当前材料尚未逐类关闭 canonical 泄漏、未登记、超预算、thin/rejected/cancelling 的失败回流。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveRuleFailureNamedReturnLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaSidePrimitiveRuleCurrentCorpusProved",
+      "meaning": "定义域、发射映射、权重公式、输出字段和失败回流五项尚未合取证明。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalAlphaSourceTupleDomainLedger AND DeterministicAlphaPrimitiveRowEmissionMapLedger AND AlphaPrimitiveCoefficientWeightFormulaLedger AND AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger AND AlphaPrimitiveRuleFailureNamedReturnLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
+    "docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.json": "1ed84ceda49fdc1fbafb7ba83824ce9a4438d1d5bad2d580851d9afa690fb7b7",
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-finite-formal-unit-partition-key-router.md": "efaa87eff15ba45dd350e2cb3d2210afaf5fc998ca59897a398eb19483f618a5",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-strict-explicit-alpha-delta-rule-router.json": "2de491d0a24986746199d7c96965b56f444643bf6aa15074bd705d7bf544531c",
+    "docs/monograph/prime-matrix-triad-a1-canonical-riw-support-router.md": "aad1216d4df4ba46d6d0aac0dfc68167d9e44b29196077f5bf49c682c488949e"
+  },
+  "source_tuple_container_imported": true,
+  "status": "strict_alpha_side_primitive_rule_reduced_to_domain_map_weight_output_return_open",
+  "terminal_gap_after_router": "ActualNoncanonicalAlphaSourceTupleDomainLedger AND DeterministicAlphaPrimitiveRowEmissionMapLedger AND AlphaPrimitiveCoefficientWeightFormulaLedger AND AlphaPrimitiveRowUVKeySignLocalFactorOutputLedger AND AlphaPrimitiveRuleFailureNamedReturnLedger",
+  "terminal_gap_before_router": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger"
+}

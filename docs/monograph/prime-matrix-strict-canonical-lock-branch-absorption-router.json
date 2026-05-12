@@ -1,0 +1,86 @@
+{
+  "acyclic_canonical_exact_same_set_promotion_certificate_proved": false,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "canonical_exact_certificate_branch_discharged_conditionally": true,
+  "canonical_lock_branch_absorption_closed": true,
+  "canonical_lock_standalone_global_contradiction": false,
+  "canonical_source_terminal_promotion_imported_with_scope": true,
+  "certificate_type": "prime_matrix_strict_canonical_lock_branch_absorption_router",
+  "counterexample_assumption_only": true,
+  "global_unrestricted_terminal_family_exclusion_closed": false,
+  "hard_law": "canonical-lock 的 exact same-set 证书若存在，只把该 case 送入 canonical-source scoped promotion；若证书不存在，canonical-lock 不可用。因 direct PDEC/CleanKLS 已回流，活动 noncanonical 主线被压成唯一目标 `NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem`。这不是行/列命题无条件闭合。",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步把 canonical-lock 从活动非 canonical 主线中吸收掉：五项 exact same-set 证书成立时，它只是 canonical-source 范围内的条件晋级 case；证书缺失时则不能调用 canonical-lock。因此 canonical-lock 不再是独立非循环出口，真正活动的 noncanonical 剩余目标只剩原 `NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem`。命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ExactSameSetCanonicalCertificateBranchPinned",
+      "meaning": "上一层已把 canonical-lock 精炼成五项 exact same-set canonical 晋级证书。",
+      "proved": false,
+      "remaining": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalTerminalPromotionImportedWithScope",
+      "meaning": "canonical RIW/Buchstab source 分支内，终端晋级已闭合；但该闭合不覆盖 unrestricted/global noncanonical 分支。",
+      "proved": true,
+      "remaining": "scope=canonical-source branch only。"
+    },
+    {
+      "closed": true,
+      "gate": "CertificatePresentBranchDischargedConditionally",
+      "meaning": "若五项证书实际提交，则对象已在同一 formal unit 和同一坏窗集合下进入 canonical 分支，按 scoped canonical promotion 处理。",
+      "proved": true,
+      "remaining": "不再作为活动 noncanonical 终端。"
+    },
+    {
+      "closed": true,
+      "gate": "CertificateAbsentBranchCannotUseCanonicalLock",
+      "meaning": "若五项证书任一项缺失，则 finite factor 或 same-set pushforward 定义失败，canonical-lock 不能被调用。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "A1AdmissionAbsorptionConsistent",
+      "meaning": "这与 A1 source-admission 分支吸收一致：canonical 分支陈述不作为 global contradiction，只作为 scoped case。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "DirectTerminalFallbackStillRejected",
+      "meaning": "证书缺失时不能改走 direct PDEC/direct CleanKLS 标签链，因为该链已被证明回流。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "ActiveNoncanonicalTerminalReducedToSourceEntropy",
+      "meaning": "吸收 canonical scoped case 后，活动 noncanonical 主线只剩原 actual-source 熵定理。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "meaning": "本步只是分支吸收，不证明 source entropy，也不关闭 DStructure/Rankin 或最终行/列命题。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem AND remaining promotion gates。"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.json": "c67d3c6cb5962117acda677dcefaf3cb6155ce0ccacca645a8352d3682981311",
+    "docs/monograph/prime-matrix-strict-canonical-lock-nonrecursive-exit-attack-router.json": "1fc50ba815f27922f23758ed4799dc2f3e88293050b98961acef8703a283e4b9",
+    "docs/monograph/prime-matrix-strict-exact-entropy-source-law-firewall-router.json": "91fc5d3336a58236a1a96d806017f20aa56da290ecb587675a79e81e931a2547",
+    "docs/monograph/prime-matrix-strict-rate-bearing-terminal-recurrence-firewall-router.json": "fcbc9c954360a067c00bb161118936041aaeed458841a5162fd199bbb04e2b92",
+    "docs/monograph/prime-matrix-strict-source-admission-branch-absorption-router.json": "ff738635e2f712ebb777170a718e8775362847a92b7e29c4933da438fd7d64d6"
+  },
+  "status": "strict_canonical_lock_absorbed_as_scoped_canonical_branch_active_noncanonical_source_entropy_open",
+  "strict_active_noncanonical_terminal_after_absorption": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "strict_terminal_before_absorption": "AcyclicCanonicalExactSameSetPromotionCertificate OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+}

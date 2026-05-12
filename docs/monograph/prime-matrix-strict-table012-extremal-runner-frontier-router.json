@@ -1,0 +1,209 @@
+{
+  "certificate_type": "prime_matrix_strict_table012_extremal_runner_frontier_router",
+  "certified_log_summation_interval_arithmetic_closed": false,
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "Table012SelfContainedFrontierImported",
+    "Table012ThetaExtremalRunnerAlgorithmLedger",
+    "Table012FirstRowExtremalSmokeCertificateLedger",
+    "Table012ExtremalArchiveAuditToolLedger",
+    "Table012Prefix9RowsTo1e9ArchiveAuditLedger",
+    "Table012Prefix18RowsTo1e10ArchiveAuditLedger",
+    "ThinFirstRowMarginDetected",
+    "FullTable012ThetaExtremalArchiveRunAndHashLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "full_archive": {
+    "expected_rows": 34,
+    "first_label": "1E+08",
+    "last_label": "7E+11",
+    "last_right": 800000000000,
+    "min_guard_margin": "5.507003791407393599e+01",
+    "min_guard_margin_label": "3E+08",
+    "min_raw_margin": "5.607005925039993599e+01",
+    "min_raw_margin_label": "3E+08",
+    "passed_with_guard": true,
+    "present": true,
+    "row_count": 34,
+    "sha256": "2d1e955a6fa533c4e68bf9d786617d4d090dc91b52e224447eebaff849ddc1a3"
+  },
+  "full_table012_theta_extremal_archive_run_hash_closed": true,
+  "independent_theta_extremal_archive_closed": false,
+  "next_direct_attack_target": "CertifiedLogSummationIntervalArithmeticForThetaLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CertifiedLogSummationIntervalArithmeticForThetaLedger",
+    "IndependentThetaExtremalArchiveForTable012IntervalsLedger",
+    "DirectUnconditionalContradictionFound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "CertifiedLogSummationIntervalArithmeticForThetaLedger",
+    "Table012DirectedRoundingAndIntervalPropagationLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "table_012 自足路线继续推进：独立 theta 极值扫描器已经物化，第一行、前 9 行、前 18 行以及完整 34 行归档均已通过工程审计并登记 hash。但严格 log 区间舍入仍未闭合；尤其第一行绝对余量只有约 76，不能把普通浮点/Kahan 归档冒充为最终自足证明。",
+  "prefix18_archive": {
+    "expected_rows": 18,
+    "first_label": "1E+08",
+    "last_label": "9E+09",
+    "last_right": 10000000000,
+    "min_guard_margin": "5.507003791407393599e+01",
+    "min_guard_margin_label": "3E+08",
+    "min_raw_margin": "5.607005925039993599e+01",
+    "min_raw_margin_label": "3E+08",
+    "passed_with_guard": true,
+    "present": true,
+    "row_count": 18,
+    "sha256": "ea1136fd4c8e1168ed8e97e2bedfe0f3928ea23b42a1cc9f2d473fa1c6ba0667"
+  },
+  "prefix9_archive": {
+    "expected_rows": 9,
+    "first_label": "1E+08",
+    "last_label": "9E+08",
+    "last_right": 1000000000,
+    "min_guard_margin": "5.507003791407393599e+01",
+    "min_guard_margin_label": "3E+08",
+    "min_raw_margin": "5.607005925039993599e+01",
+    "min_raw_margin_label": "3E+08",
+    "passed_with_guard": true,
+    "present": true,
+    "row_count": 9,
+    "sha256": "54d15fa3855ee0d3c5718fb50e3e2d856e47243420e80a94d4ff317333e5d5da"
+  },
+  "replacement_self_contained": {
+    "IndependentThetaExtremalArchiveForTable012IntervalsLedger": "FullTable012ThetaExtremalArchiveRunAndHashLedger AND CertifiedLogSummationIntervalArithmeticForThetaLedger AND Table012DirectedRoundingAndIntervalPropagationLedger",
+    "Table012OriginalGeneratorOrIndependentThetaExtremalArchiveLedger": "PublishedTable012GeneratorArtifactAndHashLedger OR IndependentThetaExtremalArchiveForTable012IntervalsLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只推进 table_012 自足计算输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "Table012SelfContainedFrontierImported",
+      "meaning": "上一证书已把 P5.1 低段自足缺口压成 table_012 原始生成器或独立 theta 极值归档。",
+      "proved": true,
+      "remaining": "Table012OriginalGeneratorOrIndependentThetaExtremalArchiveLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table012ThetaExtremalRunnerAlgorithmLedger",
+      "meaning": "已物化独立扫描器：从 theta(1e8) 开始，按 table_012 区间扫描素数跳点并记录最大缺陷。",
+      "proved": true,
+      "remaining": "0220b7cdc9c5b7ed88acb99571370e72ebc0b046032cc7f4905f9085fca9c392"
+    },
+    {
+      "closed": true,
+      "gate": "Table012FirstRowExtremalSmokeCertificateLedger",
+      "meaning": "第一行 [1e8,2e8] 样本已跑通；最危险点与余量已落盘，验证极值口径可执行。",
+      "proved": true,
+      "remaining": "27d1d0174950c5766c46bcfed4daeafd98d18c8e6fd2149db5865f9e9dfee5b0"
+    },
+    {
+      "closed": true,
+      "gate": "Table012ExtremalArchiveAuditToolLedger",
+      "meaning": "已新增归档审计器，检查行数、区间、b1、最大点、原始余量、保护余量和 hash。",
+      "proved": true,
+      "remaining": "1774788e77e9f2ee1a06f3cbb4cc0695db2720c42e76edaf9d1853f5b5d01f4e"
+    },
+    {
+      "closed": true,
+      "gate": "Table012Prefix9RowsTo1e9ArchiveAuditLedger",
+      "meaning": "前 9 行 [1e8,1e9] 已生成并通过归档审计。",
+      "proved": true,
+      "remaining": "54d15fa3855ee0d3c5718fb50e3e2d856e47243420e80a94d4ff317333e5d5da"
+    },
+    {
+      "closed": true,
+      "gate": "Table012Prefix18RowsTo1e10ArchiveAuditLedger",
+      "meaning": "前 18 行 [1e8,1e10] 已生成并通过归档审计；仍只是完整归档前缀。",
+      "proved": true,
+      "remaining": "ea1136fd4c8e1168ed8e97e2bedfe0f3928ea23b42a1cc9f2d473fa1c6ba0667"
+    },
+    {
+      "closed": true,
+      "gate": "ThinFirstRowMarginDetected",
+      "meaning": "第一行 published b1 的绝对余量只有约 76，说明后续必须补严格 log 区间舍入纪律。",
+      "proved": true,
+      "remaining": "CertifiedLogSummationIntervalArithmeticForThetaLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FullTable012ThetaExtremalArchiveRunAndHashLedger",
+      "meaning": "完整 34 行极值归档需读满 table_012 全部区间，且每行通过工程保护余量检查并登记 hash。",
+      "proved": true,
+      "remaining": "2d1e955a6fa533c4e68bf9d786617d4d090dc91b52e224447eebaff849ddc1a3"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedLogSummationIntervalArithmeticForThetaLedger",
+      "meaning": "当前样本使用 long double/Kahan 与工程保护，不等同于严格外向 log 区间算术证明。",
+      "proved": false,
+      "remaining": "interval log table or directed MPFR/arb-style summation certificate"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentThetaExtremalArchiveForTable012IntervalsLedger",
+      "meaning": "独立归档需要完整运行/hash与区间舍入同时闭合；当前仍卡在严格 log 区间舍入。",
+      "proved": false,
+      "remaining": "FullTable012ThetaExtremalArchiveRunAndHashLedger AND CertifiedLogSummationIntervalArithmeticForThetaLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DirectUnconditionalContradictionFound",
+      "meaning": "本步仍只是解析输入自足化，不产生早期零行反例链终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "行/列命题仍未作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "sample_first_row": {
+    "b1_minus_max_required_b1": "8.069123059848458226e-06",
+    "global_prime_count": 11078937,
+    "label": "1E+08",
+    "left": 100000000,
+    "margin_after_guard": "7.534810237764390431e+01",
+    "max_kind": "prime_jump",
+    "max_required_b1": "-4.480691230598484582e-04",
+    "max_x": 179845447,
+    "passed_raw": true,
+    "passed_with_guard": true,
+    "present": true,
+    "raw_margin": "7.634811345658090431e+01",
+    "right": 200000000,
+    "row_prime_count": 5317482,
+    "sha256": "27d1d0174950c5766c46bcfed4daeafd98d18c8e6fd2149db5865f9e9dfee5b0"
+  },
+  "source_hashes": {
+    "data/theta-table012-extremal-archive.jsonl": "2d1e955a6fa533c4e68bf9d786617d4d090dc91b52e224447eebaff849ddc1a3",
+    "data/theta-table012-extremal-prefix-18rows.jsonl": "ea1136fd4c8e1168ed8e97e2bedfe0f3928ea23b42a1cc9f2d473fa1c6ba0667",
+    "data/theta-table012-extremal-prefix-9rows.jsonl": "54d15fa3855ee0d3c5718fb50e3e2d856e47243420e80a94d4ff317333e5d5da",
+    "data/theta-table012-extremal-sample-first-row.jsonl": "27d1d0174950c5766c46bcfed4daeafd98d18c8e6fd2149db5865f9e9dfee5b0",
+    "docs/monograph/claim-status-table.md": "ddd0d708610b237219fba4a7a838f36f78e28e2ed8b4fc50615341f7e0e1a5e4",
+    "docs/monograph/prime-matrix-strict-table012-self-contained-frontier-router.json": "7ade0d28ec11ce0e7b64d374d0603f2744fcc9bdd98c7e642ea1423849c39efd",
+    "experiments/prime_matrix_table012_theta_extremal_archive_audit.py": "1774788e77e9f2ee1a06f3cbb4cc0695db2720c42e76edaf9d1853f5b5d01f4e",
+    "experiments/prime_matrix_table012_theta_extremal_runner.cpp": "0220b7cdc9c5b7ed88acb99571370e72ebc0b046032cc7f4905f9085fca9c392"
+  },
+  "status": "table012_full_extremal_archive_closed_interval_arithmetic_open",
+  "table012_extremal_archive_audit_tool_closed": true,
+  "table012_first_row_extremal_smoke_certificate_closed": true,
+  "table012_prefix18_rows_to_1e10_archive_audit_closed": true,
+  "table012_prefix9_rows_to_1e9_archive_audit_closed": true,
+  "table012_theta_extremal_runner_algorithm_closed": true,
+  "theta_less_than_identity_to_8e11_self_contained_closed": false
+}

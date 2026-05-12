@@ -1,0 +1,169 @@
+{
+  "acyclic_signed_value_subcycle_detected": true,
+  "certificate_type": "prime_matrix_strict_acyclic_signed_value_cycle_sync_router",
+  "counterexample_assumption_only": true,
+  "current_frontier": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "cycle_edges": [
+    {
+      "from": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "to": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "from": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity",
+      "to": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward"
+    },
+    {
+      "from": "AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward",
+      "to": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows"
+    },
+    {
+      "from": "AcyclicSeedPreCauchyBasisWeightSourceFormulaForPrimitiveRows",
+      "to": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy"
+    },
+    {
+      "from": "AcyclicSeedInternalArithmeticBasisExpansionBeforeCauchy",
+      "to": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger"
+    },
+    {
+      "from": "AcyclicSeedNoncanonicalPreCauchyBasisAlphabetLedger",
+      "to": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment"
+    },
+    {
+      "from": "AcyclicSeedPrimitiveBasisWordSetGenerationRuleBeforeCoefficientAssignment",
+      "to": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility"
+    },
+    {
+      "from": "AcyclicSeedSourceTupleToPrimitiveBasisWordConstructorBeforeAdmissibility",
+      "to": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility"
+    },
+    {
+      "from": "AcyclicSeedBasisWordFormulaFromSourceTupleParametersBeforeAdmissibility",
+      "to": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters"
+    },
+    {
+      "from": "AcyclicSeedWordCoordinateFormulaFromAnchorD0KOmegaPhaseParameters",
+      "to": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "from": "AcyclicSeedSignedWeightCoordinateSlotLedger",
+      "to": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords"
+    },
+    {
+      "from": "AcyclicSeedSignedWeightSlotValueFormulaOnPrimitiveBasisWords",
+      "to": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "from": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger",
+      "to": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "from": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula",
+      "to": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "from": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_rankin_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "existing_subcycle_counts_as_proof": false,
+  "frontier_statement": "当前前沿仍是 `RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands`，但必须附加非循环守门 `NoncircularPreCauchySignedCoefficientOriginInputIndependentOfRowLevelGenerationCycle`：不得通过 signed slot/value map/source identity 再回到 row-level 表来证明自身。",
+  "geometry_coordinate_subchain_closed": true,
+  "next_direct_attack_target": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+  "no_theorem_switch": true,
+  "noncircular_pre_cauchy_signed_coefficient_origin_input_proved": false,
+  "plain_conclusion": "本步把 acyclic signed value/slot/value-map 子链完整同步：几何坐标域已闭合，但 signed coefficient 赋值链从 row-level 表下钻后，经 signed slot、coefficient assignment、value map、basis word 来源恒等式又返回同一个 row-level 表。这个回流不是证明。下一步若继续严格自足，必须提交独立于本闭环的逐行 clean-core 原始 signed coefficient 生成表；否则该分支只能按命名纪律回流终端家族。",
+  "required_noncircular_guard": "NoncircularPreCauchySignedCoefficientOriginInputIndependentOfRowLevelGenerationCycle",
+  "row_column_unconditional_closed": false,
+  "row_level_clean_core_origin_generation_table_proved": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AcyclicSignedValueSubcycleDetected",
+      "meaning": "从逐行原始生成表下钻到 signed slot/value map 后，又经 basis word 来源恒等式返回同一逐行原始生成表。",
+      "proved": true,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "GeometryCoordinateSubchainClosed",
+      "meaning": "anchor input、dyadic/phase 坐标输入域已闭合；当前缺口不是几何坐标。",
+      "proved": true,
+      "remaining": "AcyclicSeedSignedWeightCoordinateSlotLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedValueSubchainStillOpen",
+      "meaning": "signed weight slot value、coefficient assignment、basis word value map 均未给出非循环赋值公式。",
+      "proved": false,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "OriginIdentityReturnsToRowLevel",
+      "meaning": "basis word signed coefficient 来源恒等式与 primitive summand 来源恒等式会合，仍需逐行原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "SameRowBridgeImportedButNotProof",
+      "meaning": "same-row 桥接已说明 word/coefficient 必须同一行同源，但它也回收到逐行原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseAndZeroRowRecoveryStillBlocked",
+      "meaning": "不能用 payment 反推、早期零行覆盖或来源环自证 signed coefficient 来源。",
+      "proved": true,
+      "remaining": "NoncircularPreCauchySignedCoefficientOriginInputIndependentOfRowLevelGenerationCycle"
+    },
+    {
+      "closed": false,
+      "gate": "ExistingSubcycleCountsAsProof",
+      "meaning": "该闭环只定位了最窄缺口，不能作为行/列命题无条件证明。",
+      "proved": false,
+      "remaining": "NoncircularPreCauchySignedCoefficientOriginInputIndependentOfRowLevelGenerationCycle"
+    },
+    {
+      "closed": false,
+      "gate": "NoncircularRowLevelGenerationCurrentCorpusProved",
+      "meaning": "当前材料没有提交独立于本闭环的逐行 clean-core 原始 signed coefficient 生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "meaning": "严格自足线仍缺非循环 signed coefficient 来源输入；外部线仍需 DStructure/Rankin 独立验收。",
+      "proved": false,
+      "remaining": "(RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands WITH NoncircularPreCauchySignedCoefficientOriginInputIndependentOfRowLevelGenerationCycle) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-alphabet-ledger-router.json": "01dfdcc9a1f9d9a839331068b413f9ecbb762491ec738916c1d23b1204c3d0a7",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-weight-source-formula-router.json": "2fae75701631b87b0a5601b71fbd6fc75b9e95eec79a1aa386e7969da050966c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-formula-router.json": "e4bbc63659a0348b1f017f78f0cd7d8b00e38ae91380db83d5002448a1955b2e",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-basis-word-origin-identity-router.json": "7ed10b97fc7ee159a7d08b45a0e26afbbedd6db4518e1c00dfb48b5c13de56ad",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-assignment-router.json": "30d00d415a6bcd62f3f75fc92a7fed670dd493936a39fbd86980ad7a0bcda0bc",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-value-map-router.json": "e052b6a7cc215c9ad7eb81002edeb995fcc6ef2ce1290dfaf70f642a21de499c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-internal-arithmetic-basis-expansion-router.json": "ae82e18347b05aab66be09d91ddb80a71eb30c3c7ce8ae3ba8e3fe1a0e4a5bea",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-basis-word-generation-router.json": "b3db77f03ae13172aaa975271a89f5f80aa7d5254b7dac12c3a4886edbd1da6e",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-primitive-coefficient-law-router.json": "fcefa49f276e386e2a171d897cec31fc4b9e7b44456253ce0f3ea8ef0574d46f",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-row-emitter-router.json": "11dc103e15a970f0c4e27a17ca32b757203b5e4fd443d6d40217854fdb5f0fe3",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-slot-value-formula-router.json": "9f4f22bbec38091d306cb0cf8a395c9fa854e78c73e73555f2f40b1e8dee0ba5",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-weight-coordinate-slot-router.json": "0150cfc80fdde353d31c03700be96db1badfbea3f13c4d58e8260cef4901efbf",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-source-tuple-word-constructor-router.json": "5a07dea4127624cbb836413658616bd5027eef9128200c52547d92e17dd26fd4",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-word-coordinate-formula-router.json": "6f6fe8cf24a60e6440371368e6150663c4dd16be348cb9ad0f59176ea04b27c0",
+    "docs/monograph/prime-matrix-strict-joint-alpha-same-row-origin-identity-router.json": "f0d11204c5ed939ce0081991a49bdb2335240a69676c872bf8bcc96bfb4df66b",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "acyclic_signed_value_cycle_synced_to_noncircular_row_level_generation_open",
+  "terminal_return_if_no_noncircular_input": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+}

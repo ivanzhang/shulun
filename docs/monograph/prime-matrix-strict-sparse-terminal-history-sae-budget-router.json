@@ -1,0 +1,114 @@
+{
+  "certificate_type": "prime_matrix_strict_sparse_terminal_history_sae_budget_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的稀疏终端历史 SAE 分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "NonpersistentSAEBudgetFormulaClosed",
+      "meaning": "若无持久历史 PDEC，总供给由历史求和上界控制。",
+      "proved": true,
+      "remaining": "FormalUnitSparseHistoryMultiplicityCap"
+    },
+    {
+      "closed": true,
+      "gate": "ForcedLoadComparisonCriterionClosed",
+      "meaning": "`L_forced>U_sparse` 时得到供给-需求矛盾。",
+      "proved": true,
+      "remaining": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow"
+    },
+    {
+      "closed": true,
+      "gate": "SparseTerminalPDECOrBudgetGapClosed",
+      "meaning": "稀疏终端历史只剩持久 PDEC 或非持久预算比较。",
+      "proved": true,
+      "remaining": "FixedTypeHistoryPDECExclusion OR SparseHistoryDemandExceedsNonpersistentSupplyBudget"
+    },
+    {
+      "closed": false,
+      "gate": "SparseHistoryDemandExceedsBudgetProved",
+      "meaning": "尚未证明早期零行强制负载严格超过非持久历史供给预算。",
+      "proved": false,
+      "remaining": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND FormalUnitSparseHistoryMultiplicityCap AND AdaptiveLambdaBalanceForIteratedCoreDensity"
+    },
+    {
+      "closed": false,
+      "gate": "SparseTerminalHistorySAEBudgetProved",
+      "meaning": "预算公式闭合，但关键不等式和固定历史 PDEC 排斥尚未完成。",
+      "proved": false,
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND FixedTypeHistoryPDECExclusion"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "fixed_type_history_pdec_excluded": false,
+  "forced_load_comparison_criterion_closed": true,
+  "forced_load_lower_bound_proved": false,
+  "formal_unit_sparse_history_multiplicity_cap_proved": false,
+  "history_count_inserted": true,
+  "lemmas": [
+    {
+      "formula": "If no history W is persistent, U_sparse <= sum_W (T_PDEC(W)-1) Cap(W).",
+      "meaning": "非持久稀疏历史的总供给上界已写成显式求和。",
+      "name": "nonpersistent_budget_formula",
+      "status": "closed"
+    },
+    {
+      "formula": "sum_W may be bounded by sum_{r<=R} prod_{i<=r} A_{Lambda_i}, A_{Lambda_i}<=8Lambda_i^2.",
+      "meaning": "历史词数量上界已接入 SAE 预算。",
+      "name": "history_count_inserted",
+      "status": "closed"
+    },
+    {
+      "formula": "Cap(W) is controlled by formal-unit multiplicity and the terminal core interval for h/D(W).",
+      "meaning": "单历史容量不再无名，交给 FormalUnitSparseHistoryMultiplicityCap。",
+      "name": "single_history_capacity_slot",
+      "status": "registered_input"
+    },
+    {
+      "formula": "If L_forced > U_sparse, then nonpersistent SAE supply cannot pay the early-zero-row obligation.",
+      "meaning": "供给小于需求时直接形成反例链矛盾。",
+      "name": "forced_load_comparison",
+      "status": "closed_criterion"
+    },
+    {
+      "formula": "Every sparse terminal packet is either persistent PDEC or must satisfy L_forced <= U_sparse.",
+      "meaning": "稀疏终端不再是开放黑箱，只剩 PDEC 排斥或预算缺口。",
+      "name": "pdec_or_budget_gap",
+      "status": "closed_dichotomy"
+    },
+    {
+      "formula": "Prove L_forced > sum_W (T_PDEC(W)-1) Cap(W) after choosing Lambda schedule.",
+      "meaning": "最新最窄硬点是需求下界与非持久供给上界的显式比较。",
+      "name": "budget_gap_input",
+      "status": "open_input"
+    }
+  ],
+  "next_direct_attack_target": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+  "no_theorem_switch": true,
+  "nonpersistent_sae_budget_formula_closed": true,
+  "parallel_targets": [
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+    "FormalUnitSparseHistoryMultiplicityCap",
+    "AdaptiveLambdaBalanceForIteratedCoreDensity",
+    "FixedTypeHistoryPDECExclusion"
+  ],
+  "plain_conclusion": "稀疏终端 SAE 预算公式已经闭合。若没有任何历史词 W 持久复现进入 PDEC，则总稀疏供给满足 U_sparse <= sum_W (T_PDEC(W)-1) Cap(W)。历史词数量由有限深度和有限字母表控制；单历史容量交给 formal-unit 重数上界。因此稀疏终端分支只剩一个明确供需不等式：证明早期零行强制负载 L_forced 严格超过非持久历史供给预算，或排斥持久历史 PDEC。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-iterated-threshold-collapse-router.md": "7ca299f90ed965ccc1de8762e5377cfa011703dae9ccd595cfed3a0da8ad9702",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.md": "2d8028d0e2d5a1a32f8182e3cbf1bebb8ddd874ce5bed2670dc4b4e286a18067",
+    "docs/monograph/prime-matrix-strict-unified-counterexample-contradiction-field-matrix-router.md": "ff681a8d76683c85cba256233d20aaa3dd8668ac45ccc3e36206e0b75a16b317"
+  },
+  "sparse_history_demand_exceeds_budget_proved": false,
+  "sparse_terminal_history_sae_budget_proved": false,
+  "sparse_terminal_pdec_or_budget_gap_closed": true,
+  "status": "sparse_terminal_history_sae_budget_formula_closed_gap_open"
+}

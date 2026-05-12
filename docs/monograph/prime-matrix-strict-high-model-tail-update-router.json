@@ -1,0 +1,127 @@
+{
+  "certificate_type": "prime_matrix_strict_high_model_tail_update_router",
+  "status": "strict_high_model_tail_reduced_to_beta_sieve_and_sawtooth_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "strict_high_model_tail_boundary_closed": true,
+  "harmonic_window_closed_imported": true,
+  "dynamic_skeleton_finite_bridge_closed_imported": true,
+  "external_rough_bypass_excluded_for_strict": true,
+  "standard_beta_sieve_import_excluded_for_strict": true,
+  "self_contained_beta_sieve_appendix_proved": false,
+  "beta_sieve_main_coefficient_99_proved": false,
+  "exact_residue_weighted_floor_sawtooth_bound_proved": false,
+  "high_segment_model_gap_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "HighSegmentModelGapAlpha043C3AnalyticLedger",
+  "terminal_gap_after_router": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily AND (SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix_THEN_ExactSawtooth",
+    "must_prove": [
+      "自足构造 alpha=0.43、D=P、z=P^0.43 的 Rosser-Iwaniec lower weights",
+      "证明 lower weights 的支配关系与 99% 主系数误差，覆盖 P>=100000",
+      "在权重固定后证明 exact CRT residue-weighted floor sawtooth 负损失不超过 90% 模型主项",
+      "若 sawtooth 失败，抽取同 formal unit 的 PDEC/SAE/ColumnCRT 或近平方条带终端证书",
+      "保持外部 rough 下界与标准 beta-sieve 定理只作为条件旁路，不作为严格自足闭合"
+    ],
+    "cannot_use_as_proof": [
+      "把调和窗口 H<=0.850 重新作为开放项",
+      "把 3001<=P<100000 有限骨架桥当作 P>=100000 尾段证明",
+      "用 ExternalShortIntervalRoughNumberLowerBoundForAlpha043 替代自足证明",
+      "用 StandardRosserIwaniecBetaSieveTheoremImportAccepted 替代自足 beta-sieve 附录",
+      "只给模型主项，不支付 floor/sawtooth 取整余项"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "StrictHighModelInputActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层严格基含 HighSegmentModelGapAlpha043C3AnalyticLedger。",
+      "remaining": "并入高段模型余量的后续压缩结果。"
+    },
+    {
+      "gate": "HighModelFactorizationImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "高段模型余量已因子化为调和窗口 H<=0.850 与动态粗骨架 S>=401，桥接段 2003<=P<3001 已闭合。",
+      "remaining": "HarmonicWindow 与 DynamicRoughSkeleton。"
+    },
+    {
+      "gate": "HarmonicWindowClosedImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "HarmonicWindowAlpha043PGe3001Upper0850Ledger 已由有限枚举和 Dusart 素数倒数和闭合。",
+      "remaining": "调和窗口从严格活动输入删除。"
+    },
+    {
+      "gate": "DynamicSkeletonFiniteBridgeImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger 已拆成 3001<=P<100000 有限桥与 P>=100000 尾段线性筛；有限桥闭合。",
+      "remaining": "LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger。"
+    },
+    {
+      "gate": "TailLinearSieveTenPercentImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "P>=100000 尾段下界筛已压成 10% 模型主项包，10% 主项在端点已超过 401。",
+      "remaining": "LinearLowerSieveTailTenPercentMainMarginPGe100000Ledger。"
+    },
+    {
+      "gate": "TenPercentTailSplitImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "10% 主项包的真实剩余是 Rosser-Iwaniec 加权 floor 余项控制，或外部短区间 rough 下界。",
+      "remaining": "RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043。"
+    },
+    {
+      "gate": "ExternalRoughBypassExcludedForStrictSelfContained",
+      "closed": true,
+      "proved": true,
+      "meaning": "严格自足口径不能用 ExternalShortIntervalRoughNumberLowerBoundForAlpha043 旁路。",
+      "remaining": "RosserIwaniecWeightedFloorRemainderTenPercentBound。"
+    },
+    {
+      "gate": "RosserWeightedFloorSplitImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "Rosser 加权 floor 余项已拆成显式 lower weights 账本与精确 residue-weighted sawtooth 余项界。",
+      "remaining": "ExplicitRosserIwaniecLowerWeightLedgerAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound。"
+    },
+    {
+      "gate": "StandardBetaSieveImportExcludedForStrictSelfContained",
+      "closed": true,
+      "proved": true,
+      "meaning": "标准 Rosser-Iwaniec beta-sieve 定理可作为条件外部输入，但不能替代严格自足证明。",
+      "remaining": "SelfContained beta-sieve appendix and explicit coefficient error。"
+    },
+    {
+      "gate": "ExplicitWeightLedgerCompressedImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "显式权重账本的参数层已闭合；严格自足剩余为 beta-sieve 构造附录与 99% 主系数误差。",
+      "remaining": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000。"
+    },
+    {
+      "gate": "StrictHighModelTailCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料尚未完成自足 beta-sieve 权重构造、99% 主系数误差和 exact sawtooth 余项界。",
+      "remaining": "SelfContainedRosserIwaniecBetaSieveWeightConstructionAppendix AND BetaSieveMainCoefficientNinetyNinePercentExplicitErrorAlpha043PGe100000 AND ExactResidueWeightedFloorSawtoothTenPercentBound"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-global-terminal-scope-router.md": "3ef52eea8517c13add6f883f7d7bdfee1a5d2d9aca81e216fdd639fc46e81cc3",
+    "docs/monograph/prime-matrix-high-segment-model-gap-factorization-router.md": "2dc0d11635981c0d803ef725e3031c66d078415326f1930ed731712ebe06f67d",
+    "docs/monograph/prime-matrix-harmonic-window-dusart-ledger-router.md": "a2ea52bf0525432d6691dc217f6c8b7a9e83170f4679fc52d1876c0755b78f0c",
+    "docs/monograph/prime-matrix-dynamic-skeleton-lower-factorization-router.md": "f2bb543d8780edb5a65fe6bc6271b5ea6da4ac150973f3890967fd1531b827f5",
+    "docs/monograph/prime-matrix-linear-lower-sieve-tail-margin-router.md": "c7fe681d0e80b32115d7dcedb7df319a2da57b333d4ee59f9e41f64024e5694b",
+    "docs/monograph/prime-matrix-linear-sieve-tail-remainder-gap-router.md": "1d513d2ed43de02f00a09682f467ae94b93e43394a3cd122012ed197f2b88f75",
+    "docs/monograph/prime-matrix-rosser-weight-floor-ledger-router.md": "fe200d8c771d84e47119f28fc37b980f127a8694d391a5a6b5b1f82304937cce",
+    "docs/monograph/prime-matrix-explicit-rosser-lower-weight-ledger-router.md": "30f72d4131806d7a3b54642014c3ccd7cff07414c1c3fbde3d6622c7b574bcdf"
+  },
+  "plain_conclusion": "高段模型余量在严格链中继续被压缩：调和窗口已经闭合，动态粗骨架的有限桥也已闭合；P>=100000 尾段转为线性下界筛 10% 主项包。严格自足口径排除外部 short-rough 旁路和标准 beta-sieve 黑箱后，剩余为三项：自足 Rosser-Iwaniec beta-sieve lower weights 构造、99% 主系数显式误差、以及 exact residue-weighted floor/sawtooth 余项界。当前仍没有无条件闭合。"
+}

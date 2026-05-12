@@ -1,0 +1,145 @@
+{
+  "arithmetic": {
+    "endpoint_tax_relative_bound_14_over_e28": "9.6801601497162842131776185222379729796541382148845267987022664063153121069547269E-12",
+    "endpoint_tax_to_margin_ratio": "0.0000018132397913225107944814919061727643086920131857803430857751319362002278001079588",
+    "epsilon_psi_28": "0.00002224",
+    "p51_high_tail_margin": "0.000005338599007170435741864313292884721456150027578599007170435741864313292884721456"
+  },
+  "certificate_type": "prime_matrix_strict_table63_b28_psi_endpoint_convention_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "IndependentRegenerationGateActive",
+    "Table63TargetsOrdinaryPsi",
+    "InternalPsi0FormulaAvailable",
+    "EndpointJumpTaxBoundClosed",
+    "EndpointTaxFitsHighTailMargin",
+    "Table63B28PsiVsPsi0EndpointConventionLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "endpoint_tax_fits_high_tail_margin": true,
+  "independent_table63_b28_regeneration_closed": false,
+  "internal_psi0_formula_available": true,
+  "next_direct_attack_target": "Table63B28KernelTruncationAndSmoothingConventionLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "IndependentRegenerationStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger",
+    "Table63B28ZeroFreeTailConstantsAndStartHeightLedger",
+    "Table63B28PsiEpsilonBudgetPartitionLedger",
+    "Table63B28DirectedUpperRoundingAndIntervalPropagationLedger",
+    "Table63B28ReproducibleComputationHashLedger"
+  ],
+  "plain_conclusion": "Table 6.3 的 b=28 表行使用普通 `psi`，仓库内部闭合的是半权端点 `psi_0`。二者差异只可能来自跳点半权，满足 `0<=psi(x)-psi_0(x)<=0.5 log x`；因此在 `x>=e^28` 上相对端点税至多 `14/e^28`。该原子闭合，且端点税远小于高尾拼接余量，但仍必须进入后续表值预算。下一最窄点是 Table 6.3 b=28 的核/截断/平滑规则。",
+  "proof_steps": [
+    {
+      "claim": "Table 6.3 b=28 行是普通 Chebyshev 函数 psi 的 epsilon_psi 表值。",
+      "reason": "arXiv 源文件定义 psi(x)=sum_{p^alpha<=x} log p，表头写 epsilon_psi。",
+      "step": "table_target"
+    },
+    {
+      "claim": "仓库内部精确公式闭合的是 psi_0 半权端点版本。",
+      "reason": "internal psi0 Perron 证书声明 psi_0(x)=sum_{n<x} Lambda(n)+1/2 Lambda(x) if x is an integer。",
+      "step": "internal_formula_target"
+    },
+    {
+      "claim": "对任意 x>1，0 <= psi(x)-psi_0(x) <= (1/2)log x。",
+      "reason": "只有当 x 恰为素数幂跳点时出现半个 Lambda(x)，且 Lambda(x)<=log x。",
+      "step": "endpoint_difference"
+    },
+    {
+      "claim": "对 x>=e^28，(psi(x)-psi_0(x))/x <= 14/e^28。",
+      "reason": "(log x)/(2x) 在 x>e 上递减，故最大点为 x=e^28。",
+      "step": "high_tail_relative_bound"
+    },
+    {
+      "claim": "该端点税只关闭口径转换；必须在后续 b=28 预算中显式扣除。",
+      "reason": "端点税远小于高尾拼接余量，但不能凭空消失。",
+      "step": "budget_registration"
+    }
+  ],
+  "replacement_self_contained": {
+    "IndependentTable63B28RegenerationFromExplicitFormulaLedger": "Table63B28PsiVsPsi0EndpointConventionLedger AND Table63B28KernelTruncationAndSmoothingConventionLedger AND Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger AND Table63B28PsiEpsilonBudgetPartitionLedger AND Table63B28DirectedUpperRoundingAndIntervalPropagationLedger AND Table63B28ReproducibleComputationHashLedger",
+    "Table63B28PsiVsPsi0EndpointConventionLedger": "InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost AND EndpointJumpTaxBoundClosed14OverE28"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只统一 Table 6.3 重建中的函数端点口径，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentRegenerationGateActive",
+      "meaning": "上一证书已把自足路线压到独立重建 Table 6.3 b=28。",
+      "proved": true,
+      "remaining": "IndependentTable63B28RegenerationFromExplicitFormulaLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table63TargetsOrdinaryPsi",
+      "meaning": "机器表行与 arXiv 表头均指向普通 psi，而不是 psi_0。",
+      "proved": false,
+      "remaining": "Table63B28PsiVsPsi0EndpointConventionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "InternalPsi0FormulaAvailable",
+      "meaning": "仓库内部 psi_0 精确显式公式已闭合，可作为重建公式起点。",
+      "proved": true,
+      "remaining": "InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointJumpTaxBoundClosed",
+      "meaning": "psi 与 psi_0 的差只可能是一个跳点的半个 Lambda(x)，故相对税在 x>=e^28 上至多 14/e^28。",
+      "proved": true,
+      "remaining": "endpoint tax registered"
+    },
+    {
+      "closed": true,
+      "gate": "EndpointTaxFitsHighTailMargin",
+      "meaning": "端点税小于 P5.1 高尾拼接余量，但后续生成 2.224E-5 时仍需登记预算。",
+      "proved": true,
+      "remaining": "Table63B28PsiEpsilonBudgetPartitionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table63B28PsiVsPsi0EndpointConventionLedger",
+      "meaning": "Table 6.3 的普通 psi 口径可由内部 psi_0 公式无损转换，代价为显式端点税。",
+      "proved": true,
+      "remaining": "closed with endpoint tax"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentRegenerationStillOpen",
+      "meaning": "端点口径闭合不等于重建表值；仍缺核/截断、有限零点高度、零点自由尾项、预算、舍入和 hash。",
+      "proved": false,
+      "remaining": "Table63B28KernelTruncationAndSmoothingConventionLedger AND Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger AND Table63B28PsiEpsilonBudgetPartitionLedger AND Table63B28DirectedUpperRoundingAndIntervalPropagationLedger AND Table63B28ReproducibleComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "psi/psi0 端点口径转换不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "90e1021f8f3516eb1d29260af8b8cf586ea4dbcab8029635b8d75d1863189621",
+    "docs/monograph/prime-matrix-b3-internal-psi0-perron-formula-router.json": "d42cd18b0fd4056ba74ef190287b3f66e2c95048076770c1f69a5f7a3c67465a",
+    "docs/monograph/prime-matrix-strict-machine-readable-dusart-table63-router.json": "fdcc2a0b93a1b671207a13b4f3276e6739e788ccceddd10b8fba49cc02f6422c",
+    "docs/monograph/prime-matrix-strict-table63-b28-actual-formula-declaration-router.json": "6d8f87827e72369f947fbe0c88a2bf119d89d6f5414e5478bef28a730c10eb5b"
+  },
+  "status": "table63_b28_psi_vs_psi0_endpoint_convention_closed_endpoint_tax_registered",
+  "table63_b28_psi_vs_psi0_endpoint_convention_closed": true,
+  "table63_targets_ordinary_psi": true
+}

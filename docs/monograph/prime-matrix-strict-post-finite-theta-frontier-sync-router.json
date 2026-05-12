@@ -1,0 +1,83 @@
+{
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_post_finite_theta_frontier_sync_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_acceptance_present": false,
+  "empirical_absence_not_used": true,
+  "external_b3_chain_reaches_dstructure_gate": true,
+  "finite_low_height_self_contained_closed": false,
+  "finite_theta_anchor_and_bridge_self_contained_closed": true,
+  "frontier_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只同步已关闭输入和剩余输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteThetaAnchorAndBridgeSelfContainedClosed",
+      "meaning": "theta@20000 锚点和 0<x<=20000 有限桥已经由素数 log 有限证书自足关闭。",
+      "proved": true,
+      "remaining": "从自足剩余中移除 theta@20000 与有限桥。"
+    },
+    {
+      "closed": true,
+      "gate": "InternalThetaContourStillOpen",
+      "meaning": "x>=20000 的内部 theta/PNT contour 包络仍未关闭，是新的自足主攻点。",
+      "proved": false,
+      "remaining": "InternalZeroFreeRegionToThetaContourEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightExternalOnly",
+      "meaning": "低高度零点核验已有外部匹配，但文内 Turing/无零证明仍开放。",
+      "proved": false,
+      "remaining": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": true,
+      "gate": "MeisselExternalOnly",
+      "meaning": "Meissel-Mertens 外部匹配已到位，但 B1 区间和 reciprocal-prime 尾段仍非自足。",
+      "proved": false,
+      "remaining": "SelfContainedMeisselMertensB1IntervalArithmeticLedger AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalB3ChainAtDStructureGate",
+      "meaning": "外部条件链仍停在 DStructure/Rankin 独立验收门。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "有限 theta 桥同步后，行/列无条件命题仍未闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "internal_zero_free_region_to_theta_contour_closed": false,
+  "meissel_mertens_interval_self_contained_closed": false,
+  "next_direct_attack_target": "InternalZeroFreeRegionToThetaContourEnvelopeLedger",
+  "no_theorem_switch": true,
+  "plain_conclusion": "有限 theta 桥闭合后，严格自足解析线的 theta@20000 锚点和阈值以下有限桥已移出剩余。新的自足最窄点是 `InternalZeroFreeRegionToThetaContourEnvelopeLedger`，即 `x>=20000` 的内部 theta/PNT contour 包络；并行仍需低高度 Turing/无零证明、B1 区间和 reciprocal-prime Mertens 尾段。外部路线仍在 DStructure/Rankin 独立验收门，不能据此宣布行列无条件闭合。",
+  "remaining_self_contained_inputs": [
+    "InternalZeroFreeRegionToThetaContourEnvelopeLedger",
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger",
+    "SelfContainedMeisselMertensB1IntervalArithmeticLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "51f9be1784e137a75a6995ccfe93cc215ae67cd9807e4f7a79f7d3ac7b09bd4e",
+    "docs/monograph/prime-matrix-strict-finite-low-height-external-match-router.json": "e489f5e3c11231acc5a832ae2fa3edb7eab33c28794b919d0652684731b8ec14",
+    "docs/monograph/prime-matrix-strict-finite-theta-bridge-self-contained-router.json": "e199bc58d1c05daa01e9a49a70719c34c604b10313cf9ccf6dedd9d3ce7322ce",
+    "docs/monograph/prime-matrix-strict-meissel-mertens-external-match-router.json": "a5e0a43b79ca84fba8029866861f93c2c844de96bc8e0e3c878458fa0f386c49"
+  },
+  "status": "post_finite_theta_frontier_synced_next_internal_contour"
+}

@@ -1,0 +1,111 @@
+{
+  "certificate_type": "prime_matrix_strict_unified_terminal_budget_equation_router",
+  "status": "unified_terminal_budget_equation_built_strict_gap_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "algebraic_composition_closed": true,
+  "prefix_rough_lower_reduction_imported": true,
+  "capacity_multiplier_normalization_imported": true,
+  "terminal_projection_balance_imported": true,
+  "cold_core_supply_bound_imported": true,
+  "unified_terminal_budget_strict_inequality_proved": false,
+  "b3_prefix_mass_inputs_proved": false,
+  "terminal_projection_inputs_proved": false,
+  "cold_supply_parameter_inputs_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "B3RemainderTotalVariationBudgetForLengthP",
+  "parallel_attack_targets": [
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "ColdCoreNonpersistentSupplyUpperBound",
+    "AdaptiveLambdaBalanceForIteratedCoreDensity"
+  ],
+  "equations": [
+    {
+      "name": "prefix_rough_lower_bound",
+      "formula": "|R_{x,z}| >= (P-1)W^-(z,D)-TV(lambda^-).",
+      "status": "closed_as_reduction",
+      "depends_on": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND B3RemainderTotalVariationBudgetForLengthP AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "name": "capacity_multiplier_normalization",
+      "formula": "M#_{x,z} >= |R_{x,z}|/ceil(P/z).",
+      "status": "closed",
+      "depends_on": "RegisteredPrefixCapacityMultiplierDiscipline"
+    },
+    {
+      "name": "terminal_projection_balance",
+      "formula": "L_forced >= M#_{x,z}-E_named.",
+      "status": "closed_as_no_loss_or_named_return",
+      "depends_on": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "name": "cold_core_supply_bound",
+      "formula": "U_cold <= sum_W (T_PDEC(W)-1)C_core(W).",
+      "status": "closed_as_upper_bound",
+      "depends_on": "ColdCoreNonpersistentSupplyUpperBound AND AdaptiveLambdaBalanceForIteratedCoreDensity"
+    },
+    {
+      "name": "unified_terminal_budget_gap",
+      "formula": "((P-1)W^- - TV)/ceil(P/z) - E_named > sum_W (T_PDEC(W)-1)C_core(W).",
+      "status": "open_strict_inequality",
+      "depends_on": "UnifiedTerminalBudgetStrictInequality"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "统一方程只在假设早期零行反例链内使用，不借真实缺席样本。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "AlgebraicCompositionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "粗筛余、容量乘子、终端负载、冷供给四段不等式可以无损合成为一个终端预算缺口。",
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "gate": "B3PrefixMassInputsOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "prefix 残洞质量仍依赖 B3 主项、TV 预算和有限边界证书。",
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND B3RemainderTotalVariationBudgetForLengthP AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "gate": "TerminalProjectionInputsOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "终端投影仍需抗塌缩和命名回流排斥，不能把加权质量直接当作终端实例数。",
+      "remaining": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "ColdSupplyParameterInputsOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "冷供给上界的具体反超还需要 Lambda 平衡与核心阈值供给预算比较。",
+      "remaining": "ColdCoreNonpersistentSupplyUpperBound AND AdaptiveLambdaBalanceForIteratedCoreDensity"
+    },
+    {
+      "gate": "UnifiedTerminalBudgetContradictionProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明统一严格不等式，因此没有最终直接矛盾。",
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.md": "92c48e7d714410ac037b1c880fb2e82bcbf132fe8c02bf9c47686481758eee91",
+    "docs/monograph/prime-matrix-strict-normalized-prefix-potential-router.md": "42b578eca2210c458405e04acd60a7fee7651f6b877601768d302cc3414139b7",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-forced-load-lower-bound-router.md": "c427dcdb5bcc961ef3d21050ff3d688cb3f01adad7ef01a09e9a830ad44fdbaf",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.md": "afef58151409a47666c60499ddbdfecf69d59274a438a061251dc8a990ac61d5"
+  },
+  "plain_conclusion": "统一终端预算方程已经建立：在早期零行反例链内，prefix 粗筛余质量经容量乘子转成 M#，M# 经终端投影守恒转成 L_forced，冷核心历史给出 U_cold 上界。因此最终矛盾只需证明一个严格不等式：((P-1)W^- - TV)/ceil(P/z) - E_named > sum_W (T_PDEC(W)-1)C_core(W)。该式失败时，失败源只能落入 B3/TV/有限证书、终端抗塌缩/命名回流、冷供给/Lambda 平衡三组输入。"
+}

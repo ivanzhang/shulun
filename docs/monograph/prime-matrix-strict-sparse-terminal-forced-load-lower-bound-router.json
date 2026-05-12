@@ -1,0 +1,125 @@
+{
+  "certificate_type": "prime_matrix_strict_sparse_terminal_forced_load_lower_bound_router",
+  "status": "forced_load_lower_bound_reduced_to_normalized_prefix_potential_terminal_anticollapse_named_return_exclusion_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "prefix_weighted_source_imported": true,
+  "terminal_projection_no_loss_or_named_return_closed": true,
+  "forced_load_criterion_closed": true,
+  "budget_gap_composition_closed": true,
+  "unified_field_prefix_to_terminal_load_factor_registered": true,
+  "normalized_prefix_potential_lower_bound_proved": false,
+  "terminal_history_anticollapse_proved": false,
+  "named_return_exclusion_proved": false,
+  "sparse_terminal_forced_load_lower_bound_proved": false,
+  "forced_terminal_load_beats_cold_supply_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "NormalizedPrefixResidualPotentialLowerBound",
+  "parallel_attack_targets": [
+    "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "ForcedTerminalLoadBeatsColdCoreNonpersistentSupply",
+    "UnifiedContradictionFieldPrefixToTerminalLoadFactor"
+  ],
+  "lemmas": [
+    {
+      "name": "prefix_weighted_obligation_source",
+      "formula": "Assume EarlyZeroRowWithinP.  M#_{x,z}=sum_{c in R_{x,z}} 1/mu_{tau_z(c)}.",
+      "status": "imported_closed",
+      "meaning": "早期零行把 prefix 残洞转成容量归一化的加权义务。"
+    },
+    {
+      "name": "terminal_projection_accounting",
+      "formula": "M#_{x,z} <= L_terminal + E_PDEC + E_SAE + E_ColumnCRT + E_hot + E_fixed + E_quotient.",
+      "status": "closed_as_no_loss_accounting",
+      "meaning": "义务沿历史递归进入终端；不能进入终端的质量必须以命名回流出现。"
+    },
+    {
+      "name": "sparse_terminal_forced_load_criterion",
+      "formula": "If all named returns vanish or are excluded, then L_forced >= M#_{x,z}.",
+      "status": "closed_criterion",
+      "meaning": "这给出从早期零行到稀疏终端负载的精确条件下界。"
+    },
+    {
+      "name": "budget_gap_composition",
+      "formula": "If M#_{x,z}-E_named > U_cold, then L_forced > U_cold.",
+      "status": "closed_composition",
+      "meaning": "把本轮负载下界直接接到冷核心供需矛盾口。"
+    },
+    {
+      "name": "anticollapse_boundary",
+      "formula": "Weighted mass does not yet imply enough distinct terminal history instances without anti-collapse.",
+      "status": "open_boundary_named",
+      "meaning": "仍需防止 prefix 标签支撑在 sparse terminal history 投影下塌缩。"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "所有结论都在假设早期零行反例链内推导，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "PrefixWeightedSourceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "prefix 残洞选择子、容量乘子和 M# 加权义务已由前置路由闭合。",
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound"
+    },
+    {
+      "gate": "TerminalProjectionNoLossClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个加权义务沿历史递归只有终端、热核心、固定历史、PDEC/SAE/ColumnCRT 或 quotient 回流几类出口。",
+      "remaining": "PrefixObligationToSparseTerminalHistoryProjectionNoLossOrNamedReturn"
+    },
+    {
+      "gate": "ForcedLoadCriterionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若命名回流被排斥，则 L_forced 至少为 M# 的未回流部分。",
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "TerminalHistoryAntiCollapseOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "加权质量还不能自动变成足够多的不同 sparse terminal history 实例。",
+      "remaining": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse"
+    },
+    {
+      "gate": "SparseTerminalForcedLoadLowerBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明 M# 足够大、命名回流可排斥、且终端历史投影不塌缩。",
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound AND PrefixLabelSupportToSparseTerminalHistoryAntiCollapse AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "ColdCoreBudgetContradictionReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未得到 L_forced>U_cold，因此冷核心供需矛盾尚未最终触发。",
+      "remaining": "ForcedTerminalLoadBeatsColdCoreNonpersistentSupply"
+    },
+    {
+      "gate": "UnifiedFieldFactorRegistered",
+      "closed": true,
+      "proved": false,
+      "meaning": "prefix 到终端负载的无损/回流因子已接入统一矛盾场，但还不是终局矛盾。",
+      "remaining": "UnifiedContradictionFieldPrefixToTerminalLoadFactor"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.md": "afef58151409a47666c60499ddbdfecf69d59274a438a061251dc8a990ac61d5",
+    "docs/monograph/prime-matrix-strict-prefix-residual-transfer-router.md": "80f1ad767f371d7a49bc47c9428d8f16c0c0af54f13288db49f2449e8b5e599d",
+    "docs/monograph/prime-matrix-strict-prefix-capacity-multiplier-discipline-router.md": "352c86f7f0d64130e7cdf822484877f5cf1ec3e3629d0c8bdef50bcc7ca2ef98",
+    "docs/monograph/prime-matrix-strict-normalized-prefix-potential-router.md": "42b578eca2210c458405e04acd60a7fee7651f6b877601768d302cc3414139b7",
+    "docs/monograph/prime-matrix-strict-unified-counterexample-contradiction-field-matrix-router.md": "ff681a8d76683c85cba256233d20aaa3dd8668ac45ccc3e36206e0b75a16b317"
+  },
+  "plain_conclusion": "早期零行强制负载下界已被压成一个守恒型不等式：prefix 残洞经容量乘子归一化后形成 M#_{x,z}，这些加权义务沿固定商型/历史递归要么进入 sparse terminal history，要么以 PDEC、SAE、ColumnCRT、热核心、固定历史或 quotient/reuse 的命名方式回流。因此 L_forced 至少等于 M# 扣除命名回流后的质量。真正未闭合的是 M# 的全局正下界、终端历史投影抗塌缩，以及命名回流排斥；这些完成后才能触发 L_forced>U_cold。"
+}

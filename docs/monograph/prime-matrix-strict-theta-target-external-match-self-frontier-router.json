@@ -1,0 +1,141 @@
+{
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_theta_target_external_match_self_frontier_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ThetaTargetGateActive",
+    "StrictTrivialTailReady",
+    "DusartExternalThetaTargetStrictlyMatches",
+    "ExternalRouteNextFiniteLowHeight"
+  ],
+  "counterexample_assumption_only": true,
+  "current_internal_zero_free_budget_beats_theta_target": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "FiniteLowHeightZeroCheckLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CurrentInternalZeroFreeBudgetBeatsThetaTarget",
+    "ThetaTargetSelfContainedClosed",
+    "SelfContainedMertensTailStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_self_contained_attack_target": "InternalDusartThetaEnvelopeProofLedger",
+  "plain_conclusion": "`ThetaEnvelopeTargetAt20000NumericalBudgetLedger` 在外部路线上可严格匹配 Dusart `x/36260` 界关闭；但当前自足零点自由区/Perron 常数远不足以推出该小误差，严格自足线仍必须另证 `InternalDusartThetaEnvelopeProofLedger` 或有限 theta 桥。该步不关闭自足 Mertens 尾段，也不关闭行/列无条件命题。",
+  "pressure_rows": [
+    {
+      "beats_target": true,
+      "item": "target relative error",
+      "meaning": "Dusart 目标所需相对误差。",
+      "value": 2.7578599007170437e-05
+    },
+    {
+      "beats_target": false,
+      "item": "strict zero-sum closed envelope at T0",
+      "meaning": "当前内部零点自由区预算的保守相对包络。",
+      "value": 10602489.106158368
+    },
+    {
+      "beats_target": false,
+      "item": "static formula terms relative",
+      "meaning": "公式常数和平凡零点项的相对压力。",
+      "value": 9.189385338296727e-05
+    },
+    {
+      "beats_target": false,
+      "item": "prime-power transfer relative",
+      "meaning": "锚点素数幂低阶项的相对压力。",
+      "value": 0.008560053221733267
+    }
+  ],
+  "remaining_self_contained_after_theta_frontier": [
+    "InternalDusartThetaEnvelopeProofLedger",
+    "FiniteLowHeightZeroCheckLedger",
+    "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold",
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+  ],
+  "replacement_external": {
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger": "ThetaEnvelopeTargetAt20000StrictExternalMatchedDusartOneOver36260"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只补解析输入，不使用真实零行缺席或实验替代证明。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaTargetGateActive",
+      "meaning": "平凡尾项 strict 同步后，下一最窄点正是 theta@20000 小误差目标。",
+      "proved": true,
+      "remaining": "ThetaEnvelopeTargetAt20000NumericalBudgetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StrictTrivialTailReady",
+      "meaning": "同口径初等尾项已 strict 自足归账，theta 目标可作为独立 Chebyshev 显式界输入处理。",
+      "proved": true,
+      "remaining": "PerronTrivialZeroPrimePowerTailBudgetSelfContainedClosedElementaryXGe20000"
+    },
+    {
+      "closed": true,
+      "gate": "DusartExternalThetaTargetStrictlyMatches",
+      "meaning": "外部 Dusart 命题给 vartheta(x)-x < x/36260；因 20000>0，形式上严格匹配本目标。",
+      "proved": false,
+      "remaining": "ThetaEnvelopeTargetAt20000StrictExternalMatchedDusartOneOver36260"
+    },
+    {
+      "closed": false,
+      "gate": "CurrentInternalZeroFreeBudgetBeatsThetaTarget",
+      "meaning": "当前自足 Perron/零点自由区常数不能达到 1/36260 级小误差，不能据此关闭 theta 目标。",
+      "proved": false,
+      "remaining": "InternalDusartThetaEnvelopeProofLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ThetaTargetSelfContainedClosed",
+      "meaning": "严格自足线仍需文内 Dusart 型显式 theta 证明或可核验有限桥，不能由当前 C=1280 轮廓预算推出。",
+      "proved": false,
+      "remaining": "InternalDusartThetaEnvelopeProofLedger OR FiniteThetaEnvelopeBridgeBelowAnalyticThreshold"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalRouteNextFiniteLowHeight",
+      "meaning": "若接受外部 Dusart，则 theta 目标在外部路线上关闭，下一步进入低高度核验。",
+      "proved": false,
+      "remaining": "FiniteLowHeightZeroCheckLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedMertensTailStillOpen",
+      "meaning": "自足 Mertens 尾段仍未闭合；theta 自足证明、低高度、有限桥和 B1 区间仍是独立输入。",
+      "proved": false,
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "7642e4d467362d5c068c829140baf4d81a7004eb6c8eb3001824153df5e2cd83",
+    "docs/monograph/prime-matrix-b3-theta-target-dusart-router.json": "9fba67c15b0d5ac49b5c24bf3e4ca4a7e5a20b39519eafa1a7e09fe7ad12ddd9",
+    "docs/monograph/prime-matrix-strict-trivial-tail-prime-power-self-contained-sync-router.json": "66fd7fe2769962317f8aae8c4106d87c60ab2a42cdf2519eab0e27e230267ca9",
+    "docs/monograph/prime-matrix-strict-zero-sum-contour-self-contained-sync-router.json": "4f11042be96ba548afb9fabfbea77592c4ad580508126210520d134b3f41c128"
+  },
+  "status": "theta_target_external_strict_matched_self_contained_frontier_open",
+  "target_denominator": 36260.0,
+  "target_relative_error": 2.7578599007170437e-05,
+  "target_x": 20000.0,
+  "theta_target_external_strict_matched": true,
+  "theta_target_self_contained_closed": false
+}

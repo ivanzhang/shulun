@@ -1,0 +1,140 @@
+== symbols ==
+000000000001a570 g    DF .text	0000000000000036 (GLIBC_2.15) __logl_finite
+0000000000011c60  w   DF .text	00000000000000a5  GLIBC_2.2.5 logl
+
+== logl wrapper ==
+
+/lib/x86_64-linux-gnu/libm.so.6:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000011c60 <logf64x@@GLIBC_2.27>:
+   11c60:	f3 0f 1e fa          	endbr64
+   11c64:	55                   	push   %rbp
+   11c65:	48 89 e5             	mov    %rsp,%rbp
+   11c68:	48 83 ec 10          	sub    $0x10,%rsp
+   11c6c:	db 6d 10             	fldt   0x10(%rbp)
+   11c6f:	d9 ee                	fldz
+   11c71:	db e9                	fucomi %st(1),%st
+   11c73:	73 1b                	jae    11c90 <logf64x@@GLIBC_2.27+0x30>
+   11c75:	dd d8                	fstp   %st(0)
+   11c77:	eb 09                	jmp    11c82 <logf64x@@GLIBC_2.27+0x22>
+   11c79:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+   11c80:	dd d8                	fstp   %st(0)
+   11c82:	db 7d 10             	fstpt  0x10(%rbp)
+   11c85:	c9                   	leave
+   11c86:	e9 85 88 00 00       	jmp    1a510 <__lgammal_r_finite@GLIBC_2.15+0x870>
+   11c8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   11c90:	48 8b 05 29 63 0d 00 	mov    0xd6329(%rip),%rax        # e7fc0 <f64xsubf128@@GLIBC_2.28+0x70730>
+   11c97:	83 38 ff             	cmpl   $0xffffffff,(%rax)
+   11c9a:	74 e4                	je     11c80 <logf64x@@GLIBC_2.27+0x20>
+   11c9c:	d9 c9                	fxch   %st(1)
+   11c9e:	db e9                	fucomi %st(1),%st
+   11ca0:	dd d9                	fstp   %st(1)
+   11ca2:	7a 34                	jp     11cd8 <logf64x@@GLIBC_2.27+0x78>
+   11ca4:	75 32                	jne    11cd8 <logf64x@@GLIBC_2.27+0x78>
+   11ca6:	bf 04 00 00 00       	mov    $0x4,%edi
+   11cab:	db 7d f0             	fstpt  -0x10(%rbp)
+   11cae:	e8 fd e8 ff ff       	call   105b0 <feraiseexcept@@GLIBC_2.2.5>
+   11cb3:	db 6d f0             	fldt   -0x10(%rbp)
+   11cb6:	48 83 ec 20          	sub    $0x20,%rsp
+   11cba:	bf d8 00 00 00       	mov    $0xd8,%edi
+   11cbf:	d9 c0                	fld    %st(0)
+   11cc1:	db 7c 24 10          	fstpt  0x10(%rsp)
+   11cc5:	db 3c 24             	fstpt  (%rsp)
+   11cc8:	e8 93 0a 00 00       	call   12760 <lgammal@GLIBC_2.2.5+0x140>
+   11ccd:	48 83 c4 20          	add    $0x20,%rsp
+   11cd1:	c9                   	leave
+   11cd2:	c3                   	ret
+   11cd3:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+   11cd8:	bf 01 00 00 00       	mov    $0x1,%edi
+   11cdd:	db 7d f0             	fstpt  -0x10(%rbp)
+   11ce0:	e8 cb e8 ff ff       	call   105b0 <feraiseexcept@@GLIBC_2.2.5>
+   11ce5:	db 6d f0             	fldt   -0x10(%rbp)
+   11ce8:	48 83 ec 20          	sub    $0x20,%rsp
+   11cec:	bf d9 00 00 00       	mov    $0xd9,%edi
+   11cf1:	d9 c0                	fld    %st(0)
+   11cf3:	db 7c 24 10          	fstpt  0x10(%rsp)
+   11cf7:	db 3c 24             	fstpt  (%rsp)
+   11cfa:	e8 61 0a 00 00       	call   12760 <lgammal@GLIBC_2.2.5+0x140>
+   11cff:	48 83 c4 20          	add    $0x20,%rsp
+   11d03:	c9                   	leave
+   11d04:	c3                   	ret
+
+
+== shared x87 core ==
+
+/lib/x86_64-linux-gnu/libm.so.6:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+000000000001a510 <__lgammal_r_finite@GLIBC_2.15+0x870>:
+   1a510:	f3 0f 1e fa          	endbr64
+   1a514:	d9 ed                	fldln2
+   1a516:	db 6c 24 08          	fldt   0x8(%rsp)
+   1a51a:	d9 e5                	fxam
+   1a51c:	df e0                	fnstsw %ax
+   1a51e:	d9 c0                	fld    %st(0)
+   1a520:	f6 c4 01             	test   $0x1,%ah
+   1a523:	75 3b                	jne    1a560 <__lgammal_r_finite@GLIBC_2.15+0x8c0>
+   1a525:	0f b7 44 24 10       	movzwl 0x10(%rsp),%eax
+   1a52a:	3d 00 c0 00 00       	cmp    $0xc000,%eax
+   1a52f:	73 06                	jae    1a537 <__lgammal_r_finite@GLIBC_2.15+0x897>
+   1a531:	dc 25 e1 e8 07 00    	fsubl  0x7e8e1(%rip)        # 98e18 <f64xsubf128@@GLIBC_2.28+0x21588>
+   1a537:	d9 c0                	fld    %st(0)
+   1a539:	d9 e1                	fabs
+   1a53b:	dc 1d 17 e9 07 00    	fcompl 0x7e917(%rip)        # 98e58 <f64xsubf128@@GLIBC_2.28+0x215c8>
+   1a541:	df e0                	fnstsw %ax
+   1a543:	80 e4 45             	and    $0x45,%ah
+   1a546:	74 13                	je     1a55b <__lgammal_r_finite@GLIBC_2.15+0x8bb>
+   1a548:	d9 e5                	fxam
+   1a54a:	df e0                	fnstsw %ax
+   1a54c:	80 e4 45             	and    $0x45,%ah
+   1a54f:	80 fc 40             	cmp    $0x40,%ah
+   1a552:	75 02                	jne    1a556 <__lgammal_r_finite@GLIBC_2.15+0x8b6>
+   1a554:	d9 e1                	fabs
+   1a556:	dd d9                	fstp   %st(1)
+   1a558:	d9 f9                	fyl2xp1
+   1a55a:	c3                   	ret
+   1a55b:	dd d8                	fstp   %st(0)
+   1a55d:	d9 f1                	fyl2x
+   1a55f:	c3                   	ret
+   1a560:	f6 c4 04             	test   $0x4,%ah
+   1a563:	75 cc                	jne    1a531 <__lgammal_r_finite@GLIBC_2.15+0x891>
+   1a565:	dd d9                	fstp   %st(1)
+   1a567:	dd d9                	fstp   %st(1)
+   1a569:	d8 c0                	fadd   %st(0),%st
+   1a56b:	c3                   	ret
+
+
+== __logl_finite ==
+
+/lib/x86_64-linux-gnu/libm.so.6:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+000000000001a570 <__logl_finite@GLIBC_2.15>:
+   1a570:	f3 0f 1e fa          	endbr64
+   1a574:	d9 ed                	fldln2
+   1a576:	db 6c 24 08          	fldt   0x8(%rsp)
+   1a57a:	d9 c0                	fld    %st(0)
+   1a57c:	dc 25 96 e8 07 00    	fsubl  0x7e896(%rip)        # 98e18 <f64xsubf128@@GLIBC_2.28+0x21588>
+   1a582:	d9 c0                	fld    %st(0)
+   1a584:	d9 e1                	fabs
+   1a586:	dc 1d cc e8 07 00    	fcompl 0x7e8cc(%rip)        # 98e58 <f64xsubf128@@GLIBC_2.28+0x215c8>
+   1a58c:	df e0                	fnstsw %ax
+   1a58e:	80 e4 45             	and    $0x45,%ah
+   1a591:	74 c8                	je     1a55b <__lgammal_r_finite@GLIBC_2.15+0x8bb>
+   1a593:	d9 e5                	fxam
+   1a595:	df e0                	fnstsw %ax
+   1a597:	80 e4 45             	and    $0x45,%ah
+   1a59a:	80 fc 40             	cmp    $0x40,%ah
+   1a59d:	75 02                	jne    1a5a1 <__logl_finite@GLIBC_2.15+0x31>
+   1a59f:	d9 e1                	fabs
+   1a5a1:	dd d9                	fstp   %st(1)
+   1a5a3:	d9 f9                	fyl2xp1
+   1a5a5:	c3                   	ret
+

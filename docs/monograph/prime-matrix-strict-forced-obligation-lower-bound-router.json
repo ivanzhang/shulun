@@ -1,0 +1,121 @@
+{
+  "boundary_cap_forced_obligation_lower_bound_proved": false,
+  "boundary_cap_formal_unit_type_compression_dichotomy_proved": false,
+  "boundary_residual_mass_lower_bound_proved": false,
+  "certificate_type": "prime_matrix_strict_forced_obligation_lower_bound_router",
+  "clb_residual_to_weighted_obligation_injection_closed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "effective_distinct_type_instance_lower_bound_proved": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "BoundaryResidualMassLowerBoundForTypeCompression AND NoQuotientCollapseBelowTypeThreshold",
+  "hardpoint_before_router": "BoundaryCapForcedFormalUnitObligationLowerBound",
+  "mass_transfer_laws": [
+    {
+      "formula": "EarlyZeroRowWithinP => each c in R_x has at least one covering label obligation.",
+      "law": "residual_hole_forcing",
+      "status": "conditional_closed_as_weighted_injection"
+    },
+    {
+      "formula": "O(w)=SourceRecords disjoint_union NamedReturnRecords, Lost(O)=empty.",
+      "law": "no_loss_partition",
+      "status": "closed"
+    },
+    {
+      "formula": "duplicate coordinates become quotient/reuse/weighted returns, not deleted obligations.",
+      "law": "weighted_reuse_not_erasure",
+      "status": "closed"
+    },
+    {
+      "formula": "weighted mass lower bound does not imply enough distinct row-free type instances without anti-collapse.",
+      "law": "unweighted_instance_gap",
+      "status": "open"
+    }
+  ],
+  "next_direct_attack_target": "BoundaryResidualMassLowerBoundForTypeCompression",
+  "no_loss_weighted_accounting_imported": true,
+  "no_quotient_collapse_below_type_threshold_proved": false,
+  "no_theorem_switch": true,
+  "parallel_attack_target": "NoQuotientCollapseBelowTypeThreshold",
+  "plain_conclusion": "`BoundaryCapForcedFormalUnitObligationLowerBound` 继续下钻后，必须区分两种量。早期零行与 CLB/no-loss 账本已经给出残洞到加权 obligation 的注入：残洞不会被删除，重复和复用也只能作为 quotient/reuse/weighted return 保留。但类型压缩需要的是可和 row-free type alphabet 比较的有效不同实例数。当前还缺边界残洞质量下界，以及防止 quotient/reuse 把大量残洞塌缩成少数类型的 anti-collapse 证明。行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ForcedLowerBoundInputActive",
+      "meaning": "上一层把类型压缩的第一缺口定为边界帽 forced obligation 下界。",
+      "proved": false,
+      "remaining": "BoundaryCapForcedFormalUnitObligationLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "CLBResidualEqualityImported",
+      "meaning": "早期零行假设下 CLB 把残洞集合压成必须被补洞支付的对象。",
+      "proved": true,
+      "remaining": "需要把残洞数量转成类型压缩可用的有效实例数。"
+    },
+    {
+      "closed": true,
+      "gate": "NoLossWeightedObligationImported",
+      "meaning": "覆盖义务不会丢失；普通来源、命名回流、quotient/reuse 均保留在 O(w) 中。",
+      "proved": true,
+      "remaining": "这给加权质量守恒，不给未加权不同类型数量。"
+    },
+    {
+      "closed": true,
+      "gate": "CarryCollarRigidityImported",
+      "meaning": "残洞支付必须满足 carry-shell 与 anchor-collar 短纤维刚性。",
+      "proved": true,
+      "remaining": "刚性可限制类型，但具体计数尚未证明。"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedResidualHoleInjectionClosed",
+      "meaning": "每个残洞至少贡献一个加权 obligation；重复或复用只能作为加权/quotient return 保留。",
+      "proved": true,
+      "remaining": "CLBResidualHoleToWeightedObligationInjection"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryResidualMassLowerBoundCurrentCorpusProved",
+      "meaning": "尚未给出足以压过 row-free type alphabet 的边界残洞质量下界。",
+      "proved": false,
+      "remaining": "BoundaryResidualMassLowerBoundForTypeCompression"
+    },
+    {
+      "closed": false,
+      "gate": "NoQuotientCollapseCurrentCorpusProved",
+      "meaning": "尚未证明 quotient/reuse/weighted returns 不能把大量残洞压成太少的不同 type instances。",
+      "proved": false,
+      "remaining": "NoQuotientCollapseBelowTypeThreshold"
+    },
+    {
+      "closed": false,
+      "gate": "EffectiveDistinctTypeInstanceLowerBoundCurrentCorpusProved",
+      "meaning": "类型压缩需要的是有效不同实例数，而不仅是加权质量；当前该下界未证。",
+      "proved": false,
+      "remaining": "EffectiveDistinctTypeInstanceLowerBound"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryCapForcedFormalUnitObligationLowerBoundCurrentCorpusProved",
+      "meaning": "已闭合残洞到加权义务的注入，但未闭合残洞质量和抗商化塌缩，所以 forced lower bound 仍未完成。",
+      "proved": false,
+      "remaining": "BoundaryResidualMassLowerBoundForTypeCompression AND NoQuotientCollapseBelowTypeThreshold"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-early-zero-anchor-collar-router.json": "3f218f902460950075e2477ad50596dfafab7c4611d5c4830045bb4003e54546",
+    "docs/monograph/prime-matrix-early-zero-carry-shell-router.json": "8c3d8d20f74f2f6d7b1c1af5b8c4f8d4e6e098df3dbd8069cd5ed26a5cde3384",
+    "docs/monograph/prime-matrix-early-zero-contradiction-matrix-router.json": "cea1b53a99a6d5e6f0fb6fa9a9d95476b1beb107cbcec68113454428eb68ebf1",
+    "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "b381d8b4dac613b3e7011c26ea93da6fe3a81f9976aa2f31f3f412cd2e25aeb8",
+    "docs/monograph/prime-matrix-no-loss-return-accounting-router.json": "85267c016c03c757d219b04712940825a69020299717a6448aa12b1d110215d2",
+    "docs/monograph/prime-matrix-partition-coverage-no-loss-equation-router.json": "20d9b3b266bf831e12fb91a84c36cc1ac2b020a74ce110581daad032ff8a2b12",
+    "docs/monograph/prime-matrix-partition-disjointness-boundary-return-router.md": "28b2b0b66cbb8f8a1ece457faa71ab6fc7522965cc454a82e5b4a1161fe5139b",
+    "docs/monograph/prime-matrix-strict-boundary-cap-type-compression-router.json": "8082425f5f65748dda9d33b3463a4262c38d510dae4fa58952f292fd404ed116"
+  },
+  "status": "forced_obligation_lower_bound_reduced_to_residual_mass_and_no_quotient_collapse_open"
+}

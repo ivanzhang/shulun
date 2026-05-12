@@ -1,0 +1,76 @@
+{
+  "budget": {
+    "extended_precision_significand_bits": 64,
+    "ln_x_upper_bound_used": "32",
+    "one_point_five_ulp_bound": "2.602085213965210641617886722087860107421875E-18",
+    "required_log_abs_error_bound": "1E-12",
+    "slack_factor_vs_1p5ulp": "384307.1682022823253333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+    "ulp_bound_for_ln_x_less_than_32": "1.73472347597680709441192448139190673828125E-18"
+  },
+  "certificate_type": "prime_matrix_strict_table012_x87_accuracy_router",
+  "certified_log_summation_interval_arithmetic_closed": false,
+  "cpu": {
+    "Architecture": "x86_64",
+    "CPU family": "6",
+    "Model": "85",
+    "Model name": "Intel(R) Xeon(R) Gold 6152 CPU @ 2.10GHz",
+    "Stepping": "4",
+    "Vendor ID": "GenuineIntel"
+  },
+  "external_references": {
+    "glibc_e_logl_source": "https://codebrowser.dev/glibc/glibc/sysdeps/x86_64/fpu/e_logl.S.html",
+    "intel_sdm": "https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html"
+  },
+  "fyl2x_y_equals_ln2_accuracy_applicability_closed": false,
+  "glibc_logl_source_binding_imported": true,
+  "logl_mpfr_point_audit_imported": true,
+  "next_direct_attack_target": "FYL2X_FYL2XP1_YEqualsLn2AccuracyApplicabilityLedger",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "CertifiedMPFRIntervalThetaExtremalRescanArchive"
+  ],
+  "plain_conclusion": "x87 精度硬点进一步压缩：如果能证明 glibc 的 y=ln2 型 FYL2X/FYL2XP1 调用有 1.5 ulp 级误差，1e-12 预算有约 3.84e5 倍余量，table_012 log oracle 即可闭合。但现阶段不能把常见的 y=1 精度陈述直接套到 y=ln2；剩余原子是该适用性证明，或改走 MPFR 外向 log 全量重扫。",
+  "proof_reduction": [
+    {
+      "closed": false,
+      "gate": "X87FYL2X_FYL2XP1InstructionAccuracyLedger",
+      "meaning": "若 glibc 使用的 FYL2X/FYL2XP1 在 y=ln2 乘子下有 <=1.5 ulp 误差，则 log oracle 预算立即闭合。",
+      "remaining": "FYL2X_FYL2XP1_YEqualsLn2AccuracyApplicabilityLedger"
+    },
+    {
+      "closed": true,
+      "gate": "X87OnePointFiveUlpWouldBeSufficient",
+      "meaning": "在 ln(x)<32 范围，1.5 ulp 约 2.60e-18，比 1e-12 小约 3.84e5 倍。",
+      "remaining": "closed"
+    },
+    {
+      "closed": false,
+      "gate": "FYL2X_FYL2XP1_YEqualsLn2AccuracyApplicabilityLedger",
+      "meaning": "必须证明 Intel/AMD FYL2X/FYL2XP1 的精度保证适用于 glibc 的 y=ln2 调用，而不只是 y=1 的特殊陈述。",
+      "remaining": "architectural/manual proof or formally sampled microcode certificate"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedMPFRIntervalThetaExtremalRescanArchive",
+      "meaning": "绕开硬件指令精度：用 MPFR 外向 log 全量重扫完整 theta 归档。",
+      "remaining": "heavy full rescan"
+    },
+    {
+      "closed": false,
+      "gate": "StdLogLAbsErrorLe1eMinus12ForIntegerInputsUpTo8e11",
+      "meaning": "当前仍不能把有限点审计和 y=1 手册语句合成全域 logl 误差证明。",
+      "remaining": "FYL2X_FYL2XP1_YEqualsLn2AccuracyApplicabilityLedger OR CertifiedMPFRIntervalThetaExtremalRescanArchive"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-table012-glibc-logl-source-router.json": "89da6157e64caff4f03e68ae9e2e84f9be8869230291fbc4c3504bf56cdde678",
+    "docs/monograph/prime-matrix-strict-table012-logl-mpfr-point-audit-router.json": "3f766f4fe00276d6b93621af7d728fe6dfce2a3d20c010b2177f5e9f928de1c3"
+  },
+  "status": "x87_accuracy_reduced_to_y_equals_ln2_applicability_or_mpfr_rescan",
+  "std_logl_abs_error_1e_minus_12_closed": false,
+  "theta_less_than_identity_to_8e11_self_contained_closed": false,
+  "x87_1p5ulp_budget_would_close_log_oracle": true,
+  "x87_instruction_accuracy_closed": false
+}

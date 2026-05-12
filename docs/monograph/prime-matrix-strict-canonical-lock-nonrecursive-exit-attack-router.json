@@ -1,0 +1,103 @@
+{
+  "acyclic_canonical_exact_same_set_promotion_certificate_proved": false,
+  "acyclic_seed_canonical_branch_admission_proved": false,
+  "acyclic_seed_finite_factor_map_weight_identity_proved": false,
+  "acyclic_seed_no_source_replacement_proved": false,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "canonical_exact_branch_conditional_promotion_closed": true,
+  "canonical_exact_certificate_definition": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection",
+  "canonical_lock_nonrecursive_exit_firewall_closed": true,
+  "canonical_lock_refined_to_exact_same_set_certificate": true,
+  "certificate_type": "prime_matrix_strict_canonical_lock_nonrecursive_exit_attack_router",
+  "counterexample_assumption_only": true,
+  "direct_terminal_labels_rejected_as_nonrecursive_proof": true,
+  "empirical_absence_not_used": true,
+  "hard_law": "canonical-lock 不是从早期零行覆盖图自动导出的矛盾，而是五项 exact same-set canonical 晋级证书。五项全真时，只得到 canonical 分支条件晋级；任一项缺失时，canonical-lock 路线失效，不能转用 direct PDEC/CleanKLS 标签冒充证明，必须回到原 NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem。",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "AcyclicCanonicalPreCauchyCoefficientIdentityLedger OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "no_noncanonical_payload_survives_projection_proved": false,
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步直接攻击 canonical-lock 的非循环出口。结论是：canonical-lock 不能由哈希稳定、A1 分支陈述、横向嵌入或早期零行覆盖几何自动推出；它只能作为五项 exact same-set canonical 晋级证书使用。若证书完整，则该分支按 canonical 范围条件晋级；若证书任一项缺失，canonical-lock 不是闭合证明，direct PDEC/CleanKLS 又会回流，剩余仍是原 NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem。行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "StrictTerminalAfterRecurrenceActive",
+      "meaning": "rate-bearing 终端三原子经回流防火墙后只剩 canonical-lock 或原 actual-source 熵目标。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalLockRefinedToFiveLedgerCertificate",
+      "meaning": "canonical-lock 不是单个标签，而是 pre-Cauchy canonical 准入、有限因子图、无来源替换、同集推前、无 payload 残留五项合取证书。",
+      "proved": false,
+      "remaining": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection"
+    },
+    {
+      "closed": true,
+      "gate": "BranchAdmissionCannotBeRecoveredDownstream",
+      "meaning": "若 seed 的 canonical 准入只从终端证书、payment 图、早期零行覆盖或投影缺席反推，则落入来源环，不能作为 pre-Cauchy source。",
+      "proved": true,
+      "remaining": "AcyclicCanonicalPreCauchyCoefficientIdentityLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "A1AdmissionAbsorbedAsBranchStatement",
+      "meaning": "A1 clean branch admission 只说明 canonical 分支可内部处理；它不是 unrestricted noncanonical 分支的全局矛盾。",
+      "proved": true,
+      "remaining": "仍需 exact same-set canonical promotion certificate 或 noncanonical source entropy。"
+    },
+    {
+      "closed": true,
+      "gate": "ExactCanonicalPromotionConditionalOnly",
+      "meaning": "若五项证书全部提交，则对象已按同一 formal unit 和同一坏窗集合进入 canonical 分支，可调用 canonical 分支闭合；这只是条件晋级律。",
+      "proved": true,
+      "remaining": "AcyclicCanonicalExactSameSetPromotionCertificate。"
+    },
+    {
+      "closed": true,
+      "gate": "AnyMissingLedgerRejectsCanonicalLock",
+      "meaning": "五项中任一项缺失时，有限因子或同集推前定义失败，canonical-lock 路线不可用。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "DirectTerminalFallbackRejectedAsNonrecursiveProof",
+      "meaning": "direct PDEC/direct CleanKLS 的裸标签链已被终端回流防火墙识别为回流，不是源熵目标的非递归证明。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "CurrentCorpusExactCanonicalCertificateProved",
+      "meaning": "当前语料没有提交五项 exact same-set canonical 晋级证书，不能宣称 canonical-lock 已闭合。",
+      "proved": false,
+      "remaining": "AcyclicSeedCanonicalBranchAdmissionBeforeCauchy AND AcyclicSeedFiniteMeasurableFactorMapAndWeightIdentity AND AcyclicSeedNoSourceReplacementOrPayloadCreation AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection"
+    },
+    {
+      "closed": true,
+      "gate": "NewActualSourceEntropyStillOpen",
+      "meaning": "canonical-lock 出口收缩后，noncanonical 主线仍是原 NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_admission_standalone_global_contradiction": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-canonical-terminal-promotion-closure-router.json": "c67d3c6cb5962117acda677dcefaf3cb6155ce0ccacca645a8352d3682981311",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-acyclic-canonical-lock-router.json": "9ba01ca4d88a341ca65d9a18ce6c8417f42e4706beecd85850d1048eeb69d7d8",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-canonical-embedding-router.json": "459c3279f42557147f76b8d51080e59ab280bc208cd0eaf7cf6f638da2ae9adc",
+    "docs/monograph/prime-matrix-strict-exact-entropy-source-law-firewall-router.json": "91fc5d3336a58236a1a96d806017f20aa56da290ecb587675a79e81e931a2547",
+    "docs/monograph/prime-matrix-strict-rate-bearing-terminal-recurrence-firewall-router.json": "fcbc9c954360a067c00bb161118936041aaeed458841a5162fd199bbb04e2b92",
+    "docs/monograph/prime-matrix-strict-source-admission-branch-absorption-router.json": "ff738635e2f712ebb777170a718e8775362847a92b7e29c4933da438fd7d64d6"
+  },
+  "status": "strict_canonical_lock_nonrecursive_exit_refined_to_exact_same_set_certificate_or_source_entropy_open",
+  "strict_self_contained_terminal_after_router": "AcyclicCanonicalExactSameSetPromotionCertificate OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "strict_self_contained_terminal_before_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "terminal_certificate_same_set_pushforward_proved": false
+}

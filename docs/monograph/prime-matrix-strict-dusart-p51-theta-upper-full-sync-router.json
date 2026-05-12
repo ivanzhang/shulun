@@ -1,0 +1,120 @@
+{
+  "arithmetic": {
+    "high_segment_margin": "0.00001495859900717043574186431329288472145615002757859900717043574186431329",
+    "high_segment_result_relative": "0.00001262",
+    "low_segment_margin": "0.00002757859900717043574186431329288472145615002757859900717043574186431329",
+    "low_segment_result_relative": "0",
+    "middle_segment_margin": "4.457340209326913989203693572722452822517774708150831575360119526E-11",
+    "middle_segment_result_relative": "0.00002757855443376834247272442125594899423162180240085192566211998826311803",
+    "middle_strip_nonempty": "True",
+    "target_1_over_36260": "0.00002757859900717043574186431329288472145615002757859900717043574186431329",
+    "x_high_start_e28": "1446257064291.475173677047422996928856902062329509922875165479052110489",
+    "x_low_end_8e11": "8E+11"
+  },
+  "certificate_type": "prime_matrix_strict_dusart_p51_theta_upper_full_sync_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "DusartP51FullSyncGateActive",
+    "LowSegmentThetaLtIdentityTo8e11",
+    "MiddleStripPsiThetaSplice",
+    "HighTailFaberKadiriB28Splice",
+    "ThreeSegmentArithmeticClosed",
+    "DusartP51ThetaUpperFullSyncLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dusart_p51_full_theta_statement_closed": true,
+  "dusart_p51_full_theta_statement_external_closed": true,
+  "dusart_p51_full_theta_statement_self_contained_closed": false,
+  "empirical_absence_not_used": true,
+  "next_direct_attack_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "DusartP51ThetaUpperFullSelfContainedLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "DusartP51ThetaUpperFullSelfContainedLedger"
+  ],
+  "plain_conclusion": "Dusart P5.1 的全段外部路线已经闭合：低段由 `theta(x)<x` 到 `8e11` 给出，中段由 `psi<1.00002841x` 与 `psi-theta>0.9999sqrt(x)` 拼接给出，高尾由 FK b0=28 的 `0.00001262<1/36260` 给出。因此可登记 `theta(x)-x<x/36260` 对所有 `x>0` 成立。但严格作者侧完全自足版仍剩 table_012 原始有限计算/hash。",
+  "psi_minus_theta_lower_gap_09999_sqrt_self_contained_closed": true,
+  "psi_relative_error_pair_for_p51_closed": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只合取 P5.1 的解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "DusartP51FullSyncGateActive",
+      "meaning": "上一证书已把下一最窄点设为 Dusart P5.1 全段 theta 上界同步。",
+      "proved": true,
+      "remaining": "DusartP51ThetaUpperFullSyncLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LowSegmentThetaLtIdentityTo8e11",
+      "meaning": "对 0<x<=8e11，theta(x)<x，故 theta(x)-x<0<x/36260。",
+      "proved": true,
+      "remaining": "external table lane"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleStripPsiThetaSplice",
+      "meaning": "对 8e11<=x<=e^28，psi<1.00002841x 且 psi-theta>0.9999sqrt(x)，得到目标余量。",
+      "proved": true,
+      "remaining": "middle strip closed"
+    },
+    {
+      "closed": true,
+      "gate": "HighTailFaberKadiriB28Splice",
+      "meaning": "对 x>=e^28，FK b0=28 给出 psi 高尾误差 0.00001262，小于 1/36260；theta<=psi。",
+      "proved": true,
+      "remaining": "high tail closed"
+    },
+    {
+      "closed": true,
+      "gate": "ThreeSegmentArithmeticClosed",
+      "meaning": "低段、中段、高尾三段阈值顺序与余量均为正。",
+      "proved": true,
+      "remaining": "arithmetic synchronized"
+    },
+    {
+      "closed": true,
+      "gate": "DusartP51ThetaUpperFullSyncLedger",
+      "meaning": "接受 FK 高尾与 Dusart table_012 外部表时，Dusart P5.1 全段 theta(x)-x<x/36260 已闭合。",
+      "proved": true,
+      "remaining": "external lane theorem closed"
+    },
+    {
+      "closed": false,
+      "gate": "DusartP51ThetaUpperFullSelfContainedLedger",
+      "meaning": "严格作者侧完全自足版仍未闭合，因为 theta table_012 原始计算/hash 未内化。",
+      "proved": false,
+      "remaining": "internalize table_012 finite computation/hash, and optionally FK kernel source"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步关闭的是解析输入定理，不直接产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "0429c2d763b809528c481375058db2b7f03bae8fb120dade5dcbfacd39bb807e",
+    "docs/monograph/prime-matrix-strict-psi-theta-gap-middle-self-contained-router.json": "b6d1e7d0873d0434b04e0a7d6dde0445fe6847987433641e82d42514a24af97f",
+    "docs/monograph/prime-matrix-strict-table63-b28-high-tail-p51-splice-sync-router.json": "5a716da4b244110c5985e21c066cd9d8d3300a7d2c4084ce1446dac872168eb9",
+    "docs/monograph/prime-matrix-strict-theta-less-than-identity-to-8e11-router.json": "41dbd8f89db7887b3683b77c8407c02308993673d6d8d20cec122338a154bbdb"
+  },
+  "status": "dusart_p51_theta_upper_full_external_lane_closed_self_contained_finite_table_remains_open",
+  "theorem_statement_external_lane": "For every x>0, theta(x)-x < x/36260, using FK b0=28 high tail, middle psi node archive plus psi-theta finite audit, and Dusart table_012 for theta(x)<x up to 8e11.",
+  "theta_less_than_identity_to_8e11_external_closed": true,
+  "theta_less_than_identity_to_8e11_self_contained_closed": false,
+  "theta_minus_identity_upper_1_over_36260_for_all_x_external_closed": true
+}

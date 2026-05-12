@@ -1,0 +1,86 @@
+{
+  "absolute_fiber_mass_dispersion_router_closed": true,
+  "certificate_type": "prime_matrix_strict_absolute_fiber_mass_dispersion_router",
+  "counterexample_assumption_only": true,
+  "crt_wheel_fiber_map_not_expansion": true,
+  "hard_law": "绝对质量分散不是新的相消问题，而是 emitter 原像纤维扩张问题。已登记权重上界只能把质量问题转为 multiplicity 问题；下游 payment 图和 CRT 纤维图不能反向证明原像纤维分散。",
+  "known_summand_weight_cap_imported": true,
+  "multiplicity_dispersion_contract": "For the actual primitive pre-pushforward emitter, with each summand carrying branch key, sign/local factor and exact (u,v) map, prove that every exact (u,v) fiber receives at most a log-power-small fraction of the total emitted absolute weight, after the registered single-summand weight cap.",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`PreTerminalExactUVFiberAbsoluteMassDispersionTheorem` 进一步压成 primitive emitter 的原像纤维分散：单个 summand 权重已被容量乘子纪律吸收，真正剩余是证明 exact `(u,v)` fiber 的原像 multiplicity 不能承载总绝对质量的多对数级大份额。该分散定理尚未证明，行/列命题仍未无条件闭合。",
+  "preterminal_exact_uv_fiber_absolute_mass_dispersion_proved": false,
+  "preterminal_exact_uv_primitive_emitter_multiplicity_dispersion_proved": false,
+  "reverse_payment_recovery_rejected": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AbsoluteFiberMassTargetActive",
+      "meaning": "上一层已把非终端 fiber 非集中压成 exact fiber 绝对质量分散。",
+      "proved": false,
+      "remaining": "PreTerminalExactUVFiberAbsoluteMassDispersionTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "KnownCoefficientWeightCapImported",
+      "meaning": "单个 summand 的 Type/Fourier/fiber/系数损失已登记为 log-power 成本；权重上界不是当前主障碍。",
+      "proved": true,
+      "remaining": "需要控制同一 exact fiber 接收多少 primitive summand。"
+    },
+    {
+      "closed": true,
+      "gate": "EmitterOriginLedgerNeeded",
+      "meaning": "绝对质量分散必须在 pre-pushforward primitive emitter 上计数；当前材料仍未证明原始生成账本存在。",
+      "proved": false,
+      "remaining": "CleanCoreOriginalCoefficientGenerationLedgerAndReturn。"
+    },
+    {
+      "closed": true,
+      "gate": "ReversePaymentFunctorInsufficient",
+      "meaning": "从 payment 图反向恢复 preimage summand 不唯一；不能由下游图推出原像纤维分散。",
+      "proved": true,
+      "remaining": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "SourceLoopCutImported",
+      "meaning": "origin ledger -> constructor -> formula -> emitter -> origin ledger 的循环不能生成新来源或分散估计。",
+      "proved": true,
+      "remaining": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "MassDispersionReducedToMultiplicity",
+      "meaning": "在 summand 权重已受 log-power 控制后，absolute fiber mass cap 的数值负担就是 exact `(u,v)` 原像纤维的 multiplicity spread。",
+      "proved": false,
+      "remaining": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CRTWheelGivesFiberMapNotExpansion",
+      "meaning": "CRT/轮筛/层叠筛能定义 exact `(u,v)` fiber map，却不证明该 map 的最大原像纤维小。",
+      "proved": true,
+      "remaining": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveEmitterMultiplicityDispersionCurrentCorpusProved",
+      "meaning": "当前语料尚未证明 primitive emitter 在 exact `(u,v)` 原像纤维上的多对数级分散。",
+      "proved": false,
+      "remaining": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-prepushforward-emitter-origin-ledger-router.json": "8064030c4c78a35fcc4a07142b7a326f29d1775c590e3901178318445ce3ade4",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-strict-nonterminal-fiber-aperiodicity-attack-router.json": "0085b87f22b8b13beea06d12b0813b55c5ae1a7167acd96471d27942964e97be"
+  },
+  "status": "strict_absolute_fiber_mass_dispersion_reduced_to_primitive_emitter_multiplicity_open",
+  "terminal_gap_after_router": "PreTerminalExactUVPrimitiveEmitterMultiplicityDispersionTheorem",
+  "terminal_gap_before_router": "PreTerminalExactUVFiberAbsoluteMassDispersionTheorem"
+}

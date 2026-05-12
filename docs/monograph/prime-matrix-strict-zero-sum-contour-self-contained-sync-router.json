@@ -1,0 +1,205 @@
+{
+  "C_N": 16.0,
+  "C_harmonic_sum": 64.0,
+  "C_region": 1280.0,
+  "C_zero_sum": 65536.0,
+  "T0": 14.0,
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_zero_sum_contour_self_contained_sync_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ZeroSumSelfContainedGateActive",
+    "UnsmoothedPerronStrictLayerAvailable",
+    "ZeroFreeRegionC1280T14SelfContainedAvailable",
+    "RVMCN16CountingSelfContainedAvailable",
+    "DyadicHarmonicZeroCountIntegralClosed",
+    "ExternalZeroSumTemplateUsedOnlyForConstantShape",
+    "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger"
+  ],
+  "component_rows": [
+    {
+      "claim": "beta <= 1 - 1/(1280 log(|gamma|+3)), |gamma|>=14",
+      "component": "high zero-free strip",
+      "constant": 1280.0,
+      "meaning": "把每个高零点的 x^beta 压出统一指数衰减。"
+    },
+    {
+      "claim": "RVMToCN16LocalInequalitySelfContainedClosedWithRawArgCS8CommonEnvelope",
+      "component": "unit-height zero counting",
+      "constant": 16.0,
+      "meaning": "单位高度零点数用自足 RVM/CN16 控制。"
+    },
+    {
+      "claim": "sum_{14<=|gamma|<=T} 1/|gamma| <= 64 log^2(T+3)",
+      "component": "dyadic harmonic integral",
+      "constant": 64.0,
+      "meaning": "把单位高度计数积分为倒高度和。"
+    },
+    {
+      "claim": "ZeroFreeRegionZeroSumContourBudgetSelfContainedClosedC1280T14C65536",
+      "component": "closed zero-sum envelope",
+      "constant": 65536.0,
+      "meaning": "保守吸收 dyadic 倒高度和、log(xT) 转换和端点余量。"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "internal_zero_sum_dyadic_contour_budget_closed": true,
+  "next_direct_attack_target": "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedMertensTailStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "`ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger` 已从外部条件版同步为 strict 自足版：C=1280 的零点自由带、自足 RVM/CN16 单位高度计数、dyadic 倒高度和 `64 log^2(T+3)` 与 Perron strict 口径合成，保守吸收到 C_Z=65536。该步只关闭高高度非平凡零点和预算；低高度、平凡尾项、theta@20000 和 B1 区间仍未闭合。",
+  "pressure_rows": [
+    {
+      "T": 14.0,
+      "closed_relative": 10602489.106158368,
+      "fits_C65536": true,
+      "harmonic_relative": 512.3332417979109,
+      "ratio_to_closed": 4.832197766657702e-05,
+      "suppression": 0.9972728686946508,
+      "x": 20000.0
+    },
+    {
+      "T": 45.0,
+      "closed_relative": 12410106.644466361,
+      "fits_C65536": true,
+      "harmonic_relative": 957.201619858622,
+      "ratio_to_closed": 7.713081339920928e-05,
+      "suppression": 0.9980033656283513,
+      "x": 20000.0
+    },
+    {
+      "T": 1000.0,
+      "closed_relative": 18507514.745505292,
+      "fits_C65536": true,
+      "harmonic_relative": 3053.122381183958,
+      "ratio_to_closed": 0.0001649666323743135,
+      "suppression": 0.9988810520919902,
+      "x": 20000.0
+    },
+    {
+      "T": 20000.0,
+      "closed_relative": 25691149.24446286,
+      "fits_C65536": true,
+      "harmonic_relative": 6272.348226700684,
+      "ratio_to_closed": 0.00024414432250641904,
+      "suppression": 0.9992190669189701,
+      "x": 20000.0
+    },
+    {
+      "T": 1000000.0,
+      "closed_relative": 36849322.1733696,
+      "fits_C65536": true,
+      "harmonic_relative": 12208.739378612445,
+      "ratio_to_closed": 0.00033131516832718026,
+      "suppression": 0.9994401269616896,
+      "x": 20000.0
+    }
+  ],
+  "remaining_after_zero_sum_sync": [
+    "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger",
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+    "FiniteLowHeightZeroCheckLedger",
+    "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold",
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+  ],
+  "replacement_self_contained": {
+    "InternalZeroSumDyadicContourBudgetLedger": "InternalZeroSumDyadicContourBudgetSelfContainedClosedC65536",
+    "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger": "ZeroFreeRegionZeroSumContourBudgetSelfContainedClosedC1280T14C65536"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只补假设反例链所需解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroSumSelfContainedGateActive",
+      "meaning": "Perron strict 层闭合后，下一最窄点就是高高度非平凡零点和预算。",
+      "proved": true,
+      "remaining": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "UnsmoothedPerronStrictLayerAvailable",
+      "meaning": "finite-T Perron 常数层已 strict 自足闭合为 C=12128。",
+      "proved": true,
+      "remaining": "UnsmoothedChebyshevPerronExplicitFormulaConstantSelfContainedClosedC12128"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroFreeRegionC1280T14SelfContainedAvailable",
+      "meaning": "DVP 参数账本给出 |gamma|>=14 的 C=1280 零点自由带。",
+      "proved": true,
+      "remaining": "ZeroRepulsionParameterNumericalOptimizationClosedC64A1Over256C1Over1280T14"
+    },
+    {
+      "closed": true,
+      "gate": "RVMCN16CountingSelfContainedAvailable",
+      "meaning": "RVM/CN16 自足同步给单位高度零点计数输入。",
+      "proved": true,
+      "remaining": "RVMToCN16LocalInequalitySelfContainedClosedWithRawArgCS8CommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "DyadicHarmonicZeroCountIntegralClosed",
+      "meaning": "把单位高度计数按 dyadic/整数高度积分，得到倒高度和 64 log^2(T+3) 的保守界。",
+      "proved": true,
+      "remaining": "InternalZeroSumDyadicContourBudgetSelfContainedClosedC65536"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalZeroSumTemplateUsedOnlyForConstantShape",
+      "meaning": "旧外部证书只复用 C=65536 与预算形状作为算术模板，不复用外部 PNT 轮廓引理。",
+      "proved": true,
+      "remaining": "ZeroFreeRegionZeroSumContourBudgetExternalClosedC1280T14C65536"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+      "meaning": "零点自由带、CN16 计数、dyadic 倒高度和与 Perron 口径合成后，零点和预算自足闭合。",
+      "proved": true,
+      "remaining": "ZeroFreeRegionZeroSumContourBudgetSelfContainedClosedC1280T14C65536"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedMertensTailStillOpen",
+      "meaning": "本步只关闭非平凡零点和预算；平凡尾项、theta@20000、低高度和 B1 区间仍开放。",
+      "proved": false,
+      "remaining": "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger AND FiniteLowHeightZeroCheckLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步不构成早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "secondary_attack_targets": [
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+    "FiniteLowHeightZeroCheckLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "917bde835ce8a90d96c5581492193e85229a99710a9d98a98ff9caa4012317a8",
+    "docs/monograph/prime-matrix-b3-zero-repulsion-parameter-optimization-router.json": "aee59acf74c161e5feba5344e7a5615944051b341d578075a74d3144b3575529",
+    "docs/monograph/prime-matrix-b3-zero-sum-contour-budget-router.json": "081bbab62e00870b16f2cb934f8f83916c761cd770cc9ef3210d1cde65e5b0d8",
+    "docs/monograph/prime-matrix-strict-rvm-cn16-self-contained-sync-router.json": "23fc0bd3b8e3fbbf86910637ba6c48701e55bf34bc85372b3c7fd78f7dac68a5",
+    "docs/monograph/prime-matrix-strict-self-contained-mertens-tail-frontier-router.json": "29be060813d41b78bd4f6cb32614b95b513e21688856b913ee0a6152f77ee643",
+    "docs/monograph/prime-matrix-strict-unsmoothed-perron-final-sync-router.json": "eb09267cd0d957dce6acff54d3d0afb61421d8274dfe6d89506143abf0abb8a7"
+  },
+  "status": "zero_sum_contour_budget_self_contained_closed_trivial_tail_next",
+  "zero_sum_contour_budget_self_contained_closed": true
+}

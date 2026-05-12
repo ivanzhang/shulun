@@ -1,0 +1,120 @@
+{
+  "certificate_type": "prime_matrix_strict_rate_bearing_frontier_drilldown_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "RateBearingPacketFrontierActive",
+    "HarmonicWindowRemovedFromActiveBasis",
+    "DynamicSkeletonReducedToTailLinearSieve",
+    "HighSegmentModelGapCompressed",
+    "PDECCleanKLSRatePacketGateStillOpen",
+    "DirectTerminalExpansionRecurrenceBlocked"
+  ],
+  "compressed_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dynamic_skeleton_tail_linear_sieve_open": true,
+  "empirical_absence_not_used": true,
+  "external_or_conditional_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND ExternalShortIntervalRoughNumberLowerBoundForAlpha043_OR_StandardBetaSieveMertensTail AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "frontier_drilldown_closed": true,
+  "harmonic_window_removed_from_active_basis": true,
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet",
+  "next_nonrecursive_attack_target": "LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RatePreservationLedgerStillOpen",
+    "DStructureIndependentAcceptanceStillOpen",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "parallel_attack_targets": [
+    "LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步完成前沿同步下钻：调和窗口上界已从活动剩余基中删除；动态粗骨架下界只剩 P>=100000 的一维 lower-sieve 尾段账本。速率型 moving-atom 终端排斥仍未证明，PDEC/CleanKLS 速率门、RatePreservation 与 DStructure 验收仍开放。",
+  "previous_compressed_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "previous_expanded_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND (HarmonicWindowAlpha043PGe3001Upper0850Ledger AND DynamicRoughSkeletonAlpha043PGe3001Lower401Ledger) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rate_bearing_moving_atom_packet_exclusion_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍同步假设早期零行反例链，不使用真实零行缺席，也不转换命题。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "RateBearingPacketFrontierActive",
+      "meaning": "速率型 moving-atom 终端包已定位，但终端排斥尚未证明。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet"
+    },
+    {
+      "closed": true,
+      "gate": "HarmonicWindowRemovedFromActiveBasis",
+      "meaning": "调和窗口上界已有 Dusart/有限段证书，不能继续作为活动硬点重复攻击。",
+      "proved": true,
+      "remaining": "从高段模型余量中删除该原子。"
+    },
+    {
+      "closed": true,
+      "gate": "DynamicSkeletonReducedToTailLinearSieve",
+      "meaning": "动态粗骨架有限段已闭合，P>=100000 被压成一维 lower-sieve 尾段账本。",
+      "proved": false,
+      "remaining": "LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "HighSegmentModelGapCompressed",
+      "meaning": "高段模型余量不再是调和窗口加骨架双硬点；活动剩余只保留骨架尾段筛下界。",
+      "proved": false,
+      "remaining": "LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "PDECCleanKLSRatePacketGateStillOpen",
+      "meaning": "速率型终端包的 PDEC/CleanKLS 速率门仍未证明，不能由标签命名本身闭合。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet"
+    },
+    {
+      "closed": true,
+      "gate": "DirectTerminalExpansionRecurrenceBlocked",
+      "meaning": "裸展开 PDEC/CleanKLS 终端标签会回流到 canonical-lock 或新的独立 source-entropy 输入；这是防火墙，不是证明。",
+      "proved": true,
+      "remaining": "AcyclicTerminalCanonicalLockSubatoms_OR_NewIndependentSourceEntropyProof"
+    },
+    {
+      "closed": false,
+      "gate": "RatePreservationLedgerStillOpen",
+      "meaning": "终端排斥还必须保存 moving atom 所需的 log-power 速率字段。",
+      "proved": false,
+      "remaining": "RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureIndependentAcceptanceStillOpen",
+      "meaning": "DStructure/Tail-log4/finite Rankin 仍需独立验收或自足替代。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "尚未得到足以排除早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dynamic-skeleton-lower-factorization-router.json": "2c46448ba6bd4969f962984ad095d47199a787ef4906d5d2297ac5c252fefa8d",
+    "docs/monograph/prime-matrix-harmonic-window-dusart-ledger-router.json": "19070e055ced7cecb38b8a23661193fad075069c796ad66df630ebbfbc084b6f",
+    "docs/monograph/prime-matrix-strict-pdec-clean-kls-terminal-hardpoint-router.json": "9c97ae816a9b8840e743496fabd791c8792c136a547c0990010f31ea0a80f19d",
+    "docs/monograph/prime-matrix-strict-rate-bearing-moving-atom-packet-dprc-sync-router.json": "f5135c99d7f964b3c5b29b81681512083ff8bcaca431ff71fda3f2606fa81b9a",
+    "docs/monograph/prime-matrix-strict-rate-bearing-terminal-recurrence-firewall-router.json": "fcbc9c954360a067c00bb161118936041aaeed458841a5162fd199bbb04e2b92"
+  },
+  "status": "rate_bearing_frontier_drilled_high_segment_to_tail_sieve_open"
+}

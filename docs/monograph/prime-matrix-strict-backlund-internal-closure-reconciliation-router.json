@@ -1,0 +1,135 @@
+{
+  "backlund_common_envelope_atom_accepted_for_strict_perron": true,
+  "certificate_type": "prime_matrix_strict_backlund_internal_closure_reconciliation_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "OlderFinalBranchStatusScoped",
+    "CommonEnvelopeBacklundAtomClosed",
+    "LowHeightXiSubpackageAlreadyClosed",
+    "StrictPerronBacklundReplacementLegal",
+    "FixedTIndentAtomReconciled"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_merge_status_seen": "backlund_external_analytic_package_merged_dstructure_open_internal_backlund_target_locked",
+  "local_zero_distance_self_contained_proved": false,
+  "next_direct_attack_target": "SelfContainedRVMToCN16LocalInequalitySyncFromCommonEnvelopeAndLowHeightXi",
+  "no_theorem_switch": true,
+  "old_strict_perron_self_contained_basis": "ClassicalBacklundZeroIndentationCostInternalProofLedger AND ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger",
+  "older_final_branch_status_superseded_for_backlund_atom_only": true,
+  "open_gates": [
+    "SelfContainedRVMToCN16NotYetResynchronized",
+    "SelfContainedLocalZeroDistanceStillOpen",
+    "SelfContainedWeightedBudgetStillOpen",
+    "UnsmoothedPerronStrictSelfContainedClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_target": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger",
+  "plain_conclusion": "Backlund 状态冲突已按原子作用域调和：旧 final-branch-status 仍正确说明当时和全局层面不能闭合，但较新的 common-envelope 证书已经对 `ClassicalBacklundZeroIndentationCostInternalProofLedger` 给出作者侧共同包络闭合。因此 strict Perron 中的 Backlund 原子可合法替换为 `ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope`。替换后仍不能声明非平滑 Perron 自足闭合；剩余转为水平边 log-derivative、自足 RVM/CN16 到局部零点距离、以及加权预算同步。",
+  "post_sync_target": "Psi0HorizontalLocalZeroDistanceSumConstantLedger => Psi0HorizontalWeightedIntegralBudgetLedger",
+  "reconciled_strict_perron_self_contained_basis": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope AND ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger",
+  "remaining_atoms_after_backlund_reconciliation": [
+    "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger",
+    "Psi0HorizontalLocalZeroDistanceSumConstantLedger",
+    "Psi0HorizontalWeightedIntegralBudgetLedger"
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只调和假设反例链中的解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "OlderFinalBranchStatusScoped",
+      "meaning": "旧最终分叉状态仍可作为历史边界：它说明当时 Backlund 凹口成本开放，且全局不可闭合。",
+      "proved": true,
+      "remaining": "该旧状态不再支配 Backlund 单原子的新闭合证据。"
+    },
+    {
+      "closed": true,
+      "gate": "CommonEnvelopeBacklundAtomClosed",
+      "meaning": "共同高高度包络给出同一 sigma 分区支配，max 不新增 log 系数，C16 分子仍为 7。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightXiSubpackageAlreadyClosed",
+      "meaning": "0<t<=14 的 xi 矩形零点计数、临界线/离线 Turing 和 finite low-height check 已由低高度子包回灌。",
+      "proved": true,
+      "remaining": "LowHeightXiRectangleZeroCountZero0To14SelfContainedClosed"
+    },
+    {
+      "closed": true,
+      "gate": "StrictPerronBacklundReplacementLegal",
+      "meaning": "最新 strict Perron 压缩中的 Backlund 内部证明原子可替换为共同包络闭合原子。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger => ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "FixedTIndentAtomReconciled",
+      "meaning": "psi_0 fixed-T 缩进已证明与经典 Backlund 缩进同 formal unit；Backlund 原子闭合后，该缩进子项同步调和。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedRVMToCN16NotYetResynchronized",
+      "meaning": "RVM->C_N=16 当前仍只在外部/条件分支有显式闭合记录；需另做从共同包络和低高度 xi 到原始 arg C8 的自足同步。",
+      "proved": false,
+      "remaining": "SelfContainedRVMToCN16LocalInequalitySyncFromCommonEnvelopeAndLowHeightXi"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedLocalZeroDistanceStillOpen",
+      "meaning": "局部零点倒距离 C=288 目前仍是外部 Backlund/RVM 条件闭合；自足版需先完成 RVM/CN16 同步并接入内部 log-derivative。",
+      "proved": false,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumConstantLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedWeightedBudgetStillOpen",
+      "meaning": "C=12000 加权预算已在外部条件线下闭合；自足版需等待自足局部零点距离和 pointwise log-derivative。",
+      "proved": false,
+      "remaining": "Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "UnsmoothedPerronStrictSelfContainedClosed",
+      "meaning": "Backlund 原子调和后，strict 非平滑 Perron 仍缺水平边 log-derivative、局部零点距离和加权预算同步。",
+      "proved": false,
+      "remaining": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger AND Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只是解析输入基调和；统一矛盾场尚未产生直接无条件矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "rvm_cn16_self_contained_resynchronized": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "da21654814b78e117b1dc4cd2ba81da8404778f98c41d790ac0b7c09636b2a36",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-local-zero-distance-router.json": "66fe1d2f5e90c4d44b61f75ec8a94cc9c589c532a2876438ae514a567121d426",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-weighted-budget-router.json": "8952699d8b62a89249b5cd5a7c065ed2fb6fd865950b2c67d3b89fdf63a32d0d",
+    "docs/monograph/prime-matrix-b3-rvm-to-cn16-local-inequality-router.json": "3e7fa721aef0fe9660b70b6e8f9bd3ecb1e926ddbf12ec4b341163199ac0ca13",
+    "docs/monograph/prime-matrix-backlund-common-envelope-internal-closure-router.json": "2c533c8d724debd7ffc4a0b387aca237a9d36f5d6d62454ea0058e1f88766130",
+    "docs/monograph/prime-matrix-backlund-final-branch-status-router.json": "278d6d06d4b63511a2d27287116e05fc594c887fbfc9683f4a81ed4ec18817c3",
+    "docs/monograph/prime-matrix-backlund-internal-external-merge-router.json": "2de58ab23dbc28c8b0bd1d441bb47c56f36942f3a60c39e4cd0744c36671a4ce",
+    "docs/monograph/prime-matrix-lowheight-xi-backlund-integration-router.json": "183c1d656480d1664a48b5a0fde1e744ef389bf734ff1b77720e5e061e963bc8",
+    "docs/monograph/prime-matrix-strict-unsmoothed-perron-self-contained-reduction-router.json": "15099fb647d28bfe9ea30e154e8643e994621a2afeab311fe7eee615856e3cbf"
+  },
+  "status": "strict_backlund_internal_closure_reconciled_perron_horizontal_inputs_still_open",
+  "strict_perron_backlund_atom_replaced": true,
+  "unsmoothed_perron_strict_self_contained_closed": false,
+  "unwrapped_next_sync_atom": "SelfContainedRVMToCN16LocalInequalitySyncFromCommonEnvelopeAndLowHeightXi",
+  "weighted_budget_self_contained_proved": false
+}

@@ -1,0 +1,121 @@
+{
+  "b3_tv_strict_self_contained_closed": false,
+  "budget_rows": [
+    {
+      "item": "strict zero-sum closed envelope at T0",
+      "passes": false,
+      "ratio_to_target": 384446254989.3024,
+      "target": 2.7578599007170437e-05,
+      "value": 10602489.106158368
+    },
+    {
+      "item": "static formula terms relative",
+      "passes": false,
+      "ratio_to_target": 3.332071123666393,
+      "target": 2.7578599007170437e-05,
+      "value": 9.189385338296727e-05
+    },
+    {
+      "item": "prime-power transfer relative",
+      "passes": false,
+      "ratio_to_target": 310.38752982004826,
+      "target": 2.7578599007170437e-05,
+      "value": 0.008560053221733267
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_internal_dusart_theta_budget_obstruction_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "InternalDusartThetaGateActive",
+    "StrictAnalyticCoreReadyButTooCoarse",
+    "ExternalDusartLaneStillAvailable"
+  ],
+  "counterexample_assumption_only": true,
+  "current_internal_budget_beats_dusart_target": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_dusart_lane_available": true,
+  "internal_dusart_theta_self_contained_closed": false,
+  "next_direct_attack_target": "SharpInternalThetaPNTEnvelopeAt20000Ledger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CurrentInternalBudgetBeatsDusartTarget",
+    "InternalDusartThetaSelfContainedClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "InternalFiniteThetaBridgeHashLedger",
+    "DirectThetaNotPsiPrimePowerBypassLedger",
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+  ],
+  "plain_conclusion": "内部 Dusart theta 包络不能由当前 strict 自足预算直接推出：目标相对误差为 `1/36260`，但当前零点和保守包络、静态公式项、素数幂转移项均至少有一项超过目标。因此该原子不能闭合，只能被严格压缩为三类自足输入：更尖锐的内部 theta/PNT 包络、有限 theta 桥或直接 theta 而非 psi 的素数幂旁路，以及低高度 Turing/无零核验。",
+  "replacement_self_contained": {
+    "InternalDusartThetaEnvelopeProofLedger": "SharpInternalThetaPNTEnvelopeAt20000Ledger AND (InternalFiniteThetaBridgeHashLedger OR DirectThetaNotPsiPrimePowerBypassLedger) AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审查自足 theta 输入，仍在早期零行反例链的解析输入层内。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "InternalDusartThetaGateActive",
+      "meaning": "post-Meissel 前沿把严格自足下一主攻点校准为内部 Dusart theta 包络。",
+      "proved": true,
+      "remaining": "InternalDusartThetaEnvelopeProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StrictAnalyticCoreReadyButTooCoarse",
+      "meaning": "Perron/零点和/平凡尾项虽已自足闭合，但常数粗到不能达到 1/36260 级 theta 目标。",
+      "proved": true,
+      "remaining": "SharpInternalThetaPNTEnvelopeAt20000Ledger OR InternalFiniteThetaBridgeHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CurrentInternalBudgetBeatsDusartTarget",
+      "meaning": "只有所有内部预算项均不超过目标误差，才能从当前包络直接关闭内部 Dusart theta。",
+      "proved": false,
+      "remaining": "InternalDusartThetaEnvelopeProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalDusartLaneStillAvailable",
+      "meaning": "外部 Dusart/低高度/theta 桥路线已可用，但这不是自足证明。",
+      "proved": false,
+      "remaining": "外部路线继续等待 DStructure/Rankin 独立验收。"
+    },
+    {
+      "closed": false,
+      "gate": "InternalDusartThetaSelfContainedClosed",
+      "meaning": "当前证据只能证明旧预算不够，不能宣布内部 Dusart theta 已闭合。",
+      "proved": false,
+      "remaining": "SharpInternalThetaPNTEnvelopeAt20000Ledger AND (InternalFiniteThetaBridgeHashLedger OR DirectThetaNotPsiPrimePowerBypassLedger) AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "内部 theta 预算障碍证书不产生终端反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "93e79807102365bba0c758170dd9ca45d0cb4c4e09379675acf5156c946db02f",
+    "docs/monograph/prime-matrix-strict-post-meissel-frontier-sync-router.json": "6d5c61a61da422bb31b11ffae1f833fdb4954d62a11cfe7b33b9577085820e58",
+    "docs/monograph/prime-matrix-strict-theta-target-external-match-self-frontier-router.json": "d3717a7a2777af0b38f25372e2c9c9caf3a09ad124efd6ee88db13e4f03729d9",
+    "docs/monograph/prime-matrix-strict-trivial-tail-prime-power-self-contained-sync-router.json": "66fd7fe2769962317f8aae8c4106d87c60ab2a42cdf2519eab0e27e230267ca9",
+    "docs/monograph/prime-matrix-strict-zero-sum-contour-self-contained-sync-router.json": "4f11042be96ba548afb9fabfbea77592c4ad580508126210520d134b3f41c128"
+  },
+  "status": "internal_dusart_theta_current_budget_obstructed_split_to_sharp_pnt_finite_bridge_low_height",
+  "target_atom": "InternalDusartThetaEnvelopeProofLedger",
+  "target_relative_error": 2.7578599007170437e-05,
+  "worst_budget_item": "strict zero-sum closed envelope at T0",
+  "worst_ratio_to_target": 384446254989.3024
+}

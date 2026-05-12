@@ -1,0 +1,174 @@
+{
+  "C_total_logder": 288.0,
+  "C_weighted_budget": 12000.0,
+  "budget_components": [
+    {
+      "coefficient": 1565.73033319241,
+      "component": "straight horizontal segments",
+      "formula": "2*e*C_logder",
+      "meaning": "两条水平直段由 |s|>=T、x^(1+1/log x)<=e*x 和积分长度控制。"
+    },
+    {
+      "coefficient": 9837.773824519947,
+      "component": "indentation arcs",
+      "formula": "4*pi*e*C_logder",
+      "meaning": "凹口弧段由 eta=1/16、局部零点数和弧长预算控制。"
+    },
+    {
+      "coefficient": 12000.0,
+      "component": "rounded reserve",
+      "formula": "ceil reserve above straight+arcs",
+      "meaning": "为端点、半权和 log(T+3)<=log(xT) 转换保留余量。"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_weighted_budget_self_contained_sync_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "WeightedBudgetAtomActive",
+    "PointwiseC288SelfContainedAvailable",
+    "ExternalWeightedArithmeticTemplateChecked",
+    "StraightHorizontalWeightedBoundClosed",
+    "IndentArcWeightedBoundClosed",
+    "WeightedBudgetC12000SelfContainedClosed",
+    "HorizontalLogDerivativeSelfContainedPackageClosed"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "UnsmoothedPerronStrictSelfContainedFinalSync",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "UnsmoothedPerronStrictSelfContainedClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "`Psi0HorizontalWeightedIntegralBudgetLedger` 已可从外部条件版同步为 strict 自足版：输入点态界已由 strict 局部倒距离证书给出 C=288，直段 `2eC` 与凹口 `4*pi*eC` 的总成本低于 12000。该步关闭水平边 log-derivative 包，但仍需单独同步 Perron 压缩账本；行/列无条件命题保持未闭合。",
+  "pressure_rows": [
+    {
+      "T": 14.0,
+      "budget_bound": 2696835979.2134047,
+      "log_xT": 12.542544882151386,
+      "relative_to_x": 134841.79896067025,
+      "x": 20000.0
+    },
+    {
+      "T": 45.0,
+      "budget_bound": 1002497142.3069627,
+      "log_xT": 13.710150042306449,
+      "relative_to_x": 50124.85711534814,
+      "x": 20000.0
+    },
+    {
+      "T": 1000.0,
+      "budget_bound": 67828292.52966581,
+      "log_xT": 16.811242831518264,
+      "relative_to_x": 3391.4146264832907,
+      "x": 20000.0
+    },
+    {
+      "T": 20000.0,
+      "budget_bound": 4707795.1537554255,
+      "log_xT": 19.806975105072254,
+      "relative_to_x": 235.38975768777127,
+      "x": 20000.0
+    },
+    {
+      "T": 1000000.0,
+      "budget_bound": 135021.80912782118,
+      "log_xT": 23.7189981105004,
+      "relative_to_x": 6.751090456391059,
+      "x": 20000.0
+    }
+  ],
+  "psi0_horizontal_logder_self_contained_package_closed": true,
+  "psi0_horizontal_weighted_integral_budget_self_contained_closed": true,
+  "remaining_after_weighted_budget_sync": [
+    "UnsmoothedChebyshevPerronExplicitFormulaConstantLedger"
+  ],
+  "replacement_self_contained": {
+    "Psi0HorizontalWeightedIntegralBudgetLedger": "Psi0HorizontalWeightedIntegralBudgetSelfContainedClosedC12000",
+    "Psi0HorizontalZetaLogDerivativeBoundAwayFromZerosLedger": "Psi0HorizontalZetaLogDerivativeBoundAwayFromZerosSelfContainedClosedC12000"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步继续只在假设反例链解析输入内同步，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedBudgetAtomActive",
+      "meaning": "strict 局部倒距离关闭后，Perron 自足压缩链唯一剩余解析原子就是水平加权预算。",
+      "proved": true,
+      "remaining": "Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseC288SelfContainedAvailable",
+      "meaning": "局部零点倒距离已自足给出 |zeta'/zeta| 的 C=288 log(T+3) 点态包。",
+      "proved": true,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumSelfContainedClosedC288Eta1Over16"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalWeightedArithmeticTemplateChecked",
+      "meaning": "旧外部证书只作为直段/凹口常数算术模板，不复用外部 Backlund/RVM 假设。",
+      "proved": true,
+      "remaining": "Psi0HorizontalWeightedIntegralBudgetClosedC12000"
+    },
+    {
+      "closed": true,
+      "gate": "StraightHorizontalWeightedBoundClosed",
+      "meaning": "两条水平直段成本为 2e*C_logder，已包含于 C=12000 预算。",
+      "proved": true,
+      "remaining": "2*e*C_logder"
+    },
+    {
+      "closed": true,
+      "gate": "IndentArcWeightedBoundClosed",
+      "meaning": "凹口弧段成本为 4*pi*e*C_logder，和直段合计低于 12000。",
+      "proved": true,
+      "remaining": "4*pi*e*C_logder"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedBudgetC12000SelfContainedClosed",
+      "meaning": "点态 C=288 与权重积分估计合成后，水平边加权积分预算自足关闭。",
+      "proved": true,
+      "remaining": "Psi0HorizontalWeightedIntegralBudgetSelfContainedClosedC12000"
+    },
+    {
+      "closed": true,
+      "gate": "HorizontalLogDerivativeSelfContainedPackageClosed",
+      "meaning": "局部倒距离和加权预算都自足关闭后，水平边 log-derivative 包自足关闭。",
+      "proved": true,
+      "remaining": "Psi0HorizontalZetaLogDerivativeBoundAwayFromZerosSelfContainedClosedC12000"
+    },
+    {
+      "closed": false,
+      "gate": "UnsmoothedPerronStrictSelfContainedClosed",
+      "meaning": "本步关闭最后的水平预算原子；仍需单独同步 Perron 压缩账本，避免隐式越级。",
+      "proved": false,
+      "remaining": "UnsmoothedChebyshevPerronExplicitFormulaConstantLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只是解析输入自足化，不产生全局反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "a125b5abadb68eabe1784d1db5e004129382384f03c473e53f6e34153c00defd",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-weighted-budget-router.json": "8952699d8b62a89249b5cd5a7c065ed2fb6fd865950b2c67d3b89fdf63a32d0d",
+    "docs/monograph/prime-matrix-strict-local-zero-distance-self-contained-sync-router.json": "e1c9d7ed35e4b6d971d3fa975772aa472c5b57f4c91c27848f81dc75676c4261",
+    "docs/monograph/prime-matrix-strict-unsmoothed-perron-self-contained-reduction-router.json": "15099fb647d28bfe9ea30e154e8643e994621a2afeab311fe7eee615856e3cbf"
+  },
+  "status": "psi0_horizontal_weighted_budget_self_contained_closed_perron_sync_open",
+  "unsmoothed_perron_strict_self_contained_closed": false
+}

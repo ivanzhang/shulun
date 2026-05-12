@@ -1,0 +1,88 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_emitter_incidence_entropy_router_closed": true,
+  "actual_emitter_source_domain_entropy_proved": false,
+  "bounded_multiplicity_split_pinned": true,
+  "certificate_type": "prime_matrix_strict_actual_emitter_incidence_entropy_router",
+  "counterexample_assumption_only": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "fixed_pair_fiber_bound_not_from_dictionary": true,
+  "hard_law": "有界重数 incidence 不是一个单字段性质。源域总支撑不足时，即使 fixed-pair 纤维小也无用；fixed-pair 纤维可很大时，即使 payment count 大也可能全部坍缩到一个 `(u,v)`。因此下一步必须同时证明 source-domain entropy 与 fixed-pair polylog fiber bound。",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+  "no_theorem_switch": true,
+  "payment_skeleton_not_source_entropy": true,
+  "plain_conclusion": "`ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem` 被拆成两个不可混淆的账本：`ActualEmitterSourceDomainEntropyLedger` 与 `ExactUVMapFixedPairPolylogFiberBoundLedger`。这仍是同一源熵目标内部的 incidence 证明，不是换命题。当前语料尚未证明这两个账本，行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ActualEmitterIncidenceTargetActive",
+      "meaning": "上一层已把 exact-UV map rank 压成 actual emitter 的有界重数 incidence。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "BoundedMultiplicitySplitPinned",
+      "meaning": "有界重数 incidence 等价于源域足够大且每个 fixed pair 的原像纤维足够小。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PaymentSkeletonDoesNotGiveSourceDomainEntropy",
+      "meaning": "payment count identity 只统计下游需求，不证明 pre-Cauchy emitted primitive summand 域的 absolute entropy。",
+      "proved": true,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationDictionaryDoesNotGiveFiberBound",
+      "meaning": "即使 signed 字典存在，还必须另证 fixed `(u,v)` 下 branch/sign/local-factor 原像数受控。",
+      "proved": true,
+      "remaining": "ExactUVMapFixedPairPolylogFiberBoundLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "BranchBudgetNotEnoughForEntropy",
+      "meaning": "branch key 复杂度预算尚未证明；即便证明 polylog key 数，也只给 fixed-pair 纤维上界的一部分，不给 image entropy。",
+      "proved": true,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveFactorSupportCountermodelImported",
+      "meaning": "旧 factor-support 反模型显示内部 atom 可在一个 moving pair 内展开；不能用 residue-flat 代替源域 entropy。",
+      "proved": true,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "WeightComparabilityImported",
+      "meaning": "单 summand 权重和容量损失已登记，所以本步只处理 counting/entropy，不再处理权重偷换。",
+      "proved": true,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CurrentCorpusIncidenceEntropyBasisProved",
+      "meaning": "当前语料尚未证明源域 entropy 和 fixed-pair polylog fiber bound 的合取。",
+      "proved": false,
+      "remaining": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-fiber-emitter-field-audit-router.json": "2806c0f1a4f31e5b93572ca82ee42239027851acf2b7371bab7de3b60355ebc2",
+    "docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.json": "7036cd75920ab730517c0113314d7f88a9b2489b8bc98eedd9d576d686d39b91",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-strict-exact-uv-map-rank-incidence-router.json": "101917e6a573efb2d6c921b2056ac92120e41f1b10ae2549f394ac0fa3d1b54c",
+    "docs/monograph/prime-matrix-triad-a1-exact-factor-support-router.json": "a004d89a78ecced1ffe6b3d75d8321b73a744fcb816048a7cdd566619f9ef0b1"
+  },
+  "split_contract": "To prove bounded multiplicity for the actual emitter, prove both: (1) the pre-Cauchy emitted source domain has log-power absolute entropy/support, and (2) after branch/sign/local-factor refinement, each fixed exact (u,v) pair has only polylog many primitive preimages.",
+  "status": "strict_actual_emitter_bounded_incidence_reduced_to_source_entropy_and_fixed_pair_fiber_bound_open",
+  "terminal_gap_after_router": "ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger",
+  "terminal_gap_before_router": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+}

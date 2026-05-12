@@ -1,0 +1,123 @@
+{
+  "arithmetic_profile": {
+    "arithmetic_feasible_if_node_slack_floor_available": true,
+    "bt_prime_increment_bound": 4053415.26452651,
+    "interval_count": 646258,
+    "mesh_h": 1000000.0,
+    "prime_power_reserve": 20000.0,
+    "required_node_slack_floor": 3073386.85452651,
+    "target_linear_allowance": 1000028.41,
+    "total_increment_bound": 4073415.26452651,
+    "x_left": 800000000000.0,
+    "x_right": 1446257064291.475
+  },
+  "brun_titchmarsh_short_interval_input_closed": false,
+  "certificate_type": "prime_matrix_strict_short_interval_psi_increment_router",
+  "certified_short_interval_psi_increment_upper_closed": false,
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ShortIntervalPsiIncrementGateActive",
+    "MillionMeshBrunTitchmarshIncrementArithmeticLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "middle_psi_fine_mesh_node_slack_floor_hash_closed": false,
+  "million_mesh_increment_arithmetic_closed": true,
+  "next_direct_attack_target": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "BrunTitchmarshShortIntervalPrimeCountUpperLedger",
+    "PrimePowerShortIntervalCorrectionLedger",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+    "FineMeshAlternativeStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "BrunTitchmarshShortIntervalPrimeCountUpperLedger",
+    "PrimePowerShortIntervalCorrectionLedger",
+    "MiddlePsiFineMeshComputationAndHashLedger",
+    "PrimePowerJumpLocalizationOrUpperEnvelopeLedger",
+    "MiddlePsiUpperDirectedRoundingLedger"
+  ],
+  "plain_conclusion": "短区间增量路线出现了可行的数值骨架：用长度 1e6 的网格，Brun-Titchmarsh 型素数增量上界加 20000 的素数幂预留后，每个节点只需约 3.07e6 的绝对余量即可防止点间逃逸。但这还不是闭合证明；仍需 Brun-Titchmarsh 输入、素数幂修正，以及约 646258 个节点的 psi 余量/hash。",
+  "prime_power_short_interval_correction_closed": false,
+  "replacement_self_contained": {
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger": "BrunTitchmarshShortIntervalPrimeCountUpperLedger AND PrimePowerShortIntervalCorrectionLedger AND MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger": "machine-readable node table on mesh h=1e6 with psi-node slack >= required_node_slack_floor"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审计假设反例链可调用的中段短区间增量，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ShortIntervalPsiIncrementGateActive",
+      "meaning": "中段覆盖证书已把点间逃逸压成短区间 psi 增量上界。",
+      "proved": true,
+      "remaining": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "MillionMeshBrunTitchmarshIncrementArithmeticLedger",
+      "meaning": "取百万级网格时，Brun-Titchmarsh 型素数增量加素数幂预留后，只需每个节点保留约 3.07e6 绝对余量。",
+      "proved": true,
+      "remaining": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "BrunTitchmarshShortIntervalPrimeCountUpperLedger",
+      "meaning": "需要登记或自足证明适用于本区间和网格长度的 Brun-Titchmarsh 短区间素数计数上界。",
+      "proved": false,
+      "remaining": "classical Brun-Titchmarsh input or internal proof"
+    },
+    {
+      "closed": false,
+      "gate": "PrimePowerShortIntervalCorrectionLedger",
+      "meaning": "需要证明百万网格内素数幂贡献小于预留 20000，或给出更紧可复算包络。",
+      "proved": false,
+      "remaining": "PrimePowerJumpLocalizationOrUpperEnvelopeLedger"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+      "meaning": "需要约 646258 个百万网格节点的 psi 值或上界，并证明每个节点有足够目标余量。",
+      "proved": false,
+      "remaining": "MiddlePsiFineMeshComputationAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+      "meaning": "增量算术路径可行，但短区间上界输入、素数幂修正和节点余量/hash 尚未闭合。",
+      "proved": false,
+      "remaining": "BrunTitchmarshShortIntervalPrimeCountUpperLedger AND PrimePowerShortIntervalCorrectionLedger AND MiddlePsiFineMeshNodeSlackFloorAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "FineMeshAlternativeStillOpen",
+      "meaning": "若不采用 Brun-Titchmarsh 增量包，则需要直接给出全段精细网格、跳点定位和外向舍入证书。",
+      "proved": false,
+      "remaining": "MiddlePsiFineMeshComputationAndHashLedger AND PrimePowerJumpLocalizationOrUpperEnvelopeLedger AND MiddlePsiUpperDirectedRoundingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "短区间增量审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "38bb2c90e6de3699c763ecd3ccb604c9007cafba930c7cc75f5aa34a78704d44",
+    "docs/monograph/prime-matrix-strict-middle-finite-interval-psi-cover-router.json": "e88176a9db7287576c411f9001034f51fd43d4106c03a0155ddc36e7b19a4419",
+    "docs/monograph/prime-matrix-strict-middle-psi-upper-source-router.json": "7ec968c1e21c005f757605b5ac767c93fb3925f2a761b4e550d3d86009c9bd98"
+  },
+  "status": "short_interval_increment_arithmetic_feasible_node_slack_and_bt_inputs_open"
+}

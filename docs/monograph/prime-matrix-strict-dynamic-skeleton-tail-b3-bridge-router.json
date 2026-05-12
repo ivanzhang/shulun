@@ -1,0 +1,160 @@
+{
+  "certificate_type": "prime_matrix_strict_dynamic_skeleton_tail_b3_bridge_router",
+  "closed_gates": [
+    "TailLinearSieveGateActive",
+    "DynamicSkeletonTailObjectMatched",
+    "CounterexampleBranchGuardPreserved",
+    "LowerWeightConstructionAndDominanceImported",
+    "TenPercentCapacityAlgebraImported",
+    "B3MainCoefficientConditionalExternalClosed",
+    "B3RemainderTVConditionalExternalClosed",
+    "ExternalOrStandardTailLedgerClosed",
+    "StrictSelfContainedMertensTailStillOpen"
+  ],
+  "constants": {
+    "allowed_normalized_coefficient_error_after_90pct_loss": 0.007814387027544271,
+    "alpha": 0.43,
+    "conservative_allowed_normalized_error_1pct_f": 0.004317176892290826,
+    "conservative_main_fraction": 0.99,
+    "conservative_normalized_coefficient_99pct": 0.42740051233679144,
+    "floor_z_at_tail_start": 141,
+    "floor_z_preserves_s_gt_2": true,
+    "level_D_choice": "D=P",
+    "linear_sieve_f": 0.43171768922908227,
+    "minimum_main_fraction_after_90pct_sawtooth_loss": 0.9818993123920903,
+    "model_main_at_tail_start": 4896.256003716197,
+    "ninety_eight_percent_main_at_tail_start": 4798.330883641873,
+    "ninety_eight_percent_surplus_over_401": 4397.330883641873,
+    "required_normalized_coefficient_after_90pct_loss": 0.423903302201538,
+    "s_in_linear_lower_sieve_range_2_to_3": true,
+    "s_logD_over_logz": 2.3255813953488373,
+    "s_with_floor_z": 2.3264263613505904,
+    "sawtooth_loss_fraction_budget": 0.9,
+    "tail_main_monotone_after_e": true,
+    "tail_start": 100000,
+    "target_ratio_of_model_main": 0.08189931239209021,
+    "target_s": 401,
+    "ten_percent_main_at_tail_start": 489.62560037161967,
+    "ten_percent_main_exceeds_target": true,
+    "ten_percent_surplus_over_401": 88.62560037161967,
+    "v_model": 0.11341337466295243,
+    "z_at_tail_start": 141.25375446227542
+  },
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_or_standard_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hypothetical_chain_only": true,
+  "lower_weight_construction_and_dominance_imported": true,
+  "next_direct_attack_target": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "StrictSelfContainedTailLedgerProved",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "parallel_attack_targets": [
+    "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把动态骨架尾段 lower-sieve 账本接到已有 B3 粗筛体系：对象接口、lower weights 支配性和 10% 容量代数均已对齐。若接受外部显式 Mertens/Dusart 或标准 beta-sieve 输入，尾段骨架下界可条件关闭；严格自足版仍只剩 Mertens/PNT 尾段内联证明，不能声明行/列无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "TailLinearSieveGateActive",
+      "meaning": "前沿下钻后，非循环可攻点正是 P>=100000 的动态骨架尾段 lower-sieve 账本。",
+      "proved": false,
+      "remaining": "LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "DynamicSkeletonTailObjectMatched",
+      "meaning": "尾段对象是区间 1<=k<P 中避开每个 q<=P^0.43 的一个同余类；对任意 formal unit 与正负侧都只改变同余类名，不改变筛公式。",
+      "proved": true,
+      "remaining": "可接入一维 beta-sieve 粗筛余框架。"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在假设早期零行反例链条内证明必要筛余输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LowerWeightConstructionAndDominanceImported",
+      "meaning": "B=3 lower weights 的有限递归、支撑、符号和逐点 lower-bound 支配已由内部组合证明关闭。",
+      "proved": true,
+      "remaining": "不再把 lower weights 构造当活动硬点。"
+    },
+    {
+      "closed": true,
+      "gate": "TenPercentCapacityAlgebraImported",
+      "meaning": "P=100000 处 10% 模型主项仍大于 401，且尾段主量随 P/log P 增长。",
+      "proved": true,
+      "remaining": "需要主系数与 floor/TV 余项账本匹配。"
+    },
+    {
+      "closed": true,
+      "gate": "B3MainCoefficientConditionalExternalClosed",
+      "meaning": "接受外部显式 Mertens/Dusart 尾段时，B=3 主系数 99% 包已在既有证书中闭合。",
+      "proved": false,
+      "remaining": "严格自足版仍需内联 Mertens/PNT 尾段。"
+    },
+    {
+      "closed": true,
+      "gate": "B3RemainderTVConditionalExternalClosed",
+      "meaning": "接受外部显式 Mertens/Dusart 尾段时，长度 P 的 B3 floor/TV 余项由有符号 Stieltjes 边界预算关闭。",
+      "proved": false,
+      "remaining": "严格自足版仍需内联 Mertens/PNT 尾段。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalOrStandardTailLedgerClosed",
+      "meaning": "在允许外部显式 Mertens/Dusart 或标准 beta-sieve 粗数输入时，动态骨架尾段下界可从活动剩余基移除。",
+      "proved": false,
+      "remaining": "ExternalShortIntervalRoughNumberLowerBoundForAlpha043 OR StandardRosserIwaniecBetaSieveTheoremImportAccepted"
+    },
+    {
+      "closed": true,
+      "gate": "StrictSelfContainedMertensTailStillOpen",
+      "meaning": "严格自足版不能把外部 Mertens/Dusart 尾段当已证；需要内联显式 PNT/Mertens 证明。",
+      "proved": false,
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": false,
+      "gate": "StrictSelfContainedTailLedgerProved",
+      "meaning": "当前仓库尚未给出完全自足的 Mertens/PNT 尾段内联证明，因此 tail lower-sieve 账本不能标成严格自足已证。",
+      "proved": false,
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "该桥接只关闭或压缩高段骨架尾段输入；速率终端门、RatePreservation 与 DStructure 仍未全部完成。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-self-contained-mertens-tail-router.json": "8a4a73bd5523f76b8eb01bd2346e9a800afa2017d693aa22eaa7c1d431e32594",
+    "docs/monograph/prime-matrix-b3-signed-delay-multiplier-anchor-router.json": "158728d20ecf491aab9376bc1f29cc0566a9218ffb292b26b5192d8bfb5a12c9",
+    "docs/monograph/prime-matrix-beta-sieve-lower-bound-dominance-router.json": "ba91e91d25b9525c2f27748a46bc49dfdde2dadb5b073ee78d5044f3494d6420",
+    "docs/monograph/prime-matrix-dynamic-skeleton-lower-factorization-router.json": "2c46448ba6bd4969f962984ad095d47199a787ef4906d5d2297ac5c252fefa8d",
+    "docs/monograph/prime-matrix-explicit-rosser-lower-weight-ledger-router.json": "4a79d8c4c1e7a2c0042188c2fdb432e5b868c7397ccc72a2e1c070e1b9045ef3",
+    "docs/monograph/prime-matrix-strict-b3-remainder-total-variation-budget-router.json": "44c09f19992bc439f6ccb7ae0d6ade75364a5e33e49da5cc3c70cc10057afe30",
+    "docs/monograph/prime-matrix-strict-rate-bearing-frontier-drilldown-router.json": "43b99c52c326c0e3fa1ec0c34f72a32532d771d57dd8b366fd002780036ef358"
+  },
+  "status": "dynamic_skeleton_tail_b3_bridge_conditional_external_closed_self_contained_mertens_open",
+  "strict_self_contained_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372 AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "strict_self_contained_replacement": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+  "tail_atom_before_router": "LinearLowerSieveDynamicRoughSkeletonTailPGe100000Ledger",
+  "tail_ledger_external_or_standard_closed": true,
+  "tail_ledger_strict_self_contained_proved": false,
+  "tail_object_interface_closed": true,
+  "ten_percent_capacity_algebra_imported": true
+}

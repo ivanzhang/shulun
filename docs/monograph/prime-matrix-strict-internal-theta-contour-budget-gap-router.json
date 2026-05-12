@@ -1,0 +1,100 @@
+{
+  "anchor_closed_relative_bound": 10602489.106158368,
+  "anchor_ratio_to_target": 384446254989.3024,
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_internal_theta_contour_budget_gap_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "InternalThetaContourGateActive",
+    "FiniteThetaBridgeReadyAtInterface"
+  ],
+  "coarse_contour_threshold_estimate": {
+    "a": 0.0002757469717693447,
+    "log10_threshold_x": 71852.98721922454,
+    "log_threshold_x": 165447.61725807813
+  },
+  "counterexample_assumption_only": true,
+  "current_c65536_contour_beats_dusart_at_anchor": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_theta_bridge_ready_at_interface": true,
+  "internal_theta_contour_self_contained_closed": false,
+  "next_direct_attack_target": "SharpInternalThetaContourStartBudgetLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CurrentC65536ContourBeatsDusartAtAnchor",
+    "RaisedThresholdAlternativeFeasibleOnlyAsHugeFiniteBridge",
+    "InternalThetaContourSelfContainedClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "RaisedAnalyticThresholdFiniteThetaBridgeExtensionLedger",
+    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+  ],
+  "plain_conclusion": "有限 theta 桥已经把 `0<x<=20000` 关上；真正剩余是从 `x=20000` 往右接内部 theta/PNT contour。现有自足零点和预算 `C_Z=65536, C_region=1280` 在接口处的相对包络约为目标 `1/36260` 的 `3.84e+11` 倍，不能闭合。若不改进 contour 常数，只能把有限桥延长到约 `10^71853` 量级后才可能接上，实际不可作为当前闭合路径。",
+  "replacement_self_contained": {
+    "InternalZeroFreeRegionToThetaContourEnvelopeLedger": "SharpInternalThetaContourStartBudgetLedger OR RaisedAnalyticThresholdFiniteThetaBridgeExtensionLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审查高段内部 theta contour 输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "InternalThetaContourGateActive",
+      "meaning": "有限 theta 桥闭合后，新的自足最窄点正是 x>=20000 的内部 theta/PNT contour。",
+      "proved": true,
+      "remaining": "InternalZeroFreeRegionToThetaContourEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteThetaBridgeReadyAtInterface",
+      "meaning": "0<x<=20000 的有限桥与锚点已自足闭合，高段 contour 只需从接口向右接上。",
+      "proved": true,
+      "remaining": "接口值已闭合。"
+    },
+    {
+      "closed": false,
+      "gate": "CurrentC65536ContourBeatsDusartAtAnchor",
+      "meaning": "当前 C=65536、C_region=1280 的粗 contour 在 x=20000 接口处远不能达到 1/36260。",
+      "proved": false,
+      "remaining": "SharpInternalThetaContourStartBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RaisedThresholdAlternativeFeasibleOnlyAsHugeFiniteBridge",
+      "meaning": "若不尖锐化 contour，只能把有限桥延长到天文阈值后再接当前粗衰减。",
+      "proved": false,
+      "remaining": "RaisedAnalyticThresholdFiniteThetaBridgeExtensionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "InternalThetaContourSelfContainedClosed",
+      "meaning": "当前证据压缩出明确缺口，但不关闭内部高段 theta contour。",
+      "proved": false,
+      "remaining": "SharpInternalThetaContourStartBudgetLedger OR RaisedAnalyticThresholdFiniteThetaBridgeExtensionLedger; plus CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "该预算缺口证书不产生最终反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "b3626832fe06d3d8e65ad424f631697a35db14a9c47d8f34af9c8abfaacbdb9c",
+    "docs/monograph/prime-matrix-strict-finite-theta-bridge-self-contained-router.json": "e199bc58d1c05daa01e9a49a70719c34c604b10313cf9ccf6dedd9d3ce7322ce",
+    "docs/monograph/prime-matrix-strict-post-finite-theta-frontier-sync-router.json": "3771b2deb5c5574f2b3c9ac71b67f2464d4ede581fa343db2ceb7eebfcb65617",
+    "docs/monograph/prime-matrix-strict-zero-sum-contour-self-contained-sync-router.json": "4f11042be96ba548afb9fabfbea77592c4ad580508126210520d134b3f41c128"
+  },
+  "status": "internal_theta_contour_budget_gap_reduced_to_sharp_contour_or_huge_finite_bridge",
+  "target_relative_error": 2.7578599007170437e-05
+}

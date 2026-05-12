@@ -1,0 +1,122 @@
+{
+  "attack_order": [
+    "RosserIwaniecWeightedFloorRemainderTenPercentBound",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "certificate_type": "prime_matrix_strict_mainline_self_contained_frontier_router",
+  "closed_gates": [
+    "RKSLogAndTable012RemovedFromActiveBlockers",
+    "TraceAndSignedSourceCyclesEliminated",
+    "MovingAtomReducedToRateBearingPacket",
+    "HighSegmentModelGapCompressedToRoughTailRemainder",
+    "PDECCleanRateGateSplitButNotClosed",
+    "WindowedDLSReducedToKuznetsovNCBLKButLoops"
+  ],
+  "conditional_external_basis": "((AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY OR AcceptExternalFullSKLSExtWithNoProjectionCompatibility) AND (RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance)",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "final_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "moving_atom_rate_packet_interface_synced": true,
+  "next_nonrecursive_side_target": "RosserIwaniecWeightedFloorRemainderTenPercentBound",
+  "next_primary_terminal_target": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate",
+  "next_rate_target": "RatePreservationLedger_FOR_moving_atom_packet",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RatePreservationStillOpen",
+    "DStructureIndependentGateStillOpen",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "pdec_clean_rate_gate_split": true,
+  "plain_conclusion": "主线已回到严格证明边界：RKS-log 与 table_012 不再阻塞；signed-source/branch-trace/ExactUV pair-mass 的循环证明已删除。当前自足闭合还需要 terminal 侧 canonical-lock 或 windowed DLS、Rosser-Iwaniec floor 余项、moving packet 速率保持和 DStructure 独立门。因此行/列命题仍不能标为无条件闭合。",
+  "rks_log_tail_log4_input_closed": true,
+  "rough_tail_remainder_frontier_synced": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "RKSLogAndTable012RemovedFromActiveBlockers",
+      "meaning": "RKS-log/Tail-log4 替代包与 table_012 低段 theta 自足计算输入已关闭，不再是当前主线活动阻断。",
+      "proved": true,
+      "remaining": "仍不能替代 ExactUV/source/terminal 侧终端矛盾。"
+    },
+    {
+      "closed": true,
+      "gate": "TraceAndSignedSourceCyclesEliminated",
+      "meaning": "branch-trace 与 signed-source 路线已识别为自回流，不能作为证明链。",
+      "proved": true,
+      "remaining": "主线必须走 moving atom 终端包、canonical-lock 或 clean DLS。"
+    },
+    {
+      "closed": true,
+      "gate": "MovingAtomReducedToRateBearingPacket",
+      "meaning": "actual noncanonical moving atom 已压成带 log-power 速率的终端 packet；接口同步关闭，但 packet 排斥未证。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": true,
+      "gate": "HighSegmentModelGapCompressedToRoughTailRemainder",
+      "meaning": "高段模型余量已删去调和窗口并压到动态骨架尾段；尾段又压成 Rosser-Iwaniec floor 余项或外部粗数下界。",
+      "proved": false,
+      "remaining": "RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "closed": true,
+      "gate": "PDECCleanRateGateSplitButNotClosed",
+      "meaning": "PDEC/CleanKLS 速率门已拆开：PDEC 需 strict 同集作用域匹配；不匹配则回到 canonical-lock 或 clean DLS。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "closed": true,
+      "gate": "WindowedDLSReducedToKuznetsovNCBLKButLoops",
+      "meaning": "windowed DLS 形式层已压尽；KZ-E 又压到 acyclic NC-BLK/source anti-atom，失败会回到 moving atom/global terminal。",
+      "proved": false,
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate or new nonrecursive source/anti-atom input."
+    },
+    {
+      "closed": false,
+      "gate": "RatePreservationStillOpen",
+      "meaning": "速率型终端排斥还必须保存 moving atom 所需的 log-power 阈值，不能只给定性二分。",
+      "proved": false,
+      "remaining": "RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureIndependentGateStillOpen",
+      "meaning": "DStructure/Tail-log4/finite Rankin 的最终晋级仍需独立验收或严格自足替代验收。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "当前还没有得到排除早期零行反例链的完整终端矛盾。",
+      "proved": false,
+      "remaining": "((AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate) AND RosserIwaniecWeightedFloorRemainderTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance)"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-linear-sieve-tail-remainder-gap-router.json": "e11ab42f2beb3e9fc9b2fe711d5224074bf707323774e7cf47378c5bd74f7250",
+    "docs/monograph/prime-matrix-strict-acyclic-clean-kls-router.json": "49eebc947860fc995d39bc9fcc0e12e580d342eab32421cd8601a28d26cde5a5",
+    "docs/monograph/prime-matrix-strict-acyclic-kuznetsov-dls-atom-router.json": "fb988aea08dcdf541574fa412e2e37254570b8ad688b010a6c0366c03c4e7270",
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.json": "89f695e1ad123d1461acb338ddf0b371ef49a266baf3b2580961148943c5f594",
+    "docs/monograph/prime-matrix-strict-current-global-frontier-after-trace-cycle-router.json": "094823b99842eeb4525d7ea868658fa39ba3d5ac0e7c0163499ab2b70b6f4b5b",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993",
+    "docs/monograph/prime-matrix-strict-moving-atom-terminal-packet-frontier-router.json": "fa8f1b0bc5b769aa5932c04ed4915144912213e46b163a1202ca2a5d5fe86ac7",
+    "docs/monograph/prime-matrix-strict-pdec-clean-kls-terminal-hardpoint-router.json": "9c97ae816a9b8840e743496fabd791c8792c136a547c0990010f31ea0a80f19d",
+    "docs/monograph/prime-matrix-strict-rate-bearing-frontier-drilldown-router.json": "43b99c52c326c0e3fa1ec0c34f72a32532d771d57dd8b366fd002780036ef358",
+    "docs/monograph/prime-matrix-strict-rate-bearing-moving-atom-packet-dprc-sync-router.json": "f5135c99d7f964b3c5b29b81681512083ff8bcaca431ff71fda3f2606fa81b9a",
+    "docs/monograph/prime-matrix-strict-rks-log-rnrs-transfer-closure-router.json": "3e37b25128d2be14677b360f2056475767b774515f485f8aaccf26b052d0ff95",
+    "docs/monograph/prime-matrix-strict-table012-x87-y-ln2-applicability-router.json": "7598482772d9ed421de5bfecb9cac364b9789c5509c362106d7005d3a9f07290"
+  },
+  "status": "strict_mainline_frontier_synced_open_not_unconditionally_closed",
+  "strict_self_contained_basis": "((AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate) AND RosserIwaniecWeightedFloorRemainderTenPercentBound AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance)",
+  "table012_low_theta_input_closed": true,
+  "terminal_reduction_summary": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet => (AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR AcyclicWindowedKloostermanDLSInternalEstimate); AcyclicWindowedKloostermanDLSInternalEstimate => SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks => AcyclicNCBLKActualBlockNonconcentrationOrStrengthenedSourceAntiAtom, whose failure returns to moving-atom/global terminal rather than proving the theorem.",
+  "trace_signed_source_cycles_eliminated": true
+}

@@ -1,0 +1,103 @@
+{
+  "certificate_type": "prime_matrix_strict_windowed_reciprocal_divisor_density_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的低有效模封套内部。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ReciprocalToDivisorCountClosed",
+      "meaning": "窗口倒数和已经转成短窗口除数个数。",
+      "proved": true,
+      "remaining": "ShortWindowDivisorDensityEnvelopeForFrequencyH"
+    },
+    {
+      "closed": true,
+      "gate": "HotDensityCertificateClosed",
+      "meaning": "除数密度若超过阈值，得到热频率除数密度证书。",
+      "proved": false,
+      "remaining": "HotFrequencyDivisorDensityPDECorSAE"
+    },
+    {
+      "closed": true,
+      "gate": "GenericTauClosureRejected",
+      "meaning": "没有实际阈值比较时，不能用普通 tau(h) 估计宣称闭合。",
+      "proved": true,
+      "remaining": "WeightedPositiveEndpointPDECLowerBoundComparison"
+    },
+    {
+      "closed": false,
+      "gate": "WindowedDivisorEnvelopeCurrentCorpusProved",
+      "meaning": "尚未证明所有正式频率的短窗口除数密度低于 PDEC 阈值。",
+      "proved": false,
+      "remaining": "ShortWindowDivisorDensityEnvelopeForFrequencyH AND WeightedPositiveEndpointPDECLowerBoundComparison"
+    },
+    {
+      "closed": false,
+      "gate": "HotDensityExcludedCurrentCorpus",
+      "meaning": "尚未排斥热除数密度的 PDEC/ColumnCRT/SAE 出口。",
+      "proved": false,
+      "remaining": "HotFrequencyDivisorDensityPDECorSAE AND LowQuotientColumnCRTOrPDECRoute"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "generic_tau_closure_rejected": true,
+  "hot_density_certificate_closed": true,
+  "hot_density_excluded": false,
+  "lemmas": [
+    {
+      "formula": "For Y<g<=2Y, sum_{g|h}1/g <= N_h(Y,2Y]/Y.",
+      "meaning": "倒数封套由短窗口除数个数控制。",
+      "name": "reciprocal_to_count",
+      "status": "closed"
+    },
+    {
+      "formula": "If sum_{g|h,Y<g<=2Y}1/g >= eta, then N_h(Y,2Y] >= eta Y.",
+      "meaning": "倒数和过大强制频率 h 在该短窗口内有线性多除数。",
+      "name": "count_threshold",
+      "status": "closed"
+    },
+    {
+      "formula": "LowEff_R(h)>Xi implies some s has N_h(B/s,2B/s] >= (2Xi/(R-1))(B/s).",
+      "meaning": "低有效失败等价于某条小商线上的短窗口除数密度异常。",
+      "name": "multi_s_threshold",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "Many divisors g of h in one short multiplicative window give a hot frequency divisor-density certificate.",
+      "meaning": "该证书持久出现是 PDEC/ColumnCRT，孤立出现是 SAE。",
+      "name": "density_to_structural_defect",
+      "status": "registered_route"
+    },
+    {
+      "formula": "A generic tau(h) bound alone is insufficient unless compared with the actual PDEC lower threshold.",
+      "meaning": "防止用无参数除数函数估计偷关当前缺口。",
+      "name": "no_free_global_divisor_bound",
+      "status": "discipline_closed"
+    }
+  ],
+  "next_direct_attack_target": "ShortWindowDivisorDensityEnvelopeForFrequencyH",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "WeightedPositiveEndpointPDECLowerBoundComparison",
+    "HotFrequencyDivisorDensityPDECorSAE",
+    "LowQuotientColumnCRTOrPDECRoute"
+  ],
+  "plain_conclusion": "短窗口倒数除数封套进一步压成除数密度阈值。对 Y<g<=2Y，倒数和至多为 N_h(Y,2Y]/Y；若它超过 eta，则 h 在这个短乘法窗口中至少有 eta Y 个除数。因而低有效模若无法由倒数封套吸收，就物化为热频率除数密度证书。这个证书必须进入 PDEC/ColumnCRT 或 SAE，不能作为普通 tau(h) 粗估计自由处理。",
+  "reciprocal_to_divisor_count_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/h5-4-ospc-weighted-crtdefect-absorption.md": "0ccaead52422c7821058bafe624021c3bf2c60d97dea57aff44155c2eca0520d",
+    "docs/monograph/prime-matrix-strict-low-effective-mod-endpoint-pdec-columncrt-router.md": "df64e106b2cc2722b60bb5587d0211c80802598f776b01fd1195c3c17b724647",
+    "docs/monograph/prime-matrix-strict-weighted-reciprocal-common-divisor-envelope-router.md": "682abcd2a519f6b9fa7a6fb72e6efacc07b84c79be02fd469b008b9b96cd4e51"
+  },
+  "status": "windowed_reciprocal_divisor_envelope_reduced_to_short_window_density_pdec_sae_open",
+  "windowed_divisor_envelope_proved": false
+}

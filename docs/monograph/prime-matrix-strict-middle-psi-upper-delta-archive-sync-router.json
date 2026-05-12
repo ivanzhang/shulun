@@ -1,0 +1,121 @@
+{
+  "archive_summary": {
+    "error_count": 0,
+    "expected_node_count": 646258,
+    "min_slack": "22569065.07008830",
+    "node_count": 646258,
+    "path": "/opt/code/shulun/data/middle-psi-fine-mesh-node-table.jsonl",
+    "required_node_slack_floor": "3073386.85452651",
+    "sha256": "41742cf17b4d62730bb486bb3e368788b03a729d4125e88fa6b06d04af69ad02"
+  },
+  "certificate_type": "prime_matrix_strict_middle_psi_upper_delta_archive_sync_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "full_node_archive_completeness_and_hash_closed": true,
+  "machine_readable_node_archive_closed": true,
+  "middle_finite_interval_psi_cover_closed": true,
+  "middle_psi_fine_mesh_node_slack_floor_hash_closed": true,
+  "middle_psi_upper_100002841_source_closed": true,
+  "next_direct_attack_target": "MachineReadableDusartTable63EpsilonPsiLedger",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "ThetaLessThanIdentityTable64To8e11SourceLedger",
+    "VerifiedZeroZeroFreeInputsToTableFormulaBindingLedger",
+    "PsiEpsilonIntervalPropagationAndMonotonicityLedger",
+    "ReproduciblePsiEpsilonTableComputationHashLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "中段 `psi(x)<1.00002841x` 的来源/覆盖账本已由最新 delta-aware 完整归档同步关闭：完整 646258 节点表存在，hash 与证书一致，节点数、连续性和余量审计通过。这回收了旧 machine-readable archive 证书中的开放状态。但这只关闭中段上界分支；整个 Schoenfeld/Dusart epsilon 表算法仍需 Table 6.3、Table 6.4、零点输入绑定、区间传播与可复现 hash。",
+  "psi_epsilon_table_algorithm_closed": false,
+  "replacement_after_sync": {
+    "MiddlePsiUpper100002841SourceLedger": "closed by data/middle-psi-fine-mesh-node-table.jsonl delta-aware archive",
+    "PsiEpsilonTableComputationAlgorithmLedger": "MachineReadableDusartTable63EpsilonPsiLedger AND ThetaLessThanIdentityTable64To8e11SourceLedger AND VerifiedZeroZeroFreeInputsToTableFormulaBindingLedger AND PsiEpsilonIntervalPropagationAndMonotonicityLedger AND ReproduciblePsiEpsilonTableComputationHashLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "MiddlePsiUpperTargetActive",
+      "meaning": "psi epsilon 表算法把当前最窄点设为中段 1.00002841 的来源/覆盖账本。",
+      "proved": true,
+      "remaining": "MiddlePsiUpper100002841SourceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "UpstreamReductionChainRecognized",
+      "meaning": "中段上界已沿 source -> finite cover -> fine mesh -> node data -> machine archive 链条传递。",
+      "proved": true,
+      "remaining": "FullDeltaAwarePsiNodeArchiveRunAndHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "OldMachineArchiveCertificatesStaleOpen",
+      "meaning": "旧 machine/full-node 证书记录的是完整归档生成前状态，需要由 delta-aware 证书覆盖同步。",
+      "proved": true,
+      "remaining": "use newest delta-aware archive certificate"
+    },
+    {
+      "closed": true,
+      "gate": "DeltaAwareFullArchiveClosed",
+      "meaning": "delta-aware 分段增量算法已生成完整 646258 节点归档，并通过 hash/连续性/余量审计。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "ArchiveHashRegistered",
+      "meaning": "完整节点表文件存在，且证书 hash 与实际文件 hash 一致。",
+      "proved": true,
+      "remaining": "41742cf17b4d62730bb486bb3e368788b03a729d4125e88fa6b06d04af69ad02"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleFineMeshNodeSlackClosed",
+      "meaning": "节点余量下界已由完整归档关闭，因此中段 fine mesh/hash 守门关闭。",
+      "proved": true,
+      "remaining": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleFiniteIntervalPsiCoverClosed",
+      "meaning": "细网格覆盖路线关闭后，8e11 到 e^28 的中段 psi 覆盖闭合。",
+      "proved": true,
+      "remaining": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "MiddlePsiUpper100002841SourceClosed",
+      "meaning": "中段 psi(x)<1.00002841x 的来源/覆盖账本由 delta-aware 完整归档给出。",
+      "proved": true,
+      "remaining": "MiddlePsiUpper100002841SourceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PsiEpsilonTableAlgorithmStillOpen",
+      "meaning": "关闭中段上界不等于关闭整个 epsilon 表算法；Table 6.3、Table 6.4、零点输入绑定、传播与 hash 仍需合取。",
+      "proved": false,
+      "remaining": "MachineReadableDusartTable63EpsilonPsiLedger AND ThetaLessThanIdentityTable64To8e11SourceLedger AND VerifiedZeroZeroFreeInputsToTableFormulaBindingLedger AND PsiEpsilonIntervalPropagationAndMonotonicityLedger AND ReproduciblePsiEpsilonTableComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "中段 psi 归档不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/middle-psi-fine-mesh-node-table.jsonl": "41742cf17b4d62730bb486bb3e368788b03a729d4125e88fa6b06d04af69ad02",
+    "docs/monograph/prime-matrix-strict-deleglise-rivat-psi-node-data-router.json": "e769c94f1d695ebdafaad982a5e79bcd0f2a7c56f29ae91f4dea7311d6ffd70d",
+    "docs/monograph/prime-matrix-strict-delta-aware-psi-range-algorithm-router.json": "f29bb883601971d80b69f7c59dec7d6a36803c63f6d5268ced4565ce7a01ac4d",
+    "docs/monograph/prime-matrix-strict-full-node-archive-feasibility-router.json": "61f64aa315e5799b3c60addd8c7cbb2e5036aa7e0dec63535bd9945c722d7e30",
+    "docs/monograph/prime-matrix-strict-machine-readable-node-archive-router.json": "18067505a7a2f8116be5e73177bae1189375db3fbde2400b25fecacdd376a20c",
+    "docs/monograph/prime-matrix-strict-middle-finite-interval-psi-cover-router.json": "e88176a9db7287576c411f9001034f51fd43d4106c03a0155ddc36e7b19a4419",
+    "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-slack-router.json": "81d71543d55500a13c1bf982774ebcf6237c2f89d5ce590df1261bde43bf2e0c",
+    "docs/monograph/prime-matrix-strict-middle-psi-upper-source-router.json": "7ec968c1e21c005f757605b5ac767c93fb3925f2a761b4e550d3d86009c9bd98",
+    "docs/monograph/prime-matrix-strict-psi-epsilon-table-algorithm-router.json": "ec4bf5ae2aee8b7f878df4c58bc69cb6f711ed2fa2c5bf7fcc3e463a4e735b5f"
+  },
+  "status": "middle_psi_upper_100002841_closed_by_delta_aware_full_archive_table_algorithm_still_open"
+}

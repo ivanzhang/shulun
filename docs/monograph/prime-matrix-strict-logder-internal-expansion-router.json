@@ -1,0 +1,119 @@
+{
+  "certificate_type": "prime_matrix_strict_logder_internal_expansion_router",
+  "classical_zeta_logder_internal_expansion_closed": true,
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "LogDerivativeInternalAtomActive",
+    "HadamardLogDerivativeAvailable",
+    "GammaDigammaUniformAvailable",
+    "RangeAndRemainderConventionAvailable",
+    "ClassicalLogDerivativeExpansionClosed",
+    "SelfContainedCN16AlreadySyncedForCounting"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "local_zero_distance_self_contained_proved": false,
+  "next_direct_attack_target": "Psi0HorizontalLocalZeroDistanceSumConstantLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "PointwiseHorizontalBoundStillOpen",
+    "UnsmoothedPerronStrictSelfContainedClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "`ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger` 已闭合为内部结构展开：Hadamard 对数导数给零点主部，Gamma/digamma 给 O(log T) 结构项，Hadamard 余项账本处理非目标零点和范围 convention。该闭合只给展开，不直接给 Perron 水平边点态预算；下一步仍需 `Psi0HorizontalLocalZeroDistanceSumConstantLedger`。",
+  "remaining_after_logder_expansion": [
+    "Psi0HorizontalLocalZeroDistanceSumConstantLedger",
+    "Psi0HorizontalWeightedIntegralBudgetLedger"
+  ],
+  "replacement_self_contained": {
+    "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger": "ClassicalZetaLogDerivativeAwayFromZerosInternalExpansionClosedByHadamardGammaRemainder"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只把水平边解析结构内部化，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LogDerivativeInternalAtomActive",
+      "meaning": "RVM/CN16 同步后，strict Perron 的下一原子正是内部 zeta log-derivative 展开。",
+      "proved": true,
+      "remaining": "ClassicalZetaLogDerivativeAwayFromZerosInternalProofLedger"
+    },
+    {
+      "closed": true,
+      "gate": "HadamardLogDerivativeAvailable",
+      "meaning": "xi 的一阶 Hadamard 乘积与 xi'/xi 部分分式已闭合，可转回 zeta'/zeta。",
+      "proved": true,
+      "remaining": "HadamardFactorizationLogDerivativeClosed"
+    },
+    {
+      "closed": true,
+      "gate": "GammaDigammaUniformAvailable",
+      "meaning": "Gamma/digamma/Stirling 项已有 C_gamma=24 的内部统一界。",
+      "proved": true,
+      "remaining": "GammaDigammaStirlingUniformNumericalClosedCgamma24"
+    },
+    {
+      "closed": true,
+      "gate": "RangeAndRemainderConventionAvailable",
+      "meaning": "target/local/far 分割、1/rho 项和非目标零点正预算已按 Hadamard 余项账本处理。",
+      "proved": true,
+      "remaining": "HadamardPartialFractionRemainderNumericalClosedZeroPositiveBudget"
+    },
+    {
+      "closed": true,
+      "gate": "ClassicalLogDerivativeExpansionClosed",
+      "meaning": "在避开零点的水平边上，-zeta'/zeta 可写成局部零点主部加 O(log(T+3)) 结构余项。",
+      "proved": true,
+      "remaining": "ClassicalZetaLogDerivativeAwayFromZerosInternalExpansionClosedByHadamardGammaRemainder"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedCN16AlreadySyncedForCounting",
+      "meaning": "局部零点数量的 C_N=16 已由上一同步证书完成；它将在下一局部倒距离账本中使用。",
+      "proved": true,
+      "remaining": "RVMToCN16LocalInequalitySelfContainedClosedWithRawArgCS8CommonEnvelope"
+    },
+    {
+      "closed": false,
+      "gate": "PointwiseHorizontalBoundStillOpen",
+      "meaning": "结构展开本身不等于 Perron 水平边点态常数；仍需把局部零点倒距离和显式压到 C=288。",
+      "proved": false,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumConstantLedger"
+    },
+    {
+      "closed": false,
+      "gate": "UnsmoothedPerronStrictSelfContainedClosed",
+      "meaning": "本步不关闭非平滑 Perron 自足包；局部倒距离和加权预算仍开放。",
+      "proved": false,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只是解析结构输入闭合，不产生全局反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "Psi0HorizontalWeightedIntegralBudgetLedger",
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "da21654814b78e117b1dc4cd2ba81da8404778f98c41d790ac0b7c09636b2a36",
+    "docs/monograph/prime-matrix-b3-gamma-digamma-clog-router.json": "9993cbd7a1927b88ced7117ea2e173bd8254a607bcf6e484082bbdeb339b8ba3",
+    "docs/monograph/prime-matrix-b3-hadamard-factorization-router.json": "3a78eec44d5ea047d64633e68024afa29cc90ca7f3234a6c173746edd4dab09f",
+    "docs/monograph/prime-matrix-b3-hadamard-range-kernel-convention-router.json": "239206f0131e6d41f443493e82d8cc9c1482632fa5fb96803d0488dd9f017917",
+    "docs/monograph/prime-matrix-b3-hadamard-remainder-final-closure-router.json": "333f702b1400b9aba3a043c528a49f0e05b70ef35475eb20aabddb7b16c2b7f2",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-logder-bound-router.json": "4b47bc2a61ca8c13d3930e3a262a2fc607fe859b1cea89e5b55f6c44a2872b05",
+    "docs/monograph/prime-matrix-strict-rvm-cn16-self-contained-sync-router.json": "23fc0bd3b8e3fbbf86910637ba6c48701e55bf34bc85372b3c7fd78f7dac68a5"
+  },
+  "status": "classical_zeta_logder_internal_expansion_closed_local_distance_open",
+  "unsmoothed_perron_strict_self_contained_closed": false,
+  "weighted_budget_self_contained_proved": false
+}

@@ -1,0 +1,102 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_emitter_source_domain_entropy_proved": false,
+  "certificate_type": "prime_matrix_strict_fixed_pair_fiber_bound_router",
+  "counterexample_assumption_only": true,
+  "deterministic_key_fiber_inequality_closed": true,
+  "deterministic_lemma": "Let D be the actual primitive pre-Cauchy emitter domain, pi:D->Omega_exact the exact `(u,v)` map, and kappa:D->K a complete primitive emitter key. If |K|<=L^C and sup_{(u,v),k}|{d in D: pi(d)=(u,v), kappa(d)=k}|<=C0, then sup_{(u,v)}|pi^{-1}(u,v)|<=C0*L^C=log^O(1).",
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "fixed_key_exact_uv_local_multiplicity_o1_proved": false,
+  "fixed_pair_fiber_bound_router_closed": true,
+  "hard_law": "fixed-pair 纤维上界不是 payment 计数，也不是 CRT 位置刚性。它必须在 Cauchy/dispersion 前的 actual primitive emitter 上证明：先有完整 key 的 polylog 分区，再有固定 key 下 exact-UV map 的 O(1) 局部重数。缺任一项都会允许大量 preimage 坍缩到同一个 `(u,v)`。",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`ExactUVMapFixedPairPolylogFiberBoundLedger` 被压成两个真正原子：`RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger` 与 `FixedKeyExactUVLocalMultiplicityO1Ledger`。其中 key-to-fiber 的形式不等式已闭合，但 actual complete key 分区和固定 key 局部 O(1) 原像证明尚未给出；因此行/列命题仍未无条件闭合。",
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "FixedPairFiberTargetActive",
+      "meaning": "上一层已把 bounded incidence 拆成源域熵账本与 fixed-pair 纤维上界账本。",
+      "proved": false,
+      "remaining": "ExactUVMapFixedPairPolylogFiberBoundLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DeterministicKeyFiberInequalityClosed",
+      "meaning": "若 primitive emitter 被完整 key 分区，key 数为 log^C，且每个固定 `(u,v,key)` 最多 O(1) 个源原像，则每个固定 `(u,v)` 纤维至多 log^O(1)。",
+      "proved": true,
+      "remaining": "这是形式不等式，不提供 actual key 表或局部 O(1) 原像证明。"
+    },
+    {
+      "closed": true,
+      "gate": "CompleteKeyPartitionIsNecessary",
+      "meaning": "branch key 必须是 complete key：包含 formal unit、branch path、sign/local factor、dyadic/truncation 与 exact `(u,v)` map 口径。",
+      "proved": true,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "PaymentSkeletonNotACompleteKeyPartition",
+      "meaning": "payment skeleton 只给 completion-hole/first-cover 计数，不给 pre-Cauchy primitive summand 的 complete key。",
+      "proved": true,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationDictionaryNotAFiberBound",
+      "meaning": "逐纤维字典即使形式可写，也可在同一 `(u,v)` 中塞入任意多 summand；还需要 complete key 与固定 key 局部重数。",
+      "proved": true,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "ReverseProvenanceNoGoImported",
+      "meaning": "从 Gamma 或有限投影反推 primitive preimage 不唯一，不能由下游图推出 fixed-pair 纤维 polylog。",
+      "proved": true,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedPhiReductionIdentifiesSameEmitter",
+      "meaning": "actual signed/Phi 预算已被压到同一个 pre-pushforward emitter，说明本步没有改换证明对象。",
+      "proved": true,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "BranchBudgetCurrentCorpusProved",
+      "meaning": "当前材料尚未证明 actual noncanonical primitive emitter 的 complete branch/key 数为 log^O(1)。",
+      "proved": false,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "FixedKeyLocalMultiplicityCurrentCorpusProved",
+      "meaning": "当前材料没有 actual emitter 公式/Jacobian/三角恢复律来证明固定 complete key 与 fixed `(u,v)` 下只有 O(1) 原像。",
+      "proved": false,
+      "remaining": "FixedKeyExactUVLocalMultiplicityO1Ledger。"
+    },
+    {
+      "closed": false,
+      "gate": "CurrentCorpusFixedPairFiberBoundProved",
+      "meaning": "complete key 分区与固定 key 局部 O(1) 重数都未证明，所以 fixed-pair polylog fiber bound 仍开放。",
+      "proved": false,
+      "remaining": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-signed-phi-budget-emitter-reduction-router.json": "95771e9095c5c2cbd66c2afbd5a1d4de4a0ea5562cdf5504d950b2246696c1e8",
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-fiber-emitter-field-audit-router.json": "2806c0f1a4f31e5b93572ca82ee42239027851acf2b7371bab7de3b60355ebc2",
+    "docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.json": "7036cd75920ab730517c0113314d7f88a9b2489b8bc98eedd9d576d686d39b91",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d"
+  },
+  "status": "strict_fixed_pair_fiber_bound_reduced_to_complete_key_partition_and_fixed_key_multiplicity_open",
+  "terminal_gap_after_router": "RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger",
+  "terminal_gap_before_router": "ExactUVMapFixedPairPolylogFiberBoundLedger"
+}

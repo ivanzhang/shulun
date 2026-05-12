@@ -1,0 +1,112 @@
+{
+  "certificate_type": "prime_matrix_strict_scaled_terminal_core_divisor_window_router",
+  "cold_core_budget_insertion_closed": true,
+  "cold_core_threshold_budget_gap_proved": false,
+  "cold_hot_split_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的单历史重数上界分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ScaledCoreFrequencyAndWindowClosed",
+      "meaning": "终端核心窗口已写成 `H_W` 上的除数窗口。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "ColdHotSplitClosed",
+      "meaning": "核心窗口计数被拆成冷阈值或热异常。",
+      "proved": true,
+      "remaining": "ColdCoreThresholdBudgetGapComparison OR TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "closed": true,
+      "gate": "ColdCoreBudgetInsertionClosed",
+      "meaning": "冷核心阈值可替换 `Cap(W)` 插入 SAE 预算。",
+      "proved": true,
+      "remaining": "ColdCoreThresholdBudgetGapComparison"
+    },
+    {
+      "closed": true,
+      "gate": "HotCoreRouteRegistered",
+      "meaning": "热核心窗口进入 LCM/PDEC/SAE，但尚未排斥。",
+      "proved": false,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE AND TerminalCoreLCMHeightContradictionOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "ScaledTerminalCoreDivisorWindowCountCapProved",
+      "meaning": "尚未证明所有核心窗口均冷，也未排斥热核心回流。",
+      "proved": false,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE AND ColdCoreThresholdBudgetGapComparison"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hot_core_route_registered": true,
+  "lemmas": [
+    {
+      "formula": "H_W=h_0/D(W), and every terminal core counted for W divides H_W.",
+      "meaning": "终端核心除数窗口有明确缩频频率。",
+      "name": "scaled_core_frequency",
+      "status": "closed"
+    },
+    {
+      "formula": "Cores lie in I_W=(Y_W^-,Y_W^+] with endpoints inherited from the product window ledger.",
+      "meaning": "终端核心落在明确窗口内。",
+      "name": "terminal_core_window",
+      "status": "closed"
+    },
+    {
+      "formula": "N_{H_W}(I_W)<=C_core(W) or N_{H_W}(I_W)>C_core(W).",
+      "meaning": "单历史容量被拆成冷核心预算或热核心异常。",
+      "name": "cold_hot_split",
+      "status": "closed_dichotomy"
+    },
+    {
+      "formula": "In the cold case, Cap(W)<=C_core(W) is valid in the SAE budget.",
+      "meaning": "冷核心阈值可直接进入供给上界。",
+      "name": "cold_core_insert",
+      "status": "closed_conditional"
+    },
+    {
+      "formula": "Hot terminal core windows route to LCM-height contradiction, fixed-history PDEC, or SAE.",
+      "meaning": "热核心窗口不是新黑箱，回流到已有矛盾场。",
+      "name": "hot_core_to_lcm_or_pdec",
+      "status": "registered_route_open"
+    },
+    {
+      "formula": "After cold insertion, prove L_forced > sum_W (T_PDEC(W)-1) C_core(W).",
+      "meaning": "剩余供需比较转为冷核心阈值预算缺口。",
+      "name": "budget_gap_after_cold_insert",
+      "status": "open_input"
+    }
+  ],
+  "next_direct_attack_target": "ColdCoreThresholdBudgetGapComparison",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+    "TerminalCoreLCMHeightContradictionOrPDEC"
+  ],
+  "plain_conclusion": "缩频终端核心除数窗口已被拆成冷预算和热异常两类。对历史词 W，令 H_W=h_0/D(W)，终端核心必须整除 H_W 并落在窗口 I_W。若 N_{H_W}(I_W)<=C_core(W)，则 Cap(W)<=C_core(W) 可直接插入 SAE 供给预算；若超过该阈值，则它是 TerminalCoreHotDivisorWindow，必须回流到 LCM 高度矛盾、固定历史 PDEC 或 SAE，而不能作为自由容量保留。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "scaled_core_frequency_closed": true,
+  "scaled_terminal_core_divisor_window_count_cap_proved": false,
+  "secondary_attack_target": "TerminalCoreHotDivisorWindowPDECorSAE",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md": "faca65e1e870747b921a9a7641733c24a00ad1e5126d82d3f89a65f38098aa9d",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.md": "2e9b9276de650d14f1b6fd67fd224ca60caf70e644f5dba1fb2eb2a290cfa392",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.md": "852406501a752cc240c739530ade68cc4f10448c5da5660c0b3cccb32a402c89"
+  },
+  "status": "scaled_terminal_core_divisor_window_split_to_cold_budget_or_hot_core_open",
+  "terminal_core_hot_divisor_window_excluded": false,
+  "terminal_core_window_closed": true
+}

@@ -1,0 +1,111 @@
+{
+  "certificate_type": "prime_matrix_strict_high_tail_b28_relaxed_kernel_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "HighTailB28GateActive",
+    "PsiHighTailB28OneSidedTargetRelativeLedger",
+    "SchoenfeldRHShapeWouldFitB28",
+    "AllowedSqrtKernelConstantComputed"
+  ],
+  "counterexample_assumption_only": true,
+  "diagnostics": {
+    "allowed_sqrt_kernel_c_at_b28": 0.04230375168021126,
+    "current_c1280_c65536_relative_at_b28": 61825032.827536814,
+    "current_template_gap_factor_vs_relaxed_target": 2241775690326.485,
+    "dusart_eps_high": 2.224e-05,
+    "dusart_eps_margin_to_target": 5.338599007170436e-06,
+    "schoenfeld_rh_c": 0.039788735772973836,
+    "schoenfeld_rh_shape_margin": 1.6395854374022601e-06,
+    "schoenfeld_rh_shape_relative_at_b28": 2.5939013569768176e-05,
+    "sqrt_kernel_c_slack_ratio": 1.0632092439827086,
+    "target_relative_1_over_36260": 2.7578599007170437e-05,
+    "x_high": 1446257064291.475
+  },
+  "direct_internal_dusart_theta_pnt_envelope_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "high_tail_b28_relaxed_arithmetic_closed": true,
+  "high_tail_b28_self_contained_closed": false,
+  "next_direct_attack_target": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CurrentC1280C65536TemplateStillFailsRelaxedHighTail",
+    "PsiEpsilonHighTailB28SelfContainedLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "SchoenfeldDusartPsiEpsilonTableInternalizationLedger"
+  ],
+  "plain_conclusion": "b=28 高尾不必完整复现 Dusart 表值 0.00002224；对行命题当前拼接而言，只需证明 `psi(x)-x<x/36260` for `x>=e^28`。这等价于在 RH 型平方根核 `C sqrt(x) log^2 x` 中取得 `C<=0.042304`；Schoenfeld 的 `1/(8pi)` 形状会有约 6.3% 常数余量。但这是 verified-zero 平方根核输入，当前 C=1280,C_Z=65536 粗 contour 仍远远不足。",
+  "psi_epsilon_table_self_contained_closed": false,
+  "replacement_self_contained": {
+    "PsiEpsilonHighTailB28SelfContainedLedger": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger OR SchoenfeldDusartPsiEpsilonTableInternalizationLedger",
+    "PsiHighTailB28OneSidedTargetRelativeLedger": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只放松高尾解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "HighTailB28GateActive",
+      "meaning": "上一证书把下一最窄点设为 b=28 高尾 psi 上界。",
+      "proved": true,
+      "remaining": "PsiEpsilonHighTailB28SelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PsiHighTailB28OneSidedTargetRelativeLedger",
+      "meaning": "高尾为了接 Dusart P5.1 只需 psi(x)-x<x/36260；完整 0.00002224 表值是更强输入。",
+      "proved": true,
+      "remaining": "PsiEpsilonHighTailB28SelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SchoenfeldRHShapeWouldFitB28",
+      "meaning": "若能无条件内化 verified-zero 平方根核常数 1/(8pi)，则 b=28 高尾有正余量。",
+      "proved": true,
+      "remaining": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "AllowedSqrtKernelConstantComputed",
+      "meaning": "b=28 处允许平方根核常数 C<=0.042304；Schoenfeld RH 型常数约 0.039789，余量约 6.3%。",
+      "proved": true,
+      "remaining": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "CurrentC1280C65536TemplateStillFailsRelaxedHighTail",
+      "meaning": "即使用放松目标，当前粗 contour 在 e^28 处仍比目标大约 2.24e12 倍。",
+      "proved": false,
+      "remaining": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "PsiEpsilonHighTailB28SelfContainedLedger",
+      "meaning": "高尾仍未自足闭合；最窄替代是证明 verified-zero 平方根核，或完整内化 Schoenfeld/Dusart psi 表。",
+      "proved": false,
+      "remaining": "VerifiedZeroSqrtPsiKernelCLe0p042304FromB28Ledger OR SchoenfeldDusartPsiEpsilonTableInternalizationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "高尾放松不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "schoenfeld_rh_shape_would_fit_b28": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "10308aca50d446846ccce96e76eed972093d257c0ffbd01b92b6815b573a2244",
+    "docs/monograph/prime-matrix-strict-psi-epsilon-table-internalization-router.json": "a38651091c9b02e40a19cf7f5bb9729cc8a99f3da29df12bff8402b383596972"
+  },
+  "status": "high_tail_b28_reduced_from_full_epsilon_table_to_verified_zero_sqrt_kernel"
+}

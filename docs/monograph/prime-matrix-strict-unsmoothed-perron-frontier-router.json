@@ -1,0 +1,116 @@
+{
+  "certificate_type": "prime_matrix_strict_unsmoothed_perron_frontier_router",
+  "status": "unsmoothed_perron_frontier_compressed_to_zeta_logder_contour_shift_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "internal_psi0_exact_formula_closed": true,
+  "right_edge_perron_kernel_closed": true,
+  "height_selection_closed": true,
+  "zero_boundary_avoidance_closed": true,
+  "unsmoothed_perron_frontier_compressed": true,
+  "zeta_logder_contour_shift_proved": false,
+  "horizontal_logder_bound_proved": false,
+  "local_zero_distance_sum_proved": false,
+  "horizontal_weighted_integral_budget_proved": false,
+  "backlund_indentation_internal_proved": false,
+  "good_height_tstar_contract_accepted": false,
+  "unsmoothed_perron_formula_proved": false,
+  "self_contained_mertens_tail_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "Psi0HorizontalLocalZeroDistanceSumConstantLedger",
+  "parallel_attack_targets": [
+    "Psi0HorizontalWeightedIntegralBudgetLedger",
+    "ClassicalBacklundZeroIndentationCostInternalProofLedger",
+    "ExplicitWholeStripZetaLogDerivativeAwayFromZerosExternalAccepted",
+    "Psi0GoodHeightTStarAveragingContourShiftLedger"
+  ],
+  "frontier_items": [
+    {
+      "name": "internal_psi0_exact_formula",
+      "status": "closed",
+      "meaning": "psi_0(x)=x-sum_rho x^rho/rho-log(2pi)-1/2 log(1-x^-2) 的无截断公式已闭合。",
+      "remaining": "有限 T 截断余项。"
+    },
+    {
+      "name": "right_edge_perron_kernel",
+      "status": "closed",
+      "meaning": "右边 Perron 核近似常数已闭合为 C_right=128，只支付核误差。",
+      "remaining": "Psi0ZetaLogDerivativeContourShiftBoundLedger"
+    },
+    {
+      "name": "contour_shift",
+      "status": "open",
+      "meaning": "右边竖线积分移线到零点留数时，水平边 log-derivative 与近零缩进成本仍开放。",
+      "remaining": "Psi0HorizontalZetaLogDerivativeBoundAwayFromZerosLedger AND (ClassicalBacklundZeroIndentationCostInternalProofLedger OR Psi0GoodHeightTStarAveragingContourShiftLedger)"
+    },
+    {
+      "name": "horizontal_logder",
+      "status": "open_structural_reduction",
+      "meaning": "水平边 zeta'/zeta 已压成局部零点距离和、加权积分预算，或 whole-strip 外部显式匹配。",
+      "remaining": "self: Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger; external: ExplicitWholeStripZetaLogDerivativeAwayFromZerosExternalAccepted AND Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "name": "fixed_t_vs_good_height",
+      "status": "choice_open",
+      "meaning": "固定 T 需要 Backlund/缩进成本；若改用好高度 T*，必须更新当前 fixed-T 合同。",
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofLedger OR Psi0GoodHeightTStarAveragingContourShiftLedger"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "CounterexampleBranchGuardPreserved",
+      "closed": true,
+      "proved": true,
+      "meaning": "该前沿只服务自足 Mertens/PNT 输入，不使用真实零行缺席。",
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "gate": "Psi0ExactFormulaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "内部 psi_0 精确公式已闭合，不再是当前硬点。",
+      "remaining": "Finite-T truncation constants."
+    },
+    {
+      "gate": "RightEdgeKernelClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Perron 右边核近似常数已闭合为 C_right=128。",
+      "remaining": "Psi0ZetaLogDerivativeContourShiftBoundLedger"
+    },
+    {
+      "gate": "ContourShiftOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "zeta 对数导数轮廓移线尚未闭合。",
+      "remaining": "Psi0HorizontalZetaLogDerivativeBoundAwayFromZerosLedger AND (ClassicalBacklundZeroIndentationCostInternalProofLedger OR Psi0GoodHeightTStarAveragingContourShiftLedger)"
+    },
+    {
+      "gate": "HorizontalLogderOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "水平边 away-from-zero 上界需要内部局部零点距离和/加权积分，或外部 whole-strip 严格匹配。",
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumConstantLedger AND Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "gate": "UnsmoothedPerronFrontierClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "非平滑 Perron 子账本尚未闭合。",
+      "remaining": "UnsmoothedChebyshevPerronExplicitFormulaConstantLedger"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-unsmoothed-perron-formula-router.md": "d89f7607928c6fc1a95a4a0bfe35ba6242bc0fec4d17227d4753a47450105079",
+    "docs/monograph/prime-matrix-b3-internal-psi0-perron-formula-router.md": "c1f1c6db03ff27556b9cf524ae1cfaf17d7ee2d861963ff98a78cc6412c7b8b9",
+    "docs/monograph/prime-matrix-b3-perron-kernel-truncation-router.md": "6f4d2a6701aa0679623bb1e211891d4e61a5105ae894230d0c27c0e736abb530",
+    "docs/monograph/prime-matrix-b3-right-edge-perron-kernel-router.md": "0906b7fb03f5e80c1c82335471feea27623dcf7b3c9032013d2e5d21db1b13cf",
+    "docs/monograph/prime-matrix-b3-zeta-logder-contour-shift-router.md": "d55d038eab0e65688ab6943844376437a1ed85cada093b29df590ad646276496",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-logder-bound-router.md": "45172df8446a1a6ed211e691bc22640177f109098dc745383fbdb6f10ceea100",
+    "docs/monograph/prime-matrix-strict-self-contained-mertens-tail-frontier-router.md": "5d2b837a43409d6f6e3af40ad5fd3e8607655968419760f8636395e152008059"
+  },
+  "plain_conclusion": "非平滑 Perron 子账本已继续压缩：内部 psi_0 精确公式与右边 Perron 核近似常数已经闭合，当前真实硬点是 zeta 对数导数轮廓移线。该硬点又被压成水平边 away-from-zero 上界、局部零点距离和、加权积分预算，以及固定 T 缩进或好高度 T* 的合同选择。"
+}

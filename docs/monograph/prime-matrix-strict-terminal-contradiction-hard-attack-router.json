@@ -1,0 +1,132 @@
+{
+  "alpha_prefix_rough_load_lower_bound_proved": false,
+  "alpha_prefix_tv_or_pdec_defect_excluded": false,
+  "capacity_failure_to_defect_dichotomy_closed": true,
+  "capacity_surplus_conditional_contradiction_closed": true,
+  "certificate_type": "prime_matrix_strict_terminal_contradiction_hard_attack_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "全程只在假设早期零行反例链内推导，不用真实缺席替代证明。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "ShortStableReturnContradictionClosed",
+      "meaning": "短稳定同标签复现一旦被强制，CRT 整除给出直接矛盾。",
+      "proved": true,
+      "remaining": "StableShortSameLabelRecurrenceOrRegisteredPhaseDefect"
+    },
+    {
+      "closed": false,
+      "gate": "EarlyZeroForcesStableReturnCurrentCorpusProved",
+      "meaning": "镜像、P 列锚、斜线覆盖和类型记录尚未推出必然短复现；类型压缩仍缺。",
+      "proved": false,
+      "remaining": "BoundaryCapFormalUnitTypeCompressionDichotomy"
+    },
+    {
+      "closed": true,
+      "gate": "UnifiedCoprimeCapacityFieldClosed",
+      "meaning": "相邻互质、商互质、短距标签不可复用和块容量上界均已进入统一矛盾场。",
+      "proved": true,
+      "remaining": "AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity"
+    },
+    {
+      "closed": true,
+      "gate": "CapacitySurplusContradictionCriterionClosed",
+      "meaning": "若 alphaP-rough 负载超过高标签容量，早期零行直接矛盾。",
+      "proved": true,
+      "remaining": "AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityFailureToDefectDichotomyClosed",
+      "meaning": "若不能容量反超，则必须出现强 TV/端点/PDEC 缺陷。",
+      "proved": true,
+      "remaining": "AlphaPrefixTotalVariationOrEndpointPDECDefectExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "TerminalUnconditionalContradictionCurrentCorpusProved",
+      "meaning": "尚未证明负载反超，也未排斥强端点缺陷；因此作者侧无条件闭合未达成。",
+      "proved": false,
+      "remaining": "(AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity OR AlphaPrefixTotalVariationOrEndpointPDECDefectExclusion) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "early_zero_forces_stable_return_proved": false,
+  "empirical_absence_not_used": true,
+  "hard_attack_findings": [
+    {
+      "content": "同一 formal unit 若保留同一素标签集 Q 并在行位移 Delta 短复现，则每个 q in Q 都整除 Delta；若 0<|Delta|<prod(Q)，立即矛盾。",
+      "point": "CRT_short_stable_return",
+      "result": "closed_conditional_contradiction"
+    },
+    {
+      "content": "完整 CRT 周期镜像只给出远端伴随零行，不把一个 P 行以内零行自动送回同一短窗口；因此镜像对称本身不能作为终端矛盾。",
+      "point": "mirror_symmetry",
+      "result": "not_a_short_return_forcer"
+    },
+    {
+      "content": "相邻整数互质、商相邻互质和大标签短距不可复用均已闭合；但这些只给容量上界，不给强制负载下界。",
+      "point": "adjacent_quotient_coprime",
+      "result": "closed_rigidity_not_enough"
+    },
+    {
+      "content": "对 alpha>1/2，早期零行迫使 alpha P-rough 位置数不超过 2(pi(P)-pi(alpha P))；若粗洞负载超过该容量，即得直接矛盾。",
+      "point": "alpha_capacity_surplus",
+      "result": "closed_direct_criterion"
+    },
+    {
+      "content": "若容量反超没有发生，则反例必须支付 TV_alpha >= (P-1)W^-_alpha-2(pi(P)-pi(alpha P)) 的强端点/总变差缺陷。",
+      "point": "capacity_failure_defect",
+      "result": "closed_dichotomy"
+    },
+    {
+      "content": "当前材料仍未证明 AlphaPrefixRoughLoadLowerBound，也未全局排斥 AlphaPrefixTotalVariationOrEndpointPDECDefect。",
+      "point": "terminal_blocker",
+      "result": "open"
+    }
+  ],
+  "next_direct_attack_target": "AlphaPrefixTotalVariationOrEndpointPDECDefectExclusion",
+  "no_theorem_switch": true,
+  "parallel_attack_target": "AlphaPrefixRoughLoadLowerBoundExceedingHighLabelCapacity",
+  "plain_conclusion": "本次终端硬攻把反例链与真实结构链之间的可用矛盾压到两个已闭合条件定理：短稳定同标签复现会被 CRT 整除立即击败；alpha>1/2 的粗洞负载若超过高标签容量也会立即击败。但当前材料没有证明早期零行必然产生短稳定复现，也没有证明 alpha 粗洞负载必然反超容量。若容量不反超，反例必须产生强 TV/端点/PDEC 缺陷；该缺陷尚未全局排斥。因此行/列命题仍不能标为作者侧无条件闭合。",
+  "referee_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "short_stable_return_conditional_contradiction_closed": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "ff92cda4d0e7a1d7b52ec752aa97b1c5a86c5f7d9049695f4184beb16f6d554a",
+    "docs/monograph/prime-matrix-eda-diagonal-final-hardcore-boundary.md": "37824f17f7eb34381cf7121ae232987988807d8acdcaac7387e069bc5b06ae8c",
+    "docs/monograph/prime-matrix-strict-alpha-prefix-load-deficit-pdec-router.json": "4a946a4625f7de59745c71f2cba5d7a9d0f019be32946c9c0fa4a68113d0e9f5",
+    "docs/monograph/prime-matrix-strict-block-coprime-dynamics-capacity-surplus-router.json": "f3f301bda6d15a4bfc9791caad536663e646782df753f502f52c3aed66d78a93",
+    "docs/monograph/prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json": "960a954eca848fa45c0ebb0c0086357477c058bbaf7dc4a3f966117c8c03ce21",
+    "docs/monograph/prime-matrix-strict-stable-short-return-defect-attack-router.json": "9ea657166a3e558e8e04b65bba186479e36d6f938b964d7fc17910f9dcb97aea",
+    "docs/monograph/prime-matrix-strict-unified-counterexample-contradiction-field-matrix-router.json": "2698e2ab4271ec5338a502415da6b9f5e3c7c8a01b6a1d09680c11fe462938f8"
+  },
+  "status": "terminal_contradiction_reduced_to_alpha_rough_load_or_pdec_defect_open",
+  "theorem_boundary": [
+    {
+      "name": "TerminalContradictionConditionalTheorem",
+      "proved": true,
+      "role": "这是反例链与真实容量链之间已经闭合的条件矛盾定理。",
+      "statement": "若存在 alpha>1/2，使每个假设早期零行都满足 (P-1)W^-_alpha-TV_alpha > 2(pi(P)-pi(alpha P))，则该早期零行不存在。"
+    },
+    {
+      "name": "StableReturnConditionalTheorem",
+      "proved": true,
+      "role": "这是短复现路线已经闭合的条件矛盾定理。",
+      "statement": "若早期零行强制同 formal unit、同标签集 Q 的非零短行位移复现，且 |Delta|<prod(Q)，则早期零行不存在。"
+    },
+    {
+      "name": "UnconditionalEarlyZeroExclusion",
+      "proved": false,
+      "role": "这是作者侧尚未完成的真正终端输入。",
+      "statement": "要升级为无条件排斥，必须证明早期零行必触发上述两个条件之一，或证明不触发时的 PDEC/SAE/ColumnCRT 缺陷全局不可存在。"
+    }
+  ]
+}

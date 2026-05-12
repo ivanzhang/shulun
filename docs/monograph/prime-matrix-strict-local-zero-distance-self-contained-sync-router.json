@@ -1,0 +1,184 @@
+{
+  "C_N": 16.0,
+  "C_local_distance": 256.0,
+  "C_structural_remainder": 32.0,
+  "C_total_logder": 288.0,
+  "certificate_type": "prime_matrix_strict_local_zero_distance_self_contained_sync_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "LocalZeroDistanceAtomActive",
+    "FixedTIndentDisciplineSelfContained",
+    "RVMCN16SelfContainedAvailable",
+    "LogDerivativeExpansionSelfContainedAvailable",
+    "ExternalFormulaReusedOnlyAsArithmeticCheck",
+    "EtaOneOver16C288BudgetClosed",
+    "Psi0LocalZeroDistanceSelfContainedClosed"
+  ],
+  "constant_rows": [
+    {
+      "formula": "1/16",
+      "item": "eta",
+      "meaning": "共同缩进纪律之后，剩余水平段离目标零点的登记最小距离。",
+      "value": 0.0625
+    },
+    {
+      "formula": "RVMToCN16LocalInequalitySelfContainedClosedWithRawArgCS8CommonEnvelope",
+      "item": "C_N",
+      "meaning": "自足同步后的单位高度局部零点数常数。",
+      "value": 16.0
+    },
+    {
+      "formula": "C_N/eta",
+      "item": "local distance coefficient",
+      "meaning": "近零点倒距离总贡献的粗上界系数。",
+      "value": 256.0
+    },
+    {
+      "formula": "HadamardGammaRemainder reserve",
+      "item": "structural remainder reserve",
+      "meaning": "log-derivative 展开中非局部主部的结构余项预留。",
+      "value": 32.0
+    },
+    {
+      "formula": "256 + 32",
+      "item": "total pointwise coefficient",
+      "meaning": "水平边点态界的最终系数。",
+      "value": 288.0
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "eta": 0.0625,
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "Psi0HorizontalWeightedIntegralBudgetLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "UnsmoothedPerronStrictSelfContainedClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "`Psi0HorizontalLocalZeroDistanceSumConstantLedger` 已可从外部条件版同步为 strict 自足版：共同包络提供 fixed-T 缩进纪律，RVM-CN16 同步提供 C_N=16，Hadamard/Gamma/余项提供内部 log-derivative 展开；因此 eta=1/16 给出 C_N/eta=256，再加结构余项 32，得到 C=288。该步不关闭加权水平积分预算，也不关闭行/列无条件命题。",
+  "psi0_horizontal_local_zero_distance_self_contained_closed": true,
+  "psi0_horizontal_weighted_integral_budget_self_contained_closed": false,
+  "remaining_after_local_zero_distance_sync": [
+    "Psi0HorizontalWeightedIntegralBudgetLedger"
+  ],
+  "replacement_self_contained": {
+    "Psi0HorizontalLocalZeroDistanceSumConstantLedger": "Psi0HorizontalLocalZeroDistanceSumSelfContainedClosedC288Eta1Over16"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只处理早期零行假设链条中的解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LocalZeroDistanceAtomActive",
+      "meaning": "log-derivative 展开闭合后，strict Perron 的下一原子正是局部倒距离和。",
+      "proved": true,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumConstantLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FixedTIndentDisciplineSelfContained",
+      "meaning": "共同高高度包络已把 fixed-T 缩进原子调和为作者侧可用的内部闭合输入。",
+      "proved": true,
+      "remaining": "ClassicalBacklundZeroIndentationCostInternalProofClosedByHighPowerCommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "RVMCN16SelfContainedAvailable",
+      "meaning": "RVM 原始 arg 归一化、CS8 边界桥和低高度 xi 子包已同步为 C_N=16。",
+      "proved": true,
+      "remaining": "RVMToCN16LocalInequalitySelfContainedClosedWithRawArgCS8CommonEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "LogDerivativeExpansionSelfContainedAvailable",
+      "meaning": "Hadamard 对数导数、Gamma/digamma 和余项账本已给出内部结构展开。",
+      "proved": true,
+      "remaining": "ClassicalZetaLogDerivativeAwayFromZerosInternalExpansionClosedByHadamardGammaRemainder"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalFormulaReusedOnlyAsArithmeticCheck",
+      "meaning": "旧外部证书只复用 eta=1/16、C_N/eta+32=288 的算术模板，不复用外部假设。",
+      "proved": true,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumClosedC288Eta1Over16"
+    },
+    {
+      "closed": true,
+      "gate": "EtaOneOver16C288BudgetClosed",
+      "meaning": "在缩进后的水平段，每个近零点贡献至多 1/eta；16/(1/16)+32=288。",
+      "proved": true,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumSelfContainedClosedC288Eta1Over16"
+    },
+    {
+      "closed": true,
+      "gate": "Psi0LocalZeroDistanceSelfContainedClosed",
+      "meaning": "三项内部输入全部到位后，局部零点倒距离和从外部条件版升级为 strict 自足版。",
+      "proved": true,
+      "remaining": "Psi0HorizontalLocalZeroDistanceSumSelfContainedClosedC288Eta1Over16"
+    },
+    {
+      "closed": false,
+      "gate": "UnsmoothedPerronStrictSelfContainedClosed",
+      "meaning": "本步只关闭点态倒距离常数；水平加权积分预算仍未 strict 自足同步。",
+      "proved": false,
+      "remaining": "Psi0HorizontalWeightedIntegralBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步只是解析输入自足化，不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "sample_rows": [
+    {
+      "T": 14.0,
+      "log_T_plus_3": 2.833213344056216,
+      "pointwise_bound": 815.9654430881902
+    },
+    {
+      "T": 45.0,
+      "log_T_plus_3": 3.871201010907891,
+      "pointwise_bound": 1114.9058911414727
+    },
+    {
+      "T": 100.0,
+      "log_T_plus_3": 4.634728988229636,
+      "pointwise_bound": 1334.8019486101352
+    },
+    {
+      "T": 1000.0,
+      "log_T_plus_3": 6.910750787961936,
+      "pointwise_bound": 1990.2962269330376
+    },
+    {
+      "T": 20000.0,
+      "log_T_plus_3": 9.903637541287253,
+      "pointwise_bound": 2852.247611890729
+    },
+    {
+      "T": 1000000.0,
+      "log_T_plus_3": 13.815513557959774,
+      "pointwise_bound": 3978.867904692415
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9cf7142627b2d829129e575db5c95fb7d12c52bd4aaa570ecdf88ea7aa93d533",
+    "docs/monograph/prime-matrix-b3-psi0-horizontal-local-zero-distance-router.json": "66fe1d2f5e90c4d44b61f75ec8a94cc9c589c532a2876438ae514a567121d426",
+    "docs/monograph/prime-matrix-strict-backlund-internal-closure-reconciliation-router.json": "8f57e8ec22db4d7b6a24a0c84c128e93ec264429f2caddf72ca6a0e51e99db45",
+    "docs/monograph/prime-matrix-strict-logder-internal-expansion-router.json": "2f2e627ff0f4b1e2888bb225c4c3b3fbcfa54c3b8d79a5ae7332f88d61e2563e",
+    "docs/monograph/prime-matrix-strict-rvm-cn16-self-contained-sync-router.json": "23fc0bd3b8e3fbbf86910637ba6c48701e55bf34bc85372b3c7fd78f7dac68a5"
+  },
+  "status": "psi0_local_zero_distance_self_contained_closed_weighted_budget_open",
+  "unsmoothed_perron_strict_self_contained_closed": false
+}

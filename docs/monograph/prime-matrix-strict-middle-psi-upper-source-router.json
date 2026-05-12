@@ -1,0 +1,193 @@
+{
+  "candidate_tests": [
+    {
+      "candidate": "Table 6.3 b=27 bound",
+      "defect_vs_target": 5.269999999946151e-06,
+      "formula": "1 + 3.368e-5",
+      "ratio": 1.00003368,
+      "reason": "valid from e^27, but too weak for the P5.1 middle constant",
+      "sufficient": false
+    },
+    {
+      "candidate": "Table 6.3 b=28 bound",
+      "defect_vs_target": -6.170000000027542e-06,
+      "formula": "1 + 2.224e-5",
+      "ratio": 1.00002224,
+      "reason": "numerically strong, but only valid from e^28, not on 8e11<=x<e^28",
+      "sufficient": false
+    },
+    {
+      "candidate": "linear interpolation of rounded b=27,28 eps",
+      "defect_vs_target": 6.038806608099634e-07,
+      "formula": "eps27 + (log(8e11)-27)(eps28-eps27)",
+      "ratio": 1.000029013880661,
+      "reason": "weaker than the target and no interpolation theorem is registered",
+      "sufficient": false
+    },
+    {
+      "candidate": "log-linear interpolation of rounded b=27,28 eps",
+      "defect_vs_target": 2.5268398484712407e-08,
+      "formula": "exp((1-t)log eps27 + t log eps28)",
+      "ratio": 1.0000284352683986,
+      "reason": "still slightly above target and no interpolation theorem is registered",
+      "sufficient": false
+    },
+    {
+      "candidate": "Table 6.2 point value at 8e11",
+      "defect_vs_target": -2.8362525906766578e-05,
+      "formula": "(theta(8e11)+psi-theta(8e11))/(8e11)",
+      "ratio": 1.0000000474740933,
+      "reason": "strong at the point, but does not cover the whole interval",
+      "sufficient": true
+    },
+    {
+      "candidate": "Table 6.2 point value at 1e12",
+      "defect_vs_target": -2.8369863234622983e-05,
+      "formula": "(theta(1e12)+psi-theta(1e12))/(1e12)",
+      "ratio": 1.0000000401367655,
+      "reason": "strong at the point, but does not cover jumps between points",
+      "sufficient": true
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_middle_psi_upper_source_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "MiddlePsiUpperSourceGateActive",
+    "P51UseSiteLocated",
+    "TinySpliceSlackMakesSourceCritical",
+    "Table63InterpolationNotEnoughFor100002841Ledger",
+    "Table62ExactPointValuesNotIntervalCoverLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "deleglise_rivat_psi_data_hash_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_source": {
+    "id": "Dusart arXiv:1002.0442",
+    "role": "use-site and tables source; not a reproducible middle interval cover",
+    "url": "https://arxiv.org/pdf/1002.0442"
+  },
+  "middle_finite_interval_psi_cover_closed": false,
+  "middle_psi_upper_100002841_source_closed": false,
+  "middle_psi_upper_directed_rounding_closed": false,
+  "middle_psi_upper_use_site_closed": true,
+  "next_direct_attack_target": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger",
+  "no_theorem_switch": true,
+  "numeric_context": {
+    "log_x_left": 27.40787756461434,
+    "psi_1e12_ratio": 1.0000000401367655,
+    "psi_8e11_ratio": 1.0000000474740933,
+    "target_eps": 2.841e-05,
+    "target_ratio": 1.00002841,
+    "x_left": 800000000000.0,
+    "x_right_e28": 1446257064291.475
+  },
+  "open_gates": [
+    "MiddleFiniteIntervalPsiCover8e11ToE28Ledger",
+    "DelegliseRivatPsiComputationDataAndHashLedger",
+    "MiddlePsiUpperDirectedRoundingLedger",
+    "MiddlePsiUpper100002841SourceLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "DelegliseRivatPsiComputationDataAndHashLedger",
+    "MiddlePsiUpperDirectedRoundingLedger",
+    "PsiEpsilonIntervalPropagationAndMonotonicityLedger"
+  ],
+  "plain_conclusion": "1.00002841 的使用点已明确，但来源尚未闭合。Table 6.3 的 b=27 界太弱，b=28 界只从 e^28 起有效；用 b=27/28 舍入值做线性或 log-线性插值也不能证明该常数。Table 6.2 的 8e11 和 1e12 点值很强，但点值不是整段覆盖。因此中段必须补一个有限区间 psi 覆盖证书，或提供 Deléglise-Rivat 等价精确计算数据和 hash。",
+  "replacement_self_contained": {
+    "MiddleFiniteIntervalPsiCover8e11ToE28Ledger": "finite interval cover of psi(x)/x on 8e11<=x<=e^28 with directed rounding",
+    "MiddlePsiUpper100002841SourceLedger": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger AND DelegliseRivatPsiComputationDataAndHashLedger AND MiddlePsiUpperDirectedRoundingLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审计假设反例链可调用的中段 psi 上界来源，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MiddlePsiUpperSourceGateActive",
+      "meaning": "psi epsilon 表算法证书已把下一最窄点压到 1.00002841 的来源账本。",
+      "proved": true,
+      "remaining": "MiddlePsiUpper100002841SourceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "P51UseSiteLocated",
+      "meaning": "P5.1 中段确实需要 psi(x)<1.00002841x 覆盖 8e11<=x<=e^28。",
+      "proved": true,
+      "remaining": "use site closed, source still open"
+    },
+    {
+      "closed": true,
+      "gate": "TinySpliceSlackMakesSourceCritical",
+      "meaning": "该常数经 psi-theta 下界接入 theta 目标后只剩约 4.46e-11 余量，不能粗化。",
+      "proved": true,
+      "remaining": "MiddlePsiUpperDirectedRoundingLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table63InterpolationNotEnoughFor100002841Ledger",
+      "meaning": "Table 6.3 的 b=27/28 舍入值和简单插值都不能自足推出 1.00002841。",
+      "proved": true,
+      "remaining": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "Table62ExactPointValuesNotIntervalCoverLedger",
+      "meaning": "Table 6.2 在 8e11 和 1e12 的点值远强于目标，但点值不是整段覆盖证书。",
+      "proved": true,
+      "remaining": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger",
+      "meaning": "需要覆盖 8e11<=x<=e^28 的有限区间 psi 上界证书，含节点、跳点、最大值和间隙控制。",
+      "proved": false,
+      "remaining": "DelegliseRivatPsiComputationDataAndHashLedger AND PsiEpsilonIntervalPropagationAndMonotonicityLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DelegliseRivatPsiComputationDataAndHashLedger",
+      "meaning": "需要 Deléglise-Rivat 或等价 psi 精确计算数据、算法、版本和 hash；当前仓库没有该数据。",
+      "proved": false,
+      "remaining": "machine-readable psi computation archive"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiUpperDirectedRoundingLedger",
+      "meaning": "需要证明 1.00002841 是外向上舍入值，且舍入误差仍保留中段拼接余量。",
+      "proved": false,
+      "remaining": "directed rounding log"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiUpper100002841SourceLedger",
+      "meaning": "当前只定位到使用点并排除几个不足来源；尚未证明 1.00002841 的生成或覆盖。",
+      "proved": false,
+      "remaining": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger AND DelegliseRivatPsiComputationDataAndHashLedger AND MiddlePsiUpperDirectedRoundingLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "中段 psi 常数来源审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "d1b49ebc41978f1a326c5c564ae6a2c6f73afa97d05004a5c4b00c3f1cc4b566",
+    "docs/monograph/prime-matrix-strict-dusart-analytic-kernel-threshold-router.json": "66437aaacee8dac94c508da9ce6ac11dab98487bbe6cfe5be4277f1382fb0155",
+    "docs/monograph/prime-matrix-strict-psi-epsilon-table-algorithm-router.json": "ec4bf5ae2aee8b7f878df4c58bc69cb6f711ed2fa2c5bf7fcc3e463a4e735b5f",
+    "docs/monograph/prime-matrix-strict-schoenfeld-dusart-psi-table-router.json": "6ef79f3e1fc1b46aa5f67bd64cdb2e9e4f20e627c430644a070f0f67b3daaad6"
+  },
+  "status": "middle_psi_upper_100002841_use_site_closed_source_and_interval_cover_open",
+  "table62_point_values_not_interval_cover": true,
+  "table63_interpolation_not_enough": true,
+  "tiny_splice_slack_makes_source_critical": true
+}

@@ -1,0 +1,114 @@
+{
+  "alphabet_cap_closed": true,
+  "certificate_type": "prime_matrix_strict_sparse_terminal_history_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的阈值坍缩稀疏历史分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "HistoryWordEncodingClosed",
+      "meaning": "稀疏终端历史可规范编码为有限商型词。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "DepthAndAlphabetCapClosed",
+      "meaning": "历史深度与每层字母表均有显式上界。",
+      "proved": true,
+      "remaining": "AdaptiveLambdaBalanceForIteratedCoreDensity"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentHistoryPDECRouteRegistered",
+      "meaning": "同一历史词持久复现应进入 PDEC/ColumnCRT。",
+      "proved": false,
+      "remaining": "FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "NonpersistentHistorySAEReductionClosed",
+      "meaning": "非持久历史已压成 SAE 总量预算，但预算比较未完成。",
+      "proved": false,
+      "remaining": "SparseTerminalHistorySAEBudgetComparison AND FormalUnitSparseHistoryMultiplicityCap"
+    },
+    {
+      "closed": false,
+      "gate": "SparseTerminalHistoryAbsorbed",
+      "meaning": "尚未排斥持久历史 PDEC，也未证明非持久历史总量小于 SAE 预算。",
+      "proved": false,
+      "remaining": "FixedTypeHistoryPDECExclusion AND SparseTerminalHistorySAEBudgetComparison"
+    }
+  ],
+  "depth_cap_closed": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "fixed_type_history_pdec_excluded": false,
+  "history_count_cap_closed": true,
+  "history_word_encoding_closed": true,
+  "lemmas": [
+    {
+      "formula": "A terminal sparse branch is encoded by W=((b_1,c_1),...,(b_r,c_r)) plus orientation metadata.",
+      "meaning": "稀疏终端对象有规范有限词编码。",
+      "name": "history_word_encoding",
+      "status": "closed"
+    },
+    {
+      "formula": "r<=floor(log_2 |h_0|), because each b_i c_i>=2.",
+      "meaning": "历史词长度有限，不能无限增长。",
+      "name": "depth_cap",
+      "status": "closed"
+    },
+    {
+      "formula": "At depth i, #{(b_i,c_i)}<=A_{Lambda_i}<=8Lambda_i^2.",
+      "meaning": "每层商型字母表已由上一层闭合。",
+      "name": "alphabet_cap",
+      "status": "closed"
+    },
+    {
+      "formula": "#Histories(depth<=R)<=sum_{r<=R} prod_{i<=r} A_{Lambda_i}.",
+      "meaning": "非持久稀疏历史总类型数有显式上界。",
+      "name": "history_count_cap",
+      "status": "closed"
+    },
+    {
+      "formula": "If the same W recurs above the persistence threshold across formal units, it is FixedTypeHistoryPDEC.",
+      "meaning": "历史词持久化就是命名 PDEC/ColumnCRT 证书。",
+      "name": "persistent_history_pdec",
+      "status": "registered_route_open"
+    },
+    {
+      "formula": "If every W has multiplicity <T_PDEC, total sparse mass <=T_PDEC sum_W cap(W).",
+      "meaning": "非持久分支剩余为 SAE 总量预算比较。",
+      "name": "nonpersistent_history_sae_budget",
+      "status": "open_budget"
+    }
+  ],
+  "next_direct_attack_target": "SparseTerminalHistorySAEBudgetComparison",
+  "no_theorem_switch": true,
+  "nonpersistent_history_sae_reduction_closed": true,
+  "parallel_targets": [
+    "FormalUnitSparseHistoryMultiplicityCap",
+    "AdaptiveLambdaBalanceForIteratedCoreDensity"
+  ],
+  "persistent_history_pdec_route_registered": true,
+  "plain_conclusion": "稀疏终端历史已经被压成有限词编码。每条终端分支由商型历史 W=((b_1,c_1),...,(b_r,c_r)) 加有限方向元数据确定；深度 r<=floor(log_2|h_0|)，每层字母表大小 A_{Lambda_i}<=8Lambda_i^2。若同一 W 跨 formal unit 持久复现，则进入固定历史 PDEC/ColumnCRT；若都不持久，则总质量由有限历史数与单历史重数上界控制，进入 SAE 预算比较。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "FixedTypeHistoryPDECExclusion",
+  "source_hashes": {
+    "docs/monograph/h4-pdec-admissible-constraint-table.md": "259d39fdfe4ec8ec232e26a4f2c8b474b58e81ea39ba209c99c772355929d483",
+    "docs/monograph/prime-matrix-strict-iterated-scaled-core-density-router.md": "b6427bd098faf3528b9e3563fe9d6c0d748b6fb73636c25768e0c1b51a242169",
+    "docs/monograph/prime-matrix-strict-iterated-threshold-collapse-router.md": "7ca299f90ed965ccc1de8762e5377cfa011703dae9ccd595cfed3a0da8ad9702",
+    "docs/monograph/prime-matrix-strict-large-pair-kernel-difference-router.md": "8f16470e7065b050c189d4a418e604fc6208c7ec8510467a0b721293445b7c6e"
+  },
+  "sparse_terminal_history_absorbed": false,
+  "sparse_terminal_history_sae_budget_proved": false,
+  "status": "sparse_terminal_history_encoded_pdec_or_sae_budget_open"
+}

@@ -1,0 +1,175 @@
+{
+  "arithmetic": {
+    "coarse_template_gap_factor_high_tail_b28": "2779902555195.0005",
+    "epsilon_psi_28": "0.00002224",
+    "p51_high_tail_margin": "0.000005338599007170435741864313292884721456150027578599",
+    "target_1_over_36260": "0.000027578599007170435741864313292884721456150027578599"
+  },
+  "binding_matrix": [
+    {
+      "binding_gap": "Table 6.3 的 epsilon_psi 行必须声明使用 psi、psi_0 或端点跳变转换。",
+      "current_internal_status": "psi_0 exact formula closed",
+      "field": "target_function",
+      "next_gate": "Table63B28PsiVsPsi0EndpointConventionLedger"
+    },
+    {
+      "binding_gap": "内部非平滑核已闭合但过粗；Table 6.3 的实际核/截断/平滑规则未声明。",
+      "current_internal_status": "unsmoothed Perron C=12128 closed for internal coarse route",
+      "field": "kernel_truncation_smoothing",
+      "next_gate": "Table63B28KernelTruncationAndSmoothingConventionLedger"
+    },
+    {
+      "binding_gap": "需要把零点数量或高度端点转换为表公式实际使用的 H 与零点块。",
+      "current_internal_status": "Gourdon external source identified; repository self-contained data/hash open",
+      "field": "finite_zero_block",
+      "next_gate": "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger"
+    },
+    {
+      "binding_gap": "需要声明表尾项使用的零点自由常数、起点和适用范围。",
+      "current_internal_status": "Kadiri external source identified; table constants/start height open",
+      "field": "zero_free_tail",
+      "next_gate": "Table63B28ZeroFreeTailConstantsAndStartHeightLedger"
+    },
+    {
+      "binding_gap": "需要证明 finite block、zero-free tail 与截断余项覆盖连续且不重复扣费。",
+      "current_internal_status": "common-variable taxonomy closed only",
+      "field": "split_no_gap_no_overlap",
+      "next_gate": "Table63B28FiniteToTailNoGapNoOverlapLedger"
+    },
+    {
+      "binding_gap": "需要证明绑定后的各项和被外向舍入到 2.224E-5。",
+      "current_internal_status": "cap fixed; component numerical budget/hash open",
+      "field": "budget_and_rounding",
+      "next_gate": "Table63B28PsiEpsilonBudgetPartitionLedger AND Table63B28DirectedUpperRoundingAndIntervalPropagationLedger AND Table63B28ReproducibleComputationHashLedger"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_table63_b28_zero_input_formula_binding_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ZeroInputBindingGateActive",
+    "InternalCoarseExplicitFormulaChainComplete",
+    "InternalCoarseFormulaRejectedAsTable63Generator",
+    "ExternalZeroInputsAvailableButUnbound",
+    "CommonVariableTaxonomyImported"
+  ],
+  "common_variable_taxonomy_closed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_zero_inputs_available_but_unbound": true,
+  "internal_coarse_explicit_formula_chain_complete": true,
+  "internal_coarse_formula_rejected_as_table63_generator": true,
+  "next_direct_attack_target": "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger",
+    "Table63B28ZeroInputToExplicitFormulaBindingLedger",
+    "B28GenerationStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "Table63B28PsiVsPsi0EndpointConventionLedger",
+    "Table63B28KernelTruncationAndSmoothingConventionLedger",
+    "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger",
+    "Table63B28ZeroFreeTailConstantsAndStartHeightLedger",
+    "Table63B28FiniteToTailNoGapNoOverlapLedger",
+    "Table63B28PsiEpsilonBudgetPartitionLedger",
+    "Table63B28DirectedUpperRoundingAndIntervalPropagationLedger",
+    "Table63B28ReproducibleComputationHashLedger"
+  ],
+  "plain_conclusion": "`Table63B28ZeroInputToExplicitFormulaBinding` 的首缺口不是再登记 Gourdon/Kadiri，而是声明 b=28 表行实际采用的显式公式/表算法。仓库内部粗 Perron 链已经自洽闭合，但它被数值压力排除为 Table 6.3 生成器；外部零点来源虽然可用，仍未绑定到同一核、截断、端点和尾项阈值。因此下一最窄点是 `Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger`。",
+  "replacement_self_contained": {
+    "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger": "Table63B28PsiVsPsi0EndpointConventionLedger AND Table63B28KernelTruncationAndSmoothingConventionLedger AND Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger",
+    "Table63B28ZeroInputToExplicitFormulaBindingLedger": "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger AND Table63B28FiniteToTailNoGapNoOverlapLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只审计假设反例链可调用的 Table 6.3 解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroInputBindingGateActive",
+      "meaning": "上一证书已把最窄点压到 b=28 的有限零点/零点自由尾项与显式公式绑定。",
+      "proved": true,
+      "remaining": "Table63B28ZeroInputToExplicitFormulaBindingLedger"
+    },
+    {
+      "closed": true,
+      "gate": "InternalCoarseExplicitFormulaChainComplete",
+      "meaning": "仓库内部 psi_0 身份、非平滑 Perron、零点和粗预算、平凡尾项/素数幂账本已经自洽闭合。",
+      "proved": true,
+      "remaining": "internal coarse Perron route"
+    },
+    {
+      "closed": true,
+      "gate": "InternalCoarseFormulaRejectedAsTable63Generator",
+      "meaning": "现有内部公式链虽自洽，但以 C=1280,C_Z=65536 口径生成 b=28 表值失败约 10^12 倍。",
+      "proved": true,
+      "remaining": "gap_factor=2779902555195.0005"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalZeroInputsAvailableButUnbound",
+      "meaning": "Gourdon 有限零点与 Kadiri 零点自由区可作为外部来源，但尚未进入同一 b=28 表公式。",
+      "proved": false,
+      "remaining": "Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CommonVariableTaxonomyImported",
+      "meaning": "六类共同变量已经分类：x 区间、高度端点、尾项阈值、公式核、预算、舍入/hash。",
+      "proved": true,
+      "remaining": "taxonomy closed, numerical binding open"
+    },
+    {
+      "closed": false,
+      "gate": "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger",
+      "meaning": "缺少 Table 6.3 b=28 实际表公式/算法工件；没有它，零点输入无法判断应绑定到哪个核、截断和端点约定。",
+      "proved": false,
+      "remaining": "Table63B28PsiVsPsi0EndpointConventionLedger AND Table63B28KernelTruncationAndSmoothingConventionLedger AND Table63B28FiniteRHHeightEndpointAndZeroBlockLedger AND Table63B28ZeroFreeTailConstantsAndStartHeightLedger"
+    },
+    {
+      "closed": false,
+      "gate": "Table63B28ZeroInputToExplicitFormulaBindingLedger",
+      "meaning": "零点输入绑定不能在公式声明之前闭合；现有内部粗公式不能替代 Table 6.3 表算法。",
+      "proved": false,
+      "remaining": "Table63B28ActualTableFormulaDeclarationOrExternalAlgorithmArtifactLedger AND Table63B28FiniteToTailNoGapNoOverlapLedger"
+    },
+    {
+      "closed": false,
+      "gate": "B28GenerationStillOpen",
+      "meaning": "即使完成绑定，仍需预算分摊、外向舍入、区间传播和可复现 hash 生成 2.224E-5。",
+      "proved": false,
+      "remaining": "Table63B28PsiEpsilonBudgetPartitionLedger AND Table63B28DirectedUpperRoundingAndIntervalPropagationLedger AND Table63B28ReproducibleComputationHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "Table 6.3 零点输入绑定审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "37dc1f0af5c7d0b0f0c0f09b4175af021b9332497b54c6a570f014d07c7b8a07",
+    "docs/monograph/prime-matrix-b3-internal-psi0-perron-formula-router.json": "d42cd18b0fd4056ba74ef190287b3f66e2c95048076770c1f69a5f7a3c67465a",
+    "docs/monograph/prime-matrix-strict-explicit-zero-free-table-tail-router.json": "f2bdd92fffa57d2fe1538c8a9b4c887ce62d670b24fd1e28d2848a45471ea214",
+    "docs/monograph/prime-matrix-strict-finite-verified-zero-tail-transition-router.json": "773bb760e2d2004c99e8c4d54585659f15adebe2e147ea16b08fa77b78dec30f",
+    "docs/monograph/prime-matrix-strict-large-finite-rh-verification-router.json": "b3d1c7e6e6dd430855ac6e5610ae666bfd8d3a76c3d3e2528a6ba0b197175e3e",
+    "docs/monograph/prime-matrix-strict-table63-b28-generation-rounding-router.json": "47de3468ced89bfd5bbee509fd78a9d7d0de0648a7c2f0ef5111a23f3bbb00e1",
+    "docs/monograph/prime-matrix-strict-trivial-tail-prime-power-self-contained-sync-router.json": "66fd7fe2769962317f8aae8c4106d87c60ab2a42cdf2519eab0e27e230267ca9",
+    "docs/monograph/prime-matrix-strict-unsmoothed-perron-final-sync-router.json": "eb09267cd0d957dce6acff54d3d0afb61421d8274dfe6d89506143abf0abb8a7",
+    "docs/monograph/prime-matrix-strict-zero-sum-contour-self-contained-sync-router.json": "4f11042be96ba548afb9fabfbea77592c4ad580508126210520d134b3f41c128"
+  },
+  "status": "table63_b28_zero_input_binding_blocked_by_actual_table_formula_declaration",
+  "table63_b28_actual_formula_declaration_closed": false,
+  "table63_b28_generation_rounding_closed": false,
+  "table63_b28_no_gap_no_overlap_closed": false,
+  "table63_b28_zero_input_binding_closed": false
+}

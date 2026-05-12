@@ -1,0 +1,123 @@
+{
+  "allowed_c_zero_sum_if_c_region_1280": 1.7046856133849868e-07,
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_sharp_theta_contour_feasibility_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "FiniteThetaInterfaceReady",
+    "CurrentContourTemplateFailsAtAnchor"
+  ],
+  "counterexample_assumption_only": true,
+  "current_contour_template_fails_at_anchor": true,
+  "current_ratio_to_target": 384446254989.3024,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "feasibility_rows": [
+    {
+      "C_region": 1280.0,
+      "C_zero_sum": 65536.0,
+      "passes": false,
+      "ratio_to_target": 384446254989.3024,
+      "relative_bound": 10602489.106158368,
+      "scenario": "current template"
+    },
+    {
+      "C_region": 1280.0,
+      "C_zero_sum": 1.7046856133849868e-07,
+      "passes": false,
+      "ratio_to_target": 1.0,
+      "relative_bound": 2.7578599007170437e-05,
+      "scenario": "keep C_region=1280"
+    },
+    {
+      "C_region": 0.13102641478576402,
+      "C_zero_sum": 65536.0,
+      "passes": false,
+      "ratio_to_target": 1.0,
+      "relative_bound": 2.7578599007170437e-05,
+      "scenario": "keep C_zero_sum=65536"
+    },
+    {
+      "C_region": 0.224250760710669,
+      "C_zero_sum": 1.0,
+      "passes": false,
+      "ratio_to_target": 1.0,
+      "relative_bound": 2.7578599007170437e-05,
+      "scenario": "even C_zero_sum=1"
+    }
+  ],
+  "finite_theta_interface_ready": true,
+  "next_direct_attack_target": "DirectInternalDusartThetaPNTEnvelopeLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "ShallowConstantTuningPossible",
+    "SharpInternalThetaContourStartBudgetClosed",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "SharpZeroFreeExponentAndZeroSumConstantLedger",
+    "RaisedAnalyticThresholdFiniteThetaBridgeExtensionLedger"
+  ],
+  "plain_conclusion": "尖锐 theta contour 起点不能靠当前模板的常数微调闭合：若保留 `C_region=1280`，允许的 `C_Z` 只有约 `1.70e-7`；若保留 `C_Z=65536`，所需 `C_region` 约为 `0.131`。即使把 `C_Z` 降到 `1`，仍需 `C_region≈0.224`。这说明剩余不是算术微调，而是必须内化 Dusart 型直接 theta/PNT 机制，或引入实质更强的零点自由/零点和输入。",
+  "replacement_self_contained": {
+    "SharpInternalThetaContourStartBudgetLedger": "DirectInternalDusartThetaPNTEnvelopeLedger OR SharpZeroFreeExponentAndZeroSumConstantLedger OR RaisedAnalyticThresholdFiniteThetaBridgeExtensionLedger"
+  },
+  "required_c_region_if_c_zero_sum_1": 0.224250760710669,
+  "required_c_region_if_c_zero_sum_65536": 0.13102641478576402,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只量化高段 theta contour 起点输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteThetaInterfaceReady",
+      "meaning": "有限 theta 桥已把接口左侧闭合，尖锐 contour 只需从 x=20000 右侧接上。",
+      "proved": true,
+      "remaining": "接口不是剩余硬点。"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentContourTemplateFailsAtAnchor",
+      "meaning": "当前 C_Z=65536、C_region=1280 模板在锚点处远超目标。",
+      "proved": true,
+      "remaining": "SharpInternalThetaContourStartBudgetLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ShallowConstantTuningPossible",
+      "meaning": "若只沿当前模板调常数，则需 C_Z<1 或 C_region<1，已经不是小修小补。",
+      "proved": false,
+      "remaining": "DirectInternalDusartThetaPNTEnvelopeLedger OR SharpZeroFreeExponentAndZeroSumConstantLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SharpInternalThetaContourStartBudgetClosed",
+      "meaning": "当前分析只证明必须换更强的显式 PNT/theta 机制，不能关闭尖锐 contour 输入。",
+      "proved": false,
+      "remaining": "DirectInternalDusartThetaPNTEnvelopeLedger OR SharpZeroFreeExponentAndZeroSumConstantLedger OR RaisedAnalyticThresholdFiniteThetaBridgeExtensionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "该可行性证书不产生最终反例矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "shallow_constant_tuning_possible": false,
+  "sharp_internal_theta_contour_start_budget_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9edd35edffc556e80c08cf8fed0b8595cb9f5513b7b6b7fed06951426db5f327",
+    "docs/monograph/prime-matrix-strict-finite-theta-bridge-self-contained-router.json": "e199bc58d1c05daa01e9a49a70719c34c604b10313cf9ccf6dedd9d3ce7322ce",
+    "docs/monograph/prime-matrix-strict-internal-theta-contour-budget-gap-router.json": "626f0695c68953d626e8843538314ed2ca3ab24ce99454b6361feb08762c2b69"
+  },
+  "status": "sharp_theta_contour_start_requires_new_pnt_mechanism_not_constant_tuning",
+  "target_relative_error": 2.7578599007170437e-05
+}

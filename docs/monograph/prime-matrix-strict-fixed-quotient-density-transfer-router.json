@@ -1,0 +1,112 @@
+{
+  "certificate_type": "prime_matrix_strict_fixed_quotient_density_transfer_router",
+  "core_pair_bijection_closed": true,
+  "core_window_distortion_bound_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的固定商型缩频分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "CorePairBijectionClosed",
+      "meaning": "固定商型内部 `k` 与 `(kb,kc)` 一一对应。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteTypePigeonholeLossClosed",
+      "meaning": "跨商型只损失 `<=8Lambda^2` 的显式因子。",
+      "proved": true,
+      "remaining": "BoundedQuotientTypeSAEAbsorption"
+    },
+    {
+      "closed": true,
+      "gate": "DensityTransferWithoutLossClosed",
+      "meaning": "pair-lock 密度到 core-density 的全部损耗已登记。",
+      "proved": true,
+      "remaining": "IteratedScaledCoreDensitySurvivalOrPDECEscape"
+    },
+    {
+      "closed": false,
+      "gate": "IteratedThresholdSurvivalProved",
+      "meaning": "尚未证明多层递归后的阈值仍足以触发 PDEC/SAE 或 LCM 高度矛盾。",
+      "proved": false,
+      "remaining": "IteratedScaledCoreDensitySurvivalOrPDECEscape"
+    },
+    {
+      "closed": false,
+      "gate": "FixedPDECExcluded",
+      "meaning": "尚未排斥跨 formal unit 的固定商型 PDEC/ColumnCRT 证书。",
+      "proved": false,
+      "remaining": "FixedQuotientTypePDECColumnCertificateExclusion"
+    }
+  ],
+  "density_transfer_without_loss_closed": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_type_pigeonhole_loss_closed": true,
+  "fixed_pdec_excluded": false,
+  "fixed_quotient_type_excluded": false,
+  "iterated_threshold_survival_proved": false,
+  "lemmas": [
+    {
+      "formula": "For fixed coprime (b,c), k <-> (kb,kc) is one-to-one.",
+      "meaning": "固定商型内部从 pair 到 core 不丢计数。",
+      "name": "fixed_type_core_pair_bijection",
+      "status": "closed"
+    },
+    {
+      "formula": "With at most A_Lambda<=8Lambda^2 types, T pair locks give some type with >=T/A_Lambda cores.",
+      "meaning": "跨商型选择只有登记的有限字母表损失。",
+      "name": "finite_type_pigeonhole_loss",
+      "status": "closed"
+    },
+    {
+      "formula": "Y/max(b,c)<k<=2Y/min(b,c), with 1<=b,c<2Lambda.",
+      "meaning": "核心窗口长度和乘法比被 Lambda 显式控制。",
+      "name": "core_window_distortion_bound",
+      "status": "closed"
+    },
+    {
+      "formula": "A pair-lock density rho transfers to core density at least rho/(8Lambda^2) after type selection.",
+      "meaning": "密度阈值没有隐性丢失；所有损耗进入显式乘子账本。",
+      "name": "registered_density_threshold_transfer",
+      "status": "closed"
+    },
+    {
+      "formula": "Any orientation or duplicate convention costs at most a factor 2 and is absorbed into A_Lambda.",
+      "meaning": "有向/无向 pair 口径不会形成额外未登记误差。",
+      "name": "no_untracked_weight_loss",
+      "status": "closed"
+    },
+    {
+      "formula": "After depth r, threshold loss is controlled by product_r A_{Lambda_r}; it must still beat the PDEC/SAE trigger.",
+      "meaning": "多层缩频递归的阈值账本仍需独立闭合。",
+      "name": "iterated_threshold_survival",
+      "status": "open_input"
+    }
+  ],
+  "next_direct_attack_target": "IteratedScaledCoreDensitySurvivalOrPDECEscape",
+  "no_theorem_switch": true,
+  "no_untracked_weight_loss_closed": true,
+  "parallel_targets": [
+    "StrictHeightDescentFiniteDepthLedger",
+    "BoundedQuotientTypeSAEAbsorption"
+  ],
+  "plain_conclusion": "固定商型密度传递已经闭合到显式乘子账本。对固定互素商型 (b,c)，核心 k 与 pair (kb,kc) 一一对应，因此该商型内部没有计数损失。跨商型选择至多损失有限字母表因子 A_Lambda<=8Lambda^2；有向/无向口径的常数损失也并入这个因子。于是 pair-lock 密度进入缩频 core-density 时没有未登记损耗。新的剩余是多层缩频后阈值是否仍足以触发 LCM/PDEC/SAE，或固定商型 PDEC 是否可排斥。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "secondary_attack_target": "FixedQuotientTypePDECColumnCertificateExclusion",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.md": "69d32de5c9a326374b77ea8b6f4063888e1875332f8dbccd7107d90c88da9428",
+    "docs/monograph/prime-matrix-strict-large-pair-kernel-difference-router.md": "8f16470e7065b050c189d4a418e604fc6208c7ec8510467a0b721293445b7c6e",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.md": "2e9b9276de650d14f1b6fd67fd224ca60caf70e644f5dba1fb2eb2a290cfa392"
+  },
+  "status": "fixed_quotient_density_transfer_closed_iterated_threshold_and_pdec_open"
+}

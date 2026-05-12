@@ -1,0 +1,116 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_noncanonical_alpha_side_primitive_rule_proved": false,
+  "actual_noncanonical_delta_side_primitive_rule_proved": false,
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "alpha_delta_pairing_compatibility_before_cauchy_proved": false,
+  "certificate_type": "prime_matrix_strict_explicit_alpha_delta_rule_router",
+  "counterexample_assumption_only": true,
+  "disintegration_formal_not_rule_imported": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "explicit_alpha_delta_primitive_constructor_rule_proved": false,
+  "explicit_alpha_delta_rule_router_closed": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter` 被继续压成 alpha-side 规则、delta-side 规则、Cauchy 前配对兼容和 primitive row 非零/符号/local factor 四项。当前最窄点是 `ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger`；没有 alpha 侧行生成规则，显式构造规则不能开始。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "primitive_rule_nonzero_sign_local_factor_proved": false,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ExplicitAlphaDeltaRuleTargetActive",
+      "meaning": "上一层 actual constructor formula line 已把当前最窄点压成显式 alpha/delta primitive constructor rule。",
+      "proved": false,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter"
+    },
+    {
+      "closed": true,
+      "gate": "SourceRecordSchemaAvailableButNotRule",
+      "meaning": "formal unit source record 和 source tuple 字段可用，但它们只给参数容器，不给 alpha/delta 生成算子。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTupleParametersAvailableButNotRows",
+      "meaning": "source tuple/anchor 参数账本可复算几何参数；不能自动生成 signed primitive rows。",
+      "proved": true,
+      "remaining": "两侧 primitive rule。"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchySourceLawFieldImported",
+      "meaning": "pre-Cauchy 来源律已说明规则必须输出 branch key、u/v、sign、local factor 和回流。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger AND PrimitiveRuleNonzeroSignLocalFactorLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PathPartitionCannotReplaceRule",
+      "meaning": "路径分割依赖已有 alpha/delta 规则；不能反过来作为规则本身。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger AND PrimitiveRuleNonzeroSignLocalFactorLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationFormalButNeedsMeasure",
+      "meaning": "给定 signed source 后解积分形式闭合；但该形式步骤不生成 actual noncanonical signed source measure。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaSideRuleCurrentCorpusProved",
+      "meaning": "当前材料未给出 source tuple 到 alpha-side primitive summand 的确定性规则。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "DeltaSideRuleCurrentCorpusProved",
+      "meaning": "当前材料未给出 source tuple 到 delta-side primitive summand 的确定性规则。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "PairingCompatibilityCurrentCorpusProved",
+      "meaning": "当前材料未证明 alpha/delta 两侧规则在 Cauchy 前配对成同一个 actual emitter 系数。",
+      "proved": false,
+      "remaining": "AlphaDeltaPairingCompatibilityBeforeCauchyLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveRuleNonzeroSignLocalFactorCurrentCorpusProved",
+      "meaning": "当前材料未证明每条 primitive row 的非零、符号和 local factor 规则。",
+      "proved": false,
+      "remaining": "PrimitiveRuleNonzeroSignLocalFactorLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "ExplicitAlphaDeltaRuleCurrentCorpusProved",
+      "meaning": "两侧规则、配对兼容和行级非零/符号/local factor 尚未合取证明。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger AND PrimitiveRuleNonzeroSignLocalFactorLedger"
+    }
+  ],
+  "rule_law": "A genuine alpha/delta primitive constructor rule must be two-sided: one rule emits alpha-side primitive rows, one emits delta-side primitive rows, and a pre-Cauchy pairing identity proves they form the actual emitter coefficient. Source tuples and formal-unit records are only containers; signed disintegration is formal only after the source measure exists.",
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.json": "1ed84ceda49fdc1fbafb7ba83824ce9a4438d1d5bad2d580851d9afa690fb7b7",
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-strict-actual-constructor-formula-line-router.json": "ac19ab81150df61902058d6c890195592b25400f04a32562b1fa32b966a89913"
+  },
+  "source_tuple_container_imported": true,
+  "status": "strict_explicit_alpha_delta_rule_reduced_to_two_side_rules_pairing_nonzero_open",
+  "terminal_gap_after_router": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger AND ActualNoncanonicalSourceTupleToDeltaSidePrimitiveRuleLedger AND AlphaDeltaPairingCompatibilityBeforeCauchyLedger AND PrimitiveRuleNonzeroSignLocalFactorLedger",
+  "terminal_gap_before_router": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter"
+}

@@ -1,0 +1,129 @@
+{
+  "boundary_residual_mass_lower_bound_proved": false,
+  "capacity_normalized_charge_closed": true,
+  "certificate_type": "prime_matrix_strict_prefix_capacity_multiplier_discipline_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "distinct_label_lower_bound_closed": true,
+  "empirical_absence_not_used": true,
+  "exact_row_hit_multiplicity_formula_closed": true,
+  "hardpoint_after_router": "NormalizedPrefixResidualPotentialLowerBound AND PrefixLabelSupportToRowFreeTypeAntiCollapse",
+  "hardpoint_before_router": "RegisteredPrefixCapacityMultiplierDiscipline",
+  "multiplier_laws": [
+    {
+      "formula": "mu_q(x;P)=#{1<=c<P: c == -xP mod q}=1+floor((P-1-a_q)/q), a_q in [1,q].",
+      "law": "row_hit_multiplicity_formula",
+      "status": "closed"
+    },
+    {
+      "formula": "mu_q(x;P)<=ceil(P/q); in particular q>z gives mu_q<=ceil(P/z).",
+      "law": "uniform_capacity_ceiling",
+      "status": "closed"
+    },
+    {
+      "formula": "M#_{x,z}=sum_{c in R_{x,z}} 1/mu_{tau_z(c)}.",
+      "law": "capacity_normalized_charge",
+      "status": "defined_closed"
+    },
+    {
+      "formula": "#distinct tau_z labels >= M#_{x,z}.",
+      "law": "distinct_label_lower_bound",
+      "status": "closed"
+    },
+    {
+      "formula": "distinct labels do not yet imply enough row-free formal-unit types without anti-collapse.",
+      "law": "label_to_type_gap",
+      "status": "open"
+    }
+  ],
+  "next_direct_attack_target": "NormalizedPrefixResidualPotentialLowerBound",
+  "no_theorem_switch": true,
+  "normalized_prefix_residual_potential_lower_bound_proved": false,
+  "parallel_attack_target": "PrefixLabelSupportToRowFreeTypeAntiCollapse",
+  "plain_conclusion": "`RegisteredPrefixCapacityMultiplierDiscipline` 可以闭合为精确乘子记账：每个标签 q 在同一行只命中 mu_q(x;P) 个列，且 mu_q<=ceil(P/q)。因此 prefix atom 按 1/mu_q 赋权后，同一 q 的总权重至多 1，归一化质量 M# 下界不同标签数。剩余不是乘子纪律本身，而是证明 M# 足够大，并证明不同标签不会在 row-free type/quotient 投影下塌缩。",
+  "prefix_capacity_normalized_effective_type_instance_lower_bound_proved": false,
+  "prefix_label_support_to_row_free_type_anticollapse_proved": false,
+  "registered_prefix_capacity_multiplier_discipline_proved": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CapacityMultiplierInputActive",
+      "meaning": "上一层把 prefix 加权转移后的直接硬点定为容量乘子纪律。",
+      "proved": false,
+      "remaining": "RegisteredPrefixCapacityMultiplierDiscipline"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在早期零行假设下登记每个 q 的行内命中容量。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ExactRowHitMultiplicityFormulaClosed",
+      "meaning": "固定 q<P 时，覆盖列是单个模 q 余类在 [1,P-1] 的截断，故 mu_q 有显式整式公式。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "UniformCapacityCeilingClosed",
+      "meaning": "由公式立得 mu_q<=ceil(P/q)，所以降低 cutoff 后的复用风险被显式乘子控制。",
+      "proved": true,
+      "remaining": "乘子可控不等于归一化质量足够大。"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityNormalizedChargeClosed",
+      "meaning": "给每个 prefix atom 赋权 1/mu_tau；同一标签的总权重不超过 1。",
+      "proved": true,
+      "remaining": "需要证明总归一化权重超过类型阈值。"
+    },
+    {
+      "closed": true,
+      "gate": "DistinctLabelLowerBoundClosed",
+      "meaning": "按标签分组求和，#distinct labels >= sum_c 1/mu_tau(c)。",
+      "proved": true,
+      "remaining": "不同标签到不同 row-free type 仍需防止哈希/quotient 塌缩。"
+    },
+    {
+      "closed": true,
+      "gate": "RegisteredCapacityMultiplierDisciplineClosed",
+      "meaning": "容量乘子字段和归一化记账纪律已经闭合；不能再把 completed-internal 标签的多命中当作免费独立实例。",
+      "proved": true,
+      "remaining": "RegisteredPrefixCapacityMultiplierDiscipline"
+    },
+    {
+      "closed": false,
+      "gate": "NormalizedPrefixPotentialLowerBoundCurrentCorpusProved",
+      "meaning": "尚未证明 M#_{x,z} 对某个统一 prefix z 超过类型压缩阈值。",
+      "proved": false,
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixLabelToTypeAntiCollapseCurrentCorpusProved",
+      "meaning": "尚未证明不同 tau_z 标签或标签骨架不会在 row-free type 投影下大量合并。",
+      "proved": false,
+      "remaining": "PrefixLabelSupportToRowFreeTypeAntiCollapse"
+    },
+    {
+      "closed": false,
+      "gate": "EffectiveTypeInstanceLowerBoundCurrentCorpusProved",
+      "meaning": "有了容量纪律后，最终仍需归一化质量下界与标签到类型抗塌缩合取。",
+      "proved": false,
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound AND PrefixLabelSupportToRowFreeTypeAntiCollapse"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-strict-boundary-cap-type-compression-router.md": "51c6110eabfda213152666a87c9f4b942db2c6bc55c9ec98b1e5a7ac75baaa24",
+    "docs/monograph/prime-matrix-strict-forced-obligation-lower-bound-router.md": "46375c4117cd44e681cacc3d31d90bc0555eaed7a6d12ecf4e511fd91671027b",
+    "docs/monograph/prime-matrix-strict-prefix-residual-transfer-router.json": "e881be563d60841cab6d45ca64a55ee745691b9476ba79be3a3decab58038cad"
+  },
+  "status": "prefix_capacity_multiplier_discipline_closed_normalized_potential_anticollapse_open",
+  "uniform_capacity_ceiling_closed": true
+}

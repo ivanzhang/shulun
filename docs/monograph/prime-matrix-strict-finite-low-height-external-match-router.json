@@ -1,0 +1,121 @@
+{
+  "certificate_type": "prime_matrix_strict_finite_low_height_external_match_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "FiniteLowHeightGateActive",
+    "ThetaTargetStrictExternalReady",
+    "XiNoZeroBelow14ExternalReady",
+    "ExternalFiniteLowHeightTemplateChecked",
+    "FiniteLowHeightZeroCheckLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_low_height_self_contained_closed": false,
+  "finite_low_height_strict_external_matched": true,
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "ExplicitPsiThetaContourEnvelopeXGe20000FromZeroFreeRegion",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedLowHeightStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "`FiniteLowHeightZeroCheckLedger` 已在外部路线上严格匹配关闭：theta 前置已由 strict 外部 Dusart 匹配给出，低高度部分由首零点大于 14 和 Platt-Trudgian/Turing 完备性证书承担。该步仍不是文内自足低高度证明。",
+  "remaining_self_contained_after_low_height": [
+    "CriticalLineNoZeroOn0To14FiniteLedger",
+    "CriticalStripNoOffLineZeroBelow14TuringLedger"
+  ],
+  "replacement_external": {
+    "FiniteLowHeightZeroCheckLedger": "FiniteLowHeightZeroCheckStrictExternalClosedFirstZeroGT14TuringComplete"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只补外部解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteLowHeightGateActive",
+      "meaning": "theta 外部严格匹配后，下一最窄点是 T<=14 的有限低高度零点核验。",
+      "proved": true,
+      "remaining": "FiniteLowHeightZeroCheckLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaTargetStrictExternalReady",
+      "meaning": "theta@20000 已在外部路线严格匹配 Dusart 界。",
+      "proved": false,
+      "remaining": "ThetaEnvelopeTargetAt20000StrictExternalMatchedDusartOneOver36260"
+    },
+    {
+      "closed": true,
+      "gate": "XiNoZeroBelow14ExternalReady",
+      "meaning": "首零点高度大于 14，且外部 Turing/Platt-Trudgian 完备性排除低高度漏零。",
+      "proved": false,
+      "remaining": "BacklundXiNoNontrivialZeroBelow14ExternalClosed"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalFiniteLowHeightTemplateChecked",
+      "meaning": "旧低高度证书只复用来源数字和闭合边界，不改变 strict theta 前置。",
+      "proved": true,
+      "remaining": "FiniteLowHeightZeroCheckExternalClosedFirstZeroGT14TuringComplete"
+    },
+    {
+      "closed": true,
+      "gate": "FiniteLowHeightZeroCheckLedger",
+      "meaning": "接受外部低高度证书后，有限低高度核验在外部路线上严格匹配关闭。",
+      "proved": false,
+      "remaining": "FiniteLowHeightZeroCheckStrictExternalClosedFirstZeroGT14TuringComplete"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedLowHeightStillOpen",
+      "meaning": "严格自足路线仍需文内 Riemann-Siegel/Turing 有限核验账本。",
+      "proved": false,
+      "remaining": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "低高度外部输入闭合不触动最终行列命题。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "192ec1ceac90f4a0cd30f11801435f59cc1bf08e3d10b40ec5e66eeb23c3dbc0",
+    "docs/monograph/prime-matrix-b3-finite-low-height-external-router.json": "7f4fc84b7180614576b07ec590ed6aad92f83a51b63e62bd494b97a44f8688f9",
+    "docs/monograph/prime-matrix-b3-xi-nozero-below14-router.json": "26311be8c842835adb7a4f7a0e6802403e30cbce77c690cb19dfbfd7a75ddd6b",
+    "docs/monograph/prime-matrix-strict-theta-target-external-match-self-frontier-router.json": "d3717a7a2777af0b38f25372e2c9c9caf3a09ad124efd6ee88db13e4f03729d9"
+  },
+  "source_table": [
+    [
+      "height target",
+      14.0,
+      "本链只需排除 0<|gamma|<=14。"
+    ],
+    [
+      "first zero reference",
+      14.134725141734693,
+      "外部首个非平凡零点高度。"
+    ],
+    [
+      "height margin",
+      0.13472514173469285,
+      "首零点高度相对 14 的余量。"
+    ],
+    [
+      "Platt-Trudgian height",
+      3000175332800.0,
+      "外部严格验证高度。"
+    ]
+  ],
+  "status": "finite_low_height_strict_external_matched_self_contained_open"
+}

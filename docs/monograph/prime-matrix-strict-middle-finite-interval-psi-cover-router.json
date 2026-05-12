@@ -1,0 +1,200 @@
+{
+  "certificate_type": "prime_matrix_strict_middle_finite_interval_psi_cover_router",
+  "certified_short_interval_psi_increment_upper_closed": false,
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "MiddleFiniteIntervalPsiCoverGateActive",
+    "DusartTable62PointValuesLedger",
+    "SparsePointMonotonicityCoverFails",
+    "TrivialJumpEnvelopeRequiresFineMesh"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "mesh_pressure_rows": [
+    {
+      "max_mesh_under_trivial_integer_weight": 810357.883052281,
+      "meaning": "trivial jump envelope would require very fine certified mesh; sparse 1e11 grid cannot work",
+      "point_slack": 22690020.725463867,
+      "x": 800000000000.0
+    },
+    {
+      "max_mesh_under_trivial_integer_weight": 921134.57585798,
+      "meaning": "trivial jump envelope would require very fine certified mesh; sparse 1e11 grid cannot work",
+      "point_slack": 25791768.124023438,
+      "x": 900000000000.0
+    },
+    {
+      "max_mesh_under_trivial_integer_weight": 1013209.4012407576,
+      "meaning": "trivial jump envelope would require very fine certified mesh; sparse 1e11 grid cannot work",
+      "point_slack": 28369863.23474121,
+      "x": 1000000000000.0
+    }
+  ],
+  "middle_finite_interval_psi_cover_closed": false,
+  "middle_psi_fine_mesh_computation_hash_closed": false,
+  "middle_psi_upper_directed_rounding_closed": false,
+  "naive_interval_rows": [
+    {
+      "bound": 1.124999721539845,
+      "defect": 0.12497131153984498,
+      "interval": "[800000000000, 900000000000]",
+      "sufficient": false
+    },
+    {
+      "bound": 1.111111155707517,
+      "defect": 0.11108274570751697,
+      "interval": "[900000000000, 1000000000000]",
+      "sufficient": false
+    },
+    {
+      "bound": 2.000000182627336,
+      "defect": 0.9999717726273358,
+      "interval": "[1000000000000, 1446257064291]",
+      "sufficient": false
+    }
+  ],
+  "next_direct_attack_target": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+    "MiddlePsiFineMeshComputationAndHashLedger",
+    "PrimePowerJumpLocalizationOrUpperEnvelopeLedger",
+    "MiddlePsiUpperDirectedRoundingLedger",
+    "MiddleFiniteIntervalPsiCover8e11ToE28Ledger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "MiddlePsiFineMeshComputationAndHashLedger",
+    "PrimePowerJumpLocalizationOrUpperEnvelopeLedger",
+    "MiddlePsiUpperDirectedRoundingLedger"
+  ],
+  "plain_conclusion": "中段点值本身很强，但不能形成整段证明。Table 6.2 在几个节点的 psi/x 均低于目标，可是只用 psi 单调性和下一稀疏节点值会严重失败；点间最大值必须由短区间增量上界或精细网格加跳点证书控制。因此最新最窄点变为 `CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger`。",
+  "point_rows": [
+    {
+      "absolute_slack": 22690020.725463867,
+      "beats_target": true,
+      "psi": 800000037979.2747,
+      "ratio": 1.0000000474740933,
+      "x": 800000000000.0
+    },
+    {
+      "absolute_slack": 25791768.124023438,
+      "beats_target": true,
+      "psi": 899999777231.8761,
+      "ratio": 0.9999997524798623,
+      "x": 900000000000.0
+    },
+    {
+      "absolute_slack": 28369863.23474121,
+      "beats_target": true,
+      "psi": 1000000040136.7654,
+      "ratio": 1.0000000401367655,
+      "x": 1000000000000.0
+    },
+    {
+      "absolute_slack": 56637372.66430664,
+      "beats_target": true,
+      "psi": 2000000182627.336,
+      "ratio": 1.000000091313668,
+      "x": 2000000000000.0
+    }
+  ],
+  "prime_power_jump_control_closed": false,
+  "replacement_self_contained": {
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger": "explicit upper envelope for psi increments on a certified partition of [8e11,e^28]",
+    "MiddleFiniteIntervalPsiCover8e11ToE28Ledger": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger OR (MiddlePsiFineMeshComputationAndHashLedger AND PrimePowerJumpLocalizationOrUpperEnvelopeLedger AND MiddlePsiUpperDirectedRoundingLedger)"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审计假设反例链可调用的中段有限 psi 覆盖，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MiddleFiniteIntervalPsiCoverGateActive",
+      "meaning": "上一层已把 1.00002841 的来源缺口压成 8e11 到 e^28 的有限区间覆盖。",
+      "proved": true,
+      "remaining": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "DusartTable62PointValuesLedger",
+      "meaning": "Table 6.2 点值在 8e11、9e11、1e12、2e12 均低于 1.00002841，且绝对余量为千万级。",
+      "proved": true,
+      "remaining": "point values only; interval cover still open"
+    },
+    {
+      "closed": true,
+      "gate": "SparsePointMonotonicityCoverFails",
+      "meaning": "只用 psi 单调性和下一稀疏点值会得到过大的右点/左端上界，不能覆盖点间。",
+      "proved": true,
+      "remaining": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger OR MiddlePsiFineMeshComputationAndHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "TrivialJumpEnvelopeRequiresFineMesh",
+      "meaning": "若只用每个整数贡献不超过 log x 的极粗跳跃包络，千万级余量要求约百万级网格，1e11 稀疏网格远远不够。",
+      "proved": true,
+      "remaining": "MiddlePsiFineMeshComputationAndHashLedger AND PrimePowerJumpLocalizationOrUpperEnvelopeLedger"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+      "meaning": "需要对每个子区间证明 psi(y)-psi(x) <= 1.00002841*y - psi(x) 的短区间上界。",
+      "proved": false,
+      "remaining": "short interval explicit upper envelope for psi increments"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiFineMeshComputationAndHashLedger",
+      "meaning": "需要机器可读的中段精细网格、每块端点 psi 值、最大跳点包络和 hash。",
+      "proved": false,
+      "remaining": "fine mesh computation archive"
+    },
+    {
+      "closed": false,
+      "gate": "PrimePowerJumpLocalizationOrUpperEnvelopeLedger",
+      "meaning": "需要定位或上界每个网格块中的素数幂跳跃，防止点间最大值逃逸。",
+      "proved": false,
+      "remaining": "prime and prime-power jump certificate"
+    },
+    {
+      "closed": false,
+      "gate": "MiddlePsiUpperDirectedRoundingLedger",
+      "meaning": "需要证明 1.00002841 是对整段最大值的外向上舍入，而非仅对少数点值的舍入。",
+      "proved": false,
+      "remaining": "directed rounding for interval supremum"
+    },
+    {
+      "closed": false,
+      "gate": "MiddleFiniteIntervalPsiCover8e11ToE28Ledger",
+      "meaning": "当前完成点值压力和失败模式审计；整段中段 psi 覆盖尚未自足闭合。",
+      "proved": false,
+      "remaining": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger OR (MiddlePsiFineMeshComputationAndHashLedger AND PrimePowerJumpLocalizationOrUpperEnvelopeLedger AND MiddlePsiUpperDirectedRoundingLedger)"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "中段有限区间 psi 覆盖审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c9d53636643c376f8bb8a122a4395fef596ca5badca812d794cafa9e470e3e9f",
+    "docs/monograph/prime-matrix-strict-middle-psi-upper-source-router.json": "7ec968c1e21c005f757605b5ac767c93fb3925f2a761b4e550d3d86009c9bd98",
+    "docs/monograph/prime-matrix-strict-psi-epsilon-table-algorithm-router.json": "ec4bf5ae2aee8b7f878df4c58bc69cb6f711ed2fa2c5bf7fcc3e463a4e735b5f"
+  },
+  "sparse_point_monotonicity_cover_fails": true,
+  "status": "middle_interval_point_values_good_sparse_monotonic_cover_fails_increment_or_fine_mesh_open",
+  "table62_point_values_below_target": true,
+  "target_ratio": 1.00002841,
+  "trivial_jump_envelope_requires_fine_mesh": true,
+  "x_right_e28": 1446257064291.475
+}

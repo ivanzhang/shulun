@@ -1,0 +1,193 @@
+{
+  "attack_routes": [
+    {
+      "action": "补入 table_012 的原始生成工件、输入文件、外向舍入日志和 hash。",
+      "route": "published_artifact_route",
+      "status": "open",
+      "target": "PublishedTable012GeneratorArtifactAndHashLedger"
+    },
+    {
+      "action": "实现分段 theta 极值 runner，输出 34 个区间的最大归一化误差和可复现 hash。",
+      "route": "independent_regeneration_route",
+      "status": "open",
+      "target": "IndependentThetaExtremalArchiveForTable012IntervalsLedger"
+    },
+    {
+      "action": "用更强显式 PNT/零点自由区直接证明 theta(x)<x；这会回到内部 Dusart/PNT 包。",
+      "route": "analytic_bypass_route",
+      "status": "open but not narrower than table artifact route",
+      "target": "DirectThetaLtIdentity1e8To8e11AnalyticLedger"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_table012_self_contained_frontier_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "P51ExternalLaneAlreadyClosed",
+    "StrictTable012SelfContainedGateActive",
+    "PublishedTable012StatementAndNegativeB1Cover"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dusart_p51_full_theta_statement_external_closed": true,
+  "dusart_p51_full_theta_statement_self_contained_closed": false,
+  "empirical_absence_not_used": true,
+  "external_source": {
+    "available": true,
+    "commented_input_reference_found": true,
+    "deleglise_rivat_dependency_found": true,
+    "interval_rule_found": true,
+    "path": "/tmp/Estimates2.tex",
+    "sha256": "684c06ddd78deb4b7a7a6d0b3d275fc9fb3d8c1cca6e3acb8cdd8c9d9763befc",
+    "table_012_label_found": true
+  },
+  "independent_extremal_archive_present": false,
+  "next_direct_attack_target": "Table012OriginalGeneratorOrIndependentThetaExtremalArchiveLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "Table012GeneratorArtifactPresent",
+    "IndependentThetaExtremalArchivePresent",
+    "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger",
+    "DirectUnconditionalContradictionFound",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "Table012DirectedRoundingAndIntervalPropagationLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "严格自足线的 P5.1 低段剩余已压到 table_012 的来源证明：已发表表行的 b1<0 覆盖可以外部使用，但作者侧自足版还缺原始生成器/输入/hash，或一份独立重算的 34 区间 theta 极值归档。因此下一最窄点不是再拼接 P5.1，而是 `Table012OriginalGeneratorOrIndependentThetaExtremalArchiveLedger`。",
+  "proof_obligations": [
+    {
+      "closed": true,
+      "name": "Table012StatementAndIntervalRuleLedger",
+      "remaining": "none",
+      "role": "确认 table_012 的区间口径和 b1 上界公式。"
+    },
+    {
+      "closed": true,
+      "name": "Table012TranscriptionNegativeB1CoverLedger",
+      "remaining": "none on external lane",
+      "role": "确认已发表表行若被接受，则 b1<0 连续覆盖 [1e8,8e11]。"
+    },
+    {
+      "closed": false,
+      "name": "PublishedTable012GeneratorArtifactAndHashLedger",
+      "remaining": "theta_pk/tables/table_012.tex or equivalent published artifact",
+      "role": "取得原始 table_012 生成文件、算法说明、输入数据和 hash。"
+    },
+    {
+      "closed": false,
+      "name": "IndependentThetaExtremalArchiveForTable012IntervalsLedger",
+      "remaining": "per-interval extremal theta archive with hash",
+      "role": "独立重算 34 个区间内 theta 极值，证明每个 b1 为外向上界。"
+    },
+    {
+      "closed": false,
+      "name": "Table012DirectedRoundingAndIntervalPropagationLedger",
+      "remaining": "PublishedTable012GeneratorArtifactAndHashLedger OR IndependentThetaExtremalArchiveForTable012IntervalsLedger",
+      "role": "证明表值小数截断/舍入方向是外向安全的，而不是仅复录小数。"
+    }
+  ],
+  "published_generator_artifact_present_in_repo": false,
+  "published_table012_statement_cover_closed": true,
+  "replacement_self_contained": {
+    "Table012OriginalGeneratorOrIndependentThetaExtremalArchiveLedger": "PublishedTable012GeneratorArtifactAndHashLedger OR IndependentThetaExtremalArchiveForTable012IntervalsLedger",
+    "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger": "Table012OriginalGeneratorOrIndependentThetaExtremalArchiveLedger AND Table012DirectedRoundingAndIntervalPropagationLedger"
+  },
+  "repo_artifacts": {
+    "candidate_paths": [
+      "theta_pk/tables/table_012.tex",
+      "data/table_012.jsonl",
+      "data/theta-table012-extremal-archive.jsonl",
+      "data/theta-table012-extremal-archive.json"
+    ],
+    "existing_candidate_paths": [],
+    "independent_extremal_archive_present": false,
+    "middle_psi_archive_present_but_wrong_scope": true,
+    "published_generator_artifact_present_in_repo": false
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只下钻 P5.1 低段有限表输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "P51ExternalLaneAlreadyClosed",
+      "meaning": "接受外部 FK/Dusart 表时，P5.1 theta 上界已闭合；本步只处理严格自足剩余。",
+      "proved": true,
+      "remaining": "DusartP51ThetaUpperFullSelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "StrictTable012SelfContainedGateActive",
+      "meaning": "P5.1 自足缺口唯一落在 table_012 原始有限计算/hash。",
+      "proved": true,
+      "remaining": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PublishedTable012StatementAndNegativeB1Cover",
+      "meaning": "表陈述、区间规则和 b1<0 复录审计已闭合；这是外部表可用性，不是自足生成证明。",
+      "proved": true,
+      "remaining": "external table lane closed"
+    },
+    {
+      "closed": false,
+      "gate": "Table012GeneratorArtifactPresent",
+      "meaning": "仓库没有 table_012 原始生成文件或可复现计算日志。",
+      "proved": false,
+      "remaining": "PublishedTable012GeneratorArtifactAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "IndependentThetaExtremalArchivePresent",
+      "meaning": "仓库没有 34 区间 theta 极值归档；中段 psi 节点表从 8e11 开始，不能替代 [1e8,8e11] 的 theta 表。",
+      "proved": false,
+      "remaining": "IndependentThetaExtremalArchiveForTable012IntervalsLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ThetaLessThanIdentityFiniteTableTo8e11SelfContainedLedger",
+      "meaning": "严格自足版必须补原始表生成器或独立极值归档，并证明外向舍入。",
+      "proved": false,
+      "remaining": "Table012OriginalGeneratorOrIndependentThetaExtremalArchiveLedger AND Table012DirectedRoundingAndIntervalPropagationLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DirectUnconditionalContradictionFound",
+      "meaning": "table_012 自足化只是解析输入补强，不产生反例链与真实链终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "行/列命题仍未作者侧无条件闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "scale": {
+    "interval_count": 34,
+    "prime_jump_count_scale_estimate_x_over_logx": "29188688475.2017810894038403484547164368961151948828031619949",
+    "range_width_integer_count": "7.999E+11",
+    "scale_estimate_is_not_a_proof_input": true,
+    "worst_published_margin_label": "7E+11",
+    "worst_published_margin_right": "800000000000",
+    "worst_published_relative_margin": "3.64858605940022263617548004355683955461201439936035039524937E-7"
+  },
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "5228c7f169c2d6e51f4b838aac0f7bee075005632f01704d1215183ca38f1557",
+    "docs/monograph/prime-matrix-strict-dusart-p51-theta-upper-full-sync-router.json": "0ba15dc81e2730c34d2e35d6f7d58c481a14563b130fb0527ca26be2cf44b5c7",
+    "docs/monograph/prime-matrix-strict-theta-less-than-identity-to-8e11-router.json": "41dbd8f89db7887b3683b77c8407c02308993673d6d8d20cec122338a154bbdb"
+  },
+  "status": "table012_self_contained_frontier_reduced_to_generator_or_independent_theta_extremal_archive",
+  "table012_generator_or_independent_archive_closed": false,
+  "theta_less_than_identity_to_8e11_external_closed": true,
+  "theta_less_than_identity_to_8e11_self_contained_closed": false
+}

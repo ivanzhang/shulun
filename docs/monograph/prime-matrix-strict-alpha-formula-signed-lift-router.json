@@ -1,0 +1,134 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_noncanonical_alpha_side_primitive_rule_proved": false,
+  "actual_noncanonical_delta_side_primitive_rule_proved": false,
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "actual_signed_alpha_source_measure_for_carry_shell_rows_proved": false,
+  "alpha_delta_pairing_compatibility_before_cauchy_proved": false,
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "alpha_formula_signed_lift_router_closed": true,
+  "alpha_row_anchor_phase_emission_formula_proved": false,
+  "alpha_rows_phi_pushforward_compatibility_proved": false,
+  "alpha_signed_lift_failure_named_return_proved": false,
+  "alpha_signed_lift_variation_branch_budget_proved": false,
+  "alpha_signed_weight_law_from_precauchy_arithmetic_identity_proved": false,
+  "certificate_type": "prime_matrix_strict_alpha_formula_signed_lift_router",
+  "counterexample_assumption_only": true,
+  "deterministic_alpha_primitive_row_emission_map_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "disintegration_formal_not_source_imported": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "explicit_alpha_delta_primitive_constructor_rule_proved": false,
+  "geometric_ledger_unsigned_only_imported": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger",
+  "no_theorem_switch": true,
+  "phi_budget_reduction_to_emitter_imported": true,
+  "plain_conclusion": "`AlphaFormulaSignedCoefficientLiftLedger` 被压成 actual signed alpha 源测度、pre-Cauchy 算术权重律、Phi 推前兼容、signed 变差/branch 预算和失败命名回流五项。上游早期零行刚性能显著缩小候选 row 形状，但仍不能把 unsigned 覆盖数据变成 signed alpha 系数；当前最窄点为 `AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger`。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "primitive_rule_nonzero_sign_local_factor_proved": false,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AlphaFormulaSignedLiftTargetActive",
+      "meaning": "上一层已把当前最窄点固定为 unsigned row 形状到 signed alpha 系数行的提升。",
+      "proved": false,
+      "remaining": "AlphaFormulaSignedCoefficientLiftLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationFormalButNeedsSourceImported",
+      "meaning": "给定 signed source 后逐纤维解积分形式闭合；真正硬点是 actual source 与 Phi 推前恒等式。",
+      "proved": true,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaRowsPhiPushforwardCompatibilityLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "GeometricLedgerUnsignedOnlyImported",
+      "meaning": "斜线、P列锚、carry-shell 和 layered-wheel 给出支撑/相位字母表，但不控制 signed 变差。",
+      "proved": true,
+      "remaining": "AlphaSignedLiftVariationBranchBudgetLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "PhiBudgetReductionToEmitterImported",
+      "meaning": "actual signed/Phi 兼容预算已被压成 pre-pushforward primitive emitter；但 emitter 尚未证明。",
+      "proved": true,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedZeroRowCannotSupplySignedSeedImported",
+      "meaning": "早期零行假设只给 unsigned covering data，不能作为 signed alpha source seed。",
+      "proved": true,
+      "remaining": "AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger。"
+    },
+    {
+      "closed": true,
+      "gate": "PreCauchyFieldContractImported",
+      "meaning": "pre-Cauchy 来源律和反向来源 no-go 已固定：必须正向给出 signed 行、权重、branch key 和回流。",
+      "proved": true,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ActualSignedAlphaSourceMeasureCurrentCorpusProved",
+      "meaning": "当前材料尚未定义同一 formal unit 内 actual noncanonical carry-shell alpha rows 上的 signed 源测度。",
+      "proved": false,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaSignedWeightLawCurrentCorpusProved",
+      "meaning": "当前材料尚未给出 signed alpha 权重来自独立 pre-Cauchy 算术恒等式的公式。",
+      "proved": false,
+      "remaining": "AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaRowsPhiPushforwardCurrentCorpusProved",
+      "meaning": "当前材料尚未证明 alpha rows 沿 Phi 推前后等于目标 payment-side alpha 系数。",
+      "proved": false,
+      "remaining": "AlphaRowsPhiPushforwardCompatibilityLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaSignedLiftVariationBranchBudgetCurrentCorpusProved",
+      "meaning": "当前材料尚未证明 signed lift 的总变差、绝对支撑和 branch key 复杂度由几何账本支配。",
+      "proved": false,
+      "remaining": "AlphaSignedLiftVariationBranchBudgetLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaSignedLiftFailureReturnCurrentCorpusProved",
+      "meaning": "当前材料尚未给出 signed 源缺失、Phi 不兼容、变差超预算或 branch 爆炸的命名回流。",
+      "proved": false,
+      "remaining": "AlphaSignedLiftFailureNamedReturnLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "AlphaFormulaSignedCoefficientLiftCurrentCorpusProved",
+      "meaning": "signed 源测度、权重律、Phi 推前、变差预算和失败回流五项尚未合取证明。",
+      "proved": false,
+      "remaining": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_lift_law": "The signed lift cannot be obtained by naming carry-shell hits. It must define an actual signed alpha source measure before Cauchy/dispersion, give an arithmetic weight law, prove Phi pushforward compatibility, control absolute variation and branch keys, and return every failed lift by name.",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-actual-signed-phi-budget-emitter-reduction-router.json": "95771e9095c5c2cbd66c2afbd5a1d4de4a0ea5562cdf5504d950b2246696c1e8",
+    "docs/monograph/prime-matrix-clean-core-disintegration-automaticity-router.json": "1ed84ceda49fdc1fbafb7ba83824ce9a4438d1d5bad2d580851d9afa690fb7b7",
+    "docs/monograph/prime-matrix-clean-core-geometric-variation-branch-budget-router.json": "7036cd75920ab730517c0113314d7f88a9b2489b8bc98eedd9d576d686d39b91",
+    "docs/monograph/prime-matrix-clean-core-precauchy-source-law-atom-router.json": "c4cb9657f034f04f55281554348ddda071ef0d2a35da930b9018ddbbd5b8ab8c",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-alpha-row-anchor-phase-formula-router.json": "1da61d631c11df13e21c840516701954072e915d348b1ab4fd6bfb2fd3a0c6d8"
+  },
+  "status": "strict_alpha_formula_signed_lift_reduced_to_source_weight_phi_budget_return_open",
+  "terminal_gap_after_router": "ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger",
+  "terminal_gap_before_router": "AlphaFormulaSignedCoefficientLiftLedger",
+  "zero_row_signed_seed_extraction_blocked_imported": true
+}

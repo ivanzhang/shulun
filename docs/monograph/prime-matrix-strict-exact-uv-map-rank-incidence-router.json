@@ -1,0 +1,79 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "capacity_multiplier_not_rank_source": true,
+  "certificate_type": "prime_matrix_strict_exact_uv_map_rank_incidence_router",
+  "counterexample_assumption_only": true,
+  "dls_invertible_variables_not_precauchy_rank": true,
+  "exact_uv_map_rank_incidence_router_closed": true,
+  "hard_law": "exact-UV map rank 的正面内容不是相位可逆性，也不是谱估计变量可逆性；它是一个 source-level incidence 定理。旧的朴素 FactorResidueIncidence 已被内部 fiber 反模型阻断，所以这里需要 actual emitter 专用的有界重数 incidence，而不是复用 K4/K6 或 DLS 账本。",
+  "incidence_contract": "For the actual noncanonical pre-Cauchy emitter, prove a bounded-multiplicity incidence theorem between primitive source parameters and exact balanced factor pairs (u,v): each exact pair has at most |Domain|/L^K preimages, after registered branch/sign/local-factor refinement.",
+  "naive_factor_residue_incidence_blocked": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem",
+  "no_theorem_switch": true,
+  "plain_conclusion": "`PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem` 继续压缩为 `ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem`。这一步保持同一源熵目标，只是把“map rank”翻译成真正需要证明的 source-level 有界重数 incidence。当前语料尚未证明该 incidence，行/列命题仍未无条件闭合。",
+  "pre_cauchy_emitter_exact_uv_map_rank_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "MapRankNoCollapseTargetActive",
+      "meaning": "上一层已把 primitive emitter multiplicity 压成 exact `(u,v)` map rank/no-collapse。",
+      "proved": false,
+      "remaining": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "NaiveFactorResidueIncidenceBlocked",
+      "meaning": "一个 moving `(u,v)` 块可含大量内部 atom；内部平坦不推出 factor-pair 支撑。",
+      "proved": true,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "DLSInvertibleVariablesPostCompletionOnly",
+      "meaning": "相位/可逆变量账本服务窗口化谱估计，不证明 pre-Cauchy emitter 到 exact `(u,v)` 的有界重数。",
+      "proved": true,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "DisintegrationDictionaryNotIncidenceBound",
+      "meaning": "解积分字典给源测度和推前恒等式；仍需证明字典原像在 exact `(u,v)` 上不坍缩。",
+      "proved": true,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityMultipliersDoNotCreateRank",
+      "meaning": "容量乘子纪律只约束权重放大，不产生 image support 或 map rank。",
+      "proved": true,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "RankEquivalentToBoundedMultiplicityIncidence",
+      "meaning": "map rank/no-collapse 的正面内容正是 actual emitter 源参数与 exact `(u,v)` 的有界重数 incidence。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "ActualEmitterExactUVBoundedMultiplicityIncidenceCurrentCorpusProved",
+      "meaning": "当前语料尚未证明适用于 actual noncanonical pre-Cauchy emitter 的有界重数 incidence。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-alpha-delta-disintegration-router.json": "e4e15d38ddb1960e6ce1e2e4747086ac374c189ea06b22132009de8ec9d8fbfe",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.json": "89f695e1ad123d1461acb338ddf0b371ef49a266baf3b2580961148943c5f594",
+    "docs/monograph/prime-matrix-strict-emitter-multiplicity-rank-attack-router.json": "bd73c19403dca1c1363487156de2176f150a59b53f407450d8dbe8d769cb5953",
+    "docs/monograph/prime-matrix-triad-a1-factor-residue-incidence-router.json": "be50163987cdc54179f3e439e32c390bc8df4dbde950f12a04ecad09b5f06e80"
+  },
+  "status": "strict_exact_uv_map_rank_reduced_to_actual_emitter_bounded_multiplicity_incidence_open",
+  "terminal_gap_after_router": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem",
+  "terminal_gap_before_router": "PreCauchyEmitterExactUVMapRankAndNoFiberCollapseTheorem"
+}

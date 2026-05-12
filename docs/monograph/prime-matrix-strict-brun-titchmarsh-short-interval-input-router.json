@@ -1,0 +1,128 @@
+{
+  "brun_titchmarsh_short_interval_input_closed_for_external_lane": true,
+  "brun_titchmarsh_short_interval_input_external_closed": true,
+  "brun_titchmarsh_short_interval_input_self_contained_closed": false,
+  "bt_profile": {
+    "bt_prime_count_bound": 144764.82730108395,
+    "h_gt_one": true,
+    "log_weight_bound": 28.000000691439773,
+    "mesh_h": 1000000.0,
+    "short_interval_inside_positive_range": true,
+    "theta_prime_increment_bound": 4053415.2645265097,
+    "x_left": 800000000000.0,
+    "x_right": 1446257064291.475
+  },
+  "certificate_type": "prime_matrix_strict_brun_titchmarsh_short_interval_input_router",
+  "certified_short_interval_psi_increment_upper_closed": false,
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "ExternalBrunTitchmarshTheoremRegistered",
+    "ParameterMatchToMillionMesh",
+    "ThetaWeightConversionArithmetic",
+    "BrunTitchmarshShortIntervalPrimeCountUpperLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_sources": [
+    {
+      "doi": "10.1112/S0025579300004708",
+      "name": "Montgomery-Vaughan large sieve / explicit Brun-Titchmarsh interval form",
+      "statement_used": "pi(x+y)-pi(x) <= 2y/log(y) for the q=1 short interval form",
+      "url": "https://doi.org/10.1112/S0025579300004708"
+    },
+    {
+      "name": "MathOverflow pointer to the Montgomery-Vaughan explicit interval form",
+      "statement_used": "secondary pointer only; not a replacement for the theorem source",
+      "url": "https://mathoverflow.net/a/370956"
+    }
+  ],
+  "matches_prior_short_interval_bound": true,
+  "middle_psi_fine_mesh_node_slack_floor_hash_closed": false,
+  "next_direct_attack_target": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "BrunTitchmarshSelfContainedProof",
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "BrunTitchmarshSelfContainedProof",
+    "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger"
+  ],
+  "plain_conclusion": "Brun-Titchmarsh 短区间素数计数输入可以在外部黑箱路线中登记：用 pi(x+h)-pi(x)<=2h/log h，并乘以 log(e^28+h)，得到与原短区间账本相同的素数 theta 增量上界。严格自足版仍未重证该定理；在外部路线中，短区间总包现在只剩细网格节点余量/hash。",
+  "prime_power_short_interval_correction_closed": true,
+  "prior_short_interval_bt_bound": 4053415.26452651,
+  "replacement_after_this": {
+    "BrunTitchmarshShortIntervalPrimeCountUpperLedger": "closed on the external theorem lane; self-contained proof remains open",
+    "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger",
+    "MiddlePsiFineMeshNodeSlackFloorAndHashLedger": "DelegliseRivatPsiNodeDataOrEquivalentComputationHashLedger AND NodeSlackFloorAuditLedger AND MeshCompletenessAndIndexHashLedger AND MiddlePsiUpperDirectedRoundingLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只登记短区间素数计数外部输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalBrunTitchmarshTheoremRegistered",
+      "meaning": "采用 Montgomery-Vaughan 显式 Brun-Titchmarsh 的 q=1 区间形式作为外部黑箱。",
+      "proved": true,
+      "remaining": "not self-contained"
+    },
+    {
+      "closed": true,
+      "gate": "ParameterMatchToMillionMesh",
+      "meaning": "h=1e6>1，且所有起始点均在正区间内；每段素数个数用 2h/log h 控制。",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaWeightConversionArithmetic",
+      "meaning": "再乘以 log(x_right+h) 得到与短区间账本一致的素数部分 theta 权重上界。",
+      "proved": true,
+      "remaining": "none"
+    },
+    {
+      "closed": false,
+      "gate": "BrunTitchmarshSelfContainedProof",
+      "meaning": "本文没有重证 Montgomery-Vaughan 大筛/Brun-Titchmarsh 定理；严格自足版仍需内部证明或可接受的定理引用政策。",
+      "proved": false,
+      "remaining": "internal large sieve proof or accepted external theorem status"
+    },
+    {
+      "closed": true,
+      "gate": "BrunTitchmarshShortIntervalPrimeCountUpperLedger",
+      "meaning": "在外部黑箱路线中，短区间素数计数输入已完成登记和参数匹配。",
+      "proved": true,
+      "remaining": "self-contained proof remains open"
+    },
+    {
+      "closed": false,
+      "gate": "CertifiedShortIntervalPsiIncrementUpperEnvelopeLedger",
+      "meaning": "BT 外部输入和素数幂修正已经处理后，短区间总包仍卡在细网格节点余量/hash。",
+      "proved": false,
+      "remaining": "MiddlePsiFineMeshNodeSlackFloorAndHashLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "BT 输入登记不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "c1d163623d398e086c70df9ff14b5005638b8aba941bf1d06b4f66d1fa175fdd",
+    "docs/monograph/prime-matrix-strict-middle-psi-fine-mesh-node-slack-router.json": "81d71543d55500a13c1bf982774ebcf6237c2f89d5ce590df1261bde43bf2e0c",
+    "docs/monograph/prime-matrix-strict-prime-power-short-interval-correction-router.json": "2b9fbe85a25dc2ba5ef4c07931c493c374b216b2ec10960216ac381b3841fc5c",
+    "docs/monograph/prime-matrix-strict-short-interval-psi-increment-router.json": "eb249ee130f441024741a0f9b9f51267eb9b15381017e774af61dd774f673edf"
+  },
+  "status": "brun_titchmarsh_external_input_registered_self_contained_proof_open_node_hash_still_open"
+}

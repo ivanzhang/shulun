@@ -1,0 +1,104 @@
+{
+  "certificate_type": "prime_matrix_strict_pair_mass_dispersion_to_moving_atom_router",
+  "status": "pair_mass_dispersion_reduced_to_acyclic_seed_and_clean_core_moving_atom_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "pair_mass_dispersion_boundary_closed": true,
+  "large_pair_atom_equivalence_closed": true,
+  "registered_multiplier_bridge_imported": true,
+  "failure_packet_return_alphabet_imported": true,
+  "pair_mass_dispersion_not_separate_terminal": true,
+  "acyclic_pre_cauchy_seed_proved": false,
+  "clean_core_moving_atom_exclusion_proved": false,
+  "exact_clean_core_source_entropy_proved": false,
+  "actual_exact_uv_support_proved": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ExactUVPairMassDispersionOrMaxAtomBoundLedger",
+  "terminal_gap_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ActualNoncanonicalCleanCoreMovingAtomExclusion",
+  "normal_form_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ExactCleanCoreFullSNonAPWFDSourceEntropy",
+  "strict_self_contained_math_basis_after_router": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND ActualNoncanonicalCleanCoreMovingAtomExclusion AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "ActualNoncanonicalCleanCoreMovingAtomExclusion_FOR_AcyclicPreCauchySeed",
+    "must_prove": [
+      "给出无环 pre-Cauchy actual noncanonical primitive source seed",
+      "在同一 formal unit 内定义最终登记容量测度 M_{u,v}",
+      "证明通过全部回流测试的 clean-core 残余没有 moving same-(u,v) 大原子",
+      "等价地证明 exact clean-core full-S non-AP WFD source entropy",
+      "把大原子、熵失败、source 缺失、超预算和抵消全部命名回流"
+    ],
+    "cannot_use_as_proof": [
+      "把 ExactUVPairMassDispersion 当作独立新黑箱反复引用",
+      "formal WFD、K4/K6、Type/Fourier fixed projection 平坦性",
+      "canonical RIW/Buchstab source entropy 跨分支导入",
+      "早期零行真实样本缺席或 payment skeleton 反推 source",
+      "未精确匹配的外部 KLS/DI/BFI"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "PairMassDispersionInputActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把 ExactUV 支撑数值负担压成 exact pair 最大原子/能量控制。",
+      "remaining": "判断 pair-mass 分散失败是否是新终端。"
+    },
+    {
+      "gate": "LargePairAtomEquivalenceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "最大 pair 界失败等价于存在同一 formal unit 内的 sign-refined exact (u,v) 大原子。",
+      "remaining": "把该大原子接入已登记容量与回流字母表。"
+    },
+    {
+      "gate": "RegisteredMultiplierBridgeImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "Type/Fourier/fiber 乘子纪律已闭合，exact pair 质量阈值可与最终容量大原子阈值对齐。",
+      "remaining": "桥接不排斥大原子，只防止账外乘子解释。"
+    },
+    {
+      "gate": "FailurePacketReturnAlphabetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "非 clean-core 的大原子必须回流到 finite sparse、PDEC、SAE/ColumnCRT、CleanKLS/DLS 或外部谱分支。",
+      "remaining": "只剩通过全部回流测试的 clean-core moving atom。"
+    },
+    {
+      "gate": "CleanCoreMovingAtomNormalFormImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "clean-core 大 pair 原子的 sharp 标准形是 ActualNoncanonicalCleanCoreMovingAtomExclusion，内部等价为 exact clean-core source entropy。",
+      "remaining": "证明 moving atom 排斥或 exact source entropy。"
+    },
+    {
+      "gate": "PairMassDispersionNotSeparateTerminal",
+      "closed": true,
+      "proved": true,
+      "meaning": "ExactUVPairMassDispersionOrMaxAtomBoundLedger 不是新增第三终端；失败对象就是已命名 moving atom。",
+      "remaining": "保留源种子 + moving atom 排斥两个真实输入。"
+    },
+    {
+      "gate": "MovingAtomExclusionCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料没有证明 actual noncanonical clean-core moving atom exclusion 或 exact source entropy。",
+      "remaining": "ActualNoncanonicalCleanCoreMovingAtomExclusion。"
+    },
+    {
+      "gate": "AcyclicSeedCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前材料仍未提交无环 pre-Cauchy actual noncanonical primitive source seed。",
+      "remaining": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.md": "8a49a2e5596756a83f457ecaa9bc8e6c44cf6b43f14e44a40d810cca2d1b8114",
+    "docs/monograph/prime-matrix-exact-uv-support-failure-packetization-router.md": "f59d8e1bb48ebe700a651cb6940d757588b8ea79293152fcac012a814c8980ea",
+    "docs/monograph/prime-matrix-support-failure-packet-return-dichotomy-router.md": "7aa8461ea17cf06e2da92987a2a2d4f565fe3a40fcd0fd6568476a9a637bf34e",
+    "docs/monograph/prime-matrix-clean-core-moving-atom-sharp-input-router.md": "2077f6b4322d13af9ac9bef4ee7d3f9c9c7f4a0e1a03f72151c7c338b6cc33f2",
+    "docs/monograph/prime-matrix-clean-core-terminal-normal-form-router.md": "c1b0979aba5d08c8f9c285031ff433d0805b534390374e9fa0453f24a66a1aae",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.md": "650a64fd37852a88f117a487f6fc2e059e2dce132dcc4093e2b568aa1a77d1a4"
+  },
+  "plain_conclusion": "pair-mass 分散失败不会产生一个新的终端硬点。最大 pair 原子界失败，等价于同一 formal unit 中出现 sign-refined exact (u,v) 大原子；registered multiplier discipline 把它与最终容量大原子对齐，支撑失败 packet 回流字母表再排除非 clean-core 出口。剩下的正是既有终端 ActualNoncanonicalCleanCoreMovingAtomExclusion，其内部标准形是 ExactCleanCoreFullSNonAPWFDSourceEntropy。因此严格自足源侧剩余被去重为：无环 pre-Cauchy source seed + clean-core moving atom 排斥。当前二者仍未证明，不能声明行/列无条件闭合。"
+}

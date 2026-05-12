@@ -1,0 +1,120 @@
+{
+  "certificate_type": "prime_matrix_strict_iterated_scaled_core_density_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的固定商型缩频迭代分支内。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "ScaledFrequencyProductLawClosed",
+      "meaning": "缩频频率等于初始频率除以全部商型乘积。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictHeightDecayClosed",
+      "meaning": "每层至少折半，递归不能无限循环。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "DensityLossProductLedgerClosed",
+      "meaning": "全部密度损耗由 `prod A_Lambda` 显式登记。",
+      "proved": true,
+      "remaining": "IteratedThresholdCollapseExclusionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ThreeExitLedgerClosed",
+      "meaning": "每层只剩 LCM 高度矛盾、固定商型 PDEC、阈值坍缩三出口。",
+      "proved": true,
+      "remaining": "DepthwiseLCMExplosionAgainstScaledFrequencyHeight OR FixedQuotientTypePDECColumnCertificateExclusion OR IteratedThresholdCollapseExclusionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "IteratedThresholdCollapseExcluded",
+      "meaning": "尚未证明阈值不会在触发 LCM/PDEC/SAE 前过早低于 1 个有效核心。",
+      "proved": false,
+      "remaining": "IteratedThresholdCollapseExclusionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "IteratedScaledCoreDensitySurvivalProved",
+      "meaning": "账本已闭合，但尚未排斥阈值坍缩，也未排斥固定商型 PDEC。",
+      "proved": false,
+      "remaining": "IteratedThresholdCollapseExclusionLedger AND FixedQuotientTypePDECColumnCertificateExclusion"
+    }
+  ],
+  "density_loss_product_ledger_closed": true,
+  "depthwise_lcm_explosion_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "fixed_type_pdec_excluded": false,
+  "iterated_scaled_core_density_survival_proved": false,
+  "iterated_threshold_collapse_excluded": false,
+  "lemmas": [
+    {
+      "formula": "h_r=h_0/prod_{i<=r} b_i c_i.",
+      "meaning": "每层固定商型都精确剥离一个商型乘积。",
+      "name": "scaled_frequency_product_law",
+      "status": "closed"
+    },
+    {
+      "formula": "|h_r|<=|h_0|/2^r.",
+      "meaning": "因每层 b_i c_i>=2，递归深度有限。",
+      "name": "strict_height_decay_law",
+      "status": "closed"
+    },
+    {
+      "formula": "rho_r>=rho_0/prod_{i<=r} A_{Lambda_i}, with A_{Lambda_i}<=8Lambda_i^2.",
+      "meaning": "密度损耗完全由有限字母表乘子登记。",
+      "name": "density_loss_product_law",
+      "status": "closed"
+    },
+    {
+      "formula": "Y_r is bounded by Y_0/prod_i max(b_i,c_i) and Y_0/prod_i min(b_i,c_i).",
+      "meaning": "核心窗口尺度随商型链显式变化。",
+      "name": "window_scale_product_law",
+      "status": "closed"
+    },
+    {
+      "formula": "At each depth: LCM explosion, fixed-type PDEC escape, or threshold collapse.",
+      "meaning": "迭代不再有第四种无名出口。",
+      "name": "three_exit_ledger",
+      "status": "closed_dichotomy"
+    },
+    {
+      "formula": "Show rho_r |I_r| stays above the trigger before height descent makes LCM impossible.",
+      "meaning": "剩余硬点是排斥阈值过早坍缩。",
+      "name": "threshold_collapse_exclusion",
+      "status": "open_input"
+    }
+  ],
+  "next_direct_attack_target": "IteratedThresholdCollapseExclusionLedger",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "DepthwiseLCMExplosionAgainstScaledFrequencyHeight",
+    "BoundedQuotientTypeSAEAbsorption"
+  ],
+  "plain_conclusion": "迭代缩频核心密度账本已经闭合。若固定商型链为 (b_i,c_i)，则 h_r=h_0/prod b_i c_i，且因 b_i c_i>=2 有 |h_r|<=|h_0|/2^r。密度损耗也完全登记为 rho_r>=rho_0/prod A_{Lambda_i}，其中 A_{Lambda_i}<=8Lambda_i^2。于是递归层不再有循环或无名出口：每一层必须是 LCM 高度矛盾、固定商型 PDEC 逃逸，或阈值坍缩。当前唯一新的数学缺口是排斥阈值过早坍缩，另保留固定商型 PDEC 排斥。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "scaled_frequency_product_law_closed": true,
+  "secondary_attack_target": "FixedQuotientTypePDECColumnCertificateExclusion",
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-fixed-quotient-density-transfer-router.md": "54fa081949f7becdadac81828375abe86286441b1e404a8645cd14d15829faa2",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.md": "69d32de5c9a326374b77ea8b6f4063888e1875332f8dbccd7107d90c88da9428",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.md": "2e9b9276de650d14f1b6fd67fd224ca60caf70e644f5dba1fb2eb2a290cfa392"
+  },
+  "status": "iterated_scaled_core_density_ledger_closed_threshold_collapse_and_pdec_open",
+  "strict_height_decay_closed": true,
+  "three_exit_ledger_closed": true,
+  "window_scale_product_law_closed": true
+}

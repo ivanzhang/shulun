@@ -1,0 +1,84 @@
+{
+  "certificate_type": "prime_matrix_strict_new_actual_source_entropy_nonrecursive_guard_router",
+  "circular_entropy_proof_rejected": true,
+  "elementary_support_energy_lemma_available": true,
+  "forbidden_recursive_formula": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem => ExactUVPairMassDispersionOrMaxAtomBoundLedger => NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "independent_exact_pair_l2_or_max_atom_bound_proved": false,
+  "legal_nonrecursive_formula": "AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed => ActualNoncanonicalExactUVSupportLowerBound => NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem",
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target_inside_same_theorem": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed",
+  "nonrecursive_guard_closed": true,
+  "nonrecursive_internal_obligation": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed",
+  "pair_mass_return_loop_detected": true,
+  "plain_conclusion": "继续硬攻后，发现并删除一个循环证明出口：`ExactUVPairMassDispersion` 的失败已经由既有路由对齐为 clean-core moving atom，因此不能再用 moving-atom 排斥或 exact entropy 来证明 pair-mass 分散，否则只是把 `NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem` 绕回自身。合法的同命题内部推进必须给出不依赖目标结论的 `IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed`，再接初等支撑能量引理。当前材料尚未证明该独立能量界，行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "DirectAttackSpineImported",
+      "meaning": "上一层已保持目标不变，并把源熵定理内部压到 ExactUV 支撑脊柱。",
+      "proved": true,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "PairMassReturnLoopDetected",
+      "meaning": "pair-mass 分散失败等价于 clean-core moving atom；若用 moving-atom 排斥证明 pair-mass，就回到源熵目标自身。",
+      "proved": true,
+      "remaining": "禁止把 PairMassDispersion 当作独立黑箱反复引用。"
+    },
+    {
+      "closed": true,
+      "gate": "CircularEntropyProofRejected",
+      "meaning": "不能用 NewActualSourceEntropy/MovingAtomExclusion/ExactEntropy 作为 pair-mass 的证明输入。",
+      "proved": true,
+      "remaining": "必须给独立 L2/max-pair 能量账本，或命名回流。"
+    },
+    {
+      "closed": true,
+      "gate": "ElementarySupportEnergyStillAvailable",
+      "meaning": "初等 Cauchy/最大原子到支撑下界的推理可用，但只在独立能量界已经证明后才能使用。",
+      "proved": true,
+      "remaining": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed"
+    },
+    {
+      "closed": true,
+      "gate": "AcyclicSeedFusionImported",
+      "meaning": "seed 不能作为无名独立出口；若给出合法 seed，后续失败进入终端家族；若不给出 seed，也回流终端家族。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "closed": false,
+      "gate": "NonrecursiveEnergyInputCurrentCorpusProved",
+      "meaning": "当前材料没有证明不依赖源熵目标的 exact pair L2 能量界或最大 pair 原子界。",
+      "proved": false,
+      "remaining": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed"
+    },
+    {
+      "closed": true,
+      "gate": "TargetStillOpenAfterGuard",
+      "meaning": "非递归守门只删除循环证明出口，不证明新 actual-source 熵定理。",
+      "proved": false,
+      "remaining": "NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "RowColumnUnconditionalClosureCurrentCorpusProved",
+      "meaning": "源熵目标仍未证明，DStructure/Rankin 与高段自足尾项仍为独立门。",
+      "proved": false,
+      "remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-source-support-seed-router.json": "6c1241bb0dd29f19cec15f147b56e495c551fb7e813158491d5a52201848d982",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-terminal-fusion-router.json": "cd82f3da195f2f7649c9c90b49e1322a969af7ed6179e9086b46034c9b31a3dc",
+    "docs/monograph/prime-matrix-strict-exact-entropy-source-law-firewall-router.json": "91fc5d3336a58236a1a96d806017f20aa56da290ecb587675a79e81e931a2547",
+    "docs/monograph/prime-matrix-strict-new-actual-source-entropy-direct-attack-router.json": "41f3899c5cc24d7f34ce9ef90c66dfb3d2758bca97c15d1d159a797163715ab8",
+    "docs/monograph/prime-matrix-strict-pair-mass-dispersion-to-moving-atom-router.json": "147492e300e83e0a0dc5da909a8a39c52f3db9990c5ddba367427f75ed6f83cb"
+  },
+  "status": "strict_new_actual_source_entropy_nonrecursive_guard_closed_energy_input_open",
+  "strict_self_contained_math_basis_after_router": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem) AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "strict_self_contained_terminal_after_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NewActualCleanCoreFullSNonAPWFDSourceEntropyTheorem"
+}

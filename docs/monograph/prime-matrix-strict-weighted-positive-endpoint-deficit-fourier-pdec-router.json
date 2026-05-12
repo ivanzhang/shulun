@@ -1,0 +1,103 @@
+{
+  "centered_fourier_pdec_object_closed": true,
+  "certificate_type": "prime_matrix_strict_weighted_positive_endpoint_deficit_fourier_pdec_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链下处理正权端点亏损。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "CenteredFourierPDECObjectClosed",
+      "meaning": "正权亏损已写成完整 CRT 周期上的零均值测试函数。",
+      "proved": true,
+      "remaining": "WeightedPositiveEndpointHitDeficitPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "FourierEnergyLowerBoundClosed",
+      "meaning": "亏损点给出非零 Fourier 能量下界；持续亏损给出 H4/PDEC 输入。",
+      "proved": true,
+      "remaining": "WeightedPositiveEndpointFourierPDECUpperBound"
+    },
+    {
+      "closed": true,
+      "gate": "PersistenceOrSAERouteClosed",
+      "meaning": "持久出现走 PDEC；孤立出现走 SAE。是否可排斥两者尚未证明。",
+      "proved": false,
+      "remaining": "DeficitPersistenceOrSAEClassification"
+    },
+    {
+      "closed": false,
+      "gate": "PositiveEndpointDeficitExcludedCurrentCorpus",
+      "meaning": "尚未提交匹配的 Fourier 上界，也未完成 SAE 排斥。",
+      "proved": false,
+      "remaining": "WeightedPositiveEndpointFourierPDECUpperBound AND DeficitPersistenceOrSAEClassification AND PositiveWeightSupportLowComplexityLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnClosed",
+      "meaning": "本步是标准 PDEC 输入化，不是 PDEC 排斥。",
+      "proved": false,
+      "remaining": "WeightedPositiveEndpointFourierPDECUpperBound OR SAE exclusion; parallel WeightedNegativeEndpointHitSurplusCoreLoad"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "fourier_energy_lower_bound_closed": true,
+  "implications": [
+    {
+      "formula": "Phi_I^+(x)=sum_{d in I} w_d^+(1_{rho_d(x)<=H}-H/d).",
+      "meaning": "正权端点命中亏损就是中心化端点测试函数取负大值。",
+      "name": "centered_positive_endpoint_test",
+      "status": "closed_definition"
+    },
+    {
+      "formula": "Average_{x mod Q_I} Phi_I^+(x)=0, Q_I=lcm{d in supp_+(I)}.",
+      "meaning": "因为 xP mod d 是单位旋转，端点弧在完整 CRT 周期上的均值正好是 H/d。",
+      "name": "zero_mean_on_full_crt_period",
+      "status": "closed"
+    },
+    {
+      "formula": "If Phi_I^+(x0)<=-kappa, then sum_{h!=0}|hat Phi(h)|^2 >= kappa^2/(Q_I-1).",
+      "meaning": "单个强亏损点也强制非零 Fourier 能量；持续出现时即 PDEC。",
+      "name": "deficit_to_fourier_energy",
+      "status": "closed_implication"
+    },
+    {
+      "formula": "For S={x:Phi_I^+(x)<=-kappa}, F=-Phi_I^+ gives F(x)>=kappa on S and mean(F)=0.",
+      "meaning": "这逐项匹配 H4/PDEC 的零均值测试函数输入。",
+      "name": "persistent_bad_set_h4_input",
+      "status": "closed_template"
+    },
+    {
+      "formula": "If the bad set is not persistent across the formal family, it is registered as SAE rather than a global PDEC.",
+      "meaning": "防止单窗异常被误当作全局 Fourier 定理。",
+      "name": "isolated_deficit_route",
+      "status": "registered_route"
+    }
+  ],
+  "next_direct_attack_target": "WeightedPositiveEndpointFourierPDECUpperBound",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "DeficitPersistenceOrSAEClassification",
+    "PositiveWeightSupportLowComplexityLedger",
+    "WeightedNegativeEndpointHitSurplusCoreLoad"
+  ],
+  "persistent_or_sae_route_defined": true,
+  "plain_conclusion": "正权端点命中亏损已经可以严格写成一个完整 CRT 周期上的零均值测试函数 Phi_I^+。若某个早期零行反例点使 Phi_I^+<=-kappa，则非零 Fourier 能量至少为 kappa^2/(Q_I-1)；若这类亏损在 formal family 中持久出现，就形成标准 PDEC 输入，若只孤立出现则进入 SAE。当前尚未完成的是匹配的 Fourier 上界或 SAE 排斥。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-eda-alpha-tail-roughsurplus-pdec-certificate.md": "2af1d04a7b20d0d64ec442d3bf2e9bd560afbfb5922308e7d758279a6f719465",
+    "docs/monograph/prime-matrix-eda-alpha-tail-squaremass-pdec-certificate.md": "fceb852ca2b685a6a2b93af8ddaa1913b0836aa6888ee5afee871e03518e3fbd",
+    "docs/monograph/prime-matrix-eda-lowmod-pdec-certificate-route.md": "8921dac5eae8d993ce1060b7bc8c07b8fb1f2245cff260fbd66007ab1a7bfa82",
+    "docs/monograph/prime-matrix-strict-weighted-dyadic-endpoint-pdec-hdl-router.md": "3e956a303a2da8a7c2352d927de52464ee536a587d3d99466967af169e5afbc5"
+  },
+  "status": "weighted_positive_endpoint_deficit_converted_to_centered_fourier_pdec_input_upper_bound_open",
+  "weighted_positive_endpoint_deficit_excluded": false
+}

@@ -1,0 +1,80 @@
+{
+  "certificate_type": "prime_matrix_strict_self_contained_dual_lane_final_router",
+  "status": "strict_self_contained_dual_lane_reduced_to_exact_uv_and_self_contained_promotion_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "strict_self_contained_boundary_closed": true,
+  "external_lane_excluded_for_strict_self_contained": true,
+  "registered_capacity_multiplier_discipline_closed": true,
+  "actual_exact_uv_support_proved": false,
+  "self_contained_promotion_replacement_proved": false,
+  "dstructure_rankin_independent_acceptance_completed": false,
+  "row_column_unconditional_closed": false,
+  "math_two_lane_before_strict_filter": "ActualNoncanonicalExactUVSupportLowerBound OR CDependentResidueWeightSpectralCancellationInput",
+  "strict_self_contained_math_lane_after_filter": "ActualNoncanonicalExactUVSupportLowerBound",
+  "strict_self_contained_completion_basis": "ActualNoncanonicalExactUVSupportLowerBound AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "conditional_external_completion_basis": "AcceptFullSKLSExtExternalContract AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_math_attack": "CleanCoreTerminalSupportIncidenceTheorem_FOR_ActualNoncanonicalExactUVSupportLowerBound",
+  "next_promotion_attack": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "rows": [
+    {
+      "gate": "ActiveFinalTwoLaneImported",
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "当前最终数学输入是 noncanonical 二线：实际源反原子或 c-dependent 完成型谱抵消。",
+      "remaining": "判定严格自足口径下哪条线仍合法。"
+    },
+    {
+      "gate": "ExternalSpectralLaneNotStrictSelfContained",
+      "boundary_closed": true,
+      "proved_or_accepted": true,
+      "meaning": "CDependentResidueWeightSpectralCancellationInput / FullS-KLS-ext 可以作为外部或条件数学线，但不是严格自足证明。",
+      "remaining": "若坚持自足，不能用该线关闭命题。"
+    },
+    {
+      "gate": "ActualSourceCoreReducedToExactUVSupport",
+      "boundary_closed": true,
+      "proved_or_accepted": true,
+      "meaning": "balanced range 与 registered capacity multiplier discipline 已吸收；实际源反原子剩余压成 ActualNoncanonicalExactUVSupportLowerBound。",
+      "remaining": "证明 actual noncanonical exact u/v 支撑下界。"
+    },
+    {
+      "gate": "ShortcutNoGoRetained",
+      "boundary_closed": true,
+      "proved_or_accepted": true,
+      "meaning": "formal WFD、K4/K6、朴素 incidence、raw Buchstab 计数和 canonical 支撑偷渡均不能推出该 exact 支撑。",
+      "remaining": "只能给 actual-source 支撑定理，或给直接 final anti-atom 定理。"
+    },
+    {
+      "gate": "ExactUVSupportCurrentCorpusProved",
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "当前材料尚未证明 ActualNoncanonicalExactUVSupportLowerBound。",
+      "remaining": "CleanCoreTerminalSupportIncidenceTheorem 或等价 exact support theorem。"
+    },
+    {
+      "gate": "IndependentPromotionNotStrictSelfContained",
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "DStructure/Tail-log4/finite Rankin 当前是独立验收门；若要求严格自足，必须用新的自足替代证明包替换该门。",
+      "remaining": "SelfContainedDStructureTailLog4FiniteRankinReplacementPackage。"
+    },
+    {
+      "gate": "StrictSelfContainedClosureCurrentCorpusProved",
+      "boundary_closed": true,
+      "proved_or_accepted": false,
+      "meaning": "严格自足闭合不能由当前语料库推出。",
+      "remaining": "ExactUV 支撑下界 + 自足 DStructure/Rankin 替代证明包。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-active-final-inputs-router.md": "07272b9a69d5e23d8dbd3dab1f2e5968a4a3a32b5c8bfbd9a2316e2d79aff750",
+    "docs/monograph/prime-matrix-self-contained-narrowest-core-router.md": "dad7f37ba6cc0862ffab0746f2b6d2f6790797bab84e1ff030693768d823967c",
+    "docs/monograph/prime-matrix-noncanonical-source-core-atomization-router.md": "b078f303a9558ecee2592df05296b5cb64c65823b96184bc6b73db93b8212e6b",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.md": "650a64fd37852a88f117a487f6fc2e059e2dce132dcc4093e2b568aa1a77d1a4",
+    "docs/monograph/prime-matrix-exact-uv-support-terminal-attack-router.md": "8ca8d54c54c0770e1367f8885ce3aa90d166209eeea7178d6000c2ad5380fbd0",
+    "docs/monograph/prime-matrix-final-promotion-gate-irreducibility-router.md": "81538b45d11ed4002c86ccf097fc3ea66102b5d48dda1eb82b72bcb2ce21d529",
+    "docs/monograph/prime-matrix-author-side-closure-task-completion-router.md": "a0ae1a03cd37c57a456bd5558b27946f16413d3ccc8093f3db75fd229f0a91eb"
+  },
+  "plain_conclusion": "严格自足口径下，最终二选一不再是可任选的 OR：外部谱抵消/FullS-KLS 只能给条件外部线。自足数学线必须证明 ActualNoncanonicalExactUVSupportLowerBound；同时最终独立晋级门若不接受，还必须由 SelfContainedDStructureTailLog4FiniteRankinReplacementPackage 替换。当前材料没有证明这两个输入，因此不能声明行/列命题严格自足闭合。"
+}

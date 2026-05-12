@@ -1,0 +1,166 @@
+{
+  "C_horizontal": 12000.0,
+  "C_perron_total": 12128.0,
+  "C_right": 128.0,
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_unsmoothed_perron_final_sync_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "StrictReductionFourAtomsReplaced",
+    "ExactPsi0FormulaInternalClosed",
+    "HeightAndBoundaryConventionClosed",
+    "ResidueAndLeftEdgeAvailable",
+    "RightEdgePerronKernelClosed",
+    "HorizontalContourShiftSelfContainedClosed",
+    "PerronKernelTruncationConstantForPsi0Ledger",
+    "UnsmoothedPerronStrictSelfContainedClosed"
+  ],
+  "component_rows": [
+    {
+      "atom": "Psi0RightEdgePerronKernelApproximationClosedC128",
+      "component": "right edge Perron kernel",
+      "constant": 128.0,
+      "meaning": "psi_0 与右边截断竖线积分之间的核误差。"
+    },
+    {
+      "atom": "Psi0ZetaLogDerivativeContourShiftSelfContainedClosedC12000",
+      "component": "horizontal contour package",
+      "constant": 12000.0,
+      "meaning": "fixed-T 缩进、水平边 log-derivative 与留数左边界合成的水平预算。"
+    },
+    {
+      "atom": "PerronKernelTruncationForPsi0SelfContainedClosedC12128",
+      "component": "finite-T Perron reserve",
+      "constant": 12128.0,
+      "meaning": "只关闭 finite-T Perron 截断层，不包含零点和/PNT 数值预算。"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "next_direct_attack_target": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedMertensTailStillOpen",
+    "RowColumnUnconditionalClosed"
+  ],
+  "perron_kernel_truncation_self_contained_closed": true,
+  "plain_conclusion": "`UnsmoothedChebyshevPerronExplicitFormulaConstantLedger` 已完成 strict 自足同步：先前压缩出的四个开放原子已经逐项闭合，右边 Perron 核 C=128 与水平边 C=12000 合成为 finite-T Perron 常数 C=12128。这只关闭非平滑 Perron 常数层；自足 Mertens 尾段、B3 TV 和行/列无条件命题仍未闭合。",
+  "psi0_zeta_logder_contour_shift_self_contained_closed": true,
+  "remaining_after_unsmoothed_perron_sync": [
+    "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger",
+    "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger",
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+    "FiniteLowHeightZeroCheckLedger",
+    "FiniteThetaEnvelopeBridgeBelowAnalyticThreshold",
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+  ],
+  "replacement_self_contained": {
+    "PerronKernelTruncationConstantForPsi0Ledger": "PerronKernelTruncationForPsi0SelfContainedClosedC12128",
+    "Psi0ZetaLogDerivativeContourShiftBoundLedger": "Psi0ZetaLogDerivativeContourShiftSelfContainedClosedC12000",
+    "UnsmoothedChebyshevPerronExplicitFormulaConstantLedger": "UnsmoothedChebyshevPerronExplicitFormulaConstantSelfContainedClosedC12128"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只关闭假设反例链所需解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictReductionFourAtomsReplaced",
+      "meaning": "Backlund 缩进、logder 展开、局部倒距离和加权预算四个 strict 原子均已完成自足替换。",
+      "proved": true,
+      "remaining": "Backlund AND logder AND local-zero-distance AND weighted-budget"
+    },
+    {
+      "closed": true,
+      "gate": "ExactPsi0FormulaInternalClosed",
+      "meaning": "内部 psi_0 无截断显式公式身份已闭合，可作为 finite-T 截断起点。",
+      "proved": true,
+      "remaining": "InternalPsi0ExactExplicitFormulaClosedAllXGe20000NoTruncationCost"
+    },
+    {
+      "closed": true,
+      "gate": "HeightAndBoundaryConventionClosed",
+      "meaning": "避零高度选择与边界重数极限已在 Perron 四微账本中闭合。",
+      "proved": true,
+      "remaining": "Psi0PerronFiniteRectangleHeightSelectionLedger AND Psi0ZeroBoundaryAvoidanceLimitLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ResidueAndLeftEdgeAvailable",
+      "meaning": "留数清单与左边界衰减已由内部 psi_0 精确公式链吸收。",
+      "proved": true,
+      "remaining": "Psi0ContourResidueAndLeftEdgeClosed"
+    },
+    {
+      "closed": true,
+      "gate": "RightEdgePerronKernelClosed",
+      "meaning": "右边 Perron 核近似常数已给出 C=128。",
+      "proved": true,
+      "remaining": "Psi0RightEdgePerronKernelApproximationClosedC128"
+    },
+    {
+      "closed": true,
+      "gate": "HorizontalContourShiftSelfContainedClosed",
+      "meaning": "fixed-T 缩进和水平边 logder 包均自足后，zeta 对数导数轮廓移线包自足闭合。",
+      "proved": true,
+      "remaining": "Psi0ZetaLogDerivativeContourShiftSelfContainedClosedC12000"
+    },
+    {
+      "closed": true,
+      "gate": "PerronKernelTruncationConstantForPsi0Ledger",
+      "meaning": "右边核 C=128 与水平边 C=12000 合成，finite-T Perron 截断层自足闭合为 C=12128。",
+      "proved": true,
+      "remaining": "PerronKernelTruncationForPsi0SelfContainedClosedC12128"
+    },
+    {
+      "closed": true,
+      "gate": "UnsmoothedPerronStrictSelfContainedClosed",
+      "meaning": "strict Perron 压缩账本四个开放原子全部替换后，非平滑 Perron 常数层自足闭合。",
+      "proved": true,
+      "remaining": "UnsmoothedChebyshevPerronExplicitFormulaConstantSelfContainedClosedC12128"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedMertensTailStillOpen",
+      "meaning": "Perron 常数层闭合不等于 Mertens 尾段闭合；零点和、theta@20000、低高度和 B1 区间仍独立。",
+      "proved": false,
+      "remaining": "ZeroFreeRegionZeroSumContourNumericalBudgetC1280T14Ledger AND PerronTruncationTrivialZeroPrimePowerTailBudgetLedger AND ThetaEnvelopeTargetAt20000NumericalBudgetLedger AND FiniteLowHeightZeroCheckLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步不产生早期零行反例链与真实结构链的终端矛盾；全局行/列命题仍未闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "secondary_attack_targets": [
+    "PerronTruncationTrivialZeroPrimePowerTailBudgetLedger",
+    "ThetaEnvelopeTargetAt20000NumericalBudgetLedger",
+    "FiniteLowHeightZeroCheckLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "1a152d832e33bcfc6a659df65bc2cee5ef6ad080d220aa5bba20d3596a576052",
+    "docs/monograph/prime-matrix-b3-internal-psi0-perron-formula-router.json": "d42cd18b0fd4056ba74ef190287b3f66e2c95048076770c1f69a5f7a3c67465a",
+    "docs/monograph/prime-matrix-b3-perron-kernel-truncation-router.json": "652feeb38e1fe41cb705f741e51a86a8cabb18b7b57d39763f7e8a1b85044f6d",
+    "docs/monograph/prime-matrix-b3-psi0-contour-shift-external-aggregation-router.json": "0a711fbafa2e393b78ebfdb736adde1c57d611d56b3d8282c8bff7d796a14db8",
+    "docs/monograph/prime-matrix-b3-right-edge-perron-kernel-router.json": "0d71388fd8482bbad6c655d44aebe7e65d3ff725cda2f7fdbe1637897e4cf13c",
+    "docs/monograph/prime-matrix-strict-backlund-internal-closure-reconciliation-router.json": "8f57e8ec22db4d7b6a24a0c84c128e93ec264429f2caddf72ca6a0e51e99db45",
+    "docs/monograph/prime-matrix-strict-local-zero-distance-self-contained-sync-router.json": "e1c9d7ed35e4b6d971d3fa975772aa472c5b57f4c91c27848f81dc75676c4261",
+    "docs/monograph/prime-matrix-strict-logder-internal-expansion-router.json": "2f2e627ff0f4b1e2888bb225c4c3b3fbcfa54c3b8d79a5ae7332f88d61e2563e",
+    "docs/monograph/prime-matrix-strict-unsmoothed-perron-self-contained-reduction-router.json": "15099fb647d28bfe9ea30e154e8643e994621a2afeab311fe7eee615856e3cbf",
+    "docs/monograph/prime-matrix-strict-weighted-budget-self-contained-sync-router.json": "3492215a6c651f59c0c2c002e9a5d6673f964c1773d0ea41d7f70d9a00dce0cf"
+  },
+  "status": "unsmoothed_perron_strict_self_contained_closed_mertens_tail_still_open",
+  "unsmoothed_perron_strict_self_contained_closed": true
+}

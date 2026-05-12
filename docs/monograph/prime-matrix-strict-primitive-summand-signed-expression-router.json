@@ -1,0 +1,150 @@
+{
+  "alpha_formula_signed_coefficient_lift_proved": false,
+  "breaker_payload": "`PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward` 若被证明，将同时给出 exact signed weight、primitive coefficient formula、constructor row 的 sign/local factor 和推前前 alpha/delta identity，因此是当前循环中的真正破坏输入。",
+  "canonical_scoped_formula_not_importable": true,
+  "certificate_type": "prime_matrix_strict_primitive_summand_signed_expression_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "expression_must_be_origin_identity": true,
+  "external_spectral_coefficients_do_not_emit_rows": true,
+  "next_direct_attack_target": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward",
+  "no_theorem_switch": true,
+  "origin_identity_fields": [
+    {
+      "field": "primitive_row_id",
+      "meaning": "同一 formal unit 内的 actual noncanonical primitive summand 行标识。"
+    },
+    {
+      "field": "source_tuple_origin",
+      "meaning": "该行的 pre-Cauchy source tuple 来源，而不是推后 payment 原像。"
+    },
+    {
+      "field": "signed_coefficient_formula",
+      "meaning": "signed coefficient 的正向表达式，包含符号、筛权、branch/local factor。"
+    },
+    {
+      "field": "prepushforward_identity",
+      "meaning": "证明该表达式在 Phi/payment 推前之前等于 actual alpha/delta 系数贡献。"
+    },
+    {
+      "field": "nonzero_or_named_return",
+      "meaning": "非零局部因子成立；若失败则进入同 formal unit 的命名回流。"
+    },
+    {
+      "field": "no_import_leak",
+      "meaning": "不借用 canonical scoped 公式、外部谱估计、零行覆盖或 terminal 反推。"
+    }
+  ],
+  "plain_conclusion": "本步把 `ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward` 继续压缩为 `PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward`。原因是：表达式本身不是证明；必须正向说明每个 actual noncanonical primitive summand 的 signed coefficient 从哪个 pre-Cauchy source tuple 产生，并在 Phi/payment 推前之前等于 alpha/delta 系数贡献。现有 canonical、外部谱、零行覆盖和 payment 反推路径都不能生成该表达式。因此当前仍未得到无条件终端矛盾。",
+  "pointwise_nonrecursive_signed_alpha_weight_formula_proved": false,
+  "pointwise_signed_alpha_coefficient_value_table_proved": false,
+  "primitive_summand_signed_coefficient_origin_identity_proved": false,
+  "primitive_summand_signed_expression_router_closed": true,
+  "primitive_summand_signed_weight_expression_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PrimitiveSummandExpressionTargetActive",
+      "meaning": "上一层已把逐行 signed alpha 权重公式压到 primitive summand 推前前表达式。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExpressionMustBeOriginIdentity",
+      "meaning": "表达式不能只是字段名；必须给出 pre-Cauchy signed coefficient 来源恒等式。",
+      "proved": true,
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExactAlphaWeightFormulaStillOpen",
+      "meaning": "alpha signed weight law 仍未给 exact signed weight formula。",
+      "proved": false,
+      "remaining": "ExactAlphaSignedWeightFormulaLedger 被吸收到来源恒等式中。"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaPrimitiveCoefficientFormulaStillOpen",
+      "meaning": "alpha primitive rule 仍未给 primitive coefficient weight formula。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveCoefficientWeightFormulaLedger 被吸收到来源恒等式中。"
+    },
+    {
+      "closed": true,
+      "gate": "ConstructorFormulaStillDoesNotEmitSignedRows",
+      "meaning": "actual constructor formula line 未给出带 sign/local factor 的 summand 行。",
+      "proved": false,
+      "remaining": "显式 constructor 行输出须由同一个来源恒等式生成。"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTableStillNeedsPrimitiveRows",
+      "meaning": "source table 已说明需要 primitive rows 与 coefficient identity before pushforward。",
+      "proved": false,
+      "remaining": "不能用 source table 反向证明来源恒等式。"
+    },
+    {
+      "closed": true,
+      "gate": "IndependentIdentityRouteStillFixedPoint",
+      "meaning": "独立恒等式路线仍经 moving-block/NCBLK 回到 PDEC/CleanKLS 终端门。",
+      "proved": false,
+      "remaining": "需要非递归来源恒等式破环。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralLemmasDoNotEmitPrimitiveCoefficients",
+      "meaning": "DI/BFI/Kuznetsov 等外部估计处理给定系数后的平均，不生成推前前 summand 系数。",
+      "proved": true,
+      "remaining": "外部谱不能替代自足来源恒等式。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalRIWBuchstabScopedOnly",
+      "meaning": "canonical RIW/Buchstab 公式只在 canonical source 分支内有效，不能跨入 actual noncanonical summand。",
+      "proved": true,
+      "remaining": "若借用 canonical 公式，必须先证明同分支准入；当前没有。"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroRowAndPaymentReverseRecoveryBlocked",
+      "meaning": "早期零行 unsigned cover 与 payment skeleton 都不能反向恢复 signed coefficient。",
+      "proved": true,
+      "remaining": "只能正向提交来源恒等式。"
+    },
+    {
+      "closed": false,
+      "gate": "OriginIdentityCurrentCorpusProved",
+      "meaning": "当前材料没有提交每个 actual primitive summand 的 signed coefficient 来源恒等式。",
+      "proved": false,
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveSummandExpressionCurrentCorpusProved",
+      "meaning": "没有来源恒等式，primitive summand signed expression 仍未证明。",
+      "proved": false,
+      "remaining": "PrimitiveSummandSignedCoefficientOriginIdentityBeforePushforward"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.json": "a4e7b79a90a21e338213ee982a87b8c4caf59b73aa832f740a45dab59b1dabb4",
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.json": "aa2bd0e9fc8a1aca27a4617b5e5f5e5cbf29a1c6502c54f329885defcacaf297",
+    "docs/monograph/prime-matrix-clean-core-reverse-provenance-functor-router.json": "ba5c7919d21da70b3c30e5b74bd5debb5a43c0db71327d035f73d20518838914",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.json": "ea50b980c0a9ee5208509bfa830403c1c9a047839f48ee467fc46e4ddc78fbf4",
+    "docs/monograph/prime-matrix-strict-actual-constructor-formula-line-router.json": "ac19ab81150df61902058d6c890195592b25400f04a32562b1fa32b966a89913",
+    "docs/monograph/prime-matrix-strict-actual-emitter-source-table-router.json": "e327b1a80aef83a36279378e5892334fa305d92d5ac1bcbb8601eaab2f18ab3e",
+    "docs/monograph/prime-matrix-strict-actual-moving-block-spread-ncb-lk-router.json": "d042d5ccfeec63bcfba1c16571e404052d7a66cefce94527ce843051b64a2f6e",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-downstream-sync-router.json": "25a526808da942ef0d50d5725ae59e945b6152b345a31cd8e92c16130ee9c362",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-independent-identity-statement-taxonomy-router.json": "9f0797afd65cd82b9fb0eff7d4492da3ee0b88822fdf18beee8c8a6c5a361c42",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-triad-a1-canonical-riw-support-router.md": "aad1216d4df4ba46d6d0aac0dfc68167d9e44b29196077f5bf49c682c488949e"
+  },
+  "status": "primitive_summand_signed_expression_reduced_to_origin_identity_open",
+  "target_input_before_router": "ActualNoncanonicalPrimitiveSummandSignedWeightExpressionBeforePushforward",
+  "zero_row_or_payment_reverse_recovery_blocked": true
+}

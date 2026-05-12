@@ -1,0 +1,135 @@
+{
+  "b3_tv_strict_self_contained_closed": false,
+  "certificate_type": "prime_matrix_strict_meissel_mertens_external_match_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "StrictMeisselMertensGateActive",
+    "StrictThetaContourAndBridgeReady",
+    "LegacyB3MeisselMertensExternalClosed",
+    "DusartReciprocalPrimeMertensExternalReady",
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+    "ExternalB3ChainReachesDStructureGate"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_acceptance_present": false,
+  "dusart_tail_error_at_start": 0.0015068046670811013,
+  "empirical_absence_not_used": true,
+  "external_b3_chain_reaches_dstructure_gate": true,
+  "finite_step_range": [
+    286,
+    10372
+  ],
+  "hypothetical_chain_only": true,
+  "independent_acceptance_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "legacy_b3_external_basis_sha256": "4df25519755fdde290564157f195f1d46f87822f6b079a29775f04b7908af4f8",
+  "meissel_mertens_b1": 0.2614972128476428,
+  "meissel_mertens_interval_external_closed": true,
+  "meissel_mertens_interval_self_contained_closed": false,
+  "meissel_mertens_strict_external_matched": true,
+  "mertens_external_atom": "DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted",
+  "next_direct_attack_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "SelfContainedMeisselMertensStillOpen",
+    "DStructureRankinIndependentAcceptancePresent",
+    "RowColumnUnconditionalClosed"
+  ],
+  "plain_conclusion": "strict 外部路线下，`SelfContainedMeisselMertensConstantIntervalLedgerAt20000` 已可严格对接旧 B3 Meissel-Mertens/Dusart 外部证书：有限阶梯覆盖 `286<=x<10372`，尾段 `x>=10372` 由 reciprocal-prime Mertens 外部定理匹配，B1 口径为 `0.2614972128476428`。这只关闭外部输入并把 B3/Mertens 解析链推进到 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`；自足 B1/尾段、内部 theta/低高度/contour 证明和最终行列无条件命题仍未闭合。",
+  "remaining_self_contained_after_meissel": [
+    "InternalDusartThetaEnvelopeProofLedger",
+    "CriticalLineNoZeroOn0To14FiniteLedger",
+    "CriticalStripNoOffLineZeroBelow14TuringLedger",
+    "InternalZeroFreeRegionToThetaContourEnvelopeLedger",
+    "InternalFiniteThetaEnvelopeBridgeHashLedger",
+    "SelfContainedMeisselMertensB1IntervalArithmeticLedger",
+    "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+  ],
+  "replacement_external": {
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000": "DusartMeisselMertensConstantIntervalAt20000ExternalClosed"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在早期零行反例假设链内补外部解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "StrictMeisselMertensGateActive",
+      "meaning": "strict 全局 theta 外部匹配后，当前最窄点正是 Meissel-Mertens 常数区间输入。",
+      "proved": true,
+      "remaining": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "closed": true,
+      "gate": "StrictThetaContourAndBridgeReady",
+      "meaning": "strict 链已经外部关闭 theta contour 与有限桥，但没有关闭对应自足证明。",
+      "proved": false,
+      "remaining": "ExplicitPsiThetaContourEnvelopeXGe20000StrictExternalClosedByDusart AND FiniteThetaEnvelopeBridgeStrictExternalClosedByDusartAllXPositive"
+    },
+    {
+      "closed": true,
+      "gate": "LegacyB3MeisselMertensExternalClosed",
+      "meaning": "旧 B3 路由已把同一 Meissel-Mertens 常数区间原子外部替换为 Dusart 闭合原子。",
+      "proved": false,
+      "remaining": "DusartMeisselMertensConstantIntervalAt20000ExternalClosed"
+    },
+    {
+      "closed": true,
+      "gate": "DusartReciprocalPrimeMertensExternalReady",
+      "meaning": "reciprocal-prime Mertens 外部证书提供有限阶梯、尾段匹配与 B1 常数口径。",
+      "proved": false,
+      "remaining": "DusartPrimeReciprocalMertensEnvelopeXGe286ExternalAccepted"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+      "meaning": "在 strict theta 前沿下接受旧 Dusart/Rosser-Schoenfeld 外部证书，可关闭该 Meissel-Mertens 外部输入。",
+      "proved": false,
+      "remaining": "DusartMeisselMertensConstantIntervalAt20000ExternalClosed"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalB3ChainReachesDStructureGate",
+      "meaning": "外部 B3/Mertens 解析链已经推进到 DStructure/Rankin 独立验收门。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "SelfContainedMeisselMertensStillOpen",
+      "meaning": "严格自足路线仍需内联 B1 区间算术和 reciprocal-prime Mertens 尾段证明。",
+      "proved": false,
+      "remaining": "SelfContainedMeisselMertensB1IntervalArithmeticLedger AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": false,
+      "gate": "DStructureRankinIndependentAcceptancePresent",
+      "meaning": "本步不是 DStructure/Rankin 独立验收，不能替代最终守门项。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "外部 Meissel-Mertens 匹配不构成行/列命题无条件闭合。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "9dce3734fe4668f93076d10885126e578974f00f100f82ecf8305f8bd84775f4",
+    "docs/monograph/prime-matrix-b3-explicit-prime-reciprocal-mertens-router.json": "71470d72dd1ee8fdde68bbf36e4336f43a97a44392775daf638e407e94e5b46f",
+    "docs/monograph/prime-matrix-b3-meissel-mertens-interval-external-router.json": "93c85b3113a4adc2d4b17326eaf6ea5b118a305be9c2a8ad6fb4912d986516c7",
+    "docs/monograph/prime-matrix-strict-global-theta-envelope-external-match-router.json": "d412cf7cfac516ce8ed6b73572b77295ae87783aa5cee7736258292ebdfd291e"
+  },
+  "status": "strict_meissel_mertens_external_matched_self_contained_open",
+  "strict_external_basis_snapshot": "ExplicitPsiThetaContourEnvelopeXGe20000StrictExternalClosedByDusart AND FiniteThetaEnvelopeBridgeStrictExternalClosedByDusartAllXPositive AND DusartMeisselMertensConstantIntervalAt20000ExternalClosed AND B3RosserFaceDictionaryClosedAlpha043 AND B3Anchor20000BoundaryVariationBudgetClosedAlpha043 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "tail_start_x": 10372
+}

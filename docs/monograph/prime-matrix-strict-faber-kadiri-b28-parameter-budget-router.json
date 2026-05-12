@@ -1,0 +1,193 @@
+{
+  "budget_payload": {
+    "computed": {
+      "directed_epsilon_upper": "0.00001262",
+      "endpoint_tax_14_over_e28": "9.68016014971628421317761852223797297965413821488452679870226640631531210695472683808585229E-12",
+      "epsilon0_max": "0.0000126176152601915665105243845052283711331741889267373185783209873290876625103192168012688873",
+      "epsilon_minus": "0.0000126175652660568421415646099172490530576401606300331388459429310219251688102087976227666620",
+      "epsilon_plus": "0.0000126176152601915665105243845052283711331741889267373185783209873290876625103192168012688873",
+      "margin_to_published_table63_epsilon": "0.0000096223847398084334894756154947716288668258110732626814216790126709123374896807831987311127",
+      "margin_to_target_1_over_36260": "0.0000149609837469788692313399287876563503229758386518616885921147545352256303744022393487586913",
+      "margin_to_target_after_endpoint_tax": "0.0000149609740668187195150557156100378280850028589977234737075879558329592240590901323940318532",
+      "published_table63_epsilon_psi_28": "0.00002224",
+      "target_1_over_36260": "0.0000275785990071704357418643132928847214561500275785990071704357418643132928847214561500275786"
+    },
+    "constants": {
+      "H": "30610046000",
+      "R0": "5.69693",
+      "T0": "1132491",
+      "T1": "1132492",
+      "a1": "0.137",
+      "a2": "0.443",
+      "a3": "1.588",
+      "b0": "28",
+      "c1": "0.4617",
+      "c2": "0.6644",
+      "c3": "-340272",
+      "delta": "0.000004",
+      "m": 2,
+      "s0": "11.637732",
+      "sigma0": "0.89"
+    },
+    "sides": {
+      "minus": {
+        "M0": "0.999998",
+        "M2": "23.0938722039120279943050540469833683602185851309246793382650810675935547374924843221173259",
+        "a": "0.999996",
+        "b": "1",
+        "epsilon": "0.0000126175652660568421415646099172490530576401606300331388459429310219251688102087976227666620",
+        "terms": {
+          "b1_b2_finite_zero_block": "0.0000106155638835082598056806321762689833865954798744912643429965188448783831877045670183940126",
+          "b3_one_minus_sigma": "2.56983188110775857993087503750026343332546272604472012561839226610386119306240543329456668E-10",
+          "b3_sigma": "8.41227047501446989413171479291372134366133793282118127379213071983669997127762587215516380E-20",
+          "b4_zero_free_tail": "1.80835394359333930366013552312038738444626842047517911133786271718368715169679074895342278E-21",
+          "b5_density_tail": "1.74312857864717659479094634946459738076826420702751224234118716678214465328443481401871956E-9",
+          "delta_over_2": "0.000002",
+          "log_2pi_exp_minus_b0": "1.27078173845237249996908844478533635971342257213406798333386099791012374137383904063516638E-12",
+          "m0_exp_minus_3b0_over_2": "1.65284700767974038849324975777129800545922437983004489396058912559981062566894152333606893E-37"
+        }
+      },
+      "plus": {
+        "M0": "1.000002",
+        "M2": "23.0941493320412398420770251760305964428235594052686149365237149721677078290617764698181098",
+        "a": "1",
+        "b": "1.000004",
+        "epsilon": "0.0000126176152601915665105243845052283711331741889267373185783209873290876625103192168012688873",
+        "terms": {
+          "b1_b2_finite_zero_block": "0.0000106156138536414989639378719126120758223358855968607061241289957460474460320072948798654399",
+          "b3_one_minus_sigma": "2.56986271927536044779632730306517417503071943382249765655975370993056699482876721645850420E-10",
+          "b3_sigma": "8.41237142286585576571484633034257516469678039901049613191501650863322100680078488048981260E-20",
+          "b4_zero_free_tail": "1.80837564397086438570019313809011912627774398577778527028222594158401359743978740641405780E-21",
+          "b5_density_tail": "1.74314949631562607936036137533587406609092924888864014357997611400066029700427283272691568E-9",
+          "delta_over_2": "0.000002",
+          "log_2pi_exp_minus_b0": "1.27078173845237249996908844478533635971342257213406798333386099791012374137383904063516638E-12",
+          "m0_exp_minus_3b0_over_2": "1.65285361908099390996184666796414947635418800665481786368610441898689979908979104080119721E-37"
+        }
+      }
+    }
+  },
+  "budget_payload_hash": "be73023a58b97352516c440ebc8745ba17a4ff9ceed64e30d75e193344265cfc",
+  "certificate_type": "prime_matrix_strict_faber_kadiri_b28_parameter_budget_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "FaberKadiriB28ParameterPacketGateActive",
+    "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger",
+    "CorrectedFormulaParameterPacketDeclared",
+    "CorrectedB28BudgetBeatsPublishedTable63",
+    "CorrectedB28BudgetBeatsP51HighTailTarget",
+    "FaberKadiriB28DirectedRoundingAndComputationHashLedger",
+    "FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger",
+    "Table63B28KernelTruncationAndSmoothingConventionLedger",
+    "Table63B28TheoremNeededHighTailPsiUpperReplacementLedger"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "faber_kadiri_b28_directed_rounding_and_hash_closed": true,
+  "faber_kadiri_corrected_b28_parameter_packet_closed": true,
+  "faber_kadiri_smoothed_kernel_convention_identified": true,
+  "next_direct_attack_target": "Table63B28HighTailInputToDusartP51SpliceSyncLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RowColumnUnconditionalClosed"
+  ],
+  "original_table63_b28_exact_generation_closed": false,
+  "parallel_attack_targets": [
+    "OriginalTable63B28ExactGenerationOptionalAuditLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "Faber-Kadiri 校正版 b0=28 参数包已经给出比旧 Table 6.3 更强的高尾输入：`epsilon0` 约为 1.2618e-5，并可外向舍入为 0.00001262。这小于旧表值 0.00002224，也小于 `1/36260`，即使额外保留端点税 `14/e^28` 仍有明显余量。因此旧 Table 6.3 b=28 的原始生成算法虽未取得，但当前命题需要的 psi 高尾输入可由 FK 平滑核路线闭合。",
+  "replacement_self_contained": {
+    "FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger": "FaberKadiriCorrectedFormulaTheorem0p1 AND ExplicitB28ParameterPacket AND DirectedDecimalBudgetHash",
+    "Table63B28KernelTruncationAndSmoothingConventionLedger": "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger AND FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger AND FaberKadiriB28DirectedRoundingAndComputationHashLedger",
+    "Table63B28TheoremNeededHighTailPsiUpperReplacementLedger": "for x>=e^28, |psi(x)-x|/x <= 0.00001262 < 1/36260 - 14/e^28"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只补假设反例链可调用的 psi 高尾输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "FaberKadiriB28ParameterPacketGateActive",
+      "meaning": "上一证书已把旧 Table 6.3 核缺口压成 Faber-Kadiri b0=28 校正版参数包。",
+      "proved": true,
+      "remaining": "FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger",
+      "meaning": "Faber-Kadiri 光滑核 convention 已定位：普通 psi 由 S^- 与 S^+ 夹住。",
+      "proved": true,
+      "remaining": "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "CorrectedFormulaParameterPacketDeclared",
+      "meaning": "采用 corrigendum 公式，参数为 b0=28、m=2、delta=4.0e-6、sigma0=0.89、Platt H、T1=T0+1。",
+      "proved": true,
+      "remaining": "parameter packet fixed"
+    },
+    {
+      "closed": true,
+      "gate": "CorrectedB28BudgetBeatsPublishedTable63",
+      "meaning": "计算得 epsilon0 < 1.262e-5，强于旧 Table 6.3 的 epsilon_psi(28)=2.224e-5。",
+      "proved": true,
+      "remaining": "epsilon0 <= 0.00001262 < 0.00002224"
+    },
+    {
+      "closed": true,
+      "gate": "CorrectedB28BudgetBeatsP51HighTailTarget",
+      "meaning": "即使保留上一层端点税，0.00001262+14/e^28 仍小于 1/36260。",
+      "proved": true,
+      "remaining": "psi high-tail target closed with explicit surplus"
+    },
+    {
+      "closed": true,
+      "gate": "FaberKadiriB28DirectedRoundingAndComputationHashLedger",
+      "meaning": "本脚本用固定参数、解析 m=2 的 M(a,b,2) 积分和 Decimal 预算写出可复现 hash，并外向舍入到 0.00001262。",
+      "proved": true,
+      "remaining": "be73023a58b97352516c440ebc8745ba17a4ff9ceed64e30d75e193344265cfc"
+    },
+    {
+      "closed": true,
+      "gate": "FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger",
+      "meaning": "Faber-Kadiri 替代路线的 b0=28 参数包与预算闭合；旧表原始生成算法仍未取得，但定理所需高尾输入已有更强替代。",
+      "proved": true,
+      "remaining": "Table63B28TheoremNeededHighTailPsiUpperReplacementLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table63B28KernelTruncationAndSmoothingConventionLedger",
+      "meaning": "通过外部 FK 平滑核替代路线，Table 6.3 b=28 的核/截断/平滑缺口对当前高尾目标已关闭。",
+      "proved": true,
+      "remaining": "FaberKadiriSmoothedExplicitFormulaKernelConventionLedger AND FaberKadiriCorrectedB28ParameterPacketAndBudgetLedger AND FaberKadiriB28DirectedRoundingAndComputationHashLedger"
+    },
+    {
+      "closed": true,
+      "gate": "Table63B28TheoremNeededHighTailPsiUpperReplacementLedger",
+      "meaning": "对所有 x>=e^28，外部 FK 校正版公式给出 |psi(x)-x|/x <= 0.00001262，从而 psi(x)-x<x/36260。",
+      "proved": true,
+      "remaining": "high-tail replacement closed"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "该步关闭的是 psi 高尾外部输入，不直接产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "1efbfefad28755786f5ad8d21e9b43eb051abecb1e44fac7b3ea37994a96802a",
+    "docs/monograph/prime-matrix-strict-table63-b28-kernel-truncation-smoothing-router.json": "f547e39c689b7b0920adcb60720a55d0ae9e590fde520dc532ebc102801606cf"
+  },
+  "status": "faber_kadiri_corrected_b28_budget_closed_high_tail_replacement_closed",
+  "table63_b28_kernel_truncation_smoothing_convention_closed": true,
+  "table63_b28_theorem_needed_high_tail_replacement_closed": true
+}

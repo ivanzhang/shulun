@@ -1,0 +1,111 @@
+{
+  "certificate_type": "prime_matrix_strict_low_effective_mod_endpoint_pdec_columncrt_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "仍在早期零行反例链的正权端点 Fourier 上界内部。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "EffectiveGCDIdentityClosed",
+      "meaning": "低有效分母等于 d/gcd(h,d)，与 P 的逆元选择无关。",
+      "proved": true,
+      "remaining": "LowEffectiveModEndpointPDECOrColumnCRT"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroModeCancellationClosed",
+      "meaning": "d|h 的零频贡献被中心化端点函数删除。",
+      "proved": true,
+      "remaining": "无。"
+    },
+    {
+      "closed": true,
+      "gate": "ReciprocalDivisorReductionClosed",
+      "meaning": "低有效模贡献被压到 small quotient 线上的 1/g 加权倒数和。",
+      "proved": true,
+      "remaining": "WeightedReciprocalCommonDivisorEnvelopeForLowEffectiveSpectrum"
+    },
+    {
+      "closed": true,
+      "gate": "PDECColumnCRTRouteRegistered",
+      "meaning": "倒数和若过大，必须表现为 hot common divisor 或低商模相位集中。",
+      "proved": false,
+      "remaining": "HotFrequencyCommonDivisorSupportBudget OR LowQuotientColumnCRTOrPDECRoute"
+    },
+    {
+      "closed": false,
+      "gate": "LowEffectiveModExcludedCurrentCorpus",
+      "meaning": "尚未证明 reciprocal divisor envelope 小于 PDEC 下界，也未排斥 hot divisor/ColumnCRT 出口。",
+      "proved": false,
+      "remaining": "WeightedReciprocalCommonDivisorEnvelopeForLowEffectiveSpectrum AND HotFrequencyCommonDivisorSupportBudget AND LowQuotientColumnCRTOrPDECRoute"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "effective_gcd_identity_closed": true,
+  "empirical_absence_not_used": true,
+  "laws": [
+    {
+      "formula": "gcd(hP^{-1} mod d,d)=gcd(h,d), because gcd(P,d)=1.",
+      "meaning": "低有效模完全由 h 与 d 的共同因子控制。",
+      "name": "invertible_phase_gcd",
+      "status": "closed"
+    },
+    {
+      "formula": "s=d/gcd(h,d); if s<=R, then d=s g with g|h.",
+      "meaning": "低有效模支撑落在少数 small-quotient times divisor-of-h 线上。",
+      "name": "effective_denominator_factorization",
+      "status": "closed"
+    },
+    {
+      "formula": "If s=1, then hP^{-1}=0 mod d and the centered endpoint coefficient is 0.",
+      "meaning": "最危险的 d|h 情况实际被中心化删除。",
+      "name": "zero_mode_cancellation",
+      "status": "closed"
+    },
+    {
+      "formula": "For s>=2, |hat phi_d(h)| <= s/(2d)=1/(2g), d=sg.",
+      "meaning": "低有效模不是免费大谱；每条共同因子线有 1/g 衰减。",
+      "name": "reciprocal_common_divisor_decay",
+      "status": "closed"
+    },
+    {
+      "formula": "LowEff_R(h)<=1/2 sum_{2<=s<=R} sum_{g|h, sg in D_+} w_{sg}^+/g.",
+      "meaning": "低有效模上界压成加权共同因子倒数和。",
+      "name": "low_effective_mass_bound",
+      "status": "closed_reduction"
+    },
+    {
+      "formula": "If the reciprocal divisor envelope is too large, then some quotient s has abnormal mass on divisors of h; persistent cases are PDEC/ColumnCRT, isolated cases SAE.",
+      "meaning": "大低有效模不能作为无名误差保留。",
+      "name": "hot_divisor_or_columncrt",
+      "status": "registered_route"
+    }
+  ],
+  "low_effective_mod_excluded": false,
+  "next_direct_attack_target": "WeightedReciprocalCommonDivisorEnvelopeForLowEffectiveSpectrum",
+  "no_theorem_switch": true,
+  "parallel_targets": [
+    "HotFrequencyCommonDivisorSupportBudget",
+    "LowQuotientColumnCRTOrPDECRoute",
+    "EndpointArcGeometricDecayLargeEffectiveModBudget"
+  ],
+  "pdec_columncrt_route_registered": true,
+  "plain_conclusion": "低有效模共振已经被严格压成共同因子结构。因为 P 与所有筛模 d 互素，gcd(hP^{-1},d)=gcd(h,d)。若有效分母 s=d/gcd(h,d) 小，则 d=s g 且 g|h。其中 s=1 的零频已经被中心化端点函数完全删除；真正剩余的 s>=2 项有 1/g 的共同因子衰减。因此低有效模上界等价于加权共同因子倒数和。若该倒数和仍过大，就必须登记为 hot frequency common divisor 或低商模 ColumnCRT/PDEC。",
+  "reciprocal_common_divisor_reduction_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/h4-pdec-admissible-constraint-table.md": "259d39fdfe4ec8ec232e26a4f2c8b474b58e81ea39ba209c99c772355929d483",
+    "docs/monograph/h4-pdec-column-defect-weight-certificate.md": "c28a00a9bbe6ccd46d4d528b74522c39730b156b9c2b63bdedc54a8fea414afe",
+    "docs/monograph/prime-matrix-beta-sieve-self-contained-frontier-router.md": "2261cdc29c1f26c5867bdfbf04917a5acf5272e98e8a5390c4290dd1f2c14bbf",
+    "docs/monograph/prime-matrix-strict-weighted-positive-endpoint-deficit-fourier-pdec-router.md": "74e22ca0b3dfa9b938fac9640169dcbb47f2cedf162f0cc9c70c1262ab684713",
+    "docs/monograph/prime-matrix-strict-weighted-positive-endpoint-fourier-upper-router.md": "e191497eed3c72ebdb61b17e7124aa6ae8e4d57852b1ca669f81c71ff5e8d8de"
+  },
+  "status": "low_effective_mod_reduced_to_reciprocal_common_divisor_envelope_and_columncrt_open",
+  "zero_mode_cancellation_closed": true
+}

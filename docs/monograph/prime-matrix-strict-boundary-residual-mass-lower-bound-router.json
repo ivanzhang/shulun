@@ -1,0 +1,154 @@
+{
+  "adaptive_prefix_residual_definition_closed": true,
+  "adaptive_prefix_residual_potential_lower_bound_proved": false,
+  "boundary_cap_forced_obligation_lower_bound_proved": false,
+  "boundary_residual_mass_lower_bound_proved": false,
+  "certificate_type": "prime_matrix_strict_boundary_residual_mass_lower_bound_router",
+  "compression_laws": [
+    {
+      "formula": "R_x at cutoff q<=x is the exact completed-line residual; proving it large near x~P meets the prime-window barrier.",
+      "law": "natural_cutoff_obstruction",
+      "status": "diagnosed_nonfree"
+    },
+    {
+      "formula": "R_{P-h}=PrimeColumns disjoint_union {a(h-a): P-a and P-h+a prime}.",
+      "law": "bottom_band_exact_split",
+      "status": "closed_as_reduction"
+    },
+    {
+      "formula": "For z<x, R_{x,z}={c: no q<=z divides xP+c}; EarlyZero forces R_{x,z} to be covered by labels q>z.",
+      "law": "adaptive_prefix_amplification",
+      "status": "definition_closed_transfer_open"
+    },
+    {
+      "formula": "If a chosen prefix z has too few residuals, the deficit is a low-mod endpoint/sieve defect rather than silent failure.",
+      "law": "low_mass_defect_route",
+      "status": "open_registered_exit"
+    },
+    {
+      "formula": "Prefix obligations must carry a multiplier ledger so q in (z,x] does not inflate reusable capacity for free.",
+      "law": "capacity_multiplier_discipline",
+      "status": "open"
+    }
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "effective_mass_target": "EffectiveResidualMassForTypeCompression",
+  "effective_residual_mass_for_type_compression_proved": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "AdaptivePrefixResidualPotentialLowerBound AND PrefixResidualToBoundaryFormalUnitObligationTransfer AND RegisteredPrefixCapacityMultiplierDiscipline AND LowPrefixResidualMassToRegisteredPhaseDefect",
+  "hardpoint_before_router": "BoundaryResidualMassLowerBoundForTypeCompression",
+  "low_prefix_residual_mass_to_registered_phase_defect_proved": false,
+  "natural_cutoff_mass_not_free_diagnosed": true,
+  "natural_cutoff_residual_equation_imported": true,
+  "next_direct_attack_target": "PrefixResidualToBoundaryFormalUnitObligationTransfer",
+  "no_quotient_collapse_below_type_threshold_proved": false,
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "AdaptivePrefixResidualPotentialLowerBound",
+    "RegisteredPrefixCapacityMultiplierDiscipline",
+    "LowPrefixResidualMassToRegisteredPhaseDefect"
+  ],
+  "plain_conclusion": "`BoundaryResidualMassLowerBoundForTypeCompression` 的自然 cutoff 版本不能作为免费内部输入：在 x 接近 P 时，它已经与短区间素数/底部平方根窗口同强。继续非循环推进的更紧源头是 adaptive prefix：把 cutoff 从 x 降到 z<x，先制造更厚的 prefix 残洞势，再证明早期零行迫使这些残洞无损转入同一 formal-unit 义务场。这一步产生三个真正剩余：prefix 势下界、prefix 到边界义务转移、以及容量乘子纪律；若 prefix 势异常偏低，则必须另证其登记为 PDEC/SAE/ColumnCRT 缺陷。当前仍未发现无条件直接矛盾，行/列命题不能升级为闭合。",
+  "prefix_residual_to_boundary_formal_unit_transfer_proved": false,
+  "registered_prefix_capacity_multiplier_discipline_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "ResidualMassInputActive",
+      "meaning": "上一层已把 forced obligation 下界的首要缺口压到边界残洞质量。",
+      "proved": false,
+      "remaining": "BoundaryResidualMassLowerBoundForTypeCompression"
+    },
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步仍只在假设早期零行反例链内推导，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "NaturalCutoffResidualEquationImported",
+      "meaning": "CLB 已给出自然 cutoff q<=x 的恒等分解 U_x=R_x\\F_x；早期零行等价于 R_x 被高标签补完。",
+      "proved": true,
+      "remaining": "这只是等价式，不给 |R_x| 的可用下界。"
+    },
+    {
+      "closed": true,
+      "gate": "NaturalCutoffMassNotFreeDiagnosed",
+      "meaning": "在 x 接近 P 的底部带，R_x 已精确分解为素数列与高素对曲线；证其足够大等价撞上短区间素数/平方根窗口输入。",
+      "proved": true,
+      "remaining": "不能把自然 cutoff 残洞下界当成免费内部引理。"
+    },
+    {
+      "closed": true,
+      "gate": "SylvesterLargeFactorOnlyWeak",
+      "meaning": "Sylvester 只保证某列含 >P 的大因子，不保证该列没有 <=x 小因子，因此不给 R_x 质量。",
+      "proved": true,
+      "remaining": "需要筛余质量或登记缺陷，而不是单个大因子。"
+    },
+    {
+      "closed": true,
+      "gate": "AdaptivePrefixResidualDefinitionClosed",
+      "meaning": "对任意 z<x 可定义 R_{x,z}；若存在早期零行，则每个 prefix 残洞都必须由 q>z 的标签支付。",
+      "proved": true,
+      "remaining": "要证明这些 prefix 义务能进入同一 formal-unit 类型压缩账本。"
+    },
+    {
+      "closed": true,
+      "gate": "WitnessAtomInterfaceImported",
+      "meaning": "已有 witness obligation 域可记录 physical filler atoms、return 与 quotient；这给 prefix 义务转移的接口。",
+      "proved": true,
+      "remaining": "PrefixResidualToBoundaryFormalUnitObligationTransfer"
+    },
+    {
+      "closed": false,
+      "gate": "AdaptivePrefixPotentialLowerBoundCurrentCorpusProved",
+      "meaning": "当前语料尚未给出某个统一 z=z(P,x) 的全局筛余下界；可走经典低界筛外部输入，或内部化该筛余势。",
+      "proved": false,
+      "remaining": "AdaptivePrefixResidualPotentialLowerBound"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixTransferToFormalUnitCurrentCorpusProved",
+      "meaning": "尚未证明从 R_{x,z} 产生的覆盖义务在升回边界 formal unit 后不丢失、不换题、不破坏 row-free type key。",
+      "proved": false,
+      "remaining": "PrefixResidualToBoundaryFormalUnitObligationTransfer"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixCapacityMultiplierDisciplineCurrentCorpusProved",
+      "meaning": "降低 cutoff 会引入 q in (z,x] 的额外标签；必须登记容量乘子，防止同一标签复用被误算为大量不同实例。",
+      "proved": false,
+      "remaining": "RegisteredPrefixCapacityMultiplierDiscipline"
+    },
+    {
+      "closed": false,
+      "gate": "LowPrefixMassDefectCurrentCorpusProved",
+      "meaning": "若 prefix 筛余质量异常偏低，应推出低模端点/PDEC/SAE 缺陷；该回流尚未逐行证明。",
+      "proved": false,
+      "remaining": "LowPrefixResidualMassToRegisteredPhaseDefect"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryResidualMassLowerBoundCurrentCorpusProved",
+      "meaning": "自然 cutoff 质量下界不能直接闭合；最窄非循环路线转为 prefix 势、prefix 转移和容量乘子纪律三项。",
+      "proved": false,
+      "remaining": "AdaptivePrefixResidualPotentialLowerBound AND PrefixResidualToBoundaryFormalUnitObligationTransfer AND RegisteredPrefixCapacityMultiplierDiscipline AND LowPrefixResidualMassToRegisteredPhaseDefect"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-anchor-collar-survivor-identity-router.md": "7f11708b16278c7b41aeb34f2a3540a98a90ea6826988a0587b6621b6cbc8aea",
+    "docs/monograph/prime-matrix-bottom-deficit-pair-bound-hard-attack.md": "40b0818413bc113a40532b40f74528634b3cf339452045af670a9100f080c0d5",
+    "docs/monograph/prime-matrix-boundary-phase-noncoverage-hard-attack.md": "9c972ccd9fc519b38674d0177f3d82ae1d202775f280c0eaae3b1aee725af041",
+    "docs/monograph/prime-matrix-boundary-residual-migration-audit.md": "2dbc9c064d49856ea10184a234391f57f4e6dc87dec771d24b7a7337a9921ed8",
+    "docs/monograph/prime-matrix-cylindrical-completion-line-barrier.md": "6f56b57cf7a206fdd6d17f88f04bf47ef5be7784e970a21a96f19df391097b55",
+    "docs/monograph/prime-matrix-eda-primevoid-to-alpha-pdec-bridge.md": "79c3cdc281784421e6f112c511df3fb8ae88dfba5411545ed553ca2b10e9671a",
+    "docs/monograph/prime-matrix-strict-forced-obligation-lower-bound-router.json": "0ed72910957c08af8ef93e950899e431fb6600b2b9efe685120c2d95fbb63b8b",
+    "docs/monograph/prime-matrix-witness-obligation-domain-canonicalization-router.md": "7959281a926a3805d1b2199f82b182e4f3eea18ac080eb805c8498d447abd574"
+  },
+  "status": "boundary_residual_mass_reduced_to_adaptive_prefix_potential_transfer_capacity_defect_open"
+}

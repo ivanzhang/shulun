@@ -1,0 +1,120 @@
+{
+  "certificate_type": "prime_matrix_strict_exact_uv_support_attack_router",
+  "status": "strict_exact_uv_support_reduced_to_new_actual_source_support_theorem_open",
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "strict_exact_uv_attack_boundary_closed": true,
+  "support_incidence_reduction_closed": true,
+  "path_partition_source_reduction_closed": true,
+  "zero_row_seed_extraction_blocked": true,
+  "moving_block_return_loop_detected": true,
+  "actual_exact_uv_support_proved": false,
+  "new_actual_source_support_theorem_required": true,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "CleanCoreTerminalSupportIncidenceTheorem_FOR_ActualNoncanonicalExactUVSupportLowerBound",
+  "terminal_gap_after_router": "NewActualNoncanonicalExactUVSupportTheoremInput",
+  "strict_self_contained_math_basis_after_router": "NewActualNoncanonicalExactUVSupportTheoremInput AND SelfContainedDStructureTailLog4FiniteRankinReplacementPackage",
+  "next_attack_contract": {
+    "name": "NewActualNoncanonicalExactUVSupportTheoremInput",
+    "must_prove": [
+      "在 Cauchy/dispersion 前给出 actual noncanonical clean-core signed source identity",
+      "从该 identity 得到 polylog exact path partition",
+      "证明同路径非零/无抵消或给出 sign-refined partition",
+      "证明 thin/rejected/path-overbudget block 全部命名回流",
+      "推出 S_u*S_v >= L^(2A+4C+E) 的 exact u/v 支撑下界"
+    ],
+    "cannot_use_as_proof": [
+      "canonical RIW/Buchstab 来源表跨分支导入",
+      "formal WFD/Type/Fourier/K4/K6 平坦性",
+      "真实样本未见早期零行",
+      "从 payment skeleton 或 CRT 覆盖图反推 signed source",
+      "外部 FullS-KLS 黑箱"
+    ]
+  },
+  "rows": [
+    {
+      "gate": "StrictExactUVGateActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层严格自足过滤后，数学主攻点只剩 ActualNoncanonicalExactUVSupportLowerBound。",
+      "remaining": "直接攻击该支撑下界。"
+    },
+    {
+      "gate": "SupportIncidenceReductionImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "ExactUV 支撑下界可由 CleanCoreTerminalSupportIncidenceTheorem 支付。",
+      "remaining": "证明 clean-core terminal support incidence。"
+    },
+    {
+      "gate": "ExactLayerTransferReductionImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "支撑关联已压到 clean-core exact 层承认、非零转移和 thin return。",
+      "remaining": "CleanCoreExactLayerAdmissionNonzeroTransferAndThinReturn。"
+    },
+    {
+      "gate": "PathPartitionReductionImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "层承认可由 actual clean-core 系数的 polylog 路径分割、同路径非零/无抵消推出。",
+      "remaining": "CleanCoreExactCoefficientPathPartitionNoCancellationAndThinReturn。"
+    },
+    {
+      "gate": "PreCauchySourceLawRequired",
+      "closed": true,
+      "proved": true,
+      "meaning": "路径分割必须建立在 Cauchy/dispersion 前的 actual signed alpha/delta 来源恒等式上。",
+      "remaining": "CleanCorePreCauchyCoefficientSourceLawAndReturn。"
+    },
+    {
+      "gate": "SourceLoopCutAndZeroRowSeedNoGo",
+      "closed": true,
+      "proved": true,
+      "meaning": "不能从 downstream payment skeleton、有限投影、早期零行覆盖图或几何 Phi 反向生成 pre-Cauchy 源。",
+      "remaining": "IndependentPreCauchyArithmeticSourceIdentityForNoncanonicalCleanCoreAndReturn。"
+    },
+    {
+      "gate": "IndependentIdentityTaxonomyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "canonical、generic WFD、AP/external 来源都不能作为严格自足 noncanonical clean-core 来源恒等式。",
+      "remaining": "actual noncanonical moving-block spread / source theorem。"
+    },
+    {
+      "gate": "MovingBlockReturnLoopDetected",
+      "closed": true,
+      "proved": true,
+      "meaning": "actual moving-block 若有低维签名则回流 PDEC/SAE/ColumnCRT；若无签名则回到早期零行终端包。",
+      "remaining": "这不是 ExactUV 的新证明，而是回到终端门/外部谱分支。"
+    },
+    {
+      "gate": "NoExistingInternalProofOfExactUV",
+      "closed": true,
+      "proved": false,
+      "meaning": "现有内部链已经压完伪出口，但没有产生 actual exact u/v 支撑下界。",
+      "remaining": "NewActualNoncanonicalExactUVSupportTheoremInput。"
+    },
+    {
+      "gate": "StrictExactUVSupportClosureCurrentCorpusProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前语料库不能证明严格自足 ExactUV 支撑输入。",
+      "remaining": "新增并证明 actual noncanonical exact-support 定理，或改变目标为条件外部线。"
+    }
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-self-contained-dual-lane-final-router.md": "7248bf08f19eda5d6e17ff055a6c27ceb2ff8ae3dd432c983d773f959e0372c9",
+    "docs/monograph/prime-matrix-clean-core-exact-entropy-atom-router.md": "21b906fe105f24a7725ca7870b20818c43351a698c46251ec32ceea8ebddf55c",
+    "docs/monograph/prime-matrix-clean-core-support-incidence-attack-router.md": "5da88ee11d0494e8f3ec3ea261cd9a4767b579decdc5f82784730217cd22c63a",
+    "docs/monograph/prime-matrix-clean-core-layer-transfer-path-router.md": "266aae80166e896a76b909161f9bf02715359618cf10245eef89f9529c94f071",
+    "docs/monograph/prime-matrix-clean-core-path-source-firewall-router.md": "c676bd485d0f5c02424737e0a6e710e8a3ceb5685261037bd41e1a4afde67d4e",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.md": "0cbd38f4d56d73a134ee106f50b1fe71d007f4273e00df7cac4c244fc57d451d",
+    "docs/monograph/prime-matrix-hypothetical-zero-row-seed-no-go-router.md": "ba9cacc35cdceb9bacc306202019ffe7bd8ae141ed6c1d9b4510ad77b81f56a6",
+    "docs/monograph/prime-matrix-independent-precauchy-identity-taxonomy-router.md": "34cef7caf18b1c7a2720a2e6a11557e88caccf15e2d1552b94ae4da3f818f28c",
+    "docs/monograph/prime-matrix-counterexample-moving-block-terminal-router.md": "cd9d38119646ecc9b66d701f6a220922e3575ba3834b1a2af30ccf1bf98aa740",
+    "docs/monograph/prime-matrix-early-zero-terminal-schema-reconciliation-router.md": "addfcc1d27403f96c070d1fdc67aaeb9f43d86117e435ac7386594d88c7ba869"
+  },
+  "plain_conclusion": "直接硬攻 ExactUV 后，现有内部路线已经把伪出口全部压掉：支撑关联需要 exact 层转移，exact 层转移需要 actual 路径分割，路径分割需要 pre-Cauchy signed 来源恒等式；而该来源恒等式不能由早期零行覆盖图、几何 Phi、canonical 模板或 generic WFD 反推出。因此严格自足数学主攻点被进一步定名为 NewActualNoncanonicalExactUVSupportTheoremInput。当前没有无条件闭合。"
+}

@@ -1,0 +1,109 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "actual_noncanonical_declaration_only_strict_option": true,
+  "actual_noncanonical_primitive_constructor_formula_line_proved": false,
+  "actual_noncanonical_primitive_emitter_source_table_proved": false,
+  "canonical_declaration_scoped_out": true,
+  "certificate_type": "prime_matrix_strict_precauchy_declaration_line_router",
+  "classification_law": "A pre-Cauchy declaration line is legal for this strict source table only if it declares the actual noncanonical primitive constructor before Cauchy/dispersion. Canonical declarations are scoped to the canonical branch, generic WFD is not a constructor, unregistered/mixed declarations return, and external spectral estimates do not emit source rows.",
+  "counterexample_assumption_only": true,
+  "exact_uv_map_fixed_pair_polylog_fiber_bound_proved": false,
+  "external_spectral_declaration_rejected_for_strict": true,
+  "generic_wfd_declaration_rejected": true,
+  "new_actual_source_entropy_theorem_proved": false,
+  "next_direct_attack_target": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter",
+  "no_theorem_switch": true,
+  "noncanonical_declaration_no_canonical_or_external_leak_proved": false,
+  "plain_conclusion": "`PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter` 被逐类过滤到同一源表内部的 `ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter`。这不是换命题，而是证明源表第一行时必须写出的实际公式行。当前语料没有该公式行，因此源表、complete key、fixed-pair fiber bound 和最终源熵命题仍未闭合。",
+  "pre_cauchy_constructor_declaration_line_proved": false,
+  "precauchy_declaration_line_router_closed": true,
+  "registered_complete_primitive_emitter_key_partition_polylog_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PreCauchyDeclarationLineTargetActive",
+      "meaning": "上一层源表字段拆分已把第一硬点压成 Cauchy/dispersion 前的 constructor declaration line。",
+      "proved": false,
+      "remaining": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter"
+    },
+    {
+      "closed": true,
+      "gate": "SourceClassPartitionClosed",
+      "meaning": "任何 declaration line 必须属于 canonical、generic WFD、unregistered/mixed、external 或 actual noncanonical。",
+      "proved": true,
+      "remaining": "逐类过滤，保留 strict 自足合法分支。"
+    },
+    {
+      "closed": true,
+      "gate": "CanonicalDeclarationScopedOut",
+      "meaning": "canonical RIW/Buchstab provenance 只在 pre-Cauchy 声明本来就是 canonical 时闭合，不能作为 noncanonical emitter 声明。",
+      "proved": true,
+      "remaining": "不能用 canonical 表填 actual noncanonical declaration line。"
+    },
+    {
+      "closed": true,
+      "gate": "GenericWFDDeclarationRejected",
+      "meaning": "generic WFD 是形式分解约束，不是产生 primitive summand 的 constructor declaration。",
+      "proved": true,
+      "remaining": "不能以 WFD 模板作为源表第一行。"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalSpectralDeclarationRejectedForStrict",
+      "meaning": "DI/BFI/Kuznetsov 等外部引理从给定系数后处理，不能生成 strict 自足 pre-Cauchy declaration line。",
+      "proved": true,
+      "remaining": "外部谱只能作为条件分支，不填当前自足表。"
+    },
+    {
+      "closed": true,
+      "gate": "UnregisteredMixedDeclarationReturned",
+      "meaning": "未登记或混合 formal unit 的声明不能留在 clean-core 表内，必须命名回流。",
+      "proved": true,
+      "remaining": "保留表必须同 formal unit。"
+    },
+    {
+      "closed": true,
+      "gate": "ActualNoncanonicalDeclarationIsOnlyStrictOption",
+      "meaning": "四类伪声明过滤后，strict 自足 declaration line 只能是 actual noncanonical primitive constructor formula line。",
+      "proved": true,
+      "remaining": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter。"
+    },
+    {
+      "closed": true,
+      "gate": "SameFormalUnitTimestampRequirementPinned",
+      "meaning": "声明行必须发生在 Cauchy/dispersion/Type/Fourier/completion 前，并锁定同一 actual formal unit。",
+      "proved": true,
+      "remaining": "SameFormalUnitPreCauchyTimestampLockLedger。"
+    },
+    {
+      "closed": false,
+      "gate": "ActualConstructorFormulaLineCurrentCorpusProved",
+      "meaning": "当前材料尚未写出 actual noncanonical primitive constructor formula line。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter。"
+    },
+    {
+      "closed": false,
+      "gate": "PreCauchyDeclarationLineCurrentCorpusProved",
+      "meaning": "actual formula line、时间戳/formal-unit 锁和无泄漏纪律未合取证明。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter AND SameFormalUnitPreCauchyTimestampLockLedger AND NoncanonicalDeclarationNoCanonicalOrExternalLeakLedger"
+    }
+  ],
+  "same_formal_unit_precauchy_timestamp_lock_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_class_partition_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-clean-core-constructor-source-class-firewall-router.json": "6dd3f6756a43089a546a1f836acd7434639b67f31572863d1bb3ba12a1a92d32",
+    "docs/monograph/prime-matrix-clean-core-external-lemma-parameter-match-router.json": "a4e7b79a90a21e338213ee982a87b8c4caf59b73aa832f740a45dab59b1dabb4",
+    "docs/monograph/prime-matrix-clean-core-origin-source-admission-router.json": "9e4ba4451beaa9fb46e7bce4eeab74dc9edcb62a60d08af58b038222cc07c3c3",
+    "docs/monograph/prime-matrix-independent-precauchy-identity-taxonomy-router.json": "98673babcd5fc127e58a8f5bb1bb3b78236f770b332e937674a938dfdca50534",
+    "docs/monograph/prime-matrix-strict-actual-emitter-source-table-router.json": "e327b1a80aef83a36279378e5892334fa305d92d5ac1bcbb8601eaab2f18ab3e",
+    "docs/monograph/prime-matrix-triad-a1-dibfi-actual-source-provenance-ledger-router.json": "0f222c5ddb147aab3039cefc58a57015d3a89cc14fbf89287ed735971273ad0d"
+  },
+  "status": "strict_precauchy_declaration_line_reduced_to_actual_constructor_formula_line_open",
+  "terminal_gap_after_router": "ActualNoncanonicalPrimitiveConstructorFormulaLineForEmitter AND SameFormalUnitPreCauchyTimestampLockLedger AND NoncanonicalDeclarationNoCanonicalOrExternalLeakLedger",
+  "terminal_gap_before_router": "PreCauchyConstructorDeclarationLineForActualNoncanonicalEmitter",
+  "unregistered_mixed_declaration_returned": true
+}

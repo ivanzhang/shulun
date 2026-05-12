@@ -1,0 +1,144 @@
+{
+  "certificate_type": "prime_matrix_strict_large_finite_rh_verification_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "LargeFiniteRHGateActive",
+    "GourdonExternalSourceIdentified",
+    "LowHeightSelfContainedPackageNotScalableSubstitute",
+    "ExternalConditionalLaneAvailable"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "external_gourdon_conditional_lane_available": true,
+  "external_reference": {
+    "claim_boundary": "first 10^13 nontrivial zeros verified on the critical line",
+    "id": "Gourdon 2004",
+    "role": "external conditional source, not repository self-contained data/hash",
+    "url": "http://numbers.computation.free.fr/Constants/Miscellaneous/zetazeros1e13-1e24.pdf"
+  },
+  "finite_rh_to_psi_table_interface_closed": false,
+  "large_finite_rh_external_source_identified": true,
+  "large_finite_rh_verification_self_contained_closed": false,
+  "large_height_turing_completeness_closed": false,
+  "large_zero_algorithm_closed": false,
+  "large_zero_dataset_checksum_closed": false,
+  "next_direct_attack_target": "ExplicitZeroFreeRegionForTableTailLedger",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "LargeZeroDatasetAndChecksumLedger",
+    "RiemannSiegelLargeHeightZeroComputationAlgorithmLedger",
+    "LargeHeightTuringCompletenessLedger",
+    "ZeroIndexToHeightRangeMappingLedger",
+    "FiniteRHVerificationToPsiEpsilonTableInterfaceLedger",
+    "LargeFiniteRHVerificationForPsiEpsilonTableLedger",
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "LargeZeroDatasetAndChecksumLedger",
+    "RiemannSiegelLargeHeightZeroComputationAlgorithmLedger",
+    "LargeHeightTuringCompletenessLedger",
+    "ZeroIndexToHeightRangeMappingLedger",
+    "FiniteRHVerificationToPsiEpsilonTableInterfaceLedger"
+  ],
+  "plain_conclusion": "大高度有限 RH 输入的边界已明确：外部路线可登记 Gourdon `10^13` 零点验证；作者侧自足路线则需要数据/hash、计算算法、Turing 完备性、零点编号到高度映射和表生成接口。`T<=14` 低高度包不能替代该输入。本步仍不关闭 epsilon 表，只把该项分成外部条件通道和自足五包。",
+  "replacement_self_contained": {
+    "Gourdon10^13FiniteRHVerificationExternalAcceptedForTableInput": "accepted external certificate only; does not close self-contained route",
+    "LargeFiniteRHVerificationForPsiEpsilonTableLedger": "LargeZeroDatasetAndChecksumLedger AND RiemannSiegelLargeHeightZeroComputationAlgorithmLedger AND LargeHeightTuringCompletenessLedger AND ZeroIndexToHeightRangeMappingLedger AND FiniteRHVerificationToPsiEpsilonTableInterfaceLedger"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只审计 epsilon 表的大高度有限 RH 输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "LargeFiniteRHGateActive",
+      "meaning": "上一证书把下一最窄点设为 epsilon 表所需的大高度有限 RH 验证。",
+      "proved": true,
+      "remaining": "LargeFiniteRHVerificationForPsiEpsilonTableLedger"
+    },
+    {
+      "closed": true,
+      "gate": "GourdonExternalSourceIdentified",
+      "meaning": "Dusart 文中登记 Gourdon 10^13 非平凡零点验证作为外部来源；这可作外部条件输入。",
+      "proved": false,
+      "remaining": "Gourdon10^13FiniteRHVerificationExternalAcceptedForTableInput"
+    },
+    {
+      "closed": true,
+      "gate": "LowHeightSelfContainedPackageNotScalableSubstitute",
+      "meaning": "0<t<=14 的自足 Riemann-Siegel/Turing 包即使完成，也只覆盖低高度；不能替代 10^13 零点级大证书。",
+      "proved": true,
+      "remaining": "RiemannSiegelIntervalArithmetic0To14Ledger AND CriticalLineSignSeparationFiniteLedger0To14 AND TuringArgumentPrincipleBoxCount0To14Ledger"
+    },
+    {
+      "closed": false,
+      "gate": "LargeZeroDatasetAndChecksumLedger",
+      "meaning": "作者侧自足需要原始或可压缩验证数据、分块校验和、版本和独立复算入口。",
+      "proved": false,
+      "remaining": "zero block data/hash/checksum archive"
+    },
+    {
+      "closed": false,
+      "gate": "RiemannSiegelLargeHeightZeroComputationAlgorithmLedger",
+      "meaning": "需要说明大高度 Riemann-Siegel/ Odlyzko-Schönhage 等计算算法、舍入控制和误差界。",
+      "proved": false,
+      "remaining": "large-height zero computation proof"
+    },
+    {
+      "closed": false,
+      "gate": "LargeHeightTuringCompletenessLedger",
+      "meaning": "需要 Turing 方法或等价 argument-principle 计数，证明没有漏零且所有零在临界线上。",
+      "proved": false,
+      "remaining": "large-height Turing completeness certificate"
+    },
+    {
+      "closed": false,
+      "gate": "ZeroIndexToHeightRangeMappingLedger",
+      "meaning": "需要把前 10^13 零点数量转成表生成算法实际使用的高度区间和覆盖阈值。",
+      "proved": false,
+      "remaining": "FiniteRHVerificationToPsiEpsilonTableInterfaceLedger"
+    },
+    {
+      "closed": false,
+      "gate": "FiniteRHVerificationToPsiEpsilonTableInterfaceLedger",
+      "meaning": "需要证明该有限 RH 验证高度足以支撑 eps_psi(28) 和中段 psi 表值的具体常数。",
+      "proved": false,
+      "remaining": "table generator uses finite RH height plus zero-free tail"
+    },
+    {
+      "closed": false,
+      "gate": "LargeFiniteRHVerificationForPsiEpsilonTableLedger",
+      "meaning": "大高度有限 RH 输入尚未作者侧闭合；外部 Gourdon 可登记，但不是仓库自足证书。",
+      "proved": false,
+      "remaining": "LargeZeroDatasetAndChecksumLedger AND RiemannSiegelLargeHeightZeroComputationAlgorithmLedger AND LargeHeightTuringCompletenessLedger AND ZeroIndexToHeightRangeMappingLedger AND FiniteRHVerificationToPsiEpsilonTableInterfaceLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalConditionalLaneAvailable",
+      "meaning": "若接受 Gourdon 外部证书，可把该输入作为外部条件推进到零点自由尾项和桥接审查。",
+      "proved": false,
+      "remaining": "Gourdon10^13FiniteRHVerificationExternalAcceptedForTableInput"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "大高度有限 RH 输入审计不产生早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/claim-status-table.md": "6195fc5f1f5987dd8829f70bceec911dbef9a400ace6c7e1a1710af0214dc021",
+    "docs/monograph/prime-matrix-lowheight-backlund-self-contained-package-router.md": "cccd19aad5adf26b8411dea9ab86b779d6a6b6fbcb058571172f8d935aeeb41e",
+    "docs/monograph/prime-matrix-strict-verified-zero-zero-free-tail-input-router.json": "d45b728d2eadb7d661d27cf6929cf60fb8b74e7a362983941e968499f8bfdacc"
+  },
+  "status": "large_finite_rh_verification_external_gourdon_available_self_contained_data_algorithm_turing_open",
+  "zero_index_to_height_mapping_closed": false
+}
