@@ -1,0 +1,149 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "atomic_payload_origin_identity_router_closed": true,
+  "atomic_signed_payload_constructor_proved": false,
+  "certificate_type": "prime_matrix_strict_atomic_payload_origin_identity_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "existing_origin_route_returns_row_table": true,
+  "missing_sources": [],
+  "next_direct_attack_target": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward",
+  "no_theorem_switch": true,
+  "noncircular_atomic_origin_identity_conditionally_suffices": true,
+  "noncircular_atomic_origin_identity_proved": false,
+  "origin_fields": [
+    {
+      "field": "atomic_formal_unit",
+      "requirement": "锁定同一 early-zero counterexample formal unit 与 atomic branch trace。"
+    },
+    {
+      "field": "source_tuple_origin",
+      "requirement": "给出产生该 basis word/signed coefficient 的 pre-Cauchy source tuple。"
+    },
+    {
+      "field": "basis_word_identity",
+      "requirement": "证明 source tuple 正向生成的 primitive basis word 正是 atomic trace 的 word。"
+    },
+    {
+      "field": "signed_coefficient_formula",
+      "requirement": "给出 signed coefficient、orientation、local factor、truncation weight 的闭式或有限递推。"
+    },
+    {
+      "field": "prepushforward_equality",
+      "requirement": "证明该公式在 Cauchy/Phi/payment 推前前等于 actual alpha/delta 贡献。"
+    },
+    {
+      "field": "nonzero_or_return",
+      "requirement": "非零、符号、local factor 与预算成立；失败则命名回流。"
+    },
+    {
+      "field": "no_row_table_or_payment_recovery",
+      "requirement": "证明未使用 row-level origin table、payment skeleton、零行覆盖或 terminal certificate 反推。"
+    }
+  ],
+  "plain_conclusion": "本步直接攻击 `AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn`。payload 的第一生产性字段是 basis word 到 signed coefficient 的赋值；该赋值继续压到 value map，而 value map 必须是 pre-Cauchy 来源恒等式。既有来源路线会回到 row-level origin table，因此不能作为非循环证明。真正最窄点压成 `NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward`：同一 atomic formal unit 内正向给出 source tuple、basis word identity、signed coefficient/local factor 公式、prepushforward equality 和命名回流，且不调用 row-level 表或 payment/零行反推。当前材料没有该非循环来源恒等式，行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AtomicPayloadTargetActive",
+      "meaning": "上一层已把 exact atomic trace 的剩余压成 signed payload constructor。",
+      "proved": false,
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "closed": true,
+      "gate": "PayloadSlotValueNeedsAssignment",
+      "meaning": "signed slot value formula 的第一字段是 basis word 到 signed coefficient 的 assignment。",
+      "proved": true,
+      "remaining": "AcyclicSeedCoefficientAssignmentOnBasisAlphabetLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AssignmentNeedsValueMap",
+      "meaning": "coefficient assignment 的第一字段是 basis word -> signed coefficient value map。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordToSignedCoefficientValueMapFormula"
+    },
+    {
+      "closed": true,
+      "gate": "ValueMapMustBeOriginIdentity",
+      "meaning": "value map 不能只是表；必须给 pre-Cauchy source tuple 的来源恒等式。",
+      "proved": true,
+      "remaining": "AcyclicSeedBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SignedAssignmentChainSynced",
+      "meaning": "payload 的 signed coefficient 部分已同步到来源恒等式，而不是 UV 或 return tag。",
+      "proved": true,
+      "remaining": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ExistingOriginRouteReturnsRowTable",
+      "meaning": "既有来源路线会回到 row-level origin generation table，不能作为非循环 payload 证明。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "BranchTracePayloadCycleImported",
+      "meaning": "branch trace signed payload 已被审查为当前语料中的 row-level 回流。",
+      "proved": true,
+      "remaining": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "NoncircularAtomicOriginIdentityWouldClosePayloadConditionally",
+      "meaning": "若新增非循环 atomic 来源恒等式，则 signed coefficient、local factor、same-row identity 和推前前等式可同时获得。",
+      "proved": true,
+      "remaining": "prove NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "ActualEmitterExactUVStillParallel",
+      "meaning": "来源恒等式可输出行级 UV，但 bounded multiplicity incidence 仍需独立验收。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "NoncircularAtomicOriginIdentityCurrentCorpusProved",
+      "meaning": "当前材料没有提交不经 row-level 表的 atomic basis word/signed coefficient 来源恒等式。",
+      "proved": false,
+      "remaining": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "AtomicSignedPayloadConstructorCurrentCorpusProved",
+      "meaning": "没有非循环来源恒等式，payload constructor 仍未证明。",
+      "proved": false,
+      "remaining": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "缺少 atomic 来源恒等式、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 验收门。",
+      "proved": false,
+      "remaining": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_assignment_chain_synced": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-assignment-router.json": "30d00d415a6bcd62f3f75fc92a7fed670dd493936a39fbd86980ad7a0bcda0bc",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coefficient-value-map-router.json": "e052b6a7cc215c9ad7eb81002edeb995fcc6ef2ce1290dfaf70f642a21de499c",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-slot-value-formula-router.json": "9f4f22bbec38091d306cb0cf8a395c9fa854e78c73e73555f2f40b1e8dee0ba5",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-signed-weight-coordinate-slot-router.json": "0150cfc80fdde353d31c03700be96db1badfbea3f13c4d58e8260cef4901efbf",
+    "docs/monograph/prime-matrix-strict-atomic-branch-trace-payload-frontier-router.json": "fe1d86442d7936662a55cd5b8279e339f5bfd21142bd079ec80280c06423df92",
+    "docs/monograph/prime-matrix-strict-branch-trace-signed-payload-cycle-router.json": "67da3805e5bdb503d768a79b95a3408bbdfede3254557e2e89080e2229d0e3b0",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "atomic_signed_payload_reduced_to_noncircular_origin_identity_open",
+  "strict_author_side_remaining_basis": "NoncircularAtomicBasisWordSignedCoefficientOriginIdentityBeforePushforward AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "target_input_before_router": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+}
