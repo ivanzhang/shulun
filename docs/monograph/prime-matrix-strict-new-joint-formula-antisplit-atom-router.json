@@ -1,0 +1,148 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "antisplit_fields": [
+    {
+      "field": "single_row_source_tuple",
+      "requirement": "同一 actual noncanonical source tuple 在同一 formal unit 内直接生成 joint primitive row。"
+    },
+    {
+      "field": "basis_word_and_signed_coefficient_together",
+      "requirement": "同一公式同时输出 basis word 与 signed coefficient；不得先走 alpha-side word 再后验补 coefficient。"
+    },
+    {
+      "field": "alpha_delta_pairing_payload",
+      "requirement": "同一行直接携带 alpha/delta 两侧 pairing 数据，而不是由 row-level 表或 signed-source 固定点回推。"
+    },
+    {
+      "field": "uv_key_sign_local_factor",
+      "requirement": "同步输出 exact `(u,v)`、branch key、sign/local factor 和非零条件。"
+    },
+    {
+      "field": "prepushforward_identity",
+      "requirement": "在 Cauchy、Phi、payment 推前前证明该行贡献等于 actual emitter 系数。"
+    },
+    {
+      "field": "no_split_certificate",
+      "requirement": "证明该构造不因分裂为 alpha-side/row-level/signed-source 路径而回到已登记固定点。"
+    }
+  ],
+  "antisplit_joint_formula_proved": false,
+  "certificate_type": "prime_matrix_strict_new_joint_formula_antisplit_atom_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "missing_sources": [],
+  "new_formula_target_active": true,
+  "next_direct_attack_target": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection",
+  "no_theorem_switch": true,
+  "old_split_formula_route_is_nonproof_cycle": true,
+  "old_split_formula_route_synced": true,
+  "plain_conclusion": "本步直接攻 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 的内部形态。若新公式沿旧路线先拆成 explicit alpha/delta、alpha-side、deterministic row map、anchor-phase、signed lift、signed value、origin table，则会回到 row-level/signed-source 坐标来源环，不能算新公式。因此真正最窄原子不是再展开旧 alpha-side 链，而是一个反分裂公式：`NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection`，它必须在同一行同时输出basis word、signed coefficient、alpha/delta pairing、exact `(u,v)`、key、sign/local factor，且证明不经已登记固定点。当前语料没有该工件，命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NewFormulaTerminalObligationActive",
+      "meaning": "上一层已把 strict 内部非循环点压成新显式 joint 公式工件。",
+      "proved": false,
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "closed": true,
+      "gate": "OldFormulaLineSplitsToExplicitAlphaDelta",
+      "meaning": "旧 actual constructor formula line 先拆成显式 alpha/delta primitive rule。",
+      "proved": false,
+      "remaining": "ExplicitAlphaDeltaPrimitiveConstructorRuleForActualNoncanonicalEmitter"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitAlphaDeltaSplitsToAlphaSide",
+      "meaning": "显式 alpha/delta 规则又先要求 alpha-side primitive rule；delta/pairing 还没有对象。",
+      "proved": false,
+      "remaining": "ActualNoncanonicalSourceTupleToAlphaSidePrimitiveRuleLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaSideSplitsToDeterministicRowMap",
+      "meaning": "alpha-side 规则压到确定性 alpha row 发射映射。",
+      "proved": false,
+      "remaining": "DeterministicAlphaPrimitiveRowEmissionMapLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DeterministicRowMapSplitsToAnchorPhase",
+      "meaning": "确定性发射映射的首缺口是把 A/D0/K/Omega/phase_rule 变成 alpha row。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorPhaseHasOnlyUnsignedSkeleton",
+      "meaning": "carry-shell、P列锚、相位轮等只给 unsigned skeleton；signed coefficient 仍开放。",
+      "proved": false,
+      "remaining": "AlphaFormulaSignedCoefficientLiftLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLiftSplitsToPointwiseValueTable",
+      "meaning": "signed lift 等价于逐 skeleton row 的 signed alpha value table。",
+      "proved": false,
+      "remaining": "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+    },
+    {
+      "closed": true,
+      "gate": "SignedValueRouteReturnsToOriginTable",
+      "meaning": "signed value 继续展开会回到 primitive origin identity 与 row-level 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "RowLevelReturnsToSeedCoordinateCycle",
+      "meaning": "row-level/signed-emitter 路线回到 signed 坐标-来源依赖环。",
+      "proved": false,
+      "remaining": "cannot count as new formula。"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVDoesNotSupplyFormula",
+      "meaning": "ExactUV incidence 是并行守门项；它不生产 basis word/coefficient joint formula。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "AntiSplitFormulaCurrentCorpusProved",
+      "meaning": "当前材料没有提交不经 alpha-side/row-level/signed-source 分裂路径的 joint primitive row 公式。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "反分裂 joint 公式、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 均未合取闭合。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-constructor-formula-line-router.json": "ac19ab81150df61902058d6c890195592b25400f04a32562b1fa32b966a89913",
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coordinate-source-cycle-guard-router.json": "aef259753937f9d64167d4c7478a6ab2c410d2f1f9d9474fb0e876619b517a29",
+    "docs/monograph/prime-matrix-strict-alpha-row-anchor-phase-formula-router.json": "1da61d631c11df13e21c840516701954072e915d348b1ab4fd6bfb2fd3a0c6d8",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-side-primitive-rule-router.json": "08b79049d746549d3c3d069a1501f8d79ee24b78b40faf0683d695271ff0c5a8",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-deterministic-alpha-row-emission-map-router.json": "d980647c15a9fd16b0e4255b5af3f2ce69ab5575dbe0d7a80a8b1ade70b0d177",
+    "docs/monograph/prime-matrix-strict-explicit-alpha-delta-rule-router.json": "2de491d0a24986746199d7c96965b56f444643bf6aa15074bd705d7bf544531c",
+    "docs/monograph/prime-matrix-strict-new-joint-formula-terminal-obligation-router.json": "1db15fd070caa0101e4af1921587d03cbdb8ca5eb28ffdf394094207954ca882",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "new_joint_formula_reduced_to_antisplit_joint_row_formula_open",
+  "strict_author_side_remaining_basis": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
