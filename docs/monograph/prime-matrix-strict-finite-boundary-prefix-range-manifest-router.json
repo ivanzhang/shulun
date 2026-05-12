@@ -1,0 +1,136 @@
+{
+  "certificate_type": "prime_matrix_strict_finite_boundary_prefix_range_manifest_router",
+  "status": "finite_boundary_prefix_range_manifest_closed_same_parameter_window_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "range_manifest_target_imported": true,
+  "candidate_parameter_id_pinned": true,
+  "pre_tail_finite_bridge_located": true,
+  "tail_object_interface_matched": true,
+  "range_and_parameter_manifest_closed": true,
+  "same_parameter_window_specification_proved": false,
+  "runner_hash_ledger_proved": false,
+  "analytic_tail_bridge_proved": false,
+  "finite_boundary_prefix_certificate_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "manifest": {
+    "parameter_id": "alpha043_pge100000_external_b3_pending_finite_prefix_named_return",
+    "alpha": 0.43,
+    "s": 2.3255813953488373,
+    "p_tail_start": 100000,
+    "z_rule": "z=floor(P^0.43) or equivalent monotone cutoff recorded in same-parameter window",
+    "sieve_level_rule": "D comparable to P, with squarefree d<P in the prefix CRT count formula",
+    "prefix_interval": "1<=c<P",
+    "rough_object": "#{1<=c<P: xP+c avoids the prescribed residue class modulo each q<=z}",
+    "target_lower_bound_role": "D0_prefix_lower_bound for terminal margin table",
+    "finite_bridge_before_tail": "3001<=P<100000 handled by dynamic skeleton finite certificate, not by the current D0 p>=100000 table row"
+  },
+  "finite_bridge_summary": {
+    "range": "3001<=P<100000",
+    "prime_min": 3001,
+    "prime_max": 99991,
+    "record_count": 18324,
+    "prime_count": 9162,
+    "target_s": 401,
+    "min_skeleton_count": 456,
+    "min_record": {
+      "cutoff": 31,
+      "low_prime_count": 11,
+      "p": 3023,
+      "side": "plus"
+    },
+    "closed": true
+  },
+  "range_rows": [
+    {
+      "range": "P<3001",
+      "role": "outside_current_manifest",
+      "status": "not_part_of_current_alpha043_pge100000_D0_row",
+      "meaning": "更小 P 属于旧有限桥或其它全局边界，不由本 D0 同参数行关闭。"
+    },
+    {
+      "range": "3001<=P<100000",
+      "role": "pre_tail_bridge",
+      "status": "closed_by_dynamic_skeleton_finite_certificate",
+      "meaning": "已有动态粗骨架有限桥；最小值 456，目标 401。"
+    },
+    {
+      "range": "P>=100000",
+      "role": "active_same_parameter_prefix_tail",
+      "status": "manifest_closed_runner_and_tail_bridge_open",
+      "meaning": "当前 finite prefix 证书的同参数 D0 行从这里开始；需要同参数窗口、runner/hash 和解析尾段桥接。"
+    }
+  ],
+  "hardpoint_before_router": "FiniteBoundaryPrefixRangeAndParameterManifest",
+  "hardpoint_after_router": "SameParameterPrefixWindowSpecification AND ReproduciblePrefixRoughCountRunnerHashLedger AND AnalyticTailToFiniteBoundaryMonotoneBridge",
+  "next_direct_attack_target": "SameParameterPrefixWindowSpecification",
+  "parallel_attack_targets": [
+    "ReproduciblePrefixRoughCountRunnerHashLedger",
+    "AnalyticTailToFiniteBoundaryMonotoneBridge",
+    "FormalUnitTypeThresholdLedger",
+    "PrefixLabelSupportToRowFreeTypeAntiCollapse"
+  ],
+  "decision_rows": [
+    {
+      "gate": "RangeManifestTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把 finite prefix 首字段定为范围与参数 manifest。",
+      "remaining": "FiniteBoundaryPrefixRangeAndParameterManifest"
+    },
+    {
+      "gate": "CandidateParameterIdPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前同参数 D0 行固定为 alpha=0.43, P>=100000。",
+      "remaining": "parameter row pinned"
+    },
+    {
+      "gate": "PreTailFiniteBridgeLocated",
+      "closed": true,
+      "proved": true,
+      "meaning": "3001<=P<100000 的动态粗骨架有限桥已有证书，不应混入当前 P>=100000 D0 runner。",
+      "remaining": "pre-tail bridge imported as boundary evidence"
+    },
+    {
+      "gate": "TailObjectInterfaceMatched",
+      "closed": true,
+      "proved": true,
+      "meaning": "P>=100000 尾段对象已经对齐为一维 prefix rough-count / B3 lower-sieve 对象。",
+      "remaining": "SameParameterPrefixWindowSpecification"
+    },
+    {
+      "gate": "RangeAndParameterManifestClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限桥、尾段起点、alpha/z 规则、prefix 区间和目标角色已经列为可审查 manifest。",
+      "remaining": "SameParameterPrefixWindowSpecification"
+    },
+    {
+      "gate": "SameParameterWindowStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "manifest 只列清范围；还没有证明 D0、M#、terminal budget 使用完全同一 z,D,Lambda/type alphabet。",
+      "remaining": "SameParameterPrefixWindowSpecification AND FormalUnitTypeThresholdLedger AND PrefixLabelSupportToRowFreeTypeAntiCollapse"
+    },
+    {
+      "gate": "FiniteBoundaryPrefixCertificateProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "runner/hash 与解析尾段桥接仍未完成，因此 finite prefix 证书尚未闭合。",
+      "remaining": "SameParameterPrefixWindowSpecification AND ReproduciblePrefixRoughCountRunnerHashLedger AND AnalyticTailToFiniteBoundaryMonotoneBridge"
+    }
+  ],
+  "source_hashes": {
+    "script": "b4583a95579cceb829bb39ee6d6040023583efb6887ef5aad56e0e93f6a46189",
+    "docs/monograph/prime-matrix-strict-finite-boundary-prefix-certificate-attack-router.json": "83e35c6a74c0f39db0f5fa034a600c80380c2cc74e18bba635c9d65a4fe94ceb",
+    "docs/monograph/prime-matrix-dynamic-skeleton-lower-factorization-router.json": "2c46448ba6bd4969f962984ad095d47199a787ef4906d5d2297ac5c252fefa8d",
+    "docs/dynamic_promoted_rough_capacity_audit_alpha043_p100000_20260506.json": "bcf59b855586af801870feaec670c9adf1a498e72a51ae0bcdd25f83d90570d9",
+    "docs/monograph/prime-matrix-strict-dynamic-skeleton-tail-b3-bridge-router.json": "dad9b5f3f5f1d66df613a270f14e4608e99b511c22efa597075061bfc528f55e",
+    "docs/monograph/prime-matrix-strict-concrete-same-parameter-margin-table-certificate-router.json": "e8e2be8c87352d9c984f6f9339c010f851108db941a41c78e477bd0cc4bb1116"
+  },
+  "plain_conclusion": "`FiniteBoundaryPrefixRangeAndParameterManifest` 已可关闭：当前同参数 D0 行固定为 `alpha043_pge100000_external_b3_pending_finite_prefix_named_return`，即 alpha=0.43、P>=100000、prefix 区间 1<=c<P；3001<=P<100000 作为已归档的动态粗骨架有限桥接边界，不混入当前 D0 runner。真正剩余转为同参数窗口规格、runner/hash 和解析尾段桥接。"
+}
