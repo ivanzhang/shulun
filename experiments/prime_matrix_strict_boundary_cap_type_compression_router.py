@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""生成 strict 边界帽 formal-unit 类型压缩路由证书。
+"""生成 strict 边界帽 formal-unit 类型压缩硬攻证书。
 
 用法示例：
   python3 experiments/prime_matrix_strict_boundary_cap_type_compression_router.py
@@ -15,49 +15,44 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCS = ROOT / "docs"
-MONOGRAPH = DOCS / "monograph"
-OUT_JSON = MONOGRAPH / "prime-matrix-strict-boundary-cap-type-compression-router.json"
-OUT_MD = MONOGRAPH / "prime-matrix-strict-boundary-cap-type-compression-router.md"
+DOCS = ROOT / "docs" / "monograph"
+OUT_JSON = DOCS / "prime-matrix-strict-boundary-cap-type-compression-router.json"
+OUT_MD = DOCS / "prime-matrix-strict-boundary-cap-type-compression-router.md"
 
 TYPE_COMPRESSION = "BoundaryCapFormalUnitTypeCompressionDichotomy"
 FORCED_LOWER = "BoundaryCapForcedFormalUnitObligationLowerBound"
 TYPE_UPPER_OR_DEFECT = "BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect"
 REPEAT_TO_RETURN = "RepeatedBoundaryTypeToStableSameLabelReturn"
-SHORT_RETURN = "StableShortSameLabelRecurrenceOrRegisteredPhaseDefect"
+LABEL_QUOTIENT = "BoundaryCapLabelPreservingQuotientEntropyDeficit"
+DRIFT_DEFECT = "BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn"
 LABEL_PRODUCT = "StableReturnLargeLabelSupportProductLowerBound"
-DRIFT_DEFECT = "SignatureDriftToRegisteredPhaseDefectTheorem"
+DSTRUCTURE = "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
 
 SOURCE_FILES = [
-    MONOGRAPH / "prime-matrix-strict-stable-short-return-defect-attack-router.json",
-    MONOGRAPH / "prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json",
-    MONOGRAPH / "prime-matrix-universal-formal-unit-extractor-router.json",
-    MONOGRAPH / "prime-matrix-formal-unit-partition-coverage-router.json",
-    MONOGRAPH / "prime-matrix-source-family-assignment-totality-router.json",
-    MONOGRAPH / "prime-matrix-no-loss-return-accounting-router.json",
-    MONOGRAPH / "prime-matrix-canonical-formal-unit-hash-stability-router.json",
-    MONOGRAPH / "prime-matrix-concrete-source-tuple-anchor-parameter-router.json",
-    MONOGRAPH / "prime-matrix-anchor-set-reconstruction-certificate-router.json",
-    MONOGRAPH / "prime-matrix-early-zero-contradiction-matrix-router.json",
-    DOCS / "phase-recurrence-pressure-scan.json",
+    "prime-matrix-strict-stable-short-return-defect-attack-router.json",
+    "prime-matrix-early-zero-contradiction-matrix-router.json",
+    "prime-matrix-formal-unit-source-record-router.json",
+    "prime-matrix-canonical-formal-unit-hash-stability-router.json",
+    "prime-matrix-strict-alpha-anchor-collar-overload-return-router.json",
 ]
 
 
-def load_json(path: Path) -> dict[str, Any]:
-    """读取 JSON；缺失时返回空字典。"""
+def load_json(name: str) -> dict[str, Any]:
+    """读取 JSON 证书；缺失时返回空对象。"""
+    path = DOCS / name
     if not path.exists():
         return {}
     return json.loads(path.read_text(encoding="utf-8"))
 
 
 def sha256(path: Path) -> str:
-    """计算文件哈希。"""
+    """计算证据文件哈希。"""
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fmt_bool(value: bool) -> str:
-    """写出小写布尔。"""
-    return "true" if value else "false"
+def fmt_bool(value: Any) -> str:
+    """写出小写布尔值。"""
+    return "true" if bool(value) else "false"
 
 
 def table_cell(value: Any) -> str:
@@ -66,11 +61,22 @@ def table_cell(value: Any) -> str:
 
 
 def source_hashes() -> dict[str, str]:
-    """汇总依赖哈希。"""
+    """汇总依赖证据哈希。"""
     return {
-        str(path.relative_to(ROOT)): sha256(path)
-        for path in SOURCE_FILES
-        if path.exists()
+        f"docs/monograph/{name}": sha256(DOCS / name)
+        for name in SOURCE_FILES
+        if (DOCS / name).exists()
+    }
+
+
+def row(gate: str, closed: bool, proved: bool, meaning: str, remaining: str) -> dict[str, Any]:
+    """构造判定表行。"""
+    return {
+        "gate": gate,
+        "closed": closed,
+        "proved": proved,
+        "meaning": meaning,
+        "remaining": remaining,
     }
 
 
@@ -128,186 +134,181 @@ def compression_logic_rows() -> list[dict[str, str]]:
             "remaining": TYPE_UPPER_OR_DEFECT,
         },
         {
-            "case": "Repeated type",
-            "meaning": "同一行无关 type key 在短位移下复现。",
-            "consequence": "若 type key 足够完整，得到同 formal unit 同标签短复现；再接标签乘积下界和 CRT 矛盾。",
-            "remaining": f"{REPEAT_TO_RETURN} AND {LABEL_PRODUCT}",
+            "case": "Complete key repeat",
+            "meaning": "完整 key 在短位移下重复。",
+            "consequence": "标签字段保持，可接同 formal unit 短复现；但当前缺少完整 key 数量上界。",
+            "remaining": LABEL_QUOTIENT,
         },
         {
-            "case": "Drifting type",
-            "meaning": "为避免复现而改变 phase_key、anchor_set_hash、carry/cofactor 或 label skeleton。",
-            "consequence": "漂移必须作为已登记坏窗/位移/相位缺陷进入 PDEC/SAE/ColumnCRT。",
+            "case": "Coarse key repeat",
+            "meaning": "为了制造鸽巢重复而忽略 label_support_skeleton 或 phase/carry 字段。",
+            "consequence": "重复不再保证同一素标签集 Q，必须证明漂移进入 PDEC/SAE/ColumnCRT。",
             "remaining": DRIFT_DEFECT,
         },
     ]
 
 
-def build_rows(
-    stable: dict[str, Any],
-    extractor: dict[str, Any],
-    partition: dict[str, Any],
-    assignment: dict[str, Any],
-    noloss: dict[str, Any],
-    hash_stability: dict[str, Any],
-    source_tuple: dict[str, Any],
-    anchor_recon: dict[str, Any],
-    early_zero: dict[str, Any],
-    phase_scan: dict[str, Any],
-) -> list[dict[str, Any]]:
-    """生成判定表。"""
+def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
+    """生成类型压缩硬攻判定表。"""
+    previous = data["previous"]
+    early_zero = data["early_zero"]
+    formal_record = data["formal_record"]
+    hash_stability = data["hash_stability"]
+    anchor_return = data["anchor_return"]
+
     return [
-        {
-            "gate": "BoundaryTypeCompressionInputActive",
-            "closed": stable.get("next_direct_attack_target") == TYPE_COMPRESSION,
-            "proved": False,
-            "meaning": "上一层已把首要硬点固定为边界帽 formal-unit 类型压缩。",
-            "remaining": TYPE_COMPRESSION,
-        },
-        {
-            "gate": "UniversalFormalUnitExtractorImported",
-            "closed": extractor.get("universal_extractor_theorem_closed") is True,
-            "proved": True,
-            "meaning": "任意早期零行 witness 可产出有限、无漏、可哈希的 formal unit records。",
-            "remaining": "这只给有限记录，不给类型数量上界。",
-        },
-        {
-            "gate": "PartitionAndAssignmentImported",
-            "closed": partition.get("formal_unit_partition_coverage_lemma_closed") is True
-            and assignment.get("source_family_assignment_totality_closed") is True,
-            "proved": True,
-            "meaning": "义务域 O(w) 已被有限 key-fibers 覆盖，且每个 key 归入有限 source family 或命名 return。",
-            "remaining": "仍需边界帽上的计数压缩。",
-        },
-        {
-            "gate": "NoLossAndHashStabilityImported",
-            "closed": noloss.get("no_loss_return_accounting_closed") is True
+        row(
+            "BoundaryCapTypeCompressionTargetActive",
+            previous.get("next_direct_attack_target") == TYPE_COMPRESSION,
+            False,
+            "上一层把稳定短复现的上游强制机制压成边界帽 formal-unit 类型压缩。",
+            TYPE_COMPRESSION,
+        ),
+        row(
+            "EarlyZeroBoundaryCapPressureImported",
+            early_zero.get("no_unnamed_exit_for_early_zero") is True
+            and early_zero.get("strongest_current_frontier") == "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn",
+            True,
+            "早期零行假设已被 CLB、carry-shell、cofactor-depth、anchor-collar 与命名终端矩阵夹住。",
+            "forced boundary-cap records exist only inside named contradiction matrix。",
+        ),
+        row(
+            "FormalUnitRecordAndHashStabilityImported",
+            formal_record.get("concrete_formal_unit_source_record_closed") is True
             and hash_stability.get("canonical_formal_unit_hash_stability_closed") is True,
-            "proved": True,
-            "meaning": "未闭合对象不会丢失，formal_unit/source_tuple/hash 在回流下稳定。",
-            "remaining": "稳定命名不等于类型数足够小。",
-        },
-        {
-            "gate": "AnchorAndSourceTupleFieldsImported",
-            "closed": source_tuple.get("source_tuple_anchor_parameter_schema_closed") is True
-            and anchor_recon.get("anchor_set_reconstruction_certificate_ledger") is True,
-            "proved": True,
-            "meaning": "A、D0/K/Omega、phase_rule、anchor_set_hash 可由同一 formal unit payload 复算。",
-            "remaining": "需要将这些字段投影成行无关 type key 并计数。",
-        },
-        {
-            "gate": "EarlyZeroRigidityPressureImported",
-            "closed": early_zero.get("no_unnamed_exit_for_early_zero") is True,
-            "proved": True,
-            "meaning": "早期零行已被 CLB、carry-shell、cofactor-depth、anchor-collar 与终端无第四出口约束。",
-            "remaining": early_zero.get("strongest_current_frontier", "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn"),
-        },
-        {
-            "gate": "RowFreeTypeKeyDefinitionClosed",
-            "closed": True,
-            "proved": True,
-            "meaning": "可定义不含绝对行号的 boundary-cap type key；重复才有可能推出短复现。",
-            "remaining": "定义闭合，不代表类型数上界或复现推出同标签。",
-        },
-        {
-            "gate": "PigeonholeSkeletonConditionalClosed",
-            "closed": True,
-            "proved": True,
-            "meaning": "若 forced obligation 数 N 大于 row-free type 数 T，则同类型短复现；若 T>=N，则必须解释类型爆炸。",
-            "remaining": f"{FORCED_LOWER} AND {TYPE_UPPER_OR_DEFECT}",
-        },
-        {
-            "gate": "PhaseScanImportedAsHeuristicSupportOnly",
-            "closed": phase_scan.get("status")
-            == "label_modulus_product_exceeds_P_but_short_recurrence_not_full_in_samples",
-            "proved": True,
-            "meaning": "大标签乘积超过 P 支持 CRT 后半段，但实验不能证明类型压缩。",
-            "remaining": "仍需正式 N/T 不等式。",
-        },
-        {
-            "gate": "BoundaryCapForcedObligationLowerBoundCurrentCorpusProved",
-            "closed": False,
-            "proved": False,
-            "meaning": "尚未给出边界帽中必须保留的 forced formal-unit obligations 的有效下界 N。",
-            "remaining": FORCED_LOWER,
-        },
-        {
-            "gate": "RowFreeTypeUpperOrExplosionDefectCurrentCorpusProved",
-            "closed": False,
-            "proved": False,
-            "meaning": "尚未证明 row-free type alphabet 上界 T<N，或 T>=N 时自动产生登记相位缺陷。",
-            "remaining": TYPE_UPPER_OR_DEFECT,
-        },
-        {
-            "gate": "RepeatedTypeToStableReturnCurrentCorpusProved",
-            "closed": False,
-            "proved": False,
-            "meaning": "尚未证明重复 type key 足以保持同一素标签集 Q 并得到同 formal unit 的同标签短复现。",
-            "remaining": REPEAT_TO_RETURN,
-        },
-        {
-            "gate": "BoundaryCapTypeCompressionCurrentCorpusProved",
-            "closed": False,
-            "proved": False,
-            "meaning": "类型压缩只完成了定义与条件鸽巢骨架，核心 N/T/重复到标签 三项仍未证明。",
-            "remaining": f"{FORCED_LOWER} AND {TYPE_UPPER_OR_DEFECT} AND {REPEAT_TO_RETURN}",
-        },
+            True,
+            "任意假设 witness 可生成有限无漏 formal-unit 记录，且 source/return 哈希稳定。",
+            "记录保真可用，但还不是类型数上界。",
+        ),
+        row(
+            "NoFreeTypeCompressionLemma",
+            True,
+            True,
+            "formal-unit 哈希是保真命名纪律：它防止账本换口径，但不会自动让不同 witness 记录落入少数类型。",
+            "必须另证保标签商类型的熵亏损，或把类型增长登记为相位缺陷。",
+        ),
+        row(
+            "RowFreeTypeKeyDefinitionClosed",
+            True,
+            True,
+            "行无关 boundary-cap type key 的字段可定义：source family、branch、window shape、phase、anchor、carry/cofactor 与 label skeleton。",
+            "定义闭合，不代表类型数上界或复现推出同标签。",
+        ),
+        row(
+            "PigeonholeSkeletonConditionalClosed",
+            True,
+            True,
+            "若 forced obligation 数 N 大于保标签 row-free type 数 T，则同类型短复现；若 T>=N，则必须解释类型爆炸。",
+            f"{FORCED_LOWER} AND {TYPE_UPPER_OR_DEFECT}",
+        ),
+        row(
+            "BoundaryCapForcedObligationLowerBoundCurrentCorpusProved",
+            False,
+            False,
+            "尚未给出边界帽中必须保留的 forced formal-unit obligations 的有效下界 N。",
+            FORCED_LOWER,
+        ),
+        row(
+            "RowFreeTypeUpperOrExplosionDefectCurrentCorpusProved",
+            False,
+            False,
+            "尚未证明保标签 row-free type alphabet 上界 T<N，或 T>=N 时自动产生登记相位缺陷。",
+            TYPE_UPPER_OR_DEFECT,
+        ),
+        row(
+            "FullKeyRepeatWouldPreserveLabelsButNoCountDeficit",
+            True,
+            True,
+            "若完整 canonical key 重复，source_family、phase_key、anchor/carry-shell 和标签字段同时重复，可接 CRT 短复现；但当前没有证明完整 key 的数量小于 forced records。",
+            LABEL_QUOTIENT,
+        ),
+        row(
+            "CoarseTypeRepeatDoesNotPreserveLabelSupport",
+            True,
+            True,
+            "若为了鸽巢而忽略标签字段，重复类型不再保证同一标签集 Q 保持，CRT 的 prod(Q)|Delta 后半段不能调用。",
+            f"{DRIFT_DEFECT} AND {LABEL_PRODUCT}",
+        ),
+        row(
+            "AnchorCollarOverloadReturnSchemaImported",
+            anchor_return.get("alpha_formula_anchor_collar_overload_named_return_ledger_closed") is True,
+            True,
+            "短纤维饱和、端点相位缺陷、孤立 sparse escape 与固定位移复用已有命名回流 schema。",
+            "schema closed; terminal exclusion still open。",
+        ),
+        row(
+            "LabelPreservingQuotientEntropyDeficitCurrentCorpusProved",
+            False,
+            False,
+            "当前材料没有给出边界帽内保标签商类型数小于 forced records 的定量熵亏损。",
+            LABEL_QUOTIENT,
+        ),
+        row(
+            "TypeDriftToRegisteredDefectCurrentCorpusProved",
+            False,
+            False,
+            "当前材料没有证明所有破坏标签保持的类型漂移都以同一 formal unit 权重进入 PDEC/SAE/ColumnCRT 并被排斥。",
+            DRIFT_DEFECT,
+        ),
+        row(
+            "BoundaryCapFormalUnitTypeCompressionDichotomyCurrentCorpusProved",
+            False,
+            False,
+            "类型压缩本身保留原 N/T/复现骨架，同时新增审查结论：哈希保真不能替代保标签商类型熵亏损。",
+            f"{FORCED_LOWER} AND {TYPE_UPPER_OR_DEFECT} AND {REPEAT_TO_RETURN}",
+        ),
+        row(
+            "RowColumnUnconditionalClosureReached",
+            False,
+            False,
+            "尚未得到反例链与真实结构链之间的终端矛盾；DStructure/Rankin 独立验收仍保留。",
+            f"{LABEL_QUOTIENT} AND {DRIFT_DEFECT} AND {LABEL_PRODUCT} AND {DSTRUCTURE}",
+        ),
     ]
 
 
 def build_result() -> dict[str, Any]:
-    """构造边界帽类型压缩路由证书。"""
-    stable = load_json(MONOGRAPH / "prime-matrix-strict-stable-short-return-defect-attack-router.json")
-    cycle_cut = load_json(MONOGRAPH / "prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json")
-    extractor = load_json(MONOGRAPH / "prime-matrix-universal-formal-unit-extractor-router.json")
-    partition = load_json(MONOGRAPH / "prime-matrix-formal-unit-partition-coverage-router.json")
-    assignment = load_json(MONOGRAPH / "prime-matrix-source-family-assignment-totality-router.json")
-    noloss = load_json(MONOGRAPH / "prime-matrix-no-loss-return-accounting-router.json")
-    hash_stability = load_json(MONOGRAPH / "prime-matrix-canonical-formal-unit-hash-stability-router.json")
-    source_tuple = load_json(MONOGRAPH / "prime-matrix-concrete-source-tuple-anchor-parameter-router.json")
-    anchor_recon = load_json(MONOGRAPH / "prime-matrix-anchor-set-reconstruction-certificate-router.json")
-    early_zero = load_json(MONOGRAPH / "prime-matrix-early-zero-contradiction-matrix-router.json")
-    phase_scan = load_json(DOCS / "phase-recurrence-pressure-scan.json")
-
+    """构造边界帽类型压缩硬攻证书。"""
+    data = {
+        "previous": load_json("prime-matrix-strict-stable-short-return-defect-attack-router.json"),
+        "early_zero": load_json("prime-matrix-early-zero-contradiction-matrix-router.json"),
+        "formal_record": load_json("prime-matrix-formal-unit-source-record-router.json"),
+        "hash_stability": load_json("prime-matrix-canonical-formal-unit-hash-stability-router.json"),
+        "anchor_return": load_json("prime-matrix-strict-alpha-anchor-collar-overload-return-router.json"),
+    }
+    rows = build_rows(data)
     after = f"{FORCED_LOWER} AND {TYPE_UPPER_OR_DEFECT} AND {REPEAT_TO_RETURN}"
-    rows = build_rows(
-        stable=stable,
-        extractor=extractor,
-        partition=partition,
-        assignment=assignment,
-        noloss=noloss,
-        hash_stability=hash_stability,
-        source_tuple=source_tuple,
-        anchor_recon=anchor_recon,
-        early_zero=early_zero,
-        phase_scan=phase_scan,
-    )
     return {
         "certificate_type": "prime_matrix_strict_boundary_cap_type_compression_router",
-        "status": "boundary_cap_type_compression_reduced_to_forced_count_type_bound_repeated_label_open",
+        "status": "boundary_cap_type_compression_reduced_to_label_preserving_quotient_entropy_deficit_open",
         "same_theorem_target_preserved": True,
         "no_theorem_switch": True,
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
+        "hardpoint_before_router": TYPE_COMPRESSION,
+        "hardpoint_after_router": after,
+        "refined_nonfree_subatoms": f"{LABEL_QUOTIENT} AND {DRIFT_DEFECT}",
         "row_free_type_key_definition_closed": True,
         "pigeonhole_skeleton_conditional_closed": True,
-        "universal_formal_unit_extractor_imported": extractor.get("universal_extractor_theorem_closed") is True,
-        "no_loss_hash_stability_imported": (
-            noloss.get("no_loss_return_accounting_closed") is True
-            and hash_stability.get("canonical_formal_unit_hash_stability_closed") is True
-        ),
+        "no_free_type_compression_lemma_proved": True,
+        "full_key_repeat_would_preserve_labels": True,
+        "coarse_type_repeat_loses_label_support": True,
         "boundary_cap_forced_obligation_lower_bound_proved": False,
         "row_free_type_upper_or_explosion_defect_proved": False,
         "repeated_type_to_stable_same_label_return_proved": False,
-        "boundary_cap_formal_unit_type_compression_dichotomy_proved": False,
-        "early_zero_forces_stable_short_return_or_defect_proved": False,
+        "label_preserving_quotient_entropy_deficit_proved": False,
+        "type_drift_to_registered_defect_proved": False,
+        "boundary_cap_type_compression_dichotomy_proved": False,
+        "stable_return_large_label_product_proved": False,
         "direct_unconditional_contradiction_found": False,
         "row_column_unconditional_closed": False,
-        "hardpoint_before_router": TYPE_COMPRESSION,
-        "hardpoint_after_router": after,
-        "next_direct_attack_target": FORCED_LOWER,
-        "parallel_attack_targets": [TYPE_UPPER_OR_DEFECT, REPEAT_TO_RETURN],
-        "full_remaining_chain_after_router": (
-            f"({after}) AND {LABEL_PRODUCT} AND {DRIFT_DEFECT}"
+        "next_direct_attack_target": LABEL_QUOTIENT,
+        "parallel_required_input": DRIFT_DEFECT,
+        "still_required_after_type_compression": [LABEL_PRODUCT, DSTRUCTURE],
+        "nonclosing_reason": (
+            "现有 formal-unit 记录与哈希闭合的是保真命名，不是压缩计数。"
+            "完整 key 重复足以保持标签但没有数量亏损；粗 key 可制造重复但丢失标签保持，"
+            "因此必须新增保标签商类型熵亏损或把所有标签漂移登记为已排斥缺陷。"
         ),
         "conditional_contradiction_pipeline": [
             "EarlyZeroRowWithinP",
@@ -323,19 +324,20 @@ def build_result() -> dict[str, Any]:
         "rows": rows,
         "source_hashes": source_hashes(),
         "plain_conclusion": (
-            "`BoundaryCapFormalUnitTypeCompressionDichotomy` 继续下钻后，真正能形成明显矛盾的统一场已经固定："
-            "早期零行给出有限无漏 formal-unit obligations；把每个 obligation 投影到不含绝对行号的 boundary type。"
-            "若强制实例数 `N` 大于类型数 `T`，鸽巢给出短复现；若类型数不被压缩，则类型增长必须登记为相位缺陷。"
-            "当前已闭合的是 type key 定义和条件鸽巢骨架；未闭合的是 `N` 的有效下界、`T` 的上界或类型爆炸回流、"
-            "以及重复 type 是否确实保持同一素标签集。行/列命题仍未无条件闭合。"
+            f"`{TYPE_COMPRESSION}` 继续保持原 N/T/复现骨架：早期零行给出有限无漏 formal-unit obligations，"
+            "行无关 type key 与条件鸽巢骨架已闭合。新增审查结论是：已闭合的 formal-unit 哈希纪律"
+            "只保证同一对象不换名、不漏账，不自动给边界帽内类型数小于 forced records 的鸽巢亏损。"
+            "完整 key 重复会保留标签但未证数量压缩；粗 key 重复会丢失标签集 Q，CRT 短复现矛盾无法调用。"
+            f"因此真正最窄新增输入是 `{LABEL_QUOTIENT}`，并行必须保留 `{DRIFT_DEFECT}`。"
+            "行/列命题仍未无条件闭合。"
         ),
     }
 
 
 def render_markdown(result: dict[str, Any]) -> str:
-    """渲染 Markdown。"""
+    """渲染 Markdown 证书。"""
     lines = [
-        "# Prime Matrix strict 边界帽 formal-unit 类型压缩路由器",
+        "# Prime Matrix strict 边界帽 formal-unit 类型压缩硬攻路由器",
         "",
         f"**状态：** `{result['status']}`",
         "",
@@ -345,27 +347,29 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"same_theorem_target_preserved={fmt_bool(result['same_theorem_target_preserved'])}",
         f"row_free_type_key_definition_closed={fmt_bool(result['row_free_type_key_definition_closed'])}",
         f"pigeonhole_skeleton_conditional_closed={fmt_bool(result['pigeonhole_skeleton_conditional_closed'])}",
+        f"no_free_type_compression_lemma_proved={fmt_bool(result['no_free_type_compression_lemma_proved'])}",
+        f"full_key_repeat_would_preserve_labels={fmt_bool(result['full_key_repeat_would_preserve_labels'])}",
+        f"coarse_type_repeat_loses_label_support={fmt_bool(result['coarse_type_repeat_loses_label_support'])}",
         f"boundary_cap_forced_obligation_lower_bound_proved={fmt_bool(result['boundary_cap_forced_obligation_lower_bound_proved'])}",
         f"row_free_type_upper_or_explosion_defect_proved={fmt_bool(result['row_free_type_upper_or_explosion_defect_proved'])}",
         f"repeated_type_to_stable_same_label_return_proved={fmt_bool(result['repeated_type_to_stable_same_label_return_proved'])}",
-        f"boundary_cap_formal_unit_type_compression_dichotomy_proved={fmt_bool(result['boundary_cap_formal_unit_type_compression_dichotomy_proved'])}",
+        f"label_preserving_quotient_entropy_deficit_proved={fmt_bool(result['label_preserving_quotient_entropy_deficit_proved'])}",
+        f"type_drift_to_registered_defect_proved={fmt_bool(result['type_drift_to_registered_defect_proved'])}",
+        f"boundary_cap_type_compression_dichotomy_proved={fmt_bool(result['boundary_cap_type_compression_dichotomy_proved'])}",
         f"direct_unconditional_contradiction_found={fmt_bool(result['direct_unconditional_contradiction_found'])}",
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",
         "```",
         "",
-        "## 1. 类型压缩骨架",
-        "",
-        "拆分前：",
+        "## 1. 收缩公式",
         "",
         "```text",
         result["hardpoint_before_router"],
+        "  => NoFreeTypeCompressionLemma",
+        f"  => {result['hardpoint_after_router']}",
+        f"  with refined nonfree gate: {result['refined_nonfree_subatoms']}",
         "```",
         "",
-        "拆分后：",
-        "",
-        "```text",
-        result["hardpoint_after_router"],
-        "```",
+        result["nonclosing_reason"],
         "",
         "条件矛盾流水线：",
         "",
@@ -385,13 +389,14 @@ def render_markdown(result: dict[str, Any]) -> str:
             "| --- | --- |",
         ]
     )
-    for row in result["type_key_fields"]:
+    for item in result["type_key_fields"]:
         lines.append(
             "| `{field}` | {role} |".format(
-                field=table_cell(row["field"]),
-                role=table_cell(row["role"]),
+                field=table_cell(item["field"]),
+                role=table_cell(item["role"]),
             )
         )
+
     lines.extend(
         [
             "",
@@ -401,15 +406,16 @@ def render_markdown(result: dict[str, Any]) -> str:
             "| --- | --- | --- | --- |",
         ]
     )
-    for row in result["compression_logic_rows"]:
+    for item in result["compression_logic_rows"]:
         lines.append(
             "| `{case}` | {meaning} | {consequence} | {remaining} |".format(
-                case=table_cell(row["case"]),
-                meaning=table_cell(row["meaning"]),
-                consequence=table_cell(row["consequence"]),
-                remaining=table_cell(row["remaining"]),
+                case=table_cell(item["case"]),
+                meaning=table_cell(item["meaning"]),
+                consequence=table_cell(item["consequence"]),
+                remaining=table_cell(item["remaining"]),
             )
         )
+
     lines.extend(
         [
             "",
@@ -419,35 +425,36 @@ def render_markdown(result: dict[str, Any]) -> str:
             "| --- | --- | --- | --- | --- |",
         ]
     )
-    for row in result["rows"]:
+    for item in result["rows"]:
         lines.append(
             "| `{gate}` | `{closed}` | `{proved}` | {meaning} | {remaining} |".format(
-                gate=table_cell(row["gate"]),
-                closed=fmt_bool(row["closed"]),
-                proved=fmt_bool(row["proved"]),
-                meaning=table_cell(row["meaning"]),
-                remaining=table_cell(row["remaining"]),
+                gate=table_cell(item["gate"]),
+                closed=fmt_bool(item["closed"]),
+                proved=fmt_bool(item["proved"]),
+                meaning=table_cell(item["meaning"]),
+                remaining=table_cell(item["remaining"]),
             )
         )
+
     lines.extend(
         [
             "",
-            "## 5. 下一主攻点",
+            "## 5. 下一步最窄硬攻点",
             "",
             "```text",
             result["next_direct_attack_target"],
             "```",
             "",
-            "并行硬点：",
+            "并行必须保留：",
             "",
             "```text",
-            " AND ".join(result["parallel_attack_targets"]),
+            result["parallel_required_input"],
             "```",
             "",
-            "完整剩余链：",
+            "类型压缩若闭合后，仍需接上：",
             "",
             "```text",
-            result["full_remaining_chain_after_router"],
+            " AND ".join(result["still_required_after_type_compression"]),
             "```",
             "",
         ]

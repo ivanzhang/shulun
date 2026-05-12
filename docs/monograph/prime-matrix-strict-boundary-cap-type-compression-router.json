@@ -1,7 +1,8 @@
 {
   "boundary_cap_forced_obligation_lower_bound_proved": false,
-  "boundary_cap_formal_unit_type_compression_dichotomy_proved": false,
+  "boundary_cap_type_compression_dichotomy_proved": false,
   "certificate_type": "prime_matrix_strict_boundary_cap_type_compression_router",
+  "coarse_type_repeat_loses_label_support": true,
   "compression_logic_rows": [
     {
       "case": "T<N",
@@ -16,16 +17,16 @@
       "remaining": "BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect"
     },
     {
-      "case": "Repeated type",
-      "consequence": "若 type key 足够完整，得到同 formal unit 同标签短复现；再接标签乘积下界和 CRT 矛盾。",
-      "meaning": "同一行无关 type key 在短位移下复现。",
-      "remaining": "RepeatedBoundaryTypeToStableSameLabelReturn AND StableReturnLargeLabelSupportProductLowerBound"
+      "case": "Complete key repeat",
+      "consequence": "标签字段保持，可接同 formal unit 短复现；但当前缺少完整 key 数量上界。",
+      "meaning": "完整 key 在短位移下重复。",
+      "remaining": "BoundaryCapLabelPreservingQuotientEntropyDeficit"
     },
     {
-      "case": "Drifting type",
-      "consequence": "漂移必须作为已登记坏窗/位移/相位缺陷进入 PDEC/SAE/ColumnCRT。",
-      "meaning": "为避免复现而改变 phase_key、anchor_set_hash、carry/cofactor 或 label skeleton。",
-      "remaining": "SignatureDriftToRegisteredPhaseDefectTheorem"
+      "case": "Coarse key repeat",
+      "consequence": "重复不再保证同一素标签集 Q，必须证明漂移进入 PDEC/SAE/ColumnCRT。",
+      "meaning": "为了制造鸽巢重复而忽略 label_support_skeleton 或 phase/carry 字段。",
+      "remaining": "BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn"
     }
   ],
   "conditional_contradiction_pipeline": [
@@ -39,20 +40,19 @@
   ],
   "counterexample_assumption_only": true,
   "direct_unconditional_contradiction_found": false,
-  "early_zero_forces_stable_short_return_or_defect_proved": false,
   "empirical_absence_not_used": true,
-  "full_remaining_chain_after_router": "(BoundaryCapForcedFormalUnitObligationLowerBound AND BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect AND RepeatedBoundaryTypeToStableSameLabelReturn) AND StableReturnLargeLabelSupportProductLowerBound AND SignatureDriftToRegisteredPhaseDefectTheorem",
+  "full_key_repeat_would_preserve_labels": true,
   "hardpoint_after_router": "BoundaryCapForcedFormalUnitObligationLowerBound AND BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect AND RepeatedBoundaryTypeToStableSameLabelReturn",
   "hardpoint_before_router": "BoundaryCapFormalUnitTypeCompressionDichotomy",
-  "next_direct_attack_target": "BoundaryCapForcedFormalUnitObligationLowerBound",
-  "no_loss_hash_stability_imported": true,
+  "label_preserving_quotient_entropy_deficit_proved": false,
+  "next_direct_attack_target": "BoundaryCapLabelPreservingQuotientEntropyDeficit",
+  "no_free_type_compression_lemma_proved": true,
   "no_theorem_switch": true,
-  "parallel_attack_targets": [
-    "BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect",
-    "RepeatedBoundaryTypeToStableSameLabelReturn"
-  ],
+  "nonclosing_reason": "现有 formal-unit 记录与哈希闭合的是保真命名，不是压缩计数。完整 key 重复足以保持标签但没有数量亏损；粗 key 可制造重复但丢失标签保持，因此必须新增保标签商类型熵亏损或把所有标签漂移登记为已排斥缺陷。",
+  "parallel_required_input": "BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn",
   "pigeonhole_skeleton_conditional_closed": true,
-  "plain_conclusion": "`BoundaryCapFormalUnitTypeCompressionDichotomy` 继续下钻后，真正能形成明显矛盾的统一场已经固定：早期零行给出有限无漏 formal-unit obligations；把每个 obligation 投影到不含绝对行号的 boundary type。若强制实例数 `N` 大于类型数 `T`，鸽巢给出短复现；若类型数不被压缩，则类型增长必须登记为相位缺陷。当前已闭合的是 type key 定义和条件鸽巢骨架；未闭合的是 `N` 的有效下界、`T` 的上界或类型爆炸回流、以及重复 type 是否确实保持同一素标签集。行/列命题仍未无条件闭合。",
+  "plain_conclusion": "`BoundaryCapFormalUnitTypeCompressionDichotomy` 继续保持原 N/T/复现骨架：早期零行给出有限无漏 formal-unit obligations，行无关 type key 与条件鸽巢骨架已闭合。新增审查结论是：已闭合的 formal-unit 哈希纪律只保证同一对象不换名、不漏账，不自动给边界帽内类型数小于 forced records 的鸽巢亏损。完整 key 重复会保留标签但未证数量压缩；粗 key 重复会丢失标签集 Q，CRT 短复现矛盾无法调用。因此真正最窄新增输入是 `BoundaryCapLabelPreservingQuotientEntropyDeficit`，并行必须保留 `BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn`。行/列命题仍未无条件闭合。",
+  "refined_nonfree_subatoms": "BoundaryCapLabelPreservingQuotientEntropyDeficit AND BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn",
   "repeated_type_to_stable_same_label_return_proved": false,
   "row_column_unconditional_closed": false,
   "row_free_type_key_definition_closed": true,
@@ -60,66 +60,45 @@
   "rows": [
     {
       "closed": true,
-      "gate": "BoundaryTypeCompressionInputActive",
-      "meaning": "上一层已把首要硬点固定为边界帽 formal-unit 类型压缩。",
+      "gate": "BoundaryCapTypeCompressionTargetActive",
+      "meaning": "上一层把稳定短复现的上游强制机制压成边界帽 formal-unit 类型压缩。",
       "proved": false,
       "remaining": "BoundaryCapFormalUnitTypeCompressionDichotomy"
     },
     {
       "closed": true,
-      "gate": "UniversalFormalUnitExtractorImported",
-      "meaning": "任意早期零行 witness 可产出有限、无漏、可哈希的 formal unit records。",
+      "gate": "EarlyZeroBoundaryCapPressureImported",
+      "meaning": "早期零行假设已被 CLB、carry-shell、cofactor-depth、anchor-collar 与命名终端矩阵夹住。",
       "proved": true,
-      "remaining": "这只给有限记录，不给类型数量上界。"
+      "remaining": "forced boundary-cap records exist only inside named contradiction matrix。"
     },
     {
       "closed": true,
-      "gate": "PartitionAndAssignmentImported",
-      "meaning": "义务域 O(w) 已被有限 key-fibers 覆盖，且每个 key 归入有限 source family 或命名 return。",
+      "gate": "FormalUnitRecordAndHashStabilityImported",
+      "meaning": "任意假设 witness 可生成有限无漏 formal-unit 记录，且 source/return 哈希稳定。",
       "proved": true,
-      "remaining": "仍需边界帽上的计数压缩。"
+      "remaining": "记录保真可用，但还不是类型数上界。"
     },
     {
       "closed": true,
-      "gate": "NoLossAndHashStabilityImported",
-      "meaning": "未闭合对象不会丢失，formal_unit/source_tuple/hash 在回流下稳定。",
+      "gate": "NoFreeTypeCompressionLemma",
+      "meaning": "formal-unit 哈希是保真命名纪律：它防止账本换口径，但不会自动让不同 witness 记录落入少数类型。",
       "proved": true,
-      "remaining": "稳定命名不等于类型数足够小。"
-    },
-    {
-      "closed": true,
-      "gate": "AnchorAndSourceTupleFieldsImported",
-      "meaning": "A、D0/K/Omega、phase_rule、anchor_set_hash 可由同一 formal unit payload 复算。",
-      "proved": true,
-      "remaining": "需要将这些字段投影成行无关 type key 并计数。"
-    },
-    {
-      "closed": true,
-      "gate": "EarlyZeroRigidityPressureImported",
-      "meaning": "早期零行已被 CLB、carry-shell、cofactor-depth、anchor-collar 与终端无第四出口约束。",
-      "proved": true,
-      "remaining": "AnchorCollarPrimeFiberCapacityBoundOrPDECReturn"
+      "remaining": "必须另证保标签商类型的熵亏损，或把类型增长登记为相位缺陷。"
     },
     {
       "closed": true,
       "gate": "RowFreeTypeKeyDefinitionClosed",
-      "meaning": "可定义不含绝对行号的 boundary-cap type key；重复才有可能推出短复现。",
+      "meaning": "行无关 boundary-cap type key 的字段可定义：source family、branch、window shape、phase、anchor、carry/cofactor 与 label skeleton。",
       "proved": true,
       "remaining": "定义闭合，不代表类型数上界或复现推出同标签。"
     },
     {
       "closed": true,
       "gate": "PigeonholeSkeletonConditionalClosed",
-      "meaning": "若 forced obligation 数 N 大于 row-free type 数 T，则同类型短复现；若 T>=N，则必须解释类型爆炸。",
+      "meaning": "若 forced obligation 数 N 大于保标签 row-free type 数 T，则同类型短复现；若 T>=N，则必须解释类型爆炸。",
       "proved": true,
       "remaining": "BoundaryCapForcedFormalUnitObligationLowerBound AND BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect"
-    },
-    {
-      "closed": true,
-      "gate": "PhaseScanImportedAsHeuristicSupportOnly",
-      "meaning": "大标签乘积超过 P 支持 CRT 后半段，但实验不能证明类型压缩。",
-      "proved": true,
-      "remaining": "仍需正式 N/T 不等式。"
     },
     {
       "closed": false,
@@ -131,40 +110,75 @@
     {
       "closed": false,
       "gate": "RowFreeTypeUpperOrExplosionDefectCurrentCorpusProved",
-      "meaning": "尚未证明 row-free type alphabet 上界 T<N，或 T>=N 时自动产生登记相位缺陷。",
+      "meaning": "尚未证明保标签 row-free type alphabet 上界 T<N，或 T>=N 时自动产生登记相位缺陷。",
       "proved": false,
       "remaining": "BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect"
     },
     {
-      "closed": false,
-      "gate": "RepeatedTypeToStableReturnCurrentCorpusProved",
-      "meaning": "尚未证明重复 type key 足以保持同一素标签集 Q 并得到同 formal unit 的同标签短复现。",
-      "proved": false,
-      "remaining": "RepeatedBoundaryTypeToStableSameLabelReturn"
+      "closed": true,
+      "gate": "FullKeyRepeatWouldPreserveLabelsButNoCountDeficit",
+      "meaning": "若完整 canonical key 重复，source_family、phase_key、anchor/carry-shell 和标签字段同时重复，可接 CRT 短复现；但当前没有证明完整 key 的数量小于 forced records。",
+      "proved": true,
+      "remaining": "BoundaryCapLabelPreservingQuotientEntropyDeficit"
+    },
+    {
+      "closed": true,
+      "gate": "CoarseTypeRepeatDoesNotPreserveLabelSupport",
+      "meaning": "若为了鸽巢而忽略标签字段，重复类型不再保证同一标签集 Q 保持，CRT 的 prod(Q)|Delta 后半段不能调用。",
+      "proved": true,
+      "remaining": "BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn AND StableReturnLargeLabelSupportProductLowerBound"
+    },
+    {
+      "closed": true,
+      "gate": "AnchorCollarOverloadReturnSchemaImported",
+      "meaning": "短纤维饱和、端点相位缺陷、孤立 sparse escape 与固定位移复用已有命名回流 schema。",
+      "proved": true,
+      "remaining": "schema closed; terminal exclusion still open。"
     },
     {
       "closed": false,
-      "gate": "BoundaryCapTypeCompressionCurrentCorpusProved",
-      "meaning": "类型压缩只完成了定义与条件鸽巢骨架，核心 N/T/重复到标签 三项仍未证明。",
+      "gate": "LabelPreservingQuotientEntropyDeficitCurrentCorpusProved",
+      "meaning": "当前材料没有给出边界帽内保标签商类型数小于 forced records 的定量熵亏损。",
+      "proved": false,
+      "remaining": "BoundaryCapLabelPreservingQuotientEntropyDeficit"
+    },
+    {
+      "closed": false,
+      "gate": "TypeDriftToRegisteredDefectCurrentCorpusProved",
+      "meaning": "当前材料没有证明所有破坏标签保持的类型漂移都以同一 formal unit 权重进入 PDEC/SAE/ColumnCRT 并被排斥。",
+      "proved": false,
+      "remaining": "BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn"
+    },
+    {
+      "closed": false,
+      "gate": "BoundaryCapFormalUnitTypeCompressionDichotomyCurrentCorpusProved",
+      "meaning": "类型压缩本身保留原 N/T/复现骨架，同时新增审查结论：哈希保真不能替代保标签商类型熵亏损。",
       "proved": false,
       "remaining": "BoundaryCapForcedFormalUnitObligationLowerBound AND BoundaryCapRowFreeTypeAlphabetUpperBoundOrTypeExplosionDefect AND RepeatedBoundaryTypeToStableSameLabelReturn"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "尚未得到反例链与真实结构链之间的终端矛盾；DStructure/Rankin 独立验收仍保留。",
+      "proved": false,
+      "remaining": "BoundaryCapLabelPreservingQuotientEntropyDeficit AND BoundaryCapTypeDriftToRegisteredPDECSAEColumnReturn AND StableReturnLargeLabelSupportProductLowerBound AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
     }
   ],
   "same_theorem_target_preserved": true,
   "source_hashes": {
-    "docs/monograph/prime-matrix-anchor-set-reconstruction-certificate-router.json": "efce8605136bbf9f150b2a3bad65dc3cc711d9fa83c2941b1c38a5ea057d1d18",
     "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6",
-    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
     "docs/monograph/prime-matrix-early-zero-contradiction-matrix-router.json": "cea1b53a99a6d5e6f0fb6fa9a9d95476b1beb107cbcec68113454428eb68ebf1",
-    "docs/monograph/prime-matrix-formal-unit-partition-coverage-router.json": "b381d8b4dac613b3e7011c26ea93da6fe3a81f9976aa2f31f3f412cd2e25aeb8",
-    "docs/monograph/prime-matrix-no-loss-return-accounting-router.json": "85267c016c03c757d219b04712940825a69020299717a6448aa12b1d110215d2",
-    "docs/monograph/prime-matrix-source-family-assignment-totality-router.json": "65be4731817ec3ae3f85670095cdd83a4052e0e9273d80c41e1f24e4b7e51c72",
-    "docs/monograph/prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json": "960a954eca848fa45c0ebb0c0086357477c058bbaf7dc4a3f966117c8c03ce21",
-    "docs/monograph/prime-matrix-strict-stable-short-return-defect-attack-router.json": "9ea657166a3e558e8e04b65bba186479e36d6f938b964d7fc17910f9dcb97aea",
-    "docs/monograph/prime-matrix-universal-formal-unit-extractor-router.json": "3e210402e7ca3d14e9388e0584ad5f5651435cc05d3ba1d4c1f485b41f01e07e",
-    "docs/phase-recurrence-pressure-scan.json": "7782a0f3b9ed5c62c7df11447fb90c649c7588daf100c6206ee96147d664153a"
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-strict-alpha-anchor-collar-overload-return-router.json": "b600b8c5cfef63321ee08c0fb80504e63d5ac808b3a60b494ff71d518a783d89",
+    "docs/monograph/prime-matrix-strict-stable-short-return-defect-attack-router.json": "9ea657166a3e558e8e04b65bba186479e36d6f938b964d7fc17910f9dcb97aea"
   },
-  "status": "boundary_cap_type_compression_reduced_to_forced_count_type_bound_repeated_label_open",
+  "stable_return_large_label_product_proved": false,
+  "status": "boundary_cap_type_compression_reduced_to_label_preserving_quotient_entropy_deficit_open",
+  "still_required_after_type_compression": [
+    "StableReturnLargeLabelSupportProductLowerBound",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "type_drift_to_registered_defect_proved": false,
   "type_key_fields": [
     {
       "field": "source_family_id",
@@ -198,6 +212,5 @@
       "field": "label_support_skeleton",
       "role": "记录要在短复现中保持的素标签骨架；若漂移则进入缺陷分支。"
     }
-  ],
-  "universal_formal_unit_extractor_imported": true
+  ]
 }
