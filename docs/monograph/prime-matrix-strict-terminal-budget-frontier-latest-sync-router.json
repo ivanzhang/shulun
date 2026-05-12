@@ -1,0 +1,101 @@
+{
+  "b3_tv_strict_self_contained_synchronized": true,
+  "certificate_type": "prime_matrix_strict_terminal_budget_frontier_latest_sync_router",
+  "cold_supply_lambda_discipline_closed": true,
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "explicit_positive_terminal_budget_margin_proved": false,
+  "hardpoint_after_router": "ExplicitPositiveTerminalBudgetMarginInequality",
+  "hardpoint_before_router": "B3RemainderTotalVariationBudgetForLengthP OR PrefixLabelSupportToSparseTerminalHistoryAntiCollapse OR ColdCoreNonpersistentSupplyUpperBoundAndAdaptiveLambdaBalance",
+  "margin_formula": "D_prefix - E_named - U_cold > 0",
+  "next_direct_attack_target": "ExplicitPositiveTerminalBudgetMarginInequality",
+  "no_theorem_switch": true,
+  "parallel_required_inputs": [
+    "B3DiscretePrimeSumUniformErrorPGe100000",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步同步最新终端预算前沿：旧 B3-TV 自足 Mertens 尾段已由后续 theta/PNT+B1 证书闭合，prefix 标签抗塌缩已关闭为预算所需的重数守恒，冷供给与 Lambda 调参纪律也已锁入同一参数账本。因此当前真正最窄目标不再是这些旧缺口，而是 `ExplicitPositiveTerminalBudgetMarginInequality`，即证明同参数正余量 `D_prefix-E_named-U_cold>0`。行/列命题仍未无条件闭合。",
+  "prefix_anticollapse_closed_for_budget": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LabelQuotientBudgetGapImported",
+      "meaning": "保标签商类型熵亏损已压到统一终端预算严格缺口。",
+      "proved": true,
+      "remaining": "sync downstream frontier。"
+    },
+    {
+      "closed": true,
+      "gate": "OldB3TVSelfContainedTailWasOpen",
+      "meaning": "旧 B3-TV 证书的唯一严格自足解析阻塞是 reciprocal-prime Mertens 尾段。",
+      "proved": true,
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": true,
+      "gate": "MertensTailClosedByLatestSync",
+      "meaning": "后续速率尾段同步已导入自足 theta/PNT 包络和 B1 区间，完整 Mertens 尾段从活动剩余移出。",
+      "proved": true,
+      "remaining": "closed for current frontier。"
+    },
+    {
+      "closed": true,
+      "gate": "B3TVStrictSelfContainedSynchronized",
+      "meaning": "B3-TV 的 Stieltjes 边界结构、20000 锚点预算与自足 Mertens 尾段已在当前前沿合并。",
+      "proved": true,
+      "remaining": "B3 TV no longer active blocker。"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixAntiCollapseClosedForBudget",
+      "meaning": "prefix 标签支撑到稀疏终端历史的预算所需无静默塌缩版本已闭合；强互异注入不再是必要输入。",
+      "proved": true,
+      "remaining": "closed as multiplicity conservation。"
+    },
+    {
+      "closed": true,
+      "gate": "ColdSupplyLambdaDisciplineClosed",
+      "meaning": "冷供给上界、同参数 Lambda 账本和无免费调参二分已闭合。",
+      "proved": true,
+      "remaining": "SingleParameterTerminalBudgetMarginLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SingleParameterMarginNormalFormImported",
+      "meaning": "终局矛盾已固定成同一参数账本下的 D_prefix-E_named-U_cold>0。",
+      "proved": true,
+      "remaining": "ExplicitPositiveTerminalBudgetMarginInequality"
+    },
+    {
+      "closed": false,
+      "gate": "ExplicitPositiveTerminalBudgetMarginCurrentCorpusProved",
+      "meaning": "当前材料仍未证明同参数显式正余量。",
+      "proved": false,
+      "remaining": "ExplicitPositiveTerminalBudgetMarginInequality"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "解析 TV、抗塌缩和冷供给纪律已同步，但正余量、命名回流排斥、有限参数同步和 DStructure 仍未全部闭合。",
+      "proved": false,
+      "remaining": "ExplicitPositiveTerminalBudgetMarginInequality AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "single_parameter_margin_normal_form_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-b3-remainder-total-variation-budget-router.json": "44c09f19992bc439f6ccb7ae0d6ade75364a5e33e49da5cc3c70cc10057afe30",
+    "docs/monograph/prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json": "7c34a1965c8ddc44a43cafb902ae668fb7ed21db3fc6f73cb42716be37c213be",
+    "docs/monograph/prime-matrix-strict-label-preserving-quotient-entropy-deficit-router.json": "28bda5e210875011eac3c96784b35c95c00890f6bcc8b477903046e1ce7f9c87",
+    "docs/monograph/prime-matrix-strict-prefix-label-sparse-history-anticollapse-router.json": "94229062234848b5e5e20ffaf940e7d4447b8ec957a0b3e8b2bf85d3e55a1a3f",
+    "docs/monograph/prime-matrix-strict-rate-bearing-tail-mertens-latest-sync-router.json": "41ecd4cfd58beb65c2ec5e1b5fdf2119ec46954e790ed0f036f92b66bfc282d4",
+    "docs/monograph/prime-matrix-strict-single-parameter-terminal-budget-margin-router.json": "6fa7a1331e7404f58f83cf3955a36d275c8b20a9fffc28b7c611240ede99f225"
+  },
+  "status": "terminal_budget_frontier_synced_to_explicit_positive_margin_open"
+}
