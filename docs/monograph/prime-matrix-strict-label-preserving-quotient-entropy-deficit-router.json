@@ -1,0 +1,133 @@
+{
+  "budget_gap_formula": "((P-1)W^-(z,D)-TV(lambda^-))/ceil(P/z) - E_named > sum_W (T_PDEC(W)-1)C_core(W)",
+  "capacity_multiplier_discipline_imported": true,
+  "certificate_type": "prime_matrix_strict_label_preserving_quotient_entropy_deficit_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "forced_weighted_injection_imported": true,
+  "hardpoint_after_router": "UnifiedTerminalBudgetStrictInequality",
+  "hardpoint_before_router": "BoundaryCapLabelPreservingQuotientEntropyDeficit",
+  "label_quotient_deficit_current_corpus_proved": false,
+  "next_direct_attack_target": "B3RemainderTotalVariationBudgetForLengthP",
+  "no_theorem_switch": true,
+  "parallel_required_inputs": [
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "ColdCoreNonpersistentSupplyUpperBound",
+    "AdaptiveLambdaBalanceForIteratedCoreDensity",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`BoundaryCapLabelPreservingQuotientEntropyDeficit` 已与 prefix 加权转移、容量乘子纪律和统一终端预算方程对齐。现有材料已经闭合 residual->weighted obligation、prefix atom 注入、容量乘子归一化和预算方程的代数组合；但保标签商类型熵亏损本身尚未证明，因为还缺统一严格不等式及其 B3/TV、终端抗塌缩、命名回流和冷供给输入。当前最窄可攻点同步为 `B3RemainderTotalVariationBudgetForLengthP`。行/列命题仍未无条件闭合。",
+  "prefix_weighted_transfer_imported": true,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "LabelPreservingQuotientEntropyDeficitTargetActive",
+      "meaning": "上一层把类型压缩的新增最窄输入钉为保标签商类型熵亏损。",
+      "proved": false,
+      "remaining": "BoundaryCapLabelPreservingQuotientEntropyDeficit"
+    },
+    {
+      "closed": true,
+      "gate": "ForcedWeightedInjectionImported",
+      "meaning": "早期零行残洞到加权 obligation 的注入和 no-loss 账本已闭合。",
+      "proved": true,
+      "remaining": "仍需有效不同实例下界。"
+    },
+    {
+      "closed": true,
+      "gate": "NaturalResidualMassNonfreeImported",
+      "meaning": "自然 cutoff 残洞质量会撞上短区间素数/平方根窗口屏障，不能当作免费输入。",
+      "proved": true,
+      "remaining": "转用 adaptive prefix 残洞势。"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixWeightedTransferImported",
+      "meaning": "prefix 残洞可用最小覆盖标签 tau_z(c) 注入同一 formal-unit 加权义务域。",
+      "proved": true,
+      "remaining": "加权转移闭合，但有效类型实例仍未自动闭合。"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityMultiplierDisciplineImported",
+      "meaning": "容量乘子纪律已闭合：M# 下界不同标签数，标签复用不能免费制造实例。",
+      "proved": true,
+      "remaining": "仍需 M# 势下界和标签到类型抗塌缩。"
+    },
+    {
+      "closed": true,
+      "gate": "UnifiedTerminalBudgetEquationImported",
+      "meaning": "prefix 粗筛余、容量乘子、终端投影守恒和冷核心供给上界已合成为统一预算方程。",
+      "proved": true,
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "closed": true,
+      "gate": "LabelQuotientDeficitReducedToBudgetGap",
+      "meaning": "保标签商类型熵亏损的非循环版本等价于证明统一终端预算严格缺口，并排除命名回流吞噬。",
+      "proved": false,
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "closed": false,
+      "gate": "B3PrefixMassInputsCurrentCorpusProved",
+      "meaning": "prefix 残洞势仍依赖 B3 主项、TV 预算和有限边界证书。",
+      "proved": false,
+      "remaining": "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError AND B3RemainderTotalVariationBudgetForLengthP AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "closed": false,
+      "gate": "TerminalProjectionInputsCurrentCorpusProved",
+      "meaning": "终端投影仍需标签支撑抗塌缩和命名回流热核心排斥。",
+      "proved": false,
+      "remaining": "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "ColdSupplyInputsCurrentCorpusProved",
+      "meaning": "冷供给上界仍需非持久供给上界与自适应 Lambda 平衡。",
+      "proved": false,
+      "remaining": "ColdCoreNonpersistentSupplyUpperBound AND AdaptiveLambdaBalanceForIteratedCoreDensity"
+    },
+    {
+      "closed": false,
+      "gate": "UnifiedTerminalBudgetStrictInequalityCurrentCorpusProved",
+      "meaning": "尚未证明统一严格不等式，因此保标签商类型熵亏损不能升级为终端矛盾。",
+      "proved": false,
+      "remaining": "UnifiedTerminalBudgetStrictInequality"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "尚未得到早期零行反例链与真实结构链之间的终端直接矛盾。",
+      "proved": false,
+      "remaining": "UnifiedTerminalBudgetStrictInequality AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-boundary-cap-type-compression-router.json": "6af93d615695d4c6fb8ffa9af7458663d2cd3a16e5f961b081d5c108f3987c09",
+    "docs/monograph/prime-matrix-strict-boundary-residual-mass-lower-bound-router.json": "a69eeafaf961c34e98960be356afbc5fe598a46ca8c17a412f655682770d67e7",
+    "docs/monograph/prime-matrix-strict-forced-obligation-lower-bound-router.json": "0ed72910957c08af8ef93e950899e431fb6600b2b9efe685120c2d95fbb63b8b",
+    "docs/monograph/prime-matrix-strict-prefix-capacity-multiplier-discipline-router.json": "10d4d7aab7648367047e86acd7069d1986730a138b8c74e4d8a8269378119e65",
+    "docs/monograph/prime-matrix-strict-prefix-residual-transfer-router.json": "e881be563d60841cab6d45ca64a55ee745691b9476ba79be3a3decab58038cad",
+    "docs/monograph/prime-matrix-strict-unified-terminal-budget-equation-router.json": "034515ed984e8ce3bac42dc02b08faf7caa43fd58554a3bd9d87f00419f0eded"
+  },
+  "status": "label_preserving_quotient_entropy_deficit_reduced_to_unified_terminal_budget_gap_open",
+  "terminal_inputs": [
+    "B3ContinuousBetaSieveCoefficientSurplusAlpha043AndDiscretePrimeSumUniformError",
+    "B3RemainderTotalVariationBudgetForLengthP",
+    "FiniteBoundaryPrefixRoughCountCertificate",
+    "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "ColdCoreNonpersistentSupplyUpperBound",
+    "AdaptiveLambdaBalanceForIteratedCoreDensity"
+  ],
+  "unified_terminal_budget_equation_imported": true,
+  "unified_terminal_budget_strict_inequality_proved": false
+}
