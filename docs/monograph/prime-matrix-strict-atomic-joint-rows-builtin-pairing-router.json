@@ -1,0 +1,128 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "atomic_declaration_target_active": true,
+  "builtin_pairing_fields": [
+    {
+      "field": "unsigned_joint_row_skeleton",
+      "requirement": "从 source tuple 正向给出 carry-shell/P列锚/phase-compatible row skeleton。"
+    },
+    {
+      "field": "signed_coefficient_value",
+      "requirement": "对每条 skeleton row 给出 signed coefficient 的闭式值，不能由 origin table 后验读取。"
+    },
+    {
+      "field": "word_coefficient_pairing_identity",
+      "requirement": "证明 basis word 与 signed coefficient 是同一 pre-Cauchy 算术对象的两面。"
+    },
+    {
+      "field": "alpha_delta_prepushforward_sum",
+      "requirement": "证明这些 row 在 Phi/payment/Cauchy 前求和等于 actual alpha/delta 贡献。"
+    },
+    {
+      "field": "exact_uv_local_factor",
+      "requirement": "同步输出 exact `(u,v)`、branch key、sign/local factor 与非零条件。"
+    },
+    {
+      "field": "no_origin_table_fallback",
+      "requirement": "失败时命名回流；不得退回 row-level origin table、signed-source 固定点或零行/payment 反推。"
+    }
+  ],
+  "builtin_signed_coefficient_pairing_proved": false,
+  "certificate_type": "prime_matrix_strict_atomic_joint_rows_builtin_pairing_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "missing_sources": [],
+  "next_direct_attack_target": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows",
+  "no_theorem_switch": true,
+  "plain_conclusion": "本步直接攻击 `AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing`。source tuple 容器、防后验恢复防火墙和 unsigned carry-shell/phase row skeleton 已可用；真正缺口不是再找 row 形状，而是每条 atomic joint row 的内置 signed coefficient/pairing 闭式值。若沿旧 signed-value 链推进，它会回到 origin table 与 signed-source 固定点，因此不能用作原子声明。最新最窄点压成 `BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows`；当前语料没有该闭式公式，行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AtomicDeclarationTargetActive",
+      "meaning": "上一层已把反分裂 joint 公式压成原子 pre-Cauchy rows 声明。",
+      "proved": false,
+      "remaining": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTupleAndDownstreamFirewallImported",
+      "meaning": "source tuple 输入和禁止 payment/零行/终端后验恢复的原则已可用。",
+      "proved": true,
+      "remaining": "这些只给容器和防火墙，不给 signed coefficient。"
+    },
+    {
+      "closed": true,
+      "gate": "UnsignedJointRowSkeletonClosed",
+      "meaning": "carry-shell 绑定、同余 row skeleton、P列锚/phase wheel 兼容已给出 unsigned row 形状。",
+      "proved": true,
+      "remaining": "需要 signed coefficient/pairing。"
+    },
+    {
+      "closed": true,
+      "gate": "JointRowsFormulaStillMissingSignedPayload",
+      "meaning": "已有 unsigned row skeleton 不等于 joint rows formula；joint row 必须自带 signed coefficient 与 pairing payload。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": true,
+      "gate": "SignedLiftReducesToPointwiseValueTable",
+      "meaning": "从 unsigned skeleton 提升到 signed 层的首缺口是逐 row signed coefficient value table。",
+      "proved": false,
+      "remaining": "PointwiseSignedAlphaCoefficientValueTableForUnsignedCarryShellSkeleton"
+    },
+    {
+      "closed": true,
+      "gate": "SignedValueRouteWouldReturnOriginTable",
+      "meaning": "若继续按旧 signed value 链展开，会回到 primitive origin identity 与 row-level origin table。",
+      "proved": false,
+      "remaining": "origin-table route is blocked for atomic declaration。"
+    },
+    {
+      "closed": true,
+      "gate": "PrepushforwardIdentityNotAvailableWithoutBuiltinPairing",
+      "meaning": "word/coefficient 同源与推前前 alpha/delta 求和恒等式都依赖内置 signed pairing 公式。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVParallelGateNotPairingFormula",
+      "meaning": "ExactUV bounded incidence 仍是并行守门项，不能替代 signed coefficient/pairing 闭式值。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "BuiltInSignedCoefficientPairingCurrentCorpusProved",
+      "meaning": "当前语料没有给出每条 atomic joint row 的 signed coefficient 闭式值及其 word/coefficient 同源证明。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "缺少内置配对闭式公式、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 验收门。",
+      "proved": false,
+      "remaining": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "signed_origin_table_loop_blocked": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d",
+    "docs/monograph/prime-matrix-strict-alpha-row-unsigned-skeleton-router.json": "98f6fa7be381de7d3170bc0abf7e37bde6b1f87351c3ad4bc2c2d4ce62e71c87",
+    "docs/monograph/prime-matrix-strict-alpha-signed-coefficient-lift-hardpoint-router.json": "82df6d5ef928a1b15165e10e9237d5638702117c57e9a51ae00d0a8c4b7a9824",
+    "docs/monograph/prime-matrix-strict-antisplit-joint-declaration-firewall-router.json": "dd12ca2ff0316f1833578addbaeeecb1319e6f513604cd485b2291487b663d77",
+    "docs/monograph/prime-matrix-strict-joint-emitter-formula-field-atom-router.json": "c90a834b01badfa0462f3499e347ff99aa2341ee62bb288787db6eca3e9b3463",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-value-table-router.json": "c44a6e986d59cd068f19cdb58427f779721bb1cf984ff1edb4d67be28cb6dc8c",
+    "docs/monograph/prime-matrix-strict-pointwise-signed-alpha-weight-formula-router.json": "fb392c7ecb2613c000b1c8696ff285c12cb91c815a08dad700e24c21fec6b66f",
+    "docs/monograph/prime-matrix-strict-primitive-summand-origin-identity-router.json": "0dff99f81fe37cfe92e28ac6c798f4bba60d3c46bf7ce9fc14b8c6603c10032d",
+    "docs/monograph/prime-matrix-strict-primitive-summand-signed-expression-router.json": "b0b1264cf6f3fbad60724a440f0dc9872dbc577376ed466e5dcac0cf66caa5ff"
+  },
+  "status": "atomic_joint_rows_formula_reduced_to_builtin_signed_pairing_closed_form_open",
+  "strict_author_side_remaining_basis": "BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "unsigned_joint_row_skeleton_closed": true
+}
