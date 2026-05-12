@@ -1,0 +1,111 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "antisplit_formula_target_active": true,
+  "atomic_antisplit_declaration_proved": false,
+  "atomic_fields": [
+    {
+      "field": "actual_source_tuple_domain",
+      "requirement": "定义域必须是 actual noncanonical source tuple，不借 canonical、external 或 terminal 回流。"
+    },
+    {
+      "field": "joint_rows_formula",
+      "requirement": "声明行本身正向列出 primitive rows，而不是再调用 explicit joint constructor rule。"
+    },
+    {
+      "field": "word_coefficient_pairing",
+      "requirement": "每条 row 同时给出 basis word、signed coefficient 和二者同源恒等式。"
+    },
+    {
+      "field": "alpha_delta_payload",
+      "requirement": "同一 row 内置 alpha/delta pairing、exact `(u,v)`、branch key、sign/local factor。"
+    },
+    {
+      "field": "prepushforward_identity",
+      "requirement": "在 Cauchy、Phi、payment 推前前证明求和等于 actual emitter 系数。"
+    },
+    {
+      "field": "split_firewall",
+      "requirement": "证明该声明不降解为 explicit joint constructor -> alpha-side -> row-level 来源环。"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_antisplit_joint_declaration_firewall_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "missing_sources": [],
+  "next_direct_attack_target": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing",
+  "no_theorem_switch": true,
+  "ordinary_joint_declaration_route_is_nonproof_cycle": true,
+  "plain_conclusion": "本步继续压缩反分裂 joint 公式。普通 `PreCauchyJointWordCoefficientEmitterDeclarationLine` 已经被既有证书同步到 `ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRule`，而后者会经 alpha-side、same-row、row-level 回到 signed-source 固定点。因此普通 declaration line 不足以闭合。真正最窄点必须是带 split firewall 的原子声明：`AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing`，声明行本身就要内置 rows formula、basis word/signed coefficient 同源、alpha/delta payload、prepushforward identity，并证明不降解到旧分裂链。当前语料没有该原子声明，行/列命题仍未无条件闭合。",
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "AntiSplitFormulaTargetActive",
+      "meaning": "上一层已把新 joint 公式压成反分裂同排公式。",
+      "proved": false,
+      "remaining": "NonSplitActualJointPrimitiveWordCoefficientFormulaBeforeAlphaSideProjection"
+    },
+    {
+      "closed": true,
+      "gate": "JointEmitterFieldsPointToDeclaration",
+      "meaning": "联合发射公式字段层的第一普通字段是 pre-Cauchy joint declaration line。",
+      "proved": false,
+      "remaining": "PreCauchyJointWordCoefficientEmitterDeclarationLineForActualNoncanonicalSourceTuple"
+    },
+    {
+      "closed": true,
+      "gate": "OrdinaryJointDeclarationReturnsToExplicitConstructor",
+      "meaning": "普通 joint declaration 已同步到 explicit joint constructor rule；这不是反分裂出口。",
+      "proved": false,
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitConstructorRouteIsKnownFixedPoint",
+      "meaning": "explicit constructor 继续展开会经 alpha-side/same-row/row-level 回到 signed-source 固定点。",
+      "proved": false,
+      "remaining": "cannot count as antisplit proof。"
+    },
+    {
+      "closed": true,
+      "gate": "SeedCoordinateCycleStillBlocksReverseConstruction",
+      "meaning": "坐标-来源闭环不能被普通 declaration 重命名后当作正向公式。",
+      "proved": true,
+      "remaining": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVParallelGateNotFormula",
+      "meaning": "ExactUV incidence 仍是并行守门项，不给 word/coefficient 原子声明。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "AtomicAntiSplitDeclarationCurrentCorpusProved",
+      "meaning": "当前语料没有一条 declaration line 同时内置 rows formula、word/coefficient 同源、prepushforward identity 和 split firewall。",
+      "proved": false,
+      "remaining": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "缺少原子反分裂声明、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 验收门。",
+      "proved": false,
+      "remaining": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-actual-emitter-incidence-entropy-router.json": "36b03764e66ea8e57d010d38829004c62a1ab72c363f1e73a9cce92126f6ab7d",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-coordinate-source-cycle-guard-router.json": "aef259753937f9d64167d4c7478a6ab2c410d2f1f9d9474fb0e876619b517a29",
+    "docs/monograph/prime-matrix-strict-explicit-joint-constructor-direct-attack-router.json": "7124b422ea771e65f65319b24363e617b947c3a3b3e041af5e3cb168b192ff8b",
+    "docs/monograph/prime-matrix-strict-joint-alpha-signed-source-fixed-point-sync-router.json": "4ddf2b8da70096cdc59370356e727e9f8881bee1c6a927aae3f1af9993b2274b",
+    "docs/monograph/prime-matrix-strict-joint-declaration-constructor-sync-router.json": "dbca8167a10b42d83c9734c13100d6376b5f91a905d2ebd3f5c9b8621ada1401",
+    "docs/monograph/prime-matrix-strict-joint-emitter-formula-field-atom-router.json": "c90a834b01badfa0462f3499e347ff99aa2341ee62bb288787db6eca3e9b3463",
+    "docs/monograph/prime-matrix-strict-new-joint-formula-antisplit-atom-router.json": "3d469a4d75bef80450fca102700a378ef1e1ec210dd05299cea59d50e13f5004"
+  },
+  "status": "antisplit_joint_formula_reduced_to_atomic_declaration_with_split_firewall_open",
+  "strict_author_side_remaining_basis": "AtomicPreCauchyJointRowsFormulaWithBuiltInWordCoefficientPairing AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+}
