@@ -1,0 +1,117 @@
+{
+  "certificate_type": "prime_matrix_strict_actual_source_antiatom_exactuv_terminal_sync_router",
+  "status": "strict_actual_source_antiatom_synced_to_acyclic_terminal_family_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hypothetical_chain_only": true,
+  "actual_source_antiatom_to_terminal_sync_boundary_closed": true,
+  "strengthened_actual_source_antiatom_proved": false,
+  "actual_exact_uv_support_proved": false,
+  "strict_terminal_family_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "source_axiom_before_sync": "AddStrengthenedActualSourceAntiAtomTheorem",
+  "exact_uv_middle_input": "ActualNoncanonicalExactUVSupportLowerBound",
+  "self_contained_terminal_after_sync": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "latest_conditional_basis_after_sync": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn OR FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_primary_target": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary",
+  "next_parallel_target": "AcyclicWindowedKloostermanDLSInternalEstimate",
+  "external_fallback": "FullSNonAPWFDKLSTheoremInput_OR_DIBFIPrimarySourceSpecializationProof",
+  "rows": [
+    {
+      "gate": "StrengthenedActualSourceAntiAtomActive",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一轮已确认 actual-source 强化反原子仍是新增源定理，不是已证结论。",
+      "remaining": "AddStrengthenedActualSourceAntiAtomTheorem"
+    },
+    {
+      "gate": "SourceAxiomReducedToExactUVSupport",
+      "closed": true,
+      "proved": false,
+      "meaning": "乘子纪律闭合后，actual-source 强化反原子的大部分成本被压到 actual noncanonical ExactUV 支撑下界。",
+      "remaining": "ActualNoncanonicalExactUVSupportLowerBound"
+    },
+    {
+      "gate": "ExactUVUniqueSourceInputStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "ExactUVSupport 是当前唯一源侧终端输入，但还没有证明。",
+      "remaining": "ActualNoncanonicalExactUVSupportLowerBound"
+    },
+    {
+      "gate": "ExactUVSupportSpineImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "新 actual-source 熵定理内部脊柱已对齐为乘子纪律加 ExactUV 支撑。",
+      "remaining": "ActualNoncanonicalExactUVSupportLowerBound"
+    },
+    {
+      "gate": "NonrecursivePairEnergyGuardClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "不能用源熵/ moving-atom 结论反过来证明 pair-mass；必须给独立能量界或命名回流。",
+      "remaining": "IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed"
+    },
+    {
+      "gate": "PairMassNotSeparateTerminal",
+      "closed": true,
+      "proved": true,
+      "meaning": "pair-mass 分散失败就是同 formal unit 的 moving atom 失败，不是第三个新终端。",
+      "remaining": "ActualNoncanonicalCleanCoreMovingAtomExclusion"
+    },
+    {
+      "gate": "AcyclicSeedIndependentInputRemoved",
+      "closed": true,
+      "proved": true,
+      "meaning": "seed 存在/不存在两支均回到 acyclic terminal family，因此 seed 不再作为独立输入。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily"
+    },
+    {
+      "gate": "AcyclicTerminalFamilyReducedToThreeAtoms",
+      "closed": true,
+      "proved": false,
+      "meaning": "源侧下钻已经回到 strict acyclic 终端家族三原子：canonical-lock、direct PDEC、direct CleanKLS。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "DirectPDECScopeAuditOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "direct same-set PDEC 的协议可用，但 acyclic/noncanonical 与 canonical 同集作用域匹配未证明。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "gate": "DirectCleanDLSAtomOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "clean KLS/DLS 已压到窗口化 Kloosterman/DLS 内部估计，但该估计未证明。",
+      "remaining": "AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本同步只把 actual-source 反原子线压回终端家族；没有证明三原子、ExactUV 或 DStructure/Rankin。",
+      "remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "script": "11e021ca7d2887dab8905eb1b34d3f272e4c3614aaa3daf7dc28e65c07733622",
+    "docs/monograph/prime-matrix-strict-strengthened-antiatom-direct-attack-router.json": "e456515fc852f53e528d703d2c9266ccbe01e703972f6b31f1e05da131f352d8",
+    "docs/monograph/prime-matrix-final-open-input-direct-attack-router.json": "5e240384ea00a833f0569af8999466ebf02d357c58cfd5e11ef31241bf7bd8c9",
+    "docs/monograph/prime-matrix-registered-capacity-multiplier-discipline-router.json": "4c2164884067c489cf7236c3d53dd92dd5f4e815fe832db3588d9261dc619805",
+    "docs/monograph/prime-matrix-exact-uv-support-terminal-attack-router.json": "25a56fd099c2bd4db85c40db63b5d7555583d6f7e7a9d967e33869dcf59848b3",
+    "docs/monograph/prime-matrix-strict-new-actual-source-entropy-direct-attack-router.json": "41f3899c5cc24d7f34ce9ef90c66dfb3d2758bca97c15d1d159a797163715ab8",
+    "docs/monograph/prime-matrix-strict-new-actual-source-entropy-nonrecursive-guard-router.json": "e98a9dd57c529570b1a7fdf42b3481d44ab8787b5cb863f433c00eb0dd59a83e",
+    "docs/monograph/prime-matrix-strict-pair-mass-dispersion-to-moving-atom-router.json": "147492e300e83e0a0dc5da909a8a39c52f3db9990c5ddba367427f75ed6f83cb",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-terminal-fusion-router.json": "cd82f3da195f2f7649c9c90b49e1322a969af7ed6179e9086b46034c9b31a3dc",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-family-attack-router.json": "aa045b0749a832e9af9fe21397aa141f4fa6c0643a8b870d74ba360052eff952",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993",
+    "docs/monograph/prime-matrix-strict-acyclic-clean-kls-router.json": "49eebc947860fc995d39bc9fcc0e12e580d342eab32421cd8601a28d26cde5a5"
+  },
+  "sync_formula": "AddStrengthenedActualSourceAntiAtomTheorem -> ActualNoncanonicalExactUVSupportLowerBound -> nonrecursive pair-energy guard -> seed branch fusion -> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_AcyclicNoncanonicalTerminalFamily -> (AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn).",
+  "plain_conclusion": "本轮把 actual-source 强化反原子继续下钻到底层接口：它经已闭合的容量乘子纪律压到 ActualNoncanonicalExactUVSupportLowerBound；ExactUV 的非递归 pair-energy 证明不能循环使用源熵目标；pair-mass 失败不是新终端，而是 moving atom；seed 存在/不存在两支又统一回到 strict acyclic 终端家族。因此当前最窄自足剩余不再是 source anti-atom 大名，而是 acyclic 终端家族三原子。三原子和 DStructure/Rankin 仍未证明，行/列命题未无条件闭合。"
+}
