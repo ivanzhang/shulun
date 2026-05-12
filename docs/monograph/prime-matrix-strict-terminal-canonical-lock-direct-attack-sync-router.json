@@ -1,0 +1,126 @@
+{
+  "certificate_type": "prime_matrix_strict_terminal_canonical_lock_direct_attack_sync_router",
+  "status": "strict_terminal_canonical_lock_attacked_to_mismatch_or_dls_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "canonical_lock_direct_attack_boundary_closed": true,
+  "canonical_equality_case_absorbed_scoped_only": true,
+  "mismatch_no_silent_exit_closed": true,
+  "signed_lift_failure_return_ledger_closed": true,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "direct_acyclic_same_set_pdec_cap_dual_certificate_proved": false,
+  "self_contained_kuznetsov_dls_large_sieve_inequality_proved": false,
+  "pdec_cap_or_internal_clean_kls_large_sieve_proved": false,
+  "explicit_model_gap_and_finite_dprc_ledger_proved": false,
+  "dstructure_tail_log4_finite_rankin_full_ledger_independent_acceptance_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "terminal_before_router": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn",
+  "terminal_after_router": "(ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger) OR NamedReturnExclusion OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)",
+  "latest_self_contained_basis_after_router": "((PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_primary_target": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+  "next_parallel_target": "ExplicitModelGapAndFiniteDPRCLedger",
+  "promotion_gate": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "TerminalSyncImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一轮已把 actual-source 反原子线压回 strict acyclic 终端三原子，首攻 canonical-lock。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR DirectAcyclicSameSetPDECCapDualCertificate OR DirectAcyclicCleanKLSDLSEstimateWithNamedReturn"
+    },
+    {
+      "gate": "CanonicalLockAtomized",
+      "closed": true,
+      "proved": false,
+      "meaning": "canonical-lock 已拆成源因子嵌入、同集推前、无 noncanonical payload 三项；当前未证明。",
+      "remaining": "AcyclicSeedCanonicalSourceFiniteFactorEmbedding AND TerminalCertificateSameSetPushforwardIdentity AND NoNoncanonicalPayloadSurvivesCanonicalProjection"
+    },
+    {
+      "gate": "CanonicalAdmissionTimelineGuardClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "canonical branch 准入必须是 pre-Cauchy T1 身份声明，不能由下游 payment/PDEC/覆盖图反推。",
+      "remaining": "AcyclicCanonicalPreCauchyCoefficientIdentityLedger"
+    },
+    {
+      "gate": "PreCauchyIdentityReducedToT1Equality",
+      "closed": true,
+      "proved": false,
+      "meaning": "canonical RIW/Buchstab T1 公式只在 scoped canonical 分支闭合；acyclic seed 的逐点等式仍未证。",
+      "remaining": "AcyclicSeedToCanonicalT1CoefficientEqualityAndBranchKeyLock"
+    },
+    {
+      "gate": "CanonicalEqualityCaseOnlyScoped",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 T1 等式和 branch-key lock 全成立，只进入 canonical scoped promotion；这不是全局矛盾。",
+      "remaining": "mismatch branch remains for noncanonical complement"
+    },
+    {
+      "gate": "MismatchNoSilentExitClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "T1 mismatch 已无静默出口，只能进 signed source、命名回流或 clean DLS；但这些出口尚未排斥。",
+      "remaining": "(ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger AND AlphaSignedLiftFailureNamedReturnLedger) OR NamedReturnExclusion OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "gate": "SignedLiftFailureReturnLedgerClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "signed lift 失败均已登记为同 formal unit 的命名出口；登记不等于排斥。",
+      "remaining": "(ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger) OR NamedReturnExclusion OR AcyclicWindowedKloostermanDLSInternalEstimate"
+    },
+    {
+      "gate": "AlphaWeightDownstreamReturnsToTerminalFamily",
+      "closed": true,
+      "proved": false,
+      "meaning": "alpha signed 权重律继续下钻后回到 PDEC/CleanKLS 终端门、模型余量账本和 DStructure 门。",
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "gate": "WindowedDLSReducedToKuznetsovAtom",
+      "closed": true,
+      "proved": false,
+      "meaning": "clean DLS 形式层已压尽，真正未证的是自足 Kuznetsov/DLS 大筛不等式。",
+      "remaining": "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "gate": "DirectPDECScopeAuditStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "direct same-set PDEC 协议可用，但 acyclic/noncanonical 作用域匹配未证；不能替代 canonical-lock。",
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary"
+    },
+    {
+      "gate": "CanonicalLockCurrentAttackProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "本轮直攻没有证明 canonical-lock；它被吸收到 scoped canonical case 或回到 mismatch/DLS/终端门。",
+      "remaining": "(ActualSignedAlphaSourceMeasureForCarryShellRowsLedger AND AlphaSignedWeightLawFromPreCauchyArithmeticIdentityLedger AND AlphaRowsPhiPushforwardCompatibilityLedger AND AlphaSignedLiftVariationBranchBudgetLedger) OR NamedReturnExclusion OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks OR (PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger)"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "终端矛盾、Kuznetsov/DLS、模型余量和 DStructure/Rankin 均未全证，不能声明行/列无条件闭合。",
+      "remaining": "((PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve AND ExplicitModelGapAndFiniteDPRCLedger) OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "script": "9486c434c0735825091644be624a08681d8ad33d530d9ccf10ff3a45602716cb",
+    "docs/monograph/prime-matrix-strict-actual-source-antiatom-exactuv-terminal-sync-router.json": "949d8afe0b5b1c450c23dd4cc72eecdca5368c247d63507ebd7eb9d3d42493d5",
+    "docs/monograph/prime-matrix-strict-acyclic-canonical-lock-router.json": "9ba01ca4d88a341ca65d9a18ce6c8417f42e4706beecd85850d1048eeb69d7d8",
+    "docs/monograph/prime-matrix-strict-canonical-branch-admission-timeline-router.json": "654329f775f28ab559c614c22cb1e1f982cf4355f0a1682ba2ee2b5b614a606b",
+    "docs/monograph/prime-matrix-strict-acyclic-canonical-precauchy-identity-router.json": "6d2bd643f425b501df02cac5f35bf460b7ebf5cea40f4c4da35b30222f352838",
+    "docs/monograph/prime-matrix-strict-acyclic-seed-canonical-t1-equality-router.json": "a12e2c72fcb0d411eee5706ffb3d854c2e23ddca4ce32dbd8a11971296713637",
+    "docs/monograph/prime-matrix-strict-acyclic-t1-mismatch-forcing-router.json": "87afa7858eb543442e3537c6195813ca621e25eb40b4035407667e9f0ebbd6ad",
+    "docs/monograph/prime-matrix-strict-alpha-signed-lift-failure-return-router.json": "bade91ebe62ab881cacbe69f0dd6b75ea33f6a5b69c3b586301e8c86a7a5a66a",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-downstream-sync-router.json": "25a526808da942ef0d50d5725ae59e945b6152b345a31cd8e92c16130ee9c362",
+    "docs/monograph/prime-matrix-strict-acyclic-windowed-dls-estimate-router.json": "89f695e1ad123d1461acb338ddf0b371ef49a266baf3b2580961148943c5f594",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993"
+  },
+  "plain_conclusion": "本轮直接攻 canonical-lock。结论是：canonical T1 等式成立时只给 scoped canonical 吸收，不给全局矛盾；等式不成立时，mismatch 已无静默出口，只能进入 signed source、命名回流或 clean DLS。signed lift 失败登记纪律已闭合，但出口排斥未证；clean DLS 又精确压成自足 Kuznetsov/DLS 大筛原子。direct PDEC 作用域审查仍未证明 acyclic 同集匹配。因此 canonical-lock 不是当前闭合出口，行/列命题仍未无条件闭合。"
+}
