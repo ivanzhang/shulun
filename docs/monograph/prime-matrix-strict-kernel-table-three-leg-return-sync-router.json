@@ -1,0 +1,134 @@
+{
+  "alpha_formula_leg_returns_to_terminal": true,
+  "certificate_type": "prime_matrix_strict_kernel_table_three_leg_return_sync_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_gate_closed": false,
+  "empirical_absence_not_used": true,
+  "if_not_supplied": "若该非递归逐点表不给出，alpha、weight、rank 三腿分攻都会回到 PDEC/CleanKLS 固定点，不能闭合行/列命题。",
+  "kernel_identity_reduced_to_pointwise_table": true,
+  "kernel_table_three_leg_return_sync_closed": true,
+  "next_direct_attack_target": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn",
+  "no_theorem_switch": true,
+  "nonrecursive_pointwise_table_proved": false,
+  "nonrecursive_table_contract": "必须在同一 formal unit、Cauchy/dispersion/terminal extraction 之前一次性列出 primitive rows：source tuple、anchor/phase、signed weight、exact `(u,v)`、Phi atom、local factor 非零、rank/multiplicity 证书和命名回流。不能分别从 alpha 局部公式、权重律或 rank 支路后验拼装。",
+  "parallel_attack_targets": [
+    "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+    "SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "parallel_direct_terminal_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks) AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "plain_conclusion": "继续下钻核恒等式后，真正障碍变得更窄：逐点 primitive 核表的三条自然分支不能分开闭合。alpha row 公式与 signed 权重律都已回到 PDEC/CleanKLS 终端门；rank/multiplicity 分支又要求同一张 primitive source table。三腿分攻形成固定点。因此当前唯一非递归自足主攻点是`NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn`；它未被当前语料证明，行/列命题仍未无条件闭合。",
+  "pointwise_table_split_into_three_legs": true,
+  "post_mertens_frontier_imported": true,
+  "rank_multiplicity_leg_needs_same_primitive_table": true,
+  "rate_preservation_ledger_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "PostMertensFrontierImported",
+      "meaning": "最新 post-Mertens 前沿把主攻点钉为同 formal-unit 核恒等式。",
+      "proved": false,
+      "remaining": "SameFormalUnitPreCauchyAlphaDeltaKernelIdentityWithSignedPhiAndFiberDispersion"
+    },
+    {
+      "closed": true,
+      "gate": "KernelIdentityReducedToPointwiseTable",
+      "meaning": "核恒等式不能由记录守恒或几何 Phi 自动推出；必须先提交逐点 primitive 核表。",
+      "proved": false,
+      "remaining": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "PointwiseTableSplitIntoThreeLegs",
+      "meaning": "逐点核表被拆成 alpha row 发射公式、独立权重恒等式、同表 rank/multiplicity 证书。",
+      "proved": false,
+      "remaining": "AlphaRowAnchorPhaseEmissionFormulaLedger AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaFormulaLegReturnsToTerminal",
+      "meaning": "alpha row 局部 unsigned 骨架、signed-lift 和 anchor 回流都已同步到 PDEC/CleanKLS 终端门。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "WeightIdentityLegReturnsToTerminal",
+      "meaning": "signed 权重律经独立恒等式分类、moving-block/NC-BLK 回到同一终端门。",
+      "proved": false,
+      "remaining": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve"
+    },
+    {
+      "closed": true,
+      "gate": "RankMultiplicityLegNeedsSamePrimitiveTable",
+      "meaning": "rank/multiplicity 分支需要 source table、complete key 与 fixed-pair fiber；这些又要求同一 primitive rows。",
+      "proved": false,
+      "remaining": "PointwiseSameFormalUnitPrimitiveAlphaDeltaKernelTableWithNonzeroRankCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "ThreeLegSeparateAttackIsFixedPoint",
+      "meaning": "三腿逐项攻击只会在 source table、alpha signed lift、PDEC/CleanKLS 之间循环。",
+      "proved": true,
+      "remaining": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn"
+    },
+    {
+      "closed": false,
+      "gate": "NonrecursivePointwiseTableCurrentCorpusProved",
+      "meaning": "当前语料没有一次性正向构造逐 primitive row 的 source tuple、signed weight、Phi atom、exact-UV rank 证书。",
+      "proved": false,
+      "remaining": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn"
+    },
+    {
+      "closed": true,
+      "gate": "DirectTerminalParallelArmsStillOpen",
+      "meaning": "并行终端路线仍可攻，但 PDEC 作用域匹配与自足 KZ/DLS 都未证明。",
+      "proved": false,
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR SelfContainedKuznetsovDLSLargeSieveInequalityForAcyclicCleanBlocks"
+    },
+    {
+      "closed": false,
+      "gate": "RatePreservationStillOpen",
+      "meaning": "moving-atom packet 的 log-power 速率保持仍未证明。",
+      "proved": false,
+      "remaining": "RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureGateStillOpen",
+      "meaning": "DStructure/Tail-log4/finite Rankin 边界已命名但未独立接受。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "当前只证明三腿回流和最窄非递归表目标；尚未推出早期零行反例矛盾。",
+      "proved": false,
+      "remaining": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-strict-actual-emitter-source-table-router.json": "e327b1a80aef83a36279378e5892334fa305d92d5ac1bcbb8601eaab2f18ab3e",
+    "docs/monograph/prime-matrix-strict-alpha-row-formula-terminal-frontier-sync-router.json": "0fc58bc6e2dd57498614ed4535b5973daa1a78ecc086731a3e6e02a997888c75",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-downstream-sync-router.json": "25a526808da942ef0d50d5725ae59e945b6152b345a31cd8e92c16130ee9c362",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8",
+    "docs/monograph/prime-matrix-strict-exact-uv-map-rank-incidence-router.json": "101917e6a573efb2d6c921b2056ac92120e41f1b10ae2549f394ac0fa3d1b54c",
+    "docs/monograph/prime-matrix-strict-fixed-pair-fiber-bound-router.json": "ca413ebdcac1df1baf57319fbfe828d92bc272ef1b326215de5cd514316d49bd",
+    "docs/monograph/prime-matrix-strict-independent-identity-statement-taxonomy-router.json": "9f0797afd65cd82b9fb0eff7d4492da3ee0b88822fdf18beee8c8a6c5a361c42",
+    "docs/monograph/prime-matrix-strict-pdec-clean-kls-terminal-hardpoint-router.json": "9c97ae816a9b8840e743496fabd791c8792c136a547c0990010f31ea0a80f19d",
+    "docs/monograph/prime-matrix-strict-pointwise-primitive-kernel-table-router.json": "adb8a9e1e05a33dff6a5f5d1dd03cf2a86b8420d49be536c1ddffa77185afae1",
+    "docs/monograph/prime-matrix-strict-post-mertens-nonrecursive-frontier-sync-router.json": "6c87bbdf51d27d298c707ba7874f6a4573bfdb67504b095f49fe01d601588f68",
+    "docs/monograph/prime-matrix-strict-same-formal-unit-kernel-identity-attack-router.json": "35260c13e9ffb8d39ce9a61db6f1c2cffbd6cf172690b7aa2b2c8ce26e26a6c0",
+    "docs/monograph/prime-matrix-strict-self-contained-cycle-obstruction-router.json": "6896d47c63788c83293d95d60514ec6e522d782179745069f8ca8314ebdfcea7"
+  },
+  "status": "kernel_table_three_leg_return_synced_nonrecursive_table_open",
+  "strict_active_basis_after_sync": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "three_leg_separate_attack_is_fixed_point": true,
+  "weight_identity_leg_returns_to_terminal": true
+}

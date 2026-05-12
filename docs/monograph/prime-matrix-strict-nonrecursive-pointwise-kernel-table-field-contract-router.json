@@ -1,0 +1,168 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "certificate_type": "prime_matrix_strict_nonrecursive_pointwise_kernel_table_field_contract_router",
+  "counterexample_assumption_only": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_gate_closed": false,
+  "explicit_joint_alpha_delta_constructor_rule_proved": false,
+  "field_contract_boundary_closed": true,
+  "frontier_reduction": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn 不能由 alpha/weight/rank 三腿后验拼装；它要求同一 formal unit 的一张正向 primitive 表。所有活动链条交到同一个第一生产性原子 `ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple`：没有这条显式 joint constructor rule，primitive row index、signed weight、exact-UV/Phi atom、local factor、rank/multiplicity 和 named return 都没有共同载体。",
+  "minimal_productive_basis_after_router": "(ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple AND JointConstructorDomainCleanCoreMembershipAndSameSourceTupleLedger AND JointConstructorFormulaEmitsBasisWordUVKeySignLocalFactorCoefficientRowsLedger AND SameFormalUnitPreCauchyTimestampLockLedger AND NoncanonicalJointDeclarationNoCanonicalOrExternalLeakLedger AND JointConstructorFormulaFailureReturnTagsLedger AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple",
+  "no_theorem_switch": true,
+  "nonrecursive_field_contract": [
+    {
+      "atom": "AlphaPrimitiveRowIndexSetLedger",
+      "field": "primitive_row_index_set",
+      "meaning": "同一 formal unit 内 primitive rows 的有限索引集合。"
+    },
+    {
+      "atom": "AlphaRowAnchorPhaseEmissionFormulaLedger",
+      "field": "source_tuple_to_anchor_phase_row_formula",
+      "meaning": "从 actual source tuple 到 anchor/phase row 的显式发射公式。"
+    },
+    {
+      "atom": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple",
+      "field": "same_row_word_coefficient_payload",
+      "meaning": "同一行同时输出 basis word、signed coefficient、branch key、u/v、sign/local factor。"
+    },
+    {
+      "atom": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger",
+      "field": "signed_weight_arithmetic_identity",
+      "meaning": "推前前 signed 权重必须来自独立 noncanonical 算术恒等式。"
+    },
+    {
+      "atom": "JointConstructorFormulaEmitsBasisWordUVKeySignLocalFactorCoefficientRowsLedger",
+      "field": "exact_uv_phi_atom_output",
+      "meaning": "每行同步输出 exact `(u,v)` 与 Phi/payment atom，不能后验补配。"
+    },
+    {
+      "atom": "AlphaWeightNonzeroSignLocalFactorLedger",
+      "field": "local_factor_nonzero_and_sign",
+      "meaning": "非零 local factor、符号和 branch refinement 与 row 同步。"
+    },
+    {
+      "atom": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem",
+      "field": "rank_multiplicity_certificate",
+      "meaning": "同一张表上证明 exact-UV bounded multiplicity/rank。"
+    },
+    {
+      "atom": "JointConstructorFormulaFailureReturnTagsLedger AND SourceTableNoDownstreamRecoveryAndNamedReturnLedger",
+      "field": "named_return_discipline",
+      "meaning": "缺行、零权、跨来源、后验读取、超预算等失败必须命名回流。"
+    }
+  ],
+  "nonrecursive_pointwise_table_proved": false,
+  "parallel_required_inputs_after_constructor": [
+    "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem",
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "本步把非递归逐点 primitive 核表从单一标签压成字段合同，并确认字段边界已闭合：合法证明必须在同一 formal unit、Cauchy/dispersion/Phi 推前之前一次性给出 rows、权重、`(u,v)`、Phi atom、local factor、rank 证书和回流栏。当前语料没有这张表；真正第一生产性硬点是 `ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple`。因此行/列命题仍未无条件自足闭合。",
+  "rate_preservation_ledger_proved": false,
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NonrecursivePointwiseTableTargetActive",
+      "meaning": "上一层三腿回流已把核表缺口压成非递归逐点表。",
+      "proved": false,
+      "remaining": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn"
+    },
+    {
+      "closed": true,
+      "gate": "FieldContractBoundaryPinned",
+      "meaning": "所有合法字段必须在同一 formal unit、Cauchy/dispersion/Phi 推前之前一次性给出。",
+      "proved": true,
+      "remaining": "字段边界闭合，不等于表构造已证明。"
+    },
+    {
+      "closed": true,
+      "gate": "SameSourceTupleContainerReady",
+      "meaning": "formal unit/source tuple 容器可承载同一行 word/coefficient/u/v/hash。",
+      "proved": true,
+      "remaining": "容器不产生 primitive row。"
+    },
+    {
+      "closed": true,
+      "gate": "ActualJointConstructorRuleMissing",
+      "meaning": "actual noncanonical constructor 必须显式把 source tuple 映到 joint primitive row；当前没有公式。",
+      "proved": false,
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "closed": true,
+      "gate": "AlphaIndexAndEmissionFormulaMissing",
+      "meaning": "alpha row 索引集合、anchor/phase 发射公式、有限排序和无后验选择仍未证明。",
+      "proved": false,
+      "remaining": "AlphaPrimitiveRowIndexSetLedger AND AlphaRowAnchorPhaseEmissionFormulaLedger AND AlphaRowFiniteMultiplicityOrderingLedger AND AlphaEmissionMapNoDownstreamChoiceLedger AND AlphaEmissionMapNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "SameRowWordCoefficientOriginMissing",
+      "meaning": "unsigned skeleton 与 signed coefficient 不能分别拼接；必须同一 row 同源。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands -> AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedWithSignedRowEmitterAndPrepushforwardSumIdentity"
+    },
+    {
+      "closed": true,
+      "gate": "SignedWeightArithmeticIdentityMissing",
+      "meaning": "signed 权重律仍缺独立 pre-Cauchy 算术恒等式、精确权重公式和非零 local factor。",
+      "proved": false,
+      "remaining": "IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger AND ExactAlphaSignedWeightFormulaLedger AND AlphaWeightNonzeroSignLocalFactorLedger AND AlphaWeightNoZeroRowGeometryOrPaymentRecoveryLedger AND AlphaWeightLawFailureNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVRankMultiplicityStillOpen",
+      "meaning": "fixed-pair/key 形式门已定位，但 actual bounded multiplicity incidence 未证明。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows"
+    },
+    {
+      "closed": true,
+      "gate": "NamedReturnDisciplineIncomplete",
+      "meaning": "缺行、零 local factor、跨来源、超预算或后验读取的回流栏尚未与同一公式行合取。",
+      "proved": false,
+      "remaining": "JointConstructorFormulaFailureReturnTagsLedger AND SourceTableNoDownstreamRecoveryAndNamedReturnLedger AND AlphaEmissionMapNamedReturnLedger AND AlphaWeightLawFailureNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "NoTerminalReturnCurrentlyUnproved",
+      "meaning": "现有内部路线仍会回到 terminal/source 固定点；非递归表必须由正向公式破环。",
+      "proved": false,
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "closed": false,
+      "gate": "NonrecursivePointwiseTableCurrentCorpusProved",
+      "meaning": "当前语料只闭合字段边界和伪出口排除，没有提交同一张非递归 primitive 核表。",
+      "proved": false,
+      "remaining": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "尚未推出早期零行反例链与真实结构链的终端矛盾。",
+      "proved": false,
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-strict-actual-emitter-source-table-router.json": "e327b1a80aef83a36279378e5892334fa305d92d5ac1bcbb8601eaab2f18ab3e",
+    "docs/monograph/prime-matrix-strict-alpha-signed-weight-law-router.json": "7a5360e5b38c8dde05879aab1a1ee1934853b31f81b5b506dbf988d24e9d8a49",
+    "docs/monograph/prime-matrix-strict-complete-emitter-key-partition-router.json": "8eb78dba1a3383b509b4b968fc51daaadbb683830ea480eb1cc418ca92e426c8",
+    "docs/monograph/prime-matrix-strict-deterministic-alpha-row-emission-map-router.json": "d980647c15a9fd16b0e4255b5af3f2ce69ab5575dbe0d7a80a8b1ade70b0d177",
+    "docs/monograph/prime-matrix-strict-exact-uv-map-rank-incidence-router.json": "101917e6a573efb2d6c921b2056ac92120e41f1b10ae2549f394ac0fa3d1b54c",
+    "docs/monograph/prime-matrix-strict-fixed-pair-fiber-bound-router.json": "ca413ebdcac1df1baf57319fbfe828d92bc272ef1b326215de5cd514316d49bd",
+    "docs/monograph/prime-matrix-strict-global-internal-cycle-frontier-sync-router.json": "3e253d5f93a7b1e4e2d410f6fde5d411ad54e99a69900108d48b543549a15133",
+    "docs/monograph/prime-matrix-strict-joint-alpha-same-row-origin-identity-router.json": "f0d11204c5ed939ce0081991a49bdb2335240a69676c872bf8bcc96bfb4df66b",
+    "docs/monograph/prime-matrix-strict-joint-declaration-constructor-sync-router.json": "dbca8167a10b42d83c9734c13100d6376b5f91a905d2ebd3f5c9b8621ada1401",
+    "docs/monograph/prime-matrix-strict-kernel-table-three-leg-return-sync-router.json": "e4affac784b5c0b6339af5e70349d4c4f3d98a7a8e281677515e9f32cbb055e3",
+    "docs/monograph/prime-matrix-strict-precauchy-declaration-line-router.json": "5b0f7f24ce0090b5d74ee0d0bc99d6ae97427a37c3090f1689f16d227527289d",
+    "docs/monograph/prime-matrix-strict-row-level-origin-generation-table-router.json": "a9ac8a47342465ed4499d5ca8540fc54b5072d82c4bfba2d53c17b5b2d7e4a78"
+  },
+  "status": "nonrecursive_pointwise_kernel_table_field_contract_closed_constructor_rule_open",
+  "target_input_before_router": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn"
+}
