@@ -2,7 +2,7 @@
 
 **状态：** `explicit_positive_margin_drilled_to_finite_prefix_sparse_divisor_and_terminal_atoms_open`
 
-本步直接下钻 `ExplicitPositiveTerminalBudgetMarginInequality`，并同步旧的同参数表、Rosser 收费、命名回流、冷供给纪律、稀疏历史预算和终端三原子结果。结论是：正余量目标没有闭合；D0 仍缺 `FiniteBoundaryPrefixRoughCountCertificate`，非持久 U0 已压到 `ScaledTerminalCoreDivisorWindowCountCap` 或热核心回流，持久 E0 已回到终端三原子，其中当前最贴近反例终端矛盾的内部点是 `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore`。下一单点先攻 `ScaledTerminalCoreDivisorWindowCountCap`，同时保留 finite prefix、moving atom 和 DStructure 门。
+本步直接下钻 `ExplicitPositiveTerminalBudgetMarginInequality`，并同步旧的同参数表、Rosser 收费、命名回流、冷供给纪律、稀疏历史预算和终端三原子结果。结论是：正余量目标没有闭合；D0 仍缺 `FiniteBoundaryPrefixRoughCountCertificate`，非持久 U0 已经穿过 `ScaledTerminalCoreDivisorWindowCountCap` 与 `ColdCoreThresholdBudgetGapComparison`，压到 `SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow` 或热核心/固定历史回流，持久 E0 已回到终端三原子，其中当前最贴近反例终端矛盾的内部点是 `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore`。下一单点先攻 `SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow`，同时保留 finite prefix、hot/fixed return、moving atom 和 DStructure 门。
 
 ```text
 parameter_id=alpha043_pge100000_external_b3_pending_finite_prefix_named_return
@@ -12,8 +12,11 @@ candidate_parameter_row_generated=true
 rosser_sawtooth_failure_charged=true
 named_return_same_parameter_schema_closed=true
 sparse_multiplicity_reduced_to_divisor_cap=true
+scaled_divisor_window_split_closed=true
+cold_budget_gap_criterion_closed=true
 finite_boundary_prefix_certificate_proved=false
 scaled_terminal_core_divisor_window_count_cap_proved=false
+sparse_terminal_forced_load_lower_bound_proved=false
 explicit_positive_terminal_budget_margin_proved=false
 direct_unconditional_contradiction_found=false
 row_column_unconditional_closed=false
@@ -24,7 +27,7 @@ row_column_unconditional_closed=false
 ```text
 ExplicitPositiveTerminalBudgetMarginInequality
   =>
-FiniteBoundaryPrefixRoughCountCertificate AND (ScaledTerminalCoreDivisorWindowCountCap OR TerminalCoreHotDivisorWindowPDECorSAE) AND (IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+FiniteBoundaryPrefixRoughCountCertificate AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND (TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion OR ColdCoreNonpersistentSupplyUpperBound) AND (IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 同参数余量仍是唯一终端口：
@@ -47,23 +50,25 @@ D_prefix - E_named - U_cold > 0
 | `ColdSameParameterDisciplineClosed` | `true` | `false` | 冷供给与 Lambda 调参纪律已锁入同一参数账本，但还没有 U0 数值反超。 | ColdSupplySameParameterNumericEnvelope |
 | `SparseBudgetFormulaClosed` | `true` | `false` | 非持久稀疏历史供给公式闭合；剩下是强制负载是否严格超过非持久供给。 | SparseHistoryDemandExceedsNonpersistentSupplyBudget |
 | `SparseMultiplicityReducedToDivisorCap` | `true` | `false` | 单历史重数已压成缩频终端核心除数窗口计数，热窗口必须命名回流。 | ScaledTerminalCoreDivisorWindowCountCap OR TerminalCoreHotDivisorWindowPDECorSAE |
+| `ScaledDivisorWindowSplitClosed` | `true` | `false` | 缩频除数窗口已拆成冷预算插入或热核心异常；冷侧继续进入供需判据。 | ColdCoreThresholdBudgetGapComparison OR TerminalCoreHotDivisorWindowPDECorSAE |
+| `ColdBudgetGapCriterionClosed` | `true` | `false` | 冷核心预算缺口已压成 L_forced>U_cold 的单一供需不等式，失败原因也已命名。 | SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow OR ColdCoreNonpersistentSupplyUpperBound OR TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion |
 | `TerminalFamilySaturatedInCurrentInternalCorpus` | `true` | `false` | canonical-lock、direct PDEC、clean KLS/DLS 三手臂在当前内部语料下已饱和为循环，不是已证排斥。 | IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact |
 | `MovingAtomNonterminalExclusionPinned` | `true` | `false` | signed-source/atomic 来源展开回到终端三原子后，最贴近反例终端矛盾的非终端目标是 moving atom 排斥。 | IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore |
-| `ExplicitPositiveMarginCurrentCorpusProved` | `false` | `false` | D0 finite hash、E0 终端排斥、U0 非持久预算反超和 DStructure 尚未同时闭合。 | FiniteBoundaryPrefixRoughCountCertificate AND ScaledTerminalCoreDivisorWindowCountCap AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
-| `RowColumnUnconditionalClosureReached` | `false` | `false` | 本步只把最新正余量目标压成同参数子门；还没有得到反例链与真实结构链的无条件终端矛盾。 | FiniteBoundaryPrefixRoughCountCertificate AND ScaledTerminalCoreDivisorWindowCountCap AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+| `ExplicitPositiveMarginCurrentCorpusProved` | `false` | `false` | D0 finite hash、E0 终端排斥、U0 非持久预算反超和 DStructure 尚未同时闭合。 | FiniteBoundaryPrefixRoughCountCertificate AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 本步只把最新正余量目标压成同参数子门；还没有得到反例链与真实结构链的无条件终端矛盾。 | FiniteBoundaryPrefixRoughCountCertificate AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
 
 ## 3. 当前最窄单点
 
 首攻：
 
 ```text
-ScaledTerminalCoreDivisorWindowCountCap
+SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow
 ```
 
 并行保留：
 
 ```text
-FiniteBoundaryPrefixRoughCountCertificate AND TerminalCoreHotDivisorWindowPDECorSAE AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+FiniteBoundaryPrefixRoughCountCertificate AND ColdCoreNonpersistentSupplyUpperBound AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate AND NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 审稿边界：本证书不把候选参数行、Rosser 失败收费、稀疏预算公式或终端循环饱和写成无条件闭合；它只把最新正余量目标同步到更窄的同参数子门。

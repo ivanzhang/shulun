@@ -31,6 +31,10 @@ COLD_NUMERIC = "ColdSupplySameParameterNumericEnvelope"
 SPARSE_BUDGET = "SparseHistoryDemandExceedsNonpersistentSupplyBudget"
 DIVISOR_CAP = "ScaledTerminalCoreDivisorWindowCountCap"
 HOT_CORE = "TerminalCoreHotDivisorWindowPDECorSAE"
+COLD_GAP = "ColdCoreThresholdBudgetGapComparison"
+FORCED_LOAD = "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow"
+COLD_SUPPLY = "ColdCoreNonpersistentSupplyUpperBound"
+FIXED_HISTORY = "FixedTypeHistoryPDECExclusion"
 MOVING_ATOM = "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore"
 DSTRUCTURE = "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
 
@@ -44,6 +48,8 @@ SOURCE_FILES = [
     "prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json",
     "prime-matrix-strict-sparse-terminal-history-sae-budget-router.json",
     "prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.json",
+    "prime-matrix-strict-scaled-terminal-core-divisor-window-router.json",
+    "prime-matrix-strict-cold-core-threshold-budget-gap-router.json",
     "prime-matrix-strict-acyclic-terminal-family-latest-saturation-router.json",
     "prime-matrix-strict-pdec-scope-branch-saturation-frontier-router.json",
     "prime-matrix-strict-atomic-origin-identity-cycle-cut-sync-router.json",
@@ -104,6 +110,8 @@ def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     cold = data["cold"]
     sparse = data["sparse"]
     mult = data["multiplicity"]
+    scaled = data["scaled"]
+    cold_gap = data["cold_gap"]
     terminal = data["terminal"]
     pdec_scope = data["pdec_scope"]
     atomic = data["atomic"]
@@ -119,6 +127,16 @@ def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     )
     sparse_formula = sparse.get("nonpersistent_sae_budget_formula_closed") is True
     divisor_reduced = mult.get("multiplicity_to_divisor_count_closed") is True
+    scaled_split = (
+        scaled.get("scaled_core_frequency_closed") is True
+        and scaled.get("cold_hot_split_closed") is True
+        and scaled.get("cold_core_budget_insertion_closed") is True
+    )
+    cold_gap_criterion = (
+        cold_gap.get("cold_supply_upper_bound_closed") is True
+        and cold_gap.get("cold_budget_contradiction_criterion_closed") is True
+        and cold_gap.get("failure_reasons_named") is True
+    )
     terminal_saturated = terminal.get("strict_acyclic_terminal_family_proved") is False and (
         terminal.get("direct_clean_kls_returns_to_terminal") is True
     )
@@ -197,6 +215,20 @@ def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
             f"{DIVISOR_CAP} OR {HOT_CORE}",
         ),
         row(
+            "ScaledDivisorWindowSplitClosed",
+            scaled_split,
+            False,
+            "缩频除数窗口已拆成冷预算插入或热核心异常；冷侧继续进入供需判据。",
+            f"{COLD_GAP} OR {HOT_CORE}",
+        ),
+        row(
+            "ColdBudgetGapCriterionClosed",
+            cold_gap_criterion,
+            False,
+            "冷核心预算缺口已压成 L_forced>U_cold 的单一供需不等式，失败原因也已命名。",
+            f"{FORCED_LOAD} OR {COLD_SUPPLY} OR {HOT_CORE} OR {FIXED_HISTORY}",
+        ),
+        row(
             "TerminalFamilySaturatedInCurrentInternalCorpus",
             terminal_saturated and pdec_saturated,
             False,
@@ -215,14 +247,14 @@ def build_rows(data: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
             False,
             False,
             "D0 finite hash、E0 终端排斥、U0 非持久预算反超和 DStructure 尚未同时闭合。",
-            f"{FINITE_PREFIX} AND {DIVISOR_CAP} AND {MOVING_ATOM} AND {DSTRUCTURE}",
+            f"{FINITE_PREFIX} AND {FORCED_LOAD} AND {MOVING_ATOM} AND {DSTRUCTURE}",
         ),
         row(
             "RowColumnUnconditionalClosureReached",
             False,
             False,
             "本步只把最新正余量目标压成同参数子门；还没有得到反例链与真实结构链的无条件终端矛盾。",
-            f"{FINITE_PREFIX} AND {DIVISOR_CAP} AND {MOVING_ATOM} AND {DSTRUCTURE}",
+            f"{FINITE_PREFIX} AND {FORCED_LOAD} AND {MOVING_ATOM} AND {DSTRUCTURE}",
         ),
     ]
 
@@ -239,6 +271,8 @@ def build_result() -> dict[str, Any]:
         "cold": load_json("prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json"),
         "sparse": load_json("prime-matrix-strict-sparse-terminal-history-sae-budget-router.json"),
         "multiplicity": load_json("prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.json"),
+        "scaled": load_json("prime-matrix-strict-scaled-terminal-core-divisor-window-router.json"),
+        "cold_gap": load_json("prime-matrix-strict-cold-core-threshold-budget-gap-router.json"),
         "terminal": load_json("prime-matrix-strict-acyclic-terminal-family-latest-saturation-router.json"),
         "pdec_scope": load_json("prime-matrix-strict-pdec-scope-branch-saturation-frontier-router.json"),
         "atomic": load_json("prime-matrix-strict-atomic-origin-identity-cycle-cut-sync-router.json"),
@@ -249,7 +283,8 @@ def build_result() -> dict[str, Any]:
         data["named"].get("parameter_id", "alpha043_pge100000_external_b3_pending_finite_prefix_named_return"),
     )
     hardpoint_after = (
-        f"{FINITE_PREFIX} AND ({DIVISOR_CAP} OR {HOT_CORE}) AND "
+        f"{FINITE_PREFIX} AND {FORCED_LOAD} AND "
+        f"({HOT_CORE} OR {FIXED_HISTORY} OR {COLD_SUPPLY}) AND "
         f"({MOVING_ATOM} OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate "
         "OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND "
         f"{DSTRUCTURE}"
@@ -270,10 +305,13 @@ def build_result() -> dict[str, Any]:
         "cold_same_parameter_discipline_closed": data["cold"].get("same_parameter_lambda_schedule_closed") is True,
         "sparse_budget_formula_closed": data["sparse"].get("nonpersistent_sae_budget_formula_closed") is True,
         "sparse_multiplicity_reduced_to_divisor_cap": data["multiplicity"].get("multiplicity_to_divisor_count_closed") is True,
+        "scaled_divisor_window_split_closed": data["scaled"].get("cold_hot_split_closed") is True,
+        "cold_budget_gap_criterion_closed": data["cold_gap"].get("cold_budget_contradiction_criterion_closed") is True,
         "terminal_family_saturated_not_proved": data["terminal"].get("strict_acyclic_terminal_family_proved") is False,
         "moving_atom_nonterminal_exclusion_pinned": data["atomic"].get("next_direct_attack_target") == MOVING_ATOM,
         "finite_boundary_prefix_certificate_proved": data["concrete"].get("finite_boundary_prefix_certificate_proved") is True,
         "scaled_terminal_core_divisor_window_count_cap_proved": data["multiplicity"].get("scaled_terminal_core_divisor_window_count_cap_proved") is True,
+        "sparse_terminal_forced_load_lower_bound_proved": data["cold_gap"].get("forced_load_lower_bound_proved") is True,
         "moving_atom_exclusion_proved": False,
         "dstructure_rankin_independently_accepted": False,
         "explicit_positive_terminal_budget_margin_proved": False,
@@ -281,10 +319,12 @@ def build_result() -> dict[str, Any]:
         "row_column_unconditional_closed": False,
         "hardpoint_before_router": POSITIVE_MARGIN,
         "hardpoint_after_router": hardpoint_after,
-        "next_direct_attack_target": DIVISOR_CAP,
+        "next_direct_attack_target": FORCED_LOAD,
         "next_parallel_targets": [
             FINITE_PREFIX,
+            COLD_SUPPLY,
             HOT_CORE,
+            FIXED_HISTORY,
             MOVING_ATOM,
             "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
             "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact",
@@ -296,9 +336,10 @@ def build_result() -> dict[str, Any]:
         "plain_conclusion": (
             f"本步直接下钻 `{POSITIVE_MARGIN}`，并同步旧的同参数表、Rosser 收费、命名回流、"
             "冷供给纪律、稀疏历史预算和终端三原子结果。结论是：正余量目标没有闭合；"
-            f"D0 仍缺 `{FINITE_PREFIX}`，非持久 U0 已压到 `{DIVISOR_CAP}` 或热核心回流，"
+            f"D0 仍缺 `{FINITE_PREFIX}`，非持久 U0 已经穿过 `{DIVISOR_CAP}` 与 `{COLD_GAP}`，"
+            f"压到 `{FORCED_LOAD}` 或热核心/固定历史回流，"
             f"持久 E0 已回到终端三原子，其中当前最贴近反例终端矛盾的内部点是 `{MOVING_ATOM}`。"
-            f"下一单点先攻 `{DIVISOR_CAP}`，同时保留 finite prefix、moving atom 和 DStructure 门。"
+            f"下一单点先攻 `{FORCED_LOAD}`，同时保留 finite prefix、hot/fixed return、moving atom 和 DStructure 门。"
         ),
     }
 
@@ -320,8 +361,11 @@ def render_markdown(result: dict[str, Any]) -> str:
         f"rosser_sawtooth_failure_charged={fmt_bool(result['rosser_sawtooth_failure_charged'])}",
         f"named_return_same_parameter_schema_closed={fmt_bool(result['named_return_same_parameter_schema_closed'])}",
         f"sparse_multiplicity_reduced_to_divisor_cap={fmt_bool(result['sparse_multiplicity_reduced_to_divisor_cap'])}",
+        f"scaled_divisor_window_split_closed={fmt_bool(result['scaled_divisor_window_split_closed'])}",
+        f"cold_budget_gap_criterion_closed={fmt_bool(result['cold_budget_gap_criterion_closed'])}",
         f"finite_boundary_prefix_certificate_proved={fmt_bool(result['finite_boundary_prefix_certificate_proved'])}",
         f"scaled_terminal_core_divisor_window_count_cap_proved={fmt_bool(result['scaled_terminal_core_divisor_window_count_cap_proved'])}",
+        f"sparse_terminal_forced_load_lower_bound_proved={fmt_bool(result['sparse_terminal_forced_load_lower_bound_proved'])}",
         f"explicit_positive_terminal_budget_margin_proved={fmt_bool(result['explicit_positive_terminal_budget_margin_proved'])}",
         f"direct_unconditional_contradiction_found={fmt_bool(result['direct_unconditional_contradiction_found'])}",
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",

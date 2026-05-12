@@ -14,21 +14,26 @@
   "cold_same_parameter_discipline_closed": true,
   "sparse_budget_formula_closed": true,
   "sparse_multiplicity_reduced_to_divisor_cap": true,
+  "scaled_divisor_window_split_closed": true,
+  "cold_budget_gap_criterion_closed": true,
   "terminal_family_saturated_not_proved": true,
   "moving_atom_nonterminal_exclusion_pinned": true,
   "finite_boundary_prefix_certificate_proved": false,
   "scaled_terminal_core_divisor_window_count_cap_proved": false,
+  "sparse_terminal_forced_load_lower_bound_proved": false,
   "moving_atom_exclusion_proved": false,
   "dstructure_rankin_independently_accepted": false,
   "explicit_positive_terminal_budget_margin_proved": false,
   "direct_unconditional_contradiction_found": false,
   "row_column_unconditional_closed": false,
   "hardpoint_before_router": "ExplicitPositiveTerminalBudgetMarginInequality",
-  "hardpoint_after_router": "FiniteBoundaryPrefixRoughCountCertificate AND (ScaledTerminalCoreDivisorWindowCountCap OR TerminalCoreHotDivisorWindowPDECorSAE) AND (IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
-  "next_direct_attack_target": "ScaledTerminalCoreDivisorWindowCountCap",
+  "hardpoint_after_router": "FiniteBoundaryPrefixRoughCountCertificate AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND (TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion OR ColdCoreNonpersistentSupplyUpperBound) AND (IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact) AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
   "next_parallel_targets": [
     "FiniteBoundaryPrefixRoughCountCertificate",
+    "ColdCoreNonpersistentSupplyUpperBound",
     "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
     "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
     "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
     "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact",
@@ -107,6 +112,20 @@
       "remaining": "ScaledTerminalCoreDivisorWindowCountCap OR TerminalCoreHotDivisorWindowPDECorSAE"
     },
     {
+      "gate": "ScaledDivisorWindowSplitClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "缩频除数窗口已拆成冷预算插入或热核心异常；冷侧继续进入供需判据。",
+      "remaining": "ColdCoreThresholdBudgetGapComparison OR TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "gate": "ColdBudgetGapCriterionClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "冷核心预算缺口已压成 L_forced>U_cold 的单一供需不等式，失败原因也已命名。",
+      "remaining": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow OR ColdCoreNonpersistentSupplyUpperBound OR TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion"
+    },
+    {
       "gate": "TerminalFamilySaturatedInCurrentInternalCorpus",
       "closed": true,
       "proved": false,
@@ -125,18 +144,18 @@
       "closed": false,
       "proved": false,
       "meaning": "D0 finite hash、E0 终端排斥、U0 非持久预算反超和 DStructure 尚未同时闭合。",
-      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND ScaledTerminalCoreDivisorWindowCountCap AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
     },
     {
       "gate": "RowColumnUnconditionalClosureReached",
       "closed": false,
       "proved": false,
       "meaning": "本步只把最新正余量目标压成同参数子门；还没有得到反例链与真实结构链的无条件终端矛盾。",
-      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND ScaledTerminalCoreDivisorWindowCountCap AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
     }
   ],
   "source_hashes": {
-    "script": "5ff09d14823c3338657d7e7fa04b2683253ccbf1d7024edd81dbc64c8eff8c21",
+    "script": "a344ec8bbb86d95999633f172b6bd477746ebe94fcf8ae8f5bfb3c243d070d51",
     "docs/monograph/prime-matrix-strict-terminal-budget-frontier-latest-sync-router.json": "81ec38d8b42838b270454600184d385487f3c5453b7c4758920d3e0c8a5c22fa",
     "docs/monograph/prime-matrix-strict-positive-terminal-budget-margin-attack-router.json": "1a60571bab8bb8f65a7f975a83c4d9adeab9481a7ffa1dd8a16a8f967d074570",
     "docs/monograph/prime-matrix-strict-finite-prefix-named-return-coupled-margin-ledger-router.json": "c5b1b31d319d0649c2beab036d32e78ce871f0e7ba1c1f2dc62fb1c8cc03cc45",
@@ -146,9 +165,11 @@
     "docs/monograph/prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json": "7c34a1965c8ddc44a43cafb902ae668fb7ed21db3fc6f73cb42716be37c213be",
     "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.json": "8f077e91bd0f02d25e6598256b5ebe958579e779abe1ecc41dd6861207e09523",
     "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.json": "2c0a5401dc9e7f7158cd30e758f88f5a07f68460712f611452ff609ae3b7ddbb",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.json": "dc5db9c8aa57f3b8c29354615714c6c124f8b8326b288d3b8c7cccec57db62cf",
     "docs/monograph/prime-matrix-strict-acyclic-terminal-family-latest-saturation-router.json": "ee2c23863dfa524a59dfb34333d45cef28f4e606a258cd4d7a02f2904455277c",
     "docs/monograph/prime-matrix-strict-pdec-scope-branch-saturation-frontier-router.json": "3c7602bf11d29d837d1a05964368f085de2c10dc5e786bd518b55a85b4ce3cbf",
     "docs/monograph/prime-matrix-strict-atomic-origin-identity-cycle-cut-sync-router.json": "67c5982c2fb858451db402538c635b0a6980c61973c5fb665ad030858243401d"
   },
-  "plain_conclusion": "本步直接下钻 `ExplicitPositiveTerminalBudgetMarginInequality`，并同步旧的同参数表、Rosser 收费、命名回流、冷供给纪律、稀疏历史预算和终端三原子结果。结论是：正余量目标没有闭合；D0 仍缺 `FiniteBoundaryPrefixRoughCountCertificate`，非持久 U0 已压到 `ScaledTerminalCoreDivisorWindowCountCap` 或热核心回流，持久 E0 已回到终端三原子，其中当前最贴近反例终端矛盾的内部点是 `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore`。下一单点先攻 `ScaledTerminalCoreDivisorWindowCountCap`，同时保留 finite prefix、moving atom 和 DStructure 门。"
+  "plain_conclusion": "本步直接下钻 `ExplicitPositiveTerminalBudgetMarginInequality`，并同步旧的同参数表、Rosser 收费、命名回流、冷供给纪律、稀疏历史预算和终端三原子结果。结论是：正余量目标没有闭合；D0 仍缺 `FiniteBoundaryPrefixRoughCountCertificate`，非持久 U0 已经穿过 `ScaledTerminalCoreDivisorWindowCountCap` 与 `ColdCoreThresholdBudgetGapComparison`，压到 `SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow` 或热核心/固定历史回流，持久 E0 已回到终端三原子，其中当前最贴近反例终端矛盾的内部点是 `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore`。下一单点先攻 `SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow`，同时保留 finite prefix、hot/fixed return、moving atom 和 DStructure 门。"
 }
