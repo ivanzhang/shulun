@@ -5,20 +5,23 @@
     "OldSelfContainedDusartAtomIsActiveButOutdated",
     "MertensTailFrontierCompressed",
     "PostFiniteThetaSyncImported",
+    "InternalThetaPNTClosedByP51SelfContainedSync",
+    "SelfContainedMeisselMertensB1IntervalImported",
     "ExternalThetaAndMeisselRouteReady",
-    "OrderedCondensedBasisReady"
+    "OrderedCondensedBasisReady",
+    "StrictSelfContainedMertensTailClosedByThetaAndB1Sync"
   ],
   "counterexample_assumption_only": true,
+  "direct_internal_dusart_theta_pnt_envelope_closed": true,
   "direct_unconditional_contradiction_found": false,
   "empirical_absence_not_used": true,
   "external_mertens_theta_route_closed_to_dstructure": true,
   "external_or_standard_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
   "hypothetical_chain_only": true,
-  "next_direct_attack_target": "InternalZeroFreeRegionToThetaContourEnvelopeLedger",
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet",
   "no_theorem_switch": true,
   "old_self_contained_dusart_atom_refined": true,
   "open_gates": [
-    "StrictSelfContainedMertensTailStillOpen",
     "RowColumnUnconditionalClosureReached"
   ],
   "parallel_attack_targets": [
@@ -26,7 +29,7 @@
     "RatePreservationLedger_FOR_moving_atom_packet",
     "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
   ],
-  "plain_conclusion": "本步把速率尾段中的旧 `SelfContainedDusart...` 粗原子同步到最新解析前沿：严格自足替代线应写成显式零点自由 theta/PNT 包加 Meissel-Mertens 常数区间；更细的当前主攻点是 `InternalZeroFreeRegionToThetaContourEnvelopeLedger`。外部 Mertens/theta 路线可条件移除此尾段，但行/列命题仍未无条件闭合。",
+  "plain_conclusion": "本步把速率尾段中的旧 `SelfContainedDusart...` 粗原子同步到最新解析前沿：直接 theta/PNT 包络与 Meissel-Mertens B1 常数区间都已由严格自足证书关闭，完整 Mertens 尾段解析包移出活动剩余。行/列命题仍未无条件闭合，下一步回到 PDEC/CleanKLS、RatePreservation 与 DStructure 终端门。",
   "row_column_unconditional_closed": false,
   "rows": [
     {
@@ -48,14 +51,28 @@
       "gate": "MertensTailFrontierCompressed",
       "meaning": "有限素数倒数跳点、分部求和接口、DVP 符号排斥和初等尾项可复用；剩余进入显式 PNT/Mertens 包。",
       "proved": false,
-      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+      "remaining": "closed"
     },
     {
       "closed": true,
       "gate": "PostFiniteThetaSyncImported",
-      "meaning": "theta@20000 与有限 theta 桥已自足移出；当前细化主攻点是 x>=20000 的内部 theta/PNT contour 包络。",
+      "meaning": "theta@20000 与有限 theta 桥已自足移出；旧内部 theta/PNT contour 主攻点已被后续 P5.1 自足同步吸收。",
       "proved": false,
-      "remaining": "InternalZeroFreeRegionToThetaContourEnvelopeLedger"
+      "remaining": "absorbed by DirectInternalDusartThetaPNTEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "InternalThetaPNTClosedByP51SelfContainedSync",
+      "meaning": "直接内部 Dusart theta/PNT 包络已由 P5.1 自足同步关闭，显式 theta 包不再是速率尾段活动硬点。",
+      "proved": true,
+      "remaining": "remove InternalZeroFreeRegionToThetaContourEnvelopeLedger from active basis"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedMeisselMertensB1IntervalImported",
+      "meaning": "B1 常数区间已由 Euler-product 区间证书关闭；该证书本身不单独声称完整 Mertens 尾段闭合。",
+      "proved": true,
+      "remaining": "closed"
     },
     {
       "closed": true,
@@ -69,14 +86,14 @@
       "gate": "OrderedCondensedBasisReady",
       "meaning": "按序推进证书给出的严格自足替代基为显式零点自由 theta 包加 Meissel-Mertens 常数区间。",
       "proved": false,
-      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+      "remaining": "superseded by current theta+B1 self-contained sync"
     },
     {
-      "closed": false,
-      "gate": "StrictSelfContainedMertensTailStillOpen",
-      "meaning": "严格自足线仍未证明完整 Mertens 尾段，不能把外部 theta/Mertens 输入改写成作者侧自足证明。",
-      "proved": false,
-      "remaining": "SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+      "closed": true,
+      "gate": "StrictSelfContainedMertensTailClosedByThetaAndB1Sync",
+      "meaning": "有限倒数素数跳点、分部求和接口、theta/PNT 包络与 B1 常数区间全部自足导入后，Mertens 尾段解析包从活动剩余中移出。",
+      "proved": true,
+      "remaining": "closed"
     },
     {
       "closed": false,
@@ -87,17 +104,20 @@
     }
   ],
   "same_theorem_target_preserved": true,
-  "secondary_attack_target": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+  "secondary_attack_target": "RatePreservationLedger_FOR_moving_atom_packet",
+  "self_contained_meissel_mertens_constant_interval_closed": true,
   "source_hashes": {
     "docs/monograph/prime-matrix-b3-meissel-mertens-interval-external-router.json": "93c85b3113a4adc2d4b17326eaf6ea5b118a305be9c2a8ad6fb4912d986516c7",
     "docs/monograph/prime-matrix-ordered-remaining-task-execution-router.json": "d1b25ce6577c612cac9b14f631518a046a60142376cbbbc03120de4a7cf32216",
+    "docs/monograph/prime-matrix-strict-direct-internal-dusart-pnt-envelope-router.json": "ad59843dbb160a980cf5fdc960021fc483103a34e2e0b6b1864e90d579a6b474",
     "docs/monograph/prime-matrix-strict-dynamic-skeleton-tail-b3-bridge-router.json": "dad9b5f3f5f1d66df613a270f14e4608e99b511c22efa597075061bfc528f55e",
     "docs/monograph/prime-matrix-strict-global-theta-envelope-external-match-router.json": "d412cf7cfac516ce8ed6b73572b77295ae87783aa5cee7736258292ebdfd291e",
+    "docs/monograph/prime-matrix-strict-meissel-mertens-b1-interval-self-contained-router.json": "98aa010bfd59375efc8bc7e16839fbd63a07a9f104482dd15655c0144b03e83f",
     "docs/monograph/prime-matrix-strict-post-finite-theta-frontier-sync-router.json": "3771b2deb5c5574f2b3c9ac71b67f2464d4ede581fa343db2ceb7eebfcb65617",
     "docs/monograph/prime-matrix-strict-self-contained-mertens-tail-frontier-router.json": "29be060813d41b78bd4f6cb32614b95b513e21688856b913ee0a6152f77ee643"
   },
-  "status": "rate_bearing_tail_mertens_latest_sync_self_contained_pnt_package_open",
-  "strict_self_contained_condensed_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND (SelfContainedExplicitZetaZeroFreeRegionThetaEnvelopeXGe20000 AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
-  "strict_self_contained_expanded_next_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND (InternalZeroFreeRegionToThetaContourEnvelopeLedger AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger AND SelfContainedMeisselMertensConstantIntervalLedgerAt20000) AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
-  "strict_self_contained_mertens_tail_proved": false
+  "status": "rate_bearing_tail_mertens_strict_self_contained_tail_closed_terminal_gates_open",
+  "strict_self_contained_condensed_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "strict_self_contained_expanded_next_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "strict_self_contained_mertens_tail_proved": true
 }

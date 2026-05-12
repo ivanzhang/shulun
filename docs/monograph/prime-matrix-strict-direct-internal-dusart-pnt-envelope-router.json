@@ -7,12 +7,14 @@
     "FiniteThetaInterfaceAlreadyClosed",
     "ShallowContourTuningRuledOut",
     "ExternalDusartStatementIdentified",
-    "LowHeightStillExternalOnly",
+    "DusartP51SelfContainedSyncAvailable",
+    "DirectInternalDusartThetaPNTEnvelopeClosed",
     "ExternalLaneRemainsConditional"
   ],
   "counterexample_assumption_only": true,
-  "direct_internal_dusart_theta_pnt_envelope_closed": false,
+  "direct_internal_dusart_theta_pnt_envelope_closed": true,
   "direct_unconditional_contradiction_found": false,
+  "dusart_p51_full_theta_statement_self_contained_closed": true,
   "empirical_absence_not_used": true,
   "external_dusart_statement_identified": true,
   "external_reference": {
@@ -22,20 +24,16 @@
   },
   "finite_low_height_self_contained_closed": false,
   "finite_theta_interface_ready": true,
-  "next_direct_attack_target": "DusartProposition51ProofSkeletonFormalizationLedger",
+  "next_direct_attack_target": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
   "no_theorem_switch": true,
   "open_gates": [
-    "DirectInternalDusartThetaPNTEnvelopeClosed",
+    "LowHeightStillExternalOnly",
     "RowColumnUnconditionalClosed"
   ],
-  "parallel_attack_targets": [
-    "DusartThetaAnalyticKernelAndThresholdLedger",
-    "DusartThetaMiddleRangeFiniteVerificationLedger",
-    "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
-  ],
-  "plain_conclusion": "直接内化 Dusart 型 theta/PNT 包络已被拆成四个作者侧包：证明骨架形式化、解析核与阈值、中段有限验证表、低高度 Turing/无零证书。有限 theta 桥已经提供 `x<=20000` 接口，但仓库内尚无完整 Dusart Proposition 5.1 级证明；外部 arXiv 定理只能维持外部条件路线。",
+  "parallel_attack_targets": [],
+  "plain_conclusion": "直接内部 Dusart theta/PNT 包络已由 P5.1 自足同步关闭：table_012-x87 低段、psi-theta 中段和 FK b=28 高尾预算合成给出 `theta(x)-x<x/36260` 对所有 `x>0` 成立。该步关闭解析 theta/PNT 输入，但不产生行/列反例链的终端矛盾。",
   "replacement_self_contained": {
-    "DirectInternalDusartThetaPNTEnvelopeLedger": "DusartProposition51ProofSkeletonFormalizationLedger AND DusartThetaAnalyticKernelAndThresholdLedger AND DusartThetaMiddleRangeFiniteVerificationLedger AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+    "DirectInternalDusartThetaPNTEnvelopeLedger": "DusartP51ThetaUpperFullSelfContainedLedger"
   },
   "row_column_unconditional_closed": false,
   "rows": [
@@ -76,17 +74,24 @@
     },
     {
       "closed": true,
-      "gate": "LowHeightStillExternalOnly",
-      "meaning": "低高度零点核验已有外部匹配，但要内化 Dusart 证明仍需文内 Turing/无零证书。",
-      "proved": false,
-      "remaining": "CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+      "gate": "DusartP51SelfContainedSyncAvailable",
+      "meaning": "P5.1 三段同步已吸收 table_012-x87 低段、自足 psi-theta 中段和 FK b=28 高尾预算。",
+      "proved": true,
+      "remaining": "DusartP51ThetaUpperFullSelfContainedLedger"
     },
     {
       "closed": false,
-      "gate": "DirectInternalDusartThetaPNTEnvelopeClosed",
-      "meaning": "当前仓库尚无完整内化的 Dusart 证明骨架、解析阈值包和中段有限表。",
+      "gate": "LowHeightStillExternalOnly",
+      "meaning": "低高度零点核验仍未文内化；但当前 P5.1 自足同步已绕开这一路径，不再作为直接 Dusart 包的活动硬点。",
       "proved": false,
-      "remaining": "DusartProposition51ProofSkeletonFormalizationLedger AND DusartThetaAnalyticKernelAndThresholdLedger AND DusartThetaMiddleRangeFiniteVerificationLedger AND CriticalLineNoZeroOn0To14FiniteLedger AND CriticalStripNoOffLineZeroBelow14TuringLedger"
+      "remaining": "inactive after P5.1 self-contained sync"
+    },
+    {
+      "closed": true,
+      "gate": "DirectInternalDusartThetaPNTEnvelopeClosed",
+      "meaning": "P5.1 自足同步给出 theta(x)-x<x/36260 for all x>0，足以关闭直接内部 theta/PNT 包络。",
+      "proved": true,
+      "remaining": "DusartP51ThetaUpperFullSelfContainedLedger"
     },
     {
       "closed": true,
@@ -107,10 +112,11 @@
   "self_contained_mertens_tail_closed": false,
   "shallow_contour_tuning_ruled_out": true,
   "source_hashes": {
-    "docs/monograph/claim-status-table.md": "74b2641a2de113428bf6bf6a77765470a1f1ed4fdd5b4a0b80e2a8de00159aae",
+    "docs/monograph/claim-status-table.md": "353ecb8146c8faf6f98c04a204a41764afec40b4a1f00bad21869fc4bd5c201e",
+    "docs/monograph/prime-matrix-strict-dusart-p51-theta-upper-full-sync-router.json": "fa93cf949945d256700979e4b3fef2151b64c267f511c959e01f1350dc6d024d",
     "docs/monograph/prime-matrix-strict-finite-low-height-external-match-router.json": "e489f5e3c11231acc5a832ae2fa3edb7eab33c28794b919d0652684731b8ec14",
-    "docs/monograph/prime-matrix-strict-finite-theta-bridge-self-contained-router.json": "e199bc58d1c05daa01e9a49a70719c34c604b10313cf9ccf6dedd9d3ce7322ce",
+    "docs/monograph/prime-matrix-strict-finite-theta-bridge-self-contained-router.json": "c0ec110688f8e9dee46af4cdaa13e630b0df0d13214f819e2f3774804eb219c7",
     "docs/monograph/prime-matrix-strict-sharp-theta-contour-feasibility-router.json": "ac5fb58d6dfd420e0734a104222fa86a9d96060fff9c4565e67a4fc3ce541e97"
   },
-  "status": "direct_internal_dusart_theta_pnt_envelope_reduced_to_four_author_side_packages"
+  "status": "direct_internal_dusart_theta_pnt_envelope_closed_by_p51_self_contained_sync"
 }

@@ -1,0 +1,150 @@
+{
+  "b1_interval": {
+    "definition": "B1 = gamma + sum_p (log(1-1/p)+1/p)",
+    "finite_prime_sum": {
+      "finite_sum": "-0.31571841816603272792925111364520053832207222632997859616900467465547674130213679",
+      "largest_prime": "999983",
+      "lower": "-0.31571841816603272792925111364520053832207222632997859616900467466332654130213679",
+      "prime_count": "78498",
+      "rounding_guard": "7.8498E-66",
+      "upper": "-0.31571841816603272792925111364520053832207222632997859616900467464762694130213679"
+    },
+    "gamma": {
+      "harmonic": "9.7876060360443822641784779048516053348592629455776917183894609566816020249431635",
+      "lower": "0.57721566490153286060651209008240238937549191169752044917678427344623222115438852",
+      "n": "10000",
+      "radius": "8.3333333333333333333333333333333333333333333333333333333333333333333333333333333E-35",
+      "upper": "0.57721566490153286060651209008240255604215857836418711584345094011289888782105518"
+    },
+    "interval_radius_below_target": true,
+    "known_b1_reference": "0.2614972128476428",
+    "known_b1_reference_inside_interval": true,
+    "lower": "0.26149624673550013267726097643720185105341968536754185300777959878290567985225173",
+    "midpoint": "0.26149674673550013267726097643720193438675301870087518634111293212408881318558506",
+    "prime_sum_limit": 1000000,
+    "radius": "5.0000000000000000000000000008333333333333333333333333333334118313333333333E-7",
+    "tail_bound_abs": "0.000001",
+    "tail_bound_rule": "0 <= -sum_{p>N}(log(1-1/p)+1/p) <= sum_{n>N}1/(n(n-1)) = 1/N",
+    "upper": "0.26149724673550013267726097643720201772008635203420851967444626546527194651891839"
+  },
+  "b3_tv_strict_self_contained_closed": false,
+  "basepoint_audit": {
+    "error_lower_using_b1_interval": "0.00055001129711578801460057922762451299986715516504258329657982409154086457560241",
+    "error_upper_using_b1_interval": "0.00055101129711578801460057922762467966653382183170924996324649077390713124226907",
+    "finite_basepoint_closed": true,
+    "prime_count_le_x": "2262",
+    "prime_reciprocal_sum_le_x": "2.5549342311717745856585596013041512474987658899236311411568668067119197134260877",
+    "x": "20000"
+  },
+  "certificate_type": "prime_matrix_strict_meissel_mertens_b1_interval_self_contained_router",
+  "closed_gates": [
+    "CounterexampleBranchGuardPreserved",
+    "MeisselMertensIntervalGateActive",
+    "ThetaPNTEnvelopeAlreadySelfContained",
+    "EulerGammaIntervalClosed",
+    "PrimeEulerProductFiniteSumClosed",
+    "PrimeEulerProductTailBoundClosed",
+    "SelfContainedMeisselMertensB1IntervalArithmeticLedger",
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+    "ExternalB1ReferenceOnlyAsAudit"
+  ],
+  "counterexample_assumption_only": true,
+  "direct_internal_dusart_theta_pnt_envelope_closed": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "meissel_mertens_b1_interval_self_contained_closed": true,
+  "next_direct_attack_target": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet",
+  "no_theorem_switch": true,
+  "open_gates": [
+    "RowColumnUnconditionalClosed"
+  ],
+  "parallel_attack_targets": [
+    "RatePreservationLedger_FOR_moving_atom_packet",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "Meissel-Mertens B1 常数区间可用绝对收敛 Euler product 自足闭合：`gamma` 由 Euler-Maclaurin 调和数区间给出，素数有限和求到 `10^6`，尾项用 `1/N` 夹住。所得 B1 区间半径小于 `2e-6`，并覆盖外部参考值 `0.2614972128476428`。这关闭的是 B1 常数区间输入；行/列命题仍需终端侧 PDEC/CleanKLS、RatePreservation 与 DStructure 门。",
+  "replacement_self_contained": {
+    "SelfContainedMeisselMertensConstantIntervalLedgerAt20000": "SelfContainedMeisselMertensB1EulerProductIntervalClosedRadius2eMinus6At20000"
+  },
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "CounterexampleBranchGuardPreserved",
+      "meaning": "本步只补 B3/Mertens 解析输入，不使用真实零行缺席。",
+      "proved": true,
+      "remaining": "保持 direct_unconditional_contradiction_found=false 与 row_column_unconditional_closed=false。"
+    },
+    {
+      "closed": true,
+      "gate": "MeisselMertensIntervalGateActive",
+      "meaning": "theta/PNT 包移出后，速率尾段解析剩余收窄到 Meissel-Mertens B1 常数区间。",
+      "proved": true,
+      "remaining": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000"
+    },
+    {
+      "closed": true,
+      "gate": "ThetaPNTEnvelopeAlreadySelfContained",
+      "meaning": "P5.1 自足同步已经给出 theta(x)-x<x/36260，B1 证书不再承担 theta/PNT。",
+      "proved": true,
+      "remaining": "DirectInternalDusartThetaPNTEnvelopeLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EulerGammaIntervalClosed",
+      "meaning": "Euler-Maclaurin 调和数公式给出 gamma 的窄区间。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeEulerProductFiniteSumClosed",
+      "meaning": "有限素数和 sum_{p<=1e6}(log(1-1/p)+1/p) 已用 Decimal 高精度计算并加保护项。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "PrimeEulerProductTailBoundClosed",
+      "meaning": "尾项由绝对收敛级数控制，宽度不超过 1/N。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedMeisselMertensB1IntervalArithmeticLedger",
+      "meaning": "B1 被夹在半径小于 2e-6 的自足区间内，并覆盖外部参考值。",
+      "proved": true,
+      "remaining": "closed"
+    },
+    {
+      "closed": true,
+      "gate": "SelfContainedMeisselMertensConstantIntervalLedgerAt20000",
+      "meaning": "B1 区间与 x=20000 基点有限核验闭合后，Meissel-Mertens 常数区间输入关闭。",
+      "proved": true,
+      "remaining": "SelfContainedPrimeReciprocalMertensTailXGe20000"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalB1ReferenceOnlyAsAudit",
+      "meaning": "外部 B1/Dusart 口径只作为审计对照；闭合判定使用本步 Euler-product 区间。",
+      "proved": false,
+      "remaining": "not used as proof input"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosed",
+      "meaning": "本步关闭常数区间输入，不产生早期零行反例链终端矛盾。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "self_contained_meissel_mertens_constant_interval_closed": true,
+  "self_contained_mertens_tail_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-meissel-mertens-interval-external-router.json": "93c85b3113a4adc2d4b17326eaf6ea5b118a305be9c2a8ad6fb4912d986516c7",
+    "docs/monograph/prime-matrix-strict-direct-internal-dusart-pnt-envelope-router.json": "ad59843dbb160a980cf5fdc960021fc483103a34e2e0b6b1864e90d579a6b474"
+  },
+  "status": "meissel_mertens_b1_interval_self_contained_closed"
+}

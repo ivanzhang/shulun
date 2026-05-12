@@ -24,8 +24,10 @@ DOCS = ROOT / "docs" / "monograph"
 DEFAULT_BRIDGE = DOCS / "prime-matrix-strict-dynamic-skeleton-tail-b3-bridge-router.json"
 DEFAULT_MERTENS_FRONTIER = DOCS / "prime-matrix-strict-self-contained-mertens-tail-frontier-router.json"
 DEFAULT_POST_FINITE = DOCS / "prime-matrix-strict-post-finite-theta-frontier-sync-router.json"
+DEFAULT_DIRECT_DUSART = DOCS / "prime-matrix-strict-direct-internal-dusart-pnt-envelope-router.json"
 DEFAULT_GLOBAL_THETA = DOCS / "prime-matrix-strict-global-theta-envelope-external-match-router.json"
 DEFAULT_MEISSEL_EXTERNAL = DOCS / "prime-matrix-b3-meissel-mertens-interval-external-router.json"
+DEFAULT_MEISSEL_SELF = DOCS / "prime-matrix-strict-meissel-mertens-b1-interval-self-contained-router.json"
 DEFAULT_ORDERED = DOCS / "prime-matrix-ordered-remaining-task-execution-router.json"
 DEFAULT_JSON = DOCS / "prime-matrix-strict-rate-bearing-tail-mertens-latest-sync-router.json"
 DEFAULT_MD = DOCS / "prime-matrix-strict-rate-bearing-tail-mertens-latest-sync-router.md"
@@ -78,8 +80,10 @@ def build_rows(certs: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     bridge = certs["bridge"]
     frontier = certs["mertens_frontier"]
     post_finite = certs["post_finite"]
+    direct_dusart = certs["direct_dusart"]
     global_theta = certs["global_theta"]
     meissel = certs["meissel_external"]
+    meissel_self = certs["meissel_self"]
     ordered = certs["ordered"]
 
     guard = (
@@ -101,11 +105,14 @@ def build_rows(certs: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
         post_finite.get("finite_theta_anchor_and_bridge_self_contained_closed") is True
         and post_finite.get("internal_zero_free_region_to_theta_contour_closed") is False
     )
+    direct_dusart_closed = direct_dusart.get("direct_internal_dusart_theta_pnt_envelope_closed") is True
     external_theta_ready = (
         global_theta.get("explicit_psi_theta_contour_envelope_strict_external_closed") is True
         and global_theta.get("finite_theta_bridge_strict_external_closed") is True
     )
     external_meissel_ready = meissel.get("meissel_mertens_interval_external_closed") is True
+    self_meissel_ready = meissel_self.get("self_contained_meissel_mertens_constant_interval_closed") is True
+    strict_mertens_tail_closed = frontier_compressed and direct_dusart_closed and self_meissel_ready
     ordered_basis_ready = (
         ordered.get("external_mertens_route_closed") is True
         and ordered.get("self_contained_mertens_tail_proved") is False
@@ -132,14 +139,36 @@ def build_rows(certs: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
             frontier_compressed,
             False,
             "有限素数倒数跳点、分部求和接口、DVP 符号排斥和初等尾项可复用；剩余进入显式 PNT/Mertens 包。",
-            f"{ZERO_THETA} AND {MEISSEL_INTERVAL}",
+            "closed" if strict_mertens_tail_closed else MEISSEL_INTERVAL if direct_dusart_closed else f"{ZERO_THETA} AND {MEISSEL_INTERVAL}",
         ),
         row(
             "PostFiniteThetaSyncImported",
             post_finite_synced,
             False,
-            "theta@20000 与有限 theta 桥已自足移出；当前细化主攻点是 x>=20000 的内部 theta/PNT contour 包络。",
-            INTERNAL_CONTOUR,
+            (
+                "theta@20000 与有限 theta 桥已自足移出；旧内部 theta/PNT contour 主攻点已被后续 P5.1 自足同步吸收。"
+                if direct_dusart_closed
+                else "theta@20000 与有限 theta 桥已自足移出；当前细化主攻点是 x>=20000 的内部 theta/PNT contour 包络。"
+            ),
+            "absorbed by DirectInternalDusartThetaPNTEnvelopeLedger"
+            if direct_dusart_closed
+            else INTERNAL_CONTOUR,
+        ),
+        row(
+            "InternalThetaPNTClosedByP51SelfContainedSync",
+            direct_dusart_closed,
+            direct_dusart_closed,
+            "直接内部 Dusart theta/PNT 包络已由 P5.1 自足同步关闭，显式 theta 包不再是速率尾段活动硬点。",
+            "remove InternalZeroFreeRegionToThetaContourEnvelopeLedger from active basis"
+            if direct_dusart_closed
+            else INTERNAL_CONTOUR,
+        ),
+        row(
+            "SelfContainedMeisselMertensB1IntervalImported",
+            self_meissel_ready,
+            self_meissel_ready,
+            "B1 常数区间已由 Euler-product 区间证书关闭；该证书本身不单独声称完整 Mertens 尾段闭合。",
+            "closed" if self_meissel_ready else MEISSEL_INTERVAL,
         ),
         row(
             "ExternalThetaAndMeisselRouteReady",
@@ -153,14 +182,14 @@ def build_rows(certs: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
             ordered_basis_ready,
             False,
             "按序推进证书给出的严格自足替代基为显式零点自由 theta 包加 Meissel-Mertens 常数区间。",
-            f"{ZERO_THETA} AND {MEISSEL_INTERVAL}",
+            "superseded by current theta+B1 self-contained sync" if strict_mertens_tail_closed else MEISSEL_INTERVAL if direct_dusart_closed else f"{ZERO_THETA} AND {MEISSEL_INTERVAL}",
         ),
         row(
-            "StrictSelfContainedMertensTailStillOpen",
-            False,
-            False,
-            "严格自足线仍未证明完整 Mertens 尾段，不能把外部 theta/Mertens 输入改写成作者侧自足证明。",
-            f"{ZERO_THETA} AND {MEISSEL_INTERVAL}",
+            "StrictSelfContainedMertensTailClosedByThetaAndB1Sync",
+            strict_mertens_tail_closed,
+            strict_mertens_tail_closed,
+            "有限倒数素数跳点、分部求和接口、theta/PNT 包络与 B1 常数区间全部自足导入后，Mertens 尾段解析包从活动剩余中移出。",
+            "closed" if strict_mertens_tail_closed else MEISSEL_INTERVAL if direct_dusart_closed else f"{ZERO_THETA} AND {MEISSEL_INTERVAL}",
         ),
         row(
             "RowColumnUnconditionalClosureReached",
@@ -176,19 +205,37 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
     """执行 Mertens 最新前沿同步。"""
     certs = {name: load_json(path) for name, path in paths.items()}
     rows = build_rows(certs)
+    direct_dusart_closed = certs["direct_dusart"].get("direct_internal_dusart_theta_pnt_envelope_closed") is True
+    frontier = certs["mertens_frontier"]
+    meissel_self = certs["meissel_self"]
+    frontier_compressed = (
+        frontier.get("finite_prime_steps_to_20000_closed") is True
+        and frontier.get("partial_summation_interface_closed") is True
+        and frontier.get("self_contained_mertens_tail_proved") is False
+    )
+    self_meissel_ready = meissel_self.get("self_contained_meissel_mertens_constant_interval_closed") is True
+    strict_mertens_tail_closed = frontier_compressed and direct_dusart_closed and self_meissel_ready
     strict_condensed = (
-        f"{PDEC_KLS_PACKET} AND ({ZERO_THETA} AND {MEISSEL_INTERVAL}) "
+        f"{PDEC_KLS_PACKET} AND "
+        f"{'' if strict_mertens_tail_closed else '(' + (MEISSEL_INTERVAL if direct_dusart_closed else ZERO_THETA + ' AND ' + MEISSEL_INTERVAL) + ') AND '}"
         f"AND {RATE} AND {DSTRUCTURE}"
-    )
+    ).replace(" AND AND ", " AND ")
     strict_expanded_next = (
-        f"{PDEC_KLS_PACKET} AND ({INTERNAL_CONTOUR} AND {LOW_HEIGHT} "
-        f"AND {MEISSEL_INTERVAL}) AND {RATE} AND {DSTRUCTURE}"
-    )
+        f"{PDEC_KLS_PACKET} AND "
+        f"{'' if strict_mertens_tail_closed else '(' + (MEISSEL_INTERVAL if direct_dusart_closed else INTERNAL_CONTOUR + ' AND ' + LOW_HEIGHT + ' AND ' + MEISSEL_INTERVAL) + ') AND '}"
+        f"AND {RATE} AND {DSTRUCTURE}"
+    ).replace(" AND AND ", " AND ")
     external_basis = f"{PDEC_KLS_PACKET} AND {RATE} AND {DSTRUCTURE}"
 
     return {
         "certificate_type": "prime_matrix_strict_rate_bearing_tail_mertens_latest_sync_router",
-        "status": "rate_bearing_tail_mertens_latest_sync_self_contained_pnt_package_open",
+        "status": (
+            "rate_bearing_tail_mertens_strict_self_contained_tail_closed_terminal_gates_open"
+            if strict_mertens_tail_closed
+            else "rate_bearing_tail_mertens_latest_sync_theta_pnt_closed_meissel_interval_open"
+            if direct_dusart_closed
+            else "rate_bearing_tail_mertens_latest_sync_self_contained_pnt_package_open"
+        ),
         "same_theorem_target_preserved": True,
         "no_theorem_switch": True,
         "counterexample_assumption_only": True,
@@ -196,14 +243,16 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "hypothetical_chain_only": True,
         "old_self_contained_dusart_atom_refined": True,
         "external_mertens_theta_route_closed_to_dstructure": True,
-        "strict_self_contained_mertens_tail_proved": False,
+        "direct_internal_dusart_theta_pnt_envelope_closed": direct_dusart_closed,
+        "self_contained_meissel_mertens_constant_interval_closed": self_meissel_ready,
+        "strict_self_contained_mertens_tail_proved": strict_mertens_tail_closed,
         "direct_unconditional_contradiction_found": False,
         "row_column_unconditional_closed": False,
         "strict_self_contained_condensed_basis": strict_condensed,
         "strict_self_contained_expanded_next_basis": strict_expanded_next,
         "external_or_standard_remaining_basis": external_basis,
-        "next_direct_attack_target": INTERNAL_CONTOUR,
-        "secondary_attack_target": MEISSEL_INTERVAL,
+        "next_direct_attack_target": PDEC_KLS_PACKET if strict_mertens_tail_closed else MEISSEL_INTERVAL if direct_dusart_closed else INTERNAL_CONTOUR,
+        "secondary_attack_target": RATE if strict_mertens_tail_closed else PDEC_KLS_PACKET if direct_dusart_closed else MEISSEL_INTERVAL,
         "parallel_attack_targets": [PDEC_KLS_PACKET, RATE, DSTRUCTURE],
         "rows": rows,
         "closed_gates": [item["gate"] for item in rows if item["closed"]],
@@ -211,6 +260,16 @@ def run(paths: dict[str, Path]) -> dict[str, Any]:
         "source_hashes": {str(path.relative_to(ROOT)): sha256(path) for path in paths.values()},
         "plain_conclusion": (
             "本步把速率尾段中的旧 `SelfContainedDusart...` 粗原子同步到最新解析前沿："
+            "直接 theta/PNT 包络与 Meissel-Mertens B1 常数区间都已由严格自足证书关闭，"
+            "完整 Mertens 尾段解析包移出活动剩余。行/列命题仍未无条件闭合，"
+            "下一步回到 PDEC/CleanKLS、RatePreservation 与 DStructure 终端门。"
+            if strict_mertens_tail_closed
+            else "本步把速率尾段中的旧 `SelfContainedDusart...` 粗原子同步到最新解析前沿："
+            "直接 theta/PNT 包络已由 P5.1 自足同步移出，严格自足尾段解析剩余收窄到 "
+            "`SelfContainedMeisselMertensConstantIntervalLedgerAt20000`。"
+            "外部 Mertens/theta 路线仍可条件移除此尾段，但行/列命题仍未无条件闭合。"
+            if direct_dusart_closed
+            else "本步把速率尾段中的旧 `SelfContainedDusart...` 粗原子同步到最新解析前沿："
             "严格自足替代线应写成显式零点自由 theta/PNT 包加 Meissel-Mertens 常数区间；"
             "更细的当前主攻点是 `InternalZeroFreeRegionToThetaContourEnvelopeLedger`。"
             "外部 Mertens/theta 路线可条件移除此尾段，但行/列命题仍未无条件闭合。"
@@ -287,8 +346,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--bridge", type=Path, default=DEFAULT_BRIDGE)
     parser.add_argument("--mertens-frontier", type=Path, default=DEFAULT_MERTENS_FRONTIER)
     parser.add_argument("--post-finite", type=Path, default=DEFAULT_POST_FINITE)
+    parser.add_argument("--direct-dusart", type=Path, default=DEFAULT_DIRECT_DUSART)
     parser.add_argument("--global-theta", type=Path, default=DEFAULT_GLOBAL_THETA)
     parser.add_argument("--meissel-external", type=Path, default=DEFAULT_MEISSEL_EXTERNAL)
+    parser.add_argument("--meissel-self", type=Path, default=DEFAULT_MEISSEL_SELF)
     parser.add_argument("--ordered", type=Path, default=DEFAULT_ORDERED)
     parser.add_argument("--json-output", type=Path, default=DEFAULT_JSON)
     parser.add_argument("--md-output", type=Path, default=DEFAULT_MD)
@@ -302,8 +363,10 @@ def main() -> None:
         "bridge": args.bridge,
         "mertens_frontier": args.mertens_frontier,
         "post_finite": args.post_finite,
+        "direct_dusart": args.direct_dusart,
         "global_theta": args.global_theta,
         "meissel_external": args.meissel_external,
+        "meissel_self": args.meissel_self,
         "ordered": args.ordered,
     }
     result = run(paths)

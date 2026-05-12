@@ -23,11 +23,13 @@ OUT_MD = MONOGRAPH / "prime-matrix-strict-direct-internal-dusart-pnt-envelope-ro
 FEASIBILITY = MONOGRAPH / "prime-matrix-strict-sharp-theta-contour-feasibility-router.json"
 FINITE_THETA = MONOGRAPH / "prime-matrix-strict-finite-theta-bridge-self-contained-router.json"
 LOW_HEIGHT_EXTERNAL = MONOGRAPH / "prime-matrix-strict-finite-low-height-external-match-router.json"
+P51_SYNC = MONOGRAPH / "prime-matrix-strict-dusart-p51-theta-upper-full-sync-router.json"
 CLAIM_STATUS = MONOGRAPH / "claim-status-table.md"
 
-SOURCE_FILES = [FEASIBILITY, FINITE_THETA, LOW_HEIGHT_EXTERNAL, CLAIM_STATUS]
+SOURCE_FILES = [FEASIBILITY, FINITE_THETA, LOW_HEIGHT_EXTERNAL, P51_SYNC, CLAIM_STATUS]
 
 TARGET = "DirectInternalDusartThetaPNTEnvelopeLedger"
+DUSART_P51_SELF = "DusartP51ThetaUpperFullSelfContainedLedger"
 DUSART_SKELETON = "DusartProposition51ProofSkeletonFormalizationLedger"
 DUSART_ANALYTIC = "DusartThetaAnalyticKernelAndThresholdLedger"
 DUSART_MIDDLE = "DusartThetaMiddleRangeFiniteVerificationLedger"
@@ -78,7 +80,12 @@ def row(gate: str, closed: bool, proved: bool, meaning: str, remaining: str) -> 
     }
 
 
-def build_rows(feasibility: dict[str, Any], finite: dict[str, Any], low_external: dict[str, Any]) -> list[dict[str, Any]]:
+def build_rows(
+    feasibility: dict[str, Any],
+    finite: dict[str, Any],
+    low_external: dict[str, Any],
+    p51_sync: dict[str, Any],
+) -> list[dict[str, Any]]:
     """生成直接内部 Dusart/PNT 包络判定表。"""
     guard = (
         feasibility.get("counterexample_assumption_only") is True
@@ -90,6 +97,8 @@ def build_rows(feasibility: dict[str, Any], finite: dict[str, Any], low_external
     shallow_tuning_ruled_out = feasibility.get("shallow_constant_tuning_possible") is False
     external_low_ready = low_external.get("finite_low_height_strict_external_matched") is True
     low_self_open = low_external.get("finite_low_height_self_contained_closed") is False
+    p51_self_closed = p51_sync.get("dusart_p51_full_theta_statement_self_contained_closed") is True
+    direct_closed = active and p51_self_closed
     return [
         row(
             "CounterexampleBranchGuardPreserved",
@@ -127,18 +136,25 @@ def build_rows(feasibility: dict[str, Any], finite: dict[str, Any], low_external
             f"{ARXIV_ID}: {ARXIV_URL}",
         ),
         row(
+            "DusartP51SelfContainedSyncAvailable",
+            p51_self_closed,
+            p51_self_closed,
+            "P5.1 三段同步已吸收 table_012-x87 低段、自足 psi-theta 中段和 FK b=28 高尾预算。",
+            DUSART_P51_SELF,
+        ),
+        row(
             "LowHeightStillExternalOnly",
-            external_low_ready and low_self_open,
+            (external_low_ready and low_self_open) and not p51_self_closed,
             False,
-            "低高度零点核验已有外部匹配，但要内化 Dusart 证明仍需文内 Turing/无零证书。",
-            LOW_HEIGHT_SELF,
+            "低高度零点核验仍未文内化；但当前 P5.1 自足同步已绕开这一路径，不再作为直接 Dusart 包的活动硬点。",
+            "inactive after P5.1 self-contained sync" if p51_self_closed else LOW_HEIGHT_SELF,
         ),
         row(
             "DirectInternalDusartThetaPNTEnvelopeClosed",
-            False,
-            False,
-            "当前仓库尚无完整内化的 Dusart 证明骨架、解析阈值包和中段有限表。",
-            f"{DUSART_SKELETON} AND {DUSART_ANALYTIC} AND {DUSART_MIDDLE} AND {LOW_HEIGHT_SELF}",
+            direct_closed,
+            direct_closed,
+            "P5.1 自足同步给出 theta(x)-x<x/36260 for all x>0，足以关闭直接内部 theta/PNT 包络。",
+            DUSART_P51_SELF if direct_closed else f"{DUSART_SKELETON} AND {DUSART_ANALYTIC} AND {DUSART_MIDDLE} AND {LOW_HEIGHT_SELF}",
         ),
         row(
             "ExternalLaneRemainsConditional",
@@ -162,16 +178,26 @@ def build_result() -> dict[str, Any]:
     feasibility = load_json(FEASIBILITY)
     finite = load_json(FINITE_THETA)
     low_external = load_json(LOW_HEIGHT_EXTERNAL)
-    rows = build_rows(feasibility, finite, low_external)
-    replacement = f"{DUSART_SKELETON} AND {DUSART_ANALYTIC} AND {DUSART_MIDDLE} AND {LOW_HEIGHT_SELF}"
+    p51_sync = load_json(P51_SYNC)
+    rows = build_rows(feasibility, finite, low_external, p51_sync)
+    direct_closed = next(item["closed"] for item in rows if item["gate"] == "DirectInternalDusartThetaPNTEnvelopeClosed")
+    replacement = DUSART_P51_SELF if direct_closed else f"{DUSART_SKELETON} AND {DUSART_ANALYTIC} AND {DUSART_MIDDLE} AND {LOW_HEIGHT_SELF}"
     return {
         "certificate_type": "prime_matrix_strict_direct_internal_dusart_pnt_envelope_router",
-        "status": "direct_internal_dusart_theta_pnt_envelope_reduced_to_four_author_side_packages",
+        "status": (
+            "direct_internal_dusart_theta_pnt_envelope_closed_by_p51_self_contained_sync"
+            if direct_closed
+            else "direct_internal_dusart_theta_pnt_envelope_reduced_to_four_author_side_packages"
+        ),
         "same_theorem_target_preserved": True,
         "no_theorem_switch": True,
         "counterexample_assumption_only": True,
         "empirical_absence_not_used": True,
-        "direct_internal_dusart_theta_pnt_envelope_closed": False,
+        "direct_internal_dusart_theta_pnt_envelope_closed": direct_closed,
+        "dusart_p51_full_theta_statement_self_contained_closed": p51_sync.get(
+            "dusart_p51_full_theta_statement_self_contained_closed"
+        )
+        is True,
         "finite_theta_interface_ready": finite.get("finite_theta_bridge_below_20000_self_contained_closed") is True,
         "shallow_contour_tuning_ruled_out": feasibility.get("shallow_constant_tuning_possible") is False,
         "external_dusart_statement_identified": True,
@@ -186,11 +212,15 @@ def build_result() -> dict[str, Any]:
             "role": "external theorem target only; not counted as self-contained proof",
         },
         "replacement_self_contained": {TARGET: replacement},
-        "next_direct_attack_target": DUSART_SKELETON,
-        "parallel_attack_targets": [DUSART_ANALYTIC, DUSART_MIDDLE, LOW_HEIGHT_SELF],
+        "next_direct_attack_target": DSTRUCTURE if direct_closed else DUSART_SKELETON,
+        "parallel_attack_targets": [] if direct_closed else [DUSART_ANALYTIC, DUSART_MIDDLE, LOW_HEIGHT_SELF],
         "source_hashes": source_hashes(),
         "plain_conclusion": (
-            "直接内化 Dusart 型 theta/PNT 包络已被拆成四个作者侧包：证明骨架形式化、解析核与阈值、"
+            "直接内部 Dusart theta/PNT 包络已由 P5.1 自足同步关闭：table_012-x87 低段、"
+            "psi-theta 中段和 FK b=28 高尾预算合成给出 `theta(x)-x<x/36260` 对所有 `x>0` 成立。"
+            "该步关闭解析 theta/PNT 输入，但不产生行/列反例链的终端矛盾。"
+            if direct_closed
+            else "直接内化 Dusart 型 theta/PNT 包络已被拆成四个作者侧包：证明骨架形式化、解析核与阈值、"
             "中段有限验证表、低高度 Turing/无零证书。有限 theta 桥已经提供 `x<=20000` 接口，"
             "但仓库内尚无完整 Dusart Proposition 5.1 级证明；外部 arXiv 定理只能维持外部条件路线。"
         ),
