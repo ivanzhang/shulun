@@ -1,0 +1,125 @@
+{
+  "certificate_type": "prime_matrix_strict_forced_load_latest_frontier_sync_router",
+  "status": "forced_load_frontier_synced_to_finite_prefix_type_threshold_named_return_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "positive_margin_drilldown_imported": true,
+  "forced_load_conservation_imported": true,
+  "sparse_history_anticollapse_closed_for_budget": true,
+  "normalized_potential_reduced": true,
+  "uniform_rough_count_formula_imported": true,
+  "b3_analytic_budget_latest_synced": true,
+  "finite_boundary_prefix_certificate_proved": false,
+  "formal_unit_type_threshold_ledger_proved": false,
+  "row_free_type_anticollapse_proved": false,
+  "named_return_exclusion_proved": false,
+  "sparse_terminal_forced_load_lower_bound_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "FiniteBoundaryPrefixRoughCountCertificate",
+  "parallel_attack_targets": [
+    "FormalUnitTypeThresholdLedger",
+    "PrefixLabelSupportToRowFreeTypeAntiCollapse",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "latest_forced_load_basis": "FiniteBoundaryPrefixRoughCountCertificate AND FormalUnitTypeThresholdLedger AND PrefixLabelSupportToRowFreeTypeAntiCollapse AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND (TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion) AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "decision_rows": [
+    {
+      "gate": "PositiveMarginDrilldownImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "最新正余量目标已下钻到 finite prefix、强制负载、命名回流、moving atom 和 DStructure。",
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "gate": "ForcedLoadConservationImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "早期零行反例链给出 M# 扣除命名回流后的终端负载守恒。",
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "SparseHistoryAntiCollapseClosedForBudget",
+      "closed": true,
+      "proved": true,
+      "meaning": "预算所需的无静默塌缩/重数守恒已经关闭；强互异历史注入不是必要输入。",
+      "remaining": "strong distinct injection not needed for current budget"
+    },
+    {
+      "gate": "NormalizedPotentialReduced",
+      "closed": true,
+      "proved": false,
+      "meaning": "M# 势下界已化为 prefix 粗筛余下界、formal-unit 类型阈值和有限段证书。",
+      "remaining": "UniformPrefixRoughCountLowerBound AND FormalUnitTypeThresholdLedger AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "gate": "UniformRoughCountFormulaImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "prefix 粗筛余已接到 lower weights 主项减边界余项公式。",
+      "remaining": "B3 analytic budget AND FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "gate": "B3AnalyticBudgetLatestSynced",
+      "closed": true,
+      "proved": true,
+      "meaning": "连续主项、Stieltjes 精确表示、20000 锚点 delay 乘子和最新 Mertens 尾段同步后，旧 B3-TV/离散误差不再是本前沿活动最窄阻塞。",
+      "remaining": "auditable sync only; reviewer may still audit B3 certificates independently"
+    },
+    {
+      "gate": "FiniteBoundaryPrefixCertificateStillAbsent",
+      "closed": false,
+      "proved": false,
+      "meaning": "有限边界 prefix 粗筛余证书同时卡住 D0 hash 和 UniformPrefixRoughCount 的有限段。",
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate"
+    },
+    {
+      "gate": "FormalUnitTypeThresholdStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "即使粗筛余数量有统一下界，还需同一 row-free type alphabet 的阈值比较。",
+      "remaining": "FormalUnitTypeThresholdLedger AND PrefixLabelSupportToRowFreeTypeAntiCollapse"
+    },
+    {
+      "gate": "NamedReturnAndTerminalAtomsStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "PDEC/SAE/ColumnCRT、热核心、固定历史和 actual noncanonical moving atom 仍未排斥。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND (TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion) AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore"
+    },
+    {
+      "gate": "SparseTerminalForcedLoadCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "强制负载下界尚未完成，因为有限 prefix、类型阈值、row-free 抗塌缩和命名回流仍未同时闭合。",
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND FormalUnitTypeThresholdLedger AND PrefixLabelSupportToRowFreeTypeAntiCollapse AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步是最新前沿同步，不是终局矛盾；仍未得到排除早期零行反例链的无条件闭合。",
+      "remaining": "FiniteBoundaryPrefixRoughCountCertificate AND FormalUnitTypeThresholdLedger AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "script": "f197aeb0cc6e39049546b225aa9b4bc69b72bc67ec185fe242c031680714550b",
+    "docs/monograph/prime-matrix-strict-explicit-positive-margin-latest-drilldown-router.json": "a1f751511b011c2bd64b4fe717c36436c18d3946c2407fa0d4cdb4b3338cd31c",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-forced-load-lower-bound-router.json": "3fabe3f3825c980842551045d9ca8714df0b3bb6fd1b92e39ba5e7e70daea1af",
+    "docs/monograph/prime-matrix-strict-prefix-label-sparse-history-anticollapse-router.json": "94229062234848b5e5e20ffaf940e7d4447b8ec957a0b3e8b2bf85d3e55a1a3f",
+    "docs/monograph/prime-matrix-strict-normalized-prefix-potential-router.json": "4f86ea29ee34a43e365527b3c6e030050418f872c893c8ba470d8997ed66d6da",
+    "docs/monograph/prime-matrix-strict-uniform-prefix-rough-count-router.json": "565216b00f151a42a0105b48eb3f09b4d1968f923d698fdb2ba1bdecd906afee",
+    "docs/monograph/prime-matrix-b3-continuous-beta-sieve-surplus-router.json": "f890f23fc5f9a4820fbe2b1153efc03e071afcc60afaf518b1934132c8f6f66d",
+    "docs/monograph/prime-matrix-b3-prime-word-stieltjes-integral-router.json": "7f429ccb990e34a318454c80cf3d9a59a2f9355c93ac13d79e4e7407336a5a99",
+    "docs/monograph/prime-matrix-b3-signed-delay-multiplier-anchor-router.json": "158728d20ecf491aab9376bc1f29cc0566a9218ffb292b26b5192d8bfb5a12c9",
+    "docs/monograph/prime-matrix-strict-rate-bearing-tail-mertens-latest-sync-router.json": "41ecd4cfd58beb65c2ec5e1b5fdf2119ec46954e790ed0f036f92b66bfc282d4",
+    "docs/monograph/prime-matrix-strict-terminal-budget-frontier-latest-sync-router.json": "81ec38d8b42838b270454600184d385487f3c5453b7c4758920d3e0c8a5c22fa"
+  },
+  "plain_conclusion": "本步把 SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow 同步到最新前沿：强制负载守恒和稀疏历史预算抗塌缩已经可用；B3 解析预算不再作为本前沿的活动最窄阻塞。真正剩余收缩为有限边界 prefix 粗筛余证书、formal-unit 类型阈值/row-free 抗塌缩、命名回流与 actual noncanonical moving atom 排斥，以及 DStructure/Rankin 独立门。因此下一最窄可攻点是 FiniteBoundaryPrefixRoughCountCertificate。"
+}
