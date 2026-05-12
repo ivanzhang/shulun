@@ -1,0 +1,155 @@
+{
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "acyclic_terminal_canonical_lock_proved": false,
+  "certificate_type": "prime_matrix_strict_nonrecursive_kernel_to_terminal_leaf_sync_router",
+  "counterexample_assumption_only": true,
+  "current_leaf_firewall_active_basis_reduced": true,
+  "direct_unconditional_contradiction_found": false,
+  "dstructure_independent_gate_closed": false,
+  "field_contract_boundary_closed": true,
+  "frontier_reduction": "`NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn` 的第一生产性原子 `ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple` 已由既有 joint-alpha 链同步到 signed-source 固定点；除非提交新的 actual joint constructor 公式工件，否则该正向构造线不能闭合。因此当前内部自足硬点回到终端叶子前沿：`AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode`，同时保留 `ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem`、`RatePreservationLedger_FOR_moving_atom_packet` 与 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` 并行验收。",
+  "joint_constructor_path_is_fixed_point_without_new_formula": true,
+  "next_direct_attack_target": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode",
+  "no_theorem_switch": true,
+  "noncanonical_legal_closure_mode_proved": false,
+  "plain_conclusion": "本步把新非递归核表合同与旧 joint-alpha 固定点、终端叶子防火墙接通。结论是：刚钉出的 joint constructor rule 若没有新的显式公式，只会沿 joint alpha-side/same-row/row-level 表回到 signed-source 固定点。终端下降 schema 已去掉无名自循环，但当前活动叶子仍是 canonical-lock 或 noncanonical full-S 合法模式；二者均未证明，所以行/列命题仍未无条件闭合。",
+  "rate_preservation_ledger_proved": false,
+  "route_chain": [
+    {
+      "from": "NonrecursivePointwisePrimitiveKernelTableConstructionWithoutTerminalReturn",
+      "to": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "from": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple",
+      "to": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "from": "JointAlphaSidePrimitiveWordCoefficientRuleLedger",
+      "to": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "from": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward",
+      "to": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "from": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands",
+      "to": "signed-source fixed point"
+    },
+    {
+      "from": "signed-source fixed point",
+      "to": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "from": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate",
+      "to": "TerminalLeafFirewallInputs_OR_CanonicalLock"
+    },
+    {
+      "from": "TerminalLeafFirewallInputs_OR_CanonicalLock",
+      "to": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "rows": [
+    {
+      "closed": true,
+      "gate": "NonrecursiveFieldContractImported",
+      "meaning": "非递归逐点核表字段边界已闭合，第一生产性原子钉为 joint constructor rule。",
+      "proved": true,
+      "remaining": "ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple"
+    },
+    {
+      "closed": true,
+      "gate": "JointConstructorRouteReducesToAlphaSide",
+      "meaning": "显式 joint alpha/delta rule 继续压成 joint alpha-side word/coefficient rule，未给公式。",
+      "proved": false,
+      "remaining": "JointAlphaSidePrimitiveWordCoefficientRuleLedger"
+    },
+    {
+      "closed": true,
+      "gate": "JointAlphaSideReducesToSameRow",
+      "meaning": "joint alpha-side 的硬点是 unsigned word skeleton 与 signed coefficient 同行同源。",
+      "proved": false,
+      "remaining": "JointAlphaSameRowPrimitiveWordSignedCoefficientOriginIdentityBeforePushforward"
+    },
+    {
+      "closed": true,
+      "gate": "SameRowBridgeReturnsToRowLevelTable",
+      "meaning": "same-row 桥接回收到逐行 clean-core 原始生成表。",
+      "proved": false,
+      "remaining": "RowLevelCleanCoreOriginalCoefficientGenerationTableForActualNoncanonicalPrimitiveSummands"
+    },
+    {
+      "closed": true,
+      "gate": "JointRouteHitsSignedSourceFixedPoint",
+      "meaning": "joint-alpha/cycle-cut 线已证明会回到 signed-source 固定点，不能作为非循环证明。",
+      "proved": true,
+      "remaining": "AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "TerminalDescentSchemaClosedLeafOpen",
+      "meaning": "终端 well-founded 下降的无隐藏循环 schema 已闭合，但叶子防火墙未全排斥。",
+      "proved": false,
+      "remaining": "TerminalLeafFirewallInputs_OR_CanonicalLock"
+    },
+    {
+      "closed": true,
+      "gate": "CurrentLeafFirewallReduced",
+      "meaning": "当前已物化 PDEC/sparse 前沿清零后，活动终端剩 canonical-lock 或 noncanonical legal mode。",
+      "proved": false,
+      "remaining": "AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode"
+    },
+    {
+      "closed": true,
+      "gate": "NoncanonicalLegalModeStillOpen",
+      "meaning": "noncanonical full-S 合法模式仍需实际源恒等、强化反原子或外部合同；strict 自足线未闭合。",
+      "proved": false,
+      "remaining": "NoncanonicalFullSComplementLegalClosureMode"
+    },
+    {
+      "closed": true,
+      "gate": "ExactUVIncidenceStillParallel",
+      "meaning": "非递归核表的 rank/multiplicity 口径仍需 actual exact-UV bounded multiplicity incidence。",
+      "proved": false,
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "closed": false,
+      "gate": "RatePreservationStillOpen",
+      "meaning": "moving-atom packet 的 log-power 速率保持仍未由当前同步证明。",
+      "proved": false,
+      "remaining": "RatePreservationLedger_FOR_moving_atom_packet"
+    },
+    {
+      "closed": true,
+      "gate": "DStructureGateStillOpen",
+      "meaning": "DStructure/Rankin 晋级门仍只完成边界命名，未独立接受。",
+      "proved": false,
+      "remaining": "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "当前同步只删除 joint constructor 伪出口并定位终端二选一，尚未得到反例矛盾。",
+      "proved": false,
+      "remaining": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-dstructure-rankin-promotion-acceptance-router.json": "6a25a769df2b107f8a5a31e1374395d99717c4d0dd8188c969111477a648de7a",
+    "docs/monograph/prime-matrix-strict-acyclic-terminal-descent-firewall-router.json": "983fc82922a3715afc3896388e2fccf5baaf702fbccff57018d674bc55f1ae0b",
+    "docs/monograph/prime-matrix-strict-exact-uv-map-rank-incidence-router.json": "101917e6a573efb2d6c921b2056ac92120e41f1b10ae2549f394ac0fa3d1b54c",
+    "docs/monograph/prime-matrix-strict-joint-alpha-same-row-origin-identity-router.json": "f0d11204c5ed939ce0081991a49bdb2335240a69676c872bf8bcc96bfb4df66b",
+    "docs/monograph/prime-matrix-strict-joint-alpha-side-word-coefficient-rule-router.json": "6f19bffe8c95ca7879e462c3334714769db3400ed98a08ce3490f76631cc46af",
+    "docs/monograph/prime-matrix-strict-joint-alpha-signed-source-fixed-point-sync-router.json": "4ddf2b8da70096cdc59370356e727e9f8881bee1c6a927aae3f1af9993b2274b",
+    "docs/monograph/prime-matrix-strict-joint-explicit-alpha-delta-rule-sync-router.json": "adf3886063960c89004c769f0e2b7804edf8ea4fb5d71ee71cb4d12fd2bfbe48",
+    "docs/monograph/prime-matrix-strict-noncanonical-legal-closure-mode-router.json": "39c772b9e02029d14e9d400ba3651f1d51472f3d83e45740fd773e0de29e7130",
+    "docs/monograph/prime-matrix-strict-nonrecursive-pointwise-kernel-table-field-contract-router.json": "7d40995ed78a090c3131871fde596f8f5d371891a778d697f92d9c34500cb913",
+    "docs/monograph/prime-matrix-strict-terminal-leaf-firewall-current-instance-router.json": "3323fe284f3293bb2a9fb18f739c41ffb64a5bebb44b847ae97d2d6074568f3f"
+  },
+  "status": "nonrecursive_kernel_joint_route_synced_to_terminal_leaf_open",
+  "strict_active_basis_after_sync": "(AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "sync_closed": true,
+  "terminal_descent_schema_closed": true
+}
