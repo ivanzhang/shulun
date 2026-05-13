@@ -1,0 +1,129 @@
+{
+  "analytic_tail_to_finite_boundary_monotone_bridge_conditional_external_or_standard_closed": true,
+  "analytic_tail_to_finite_boundary_monotone_bridge_strict_self_contained_proved": false,
+  "certificate_type": "prime_matrix_strict_analytic_tail_to_finite_boundary_bridge_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "TailBridgeTargetImported",
+      "meaning": "上一层 runner/hash 账本后的 finite prefix 剩余首字段是解析尾段桥。",
+      "proved": false,
+      "remaining": "AnalyticTailToFiniteBoundaryMonotoneBridge"
+    },
+    {
+      "closed": true,
+      "gate": "RangeBoundaryMatches",
+      "meaning": "有限 runner 覆盖 3001<=P<100000，解析尾段从 P>=100000 开始，边界无重叠缺口。",
+      "proved": true,
+      "remaining": "无范围缺口。"
+    },
+    {
+      "closed": true,
+      "gate": "TailObjectInterfaceClosed",
+      "meaning": "尾段对象与同参数 prefix rough-count / B3 lower-sieve 对象一致。",
+      "proved": true,
+      "remaining": "不再是对象匹配问题。"
+    },
+    {
+      "closed": true,
+      "gate": "TenPercentBoundaryMarginClosed",
+      "meaning": "P=100000 处 10% 模型主项为 489.625600...，超过目标 401，余量约 88.625600。",
+      "proved": true,
+      "remaining": "需要实际筛余达到 10% 主项的尾段输入。"
+    },
+    {
+      "closed": true,
+      "gate": "TailMainMonotoneAfterBoundary",
+      "meaning": "P/log P 型模型主量在尾段单调增长，floor z 仍保持 s>2。",
+      "proved": true,
+      "remaining": "floor/离散素和误差仍属于 B3/TV 输入。"
+    },
+    {
+      "closed": true,
+      "gate": "ContinuousBetaSurplusClosed",
+      "meaning": "连续 beta-sieve 主系数在 alpha=0.43 的 2<s<3 区间已闭合。",
+      "proved": true,
+      "remaining": "B3DiscretePrimeSumUniformErrorPGe100000"
+    },
+    {
+      "closed": true,
+      "gate": "TenPercentTailSplitLocated",
+      "meaning": "实际 10% 尾段下界已被拆为内部 Rosser floor 余项或外部短区间 rough 下界。",
+      "proved": false,
+      "remaining": "RosserIwaniecWeightedFloorRemainderTenPercentBound OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "closed": true,
+      "gate": "ExternalOrStandardTailLedgerClosed",
+      "meaning": "若接受外部显式 Mertens/Dusart 或标准 Rosser-Iwaniec beta-sieve 输入，尾段账本已可条件关闭。",
+      "proved": false,
+      "remaining": "StandardRosserIwaniecBetaSieveTheoremImportAccepted OR ExternalShortIntervalRoughNumberLowerBoundForAlpha043"
+    },
+    {
+      "closed": true,
+      "gate": "ConditionalAnalyticTailBridgeClosed",
+      "meaning": "在外部/标准尾段输入下，P>=100000 的解析尾段由边界余量和单调性接入 finite boundary。",
+      "proved": false,
+      "remaining": "strict self-contained tail proof still open."
+    },
+    {
+      "closed": false,
+      "gate": "StrictSelfContainedTailStillOpen",
+      "meaning": "严格自足路线仍缺内联 Mertens/PNT/Dusart 倒素数尾段证明，不能把条件桥升级为自足证明。",
+      "proved": false,
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "closed": false,
+      "gate": "B3TVStrictSelfContainedStillOpen",
+      "meaning": "B3 TV 有外部条件闭合，但严格自足版仍未完成。",
+      "proved": false,
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_boundary_prefix_certificate_external_or_standard_closed": true,
+  "finite_boundary_prefix_certificate_strict_self_contained_proved": false,
+  "hardpoint_after_router": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+  "hardpoint_before_router": "AnalyticTailToFiniteBoundaryMonotoneBridge",
+  "next_direct_attack_target": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "B3DiscretePrimeSumUniformErrorPGe100000",
+    "FormalUnitTypeThresholdLedger",
+    "PrefixLabelSupportToRowFreeTypeAntiCollapse",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "parameter_id": "alpha043_pge100000_external_b3_pending_finite_prefix_named_return",
+  "plain_conclusion": "`AnalyticTailToFiniteBoundaryMonotoneBridge` 的边界/单调代数已压实：有限 runner 覆盖 3001<=P<100000，解析尾段从 P>=100000 开始；在 P=100000，10% 模型主项约 489.625600，大于目标 401，且尾段主量单调增长。因此若接受外部/标准 B3 lower-sieve/Mertens-Dusart 输入，finite prefix 证书可条件闭合。严格自足版仍缺内联倒素数/Mertens-Dusart 尾段证明，所以下一最窄点转为 `SelfContainedDusartReciprocalPrimeProofAppendixXGe10372`。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-b3-continuous-beta-sieve-surplus-router.json": "f890f23fc5f9a4820fbe2b1153efc03e071afcc60afaf518b1934132c8f6f66d",
+    "docs/monograph/prime-matrix-linear-lower-sieve-tail-margin-router.json": "de5e6e1f6f2ff1a6bf3bee4b10c45a8380b84d630e24697fec6f8eefee3dd7b5",
+    "docs/monograph/prime-matrix-linear-sieve-tail-remainder-gap-router.json": "e11ab42f2beb3e9fc9b2fe711d5224074bf707323774e7cf47378c5bd74f7250",
+    "docs/monograph/prime-matrix-strict-b3-remainder-total-variation-budget-router.json": "44c09f19992bc439f6ccb7ae0d6ade75364a5e33e49da5cc3c70cc10057afe30",
+    "docs/monograph/prime-matrix-strict-dynamic-skeleton-tail-b3-bridge-router.json": "dad9b5f3f5f1d66df613a270f14e4608e99b511c22efa597075061bfc528f55e",
+    "docs/monograph/prime-matrix-strict-finite-boundary-prefix-range-manifest-router.json": "696415f75ff7d414675a88e76f7e552f33608dccd1340d8a80582df3feed51da",
+    "docs/monograph/prime-matrix-strict-prefix-rough-count-runner-hash-ledger-router.json": "808eea139ea32142308caedda2e02dc057cef6e584fa9600cf351169f6e27ddd",
+    "docs/monograph/prime-matrix-strict-same-parameter-prefix-window-spec-router.json": "d80bb554768007ffae5c7b1823173e7c985d85af69f458046ca8aa84f81fcc0b",
+    "script": "82d8a480c47cc7644816aaac0d49df2ffc6f4b1adfad44126ea84be0d4dd3bb6"
+  },
+  "status": "analytic_tail_monotone_bridge_conditional_closed_strict_self_contained_tail_open",
+  "tail_constants": {
+    "alpha": 0.43,
+    "floor_z_at_tail_start": 141,
+    "linear_sieve_f": 0.43171768922908227,
+    "model_main_at_tail_start": 4896.256003716197,
+    "s_with_floor_z": 2.3264263613505904,
+    "tail_main_monotone_after_e": true,
+    "tail_start": 100000,
+    "target_s": 401,
+    "ten_percent_main_at_tail_start": 489.62560037161967,
+    "ten_percent_surplus_over_401": 88.62560037161967,
+    "z_at_tail_start": 141.25375446227542
+  }
+}
