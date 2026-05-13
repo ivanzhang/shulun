@@ -1,0 +1,121 @@
+{
+  "certificate_type": "prime_matrix_strict_divisor_compatible_tree_packing_attack_router",
+  "status": "divisor_compatible_tree_packing_requires_cold_window_prefix_branching_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "divisor_compatibility_interface_imported": true,
+  "divisor_compatibility_alone_rejected_as_sufficient": true,
+  "cold_window_constraint_needed": true,
+  "prime_power_cascade_case_closed": false,
+  "cold_history_prefix_branching_hot_or_fixed_return_proved": false,
+  "divisor_compatible_cold_history_tree_packing_bound_proved": false,
+  "cold_supply_same_parameter_numeric_envelope_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "DivisorCompatibleColdHistoryTreePackingBound",
+  "hardpoint_after_router": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma AND PrimePowerCascadeColdWindowExclusionOrCapacityTable AND TerminalColdWindowCompatibilityAntiCascadeLemma",
+  "next_direct_attack_target": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma",
+  "parallel_attack_targets": [
+    "PrimePowerCascadeColdWindowExclusionOrCapacityTable",
+    "TerminalColdWindowCompatibilityAntiCascadeLemma",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "DenseLCMOrLowMultiplierCommonKernelReturn",
+    "ColdCoreThresholdFunctionNumericTable",
+    "SameParameterPDECThresholdNumericTable",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "obstruction_rows": [
+    {
+      "model": "all powers of 2 as grouped factors",
+      "history_count_lower_shape": "2^(a-1) for h_0=2^a",
+      "p_exponent_if_2a_about_p": 1.0,
+      "demand_exponent_alpha": 0.43,
+      "beats_alpha_043": true,
+      "meaning": "若冷条件不进一步剪枝，仅靠 D(W)|h_0 无法阻止有序分组爆炸。"
+    },
+    {
+      "model": "factors restricted to 2 and 4",
+      "history_count_lower_shape": "Fibonacci(a)",
+      "p_exponent_if_2a_about_p": 0.6942419136306174,
+      "demand_exponent_alpha": 0.43,
+      "beats_alpha_043": true,
+      "meaning": "即使只允许两种小乘子，增长阶约 P^0.694，也大于需求阶 P^0.43。"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "TreePackingTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把有效剪枝压成除数兼容冷历史树打包界。",
+      "remaining": "DivisorCompatibleColdHistoryTreePackingBound"
+    },
+    {
+      "gate": "DivisorCompatibilityInterfaceImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "D(W)|h_0 与 H_W=h_0/D(W) 的接口已闭合。",
+      "remaining": "DivisorCompatibleColdHistoryTreePackingBound"
+    },
+    {
+      "gate": "DivisorCompatibilityAloneRejected",
+      "closed": true,
+      "proved": true,
+      "meaning": "素数幂频率模型显示仅靠 D(W)|h_0 仍可产生过大的有序历史树。",
+      "remaining": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma"
+    },
+    {
+      "gate": "ColdWindowConstraintMustBeUsed",
+      "closed": true,
+      "proved": false,
+      "meaning": "必须利用冷窗口 N_{H_W}(I_W)<=C_core(W)；否则无法剪掉素数幂级联。",
+      "remaining": "TerminalColdWindowCompatibilityAntiCascadeLemma"
+    },
+    {
+      "gate": "PrefixBranchingReturnRoutesRegistered",
+      "closed": true,
+      "proved": false,
+      "meaning": "过多同前缀分叉若不是冷兼容，必须回流热核心、固定历史或 LCM 共同核。",
+      "remaining": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma"
+    },
+    {
+      "gate": "PrimePowerCascadeCaseClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未排斥最危险的小乘子/素数幂级联冷窗口。",
+      "remaining": "PrimePowerCascadeColdWindowExclusionOrCapacityTable"
+    },
+    {
+      "gate": "DivisorCompatibleColdHistoryTreePackingBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "树打包界必须同时使用冷窗口反级联和前缀分叉回流；当前未证明。",
+      "remaining": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma AND PrimePowerCascadeColdWindowExclusionOrCapacityTable AND TerminalColdWindowCompatibilityAntiCascadeLemma"
+    },
+    {
+      "gate": "ColdSupplyNumericEnvelopeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "树打包界之外，仍需 C_core 与 T_PDEC 同参数数值表。",
+      "remaining": "DivisorCompatibleColdHistoryTreePackingBound AND ColdCoreThresholdFunctionNumericTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_divisor_compatible_tree_packing_attack_router.py": "42f5ca4c0b5ed9ea4cf89aa0f1cad7609ab947b7ffb2c75a26f034c34e931f06",
+    "docs/monograph/prime-matrix-strict-effective-cold-history-pruning-router.json": "72d7aeeb5a09864efcb9cd729d4d5331b1adfb780ec33b3a1ae29dfe6e67431b",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.json": "2604e2de93bc17bbe7678dddccf958b8a747714286d2c1ab8d5734246be78733",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.json": "b91aa168a84ba29a3c9e6bfb51ad0968b75d625a8864ad9e1d8033574f2ea21e"
+  },
+  "plain_conclusion": "`DivisorCompatibleColdHistoryTreePackingBound` 不能只靠 `D(W)|h_0` 闭合。素数幂频率给出结构性阻塞：若 `h_0=2^a`，有序乘积分组本身就可产生约 `2^(a-1)` 条形式历史；即使把因子限制为 2 和 4，数量也按 Fibonacci(a) 增长，约为 `P^0.694`，仍大于 `alpha=0.43` 的需求阶。因此树打包界必须使用冷窗口约束和前缀分叉回流：过多分叉必须触发热核心、固定历史或 LCM 共同核。"
+}
