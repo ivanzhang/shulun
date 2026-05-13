@@ -1,0 +1,160 @@
+{
+  "actual_product_divisor_domain_h0_emitter_for_formal_unit_proved": false,
+  "canonical_h0_from_early_zero_row_factorization_identity_proved": false,
+  "carrier_lcm_valuation_criterion_closed": true,
+  "carrier_lcm_valuation_overflow_named_return_ledger_closed": false,
+  "certificate_type": "prime_matrix_strict_cold_prefix_divides_carrier_lcm_router",
+  "cold_prefix_product_divides_carrier_lcm_h0_ledger_proved": false,
+  "cold_prefix_step_quotient_origin_map_to_carrier_rows_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_table": [
+    {
+      "closed": true,
+      "gate": "ColdPrefixDivisibilityTargetImported",
+      "meaning": "\u4e0a\u4e00\u5c42\u5df2\u628a\u6700\u7a84\u70b9\u538b\u6210 cold prefix \u4ea7\u54c1\u662f\u5426\u9664 carrier-lcm h0\u3002",
+      "proved": true,
+      "remaining": "ColdPrefixProductDividesCarrierLCMH0Ledger"
+    },
+    {
+      "closed": true,
+      "gate": "CarrierLCMValuationCriterionClosed",
+      "meaning": "D(U)|h0^car \u7b49\u4ef7\u4e8e\u9010\u7d20\u6570 valuation \u9884\u7b97\u4e0d\u8d85\u8f7d\u3002",
+      "proved": true,
+      "remaining": "criterion closed"
+    },
+    {
+      "closed": false,
+      "gate": "ColdPrefixStepQuotientOriginMapToCarrierRowsProved",
+      "meaning": "\u5c1a\u672a\u4e3a\u6bcf\u4e2a prefix step g \u767b\u8bb0\u5176\u6765\u81ea\u54ea\u4e9b carrier quotient rows\u3002",
+      "proved": false,
+      "remaining": "ColdPrefixStepQuotientOriginMapToCarrierRows"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturnProved",
+      "meaning": "\u5c1a\u672a\u8bc1\u660e\u6240\u6709 cold prefix \u6ee1\u8db3 valuation \u9884\u7b97\uff0c\u6216\u8d85\u8f7d\u5fc5\u56de\u6d41\u3002",
+      "proved": false,
+      "remaining": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn"
+    },
+    {
+      "closed": false,
+      "gate": "CarrierLCMValuationOverflowNamedReturnLedgerClosed",
+      "meaning": "\u6307\u6570\u8d85\u8f7d\u540e\u7684\u5171\u540c\u6838/\u56fa\u5b9a\u5386\u53f2/PDEC/SAE/ColumnCRT \u56de\u6d41\u5305\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "CarrierLCMValuationOverflowNamedReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ColdPrefixProductDividesCarrierLCMH0LedgerProved",
+      "meaning": "\u6574\u9664\u5224\u636e\u5df2\u95ed\u5408\uff0c\u4f46 step origin\u3001valuation \u9884\u7b97\u548c\u6ea2\u51fa\u56de\u6d41\u672a\u8bc1\u3002",
+      "proved": false,
+      "remaining": "ColdPrefixStepQuotientOriginMapToCarrierRows AND PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn AND CarrierLCMValuationOverflowNamedReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PrefixResidualFrequencyEqualsCarrierLCMQuotientProved",
+      "meaning": "\u6574\u9664\u672a\u8bc1\uff0c\u56e0\u6b64\u4e0d\u80fd\u58f0\u660e H_U=h0^car/D(U) \u662f\u5b9e\u9645\u6574\u6570\u6b8b\u9891\u3002",
+      "proved": false,
+      "remaining": "PrefixResidualFrequencyEqualsCarrierLCMQuotient"
+    },
+    {
+      "closed": false,
+      "gate": "H0CarrierQuotientCompatibilityWithColdPrefixesProved",
+      "meaning": "cold prefix \u6574\u9664\u672a\u8bc1\uff0ch0 \u5546\u517c\u5bb9\u4ecd\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "H0CarrierQuotientCompatibilityWithColdPrefixes"
+    },
+    {
+      "closed": false,
+      "gate": "CanonicalH0FromEarlyZeroRowFactorizationIdentityProved",
+      "meaning": "h0 \u5546\u517c\u5bb9\u672a\u95ed\u5408\uff0c\u89c4\u8303 h0 \u6052\u7b49\u5f0f\u4ecd\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "CanonicalH0FromEarlyZeroRowFactorizationIdentity"
+    },
+    {
+      "closed": false,
+      "gate": "ActualProductDivisorDomainH0EmitterForFormalUnitProved",
+      "meaning": "\u89c4\u8303 h0 \u6052\u7b49\u5f0f\u672a\u95ed\u5408\uff0ch0 \u53d1\u5c04\u5668\u4ecd\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "ActualProductDivisorDomainH0EmitterForFormalUnit"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "\u4ecd\u672a\u5f97\u5230\u6392\u9664\u65e9\u671f\u96f6\u884c\u53cd\u4f8b\u94fe\u7684\u7ec8\u7aef\u77db\u76fe\u3002",
+      "proved": false,
+      "remaining": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "h0_carrier_quotient_compatibility_with_cold_prefixes_proved": false,
+  "hardpoint_after_router": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn AND CarrierLCMValuationOverflowNamedReturnLedger",
+  "hardpoint_before_router": "ColdPrefixProductDividesCarrierLCMH0Ledger",
+  "imported_flags": {
+    "carrier_lcm_formula_imported": true,
+    "common_kernel_return_imported": true,
+    "divisibility_target_imported": true,
+    "prefix_product_interface_imported": true,
+    "product_fiber_support_imported": true
+  },
+  "next_direct_attack_target": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn",
+  "no_theorem_switch": true,
+  "obstruction_rows": [
+    {
+      "meaning": "\u6bcf\u4e2a prefix step g \u5fc5\u987b\u6307\u5411 carrier rows\uff1b\u5426\u5219\u65e0\u6cd5\u6bd4\u8f83\u5176 p-adic \u7528\u91cf\u3002",
+      "next": "ColdPrefixStepQuotientOriginMapToCarrierRows",
+      "obstruction": "step_origin_not_registered"
+    },
+    {
+      "meaning": "\u5373\u4f7f\u6bcf\u4e2a g \u5355\u72ec\u9664\u67d0\u4e2a m_c\uff0c\u591a\u4e2a\u6b65\u9aa4\u7684\u540c\u7d20\u6570\u6307\u6570\u548c\u4ecd\u53ef\u80fd\u8d85\u8fc7 lcm \u6700\u5927\u6307\u6570\u3002",
+      "next": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn",
+      "obstruction": "repeated_prime_power_overflow"
+    },
+    {
+      "meaning": "\u82e5\u6307\u6570\u8d85\u9884\u7b97\uff0c\u5fc5\u987b\u767b\u8bb0\u5171\u540c\u6838\u3001\u56fa\u5b9a\u5386\u53f2\u3001PDEC/SAE \u6216 ColumnCRT \u56de\u6d41\u3002",
+      "next": "CarrierLCMValuationOverflowNamedReturnLedger",
+      "obstruction": "overflow_return_not_closed"
+    }
+  ],
+  "parallel_attack_targets": [
+    "ColdPrefixStepQuotientOriginMapToCarrierRows",
+    "CarrierLCMValuationOverflowNamedReturnLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`ColdPrefixProductDividesCarrierLCMH0Ledger` \u5df2\u538b\u5230\u7cbe\u786e valuation \u5224\u636e\uff1a`D(U)|h0^car` \u5f53\u4e14\u4ec5\u5f53\u6bcf\u4e2a\u7d20\u6570 p \u4e0a\uff0cprefix steps \u7684\u7d2f\u8ba1\u6307\u6570 `sum_g v_p(g)` \u4e0d\u8d85\u8fc7\u8f7d\u4f53\u5546\u4e2d\u7684\u6700\u5927\u6307\u6570 `max_c v_p(m_c)`\u3002\u8fd9\u5173\u95ed\u4e86\u6574\u9664\u5224\u5b9a\u7684\u4ee3\u6570\u90e8\u5206\uff0c\u4f46\u6ca1\u6709\u8bc1\u660e\u6240\u6709 cold prefix \u6ee1\u8db3\u8be5\u9884\u7b97\uff1b\u82e5\u8d85\u8f7d\uff0c\u5fc5\u987b\u8fdb\u5165\u5171\u540c\u6838/\u56fa\u5b9a\u5386\u53f2/PDEC/SAE/ColumnCRT \u56de\u6d41\u3002\u6700\u65b0\u6700\u7a84\u70b9\u4e3a `PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn`\u3002",
+  "prefix_residual_frequency_equals_carrier_lcm_quotient_proved": false,
+  "prefix_valuation_budget_against_carrier_lcm_or_overflow_return_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-history-prefix-branching-attack-router.json": "ec7b96227c0b8752620609589fb1367d7483f2c46db66c705a13e68523002e86",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-strict-h0-carrier-quotient-compat-router.json": "26b2488927106156a4b3faae60929abb7fd184e8cc8dba5644df7c62f7b9892a",
+    "docs/monograph/prime-matrix-strict-product-fiber-multiplicity-router.json": "207253ea5e911247addc82f0e59edfdf1d034a6591d762a9928b493792500d4a",
+    "experiments/prime_matrix_strict_cold_prefix_divides_carrier_lcm_router.py": "c03755e351db898ba054ef2af3b02a21777974f588dc80733c55bed852faab15"
+  },
+  "status": "carrier_lcm_divisibility_criterion_closed_prefix_valuation_budget_open",
+  "valuation_criterion_rows": [
+    {
+      "formula": "v_p(h0^car)=max_c v_p(m_c)",
+      "name": "carrier_lcm_valuation",
+      "status": "closed"
+    },
+    {
+      "formula": "v_p(D(U))=sum_{step g in U} v_p(g)",
+      "name": "prefix_product_valuation",
+      "status": "closed"
+    },
+    {
+      "formula": "D(U)|h0^car iff for all p, sum_g v_p(g)<=max_c v_p(m_c)",
+      "name": "divisibility_criterion",
+      "status": "closed"
+    },
+    {
+      "formula": "if inequality fails for some p, U cannot stay in carrier-lcm primitive branch",
+      "name": "overflow_interpretation",
+      "status": "closed_as_return_condition"
+    }
+  ]
+}
