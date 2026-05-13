@@ -1,0 +1,191 @@
+{
+  "actual_cold_product_block_parameter_ledger_present": false,
+  "actual_product_divisor_domain_h0_emitter_for_formal_unit_proved": false,
+  "boundary_rows": [
+    {
+      "boundary": "carrier_not_h0",
+      "meaning": "C(w) \u662f\u9010\u5217 q_c,m_c \u8868\uff0c\u4e0d\u662f\u5355\u4e00\u4ea7\u54c1\u9664\u6570\u57df h0\u3002",
+      "remaining": "H0CarrierQuotientCompatibilityWithColdPrefixes"
+    },
+    {
+      "boundary": "least_factor_not_cold_product",
+      "meaning": "q_c \u662f\u8986\u76d6\u7d20\u6807\u7b7e\uff1bcold \u4ea7\u54c1 d \u53ef\u80fd\u662f\u591a\u6b65\u524d\u7f00\u4e58\u5b50\uff0c\u9700\u8bc1\u660e d|F(C(w))\u3002",
+      "remaining": "H0CarrierQuotientCompatibilityWithColdPrefixes"
+    },
+    {
+      "boundary": "no_posthoc_h0",
+      "meaning": "\u4e0d\u80fd\u628a\u6240\u6709\u4e0b\u6e38\u5931\u8d25 d \u518d\u5e76\u5165 h0\uff1b\u5931\u8d25\u5fc5\u987b\u56de\u6d41\u3002",
+      "remaining": "H0NoPostHocEnvelopeDiscipline"
+    }
+  ],
+  "canonical_h0_from_early_zero_row_factorization_identity_proved": false,
+  "carrier_schema_rows": [
+    {
+      "definition": "H(P,row_index,r/source_tuple_hash)",
+      "field": "witness_id",
+      "status": "closed_schema"
+    },
+    {
+      "definition": "1<=c<P within the assumed early zero row",
+      "field": "column",
+      "status": "closed_schema"
+    },
+    {
+      "definition": "row value, e.g. xP+c under the fixed row convention",
+      "field": "N_c",
+      "status": "closed_schema"
+    },
+    {
+      "definition": "least prime q<=P dividing N_c",
+      "field": "q_c",
+      "status": "closed_by_early_zero_assumption"
+    },
+    {
+      "definition": "N_c/q_c",
+      "field": "m_c",
+      "status": "closed_by_divisibility"
+    },
+    {
+      "definition": "H(witness_id,column,N_c,q_c,m_c)",
+      "field": "carrier_row_hash",
+      "status": "closed_schema"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_early_zero_factorization_carrier_router",
+  "counterexample_assumption_only": true,
+  "decision_table": [
+    {
+      "closed": true,
+      "gate": "CarrierTargetImported",
+      "meaning": "\u4e0a\u4e00\u5c42\u5df2\u628a h0 \u6e90\u6052\u7b49\u5f0f\u9996\u7f3a\u53e3\u538b\u6210\u65e9\u671f\u96f6\u884c\u56e0\u5f0f\u5206\u89e3\u8f7d\u4f53\u8d26\u672c\u3002",
+      "proved": true,
+      "remaining": "EarlyZeroRowFactorizationCarrierLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroAssumptionGivesPerColumnSmallPrime",
+      "meaning": "\u5728\u5047\u8bbe\u53cd\u4f8b\u94fe\u5185\uff0c\u6bcf\u5217 N_c \u90fd\u6709 P \u4ee5\u5185\u7d20\u56e0\u5b50\u3002",
+      "proved": true,
+      "remaining": "counterexample assumption"
+    },
+    {
+      "closed": true,
+      "gate": "LeastSmallPrimeSelectorCanonical",
+      "meaning": "\u9009\u62e9\u6700\u5c0f q_c \u6d88\u9664\u591a\u8986\u76d6\u7d20\u56e0\u5b50\u6b67\u4e49\u3002",
+      "proved": true,
+      "remaining": "selector closed"
+    },
+    {
+      "closed": true,
+      "gate": "CarrierRowHashSchemaClosed",
+      "meaning": "carrier row \u7ee7\u627f formal unit/source tuple hash\u3002",
+      "proved": true,
+      "remaining": "hash closed"
+    },
+    {
+      "closed": true,
+      "gate": "EarlyZeroRowFactorizationCarrierLedgerPresent",
+      "meaning": "\u9010\u5217 (N_c,q_c,m_c) \u8f7d\u4f53\u8d26\u672c\u53ef\u7531\u5047\u8bbe\u65e9\u671f\u96f6\u884c witness \u89c4\u8303\u751f\u6210\u3002",
+      "proved": true,
+      "remaining": "EarlyZeroRowFactorizationCarrierLedger"
+    },
+    {
+      "closed": false,
+      "gate": "H0CarrierQuotientCompatibilityWithColdPrefixesProved",
+      "meaning": "\u5c1a\u672a\u8bc1\u660e\u8be5\u8f7d\u4f53\u4ea7\u751f\u7684\u5355\u4e00 h0 \u4e0e\u6240\u6709 cold prefix \u5546\u5316\u517c\u5bb9\u3002",
+      "proved": false,
+      "remaining": "H0CarrierQuotientCompatibilityWithColdPrefixes"
+    },
+    {
+      "closed": false,
+      "gate": "H0NoPostHocEnvelopeDisciplineClosed",
+      "meaning": "\u5c1a\u672a\u8bc1\u660e\u540e\u9a8c\u6269\u5927 h0 \u7684\u6240\u6709\u60c5\u5f62\u90fd\u56de\u6d41\u3002",
+      "proved": false,
+      "remaining": "H0NoPostHocEnvelopeDiscipline"
+    },
+    {
+      "closed": false,
+      "gate": "CanonicalH0FromEarlyZeroRowFactorizationIdentityProved",
+      "meaning": "\u8f7d\u4f53\u8d26\u672c\u95ed\u5408\uff0c\u4f46 h0 \u516c\u5f0f\u3001\u5546\u517c\u5bb9\u548c\u65e0\u540e\u9a8c\u9009\u62e9\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "CanonicalH0FromEarlyZeroRowFactorizationIdentity"
+    },
+    {
+      "closed": false,
+      "gate": "ActualProductDivisorDomainH0EmitterForFormalUnitProved",
+      "meaning": "\u89c4\u8303 h0 \u6052\u7b49\u5f0f\u672a\u95ed\u5408\uff0ch0 \u53d1\u5c04\u5668\u4ecd\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "ActualProductDivisorDomainH0EmitterForFormalUnit"
+    },
+    {
+      "closed": false,
+      "gate": "ActualColdProductBlockParameterLedgerPresent",
+      "meaning": "h0 \u53d1\u5c04\u5668\u672a\u95ed\u5408\uff0c\u5b9e\u9645\u4ea7\u54c1\u5757\u53c2\u6570\u8d26\u672c\u4ecd\u4e0d\u5b58\u5728\u3002",
+      "proved": false,
+      "remaining": "ActualColdProductBlockParameterLedgerForP018Table"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "\u4ecd\u672a\u5f97\u5230\u53cd\u4f8b\u94fe\u4e0e\u771f\u5b9e\u7ed3\u6784\u94fe\u7684\u7ec8\u7aef\u77db\u76fe\u3002",
+      "proved": false,
+      "remaining": "H0CarrierQuotientCompatibilityWithColdPrefixes AND H0NoPostHocEnvelopeDiscipline AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "early_zero_row_factorization_carrier_ledger_present": true,
+  "empirical_absence_not_used": true,
+  "h0_carrier_quotient_compatibility_with_cold_prefixes_proved": false,
+  "h0_no_posthoc_envelope_discipline_closed": false,
+  "hardpoint_after_router": "H0CarrierQuotientCompatibilityWithColdPrefixes AND H0NoPostHocEnvelopeDiscipline",
+  "hardpoint_before_router": "EarlyZeroRowFactorizationCarrierLedger",
+  "imported_flags": {
+    "carrier_target_imported": true,
+    "formal_unit_witness_extractor_imported": true,
+    "hash_stability_imported": true
+  },
+  "next_direct_attack_target": "H0CarrierQuotientCompatibilityWithColdPrefixes",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "H0NoPostHocEnvelopeDiscipline",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`EarlyZeroRowFactorizationCarrierLedger` \u53ef\u4ee5\u5728\u5047\u8bbe\u53cd\u4f8b\u94fe\u5185\u95ed\u5408\uff1a\u65e9\u671f\u96f6\u884c\u4fdd\u8bc1\u6bcf\u5217 `N_c` \u6709\u67d0\u4e2a `q<=P` \u7d20\u56e0\u5b50\uff0c\u53d6\u6700\u5c0f\u8fd9\u6837\u7684 `q_c`\uff0c\u5e76\u5b9a\u4e49 `m_c=N_c/q_c`\uff0c\u5373\u53ef\u5f97\u5230\u540c formal unit\u3001\u65e0\u9009\u62e9\u7684\u9010\u5217\u56e0\u5f0f/\u5546\u8f7d\u4f53\u3002\u4f46\u8fd9\u4e2a\u8f7d\u4f53\u8fd8\u4e0d\u662f\u5355\u4e00 `h0`\uff1b\u4ecd\u9700\u8bc1\u660e carrier \u4ea7\u751f\u7684 `h0` \u4e0e\u6240\u6709 cold prefix \u7684 `H_U=h0/D(U)` \u5546\u5316\u517c\u5bb9\uff0c\u5e76\u6392\u9664\u540e\u9a8c\u6269\u5927 `h0`\u3002",
+  "proof_rows": [
+    {
+      "argument": "\u65e9\u671f\u96f6\u884c\u5047\u8bbe\u8bf4\u660e\u6bcf\u4e2a\u5217\u503c N_c \u90fd\u88ab\u67d0\u4e2a P \u4ee5\u5185\u7d20\u6570\u8986\u76d6\u3002",
+      "status": "closed_under_counterexample_assumption",
+      "step": "existence"
+    },
+    {
+      "argument": "\u53d6\u6ee1\u8db3 q|N_c \u4e14 q<=P \u7684\u6700\u5c0f\u7d20\u6570\uff0c\u6d88\u9664\u591a\u56e0\u5b50\u9009\u62e9\u6b67\u4e49\u3002",
+      "status": "closed",
+      "step": "canonical_selector"
+    },
+    {
+      "argument": "\u5b9a\u4e49 m_c=N_c/q_c\uff1b\u8fd9\u662f\u6574\u6570\u4e14\u7531\u540c\u4e00\u5217\u552f\u4e00\u786e\u5b9a\u3002",
+      "status": "closed",
+      "step": "quotient_row"
+    },
+    {
+      "argument": "carrier_row_hash \u7ee7\u627f source_tuple_hash/formal_unit hash\uff0c\u4e0d\u540e\u9a8c\u8bfb\u53d6 Rankin \u6216 cold \u4ea7\u54c1\u5757\u3002",
+      "status": "closed",
+      "step": "hash_stability"
+    },
+    {
+      "argument": "\u8f7d\u4f53 C(w) \u662f\u9010\u5217\u56e0\u5f0f/\u5546\u8868\uff1b\u5355\u4e00 h0=F(C(w)) \u4ecd\u9700\u989d\u5916\u516c\u5f0f\u3002",
+      "status": "open_next",
+      "step": "h0_not_yet_defined"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-strict-canonical-h0-factorization-identity-router.json": "8e717bb4bf1923093e3ab8485360bcaeb8265a6367f24842e410127bdcbc1e85",
+    "docs/monograph/prime-matrix-strict-cold-history-prefix-branching-attack-router.json": "ec7b96227c0b8752620609589fb1367d7483f2c46db66c705a13e68523002e86",
+    "experiments/prime_matrix_strict_early_zero_factorization_carrier_router.py": "bd5b287a6264625e5bb729e557162a12bc182d28e3037d67b3010ffb1c7a1dff"
+  },
+  "status": "early_zero_factorization_carrier_closed_h0_quotient_compat_open"
+}
