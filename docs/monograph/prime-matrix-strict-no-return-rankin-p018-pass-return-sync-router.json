@@ -1,0 +1,130 @@
+{
+  "certificate_type": "prime_matrix_strict_no_return_rankin_p018_pass_return_sync_router",
+  "status": "no_return_rankin_p018_pass_return_schema_closed_sigma_failure_return_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "no_return_enumerator_imported": true,
+  "rankin_target_imported": true,
+  "p018_schema_closed": true,
+  "rankin_formula_closed": true,
+  "primitive_projection_closed": true,
+  "return_branch_frontier_closed": true,
+  "sample_table_executable": true,
+  "diagnostic_sample_all_rows_pass": false,
+  "diagnostic_fail_rows_present": true,
+  "no_return_rankin_p018_pass_or_return_schema_closed": true,
+  "all_no_return_rankin_rows_pass_proved": false,
+  "per_block_rankin_sigma_selection_table_proved": false,
+  "primitive_product_rankin_failure_return_packet_ledger_closed": false,
+  "primitive_product_rankin_p018_inequality_table_present": false,
+  "carrier_lcm_compatibility_return_branch_exclusion_or_absorption_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "PrimitiveProductRankinP018InequalityTable",
+  "hardpoint_after_router": "PerBlockRankinSigmaSelectionTable AND PrimitiveProductRankinFailureReturnPacketLedger AND CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+  "next_direct_attack_target": "PrimitiveProductRankinFailureReturnPacketLedger",
+  "parallel_attack_targets": [
+    "PerBlockRankinSigmaSelectionTable",
+    "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "pass_return_rows": [
+    {
+      "row_type": "rankin_pass",
+      "condition": "there exists an admitted sigma with rankin_bound(P,h0,Y,kernel,sigma)<=P^0.18 budget",
+      "effect": "block support is charged to primitive Rankin budget"
+    },
+    {
+      "row_type": "rankin_return",
+      "condition": "all admitted sigma choices fail the P^0.18 budget, or kernel/profile is not primitive-clean",
+      "effect": "block must carry a return_packet"
+    },
+    {
+      "row_type": "sigma_missing",
+      "condition": "block has h0/Y but no sigma selection or finite sigma grid certificate",
+      "effect": "route to PerBlockRankinSigmaSelectionTable"
+    },
+    {
+      "row_type": "return_packet_missing",
+      "condition": "rankin_bound exceeds budget and return_packet is absent",
+      "effect": "route to PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "row_type": "global_return",
+      "condition": "source-defect or valuation-overflow branch",
+      "effect": "route to CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_no_return_rankin_p018_pass_return_sync_router.py": "87dd44a1a76ccfa8e857f46283fcec3af9c492ac8b0c05fed227c03993806be8",
+    "docs/monograph/prime-matrix-strict-no-return-actual-dyadic-block-enumerator-router.json": "3e4a65761bb62c0fff3f6614aedffd25ae31dda55b75295520a2eae1e3ce29ad",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-p018-table-router.json": "01ac5c80037d76d59f0d127041d9105c694a553da6cb5f6466928b73c67985f6",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-weight-comparison-router.json": "2b1fa788ac82421045fe246cf635e7c945c68d6dee6b67a5e418c134120e940f",
+    "docs/monograph/prime-matrix-strict-primitive-product-projection-rule-router.json": "4c85ccfac092bb1ef772079cbf6adaa4c1f64f7b485b8d3ed2a71e2ea67422f9",
+    "docs/monograph/prime-matrix-strict-carrier-lcm-return-branch-frontier-router.json": "a2d4e9a4d5d5f8d377571fc39d9c94e1ddb97d2afae30ef9e4c9e18296677307",
+    "data/primitive-product-rankin-p018-sample-table.json": "6ee83fd827a289762f17da0e458cc1fb7fcfbe64b862d7b1fef635133f06e551"
+  },
+  "plain_conclusion": "no-return dyadic 块枚举器关闭后，`PrimitiveProductRankinP018InequalityTable` 的缺口不再是 h0/Y 字段来源，而是逐块 pass-or-return：每个枚举块必须给出 sigma 使 Rankin bound 不超过 P^0.18，否则必须附热窗口、共同核、PDEC/SAE、固定历史或 carrier-lcm return 的命名回流包。诊断样表已有失败行，因此不能只靠公式层宣称全部通过。本步关闭 pass/return schema，但不关闭 sigma 选择表、失败回流包或全局行/列命题。",
+  "decision_rows": [
+    {
+      "gate": "NoReturnEnumeratorImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "no-return 分支已有 h0^car 和唯一 dyadic 产品块枚举规则。",
+      "remaining": "ActualDyadicColdProductBlockEnumeratorForH0"
+    },
+    {
+      "gate": "RankinFormulaAndProjectionImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "候选 d 的 primitive projection 与局部 Rankin/Euler 权重公式可用。",
+      "remaining": "PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "gate": "P018PassReturnSchemaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个 no-return 枚举块必须二分为 pass 或带 return_packet 的失败行。",
+      "remaining": "NoReturnPrimitiveProductRankinP018PassOrFailureReturnTable"
+    },
+    {
+      "gate": "DiagnosticFailRowsRequireReturn",
+      "closed": true,
+      "proved": true,
+      "meaning": "诊断样表已有失败行，说明失败回流包是必要项。",
+      "remaining": "PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "gate": "AllNoReturnRankinRowsPassProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明所有 no-return 枚举块都存在通过 P^0.18 的 sigma。",
+      "remaining": "PerBlockRankinSigmaSelectionTable"
+    },
+    {
+      "gate": "PrimitiveProductRankinFailureReturnPacketLedgerClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未为所有失败块给出热窗口、共同核、PDEC/SAE 或固定历史回流包。",
+      "remaining": "PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "gate": "PrimitiveProductRankinP018InequalityTablePresent",
+      "closed": false,
+      "proved": false,
+      "meaning": "pass/return schema 已闭合，但缺全体块的 sigma/pass/return 实表。",
+      "remaining": "PerBlockRankinSigmaSelectionTable AND PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到早期零行反例链的最终矛盾。",
+      "remaining": "PrimitiveProductRankinFailureReturnPacketLedger AND CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ]
+}
