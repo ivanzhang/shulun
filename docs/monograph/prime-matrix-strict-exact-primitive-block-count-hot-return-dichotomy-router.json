@@ -1,0 +1,172 @@
+{
+  "certificate_type": "prime_matrix_strict_exact_primitive_block_count_hot_return_dichotomy_router",
+  "clean_exact_overbudget_without_named_return_excluded": true,
+  "clean_primitive_dispersion_rankin_failure_residual_removed": true,
+  "cold_overload_split_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ExactFallbackTargetImported",
+      "meaning": "上一层已把 clean primitive 残项压成精确块计数 fallback。",
+      "proved": true,
+      "remaining": "ExactPrimitiveBlockCountP018FallbackTable"
+    },
+    {
+      "closed": true,
+      "gate": "ExactCountPassOrHotReturnDichotomyClosed",
+      "meaning": "每个 actual 块按 `C_B<=P^0.18` 或 `C_B>P^0.18` 二分；后者就是 hot-density 回流。",
+      "proved": true,
+      "remaining": "pass-or-hot-return"
+    },
+    {
+      "closed": true,
+      "gate": "CleanExactOverbudgetWithoutNamedReturnExcluded",
+      "meaning": "精确计数超预算自身触发 dyadic 热窗口，因此无名 clean exact overbudget 不存在。",
+      "proved": true,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "closed": true,
+      "gate": "DiagnosticExactRowsRemainPass",
+      "meaning": "当前诊断 Rankin 失败行仍全部是 exact_count_pass，没有触发 hot return。",
+      "proved": true,
+      "remaining": "diagnostic only"
+    },
+    {
+      "closed": false,
+      "gate": "TerminalCoreHotDivisorWindowExcluded",
+      "meaning": "hot-density 被命名回流，但热窗口/PDEC/SAE 终端尚未排斥或吸收。",
+      "proved": false,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "closed": false,
+      "gate": "ExactPrimitiveBlockCountReplayTablePresent",
+      "meaning": "本步给出逻辑二分，不提供全体 actual replay 表。",
+      "proved": false,
+      "remaining": "optional replay certificate"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE AND CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "diagnostic_exact_count_rows": [
+    {
+      "Y": 16,
+      "exact_count_diagnostic_only": 3,
+      "h0": 2310,
+      "hot_return_triggered_diagnostic": false,
+      "integer_budget_floor": 7,
+      "p018_budget": 7.943282347242814,
+      "refined_diagnostic_verdict": "exact_count_pass",
+      "sample_row_id": "sample-1"
+    },
+    {
+      "Y": 64,
+      "exact_count_diagnostic_only": 5,
+      "h0": 2310,
+      "hot_return_triggered_diagnostic": false,
+      "integer_budget_floor": 7,
+      "p018_budget": 7.943282347242814,
+      "refined_diagnostic_verdict": "exact_count_pass",
+      "sample_row_id": "sample-2"
+    },
+    {
+      "Y": 64,
+      "exact_count_diagnostic_only": 6,
+      "h0": 4320,
+      "hot_return_triggered_diagnostic": false,
+      "integer_budget_floor": 7,
+      "p018_budget": 7.943282347242814,
+      "refined_diagnostic_verdict": "exact_count_pass",
+      "sample_row_id": "sample-3"
+    }
+  ],
+  "diagnostic_exact_rows_all_pass_not_hot": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_count_dichotomy_rows": [
+    {
+      "case": "exact_count_pass",
+      "condition": "C_B<=P^0.18",
+      "effect": "该块实际支撑在预算内，即使 Rankin 上界失败也不回流。"
+    },
+    {
+      "case": "hot_density_return",
+      "condition": "C_B>P^0.18",
+      "effect": "同一 dyadic 窗口 `(Y,2Y]` 内已有过预算支撑，登记为 TerminalCoreHotDivisorWindowPDECorSAE。"
+    },
+    {
+      "case": "no_clean_overbudget",
+      "condition": "C_B>P^0.18 and no named trigger",
+      "effect": "与 hot_density_return 的定义性触发矛盾；不能成为 clean residual。"
+    },
+    {
+      "case": "payload_missing",
+      "condition": "C_B 未给出也无可复核上界",
+      "effect": "只能作为 replay/table 任务保留，不能宣布实际 pass。"
+    }
+  ],
+  "exact_count_pass_or_hot_return_dichotomy_closed": true,
+  "exact_fallback_target_imported": true,
+  "exact_primitive_block_count_replay_table_present": false,
+  "failure_packet_schema_closed": true,
+  "hardpoint_after_router": "TerminalCoreHotDivisorWindowPDECorSAE",
+  "hardpoint_before_router": "ExactPrimitiveBlockCountP018FallbackTable",
+  "hot_density_certificate_closed": true,
+  "hot_packet_payload_rows": [
+    {
+      "field": "source_tuple_hash",
+      "role": "绑定反例 formal unit。"
+    },
+    {
+      "field": "block_id",
+      "role": "绑定 dyadic 窗口 `(Y,2Y]`。"
+    },
+    {
+      "field": "Y",
+      "role": "给出热窗口左端点。"
+    },
+    {
+      "field": "exact_count_or_cap",
+      "role": "证明 `C_B>P^0.18` 的计数或下界证书。"
+    },
+    {
+      "field": "p018_budget",
+      "role": "同参数预算阈值。"
+    },
+    {
+      "field": "overload_ratio",
+      "role": "`C_B/P^0.18`，作为 hot-density packet 的强度。"
+    }
+  ],
+  "next_direct_attack_target": "TerminalCoreHotDivisorWindowPDECorSAE",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "PerBlockRankinSigmaSelectionTable",
+    "PrimitiveProductRankinFailureReturnPacketLedger",
+    "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`ExactPrimitiveBlockCountP018FallbackTable` 的核心逻辑二分已闭合：actual dyadic 块若精确计数 `C_B<=P^0.18`，则是 exact_count_pass；若 `C_B>P^0.18`，同一 `(Y,2Y]` 窗口已形成热除数窗口，必须登记为 `TerminalCoreHotDivisorWindowPDECorSAE`。因此 clean exact overbudget 不能作为无名残项停留。但 hot-density/PDEC/SAE 终端本身仍未排斥，行/列命题仍未无条件闭合。",
+  "rankin_failure_support_failure_separated": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/primitive-product-rankin-p018-sample-table.json": "6ee83fd827a289762f17da0e458cc1fb7fcfbe64b862d7b1fef635133f06e551",
+    "docs/monograph/prime-matrix-strict-clean-primitive-rankin-failure-exact-count-fallback-router.json": "0d36d83349f2e522b623cb21c0b644a720de17b13a9a8777b017e4be6d8f039d",
+    "docs/monograph/prime-matrix-strict-cold-product-support-sparsification-router.json": "1dc6e98d6eb37c2571d0c3bdff385f66069b8812c6c1a9c8b97860b37cfc6f95",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-failure-return-packet-router.json": "f9732754d5a511c6da9dc3d382bf20ed9866c868a98f43450bfec50b6252cff7",
+    "docs/monograph/prime-matrix-strict-windowed-reciprocal-divisor-density-router.json": "1a367725b5a64d16447823d3bd619ac9955dd634eba4f31ad09326be20ccf57c",
+    "experiments/prime_matrix_strict_exact_primitive_block_count_hot_return_dichotomy_router.py": "9337d9410b89e25d347b49ce0486402ca5756a2c1c164300c21cf154d0335980"
+  },
+  "status": "exact_count_fallback_dichotomy_closed_hot_return_terminal_open",
+  "terminal_core_hot_divisor_window_pdec_or_sae_excluded": false
+}
