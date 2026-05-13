@@ -1,0 +1,226 @@
+{
+  "ledger_type": "no_return_cold_prefix_product_divisibility_sample_ledger",
+  "rule": "if every step is locally carrier-admissible and cumulative valuation does not exceed carrier budget, then D(U)|h0^car",
+  "rows": [
+    {
+      "case": "no_return_token_mixed_divides",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 4
+        },
+        {
+          "column": 2,
+          "m_c": 15
+        }
+      ],
+      "prefix_steps": [
+        2,
+        6
+      ],
+      "classification_result": {
+        "carrier_rows": [
+          {
+            "column": 1,
+            "m_c": 4
+          },
+          {
+            "column": 2,
+            "m_c": 15
+          }
+        ],
+        "h0_carrier_lcm": 60,
+        "prefix_steps": [
+          2,
+          6
+        ],
+        "prefix_product": 12,
+        "carrier_budget": {
+          "2": 2,
+          "3": 1,
+          "5": 1
+        },
+        "prefix_usage": {
+          "2": 2,
+          "3": 1
+        },
+        "source_defects": [],
+        "valuation_overflows": [],
+        "no_return_branch": true,
+        "direct_divisibility_check": true,
+        "classification": "no_return_divides"
+      }
+    },
+    {
+      "case": "source_defect_return",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 3
+        },
+        {
+          "column": 2,
+          "m_c": 5
+        }
+      ],
+      "prefix_steps": [
+        4
+      ],
+      "classification_result": {
+        "carrier_rows": [
+          {
+            "column": 1,
+            "m_c": 3
+          },
+          {
+            "column": 2,
+            "m_c": 5
+          }
+        ],
+        "h0_carrier_lcm": 15,
+        "prefix_steps": [
+          4
+        ],
+        "prefix_product": 4,
+        "carrier_budget": {
+          "3": 1,
+          "5": 1
+        },
+        "prefix_usage": {
+          "2": 2
+        },
+        "source_defects": [
+          {
+            "step_index": 0,
+            "step": 4,
+            "prime": 2,
+            "step_exp": 2,
+            "allowed_exp": 0,
+            "defect": "source_domain_defect"
+          }
+        ],
+        "valuation_overflows": [
+          {
+            "prime": 2,
+            "used_exp": 2,
+            "allowed_exp": 0,
+            "deficit": 2,
+            "defect": "cumulative_valuation_overflow"
+          }
+        ],
+        "no_return_branch": false,
+        "direct_divisibility_check": false,
+        "classification": "return_branch"
+      }
+    },
+    {
+      "case": "cumulative_overflow_return",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 2
+        },
+        {
+          "column": 2,
+          "m_c": 3
+        }
+      ],
+      "prefix_steps": [
+        2,
+        2
+      ],
+      "classification_result": {
+        "carrier_rows": [
+          {
+            "column": 1,
+            "m_c": 2
+          },
+          {
+            "column": 2,
+            "m_c": 3
+          }
+        ],
+        "h0_carrier_lcm": 6,
+        "prefix_steps": [
+          2,
+          2
+        ],
+        "prefix_product": 4,
+        "carrier_budget": {
+          "2": 1,
+          "3": 1
+        },
+        "prefix_usage": {
+          "2": 2
+        },
+        "source_defects": [],
+        "valuation_overflows": [
+          {
+            "prime": 2,
+            "used_exp": 2,
+            "allowed_exp": 1,
+            "deficit": 1,
+            "defect": "cumulative_valuation_overflow"
+          }
+        ],
+        "no_return_branch": false,
+        "direct_divisibility_check": false,
+        "classification": "return_branch"
+      }
+    },
+    {
+      "case": "prime_power_budget_exact",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 8
+        },
+        {
+          "column": 2,
+          "m_c": 9
+        }
+      ],
+      "prefix_steps": [
+        2,
+        4,
+        3
+      ],
+      "classification_result": {
+        "carrier_rows": [
+          {
+            "column": 1,
+            "m_c": 8
+          },
+          {
+            "column": 2,
+            "m_c": 9
+          }
+        ],
+        "h0_carrier_lcm": 72,
+        "prefix_steps": [
+          2,
+          4,
+          3
+        ],
+        "prefix_product": 24,
+        "carrier_budget": {
+          "2": 3,
+          "3": 2
+        },
+        "prefix_usage": {
+          "2": 3,
+          "3": 1
+        },
+        "source_defects": [],
+        "valuation_overflows": [],
+        "no_return_branch": true,
+        "direct_divisibility_check": true,
+        "classification": "no_return_divides"
+      }
+    }
+  ],
+  "all_no_return_rows_divide_h0_car": true,
+  "return_rows_present": true,
+  "source_defect_return_present": true,
+  "valuation_overflow_return_present": true
+}
