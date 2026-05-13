@@ -1,0 +1,148 @@
+{
+  "certificate_type": "prime_matrix_strict_concrete_primitive_product_rankin_data_router",
+  "status": "source_tuple_container_closed_product_block_inventory_projection_rule_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hardpoint_before_router": "ConcretePrimitiveProductRankinEmbeddingDataLedger",
+  "hardpoint_after_router": "ColdProductDyadicBlockInventoryLedger AND PrimitiveProductProjectionRuleExecutableHash",
+  "next_direct_attack_target": "ColdProductDyadicBlockInventoryLedger",
+  "imported_flags": {
+    "manifest_schema_imported": true,
+    "source_tuple_data_closed": true,
+    "formal_unit_source_record_closed": true,
+    "canonical_formal_unit_hash_stability_closed": true
+  },
+  "data_components": [
+    {
+      "component": "source_container",
+      "status": "closed",
+      "meaning": "formal_unit_id/source_tuple_hash/source records 已由既有证书闭合。",
+      "remaining": "none"
+    },
+    {
+      "component": "cold_product_block_inventory",
+      "status": "open",
+      "meaning": "尚未列出每个 source tuple 下的 cold dyadic 产品块与候选 d 集合。",
+      "remaining": "ColdProductDyadicBlockInventoryLedger"
+    },
+    {
+      "component": "primitive_projection_rule",
+      "status": "open",
+      "meaning": "尚未给出从产品 d 到 primitive rank profile 的可执行规则与 hash。",
+      "remaining": "PrimitiveProductProjectionRuleExecutableHash"
+    },
+    {
+      "component": "rankin_row_emitter",
+      "status": "blocked_on_projection",
+      "meaning": "没有产品块清单和投影规则，就不能发射 Rankin 行。",
+      "remaining": "ColdProductDyadicBlockInventoryLedger AND PrimitiveProductProjectionRuleExecutableHash"
+    }
+  ],
+  "product_inventory_schema": [
+    {
+      "field": "source_tuple_hash",
+      "role": "继承 formal unit 与参数账本。"
+    },
+    {
+      "field": "block_id",
+      "role": "稳定编号 dyadic 产品块。"
+    },
+    {
+      "field": "Y_left_Y_right",
+      "role": "记录产品范围 Y<d<=2Y。"
+    },
+    {
+      "field": "cold_key_hash",
+      "role": "锁定 cold/no-return/非持久过滤条件。"
+    },
+    {
+      "field": "candidate_product_rule",
+      "role": "定义哪些 d|h0 进入该块。"
+    },
+    {
+      "field": "candidate_count_or_symbolic_bound",
+      "role": "给出可复算计数或符号上界。"
+    },
+    {
+      "field": "return_filter_hash",
+      "role": "记录被热窗口/共同核/命名回流剔除的部分。"
+    }
+  ],
+  "decision_table": [
+    {
+      "gate": "ConcreteDataTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已把目标 Rankin manifest schema 闭合，下一步需要 concrete embedding data。",
+      "remaining": "ConcretePrimitiveProductRankinEmbeddingDataLedger"
+    },
+    {
+      "gate": "FormalUnitSourceTupleContainerClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "formal_unit_id、source_tuple_hash 与 source records 可稳定继承到产品 Rankin 数据。",
+      "remaining": "FormalUnitSourceTupleContainerForPrimitiveProductRankin"
+    },
+    {
+      "gate": "ColdProductDyadicBlockInventoryPresent",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未生成当前 source tuple 下的 cold 产品 dyadic 块清单。",
+      "remaining": "ColdProductDyadicBlockInventoryLedger"
+    },
+    {
+      "gate": "PrimitiveProductProjectionRuleExecutableHashClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未定义并哈希化 d -> primitive rank profile 的可执行投影规则。",
+      "remaining": "PrimitiveProductProjectionRuleExecutableHash"
+    },
+    {
+      "gate": "ConcretePrimitiveProductRankinEmbeddingDataLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "来源容器已闭合，但产品块 inventory 和 primitive 投影规则未闭合。",
+      "remaining": "ColdProductDyadicBlockInventoryLedger AND PrimitiveProductProjectionRuleExecutableHash"
+    },
+    {
+      "gate": "PrimitiveProductRankinWeightP018ComparisonProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "没有 concrete data 就不能计算或证明权重表。",
+      "remaining": "PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "gate": "PrimitiveProductSupportRankinLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "concrete embedding data 未完成，Rankin 支撑门仍未闭合。",
+      "remaining": "PrimitiveProductSupportRankinLedger"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到早期零行反例链终端矛盾。",
+      "remaining": "ColdProductDyadicBlockInventoryLedger AND PrimitiveProductProjectionRuleExecutableHash AND PrimitiveProductRankinWeightP018Comparison AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "formal_unit_source_tuple_container_closed": true,
+  "cold_product_dyadic_block_inventory_present": false,
+  "primitive_product_projection_rule_executable_hash_closed": false,
+  "concrete_primitive_product_rankin_embedding_data_ledger_proved": false,
+  "primitive_product_rankin_weight_p018_comparison_proved": false,
+  "primitive_product_support_rankin_ledger_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "plain_conclusion": "`ConcretePrimitiveProductRankinEmbeddingDataLedger` 已关闭来源容器部分：formal unit、source tuple 和 canonical hash 都可稳定继承。但当前还没有 cold 产品 dyadic 块清单，也没有可执行的 primitive 投影规则；因此无法发射目标 Rankin 行或比较 `P^0.18` 权重。最新最窄点是 `ColdProductDyadicBlockInventoryLedger`。",
+  "source_hashes": {
+    "experiments/prime_matrix_strict_concrete_primitive_product_rankin_data_router.py": "dfd0b6616736fc53f9b71ec326462d1f638409312b0744ec95be900bc0833bcc",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-manifest-router.json": "394a44df31ee2a99dcdf53921e1c42af5943255233e2a49051affd1da12b3e9b",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6",
+    "docs/monograph/prime-matrix-strict-cold-product-support-sparsification-router.json": "1dc6e98d6eb37c2571d0c3bdff385f66069b8812c6c1a9c8b97860b37cfc6f95"
+  }
+}
