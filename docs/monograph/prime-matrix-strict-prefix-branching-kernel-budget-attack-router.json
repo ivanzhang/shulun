@@ -1,0 +1,214 @@
+{
+  "certificate_type": "prime_matrix_strict_prefix_branching_kernel_budget_attack_router",
+  "status": "kernel_budget_reduced_to_small_prime_power_cascade_and_fanin_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "prefix_branching_kernel_budget_target_imported": true,
+  "prime_power_exponent_screen_closed": true,
+  "dangerous_bases_all_grouped_blocks": [
+    2,
+    3,
+    5
+  ],
+  "dangerous_bases_one_two_blocks": [
+    2,
+    3
+  ],
+  "large_prime_power_tail_subcritical_in_single_prime_model": true,
+  "small_prime_power_cascade_table_proved": false,
+  "prime_power_cascade_cold_window_exclusion_proved": false,
+  "fanin_kernel_capacity_budget_proved": false,
+  "prefix_branching_kernel_multiplicity_budget_proved": false,
+  "cold_history_prefix_branching_hot_or_fixed_return_proved": false,
+  "divisor_compatible_cold_history_tree_packing_bound_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "PrefixBranchingKernelMultiplicityBudgetLedger",
+  "hardpoint_after_router": "SmallPrimePowerCascadeColdWindowExclusionTableForP235 AND MultiSourceKernelFanInSAEOrPDECExclusion AND TerminalColdWindowCompatibilityAntiCascadeLemma",
+  "next_direct_attack_target": "SmallPrimePowerCascadeColdWindowExclusionTableForP235",
+  "parallel_attack_targets": [
+    "MultiSourceKernelFanInSAEOrPDECExclusion",
+    "BoundedQuotientTypeSAEAbsorption",
+    "FixedTypeHistoryPDECExclusion",
+    "PrimePowerCascadeColdWindowExclusionOrCapacityTable",
+    "TerminalColdWindowCompatibilityAntiCascadeLemma",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "prime_power_screen_table": [
+    {
+      "base_prime": 2,
+      "all_grouped_blocks_exponent": 1.0,
+      "all_grouped_blocks_exceeds_alpha": true,
+      "one_two_blocks_exponent": 0.6942419136306174,
+      "one_two_blocks_exceeds_alpha": true,
+      "alpha": 0.43
+    },
+    {
+      "base_prime": 3,
+      "all_grouped_blocks_exponent": 0.6309297535714574,
+      "all_grouped_blocks_exceeds_alpha": true,
+      "one_two_blocks_exponent": 0.4380178794859424,
+      "one_two_blocks_exceeds_alpha": true,
+      "alpha": 0.43
+    },
+    {
+      "base_prime": 5,
+      "all_grouped_blocks_exponent": 0.43067655807339306,
+      "all_grouped_blocks_exceeds_alpha": true,
+      "one_two_blocks_exponent": 0.2989937178327201,
+      "one_two_blocks_exceeds_alpha": false,
+      "alpha": 0.43
+    },
+    {
+      "base_prime": 7,
+      "all_grouped_blocks_exponent": 0.3562071871080222,
+      "all_grouped_blocks_exceeds_alpha": false,
+      "one_two_blocks_exponent": 0.24729395922685268,
+      "one_two_blocks_exceeds_alpha": false,
+      "alpha": 0.43
+    },
+    {
+      "base_prime": 11,
+      "all_grouped_blocks_exponent": 0.2890648263178878,
+      "all_grouped_blocks_exceeds_alpha": false,
+      "one_two_blocks_exponent": 0.2006809181862325,
+      "one_two_blocks_exceeds_alpha": false,
+      "alpha": 0.43
+    },
+    {
+      "base_prime": 13,
+      "all_grouped_blocks_exponent": 0.27023815442731974,
+      "all_grouped_blocks_exceeds_alpha": false,
+      "one_two_blocks_exponent": 0.18761065346562875,
+      "one_two_blocks_exceeds_alpha": false,
+      "alpha": 0.43
+    },
+    {
+      "base_prime": 17,
+      "all_grouped_blocks_exponent": 0.244650542118226,
+      "all_grouped_blocks_exceeds_alpha": false,
+      "one_two_blocks_exponent": 0.16984666053092518,
+      "one_two_blocks_exceeds_alpha": false,
+      "alpha": 0.43
+    },
+    {
+      "base_prime": 19,
+      "all_grouped_blocks_exponent": 0.23540891336663824,
+      "all_grouped_blocks_exceeds_alpha": false,
+      "one_two_blocks_exponent": 0.16343073450135914,
+      "one_two_blocks_exceeds_alpha": false,
+      "alpha": 0.43
+    }
+  ],
+  "rows": [
+    {
+      "gate": "KernelBudgetTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把前缀分叉的定量缺口压成共同核重数预算。",
+      "remaining": "PrefixBranchingKernelMultiplicityBudgetLedger"
+    },
+    {
+      "gate": "PrefixStructuralDichotomyImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "同前缀分叉无第四出口：LCM、共同核、热核心或固定历史。",
+      "remaining": "PrefixBranchingKernelMultiplicityBudgetLedger"
+    },
+    {
+      "gate": "LowKernelPairFanInSplitImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "共同核已拆为大成对差值锁与多源 fan-in，但两者仍需计数/排斥。",
+      "remaining": "MultiSourceKernelFanInSAEOrPDECExclusion AND BoundedQuotientTypeSAEAbsorption"
+    },
+    {
+      "gate": "FiniteQuotientAlphabetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "大成对核给 O(Lambda^2) 有限商型；持久型进入固定历史。",
+      "remaining": "FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "gate": "PrimePowerExponentScreenClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "单素数幂有序分组的指数阈值可显式计算。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235"
+    },
+    {
+      "gate": "AllBlockDangerousBasesReduced",
+      "closed": true,
+      "proved": true,
+      "meaning": "全分组模型中，超过 alpha=0.43 的单素数底数只剩 2、3、5。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235"
+    },
+    {
+      "gate": "OneTwoBlockDangerousBasesReduced",
+      "closed": true,
+      "proved": true,
+      "meaning": "只允许 p 与 p^2 的 Fibonacci 模型中，危险底数只剩 2、3。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235"
+    },
+    {
+      "gate": "LargePrimePowerTailSubcriticalInModel",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 p>=7 的全分组单素数幂模型，指数低于 alpha；它不是最窄阻塞。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235"
+    },
+    {
+      "gate": "PrimePowerCascadeColdWindowExclusionProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未证明 p=2,3,5 的小素数幂级联不能在冷窗口层叠。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235 AND TerminalColdWindowCompatibilityAntiCascadeLemma"
+    },
+    {
+      "gate": "FanInKernelCapacityBudgetProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "多源 fan-in 共同核仍缺 SAE/PDEC 容量预算。",
+      "remaining": "MultiSourceKernelFanInSAEOrPDECExclusion"
+    },
+    {
+      "gate": "PrefixBranchingKernelMultiplicityBudgetProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "指数筛选缩小了危险域，但小素数幂表与 fan-in 预算未闭合。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235 AND MultiSourceKernelFanInSAEOrPDECExclusion"
+    },
+    {
+      "gate": "ColdHistoryPrefixBranchingHotOrFixedReturnProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "共同核预算未闭合，因此前缀分叉引理仍未闭合。",
+      "remaining": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma"
+    },
+    {
+      "gate": "DivisorCompatibleColdHistoryTreePackingBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "前缀分叉与冷窗口反级联未完成，树打包界不能关闭。",
+      "remaining": "DivisorCompatibleColdHistoryTreePackingBound"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235 AND TerminalColdWindowCompatibilityAntiCascadeLemma AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_prefix_branching_kernel_budget_attack_router.py": "14dad8a1b91961bac8d0410c5852ca0bc68ffb2cb66b3b2e1995af8d816349b2",
+    "docs/monograph/prime-matrix-strict-cold-history-prefix-branching-attack-router.json": "ec7b96227c0b8752620609589fb1367d7483f2c46db66c705a13e68523002e86",
+    "docs/monograph/prime-matrix-strict-divisor-compatible-tree-packing-attack-router.json": "dbc983163e64456b63a6be5e99375fabb7ddaf8aa17490fd9fdf42d664c6e129",
+    "docs/monograph/prime-matrix-strict-low-multiplier-common-kernel-router.json": "314a0d156a5301b0a4eaedfe4c782f06b69c02ff5f2bd8d575e7c3c57e2f54a8",
+    "docs/monograph/prime-matrix-strict-large-pair-kernel-difference-router.json": "fc58ab04aae06d90742f61628fa0240994fc110225ce6a1dbce763eb05efe7cc",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.json": "b91aa168a84ba29a3c9e6bfb51ad0968b75d625a8864ad9e1d8033574f2ea21e"
+  },
+  "plain_conclusion": "`PrefixBranchingKernelMultiplicityBudgetLedger` 继续压缩为小素数幂级联表。若只看单素数幂 `p^a` 的全有序分组，形式历史数指数为 `log_p 2`；超过 `alpha=0.43` 的底数只有 `p=2,3,5`。若只允许 `p` 与 `p^2` 两种步长，历史数为 Fibonacci(a)，指数为 `log_p phi`，超过 alpha 的底数只有 `p=2,3`。因此大素数幂尾部不再是最窄阻塞；真正危险集中在 `2/3/5` 小素数幂冷窗口级联，以及多源 fan-in 共同核容量预算。当前仍不能声明共同核预算或行/列命题闭合。"
+}
