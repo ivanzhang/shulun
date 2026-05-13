@@ -1,0 +1,222 @@
+{
+  "certificate_type": "prime_matrix_strict_dyadic_cold_window_cascade_attack_router",
+  "status": "dyadic_cascade_reduced_to_order_canonicalization_or_phase_defect_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "p2_primary_risk_pinned": true,
+  "dyadic_overcount_source_identified": true,
+  "pure_valuation_state_compression_would_suffice": true,
+  "path_dependence_forces_phase_defect_route": true,
+  "dyadic_dichotomy_closed": true,
+  "dyadic_valuation_order_canonicalization_proved": false,
+  "dyadic_path_dependent_phase_defect_pdec_route_proved": false,
+  "dyadic_prime_power_cold_window_cascade_excluded": false,
+  "small_prime_power_cascade_table_proved": false,
+  "prefix_branching_kernel_multiplicity_budget_proved": false,
+  "divisor_compatible_cold_history_tree_packing_bound_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "DyadicPrimePowerColdWindowCascadeExclusionLemma",
+  "hardpoint_after_router": "DyadicValuationOrderCanonicalizationOrPhaseDefectLedger AND TerminalColdWindowCompatibilityAntiCascadeLemma",
+  "next_direct_attack_target": "DyadicValuationOrderCanonicalizationOrPhaseDefectLedger",
+  "parallel_attack_targets": [
+    "DyadicPathDependentColdWindowPhaseDefectPDECRoute",
+    "PureDyadicValuationStateCompressionLedger",
+    "DyadicOddCoreLeakageToOddPrimeEpsilonLedger",
+    "TerminalColdWindowCompatibilityAntiCascadeLemma",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "DivisorCompatibleColdHistoryTreePackingBound",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "dyadic_overcount_rows": [
+    {
+      "a": 8,
+      "ordered_one_two_paths": 34,
+      "valuation_states": 9,
+      "overcount_ratio": 3.7777777777777777,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    },
+    {
+      "a": 16,
+      "ordered_one_two_paths": 1597,
+      "valuation_states": 17,
+      "overcount_ratio": 93.94117647058823,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    },
+    {
+      "a": 24,
+      "ordered_one_two_paths": 75025,
+      "valuation_states": 25,
+      "overcount_ratio": 3001.0,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    },
+    {
+      "a": 32,
+      "ordered_one_two_paths": 3524578,
+      "valuation_states": 33,
+      "overcount_ratio": 106805.39393939394,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    },
+    {
+      "a": 40,
+      "ordered_one_two_paths": 165580141,
+      "valuation_states": 41,
+      "overcount_ratio": 4038540.024390244,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    },
+    {
+      "a": 48,
+      "ordered_one_two_paths": 7778742049,
+      "valuation_states": 49,
+      "overcount_ratio": 158749837.73469388,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    },
+    {
+      "a": 56,
+      "ordered_one_two_paths": 365435296162,
+      "valuation_states": 57,
+      "overcount_ratio": 6411145546.701755,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    },
+    {
+      "a": 64,
+      "ordered_one_two_paths": 17167680177565,
+      "valuation_states": 65,
+      "overcount_ratio": 264118156577.92307,
+      "asymptotic_exponent": 0.6942419136306174,
+      "beats_alpha": true
+    }
+  ],
+  "dyadic_dichotomy_rows": [
+    {
+      "branch": "order_canonical",
+      "condition": "cold admissibility depends only on cumulative v2 and odd core",
+      "consequence": "ordered Fibonacci paths collapse to at most a+1 valuation states",
+      "remaining": "PureDyadicValuationStateCompressionLedger"
+    },
+    {
+      "branch": "path_dependent",
+      "condition": "two orders with same total v2 give different cold windows or labels",
+      "consequence": "the difference is a phase/window defect, hence must route to PDEC/ColumnCRT/hot core",
+      "remaining": "DyadicPathDependentColdWindowPhaseDefectPDECRoute"
+    },
+    {
+      "branch": "odd_leakage",
+      "condition": "dyadic child contains odd leakage or alternates with odd prime blocks",
+      "consequence": "it exits pure dyadic cascade and returns to p=3/5 epsilon ledger or fan-in budget",
+      "remaining": "DyadicOddCoreLeakageToOddPrimeEpsilonLedger"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "DyadicTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层确认 p=2 是唯一强主危险。",
+      "remaining": "DyadicPrimePowerColdWindowCascadeExclusionLemma"
+    },
+    {
+      "gate": "P2PrimaryRiskPinned",
+      "closed": true,
+      "proved": true,
+      "meaning": "一二步 dyadic Fibonacci 模型仍给 P^0.694，明显超过 alpha=0.43。",
+      "remaining": "DyadicPrimePowerColdWindowCascadeExclusionLemma"
+    },
+    {
+      "gate": "DyadicOvercountSourceIdentified",
+      "closed": true,
+      "proved": true,
+      "meaning": "指数爆炸来自有序分割 2^a 的路径数，而不是来自不同 2-adic 终态数。",
+      "remaining": "DyadicValuationOrderCanonicalizationOrPhaseDefectLedger"
+    },
+    {
+      "gate": "PureValuationStateCompressionWouldSuffice",
+      "closed": true,
+      "proved": false,
+      "meaning": "若冷窗口只依赖累计 v2 和奇核，Fibonacci 路径可压成线性 a+1 个状态。",
+      "remaining": "PureDyadicValuationStateCompressionLedger"
+    },
+    {
+      "gate": "PathDependenceForcesPhaseDefect",
+      "closed": true,
+      "proved": false,
+      "meaning": "若不同顺序不可合并，则必存在相位/窗口/标签差异，可进入 PDEC/ColumnCRT/热核心。",
+      "remaining": "DyadicPathDependentColdWindowPhaseDefectPDECRoute"
+    },
+    {
+      "gate": "ColdHotGateImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "dyadic 级联造成过密终端窗口时，必须回流热核心。",
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "gate": "FixedHistoryRouteImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "同一 dyadic 商型持久复现时进入固定历史 PDEC/ColumnCRT。",
+      "remaining": "FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "gate": "DyadicDichotomyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "纯 dyadic 级联只剩规范化折叠或路径相位缺陷两类，奇因子泄漏回到 p=3/5。",
+      "remaining": "DyadicValuationOrderCanonicalizationOrPhaseDefectLedger"
+    },
+    {
+      "gate": "DyadicValuationOrderCanonicalizationProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明真实冷窗口对 dyadic 顺序不敏感，或给出顺序敏感的缺陷路由证书。",
+      "remaining": "DyadicValuationOrderCanonicalizationOrPhaseDefectLedger"
+    },
+    {
+      "gate": "DyadicPrimePowerColdWindowCascadeExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "dyadic 主危险已压到规范化/相位缺陷二选一，但二选一未闭合。",
+      "remaining": "DyadicValuationOrderCanonicalizationOrPhaseDefectLedger AND TerminalColdWindowCompatibilityAntiCascadeLemma"
+    },
+    {
+      "gate": "SmallPrimePowerCascadeTableProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "dyadic 未闭合，故 p=2,3,5 小素数表仍未闭合。",
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235"
+    },
+    {
+      "gate": "PrefixBranchingKernelMultiplicityBudgetProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "小素数幂表未闭合，共同核重数预算仍未闭合。",
+      "remaining": "PrefixBranchingKernelMultiplicityBudgetLedger"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "DyadicValuationOrderCanonicalizationOrPhaseDefectLedger AND TerminalColdWindowCompatibilityAntiCascadeLemma AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_dyadic_cold_window_cascade_attack_router.py": "c677be9c7ec10a7d8a0c207e9c34ddfb0d516deee04177889d8d06f1c81f8b4f",
+    "docs/monograph/prime-matrix-strict-small-prime-power-cascade-attack-router.json": "f15e9de9844e1bdbe6a18639043a667a26c58c7b8118a7d473cbae0dac336cab",
+    "docs/monograph/prime-matrix-strict-prefix-branching-kernel-budget-attack-router.json": "e23de7a05131cc7f1bfd46de5f14e5168fd0c9819cf61bfa2e32804fba127814",
+    "docs/monograph/prime-matrix-strict-cold-history-prefix-branching-attack-router.json": "ec7b96227c0b8752620609589fb1367d7483f2c46db66c705a13e68523002e86",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.json": "2604e2de93bc17bbe7678dddccf958b8a747714286d2c1ab8d5734246be78733"
+  },
+  "plain_conclusion": "`DyadicPrimePowerColdWindowCascadeExclusionLemma` 的主爆炸源已定位：危险的 Fibonacci 数量来自把同一个 `2^a` 预算有序切成 `1/2` 步，而不是来自不同的 2-adic 终态。若冷可容许性只依赖累计 `v2` 和同一奇核，则所有有序路径必须压缩到 `a+1` 个 valuation states，指数爆炸消失；若两个同总 `v2` 的顺序不能合并，它们必在相位、冷窗口或标签上产生可登记差异，进入 PDEC/ColumnCRT/热核心。因此 dyadic 主硬点被压成 `DyadicValuationOrderCanonicalizationOrPhaseDefectLedger`。"
+}
