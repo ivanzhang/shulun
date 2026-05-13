@@ -1,0 +1,196 @@
+{
+  "active_packing_target_imported": true,
+  "active_prefix_level_packing_exponent_table_proved": false,
+  "active_prefix_product_fiber_multiplicity_or_named_return_ledger_proved": false,
+  "alpha": 0.43,
+  "certificate_type": "prime_matrix_strict_active_prefix_level_packing_router",
+  "cold_nonpersistent_product_support_sparsification_lemma_proved": false,
+  "core_history_weighted_support_measure_table_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ActivePackingTargetImported",
+      "meaning": "上一层已把每层冷支撑指数表压成活动前缀层打包。",
+      "proved": true,
+      "remaining": "ActivePrefixLevelPackingExponentTable"
+    },
+    {
+      "closed": true,
+      "gate": "ProductProjectionClosed",
+      "meaning": "每个活动前缀投影到产品除数 D(U)|h_0。",
+      "proved": true,
+      "remaining": "ActivePrefixLevelPackingExponentTable"
+    },
+    {
+      "closed": true,
+      "gate": "PackingIdentityClosed",
+      "meaning": "|A_j|=sum_{d|h_0}|A_j(d)|，必须同时控制除数支撑和产品纤维。",
+      "proved": true,
+      "remaining": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger AND DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "RawDivisorP018BoundRejectedAtBoundary",
+      "meaning": "P=100000 附近 tau(h_0) 可远大于 P^0.18，不能只靠 D(U)|h_0。",
+      "proved": true,
+      "remaining": "DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope OR ColdNonpersistentProductSupportSparsificationLemma"
+    },
+    {
+      "closed": true,
+      "gate": "NoSilentCollapseImportedForFibers",
+      "meaning": "标签塌缩不会让义务消失；同产品多前缀必须进入负载、冷供给或命名回流。",
+      "proved": true,
+      "remaining": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ActivePrefixLevelPackingExponentTableProved",
+      "meaning": "尚未证明产品纤维重数和 cold-filtered 除数支撑满足 P^(0.18-tau) 指数界。",
+      "proved": false,
+      "remaining": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger AND DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope AND ColdNonpersistentProductSupportSparsificationLemma"
+    },
+    {
+      "closed": false,
+      "gate": "SameParameterPerLevelColdSupportExponentTableProved",
+      "meaning": "活动前缀打包、collar 总和和 T_PDEC 权重仍未全部闭合。",
+      "proved": false,
+      "remaining": "ActivePrefixLevelPackingExponentTable AND SameParameterSiblingCollarWidthFiniteSumTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到早期零行反例链的最终矛盾。",
+      "proved": false,
+      "remaining": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger AND DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "divisor_support_p018_finite_boundary_or_analytic_envelope_proved": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger AND DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope AND ColdNonpersistentProductSupportSparsificationLemma",
+  "hardpoint_before_router": "ActivePrefixLevelPackingExponentTable",
+  "log_absorption_epsilon": 0.25,
+  "next_direct_attack_target": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger",
+  "no_silent_collapse_imported_for_fibers": true,
+  "no_theorem_switch": true,
+  "obstruction_rows": [
+    {
+      "P_residual_exponent": 7.943282,
+      "limit": 100000,
+      "max_tau": 128,
+      "max_tau_n": 83160,
+      "ratio": 16.114245,
+      "raw_divisor_bound_passes": false
+    },
+    {
+      "P_residual_exponent": 7.683951,
+      "limit": 83160,
+      "max_tau": 128,
+      "max_tau_n": 83160,
+      "ratio": 16.658096,
+      "raw_divisor_bound_passes": false
+    },
+    {
+      "P_residual_exponent": 8.09233,
+      "limit": 110880,
+      "max_tau": 144,
+      "max_tau_n": 110880,
+      "ratio": 17.794628,
+      "raw_divisor_bound_passes": false
+    },
+    {
+      "P_residual_exponent": 11.334386,
+      "limit": 720720,
+      "max_tau": 240,
+      "max_tau_n": 720720,
+      "ratio": 21.174505,
+      "raw_divisor_bound_passes": false
+    },
+    {
+      "P_residual_exponent": 12.192546,
+      "limit": 1081080,
+      "max_tau": 256,
+      "max_tau_n": 1081080,
+      "ratio": 20.996435,
+      "raw_divisor_bound_passes": false
+    }
+  ],
+  "packing_identity_closed": true,
+  "parallel_attack_targets": [
+    "DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope",
+    "ColdNonpersistentProductSupportSparsificationLemma",
+    "SameParameterSiblingCollarWidthFiniteSumTable",
+    "SameParameterPDECThresholdNumericTable",
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "PrefixLabelSupportToRowFreeTypeAntiCollapse",
+    "PrefixLabelSupportToSparseTerminalHistoryAntiCollapse",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`ActivePrefixLevelPackingExponentTable` 已被压成产品投影问题。每个活动前缀 `U` 给出 `D(U)|h_0`，同层活动数满足 `|A_j|=sum_{d|h_0}|A_j(d)|`。因此必须同时控制产品除数支撑和同一产品纤维重数。粗除数函数界不能关闭本目标：在 `P=100000` 边界内，`tau(83160)=128`，而 `P^0.18≈7.94`，远远超预算。所以最新最窄点不是继续调常数，而是 `ActivePrefixProductFiberMultiplicityOrNamedReturnLedger`：证明同一产品下多前缀若过大，必进入固定历史、PDEC/SAE、ColumnCRT、热核心或标签回流；并配合 cold-filtered 产品支撑 envelope。",
+  "product_projection_closed": true,
+  "projection_rows": [
+    {
+      "formula": "Phi(U)=D(U)=prod_i g_i, with D(U)|h_0",
+      "meaning": "每个活动前缀投影到同一 formal unit 的一个产品除数。",
+      "name": "product_projection",
+      "status": "closed_interface"
+    },
+    {
+      "formula": "A_j(d)={U in A_j: D(U)=d}",
+      "meaning": "同层活动前缀数分解为产品支撑数与每个产品纤维重数。",
+      "name": "level_product_fiber",
+      "status": "closed_definition"
+    },
+    {
+      "formula": "|A_j|=sum_{d|h_0} |A_j(d)|",
+      "meaning": "活动前缀打包必须同时控制产品支撑和纤维重数。",
+      "name": "packing_identity",
+      "status": "closed_identity"
+    },
+    {
+      "formula": "large |A_j(d)| -> same product/type recurrence -> named PDEC/SAE/ColumnCRT/hot return",
+      "meaning": "同一产品下多前缀若不可区分，不能作为自由冷支撑；但全局排斥未完成。",
+      "name": "fiber_named_return_gate",
+      "status": "registered_not_proved"
+    }
+  ],
+  "raw_divisor_p018_bound_rejected_at_boundary": true,
+  "residual_exponent_after_log_absorption": 0.18,
+  "route_rows": [
+    {
+      "route": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger",
+      "status": "open",
+      "task": "证明同一产品 d 的活动前缀纤维若过大，必形成固定历史、PDEC/SAE、ColumnCRT、热核心或 row-free 标签回流。"
+    },
+    {
+      "route": "DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope",
+      "status": "open",
+      "task": "给出产品除数支撑的 P^0.18 级有限/解析 envelope；粗 tau(h_0) 界在 P=100000 边界失败。"
+    },
+    {
+      "route": "ColdNonpersistentProductSupportSparsificationLemma",
+      "status": "open",
+      "task": "利用 cold/nonpersistent 条件删去大多数产品除数，而不是对所有 d|h_0 求和。"
+    },
+    {
+      "route": "SameParameterSiblingCollarWidthFiniteSumTable",
+      "status": "parallel_open",
+      "task": "活动前缀数一旦可控，还需同步控制同层 collar debit 总和。"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_parameter_per_level_cold_support_exponent_table_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-history-prefix-branching-attack-router.json": "ec7b96227c0b8752620609589fb1367d7483f2c46db66c705a13e68523002e86",
+    "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.json": "2c0a5401dc9e7f7158cd30e758f88f5a07f68460712f611452ff609ae3b7ddbb",
+    "docs/monograph/prime-matrix-strict-prefix-label-sparse-history-anticollapse-router.json": "94229062234848b5e5e20ffaf940e7d4447b8ec957a0b3e8b2bf85d3e55a1a3f",
+    "docs/monograph/prime-matrix-strict-row-free-type-anticollapse-sync-router.json": "f480a9407780a2cc2a9f8e6fc742d6f2db1fa6875fe3de58f687f585abef12e6",
+    "docs/monograph/prime-matrix-strict-same-parameter-per-level-support-exponent-router.json": "5ebdc22eb78889400955a3bb60261e6757c64bb64a27c14600f7eb9d329c606e",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.json": "6cbb750d3888d20ef1c7267231ddfb8490b1efc92b0edda308ec96f1d40905b2",
+    "experiments/prime_matrix_strict_active_prefix_level_packing_router.py": "f40ab581ce559296d67518ff8108236b8556ece86b719dfad3d5b55bed46f030"
+  },
+  "status": "active_prefix_packing_reduced_to_product_fiber_and_divisor_envelope_open"
+}
