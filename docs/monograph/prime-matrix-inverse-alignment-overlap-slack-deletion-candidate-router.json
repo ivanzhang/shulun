@@ -1,0 +1,168 @@
+{
+  "candidate_rows": [
+    {
+      "P": 13,
+      "overlap_debt": 3,
+      "overlap_plus_slack_proxy": 4,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 1,
+      "required_deletion": 3,
+      "tau_charged_slack": 1,
+      "x": 168,
+      "z": 3
+    },
+    {
+      "P": 17,
+      "overlap_debt": 5,
+      "overlap_plus_slack_proxy": 7,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 3,
+      "required_deletion": 4,
+      "tau_charged_slack": 2,
+      "x": 1210,
+      "z": 3
+    },
+    {
+      "P": 19,
+      "overlap_debt": 8,
+      "overlap_plus_slack_proxy": 12,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 3,
+      "required_deletion": 9,
+      "tau_charged_slack": 4,
+      "x": 3658,
+      "z": 3
+    },
+    {
+      "P": 23,
+      "overlap_debt": 11,
+      "overlap_plus_slack_proxy": 16,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 5,
+      "required_deletion": 11,
+      "tau_charged_slack": 5,
+      "x": 58,
+      "z": 3
+    },
+    {
+      "P": 29,
+      "overlap_debt": 16,
+      "overlap_plus_slack_proxy": 27,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 10,
+      "required_deletion": 17,
+      "tau_charged_slack": 11,
+      "x": 5209,
+      "z": 4
+    },
+    {
+      "P": 31,
+      "overlap_debt": 16,
+      "overlap_plus_slack_proxy": 26,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 8,
+      "required_deletion": 18,
+      "tau_charged_slack": 10,
+      "x": 60794,
+      "z": 4
+    },
+    {
+      "P": 37,
+      "overlap_debt": 20,
+      "overlap_plus_slack_proxy": 31,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 9,
+      "required_deletion": 22,
+      "tau_charged_slack": 11,
+      "x": 73916,
+      "z": 4
+    },
+    {
+      "P": 41,
+      "overlap_debt": 23,
+      "overlap_plus_slack_proxy": 39,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 14,
+      "required_deletion": 25,
+      "tau_charged_slack": 16,
+      "x": 170880,
+      "z": 4
+    },
+    {
+      "P": 43,
+      "overlap_debt": 25,
+      "overlap_plus_slack_proxy": 36,
+      "proxy_covers_required_deletion": true,
+      "proxy_margin": 16,
+      "required_deletion": 20,
+      "tau_charged_slack": 11,
+      "x": 162932,
+      "z": 5
+    }
+  ],
+  "certificate_type": "prime_matrix_inverse_alignment_overlap_slack_deletion_candidate_router",
+  "cold_restriction_deletion_lower_bound_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "DeletionTargetImported",
+      "meaning": "上一层已给出 exact-x 严格余量所需删除量。",
+      "proved": true,
+      "remaining": "ColdRestrictionDeletionLowerBoundAgainstExactXTable"
+    },
+    {
+      "closed": true,
+      "gate": "OverlapSlackCandidateDominatesSamples",
+      "meaning": "样本中 overlap debt + tau slack 均覆盖所需删除量，但这还不是全局证明。",
+      "proved": false,
+      "remaining": "RegisteredOverlapSlackToColdSupplyDeletionMap"
+    },
+    {
+      "closed": false,
+      "gate": "RegisteredOverlapSlackDeletionMapProved",
+      "meaning": "仍需把 hit-level overlap/slack 无损注入 cold supply 删除单位。",
+      "proved": false,
+      "remaining": "RegisteredOverlapSlackToColdSupplyDeletionMap"
+    },
+    {
+      "closed": false,
+      "gate": "ColdRestrictionDeletionLowerBoundProved",
+      "meaning": "候选源足量的样本信号存在，但缺全局注册映射和无重复扣减纪律。",
+      "proved": false,
+      "remaining": "RegisteredOverlapSlackToColdSupplyDeletionMap AND ColdRestrictionDeletionLowerBoundAgainstExactXTable"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "删除映射、持久 moving atom 与 DStructure/Rankin 仍未全部闭合。",
+      "proved": false,
+      "remaining": "RegisteredOverlapSlackToColdSupplyDeletionMap AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "deletion_target_imported": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "RegisteredOverlapSlackToColdSupplyDeletionMap",
+  "hardpoint_before_router": "ColdRestrictionDeletionLowerBoundAgainstExactXTable",
+  "next_direct_attack_target": "RegisteredOverlapSlackToColdSupplyDeletionMap",
+  "no_theorem_switch": true,
+  "overlap_slack_candidate_dominates_samples": true,
+  "parallel_attack_targets": [
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "Exact-x 删除目标表暴露出一个候选机制：样本中 `overlap_debt + tau charged_slack` 全部大于等于严格余量所需删除量。这说明重叠债与 tau 桶松弛可能正是 cold-restricted 删除量的来源。当前还不能宣布闭合，因为 overlap/slack 是命中层字段，必须证明它们能被无重复、保标签地注册为 cold supply 删除单位。下一最窄点是 `RegisteredOverlapSlackToColdSupplyDeletionMap`。",
+  "registered_overlap_slack_deletion_map_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/inverse-alignment-exact-x-budget-interface-ledger.json": "1cdc1a5cabb6ff9043184f7e567b14622b5667f708564ef9daae04c44beb6a52",
+    "docs/monograph/prime-matrix-inverse-alignment-cold-restricted-deletion-target-router.json": "40a659d3dd4ed96e7940302c701c89d72e93ff43930f2f2d026e62a50f6385b0",
+    "docs/monograph/prime-matrix-inverse-alignment-exact-zero-row-charge-profile-router.json": "f6f2c2c1d5bbd95e83d085f48ac5c6bb6a6250c72fc450112b6815b8313429ba",
+    "docs/monograph/prime-matrix-strict-cold-window-sibling-charging-router.json": "be05fb4b2dee03515ca4eea8e086eff6341c0e04d69da9501072cccf74414591",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "experiments/prime_matrix_inverse_alignment_overlap_slack_deletion_candidate_router.py": "eda118dad1ae3249da62ec9bb12e6fea4d6aacbd0b49a85518c9e7e1ee9fd16b"
+  },
+  "status": "overlap_slack_deletion_candidate_dominates_samples_registered_map_open"
+}
