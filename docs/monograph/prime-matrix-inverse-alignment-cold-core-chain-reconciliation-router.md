@@ -1,0 +1,80 @@
+# Prime Matrix inverse alignment 到 C_core/Rankin 终端链对齐证书
+
+**状态：** `inverse_alignment_cold_core_chain_reconciled_to_terminal_budget_open`
+
+逆元最小对齐解产生的 cold-restricted tau/envelope 不再形成新的 C_core 孤立硬点。沿现有 C_core 函数表、同参数求和、加权支撑、深度伸缩、活动前缀打包、产品纤维商化、冷过滤产品支撑、primitive Rankin、精确计数与热核心回流链，失败已经被统一路由到两条终端线：非持久侧的稀疏预算严格反超，和持久侧的 actual noncanonical moving atom/PDEC/固定历史终端族排斥。这一步只是消除逆元路线回到 C_core 后的重复硬点，不证明最终矛盾；行/列命题仍未无条件闭合。
+
+```text
+inverse_alignment_cold_core_chain_reconciled=true
+cold_core_numeric_independent_hardpoint_removed_for_inverse_alignment=true
+sparse_history_demand_exceeds_nonpersistent_supply_budget_proved=false
+persistent_terminal_family_excluded=false
+row_column_unconditional_closed=false
+```
+
+## 1. 链路分段
+
+| stage | ok | evidence | next |
+| --- | --- | --- | --- |
+| `inverse_alignment_cold_return` | `true` | 逆元 tau/cold 限制已接入 C_core/T_PDEC/回流前沿。 | ColdCoreThresholdFunctionNumericTable |
+| `cold_core_schema` | `true` | C_core 端点、注册键、顺序不变性与长度 cap 已闭合为函数表口径。 | SameParameterCoreThresholdSummationDominanceTable |
+| `core_summation_to_weighted_support` | `true` | 点态 cap 不足已认证，求和优势压成加权支撑测度。 | CoreHistoryWeightedSupportMeasureTable |
+| `weighted_support_single_layer` | `true` | 同父兄弟层 envelope 闭合，但全深度伸缩仍需下钻。 | ColdSupportDepthTelescopingContractionOrLogAbsorptionTable |
+| `depth_log_absorption` | `true` | 深度 log P 可由 P^(1/4) 吸收，剩每层支撑指数表。 | SameParameterPerLevelColdSupportExponentTable |
+| `per_level_to_active_prefix` | `true` | 每层冷支撑分解为活动前缀、collar debit 与命名回流。 | ActivePrefixLevelPackingExponentTable |
+| `active_prefix_packing` | `true` | 活动前缀层打包投影到同一 formal unit 的产品除数纤维。 | ActivePrefixProductFiberMultiplicityOrNamedReturnLedger |
+| `product_fiber_quotient` | `true` | 同产品顺序冗余和同 key 重复已商化或回流。 | ColdFilteredDivisorSupportP018Envelope |
+| `active_prefix_product_supplement` | `true` | 补档证书同步确认产品纤维不再是独立硬点。 | ColdNonpersistentProductSupportSparsificationLemma |
+| `cold_filtered_support` | `true` | 冷过滤产品支撑域压实，素数幂有序爆炸不再给新支撑。 | ColdProductSupportSparsificationBeyondTauLedger |
+| `product_sparsification_split` | `true` | 产品支撑超预算被拆成热窗口、共同核或 primitive Rankin。 | PrimitiveProductSupportRankinLedger |
+| `primitive_rankin_schema` | `true` | primitive 产品 Rankin schema、manifest schema、局部权重和 P^0.18 表口径已闭合。 | ActualColdProductBlockParameterLedgerForP018Table |
+| `actual_h0_no_return_rankin` | `true` | no-return h0、dyadic 枚举器与 pass/return 规则已接入。 | PrimitiveProductRankinFailureReturnPacketLedger |
+| `exact_count_to_hot_return` | `true` | clean exact overbudget 不能无名停留，必须登记为热核心回流。 | TerminalCoreHotDivisorWindowPDECorSAE |
+| `terminal_hot_frontier` | `true` | 热核心不是独立第三出口，拆成非持久预算或持久终端族。 | SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore |
+| `return_cycle_budget_sync` | `true` | 共同核/命名回流不能免费循环，非持久侧回到同参数稀疏预算。 | SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore |
+
+## 2. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| `InverseAlignmentColdCoreChainReconciled` | `true` | `true` | 逆元冷限制出口已严格接到既有 C_core/产品支撑/Rankin/热核心终端链。 | SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore |
+| `ColdCoreNumericIndependentHardpointRemovedForInverseAlignment` | `true` | `true` | C_core 不再作为逆元路线的新独立硬点；其失败已沿既有链回流到终端预算。 | SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore |
+| `ColdCoreThresholdNumericTableProved` | `false` | `false` | 本步是链路对齐，不是单独证明 C_core 数值表。 | ColdCoreThresholdFunctionNumericTable |
+| `SameParameterPDECThresholdNumericTableProved` | `false` | `false` | 持久阈值表仍需随持久终端族一起排斥或吸收。 | SameParameterPDECThresholdNumericTable |
+| `SparseBudgetTerminalContradictionProved` | `false` | `false` | 非持久预算严格反超仍未闭合。 | SparseHistoryDemandExceedsNonpersistentSupplyBudget |
+| `PersistentTerminalFamilyExcluded` | `false` | `false` | 持久热/固定/相位复现终端族仍未排斥。 | IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 尚未得到早期零行反例链与真实链的终端矛盾。 | SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance |
+
+## 3. 下一步最窄点
+
+- 主攻：`SparseHistoryDemandExceedsNonpersistentSupplyBudget`。
+- 并行：`IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore` 与 `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`。
+- 边界：本证书不宣称 C_core 数值表、PDEC 阈值表或最终反例矛盾已证明。
+
+## 4. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `docs/monograph/prime-matrix-inverse-alignment-cold-restricted-envelope-return-sync-router.json` | `427de4e97989bc2758b50d69b59ac2d4854fce5454eff1d9c45d40f167550664` |
+| `docs/monograph/prime-matrix-strict-active-prefix-level-packing-router.json` | `c5ee2755b1acbab1168ec9f2dc5638d915ce1122c5068be73352077ddd6f3188` |
+| `docs/monograph/prime-matrix-strict-active-prefix-product-fiber-multiplicity-router.json` | `d42970e22f832e8d8fc5a0d19bf946a2a79e3a95703353772bcf012b383e281f` |
+| `docs/monograph/prime-matrix-strict-cold-core-threshold-function-table-router.json` | `17d7ee987e51872094edd8c3dc0210b6b87d4751d04864d5d66a162770f3cffc` |
+| `docs/monograph/prime-matrix-strict-cold-filtered-divisor-support-router.json` | `c37398e74be3f912c6d753868ae8a973f7c61df6aa9fe834e420fd0a893ed7b7` |
+| `docs/monograph/prime-matrix-strict-cold-product-support-sparsification-router.json` | `1dc6e98d6eb37c2571d0c3bdff385f66069b8812c6c1a9c8b97860b37cfc6f95` |
+| `docs/monograph/prime-matrix-strict-cold-support-depth-telescoping-router.json` | `b68feb863ab061597333a2ef25c80e660e84db7d9a1bc352b94b3d1ba6e12570` |
+| `docs/monograph/prime-matrix-strict-core-history-weighted-support-measure-router.json` | `2dd7639bfbaa615273487219d874098fb83b09636ad217369bb1b71df21bdf8b` |
+| `docs/monograph/prime-matrix-strict-exact-primitive-block-count-hot-return-dichotomy-router.json` | `4162412458fa176a590493f6d2e9bfec6c72169a893e81716c5b6d496ffece1e` |
+| `docs/monograph/prime-matrix-strict-no-return-actual-dyadic-block-enumerator-router.json` | `3e4a65761bb62c0fff3f6614aedffd25ae31dda55b75295520a2eae1e3ce29ad` |
+| `docs/monograph/prime-matrix-strict-no-return-h0-emitter-rankin-parameter-sync-router.json` | `635120578c17b2e7d697814ee4da41449b6381ed8b3717ad611f235620b89051` |
+| `docs/monograph/prime-matrix-strict-no-return-rankin-p018-pass-return-sync-router.json` | `81c12e6ee229ba4dc21688529dc6818e7c9569e2051c3b6617c288169a547cd9` |
+| `docs/monograph/prime-matrix-strict-primitive-product-rankin-manifest-router.json` | `394a44df31ee2a99dcdf53921e1c42af5943255233e2a49051affd1da12b3e9b` |
+| `docs/monograph/prime-matrix-strict-primitive-product-rankin-p018-table-router.json` | `01ac5c80037d76d59f0d127041d9105c694a553da6cb5f6466928b73c67985f6` |
+| `docs/monograph/prime-matrix-strict-primitive-product-rankin-weight-comparison-router.json` | `2b1fa788ac82421045fe246cf635e7c945c68d6dee6b67a5e418c134120e940f` |
+| `docs/monograph/prime-matrix-strict-primitive-product-support-rankin-router.json` | `7243686f554a798d739ea6cec2a7ae2019a3b0f8a5854d65cb18f408afb4edee` |
+| `docs/monograph/prime-matrix-strict-product-fiber-multiplicity-router.json` | `207253ea5e911247addc82f0e59edfdf1d034a6591d762a9928b493792500d4a` |
+| `docs/monograph/prime-matrix-strict-same-parameter-core-threshold-summation-router.json` | `1cc2717fe5d08bdea447f23044a214316ff2f4dd1f13426922f016ce20beba74` |
+| `docs/monograph/prime-matrix-strict-same-parameter-per-level-support-exponent-router.json` | `5ebdc22eb78889400955a3bb60261e6757c64bb64a27c14600f7eb9d329c606e` |
+| `docs/monograph/prime-matrix-strict-sparse-budget-positive-margin-latest-sync-router.json` | `128ed6ff8a907a492a29bcafedf5c6c7a1a1c90b6014aab9b4d63fa89001c7b9` |
+| `docs/monograph/prime-matrix-strict-terminal-hot-core-return-frontier-router.json` | `bb4818efdb6673899bc0e2eb86174244ef0f80568301c8ca34a57dc380bda909` |
+| `docs/monograph/prime-matrix-strict-unified-budget-after-return-cycle-sync-router.json` | `0b1f76cce75b61929c79f82036782b10d6c1755b84840de0e666224ad5ae7922` |
+| `experiments/prime_matrix_inverse_alignment_cold_core_chain_reconciliation_router.py` | `3a8723fd7931975a70a6af3d06dbcd346eee4cc3bfa8bd2d6dcf99779e716e0f` |

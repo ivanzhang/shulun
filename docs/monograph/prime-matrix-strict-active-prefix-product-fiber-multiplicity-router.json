@@ -1,0 +1,246 @@
+{
+  "active_prefix_level_packing_exponent_table_proved": false,
+  "active_prefix_product_fiber_multiplicity_or_named_return_ledger_proved": false,
+  "alpha": 0.43,
+  "canonical_product_class_support_p018_or_cold_sparsification_proved": false,
+  "certificate_type": "prime_matrix_strict_active_prefix_product_fiber_multiplicity_router",
+  "cold_core_order_invariance_imported_for_quotient": true,
+  "cold_nonpersistent_product_support_sparsification_lemma_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ProductFiberTargetImported",
+      "meaning": "上一层已把活动前缀层打包的首要剩余指向同产品纤维重数。",
+      "proved": true,
+      "remaining": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "RawProductFiberOvercountCertified",
+      "meaning": "裸有序分解纤维在 dyadic 样本中远超 P^0.18，不能作为容量上界。",
+      "proved": true,
+      "remaining": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger"
+    },
+    {
+      "closed": true,
+      "gate": "ProductEndpointQuotientClosed",
+      "meaning": "product-window 外向缩放端点只依赖总乘积；端点顺序冗余可商化。",
+      "proved": true,
+      "remaining": "CanonicalProductClassSupportP018OrColdSparsificationLedger"
+    },
+    {
+      "closed": true,
+      "gate": "DuplicateCompleteKeyRoutesToNamedReturn",
+      "meaning": "同产品、同完整 key 的重复是固定历史/PDEC/ColumnCRT/热核心回流，不是免费冷容量。",
+      "proved": false,
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "ProductFiberMultiplicityIndependentHardpointRemoved",
+      "meaning": "产品纤维重数不再作为独立裸计数；已压成规范产品支撑、cold 过滤和命名回流排斥。",
+      "proved": true,
+      "remaining": "CanonicalProductClassSupportP018OrColdSparsificationLedger AND ColdNonpersistentProductSupportSparsificationLemma AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "ActivePrefixProductFiberMultiplicityLedgerProved",
+      "meaning": "路由和商化闭合，但命名回流排斥与 cold-filtered 产品支撑数值界未闭合。",
+      "proved": false,
+      "remaining": "CanonicalProductClassSupportP018OrColdSparsificationLedger AND ColdNonpersistentProductSupportSparsificationLemma AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "ActivePrefixLevelPackingExponentTableProved",
+      "meaning": "仍需规范产品支撑 envelope、collar 总和和同参数 T_PDEC 权重。",
+      "proved": false,
+      "remaining": "CanonicalProductClassSupportP018OrColdSparsificationLedger AND ColdNonpersistentProductSupportSparsificationLemma AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到早期零行反例链的最终矛盾。",
+      "proved": false,
+      "remaining": "CanonicalProductClassSupportP018OrColdSparsificationLedger AND ColdNonpersistentProductSupportSparsificationLemma AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "divisor_support_p018_finite_boundary_or_analytic_envelope_proved": false,
+  "duplicate_complete_key_routes_to_named_return": true,
+  "empirical_absence_not_used": true,
+  "endpoint_commutativity_samples": [
+    {
+      "a": 2,
+      "b": 8,
+      "commutes": true,
+      "left": 1000,
+      "left_once": 62,
+      "left_sequential": 62,
+      "right": 1234,
+      "right_once": 78,
+      "right_sequential": 78
+    },
+    {
+      "a": 3,
+      "b": 5,
+      "commutes": true,
+      "left": 1000,
+      "left_once": 66,
+      "left_sequential": 66,
+      "right": 1234,
+      "right_once": 83,
+      "right_sequential": 83
+    },
+    {
+      "a": 6,
+      "b": 10,
+      "commutes": true,
+      "left": 98765,
+      "left_once": 1646,
+      "left_sequential": 1646,
+      "right": 100001,
+      "right_once": 1667,
+      "right_sequential": 1667
+    }
+  ],
+  "fixed_type_history_pdec_excluded": false,
+  "hardpoint_after_router": "CanonicalProductClassSupportP018OrColdSparsificationLedger AND ColdNonpersistentProductSupportSparsificationLemma AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+  "hardpoint_before_router": "ActivePrefixProductFiberMultiplicityOrNamedReturnLedger",
+  "log_absorption_epsilon": 0.25,
+  "named_return_exclusion_proved": false,
+  "next_direct_attack_target": "ColdNonpersistentProductSupportSparsificationLemma",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "CanonicalProductClassSupportP018OrColdSparsificationLedger",
+    "DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "FixedTypeHistoryPDECExclusion",
+    "SameParameterPDECThresholdNumericTable",
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`ActivePrefixProductFiberMultiplicityOrNamedReturnLedger` 的裸计数形态不能成立：同一产品 `d=2^a` 的有序分解数已经在边界样本中远超 `P^0.18`，所以不能把产品纤维重数当成可直接求和的冷容量。本步关闭的是无名 overcount：product-window 端点外向缩放只依赖总乘积，同产品内的顺序/括号冗余必须商化为规范产品类；若内部顺序改变了相位、标签、窗口或 cold guard，差异就不是自由容量，而是固定历史、PDEC/SAE、ColumnCRT、热核心或标签回流。因此产品纤维不再是独立裸硬点；真正剩余转为 `ColdNonpersistentProductSupportSparsificationLemma`：证明通过 cold/nonpersistent guard 的规范产品类本身足够稀疏，并并行排斥命名回流。",
+  "product_endpoint_quotient_closed": true,
+  "product_fiber_multiplicity_independent_hardpoint_removed": true,
+  "product_fiber_target_imported": true,
+  "quotient_rows": [
+    {
+      "formula": "A_j(d)={U in A_j: D(U)=d}",
+      "meaning": "裸纤维按同一产品除数 d 分组；它仍含有有序分解和内部标签冗余。",
+      "piece": "raw product fiber",
+      "status": "closed_definition"
+    },
+    {
+      "formula": "I_U=I(d) after outward product-window scaling, unless a boundary phase defect is registered",
+      "meaning": "端点生成器满足外向缩放结合律；若旧记号或边界字段不服从，则进入相位缺陷回流。",
+      "piece": "canonical endpoint quotient",
+      "status": "closed_or_named_return"
+    },
+    {
+      "formula": "A_j(d)=disjoint union_kappa A_j(d,kappa)",
+      "meaning": "同产品内继续按 row-free type、标签骨架、窗口相位和 cold guard 商化。",
+      "piece": "row-free type quotient",
+      "status": "closed_reduction"
+    },
+    {
+      "formula": "|A_j(d,kappa)|>1 with complete key preserved -> fixed history / PDEC / ColumnCRT",
+      "meaning": "完整 key 下的重复不能作为多个免费冷前缀；它就是固定历史或持久相位复现。",
+      "piece": "duplicate complete key",
+      "status": "named_return_registered"
+    },
+    {
+      "formula": "#kappa large -> row-free/sparse anti-collapse budget or named return",
+      "meaning": "若不是完整 key 重复，而是大量不同类型，则负载没有消失，回到 cold-filtered 产品支撑。",
+      "piece": "many distinct kappa",
+      "status": "budget_route_open"
+    }
+  ],
+  "raw_fiber_obstruction_rows": [
+    {
+      "P": 100000,
+      "P_residual_budget": 7.943282,
+      "all_blocks_ratio": 4125.246789,
+      "all_ordered_factorizations_of_2a": 32768,
+      "dyadic_exponent_floor": 16,
+      "one_two_ratio": 201.050388,
+      "one_two_step_factorizations": 1597,
+      "raw_all_blocks_over_budget": true,
+      "raw_one_two_over_budget": true
+    },
+    {
+      "P": 1000000,
+      "P_residual_budget": 12.022644,
+      "all_blocks_ratio": 21804.188201,
+      "all_ordered_factorizations_of_2a": 262144,
+      "dyadic_exponent_floor": 19,
+      "one_two_ratio": 562.688191,
+      "one_two_step_factorizations": 6765,
+      "raw_all_blocks_over_budget": true,
+      "raw_one_two_over_budget": true
+    },
+    {
+      "P": 10000000,
+      "P_residual_budget": 18.197009,
+      "all_blocks_ratio": 230494.148538,
+      "all_ordered_factorizations_of_2a": 4194304,
+      "dyadic_exponent_floor": 23,
+      "one_two_ratio": 2548.111124,
+      "one_two_step_factorizations": 46368,
+      "raw_all_blocks_over_budget": true,
+      "raw_one_two_over_budget": true
+    },
+    {
+      "P": 1000000000,
+      "P_residual_budget": 41.686938,
+      "all_blocks_ratio": 6439318.084848,
+      "all_ordered_factorizations_of_2a": 268435456,
+      "dyadic_exponent_floor": 29,
+      "one_two_ratio": 19959.249419,
+      "one_two_step_factorizations": 832040,
+      "raw_all_blocks_over_budget": true,
+      "raw_one_two_over_budget": true
+    }
+  ],
+  "raw_product_fiber_overcount_certified": true,
+  "residual_exponent_after_log_absorption": 0.18,
+  "route_rows": [
+    {
+      "route": "CanonicalProductClassSupportP018OrColdSparsificationLedger",
+      "status": "open",
+      "task": "对规范产品类而非有序分解求支撑；证明 cold/nonpersistent 过滤后其数量满足 P^(0.18-tau) 级预算。"
+    },
+    {
+      "route": "ColdNonpersistentProductSupportSparsificationLemma",
+      "status": "open",
+      "task": "证明大多数 d|h_0 无法同时通过 cold guard、非持久 guard 与同层活动 guard。"
+    },
+    {
+      "route": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+      "status": "registered_not_excluded",
+      "task": "排斥或预算吸收完整 key 重复、标签丢失、边界相位漂移、固定历史和热核心回流。"
+    },
+    {
+      "route": "DivisorSupportP018FiniteBoundaryOrAnalyticEnvelope",
+      "status": "parallel_open",
+      "task": "给出规范产品支撑的有限边界或解析 envelope；不能再使用裸 tau(h_0) 粗界。"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "row_free_and_sparse_no_silent_collapse_imported": true,
+  "same_parameter_pdec_threshold_numeric_table_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-active-prefix-level-packing-router.json": "c5ee2755b1acbab1168ec9f2dc5638d915ce1122c5068be73352077ddd6f3188",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-dyadic-invariance-router.json": "c93a11c1f9f9a11728fb454eb16ead7a4cc308bdfcf2647af6dcb20d6f405602",
+    "docs/monograph/prime-matrix-strict-dyadic-endpoint-commutativity-attack-router.json": "defb123fedb4526b578e6dc01d989c696788e013fcd9db77f4b0f609186c52ea",
+    "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.json": "2c0a5401dc9e7f7158cd30e758f88f5a07f68460712f611452ff609ae3b7ddbb",
+    "docs/monograph/prime-matrix-strict-legacy-product-window-equivalence-router.json": "d713760f063f00117cf6564c911523cf43033f612fb2d51e62a37425156f769e",
+    "docs/monograph/prime-matrix-strict-named-return-after-rowfree-sync-router.json": "818c17bd920eb69eaa05f2cca96099ad4637c8ab960afd843ec6a53872d392d3",
+    "docs/monograph/prime-matrix-strict-prefix-label-sparse-history-anticollapse-router.json": "94229062234848b5e5e20ffaf940e7d4447b8ec957a0b3e8b2bf85d3e55a1a3f",
+    "docs/monograph/prime-matrix-strict-product-window-endpoint-generator-appendix-router.json": "a1061abb510efd9743123d49a9e85775f9b27985a51957ab1b976ae3399e1a42",
+    "docs/monograph/prime-matrix-strict-row-free-type-anticollapse-sync-router.json": "f480a9407780a2cc2a9f8e6fc742d6f2db1fa6875fe3de58f687f585abef12e6",
+    "experiments/prime_matrix_strict_active_prefix_product_fiber_multiplicity_router.py": "4bf1ea0cedd0df3a66f8926eb1abad6f3d45e443177b041cedb9fd0333c2df42"
+  },
+  "status": "product_fiber_multiplicity_compressed_to_canonical_product_support_and_named_return_open"
+}
