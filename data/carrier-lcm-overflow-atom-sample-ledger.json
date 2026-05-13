@@ -1,0 +1,144 @@
+{
+  "ledger_type": "carrier_lcm_overflow_atom_sample_ledger",
+  "rule": "split overflow into single-step domain defect or repeated-token named return",
+  "rows": [
+    {
+      "case": "multi_step_repeated_token",
+      "carrier_quotients": [
+        6,
+        10
+      ],
+      "prefix_steps": [
+        2,
+        2,
+        3
+      ],
+      "classification": {
+        "carrier_quotients": [
+          6,
+          10
+        ],
+        "prefix_steps": [
+          2,
+          2,
+          3
+        ],
+        "carrier_budget": {
+          "2": 1,
+          "3": 1,
+          "5": 1
+        },
+        "overflow_atoms": [
+          {
+            "prime": 2,
+            "used_exp": 2,
+            "allowed_exp": 1,
+            "deficit": 1,
+            "hit_steps": [
+              0,
+              1
+            ],
+            "atom_type": "repeated_token_overflow",
+            "route": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+            "per_step_over": []
+          }
+        ],
+        "has_overflow": true,
+        "all_overflows_named": true
+      }
+    },
+    {
+      "case": "single_step_outside_carrier_domain",
+      "carrier_quotients": [
+        3,
+        5
+      ],
+      "prefix_steps": [
+        4
+      ],
+      "classification": {
+        "carrier_quotients": [
+          3,
+          5
+        ],
+        "prefix_steps": [
+          4
+        ],
+        "carrier_budget": {
+          "3": 1,
+          "5": 1
+        },
+        "overflow_atoms": [
+          {
+            "prime": 2,
+            "used_exp": 2,
+            "allowed_exp": 0,
+            "deficit": 2,
+            "hit_steps": [
+              0
+            ],
+            "atom_type": "single_step_domain_overflow",
+            "route": "ColdPrefixStepQuotientOriginMapToCarrierRows",
+            "per_step_over": [
+              {
+                "step_index": 0,
+                "step": 4,
+                "step_exp": 2
+              }
+            ]
+          }
+        ],
+        "has_overflow": true,
+        "all_overflows_named": true
+      }
+    },
+    {
+      "case": "prime_power_repeat_beyond_lcm_height",
+      "carrier_quotients": [
+        4,
+        9
+      ],
+      "prefix_steps": [
+        2,
+        2,
+        2
+      ],
+      "classification": {
+        "carrier_quotients": [
+          4,
+          9
+        ],
+        "prefix_steps": [
+          2,
+          2,
+          2
+        ],
+        "carrier_budget": {
+          "2": 2,
+          "3": 2
+        },
+        "overflow_atoms": [
+          {
+            "prime": 2,
+            "used_exp": 3,
+            "allowed_exp": 2,
+            "deficit": 1,
+            "hit_steps": [
+              0,
+              1,
+              2
+            ],
+            "atom_type": "repeated_token_overflow",
+            "route": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+            "per_step_over": []
+          }
+        ],
+        "has_overflow": true,
+        "all_overflows_named": true
+      }
+    }
+  ],
+  "all_sample_overflows_named": true,
+  "sample_contains_step_origin_defect": true,
+  "sample_contains_named_return": true
+}
