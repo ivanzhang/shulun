@@ -1,0 +1,165 @@
+{
+  "certificate_type": "prime_matrix_strict_cold_supply_numeric_envelope_attack_router",
+  "status": "cold_supply_numeric_envelope_reduced_to_effective_pruning_and_numeric_tables_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "cold_supply_formula_sync_closed": true,
+  "crude_full_depth_history_envelope_rejected_as_sufficient": true,
+  "effective_cold_history_pruning_proved": false,
+  "cold_core_threshold_numeric_table_proved": false,
+  "pdec_threshold_numeric_table_proved": false,
+  "cold_supply_same_parameter_numeric_envelope_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ColdSupplySameParameterNumericEnvelope",
+  "hardpoint_after_router": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem AND ColdCoreThresholdFunctionNumericTable AND SameParameterPDECThresholdNumericTable",
+  "next_direct_attack_target": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem",
+  "parallel_attack_targets": [
+    "ColdCoreThresholdFunctionNumericTable",
+    "SameParameterPDECThresholdNumericTable",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "crude_growth_rows": [
+    {
+      "lambda_floor": 1,
+      "alphabet_cap_per_layer": 8,
+      "full_depth_R_log2P_history_exponent": 3.0,
+      "demand_exponent_alpha": 0.43,
+      "beats_demand_by_crude_count": false
+    },
+    {
+      "lambda_floor": 2,
+      "alphabet_cap_per_layer": 32,
+      "full_depth_R_log2P_history_exponent": 5.0,
+      "demand_exponent_alpha": 0.43,
+      "beats_demand_by_crude_count": false
+    },
+    {
+      "lambda_floor": 4,
+      "alphabet_cap_per_layer": 128,
+      "full_depth_R_log2P_history_exponent": 7.0,
+      "demand_exponent_alpha": 0.43,
+      "beats_demand_by_crude_count": false
+    }
+  ],
+  "component_rows": [
+    {
+      "component": "history_count",
+      "current_formula": "sum_{r<=R} prod_{i<=r} A_{Lambda_i}, A_{Lambda_i}<=8Lambda_i^2",
+      "attack_result": "crude full-depth envelope is too large",
+      "next": "SameParameterColdHistoryEffectiveDepthCap"
+    },
+    {
+      "component": "cold_core_capacity",
+      "current_formula": "C_core(W) bounds N_{H_W}(I_W) in the cold branch",
+      "attack_result": "formula exists but no same-parameter numeric table",
+      "next": "ColdCoreThresholdFunctionNumericTable"
+    },
+    {
+      "component": "persistence_threshold",
+      "current_formula": "nonpersistent allowance is (T_PDEC(W)-1)C_core(W)",
+      "attack_result": "threshold tradeoff is disciplined but not numeric",
+      "next": "SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "component": "large or incompatible histories",
+      "current_formula": "hot window or fixed-history recurrence must return to named exits",
+      "attack_result": "this is the only way to shrink the crude sum without cheating",
+      "next": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "ColdNumericTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把纯非持久内部缺口压成冷供给同参数数值包。",
+      "remaining": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "gate": "ColdSupplyFormulaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "U_np 的求和公式和历史数粗包已经闭合。",
+      "remaining": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "gate": "SameParameterDisciplineClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Lambda/PDEC 阈值不能自由调参；调参成本已锁入同一账本。",
+      "remaining": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "gate": "IteratedProductLedgerImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "历史深度和字母表损耗由 prod A_Lambda 显式登记。",
+      "remaining": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem"
+    },
+    {
+      "gate": "ColdHotSplitImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "单历史容量已拆成冷窗口或热核心回流。",
+      "remaining": "ColdCoreThresholdFunctionNumericTable OR TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "gate": "CrudeFullDepthHistoryEnvelopeRejected",
+      "closed": true,
+      "proved": true,
+      "meaning": "只用 full-depth 历史数粗包，增长阶远大于 alpha=0.43 的需求阶，不能证明数值反超。",
+      "remaining": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem"
+    },
+    {
+      "gate": "EffectiveColdHistoryPruningProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明大多数形式历史因除数窗口不兼容、LCM 高度、热核心或固定历史而退出冷供给。",
+      "remaining": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem"
+    },
+    {
+      "gate": "ColdCoreThresholdNumericTableProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未给出同参数 C_core(W) 的可求和数值表。",
+      "remaining": "ColdCoreThresholdFunctionNumericTable"
+    },
+    {
+      "gate": "PDECThresholdNumericTableProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未给出同参数 T_PDEC(W) 的数值表。",
+      "remaining": "SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "gate": "ColdSupplySameParameterNumericEnvelopeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "冷供给公式闭合，但有效剪枝、C_core 表、T_PDEC 表都未完成。",
+      "remaining": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem AND ColdCoreThresholdFunctionNumericTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到早期零行反例链的终端矛盾。",
+      "remaining": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_cold_supply_numeric_envelope_attack_router.py": "df74c0c24f868226692fdefa3c9fa22e80004c5bbae4342c999883d54835efe8",
+    "docs/monograph/prime-matrix-strict-same-parameter-sparse-margin-attack-router.json": "b5d97d9049f35ae7649c8d27932977e68c162e97373651f96fe4d97c90619447",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-budget-gap-router.json": "dc5db9c8aa57f3b8c29354615714c6c124f8b8326b288d3b8c7cccec57db62cf",
+    "docs/monograph/prime-matrix-strict-cold-core-nonpersistent-supply-balance-router.json": "7c34a1965c8ddc44a43cafb902ae668fb7ed21db3fc6f73cb42716be37c213be",
+    "docs/monograph/prime-matrix-strict-iterated-threshold-collapse-router.json": "22c87665aa776cfb358736a8c6624361ad9cba95830f46c56ad95bc40ff99e74",
+    "docs/monograph/prime-matrix-strict-iterated-scaled-core-density-router.json": "5e2e4c2cac4e9f0e2afcad98e083f52bf5b4e980b7c516d186a934b65ba4f64f",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0"
+  },
+  "plain_conclusion": "`ColdSupplySameParameterNumericEnvelope` 不能由现有粗历史数包直接闭合。虽然 U_np<=sum_W(T_PDEC(W)-1)C_core(W) 和 Lambda/PDEC 调参纪律已经闭合，但 full-depth 历史数上界 `sum prod A_Lambda` 太宽：即使按最粗常数 Lambda=1，深度 R≈log_2 P 时也给出约 P^3 级别的历史包，远大于 alpha=0.43 的需求阶。因此下一真正硬点不是再调一个常数，而是证明有效冷历史剪枝：大多数形式历史必须因除数窗口不兼容、LCM 高度、热核心或固定历史回流而退出冷供给；同时还要给出 C_core 与 T_PDEC 的同参数数值表。"
+}
