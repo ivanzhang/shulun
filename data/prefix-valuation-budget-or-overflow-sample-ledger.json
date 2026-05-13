@@ -1,0 +1,226 @@
+{
+  "ledger_type": "prefix_valuation_budget_or_overflow_sample_ledger",
+  "rule": "compare sum_step v_p(g) against max_carrier_row v_p(m_c); pass or emit overflow return",
+  "rows": [
+    {
+      "case": "squarefree_budget_pass",
+      "carrier_quotients": [
+        12,
+        35
+      ],
+      "prefix_steps": [
+        2,
+        3
+      ],
+      "classification": {
+        "carrier_quotients": [
+          12,
+          35
+        ],
+        "h0_carrier_lcm": 420,
+        "prefix_steps": [
+          2,
+          3
+        ],
+        "prefix_product": 6,
+        "prefix_usage": {
+          "2": 1,
+          "3": 1
+        },
+        "carrier_budget": {
+          "2": 2,
+          "3": 1,
+          "5": 1,
+          "7": 1
+        },
+        "budget_pass": true,
+        "return_kind": "carrier_lcm_budget_pass",
+        "overflow_rows": [],
+        "named_return_packet": null,
+        "direct_divisibility_check": true
+      }
+    },
+    {
+      "case": "repeated_prime_overflow",
+      "carrier_quotients": [
+        2,
+        3,
+        5
+      ],
+      "prefix_steps": [
+        2,
+        2
+      ],
+      "classification": {
+        "carrier_quotients": [
+          2,
+          3,
+          5
+        ],
+        "h0_carrier_lcm": 30,
+        "prefix_steps": [
+          2,
+          2
+        ],
+        "prefix_product": 4,
+        "prefix_usage": {
+          "2": 2
+        },
+        "carrier_budget": {
+          "2": 1,
+          "3": 1,
+          "5": 1
+        },
+        "budget_pass": false,
+        "return_kind": "carrier_lcm_valuation_overflow_return",
+        "overflow_rows": [
+          {
+            "prime": 2,
+            "used_exp": 2,
+            "allowed_exp": 1,
+            "deficit": 1,
+            "step_indices": [
+              0,
+              1
+            ],
+            "return_payload": "prime_power_cascade_or_common_kernel_overflow"
+          }
+        ],
+        "named_return_packet": {
+          "return": "CarrierLCMValuationOverflowNamedReturnLedger",
+          "registered_as": [
+            "prime_power_cascade",
+            "low_multiplier_common_kernel",
+            "fixed_history_or_pdec_if_persistent",
+            "sae_or_cold_budget_debit_if_nonpersistent",
+            "hot_core_if_family_overcharges"
+          ],
+          "overflow_rows": [
+            {
+              "prime": 2,
+              "used_exp": 2,
+              "allowed_exp": 1,
+              "deficit": 1,
+              "step_indices": [
+                0,
+                1
+              ],
+              "return_payload": "prime_power_cascade_or_common_kernel_overflow"
+            }
+          ]
+        },
+        "direct_divisibility_check": false
+      }
+    },
+    {
+      "case": "prime_power_fits_single_carrier_row",
+      "carrier_quotients": [
+        8,
+        9
+      ],
+      "prefix_steps": [
+        2,
+        4
+      ],
+      "classification": {
+        "carrier_quotients": [
+          8,
+          9
+        ],
+        "h0_carrier_lcm": 72,
+        "prefix_steps": [
+          2,
+          4
+        ],
+        "prefix_product": 8,
+        "prefix_usage": {
+          "2": 3
+        },
+        "carrier_budget": {
+          "2": 3,
+          "3": 2
+        },
+        "budget_pass": true,
+        "return_kind": "carrier_lcm_budget_pass",
+        "overflow_rows": [],
+        "named_return_packet": null,
+        "direct_divisibility_check": true
+      }
+    },
+    {
+      "case": "mixed_overflow",
+      "carrier_quotients": [
+        6,
+        10
+      ],
+      "prefix_steps": [
+        2,
+        2,
+        3
+      ],
+      "classification": {
+        "carrier_quotients": [
+          6,
+          10
+        ],
+        "h0_carrier_lcm": 30,
+        "prefix_steps": [
+          2,
+          2,
+          3
+        ],
+        "prefix_product": 12,
+        "prefix_usage": {
+          "2": 2,
+          "3": 1
+        },
+        "carrier_budget": {
+          "2": 1,
+          "3": 1,
+          "5": 1
+        },
+        "budget_pass": false,
+        "return_kind": "carrier_lcm_valuation_overflow_return",
+        "overflow_rows": [
+          {
+            "prime": 2,
+            "used_exp": 2,
+            "allowed_exp": 1,
+            "deficit": 1,
+            "step_indices": [
+              0,
+              1
+            ],
+            "return_payload": "prime_power_cascade_or_common_kernel_overflow"
+          }
+        ],
+        "named_return_packet": {
+          "return": "CarrierLCMValuationOverflowNamedReturnLedger",
+          "registered_as": [
+            "prime_power_cascade",
+            "low_multiplier_common_kernel",
+            "fixed_history_or_pdec_if_persistent",
+            "sae_or_cold_budget_debit_if_nonpersistent",
+            "hot_core_if_family_overcharges"
+          ],
+          "overflow_rows": [
+            {
+              "prime": 2,
+              "used_exp": 2,
+              "allowed_exp": 1,
+              "deficit": 1,
+              "step_indices": [
+                0,
+                1
+              ],
+              "return_payload": "prime_power_cascade_or_common_kernel_overflow"
+            }
+          ]
+        },
+        "direct_divisibility_check": false
+      }
+    }
+  ],
+  "all_rows_have_pass_or_named_return": true,
+  "divisibility_matches_budget": true
+}

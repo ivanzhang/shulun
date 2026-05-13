@@ -1,0 +1,147 @@
+{
+  "certificate_type": "prime_matrix_strict_prefix_valuation_budget_or_overflow_router",
+  "status": "prefix_valuation_pass_or_overflow_return_closed_overflow_exclusion_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hardpoint_before_router": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn",
+  "hardpoint_after_router": "CarrierLCMValuationOverflowReturnExclusionOrAbsorption AND UnifiedTerminalBudgetStrictInequality",
+  "next_direct_attack_target": "CarrierLCMValuationOverflowReturnExclusionOrAbsorption",
+  "parallel_attack_targets": [
+    "ColdPrefixStepQuotientOriginMapToCarrierRows",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "UnifiedTerminalBudgetStrictInequality",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "imported_flags": {
+    "target_imported": true,
+    "valuation_criterion_imported": true,
+    "common_kernel_return_cycle_descent_imported": true,
+    "free_common_kernel_return_cycle_excluded": true,
+    "prefix_structural_dichotomy_imported": true,
+    "primitive_projection_common_kernel_guard_imported": true
+  },
+  "route_rows": [
+    {
+      "step": "compute_carrier_budget",
+      "rule": "B_p=max_c v_p(m_c)=v_p(h0^car)",
+      "effect": "给出 carrier-lcm 对每个素数 p 的最大可用指数。"
+    },
+    {
+      "step": "compute_prefix_usage",
+      "rule": "E_p(U)=sum_{g in U} v_p(g)=v_p(D(U))",
+      "effect": "把前缀消耗压成逐素数 token 用量。"
+    },
+    {
+      "step": "budget_pass",
+      "rule": "if E_p(U)<=B_p for every p, then D(U)|h0^car",
+      "effect": "该 prefix 可以继续留在 carrier-lcm 商分支。"
+    },
+    {
+      "step": "overflow_return",
+      "rule": "if some E_p(U)>B_p, emit CarrierLCMValuationOverflowNamedReturn",
+      "effect": "该 prefix 不能留在 primitive carrier-lcm 分支，必须进入命名回流。"
+    },
+    {
+      "step": "named_exit_map",
+      "rule": "overflow is prime-power cascade / low common-kernel / fixed-history-PDEC / SAE / hot-core",
+      "effect": "溢出不是第四类无名逃逸；最终排斥仍依赖命名出口验收。"
+    }
+  ],
+  "sample_ledger_path": "data/prefix-valuation-budget-or-overflow-sample-ledger.json",
+  "sample_ledger_sha256": "8fa1cf0441f0675618bad08dc74595cf829583ac816b8ac8a9f3122fe281d91b",
+  "decision_table": [
+    {
+      "gate": "PrefixValuationBudgetTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已把 cold prefix 整除问题压成 valuation 预算或溢出回流。",
+      "remaining": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn"
+    },
+    {
+      "gate": "CarrierLCMValuationCriterionImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "已导入 D(U)|h0^car 等价于逐素数预算不超载。",
+      "remaining": "criterion imported"
+    },
+    {
+      "gate": "PassOrOverflowClassifierExecutableClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "给定 carrier quotients 与 prefix steps，分类器必输出预算通过或 valuation 溢出包。",
+      "remaining": "CarrierLCMValuationOverflowNamedReturnLedger"
+    },
+    {
+      "gate": "OverflowNamedExitMapClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "valuation 溢出已映射到素数幂级联、共同核、固定历史/PDEC、SAE 或热核心。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturnProved",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个已登记 prefix 产品要么满足 carrier-lcm 预算，要么被命名为 valuation overflow return。",
+      "remaining": "CarrierLCMValuationOverflowReturnExclusionOrAbsorption"
+    },
+    {
+      "gate": "CarrierLCMValuationOverflowNamedReturnLedgerClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "溢出包的命名、payload 与既有回流出口对接闭合；但未排斥这些出口。",
+      "remaining": "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "gate": "ColdPrefixProductDividesCarrierLCMH0LedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "存在 overflow return 分支尚未排斥，不能声明所有 cold prefix 都整除 h0^car。",
+      "remaining": "CarrierLCMValuationOverflowReturnExclusionOrAbsorption"
+    },
+    {
+      "gate": "PrefixResidualFrequencyEqualsCarrierLCMQuotientProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "只有预算通过的 prefix 可立刻得到 h0^car/D(U) 整数残频；溢出分支仍需排斥或吸收。",
+      "remaining": "ColdPrefixProductDividesCarrierLCMH0Ledger OR CarrierLCMValuationOverflowReturnExclusionOrAbsorption"
+    },
+    {
+      "gate": "H0CarrierQuotientCompatibilityWithColdPrefixesProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "pass-or-return 已闭合，但命名 overflow 分支未全局排斥。",
+      "remaining": "CarrierLCMValuationOverflowReturnExclusionOrAbsorption AND PrefixResidualFrequencyEqualsCarrierLCMQuotient"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "CarrierLCMValuationOverflowReturnExclusionOrAbsorption AND UnifiedTerminalBudgetStrictInequality AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "pass_or_overflow_classifier_executable_closed": true,
+  "overflow_named_exit_map_closed": true,
+  "prefix_valuation_budget_against_carrier_lcm_or_overflow_return_proved": true,
+  "carrier_lcm_valuation_overflow_named_return_ledger_closed": true,
+  "cold_prefix_product_divides_carrier_lcm_h0_ledger_proved": false,
+  "prefix_residual_frequency_equals_carrier_lcm_quotient_proved": false,
+  "h0_carrier_quotient_compatibility_with_cold_prefixes_proved": false,
+  "carrier_lcm_valuation_overflow_return_exclusion_or_absorption_proved": false,
+  "named_return_exclusion_proved": false,
+  "unified_terminal_budget_strict_inequality_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "plain_conclusion": "`PrefixValuationBudgetAgainstCarrierLCMOrOverflowReturn` 已闭合为严格 pass-or-return：对每个已登记 cold prefix，计算 `E_p(U)=sum_g v_p(g)` 与 `B_p=max_c v_p(m_c)`。若所有 `E_p(U)<=B_p`，则 `D(U)|h0^car`；若某个素数超载，立即输出 `CarrierLCMValuationOverflowNamedReturn`，并接入素数幂级联、共同核、固定历史/PDEC、SAE 或热核心出口。因此 valuation 超载不再是无名第四出口；但这些命名出口尚未被排斥，所以不能声明所有 cold prefix 都整除 `h0^car`，行/列命题仍未无条件闭合。",
+  "source_hashes": {
+    "experiments/prime_matrix_strict_prefix_valuation_budget_or_overflow_router.py": "dbc7f6ef0036dd3346da0d50868819b33b4b69d9b82c966c790263e1b329774c",
+    "data/prefix-valuation-budget-or-overflow-sample-ledger.json": "8fa1cf0441f0675618bad08dc74595cf829583ac816b8ac8a9f3122fe281d91b",
+    "docs/monograph/prime-matrix-strict-cold-prefix-divides-carrier-lcm-router.json": "03ac0c2625c0b49599ca004afb2d9df95656ffb4494505278ae7ec7b7212b8fc",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-strict-cold-history-prefix-branching-attack-router.json": "ec7b96227c0b8752620609589fb1367d7483f2c46db66c705a13e68523002e86",
+    "docs/monograph/prime-matrix-strict-primitive-product-projection-rule-router.json": "4c85ccfac092bb1ef772079cbf6adaa4c1f64f7b485b8d3ed2a71e2ea67422f9"
+  }
+}
