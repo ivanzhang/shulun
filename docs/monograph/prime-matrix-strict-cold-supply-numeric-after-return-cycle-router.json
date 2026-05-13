@@ -1,0 +1,133 @@
+{
+  "certificate_type": "prime_matrix_strict_cold_supply_numeric_after_return_cycle_router",
+  "cold_core_threshold_numeric_table_proved": false,
+  "cold_numeric_target_imported": true,
+  "cold_supply_formula_sync_imported": true,
+  "cold_supply_same_parameter_numeric_envelope_proved": false,
+  "collar_width_lcm_compression_imported": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ColdNumericTargetImported",
+      "meaning": "回流后同参数余量已把主攻点指向冷供给数值包。",
+      "proved": true,
+      "remaining": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "ColdSupplyFormulaSyncImported",
+      "meaning": "旧冷供给公式和同参数调参纪律可用。",
+      "proved": true,
+      "remaining": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "EffectivePruningStructuralSyncImported",
+      "meaning": "有效剪枝已通过小素数幂、fan-in、稀疏终端和兄弟收费链同步到最新前沿。",
+      "proved": true,
+      "remaining": "EffectiveColdHistoryPruningOrHotFixedReturnTheorem"
+    },
+    {
+      "closed": true,
+      "gate": "NoFreeReturnCycleImported",
+      "meaning": "共同核/LCM/collar 回流不能作为免费冷供给循环。",
+      "proved": true,
+      "remaining": "CommonKernelReturnCycleDescentOrPDECLedger"
+    },
+    {
+      "closed": true,
+      "gate": "EffectivePruningClosedForNonpersistentBudget",
+      "meaning": "剪枝失败均进入命名出口或预算扣减；纯非持久 U_np 只剩真正冷历史。",
+      "proved": true,
+      "remaining": "ColdCoreThresholdFunctionNumericTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "ColdCoreThresholdNumericTableProved",
+      "meaning": "仍缺同参数 C_core(W) 的可求和数值表。",
+      "proved": false,
+      "remaining": "ColdCoreThresholdFunctionNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "SameParameterPDECThresholdNumericTableProved",
+      "meaning": "仍缺同参数 T_PDEC(W) 的阈值数值表。",
+      "proved": false,
+      "remaining": "SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "ColdSupplySameParameterNumericEnvelopeProved",
+      "meaning": "预算版剪枝关闭后，真正剩余是 C_core/T_PDEC 数值表与并行命名出口排斥。",
+      "proved": false,
+      "remaining": "ColdCoreThresholdFunctionNumericTable AND SameParameterPDECThresholdNumericTable AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "ColdCoreThresholdFunctionNumericTable AND SameParameterPDECThresholdNumericTable AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "effective_pruning_closed_for_nonpersistent_budget": true,
+  "effective_pruning_structural_sync_imported": true,
+  "empirical_absence_not_used": true,
+  "fixed_type_history_pdec_excluded": false,
+  "hardpoint_after_router": "ColdCoreThresholdFunctionNumericTable AND SameParameterPDECThresholdNumericTable AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion",
+  "hardpoint_before_router": "ColdSupplySameParameterNumericEnvelope",
+  "low_kernel_unnamed_exit_removed_imported": true,
+  "moving_atom_exclusion_proved": false,
+  "next_direct_attack_target": "ColdCoreThresholdFunctionNumericTable",
+  "no_free_return_cycle_imported": true,
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "SameParameterPDECThresholdNumericTable",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`ColdSupplySameParameterNumericEnvelope` 已同步到共同核回流关闭后的前沿。旧的有效剪枝阻塞不再是一个免费循环：终端冷窗口反级联失败、兄弟超收费、collar 宽度爆发、低乘子共同核回流都会进入热核心、固定历史、PDEC/SAE 或统一预算扣减，不能继续算入纯非持久冷供给。因此在非持久预算侧，真正剩余压成两个数值表：`ColdCoreThresholdFunctionNumericTable` 和 `SameParameterPDECThresholdNumericTable`。本步不排斥热/固定/持久出口，也不证明最终数值反超。",
+  "pruning_rows": [
+    {
+      "budget_effect": "cannot remain in U_np after no-free-return-cycle",
+      "failure_mode": "terminal cold-window anti-cascade fails",
+      "route": "sibling charging / collar width LCM / low-kernel return"
+    },
+    {
+      "budget_effect": "counted as named return, not cold supply",
+      "failure_mode": "sibling family overcharges parent cold support",
+      "route": "hot core or fixed history"
+    },
+    {
+      "budget_effect": "LCM/common-kernel branch is charged, not free",
+      "failure_mode": "collar width explosion",
+      "route": "LCM height or common-kernel return"
+    },
+    {
+      "budget_effect": "remaining task is numeric C_core/T_PDEC summation",
+      "failure_mode": "all named returns absent",
+      "route": "genuinely cold nonpersistent histories only"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_parameter_pdec_threshold_numeric_table_proved": false,
+  "same_theorem_target_preserved": true,
+  "sibling_charging_ledger_imported": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-supply-numeric-envelope-attack-router.json": "86ba2fbc9abd9d917a940525fde0a9db0dd4e70ee94f745a56382fee896d8255",
+    "docs/monograph/prime-matrix-strict-cold-window-sibling-charging-router.json": "be05fb4b2dee03515ca4eea8e086eff6341c0e04d69da9501072cccf74414591",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-strict-effective-pruning-latest-sync-router.json": "ed70b01806e4ff545cc7ab3d3d051009e33cf6e1e43190141f5278ed9d73c126",
+    "docs/monograph/prime-matrix-strict-low-multiplier-common-kernel-latest-sync-router.json": "10d6c849cdb719344db932e7cfbf6f7f94ba66f26b28f0f3bb5f73d5d5df778d",
+    "docs/monograph/prime-matrix-strict-same-parameter-sparse-margin-after-return-cycle-router.json": "c7265153d74715fc941d430ceb1307996ffff0955769b5d84660464dc7f90faa",
+    "docs/monograph/prime-matrix-strict-sibling-collar-width-lcm-kernel-router.json": "973a1c986598cb27dd132354715b336eae7938103c89d09da451123f2ade08de",
+    "docs/monograph/prime-matrix-strict-terminal-cold-window-anticascade-attack-router.json": "c2ef211342a04f992f35f62a595d3c1647663d1a9fde5d1e78ff57c735bf63d6",
+    "experiments/prime_matrix_strict_cold_supply_numeric_after_return_cycle_router.py": "951960f340951767524952cda051b0ff23bc1c082482aa909c66f5e3fea04cc6"
+  },
+  "status": "cold_supply_numeric_after_return_cycle_reduced_to_core_pdec_tables_open",
+  "terminal_core_hot_divisor_window_excluded": false
+}
