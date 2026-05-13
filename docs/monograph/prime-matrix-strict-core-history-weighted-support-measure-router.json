@@ -1,0 +1,242 @@
+{
+  "actual_cold_prefix_tree_domain_closed": true,
+  "certificate_type": "prime_matrix_strict_core_history_weighted_support_measure_router",
+  "cold_supply_same_parameter_numeric_envelope_proved": false,
+  "cold_support_depth_telescoping_contraction_or_log_absorption_table_proved": false,
+  "collar_and_kernel_return_discipline_imported": true,
+  "core_history_weighted_support_measure_table_proved": false,
+  "core_threshold_summation_dominance_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "SupportMeasureTargetImported",
+      "meaning": "上一层已把核心阈值求和优势压成实际冷历史加权支撑测度。",
+      "proved": true,
+      "remaining": "CoreHistoryWeightedSupportMeasureTable"
+    },
+    {
+      "closed": true,
+      "gate": "ActualColdPrefixTreeDomainClosed",
+      "meaning": "有效剪枝接口给出 D(W)|h_0 与 H_W=h_0/D(W)，故支撑可按前缀树组织。",
+      "proved": true,
+      "remaining": "CoreHistoryWeightedSupportMeasureTable"
+    },
+    {
+      "closed": true,
+      "gate": "SiblingLayerProjectionLedgerImported",
+      "meaning": "同父兄弟族的单层收费已投影到父支撑、overlap、collar 和命名回流。",
+      "proved": true,
+      "remaining": "CanonicalColdWindowSiblingChargingOrHotReturnLedger AND ParentScaledChildUnionSupportNumericEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "CollarAndKernelReturnDisciplineImported",
+      "meaning": "collar 宽度爆发和共同核回流已不能作为免费冷供给循环。",
+      "proved": true,
+      "remaining": "SiblingCollarWidthLCMKernelCompressionLedger AND LowMultiplierCommonKernelColumnCRTOrPDECRoute AND CommonKernelReturnCycleDescentOrPDECLedger"
+    },
+    {
+      "closed": true,
+      "gate": "PrimePowerAndFanInIndependentExitsRemoved",
+      "meaning": "单素数幂形式爆炸已规范化，多源 fan-in 已压成有界小商 SAE/PDEC。",
+      "proved": true,
+      "remaining": "SmallPrimePowerCascadeColdWindowExclusionTableForP235 AND MultiSourceKernelFanInSAEOrPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "SingleLayerSupportEnvelopeClosed",
+      "meaning": "每个父前缀的一层兄弟冷支撑已经没有无名出口。",
+      "proved": true,
+      "remaining": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable"
+    },
+    {
+      "closed": true,
+      "gate": "DepthTelescopingGapCertified",
+      "meaning": "单层 envelope 不能自动推出全深度总支撑；需要收缩或对数吸收表。",
+      "proved": true,
+      "remaining": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable"
+    },
+    {
+      "closed": false,
+      "gate": "CoreHistoryWeightedSupportMeasureTableProved",
+      "meaning": "尚未证明跨层总支撑测度在同参数预算内足够小。",
+      "proved": false,
+      "remaining": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable AND SameParameterPDECThresholdNumericTable AND FiniteColdHistorySummationRunnerOrAnalyticEnvelope"
+    },
+    {
+      "closed": false,
+      "gate": "CoreThresholdSummationDominanceProved",
+      "meaning": "支撑测度、T_PDEC 权重和需求端下界仍未完成闭合比较。",
+      "proved": false,
+      "remaining": "CoreHistoryWeightedSupportMeasureTable AND SameParameterPDECThresholdNumericTable AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable AND SameParameterPDECThresholdNumericTable AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "depth_obstruction_rows": [
+    {
+      "depth": 4,
+      "per_level_parent_support": 1,
+      "root_support_bound": 1,
+      "shows_gap": true,
+      "single_level_bound_valid": true,
+      "total_support_without_contraction": 4
+    },
+    {
+      "depth": 8,
+      "per_level_parent_support": 1,
+      "root_support_bound": 1,
+      "shows_gap": true,
+      "single_level_bound_valid": true,
+      "total_support_without_contraction": 8
+    },
+    {
+      "depth": 16,
+      "per_level_parent_support": 1,
+      "root_support_bound": 1,
+      "shows_gap": true,
+      "single_level_bound_valid": true,
+      "total_support_without_contraction": 16
+    },
+    {
+      "depth": 32,
+      "per_level_parent_support": 1,
+      "root_support_bound": 1,
+      "shows_gap": true,
+      "single_level_bound_valid": true,
+      "total_support_without_contraction": 32
+    }
+  ],
+  "depth_telescoping_gap_certified": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "envelope_rows": [
+    {
+      "input": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable",
+      "role": "把单层 sibling envelope 沿前缀树求和，证明总支撑不超过根势能、对数吸收项或命名回流。",
+      "status": "open"
+    },
+    {
+      "input": "SameParameterPDECThresholdNumericTable",
+      "role": "把未加权支撑升级为 (T_PDEC(W)-1) 加权支撑，并保持同一参数账本。",
+      "status": "open"
+    },
+    {
+      "input": "FiniteColdHistorySummationRunnerOrAnalyticEnvelope",
+      "role": "在有限边界/低 P 区段对实际冷历史族直接枚举或用解析 envelope 补齐。",
+      "status": "open"
+    },
+    {
+      "input": "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+      "role": "将支撑供给上界与早期零行反例链强制负载作同参数严格比较。",
+      "status": "open"
+    }
+  ],
+  "finite_cold_history_summation_runner_or_analytic_envelope_proved": false,
+  "hardpoint_after_router": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable AND SameParameterPDECThresholdNumericTable AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+  "hardpoint_before_router": "CoreHistoryWeightedSupportMeasureTable",
+  "log_absorption_samples": [
+    {
+      "P": 100000,
+      "P_alpha": 141.253754,
+      "depth_cap_floor_log2_plus_1": 17,
+      "log_depth_absorbed_by_P_alpha": true,
+      "margin": 124.253754
+    },
+    {
+      "P": 1000000,
+      "P_alpha": 380.189396,
+      "depth_cap_floor_log2_plus_1": 20,
+      "log_depth_absorbed_by_P_alpha": true,
+      "margin": 360.189396
+    },
+    {
+      "P": 10000000,
+      "P_alpha": 1023.292992,
+      "depth_cap_floor_log2_plus_1": 24,
+      "log_depth_absorbed_by_P_alpha": true,
+      "margin": 999.292992
+    },
+    {
+      "P": 1000000000,
+      "P_alpha": 7413.102413,
+      "depth_cap_floor_log2_plus_1": 30,
+      "log_depth_absorbed_by_P_alpha": true,
+      "margin": 7383.102413
+    }
+  ],
+  "log_depth_sample_absorption_checked": true,
+  "next_direct_attack_target": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "SameParameterPDECThresholdNumericTable",
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+    "FiniteColdHistorySummationRunnerOrAnalyticEnvelope",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`CoreHistoryWeightedSupportMeasureTable` 的单层结构可以下钻到前缀树兄弟收费：同父兄弟冷收费投影到父除数支撑，父支撑落入单个扩张父窗口，collar/LCM/共同核爆发不能免费回流，单素数幂和多源 fan-in 也不再是独立无名出口。但这仍不是全深度加权支撑测度证明：单层 envelope 只能控制每个父节点的一层孩子，不能自动控制沿前缀树所有深度的累计支撑，也不能处理 `T_PDEC` 权重。因此最新最窄剩余是 `ColdSupportDepthTelescopingContractionOrLogAbsorptionTable`：必须证明跨层总支撑可由根势能、可吸收对数因子或命名回流控制。",
+  "prime_power_and_fanin_independent_exits_removed": true,
+  "row_column_unconditional_closed": false,
+  "same_parameter_pdec_threshold_numeric_table_proved": false,
+  "same_theorem_target_preserved": true,
+  "sibling_layer_projection_ledger_imported": true,
+  "single_layer_support_envelope_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-window-sibling-charging-router.json": "be05fb4b2dee03515ca4eea8e086eff6341c0e04d69da9501072cccf74414591",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-strict-effective-cold-history-pruning-router.json": "72d7aeeb5a09864efcb9cd729d4d5331b1adfb780ec33b3a1ae29dfe6e67431b",
+    "docs/monograph/prime-matrix-strict-multisource-fanin-small-quotient-router.json": "89d82ac6d13034c0b3db3d67585df32e9cc2ad534ddec16ddc9c6eb89c22eda4",
+    "docs/monograph/prime-matrix-strict-parent-dilated-window-threshold-router.json": "8ffa039a50039111d1158d985512d9ef1acd10716e08a6efc2f89100c770371b",
+    "docs/monograph/prime-matrix-strict-parent-support-numeric-envelope-router.json": "c6fe6dcdc47b377c9a55915560031ec8b37d528f6d9980eedbce671a2ee8d653",
+    "docs/monograph/prime-matrix-strict-same-parameter-core-threshold-summation-router.json": "1cc2717fe5d08bdea447f23044a214316ff2f4dd1f13426922f016ce20beba74",
+    "docs/monograph/prime-matrix-strict-sibling-collar-cap-table-router.json": "04affb2be59db89256bbc83cb022d0808a473268dff3de85d9f2230214a06b42",
+    "docs/monograph/prime-matrix-strict-sibling-collar-width-lcm-kernel-router.json": "973a1c986598cb27dd132354715b336eae7938103c89d09da451123f2ade08de",
+    "docs/monograph/prime-matrix-strict-sibling-numeric-envelope-attack-router.json": "52bd322127d85f72df347da33b5ccc71b6ef2c023539db38244793e6d8d3448c",
+    "docs/monograph/prime-matrix-strict-single-prime-power-cascade-canonicalization-router.json": "e72a9d55dd3a27c1f9d6287afd6a8debc00a0ebe241977e72e0394bc02c04abf",
+    "experiments/prime_matrix_strict_core_history_weighted_support_measure_router.py": "2f84767b37085ffeadbd9777c472efd4a13ff99b98183f28d5d84432b21f44f9"
+  },
+  "sparse_terminal_forced_load_lower_bound_proved": false,
+  "status": "weighted_support_measure_reduced_to_depth_telescoping_open",
+  "support_measure_target_imported": true,
+  "tree_decomposition_rows": [
+    {
+      "formula": "nodes U, children W=U*g, residual H_U=h_0/D(U)",
+      "meaning": "实际冷历史支撑可以按前缀树分层，而不是无结构形式词集合。",
+      "piece": "prefix tree",
+      "status": "closed_interface"
+    },
+    {
+      "formula": "sum_{g child of U} C_core(U*g) <= C_sib(U)+E_hot/fixed/PDEC(U)",
+      "meaning": "同父兄弟族必须整体收费，超额不再留在冷供给。",
+      "piece": "sibling layer charge",
+      "status": "ledger_closed_numeric_open"
+    },
+    {
+      "formula": "C_sib(U)=|pi(F_U)|, pi(g,k)=gk, plus overlap debt",
+      "meaning": "兄弟收费可投回父频率除数支撑，重复投影进入命名回流。",
+      "piece": "parent projection",
+      "status": "identity_closed"
+    },
+    {
+      "formula": "pi(F_U) subset {d|H_U: d in [L_*,R_*]}",
+      "meaning": "父投影支撑落入单个 collar 扩张父窗口。",
+      "piece": "dilated parent window",
+      "status": "geometry_closed"
+    },
+    {
+      "formula": "sum_depth sum_U C_sib(U) needs contraction or log absorption",
+      "meaning": "单层收费闭合后，还要控制沿前缀树所有深度的累计支撑。",
+      "piece": "cross-depth summation",
+      "status": "open"
+    }
+  ]
+}

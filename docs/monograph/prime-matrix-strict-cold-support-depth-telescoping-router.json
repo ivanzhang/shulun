@@ -1,0 +1,261 @@
+{
+  "alpha": 0.43,
+  "certificate_type": "prime_matrix_strict_cold_support_depth_telescoping_router",
+  "cold_support_depth_telescoping_contraction_or_log_absorption_table_proved": false,
+  "core_history_weighted_support_measure_table_proved": false,
+  "core_threshold_summation_dominance_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "DepthTelescopingTargetImported",
+      "meaning": "上一层已把加权支撑测度的最窄剩余压成跨层深度伸缩。",
+      "proved": true,
+      "remaining": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable"
+    },
+    {
+      "closed": true,
+      "gate": "DepthCapLogPClosed",
+      "meaning": "历史深度至多 floor(log_2 P)+1。",
+      "proved": true,
+      "remaining": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable"
+    },
+    {
+      "closed": true,
+      "gate": "ExplicitLogQuarterAbsorptionClosed",
+      "meaning": "在 P>=100000 下，对数深度可被 P^1/4 吸收。",
+      "proved": true,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": true,
+      "gate": "StrictContractionNotAvailableCertified",
+      "meaning": "现有单层 sibling envelope 不含统一 q<1 收缩，不能直接 telescope 成根势能。",
+      "proved": true,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable"
+    },
+    {
+      "closed": true,
+      "gate": "LogAbsorptionCriterionClosed",
+      "meaning": "若每层支撑指数 beta 和 T_PDEC 指数 tau 满足 beta+tau+1/4<0.43，则深度因子可吸收。",
+      "proved": true,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "PerLevelColdSupportExponentTableProved",
+      "meaning": "尚未证明每层实际冷支撑有 beta<0.18-tau 的同参数指数界。",
+      "proved": false,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable"
+    },
+    {
+      "closed": false,
+      "gate": "ColdSupportDepthTelescopingTableProved",
+      "meaning": "对数吸收判据已闭合，但缺每层支撑指数和 T_PDEC 权重表。",
+      "proved": false,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "CoreHistoryWeightedSupportMeasureTableProved",
+      "meaning": "深度伸缩、T_PDEC 权重和有限 runner 未全部闭合。",
+      "proved": false,
+      "remaining": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable AND SameParameterPDECThresholdNumericTable AND FiniteColdHistorySummationRunnerOrAnalyticEnvelope"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到早期零行反例链的最终矛盾。",
+      "proved": false,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable AND SameParameterPDECThresholdNumericTable AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "depth_cap_log_p_closed": true,
+  "depth_cap_samples": [
+    {
+      "P": 100000,
+      "P_epsilon": 17.782794,
+      "absorbed": true,
+      "depth_cap": 17,
+      "margin": 0.782794
+    },
+    {
+      "P": 300000,
+      "P_epsilon": 23.403473,
+      "absorbed": true,
+      "depth_cap": 19,
+      "margin": 4.403473
+    },
+    {
+      "P": 1000000,
+      "P_epsilon": 31.622777,
+      "absorbed": true,
+      "depth_cap": 20,
+      "margin": 11.622777
+    },
+    {
+      "P": 10000000,
+      "P_epsilon": 56.234133,
+      "absorbed": true,
+      "depth_cap": 24,
+      "margin": 32.234133
+    },
+    {
+      "P": 1000000000,
+      "P_epsilon": 177.827941,
+      "absorbed": true,
+      "depth_cap": 30,
+      "margin": 147.827941
+    }
+  ],
+  "depth_telescoping_target_imported": true,
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "explicit_log_quarter_absorption_closed": true,
+  "exponent_budget_rows": [
+    {
+      "below_alpha": true,
+      "beta_per_level_support": 0.1,
+      "log_epsilon": 0.25,
+      "margin": 0.03,
+      "remaining_after_log": 0.18,
+      "tau_tpdec_weight": 0.05,
+      "total_exponent": 0.4
+    },
+    {
+      "below_alpha": true,
+      "beta_per_level_support": 0.12,
+      "log_epsilon": 0.25,
+      "margin": 0.01,
+      "remaining_after_log": 0.18,
+      "tau_tpdec_weight": 0.05,
+      "total_exponent": 0.42
+    },
+    {
+      "below_alpha": false,
+      "beta_per_level_support": 0.15,
+      "log_epsilon": 0.25,
+      "margin": 0.0,
+      "remaining_after_log": 0.18,
+      "tau_tpdec_weight": 0.03,
+      "total_exponent": 0.43
+    },
+    {
+      "below_alpha": false,
+      "beta_per_level_support": 0.18,
+      "log_epsilon": 0.25,
+      "margin": 0.0,
+      "remaining_after_log": 0.18,
+      "tau_tpdec_weight": 0.0,
+      "total_exponent": 0.43
+    },
+    {
+      "below_alpha": false,
+      "beta_per_level_support": 0.2,
+      "log_epsilon": 0.25,
+      "margin": -0.02,
+      "remaining_after_log": 0.18,
+      "tau_tpdec_weight": 0.0,
+      "total_exponent": 0.45
+    }
+  ],
+  "finite_cold_history_summation_runner_or_analytic_envelope_proved": false,
+  "hardpoint_after_router": "SameParameterPerLevelColdSupportExponentTable AND SameParameterPDECThresholdNumericTable",
+  "hardpoint_before_router": "ColdSupportDepthTelescopingContractionOrLogAbsorptionTable",
+  "log_absorption_criterion_closed": true,
+  "log_absorption_epsilon": 0.25,
+  "next_direct_attack_target": "SameParameterPerLevelColdSupportExponentTable",
+  "no_contraction_witness_rows": [
+    {
+      "S_level": 1,
+      "S_next": 1,
+      "level": 1,
+      "nonexpansion_valid": true,
+      "strict_contraction_factor_needed": "<1",
+      "strict_contraction_witness_fails": true
+    },
+    {
+      "S_level": 1,
+      "S_next": 1,
+      "level": 2,
+      "nonexpansion_valid": true,
+      "strict_contraction_factor_needed": "<1",
+      "strict_contraction_witness_fails": true
+    },
+    {
+      "S_level": 1,
+      "S_next": 1,
+      "level": 3,
+      "nonexpansion_valid": true,
+      "strict_contraction_factor_needed": "<1",
+      "strict_contraction_witness_fails": true
+    },
+    {
+      "S_level": 1,
+      "S_next": 1,
+      "level": 4,
+      "nonexpansion_valid": true,
+      "strict_contraction_factor_needed": "<1",
+      "strict_contraction_witness_fails": true
+    }
+  ],
+  "no_theorem_switch": true,
+  "p_min": 100000,
+  "parallel_attack_targets": [
+    "SameParameterPDECThresholdNumericTable",
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+    "FiniteColdHistorySummationRunnerOrAnalyticEnvelope",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`ColdSupportDepthTelescopingContractionOrLogAbsorptionTable` 可关闭两个基础环节：实际历史深度至多 `floor(log_2 P)+1`，且在 `P>=100000` 时该对数因子可由 `P^(1/4)` 显式吸收。但现有兄弟收费/父支撑投影账本没有给出统一严格收缩 `S_{j+1}<=qS_j(q<1)`；因此不能把全深度支撑直接压成根势能。剩余变成清晰的同参数指数条件：若每层冷支撑 `S_level<=P^beta` 且 `T_PDEC<=P^tau`，需要 `beta+tau+1/4<0.43`。最新最窄点是 `SameParameterPerLevelColdSupportExponentTable`。",
+  "remaining_exponent_after_log_absorption": 0.18,
+  "row_column_unconditional_closed": false,
+  "same_parameter_pdec_threshold_numeric_table_proved": false,
+  "same_parameter_per_level_cold_support_exponent_table_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-supply-numeric-after-return-cycle-router.json": "5be154f20bb3ff27a7c356dc2fc1d9b2a963be039e3c4f94ec2d941a7e47f721",
+    "docs/monograph/prime-matrix-strict-core-history-weighted-support-measure-router.json": "2dd7639bfbaa615273487219d874098fb83b09636ad217369bb1b71df21bdf8b",
+    "docs/monograph/prime-matrix-strict-same-parameter-core-threshold-summation-router.json": "1cc2717fe5d08bdea447f23044a214316ff2f4dd1f13426922f016ce20beba74",
+    "docs/monograph/prime-matrix-strict-same-parameter-prefix-window-spec-router.json": "d80bb554768007ffae5c7b1823173e7c985d85af69f458046ca8aa84f81fcc0b",
+    "experiments/prime_matrix_strict_cold_support_depth_telescoping_router.py": "23a6c788da6c8bbfbb1d4e146c09cce1d6d272e4405ffc5479cf8b5aca9db2b3"
+  },
+  "status": "depth_telescoping_reduced_to_per_level_support_exponent_open",
+  "strict_contraction_not_available_certified": true,
+  "telescoping_rows": [
+    {
+      "formula": "depth(W)<=floor(log_2 h_0)<=floor(log_2 P)",
+      "meaning": "每一步乘子至少为 2，因此历史深度至多对数级。",
+      "name": "strict_depth_cap",
+      "status": "closed"
+    },
+    {
+      "formula": "floor(log_2 P)+1 <= P^(1/4) for P>=100000",
+      "meaning": "对数深度可转成一个显式 P^0.25 预算损耗。",
+      "name": "explicit_log_absorption",
+      "status": "closed"
+    },
+    {
+      "formula": "Sigma_support <= (floor(log_2 P)+1) * max_level S_level + named returns",
+      "meaning": "若无严格收缩，最保守的全深度代价是一个对数因子。",
+      "name": "single_layer_to_all_depths",
+      "status": "closed_as_reduction"
+    },
+    {
+      "formula": "if S_level<=P^beta and T_PDEC<=P^tau and beta+tau+1/4<alpha, then weighted support < P^alpha",
+      "meaning": "最终只需每层支撑指数和 PDEC 权重留出 alpha-1/4 的余量。",
+      "name": "weighted_log_absorption_criterion",
+      "status": "closed_criterion"
+    },
+    {
+      "formula": "S_{j+1} <= q S_j with q<1",
+      "meaning": "现有兄弟投影账本只有非扩张/收费，不含统一 q<1 收缩。",
+      "name": "strict_contraction",
+      "status": "not_proved"
+    }
+  ]
+}
