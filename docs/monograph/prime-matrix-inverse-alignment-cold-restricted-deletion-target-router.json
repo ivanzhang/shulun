@@ -1,0 +1,197 @@
+{
+  "certificate_type": "prime_matrix_inverse_alignment_cold_restricted_deletion_target_router",
+  "cold_restricted_exact_x_supply_deletion_ledger_closed": true,
+  "cold_restriction_deletion_lower_bound_proved": false,
+  "cold_return_routes_imported": true,
+  "cold_supply_same_parameter_numeric_envelope_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ExactXRawCapacityObstructionImported",
+      "meaning": "上一层已证明 raw suffix 容量路线不足。",
+      "proved": true,
+      "remaining": "ColdRestrictedExactXSupplyDeletionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "RequiredDeletionFormulaClosed",
+      "meaning": "若 raw capacity 为整数 C，严格余量需要删除至少 floor(C-M#)+1 个单位。",
+      "proved": true,
+      "remaining": "ColdRestrictionDeletionLowerBoundAgainstExactXTable"
+    },
+    {
+      "closed": true,
+      "gate": "ExactXDeletionTargetTableClosed",
+      "meaning": "样本 exact x 的所需 cold 删除量已生成。",
+      "proved": true,
+      "remaining": "ColdRestrictionDeletionLowerBoundAgainstExactXTable"
+    },
+    {
+      "closed": true,
+      "gate": "ColdReturnRoutesImported",
+      "meaning": "可用删除来源只能是 cold/no-return guard、热/固定回流、共同核无免费循环与 PDEC/SAE。",
+      "proved": true,
+      "remaining": "ColdSupplySameParameterNumericEnvelope"
+    },
+    {
+      "closed": true,
+      "gate": "ColdRestrictedExactXSupplyDeletionLedgerClosed",
+      "meaning": "删除量目标表闭合，但删除量下界尚未证明。",
+      "proved": true,
+      "remaining": "ColdRestrictionDeletionLowerBoundAgainstExactXTable"
+    },
+    {
+      "closed": false,
+      "gate": "ColdRestrictionDeletionLowerBoundProved",
+      "meaning": "尚未证明真实 cold 限制至少删除目标表所需单位。",
+      "proved": false,
+      "remaining": "ColdRestrictionDeletionLowerBoundAgainstExactXTable"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "非持久删除量下界、持久 moving atom 与 DStructure/Rankin 仍未全部闭合。",
+      "proved": false,
+      "remaining": "ColdRestrictionDeletionLowerBoundAgainstExactXTable AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "deletion_target_rows": [
+    {
+      "Msharp": 2.666666666667,
+      "P": 13,
+      "minimum_integer_deletion_for_strict_margin": 3,
+      "raw_gap": 2.333333333333,
+      "raw_suffix_capacity": 5,
+      "remaining_capacity_after_required_deletion": 2,
+      "required_deletion_fraction_of_raw_suffix": 0.6,
+      "strict_margin_after_required_deletion": true,
+      "x": 168,
+      "z": 3
+    },
+    {
+      "Msharp": 3.166666666667,
+      "P": 17,
+      "minimum_integer_deletion_for_strict_margin": 4,
+      "raw_gap": 3.833333333333,
+      "raw_suffix_capacity": 7,
+      "remaining_capacity_after_required_deletion": 3,
+      "required_deletion_fraction_of_raw_suffix": 0.571428571,
+      "strict_margin_after_required_deletion": true,
+      "x": 1210,
+      "z": 3
+    },
+    {
+      "Msharp": 2.666666666667,
+      "P": 19,
+      "minimum_integer_deletion_for_strict_margin": 9,
+      "raw_gap": 8.333333333333,
+      "raw_suffix_capacity": 11,
+      "remaining_capacity_after_required_deletion": 2,
+      "required_deletion_fraction_of_raw_suffix": 0.818181818,
+      "strict_margin_after_required_deletion": true,
+      "x": 3658,
+      "z": 3
+    },
+    {
+      "Msharp": 3.566666666667,
+      "P": 23,
+      "minimum_integer_deletion_for_strict_margin": 11,
+      "raw_gap": 10.433333333333,
+      "raw_suffix_capacity": 14,
+      "remaining_capacity_after_required_deletion": 3,
+      "required_deletion_fraction_of_raw_suffix": 0.785714286,
+      "strict_margin_after_required_deletion": true,
+      "x": 58,
+      "z": 3
+    },
+    {
+      "Msharp": 3.233333333333,
+      "P": 29,
+      "minimum_integer_deletion_for_strict_margin": 17,
+      "raw_gap": 16.766666666667,
+      "raw_suffix_capacity": 20,
+      "remaining_capacity_after_required_deletion": 3,
+      "required_deletion_fraction_of_raw_suffix": 0.85,
+      "strict_margin_after_required_deletion": true,
+      "x": 5209,
+      "z": 4
+    },
+    {
+      "Msharp": 4.0,
+      "P": 31,
+      "minimum_integer_deletion_for_strict_margin": 18,
+      "raw_gap": 17.0,
+      "raw_suffix_capacity": 21,
+      "remaining_capacity_after_required_deletion": 3,
+      "required_deletion_fraction_of_raw_suffix": 0.857142857,
+      "strict_margin_after_required_deletion": true,
+      "x": 60794,
+      "z": 4
+    },
+    {
+      "Msharp": 4.595238095238,
+      "P": 37,
+      "minimum_integer_deletion_for_strict_margin": 22,
+      "raw_gap": 21.404761904762,
+      "raw_suffix_capacity": 26,
+      "remaining_capacity_after_required_deletion": 4,
+      "required_deletion_fraction_of_raw_suffix": 0.846153846,
+      "strict_margin_after_required_deletion": true,
+      "x": 73916,
+      "z": 4
+    },
+    {
+      "Msharp": 5.041666666667,
+      "P": 41,
+      "minimum_integer_deletion_for_strict_margin": 25,
+      "raw_gap": 24.958333333333,
+      "raw_suffix_capacity": 30,
+      "remaining_capacity_after_required_deletion": 5,
+      "required_deletion_fraction_of_raw_suffix": 0.833333333,
+      "strict_margin_after_required_deletion": true,
+      "x": 170880,
+      "z": 4
+    },
+    {
+      "Msharp": 4.916666666667,
+      "P": 43,
+      "minimum_integer_deletion_for_strict_margin": 20,
+      "raw_gap": 19.083333333333,
+      "raw_suffix_capacity": 24,
+      "remaining_capacity_after_required_deletion": 4,
+      "required_deletion_fraction_of_raw_suffix": 0.833333333,
+      "strict_margin_after_required_deletion": true,
+      "x": 162932,
+      "z": 5
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_x_deletion_target_table_closed": true,
+  "exact_x_raw_capacity_obstruction_imported": true,
+  "hardpoint_after_router": "ColdRestrictionDeletionLowerBoundAgainstExactXTable AND ColdSupplySameParameterNumericEnvelope",
+  "hardpoint_before_router": "ColdRestrictedExactXSupplyDeletionLedger",
+  "next_direct_attack_target": "ColdRestrictionDeletionLowerBoundAgainstExactXTable",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "ColdSupplySameParameterNumericEnvelope",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "Cold-restricted exact-x 目标已经被量化：对每个 exact x 样本，若原始后缀容量为整数 C，要得到严格 `U_np<M#`，至少要删除 `floor(C-M#)+1` 个后缀容量单位。这把抽象的 cold deletion 需求变成可验目标表。当前仍未证明真实 cold/no-return/回流纪律一定达到该删除下界；下一最窄点是 `ColdRestrictionDeletionLowerBoundAgainstExactXTable`。",
+  "required_deletion_formula_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_parameter_sparse_demand_cold_supply_strict_margin_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-inverse-alignment-cold-restricted-envelope-return-sync-router.json": "427de4e97989bc2758b50d69b59ac2d4854fce5454eff1d9c45d40f167550664",
+    "docs/monograph/prime-matrix-inverse-alignment-exact-x-budget-interface-router.json": "9d8332f7813532faf0efab89112cc12b2ce6b2756b7330fff2471e37c36bc5fe",
+    "docs/monograph/prime-matrix-inverse-alignment-exact-x-runner-obstruction-router.json": "fddf8fc9faec48154d0c44f1d40cf876516bca159b1d9926ee801078395e8828",
+    "docs/monograph/prime-matrix-strict-cold-supply-numeric-after-return-cycle-router.json": "5be154f20bb3ff27a7c356dc2fc1d9b2a963be039e3c4f94ec2d941a7e47f721",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-strict-terminal-cold-window-anticascade-attack-router.json": "c2ef211342a04f992f35f62a595d3c1647663d1a9fde5d1e78ff57c735bf63d6",
+    "experiments/prime_matrix_inverse_alignment_cold_restricted_deletion_target_router.py": "eba11bbe1b5daa177c6ba56d3225d38e637f1a4ef8ca3482fcb2b473f83ebb20"
+  },
+  "status": "cold_restricted_exact_x_deletion_target_table_closed_lower_bound_open"
+}
