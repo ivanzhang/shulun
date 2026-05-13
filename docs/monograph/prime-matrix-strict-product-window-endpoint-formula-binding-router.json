@@ -1,0 +1,193 @@
+{
+  "certificate_type": "prime_matrix_strict_product_window_endpoint_formula_binding_router",
+  "status": "product_window_formula_binding_reduced_to_generator_artifact_or_definition_appendix_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "terminal_window_object_exists": true,
+  "descriptive_product_window_references_found": true,
+  "dyadic_rounding_conditional_lemma_imported": true,
+  "machine_readable_endpoint_generator_found": false,
+  "product_window_endpoint_formula_binding_proved": false,
+  "cold_core_threshold_order_invariance_proved": false,
+  "formula_failure_defect_route_registered": true,
+  "dyadic_product_window_endpoint_commutativity_ledger_proved": false,
+  "dyadic_prime_power_cold_window_cascade_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ProductWindowEndpointDyadicUpdateFormulaBindingLedger",
+  "hardpoint_after_router": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix AND ColdCoreThresholdDyadicOrderInvarianceBindingLedger",
+  "next_direct_attack_target": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix",
+  "parallel_attack_targets": [
+    "ColdCoreThresholdDyadicOrderInvarianceBindingLedger",
+    "DyadicBoundaryRoundingPhaseDefectPDECRoute",
+    "DyadicPathDependentColdWindowPhaseDefectPDECRoute",
+    "DyadicProductWindowEndpointCommutativityLedger",
+    "DyadicPrimePowerColdWindowCascadeExclusionLemma",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "corpus_hits": [
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "needle": "product window ledger",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "needle": "I_W",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "needle": "Y_W",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "needle": "product window ledger",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "needle": "I_W",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "needle": "product window ledger",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "needle": "I_W",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "needle": "Y_W",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "needle": "product window ledger",
+      "binding_strength": "descriptive_reference_only"
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "needle": "I_W",
+      "binding_strength": "descriptive_reference_only"
+    }
+  ],
+  "required_schema_rows": [
+    {
+      "field": "base_window",
+      "required_content": "base endpoints Y_0^-,Y_0^+ with integer or dyadic-rational representation",
+      "why_needed": "确定所有 I_W 的共同来源。"
+    },
+    {
+      "field": "history_update",
+      "required_content": "for each child multiplier m, exact endpoint update rule and rounding direction",
+      "why_needed": "判断不同历史顺序是否可能改变端点。"
+    },
+    {
+      "field": "dyadic_specialization",
+      "required_content": "for m=2^e, update reduces to outward scaling by 2^e",
+      "why_needed": "把 dyadic 取整结合律接到当前 I_W。"
+    },
+    {
+      "field": "normalization",
+      "required_content": "all stepwise endpoints are normalized to the same final representation",
+      "why_needed": "排除因中间舍入格式造成的伪顺序差异。"
+    },
+    {
+      "field": "threshold_binding",
+      "required_content": "C_core(W) is a function of normalized final window scale, or defects are registered",
+      "why_needed": "不仅端点要交换，冷阈值也要随 dyadic 重排不变。"
+    },
+    {
+      "field": "defect_return",
+      "required_content": "if any field fails, discrepancy routes to boundary phase defect/PDEC/hot core",
+      "why_needed": "避免公式绑定失败变成自由容量。"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "FormulaBindingTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把 dyadic 端点交换律压成 product-window 端点公式绑定。",
+      "remaining": "ProductWindowEndpointDyadicUpdateFormulaBindingLedger"
+    },
+    {
+      "gate": "TerminalWindowExists",
+      "closed": true,
+      "proved": true,
+      "meaning": "I_W 已作为终端核心窗口对象存在。",
+      "remaining": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix"
+    },
+    {
+      "gate": "DescriptiveProductWindowReferencesFound",
+      "closed": true,
+      "proved": true,
+      "meaning": "现有语料有 product-window 文字引用，但不是端点生成器。",
+      "remaining": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix"
+    },
+    {
+      "gate": "DyadicRoundingConditionalLemmaImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "若端点公式绑定到 dyadic 外向缩放，交换律已经由取整结合律支付。",
+      "remaining": "ProductWindowEndpointDyadicUpdateFormulaBindingLedger"
+    },
+    {
+      "gate": "MachineReadableEndpointGeneratorFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有可复核的端点更新公式/生成器/hash。",
+      "remaining": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix"
+    },
+    {
+      "gate": "ThresholdBindingFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有把 C_core(W) 绑定到规范化终端窗口尺度。",
+      "remaining": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger"
+    },
+    {
+      "gate": "FormulaFailureDefectRouteRegistered",
+      "closed": true,
+      "proved": false,
+      "meaning": "若生成器不能满足 dyadic 外向缩放，差异必须回流边界相位缺陷。",
+      "remaining": "DyadicBoundaryRoundingPhaseDefectPDECRoute"
+    },
+    {
+      "gate": "ProductWindowEndpointDyadicUpdateFormulaBindingProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "生成器/定义附录和阈值绑定未补齐，公式绑定不能关闭。",
+      "remaining": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix AND ColdCoreThresholdDyadicOrderInvarianceBindingLedger"
+    },
+    {
+      "gate": "DyadicProductWindowEndpointCommutativityLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "公式绑定未闭合，因此端点交换律仍未无条件接回 I_W。",
+      "remaining": "DyadicProductWindowEndpointCommutativityLedger"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix AND DyadicPathDependentColdWindowPhaseDefectPDECRoute AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_product_window_endpoint_formula_binding_router.py": "345882f63f0806775de127066b5a4ce2b4501455e60241360daced59152fb46a",
+    "docs/monograph/prime-matrix-strict-dyadic-endpoint-commutativity-attack-router.json": "defb123fedb4526b578e6dc01d989c696788e013fcd9db77f4b0f609186c52ea",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0",
+    "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.json": "2c0a5401dc9e7f7158cd30e758f88f5a07f68460712f611452ff609ae3b7ddbb"
+  },
+  "plain_conclusion": "`ProductWindowEndpointDyadicUpdateFormulaBindingLedger` 不能由当前语料直接闭合。现有材料只说 `I_W` 的端点继承自 product window ledger，但没有给出 machine-readable 的端点更新公式、舍入方向、规范化表示和 `C_core(W)` 阈值绑定。已闭合的 dyadic 取整交换律可作为后端引理，但还需要新增 `ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix`，否则公式失败必须进入边界相位缺陷路由。"
+}
