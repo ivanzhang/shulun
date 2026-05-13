@@ -1,0 +1,149 @@
+{
+  "certificate_type": "prime_matrix_strict_product_window_endpoint_generator_appendix_router",
+  "status": "generator_appendix_closed_formula_binding_reduced_to_legacy_equivalence_and_threshold_binding_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "endpoint_update_schema_defined": true,
+  "dyadic_rounding_lemma_imported": true,
+  "generator_sample_ledger_written": true,
+  "generator_sample_ledger_sha256": "7a8cd5b0992165d1967c2f9d025d276b1b72250c780fa445d03b47c428575a2b",
+  "product_window_endpoint_generator_artifact_or_definition_appendix_closed": true,
+  "legacy_product_window_notation_equivalence_proved": false,
+  "cold_core_threshold_dyadic_order_invariance_proved": false,
+  "product_window_endpoint_formula_binding_proved": false,
+  "dyadic_product_window_endpoint_commutativity_ledger_proved": false,
+  "dyadic_prime_power_cold_window_cascade_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix",
+  "hardpoint_after_router": "LegacyProductWindowNotationEquivalenceAudit AND ColdCoreThresholdDyadicOrderInvarianceBindingLedger",
+  "next_direct_attack_target": "LegacyProductWindowNotationEquivalenceAudit",
+  "parallel_attack_targets": [
+    "ColdCoreThresholdDyadicOrderInvarianceBindingLedger",
+    "DyadicBoundaryRoundingPhaseDefectPDECRoute",
+    "ProductWindowEndpointDyadicUpdateFormulaBindingLedger",
+    "DyadicProductWindowEndpointCommutativityLedger",
+    "DyadicPrimePowerColdWindowCascadeExclusionLemma",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "generator_schema_rows": [
+    {
+      "field": "base_window",
+      "definition": "I_empty=(L_0,R_0] represented by integer numerators and common scale_den",
+      "status": "defined"
+    },
+    {
+      "field": "history_multiplier",
+      "definition": "each child contributes a positive integer multiplier m; dyadic child has m=2^e",
+      "status": "defined"
+    },
+    {
+      "field": "endpoint_update",
+      "definition": "left'=floor(left/m), right'=ceil(right/m), scale_den unchanged",
+      "status": "defined"
+    },
+    {
+      "field": "normalization",
+      "definition": "after each update endpoints are stored in the same integer numerator schema",
+      "status": "defined"
+    },
+    {
+      "field": "dyadic_commutativity",
+      "definition": "for dyadic multipliers, final window depends only on sum e_i",
+      "status": "proved_by_rounding_associativity"
+    },
+    {
+      "field": "defect_return",
+      "definition": "any historical use of I_W not matching this generator is a boundary phase defect",
+      "status": "registered_route"
+    }
+  ],
+  "sample_summary": {
+    "sample_path": "data/product-window-endpoint-generator-sample-ledger.json",
+    "rows": 18,
+    "all_step_equals_once": true,
+    "all_same_product_equal": true
+  },
+  "rows": [
+    {
+      "gate": "GeneratorAppendixTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把 product-window 公式绑定压成生成器或定义附录。",
+      "remaining": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix"
+    },
+    {
+      "gate": "EndpointUpdateSchemaDefined",
+      "closed": true,
+      "proved": true,
+      "meaning": "本附录定义 base_window、history_multiplier、endpoint_update 与 normalization。",
+      "remaining": "ProductWindowEndpointDyadicUpdateFormulaBindingLedger"
+    },
+    {
+      "gate": "DyadicRoundingLemmaImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "dyadic 外向取整结合律已由上一层闭合。",
+      "remaining": "DyadicProductWindowEndpointCommutativityLedger"
+    },
+    {
+      "gate": "GeneratorSampleLedgerWritten",
+      "closed": true,
+      "proved": true,
+      "meaning": "样本账本确认逐步更新等于按总乘子一次更新。",
+      "remaining": "ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix"
+    },
+    {
+      "gate": "GeneratorArtifactOrDefinitionAppendixClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "生成器定义附录和样本账本已落盘，可作为后续公式绑定对象。",
+      "remaining": "ProductWindowEndpointDyadicUpdateFormulaBindingLedger"
+    },
+    {
+      "gate": "LegacyNotationEquivalenceProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明旧文中所有 I_W 使用均等同本生成器，或全部缺口已登记为边界缺陷。",
+      "remaining": "LegacyProductWindowNotationEquivalenceAudit"
+    },
+    {
+      "gate": "ColdCoreThresholdBindingProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "C_core(W) 尚未绑定为规范窗口尺度函数。",
+      "remaining": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger"
+    },
+    {
+      "gate": "ProductWindowEndpointDyadicUpdateFormulaBindingProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "生成器附录已补齐，但旧记号等价与阈值绑定仍未闭合。",
+      "remaining": "LegacyProductWindowNotationEquivalenceAudit AND ColdCoreThresholdDyadicOrderInvarianceBindingLedger"
+    },
+    {
+      "gate": "DyadicPrimePowerColdWindowCascadeExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "公式绑定未完全接回，dyadic 级联仍未排除。",
+      "remaining": "DyadicPrimePowerColdWindowCascadeExclusionLemma"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "LegacyProductWindowNotationEquivalenceAudit AND ColdCoreThresholdDyadicOrderInvarianceBindingLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_product_window_endpoint_generator_appendix_router.py": "bbdf92b82ce2c12d579fd88ac1ce92c5ff8d3bd31bd18d7ed1d29815424b6fc2",
+    "docs/monograph/prime-matrix-strict-product-window-endpoint-formula-binding-router.json": "aaf78bf3a8b79226fc17487b5e64b6bf3781fdd0d3a0e6bba26eb911e0d5af36",
+    "docs/monograph/prime-matrix-strict-dyadic-endpoint-commutativity-attack-router.json": "defb123fedb4526b578e6dc01d989c696788e013fcd9db77f4b0f609186c52ea",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0",
+    "data/product-window-endpoint-generator-sample-ledger.json": "7a8cd5b0992165d1967c2f9d025d276b1b72250c780fa445d03b47c428575a2b"
+  },
+  "plain_conclusion": "`ProductWindowEndpointGeneratorArtifactOrDefinitionAppendix` 已由本步补齐：端点生成器采用整数端点外向更新 `left'=floor(left/m)`、`right'=ceil(right/m)`，dyadic 子步 `m=2^e` 因取整结合律只依赖总指数；样本账本已落盘并哈希。但这还没有把旧文所有 `I_W` 记号等价到该生成器，也没有证明 `C_core(W)` 只依赖规范窗口尺度。因此公式绑定的最新剩余为 `LegacyProductWindowNotationEquivalenceAudit` 与 `ColdCoreThresholdDyadicOrderInvarianceBindingLedger`。"
+}
