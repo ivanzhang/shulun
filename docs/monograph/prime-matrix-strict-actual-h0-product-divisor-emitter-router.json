@@ -1,0 +1,220 @@
+{
+  "actual_cold_product_block_parameter_ledger_present": false,
+  "actual_product_divisor_domain_h0_emitter_for_formal_unit_proved": false,
+  "canonical_h0_from_early_zero_row_factorization_identity_proved": false,
+  "certificate_type": "prime_matrix_strict_actual_h0_product_divisor_emitter_router",
+  "counterexample_assumption_only": true,
+  "decision_table": [
+    {
+      "closed": true,
+      "gate": "H0EmitterTargetImported",
+      "meaning": "\u4e0a\u4e00\u5c42\u5df2\u628a actual \u53c2\u6570\u8d26\u672c\u9996\u8981\u7f3a\u53e3\u538b\u6210 h0 \u4ea7\u54c1\u9664\u6570\u57df\u53d1\u5c04\u5668\u3002",
+      "proved": true,
+      "remaining": "ActualProductDivisorDomainH0EmitterForFormalUnit"
+    },
+    {
+      "closed": true,
+      "gate": "UpstreamFormalUnitContainerReady",
+      "meaning": "source tuple\u3001formal unit source record\u3001hash\u3001cold candidate rule \u4e0e projection \u5747\u53ef\u4f5c\u4e3a\u8f93\u5165\u3002",
+      "proved": true,
+      "remaining": "input ready"
+    },
+    {
+      "closed": true,
+      "gate": "SourceTupleContainsH0Field",
+      "meaning": "source tuple \u5b57\u6bb5\u5ba1\u67e5\u663e\u793a h0 \u4e0d\u5728\u5f53\u524d schema \u4e2d\u3002",
+      "proved": false,
+      "remaining": "CanonicalH0FromEarlyZeroRowFactorizationIdentity"
+    },
+    {
+      "closed": false,
+      "gate": "CanonicalH0FromEarlyZeroRowFactorizationIdentityProved",
+      "meaning": "\u5c1a\u672a\u7ed9\u51fa\u4ece\u65e9\u671f\u96f6\u884c witness/\u884c\u56e0\u5f0f\u5206\u89e3\u5230\u5355\u4e00 h0 \u7684\u975e\u5faa\u73af\u6052\u7b49\u5f0f\u3002",
+      "proved": false,
+      "remaining": "CanonicalH0FromEarlyZeroRowFactorizationIdentity"
+    },
+    {
+      "closed": false,
+      "gate": "H0DivisibilityCoverageNoChoiceLedgerProved",
+      "meaning": "\u5c1a\u672a\u8bc1\u660e\u6240\u6709 cold \u4ea7\u54c1\u652f\u6491 d \u5747\u9664\u540c\u4e00 h0\uff0c\u4e14 h0 \u4e0d\u80fd\u540e\u9a8c\u6269\u5927\u3002",
+      "proved": false,
+      "remaining": "H0DivisibilityCoverageNoChoiceLedger"
+    },
+    {
+      "closed": false,
+      "gate": "H0CanonicalHashAndNoPostHocChoiceDisciplineClosed",
+      "meaning": "\u5c1a\u672a\u5efa\u7acb h0_hash \u4e0e\u540e\u9a8c\u9009\u62e9\u6392\u65a5\u7eaa\u5f8b\u3002",
+      "proved": false,
+      "remaining": "H0CanonicalHashAndNoPostHocChoiceDiscipline"
+    },
+    {
+      "closed": false,
+      "gate": "ActualProductDivisorDomainH0EmitterForFormalUnitProved",
+      "meaning": "\u9700\u8981 h0 \u6052\u7b49\u5f0f\u3001\u8986\u76d6\u5f8b\u548c\u65e0\u9009\u62e9\u54c8\u5e0c\u7eaa\u5f8b\u4e09\u8005\u540c\u65f6\u6210\u7acb\u3002",
+      "proved": false,
+      "remaining": "CanonicalH0FromEarlyZeroRowFactorizationIdentity AND H0DivisibilityCoverageNoChoiceLedger AND H0CanonicalHashAndNoPostHocChoiceDiscipline"
+    },
+    {
+      "closed": false,
+      "gate": "ActualColdProductBlockParameterLedgerPresent",
+      "meaning": "h0 \u53d1\u5c04\u5668\u672a\u95ed\u5408\uff0c\u5b9e\u9645 cold \u4ea7\u54c1\u5757\u53c2\u6570\u8d26\u672c\u4ecd\u4e0d\u5b58\u5728\u3002",
+      "proved": false,
+      "remaining": "ActualColdProductBlockParameterLedgerForP018Table"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveProductRankinP018InequalityTablePresent",
+      "meaning": "\u7f3a h0 \u4e0e\u5b9e\u9645\u4ea7\u54c1\u5757\uff0cP^0.18 \u8868\u4ecd\u4e0d\u80fd\u751f\u6210\u3002",
+      "proved": false,
+      "remaining": "PrimitiveProductRankinP018InequalityTable"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "\u4ecd\u672a\u5f97\u5230\u6392\u9664\u65e9\u671f\u96f6\u884c\u53cd\u4f8b\u94fe\u7684\u7ec8\u7aef\u77db\u76fe\u3002",
+      "proved": false,
+      "remaining": "CanonicalH0FromEarlyZeroRowFactorizationIdentity AND PrimitiveProductRankinFailureReturnPacketLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "h0_canonical_hash_and_no_posthoc_choice_discipline_closed": false,
+  "h0_divisibility_coverage_nochoice_ledger_proved": false,
+  "hardpoint_after_router": "CanonicalH0FromEarlyZeroRowFactorizationIdentity AND H0DivisibilityCoverageNoChoiceLedger AND H0CanonicalHashAndNoPostHocChoiceDiscipline",
+  "hardpoint_before_router": "ActualProductDivisorDomainH0EmitterForFormalUnit",
+  "imported_flags": {
+    "cold_candidate_rule_imported": true,
+    "formal_unit_source_record_imported": true,
+    "h0_target_imported": true,
+    "hash_stability_imported": true,
+    "primitive_projection_imported": true,
+    "source_tuple_data_imported": true,
+    "source_tuple_schema_imported": true
+  },
+  "invalid_shortcuts": [
+    {
+      "reason": "\u6837\u672c\u4e2d\u7684 2310/4320/840 \u53ea\u9a8c\u8bc1\u6295\u5f71\u548c Rankin \u516c\u5f0f\uff0c\u672a\u7ed1\u5b9a\u4efb\u610f actual formal unit\u3002",
+      "return": "CanonicalH0FromEarlyZeroRowFactorizationIdentity",
+      "shortcut": "diagnostic_h0_samples"
+    },
+    {
+      "reason": "\u5019\u9009\u96c6\u5408\u672c\u8eab\u5b9a\u4e49\u4e3a d|h0\uff1b\u53cd\u8fc7\u6765\u7528\u5019\u9009\u96c6\u5408\u5b9a\u4e49 h0 \u662f\u5faa\u73af\u3002",
+      "return": "H0CanonicalHashAndNoPostHocChoiceDiscipline",
+      "shortcut": "choose_h0_as_lcm_of_candidates"
+    },
+    {
+      "reason": "\u73b0\u6709 source tuple \u53ea\u7ed9 anchor set A\uff0c\u6ca1\u6709\u8bc1\u660e\u6240\u6709 cold \u4ea7\u54c1 d \u90fd\u6765\u81ea A \u7684\u9664\u6570\u683c\u3002",
+      "return": "H0DivisibilityCoverageNoChoiceLedger",
+      "shortcut": "choose_h0_as_product_of_A"
+    },
+    {
+      "reason": "D0/K/Omega \u662f\u5c3a\u5ea6\u548c\u91cd\u53e0\u53c2\u6570\uff0c\u4e0d\u662f\u5df2\u8bc1\u660e\u7684\u4ea7\u54c1\u9664\u6570\u57df\u3002",
+      "return": "CanonicalH0FromEarlyZeroRowFactorizationIdentity",
+      "shortcut": "choose_h0_from_D0_K_Omega"
+    },
+    {
+      "reason": "\u4f1a\u6539\u53d8 Euler product \u548c Rankin \u9884\u7b97\uff0c\u662f\u540e\u9a8c\u9009\u62e9\uff0c\u7834\u574f\u540c formal unit \u54c8\u5e0c\u7eaa\u5f8b\u3002",
+      "return": "H0CanonicalHashAndNoPostHocChoiceDiscipline",
+      "shortcut": "posthoc_enlarge_h0_until_pass"
+    }
+  ],
+  "next_direct_attack_target": "CanonicalH0FromEarlyZeroRowFactorizationIdentity",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "H0DivisibilityCoverageNoChoiceLedger",
+    "H0CanonicalHashAndNoPostHocChoiceDiscipline",
+    "PrimitiveProductRankinFailureReturnPacketLedger",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`ActualProductDivisorDomainH0EmitterForFormalUnit` \u5df2\u88ab\u538b\u5230\u771f\u6b63\u6e90\u5934\uff1a\u5fc5\u987b\u65b0\u589e\u5e76\u8bc1\u660e\u4e00\u4e2a\u4ece\u65e9\u671f\u96f6\u884c witness/\u540c formal unit \u56e0\u5f0f\u5206\u89e3\u6570\u636e\u5230\u5355\u4e00\u6574\u6570 `h0` \u7684\u89c4\u8303\u6052\u7b49\u5f0f\uff0c\u540c\u65f6\u8bc1\u660e\u6240\u6709 cold \u4ea7\u54c1\u652f\u6491 `d` \u90fd\u6ee1\u8db3 `d|h0`\uff0c\u4e14\u4e0d\u80fd\u540e\u9a8c\u6269\u5927 `h0`\u3002\u73b0\u6709 source tuple \u5b57\u6bb5\u6ca1\u6709 `h0`\uff0c\u8bca\u65ad\u6837\u672c\u548c\u6309\u5019\u9009\u53cd\u63a8 h0 \u90fd\u4e0d\u80fd\u4f5c\u4e3a\u8bc1\u660e\u3002\u4e0b\u4e00\u6700\u7a84\u70b9\u4e3a `CanonicalH0FromEarlyZeroRowFactorizationIdentity`\u3002",
+  "primitive_product_rankin_p018_inequality_table_present": false,
+  "required_h0_emitter_schema": [
+    {
+      "definition": "early-zero witness / formal_unit source record",
+      "field": "input_witness",
+      "why_needed": "h0 \u5fc5\u987b\u6765\u81ea\u5047\u8bbe\u53cd\u4f8b\u94fe\uff0c\u800c\u4e0d\u662f\u771f\u5b9e\u7f3a\u5e2d\u6216\u8bca\u65ad\u6837\u672c\u3002"
+    },
+    {
+      "definition": "canonical formula producing integer h0 from row factorization / quotient data",
+      "field": "factorization_identity",
+      "why_needed": "\u7ed9\u51fa\u4ea7\u54c1\u9664\u6570\u57df\u7684\u975e\u5faa\u73af\u6765\u6e90\u3002"
+    },
+    {
+      "definition": "every cold product support d in this formal unit satisfies d|h0",
+      "field": "coverage_law",
+      "why_needed": "\u8ba9\u5019\u9009\u96c6\u5408\u5b9a\u4e49 `{d:d|h0}` \u5408\u6cd5\u3002"
+    },
+    {
+      "definition": "same witness gives same h0; enlargements route to named return",
+      "field": "minimality_or_no_choice_law",
+      "why_needed": "\u9632\u6b62\u540e\u9a8c\u9009\u62e9 h0 \u4ee5\u8c03\u8282 Rankin \u6743\u91cd\u3002"
+    },
+    {
+      "definition": "H(source_tuple_hash, factorization_identity_hash, h0)",
+      "field": "h0_hash",
+      "why_needed": "\u8ba9\u4e0b\u6e38 block \u548c Rankin \u8868\u53ef\u590d\u7b97\u3002"
+    },
+    {
+      "definition": "if no such h0 exists, route to PDEC/SAE/ColumnCRT/fixed-history",
+      "field": "failure_return",
+      "why_needed": "h0 \u53d1\u5c04\u5931\u8d25\u5fc5\u987b\u6210\u4e3a\u7ec8\u7aef\u56de\u6d41\uff0c\u800c\u4e0d\u662f\u9759\u9ed8\u7f3a\u53e3\u3002"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-canonical-formal-unit-hash-stability-router.json": "359c78f1c0629e514eb584acdb81ed489d36a0ba111a37a5c40eee03e59e3af6",
+    "docs/monograph/prime-matrix-concrete-source-tuple-anchor-parameter-router.json": "74670815e579c18d92061f1e4ea57f992810d9a43fbaed2b319ccfa02fd958bb",
+    "docs/monograph/prime-matrix-formal-unit-source-record-router.json": "fe51a3ea8f7d8a71e3f667b43fda4229c11324772afb8c321a06c4d5fab36a2f",
+    "docs/monograph/prime-matrix-strict-actual-cold-product-block-parameter-router.json": "2428d70c9536c4b33a959d5f3410fcdb151910226841e49e51f387080ebf769f",
+    "docs/monograph/prime-matrix-strict-cold-product-block-inventory-router.json": "a9630947c1df0d152a5f1e9f111863792c4022494f509f6ae966b0f7957d6b1b",
+    "docs/monograph/prime-matrix-strict-primitive-product-projection-rule-router.json": "4c85ccfac092bb1ef772079cbf6adaa4c1f64f7b485b8d3ed2a71e2ea67422f9",
+    "experiments/prime_matrix_strict_actual_h0_product_divisor_emitter_router.py": "02bbcc53994b8b6b4fd264c5a0a89571b4be4e278b77e3041edd475e16bee3d3"
+  },
+  "source_tuple_contains_h0_field": false,
+  "source_tuple_field_audit": [
+    {
+      "available": "yes",
+      "field": "formal_unit_id/source_tuple_hash",
+      "gap": "does not define product divisor domain",
+      "h0_use": "row identity key"
+    },
+    {
+      "available": "yes",
+      "field": "P_or_P_range",
+      "gap": "does not determine divisors d|h0",
+      "h0_use": "budget scale"
+    },
+    {
+      "available": "yes",
+      "field": "window_id,L,R",
+      "gap": "window endpoints alone do not define multiplicative product carrier",
+      "h0_use": "local window geometry"
+    },
+    {
+      "available": "yes",
+      "field": "A",
+      "gap": "no theorem says h0 is lcm/product of A or that every cold d divides it",
+      "h0_use": "anchor set"
+    },
+    {
+      "available": "yes",
+      "field": "D0,K,Omega",
+      "gap": "scale and overlap parameters are not a canonical integer h0",
+      "h0_use": "sieve/overlap parameters"
+    },
+    {
+      "available": "yes",
+      "field": "phase_rule",
+      "gap": "phase predicate cannot be used as Euler product divisor domain",
+      "h0_use": "finite phase predicate"
+    },
+    {
+      "available": "no",
+      "field": "h0",
+      "gap": "CanonicalH0FromEarlyZeroRowFactorizationIdentity",
+      "h0_use": "required product divisor domain"
+    }
+  ],
+  "status": "h0_emitter_reduced_to_canonical_factorization_identity_coverage_nochoice"
+}
