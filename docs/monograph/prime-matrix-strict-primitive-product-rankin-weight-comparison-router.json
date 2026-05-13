@@ -1,0 +1,167 @@
+{
+  "certificate_type": "prime_matrix_strict_primitive_product_rankin_weight_comparison_router",
+  "cold_product_block_candidate_count_or_symbolic_bound_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_table": [
+    {
+      "closed": true,
+      "gate": "PrimitiveProductRankinWeightTargetImported",
+      "meaning": "\u4e0a\u4e00\u5c42\u5df2\u95ed\u5408 d \u5230 primitive profile \u7684\u53ef\u6267\u884c\u6295\u5f71\u89c4\u5219\u3002",
+      "proved": true,
+      "remaining": "PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveProductLocalRankinWeightFormulaClosed",
+      "meaning": "\u53cc\u4fa7 dyadic Rankin \u6307\u793a\u51fd\u6570\u4e0e\u5c40\u90e8 Euler product \u6743\u91cd\u516c\u5f0f\u5df2\u81ea\u8db3\u95ed\u5408\u3002",
+      "proved": true,
+      "remaining": "PrimitiveProductLocalRankinWeightFormula"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveProductEulerProfileSumBoundClosed",
+      "meaning": "\u5141\u8bb8 primitive \u56e0\u5b50\u57df\u4e0a\u7684 sum d^{\u00b1s} \u5df2\u5206\u89e3\u4e3a\u6709\u9650 Euler product\u3002",
+      "proved": true,
+      "remaining": "PrimitiveProductEulerProfileSumBound"
+    },
+    {
+      "closed": true,
+      "gate": "DiagnosticSampleLedgerExecutable",
+      "meaning": "\u6837\u672c\u8d26\u672c\u53ef\u6267\u884c\uff1b\u8be5\u9879\u53ea\u6821\u9a8c\u516c\u5f0f\u7ba1\u7ebf\uff0c\u4e0d\u4f5c\u4e3a\u5168\u4f53\u4ea7\u54c1\u5757\u8bc1\u660e\u3002",
+      "proved": true,
+      "remaining": "diagnostic only"
+    },
+    {
+      "closed": true,
+      "gate": "DiagnosticSampleAllRowsPassGridP018",
+      "meaning": "\u8bca\u65ad\u6837\u672c\u662f\u5426\u5168\u90e8\u901a\u8fc7 P^0.18 \u7f51\u683c\u6bd4\u8f83\uff1b\u5931\u8d25\u8868\u793a\u9700\u8981\u66f4\u7ec6\u9884\u7b97\u8868\u6216\u56de\u6d41\u5305\u3002",
+      "proved": false,
+      "remaining": "PrimitiveProductRankinP018InequalityTable AND PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveProductRankinP018InequalityTablePresent",
+      "meaning": "\u5c1a\u672a\u5217\u51fa\u5168\u90e8\u5b9e\u9645 formal unit / dyadic block \u7684 P\u3001h0\u3001Y\u3001s \u4e0e\u5269\u4f59\u9884\u7b97\u6bd4\u8f83\u3002",
+      "proved": false,
+      "remaining": "PrimitiveProductRankinP018InequalityTable"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveProductRankinFailureReturnPacketLedgerClosed",
+      "meaning": "\u5c1a\u672a\u4e3a P^0.18 \u6bd4\u8f83\u5931\u8d25\u5757\u751f\u6210\u70ed\u7a97\u53e3/\u5171\u540c\u6838/PDEC/SAE \u56de\u6d41\u5305\u3002",
+      "proved": false,
+      "remaining": "PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveProductRankinWeightP018ComparisonProved",
+      "meaning": "\u516c\u5f0f\u5c42\u5df2\u95ed\u5408\uff0c\u4f46\u7f3a\u5168\u4f53\u5b9e\u9645\u5757\u7684\u4e0d\u7b49\u5f0f\u8868\u548c\u5931\u8d25\u56de\u6d41\u5904\u7406\u3002",
+      "proved": false,
+      "remaining": "PrimitiveProductRankinP018InequalityTable AND PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "closed": false,
+      "gate": "ColdProductBlockCandidateCountOrSymbolicBoundProved",
+      "meaning": "Rankin \u6743\u91cd\u6bd4\u8f83\u672a\u95ed\u5408\uff0c\u56e0\u6b64 cold \u4ea7\u54c1\u5019\u9009\u8ba1\u6570\u7b26\u53f7\u754c\u4ecd\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "ColdProductBlockCandidateCountOrSymbolicBound"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveProductSupportRankinLedgerProved",
+      "meaning": "\u6743\u91cd\u6bd4\u8f83\u548c\u5931\u8d25\u56de\u6d41\u672a\u5b8c\u6210\uff0c\u539f\u59cb\u4ea7\u54c1\u652f\u6491 Rankin \u95e8\u4ecd\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "PrimitiveProductSupportRankinLedger"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "\u4ecd\u672a\u5f97\u5230\u65e9\u671f\u96f6\u884c\u53cd\u4f8b\u94fe\u4e0e\u771f\u5b9e\u7ed3\u6784\u94fe\u7684\u7ec8\u7aef\u77db\u76fe\u3002",
+      "proved": false,
+      "remaining": "PrimitiveProductRankinP018InequalityTable AND PrimitiveProductRankinFailureReturnPacketLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "formula_rows": [
+    {
+      "formula": "1_{d>Y} <= (d/Y)^s, so N_B <= Y^{-s} sum_{d|h0,allowed} d^s",
+      "name": "left_tail_rankin",
+      "status": "closed"
+    },
+    {
+      "formula": "1_{d<=2Y} <= (2Y/d)^s, so N_B <= (2Y)^s sum_{d|h0,allowed} d^{-s}",
+      "name": "right_tail_rankin",
+      "status": "closed"
+    },
+    {
+      "formula": "sum_{d|h0,allowed} d^{\u00b1s}=prod_{p^a||h0,allowed}(1+p^{\u00b1s}+...+p^{\u00b1as})",
+      "name": "euler_factorization",
+      "status": "closed"
+    },
+    {
+      "formula": "N_B <= min(Y^{-s}Z_+(s),(2Y)^s Z_-(s)) for every s>0",
+      "name": "two_sided_dyadic_bound",
+      "status": "closed"
+    },
+    {
+      "formula": "need min_s min(Y^{-s}Z_+(s),(2Y)^s Z_-(s)) <= P^0.18 for each actual block",
+      "name": "p018_comparison_condition",
+      "status": "open_requires_table"
+    }
+  ],
+  "hardpoint_after_router": "PrimitiveProductRankinP018InequalityTable AND PrimitiveProductRankinFailureReturnPacketLedger",
+  "hardpoint_before_router": "PrimitiveProductRankinWeightP018Comparison",
+  "imported_flags": {
+    "candidate_count_symbolic_schema_imported": true,
+    "primitive_projection_imported": true,
+    "rankin_manifest_schema_imported": true
+  },
+  "next_direct_attack_target": "PrimitiveProductRankinP018InequalityTable",
+  "no_theorem_switch": true,
+  "obstruction_rows": [
+    {
+      "meaning": "\u6295\u5f71 hash \u53ea\u9501\u5b9a\u5c40\u90e8\u7d20\u56e0\u5b50 profile\uff0c\u4e0d\u7ed9\u51fa\u5b9e\u9645 P\u3001h0\u3001Y \u4e0e\u5269\u4f59\u9884\u7b97\u3002",
+      "next": "PrimitiveProductRankinP018InequalityTable",
+      "obstruction": "profile_hash_not_budget"
+    },
+    {
+      "meaning": "\u4e0d\u540c dyadic \u5757\u7684\u6700\u4f18 s \u53ef\u53d8\uff1b\u56fa\u5b9a\u5e38\u6570 s \u4e0d\u80fd\u66ff\u4ee3\u9010\u5757\u8868\u3002",
+      "next": "PrimitiveProductRankinP018InequalityTable",
+      "obstruction": "sigma_not_universal"
+    },
+    {
+      "meaning": "\u82e5\u67d0\u5757 Rankin \u4e0a\u754c\u8d85\u8fc7 P^0.18\uff0c\u5fc5\u987b\u56de\u6d41\u70ed\u7a97\u53e3/\u5171\u540c\u6838/PDEC/SAE/\u56fa\u5b9a\u5386\u53f2\u3002",
+      "next": "PrimitiveProductRankinFailureReturnPacketLedger",
+      "obstruction": "failed_weight_row_needs_return"
+    },
+    {
+      "meaning": "\u6837\u672c\u8d26\u672c\u53ea\u9a8c\u8bc1\u516c\u5f0f\u53ef\u6267\u884c\u6027\uff1b\u5373\u4f7f\u901a\u8fc7\u4e5f\u4e0d\u80fd\u4ee3\u8868\u5168\u90e8 formal unit \u4e0e\u4ea7\u54c1\u5757\u3002",
+      "next": "PrimitiveProductRankinP018InequalityTable",
+      "obstruction": "sample_pass_not_proof"
+    },
+    {
+      "meaning": "\u5f53\u524d\u8bca\u65ad\u6837\u672c\u5df2\u6709\u82e5\u5e72\u5757\u7684\u7c97 Rankin \u7f51\u683c\u4e0a\u754c\u8d85\u8fc7 P^0.18\uff0c\u8bf4\u660e\u516c\u5f0f\u5c42\u4e0d\u80fd\u5355\u72ec\u95ed\u5408\u3002",
+      "next": "PrimitiveProductRankinP018InequalityTable AND PrimitiveProductRankinFailureReturnPacketLedger",
+      "obstruction": "sample_boundary_pressure"
+    }
+  ],
+  "plain_conclusion": "`PrimitiveProductRankinWeightP018Comparison` \u7684\u516c\u5f0f\u5c42\u5df2\u7ecf\u63a8\u8fdb\uff1a\u5bf9\u4efb\u610f dyadic \u4ea7\u54c1\u5757 `(Y,2Y]` \u4e0e\u4efb\u610f `s>0`\uff0c\u5019\u9009\u6570\u6ee1\u8db3 `N_B<=min(Y^{-s}Z_+(s),(2Y)^sZ_-(s))`\uff0c\u5176\u4e2d `Z_\u00b1` \u662f\u5141\u8bb8 primitive \u56e0\u5b50\u57df\u4e0a\u7684\u6709\u9650 Euler product\u3002\u8fd9\u4e2a\u7ed3\u8bba\u81ea\u8db3\u4e14\u53ef\u590d\u7b97\u3002\u4f46\u8981\u63a8\u51fa `P^0.18` \u4ecd\u5fc5\u987b\u7ed9\u51fa\u5168\u90e8\u5b9e\u9645\u5757\u7684 `P,h0,Y,s` \u9884\u7b97\u8868\uff0c\u5e76\u4e3a\u5931\u8d25\u5757\u767b\u8bb0\u56de\u6d41\u5305\uff1b\u56e0\u6b64\u5b8c\u6574\u6743\u91cd\u6bd4\u8f83\u5c1a\u672a\u95ed\u5408\u3002",
+  "primitive_product_euler_profile_sum_bound_closed": true,
+  "primitive_product_local_rankin_weight_formula_closed": true,
+  "primitive_product_rankin_failure_return_packet_ledger_closed": false,
+  "primitive_product_rankin_p018_inequality_table_present": false,
+  "primitive_product_rankin_weight_p018_comparison_proved": false,
+  "primitive_product_support_rankin_ledger_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/primitive-product-projection-sample-ledger.json": "3aa57b90781b1cbfb8a04a23fe3c22d29db27744e23c34938def21314fe0774b",
+    "data/primitive-product-rankin-weight-sample-ledger.json": "79d8bcd52bc3ab367484ed2666f5dbfcae80ee87b53681d41d2df50132e2e3b1",
+    "docs/monograph/prime-matrix-strict-cold-product-candidate-count-router.json": "664b98a29a37db7ba354f28adf9d20842bfdac7505c8803fd5cd2d9038b06175",
+    "docs/monograph/prime-matrix-strict-primitive-product-projection-rule-router.json": "4c85ccfac092bb1ef772079cbf6adaa4c1f64f7b485b8d3ed2a71e2ea67422f9",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-manifest-router.json": "394a44df31ee2a99dcdf53921e1c42af5943255233e2a49051affd1da12b3e9b",
+    "experiments/prime_matrix_strict_primitive_product_rankin_weight_comparison_router.py": "4aa6909c583ee11f3b3c5fd12733ec1dc3950e565839da879dc1498d8faf2af6"
+  },
+  "status": "primitive_rankin_local_weight_formula_closed_p018_table_open"
+}
