@@ -1,0 +1,69 @@
+{
+  "ledger_type": "carrier_lcm_return_branch_sample_ledger",
+  "rule": "carrier-lcm returns are named and split by persistence into sparse budget or persistent terminal family",
+  "rows": [
+    {
+      "case": "source_defect_nonpersistent",
+      "return_kind": "source_domain_defect_return",
+      "persistent": false,
+      "classification": {
+        "return_kind": "source_domain_defect_return",
+        "persistent": false,
+        "bucket": "nonpersistent_budget_absorption",
+        "route": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+        "is_named": true
+      }
+    },
+    {
+      "case": "source_defect_persistent",
+      "return_kind": "source_domain_defect_return",
+      "persistent": true,
+      "classification": {
+        "return_kind": "source_domain_defect_return",
+        "persistent": true,
+        "bucket": "persistent_terminal_family",
+        "route": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+        "is_named": true
+      }
+    },
+    {
+      "case": "valuation_overflow_nonpersistent",
+      "return_kind": "valuation_overflow_return",
+      "persistent": false,
+      "classification": {
+        "return_kind": "valuation_overflow_return",
+        "persistent": false,
+        "bucket": "nonpersistent_budget_absorption",
+        "route": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+        "is_named": true
+      }
+    },
+    {
+      "case": "valuation_overflow_persistent",
+      "return_kind": "valuation_overflow_return",
+      "persistent": true,
+      "classification": {
+        "return_kind": "valuation_overflow_return",
+        "persistent": true,
+        "bucket": "persistent_terminal_family",
+        "route": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+        "is_named": true
+      }
+    },
+    {
+      "case": "hot_core_persistent",
+      "return_kind": "hot_core_return",
+      "persistent": true,
+      "classification": {
+        "return_kind": "hot_core_return",
+        "persistent": true,
+        "bucket": "persistent_terminal_family",
+        "route": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+        "is_named": true
+      }
+    }
+  ],
+  "all_rows_named": true,
+  "nonpersistent_budget_rows_present": true,
+  "persistent_terminal_rows_present": true
+}

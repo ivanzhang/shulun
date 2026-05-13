@@ -1,0 +1,116 @@
+{
+  "certificate_type": "prime_matrix_strict_carrier_lcm_return_branch_frontier_router",
+  "status": "carrier_lcm_return_branch_reduced_to_sparse_budget_and_persistent_terminal_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hardpoint_before_router": "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+  "hardpoint_after_router": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+  "next_direct_attack_target": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+  "parallel_attack_targets": [
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "imported_flags": {
+    "target_imported": true,
+    "no_return_divisibility_imported": true,
+    "named_return_alphabet_compression_imported": true,
+    "unified_budget_latest_sync_imported": true,
+    "sparse_history_budget_still_open": true,
+    "persistent_terminal_still_open": true,
+    "sparse_history_no_silent_collapse_imported": true,
+    "common_kernel_no_free_cycle_imported": true
+  },
+  "frontier_rows": [
+    {
+      "return_branch": "source_domain_defect_return",
+      "nonpersistent_route": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+      "persistent_route": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+      "meaning": "单步来源域缺陷不能留在 no-return 分支；非持久则进预算，持久则进终端族。"
+    },
+    {
+      "return_branch": "valuation_overflow_return",
+      "nonpersistent_route": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+      "persistent_route": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+      "meaning": "累计 p-token 溢出已命名；非持久由 U_cold/稀疏历史吸收，持久进入 PDEC/CleanKLS/固定历史。"
+    },
+    {
+      "return_branch": "hot_or_fixed_or_common_kernel_return",
+      "nonpersistent_route": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+      "persistent_route": "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+      "meaning": "共同核、热核心、固定历史没有第四出口；仍归入同一二分。"
+    }
+  ],
+  "sample_ledger_path": "data/carrier-lcm-return-branch-sample-ledger.json",
+  "sample_ledger_sha256": "55193fb7bea2149006a9dd4f22fea2c47fa3174eacdc9ea63cc17b5dca383f09",
+  "decision_table": [
+    {
+      "gate": "ReturnBranchTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已把全局 carrier-lcm 兼容剩余压成 return 分支排斥或吸收。",
+      "remaining": "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption"
+    },
+    {
+      "gate": "NoReturnBranchAlreadyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "无回流分支上的 D(U)|h0^car 与整数残频已闭合。",
+      "remaining": "no-return branch closed"
+    },
+    {
+      "gate": "ReturnBranchAlphabetFrontierClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "所有 carrier-lcm return 分支均归入非持久预算吸收或持久终端族。",
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget OR IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore"
+    },
+    {
+      "gate": "CarrierLCMCompatibilityReturnBranchIndependentHardpointRemoved",
+      "closed": true,
+      "proved": true,
+      "meaning": "return 分支不再是独立黑箱，已压成两个全局终端门。",
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore"
+    },
+    {
+      "gate": "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorptionProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "非持久预算反超与持久终端族排斥仍未完成。",
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore"
+    },
+    {
+      "gate": "ColdPrefixProductDividesCarrierLCMH0LedgerGlobalProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "全局整除还差 return 分支排斥或吸收。",
+      "remaining": "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "return_branch_alphabet_frontier_closed": true,
+  "carrier_lcm_compatibility_return_branch_independent_hardpoint_removed": true,
+  "carrier_lcm_compatibility_return_branch_exclusion_or_absorption_proved": false,
+  "sparse_history_demand_exceeds_nonpersistent_supply_budget_proved": false,
+  "persistent_terminal_family_excluded": false,
+  "cold_prefix_product_divides_carrier_lcm_h0_ledger_global_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "plain_conclusion": "`CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption` 已压缩为全局二门：source-defect、valuation-overflow、共同核、热核心和固定历史等 return 分支均不是第四类出口；非持久 return 必须进入 `SparseHistoryDemandExceedsNonpersistentSupplyBudget`，持久 return 必须进入 `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore`。因此 carrier-lcm 兼容的剩余不再是局部整除问题，而是非持久预算反超与持久终端族排斥。",
+  "source_hashes": {
+    "experiments/prime_matrix_strict_carrier_lcm_return_branch_frontier_router.py": "bc86ad0be3de39ac7450f530e3e0cbd487afbf04c2e27ba80f8cf6220631b1da",
+    "data/carrier-lcm-return-branch-sample-ledger.json": "55193fb7bea2149006a9dd4f22fea2c47fa3174eacdc9ea63cc17b5dca383f09",
+    "docs/monograph/prime-matrix-strict-no-return-cold-prefix-product-divides-carrier-lcm-router.json": "57c89a464750db6a120968e60975cbf30f2836d6967e9c35875b35508af78f6e",
+    "docs/monograph/prime-matrix-strict-named-return-after-rowfree-sync-router.json": "818c17bd920eb69eaa05f2cca96099ad4637c8ab960afd843ec6a53872d392d3",
+    "docs/monograph/prime-matrix-strict-unified-budget-after-named-sync-router.json": "17ebb6fdd134cb1ec15518763ec426a0509da1f7432254a4fa16e02dbefb1dc0",
+    "docs/monograph/prime-matrix-strict-prefix-label-sparse-history-anticollapse-router.json": "94229062234848b5e5e20ffaf940e7d4447b8ec957a0b3e8b2bf85d3e55a1a3f",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671"
+  }
+}
