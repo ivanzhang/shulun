@@ -1,0 +1,187 @@
+{
+  "certificate_type": "prime_matrix_strict_clean_primitive_rankin_failure_exact_count_fallback_router",
+  "clean_primitive_dispersion_rankin_failure_excluded_or_sigma_pass_proved": false,
+  "clean_primitive_false_return_guard_closed": true,
+  "clean_residual_target_imported": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "CleanPrimitiveResidualTargetImported",
+      "meaning": "上一层已把无名失败残项压成 clean primitive Rankin 失败。",
+      "proved": true,
+      "remaining": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass"
+    },
+    {
+      "closed": true,
+      "gate": "RankinFailureNotSupportFailureSeparated",
+      "meaning": "Rankin 上界失败只说明证书松弛，不等价于实际块计数超预算。",
+      "proved": true,
+      "remaining": "verdict refinement"
+    },
+    {
+      "closed": true,
+      "gate": "ExactCountFallbackSchemaClosed",
+      "meaning": "actual clean primitive 行必须先提交精确计数或可复核计数上界。",
+      "proved": true,
+      "remaining": "ExactPrimitiveBlockCountP018FallbackTable"
+    },
+    {
+      "closed": true,
+      "gate": "DiagnosticRankinFailRowsExactCountPass",
+      "meaning": "当前诊断样本的 Rankin 失败行全部由 exact_count_pass 消解，不需要回流包。",
+      "proved": true,
+      "remaining": "diagnostic only"
+    },
+    {
+      "closed": false,
+      "gate": "GlobalExactPrimitiveBlockCountP018FallbackTableProved",
+      "meaning": "尚未给出全体 actual clean primitive 块的精确计数 fallback 表。",
+      "proved": false,
+      "remaining": "ExactPrimitiveBlockCountP018FallbackTable"
+    },
+    {
+      "closed": false,
+      "gate": "CleanPrimitiveDispersionRankinFailureExcludedOrSigmaPass",
+      "meaning": "本步只删除 Rankin 失败=支撑失败 的错误等价；全局 clean exact overbudget 仍未排除。",
+      "proved": false,
+      "remaining": "ExactPrimitiveBlockCountP018FallbackTable OR PerBlockRankinSigmaSelectionTable"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "ExactPrimitiveBlockCountP018FallbackTable AND CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "diagnostic_exact_count_rows": [
+    {
+      "P": 100000,
+      "Y": 16,
+      "exact_count_diagnostic_only": 3,
+      "exact_count_passes_p018": true,
+      "h0": 2310,
+      "integer_budget_floor": 7,
+      "p018_budget": 7.943282347242814,
+      "rankin_bound": 31.25871082917951,
+      "rankin_overbudget_ratio": 3.9352385402779615,
+      "refined_diagnostic_verdict": "exact_count_pass",
+      "sample_row_id": "sample-1"
+    },
+    {
+      "P": 100000,
+      "Y": 64,
+      "exact_count_diagnostic_only": 5,
+      "exact_count_passes_p018": true,
+      "h0": 2310,
+      "integer_budget_floor": 7,
+      "p018_budget": 7.943282347242814,
+      "rankin_bound": 31.637289286661392,
+      "rankin_overbudget_ratio": 3.9828987443261394,
+      "refined_diagnostic_verdict": "exact_count_pass",
+      "sample_row_id": "sample-2"
+    },
+    {
+      "P": 100000,
+      "Y": 64,
+      "exact_count_diagnostic_only": 6,
+      "exact_count_passes_p018": true,
+      "h0": 4320,
+      "integer_budget_floor": 7,
+      "p018_budget": 7.943282347242814,
+      "rankin_bound": 48.99040383494855,
+      "rankin_overbudget_ratio": 6.1675264321875165,
+      "refined_diagnostic_verdict": "exact_count_pass",
+      "sample_row_id": "sample-3"
+    }
+  ],
+  "diagnostic_fail_rows_present": true,
+  "diagnostic_rankin_fail_rows_exact_count_pass": true,
+  "direct_unconditional_contradiction_found": false,
+  "dyadic_enumerator_rule_closed": true,
+  "empirical_absence_not_used": true,
+  "exact_count_fallback_schema_closed": true,
+  "exact_primitive_block_count_p018_fallback_table_proved": false,
+  "failure_packet_schema_closed": true,
+  "fallback_schema_rows": [
+    {
+      "field": "source_tuple_hash",
+      "role": "绑定早期零行反例 formal unit，防止诊断样本冒充 actual row。"
+    },
+    {
+      "field": "block_id",
+      "role": "绑定 dyadic 产品块 `(Y,2Y]` 和 no-return/cold guard。"
+    },
+    {
+      "field": "divisor_count_exact_or_certified_cap",
+      "role": "给出精确块计数，或给出可复核上界证书。"
+    },
+    {
+      "field": "rankin_certificate_hash",
+      "role": "保留原 Rankin 失败证书，说明 fallback 是处理上界松弛。"
+    },
+    {
+      "field": "packet_trigger_vector",
+      "role": "若精确计数仍超预算，登记五类回流触发是否发生。"
+    },
+    {
+      "field": "refined_verdict",
+      "role": "`rankin_pass`、`exact_count_pass`、`named_return` 或 `clean_exact_overbudget`。"
+    }
+  ],
+  "hardpoint_after_router": "ExactPrimitiveBlockCountP018FallbackTable OR PerBlockRankinSigmaSelectionTable",
+  "hardpoint_before_router": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass",
+  "next_direct_attack_target": "ExactPrimitiveBlockCountP018FallbackTable",
+  "no_theorem_switch": true,
+  "p018_table_schema_closed": true,
+  "parallel_attack_targets": [
+    "PerBlockRankinSigmaSelectionTable",
+    "ActualPrimitiveProductRankinFailurePacketPayloadTable",
+    "PrimitiveProductRankinFailureReturnPacketLedger",
+    "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "clean primitive 残项中必须先区分 Rankin 上界失败和实际支撑失败：`rankin_bound>P^0.18` 只说明该 Rankin 证书太松；若实际块计数仍不超过 `P^0.18`，该行应判为 `exact_count_pass`，不能生成回流包。当前诊断失败行全部属于这种情形。因此 `CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass` 被压缩为 `ExactPrimitiveBlockCountP018FallbackTable` 或逐块 sigma 表；全体 actual fallback 表仍未完成。",
+  "rankin_failure_not_equivalent_to_support_failure_closed": true,
+  "refined_verdict_rows": [
+    {
+      "condition": "there exists sigma with rankin_bound<=P^0.18",
+      "effect": "直接由 Rankin 证书支付该块。",
+      "verdict": "rankin_pass"
+    },
+    {
+      "condition": "rankin_bound>P^0.18 but exact block count<=P^0.18",
+      "effect": "Rankin 失败只是上界松弛，不生成 return packet。",
+      "verdict": "exact_count_pass"
+    },
+    {
+      "condition": "exact block count>P^0.18 and one of the five packet triggers fires",
+      "effect": "进入 PrimitiveProductRankinFailureReturnPacketLedger 的命名回流包。",
+      "verdict": "named_return"
+    },
+    {
+      "condition": "exact block count>P^0.18 and no named trigger fires",
+      "effect": "这才是真正 clean primitive 残项，进入精确计数表或推出矛盾。",
+      "verdict": "clean_exact_overbudget"
+    },
+    {
+      "condition": "actual source_tuple/block/divisor list is absent",
+      "effect": "不能判定，转入 ExactPrimitiveBlockCountP018FallbackTable。",
+      "verdict": "payload_missing"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/primitive-product-rankin-p018-sample-table.json": "6ee83fd827a289762f17da0e458cc1fb7fcfbe64b862d7b1fef635133f06e551",
+    "data/primitive-product-rankin-weight-sample-ledger.json": "79d8bcd52bc3ab367484ed2666f5dbfcae80ee87b53681d41d2df50132e2e3b1",
+    "docs/monograph/prime-matrix-strict-no-return-actual-dyadic-block-enumerator-router.json": "3e4a65761bb62c0fff3f6614aedffd25ae31dda55b75295520a2eae1e3ce29ad",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-failure-return-packet-router.json": "f9732754d5a511c6da9dc3d382bf20ed9866c868a98f43450bfec50b6252cff7",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-p018-table-router.json": "01ac5c80037d76d59f0d127041d9105c694a553da6cb5f6466928b73c67985f6",
+    "experiments/prime_matrix_strict_clean_primitive_rankin_failure_exact_count_fallback_router.py": "9eacf48ea35ffbbe6e51c396983c8d225c63bd68680a2be664b9d622b763ea73"
+  },
+  "status": "clean_primitive_rankin_failure_reduced_to_exact_count_fallback_table"
+}
