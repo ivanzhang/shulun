@@ -1,0 +1,71 @@
+# Prime Matrix strict 多源 fan-in 小商归约路由器
+
+**状态：** `multisource_fanin_independent_hardpoint_reduced_to_bounded_quotient_sae_pdec_open`
+
+`MultiSourceKernelFanInSAEOrPDECExclusion` 不再是独立无界硬点。在低乘子事件中，完整共同核 `K_t=gcd(g_t,L_{t-1})` 已满足 `K_t>Y/Lambda` 且 `K_t|g_t`；由于 `Y<g_t<=2Y`，必有 `g_t=K_t q_t` 且 `1<=q_t<2Lambda`。多源旧除数云只负责见证 `K_t` 已在旧 LCM 中登记，不会产生新的无限类型。因此持久同一小商 `q_t` 进入固定商型 PDEC/ColumnCRT，非持久小商进入有限字母表 SAE。剩余不是 fan-in 自身，而是有界商型 SAE/稀疏终端历史吸收、固定商型 PDEC 排斥与终端反级联。
+
+```text
+small_prime_power_cascade_table_proved=true
+pair_or_fanin_dichotomy_imported=true
+multisource_fanin_small_quotient_reduction_closed=true
+cover_hypergraph_independent_alphabet_removed=true
+multisource_fanin_independent_hardpoint_removed=true
+bounded_quotient_type_sae_absorbed=false
+prefix_branching_kernel_multiplicity_budget_proved=false
+row_column_unconditional_closed=false
+```
+
+## 小商正规形
+
+| step | formula | meaning |
+|---|---|---|
+| `low_multiplier_event` | K_t=gcd(g_t,L_{t-1})>Y/Lambda, with Y<g_t<=2Y | fan-in 分支继承完整大共同核，而不是只继承若干小成对核。 |
+| `small_quotient` | g_t=K_t q_t, hence 1<=q_t<2Lambda | 多源覆盖细节被压到一个有界商 q_t。 |
+| `cover_witness` | K_t \| lcm_{i<t} gcd(g_t,g_i) | 旧除数云只证明 K_t 已登记，不扩大 q_t 字母表。 |
+| `persistent_route` | same q_t recurring across formal units -> fixed quotient PDEC/ColumnCRT | 持久小商不是自由 fan-in，而是命名相位证书。 |
+| `nonpersistent_route` | nonpersistent q_t types are counted by <=2Lambda SAE alphabet | 不持久 fan-in 被有限字母表 SAE 吸收；常数强于 8Lambda^2。 |
+
+## 样本检查
+
+| Y | Lambda | K | q | g | low multiplier | short window | q<2Lambda |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1000 | 10 | 140 | 8 | 1120 | `true` | `true` | `true` |
+| 1000 | 10 | 251 | 5 | 1255 | `true` | `true` | `true` |
+| 10000 | 25 | 667 | 16 | 10672 | `true` | `true` | `true` |
+| 10000 | 25 | 1201 | 9 | 10809 | `true` | `true` | `true` |
+
+## 判定表
+
+| gate | closed | proved | meaning | remaining |
+|---|---:|---:|---|---|
+| `SmallPrimePowerTableImported` | `true` | `true` | 单源 p=2,3,5 素数幂级联已关闭，当前只处理多源共同核。 | `SmallPrimePowerCascadeColdWindowExclusionTableForP235` |
+| `PairOrFanInDichotomyImported` | `true` | `true` | 低乘子共同核已拆成大成对核或多源 fan-in。 | `MultiSourceKernelFanInSAEOrPDECExclusion` |
+| `FanInSmallQuotientNormalFormClosed` | `true` | `true` | 多源共同核仍给 g_t=K_t q_t 且 q_t<2Lambda。 | `MultiSourceKernelFanInSAEOrPDECExclusion` |
+| `CoverHypergraphNoIndependentAlphabet` | `true` | `true` | 覆盖 K_t 的旧除数云只是见证，不再产生独立无界类型。 | `MultiSourceKernelFanInSAEOrPDECExclusion` |
+| `FanInReducedToBoundedQuotientSAEOrPDEC` | `true` | `true` | 持久 q_t 进入固定商型 PDEC；非持久 q_t 进入有限字母表 SAE。 | `BoundedQuotientTypeSAEAbsorption AND FixedQuotientTypeColumnCRTOrPDECExclusion` |
+| `MultiSourceKernelFanInIndependentHardpointRemoved` | `true` | `true` | fan-in 不再作为独立硬点，已并入有界商型 SAE/PDEC 账本。 | `BoundedQuotientTypeSAEAbsorption AND IteratedThresholdCollapseExclusionLedger` |
+| `BoundedQuotientSAEAbsorbed` | `false` | `false` | 有界商型 SAE/阈值坍缩的总量吸收仍需接回。 | `SparseTerminalHistorySAEAbsorptionOrPDECExclusion` |
+| `PrefixBranchingKernelMultiplicityBudgetProved` | `false` | `false` | 共同核预算仍等待有界商型 SAE、固定商型 PDEC 和终端反级联。 | `BoundedQuotientTypeSAEAbsorption AND FixedQuotientTypeColumnCRTOrPDECExclusion AND TerminalColdWindowCompatibilityAntiCascadeLemma` |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 尚未得到早期零行反例链的最终矛盾。 | `PrefixBranchingKernelMultiplicityBudgetLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` |
+
+## 下一步
+
+- 主攻：`SparseTerminalHistorySAEAbsorptionOrPDECExclusion`。
+- 并行保留：
+  - `BoundedQuotientTypeSAEAbsorption`
+  - `FixedQuotientTypeColumnCRTOrPDECExclusion`
+  - `IteratedThresholdCollapseExclusionLedger`
+  - `TerminalColdWindowCompatibilityAntiCascadeLemma`
+  - `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`
+
+## 证据哈希
+
+| file | sha256 |
+|---|---|
+| `docs/monograph/prime-matrix-strict-fixed-quotient-density-transfer-router.json` | `f2b0c000ddb05b2504eb547a318d94a219fd70ac27ff34089b01524caa1688f7` |
+| `docs/monograph/prime-matrix-strict-iterated-scaled-core-density-router.json` | `5e2e4c2cac4e9f0e2afcad98e083f52bf5b4e980b7c516d186a934b65ba4f64f` |
+| `docs/monograph/prime-matrix-strict-iterated-threshold-collapse-router.json` | `22c87665aa776cfb358736a8c6624361ad9cba95830f46c56ad95bc40ff99e74` |
+| `docs/monograph/prime-matrix-strict-large-pair-kernel-difference-router.json` | `fc58ab04aae06d90742f61628fa0240994fc110225ce6a1dbce763eb05efe7cc` |
+| `docs/monograph/prime-matrix-strict-low-multiplier-common-kernel-router.json` | `314a0d156a5301b0a4eaedfe4c782f06b69c02ff5f2bd8d575e7c3c57e2f54a8` |
+| `docs/monograph/prime-matrix-strict-single-prime-power-cascade-canonicalization-router.json` | `e72a9d55dd3a27c1f9d6287afd6a8debc00a0ebe241977e72e0394bc02c04abf` |
+| `experiments/prime_matrix_strict_multisource_fanin_small_quotient_router.py` | `dabbe1d6682f0b9cf47fe75340f96f46cdb3c1fd1f7bcbb34a3b2e0418e61258` |
