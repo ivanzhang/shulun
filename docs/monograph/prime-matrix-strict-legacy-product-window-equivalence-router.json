@@ -1,0 +1,445 @@
+{
+  "certificate_type": "prime_matrix_strict_legacy_product_window_equivalence_router",
+  "status": "legacy_product_window_notation_equivalence_closed_threshold_binding_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "legacy_window_reference_count": 46,
+  "legacy_reference_classification_summary": {
+    "counting_slot": 21,
+    "threshold_slot": 16,
+    "symbolic_definition": 2,
+    "descriptive_inheritance": 4,
+    "symbolic_reference": 3
+  },
+  "no_conflicting_endpoint_formula_found": true,
+  "legacy_product_window_notation_equivalence_proved": true,
+  "cold_core_threshold_dyadic_order_invariance_proved": false,
+  "product_window_endpoint_formula_binding_proved": false,
+  "dyadic_product_window_endpoint_commutativity_ledger_proved": false,
+  "dyadic_prime_power_cold_window_cascade_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "LegacyProductWindowNotationEquivalenceAudit",
+  "hardpoint_after_router": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger",
+  "next_direct_attack_target": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger",
+  "parallel_attack_targets": [
+    "ProductWindowEndpointDyadicUpdateFormulaBindingLedger",
+    "DyadicProductWindowEndpointCommutativityLedger",
+    "DyadicPrimePowerColdWindowCascadeExclusionLemma",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "legacy_hits": [
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 5,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "缩频终端核心除数窗口已被拆成冷预算和热异常两类。对历史词 W，令 H_W=h_0/D(W)，终端核心必须整除 H_W 并落在窗口 I_W。若 N_{H_W}(I_W)<=C_core(W)，则 Cap(W)<=C_core(W) 可直接插入 SAE 供给预算；若超过该阈值，则它是 TerminalCoreHotDivisorWindow，必须回流到 LCM "
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 31,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "N_{H_W}(I_W)=#{k: k|H_W, k in I_W}."
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 36,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "对每个 `W` 固定阈值 `C_core(W)`："
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 39,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "cold: N_{H_W}(I_W)<=C_core(W);"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 40,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "hot:  N_{H_W}(I_W)> C_core(W)."
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 50,
+      "classification": "symbolic_definition",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `terminal_core_window` | Cores lie in I_W=(Y_W^-,Y_W^+] with endpoints inherited from the product window ledger. | `closed` | 终端核心落在明确窗口内。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 51,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `cold_hot_split` | N_{H_W}(I_W)<=C_core(W) or N_{H_W}(I_W)>C_core(W). | `closed_dichotomy` | 单历史容量被拆成冷核心预算或热核心异常。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 52,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `cold_core_insert` | In the cold case, Cap(W)<=C_core(W) is valid in the SAE budget. | `closed_conditional` | 冷核心阈值可直接进入供给上界。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md",
+      "line": 54,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `budget_gap_after_cold_insert` | After cold insertion, prove L_forced > sum_W (T_PDEC(W)-1) C_core(W). | `open_input` | 剩余供需比较转为冷核心阈值预算缺口。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 5,
+      "classification": "descriptive_inheritance",
+      "has_conflicting_formula": false,
+      "text_excerpt": "formal-unit 稀疏历史重数已经压成缩频终端核心除数窗口计数。对历史词 W，令 D(W)=prod b_i c_i，则同一 formal unit 内该历史的终端核心 都必须整除 h_0/D(W)，并落在由窗口乘积账本给出的区间 I_W。因此 Mult_U(W)<=N_{h_0/D(W)}(I_W)。若该窗口计数过大，就回流为 TerminalCor"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 33,
+      "classification": "symbolic_reference",
+      "has_conflicting_formula": false,
+      "text_excerpt": "k | h_0/D(W),  k in I_W."
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 39,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "Mult_U(W) <= N_{h_0/D(W)}(I_W)."
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 46,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "若该除数窗口热，则进入 `TerminalCoreHotDivisorWindowPDECorSAE`；若不热，则用冷核心阈值 `C_core(W)` 进入 SAE 预算。"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 53,
+      "classification": "descriptive_inheritance",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `terminal_core_interval` | Terminal cores k lie in an explicit interval I_W inherited from the product window ledger. | `closed` | 单历史容量变成缩频上的窗口除数计数。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 54,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `multiplicity_to_divisor_count` | Mult_U(W) <= N_{h_0/D(W)}(I_W). | `closed` | 同一 formal unit 内同一历史词的重数不超过缩频终端核心除数数。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 55,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `hot_core_route` | If N_{h_0/D(W)}(I_W) exceeds the cap, it is a terminal core hot divisor window and routes to PDEC/SAE. | `registered_route_open` | 单历史容量过大不是自由预算，而是回流到热除数/PDEC/"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 56,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `cold_core_capacity` | If no hot core window occurs, Cap(W) is bounded by the registered cold-core threshold C_core(W). | `closed_conditional` | 在排除热核心出口后，单历史容量有可插入 SAE 预算的上界。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md",
+      "line": 57,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `cap_to_budget_gap` | Insert Cap(W)<=C_core(W) into U_sparse <= sum_W (T_PDEC(W)-1)Cap(W). | `closed_reduction` | 单历史重数上界已接回供需预算缺口。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-effective-cold-history-pruning-router.md",
+      "line": 20,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `cold_condition` | `N_{H_W}(I_W)<=C_core(W)` | `closed_dichotomy` | 不满足冷条件的历史进入热核心回流。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-effective-cold-history-pruning-router.md",
+      "line": 21,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `effective_cold_supply` | `U_np<=sum_{W in C_cold(h_0)} (T_PDEC(W)-1)C_core(W)` | `open_bound` | 必须对兼容冷历史树求和，而不是对全部形式历史求和。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-effective-cold-history-pruning-router.md",
+      "line": 22,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `tree_packing_goal` | `sum_{W in C_cold(h_0)} (T_PDEC(W)-1)C_core(W) <= U0(P,z) < M#` | `open_target` | 这是有效剪枝闭合后应提供的数值包。 |"
+    },
+    {
+      "file": "docs/monograph/prime-matrix-strict-divisor-compatible-tree-packing-attack-router.md",
+      "line": 29,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "| `ColdWindowConstraintMustBeUsed` | `true` | `false` | 必须利用冷窗口 N_{H_W}(I_W)<=C_core(W)；否则无法剪掉素数幂级联。 | `TerminalColdWindowCompatibilityAntiCascadeLemma` |"
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 71,
+      "classification": "symbolic_definition",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"Cores lie in I_W=(Y_W^-,Y_W^+] with endpoints inherited from the product window ledger.\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 77,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"N_{H_W}(I_W)<=C_core(W) or N_{H_W}(I_W)>C_core(W).\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 83,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"In the cold case, Cap(W)<=C_core(W) is valid in the SAE budget.\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 95,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"After cold insertion, prove L_forced > sum_W (T_PDEC(W)-1) C_core(W).\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 177,
+      "classification": "symbolic_reference",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"令 H_W=h_0/D(W)，终端核心必须整除 H_W 并落在窗口 I_W。\""
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 178,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"若 N_{H_W}(I_W)<=C_core(W)，则 Cap(W)<=C_core(W) 可直接插入 SAE 供给预算；\""
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 218,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"N_{H_W}(I_W)=#{k: k|H_W, k in I_W}.\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 223,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"对每个 `W` 固定阈值 `C_core(W)`：\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 226,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"cold: N_{H_W}(I_W)<=C_core(W);\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py",
+      "line": 227,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"hot:  N_{H_W}(I_W)> C_core(W).\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 71,
+      "classification": "descriptive_inheritance",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"Terminal cores k lie in an explicit interval I_W inherited from the product window ledger.\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 77,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"Mult_U(W) <= N_{h_0/D(W)}(I_W).\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 83,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"If N_{h_0/D(W)}(I_W) exceeds the cap, it is a terminal core hot divisor window and routes to PDEC/SAE.\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 89,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"If no hot core window occurs, Cap(W) is bounded by the registered cold-core threshold C_core(W).\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 95,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"Insert Cap(W)<=C_core(W) into U_sparse <= sum_W (T_PDEC(W)-1)Cap(W).\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 178,
+      "classification": "descriptive_inheritance",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"都必须整除 h_0/D(W)，并落在由窗口乘积账本给出的区间 I_W。\""
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 179,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"因此 Mult_U(W)<=N_{h_0/D(W)}(I_W)。若该窗口计数过大，就回流为 \""
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 220,
+      "classification": "symbolic_reference",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"k | h_0/D(W),  k in I_W.\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 226,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"Mult_U(W) <= N_{h_0/D(W)}(I_W).\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py",
+      "line": 233,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"若该除数窗口热，则进入 `TerminalCoreHotDivisorWindowPDECorSAE`；若不热，则用冷核心阈值 `C_core(W)` 进入 SAE 预算。\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_effective_cold_history_pruning_router.py",
+      "line": 114,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"N_{H_W}(I_W)<=C_core(W)\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_effective_cold_history_pruning_router.py",
+      "line": 120,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"U_np<=sum_{W in C_cold(h_0)} (T_PDEC(W)-1)C_core(W)\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_effective_cold_history_pruning_router.py",
+      "line": 126,
+      "classification": "threshold_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"formula\": \"sum_{W in C_cold(h_0)} (T_PDEC(W)-1)C_core(W) <= U0(P,z) < M#\","
+    },
+    {
+      "file": "experiments/prime_matrix_strict_divisor_compatible_tree_packing_attack_router.py",
+      "line": 161,
+      "classification": "counting_slot",
+      "has_conflicting_formula": false,
+      "text_excerpt": "\"必须利用冷窗口 N_{H_W}(I_W)<=C_core(W)；否则无法剪掉素数幂级联。\","
+    }
+  ],
+  "rows": [
+    {
+      "gate": "LegacyEquivalenceTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把公式绑定压成旧记号等价和阈值绑定。",
+      "remaining": "LegacyProductWindowNotationEquivalenceAudit"
+    },
+    {
+      "gate": "EndpointGeneratorAppendixImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "规范 product-window 端点生成器已定义并有样本账本。",
+      "remaining": "ProductWindowEndpointDyadicUpdateFormulaBindingLedger"
+    },
+    {
+      "gate": "LegacyWindowReferencesFound",
+      "closed": true,
+      "proved": true,
+      "meaning": "旧语料中的 I_W/Y_W/product-window/C_core 引用已扫描。",
+      "remaining": "LegacyProductWindowNotationEquivalenceAudit"
+    },
+    {
+      "gate": "NoConflictingEndpointFormulaFound",
+      "closed": true,
+      "proved": true,
+      "meaning": "未发现与新生成器冲突的旧端点更新公式。",
+      "remaining": "LegacyProductWindowNotationEquivalenceAudit"
+    },
+    {
+      "gate": "SymbolicWindowNotationBoundToGenerator",
+      "closed": true,
+      "proved": true,
+      "meaning": "旧 I_W/Y_W 作为符号窗口统一解释为生成器输出，不改变既有计数语句。",
+      "remaining": "ProductWindowEndpointDyadicUpdateFormulaBindingLedger"
+    },
+    {
+      "gate": "LegacyProductWindowNotationEquivalenceProved",
+      "closed": true,
+      "proved": true,
+      "meaning": "旧窗口记号等价到规范端点生成器；冲突公式不存在。",
+      "remaining": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger"
+    },
+    {
+      "gate": "ThresholdSlotStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "涉及 C_core(W) 的行仍需证明阈值随 dyadic 重排不变。",
+      "remaining": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger"
+    },
+    {
+      "gate": "ProductWindowEndpointDyadicUpdateFormulaBindingProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "旧记号等价已闭合，但 C_core 阈值绑定仍未闭合。",
+      "remaining": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger"
+    },
+    {
+      "gate": "DyadicProductWindowEndpointCommutativityLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "端点部分已接回，阈值不变性未接回。",
+      "remaining": "DyadicProductWindowEndpointCommutativityLedger"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "ColdCoreThresholdDyadicOrderInvarianceBindingLedger AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_legacy_product_window_equivalence_router.py": "feed7dea7eb71b6f54c518e2f0191db02c1180cc4aed6911249b6d3e6df8f48c",
+    "docs/monograph/prime-matrix-strict-product-window-endpoint-generator-appendix-router.json": "a1061abb510efd9743123d49a9e85775f9b27985a51957ab1b976ae3399e1a42",
+    "docs/monograph/prime-matrix-strict-product-window-endpoint-formula-binding-router.json": "aaf78bf3a8b79226fc17487b5e64b6bf3781fdd0d3a0e6bba26eb911e0d5af36",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0",
+    "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.json": "2c0a5401dc9e7f7158cd30e758f88f5a07f68460712f611452ff609ae3b7ddbb",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.md": "de2224ecfcd95ee99d389df1143ac8174617eb5ddc56c134444c987018fb0ffb",
+    "docs/monograph/prime-matrix-strict-formal-unit-sparse-history-multiplicity-router.md": "faca65e1e870747b921a9a7641733c24a00ad1e5126d82d3f89a65f38098aa9d",
+    "docs/monograph/prime-matrix-strict-effective-cold-history-pruning-router.md": "15214e6aed58ba8996c7a6ee2e3aa19716eb560309f050b0f6d0c8dde92be3a9",
+    "docs/monograph/prime-matrix-strict-divisor-compatible-tree-packing-attack-router.md": "cec86437d8db4b40bb00952fb0fcdc04e8b422a1e27ae29e270e9b46862776a1",
+    "experiments/prime_matrix_strict_scaled_terminal_core_divisor_window_router.py": "201d1a7f8aad0195a25d222e1ee8e73b28b960a3875348ba70e52bf9bdd6f111",
+    "experiments/prime_matrix_strict_formal_unit_sparse_history_multiplicity_router.py": "3587f2c55560e15233085d0a309d7ab67af5b3fa946f055e656bdfc81ad5d21b",
+    "experiments/prime_matrix_strict_effective_cold_history_pruning_router.py": "f205039960f2678ff0d69dcafa37a259a3c8639008d3cb370fc721c317716691",
+    "experiments/prime_matrix_strict_divisor_compatible_tree_packing_attack_router.py": "42f5ca4c0b5ed9ea4cf89aa0f1cad7609ab947b7ffb2c75a26f034c34e931f06"
+  },
+  "plain_conclusion": "`LegacyProductWindowNotationEquivalenceAudit` 可以关闭：已扫描当前相关语料，旧 `I_W/Y_W/product window ledger` 用法均为符号定义、描述性继承或计数槽位，没有发现与新端点生成器冲突的旧更新公式。因此旧窗口记号可统一解释为生成器输出。但涉及 `C_core(W)` 的阈值槽位仍未证明只依赖规范窗口尺度，最新唯一主攻点转为 `ColdCoreThresholdDyadicOrderInvarianceBindingLedger`。"
+}
