@@ -1,0 +1,197 @@
+{
+  "certificate_type": "prime_matrix_strict_cold_history_prefix_branching_attack_router",
+  "status": "prefix_branching_reduced_to_kernel_multiplicity_and_cold_window_anticascade_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "same_prefix_lcm_anchor_closed": true,
+  "incremental_multiplier_split_closed": true,
+  "low_multiplier_kernel_split_imported": true,
+  "finite_quotient_fixed_history_route_imported": true,
+  "cold_hot_gate_imported": true,
+  "prefix_branching_structural_dichotomy_closed": true,
+  "prefix_branching_kernel_multiplicity_budget_proved": false,
+  "prime_power_cascade_excluded": false,
+  "terminal_cold_window_anticascade_proved": false,
+  "cold_history_prefix_branching_hot_or_fixed_return_proved": false,
+  "divisor_compatible_cold_history_tree_packing_bound_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma",
+  "hardpoint_after_router": "PrefixBranchingKernelMultiplicityBudgetLedger AND PrimePowerCascadeColdWindowExclusionOrCapacityTable AND TerminalColdWindowCompatibilityAntiCascadeLemma",
+  "next_direct_attack_target": "PrefixBranchingKernelMultiplicityBudgetLedger",
+  "parallel_attack_targets": [
+    "PrimePowerCascadeColdWindowExclusionOrCapacityTable",
+    "TerminalColdWindowCompatibilityAntiCascadeLemma",
+    "LowMultiplierCommonKernelColumnCRTOrPDECRoute",
+    "LargePairKernelDifferenceColumnCRTExclusion",
+    "MultiSourceKernelFanInSAEOrPDECExclusion",
+    "FixedTypeHistoryPDECExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "prefix_branching_identities": [
+    {
+      "name": "prefix_residual_frequency",
+      "formula": "H_U=h_0/D(U)",
+      "status": "closed_interface",
+      "meaning": "同一前缀 U 下，所有子分叉共享同一个缩频 formal unit。"
+    },
+    {
+      "name": "child_divisor_set",
+      "formula": "A_U(Y)={g: Y<g<=2Y, g|H_U, U*g remains cold-admissible}",
+      "status": "closed_definition",
+      "meaning": "前缀分叉不是任意字母表，而是 H_U 的短窗口除数子集。"
+    },
+    {
+      "name": "lcm_anchor",
+      "formula": "lcm(A_U(Y)) | H_U",
+      "status": "imported_closed",
+      "meaning": "同前缀子分叉的 LCM 被锚定在同一 H_U 上。"
+    },
+    {
+      "name": "incremental_multiplier_split",
+      "formula": "mu_t=g_t/gcd(g_t,L_{t-1})",
+      "status": "imported_closed",
+      "meaning": "分叉要么贡献新 LCM 乘子，要么产生低乘子共同核。"
+    },
+    {
+      "name": "cold_hot_gate",
+      "formula": "N_{H_U}(I_U)<=C_core(U) or hot-core return",
+      "status": "imported_dichotomy",
+      "meaning": "超过冷阈值的窗口不能留在冷供给内，必须回流热核心。"
+    },
+    {
+      "name": "prefix_branching_bound_needed",
+      "formula": "|A_U(Y)| <= floor(log H_U/log Lambda)+K_kernel(U,Y,Lambda)+K_fixed(U)+C_core(U)",
+      "status": "open_quantitative_bound",
+      "meaning": "需要定量限制低乘子共同核、固定历史与冷窗口容量，才能关闭分叉引理。"
+    }
+  ],
+  "obstruction_cases": [
+    {
+      "case": "prime_power_cascade",
+      "shape": "g_t in {2,4,8,...} or repeated small-prime blocks",
+      "why_dangerous": "LCM 增长慢，低乘子共同核多，正是前一步 Fibonacci/P^0.694 阻塞的树形版本。",
+      "required_input": "PrimePowerCascadeColdWindowExclusionOrCapacityTable"
+    },
+    {
+      "case": "large_pair_same_quotient",
+      "shape": "g_i=k b, g_t=k(b+a) with fixed small (b,a)",
+      "why_dangerous": "同一有限商型若持久复现，就不是冷分叉，而是固定历史 ColumnCRT/PDEC。",
+      "required_input": "FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "case": "fanin_kernel_cloud",
+      "shape": "K_t divides lcm_i gcd(g_t,g_i) but no single pair dominates",
+      "why_dangerous": "多源扇入可能绕开单对差值锁，必须有 SAE/PDEC 容量账本。",
+      "required_input": "MultiSourceKernelFanInSAEOrPDECExclusion"
+    },
+    {
+      "case": "terminal_cold_window_crowding",
+      "shape": "many compatible children stay below hot threshold in adjacent windows",
+      "why_dangerous": "如果冷窗口之间没有反级联限制，局部冷可能层叠成全局过大树。",
+      "required_input": "TerminalColdWindowCompatibilityAntiCascadeLemma"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "PrefixBranchingTargetImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层把除数兼容树打包压到前缀分叉/冷窗口反级联。",
+      "remaining": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma"
+    },
+    {
+      "gate": "SamePrefixLCMAnchorClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "同一前缀 U 下的全部子分叉除数 LCM 整除同一个 H_U。",
+      "remaining": "ShortWindowLCMMultiplierDisciplineForFrequencyH"
+    },
+    {
+      "gate": "IncrementalMultiplierSplitClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "子分叉要么推动 LCM 高度，要么产生低乘子共同核。",
+      "remaining": "DenseShortWindowLCMLowerBoundAfterKernelCompression OR LowMultiplierCommonKernelColumnCRTOrPDECRoute"
+    },
+    {
+      "gate": "LowMultiplierKernelSplitImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "低乘子共同核已拆成大成对差值锁或多源 fan-in，但两者尚未排斥。",
+      "remaining": "LargePairKernelDifferenceColumnCRTExclusion OR MultiSourceKernelFanInSAEOrPDECExclusion"
+    },
+    {
+      "gate": "FiniteQuotientFixedHistoryRouteImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "大成对核同商型持久复现进入固定历史 PDEC/ColumnCRT。",
+      "remaining": "FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "gate": "ColdHotGateImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "超过冷阈值的终端窗口回流热核心，不能继续计入冷历史树。",
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE"
+    },
+    {
+      "gate": "PrefixBranchingStructuralDichotomyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "同前缀过多分叉已无第四出口：LCM、低乘子共同核、热核心或固定历史。",
+      "remaining": "PrefixBranchingKernelMultiplicityBudgetLedger"
+    },
+    {
+      "gate": "PrefixBranchingKernelMultiplicityBudgetProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未给出低乘子共同核/多源扇入在冷窗口内的统一计数预算。",
+      "remaining": "PrefixBranchingKernelMultiplicityBudgetLedger"
+    },
+    {
+      "gate": "PrimePowerCascadeExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "素数幂和小乘子级联仍是最危险反例形态，必须用冷窗口反级联或容量表排除。",
+      "remaining": "PrimePowerCascadeColdWindowExclusionOrCapacityTable"
+    },
+    {
+      "gate": "ColdHistoryPrefixBranchingHotOrFixedReturnProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "结构三分法已闭合，定量预算和素数幂反级联未闭合。",
+      "remaining": "PrefixBranchingKernelMultiplicityBudgetLedger AND PrimePowerCascadeColdWindowExclusionOrCapacityTable AND TerminalColdWindowCompatibilityAntiCascadeLemma"
+    },
+    {
+      "gate": "DivisorCompatibleColdHistoryTreePackingBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "前缀分叉引理未闭合，因此树打包界不能关闭。",
+      "remaining": "ColdHistoryPrefixBranchingHotOrFixedReturnLemma AND TerminalColdWindowCompatibilityAntiCascadeLemma"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "remaining": "PrefixBranchingKernelMultiplicityBudgetLedger AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_cold_history_prefix_branching_attack_router.py": "fa98cb3e58e06a4754ad29c3a747cefe82363abbc7d9363261a3e02b2e5d78a5",
+    "docs/monograph/prime-matrix-strict-divisor-compatible-tree-packing-attack-router.json": "dbc983163e64456b63a6be5e99375fabb7ddaf8aa17490fd9fdf42d664c6e129",
+    "docs/monograph/prime-matrix-strict-effective-cold-history-pruning-router.json": "72d7aeeb5a09864efcb9cd729d4d5331b1adfb780ec33b3a1ae29dfe6e67431b",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.json": "b91aa168a84ba29a3c9e6bfb51ad0968b75d625a8864ad9e1d8033574f2ea21e",
+    "docs/monograph/prime-matrix-strict-low-multiplier-common-kernel-router.json": "314a0d156a5301b0a4eaedfe4c782f06b69c02ff5f2bd8d575e7c3c57e2f54a8",
+    "docs/monograph/prime-matrix-strict-large-pair-kernel-difference-router.json": "fc58ab04aae06d90742f61628fa0240994fc110225ce6a1dbce763eb05efe7cc",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.json": "2604e2de93bc17bbe7678dddccf958b8a747714286d2c1ab8d5734246be78733",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-density-transfer-router.json": "f2b0c000ddb05b2504eb547a318d94a219fd70ac27ff34089b01524caa1688f7",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.json": "6cbb750d3888d20ef1c7267231ddfb8490b1efc92b0edda308ec96f1d40905b2"
+  },
+  "plain_conclusion": "`ColdHistoryPrefixBranchingHotOrFixedReturnLemma` 的结构部分可以闭合：固定前缀 `U` 后，所有子分叉是同一 `H_U=h_0/D(U)` 的短窗口除数，因此其 LCM 被 `H_U` 锚定；增量乘子纪律迫使每个新子分叉要么增加 LCM 高度，要么进入低乘子共同核；低乘子共同核再拆成大成对差值锁或多源 fan-in；超过冷阈值的窗口回流热核心，同商型持久复现回流固定历史。但这还没有给出定量树打包界，因为小素数幂/低乘子级联可能在冷窗口内制造大量低乘子事件。最新最窄剩余是 `PrefixBranchingKernelMultiplicityBudgetLedger`，并必须与 `PrimePowerCascadeColdWindowExclusionOrCapacityTable` 和 `TerminalColdWindowCompatibilityAntiCascadeLemma` 同步闭合。"
+}
