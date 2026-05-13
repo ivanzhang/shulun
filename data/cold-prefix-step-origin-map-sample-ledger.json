@@ -1,0 +1,223 @@
+{
+  "ledger_type": "cold_prefix_step_origin_map_sample_ledger",
+  "rule": "map every prime-power token p^e in step g to the least carrier row with v_p(m_c)>=e",
+  "rows": [
+    {
+      "case": "token_map_without_single_row",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 2
+        },
+        {
+          "column": 2,
+          "m_c": 3
+        }
+      ],
+      "step": 6,
+      "carrier_factor_table": [
+        {
+          "column": 1,
+          "m_c": 2,
+          "valuation": {
+            "2": 1
+          }
+        },
+        {
+          "column": 2,
+          "m_c": 3,
+          "valuation": {
+            "3": 1
+          }
+        }
+      ],
+      "classification": {
+        "step": 6,
+        "step_factorization": {
+          "2": 1,
+          "3": 1
+        },
+        "token_origin_rows": [
+          {
+            "prime": 2,
+            "step_exp": 1,
+            "origin_column": 1,
+            "origin_m_c": 2,
+            "origin_available_exp": 1
+          },
+          {
+            "prime": 3,
+            "step_exp": 1,
+            "origin_column": 2,
+            "origin_m_c": 3,
+            "origin_available_exp": 1
+          }
+        ],
+        "source_defects": [],
+        "token_origin_map_exists": true,
+        "single_row_origin_exists": false,
+        "single_row_origin_columns": []
+      }
+    },
+    {
+      "case": "single_row_prime_power_support",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 8
+        },
+        {
+          "column": 2,
+          "m_c": 9
+        }
+      ],
+      "step": 4,
+      "carrier_factor_table": [
+        {
+          "column": 1,
+          "m_c": 8,
+          "valuation": {
+            "2": 3
+          }
+        },
+        {
+          "column": 2,
+          "m_c": 9,
+          "valuation": {
+            "3": 2
+          }
+        }
+      ],
+      "classification": {
+        "step": 4,
+        "step_factorization": {
+          "2": 2
+        },
+        "token_origin_rows": [
+          {
+            "prime": 2,
+            "step_exp": 2,
+            "origin_column": 1,
+            "origin_m_c": 8,
+            "origin_available_exp": 3
+          }
+        ],
+        "source_defects": [],
+        "token_origin_map_exists": true,
+        "single_row_origin_exists": true,
+        "single_row_origin_columns": [
+          1
+        ]
+      }
+    },
+    {
+      "case": "source_domain_defect",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 3
+        },
+        {
+          "column": 2,
+          "m_c": 5
+        }
+      ],
+      "step": 4,
+      "carrier_factor_table": [
+        {
+          "column": 1,
+          "m_c": 3,
+          "valuation": {
+            "3": 1
+          }
+        },
+        {
+          "column": 2,
+          "m_c": 5,
+          "valuation": {
+            "5": 1
+          }
+        }
+      ],
+      "classification": {
+        "step": 4,
+        "step_factorization": {
+          "2": 2
+        },
+        "token_origin_rows": [],
+        "source_defects": [
+          {
+            "prime": 2,
+            "step_exp": 2,
+            "carrier_budget_exp": 0,
+            "defect": "no_carrier_row_supports_this_prime_power"
+          }
+        ],
+        "token_origin_map_exists": false,
+        "single_row_origin_exists": false,
+        "single_row_origin_columns": []
+      }
+    },
+    {
+      "case": "mixed_token_map",
+      "carrier_rows": [
+        {
+          "column": 1,
+          "m_c": 4
+        },
+        {
+          "column": 2,
+          "m_c": 15
+        }
+      ],
+      "step": 12,
+      "carrier_factor_table": [
+        {
+          "column": 1,
+          "m_c": 4,
+          "valuation": {
+            "2": 2
+          }
+        },
+        {
+          "column": 2,
+          "m_c": 15,
+          "valuation": {
+            "3": 1,
+            "5": 1
+          }
+        }
+      ],
+      "classification": {
+        "step": 12,
+        "step_factorization": {
+          "2": 2,
+          "3": 1
+        },
+        "token_origin_rows": [
+          {
+            "prime": 2,
+            "step_exp": 2,
+            "origin_column": 1,
+            "origin_m_c": 4,
+            "origin_available_exp": 2
+          },
+          {
+            "prime": 3,
+            "step_exp": 1,
+            "origin_column": 2,
+            "origin_m_c": 15,
+            "origin_available_exp": 1
+          }
+        ],
+        "source_defects": [],
+        "token_origin_map_exists": true,
+        "single_row_origin_exists": false,
+        "single_row_origin_columns": []
+      }
+    }
+  ],
+  "token_map_without_single_row_demonstrated": true,
+  "source_defect_demonstrated": true,
+  "all_local_steps_have_token_origin_maps": true
+}
