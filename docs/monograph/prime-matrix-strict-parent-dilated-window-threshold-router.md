@@ -1,0 +1,78 @@
+# Prime Matrix strict 父扩张窗口冷核心阈值表路由器
+
+**状态：** `parent_dilated_threshold_schema_closed_collar_caps_open`
+
+`ParentSiblingDilatedWindowColdCoreThresholdTable` 不能通过把扩张 collar 免费塞进旧 `C_core^*` 来关闭。合法分解是：`N_H([L_*,R_*]) = N_H([L,R]) + N_H([L_*,L-1]) + N_H([R+1,R_*])`。因此扩张阈值表的唯一合法形态是 `C_base + C_left_collar + C_right_collar`，三项必须使用同一参数账本。若 collar 短区间除数数超过其 cap，该爆发不是冷容量，而必须进入短窗口 LCM 乘子纪律、低乘子共同核、固定历史/PDEC/SAE 或热核心回流。本步关闭表结构与免费吸收禁令；尚未给出 collar cap 数值表，也未排斥热回流，所以行/列命题仍未无条件闭合。
+
+```text
+parent_dilated_table_target_imported=true
+dilated_window_three_piece_decomposition_proved=true
+free_collar_absorption_rejected=true
+dilated_threshold_schema_closed=true
+same_parameter_collar_short_divisor_cap_table_proved=false
+parent_dilated_window_hot_return_excluded=false
+parent_sibling_dilated_window_cold_core_threshold_table_proved=false
+row_column_unconditional_closed=false
+```
+
+## 合法阈值表
+
+| piece | formula | status |
+|---|---|---|
+| `base cold count` | `N_H([L,R])<=C_core^*(U;[L,R]) or hot return` | `imported conditional` |
+| `left collar` | `N_H([L_*,L-1])<=C_col,left(U)` | `open numeric cap` |
+| `right collar` | `N_H([R+1,R_*])<=C_col,right(U)` | `open numeric cap` |
+| `dilated table` | `C_dil(U)=C_core^*(U;[L,R])+C_col,left(U)+C_col,right(U)` | `schema closed, numeric caps open` |
+| `collar burst` | `if a collar cap fails, short-window divisor density triggers LCM/common-kernel/PDEC` | `registered route open` |
+
+## 有限分解核验
+
+| H | base window | dilated window | base | left collar | right collar | dilated | identity |
+|---:|---|---|---:|---:|---:|---:|---:|
+| 360 | `[20, 180]` | `[18, 180]` | 11 | 1 | 0 | 12 | `true` |
+| 840 | `[30, 240]` | `[28, 245]` | 13 | 1 | 0 | 14 | `true` |
+| 1260 | `[50, 420]` | `[45, 423]` | 13 | 1 | 0 | 14 | `true` |
+| 2520 | `[60, 720]` | `[54, 721]` | 20 | 1 | 0 | 21 | `true` |
+| 720720 | `[401, 4001]` | `[390, 4012]` | 79 | 2 | 1 | 82 | `true` |
+
+## 判定表
+
+| gate | closed | proved | meaning | remaining |
+|---|---:|---:|---|---|
+| `ParentDilatedTableTargetImported` | `true` | `true` | 上一层已把父支撑数值界压成扩张父窗口冷核心表。 | `ParentSiblingDilatedWindowColdCoreThresholdTable` |
+| `DilatedWindowThreePieceDecompositionProved` | `true` | `true` | 扩张窗口计数精确分解为原父窗口加左右 collar。 | `ParentSiblingDilatedWindowColdCoreThresholdTable` |
+| `FreeCollarAbsorptionRejected` | `true` | `true` | collar 不能免费并入旧 C_core；必须有同参数 collar cap 或命名回流。 | `SameParameterSiblingCollarShortDivisorCapTable` |
+| `DilatedThresholdSchemaClosed` | `true` | `false` | 合法阈值表形态为 C_base+C_left+C_right。 | `SameParameterSiblingCollarShortDivisorCapTable AND ColdCoreThresholdFunctionNumericTable` |
+| `CollarBurstRouteRegistered` | `true` | `false` | collar 短窗口高密度可接入 LCM 乘子纪律/共同核/PDEC 路由。 | `SiblingCollarShortDivisorBurstLCMOrPDECRoute` |
+| `SameParameterCollarCapTableProved` | `false` | `false` | 尚未给出左右 collar 在同一参数账本下的可求和数值上界。 | `SameParameterSiblingCollarShortDivisorCapTable` |
+| `ParentDilatedWindowHotReturnExcluded` | `false` | `false` | 若原父窗口或 collar 爆发为热窗口，仍需排斥热核心回流。 | `ParentSiblingDilatedWindowHotCorePDECorSAEExclusion` |
+| `ParentSiblingDilatedWindowColdCoreThresholdTableProved` | `false` | `false` | 表结构已闭合，但 collar cap 和热回流排斥尚未完成。 | `SameParameterSiblingCollarShortDivisorCapTable AND SiblingCollarShortDivisorBurstLCMOrPDECRoute AND ParentSiblingDilatedWindowHotCorePDECorSAEExclusion` |
+| `SiblingColdCoreThresholdNumericEnvelopeProved` | `false` | `false` | 扩张父窗口表、overlap 和 PDEC 阈值仍未全部闭合。 | `ParentSiblingDilatedWindowColdCoreThresholdTable AND SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion AND SameParameterPDECThresholdNumericTable` |
+| `RowColumnUnconditionalClosureReached` | `false` | `false` | 仍未得到早期零行反例链的终端矛盾。 | `SameParameterSiblingCollarShortDivisorCapTable AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance` |
+
+## 下一步
+
+- 主攻：`SameParameterSiblingCollarShortDivisorCapTable`。
+- 并行保留：
+  - `SiblingCollarShortDivisorBurstLCMOrPDECRoute`
+  - `ParentSiblingDilatedWindowHotCorePDECorSAEExclusion`
+  - `ShortWindowDivisorDensityLCMMultiplierDiscipline`
+  - `LowMultiplierCommonKernelColumnCRTOrPDECRoute`
+  - `FixedTypeHistoryPDECExclusion`
+  - `SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion`
+  - `SameParameterPDECThresholdNumericTable`
+  - `SiblingColdCoreThresholdNumericEnvelopeTable`
+  - `TerminalColdWindowCompatibilityAntiCascadeLemma`
+  - `IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore`
+  - `DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance`
+
+## 证据哈希
+
+| file | sha256 |
+|---|---|
+| `experiments/prime_matrix_strict_parent_dilated_window_threshold_router.py` | `fb62c26775fb7b646b0497a751f1802ef3ec843b659a652fc846db575f55416f` |
+| `docs/monograph/prime-matrix-strict-parent-support-numeric-envelope-router.json` | `c6fe6dcdc47b377c9a55915560031ec8b37d528f6d9980eedbce671a2ee8d653` |
+| `docs/monograph/prime-matrix-strict-sibling-numeric-envelope-attack-router.json` | `52bd322127d85f72df347da33b5ccc71b6ef2c023539db38244793e6d8d3448c` |
+| `docs/monograph/prime-matrix-strict-cold-core-threshold-dyadic-invariance-router.json` | `c93a11c1f9f9a11728fb454eb16ead7a4cc308bdfcf2647af6dcb20d6f405602` |
+| `docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json` | `a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0` |
+| `docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.json` | `b91aa168a84ba29a3c9e6bfb51ad0968b75d625a8864ad9e1d8033574f2ea21e` |
