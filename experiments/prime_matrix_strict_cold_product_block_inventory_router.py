@@ -1,0 +1,361 @@
+#!/usr/bin/env python3
+"""生成 strict cold 产品 dyadic 块清单路由证书。
+
+用法示例：
+  python3 experiments/prime_matrix_strict_cold_product_block_inventory_router.py
+  python3 -m json.tool docs/monograph/prime-matrix-strict-cold-product-block-inventory-router.json
+
+输出：
+  docs/monograph/prime-matrix-strict-cold-product-block-inventory-router.json
+  docs/monograph/prime-matrix-strict-cold-product-block-inventory-router.md
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DOCS = ROOT / "docs" / "monograph"
+OUT_JSON = DOCS / "prime-matrix-strict-cold-product-block-inventory-router.json"
+OUT_MD = DOCS / "prime-matrix-strict-cold-product-block-inventory-router.md"
+
+HARDPOINT = "ColdProductDyadicBlockInventoryLedger"
+BLOCK_SCHEMA = "ColdProductDyadicBlockInventorySchema"
+CANDIDATE_RULE = "ColdProductCandidateSetGeneratorRule"
+COUNT_BOUND = "ColdProductBlockCandidateCountOrSymbolicBound"
+PROJECTION_RULE = "PrimitiveProductProjectionRuleExecutableHash"
+CONCRETE_DATA = "ConcretePrimitiveProductRankinEmbeddingDataLedger"
+WEIGHT_COMPARISON = "PrimitiveProductRankinWeightP018Comparison"
+DSTRUCTURE = "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+
+SOURCE_FILES = [
+    DOCS / "prime-matrix-strict-concrete-primitive-product-rankin-data-router.json",
+    DOCS / "prime-matrix-strict-cold-filtered-divisor-support-router.json",
+    DOCS / "prime-matrix-strict-product-fiber-multiplicity-router.json",
+    DOCS / "prime-matrix-strict-cold-product-support-sparsification-router.json",
+]
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    """读取依赖 JSON；缺失时返回空对象。"""
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def sha256(path: Path) -> str:
+    """计算文件 SHA256。"""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def source_hashes() -> dict[str, str]:
+    """汇总依赖证据哈希。"""
+    result = {
+        "experiments/prime_matrix_strict_cold_product_block_inventory_router.py": sha256(
+            Path(__file__).resolve()
+        )
+    }
+    for path in SOURCE_FILES:
+        if path.exists():
+            result[str(path.relative_to(ROOT))] = sha256(path)
+    return result
+
+
+def fmt_bool(value: Any) -> str:
+    """输出小写布尔值。"""
+    return "true" if bool(value) else "false"
+
+
+def table_cell(value: Any) -> str:
+    """转义 Markdown 表格单元。"""
+    return str(value).replace("|", r"\|")
+
+
+def row(gate: str, closed: bool, proved: bool, meaning: str, remaining: str) -> dict[str, Any]:
+    """构造判定表行。"""
+    return {
+        "gate": gate,
+        "closed": closed,
+        "proved": proved,
+        "meaning": meaning,
+        "remaining": remaining,
+    }
+
+
+def imported_flags() -> dict[str, bool]:
+    """读取产品块清单需要的导入。"""
+    data = load_json(DOCS / "prime-matrix-strict-concrete-primitive-product-rankin-data-router.json")
+    support = load_json(DOCS / "prime-matrix-strict-cold-filtered-divisor-support-router.json")
+    fiber = load_json(DOCS / "prime-matrix-strict-product-fiber-multiplicity-router.json")
+    sparse = load_json(DOCS / "prime-matrix-strict-cold-product-support-sparsification-router.json")
+    return {
+        "source_tuple_container_closed": bool(data.get("formal_unit_source_tuple_container_closed")),
+        "cold_filtered_support_domain_closed": bool(support.get("cold_filtered_support_domain_closed")),
+        "product_fiber_support_quotient_closed": bool(
+            fiber.get("active_prefix_product_fiber_multiplicity_or_named_return_ledger_closed_for_support")
+        ),
+        "dyadic_overload_certificate_closed": bool(sparse.get("dyadic_overload_certificate_closed")),
+    }
+
+
+def inventory_rows() -> list[dict[str, str]]:
+    """定义符号产品块清单。"""
+    return [
+        {
+            "field": "block_id",
+            "definition": "H(source_tuple_hash, cold_key_hash, Y_left, Y_right)",
+            "status": "schema_closed",
+        },
+        {
+            "field": "candidate_set",
+            "definition": "{d: d|h0, Y<d<=2Y, d passes cold/no-return guard}",
+            "status": "generator_defined",
+        },
+        {
+            "field": "fiber_quotient",
+            "definition": "same product and same key counted once as support; multiplicity moves to load",
+            "status": "imported_closed",
+        },
+        {
+            "field": "return_filter",
+            "definition": "hot-density/common-kernel/named-return candidates are removed with return hash",
+            "status": "schema_closed_return_exclusion_open",
+        },
+        {
+            "field": "candidate_bound",
+            "definition": "upper bound for #candidate_set or a Rankin-summable symbolic envelope",
+            "status": "open",
+        },
+    ]
+
+
+def split_rows() -> list[dict[str, str]]:
+    """列出候选集合计数的剩余分支。"""
+    return [
+        {
+            "branch": "small_block_explicit",
+            "condition": "candidate_set finite and generated by runner/hash",
+            "remaining": "FiniteColdProductBlockCandidateRunnerHash",
+            "meaning": "有限块可用可复算枚举，但当前没有 runner 数据。",
+        },
+        {
+            "branch": "symbolic_rankin_bound",
+            "condition": "candidate_set described by primitive rank profile",
+            "remaining": f"{PROJECTION_RULE} AND {WEIGHT_COMPARISON}",
+            "meaning": "解析/符号路线需要投影规则和 Rankin 权重比较。",
+        },
+        {
+            "branch": "return_excess",
+            "condition": "candidate set too large before projection",
+            "remaining": "HotDensityOrCommonKernelReturnPackets",
+            "meaning": "过大候选块必须回流热窗口或共同核；回流排斥仍开。",
+        },
+    ]
+
+
+def decision_rows(flags: dict[str, bool]) -> list[dict[str, Any]]:
+    """生成判定表。"""
+    schema_closed = (
+        flags["source_tuple_container_closed"]
+        and flags["cold_filtered_support_domain_closed"]
+        and flags["product_fiber_support_quotient_closed"]
+    )
+    return [
+        row(
+            "ColdProductBlockInventoryTargetImported",
+            True,
+            flags["source_tuple_container_closed"],
+            "上一层已把 concrete data 剩余压成 cold 产品块清单和 primitive 投影规则。",
+            HARDPOINT,
+        ),
+        row(
+            "ColdProductDyadicBlockInventorySchemaClosed",
+            schema_closed,
+            schema_closed,
+            "产品块 block_id、候选集合生成规则、纤维商化和回流过滤字段已定义。",
+            BLOCK_SCHEMA,
+        ),
+        row(
+            "ColdProductCandidateSetGeneratorRuleClosed",
+            schema_closed,
+            schema_closed,
+            "固定 source tuple 与 dyadic 块后，候选集合定义为 d|h0、落在块内且通过 cold/no-return guard 的产品。",
+            CANDIDATE_RULE,
+        ),
+        row(
+            "ColdProductBlockCandidateCountOrSymbolicBoundProved",
+            False,
+            False,
+            "尚未给出候选集合的可复算计数或 Rankin 可和符号上界。",
+            COUNT_BOUND,
+        ),
+        row(
+            "PrimitiveProductProjectionRuleExecutableHashClosed",
+            False,
+            False,
+            "尚未把候选 d 投影到 primitive rank profile。",
+            PROJECTION_RULE,
+        ),
+        row(
+            "ColdProductDyadicBlockInventoryLedgerProved",
+            False,
+            False,
+            "schema 和生成规则闭合，但候选计数/符号界与 primitive 投影未闭合。",
+            f"{COUNT_BOUND} AND {PROJECTION_RULE}",
+        ),
+        row(
+            "ConcretePrimitiveProductRankinEmbeddingDataLedgerProved",
+            False,
+            False,
+            "产品块 inventory 未闭合，concrete Rankin data 仍未闭合。",
+            CONCRETE_DATA,
+        ),
+        row(
+            "RowColumnUnconditionalClosureReached",
+            False,
+            False,
+            "仍未得到早期零行反例链终端矛盾。",
+            f"{COUNT_BOUND} AND {PROJECTION_RULE} AND {WEIGHT_COMPARISON} AND {DSTRUCTURE}",
+        ),
+    ]
+
+
+def build_result() -> dict[str, Any]:
+    """构造 cold 产品块清单证书。"""
+    flags = imported_flags()
+    decisions = decision_rows(flags)
+    return {
+        "certificate_type": "prime_matrix_strict_cold_product_block_inventory_router",
+        "status": "cold_product_block_inventory_schema_closed_candidate_bound_projection_open",
+        "same_theorem_target_preserved": True,
+        "no_theorem_switch": True,
+        "counterexample_assumption_only": True,
+        "empirical_absence_not_used": True,
+        "hardpoint_before_router": HARDPOINT,
+        "hardpoint_after_router": f"{COUNT_BOUND} AND {PROJECTION_RULE}",
+        "next_direct_attack_target": COUNT_BOUND,
+        "imported_flags": flags,
+        "inventory_schema": inventory_rows(),
+        "candidate_count_splits": split_rows(),
+        "decision_table": decisions,
+        "cold_product_dyadic_block_inventory_schema_closed": bool(
+            next(item for item in decisions if item["gate"] == "ColdProductDyadicBlockInventorySchemaClosed")[
+                "proved"
+            ]
+        ),
+        "cold_product_candidate_set_generator_rule_closed": bool(
+            next(item for item in decisions if item["gate"] == "ColdProductCandidateSetGeneratorRuleClosed")[
+                "proved"
+            ]
+        ),
+        "cold_product_block_candidate_count_or_symbolic_bound_proved": False,
+        "primitive_product_projection_rule_executable_hash_closed": False,
+        "cold_product_dyadic_block_inventory_ledger_proved": False,
+        "concrete_primitive_product_rankin_embedding_data_ledger_proved": False,
+        "direct_unconditional_contradiction_found": False,
+        "row_column_unconditional_closed": False,
+        "plain_conclusion": (
+            "`ColdProductDyadicBlockInventoryLedger` 的 schema 与候选集合生成规则已闭合："
+            "固定 source tuple、cold key 与 dyadic 产品块后，候选支撑就是通过 cold/no-return guard 的 `d|h0` 产品，"
+            "且同产品同 key 已商化为一个支撑点。"
+            "但还没有候选集合计数或 Rankin 可和符号界，也没有 primitive 投影规则；"
+            "因此最新最窄点是 `ColdProductBlockCandidateCountOrSymbolicBound`。"
+        ),
+        "source_hashes": source_hashes(),
+    }
+
+
+def render_markdown(result: dict[str, Any]) -> str:
+    """渲染 Markdown 证书。"""
+    lines: list[str] = []
+    lines.append("# Prime Matrix strict cold 产品块清单路由器")
+    lines.append("")
+    lines.append(f"**状态：** `{result['status']}`")
+    lines.append("")
+    lines.append(result["plain_conclusion"])
+    lines.append("")
+    lines.append("```text")
+    for key in [
+        "cold_product_dyadic_block_inventory_schema_closed",
+        "cold_product_candidate_set_generator_rule_closed",
+        "cold_product_block_candidate_count_or_symbolic_bound_proved",
+        "primitive_product_projection_rule_executable_hash_closed",
+        "cold_product_dyadic_block_inventory_ledger_proved",
+        "row_column_unconditional_closed",
+    ]:
+        lines.append(f"{key}={fmt_bool(result[key])}")
+    lines.append("```")
+    lines.append("")
+
+    lines.append("## 1. Inventory Schema")
+    lines.append("")
+    lines.append("| field | definition | status |")
+    lines.append("| --- | --- | --- |")
+    for item in result["inventory_schema"]:
+        lines.append(
+            "| "
+            + " | ".join(table_cell(item[key]) for key in ["field", "definition", "status"])
+            + " |"
+        )
+    lines.append("")
+
+    lines.append("## 2. 候选计数分支")
+    lines.append("")
+    lines.append("| branch | condition | remaining | meaning |")
+    lines.append("| --- | --- | --- | --- |")
+    for item in result["candidate_count_splits"]:
+        lines.append(
+            "| "
+            + " | ".join(table_cell(item[key]) for key in ["branch", "condition", "remaining", "meaning"])
+            + " |"
+        )
+    lines.append("")
+
+    lines.append("## 3. 判定表")
+    lines.append("")
+    lines.append("| gate | closed | proved | meaning | remaining |")
+    lines.append("| --- | --- | --- | --- | --- |")
+    for item in result["decision_table"]:
+        lines.append(
+            f"| `{table_cell(item['gate'])}` | `{fmt_bool(item['closed'])}` | "
+            f"`{fmt_bool(item['proved'])}` | {table_cell(item['meaning'])} | {table_cell(item['remaining'])} |"
+        )
+    lines.append("")
+
+    lines.append("## 4. 下一步最窄点")
+    lines.append("")
+    lines.append(f"- 主攻：`{result['next_direct_attack_target']}`。")
+    lines.append(f"- 同步：`{PROJECTION_RULE}` 与 `{WEIGHT_COMPARISON}`。")
+    lines.append("- 边界：本步只定义候选集合，不证明其大小。")
+    lines.append("")
+
+    lines.append("## 5. 依赖哈希")
+    lines.append("")
+    lines.append("| file | sha256 |")
+    lines.append("| --- | --- |")
+    for file, digest in sorted(result["source_hashes"].items()):
+        lines.append(f"| `{table_cell(file)}` | `{digest}` |")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def main() -> None:
+    """生成 JSON 与 Markdown 文件。"""
+    result = build_result()
+    OUT_JSON.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUT_MD.write_text(render_markdown(result), encoding="utf-8")
+    print(f"status={result['status']}")
+    print(
+        "cold_product_dyadic_block_inventory_schema_closed="
+        f"{fmt_bool(result['cold_product_dyadic_block_inventory_schema_closed'])}"
+    )
+    print(f"next_direct_attack_target={result['next_direct_attack_target']}")
+    print(f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}")
+
+
+if __name__ == "__main__":
+    main()
