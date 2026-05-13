@@ -1,0 +1,225 @@
+{
+  "active_prefix_level_packing_exponent_table_proved": false,
+  "alpha": 0.43,
+  "certificate_type": "prime_matrix_strict_same_parameter_per_level_support_exponent_router",
+  "cold_support_depth_telescoping_contraction_or_log_absorption_table_proved": false,
+  "collar_route_imported": true,
+  "core_history_weighted_support_measure_table_proved": false,
+  "core_threshold_summation_dominance_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "PerLevelSupportTargetImported",
+      "meaning": "深度伸缩已把剩余压成每层冷支撑指数表。",
+      "proved": true,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable"
+    },
+    {
+      "closed": true,
+      "gate": "ResidualExponentBudgetComputed",
+      "meaning": "对数因子 P^1/4 已扣除，alpha=0.43 剩余指数预算为 0.18。",
+      "proved": true,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": true,
+      "gate": "PerLevelChargeDecompositionClosed",
+      "meaning": "每层支撑可分解为活动前缀投影支撑、collar debit 与命名回流。",
+      "proved": true,
+      "remaining": "ActivePrefixLevelPackingExponentTable AND SameParameterSiblingCollarWidthFiniteSumTable"
+    },
+    {
+      "closed": true,
+      "gate": "TrivialActivePrefixBoundRejected",
+      "meaning": "若同层活动前缀数达到 P^0.2，即使每个只贡献 1 也超过剩余预算。",
+      "proved": true,
+      "remaining": "ActivePrefixLevelPackingExponentTable"
+    },
+    {
+      "closed": true,
+      "gate": "CollarRouteImported",
+      "meaning": "collar 单项 cap 与宽度 LCM/共同核压缩已可调用，但直接同层有限总和仍未给出。",
+      "proved": true,
+      "remaining": "SameParameterSiblingCollarWidthFiniteSumTable OR SiblingCollarWidthLCMKernelCompressionLedger"
+    },
+    {
+      "closed": false,
+      "gate": "SameParameterPerLevelColdSupportExponentTableProved",
+      "meaning": "尚未证明活动前缀打包指数和 collar 同层总和满足 beta+tau<0.18。",
+      "proved": false,
+      "remaining": "ActivePrefixLevelPackingExponentTable AND SameParameterSiblingCollarWidthFiniteSumTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "DepthTelescopingTableProved",
+      "meaning": "每层指数表未闭合，因此深度伸缩无法升级为全深度加权支撑界。",
+      "proved": false,
+      "remaining": "SameParameterPerLevelColdSupportExponentTable AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到早期零行反例链的最终矛盾。",
+      "proved": false,
+      "remaining": "ActivePrefixLevelPackingExponentTable AND SameParameterPDECThresholdNumericTable AND SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "decomposition_rows": [
+    {
+      "formula": "A_j={U: depth(U)=j, U remains cold and nonpersistent}",
+      "meaning": "每层支撑必须先按活动父前缀集合打包。",
+      "piece": "active prefix set",
+      "status": "closed_definition"
+    },
+    {
+      "formula": "B_j=sum_{U in A_j} |pi(F_U)|",
+      "meaning": "同父兄弟支撑投影到父扩张窗口，但跨父前缀求和仍需打包。",
+      "piece": "base projected support",
+      "status": "geometry_closed_numeric_open"
+    },
+    {
+      "formula": "C_j=sum_{U in A_j} C_col(U)",
+      "meaning": "单 collar cap 已闭合，跨层/同层总和仍需有限和或 LCM 压缩。",
+      "piece": "collar debit",
+      "status": "cap_closed_sum_open"
+    },
+    {
+      "formula": "E_j=sum_U E_overlap(U)+E_persistent(U)",
+      "meaning": "重复收费或持久历史不留在非持久冷支撑，进入命名回流。",
+      "piece": "overlap and persistence",
+      "status": "named_return_registered"
+    },
+    {
+      "formula": "S_j=B_j+C_j <= P^beta with beta+tau<0.18",
+      "meaning": "这是深度对数吸收后剩下的真正指数表。",
+      "piece": "per-level exponent target",
+      "status": "open"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "hardpoint_after_router": "ActivePrefixLevelPackingExponentTable AND SameParameterSiblingCollarWidthFiniteSumTable AND SameParameterPDECThresholdNumericTable",
+  "hardpoint_before_router": "SameParameterPerLevelColdSupportExponentTable",
+  "log_absorption_epsilon": 0.25,
+  "next_direct_attack_target": "ActivePrefixLevelPackingExponentTable",
+  "no_theorem_switch": true,
+  "obstruction_rows": [
+    {
+      "active_prefix_exponent_gamma": 0.1,
+      "margin": 0.08,
+      "passes_residual_budget": true,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.0,
+      "unit_support_per_prefix": 1
+    },
+    {
+      "active_prefix_exponent_gamma": 0.1,
+      "margin": 0.03,
+      "passes_residual_budget": true,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.05,
+      "unit_support_per_prefix": 1
+    },
+    {
+      "active_prefix_exponent_gamma": 0.18,
+      "margin": 0.0,
+      "passes_residual_budget": false,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.0,
+      "unit_support_per_prefix": 1
+    },
+    {
+      "active_prefix_exponent_gamma": 0.18,
+      "margin": -0.05,
+      "passes_residual_budget": false,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.05,
+      "unit_support_per_prefix": 1
+    },
+    {
+      "active_prefix_exponent_gamma": 0.2,
+      "margin": -0.02,
+      "passes_residual_budget": false,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.0,
+      "unit_support_per_prefix": 1
+    },
+    {
+      "active_prefix_exponent_gamma": 0.2,
+      "margin": -0.07,
+      "passes_residual_budget": false,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.05,
+      "unit_support_per_prefix": 1
+    },
+    {
+      "active_prefix_exponent_gamma": 0.3,
+      "margin": -0.12,
+      "passes_residual_budget": false,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.0,
+      "unit_support_per_prefix": 1
+    },
+    {
+      "active_prefix_exponent_gamma": 0.3,
+      "margin": -0.17,
+      "passes_residual_budget": false,
+      "required_gamma_plus_tau_lt": 0.18,
+      "tpdec_exponent_tau": 0.05,
+      "unit_support_per_prefix": 1
+    }
+  ],
+  "parallel_attack_targets": [
+    "SameParameterSiblingCollarWidthFiniteSumTable",
+    "SameParameterPDECThresholdNumericTable",
+    "SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow",
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "per_level_charge_decomposition_closed": true,
+  "per_level_support_target_imported": true,
+  "plain_conclusion": "`SameParameterPerLevelColdSupportExponentTable` 继续下钻后，真正困难集中在同层活动前缀打包。对数深度已经消耗 `P^(1/4)`，`alpha=0.43` 只剩 `0.18` 的指数预算给每层冷支撑和 `T_PDEC` 权重；因此需要 `beta+tau<0.18`。现有材料能把单父兄弟收费分解为父投影支撑、collar debit 和命名回流，但不能阻止同层活动父前缀数本身达到 `P^0.2` 这类超预算规模。最新最窄点是 `ActivePrefixLevelPackingExponentTable`。",
+  "residual_exponent_after_log_absorption": 0.18,
+  "residual_exponent_budget_computed": true,
+  "route_rows": [
+    {
+      "route": "ActivePrefixLevelPackingExponentTable",
+      "status": "open",
+      "task": "证明同层活动父前缀的投影支撑不会以超过 P^(0.18-tau) 的指数增长。"
+    },
+    {
+      "route": "SameParameterSiblingCollarWidthFiniteSumTable",
+      "status": "open_or_routed",
+      "task": "证明 collar 宽度总和可直接有限求和吸收；否则沿 LCM/共同核回流。"
+    },
+    {
+      "route": "LowMultiplierCommonKernelColumnCRTOrPDECRoute",
+      "status": "registered_not_final_excluded",
+      "task": "若活动前缀密集来自低乘子共同核，必须进入有界小商 SAE/PDEC 或固定历史。"
+    },
+    {
+      "route": "SameParameterPDECThresholdNumericTable",
+      "status": "open",
+      "task": "给出同参数持久阈值指数 tau；tau 越大，每层支撑可用指数越小。"
+    }
+  ],
+  "row_column_unconditional_closed": false,
+  "same_parameter_pdec_threshold_numeric_table_proved": false,
+  "same_parameter_per_level_cold_support_exponent_table_proved": false,
+  "same_parameter_sibling_collar_width_finite_sum_table_proved": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-support-depth-telescoping-router.json": "b68feb863ab061597333a2ef25c80e660e84db7d9a1bc352b94b3d1ba6e12570",
+    "docs/monograph/prime-matrix-strict-core-history-weighted-support-measure-router.json": "2dd7639bfbaa615273487219d874098fb83b09636ad217369bb1b71df21bdf8b",
+    "docs/monograph/prime-matrix-strict-parent-support-numeric-envelope-router.json": "c6fe6dcdc47b377c9a55915560031ec8b37d528f6d9980eedbce671a2ee8d653",
+    "docs/monograph/prime-matrix-strict-sibling-collar-cap-table-router.json": "04affb2be59db89256bbc83cb022d0808a473268dff3de85d9f2230214a06b42",
+    "docs/monograph/prime-matrix-strict-sibling-collar-width-lcm-kernel-router.json": "973a1c986598cb27dd132354715b336eae7938103c89d09da451123f2ade08de",
+    "docs/monograph/prime-matrix-strict-sibling-numeric-envelope-attack-router.json": "52bd322127d85f72df347da33b5ccc71b6ef2c023539db38244793e6d8d3448c",
+    "experiments/prime_matrix_strict_same_parameter_per_level_support_exponent_router.py": "4797e6c686e221d4b5c69191d0ba84a6ae94813ebcecb5021dca285d32e70b21"
+  },
+  "status": "per_level_support_exponent_reduced_to_active_prefix_packing_open",
+  "trivial_active_prefix_bound_rejected": true
+}
