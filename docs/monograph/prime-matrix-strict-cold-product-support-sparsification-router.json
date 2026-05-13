@@ -1,0 +1,165 @@
+{
+  "certificate_type": "prime_matrix_strict_cold_product_support_sparsification_router",
+  "status": "cold_product_sparsification_reduced_to_overload_block_hot_kernel_or_rankin_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hardpoint_before_router": "ColdProductSupportSparsificationBeyondTauLedger",
+  "hardpoint_after_router": "ShortWindowHotDivisorDensityPDECorSAEReturnExclusion AND CommonKernelReturnCycleDescentOrPDECLedger AND PrimitiveProductSupportRankinLedger",
+  "next_direct_attack_target": "PrimitiveProductSupportRankinLedger",
+  "imported_flags": {
+    "cold_filtered_support_domain_closed": true,
+    "prime_power_ordered_cascade_removed_for_support": true,
+    "raw_tau_p018_closure_rejected": true,
+    "reciprocal_to_density_certificate_closed": true,
+    "generic_tau_closure_rejected": true,
+    "free_common_kernel_return_cycle_excluded": true,
+    "prefix_branching_structural_dichotomy_closed": true,
+    "windowed_reciprocal_envelope_closed": true,
+    "hot_window_pigeonhole_closed": true
+  },
+  "dyadic_overload_rows": [
+    {
+      "P": 100000,
+      "dyadic_blocks": 17,
+      "P018": 7.943282,
+      "block_overload_threshold": 0.467252,
+      "meaning": "if total support exceeds P^0.18, some block exceeds this threshold"
+    },
+    {
+      "P": 1000000,
+      "dyadic_blocks": 20,
+      "P018": 12.022644,
+      "block_overload_threshold": 0.601132,
+      "meaning": "if total support exceeds P^0.18, some block exceeds this threshold"
+    },
+    {
+      "P": 100000000,
+      "dyadic_blocks": 27,
+      "P018": 27.542287,
+      "block_overload_threshold": 1.020085,
+      "meaning": "if total support exceeds P^0.18, some block exceeds this threshold"
+    },
+    {
+      "P": 1000000000000,
+      "dyadic_blocks": 40,
+      "P018": 144.543977,
+      "block_overload_threshold": 3.613599,
+      "meaning": "if total support exceeds P^0.18, some block exceeds this threshold"
+    }
+  ],
+  "overload_cases": [
+    {
+      "case": "dense_local_window",
+      "trigger": "many cold products occupy one short multiplicative window with large reciprocal/count mass",
+      "closed_part": "hot density certificate can be produced",
+      "remaining": "ShortWindowHotDivisorDensityPDECorSAEReturnExclusion",
+      "meaning": "局部集中不是普通除数支撑，而是热窗口/PDEC/SAE/ColumnCRT 终端。"
+    },
+    {
+      "case": "common_kernel_cluster",
+      "trigger": "many products share a low multiplier kernel or repeated quotient type",
+      "closed_part": "free return cycle excluded; persistent finite type routes to PDEC",
+      "remaining": "CommonKernelReturnCycleDescentOrPDECLedger",
+      "meaning": "共同核不能免费循环，但仍需排斥 PDEC/命名回流或完成预算吸收。"
+    },
+    {
+      "case": "primitive_dispersion",
+      "trigger": "products stay sparse in every short window and avoid common-kernel clustering",
+      "closed_part": "this is the only remaining nonlocal support mode",
+      "remaining": "PrimitiveProductSupportRankinLedger",
+      "meaning": "分散支撑必须由逐素数 Rankin/Euler 原始支撑账本给出小于 P^0.18 的总界。"
+    },
+    {
+      "case": "pure_tau_fallback",
+      "trigger": "ignore cold structure and bound all divisors",
+      "closed_part": "recognized as a separate route",
+      "remaining": "ExplicitDivisorSupportP018TailWithFiniteBoundaryCertificate",
+      "meaning": "需要显式除数尾界和有限边界；不能替代 cold 结构稀疏化。"
+    }
+  ],
+  "decision_table": [
+    {
+      "gate": "ColdSparsificationTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已把支撑域限制为商化后的 cold/nonpersistent/no-return 产品除数。",
+      "remaining": "ColdProductSupportSparsificationBeyondTauLedger"
+    },
+    {
+      "gate": "DyadicOverloadCertificateClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若总 cold 产品支撑超过 P^0.18，则某个 dyadic 产品块必超过 P^0.18/(floor(log2 P)+1)。",
+      "remaining": "DyadicColdProductBlockOverloadCertificate"
+    },
+    {
+      "gate": "PrimePowerSupportCascadeAlreadyRemoved",
+      "closed": true,
+      "proved": true,
+      "meaning": "素数幂有序级联已经被产品商化压成指数状态，不能再作为本硬点阻塞。",
+      "remaining": "closed for support"
+    },
+    {
+      "gate": "OverloadBlockStructuralSplitClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "一个过载 dyadic 块若不进入热窗口，就必须进入共同核簇或原始分散支撑。",
+      "remaining": "ShortWindowHotDivisorDensityPDECorSAEReturnExclusion OR CommonKernelReturnCycleDescentOrPDECLedger OR PrimitiveProductSupportRankinLedger"
+    },
+    {
+      "gate": "HotDensityOrCommonKernelExclusionProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "热窗口、PDEC/SAE/ColumnCRT 和共同核命名回流尚未全部排斥。",
+      "remaining": "ShortWindowHotDivisorDensityPDECorSAEReturnExclusion AND CommonKernelReturnCycleDescentOrPDECLedger"
+    },
+    {
+      "gate": "PrimitiveProductSupportRankinLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "分散产品支撑的逐素数 Rankin/Euler 总界尚未给出。",
+      "remaining": "PrimitiveProductSupportRankinLedger"
+    },
+    {
+      "gate": "ColdProductSupportSparsificationBeyondTauLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步完成过载块三分法，但未证明三类坏情形都被排斥或吸收。",
+      "remaining": "ShortWindowHotDivisorDensityPDECorSAEReturnExclusion AND CommonKernelReturnCycleDescentOrPDECLedger AND PrimitiveProductSupportRankinLedger"
+    },
+    {
+      "gate": "ColdFilteredDivisorSupportP018EnvelopeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "cold 稀疏化未闭合，纯除数尾界也未闭合，因此产品支撑 envelope 仍开。",
+      "remaining": "ColdProductSupportSparsificationBeyondTauLedger OR ExplicitDivisorSupportP018TailWithFiniteBoundaryCertificate"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未形成排除早期零行反例链的终端矛盾。",
+      "remaining": "PrimitiveProductSupportRankinLedger AND UnifiedTerminalBudgetStrictInequality AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "dyadic_overload_certificate_closed": true,
+  "overload_block_structural_split_closed": true,
+  "hot_density_or_common_kernel_exclusion_proved": false,
+  "primitive_product_support_rankin_ledger_proved": false,
+  "cold_product_support_sparsification_beyond_tau_ledger_proved": false,
+  "cold_filtered_divisor_support_p018_envelope_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "plain_conclusion": "`ColdProductSupportSparsificationBeyondTauLedger` 已被压成 dyadic 过载块三分法：若总 cold 产品支撑超过 `P^0.18`，则某个产品 dyadic 块过载；过载块若局部集中，就登记为热除数密度/PDEC/SAE；若共享低乘子共同核，就进入共同核下降或 PDEC；若既不集中也无共同核，则只剩原始分散支撑，需要逐素数 Rankin/Euler 账本。本步关闭的是拆分和过载证书，不关闭三类终端排斥。",
+  "source_hashes": {
+    "experiments/prime_matrix_strict_cold_product_support_sparsification_router.py": "137ebfc70078c26387a37ce8561d39d0e8c6f367fe3e89dec5d2a748c7f721ff",
+    "docs/monograph/prime-matrix-strict-cold-filtered-divisor-support-router.json": "c37398e74be3f912c6d753868ae8a973f7c61df6aa9fe834e420fd0a893ed7b7",
+    "docs/monograph/prime-matrix-strict-windowed-reciprocal-divisor-density-router.json": "1a367725b5a64d16447823d3bd619ac9955dd634eba4f31ad09326be20ccf57c",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-strict-cold-history-prefix-branching-attack-router.json": "ec7b96227c0b8752620609589fb1367d7483f2c46db66c705a13e68523002e86",
+    "docs/monograph/prime-matrix-strict-weighted-reciprocal-common-divisor-envelope-router.json": "9eef33defabab6ff2bddfd3627b5034984171d98db34e55d04cecee3b4d15f56",
+    "docs/monograph/prime-matrix-strict-product-fiber-multiplicity-router.json": "207253ea5e911247addc82f0e59edfdf1d034a6591d762a9928b493792500d4a"
+  }
+}
