@@ -1,0 +1,218 @@
+{
+  "certificate_type": "prime_matrix_strict_sibling_collar_cap_table_router",
+  "status": "same_parameter_collar_cap_table_closed_width_budget_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "collar_cap_target_imported": true,
+  "integer_length_collar_cap_proved": true,
+  "same_parameter_collar_short_divisor_cap_table_proved": true,
+  "finite_collar_bounds_all_passed": true,
+  "parent_sibling_dilated_window_cold_core_threshold_table_proved": true,
+  "collar_width_budget_absorbed": false,
+  "collar_lcm_sharpening_proved": false,
+  "parent_dilated_window_hot_return_excluded": false,
+  "parent_scaled_child_union_support_numeric_envelope_proved": false,
+  "sibling_cold_core_threshold_numeric_envelope_proved": false,
+  "terminal_cold_window_anticascade_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "SameParameterSiblingCollarShortDivisorCapTable",
+  "hardpoint_after_router": "SiblingCollarWidthBudgetAbsorptionLedger AND SiblingCollarShortDivisorBurstLCMOrPDECRoute AND ParentSiblingDilatedWindowHotCorePDECorSAEExclusion AND SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion AND SameParameterPDECThresholdNumericTable",
+  "next_direct_attack_target": "SiblingCollarWidthBudgetAbsorptionLedger",
+  "parallel_attack_targets": [
+    "SiblingCollarShortDivisorBurstLCMOrPDECRoute",
+    "ParentSiblingDilatedWindowHotCorePDECorSAEExclusion",
+    "ColdCoreThresholdFunctionNumericTable",
+    "SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion",
+    "SameParameterPDECThresholdNumericTable",
+    "SiblingColdCoreThresholdNumericEnvelopeTable",
+    "TerminalColdWindowCompatibilityAntiCascadeLemma",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "formula_rows": [
+    {
+      "name": "left collar cap",
+      "formula": "N_H([L_*,L-1]) <= max(0,L-L_*)",
+      "role": "整数区间长度上界，同参数可计算。"
+    },
+    {
+      "name": "right collar cap",
+      "formula": "N_H([R+1,R_*]) <= max(0,R_*-R)",
+      "role": "整数区间长度上界，同参数可计算。"
+    },
+    {
+      "name": "total collar cap",
+      "formula": "C_col(U)=max(0,L-L_*)+max(0,R_*-R) < 2 g_max(U)",
+      "role": "给出左右 collar 的统一 cap。"
+    },
+    {
+      "name": "dilated cold threshold",
+      "formula": "C_dil(U)=C_core^*(U;[L,R])+C_col(U)",
+      "role": "在原父窗口冷分支中，扩张父窗口 cap 可计算。"
+    },
+    {
+      "name": "sharpness warning",
+      "formula": "if sum_U C_col(U) is too large, use LCM/PDEC sharpening, not free deletion",
+      "role": "宽度 cap 可能太粗，必须进入同参数总预算或命名回流。"
+    }
+  ],
+  "finite_sample_rows": [
+    {
+      "parent_window": [
+        20,
+        180
+      ],
+      "union_interval": [
+        18,
+        180
+      ],
+      "g_max": 6,
+      "left_collar_length": 2,
+      "right_collar_length": 0,
+      "collar_cap": 2,
+      "length_bound_lt_2gmax": true
+    },
+    {
+      "parent_window": [
+        30,
+        240
+      ],
+      "union_interval": [
+        28,
+        245
+      ],
+      "g_max": 7,
+      "left_collar_length": 2,
+      "right_collar_length": 5,
+      "collar_cap": 7,
+      "length_bound_lt_2gmax": true
+    },
+    {
+      "parent_window": [
+        50,
+        420
+      ],
+      "union_interval": [
+        45,
+        423
+      ],
+      "g_max": 9,
+      "left_collar_length": 5,
+      "right_collar_length": 3,
+      "collar_cap": 8,
+      "length_bound_lt_2gmax": true
+    },
+    {
+      "parent_window": [
+        60,
+        720
+      ],
+      "union_interval": [
+        54,
+        721
+      ],
+      "g_max": 10,
+      "left_collar_length": 6,
+      "right_collar_length": 1,
+      "collar_cap": 7,
+      "length_bound_lt_2gmax": true
+    },
+    {
+      "parent_window": [
+        401,
+        4001
+      ],
+      "union_interval": [
+        390,
+        4012
+      ],
+      "g_max": 23,
+      "left_collar_length": 11,
+      "right_collar_length": 11,
+      "collar_cap": 22,
+      "length_bound_lt_2gmax": true
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_sibling_collar_cap_table_router.py": "fbe82f4358a3716dcce819bb62a366abf40ef5d0132f719f4c5f84833aba9edc",
+    "docs/monograph/prime-matrix-strict-parent-dilated-window-threshold-router.json": "8ffa039a50039111d1158d985512d9ef1acd10716e08a6efc2f89100c770371b",
+    "docs/monograph/prime-matrix-strict-parent-support-numeric-envelope-router.json": "c6fe6dcdc47b377c9a55915560031ec8b37d528f6d9980eedbce671a2ee8d653",
+    "docs/monograph/prime-matrix-strict-short-window-divisor-density-lcm-router.json": "b91aa168a84ba29a3c9e6bfb51ad0968b75d625a8864ad9e1d8033574f2ea21e"
+  },
+  "plain_conclusion": "`SameParameterSiblingCollarShortDivisorCapTable` 可以关闭：左 collar 和右 collar 都是同一父窗口扩张产生的整数短区间，所以除数个数分别不超过区间长度；总 cap 为 `C_col(U)=(L-L_*)+(R_*-R)<2g_max(U)`。这给出完全同参数的 collar cap 表，并把扩张父窗口阈值写成 `C_dil(U)=C_core^*(U;[L,R])+C_col(U)`。但该长度 cap 可能太粗，尚未证明其在最终统一预算中可吸收；若不能吸收，必须用短窗口 LCM/共同核/PDEC 路由锐化。因此本步关闭 collar cap 表本身，不关闭行/列无条件命题。",
+  "decision_rows": [
+    {
+      "gate": "CollarCapTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已把扩张表剩余压成同参数 collar cap。",
+      "remaining": "SameParameterSiblingCollarShortDivisorCapTable"
+    },
+    {
+      "gate": "IntegerLengthCollarCapProved",
+      "closed": true,
+      "proved": true,
+      "meaning": "任何 collar 内除数个数不超过该整数区间长度。",
+      "remaining": "SameParameterSiblingCollarShortDivisorCapTable"
+    },
+    {
+      "gate": "SameParameterCollarCapTableProved",
+      "closed": true,
+      "proved": true,
+      "meaning": "左右 collar 长度由同一父窗口和子乘子账本计算，不引入新参数。",
+      "remaining": "SameParameterSiblingCollarShortDivisorCapTable"
+    },
+    {
+      "gate": "DilatedColdThresholdTableProved",
+      "closed": true,
+      "proved": false,
+      "meaning": "在原父窗口冷分支中，可用 C_core^*+C_col 作为扩张窗口阈值。",
+      "remaining": "ParentSiblingDilatedWindowColdCoreThresholdTable"
+    },
+    {
+      "gate": "CollarWidthBudgetAbsorbed",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明 sum_U C_col(U) 在最终同参数预算中可吸收。",
+      "remaining": "SiblingCollarWidthBudgetAbsorptionLedger"
+    },
+    {
+      "gate": "CollarLCMSharpeningStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "若宽度 cap 太粗，需要短窗口 LCM/共同核/PDEC 锐化。",
+      "remaining": "SiblingCollarShortDivisorBurstLCMOrPDECRoute"
+    },
+    {
+      "gate": "ParentDilatedWindowHotReturnExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "原父窗口热或扩张后热回流仍未排斥。",
+      "remaining": "ParentSiblingDilatedWindowHotCorePDECorSAEExclusion"
+    },
+    {
+      "gate": "ParentSupportNumericEnvelopeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "collar cap 表闭合，但宽度预算吸收和热回流排斥仍未完成。",
+      "remaining": "SiblingCollarWidthBudgetAbsorptionLedger AND ParentSiblingDilatedWindowHotCorePDECorSAEExclusion"
+    },
+    {
+      "gate": "SiblingColdCoreThresholdNumericEnvelopeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "还需 overlap、PDEC 阈值和最终宽度预算吸收。",
+      "remaining": "SiblingCollarWidthBudgetAbsorptionLedger AND SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到早期零行反例链的终端矛盾。",
+      "remaining": "SiblingCollarWidthBudgetAbsorptionLedger AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ]
+}
