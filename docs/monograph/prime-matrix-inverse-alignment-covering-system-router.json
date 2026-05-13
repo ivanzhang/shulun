@@ -1,0 +1,427 @@
+{
+  "alignment_period_primorial_closed": true,
+  "alternative_route_hardpoint": "PrimeGapBelowP2ForAllPBlocks",
+  "certificate_type": "prime_matrix_inverse_alignment_covering_system_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "GCDSystemEquivalenceClosed",
+      "meaning": "用户给出的 gcd 组可严格改写为小素因子覆盖条件；gcd(x,r)>1 是冗余但正确的充分子句。",
+      "proved": true,
+      "remaining": "none for equivalence"
+    },
+    {
+      "closed": true,
+      "gate": "InverseResidueAlignmentFormulaClosed",
+      "meaning": "每个 r 的允许 x 类为有限并集 `x=-r P^{-1} mod q`。",
+      "proved": true,
+      "remaining": "CRT hitting-set minimization"
+    },
+    {
+      "closed": true,
+      "gate": "MinimalAlignmentFiniteCRTProblemClosed",
+      "meaning": "最小对齐解可在模小素数 primorial 的周期内定义为有限覆盖最小值。",
+      "proved": true,
+      "remaining": "efficient/global formula not derived"
+    },
+    {
+      "closed": true,
+      "gate": "SampleMinimalAlignmentsComputed",
+      "meaning": "样本显示最小对齐解高度非单调，不能由单个固定系数公式描述。",
+      "proved": true,
+      "remaining": "larger P search optional"
+    },
+    {
+      "closed": false,
+      "gate": "XGreaterThanPGlobalProved",
+      "meaning": "该命题等价/强相关于每个 `(xP,(x+1)P), x<P` 含素数的短区间素数输入。",
+      "proved": false,
+      "remaining": "PrimeGapBelowP2ForAllPBlocks"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本路线给出新压缩与计算证据，但尚未排除热窗口/PDEC/SAE 等终端。",
+      "proved": false,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used_for_proof": true,
+  "gcd_system_equivalence_closed": true,
+  "gcd_x_r_clause_redundant_but_safe": true,
+  "global_minimal_alignment_x_gt_P_proved": false,
+  "inverse_residue_formula_closed": true,
+  "minimal_alignment_defined_as_finite_crt_hitting_problem": true,
+  "next_direct_attack_target": "TerminalCoreHotDivisorWindowPDECorSAE",
+  "no_theorem_switch": true,
+  "plain_conclusion": "新的逆元对齐想法有一个严格可用的核心：`xP+r` 有小于 `P` 的素因子，等价于存在 `a` 使 `gcd(ax+r,P-a)>1`；也等价于每个 `r` 被有限并集 `x=-r P^{-1} (mod q)` 覆盖。因此最小对齐行是一个模小素数 primorial 的有限 CRT 覆盖最小值。若要证明最小对齐行必大于 `P`，在 `x<P` 区间内该问题化为：每个短区间 `(xP,(x+1)P)` 含有一个素数。这个输入很有解释力，但当前不能由 CRT 形式自动推出，所以它是新的可攻硬点，而不是已闭合证明。",
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_ledger": {
+    "example_alignment_witness_P23": {
+      "P": 23,
+      "witness_rows": [
+        {
+          "first_small_factor": 3,
+          "n": 1335,
+          "r": 1,
+          "x_mod_q": 1
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1336,
+          "r": 2,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 7,
+          "n": 1337,
+          "r": 3,
+          "x_mod_q": 2
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1338,
+          "r": 4,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 13,
+          "n": 1339,
+          "r": 5,
+          "x_mod_q": 6
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1340,
+          "r": 6,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 3,
+          "n": 1341,
+          "r": 7,
+          "x_mod_q": 1
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1342,
+          "r": 8,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 17,
+          "n": 1343,
+          "r": 9,
+          "x_mod_q": 7
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1344,
+          "r": 10,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 5,
+          "n": 1345,
+          "r": 11,
+          "x_mod_q": 3
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1346,
+          "r": 12,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 3,
+          "n": 1347,
+          "r": 13,
+          "x_mod_q": 1
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1348,
+          "r": 14,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 19,
+          "n": 1349,
+          "r": 15,
+          "x_mod_q": 1
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1350,
+          "r": 16,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 7,
+          "n": 1351,
+          "r": 17,
+          "x_mod_q": 2
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1352,
+          "r": 18,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 3,
+          "n": 1353,
+          "r": 19,
+          "x_mod_q": 1
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1354,
+          "r": 20,
+          "x_mod_q": 0
+        },
+        {
+          "first_small_factor": 5,
+          "n": 1355,
+          "r": 21,
+          "x_mod_q": 3
+        },
+        {
+          "first_small_factor": 2,
+          "n": 1356,
+          "r": 22,
+          "x_mod_q": 0
+        }
+      ],
+      "x": 58
+    },
+    "example_inverse_classes_P13_r1": [
+      {
+        "a_P_mod_q": 1,
+        "q": 2,
+        "x_mod_q": 1
+      },
+      {
+        "a_P_mod_q": 1,
+        "q": 3,
+        "x_mod_q": 2
+      },
+      {
+        "a_P_mod_q": 3,
+        "q": 5,
+        "x_mod_q": 3
+      },
+      {
+        "a_P_mod_q": 6,
+        "q": 7,
+        "x_mod_q": 1
+      },
+      {
+        "a_P_mod_q": 2,
+        "q": 11,
+        "x_mod_q": 5
+      }
+    ],
+    "gcd_system_equivalence_sample_verified": true,
+    "ledger_type": "inverse_alignment_covering_system_sample_ledger",
+    "rows": [
+      {
+        "P": 3,
+        "alignment_exists_in_bound": false,
+        "first_uncovered_r_for_x_equal_P": 2,
+        "minimal_alignment_gt_P_if_found": null,
+        "minimal_alignment_x_in_bound": null,
+        "period_exhausted": true,
+        "period_primorial_below_P": 2,
+        "prime_count_below_P": 1,
+        "search_bound": 200000
+      },
+      {
+        "P": 5,
+        "alignment_exists_in_bound": false,
+        "first_uncovered_r_for_x_equal_P": 4,
+        "minimal_alignment_gt_P_if_found": null,
+        "minimal_alignment_x_in_bound": null,
+        "period_exhausted": true,
+        "period_primorial_below_P": 6,
+        "prime_count_below_P": 2,
+        "search_bound": 200000
+      },
+      {
+        "P": 7,
+        "alignment_exists_in_bound": false,
+        "first_uncovered_r_for_x_equal_P": 4,
+        "minimal_alignment_gt_P_if_found": null,
+        "minimal_alignment_x_in_bound": null,
+        "period_exhausted": true,
+        "period_primorial_below_P": 30,
+        "prime_count_below_P": 3,
+        "search_bound": 200000
+      },
+      {
+        "P": 11,
+        "alignment_exists_in_bound": false,
+        "first_uncovered_r_for_x_equal_P": 6,
+        "minimal_alignment_gt_P_if_found": null,
+        "minimal_alignment_x_in_bound": null,
+        "period_exhausted": true,
+        "period_primorial_below_P": 210,
+        "prime_count_below_P": 4,
+        "search_bound": 200000
+      },
+      {
+        "P": 13,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 4,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 168,
+        "period_exhausted": true,
+        "period_primorial_below_P": 2310,
+        "prime_count_below_P": 5,
+        "search_bound": 200000
+      },
+      {
+        "P": 17,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 4,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 1210,
+        "period_exhausted": true,
+        "period_primorial_below_P": 30030,
+        "prime_count_below_P": 6,
+        "search_bound": 200000
+      },
+      {
+        "P": 19,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 6,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 3658,
+        "period_exhausted": false,
+        "period_primorial_below_P": 510510,
+        "prime_count_below_P": 7,
+        "search_bound": 200000
+      },
+      {
+        "P": 23,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 12,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 58,
+        "period_exhausted": false,
+        "period_primorial_below_P": 9699690,
+        "prime_count_below_P": 8,
+        "search_bound": 200000
+      },
+      {
+        "P": 29,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 12,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 5209,
+        "period_exhausted": false,
+        "period_primorial_below_P": 223092870,
+        "prime_count_below_P": 9,
+        "search_bound": 200000
+      },
+      {
+        "P": 31,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 6,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 60794,
+        "period_exhausted": false,
+        "period_primorial_below_P": 6469693230,
+        "prime_count_below_P": 10,
+        "search_bound": 200000
+      },
+      {
+        "P": 37,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 4,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 73916,
+        "period_exhausted": false,
+        "period_primorial_below_P": 200560490130,
+        "prime_count_below_P": 11,
+        "search_bound": 200000
+      },
+      {
+        "P": 41,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 12,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 170880,
+        "period_exhausted": false,
+        "period_primorial_below_P": 7420738134810,
+        "prime_count_below_P": 12,
+        "search_bound": 200000
+      },
+      {
+        "P": 43,
+        "alignment_exists_in_bound": true,
+        "first_uncovered_r_for_x_equal_P": 12,
+        "minimal_alignment_gt_P_if_found": true,
+        "minimal_alignment_x_in_bound": 162932,
+        "period_exhausted": false,
+        "period_primorial_below_P": 304250263527210,
+        "prime_count_below_P": 13,
+        "search_bound": 200000
+      },
+      {
+        "P": 47,
+        "alignment_exists_in_bound": false,
+        "first_uncovered_r_for_x_equal_P": 4,
+        "minimal_alignment_gt_P_if_found": null,
+        "minimal_alignment_x_in_bound": null,
+        "period_exhausted": false,
+        "period_primorial_below_P": 13082761331670030,
+        "prime_count_below_P": 14,
+        "search_bound": 200000
+      }
+    ],
+    "search_bound": 200000,
+    "x_le_P_lower_bound_sample": {
+      "all_checked_have_no_alignment_x_le_P": true,
+      "checked_prime_count": 45,
+      "failures": [],
+      "limit": 199
+    }
+  },
+  "source_hashes": {
+    "data/inverse-alignment-covering-system-sample-ledger.json": "e1a0d939b424b57cf8c1f97c8d0a0e973c3f91896789011e786fa833ade10f9a",
+    "experiments/prime_matrix_inverse_alignment_covering_system_router.py": "5d989c22bd9e58f06547f0b3afd76d1fdfb04fd231c8fa701b25828db1e99caf"
+  },
+  "status": "inverse_alignment_gcd_equivalence_closed_min_x_gt_P_reduced_to_prime_gap_input",
+  "theorem_rows": [
+    {
+      "name": "gcd_system_equivalence",
+      "statement": "q<P prime divides xP+r iff for a=P mod q, q divides both ax+r and P-a.",
+      "status": "proved"
+    },
+    {
+      "name": "inverse_residue_cover",
+      "statement": "for fixed r and q<P, allowed x is x == -r*P^{-1} mod q.",
+      "status": "proved"
+    },
+    {
+      "name": "periodicity",
+      "statement": "the all-r coverage predicate is periodic modulo product_{q<P} q.",
+      "status": "proved"
+    },
+    {
+      "name": "x_less_P_prime_interval_equivalence",
+      "statement": "for x<P, coverage fails iff interval (xP,(x+1)P) contains a prime.",
+      "status": "proved_reduction"
+    },
+    {
+      "name": "global_x_min_gt_P",
+      "statement": "minimal alignment x is always greater than P.",
+      "status": "not_proved_here_reduces_to_prime_gap_below_P2"
+    }
+  ],
+  "x_less_P_reduction_to_prime_in_each_P_block_closed": true
+}
