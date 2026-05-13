@@ -1,0 +1,118 @@
+{
+  "certificate_type": "prime_matrix_strict_primitive_product_projection_rule_router",
+  "status": "primitive_product_projection_rule_executable_closed_weight_comparison_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hardpoint_before_router": "PrimitiveProductProjectionRuleExecutableHash",
+  "hardpoint_after_router": "PrimitiveProductRankinWeightP018Comparison",
+  "next_direct_attack_target": "PrimitiveProductRankinWeightP018Comparison",
+  "imported_flags": {
+    "candidate_count_route_imported": true,
+    "block_candidate_generator_imported": true,
+    "free_common_kernel_return_cycle_excluded": true
+  },
+  "projection_rule": [
+    {
+      "step": "divisibility_guard",
+      "definition": "reject d if d does not divide h0",
+      "effect": "not a candidate product for this formal unit"
+    },
+    {
+      "step": "common_kernel_guard",
+      "definition": "reject d if gcd(d, registered_common_kernel)>1",
+      "effect": "candidate returns to common-kernel/PDEC ledger, not primitive dispersion"
+    },
+    {
+      "step": "prime_factor_projection",
+      "definition": "factor d and sort primes increasingly",
+      "effect": "order-free local rank profile"
+    },
+    {
+      "step": "valuation_state",
+      "definition": "record (prime, product_exp, h0_exp, rank_unit=1)",
+      "effect": "Rankin/Euler weights can be applied per local prime factor"
+    },
+    {
+      "step": "profile_hash",
+      "definition": "sha256 of canonical sorted JSON profile",
+      "effect": "stable manifest row key"
+    }
+  ],
+  "sample_ledger_path": "data/primitive-product-projection-sample-ledger.json",
+  "sample_ledger_sha256": "3aa57b90781b1cbfb8a04a23fe3c22d29db27744e23c34938def21314fe0774b",
+  "decision_table": [
+    {
+      "gate": "PrimitiveProjectionTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已把候选计数的解析路线压到 primitive 投影规则。",
+      "remaining": "PrimitiveProductProjectionRuleExecutableHash"
+    },
+    {
+      "gate": "CommonKernelReturnGuardImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "共同核重叠不能留在 primitive dispersion 分支，必须回流。",
+      "remaining": "CommonKernelCandidateReturnFilter"
+    },
+    {
+      "gate": "PrimitiveRankProfileCanonicalizationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "候选 d 被确定性分解为排序局部素因子/指数 profile，并给出稳定 hash。",
+      "remaining": "PrimitiveProductRankProfileCanonicalization"
+    },
+    {
+      "gate": "PrimitiveProductProjectionRuleExecutableHashClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "投影规则已由本脚本和样本账本物化为可执行哈希对象。",
+      "remaining": "PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "gate": "PrimitiveProductRankinWeightP018ComparisonProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "投影规则已闭合，但尚未证明 Rankin 权重总和低于 P^0.18。",
+      "remaining": "PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "gate": "ColdProductBlockCandidateCountOrSymbolicBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "缺权重比较或 finite runner，因此候选计数符号界仍未闭合。",
+      "remaining": "PrimitiveProductRankinWeightP018Comparison OR FiniteColdProductBlockCandidateRunnerHash"
+    },
+    {
+      "gate": "ConcretePrimitiveProductRankinEmbeddingDataLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "投影规则闭合但 concrete 产品块权重数据仍未完成。",
+      "remaining": "PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到早期零行反例链终端矛盾。",
+      "remaining": "PrimitiveProductRankinWeightP018Comparison AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "primitive_rank_profile_canonicalization_closed": true,
+  "primitive_product_projection_rule_executable_hash_closed": true,
+  "primitive_product_rankin_weight_p018_comparison_proved": false,
+  "cold_product_block_candidate_count_or_symbolic_bound_proved": false,
+  "concrete_primitive_product_rankin_embedding_data_ledger_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "plain_conclusion": "`PrimitiveProductProjectionRuleExecutableHash` 已闭合：候选产品 `d` 先通过 `d|h0` 守卫，再剔除已登记共同核重叠；留在 primitive dispersion 分支的产品被唯一分解为排序的局部素因子/指数 profile，并生成稳定 hash。该规则删除了有序历史和共同核歧义。但这还没有证明 Rankin 权重总和小于 `P^0.18`，最新最窄点转为 `PrimitiveProductRankinWeightP018Comparison`。",
+  "source_hashes": {
+    "experiments/prime_matrix_strict_primitive_product_projection_rule_router.py": "ee1e8a38b1ccb5592627fa05f462bea69874cc4cbad0c5407a57c2eb0d9bfdbf",
+    "data/primitive-product-projection-sample-ledger.json": "3aa57b90781b1cbfb8a04a23fe3c22d29db27744e23c34938def21314fe0774b",
+    "docs/monograph/prime-matrix-strict-cold-product-candidate-count-router.json": "664b98a29a37db7ba354f28adf9d20842bfdac7505c8803fd5cd2d9038b06175",
+    "docs/monograph/prime-matrix-strict-cold-product-block-inventory-router.json": "a9630947c1df0d152a5f1e9f111863792c4022494f509f6ae966b0f7957d6b1b",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671"
+  }
+}

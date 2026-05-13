@@ -1,0 +1,149 @@
+{
+  "certificate_type": "prime_matrix_strict_cold_product_candidate_count_router",
+  "status": "candidate_window_count_identity_closed_symbolic_bound_needs_projection_or_runner",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "hardpoint_before_router": "ColdProductBlockCandidateCountOrSymbolicBound",
+  "hardpoint_after_router": "(PrimitiveProductProjectionRuleExecutableHash AND PrimitiveProductRankinWeightP018Comparison) OR FiniteColdProductBlockCandidateRunnerHash",
+  "next_direct_attack_target": "PrimitiveProductProjectionRuleExecutableHash",
+  "imported_flags": {
+    "block_inventory_schema_closed": true,
+    "candidate_set_generator_closed": true,
+    "hot_density_certificate_closed": true,
+    "generic_tau_closure_rejected": true,
+    "dyadic_overload_certificate_closed": true,
+    "free_common_kernel_return_cycle_excluded": true
+  },
+  "candidate_envelopes": [
+    {
+      "name": "raw_window_count",
+      "formula": "#Cand(B) <= N_{h0}(Y,2Y]",
+      "status": "closed_identity",
+      "meaning": "候选产品必须是 h0 在该 dyadic 窗口内的除数。"
+    },
+    {
+      "name": "cold_filter",
+      "formula": "Cand(B) = raw_window_count minus hot/common/named-return candidates",
+      "status": "closed_definition",
+      "meaning": "cold/no-return 条件只删候选，不增加候选。"
+    },
+    {
+      "name": "excess_to_return",
+      "formula": "too many candidates before primitive projection -> hot density or common-kernel return",
+      "status": "registered_not_excluded",
+      "meaning": "过量候选不是免费支撑，必须登记为热窗口或共同核回流。"
+    },
+    {
+      "name": "primitive_symbolic_envelope",
+      "formula": "#Cand(B) <= RankinWeight(primitive profiles) + Return(B)",
+      "status": "schema_open_projection",
+      "meaning": "真正可和封套需要 primitive 投影规则和权重比较。"
+    }
+  ],
+  "obstructions": [
+    {
+      "obstruction": "raw_tau_reuse",
+      "reason": "N_{h0}(Y,2Y] 的粗全局求和会退回 tau(h0)，该路线已在 P=100000 边界失败。",
+      "required": "PrimitiveProductProjectionRuleExecutableHash OR FiniteColdProductBlockCandidateRunnerHash"
+    },
+    {
+      "obstruction": "cold_filter_not_quantified",
+      "reason": "cold/no-return guard 定义了删选集合，但没有给出删选后数量的数值界。",
+      "required": "CandidateExcessHotDensityOrCommonKernelReturnLedger"
+    },
+    {
+      "obstruction": "rankin_without_projection",
+      "reason": "没有 d -> primitive rank profile，Rankin 权不能作用到当前候选集合。",
+      "required": "PrimitiveProductProjectionRuleExecutableHash"
+    },
+    {
+      "obstruction": "finite_runner_missing",
+      "reason": "没有当前 source tuple / block 的可复算枚举输出和 hash。",
+      "required": "FiniteColdProductBlockCandidateRunnerHash"
+    }
+  ],
+  "decision_table": [
+    {
+      "gate": "CandidateCountTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已定义 cold 产品块候选集合，当前需给出计数或符号界。",
+      "remaining": "ColdProductBlockCandidateCountOrSymbolicBound"
+    },
+    {
+      "gate": "WindowDivisorCountEnvelopeClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "候选数被同一窗口内的 h0 除数数 N_{h0}(Y,2Y] 控制。",
+      "remaining": "WindowDivisorCountEnvelopeForColdProductBlock"
+    },
+    {
+      "gate": "RawTauClosureRejectedForCandidateCount",
+      "closed": true,
+      "proved": true,
+      "meaning": "不能把窗口除数数再粗化为全局 tau(h0) 并宣称闭合。",
+      "remaining": "PrimitiveProductProjectionRuleExecutableHash OR FiniteColdProductBlockCandidateRunnerHash"
+    },
+    {
+      "gate": "CandidateExcessReturnRouteRegistered",
+      "closed": true,
+      "proved": false,
+      "meaning": "若候选块过量且不进入 primitive 分散支撑，则必须回流热窗口或共同核；回流排斥未闭合。",
+      "remaining": "CandidateExcessHotDensityOrCommonKernelReturnLedger"
+    },
+    {
+      "gate": "PrimitiveSymbolicEnvelopeSchemaClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "候选计数可写成 primitive Rankin 权重加回流项，但投影规则和权重比较仍缺。",
+      "remaining": "PrimitiveProductProjectionRuleExecutableHash AND PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "gate": "ColdProductBlockCandidateCountOrSymbolicBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "窗口计数恒等式闭合，但没有可用数值界；必须走 primitive 投影/Rankin 或有限 runner。",
+      "remaining": "(PrimitiveProductProjectionRuleExecutableHash AND PrimitiveProductRankinWeightP018Comparison) OR FiniteColdProductBlockCandidateRunnerHash"
+    },
+    {
+      "gate": "ColdProductDyadicBlockInventoryLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "候选计数/符号界未闭合，产品块 inventory 仍未闭合。",
+      "remaining": "ColdProductDyadicBlockInventoryLedger"
+    },
+    {
+      "gate": "ConcretePrimitiveProductRankinEmbeddingDataLedgerProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "产品块候选界未闭合，concrete Rankin data 仍未闭合。",
+      "remaining": "ConcretePrimitiveProductRankinEmbeddingDataLedger"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到早期零行反例链终端矛盾。",
+      "remaining": "PrimitiveProductProjectionRuleExecutableHash AND PrimitiveProductRankinWeightP018Comparison AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "window_divisor_count_envelope_closed": true,
+  "raw_tau_closure_rejected_for_candidate_count": true,
+  "candidate_excess_return_route_registered": true,
+  "primitive_symbolic_envelope_schema_closed": true,
+  "cold_product_block_candidate_count_or_symbolic_bound_proved": false,
+  "cold_product_dyadic_block_inventory_ledger_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "plain_conclusion": "`ColdProductBlockCandidateCountOrSymbolicBound` 的可用恒等式已压实：候选数至多为同一 dyadic 窗口中的除数数，且 cold/no-return guard 只能删候选。但把它粗化为全局 `tau(h0)` 会回到已失败路线；真正可闭合的路只剩两条：给出 `d -> primitive rank profile` 的可执行投影并完成 Rankin 权重比较，或提供有限 runner/hash。最新最窄点因此转为 `PrimitiveProductProjectionRuleExecutableHash`。",
+  "source_hashes": {
+    "experiments/prime_matrix_strict_cold_product_candidate_count_router.py": "6f9e970707938c9217bb55f86c92967b17c3249e36393b32b3aa0c26fbcd5d9a",
+    "docs/monograph/prime-matrix-strict-cold-product-block-inventory-router.json": "a9630947c1df0d152a5f1e9f111863792c4022494f509f6ae966b0f7957d6b1b",
+    "docs/monograph/prime-matrix-strict-windowed-reciprocal-divisor-density-router.json": "1a367725b5a64d16447823d3bd619ac9955dd634eba4f31ad09326be20ccf57c",
+    "docs/monograph/prime-matrix-strict-cold-product-support-sparsification-router.json": "1dc6e98d6eb37c2571d0c3bdff385f66069b8812c6c1a9c8b97860b37cfc6f95",
+    "docs/monograph/prime-matrix-strict-cold-filtered-divisor-support-router.json": "c37398e74be3f912c6d753868ae8a973f7c61df6aa9fe834e420fd0a893ed7b7",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671"
+  }
+}
