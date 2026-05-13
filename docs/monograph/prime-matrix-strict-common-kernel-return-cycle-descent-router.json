@@ -1,0 +1,164 @@
+{
+  "certificate_type": "prime_matrix_strict_common_kernel_return_cycle_descent_router",
+  "common_kernel_return_cycle_descent_or_pdec_proved": true,
+  "counterexample_assumption_only": true,
+  "cycle_exit_rows": [
+    {
+      "effect": "frequency height h is replaced by h/(bc), so a same-level cycle is impossible",
+      "exit": "fixed quotient descent",
+      "trigger": "persistent pair quotient (b,c) with bc>=2"
+    },
+    {
+      "effect": "the branch is registered as FixedHistory/ColumnCRT/PDEC",
+      "exit": "persistent finite type",
+      "trigger": "same history word, quotient type, sibling overlap key, or kernel key repeats above threshold"
+    },
+    {
+      "effect": "each return consumes a bounded SAE/history-token allowance already present in the nonpersistent budget",
+      "exit": "nonpersistent finite debit",
+      "trigger": "no finite type reaches its persistence threshold"
+    },
+    {
+      "effect": "the branch is no longer cold; it routes to hot core, fixed history, PDEC, or SAE",
+      "exit": "hot family return",
+      "trigger": "sibling family charge exceeds the cold support envelope"
+    }
+  ],
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ReturnCycleTargetImported",
+      "meaning": "上一层已把低乘子共同核的真正剩余压成回流下降/PDEC 账本。",
+      "proved": true,
+      "remaining": "CommonKernelReturnCycleDescentOrPDECLedger"
+    },
+    {
+      "closed": true,
+      "gate": "FixedQuotientHeightDescentClosed",
+      "meaning": "固定商型分支已有 h -> h/(bc), bc>=2 的严格高度下降。",
+      "proved": true,
+      "remaining": "FixedQuotientTypePDECColumnCertificateExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "PersistentFiniteTypePDECRouteClosed",
+      "meaning": "同一有限历史/商型/重叠键持久复现时已登记为 PDEC/ColumnCRT，但排斥未完成。",
+      "proved": false,
+      "remaining": "FixedTypeHistoryPDECExclusion OR FixedQuotientTypePDECColumnCertificateExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "NonpersistentFiniteDebitClosed",
+      "meaning": "若没有持久复现，则回流次数由有限字母表乘持久阈值控制，并进入 SAE/冷供给预算。",
+      "proved": true,
+      "remaining": "BoundedQuotientTypeSAEAbsorption AND SameParameterSparseDemandColdSupplyStrictMarginCertificate"
+    },
+    {
+      "closed": true,
+      "gate": "SiblingHotFixedReturnRegistered",
+      "meaning": "兄弟整族超冷预算或重复收费不能继续留在冷分支。",
+      "proved": true,
+      "remaining": "TerminalCoreHotDivisorWindowPDECorSAE OR FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "FreeCommonKernelReturnCycleExcluded",
+      "meaning": "共同核回流不能无限免费循环；必为高度下降、有限预算扣减、热回流或 PDEC。",
+      "proved": true,
+      "remaining": "UnifiedTerminalBudgetStrictInequality OR NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": true,
+      "gate": "CommonKernelReturnCycleDescentOrPDECProved",
+      "meaning": "目标账本闭合为无免费循环；但命名出口和预算严格余量仍开。",
+      "proved": true,
+      "remaining": "UnifiedTerminalBudgetStrictInequality AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "LowMultiplierCommonKernelExcluded",
+      "meaning": "共同核免费循环已排除，但 PDEC/SAE/热核心/固定历史出口尚未全部排斥。",
+      "proved": false,
+      "remaining": "UnifiedTerminalBudgetStrictInequality AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND FixedQuotientTypePDECColumnCertificateExclusion"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "UnifiedTerminalBudgetStrictInequality AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "finite_token_pigeonhole_samples_passed": true,
+  "finite_token_samples": [
+    {
+      "alphabet_size": 6,
+      "first_forced_persistent_return": 13,
+      "max_nonpersistent_returns": 12,
+      "pigeonhole_ok": true,
+      "threshold": 3
+    },
+    {
+      "alphabet_size": 10,
+      "first_forced_persistent_return": 31,
+      "max_nonpersistent_returns": 30,
+      "pigeonhole_ok": true,
+      "threshold": 4
+    },
+    {
+      "alphabet_size": 14,
+      "first_forced_persistent_return": 57,
+      "max_nonpersistent_returns": 56,
+      "pigeonhole_ok": true,
+      "threshold": 5
+    }
+  ],
+  "fixed_quotient_height_descent_closed": true,
+  "fixed_quotient_pdec_excluded": false,
+  "fixed_type_history_pdec_excluded": false,
+  "free_common_kernel_return_cycle_excluded": true,
+  "hardpoint_after_router": "UnifiedTerminalBudgetStrictInequality AND NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion AND FixedQuotientTypePDECColumnCertificateExclusion",
+  "hardpoint_before_router": "CommonKernelReturnCycleDescentOrPDECLedger",
+  "low_multiplier_common_kernel_excluded": false,
+  "named_return_exclusion_proved": false,
+  "next_direct_attack_target": "UnifiedTerminalBudgetStrictInequality",
+  "no_theorem_switch": true,
+  "nonpersistent_finite_debit_closed": true,
+  "parallel_attack_targets": [
+    "NamedReturnPDECSAEColumnCRTHotCoreFixedHistoryExclusion",
+    "SameParameterSparseDemandColdSupplyStrictMarginCertificate",
+    "FixedQuotientTypePDECColumnCertificateExclusion",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "TerminalColdWindowCompatibilityAntiCascadeLemma",
+    "SiblingColdCoreThresholdNumericEnvelopeTable",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "persistent_finite_type_pdec_route_closed": true,
+  "plain_conclusion": "`CommonKernelReturnCycleDescentOrPDECLedger` 可以关闭为“无免费回流循环”。若共同核分支落在固定商型，已有 `h -> h/(bc)` 且 `bc>=2` 的严格高度下降；若不固定但有限历史/商型/重叠键反复出现，则由持久阈值登记为固定历史、ColumnCRT 或 PDEC；若所有键都不持久，则每次回流都消耗有限字母表 SAE/冷供给预算；兄弟整族超收费则转入热核心或固定历史。因此低乘子共同核不能形成不下降、不收费、也不命名的循环。但这只关闭免费循环，不排斥 PDEC/SAE/热核心/固定历史出口，也不证明统一终端预算严格余量，所以行/列命题仍未无条件闭合。",
+  "return_cycle_target_imported": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sibling_hot_fixed_return_registered": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-strict-cold-window-sibling-charging-router.json": "be05fb4b2dee03515ca4eea8e086eff6341c0e04d69da9501072cccf74414591",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-density-transfer-router.json": "f2b0c000ddb05b2504eb547a318d94a219fd70ac27ff34089b01524caa1688f7",
+    "docs/monograph/prime-matrix-strict-fixed-quotient-type-columncrt-router.json": "2604e2de93bc17bbe7678dddccf958b8a747714286d2c1ab8d5734246be78733",
+    "docs/monograph/prime-matrix-strict-low-multiplier-common-kernel-latest-sync-router.json": "10d6c849cdb719344db932e7cfbf6f7f94ba66f26b28f0f3bb5f73d5d5df778d",
+    "docs/monograph/prime-matrix-strict-named-return-after-rowfree-sync-router.json": "818c17bd920eb69eaa05f2cca96099ad4637c8ab960afd843ec6a53872d392d3",
+    "docs/monograph/prime-matrix-strict-sibling-collar-width-lcm-kernel-router.json": "973a1c986598cb27dd132354715b336eae7938103c89d09da451123f2ade08de",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-absorption-latest-sync-router.json": "4ec39bb552f9cc5f120b20ae937e8569370f7aa75322dda2d4ee669b2897985b",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-router.json": "6cbb750d3888d20ef1c7267231ddfb8490b1efc92b0edda308ec96f1d40905b2",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-history-sae-budget-router.json": "8f077e91bd0f02d25e6598256b5ebe958579e779abe1ecc41dd6861207e09523",
+    "docs/monograph/prime-matrix-strict-unified-budget-after-named-sync-router.json": "17ebb6fdd134cb1ec15518763ec426a0509da1f7432254a4fa16e02dbefb1dc0",
+    "experiments/prime_matrix_strict_common_kernel_return_cycle_descent_router.py": "1dc77715550bac629d735adbb7e5fa967d12cad3e1631430285dac3be675c063"
+  },
+  "status": "common_kernel_free_return_cycle_excluded_named_exits_open",
+  "terminal_cold_window_anticascade_proved": false,
+  "terminal_core_hot_divisor_window_excluded": false,
+  "unified_budget_latest_sync_imported": true,
+  "unified_terminal_budget_strict_inequality_proved": false
+}
