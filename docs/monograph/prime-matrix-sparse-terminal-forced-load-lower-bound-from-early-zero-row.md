@@ -1,6 +1,6 @@
 # Prime Matrix strict 稀疏终端强制负载下界（来自早期零行）
 
-**状态：** `sparse_terminal_forced_load_lower_bound_from_early_zero_row_proved`
+**状态：** `sparse_terminal_forced_load_dichotomy_proved_pdec_exclusion_still_open`
 
 ## 1. 定理陈述
 
@@ -139,11 +139,20 @@ S_5(P,x) > 0 对所有 P ≤ 5003 的边界行成立。
 
 ## 6. 审稿边界
 
-本引理闭合的是：`SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow`。
+本引理闭合的是：`SparseTerminalForcedLoadLowerBoundFromEarlyZeroRow` 的二分结构。
 
-本引理**不**闭合：
-- `ColdCoreNonpersistentSupplyUpperBound`（供给侧上界）
-- `IndependentNonterminalMovingAtomExclusion`（持久终端族排斥）
-- 完整行/列命题
+**精确审稿边界**：
+- S_K > 0 分支：**直接矛盾**（区间内存在未被覆盖的 r，与零行假设矛盾）。
+  这不是"强制负载 > 供给"，而是"零行根本不存在"。
+- S_K ≤ 0 分支：进入 BK-DEC → PDEC/SAE 终端。
+  **该终端的最终排斥仍未证明**。
 
-但本引理把 PM 命题的供需矛盾口从"需求侧 + 供给侧都开放"压缩为"只剩供给侧上界 + 持久终端族"。
+因此本引理把 PM 命题从"供需两侧都开放"压缩为：
+- 对 S_K > 0 的 P：命题直接成立（零行不存在）。
+- 对 S_K ≤ 0 的 P：命题等价于 PDEC/SAE 终端排斥。
+
+**仍未闭合**：
+- 对充分大 P，固定阶 K 的 S_K 可能 ≤ 0（Bonferroni 变号风险）。
+- 可变阶 K*(P) 的选择使 S_{K*} > 0 等价于行命题本身（循环）。
+- PDEC/SAE 终端排斥（`FixedTypeHistoryPDECExclusion` + `TerminalCoreHotDivisorWindowPDECorSAE`）。
+- `IndependentNonterminalMovingAtomExclusion`（持久终端族）。
