@@ -1,0 +1,382 @@
+{
+  "certificate_type": "prime_matrix_strict_parent_support_numeric_envelope_router",
+  "status": "parent_support_envelope_reduced_to_dilated_parent_window_cold_table_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "parent_support_target_imported": true,
+  "sibling_projection_identity_imported": true,
+  "canonical_cold_core_registry_imported": true,
+  "scaled_child_union_single_interval_geometry_proved": true,
+  "finite_geometry_all_passed": true,
+  "collar_width_lt_max_child_proved": true,
+  "projected_support_to_dilated_parent_window_proved": true,
+  "parent_dilated_window_cold_core_table_proved": false,
+  "parent_dilated_window_hot_return_excluded": false,
+  "parent_scaled_child_union_support_numeric_envelope_proved": false,
+  "sibling_cold_core_threshold_numeric_envelope_proved": false,
+  "terminal_cold_window_anticascade_proved": false,
+  "effective_cold_history_pruning_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ParentScaledChildUnionSupportNumericEnvelope",
+  "hardpoint_after_router": "ParentSiblingDilatedWindowColdCoreThresholdTable AND ParentSiblingDilatedWindowHotCorePDECorSAEExclusion AND SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion AND SameParameterPDECThresholdNumericTable",
+  "next_direct_attack_target": "ParentSiblingDilatedWindowColdCoreThresholdTable",
+  "parallel_attack_targets": [
+    "ParentSiblingDilatedWindowHotCorePDECorSAEExclusion",
+    "SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion",
+    "ColdCoreThresholdFunctionNumericTable",
+    "SameParameterPDECThresholdNumericTable",
+    "TerminalCoreHotDivisorWindowPDECorSAE",
+    "FixedTypeHistoryPDECExclusion",
+    "TerminalColdWindowCompatibilityAntiCascadeLemma",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "lemma_rows": [
+    {
+      "lemma": "scaled child interval contains parent interval",
+      "statement": "g*floor(L/g)<=L<=R<=g*ceil(R/g)",
+      "effect": "所有兄弟投影窗口都覆盖同一个父窗口。"
+    },
+    {
+      "lemma": "single collar interval",
+      "statement": "union_g [g floor(L/g),g ceil(R/g)] = [L_*,R_*]",
+      "effect": "scaled-child union 不是多段并集，而是单个 collar 扩张。"
+    },
+    {
+      "lemma": "collar width",
+      "statement": "0<=L-L_*<g_max and 0<=R_*-R<g_max",
+      "effect": "边界外扩只由最大子乘子控制。"
+    },
+    {
+      "lemma": "parent divisor support",
+      "statement": "pi(F_U) subset {d:d|H_U, d in [L_*,R_*]}",
+      "effect": "父支撑数值界可接入规范冷核心窗口表。"
+    },
+    {
+      "lemma": "cold or hot parent window",
+      "statement": "N_{H_U}([L_*,R_*])<=C_core^*(parent key) or hot return",
+      "effect": "若父扩张窗口不冷，失败必须命名为热核心/PDEC/SAE。"
+    }
+  ],
+  "finite_geometry_rows": [
+    {
+      "parent_window": [
+        20,
+        180
+      ],
+      "children": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "scaled_child_intervals": [
+        [
+          20,
+          180
+        ],
+        [
+          18,
+          180
+        ],
+        [
+          20,
+          180
+        ],
+        [
+          18,
+          180
+        ]
+      ],
+      "union_interval": [
+        18,
+        180
+      ],
+      "max_child_multiplier": 6,
+      "left_collar": 2,
+      "right_collar": 0,
+      "all_scaled_children_contain_parent": true,
+      "collar_width_lt_max_child": true,
+      "union_is_single_interval": true
+    },
+    {
+      "parent_window": [
+        30,
+        240
+      ],
+      "children": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "scaled_child_intervals": [
+        [
+          30,
+          240
+        ],
+        [
+          30,
+          240
+        ],
+        [
+          28,
+          240
+        ],
+        [
+          30,
+          240
+        ],
+        [
+          28,
+          245
+        ]
+      ],
+      "union_interval": [
+        28,
+        245
+      ],
+      "max_child_multiplier": 7,
+      "left_collar": 2,
+      "right_collar": 5,
+      "all_scaled_children_contain_parent": true,
+      "collar_width_lt_max_child": true,
+      "union_is_single_interval": true
+    },
+    {
+      "parent_window": [
+        50,
+        420
+      ],
+      "children": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "scaled_child_intervals": [
+        [
+          48,
+          420
+        ],
+        [
+          48,
+          420
+        ],
+        [
+          50,
+          420
+        ],
+        [
+          48,
+          420
+        ],
+        [
+          49,
+          420
+        ],
+        [
+          45,
+          423
+        ]
+      ],
+      "union_interval": [
+        45,
+        423
+      ],
+      "max_child_multiplier": 9,
+      "left_collar": 5,
+      "right_collar": 3,
+      "all_scaled_children_contain_parent": true,
+      "collar_width_lt_max_child": true,
+      "union_is_single_interval": true
+    },
+    {
+      "parent_window": [
+        60,
+        720
+      ],
+      "children": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "scaled_child_intervals": [
+        [
+          60,
+          720
+        ],
+        [
+          60,
+          720
+        ],
+        [
+          60,
+          720
+        ],
+        [
+          56,
+          721
+        ],
+        [
+          56,
+          720
+        ],
+        [
+          54,
+          720
+        ],
+        [
+          60,
+          720
+        ]
+      ],
+      "union_interval": [
+        54,
+        721
+      ],
+      "max_child_multiplier": 10,
+      "left_collar": 6,
+      "right_collar": 1,
+      "all_scaled_children_contain_parent": true,
+      "collar_width_lt_max_child": true,
+      "union_is_single_interval": true
+    },
+    {
+      "parent_window": [
+        401,
+        4001
+      ],
+      "children": [
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "scaled_child_intervals": [
+        [
+          396,
+          4004
+        ],
+        [
+          390,
+          4004
+        ],
+        [
+          391,
+          4012
+        ],
+        [
+          399,
+          4009
+        ],
+        [
+          391,
+          4002
+        ]
+      ],
+      "union_interval": [
+        390,
+        4012
+      ],
+      "max_child_multiplier": 23,
+      "left_collar": 11,
+      "right_collar": 11,
+      "all_scaled_children_contain_parent": true,
+      "collar_width_lt_max_child": true,
+      "union_is_single_interval": true
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_strict_parent_support_numeric_envelope_router.py": "e652d018b52e02c7f1c265977731e8a532f63bdabd19d21bfac7466ef62de16b",
+    "docs/monograph/prime-matrix-strict-sibling-numeric-envelope-attack-router.json": "52bd322127d85f72df347da33b5ccc71b6ef2c023539db38244793e6d8d3448c",
+    "docs/monograph/prime-matrix-strict-cold-window-sibling-charging-router.json": "be05fb4b2dee03515ca4eea8e086eff6341c0e04d69da9501072cccf74414591",
+    "docs/monograph/prime-matrix-strict-cold-core-threshold-dyadic-invariance-router.json": "c93a11c1f9f9a11728fb454eb16ead7a4cc308bdfcf2647af6dcb20d6f405602",
+    "docs/monograph/prime-matrix-strict-product-window-endpoint-generator-appendix-router.json": "a1061abb510efd9743123d49a9e85775f9b27985a51957ab1b976ae3399e1a42",
+    "docs/monograph/prime-matrix-strict-scaled-terminal-core-divisor-window-router.json": "a689365ed710e4e9239a844479f62f45f1cbd1c2f6a1410a349153ddee1b06c0"
+  },
+  "plain_conclusion": "`ParentScaledChildUnionSupportNumericEnvelope` 的几何核心可以关闭：若父窗口为 `[L,R]`，子乘子为 `g`，外向生成器给出子窗口 `[floor(L/g),ceil(R/g)]`，投回父尺度后为 `[g floor(L/g),g ceil(R/g)]`。每个这样的区间都包含 `[L,R]`，所以所有兄弟投影窗口的并集不是复杂多段集合，而是单个扩张父窗口 `[L_*,R_*]`；左右扩张宽度都小于最大子乘子。于是父投影支撑被 `N_{H_U}([L_*,R_*])` 控制，可接入规范 `C_core^*` 冷核心表。但要得到数值 envelope，还必须证明该扩张父窗口冷，或排斥热核心/PDEC/SAE 回流；因此行/列命题仍未无条件闭合。",
+  "decision_rows": [
+    {
+      "gate": "ParentSupportTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层已把 sibling numeric envelope 压成父投影支撑。",
+      "remaining": "ParentScaledChildUnionSupportNumericEnvelope"
+    },
+    {
+      "gate": "ScaledChildUnionSingleIntervalProved",
+      "closed": true,
+      "proved": true,
+      "meaning": "同一父窗口外向缩放回来的兄弟投影并集是单个 collar 扩张区间。",
+      "remaining": "ParentSiblingDilatedWindowColdCoreThresholdTable"
+    },
+    {
+      "gate": "CollarWidthBoundProved",
+      "closed": true,
+      "proved": true,
+      "meaning": "左右 collar 宽度均小于最大子乘子。",
+      "remaining": "ParentSiblingDilatedWindowColdCoreThresholdTable"
+    },
+    {
+      "gate": "ProjectedSupportToDilatedWindowProved",
+      "closed": true,
+      "proved": true,
+      "meaning": "父投影支撑被单个扩张父窗口上的除数计数控制。",
+      "remaining": "ParentSiblingDilatedWindowColdCoreThresholdTable"
+    },
+    {
+      "gate": "ConditionalColdCoreInsertionClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "若扩张父窗口冷，则支撑项可由 C_core^* 表控制。",
+      "remaining": "ColdCoreThresholdFunctionNumericTable"
+    },
+    {
+      "gate": "ParentDilatedWindowHotReturnExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "若扩张父窗口热，仍需排斥热核心/PDEC/SAE 回流。",
+      "remaining": "ParentSiblingDilatedWindowHotCorePDECorSAEExclusion"
+    },
+    {
+      "gate": "ParentSupportNumericEnvelopeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "几何压缩已闭合，但冷核心数值表或热回流排斥尚未完成。",
+      "remaining": "ParentSiblingDilatedWindowColdCoreThresholdTable AND ParentSiblingDilatedWindowHotCorePDECorSAEExclusion"
+    },
+    {
+      "gate": "SiblingColdCoreThresholdNumericEnvelopeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "父支撑数值界、overlap 和 PDEC 阈值仍未全部闭合。",
+      "remaining": "ParentSiblingDilatedWindowColdCoreThresholdTable AND SiblingOverlapMultiplicityFixedReturnOrColumnCRTExclusion AND SameParameterPDECThresholdNumericTable"
+    },
+    {
+      "gate": "TerminalColdWindowAntiCascadeProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "反级联仍需父扩张窗口数值表和热/固定历史排斥。",
+      "remaining": "SiblingColdCoreThresholdNumericEnvelopeTable AND TerminalCoreHotDivisorWindowPDECorSAE AND FixedTypeHistoryPDECExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到早期零行反例链的终端矛盾。",
+      "remaining": "ParentSiblingDilatedWindowColdCoreThresholdTable AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ]
+}
