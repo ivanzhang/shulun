@@ -1,0 +1,253 @@
+{
+  "all_actual_rankin_failure_rows_packeted": false,
+  "carrier_return_frontier_closed": true,
+  "certificate_type": "prime_matrix_strict_primitive_product_rankin_failure_return_packet_router",
+  "clean_primitive_dispersion_rankin_failure_excluded_or_sigma_pass_proved": false,
+  "cold_overload_split_closed": true,
+  "common_kernel_cycle_closed": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "FailureReturnTargetImported",
+      "meaning": "上一层 no-return P^0.18 pass/return 已把当前点推进到失败回流包账本。",
+      "proved": true,
+      "remaining": "PrimitiveProductRankinFailureReturnPacketLedger"
+    },
+    {
+      "closed": true,
+      "gate": "P018PassReturnSchemaImported",
+      "meaning": "每个 no-return dyadic 块已经强制二分为 Rankin pass 或 return_required。",
+      "proved": true,
+      "remaining": "NoReturnPrimitiveProductRankinP018PassOrFailureReturnTable"
+    },
+    {
+      "closed": true,
+      "gate": "ReturnAlphabetForPrimitiveRankinFailureClosed",
+      "meaning": "热窗口、共同核、PDEC/SAE、固定历史与 carrier-lcm 五类回流覆盖所有非 clean primitive 失败触发。",
+      "proved": true,
+      "remaining": "PrimitiveProductRankinFailureReturnPacketSchema"
+    },
+    {
+      "closed": true,
+      "gate": "PacketHashAndNoPosthocDisciplineClosed",
+      "meaning": "失败包必须绑定 source tuple、block、sigma、overbudget ratio 与 payload hash。",
+      "proved": true,
+      "remaining": "canonical packet identity"
+    },
+    {
+      "closed": true,
+      "gate": "DiagnosticFailRowsMaterializedAsStubs",
+      "meaning": "诊断样表中的失败行已变成 packet stub，说明缺包字段不能忽略。",
+      "proved": true,
+      "remaining": "diagnostic only"
+    },
+    {
+      "closed": false,
+      "gate": "ActualAllFailRowsHaveNamedPackets",
+      "meaning": "尚未给出全体 actual P^0.18 失败行的 payload 与触发分类。",
+      "proved": false,
+      "remaining": "ActualPrimitiveProductRankinFailurePacketPayloadTable"
+    },
+    {
+      "closed": false,
+      "gate": "CleanPrimitiveResidualExcludedOrSigmaPass",
+      "meaning": "若五类回流均不触发，仍需证明 clean primitive 分散失败会被某个 sigma 压回 P^0.18，或推出矛盾。",
+      "proved": false,
+      "remaining": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveProductRankinFailureReturnPacketLedgerClosed",
+      "meaning": "本步关闭 schema/字母表/哈希纪律，但未证明全体实际失败行都已命名或 clean residual 被排除。",
+      "proved": false,
+      "remaining": "ActualPrimitiveProductRankinFailurePacketPayloadTable AND CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "仍未得到排除早期零行反例链的终端矛盾。",
+      "proved": false,
+      "remaining": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass AND CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "diagnostic_fail_rows_present": true,
+  "diagnostic_failure_packet_stub_ledger_closed": true,
+  "diagnostic_packet_stubs": [
+    {
+      "P": 100000,
+      "Y": 16,
+      "allowed_packet_types": [
+        "hot_density_return",
+        "common_kernel_return",
+        "pdec_sae_return",
+        "fixed_history_return",
+        "carrier_lcm_return"
+      ],
+      "current_return_packet_field": "missing_in_current_corpus",
+      "diagnostic_only": true,
+      "h0": 2310,
+      "packet_status": "diagnostic_stub_requires_actual_trigger_payload",
+      "packet_stub_id": "d4a23522f1a36baeb16fa787ef7336f56e0adc4025d87efd1a2c7fd20f9a418a",
+      "rankin_overbudget_ratio": 3.9352385402779615,
+      "rankin_ratio": 3.9352385402779615,
+      "residual_if_no_trigger": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass",
+      "sample_row_id": "sample-1",
+      "sigma": 0.1
+    },
+    {
+      "P": 100000,
+      "Y": 64,
+      "allowed_packet_types": [
+        "hot_density_return",
+        "common_kernel_return",
+        "pdec_sae_return",
+        "fixed_history_return",
+        "carrier_lcm_return"
+      ],
+      "current_return_packet_field": "missing_in_current_corpus",
+      "diagnostic_only": true,
+      "h0": 2310,
+      "packet_status": "diagnostic_stub_requires_actual_trigger_payload",
+      "packet_stub_id": "d90a6ff0db7965839dde1983adfd9dd0bf7f3897b982d8523df1593af6fdc0cf",
+      "rankin_overbudget_ratio": 3.9828987443261394,
+      "rankin_ratio": 3.9828987443261394,
+      "residual_if_no_trigger": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass",
+      "sample_row_id": "sample-2",
+      "sigma": 0.1
+    },
+    {
+      "P": 100000,
+      "Y": 64,
+      "allowed_packet_types": [
+        "hot_density_return",
+        "common_kernel_return",
+        "pdec_sae_return",
+        "fixed_history_return",
+        "carrier_lcm_return"
+      ],
+      "current_return_packet_field": "missing_in_current_corpus",
+      "diagnostic_only": true,
+      "h0": 4320,
+      "packet_status": "diagnostic_stub_requires_actual_trigger_payload",
+      "packet_stub_id": "0d18a49d1bb9999598e45ee48aad17da46cf3280e3281d7165789da619d48023",
+      "rankin_overbudget_ratio": 6.1675264321875165,
+      "rankin_ratio": 6.1675264321875165,
+      "residual_if_no_trigger": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass",
+      "sample_row_id": "sample-3",
+      "sigma": 0.1
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "early_local_survivor_schema_closed": true,
+  "empirical_absence_not_used": true,
+  "failure_return_target_imported": true,
+  "hardpoint_after_router": "ActualPrimitiveProductRankinFailurePacketPayloadTable AND (PerBlockRankinSigmaSelectionTable OR CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass) AND CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+  "hardpoint_before_router": "PrimitiveProductRankinFailureReturnPacketLedger",
+  "named_return_alphabet_closed": true,
+  "next_direct_attack_target": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass",
+  "no_theorem_switch": true,
+  "p018_pass_return_schema_closed": true,
+  "packet_alphabet_rows": [
+    {
+      "packet_type": "hot_density_return",
+      "route": "TerminalCoreHotDivisorWindowPDECorSAE / DLSShortWindowSAEBoundOrNamedReturn",
+      "status": "named_return_open",
+      "trigger": "失败块在短乘法窗口或 sibling family 中显示局部密度过载。"
+    },
+    {
+      "packet_type": "common_kernel_return",
+      "route": "CommonKernelReturnCycleDescentOrPDECLedger",
+      "status": "free_cycle_excluded_named_exits_open",
+      "trigger": "失败块共享低乘子核、固定商型、重复 gcd 或兄弟重叠键。"
+    },
+    {
+      "packet_type": "pdec_sae_return",
+      "route": "PDEC/SAE/ColumnCRT named terminal family",
+      "status": "named_return_open",
+      "trigger": "失败块携带 low-mod spike、相位缺陷、ColumnCRT、point-load 或局部幸存 packet。"
+    },
+    {
+      "packet_type": "fixed_history_return",
+      "route": "FixedTypeHistoryPDECExclusion / persistent terminal family",
+      "status": "persistent_terminal_open",
+      "trigger": "同 formal unit 下有限历史、商型或 packet 签名持久复现。"
+    },
+    {
+      "packet_type": "carrier_lcm_return",
+      "route": "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+      "status": "budget_or_persistent_terminal_open",
+      "trigger": "no-return guard 被 source-defect、valuation-overflow 或 carrier-lcm 兼容缺陷破坏。"
+    }
+  ],
+  "packet_hash_discipline_closed": true,
+  "packet_laws": [
+    {
+      "formula": "verdict=return_required -> one named packet or one clean residual witness",
+      "law": "failed_row_totality",
+      "meaning": "失败行不能静默留在 primitive dispersion。"
+    },
+    {
+      "formula": "packet_id=H(source_tuple_hash,block_id,sigma,rankin_ratio,packet_type,payload_hash)",
+      "law": "packet_hash_stability",
+      "meaning": "同一 formal unit 下回流身份稳定，不允许后验换包。"
+    },
+    {
+      "formula": "diagnostic_only=true -> packet_stub, not actual proof row",
+      "law": "diagnostic_stub_boundary",
+      "meaning": "样表只证明字段必要性，不证明全体失败已命名。"
+    },
+    {
+      "formula": "no named trigger -> CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass",
+      "law": "clean_residual_not_terminal",
+      "meaning": "无触发的 clean primitive 失败是下一证明原子，不是闭合结论。"
+    },
+    {
+      "formula": "Assume EarlyZeroRowWithinP only; empirical absence not used",
+      "law": "counterexample_branch_guard",
+      "meaning": "仍在反例链内部推导，不调用真实零行缺席。"
+    }
+  ],
+  "parallel_attack_targets": [
+    "ActualPrimitiveProductRankinFailurePacketPayloadTable",
+    "PerBlockRankinSigmaSelectionTable",
+    "CarrierLCMCompatibilityReturnBranchExclusionOrAbsorption",
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "per_block_rankin_sigma_selection_table_proved": false,
+  "plain_conclusion": "`PrimitiveProductRankinFailureReturnPacketLedger` 的当前可闭合部分是回流包字母表、哈希身份与诊断失败 stub：Rankin 失败块若不是热窗口、共同核、PDEC/SAE、固定历史或 carrier-lcm return，就不能留下第六类无名出口，只能成为 clean primitive 分散失败残项。因此本步把硬点压缩为：为 actual 失败行给出 payload，并证明 clean primitive 失败必有更优 sigma 通过 P^0.18 或导出矛盾。全体实际失败包和行/列无条件闭合仍未完成。",
+  "primitive_product_rankin_failure_return_packet_ledger_closed": false,
+  "primitive_product_rankin_failure_return_packet_schema_closed": true,
+  "residual_rows": [
+    {
+      "definition": "五类命名回流均不触发，但 Rankin bound 仍大于 P^0.18。",
+      "forced_next": "CleanPrimitiveDispersionRankinFailureExclusionOrSigmaPass",
+      "meaning": "它不能作为第六类无名出口；必须证明存在更优 sigma 通过预算，或推出 clean primitive 分散失败不可能。",
+      "residual": "clean_primitive_failure"
+    },
+    {
+      "definition": "失败行只有诊断样本或 schema，没有 actual source_tuple/block witness。",
+      "forced_next": "ActualPrimitiveProductRankinFailurePacketPayloadTable",
+      "meaning": "只能生成 packet stub；不能把诊断样本升级为全体证明。",
+      "residual": "actual_payload_missing"
+    }
+  ],
+  "return_packet_alphabet_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/primitive-product-rankin-p018-sample-table.json": "6ee83fd827a289762f17da0e458cc1fb7fcfbe64b862d7b1fef635133f06e551",
+    "docs/monograph/prime-matrix-early-band-local-survivor-return-schema-router.json": "2d73378013a2c7cbf4c2551ed2393cb1a5d350e73f2fe571f3b0d6d12c1f098d",
+    "docs/monograph/prime-matrix-strict-carrier-lcm-return-branch-frontier-router.json": "a2d4e9a4d5d5f8d377571fc39d9c94e1ddb97d2afae30ef9e4c9e18296677307",
+    "docs/monograph/prime-matrix-strict-cold-product-support-sparsification-router.json": "1dc6e98d6eb37c2571d0c3bdff385f66069b8812c6c1a9c8b97860b37cfc6f95",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-strict-named-return-after-rowfree-sync-router.json": "818c17bd920eb69eaa05f2cca96099ad4637c8ab960afd843ec6a53872d392d3",
+    "docs/monograph/prime-matrix-strict-no-return-rankin-p018-pass-return-sync-router.json": "81c12e6ee229ba4dc21688529dc6818e7c9569e2051c3b6617c288169a547cd9",
+    "docs/monograph/prime-matrix-support-failure-packet-return-dichotomy-router.json": "9c0b1a6aa36b240b6a9cd9772bde88e6e3319e083b90c738573fc28f9a8a5fa7",
+    "experiments/prime_matrix_strict_primitive_product_rankin_failure_return_packet_router.py": "9d88401ce616674f2d331fd0a807ec6f4643c98323269c795d5e684cb2af16ab"
+  },
+  "status": "primitive_rankin_failure_packet_schema_closed_actual_payload_and_clean_residual_open",
+  "support_failure_alphabet_closed": true
+}
