@@ -1,0 +1,401 @@
+{
+  "alternative_attack_target": "PrimeGapBelowP2ForAllPBlocks",
+  "bridge_rows": [
+    {
+      "name": "zero_row_position_equals_alignment_solution",
+      "statement": "行 x 是零行 iff every c in [1,P-1] is covered by some inverse class q<P.",
+      "status": "closed"
+    },
+    {
+      "name": "phase_vector_source",
+      "statement": "the vector rho_q(x)=-xP mod q gives the row-position source for all prefix labels.",
+      "status": "closed"
+    },
+    {
+      "name": "prefix_atom_selector",
+      "statement": "R_{x,z} is exactly the set of columns not hit by q<=z; tau_z(c) is the least q>z hitting c.",
+      "status": "closed"
+    },
+    {
+      "name": "capacity_multiplier_match",
+      "statement": "mu_q(x;P)=#{1<=c<P:c=rho_q(x) mod q}, matching the existing capacity discipline.",
+      "status": "closed"
+    },
+    {
+      "name": "numeric_lower_bound_boundary",
+      "statement": "the bridge does not prove |R_{x,z}| lower bounds; it routes them to sieve or short-prime-gap input.",
+      "status": "open_boundary"
+    }
+  ],
+  "capacity_and_forced_load_compatibility_closed": true,
+  "capacity_multiplier_imported": true,
+  "certificate_type": "prime_matrix_inverse_alignment_prefix_demand_bridge_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "InverseAlignmentImportedAsZeroRowPosition",
+      "meaning": "零行 x 与全 r 逆元覆盖对齐严格等价，x 是实际行号源，不是后验抽象标签。",
+      "proved": true,
+      "remaining": "none for row-position interface"
+    },
+    {
+      "closed": true,
+      "gate": "PrefixDemandBridgeClosed",
+      "meaning": "逆元相位向量直接生成 R_{x,z}、tau_z(c)、mu_q 和 M# 字段。",
+      "proved": true,
+      "remaining": "numeric lower bound still open"
+    },
+    {
+      "closed": true,
+      "gate": "CapacityAndForcedLoadCompatibilityClosed",
+      "meaning": "新行号相位源与既有容量乘子、prefix 转移、强制负载守恒链条完全同字段匹配。",
+      "proved": true,
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget"
+    },
+    {
+      "closed": false,
+      "gate": "MinXGreaterThanPClosedByAlignment",
+      "meaning": "逆元系统本身仍不能证明全局 min x>P；该断言需要短区间素数输入。",
+      "proved": false,
+      "remaining": "PrimeGapBelowP2ForAllPBlocks"
+    },
+    {
+      "closed": false,
+      "gate": "NormalizedPrefixPotentialProved",
+      "meaning": "R_{x,z} 的字段来源已更具体，但 |R_{x,z}| 统一下界仍需 beta-sieve/有限证书或短区间素数路线。",
+      "proved": false,
+      "remaining": "NormalizedPrefixResidualPotentialLowerBound"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "本步加强了反例链源字段和非循环性，不产生最终无条件矛盾。",
+      "proved": false,
+      "remaining": "SparseHistoryDemandExceedsNonpersistentSupplyBudget AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "forced_load_accounting_imported": true,
+  "global_min_x_gt_p_proved": false,
+  "hardpoint_after_router": "NormalizedPrefixResidualPotentialLowerBound OR PrimeGapBelowP2ForAllPBlocks",
+  "hardpoint_before_router": "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+  "inverse_alignment_equivalence_imported": true,
+  "inverse_alignment_prefix_demand_bridge_closed": true,
+  "next_direct_attack_target": "NormalizedPrefixResidualPotentialLowerBound",
+  "no_theorem_switch": true,
+  "normalized_potential_reduction_imported": true,
+  "normalized_prefix_potential_lower_bound_proved": false,
+  "plain_conclusion": "逆元对齐系统可以直接并入当前前沿：假设早期零行存在时，行号 `x` 本身给出相位向量 `rho_q(x)=-xP mod q`；`R_{x,z}` 正是未被 `q<=z` 命中的列，`tau_z(c)` 是最小的 `q>z` 覆盖标签，`mu_q` 与现有容量乘子公式完全一致。因此你的同余方程组不是旁路，而是 `M#_{x,z}` 需求项的具体行号模型。但它仍不自动给出 `|R_{x,z}|` 的全局下界；若取自然 cutoff 试图证明 `min x>P`，硬点等价转为短区间素数输入。",
+  "prefix_transfer_imported": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "sample_ledger": {
+    "diagnostic_only": true,
+    "ledger_type": "inverse_alignment_prefix_demand_bridge_sample_ledger",
+    "rows": [
+      {
+        "P": 13,
+        "phase_vector": [
+          {
+            "covered_c_mod_q": 0,
+            "mu_q": 6,
+            "positive_representative": 2,
+            "q": 2
+          },
+          {
+            "covered_c_mod_q": 0,
+            "mu_q": 4,
+            "positive_representative": 3,
+            "q": 3
+          },
+          {
+            "covered_c_mod_q": 1,
+            "mu_q": 3,
+            "positive_representative": 1,
+            "q": 5
+          },
+          {
+            "covered_c_mod_q": 0,
+            "mu_q": 1,
+            "positive_representative": 7,
+            "q": 7
+          },
+          {
+            "covered_c_mod_q": 5,
+            "mu_q": 1,
+            "positive_representative": 5,
+            "q": 11
+          }
+        ],
+        "x": 168,
+        "z_rows": [
+          {
+            "Msharp_exact": 2.6666666666666665,
+            "R_xz_size": 4,
+            "all_atoms_labeled": true,
+            "atoms": [
+              {
+                "c": 1,
+                "label_band": "completed_internal",
+                "mu_tau": 3,
+                "status": "prefix_atom",
+                "tau_z": 5,
+                "weight": 0.3333333333333333
+              },
+              {
+                "c": 5,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 11,
+                "weight": 1.0
+              },
+              {
+                "c": 7,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 7,
+                "weight": 1.0
+              },
+              {
+                "c": 11,
+                "label_band": "completed_internal",
+                "mu_tau": 3,
+                "status": "prefix_atom",
+                "tau_z": 5,
+                "weight": 0.3333333333333333
+              }
+            ],
+            "z": 3
+          },
+          {
+            "Msharp_exact": 2.0,
+            "R_xz_size": 2,
+            "all_atoms_labeled": true,
+            "atoms": [
+              {
+                "c": 5,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 11,
+                "weight": 1.0
+              },
+              {
+                "c": 7,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 7,
+                "weight": 1.0
+              }
+            ],
+            "z": 5
+          },
+          {
+            "Msharp_exact": 1.0,
+            "R_xz_size": 1,
+            "all_atoms_labeled": true,
+            "atoms": [
+              {
+                "c": 5,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 11,
+                "weight": 1.0
+              }
+            ],
+            "z": 7
+          }
+        ],
+        "zero_row_verified": true
+      },
+      {
+        "P": 23,
+        "phase_vector": [
+          {
+            "covered_c_mod_q": 0,
+            "mu_q": 11,
+            "positive_representative": 2,
+            "q": 2
+          },
+          {
+            "covered_c_mod_q": 1,
+            "mu_q": 8,
+            "positive_representative": 1,
+            "q": 3
+          },
+          {
+            "covered_c_mod_q": 1,
+            "mu_q": 5,
+            "positive_representative": 1,
+            "q": 5
+          },
+          {
+            "covered_c_mod_q": 3,
+            "mu_q": 3,
+            "positive_representative": 3,
+            "q": 7
+          },
+          {
+            "covered_c_mod_q": 8,
+            "mu_q": 2,
+            "positive_representative": 8,
+            "q": 11
+          },
+          {
+            "covered_c_mod_q": 5,
+            "mu_q": 2,
+            "positive_representative": 5,
+            "q": 13
+          },
+          {
+            "covered_c_mod_q": 9,
+            "mu_q": 1,
+            "positive_representative": 9,
+            "q": 17
+          },
+          {
+            "covered_c_mod_q": 15,
+            "mu_q": 1,
+            "positive_representative": 15,
+            "q": 19
+          }
+        ],
+        "x": 58,
+        "z_rows": [
+          {
+            "Msharp_exact": 3.1666666666666665,
+            "R_xz_size": 5,
+            "all_atoms_labeled": true,
+            "atoms": [
+              {
+                "c": 3,
+                "label_band": "completed_internal",
+                "mu_tau": 3,
+                "status": "prefix_atom",
+                "tau_z": 7,
+                "weight": 0.3333333333333333
+              },
+              {
+                "c": 5,
+                "label_band": "completed_internal",
+                "mu_tau": 2,
+                "status": "prefix_atom",
+                "tau_z": 13,
+                "weight": 0.5
+              },
+              {
+                "c": 9,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 17,
+                "weight": 1.0
+              },
+              {
+                "c": 15,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 19,
+                "weight": 1.0
+              },
+              {
+                "c": 17,
+                "label_band": "completed_internal",
+                "mu_tau": 3,
+                "status": "prefix_atom",
+                "tau_z": 7,
+                "weight": 0.3333333333333333
+              }
+            ],
+            "z": 5
+          },
+          {
+            "Msharp_exact": 2.5,
+            "R_xz_size": 3,
+            "all_atoms_labeled": true,
+            "atoms": [
+              {
+                "c": 5,
+                "label_band": "completed_internal",
+                "mu_tau": 2,
+                "status": "prefix_atom",
+                "tau_z": 13,
+                "weight": 0.5
+              },
+              {
+                "c": 9,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 17,
+                "weight": 1.0
+              },
+              {
+                "c": 15,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 19,
+                "weight": 1.0
+              }
+            ],
+            "z": 7
+          },
+          {
+            "Msharp_exact": 2.5,
+            "R_xz_size": 3,
+            "all_atoms_labeled": true,
+            "atoms": [
+              {
+                "c": 5,
+                "label_band": "completed_internal",
+                "mu_tau": 2,
+                "status": "prefix_atom",
+                "tau_z": 13,
+                "weight": 0.5
+              },
+              {
+                "c": 9,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 17,
+                "weight": 1.0
+              },
+              {
+                "c": 15,
+                "label_band": "completed_internal",
+                "mu_tau": 1,
+                "status": "prefix_atom",
+                "tau_z": 19,
+                "weight": 1.0
+              }
+            ],
+            "z": 11
+          }
+        ],
+        "zero_row_verified": true
+      }
+    ]
+  },
+  "source_hashes": {
+    "data/inverse-alignment-prefix-demand-bridge-sample-ledger.json": "eec72f9e3ef05087319a0ae53ce8fcf87638dd034adb488606096152d0c42055",
+    "docs/monograph/prime-matrix-inverse-alignment-covering-system-router.json": "09be6a101dd2775a057577a1ef960270dbd88b03dd5e5cec4d1bddec67eb1acf",
+    "docs/monograph/prime-matrix-strict-normalized-prefix-potential-router.json": "4f86ea29ee34a43e365527b3c6e030050418f872c893c8ba470d8997ed66d6da",
+    "docs/monograph/prime-matrix-strict-prefix-capacity-multiplier-discipline-router.json": "10d4d7aab7648367047e86acd7069d1986730a138b8c74e4d8a8269378119e65",
+    "docs/monograph/prime-matrix-strict-prefix-residual-transfer-router.json": "e881be563d60841cab6d45ca64a55ee745691b9476ba79be3a3decab58038cad",
+    "docs/monograph/prime-matrix-strict-sparse-budget-after-unified-sync-router.json": "70ca92ae2e350fdeba4eb1d386a9c31835da97f91a7252e3d0fee445a0e79f08",
+    "docs/monograph/prime-matrix-strict-sparse-terminal-forced-load-lower-bound-router.json": "3fabe3f3825c980842551045d9ca8714df0b3bb6fd1b92e39ba5e7e70daea1af",
+    "experiments/prime_matrix_inverse_alignment_prefix_demand_bridge_router.py": "60f2fe44135706e0be6735c72514e3ac26a220fa7c7dc52edca728480a21510b"
+  },
+  "sparse_budget_normal_form_imported": true,
+  "sparse_history_demand_exceeds_nonpersistent_supply_budget_proved": false,
+  "status": "inverse_alignment_zero_row_position_synced_to_prefix_demand_numeric_lower_bound_open"
+}
