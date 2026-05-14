@@ -1,0 +1,109 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_prefix_gate_quotient_ladder_router",
+  "status": "z61_prefix_gate_signed_phase_balance_reduced_to_quotient_ladder_count_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_prefix_gate_phase_persistence_router",
+  "phase_modulus": 28842,
+  "phase_condition": "b ≡ 0 (mod 28842)",
+  "quotient_rows": [
+    {
+      "p": 36739,
+      "b_value": 28842,
+      "phase_quotient": 1,
+      "multiplicity": 1,
+      "target_hit_moduli": [
+        {
+          "m": 9614,
+          "K": 0.3904060180375782
+        },
+        {
+          "m": 14421,
+          "K": 0.1650206150529475
+        }
+      ],
+      "target_hit_modulus_count": 2,
+      "target_hit_weight": 0.5554266330905256,
+      "target_contribution": 0.5554266330905256,
+      "target_cell_sign": "negative",
+      "is_power_of_two_quotient": true
+    },
+    {
+      "p": 200003,
+      "b_value": 57684,
+      "phase_quotient": 2,
+      "multiplicity": 1,
+      "target_hit_moduli": [
+        {
+          "m": 9614,
+          "K": 0.3904060180375782
+        },
+        {
+          "m": 14421,
+          "K": 0.1650206150529475
+        }
+      ],
+      "target_hit_modulus_count": 2,
+      "target_hit_weight": 0.5554266330905256,
+      "target_contribution": 0.5554266330905256,
+      "target_cell_sign": "positive",
+      "is_power_of_two_quotient": true
+    },
+    {
+      "p": 200003,
+      "b_value": 115368,
+      "phase_quotient": 4,
+      "multiplicity": 1,
+      "target_hit_moduli": [
+        {
+          "m": 9614,
+          "K": 0.3904060180375782
+        },
+        {
+          "m": 14421,
+          "K": 0.1650206150529475
+        }
+      ],
+      "target_hit_modulus_count": 2,
+      "target_hit_weight": 0.5554266330905256,
+      "target_contribution": 0.5554266330905256,
+      "target_cell_sign": "positive",
+      "is_power_of_two_quotient": true
+    }
+  ],
+  "quotients": [
+    1,
+    2,
+    4
+  ],
+  "all_quotients_are_powers_of_two": true,
+  "observed_quotient_ladder": [
+    1,
+    2,
+    4
+  ],
+  "observed_quotient_ladder_exact": true,
+  "per_hit_contribution": 0.5554266330905256,
+  "constant_per_hit_contribution_closed": true,
+  "positive_quotients": [
+    2,
+    4
+  ],
+  "negative_quotients": [
+    1
+  ],
+  "positive_count": 2,
+  "negative_count": 1,
+  "positive_minus_negative_count": 1,
+  "signed_actual_balance_reduced_to_count_identity_closed": true,
+  "dyadic_phase_quotient_count_balance_proved": false,
+  "ladder_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_prefix_gate_quotient_ladder_router.py": "e74952b4e33e723e4980e4ab7f00799e5b2678c1d481ed3faad7d7ffc8608ff6",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-prefix-gate-phase-persistence-router.json": "7470bdf7651a2cdc84f388e336e7c4273cbb2aa2836bb149c17330950fe3365f"
+  },
+  "next_direct_attack_target": "DyadicPhaseQuotientCountBalanceOrLadderPDEC",
+  "plain_conclusion": "PrefixGate signed phase balance 已进一步压成 quotient ladder 计数问题：三个命中全部贡献同一 target 权重，quotient 分别为 `1,2,4`。负侧只有 quotient `1`，正侧有 quotient `2,4`，因此样本中的正/负相位实际比 完全等于命中计数比 `2/1`。下一步应证明这种 dyadic quotient ladder 在全局上给出计数平衡，或登记 Ladder-PDEC。"
+}
