@@ -1,0 +1,101 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_high_shell_negative_ratio_router",
+  "status": "z61_high_shell_exit_reciprocal_ratio_equals_negative_profile_ratio_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "z": 61,
+  "target_bucket": "unbalanced<=8",
+  "target_shell": "(8D,16D]",
+  "target_sign_word": "--++",
+  "positive_source_pair": "200003->36739/10007",
+  "negative_profile_ratio": "|L_10007|/|L_36739|",
+  "cell_count": 2,
+  "max_ratio_identity_error": 1.1102230246251565e-16,
+  "max_share_identity_error": 1.1102230246251565e-16,
+  "high_shell_negative_profile_ratio_identity_closed": true,
+  "min_negative_profile_ratio": 0.7298205820353638,
+  "max_negative_profile_ratio": 0.7939908791706406,
+  "negative_profile_ratio_spread": 0.06417029713527678,
+  "matches_previous_exit_reciprocal_ratio_band": false,
+  "negative_ratio_band_invariant_proved": false,
+  "negative_ratio_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "cell_rows": [
+    {
+      "bucket": "unbalanced<=8",
+      "omega": 3,
+      "shell": "(8D,16D]",
+      "sign_word": "--++",
+      "profile_vector_order": [
+        10007,
+        36739,
+        83561,
+        200003
+      ],
+      "profile_vector": [
+        -0.7508987225248296,
+        -1.0288812634342017,
+        3.1022920033970003,
+        3.4906120300763135
+      ],
+      "exit_credit_ratio": 0.002379377648598009,
+      "reciprocal_credit_ratio": 0.0032602227275671915,
+      "exit_over_reciprocal_ratio": 0.7298205820353637,
+      "negative_exit_profile_abs": 0.7508987225248296,
+      "negative_reciprocal_profile_abs": 1.0288812634342017,
+      "negative_profile_abs_ratio": 0.7298205820353638,
+      "ratio_identity_error": -1.1102230246251565e-16,
+      "exit_share_of_cell": 0.42190536383642335,
+      "negative_exit_share": 0.42190536383642335,
+      "exit_share_identity_error": 0.0,
+      "reciprocal_share_of_cell": 0.5780946361635767,
+      "negative_reciprocal_share": 0.5780946361635766,
+      "reciprocal_share_identity_error": 1.1102230246251565e-16,
+      "positive_source_profile": 3.4906120300763135,
+      "positive_companion_profile": 3.1022920033970003,
+      "positive_source_over_companion_ratio": 1.1251719780904261
+    },
+    {
+      "bucket": "unbalanced<=8",
+      "omega": 4,
+      "shell": "(8D,16D]",
+      "sign_word": "--++",
+      "profile_vector_order": [
+        10007,
+        36739,
+        83561,
+        200003
+      ],
+      "profile_vector": [
+        -1.5765497853537884,
+        -1.9856018837402338,
+        7.257244092998484,
+        2.4550288606765207
+      ],
+      "exit_credit_ratio": 0.0023850670771671982,
+      "reciprocal_credit_ratio": 0.00300389732393212,
+      "exit_over_reciprocal_ratio": 0.7939908791706405,
+      "negative_exit_profile_abs": 1.5765497853537884,
+      "negative_reciprocal_profile_abs": 1.9856018837402338,
+      "negative_profile_abs_ratio": 0.7939908791706406,
+      "ratio_identity_error": -1.1102230246251565e-16,
+      "exit_share_of_cell": 0.4425835651615472,
+      "negative_exit_share": 0.44258356516154723,
+      "exit_share_identity_error": -5.551115123125783e-17,
+      "reciprocal_share_of_cell": 0.5574164348384528,
+      "negative_reciprocal_share": 0.5574164348384528,
+      "reciprocal_share_identity_error": 0.0,
+      "positive_source_profile": 2.4550288606765207,
+      "positive_companion_profile": 7.257244092998484,
+      "positive_source_over_companion_ratio": 0.3382866594007828
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_high_shell_negative_ratio_router.py": "c605db4e817f25b8dbdb6147253a27fd399a325a272a053a79bb1519c20a022d",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-high-shell-cell-ratio-router.json": "51631a0ab4eb902d4ac4c2c167048e8553d803a14de6c9ca9f6d854726a0a748",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-profile-sign-pattern-router.json": "f37d1d58c9c03c95badb956c102919ebd6a69db811139157393a1123f0a52d1b"
+  },
+  "next_direct_attack_target": "HighShellNegativeProfileRatioBandInvariantOrNegativeRatioPDEC",
+  "plain_conclusion": "高壳两个 `--++` 格中的出口/互反信用比并非新的自由比例，而是同一正来源 `200003` 向两个负 profile 端点输送信用时的目标负质量比：`|L_10007|/|L_36739|`。因此上一层比例带硬点被压成两个负 profile 质量比的稳定性问题；仍需证明该负 profile 比例带不变量，或登记 NegativeRatio-PDEC。"
+}
