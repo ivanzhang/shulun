@@ -1,0 +1,152 @@
+{
+  "certificate_type": "prime_matrix_square_phase_rfp_excess_dimension_collapse_router",
+  "status": "rfp_excess_reduced_to_single_curve_dimension_collapse_or_reciprocal_floor_pdec_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "prime_void_no_low_defect_forces_rfp_dimension_collapse": true,
+  "single_curve_positive_scale_forced": true,
+  "reciprocal_floor_divisibility_interval_formula_closed": true,
+  "selberg_distribution_would_contradict_collapse": true,
+  "rfp_excess_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "constants": {
+    "c_g": 0.48,
+    "c_b": 1.5,
+    "offset_count": 3,
+    "single_curve_constant": 0.16
+  },
+  "scale_rows": [
+    {
+      "p": 23,
+      "one_curve_forced_lower": 1.1736586791659875,
+      "normal_rfp_total_budget": 3.509191648730428,
+      "one_curve_lower_over_normal_total": 0.33445271636577595,
+      "dimension_collapse_factor": 0.33445271636577595
+    },
+    {
+      "p": 101,
+      "one_curve_forced_lower": 3.501533695822191,
+      "normal_rfp_total_budget": 7.11289732923396,
+      "one_curve_lower_over_normal_total": 0.4922795217964009,
+      "dimension_collapse_factor": 0.49227952179640105
+    },
+    {
+      "p": 1009,
+      "one_curve_forced_lower": 23.340559720175744,
+      "normal_rfp_total_budget": 31.636079661044185,
+      "one_curve_lower_over_normal_total": 0.7377829355043849,
+      "dimension_collapse_factor": 0.7377829355043848
+    },
+    {
+      "p": 10007,
+      "one_curve_forced_lower": 173.8261887808923,
+      "normal_rfp_total_budget": 176.92035832392176,
+      "one_curve_lower_over_normal_total": 0.9825109468896486,
+      "dimension_collapse_factor": 0.9825109468896485
+    },
+    {
+      "p": 1000003,
+      "one_curve_forced_lower": 11581.218412819415,
+      "normal_rfp_total_budget": 7858.840872232899,
+      "one_curve_lower_over_normal_total": 1.4736547795157091,
+      "dimension_collapse_factor": 1.4736547795157091
+    }
+  ],
+  "congruence_rows": [
+    {
+      "object": "curve_value",
+      "formula": "m_s(ell)=floor(P^2/ell)+s, s in {1,2,3}",
+      "meaning": "三条倒数地板素对曲线的互补因子。"
+    },
+    {
+      "object": "divisibility",
+      "formula": "q | m_s(ell) iff floor(P^2/ell)=q*u-s for some u",
+      "meaning": "素性筛的第二坐标坏事件。"
+    },
+    {
+      "object": "reciprocal_interval",
+      "formula": "P^2/(q*u-s+1) < ell <= P^2/(q*u-s)",
+      "meaning": "每个坏事件是倒数端点短区间，不是任意残基。"
+    },
+    {
+      "object": "range",
+      "formula": "y<ell<P and P<m_s(ell)<eP",
+      "meaning": "u 只在长度约 P/q 的短区间内取值。"
+    },
+    {
+      "object": "defect",
+      "formula": "bad count - expected local density",
+      "meaning": "若 Selberg 分布账本失败，即得到 reciprocal-floor PDEC。"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "PrimeVoidNoLowDefectForcesRFPDimensionCollapse",
+      "closed": true,
+      "proved": true,
+      "meaning": "由 prime-void 二分，若反例不走低骨架亏损，则 B(P)>=0.48P/logP。",
+      "remaining": "ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE"
+    },
+    {
+      "gate": "SingleCurvePositiveScaleForced",
+      "closed": true,
+      "proved": true,
+      "meaning": "三条曲线相加为 B(P)，故某个 s 有 B_s(P)>=0.16P/logP。",
+      "remaining": "PositiveDensityPrimeValuesOfReciprocalFloorCurve"
+    },
+    {
+      "gate": "ReciprocalFloorDivisibilityIntervalFormula",
+      "closed": true,
+      "proved": true,
+      "meaning": "q|floor(P^2/ell)+s 精确等价于 ell 落在倒数端点短区间并集中。",
+      "remaining": "none"
+    },
+    {
+      "gate": "SelbergDistributionWouldContradictCollapse",
+      "closed": true,
+      "proved": false,
+      "meaning": "若 reciprocal-floor 坏事件有二维筛正常分布，则 B_s 为 P/log^2P 级，不能达到 P/logP 级。",
+      "remaining": "RFP-SelbergConstantLedger"
+    },
+    {
+      "gate": "RFPExcessRoutedToConcreteDefect",
+      "closed": true,
+      "proved": false,
+      "meaning": "RFP 过密不再是无名过密；它等价于某条曲线的素值维数塌缩，或 reciprocal-floor 局部分布缺陷。",
+      "remaining": "ReciprocalFloorCongruencePDECOrSelbergDistributionLedger"
+    },
+    {
+      "gate": "RFPExcessExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明 Selberg 分布账本，也未排斥 reciprocal-floor PDEC。",
+      "remaining": "RFP-SelbergConstantLedger OR exclude ReciprocalFloorCongruencePDECOrSelbergDistributionLedger"
+    },
+    {
+      "gate": "DirectUnconditionalContradictionFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步闭合的是 RFP 过密的结构定位，不是最终出口排斥。",
+      "remaining": "exclude LowSkeletonDeficitPDECOrSAE and ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "行/列命题仍未无条件闭合。",
+      "remaining": "LowSkeletonDeficitPDECOrSAE exclusion AND ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE exclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_rfp_excess_dimension_collapse_router.py": "cbc84b23c9b7778a91d7ce8d8504119d757e03c7ca233f023d377342019650ef",
+    "docs/monograph/prime-matrix-square-phase-nearfull-rough-primevoid-dichotomy-router.json": "abc24466fce3fb754f690af980a96c6fe29e24fdbe36adcd8221b403aea312e2",
+    "docs/monograph/prime-matrix-square-phase-rfp-upper-direct-attack-router.json": "c8ecab3fdc5e787f3b7cef1d73d34868d48878e48a7b9c8b6cc88218ebcfed81",
+    "docs/monograph/prime-matrix-diagonal-postsquare-rfp-selberg-route.md": "e94ee4bb9b45dd441f151c88b99c23ebcf60b7c618d1c293c739a9fa20eba147",
+    "docs/monograph/prime-matrix-diagonal-postsquare-carry-reciprocal-frequency.md": "4d6f95b7c545e525d9ae34bc3065d11c807ef752ddefdc3186b344979c7caf78",
+    "docs/monograph/prime-matrix-diagonal-postsquare-ero-low-bprocess-envelope.md": "8c2f41e2c6060662aa222d0257eb330e08911695308aaaf481f3c5dc165e3c45"
+  },
+  "next_direct_attack_target": "ReciprocalFloorCongruencePDECOrSelbergDistributionLedger",
+  "plain_conclusion": "在平方端点反例链中，若不发生低骨架亏损，则 `B(P)>=0.48P/logP`。三条倒数地板曲线中至少一条必须贡献 `0.16P/logP` 级素值，这比正常二维筛尺度 `P/log^2P` 高一个 `logP` 因子，是维数塌缩。该塌缩的最具体表达为：对 `m_s(ell)=floor(P^2/ell)+s`，`q|m_s(ell)` 精确等价于 `ell` 落入一族倒数端点短区间。因此 RFP 过密必须由 `RFP-SelbergConstantLedger` 失败，或由 reciprocal-floor 端点相位/PDEC 缺陷承担；尚未完成出口排斥。"
+}
