@@ -1,0 +1,309 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_common_core_window_selector_router",
+  "status": "z61_two_three_common_core_overlap_reduced_to_ratio_window_selector_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_overlap_common_core_router",
+  "common_core": 4807,
+  "common_core_factorization": [
+    11,
+    19,
+    23
+  ],
+  "prefixes": [
+    2,
+    3
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_ratio_window": "(4,8]",
+  "selector_row_count": 8,
+  "selected_oriented_edge_count": 6,
+  "selected_unordered_split_count": 3,
+  "selected_unordered_splits": [
+    {
+      "prefix": 2,
+      "core_split": [
+        19,
+        253
+      ]
+    },
+    {
+      "prefix": 2,
+      "core_split": [
+        23,
+        209
+      ]
+    },
+    {
+      "prefix": 3,
+      "core_split": [
+        19,
+        253
+      ]
+    }
+  ],
+  "candidate_bucket_counts": {
+    "far>8": 7,
+    "unbalanced<=8": 3,
+    "mid<=4": 1
+  },
+  "selected_edges": [
+    {
+      "prefix": 2,
+      "core_split": [
+        19,
+        253
+      ],
+      "d": 38,
+      "e": 253,
+      "ratio": 6.657894736842105,
+      "bucket": "unbalanced<=8",
+      "abs_lambda_product": 0.0941886696298792,
+      "ordered_symmetry": 2,
+      "oriented_abs_lambda_product": 0.1883773392597584,
+      "selected": true
+    },
+    {
+      "prefix": 2,
+      "core_split": [
+        23,
+        209
+      ],
+      "d": 46,
+      "e": 209,
+      "ratio": 4.543478260869565,
+      "bucket": "unbalanced<=8",
+      "abs_lambda_product": 0.10101433938890989,
+      "ordered_symmetry": 2,
+      "oriented_abs_lambda_product": 0.20202867877781977,
+      "selected": true
+    },
+    {
+      "prefix": 3,
+      "core_split": [
+        19,
+        253
+      ],
+      "d": 57,
+      "e": 253,
+      "ratio": 4.43859649122807,
+      "bucket": "unbalanced<=8",
+      "abs_lambda_product": 0.08251030752647374,
+      "ordered_symmetry": 2,
+      "oriented_abs_lambda_product": 0.1650206150529475,
+      "selected": true
+    }
+  ],
+  "selector_rows": [
+    {
+      "prefix": 2,
+      "core_split": [
+        1,
+        4807
+      ],
+      "selected_candidate_count": 0,
+      "selected_weight_with_oriented_symmetry": 0,
+      "candidate_rows": []
+    },
+    {
+      "prefix": 2,
+      "core_split": [
+        11,
+        437
+      ],
+      "selected_candidate_count": 0,
+      "selected_weight_with_oriented_symmetry": 0,
+      "candidate_rows": [
+        {
+          "d": 22,
+          "e": 437,
+          "ratio": 19.863636363636363,
+          "bucket": "far>8",
+          "abs_lambda_product": 0.06621442398902455,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.1324288479780491,
+          "selected": false
+        },
+        {
+          "d": 874,
+          "e": 11,
+          "ratio": 79.45454545454545,
+          "bucket": "far>8",
+          "abs_lambda_product": 0.01272845954187491,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.02545691908374982,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "prefix": 2,
+      "core_split": [
+        19,
+        253
+      ],
+      "selected_candidate_count": 1,
+      "selected_weight_with_oriented_symmetry": 0.1883773392597584,
+      "candidate_rows": [
+        {
+          "d": 38,
+          "e": 253,
+          "ratio": 6.657894736842105,
+          "bucket": "unbalanced<=8",
+          "abs_lambda_product": 0.0941886696298792,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.1883773392597584,
+          "selected": true
+        },
+        {
+          "d": 506,
+          "e": 19,
+          "ratio": 26.63157894736842,
+          "bucket": "far>8",
+          "abs_lambda_product": 0.056581095283273604,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.11316219056654721,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "prefix": 2,
+      "core_split": [
+        23,
+        209
+      ],
+      "selected_candidate_count": 1,
+      "selected_weight_with_oriented_symmetry": 0.20202867877781977,
+      "candidate_rows": [
+        {
+          "d": 46,
+          "e": 209,
+          "ratio": 4.543478260869565,
+          "bucket": "unbalanced<=8",
+          "abs_lambda_product": 0.10101433938890989,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.20202867877781977,
+          "selected": true
+        },
+        {
+          "d": 418,
+          "e": 23,
+          "ratio": 18.17391304347826,
+          "bucket": "far>8",
+          "abs_lambda_product": 0.0689573725138083,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.1379147450276166,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "prefix": 3,
+      "core_split": [
+        1,
+        4807
+      ],
+      "selected_candidate_count": 0,
+      "selected_weight_with_oriented_symmetry": 0,
+      "candidate_rows": []
+    },
+    {
+      "prefix": 3,
+      "core_split": [
+        11,
+        437
+      ],
+      "selected_candidate_count": 0,
+      "selected_weight_with_oriented_symmetry": 0,
+      "candidate_rows": [
+        {
+          "d": 33,
+          "e": 437,
+          "ratio": 13.242424242424242,
+          "bucket": "far>8",
+          "abs_lambda_product": 0.05918019327593926,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.11836038655187851,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "prefix": 3,
+      "core_split": [
+        19,
+        253
+      ],
+      "selected_candidate_count": 1,
+      "selected_weight_with_oriented_symmetry": 0.1650206150529475,
+      "candidate_rows": [
+        {
+          "d": 57,
+          "e": 253,
+          "ratio": 4.43859649122807,
+          "bucket": "unbalanced<=8",
+          "abs_lambda_product": 0.08251030752647374,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.1650206150529475,
+          "selected": true
+        },
+        {
+          "d": 759,
+          "e": 19,
+          "ratio": 39.94736842105263,
+          "bucket": "far>8",
+          "abs_lambda_product": 0.02290371244402095,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.0458074248880419,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "prefix": 3,
+      "core_split": [
+        23,
+        209
+      ],
+      "selected_candidate_count": 0,
+      "selected_weight_with_oriented_symmetry": 0,
+      "candidate_rows": [
+        {
+          "d": 69,
+          "e": 209,
+          "ratio": 3.028985507246377,
+          "bucket": "mid<=4",
+          "abs_lambda_product": 0.08771252867197817,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.17542505734395633,
+          "selected": false
+        },
+        {
+          "d": 627,
+          "e": 23,
+          "ratio": 27.26086956521739,
+          "bucket": "far>8",
+          "abs_lambda_product": 0.03690343828808191,
+          "ordered_symmetry": 2,
+          "oriented_abs_lambda_product": 0.07380687657616382,
+          "selected": false
+        }
+      ]
+    }
+  ],
+  "selected_weight": 0.5554266330905256,
+  "source_overlap_weight": 0.5554266330905256,
+  "selector_weight_identity_error": 0.0,
+  "ratio_window_selector_identity_closed": true,
+  "common_core_ratio_window_partition_bound_proved": false,
+  "window_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_common_core_window_selector_router.py": "b17a30042d33830667ba97f1c0058c4e99b18ecceb1b4e95585963129e1b7cb5",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-overlap-common-core-router.json": "4784443770637bbe4832130b0d33a9d72035071ad39e497e65ff67571c5d16d1"
+  },
+  "next_direct_attack_target": "CommonCoreRatioWindowPartitionBoundOrWindowPDEC",
+  "plain_conclusion": "`2C/3C` common-core overlap 的目标权重完全由 bucket 比例窗口选择决定：把 `C=11*19*23` 二分后，只保留使 `max(d,e)/min(d,e)` 落在 `(4,8]` 的分割。样本中被选中的无序分割只有 `prefix=2` 的两个分割和 `prefix=3` 的一个分割；其有向对称权重和精确等于 overlap 权重。下一步应证明这类窗口分割容量受控，或登记 Window-PDEC。"
+}
