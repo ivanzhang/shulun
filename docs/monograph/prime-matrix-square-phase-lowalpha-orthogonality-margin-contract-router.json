@@ -1,0 +1,93 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_orthogonality_margin_contract_router",
+  "status": "selberg_constant_margin_reduced_to_uniform_angle_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "selberg_constant_margin_contract_closed": true,
+  "sample_satisfies_margin_contract": true,
+  "uniform_angle_bound_proved": false,
+  "vector_squarefree_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "constant": 1.35,
+  "rows": [
+    {
+      "z": 7,
+      "constant": 1.35,
+      "model_over_mertens": 1.0495125504172365,
+      "direct_over_mertens": 1.0477722809154388,
+      "margin_over_mertens": 0.30048744958276363,
+      "allowed_net_abs": 2999.105136795648,
+      "cauchy_envelope": 352.45199922683605,
+      "cauchy_over_mertens": 0.03531300088438161,
+      "required_abs_angle_bound": 8.509258405044374,
+      "observed_abs_angle": 0.049281269173344085,
+      "observed_angle_slack": 8.45997713587103,
+      "contract_passed_by_sample": true
+    },
+    {
+      "z": 13,
+      "constant": 1.35,
+      "model_over_mertens": 1.0731832295074843,
+      "direct_over_mertens": 1.0713877196425692,
+      "margin_over_mertens": 0.27681677049251574,
+      "allowed_net_abs": 2318.4778933692605,
+      "cauchy_envelope": 908.9500539807582,
+      "cauchy_over_mertens": 0.10852491593797456,
+      "required_abs_angle_bound": 2.5507208929857668,
+      "observed_abs_angle": 0.016544678697783068,
+      "observed_angle_slack": 2.534176214287984,
+      "contract_passed_by_sample": true
+    },
+    {
+      "z": 31,
+      "constant": 1.35,
+      "model_over_mertens": 1.123223477308597,
+      "direct_over_mertens": 1.1256253432903969,
+      "margin_over_mertens": 0.22677652269140314,
+      "allowed_net_abs": 1513.6067573151277,
+      "cauchy_envelope": 3133.330619385594,
+      "cauchy_over_mertens": 0.46945206796459094,
+      "required_abs_angle_bound": 0.48306640478684193,
+      "observed_abs_angle": 0.005116317821946478,
+      "observed_angle_slack": 0.47795008696489544,
+      "contract_passed_by_sample": true
+    },
+    {
+      "z": 61,
+      "constant": 1.35,
+      "model_over_mertens": 1.1793389168718362,
+      "direct_over_mertens": 1.180362939267685,
+      "margin_over_mertens": 0.17066108312816386,
+      "allowed_net_abs": 980.600375122719,
+      "cauchy_envelope": 5404.798742327476,
+      "cauchy_over_mertens": 0.9406368086896876,
+      "required_abs_angle_bound": 0.18143143193162484,
+      "observed_abs_angle": 0.001088648016373593,
+      "observed_angle_slack": 0.18034278391525124,
+      "contract_passed_by_sample": true
+    }
+  ],
+  "tightest_required_angle_row": {
+    "z": 61,
+    "constant": 1.35,
+    "model_over_mertens": 1.1793389168718362,
+    "direct_over_mertens": 1.180362939267685,
+    "margin_over_mertens": 0.17066108312816386,
+    "allowed_net_abs": 980.600375122719,
+    "cauchy_envelope": 5404.798742327476,
+    "cauchy_over_mertens": 0.9406368086896876,
+    "required_abs_angle_bound": 0.18143143193162484,
+    "observed_abs_angle": 0.001088648016373593,
+    "observed_angle_slack": 0.18034278391525124,
+    "contract_passed_by_sample": true
+  },
+  "sample_failure_count": 0,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_orthogonality_margin_contract_router.py": "39652e8b927a14b3838ceff3b2a3bd7efd16bb2e8865cdbb44f6f07ca28d3249",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-squarefree-pdec-orthogonality-router.json": "cec2e980f4c745ba72127216f53911a90c41de70b3f1c800b72675287edc1733",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-rough-b-selberg-quadratic-router.json": "84244d3cf8123184df947d08b0a51ad00be6febc247b5672a519ee23a19e6fea"
+  },
+  "next_direct_attack_target": "UniformCoefficientRemainderAngleBoundTheta0182OrVectorSquarefreePDEC",
+  "plain_conclusion": "Selberg 常数 `C` 的剩余要求可精确写成角度合同：若 `|<c,R>|/(||c||_2||R||_2)` 不超过每个 `z` 的 required angle，则 `Q_direct<=C*Mertens`。默认 `C=1.35` 下最紧行是 `z=61`，只需统一角度界约 `0.181432`；这比样本观测角度 `0.001089` 宽很多。剩余不再是模糊取消，而是证明该统一角度界，或证明违反该角度界即 VectorSquarefree-PDEC。"
+}
