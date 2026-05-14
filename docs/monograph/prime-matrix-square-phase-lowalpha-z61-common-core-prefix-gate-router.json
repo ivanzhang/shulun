@@ -1,0 +1,166 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_common_core_prefix_gate_router",
+  "status": "z61_common_core_window_selector_reduced_to_prefix_interval_gate_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_common_core_window_selector_router",
+  "common_core": 4807,
+  "common_core_factorization": [
+    11,
+    19,
+    23
+  ],
+  "prefixes": [
+    2,
+    3
+  ],
+  "prefix_interval_formula": "large/(8*small) <= prefix < large/(4*small)",
+  "split_count": 4,
+  "selected_split_count": 2,
+  "selected_prefix_total_count": 3,
+  "selected_weight": 0.5554266330905256,
+  "source_selected_weight": 0.5554266330905256,
+  "selected_weight_identity_error": 0.0,
+  "prefix_gate_identity_closed": true,
+  "split_rows": [
+    {
+      "core_split": [
+        23,
+        209
+      ],
+      "ratio_large_over_small": 9.08695652173913,
+      "prefix_lower_closed": 1.1358695652173914,
+      "prefix_upper_open": 2.2717391304347827,
+      "prefix_rows": [
+        {
+          "prefix": 2,
+          "ratio": 4.543478260869565,
+          "selected_by_window": true,
+          "selected_by_interval_gate": true,
+          "selected_weight": 0.20202867877781977,
+          "gate_identity_ok": true
+        },
+        {
+          "prefix": 3,
+          "ratio": 3.028985507246377,
+          "selected_by_window": false,
+          "selected_by_interval_gate": false,
+          "selected_weight": 0,
+          "gate_identity_ok": true
+        }
+      ],
+      "selected_prefixes": [
+        2
+      ],
+      "selected_weight": 0.20202867877781977,
+      "selected_prefix_count": 1,
+      "gate_identity_closed": true
+    },
+    {
+      "core_split": [
+        19,
+        253
+      ],
+      "ratio_large_over_small": 13.31578947368421,
+      "prefix_lower_closed": 1.6644736842105263,
+      "prefix_upper_open": 3.3289473684210527,
+      "prefix_rows": [
+        {
+          "prefix": 2,
+          "ratio": 6.657894736842105,
+          "selected_by_window": true,
+          "selected_by_interval_gate": true,
+          "selected_weight": 0.1883773392597584,
+          "gate_identity_ok": true
+        },
+        {
+          "prefix": 3,
+          "ratio": 4.43859649122807,
+          "selected_by_window": true,
+          "selected_by_interval_gate": true,
+          "selected_weight": 0.1650206150529475,
+          "gate_identity_ok": true
+        }
+      ],
+      "selected_prefixes": [
+        2,
+        3
+      ],
+      "selected_weight": 0.3533979543127059,
+      "selected_prefix_count": 2,
+      "gate_identity_closed": true
+    },
+    {
+      "core_split": [
+        11,
+        437
+      ],
+      "ratio_large_over_small": 39.72727272727273,
+      "prefix_lower_closed": 4.965909090909091,
+      "prefix_upper_open": 9.931818181818182,
+      "prefix_rows": [
+        {
+          "prefix": 2,
+          "ratio": 19.863636363636363,
+          "selected_by_window": false,
+          "selected_by_interval_gate": false,
+          "selected_weight": 0,
+          "gate_identity_ok": true
+        },
+        {
+          "prefix": 3,
+          "ratio": 13.242424242424242,
+          "selected_by_window": false,
+          "selected_by_interval_gate": false,
+          "selected_weight": 0,
+          "gate_identity_ok": true
+        }
+      ],
+      "selected_prefixes": [],
+      "selected_weight": 0,
+      "selected_prefix_count": 0,
+      "gate_identity_closed": true
+    },
+    {
+      "core_split": [
+        1,
+        4807
+      ],
+      "ratio_large_over_small": 4807.0,
+      "prefix_lower_closed": 600.875,
+      "prefix_upper_open": 1201.75,
+      "prefix_rows": [
+        {
+          "prefix": 2,
+          "ratio": 2403.5,
+          "selected_by_window": false,
+          "selected_by_interval_gate": false,
+          "selected_weight": 0,
+          "gate_identity_ok": true
+        },
+        {
+          "prefix": 3,
+          "ratio": 1602.3333333333333,
+          "selected_by_window": false,
+          "selected_by_interval_gate": false,
+          "selected_weight": 0,
+          "gate_identity_ok": true
+        }
+      ],
+      "selected_prefixes": [],
+      "selected_weight": 0,
+      "selected_prefix_count": 0,
+      "gate_identity_closed": true
+    }
+  ],
+  "prefix_interval_gate_capacity_bound_proved": false,
+  "prefix_gate_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_common_core_prefix_gate_router.py": "e220bcf88156b6d4a92db9dd32a5f565178f035356d029c1adbebac95387ec31",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-common-core-window-selector-router.json": "aa7bd238d68b507d20b993017c086649b36078cf9fec7edfa22700a81462b57e"
+  },
+  "next_direct_attack_target": "PrefixIntervalGateCapacityBoundOrPrefixGatePDEC",
+  "plain_conclusion": "common-core 窗口选择器已压成一维 prefix 区间门：对 core 分割 `small|large`，prefix `t` 入选当且仅当 `large/(8*small) <= t < large/(4*small)`。在当前 `t in {2,3}` 中，只有 `[19,253]` 接收 `2,3`，`[23,209]` 只接收 `2`。下一步最窄硬点是证明这种 prefix interval gate 的容量受控，或登记 PrefixGate-PDEC。"
+}
