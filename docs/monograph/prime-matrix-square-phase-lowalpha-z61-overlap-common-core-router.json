@@ -1,0 +1,170 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_overlap_common_core_router",
+  "status": "z61_single_double_hit_overlap_reduced_to_two_three_common_core_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_hit_overlap_flip_router",
+  "target_bucket": "unbalanced<=8",
+  "target_shell": "(8D,16D]",
+  "target_omega": 4,
+  "overlap_p": 36739,
+  "b_value": 28842,
+  "b_factorization": [
+    2,
+    3,
+    11,
+    19,
+    23
+  ],
+  "hit_moduli": [
+    9614,
+    14421
+  ],
+  "hit_moduli_factorizations": {
+    "9614": [
+      2,
+      11,
+      19,
+      23
+    ],
+    "14421": [
+      3,
+      11,
+      19,
+      23
+    ]
+  },
+  "common_core": 4807,
+  "common_core_factorization": [
+    11,
+    19,
+    23
+  ],
+  "common_core_squarefree": true,
+  "common_core_omega": 3,
+  "prefixes": [
+    2,
+    3
+  ],
+  "prefixes_are_two_three": true,
+  "prefixes_coprime": true,
+  "b_equals_lcm_of_hit_moduli": true,
+  "b_over_common_core": 6,
+  "target_dividing_moduli": [
+    9614,
+    14421
+  ],
+  "target_dividing_moduli_exactly_hit_moduli": true,
+  "modulus_rows": [
+    {
+      "m": 9614,
+      "prefix": 2,
+      "factorization": [
+        2,
+        11,
+        19,
+        23
+      ],
+      "edge_count_in_target_bucket": 4,
+      "edge_weight_sum": 0.39040601803757813,
+      "kernel_weight": 0.3904060180375782,
+      "kernel_identity_error": -5.551115123125783e-17,
+      "edge_rows": [
+        {
+          "d": 38,
+          "e": 253,
+          "bucket": "unbalanced<=8",
+          "ratio": 6.657894736842105,
+          "lambda_d": 0.47340546779439663,
+          "lambda_e": 0.19895982627472736,
+          "abs_lambda_product": 0.0941886696298792
+        },
+        {
+          "d": 46,
+          "e": 209,
+          "bucket": "unbalanced<=8",
+          "ratio": 4.543478260869565,
+          "lambda_d": 0.44574738943947534,
+          "lambda_e": 0.22661790462964868,
+          "abs_lambda_product": 0.10101433938890989
+        },
+        {
+          "d": 209,
+          "e": 46,
+          "bucket": "unbalanced<=8",
+          "ratio": 4.543478260869565,
+          "lambda_d": 0.22661790462964868,
+          "lambda_e": 0.44574738943947534,
+          "abs_lambda_product": 0.10101433938890989
+        },
+        {
+          "d": 253,
+          "e": 38,
+          "bucket": "unbalanced<=8",
+          "ratio": 6.657894736842105,
+          "lambda_d": 0.19895982627472736,
+          "lambda_e": 0.47340546779439663,
+          "abs_lambda_product": 0.0941886696298792
+        }
+      ]
+    },
+    {
+      "m": 14421,
+      "prefix": 3,
+      "factorization": [
+        3,
+        11,
+        19,
+        23
+      ],
+      "edge_count_in_target_bucket": 2,
+      "edge_weight_sum": 0.1650206150529475,
+      "kernel_weight": 0.1650206150529475,
+      "kernel_identity_error": 0.0,
+      "edge_rows": [
+        {
+          "d": 57,
+          "e": 253,
+          "bucket": "unbalanced<=8",
+          "ratio": 4.43859649122807,
+          "lambda_d": 0.4147083814425029,
+          "lambda_e": 0.19895982627472736,
+          "abs_lambda_product": 0.08251030752647374
+        },
+        {
+          "d": 253,
+          "e": 57,
+          "bucket": "unbalanced<=8",
+          "ratio": 4.43859649122807,
+          "lambda_d": 0.19895982627472736,
+          "lambda_e": 0.4147083814425029,
+          "abs_lambda_product": 0.08251030752647374
+        }
+      ]
+    }
+  ],
+  "max_kernel_edge_identity_error": 5.551115123125783e-17,
+  "kernel_edge_decomposition_closed": true,
+  "core_kernel_rows": [
+    {
+      "bucket": "far>8",
+      "omega": 3,
+      "shell": "(4D,8D]",
+      "kernel_weight": 0.6322928346681624
+    }
+  ],
+  "overlap_contribution_from_moduli": 0.5554266330905256,
+  "overlap_contribution_source": 0.5554266330905256,
+  "overlap_contribution_identity_error": 0.0,
+  "two_three_common_core_identity_closed": true,
+  "two_three_common_core_overlap_bound_proved": false,
+  "common_core_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_overlap_common_core_router.py": "9b8e4a5f967ab7b90b3105d7de475fe14a38dc15004ec9baa1d1b93b43d072b0",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-hit-overlap-flip-router.json": "ee5c1ebcec70df322e5c6df2c862ce7c43a7c6b0978df815cd8ae456920b31b5"
+  },
+  "next_direct_attack_target": "TwoThreeCommonCoreOverlapAtomBoundOrCommonCorePDEC",
+  "plain_conclusion": "唯一 double-hit overlap 已压成 `C=4807=11*19*23` 的 `2C/3C` common-core 原子：`9614=2C`、`14421=3C`、`b=28842=6C=lcm(2C,3C)`。在目标格中，`b` 只命中这两个模数；其贡献正是两个目标 bucket kernel 权重之和。下一步最窄硬点是证明这种 `2/3` common-core 原子不能持续超过允许容量，或把它登记为 CommonCore-PDEC。"
+}
