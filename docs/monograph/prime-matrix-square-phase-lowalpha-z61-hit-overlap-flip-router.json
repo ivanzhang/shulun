@@ -1,0 +1,78 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_hit_overlap_flip_router",
+  "status": "z61_hit_support_scale_drift_reduced_to_single_double_hit_overlap_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_hit_support_scale_router",
+  "support_atom_count": 52,
+  "single_modulus_atom_count": 51,
+  "multi_modulus_atom_count": 1,
+  "all_multi_modulus_atoms": [
+    {
+      "p": 36739,
+      "omega": 4,
+      "b_value": 28842,
+      "multiplicity": 1,
+      "weight": 0.5554266330905256,
+      "contribution": 0.5554266330905256,
+      "hit_modulus_count": 2,
+      "hit_moduli": [
+        {
+          "m": 9614,
+          "K": 0.3904060180375782
+        },
+        {
+          "m": 14421,
+          "K": 0.1650206150529475
+        }
+      ]
+    }
+  ],
+  "overlap_contribution": 0.5554266330905256,
+  "overlap_contribution_share_of_total_actual": 0.04374056414523016,
+  "all_other_atoms_single_modulus": true,
+  "scale_rows": [
+    {
+      "p": 10007,
+      "actual_low": 0.20859955827244797,
+      "actual_high_with_overlap": 0.39029554025925717,
+      "actual_high_without_overlap": 0.39029554025925717,
+      "overlap_lift_in_high_omega": 0.0,
+      "needed_lift_to_reach_model_scale": 0.03730612857561888,
+      "overlap_lift_surplus_over_model": -0.03730612857561888,
+      "full_actual_scale": 1.8710276449842693,
+      "without_overlap_actual_scale": 1.8710276449842693,
+      "model_scale": 2.0498685250157314,
+      "full_drift_from_model": -0.08724504905995845,
+      "without_overlap_drift_from_model": -0.08724504905995845,
+      "overlap_flips_drift_sign": false
+    },
+    {
+      "p": 36739,
+      "actual_low": 3.926674207401674,
+      "actual_high_with_overlap": 8.17263529989574,
+      "actual_high_without_overlap": 7.617208666805214,
+      "overlap_lift_in_high_omega": 0.5554266330905255,
+      "needed_lift_to_reach_model_scale": 0.4319571989385702,
+      "overlap_lift_surplus_over_model": 0.12346943415195533,
+      "full_actual_scale": 2.0813122933628017,
+      "without_overlap_actual_scale": 1.9398626584418395,
+      "model_scale": 2.0498685250157314,
+      "full_drift_from_model": 0.01533940736361572,
+      "without_overlap_drift_from_model": -0.05366484007702288,
+      "overlap_flips_drift_sign": true
+    }
+  ],
+  "overlap_flip_prime_count": 1,
+  "single_double_hit_overlap_flip_identity_closed": true,
+  "single_double_hit_overlap_bound_proved": false,
+  "overlap_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_hit_overlap_flip_router.py": "cd9f49abad64217111b564dfbe0a1b090b62cfd8edcd865f425d79a2692b9a88",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-hit-support-scale-router.json": "5e65ff61fcd74d7a23a89d8f2799bb7dd8ff9ca9ceb8ac62789d055c44c7bea7"
+  },
+  "next_direct_attack_target": "SingleDoubleHitOverlapAtomBoundOrOverlapPDEC",
+  "plain_conclusion": "四个目标 profile 的 `52` 个支撑原子中，只有一个多模数重叠原子：`p=36739, omega=4, b=28842`，命中模数 `9614` 与 `14421`。删去该原子后 `36739` 的 actual 高/低尺度低于公共模型尺度；加入该原子后才翻到模型上方。因此当前最窄硬点已从整体支撑漂移压到单个 double-hit overlap 原子的可容许性，或其持续出现形成 Overlap-PDEC。"
+}
