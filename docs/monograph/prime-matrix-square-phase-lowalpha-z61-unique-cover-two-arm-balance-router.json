@@ -1,0 +1,101 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_unique_cover_two_arm_balance_router",
+  "status": "z61_unique_five_cell_cover_reduced_to_two_positive_source_arms_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "p_list": [
+    10007,
+    36739,
+    83561,
+    200003
+  ],
+  "z": 61,
+  "unbalanced_residual_needed_ratio": 0.03719958956760396,
+  "unique_five_cell_cover_credit_ratio": 0.03850932862998613,
+  "arm_count": 2,
+  "arm_rows": [
+    {
+      "positive_p": 36739,
+      "credit_ratio": 0.020224126084528685,
+      "share_of_need": 0.5436653016769112,
+      "share_of_cover": 0.5251747252945025,
+      "alone_covers_need": false,
+      "deficit_if_alone": 0.016975463483075277,
+      "cells": [
+        {
+          "omega": 3,
+          "shell": "(2D,4D]",
+          "sign_word": "-++-",
+          "pair_key": "36739->200003",
+          "credit_ratio": 0.01149179090337464
+        },
+        {
+          "omega": 5,
+          "shell": "(4D,8D]",
+          "sign_word": "-+--",
+          "pair_key": "36739->200003",
+          "credit_ratio": 0.008732335181154044
+        }
+      ]
+    },
+    {
+      "positive_p": 200003,
+      "credit_ratio": 0.018285202545457444,
+      "share_of_need": 0.49154312609356027,
+      "share_of_cover": 0.4748252747054975,
+      "alone_covers_need": false,
+      "deficit_if_alone": 0.01891438702214652,
+      "cells": [
+        {
+          "omega": 5,
+          "shell": "(2D,4D]",
+          "sign_word": "+-++",
+          "pair_key": "200003->36739",
+          "credit_ratio": 0.007256637768192927
+        },
+        {
+          "omega": 3,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->36739",
+          "credit_ratio": 0.0032602227275671915
+        },
+        {
+          "omega": 4,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->36739",
+          "credit_ratio": 0.00300389732393212
+        },
+        {
+          "omega": 4,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->10007",
+          "credit_ratio": 0.0023850670771671982
+        },
+        {
+          "omega": 3,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->10007",
+          "credit_ratio": 0.002379377648598009
+        }
+      ]
+    }
+  ],
+  "two_arm_total_covers_need": true,
+  "each_arm_individually_insufficient": true,
+  "arm_credit_ratio_max_over_min": 1.106037848596483,
+  "arm_balance_materialized": true,
+  "two_arm_balance_invariant_proved": false,
+  "arm_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_unique_cover_two_arm_balance_router.py": "0b9fdbeb2ceaee6f5b5fe2506a8a4efb34bfd08a8e794a50d47ce0e51d6d354a",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-core-exit-minimal-cover-router.json": "a2d7e3fe1691bc189ae503661c6ea63f7ca97c746734711b69841ef24cc82d22"
+  },
+  "next_direct_attack_target": "TwoArmPositiveSourceBalanceInvariantOrArmPDEC",
+  "plain_conclusion": "唯一五格覆盖可按正向来源 P 压成两个平衡臂：`36739` 臂与 `200003` 臂。两臂都不能单独覆盖 residual，但贡献规模接近，合起来覆盖需求。下一步应证明这种双臂平衡是结构强制，或登记 Arm-PDEC。"
+}
