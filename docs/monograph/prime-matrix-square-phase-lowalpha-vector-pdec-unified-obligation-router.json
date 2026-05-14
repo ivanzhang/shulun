@@ -1,0 +1,388 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_vector_pdec_unified_obligation_router",
+  "status": "unified_vector_pdec_obligations_materialized_bounds_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "unified_vector_pdec_obligation_schema_closed": true,
+  "core_channel_obligations_imported": true,
+  "low_overflow_edge_obligations_imported": true,
+  "mobius_divisor_sum_channel_bounds_proved": false,
+  "boundary_lcm_edge_bounds_proved": false,
+  "unified_vector_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "equal_split_angle_target": 0.22152185999529309,
+  "obligation_count": 36,
+  "family_summaries": [
+    {
+      "family": "CoprimeBoundaryLCMEdge",
+      "obligation_count": 3,
+      "total_sample_abs_scale": 2851.857023805916,
+      "max_sample_abs_scale": 1887.557717810996,
+      "sample_labels": [
+        "coprime-boundary-edge(z=13)",
+        "coprime-boundary-edge(z=31)",
+        "coprime-boundary-edge(z=61)"
+      ]
+    },
+    {
+      "family": "SmallGCDOverflowEdge",
+      "obligation_count": 3,
+      "total_sample_abs_scale": 1957.0330482040663,
+      "max_sample_abs_scale": 1192.4259869434418,
+      "sample_labels": [
+        "small-gcd-overflow-edge(z=13)",
+        "small-gcd-overflow-edge(z=31)",
+        "small-gcd-overflow-edge(z=61)"
+      ]
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "obligation_count": 26,
+      "total_sample_abs_scale": 89.03383648481466,
+      "max_sample_abs_scale": 11.603157444673439,
+      "sample_labels": [
+        "S_q(z=7,q=3)",
+        "S_q(z=7,q=5)",
+        "S_q(z=7,q=2)",
+        "S_q(z=7,q=7)",
+        "S_q(z=13,q=13)",
+        "S_q(z=13,q=11)",
+        "S_q(z=13,q=3)",
+        "S_q(z=13,q=7)"
+      ]
+    },
+    {
+      "family": "CoreS0MobiusDivisorSum",
+      "obligation_count": 4,
+      "total_sample_abs_scale": 86.90306676999018,
+      "max_sample_abs_scale": 31.72853522455381,
+      "sample_labels": [
+        "S0(z=7)",
+        "S0(z=13)",
+        "S0(z=31)",
+        "S0(z=61)"
+      ]
+    }
+  ],
+  "top_obligations": [
+    {
+      "family": "CoprimeBoundaryLCMEdge",
+      "z": 61,
+      "label": "coprime-boundary-edge(z=61)",
+      "sample_signed_value": -14.077683080634598,
+      "sample_abs_scale": 1887.557717810996,
+      "sample_ratio": 0.6128466572395351,
+      "required_proof": "Bound coprime boundary lcm edge angle or route failure to BoundaryLCM-PDEC"
+    },
+    {
+      "family": "SmallGCDOverflowEdge",
+      "z": 61,
+      "label": "small-gcd-overflow-edge(z=61)",
+      "sample_signed_value": 11.653944667219571,
+      "sample_abs_scale": 1192.4259869434418,
+      "sample_ratio": 0.38715334276046487,
+      "required_proof": "Absorb small-gcd overflow by gcd-sum budget or route failure to PDEC"
+    },
+    {
+      "family": "CoprimeBoundaryLCMEdge",
+      "z": 31,
+      "label": "coprime-boundary-edge(z=31)",
+      "sample_signed_value": 19.21915437537457,
+      "sample_abs_scale": 898.2910248519662,
+      "sample_ratio": 0.563130321147195,
+      "required_proof": "Bound coprime boundary lcm edge angle or route failure to BoundaryLCM-PDEC"
+    },
+    {
+      "family": "SmallGCDOverflowEdge",
+      "z": 31,
+      "label": "small-gcd-overflow-edge(z=31)",
+      "sample_signed_value": -15.834941798340328,
+      "sample_abs_scale": 696.8832911429417,
+      "sample_ratio": 0.43686967885280503,
+      "required_proof": "Absorb small-gcd overflow by gcd-sum budget or route failure to PDEC"
+    },
+    {
+      "family": "SmallGCDOverflowEdge",
+      "z": 13,
+      "label": "small-gcd-overflow-edge(z=13)",
+      "sample_signed_value": -4.250646185271618,
+      "sample_abs_scale": 67.7237701176829,
+      "sample_ratio": 0.5064139036175622,
+      "required_proof": "Absorb small-gcd overflow by gcd-sum budget or route failure to PDEC"
+    },
+    {
+      "family": "CoprimeBoundaryLCMEdge",
+      "z": 13,
+      "label": "coprime-boundary-edge(z=13)",
+      "sample_signed_value": 5.950219586377145,
+      "sample_abs_scale": 66.00828114295373,
+      "sample_ratio": 0.4935860963824378,
+      "required_proof": "Bound coprime boundary lcm edge angle or route failure to BoundaryLCM-PDEC"
+    },
+    {
+      "family": "CoreS0MobiusDivisorSum",
+      "z": 61,
+      "label": "S0(z=61)",
+      "sample_signed_value": 31.72853522455381,
+      "sample_abs_scale": 31.72853522455381,
+      "sample_ratio": 0.13385736359421482,
+      "required_proof": "Bound truncated Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "CoreS0MobiusDivisorSum",
+      "z": 31,
+      "label": "S0(z=31)",
+      "sample_signed_value": 26.857515228421434,
+      "sample_abs_scale": 26.857515228421434,
+      "sample_ratio": 0.6287907453756474,
+      "required_proof": "Bound truncated Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "CoreS0MobiusDivisorSum",
+      "z": 7,
+      "label": "S0(z=7)",
+      "sample_signed_value": -15.79999999999933,
+      "sample_abs_scale": 15.79999999999933,
+      "sample_ratio": 5.021276859787652,
+      "required_proof": "Bound truncated Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "CoreS0MobiusDivisorSum",
+      "z": 13,
+      "label": "S0(z=13)",
+      "sample_signed_value": -12.517016317015603,
+      "sample_abs_scale": 12.517016317015603,
+      "sample_ratio": 1.4035743005994243,
+      "required_proof": "Bound truncated Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=43)",
+      "prime": 43,
+      "sample_signed_value": -39.13787037554109,
+      "sample_abs_scale": 11.603157444673439,
+      "sample_ratio": 0.16650975786364244,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=47)",
+      "prime": 47,
+      "sample_signed_value": 26.12287513114861,
+      "sample_abs_scale": 8.115248930048752,
+      "sample_ratio": 0.11645693345012016,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=61)",
+      "prime": 61,
+      "sample_signed_value": 20.47935343345179,
+      "sample_abs_scale": 7.252882753908449,
+      "sample_ratio": 0.10408164820008378,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=59)",
+      "prime": 59,
+      "sample_signed_value": 18.953229821026447,
+      "sample_abs_scale": 6.603972522601865,
+      "sample_ratio": 0.09476953759525,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=17)",
+      "prime": 17,
+      "sample_signed_value": 35.37031536604167,
+      "sample_abs_scale": 5.950090925851077,
+      "sample_ratio": 0.25584116192172207,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=17)",
+      "prime": 17,
+      "sample_signed_value": 29.451165557856264,
+      "sample_abs_scale": 4.954355400228632,
+      "sample_ratio": 0.07109689944276339,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=53)",
+      "prime": 53,
+      "sample_signed_value": -14.4216542613879,
+      "sample_abs_scale": 4.764157069751342,
+      "sample_ratio": 0.06836748048030837,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=13)",
+      "prime": 13,
+      "sample_signed_value": 30.210975116328243,
+      "sample_abs_scale": 4.165320712578285,
+      "sample_ratio": 0.17909986656720142,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=37)",
+      "prime": 37,
+      "sample_signed_value": -14.931537505046755,
+      "sample_abs_scale": 4.080053651632373,
+      "sample_ratio": 0.05855033415200692,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 13,
+      "label": "S_q(z=13,q=13)",
+      "prime": 13,
+      "sample_signed_value": 29.034498834498955,
+      "sample_abs_scale": 4.003114725989255,
+      "sample_ratio": 0.34204684161484133,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 61,
+      "label": "S_q(z=61,q=13)",
+      "prime": 13,
+      "sample_signed_value": 27.943111566551664,
+      "sample_abs_scale": 3.8526403379524363,
+      "sample_ratio": 0.05528686591274779,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=31)",
+      "prime": 31,
+      "sample_signed_value": -12.92659222422894,
+      "sample_abs_scale": 3.194533945244398,
+      "sample_ratio": 0.13735811545313611,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 13,
+      "label": "S_q(z=13,q=11)",
+      "prime": 11,
+      "sample_signed_value": -23.46573426573434,
+      "sample_abs_scale": 2.827617653929202,
+      "sample_ratio": 0.24160628760941658,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 7,
+      "label": "S_q(z=7,q=3)",
+      "prime": 3,
+      "sample_signed_value": 99.40000000000026,
+      "sample_abs_scale": 2.5142091506114896,
+      "sample_ratio": 0.726831445398565,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=19)",
+      "prime": 19,
+      "sample_signed_value": 12.918056212291198,
+      "sample_abs_scale": 2.3470827412213273,
+      "sample_ratio": 0.10091952931872124,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=11)",
+      "prime": 11,
+      "sample_signed_value": -17.10938111122382,
+      "sample_abs_scale": 2.0616779995051786,
+      "sample_ratio": 0.08864773689595515,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 13,
+      "label": "S_q(z=13,q=3)",
+      "prime": 3,
+      "sample_signed_value": 77.64102564102589,
+      "sample_abs_scale": 1.9638408161924352,
+      "sample_ratio": 0.16780072383434796,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 13,
+      "label": "S_q(z=13,q=7)",
+      "prime": 7,
+      "sample_signed_value": 23.18135198135193,
+      "sample_abs_scale": 1.8395451038259378,
+      "sample_ratio": 0.1571802548367424,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=29)",
+      "prime": 29,
+      "sample_signed_value": 7.376736988890578,
+      "sample_abs_scale": 1.7528831146755786,
+      "sample_ratio": 0.07537021843198495,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=23)",
+      "prime": 23,
+      "sample_signed_value": 8.495765043890522,
+      "sample_abs_scale": 1.7504133393586943,
+      "sample_ratio": 0.07526402338477786,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 31,
+      "label": "S_q(z=31,q=7)",
+      "prime": 7,
+      "sample_signed_value": 17.929895226956745,
+      "sample_abs_scale": 1.4228182637230626,
+      "sample_ratio": 0.061178136994988565,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    },
+    {
+      "family": "PrimeLogSquareChannel",
+      "z": 13,
+      "label": "S_q(z=13,q=2)",
+      "prime": 2,
+      "sample_signed_value": -54.41165501165573,
+      "sample_abs_scale": 0.5478592152363367,
+      "sample_ratio": 0.046811926973905446,
+      "required_proof": "Bound prime-conditioned Möbius divisor-sum discrepancy or route failure to PDEC"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_vector_pdec_unified_obligation_router.py": "3156c1e1aefa9124f5dbcbd39bf24634103dd67db9d9a47e5ff5635f9158ad9c",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-core-channel-decomposition-router.json": "4348332181b6fec385f3475caa9333f8521b56e2705bdc610dc87e908fa5e230",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-low-overflow-edge-profile-router.json": "586cbd19ff15c98e5c81dc5b0448d76c781b47b7855dacd241c292150e7a94ae",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-coefficient-formula-split-router.json": "e9ae5080e5df364181f29c6acdff03bdb8259181f99065df89405a98be3fa2fd"
+  },
+  "next_direct_attack_target": "MöbiusDivisorSumChannelBoundsAndBoundaryLCMEdgeBoundsOrUnifiedVectorPDEC",
+  "plain_conclusion": "core 的 `S0/S_q` 通道与 tail 的 low-overflow `(d,e)` 边界通道现在共用同一个 VectorSquarefree-PDEC 义务格式：每个义务都有 family、z、label、样本尺度与待证明界。这一步不证明排斥，但切断了继续分叉：剩余只需证明 Möbius divisor-sum 通道界、boundary lcm edge 界，或排斥统一的 VectorSquarefree-PDEC。"
+}
