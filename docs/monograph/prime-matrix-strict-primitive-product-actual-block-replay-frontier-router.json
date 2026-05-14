@@ -1,0 +1,122 @@
+{
+  "actual_cold_product_block_parameter_ledger_present": false,
+  "actual_cold_product_block_replay_ledger_proved": false,
+  "actual_scan_rows": [
+    {
+      "actual_parameter_ledger_found": false,
+      "hit_count": 0,
+      "required_fields": "source_tuple_hash, P, h0, Y, registered_common_kernel",
+      "scan_type": "actual_cold_product_block_parameter_ledger_scan"
+    }
+  ],
+  "certificate_type": "prime_matrix_strict_primitive_product_actual_block_replay_frontier_router",
+  "cold_product_block_inventory_schema_closed": true,
+  "cold_product_candidate_count_identity_closed": true,
+  "cold_product_support_sparsification_beyond_tau_ledger_proved": false,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ColdProductBlockInventorySchemaClosed",
+      "meaning": "\u4ea7\u54c1\u5757\u5b57\u6bb5\u548c\u5019\u9009\u96c6\u5408\u751f\u6210\u89c4\u5219\u5df2\u7ecf\u5b9a\u4e49\u3002",
+      "proved": true,
+      "remaining": "ActualColdProductBlockReplayLedgerOrHotReturnPacketTable"
+    },
+    {
+      "closed": true,
+      "gate": "PrimitiveProjectionExecutableClosed",
+      "meaning": "\u5019\u9009 d \u5230 primitive rank profile \u7684\u6295\u5f71\u89c4\u5219\u5df2\u7ecf\u95ed\u5408\u3002",
+      "proved": true,
+      "remaining": "PrimitiveProductRankinWeightP018Comparison"
+    },
+    {
+      "closed": true,
+      "gate": "RankinFormulaAndExactFallbackSynced",
+      "meaning": "Rankin \u4e0a\u754c\u5931\u8d25\u4e0d\u518d\u7b49\u540c\u652f\u6491\u5931\u8d25\uff1b\u53ef\u7528 exact-count fallback \u6216 hot-return \u4e8c\u5206\u5904\u7406\u3002",
+      "proved": true,
+      "remaining": "ActualColdProductBlockReplayLedgerOrHotReturnPacketTable"
+    },
+    {
+      "closed": false,
+      "gate": "ActualBlockParameterLedgerPresent",
+      "meaning": "\u5f53\u524d\u8bed\u6599\u6ca1\u6709 actual source_tuple/P/h0/Y/common-kernel \u53c2\u6570\u884c\uff0c\u4e0d\u80fd\u628a\u6837\u672c\u5347\u7ea7\u4e3a\u5168\u4f53\u8bc1\u660e\u3002",
+      "proved": false,
+      "remaining": "ActualColdProductBlockReplayLedgerOrHotReturnPacketTable"
+    },
+    {
+      "closed": false,
+      "gate": "PrimitiveProductSupportRankinLedgerProved",
+      "meaning": "\u516c\u5f0f\u3001\u6295\u5f71\u548c\u4e8c\u5206\u5df2\u540c\u6b65\uff0c\u4f46\u7f3a actual replay \u8868\uff0c\u56e0\u6b64\u539f\u59cb\u4ea7\u54c1\u652f\u6491 Rankin \u95e8\u4ecd\u672a\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "ActualColdProductBlockReplayLedgerOrHotReturnPacketTable AND FiniteColdProductBlockCandidateRunnerHash"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "actual replay\u3001\u975e\u6301\u4e45\u9884\u7b97\u53cd\u8d85\u3001\u6301\u4e45 moving atom \u548c DStructure/Rankin \u4ecd\u672a\u5168\u90e8\u95ed\u5408\u3002",
+      "proved": false,
+      "remaining": "ActualColdProductBlockReplayLedgerOrHotReturnPacketTable AND SparseHistoryDemandExceedsNonpersistentSupplyBudget AND IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "direct_unconditional_contradiction_found": false,
+  "empirical_absence_not_used": true,
+  "exact_count_fallback_and_hot_return_dichotomy_closed": true,
+  "hardpoint_after_router": "ActualColdProductBlockReplayLedgerOrHotReturnPacketTable",
+  "hardpoint_before_router": "PrimitiveProductSupportRankinLedger",
+  "next_direct_attack_target": "ActualColdProductBlockReplayLedgerOrHotReturnPacketTable",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "SparseHistoryDemandExceedsNonpersistentSupplyBudget",
+    "IndependentNonterminalMovingAtomExclusionForActualNoncanonicalCleanCore",
+    "DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+  ],
+  "plain_conclusion": "`PrimitiveProductSupportRankinLedger` \u7684\u5f53\u524d\u7f3a\u53e3\u5df2\u7ecf\u4e0d\u662f\u6295\u5f71\u89c4\u5219\u6216 Rankin \u516c\u5f0f\uff1aprimitive \u6295\u5f71\u89c4\u5219\u5df2\u53ef\u6267\u884c\uff0cRankin \u6743\u91cd\u516c\u5f0f\u5df2\u95ed\u5408\uff0cRankin \u5931\u8d25\u4e5f\u5df2\u901a\u8fc7 exact-count fallback \u4e0e hot-return \u4e8c\u5206\u540c\u6b65\u3002\u771f\u6b63\u672a\u95ed\u5408\u7684\u662f actual \u4ea7\u54c1\u5757 replay\uff1a\u5f53\u524d\u8bed\u6599\u6ca1\u6709`source_tuple_hash/P/h0/Y/registered_common_kernel` \u53c2\u6570\u884c\uff0c\u4e0d\u80fd\u628a\u8bca\u65ad\u6837\u672c\u5347\u7ea7\u4e3a\u5168\u4f53\u8bc1\u660e\u3002\u56e0\u6b64\u4e0b\u4e00\u6700\u7a84\u70b9\u662f `ActualColdProductBlockReplayLedgerOrHotReturnPacketTable`\u3002",
+  "primitive_product_projection_rule_executable_hash_closed": true,
+  "primitive_product_support_rankin_ledger_proved": false,
+  "rankin_formula_and_exact_fallback_synced": true,
+  "rankin_weight_formula_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "source_hashes": {
+    "data/actual-cold-product-block-parameter-scan.json": "0053d61213e6cfeff176dc50fe3ff71bc2e44427bf6c1f22bb71459e3abf02b6",
+    "data/primitive-product-projection-sample-ledger.json": "3aa57b90781b1cbfb8a04a23fe3c22d29db27744e23c34938def21314fe0774b",
+    "data/primitive-product-rankin-p018-sample-table.json": "6ee83fd827a289762f17da0e458cc1fb7fcfbe64b862d7b1fef635133f06e551",
+    "data/primitive-product-rankin-weight-sample-ledger.json": "79d8bcd52bc3ab367484ed2666f5dbfcae80ee87b53681d41d2df50132e2e3b1",
+    "docs/monograph/prime-matrix-strict-clean-primitive-rankin-failure-exact-count-fallback-router.json": "0d36d83349f2e522b623cb21c0b644a720de17b13a9a8777b017e4be6d8f039d",
+    "docs/monograph/prime-matrix-strict-cold-product-block-inventory-router.json": "a9630947c1df0d152a5f1e9f111863792c4022494f509f6ae966b0f7957d6b1b",
+    "docs/monograph/prime-matrix-strict-cold-product-candidate-count-router.json": "664b98a29a37db7ba354f28adf9d20842bfdac7505c8803fd5cd2d9038b06175",
+    "docs/monograph/prime-matrix-strict-exact-primitive-block-count-hot-return-dichotomy-router.json": "4162412458fa176a590493f6d2e9bfec6c72169a893e81716c5b6d496ffece1e",
+    "docs/monograph/prime-matrix-strict-primitive-product-projection-rule-router.json": "4c85ccfac092bb1ef772079cbf6adaa4c1f64f7b485b8d3ed2a71e2ea67422f9",
+    "docs/monograph/prime-matrix-strict-primitive-product-rankin-weight-comparison-router.json": "2b1fa788ac82421045fe246cf635e7c945c68d6dee6b67a5e418c134120e940f",
+    "docs/monograph/prime-matrix-strict-terminal-hot-core-return-frontier-router.json": "bb4818efdb6673899bc0e2eb86174244ef0f80568301c8ca34a57dc380bda909",
+    "experiments/prime_matrix_strict_primitive_product_actual_block_replay_frontier_router.py": "13e62a4432a0b3056d88e0c7fd28019032449105db3836b6ecd2f5ccb2bc7ed1"
+  },
+  "status": "primitive_product_rankin_synced_to_actual_block_replay_open",
+  "theorem_rows": [
+    {
+      "name": "block_inventory_schema",
+      "statement": "block_id, source tuple, cold key, dyadic interval, candidate rule, and return filter are defined.",
+      "status": "closed"
+    },
+    {
+      "name": "primitive_projection_rule",
+      "statement": "candidate d is projected to an order-free primitive rank profile after common-kernel filtering.",
+      "status": "closed"
+    },
+    {
+      "name": "rankin_weight_formula",
+      "statement": "two-sided dyadic Rankin/Euler weight bounds are available but need actual P,h0,Y rows.",
+      "status": "closed_formula_only"
+    },
+    {
+      "name": "exact_count_hot_return_dichotomy",
+      "statement": "if exact block count exceeds P^0.18, the block is a hot-return packet; otherwise it is exact_count_pass.",
+      "status": "closed_logic_only"
+    },
+    {
+      "name": "actual_block_replay_ledger",
+      "statement": "no actual source_tuple/P/h0/Y/common-kernel replay ledger is present in the current corpus.",
+      "status": "open"
+    }
+  ]
+}
