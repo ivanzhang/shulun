@@ -1,0 +1,71 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_singleton_residue_gate_router",
+  "status": "z61_singleton_interval_gate_reduced_to_short_residue_gate_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_source_fiber_singleton_interval_router",
+  "phase_modulus": 28842,
+  "phase_condition": "b ≡ 0 (mod 28842)",
+  "rows": [
+    {
+      "phase_quotient": 1,
+      "target_cell_sign": "negative",
+      "p": 36739,
+      "q": 53,
+      "a": 883,
+      "b": 28842,
+      "modulus_bq": 1528626,
+      "delta_abq_minus_p2": 22637,
+      "residue_p2_mod_bq": 1505989,
+      "expected_negative_delta_residue": 1505989,
+      "residue_identity_closed": true,
+      "short_delta_bound_closed": true,
+      "residue_gate_statement": "p^2 ≡ 1505989 (mod 1528626)"
+    },
+    {
+      "phase_quotient": 2,
+      "target_cell_sign": "positive",
+      "p": 200003,
+      "q": 71,
+      "a": 9767,
+      "b": 57684,
+      "modulus_bq": 4095564,
+      "delta_abq_minus_p2": 173579,
+      "residue_p2_mod_bq": 3921985,
+      "expected_negative_delta_residue": 3921985,
+      "residue_identity_closed": true,
+      "short_delta_bound_closed": true,
+      "residue_gate_statement": "p^2 ≡ 3921985 (mod 4095564)"
+    },
+    {
+      "phase_quotient": 4,
+      "target_cell_sign": "positive",
+      "p": 200003,
+      "q": 37,
+      "a": 9371,
+      "b": 115368,
+      "modulus_bq": 4268616,
+      "delta_abq_minus_p2": 527,
+      "residue_p2_mod_bq": 4268089,
+      "expected_negative_delta_residue": 4268089,
+      "residue_identity_closed": true,
+      "short_delta_bound_closed": true,
+      "residue_gate_statement": "p^2 ≡ 4268089 (mod 4268616)"
+    }
+  ],
+  "all_residue_gates_closed": true,
+  "all_short_delta_bounds_closed": true,
+  "positive_residue_gate_count": 2,
+  "negative_residue_gate_count": 1,
+  "positive_minus_negative_residue_gate_count": 1,
+  "singleton_residue_gate_signed_count_balance_proved": false,
+  "residue_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_singleton_residue_gate_router.py": "e6fcedaa0304625a420acd4c990fcdcb2fc40c6e3995bfd8a1c4984e47029e8a",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-source-fiber-singleton-interval-router.json": "aecc57280136fb8f2bee303ab38ca4ca52c942bc840f17bb2f2c1f6e725a4a76"
+  },
+  "next_direct_attack_target": "SingletonResidueGateSignedCountBalanceOrResiduePDEC",
+  "plain_conclusion": "singleton interval gate 已等价改写为短残基门：每条源纤维满足 `p^2 ≡ -delta (mod bq)` 且 `0<delta<p`。因此剩余问题不再是区间宽度，而是这些短残基门的有符号计数平衡，或将持续残基偏斜登记为 Residue-PDEC。"
+}

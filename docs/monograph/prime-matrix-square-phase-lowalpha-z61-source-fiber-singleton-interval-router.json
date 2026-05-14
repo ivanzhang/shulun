@@ -1,0 +1,137 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_source_fiber_singleton_interval_router",
+  "status": "z61_source_fiber_ladder_reduced_to_singleton_interval_gate_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_prefix_gate_source_fiber_router",
+  "phase_modulus": 28842,
+  "phase_condition": "b ≡ 0 (mod 28842)",
+  "rows": [
+    {
+      "phase_quotient": 1,
+      "target_cell_sign": "negative",
+      "p": 36739,
+      "q": 53,
+      "a": 883,
+      "b": 28842,
+      "modulus_bq": 1528626,
+      "product_abq": 1349776758,
+      "left_slack_abq_minus_p2": 22637,
+      "right_slack_p2_plus_p_minus_abq": 14102,
+      "left_slack_over_p": 0.6161572171262146,
+      "right_slack_over_p": 0.38384278287378537,
+      "a_from_floor_formula": 883,
+      "a_floor_formula_closed": true,
+      "a_interval_width": 0.024034001776758997,
+      "a_interval_width_below_one": true,
+      "raw_a_interval": [
+        883,
+        883
+      ],
+      "valid_a_interval": [
+        883,
+        883
+      ],
+      "valid_a_interval_singleton": true,
+      "n": 46799,
+      "n_interval": [
+        46799,
+        46799
+      ],
+      "n_interval_capacity": 1,
+      "n_in_interval": true,
+      "prime_a": true,
+      "prime_b": false,
+      "singleton_interval_gate_closed": true
+    },
+    {
+      "phase_quotient": 2,
+      "target_cell_sign": "positive",
+      "p": 200003,
+      "q": 71,
+      "a": 9767,
+      "b": 57684,
+      "modulus_bq": 4095564,
+      "product_abq": 40001373588,
+      "left_slack_abq_minus_p2": 173579,
+      "right_slack_p2_plus_p_minus_abq": 26424,
+      "left_slack_over_p": 0.8678819817702734,
+      "right_slack_over_p": 0.13211801822972655,
+      "a_from_floor_formula": 9767,
+      "a_floor_formula_closed": true,
+      "a_interval_width": 0.048834055578181663,
+      "a_interval_width_below_one": true,
+      "raw_a_interval": [
+        9767,
+        9767
+      ],
+      "valid_a_interval": [
+        9767,
+        9767
+      ],
+      "valid_a_interval_singleton": true,
+      "n": 693457,
+      "n_interval": [
+        693454,
+        693457
+      ],
+      "n_interval_capacity": 4,
+      "n_in_interval": true,
+      "prime_a": true,
+      "prime_b": false,
+      "singleton_interval_gate_closed": true
+    },
+    {
+      "phase_quotient": 4,
+      "target_cell_sign": "positive",
+      "p": 200003,
+      "q": 37,
+      "a": 9371,
+      "b": 115368,
+      "modulus_bq": 4268616,
+      "product_abq": 40001200536,
+      "left_slack_abq_minus_p2": 527,
+      "right_slack_p2_plus_p_minus_abq": 199476,
+      "left_slack_over_p": 0.0026349604755928663,
+      "right_slack_over_p": 0.9973650395244071,
+      "a_from_floor_formula": 9371,
+      "a_floor_formula_closed": true,
+      "a_interval_width": 0.04685429656825538,
+      "a_interval_width_below_one": true,
+      "raw_a_interval": [
+        9371,
+        9371
+      ],
+      "valid_a_interval": [
+        9371,
+        9371
+      ],
+      "valid_a_interval_singleton": true,
+      "n": 346727,
+      "n_interval": [
+        346727,
+        346728
+      ],
+      "n_interval_capacity": 2,
+      "n_in_interval": true,
+      "prime_a": true,
+      "prime_b": false,
+      "singleton_interval_gate_closed": true
+    }
+  ],
+  "all_source_fibers_are_singleton_interval_gates": true,
+  "max_a_interval_width": 0.048834055578181663,
+  "positive_singleton_interval_count": 2,
+  "negative_singleton_interval_count": 1,
+  "positive_minus_negative_singleton_interval_count": 1,
+  "singleton_interval_residue_gate_balance_proved": false,
+  "interval_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_source_fiber_singleton_interval_router.py": "9852a112a724f13489cbaab29eae84aad7edeac987535f7178e562480bd6151f",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-prefix-gate-source-fiber-router.json": "3d7220fa3e430a443bee11837833f2ecb06a5ebde3c2bf5d6856024924e9e86e"
+  },
+  "next_direct_attack_target": "SingletonIntervalResidueGateBalanceOrIntervalPDEC",
+  "plain_conclusion": "三条 PrefixGate 源纤维均由同一个 singleton interval gate 产生：`a=floor(p^2/(bq))+1`，且 `0<abq-p^2<p`。所有 `a` 区间宽度都小于 `1`，实际最大仅约 `0.048834`；因此剩余硬点可改写为这些短窗 singleton 残基门的有符号计数平衡，或登记 Interval-PDEC。"
+}
