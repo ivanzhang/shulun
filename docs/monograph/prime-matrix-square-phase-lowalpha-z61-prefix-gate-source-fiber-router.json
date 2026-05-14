@@ -1,0 +1,123 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_prefix_gate_source_fiber_router",
+  "status": "z61_quotient_ladder_reduced_to_singleton_prime_a_source_fibers_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_prefix_gate_quotient_ladder_router",
+  "phase_modulus": 28842,
+  "phase_condition": "b ≡ 0 (mod 28842)",
+  "source_rows": [
+    {
+      "phase_quotient": 1,
+      "target_cell_sign": "negative",
+      "p": 36739,
+      "b_value": 28842,
+      "source_candidate_count": 1,
+      "source_candidates": [
+        {
+          "q": 53,
+          "a": 883,
+          "b": 28842,
+          "n": 46799,
+          "prime_a": true,
+          "prime_b": false,
+          "valid_a_interval": [
+            883,
+            883
+          ],
+          "raw_a_interval": [
+            883,
+            883
+          ],
+          "singleton_ok": true,
+          "a_interval_width": 0.024034001776758997,
+          "n_interval": [
+            46799,
+            46799
+          ]
+        }
+      ],
+      "unique_singleton_prime_a_source_closed": true
+    },
+    {
+      "phase_quotient": 2,
+      "target_cell_sign": "positive",
+      "p": 200003,
+      "b_value": 57684,
+      "source_candidate_count": 1,
+      "source_candidates": [
+        {
+          "q": 71,
+          "a": 9767,
+          "b": 57684,
+          "n": 693457,
+          "prime_a": true,
+          "prime_b": false,
+          "valid_a_interval": [
+            9767,
+            9767
+          ],
+          "raw_a_interval": [
+            9767,
+            9767
+          ],
+          "singleton_ok": true,
+          "a_interval_width": 0.048834055578181663,
+          "n_interval": [
+            693454,
+            693457
+          ]
+        }
+      ],
+      "unique_singleton_prime_a_source_closed": true
+    },
+    {
+      "phase_quotient": 4,
+      "target_cell_sign": "positive",
+      "p": 200003,
+      "b_value": 115368,
+      "source_candidate_count": 1,
+      "source_candidates": [
+        {
+          "q": 37,
+          "a": 9371,
+          "b": 115368,
+          "n": 346727,
+          "prime_a": true,
+          "prime_b": false,
+          "valid_a_interval": [
+            9371,
+            9371
+          ],
+          "raw_a_interval": [
+            9371,
+            9371
+          ],
+          "singleton_ok": true,
+          "a_interval_width": 0.04685429656825538,
+          "n_interval": [
+            346727,
+            346728
+          ]
+        }
+      ],
+      "unique_singleton_prime_a_source_closed": true
+    }
+  ],
+  "source_fiber_count": 3,
+  "all_quotient_hits_have_unique_singleton_prime_a_source": true,
+  "positive_source_fiber_count": 2,
+  "negative_source_fiber_count": 1,
+  "positive_minus_negative_source_fiber_count": 1,
+  "source_fiber_ladder_identity_closed": true,
+  "singleton_prime_a_fiber_ladder_balance_proved": false,
+  "fiber_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_prefix_gate_source_fiber_router.py": "34c08c16ab705b114964a033c6985542e50e88f84790300a08fc99e1063d1baf",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-prefix-gate-quotient-ladder-router.json": "e643292f87a63f8164b083991c9166f865e6e1b499dc6a3a9817cf6fd9364387"
+  },
+  "next_direct_attack_target": "SingletonPrimeAFiberLadderBalanceOrFiberPDEC",
+  "plain_conclusion": "PrefixGate quotient ladder 的三个相位命中均来自唯一 prime-a singleton 源纤维，且这些 `b` 都是 composite prime-b 失败点。负侧有一条源纤维，正侧有两条源纤维。因此 dyadic quotient count balance 可进一步改写为 singleton prime-a 源纤维配对/容量问题，或登记 Fiber-PDEC。"
+}
