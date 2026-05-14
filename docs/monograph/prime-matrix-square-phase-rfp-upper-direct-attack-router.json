@@ -1,0 +1,155 @@
+{
+  "certificate_type": "prime_matrix_square_phase_rfp_upper_direct_attack_router",
+  "status": "rfp_upper_reduced_to_area_carry_selberg_reciprocal_phase_or_pdec_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "rfp_target_imported": true,
+  "three_curve_prime_pair_reduction_closed": true,
+  "hyperbolic_strip_embedding_closed": true,
+  "rfp_area_carry_bound_proved": false,
+  "carry_discrepancy_endpoint_reciprocal_phase_proved": false,
+  "rfp_selberg_constant_proved": false,
+  "rfp_upper_current_corpus_proved": false,
+  "square_phase_dimension_gap_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "RFP-Upper",
+  "hardpoint_after_router": "RFP-AreaCarryBound AND CarryDiscrepancyEndpointReciprocalPhaseBound AND RFP-SelbergConstantLedger OR PDEC/SAE defects",
+  "next_direct_attack_target": "CarryDiscrepancyEndpointReciprocalPhaseBound",
+  "parallel_attack_targets": [
+    "RFP-AreaCarryBound",
+    "RFP-SelbergConstantLedger",
+    "ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE",
+    "HyperbolicDiscFailurePDEC",
+    "LDG-Lower"
+  ],
+  "formula_rows": [
+    {
+      "name": "prime_pair_cover",
+      "formula": "B(P)=#{(ell,m): y<ell<P<m, ell,m prime, P^2<ell*m<P^2+P}",
+      "status": "closed_definition"
+    },
+    {
+      "name": "three_curves",
+      "formula": "m=floor(P^2/ell)+s, s in {1,2,3}",
+      "status": "closed_reduction"
+    },
+    {
+      "name": "hyperbolic_strip",
+      "formula": "R_P={(a,b): y<a<P, P<b, P^2<ab<P^2+P}",
+      "status": "closed_embedding"
+    },
+    {
+      "name": "rfp_target",
+      "formula": "B(P)<=1.50 P/log^2 P",
+      "status": "open_upper_bound"
+    },
+    {
+      "name": "area_target",
+      "formula": "X(P)=|R_P|<=1.02P for P>=2003",
+      "status": "open_tail_or_pdec"
+    },
+    {
+      "name": "carry_discrepancy_target",
+      "formula": "D(P)<=1.98 sqrt(P) for P>=10007",
+      "status": "open_endpoint_reciprocal_phase"
+    }
+  ],
+  "obstruction_rows": [
+    {
+      "obstruction": "two-dimensional sieve constant",
+      "detail": "需要二维 Selberg/Brun 权常数加边界误差压到 1.50。",
+      "route": "RFP-SelbergConstantLedger"
+    },
+    {
+      "obstruction": "hyperbolic floor area",
+      "detail": "窄带面积 X(P) 的 1.02P 尾段界等价于进位计数控制。",
+      "route": "RFP-AreaCarryBound"
+    },
+    {
+      "obstruction": "carry discrepancy",
+      "detail": "进位偏差 D(P) 是端点倒数相位低频和；过大即 HyperbolicDisc/PDEC。",
+      "route": "CarryDiscrepancyEndpointReciprocalPhaseBound"
+    },
+    {
+      "obstruction": "tail prime-pair spike",
+      "detail": "若三曲线素-素点超过二维筛预算，必须表现为短窗素数或尾锚异常集中。",
+      "route": "ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "RFPTargetImportedFromDimensionGap",
+      "closed": true,
+      "proved": true,
+      "meaning": "维数差闭合需要 RFP-Upper 控制一尾素-素覆盖数。",
+      "remaining": "RFP-Upper"
+    },
+    {
+      "gate": "ThreeCurvePrimePairReductionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "一尾覆盖已压成三条倒数地板素-素曲线。",
+      "remaining": "RFP-SelbergConstantLedger"
+    },
+    {
+      "gate": "HyperbolicStripEmbeddingClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "B(P) 是双曲窄带 R_P 中两个坐标同为素数的点数。",
+      "remaining": "RFP-SelbergConstantLedger"
+    },
+    {
+      "gate": "RFPAreaCarryBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "P>=2003 的 X(P)<=1.02P 尚未作者侧证明；过密需路由到 HyperbolicDisc/PDEC。",
+      "remaining": "RFP-AreaCarryBound OR HyperbolicDiscFailurePDEC"
+    },
+    {
+      "gate": "CarryDiscrepancyEndpointReciprocalPhaseProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "D(P)<=1.98sqrt(P) 尚未证明；过大即端点倒数相位低频集中。",
+      "remaining": "CarryDiscrepancyEndpointReciprocalPhaseBound OR HyperbolicDiscFailurePDEC"
+    },
+    {
+      "gate": "RFPSelbergConstantProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "二维上筛主常数、边界误差和离散误差尚未压入 1.50。",
+      "remaining": "RFP-SelbergConstantLedger OR ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE"
+    },
+    {
+      "gate": "RFPUpperCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "RFP 已精确拆分，但面积、倒数相位和 Selberg 常数未同时闭合。",
+      "remaining": "RFP-AreaCarryBound AND CarryDiscrepancyEndpointReciprocalPhaseBound AND RFP-SelbergConstantLedger"
+    },
+    {
+      "gate": "SquarePhaseDimensionGapClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "即便 RFP 闭合，仍需并行 LDG-Lower。",
+      "remaining": "LDG-Lower AND RFP-Upper"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "没有得到全局无条件终端矛盾。",
+      "remaining": "(LDG-Lower AND RFP-Upper) OR NonFinalTailPDECSAEBudgetAmplificationOrAlternativeContradiction"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_rfp_upper_direct_attack_router.py": "952f25e2df74a4a47195208aba87b7855ed9a937e087d47ff8cccdfdfc14e3f8",
+    "docs/monograph/prime-matrix-square-phase-dimension-gap-attack-router.json": "447849c4b4f88cb1b930e20183d7060acc4fc85ed3d46759930093af03d1b467",
+    "docs/monograph/prime-matrix-diagonal-postsquare-rfp-selberg-route.md": "e94ee4bb9b45dd441f151c88b99c23ebcf60b7c618d1c293c739a9fa20eba147",
+    "docs/monograph/prime-matrix-diagonal-postsquare-carry-discrepancy-pdec-route.md": "387ce4c609d73b447c374db4b53986a72b2655427cbc6d64c449eaee9d19f1e5",
+    "docs/monograph/prime-matrix-diagonal-postsquare-carry-reciprocal-frequency.md": "4d6f95b7c545e525d9ae34bc3065d11c807ef752ddefdc3186b344979c7caf78",
+    "docs/monograph/prime-matrix-diagonal-postsquare-endpoint-reciprocal-osc-hard-attack.md": "7273db44f356102efe52596633741bce672c0fd9317425fee8bf69503db3dd38"
+  },
+  "plain_conclusion": "`RFP-Upper` 已下钻为三块具体任务：双曲窄带面积/进位计数、端点倒数相位 CarryDiscrepancy、二维 Selberg 上筛常数。三条倒数地板素-素曲线的几何表示已闭合；若 `B(P)` 超过 `1.50P/log^2P`，失败不能是无名现象，只能表现为面积进位过密、端点倒数相位低频集中，或尾锚素对异常峰值，并进入 PDEC/SAE。"
+}
