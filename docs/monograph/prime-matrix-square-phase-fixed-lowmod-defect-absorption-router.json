@@ -1,0 +1,213 @@
+{
+  "certificate_type": "prime_matrix_square_phase_fixed_lowmod_defect_absorption_router",
+  "status": "fixed_lowmod_prefix_defect_absorbed_moving_cutoff_defect_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "fixed_lowmod_prefix_exact_crt_counting_closed": true,
+  "fixed_lowmod_persistent_defect_absorbed": true,
+  "moving_cutoff_defect_is_necessary": true,
+  "negative_square_phase_defect_excluded": false,
+  "row_column_unconditional_closed": false,
+  "margin_c_used_for_threshold_table": 0.01,
+  "sample_rows": [
+    {
+      "d": 5,
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "modulus": 30,
+      "phi": 8,
+      "density": 0.26666666666666666,
+      "abs_error_bound": 30,
+      "threshold_for_margin_c": 31028
+    },
+    {
+      "d": 7,
+      "primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "modulus": 210,
+      "phi": 48,
+      "density": 0.22857142857142856,
+      "abs_error_bound": 210,
+      "threshold_for_margin_c": 261998
+    },
+    {
+      "d": 11,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "modulus": 2310,
+      "phi": 480,
+      "density": 0.2077922077922078,
+      "abs_error_bound": 2310,
+      "threshold_for_margin_c": 3479409
+    },
+    {
+      "d": 13,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "modulus": 30030,
+      "phi": 5760,
+      "density": 0.1918081918081918,
+      "abs_error_bound": 30030,
+      "threshold_for_margin_c": 53435331
+    },
+    {
+      "d": 17,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "modulus": 510510,
+      "phi": 92160,
+      "density": 0.18052535699594524,
+      "abs_error_bound": 510510,
+      "threshold_for_margin_c": 1060964564
+    },
+    {
+      "d": 19,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "modulus": 9699690,
+      "phi": 1658880,
+      "density": 0.17102402241721126,
+      "abs_error_bound": 9699690,
+      "threshold_for_margin_c": 23148500131
+    },
+    {
+      "d": 23,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "modulus": 223092870,
+      "phi": 36495360,
+      "density": 0.16358819535559338,
+      "abs_error_bound": 223092870,
+      "threshold_for_margin_c": 605225685680
+    },
+    {
+      "d": 29,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29
+      ],
+      "modulus": 6469693230,
+      "phi": 1021870080,
+      "density": 0.15794722310195225,
+      "abs_error_bound": 6469693230,
+      "threshold_for_margin_c": 19808340104455
+    },
+    {
+      "d": 31,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "modulus": 200560490130,
+      "phi": 30656102400,
+      "density": 0.15285215138898603,
+      "abs_error_bound": 200560490130,
+      "threshold_for_margin_c": 685127181413609
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "FixedLowModPrefixExactCRTCountingClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "固定 D 时，避开 q<=D 的负平方相位列数等于完整 CRT 周期计数加 O(M_D)。",
+      "remaining": "none"
+    },
+    {
+      "gate": "FixedLowModPersistentDefectAbsorbed",
+      "closed": true,
+      "proved": true,
+      "meaning": "对任何固定 D，O(M_D) 误差最终小于任意 cP/logP 级亏损；低范围只能进有限 SAE。",
+      "remaining": "finite threshold for chosen D"
+    },
+    {
+      "gate": "MovingCutoffDefectIsNecessary",
+      "closed": true,
+      "proved": false,
+      "meaning": "若 LDG 亏损无限持续，不能归咎于固定低模周期；必须在 D 随 P 增长的 moving cutoff 或尾筛层发生。",
+      "remaining": "MovingCutoffNegativeSquarePhaseDefectOrTailSievePDEC"
+    },
+    {
+      "gate": "NegativeSquarePhaseDefectExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "moving cutoff 负平方相位亏损尚未排斥。",
+      "remaining": "MovingCutoffNegativeSquarePhaseDefectOrTailSievePDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未排除 LDG moving defect 与 RFP reciprocal-floor defect。",
+      "remaining": "moving LDG defect + RFP defect"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_fixed_lowmod_defect_absorption_router.py": "d0a85d7ddb90455df0c8ac818cba49020fd9c3364f904f2a1bd35e01c7c1b7c4",
+    "docs/monograph/prime-matrix-square-phase-low-skeleton-quadratic-defect-router.json": "1262152377e4b7477fef34bd370861bd1829bb06a3b964c19dc833db2cb2128d",
+    "docs/monograph/prime-matrix-square-phase-ldg-mertens-product-margin-router.json": "4adf2c1f55f8d273de3261b7662a8bfe6cd216be6add4e30e1af2a079b1871b3",
+    "docs/monograph/prime-matrix-diagonal-postsquare-ldg-lower-pdec-route.md": "8e9a5381b104901ab29fd2734fd159bb1a9ddff93907e750834283f970ebf92c"
+  },
+  "next_direct_attack_target": "MovingCutoffNegativeSquarePhaseDefectOrTailSievePDEC",
+  "plain_conclusion": "固定低模前缀不能是 LDG 持续亏损的终端来源。对任意固定 cutoff D，设 M_D=prod_{q<=D}q，则避开全部 `-P^2 mod q` 的列数是 `floor((P-1)/M_D)phi(M_D)+O(M_D)`，因此固定前缀偏差为 O(M_D)。任何 `P/logP` 级持续亏损最终都必须来自随 P 增长的 moving cutoff 或尾筛层，而不是某个固定 CRT 周期。该 moving defect 尚未排斥。"
+}
