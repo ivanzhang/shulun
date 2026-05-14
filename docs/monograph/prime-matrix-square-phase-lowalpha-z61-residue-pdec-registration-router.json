@@ -1,0 +1,64 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_residue_pdec_registration_router",
+  "status": "z61_singleton_residue_pdec_registered_not_excluded",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_singleton_residue_gate_router",
+  "residue_pdec_records": [
+    {
+      "formal_unit_key": "z61|singleton-residue|sign=negative|p=36739|q=53|b=28842|mod=1528626|res=1505989",
+      "target_cell_sign": "negative",
+      "phase_quotient": 1,
+      "p": 36739,
+      "q": 53,
+      "a": 883,
+      "b": 28842,
+      "modulus": 1528626,
+      "residue": 1505989,
+      "delta": 22637,
+      "short_delta_condition": "0 < 22637 < 36739",
+      "residue_condition": "p^2 ≡ 1505989 (mod 1528626)"
+    },
+    {
+      "formal_unit_key": "z61|singleton-residue|sign=positive|p=200003|q=71|b=57684|mod=4095564|res=3921985",
+      "target_cell_sign": "positive",
+      "phase_quotient": 2,
+      "p": 200003,
+      "q": 71,
+      "a": 9767,
+      "b": 57684,
+      "modulus": 4095564,
+      "residue": 3921985,
+      "delta": 173579,
+      "short_delta_condition": "0 < 173579 < 200003",
+      "residue_condition": "p^2 ≡ 3921985 (mod 4095564)"
+    },
+    {
+      "formal_unit_key": "z61|singleton-residue|sign=positive|p=200003|q=37|b=115368|mod=4268616|res=4268089",
+      "target_cell_sign": "positive",
+      "phase_quotient": 4,
+      "p": 200003,
+      "q": 37,
+      "a": 9371,
+      "b": 115368,
+      "modulus": 4268616,
+      "residue": 4268089,
+      "delta": 527,
+      "short_delta_condition": "0 < 527 < 200003",
+      "residue_condition": "p^2 ≡ 4268089 (mod 4268616)"
+    }
+  ],
+  "negative_record_count": 1,
+  "positive_record_count": 2,
+  "residue_pdec_registration_closed": true,
+  "residue_pdec_excluded": false,
+  "singleton_residue_signed_count_balance_proved": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_residue_pdec_registration_router.py": "647fa163725dc19e2969e3ef857ad547fb74b9b07444680048bf4f4124b6847e",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-singleton-residue-gate-router.json": "fea2eedf1322b16fc049dbd61e9afd30ca2b28459dff222cf2e25e28656d499f"
+  },
+  "next_direct_attack_target": "ResiduePDECExclusionOrSingletonResidueSignedCountBalance",
+  "plain_conclusion": "Singleton residue gate 分支已登记成三个短残基 PDEC 对象：一条负记录、两条正记录。登记闭合的是失败对象的形式化；仍需排斥 Residue-PDEC，或证明 singleton residue signed count balance。"
+}
