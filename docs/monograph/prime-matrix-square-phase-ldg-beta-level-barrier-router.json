@@ -1,0 +1,139 @@
+{
+  "certificate_type": "prime_matrix_square_phase_ldg_beta_level_barrier_router",
+  "status": "ldg_beta_sieve_level_barrier_identified_near_full_rough_lower_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "ldg_beta_target_imported": true,
+  "alpha043_beta_package_applicable_to_ldg": false,
+  "standard_linear_lower_sieve_positive_at_d_equals_p": false,
+  "required_level_compatible_with_length_p": false,
+  "square_phase_beta_sieve_remainder_bound_replaced": true,
+  "ldg_lower_current_corpus_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "SquarePhaseBetaSieveRemainderBound",
+  "hardpoint_after_router": "PostSquareNearFullRoughSkeletonLowerBound OR LowSkeletonDeficitPDECOrSAE",
+  "next_direct_attack_target": "PostSquareNearFullRoughSkeletonLowerBound",
+  "parallel_attack_targets": [
+    "LowSkeletonDeficitPDECOrSAE",
+    "RFP-Upper",
+    "NonFinalTailPDECSAEBudgetAmplificationOrAlternativeContradiction"
+  ],
+  "level_sample_rows": [
+    {
+      "p": 2003,
+      "z_approx": 736.8625206663991,
+      "s_at_D_equals_P": 1.1514600444838234,
+      "linear_lower_positive": false,
+      "D_needed_for_s_gt_2": 542966.3743628394,
+      "D_needed_over_P": 271.0765723229353
+    },
+    {
+      "p": 10007,
+      "z_approx": 3681.3695678026234,
+      "s_at_D_equals_P": 1.1217872503997062,
+      "linear_lower_positive": false,
+      "D_needed_for_s_gt_2": 13552481.894743273,
+      "D_needed_over_P": 1354.300179348783
+    },
+    {
+      "p": 100000,
+      "z_approx": 36787.94411714424,
+      "s_at_D_equals_P": 1.0951210016024624,
+      "linear_lower_positive": false,
+      "D_needed_for_s_gt_2": 1353352832.3661273,
+      "D_needed_over_P": 13533.528323661272
+    },
+    {
+      "p": 1000000,
+      "z_approx": 367879.44117144233,
+      "s_at_D_equals_P": 1.0780304456445198,
+      "linear_lower_positive": false,
+      "D_needed_for_s_gt_2": 135335283236.6127,
+      "D_needed_over_P": 135335.2832366127
+    }
+  ],
+  "barrier_rows": [
+    {
+      "name": "alpha043_package_mismatch",
+      "statement": "已有 beta-sieve 包使用 z=P^0.43, D=P, s=2.325...；LDG 使用 z=P/e。",
+      "effect": "不能把旧 0.43 粗骨架下界直接导入 LDG。"
+    },
+    {
+      "name": "linear_sieve_zero_region",
+      "statement": "一维线性下筛的正主系数需要 s=logD/logz>2；s<=2 时 lower function 为 0。",
+      "effect": "取 D=P、z=P/e 时 s->1，标准下筛不给正下界。"
+    },
+    {
+      "name": "required_level_too_high",
+      "statement": "若 z=P/e，要使 s>2 至少需要 D>z^2≈P^2/e^2。",
+      "effect": "这远超过长度 P 的平凡分布层级，绝对 floor 余项会吞掉主项。"
+    },
+    {
+      "name": "cutoff_relaxation_breaks_tail_identity",
+      "statement": "把 z 降到 P^0.43 可恢复 beta-sieve，但多尾结构回来，三曲线素对 B(P) 不再是同一对象。",
+      "effect": "会离开当前 square-phase 维数差路线，必须转入非 final-tail 预算/PDEC 体系。"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "LDGBetaTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层把 LDG 暂压成 beta-sieve 余项；本步检查该适配是否合法。",
+      "remaining": "SquarePhaseBetaSieveRemainderBound"
+    },
+    {
+      "gate": "Alpha043BetaPackageApplicableToLDG",
+      "closed": false,
+      "proved": false,
+      "meaning": "LDG 的筛阈值是 P/e，不是 P^0.43；旧 beta 包参数不匹配。",
+      "remaining": "PostSquareNearFullRoughSkeletonLowerBound"
+    },
+    {
+      "gate": "StandardLinearLowerSievePositiveAtDEqualsP",
+      "closed": false,
+      "proved": false,
+      "meaning": "D=P、z=P/e 给 s≈1<2，线性下筛主系数为零。",
+      "remaining": "need D>z^2 or new structure"
+    },
+    {
+      "gate": "RequiredLevelCompatibleWithLengthP",
+      "closed": false,
+      "proved": false,
+      "meaning": "D>z^2≈P^2/e^2 远超长度 P 的可控 floor 余项层级。",
+      "remaining": "PostSquareNearFullRoughSkeletonLowerBound"
+    },
+    {
+      "gate": "SquarePhaseBetaSieveRemainderBoundReplaced",
+      "closed": true,
+      "proved": false,
+      "meaning": "旧目标应替换为近全阈值粗骨架下界，或失败进入低骨架 PDEC。",
+      "remaining": "PostSquareNearFullRoughSkeletonLowerBound OR LowSkeletonDeficitPDECOrSAE"
+    },
+    {
+      "gate": "LDGLowerCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "LDG 仍未闭合；当前最窄点比 beta 余项更强，是 P/e 阈值的短区间 rough 下界。",
+      "remaining": "PostSquareNearFullRoughSkeletonLowerBound OR LowSkeletonDeficitPDECOrSAE"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "没有得到全局无条件终端矛盾。",
+      "remaining": "(LDG-Lower AND RFP-Upper) OR NonFinalTailPDECSAEBudgetAmplificationOrAlternativeContradiction"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_ldg_beta_level_barrier_router.py": "318791f084a198d96e13a6fabe88a8519f71dc84a90e4e84fb100248bd6dcd8d",
+    "docs/monograph/prime-matrix-square-phase-ldg-lower-direct-attack-router.json": "fa9905a4a06b4150ba3fca3bdb757b19328df4d2c081709956f810dacdbfc7a7",
+    "docs/monograph/prime-matrix-square-phase-dimension-gap-attack-router.json": "447849c4b4f88cb1b930e20183d7060acc4fc85ed3d46759930093af03d1b467",
+    "docs/monograph/prime-matrix-beta-sieve-lower-bound-dominance-router.json": "ba91e91d25b9525c2f27748a46bc49dfdde2dadb5b073ee78d5044f3494d6420",
+    "docs/monograph/prime-matrix-b3-continuous-beta-sieve-surplus-router.json": "f890f23fc5f9a4820fbe2b1153efc03e071afcc60afaf518b1934132c8f6f66d",
+    "docs/monograph/prime-matrix-linear-sieve-tail-remainder-gap-router.md": "1d513d2ed43de02f00a09682f467ae94b93e43394a3cd122012ed197f2b88f75"
+  },
+  "plain_conclusion": "`SquarePhaseBetaSieveRemainderBound` 不能按旧 alpha=0.43 beta-sieve 包直接关闭 LDG。LDG 的低筛阈值是 `z=P/e`；若分布层级只到 `D=P`，则 `s=logD/logz` 接近 `1`，处在线性下筛正主系数为零的区域。要让标准下筛产生正主项需 `D>z^2≈P^2/e^2`，这远超长度 `P` 的可控层级。因此真正剩余应改写为 `PostSquareNearFullRoughSkeletonLowerBound`，或证明 `G(P)<0.48P/logP` 会产生 `LowSkeletonDeficit/PDEC`。"
+}
