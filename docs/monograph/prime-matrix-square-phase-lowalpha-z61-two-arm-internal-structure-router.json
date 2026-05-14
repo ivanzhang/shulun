@@ -1,0 +1,191 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_two_arm_internal_structure_router",
+  "status": "z61_two_arm_cover_split_into_single_target_and_exit_arm_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "p_list": [
+    10007,
+    36739,
+    83561,
+    200003
+  ],
+  "z": 61,
+  "unbalanced_residual_needed_ratio": 0.03719958956760396,
+  "unique_five_cell_cover_credit_ratio": 0.03850932862998613,
+  "arm_count": 2,
+  "single_target_arm_count": 1,
+  "exit_arm_count": 1,
+  "single_target_plus_exit_arm_schema_materialized": true,
+  "single_target_arm_and_exit_arm_invariant_proved": false,
+  "arm_structure_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "arm_rows": [
+    {
+      "positive_p": 36739,
+      "credit_ratio": 0.020224126084528685,
+      "target_count": 1,
+      "pair_count": 1,
+      "is_single_target_arm": true,
+      "has_exit_target": false,
+      "pair_rows": [
+        {
+          "pair_key": "36739->200003",
+          "credit_ratio": 0.020224126084528685,
+          "share_of_arm": 1.0
+        }
+      ],
+      "target_rows": [
+        {
+          "negative_p": 200003,
+          "credit_ratio": 0.020224126084528685,
+          "share_of_arm": 1.0
+        }
+      ],
+      "shell_rows": [
+        {
+          "shell": "(2D,4D]",
+          "credit_ratio": 0.01149179090337464,
+          "share_of_arm": 0.5682218779364603
+        },
+        {
+          "shell": "(4D,8D]",
+          "credit_ratio": 0.008732335181154044,
+          "share_of_arm": 0.4317781220635397
+        }
+      ],
+      "omega_rows": [
+        {
+          "omega": 3,
+          "credit_ratio": 0.01149179090337464,
+          "share_of_arm": 0.5682218779364603
+        },
+        {
+          "omega": 5,
+          "credit_ratio": 0.008732335181154044,
+          "share_of_arm": 0.4317781220635397
+        }
+      ],
+      "cells": [
+        {
+          "omega": 3,
+          "shell": "(2D,4D]",
+          "sign_word": "-++-",
+          "pair_key": "36739->200003",
+          "credit_ratio": 0.01149179090337464
+        },
+        {
+          "omega": 5,
+          "shell": "(4D,8D]",
+          "sign_word": "-+--",
+          "pair_key": "36739->200003",
+          "credit_ratio": 0.008732335181154044
+        }
+      ]
+    },
+    {
+      "positive_p": 200003,
+      "credit_ratio": 0.018285202545457444,
+      "target_count": 2,
+      "pair_count": 2,
+      "is_single_target_arm": false,
+      "has_exit_target": true,
+      "pair_rows": [
+        {
+          "pair_key": "200003->36739",
+          "credit_ratio": 0.013520757819692239,
+          "share_of_arm": 0.7394371370007697
+        },
+        {
+          "pair_key": "200003->10007",
+          "credit_ratio": 0.004764444725765207,
+          "share_of_arm": 0.2605628629992304
+        }
+      ],
+      "target_rows": [
+        {
+          "negative_p": 36739,
+          "credit_ratio": 0.013520757819692239,
+          "share_of_arm": 0.7394371370007697
+        },
+        {
+          "negative_p": 10007,
+          "credit_ratio": 0.004764444725765207,
+          "share_of_arm": 0.2605628629992304
+        }
+      ],
+      "shell_rows": [
+        {
+          "shell": "(8D,16D]",
+          "credit_ratio": 0.01102856477726452,
+          "share_of_arm": 0.603141515651645
+        },
+        {
+          "shell": "(2D,4D]",
+          "credit_ratio": 0.007256637768192927,
+          "share_of_arm": 0.39685848434835513
+        }
+      ],
+      "omega_rows": [
+        {
+          "omega": 5,
+          "credit_ratio": 0.007256637768192927,
+          "share_of_arm": 0.39685848434835513
+        },
+        {
+          "omega": 3,
+          "credit_ratio": 0.0056396003761652,
+          "share_of_arm": 0.3084242770702168
+        },
+        {
+          "omega": 4,
+          "credit_ratio": 0.005388964401099318,
+          "share_of_arm": 0.2947172385814281
+        }
+      ],
+      "cells": [
+        {
+          "omega": 5,
+          "shell": "(2D,4D]",
+          "sign_word": "+-++",
+          "pair_key": "200003->36739",
+          "credit_ratio": 0.007256637768192927
+        },
+        {
+          "omega": 3,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->36739",
+          "credit_ratio": 0.0032602227275671915
+        },
+        {
+          "omega": 4,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->36739",
+          "credit_ratio": 0.00300389732393212
+        },
+        {
+          "omega": 4,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->10007",
+          "credit_ratio": 0.0023850670771671982
+        },
+        {
+          "omega": 3,
+          "shell": "(8D,16D]",
+          "sign_word": "--++",
+          "pair_key": "200003->10007",
+          "credit_ratio": 0.002379377648598009
+        }
+      ]
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_two_arm_internal_structure_router.py": "341798441a841b347f74877aad48780f97990cf205403ce824c2c9f9ced49f70",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-unique-cover-two-arm-balance-router.json": "cdb93b7dd20cedec769bda292c7aa21758c72da81554168a7fde3038ffc67a60"
+  },
+  "next_direct_attack_target": "SingleTargetArmAndReciprocalExitArmInvariantOrArmStructurePDEC",
+  "plain_conclusion": "双臂覆盖内部结构进一步分裂：`36739` 臂是单靶向臂，全部指向 `200003`；`200003` 臂是互反加出口臂，主要指向 `36739`，另有出口指向 `10007`。因此下一步可证明单靶向臂与出口臂的组合不变量，或登记 ArmStructure-PDEC。"
+}
