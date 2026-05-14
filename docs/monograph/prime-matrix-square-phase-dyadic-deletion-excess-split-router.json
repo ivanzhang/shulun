@@ -1,0 +1,92 @@
+{
+  "certificate_type": "prime_matrix_square_phase_dyadic_deletion_excess_split_router",
+  "status": "dyadic_deletion_excess_split_to_first_moment_or_overlap_pdec_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "dyadic_deletion_objects_defined": true,
+  "deletion_excess_split_closed": true,
+  "first_moment_route_identified": true,
+  "overlap_route_identified": true,
+  "dyadic_defect_excluded": false,
+  "row_column_unconditional_closed": false,
+  "split_rows": [
+    {
+      "object": "survivor_set",
+      "formula": "S_z={k: k survives all q<=z}",
+      "meaning": "进入 dyadic 块前的条件样本空间。"
+    },
+    {
+      "object": "block_union",
+      "formula": "U_B=|{k in S_z: exists q in B, k=-P^2 mod q}|",
+      "meaning": "该 dyadic 块真实删除量。"
+    },
+    {
+      "object": "first_moment",
+      "formula": "H_B=sum_{q in B} |S_z cap {-P^2 mod q}|",
+      "meaning": "一阶命中负载；高于期望即线性相位 PDEC。"
+    },
+    {
+      "object": "overlap",
+      "formula": "I_B=sum_{q1<q2 in B} |S_z cap a_{q1} cap a_{q2}|",
+      "meaning": "二阶重叠；低于期望则是 pair-correlation 缺陷。"
+    },
+    {
+      "object": "bonferroni_gate",
+      "formula": "U_B <= H_B, and U_B >= H_B-I_B",
+      "meaning": "过删必须由一阶过载或二阶/高阶重叠异常承担。"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "DyadicDeletionObjectsDefined",
+      "closed": true,
+      "proved": true,
+      "meaning": "单块删除量、一阶负载和二阶重叠均已定义在同一进入块 survivor set 上。",
+      "remaining": "none"
+    },
+    {
+      "gate": "DeletionExcessSplitClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 union 删除超过独立模型，则必须是一阶负载过高，或重叠/高阶结构低于正常抵消。",
+      "remaining": "DyadicSquarePhaseFirstMomentLoadPDEC OR DyadicSquarePhaseOverlapDeficitOrPairCorrelationPDEC"
+    },
+    {
+      "gate": "FirstMomentRouteIdentified",
+      "closed": true,
+      "proved": false,
+      "meaning": "一阶过载等价于 S_z 对移动残基 -P^2 mod q 的平均命中过高，可 Fourier 化为线性 PDEC。",
+      "remaining": "DyadicSquarePhaseFirstMomentLoadPDEC"
+    },
+    {
+      "gate": "OverlapRouteIdentified",
+      "closed": true,
+      "proved": false,
+      "meaning": "若一阶正常但 union 过大，则多重命中重叠不足，形成 q1*q2 交叉相位 pair-correlation PDEC。",
+      "remaining": "DyadicSquarePhaseOverlapDeficitOrPairCorrelationPDEC"
+    },
+    {
+      "gate": "DyadicDefectExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未排除一阶过载与二阶重叠缺陷。",
+      "remaining": "exclude DyadicSquarePhaseFirstMomentLoadPDEC and DyadicSquarePhaseOverlapDeficitOrPairCorrelationPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "LDG dyadic 缺陷与 RFP reciprocal-floor 缺陷仍未全部排除。",
+      "remaining": "LDG dyadic split exclusions + RFP reciprocal-floor exclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_dyadic_deletion_excess_split_router.py": "cd7124356d0a9e3c61fd0964b9be2e84c8339672a10abe9d1716295440758cdc",
+    "docs/monograph/prime-matrix-square-phase-moving-cutoff-dyadic-defect-router.json": "4515b50a029982ce414c9ef9b290c4dbf026bba67099c6048cb1979ced0891f6",
+    "docs/monograph/prime-matrix-square-phase-low-skeleton-quadratic-defect-router.json": "1262152377e4b7477fef34bd370861bd1829bb06a3b964c19dc833db2cb2128d"
+  },
+  "next_direct_attack_target": "DyadicSquarePhaseFirstMomentLoadPDEC",
+  "parallel_attack_target": "DyadicSquarePhaseOverlapDeficitOrPairCorrelationPDEC",
+  "plain_conclusion": "`DyadicNegativeSquarePhaseDeletionExcessPDEC` 已进一步原子化。在进入块 survivor set `S_z` 上，若 dyadic 块删除量超过独立模型，则不是无名过删：要么一阶命中负载 `H_B` 过高，给出线性 Fourier/PDEC；要么一阶负载正常但 union 仍过大，说明二阶及高阶重叠不足，给出pair-correlation/交叉相位 PDEC。两个出口尚未排斥。"
+}
