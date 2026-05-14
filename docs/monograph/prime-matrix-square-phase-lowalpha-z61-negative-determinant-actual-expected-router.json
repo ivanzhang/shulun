@@ -1,0 +1,120 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_negative_determinant_actual_expected_router",
+  "status": "z61_negative_cross_determinant_split_to_actual_expected_hit_scale_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_negative_cross_determinant_router",
+  "target_bucket": "unbalanced<=8",
+  "target_shell": "(8D,16D]",
+  "low_omega": 3,
+  "high_omega": 4,
+  "exit_negative_p": 10007,
+  "reciprocal_negative_p": 36739,
+  "model_mean_low": 0.0012348755222616186,
+  "model_mean_high": 0.002531332465396455,
+  "model_scale_high_over_low": 2.0498685250157314,
+  "exit_actual_scale_high_over_low": 1.8710276449842687,
+  "reciprocal_actual_scale_high_over_low": 2.0813122933628017,
+  "exit_actual_scale_drift_from_model": -0.08724504905995867,
+  "reciprocal_actual_scale_drift_from_model": 0.01533940736361572,
+  "cross_determinant": 0.13109661707828857,
+  "cross_determinant_source_value": 0.13109661707828857,
+  "cross_determinant_source_error": 0.0,
+  "component_sum": 0.13109661707828701,
+  "actual_expected_split_error": 1.5543122344752192e-15,
+  "actual_expected_split_identity_closed": true,
+  "source_determinant_match_closed": true,
+  "normalized_cross_determinant": 0.0641702971352768,
+  "component_rows": [
+    {
+      "name": "reciprocal_actual_against_common_model",
+      "value": 0.11846870979981214,
+      "share_of_determinant": 0.9036748044311832,
+      "normalized_value": 0.05798908071401219
+    },
+    {
+      "name": "exit_actual_against_common_model",
+      "value": 0.1848725895586153,
+      "share_of_determinant": 1.4102010690955715,
+      "normalized_value": 0.09049302162434784
+    },
+    {
+      "name": "actual_cross_correction",
+      "value": -0.17224468228014045,
+      "share_of_determinant": -1.3138758735267668,
+      "normalized_value": -0.084311805203084
+    }
+  ],
+  "profile_rows": [
+    {
+      "p": 10007,
+      "omega": 3,
+      "value_count": 777,
+      "model_mean": 0.0012348755222616186,
+      "actual_sum": 0.20859955827244803,
+      "expected_sum": 0.9594982807972776,
+      "linear_remainder": -0.7508987225248296,
+      "deficit_abs": 0.7508987225248296,
+      "nonzero_value_count_with_multiplicity": 1,
+      "nonzero_value_share": 0.001287001287001287,
+      "max_weight": 0.20859955827244797,
+      "max_weight_value": 8177,
+      "actual_over_expected": 0.21740482755124482
+    },
+    {
+      "p": 10007,
+      "omega": 4,
+      "value_count": 777,
+      "model_mean": 0.002531332465396455,
+      "actual_sum": 0.39029554025925717,
+      "expected_sum": 1.9668453256130456,
+      "linear_remainder": -1.5765497853537884,
+      "deficit_abs": 1.5765497853537884,
+      "nonzero_value_count_with_multiplicity": 2,
+      "nonzero_value_share": 0.002574002574002574,
+      "max_weight": 0.19718089428332838,
+      "max_weight_value": 9982,
+      "actual_over_expected": 0.1984373327056646
+    },
+    {
+      "p": 36739,
+      "omega": 3,
+      "value_count": 4013,
+      "model_mean": 0.0012348755222616186,
+      "actual_sum": 3.926674207401674,
+      "expected_sum": 4.9555554708358756,
+      "linear_remainder": -1.0288812634342017,
+      "deficit_abs": 1.0288812634342017,
+      "nonzero_value_count_with_multiplicity": 20,
+      "nonzero_value_share": 0.0049838026414154,
+      "max_weight": 0.4147916009402165,
+      "max_weight_value": 26445,
+      "actual_over_expected": 0.7923782168337516
+    },
+    {
+      "p": 36739,
+      "omega": 4,
+      "value_count": 4013,
+      "model_mean": 0.002531332465396455,
+      "actual_sum": 8.17263529989574,
+      "expected_sum": 10.158237183635974,
+      "linear_remainder": -1.9856018837402338,
+      "deficit_abs": 1.9856018837402338,
+      "nonzero_value_count_with_multiplicity": 31,
+      "nonzero_value_share": 0.00772489409419387,
+      "max_weight": 0.5554266330905256,
+      "max_weight_value": 28842,
+      "actual_over_expected": 0.8045328290878201
+    }
+  ],
+  "actual_hit_scale_drift_bound_proved": false,
+  "hit_support_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_negative_determinant_actual_expected_router.py": "be0974dff3e258efbcb6dc330d6f227c8339460988989f78919a2b754ff169a7",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-negative-cross-determinant-router.json": "1a2d3c66cfd86f2eb0e6f5af785d285471f1d9383b347046fecfb665aa879ec9"
+  },
+  "next_direct_attack_target": "ActualHitScaleDriftBoundOrHitSupportPDEC",
+  "plain_conclusion": "负 profile 交叉行列式的纯模型项完全抵消，剩余只由实际命中和模型均值之间的升阶尺度漂移决定。样本中公共模型尺度为 `mu4/mu3≈2.049869`；`10007` 的实际命中尺度低于模型约 8.72%，`36739` 的实际命中尺度高于模型约 1.53%。因此下一步最窄硬点是证明这种相反尺度漂移受控，或把持续漂移登记为 HitSupport-PDEC。"
+}
