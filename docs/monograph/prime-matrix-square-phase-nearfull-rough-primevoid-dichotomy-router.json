@@ -1,0 +1,124 @@
+{
+  "certificate_type": "prime_matrix_square_phase_nearfull_rough_primevoid_dichotomy_router",
+  "status": "nearfull_rough_exact_primevoid_defect_dichotomy_closed_defect_exclusion_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "nearfull_rough_exact_decomposition_closed": true,
+  "prime_void_forces_g_equals_b": true,
+  "ldg_and_rfp_imply_prime_closed": true,
+  "prime_void_defect_dichotomy_closed": true,
+  "nearfull_rough_lower_independent_closure_proved": false,
+  "low_skeleton_defect_excluded": false,
+  "reciprocal_floor_primepair_excess_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "constants": {
+    "c_g": 0.48,
+    "c_b": 1.5,
+    "c_b_over_c_g": 3.125,
+    "p0": 23,
+    "log_p0": 3.1354942159291497,
+    "log_p0_exceeds_c_b_over_c_g": true
+  },
+  "constant_rows": [
+    {
+      "p": 23,
+      "log_p": 3.1354942159291497,
+      "cb_over_cg": 3.125,
+      "dimension_gap_constant_positive": true,
+      "rfp_excess_factor_if_prime_void_and_ldg_holds": 1.0033581490973278
+    },
+    {
+      "p": 101,
+      "log_p": 4.61512051684126,
+      "cb_over_cg": 3.125,
+      "dimension_gap_constant_positive": true,
+      "rfp_excess_factor_if_prime_void_and_ldg_holds": 1.476838565389203
+    },
+    {
+      "p": 1009,
+      "log_p": 6.9167150203536085,
+      "cb_over_cg": 3.125,
+      "dimension_gap_constant_positive": true,
+      "rfp_excess_factor_if_prime_void_and_ldg_holds": 2.2133488065131544
+    },
+    {
+      "p": 10007,
+      "log_p": 9.211040127090456,
+      "cb_over_cg": 3.125,
+      "dimension_gap_constant_positive": true,
+      "rfp_excess_factor_if_prime_void_and_ldg_holds": 2.9475328406689454
+    },
+    {
+      "p": 1000003,
+      "log_p": 13.815513557959774,
+      "cb_over_cg": 3.125,
+      "dimension_gap_constant_positive": true,
+      "rfp_excess_factor_if_prime_void_and_ldg_holds": 4.420964338547127
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "NearFullRoughExactDecomposition",
+      "closed": true,
+      "proved": true,
+      "meaning": "由一尾互补因子恒等式与多尾碰撞消失，P>=23 时 G(P)=PrimeWindow(P)+B(P)。",
+      "remaining": "none"
+    },
+    {
+      "gate": "PrimeVoidForcesGEqualsB",
+      "closed": true,
+      "proved": true,
+      "meaning": "若平方后前半窗无素数，则低筛骨架全由三曲线素对覆盖，故 G(P)=B(P)。",
+      "remaining": "none"
+    },
+    {
+      "gate": "LDGAndRFPImplyPrime",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 G(P)>=0.48P/logP 且 B(P)<=1.5P/log^2P，logP>3.125 时得到 G>B。",
+      "remaining": "LDG-Lower AND RFP-Upper"
+    },
+    {
+      "gate": "PrimeVoidDefectDichotomy",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 P>=23 的反例，必发生 LDG 亏损或 RFP 过密；二者不能同时保持正常。",
+      "remaining": "LowSkeletonDeficitPDECOrSAE OR ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE"
+    },
+    {
+      "gate": "NearFullRoughLowerIndependentClosure",
+      "closed": false,
+      "proved": false,
+      "meaning": "近全阈值粗骨架下界不是比短区间素数更弱的独立易证对象；反例态下它等价于要求 B(P) 达到一维尺度。",
+      "remaining": "PostSquareNearFullRoughSkeletonLowerBound OR LowSkeletonDeficitPDECOrSAE"
+    },
+    {
+      "gate": "DirectUnconditionalContradictionFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步给出严格二分和路线校准，尚未排除两个命名缺陷出口。",
+      "remaining": "exclude LowSkeletonDeficitPDECOrSAE AND ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍未得到全局无条件闭合。",
+      "remaining": "PrimeInFirstHalfAfterPrimeSquareForEveryPrimeP OR (LowSkeletonDeficitPDECOrSAE excluded AND ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE excluded)"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_nearfull_rough_primevoid_dichotomy_router.py": "fcf9b34209a807470c11f3ea72e4f07ab81772fc028c619b6043dcb42f1be302",
+    "docs/monograph/prime-matrix-square-phase-dimension-gap-attack-router.json": "447849c4b4f88cb1b930e20183d7060acc4fc85ed3d46759930093af03d1b467",
+    "docs/monograph/prime-matrix-square-phase-ldg-lower-direct-attack-router.json": "fa9905a4a06b4150ba3fca3bdb757b19328df4d2c081709956f810dacdbfc7a7",
+    "docs/monograph/prime-matrix-square-phase-rfp-upper-direct-attack-router.json": "c8ecab3fdc5e787f3b7cef1d73d34868d48878e48a7b9c8b6cc88218ebcfed81",
+    "docs/monograph/prime-matrix-square-phase-ldg-beta-level-barrier-router.json": "a1ec417a7099e683d4053147b2ac6dce5f88e7b23c4e2867a61bc86190ef8779",
+    "docs/monograph/prime-matrix-diagonal-postsquare-tail-cofactor-identity.md": "f71607d32d90cdd5738d5ccdd61c483f5e7498108438f7e0bdcc2e06403acd90",
+    "docs/monograph/prime-matrix-diagonal-postsquare-tail-collision-vanishing.md": "8509cb1141a6672fa2b9eade4125aeab8a2b4da3c7254f1113eb80595f79c450",
+    "docs/monograph/prime-matrix-diagonal-postsquare-primepair-dimension-gap.md": "dd371a21974ac3122a738012444d7d9785ee13bc4f5dd84045dfe4b4e710a5d6"
+  },
+  "next_direct_attack_target": "PrimeVoidDefectExclusion: LowSkeletonDeficitPDECOrSAE OR ReciprocalFloorPrimePairExcessTailAnchorPDECOrSAE",
+  "plain_conclusion": "本步把 `PostSquareNearFullRoughSkeletonLowerBound` 的真实地位校准清楚：在 `P>=23` 的平方端点，低筛骨架精确等于端点素数集合与三曲线素对覆盖集合的无交并。因此若假设反例，即 `(P^2,P^2+P)` 无素数，则必有 `G(P)=B(P)`。常数账本 `c_G=0.48,C_B=1.50` 下，`log(23)>C_B/c_G`，所以反例不能同时满足 LDG 正常下界与 RFP 正常上界；它必须暴露为`LowSkeletonDeficit/PDEC/SAE` 或 `ReciprocalFloorPrimePairExcess/TailAnchor/PDEC/SAE`。这不是最终闭合，因为两个缺陷出口尚未排除；但它切断了把近全 rough 下界当作普通 beta-sieve 余项的误接路线。"
+}
