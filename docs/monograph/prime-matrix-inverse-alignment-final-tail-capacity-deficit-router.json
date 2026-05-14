@@ -1,0 +1,895 @@
+{
+  "certificate_type": "prime_matrix_inverse_alignment_final_tail_capacity_deficit_router",
+  "status": "final_tail_decomposition_closed_uniform_rough_survivor_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used_for_global_proof": true,
+  "scan_limit": 251,
+  "final_tail_residual_decomposition_closed": true,
+  "largest_tail_prime_capacity_at_most_two_closed": true,
+  "capacity_or_phase_defect_implication_closed": true,
+  "finite_probe_prime_survivor_for_all_rows": true,
+  "finite_probe_strict_capacity_deficit_for_all_P_ge_29": true,
+  "uniform_final_tail_capacity_deficit_or_phase_defect_lower_bound_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "UniformCapacityDeficitOrRegisteredPhaseDefectLowerBoundForAllEarlyX",
+  "hardpoint_after_router": "UniformFinalTailRoughSurvivorLowerBoundOrRegisteredPhaseDefect",
+  "next_direct_attack_target": "UniformFinalTailRoughSurvivorLowerBoundOrRegisteredPhaseDefect",
+  "parallel_attack_targets": [
+    "PrimorialCutoffJacobsthalRoughSurvivorLowerBoundForPBlocks",
+    "RegisteredFinalTailPhaseDefectPDECSAERoute",
+    "PrimeInEveryAlignedPBlockBelowP2"
+  ],
+  "theorem_rows": [
+    {
+      "name": "final_tail_decomposition",
+      "status": "closed",
+      "statement": "After sieving by all primes below ell, where ell is the largest prime <P, every residual column is either an ell-multiple or a genuine prime >P in the early range 1<=x<=P."
+    },
+    {
+      "name": "tail_capacity_at_most_two",
+      "status": "closed",
+      "statement": "Because ell>P/2, the largest tail prime phase hits at most two columns in 1<=r<P."
+    },
+    {
+      "name": "capacity_or_phase_defect_implication",
+      "status": "closed",
+      "statement": "If |R|>mu_ell then a prime survivor exists; if |R|<=mu_ell but R is not contained in the ell phase, the missing alignment is a registered phase defect and also leaves a prime survivor."
+    },
+    {
+      "name": "finite_probe",
+      "status": "diagnostic_closed",
+      "statement": "For tested primes 13<=P<=251 every early row has a final-tail prime survivor; for all tested P>=29 the stronger strict capacity deficit |R|>mu_ell holds."
+    },
+    {
+      "name": "uniform_lower_bound",
+      "status": "open",
+      "statement": "The remaining global task is to prove a non-tautological rough survivor lower bound for the primorial cutoff, or route equality cases to a registered phase defect."
+    }
+  ],
+  "probe_rows": [
+    {
+      "P": 13,
+      "cutoff_second_largest_prime": 7,
+      "tail_largest_prime": 11,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=13",
+      "min_residual_minus_tail_capacity_gap": 1,
+      "min_residual_minus_tail_effective_gap": 1,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 17,
+      "cutoff_second_largest_prime": 11,
+      "tail_largest_prime": 13,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=17",
+      "min_residual_minus_tail_capacity_gap": 0,
+      "min_residual_minus_tail_effective_gap": 1,
+      "strict_capacity_deficit_for_all_x": false,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": [
+        {
+          "x": 12,
+          "residual_size": 1,
+          "tail_capacity_mu": 1,
+          "tail_effective_hits_inside_residual": 0,
+          "prime_survivor_columns": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "P": 19,
+      "cutoff_second_largest_prime": 13,
+      "tail_largest_prime": 17,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=19",
+      "min_residual_minus_tail_capacity_gap": 1,
+      "min_residual_minus_tail_effective_gap": 1,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 23,
+      "cutoff_second_largest_prime": 17,
+      "tail_largest_prime": 19,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=23",
+      "min_residual_minus_tail_capacity_gap": 0,
+      "min_residual_minus_tail_effective_gap": 2,
+      "strict_capacity_deficit_for_all_x": false,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": [
+        {
+          "x": 14,
+          "residual_size": 2,
+          "tail_capacity_mu": 2,
+          "tail_effective_hits_inside_residual": 0,
+          "prime_survivor_columns": [
+            9,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "P": 29,
+      "cutoff_second_largest_prime": 19,
+      "tail_largest_prime": 23,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=29",
+      "min_residual_minus_tail_capacity_gap": 1,
+      "min_residual_minus_tail_effective_gap": 3,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 31,
+      "cutoff_second_largest_prime": 23,
+      "tail_largest_prime": 29,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=31",
+      "min_residual_minus_tail_capacity_gap": 1,
+      "min_residual_minus_tail_effective_gap": 2,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 37,
+      "cutoff_second_largest_prime": 29,
+      "tail_largest_prime": 31,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=37",
+      "min_residual_minus_tail_capacity_gap": 1,
+      "min_residual_minus_tail_effective_gap": 2,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 41,
+      "cutoff_second_largest_prime": 31,
+      "tail_largest_prime": 37,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=41",
+      "min_residual_minus_tail_capacity_gap": 2,
+      "min_residual_minus_tail_effective_gap": 3,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 43,
+      "cutoff_second_largest_prime": 37,
+      "tail_largest_prime": 41,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=43",
+      "min_residual_minus_tail_capacity_gap": 2,
+      "min_residual_minus_tail_effective_gap": 3,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 47,
+      "cutoff_second_largest_prime": 41,
+      "tail_largest_prime": 43,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=47",
+      "min_residual_minus_tail_capacity_gap": 2,
+      "min_residual_minus_tail_effective_gap": 3,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 53,
+      "cutoff_second_largest_prime": 43,
+      "tail_largest_prime": 47,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=53",
+      "min_residual_minus_tail_capacity_gap": 3,
+      "min_residual_minus_tail_effective_gap": 4,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 59,
+      "cutoff_second_largest_prime": 47,
+      "tail_largest_prime": 53,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=59",
+      "min_residual_minus_tail_capacity_gap": 2,
+      "min_residual_minus_tail_effective_gap": 3,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 61,
+      "cutoff_second_largest_prime": 53,
+      "tail_largest_prime": 59,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=61",
+      "min_residual_minus_tail_capacity_gap": 4,
+      "min_residual_minus_tail_effective_gap": 5,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 67,
+      "cutoff_second_largest_prime": 59,
+      "tail_largest_prime": 61,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=67",
+      "min_residual_minus_tail_capacity_gap": 3,
+      "min_residual_minus_tail_effective_gap": 5,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 71,
+      "cutoff_second_largest_prime": 61,
+      "tail_largest_prime": 67,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=71",
+      "min_residual_minus_tail_capacity_gap": 5,
+      "min_residual_minus_tail_effective_gap": 5,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 73,
+      "cutoff_second_largest_prime": 67,
+      "tail_largest_prime": 71,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=73",
+      "min_residual_minus_tail_capacity_gap": 4,
+      "min_residual_minus_tail_effective_gap": 5,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 79,
+      "cutoff_second_largest_prime": 71,
+      "tail_largest_prime": 73,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=79",
+      "min_residual_minus_tail_capacity_gap": 4,
+      "min_residual_minus_tail_effective_gap": 5,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 83,
+      "cutoff_second_largest_prime": 73,
+      "tail_largest_prime": 79,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=83",
+      "min_residual_minus_tail_capacity_gap": 5,
+      "min_residual_minus_tail_effective_gap": 6,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 89,
+      "cutoff_second_largest_prime": 79,
+      "tail_largest_prime": 83,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=89",
+      "min_residual_minus_tail_capacity_gap": 6,
+      "min_residual_minus_tail_effective_gap": 7,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 97,
+      "cutoff_second_largest_prime": 83,
+      "tail_largest_prime": 89,
+      "tail_gap_to_P": 8,
+      "x_range_checked": "1<=x<=97",
+      "min_residual_minus_tail_capacity_gap": 5,
+      "min_residual_minus_tail_effective_gap": 6,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 101,
+      "cutoff_second_largest_prime": 89,
+      "tail_largest_prime": 97,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=101",
+      "min_residual_minus_tail_capacity_gap": 6,
+      "min_residual_minus_tail_effective_gap": 7,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 103,
+      "cutoff_second_largest_prime": 97,
+      "tail_largest_prime": 101,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=103",
+      "min_residual_minus_tail_capacity_gap": 7,
+      "min_residual_minus_tail_effective_gap": 8,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 107,
+      "cutoff_second_largest_prime": 101,
+      "tail_largest_prime": 103,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=107",
+      "min_residual_minus_tail_capacity_gap": 5,
+      "min_residual_minus_tail_effective_gap": 6,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 109,
+      "cutoff_second_largest_prime": 103,
+      "tail_largest_prime": 107,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=109",
+      "min_residual_minus_tail_capacity_gap": 7,
+      "min_residual_minus_tail_effective_gap": 8,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 113,
+      "cutoff_second_largest_prime": 107,
+      "tail_largest_prime": 109,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=113",
+      "min_residual_minus_tail_capacity_gap": 6,
+      "min_residual_minus_tail_effective_gap": 7,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 127,
+      "cutoff_second_largest_prime": 109,
+      "tail_largest_prime": 113,
+      "tail_gap_to_P": 14,
+      "x_range_checked": "1<=x<=127",
+      "min_residual_minus_tail_capacity_gap": 9,
+      "min_residual_minus_tail_effective_gap": 10,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 131,
+      "cutoff_second_largest_prime": 113,
+      "tail_largest_prime": 127,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=131",
+      "min_residual_minus_tail_capacity_gap": 9,
+      "min_residual_minus_tail_effective_gap": 10,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 137,
+      "cutoff_second_largest_prime": 127,
+      "tail_largest_prime": 131,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=137",
+      "min_residual_minus_tail_capacity_gap": 8,
+      "min_residual_minus_tail_effective_gap": 9,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 139,
+      "cutoff_second_largest_prime": 131,
+      "tail_largest_prime": 137,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=139",
+      "min_residual_minus_tail_capacity_gap": 8,
+      "min_residual_minus_tail_effective_gap": 9,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 149,
+      "cutoff_second_largest_prime": 137,
+      "tail_largest_prime": 139,
+      "tail_gap_to_P": 10,
+      "x_range_checked": "1<=x<=149",
+      "min_residual_minus_tail_capacity_gap": 10,
+      "min_residual_minus_tail_effective_gap": 11,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 151,
+      "cutoff_second_largest_prime": 139,
+      "tail_largest_prime": 149,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=151",
+      "min_residual_minus_tail_capacity_gap": 11,
+      "min_residual_minus_tail_effective_gap": 12,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 157,
+      "cutoff_second_largest_prime": 149,
+      "tail_largest_prime": 151,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=157",
+      "min_residual_minus_tail_capacity_gap": 10,
+      "min_residual_minus_tail_effective_gap": 11,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 163,
+      "cutoff_second_largest_prime": 151,
+      "tail_largest_prime": 157,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=163",
+      "min_residual_minus_tail_capacity_gap": 10,
+      "min_residual_minus_tail_effective_gap": 11,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 167,
+      "cutoff_second_largest_prime": 157,
+      "tail_largest_prime": 163,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=167",
+      "min_residual_minus_tail_capacity_gap": 10,
+      "min_residual_minus_tail_effective_gap": 11,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 173,
+      "cutoff_second_largest_prime": 163,
+      "tail_largest_prime": 167,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=173",
+      "min_residual_minus_tail_capacity_gap": 10,
+      "min_residual_minus_tail_effective_gap": 11,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 179,
+      "cutoff_second_largest_prime": 167,
+      "tail_largest_prime": 173,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=179",
+      "min_residual_minus_tail_capacity_gap": 12,
+      "min_residual_minus_tail_effective_gap": 13,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 181,
+      "cutoff_second_largest_prime": 173,
+      "tail_largest_prime": 179,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=181",
+      "min_residual_minus_tail_capacity_gap": 10,
+      "min_residual_minus_tail_effective_gap": 11,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 191,
+      "cutoff_second_largest_prime": 179,
+      "tail_largest_prime": 181,
+      "tail_gap_to_P": 10,
+      "x_range_checked": "1<=x<=191",
+      "min_residual_minus_tail_capacity_gap": 13,
+      "min_residual_minus_tail_effective_gap": 14,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 193,
+      "cutoff_second_largest_prime": 181,
+      "tail_largest_prime": 191,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=193",
+      "min_residual_minus_tail_capacity_gap": 13,
+      "min_residual_minus_tail_effective_gap": 14,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 197,
+      "cutoff_second_largest_prime": 191,
+      "tail_largest_prime": 193,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=197",
+      "min_residual_minus_tail_capacity_gap": 14,
+      "min_residual_minus_tail_effective_gap": 15,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 199,
+      "cutoff_second_largest_prime": 193,
+      "tail_largest_prime": 197,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=199",
+      "min_residual_minus_tail_capacity_gap": 11,
+      "min_residual_minus_tail_effective_gap": 12,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 211,
+      "cutoff_second_largest_prime": 197,
+      "tail_largest_prime": 199,
+      "tail_gap_to_P": 12,
+      "x_range_checked": "1<=x<=211",
+      "min_residual_minus_tail_capacity_gap": 14,
+      "min_residual_minus_tail_effective_gap": 15,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 223,
+      "cutoff_second_largest_prime": 199,
+      "tail_largest_prime": 211,
+      "tail_gap_to_P": 12,
+      "x_range_checked": "1<=x<=223",
+      "min_residual_minus_tail_capacity_gap": 13,
+      "min_residual_minus_tail_effective_gap": 14,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 227,
+      "cutoff_second_largest_prime": 211,
+      "tail_largest_prime": 223,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=227",
+      "min_residual_minus_tail_capacity_gap": 14,
+      "min_residual_minus_tail_effective_gap": 15,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 229,
+      "cutoff_second_largest_prime": 223,
+      "tail_largest_prime": 227,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=229",
+      "min_residual_minus_tail_capacity_gap": 14,
+      "min_residual_minus_tail_effective_gap": 15,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 233,
+      "cutoff_second_largest_prime": 227,
+      "tail_largest_prime": 229,
+      "tail_gap_to_P": 4,
+      "x_range_checked": "1<=x<=233",
+      "min_residual_minus_tail_capacity_gap": 14,
+      "min_residual_minus_tail_effective_gap": 15,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 239,
+      "cutoff_second_largest_prime": 229,
+      "tail_largest_prime": 233,
+      "tail_gap_to_P": 6,
+      "x_range_checked": "1<=x<=239",
+      "min_residual_minus_tail_capacity_gap": 15,
+      "min_residual_minus_tail_effective_gap": 16,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 241,
+      "cutoff_second_largest_prime": 233,
+      "tail_largest_prime": 239,
+      "tail_gap_to_P": 2,
+      "x_range_checked": "1<=x<=241",
+      "min_residual_minus_tail_capacity_gap": 15,
+      "min_residual_minus_tail_effective_gap": 16,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    },
+    {
+      "P": 251,
+      "cutoff_second_largest_prime": 239,
+      "tail_largest_prime": 241,
+      "tail_gap_to_P": 10,
+      "x_range_checked": "1<=x<=251",
+      "min_residual_minus_tail_capacity_gap": 17,
+      "min_residual_minus_tail_effective_gap": 18,
+      "strict_capacity_deficit_for_all_x": true,
+      "prime_survivor_for_all_x": true,
+      "decomposition_ok_for_all_x": true,
+      "nonpositive_capacity_gap_witnesses": []
+    }
+  ],
+  "requested_detail_rows": [
+    {
+      "P": 13,
+      "cutoff_second_largest_prime": 7,
+      "tail_largest_prime": 11,
+      "tail_gap_to_P": 2,
+      "weakest_row": {
+        "x": 5,
+        "residual_size": 3,
+        "tail_capacity_mu": 2,
+        "tail_effective_hits_inside_residual": 0,
+        "residual_minus_tail_capacity_gap": 1,
+        "residual_minus_tail_effective_gap": 3,
+        "residual_columns": [
+          2,
+          6,
+          8
+        ],
+        "tail_columns": [
+          1,
+          12
+        ],
+        "tail_inside_residual": [],
+        "prime_survivor_columns": [
+          2,
+          6,
+          8
+        ],
+        "nonprime_nontail_residual_columns": [],
+        "decomposition_ok": true
+      }
+    },
+    {
+      "P": 17,
+      "cutoff_second_largest_prime": 11,
+      "tail_largest_prime": 13,
+      "tail_gap_to_P": 4,
+      "weakest_row": {
+        "x": 12,
+        "residual_size": 1,
+        "tail_capacity_mu": 1,
+        "tail_effective_hits_inside_residual": 0,
+        "residual_minus_tail_capacity_gap": 0,
+        "residual_minus_tail_effective_gap": 1,
+        "residual_columns": [
+          7
+        ],
+        "tail_columns": [
+          4
+        ],
+        "tail_inside_residual": [],
+        "prime_survivor_columns": [
+          7
+        ],
+        "nonprime_nontail_residual_columns": [],
+        "decomposition_ok": true
+      }
+    },
+    {
+      "P": 19,
+      "cutoff_second_largest_prime": 13,
+      "tail_largest_prime": 17,
+      "tail_gap_to_P": 2,
+      "weakest_row": {
+        "x": 6,
+        "residual_size": 2,
+        "tail_capacity_mu": 1,
+        "tail_effective_hits_inside_residual": 0,
+        "residual_minus_tail_capacity_gap": 1,
+        "residual_minus_tail_effective_gap": 2,
+        "residual_columns": [
+          13,
+          17
+        ],
+        "tail_columns": [
+          5
+        ],
+        "tail_inside_residual": [],
+        "prime_survivor_columns": [
+          13,
+          17
+        ],
+        "nonprime_nontail_residual_columns": [],
+        "decomposition_ok": true
+      }
+    },
+    {
+      "P": 23,
+      "cutoff_second_largest_prime": 17,
+      "tail_largest_prime": 19,
+      "tail_gap_to_P": 4,
+      "weakest_row": {
+        "x": 14,
+        "residual_size": 2,
+        "tail_capacity_mu": 2,
+        "tail_effective_hits_inside_residual": 0,
+        "residual_minus_tail_capacity_gap": 0,
+        "residual_minus_tail_effective_gap": 2,
+        "residual_columns": [
+          9,
+          15
+        ],
+        "tail_columns": [
+          1,
+          20
+        ],
+        "tail_inside_residual": [],
+        "prime_survivor_columns": [
+          9,
+          15
+        ],
+        "nonprime_nontail_residual_columns": [],
+        "decomposition_ok": true
+      }
+    },
+    {
+      "P": 29,
+      "cutoff_second_largest_prime": 19,
+      "tail_largest_prime": 23,
+      "tail_gap_to_P": 6,
+      "weakest_row": {
+        "x": 11,
+        "residual_size": 3,
+        "tail_capacity_mu": 2,
+        "tail_effective_hits_inside_residual": 0,
+        "residual_minus_tail_capacity_gap": 1,
+        "residual_minus_tail_effective_gap": 3,
+        "residual_columns": [
+          12,
+          18,
+          28
+        ],
+        "tail_columns": [
+          3,
+          26
+        ],
+        "tail_inside_residual": [],
+        "prime_survivor_columns": [
+          12,
+          18,
+          28
+        ],
+        "nonprime_nontail_residual_columns": [],
+        "decomposition_ok": true
+      }
+    },
+    {
+      "P": 31,
+      "cutoff_second_largest_prime": 23,
+      "tail_largest_prime": 29,
+      "tail_gap_to_P": 2,
+      "weakest_row": {
+        "x": 25,
+        "residual_size": 2,
+        "tail_capacity_mu": 1,
+        "tail_effective_hits_inside_residual": 0,
+        "residual_minus_tail_capacity_gap": 1,
+        "residual_minus_tail_effective_gap": 2,
+        "residual_columns": [
+          12,
+          22
+        ],
+        "tail_columns": [
+          8
+        ],
+        "tail_inside_residual": [],
+        "prime_survivor_columns": [
+          12,
+          22
+        ],
+        "nonprime_nontail_residual_columns": [],
+        "decomposition_ok": true
+      }
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_inverse_alignment_final_tail_capacity_deficit_router.py": "b39561518818ca76be14aa238b5f04d4d00a95edbf3486bc9ef072383efccce8",
+    "data/inverse-alignment-final-tail-capacity-probe-ledger.json": "9f38c983499bff7fa3bc553c67afcf50ad2b28645116471235d3d10be68a1874",
+    "docs/monograph/prime-matrix-inverse-alignment-min-x-phase-scan-router.json": "81175f0cc0257e65e6183e6f9ea05f717c205f0a6dce6fc89afb3672df24d387",
+    "docs/monograph/prime-matrix-zero-row-minrep-route-review.md": "cff5609900bcfaa796b6b586c44458727b9807f2f1afd2210e52360dbe5bef26",
+    "data/inverse-alignment-min-x-phase-scan-ledger.json": "ece15abdb5fd5bf50a50e66217cd6472bd1f627b57feea2b19e92ab162fe6f98"
+  },
+  "plain_conclusion": "final-tail 下钻给出一个严格结构分解：设 ell 为 P 以下最大素数、z 为其前一素数。在 `1<=x<=P` 中，过了 `q<=z` 的残洞若不是 ell 相位倍数，就只能是真正的素数；不可能是其它合数，因为其它允许素因子只能是 `>P`，两因子乘积已超过 `P^2+P`，而 P 本身不整除 `xP+r`。因此 final-tail 缺口不再是抽象容量账本，而是精确的“ell 倍数或素数幸存”二分。有限探针到 `P<=251` 全部有素数幸存，且 `P>=29` 全部满足更强的 `|R_z(x)|>mu_ell(x)`。但全局仍需证明 primorial cutoff 的粗幸存下界，或把等号态登记为相位缺陷；行/列命题尚未无条件闭合。"
+}
