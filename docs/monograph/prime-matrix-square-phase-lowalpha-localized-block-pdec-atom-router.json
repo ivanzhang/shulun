@@ -1,0 +1,196 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_localized_block_pdec_atom_router",
+  "status": "localized_block_pdec_atoms_materialized_exclusion_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "localized_block_pdec_atoms_materialized": true,
+  "bilinear_dispersion_atoms_routed": true,
+  "endpoint_pdec_atoms_routed": true,
+  "signed_ratio_budget_table_proved": false,
+  "localized_block_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "atom_count": 12,
+  "route_summaries": [
+    {
+      "route": "BilinearDispersion",
+      "atom_count": 6,
+      "total_weighted_budget": 0.08304797120193892,
+      "max_weighted_budget": 0.06310443242957622,
+      "sample_atoms": [
+        "LocalizedBlockPDEC(z=13,bucket=balanced<=2)",
+        "LocalizedBlockPDEC(z=13,bucket=mid<=4)",
+        "LocalizedBlockPDEC(z=31,bucket=balanced<=2)",
+        "LocalizedBlockPDEC(z=31,bucket=mid<=4)",
+        "LocalizedBlockPDEC(z=61,bucket=balanced<=2)",
+        "LocalizedBlockPDEC(z=61,bucket=mid<=4)"
+      ]
+    },
+    {
+      "route": "EndpointPDEC",
+      "atom_count": 6,
+      "total_weighted_budget": 0.06198174643120287,
+      "max_weighted_budget": 0.024870290521772965,
+      "sample_atoms": [
+        "LocalizedBlockPDEC(z=13,bucket=unbalanced<=8)",
+        "LocalizedBlockPDEC(z=13,bucket=far>8)",
+        "LocalizedBlockPDEC(z=31,bucket=unbalanced<=8)",
+        "LocalizedBlockPDEC(z=31,bucket=far>8)",
+        "LocalizedBlockPDEC(z=61,bucket=unbalanced<=8)",
+        "LocalizedBlockPDEC(z=61,bucket=far>8)"
+      ]
+    }
+  ],
+  "top_atoms": [
+    {
+      "atom_label": "LocalizedBlockPDEC(z=13,bucket=balanced<=2)",
+      "z": 13,
+      "bucket": "balanced<=2",
+      "route": "BilinearDispersion",
+      "abs_share": 0.1574499685405443,
+      "signed_over_abs": 0.40079037814051044,
+      "weighted_budget": 0.06310443242957622,
+      "signed_contribution": 4.165415117177995,
+      "abs_contribution": 10.39300178937347,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=13,bucket=far>8)",
+      "z": 13,
+      "bucket": "far>8",
+      "route": "EndpointPDEC",
+      "abs_share": 0.5242724132195137,
+      "signed_over_abs": 0.047437724920612476,
+      "weighted_budget": 0.024870290521772965,
+      "signed_contribution": 1.6416451288681273,
+      "abs_contribution": 34.60632084728847,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=31,bucket=unbalanced<=8)",
+      "z": 31,
+      "bucket": "unbalanced<=8",
+      "route": "EndpointPDEC",
+      "abs_share": 0.2003229978175817,
+      "signed_over_abs": 0.08003835316143852,
+      "weighted_budget": 0.016033522845681682,
+      "signed_contribution": 14.40276966903481,
+      "abs_contribution": 179.94835101097365,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=61,bucket=far>8)",
+      "z": 61,
+      "bucket": "far>8",
+      "route": "EndpointPDEC",
+      "abs_share": 0.3593945796566213,
+      "signed_over_abs": 0.0443499524298675,
+      "weighted_budget": 0.01593913251132338,
+      "signed_contribution": -30.08603258696061,
+      "abs_contribution": 678.3780125702943,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=61,bucket=balanced<=2)",
+      "z": 61,
+      "bucket": "balanced<=2",
+      "route": "BilinearDispersion",
+      "abs_share": 0.24930886573907027,
+      "signed_over_abs": 0.03172151520296197,
+      "weighted_budget": 0.007908454974775122,
+      "signed_contribution": 14.927665223597549,
+      "abs_contribution": 470.5848736444875,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=61,bucket=unbalanced<=8)",
+      "z": 61,
+      "bucket": "unbalanced<=8",
+      "route": "EndpointPDEC",
+      "abs_share": 0.1770404766158653,
+      "signed_over_abs": 0.028766042552829132,
+      "weighted_budget": 0.0050927538839051325,
+      "signed_contribution": 9.612866898477058,
+      "abs_contribution": 334.17411800121374,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=31,bucket=balanced<=2)",
+      "z": 31,
+      "bucket": "balanced<=2",
+      "route": "BilinearDispersion",
+      "abs_share": 0.1791232751018743,
+      "signed_over_abs": 0.027417362810860352,
+      "weighted_budget": 0.0049110878213376365,
+      "signed_contribution": 4.411586112167396,
+      "abs_contribution": 160.90483036610337,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=61,bucket=mid<=4)",
+      "z": 61,
+      "bucket": "mid<=4",
+      "route": "BilinearDispersion",
+      "abs_share": 0.21425607798844443,
+      "signed_over_abs": 0.021097293805511848,
+      "weighted_budget": 0.004520223426938872,
+      "signed_contribution": -8.532182615748537,
+      "abs_contribution": 404.42071359500295,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=13,bucket=mid<=4)",
+      "z": 13,
+      "bucket": "mid<=4",
+      "route": "BilinearDispersion",
+      "abs_share": 0.17493981305353118,
+      "signed_over_abs": 0.012484282531226491,
+      "weighted_budget": 0.0021839980521202273,
+      "signed_contribution": 0.14416195744001528,
+      "abs_contribution": 11.547476363133253,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=31,bucket=mid<=4)",
+      "z": 31,
+      "bucket": "mid<=4",
+      "route": "BilinearDispersion",
+      "abs_share": 0.1953264718030807,
+      "signed_over_abs": 0.0021490916889853966,
+      "weighted_budget": 0.0004197744971908411,
+      "signed_contribution": 0.37707966328827947,
+      "abs_contribution": 175.46001653670803,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=31,bucket=far>8)",
+      "z": 31,
+      "bucket": "far>8",
+      "route": "EndpointPDEC",
+      "abs_share": 0.42522725527746347,
+      "signed_over_abs": 7.256685841231677e-05,
+      "weighted_budget": 3.085740602677777e-05,
+      "signed_contribution": 0.02771893088406744,
+      "abs_contribution": 381.9778269381813,
+      "proved": false
+    },
+    {
+      "atom_label": "LocalizedBlockPDEC(z=13,bucket=unbalanced<=8)",
+      "z": 13,
+      "bucket": "unbalanced<=8",
+      "route": "EndpointPDEC",
+      "abs_share": 0.14333780518641132,
+      "signed_over_abs": 0.00010596829268579566,
+      "weighted_budget": 1.5189262492933193e-05,
+      "signed_contribution": -0.0010026171089876565,
+      "abs_contribution": 9.46148214315857,
+      "proved": false
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_localized_block_pdec_atom_router.py": "366706a2d2b080e820295e96a78b04625e5d9a64fa946da3db6a3a63b78f6e34",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-bilinear-block-budget-contract-router.json": "f90e12d06a383f59ee4da84f5aa83c61f47d3c7de2b2a86f3946f8d5b31fefd9"
+  },
+  "next_direct_attack_target": "LocalizedBlockPDECAtomExclusionOrSignedRatioBudgetTable",
+  "plain_conclusion": "双线性块 signed budget 的剩余现在原子化为具体 `LocalizedBlockPDEC(z,bucket)`。balanced/mid 原子进入 BilinearDispersion 证明路线，unbalanced/far 原子进入 EndpointPDEC 路线。因此下一步不再需要处理整块总和，只需给出这些原子的 signed ratio 预算表，或逐个排斥局部块 PDEC。"
+}
