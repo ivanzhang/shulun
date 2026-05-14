@@ -1,0 +1,82 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_prefix_gate_pdec_registration_router",
+  "status": "z61_prefix_gate_pdec_registered_not_excluded",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_common_core_prefix_gate_router",
+    "prime_matrix_square_phase_lowalpha_z61_overlap_common_core_router",
+    "prime_matrix_square_phase_lowalpha_z61_hit_overlap_flip_router"
+  ],
+  "prefix_gate_pdec_registration_closed": true,
+  "prefix_gate_pdec_record": {
+    "formal_unit_key": "z61|bucket=unbalanced<=8|omega=4|p=36739|C=4807|b=28842|prefixes=2,3",
+    "p": 36739,
+    "b_value": 28842,
+    "phase_modulus": 28842,
+    "phase_residue": 0,
+    "phase_condition": "b ≡ 0 (mod 28842)",
+    "common_core": 4807,
+    "common_core_factorization": [
+      11,
+      19,
+      23
+    ],
+    "hit_moduli": [
+      9614,
+      14421
+    ],
+    "prefixes": [
+      2,
+      3
+    ],
+    "selected_splits": [
+      {
+        "core_split": [
+          23,
+          209
+        ],
+        "selected_prefixes": [
+          2
+        ],
+        "selected_weight": 0.20202867877781977,
+        "prefix_interval": [
+          1.1358695652173914,
+          2.2717391304347827
+        ]
+      },
+      {
+        "core_split": [
+          19,
+          253
+        ],
+        "selected_prefixes": [
+          2,
+          3
+        ],
+        "selected_weight": 0.3533979543127059,
+        "prefix_interval": [
+          1.6644736842105263,
+          3.3289473684210527
+        ]
+      }
+    ],
+    "overlap_weight": 0.5554266330905256,
+    "needed_lift_to_reach_model_scale": 0.4319571989385702,
+    "overlap_lift_surplus_over_model": 0.12346943415195533,
+    "full_drift_from_model": 0.01533940736361572,
+    "without_overlap_drift_from_model": -0.05366484007702288
+  },
+  "prefix_gate_pdec_excluded": false,
+  "global_prefix_gate_capacity_bound_proved": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_prefix_gate_pdec_registration_router.py": "fa6b72456499c6e653750272300737a478f120edc386fe4b402323c82ead1a06",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-common-core-prefix-gate-router.json": "56b5207324e01d527f6c9527df039385f562694b673051098784c076c3c7363f",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-overlap-common-core-router.json": "4784443770637bbe4832130b0d33a9d72035071ad39e497e65ff67571c5d16d1",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-hit-overlap-flip-router.json": "ee5c1ebcec70df322e5c6df2c862ce7c43a7c6b0978df815cd8ae456920b31b5"
+  },
+  "next_direct_attack_target": "PrefixGatePDECExclusionOrGlobalPrefixGateCapacityBound",
+  "plain_conclusion": "Prefix interval gate 分支已登记为具体 PDEC 对象：相位条件是 `b≡0 mod 28842`，对应 `C=4807` 的 `2C/3C` 同核双命中。该登记闭合的是失败对象的形式化与可审查性，不是排斥证明；下一步必须排斥该 PrefixGate-PDEC，或证明全局 prefix gate 容量界。"
+}
