@@ -1,0 +1,152 @@
+{
+  "certificate_type": "prime_matrix_square_phase_ldg_mertens_product_margin_router",
+  "status": "ldg_mertens_product_margin_external_closed_phase_discrepancy_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "rosser_schoenfeld_product_inequality_matched": true,
+  "algebraic_margin_for_p_ge_2003_closed": true,
+  "explicit_mertens_product_ledger_external_closed": true,
+  "explicit_mertens_product_ledger_self_contained_proved": false,
+  "ldg_lower_current_corpus_proved": false,
+  "negative_square_phase_defect_excluded": false,
+  "row_column_unconditional_closed": false,
+  "constants": {
+    "euler_gamma": 0.5772156649015329,
+    "e_gamma": 1.781072417990198,
+    "rs_c": 2.50637,
+    "c_g": 0.48,
+    "p0": 2003
+  },
+  "sample_rows": [
+    {
+      "p": 2003,
+      "y": 736,
+      "rs_lower": 0.08239301512625709,
+      "target": 0.0631379453421031,
+      "surplus": 0.01925506978415399,
+      "ratio": 1.3049682671778975
+    },
+    {
+      "p": 5003,
+      "y": 1840,
+      "rs_lower": 0.0728722071404287,
+      "target": 0.05635262553957456,
+      "surplus": 0.016519581600854143,
+      "ratio": 1.2931466181509679
+    },
+    {
+      "p": 10007,
+      "y": 3681,
+      "rs_lower": 0.0669813632953101,
+      "target": 0.05211137866919925,
+      "surplus": 0.014869984626110846,
+      "ratio": 1.2853500522506776
+    },
+    {
+      "p": 20011,
+      "y": 7361,
+      "rs_lower": 0.06195759491645577,
+      "target": 0.04846508353603158,
+      "surplus": 0.01349251138042419,
+      "ratio": 1.278396536145308
+    },
+    {
+      "p": 100000,
+      "y": 36787,
+      "rs_lower": 0.0527352595895817,
+      "target": 0.041692270262712175,
+      "surplus": 0.011042989326869528,
+      "ratio": 1.2648689854806472
+    },
+    {
+      "p": 1000000,
+      "y": 367879,
+      "rs_lower": 0.04343874402523731,
+      "target": 0.03474355855226015,
+      "surplus": 0.008695185472977159,
+      "ratio": 1.2502675556361948
+    },
+    {
+      "p": 10000000,
+      "y": 3678794,
+      "rs_lower": 0.0369109804739215,
+      "target": 0.029780193044794408,
+      "surplus": 0.0071307874291270945,
+      "ratio": 1.2394473205194203
+    }
+  ],
+  "proof_inequality_rows": [
+    {
+      "name": "L0",
+      "value": 7.602401335665818,
+      "meaning": "L=log P at P0=2003"
+    },
+    {
+      "name": "t0",
+      "value": 6.602401335665818,
+      "meaning": "t=L-1 upper bound for log floor(P/e)"
+    },
+    {
+      "name": "F(L0)",
+      "value": 1.7756958205543212,
+      "meaning": "F(L)=L-0.48(e^gamma(L-1)+2.50637/(L-1))"
+    },
+    {
+      "name": "coarse_derivative_lower",
+      "value": 0.14508523936470497,
+      "meaning": "1-0.48e^gamma; positive lower bound for F'(L) after dropping the positive term"
+    },
+    {
+      "name": "exact_derivative_at_L0",
+      "value": 0.17268355524233658,
+      "meaning": "F'(L0), also positive"
+    }
+  ],
+  "decision_rows": [
+    {
+      "gate": "RosserSchoenfeldProductInequalityMatched",
+      "closed": true,
+      "proved": false,
+      "meaning": "若接受外部乘积不等式 prod_{q<=x}(1-1/q)>1/(e^gamma log x+2.50637/log x)，则可接入本门。",
+      "remaining": "external theorem accepted OR self-contained proof"
+    },
+    {
+      "gate": "AlgebraicMarginForPGe2003Closed",
+      "closed": true,
+      "proved": true,
+      "meaning": "用 y=floor(P/e)<=P/e 与单调性，P>=2003 时外部乘积下界严格大于 0.48/logP。",
+      "remaining": "none"
+    },
+    {
+      "gate": "ExplicitMertensProductLedgerExternalClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "在接受 Rosser-Schoenfeld 外部输入时，LDG 主项常数余量关闭。",
+      "remaining": "self-contained Rosser-Schoenfeld/Dusart proof appendix if strict route"
+    },
+    {
+      "gate": "LDGLowerStillNeedsPhaseDiscrepancy",
+      "closed": false,
+      "proved": false,
+      "meaning": "完整周期主项余量不等于短区间实际 G(P) 下界；还需排斥负平方相位覆盖过量。",
+      "remaining": "NegativeSquarePhaseCoveringDefectOrQuadraticCharacterPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "没有排除相位亏损和 RFP 过密出口，不能声明行/列命题无条件闭合。",
+      "remaining": "NegativeSquarePhase defect AND ReciprocalFloor defect exclusions"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_ldg_mertens_product_margin_router.py": "695c751614b2cc203a84e1ab5a859a9c3937fa086698df72dceabcfff9e17564",
+    "docs/monograph/prime-matrix-square-phase-low-skeleton-quadratic-defect-router.json": "1262152377e4b7477fef34bd370861bd1829bb06a3b964c19dc833db2cb2128d",
+    "docs/monograph/prime-matrix-square-phase-ldg-beta-level-barrier-router.json": "a1ec417a7099e683d4053147b2ac6dce5f88e7b23c4e2867a61bc86190ef8779",
+    "docs/monograph/prime-matrix-diagonal-postsquare-ldg-lower-pdec-route.md": "8e9a5381b104901ab29fd2734fd159bb1a9ddff93907e750834283f970ebf92c",
+    "docs/monograph/prime-matrix-b3-explicit-prime-reciprocal-mertens-router.md": "d7a0900a55a3d0765a9fc8ee80f3e0b492d9266ac0b3ccb61feda4d06ef1ad5f"
+  },
+  "next_direct_attack_target": "NegativeSquarePhaseCoveringDefectOrQuadraticCharacterPDEC",
+  "plain_conclusion": "接受 Rosser-Schoenfeld 型外部 Mertens 乘积不等式时，`y=floor(P/e)` 的完整周期密度从 `P>=2003` 起严格高于 `0.48/logP`。代数余量本身很宽，因此 LDG 剩余不再是主项常数，而是短区间负平方相位实际计数 `G(P)` 相对完整周期主项的亏损。严格自足路线仍需内联该外部乘积不等式的证明。"
+}
