@@ -1,0 +1,67 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_quotient_lock_fixed_core_bridge_router",
+  "status": "z61_quotient_lock_fixed_core_bridged_to_dyadic_absorber_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_quotient_lock_pdec_registration_router",
+    "prime_matrix_square_phase_lowalpha_z61_prefix_gate_pdec_registration_router",
+    "prime_matrix_square_phase_lowalpha_z61_prefix_gate_phase_persistence_router",
+    "prime_matrix_square_phase_lowalpha_z61_overlap_common_core_router",
+    "prime_matrix_square_phase_lowalpha_z61_negative_dyadic_absorber_router",
+    "prime_matrix_square_phase_lowalpha_z61_dyadic_source_congruence_router"
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "core": 4807,
+  "phase_modulus": 28842,
+  "quotient_lock_modulus": 57684,
+  "phase_modulus_equals_6core": true,
+  "quotient_lock_modulus_equals_12core": true,
+  "quotient_lock_modulus_is_positive_lift_2B": true,
+  "common_core_bridge_closed": true,
+  "hit_lcm_bridge_closed": true,
+  "source_quotients": [
+    1,
+    2,
+    4
+  ],
+  "phase_hit_quotients": [
+    1,
+    2,
+    4
+  ],
+  "dyadic_absorber_quotients": [
+    2,
+    4
+  ],
+  "q2_matches_quotient_2_source_q": true,
+  "q4_matches_quotient_4_source_q": true,
+  "quotient_2_b_equals_quotient_lock_modulus": true,
+  "quotient_4_b_equals_twice_quotient_lock_modulus": true,
+  "negative_phase_actual": 0.5554266330905256,
+  "positive_phase_actual": 1.1108532661810513,
+  "positive_over_negative_phase_actual": 2.0,
+  "same_unit_weight_on_phase_hits": true,
+  "sample_positive_phase_absorbs_negative": true,
+  "quotient_lock_fixed_core_bridge_closed_for_sample": true,
+  "fixed_core_check_completed": true,
+  "quotient_lock_pdec_excluded_by_absence": false,
+  "quotient_lock_pdec_locally_absorbed_by_dyadic_lifts": true,
+  "global_fixed_core_dyadic_absorber_proved": false,
+  "persistent_phase_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_quotient_lock_fixed_core_bridge_router.py": "02be46961895cd5b082f65f22dd019c01f0ce4436388f0c72003b03aaf623c92",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-quotient-lock-pdec-registration-router.json": "de2e08cee034406c26eafaed8b009646d6310f645e4c04d8d552f77cd5df216e",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-prefix-gate-pdec-registration-router.json": "23bc56d8d9a7bb56e2dda988ad66df5d49fa7e51e00bef1f81adc6cbae146523",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-prefix-gate-phase-persistence-router.json": "7470bdf7651a2cdc84f388e336e7c4273cbb2aa2836bb149c17330950fe3365f",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-overlap-common-core-router.json": "4784443770637bbe4832130b0d33a9d72035071ad39e497e65ff67571c5d16d1",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-negative-dyadic-absorber-router.json": "65ce21708202ca8dcc7098eb114492541672abe0cb55743e74e261e81998e034",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-dyadic-source-congruence-router.json": "ea2150eaee0eb08d7f7a3412b3d35821bac7f1901f2fa37028335cf16c9b5d0f"
+  },
+  "next_direct_attack_target": "FixedCoreDyadicAbsorberGlobalizationOrPersistentPhasePDEC",
+  "plain_conclusion": "固定核心检查显示 QuotientLock-PDEC 不是一个新的孤立缺口：`core=4807` 与 Prefix/CommonCore 的核心相同，负锚相位为 `B=6C=28842`，而 QuotientLock 的 `M=57684` 正是 `2B`。样本内该相位有 quotient `1,2,4` 三个命中，两个正向 dyadic lift 的同权贡献恰好以 2:1 吸收负锚。因此不能用相位缺席排斥它；下一步必须把这种 dyadic signed balance 全局化，或登记 PersistentPhase-PDEC。"
+}
