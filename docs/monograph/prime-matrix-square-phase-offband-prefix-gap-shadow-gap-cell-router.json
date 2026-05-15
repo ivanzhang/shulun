@@ -1,0 +1,1595 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_gap_cell_router",
+  "status": "support_collapse_reduced_to_simultaneous_gap_cell_void_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used_as_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-support-collapse-ledger.json",
+    "packet_count": 11,
+    "gap_cell_count": 29,
+    "nonvoid_gap_cell_count": 16,
+    "all_cells_void_packet_count": 0,
+    "min_nonvoid_cells_per_packet": 1,
+    "min_escape_primes_per_packet": 1,
+    "max_gap_cell_candidate_count": 14,
+    "max_packet_gap_cell_count": 4
+  },
+  "packet_frontier": [
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "q_hull_lo": 485,
+      "q_hull_hi": 501,
+      "wheel17_survivor_values": [
+        487,
+        491
+      ],
+      "wheel17_survivor_count": 2,
+      "void_atom_keys": [
+        "both_offband_middle:k0:501-501",
+        "minus_only_noslot:k0:493-499",
+        "both_offband_middle:k1:485-485"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 485,
+          "q_hi": 485,
+          "candidate_count": 1
+        },
+        {
+          "q_lo": 493,
+          "q_hi": 501,
+          "candidate_count": 5
+        }
+      ],
+      "cell_count": 3,
+      "max_gap_cell_candidate_count": 5,
+      "actual_nonvoid_gap_cell_count": 1,
+      "actual_escape_prime_count": 1,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 485,
+          "q_hi": 485,
+          "candidate_count": 1,
+          "q_values": [
+            485
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 1,
+          "complement_candidate_count": 0,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "523:plus:485-485"
+        },
+        {
+          "q_lo": 489,
+          "q_hi": 489,
+          "candidate_count": 1,
+          "q_values": [
+            489
+          ],
+          "support_type": "complement_gap_cell",
+          "target_union_candidate_count": 0,
+          "complement_candidate_count": 1,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "523:plus:489-489"
+        },
+        {
+          "q_lo": 493,
+          "q_hi": 501,
+          "candidate_count": 5,
+          "q_values": [
+            493,
+            495,
+            497,
+            499,
+            501
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            499
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 3,
+          "cell_key": "523:plus:493-501"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 493,
+          "q_hi": 501,
+          "candidate_count": 5,
+          "q_values": [
+            493,
+            495,
+            497,
+            499,
+            501
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            499
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 3,
+          "cell_key": "523:plus:493-501"
+        }
+      ]
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "q_hull_lo": 639,
+      "q_hull_hi": 657,
+      "wheel17_survivor_values": [
+        641,
+        643,
+        647
+      ],
+      "wheel17_survivor_count": 3,
+      "void_atom_keys": [
+        "both_offband_middle:k0:657-657",
+        "minus_only_noslot:k0:649-655",
+        "both_offband_middle:k1:639-639"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 639,
+          "q_hi": 639,
+          "candidate_count": 1
+        },
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5
+        }
+      ],
+      "cell_count": 3,
+      "max_gap_cell_candidate_count": 5,
+      "actual_nonvoid_gap_cell_count": 1,
+      "actual_escape_prime_count": 1,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 639,
+          "q_hi": 639,
+          "candidate_count": 1,
+          "q_values": [
+            639
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 1,
+          "complement_candidate_count": 0,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "683:plus:639-639"
+        },
+        {
+          "q_lo": 645,
+          "q_hi": 645,
+          "candidate_count": 1,
+          "q_values": [
+            645
+          ],
+          "support_type": "complement_gap_cell",
+          "target_union_candidate_count": 0,
+          "complement_candidate_count": 1,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "683:plus:645-645"
+        },
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            653
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 3,
+          "cell_key": "683:plus:649-657"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            653
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 3,
+          "cell_key": "683:plus:649-657"
+        }
+      ]
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "q_hull_lo": 649,
+      "q_hull_hi": 665,
+      "wheel17_survivor_values": [
+        659,
+        661
+      ],
+      "wheel17_survivor_count": 2,
+      "void_atom_keys": [
+        "both_offband_middle:k0:665-665",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3
+        },
+        {
+          "q_lo": 665,
+          "q_hi": 665,
+          "candidate_count": 1
+        }
+      ],
+      "cell_count": 2,
+      "max_gap_cell_candidate_count": 5,
+      "actual_nonvoid_gap_cell_count": 1,
+      "actual_escape_prime_count": 1,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            653
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "691:minus:649-657"
+        },
+        {
+          "q_lo": 663,
+          "q_hi": 665,
+          "candidate_count": 2,
+          "q_values": [
+            663,
+            665
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 1,
+          "complement_candidate_count": 1,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "691:minus:663-665"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            653
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "691:minus:649-657"
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "q_hull_lo": 675,
+      "q_hull_hi": 687,
+      "wheel17_survivor_values": [
+        677
+      ],
+      "wheel17_survivor_count": 1,
+      "void_atom_keys": [
+        "minus_only_noslot:k1:681-687",
+        "both_offband_middle:k2:675-675"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 675,
+          "q_hi": 675,
+          "candidate_count": 1
+        },
+        {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4
+        }
+      ],
+      "cell_count": 2,
+      "max_gap_cell_candidate_count": 5,
+      "actual_nonvoid_gap_cell_count": 1,
+      "actual_escape_prime_count": 1,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 675,
+          "q_hi": 675,
+          "candidate_count": 1,
+          "q_values": [
+            675
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 1,
+          "complement_candidate_count": 0,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "733:plus:675-675"
+        },
+        {
+          "q_lo": 679,
+          "q_hi": 687,
+          "candidate_count": 5,
+          "q_values": [
+            679,
+            681,
+            683,
+            685,
+            687
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 4,
+          "complement_candidate_count": 1,
+          "prime_values": [
+            683
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "733:plus:679-687"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 679,
+          "q_hi": 687,
+          "candidate_count": 5,
+          "q_values": [
+            679,
+            681,
+            683,
+            685,
+            687
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 4,
+          "complement_candidate_count": 1,
+          "prime_values": [
+            683
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "733:plus:679-687"
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "q_hull_lo": 675,
+      "q_hull_hi": 705,
+      "wheel17_survivor_values": [
+        677,
+        683,
+        691
+      ],
+      "wheel17_survivor_count": 3,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "both_offband_middle:k2:675-675"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 675,
+          "q_hi": 675,
+          "candidate_count": 1
+        },
+        {
+          "q_lo": 697,
+          "q_hi": 705,
+          "candidate_count": 5
+        }
+      ],
+      "cell_count": 4,
+      "max_gap_cell_candidate_count": 7,
+      "actual_nonvoid_gap_cell_count": 1,
+      "actual_escape_prime_count": 1,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 675,
+          "q_hi": 675,
+          "candidate_count": 1,
+          "q_values": [
+            675
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 1,
+          "complement_candidate_count": 0,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "733:plus:675-675"
+        },
+        {
+          "q_lo": 679,
+          "q_hi": 681,
+          "candidate_count": 2,
+          "q_values": [
+            679,
+            681
+          ],
+          "support_type": "complement_gap_cell",
+          "target_union_candidate_count": 0,
+          "complement_candidate_count": 2,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "733:plus:679-681"
+        },
+        {
+          "q_lo": 685,
+          "q_hi": 689,
+          "candidate_count": 3,
+          "q_values": [
+            685,
+            687,
+            689
+          ],
+          "support_type": "complement_gap_cell",
+          "target_union_candidate_count": 0,
+          "complement_candidate_count": 3,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 3,
+          "cell_key": "733:plus:685-689"
+        },
+        {
+          "q_lo": 693,
+          "q_hi": 705,
+          "candidate_count": 7,
+          "q_values": [
+            693,
+            695,
+            697,
+            699,
+            701,
+            703,
+            705
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            701
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 4,
+          "cell_key": "733:plus:693-705"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 693,
+          "q_hi": 705,
+          "candidate_count": 7,
+          "q_values": [
+            693,
+            695,
+            697,
+            699,
+            701,
+            703,
+            705
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            701
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 4,
+          "cell_key": "733:plus:693-705"
+        }
+      ]
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "q_hull_lo": 619,
+      "q_hull_hi": 637,
+      "wheel17_survivor_values": [],
+      "wheel17_survivor_count": 0,
+      "void_atom_keys": [
+        "plus_only_noslot:k1:631-637",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3
+        },
+        {
+          "q_lo": 631,
+          "q_hi": 637,
+          "candidate_count": 4
+        }
+      ],
+      "cell_count": 1,
+      "max_gap_cell_candidate_count": 10,
+      "actual_nonvoid_gap_cell_count": 1,
+      "actual_escape_prime_count": 2,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 619,
+          "q_hi": 637,
+          "candidate_count": 10,
+          "q_values": [
+            619,
+            621,
+            623,
+            625,
+            627,
+            629,
+            631,
+            633,
+            635,
+            637
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 7,
+          "complement_candidate_count": 3,
+          "prime_values": [
+            619,
+            631
+          ],
+          "prime_count": 2,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "673:minus:619-637"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 619,
+          "q_hi": 637,
+          "candidate_count": 10,
+          "q_values": [
+            619,
+            621,
+            623,
+            625,
+            627,
+            629,
+            631,
+            633,
+            635,
+            637
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 7,
+          "complement_candidate_count": 3,
+          "prime_values": [
+            619,
+            631
+          ],
+          "prime_count": 2,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "673:minus:619-637"
+        }
+      ]
+    },
+    {
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "q_hull_lo": 273,
+      "q_hull_hi": 295,
+      "wheel17_survivor_values": [
+        277
+      ],
+      "wheel17_survivor_count": 1,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:289-295",
+        "minus_only_noslot:k1:281-283",
+        "minus_only_noslot:k2:273-275"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 273,
+          "q_hi": 275,
+          "candidate_count": 2
+        },
+        {
+          "q_lo": 281,
+          "q_hi": 283,
+          "candidate_count": 2
+        },
+        {
+          "q_lo": 289,
+          "q_hi": 295,
+          "candidate_count": 4
+        }
+      ],
+      "cell_count": 2,
+      "max_gap_cell_candidate_count": 9,
+      "actual_nonvoid_gap_cell_count": 1,
+      "actual_escape_prime_count": 3,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 273,
+          "q_hi": 275,
+          "candidate_count": 2,
+          "q_values": [
+            273,
+            275
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 2,
+          "complement_candidate_count": 0,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "313:plus:273-275"
+        },
+        {
+          "q_lo": 279,
+          "q_hi": 295,
+          "candidate_count": 9,
+          "q_values": [
+            279,
+            281,
+            283,
+            285,
+            287,
+            289,
+            291,
+            293,
+            295
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 6,
+          "complement_candidate_count": 3,
+          "prime_values": [
+            281,
+            283,
+            293
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "313:plus:279-295"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 279,
+          "q_hi": 295,
+          "candidate_count": 9,
+          "q_values": [
+            279,
+            281,
+            283,
+            285,
+            287,
+            289,
+            291,
+            293,
+            295
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 6,
+          "complement_candidate_count": 3,
+          "prime_values": [
+            281,
+            283,
+            293
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "313:plus:279-295"
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "q_hull_lo": 681,
+      "q_hull_hi": 705,
+      "wheel17_survivor_values": [
+        691
+      ],
+      "wheel17_survivor_count": 1,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "minus_only_noslot:k1:681-687"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4
+        },
+        {
+          "q_lo": 697,
+          "q_hi": 705,
+          "candidate_count": 5
+        }
+      ],
+      "cell_count": 2,
+      "max_gap_cell_candidate_count": 7,
+      "actual_nonvoid_gap_cell_count": 2,
+      "actual_escape_prime_count": 2,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 681,
+          "q_hi": 689,
+          "candidate_count": 5,
+          "q_values": [
+            681,
+            683,
+            685,
+            687,
+            689
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 4,
+          "complement_candidate_count": 1,
+          "prime_values": [
+            683
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "733:plus:681-689"
+        },
+        {
+          "q_lo": 693,
+          "q_hi": 705,
+          "candidate_count": 7,
+          "q_values": [
+            693,
+            695,
+            697,
+            699,
+            701,
+            703,
+            705
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            701
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "733:plus:693-705"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 681,
+          "q_hi": 689,
+          "candidate_count": 5,
+          "q_values": [
+            681,
+            683,
+            685,
+            687,
+            689
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 4,
+          "complement_candidate_count": 1,
+          "prime_values": [
+            683
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "733:plus:681-689"
+        },
+        {
+          "q_lo": 693,
+          "q_hi": 705,
+          "candidate_count": 7,
+          "q_values": [
+            693,
+            695,
+            697,
+            699,
+            701,
+            703,
+            705
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 5,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            701
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "733:plus:693-705"
+        }
+      ]
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "q_hull_lo": 619,
+      "q_hull_hi": 671,
+      "wheel17_survivor_values": [
+        631,
+        641,
+        643,
+        647
+      ],
+      "wheel17_survivor_count": 4,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:649-671",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3
+        },
+        {
+          "q_lo": 649,
+          "q_hi": 671,
+          "candidate_count": 12
+        }
+      ],
+      "cell_count": 4,
+      "max_gap_cell_candidate_count": 12,
+      "actual_nonvoid_gap_cell_count": 2,
+      "actual_escape_prime_count": 4,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 619,
+          "q_hi": 629,
+          "candidate_count": 6,
+          "q_values": [
+            619,
+            621,
+            623,
+            625,
+            627,
+            629
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 3,
+          "prime_values": [
+            619
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "673:minus:619-629"
+        },
+        {
+          "q_lo": 633,
+          "q_hi": 639,
+          "candidate_count": 4,
+          "q_values": [
+            633,
+            635,
+            637,
+            639
+          ],
+          "support_type": "complement_gap_cell",
+          "target_union_candidate_count": 0,
+          "complement_candidate_count": 4,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "673:minus:633-639"
+        },
+        {
+          "q_lo": 645,
+          "q_hi": 645,
+          "candidate_count": 1,
+          "q_values": [
+            645
+          ],
+          "support_type": "complement_gap_cell",
+          "target_union_candidate_count": 0,
+          "complement_candidate_count": 1,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 3,
+          "cell_key": "673:minus:645-645"
+        },
+        {
+          "q_lo": 649,
+          "q_hi": 671,
+          "candidate_count": 12,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657,
+            659,
+            661,
+            663,
+            665,
+            667,
+            669,
+            671
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 12,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            653,
+            659,
+            661
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 4,
+          "cell_key": "673:minus:649-671"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 619,
+          "q_hi": 629,
+          "candidate_count": 6,
+          "q_values": [
+            619,
+            621,
+            623,
+            625,
+            627,
+            629
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 3,
+          "prime_values": [
+            619
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "673:minus:619-629"
+        },
+        {
+          "q_lo": 649,
+          "q_hi": 671,
+          "candidate_count": 12,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657,
+            659,
+            661,
+            663,
+            665,
+            667,
+            669,
+            671
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 12,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            653,
+            659,
+            661
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 4,
+          "cell_key": "673:minus:649-671"
+        }
+      ]
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "q_hull_lo": 649,
+      "q_hull_hi": 689,
+      "wheel17_survivor_values": [
+        659,
+        661
+      ],
+      "wheel17_survivor_count": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:667-689",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3
+        },
+        {
+          "q_lo": 667,
+          "q_hi": 689,
+          "candidate_count": 12
+        }
+      ],
+      "cell_count": 2,
+      "max_gap_cell_candidate_count": 14,
+      "actual_nonvoid_gap_cell_count": 2,
+      "actual_escape_prime_count": 4,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            653
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "691:minus:649-657"
+        },
+        {
+          "q_lo": 663,
+          "q_hi": 689,
+          "candidate_count": 14,
+          "q_values": [
+            663,
+            665,
+            667,
+            669,
+            671,
+            673,
+            675,
+            677,
+            679,
+            681,
+            683,
+            685,
+            687,
+            689
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 12,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            673,
+            677,
+            683
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "691:minus:663-689"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            653
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "691:minus:649-657"
+        },
+        {
+          "q_lo": 663,
+          "q_hi": 689,
+          "candidate_count": 14,
+          "q_values": [
+            663,
+            665,
+            667,
+            669,
+            671,
+            673,
+            675,
+            677,
+            679,
+            681,
+            683,
+            685,
+            687,
+            689
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 12,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            673,
+            677,
+            683
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "691:minus:663-689"
+        }
+      ]
+    },
+    {
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "q_hull_lo": 1051,
+      "q_hull_hi": 1095,
+      "wheel17_survivor_values": [
+        1061,
+        1063,
+        1073,
+        1081
+      ],
+      "wheel17_survivor_count": 4,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:1083-1095",
+        "minus_only_noslot:k1:1065-1071",
+        "minus_only_noslot:k2:1051-1055"
+      ],
+      "target_union_intervals": [
+        {
+          "q_lo": 1051,
+          "q_hi": 1055,
+          "candidate_count": 3
+        },
+        {
+          "q_lo": 1065,
+          "q_hi": 1071,
+          "candidate_count": 4
+        },
+        {
+          "q_lo": 1083,
+          "q_hi": 1095,
+          "candidate_count": 7
+        }
+      ],
+      "cell_count": 4,
+      "max_gap_cell_candidate_count": 7,
+      "actual_nonvoid_gap_cell_count": 3,
+      "actual_escape_prime_count": 5,
+      "collapse_requires_all_cells_void": true,
+      "all_cells_void_pdec_occurs_in_finite_audit": false,
+      "gap_cells": [
+        {
+          "q_lo": 1051,
+          "q_hi": 1059,
+          "candidate_count": 5,
+          "q_values": [
+            1051,
+            1053,
+            1055,
+            1057,
+            1059
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            1051
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "1129:plus:1051-1059"
+        },
+        {
+          "q_lo": 1065,
+          "q_hi": 1071,
+          "candidate_count": 4,
+          "q_values": [
+            1065,
+            1067,
+            1069,
+            1071
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 4,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            1069
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "1129:plus:1065-1071"
+        },
+        {
+          "q_lo": 1075,
+          "q_hi": 1079,
+          "candidate_count": 3,
+          "q_values": [
+            1075,
+            1077,
+            1079
+          ],
+          "support_type": "complement_gap_cell",
+          "target_union_candidate_count": 0,
+          "complement_candidate_count": 3,
+          "prime_values": [],
+          "prime_count": 0,
+          "actual_cell_void": true,
+          "collapse_requires_cell_void": true,
+          "cell_index": 3,
+          "cell_key": "1129:plus:1075-1079"
+        },
+        {
+          "q_lo": 1083,
+          "q_hi": 1095,
+          "candidate_count": 7,
+          "q_values": [
+            1083,
+            1085,
+            1087,
+            1089,
+            1091,
+            1093,
+            1095
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 7,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            1087,
+            1091,
+            1093
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 4,
+          "cell_key": "1129:plus:1083-1095"
+        }
+      ],
+      "nonvoid_gap_cells": [
+        {
+          "q_lo": 1051,
+          "q_hi": 1059,
+          "candidate_count": 5,
+          "q_values": [
+            1051,
+            1053,
+            1055,
+            1057,
+            1059
+          ],
+          "support_type": "mixed_gap_cell",
+          "target_union_candidate_count": 3,
+          "complement_candidate_count": 2,
+          "prime_values": [
+            1051
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 1,
+          "cell_key": "1129:plus:1051-1059"
+        },
+        {
+          "q_lo": 1065,
+          "q_hi": 1071,
+          "candidate_count": 4,
+          "q_values": [
+            1065,
+            1067,
+            1069,
+            1071
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 4,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            1069
+          ],
+          "prime_count": 1,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 2,
+          "cell_key": "1129:plus:1065-1071"
+        },
+        {
+          "q_lo": 1083,
+          "q_hi": 1095,
+          "candidate_count": 7,
+          "q_values": [
+            1083,
+            1085,
+            1087,
+            1089,
+            1091,
+            1093,
+            1095
+          ],
+          "support_type": "target_union_gap_cell",
+          "target_union_candidate_count": 7,
+          "complement_candidate_count": 0,
+          "prime_values": [
+            1087,
+            1091,
+            1093
+          ],
+          "prime_count": 3,
+          "actual_cell_void": false,
+          "collapse_requires_cell_void": true,
+          "cell_index": 4,
+          "cell_key": "1129:plus:1083-1095"
+        }
+      ]
+    }
+  ],
+  "all_cells_void_packet_count": 0,
+  "gap_cell_decomposition_closed": true,
+  "single_gap_cell_prime_supply_proved_globally": false,
+  "simultaneous_gap_cell_void_pdec_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "FixedSmallKPuncturedHullPrimeGapPatternExclusionOrSupportCollapsePDEC",
+  "hardpoint_after_router": "SingleGapCellPrimeSupplyOrSimultaneousGapCellVoidPDEC",
+  "next_direct_attack_target": "SingleGapCellPrimeSupplyOrSimultaneousGapCellVoidPDEC",
+  "theorem_rows": [
+    {
+      "name": "support_collapse_to_gap_cells",
+      "status": "closed",
+      "statement": "A support-collapse packet is exactly the simultaneous prime-void condition on all non-survivor gap cells."
+    },
+    {
+      "name": "single_cell_prime_supply_excludes_packet",
+      "status": "closed",
+      "statement": "If any gap cell contains a prime, the corresponding support-collapse packet is impossible."
+    },
+    {
+      "name": "finite_no_all_cells_void",
+      "status": "finite_evidence",
+      "statement": "The finite audit finds at least one non-void gap cell in every packet."
+    },
+    {
+      "name": "global_single_gap_cell_prime_supply",
+      "status": "open",
+      "statement": "A global proof still needs a prime in at least one explicit gap cell for every fixed small-k packet, or exclusion of simultaneous cell void."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_gap_cell_router.py": "b563bc3b9c01bc7f2eb8034067e5b91c17ee775f48aa01c5f4fd666ce561c23b",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_support_collapse_router.py": "69b61f3820afc3daa860fd3ac612bb78d8a3635e89aea87a2b8dafaf2bc5e273",
+    "data/square-phase-offband-prefix-gap-shadow-support-collapse-ledger.json": "221c23d9062defd07903b63b15e284ddd4f86693640f512aa6818c6abda95594",
+    "data/square-phase-offband-prefix-gap-shadow-gap-cell-ledger.json": "ac04a88489870922cb63f322e7515657d8762ec5fb4af58e7040c498512cedce",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-gap-cell-router.md": "78e48ed7c6ddaf6b744c20eeeccd9a38af06be72776d806e7ee4d992202b3871"
+  },
+  "plain_conclusion": "本步把支撑塌缩 PDEC 精确切成 gap cells：wheel-17 survivor 是允许落素数的穿孔点，其余 hull 奇候选分成若干连续 cell；支撑塌缩等价于所有这些 cells 同时 prime-void。有限账本中每个包至少有一个非空 cell，因此 all-cells-void 包数为 0；全局仍需证明每个固定小 k 包至少一个显式 cell 含素数，或排斥 simultaneous cell void PDEC。",
+  "decision_rows": [
+    {
+      "gate": "GapCellDecompositionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "支撑塌缩已等价为所有非幸存 gap cells 同时 prime-void。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "SingleCellPrimeSupplyCriterionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "任一 gap cell 含素数即可排除对应塌缩包。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FiniteNoAllCellsVoid",
+      "closed": true,
+      "proved": false,
+      "meaning": "有限前沿中没有所有 cells 同时空的包。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "GlobalGapCellPrimeSupplyClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需全局证明每个固定小 k 包至少一个 cell 含素数。",
+      "remaining": "SingleGapCellPrimeSupplyOrSimultaneousGapCellVoidPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只完成 PDEC 的 gap-cell 分解，不关闭全局行/列命题。",
+      "remaining": "SingleGapCellPrimeSupplyOrSimultaneousGapCellVoidPDEC"
+    }
+  ]
+}
