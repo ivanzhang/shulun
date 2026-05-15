@@ -1,0 +1,283 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_terminal_sign_forcing_router",
+  "status": "z61_dominant_peel_reduced_to_terminal_sign_forcing_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_signed_sum_dominant_peel_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "terminal_sign_forcing_group_count": 1,
+  "all_terminal_sign_forcings_closed": true,
+  "terminal_rows": [
+    {
+      "modulus": 57684,
+      "target_modulus": 2627,
+      "selected_residue": 26951,
+      "terminal_coefficients": [
+        14421,
+        19228,
+        12540
+      ],
+      "terminal_interval_start": -73140,
+      "terminal_interval_stop": -15456,
+      "terminal_targets_mod": [
+        395,
+        1097,
+        1949,
+        2170
+      ],
+      "first_forced_coefficient": 14421,
+      "first_branches": [
+        {
+          "peeled_coefficient": 14421,
+          "peeled_sign": "+",
+          "rest_coefficients": [
+            19228,
+            12540
+          ],
+          "rest_interval_start": -87561,
+          "rest_interval_stop": -29877,
+          "rest_targets_mod": [
+            663,
+            884,
+            1736,
+            2438
+          ],
+          "interval_candidate_count": 1,
+          "target_candidate_count": 0,
+          "hit_count": 0,
+          "rows": [
+            {
+              "sign_word": "++",
+              "signed_sum": 31768,
+              "sum_mod": 244,
+              "in_interval": false,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "+-",
+              "signed_sum": 6688,
+              "sum_mod": 1434,
+              "in_interval": false,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-+",
+              "signed_sum": -6688,
+              "sum_mod": 1193,
+              "in_interval": false,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "--",
+              "signed_sum": -31768,
+              "sum_mod": 2383,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            }
+          ],
+          "hits": []
+        },
+        {
+          "peeled_coefficient": 14421,
+          "peeled_sign": "-",
+          "rest_coefficients": [
+            19228,
+            12540
+          ],
+          "rest_interval_start": -58719,
+          "rest_interval_stop": -1035,
+          "rest_targets_mod": [
+            608,
+            829,
+            1681,
+            2383
+          ],
+          "interval_candidate_count": 2,
+          "target_candidate_count": 1,
+          "hit_count": 1,
+          "rows": [
+            {
+              "sign_word": "++",
+              "signed_sum": 31768,
+              "sum_mod": 244,
+              "in_interval": false,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "+-",
+              "signed_sum": 6688,
+              "sum_mod": 1434,
+              "in_interval": false,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-+",
+              "signed_sum": -6688,
+              "sum_mod": 1193,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "--",
+              "signed_sum": -31768,
+              "sum_mod": 2383,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ],
+          "hits": [
+            {
+              "sign_word": "--",
+              "signed_sum": -31768,
+              "sum_mod": 2383,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ]
+        }
+      ],
+      "selected_first_sign": "-",
+      "second_forced_coefficient": 19228,
+      "second_branches": [
+        {
+          "peeled_coefficient": 19228,
+          "peeled_sign": "+",
+          "rest_coefficients": [
+            12540
+          ],
+          "rest_interval_start": -77947,
+          "rest_interval_stop": -20263,
+          "rest_targets_mod": [
+            842,
+            1544,
+            2396,
+            2617
+          ],
+          "interval_candidate_count": 0,
+          "target_candidate_count": 0,
+          "hit_count": 0,
+          "rows": [
+            {
+              "sign_word": "+",
+              "signed_sum": 12540,
+              "sum_mod": 2032,
+              "in_interval": false,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-",
+              "signed_sum": -12540,
+              "sum_mod": 595,
+              "in_interval": false,
+              "target_hit": false,
+              "full_hit": false
+            }
+          ],
+          "hits": []
+        },
+        {
+          "peeled_coefficient": 19228,
+          "peeled_sign": "-",
+          "rest_coefficients": [
+            12540
+          ],
+          "rest_interval_start": -39491,
+          "rest_interval_stop": 18193,
+          "rest_targets_mod": [
+            595,
+            1447,
+            1668,
+            2520
+          ],
+          "interval_candidate_count": 2,
+          "target_candidate_count": 1,
+          "hit_count": 1,
+          "rows": [
+            {
+              "sign_word": "+",
+              "signed_sum": 12540,
+              "sum_mod": 2032,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-",
+              "signed_sum": -12540,
+              "sum_mod": 595,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ],
+          "hits": [
+            {
+              "sign_word": "-",
+              "signed_sum": -12540,
+              "sum_mod": 595,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ]
+        }
+      ],
+      "selected_second_sign": "-",
+      "last_coefficient": 12540,
+      "last_rows": [
+        {
+          "sign_word": "+",
+          "signed_sum": 12540,
+          "sum_mod": 2032,
+          "in_interval": true,
+          "target_hit": false,
+          "full_hit": false
+        },
+        {
+          "sign_word": "-",
+          "signed_sum": -12540,
+          "sum_mod": 595,
+          "in_interval": true,
+          "target_hit": true,
+          "full_hit": true
+        }
+      ],
+      "terminal_hit_count": 1,
+      "terminal_hits": [
+        {
+          "sign_word": "-",
+          "signed_sum": -12540,
+          "sum_mod": 595,
+          "in_interval": true,
+          "target_hit": true,
+          "full_hit": true
+        }
+      ],
+      "forced_terminal_sign_word": "---",
+      "recovered_full_peel_order_sign_word": "++---",
+      "terminal_sign_forcing_closed_for_group": true
+    }
+  ],
+  "terminal_sign_forcing_global_bound_proved": false,
+  "terminal_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_terminal_sign_forcing_router.py": "52c49cae67d3c0127d37ddd252abf975406c38c1056f45d10db0baafcfaf0f5a",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-signed-sum-dominant-peel-router.json": "bd408eb36e3b1a42cb0b24c07eff5dcbbc55684c54633cc1cb2ee90eb8952756"
+  },
+  "next_direct_attack_target": "TerminalSignForcingGlobalBoundOrTerminalPDEC",
+  "plain_conclusion": "dominant peel 后的三项终端门也可完全剥离：`14421` 正号分支有区间候选但无同余命中，负号分支保留；`19228` 正号分支区间空，负号分支保留；最后 `12540` 只有负号同时满足区间和同余。因此当前 formal unit 的终端三项被强制为 `---`，与上游 `382536,36708` 的正号合成剥离坐标 `++---`。"
+}
