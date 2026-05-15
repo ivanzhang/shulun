@@ -1,0 +1,100 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_dyadic_same_p_strip_carry_router",
+  "status": "z61_positive_dyadic_lifts_reduced_to_endpoint_spanning_same_p_strip_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_dyadic_source_congruence_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "positive_same_p_group_count": 1,
+  "max_slot_capacity": 4,
+  "all_positive_same_p_groups_closed": true,
+  "all_positive_same_p_groups_endpoint_spanning": true,
+  "same_p_strip_groups": [
+    {
+      "p": 200003,
+      "phase_modulus": 28842,
+      "base_quotient": 2,
+      "base_modulus": 57684,
+      "slot_min": 693454,
+      "slot_max": 693457,
+      "slot_capacity": 4,
+      "source_rows": [
+        {
+          "phase_quotient": 2,
+          "target_cell_sign": "positive",
+          "p": 200003,
+          "q": 71,
+          "a": 9767,
+          "b": 57684,
+          "b_equals_phase_modulus_times_quotient": true,
+          "modulus_bq": 4095564,
+          "residue": 3921985,
+          "delta": 173579,
+          "short_delta_closed": true,
+          "a_interval_width": 0.048834055578181663,
+          "valid_a_interval_singleton": true,
+          "a_floor_formula_closed": true,
+          "prime_a": true,
+          "prime_b": false,
+          "singleton_interval_gate_closed": true,
+          "n_value": 693457,
+          "normalization_factor": 1,
+          "normalized_n": 693457
+        },
+        {
+          "phase_quotient": 4,
+          "target_cell_sign": "positive",
+          "p": 200003,
+          "q": 37,
+          "a": 9371,
+          "b": 115368,
+          "b_equals_phase_modulus_times_quotient": true,
+          "modulus_bq": 4268616,
+          "residue": 4268089,
+          "delta": 527,
+          "short_delta_closed": true,
+          "a_interval_width": 0.04685429656825538,
+          "valid_a_interval_singleton": true,
+          "a_floor_formula_closed": true,
+          "prime_a": true,
+          "prime_b": false,
+          "singleton_interval_gate_closed": true,
+          "n_value": 346727,
+          "normalization_factor": 2,
+          "normalized_n": 693454
+        }
+      ],
+      "normalized_values": [
+        693457,
+        693454
+      ],
+      "min_normalized": 693454,
+      "max_normalized": 693457,
+      "normalized_span": 3,
+      "span_equals_capacity_minus_one": true,
+      "occupies_both_strip_endpoints": true,
+      "delta_by_quotient": {
+        "2": 173579,
+        "4": 527
+      },
+      "delta_relation_closed": true,
+      "semiprime_carry_equation_value": 3,
+      "semiprime_carry_equation": "71*9767 - 2*37*9371 = 3",
+      "strip_membership_closed": true,
+      "all_source_rows_prime_a": true,
+      "same_p_strip_carry_closed_for_group": true
+    }
+  ],
+  "endpoint_spanning_semiprime_pair_bound_proved": false,
+  "endpoint_pair_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_dyadic_same_p_strip_carry_router.py": "506548705dbd1070dce2cbca95f3b8dd345794df54772ebea28d33979e70da38",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-dyadic-source-congruence-router.json": "ea2150eaee0eb08d7f7a3412b3d35821bac7f1901f2fa37028335cf16c9b5d0f"
+  },
+  "next_direct_attack_target": "EndpointSpanningSemiprimePairGlobalBoundOrEndpointPairPDEC",
+  "plain_conclusion": "两个正 dyadic lift 共用同一个 `p` 后，可归一到同一个 quotient-2 短条带。在样本中该条带只有 `4` 个整数槽，`2q_4a_4` 占最低槽，`q_2a_2` 占最高槽；等价半素数 carry 方程为 `71*9767 - 2*37*9371 = 3`。因此 dyadic 正吸收器进一步压成端点跨越的短条带半素数对问题，下一步证明这种 endpoint-spanning pair 的全局容量界，或登记 EndpointPair-PDEC。"
+}
