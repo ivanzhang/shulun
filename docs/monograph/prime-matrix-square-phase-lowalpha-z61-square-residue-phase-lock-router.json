@@ -1,0 +1,159 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_square_residue_phase_lock_router",
+  "status": "z61_square_window_reduced_to_crt_phase_lock_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_shifted_square_window_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "square_residue_phase_lock_group_count": 1,
+  "all_square_residue_phase_locks_closed": true,
+  "phase_lock_rows": [
+    {
+      "p": 200003,
+      "modulus": 57684,
+      "delta": 527,
+      "span": 3,
+      "quotient_floor_p_over_modulus": 3,
+      "selected_residue": 26951,
+      "p_reconstruction_closed": true,
+      "quotient_equals_span": true,
+      "p_square_residue_mod_modulus": 57157,
+      "negative_delta_residue_mod_modulus": 57157,
+      "delta_congruence_closed": true,
+      "modulus_factorization": {
+        "2": 2,
+        "3": 1,
+        "11": 1,
+        "19": 1,
+        "23": 1
+      },
+      "delta_factorization": {
+        "17": 1,
+        "31": 1
+      },
+      "prime_power_roots": [
+        {
+          "prime_power": 4,
+          "roots": [
+            1,
+            3
+          ],
+          "selected_root": 3,
+          "selected_root_valid": true
+        },
+        {
+          "prime_power": 3,
+          "roots": [
+            1,
+            2
+          ],
+          "selected_root": 2,
+          "selected_root_valid": true
+        },
+        {
+          "prime_power": 11,
+          "roots": [
+            1,
+            10
+          ],
+          "selected_root": 1,
+          "selected_root_valid": true
+        },
+        {
+          "prime_power": 19,
+          "roots": [
+            9,
+            10
+          ],
+          "selected_root": 9,
+          "selected_root_valid": true
+        },
+        {
+          "prime_power": 23,
+          "roots": [
+            5,
+            18
+          ],
+          "selected_root": 18,
+          "selected_root_valid": true
+        }
+      ],
+      "selected_crt_vector": [
+        {
+          "modulus": 4,
+          "residue": 3
+        },
+        {
+          "modulus": 3,
+          "residue": 2
+        },
+        {
+          "modulus": 11,
+          "residue": 1
+        },
+        {
+          "modulus": 19,
+          "residue": 9
+        },
+        {
+          "modulus": 23,
+          "residue": 18
+        }
+      ],
+      "crt_root_count": 32,
+      "crt_roots": [
+        1891,
+        3961,
+        5653,
+        7457,
+        7723,
+        8009,
+        11219,
+        11771,
+        17071,
+        17623,
+        20833,
+        21119,
+        21385,
+        23189,
+        24881,
+        26951,
+        30733,
+        32803,
+        34495,
+        36299,
+        36565,
+        36851,
+        40061,
+        40613,
+        45913,
+        46465,
+        49675,
+        49961,
+        50227,
+        52031,
+        53723,
+        55793
+      ],
+      "selected_residue_is_crt_root": true,
+      "root_density_numerator": 32,
+      "root_density_denominator": 57684,
+      "endpoint_residue_margin_left": 26423,
+      "endpoint_residue_margin_right": 31261,
+      "endpoint_residue_window_closed": true,
+      "phase_lock_closed_for_group": true
+    }
+  ],
+  "square_residue_phase_lock_global_bound_proved": false,
+  "crt_phase_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_square_residue_phase_lock_router.py": "ca9aac392aba2576dbc3568cba3a06f629683307b8191e901901ae3ed6680616",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-shifted-square-window-router.json": "26ed4354b18ce54dc2ea66ce943e628fc02f80cacee97084cc3331a15cd17b83"
+  },
+  "next_direct_attack_target": "SquareResiduePhaseLockGlobalBoundOrCRTPhasePDEC",
+  "plain_conclusion": "平方窗口进一步压成有限 CRT 相位锁：`M=57684=2^2*3*11*19*23`，`delta=527=17*31`，`p^2≡-527 (mod M)` 在每个素幂因子上只有两个根，总共 `32` 个 CRT 根相位。样本选中 `p mod M=26951`，并且 `floor(p/M)=span=3`，所以 `p=3M+26951`。下一步硬点变为全局 CRT 相位锁容量界，或登记 CRTPhase-PDEC。"
+}
