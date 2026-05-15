@@ -1,0 +1,350 @@
+{
+  "parameters": {
+    "max_p": 10000,
+    "p0": 2001,
+    "target_h_coeff": 0.43,
+    "small_sieve_moduli": [
+      3,
+      5,
+      7
+    ]
+  },
+  "aggregate": {
+    "quota_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-lpf7-crt-quota-ledger.json",
+    "template_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-template-provenance-ledger.json",
+    "max_p": 10000,
+    "p0": 2001,
+    "target_h_coeff": 0.43,
+    "selected_hit_count_at_p0": 462,
+    "previous_lpf7_quota_failure_count_at_p0": 1,
+    "residual_failure_count_at_p0": 1,
+    "residual_exact_count_at_p0": 2,
+    "max_residual_surplus_to_bound_at_p0": 8,
+    "max_residual_cap_count_at_p0": 65,
+    "global_357_residual_cap_bound_proved": false,
+    "minus_atom_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "side_rho_records": [
+    {
+      "side": "minus",
+      "rho": 2,
+      "hit_count": 170,
+      "failure_count": 0,
+      "exact_count": 2,
+      "max_residual_surplus_to_bound": 0,
+      "p_values_at_max_surplus": [
+        5297
+      ]
+    },
+    {
+      "side": "minus",
+      "rho": 7,
+      "hit_count": 170,
+      "failure_count": 1,
+      "exact_count": 0,
+      "max_residual_surplus_to_bound": 8,
+      "p_values_at_max_surplus": [
+        2467
+      ]
+    },
+    {
+      "side": "plus",
+      "rho": 2,
+      "hit_count": 64,
+      "failure_count": 0,
+      "exact_count": 0,
+      "max_residual_surplus_to_bound": -3,
+      "p_values_at_max_surplus": [
+        3797
+      ]
+    },
+    {
+      "side": "plus",
+      "rho": 7,
+      "hit_count": 58,
+      "failure_count": 0,
+      "exact_count": 0,
+      "max_residual_surplus_to_bound": -6,
+      "p_values_at_max_surplus": [
+        2347
+      ]
+    }
+  ],
+  "residual_atom_records": [
+    {
+      "template_index": 6,
+      "p": 2467,
+      "side": "minus",
+      "rho": 7,
+      "failure_loaded_b_breakpoint": 7,
+      "loaded_b_layers": 6,
+      "residue_cap_slot_count": 34,
+      "lpf_le_7_loss_count": 20,
+      "small_sieve_357_residual_cap_count": 14,
+      "small_sieve_357_residual_bound": 6,
+      "small_sieve_357_residual_surplus_to_bound": 8,
+      "lpf3_loss_count": 17,
+      "lpf5_loss_count": 2,
+      "lpf7_exact_loss_count": 1
+    },
+    {
+      "template_index": 0,
+      "p": 5297,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 34,
+      "loaded_b_layers": 21,
+      "residue_cap_slot_count": 69,
+      "lpf_le_7_loss_count": 36,
+      "small_sieve_357_residual_cap_count": 33,
+      "small_sieve_357_residual_bound": 33,
+      "small_sieve_357_residual_surplus_to_bound": 0,
+      "lpf3_loss_count": 26,
+      "lpf5_loss_count": 8,
+      "lpf7_exact_loss_count": 2
+    },
+    {
+      "template_index": 5,
+      "p": 5297,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 34,
+      "loaded_b_layers": 21,
+      "residue_cap_slot_count": 69,
+      "lpf_le_7_loss_count": 36,
+      "small_sieve_357_residual_cap_count": 33,
+      "small_sieve_357_residual_bound": 33,
+      "small_sieve_357_residual_surplus_to_bound": 0,
+      "lpf3_loss_count": 26,
+      "lpf5_loss_count": 8,
+      "lpf7_exact_loss_count": 2
+    }
+  ],
+  "tight_examples": [
+    {
+      "template_index": 6,
+      "p": 2467,
+      "side": "minus",
+      "rho": 7,
+      "failure_loaded_b_breakpoint": 7,
+      "loaded_b_layers": 6,
+      "residue_cap_slot_count": 34,
+      "lpf_le_7_loss_count": 20,
+      "small_sieve_357_residual_cap_count": 14,
+      "small_sieve_357_residual_bound": 6,
+      "small_sieve_357_residual_surplus_to_bound": 8,
+      "equivalent_lpf7_quota_surplus": -8
+    },
+    {
+      "template_index": 0,
+      "p": 5297,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 34,
+      "loaded_b_layers": 21,
+      "residue_cap_slot_count": 69,
+      "lpf_le_7_loss_count": 36,
+      "small_sieve_357_residual_cap_count": 33,
+      "small_sieve_357_residual_bound": 33,
+      "small_sieve_357_residual_surplus_to_bound": 0,
+      "equivalent_lpf7_quota_surplus": 0
+    },
+    {
+      "template_index": 5,
+      "p": 5297,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 34,
+      "loaded_b_layers": 21,
+      "residue_cap_slot_count": 69,
+      "lpf_le_7_loss_count": 36,
+      "small_sieve_357_residual_cap_count": 33,
+      "small_sieve_357_residual_bound": 33,
+      "small_sieve_357_residual_surplus_to_bound": 0,
+      "equivalent_lpf7_quota_surplus": 0
+    },
+    {
+      "template_index": 6,
+      "p": 4567,
+      "side": "minus",
+      "rho": 7,
+      "failure_loaded_b_breakpoint": 37,
+      "loaded_b_layers": 20,
+      "residue_cap_slot_count": 70,
+      "lpf_le_7_loss_count": 35,
+      "small_sieve_357_residual_cap_count": 35,
+      "small_sieve_357_residual_bound": 36,
+      "small_sieve_357_residual_surplus_to_bound": -1,
+      "equivalent_lpf7_quota_surplus": 1
+    },
+    {
+      "template_index": 4,
+      "p": 3797,
+      "side": "plus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 31,
+      "loaded_b_layers": 13,
+      "residue_cap_slot_count": 49,
+      "lpf_le_7_loss_count": 22,
+      "small_sieve_357_residual_cap_count": 27,
+      "small_sieve_357_residual_bound": 30,
+      "small_sieve_357_residual_surplus_to_bound": -3,
+      "equivalent_lpf7_quota_surplus": 3
+    },
+    {
+      "template_index": 0,
+      "p": 5807,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 41,
+      "loaded_b_layers": 17,
+      "residue_cap_slot_count": 82,
+      "lpf_le_7_loss_count": 45,
+      "small_sieve_357_residual_cap_count": 37,
+      "small_sieve_357_residual_bound": 40,
+      "small_sieve_357_residual_surplus_to_bound": -3,
+      "equivalent_lpf7_quota_surplus": 3
+    },
+    {
+      "template_index": 5,
+      "p": 5807,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 41,
+      "loaded_b_layers": 17,
+      "residue_cap_slot_count": 82,
+      "lpf_le_7_loss_count": 45,
+      "small_sieve_357_residual_cap_count": 37,
+      "small_sieve_357_residual_bound": 40,
+      "small_sieve_357_residual_surplus_to_bound": -3,
+      "equivalent_lpf7_quota_surplus": 3
+    },
+    {
+      "template_index": 0,
+      "p": 8117,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 51,
+      "loaded_b_layers": 24,
+      "residue_cap_slot_count": 106,
+      "lpf_le_7_loss_count": 59,
+      "small_sieve_357_residual_cap_count": 47,
+      "small_sieve_357_residual_bound": 50,
+      "small_sieve_357_residual_surplus_to_bound": -3,
+      "equivalent_lpf7_quota_surplus": 3
+    },
+    {
+      "template_index": 5,
+      "p": 8117,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 51,
+      "loaded_b_layers": 24,
+      "residue_cap_slot_count": 106,
+      "lpf_le_7_loss_count": 59,
+      "small_sieve_357_residual_cap_count": 47,
+      "small_sieve_357_residual_bound": 50,
+      "small_sieve_357_residual_surplus_to_bound": -3,
+      "equivalent_lpf7_quota_surplus": 3
+    },
+    {
+      "template_index": 5,
+      "p": 2837,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 21,
+      "loaded_b_layers": 5,
+      "residue_cap_slot_count": 44,
+      "lpf_le_7_loss_count": 28,
+      "small_sieve_357_residual_cap_count": 16,
+      "small_sieve_357_residual_bound": 20,
+      "small_sieve_357_residual_surplus_to_bound": -4,
+      "equivalent_lpf7_quota_surplus": 4
+    },
+    {
+      "template_index": 5,
+      "p": 4007,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 31,
+      "loaded_b_layers": 15,
+      "residue_cap_slot_count": 56,
+      "lpf_le_7_loss_count": 30,
+      "small_sieve_357_residual_cap_count": 26,
+      "small_sieve_357_residual_bound": 30,
+      "small_sieve_357_residual_surplus_to_bound": -4,
+      "equivalent_lpf7_quota_surplus": 4
+    },
+    {
+      "template_index": 0,
+      "p": 7547,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 47,
+      "loaded_b_layers": 19,
+      "residue_cap_slot_count": 108,
+      "lpf_le_7_loss_count": 66,
+      "small_sieve_357_residual_cap_count": 42,
+      "small_sieve_357_residual_bound": 46,
+      "small_sieve_357_residual_surplus_to_bound": -4,
+      "equivalent_lpf7_quota_surplus": 4
+    },
+    {
+      "template_index": 5,
+      "p": 7547,
+      "side": "minus",
+      "rho": 2,
+      "failure_loaded_b_breakpoint": 47,
+      "loaded_b_layers": 19,
+      "residue_cap_slot_count": 108,
+      "lpf_le_7_loss_count": 66,
+      "small_sieve_357_residual_cap_count": 42,
+      "small_sieve_357_residual_bound": 46,
+      "small_sieve_357_residual_surplus_to_bound": -4,
+      "equivalent_lpf7_quota_surplus": 4
+    },
+    {
+      "template_index": 1,
+      "p": 3607,
+      "side": "minus",
+      "rho": 7,
+      "failure_loaded_b_breakpoint": 32,
+      "loaded_b_layers": 10,
+      "residue_cap_slot_count": 55,
+      "lpf_le_7_loss_count": 29,
+      "small_sieve_357_residual_cap_count": 26,
+      "small_sieve_357_residual_bound": 31,
+      "small_sieve_357_residual_surplus_to_bound": -5,
+      "equivalent_lpf7_quota_surplus": 5
+    },
+    {
+      "template_index": 6,
+      "p": 3607,
+      "side": "minus",
+      "rho": 7,
+      "failure_loaded_b_breakpoint": 32,
+      "loaded_b_layers": 10,
+      "residue_cap_slot_count": 55,
+      "lpf_le_7_loss_count": 29,
+      "small_sieve_357_residual_cap_count": 26,
+      "small_sieve_357_residual_bound": 31,
+      "small_sieve_357_residual_surplus_to_bound": -5,
+      "equivalent_lpf7_quota_surplus": 5
+    },
+    {
+      "template_index": 6,
+      "p": 5407,
+      "side": "minus",
+      "rho": 7,
+      "failure_loaded_b_breakpoint": 37,
+      "loaded_b_layers": 21,
+      "residue_cap_slot_count": 63,
+      "lpf_le_7_loss_count": 32,
+      "small_sieve_357_residual_cap_count": 31,
+      "small_sieve_357_residual_bound": 36,
+      "small_sieve_357_residual_surplus_to_bound": -5,
+      "equivalent_lpf7_quota_surplus": 5
+    }
+  ]
+}
