@@ -1,0 +1,77 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_positive_lift_projection_gate_bridge_router",
+  "status": "z61_positive_lift_factor_gates_reduced_to_root_projection_gate_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_positive_lift_factor_gate_bridge_router",
+    "prime_matrix_square_phase_lowalpha_z61_affine_lift_selector_router",
+    "prime_matrix_square_phase_lowalpha_z61_root_projection_gate_router"
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "modulus": 57684,
+  "delta": 527,
+  "q2": 71,
+  "q4": 37,
+  "selected_residue": 26951,
+  "span_values": [
+    3
+  ],
+  "single_span_locked": true,
+  "q4_affine_pass_residues": [
+    26951
+  ],
+  "q2_affine_pass_residues": [
+    26951
+  ],
+  "combined_affine_pass_residues": [
+    26951
+  ],
+  "q4_projection_root_solutions": [
+    15,
+    16
+  ],
+  "q2_projection_root_solutions": [
+    42,
+    50
+  ],
+  "q4_projection_pass_residues": [
+    26951
+  ],
+  "q2_projection_pass_residues": [
+    26951
+  ],
+  "q4_unrealized_projection_solutions": [
+    16
+  ],
+  "q2_unrealized_projection_solutions": [
+    50
+  ],
+  "combined_projection_classes": [
+    681,
+    1754,
+    1533,
+    2606
+  ],
+  "combined_pass_residues": [
+    26951
+  ],
+  "q4_projection_gate_unique": true,
+  "q2_projection_gate_unique": true,
+  "combined_projection_gate_unique": true,
+  "positive_lift_projection_gate_bridge_closed_for_sample": true,
+  "root_projection_gate_global_bound_proved": false,
+  "missing_lift_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_positive_lift_projection_gate_bridge_router.py": "fefac9051b17c40d9f1b09fe5474a196ad64950283e937a898633a6ddf882430",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-positive-lift-factor-gate-bridge-router.json": "72589dcf151e37a2602f41b121da0f9576841e343d6fb4faf257b7d7274512b1",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-affine-lift-selector-router.json": "2ac894c685b6e8b035c7d02751db47f25ba5cfe238cd4bec7fc7efef5f9cb7dd",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-root-projection-gate-router.json": "4ec06861847a756a7e7b58fdd536bf6518b4c6ca26c0ab19a7378f32befe17a3"
+  },
+  "next_direct_attack_target": "RootProjectionGateGlobalBoundOrMissingLiftPDEC",
+  "plain_conclusion": "MissingLift 的素因子提升门可继续降为一级 CRT 根支撑上的小模投影筛：q4=37 投影根为 `15,16`，q2=71 移位投影根为 `42,50`，但在当前 32 个一级根支撑中，两门与合并门都只命中 `r=26951`。因此剩余从提升容量界进一步压成根支撑投影容量界，或 MissingLift-PDEC。"
+}
