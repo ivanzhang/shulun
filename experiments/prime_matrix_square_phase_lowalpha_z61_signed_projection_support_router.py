@@ -26,7 +26,7 @@ SOURCE_JSON = DOCS / "prime-matrix-square-phase-lowalpha-z61-root-projection-gat
 OUT_JSON = DOCS / "prime-matrix-square-phase-lowalpha-z61-signed-projection-support-router.json"
 OUT_MD = DOCS / "prime-matrix-square-phase-lowalpha-z61-signed-projection-support-router.md"
 
-NEXT_TARGET = "SignedRootProjectionSupportGlobalBoundOrSignedProjectionPDEC"
+NEXT_TARGET = "SignedCRTSupportCarryBoundOrSignedProjectionPDEC"
 SOURCE_FILES = [
     "prime-matrix-square-phase-lowalpha-z61-root-projection-gate-router.json",
 ]
@@ -115,41 +115,57 @@ def signed_projection_rows(source: dict[str, Any]) -> list[dict[str, Any]]:
 
         local_rows = []
         positive_roots = []
+        basis_integers = []
         for local_modulus, pair in zip(local_moduli, local_root_pairs):
             positive_root = pair[0]
             negative_root = (-positive_root) % local_modulus
             positive_roots.append(positive_root)
             basis = (modulus // local_modulus) * pow(modulus // local_modulus, -1, local_modulus)
+            basis_integers.append(basis)
             local_rows.append(
                 {
                     "local_modulus": local_modulus,
                     "local_roots": pair,
                     "positive_root": positive_root,
                     "negative_root": negative_root,
+                    "basis_integer": basis,
                     "basis_mod_M": basis % modulus,
-                    "coefficient_mod_37": (positive_root * basis) % q4,
-                    "coefficient_mod_71": (positive_root * basis) % q2,
-                    "coefficient_mod_2627": (positive_root * basis) % (q2 * q4),
+                    "precarry_coefficient_mod_37": (positive_root * basis) % q4,
+                    "precarry_coefficient_mod_71": (positive_root * basis) % q2,
+                    "precarry_coefficient_mod_2627": (positive_root * basis) % (q2 * q4),
                     "roots_are_pm_pair": sorted(pair) == sorted([positive_root, negative_root]),
                 }
             )
 
         sign_rows = []
         for signs in product([1, -1], repeat=len(local_moduli)):
+            signed_sum = sum(
+                sign * positive_root * basis
+                for sign, positive_root, basis in zip(signs, positive_roots, basis_integers)
+            )
             local_residues = [
                 positive_root if sign > 0 else (-positive_root) % local_modulus
                 for sign, positive_root, local_modulus in zip(signs, positive_roots, local_moduli)
             ]
             root = crt_from_local(local_residues, local_moduli, modulus)
+            carry = (signed_sum - root) // modulus
             sign_rows.append(
                 {
                     "sign_word": sign_word(signs),
                     "signs": list(signs),
                     "local_residues": local_residues,
+                    "signed_sum_integer": signed_sum,
+                    "least_residue_carry": carry,
                     "root_residue": root,
                     "root_mod_37": root % q4,
                     "root_mod_71": root % q2,
                     "root_mod_2627": root % (q2 * q4),
+                    "precarry_mod_37": signed_sum % q4,
+                    "precarry_mod_71": signed_sum % q2,
+                    "precarry_mod_2627": signed_sum % (q2 * q4),
+                    "carry_corrected_mod_37": (signed_sum - carry * modulus) % q4,
+                    "carry_corrected_mod_71": (signed_sum - carry * modulus) % q2,
+                    "carry_corrected_mod_2627": (signed_sum - carry * modulus) % (q2 * q4),
                     "selected": root == selected,
                 }
             )
@@ -230,6 +246,15 @@ def signed_projection_rows(source: dict[str, Any]) -> list[dict[str, Any]]:
                 "signed_support_matches_source_roots": signed_roots == source_roots,
                 "selected_sign_word": selected_sign_rows[0]["sign_word"] if selected_sign_rows else None,
                 "selected_sign_rows": selected_sign_rows,
+                "carry_values": sorted({row["least_residue_carry"] for row in sign_rows}),
+                "selected_carry": selected_sign_rows[0]["least_residue_carry"] if selected_sign_rows else None,
+                "carry_correction_needed_for_external_projection": True,
+                "all_carry_corrected_projections_match_roots": all(
+                    row["carry_corrected_mod_37"] == row["root_mod_37"]
+                    and row["carry_corrected_mod_71"] == row["root_mod_71"]
+                    and row["carry_corrected_mod_2627"] == row["root_mod_2627"]
+                    for row in sign_rows
+                ),
                 "gate_fibers": gate_fibers,
                 "combined_fibers": combined_fibers,
                 "combined_total_target_fiber_size": sum(item["fiber_size"] for item in combined_fibers),
@@ -244,6 +269,12 @@ def signed_projection_rows(source: dict[str, Any]) -> list[dict[str, Any]]:
                     pairwise_two_roots
                     and all(row["roots_are_pm_pair"] for row in local_rows)
                     and signed_roots == source_roots
+                    and all(
+                        row["carry_corrected_mod_37"] == row["root_mod_37"]
+                        and row["carry_corrected_mod_71"] == row["root_mod_71"]
+                        and row["carry_corrected_mod_2627"] == row["root_mod_2627"]
+                        for row in sign_rows
+                    )
                     and all(gate["selected_singleton"] for gate in gate_fibers)
                     and sum(item["fiber_size"] for item in combined_fibers) == 1
                     and any(
@@ -265,7 +296,7 @@ def audit() -> dict[str, Any]:
     )
     return {
         "certificate_type": "prime_matrix_square_phase_lowalpha_z61_signed_projection_support_router",
-        "status": "z61_root_projection_gate_reduced_to_signed_crt_support_open",
+        "status": "z61_root_projection_gate_reduced_to_signed_crt_support_with_carry_open",
         "same_theorem_target_preserved": True,
         "no_theorem_switch": True,
         "counterexample_assumption_only": True,
@@ -277,6 +308,7 @@ def audit() -> dict[str, Any]:
         "all_signed_projection_supports_closed": all_rows_closed,
         "signed_projection_rows": rows,
         "signed_projection_support_global_bound_proved": False,
+        "signed_crt_carry_bound_proved": False,
         "signed_projection_pdec_excluded": False,
         "row_column_unconditional_closed": False,
         "source_hashes": source_hashes(),
@@ -285,9 +317,11 @@ def audit() -> dict[str, Any]:
             "根投影门可继续展开为 CRT 局部根的符号支撑问题："
             "`M=57684=4*3*11*19*23`，每个局部模都有两个相反平方根，"
             "所以 32 个一级根正好是五维符号向量的 CRT 像。"
-            "在该符号支撑上，`q4=37`、`q2=71` 以及合并模 `2627` 的目标投影纤维"
-            "都只有同一个符号字 `--++-`，对应 `r=26951`；其余目标类为空。"
-            "因此最新硬点变成全局符号投影支撑容量界，或登记 SignedProjection-PDEC。"
+            "但对外部模 `37/71` 投影时必须保留最小代表 carry："
+            "`r=S(sigma)-cM`。在 carry 修正后，`q4=37`、`q2=71` "
+            "以及合并模 `2627` 的目标投影纤维都只有同一个符号字 `--++-`，"
+            "对应 `r=26951`；其余目标类为空。"
+            "因此最新硬点变成全局符号支撑 carry 界，或登记 SignedProjection-PDEC。"
         ),
     }
 
@@ -305,26 +339,28 @@ def write_markdown(result: dict[str, Any]) -> None:
         f"signed_projection_support_group_count={result['signed_projection_support_group_count']}",
         f"all_signed_projection_supports_closed={fmt_bool(result['all_signed_projection_supports_closed'])}",
         f"signed_projection_support_global_bound_proved={fmt_bool(result['signed_projection_support_global_bound_proved'])}",
+        f"signed_crt_carry_bound_proved={fmt_bool(result['signed_crt_carry_bound_proved'])}",
         f"row_column_unconditional_closed={fmt_bool(result['row_column_unconditional_closed'])}",
         "```",
         "",
         "## 1. 符号支撑摘要",
         "",
-        "| M | local moduli | sign vectors | source roots | selected sign | selected root | closed |",
-        "| ---: | --- | ---: | ---: | --- | ---: | --- |",
+        "| M | local moduli | sign vectors | source roots | selected sign | selected carry | selected root | closed |",
+        "| ---: | --- | ---: | ---: | --- | ---: | ---: | --- |",
     ]
     for row in result["signed_projection_rows"]:
         lines.append(
             f"| {row['modulus']} | `{row['local_moduli']}` | {row['sign_vector_count']} | "
             f"{row['source_root_count']} | `{row['selected_sign_word']}` | "
-            f"{row['selected_residue']} | {fmt_bool(row['signed_projection_support_closed_for_group'])} |"
+            f"{row['selected_carry']} | {row['selected_residue']} | "
+            f"{fmt_bool(row['signed_projection_support_closed_for_group'])} |"
         )
     lines.extend(
         [
             "",
             "## 2. 局部 CRT 系数",
             "",
-            "| local modulus | roots | + root | basis mod M | coeff mod 37 | coeff mod 71 | coeff mod 2627 |",
+            "| local modulus | roots | + root | basis integer | pre-carry coeff mod 37 | pre-carry coeff mod 71 | pre-carry coeff mod 2627 |",
             "| ---: | --- | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
@@ -332,9 +368,9 @@ def write_markdown(result: dict[str, Any]) -> None:
         for local in row["local_rows"]:
             lines.append(
                 f"| {local['local_modulus']} | `{local['local_roots']}` | "
-                f"{local['positive_root']} | {local['basis_mod_M']} | "
-                f"{local['coefficient_mod_37']} | {local['coefficient_mod_71']} | "
-                f"{local['coefficient_mod_2627']} |"
+                f"{local['positive_root']} | {local['basis_integer']} | "
+                f"{local['precarry_coefficient_mod_37']} | {local['precarry_coefficient_mod_71']} | "
+                f"{local['precarry_coefficient_mod_2627']} |"
             )
     lines.extend(
         [
@@ -371,20 +407,28 @@ def write_markdown(result: dict[str, Any]) -> None:
             "",
             "## 5. 自足小引理",
             "",
-            "若 `M=prod m_i` 且 `x^2+delta=0 mod m_i` 的两个局部根为 `±a_i`，则所有一级根可写成",
+            "若 `M=prod m_i` 且 `x^2+delta=0 mod m_i` 的两个局部根为 `±a_i`，则先有整数符号和",
             "",
             "```text",
-            "r(sigma)=sum_i sigma_i*a_i*B_i (mod M),  sigma_i in {+1,-1},",
+            "S(sigma)=sum_i sigma_i*a_i*B_i,  sigma_i in {+1,-1},",
             "B_i=(M/m_i)*(M/m_i)^{-1} mod m_i.",
+            "r(sigma)=S(sigma)-c(sigma)M,  0<=r(sigma)<M.",
             "```",
             "",
-            "因此任意小模投影 `r mod ell` 都是同一符号向量的线性投影。"
-            "本证书精确枚举该五维符号支撑，证明目标投影纤维为单点或空纤维。",
+            "所以外部小模投影满足",
+            "",
+            "```text",
+            "r(sigma) mod ell = S(sigma)-c(sigma)M mod ell.",
+            "```",
+            "",
+            "这里 carry `c(sigma)` 不能省略，因为 `gcd(M,ell)=1`。"
+            "本证书精确枚举该五维符号支撑和 carry，证明目标投影纤维为单点或空纤维。",
             "",
             "## 6. 证明边界",
             "",
-            "- 已闭合：当前 z=61 formal unit 的一级根支撑等于五维 CRT 符号像，且目标投影纤维唯一命中 `--++- / r=26951`。",
-            "- 未闭合：把这种符号投影支撑单点性提升为全局容量界，或排斥 SignedProjection-PDEC。",
+            "- 已闭合：当前 z=61 formal unit 的一级根支撑等于五维 CRT 符号像；保留最小代表 carry 后，目标投影纤维唯一命中 `--++- / r=26951`。",
+            "- 关键修正：外部模投影不是纯符号线性投影，必须带 carry；下一硬点因此更精确。",
+            "- 未闭合：把这种带 carry 的符号投影支撑单点性提升为全局容量界，或排斥 SignedProjection-PDEC。",
             f"- 下一目标：`{result['next_direct_attack_target']}`。",
             "",
             "## 7. 依赖哈希",

@@ -1,6 +1,6 @@
 {
   "certificate_type": "prime_matrix_square_phase_lowalpha_z61_signed_projection_support_router",
-  "status": "z61_root_projection_gate_reduced_to_signed_crt_support_open",
+  "status": "z61_root_projection_gate_reduced_to_signed_crt_support_with_carry_open",
   "same_theorem_target_preserved": true,
   "no_theorem_switch": true,
   "counterexample_assumption_only": true,
@@ -33,10 +33,11 @@
           ],
           "positive_root": 1,
           "negative_root": 3,
+          "basis_integer": 14421,
           "basis_mod_M": 14421,
-          "coefficient_mod_37": 28,
-          "coefficient_mod_71": 8,
-          "coefficient_mod_2627": 1286,
+          "precarry_coefficient_mod_37": 28,
+          "precarry_coefficient_mod_71": 8,
+          "precarry_coefficient_mod_2627": 1286,
           "roots_are_pm_pair": true
         },
         {
@@ -47,10 +48,11 @@
           ],
           "positive_root": 1,
           "negative_root": 2,
+          "basis_integer": 19228,
           "basis_mod_M": 19228,
-          "coefficient_mod_37": 25,
-          "coefficient_mod_71": 58,
-          "coefficient_mod_2627": 839,
+          "precarry_coefficient_mod_37": 25,
+          "precarry_coefficient_mod_71": 58,
+          "precarry_coefficient_mod_2627": 839,
           "roots_are_pm_pair": true
         },
         {
@@ -61,10 +63,11 @@
           ],
           "positive_root": 1,
           "negative_root": 10,
+          "basis_integer": 36708,
           "basis_mod_M": 36708,
-          "coefficient_mod_37": 4,
-          "coefficient_mod_71": 1,
-          "coefficient_mod_2627": 2557,
+          "precarry_coefficient_mod_37": 4,
+          "precarry_coefficient_mod_71": 1,
+          "precarry_coefficient_mod_2627": 2557,
           "roots_are_pm_pair": true
         },
         {
@@ -75,10 +78,11 @@
           ],
           "positive_root": 9,
           "negative_root": 10,
+          "basis_integer": 42504,
           "basis_mod_M": 42504,
-          "coefficient_mod_37": 30,
-          "coefficient_mod_71": 59,
-          "coefficient_mod_2627": 1621,
+          "precarry_coefficient_mod_37": 30,
+          "precarry_coefficient_mod_71": 59,
+          "precarry_coefficient_mod_2627": 1621,
           "roots_are_pm_pair": true
         },
         {
@@ -89,10 +93,11 @@
           ],
           "positive_root": 5,
           "negative_root": 18,
+          "basis_integer": 2508,
           "basis_mod_M": 2508,
-          "coefficient_mod_37": 34,
-          "coefficient_mod_71": 44,
-          "coefficient_mod_2627": 2032,
+          "precarry_coefficient_mod_37": 34,
+          "precarry_coefficient_mod_71": 44,
+          "precarry_coefficient_mod_2627": 2032,
           "roots_are_pm_pair": true
         }
       ],
@@ -119,13 +124,34 @@
             9,
             18
           ],
+          "signed_sum_integer": 373055,
+          "least_residue_carry": 6,
           "root_residue": 26951,
           "root_mod_37": 15,
           "root_mod_71": 42,
           "root_mod_2627": 681,
+          "precarry_mod_37": 21,
+          "precarry_mod_71": 21,
+          "precarry_mod_2627": 21,
+          "carry_corrected_mod_37": 15,
+          "carry_corrected_mod_71": 42,
+          "carry_corrected_mod_2627": 681,
           "selected": true
         }
       ],
+      "carry_values": [
+        -9,
+        -8,
+        -7,
+        -6,
+        5,
+        6,
+        7,
+        8
+      ],
+      "selected_carry": 6,
+      "carry_correction_needed_for_external_projection": true,
+      "all_carry_corrected_projections_match_roots": true,
       "gate_fibers": [
         {
           "gate_name": "q4_plain_root_projection",
@@ -215,12 +241,13 @@
     }
   ],
   "signed_projection_support_global_bound_proved": false,
+  "signed_crt_carry_bound_proved": false,
   "signed_projection_pdec_excluded": false,
   "row_column_unconditional_closed": false,
   "source_hashes": {
-    "experiments/prime_matrix_square_phase_lowalpha_z61_signed_projection_support_router.py": "241f7157be41445c416277f72c6bc863ac90e32157d36e28e91d6cb3fc2afbed",
+    "experiments/prime_matrix_square_phase_lowalpha_z61_signed_projection_support_router.py": "b18028249c5dc9df4250e468f9dab6039582e0dc5af67edbb081605674c30649",
     "docs/monograph/prime-matrix-square-phase-lowalpha-z61-root-projection-gate-router.json": "4ec06861847a756a7e7b58fdd536bf6518b4c6ca26c0ab19a7378f32befe17a3"
   },
-  "next_direct_attack_target": "SignedRootProjectionSupportGlobalBoundOrSignedProjectionPDEC",
-  "plain_conclusion": "根投影门可继续展开为 CRT 局部根的符号支撑问题：`M=57684=4*3*11*19*23`，每个局部模都有两个相反平方根，所以 32 个一级根正好是五维符号向量的 CRT 像。在该符号支撑上，`q4=37`、`q2=71` 以及合并模 `2627` 的目标投影纤维都只有同一个符号字 `--++-`，对应 `r=26951`；其余目标类为空。因此最新硬点变成全局符号投影支撑容量界，或登记 SignedProjection-PDEC。"
+  "next_direct_attack_target": "SignedCRTSupportCarryBoundOrSignedProjectionPDEC",
+  "plain_conclusion": "根投影门可继续展开为 CRT 局部根的符号支撑问题：`M=57684=4*3*11*19*23`，每个局部模都有两个相反平方根，所以 32 个一级根正好是五维符号向量的 CRT 像。但对外部模 `37/71` 投影时必须保留最小代表 carry：`r=S(sigma)-cM`。在 carry 修正后，`q4=37`、`q2=71` 以及合并模 `2627` 的目标投影纤维都只有同一个符号字 `--++-`，对应 `r=26951`；其余目标类为空。因此最新硬点变成全局符号支撑 carry 界，或登记 SignedProjection-PDEC。"
 }
