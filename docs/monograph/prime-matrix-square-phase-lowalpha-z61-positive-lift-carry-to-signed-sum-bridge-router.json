@@ -1,0 +1,61 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_positive_lift_carry_to_signed_sum_bridge_router",
+  "status": "z61_positive_lift_carry_layer_reduced_to_five_term_signed_sum_residue_gate_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_positive_lift_carry_layer_bridge_router",
+    "prime_matrix_square_phase_lowalpha_z61_signed_sum_residue_gate_router"
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "modulus": 57684,
+  "q2": 71,
+  "q4": 37,
+  "selected_residue": 26951,
+  "selected_sign_word": "--++-",
+  "selected_carry": 6,
+  "selected_signed_sum": 373055,
+  "selected_sum_mod_2627": 21,
+  "signed_coefficients": [
+    14421,
+    19228,
+    36708,
+    382536,
+    12540
+  ],
+  "carry_values": [
+    -9,
+    -8,
+    -7,
+    -6,
+    5,
+    6,
+    7,
+    8
+  ],
+  "selected_layer_sign_count": 7,
+  "positive_lift_target_words": [
+    "--++-:26951"
+  ],
+  "signed_sum_target_words": [
+    "--++-:26951"
+  ],
+  "selected_layer_q4_hit_count": 1,
+  "selected_layer_q2_hit_count": 1,
+  "selected_layer_combined_hit_count": 1,
+  "positive_lift_carry_to_signed_sum_bridge_closed_for_sample": true,
+  "five_term_signed_sum_interval_residue_global_bound_proved": false,
+  "sum_residue_pdec_excluded": false,
+  "missing_lift_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_positive_lift_carry_to_signed_sum_bridge_router.py": "69bafad68d9203d99355ea4b61f3a92b030b4530f12020b9b26373a0d3cebe9a",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-positive-lift-carry-layer-bridge-router.json": "1bc52831b0aacaceb4e4e3979b91b5fe0563a7b62361d08d6b3ebf166befeb48",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-signed-sum-residue-gate-router.json": "000bb6e26dec4b78c4215118876df470f40659f120db560c9bee5cf6a80fd0c7"
+  },
+  "next_direct_attack_target": "FiveTermSignedSumIntervalResidueGlobalBoundOrSumResiduePDEC",
+  "plain_conclusion": "positive-lift/MissingLift 链上的 carry=6 目标纤维与已有五项 signed-sum 区间同余门是同一对象：唯一目标词都是 `--++-:26951`，对应 `S=373055`、`S mod 2627=21`。因此当前剩余从 `CarryLayerTargetFiberGlobalBoundOrMissingLiftPDEC` 正式压到 `FiveTermSignedSumIntervalResidueGlobalBoundOrSumResiduePDEC`。"
+}
