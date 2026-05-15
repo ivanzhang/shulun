@@ -1,0 +1,1143 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_bad_p_set_pdec_schema_router",
+  "status": "bad_p_set_pdec_schema_registered_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used_as_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-bad-p-set-ledger.json",
+    "record_count": 11,
+    "actual_p_in_bad_set_count": 0,
+    "bad_prime_packet_count": 6,
+    "unique_bad_offset_pattern_count": 8,
+    "unique_family_key_count": 8,
+    "max_bad_p_density_in_phase_window": 0.25,
+    "pattern_histogram": {
+      "0,44,54,61,63,84,97,99,114,132,159": 1,
+      "1,3": 2,
+      "1,7,13,16,28,30": 1,
+      "14,19,23,33,38,42,44,61,63,65,74,78,80,83,93,98,101,111": 2,
+      "18,60,82": 1,
+      "27,87": 1,
+      "4,14": 2,
+      "5,7,16,28,29,35,37,50,52,54": 1
+    },
+    "family_histogram": {
+      "side=minus|atom=plus_only_noslot:k1:649-653|L=3|width=117": 2,
+      "side=minus|atom=plus_only_noslot:k2:619-623|L=3|width=28": 2,
+      "side=plus|atom=minus_only_noslot:k0:493-499|L=4|width=96": 1,
+      "side=plus|atom=minus_only_noslot:k0:649-655|L=4|width=172": 1,
+      "side=plus|atom=minus_only_noslot:k0:697-705|L=5|width=100": 1,
+      "side=plus|atom=minus_only_noslot:k1:1065-1071|L=4|width=72": 1,
+      "side=plus|atom=minus_only_noslot:k1:281-283|L=2|width=32": 1,
+      "side=plus|atom=minus_only_noslot:k1:681-687|L=4|width=8": 2
+    },
+    "persistent_hit_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "pdec_schema_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "family_key": "side=plus|atom=minus_only_noslot:k1:681-687|L=4|width=8",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "bad_p_values": [
+        730,
+        732
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        1,
+        3
+      ],
+      "bad_p_value_count": 2,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "bad_p_density_in_phase_window": 0.25,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "10": 1,
+            "12": 1
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "100": 1,
+            "102": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "730": 1,
+            "732": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "family_key": "side=plus|atom=minus_only_noslot:k0:493-499|L=4|width=96",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "b_lo": 12,
+      "b_hi": 15,
+      "cell_length": 4,
+      "phase_p_lo": 481,
+      "phase_p_hi": 576,
+      "phase_p_width": 96,
+      "bad_p_values": [
+        499,
+        541,
+        563
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        18,
+        60,
+        82
+      ],
+      "bad_p_value_count": 3,
+      "bad_prime_values": [
+        499,
+        541,
+        563
+      ],
+      "bad_prime_value_count": 3,
+      "bad_p_density_in_phase_window": 0.03125,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 3,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.3333333333333333,
+          "residue_counts": {
+            "1": 1,
+            "19": 1,
+            "23": 1
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 3,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.3333333333333333,
+          "residue_counts": {
+            "121": 1,
+            "143": 1,
+            "79": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 3,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.3333333333333333,
+          "residue_counts": {
+            "499": 1,
+            "541": 1,
+            "563": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "family_key": "side=minus|atom=plus_only_noslot:k1:649-653|L=3|width=117",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "bad_p_values": [
+        658,
+        663,
+        667,
+        677,
+        682,
+        686,
+        688,
+        705,
+        707,
+        709,
+        718,
+        722,
+        724,
+        727,
+        737,
+        742,
+        745,
+        755
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        14,
+        19,
+        23,
+        33,
+        38,
+        42,
+        44,
+        61,
+        63,
+        65,
+        74,
+        78,
+        80,
+        83,
+        93,
+        98,
+        101,
+        111
+      ],
+      "bad_p_value_count": 18,
+      "bad_prime_values": [
+        677,
+        709,
+        727
+      ],
+      "bad_prime_value_count": 3,
+      "bad_p_density_in_phase_window": 0.15384615384615385,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 12,
+          "max_bucket_count": 3,
+          "max_bucket_share": 0.16666666666666666,
+          "residue_counts": {
+            "15": 1,
+            "17": 3,
+            "19": 1,
+            "2": 1,
+            "22": 2,
+            "25": 1,
+            "26": 1,
+            "28": 3,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "7": 2
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 18,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.05555555555555555,
+          "residue_counts": {
+            "107": 1,
+            "112": 1,
+            "115": 1,
+            "125": 1,
+            "28": 1,
+            "33": 1,
+            "37": 1,
+            "47": 1,
+            "52": 1,
+            "56": 1,
+            "58": 1,
+            "75": 1,
+            "77": 1,
+            "79": 1,
+            "88": 1,
+            "92": 1,
+            "94": 1,
+            "97": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 18,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.05555555555555555,
+          "residue_counts": {
+            "658": 1,
+            "663": 1,
+            "667": 1,
+            "677": 1,
+            "682": 1,
+            "686": 1,
+            "688": 1,
+            "705": 1,
+            "707": 1,
+            "709": 1,
+            "718": 1,
+            "722": 1,
+            "724": 1,
+            "727": 1,
+            "737": 1,
+            "742": 1,
+            "745": 1,
+            "755": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "family_key": "side=plus|atom=minus_only_noslot:k0:649-655|L=4|width=172",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "b_lo": 14,
+      "b_hi": 17,
+      "cell_length": 4,
+      "phase_p_lo": 613,
+      "phase_p_hi": 784,
+      "phase_p_width": 172,
+      "bad_p_values": [
+        613,
+        657,
+        667,
+        674,
+        676,
+        697,
+        710,
+        712,
+        727,
+        745,
+        772
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        0,
+        44,
+        54,
+        61,
+        63,
+        84,
+        97,
+        99,
+        114,
+        132,
+        159
+      ],
+      "bad_p_value_count": 11,
+      "bad_prime_values": [
+        613,
+        727
+      ],
+      "bad_prime_value_count": 2,
+      "bad_p_density_in_phase_window": 0.06395348837209303,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 8,
+          "max_bucket_count": 3,
+          "max_bucket_share": 0.2727272727272727,
+          "residue_counts": {
+            "13": 1,
+            "14": 1,
+            "16": 1,
+            "20": 1,
+            "22": 2,
+            "25": 1,
+            "27": 1,
+            "7": 3
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 11,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.09090909090909091,
+          "residue_counts": {
+            "115": 1,
+            "142": 1,
+            "193": 1,
+            "27": 1,
+            "37": 1,
+            "44": 1,
+            "46": 1,
+            "67": 1,
+            "80": 1,
+            "82": 1,
+            "97": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 11,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.09090909090909091,
+          "residue_counts": {
+            "613": 1,
+            "657": 1,
+            "667": 1,
+            "674": 1,
+            "676": 1,
+            "697": 1,
+            "710": 1,
+            "712": 1,
+            "727": 1,
+            "745": 1,
+            "772": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "family_key": "side=plus|atom=minus_only_noslot:k0:697-705|L=5|width=100",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "b_lo": 14,
+      "b_hi": 18,
+      "cell_length": 5,
+      "phase_p_lo": 685,
+      "phase_p_hi": 784,
+      "phase_p_width": 100,
+      "bad_p_values": [
+        712,
+        772
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        27,
+        87
+      ],
+      "bad_p_value_count": 2,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "bad_p_density_in_phase_window": 0.02,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 1,
+          "max_bucket_count": 2,
+          "max_bucket_share": 1.0,
+          "residue_counts": {
+            "22": 2
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "142": 1,
+            "82": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "712": 1,
+            "772": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "family_key": "side=minus|atom=plus_only_noslot:k2:619-623|L=3|width=28",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "bad_p_values": [
+        652,
+        662
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        4,
+        14
+      ],
+      "bad_p_value_count": 2,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "bad_p_density_in_phase_window": 0.07142857142857142,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "2": 1,
+            "22": 1
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "22": 1,
+            "32": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "652": 1,
+            "662": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "family_key": "side=plus|atom=minus_only_noslot:k1:681-687|L=4|width=8",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "bad_p_values": [
+        730,
+        732
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        1,
+        3
+      ],
+      "bad_p_value_count": 2,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "bad_p_density_in_phase_window": 0.25,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "10": 1,
+            "12": 1
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "100": 1,
+            "102": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "730": 1,
+            "732": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "family_key": "side=plus|atom=minus_only_noslot:k1:281-283|L=2|width=32",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "b_lo": 15,
+      "b_hi": 16,
+      "cell_length": 2,
+      "phase_p_lo": 289,
+      "phase_p_hi": 320,
+      "phase_p_width": 32,
+      "bad_p_values": [
+        290,
+        296,
+        302,
+        305,
+        317,
+        319
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        1,
+        7,
+        13,
+        16,
+        28,
+        30
+      ],
+      "bad_p_value_count": 6,
+      "bad_prime_values": [
+        317
+      ],
+      "bad_prime_value_count": 1,
+      "bad_p_density_in_phase_window": 0.1875,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 6,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.16666666666666666,
+          "residue_counts": {
+            "17": 1,
+            "19": 1,
+            "2": 1,
+            "20": 1,
+            "26": 1,
+            "5": 1
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 6,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.16666666666666666,
+          "residue_counts": {
+            "107": 1,
+            "109": 1,
+            "80": 1,
+            "86": 1,
+            "92": 1,
+            "95": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 6,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.16666666666666666,
+          "residue_counts": {
+            "290": 1,
+            "296": 1,
+            "302": 1,
+            "305": 1,
+            "317": 1,
+            "319": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "family_key": "side=plus|atom=minus_only_noslot:k1:1065-1071|L=4|width=72",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "b_lo": 29,
+      "b_hi": 32,
+      "cell_length": 4,
+      "phase_p_lo": 1089,
+      "phase_p_hi": 1160,
+      "phase_p_width": 72,
+      "bad_p_values": [
+        1094,
+        1096,
+        1105,
+        1117,
+        1118,
+        1124,
+        1126,
+        1139,
+        1141,
+        1143
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        5,
+        7,
+        16,
+        28,
+        29,
+        35,
+        37,
+        50,
+        52,
+        54
+      ],
+      "bad_p_value_count": 10,
+      "bad_prime_values": [
+        1117
+      ],
+      "bad_prime_value_count": 1,
+      "bad_p_density_in_phase_window": 0.1388888888888889,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 8,
+          "max_bucket_count": 2,
+          "max_bucket_share": 0.2,
+          "residue_counts": {
+            "1": 1,
+            "14": 2,
+            "16": 2,
+            "25": 1,
+            "29": 1,
+            "3": 1,
+            "7": 1,
+            "8": 1
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 10,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.1,
+          "residue_counts": {
+            "44": 1,
+            "46": 1,
+            "55": 1,
+            "67": 1,
+            "68": 1,
+            "74": 1,
+            "76": 1,
+            "89": 1,
+            "91": 1,
+            "93": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 10,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.1,
+          "residue_counts": {
+            "1094": 1,
+            "1096": 1,
+            "1105": 1,
+            "1117": 1,
+            "1118": 1,
+            "1124": 1,
+            "1126": 1,
+            "1139": 1,
+            "1141": 1,
+            "1143": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "family_key": "side=minus|atom=plus_only_noslot:k1:649-653|L=3|width=117",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "bad_p_values": [
+        658,
+        663,
+        667,
+        677,
+        682,
+        686,
+        688,
+        705,
+        707,
+        709,
+        718,
+        722,
+        724,
+        727,
+        737,
+        742,
+        745,
+        755
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        14,
+        19,
+        23,
+        33,
+        38,
+        42,
+        44,
+        61,
+        63,
+        65,
+        74,
+        78,
+        80,
+        83,
+        93,
+        98,
+        101,
+        111
+      ],
+      "bad_p_value_count": 18,
+      "bad_prime_values": [
+        677,
+        709,
+        727
+      ],
+      "bad_prime_value_count": 3,
+      "bad_p_density_in_phase_window": 0.15384615384615385,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 12,
+          "max_bucket_count": 3,
+          "max_bucket_share": 0.16666666666666666,
+          "residue_counts": {
+            "15": 1,
+            "17": 3,
+            "19": 1,
+            "2": 1,
+            "22": 2,
+            "25": 1,
+            "26": 1,
+            "28": 3,
+            "3": 1,
+            "4": 1,
+            "5": 1,
+            "7": 2
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 18,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.05555555555555555,
+          "residue_counts": {
+            "107": 1,
+            "112": 1,
+            "115": 1,
+            "125": 1,
+            "28": 1,
+            "33": 1,
+            "37": 1,
+            "47": 1,
+            "52": 1,
+            "56": 1,
+            "58": 1,
+            "75": 1,
+            "77": 1,
+            "79": 1,
+            "88": 1,
+            "92": 1,
+            "94": 1,
+            "97": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 18,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.05555555555555555,
+          "residue_counts": {
+            "658": 1,
+            "663": 1,
+            "667": 1,
+            "677": 1,
+            "682": 1,
+            "686": 1,
+            "688": 1,
+            "705": 1,
+            "707": 1,
+            "709": 1,
+            "718": 1,
+            "722": 1,
+            "724": 1,
+            "727": 1,
+            "737": 1,
+            "742": 1,
+            "745": 1,
+            "755": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "family_key": "side=minus|atom=plus_only_noslot:k2:619-623|L=3|width=28",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "bad_p_values": [
+        652,
+        662
+      ],
+      "bad_p_offsets_from_phase_lo": [
+        4,
+        14
+      ],
+      "bad_p_value_count": 2,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "bad_p_density_in_phase_window": 0.07142857142857142,
+      "actual_p_in_bad_set": false,
+      "low_mod_profiles": [
+        {
+          "modulus": 30,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "2": 1,
+            "22": 1
+          }
+        },
+        {
+          "modulus": 210,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "22": 1,
+            "32": 1
+          }
+        },
+        {
+          "modulus": 2310,
+          "occupied_residue_count": 2,
+          "max_bucket_count": 1,
+          "max_bucket_share": 0.5,
+          "residue_counts": {
+            "652": 1,
+            "662": 1
+          }
+        }
+      ],
+      "pdec_input_object": {
+        "Q": "one of {30,210,2310} or exact cover-word modulus chosen by the certificate",
+        "X": "formal-unit index set producing this same BadPSet family",
+        "tau": "actual P mapped to low modulus or exact cover-word residue",
+        "S": "persistent actual-P hits inside BadPSet",
+        "required_certificate": "PDEC-Explicit-Cert for finite family or PDEC-Dual-Cert for infinite family"
+      },
+      "schema_status": "registered_not_excluded"
+    }
+  ],
+  "actual_p_in_bad_set_count": 0,
+  "persistent_hit_pdec_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ActualPrimeAvoidsLocalBadPSetByColumnPhaseOrBadPSetPDEC",
+  "hardpoint_after_router": "BadPSetPersistentHitPDECCertificateOrFormalUnitSelectorExclusion",
+  "next_direct_attack_target": "BadPSetPersistentHitPDECCertificateOrFormalUnitSelectorExclusion",
+  "theorem_rows": [
+    {
+      "name": "bad_p_set_pdec_schema_registered",
+      "status": "closed",
+      "statement": "Every local BadPSet packet is registered as a concrete PDEC/ColumnCRT certificate input object."
+    },
+    {
+      "name": "finite_actual_hits_absent",
+      "status": "finite_evidence",
+      "statement": "The current finite frontier has no actual-P hit inside BadPSet."
+    },
+    {
+      "name": "bad_p_set_not_empty_or_prime_free",
+      "status": "closed",
+      "statement": "BadPSet may be nonempty and may contain primes, so avoidance cannot be replaced by local primality or empty-set claims."
+    },
+    {
+      "name": "persistent_hit_pdec_exclusion",
+      "status": "open",
+      "statement": "A global proof still needs a PDEC/ColumnCRT certificate excluding persistent actual-P hits, or a selector theorem proving they never occur."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_bad_p_set_pdec_schema_router.py": "9b43e6ceca2e9f272b6411bc89c08d1b4166b4eb12e471adcc5b563e9bd27f4c",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_bad_p_set_router.py": "25c726eb6a571e1b2cbadeb35b25a2622ce08edadfa7c0c3ef8f14c2076f413a",
+    "docs/monograph/h4-pdec-certificate-template.md": "6cc441f072b84210293d3d2f61e0279b4e8663d69c58612f13bf2bafc539882e",
+    "data/square-phase-offband-prefix-gap-shadow-bad-p-set-ledger.json": "71d8f20aff9da2560c540af14ddc4e99f11bee2be4aedad1a2023b3e0a4133a6",
+    "data/square-phase-offband-prefix-gap-shadow-bad-p-set-pdec-schema-ledger.json": "4b952c155cc1f1b1824a7acf19f75cc1e19fe49c2172cd92e5e371261c0a1f5b",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-bad-p-set-pdec-schema-router.md": "6eb646b5511869621b361b23f1c1f8117e73ae289cf8a6494bc15d5fb7f9b014"
+  },
+  "plain_conclusion": "本步把 actual P 避开 BadPSet 的剩余标准化为 PDEC/ColumnCRT 证书输入。有限前沿仍显示 actual P 命中数为 0，但 BadPSet 可非空且可含素数；因此不能靠局部空集或无素数断言闭合。若正式反例族中 actual P 持久命中 BadPSet，必须提交同一坏窗集合上的PDEC/ColumnCRT 证书；否则需要证明 formal-unit selector 全局避开 BadPSet。",
+  "decision_rows": [
+    {
+      "gate": "BadPSetPDECInputRegistered",
+      "closed": true,
+      "proved": true,
+      "meaning": "BadPSet 命中已被登记为可审查的 PDEC/ColumnCRT 输入对象。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FiniteNoActualBadPSetHit",
+      "closed": true,
+      "proved": false,
+      "meaning": "有限前沿无 actual P 命中，但这不是无限族证明。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "LocalEmptyOrPrimeFreeRouteRejected",
+      "closed": true,
+      "proved": true,
+      "meaning": "BadPSet 非空且可含素数，局部空集/无素数路线已排除。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "PersistentHitPDECExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需真正提交 PDEC/ColumnCRT 证书或 formal-unit selector 排斥定理。",
+      "remaining": "BadPSetPersistentHitPDECCertificateOrFormalUnitSelectorExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只完成证书输入标准化，不关闭全局命题。",
+      "remaining": "BadPSetPersistentHitPDECCertificateOrFormalUnitSelectorExclusion"
+    }
+  ]
+}
