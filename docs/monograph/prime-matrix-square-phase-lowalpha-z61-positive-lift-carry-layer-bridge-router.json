@@ -1,0 +1,68 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_positive_lift_carry_layer_bridge_router",
+  "status": "z61_positive_lift_signed_support_reduced_to_carry_layer_target_fiber_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_positive_lift_signed_projection_bridge_router",
+    "prime_matrix_square_phase_lowalpha_z61_carry_layer_projection_router"
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "modulus": 57684,
+  "q2": 71,
+  "q4": 37,
+  "selected_residue": 26951,
+  "selected_sign_word": "--++-",
+  "selected_carry": 6,
+  "carry_values": [
+    -9,
+    -8,
+    -7,
+    -6,
+    5,
+    6,
+    7,
+    8
+  ],
+  "carry_layer_count": 8,
+  "selected_layer_sign_count": 7,
+  "selected_layer_root_residues": [
+    7457,
+    17071,
+    20833,
+    26951,
+    45913,
+    52031,
+    55793
+  ],
+  "nonempty_target_layers": [
+    {
+      "carry": 6,
+      "q4_or_q2_target_hit_count": 1,
+      "combined_target_hit_count": 1,
+      "target_hit_words": [
+        "--++-:26951"
+      ],
+      "combined_hit_words": [
+        "--++-:26951"
+      ]
+    }
+  ],
+  "q4_or_q2_target_hit_count": 1,
+  "combined_target_hit_count": 1,
+  "all_target_hits_are_selected": true,
+  "positive_lift_carry_layer_bridge_closed_for_sample": true,
+  "carry_layer_target_fiber_global_bound_proved": false,
+  "missing_lift_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_positive_lift_carry_layer_bridge_router.py": "8798dcf048329939ec78e921fe52b0a7731f222798c0066f4e73a36b18884321",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-positive-lift-signed-projection-bridge-router.json": "ddccdcb319311d455f2c03fb85e7b1e55b8e9d401a88f1b72da9dc2f58868897",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-carry-layer-projection-router.json": "02ad727819419b59d9967acaff91084c2f0387eb6e6bc96881241e8506ee2ca2"
+  },
+  "next_direct_attack_target": "CarryLayerTargetFiberGlobalBoundOrMissingLiftPDEC",
+  "plain_conclusion": "MissingLift 的 signed CRT 支撑可进一步按 carry 分层。当前 32 个符号向量只落入 8 个 carry 层，所有目标投影命中都集中在 carry=6；该层虽然有 7 个符号，但目标纤维只有 `--++-:26951` 一个命中。剩余因此变成全局 carry-layer 目标纤维界，或 MissingLift-PDEC。"
+}
