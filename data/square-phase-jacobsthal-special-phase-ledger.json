@@ -1,0 +1,808 @@
+{
+  "parameters": {
+    "max_k": 8
+  },
+  "aggregate": {
+    "record_count": 8,
+    "plus_full_cover_count": 0,
+    "minus_full_cover_count": 0,
+    "period_bound_failure_count": 4,
+    "long_block_but_square_phase_avoids_count": 4,
+    "max_plus_run_from_square_phase": 11,
+    "max_minus_run_from_square_phase": 4
+  },
+  "records": [
+    {
+      "k": 1,
+      "low_prime_max": 2,
+      "square_anchor_prime_P": 3,
+      "primorial_below_P": 2,
+      "window_length_P_minus_1": 2,
+      "period_max_covered_run": 1,
+      "long_block_count_at_threshold": 0,
+      "first_period_max_block": [
+        2,
+        2
+      ],
+      "long_block_samples": [],
+      "plus_phase_start": 0,
+      "minus_phase_start": 1,
+      "plus_run_from_square_phase": 1,
+      "minus_run_from_square_phase": 0,
+      "plus_first_survivor_r": 2,
+      "minus_first_survivor_r": 2,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": false
+    },
+    {
+      "k": 2,
+      "low_prime_max": 3,
+      "square_anchor_prime_P": 5,
+      "primorial_below_P": 6,
+      "window_length_P_minus_1": 4,
+      "period_max_covered_run": 3,
+      "long_block_count_at_threshold": 0,
+      "first_period_max_block": [
+        2,
+        4
+      ],
+      "long_block_samples": [],
+      "plus_phase_start": 2,
+      "minus_phase_start": 3,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 2,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 2,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": false
+    },
+    {
+      "k": 3,
+      "low_prime_max": 5,
+      "square_anchor_prime_P": 7,
+      "primorial_below_P": 30,
+      "window_length_P_minus_1": 6,
+      "period_max_covered_run": 5,
+      "long_block_count_at_threshold": 0,
+      "first_period_max_block": [
+        2,
+        6
+      ],
+      "long_block_samples": [],
+      "plus_phase_start": 20,
+      "minus_phase_start": 13,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 0,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 6,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": false
+    },
+    {
+      "k": 4,
+      "low_prime_max": 7,
+      "square_anchor_prime_P": 11,
+      "primorial_below_P": 210,
+      "window_length_P_minus_1": 10,
+      "period_max_covered_run": 9,
+      "long_block_count_at_threshold": 0,
+      "first_period_max_block": [
+        2,
+        10
+      ],
+      "long_block_samples": [],
+      "plus_phase_start": 122,
+      "minus_phase_start": 111,
+      "plus_run_from_square_phase": 5,
+      "minus_run_from_square_phase": 2,
+      "plus_first_survivor_r": 6,
+      "minus_first_survivor_r": 8,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": false
+    },
+    {
+      "k": 5,
+      "low_prime_max": 11,
+      "square_anchor_prime_P": 13,
+      "primorial_below_P": 2310,
+      "window_length_P_minus_1": 12,
+      "period_max_covered_run": 13,
+      "long_block_count_at_threshold": 2,
+      "first_period_max_block": [
+        114,
+        126
+      ],
+      "long_block_samples": [
+        {
+          "start": 114,
+          "end": 126,
+          "length": 13
+        },
+        {
+          "start": 2184,
+          "end": 2196,
+          "length": 13
+        }
+      ],
+      "plus_phase_start": 170,
+      "minus_phase_start": 157,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 0,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 12,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 6,
+      "low_prime_max": 13,
+      "square_anchor_prime_P": 17,
+      "primorial_below_P": 30030,
+      "window_length_P_minus_1": 16,
+      "period_max_covered_run": 21,
+      "long_block_count_at_threshold": 10,
+      "first_period_max_block": [
+        9440,
+        9460
+      ],
+      "long_block_samples": [
+        {
+          "start": 2184,
+          "end": 2200,
+          "length": 17
+        },
+        {
+          "start": 5750,
+          "end": 5766,
+          "length": 17
+        },
+        {
+          "start": 9110,
+          "end": 9126,
+          "length": 17
+        },
+        {
+          "start": 9440,
+          "end": 9460,
+          "length": 21
+        },
+        {
+          "start": 13340,
+          "end": 13356,
+          "length": 17
+        },
+        {
+          "start": 16674,
+          "end": 16690,
+          "length": 17
+        },
+        {
+          "start": 20570,
+          "end": 20590,
+          "length": 21
+        },
+        {
+          "start": 20904,
+          "end": 20920,
+          "length": 17
+        }
+      ],
+      "plus_phase_start": 290,
+      "minus_phase_start": 273,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 4,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 12,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 7,
+      "low_prime_max": 17,
+      "square_anchor_prime_P": 19,
+      "primorial_below_P": 510510,
+      "window_length_P_minus_1": 18,
+      "period_max_covered_run": 25,
+      "long_block_count_at_threshold": 124,
+      "first_period_max_block": [
+        217128,
+        217152
+      ],
+      "long_block_samples": [
+        {
+          "start": 9440,
+          "end": 9460,
+          "length": 21
+        },
+        {
+          "start": 11330,
+          "end": 11350,
+          "length": 21
+        },
+        {
+          "start": 14900,
+          "end": 14920,
+          "length": 21
+        },
+        {
+          "start": 20570,
+          "end": 20590,
+          "length": 21
+        },
+        {
+          "start": 27828,
+          "end": 27846,
+          "length": 19
+        },
+        {
+          "start": 27920,
+          "end": 27940,
+          "length": 21
+        },
+        {
+          "start": 31490,
+          "end": 31510,
+          "length": 21
+        },
+        {
+          "start": 39470,
+          "end": 39492,
+          "length": 23
+        }
+      ],
+      "plus_phase_start": 362,
+      "minus_phase_start": 343,
+      "plus_run_from_square_phase": 5,
+      "minus_run_from_square_phase": 4,
+      "plus_first_survivor_r": 6,
+      "minus_first_survivor_r": 14,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 8,
+      "low_prime_max": 19,
+      "square_anchor_prime_P": 23,
+      "primorial_below_P": 9699690,
+      "window_length_P_minus_1": 22,
+      "period_max_covered_run": 33,
+      "long_block_count_at_threshold": 1372,
+      "first_period_max_block": [
+        60044,
+        60076
+      ],
+      "long_block_samples": [
+        {
+          "start": 1334,
+          "end": 1356,
+          "length": 23
+        },
+        {
+          "start": 4760,
+          "end": 4782,
+          "length": 23
+        },
+        {
+          "start": 14594,
+          "end": 14616,
+          "length": 23
+        },
+        {
+          "start": 24258,
+          "end": 24280,
+          "length": 23
+        },
+        {
+          "start": 39470,
+          "end": 39492,
+          "length": 23
+        },
+        {
+          "start": 53244,
+          "end": 53266,
+          "length": 23
+        },
+        {
+          "start": 60044,
+          "end": 60076,
+          "length": 33
+        },
+        {
+          "start": 64038,
+          "end": 64060,
+          "length": 23
+        }
+      ],
+      "plus_phase_start": 530,
+      "minus_phase_start": 507,
+      "plus_run_from_square_phase": 11,
+      "minus_run_from_square_phase": 2,
+      "plus_first_survivor_r": 12,
+      "minus_first_survivor_r": 20,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    }
+  ],
+  "plus_full_cover_records": [],
+  "minus_full_cover_records": [],
+  "period_bound_failure_records": [
+    {
+      "k": 5,
+      "low_prime_max": 11,
+      "square_anchor_prime_P": 13,
+      "primorial_below_P": 2310,
+      "window_length_P_minus_1": 12,
+      "period_max_covered_run": 13,
+      "long_block_count_at_threshold": 2,
+      "first_period_max_block": [
+        114,
+        126
+      ],
+      "long_block_samples": [
+        {
+          "start": 114,
+          "end": 126,
+          "length": 13
+        },
+        {
+          "start": 2184,
+          "end": 2196,
+          "length": 13
+        }
+      ],
+      "plus_phase_start": 170,
+      "minus_phase_start": 157,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 0,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 12,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 6,
+      "low_prime_max": 13,
+      "square_anchor_prime_P": 17,
+      "primorial_below_P": 30030,
+      "window_length_P_minus_1": 16,
+      "period_max_covered_run": 21,
+      "long_block_count_at_threshold": 10,
+      "first_period_max_block": [
+        9440,
+        9460
+      ],
+      "long_block_samples": [
+        {
+          "start": 2184,
+          "end": 2200,
+          "length": 17
+        },
+        {
+          "start": 5750,
+          "end": 5766,
+          "length": 17
+        },
+        {
+          "start": 9110,
+          "end": 9126,
+          "length": 17
+        },
+        {
+          "start": 9440,
+          "end": 9460,
+          "length": 21
+        },
+        {
+          "start": 13340,
+          "end": 13356,
+          "length": 17
+        },
+        {
+          "start": 16674,
+          "end": 16690,
+          "length": 17
+        },
+        {
+          "start": 20570,
+          "end": 20590,
+          "length": 21
+        },
+        {
+          "start": 20904,
+          "end": 20920,
+          "length": 17
+        }
+      ],
+      "plus_phase_start": 290,
+      "minus_phase_start": 273,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 4,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 12,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 7,
+      "low_prime_max": 17,
+      "square_anchor_prime_P": 19,
+      "primorial_below_P": 510510,
+      "window_length_P_minus_1": 18,
+      "period_max_covered_run": 25,
+      "long_block_count_at_threshold": 124,
+      "first_period_max_block": [
+        217128,
+        217152
+      ],
+      "long_block_samples": [
+        {
+          "start": 9440,
+          "end": 9460,
+          "length": 21
+        },
+        {
+          "start": 11330,
+          "end": 11350,
+          "length": 21
+        },
+        {
+          "start": 14900,
+          "end": 14920,
+          "length": 21
+        },
+        {
+          "start": 20570,
+          "end": 20590,
+          "length": 21
+        },
+        {
+          "start": 27828,
+          "end": 27846,
+          "length": 19
+        },
+        {
+          "start": 27920,
+          "end": 27940,
+          "length": 21
+        },
+        {
+          "start": 31490,
+          "end": 31510,
+          "length": 21
+        },
+        {
+          "start": 39470,
+          "end": 39492,
+          "length": 23
+        }
+      ],
+      "plus_phase_start": 362,
+      "minus_phase_start": 343,
+      "plus_run_from_square_phase": 5,
+      "minus_run_from_square_phase": 4,
+      "plus_first_survivor_r": 6,
+      "minus_first_survivor_r": 14,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 8,
+      "low_prime_max": 19,
+      "square_anchor_prime_P": 23,
+      "primorial_below_P": 9699690,
+      "window_length_P_minus_1": 22,
+      "period_max_covered_run": 33,
+      "long_block_count_at_threshold": 1372,
+      "first_period_max_block": [
+        60044,
+        60076
+      ],
+      "long_block_samples": [
+        {
+          "start": 1334,
+          "end": 1356,
+          "length": 23
+        },
+        {
+          "start": 4760,
+          "end": 4782,
+          "length": 23
+        },
+        {
+          "start": 14594,
+          "end": 14616,
+          "length": 23
+        },
+        {
+          "start": 24258,
+          "end": 24280,
+          "length": 23
+        },
+        {
+          "start": 39470,
+          "end": 39492,
+          "length": 23
+        },
+        {
+          "start": 53244,
+          "end": 53266,
+          "length": 23
+        },
+        {
+          "start": 60044,
+          "end": 60076,
+          "length": 33
+        },
+        {
+          "start": 64038,
+          "end": 64060,
+          "length": 23
+        }
+      ],
+      "plus_phase_start": 530,
+      "minus_phase_start": 507,
+      "plus_run_from_square_phase": 11,
+      "minus_run_from_square_phase": 2,
+      "plus_first_survivor_r": 12,
+      "minus_first_survivor_r": 20,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    }
+  ],
+  "long_block_but_square_phase_avoids_records": [
+    {
+      "k": 5,
+      "low_prime_max": 11,
+      "square_anchor_prime_P": 13,
+      "primorial_below_P": 2310,
+      "window_length_P_minus_1": 12,
+      "period_max_covered_run": 13,
+      "long_block_count_at_threshold": 2,
+      "first_period_max_block": [
+        114,
+        126
+      ],
+      "long_block_samples": [
+        {
+          "start": 114,
+          "end": 126,
+          "length": 13
+        },
+        {
+          "start": 2184,
+          "end": 2196,
+          "length": 13
+        }
+      ],
+      "plus_phase_start": 170,
+      "minus_phase_start": 157,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 0,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 12,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 6,
+      "low_prime_max": 13,
+      "square_anchor_prime_P": 17,
+      "primorial_below_P": 30030,
+      "window_length_P_minus_1": 16,
+      "period_max_covered_run": 21,
+      "long_block_count_at_threshold": 10,
+      "first_period_max_block": [
+        9440,
+        9460
+      ],
+      "long_block_samples": [
+        {
+          "start": 2184,
+          "end": 2200,
+          "length": 17
+        },
+        {
+          "start": 5750,
+          "end": 5766,
+          "length": 17
+        },
+        {
+          "start": 9110,
+          "end": 9126,
+          "length": 17
+        },
+        {
+          "start": 9440,
+          "end": 9460,
+          "length": 21
+        },
+        {
+          "start": 13340,
+          "end": 13356,
+          "length": 17
+        },
+        {
+          "start": 16674,
+          "end": 16690,
+          "length": 17
+        },
+        {
+          "start": 20570,
+          "end": 20590,
+          "length": 21
+        },
+        {
+          "start": 20904,
+          "end": 20920,
+          "length": 17
+        }
+      ],
+      "plus_phase_start": 290,
+      "minus_phase_start": 273,
+      "plus_run_from_square_phase": 3,
+      "minus_run_from_square_phase": 4,
+      "plus_first_survivor_r": 4,
+      "minus_first_survivor_r": 12,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 7,
+      "low_prime_max": 17,
+      "square_anchor_prime_P": 19,
+      "primorial_below_P": 510510,
+      "window_length_P_minus_1": 18,
+      "period_max_covered_run": 25,
+      "long_block_count_at_threshold": 124,
+      "first_period_max_block": [
+        217128,
+        217152
+      ],
+      "long_block_samples": [
+        {
+          "start": 9440,
+          "end": 9460,
+          "length": 21
+        },
+        {
+          "start": 11330,
+          "end": 11350,
+          "length": 21
+        },
+        {
+          "start": 14900,
+          "end": 14920,
+          "length": 21
+        },
+        {
+          "start": 20570,
+          "end": 20590,
+          "length": 21
+        },
+        {
+          "start": 27828,
+          "end": 27846,
+          "length": 19
+        },
+        {
+          "start": 27920,
+          "end": 27940,
+          "length": 21
+        },
+        {
+          "start": 31490,
+          "end": 31510,
+          "length": 21
+        },
+        {
+          "start": 39470,
+          "end": 39492,
+          "length": 23
+        }
+      ],
+      "plus_phase_start": 362,
+      "minus_phase_start": 343,
+      "plus_run_from_square_phase": 5,
+      "minus_run_from_square_phase": 4,
+      "plus_first_survivor_r": 6,
+      "minus_first_survivor_r": 14,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    },
+    {
+      "k": 8,
+      "low_prime_max": 19,
+      "square_anchor_prime_P": 23,
+      "primorial_below_P": 9699690,
+      "window_length_P_minus_1": 22,
+      "period_max_covered_run": 33,
+      "long_block_count_at_threshold": 1372,
+      "first_period_max_block": [
+        60044,
+        60076
+      ],
+      "long_block_samples": [
+        {
+          "start": 1334,
+          "end": 1356,
+          "length": 23
+        },
+        {
+          "start": 4760,
+          "end": 4782,
+          "length": 23
+        },
+        {
+          "start": 14594,
+          "end": 14616,
+          "length": 23
+        },
+        {
+          "start": 24258,
+          "end": 24280,
+          "length": 23
+        },
+        {
+          "start": 39470,
+          "end": 39492,
+          "length": 23
+        },
+        {
+          "start": 53244,
+          "end": 53266,
+          "length": 23
+        },
+        {
+          "start": 60044,
+          "end": 60076,
+          "length": 33
+        },
+        {
+          "start": 64038,
+          "end": 64060,
+          "length": 23
+        }
+      ],
+      "plus_phase_start": 530,
+      "minus_phase_start": 507,
+      "plus_run_from_square_phase": 11,
+      "minus_run_from_square_phase": 2,
+      "plus_first_survivor_r": 12,
+      "minus_first_survivor_r": 20,
+      "plus_full_cover": false,
+      "minus_full_cover": false,
+      "special_phase_avoids_threshold_long_block": true,
+      "period_global_bound_fails": true
+    }
+  ]
+}
