@@ -1,0 +1,68 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_negative_dyadic_absorber_router",
+  "status": "z61_negative_support_absorbed_by_lcm_anchored_dyadic_lifts_global_proof_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_negative_support_isolation_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "negative_group_count": 1,
+  "absorber_atom_count": 1,
+  "all_negative_atoms_lcm_anchored": true,
+  "all_negative_atoms_have_two_dyadic_lifts": true,
+  "all_negative_groups_locally_absorbed": true,
+  "dyadic_absorber_criterion_closed_for_sample": true,
+  "absorber_rows": [
+    {
+      "hit_moduli": [
+        9614,
+        14421
+      ],
+      "hit_lcm": 28842,
+      "negative_p": 36739,
+      "negative_b": 28842,
+      "negative_b_equals_hit_lcm": true,
+      "negative_unit_weight": 0.5554266330905256,
+      "group_positive_count": 2,
+      "group_negative_count": 1,
+      "group_signed_count": 1,
+      "group_signed_weight": 0.5554266330905256,
+      "group_locally_absorbed": true,
+      "positive_witnesses": [
+        {
+          "p": 200003,
+          "b_value": 57684,
+          "quotient_over_negative_b": 2,
+          "quotient_is_power_of_two": true,
+          "same_unit_weight": true
+        },
+        {
+          "p": 200003,
+          "b_value": 115368,
+          "quotient_over_negative_b": 4,
+          "quotient_is_power_of_two": true,
+          "same_unit_weight": true
+        }
+      ],
+      "positive_witness_count": 2,
+      "dyadic_witness_count": 2,
+      "dyadic_quotients": [
+        2,
+        4
+      ],
+      "positive_surplus_count": 1,
+      "dyadic_absorber_closed_for_atom": true
+    }
+  ],
+  "global_dyadic_lift_absorber_proved": false,
+  "dyadic_lift_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_negative_dyadic_absorber_router.py": "2304105cb77cf851885916d983ab058456f4b63a27c8be00aa0193cf421c0637",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-negative-support-isolation-router.json": "e847e9645e047e97fe03aa92d9093c5c98718e202a3d1fe4c3e52de46ebe1676"
+  },
+  "next_direct_attack_target": "GlobalDyadicLiftAbsorberProofOrDyadicLiftPDEC",
+  "plain_conclusion": "唯一负多命中支撑不只是被正计数覆盖，而是呈现更刚性的 dyadic lift 吸收：负原子 `b=28842` 等于 hit-moduli `[9614,14421]` 的 lcm，同组两条正记录正好位于 `2b` 与 `4b`，且单位权重完全相同。因此样本内负-only 失败对象被压成一个更窄的全局输入：证明所有负多命中 lcm 锚都有足够 dyadic 正升格，或登记 DyadicLift-PDEC。"
+}
