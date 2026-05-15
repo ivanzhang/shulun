@@ -1,0 +1,485 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "width_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-phase-width-envelope-ledger.json",
+    "record_count": 11,
+    "phase_compatible_cover_word_count": 162,
+    "nonstructural_cover_word_count": 49,
+    "small_modulus_nonstructural_count": 0,
+    "actual_residue_overlap_count": 0,
+    "min_nonstructural_margin_M_minus_W": 45,
+    "length_class_dominance_failure_count": 0,
+    "global_label_floor_proved": false,
+    "small_modulus_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "label_lower_bound_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 8,
+      "phase_compatible_cover_word_count": 4,
+      "nonstructural_cover_word_count": 3,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 561,
+      "min_nonstructural_labels": [
+        3,
+        11,
+        17,
+        3
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 553,
+      "nonstructural_signature_min_modulus": {
+        "3,11,17": 561,
+        "3,11,17,19": 10659,
+        "7,11,17,19": 24871
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "phase_p_width": 96,
+      "phase_compatible_cover_word_count": 6,
+      "nonstructural_cover_word_count": 1,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 4389,
+      "min_nonstructural_labels": [
+        19,
+        11,
+        3,
+        7
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11,
+        19
+      ],
+      "min_nonstructural_margin_M_minus_W": 4293,
+      "nonstructural_signature_min_modulus": {
+        "3,7,11,19": 4389
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "phase_p_width": 117,
+      "phase_compatible_cover_word_count": 35,
+      "nonstructural_cover_word_count": 11,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 231,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        11
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 114,
+      "nonstructural_signature_min_modulus": {
+        "13,19,23": 5681,
+        "17,19,23": 7429,
+        "3,11,23": 759,
+        "3,13,17": 663,
+        "3,13,19": 741,
+        "3,7,11": 231,
+        "3,7,19": 399,
+        "7,11,19": 1463,
+        "7,13,23": 2093,
+        "7,17,23": 2737
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "phase_p_width": 172,
+      "phase_compatible_cover_word_count": 31,
+      "nonstructural_cover_word_count": 1,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 7293,
+      "min_nonstructural_labels": [
+        11,
+        17,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        13,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 7121,
+      "nonstructural_signature_min_modulus": {
+        "3,11,13,17": 7293
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 5,
+      "phase_p_width": 100,
+      "phase_compatible_cover_word_count": 5,
+      "nonstructural_cover_word_count": 2,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 7293,
+      "min_nonstructural_labels": [
+        3,
+        11,
+        17,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        13,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 7193,
+      "nonstructural_signature_min_modulus": {
+        "3,11,13,17": 7293,
+        "3,11,13,17,19": 138567
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "cell_length": 3,
+      "phase_p_width": 28,
+      "phase_compatible_cover_word_count": 6,
+      "nonstructural_cover_word_count": 2,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 273,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        13
+      ],
+      "min_nonstructural_margin_M_minus_W": 245,
+      "nonstructural_signature_min_modulus": {
+        "3,7,13": 273,
+        "3,7,23": 483
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 8,
+      "phase_compatible_cover_word_count": 4,
+      "nonstructural_cover_word_count": 3,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 561,
+      "min_nonstructural_labels": [
+        3,
+        11,
+        17,
+        3
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 553,
+      "nonstructural_signature_min_modulus": {
+        "3,11,17": 561,
+        "3,11,17,19": 10659,
+        "7,11,17,19": 24871
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 2,
+      "phase_p_width": 32,
+      "phase_compatible_cover_word_count": 10,
+      "nonstructural_cover_word_count": 4,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 77,
+      "min_nonstructural_labels": [
+        7,
+        11
+      ],
+      "min_nonstructural_distinct_labels": [
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 45,
+      "nonstructural_signature_min_modulus": {
+        "11,13": 143,
+        "7,11": 77,
+        "7,17": 119
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 72,
+      "phase_compatible_cover_word_count": 20,
+      "nonstructural_cover_word_count": 9,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 231,
+      "min_nonstructural_labels": [
+        3,
+        7,
+        11,
+        3
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 159,
+      "nonstructural_signature_min_modulus": {
+        "13,19,23,31": 176111,
+        "3,13,19": 741,
+        "3,13,19,23": 17043,
+        "3,13,23": 897,
+        "3,7,11": 231,
+        "3,7,13": 273,
+        "3,7,19": 399,
+        "7,13,19,23": 39767
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "phase_p_width": 117,
+      "phase_compatible_cover_word_count": 35,
+      "nonstructural_cover_word_count": 11,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 231,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        11
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 114,
+      "nonstructural_signature_min_modulus": {
+        "13,19,23": 5681,
+        "17,19,23": 7429,
+        "3,11,23": 759,
+        "3,13,17": 663,
+        "3,13,19": 741,
+        "3,7,11": 231,
+        "3,7,19": 399,
+        "7,11,19": 1463,
+        "7,13,23": 2093,
+        "7,17,23": 2737
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "cell_length": 3,
+      "phase_p_width": 28,
+      "phase_compatible_cover_word_count": 6,
+      "nonstructural_cover_word_count": 2,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 273,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        13
+      ],
+      "min_nonstructural_margin_M_minus_W": 245,
+      "nonstructural_signature_min_modulus": {
+        "3,7,13": 273,
+        "3,7,23": 483
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    }
+  ],
+  "length_class_records": [
+    {
+      "cell_length": 2,
+      "record_count": 1,
+      "min_nonstructural_modulus": 77,
+      "max_phase_width": 32,
+      "length_margin_minM_minus_maxW": 45,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    },
+    {
+      "cell_length": 3,
+      "record_count": 4,
+      "min_nonstructural_modulus": 231,
+      "max_phase_width": 117,
+      "length_margin_minM_minus_maxW": 114,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    },
+    {
+      "cell_length": 4,
+      "record_count": 5,
+      "min_nonstructural_modulus": 231,
+      "max_phase_width": 172,
+      "length_margin_minM_minus_maxW": 59,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    },
+    {
+      "cell_length": 5,
+      "record_count": 1,
+      "min_nonstructural_modulus": 7293,
+      "max_phase_width": 100,
+      "length_margin_minM_minus_maxW": 7193,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    }
+  ]
+}

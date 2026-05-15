@@ -1,0 +1,578 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_label_lower_bound_router",
+  "status": "selector_label_lower_bound_open_global",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_label_floor_not_used_as_global_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "width_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-phase-width-envelope-ledger.json",
+    "record_count": 11,
+    "phase_compatible_cover_word_count": 162,
+    "nonstructural_cover_word_count": 49,
+    "small_modulus_nonstructural_count": 0,
+    "actual_residue_overlap_count": 0,
+    "min_nonstructural_margin_M_minus_W": 45,
+    "length_class_dominance_failure_count": 0,
+    "global_label_floor_proved": false,
+    "small_modulus_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "label_lower_bound_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 8,
+      "phase_compatible_cover_word_count": 4,
+      "nonstructural_cover_word_count": 3,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 561,
+      "min_nonstructural_labels": [
+        3,
+        11,
+        17,
+        3
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 553,
+      "nonstructural_signature_min_modulus": {
+        "3,11,17": 561,
+        "3,11,17,19": 10659,
+        "7,11,17,19": 24871
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "phase_p_width": 96,
+      "phase_compatible_cover_word_count": 6,
+      "nonstructural_cover_word_count": 1,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 4389,
+      "min_nonstructural_labels": [
+        19,
+        11,
+        3,
+        7
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11,
+        19
+      ],
+      "min_nonstructural_margin_M_minus_W": 4293,
+      "nonstructural_signature_min_modulus": {
+        "3,7,11,19": 4389
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "phase_p_width": 117,
+      "phase_compatible_cover_word_count": 35,
+      "nonstructural_cover_word_count": 11,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 231,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        11
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 114,
+      "nonstructural_signature_min_modulus": {
+        "13,19,23": 5681,
+        "17,19,23": 7429,
+        "3,11,23": 759,
+        "3,13,17": 663,
+        "3,13,19": 741,
+        "3,7,11": 231,
+        "3,7,19": 399,
+        "7,11,19": 1463,
+        "7,13,23": 2093,
+        "7,17,23": 2737
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "phase_p_width": 172,
+      "phase_compatible_cover_word_count": 31,
+      "nonstructural_cover_word_count": 1,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 7293,
+      "min_nonstructural_labels": [
+        11,
+        17,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        13,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 7121,
+      "nonstructural_signature_min_modulus": {
+        "3,11,13,17": 7293
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 5,
+      "phase_p_width": 100,
+      "phase_compatible_cover_word_count": 5,
+      "nonstructural_cover_word_count": 2,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 7293,
+      "min_nonstructural_labels": [
+        3,
+        11,
+        17,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        13,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 7193,
+      "nonstructural_signature_min_modulus": {
+        "3,11,13,17": 7293,
+        "3,11,13,17,19": 138567
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "cell_length": 3,
+      "phase_p_width": 28,
+      "phase_compatible_cover_word_count": 6,
+      "nonstructural_cover_word_count": 2,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 273,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        13
+      ],
+      "min_nonstructural_margin_M_minus_W": 245,
+      "nonstructural_signature_min_modulus": {
+        "3,7,13": 273,
+        "3,7,23": 483
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 8,
+      "phase_compatible_cover_word_count": 4,
+      "nonstructural_cover_word_count": 3,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 561,
+      "min_nonstructural_labels": [
+        3,
+        11,
+        17,
+        3
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        11,
+        17
+      ],
+      "min_nonstructural_margin_M_minus_W": 553,
+      "nonstructural_signature_min_modulus": {
+        "3,11,17": 561,
+        "3,11,17,19": 10659,
+        "7,11,17,19": 24871
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 2,
+      "phase_p_width": 32,
+      "phase_compatible_cover_word_count": 10,
+      "nonstructural_cover_word_count": 4,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 77,
+      "min_nonstructural_labels": [
+        7,
+        11
+      ],
+      "min_nonstructural_distinct_labels": [
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 45,
+      "nonstructural_signature_min_modulus": {
+        "11,13": 143,
+        "7,11": 77,
+        "7,17": 119
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 72,
+      "phase_compatible_cover_word_count": 20,
+      "nonstructural_cover_word_count": 9,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 231,
+      "min_nonstructural_labels": [
+        3,
+        7,
+        11,
+        3
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 159,
+      "nonstructural_signature_min_modulus": {
+        "13,19,23,31": 176111,
+        "3,13,19": 741,
+        "3,13,19,23": 17043,
+        "3,13,23": 897,
+        "3,7,11": 231,
+        "3,7,13": 273,
+        "3,7,19": 399,
+        "7,13,19,23": 39767
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "phase_p_width": 117,
+      "phase_compatible_cover_word_count": 35,
+      "nonstructural_cover_word_count": 11,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 231,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        11
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        11
+      ],
+      "min_nonstructural_margin_M_minus_W": 114,
+      "nonstructural_signature_min_modulus": {
+        "13,19,23": 5681,
+        "17,19,23": 7429,
+        "3,11,23": 759,
+        "3,13,17": 663,
+        "3,13,19": 741,
+        "3,7,11": 231,
+        "3,7,19": 399,
+        "7,11,19": 1463,
+        "7,13,23": 2093,
+        "7,17,23": 2737
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "cell_length": 3,
+      "phase_p_width": 28,
+      "phase_compatible_cover_word_count": 6,
+      "nonstructural_cover_word_count": 2,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "min_nonstructural_modulus": 273,
+      "min_nonstructural_labels": [
+        7,
+        3,
+        13
+      ],
+      "min_nonstructural_distinct_labels": [
+        3,
+        7,
+        13
+      ],
+      "min_nonstructural_margin_M_minus_W": 245,
+      "nonstructural_signature_min_modulus": {
+        "3,7,13": 273,
+        "3,7,23": 483
+      },
+      "label_lower_bound_closed_on_frontier": true,
+      "overlap_pdec_needed_on_frontier": false,
+      "small_modulus_examples": []
+    }
+  ],
+  "length_class_records": [
+    {
+      "cell_length": 2,
+      "record_count": 1,
+      "min_nonstructural_modulus": 77,
+      "max_phase_width": 32,
+      "length_margin_minM_minus_maxW": 45,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    },
+    {
+      "cell_length": 3,
+      "record_count": 4,
+      "min_nonstructural_modulus": 231,
+      "max_phase_width": 117,
+      "length_margin_minM_minus_maxW": 114,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    },
+    {
+      "cell_length": 4,
+      "record_count": 5,
+      "min_nonstructural_modulus": 231,
+      "max_phase_width": 172,
+      "length_margin_minM_minus_maxW": 59,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    },
+    {
+      "cell_length": 5,
+      "record_count": 1,
+      "min_nonstructural_modulus": 7293,
+      "max_phase_width": 100,
+      "length_margin_minM_minus_maxW": 7193,
+      "small_modulus_nonstructural_count": 0,
+      "actual_residue_overlap_count": 0,
+      "dominance_closed_on_frontier": true
+    }
+  ],
+  "phase_width_envelope_aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "source_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-modulus-width-source-ledger.json",
+    "record_count": 11,
+    "group_count": 6,
+    "width_formula_failure_count": 0,
+    "endpoint_orientation_failure_count": 0,
+    "active_pattern_count": 6,
+    "max_phase_width": 172,
+    "global_endpoint_orientation_proved": false,
+    "global_width_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "global_label_floor_proved": false,
+  "small_modulus_overlap_pdec_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ActiveEndpointPhaseWidthEnvelopeAndLabelLowerBoundOrSmallModulusPDEC",
+  "hardpoint_after_router": "NonStructuralLabelModulusFloorOrSmallModulusOverlapPDEC",
+  "next_direct_attack_target": "NonStructuralLabelModulusFloorOrSmallModulusOverlapPDEC",
+  "theorem_rows": [
+    {
+      "name": "finite_nonstructural_label_floor",
+      "status": "closed_on_current_frontier",
+      "statement": "Every current non-structural compatible cover word has modulus larger than its phase width."
+    },
+    {
+      "name": "small_modulus_overlap_absent",
+      "status": "closed_on_current_frontier",
+      "statement": "No current non-structural cover word has M<=W or an actual mod-15 hit inside the phase window."
+    },
+    {
+      "name": "global_label_floor",
+      "status": "open",
+      "statement": "A global proof must exclude non-structural cover words with small label modulus in the formal-unit family."
+    },
+    {
+      "name": "small_modulus_overlap_pdec",
+      "status": "open",
+      "statement": "Any global small-modulus survivor must be routed to a PDEC/ColumnCRT certificate."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_label_lower_bound_router.py": "985e10cf4ebcdd80951a956b2f82db1f1723fa2980f369ad0271d16733b64abb",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_phase_width_envelope_router.py": "d22471303dad825b366acf9418178abfbff3257f5d385771331d1666f65589bb",
+    "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json": "366bda520b7fbd1a8ad5e8a602af1ffb19daf9b447569fd5110a6f1f4bac8609",
+    "data/square-phase-offband-prefix-gap-shadow-selector-phase-width-envelope-ledger.json": "d2315a905edf1d24de2158140c650b774dfacccf77d11555d20e4d8d37fbd6af",
+    "data/square-phase-offband-prefix-gap-shadow-selector-label-lower-bound-ledger.json": "5ab54c5084e14c07df5a99ff57dea510f27ec0ff0a2088782da4a807bdb4985c",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-label-lower-bound-router.md": "c47a2651731cb402a4b1056c291d2b1198afd8d62a534b126825d7048d89cada"
+  },
+  "plain_conclusion": "本步审计 cover-word 标签模数下界：在 162 个相位兼容覆盖词中，排除结构低轮冲突后剩余 49 个 non-structural 词；当前没有任何 non-structural 词满足 M<=W，也没有 actual mod-15 残基命中窗口。最小行级余量 M-W 为 45。这关闭当前前沿的标签下界审计；全局仍需证明 formal-unit 族无小模数 non-structural 词，或将其登记为 PDEC/ColumnCRT。",
+  "decision_rows": [
+    {
+      "gate": "FiniteLabelFloorClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前 non-structural 覆盖词全部满足 M>W。",
+      "remaining": "closed on current finite frontier"
+    },
+    {
+      "gate": "FiniteActualResidueOverlapAbsent",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前没有 actual mod-15 残基命中窗口。",
+      "remaining": "closed on current finite frontier"
+    },
+    {
+      "gate": "GlobalLabelFloorProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明 formal-unit 族中不存在小模数 non-structural 覆盖词。",
+      "remaining": "NonStructuralLabelModulusFloorOrSmallModulusOverlapPDEC"
+    },
+    {
+      "gate": "SmallModulusOverlapPDECExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "若小模数词存在，仍需 PDEC/ColumnCRT 排斥。",
+      "remaining": "NonStructuralLabelModulusFloorOrSmallModulusOverlapPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步关闭当前标签下界审计，不关闭全局行/列命题。",
+      "remaining": "NonStructuralLabelModulusFloorOrSmallModulusOverlapPDEC"
+    }
+  ]
+}
