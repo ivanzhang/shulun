@@ -1,0 +1,1245 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_target_segment_router",
+  "status": "target_overlap_cell_reduced_to_selected_target_segment_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used_as_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-escape-cell-selector-ledger.json",
+    "packet_count": 11,
+    "selector_success_count": 11,
+    "selector_failure_count": 0,
+    "min_selected_segment_candidate_count": 2,
+    "max_selected_segment_candidate_count": 5,
+    "min_selected_segment_target_prime_count": 1,
+    "max_selected_segment_target_prime_count": 2,
+    "max_segments_inside_selected_cell": 2
+  },
+  "target_segment_records": [
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "q_hull_lo": 675,
+      "q_hull_hi": 687,
+      "wheel17_survivor_values": [
+        677
+      ],
+      "selected_cell": {
+        "q_lo": 679,
+        "q_hi": 687,
+        "candidate_count": 5,
+        "q_values": [
+          679,
+          681,
+          683,
+          685,
+          687
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 4,
+        "complement_candidate_count": 1,
+        "prime_values": [
+          683
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 2,
+        "cell_key": "733:plus:679-687",
+        "target_values": [
+          681,
+          683,
+          685,
+          687
+        ],
+        "complement_values": [
+          679
+        ],
+        "target_prime_values": [
+          683
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4,
+          "q_values": [
+            681,
+            683,
+            685,
+            687
+          ],
+          "parent_target_interval": {
+            "q_lo": 681,
+            "q_hi": 687,
+            "candidate_count": 4
+          },
+          "target_prime_values": [
+            683
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 681,
+        "q_hi": 687,
+        "candidate_count": 4,
+        "q_values": [
+          681,
+          683,
+          685,
+          687
+        ],
+        "parent_target_interval": {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4
+        },
+        "target_prime_values": [
+          683
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "q_hull_lo": 485,
+      "q_hull_hi": 501,
+      "wheel17_survivor_values": [
+        487,
+        491
+      ],
+      "selected_cell": {
+        "q_lo": 493,
+        "q_hi": 501,
+        "candidate_count": 5,
+        "q_values": [
+          493,
+          495,
+          497,
+          499,
+          501
+        ],
+        "support_type": "target_union_gap_cell",
+        "target_union_candidate_count": 5,
+        "complement_candidate_count": 0,
+        "prime_values": [
+          499
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 3,
+        "cell_key": "523:plus:493-501",
+        "target_values": [
+          493,
+          495,
+          497,
+          499,
+          501
+        ],
+        "complement_values": [],
+        "target_prime_values": [
+          499
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 493,
+          "q_hi": 501,
+          "candidate_count": 5,
+          "q_values": [
+            493,
+            495,
+            497,
+            499,
+            501
+          ],
+          "parent_target_interval": {
+            "q_lo": 493,
+            "q_hi": 501,
+            "candidate_count": 5
+          },
+          "target_prime_values": [
+            499
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 493,
+        "q_hi": 501,
+        "candidate_count": 5,
+        "q_values": [
+          493,
+          495,
+          497,
+          499,
+          501
+        ],
+        "parent_target_interval": {
+          "q_lo": 493,
+          "q_hi": 501,
+          "candidate_count": 5
+        },
+        "target_prime_values": [
+          499
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "q_hull_lo": 649,
+      "q_hull_hi": 665,
+      "wheel17_survivor_values": [
+        659,
+        661
+      ],
+      "selected_cell": {
+        "q_lo": 649,
+        "q_hi": 657,
+        "candidate_count": 5,
+        "q_values": [
+          649,
+          651,
+          653,
+          655,
+          657
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 3,
+        "complement_candidate_count": 2,
+        "prime_values": [
+          653
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 1,
+        "cell_key": "691:minus:649-657",
+        "target_values": [
+          649,
+          651,
+          653
+        ],
+        "complement_values": [
+          655,
+          657
+        ],
+        "target_prime_values": [
+          653
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3,
+          "q_values": [
+            649,
+            651,
+            653
+          ],
+          "parent_target_interval": {
+            "q_lo": 649,
+            "q_hi": 653,
+            "candidate_count": 3
+          },
+          "target_prime_values": [
+            653
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 649,
+        "q_hi": 653,
+        "candidate_count": 3,
+        "q_values": [
+          649,
+          651,
+          653
+        ],
+        "parent_target_interval": {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3
+        },
+        "target_prime_values": [
+          653
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "q_hull_lo": 639,
+      "q_hull_hi": 657,
+      "wheel17_survivor_values": [
+        641,
+        643,
+        647
+      ],
+      "selected_cell": {
+        "q_lo": 649,
+        "q_hi": 657,
+        "candidate_count": 5,
+        "q_values": [
+          649,
+          651,
+          653,
+          655,
+          657
+        ],
+        "support_type": "target_union_gap_cell",
+        "target_union_candidate_count": 5,
+        "complement_candidate_count": 0,
+        "prime_values": [
+          653
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 3,
+        "cell_key": "683:plus:649-657",
+        "target_values": [
+          649,
+          651,
+          653,
+          655,
+          657
+        ],
+        "complement_values": [],
+        "target_prime_values": [
+          653
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5,
+          "q_values": [
+            649,
+            651,
+            653,
+            655,
+            657
+          ],
+          "parent_target_interval": {
+            "q_lo": 649,
+            "q_hi": 657,
+            "candidate_count": 5
+          },
+          "target_prime_values": [
+            653
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 649,
+        "q_hi": 657,
+        "candidate_count": 5,
+        "q_values": [
+          649,
+          651,
+          653,
+          655,
+          657
+        ],
+        "parent_target_interval": {
+          "q_lo": 649,
+          "q_hi": 657,
+          "candidate_count": 5
+        },
+        "target_prime_values": [
+          653
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "q_hull_lo": 675,
+      "q_hull_hi": 705,
+      "wheel17_survivor_values": [
+        677,
+        683,
+        691
+      ],
+      "selected_cell": {
+        "q_lo": 693,
+        "q_hi": 705,
+        "candidate_count": 7,
+        "q_values": [
+          693,
+          695,
+          697,
+          699,
+          701,
+          703,
+          705
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 5,
+        "complement_candidate_count": 2,
+        "prime_values": [
+          701
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 4,
+        "cell_key": "733:plus:693-705",
+        "target_values": [
+          697,
+          699,
+          701,
+          703,
+          705
+        ],
+        "complement_values": [
+          693,
+          695
+        ],
+        "target_prime_values": [
+          701
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 697,
+          "q_hi": 705,
+          "candidate_count": 5,
+          "q_values": [
+            697,
+            699,
+            701,
+            703,
+            705
+          ],
+          "parent_target_interval": {
+            "q_lo": 697,
+            "q_hi": 705,
+            "candidate_count": 5
+          },
+          "target_prime_values": [
+            701
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 697,
+        "q_hi": 705,
+        "candidate_count": 5,
+        "q_values": [
+          697,
+          699,
+          701,
+          703,
+          705
+        ],
+        "parent_target_interval": {
+          "q_lo": 697,
+          "q_hi": 705,
+          "candidate_count": 5
+        },
+        "target_prime_values": [
+          701
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "q_hull_lo": 619,
+      "q_hull_hi": 637,
+      "wheel17_survivor_values": [],
+      "selected_cell": {
+        "q_lo": 619,
+        "q_hi": 637,
+        "candidate_count": 10,
+        "q_values": [
+          619,
+          621,
+          623,
+          625,
+          627,
+          629,
+          631,
+          633,
+          635,
+          637
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 7,
+        "complement_candidate_count": 3,
+        "prime_values": [
+          619,
+          631
+        ],
+        "prime_count": 2,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 1,
+        "cell_key": "673:minus:619-637",
+        "target_values": [
+          619,
+          621,
+          623,
+          631,
+          633,
+          635,
+          637
+        ],
+        "complement_values": [
+          625,
+          627,
+          629
+        ],
+        "target_prime_values": [
+          619,
+          631
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 2,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3,
+          "q_values": [
+            619,
+            621,
+            623
+          ],
+          "parent_target_interval": {
+            "q_lo": 619,
+            "q_hi": 623,
+            "candidate_count": 3
+          },
+          "target_prime_values": [
+            619
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        },
+        {
+          "q_lo": 631,
+          "q_hi": 637,
+          "candidate_count": 4,
+          "q_values": [
+            631,
+            633,
+            635,
+            637
+          ],
+          "parent_target_interval": {
+            "q_lo": 631,
+            "q_hi": 637,
+            "candidate_count": 4
+          },
+          "target_prime_values": [
+            631
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 2,
+      "selected_target_segment": {
+        "q_lo": 619,
+        "q_hi": 623,
+        "candidate_count": 3,
+        "q_values": [
+          619,
+          621,
+          623
+        ],
+        "parent_target_interval": {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3
+        },
+        "target_prime_values": [
+          619
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "q_hull_lo": 681,
+      "q_hull_hi": 705,
+      "wheel17_survivor_values": [
+        691
+      ],
+      "selected_cell": {
+        "q_lo": 681,
+        "q_hi": 689,
+        "candidate_count": 5,
+        "q_values": [
+          681,
+          683,
+          685,
+          687,
+          689
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 4,
+        "complement_candidate_count": 1,
+        "prime_values": [
+          683
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 1,
+        "cell_key": "733:plus:681-689",
+        "target_values": [
+          681,
+          683,
+          685,
+          687
+        ],
+        "complement_values": [
+          689
+        ],
+        "target_prime_values": [
+          683
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4,
+          "q_values": [
+            681,
+            683,
+            685,
+            687
+          ],
+          "parent_target_interval": {
+            "q_lo": 681,
+            "q_hi": 687,
+            "candidate_count": 4
+          },
+          "target_prime_values": [
+            683
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 681,
+        "q_hi": 687,
+        "candidate_count": 4,
+        "q_values": [
+          681,
+          683,
+          685,
+          687
+        ],
+        "parent_target_interval": {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4
+        },
+        "target_prime_values": [
+          683
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "q_hull_lo": 273,
+      "q_hull_hi": 295,
+      "wheel17_survivor_values": [
+        277
+      ],
+      "selected_cell": {
+        "q_lo": 279,
+        "q_hi": 295,
+        "candidate_count": 9,
+        "q_values": [
+          279,
+          281,
+          283,
+          285,
+          287,
+          289,
+          291,
+          293,
+          295
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 6,
+        "complement_candidate_count": 3,
+        "prime_values": [
+          281,
+          283,
+          293
+        ],
+        "prime_count": 3,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 2,
+        "cell_key": "313:plus:279-295",
+        "target_values": [
+          281,
+          283,
+          289,
+          291,
+          293,
+          295
+        ],
+        "complement_values": [
+          279,
+          285,
+          287
+        ],
+        "target_prime_values": [
+          281,
+          283,
+          293
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 3,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 281,
+          "q_hi": 283,
+          "candidate_count": 2,
+          "q_values": [
+            281,
+            283
+          ],
+          "parent_target_interval": {
+            "q_lo": 281,
+            "q_hi": 283,
+            "candidate_count": 2
+          },
+          "target_prime_values": [
+            281,
+            283
+          ],
+          "target_prime_count": 2,
+          "actual_segment_void": false
+        },
+        {
+          "q_lo": 289,
+          "q_hi": 295,
+          "candidate_count": 4,
+          "q_values": [
+            289,
+            291,
+            293,
+            295
+          ],
+          "parent_target_interval": {
+            "q_lo": 289,
+            "q_hi": 295,
+            "candidate_count": 4
+          },
+          "target_prime_values": [
+            293
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 2,
+      "selected_target_segment": {
+        "q_lo": 281,
+        "q_hi": 283,
+        "candidate_count": 2,
+        "q_values": [
+          281,
+          283
+        ],
+        "parent_target_interval": {
+          "q_lo": 281,
+          "q_hi": 283,
+          "candidate_count": 2
+        },
+        "target_prime_values": [
+          281,
+          283
+        ],
+        "target_prime_count": 2,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "q_hull_lo": 1051,
+      "q_hull_hi": 1095,
+      "wheel17_survivor_values": [
+        1061,
+        1063,
+        1073,
+        1081
+      ],
+      "selected_cell": {
+        "q_lo": 1065,
+        "q_hi": 1071,
+        "candidate_count": 4,
+        "q_values": [
+          1065,
+          1067,
+          1069,
+          1071
+        ],
+        "support_type": "target_union_gap_cell",
+        "target_union_candidate_count": 4,
+        "complement_candidate_count": 0,
+        "prime_values": [
+          1069
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 2,
+        "cell_key": "1129:plus:1065-1071",
+        "target_values": [
+          1065,
+          1067,
+          1069,
+          1071
+        ],
+        "complement_values": [],
+        "target_prime_values": [
+          1069
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 1065,
+          "q_hi": 1071,
+          "candidate_count": 4,
+          "q_values": [
+            1065,
+            1067,
+            1069,
+            1071
+          ],
+          "parent_target_interval": {
+            "q_lo": 1065,
+            "q_hi": 1071,
+            "candidate_count": 4
+          },
+          "target_prime_values": [
+            1069
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 1065,
+        "q_hi": 1071,
+        "candidate_count": 4,
+        "q_values": [
+          1065,
+          1067,
+          1069,
+          1071
+        ],
+        "parent_target_interval": {
+          "q_lo": 1065,
+          "q_hi": 1071,
+          "candidate_count": 4
+        },
+        "target_prime_values": [
+          1069
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "q_hull_lo": 649,
+      "q_hull_hi": 689,
+      "wheel17_survivor_values": [
+        659,
+        661
+      ],
+      "selected_cell": {
+        "q_lo": 649,
+        "q_hi": 657,
+        "candidate_count": 5,
+        "q_values": [
+          649,
+          651,
+          653,
+          655,
+          657
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 3,
+        "complement_candidate_count": 2,
+        "prime_values": [
+          653
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 1,
+        "cell_key": "691:minus:649-657",
+        "target_values": [
+          649,
+          651,
+          653
+        ],
+        "complement_values": [
+          655,
+          657
+        ],
+        "target_prime_values": [
+          653
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3,
+          "q_values": [
+            649,
+            651,
+            653
+          ],
+          "parent_target_interval": {
+            "q_lo": 649,
+            "q_hi": 653,
+            "candidate_count": 3
+          },
+          "target_prime_values": [
+            653
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 649,
+        "q_hi": 653,
+        "candidate_count": 3,
+        "q_values": [
+          649,
+          651,
+          653
+        ],
+        "parent_target_interval": {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3
+        },
+        "target_prime_values": [
+          653
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "q_hull_lo": 619,
+      "q_hull_hi": 671,
+      "wheel17_survivor_values": [
+        631,
+        641,
+        643,
+        647
+      ],
+      "selected_cell": {
+        "q_lo": 619,
+        "q_hi": 629,
+        "candidate_count": 6,
+        "q_values": [
+          619,
+          621,
+          623,
+          625,
+          627,
+          629
+        ],
+        "support_type": "mixed_gap_cell",
+        "target_union_candidate_count": 3,
+        "complement_candidate_count": 3,
+        "prime_values": [
+          619
+        ],
+        "prime_count": 1,
+        "actual_cell_void": false,
+        "collapse_requires_cell_void": true,
+        "cell_index": 1,
+        "cell_key": "673:minus:619-629",
+        "target_values": [
+          619,
+          621,
+          623
+        ],
+        "complement_values": [
+          625,
+          627,
+          629
+        ],
+        "target_prime_values": [
+          619
+        ],
+        "complement_prime_values": [],
+        "target_prime_count": 1,
+        "complement_prime_count": 0,
+        "target_overlap": true,
+        "has_target_prime": true
+      },
+      "target_segments_inside_cell": [
+        {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3,
+          "q_values": [
+            619,
+            621,
+            623
+          ],
+          "parent_target_interval": {
+            "q_lo": 619,
+            "q_hi": 623,
+            "candidate_count": 3
+          },
+          "target_prime_values": [
+            619
+          ],
+          "target_prime_count": 1,
+          "actual_segment_void": false
+        }
+      ],
+      "nonvoid_target_segment_count": 1,
+      "selected_target_segment": {
+        "q_lo": 619,
+        "q_hi": 623,
+        "candidate_count": 3,
+        "q_values": [
+          619,
+          621,
+          623
+        ],
+        "parent_target_interval": {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3
+        },
+        "target_prime_values": [
+          619
+        ],
+        "target_prime_count": 1,
+        "actual_segment_void": false
+      },
+      "target_segment_selector_succeeds_in_finite_audit": true
+    }
+  ],
+  "selector_failure_count": 0,
+  "global_selected_target_segment_prime_supply_proved": false,
+  "segment_void_pdec_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "TargetOverlapGapCellPrimeSupplyOrTargetCellVoidPDEC",
+  "hardpoint_after_router": "SelectedTargetAtomSegmentPrimeSupplyOrSegmentVoidPDEC",
+  "next_direct_attack_target": "SelectedTargetAtomSegmentPrimeSupplyOrSegmentVoidPDEC",
+  "theorem_rows": [
+    {
+      "name": "target_cell_to_target_segments",
+      "status": "closed",
+      "statement": "The selected target-overlap cell splits into intersections with explicit target-union intervals."
+    },
+    {
+      "name": "single_target_segment_prime_supply_excludes_union_void",
+      "status": "closed",
+      "statement": "If one selected target segment contains a prime, the target-union void assumption is contradicted."
+    },
+    {
+      "name": "finite_target_segment_selector",
+      "status": "finite_evidence",
+      "statement": "Every finite packet has a selected non-void target segment of length at most five odd candidates."
+    },
+    {
+      "name": "global_selected_target_segment_prime_supply",
+      "status": "open",
+      "statement": "A global proof still needs a prime in the selected target atom segment, or exclusion of segment-void PDEC."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_target_segment_router.py": "6c2d51cb006b9dc0be706938dd6eeea687d7e5cb03544a1bc32996408f643287",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_escape_cell_selector_router.py": "a8ae64c4db5d51dce05a2f74677d920eefaaffd43fd474385c050818a307bb1f",
+    "data/square-phase-offband-prefix-gap-shadow-escape-cell-selector-ledger.json": "63031ec8fd4346d5b136d044f99ba2346e6695ab5da5912b81d6668c018ac568",
+    "data/square-phase-offband-prefix-gap-shadow-target-segment-ledger.json": "946982cb153409640b672ccaf4a073e56d5161aa2e7eea87d57295c5588a1372",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-target-segment-router.md": "9d27d139ac2b7ee83c6e217aa803d31c9e630576f2d5b903ba6efafa6de2cd7e"
+  },
+  "plain_conclusion": "本步把 target-overlap cell 继续压成单个 target atom segment：选中 cell 与目标 union 区间取交，再选出最短的实际非空 target segment。有限前沿 11 个包全部成功，选中 segment 长度为 2..5 个奇候选；全局仍需证明这些显式 target segment 含素数，或排斥 segment-void PDEC。",
+  "decision_rows": [
+    {
+      "gate": "TargetSegmentReductionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "target-overlap cell 已压到显式 target interval 交段。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "SingleTargetSegmentCriterionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "单个 target segment 含素数即可否定 union void。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FiniteTargetSegmentSelectorSucceeds",
+      "closed": true,
+      "proved": false,
+      "meaning": "有限前沿每个包都有非空 target segment。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "GlobalSelectedTargetSegmentSupplyClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需全局证明选中 segment 含素数，或排斥 segment-void PDEC。",
+      "remaining": "SelectedTargetAtomSegmentPrimeSupplyOrSegmentVoidPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只完成 target segment 压缩，不关闭全局行/列命题。",
+      "remaining": "SelectedTargetAtomSegmentPrimeSupplyOrSegmentVoidPDEC"
+    }
+  ]
+}
