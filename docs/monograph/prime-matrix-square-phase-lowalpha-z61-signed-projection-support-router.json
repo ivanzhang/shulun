@@ -1,0 +1,226 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_signed_projection_support_router",
+  "status": "z61_root_projection_gate_reduced_to_signed_crt_support_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_root_projection_gate_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "signed_projection_support_group_count": 1,
+  "all_signed_projection_supports_closed": true,
+  "signed_projection_rows": [
+    {
+      "modulus": 57684,
+      "delta": 527,
+      "q2": 71,
+      "q4": 37,
+      "selected_residue": 26951,
+      "local_moduli": [
+        4,
+        3,
+        11,
+        19,
+        23
+      ],
+      "local_rows": [
+        {
+          "local_modulus": 4,
+          "local_roots": [
+            1,
+            3
+          ],
+          "positive_root": 1,
+          "negative_root": 3,
+          "basis_mod_M": 14421,
+          "coefficient_mod_37": 28,
+          "coefficient_mod_71": 8,
+          "coefficient_mod_2627": 1286,
+          "roots_are_pm_pair": true
+        },
+        {
+          "local_modulus": 3,
+          "local_roots": [
+            1,
+            2
+          ],
+          "positive_root": 1,
+          "negative_root": 2,
+          "basis_mod_M": 19228,
+          "coefficient_mod_37": 25,
+          "coefficient_mod_71": 58,
+          "coefficient_mod_2627": 839,
+          "roots_are_pm_pair": true
+        },
+        {
+          "local_modulus": 11,
+          "local_roots": [
+            1,
+            10
+          ],
+          "positive_root": 1,
+          "negative_root": 10,
+          "basis_mod_M": 36708,
+          "coefficient_mod_37": 4,
+          "coefficient_mod_71": 1,
+          "coefficient_mod_2627": 2557,
+          "roots_are_pm_pair": true
+        },
+        {
+          "local_modulus": 19,
+          "local_roots": [
+            9,
+            10
+          ],
+          "positive_root": 9,
+          "negative_root": 10,
+          "basis_mod_M": 42504,
+          "coefficient_mod_37": 30,
+          "coefficient_mod_71": 59,
+          "coefficient_mod_2627": 1621,
+          "roots_are_pm_pair": true
+        },
+        {
+          "local_modulus": 23,
+          "local_roots": [
+            5,
+            18
+          ],
+          "positive_root": 5,
+          "negative_root": 18,
+          "basis_mod_M": 2508,
+          "coefficient_mod_37": 34,
+          "coefficient_mod_71": 44,
+          "coefficient_mod_2627": 2032,
+          "roots_are_pm_pair": true
+        }
+      ],
+      "pairwise_two_roots": true,
+      "all_local_roots_pm_pairs": true,
+      "sign_vector_count": 32,
+      "source_root_count": 32,
+      "signed_support_matches_source_roots": true,
+      "selected_sign_word": "--++-",
+      "selected_sign_rows": [
+        {
+          "sign_word": "--++-",
+          "signs": [
+            -1,
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "local_residues": [
+            3,
+            2,
+            1,
+            9,
+            18
+          ],
+          "root_residue": 26951,
+          "root_mod_37": 15,
+          "root_mod_71": 42,
+          "root_mod_2627": 681,
+          "selected": true
+        }
+      ],
+      "gate_fibers": [
+        {
+          "gate_name": "q4_plain_root_projection",
+          "ell": 37,
+          "target_residues": [
+            15,
+            16
+          ],
+          "target_fibers": [
+            {
+              "target_residue": 15,
+              "fiber_size": 1,
+              "fiber": [
+                {
+                  "sign_word": "--++-",
+                  "root_residue": 26951
+                }
+              ]
+            },
+            {
+              "target_residue": 16,
+              "fiber_size": 0,
+              "fiber": []
+            }
+          ],
+          "total_target_fiber_size": 1,
+          "selected_singleton": true
+        },
+        {
+          "gate_name": "q2_shifted_root_projection",
+          "ell": 71,
+          "target_residues": [
+            42,
+            50
+          ],
+          "target_fibers": [
+            {
+              "target_residue": 42,
+              "fiber_size": 1,
+              "fiber": [
+                {
+                  "sign_word": "--++-",
+                  "root_residue": 26951
+                }
+              ]
+            },
+            {
+              "target_residue": 50,
+              "fiber_size": 0,
+              "fiber": []
+            }
+          ],
+          "total_target_fiber_size": 1,
+          "selected_singleton": true
+        }
+      ],
+      "combined_fibers": [
+        {
+          "target_class": 681,
+          "fiber_size": 1,
+          "fiber": [
+            {
+              "sign_word": "--++-",
+              "root_residue": 26951
+            }
+          ]
+        },
+        {
+          "target_class": 1754,
+          "fiber_size": 0,
+          "fiber": []
+        },
+        {
+          "target_class": 1533,
+          "fiber_size": 0,
+          "fiber": []
+        },
+        {
+          "target_class": 2606,
+          "fiber_size": 0,
+          "fiber": []
+        }
+      ],
+      "combined_total_target_fiber_size": 1,
+      "combined_selected_singleton": true,
+      "signed_projection_support_closed_for_group": true
+    }
+  ],
+  "signed_projection_support_global_bound_proved": false,
+  "signed_projection_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_signed_projection_support_router.py": "241f7157be41445c416277f72c6bc863ac90e32157d36e28e91d6cb3fc2afbed",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-root-projection-gate-router.json": "4ec06861847a756a7e7b58fdd536bf6518b4c6ca26c0ab19a7378f32befe17a3"
+  },
+  "next_direct_attack_target": "SignedRootProjectionSupportGlobalBoundOrSignedProjectionPDEC",
+  "plain_conclusion": "根投影门可继续展开为 CRT 局部根的符号支撑问题：`M=57684=4*3*11*19*23`，每个局部模都有两个相反平方根，所以 32 个一级根正好是五维符号向量的 CRT 像。在该符号支撑上，`q4=37`、`q2=71` 以及合并模 `2627` 的目标投影纤维都只有同一个符号字 `--++-`，对应 `r=26951`；其余目标类为空。因此最新硬点变成全局符号投影支撑容量界，或登记 SignedProjection-PDEC。"
+}
