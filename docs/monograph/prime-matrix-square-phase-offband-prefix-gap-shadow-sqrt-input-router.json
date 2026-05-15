@@ -1,0 +1,1676 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_sqrt_input_router",
+  "status": "fixed_shape_gap_shadow_reduced_to_union_prime_supply_or_sqrt_gap_input_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used_as_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-ledger.json",
+    "shape_ledger": "data/square-phase-offband-prefix-gap-shadow-shape-ledger.json",
+    "template_count": 27,
+    "shape_count": 15,
+    "input_type_counts": {
+      "BackwardSqrtPrimeGap": 5,
+      "PuncturedShapeUnionPrimeSupply": 22
+    },
+    "actual_template_void_count": 0,
+    "max_depth_from_p": 78,
+    "max_depth_over_sqrt_p": 2.321387447440377,
+    "max_coverage_defect_candidate_count": 12,
+    "source_shape_count": 15
+  },
+  "actual_template_void_count": 0,
+  "template_frontier": [
+    {
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:1083-1095",
+        "minus_only_noslot:k1:1065-1071",
+        "minus_only_noslot:k2:1051-1055"
+      ],
+      "q_hull_lo": 1051,
+      "q_hull_hi": 1095,
+      "q_hull_span": 45,
+      "depth_from_p": 78,
+      "depth_over_sqrt_p": 2.321387447440377,
+      "hull_candidate_count": 23,
+      "union_candidate_count": 14,
+      "coverage_defect_candidate_count": 9,
+      "actual_template_prime_load": 5,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:1083-1095', 'minus_only_noslot:k1:1065-1071', 'minus_only_noslot:k2:1051-1055'] contains a prime q."
+    },
+    {
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:289-295",
+        "minus_only_noslot:k1:281-283",
+        "minus_only_noslot:k2:273-275"
+      ],
+      "q_hull_lo": 273,
+      "q_hull_hi": 295,
+      "q_hull_span": 23,
+      "depth_from_p": 40,
+      "depth_over_sqrt_p": 2.260933675776886,
+      "hull_candidate_count": 12,
+      "union_candidate_count": 8,
+      "coverage_defect_candidate_count": 4,
+      "actual_template_prime_load": 3,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:289-295', 'minus_only_noslot:k1:281-283', 'minus_only_noslot:k2:273-275'] contains a prime q."
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 705,
+      "q_hull_span": 31,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_candidate_count": 16,
+      "union_candidate_count": 6,
+      "coverage_defect_candidate_count": 10,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:697-705', 'both_offband_middle:k2:675-675'] contains a prime q."
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "minus_only_noslot:k1:681-687",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 687,
+      "q_hull_span": 13,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_candidate_count": 7,
+      "union_candidate_count": 5,
+      "coverage_defect_candidate_count": 2,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k1:681-687', 'both_offband_middle:k2:675-675'] contains a prime q."
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k1:631-637",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "q_hull_lo": 619,
+      "q_hull_hi": 637,
+      "q_hull_span": 19,
+      "depth_from_p": 54,
+      "depth_over_sqrt_p": 2.0815470301275893,
+      "hull_candidate_count": 10,
+      "union_candidate_count": 7,
+      "coverage_defect_candidate_count": 3,
+      "actual_template_prime_load": 2,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k1:631-637', 'plus_only_noslot:k2:619-623'] contains a prime q."
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:649-671",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "q_hull_lo": 619,
+      "q_hull_hi": 671,
+      "q_hull_span": 53,
+      "depth_from_p": 54,
+      "depth_over_sqrt_p": 2.0815470301275893,
+      "hull_candidate_count": 27,
+      "union_candidate_count": 15,
+      "coverage_defect_candidate_count": 12,
+      "actual_template_prime_load": 4,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:649-671', 'plus_only_noslot:k2:619-623'] contains a prime q."
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "minus_only_noslot:k1:681-687"
+      ],
+      "q_hull_lo": 681,
+      "q_hull_hi": 705,
+      "q_hull_span": 25,
+      "depth_from_p": 52,
+      "depth_over_sqrt_p": 1.9206638233981062,
+      "hull_candidate_count": 13,
+      "union_candidate_count": 9,
+      "coverage_defect_candidate_count": 4,
+      "actual_template_prime_load": 2,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:697-705', 'minus_only_noslot:k1:681-687'] contains a prime q."
+    },
+    {
+      "p": 487,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,minus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "both_offband_middle:k0:465-465",
+        "minus_only_noslot:k0:457-463",
+        "minus_only_noslot:k1:445-449"
+      ],
+      "q_hull_lo": 445,
+      "q_hull_hi": 465,
+      "q_hull_span": 21,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.903201668603664,
+      "hull_candidate_count": 11,
+      "union_candidate_count": 8,
+      "coverage_defect_candidate_count": 3,
+      "actual_template_prime_load": 4,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:465-465', 'minus_only_noslot:k0:457-463', 'minus_only_noslot:k1:445-449'] contains a prime q."
+    },
+    {
+      "p": 293,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,both_offband_middle:k1,minus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "minus_only_noslot:k0:271-275",
+        "both_offband_middle:k1:265-265",
+        "minus_only_noslot:k1:261-263"
+      ],
+      "q_hull_lo": 261,
+      "q_hull_hi": 275,
+      "q_hull_span": 15,
+      "depth_from_p": 32,
+      "depth_over_sqrt_p": 1.869459961078355,
+      "hull_candidate_count": 8,
+      "union_candidate_count": 6,
+      "coverage_defect_candidate_count": 2,
+      "actual_template_prime_load": 2,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:271-275', 'both_offband_middle:k1:265-265', 'minus_only_noslot:k1:261-263'] contains a prime q."
+    },
+    {
+      "p": 113,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,minus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "both_offband_middle:k0:103-103",
+        "minus_only_noslot:k0:99-101",
+        "minus_only_noslot:k1:95-95"
+      ],
+      "q_hull_lo": 95,
+      "q_hull_hi": 103,
+      "q_hull_span": 9,
+      "depth_from_p": 18,
+      "depth_over_sqrt_p": 1.693297563090475,
+      "hull_candidate_count": 5,
+      "union_candidate_count": 4,
+      "coverage_defect_candidate_count": 1,
+      "actual_template_prime_load": 2,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:103-103', 'minus_only_noslot:k0:99-101', 'minus_only_noslot:k1:95-95'] contains a prime q."
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "both_offband_middle:k0:657-657",
+        "minus_only_noslot:k0:649-655",
+        "both_offband_middle:k1:639-639"
+      ],
+      "q_hull_lo": 639,
+      "q_hull_hi": 657,
+      "q_hull_span": 19,
+      "depth_from_p": 44,
+      "depth_over_sqrt_p": 1.6836132099454382,
+      "hull_candidate_count": 10,
+      "union_candidate_count": 6,
+      "coverage_defect_candidate_count": 4,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:657-657', 'minus_only_noslot:k0:649-655', 'both_offband_middle:k1:639-639'] contains a prime q."
+    },
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "both_offband_middle:k0:501-501",
+        "minus_only_noslot:k0:493-499",
+        "both_offband_middle:k1:485-485"
+      ],
+      "q_hull_lo": 485,
+      "q_hull_hi": 501,
+      "q_hull_span": 17,
+      "depth_from_p": 38,
+      "depth_over_sqrt_p": 1.661623983897179,
+      "hull_candidate_count": 9,
+      "union_candidate_count": 6,
+      "coverage_defect_candidate_count": 3,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:501-501', 'minus_only_noslot:k0:493-499', 'both_offband_middle:k1:485-485'] contains a prime q."
+    },
+    {
+      "p": 421,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "both_offband_middle:k0:401-401",
+        "minus_only_noslot:k0:393-399",
+        "both_offband_middle:k1:387-387"
+      ],
+      "q_hull_lo": 387,
+      "q_hull_hi": 401,
+      "q_hull_span": 15,
+      "depth_from_p": 34,
+      "depth_over_sqrt_p": 1.6570586080171696,
+      "hull_candidate_count": 8,
+      "union_candidate_count": 6,
+      "coverage_defect_candidate_count": 2,
+      "actual_template_prime_load": 2,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:401-401', 'minus_only_noslot:k0:393-399', 'both_offband_middle:k1:387-387'] contains a prime q."
+    },
+    {
+      "p": 73,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,minus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "both_offband_middle:k0:65-65",
+        "minus_only_noslot:k0:63-63",
+        "minus_only_noslot:k1:59-59"
+      ],
+      "q_hull_lo": 59,
+      "q_hull_hi": 65,
+      "q_hull_span": 7,
+      "depth_from_p": 14,
+      "depth_over_sqrt_p": 1.638576060745828,
+      "hull_candidate_count": 4,
+      "union_candidate_count": 3,
+      "coverage_defect_candidate_count": 1,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:65-65', 'minus_only_noslot:k0:63-63', 'minus_only_noslot:k1:59-59'] contains a prime q."
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:649-671",
+        "plus_only_noslot:k1:631-637"
+      ],
+      "q_hull_lo": 631,
+      "q_hull_hi": 671,
+      "q_hull_span": 41,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.6189810234325694,
+      "hull_candidate_count": 21,
+      "union_candidate_count": 16,
+      "coverage_defect_candidate_count": 5,
+      "actual_template_prime_load": 4,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:649-671', 'plus_only_noslot:k1:631-637'] contains a prime q."
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "both_offband_middle:k0:665-665",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "q_hull_lo": 649,
+      "q_hull_hi": 665,
+      "q_hull_span": 17,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.5977552995079203,
+      "hull_candidate_count": 9,
+      "union_candidate_count": 4,
+      "coverage_defect_candidate_count": 5,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:665-665', 'plus_only_noslot:k1:649-653'] contains a prime q."
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:667-689",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "q_hull_lo": 649,
+      "q_hull_hi": 689,
+      "q_hull_span": 41,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.5977552995079203,
+      "hull_candidate_count": 21,
+      "union_candidate_count": 15,
+      "coverage_defect_candidate_count": 6,
+      "actual_template_prime_load": 4,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:667-689', 'plus_only_noslot:k1:649-653'] contains a prime q."
+    },
+    {
+      "p": 271,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:257-269",
+        "both_offband_middle:k0:255-255",
+        "plus_only_noslot:k1:245-247"
+      ],
+      "q_hull_lo": 245,
+      "q_hull_hi": 269,
+      "q_hull_span": 25,
+      "depth_from_p": 26,
+      "depth_over_sqrt_p": 1.579387522000046,
+      "hull_candidate_count": 13,
+      "union_candidate_count": 10,
+      "coverage_defect_candidate_count": 3,
+      "actual_template_prime_load": 3,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:257-269', 'both_offband_middle:k0:255-255', 'plus_only_noslot:k1:245-247'] contains a prime q."
+    },
+    {
+      "p": 419,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:401-417",
+        "both_offband_middle:k0:399-399",
+        "plus_only_noslot:k1:387-391"
+      ],
+      "q_hull_lo": 387,
+      "q_hull_hi": 417,
+      "q_hull_span": 31,
+      "depth_from_p": 32,
+      "depth_over_sqrt_p": 1.5633022999873007,
+      "hull_candidate_count": 16,
+      "union_candidate_count": 13,
+      "coverage_defect_candidate_count": 3,
+      "actual_template_prime_load": 3,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:401-417', 'both_offband_middle:k0:399-399', 'plus_only_noslot:k1:387-391'] contains a prime q."
+    },
+    {
+      "p": 199,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:187-197",
+        "both_offband_middle:k0:185-185",
+        "plus_only_noslot:k1:177-179"
+      ],
+      "q_hull_lo": 177,
+      "q_hull_hi": 197,
+      "q_hull_span": 21,
+      "depth_from_p": 22,
+      "depth_over_sqrt_p": 1.5595386510183389,
+      "hull_candidate_count": 11,
+      "union_candidate_count": 9,
+      "coverage_defect_candidate_count": 2,
+      "actual_template_prime_load": 4,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:187-197', 'both_offband_middle:k0:185-185', 'plus_only_noslot:k1:177-179'] contains a prime q."
+    },
+    {
+      "p": 157,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:147-155",
+        "both_offband_middle:k0:145-145",
+        "plus_only_noslot:k1:139-139"
+      ],
+      "q_hull_lo": 139,
+      "q_hull_hi": 155,
+      "q_hull_span": 17,
+      "depth_from_p": 18,
+      "depth_over_sqrt_p": 1.43655639204172,
+      "hull_candidate_count": 9,
+      "union_candidate_count": 7,
+      "coverage_defect_candidate_count": 2,
+      "actual_template_prime_load": 3,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:147-155', 'both_offband_middle:k0:145-145', 'plus_only_noslot:k1:139-139'] contains a prime q."
+    },
+    {
+      "p": 73,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 3,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:67-71",
+        "both_offband_middle:k0:65-65",
+        "plus_only_noslot:k1:61-61"
+      ],
+      "q_hull_lo": 61,
+      "q_hull_hi": 71,
+      "q_hull_span": 11,
+      "depth_from_p": 12,
+      "depth_over_sqrt_p": 1.4044937663535668,
+      "hull_candidate_count": 6,
+      "union_candidate_count": 5,
+      "coverage_defect_candidate_count": 1,
+      "actual_template_prime_load": 3,
+      "actual_template_void": false,
+      "input_type": "PuncturedShapeUnionPrimeSupply",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:67-71', 'both_offband_middle:k0:65-65', 'plus_only_noslot:k1:61-61'] contains a prime q."
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+      "required_offband_witness_count": 2,
+      "actual_prefix_atom_count": 3,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:667-689",
+        "both_offband_middle:k0:665-665"
+      ],
+      "q_hull_lo": 665,
+      "q_hull_hi": 689,
+      "q_hull_span": 25,
+      "depth_from_p": 26,
+      "depth_over_sqrt_p": 0.9890866139810935,
+      "hull_candidate_count": 13,
+      "union_candidate_count": 13,
+      "coverage_defect_candidate_count": 0,
+      "actual_template_prime_load": 3,
+      "actual_template_void": false,
+      "input_type": "BackwardSqrtPrimeGap",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:667-689', 'both_offband_middle:k0:665-665'] contains a prime q."
+    },
+    {
+      "p": 37,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=2|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 2,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:33-35",
+        "both_offband_middle:k0:31-31"
+      ],
+      "q_hull_lo": 31,
+      "q_hull_hi": 35,
+      "q_hull_span": 5,
+      "depth_from_p": 6,
+      "depth_over_sqrt_p": 0.9863939238321437,
+      "hull_candidate_count": 3,
+      "union_candidate_count": 3,
+      "coverage_defect_candidate_count": 0,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "BackwardSqrtPrimeGap",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:33-35', 'both_offband_middle:k0:31-31'] contains a prime q."
+    },
+    {
+      "p": 43,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=2|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 2,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:39-41",
+        "both_offband_middle:k0:37-37"
+      ],
+      "q_hull_lo": 37,
+      "q_hull_hi": 41,
+      "q_hull_span": 5,
+      "depth_from_p": 6,
+      "depth_over_sqrt_p": 0.914991421995628,
+      "hull_candidate_count": 3,
+      "union_candidate_count": 3,
+      "coverage_defect_candidate_count": 0,
+      "actual_template_prime_load": 2,
+      "actual_template_void": false,
+      "input_type": "BackwardSqrtPrimeGap",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:39-41', 'both_offband_middle:k0:37-37'] contains a prime q."
+    },
+    {
+      "p": 47,
+      "side": "minus",
+      "shape_key": "side=minus|W=1|N=2|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 2,
+      "forced_void_atoms": 2,
+      "void_atom_keys": [
+        "plus_only_noslot:k0:43-45",
+        "both_offband_middle:k0:41-41"
+      ],
+      "q_hull_lo": 41,
+      "q_hull_hi": 45,
+      "q_hull_span": 5,
+      "depth_from_p": 6,
+      "depth_over_sqrt_p": 0.8751899489873673,
+      "hull_candidate_count": 3,
+      "union_candidate_count": 3,
+      "coverage_defect_candidate_count": 0,
+      "actual_template_prime_load": 2,
+      "actual_template_void": false,
+      "input_type": "BackwardSqrtPrimeGap",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:43-45', 'both_offband_middle:k0:41-41'] contains a prime q."
+    },
+    {
+      "p": 23,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=1|V=1|both_offband_middle:k0",
+      "required_offband_witness_count": 1,
+      "actual_prefix_atom_count": 1,
+      "forced_void_atoms": 1,
+      "void_atom_keys": [
+        "both_offband_middle:k0:19-19"
+      ],
+      "q_hull_lo": 19,
+      "q_hull_hi": 19,
+      "q_hull_span": 1,
+      "depth_from_p": 4,
+      "depth_over_sqrt_p": 0.8340576562282991,
+      "hull_candidate_count": 1,
+      "union_candidate_count": 1,
+      "coverage_defect_candidate_count": 0,
+      "actual_template_prime_load": 1,
+      "actual_template_void": false,
+      "input_type": "BackwardSqrtPrimeGap",
+      "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:19-19'] contains a prime q."
+    }
+  ],
+  "shape_summaries": [
+    {
+      "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+      "count": 5,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 5
+      },
+      "min_p": 73,
+      "max_p": 419,
+      "max_depth_over_sqrt_p": 1.579387522000046,
+      "max_depth_from_p": 32,
+      "max_coverage_defect": 3,
+      "min_actual_template_prime_load": 3,
+      "examples": [
+        {
+          "p": 73,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:67-71",
+            "both_offband_middle:k0:65-65",
+            "plus_only_noslot:k1:61-61"
+          ],
+          "q_hull_lo": 61,
+          "q_hull_hi": 71,
+          "q_hull_span": 11,
+          "depth_from_p": 12,
+          "depth_over_sqrt_p": 1.4044937663535668,
+          "hull_candidate_count": 6,
+          "union_candidate_count": 5,
+          "coverage_defect_candidate_count": 1,
+          "actual_template_prime_load": 3,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:67-71', 'both_offband_middle:k0:65-65', 'plus_only_noslot:k1:61-61'] contains a prime q."
+        },
+        {
+          "p": 157,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:147-155",
+            "both_offband_middle:k0:145-145",
+            "plus_only_noslot:k1:139-139"
+          ],
+          "q_hull_lo": 139,
+          "q_hull_hi": 155,
+          "q_hull_span": 17,
+          "depth_from_p": 18,
+          "depth_over_sqrt_p": 1.43655639204172,
+          "hull_candidate_count": 9,
+          "union_candidate_count": 7,
+          "coverage_defect_candidate_count": 2,
+          "actual_template_prime_load": 3,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:147-155', 'both_offband_middle:k0:145-145', 'plus_only_noslot:k1:139-139'] contains a prime q."
+        },
+        {
+          "p": 199,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:187-197",
+            "both_offband_middle:k0:185-185",
+            "plus_only_noslot:k1:177-179"
+          ],
+          "q_hull_lo": 177,
+          "q_hull_hi": 197,
+          "q_hull_span": 21,
+          "depth_from_p": 22,
+          "depth_over_sqrt_p": 1.5595386510183389,
+          "hull_candidate_count": 11,
+          "union_candidate_count": 9,
+          "coverage_defect_candidate_count": 2,
+          "actual_template_prime_load": 4,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:187-197', 'both_offband_middle:k0:185-185', 'plus_only_noslot:k1:177-179'] contains a prime q."
+        },
+        {
+          "p": 271,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:257-269",
+            "both_offband_middle:k0:255-255",
+            "plus_only_noslot:k1:245-247"
+          ],
+          "q_hull_lo": 245,
+          "q_hull_hi": 269,
+          "q_hull_span": 25,
+          "depth_from_p": 26,
+          "depth_over_sqrt_p": 1.579387522000046,
+          "hull_candidate_count": 13,
+          "union_candidate_count": 10,
+          "coverage_defect_candidate_count": 3,
+          "actual_template_prime_load": 3,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:257-269', 'both_offband_middle:k0:255-255', 'plus_only_noslot:k1:245-247'] contains a prime q."
+        },
+        {
+          "p": 419,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=3|V=3|plus_only_noslot:k0,both_offband_middle:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:401-417",
+            "both_offband_middle:k0:399-399",
+            "plus_only_noslot:k1:387-391"
+          ],
+          "q_hull_lo": 387,
+          "q_hull_hi": 417,
+          "q_hull_span": 31,
+          "depth_from_p": 32,
+          "depth_over_sqrt_p": 1.5633022999873007,
+          "hull_candidate_count": 16,
+          "union_candidate_count": 13,
+          "coverage_defect_candidate_count": 3,
+          "actual_template_prime_load": 3,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:401-417', 'both_offband_middle:k0:399-399', 'plus_only_noslot:k1:387-391'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,minus_only_noslot:k1",
+      "count": 3,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 3
+      },
+      "min_p": 73,
+      "max_p": 487,
+      "max_depth_over_sqrt_p": 1.903201668603664,
+      "max_depth_from_p": 42,
+      "max_coverage_defect": 3,
+      "min_actual_template_prime_load": 1,
+      "examples": [
+        {
+          "p": 73,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,minus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "both_offband_middle:k0:65-65",
+            "minus_only_noslot:k0:63-63",
+            "minus_only_noslot:k1:59-59"
+          ],
+          "q_hull_lo": 59,
+          "q_hull_hi": 65,
+          "q_hull_span": 7,
+          "depth_from_p": 14,
+          "depth_over_sqrt_p": 1.638576060745828,
+          "hull_candidate_count": 4,
+          "union_candidate_count": 3,
+          "coverage_defect_candidate_count": 1,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:65-65', 'minus_only_noslot:k0:63-63', 'minus_only_noslot:k1:59-59'] contains a prime q."
+        },
+        {
+          "p": 113,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,minus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "both_offband_middle:k0:103-103",
+            "minus_only_noslot:k0:99-101",
+            "minus_only_noslot:k1:95-95"
+          ],
+          "q_hull_lo": 95,
+          "q_hull_hi": 103,
+          "q_hull_span": 9,
+          "depth_from_p": 18,
+          "depth_over_sqrt_p": 1.693297563090475,
+          "hull_candidate_count": 5,
+          "union_candidate_count": 4,
+          "coverage_defect_candidate_count": 1,
+          "actual_template_prime_load": 2,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:103-103', 'minus_only_noslot:k0:99-101', 'minus_only_noslot:k1:95-95'] contains a prime q."
+        },
+        {
+          "p": 487,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,minus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "both_offband_middle:k0:465-465",
+            "minus_only_noslot:k0:457-463",
+            "minus_only_noslot:k1:445-449"
+          ],
+          "q_hull_lo": 445,
+          "q_hull_hi": 465,
+          "q_hull_span": 21,
+          "depth_from_p": 42,
+          "depth_over_sqrt_p": 1.903201668603664,
+          "hull_candidate_count": 11,
+          "union_candidate_count": 8,
+          "coverage_defect_candidate_count": 3,
+          "actual_template_prime_load": 4,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:465-465', 'minus_only_noslot:k0:457-463', 'minus_only_noslot:k1:445-449'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "count": 3,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 3
+      },
+      "min_p": 421,
+      "max_p": 683,
+      "max_depth_over_sqrt_p": 1.6836132099454382,
+      "max_depth_from_p": 44,
+      "max_coverage_defect": 4,
+      "min_actual_template_prime_load": 1,
+      "examples": [
+        {
+          "p": 421,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "both_offband_middle:k0:401-401",
+            "minus_only_noslot:k0:393-399",
+            "both_offband_middle:k1:387-387"
+          ],
+          "q_hull_lo": 387,
+          "q_hull_hi": 401,
+          "q_hull_span": 15,
+          "depth_from_p": 34,
+          "depth_over_sqrt_p": 1.6570586080171696,
+          "hull_candidate_count": 8,
+          "union_candidate_count": 6,
+          "coverage_defect_candidate_count": 2,
+          "actual_template_prime_load": 2,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:401-401', 'minus_only_noslot:k0:393-399', 'both_offband_middle:k1:387-387'] contains a prime q."
+        },
+        {
+          "p": 523,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "both_offband_middle:k0:501-501",
+            "minus_only_noslot:k0:493-499",
+            "both_offband_middle:k1:485-485"
+          ],
+          "q_hull_lo": 485,
+          "q_hull_hi": 501,
+          "q_hull_span": 17,
+          "depth_from_p": 38,
+          "depth_over_sqrt_p": 1.661623983897179,
+          "hull_candidate_count": 9,
+          "union_candidate_count": 6,
+          "coverage_defect_candidate_count": 3,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:501-501', 'minus_only_noslot:k0:493-499', 'both_offband_middle:k1:485-485'] contains a prime q."
+        },
+        {
+          "p": 683,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "both_offband_middle:k0:657-657",
+            "minus_only_noslot:k0:649-655",
+            "both_offband_middle:k1:639-639"
+          ],
+          "q_hull_lo": 639,
+          "q_hull_hi": 657,
+          "q_hull_span": 19,
+          "depth_from_p": 44,
+          "depth_over_sqrt_p": 1.6836132099454382,
+          "hull_candidate_count": 10,
+          "union_candidate_count": 6,
+          "coverage_defect_candidate_count": 4,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:657-657', 'minus_only_noslot:k0:649-655', 'both_offband_middle:k1:639-639'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=minus|W=1|N=2|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+      "count": 3,
+      "input_types": {
+        "BackwardSqrtPrimeGap": 3
+      },
+      "min_p": 37,
+      "max_p": 47,
+      "max_depth_over_sqrt_p": 0.9863939238321437,
+      "max_depth_from_p": 6,
+      "max_coverage_defect": 0,
+      "min_actual_template_prime_load": 1,
+      "examples": [
+        {
+          "p": 37,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=2|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 2,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:33-35",
+            "both_offband_middle:k0:31-31"
+          ],
+          "q_hull_lo": 31,
+          "q_hull_hi": 35,
+          "q_hull_span": 5,
+          "depth_from_p": 6,
+          "depth_over_sqrt_p": 0.9863939238321437,
+          "hull_candidate_count": 3,
+          "union_candidate_count": 3,
+          "coverage_defect_candidate_count": 0,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "BackwardSqrtPrimeGap",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:33-35', 'both_offband_middle:k0:31-31'] contains a prime q."
+        },
+        {
+          "p": 43,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=2|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 2,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:39-41",
+            "both_offband_middle:k0:37-37"
+          ],
+          "q_hull_lo": 37,
+          "q_hull_hi": 41,
+          "q_hull_span": 5,
+          "depth_from_p": 6,
+          "depth_over_sqrt_p": 0.914991421995628,
+          "hull_candidate_count": 3,
+          "union_candidate_count": 3,
+          "coverage_defect_candidate_count": 0,
+          "actual_template_prime_load": 2,
+          "actual_template_void": false,
+          "input_type": "BackwardSqrtPrimeGap",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:39-41', 'both_offband_middle:k0:37-37'] contains a prime q."
+        },
+        {
+          "p": 47,
+          "side": "minus",
+          "shape_key": "side=minus|W=1|N=2|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 2,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:43-45",
+            "both_offband_middle:k0:41-41"
+          ],
+          "q_hull_lo": 41,
+          "q_hull_hi": 45,
+          "q_hull_span": 5,
+          "depth_from_p": 6,
+          "depth_over_sqrt_p": 0.8751899489873673,
+          "hull_candidate_count": 3,
+          "union_candidate_count": 3,
+          "coverage_defect_candidate_count": 0,
+          "actual_template_prime_load": 2,
+          "actual_template_void": false,
+          "input_type": "BackwardSqrtPrimeGap",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:43-45', 'both_offband_middle:k0:41-41'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "count": 2,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 2
+      },
+      "min_p": 313,
+      "max_p": 1129,
+      "max_depth_over_sqrt_p": 2.321387447440377,
+      "max_depth_from_p": 78,
+      "max_coverage_defect": 9,
+      "min_actual_template_prime_load": 3,
+      "examples": [
+        {
+          "p": 313,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "minus_only_noslot:k0:289-295",
+            "minus_only_noslot:k1:281-283",
+            "minus_only_noslot:k2:273-275"
+          ],
+          "q_hull_lo": 273,
+          "q_hull_hi": 295,
+          "q_hull_span": 23,
+          "depth_from_p": 40,
+          "depth_over_sqrt_p": 2.260933675776886,
+          "hull_candidate_count": 12,
+          "union_candidate_count": 8,
+          "coverage_defect_candidate_count": 4,
+          "actual_template_prime_load": 3,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:289-295', 'minus_only_noslot:k1:281-283', 'minus_only_noslot:k2:273-275'] contains a prime q."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "minus_only_noslot:k0:1083-1095",
+            "minus_only_noslot:k1:1065-1071",
+            "minus_only_noslot:k2:1051-1055"
+          ],
+          "q_hull_lo": 1051,
+          "q_hull_hi": 1095,
+          "q_hull_span": 45,
+          "depth_from_p": 78,
+          "depth_over_sqrt_p": 2.321387447440377,
+          "hull_candidate_count": 23,
+          "union_candidate_count": 14,
+          "coverage_defect_candidate_count": 9,
+          "actual_template_prime_load": 5,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:1083-1095', 'minus_only_noslot:k1:1065-1071', 'minus_only_noslot:k2:1051-1055'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "count": 2,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 2
+      },
+      "min_p": 673,
+      "max_p": 691,
+      "max_depth_over_sqrt_p": 1.6189810234325694,
+      "max_depth_from_p": 42,
+      "max_coverage_defect": 6,
+      "min_actual_template_prime_load": 4,
+      "examples": [
+        {
+          "p": 691,
+          "side": "minus",
+          "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:667-689",
+            "plus_only_noslot:k1:649-653"
+          ],
+          "q_hull_lo": 649,
+          "q_hull_hi": 689,
+          "q_hull_span": 41,
+          "depth_from_p": 42,
+          "depth_over_sqrt_p": 1.5977552995079203,
+          "hull_candidate_count": 21,
+          "union_candidate_count": 15,
+          "coverage_defect_candidate_count": 6,
+          "actual_template_prime_load": 4,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:667-689', 'plus_only_noslot:k1:649-653'] contains a prime q."
+        },
+        {
+          "p": 673,
+          "side": "minus",
+          "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:649-671",
+            "plus_only_noslot:k1:631-637"
+          ],
+          "q_hull_lo": 631,
+          "q_hull_hi": 671,
+          "q_hull_span": 41,
+          "depth_from_p": 42,
+          "depth_over_sqrt_p": 1.6189810234325694,
+          "hull_candidate_count": 21,
+          "union_candidate_count": 16,
+          "coverage_defect_candidate_count": 5,
+          "actual_template_prime_load": 4,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:649-671', 'plus_only_noslot:k1:631-637'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "count": 1,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 1
+      },
+      "min_p": 733,
+      "max_p": 733,
+      "max_depth_over_sqrt_p": 2.1422788799440418,
+      "max_depth_from_p": 58,
+      "max_coverage_defect": 10,
+      "min_actual_template_prime_load": 1,
+      "examples": [
+        {
+          "p": 733,
+          "side": "plus",
+          "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "minus_only_noslot:k0:697-705",
+            "both_offband_middle:k2:675-675"
+          ],
+          "q_hull_lo": 675,
+          "q_hull_hi": 705,
+          "q_hull_span": 31,
+          "depth_from_p": 58,
+          "depth_over_sqrt_p": 2.1422788799440418,
+          "hull_candidate_count": 16,
+          "union_candidate_count": 6,
+          "coverage_defect_candidate_count": 10,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:697-705', 'both_offband_middle:k2:675-675'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "count": 1,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 1
+      },
+      "min_p": 733,
+      "max_p": 733,
+      "max_depth_over_sqrt_p": 2.1422788799440418,
+      "max_depth_from_p": 58,
+      "max_coverage_defect": 2,
+      "min_actual_template_prime_load": 1,
+      "examples": [
+        {
+          "p": 733,
+          "side": "plus",
+          "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "minus_only_noslot:k1:681-687",
+            "both_offband_middle:k2:675-675"
+          ],
+          "q_hull_lo": 675,
+          "q_hull_hi": 687,
+          "q_hull_span": 13,
+          "depth_from_p": 58,
+          "depth_over_sqrt_p": 2.1422788799440418,
+          "hull_candidate_count": 7,
+          "union_candidate_count": 5,
+          "coverage_defect_candidate_count": 2,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k1:681-687', 'both_offband_middle:k2:675-675'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "count": 1,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 1
+      },
+      "min_p": 673,
+      "max_p": 673,
+      "max_depth_over_sqrt_p": 2.0815470301275893,
+      "max_depth_from_p": 54,
+      "max_coverage_defect": 12,
+      "min_actual_template_prime_load": 4,
+      "examples": [
+        {
+          "p": 673,
+          "side": "minus",
+          "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:649-671",
+            "plus_only_noslot:k2:619-623"
+          ],
+          "q_hull_lo": 619,
+          "q_hull_hi": 671,
+          "q_hull_span": 53,
+          "depth_from_p": 54,
+          "depth_over_sqrt_p": 2.0815470301275893,
+          "hull_candidate_count": 27,
+          "union_candidate_count": 15,
+          "coverage_defect_candidate_count": 12,
+          "actual_template_prime_load": 4,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:649-671', 'plus_only_noslot:k2:619-623'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "count": 1,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 1
+      },
+      "min_p": 673,
+      "max_p": 673,
+      "max_depth_over_sqrt_p": 2.0815470301275893,
+      "max_depth_from_p": 54,
+      "max_coverage_defect": 3,
+      "min_actual_template_prime_load": 2,
+      "examples": [
+        {
+          "p": 673,
+          "side": "minus",
+          "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k1:631-637",
+            "plus_only_noslot:k2:619-623"
+          ],
+          "q_hull_lo": 619,
+          "q_hull_hi": 637,
+          "q_hull_span": 19,
+          "depth_from_p": 54,
+          "depth_over_sqrt_p": 2.0815470301275893,
+          "hull_candidate_count": 10,
+          "union_candidate_count": 7,
+          "coverage_defect_candidate_count": 3,
+          "actual_template_prime_load": 2,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k1:631-637', 'plus_only_noslot:k2:619-623'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "count": 1,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 1
+      },
+      "min_p": 733,
+      "max_p": 733,
+      "max_depth_over_sqrt_p": 1.9206638233981062,
+      "max_depth_from_p": 52,
+      "max_coverage_defect": 4,
+      "min_actual_template_prime_load": 2,
+      "examples": [
+        {
+          "p": 733,
+          "side": "plus",
+          "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "minus_only_noslot:k0:697-705",
+            "minus_only_noslot:k1:681-687"
+          ],
+          "q_hull_lo": 681,
+          "q_hull_hi": 705,
+          "q_hull_span": 25,
+          "depth_from_p": 52,
+          "depth_over_sqrt_p": 1.9206638233981062,
+          "hull_candidate_count": 13,
+          "union_candidate_count": 9,
+          "coverage_defect_candidate_count": 4,
+          "actual_template_prime_load": 2,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:697-705', 'minus_only_noslot:k1:681-687'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,both_offband_middle:k1,minus_only_noslot:k1",
+      "count": 1,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 1
+      },
+      "min_p": 293,
+      "max_p": 293,
+      "max_depth_over_sqrt_p": 1.869459961078355,
+      "max_depth_from_p": 32,
+      "max_coverage_defect": 2,
+      "min_actual_template_prime_load": 2,
+      "examples": [
+        {
+          "p": 293,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,both_offband_middle:k1,minus_only_noslot:k1",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 3,
+          "void_atom_keys": [
+            "minus_only_noslot:k0:271-275",
+            "both_offband_middle:k1:265-265",
+            "minus_only_noslot:k1:261-263"
+          ],
+          "q_hull_lo": 261,
+          "q_hull_hi": 275,
+          "q_hull_span": 15,
+          "depth_from_p": 32,
+          "depth_over_sqrt_p": 1.869459961078355,
+          "hull_candidate_count": 8,
+          "union_candidate_count": 6,
+          "coverage_defect_candidate_count": 2,
+          "actual_template_prime_load": 2,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['minus_only_noslot:k0:271-275', 'both_offband_middle:k1:265-265', 'minus_only_noslot:k1:261-263'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "count": 1,
+      "input_types": {
+        "PuncturedShapeUnionPrimeSupply": 1
+      },
+      "min_p": 691,
+      "max_p": 691,
+      "max_depth_over_sqrt_p": 1.5977552995079203,
+      "max_depth_from_p": 42,
+      "max_coverage_defect": 5,
+      "min_actual_template_prime_load": 1,
+      "examples": [
+        {
+          "p": 691,
+          "side": "minus",
+          "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "both_offband_middle:k0:665-665",
+            "plus_only_noslot:k1:649-653"
+          ],
+          "q_hull_lo": 649,
+          "q_hull_hi": 665,
+          "q_hull_span": 17,
+          "depth_from_p": 42,
+          "depth_over_sqrt_p": 1.5977552995079203,
+          "hull_candidate_count": 9,
+          "union_candidate_count": 4,
+          "coverage_defect_candidate_count": 5,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "PuncturedShapeUnionPrimeSupply",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:665-665', 'plus_only_noslot:k1:649-653'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+      "count": 1,
+      "input_types": {
+        "BackwardSqrtPrimeGap": 1
+      },
+      "min_p": 691,
+      "max_p": 691,
+      "max_depth_over_sqrt_p": 0.9890866139810935,
+      "max_depth_from_p": 26,
+      "max_coverage_defect": 0,
+      "min_actual_template_prime_load": 3,
+      "examples": [
+        {
+          "p": 691,
+          "side": "minus",
+          "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,both_offband_middle:k0",
+          "required_offband_witness_count": 2,
+          "actual_prefix_atom_count": 3,
+          "forced_void_atoms": 2,
+          "void_atom_keys": [
+            "plus_only_noslot:k0:667-689",
+            "both_offband_middle:k0:665-665"
+          ],
+          "q_hull_lo": 665,
+          "q_hull_hi": 689,
+          "q_hull_span": 25,
+          "depth_from_p": 26,
+          "depth_over_sqrt_p": 0.9890866139810935,
+          "hull_candidate_count": 13,
+          "union_candidate_count": 13,
+          "coverage_defect_candidate_count": 0,
+          "actual_template_prime_load": 3,
+          "actual_template_void": false,
+          "input_type": "BackwardSqrtPrimeGap",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['plus_only_noslot:k0:667-689', 'both_offband_middle:k0:665-665'] contains a prime q."
+        }
+      ]
+    },
+    {
+      "shape_key": "side=plus|W=1|N=1|V=1|both_offband_middle:k0",
+      "count": 1,
+      "input_types": {
+        "BackwardSqrtPrimeGap": 1
+      },
+      "min_p": 23,
+      "max_p": 23,
+      "max_depth_over_sqrt_p": 0.8340576562282991,
+      "max_depth_from_p": 4,
+      "max_coverage_defect": 0,
+      "min_actual_template_prime_load": 1,
+      "examples": [
+        {
+          "p": 23,
+          "side": "plus",
+          "shape_key": "side=plus|W=1|N=1|V=1|both_offband_middle:k0",
+          "required_offband_witness_count": 1,
+          "actual_prefix_atom_count": 1,
+          "forced_void_atoms": 1,
+          "void_atom_keys": [
+            "both_offband_middle:k0:19-19"
+          ],
+          "q_hull_lo": 19,
+          "q_hull_hi": 19,
+          "q_hull_span": 1,
+          "depth_from_p": 4,
+          "depth_over_sqrt_p": 0.8340576562282991,
+          "hull_candidate_count": 1,
+          "union_candidate_count": 1,
+          "coverage_defect_candidate_count": 0,
+          "actual_template_prime_load": 1,
+          "actual_template_void": false,
+          "input_type": "BackwardSqrtPrimeGap",
+          "prime_supply_input_statement": "The union of fixed prefix atom intervals ['both_offband_middle:k0:19-19'] contains a prime q."
+        }
+      ]
+    }
+  ],
+  "union_prime_supply_gate_closed": true,
+  "sqrt_gap_boundary_identified": true,
+  "global_fixed_shape_union_supply_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "FixedPrefixGapShadowShapePDECOrMovingDepthSAEExclusion",
+  "hardpoint_after_router": "FixedShapeUnionPrimeSupplyOrSqrtScaleGapInput",
+  "next_direct_attack_target": "FixedShapeUnionPrimeSupplyOrSqrtScaleGapInput",
+  "theorem_rows": [
+    {
+      "name": "template_void_exclusion_by_union_prime_supply",
+      "status": "closed",
+      "statement": "A forced void template is excluded once its union of fixed q=P-2b atom intervals contains at least one prime q."
+    },
+    {
+      "name": "contiguous_template_to_backward_sqrt_gap",
+      "status": "closed",
+      "statement": "If the template covers every odd q in its hull, its exclusion is a backward prime-gap bound below P with length equal to the hull depth."
+    },
+    {
+      "name": "punctured_template_to_shape_union_supply",
+      "status": "closed",
+      "statement": "If the template does not cover the whole hull, its exclusion is a punctured fixed-shape union prime-supply input."
+    },
+    {
+      "name": "finite_no_template_void",
+      "status": "finite_evidence",
+      "statement": "The finite audit finds that every listed template union actually contains at least one prime."
+    },
+    {
+      "name": "global_fixed_shape_union_supply",
+      "status": "open",
+      "statement": "A global proof still needs the fixed-shape union prime-supply theorem, or an external sqrt-scale prime-gap input strong enough to imply it."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_sqrt_input_router.py": "4cb2f5e660a97927ab5cb90bb0df1cc3ec2857370a28d4c8bcb32eb309ead438",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_router.py": "6fac77056cdc883354f2d7c8ffe2e2331928cfaadb9e849960fbde9b36d23c65",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_shape_router.py": "d48eb4ffecbe7bd236bdb568f1db7b1443da0e4718165aafa02b2349911a9ba2",
+    "data/square-phase-offband-prefix-gap-shadow-ledger.json": "f80e634e8dd67f202e02c0466af8df409217cc4b623b72d519612ee873fd3a74",
+    "data/square-phase-offband-prefix-gap-shadow-shape-ledger.json": "dbe7b6ec327be0078b515b824004ffea5461a9e5285d85ea5539930ccea79e0d",
+    "data/square-phase-offband-prefix-gap-shadow-sqrt-input-ledger.json": "819d391201c6719a8f93ab4786657e73e7d06f356971d002615aa8fdc10fd0e5",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-sqrt-input-router.md": "0ada8dd564d28e7d01dd791235dd9d47f657a8ac070530ab722e71b90d8cdb6e"
+  },
+  "plain_conclusion": "本步把固定小 k 形状 PDEC 的最后数学输入边界写清：每个强制 prime-void 模板，只要其固定 q 区间并集含一个素数就被排除。若模板覆盖整个奇 q hull，则这正是 P 下方长度 depth 的后向素数间隙输入；若存在覆盖缺口，则是更精细的穿孔固定形状并集素数供给输入。有限账本中所有模板并集实际都含素数，但全局仍未证明。",
+  "decision_rows": [
+    {
+      "gate": "TemplateVoidExclusionByUnionPrimeSupplyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "每个强制空模板只要自身并集含素数即可排除。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "SqrtGapInputBoundaryClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "连续 hull 模板已等价为 P 下方 sqrt 级后向素数间隙输入。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FiniteNoTemplateVoid",
+      "closed": true,
+      "proved": false,
+      "meaning": "有限样本中所有模板并集都含素数。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "GlobalFixedShapeUnionSupplyClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需全局证明固定形状并集素数供给，或引用同等强度短区间素数输入。",
+      "remaining": "FixedShapeUnionPrimeSupplyOrSqrtScaleGapInput"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只标定最终输入边界，不关闭全局行/列命题。",
+      "remaining": "FixedShapeUnionPrimeSupplyOrSqrtScaleGapInput"
+    }
+  ]
+}
