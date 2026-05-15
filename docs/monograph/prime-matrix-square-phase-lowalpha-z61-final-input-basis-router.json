@@ -1,0 +1,133 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_final_input_basis_router",
+  "counterexample_assumption_only": true,
+  "direct_next_attack_order": [
+    "B28842SameFormalUnitPrimitiveMultiAtomPDECExclusion",
+    "Z61PolynomialPrimeTupleSchinzelLevelInputOrExternalTheoremMatching"
+  ],
+  "gates": [
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "target=bucket unbalanced<=8, omega=4, shell=(8D,16D]",
+      "gate": "Z61FormalUnitAndNoTheoremSwitch",
+      "meaning": "本证书仍在同一个 z=61 formal unit 内工作，不把目标偷换为别的命题。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "z61_dyadic_companion_boundary_requires_independent_square_window_input_open",
+      "gate": "LocalDyadicCompanionEquivalence",
+      "meaning": "dyadic companion 的局部等价链已经闭合。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "p^2 = A*s - C",
+      "gate": "ShiftedSquareWindowNormalForm",
+      "meaning": "平方窗口已经正规化为单参数二次进位方程。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "degree=5, content=1, no_fixed_prime_divisor=true",
+      "gate": "PolynomialTupleExactAdmissibility",
+      "meaning": "primitive、不可约、无固定素因子已闭合；局部同余障碍耗尽。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "t=0, p=200003, a4=9371, a2=9767",
+      "gate": "SampleT0Recovery",
+      "meaning": "样本点可恢复局部 companion；它不是全局输入。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "simultaneous prime values for p(t), a4(t), a2(t)",
+      "gate": "SchinzelOrBatemanHornLevelInput",
+      "meaning": "若走外部素性路线，必须提交 Schinzel H / Bateman-Horn 等级输入或等价强度定理。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "persistent_terminal_reduced_to_primitive_multiatom_pdec_certificate",
+      "gate": "PersistentPhasePDECAdmissionBoundary",
+      "meaning": "持久终端准入边界已闭合；裸持久标签不能直接作为终端。"
+    },
+    {
+      "blocks_final": false,
+      "closed": true,
+      "evidence": "current materialized primitive non-tautological candidates = 0",
+      "gate": "CurrentMaterializedPersistentInstances",
+      "meaning": "当前已物化实例关闭，但这不排斥全局 family。"
+    },
+    {
+      "blocks_final": true,
+      "closed": false,
+      "evidence": "global U_CRT < L_PDEC for every admitted same-formal-unit primitive multi-atom certificate",
+      "gate": "PrimitiveMultiAtomSameFormalUnitPDECExclusion",
+      "meaning": "若走内部自足路线，必须排斥同 formal unit 的 primitive 多原子 PDEC family。"
+    }
+  ],
+  "narrowest_external_hardpoint": "SchinzelHypothesisHLevelInputForZ61PolynomialPrimeTuple",
+  "narrowest_internal_hardpoint": "PrimitiveMultiAtomSameFormalUnitPDECCertificateForB28842",
+  "no_theorem_switch": true,
+  "normal_form": {
+    "A": 303071736,
+    "C": 4269143,
+    "crt_root_class_count_mod_A": 256,
+    "equation": "p^2 = A*s - C"
+  },
+  "open_blocking_gates": [
+    "SchinzelOrBatemanHornLevelInput",
+    "PrimitiveMultiAtomSameFormalUnitPDECExclusion"
+  ],
+  "phase_modulus_b": 28842,
+  "plain_conclusion": "z=61 strict 自足线的局部链条已经压到底：dyadic companion 等价、平方窗口正规形、单参数多项式三元组、以及 primitive/不可约/无固定素因子全部闭合。因此继续在局部同余或有限样本上硬挤不会推出全局闭合；剩余守门项精确二分为：外部 Schinzel/Bateman-Horn 等级的三多项式同步素值输入，或内部同 formal unit 的 primitive 多原子 PDEC family 排斥。当前已物化 PDEC 实例为零，只关闭实例和准入边界，不关闭全局 family。",
+  "same_theorem_target_preserved": true,
+  "sample_prime_rows": [
+    {
+      "name": "p",
+      "prime": true,
+      "value": 200003
+    },
+    {
+      "name": "a4",
+      "prime": true,
+      "value": 9371
+    },
+    {
+      "name": "a2",
+      "prime": true,
+      "value": 9767
+    }
+  ],
+  "sample_values": {
+    "a2": 9767,
+    "a4": 9371,
+    "p": 200003,
+    "t": 0
+  },
+  "selected_root_class": 200003,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-pdec-cap-persistent-terminal-admission-router.json": "1993c57c8ba939c0c678e9d70c5a9c49314659b594746e5ff4a3fa1335f41d2e",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-dyadic-companion-boundary-router.json": "69fbf839066d2ff7d7c34bd7086a1e59342099c780be06c3a5e04549098847d6",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-polynomial-tuple-admissibility-router.json": "720bf769224bd9a2b0fc8f392b1a0c28c6edb325d96601f7d4207defc55ea3ab",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-quadratic-prime-triple-param-router.json": "cd9ca8bbd7c90b9bbf51bc802b5bf5716929247a6b9d718b9784c5206d95233e",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-shifted-square-window-algebraic-normal-form-router.json": "3106b08898673dceec88f43cb038db997802b0cf966bda9a04ef4f4675f01293",
+    "experiments/prime_matrix_square_phase_lowalpha_z61_final_input_basis_router.py": "e69564c8f47eda93839d00493c509cbe52067735995e1e2a9f9eecaa9f073ad3"
+  },
+  "status": "z61_final_input_basis_reduced_to_schinzel_level_or_primitive_multiatom_pdec_open",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "theorem_boundary": {
+    "closed_implication": "LocalZ61ChainClosed AND (SchinzelOrBatemanHornLevelInput OR PrimitiveMultiAtomSameFormalUnitPDECExclusion) => Z61CompanionGateClosed",
+    "external_prime_tuple_input_available": false,
+    "final_z61_gate_closed": false,
+    "local_z61_chain_closed": true,
+    "persistent_phase_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  }
+}
