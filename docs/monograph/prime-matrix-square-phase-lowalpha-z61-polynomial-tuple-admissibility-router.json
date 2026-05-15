@@ -1,0 +1,107 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_polynomial_tuple_admissibility_router",
+  "status": "z61_polynomial_prime_tuple_admissible_but_requires_schinzel_level_input_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_quadratic_prime_triple_param_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "polynomial_rows": [
+    {
+      "name": "p(t)",
+      "degree": 1,
+      "coefficients": [
+        303071736,
+        200003
+      ],
+      "content": 1,
+      "primitive": true,
+      "discriminant": null,
+      "irreducible_over_Z": true
+    },
+    {
+      "name": "a4(t)",
+      "degree": 2,
+      "coefficients": [
+        21518093256,
+        28400426,
+        9371
+      ],
+      "content": 1,
+      "primitive": true,
+      "discriminant": -10626428,
+      "irreducible_over_Z": true
+    },
+    {
+      "name": "a2(t)",
+      "degree": 2,
+      "coefficients": [
+        22427308464,
+        29600444,
+        9767
+      ],
+      "content": 1,
+      "primitive": true,
+      "discriminant": -3802074416,
+      "irreducible_over_Z": true
+    }
+  ],
+  "product_polynomial_coefficients": [
+    146260272533208442470553089024,
+    482600153903155260235781760,
+    636954945823478516841024,
+    420339463543704594896,
+    138695321131457350,
+    18305585979671
+  ],
+  "product_degree": 5,
+  "product_content": 1,
+  "fixed_prime_divisor_candidates_by_degree_bound": [
+    2,
+    3,
+    5
+  ],
+  "fixed_prime_rows": [
+    {
+      "prime": 2,
+      "surviving_residue_count": 2,
+      "surviving_residues": [
+        0,
+        1
+      ],
+      "fixed_prime_divisor": false
+    },
+    {
+      "prime": 3,
+      "surviving_residue_count": 2,
+      "surviving_residues": [
+        0,
+        1
+      ],
+      "fixed_prime_divisor": false
+    },
+    {
+      "prime": 5,
+      "surviving_residue_count": 2,
+      "surviving_residues": [
+        0,
+        4
+      ],
+      "fixed_prime_divisor": false
+    }
+  ],
+  "no_fixed_prime_divisor_proved": true,
+  "exact_admissibility_closed": true,
+  "schinzel_hypothesis_h_level_input_proved": false,
+  "bateman_horn_level_input_proved": false,
+  "persistent_phase_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-quadratic-prime-triple-param-router.json": "cd9ca8bbd7c90b9bbf51bc802b5bf5716929247a6b9d718b9784c5206d95233e",
+    "experiments/prime_matrix_square_phase_lowalpha_z61_polynomial_tuple_admissibility_router.py": "da3a924e7a2e99a0b4acc7954d2752a4f60c33198a9886c669649f9e1502d1cb"
+  },
+  "next_direct_attack_target": "SchinzelHypothesisHLevelInputOrPersistentPhasePDECExclusion",
+  "plain_conclusion": "当前三元组 `p(t),a4(t),a2(t)` 已经精确可容许：三个多项式均为 primitive，`p(t)` 线性不可约，两个二次多项式判别式非平方，因此在 Z 上不可约；乘积多项式 degree=5 且 content=1。若存在固定素因子，除非素数不超过 degree，否则非零多项式模该素数不可能在所有剩余类上为零；检查 2,3,5 均有幸存类。所以局部障碍路线关闭。剩余正是 Schinzel Hypothesis H / Bateman-Horn 等级的多项式素性输入，或 PersistentPhase-PDEC 排斥。"
+}
