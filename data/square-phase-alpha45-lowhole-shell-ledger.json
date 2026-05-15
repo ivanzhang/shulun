@@ -1,0 +1,2456 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "alpha": "4/5",
+    "sample_ps": [
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      101,
+      499,
+      1009,
+      2003,
+      4999
+    ]
+  },
+  "prime_count": 668,
+  "aggregate": {
+    "plus_prime_total": 97145,
+    "plus_bad_tail_total": 38232,
+    "minus_prime_total": 97396,
+    "minus_bad_tail_total": 37738,
+    "plus_semiprime_shell_total": 5046,
+    "minus_semiprime_shell_total": 5343
+  },
+  "identity_failure_count": 0,
+  "finite_prime_dominance_failure_count": 0,
+  "worst_plus_record": {
+    "p": 3,
+    "sign": "plus",
+    "cutoff": 2,
+    "low_survivors": 1,
+    "square_anchor_prime_count": 1,
+    "semiprime_shell_count": 0,
+    "high_capacity": 0,
+    "good_high_semiprime_count": 0,
+    "bad_high_composite_cofactor_count": 0,
+    "margin_H_minus_C": 1,
+    "prime_minus_bad": 1,
+    "low_decomposition_delta": 0,
+    "high_decomposition_delta": 0,
+    "good_shell_delta": 0,
+    "net_identity_delta": 0,
+    "duplicate_high_slot_count": 0,
+    "invalid_shell_count": 0,
+    "shell_a_range": {
+      "min": null,
+      "max": null
+    },
+    "shell_b_range": {
+      "min": null,
+      "max": null
+    },
+    "shell_d_range": {
+      "min": null,
+      "max": null
+    },
+    "prime_r_sample": [
+      2
+    ],
+    "semiprime_shell_sample": [],
+    "bad_high_sample": []
+  },
+  "worst_minus_record": {
+    "p": 3,
+    "sign": "minus",
+    "cutoff": 2,
+    "low_survivors": 1,
+    "square_anchor_prime_count": 1,
+    "semiprime_shell_count": 0,
+    "high_capacity": 0,
+    "good_high_semiprime_count": 0,
+    "bad_high_composite_cofactor_count": 0,
+    "margin_H_minus_C": 1,
+    "prime_minus_bad": 1,
+    "low_decomposition_delta": 0,
+    "high_decomposition_delta": 0,
+    "good_shell_delta": 0,
+    "net_identity_delta": 0,
+    "duplicate_high_slot_count": 0,
+    "invalid_shell_count": 0,
+    "shell_a_range": {
+      "min": null,
+      "max": null
+    },
+    "shell_b_range": {
+      "min": null,
+      "max": null
+    },
+    "shell_d_range": {
+      "min": null,
+      "max": null
+    },
+    "prime_r_sample": [
+      2
+    ],
+    "semiprime_shell_sample": [],
+    "bad_high_sample": []
+  },
+  "worst_combined_record": {
+    "p": 3,
+    "combined_prime_minus_bad": 2,
+    "combined_prime_count": 2,
+    "combined_bad_tail_count": 0
+  },
+  "sample_records": [
+    {
+      "p": 13,
+      "sign": "plus",
+      "cutoff": 10,
+      "low_survivors": 3,
+      "square_anchor_prime_count": 3,
+      "semiprime_shell_count": 0,
+      "high_capacity": 1,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 2,
+      "prime_minus_bad": 2,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        4,
+        10,
+        12
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 7,
+          "q": 11,
+          "value": 176,
+          "cofactor": 16,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 13,
+      "sign": "minus",
+      "cutoff": 10,
+      "low_survivors": 3,
+      "square_anchor_prime_count": 3,
+      "semiprime_shell_count": 0,
+      "high_capacity": 1,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 2,
+      "prime_minus_bad": 2,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        2,
+        6,
+        12
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 4,
+          "q": 11,
+          "value": 165,
+          "cofactor": 15,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 17,
+      "sign": "plus",
+      "cutoff": 13,
+      "low_survivors": 1,
+      "square_anchor_prime_count": 1,
+      "semiprime_shell_count": 0,
+      "high_capacity": 0,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 0,
+      "margin_H_minus_C": 1,
+      "prime_minus_bad": 1,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        4
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": []
+    },
+    {
+      "p": 17,
+      "sign": "minus",
+      "cutoff": 13,
+      "low_survivors": 3,
+      "square_anchor_prime_count": 3,
+      "semiprime_shell_count": 0,
+      "high_capacity": 0,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 0,
+      "margin_H_minus_C": 3,
+      "prime_minus_bad": 3,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        6,
+        8,
+        12
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": []
+    },
+    {
+      "p": 19,
+      "sign": "plus",
+      "cutoff": 15,
+      "low_survivors": 3,
+      "square_anchor_prime_count": 3,
+      "semiprime_shell_count": 0,
+      "high_capacity": 1,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 2,
+      "prime_minus_bad": 2,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        6,
+        12,
+        18
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 13,
+          "q": 17,
+          "value": 374,
+          "cofactor": 22,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 19,
+      "sign": "minus",
+      "cutoff": 15,
+      "low_survivors": 4,
+      "square_anchor_prime_count": 4,
+      "semiprime_shell_count": 0,
+      "high_capacity": 1,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 3,
+      "prime_minus_bad": 3,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        2,
+        8,
+        12,
+        14
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 4,
+          "q": 17,
+          "value": 357,
+          "cofactor": 21,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 23,
+      "sign": "plus",
+      "cutoff": 18,
+      "low_survivors": 3,
+      "square_anchor_prime_count": 2,
+      "semiprime_shell_count": 1,
+      "high_capacity": 2,
+      "good_high_semiprime_count": 1,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 1,
+      "prime_minus_bad": 1,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 4,
+        "max": 4
+      },
+      "shell_b_range": {
+        "min": 6,
+        "max": 6
+      },
+      "shell_d_range": {
+        "min": 2,
+        "max": 2
+      },
+      "prime_r_sample": [
+        12,
+        18
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 22,
+          "value": 551,
+          "q": 19,
+          "cofactor": 29,
+          "cofactor_prime": true,
+          "a": 4,
+          "b": 6,
+          "d": 2,
+          "phase_value": 22,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 3,
+          "q": 19,
+          "value": 532,
+          "cofactor": 28,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 23,
+      "sign": "minus",
+      "cutoff": 18,
+      "low_survivors": 3,
+      "square_anchor_prime_count": 3,
+      "semiprime_shell_count": 0,
+      "high_capacity": 1,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 2,
+      "prime_minus_bad": 2,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        6,
+        8,
+        20
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 16,
+          "q": 19,
+          "value": 513,
+          "cofactor": 27,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 29,
+      "sign": "plus",
+      "cutoff": 23,
+      "low_survivors": 4,
+      "square_anchor_prime_count": 4,
+      "semiprime_shell_count": 0,
+      "high_capacity": 0,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 0,
+      "margin_H_minus_C": 4,
+      "prime_minus_bad": 4,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        12,
+        16,
+        18,
+        22
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": []
+    },
+    {
+      "p": 29,
+      "sign": "minus",
+      "cutoff": 23,
+      "low_survivors": 5,
+      "square_anchor_prime_count": 5,
+      "semiprime_shell_count": 0,
+      "high_capacity": 0,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 0,
+      "margin_H_minus_C": 5,
+      "prime_minus_bad": 5,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        2,
+        12,
+        14,
+        18,
+        20
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": []
+    },
+    {
+      "p": 31,
+      "sign": "plus",
+      "cutoff": 24,
+      "low_survivors": 5,
+      "square_anchor_prime_count": 5,
+      "semiprime_shell_count": 0,
+      "high_capacity": 1,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 4,
+      "prime_minus_bad": 4,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        6,
+        10,
+        16,
+        22,
+        30
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 25,
+          "q": 29,
+          "value": 986,
+          "cofactor": 34,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 31,
+      "sign": "minus",
+      "cutoff": 24,
+      "low_survivors": 4,
+      "square_anchor_prime_count": 4,
+      "semiprime_shell_count": 0,
+      "high_capacity": 1,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 1,
+      "margin_H_minus_C": 3,
+      "prime_minus_bad": 3,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        8,
+        14,
+        20,
+        24
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 4,
+          "q": 29,
+          "value": 957,
+          "cofactor": 33,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 101,
+      "sign": "plus",
+      "cutoff": 80,
+      "low_survivors": 11,
+      "square_anchor_prime_count": 11,
+      "semiprime_shell_count": 0,
+      "high_capacity": 4,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 4,
+      "margin_H_minus_C": 7,
+      "prime_minus_bad": 7,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        10,
+        22,
+        42,
+        46,
+        52,
+        58,
+        66,
+        70,
+        72,
+        88,
+        100
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 8,
+          "q": 83,
+          "value": 10209,
+          "cofactor": 123,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 91,
+          "q": 83,
+          "value": 10292,
+          "cofactor": 124,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 34,
+          "q": 89,
+          "value": 10235,
+          "cofactor": 115,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 81,
+          "q": 97,
+          "value": 10282,
+          "cofactor": 106,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 101,
+      "sign": "minus",
+      "cutoff": 80,
+      "low_survivors": 12,
+      "square_anchor_prime_count": 12,
+      "semiprime_shell_count": 0,
+      "high_capacity": 3,
+      "good_high_semiprime_count": 0,
+      "bad_high_composite_cofactor_count": 3,
+      "margin_H_minus_C": 9,
+      "prime_minus_bad": 9,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_b_range": {
+        "min": null,
+        "max": null
+      },
+      "shell_d_range": {
+        "min": null,
+        "max": null
+      },
+      "prime_r_sample": [
+        8,
+        20,
+        24,
+        32,
+        38,
+        42,
+        50,
+        60,
+        62,
+        68,
+        90,
+        98
+      ],
+      "semiprime_shell_sample": [],
+      "bad_high_sample": [
+        {
+          "r": 75,
+          "q": 83,
+          "value": 10126,
+          "cofactor": 122,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 55,
+          "q": 89,
+          "value": 10146,
+          "cofactor": 114,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 16,
+          "q": 97,
+          "value": 10185,
+          "cofactor": 105,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 499,
+      "sign": "plus",
+      "cutoff": 399,
+      "low_survivors": 42,
+      "square_anchor_prime_count": 40,
+      "semiprime_shell_count": 2,
+      "high_capacity": 18,
+      "good_high_semiprime_count": 2,
+      "bad_high_composite_cofactor_count": 16,
+      "margin_H_minus_C": 24,
+      "prime_minus_bad": 24,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 38,
+        "max": 56
+      },
+      "shell_b_range": {
+        "min": 42,
+        "max": 64
+      },
+      "shell_d_range": {
+        "min": 4,
+        "max": 8
+      },
+      "prime_r_sample": [
+        16,
+        36,
+        58,
+        78,
+        88,
+        96,
+        102,
+        106,
+        126,
+        130,
+        132,
+        142
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 400,
+          "value": 249401,
+          "q": 461,
+          "cofactor": 541,
+          "cofactor_prime": true,
+          "a": 38,
+          "b": 42,
+          "d": 4,
+          "phase_value": 400,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 408,
+          "value": 249409,
+          "q": 443,
+          "cofactor": 563,
+          "cofactor_prime": true,
+          "a": 56,
+          "b": 64,
+          "d": 8,
+          "phase_value": 408,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 20,
+          "q": 401,
+          "value": 249021,
+          "cofactor": 621,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 421,
+          "q": 401,
+          "value": 249422,
+          "cofactor": 622,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 80,
+          "q": 409,
+          "value": 249081,
+          "cofactor": 609,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 489,
+          "q": 409,
+          "value": 249490,
+          "cofactor": 610,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 304,
+          "q": 419,
+          "value": 249305,
+          "cofactor": 595,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 231,
+          "q": 421,
+          "value": 249232,
+          "cofactor": 592,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 117,
+          "q": 431,
+          "value": 249118,
+          "cofactor": 578,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 407,
+          "q": 433,
+          "value": 249408,
+          "cofactor": 576,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 499,
+      "sign": "minus",
+      "cutoff": 399,
+      "low_survivors": 45,
+      "square_anchor_prime_count": 44,
+      "semiprime_shell_count": 1,
+      "high_capacity": 18,
+      "good_high_semiprime_count": 1,
+      "bad_high_composite_cofactor_count": 17,
+      "margin_H_minus_C": 27,
+      "prime_minus_bad": 27,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 68,
+        "max": 68
+      },
+      "shell_b_range": {
+        "min": 78,
+        "max": 78
+      },
+      "shell_d_range": {
+        "min": 10,
+        "max": 10
+      },
+      "prime_r_sample": [
+        14,
+        20,
+        30,
+        92,
+        98,
+        108,
+        110,
+        114,
+        122,
+        132,
+        134,
+        140
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 314,
+          "value": 248687,
+          "q": 431,
+          "cofactor": 577,
+          "cofactor_prime": true,
+          "a": 68,
+          "b": 78,
+          "d": 10,
+          "phase_value": 314,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 381,
+          "q": 401,
+          "value": 248620,
+          "cofactor": 620,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 329,
+          "q": 409,
+          "value": 248672,
+          "cofactor": 608,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 115,
+          "q": 419,
+          "value": 248886,
+          "cofactor": 594,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 190,
+          "q": 421,
+          "value": 248811,
+          "cofactor": 591,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 26,
+          "q": 433,
+          "value": 248975,
+          "cofactor": 575,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 459,
+          "q": 433,
+          "value": 248542,
+          "cofactor": 574,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 88,
+          "q": 439,
+          "value": 248913,
+          "cofactor": 567,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 35,
+          "q": 443,
+          "value": 248966,
+          "cofactor": 562,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 1009,
+      "sign": "plus",
+      "cutoff": 807,
+      "low_survivors": 79,
+      "square_anchor_prime_count": 72,
+      "semiprime_shell_count": 7,
+      "high_capacity": 32,
+      "good_high_semiprime_count": 7,
+      "bad_high_composite_cofactor_count": 25,
+      "margin_H_minus_C": 47,
+      "prime_minus_bad": 47,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 38,
+        "max": 200
+      },
+      "shell_b_range": {
+        "min": 40,
+        "max": 250
+      },
+      "shell_d_range": {
+        "min": 2,
+        "max": 50
+      },
+      "prime_r_sample": [
+        10,
+        16,
+        28,
+        42,
+        96,
+        120,
+        126,
+        136,
+        142,
+        166,
+        172,
+        190
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 18,
+          "value": 1018099,
+          "q": 883,
+          "cofactor": 1153,
+          "cofactor_prime": true,
+          "a": 126,
+          "b": 144,
+          "d": 18,
+          "phase_value": 18,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 438,
+          "value": 1018519,
+          "q": 937,
+          "cofactor": 1087,
+          "cofactor_prime": true,
+          "a": 72,
+          "b": 78,
+          "d": 6,
+          "phase_value": 438,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 450,
+          "value": 1018531,
+          "q": 809,
+          "cofactor": 1259,
+          "cofactor_prime": true,
+          "a": 200,
+          "b": 250,
+          "d": 50,
+          "phase_value": 450,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 480,
+          "value": 1018561,
+          "q": 907,
+          "cofactor": 1123,
+          "cofactor_prime": true,
+          "a": 102,
+          "b": 114,
+          "d": 12,
+          "phase_value": 480,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 498,
+          "value": 1018579,
+          "q": 971,
+          "cofactor": 1049,
+          "cofactor_prime": true,
+          "a": 38,
+          "b": 40,
+          "d": 2,
+          "phase_value": 498,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 676,
+          "value": 1018757,
+          "q": 953,
+          "cofactor": 1069,
+          "cofactor_prime": true,
+          "a": 56,
+          "b": 60,
+          "d": 4,
+          "phase_value": 676,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 760,
+          "value": 1018841,
+          "q": 829,
+          "cofactor": 1229,
+          "cofactor_prime": true,
+          "a": 180,
+          "b": 220,
+          "d": 40,
+          "phase_value": 760,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 535,
+          "q": 811,
+          "value": 1018616,
+          "cofactor": 1256,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 780,
+          "q": 821,
+          "value": 1018861,
+          "cofactor": 1241,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 17,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 793,
+          "q": 823,
+          "value": 1018874,
+          "cofactor": 1238,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 783,
+          "q": 827,
+          "value": 1018864,
+          "cofactor": 1232,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 465,
+          "q": 839,
+          "value": 1018546,
+          "cofactor": 1214,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 401,
+          "q": 853,
+          "value": 1018482,
+          "cofactor": 1194,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 35,
+          "q": 857,
+          "value": 1018116,
+          "cofactor": 1188,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 892,
+          "q": 857,
+          "value": 1018973,
+          "cofactor": 1189,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 29,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 1009,
+      "sign": "minus",
+      "cutoff": 807,
+      "low_survivors": 77,
+      "square_anchor_prime_count": 70,
+      "semiprime_shell_count": 7,
+      "high_capacity": 34,
+      "good_high_semiprime_count": 7,
+      "bad_high_composite_cofactor_count": 27,
+      "margin_H_minus_C": 43,
+      "prime_minus_bad": 43,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 12,
+        "max": 186
+      },
+      "shell_b_range": {
+        "min": 12,
+        "max": 228
+      },
+      "shell_d_range": {
+        "min": 0,
+        "max": 42
+      },
+      "prime_r_sample": [
+        24,
+        60,
+        62,
+        74,
+        84,
+        122,
+        128,
+        158,
+        192,
+        200,
+        222,
+        224
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 30,
+          "value": 1018051,
+          "q": 823,
+          "cofactor": 1237,
+          "cofactor_prime": true,
+          "a": 186,
+          "b": 228,
+          "d": 42,
+          "phase_value": 30,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 44,
+          "value": 1018037,
+          "q": 827,
+          "cofactor": 1231,
+          "cofactor_prime": true,
+          "a": 182,
+          "b": 222,
+          "d": 40,
+          "phase_value": 44,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 144,
+          "value": 1017937,
+          "q": 997,
+          "cofactor": 1021,
+          "cofactor_prime": true,
+          "a": 12,
+          "b": 12,
+          "d": 0,
+          "phase_value": 144,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 374,
+          "value": 1017707,
+          "q": 839,
+          "cofactor": 1213,
+          "cofactor_prime": true,
+          "a": 170,
+          "b": 204,
+          "d": 34,
+          "phase_value": 374,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 452,
+          "value": 1017629,
+          "q": 853,
+          "cofactor": 1193,
+          "cofactor_prime": true,
+          "a": 156,
+          "b": 184,
+          "d": 28,
+          "phase_value": 452,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 494,
+          "value": 1017587,
+          "q": 911,
+          "cofactor": 1117,
+          "cofactor_prime": true,
+          "a": 98,
+          "b": 108,
+          "d": 10,
+          "phase_value": 494,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 822,
+          "value": 1017259,
+          "q": 857,
+          "cofactor": 1187,
+          "cofactor_prime": true,
+          "a": 152,
+          "b": 178,
+          "d": 26,
+          "phase_value": 822,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 359,
+          "q": 809,
+          "value": 1017722,
+          "cofactor": 1258,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 276,
+          "q": 811,
+          "value": 1017805,
+          "cofactor": 1255,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 41,
+          "q": 821,
+          "value": 1018040,
+          "cofactor": 1240,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 862,
+          "q": 821,
+          "value": 1017219,
+          "cofactor": 1239,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 853,
+          "q": 823,
+          "value": 1017228,
+          "cofactor": 1236,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 871,
+          "q": 827,
+          "value": 1017210,
+          "cofactor": 1230,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 69,
+          "q": 829,
+          "value": 1018012,
+          "cofactor": 1228,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 898,
+          "q": 829,
+          "value": 1017183,
+          "cofactor": 1227,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 2003,
+      "sign": "plus",
+      "cutoff": 1602,
+      "low_survivors": 132,
+      "square_anchor_prime_count": 125,
+      "semiprime_shell_count": 7,
+      "high_capacity": 54,
+      "good_high_semiprime_count": 7,
+      "bad_high_composite_cofactor_count": 47,
+      "margin_H_minus_C": 78,
+      "prime_minus_bad": 78,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 102,
+        "max": 376
+      },
+      "shell_b_range": {
+        "min": 108,
+        "max": 464
+      },
+      "shell_d_range": {
+        "min": 6,
+        "max": 88
+      },
+      "prime_r_sample": [
+        4,
+        24,
+        28,
+        58,
+        60,
+        70,
+        72,
+        94,
+        100,
+        102,
+        124,
+        138
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 270,
+          "value": 4012279,
+          "q": 1759,
+          "cofactor": 2281,
+          "cofactor_prime": true,
+          "a": 244,
+          "b": 278,
+          "d": 34,
+          "phase_value": 270,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 718,
+          "value": 4012727,
+          "q": 1789,
+          "cofactor": 2243,
+          "cofactor_prime": true,
+          "a": 214,
+          "b": 240,
+          "d": 26,
+          "phase_value": 718,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 850,
+          "value": 4012859,
+          "q": 1747,
+          "cofactor": 2297,
+          "cofactor_prime": true,
+          "a": 256,
+          "b": 294,
+          "d": 38,
+          "phase_value": 850,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1002,
+          "value": 4013011,
+          "q": 1901,
+          "cofactor": 2111,
+          "cofactor_prime": true,
+          "a": 102,
+          "b": 108,
+          "d": 6,
+          "phase_value": 1002,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1524,
+          "value": 4013533,
+          "q": 1783,
+          "cofactor": 2251,
+          "cofactor_prime": true,
+          "a": 220,
+          "b": 248,
+          "d": 28,
+          "phase_value": 1524,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1800,
+          "value": 4013809,
+          "q": 1627,
+          "cofactor": 2467,
+          "cofactor_prime": true,
+          "a": 376,
+          "b": 464,
+          "d": 88,
+          "phase_value": 1800,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1830,
+          "value": 4013839,
+          "q": 1873,
+          "cofactor": 2143,
+          "cofactor_prime": true,
+          "a": 130,
+          "b": 140,
+          "d": 10,
+          "phase_value": 1830,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 670,
+          "q": 1607,
+          "value": 4012679,
+          "cofactor": 2497,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 11,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 837,
+          "q": 1609,
+          "value": 4012846,
+          "cofactor": 2494,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1135,
+          "q": 1613,
+          "value": 4013144,
+          "cofactor": 2488,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1492,
+          "q": 1619,
+          "value": 4013501,
+          "cofactor": 2479,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 37,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1587,
+          "q": 1621,
+          "value": 4013596,
+          "cofactor": 2476,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 173,
+          "q": 1627,
+          "value": 4012182,
+          "cofactor": 2466,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 278,
+          "q": 1637,
+          "value": 4012287,
+          "cofactor": 2451,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1915,
+          "q": 1637,
+          "value": 4013924,
+          "cofactor": 2452,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 2003,
+      "sign": "minus",
+      "cutoff": 1602,
+      "low_survivors": 144,
+      "square_anchor_prime_count": 139,
+      "semiprime_shell_count": 5,
+      "high_capacity": 57,
+      "good_high_semiprime_count": 5,
+      "bad_high_composite_cofactor_count": 52,
+      "margin_H_minus_C": 87,
+      "prime_minus_bad": 87,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 24,
+        "max": 384
+      },
+      "shell_b_range": {
+        "min": 24,
+        "max": 474
+      },
+      "shell_d_range": {
+        "min": 0,
+        "max": 90
+      },
+      "prime_r_sample": [
+        18,
+        30,
+        32,
+        80,
+        86,
+        98,
+        110,
+        126,
+        138,
+        146,
+        150,
+        182
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 576,
+          "value": 4011433,
+          "q": 1979,
+          "cofactor": 2027,
+          "cofactor_prime": true,
+          "a": 24,
+          "b": 24,
+          "d": 0,
+          "phase_value": 576,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 860,
+          "value": 4011149,
+          "q": 1877,
+          "cofactor": 2137,
+          "cofactor_prime": true,
+          "a": 126,
+          "b": 134,
+          "d": 8,
+          "phase_value": 860,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 986,
+          "value": 4011023,
+          "q": 1709,
+          "cofactor": 2347,
+          "cofactor_prime": true,
+          "a": 294,
+          "b": 344,
+          "d": 50,
+          "phase_value": 986,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1746,
+          "value": 4010263,
+          "q": 1619,
+          "cofactor": 2477,
+          "cofactor_prime": true,
+          "a": 384,
+          "b": 474,
+          "d": 90,
+          "phase_value": 1746,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1916,
+          "value": 4010093,
+          "q": 1873,
+          "cofactor": 2141,
+          "cofactor_prime": true,
+          "a": 130,
+          "b": 138,
+          "d": 8,
+          "phase_value": 1916,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 937,
+          "q": 1607,
+          "value": 4011072,
+          "cofactor": 2496,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 772,
+          "q": 1609,
+          "value": 4011237,
+          "cofactor": 2493,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 478,
+          "q": 1613,
+          "value": 4011531,
+          "cofactor": 2487,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 127,
+          "q": 1619,
+          "value": 4011882,
+          "cofactor": 2478,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 34,
+          "q": 1621,
+          "value": 4011975,
+          "cofactor": 2475,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1655,
+          "q": 1621,
+          "value": 4010354,
+          "cofactor": 2474,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1454,
+          "q": 1627,
+          "value": 4010555,
+          "cofactor": 2465,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1359,
+          "q": 1637,
+          "value": 4010650,
+          "cofactor": 2450,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 4999,
+      "sign": "plus",
+      "cutoff": 3999,
+      "low_survivors": 317,
+      "square_anchor_prime_count": 300,
+      "semiprime_shell_count": 17,
+      "high_capacity": 134,
+      "good_high_semiprime_count": 17,
+      "bad_high_composite_cofactor_count": 117,
+      "margin_H_minus_C": 183,
+      "prime_minus_bad": 183,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 80,
+        "max": 998
+      },
+      "shell_b_range": {
+        "min": 82,
+        "max": 1248
+      },
+      "shell_d_range": {
+        "min": 2,
+        "max": 250
+      },
+      "prime_r_sample": [
+        36,
+        70,
+        88,
+        142,
+        150,
+        156,
+        190,
+        210,
+        238,
+        240,
+        252,
+        268
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 292,
+          "value": 24990293,
+          "q": 4639,
+          "cofactor": 5387,
+          "cofactor_prime": true,
+          "a": 360,
+          "b": 388,
+          "d": 28,
+          "phase_value": 292,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 768,
+          "value": 24990769,
+          "q": 4111,
+          "cofactor": 6079,
+          "cofactor_prime": true,
+          "a": 888,
+          "b": 1080,
+          "d": 192,
+          "phase_value": 768,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1912,
+          "value": 24991913,
+          "q": 4421,
+          "cofactor": 5653,
+          "cofactor_prime": true,
+          "a": 578,
+          "b": 654,
+          "d": 76,
+          "phase_value": 1912,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 2002,
+          "value": 24992003,
+          "q": 4289,
+          "cofactor": 5827,
+          "cofactor_prime": true,
+          "a": 710,
+          "b": 828,
+          "d": 118,
+          "phase_value": 2002,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 2250,
+          "value": 24992251,
+          "q": 4133,
+          "cofactor": 6047,
+          "cofactor_prime": true,
+          "a": 866,
+          "b": 1048,
+          "d": 182,
+          "phase_value": 2250,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 2776,
+          "value": 24992777,
+          "q": 4273,
+          "cofactor": 5849,
+          "cofactor_prime": true,
+          "a": 726,
+          "b": 850,
+          "d": 124,
+          "phase_value": 2776,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 2836,
+          "value": 24992837,
+          "q": 4129,
+          "cofactor": 6053,
+          "cofactor_prime": true,
+          "a": 870,
+          "b": 1054,
+          "d": 184,
+          "phase_value": 2836,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 3438,
+          "value": 24993439,
+          "q": 4919,
+          "cofactor": 5081,
+          "cofactor_prime": true,
+          "a": 80,
+          "b": 82,
+          "d": 2,
+          "phase_value": 3438,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 245,
+          "q": 4001,
+          "value": 24990246,
+          "cofactor": 6246,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 728,
+          "q": 4003,
+          "value": 24990729,
+          "cofactor": 6243,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 4731,
+          "q": 4003,
+          "value": 24994732,
+          "cofactor": 6244,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1658,
+          "q": 4007,
+          "value": 24991659,
+          "cofactor": 6237,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 2963,
+          "q": 4013,
+          "value": 24992964,
+          "cofactor": 6228,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 141,
+          "q": 4019,
+          "value": 24990142,
+          "cofactor": 6218,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 4160,
+          "q": 4019,
+          "value": 24994161,
+          "cofactor": 6219,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 514,
+          "q": 4021,
+          "value": 24990515,
+          "cofactor": 6215,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    },
+    {
+      "p": 4999,
+      "sign": "minus",
+      "cutoff": 3999,
+      "low_survivors": 303,
+      "square_anchor_prime_count": 289,
+      "semiprime_shell_count": 14,
+      "high_capacity": 128,
+      "good_high_semiprime_count": 14,
+      "bad_high_composite_cofactor_count": 114,
+      "margin_H_minus_C": 175,
+      "prime_minus_bad": 175,
+      "low_decomposition_delta": 0,
+      "high_decomposition_delta": 0,
+      "good_shell_delta": 0,
+      "net_identity_delta": 0,
+      "duplicate_high_slot_count": 0,
+      "invalid_shell_count": 0,
+      "shell_a_range": {
+        "min": 12,
+        "max": 980
+      },
+      "shell_b_range": {
+        "min": 12,
+        "max": 1218
+      },
+      "shell_d_range": {
+        "min": 0,
+        "max": 238
+      },
+      "prime_r_sample": [
+        30,
+        32,
+        68,
+        74,
+        122,
+        128,
+        152,
+        180,
+        200,
+        210,
+        224,
+        228
+      ],
+      "semiprime_shell_sample": [
+        {
+          "kind": "semiprime_shell",
+          "r": 144,
+          "value": 24989857,
+          "q": 4987,
+          "cofactor": 5011,
+          "cofactor_prime": true,
+          "a": 12,
+          "b": 12,
+          "d": 0,
+          "phase_value": 144,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 282,
+          "value": 24989719,
+          "q": 4561,
+          "cofactor": 5479,
+          "cofactor_prime": true,
+          "a": 438,
+          "b": 480,
+          "d": 42,
+          "phase_value": 282,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 380,
+          "value": 24989621,
+          "q": 4271,
+          "cofactor": 5851,
+          "cofactor_prime": true,
+          "a": 728,
+          "b": 852,
+          "d": 124,
+          "phase_value": 380,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 864,
+          "value": 24989137,
+          "q": 4219,
+          "cofactor": 5923,
+          "cofactor_prime": true,
+          "a": 780,
+          "b": 924,
+          "d": 144,
+          "phase_value": 864,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1188,
+          "value": 24988813,
+          "q": 4591,
+          "cofactor": 5443,
+          "cofactor_prime": true,
+          "a": 408,
+          "b": 444,
+          "d": 36,
+          "phase_value": 1188,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 1850,
+          "value": 24988151,
+          "q": 4397,
+          "cofactor": 5683,
+          "cofactor_prime": true,
+          "a": 602,
+          "b": 684,
+          "d": 82,
+          "phase_value": 1850,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 2274,
+          "value": 24987727,
+          "q": 4157,
+          "cofactor": 6011,
+          "cofactor_prime": true,
+          "a": 842,
+          "b": 1012,
+          "d": 170,
+          "phase_value": 2274,
+          "valid_shell": true
+        },
+        {
+          "kind": "semiprime_shell",
+          "r": 2448,
+          "value": 24987553,
+          "q": 4259,
+          "cofactor": 5867,
+          "cofactor_prime": true,
+          "a": 740,
+          "b": 868,
+          "d": 128,
+          "phase_value": 2448,
+          "valid_shell": true
+        }
+      ],
+      "bad_high_sample": [
+        {
+          "r": 3756,
+          "q": 4001,
+          "value": 24986245,
+          "cofactor": 6245,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 3275,
+          "q": 4003,
+          "value": 24986726,
+          "cofactor": 6242,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 2349,
+          "q": 4007,
+          "value": 24987652,
+          "cofactor": 6236,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 1050,
+          "q": 4013,
+          "value": 24988951,
+          "cofactor": 6227,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 13,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 3507,
+          "q": 4021,
+          "value": 24986494,
+          "cofactor": 6214,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 2466,
+          "q": 4027,
+          "value": 24987535,
+          "cofactor": 6205,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 5,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 3622,
+          "q": 4049,
+          "value": 24986379,
+          "cofactor": 6171,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 3,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        },
+        {
+          "r": 3433,
+          "q": 4051,
+          "value": 24986568,
+          "cofactor": 6168,
+          "cofactor_prime": false,
+          "least_factor_of_cofactor": 2,
+          "low_survivor": false,
+          "kind": "bad_high_composite_cofactor"
+        }
+      ]
+    }
+  ],
+  "identity_failures": [],
+  "dominance_failures": []
+}
