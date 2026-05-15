@@ -1,0 +1,59 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_shifted_square_window_input_mismatch_router",
+  "status": "z61_shifted_square_window_input_not_supplied_by_registered_standard_routes_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_dyadic_companion_boundary_router",
+    "prime_matrix_square_phase_lowalpha_z61_endpoint_shifted_factor_router",
+    "prime_matrix_square_phase_lowalpha_z61_shifted_square_window_router"
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "required_input": {
+    "linear_prime_pair": {
+      "a4": "71*132-1",
+      "a2": "74*132-1"
+    },
+    "same_p": 200003,
+    "square_congruence": "p^2 ≡ -527 mod 57684",
+    "endpoint_window": "delta + M*span <= p-1 < delta + M*(span+1)",
+    "recovered_s": 132
+  },
+  "theorem_shape_tests": [
+    {
+      "candidate": "single_short_interval_prime",
+      "matches_required_shape": false,
+      "reason": "只能给某短区间内至少一个素数；不同时给出 `a4=71s-1` 与 `a2=74s-1` 两个素数，也不控制 square-window 同余。"
+    },
+    {
+      "candidate": "dirichlet_one_linear_form",
+      "matches_required_shape": false,
+      "reason": "只能处理单个等差数列中的无限素数；不提供两个同步线性型同时为素数。"
+    },
+    {
+      "candidate": "bounded_prime_gaps_maynard_type",
+      "matches_required_shape": false,
+      "reason": "可给某些可容许组中至少两个素数，但不指定必须是这两个线性型，也不附带当前平方窗口锁定。"
+    },
+    {
+      "candidate": "hardy_littlewood_prime_pair_or_dickson_input",
+      "matches_required_shape": "formally_close_if_available",
+      "reason": "若另行接受足够强的同步线性素数对加 square-window 版本，可闭合该输入；仓库内没有该已证输入。"
+    }
+  ],
+  "registered_standard_route_matches_required_shape": false,
+  "new_shifted_square_window_companion_theorem_proved": false,
+  "persistent_phase_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_shifted_square_window_input_mismatch_router.py": "4bfc71bc8ce44aa96dd2cbfdd8b3c0159ef4f901b6715bdf94142dfd4adbec4f",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-dyadic-companion-boundary-router.json": "69fbf839066d2ff7d7c34bd7086a1e59342099c780be06c3a5e04549098847d6",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-endpoint-shifted-factor-router.json": "57d4e18eadd1bb072db598f782533b7ecefc942472cc8f26d9f0a285e97ad40e",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-shifted-square-window-router.json": "26ed4354b18ce54dc2ea66ce943e628fc02f80cacee97084cc3331a15cd17b83"
+  },
+  "next_direct_attack_target": "NewShiftedSquareWindowCompanionTheoremOrPersistentPhasePDECExclusion",
+  "plain_conclusion": "当前缺口需要的不是一般短区间素数或单个线性型素数，而是同步移位线性素数对 `a4=71s-1,a2=74s-1` 与同一个 `p` 的平方窗口同余同时成立。仓库内登记的标准路线都没有给出这个形状；若不新增该 companion theorem，就只能转向命名 PersistentPhase-PDEC 排斥。"
+}
