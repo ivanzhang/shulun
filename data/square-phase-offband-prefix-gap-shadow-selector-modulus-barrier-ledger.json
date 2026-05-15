@@ -1,0 +1,1663 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-window-miss-ledger.json",
+    "record_count": 11,
+    "barrier_atom_count": 49,
+    "one_step_barrier_closed_count": 49,
+    "one_step_barrier_failure_count": 0,
+    "min_modulus_minus_width": 45,
+    "max_modulus_minus_width": 176039,
+    "min_modulus_to_width_ratio": 1.9743589743589745,
+    "max_modulus_to_width_ratio": 3108.875,
+    "global_modulus_width_dominance_proved": false,
+    "small_modulus_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "selector_modulus_barrier_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "window_miss_atom_count": 3,
+      "one_step_barrier_closed_count": 3,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 553,
+      "min_modulus_to_width_ratio": 70.125,
+      "barrier_atoms": [
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "labels": [
+            3,
+            11,
+            17,
+            3
+          ],
+          "word_modulus": 561,
+          "phase_p_width": 8,
+          "modulus_minus_width": 553,
+          "modulus_to_width_ratio": 70.125,
+          "window_values": [
+            730
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 1121,
+          "nearest_shift_from_window_value": 1122,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "labels": [
+            7,
+            19,
+            11,
+            17
+          ],
+          "word_modulus": 24871,
+          "phase_p_width": 8,
+          "modulus_minus_width": 24863,
+          "modulus_to_width_ratio": 3108.875,
+          "window_values": [
+            732
+          ],
+          "window_value_mod15": [
+            12
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 24867,
+          "nearest_shift_from_window_value": 24871,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "labels": [
+            19,
+            11,
+            17,
+            3
+          ],
+          "word_modulus": 10659,
+          "phase_p_width": 8,
+          "modulus_minus_width": 10651,
+          "modulus_to_width_ratio": 1332.375,
+          "window_values": [
+            730
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 21312,
+          "nearest_shift_from_window_value": 21318,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "phase_p_lo": 481,
+      "phase_p_hi": 576,
+      "phase_p_width": 96,
+      "window_miss_atom_count": 1,
+      "one_step_barrier_closed_count": 1,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 4293,
+      "min_modulus_to_width_ratio": 45.71875,
+      "barrier_atoms": [
+        {
+          "p": 523,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k0:493-499",
+          "labels": [
+            19,
+            11,
+            3,
+            7
+          ],
+          "word_modulus": 4389,
+          "phase_p_width": 96,
+          "modulus_minus_width": 4293,
+          "modulus_to_width_ratio": 45.71875,
+          "window_values": [
+            499
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 4312,
+          "nearest_shift_from_window_value": 4389,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "window_miss_atom_count": 11,
+      "one_step_barrier_closed_count": 11,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 114,
+      "min_modulus_to_width_ratio": 1.9743589743589745,
+      "barrier_atoms": [
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            7,
+            3,
+            11
+          ],
+          "word_modulus": 231,
+          "phase_p_width": 117,
+          "modulus_minus_width": 114,
+          "modulus_to_width_ratio": 1.9743589743589745,
+          "window_values": [
+            724
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 426,
+          "nearest_shift_from_window_value": 462,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            7,
+            3,
+            19
+          ],
+          "word_modulus": 399,
+          "phase_p_width": 117,
+          "modulus_minus_width": 282,
+          "modulus_to_width_ratio": 3.41025641025641,
+          "window_values": [
+            745
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 298,
+          "nearest_shift_from_window_value": 399,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            7,
+            19,
+            11
+          ],
+          "word_modulus": 1463,
+          "phase_p_width": 117,
+          "modulus_minus_width": 1346,
+          "modulus_to_width_ratio": 12.504273504273504,
+          "window_values": [
+            724
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 8698,
+          "nearest_shift_from_window_value": 8778,
+          "signed_step_abs_to_nearest_actual_residue": 6,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "word_modulus": 759,
+          "phase_p_width": 117,
+          "modulus_minus_width": 642,
+          "modulus_to_width_ratio": 6.487179487179487,
+          "window_values": [
+            709
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 1453,
+          "nearest_shift_from_window_value": 1518,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            13,
+            3,
+            17
+          ],
+          "word_modulus": 663,
+          "phase_p_width": 117,
+          "modulus_minus_width": 546,
+          "modulus_to_width_ratio": 5.666666666666667,
+          "window_values": [
+            688
+          ],
+          "window_value_mod15": [
+            13
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 591,
+          "nearest_shift_from_window_value": 663,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            13,
+            3,
+            19
+          ],
+          "word_modulus": 741,
+          "phase_p_width": 117,
+          "modulus_minus_width": 624,
+          "modulus_to_width_ratio": 6.333333333333333,
+          "window_values": [
+            688
+          ],
+          "window_value_mod15": [
+            13
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 1438,
+          "nearest_shift_from_window_value": 1482,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            17,
+            3,
+            13
+          ],
+          "word_modulus": 663,
+          "phase_p_width": 117,
+          "modulus_minus_width": 546,
+          "modulus_to_width_ratio": 5.666666666666667,
+          "window_values": [
+            718
+          ],
+          "window_value_mod15": [
+            13
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 621,
+          "nearest_shift_from_window_value": 663,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            7,
+            13
+          ],
+          "word_modulus": 2093,
+          "phase_p_width": 117,
+          "modulus_minus_width": 1976,
+          "modulus_to_width_ratio": 17.88888888888889,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 4131,
+          "nearest_shift_from_window_value": 4186,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            7,
+            17
+          ],
+          "word_modulus": 2737,
+          "phase_p_width": 117,
+          "modulus_minus_width": 2620,
+          "modulus_to_width_ratio": 23.39316239316239,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 5413,
+          "nearest_shift_from_window_value": 5474,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            19,
+            13
+          ],
+          "word_modulus": 5681,
+          "phase_p_width": 117,
+          "modulus_minus_width": 5564,
+          "modulus_to_width_ratio": 48.55555555555556,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 22663,
+          "nearest_shift_from_window_value": 22724,
+          "signed_step_abs_to_nearest_actual_residue": 4,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            19,
+            17
+          ],
+          "word_modulus": 7429,
+          "phase_p_width": 117,
+          "modulus_minus_width": 7312,
+          "modulus_to_width_ratio": 63.495726495726494,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 29661,
+          "nearest_shift_from_window_value": 29716,
+          "signed_step_abs_to_nearest_actual_residue": 4,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "phase_p_lo": 613,
+      "phase_p_hi": 784,
+      "phase_p_width": 172,
+      "window_miss_atom_count": 1,
+      "one_step_barrier_closed_count": 1,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 7121,
+      "min_modulus_to_width_ratio": 42.401162790697676,
+      "barrier_atoms": [
+        {
+          "p": 683,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k0:649-655",
+          "labels": [
+            11,
+            17,
+            3,
+            13
+          ],
+          "word_modulus": 7293,
+          "phase_p_width": 172,
+          "modulus_minus_width": 7121,
+          "modulus_to_width_ratio": 42.401162790697676,
+          "window_values": [
+            710
+          ],
+          "window_value_mod15": [
+            5
+          ],
+          "actual_p_mod_15": 8,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 7219,
+          "nearest_shift_from_window_value": 7293,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "phase_p_lo": 685,
+      "phase_p_hi": 784,
+      "phase_p_width": 100,
+      "window_miss_atom_count": 2,
+      "one_step_barrier_closed_count": 2,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 7193,
+      "min_modulus_to_width_ratio": 72.93,
+      "barrier_atoms": [
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k0:697-705",
+          "labels": [
+            3,
+            11,
+            17,
+            3,
+            13
+          ],
+          "word_modulus": 7293,
+          "phase_p_width": 100,
+          "modulus_minus_width": 7193,
+          "modulus_to_width_ratio": 72.93,
+          "window_values": [
+            712
+          ],
+          "window_value_mod15": [
+            7
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 14514,
+          "nearest_shift_from_window_value": 14586,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k0:697-705",
+          "labels": [
+            19,
+            11,
+            17,
+            3,
+            13
+          ],
+          "word_modulus": 138567,
+          "phase_p_width": 100,
+          "modulus_minus_width": 138467,
+          "modulus_to_width_ratio": 1385.67,
+          "window_values": [
+            712
+          ],
+          "window_value_mod15": [
+            7
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 277107,
+          "nearest_shift_from_window_value": 277134,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "window_miss_atom_count": 2,
+      "one_step_barrier_closed_count": 2,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 245,
+      "min_modulus_to_width_ratio": 9.75,
+      "barrier_atoms": [
+        {
+          "p": 673,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k2:619-623",
+          "labels": [
+            7,
+            3,
+            13
+          ],
+          "word_modulus": 273,
+          "phase_p_width": 28,
+          "modulus_minus_width": 245,
+          "modulus_to_width_ratio": 9.75,
+          "window_values": [
+            652
+          ],
+          "window_value_mod15": [
+            7
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 523,
+          "nearest_shift_from_window_value": 546,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 673,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k2:619-623",
+          "labels": [
+            7,
+            3,
+            23
+          ],
+          "word_modulus": 483,
+          "phase_p_width": 28,
+          "modulus_minus_width": 455,
+          "modulus_to_width_ratio": 17.25,
+          "window_values": [
+            652
+          ],
+          "window_value_mod15": [
+            7
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 943,
+          "nearest_shift_from_window_value": 966,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "window_miss_atom_count": 3,
+      "one_step_barrier_closed_count": 3,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 553,
+      "min_modulus_to_width_ratio": 70.125,
+      "barrier_atoms": [
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "labels": [
+            3,
+            11,
+            17,
+            3
+          ],
+          "word_modulus": 561,
+          "phase_p_width": 8,
+          "modulus_minus_width": 553,
+          "modulus_to_width_ratio": 70.125,
+          "window_values": [
+            730
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 1121,
+          "nearest_shift_from_window_value": 1122,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "labels": [
+            7,
+            19,
+            11,
+            17
+          ],
+          "word_modulus": 24871,
+          "phase_p_width": 8,
+          "modulus_minus_width": 24863,
+          "modulus_to_width_ratio": 3108.875,
+          "window_values": [
+            732
+          ],
+          "window_value_mod15": [
+            12
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 24867,
+          "nearest_shift_from_window_value": 24871,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 733,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "labels": [
+            19,
+            11,
+            17,
+            3
+          ],
+          "word_modulus": 10659,
+          "phase_p_width": 8,
+          "modulus_minus_width": 10651,
+          "modulus_to_width_ratio": 1332.375,
+          "window_values": [
+            730
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 21312,
+          "nearest_shift_from_window_value": 21318,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "phase_p_lo": 289,
+      "phase_p_hi": 320,
+      "phase_p_width": 32,
+      "window_miss_atom_count": 4,
+      "one_step_barrier_closed_count": 4,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 45,
+      "min_modulus_to_width_ratio": 2.40625,
+      "barrier_atoms": [
+        {
+          "p": 313,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:281-283",
+          "labels": [
+            7,
+            11
+          ],
+          "word_modulus": 77,
+          "phase_p_width": 32,
+          "modulus_minus_width": 45,
+          "modulus_to_width_ratio": 2.40625,
+          "window_values": [
+            296
+          ],
+          "window_value_mod15": [
+            11
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 53,
+          "nearest_shift_from_window_value": 77,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 313,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:281-283",
+          "labels": [
+            11,
+            7
+          ],
+          "word_modulus": 77,
+          "phase_p_width": 32,
+          "modulus_minus_width": 45,
+          "modulus_to_width_ratio": 2.40625,
+          "window_values": [
+            305
+          ],
+          "window_value_mod15": [
+            5
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 293,
+          "nearest_shift_from_window_value": 308,
+          "signed_step_abs_to_nearest_actual_residue": 4,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 313,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:281-283",
+          "labels": [
+            11,
+            13
+          ],
+          "word_modulus": 143,
+          "phase_p_width": 32,
+          "modulus_minus_width": 111,
+          "modulus_to_width_ratio": 4.46875,
+          "window_values": [
+            305
+          ],
+          "window_value_mod15": [
+            5
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 128,
+          "nearest_shift_from_window_value": 143,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 313,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:281-283",
+          "labels": [
+            17,
+            7
+          ],
+          "word_modulus": 119,
+          "phase_p_width": 32,
+          "modulus_minus_width": 87,
+          "modulus_to_width_ratio": 3.71875,
+          "window_values": [
+            319
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 713,
+          "nearest_shift_from_window_value": 714,
+          "signed_step_abs_to_nearest_actual_residue": 6,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "phase_p_lo": 1089,
+      "phase_p_hi": 1160,
+      "phase_p_width": 72,
+      "window_miss_atom_count": 9,
+      "one_step_barrier_closed_count": 9,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 159,
+      "min_modulus_to_width_ratio": 3.2083333333333335,
+      "barrier_atoms": [
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            3,
+            7,
+            11,
+            3
+          ],
+          "word_modulus": 231,
+          "phase_p_width": 72,
+          "modulus_minus_width": 159,
+          "modulus_to_width_ratio": 3.2083333333333335,
+          "window_values": [
+            1096
+          ],
+          "window_value_mod15": [
+            1
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 455,
+          "nearest_shift_from_window_value": 462,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "word_modulus": 231,
+          "phase_p_width": 72,
+          "modulus_minus_width": 159,
+          "modulus_to_width_ratio": 3.2083333333333335,
+          "window_values": [
+            1105
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 215,
+          "nearest_shift_from_window_value": 231,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            3,
+            13,
+            7,
+            3
+          ],
+          "word_modulus": 273,
+          "phase_p_width": 72,
+          "modulus_minus_width": 201,
+          "modulus_to_width_ratio": 3.7916666666666665,
+          "window_values": [
+            1126
+          ],
+          "window_value_mod15": [
+            1
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 239,
+          "nearest_shift_from_window_value": 273,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            3,
+            13,
+            19,
+            3
+          ],
+          "word_modulus": 741,
+          "phase_p_width": 72,
+          "modulus_minus_width": 669,
+          "modulus_to_width_ratio": 10.291666666666666,
+          "window_values": [
+            1126
+          ],
+          "window_value_mod15": [
+            1
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 1445,
+          "nearest_shift_from_window_value": 1482,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            3,
+            19,
+            7,
+            3
+          ],
+          "word_modulus": 399,
+          "phase_p_width": 72,
+          "modulus_minus_width": 327,
+          "modulus_to_width_ratio": 5.541666666666667,
+          "window_values": [
+            1105
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 344,
+          "nearest_shift_from_window_value": 399,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            3,
+            23,
+            13,
+            3
+          ],
+          "word_modulus": 897,
+          "phase_p_width": 72,
+          "modulus_minus_width": 825,
+          "modulus_to_width_ratio": 12.458333333333334,
+          "window_values": [
+            1141
+          ],
+          "window_value_mod15": [
+            1
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 845,
+          "nearest_shift_from_window_value": 897,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            7,
+            19,
+            23,
+            13
+          ],
+          "word_modulus": 39767,
+          "phase_p_width": 72,
+          "modulus_minus_width": 39695,
+          "modulus_to_width_ratio": 552.3194444444445,
+          "window_values": [
+            1143
+          ],
+          "window_value_mod15": [
+            3
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 278315,
+          "nearest_shift_from_window_value": 278369,
+          "signed_step_abs_to_nearest_actual_residue": 7,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            19,
+            23,
+            13,
+            3
+          ],
+          "word_modulus": 17043,
+          "phase_p_width": 72,
+          "modulus_minus_width": 16971,
+          "modulus_to_width_ratio": 236.70833333333334,
+          "window_values": [
+            1141
+          ],
+          "window_value_mod15": [
+            1
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 17024,
+          "nearest_shift_from_window_value": 17043,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 1129,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "labels": [
+            31,
+            19,
+            23,
+            13
+          ],
+          "word_modulus": 176111,
+          "phase_p_width": 72,
+          "modulus_minus_width": 176039,
+          "modulus_to_width_ratio": 2445.9861111111113,
+          "window_values": [
+            1143
+          ],
+          "window_value_mod15": [
+            3
+          ],
+          "actual_p_mod_15": 4,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 704390,
+          "nearest_shift_from_window_value": 704444,
+          "signed_step_abs_to_nearest_actual_residue": 4,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "window_miss_atom_count": 11,
+      "one_step_barrier_closed_count": 11,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 114,
+      "min_modulus_to_width_ratio": 1.9743589743589745,
+      "barrier_atoms": [
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            7,
+            3,
+            11
+          ],
+          "word_modulus": 231,
+          "phase_p_width": 117,
+          "modulus_minus_width": 114,
+          "modulus_to_width_ratio": 1.9743589743589745,
+          "window_values": [
+            724
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 426,
+          "nearest_shift_from_window_value": 462,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            7,
+            3,
+            19
+          ],
+          "word_modulus": 399,
+          "phase_p_width": 117,
+          "modulus_minus_width": 282,
+          "modulus_to_width_ratio": 3.41025641025641,
+          "window_values": [
+            745
+          ],
+          "window_value_mod15": [
+            10
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 298,
+          "nearest_shift_from_window_value": 399,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            7,
+            19,
+            11
+          ],
+          "word_modulus": 1463,
+          "phase_p_width": 117,
+          "modulus_minus_width": 1346,
+          "modulus_to_width_ratio": 12.504273504273504,
+          "window_values": [
+            724
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 8698,
+          "nearest_shift_from_window_value": 8778,
+          "signed_step_abs_to_nearest_actual_residue": 6,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "word_modulus": 759,
+          "phase_p_width": 117,
+          "modulus_minus_width": 642,
+          "modulus_to_width_ratio": 6.487179487179487,
+          "window_values": [
+            709
+          ],
+          "window_value_mod15": [
+            4
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 1453,
+          "nearest_shift_from_window_value": 1518,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            13,
+            3,
+            17
+          ],
+          "word_modulus": 663,
+          "phase_p_width": 117,
+          "modulus_minus_width": 546,
+          "modulus_to_width_ratio": 5.666666666666667,
+          "window_values": [
+            688
+          ],
+          "window_value_mod15": [
+            13
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 591,
+          "nearest_shift_from_window_value": 663,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            13,
+            3,
+            19
+          ],
+          "word_modulus": 741,
+          "phase_p_width": 117,
+          "modulus_minus_width": 624,
+          "modulus_to_width_ratio": 6.333333333333333,
+          "window_values": [
+            688
+          ],
+          "window_value_mod15": [
+            13
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 1438,
+          "nearest_shift_from_window_value": 1482,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            17,
+            3,
+            13
+          ],
+          "word_modulus": 663,
+          "phase_p_width": 117,
+          "modulus_minus_width": 546,
+          "modulus_to_width_ratio": 5.666666666666667,
+          "window_values": [
+            718
+          ],
+          "window_value_mod15": [
+            13
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 621,
+          "nearest_shift_from_window_value": 663,
+          "signed_step_abs_to_nearest_actual_residue": 1,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            7,
+            13
+          ],
+          "word_modulus": 2093,
+          "phase_p_width": 117,
+          "modulus_minus_width": 1976,
+          "modulus_to_width_ratio": 17.88888888888889,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 4131,
+          "nearest_shift_from_window_value": 4186,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            7,
+            17
+          ],
+          "word_modulus": 2737,
+          "phase_p_width": 117,
+          "modulus_minus_width": 2620,
+          "modulus_to_width_ratio": 23.39316239316239,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 5413,
+          "nearest_shift_from_window_value": 5474,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            19,
+            13
+          ],
+          "word_modulus": 5681,
+          "phase_p_width": 117,
+          "modulus_minus_width": 5564,
+          "modulus_to_width_ratio": 48.55555555555556,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "left",
+          "nearest_hit_distance": 22663,
+          "nearest_shift_from_window_value": 22724,
+          "signed_step_abs_to_nearest_actual_residue": 4,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "labels": [
+            23,
+            19,
+            17
+          ],
+          "word_modulus": 7429,
+          "phase_p_width": 117,
+          "modulus_minus_width": 7312,
+          "modulus_to_width_ratio": 63.495726495726494,
+          "window_values": [
+            705
+          ],
+          "window_value_mod15": [
+            0
+          ],
+          "actual_p_mod_15": 1,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 29661,
+          "nearest_shift_from_window_value": 29716,
+          "signed_step_abs_to_nearest_actual_residue": 4,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "window_miss_atom_count": 2,
+      "one_step_barrier_closed_count": 2,
+      "one_step_barrier_failure_count": 0,
+      "min_modulus_minus_width": 245,
+      "min_modulus_to_width_ratio": 9.75,
+      "barrier_atoms": [
+        {
+          "p": 673,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k2:619-623",
+          "labels": [
+            7,
+            3,
+            13
+          ],
+          "word_modulus": 273,
+          "phase_p_width": 28,
+          "modulus_minus_width": 245,
+          "modulus_to_width_ratio": 9.75,
+          "window_values": [
+            652
+          ],
+          "window_value_mod15": [
+            7
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 523,
+          "nearest_shift_from_window_value": 546,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        },
+        {
+          "p": 673,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k2:619-623",
+          "labels": [
+            7,
+            3,
+            23
+          ],
+          "word_modulus": 483,
+          "phase_p_width": 28,
+          "modulus_minus_width": 455,
+          "modulus_to_width_ratio": 17.25,
+          "window_values": [
+            652
+          ],
+          "window_value_mod15": [
+            7
+          ],
+          "actual_p_mod_15": 13,
+          "single_window_representative": true,
+          "actual_residue_absent_in_window_values": true,
+          "nearest_hit_side": "right",
+          "nearest_hit_distance": 943,
+          "nearest_shift_from_window_value": 966,
+          "signed_step_abs_to_nearest_actual_residue": 2,
+          "one_step_barrier_closed": true,
+          "barrier_statement": "If a word progression has only one representative in the phase window, that representative is not congruent to actual P mod 15, and word_modulus > phase_width, then every actual-residue hit in the same word progression lies outside the window."
+        }
+      ]
+    }
+  ]
+}
