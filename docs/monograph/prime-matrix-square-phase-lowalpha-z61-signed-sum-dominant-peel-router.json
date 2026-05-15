@@ -1,0 +1,173 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_signed_sum_dominant_peel_router",
+  "status": "z61_five_term_signed_sum_reduced_to_dominant_peel_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_signed_sum_residue_gate_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "dominant_peel_group_count": 1,
+  "all_dominant_peels_closed": true,
+  "dominant_peel_rows": [
+    {
+      "modulus": 57684,
+      "target_modulus": 2627,
+      "selected_residue": 26951,
+      "source_coefficients": [
+        14421,
+        19228,
+        36708,
+        382536,
+        12540
+      ],
+      "source_interval_start": 346104,
+      "source_interval_stop": 403788,
+      "source_targets_mod": [
+        21,
+        873,
+        1094,
+        1946
+      ],
+      "dominant_coefficient": 382536,
+      "dominant_branches": [
+        {
+          "peeled_coefficient": 382536,
+          "peeled_sign": "+",
+          "rest_coefficients": [
+            14421,
+            19228,
+            36708,
+            12540
+          ],
+          "rest_interval_start": -36432,
+          "rest_interval_stop": 21252,
+          "rest_targets_mod": [
+            325,
+            1027,
+            1879,
+            2100
+          ],
+          "rest_abs_sum": 82897,
+          "interval_candidate_count": 7,
+          "hit_count": 1,
+          "hits": [
+            {
+              "sign_word": "--+-",
+              "signed_sum": -9481,
+              "sum_mod": 1027
+            }
+          ]
+        },
+        {
+          "peeled_coefficient": 382536,
+          "peeled_sign": "-",
+          "rest_coefficients": [
+            14421,
+            19228,
+            36708,
+            12540
+          ],
+          "rest_interval_start": 728640,
+          "rest_interval_stop": 786324,
+          "rest_targets_mod": [
+            88,
+            940,
+            1642,
+            2494
+          ],
+          "rest_abs_sum": 82897,
+          "interval_candidate_count": 0,
+          "hit_count": 0,
+          "hits": []
+        }
+      ],
+      "selected_dominant_sign": "+",
+      "second_coefficient": 36708,
+      "second_branches": [
+        {
+          "peeled_coefficient": 36708,
+          "peeled_sign": "+",
+          "rest_coefficients": [
+            14421,
+            19228,
+            12540
+          ],
+          "rest_interval_start": -73140,
+          "rest_interval_stop": -15456,
+          "rest_targets_mod": [
+            395,
+            1097,
+            1949,
+            2170
+          ],
+          "rest_abs_sum": 46189,
+          "interval_candidate_count": 3,
+          "hit_count": 1,
+          "hits": [
+            {
+              "sign_word": "---",
+              "signed_sum": -46189,
+              "sum_mod": 1097
+            }
+          ]
+        },
+        {
+          "peeled_coefficient": 36708,
+          "peeled_sign": "-",
+          "rest_coefficients": [
+            14421,
+            19228,
+            12540
+          ],
+          "rest_interval_start": 276,
+          "rest_interval_stop": 57960,
+          "rest_targets_mod": [
+            255,
+            957,
+            1809,
+            2030
+          ],
+          "rest_abs_sum": 46189,
+          "interval_candidate_count": 4,
+          "hit_count": 0,
+          "hits": []
+        }
+      ],
+      "selected_second_sign": "+",
+      "terminal_coefficients": [
+        14421,
+        19228,
+        12540
+      ],
+      "terminal_interval_start": -73140,
+      "terminal_interval_stop": -15456,
+      "terminal_targets_mod": [
+        395,
+        1097,
+        1949,
+        2170
+      ],
+      "terminal_hit_count": 1,
+      "terminal_hits": [
+        {
+          "sign_word": "---",
+          "signed_sum": -46189,
+          "sum_mod": 1097
+        }
+      ],
+      "recovered_full_sign_word": "++---",
+      "dominant_peel_closed_for_group": true
+    }
+  ],
+  "dominant_peel_signed_sum_global_bound_proved": false,
+  "peel_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_signed_sum_dominant_peel_router.py": "83ec936e19a52179c43a701e75d9aaafd62cb20e1301f5486325b753b2c7b8c0",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-signed-sum-residue-gate-router.json": "000bb6e26dec4b78c4215118876df470f40659f120db560c9bee5cf6a80fd0c7"
+  },
+  "next_direct_attack_target": "DominantPeelSignedSumGlobalBoundOrPeelPDEC",
+  "plain_conclusion": "五项 signed-sum 门可按主系数剥离：先剥离 `382536`，负号分支被区间直接排除，正号分支把问题降到四项和 `[-36432,21252)` 与模 `2627` 目标 `[325,1027,1879,2100]`。再剥离 `36708`，负号分支无同余命中，正号分支降到三项全负 `---`，和为 `-46189`。合并得到唯一全符号 `++---` 在剥离坐标中，对应原坐标 `--++-` 与 `r=26951`。"
+}
