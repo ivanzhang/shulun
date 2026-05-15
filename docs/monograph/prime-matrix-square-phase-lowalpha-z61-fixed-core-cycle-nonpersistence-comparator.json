@@ -1,0 +1,57 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_fixed_core_cycle_nonpersistence_comparator",
+  "status": "z61_fixed_core_cycle_requires_named_persistent_phase_exclusion_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "core": 4807,
+  "modulus": 57684,
+  "phase_condition": "b ≡ 0 (mod 28842)",
+  "phase_hit_total_multiplicity": 3,
+  "phase_hits_by_sign": {
+    "negative": 1,
+    "positive": 2,
+    "zero": 0
+  },
+  "positive_over_negative_phase_actual": 2.0,
+  "generic_no_free_cycle_imported": true,
+  "fixed_core_cycle_named_persistent_phase_materialized": true,
+  "generic_no_free_cycle_does_not_exclude_named_persistent_phase": true,
+  "source_loop_cut_imported_but_not_seed_proof": true,
+  "direct_short_return_contradiction_input_available": false,
+  "fixed_core_cycle_nonpersistence_comparator_closed": true,
+  "prefix_gate_signed_phase_balance_proved": false,
+  "persistent_phase_pdec_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "remaining_obligations": [
+    {
+      "name": "PrefixGateSignedPhaseBalance",
+      "closed": false,
+      "why_needed": "固定相位 `b≡0 mod 28842` 已持久出现；必须证明正侧 quotient 2,4 全局伴随并吸收负侧 quotient 1。"
+    },
+    {
+      "name": "PersistentPhasePDECExclusion",
+      "closed": false,
+      "why_needed": "若 signed balance 不能全局证明，就要排斥这个命名持久相位 PDEC。"
+    },
+    {
+      "name": "StableShortSameLabelRecurrenceOrRegisteredPhaseDefect",
+      "closed": false,
+      "why_needed": "若要直接从早期零行反例链撞出矛盾，还必须证明短稳定同标签复现或相位缺陷登记。"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_fixed_core_cycle_nonpersistence_comparator.py": "67a086f0c9f4dd41edde3b31e8198311eb1dc936a6cbda2025553eeb37f98b5c",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-fixed-core-cycle-ledger-router.json": "97de4961d3eb4ce5b77cd7d8c2527cae71c8aa3fbef572487f863d6a8c43631d",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-prefix-gate-phase-persistence-router.json": "7470bdf7651a2cdc84f388e336e7c4273cbb2aa2836bb149c17330950fe3365f",
+    "docs/monograph/prime-matrix-strict-common-kernel-return-cycle-descent-router.json": "133a5b59827c92d7e6e3b2cefcadf6f8c67b5b999fa6a1b5e7cbda57b8d4e671",
+    "docs/monograph/prime-matrix-clean-core-source-loop-cut-router.json": "6ef150041b8fc9a4b8f18d79dae9d3f88de6a23b84f2e9d1c0a631316243971f",
+    "docs/monograph/prime-matrix-strict-counterexample-true-structure-cycle-cut-router.json": "960a954eca848fa45c0ebb0c0086357477c058bbaf7dc4a3f966117c8c03ce21"
+  },
+  "next_direct_attack_target": "PrefixGateSignedPhaseBalanceOrPersistentPhasePDECExclusion",
+  "plain_conclusion": "已有通用无循环输入可以排除免费无名回流，但不能排除当前 z=61 固定核心闭环，因为该闭环已经登记为命名持久相位 `b≡0 mod 28842`，且样本中负侧一次、正侧两次。因此当前最窄剩余不是继续重跑局部闭环，而是证明 PrefixGate signed phase balance 全局成立，或排斥 PersistentPhase-PDEC；直接短复现矛盾仍缺 `StableShortSameLabelRecurrenceOrRegisteredPhaseDefect` 输入。"
+}
