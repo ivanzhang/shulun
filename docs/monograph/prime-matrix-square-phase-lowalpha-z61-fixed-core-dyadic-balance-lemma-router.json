@@ -1,0 +1,86 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_fixed_core_dyadic_balance_lemma_router",
+  "status": "z61_fixed_core_dyadic_balance_reduced_to_positive_lift_existence_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_quotient_lock_fixed_core_bridge_router",
+    "prime_matrix_square_phase_lowalpha_z61_prefix_gate_phase_persistence_router",
+    "prime_matrix_square_phase_lowalpha_z61_dyadic_source_congruence_router"
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "phase_modulus": 28842,
+  "core": 4807,
+  "quotient_rows": [
+    {
+      "quotient": 1,
+      "sign": "negative",
+      "p": 36739,
+      "q": 53,
+      "a": 883,
+      "b": 28842,
+      "hit_count": 1,
+      "multiplicity": 1,
+      "contribution": 0.5554266330905256,
+      "signed_contribution": -0.5554266330905256,
+      "singleton_interval_gate_closed": true,
+      "short_delta_closed": true
+    },
+    {
+      "quotient": 2,
+      "sign": "positive",
+      "p": 200003,
+      "q": 71,
+      "a": 9767,
+      "b": 57684,
+      "hit_count": 1,
+      "multiplicity": 1,
+      "contribution": 0.5554266330905256,
+      "signed_contribution": 0.5554266330905256,
+      "singleton_interval_gate_closed": true,
+      "short_delta_closed": true
+    },
+    {
+      "quotient": 4,
+      "sign": "positive",
+      "p": 200003,
+      "q": 37,
+      "a": 9371,
+      "b": 115368,
+      "hit_count": 1,
+      "multiplicity": 1,
+      "contribution": 0.5554266330905256,
+      "signed_contribution": 0.5554266330905256,
+      "singleton_interval_gate_closed": true,
+      "short_delta_closed": true
+    }
+  ],
+  "negative_quotients": [
+    1
+  ],
+  "dyadic_positive_quotients": [
+    2,
+    4
+  ],
+  "same_unit_weight_on_phase_hits": true,
+  "negative_phase_multiplicity": 1,
+  "positive_phase_multiplicity": 2,
+  "signed_phase_count": 1,
+  "signed_phase_weight": 0.5554266330905256,
+  "positive_count_at_least_twice_negative": true,
+  "fixed_core_dyadic_balance_lemma_closed_for_sample": true,
+  "positive_dyadic_lift_existence_proved_globally": false,
+  "missing_lift_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_fixed_core_dyadic_balance_lemma_router.py": "472d86c23320980e8f20dcb04358657e2adbc4e211d145d2aa5071d1d527444d",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-quotient-lock-fixed-core-bridge-router.json": "b35e0485419f8a462a1dfc40b2bbdcf1aff19d97415544ef995dd00fb057e7fc",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-prefix-gate-phase-persistence-router.json": "7470bdf7651a2cdc84f388e336e7c4273cbb2aa2836bb149c17330950fe3365f",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-dyadic-source-congruence-router.json": "ea2150eaee0eb08d7f7a3412b3d35821bac7f1901f2fa37028335cf16c9b5d0f"
+  },
+  "next_direct_attack_target": "PositiveDyadicLiftExistenceForFixedCoreOrMissingLiftPDEC",
+  "plain_conclusion": "固定核心的局部吸收可抽象为同权 dyadic balance 引理：同一 hit-moduli 组内单位权重相同，负 quotient `1` 若有正 quotient `2,4` 两个 lift，则 signed count 和 signed weight 自动为正。样本内该引理闭合；剩余不再是权重比较，而是全局证明正向 dyadic lift 必存在，或登记 MissingLift-PDEC。"
+}
