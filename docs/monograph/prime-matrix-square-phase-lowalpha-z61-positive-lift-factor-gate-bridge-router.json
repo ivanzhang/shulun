@@ -1,0 +1,55 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_positive_lift_factor_gate_bridge_router",
+  "status": "z61_positive_lift_root_selector_reduced_to_prime_factor_lift_gates_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificates": [
+    "prime_matrix_square_phase_lowalpha_z61_positive_lift_root_selector_bridge_router",
+    "prime_matrix_square_phase_lowalpha_z61_secondary_congruence_selector_router",
+    "prime_matrix_square_phase_lowalpha_z61_secondary_quotient_gate_router",
+    "prime_matrix_square_phase_lowalpha_z61_quotient_factor_lift_router"
+  ],
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "modulus": 57684,
+  "delta": 527,
+  "q2": 71,
+  "q4": 37,
+  "selected_residue": 26951,
+  "selected_p": 200003,
+  "secondary_factor_2q2q4": 5254,
+  "secondary_modulus": 303071736,
+  "secondary_congruence_candidate_count": 1,
+  "gate_modulus_2q2q4": 5254,
+  "target_gate_residue": 5180,
+  "full_gate_candidate_count": 1,
+  "q4_gate_already_unique": true,
+  "q2_gate_already_unique": true,
+  "q4_factor_gate_pass_residues": [
+    26951
+  ],
+  "q2_factor_gate_pass_residues": [
+    26951
+  ],
+  "q4_plain_lift_modulus": 2134308,
+  "q2_shifted_lift_modulus": 4095564,
+  "combined_lift_modulus": 151535868,
+  "q4_lift_unique": true,
+  "q2_lift_unique": true,
+  "combined_lift_unique": true,
+  "positive_lift_factor_gate_bridge_closed_for_sample": true,
+  "prime_factor_lift_gate_global_bound_proved": false,
+  "missing_lift_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_positive_lift_factor_gate_bridge_router.py": "1d4ebd1ae5e75f43dce4a4726ffe850288f4a4795e4919969233bff857e88ed3",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-positive-lift-root-selector-bridge-router.json": "c66831f311c44073cdb40319bbf5be0d2b2871fa38f41759c97898b14a39289b",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-secondary-congruence-selector-router.json": "470a79443beba230550a0ecdb6607b9aeedbee15221fe893d7c798783db6388d",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-secondary-quotient-gate-router.json": "7f446ac49e7adea229ea0c83f7b5a1620d4aa7140d09ca5a435bf28a1c29c67e",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-quotient-factor-lift-router.json": "13e9c08af07e9334f12512d78c5f75889a0e4b17fb1669d15f308044a28d4502"
+  },
+  "next_direct_attack_target": "PrimeFactorLiftGateGlobalBoundOrMissingLiftPDEC",
+  "plain_conclusion": "MissingLift 的唯一根选择可进一步压成两个素因子提升门：q4=37 门是普通平方根从 M 提升到 M*q4，q2=71 门是带偏移项 `2Mq4` 的平方根提升到 M*q2。在当前 32 个一级 CRT 根上，这两个门各自单独唯一选中同一根 r=26951，合并提升门也唯一。剩余因此变成素因子提升门的全局容量界，或 MissingLift-PDEC。"
+}
