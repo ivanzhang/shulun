@@ -1,0 +1,495 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_crt_cover_word_router",
+  "status": "complete_small_factor_cover_reduced_to_crt_cover_word_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used_as_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-short-b-cell-factor-cover-ledger.json",
+    "record_count": 11,
+    "complete_crt_cover_word_actual_count": 0,
+    "min_missing_new_label_count_lower_bound": 1,
+    "max_missing_new_label_count_lower_bound": 2,
+    "min_complete_word_crt_modulus_lower_bound": 15,
+    "max_complete_word_crt_modulus_lower_bound": 1155,
+    "max_cell_length": 5,
+    "global_compatible_word_excluded": false,
+    "direct_unconditional_contradiction_found": false
+  },
+  "crt_word_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "b_lo": 23,
+      "b_hi": 26,
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "uncovered_q_values": [
+        683
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        5
+      ],
+      "actual_all_small_label_set": [
+        3,
+        5
+      ],
+      "actual_partial_crt_modulus": 15,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 12,
+      "b_hi": 15,
+      "selected_q_lo": 493,
+      "selected_q_hi": 499,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "uncovered_q_values": [
+        499
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        7,
+        17
+      ],
+      "actual_all_small_label_set": [
+        3,
+        5,
+        7,
+        11,
+        17
+      ],
+      "actual_partial_crt_modulus": 357,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "uncovered_q_values": [
+        653
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        11
+      ],
+      "actual_all_small_label_set": [
+        3,
+        7,
+        11
+      ],
+      "actual_partial_crt_modulus": 33,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 14,
+      "b_hi": 17,
+      "selected_q_lo": 649,
+      "selected_q_hi": 655,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "uncovered_q_values": [
+        653
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        5,
+        11
+      ],
+      "actual_all_small_label_set": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "actual_partial_crt_modulus": 165,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "b_lo": 14,
+      "b_hi": 18,
+      "selected_q_lo": 697,
+      "selected_q_hi": 705,
+      "cell_length": 5,
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "uncovered_q_values": [
+        701
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        17,
+        19
+      ],
+      "actual_all_small_label_set": [
+        3,
+        5,
+        17,
+        19
+      ],
+      "actual_partial_crt_modulus": 969,
+      "min_distinct_labels_for_complete_word": 4,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 1155,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "b_lo": 25,
+      "b_hi": 27,
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "uncovered_q_values": [
+        619
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        7
+      ],
+      "actual_all_small_label_set": [
+        3,
+        7,
+        23
+      ],
+      "actual_partial_crt_modulus": 21,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "b_lo": 23,
+      "b_hi": 26,
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "uncovered_q_values": [
+        683
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        5
+      ],
+      "actual_all_small_label_set": [
+        3,
+        5
+      ],
+      "actual_partial_crt_modulus": 15,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 15,
+      "b_hi": 16,
+      "selected_q_lo": 281,
+      "selected_q_hi": 283,
+      "cell_length": 2,
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "uncovered_q_values": [
+        281,
+        283
+      ],
+      "uncovered_candidate_count": 2,
+      "actual_least_label_set": [],
+      "actual_all_small_label_set": [],
+      "actual_partial_crt_modulus": 1,
+      "min_distinct_labels_for_complete_word": 2,
+      "missing_new_label_count_lower_bound": 2,
+      "min_complete_word_crt_modulus_lower_bound": 15,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 29,
+      "b_hi": 32,
+      "selected_q_lo": 1065,
+      "selected_q_hi": 1071,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "uncovered_q_values": [
+        1069
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        11
+      ],
+      "actual_all_small_label_set": [
+        3,
+        5,
+        7,
+        11,
+        17
+      ],
+      "actual_partial_crt_modulus": 33,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "uncovered_q_values": [
+        653
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        11
+      ],
+      "actual_all_small_label_set": [
+        3,
+        7,
+        11
+      ],
+      "actual_partial_crt_modulus": 33,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "b_lo": 25,
+      "b_hi": 27,
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "uncovered_q_values": [
+        619
+      ],
+      "uncovered_candidate_count": 1,
+      "actual_least_label_set": [
+        3,
+        7
+      ],
+      "actual_all_small_label_set": [
+        3,
+        7,
+        23
+      ],
+      "actual_partial_crt_modulus": 21,
+      "min_distinct_labels_for_complete_word": 3,
+      "missing_new_label_count_lower_bound": 1,
+      "min_complete_word_crt_modulus_lower_bound": 105,
+      "same_label_reuse_rule": "The same odd label ell can cover two offsets only if their b-distance is divisible by ell; for length<=5 this permits only ell=3 at distance 3.",
+      "crt_word_form": "For offsets t=0..L-1 with B=b_lo, a complete cover word chooses labels ell_t such that P-2(B+t)≡0 mod ell_t. Equivalently q_start=P-2B satisfies q_start≡2t mod ell_t for every t.",
+      "phase_lift_obligation": "Exclude compatible CRT cover words inside the fixed small-k atom inequalities, or lift them to a ColumnCRT/PDEC certificate."
+    }
+  ],
+  "complete_crt_cover_word_actual_count": 0,
+  "global_compatible_word_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ShortBCellCompleteSmallFactorCoverPDECExclusionOrPhaseLift",
+  "hardpoint_after_router": "CompatibleCRTCoverWordPDECExclusionOrColumnPhaseLift",
+  "next_direct_attack_target": "CompatibleCRTCoverWordPDECExclusionOrColumnPhaseLift",
+  "theorem_rows": [
+    {
+      "name": "same_label_reuse_rule",
+      "status": "closed",
+      "statement": "A repeated odd label ell in a consecutive b-cell is possible only across b-distance divisible by ell."
+    },
+    {
+      "name": "short_cell_min_distinct_label_bound",
+      "status": "closed",
+      "statement": "For cell length L<=5, a complete cover word needs at least L labels for L<=3 and L-1 labels for L>=4."
+    },
+    {
+      "name": "complete_cover_word_crt_progression",
+      "status": "closed",
+      "statement": "Every complete label word defines a compatible CRT progression for q_start=P-2B."
+    },
+    {
+      "name": "finite_partial_words_not_complete",
+      "status": "finite_evidence",
+      "statement": "The finite frontier only has partial cover words; every selected cell has missing labels/uncovered q-values."
+    },
+    {
+      "name": "global_compatible_word_exclusion",
+      "status": "open",
+      "statement": "A global proof still needs to exclude compatible CRT cover words inside the fixed small-k phase cell."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_crt_cover_word_router.py": "b1b979d3f114422ed43c68277ffed63431a65fa81d83943d39f9ca0ed571938d",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_short_b_cell_factor_cover_router.py": "aad8309144697dc6edffb53438c817b09e31f0c57717303564464afb416df073",
+    "data/square-phase-offband-prefix-gap-shadow-short-b-cell-factor-cover-ledger.json": "582dd7af864d3af9a0448caac174bdb014afd638bbe5f5d16042f47b080dc15f",
+    "data/square-phase-offband-prefix-gap-shadow-crt-cover-word-ledger.json": "a8d3b86e09fde5f3e5ea2a7b960299762daf0707cb2374d0db37ee5e84e54839",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-crt-cover-word-router.md": "f6fa486aff381e6fa875b9cbebf56befe0bfc65b406734048e119d36e25e23c4"
+  },
+  "plain_conclusion": "本步把完整短覆盖进一步正规化为 CRT 覆盖词。若 selected cell 从 b=B 开始、长度为 L，完整 void 需要标签 ell_t 使 q_start=P-2B 满足 q_start≡2t (mod ell_t)。长度至多 5 时，覆盖词至少需要 L 个不同标签（L<=3）或 L-1 个不同标签（L>=4），对应最小模数下界在当前前沿为 15..1155。CRT 兼容本身不矛盾；最新剩余是排斥这些兼容覆盖词与固定 small-k 相位/列相位同时持久对齐。",
+  "decision_rows": [
+    {
+      "gate": "CRTCoverWordNormalFormClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "完整小因子覆盖已提升为 `q_start=P-2B` 的 CRT 覆盖词。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "ShortCellLabelMultiplicityBoundClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "长度至多 5 的覆盖词有明确的最少不同标签数和模数下界。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FiniteNoCompleteWord",
+      "closed": true,
+      "proved": false,
+      "meaning": "有限前沿只有 partial word，没有完整覆盖词；仍只是有限证据。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "GlobalCompatibleWordExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "CRT 兼容本身不矛盾，仍需接固定 small-k 相位与列相位排斥。",
+      "remaining": "CompatibleCRTCoverWordPDECExclusionOrColumnPhaseLift"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只完成 CRT 覆盖词正规形，不关闭全局命题。",
+      "remaining": "CompatibleCRTCoverWordPDECExclusionOrColumnPhaseLift"
+    }
+  ]
+}
