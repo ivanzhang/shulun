@@ -1,0 +1,52 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_endpoint_shifted_factor_router",
+  "status": "z61_endpoint_spanning_pair_reduced_to_shifted_linear_prime_pair_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_dyadic_same_p_strip_carry_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "endpoint_shifted_factor_group_count": 1,
+  "all_endpoint_shifted_factor_groups_closed": true,
+  "shifted_factor_rows": [
+    {
+      "p": 200003,
+      "phase_modulus": 28842,
+      "base_modulus": 57684,
+      "slot_min": 693454,
+      "slot_max": 693457,
+      "slot_capacity": 4,
+      "carry": 3,
+      "q2": 71,
+      "a2": 9767,
+      "q4": 37,
+      "a4": 9371,
+      "q_gap_2q4_minus_q2": 3,
+      "carry_equals_q_gap": true,
+      "shifted_left_q2_a2_plus_1": 693528,
+      "shifted_right_2q4_a4_plus_1": 693528,
+      "shifted_product_identity_closed": true,
+      "gcd_q2_2q4": 1,
+      "coprime_q2_2q4": true,
+      "common_multiplier": 132,
+      "a2_linear_form_closed": true,
+      "a4_linear_form_closed": true,
+      "linear_prime_pair_forms": {
+        "a4": "71*132-1",
+        "a2": "74*132-1"
+      },
+      "endpoint_shifted_factor_closed_for_group": true
+    }
+  ],
+  "shifted_linear_prime_pair_global_bound_proved": false,
+  "shifted_factor_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_endpoint_shifted_factor_router.py": "2f91e1c62bac4857f746cb8615ea78476e4b4c67da3decb4a9fb44618224f71b",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-dyadic-same-p-strip-carry-router.json": "4d8a9ef2c35d9dc7d1b53d6736f8ae2ad53df2a6f41206e6f368a75d1da861b0"
+  },
+  "next_direct_attack_target": "ShiftedLinearPrimePairGlobalBoundOrShiftedFactorPDEC",
+  "plain_conclusion": "端点半素数 carry 对继续压缩：样本中 carry `3` 等于 `2q_4-q_2`，因此 `q_2a_2-2q_4a_4=3` 等价变形为 `q_2(a_2+1)=2q_4(a_4+1)`。由于 `gcd(q_2,2q_4)=1`，得到共同乘子 `s=132`，即 `a_4=71s-1`、`a_2=74s-1`。下一步的全局硬点进一步收窄为移位线性素数对容量界，或登记 ShiftedFactor-PDEC。"
+}
