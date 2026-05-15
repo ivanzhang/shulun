@@ -1,0 +1,943 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-contradiction-field-ledger.json",
+    "record_count": 11,
+    "complete_small_factor_cover_actual_count": 0,
+    "min_uncovered_candidate_count": 1,
+    "max_uncovered_candidate_count": 2,
+    "max_cell_length": 5,
+    "max_parent_atom_k": 2,
+    "max_distinct_least_small_factor_label_count": 3,
+    "global_complete_cover_excluded": false,
+    "direct_unconditional_contradiction_found": false
+  },
+  "factor_cover_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "candidates": [
+        {
+          "q": 681,
+          "b": 26,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 52 (mod 3)"
+          ]
+        },
+        {
+          "q": 683,
+          "b": 25,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 685,
+          "b": 24,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            5
+          ],
+          "least_small_factor_label": 5,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 48 (mod 5)"
+          ]
+        },
+        {
+          "q": 687,
+          "b": 23,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 46 (mod 3)"
+          ]
+        }
+      ],
+      "covered_candidate_count": 3,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        683
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        5
+      ],
+      "distinct_least_small_factor_label_count": 2,
+      "label_reuse_bound": {
+        "cell_length": 4,
+        "label_3_max_hits": 2,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [23,26] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "selected_q_lo": 493,
+      "selected_q_hi": 499,
+      "b_lo": 12,
+      "b_hi": 15,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "candidates": [
+        {
+          "q": 493,
+          "b": 15,
+          "sqrt_p_floor": 22,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            17
+          ],
+          "least_small_factor_label": 17,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 30 (mod 17)"
+          ]
+        },
+        {
+          "q": 495,
+          "b": 14,
+          "sqrt_p_floor": 22,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            5,
+            11
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 28 (mod 3)",
+            "P ≡ 28 (mod 5)",
+            "P ≡ 28 (mod 11)"
+          ]
+        },
+        {
+          "q": 497,
+          "b": 13,
+          "sqrt_p_floor": 22,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            7
+          ],
+          "least_small_factor_label": 7,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 26 (mod 7)"
+          ]
+        },
+        {
+          "q": 499,
+          "b": 12,
+          "sqrt_p_floor": 22,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        }
+      ],
+      "covered_candidate_count": 3,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        499
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        7,
+        17
+      ],
+      "distinct_least_small_factor_label_count": 3,
+      "label_reuse_bound": {
+        "cell_length": 4,
+        "label_3_max_hits": 2,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [12,15] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "candidates": [
+        {
+          "q": 649,
+          "b": 21,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            11
+          ],
+          "least_small_factor_label": 11,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 42 (mod 11)"
+          ]
+        },
+        {
+          "q": 651,
+          "b": 20,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            7
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 40 (mod 3)",
+            "P ≡ 40 (mod 7)"
+          ]
+        },
+        {
+          "q": 653,
+          "b": 19,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        }
+      ],
+      "covered_candidate_count": 2,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        653
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        11
+      ],
+      "distinct_least_small_factor_label_count": 2,
+      "label_reuse_bound": {
+        "cell_length": 3,
+        "label_3_max_hits": 1,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [19,21] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "selected_q_lo": 649,
+      "selected_q_hi": 655,
+      "b_lo": 14,
+      "b_hi": 17,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "candidates": [
+        {
+          "q": 649,
+          "b": 17,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            11
+          ],
+          "least_small_factor_label": 11,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 34 (mod 11)"
+          ]
+        },
+        {
+          "q": 651,
+          "b": 16,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            7
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 32 (mod 3)",
+            "P ≡ 32 (mod 7)"
+          ]
+        },
+        {
+          "q": 653,
+          "b": 15,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 655,
+          "b": 14,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            5
+          ],
+          "least_small_factor_label": 5,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 28 (mod 5)"
+          ]
+        }
+      ],
+      "covered_candidate_count": 3,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        653
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        5,
+        11
+      ],
+      "distinct_least_small_factor_label_count": 3,
+      "label_reuse_bound": {
+        "cell_length": 4,
+        "label_3_max_hits": 2,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [14,17] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "selected_q_lo": 697,
+      "selected_q_hi": 705,
+      "b_lo": 14,
+      "b_hi": 18,
+      "cell_length": 5,
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "candidates": [
+        {
+          "q": 697,
+          "b": 18,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            17
+          ],
+          "least_small_factor_label": 17,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 36 (mod 17)"
+          ]
+        },
+        {
+          "q": 699,
+          "b": 17,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 34 (mod 3)"
+          ]
+        },
+        {
+          "q": 701,
+          "b": 16,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 703,
+          "b": 15,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            19
+          ],
+          "least_small_factor_label": 19,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 30 (mod 19)"
+          ]
+        },
+        {
+          "q": 705,
+          "b": 14,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            5
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 28 (mod 3)",
+            "P ≡ 28 (mod 5)"
+          ]
+        }
+      ],
+      "covered_candidate_count": 4,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        701
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        17,
+        19
+      ],
+      "distinct_least_small_factor_label_count": 3,
+      "label_reuse_bound": {
+        "cell_length": 5,
+        "label_3_max_hits": 2,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [14,18] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "candidates": [
+        {
+          "q": 619,
+          "b": 27,
+          "sqrt_p_floor": 25,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 621,
+          "b": 26,
+          "sqrt_p_floor": 25,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            23
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 52 (mod 3)",
+            "P ≡ 52 (mod 23)"
+          ]
+        },
+        {
+          "q": 623,
+          "b": 25,
+          "sqrt_p_floor": 25,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            7
+          ],
+          "least_small_factor_label": 7,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 50 (mod 7)"
+          ]
+        }
+      ],
+      "covered_candidate_count": 2,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        619
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        7
+      ],
+      "distinct_least_small_factor_label_count": 2,
+      "label_reuse_bound": {
+        "cell_length": 3,
+        "label_3_max_hits": 1,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [25,27] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "candidates": [
+        {
+          "q": 681,
+          "b": 26,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 52 (mod 3)"
+          ]
+        },
+        {
+          "q": 683,
+          "b": 25,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 685,
+          "b": 24,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            5
+          ],
+          "least_small_factor_label": 5,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 48 (mod 5)"
+          ]
+        },
+        {
+          "q": 687,
+          "b": 23,
+          "sqrt_p_floor": 27,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 46 (mod 3)"
+          ]
+        }
+      ],
+      "covered_candidate_count": 3,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        683
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        5
+      ],
+      "distinct_least_small_factor_label_count": 2,
+      "label_reuse_bound": {
+        "cell_length": 4,
+        "label_3_max_hits": 2,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [23,26] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "selected_q_lo": 281,
+      "selected_q_hi": 283,
+      "b_lo": 15,
+      "b_hi": 16,
+      "cell_length": 2,
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "candidates": [
+        {
+          "q": 281,
+          "b": 16,
+          "sqrt_p_floor": 17,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 283,
+          "b": 15,
+          "sqrt_p_floor": 17,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        }
+      ],
+      "covered_candidate_count": 0,
+      "uncovered_candidate_count": 2,
+      "uncovered_q_values": [
+        281,
+        283
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [],
+      "distinct_least_small_factor_label_count": 0,
+      "label_reuse_bound": {
+        "cell_length": 2,
+        "label_3_max_hits": 1,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [15,16] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "selected_q_lo": 1065,
+      "selected_q_hi": 1071,
+      "b_lo": 29,
+      "b_hi": 32,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "candidates": [
+        {
+          "q": 1065,
+          "b": 32,
+          "sqrt_p_floor": 33,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            5
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 64 (mod 3)",
+            "P ≡ 64 (mod 5)"
+          ]
+        },
+        {
+          "q": 1067,
+          "b": 31,
+          "sqrt_p_floor": 33,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            11
+          ],
+          "least_small_factor_label": 11,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 62 (mod 11)"
+          ]
+        },
+        {
+          "q": 1069,
+          "b": 30,
+          "sqrt_p_floor": 33,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 1071,
+          "b": 29,
+          "sqrt_p_floor": 33,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            7,
+            17
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 58 (mod 3)",
+            "P ≡ 58 (mod 7)",
+            "P ≡ 58 (mod 17)"
+          ]
+        }
+      ],
+      "covered_candidate_count": 3,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        1069
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        11
+      ],
+      "distinct_least_small_factor_label_count": 2,
+      "label_reuse_bound": {
+        "cell_length": 4,
+        "label_3_max_hits": 2,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [29,32] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "candidates": [
+        {
+          "q": 649,
+          "b": 21,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            11
+          ],
+          "least_small_factor_label": 11,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 42 (mod 11)"
+          ]
+        },
+        {
+          "q": 651,
+          "b": 20,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            7
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 40 (mod 3)",
+            "P ≡ 40 (mod 7)"
+          ]
+        },
+        {
+          "q": 653,
+          "b": 19,
+          "sqrt_p_floor": 26,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        }
+      ],
+      "covered_candidate_count": 2,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        653
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        11
+      ],
+      "distinct_least_small_factor_label_count": 2,
+      "label_reuse_bound": {
+        "cell_length": 3,
+        "label_3_max_hits": 1,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [19,21] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "candidates": [
+        {
+          "q": 619,
+          "b": 27,
+          "sqrt_p_floor": 25,
+          "is_prime_actual": true,
+          "small_factor_labels": [],
+          "least_small_factor_label": null,
+          "covered_by_small_factor": false,
+          "residue_cover_formulas": []
+        },
+        {
+          "q": 621,
+          "b": 26,
+          "sqrt_p_floor": 25,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            3,
+            23
+          ],
+          "least_small_factor_label": 3,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 52 (mod 3)",
+            "P ≡ 52 (mod 23)"
+          ]
+        },
+        {
+          "q": 623,
+          "b": 25,
+          "sqrt_p_floor": 25,
+          "is_prime_actual": false,
+          "small_factor_labels": [
+            7
+          ],
+          "least_small_factor_label": 7,
+          "covered_by_small_factor": true,
+          "residue_cover_formulas": [
+            "P ≡ 50 (mod 7)"
+          ]
+        }
+      ],
+      "covered_candidate_count": 2,
+      "uncovered_candidate_count": 1,
+      "uncovered_q_values": [
+        619
+      ],
+      "actual_cell_void": false,
+      "distinct_least_small_factor_labels": [
+        3,
+        7
+      ],
+      "distinct_least_small_factor_label_count": 2,
+      "label_reuse_bound": {
+        "cell_length": 3,
+        "label_3_max_hits": 1,
+        "label_ge_5_max_hits": 1,
+        "explanation": "If the same odd prime ell divides P-2b_i and P-2b_j, then ell divides b_i-b_j. For length<=5, only ell=3 can repeat, and only across b-distance 3."
+      },
+      "void_equivalence_statement": "The selected cell is void iff every b in [25,27] is covered by at least one odd prime ell<=sqrt(P) with P≡2b (mod ell).",
+      "next_attack_statement": "A surviving counterexample must realize a complete short residue-cover word inside this fixed small-k phase cell."
+    }
+  ],
+  "complete_small_factor_cover_actual_records": []
+}
