@@ -1,0 +1,224 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_tail_upper_pi_input_router",
+  "status": "tail_upper_closed_on_external_pi_lane_self_contained_pi_interval_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_bridge_not_used_as_square_window_lower_proof": true,
+  "parameters": {
+    "p0": 2001,
+    "target_t_coeff": 0.212,
+    "high_log_threshold": 15.0,
+    "dusart_upper_c2": 2.51,
+    "floor_safety_c": 0.799,
+    "external_pi_upper_template": "pi(x)<=x/log(x)*(1+1/log(x)+2.51/log(x)^2)",
+    "external_pi_lower_template": "pi(x)>=x/log(x)*(1+1/log(x))"
+  },
+  "aggregate": {
+    "coefficient_split_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-ht-coefficient-split-ledger.json",
+    "p0": 2001,
+    "target_t_coeff": 0.212,
+    "high_log_threshold": 15.0,
+    "high_p0": 3269018,
+    "finite_bridge_prime_count": 234552,
+    "finite_bridge_failure_count": 2,
+    "finite_bridge_failure_p_values": [
+      2753,
+      2803
+    ],
+    "prior_selector_t_upper_failure_count_at_p0": 0,
+    "prior_selector_replay_max_p": 10000,
+    "selector_exception_hit_possible": false,
+    "high_segment_envelope_at_log_threshold": 0.21179110642894328,
+    "high_segment_envelope_slack": 0.00020889357105671746,
+    "external_tail_upper_closed": true,
+    "self_contained_tail_upper_closed": false,
+    "global_square_window_lower_coeff_closed": false,
+    "row_column_unconditional_closed": false
+  },
+  "finite_tail_bridge": {
+    "p0": 2001,
+    "high_p0": 3269018,
+    "checked_p_hi": 3269017,
+    "prime_count": 234552,
+    "target_coeff": 0.212,
+    "failure_count": 2,
+    "failure_p_values": [
+      2753,
+      2803
+    ],
+    "failure_examples": [
+      {
+        "p": 2753,
+        "T": 74,
+        "T_scaled_coeff": 0.21289976076300504
+      },
+      {
+        "p": 2803,
+        "T": 75,
+        "T_scaled_coeff": 0.21240935295660332
+      }
+    ],
+    "last_failure_p": 2803,
+    "first_prime_after_last_failure_to_high_p0_passes": true,
+    "max_record": {
+      "p": 2753,
+      "T": 74,
+      "T_scaled_coeff": 0.21289976076300504
+    },
+    "max_passing_record": {
+      "p": 3947,
+      "T": 101,
+      "T_scaled_coeff": 0.2118955709759178
+    },
+    "band_records": [
+      {
+        "p_lo": 2001,
+        "p_hi": 10000,
+        "prime_count": 926,
+        "failure_count": 2,
+        "max_T_scaled_coeff": 0.21289976076300504,
+        "p_at_max_T_scaled_coeff": 2753
+      },
+      {
+        "p_lo": 10001,
+        "p_hi": 100000,
+        "prime_count": 8363,
+        "failure_count": 0,
+        "max_T_scaled_coeff": 0.20936678921805718,
+        "p_at_max_T_scaled_coeff": 24203
+      },
+      {
+        "p_lo": 100001,
+        "p_hi": 1000000,
+        "prime_count": 68906,
+        "failure_count": 0,
+        "max_T_scaled_coeff": 0.2034479000641852,
+        "p_at_max_T_scaled_coeff": 211949
+      },
+      {
+        "p_lo": 1000001,
+        "p_hi": 3269017,
+        "prime_count": 156357,
+        "failure_count": 0,
+        "max_T_scaled_coeff": 0.20210232308427012,
+        "p_at_max_T_scaled_coeff": 1197409
+      }
+    ]
+  },
+  "analytic_high_segment_certificate": {
+    "high_p0": 3269018,
+    "envelope_formula": "R(L)=1+1/L+2.51/L^2-0.799*L/(L-log(1/0.799))*(1+1/(L-log(1/0.799)))",
+    "envelope_at_log_threshold": 0.21179110642894328,
+    "target_coeff": 0.212,
+    "slack": 0.00020889357105671746,
+    "derivative_certificate": {
+      "claim": "For L>=15, R'(L)<0 for c=0.799 and upper_c2=2.51.",
+      "reduction": "Use a=-log(0.799)<0.225. It is enough to prove 0.799*L^3*(1.225L+0.225) < (L+5.02)*(L-0.225)^3.",
+      "expanded_positive_polynomial": "(67920*L^4 + 13328720*L^3 - 10357200*L^2 + 2403270*L - 182979)/3200000",
+      "polynomial_value_at_threshold": 14415.1175221875,
+      "positive_from_threshold": true
+    },
+    "rounding_rule": "floor(4P/5)>=0.799P for P>=1000; use U(P) and L(0.799P)."
+  },
+  "external_input_rows": [
+    {
+      "input": "Dusart-type pi upper bound",
+      "role": "high-segment upper bound for pi(P-1)",
+      "registered_as_self_contained": false
+    },
+    {
+      "input": "Dusart/Rosser-Schoenfeld-type pi lower bound",
+      "role": "high-segment lower bound for pi(floor(4P/5))",
+      "registered_as_self_contained": false
+    },
+    {
+      "input": "finite exact pi prefix bridge",
+      "role": "handles P<ceil(exp(15)) and isolates two non-selector exceptions",
+      "registered_as_self_contained": true
+    }
+  ],
+  "global_tail_upper_external_closed": true,
+  "global_tail_upper_self_contained_closed": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "SquareWindowLowerCoefficientAndTailUpperCoefficientOrCorrelatedSurplusPDEC",
+  "hardpoint_after_router_external_lane": "SquareWindowLowerCoefficientOrCorrelatedSurplusPDEC",
+  "hardpoint_after_router_self_contained_lane": "SelfContainedDusartPiTwoSidedIntervalLedger",
+  "next_direct_attack_target": "SquareWindowLowerCoefficientOrCorrelatedSurplusPDEC",
+  "theorem_rows": [
+    {
+      "name": "tail_count_exact_identity",
+      "status": "closed",
+      "statement": "T is exactly pi(P-1)-pi(floor(4P/5))."
+    },
+    {
+      "name": "finite_tail_upper_bridge",
+      "status": "closed",
+      "statement": "For all prime P in the finite bridge, the only universal failures are P=2753 and P=2803."
+    },
+    {
+      "name": "selector_exception_exclusion",
+      "status": "closed_by_prior_selector_replay",
+      "statement": "The two universal finite exceptions do not occur among selector rho hits in the P<=10000 replay."
+    },
+    {
+      "name": "external_dusart_high_tail_upper",
+      "status": "closed_on_external_pi_input",
+      "statement": "Dusart-type two-sided pi bounds imply T<=0.212P/logP for P>=ceil(exp(15))."
+    },
+    {
+      "name": "self_contained_pi_two_sided_interval_input",
+      "status": "open",
+      "statement": "A strict self-contained route still needs the pi two-sided interval ledger, unless the external Dusart input is accepted."
+    },
+    {
+      "name": "square_window_lower_coefficient",
+      "status": "open",
+      "statement": "After the tail upper input, the remaining coefficient gate is H>=0.43P/logP, or a correlated surplus replacement."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_tail_upper_pi_input_router.py": "f3edbf2be92f4f18bac9908c635ef0866b92c1be3a65d932f788f138fdfc7f1e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-ht-coefficient-split-ledger.json": "339e3bfc87be2bf82c88e8b47ac47719e576d67bdfb06092e122d82d78ff6448",
+    "data/square-phase-offband-prefix-gap-shadow-selector-tail-upper-pi-input-ledger.json": "d2736d775a1d60c5e18fa8fd4598921c9030bfb03d9bc464cafcf0c7a3a6c460",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-tail-upper-pi-input-router.md": "d0c84f70ce8b910fc5ca3a3cc80394b1315120c09388bd1301a31d87b158a0bf"
+  },
+  "plain_conclusion": "尾素数项已被单独压缩：有限桥显示 `T<=0.212P/logP` 对所有 `P>=2001` 素数只有 `2753,2803` 两个 universal 例外；既有 selector 重放中 `T` 上界失败数为 0，所以这两个例外不进入当前 selector 命中。对 `P>=ceil(exp(15.0))=3269018`，外部 Dusart 型 pi 双侧界给出 `T<=0.212P/logP`。因此外部路线中尾上界门可关闭；严格自足路线仍需内化 pi 双侧区间界。",
+  "decision_rows": [
+    {
+      "gate": "TailUpperExternalLaneClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "接受外部 Dusart 型 pi 双侧界时，T 上界门可关闭；该门不是严格自足证明。",
+      "remaining": "SquareWindowLowerCoefficientOrCorrelatedSurplusPDEC"
+    },
+    {
+      "gate": "TailUpperStrictSelfContainedClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "仓库当前 theta 自足包不能直接替代 pi 双侧区间界。",
+      "remaining": "SelfContainedDusartPiTwoSidedIntervalLedger"
+    },
+    {
+      "gate": "FiniteExceptionsHitSelector",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限 universal 例外不进入 selector 命中，因此不破坏本路线。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "CoefficientSplitFullyClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需平方窗 H 下系数，或直接相关余量定理。",
+      "remaining": "SquareWindowLowerCoefficientOrCorrelatedSurplusPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只关闭/登记尾素数上界输入，不产生最终反例矛盾。",
+      "remaining": "SquareWindowLowerCoefficientOrCorrelatedSurplusPDEC"
+    }
+  ]
+}
