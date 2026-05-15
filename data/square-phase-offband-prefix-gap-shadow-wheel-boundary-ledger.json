@@ -1,0 +1,1270 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-wheel-absorption-ledger.json",
+    "record_count": 11,
+    "finite_all_wheel_gates_closed": true,
+    "tight_margin_one_count": 6,
+    "min_current_gate_margin": 1,
+    "max_required_hull_prime_count_for_gate": 6,
+    "max_complement_wheel_survivor_count": 5,
+    "max_depth_from_p": 78,
+    "max_depth_over_sqrt_p": 2.321387447440377,
+    "max_hull_odd_candidate_count": 27
+  },
+  "boundary_records": [
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 705,
+      "hull_span": 31,
+      "hull_odd_candidate_count": 16,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 3,
+      "required_hull_prime_count_for_gate": 4,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([675,705]) >= 4; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([675,705]) <= 3 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        677,
+        683,
+        691
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 677,
+          "q_hi": 695,
+          "candidate_count": 10,
+          "prime_count": 3,
+          "prime_values": [
+            677,
+            683,
+            691
+          ],
+          "wheel_survivor_count": 3,
+          "wheel_survivor_values": [
+            677,
+            683,
+            691
+          ]
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k1:681-687",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 687,
+      "hull_span": 13,
+      "hull_odd_candidate_count": 7,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_prime_count": 2,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([675,687]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([675,687]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        677
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 677,
+          "q_hi": 679,
+          "candidate_count": 2,
+          "prime_count": 1,
+          "prime_values": [
+            677
+          ],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            677
+          ]
+        }
+      ]
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:657-657",
+        "minus_only_noslot:k0:649-655",
+        "both_offband_middle:k1:639-639"
+      ],
+      "q_hull_lo": 639,
+      "q_hull_hi": 657,
+      "hull_span": 19,
+      "hull_odd_candidate_count": 10,
+      "depth_from_p": 44,
+      "depth_over_sqrt_p": 1.6836132099454382,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 3,
+      "required_hull_prime_count_for_gate": 4,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([639,657]) >= 4; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([639,657]) <= 3 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        641,
+        643,
+        647
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 641,
+          "q_hi": 647,
+          "candidate_count": 4,
+          "prime_count": 3,
+          "prime_values": [
+            641,
+            643,
+            647
+          ],
+          "wheel_survivor_count": 3,
+          "wheel_survivor_values": [
+            641,
+            643,
+            647
+          ]
+        }
+      ]
+    },
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:501-501",
+        "minus_only_noslot:k0:493-499",
+        "both_offband_middle:k1:485-485"
+      ],
+      "q_hull_lo": 485,
+      "q_hull_hi": 501,
+      "hull_span": 17,
+      "hull_odd_candidate_count": 9,
+      "depth_from_p": 38,
+      "depth_over_sqrt_p": 1.661623983897179,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([485,501]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([485,501]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        487,
+        491
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 487,
+          "q_hi": 491,
+          "candidate_count": 3,
+          "prime_count": 2,
+          "prime_values": [
+            487,
+            491
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            487,
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:665-665",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "q_hull_lo": 649,
+      "q_hull_hi": 665,
+      "hull_span": 17,
+      "hull_odd_candidate_count": 9,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.5977552995079203,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([649,665]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([649,665]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        659,
+        661
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 655,
+          "q_hi": 663,
+          "candidate_count": 5,
+          "prime_count": 2,
+          "prime_values": [
+            659,
+            661
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            659,
+            661
+          ]
+        }
+      ]
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "void_atom_keys": [
+        "plus_only_noslot:k1:631-637",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "q_hull_lo": 619,
+      "q_hull_hi": 637,
+      "hull_span": 19,
+      "hull_odd_candidate_count": 10,
+      "depth_from_p": 54,
+      "depth_over_sqrt_p": 2.0815470301275893,
+      "hull_prime_count": 2,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([619,637]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([619,637]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        629
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 625,
+          "q_hi": 629,
+          "candidate_count": 3,
+          "prime_count": 0,
+          "prime_values": [],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            629
+          ]
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "minus_only_noslot:k1:681-687"
+      ],
+      "q_hull_lo": 681,
+      "q_hull_hi": 705,
+      "hull_span": 25,
+      "hull_odd_candidate_count": 13,
+      "depth_from_p": 52,
+      "depth_over_sqrt_p": 1.9206638233981062,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 2,
+      "prime_count_input": "pi([681,705]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([681,705]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        691
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 689,
+          "q_hi": 695,
+          "candidate_count": 4,
+          "prime_count": 1,
+          "prime_values": [
+            691
+          ],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            691
+          ]
+        }
+      ]
+    },
+    {
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:289-295",
+        "minus_only_noslot:k1:281-283",
+        "minus_only_noslot:k2:273-275"
+      ],
+      "q_hull_lo": 273,
+      "q_hull_hi": 295,
+      "hull_span": 23,
+      "hull_odd_candidate_count": 12,
+      "depth_from_p": 40,
+      "depth_over_sqrt_p": 2.260933675776886,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 3,
+      "prime_count_input": "pi([273,295]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([273,295]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        277
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 277,
+          "q_hi": 279,
+          "candidate_count": 2,
+          "prime_count": 1,
+          "prime_values": [
+            277
+          ],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            277
+          ]
+        },
+        {
+          "q_lo": 285,
+          "q_hi": 287,
+          "candidate_count": 2,
+          "prime_count": 0,
+          "prime_values": [],
+          "wheel_survivor_count": 0,
+          "wheel_survivor_values": []
+        }
+      ]
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "void_atom_keys": [
+        "plus_only_noslot:k0:649-671",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "q_hull_lo": 619,
+      "q_hull_hi": 671,
+      "hull_span": 53,
+      "hull_odd_candidate_count": 27,
+      "depth_from_p": 54,
+      "depth_over_sqrt_p": 2.0815470301275893,
+      "hull_prime_count": 8,
+      "complement_wheel_survivor_count": 5,
+      "required_hull_prime_count_for_gate": 6,
+      "current_gate_margin": 3,
+      "prime_count_input": "pi([619,671]) >= 6; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([619,671]) <= 5 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        629,
+        631,
+        641,
+        643,
+        647
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 625,
+          "q_hi": 647,
+          "candidate_count": 12,
+          "prime_count": 4,
+          "prime_values": [
+            631,
+            641,
+            643,
+            647
+          ],
+          "wheel_survivor_count": 5,
+          "wheel_survivor_values": [
+            629,
+            631,
+            641,
+            643,
+            647
+          ]
+        }
+      ]
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "void_atom_keys": [
+        "plus_only_noslot:k0:667-689",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "q_hull_lo": 649,
+      "q_hull_hi": 689,
+      "hull_span": 41,
+      "hull_odd_candidate_count": 21,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.5977552995079203,
+      "hull_prime_count": 6,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 4,
+      "prime_count_input": "pi([649,689]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([649,689]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        659,
+        661
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 655,
+          "q_hi": 665,
+          "candidate_count": 6,
+          "prime_count": 2,
+          "prime_values": [
+            659,
+            661
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            659,
+            661
+          ]
+        }
+      ]
+    },
+    {
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:1083-1095",
+        "minus_only_noslot:k1:1065-1071",
+        "minus_only_noslot:k2:1051-1055"
+      ],
+      "q_hull_lo": 1051,
+      "q_hull_hi": 1095,
+      "hull_span": 45,
+      "hull_odd_candidate_count": 23,
+      "depth_from_p": 78,
+      "depth_over_sqrt_p": 2.321387447440377,
+      "hull_prime_count": 7,
+      "complement_wheel_survivor_count": 4,
+      "required_hull_prime_count_for_gate": 5,
+      "current_gate_margin": 3,
+      "prime_count_input": "pi([1051,1095]) >= 5; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([1051,1095]) <= 4 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        1061,
+        1063,
+        1073,
+        1081
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 1057,
+          "q_hi": 1063,
+          "candidate_count": 4,
+          "prime_count": 2,
+          "prime_values": [
+            1061,
+            1063
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            1061,
+            1063
+          ]
+        },
+        {
+          "q_lo": 1073,
+          "q_hi": 1081,
+          "candidate_count": 5,
+          "prime_count": 0,
+          "prime_values": [],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            1073,
+            1081
+          ]
+        }
+      ]
+    }
+  ],
+  "tight_frontier": [
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 705,
+      "hull_span": 31,
+      "hull_odd_candidate_count": 16,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 3,
+      "required_hull_prime_count_for_gate": 4,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([675,705]) >= 4; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([675,705]) <= 3 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        677,
+        683,
+        691
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 677,
+          "q_hi": 695,
+          "candidate_count": 10,
+          "prime_count": 3,
+          "prime_values": [
+            677,
+            683,
+            691
+          ],
+          "wheel_survivor_count": 3,
+          "wheel_survivor_values": [
+            677,
+            683,
+            691
+          ]
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k1:681-687",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 687,
+      "hull_span": 13,
+      "hull_odd_candidate_count": 7,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_prime_count": 2,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([675,687]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([675,687]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        677
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 677,
+          "q_hi": 679,
+          "candidate_count": 2,
+          "prime_count": 1,
+          "prime_values": [
+            677
+          ],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            677
+          ]
+        }
+      ]
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:657-657",
+        "minus_only_noslot:k0:649-655",
+        "both_offband_middle:k1:639-639"
+      ],
+      "q_hull_lo": 639,
+      "q_hull_hi": 657,
+      "hull_span": 19,
+      "hull_odd_candidate_count": 10,
+      "depth_from_p": 44,
+      "depth_over_sqrt_p": 1.6836132099454382,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 3,
+      "required_hull_prime_count_for_gate": 4,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([639,657]) >= 4; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([639,657]) <= 3 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        641,
+        643,
+        647
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 641,
+          "q_hi": 647,
+          "candidate_count": 4,
+          "prime_count": 3,
+          "prime_values": [
+            641,
+            643,
+            647
+          ],
+          "wheel_survivor_count": 3,
+          "wheel_survivor_values": [
+            641,
+            643,
+            647
+          ]
+        }
+      ]
+    },
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:501-501",
+        "minus_only_noslot:k0:493-499",
+        "both_offband_middle:k1:485-485"
+      ],
+      "q_hull_lo": 485,
+      "q_hull_hi": 501,
+      "hull_span": 17,
+      "hull_odd_candidate_count": 9,
+      "depth_from_p": 38,
+      "depth_over_sqrt_p": 1.661623983897179,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([485,501]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([485,501]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        487,
+        491
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 487,
+          "q_hi": 491,
+          "candidate_count": 3,
+          "prime_count": 2,
+          "prime_values": [
+            487,
+            491
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            487,
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:665-665",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "q_hull_lo": 649,
+      "q_hull_hi": 665,
+      "hull_span": 17,
+      "hull_odd_candidate_count": 9,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.5977552995079203,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([649,665]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([649,665]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        659,
+        661
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 655,
+          "q_hi": 663,
+          "candidate_count": 5,
+          "prime_count": 2,
+          "prime_values": [
+            659,
+            661
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            659,
+            661
+          ]
+        }
+      ]
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "void_atom_keys": [
+        "plus_only_noslot:k1:631-637",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "q_hull_lo": 619,
+      "q_hull_hi": 637,
+      "hull_span": 19,
+      "hull_odd_candidate_count": 10,
+      "depth_from_p": 54,
+      "depth_over_sqrt_p": 2.0815470301275893,
+      "hull_prime_count": 2,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([619,637]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([619,637]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        629
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 625,
+          "q_hi": 629,
+          "candidate_count": 3,
+          "prime_count": 0,
+          "prime_values": [],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            629
+          ]
+        }
+      ]
+    }
+  ],
+  "frontier": [
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "void_atom_keys": [
+        "plus_only_noslot:k1:631-637",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "q_hull_lo": 619,
+      "q_hull_hi": 637,
+      "hull_span": 19,
+      "hull_odd_candidate_count": 10,
+      "depth_from_p": 54,
+      "depth_over_sqrt_p": 2.0815470301275893,
+      "hull_prime_count": 2,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([619,637]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([619,637]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        629
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 625,
+          "q_hi": 629,
+          "candidate_count": 3,
+          "prime_count": 0,
+          "prime_values": [],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            629
+          ]
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k1:681-687",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 687,
+      "hull_span": 13,
+      "hull_odd_candidate_count": 7,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_prime_count": 2,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([675,687]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([675,687]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        677
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 677,
+          "q_hi": 679,
+          "candidate_count": 2,
+          "prime_count": 1,
+          "prime_values": [
+            677
+          ],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            677
+          ]
+        }
+      ]
+    },
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:501-501",
+        "minus_only_noslot:k0:493-499",
+        "both_offband_middle:k1:485-485"
+      ],
+      "q_hull_lo": 485,
+      "q_hull_hi": 501,
+      "hull_span": 17,
+      "hull_odd_candidate_count": 9,
+      "depth_from_p": 38,
+      "depth_over_sqrt_p": 1.661623983897179,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([485,501]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([485,501]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        487,
+        491
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 487,
+          "q_hi": 491,
+          "candidate_count": 3,
+          "prime_count": 2,
+          "prime_values": [
+            487,
+            491
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            487,
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:665-665",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "q_hull_lo": 649,
+      "q_hull_hi": 665,
+      "hull_span": 17,
+      "hull_odd_candidate_count": 9,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.5977552995079203,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([649,665]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([649,665]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        659,
+        661
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 655,
+          "q_hi": 663,
+          "candidate_count": 5,
+          "prime_count": 2,
+          "prime_values": [
+            659,
+            661
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            659,
+            661
+          ]
+        }
+      ]
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "void_atom_keys": [
+        "both_offband_middle:k0:657-657",
+        "minus_only_noslot:k0:649-655",
+        "both_offband_middle:k1:639-639"
+      ],
+      "q_hull_lo": 639,
+      "q_hull_hi": 657,
+      "hull_span": 19,
+      "hull_odd_candidate_count": 10,
+      "depth_from_p": 44,
+      "depth_over_sqrt_p": 1.6836132099454382,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 3,
+      "required_hull_prime_count_for_gate": 4,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([639,657]) >= 4; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([639,657]) <= 3 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        641,
+        643,
+        647
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 641,
+          "q_hi": 647,
+          "candidate_count": 4,
+          "prime_count": 3,
+          "prime_values": [
+            641,
+            643,
+            647
+          ],
+          "wheel_survivor_count": 3,
+          "wheel_survivor_values": [
+            641,
+            643,
+            647
+          ]
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "both_offband_middle:k2:675-675"
+      ],
+      "q_hull_lo": 675,
+      "q_hull_hi": 705,
+      "hull_span": 31,
+      "hull_odd_candidate_count": 16,
+      "depth_from_p": 58,
+      "depth_over_sqrt_p": 2.1422788799440418,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 3,
+      "required_hull_prime_count_for_gate": 4,
+      "current_gate_margin": 1,
+      "prime_count_input": "pi([675,705]) >= 4; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([675,705]) <= 3 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        677,
+        683,
+        691
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 677,
+          "q_hi": 695,
+          "candidate_count": 10,
+          "prime_count": 3,
+          "prime_values": [
+            677,
+            683,
+            691
+          ],
+          "wheel_survivor_count": 3,
+          "wheel_survivor_values": [
+            677,
+            683,
+            691
+          ]
+        }
+      ]
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:697-705",
+        "minus_only_noslot:k1:681-687"
+      ],
+      "q_hull_lo": 681,
+      "q_hull_hi": 705,
+      "hull_span": 25,
+      "hull_odd_candidate_count": 13,
+      "depth_from_p": 52,
+      "depth_over_sqrt_p": 1.9206638233981062,
+      "hull_prime_count": 3,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 2,
+      "prime_count_input": "pi([681,705]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([681,705]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        691
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 689,
+          "q_hi": 695,
+          "candidate_count": 4,
+          "prime_count": 1,
+          "prime_values": [
+            691
+          ],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            691
+          ]
+        }
+      ]
+    },
+    {
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:289-295",
+        "minus_only_noslot:k1:281-283",
+        "minus_only_noslot:k2:273-275"
+      ],
+      "q_hull_lo": 273,
+      "q_hull_hi": 295,
+      "hull_span": 23,
+      "hull_odd_candidate_count": 12,
+      "depth_from_p": 40,
+      "depth_over_sqrt_p": 2.260933675776886,
+      "hull_prime_count": 4,
+      "complement_wheel_survivor_count": 1,
+      "required_hull_prime_count_for_gate": 2,
+      "current_gate_margin": 3,
+      "prime_count_input": "pi([273,295]) >= 2; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([273,295]) <= 1 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        277
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 277,
+          "q_hi": 279,
+          "candidate_count": 2,
+          "prime_count": 1,
+          "prime_values": [
+            277
+          ],
+          "wheel_survivor_count": 1,
+          "wheel_survivor_values": [
+            277
+          ]
+        },
+        {
+          "q_lo": 285,
+          "q_hi": 287,
+          "candidate_count": 2,
+          "prime_count": 0,
+          "prime_values": [],
+          "wheel_survivor_count": 0,
+          "wheel_survivor_values": []
+        }
+      ]
+    },
+    {
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "void_atom_keys": [
+        "minus_only_noslot:k0:1083-1095",
+        "minus_only_noslot:k1:1065-1071",
+        "minus_only_noslot:k2:1051-1055"
+      ],
+      "q_hull_lo": 1051,
+      "q_hull_hi": 1095,
+      "hull_span": 45,
+      "hull_odd_candidate_count": 23,
+      "depth_from_p": 78,
+      "depth_over_sqrt_p": 2.321387447440377,
+      "hull_prime_count": 7,
+      "complement_wheel_survivor_count": 4,
+      "required_hull_prime_count_for_gate": 5,
+      "current_gate_margin": 3,
+      "prime_count_input": "pi([1051,1095]) >= 5; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([1051,1095]) <= 4 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        1061,
+        1063,
+        1073,
+        1081
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 1057,
+          "q_hi": 1063,
+          "candidate_count": 4,
+          "prime_count": 2,
+          "prime_values": [
+            1061,
+            1063
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            1061,
+            1063
+          ]
+        },
+        {
+          "q_lo": 1073,
+          "q_hi": 1081,
+          "candidate_count": 5,
+          "prime_count": 0,
+          "prime_values": [],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            1073,
+            1081
+          ]
+        }
+      ]
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "void_atom_keys": [
+        "plus_only_noslot:k0:649-671",
+        "plus_only_noslot:k2:619-623"
+      ],
+      "q_hull_lo": 619,
+      "q_hull_hi": 671,
+      "hull_span": 53,
+      "hull_odd_candidate_count": 27,
+      "depth_from_p": 54,
+      "depth_over_sqrt_p": 2.0815470301275893,
+      "hull_prime_count": 8,
+      "complement_wheel_survivor_count": 5,
+      "required_hull_prime_count_for_gate": 6,
+      "current_gate_margin": 3,
+      "prime_count_input": "pi([619,671]) >= 6; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([619,671]) <= 5 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        629,
+        631,
+        641,
+        643,
+        647
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 625,
+          "q_hi": 647,
+          "candidate_count": 12,
+          "prime_count": 4,
+          "prime_values": [
+            631,
+            641,
+            643,
+            647
+          ],
+          "wheel_survivor_count": 5,
+          "wheel_survivor_values": [
+            629,
+            631,
+            641,
+            643,
+            647
+          ]
+        }
+      ]
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "void_atom_keys": [
+        "plus_only_noslot:k0:667-689",
+        "plus_only_noslot:k1:649-653"
+      ],
+      "q_hull_lo": 649,
+      "q_hull_hi": 689,
+      "hull_span": 41,
+      "hull_odd_candidate_count": 21,
+      "depth_from_p": 42,
+      "depth_over_sqrt_p": 1.5977552995079203,
+      "hull_prime_count": 6,
+      "complement_wheel_survivor_count": 2,
+      "required_hull_prime_count_for_gate": 3,
+      "current_gate_margin": 4,
+      "prime_count_input": "pi([649,689]) >= 3; this implies Prime(hull)>WheelSurvivors(C).",
+      "failure_packet": "pi([649,689]) <= 2 together with target-union void, so complement wheel survivors absorb every hull prime.",
+      "complement_wheel_survivor_values": [
+        659,
+        661
+      ],
+      "complement_pockets": [
+        {
+          "q_lo": 655,
+          "q_hi": 665,
+          "candidate_count": 6,
+          "prime_count": 2,
+          "prime_values": [
+            659,
+            661
+          ],
+          "wheel_survivor_count": 2,
+          "wheel_survivor_values": [
+            659,
+            661
+          ]
+        }
+      ]
+    }
+  ]
+}
