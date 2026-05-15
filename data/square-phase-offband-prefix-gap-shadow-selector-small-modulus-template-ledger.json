@@ -1,0 +1,196 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-small-modulus-candidate-ledger.json",
+    "candidate_count": 7,
+    "template_count": 5,
+    "conflicting_template_count": 5,
+    "pdec_template_count": 0,
+    "global_template_conflict_proved": false,
+    "template_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "small_modulus_template_records": [
+    {
+      "template_index": 0,
+      "template_key": "band=minus_only_noslot|k=0|L=4|labels=3,5,7|g=15|rho=7|actual=8",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "distinct_labels": [
+        3,
+        5,
+        7
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 7,
+      "actual_p_mod_gcd15": 8,
+      "structural_conflict": true,
+      "instance_count": 1,
+      "moduli": [
+        105
+      ],
+      "p_values": [
+        683
+      ],
+      "example_labels": [
+        3,
+        7,
+        5,
+        3
+      ],
+      "example_window_values": [
+        667,
+        772
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 1,
+      "template_key": "band=minus_only_noslot|k=0|L=4|labels=3,5,11|g=15|rho=7|actual=8",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "distinct_labels": [
+        3,
+        5,
+        11
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 7,
+      "actual_p_mod_gcd15": 8,
+      "structural_conflict": true,
+      "instance_count": 1,
+      "moduli": [
+        165
+      ],
+      "p_values": [
+        683
+      ],
+      "example_labels": [
+        3,
+        11,
+        5,
+        3
+      ],
+      "example_window_values": [
+        712
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 2,
+      "template_key": "band=minus_only_noslot|k=1|L=2|labels=3,7|g=3|rho=2|actual=1",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 2,
+      "distinct_labels": [
+        3,
+        7
+      ],
+      "gcd_modulus_15": 3,
+      "cover_word_residue_mod_gcd15": 2,
+      "actual_p_mod_gcd15": 1,
+      "structural_conflict": true,
+      "instance_count": 1,
+      "moduli": [
+        21
+      ],
+      "p_values": [
+        313
+      ],
+      "example_labels": [
+        7,
+        3
+      ],
+      "example_window_values": [
+        296,
+        317
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 3,
+      "template_key": "band=plus_only_noslot|k=1|L=3|labels=3,5,7|g=15|rho=2|actual=1",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "distinct_labels": [
+        3,
+        5,
+        7
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 2,
+      "actual_p_mod_gcd15": 1,
+      "structural_conflict": true,
+      "instance_count": 2,
+      "moduli": [
+        105
+      ],
+      "p_values": [
+        691
+      ],
+      "example_labels": [
+        3,
+        7,
+        5
+      ],
+      "example_window_values": [
+        677
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 4,
+      "template_key": "band=plus_only_noslot|k=1|L=3|labels=3,5,7|g=15|rho=7|actual=1",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "distinct_labels": [
+        3,
+        5,
+        7
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 7,
+      "actual_p_mod_gcd15": 1,
+      "structural_conflict": true,
+      "instance_count": 2,
+      "moduli": [
+        105
+      ],
+      "p_values": [
+        691
+      ],
+      "example_labels": [
+        7,
+        3,
+        5
+      ],
+      "example_window_values": [
+        682
+      ],
+      "pdec_needed": false
+    }
+  ]
+}

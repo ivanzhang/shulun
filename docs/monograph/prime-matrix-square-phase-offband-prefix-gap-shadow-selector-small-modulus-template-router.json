@@ -1,0 +1,289 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_small_modulus_template_router",
+  "status": "selector_small_modulus_templates_conflict_open_global",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_template_conflict_not_used_as_global_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-small-modulus-candidate-ledger.json",
+    "candidate_count": 7,
+    "template_count": 5,
+    "conflicting_template_count": 5,
+    "pdec_template_count": 0,
+    "global_template_conflict_proved": false,
+    "template_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "small_modulus_template_records": [
+    {
+      "template_index": 0,
+      "template_key": "band=minus_only_noslot|k=0|L=4|labels=3,5,7|g=15|rho=7|actual=8",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "distinct_labels": [
+        3,
+        5,
+        7
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 7,
+      "actual_p_mod_gcd15": 8,
+      "structural_conflict": true,
+      "instance_count": 1,
+      "moduli": [
+        105
+      ],
+      "p_values": [
+        683
+      ],
+      "example_labels": [
+        3,
+        7,
+        5,
+        3
+      ],
+      "example_window_values": [
+        667,
+        772
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 1,
+      "template_key": "band=minus_only_noslot|k=0|L=4|labels=3,5,11|g=15|rho=7|actual=8",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "distinct_labels": [
+        3,
+        5,
+        11
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 7,
+      "actual_p_mod_gcd15": 8,
+      "structural_conflict": true,
+      "instance_count": 1,
+      "moduli": [
+        165
+      ],
+      "p_values": [
+        683
+      ],
+      "example_labels": [
+        3,
+        11,
+        5,
+        3
+      ],
+      "example_window_values": [
+        712
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 2,
+      "template_key": "band=minus_only_noslot|k=1|L=2|labels=3,7|g=3|rho=2|actual=1",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 2,
+      "distinct_labels": [
+        3,
+        7
+      ],
+      "gcd_modulus_15": 3,
+      "cover_word_residue_mod_gcd15": 2,
+      "actual_p_mod_gcd15": 1,
+      "structural_conflict": true,
+      "instance_count": 1,
+      "moduli": [
+        21
+      ],
+      "p_values": [
+        313
+      ],
+      "example_labels": [
+        7,
+        3
+      ],
+      "example_window_values": [
+        296,
+        317
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 3,
+      "template_key": "band=plus_only_noslot|k=1|L=3|labels=3,5,7|g=15|rho=2|actual=1",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "distinct_labels": [
+        3,
+        5,
+        7
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 2,
+      "actual_p_mod_gcd15": 1,
+      "structural_conflict": true,
+      "instance_count": 2,
+      "moduli": [
+        105
+      ],
+      "p_values": [
+        691
+      ],
+      "example_labels": [
+        3,
+        7,
+        5
+      ],
+      "example_window_values": [
+        677
+      ],
+      "pdec_needed": false
+    },
+    {
+      "template_index": 4,
+      "template_key": "band=plus_only_noslot|k=1|L=3|labels=3,5,7|g=15|rho=7|actual=1",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "distinct_labels": [
+        3,
+        5,
+        7
+      ],
+      "gcd_modulus_15": 15,
+      "cover_word_residue_mod_gcd15": 7,
+      "actual_p_mod_gcd15": 1,
+      "structural_conflict": true,
+      "instance_count": 2,
+      "moduli": [
+        105
+      ],
+      "p_values": [
+        691
+      ],
+      "example_labels": [
+        7,
+        3,
+        5
+      ],
+      "example_window_values": [
+        682
+      ],
+      "pdec_needed": false
+    }
+  ],
+  "small_modulus_candidate_aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "label_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-label-lower-bound-ledger.json",
+    "record_count": 11,
+    "small_modulus_candidate_count": 7,
+    "structural_conflict_candidate_count": 7,
+    "overlap_pdec_candidate_count": 0,
+    "candidate_rows_count": 4,
+    "min_candidate_modulus_minus_width": -67,
+    "max_candidate_modulus": 165,
+    "global_small_modulus_lowwheel_conflict_proved": false,
+    "small_modulus_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "global_template_conflict_proved": false,
+  "template_overlap_pdec_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "SmallModulusCompatibleWordsLowwheelConflictOrOverlapPDEC",
+  "hardpoint_after_router": "SmallModulusLowwheelResidueTemplateGlobalizationOrOverlapPDEC",
+  "next_direct_attack_target": "SmallModulusLowwheelResidueTemplateGlobalizationOrOverlapPDEC",
+  "theorem_rows": [
+    {
+      "name": "finite_small_modulus_templates_registered",
+      "status": "closed_on_current_frontier",
+      "statement": "Current small-modulus candidates are reduced to finitely many lowwheel residue templates."
+    },
+    {
+      "name": "finite_templates_all_conflicting",
+      "status": "closed_on_current_frontier",
+      "statement": "Every current small-modulus template has cover-word residue different from actual P modulo gcd(M,15)."
+    },
+    {
+      "name": "global_template_conflict",
+      "status": "open",
+      "statement": "A global proof must show the same residue-template conflict persists in the formal-unit family."
+    },
+    {
+      "name": "template_overlap_pdec",
+      "status": "open",
+      "statement": "Any template with matching residues must be routed to PDEC/ColumnCRT."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_small_modulus_template_router.py": "6e65429a972b2d9fd63bb7ef682b3357adff3ca7e7142826c6934a793adff474",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_small_modulus_candidate_router.py": "ecc1f8375277523c8cff1010e9e2ad9b380fd79d953a312ec1980a4409198d25",
+    "data/square-phase-offband-prefix-gap-shadow-selector-small-modulus-candidate-ledger.json": "e3b34a34f5ca89d882cb98a8473f5820568ffbd60c1e48b1bbe56fd9418eb509",
+    "data/square-phase-offband-prefix-gap-shadow-selector-small-modulus-template-ledger.json": "6d93ca61a5a6632b2a1c5e8c6488b41c9598906b6380a4e1528e240494de71a3",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-small-modulus-template-router.md": "543947d17199ffce41596277b840be37bee9bf2844cbf0ee6bd791e39284b5c9"
+  },
+  "plain_conclusion": "本步把 7 个 small-modulus 候选归并为 5 个低轮 residue 模板；所有模板都满足 cover-word residue 与 actual P 在 gcd(M,15) 下不相等，因此当前前沿无需 PDEC。全局剩余是证明这些模板冲突在 formal-unit 族中稳定，或对 residue 匹配模板提交 PDEC/ColumnCRT。",
+  "decision_rows": [
+    {
+      "gate": "FiniteTemplateRegistrationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前 small-modulus 候选已归并为 residue 模板。",
+      "remaining": "closed on current finite frontier"
+    },
+    {
+      "gate": "FiniteTemplatesAllConflict",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前模板全部低轮冲突，无需 PDEC。",
+      "remaining": "closed on current finite frontier"
+    },
+    {
+      "gate": "GlobalTemplateConflictProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明 formal-unit 族中同类模板必然冲突。",
+      "remaining": "SmallModulusLowwheelResidueTemplateGlobalizationOrOverlapPDEC"
+    },
+    {
+      "gate": "TemplateOverlapPDECExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "若出现 residue 匹配模板，仍需 PDEC/ColumnCRT 排斥。",
+      "remaining": "SmallModulusLowwheelResidueTemplateGlobalizationOrOverlapPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只关闭当前模板归并层，不关闭全局行/列命题。",
+      "remaining": "SmallModulusLowwheelResidueTemplateGlobalizationOrOverlapPDEC"
+    }
+  ]
+}
