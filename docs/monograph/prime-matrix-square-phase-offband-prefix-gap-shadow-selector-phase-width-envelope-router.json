@@ -1,0 +1,572 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_phase_width_envelope_router",
+  "status": "selector_phase_width_envelope_open_global",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_width_formula_not_used_as_global_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "source_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-modulus-width-source-ledger.json",
+    "record_count": 11,
+    "group_count": 6,
+    "width_formula_failure_count": 0,
+    "endpoint_orientation_failure_count": 0,
+    "active_pattern_count": 6,
+    "max_phase_width": 172,
+    "global_endpoint_orientation_proved": false,
+    "global_width_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "phase_width_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "active_lower": {
+        "value": 729,
+        "b": 26,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 736,
+        "b": 23,
+        "type": "minus_band_upper"
+      },
+      "active_width": 8,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 8
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "b_lo": 12,
+      "b_hi": 15,
+      "cell_length": 4,
+      "phase_p_lo": 481,
+      "phase_p_hi": 576,
+      "phase_p_width": 96,
+      "active_lower": {
+        "value": 481,
+        "b": 15,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 576,
+        "b": 12,
+        "type": "minus_band_upper"
+      },
+      "active_width": 96,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=0|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 4
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "active_lower": {
+        "value": 644,
+        "b": 21,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 760,
+        "b": 19,
+        "type": "floor_upper"
+      },
+      "active_width": 117,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=1|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "b_lo": 14,
+      "b_hi": 17,
+      "cell_length": 4,
+      "phase_p_lo": 613,
+      "phase_p_hi": 784,
+      "phase_p_width": 172,
+      "active_lower": {
+        "value": 613,
+        "b": 17,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 784,
+        "b": 14,
+        "type": "minus_band_upper"
+      },
+      "active_width": 172,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=0|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 4
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "b_lo": 14,
+      "b_hi": 18,
+      "cell_length": 5,
+      "phase_p_lo": 685,
+      "phase_p_hi": 784,
+      "phase_p_width": 100,
+      "active_lower": {
+        "value": 685,
+        "b": 18,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 784,
+        "b": 14,
+        "type": "minus_band_upper"
+      },
+      "active_width": 100,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=0|L=5|lo=floor_lower@b_4|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 5,
+      "upper_constraint_count": 5
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "active_lower": {
+        "value": 648,
+        "b": 27,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 675,
+        "b": 25,
+        "type": "floor_upper"
+      },
+      "active_width": 28,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=2|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "active_lower": {
+        "value": 729,
+        "b": 26,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 736,
+        "b": 23,
+        "type": "minus_band_upper"
+      },
+      "active_width": 8,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 8
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 15,
+      "b_hi": 16,
+      "cell_length": 2,
+      "phase_p_lo": 289,
+      "phase_p_hi": 320,
+      "phase_p_width": 32,
+      "active_lower": {
+        "value": 289,
+        "b": 16,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 320,
+        "b": 15,
+        "type": "minus_band_upper"
+      },
+      "active_width": 32,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=2|lo=floor_lower@b_1|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 2,
+      "upper_constraint_count": 4
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 29,
+      "b_hi": 32,
+      "cell_length": 4,
+      "phase_p_lo": 1089,
+      "phase_p_hi": 1160,
+      "phase_p_width": 72,
+      "active_lower": {
+        "value": 1089,
+        "b": 32,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 1160,
+        "b": 29,
+        "type": "minus_band_upper"
+      },
+      "active_width": 72,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 8
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "active_lower": {
+        "value": 644,
+        "b": 21,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 760,
+        "b": 19,
+        "type": "floor_upper"
+      },
+      "active_width": 117,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=1|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "active_lower": {
+        "value": 648,
+        "b": 27,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 675,
+        "b": 25,
+        "type": "floor_upper"
+      },
+      "active_width": 28,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=2|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    }
+  ],
+  "phase_width_group_records": [
+    {
+      "group_key": "band=minus_only_noslot|k=0|L=4",
+      "record_count": 2,
+      "max_phase_width": 172,
+      "min_phase_width": 96,
+      "active_patterns": [
+        "band=minus_only_noslot|k=0|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=minus_only_noslot|k=0|L=5",
+      "record_count": 1,
+      "max_phase_width": 100,
+      "min_phase_width": 100,
+      "active_patterns": [
+        "band=minus_only_noslot|k=0|L=5|lo=floor_lower@b_4|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=minus_only_noslot|k=1|L=2",
+      "record_count": 1,
+      "max_phase_width": 32,
+      "min_phase_width": 32,
+      "active_patterns": [
+        "band=minus_only_noslot|k=1|L=2|lo=floor_lower@b_1|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=minus_only_noslot|k=1|L=4",
+      "record_count": 3,
+      "max_phase_width": 72,
+      "min_phase_width": 8,
+      "active_patterns": [
+        "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=plus_only_noslot|k=1|L=3",
+      "record_count": 2,
+      "max_phase_width": 117,
+      "min_phase_width": 117,
+      "active_patterns": [
+        "band=plus_only_noslot|k=1|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=plus_only_noslot|k=2|L=3",
+      "record_count": 2,
+      "max_phase_width": 28,
+      "min_phase_width": 28,
+      "active_patterns": [
+        "band=plus_only_noslot|k=2|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    }
+  ],
+  "modulus_width_source_aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-modulus-barrier-ledger.json",
+    "barrier_atom_count": 49,
+    "length_class_count": 4,
+    "family_class_count": 8,
+    "length_class_dominance_failure_count": 0,
+    "min_length_class_margin": 45,
+    "min_atom_modulus_minus_width": 45,
+    "global_label_lower_bound_proved": false,
+    "global_phase_width_envelope_proved": false,
+    "small_modulus_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "global_endpoint_orientation_proved": false,
+  "global_width_bound_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "LengthClassLabelLowerBoundAndPhaseWidthEnvelopeOrSmallModulusPDEC",
+  "hardpoint_after_router": "ActiveEndpointPhaseWidthEnvelopeAndLabelLowerBoundOrSmallModulusPDEC",
+  "next_direct_attack_target": "ActiveEndpointPhaseWidthEnvelopeAndLabelLowerBoundOrSmallModulusPDEC",
+  "theorem_rows": [
+    {
+      "name": "active_endpoint_width_formula",
+      "status": "closed_on_current_frontier",
+      "statement": "Every current fixed phase window is exactly recovered from the active b_hi lower endpoint and b_lo upper endpoint."
+    },
+    {
+      "name": "phase_width_envelope_normal_form",
+      "status": "closed",
+      "statement": "The phase width input is reduced to explicit endpoint formulas by band/k family."
+    },
+    {
+      "name": "global_endpoint_orientation",
+      "status": "open",
+      "statement": "A global proof must show the same active endpoint orientation holds for the formal-unit family."
+    },
+    {
+      "name": "global_width_bound",
+      "status": "open",
+      "statement": "A global proof must combine the endpoint formula with label lower bounds to prove M>W."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_phase_width_envelope_router.py": "d22471303dad825b366acf9418178abfbff3257f5d385771331d1666f65589bb",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_modulus_width_source_router.py": "69d98f70c0d1d4ceafebe32d35541a0f306d41c4a3ef0c34d76d5c66162b9b38",
+    "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json": "366bda520b7fbd1a8ad5e8a602af1ffb19daf9b447569fd5110a6f1f4bac8609",
+    "data/square-phase-offband-prefix-gap-shadow-selector-modulus-width-source-ledger.json": "9b74bc89311d215f67e9cd6a8c9c731cbeff3a114533eca56e8140929afcd161",
+    "data/square-phase-offband-prefix-gap-shadow-selector-phase-width-envelope-ledger.json": "d2315a905edf1d24de2158140c650b774dfacccf77d11555d20e4d8d37fbd6af",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-phase-width-envelope-router.md": "b98a364795f0ab052a09c4460f254ce35be05cb765c6242d61b5b15fbffc4b07"
+  },
+  "plain_conclusion": "本步把 fixed small-k phase 宽度输入正规化为活跃端点公式。当前 11 个窗口全部由右端 b_hi 的下界约束和左端 b_lo 的上界约束夹出，精确恢复原 phase_p_width；活跃 pattern 数为 6，最大宽度为 172。这关闭了当前前沿的宽度公式层；全局仍需证明 formal-unit 族中同样的端点方向和宽度 envelope，再与标签模数下界合并推出 M>W。",
+  "decision_rows": [
+    {
+      "gate": "FiniteActiveEndpointFormulaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前 fixed phase 窗口宽度均由活跃端点公式精确恢复。",
+      "remaining": "closed on current finite frontier"
+    },
+    {
+      "gate": "EndpointOrientationClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前所有窗口均为 b_hi 给下界、b_lo 给上界。",
+      "remaining": "closed on current finite frontier"
+    },
+    {
+      "gate": "GlobalEndpointOrientationProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "尚未证明 formal-unit 族中活跃端点方向不变。",
+      "remaining": "ActiveEndpointPhaseWidthEnvelopeAndLabelLowerBoundOrSmallModulusPDEC"
+    },
+    {
+      "gate": "GlobalMGreaterThanWProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需与标签模数下界合并推出全局 M>W。",
+      "remaining": "ActiveEndpointPhaseWidthEnvelopeAndLabelLowerBoundOrSmallModulusPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步关闭当前宽度公式层，不关闭全局行/列命题。",
+      "remaining": "ActiveEndpointPhaseWidthEnvelopeAndLabelLowerBoundOrSmallModulusPDEC"
+    }
+  ]
+}

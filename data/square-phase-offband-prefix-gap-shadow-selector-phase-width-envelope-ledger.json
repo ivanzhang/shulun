@@ -1,0 +1,479 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "source_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-modulus-width-source-ledger.json",
+    "record_count": 11,
+    "group_count": 6,
+    "width_formula_failure_count": 0,
+    "endpoint_orientation_failure_count": 0,
+    "active_pattern_count": 6,
+    "max_phase_width": 172,
+    "global_endpoint_orientation_proved": false,
+    "global_width_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "phase_width_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "active_lower": {
+        "value": 729,
+        "b": 26,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 736,
+        "b": 23,
+        "type": "minus_band_upper"
+      },
+      "active_width": 8,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 8
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "b_lo": 12,
+      "b_hi": 15,
+      "cell_length": 4,
+      "phase_p_lo": 481,
+      "phase_p_hi": 576,
+      "phase_p_width": 96,
+      "active_lower": {
+        "value": 481,
+        "b": 15,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 576,
+        "b": 12,
+        "type": "minus_band_upper"
+      },
+      "active_width": 96,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=0|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 4
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "active_lower": {
+        "value": 644,
+        "b": 21,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 760,
+        "b": 19,
+        "type": "floor_upper"
+      },
+      "active_width": 117,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=1|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "b_lo": 14,
+      "b_hi": 17,
+      "cell_length": 4,
+      "phase_p_lo": 613,
+      "phase_p_hi": 784,
+      "phase_p_width": 172,
+      "active_lower": {
+        "value": 613,
+        "b": 17,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 784,
+        "b": 14,
+        "type": "minus_band_upper"
+      },
+      "active_width": 172,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=0|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 4
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "b_lo": 14,
+      "b_hi": 18,
+      "cell_length": 5,
+      "phase_p_lo": 685,
+      "phase_p_hi": 784,
+      "phase_p_width": 100,
+      "active_lower": {
+        "value": 685,
+        "b": 18,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 784,
+        "b": 14,
+        "type": "minus_band_upper"
+      },
+      "active_width": 100,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=0|L=5|lo=floor_lower@b_4|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 5,
+      "upper_constraint_count": 5
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "active_lower": {
+        "value": 648,
+        "b": 27,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 675,
+        "b": 25,
+        "type": "floor_upper"
+      },
+      "active_width": 28,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=2|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 23,
+      "b_hi": 26,
+      "cell_length": 4,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "active_lower": {
+        "value": 729,
+        "b": 26,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 736,
+        "b": 23,
+        "type": "minus_band_upper"
+      },
+      "active_width": 8,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 8
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 15,
+      "b_hi": 16,
+      "cell_length": 2,
+      "phase_p_lo": 289,
+      "phase_p_hi": 320,
+      "phase_p_width": 32,
+      "active_lower": {
+        "value": 289,
+        "b": 16,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 320,
+        "b": 15,
+        "type": "minus_band_upper"
+      },
+      "active_width": 32,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=2|lo=floor_lower@b_1|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 2,
+      "upper_constraint_count": 4
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 29,
+      "b_hi": 32,
+      "cell_length": 4,
+      "phase_p_lo": 1089,
+      "phase_p_hi": 1160,
+      "phase_p_width": 72,
+      "active_lower": {
+        "value": 1089,
+        "b": 32,
+        "type": "floor_lower"
+      },
+      "active_upper": {
+        "value": 1160,
+        "b": 29,
+        "type": "minus_band_upper"
+      },
+      "active_width": 72,
+      "active_formula": "W = max_integer_lt((4*B^2+4*k*B+1)/(2*k+1)) - min_integer_gt(2*H^2/(k+1)+2*H) + 1",
+      "active_pattern": "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 4,
+      "upper_constraint_count": 8
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "b_lo": 19,
+      "b_hi": 21,
+      "cell_length": 3,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "active_lower": {
+        "value": 644,
+        "b": 21,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 760,
+        "b": 19,
+        "type": "floor_upper"
+      },
+      "active_width": 117,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=1|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "b_lo": 25,
+      "b_hi": 27,
+      "cell_length": 3,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "active_lower": {
+        "value": 648,
+        "b": 27,
+        "type": "plus_band_lower"
+      },
+      "active_upper": {
+        "value": 675,
+        "b": 25,
+        "type": "floor_upper"
+      },
+      "active_width": 28,
+      "active_formula": "W = floor(2*B^2/k+2*B) - min_integer_gt((4*H^2+4*k*H+4*H-1)/(2*k+1)) + 1",
+      "active_pattern": "band=plus_only_noslot|k=2|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0",
+      "width_matches_phase_window": true,
+      "active_lower_at_b_hi": true,
+      "active_upper_at_b_lo": true,
+      "endpoint_orientation_closed": true,
+      "lower_constraint_count": 6,
+      "upper_constraint_count": 3
+    }
+  ],
+  "phase_width_group_records": [
+    {
+      "group_key": "band=minus_only_noslot|k=0|L=4",
+      "record_count": 2,
+      "max_phase_width": 172,
+      "min_phase_width": 96,
+      "active_patterns": [
+        "band=minus_only_noslot|k=0|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=minus_only_noslot|k=0|L=5",
+      "record_count": 1,
+      "max_phase_width": 100,
+      "min_phase_width": 100,
+      "active_patterns": [
+        "band=minus_only_noslot|k=0|L=5|lo=floor_lower@b_4|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=minus_only_noslot|k=1|L=2",
+      "record_count": 1,
+      "max_phase_width": 32,
+      "min_phase_width": 32,
+      "active_patterns": [
+        "band=minus_only_noslot|k=1|L=2|lo=floor_lower@b_1|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=minus_only_noslot|k=1|L=4",
+      "record_count": 3,
+      "max_phase_width": 72,
+      "min_phase_width": 8,
+      "active_patterns": [
+        "band=minus_only_noslot|k=1|L=4|lo=floor_lower@b_3|hi=minus_band_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=plus_only_noslot|k=1|L=3",
+      "record_count": 2,
+      "max_phase_width": 117,
+      "min_phase_width": 117,
+      "active_patterns": [
+        "band=plus_only_noslot|k=1|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    },
+    {
+      "group_key": "band=plus_only_noslot|k=2|L=3",
+      "record_count": 2,
+      "max_phase_width": 28,
+      "min_phase_width": 28,
+      "active_patterns": [
+        "band=plus_only_noslot|k=2|L=3|lo=plus_band_lower@b_2|hi=floor_upper@b_0"
+      ],
+      "all_widths_match": true,
+      "all_endpoint_orientations_closed": true
+    }
+  ]
+}
