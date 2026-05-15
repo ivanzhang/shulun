@@ -1,0 +1,351 @@
+{
+  "parameters": {
+    "max_p": 10000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3,
+    "low_margin_cutoff": 1,
+    "density_c": 0.01,
+    "p0": 2001,
+    "h_coeff": 0.43,
+    "t_coeff": 0.212
+  },
+  "aggregate": {
+    "density_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-ht-density-budget-ledger.json",
+    "template_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-template-provenance-ledger.json",
+    "max_p": 10000,
+    "p0": 2001,
+    "h_coeff": 0.43,
+    "t_coeff": 0.212,
+    "split_density_c": 0.006000000000000005,
+    "prime_rho_hit_count": 612,
+    "previous_prime_rho_hit_count": 612,
+    "formula_failure_count": 0,
+    "H_lower_failure_count_at_p0": 0,
+    "T_upper_failure_count_at_p0": 0,
+    "split_floor_closure_failure_count_at_p0": 0,
+    "dominance_failure_count": 0,
+    "global_coefficient_split_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "band_records": [
+    {
+      "p_lo": 3,
+      "p_hi": 2000,
+      "hit_count": 150,
+      "min_H_scaled_coeff": 0.38646464754254584,
+      "max_T_scaled_coeff": 0.22333643526375713,
+      "separated_min_surplus_coeff": -0.06020822298496842,
+      "p_values_at_min_H": [
+        157
+      ],
+      "p_values_at_max_T": [
+        277
+      ]
+    },
+    {
+      "p_lo": 2001,
+      "p_hi": 5000,
+      "hit_count": 194,
+      "min_H_scaled_coeff": 0.4305890165577595,
+      "max_T_scaled_coeff": 0.2118955709759178,
+      "separated_min_surplus_coeff": 0.006797874605923904,
+      "p_values_at_min_H": [
+        2467
+      ],
+      "p_values_at_max_T": [
+        3947
+      ]
+    },
+    {
+      "p_lo": 5001,
+      "p_hi": 10000,
+      "hit_count": 268,
+      "min_H_scaled_coeff": 0.45003229386999777,
+      "max_T_scaled_coeff": 0.20798206915422124,
+      "separated_min_surplus_coeff": 0.03406815556155529,
+      "p_values_at_min_H": [
+        5297
+      ],
+      "p_values_at_max_T": [
+        7027
+      ]
+    }
+  ],
+  "low_coefficient_examples": [
+    {
+      "template_index": 1,
+      "p": 157,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 12,
+      "T": 6,
+      "H_scaled_coeff": 0.38646464754254584,
+      "T_scaled_coeff": 0.19323232377127292,
+      "actual_surplus_coeff": 0.0,
+      "dominance_margin": 1
+    },
+    {
+      "template_index": 6,
+      "p": 157,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 12,
+      "T": 6,
+      "H_scaled_coeff": 0.38646464754254584,
+      "T_scaled_coeff": 0.19323232377127292,
+      "actual_surplus_coeff": 0.0,
+      "dominance_margin": 1
+    },
+    {
+      "template_index": 2,
+      "p": 1777,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 104,
+      "T": 51,
+      "H_scaled_coeff": 0.4379284806573347,
+      "T_scaled_coeff": 0.21475338955311604,
+      "actual_surplus_coeff": 0.008421701551102612,
+      "dominance_margin": 1
+    },
+    {
+      "template_index": 3,
+      "p": 1777,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 104,
+      "T": 51,
+      "H_scaled_coeff": 0.4379284806573347,
+      "T_scaled_coeff": 0.21475338955311604,
+      "actual_surplus_coeff": 0.008421701551102612,
+      "dominance_margin": 1
+    },
+    {
+      "template_index": 0,
+      "p": 677,
+      "side": "minus",
+      "rho": 2,
+      "target_W": 2,
+      "H": 45,
+      "T": 22,
+      "H_scaled_coeff": 0.4332277803265176,
+      "T_scaled_coeff": 0.21180024815963078,
+      "actual_surplus_coeff": 0.009627284007256043,
+      "dominance_margin": 2
+    },
+    {
+      "template_index": 5,
+      "p": 677,
+      "side": "minus",
+      "rho": 2,
+      "target_W": 2,
+      "H": 45,
+      "T": 22,
+      "H_scaled_coeff": 0.4332277803265176,
+      "T_scaled_coeff": 0.21180024815963078,
+      "actual_surplus_coeff": 0.009627284007256043,
+      "dominance_margin": 2
+    },
+    {
+      "template_index": 6,
+      "p": 2467,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 136,
+      "T": 66,
+      "H_scaled_coeff": 0.4305890165577595,
+      "T_scaled_coeff": 0.20896231685891267,
+      "actual_surplus_coeff": 0.012664382839934152,
+      "dominance_margin": 5
+    },
+    {
+      "template_index": 2,
+      "p": 1327,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 79,
+      "T": 38,
+      "H_scaled_coeff": 0.42808093949679304,
+      "T_scaled_coeff": 0.20591235064402702,
+      "actual_surplus_coeff": 0.016256238208739004,
+      "dominance_margin": 2
+    },
+    {
+      "template_index": 3,
+      "p": 1327,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 79,
+      "T": 38,
+      "H_scaled_coeff": 0.42808093949679304,
+      "T_scaled_coeff": 0.20591235064402702,
+      "actual_surplus_coeff": 0.016256238208739004,
+      "dominance_margin": 2
+    },
+    {
+      "template_index": 4,
+      "p": 173,
+      "side": "plus",
+      "rho": 2,
+      "target_W": 1,
+      "H": 13,
+      "T": 6,
+      "H_scaled_coeff": 0.38724156490445744,
+      "T_scaled_coeff": 0.17872687610974955,
+      "actual_surplus_coeff": 0.029787812684958337,
+      "dominance_margin": 0
+    },
+    {
+      "template_index": 6,
+      "p": 1747,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 107,
+      "T": 50,
+      "H_scaled_coeff": 0.4572553624409525,
+      "T_scaled_coeff": 0.2136707301125946,
+      "actual_surplus_coeff": 0.02991390221576329,
+      "dominance_margin": 8
+    },
+    {
+      "template_index": 1,
+      "p": 1327,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 82,
+      "T": 38,
+      "H_scaled_coeff": 0.444337177705532,
+      "T_scaled_coeff": 0.20591235064402702,
+      "actual_surplus_coeff": 0.032512476417477953,
+      "dominance_margin": 7
+    },
+    {
+      "template_index": 6,
+      "p": 1327,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 82,
+      "T": 38,
+      "H_scaled_coeff": 0.444337177705532,
+      "T_scaled_coeff": 0.20591235064402702,
+      "actual_surplus_coeff": 0.032512476417477953,
+      "dominance_margin": 7
+    },
+    {
+      "template_index": 4,
+      "p": 863,
+      "side": "plus",
+      "rho": 2,
+      "target_W": 1,
+      "H": 55,
+      "T": 25,
+      "H_scaled_coeff": 0.43084914021968546,
+      "T_scaled_coeff": 0.1958405182816752,
+      "actual_surplus_coeff": 0.03916810365633505,
+      "dominance_margin": 4
+    },
+    {
+      "template_index": 5,
+      "p": 467,
+      "side": "minus",
+      "rho": 2,
+      "target_W": 2,
+      "H": 35,
+      "T": 16,
+      "H_scaled_coeff": 0.4606456617096604,
+      "T_scaled_coeff": 0.21058087392441618,
+      "actual_surplus_coeff": 0.03948391386082806,
+      "dominance_margin": 4
+    },
+    {
+      "template_index": 1,
+      "p": 277,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 24,
+      "T": 11,
+      "H_scaled_coeff": 0.4872794951209246,
+      "T_scaled_coeff": 0.22333643526375713,
+      "actual_surplus_coeff": 0.040606624593410356,
+      "dominance_margin": 3
+    },
+    {
+      "template_index": 6,
+      "p": 277,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 24,
+      "T": 11,
+      "H_scaled_coeff": 0.4872794951209246,
+      "T_scaled_coeff": 0.22333643526375713,
+      "actual_surplus_coeff": 0.040606624593410356,
+      "dominance_margin": 3
+    },
+    {
+      "template_index": 5,
+      "p": 1097,
+      "side": "minus",
+      "rho": 2,
+      "target_W": 2,
+      "H": 72,
+      "T": 32,
+      "H_scaled_coeff": 0.45945677405635055,
+      "T_scaled_coeff": 0.20420301069171135,
+      "actual_surplus_coeff": 0.05105075267292786,
+      "dominance_margin": 9
+    },
+    {
+      "template_index": 5,
+      "p": 4007,
+      "side": "minus",
+      "rho": 2,
+      "target_W": 2,
+      "H": 223,
+      "T": 99,
+      "H_scaled_coeff": 0.46168279976837046,
+      "T_scaled_coeff": 0.20496231917968016,
+      "actual_surplus_coeff": 0.05175816140901013,
+      "dominance_margin": 26
+    },
+    {
+      "template_index": 5,
+      "p": 1697,
+      "side": "minus",
+      "rho": 2,
+      "target_W": 2,
+      "H": 106,
+      "T": 47,
+      "H_scaled_coeff": 0.46451469069818974,
+      "T_scaled_coeff": 0.20596406096995207,
+      "actual_surplus_coeff": 0.0525865687582856,
+      "dominance_margin": 13
+    }
+  ]
+}
