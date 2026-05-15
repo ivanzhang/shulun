@@ -1,0 +1,313 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_ht_dominance_boundary_recurrence_router",
+  "status": "selector_square_window_tail_dominance_boundary_core_isolated_open_global",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_boundary_audit_not_used_as_global_proof": true,
+  "parameters": {
+    "max_p": 10000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3,
+    "low_margin_cutoff": 1
+  },
+  "aggregate": {
+    "external_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-ht-external-input-match-ledger.json",
+    "template_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-template-provenance-ledger.json",
+    "max_p": 10000,
+    "low_margin_cutoff": 1,
+    "prime_rho_hit_count": 612,
+    "previous_prime_rho_hit_count": 344,
+    "formula_failure_count": 0,
+    "dominance_failure_count": 0,
+    "min_margin": 0,
+    "max_margin": 145,
+    "zero_margin_count": 1,
+    "margin_le_1_count": 7,
+    "margin_le_1_distinct_p_values": [
+      157,
+      173,
+      1777
+    ],
+    "margin_le_1_max_p": 1777,
+    "margin_le_3_count": 15,
+    "margin_le_3_max_p": 1777,
+    "low_margin_signature_count": 5,
+    "recurrent_low_margin_signature_count": 2,
+    "no_margin_le_1_after_finite_core_on_current_sweep": true,
+    "asymptotic_square_window_tail_dominance_proved": false,
+    "boundary_recurrence_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "band_records": [
+    {
+      "p_lo": 3,
+      "p_hi": 2000,
+      "hit_count": 150,
+      "min_margin": 0,
+      "zero_margin_count": 1,
+      "margin_le_1_count": 7,
+      "margin_le_3_count": 15,
+      "p_values_at_min": [
+        173
+      ]
+    },
+    {
+      "p_lo": 2001,
+      "p_hi": 5000,
+      "hit_count": 194,
+      "min_margin": 5,
+      "zero_margin_count": 0,
+      "margin_le_1_count": 0,
+      "margin_le_3_count": 0,
+      "p_values_at_min": [
+        2467
+      ]
+    },
+    {
+      "p_lo": 5001,
+      "p_hi": 10000,
+      "hit_count": 268,
+      "min_margin": 37,
+      "zero_margin_count": 0,
+      "margin_le_1_count": 0,
+      "margin_le_3_count": 0,
+      "p_values_at_min": [
+        5297
+      ]
+    }
+  ],
+  "low_margin_records": [
+    {
+      "template_index": 4,
+      "p": 173,
+      "side": "plus",
+      "rho": 2,
+      "target_W": 1,
+      "H": 13,
+      "T": 6,
+      "margin": 0,
+      "normal_form_slack": 0,
+      "signature": "side=plus|W=1|rho=2|template=4"
+    },
+    {
+      "template_index": 1,
+      "p": 157,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 12,
+      "T": 6,
+      "margin": 1,
+      "normal_form_slack": 1,
+      "signature": "side=minus|W=2|rho=7|template=1"
+    },
+    {
+      "template_index": 2,
+      "p": 157,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 14,
+      "T": 6,
+      "margin": 1,
+      "normal_form_slack": 1,
+      "signature": "side=plus|W=1|rho=7|template=2"
+    },
+    {
+      "template_index": 3,
+      "p": 157,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 14,
+      "T": 6,
+      "margin": 1,
+      "normal_form_slack": 1,
+      "signature": "side=plus|W=1|rho=7|template=3"
+    },
+    {
+      "template_index": 6,
+      "p": 157,
+      "side": "minus",
+      "rho": 7,
+      "target_W": 2,
+      "H": 12,
+      "T": 6,
+      "margin": 1,
+      "normal_form_slack": 1,
+      "signature": "side=minus|W=2|rho=7|template=6"
+    },
+    {
+      "template_index": 2,
+      "p": 1777,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 104,
+      "T": 51,
+      "margin": 1,
+      "normal_form_slack": 1,
+      "signature": "side=plus|W=1|rho=7|template=2"
+    },
+    {
+      "template_index": 3,
+      "p": 1777,
+      "side": "plus",
+      "rho": 7,
+      "target_W": 1,
+      "H": 104,
+      "T": 51,
+      "margin": 1,
+      "normal_form_slack": 1,
+      "signature": "side=plus|W=1|rho=7|template=3"
+    }
+  ],
+  "boundary_recurrence_records": [
+    {
+      "signature": "side=minus|W=2|rho=7|template=1",
+      "hit_count": 1,
+      "distinct_p_count": 1,
+      "p_values": [
+        157
+      ],
+      "min_margin": 1,
+      "max_margin": 1,
+      "recurrent_on_current_sweep": false
+    },
+    {
+      "signature": "side=minus|W=2|rho=7|template=6",
+      "hit_count": 1,
+      "distinct_p_count": 1,
+      "p_values": [
+        157
+      ],
+      "min_margin": 1,
+      "max_margin": 1,
+      "recurrent_on_current_sweep": false
+    },
+    {
+      "signature": "side=plus|W=1|rho=2|template=4",
+      "hit_count": 1,
+      "distinct_p_count": 1,
+      "p_values": [
+        173
+      ],
+      "min_margin": 0,
+      "max_margin": 0,
+      "recurrent_on_current_sweep": false
+    },
+    {
+      "signature": "side=plus|W=1|rho=7|template=2",
+      "hit_count": 2,
+      "distinct_p_count": 2,
+      "p_values": [
+        157,
+        1777
+      ],
+      "min_margin": 1,
+      "max_margin": 1,
+      "recurrent_on_current_sweep": true
+    },
+    {
+      "signature": "side=plus|W=1|rho=7|template=3",
+      "hit_count": 2,
+      "distinct_p_count": 2,
+      "p_values": [
+        157,
+        1777
+      ],
+      "min_margin": 1,
+      "max_margin": 1,
+      "recurrent_on_current_sweep": true
+    }
+  ],
+  "asymptotic_square_window_tail_dominance_proved": false,
+  "boundary_recurrence_pdec_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "SelectorResidueSquareWindowTailDominanceOrBoundaryPDEC",
+  "hardpoint_after_router": "AsymptoticSquareWindowTailDominanceOrLowMarginBoundaryRecurrencePDEC",
+  "next_direct_attack_target": "AsymptoticSquareWindowTailDominanceOrLowMarginBoundaryRecurrencePDEC",
+  "theorem_rows": [
+    {
+      "name": "finite_low_margin_boundary_isolated",
+      "status": "closed_on_current_sweep",
+      "statement": "Low-margin selector rho hits are isolated and grouped by boundary recurrence signature."
+    },
+    {
+      "name": "current_no_high_p_margin_le_1_recurrence",
+      "status": "closed_on_current_sweep",
+      "statement": "No margin<=1 hit appears beyond the current finite boundary core in the tested range."
+    },
+    {
+      "name": "asymptotic_square_window_tail_dominance",
+      "status": "open",
+      "statement": "A global proof must show the dominance margin stays nonnegative beyond the finite boundary core."
+    },
+    {
+      "name": "low_margin_boundary_recurrence_pdec",
+      "status": "open",
+      "statement": "If low-margin classes recur indefinitely, they must be routed to a boundary recurrence PDEC/ColumnCRT."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_ht_dominance_boundary_recurrence_router.py": "6e96ce376f5fdc22e74506882343775be363928d0a0f5eb9faba82c22b4709b7",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_ht_external_input_match_router.py": "5f53bd13fef7ac641fb9bf25f0d67d25e79d4e2d8977b667785fd6c93ded5529",
+    "data/square-phase-offband-prefix-gap-shadow-selector-ht-external-input-match-ledger.json": "dcdf4b1ded2c507ba24399bf075a29d392a08c69174fbfcc6aef9dd96a1e5e4b",
+    "data/square-phase-offband-prefix-gap-shadow-selector-ht-dominance-boundary-recurrence-ledger.json": "0d6b2d4befb0e16e2e492b06cfb620f0d8c56eebbca0646f668d33f0eb16e12e",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-ht-dominance-boundary-recurrence-router.md": "8010a642abcf33b2fc0f4063ab9eefb646fbec4ccc980af6980554ae7b7aefdc"
+  },
+  "plain_conclusion": "本步把平方窗-尾素数支配的低余量边界隔离出来。扩展到 P<=10000 时，prime rho hit 为 612 个，支配失败数为 0；唯一零余量仍在有限边界核内，margin<=1 的最大 P 为 1777。",
+  "decision_rows": [
+    {
+      "gate": "CurrentDominanceStillHoldsAtExtendedBound",
+      "closed": true,
+      "proved": true,
+      "meaning": "扩展有限扫描中平方窗-尾素数支配仍无失败。",
+      "remaining": "closed on current finite sweep"
+    },
+    {
+      "gate": "LowMarginBoundaryCoreIsolated",
+      "closed": true,
+      "proved": true,
+      "meaning": "margin<=1 的边界核已定位并签名化。",
+      "remaining": "closed on current finite sweep"
+    },
+    {
+      "gate": "AsymptoticDominanceProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需无条件证明边界核之后支配余量不再跌破 0。",
+      "remaining": "AsymptoticSquareWindowTailDominanceOrLowMarginBoundaryRecurrencePDEC"
+    },
+    {
+      "gate": "BoundaryRecurrencePDECExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "若低余量签名高处复现，仍需 PDEC/ColumnCRT 排斥。",
+      "remaining": "AsymptoticSquareWindowTailDominanceOrLowMarginBoundaryRecurrencePDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只隔离边界复现结构，不关闭全局行/列命题。",
+      "remaining": "AsymptoticSquareWindowTailDominanceOrLowMarginBoundaryRecurrencePDEC"
+    }
+  ]
+}
