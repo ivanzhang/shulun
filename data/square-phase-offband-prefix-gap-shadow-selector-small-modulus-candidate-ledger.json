@@ -1,0 +1,441 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "label_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-label-lower-bound-ledger.json",
+    "record_count": 11,
+    "small_modulus_candidate_count": 7,
+    "structural_conflict_candidate_count": 7,
+    "overlap_pdec_candidate_count": 0,
+    "candidate_rows_count": 4,
+    "min_candidate_modulus_minus_width": -67,
+    "max_candidate_modulus": 165,
+    "global_small_modulus_lowwheel_conflict_proved": false,
+    "small_modulus_overlap_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "small_modulus_candidate_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 8,
+      "small_modulus_candidate_count": 0,
+      "structural_conflict_candidate_count": 0,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": []
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "phase_p_width": 96,
+      "small_modulus_candidate_count": 0,
+      "structural_conflict_candidate_count": 0,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": []
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "phase_p_width": 117,
+      "small_modulus_candidate_count": 2,
+      "structural_conflict_candidate_count": 2,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": [
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "cell_length": 3,
+          "phase_p_width": 117,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "distinct_labels": [
+            3,
+            5,
+            7
+          ],
+          "residue": 47,
+          "modulus": 105,
+          "modulus_minus_width": -12,
+          "window_values": [
+            677
+          ],
+          "gcd_modulus_15": 15,
+          "residue_mod_gcd15": 2,
+          "actual_p_mod_gcd15": 1,
+          "actual_p_mod_15": 1,
+          "window_value_mod15": [
+            2
+          ],
+          "structural_lowwheel_conflict": true,
+          "actual_residue_hit_inside_window": false,
+          "requires_overlap_pdec": false
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "cell_length": 3,
+          "phase_p_width": 117,
+          "labels": [
+            7,
+            3,
+            5
+          ],
+          "distinct_labels": [
+            3,
+            5,
+            7
+          ],
+          "residue": 52,
+          "modulus": 105,
+          "modulus_minus_width": -12,
+          "window_values": [
+            682
+          ],
+          "gcd_modulus_15": 15,
+          "residue_mod_gcd15": 7,
+          "actual_p_mod_gcd15": 1,
+          "actual_p_mod_15": 1,
+          "window_value_mod15": [
+            7
+          ],
+          "structural_lowwheel_conflict": true,
+          "actual_residue_hit_inside_window": false,
+          "requires_overlap_pdec": false
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 4,
+      "phase_p_width": 172,
+      "small_modulus_candidate_count": 2,
+      "structural_conflict_candidate_count": 2,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": [
+        {
+          "p": 683,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k0:649-655",
+          "cell_length": 4,
+          "phase_p_width": 172,
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "distinct_labels": [
+            3,
+            5,
+            7
+          ],
+          "residue": 37,
+          "modulus": 105,
+          "modulus_minus_width": -67,
+          "window_values": [
+            667,
+            772
+          ],
+          "gcd_modulus_15": 15,
+          "residue_mod_gcd15": 7,
+          "actual_p_mod_gcd15": 8,
+          "actual_p_mod_15": 8,
+          "window_value_mod15": [
+            7
+          ],
+          "structural_lowwheel_conflict": true,
+          "actual_residue_hit_inside_window": false,
+          "requires_overlap_pdec": false
+        },
+        {
+          "p": 683,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k0:649-655",
+          "cell_length": 4,
+          "phase_p_width": 172,
+          "labels": [
+            3,
+            11,
+            5,
+            3
+          ],
+          "distinct_labels": [
+            3,
+            5,
+            11
+          ],
+          "residue": 52,
+          "modulus": 165,
+          "modulus_minus_width": -7,
+          "window_values": [
+            712
+          ],
+          "gcd_modulus_15": 15,
+          "residue_mod_gcd15": 7,
+          "actual_p_mod_gcd15": 8,
+          "actual_p_mod_15": 8,
+          "window_value_mod15": [
+            7
+          ],
+          "structural_lowwheel_conflict": true,
+          "actual_residue_hit_inside_window": false,
+          "requires_overlap_pdec": false
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "cell_length": 5,
+      "phase_p_width": 100,
+      "small_modulus_candidate_count": 0,
+      "structural_conflict_candidate_count": 0,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": []
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "cell_length": 3,
+      "phase_p_width": 28,
+      "small_modulus_candidate_count": 0,
+      "structural_conflict_candidate_count": 0,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": []
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 8,
+      "small_modulus_candidate_count": 0,
+      "structural_conflict_candidate_count": 0,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": []
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 2,
+      "phase_p_width": 32,
+      "small_modulus_candidate_count": 1,
+      "structural_conflict_candidate_count": 1,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": [
+        {
+          "p": 313,
+          "side": "plus",
+          "parent_atom_key": "minus_only_noslot:k1:281-283",
+          "cell_length": 2,
+          "phase_p_width": 32,
+          "labels": [
+            7,
+            3
+          ],
+          "distinct_labels": [
+            3,
+            7
+          ],
+          "residue": 2,
+          "modulus": 21,
+          "modulus_minus_width": -11,
+          "window_values": [
+            296,
+            317
+          ],
+          "gcd_modulus_15": 3,
+          "residue_mod_gcd15": 2,
+          "actual_p_mod_gcd15": 1,
+          "actual_p_mod_15": 13,
+          "window_value_mod15": [
+            2,
+            11
+          ],
+          "structural_lowwheel_conflict": true,
+          "actual_residue_hit_inside_window": false,
+          "requires_overlap_pdec": false
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 4,
+      "phase_p_width": 72,
+      "small_modulus_candidate_count": 0,
+      "structural_conflict_candidate_count": 0,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": []
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "cell_length": 3,
+      "phase_p_width": 117,
+      "small_modulus_candidate_count": 2,
+      "structural_conflict_candidate_count": 2,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": [
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "cell_length": 3,
+          "phase_p_width": 117,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "distinct_labels": [
+            3,
+            5,
+            7
+          ],
+          "residue": 47,
+          "modulus": 105,
+          "modulus_minus_width": -12,
+          "window_values": [
+            677
+          ],
+          "gcd_modulus_15": 15,
+          "residue_mod_gcd15": 2,
+          "actual_p_mod_gcd15": 1,
+          "actual_p_mod_15": 1,
+          "window_value_mod15": [
+            2
+          ],
+          "structural_lowwheel_conflict": true,
+          "actual_residue_hit_inside_window": false,
+          "requires_overlap_pdec": false
+        },
+        {
+          "p": 691,
+          "side": "minus",
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "cell_length": 3,
+          "phase_p_width": 117,
+          "labels": [
+            7,
+            3,
+            5
+          ],
+          "distinct_labels": [
+            3,
+            5,
+            7
+          ],
+          "residue": 52,
+          "modulus": 105,
+          "modulus_minus_width": -12,
+          "window_values": [
+            682
+          ],
+          "gcd_modulus_15": 15,
+          "residue_mod_gcd15": 7,
+          "actual_p_mod_gcd15": 1,
+          "actual_p_mod_15": 1,
+          "window_value_mod15": [
+            7
+          ],
+          "structural_lowwheel_conflict": true,
+          "actual_residue_hit_inside_window": false,
+          "requires_overlap_pdec": false
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "cell_length": 3,
+      "phase_p_width": 28,
+      "small_modulus_candidate_count": 0,
+      "structural_conflict_candidate_count": 0,
+      "overlap_pdec_candidate_count": 0,
+      "small_modulus_candidates": []
+    }
+  ]
+}
