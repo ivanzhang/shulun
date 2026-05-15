@@ -1,0 +1,588 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-target-segment-ledger.json",
+    "support_ledger": "data/square-phase-offband-prefix-gap-shadow-support-collapse-ledger.json",
+    "record_count": 11,
+    "atom_piece_selector_failure_count": 0,
+    "min_selected_segment_candidate_count": 2,
+    "max_selected_segment_candidate_count": 5,
+    "min_selected_atom_piece_candidate_count": 2,
+    "max_selected_atom_piece_candidate_count": 5,
+    "min_b_length": 2,
+    "max_b_length": 5,
+    "max_parent_atom_k": 2,
+    "parent_band_histogram": {
+      "minus_only_noslot": 7,
+      "plus_only_noslot": 4
+    }
+  },
+  "normal_form_records": [
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "source_selected_segment_q_lo": 681,
+      "source_selected_segment_q_hi": 687,
+      "source_selected_segment_candidate_count": 4,
+      "source_selected_segment_target_prime_values": [
+        683
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4,
+          "target_prime_values": [
+            683
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "parent_atom_band": "minus_only_noslot",
+          "parent_atom_k": 1,
+          "parent_atom_q_lo": 681,
+          "parent_atom_q_hi": 687
+        }
+      ],
+      "selected_atom_piece_q_lo": 681,
+      "selected_atom_piece_q_hi": 687,
+      "selected_segment_candidate_count": 4,
+      "selected_atom_piece_candidate_count": 4,
+      "selected_atom_piece_target_prime_values": [
+        683
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 23,
+      "b_hi": 26,
+      "b_length": 4,
+      "depth_from_p": 52,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "parent_atom_q_lo": 681,
+      "parent_atom_q_hi": 687,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 23<=b<=26, q in [681,687], parent_atom=minus_only_noslot:k1:681-687"
+    },
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "source_selected_segment_q_lo": 493,
+      "source_selected_segment_q_hi": 501,
+      "source_selected_segment_candidate_count": 5,
+      "source_selected_segment_target_prime_values": [
+        499
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 493,
+          "q_hi": 499,
+          "candidate_count": 4,
+          "target_prime_values": [
+            499
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "minus_only_noslot:k0:493-499",
+          "parent_atom_band": "minus_only_noslot",
+          "parent_atom_k": 0,
+          "parent_atom_q_lo": 493,
+          "parent_atom_q_hi": 499
+        },
+        {
+          "q_lo": 501,
+          "q_hi": 501,
+          "candidate_count": 1,
+          "target_prime_values": [],
+          "target_prime_count": 0,
+          "actual_piece_void": true,
+          "parent_atom_key": "both_offband_middle:k0:501-501",
+          "parent_atom_band": "both_offband_middle",
+          "parent_atom_k": 0,
+          "parent_atom_q_lo": 501,
+          "parent_atom_q_hi": 501
+        }
+      ],
+      "selected_atom_piece_q_lo": 493,
+      "selected_atom_piece_q_hi": 499,
+      "selected_segment_candidate_count": 5,
+      "selected_atom_piece_candidate_count": 4,
+      "selected_atom_piece_target_prime_values": [
+        499
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 12,
+      "b_hi": 15,
+      "b_length": 4,
+      "depth_from_p": 30,
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "parent_atom_q_lo": 493,
+      "parent_atom_q_hi": 499,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 12<=b<=15, q in [493,499], parent_atom=minus_only_noslot:k0:493-499"
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "source_selected_segment_q_lo": 649,
+      "source_selected_segment_q_hi": 653,
+      "source_selected_segment_candidate_count": 3,
+      "source_selected_segment_target_prime_values": [
+        653
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3,
+          "target_prime_values": [
+            653
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "parent_atom_band": "plus_only_noslot",
+          "parent_atom_k": 1,
+          "parent_atom_q_lo": 649,
+          "parent_atom_q_hi": 653
+        }
+      ],
+      "selected_atom_piece_q_lo": 649,
+      "selected_atom_piece_q_hi": 653,
+      "selected_segment_candidate_count": 3,
+      "selected_atom_piece_candidate_count": 3,
+      "selected_atom_piece_target_prime_values": [
+        653
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 19,
+      "b_hi": 21,
+      "b_length": 3,
+      "depth_from_p": 42,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "parent_atom_q_lo": 649,
+      "parent_atom_q_hi": 653,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 19<=b<=21, q in [649,653], parent_atom=plus_only_noslot:k1:649-653"
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "source_selected_segment_q_lo": 649,
+      "source_selected_segment_q_hi": 657,
+      "source_selected_segment_candidate_count": 5,
+      "source_selected_segment_target_prime_values": [
+        653
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 649,
+          "q_hi": 655,
+          "candidate_count": 4,
+          "target_prime_values": [
+            653
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "minus_only_noslot:k0:649-655",
+          "parent_atom_band": "minus_only_noslot",
+          "parent_atom_k": 0,
+          "parent_atom_q_lo": 649,
+          "parent_atom_q_hi": 655
+        },
+        {
+          "q_lo": 657,
+          "q_hi": 657,
+          "candidate_count": 1,
+          "target_prime_values": [],
+          "target_prime_count": 0,
+          "actual_piece_void": true,
+          "parent_atom_key": "both_offband_middle:k0:657-657",
+          "parent_atom_band": "both_offband_middle",
+          "parent_atom_k": 0,
+          "parent_atom_q_lo": 657,
+          "parent_atom_q_hi": 657
+        }
+      ],
+      "selected_atom_piece_q_lo": 649,
+      "selected_atom_piece_q_hi": 655,
+      "selected_segment_candidate_count": 5,
+      "selected_atom_piece_candidate_count": 4,
+      "selected_atom_piece_target_prime_values": [
+        653
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 14,
+      "b_hi": 17,
+      "b_length": 4,
+      "depth_from_p": 34,
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "parent_atom_q_lo": 649,
+      "parent_atom_q_hi": 655,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 14<=b<=17, q in [649,655], parent_atom=minus_only_noslot:k0:649-655"
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "source_selected_segment_q_lo": 697,
+      "source_selected_segment_q_hi": 705,
+      "source_selected_segment_candidate_count": 5,
+      "source_selected_segment_target_prime_values": [
+        701
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 697,
+          "q_hi": 705,
+          "candidate_count": 5,
+          "target_prime_values": [
+            701
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "minus_only_noslot:k0:697-705",
+          "parent_atom_band": "minus_only_noslot",
+          "parent_atom_k": 0,
+          "parent_atom_q_lo": 697,
+          "parent_atom_q_hi": 705
+        }
+      ],
+      "selected_atom_piece_q_lo": 697,
+      "selected_atom_piece_q_hi": 705,
+      "selected_segment_candidate_count": 5,
+      "selected_atom_piece_candidate_count": 5,
+      "selected_atom_piece_target_prime_values": [
+        701
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 14,
+      "b_hi": 18,
+      "b_length": 5,
+      "depth_from_p": 36,
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "parent_atom_q_lo": 697,
+      "parent_atom_q_hi": 705,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 14<=b<=18, q in [697,705], parent_atom=minus_only_noslot:k0:697-705"
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "source_selected_segment_q_lo": 619,
+      "source_selected_segment_q_hi": 623,
+      "source_selected_segment_candidate_count": 3,
+      "source_selected_segment_target_prime_values": [
+        619
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3,
+          "target_prime_values": [
+            619
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "plus_only_noslot:k2:619-623",
+          "parent_atom_band": "plus_only_noslot",
+          "parent_atom_k": 2,
+          "parent_atom_q_lo": 619,
+          "parent_atom_q_hi": 623
+        }
+      ],
+      "selected_atom_piece_q_lo": 619,
+      "selected_atom_piece_q_hi": 623,
+      "selected_segment_candidate_count": 3,
+      "selected_atom_piece_candidate_count": 3,
+      "selected_atom_piece_target_prime_values": [
+        619
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 25,
+      "b_hi": 27,
+      "b_length": 3,
+      "depth_from_p": 54,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "parent_atom_q_lo": 619,
+      "parent_atom_q_hi": 623,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 25<=b<=27, q in [619,623], parent_atom=plus_only_noslot:k2:619-623"
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "source_selected_segment_q_lo": 681,
+      "source_selected_segment_q_hi": 687,
+      "source_selected_segment_candidate_count": 4,
+      "source_selected_segment_target_prime_values": [
+        683
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 681,
+          "q_hi": 687,
+          "candidate_count": 4,
+          "target_prime_values": [
+            683
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "minus_only_noslot:k1:681-687",
+          "parent_atom_band": "minus_only_noslot",
+          "parent_atom_k": 1,
+          "parent_atom_q_lo": 681,
+          "parent_atom_q_hi": 687
+        }
+      ],
+      "selected_atom_piece_q_lo": 681,
+      "selected_atom_piece_q_hi": 687,
+      "selected_segment_candidate_count": 4,
+      "selected_atom_piece_candidate_count": 4,
+      "selected_atom_piece_target_prime_values": [
+        683
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 23,
+      "b_hi": 26,
+      "b_length": 4,
+      "depth_from_p": 52,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "parent_atom_q_lo": 681,
+      "parent_atom_q_hi": 687,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 23<=b<=26, q in [681,687], parent_atom=minus_only_noslot:k1:681-687"
+    },
+    {
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "source_selected_segment_q_lo": 281,
+      "source_selected_segment_q_hi": 283,
+      "source_selected_segment_candidate_count": 2,
+      "source_selected_segment_target_prime_values": [
+        281,
+        283
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 281,
+          "q_hi": 283,
+          "candidate_count": 2,
+          "target_prime_values": [
+            281,
+            283
+          ],
+          "target_prime_count": 2,
+          "actual_piece_void": false,
+          "parent_atom_key": "minus_only_noslot:k1:281-283",
+          "parent_atom_band": "minus_only_noslot",
+          "parent_atom_k": 1,
+          "parent_atom_q_lo": 281,
+          "parent_atom_q_hi": 283
+        }
+      ],
+      "selected_atom_piece_q_lo": 281,
+      "selected_atom_piece_q_hi": 283,
+      "selected_segment_candidate_count": 2,
+      "selected_atom_piece_candidate_count": 2,
+      "selected_atom_piece_target_prime_values": [
+        281,
+        283
+      ],
+      "selected_atom_piece_target_prime_count": 2,
+      "b_lo": 15,
+      "b_hi": 16,
+      "b_length": 2,
+      "depth_from_p": 32,
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "parent_atom_q_lo": 281,
+      "parent_atom_q_hi": 283,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 15<=b<=16, q in [281,283], parent_atom=minus_only_noslot:k1:281-283"
+    },
+    {
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "source_selected_segment_q_lo": 1065,
+      "source_selected_segment_q_hi": 1071,
+      "source_selected_segment_candidate_count": 4,
+      "source_selected_segment_target_prime_values": [
+        1069
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 1065,
+          "q_hi": 1071,
+          "candidate_count": 4,
+          "target_prime_values": [
+            1069
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+          "parent_atom_band": "minus_only_noslot",
+          "parent_atom_k": 1,
+          "parent_atom_q_lo": 1065,
+          "parent_atom_q_hi": 1071
+        }
+      ],
+      "selected_atom_piece_q_lo": 1065,
+      "selected_atom_piece_q_hi": 1071,
+      "selected_segment_candidate_count": 4,
+      "selected_atom_piece_candidate_count": 4,
+      "selected_atom_piece_target_prime_values": [
+        1069
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 29,
+      "b_hi": 32,
+      "b_length": 4,
+      "depth_from_p": 64,
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "parent_atom_q_lo": 1065,
+      "parent_atom_q_hi": 1071,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 29<=b<=32, q in [1065,1071], parent_atom=minus_only_noslot:k1:1065-1071"
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "source_selected_segment_q_lo": 649,
+      "source_selected_segment_q_hi": 653,
+      "source_selected_segment_candidate_count": 3,
+      "source_selected_segment_target_prime_values": [
+        653
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 649,
+          "q_hi": 653,
+          "candidate_count": 3,
+          "target_prime_values": [
+            653
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "plus_only_noslot:k1:649-653",
+          "parent_atom_band": "plus_only_noslot",
+          "parent_atom_k": 1,
+          "parent_atom_q_lo": 649,
+          "parent_atom_q_hi": 653
+        }
+      ],
+      "selected_atom_piece_q_lo": 649,
+      "selected_atom_piece_q_hi": 653,
+      "selected_segment_candidate_count": 3,
+      "selected_atom_piece_candidate_count": 3,
+      "selected_atom_piece_target_prime_values": [
+        653
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 19,
+      "b_hi": 21,
+      "b_length": 3,
+      "depth_from_p": 42,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "parent_atom_q_lo": 649,
+      "parent_atom_q_hi": 653,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 19<=b<=21, q in [649,653], parent_atom=plus_only_noslot:k1:649-653"
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "source_selected_segment_q_lo": 619,
+      "source_selected_segment_q_hi": 623,
+      "source_selected_segment_candidate_count": 3,
+      "source_selected_segment_target_prime_values": [
+        619
+      ],
+      "atom_pieces_inside_segment": [
+        {
+          "q_lo": 619,
+          "q_hi": 623,
+          "candidate_count": 3,
+          "target_prime_values": [
+            619
+          ],
+          "target_prime_count": 1,
+          "actual_piece_void": false,
+          "parent_atom_key": "plus_only_noslot:k2:619-623",
+          "parent_atom_band": "plus_only_noslot",
+          "parent_atom_k": 2,
+          "parent_atom_q_lo": 619,
+          "parent_atom_q_hi": 623
+        }
+      ],
+      "selected_atom_piece_q_lo": 619,
+      "selected_atom_piece_q_hi": 623,
+      "selected_segment_candidate_count": 3,
+      "selected_atom_piece_candidate_count": 3,
+      "selected_atom_piece_target_prime_values": [
+        619
+      ],
+      "selected_atom_piece_target_prime_count": 1,
+      "b_lo": 25,
+      "b_hi": 27,
+      "b_length": 3,
+      "depth_from_p": 54,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "parent_atom_q_lo": 619,
+      "parent_atom_q_hi": 623,
+      "atom_piece_selector_closed": true,
+      "normal_form_statement": "q=P-2b, 25<=b<=27, q in [619,623], parent_atom=plus_only_noslot:k2:619-623"
+    }
+  ],
+  "atom_piece_selector_failures": []
+}
