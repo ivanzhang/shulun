@@ -1,0 +1,1865 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json",
+    "record_count": 11,
+    "actual_p_in_bad_set_count": 0,
+    "bad_prime_packet_count": 6,
+    "max_bad_p_value_count": 18,
+    "max_bad_p_density_in_phase_window": 0.25,
+    "max_bad_prime_value_count": 3,
+    "max_bad_p_cover_word_multiplicity": 6,
+    "global_actual_prime_avoidance_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "bad_p_set_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "b_lo": 23,
+      "b_hi": 26,
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "total_cover_words_enumerated": 1037,
+      "bad_p_values": [
+        730,
+        732
+      ],
+      "bad_p_value_count": 2,
+      "bad_p_density_in_phase_window": 0.25,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 2,
+      "bad_p_examples": [
+        {
+          "p_value": 730,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            11,
+            17,
+            3
+          ],
+          "residue": 169,
+          "modulus": 561
+        },
+        {
+          "p_value": 732,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            19,
+            11,
+            5
+          ],
+          "residue": 732,
+          "modulus": 7315
+        }
+      ],
+      "bad_prime_examples": [],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 12,
+      "b_hi": 15,
+      "selected_q_lo": 493,
+      "selected_q_hi": 499,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "phase_p_lo": 481,
+      "phase_p_hi": 576,
+      "phase_p_width": 96,
+      "total_cover_words_enumerated": 381,
+      "bad_p_values": [
+        499,
+        541,
+        563
+      ],
+      "bad_p_value_count": 3,
+      "bad_p_density_in_phase_window": 0.03125,
+      "bad_prime_values": [
+        499,
+        541,
+        563
+      ],
+      "bad_prime_value_count": 3,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 2,
+      "bad_p_examples": [
+        {
+          "p_value": 499,
+          "multiplicity": 2,
+          "labels": [
+            5,
+            11,
+            3,
+            7
+          ],
+          "residue": 499,
+          "modulus": 1155
+        },
+        {
+          "p_value": 541,
+          "multiplicity": 2,
+          "labels": [
+            11,
+            5,
+            3,
+            7
+          ],
+          "residue": 541,
+          "modulus": 1155
+        },
+        {
+          "p_value": 563,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 1365
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 499,
+          "multiplicity": 2,
+          "labels": [
+            5,
+            11,
+            3,
+            7
+          ],
+          "residue": 499,
+          "modulus": 1155
+        },
+        {
+          "p_value": 541,
+          "multiplicity": 2,
+          "labels": [
+            11,
+            5,
+            3,
+            7
+          ],
+          "residue": 541,
+          "modulus": 1155
+        },
+        {
+          "p_value": 563,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 1365
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "total_cover_words_enumerated": 196,
+      "bad_p_values": [
+        658,
+        663,
+        667,
+        677,
+        682,
+        686,
+        688,
+        705,
+        707,
+        709,
+        718,
+        722,
+        724,
+        727,
+        737,
+        742,
+        745,
+        755
+      ],
+      "bad_p_value_count": 18,
+      "bad_p_density_in_phase_window": 0.15384615384615385,
+      "bad_prime_values": [
+        677,
+        709,
+        727
+      ],
+      "bad_prime_value_count": 3,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 658,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            3,
+            11
+          ],
+          "residue": 163,
+          "modulus": 165
+        },
+        {
+          "p_value": 663,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            7,
+            23
+          ],
+          "residue": 663,
+          "modulus": 805
+        },
+        {
+          "p_value": 667,
+          "multiplicity": 3,
+          "labels": [
+            17,
+            3,
+            5
+          ],
+          "residue": 157,
+          "modulus": 255
+        },
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 682,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5
+          ],
+          "residue": 52,
+          "modulus": 105
+        },
+        {
+          "p_value": 686,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            17,
+            23
+          ],
+          "residue": 686,
+          "modulus": 1173
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 709,
+          "multiplicity": 1,
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "residue": 709,
+          "modulus": 759
+        },
+        {
+          "p_value": 727,
+          "multiplicity": 1,
+          "labels": [
+            13,
+            3,
+            5
+          ],
+          "residue": 142,
+          "modulus": 195
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 14,
+      "b_hi": 17,
+      "selected_q_lo": 649,
+      "selected_q_hi": 655,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "phase_p_lo": 613,
+      "phase_p_hi": 784,
+      "phase_p_width": 172,
+      "total_cover_words_enumerated": 1016,
+      "bad_p_values": [
+        613,
+        657,
+        667,
+        674,
+        676,
+        697,
+        710,
+        712,
+        727,
+        745,
+        772
+      ],
+      "bad_p_value_count": 11,
+      "bad_p_density_in_phase_window": 0.06395348837209303,
+      "bad_prime_values": [
+        613,
+        727
+      ],
+      "bad_prime_value_count": 2,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 6,
+      "bad_p_examples": [
+        {
+          "p_value": 613,
+          "multiplicity": 3,
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 151,
+          "modulus": 231
+        },
+        {
+          "p_value": 657,
+          "multiplicity": 2,
+          "labels": [
+            17,
+            11,
+            5,
+            7
+          ],
+          "residue": 657,
+          "modulus": 6545
+        },
+        {
+          "p_value": 667,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 37,
+          "modulus": 105
+        },
+        {
+          "p_value": 674,
+          "multiplicity": 4,
+          "labels": [
+            17,
+            7,
+            3,
+            5
+          ],
+          "residue": 674,
+          "modulus": 1785
+        },
+        {
+          "p_value": 676,
+          "multiplicity": 4,
+          "labels": [
+            3,
+            17,
+            7,
+            3
+          ],
+          "residue": 319,
+          "modulus": 357
+        },
+        {
+          "p_value": 697,
+          "multiplicity": 6,
+          "labels": [
+            3,
+            23,
+            5,
+            3
+          ],
+          "residue": 7,
+          "modulus": 345
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 613,
+          "multiplicity": 3,
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 151,
+          "modulus": 231
+        },
+        {
+          "p_value": 727,
+          "multiplicity": 3,
+          "labels": [
+            3,
+            17,
+            5,
+            3
+          ],
+          "residue": 217,
+          "modulus": 255
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "b_lo": 14,
+      "b_hi": 18,
+      "selected_q_lo": 697,
+      "selected_q_hi": 705,
+      "cell_length": 5,
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "phase_p_lo": 685,
+      "phase_p_hi": 784,
+      "phase_p_width": 100,
+      "total_cover_words_enumerated": 3564,
+      "bad_p_values": [
+        712,
+        772
+      ],
+      "bad_p_value_count": 2,
+      "bad_p_density_in_phase_window": 0.02,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 712,
+          "multiplicity": 4,
+          "labels": [
+            3,
+            11,
+            5,
+            3,
+            13
+          ],
+          "residue": 712,
+          "modulus": 2145
+        },
+        {
+          "p_value": 772,
+          "multiplicity": 1,
+          "labels": [
+            3,
+            7,
+            5,
+            3,
+            23
+          ],
+          "residue": 772,
+          "modulus": 2415
+        }
+      ],
+      "bad_prime_examples": [],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "b_lo": 25,
+      "b_hi": 27,
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "total_cover_words_enumerated": 227,
+      "bad_p_values": [
+        652,
+        662
+      ],
+      "bad_p_value_count": 2,
+      "bad_p_density_in_phase_window": 0.07142857142857142,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 652,
+          "multiplicity": 4,
+          "labels": [
+            7,
+            3,
+            13
+          ],
+          "residue": 106,
+          "modulus": 273
+        },
+        {
+          "p_value": 662,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            5,
+            19
+          ],
+          "residue": 92,
+          "modulus": 285
+        }
+      ],
+      "bad_prime_examples": [],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "b_lo": 23,
+      "b_hi": 26,
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "total_cover_words_enumerated": 1037,
+      "bad_p_values": [
+        730,
+        732
+      ],
+      "bad_p_value_count": 2,
+      "bad_p_density_in_phase_window": 0.25,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 2,
+      "bad_p_examples": [
+        {
+          "p_value": 730,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            11,
+            17,
+            3
+          ],
+          "residue": 169,
+          "modulus": 561
+        },
+        {
+          "p_value": 732,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            19,
+            11,
+            5
+          ],
+          "residue": 732,
+          "modulus": 7315
+        }
+      ],
+      "bad_prime_examples": [],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 15,
+      "b_hi": 16,
+      "selected_q_lo": 281,
+      "selected_q_hi": 283,
+      "cell_length": 2,
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "phase_p_lo": 289,
+      "phase_p_hi": 320,
+      "phase_p_width": 32,
+      "total_cover_words_enumerated": 20,
+      "bad_p_values": [
+        290,
+        296,
+        302,
+        305,
+        317,
+        319
+      ],
+      "bad_p_value_count": 6,
+      "bad_p_density_in_phase_window": 0.1875,
+      "bad_prime_values": [
+        317
+      ],
+      "bad_prime_value_count": 1,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 3,
+      "bad_p_examples": [
+        {
+          "p_value": 290,
+          "multiplicity": 1,
+          "labels": [
+            13,
+            3
+          ],
+          "residue": 17,
+          "modulus": 39
+        },
+        {
+          "p_value": 296,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21
+        },
+        {
+          "p_value": 302,
+          "multiplicity": 2,
+          "labels": [
+            17,
+            3
+          ],
+          "residue": 47,
+          "modulus": 51
+        },
+        {
+          "p_value": 305,
+          "multiplicity": 3,
+          "labels": [
+            11,
+            3
+          ],
+          "residue": 8,
+          "modulus": 33
+        },
+        {
+          "p_value": 317,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21
+        },
+        {
+          "p_value": 319,
+          "multiplicity": 1,
+          "labels": [
+            17,
+            7
+          ],
+          "residue": 81,
+          "modulus": 119
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 317,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 29,
+      "b_hi": 32,
+      "selected_q_lo": 1065,
+      "selected_q_hi": 1071,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "phase_p_lo": 1089,
+      "phase_p_hi": 1160,
+      "phase_p_width": 72,
+      "total_cover_words_enumerated": 3347,
+      "bad_p_values": [
+        1094,
+        1096,
+        1105,
+        1117,
+        1118,
+        1124,
+        1126,
+        1139,
+        1141,
+        1143
+      ],
+      "bad_p_value_count": 10,
+      "bad_p_density_in_phase_window": 0.1388888888888889,
+      "bad_prime_values": [
+        1117
+      ],
+      "bad_prime_value_count": 1,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 1094,
+          "multiplicity": 1,
+          "labels": [
+            7,
+            11,
+            3,
+            5
+          ],
+          "residue": 1094,
+          "modulus": 1155
+        },
+        {
+          "p_value": 1096,
+          "multiplicity": 1,
+          "labels": [
+            3,
+            7,
+            11,
+            3
+          ],
+          "residue": 172,
+          "modulus": 231
+        },
+        {
+          "p_value": 1105,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 181,
+          "modulus": 231
+        },
+        {
+          "p_value": 1117,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 67,
+          "modulus": 105
+        },
+        {
+          "p_value": 1118,
+          "multiplicity": 4,
+          "labels": [
+            5,
+            23,
+            3,
+            17
+          ],
+          "residue": 1118,
+          "modulus": 5865
+        },
+        {
+          "p_value": 1124,
+          "multiplicity": 2,
+          "labels": [
+            13,
+            7,
+            3,
+            5
+          ],
+          "residue": 1124,
+          "modulus": 1365
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 1117,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 67,
+          "modulus": 105
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "total_cover_words_enumerated": 196,
+      "bad_p_values": [
+        658,
+        663,
+        667,
+        677,
+        682,
+        686,
+        688,
+        705,
+        707,
+        709,
+        718,
+        722,
+        724,
+        727,
+        737,
+        742,
+        745,
+        755
+      ],
+      "bad_p_value_count": 18,
+      "bad_p_density_in_phase_window": 0.15384615384615385,
+      "bad_prime_values": [
+        677,
+        709,
+        727
+      ],
+      "bad_prime_value_count": 3,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 658,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            3,
+            11
+          ],
+          "residue": 163,
+          "modulus": 165
+        },
+        {
+          "p_value": 663,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            7,
+            23
+          ],
+          "residue": 663,
+          "modulus": 805
+        },
+        {
+          "p_value": 667,
+          "multiplicity": 3,
+          "labels": [
+            17,
+            3,
+            5
+          ],
+          "residue": 157,
+          "modulus": 255
+        },
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 682,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5
+          ],
+          "residue": 52,
+          "modulus": 105
+        },
+        {
+          "p_value": 686,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            17,
+            23
+          ],
+          "residue": 686,
+          "modulus": 1173
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 709,
+          "multiplicity": 1,
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "residue": 709,
+          "modulus": 759
+        },
+        {
+          "p_value": 727,
+          "multiplicity": 1,
+          "labels": [
+            13,
+            3,
+            5
+          ],
+          "residue": 142,
+          "modulus": 195
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "b_lo": 25,
+      "b_hi": 27,
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "total_cover_words_enumerated": 227,
+      "bad_p_values": [
+        652,
+        662
+      ],
+      "bad_p_value_count": 2,
+      "bad_p_density_in_phase_window": 0.07142857142857142,
+      "bad_prime_values": [],
+      "bad_prime_value_count": 0,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 652,
+          "multiplicity": 4,
+          "labels": [
+            7,
+            3,
+            13
+          ],
+          "residue": 106,
+          "modulus": 273
+        },
+        {
+          "p_value": 662,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            5,
+            19
+          ],
+          "residue": 92,
+          "modulus": 285
+        }
+      ],
+      "bad_prime_examples": [],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    }
+  ],
+  "actual_p_in_bad_set_records": [],
+  "bad_prime_packet_records": [
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 12,
+      "b_hi": 15,
+      "selected_q_lo": 493,
+      "selected_q_hi": 499,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "phase_p_lo": 481,
+      "phase_p_hi": 576,
+      "phase_p_width": 96,
+      "total_cover_words_enumerated": 381,
+      "bad_p_values": [
+        499,
+        541,
+        563
+      ],
+      "bad_p_value_count": 3,
+      "bad_p_density_in_phase_window": 0.03125,
+      "bad_prime_values": [
+        499,
+        541,
+        563
+      ],
+      "bad_prime_value_count": 3,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 2,
+      "bad_p_examples": [
+        {
+          "p_value": 499,
+          "multiplicity": 2,
+          "labels": [
+            5,
+            11,
+            3,
+            7
+          ],
+          "residue": 499,
+          "modulus": 1155
+        },
+        {
+          "p_value": 541,
+          "multiplicity": 2,
+          "labels": [
+            11,
+            5,
+            3,
+            7
+          ],
+          "residue": 541,
+          "modulus": 1155
+        },
+        {
+          "p_value": 563,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 1365
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 499,
+          "multiplicity": 2,
+          "labels": [
+            5,
+            11,
+            3,
+            7
+          ],
+          "residue": 499,
+          "modulus": 1155
+        },
+        {
+          "p_value": 541,
+          "multiplicity": 2,
+          "labels": [
+            11,
+            5,
+            3,
+            7
+          ],
+          "residue": 541,
+          "modulus": 1155
+        },
+        {
+          "p_value": 563,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 1365
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "total_cover_words_enumerated": 196,
+      "bad_p_values": [
+        658,
+        663,
+        667,
+        677,
+        682,
+        686,
+        688,
+        705,
+        707,
+        709,
+        718,
+        722,
+        724,
+        727,
+        737,
+        742,
+        745,
+        755
+      ],
+      "bad_p_value_count": 18,
+      "bad_p_density_in_phase_window": 0.15384615384615385,
+      "bad_prime_values": [
+        677,
+        709,
+        727
+      ],
+      "bad_prime_value_count": 3,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 658,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            3,
+            11
+          ],
+          "residue": 163,
+          "modulus": 165
+        },
+        {
+          "p_value": 663,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            7,
+            23
+          ],
+          "residue": 663,
+          "modulus": 805
+        },
+        {
+          "p_value": 667,
+          "multiplicity": 3,
+          "labels": [
+            17,
+            3,
+            5
+          ],
+          "residue": 157,
+          "modulus": 255
+        },
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 682,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5
+          ],
+          "residue": 52,
+          "modulus": 105
+        },
+        {
+          "p_value": 686,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            17,
+            23
+          ],
+          "residue": 686,
+          "modulus": 1173
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 709,
+          "multiplicity": 1,
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "residue": 709,
+          "modulus": 759
+        },
+        {
+          "p_value": 727,
+          "multiplicity": 1,
+          "labels": [
+            13,
+            3,
+            5
+          ],
+          "residue": 142,
+          "modulus": 195
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 14,
+      "b_hi": 17,
+      "selected_q_lo": 649,
+      "selected_q_hi": 655,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "phase_p_lo": 613,
+      "phase_p_hi": 784,
+      "phase_p_width": 172,
+      "total_cover_words_enumerated": 1016,
+      "bad_p_values": [
+        613,
+        657,
+        667,
+        674,
+        676,
+        697,
+        710,
+        712,
+        727,
+        745,
+        772
+      ],
+      "bad_p_value_count": 11,
+      "bad_p_density_in_phase_window": 0.06395348837209303,
+      "bad_prime_values": [
+        613,
+        727
+      ],
+      "bad_prime_value_count": 2,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 6,
+      "bad_p_examples": [
+        {
+          "p_value": 613,
+          "multiplicity": 3,
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 151,
+          "modulus": 231
+        },
+        {
+          "p_value": 657,
+          "multiplicity": 2,
+          "labels": [
+            17,
+            11,
+            5,
+            7
+          ],
+          "residue": 657,
+          "modulus": 6545
+        },
+        {
+          "p_value": 667,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 37,
+          "modulus": 105
+        },
+        {
+          "p_value": 674,
+          "multiplicity": 4,
+          "labels": [
+            17,
+            7,
+            3,
+            5
+          ],
+          "residue": 674,
+          "modulus": 1785
+        },
+        {
+          "p_value": 676,
+          "multiplicity": 4,
+          "labels": [
+            3,
+            17,
+            7,
+            3
+          ],
+          "residue": 319,
+          "modulus": 357
+        },
+        {
+          "p_value": 697,
+          "multiplicity": 6,
+          "labels": [
+            3,
+            23,
+            5,
+            3
+          ],
+          "residue": 7,
+          "modulus": 345
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 613,
+          "multiplicity": 3,
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 151,
+          "modulus": 231
+        },
+        {
+          "p_value": 727,
+          "multiplicity": 3,
+          "labels": [
+            3,
+            17,
+            5,
+            3
+          ],
+          "residue": 217,
+          "modulus": 255
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 15,
+      "b_hi": 16,
+      "selected_q_lo": 281,
+      "selected_q_hi": 283,
+      "cell_length": 2,
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "phase_p_lo": 289,
+      "phase_p_hi": 320,
+      "phase_p_width": 32,
+      "total_cover_words_enumerated": 20,
+      "bad_p_values": [
+        290,
+        296,
+        302,
+        305,
+        317,
+        319
+      ],
+      "bad_p_value_count": 6,
+      "bad_p_density_in_phase_window": 0.1875,
+      "bad_prime_values": [
+        317
+      ],
+      "bad_prime_value_count": 1,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 3,
+      "bad_p_examples": [
+        {
+          "p_value": 290,
+          "multiplicity": 1,
+          "labels": [
+            13,
+            3
+          ],
+          "residue": 17,
+          "modulus": 39
+        },
+        {
+          "p_value": 296,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21
+        },
+        {
+          "p_value": 302,
+          "multiplicity": 2,
+          "labels": [
+            17,
+            3
+          ],
+          "residue": 47,
+          "modulus": 51
+        },
+        {
+          "p_value": 305,
+          "multiplicity": 3,
+          "labels": [
+            11,
+            3
+          ],
+          "residue": 8,
+          "modulus": 33
+        },
+        {
+          "p_value": 317,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21
+        },
+        {
+          "p_value": 319,
+          "multiplicity": 1,
+          "labels": [
+            17,
+            7
+          ],
+          "residue": 81,
+          "modulus": 119
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 317,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 29,
+      "b_hi": 32,
+      "selected_q_lo": 1065,
+      "selected_q_hi": 1071,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "phase_p_lo": 1089,
+      "phase_p_hi": 1160,
+      "phase_p_width": 72,
+      "total_cover_words_enumerated": 3347,
+      "bad_p_values": [
+        1094,
+        1096,
+        1105,
+        1117,
+        1118,
+        1124,
+        1126,
+        1139,
+        1141,
+        1143
+      ],
+      "bad_p_value_count": 10,
+      "bad_p_density_in_phase_window": 0.1388888888888889,
+      "bad_prime_values": [
+        1117
+      ],
+      "bad_prime_value_count": 1,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 1094,
+          "multiplicity": 1,
+          "labels": [
+            7,
+            11,
+            3,
+            5
+          ],
+          "residue": 1094,
+          "modulus": 1155
+        },
+        {
+          "p_value": 1096,
+          "multiplicity": 1,
+          "labels": [
+            3,
+            7,
+            11,
+            3
+          ],
+          "residue": 172,
+          "modulus": 231
+        },
+        {
+          "p_value": 1105,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 181,
+          "modulus": 231
+        },
+        {
+          "p_value": 1117,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 67,
+          "modulus": 105
+        },
+        {
+          "p_value": 1118,
+          "multiplicity": 4,
+          "labels": [
+            5,
+            23,
+            3,
+            17
+          ],
+          "residue": 1118,
+          "modulus": 5865
+        },
+        {
+          "p_value": 1124,
+          "multiplicity": 2,
+          "labels": [
+            13,
+            7,
+            3,
+            5
+          ],
+          "residue": 1124,
+          "modulus": 1365
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 1117,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 67,
+          "modulus": 105
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "total_cover_words_enumerated": 196,
+      "bad_p_values": [
+        658,
+        663,
+        667,
+        677,
+        682,
+        686,
+        688,
+        705,
+        707,
+        709,
+        718,
+        722,
+        724,
+        727,
+        737,
+        742,
+        745,
+        755
+      ],
+      "bad_p_value_count": 18,
+      "bad_p_density_in_phase_window": 0.15384615384615385,
+      "bad_prime_values": [
+        677,
+        709,
+        727
+      ],
+      "bad_prime_value_count": 3,
+      "actual_p_in_bad_set": false,
+      "max_bad_p_cover_word_multiplicity": 4,
+      "bad_p_examples": [
+        {
+          "p_value": 658,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            3,
+            11
+          ],
+          "residue": 163,
+          "modulus": 165
+        },
+        {
+          "p_value": 663,
+          "multiplicity": 1,
+          "labels": [
+            5,
+            7,
+            23
+          ],
+          "residue": 663,
+          "modulus": 805
+        },
+        {
+          "p_value": 667,
+          "multiplicity": 3,
+          "labels": [
+            17,
+            3,
+            5
+          ],
+          "residue": 157,
+          "modulus": 255
+        },
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 682,
+          "multiplicity": 2,
+          "labels": [
+            7,
+            3,
+            5
+          ],
+          "residue": 52,
+          "modulus": 105
+        },
+        {
+          "p_value": 686,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            17,
+            23
+          ],
+          "residue": 686,
+          "modulus": 1173
+        }
+      ],
+      "bad_prime_examples": [
+        {
+          "p_value": 677,
+          "multiplicity": 2,
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105
+        },
+        {
+          "p_value": 709,
+          "multiplicity": 1,
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "residue": 709,
+          "modulus": 759
+        },
+        {
+          "p_value": 727,
+          "multiplicity": 1,
+          "labels": [
+            13,
+            3,
+            5
+          ],
+          "residue": 142,
+          "modulus": 195
+        }
+      ],
+      "bad_set_statement": "BadPSet is the union, inside the fixed phase P-window, of all CRT classes whose label word fully covers the selected b-cell."
+    }
+  ]
+}
