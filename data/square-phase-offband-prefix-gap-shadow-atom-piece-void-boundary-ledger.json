@@ -1,0 +1,407 @@
+{
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-segment-normal-form-ledger.json",
+    "record_count": 11,
+    "actual_selected_atom_piece_void_count": 0,
+    "min_candidate_count": 2,
+    "max_candidate_count": 5,
+    "min_b_length": 2,
+    "max_b_length": 5,
+    "max_parent_atom_k": 2,
+    "max_depth_from_p": 64,
+    "shape_family_count": 6,
+    "shape_family_histogram": {
+      "side=minus|band=plus_only_noslot|k=1|cand=3|b_len=3": 2,
+      "side=minus|band=plus_only_noslot|k=2|cand=3|b_len=3": 2,
+      "side=plus|band=minus_only_noslot|k=0|cand=4|b_len=4": 2,
+      "side=plus|band=minus_only_noslot|k=0|cand=5|b_len=5": 1,
+      "side=plus|band=minus_only_noslot|k=1|cand=2|b_len=2": 1,
+      "side=plus|band=minus_only_noslot|k=1|cand=4|b_len=4": 3
+    },
+    "naked_gap_counterexamples_all_valid": true
+  },
+  "boundary_records": [
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "q_lo": 681,
+      "q_hi": 687,
+      "candidate_count": 4,
+      "b_lo": 23,
+      "b_hi": 26,
+      "b_length": 4,
+      "depth_from_p": 52,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "actual_target_prime_values": [
+        683
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [681,687] with q=P-2b and 23<=b<=26 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "q_lo": 493,
+      "q_hi": 499,
+      "candidate_count": 4,
+      "b_lo": 12,
+      "b_hi": 15,
+      "b_length": 4,
+      "depth_from_p": 30,
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "actual_target_prime_values": [
+        499
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [493,499] with q=P-2b and 12<=b<=15 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "q_lo": 649,
+      "q_hi": 653,
+      "candidate_count": 3,
+      "b_lo": 19,
+      "b_hi": 21,
+      "b_length": 3,
+      "depth_from_p": 42,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "actual_target_prime_values": [
+        653
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [649,653] with q=P-2b and 19<=b<=21 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "q_lo": 649,
+      "q_hi": 655,
+      "candidate_count": 4,
+      "b_lo": 14,
+      "b_hi": 17,
+      "b_length": 4,
+      "depth_from_p": 34,
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "actual_target_prime_values": [
+        653
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [649,655] with q=P-2b and 14<=b<=17 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "q_lo": 697,
+      "q_hi": 705,
+      "candidate_count": 5,
+      "b_lo": 14,
+      "b_hi": 18,
+      "b_length": 5,
+      "depth_from_p": 36,
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "actual_target_prime_values": [
+        701
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [697,705] with q=P-2b and 14<=b<=18 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "q_lo": 619,
+      "q_hi": 623,
+      "candidate_count": 3,
+      "b_lo": 25,
+      "b_hi": 27,
+      "b_length": 3,
+      "depth_from_p": 54,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "actual_target_prime_values": [
+        619
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [619,623] with q=P-2b and 25<=b<=27 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "q_lo": 681,
+      "q_hi": 687,
+      "candidate_count": 4,
+      "b_lo": 23,
+      "b_hi": 26,
+      "b_length": 4,
+      "depth_from_p": 52,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "actual_target_prime_values": [
+        683
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [681,687] with q=P-2b and 23<=b<=26 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "q_lo": 281,
+      "q_hi": 283,
+      "candidate_count": 2,
+      "b_lo": 15,
+      "b_hi": 16,
+      "b_length": 2,
+      "depth_from_p": 32,
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "actual_target_prime_values": [
+        281,
+        283
+      ],
+      "actual_target_prime_count": 2,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [281,283] with q=P-2b and 15<=b<=16 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "q_lo": 1065,
+      "q_hi": 1071,
+      "candidate_count": 4,
+      "b_lo": 29,
+      "b_hi": 32,
+      "b_length": 4,
+      "depth_from_p": 64,
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "actual_target_prime_values": [
+        1069
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [1065,1071] with q=P-2b and 29<=b<=32 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "q_lo": 649,
+      "q_hi": 653,
+      "candidate_count": 3,
+      "b_lo": 19,
+      "b_hi": 21,
+      "b_length": 3,
+      "depth_from_p": 42,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "actual_target_prime_values": [
+        653
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [649,653] with q=P-2b and 19<=b<=21 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    },
+    {
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "q_lo": 619,
+      "q_hi": 623,
+      "candidate_count": 3,
+      "b_lo": 25,
+      "b_hi": 27,
+      "b_length": 3,
+      "depth_from_p": 54,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "actual_target_prime_values": [
+        619
+      ],
+      "actual_target_prime_count": 1,
+      "actual_atom_piece_void": false,
+      "void_packet_statement": "Under the full counterexample chain, every odd q in [619,623] with q=P-2b and 25<=b<=27 is forced composite.",
+      "conditional_constraints_needed": [
+        "target-union void inherited from the original off-band prefix failure",
+        "wheel-17 support collapse or its downstream gap-cell/target-segment form",
+        "fixed small-k atom phase q=P-2b with parent band and side preserved",
+        "column phase / square-anchor CRT compatibility of the same q-candidates"
+      ],
+      "valid_next_attack": "Exclude this atom-piece void only after the full counterexample-chain constraints are present; do not use a naked bounded prime-gap assertion."
+    }
+  ],
+  "actual_selected_atom_piece_void_records": [],
+  "naked_gap_counterexamples": [
+    {
+      "candidate_count": 2,
+      "q_lo": 119,
+      "q_hi": 121,
+      "odd_values": [
+        119,
+        121
+      ],
+      "all_composite": true,
+      "meaning": "This rules out a naked bounded-gap interpretation of the selected atom-piece supply claim."
+    },
+    {
+      "candidate_count": 3,
+      "q_lo": 119,
+      "q_hi": 123,
+      "odd_values": [
+        119,
+        121,
+        123
+      ],
+      "all_composite": true,
+      "meaning": "This rules out a naked bounded-gap interpretation of the selected atom-piece supply claim."
+    },
+    {
+      "candidate_count": 4,
+      "q_lo": 115,
+      "q_hi": 121,
+      "odd_values": [
+        115,
+        117,
+        119,
+        121
+      ],
+      "all_composite": true,
+      "meaning": "This rules out a naked bounded-gap interpretation of the selected atom-piece supply claim."
+    },
+    {
+      "candidate_count": 5,
+      "q_lo": 115,
+      "q_hi": 123,
+      "odd_values": [
+        115,
+        117,
+        119,
+        121,
+        123
+      ],
+      "all_composite": true,
+      "meaning": "This rules out a naked bounded-gap interpretation of the selected atom-piece supply claim."
+    }
+  ]
+}
