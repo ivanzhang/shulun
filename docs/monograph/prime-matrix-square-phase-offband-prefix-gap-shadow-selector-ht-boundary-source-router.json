@@ -1,0 +1,984 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_ht_boundary_source_router",
+  "status": "selector_prime_rho_ht_boundary_source_isolated_open_global",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_boundary_source_not_used_as_global_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "normal_form_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-pressure-inequality-normal-form-ledger.json",
+    "template_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-template-provenance-ledger.json",
+    "max_p": 5000,
+    "prime_rho_hit_count": 344,
+    "expected_prime_rho_hit_count": 344,
+    "matches_normal_form_total": true,
+    "global_ht_inequality_failure_count": 0,
+    "min_h_minus_2t": 0,
+    "max_h_minus_2t": 83,
+    "w_specific_bound_failure_count": 0,
+    "critical_slack_le_1_count": 7,
+    "boundary_slack_zero_count": 1,
+    "critical_p_values": [
+      157,
+      173,
+      1777
+    ],
+    "max_critical_p": 1777,
+    "critical_template_indices": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "critical_rho_classes": [
+      "mod15=7",
+      "mod3=2"
+    ],
+    "critical_all_below_2000_on_current_sweep": true,
+    "w2_stronger_nonnegative_failure_count": 0,
+    "w1_positive_bound_failure_count": 0,
+    "global_w_specific_ht_source_inequality_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "w_specific_records": [
+    {
+      "target_W": 1,
+      "hit_count": 92,
+      "required_h_minus_2t_lower_bound": 1,
+      "min_h_minus_2t": 1,
+      "max_h_minus_2t": 82,
+      "bound_failure_count": 0,
+      "bound_equality_count": 1,
+      "h_minus_2t_histogram_head": {
+        "1": 1,
+        "2": 4,
+        "3": 2,
+        "4": 2,
+        "5": 3,
+        "7": 1,
+        "8": 1,
+        "9": 1,
+        "11": 2,
+        "12": 2,
+        "15": 1,
+        "16": 3,
+        "17": 1,
+        "19": 3,
+        "21": 3,
+        "22": 1,
+        "23": 1,
+        "25": 4,
+        "26": 3,
+        "27": 4
+      },
+      "p_values_at_min": [
+        173
+      ]
+    },
+    {
+      "target_W": 2,
+      "hit_count": 252,
+      "required_h_minus_2t_lower_bound": -1,
+      "min_h_minus_2t": 0,
+      "max_h_minus_2t": 83,
+      "bound_failure_count": 0,
+      "bound_equality_count": 0,
+      "h_minus_2t_histogram_head": {
+        "0": 2,
+        "1": 2,
+        "2": 2,
+        "3": 3,
+        "4": 5,
+        "5": 2,
+        "6": 4,
+        "7": 9,
+        "8": 4,
+        "9": 4,
+        "10": 9,
+        "11": 4,
+        "12": 5,
+        "14": 9,
+        "15": 6,
+        "17": 4,
+        "18": 1,
+        "19": 2,
+        "20": 2,
+        "21": 3
+      },
+      "p_values_at_min": [
+        157
+      ]
+    }
+  ],
+  "critical_boundary_records": [
+    {
+      "template_index": 1,
+      "p": 157,
+      "side": "minus",
+      "rho": 7,
+      "gcd_modulus_15": 15,
+      "target_W": 2,
+      "replay_W": 1,
+      "H": 12,
+      "T": 6,
+      "h_minus_2t": 0,
+      "w_specific_required_h_minus_2t_lower_bound": -1,
+      "bound_excess": 1,
+      "signed_tail_deficit_2T_minus_H": 0,
+      "signed_deficit_threshold_2W_minus_3": 1,
+      "normal_form_slack": 1,
+      "pressure_gap_target_minus_replay": 1,
+      "square_window_prime_offsets": {
+        "count": 12,
+        "values": [
+          18,
+          26,
+          38,
+          56,
+          78,
+          98,
+          102,
+          116,
+          122,
+          132,
+          140,
+          150
+        ]
+      },
+      "tail_prime_values": {
+        "count": 6,
+        "values": [
+          127,
+          131,
+          137,
+          139,
+          149,
+          151
+        ]
+      },
+      "prefix_prime_load": 3,
+      "prefix_loaded_atom_count": 2,
+      "prefix_void_atom_count": 1,
+      "prefix_interval_atoms": [
+        {
+          "band": "plus_only_noslot",
+          "k": 0,
+          "b_lo": 1,
+          "b_hi": 5,
+          "b_length": 5,
+          "q_lo": 147,
+          "q_hi": 155,
+          "q_span": 9,
+          "prime_load": 2,
+          "q_values": [
+            151,
+            149
+          ]
+        },
+        {
+          "band": "both_offband_middle",
+          "k": 0,
+          "b_lo": 6,
+          "b_hi": 6,
+          "b_length": 1,
+          "q_lo": 145,
+          "q_hi": 145,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "plus_only_noslot",
+          "k": 1,
+          "b_lo": 9,
+          "b_hi": 9,
+          "b_length": 1,
+          "q_lo": 139,
+          "q_hi": 139,
+          "q_span": 1,
+          "prime_load": 1,
+          "q_values": [
+            139
+          ]
+        }
+      ],
+      "void_subset_templates": [
+        {
+          "void_atom_keys": [
+            "plus_only_noslot:k0:147-155",
+            "both_offband_middle:k0:145-145",
+            "plus_only_noslot:k1:139-139"
+          ],
+          "void_atom_count": 3,
+          "combined_candidate_count": 7,
+          "max_single_atom_candidate_count": 5,
+          "q_hull_lo": 139,
+          "q_hull_hi": 155,
+          "q_hull_span": 17
+        }
+      ]
+    },
+    {
+      "template_index": 2,
+      "p": 157,
+      "side": "plus",
+      "rho": 7,
+      "gcd_modulus_15": 15,
+      "target_W": 1,
+      "replay_W": 0,
+      "H": 14,
+      "T": 6,
+      "h_minus_2t": 2,
+      "w_specific_required_h_minus_2t_lower_bound": 1,
+      "bound_excess": 1,
+      "signed_tail_deficit_2T_minus_H": -2,
+      "signed_deficit_threshold_2W_minus_3": -1,
+      "normal_form_slack": 1,
+      "pressure_gap_target_minus_replay": 1,
+      "square_window_prime_offsets": {
+        "count": 14,
+        "values": [
+          10,
+          22,
+          28,
+          34,
+          42,
+          48,
+          60,
+          84,
+          100,
+          114,
+          118,
+          132,
+          144,
+          150
+        ]
+      },
+      "tail_prime_values": {
+        "count": 6,
+        "values": [
+          127,
+          131,
+          137,
+          139,
+          149,
+          151
+        ]
+      },
+      "prefix_prime_load": 1,
+      "prefix_loaded_atom_count": 1,
+      "prefix_void_atom_count": 2,
+      "prefix_interval_atoms": [
+        {
+          "band": "both_offband_middle",
+          "k": 0,
+          "b_lo": 6,
+          "b_hi": 6,
+          "b_length": 1,
+          "q_lo": 145,
+          "q_hi": 145,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "minus_only_noslot",
+          "k": 0,
+          "b_lo": 7,
+          "b_hi": 8,
+          "b_length": 2,
+          "q_lo": 141,
+          "q_hi": 143,
+          "q_span": 3,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "both_offband_middle",
+          "k": 1,
+          "b_lo": 10,
+          "b_hi": 10,
+          "b_length": 1,
+          "q_lo": 137,
+          "q_hi": 137,
+          "q_span": 1,
+          "prime_load": 1,
+          "q_values": [
+            137
+          ]
+        }
+      ],
+      "void_subset_templates": []
+    },
+    {
+      "template_index": 2,
+      "p": 1777,
+      "side": "plus",
+      "rho": 7,
+      "gcd_modulus_15": 15,
+      "target_W": 1,
+      "replay_W": 0,
+      "H": 104,
+      "T": 51,
+      "h_minus_2t": 2,
+      "w_specific_required_h_minus_2t_lower_bound": 1,
+      "bound_excess": 1,
+      "signed_tail_deficit_2T_minus_H": -2,
+      "signed_deficit_threshold_2W_minus_3": -1,
+      "normal_form_slack": 1,
+      "pressure_gap_target_minus_replay": 1,
+      "square_window_prime_offsets": {
+        "count": 104,
+        "head": [
+          22,
+          42,
+          54,
+          78,
+          82,
+          100,
+          108,
+          124,
+          130,
+          144,
+          150,
+          190,
+          198,
+          220,
+          232,
+          252
+        ],
+        "tail": [
+          1510,
+          1542,
+          1578,
+          1584,
+          1594,
+          1624,
+          1632,
+          1642,
+          1668,
+          1684,
+          1692,
+          1708,
+          1710,
+          1722,
+          1732,
+          1740
+        ]
+      },
+      "tail_prime_values": {
+        "count": 51,
+        "head": [
+          1423,
+          1427,
+          1429,
+          1433,
+          1439,
+          1447,
+          1451,
+          1453,
+          1459,
+          1471,
+          1481,
+          1483,
+          1487,
+          1489,
+          1493,
+          1499
+        ],
+        "tail": [
+          1637,
+          1657,
+          1663,
+          1667,
+          1669,
+          1693,
+          1697,
+          1699,
+          1709,
+          1721,
+          1723,
+          1733,
+          1741,
+          1747,
+          1753,
+          1759
+        ]
+      },
+      "prefix_prime_load": 3,
+      "prefix_loaded_atom_count": 1,
+      "prefix_void_atom_count": 2,
+      "prefix_interval_atoms": [
+        {
+          "band": "both_offband_middle",
+          "k": 0,
+          "b_lo": 21,
+          "b_hi": 21,
+          "b_length": 1,
+          "q_lo": 1735,
+          "q_hi": 1735,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "minus_only_noslot",
+          "k": 0,
+          "b_lo": 22,
+          "b_hi": 29,
+          "b_length": 8,
+          "q_lo": 1719,
+          "q_hi": 1733,
+          "q_span": 15,
+          "prime_load": 3,
+          "q_values": [
+            1733,
+            1723,
+            1721
+          ]
+        },
+        {
+          "band": "both_offband_middle",
+          "k": 1,
+          "b_lo": 36,
+          "b_hi": 36,
+          "b_length": 1,
+          "q_lo": 1705,
+          "q_hi": 1705,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        }
+      ],
+      "void_subset_templates": []
+    },
+    {
+      "template_index": 3,
+      "p": 157,
+      "side": "plus",
+      "rho": 7,
+      "gcd_modulus_15": 15,
+      "target_W": 1,
+      "replay_W": 0,
+      "H": 14,
+      "T": 6,
+      "h_minus_2t": 2,
+      "w_specific_required_h_minus_2t_lower_bound": 1,
+      "bound_excess": 1,
+      "signed_tail_deficit_2T_minus_H": -2,
+      "signed_deficit_threshold_2W_minus_3": -1,
+      "normal_form_slack": 1,
+      "pressure_gap_target_minus_replay": 1,
+      "square_window_prime_offsets": {
+        "count": 14,
+        "values": [
+          10,
+          22,
+          28,
+          34,
+          42,
+          48,
+          60,
+          84,
+          100,
+          114,
+          118,
+          132,
+          144,
+          150
+        ]
+      },
+      "tail_prime_values": {
+        "count": 6,
+        "values": [
+          127,
+          131,
+          137,
+          139,
+          149,
+          151
+        ]
+      },
+      "prefix_prime_load": 1,
+      "prefix_loaded_atom_count": 1,
+      "prefix_void_atom_count": 2,
+      "prefix_interval_atoms": [
+        {
+          "band": "both_offband_middle",
+          "k": 0,
+          "b_lo": 6,
+          "b_hi": 6,
+          "b_length": 1,
+          "q_lo": 145,
+          "q_hi": 145,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "minus_only_noslot",
+          "k": 0,
+          "b_lo": 7,
+          "b_hi": 8,
+          "b_length": 2,
+          "q_lo": 141,
+          "q_hi": 143,
+          "q_span": 3,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "both_offband_middle",
+          "k": 1,
+          "b_lo": 10,
+          "b_hi": 10,
+          "b_length": 1,
+          "q_lo": 137,
+          "q_hi": 137,
+          "q_span": 1,
+          "prime_load": 1,
+          "q_values": [
+            137
+          ]
+        }
+      ],
+      "void_subset_templates": []
+    },
+    {
+      "template_index": 3,
+      "p": 1777,
+      "side": "plus",
+      "rho": 7,
+      "gcd_modulus_15": 15,
+      "target_W": 1,
+      "replay_W": 0,
+      "H": 104,
+      "T": 51,
+      "h_minus_2t": 2,
+      "w_specific_required_h_minus_2t_lower_bound": 1,
+      "bound_excess": 1,
+      "signed_tail_deficit_2T_minus_H": -2,
+      "signed_deficit_threshold_2W_minus_3": -1,
+      "normal_form_slack": 1,
+      "pressure_gap_target_minus_replay": 1,
+      "square_window_prime_offsets": {
+        "count": 104,
+        "head": [
+          22,
+          42,
+          54,
+          78,
+          82,
+          100,
+          108,
+          124,
+          130,
+          144,
+          150,
+          190,
+          198,
+          220,
+          232,
+          252
+        ],
+        "tail": [
+          1510,
+          1542,
+          1578,
+          1584,
+          1594,
+          1624,
+          1632,
+          1642,
+          1668,
+          1684,
+          1692,
+          1708,
+          1710,
+          1722,
+          1732,
+          1740
+        ]
+      },
+      "tail_prime_values": {
+        "count": 51,
+        "head": [
+          1423,
+          1427,
+          1429,
+          1433,
+          1439,
+          1447,
+          1451,
+          1453,
+          1459,
+          1471,
+          1481,
+          1483,
+          1487,
+          1489,
+          1493,
+          1499
+        ],
+        "tail": [
+          1637,
+          1657,
+          1663,
+          1667,
+          1669,
+          1693,
+          1697,
+          1699,
+          1709,
+          1721,
+          1723,
+          1733,
+          1741,
+          1747,
+          1753,
+          1759
+        ]
+      },
+      "prefix_prime_load": 3,
+      "prefix_loaded_atom_count": 1,
+      "prefix_void_atom_count": 2,
+      "prefix_interval_atoms": [
+        {
+          "band": "both_offband_middle",
+          "k": 0,
+          "b_lo": 21,
+          "b_hi": 21,
+          "b_length": 1,
+          "q_lo": 1735,
+          "q_hi": 1735,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "minus_only_noslot",
+          "k": 0,
+          "b_lo": 22,
+          "b_hi": 29,
+          "b_length": 8,
+          "q_lo": 1719,
+          "q_hi": 1733,
+          "q_span": 15,
+          "prime_load": 3,
+          "q_values": [
+            1733,
+            1723,
+            1721
+          ]
+        },
+        {
+          "band": "both_offband_middle",
+          "k": 1,
+          "b_lo": 36,
+          "b_hi": 36,
+          "b_length": 1,
+          "q_lo": 1705,
+          "q_hi": 1705,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        }
+      ],
+      "void_subset_templates": []
+    },
+    {
+      "template_index": 4,
+      "p": 173,
+      "side": "plus",
+      "rho": 2,
+      "gcd_modulus_15": 3,
+      "target_W": 1,
+      "replay_W": 0,
+      "H": 13,
+      "T": 6,
+      "h_minus_2t": 1,
+      "w_specific_required_h_minus_2t_lower_bound": 1,
+      "bound_excess": 0,
+      "signed_tail_deficit_2T_minus_H": -1,
+      "signed_deficit_threshold_2W_minus_3": -1,
+      "normal_form_slack": 0,
+      "pressure_gap_target_minus_replay": 1,
+      "square_window_prime_offsets": {
+        "count": 13,
+        "values": [
+          18,
+          30,
+          54,
+          60,
+          82,
+          84,
+          100,
+          118,
+          130,
+          142,
+          160,
+          162,
+          168
+        ]
+      },
+      "tail_prime_values": {
+        "count": 6,
+        "values": [
+          139,
+          149,
+          151,
+          157,
+          163,
+          167
+        ]
+      },
+      "prefix_prime_load": 3,
+      "prefix_loaded_atom_count": 2,
+      "prefix_void_atom_count": 1,
+      "prefix_interval_atoms": [
+        {
+          "band": "minus_only_noslot",
+          "k": 0,
+          "b_lo": 7,
+          "b_hi": 8,
+          "b_length": 2,
+          "q_lo": 157,
+          "q_hi": 159,
+          "q_span": 3,
+          "prime_load": 1,
+          "q_values": [
+            157
+          ]
+        },
+        {
+          "band": "minus_only_noslot",
+          "k": 1,
+          "b_lo": 11,
+          "b_hi": 12,
+          "b_length": 2,
+          "q_lo": 149,
+          "q_hi": 151,
+          "q_span": 3,
+          "prime_load": 2,
+          "q_values": [
+            151,
+            149
+          ]
+        },
+        {
+          "band": "minus_only_noslot",
+          "k": 2,
+          "b_lo": 14,
+          "b_hi": 14,
+          "b_length": 1,
+          "q_lo": 145,
+          "q_hi": 145,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        }
+      ],
+      "void_subset_templates": []
+    },
+    {
+      "template_index": 6,
+      "p": 157,
+      "side": "minus",
+      "rho": 7,
+      "gcd_modulus_15": 15,
+      "target_W": 2,
+      "replay_W": 1,
+      "H": 12,
+      "T": 6,
+      "h_minus_2t": 0,
+      "w_specific_required_h_minus_2t_lower_bound": -1,
+      "bound_excess": 1,
+      "signed_tail_deficit_2T_minus_H": 0,
+      "signed_deficit_threshold_2W_minus_3": 1,
+      "normal_form_slack": 1,
+      "pressure_gap_target_minus_replay": 1,
+      "square_window_prime_offsets": {
+        "count": 12,
+        "values": [
+          18,
+          26,
+          38,
+          56,
+          78,
+          98,
+          102,
+          116,
+          122,
+          132,
+          140,
+          150
+        ]
+      },
+      "tail_prime_values": {
+        "count": 6,
+        "values": [
+          127,
+          131,
+          137,
+          139,
+          149,
+          151
+        ]
+      },
+      "prefix_prime_load": 3,
+      "prefix_loaded_atom_count": 2,
+      "prefix_void_atom_count": 1,
+      "prefix_interval_atoms": [
+        {
+          "band": "plus_only_noslot",
+          "k": 0,
+          "b_lo": 1,
+          "b_hi": 5,
+          "b_length": 5,
+          "q_lo": 147,
+          "q_hi": 155,
+          "q_span": 9,
+          "prime_load": 2,
+          "q_values": [
+            151,
+            149
+          ]
+        },
+        {
+          "band": "both_offband_middle",
+          "k": 0,
+          "b_lo": 6,
+          "b_hi": 6,
+          "b_length": 1,
+          "q_lo": 145,
+          "q_hi": 145,
+          "q_span": 1,
+          "prime_load": 0,
+          "q_values": []
+        },
+        {
+          "band": "plus_only_noslot",
+          "k": 1,
+          "b_lo": 9,
+          "b_hi": 9,
+          "b_length": 1,
+          "q_lo": 139,
+          "q_hi": 139,
+          "q_span": 1,
+          "prime_load": 1,
+          "q_values": [
+            139
+          ]
+        }
+      ],
+      "void_subset_templates": [
+        {
+          "void_atom_keys": [
+            "plus_only_noslot:k0:147-155",
+            "both_offband_middle:k0:145-145",
+            "plus_only_noslot:k1:139-139"
+          ],
+          "void_atom_count": 3,
+          "combined_candidate_count": 7,
+          "max_single_atom_candidate_count": 5,
+          "q_hull_lo": 139,
+          "q_hull_hi": 155,
+          "q_hull_span": 17
+        }
+      ]
+    }
+  ],
+  "global_w_specific_ht_source_inequality_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "PrimeRhoHitHTInequalityLowerBoundOrFullShapeOverlapPDEC",
+  "hardpoint_after_router": "WSpecificHTSourceInequalityOrBoundaryRecurrencePDEC",
+  "next_direct_attack_target": "WSpecificHTSourceInequalityOrBoundaryRecurrencePDEC",
+  "theorem_rows": [
+    {
+      "name": "w_specific_ht_integer_bounds",
+      "status": "closed",
+      "statement": "The normal form is split into W=1: H-2T>=1 and W=2: H-2T>=-1."
+    },
+    {
+      "name": "current_w_specific_bounds_hold",
+      "status": "closed_on_current_sweep",
+      "statement": "Every current prime rho hit satisfies its W-specific H/T bound."
+    },
+    {
+      "name": "critical_boundary_source_isolated",
+      "status": "closed_on_current_sweep",
+      "statement": "All slack<=1 rows are explicitly expanded to square-window prime offsets, tail primes, and prefix atoms."
+    },
+    {
+      "name": "global_w_specific_ht_source_inequality",
+      "status": "open",
+      "statement": "A global proof must derive the W-specific H/T source inequality, or route recurrent boundary failure to PDEC."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_ht_boundary_source_router.py": "2bceab09fed0b827d59f89c9773ff04445231ad8a632d28c345858d49382b9c3",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_pressure_inequality_normal_form_router.py": "f2874e8671ae937ef5f7e162e1dbc50d88f6c1eeee7be431531e86d47201fe90",
+    "data/square-phase-offband-prefix-gap-shadow-selector-pressure-inequality-normal-form-ledger.json": "ee751ab5d4a528200b4e7328cb72f02be31e6bc5895d8e0bf85bbb302978eb2a",
+    "data/square-phase-offband-prefix-gap-shadow-selector-ht-boundary-source-ledger.json": "289702f6150d001371716152f404434422d303fd31397394119cdcad90d596d3",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-ht-boundary-source-router.md": "59cde1d5fbcd3811e758aaa07e4004fae5a81ce18aa7fc61eb83c3ff304afe46"
+  },
+  "plain_conclusion": "本步把 prime rho hit 的 H/T 硬点拆成 W 专属整数下界：W=1 需要 `H-2T>=1`，W=2 需要 `H-2T>=-1`。当前 344 个命中没有 W 专属下界失败；slack<=1 的临界行只有 7 个，slack=0 的真正边界只有 1 个。",
+  "decision_rows": [
+    {
+      "gate": "WSpecificIntegerNormalFormClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "`2T-H<=2W-3` 已拆成 W=1 与 W=2 的整数下界。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "CurrentWSpecificBoundsHold",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前全部 prime rho hit 满足 W 专属 H/T 下界。",
+      "remaining": "closed on current finite sweep"
+    },
+    {
+      "gate": "CriticalBoundaryRowsIsolated",
+      "closed": true,
+      "proved": true,
+      "meaning": "slack<=1 的临界对象已全部展开为具体窗口与 atom 来源。",
+      "remaining": "closed on current finite sweep"
+    },
+    {
+      "gate": "GlobalWSpecificHTSourceInequalityProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需全局证明 W 专属 H/T 来源不等式，或把边界复现登记为 PDEC。",
+      "remaining": "WSpecificHTSourceInequalityOrBoundaryRecurrencePDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只隔离 H/T 边界来源，不关闭全局行/列命题。",
+      "remaining": "WSpecificHTSourceInequalityOrBoundaryRecurrencePDEC"
+    }
+  ]
+}
