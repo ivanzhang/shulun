@@ -1,0 +1,65 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_quotient_lock_pdec_registration_router",
+  "status": "z61_unique_quotient_lock_pdec_registered_not_excluded",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_core_quotient_lock_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "quotient_lock_pdec_registration_closed": true,
+  "quotient_lock_pdec_record": {
+    "formal_unit_key": "z61|bucket=unbalanced<=8|omega=4|shell=(8D,16D]|core=4807|factors=11,19,23|q4=37|q2=71",
+    "core": 4807,
+    "modulus": 57684,
+    "core_factorization": [
+      11,
+      19,
+      23
+    ],
+    "q4": 37,
+    "q2": 71,
+    "q4_lock": {
+      "equation": "a*c+6=7*(2*b-1)",
+      "left_value": 259,
+      "right_value": 259,
+      "quotient": 7
+    },
+    "q2_lock": {
+      "equation": "a*b+4=3*(3*c+2)",
+      "left_value": 213,
+      "right_value": 213,
+      "quotient": 3
+    },
+    "elimination_formula": "b=(2*a-117)/(a^2-126)",
+    "m_residue_sources": {
+      "mod_q4": 1,
+      "mod_q2": 32,
+      "expected_mod_q4": 1,
+      "expected_mod_q2": 32
+    },
+    "fixed_core_uniqueness_witness": [
+      {
+        "a": 11,
+        "b": 19,
+        "c": 23,
+        "q4": 37,
+        "q2": 71
+      }
+    ]
+  },
+  "fixed_core_candidate_count": 1,
+  "fixed_core_candidate_unique": true,
+  "fixed_core_m_residue_sources_closed": true,
+  "quotient_lock_pdec_excluded": false,
+  "fixed_core_check_completed": false,
+  "global_template_bound_proved": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_quotient_lock_pdec_registration_router.py": "d7691e7d40a6c150323a74be1a6fca871b80307e5e61d57f7584fc894f230192",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-core-quotient-lock-router.json": "abbde832ff4cea92c7e3cbec2f0ce7436b8e8d7d51670c8ab220c6eddb92bce5"
+  },
+  "next_direct_attack_target": "QuotientLockPDECExclusionByFixedCoreCheckOrGlobalTemplateBound",
+  "plain_conclusion": "唯一精确商锁已登记为固定核心 QuotientLock-PDEC：同模板失败不再有参数自由度，只能是 `core=4807=11*19*23`、`q4=37`、`q2=71`、`M=57684` 这一对象。这完成失败对象登记，但尚未排斥该固定核心。"
+}
