@@ -1,0 +1,90 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_offset55_halfmod_flip_router",
+  "status": "z61_offset55_collision_reduced_to_half_modulus_flip_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_nearest_margin_collision_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "modulus": 57684,
+  "target_modulus": 2627,
+  "selected_peel_sign_word": "++---",
+  "selected_original_sign_word": "--++-",
+  "alternative_peel_sign_word": "+++--",
+  "peel_coefficients": [
+    382536,
+    36708,
+    14421,
+    19228,
+    12540
+  ],
+  "selected_sum": 373055,
+  "selected_sum_mod": 21,
+  "alternative_sum": 401897,
+  "alternative_sum_mod": 2593,
+  "reconstructed_nearest_atoms": [
+    {
+      "step": 1,
+      "prefix_before_step": "",
+      "branch_sign": "+",
+      "candidate_sign_word": "++--",
+      "full_peel_sign_word": "+++--",
+      "full_sum": 401897,
+      "full_sum_mod": 2593,
+      "atom_candidate_sum_mod": 972,
+      "atom_target": 1027,
+      "atom_offset": -55
+    },
+    {
+      "step": 2,
+      "prefix_before_step": "+",
+      "branch_sign": "+",
+      "candidate_sign_word": "+--",
+      "full_peel_sign_word": "+++--",
+      "full_sum": 401897,
+      "full_sum_mod": 2593,
+      "atom_candidate_sum_mod": 1042,
+      "atom_target": 1097,
+      "atom_offset": -55
+    },
+    {
+      "step": 3,
+      "prefix_before_step": "++",
+      "branch_sign": "+",
+      "candidate_sign_word": "--",
+      "full_peel_sign_word": "+++--",
+      "full_sum": 401897,
+      "full_sum_mod": 2593,
+      "atom_candidate_sum_mod": 2383,
+      "atom_target": 2438,
+      "atom_offset": -55
+    }
+  ],
+  "all_nearest_atoms_same_alternative_word": true,
+  "differing_positions": [
+    3
+  ],
+  "single_flip_position": 3,
+  "single_flip_coefficient": 14421,
+  "flip_delta": 28842,
+  "expected_half_modulus": 28842,
+  "flip_delta_equals_half_modulus": true,
+  "target_modulus_coprime_to_half_modulus": true,
+  "separation_mod_target": 2572,
+  "signed_separation_mod_target": -55,
+  "separation_circular_margin": 55,
+  "offset55_halfmod_flip_closed_for_formal_unit": true,
+  "half_modulus_flip_separation_global_bound_proved": false,
+  "half_flip_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_offset55_halfmod_flip_router.py": "f1f4b29e7ec218b5045a6f3907bdc1d28f80b441354bfcf521e1673c9be22171",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-nearest-margin-collision-router.json": "3921407feb8f169db2f169b990378889f5302328e66e1d3f4cd9e735bff2ceec",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-branch-decision-ledger-router.json": "727ffcb802fd6a005bb546bd7708d1fafafe332f96a703cfcfb65753714d8d28",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-signed-sum-residue-gate-router.json": "000bb6e26dec4b78c4215118876df470f40659f120db560c9bee5cf6a80fd0c7"
+  },
+  "next_direct_attack_target": "HalfModulusFlipSeparationGlobalBoundOrHalfFlipPDEC",
+  "plain_conclusion": "最近 offset-55 碰撞族可继续压缩：三条最近原子其实是同一完整替代路径 `+++--` 在不同剥离深度的投影。它与选中路径 `++---` 只差第三个符号，即翻转系数 `14421=M/4`；两条完整 signed-sum 的差为 `2*14421=M/2=28842`。模 `2627=37*71` 下 `M/2≡-55`，所以 offset-55 的来源是 2-adic half-modulus flip，不是独立随机碰撞。全局剩余变成 half-modulus flip 分离下界，或 HalfFlip-PDEC。"
+}
