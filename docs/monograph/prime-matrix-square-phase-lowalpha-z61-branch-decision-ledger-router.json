@@ -1,0 +1,558 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_branch_decision_ledger_router",
+  "status": "z61_terminal_sign_forcing_reduced_to_branch_decision_ledger_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_terminal_sign_forcing_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "branch_decision_group_count": 1,
+  "peel_coefficients": [
+    382536,
+    36708,
+    14421,
+    19228,
+    12540
+  ],
+  "selected_peel_sign_word": "++---",
+  "selected_original_sign_word": "--++-",
+  "decision_rows": [
+    {
+      "step": 1,
+      "prefix_after_step": "+",
+      "coefficient": 382536,
+      "selected_sign": "+",
+      "selected_status": "survives",
+      "selected_hit_count": 1,
+      "rejected_statuses": [
+        "interval_empty"
+      ],
+      "branches": [
+        {
+          "coefficient": 382536,
+          "sign": "+",
+          "rest_coefficients": [
+            36708,
+            14421,
+            19228,
+            12540
+          ],
+          "rest_abs_sum": 82897,
+          "rest_interval_start": -36432,
+          "rest_interval_stop": 21252,
+          "rest_targets_mod": [
+            325,
+            1027,
+            1879,
+            2100
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 7,
+          "hit_count": 1,
+          "status": "survives",
+          "interval_rows": [
+            {
+              "sign_word": "++--",
+              "signed_sum": 19361,
+              "sum_mod": 972,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "+--+",
+              "signed_sum": 15599,
+              "sum_mod": 2464,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "+---",
+              "signed_sum": -9481,
+              "sum_mod": 1027,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            },
+            {
+              "sign_word": "-+++",
+              "signed_sum": 9481,
+              "sum_mod": 1600,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-++-",
+              "signed_sum": -15599,
+              "sum_mod": 163,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-+-+",
+              "signed_sum": -28975,
+              "sum_mod": 2549,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "--++",
+              "signed_sum": -19361,
+              "sum_mod": 1655,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            }
+          ],
+          "hits": [
+            {
+              "sign_word": "+---",
+              "signed_sum": -9481,
+              "sum_mod": 1027,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ]
+        },
+        {
+          "coefficient": 382536,
+          "sign": "-",
+          "rest_coefficients": [
+            36708,
+            14421,
+            19228,
+            12540
+          ],
+          "rest_abs_sum": 82897,
+          "rest_interval_start": 728640,
+          "rest_interval_stop": 786324,
+          "rest_targets_mod": [
+            88,
+            940,
+            1642,
+            2494
+          ],
+          "interval_gap": 645743,
+          "interval_candidate_count": 0,
+          "hit_count": 0,
+          "status": "interval_empty",
+          "interval_rows": [],
+          "hits": []
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "prefix_after_step": "++",
+      "coefficient": 36708,
+      "selected_sign": "+",
+      "selected_status": "survives",
+      "selected_hit_count": 1,
+      "rejected_statuses": [
+        "residue_empty"
+      ],
+      "branches": [
+        {
+          "coefficient": 36708,
+          "sign": "+",
+          "rest_coefficients": [
+            14421,
+            19228,
+            12540
+          ],
+          "rest_abs_sum": 46189,
+          "rest_interval_start": -73140,
+          "rest_interval_stop": -15456,
+          "rest_targets_mod": [
+            395,
+            1097,
+            1949,
+            2170
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 3,
+          "hit_count": 1,
+          "status": "survives",
+          "interval_rows": [
+            {
+              "sign_word": "+--",
+              "signed_sum": -17347,
+              "sum_mod": 1042,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "--+",
+              "signed_sum": -21109,
+              "sum_mod": 2534,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "---",
+              "signed_sum": -46189,
+              "sum_mod": 1097,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ],
+          "hits": [
+            {
+              "sign_word": "---",
+              "signed_sum": -46189,
+              "sum_mod": 1097,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ]
+        },
+        {
+          "coefficient": 36708,
+          "sign": "-",
+          "rest_coefficients": [
+            14421,
+            19228,
+            12540
+          ],
+          "rest_abs_sum": 46189,
+          "rest_interval_start": 276,
+          "rest_interval_stop": 57960,
+          "rest_targets_mod": [
+            255,
+            957,
+            1809,
+            2030
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 4,
+          "hit_count": 0,
+          "status": "residue_empty",
+          "interval_rows": [
+            {
+              "sign_word": "+++",
+              "signed_sum": 46189,
+              "sum_mod": 1530,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "++-",
+              "signed_sum": 21109,
+              "sum_mod": 93,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "+-+",
+              "signed_sum": 7733,
+              "sum_mod": 2479,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-++",
+              "signed_sum": 17347,
+              "sum_mod": 1585,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            }
+          ],
+          "hits": []
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "prefix_after_step": "++-",
+      "coefficient": 14421,
+      "selected_sign": "-",
+      "selected_status": "survives",
+      "selected_hit_count": 1,
+      "rejected_statuses": [
+        "residue_empty"
+      ],
+      "branches": [
+        {
+          "coefficient": 14421,
+          "sign": "+",
+          "rest_coefficients": [
+            19228,
+            12540
+          ],
+          "rest_abs_sum": 31768,
+          "rest_interval_start": -87561,
+          "rest_interval_stop": -29877,
+          "rest_targets_mod": [
+            663,
+            884,
+            1736,
+            2438
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 1,
+          "hit_count": 0,
+          "status": "residue_empty",
+          "interval_rows": [
+            {
+              "sign_word": "--",
+              "signed_sum": -31768,
+              "sum_mod": 2383,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            }
+          ],
+          "hits": []
+        },
+        {
+          "coefficient": 14421,
+          "sign": "-",
+          "rest_coefficients": [
+            19228,
+            12540
+          ],
+          "rest_abs_sum": 31768,
+          "rest_interval_start": -58719,
+          "rest_interval_stop": -1035,
+          "rest_targets_mod": [
+            608,
+            829,
+            1681,
+            2383
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 2,
+          "hit_count": 1,
+          "status": "survives",
+          "interval_rows": [
+            {
+              "sign_word": "-+",
+              "signed_sum": -6688,
+              "sum_mod": 1193,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "--",
+              "signed_sum": -31768,
+              "sum_mod": 2383,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ],
+          "hits": [
+            {
+              "sign_word": "--",
+              "signed_sum": -31768,
+              "sum_mod": 2383,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "prefix_after_step": "++--",
+      "coefficient": 19228,
+      "selected_sign": "-",
+      "selected_status": "survives",
+      "selected_hit_count": 1,
+      "rejected_statuses": [
+        "interval_empty"
+      ],
+      "branches": [
+        {
+          "coefficient": 19228,
+          "sign": "+",
+          "rest_coefficients": [
+            12540
+          ],
+          "rest_abs_sum": 12540,
+          "rest_interval_start": -77947,
+          "rest_interval_stop": -20263,
+          "rest_targets_mod": [
+            842,
+            1544,
+            2396,
+            2617
+          ],
+          "interval_gap": 7723,
+          "interval_candidate_count": 0,
+          "hit_count": 0,
+          "status": "interval_empty",
+          "interval_rows": [],
+          "hits": []
+        },
+        {
+          "coefficient": 19228,
+          "sign": "-",
+          "rest_coefficients": [
+            12540
+          ],
+          "rest_abs_sum": 12540,
+          "rest_interval_start": -39491,
+          "rest_interval_stop": 18193,
+          "rest_targets_mod": [
+            595,
+            1447,
+            1668,
+            2520
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 2,
+          "hit_count": 1,
+          "status": "survives",
+          "interval_rows": [
+            {
+              "sign_word": "+",
+              "signed_sum": 12540,
+              "sum_mod": 2032,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            },
+            {
+              "sign_word": "-",
+              "signed_sum": -12540,
+              "sum_mod": 595,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ],
+          "hits": [
+            {
+              "sign_word": "-",
+              "signed_sum": -12540,
+              "sum_mod": 595,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "prefix_after_step": "++---",
+      "coefficient": 12540,
+      "selected_sign": "-",
+      "selected_status": "survives",
+      "selected_hit_count": 1,
+      "rejected_statuses": [
+        "residue_empty"
+      ],
+      "branches": [
+        {
+          "coefficient": 12540,
+          "sign": "+",
+          "rest_coefficients": [],
+          "rest_abs_sum": 0,
+          "rest_interval_start": -52031,
+          "rest_interval_stop": 5653,
+          "rest_targets_mod": [
+            488,
+            1190,
+            2042,
+            2263
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 1,
+          "hit_count": 0,
+          "status": "residue_empty",
+          "interval_rows": [
+            {
+              "sign_word": "",
+              "signed_sum": 0,
+              "sum_mod": 0,
+              "in_interval": true,
+              "target_hit": false,
+              "full_hit": false
+            }
+          ],
+          "hits": []
+        },
+        {
+          "coefficient": 12540,
+          "sign": "-",
+          "rest_coefficients": [],
+          "rest_abs_sum": 0,
+          "rest_interval_start": -26951,
+          "rest_interval_stop": 30733,
+          "rest_targets_mod": [
+            0,
+            852,
+            1073,
+            1925
+          ],
+          "interval_gap": null,
+          "interval_candidate_count": 1,
+          "hit_count": 1,
+          "status": "survives",
+          "interval_rows": [
+            {
+              "sign_word": "",
+              "signed_sum": 0,
+              "sum_mod": 0,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ],
+          "hits": [
+            {
+              "sign_word": "",
+              "signed_sum": 0,
+              "sum_mod": 0,
+              "in_interval": true,
+              "target_hit": true,
+              "full_hit": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rejected_statuses": [
+    "interval_empty",
+    "residue_empty",
+    "residue_empty",
+    "interval_empty",
+    "residue_empty"
+  ],
+  "all_rejected_branches_closed": true,
+  "selected_path_unique": true,
+  "branch_decision_ledger_closed": true,
+  "global_branch_decision_pattern_bound_proved": false,
+  "branch_decision_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_branch_decision_ledger_router.py": "0deff05cb90bbc7b63e638c8a27dcc9117ec0949a9e49678181e8121f42a728e",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-signed-sum-residue-gate-router.json": "000bb6e26dec4b78c4215118876df470f40659f120db560c9bee5cf6a80fd0c7",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-signed-sum-dominant-peel-router.json": "bd408eb36e3b1a42cb0b24c07eff5dcbbc55684c54633cc1cb2ee90eb8952756",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-terminal-sign-forcing-router.json": "fe82db8bed8550d35f4778fde4f6f1dbd590e45035dc0aa9e3d97e385f0cd179"
+  },
+  "next_direct_attack_target": "GlobalBranchDecisionPatternBoundOrBranchDecisionPDEC",
+  "plain_conclusion": "当前 z=61 signed-sum 唯一路径可整理为 5 步分支决策账本。所选路径为 peel 坐标 `++---`，对应原 CRT 符号 `--++-`。所有兄弟分支均已分类为 interval-empty 或 residue-empty，末端空剩余和唯一命中确认没有隐藏第二路径。因此最新硬点是把这种分支决策模式提升为全局界，或登记 BranchDecision-PDEC。"
+}
