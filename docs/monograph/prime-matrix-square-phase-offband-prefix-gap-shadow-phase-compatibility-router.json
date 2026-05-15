@@ -1,0 +1,1036 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_phase_compatibility_router",
+  "status": "local_phase_compatibility_checked_column_phase_density_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "empirical_absence_not_used_as_proof": true,
+  "parameters": {
+    "max_p": 5000,
+    "sample_ps": [
+      23,
+      37,
+      43,
+      47,
+      73,
+      113,
+      313,
+      523,
+      673,
+      683,
+      691,
+      733,
+      1129,
+      4999
+    ],
+    "prefix_atoms": 3
+  },
+  "aggregate": {
+    "input_ledger": "data/square-phase-offband-prefix-gap-shadow-crt-cover-word-ledger.json",
+    "record_count": 11,
+    "local_phase_alone_exclusion_count": 0,
+    "all_packets_have_phase_compatible_cover_words": true,
+    "prime_phase_compatible_packet_count": 6,
+    "max_phase_compatible_cover_word_count": 35,
+    "max_prime_phase_compatible_cover_word_count": 6,
+    "global_column_phase_density_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "phase_compatibility_records": [
+    {
+      "index": 0,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k1,both_offband_middle:k2",
+      "b_lo": 23,
+      "b_hi": 26,
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 1037,
+      "phase_compatible_cover_word_count": 4,
+      "prime_phase_compatible_cover_word_count": 0,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            11,
+            17,
+            3
+          ],
+          "residue": 169,
+          "modulus": 561,
+          "sample_p": 730
+        },
+        {
+          "labels": [
+            7,
+            19,
+            11,
+            5
+          ],
+          "residue": 732,
+          "modulus": 7315,
+          "sample_p": 732
+        },
+        {
+          "labels": [
+            7,
+            19,
+            11,
+            17
+          ],
+          "residue": 732,
+          "modulus": 24871,
+          "sample_p": 732
+        }
+      ],
+      "prime_phase_compatible_examples": [],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 1,
+      "p": 523,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 12,
+      "b_hi": 15,
+      "selected_q_lo": 493,
+      "selected_q_hi": 499,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:493-499",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "phase_p_lo": 481,
+      "phase_p_hi": 576,
+      "phase_p_width": 96,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "total_admissible_cover_words": 381,
+      "phase_compatible_cover_word_count": 6,
+      "prime_phase_compatible_cover_word_count": 6,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            5,
+            11,
+            3,
+            7
+          ],
+          "residue": 499,
+          "modulus": 1155,
+          "sample_p": 499
+        },
+        {
+          "labels": [
+            7,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 1365,
+          "sample_p": 563
+        },
+        {
+          "labels": [
+            11,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 2145,
+          "sample_p": 563
+        }
+      ],
+      "prime_phase_compatible_examples": [
+        {
+          "labels": [
+            5,
+            11,
+            3,
+            7
+          ],
+          "residue": 499,
+          "modulus": 1155,
+          "prime_sample_p": 499
+        },
+        {
+          "labels": [
+            7,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 1365,
+          "prime_sample_p": 563
+        },
+        {
+          "labels": [
+            11,
+            3,
+            5,
+            13
+          ],
+          "residue": 563,
+          "modulus": 2145,
+          "prime_sample_p": 563
+        }
+      ],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 2,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|both_offband_middle:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 196,
+      "phase_compatible_cover_word_count": 35,
+      "prime_phase_compatible_cover_word_count": 4,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105,
+          "sample_p": 677
+        },
+        {
+          "labels": [
+            3,
+            11,
+            5
+          ],
+          "residue": 62,
+          "modulus": 165,
+          "sample_p": 722
+        },
+        {
+          "labels": [
+            3,
+            11,
+            17
+          ],
+          "residue": 161,
+          "modulus": 561,
+          "sample_p": 722
+        }
+      ],
+      "prime_phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105,
+          "prime_sample_p": 677
+        },
+        {
+          "labels": [
+            3,
+            13,
+            5
+          ],
+          "residue": 92,
+          "modulus": 195,
+          "prime_sample_p": 677
+        },
+        {
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "residue": 709,
+          "modulus": 759,
+          "prime_sample_p": 709
+        }
+      ],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 3,
+      "p": 683,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|both_offband_middle:k0,minus_only_noslot:k0,both_offband_middle:k1",
+      "b_lo": 14,
+      "b_hi": 17,
+      "selected_q_lo": 649,
+      "selected_q_hi": 655,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k0:649-655",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "phase_p_lo": 613,
+      "phase_p_hi": 784,
+      "phase_p_width": 172,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 1016,
+      "phase_compatible_cover_word_count": 31,
+      "prime_phase_compatible_cover_word_count": 6,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 37,
+          "modulus": 105,
+          "sample_p": 667
+        },
+        {
+          "labels": [
+            3,
+            11,
+            5,
+            3
+          ],
+          "residue": 52,
+          "modulus": 165,
+          "sample_p": 712
+        },
+        {
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 151,
+          "modulus": 231,
+          "sample_p": 613
+        }
+      ],
+      "prime_phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            11,
+            7,
+            3
+          ],
+          "residue": 151,
+          "modulus": 231,
+          "prime_sample_p": 613
+        },
+        {
+          "labels": [
+            3,
+            17,
+            5,
+            3
+          ],
+          "residue": 217,
+          "modulus": 255,
+          "prime_sample_p": 727
+        },
+        {
+          "labels": [
+            3,
+            17,
+            5,
+            7
+          ],
+          "residue": 727,
+          "modulus": 1785,
+          "prime_sample_p": 727
+        }
+      ],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 4,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,both_offband_middle:k2",
+      "b_lo": 14,
+      "b_hi": 18,
+      "selected_q_lo": 697,
+      "selected_q_hi": 705,
+      "cell_length": 5,
+      "parent_atom_key": "minus_only_noslot:k0:697-705",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 0,
+      "phase_p_lo": 685,
+      "phase_p_hi": 784,
+      "phase_p_width": 100,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 3564,
+      "phase_compatible_cover_word_count": 5,
+      "prime_phase_compatible_cover_word_count": 0,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5,
+            3,
+            23
+          ],
+          "residue": 772,
+          "modulus": 2415,
+          "sample_p": 772
+        },
+        {
+          "labels": [
+            3,
+            11,
+            5,
+            3,
+            13
+          ],
+          "residue": 712,
+          "modulus": 2145,
+          "sample_p": 712
+        },
+        {
+          "labels": [
+            3,
+            11,
+            17,
+            3,
+            13
+          ],
+          "residue": 712,
+          "modulus": 7293,
+          "sample_p": 712
+        }
+      ],
+      "prime_phase_compatible_examples": [],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 5,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k1,plus_only_noslot:k2",
+      "b_lo": 25,
+      "b_hi": 27,
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 227,
+      "phase_compatible_cover_word_count": 6,
+      "prime_phase_compatible_cover_word_count": 0,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            5,
+            19
+          ],
+          "residue": 92,
+          "modulus": 285,
+          "sample_p": 662
+        },
+        {
+          "labels": [
+            7,
+            3,
+            13
+          ],
+          "residue": 106,
+          "modulus": 273,
+          "sample_p": 652
+        },
+        {
+          "labels": [
+            7,
+            3,
+            23
+          ],
+          "residue": 169,
+          "modulus": 483,
+          "sample_p": 652
+        }
+      ],
+      "prime_phase_compatible_examples": [],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 6,
+      "p": 733,
+      "side": "plus",
+      "shape_key": "side=plus|W=2|N=3|V=2|minus_only_noslot:k0,minus_only_noslot:k1",
+      "b_lo": 23,
+      "b_hi": 26,
+      "selected_q_lo": 681,
+      "selected_q_hi": 687,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:681-687",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "phase_p_lo": 729,
+      "phase_p_hi": 736,
+      "phase_p_width": 8,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 1037,
+      "phase_compatible_cover_word_count": 4,
+      "prime_phase_compatible_cover_word_count": 0,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            11,
+            17,
+            3
+          ],
+          "residue": 169,
+          "modulus": 561,
+          "sample_p": 730
+        },
+        {
+          "labels": [
+            7,
+            19,
+            11,
+            5
+          ],
+          "residue": 732,
+          "modulus": 7315,
+          "sample_p": 732
+        },
+        {
+          "labels": [
+            7,
+            19,
+            11,
+            17
+          ],
+          "residue": 732,
+          "modulus": 24871,
+          "sample_p": 732
+        }
+      ],
+      "prime_phase_compatible_examples": [],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 7,
+      "p": 313,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 15,
+      "b_hi": 16,
+      "selected_q_lo": 281,
+      "selected_q_hi": 283,
+      "cell_length": 2,
+      "parent_atom_key": "minus_only_noslot:k1:281-283",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "phase_p_lo": 289,
+      "phase_p_hi": 320,
+      "phase_p_width": 32,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "total_admissible_cover_words": 20,
+      "phase_compatible_cover_word_count": 10,
+      "prime_phase_compatible_cover_word_count": 2,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21,
+          "sample_p": 296
+        },
+        {
+          "labels": [
+            7,
+            5
+          ],
+          "residue": 2,
+          "modulus": 35,
+          "sample_p": 317
+        },
+        {
+          "labels": [
+            7,
+            11
+          ],
+          "residue": 65,
+          "modulus": 77,
+          "sample_p": 296
+        }
+      ],
+      "prime_phase_compatible_examples": [
+        {
+          "labels": [
+            7,
+            3
+          ],
+          "residue": 2,
+          "modulus": 21,
+          "prime_sample_p": 317
+        },
+        {
+          "labels": [
+            7,
+            5
+          ],
+          "residue": 2,
+          "modulus": 35,
+          "prime_sample_p": 317
+        }
+      ],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 8,
+      "p": 1129,
+      "side": "plus",
+      "shape_key": "side=plus|W=1|N=3|V=3|minus_only_noslot:k0,minus_only_noslot:k1,minus_only_noslot:k2",
+      "b_lo": 29,
+      "b_hi": 32,
+      "selected_q_lo": 1065,
+      "selected_q_hi": 1071,
+      "cell_length": 4,
+      "parent_atom_key": "minus_only_noslot:k1:1065-1071",
+      "parent_atom_band": "minus_only_noslot",
+      "parent_atom_k": 1,
+      "phase_p_lo": 1089,
+      "phase_p_hi": 1160,
+      "phase_p_width": 72,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "total_admissible_cover_words": 3347,
+      "phase_compatible_cover_word_count": 20,
+      "prime_phase_compatible_cover_word_count": 2,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 67,
+          "modulus": 105,
+          "sample_p": 1117
+        },
+        {
+          "labels": [
+            3,
+            7,
+            5,
+            13
+          ],
+          "residue": 1117,
+          "modulus": 1365,
+          "sample_p": 1117
+        },
+        {
+          "labels": [
+            3,
+            7,
+            11,
+            3
+          ],
+          "residue": 172,
+          "modulus": 231,
+          "sample_p": 1096
+        }
+      ],
+      "prime_phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5,
+            3
+          ],
+          "residue": 67,
+          "modulus": 105,
+          "prime_sample_p": 1117
+        },
+        {
+          "labels": [
+            3,
+            7,
+            5,
+            13
+          ],
+          "residue": 1117,
+          "modulus": 1365,
+          "prime_sample_p": 1117
+        }
+      ],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 9,
+      "p": 691,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k1",
+      "b_lo": 19,
+      "b_hi": 21,
+      "selected_q_lo": 649,
+      "selected_q_hi": 653,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k1:649-653",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 1,
+      "phase_p_lo": 644,
+      "phase_p_hi": 760,
+      "phase_p_width": 117,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 196,
+      "phase_compatible_cover_word_count": 35,
+      "prime_phase_compatible_cover_word_count": 4,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105,
+          "sample_p": 677
+        },
+        {
+          "labels": [
+            3,
+            11,
+            5
+          ],
+          "residue": 62,
+          "modulus": 165,
+          "sample_p": 722
+        },
+        {
+          "labels": [
+            3,
+            11,
+            17
+          ],
+          "residue": 161,
+          "modulus": 561,
+          "sample_p": 722
+        }
+      ],
+      "prime_phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            7,
+            5
+          ],
+          "residue": 47,
+          "modulus": 105,
+          "prime_sample_p": 677
+        },
+        {
+          "labels": [
+            3,
+            13,
+            5
+          ],
+          "residue": 92,
+          "modulus": 195,
+          "prime_sample_p": 677
+        },
+        {
+          "labels": [
+            11,
+            3,
+            23
+          ],
+          "residue": 709,
+          "modulus": 759,
+          "prime_sample_p": 709
+        }
+      ],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    },
+    {
+      "index": 10,
+      "p": 673,
+      "side": "minus",
+      "shape_key": "side=minus|W=2|N=3|V=2|plus_only_noslot:k0,plus_only_noslot:k2",
+      "b_lo": 25,
+      "b_hi": 27,
+      "selected_q_lo": 619,
+      "selected_q_hi": 623,
+      "cell_length": 3,
+      "parent_atom_key": "plus_only_noslot:k2:619-623",
+      "parent_atom_band": "plus_only_noslot",
+      "parent_atom_k": 2,
+      "phase_p_lo": 648,
+      "phase_p_hi": 675,
+      "phase_p_width": 28,
+      "actual_p_inside_phase_window": true,
+      "label_pool": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23
+      ],
+      "total_admissible_cover_words": 227,
+      "phase_compatible_cover_word_count": 6,
+      "prime_phase_compatible_cover_word_count": 0,
+      "phase_compatible_examples": [
+        {
+          "labels": [
+            3,
+            5,
+            19
+          ],
+          "residue": 92,
+          "modulus": 285,
+          "sample_p": 662
+        },
+        {
+          "labels": [
+            7,
+            3,
+            13
+          ],
+          "residue": 106,
+          "modulus": 273,
+          "sample_p": 652
+        },
+        {
+          "labels": [
+            7,
+            3,
+            23
+          ],
+          "residue": 169,
+          "modulus": 483,
+          "sample_p": 652
+        }
+      ],
+      "prime_phase_compatible_examples": [],
+      "local_phase_alone_excludes_cover_words": false,
+      "phase_boundary_statement": "Fixed k/band inequalities define an explicit integer P-window. Compatible CRT cover words are then tested inside this same window."
+    }
+  ],
+  "prime_phase_compatible_packet_count": 6,
+  "local_phase_alone_exclusion_count": 0,
+  "local_phase_alone_closes_global_route": false,
+  "global_column_phase_density_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "CompatibleCRTCoverWordPDECExclusionOrColumnPhaseLift",
+  "hardpoint_after_router": "ColumnPhaseDensityExclusionForCompatibleCRTCoverWordsOrPrimeAvoidancePDEC",
+  "next_direct_attack_target": "ColumnPhaseDensityExclusionForCompatibleCRTCoverWordsOrPrimeAvoidancePDEC",
+  "theorem_rows": [
+    {
+      "name": "fixed_atom_phase_window_formula",
+      "status": "closed",
+      "statement": "The fixed small-k atom conditions give an explicit integer window for P."
+    },
+    {
+      "name": "crt_word_phase_compatibility_test",
+      "status": "closed",
+      "statement": "Each complete CRT cover word can be checked for intersection with that phase window."
+    },
+    {
+      "name": "local_phase_not_enough",
+      "status": "closed",
+      "statement": "The finite frontier has phase-compatible complete cover words, so local phase inequalities alone do not yield contradiction."
+    },
+    {
+      "name": "prime_phase_examples_exist",
+      "status": "finite_evidence",
+      "statement": "Some packets even have prime representatives in phase-compatible CRT classes; this is evidence that the remaining issue is distributional."
+    },
+    {
+      "name": "global_column_phase_density_exclusion",
+      "status": "open",
+      "statement": "A proof still needs to rule out persistent compatible cover words through column phase, density, or PDEC mechanisms."
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_phase_compatibility_router.py": "dc04a453b7fc1f5f5587c1ce1fc7a88ee96c30cf6e4830639fc90fdbb0ce4c06",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_crt_cover_word_router.py": "b1b979d3f114422ed43c68277ffed63431a65fa81d83943d39f9ca0ed571938d",
+    "data/square-phase-offband-prefix-gap-shadow-crt-cover-word-ledger.json": "a8d3b86e09fde5f3e5ea2a7b960299762daf0707cb2374d0db37ee5e84e54839",
+    "data/square-phase-offband-prefix-gap-shadow-phase-compatibility-ledger.json": "366bda520b7fbd1a8ad5e8a602af1ffb19daf9b447569fd5110a6f1f4bac8609",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-phase-compatibility-router.md": "60ed848754d6c67522f9ac3a28bbea2b15372a148b9fb9ee041bffbb28a3e176"
+  },
+  "plain_conclusion": "本步把兼容 CRT 覆盖词放回固定 small-k/band 相位窗口中检验。每个 selected cell 的 k/band 条件都给出显式 P 窗口；有限前沿 11 个包全部存在与该窗口相交的完整覆盖词。因此局部相位窗口本身不能推出矛盾，剩余必须提升到列相位/密度层：排斥这些兼容覆盖词在同一反例链中持久对齐，或给出 PDEC/ColumnCRT 证书。",
+  "decision_rows": [
+    {
+      "gate": "FixedPhaseWindowFormulaClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "固定 small-k/band 条件已转成显式 P 窗口。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "LocalPhaseExclusionAttemptResolved",
+      "closed": true,
+      "proved": true,
+      "meaning": "相位窗口内仍有兼容覆盖词；局部相位本身不足以闭合。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FinitePrimeCompatibleExamples",
+      "closed": true,
+      "proved": false,
+      "meaning": "有限前沿存在带素数代表的兼容类；提示剩余是密度/列相位排斥。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "GlobalColumnPhaseDensityExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需排斥兼容 CRT 覆盖词在列相位中持久对齐。",
+      "remaining": "ColumnPhaseDensityExclusionForCompatibleCRTCoverWordsOrPrimeAvoidancePDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步关闭局部相位误攻路线，不关闭全局命题。",
+      "remaining": "ColumnPhaseDensityExclusionForCompatibleCRTCoverWordsOrPrimeAvoidancePDEC"
+    }
+  ]
+}
