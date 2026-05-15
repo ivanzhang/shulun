@@ -1,0 +1,111 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_core_quotient_lock_router",
+  "status": "z61_core_factor_residue_identities_reduced_to_unique_quotient_lock_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_core_factor_residue_identity_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "core_factorization": [
+    11,
+    19,
+    23
+  ],
+  "q4": 37,
+  "q2": 71,
+  "q4_lock_equation": "a*c+6=7*(2*b-1)",
+  "q2_lock_equation": "a*b+4=3*(3*c+2)",
+  "q4_exact_quotient": 7,
+  "q2_exact_quotient": 3,
+  "q4_exact_quotient_lock_closed": true,
+  "q2_exact_quotient_lock_closed": true,
+  "eliminated_b_formula": "b=(2*a-117)/(a^2-126)",
+  "selected_solution": {
+    "a": 11,
+    "b": 19,
+    "c": 23,
+    "q4": 37,
+    "q2": 71
+  },
+  "positive_integer_solution_scan_limit": 10000,
+  "positive_integer_solution_rows": [
+    {
+      "a": 11,
+      "b": 19,
+      "c": 23,
+      "q4": 37,
+      "q2": 71
+    }
+  ],
+  "positive_integer_solution_unique_in_scan": true,
+  "small_a_exclusion_table": [
+    {
+      "a": "1",
+      "b_formula": "23/25",
+      "positive_integer": "false"
+    },
+    {
+      "a": "2",
+      "b_formula": "113/122",
+      "positive_integer": "false"
+    },
+    {
+      "a": "3",
+      "b_formula": "37/39",
+      "positive_integer": "false"
+    },
+    {
+      "a": "4",
+      "b_formula": "109/110",
+      "positive_integer": "false"
+    },
+    {
+      "a": "5",
+      "b_formula": "107/101",
+      "positive_integer": "false"
+    },
+    {
+      "a": "6",
+      "b_formula": "7/6",
+      "positive_integer": "false"
+    },
+    {
+      "a": "7",
+      "b_formula": "103/77",
+      "positive_integer": "false"
+    },
+    {
+      "a": "8",
+      "b_formula": "101/62",
+      "positive_integer": "false"
+    },
+    {
+      "a": "9",
+      "b_formula": "11/5",
+      "positive_integer": "false"
+    },
+    {
+      "a": "10",
+      "b_formula": "97/26",
+      "positive_integer": "false"
+    },
+    {
+      "a": "11",
+      "b_formula": "19",
+      "positive_integer": "true"
+    }
+  ],
+  "sign_exclusion_for_a_ge_12": "12<=a<=58 gives numerator<0<denominator; a>=59 gives 0<(2a-117)/(a^2-126)<1; therefore only a<=11 needs finite checking.",
+  "quotient_lock_unique_positive_integer_solution_proved": true,
+  "core_quotient_lock_global_exclusion_proved": false,
+  "quotient_lock_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_core_quotient_lock_router.py": "e39ce6dc85c75462824ad8c030c30d4b61f497c200ef8fdfd77c1106df8965fe",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-core-factor-residue-identity-router.json": "fca0924568678b13e471b25fa9bb90ee495cc642de76e23dfeec9d52689151f7"
+  },
+  "next_direct_attack_target": "CoreQuotientLockGlobalExclusionOrQuotientLockPDEC",
+  "plain_conclusion": "核心因子残差身份可压成两个精确商锁：`a*c+6=7*(2*b-1)` 与 `a*b+4=3*(3*c+2)`。消去 `c` 得 `b=(2a-117)/(a^2-126)`；正整数解被符号区间和 `a<=11` 的有限检查压成唯一解 `(a,b,c)=(11,19,23)`，从而 `q4=37,q2=71`。"
+}
