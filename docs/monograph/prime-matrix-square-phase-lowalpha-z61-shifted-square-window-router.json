@@ -1,0 +1,51 @@
+{
+  "certificate_type": "prime_matrix_square_phase_lowalpha_z61_shifted_square_window_router",
+  "status": "z61_shifted_linear_prime_pair_reduced_to_square_window_congruence_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "source_certificate": "prime_matrix_square_phase_lowalpha_z61_endpoint_shifted_factor_router",
+  "target_bucket": "unbalanced<=8",
+  "target_omega": 4,
+  "target_shell": "(8D,16D]",
+  "shifted_square_window_group_count": 1,
+  "all_shifted_square_window_groups_closed": true,
+  "square_window_rows": [
+    {
+      "p": 200003,
+      "base_modulus": 57684,
+      "q2": 71,
+      "q4": 37,
+      "s": 132,
+      "n_low": 693454,
+      "n_high": 693457,
+      "span": 3,
+      "carry": 3,
+      "span_equals_carry": true,
+      "delta_low": 527,
+      "delta_high": 173579,
+      "square_identity_low_closed": true,
+      "square_identity_high_closed": true,
+      "low_endpoint_floor_closed": true,
+      "high_endpoint_floor_closed": true,
+      "endpoint_span_window_closed": true,
+      "p_square_residue_mod_base": 57157,
+      "negative_delta_residue_mod_base": 57157,
+      "delta_congruence_closed": true,
+      "s_recovery_numerator": 40005469152,
+      "s_recovery_denominator": 303071736,
+      "s_recovered_from_square_window": 132,
+      "s_recovery_closed": true,
+      "shifted_square_window_closed_for_group": true
+    }
+  ],
+  "shifted_square_window_global_bound_proved": false,
+  "square_window_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_lowalpha_z61_shifted_square_window_router.py": "1ac8ee363bcba2b1a9994f9cb798d5974b5f6d531679fe8cd006c84a45921e9b",
+    "docs/monograph/prime-matrix-square-phase-lowalpha-z61-endpoint-shifted-factor-router.json": "57d4e18eadd1bb072db598f782533b7ecefc942472cc8f26d9f0a285e97ad40e"
+  },
+  "next_direct_attack_target": "ShiftedSquareWindowGlobalBoundOrSquareWindowPDEC",
+  "plain_conclusion": "同步移位线性素数对继续和短条带端点联立：`N_low=2q_4(q_2s-1)`、`N_high=q_2(2q_4s-1)`，且 `p^2=M*N_low-delta`。样本中 `M=57684`、`delta=527`，`p^2≡-527 (mod 57684)`，并且 `delta+M*span <= p-1 < delta+M*(span+1)`，所以 `s` 被平方窗口公式唯一恢复为 `132`。下一步硬点变为这种平方同余端点窗口的全局容量界，或登记 SquareWindow-PDEC。"
+}
