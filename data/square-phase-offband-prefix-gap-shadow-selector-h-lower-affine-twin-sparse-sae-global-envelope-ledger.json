@@ -1,0 +1,89 @@
+{
+  "aggregate": {
+    "multiplicity_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "current_frontier_q_floor": 31,
+    "universal_single_atom_tail_from_q_ge_5": {
+      "numerator": 1,
+      "denominator": 6,
+      "decimal": 0.16666666666666666
+    },
+    "frontier_single_atom_tail_from_min_candidate_q": {
+      "numerator": 1,
+      "denominator": 58,
+      "decimal": 0.017241379310344827
+    },
+    "candidate_single_pair_sae_mass_sum": {
+      "numerator": 29277723,
+      "denominator": 16488099611,
+      "decimal": 0.0017756881442217531
+    },
+    "current_realized_sae_mass": {
+      "numerator": 1,
+      "denominator": 899,
+      "decimal": 0.0011123470522803114
+    },
+    "current_realized_sae_mass_below_frontier_tail": true,
+    "candidate_single_mass_below_frontier_tail": true,
+    "single_atom_sae_tail_envelope_proved": true,
+    "eta_sparse_alone_summability_proved": false,
+    "per_q_multiplicity_bound_proved": false,
+    "high_density_epoch_pair_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "single_atom_sae_envelope_rows": [
+    {
+      "q": 31,
+      "realized_current_sweep": true,
+      "realized_pair_count": 1,
+      "single_pair_sae_mass": {
+        "numerator": 1,
+        "denominator": 899,
+        "decimal": 0.0011123470522803114
+      },
+      "matches_recorded_single_pair_mass": true,
+      "occupancy_upper_ratio": 0.013348164627363738,
+      "eta": 0.025,
+      "sparse_eta_gate_passed_current_sweep": true
+    },
+    {
+      "q": 43,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": {
+        "numerator": 1,
+        "denominator": 1763,
+        "decimal": 0.0005672149744753262
+      },
+      "matches_recorded_single_pair_mass": true,
+      "occupancy_upper_ratio": 0.009075439591605219,
+      "eta": 0.025,
+      "sparse_eta_gate_passed_current_sweep": true
+    },
+    {
+      "q": 103,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": {
+        "numerator": 1,
+        "denominator": 10403,
+        "decimal": 9.612611746611554e-05
+      },
+      "matches_recorded_single_pair_mass": true,
+      "occupancy_upper_ratio": 0.0011535134095933864,
+      "eta": 0.025,
+      "sparse_eta_gate_passed_current_sweep": true
+    }
+  ],
+  "diagnostic": {
+    "why_eta_sparse_alone_is_not_enough": "eta sparse allows up to eta*q*(q-2) atoms at a fixed q; each atom has mass 1/(q*(q-2)), so a saturated sparse q contributes about eta. Summing eta over infinitely many q is not summable without a per-q multiplicity decay, finite activation theorem, or HighDensity/PDEC exclusion.",
+    "telescoping_identity": "1/(q(q-2)) = (1/2)*(1/(q-2)-1/q) over odd q."
+  }
+}

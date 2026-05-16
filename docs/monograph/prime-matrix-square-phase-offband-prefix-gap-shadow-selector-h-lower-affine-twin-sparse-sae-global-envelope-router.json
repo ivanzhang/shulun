@@ -1,0 +1,160 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_sparse_sae_global_envelope_router",
+  "status": "single_atom_sae_tail_envelope_closed_per_q_multiplicity_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "multiplicity_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "current_frontier_q_floor": 31,
+    "universal_single_atom_tail_from_q_ge_5": {
+      "numerator": 1,
+      "denominator": 6,
+      "decimal": 0.16666666666666666
+    },
+    "frontier_single_atom_tail_from_min_candidate_q": {
+      "numerator": 1,
+      "denominator": 58,
+      "decimal": 0.017241379310344827
+    },
+    "candidate_single_pair_sae_mass_sum": {
+      "numerator": 29277723,
+      "denominator": 16488099611,
+      "decimal": 0.0017756881442217531
+    },
+    "current_realized_sae_mass": {
+      "numerator": 1,
+      "denominator": 899,
+      "decimal": 0.0011123470522803114
+    },
+    "current_realized_sae_mass_below_frontier_tail": true,
+    "candidate_single_mass_below_frontier_tail": true,
+    "single_atom_sae_tail_envelope_proved": true,
+    "eta_sparse_alone_summability_proved": false,
+    "per_q_multiplicity_bound_proved": false,
+    "high_density_epoch_pair_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "single_atom_sae_envelope_rows": [
+    {
+      "q": 31,
+      "realized_current_sweep": true,
+      "realized_pair_count": 1,
+      "single_pair_sae_mass": {
+        "numerator": 1,
+        "denominator": 899,
+        "decimal": 0.0011123470522803114
+      },
+      "matches_recorded_single_pair_mass": true,
+      "occupancy_upper_ratio": 0.013348164627363738,
+      "eta": 0.025,
+      "sparse_eta_gate_passed_current_sweep": true
+    },
+    {
+      "q": 43,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": {
+        "numerator": 1,
+        "denominator": 1763,
+        "decimal": 0.0005672149744753262
+      },
+      "matches_recorded_single_pair_mass": true,
+      "occupancy_upper_ratio": 0.009075439591605219,
+      "eta": 0.025,
+      "sparse_eta_gate_passed_current_sweep": true
+    },
+    {
+      "q": 103,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": {
+        "numerator": 1,
+        "denominator": 10403,
+        "decimal": 9.612611746611554e-05
+      },
+      "matches_recorded_single_pair_mass": true,
+      "occupancy_upper_ratio": 0.0011535134095933864,
+      "eta": 0.025,
+      "sparse_eta_gate_passed_current_sweep": true
+    }
+  ],
+  "single_atom_sae_tail_envelope_proved": true,
+  "eta_sparse_alone_summability_proved": false,
+  "per_q_multiplicity_bound_proved": false,
+  "high_density_epoch_pair_pdec_excluded_globally": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "AffineTwinSparseSAEGlobalBoundOrHighDensityEpochPairPDECExclusion",
+  "hardpoint_after_router": "AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion",
+  "next_direct_attack_target": "AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion",
+  "theorem_rows": [
+    {
+      "name": "affine_twin_single_atom_sae_tail_envelope",
+      "status": "closed",
+      "statement": "For odd q>=Q, sum 1/(q(q-2)) is bounded by the telescoping tail 1/(2(Q-2)); affine-twin q values form a subset of these odd q."
+    },
+    {
+      "name": "eta_sparse_alone_not_global_summability",
+      "status": "closed_diagnostic",
+      "statement": "The eta sparse gate alone permits O(eta q(q-2)) atoms at each q; without a per-q multiplicity/decay bound this does not yield a summable global SAE family."
+    },
+    {
+      "name": "per_q_multiplicity_or_high_density_pdec",
+      "status": "open",
+      "statement": "A global proof must show O(1) or decaying affine-twin atoms per q, or route excess multiplicity to HighDensityEpochPair-PDEC/ColumnCRT."
+    }
+  ],
+  "plain_conclusion": "本步把 SparseSAE 的真正可求和部分剥离出来：单个固定 AffineTwin 双槽原子的质量为 `1/(q(q-2))`，而奇数尾和满足望远镜恒等式，故所有 `q>=Q` 的单原子包络 `<=1/(2(Q-2))`。当前前沿 `Q=31` 时尾和为 0.017241379310，当前实现质量为 0.001112347052。但 `eta` 稀疏门本身不够推出全局可求和：若每个 q 都允许正比例多原子，总贡献可发散。因此最新硬点被精确压成每 q multiplicity 的 O(1)/衰减界，或 HighDensityEpochPair-PDEC 排斥。",
+  "decision_rows": [
+    {
+      "gate": "SingleAtomSAETailEnvelopeClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "单固定双槽原子的 SAE 质量全局可求和，且不依赖孪生素数输入。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "CurrentRealizedSAEWithinFrontierTail",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前实现质量低于 q>=当前前沿的望远镜尾和。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "EtaSparseAloneSufficientForGlobalSummability",
+      "closed": false,
+      "proved": false,
+      "meaning": "eta 稀疏本身不足以推出全局可求和；还需要每 q multiplicity 控制。",
+      "remaining": "AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion"
+    },
+    {
+      "gate": "HighDensityEpochPairPDECRouted",
+      "closed": true,
+      "proved": true,
+      "meaning": "multiplicity 过大时仍回流 HighDensityEpochPair-PDEC/ColumnCRT。",
+      "remaining": "exclusion still separate"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步关闭单原子求和包络，不关闭全局行/列命题。",
+      "remaining": "AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_sparse_sae_global_envelope_router.py": "b381c0aaafae790fae8e97a40895c1a7b9fa462459ce813e6d5cef788238a4a4",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-ledger.json": "8323447f703d339a1ff63e35f0dcaff4d697b295ea79241f67c23d2ecd5c00d3",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json": "18a67505beef2a1ba7ec53a6088bb26da6a3955e2f63c02f5e215cfe171a8063",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-router.md": "e950375af009b7dbb5dd82697769214f215ec3a2b0bf3f2786ac41a5217f82ec"
+  }
+}
