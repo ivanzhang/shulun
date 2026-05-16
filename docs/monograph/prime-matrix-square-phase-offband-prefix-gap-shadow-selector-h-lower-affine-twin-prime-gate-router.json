@@ -1,0 +1,51 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_prime_gate_router",
+  "status": "affine_twin_prime_gate_closed_current_sweep_global_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "affine_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-primitive-affine-collapse-ledger.json",
+    "affine_twin_gate_row_count": 1,
+    "unique_affine_twin_gate_key_count": 1,
+    "repeated_affine_twin_gate_key_count": 0,
+    "all_twin_prime_gates_closed_current_sweep": true,
+    "all_gap_congruent_3_mod_4": true,
+    "all_affine_integrality_gates_closed": true,
+    "affine_twin_prime_gate_bound_proved": false,
+    "affine_twin_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "affine_twin_gate_rows": [
+    {
+      "gap_ell": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "gap_is_prime": true,
+      "generator_is_gap_minus_2": true,
+      "generator_is_prime": true,
+      "fill_equals_gap": true,
+      "twin_prime_gate_closed_current_sweep": true,
+      "gap_mod_4": 3,
+      "gap_congruent_3_mod_4": true,
+      "delta_u_integrality_gate": true,
+      "margin_integrality_gate": true,
+      "delta_b_integrality_gate": true,
+      "affine_twin_gate_key": "q=31|twin=29,31|qmod4=3",
+      "source_affine_key": "gap=31|ell=29->31|m=15|db=13|du=7"
+    }
+  ],
+  "affine_twin_prime_gate_bound_proved": false,
+  "affine_twin_pdec_excluded_globally": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "PrimitiveAffineCollapseGlobalBoundOrAffinePDECExclusion",
+  "hardpoint_after_router": "AffineTwinPrimeGateBoundOrAffineTwinPDECExclusion",
+  "next_direct_attack_target": "AffineTwinPrimeGateBoundOrAffineTwinPDECExclusion",
+  "plain_conclusion": "本步把仿射塌缩原子压成 twin-prime 型必要条件门：当前 `q=31`，`generator_ell=q-2=29` 与 `fill_ell=q=31` 均为素数，且 `q≡3 mod 4`，从而所有仿射参数为整数。全局剩余是证明此类 AffineTwin 门无法持久复现，或排斥持久 AffineTwin-PDEC/SAE。",
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_prime_gate_router.py": "fdcbc14c64f857554af2ddf40767644694f9b233f100db0bf222ba5e43260a17",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-primitive-affine-collapse-ledger.json": "ffe10c92b29452a7e91fee637f355909cbbf890e61a75c270f82b7bf913722ec",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-prime-gate-ledger.json": "223a7643a7779a06880ff1790997d2bfd3b4416f62ca6a65e35c57c8fac3b94c",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-prime-gate-router.md": "8d9ec654b925e782c6764a36391104c5f5b30490651da38fe2b5628b90a389ea"
+  }
+}
