@@ -1,0 +1,128 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_existing_actual_collision_jump_audit",
+  "status": "current_sweep_existing_actual_collision_jumps_closed_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "edge_collision_ledger": "data/prime-matrix-affine-twin-window-edge-collision-ledger.json",
+    "crt_window_gap_ledger": "data/prime-matrix-affine-twin-crt-window-gap-ledger.json",
+    "slot_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json",
+    "existing_actual_collision_candidate_count": 2,
+    "existing_actual_target_pair_count": 1,
+    "existing_actual_target_pair_histogram": {
+      "19:8": 2
+    },
+    "min_existing_actual_residue_l1": 1,
+    "max_existing_actual_residue_l1": 8,
+    "min_abs_crt_jump_to_existing_actual": 120,
+    "max_abs_crt_jump_to_existing_actual": 435,
+    "min_jump_minus_support_width": 100,
+    "max_jump_minus_support_width": 415,
+    "support_width_current": 20,
+    "combined_modulus_current": 899,
+    "generator_unit_step_current": 465,
+    "fill_unit_step_current": 435,
+    "narrowest_l1_atom": {
+      "source_pair_key": "19:9",
+      "target_existing_actual_pair_key": "19:8",
+      "residue_l1_displacement": 1,
+      "abs_crt_jump_to_existing_actual": 435,
+      "jump_minus_support_width": 415
+    },
+    "minimum_crt_jump_atom": {
+      "source_pair_key": "15:12",
+      "target_existing_actual_pair_key": "19:8",
+      "residue_l1_displacement": 8,
+      "abs_crt_jump_to_existing_actual": 120,
+      "jump_minus_support_width": 100
+    },
+    "all_crt_jump_identities_closed": true,
+    "all_existing_actual_crt_jumps_exceed_support_width_current_sweep": true,
+    "existing_actual_collision_jump_closed_current_sweep": true,
+    "global_existing_actual_collision_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "existing_actual_collision_rows": [
+    {
+      "q": 31,
+      "source_pair_key": "15:12",
+      "target_existing_actual_pair_key": "19:8",
+      "source_generator_residue": 15,
+      "source_fill_residue": 12,
+      "target_generator_residue": 19,
+      "target_fill_residue": 8,
+      "generator_delta_to_existing_actual": 4,
+      "fill_delta_to_existing_actual": -4,
+      "residue_l1_displacement": 8,
+      "source_nearest_representative": 2567,
+      "target_actual_p": 2687,
+      "target_actual_representatives": [
+        2687
+      ],
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "support_width": 20,
+      "combined_modulus": 899,
+      "generator_unit_step": 465,
+      "fill_unit_step": 435,
+      "signed_crt_jump_to_existing_actual": 120,
+      "observed_signed_jump_to_existing_actual": 120,
+      "crt_jump_identity_closed": true,
+      "abs_crt_jump_to_existing_actual": 120,
+      "jump_minus_support_width": 100,
+      "crt_jump_exceeds_support_width": true,
+      "source_window_distance": 102,
+      "source_window_side": "below"
+    },
+    {
+      "q": 31,
+      "source_pair_key": "19:9",
+      "target_existing_actual_pair_key": "19:8",
+      "source_generator_residue": 19,
+      "source_fill_residue": 9,
+      "target_generator_residue": 19,
+      "target_fill_residue": 8,
+      "generator_delta_to_existing_actual": 0,
+      "fill_delta_to_existing_actual": -1,
+      "residue_l1_displacement": 1,
+      "source_nearest_representative": 3122,
+      "target_actual_p": 2687,
+      "target_actual_representatives": [
+        2687
+      ],
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "support_width": 20,
+      "combined_modulus": 899,
+      "generator_unit_step": 465,
+      "fill_unit_step": 435,
+      "signed_crt_jump_to_existing_actual": -435,
+      "observed_signed_jump_to_existing_actual": -435,
+      "crt_jump_identity_closed": true,
+      "abs_crt_jump_to_existing_actual": 435,
+      "jump_minus_support_width": 415,
+      "crt_jump_exceeds_support_width": true,
+      "source_window_distance": 434,
+      "source_window_side": "above"
+    }
+  ],
+  "contract": {
+    "existing_actual_collision_gate": "An empty formal pair whose nearest target is an existing actual pair must pay the full CRT phase jump induced by its residue displacement.",
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "GlobalExistingActualCollisionNonPersistence",
+      "RepeatedResidue-ColumnCRT-PDEC",
+      "SupportMotionEscape-PDEC/SAE",
+      "UnusedTargetResidueArrival-PDEC/SAE"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-window-edge-collision-ledger.json": "344885dd9ed7914d65f259e2b63626a2837703893cbf23623e034b34c6cfe334",
+    "data/prime-matrix-affine-twin-crt-window-gap-ledger.json": "4822729687dfb1818e8d917ca278f2eeda8d167825456f1dc1dd0456e142f71f",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json": "a8048685a2c6449b42ed5d2190aa47e75b20abf36a18e18c4d1ddb223cba033f"
+  }
+}

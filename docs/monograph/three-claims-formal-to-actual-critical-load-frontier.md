@@ -554,3 +554,33 @@ delta_g=0, delta_f=-1.
 ```
 
 这不是全局矛盾，但它把下一步主攻点从“窗口边界可能碰撞”压成一个明确单点：若这种单 fill-residue edge collision 可持续复现，它必须与已有 actual pair `(19,8)` 发生 residue collision，或暴露 repeated residue / ColumnCRT / target-arrival 结构缺陷。
+
+## 13. PM existing-actual collision CRT jump 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-existing-actual-collision-jump-audit.md
+data/prime-matrix-affine-twin-existing-actual-collision-jump-ledger.json
+```
+
+继续下钻 existing-actual 分支。当前 `WindowEdgeCollision` 中有 `2` 个空窗 pair 的最近目标是已有 actual pair `19:8`：
+
+```text
+15:12 -> 19:8
+19:9 -> 19:8
+```
+
+审计把 residue 位移提升为双模 CRT 相位跳跃：
+
+```text
+generator_unit_step_current=465
+fill_unit_step_current=435
+support_width_current=20
+min_abs_crt_jump_to_existing_actual=120
+max_abs_crt_jump_to_existing_actual=435
+```
+
+因此最窄 atom `19:9 -> 19:8` 不是微小边界误差。它固定 generator residue，只把 fill residue 改一格，但 CRT 代表从 `3122` 跳到 actual 点 `2687`，相位差为 `435`。另一个 `15:12 -> 19:8` 的相位差为 `120`，仍然超过支撑宽度 `20`。
+
+本步关闭当前 sweep 的 existing-actual collision jump 账本；全局仍需证明这种 CRT 跳跃不能被 moving support 持久重置，或把失败形态登记为 `RepeatedResidue-ColumnCRT-PDEC` / `SupportMotionEscape-PDEC/SAE`。
