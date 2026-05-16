@@ -491,3 +491,37 @@ NoGapSource-PDEC/SAE
 ```
 
 也就是说，未来若某个 formal product 试图绕过 source gate，它必须显式破坏端点运动/生成填充二元组的结构，而不是作为 hidden actual load 留在账本中。
+
+## 11. PM CRT window gap 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-crt-window-gap-audit.md
+data/prime-matrix-affine-twin-crt-window-gap-ledger.json
+```
+
+继续把 `CRTWindowEmpty` 从布尔判断压成相位距离证书。当前结果为：
+
+```text
+formal_pair_total_with_exact_source=12
+supported_actual_packet_total_current=1
+crt_window_gap_pair_total_current=11
+min_empty_window_distance=40
+max_empty_window_distance=434
+support_width_current=20
+combined_modulus_current=899
+```
+
+这说明当前唯一通过 source gate 的 `q=31` 分支中，formal product 的每个 residue pair 都有明确 CRT 类。只有 `(19,8)` 的 CRT 代表 `2687` 落入共同窗口 `[2669,2688]`；其余 `11` 对的最近代表都与窗口保持正距离。
+
+这一步把 PM 的 actual-load 管道进一步细化为：
+
+```text
+formal residue product
+  -> source gate
+  -> CRT window representative
+  -> actual packet
+```
+
+全局硬点相应压成 `GlobalCRTWindowGapBound`：若未来有 source 已物化但空窗不成立，则它必须表现为 `WindowEdgeCollision-PDEC` 或 `SupportMotionEscape-PDEC/SAE`，不能作为未登记 actual load 混入临界负载。

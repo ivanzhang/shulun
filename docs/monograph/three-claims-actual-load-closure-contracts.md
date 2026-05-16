@@ -166,6 +166,39 @@ NoGapSource-PDEC/SAE
 CRTWindowEmptyGlobalSupportBound
 ```
 
+### 1.6 CRT window gap 更新
+
+后续审计
+
+```text
+experiments/prime_matrix_affine_twin_crt_window_gap_audit.py
+data/prime-matrix-affine-twin-crt-window-gap-ledger.json
+docs/monograph/prime-matrix-affine-twin-crt-window-gap-audit.md
+```
+
+把 `CRTWindowEmpty` 从布尔空窗推进为带距离的相位间隙证书：
+
+```text
+source_gate_pass_q_values=[31]
+formal_pair_total_with_exact_source=12
+supported_actual_packet_total_current=1
+crt_window_gap_pair_total_current=11
+min_empty_window_distance=40
+max_empty_window_distance=434
+modulus_minus_support_width_current=879
+crt_window_gap_closed_current_sweep=true
+```
+
+当前 `q=31` 的 exact-source formal pairs 全部由模数 `29*31=899` 的 CRT 类控制，共同 pair support 为 `[2669,2688]`，宽度 `20`。唯一 actual packet 是 `(generator residue, fill residue)=(19,8)`，代表 `2687`；其余 `11` 对的最近 CRT 代表距窗口至少 `40`，因此不是边界贴合或数值误差，而是严格正间隙。
+
+全局最窄剩余继续压成：
+
+```text
+GlobalCRTWindowGapBound
+WindowEdgeCollision-PDEC
+SupportMotionEscape-PDEC/SAE
+```
+
 ## 2. TP-ALC：二点筛 actual ratio 合同
 
 ### 2.1 actual ratio
@@ -285,7 +318,7 @@ ControlledExitCriticalLoadNormalization
 
 | 合同 | actual load | critical capacity | 当前可证状态 | 剩余硬点 |
 |---|---:|---:|---|---|
-| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、formal-pair pruning 与 source gate 闭合 | 全局 actual packet exhaustion |
+| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate 与 CRT window gap 闭合 | 全局 actual packet exhaustion |
 | TP-ALC | actual `sum D / |U_Y|` | `1` with Buchstab `K(alpha)` | 分子 BMD 外部版可用 | denominator floor / parity gap |
 | RH-ALC | source-deleted final load | exit capacity | verification ledger 已有 | controlled exits 逐项归一化 |
 
@@ -293,7 +326,7 @@ ControlledExitCriticalLoadNormalization
 
 最直接的继续硬攻顺序是：
 
-1. **PM：** 把 current sweep 的 source gate 失败分类升级成全局门控定理，证明 future formal residue product 若缺少 matching source，必进入 `SameGapWrongSource-PDEC/SAE` 或 `NoGapSource-PDEC/SAE`；若有 source，再由 `CRTWindowEmptyGlobalSupportBound` 控制窗口代表。
+1. **PM：** 把 current sweep 的 source gate 与 CRT window gap 升级成全局门控定理：缺 source 的 formal product 进入 `SameGapWrongSource/NoGapSource-PDEC/SAE`；有 source 但无窗口代表的 product 必有正 `CRTWindowGap`，或触发 `WindowEdgeCollision-PDEC` / `SupportMotionEscape-PDEC/SAE`。
 2. **TP：** 写出 denominator floor 的 beta/Buchstab 下筛合同，明确 `delta(alpha)` 的可接受上限。
 3. **RH：** 生成 controlled-exit 四列表，先不证明 RH，只把每个 exit 的 actual-load 输入、闭合机制和未闭合项固定。
 
