@@ -1,0 +1,65 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_anchored_parity_nogo_audit",
+  "status": "current_sweep_anchored_parity_nogo_structured_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "anchored_circular_depth_ledger": "data/prime-matrix-affine-twin-endpoint-release-anchored-circular-depth-ledger.json",
+    "actual_anchor_pair": "19:8",
+    "minimal_circular_alignment_arc": [
+      3029,
+      3586
+    ],
+    "minimal_circular_alignment_arc_width": 558,
+    "support_width": 20,
+    "required_common_left_depth": 557,
+    "required_depth_parity": "odd",
+    "same_orientation_lower_generator_formula": "q_g=2D-5",
+    "same_orientation_lower_fill_formula": "q_f=D+3",
+    "q_from_generator_depth_formula": 1109,
+    "q_from_fill_depth_formula": 560,
+    "q_from_generator_is_prime": true,
+    "q_from_fill_is_prime": false,
+    "q_from_fill_is_even": true,
+    "q_candidate_gap": 549,
+    "common_q_equation": "2D-5=D+3",
+    "common_depth_solution": 8,
+    "common_q_solution": 11,
+    "common_solution_support_width": 10,
+    "required_depth_gap_from_common_solution": 549,
+    "required_arc_width_exceeds_common_solution_support": true,
+    "same_orientation_common_q_absent_by_equality": true,
+    "same_orientation_common_q_absent_by_parity": true,
+    "anchored_parity_nogo_closed_current_sweep": true,
+    "global_anchored_parity_nogo_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "parity_nogo_row": {
+    "actual_anchor_pair": "19:8",
+    "required_common_left_depth": 557,
+    "q_from_generator_depth_formula": 1109,
+    "q_from_fill_depth_formula": 560,
+    "common_depth_solution": 8,
+    "depth_gap_from_common_solution": 549,
+    "parity_no_go": true
+  },
+  "contract": {
+    "anchored_parity_nogo_gate": [
+      "same-orientation lower-side absorption needs q_g=2D-5 and q_f=D+3",
+      "a common q forces D=8 and q=11",
+      "the actual-anchored circular arc forces D=557",
+      "since D is odd, q_f=D+3 is an even integer greater than 2, hence not an odd prime",
+      "route persistent anchored depth to orientation-changing, ColumnCRT/PDEC, SAE, or moving-family multiplicity exits"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "AnchoredParityNoGo promoted to global family theorem",
+      "OrientationChangingPrimitiveKey-PDEC/SAE",
+      "ColumnCRT/PDEC for persistent actual-anchored aperture recurrence",
+      "AffineTwinEpochPairMultiplicityBoundOrColumnCRTPDECExclusion"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-endpoint-release-anchored-circular-depth-ledger.json": "d84ec936ad7080345ee101ddf038988928baa4b113686e9f7ef04a24ead4a89c"
+  }
+}

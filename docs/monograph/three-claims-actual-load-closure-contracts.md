@@ -780,3 +780,38 @@ same_orientation_anchored_depth_absorption_closed_current_sweep=true
 这把上一层单侧 circular aperture 缺口进一步变成双端点释放缺口：真实链当前 generator 左深度为 `18`、fill 左深度为 `28`，而锚定圆弧要求共同左深度 `557`；总释放 `1068` 是支撑宽度 `20` 的 `53.4` 倍。同向 AffineTwin moving key 也无法吸收该深度，因为 lower-side 深度公式给出 `q=2D-5=1109` 与 `q=D+3=560`，不可能是同一个奇素数 key。
 
 本步关闭当前 sweep 的 same-orientation anchored circular-depth absorption。全局行/列命题仍未闭合；最新剩余是排斥 `AnchoredCircularDepth-PDEC`，或证明持久 actual-anchored 圆弧复现进入 `ColumnCRT/PDEC`、`SAE`、方向改变 key 或 moving-family multiplicity 出口。
+
+## 19. PM endpoint-release anchored parity no-go 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-anchored-parity-nogo-audit.md
+data/prime-matrix-affine-twin-endpoint-release-anchored-parity-nogo-ledger.json
+```
+
+把 anchored circular-depth 的同向 moving-key 失败从数值不等式提升为方程/奇偶 no-go。若 lower-side 的同向 AffineTwin key 要用同一共同深度 `D` 同时解释 generator 与 fill 两端，则必须满足：
+
+```text
+generator left depth D = (q+5)/2  =>  q_g=2D-5
+fill left depth D = q-3           =>  q_f=D+3
+```
+
+同一个 `q` 要求 `2D-5=D+3`，唯一解为 `D=8,q=11`。当前 actual-anchored 圆弧强制：
+
+```text
+actual_anchor_pair=19:8
+required_common_left_depth=557
+required_depth_parity=odd
+q_from_generator_depth_formula=1109
+q_from_fill_depth_formula=560
+q_from_fill_is_even=true
+q_from_fill_is_prime=false
+common_depth_solution=8
+required_depth_gap_from_common_solution=549
+anchored_parity_nogo_closed_current_sweep=true
+```
+
+因此这里的失败不是“另一个大素数可能补上”的问题：`D=557` 为奇数，fill 侧候选 `D+3=560` 是大于 `2` 的偶数，根本不能成为奇素数 AffineTwin key；同时它与唯一共同深度解 `8` 相差 `549`。
+
+本步关闭当前 sweep 的 same-orientation anchored parity absorption。全局行/列命题仍未闭合；剩余是把这个 parity no-go 升格为全局族定理，或处理方向改变 key、`ColumnCRT/PDEC`、`SAE`、moving-family multiplicity 出口。
