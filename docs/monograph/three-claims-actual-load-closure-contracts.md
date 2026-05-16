@@ -1247,3 +1247,32 @@ anonymous_moving_family_persistence_closed_current_sweep=true
 `q=43,103` 虽有 generator 单侧压力，但 paired pressure product 仍低于 1，瓶颈在 fill 侧。若三个候选都尝试阈值穿越，至少要新增 11 个 fill residue，对应 Rankin 质量 `23339/137299≈0.169986671425`；若不是新 residue，则直接进入 reset/ColumnCRT-PDEC。
 
 所以当前 sweep 的 moving family 持久复现不能作为匿名容量来源。全局剩余进一步压成 `FillResidueArrivalBound`、`HighDensityEpochPair-PDEC/ColumnCRT`、`PressureProduct-PDEC` 或 `SourceRematerialization-PDEC/SAE`。
+
+## 34. PM endpoint-release fill-arrival projection gate 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-fill-arrival-projection-gate-audit.md
+data/prime-matrix-affine-twin-endpoint-release-fill-arrival-projection-gate-ledger.json
+```
+
+继续压缩 `FillResidueArrivalBound`。fill 到达若要变成 actual overload，必须先通过两个门：已物化 source 和 actual projection。当前证书给出：
+
+```text
+candidate_q_values=[31,43,103]
+realized_q_values=[31]
+source_blocked_q_values=[43,103]
+source_blocked_formal_pairs=28
+all_realized_fill_arrivals_require_generator_coarrival=true
+minimal_crossing_formal_product_count=30
+minimal_crossing_projection_hit_count=3
+minimal_crossing_actual_sqrt_slack=26
+anonymous_fill_arrival_actual_overload_closed_current_sweep=true
+```
+
+`q=31` 是唯一已物化候选，但不能走 fill-only 路线：`minimal_route_can_be_fill_only=false`，任何阈值穿越至少还要新增 2 个 generator residue。unused-target 账本给出的新 fill residues 为 `[5,6,7,30]`，但所有 target 都同时需要新 generator residue，且 CRT jump 都超过 support width。
+
+若把这种 generator/fill 共到达按形式乘积计到最小 crossing `30`，actual projection 也只有 `3` 个 hits，仍有 `26` 个平方根余量。另一方面，`q=43,103` 的 fill-only 形式路线先被 source gate 阻断，不能进入真实链。
+
+所以当前 sweep 内没有匿名 fill-arrival actual overload。最新剩余进一步压成 `GeneratorCoarrivalBound`、`ProductAccountingTighteningGlobal`、`SourceRematerialization-PDEC/SAE` 与 `ColumnCRT/PDEC`。

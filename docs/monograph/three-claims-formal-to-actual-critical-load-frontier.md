@@ -1422,3 +1422,40 @@ duplicate fill arrival enters reset/ColumnCRT-PDEC
 ```
 
 本步关闭当前 sweep 的匿名 moving-family persistence 解释；全局仍需证明 fill-side residue arrival 不会持久补齐阈值缺口，或排斥 `HighDensityEpochPair-PDEC/ColumnCRT`、`PressureProduct-PDEC`、`SourceRematerialization-PDEC/SAE`。
+
+## 41. PM endpoint-release fill-arrival projection gate 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-fill-arrival-projection-gate-audit.md
+data/prime-matrix-affine-twin-endpoint-release-fill-arrival-projection-gate-ledger.json
+```
+
+本节把 `FillResidueArrivalBound` 当前可攻部分继续拆开：fill-side residue arrival 只有在同时满足 source 物化和 actual projection 超界时，才可能成为真实链容量。
+
+当前证书给出：
+
+```text
+realized_q_values=[31]
+source_blocked_q_values=[43,103]
+source_blocked_formal_pairs=28
+realized_fill_only_route_count=0
+realized_min_extra_generator_required=2
+minimal_crossing_formal_product_count=30
+minimal_crossing_projection_hit_count=3
+minimal_crossing_actual_sqrt_slack=26
+```
+
+因此分支被精确拆成：
+
+```text
+q=31: exact source, but no fill-only route;
+      any fill arrival needs generator coarrival, then projects to 3 actual hits.
+q=43: formal fill-only possible, but same-gap wrong-source blocks actualization.
+q=103: formal fill-only possible, but no gap source blocks actualization.
+```
+
+这给出更窄的容量/相位矛盾：反例链希望用 fill 侧追赶补齐 moving-family 阈值；真实链中唯一已物化候选不能单靠 fill 侧补齐，未物化候选没有 source 相位，而实际共到达投影仍低于平方根门。
+
+本步关闭当前 sweep 的匿名 fill-arrival actual overload。全局剩余相应变成 `GeneratorCoarrivalBound`、`ProductAccountingTighteningGlobal`、`SourceRematerialization-PDEC/SAE` 与 `ColumnCRT/PDEC` 的族级排斥或控制。
