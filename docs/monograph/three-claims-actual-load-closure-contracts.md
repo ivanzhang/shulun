@@ -743,3 +743,40 @@ one_sided_circular_absorption_closed_current_sweep=true
 `p_delay=80` 空缝确实存在，但它只排第 `3` 大，不是最大圆周切口。上一层 `modulus_minus_hull_width=80` 的线性读数仍有结构意义，但不能再被表述为圆周最小弧的互补长度。
 
 本步关闭当前 sweep 的单侧 circular-aperture/skew-growth 吸收解释。全局行/列命题仍未闭合；最新剩余是排斥 `CircularAperture-PDEC`，或证明持久圆弧复现进入 `ColumnCRT/PDEC`、`SAE` 或 moving-family multiplicity 出口。
+
+## 18. PM endpoint-release anchored circular-depth 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-anchored-circular-depth-audit.md
+data/prime-matrix-affine-twin-endpoint-release-anchored-circular-depth-ledger.json
+```
+
+把 circular-aperture 继续压到 actual 锚点：圆周最小弧 `[3029,3586]` 的右端点正是唯一 actual packet `19:8` 平移一周期后的代表 `3586`。因此反例链若既要保留当前 actual packet，又要用同一支撑吸收全部 formal pair，就不能只支付交支撑的左扩 `539`；generator phase 与 shifted-fill phase 两个左端点都必须到达圆弧起点。
+
+当前读数为：
+
+```text
+actual_anchor_pair=19:8
+actual_anchor_is_circular_arc_end=true
+support_width=20
+required_common_left_depth_to_cover_arc=557
+current_generator_left_depth=18
+current_fill_left_depth=28
+generator_left_increment_required=539
+fill_left_increment_required=529
+anchored_endpoint_release_total_required=1068
+one_sided_circular_support_extension=539
+hidden_second_endpoint_release=529
+endpoint_release_to_support_width_ratio=53.4
+q_from_generator_depth_formula=1109
+q_from_fill_depth_formula=560
+q_candidate_gap=549
+same_orientation_common_q_absent=true
+same_orientation_anchored_depth_absorption_closed_current_sweep=true
+```
+
+这把上一层单侧 circular aperture 缺口进一步变成双端点释放缺口：真实链当前 generator 左深度为 `18`、fill 左深度为 `28`，而锚定圆弧要求共同左深度 `557`；总释放 `1068` 是支撑宽度 `20` 的 `53.4` 倍。同向 AffineTwin moving key 也无法吸收该深度，因为 lower-side 深度公式给出 `q=2D-5=1109` 与 `q=D+3=560`，不可能是同一个奇素数 key。
+
+本步关闭当前 sweep 的 same-orientation anchored circular-depth absorption。全局行/列命题仍未闭合；最新剩余是排斥 `AnchoredCircularDepth-PDEC`，或证明持久 actual-anchored 圆弧复现进入 `ColumnCRT/PDEC`、`SAE`、方向改变 key 或 moving-family multiplicity 出口。

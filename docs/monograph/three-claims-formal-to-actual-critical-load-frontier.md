@@ -945,3 +945,36 @@ p_delay_gap_rank_by_width=3
 这给出更严格的审计边界：`p_delay=80` 子缝存在，但不是最大圆周空弧；真正最优切口删除的是 `19:8 -> 13:9` 的 `341` 宽 open gap。删除后剩余圆弧仍宽 `558`，远超真实链当前宽 `20` 的 primitive 支撑。反例链若试图通过支撑平移和单侧 feedback 吸收全部 formal pair，仍至少缺 `509` 的圆周 aperture 扩张。
 
 因此当前接口从 `BidirectionalSkewHull-PDEC` 精炼为 `CircularAperture-PDEC/ColumnCRT`：若该圆弧形态持久复现，必须证明它进入 ColumnCRT/PDEC、SAE 或 moving-family multiplicity 出口；若不能证明持久复现排斥，则不能宣称行/列命题无条件闭合。
+
+## 25. PM endpoint-release anchored circular-depth 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-anchored-circular-depth-audit.md
+data/prime-matrix-affine-twin-endpoint-release-anchored-circular-depth-ledger.json
+```
+
+将圆周最小弧与真实 actual packet 绑定后，得到更尖锐的容量/相位缺口。最优圆弧 `[3029,3586]` 的右端点是唯一 actual pair `19:8` 的平移代表；若这个 actual 锚不消失，吸收整段圆弧要求双端点同时扩张。
+
+当前读数为：
+
+```text
+actual_anchor_pair=19:8
+shifted_actual_anchor_representative=3586
+required_common_left_depth_to_cover_arc=557
+generator_left_increment_required=539
+fill_left_increment_required=529
+anchored_endpoint_release_total_required=1068
+hidden_second_endpoint_release=529
+anchored_release_after_single_side_feedback=1038
+endpoint_release_to_support_width_ratio=53.4
+q_from_generator_depth_formula=1109
+q_from_fill_depth_formula=560
+q_candidate_gap=549
+same_orientation_common_q_absent=true
+```
+
+因此 circular-aperture 失败若要继续作为真实链，必须支付两层约束：第一层是交支撑从宽 `20` 扩到覆盖 `558` 圆弧；第二层是 actual 锚固定时，generator 与 shifted-fill 两个相位端点都必须左移，额外暴露 `529` 的第二端点释放。把这个释放解释成同向 moving AffineTwin key 也失败，因为同一深度 `D=557` 同时要求两个不同的 `q`，且 fill 侧候选 `560` 不是奇素数。
+
+最新接口相应压成 `AnchoredCircularDepth-PDEC/ColumnCRT`：持久 actual-anchored 圆弧若不能被排斥，就必须作为固定锚相位缺陷、方向改变 key、SAE 或 moving-family multiplicity 出口登记；当前仍不是行/列命题的无条件闭合。
