@@ -416,3 +416,36 @@ all_actual_packets_pass_sqrt_gate_current=true
 ```
 
 这把 PM 前沿进一步具体化：当前 sweep 的真实负载非常小，形式包络与 actual load 的差额必须进入 `ProductAccountingTightening`，不能被用作真实临界矛盾。TP 与 RH 的合同则分别固定了 denominator floor 与 source-deleted final load 的下一步审稿格式。
+
+## 9. PM formal-pair pruning 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-formal-pair-pruning-audit.md
+data/prime-matrix-affine-twin-formal-pair-pruning-ledger.json
+```
+
+把 PM 的 `ProductAccountingTightening` 从抽象缺口压成当前 sweep 的逐项删除证书：
+
+```text
+formal_pair_total=40
+actual_packet_total_current=1
+formal_to_actual_gap=39
+crt_window_empty_pair_total_current=11
+source_unmaterialized_pair_total_current=28
+unresolved_formal_pair_total_current=0
+current_formal_gap_fully_pruned=true
+```
+
+因此当前 `F-A=39` 并不是隐藏临界负载，而是已经分解为两类非 actual packet：
+
+```text
+CRTWindowEmpty:
+  source 已物化，但 CRT 代表不落入双槽共同相位支撑。
+
+SourceMaterializationFailure:
+  formal residue product 有计数，但没有匹配方向的 gap-fill source。
+```
+
+这一步把 PM 的全局硬点进一步收窄为：证明所有形式配对若不能成为 actual packet，必进入 `CRTWindowEmpty`、`SourceMaterializationFailure-PDEC/SAE` 或 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。若该分类失败，失败形态本身就是新的反例链/真实链交叉点。

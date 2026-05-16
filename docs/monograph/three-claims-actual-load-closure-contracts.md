@@ -90,6 +90,39 @@ PrimitiveTwinSlotSupportExhaustion
 PrimitiveTwinSlotSupportEscape-PDEC/SAE
 ```
 
+### 1.4 formal-pair pruning 更新
+
+后续审计
+
+```text
+experiments/prime_matrix_affine_twin_formal_pair_pruning_audit.py
+data/prime-matrix-affine-twin-formal-pair-pruning-ledger.json
+docs/monograph/prime-matrix-affine-twin-formal-pair-pruning-audit.md
+```
+
+把当前 sweep 的 `ProductAccountingTightening` 进一步展开为可逐项检查的删除账本：
+
+```text
+formal_pair_total=40
+actual_packet_total_current=1
+formal_to_actual_gap=39
+crt_window_empty_pair_total_current=11
+source_unmaterialized_pair_total_current=28
+unresolved_formal_pair_total_current=0
+current_formal_gap_fully_pruned=true
+```
+
+其中 `q=31` 的 `12=3 x 4` 个 formal residue 配对已逐个 CRT 枚举，只有 `(generator residue, fill residue)=(19,8)` 在 pair support `[2669,2688]` 中给出代表 `2687`；其余 `11` 个是 `CRTWindowEmpty`。`q=43,103` 在当前方向没有 matching gap-fill source materialization，分别删除 `16` 与 `12` 个未物化配对。
+
+这关闭的是当前 sweep 的形式账本收紧缺口，不是全局证明。全局最窄剩余相应改写为：
+
+```text
+GlobalProductAccountingTightening
+SourceMaterializationFailure-PDEC/SAE
+CRTWindowEmptyGlobalSupportBound
+PrimitiveTwinSlotSupportEscape-PDEC/SAE
+```
+
 ## 2. TP-ALC：二点筛 actual ratio 合同
 
 ### 2.1 actual ratio
@@ -209,7 +242,7 @@ ControlledExitCriticalLoadNormalization
 
 | 合同 | actual load | critical capacity | 当前可证状态 | 剩余硬点 |
 |---|---:|---:|---|---|
-| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep 机器证书闭合 | 全局 actual packet exhaustion |
+| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet 与 formal-pair pruning 闭合 | 全局 actual packet exhaustion |
 | TP-ALC | actual `sum D / |U_Y|` | `1` with Buchstab `K(alpha)` | 分子 BMD 外部版可用 | denominator floor / parity gap |
 | RH-ALC | source-deleted final load | exit capacity | verification ledger 已有 | controlled exits 逐项归一化 |
 
@@ -217,7 +250,7 @@ ControlledExitCriticalLoadNormalization
 
 最直接的继续硬攻顺序是：
 
-1. **PM：** 扩展 actual packet 脚本，从当前 sweep 扩成所有 AffineTwin candidate ledgers，证明 `M_form` 的虚配对如何被删除。
+1. **PM：** 把 current sweep 的 `CRTWindowEmpty` 与 `SourceMaterializationFailure` 删除机制升级成全局分类定理，证明所有 future formal residue 配对若不能生成 actual packet，必进入这两个出口或 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
 2. **TP：** 写出 denominator floor 的 beta/Buchstab 下筛合同，明确 `delta(alpha)` 的可接受上限。
 3. **RH：** 生成 controlled-exit 四列表，先不证明 RH，只把每个 exit 的 actual-load 输入、闭合机制和未闭合项固定。
 
