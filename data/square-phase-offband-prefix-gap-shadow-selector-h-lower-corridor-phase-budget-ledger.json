@@ -1,0 +1,138 @@
+{
+  "aggregate": {
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "corridor_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-repair-corridor-ledger.json",
+    "phase_budget_row_count": 3,
+    "all_phase_budget_identities_closed": true,
+    "all_corridor_3gap_slack_positive": true,
+    "min_corridor_3gap_slack": 13,
+    "max_phase_bridge_gap_over_gap": 1.4838709677419355,
+    "all_phase_bridges_within_2gap": true,
+    "all_three_components_below_gap_count": 2,
+    "component_excess_row_count": 1,
+    "max_total_component_excess_over_gap": 15,
+    "min_other_component_spare_after_excess": 13,
+    "corridor_phase_budget_bound_proved": false,
+    "phase_bridge_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "phase_budget_rows": [
+    {
+      "gap_ell": 43,
+      "endpoint_direction": "upper",
+      "generator_ell": 47,
+      "fill_ell": 43,
+      "generator_p": 2063,
+      "fill_p": 2137,
+      "generator_phase": [
+        2048,
+        2075
+      ],
+      "fill_phase": [
+        2115,
+        2138
+      ],
+      "generator_right_depth": 12,
+      "phase_bridge_gap": 40,
+      "fill_left_depth": 22,
+      "p_delay": 74,
+      "phase_budget_identity_total": 74,
+      "phase_budget_identity_closed": true,
+      "corridor_3gap_budget": 129,
+      "corridor_3gap_slack": 55,
+      "component_spare": {
+        "generator_right_depth_spare": 31,
+        "phase_bridge_gap_spare": 3,
+        "fill_left_depth_spare": 21
+      },
+      "component_excess": {
+        "generator_right_depth_excess": 0,
+        "phase_bridge_gap_excess": 0,
+        "fill_left_depth_excess": 0
+      },
+      "total_component_excess_over_gap": 0,
+      "other_component_spare_after_excess": 55,
+      "all_three_components_below_gap": true,
+      "phase_bridge_within_2gap": true,
+      "gap_fill_pair_key": "dir=upper|gen=47|gap=43|fill=43|sides=plus->minus|dp=74|db=21|du=8|dr=-12"
+    },
+    {
+      "gap_ell": 31,
+      "endpoint_direction": "lower",
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_p": 2687,
+      "fill_p": 2767,
+      "generator_phase": [
+        2669,
+        2693
+      ],
+      "fill_phase": [
+        2739,
+        2768
+      ],
+      "generator_right_depth": 6,
+      "phase_bridge_gap": 46,
+      "fill_left_depth": 28,
+      "p_delay": 80,
+      "phase_budget_identity_total": 80,
+      "phase_budget_identity_closed": true,
+      "corridor_3gap_budget": 93,
+      "corridor_3gap_slack": 13,
+      "component_spare": {
+        "generator_right_depth_spare": 25,
+        "phase_bridge_gap_spare": -15,
+        "fill_left_depth_spare": 3
+      },
+      "component_excess": {
+        "generator_right_depth_excess": 0,
+        "phase_bridge_gap_excess": 15,
+        "fill_left_depth_excess": 0
+      },
+      "total_component_excess_over_gap": 15,
+      "other_component_spare_after_excess": 13,
+      "all_three_components_below_gap": false,
+      "phase_bridge_within_2gap": true,
+      "gap_fill_pair_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11"
+    },
+    {
+      "gap_ell": 59,
+      "endpoint_direction": "upper",
+      "generator_ell": 61,
+      "fill_ell": 59,
+      "generator_p": 3187,
+      "fill_p": 3257,
+      "generator_phase": [
+        3177,
+        3218
+      ],
+      "fill_phase": [
+        3249,
+        3274
+      ],
+      "generator_right_depth": 31,
+      "phase_bridge_gap": 31,
+      "fill_left_depth": 8,
+      "p_delay": 70,
+      "phase_budget_identity_total": 70,
+      "phase_budget_identity_closed": true,
+      "corridor_3gap_budget": 177,
+      "corridor_3gap_slack": 107,
+      "component_spare": {
+        "generator_right_depth_spare": 28,
+        "phase_bridge_gap_spare": 28,
+        "fill_left_depth_spare": 51
+      },
+      "component_excess": {
+        "generator_right_depth_excess": 0,
+        "phase_bridge_gap_excess": 0,
+        "fill_left_depth_excess": 0
+      },
+      "total_component_excess_over_gap": 0,
+      "other_component_spare_after_excess": 107,
+      "all_three_components_below_gap": true,
+      "phase_bridge_within_2gap": true,
+      "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+    }
+  ]
+}

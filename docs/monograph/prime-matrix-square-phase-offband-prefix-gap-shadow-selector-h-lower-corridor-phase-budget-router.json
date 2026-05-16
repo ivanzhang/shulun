@@ -1,0 +1,157 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_corridor_phase_budget_router",
+  "status": "corridor_phase_budget_identity_closed_current_sweep_global_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "corridor_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-repair-corridor-ledger.json",
+    "phase_budget_row_count": 3,
+    "all_phase_budget_identities_closed": true,
+    "all_corridor_3gap_slack_positive": true,
+    "min_corridor_3gap_slack": 13,
+    "max_phase_bridge_gap_over_gap": 1.4838709677419355,
+    "all_phase_bridges_within_2gap": true,
+    "all_three_components_below_gap_count": 2,
+    "component_excess_row_count": 1,
+    "max_total_component_excess_over_gap": 15,
+    "min_other_component_spare_after_excess": 13,
+    "corridor_phase_budget_bound_proved": false,
+    "phase_bridge_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "phase_budget_rows": [
+    {
+      "gap_ell": 43,
+      "endpoint_direction": "upper",
+      "generator_ell": 47,
+      "fill_ell": 43,
+      "generator_p": 2063,
+      "fill_p": 2137,
+      "generator_phase": [
+        2048,
+        2075
+      ],
+      "fill_phase": [
+        2115,
+        2138
+      ],
+      "generator_right_depth": 12,
+      "phase_bridge_gap": 40,
+      "fill_left_depth": 22,
+      "p_delay": 74,
+      "phase_budget_identity_total": 74,
+      "phase_budget_identity_closed": true,
+      "corridor_3gap_budget": 129,
+      "corridor_3gap_slack": 55,
+      "component_spare": {
+        "generator_right_depth_spare": 31,
+        "phase_bridge_gap_spare": 3,
+        "fill_left_depth_spare": 21
+      },
+      "component_excess": {
+        "generator_right_depth_excess": 0,
+        "phase_bridge_gap_excess": 0,
+        "fill_left_depth_excess": 0
+      },
+      "total_component_excess_over_gap": 0,
+      "other_component_spare_after_excess": 55,
+      "all_three_components_below_gap": true,
+      "phase_bridge_within_2gap": true,
+      "gap_fill_pair_key": "dir=upper|gen=47|gap=43|fill=43|sides=plus->minus|dp=74|db=21|du=8|dr=-12"
+    },
+    {
+      "gap_ell": 31,
+      "endpoint_direction": "lower",
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_p": 2687,
+      "fill_p": 2767,
+      "generator_phase": [
+        2669,
+        2693
+      ],
+      "fill_phase": [
+        2739,
+        2768
+      ],
+      "generator_right_depth": 6,
+      "phase_bridge_gap": 46,
+      "fill_left_depth": 28,
+      "p_delay": 80,
+      "phase_budget_identity_total": 80,
+      "phase_budget_identity_closed": true,
+      "corridor_3gap_budget": 93,
+      "corridor_3gap_slack": 13,
+      "component_spare": {
+        "generator_right_depth_spare": 25,
+        "phase_bridge_gap_spare": -15,
+        "fill_left_depth_spare": 3
+      },
+      "component_excess": {
+        "generator_right_depth_excess": 0,
+        "phase_bridge_gap_excess": 15,
+        "fill_left_depth_excess": 0
+      },
+      "total_component_excess_over_gap": 15,
+      "other_component_spare_after_excess": 13,
+      "all_three_components_below_gap": false,
+      "phase_bridge_within_2gap": true,
+      "gap_fill_pair_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11"
+    },
+    {
+      "gap_ell": 59,
+      "endpoint_direction": "upper",
+      "generator_ell": 61,
+      "fill_ell": 59,
+      "generator_p": 3187,
+      "fill_p": 3257,
+      "generator_phase": [
+        3177,
+        3218
+      ],
+      "fill_phase": [
+        3249,
+        3274
+      ],
+      "generator_right_depth": 31,
+      "phase_bridge_gap": 31,
+      "fill_left_depth": 8,
+      "p_delay": 70,
+      "phase_budget_identity_total": 70,
+      "phase_budget_identity_closed": true,
+      "corridor_3gap_budget": 177,
+      "corridor_3gap_slack": 107,
+      "component_spare": {
+        "generator_right_depth_spare": 28,
+        "phase_bridge_gap_spare": 28,
+        "fill_left_depth_spare": 51
+      },
+      "component_excess": {
+        "generator_right_depth_excess": 0,
+        "phase_bridge_gap_excess": 0,
+        "fill_left_depth_excess": 0
+      },
+      "total_component_excess_over_gap": 0,
+      "other_component_spare_after_excess": 107,
+      "all_three_components_below_gap": true,
+      "phase_bridge_within_2gap": true,
+      "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+    }
+  ],
+  "corridor_phase_budget_bound_proved": false,
+  "phase_bridge_pdec_excluded_globally": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "ShortGapRepairCorridorBoundOrCorridorPDECExclusion",
+  "hardpoint_after_router": "CorridorPhaseBudgetBoundOrPhaseBridgePDECExclusion",
+  "next_direct_attack_target": "CorridorPhaseBudgetBoundOrPhaseBridgePDECExclusion",
+  "plain_conclusion": "本步把短走廊不等式分解为精确三分量身份 `p_delay = generator_right_depth + phase_bridge_gap + fill_left_depth`。当前三条身份全部闭合，`3*gap_ell` 最小余量为 13。唯一分量超标发生在 `gap_ell=31` 的 phase bridge，但被另两个深度分量余量吸收。全局剩余是证明三分量预算界，或把 phase bridge 超标登记并排斥为 PhaseBridge-PDEC/SAE。",
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_corridor_phase_budget_router.py": "9c37afc4a4a12b1fa2c380d2a72beb79b62fd2013d41a5559ba2df6813da8016",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json": "abfda31e733d7c1e274ded997056cf5e55d39d555a72f4f8ca35ac689c62ae1e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-repair-corridor-ledger.json": "8af116227ee290b0341711947c640d3bceb05b32be2ca833c322aa61900a69bf",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-ledger.json": "53a5e2b1c0a7fb57d210885b9719c9aefa93cdaa5e34ff579e9df37187fdb969",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-router.md": "11bb24178c79f45dc2803117c2bccef68d71ab2ac75228fa84559f0f37387d16"
+  }
+}
