@@ -1,0 +1,157 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_slot_phase_lock_router",
+  "status": "affine_twin_fixed_slot_pair_isolated_moving_family_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "affine_twin_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-prime-gate-ledger.json",
+    "primitive_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-ledger.json",
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "affine_twin_slot_phase_lock_row_count": 1,
+    "all_generator_fill_slots_are_twin_moduli": true,
+    "all_slot_moduli_are_coprime": true,
+    "all_slot_residues_match_pair_ledger": true,
+    "all_pair_delay_affine_identities_closed": true,
+    "all_depth_affine_identities_closed": true,
+    "all_pair_phase_width_affine_identities_closed": true,
+    "all_combined_crt_modulus_affine_identities_closed": true,
+    "all_combined_moduli_exceed_pair_support_width": true,
+    "all_current_affine_twin_slot_pairs_isolated": true,
+    "min_combined_modulus_minus_pair_support_width": 879,
+    "fixed_affine_twin_slot_pair_isolation_criterion_proved": true,
+    "moving_affine_twin_family_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "affine_twin_slot_phase_lock_rows": [
+    {
+      "gap_ell": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_p": 2687,
+      "fill_p": 2767,
+      "p_delay": 80,
+      "p_delay_affine_rhs": 80,
+      "p_delay_affine_identity": true,
+      "generator_slot": "242:53:29",
+      "fill_slot": "229:46:31",
+      "generator_side": "minus",
+      "fill_side": "plus",
+      "generator_modulus": 29,
+      "fill_modulus": 31,
+      "generator_modulus_is_q_minus_2": true,
+      "fill_modulus_is_q": true,
+      "slot_moduli_are_coprime": true,
+      "generator_residue": 19,
+      "fill_residue": 8,
+      "shifted_fill_residue_for_generator_p": 21,
+      "slot_residues_match_pair_ledger": true,
+      "generator_phase": [
+        2669,
+        2693
+      ],
+      "fill_phase": [
+        2739,
+        2768
+      ],
+      "shifted_fill_phase_for_generator_p": [
+        2659,
+        2688
+      ],
+      "pair_phase_support": [
+        2669,
+        2688
+      ],
+      "pair_phase_support_width": 20,
+      "pair_phase_support_width_affine_rhs": 20,
+      "pair_phase_width_affine_identity": true,
+      "generator_left_depth": 18,
+      "generator_right_depth": 6,
+      "fill_left_depth": 28,
+      "fill_right_depth": 1,
+      "generator_left_depth_affine_rhs": 18,
+      "generator_right_depth_affine_rhs": 6,
+      "fill_left_depth_affine_rhs": 28,
+      "fill_right_depth_affine_rhs": 1,
+      "depth_affine_identities_closed": true,
+      "combined_crt_residue_for_generator_p": 889,
+      "combined_crt_modulus": 899,
+      "combined_crt_modulus_affine_rhs": 899,
+      "combined_crt_modulus_affine_identity": true,
+      "combined_modulus_minus_pair_support_width": 879,
+      "combined_modulus_exceeds_pair_support_width": true,
+      "pair_unique_representatives": [
+        2687
+      ],
+      "actual_generator_p_is_unique_pair_representative": true,
+      "actual_fill_p_recovered_from_pair_representative": true,
+      "fixed_affine_twin_slot_pair_isolated": true,
+      "source_affine_twin_gate_key": "q=31|twin=29,31|qmod4=3",
+      "source_primitive_key": "gap=31|eg=29->31|gm=15|db=-13|du=-7|fls=3",
+      "source_gap_fill_pair_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11"
+    }
+  ],
+  "fixed_affine_twin_slot_pair_isolation_criterion_proved": true,
+  "moving_affine_twin_family_excluded": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "AffineTwinPrimeGateBoundOrAffineTwinPDECExclusion",
+  "hardpoint_after_router": "AffineTwinMovingFamilySAEOrColumnCRTExclusion",
+  "next_direct_attack_target": "AffineTwinMovingFamilySAEOrColumnCRTExclusion",
+  "theorem_rows": [
+    {
+      "name": "affine_twin_slot_pair_phase_lock",
+      "status": "closed_current_atom",
+      "statement": "In the current AffineTwin atom, generator and fill slots give coprime CRT conditions modulo q-2 and q; after shifting by the affine p-delay, their product modulus exceeds the common phase support."
+    },
+    {
+      "name": "fixed_affine_twin_slot_pair_isolation",
+      "status": "closed",
+      "statement": "For a fixed affine-twin slot pair satisfying the recorded primitive depth identities, q(q-2)>(q+9)/2 isolates at most one generator P in the pair support."
+    },
+    {
+      "name": "moving_affine_twin_family_exclusion",
+      "status": "open",
+      "statement": "A global proof must still exclude recurrence where q and the slot pair move with P, or route that family to SAE/ColumnCRT/PDEC."
+    }
+  ],
+  "plain_conclusion": "本步把 AffineTwin 门继续接入 slot-depth/CRT 相位锁：生成槽给出 `P≡a_g (mod q-2)`，修补槽在平移 `p_delay` 后给出 `P≡a_f-p_delay (mod q)`。两模互素，合成模数为 `q(q-2)`；primitive 深度身份把共同相位支撑压成 `(q+9)/2`。当前 `q=31` 时 `29*31=899 > 20`，唯一代表为 `P=2687`，并恢复 `P+80=2767`。因此固定 AffineTwin 双槽原子已孤立；全局剩余是排斥 q/槽随 P 移动的族，或将其作为 SAE/ColumnCRT/PDEC 终端证书处理。",
+  "decision_rows": [
+    {
+      "gate": "AffineTwinSlotPhaseLockClosedCurrentAtom",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前 AffineTwin 原子已由双槽 CRT/相位支撑判据孤立。",
+      "remaining": "closed for fixed atom"
+    },
+    {
+      "gate": "FixedAffineTwinSlotPairIsolationCriterionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "`q(q-2)>(q+9)/2` 给出固定仿射双槽图样唯一代表判据。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "MovingAffineTwinFamilyExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "q 与槽图样随 P 移动的族尚未全局排斥。",
+      "remaining": "AffineTwinMovingFamilySAEOrColumnCRTExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步关闭固定双槽原子，不关闭全局行/列命题。",
+      "remaining": "AffineTwinMovingFamilySAEOrColumnCRTExclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_slot_phase_lock_router.py": "eaa0c9fd03c10abc1e7a61828ce45156f1bd337114a45a38928d9d173357988a",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-prime-gate-ledger.json": "223a7643a7779a06880ff1790997d2bfd3b4416f62ca6a65e35c57c8fac3b94c",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-ledger.json": "c4a2bfa9e30b4444723f339d4501c3ea14b97fc62954ac659095bacc80c2d5f1",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json": "abfda31e733d7c1e274ded997056cf5e55d39d555a72f4f8ca35ac689c62ae1e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json": "a8048685a2c6449b42ed5d2190aa47e75b20abf36a18e18c4d1ddb223cba033f",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-router.md": "ce3356246ec164b0eb947707b672a5214dc230fb991b52236b03a088ac312959"
+  }
+}
