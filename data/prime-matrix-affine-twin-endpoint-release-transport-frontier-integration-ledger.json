@@ -1,0 +1,88 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_transport_frontier_integration_audit",
+  "status": "current_sweep_transport_frontier_integrated_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "persistent_family_promotion_ledger": "data/prime-matrix-affine-twin-endpoint-release-persistent-family-promotion-ledger.json",
+    "fixed_residue_transport_cell_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-fixed-residue-transport-cell-ledger.json",
+    "transport_cell_iteration_drift_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-transport-cell-iteration-drift-ledger.json",
+    "transport_cell_reset_pdec_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-transport-cell-reset-pdec-ledger.json",
+    "persistence_frontier_partition_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-persistence-frontier-partition-ledger.json",
+    "fixed_residue_slot_drift_pair_count": 12,
+    "transport_cell_count": 12,
+    "unique_transport_cell_count": 12,
+    "transport_cell_recurrence_count": 0,
+    "exact_phase_translate_count": 0,
+    "all_edge_defects_strictly_below_ell": true,
+    "max_abs_edge_defect": 30,
+    "forward_finite_lifetime_count": 12,
+    "max_forward_transition_count": 8,
+    "max_forward_additional_after_observed": 7,
+    "immediate_terminal_after_observed_count": 8,
+    "reset_pdec_atom_count": 0,
+    "repeated_transport_cell_key_count": 0,
+    "physical_record_count": 324,
+    "transport_cell_physical_record_count": 24,
+    "singleton_residue_physical_record_count": 300,
+    "unclassified_physical_record_count": 0,
+    "fixed_drift_to_transport_closed_current_sweep": true,
+    "chained_transport_persistence_closed_current_sweep": true,
+    "nonchained_transport_reset_atoms_empty_current_sweep": true,
+    "persistence_frontier_partition_closed_current_sweep": true,
+    "transport_frontier_integration_closed_current_sweep": true,
+    "transport_reset_pdec_excluded_globally": false,
+    "singleton_residue_sae_rankin_bound_proved": false,
+    "global_epoch_pair_multiplicity_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "transport_frontier_route_rows": [
+    {
+      "gate": "FixedResidueSlotDriftToTransportCell",
+      "closed_current_sweep": true,
+      "evidence": "slot-drift pairs=12; transport cells=12; unique cells=12; exact phase translates=0",
+      "global_remaining": "TransportCellPDEC/ColumnCRT"
+    },
+    {
+      "gate": "ChainedTransportDepthDrift",
+      "closed_current_sweep": true,
+      "evidence": "forward finite cells=12; max forward transitions=8; immediate terminal cells=8",
+      "global_remaining": "NonChainedTransportCellPDEC"
+    },
+    {
+      "gate": "NonChainedTransportResetPDEC",
+      "closed_current_sweep": true,
+      "evidence": "unique transport cell keys=12; repeated keys=0; reset atoms=0",
+      "global_remaining": "TransportResetPDECExclusion"
+    },
+    {
+      "gate": "PersistenceFrontierPartition",
+      "closed_current_sweep": true,
+      "evidence": "physical records=324; transport physical records=24; singleton physical records=300; unclassified=0",
+      "global_remaining": "SingletonResidueSAE/Rankin"
+    }
+  ],
+  "contract": {
+    "transport_frontier_integration": [
+      "fixed-residue slot drift is not a fixed-slot recurrence; it factors through transport cells",
+      "current transport cells are unique and have no exact phase translate",
+      "chained transport recurrence has finite depth lifetime in the current ledger",
+      "non-chained recurrence must repeat the full transport-cell key; current reset atoms are empty",
+      "the frontier partition leaves singleton residue packets as a separate SAE/Rankin obligation"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "TransportResetPDECExclusion",
+      "SingletonResidueSAE/Rankin",
+      "GlobalEpochPairMultiplicityBound",
+      "MovingResidueShapeSAE/Rankin"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-endpoint-release-persistent-family-promotion-ledger.json": "7d0248a1b26a61489d748ecb0c353379d5b38458ec572e0f108dba7d5562dfce",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-fixed-residue-transport-cell-ledger.json": "7a6af4c73819b3e86322f0b0e40032dc0e98a3f114eab5b163284c85e2b6f23b",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-transport-cell-iteration-drift-ledger.json": "45e0a3f337d03dbc6317776e3350aa75a018d155062b6ce4c24fd8b65bbca692",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-transport-cell-reset-pdec-ledger.json": "e6f6e91cf374354bf5834506a580029f1c9518c04f79d4df741d5e11549fac6b",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-persistence-frontier-partition-ledger.json": "1f61cb91bbabc3fdccfee381045187a294f0483a73834491189b8d636e585745"
+  }
+}

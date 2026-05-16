@@ -1383,3 +1383,41 @@ source/pressure/fill: 当前 source 阻断 28 个 formal pairs，paired pressure
 ```
 
 因此当前 sweep 中，persistent family 不能作为匿名容量来源。全局最窄剩余进一步压成 `GlobalEpochPairMultiplicityBound` 与 `FixedResidueSlotDriftColumnCRT`，并保留 `MovingResidueShapeSAE/Rankin`、`HighDensityEpochPair-PDEC/ColumnCRT` 与 source-rematerialization 出口。
+
+## 38. PM endpoint-release transport-frontier integration 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-transport-frontier-integration-audit.md
+data/prime-matrix-affine-twin-endpoint-release-transport-frontier-integration-ledger.json
+```
+
+本节把上一节留下的 `FixedResidueSlotDriftColumnCRT` 接入既有 transport-cell 深层账本。当前集成审计给出：
+
+```text
+fixed_residue_slot_drift_pair_count=12
+transport_cell_count=12
+unique_transport_cell_count=12
+transport_cell_recurrence_count=0
+exact_phase_translate_count=0
+max_forward_transition_count=8
+reset_pdec_atom_count=0
+physical_record_count=324
+transport_cell_physical_record_count=24
+singleton_residue_physical_record_count=300
+unclassified_physical_record_count=0
+transport_frontier_integration_closed_current_sweep=true
+```
+
+新的显式冲突读数是：
+
+```text
+反例链若把固定残基槽漂移当作持续容量来源；
+真实链要求这些漂移成为可复现的 transport cell；
+但当前 12 个 transport cell 全部互异且无 exact phase translate；
+链式复现会有限步终止，非连续复现又必须重复完整 reset key；
+当前 reset-PDEC atom 数为 0。
+```
+
+因此 `FixedResidueSlotDriftColumnCRT` 在当前 sweep 内不再是匿名容量出口，而被压成 `TransportResetPDECExclusion` 与 `SingletonResidueSAE/Rankin` 两个更底层义务。全局最窄剩余现在是 `TransportResetPDECExclusion`、`SingletonResidueSAE/Rankin` 与 `GlobalEpochPairMultiplicityBound`，并保留 `MovingResidueShapeSAE/Rankin` 作为移动残基形状出口；行/列命题仍未无条件闭合。

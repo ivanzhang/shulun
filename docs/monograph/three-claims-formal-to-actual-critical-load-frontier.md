@@ -1560,3 +1560,38 @@ source_gate_blocked_formal_pairs=28
 ```
 
 最新未闭合硬点不再是匿名 `GeneratorCoarrivalFamilyBound`，而是 `GlobalEpochPairMultiplicityBound` 与 `FixedResidueSlotDriftColumnCRT`：要么证明 moving epoch-pair 总 multiplicity 可求和，要么把固定残基槽漂移族升级为明确 ColumnCRT/PDEC 并排斥。
+
+## 45. PM endpoint-release transport-frontier integration 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-transport-frontier-integration-audit.md
+data/prime-matrix-affine-twin-endpoint-release-transport-frontier-integration-ledger.json
+```
+
+本节继续下钻上一节的固定残基槽漂移出口。promotion 账本中有 `12` 个 fixed-residue slot-drift pairs；transport-cell 集成账本逐个匹配到 `12` 个 transport cells，且：
+
+```text
+unique_transport_cell_count=12
+transport_cell_recurrence_count=0
+exact_phase_translate_count=0
+forward_finite_lifetime_count=12
+max_forward_transition_count=8
+immediate_terminal_after_observed_count=8
+reset_pdec_atom_count=0
+partition_total=24 transport physical + 300 singleton physical
+unclassified_physical_record_count=0
+```
+
+这把容量/相位冲突继续收窄：
+
+```text
+反例链需要 slot-drift 在后续层继续复现以补足容量；
+真实链若复现同一 transport cell，则深度漂移给出有限寿命；
+真实链若跳过链式复现而非连续重置，则必须重复完整 cell key；
+当前完整 key 重复数和 reset atom 都为 0；
+剩余 singleton residue 被单独送入 SAE/Rankin 质量账本。
+```
+
+所以 current sweep 中的 `FixedResidueSlotDriftColumnCRT` 已被拆成可检查的 transport-frontier 路由，不再是未分类 ColumnCRT 容量来源。最新全局剩余是 `TransportResetPDECExclusion`、`SingletonResidueSAE/Rankin`、`GlobalEpochPairMultiplicityBound` 与 `MovingResidueShapeSAE/Rankin`；它们仍是全局义务，不能据此宣称行/列命题已经无条件闭合。
