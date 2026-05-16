@@ -1190,3 +1190,32 @@ support_graph_cap_slack_to_sqrt_floor=9
 因此任意侧残基集合的 actual projection hits 都由图像容量 `20` 控制，而不是由侧残基笛卡尔积控制。当前最小 crossing hits 为 `3`，完整 packet hits 为 `6`，均低于 `20<=29`。
 
 固定 AffineTwin 槽的一般公式也在本步登记：`W=(q+9)/2`，对 `q>=13` 有 `W^2<=q(q-2)`，等价于 `3q^2-26q-81>=0`。所以在不移动槽的前提下，ProductAccounting 已收紧到 actual graph projection；全局剩余只剩 moving-slot support escape 或 projection-collision 的命名出口。
+
+## 32. PM endpoint-release moving-slot graph-cap route 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-moving-slot-graph-cap-route-audit.md
+data/prime-matrix-affine-twin-endpoint-release-moving-slot-graph-cap-route-ledger.json
+```
+
+本节把上一节留下的 moving-slot support escape 拆成分层路由。当前证书给出：
+
+```text
+current_q=31
+current_support_graph_cap=20
+current_sqrt_floor=29
+fixed_candidate_q_values=[31,43,103]
+all_fixed_candidate_graph_caps_passed=true
+support_motion_candidate_count=11
+all_support_motion_requires_both_endpoint_release=true
+exact_rematerialized_q_values=[]
+anonymous_moving_slot_actual_overload_closed_current_sweep=true
+```
+
+因此，若槽只是换到同向 AffineTwin 固定候选族，图容量门仍成立；候选 `q=31,43,103` 的支撑宽度都满足 `W^2<=q(q-2)`。若真正移动当前 `q=31` 支撑，11 个 support-motion 候选全部需要双端点释放；最窄 atom `19:12` 也要释放 `70`，是支撑宽度 `20` 的 `3.5` 倍。
+
+进一步，保持固定 primitive key 会同时打破 generator/fill 两侧深度恒等式；允许同向 moving key 时，最窄 atom `19:12` 给出 `q_g=111` 与 `q_f=61`，差 `50`，不能形成同一 key。深度公式吐出的 19 个候选 `q` 没有任何精确 source 重物化，直方图为 `CompositeQ:13, PrimeButNotTwinAffine:6`。
+
+所以当前 sweep 内没有匿名 moving-slot actual overload。剩余被压成明确命名出口：`MovingSlotFamilyPersistenceNoGo`、方向改变 primitive key、`SourceRematerialization-PDEC/SAE`、`ColumnCRT/PDEC` 或 unused-target arrival 的族级控制；行/列命题仍未无条件闭合。

@@ -1356,3 +1356,36 @@ W^2 <= q(q-2) <=> 3q^2-26q-81>=0.
 ```
 
 当前 `q=31` 的符号余量为 `1996`。因此最新剩余已经不在固定槽 ProductAccounting，而是 moving-slot support escape：若反例链要绕过图像容量，必须移动或改变共同支撑图像，进入 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
+
+## 39. PM endpoint-release moving-slot graph-cap route 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-moving-slot-graph-cap-route-audit.md
+data/prime-matrix-affine-twin-endpoint-release-moving-slot-graph-cap-route-ledger.json
+```
+
+本节直接攻击上一节的 moving-slot 剩余口。证书把逃逸拆成六个门：
+
+```text
+FixedOrMovedAffineTwinGraphCap
+SamePrimitiveSupportMotion
+FixedPrimitiveDepthIdentity
+SameOrientationMovingKeyDepthFormula
+MovingKeySourceRematerialization
+MovingFamilyColumnCRTOrSAE
+```
+
+当前 fixed/moved AffineTwin 候选 `q=[31,43,103]` 全部满足固定图容量不等式；已实现的仍只有 `q=31`。如果反例链不保持固定图像而移动支撑，最窄 `19:12` 也要求共同深度 `58` 与双端点释放 `70`，超过支撑宽度 `20`。若试图把这解释为 key 迁移，同向深度公式给出 `q_g=111`、`q_f=61`，二者不相等；若只取单侧候选再 source 重物化，则 19 个候选没有一个精确物化。
+
+由此得到当前最明确的容量/相位矛盾读数：
+
+```text
+真实链 fixed actual graph cap = 20 < sqrt(29*31)=29;
+反例链 moving support 最小释放 = 70 > 20;
+同向 moving key 最小公式差 = 50;
+source rematerialized exact q = [].
+```
+
+这关闭当前 sweep 的匿名 moving-slot actual overload。若全局族继续复现，必须落入方向改变 primitive key、source-rematerialization、ColumnCRT/PDEC、SAE 或 unused-target arrival 的命名出口；因此本步是行/列命题内部主线的进一步收窄，而不是全局无条件终稿。
