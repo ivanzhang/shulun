@@ -1109,3 +1109,36 @@ unused-target minimum: 19:12 -> 20:9, jump=59, new side residue=1
 因此 unused-target 跳跃 `59` 与 gap source `59` 只是数值相邻，不是同一个合法相位通道。`20:9` 还需要新增 generator residue `20`，并且 `59>20`，仍在 primitive support 外。
 
 最新接口压成 `NearMiss6159GlobalFamilyNoGo`：若全局族中反复出现同类 `q/(q-2)` 近邻，必须证明其源签名、方向与 delay 仍不能同时匹配；若失败，则登记为明确的 `SourceRematerialization-PDEC/SAE`、`UnusedTargetResidueArrival-PDEC`、`ColumnCRT/PDEC` 或 moving-family 出口。当前 sweep 的 `61/59` 近失配已经关闭，但这仍不是行/列命题的无条件闭合。
+
+## 31. PM endpoint-release phase-scale bridge exhaustion 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-phase-scale-bridge-exhaustion-audit.md
+data/prime-matrix-affine-twin-endpoint-release-phase-scale-bridge-exhaustion-ledger.json
+```
+
+继续把 near-miss 从单点推广为全候选相位尺度账本。对每个 moving-q 候选同时检查四类可能桥：
+
+```text
+q == available gap source
+q-2 == available gap source
+q == unused-target CRT jump
+q-2 == unused-target CRT jump
+```
+
+当前结果为：
+
+```text
+exact_q_gap_bridge_q_values=[]
+exact_q_unused_jump_bridge_q_values=[]
+exact_qminus2_gap_bridge_q_values=[61]
+exact_qminus2_unused_jump_bridge_q_values=[61]
+exact_qminus2_gap_and_unused_bridge_q_values=[61]
+viable_exact_scale_bridge_q_values=[]
+```
+
+这说明所有 exact-q 桥全部为空；唯一 exact-offset 桥就是 `q=61` 的 `q-2=59`，而它已经在上一节失败于源签名、方向、delay 与新侧残基条件。最近 unused jump 到 `q=61` 的差只有 `1`，但该 jump 是 `60` 而不是 AffineTwin key 或 gap source；真正同时落在 gap/source 与 unused-target 的整数仍是 `59=q-2`，不是 `q`。
+
+因此当前可攻接口从“是否还有另一个近失配桥”压成：证明任意持久族的 exact/offset phase-scale bridge 都必须满足相同源签名门控；若不能满足，则进入 `PhaseScaleBridgeGlobalNoGo` 或命名 `PDEC/SAE` 出口。当前 sweep 内没有剩余匿名相位桥，但全局行/列命题仍未无条件闭合。

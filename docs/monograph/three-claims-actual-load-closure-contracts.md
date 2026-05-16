@@ -961,3 +961,34 @@ near_miss_61_59_phase_fracture_closed_current_sweep=true
 因此整数 `59` 的两次出现不能桥接反例链：它一边只是 `q=61` 的邻近源，另一边只是 unused-target 的新侧残基到达尺度。二者都没有给出 current primitive support 内的合法 actual anchor 替换。
 
 本步关闭当前 sweep 中 `61/59` 近失配作为隐藏吸收通道的解释。全局行/列命题仍未闭合；剩余是把 `NearMiss6159GlobalFamilyNoGo` 升格为族定理，或继续排斥 source-rematerialization、unused-target arrival、ColumnCRT/PDEC 与 moving-family 出口。
+
+## 24. PM endpoint-release phase-scale bridge exhaustion 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-phase-scale-bridge-exhaustion-audit.md
+data/prime-matrix-affine-twin-endpoint-release-phase-scale-bridge-exhaustion-ledger.json
+```
+
+把上一节的 `61/59` 近失配扩展到所有 moving-q 候选、当前 gap source 与 unused-target CRT 跳跃。当前三组尺度为：
+
+```text
+moving_q_values=[61, 65, 96, 111, 119, 123, 154, 181, 235, 293, 297, 355, 386, 575, 699, 761, 1375, 1499, 1747]
+available_gap_source_values=[31, 43, 59]
+unused_target_jump_values=[59, 60, 90, 150, 281, 343, 345, 374, 375]
+```
+
+审计给出：
+
+```text
+exact_q_gap_bridge_q_values=[]
+exact_q_unused_jump_bridge_q_values=[]
+exact_qminus2_gap_and_unused_bridge_q_values=[61]
+viable_exact_scale_bridge_q_values=[]
+all_exact_or_offset_scale_bridges_fractured_current_sweep=true
+```
+
+因此更强的结论是：没有任何 moving-q 本身精确命中可用 source 或 unused jump；唯一精确 offset 桥仍是 `q=61` 的 `q-2=59`，而该桥已经被 `61/59 phase-fracture` 证明断裂。也就是说，反例链不能把 moving-key、已有 source 和 unused-target arrival 三者接成同一条 actual 相位桥。
+
+本步关闭当前 sweep 的 exact/offset phase-scale bridge 吸收解释。全局行/列命题仍未闭合；剩余是把 `PhaseScaleBridgeGlobalNoGo` 升格为族定理，或继续处理 source-rematerialization、unused-target arrival、ColumnCRT/PDEC 与 moving-family 出口。
