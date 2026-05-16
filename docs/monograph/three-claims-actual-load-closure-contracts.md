@@ -815,3 +815,40 @@ anchored_parity_nogo_closed_current_sweep=true
 因此这里的失败不是“另一个大素数可能补上”的问题：`D=557` 为奇数，fill 侧候选 `D+3=560` 是大于 `2` 的偶数，根本不能成为奇素数 AffineTwin key；同时它与唯一共同深度解 `8` 相差 `549`。
 
 本步关闭当前 sweep 的 same-orientation anchored parity absorption。全局行/列命题仍未闭合；剩余是把这个 parity no-go 升格为全局族定理，或处理方向改变 key、`ColumnCRT/PDEC`、`SAE`、moving-family multiplicity 出口。
+
+## 20. PM endpoint-release cut-anchor sweep 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-cut-anchor-sweep-audit.md
+data/prime-matrix-affine-twin-endpoint-release-cut-anchor-sweep-ledger.json
+```
+
+把 anchored parity no-go 从单个最优圆弧扩展到全部圆周切口。对每个相邻 CRT 类之间的 cut，保留唯一 actual packet `19:8`，把它平移进 lifted arc，然后同时计算 left/right 共同深度与 generator、shifted-fill 双端点释放量。
+
+当前读数为：
+
+```text
+cut_count=12
+actual_anchor_position_histogram={'arc_end': 1, 'arc_interior': 10, 'arc_start': 1}
+minimal_circular_arc_matches_previous_audit=true
+min_arc_cut=19:8->13:9
+min_arc_width=558
+min_total_endpoint_release_required=1068
+min_release_to_support_width_ratio=53.4
+max_total_endpoint_release_required=1737
+left_common_depth_solution=8
+right_common_depth_solution=1
+min_positive_left_depth=58
+min_left_gap_from_common_depth_solution=50
+min_positive_right_depth=342
+min_right_gap_from_common_depth_solution=341
+all_endpoint_releases_exceed_support_width=true
+all_actual_retained_cuts_same_orientation_closed=true
+cut_anchor_sweep_closed_current_sweep=true
+```
+
+因此换切口不能释放当前矛盾：最优 cut 是之前的 `[3029,3586]` 圆弧，actual 位于右端并落入 left `D=557` 的 parity no-go；另一个 endpoint cut 让 actual 位于左端，但要求 right `D=841`，被 above-side `D=1` fixed-fill 条件排斥。其余十个 interior cut 更强，因为 actual 在圆弧内部，必须同时支付左右两侧端点释放；所有同向 moving-key 公式均无共同解。
+
+本步关闭当前 sweep 的 actual-retained same-orientation cut-anchor absorption。全局行/列命题仍未闭合；剩余是把 `CutAnchorSweepGlobalFamilyNoGo` 升格为全局族定理，或处理方向改变 key、`ColumnCRT/PDEC`、`SAE`、moving-family multiplicity 出口。
