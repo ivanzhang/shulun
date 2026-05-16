@@ -1318,3 +1318,41 @@ actual_sqrt_slack=23
 ```
 
 这给出更精确的反例链/真实链矛盾点：反例链的 `SuperSqrt` 来自把侧残基笛卡尔积当作 actual load；真实链只允许落入共同支撑窗口的 residue pairs 计入 actual load。当前 packet 的真实投影远低于平方根门。因此当前 `SuperSqrt` 分支不是 actual overload，而是 `ProductAccountingTightening` 问题；若未来投影 hits 也超界，则已经是命名 `ProjectionCollision/SupportEscape-PDEC`。
+
+## 38. PM endpoint-release support-graph cap 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-support-graph-cap-audit.md
+data/prime-matrix-affine-twin-endpoint-release-support-graph-cap-ledger.json
+```
+
+本节把 ProductAccounting 的正确 actual 计数对象固定为共同支撑图像。当前 target window 为连续整数段 `[2669,2688]`，对应 20 个 residue pairs：
+
+```text
+(1,21),(2,22),...,(10,30),(11,0),...,(20,9).
+```
+
+它是双向函数图像：
+
+```text
+generator_functional_graph=true
+fill_functional_graph=true
+affine_offsets_mod_fill=[20]
+```
+
+所以任意 `G x F` 的 actual projection 至多命中该图像的 `20` 个点。由于
+
+```text
+support_graph_cap=20
+sqrt_floor=floor(sqrt(29*31))=29
+```
+
+当前固定槽不可能产生 actual SuperSqrt overload。一般固定 AffineTwin 槽的支撑宽度为 `W=(q+9)/2`；对 `q>=13`，
+
+```text
+W^2 <= q(q-2) <=> 3q^2-26q-81>=0.
+```
+
+当前 `q=31` 的符号余量为 `1996`。因此最新剩余已经不在固定槽 ProductAccounting，而是 moving-slot support escape：若反例链要绕过图像容量，必须移动或改变共同支撑图像，进入 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
