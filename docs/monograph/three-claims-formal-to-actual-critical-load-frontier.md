@@ -1055,3 +1055,29 @@ P == 889 mod 899
 所以固定 `q=31`、固定 actual 槽的 ColumnCRT 质量是 `1/899`。若按 cut 数误计会得到 `12/899`，其中 `11/899` 是纯切口重数假象，不是真实链可使用的容量。
 
 这给出新的显式矛盾点：反例链在 same-orientation 已关闭后若试图通过换 cut 维持固定 actual 锚，并不能获得新的相位容量；真实链只允许一个固定模 ColumnCRT 原子。于是固定 `q` 固定残基的方向改变逃逸必须登记为 `CutAnchorColumnCRT-PDEC`；移动 `q` 或移动残基则回到既有 AffineTwin moving-family SAE/ColumnCRT 账本。
+
+## 29. PM endpoint-release actual-anchor replacement 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-audit.md
+data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json
+```
+
+将“放弃 actual 锚点”这条逃逸路线显式量化。保留 `19:8` 时已经压成 `P≡889 mod 899` 的单个 ColumnCRT 原子；若不保留，则只有两种替换方式：
+
+1. 让当前 11 个 unsupported formal pair 中某个变成 actual。
+2. 跳到未使用 target residue，并新增侧残基。
+
+审计给出：
+
+```text
+support_width=20
+min_formal_replacement_abs_crt_jump=58
+min_formal_replacement_endpoint_release=70
+min_unused_target_abs_crt_jump=59
+min_unused_target_new_side_residue_count=1
+```
+
+现有 formal 替换最窄为 `19:12`，相位跳跃 `58` 已超过 support width，且需要双端点释放 `70`。未使用 target 替换最窄为 `20:9`，相位跳跃 `59`，仍超过 support width，并新增侧残基。故 actual-anchor replacement 在当前 sweep 内也不是有效逃逸；它回流到 support-motion、unused-target arrival、ColumnCRT/PDEC 或 moving-family 出口。

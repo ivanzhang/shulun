@@ -886,3 +886,40 @@ cut_anchor_columncrt_compression_closed_current_sweep=true
 因此，换 cut 不能把容量从一个固定相位原子放大成十二个原子。所有 cut 中 actual representative 只是在 `2687` 与 `3586=2687+899` 两个 lift 之间切换，同余类始终是 `889 mod 899`。同向 cut-anchor 已关闭后，固定 `q=31` 固定残基的方向改变逃逸只能作为 `CutAnchorColumnCRT-PDEC` 输入对象登记；若 `q` 或残基移动，则回到既有 AffineTwin moving-family SAE/ColumnCRT 账本。
 
 本步关闭当前 sweep 中“切口多重性作为容量来源”的解释。全局行/列命题仍未闭合；剩余是排斥 `CutAnchorColumnCRT-PDEC`、方向改变 key、或 closing moving-family multiplicity。
+
+## 22. PM endpoint-release actual-anchor replacement 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-audit.md
+data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json
+```
+
+继续下钻 cut-anchor ColumnCRT compression 后的逃逸：如果不保留当前 actual anchor `19:8`，则反例链必须让另一个现有 formal pair 变成 actual，或跳到未使用 target residue。两条路线都不再是自由换锚。
+
+当前读数为：
+
+```text
+actual_crt_residue=889
+support_width=20
+formal_replacement_candidate_count=11
+min_formal_replacement_pair=19:12
+min_formal_replacement_abs_crt_jump=58
+min_formal_replacement_endpoint_release=70
+min_formal_release_to_support_width_ratio=3.5
+unused_target_replacement_candidate_count=9
+unique_unused_target_pair_count=5
+min_unused_target_pair=20:9
+min_unused_target_abs_crt_jump=59
+min_unused_target_new_side_residue_count=1
+all_formal_replacement_jumps_exceed_support_width=true
+all_formal_replacement_releases_exceed_support_width=true
+all_unused_target_jumps_exceed_support_width=true
+all_unused_targets_need_new_side_residue=true
+actual_anchor_replacement_closed_current_sweep=true
+```
+
+因此 actual anchor 替换不能绕开容量/相位压力：现有 formal pair 替换的最窄跳跃 `58` 已超过 support width `20`，且最小双端点释放 `70` 是支撑宽度的 `3.5` 倍；未使用 target 替换的最窄跳跃 `59` 也超过支撑，并且至少新增一个侧残基。
+
+本步关闭当前 sweep 的 actual-anchor replacement 吸收解释。全局行/列命题仍未闭合；剩余是把 replacement no-go 升格为全局族定理，或排斥 support-motion、unused-target arrival、ColumnCRT/PDEC 与 moving-family 出口。
