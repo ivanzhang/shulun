@@ -151,6 +151,42 @@ capacity.  That final carrying-capacity inequality is the new proof obligation;
 it is not asserted here as already proved.
 \end{proof}
 
+\begin{reductionstatement}[Critical fill-arrival pressure packet frontier]
+In the AffineTwin branch, write $g=q-2$, $f=q$, and let $A_g,A_f$ be the
+generator-side and fill-side residue counts.  The safe integer gate is
+\[
+  A_gA_f\le T_q:=\lfloor\sqrt{gf}\rfloor .
+\]
+For a threshold-crossing route with final counts $A'_g,A'_f$, crossing is
+equivalent to
+\[
+  A'_gA'_f>T_q,
+  \qquad\text{hence}\qquad
+  \frac{(A'_g)^2}{g}\,\frac{(A'_f)^2}{f}>1 .
+\]
+Thus fill catch-up is not merely a raw residue-arrival event.  It is a
+threshold-relevant pressure packet: for fixed $A'_g$ the minimum fill target is
+\[
+  A'_{f,\min}(A'_g)=\left\lfloor \frac{T_q}{A'_g}\right\rfloor+1 .
+\]
+Consequently a persistent row/column counterexample in this branch must enter
+one of four named exits: repeated-residue reset/ColumnCRT PDEC, fixed pressure
+packet recurrence PDEC, moving pressure packet SAE/Rankin, or non-sparse
+AffineTwin pressure demand.
+\end{reductionstatement}
+\begin{proof}[Status and reference]
+The product gate and the pressure form are algebraic equivalents.  The minimum
+fill target follows by solving $A'_g A'_f>T_q$ in integers.  The repeated-residue
+exit is the previous fill-catchup dichotomy; the fixed-packet exit is the
+AffineTwin slot phase lock, where the combined modulus $q(q-2)$ exceeds the
+common phase support; and the moving-packet exit is the existing moving-family
+SAE/ColumnCRT split.  The remaining unproved input is the global pressure-packet
+carrying ceiling, recorded in
+\[
+  \texttt{docs/monograph/prime-matrix-critical-fill-arrival-anti-overfilling-router.md}.
+\]
+\end{proof}
+
 \chapter{Prime-Matrix Contradiction Fields}
 
 Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
