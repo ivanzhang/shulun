@@ -1,0 +1,163 @@
+{
+  "aggregate": {
+    "pressure_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-paired-side-pressure-ledger.json",
+    "moving_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json",
+    "epoch_capacity_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-one-slot-residue-epoch-capacity-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "all_current_rows_pass_integer_threshold_gate": true,
+    "threshold_crossing_pdec_count_current_sweep": 0,
+    "all_current_rows_have_positive_integer_product_slack": true,
+    "min_integer_product_slack": 17,
+    "min_total_extra_residues_to_cross": 4,
+    "all_current_fill_epochs_younger_than_generators": true,
+    "min_fill_activation_delay_over_generator": 80,
+    "integer_threshold_deficit_bound_proved_globally": false,
+    "threshold_crossing_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "integer_threshold_deficit_rows": [
+    {
+      "q": 31,
+      "generator_side": "minus",
+      "fill_side": "plus",
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_used_residue_count": 3,
+      "fill_used_residue_count": 4,
+      "epoch_pair_capacity": 899,
+      "integer_safe_product_threshold": 29,
+      "required_product_for_failure": 30,
+      "current_residue_product": 12,
+      "integer_product_slack": 17,
+      "integer_threshold_gate_passed_current_sweep": true,
+      "threshold_crossing_pdec_trigger_current_sweep": false,
+      "fixed_generator_fill_fail_at": 10,
+      "extra_fill_residues_to_fail_with_generator_fixed": 6,
+      "fixed_fill_generator_fail_at": 8,
+      "extra_generator_residues_to_fail_with_fill_fixed": 5,
+      "min_total_extra_residues_to_cross": 4,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 2,
+          "extra_fill_residues": 2,
+          "new_generator_used": 5,
+          "new_fill_used": 6,
+          "new_product": 30
+        },
+        {
+          "extra_generator_residues": 3,
+          "extra_fill_residues": 1,
+          "new_generator_used": 6,
+          "new_fill_used": 5,
+          "new_product": 30
+        }
+      ],
+      "generator_epoch_p_min": 2687,
+      "generator_epoch_p_max": 6337,
+      "fill_epoch_p_min": 2767,
+      "fill_epoch_p_max": 6569,
+      "fill_activation_delay_over_generator": 80,
+      "fill_epoch_is_younger_than_generator_epoch": true,
+      "realized_current_sweep": true,
+      "realized_pair_count": 1
+    },
+    {
+      "q": 43,
+      "generator_side": "minus",
+      "fill_side": "plus",
+      "generator_ell": 41,
+      "fill_ell": 43,
+      "generator_used_residue_count": 8,
+      "fill_used_residue_count": 2,
+      "epoch_pair_capacity": 1763,
+      "integer_safe_product_threshold": 41,
+      "required_product_for_failure": 42,
+      "current_residue_product": 16,
+      "integer_product_slack": 25,
+      "integer_threshold_gate_passed_current_sweep": true,
+      "threshold_crossing_pdec_trigger_current_sweep": false,
+      "fixed_generator_fill_fail_at": 6,
+      "extra_fill_residues_to_fail_with_generator_fixed": 4,
+      "fixed_fill_generator_fail_at": 21,
+      "extra_generator_residues_to_fail_with_fill_fixed": 13,
+      "min_total_extra_residues_to_cross": 4,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 0,
+          "extra_fill_residues": 4,
+          "new_generator_used": 8,
+          "new_fill_used": 6,
+          "new_product": 48
+        },
+        {
+          "extra_generator_residues": 1,
+          "extra_fill_residues": 3,
+          "new_generator_used": 9,
+          "new_fill_used": 5,
+          "new_product": 45
+        }
+      ],
+      "generator_epoch_p_min": 2087,
+      "generator_epoch_p_max": 8837,
+      "fill_epoch_p_min": 3697,
+      "fill_epoch_p_max": 7349,
+      "fill_activation_delay_over_generator": 1610,
+      "fill_epoch_is_younger_than_generator_epoch": true,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0
+    },
+    {
+      "q": 103,
+      "generator_side": "minus",
+      "fill_side": "plus",
+      "generator_ell": 101,
+      "fill_ell": 103,
+      "generator_used_residue_count": 12,
+      "fill_used_residue_count": 1,
+      "epoch_pair_capacity": 10403,
+      "integer_safe_product_threshold": 101,
+      "required_product_for_failure": 102,
+      "current_residue_product": 12,
+      "integer_product_slack": 89,
+      "integer_threshold_gate_passed_current_sweep": true,
+      "threshold_crossing_pdec_trigger_current_sweep": false,
+      "fixed_generator_fill_fail_at": 9,
+      "extra_fill_residues_to_fail_with_generator_fixed": 8,
+      "fixed_fill_generator_fail_at": 102,
+      "extra_generator_residues_to_fail_with_fill_fixed": 90,
+      "min_total_extra_residues_to_cross": 8,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 0,
+          "extra_fill_residues": 8,
+          "new_generator_used": 12,
+          "new_fill_used": 9,
+          "new_product": 108
+        },
+        {
+          "extra_generator_residues": 1,
+          "extra_fill_residues": 7,
+          "new_generator_used": 13,
+          "new_fill_used": 8,
+          "new_product": 104
+        }
+      ],
+      "generator_epoch_p_min": 8387,
+      "generator_epoch_p_max": 9857,
+      "fill_epoch_p_min": 9461,
+      "fill_epoch_p_max": 9461,
+      "fill_activation_delay_over_generator": 1074,
+      "fill_epoch_is_younger_than_generator_epoch": true,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0
+    }
+  ],
+  "threshold_crossing_pdec_rows_current_sweep": []
+}
