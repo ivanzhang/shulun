@@ -1,0 +1,72 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_margin_slot_primitive_identity_router",
+  "status": "margin_slot_primitive_identities_closed_current_sweep_global_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "normal_form_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-absorption-normal-form-ledger.json",
+    "source_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-ledger.json",
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "primitive_row_count": 1,
+    "unique_primitive_key_count": 1,
+    "repeated_primitive_key_count": 0,
+    "all_primitive_identities_closed": true,
+    "identity_flags": [
+      "fill_left_spare_equals_ell_step_plus_one",
+      "generator_left_minus_margin_equals_fill_left_spare",
+      "generator_right_equals_abs_delta_u_minus_one",
+      "fill_margin_equals_generator_margin_plus_abs_delta_b_minus_one",
+      "fill_left_equals_fill_margin_plus_one",
+      "phase_bridge_gap_equals_gap_plus_generator_margin"
+    ],
+    "slot_depth_primitive_identity_bound_proved": false,
+    "primitive_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "primitive_rows": [
+    {
+      "gap_ell": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_margin": 15,
+      "fill_margin": 27,
+      "delta_b": -13,
+      "delta_u": -7,
+      "rho_jump": 5,
+      "phase_bridge_gap": 46,
+      "phase_bridge_excess": 15,
+      "generator_left_depth": 18,
+      "generator_right_depth": 6,
+      "fill_left_depth": 28,
+      "fill_left_spare": 3,
+      "fill_left_spare_identity_rhs": 3,
+      "fill_left_spare_equals_ell_step_plus_one": true,
+      "generator_left_minus_margin": 3,
+      "generator_left_minus_margin_equals_fill_left_spare": true,
+      "generator_right_identity_rhs": 6,
+      "generator_right_equals_abs_delta_u_minus_one": true,
+      "fill_margin_identity_rhs": 27,
+      "fill_margin_equals_generator_margin_plus_abs_delta_b_minus_one": true,
+      "fill_left_identity_rhs": 28,
+      "fill_left_equals_fill_margin_plus_one": true,
+      "phase_bridge_identity_rhs": 46,
+      "phase_bridge_gap_equals_gap_plus_generator_margin": true,
+      "primitive_key": "gap=31|eg=29->31|gm=15|db=-13|du=-7|fls=3"
+    }
+  ],
+  "slot_depth_primitive_identity_bound_proved": false,
+  "primitive_pdec_excluded_globally": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "MarginSlotAbsorptionNormalFormBoundOrNormalFormPDECExclusion",
+  "hardpoint_after_router": "SlotDepthPrimitiveIdentityBoundOrPrimitivePDECExclusion",
+  "next_direct_attack_target": "SlotDepthPrimitiveIdentityBoundOrPrimitivePDECExclusion",
+  "plain_conclusion": "本步把 margin/slot 吸收正规形继续压成六个 slot-depth primitive 身份：`fill_left_spare=fill_ell-generator_ell+1`、`generator_left-margin=fill_left_spare`、`generator_right=|delta_u|-1`、`fill_margin=generator_margin+|delta_b|-1`、`fill_left=fill_margin+1`、`phase_bridge_gap=gap_ell+generator_margin`。当前唯一行全部闭合。全局剩余是证明这些 primitive 身份稳定成立，或排斥持久 Primitive-PDEC/SAE。",
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_margin_slot_primitive_identity_router.py": "4a86fea6c8a888cf864a595d34e08dd294f0ba25561cb33e127a63b2a73aab44",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-absorption-normal-form-ledger.json": "10ab00402bb2f21ca1c5e4d7fc089a1a098571b340741e8605bae44968dbbc8c",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-ledger.json": "3db447d1c8fc9bfb346b90cd809f88f0e21999c6618937f7b798ca17091787bf",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-ledger.json": "c4a2bfa9e30b4444723f339d4501c3ea14b97fc62954ac659095bacc80c2d5f1",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-router.md": "a2fa5f842118196e25a158ac8039af85a626d25be60df4e10600b047b5905164"
+  }
+}
