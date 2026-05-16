@@ -351,7 +351,7 @@ ControlledExitCriticalLoadNormalization
 
 | 合同 | actual load | critical capacity | 当前可证状态 | 剩余硬点 |
 |---|---:|---:|---|---|
-| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate、CRT gap、edge-collision 位移、existing-actual CRT 跳跃、unused-target arrival 与 support-motion depth 闭合 | 全局 actual packet exhaustion / moving support nonpersistence |
+| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate、CRT gap、edge-collision 位移、existing-actual CRT 跳跃、unused-target arrival、support-motion depth 与 fixed-primitive defect 闭合 | 全局 moving primitive key nonpersistence |
 | TP-ALC | actual `sum D / |U_Y|` | `1` with Buchstab `K(alpha)` | 分子 BMD 外部版可用 | denominator floor / parity gap |
 | RH-ALC | source-deleted final load | exit capacity | verification ledger 已有 | controlled exits 逐项归一化 |
 
@@ -359,7 +359,7 @@ ControlledExitCriticalLoadNormalization
 
 最直接的继续硬攻顺序是：
 
-1. **PM：** `WindowEdgeCollision` 的三个当前分支都已压成账本：existing-actual CRT jump、unused-target arrival、support-motion depth。下一步主攻全局 moving support nonpersistence，或把同步深度膨胀登记为 `MovingSupportDepthInflation-PDEC/SAE`。
+1. **PM：** 当前固定 `q=31` primitive key 已不能吸收 support motion；下一步主攻全局 moving primitive key nonpersistence，或把 key 迁移登记为 `MovingPrimitiveKey-PDEC/SAE`。
 2. **TP：** 写出 denominator floor 的 beta/Buchstab 下筛合同，明确 `delta(alpha)` 的可接受上限。
 3. **RH：** 生成 controlled-exit 四列表，先不证明 RH，只把每个 exit 的 actual-load 输入、闭合机制和未闭合项固定。
 
@@ -441,3 +441,26 @@ support_motion_depth_closed_current_sweep=true
 当前 generator phase 为 `[2669,2693]`，shifted-fill phase 为 `[2659,2688]`，共同支撑为 `[2669,2688]`。因此要靠移动支撑吞掉空窗 CRT 代表，不能只移动一个端点；同侧的 generator 端点和 shifted-fill 端点都必须释放，并且两侧深度必须同步膨胀到同一个代表距离。
 
 最窄 support-motion atom 是 `19:12`，nearest representative 为 `2629`：它需要共同侧深度 `58`，即 generator 深度额外 `40`、fill 深度额外 `30`，总端点释放 `70`。这把 support-motion 从泛称逃逸压成可审计的同步深度膨胀义务。
+
+## 9. PM support-motion primitive-depth defect 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-support-motion-primitive-defect-audit.md
+data/prime-matrix-affine-twin-support-motion-primitive-defect-ledger.json
+```
+
+继续把 support-motion 的同步深度膨胀接回固定 AffineTwin primitive 身份。当前结果为：
+
+```text
+support_motion_primitive_defect_candidate_count=11
+min_total_affine_depth_defect=70
+max_total_affine_depth_defect=863
+all_support_motion_breaks_both_depth_identities=true
+fixed_primitive_key_support_motion_absorption_closed_current_sweep=true
+```
+
+最小缺陷 atom 仍是 `19:12`。它要求共同侧深度 `58`，但当前 `q=31` 的 AffineTwin 深度恒等式给出 generator 左深度 `18`、fill 左深度 `28`，因此产生 generator 缺陷 `40`、fill 缺陷 `30`，总缺陷 `70`。
+
+于是当前固定 primitive key 分支已经关闭：support motion 若要继续，就不能保持当前 `q=31` primitive key，必须移动 primitive key 或进入 `MovingPrimitiveKey-PDEC/SAE`、`MovingSupportDepthInflation-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`。

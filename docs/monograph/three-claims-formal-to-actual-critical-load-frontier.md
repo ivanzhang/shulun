@@ -649,3 +649,34 @@ max_endpoint_release_total_required=863
 最窄 atom 仍来自 `19:12`，nearest representative 为 `2629`。为了让它进入支撑，generator 左深度需从 `18` 增至 `58`，fill 左深度需从 `28` 增至 `58`；总端点释放为 `70`，比原 window gap `40` 还多 `30`。
 
 本步关闭当前 sweep 的 support-motion depth 账本；全局剩余被压成同步深度膨胀的非持久性证明，或路由到 `MovingSupportDepthInflation-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`、`PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
+
+## 16. PM support-motion primitive-depth defect 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-support-motion-primitive-defect-audit.md
+data/prime-matrix-affine-twin-support-motion-primitive-defect-ledger.json
+```
+
+继续把同步深度膨胀接回固定 AffineTwin primitive key。当前 `q=31` slot-lock 已证明四个深度恒等式：
+
+```text
+generator_left_depth=(q+5)/2=18
+generator_right_depth=(q-7)/4=6
+fill_left_depth=q-3=28
+fill_right_depth=1
+```
+
+如果 support motion 仍保持当前 `q=31` primitive key，那么每个空窗行要求的共同侧深度都必须等于对应 generator/fill 深度 RHS。但审计显示：
+
+```text
+support_motion_primitive_defect_candidate_count=11
+min_total_affine_depth_defect=70
+max_total_affine_depth_defect=863
+all_support_motion_breaks_both_depth_identities=true
+```
+
+最窄 atom `19:12` 要把左侧共同深度提升到 `58`。这同时打破 `generator_left_depth=18` 与 `fill_left_depth=28`，缺陷分别为 `40` 与 `30`，总缺陷 `70`。
+
+因此当前固定 primitive key 下的 support motion 已关闭；全局剩余进一步压成 primitive key 迁移的非持久性证明，或路由到 `MovingPrimitiveKey-PDEC/SAE`、`MovingSupportDepthInflation-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`。
