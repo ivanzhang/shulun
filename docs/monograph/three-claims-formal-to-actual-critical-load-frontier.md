@@ -1389,3 +1389,36 @@ source rematerialized exact q = [].
 ```
 
 这关闭当前 sweep 的匿名 moving-slot actual overload。若全局族继续复现，必须落入方向改变 primitive key、source-rematerialization、ColumnCRT/PDEC、SAE 或 unused-target arrival 的命名出口；因此本步是行/列命题内部主线的进一步收窄，而不是全局无条件终稿。
+
+## 40. PM endpoint-release moving-family persistence pressure 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-moving-family-persistence-pressure-audit.md
+data/prime-matrix-affine-twin-endpoint-release-moving-family-persistence-pressure-ledger.json
+```
+
+本节把 `MovingSlotFamilyPersistenceNoGo` 的当前可攻部分落到 source/pressure/fill 三重门。moving family 若要成为反例链的持久容量来源，必须满足：
+
+```text
+source materialized
+paired side pressure product crosses sqrt gate
+threshold crossing has enough fill-side residue arrival
+duplicate fill arrival enters reset/ColumnCRT-PDEC
+```
+
+当前联合证书显示：3 个候选 `q=[31,43,103]` 中只有 `q=31` 通过 source gate；`q=43` 是 same-gap wrong-source，`p_delay` 相差 `-39`；`q=103` 没有 gap source。source gate 共阻断 28 个 formal pairs，占三候选 formal pairs 的 `70%`。
+
+另一方面，`q=43,103` 的 generator 侧已经出现单侧压力，但 paired pressure product 仍低于 1，说明真实链没有形成双侧同步超载。所有最小阈值穿越路线都要求 fill 增量；三个候选全穿越至少要新增 11 个 fill residue，Rankin 质量为 `23339/137299`。
+
+因此当前族级显式矛盾是：
+
+```text
+反例链需要 moving family 持久提供新容量；
+真实链中未物化候选先被 source 相位门阻断；
+已物化候选被 graph cap/fill-arrival 二分管住；
+单侧 generator 压力没有与 fill 侧同步越过 paired pressure gate。
+```
+
+本步关闭当前 sweep 的匿名 moving-family persistence 解释；全局仍需证明 fill-side residue arrival 不会持久补齐阈值缺口，或排斥 `HighDensityEpochPair-PDEC/ColumnCRT`、`PressureProduct-PDEC`、`SourceRematerialization-PDEC/SAE`。
