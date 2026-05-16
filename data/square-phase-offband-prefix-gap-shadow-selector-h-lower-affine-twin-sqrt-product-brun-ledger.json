@@ -1,0 +1,102 @@
+{
+  "aggregate": {
+    "moving_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json",
+    "sparse_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json",
+    "partition_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-persistence-frontier-partition-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "candidate_q_count": 3,
+    "all_current_rows_pass_sqrt_product_gate": true,
+    "super_sqrt_epoch_pair_pdec_count_current_sweep": 0,
+    "max_product_over_sqrt_capacity": 0.40022240757904204,
+    "min_sqrt_product_gate_slack_squared": 755,
+    "current_product_sae_mass_upper_sum": 0.023577117628562343,
+    "current_sqrt_gate_envelope_sum": 0.06697253547349291,
+    "sparse_single_atom_tail_envelope_proved": true,
+    "partition_identity_closed": true,
+    "max_physical_multiplicity_per_residue_packet_current_sweep": 2,
+    "external_brun_input": "ClassicalBrunTwinPrimeReciprocalConvergence",
+    "brun_conditional_sae_summability_closed": true,
+    "external_brun_input_accepted_in_author_side": false,
+    "internal_sqrt_product_bound_proved": false,
+    "super_sqrt_epoch_pair_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "sqrt_product_q_rows": [
+    {
+      "q": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_used_residue_count": 3,
+      "fill_used_residue_count": 4,
+      "epoch_pair_capacity": 899,
+      "epoch_pair_product_used_upper": 12,
+      "product_over_sqrt_capacity": 0.40022240757904204,
+      "sqrt_product_gate_slack_squared": 755,
+      "sqrt_product_gate_passed_current_sweep": true,
+      "super_sqrt_epoch_pair_pdec_trigger_current_sweep": false,
+      "sae_mass_upper": 0.013348164627363738,
+      "sqrt_gate_sae_mass_envelope": 0.033351867298253506,
+      "sae_mass_below_sqrt_gate_envelope": true,
+      "realized_current_sweep": true,
+      "realized_pair_count": 1,
+      "single_pair_sae_mass": 0.0011123470522803114,
+      "fixed_pair_modulus_margin": 879,
+      "source_realized_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11"
+    },
+    {
+      "q": 43,
+      "generator_ell": 41,
+      "fill_ell": 43,
+      "generator_used_residue_count": 8,
+      "fill_used_residue_count": 2,
+      "epoch_pair_capacity": 1763,
+      "epoch_pair_product_used_upper": 16,
+      "product_over_sqrt_capacity": 0.38106040658363277,
+      "sqrt_product_gate_slack_squared": 1507,
+      "sqrt_product_gate_passed_current_sweep": true,
+      "super_sqrt_epoch_pair_pdec_trigger_current_sweep": false,
+      "sae_mass_upper": 0.009075439591605219,
+      "sqrt_gate_sae_mass_envelope": 0.023816275411477048,
+      "sae_mass_below_sqrt_gate_envelope": true,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": 0.0005672149744753262,
+      "fixed_pair_modulus_margin": 1737,
+      "source_realized_key": null
+    },
+    {
+      "q": 103,
+      "generator_ell": 101,
+      "fill_ell": 103,
+      "generator_used_residue_count": 12,
+      "fill_used_residue_count": 1,
+      "epoch_pair_capacity": 10403,
+      "epoch_pair_product_used_upper": 12,
+      "product_over_sqrt_capacity": 0.11765271316514822,
+      "sqrt_product_gate_slack_squared": 10259,
+      "sqrt_product_gate_passed_current_sweep": true,
+      "super_sqrt_epoch_pair_pdec_trigger_current_sweep": false,
+      "sae_mass_upper": 0.0011535134095933864,
+      "sqrt_gate_sae_mass_envelope": 0.00980439276376235,
+      "sae_mass_below_sqrt_gate_envelope": true,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": 9.612611746611554e-05,
+      "fixed_pair_modulus_margin": 10347,
+      "source_realized_key": null
+    }
+  ],
+  "super_sqrt_epoch_pair_pdec_rows_current_sweep": [],
+  "brun_conditional_envelope": {
+    "identity": "M_q/(q(q-2)) <= 1/sqrt(q(q-2)) <= 1/(q-2) when M_q^2 <= q(q-2).",
+    "external_input": "ClassicalBrunTwinPrimeReciprocalConvergence",
+    "meaning": "Brun convergence applies to the reciprocal sum over twin-prime q values q-2,q."
+  }
+}

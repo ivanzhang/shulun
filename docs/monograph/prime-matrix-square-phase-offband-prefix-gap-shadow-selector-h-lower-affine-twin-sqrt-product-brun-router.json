@@ -1,0 +1,179 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_sqrt_product_brun_router",
+  "status": "affine_twin_sqrt_product_gate_passes_current_sweep_brun_conditional_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "moving_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json",
+    "sparse_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json",
+    "partition_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-persistence-frontier-partition-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "candidate_q_count": 3,
+    "all_current_rows_pass_sqrt_product_gate": true,
+    "super_sqrt_epoch_pair_pdec_count_current_sweep": 0,
+    "max_product_over_sqrt_capacity": 0.40022240757904204,
+    "min_sqrt_product_gate_slack_squared": 755,
+    "current_product_sae_mass_upper_sum": 0.023577117628562343,
+    "current_sqrt_gate_envelope_sum": 0.06697253547349291,
+    "sparse_single_atom_tail_envelope_proved": true,
+    "partition_identity_closed": true,
+    "max_physical_multiplicity_per_residue_packet_current_sweep": 2,
+    "external_brun_input": "ClassicalBrunTwinPrimeReciprocalConvergence",
+    "brun_conditional_sae_summability_closed": true,
+    "external_brun_input_accepted_in_author_side": false,
+    "internal_sqrt_product_bound_proved": false,
+    "super_sqrt_epoch_pair_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "sqrt_product_q_rows": [
+    {
+      "q": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_used_residue_count": 3,
+      "fill_used_residue_count": 4,
+      "epoch_pair_capacity": 899,
+      "epoch_pair_product_used_upper": 12,
+      "product_over_sqrt_capacity": 0.40022240757904204,
+      "sqrt_product_gate_slack_squared": 755,
+      "sqrt_product_gate_passed_current_sweep": true,
+      "super_sqrt_epoch_pair_pdec_trigger_current_sweep": false,
+      "sae_mass_upper": 0.013348164627363738,
+      "sqrt_gate_sae_mass_envelope": 0.033351867298253506,
+      "sae_mass_below_sqrt_gate_envelope": true,
+      "realized_current_sweep": true,
+      "realized_pair_count": 1,
+      "single_pair_sae_mass": 0.0011123470522803114,
+      "fixed_pair_modulus_margin": 879,
+      "source_realized_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11"
+    },
+    {
+      "q": 43,
+      "generator_ell": 41,
+      "fill_ell": 43,
+      "generator_used_residue_count": 8,
+      "fill_used_residue_count": 2,
+      "epoch_pair_capacity": 1763,
+      "epoch_pair_product_used_upper": 16,
+      "product_over_sqrt_capacity": 0.38106040658363277,
+      "sqrt_product_gate_slack_squared": 1507,
+      "sqrt_product_gate_passed_current_sweep": true,
+      "super_sqrt_epoch_pair_pdec_trigger_current_sweep": false,
+      "sae_mass_upper": 0.009075439591605219,
+      "sqrt_gate_sae_mass_envelope": 0.023816275411477048,
+      "sae_mass_below_sqrt_gate_envelope": true,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": 0.0005672149744753262,
+      "fixed_pair_modulus_margin": 1737,
+      "source_realized_key": null
+    },
+    {
+      "q": 103,
+      "generator_ell": 101,
+      "fill_ell": 103,
+      "generator_used_residue_count": 12,
+      "fill_used_residue_count": 1,
+      "epoch_pair_capacity": 10403,
+      "epoch_pair_product_used_upper": 12,
+      "product_over_sqrt_capacity": 0.11765271316514822,
+      "sqrt_product_gate_slack_squared": 10259,
+      "sqrt_product_gate_passed_current_sweep": true,
+      "super_sqrt_epoch_pair_pdec_trigger_current_sweep": false,
+      "sae_mass_upper": 0.0011535134095933864,
+      "sqrt_gate_sae_mass_envelope": 0.00980439276376235,
+      "sae_mass_below_sqrt_gate_envelope": true,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "single_pair_sae_mass": 9.612611746611554e-05,
+      "fixed_pair_modulus_margin": 10347,
+      "source_realized_key": null
+    }
+  ],
+  "super_sqrt_epoch_pair_pdec_rows_current_sweep": [],
+  "brun_conditional_sae_summability_closed": true,
+  "external_brun_input_accepted_in_author_side": false,
+  "internal_sqrt_product_bound_proved": false,
+  "super_sqrt_epoch_pair_pdec_excluded_globally": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion",
+  "hardpoint_after_router": "AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion",
+  "next_direct_attack_target": "AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion",
+  "theorem_rows": [
+    {
+      "name": "sqrt_product_gate_implies_brun_sae_summability",
+      "status": "closed_conditional_on_external_brun",
+      "statement": "For affine-twin q, if M_q<=sqrt(q(q-2)), then M_q/(q(q-2))<=1/sqrt(q(q-2))<=1/(q-2); Brun convergence for twin-prime reciprocals makes the SAE tail summable."
+    },
+    {
+      "name": "current_affine_twin_rows_pass_sqrt_product_gate",
+      "status": "closed_current_sweep",
+      "statement": "Every current candidate q has epoch-pair product upper M_q with M_q^2<=q(q-2)."
+    },
+    {
+      "name": "super_sqrt_epoch_pair_pdec_routing",
+      "status": "closed_routing",
+      "statement": "Any q with M_q>sqrt(q(q-2)) is no longer a sparse SAE row; it is a named SuperSqrtEpochPair-PDEC/ColumnCRT side-residue concentration object."
+    },
+    {
+      "name": "internal_sqrt_product_bound",
+      "status": "open",
+      "statement": "The self-contained route still must prove the sqrt-product gate globally, or exclude the super-sqrt PDEC family without appealing to finite scans."
+    }
+  ],
+  "plain_conclusion": "本步把 per-q multiplicity 的目标从过强的 O(1) 压窄为平方根乘积门：设 `M_q` 为同一 AffineTwin `q` 的候选双残基乘积上界。若 `M_q^2<=q(q-2)`，则该 q 的 SAE 贡献至多 `1/sqrt(q(q-2))<=1/(q-2)`；在接受经典 Brun 孪生素数倒数收敛作为外部输入时，这条 twin-q 尾和可求和。当前候选 `q=[31, 43, 103]` 全部通过该门，最大 `M_q/sqrt(q(q-2))=0.400222407579`。但作者侧自足闭合仍需全局证明平方根乘积门，或排斥 `SuperSqrtEpochPair-PDEC/ColumnCRT`。",
+  "decision_rows": [
+    {
+      "gate": "CurrentSqrtProductGateClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前候选 q 全部满足 M_q^2<=q(q-2)，且最大 M_q/sqrt(q(q-2)) 低于 1。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "BrunConditionalSAESummability",
+      "closed": true,
+      "proved": false,
+      "meaning": "若接受外部 Brun twin-prime reciprocal convergence，并全局证明平方根乘积门，则 AffineTwin SAE 尾和可求和。",
+      "remaining": "external input + global sqrt gate"
+    },
+    {
+      "gate": "SuperSqrtEpochPairPDECRouted",
+      "closed": true,
+      "proved": true,
+      "meaning": "平方根乘积门失败时，失败 q 被明确登记为 side-residue product 超平方根集中，而不是普通 sparse 行。",
+      "remaining": "exclusion still separate"
+    },
+    {
+      "gate": "InternalGlobalSqrtProductBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "作者侧自足路线仍需证明 M_q<=sqrt(q(q-2))，或排斥持久 SuperSqrtEpochPair-PDEC。",
+      "remaining": "AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只压窄 per-q multiplicity 门，不关闭全局行/列命题。",
+      "remaining": "AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_sqrt_product_brun_router.py": "4b21ac7a44ef0e62ac863d43dcb62cc9b6e02b650935adf2f2cfc446d71d9fd1",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json": "2e401269ab68cb196babfb74e6f7b63c946ee9de37bc6ab5d502f49deaa7bf28",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json": "18a67505beef2a1ba7ec53a6088bb26da6a3955e2f63c02f5e215cfe171a8063",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-persistence-frontier-partition-ledger.json": "1f61cb91bbabc3fdccfee381045187a294f0483a73834491189b8d636e585745",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-ledger.json": "44e048bbb9be8b3e2fa427090bf3bfa613575035385807986c0b7a3c664ff50a",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-router.md": "fbf2f777297f4175a2242041d83307dc3aca3f589e20d72ce8cbb82f62c05684"
+  }
+}
