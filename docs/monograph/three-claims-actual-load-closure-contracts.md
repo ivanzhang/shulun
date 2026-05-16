@@ -488,3 +488,28 @@ same_orientation_moving_key_depth_absorption_closed_current_sweep=true
 lower-side 同向吸收要求 `(q+5)/2=D` 且 `q-3=D`，即 `q=2D-5` 与 `q=D+3` 必须相等；这只在 `D=8` 时可能。当前最窄 lower atom `19:12` 的 `D=58`，generator 公式给 `q=111`，fill 公式给 `q=61`，差距 `50`。
 
 above-side 同向吸收要求 `(q-7)/4=D` 且 `fill_right_depth=1=D`，而当前 above depths 最小也为 `342`。因此当前支撑运动不能被同向 moving AffineTwin key 吸收；剩余只剩方向改变、source 重物化或 key 迁移的全局非持久性证明。
+
+## 11. PM moving-key source-rematerialization 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-moving-key-source-rematerialization-audit.md
+data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json
+```
+
+继续检查 moving key 是否能在别的 `q` 上重新物化为同向 AffineTwin source。审计把上一节深度公式给出的所有单侧候选 `q` 全部过 prime gate 与 source gate：
+
+```text
+moving_q_formula_occurrence_count=19
+unique_moving_q_candidate_count=19
+prime_candidate_q_values=[61,181,293,761,1499,1747]
+affine_twin_prime_gate_q_values=[]
+exact_rematerialized_q_values=[]
+route_histogram={CompositeQ:13,PrimeButNotTwinAffine:6}
+moving_key_source_rematerialization_closed_current_sweep=true
+```
+
+最窄 depth atom `19:12` 给出候选 `q=111` 与 `q=61`。其中 `111` 为合数；`61` 虽与 `59` 同为素数，但 `61≡1 mod 4`，使 AffineTwin 期望延迟 `(11q-21)/4` 非整数，且当前没有 gap `q=61` 的 matching source。最接近的已物化 source 是 gap `59`，角色为 `generator=61, fill=59, sides=minus->minus, p_delay=70`，不是 `q=61` 期望的 `generator=59, fill=61, sides=minus->plus`。
+
+因此当前同向 moving-key source-rematerialization 通道也关闭。全局剩余继续压成方向改变、source 重物化的非持久性证明，或进入 `OrientationChangingPrimitiveKey-PDEC/SAE`、`SourceRematerialization-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`。

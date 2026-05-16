@@ -716,3 +716,28 @@ same_orientation_moving_key_depth_absorption_closed_current_sweep=true
 ```
 
 因此当前 support motion 不仅不能由固定 key 吸收，也不能由同向 moving AffineTwin key 的深度公式吸收。全局剩余进一步压成方向改变、source 重物化或 key 迁移的非持久性证明，或路由到 `OrientationChangingPrimitiveKey-PDEC/SAE`、`SourceRematerialization-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`。
+
+## 18. PM moving-key source-rematerialization 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-moving-key-source-rematerialization-audit.md
+data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json
+```
+
+上一节排除了“同一个移动 `q` 同时满足两侧深度公式”。本节继续审计更弱逃逸：只取深度公式吐出的单侧候选 `q`，看它是否能在别处重新通过 AffineTwin prime gate 与 source gate。当前证书给出：
+
+```text
+moving_q_formula_occurrence_count=19
+unique_moving_q_candidate_count=19
+composite_q_count=13
+prime_but_not_twin_affine_count=6
+affine_twin_prime_gate_q_values=[]
+exact_rematerialized_q_values=[]
+moving_key_source_rematerialization_closed_current_sweep=true
+```
+
+也就是说，`19` 个候选 `q` 中 `13` 个合数，`6` 个为素数但全部不满足同向 AffineTwin key 的必要门；没有任何候选同时满足 `q,q-2` 同素、`q≡3 mod 4`、整型 `p_delay=(11q-21)/4` 与 matching gap-fill source。
+
+最窄 atom 仍是 `19:12`：它给出 `q=111` 与 `q=61`。`q=61` 是最接近通过的候选，因为 `61` 与 `59` 都是素数，但 `61≡1 mod 4`，且没有 gap `61` 的 source；已有 gap `59` source 的方向和角色也不匹配。因此当前 support motion 若继续，不能靠同向 moving-key source rematerialization 成为 hidden actual load，只能转入方向改变、全局 source 重物化非持久性，或已命名 PDEC/SAE 出口。
