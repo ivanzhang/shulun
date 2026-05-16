@@ -1,0 +1,534 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_critical_error_audit",
+  "status": "current_sweep_endpoint_release_critical_error_structured_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "support_motion_ledger": "data/prime-matrix-affine-twin-support-motion-depth-ledger.json",
+    "primitive_defect_ledger": "data/prime-matrix-affine-twin-support-motion-primitive-defect-ledger.json",
+    "moving_key_source_ledger": "data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json",
+    "support_motion_candidate_count": 11,
+    "critical_capacity_support_width": 20,
+    "total_endpoint_release_load": 4929,
+    "total_window_capacity_budget": 220,
+    "total_endpoint_release_overcritical_units": 4709,
+    "total_endpoint_release_load_to_capacity_ratio": 22.404545454545456,
+    "total_endpoint_release_critical_error": 21.404545454545456,
+    "min_endpoint_release_load": 70,
+    "max_endpoint_release_load": 863,
+    "min_endpoint_release_critical_error": 2.5,
+    "max_endpoint_release_critical_error": 42.15,
+    "narrowest_endpoint_release_critical_atom": {
+      "source_pair_key": "19:12",
+      "window_side": "below",
+      "actual_endpoint_release_load": 70,
+      "critical_capacity_support_width": 20,
+      "endpoint_release_critical_error_fraction": "50/20",
+      "endpoint_release_critical_error": 2.5,
+      "moving_q_candidates": [
+        61,
+        111
+      ],
+      "structured_route_current": "EndpointReleaseCoupling-PDEC"
+    },
+    "worst_endpoint_release_critical_atom": {
+      "source_pair_key": "19:9",
+      "window_side": "above",
+      "actual_endpoint_release_load": 863,
+      "critical_capacity_support_width": 20,
+      "endpoint_release_critical_error_fraction": "843/20",
+      "endpoint_release_critical_error": 42.15,
+      "moving_q_candidates": [
+        1747
+      ],
+      "structured_route_current": "EndpointReleaseCoupling-PDEC"
+    },
+    "all_support_motion_requires_both_endpoint_release": true,
+    "all_endpoint_release_loads_supercritical": true,
+    "all_primitive_defects_match_endpoint_load": true,
+    "all_same_orientation_rematerialization_absent": true,
+    "all_positive_endpoint_release_errors_structured_current": true,
+    "endpoint_release_critical_error_structured_current_sweep": true,
+    "global_endpoint_release_coupling_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "endpoint_release_critical_error_rows": [
+    {
+      "source_pair_key": "13:8",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2594,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 140,
+      "endpoint_release_overcritical_units": 120,
+      "endpoint_release_load_to_capacity_ratio": 7.0,
+      "endpoint_release_critical_error_fraction": "120/20",
+      "endpoint_release_critical_error": 6.0,
+      "generator_endpoint_release_required": 75,
+      "fill_endpoint_release_required": 65,
+      "endpoint_release_max_required": 75,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        96,
+        181
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 96,
+          "route": "CompositeQ",
+          "rematerialized": false
+        },
+        {
+          "q": 181,
+          "route": "PrimeButNotTwinAffine",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 140,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    },
+    {
+      "source_pair_key": "13:9",
+      "q": 31,
+      "window_side": "above",
+      "nearest_representative": 3029,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 677,
+      "endpoint_release_overcritical_units": 657,
+      "endpoint_release_load_to_capacity_ratio": 33.85,
+      "endpoint_release_critical_error_fraction": "657/20",
+      "endpoint_release_critical_error": 32.85,
+      "generator_endpoint_release_required": 336,
+      "fill_endpoint_release_required": 341,
+      "endpoint_release_max_required": 341,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        1375
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 1375,
+          "route": "CompositeQ",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 677,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_right=min(generator_right,shifted_fill_right)"
+    },
+    {
+      "source_pair_key": "13:12",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2536,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 256,
+      "endpoint_release_overcritical_units": 236,
+      "endpoint_release_load_to_capacity_ratio": 12.8,
+      "endpoint_release_critical_error_fraction": "236/20",
+      "endpoint_release_critical_error": 11.8,
+      "generator_endpoint_release_required": 133,
+      "fill_endpoint_release_required": 123,
+      "endpoint_release_max_required": 133,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        154,
+        297
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 154,
+          "route": "CompositeQ",
+          "rematerialized": false
+        },
+        {
+          "q": 297,
+          "route": "CompositeQ",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 256,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    },
+    {
+      "source_pair_key": "13:28",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2304,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 720,
+      "endpoint_release_overcritical_units": 700,
+      "endpoint_release_load_to_capacity_ratio": 36.0,
+      "endpoint_release_critical_error_fraction": "700/20",
+      "endpoint_release_critical_error": 35.0,
+      "generator_endpoint_release_required": 365,
+      "fill_endpoint_release_required": 355,
+      "endpoint_release_max_required": 365,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        386,
+        761
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 386,
+          "route": "CompositeQ",
+          "rematerialized": false
+        },
+        {
+          "q": 761,
+          "route": "PrimeButNotTwinAffine",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 720,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    },
+    {
+      "source_pair_key": "15:8",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2625,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 78,
+      "endpoint_release_overcritical_units": 58,
+      "endpoint_release_load_to_capacity_ratio": 3.9,
+      "endpoint_release_critical_error_fraction": "58/20",
+      "endpoint_release_critical_error": 2.9,
+      "generator_endpoint_release_required": 44,
+      "fill_endpoint_release_required": 34,
+      "endpoint_release_max_required": 44,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        65,
+        119
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 65,
+          "route": "CompositeQ",
+          "rematerialized": false
+        },
+        {
+          "q": 119,
+          "route": "CompositeQ",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 78,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    },
+    {
+      "source_pair_key": "15:9",
+      "q": 31,
+      "window_side": "above",
+      "nearest_representative": 3060,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 739,
+      "endpoint_release_overcritical_units": 719,
+      "endpoint_release_load_to_capacity_ratio": 36.95,
+      "endpoint_release_critical_error_fraction": "719/20",
+      "endpoint_release_critical_error": 35.95,
+      "generator_endpoint_release_required": 367,
+      "fill_endpoint_release_required": 372,
+      "endpoint_release_max_required": 372,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        1499
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 1499,
+          "route": "PrimeButNotTwinAffine",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 739,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_right=min(generator_right,shifted_fill_right)"
+    },
+    {
+      "source_pair_key": "15:12",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2567,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 194,
+      "endpoint_release_overcritical_units": 174,
+      "endpoint_release_load_to_capacity_ratio": 9.7,
+      "endpoint_release_critical_error_fraction": "174/20",
+      "endpoint_release_critical_error": 8.7,
+      "generator_endpoint_release_required": 102,
+      "fill_endpoint_release_required": 92,
+      "endpoint_release_max_required": 102,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        123,
+        235
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 123,
+          "route": "CompositeQ",
+          "rematerialized": false
+        },
+        {
+          "q": 235,
+          "route": "CompositeQ",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 194,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    },
+    {
+      "source_pair_key": "15:28",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2335,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 658,
+      "endpoint_release_overcritical_units": 638,
+      "endpoint_release_load_to_capacity_ratio": 32.9,
+      "endpoint_release_critical_error_fraction": "638/20",
+      "endpoint_release_critical_error": 31.9,
+      "generator_endpoint_release_required": 334,
+      "fill_endpoint_release_required": 324,
+      "endpoint_release_max_required": 334,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        355,
+        699
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 355,
+          "route": "CompositeQ",
+          "rematerialized": false
+        },
+        {
+          "q": 699,
+          "route": "CompositeQ",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 658,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    },
+    {
+      "source_pair_key": "19:9",
+      "q": 31,
+      "window_side": "above",
+      "nearest_representative": 3122,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 863,
+      "endpoint_release_overcritical_units": 843,
+      "endpoint_release_load_to_capacity_ratio": 43.15,
+      "endpoint_release_critical_error_fraction": "843/20",
+      "endpoint_release_critical_error": 42.15,
+      "generator_endpoint_release_required": 429,
+      "fill_endpoint_release_required": 434,
+      "endpoint_release_max_required": 434,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        1747
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 1747,
+          "route": "PrimeButNotTwinAffine",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 863,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_right=min(generator_right,shifted_fill_right)"
+    },
+    {
+      "source_pair_key": "19:12",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2629,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 70,
+      "endpoint_release_overcritical_units": 50,
+      "endpoint_release_load_to_capacity_ratio": 3.5,
+      "endpoint_release_critical_error_fraction": "50/20",
+      "endpoint_release_critical_error": 2.5,
+      "generator_endpoint_release_required": 40,
+      "fill_endpoint_release_required": 30,
+      "endpoint_release_max_required": 40,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        61,
+        111
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 61,
+          "route": "PrimeButNotTwinAffine",
+          "rematerialized": false
+        },
+        {
+          "q": 111,
+          "route": "CompositeQ",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 70,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    },
+    {
+      "source_pair_key": "19:28",
+      "q": 31,
+      "window_side": "below",
+      "nearest_representative": 2397,
+      "support_interval": [
+        2669,
+        2688
+      ],
+      "critical_capacity_support_width": 20,
+      "actual_endpoint_release_load": 534,
+      "endpoint_release_overcritical_units": 514,
+      "endpoint_release_load_to_capacity_ratio": 26.7,
+      "endpoint_release_critical_error_fraction": "514/20",
+      "endpoint_release_critical_error": 25.7,
+      "generator_endpoint_release_required": 272,
+      "fill_endpoint_release_required": 262,
+      "endpoint_release_max_required": 272,
+      "requires_both_endpoint_release": true,
+      "moving_q_candidates": [
+        293,
+        575
+      ],
+      "moving_q_rematerialization_routes": [
+        {
+          "q": 293,
+          "route": "PrimeButNotTwinAffine",
+          "rematerialized": false
+        },
+        {
+          "q": 575,
+          "route": "CompositeQ",
+          "rematerialized": false
+        }
+      ],
+      "same_orientation_rematerialization_available": false,
+      "primitive_depth_defect_total": 534,
+      "primitive_depth_defect_matches_endpoint_load": true,
+      "positive_endpoint_release_critical_error": true,
+      "anonymous_critical_error_eliminated_current": true,
+      "structured_route_current": "EndpointReleaseCoupling-PDEC",
+      "pinned_endpoint": "support_left=max(generator_left,shifted_fill_left)"
+    }
+  ],
+  "contract": {
+    "critical_error_definition": "Endpoint release critical error is actual_endpoint_release_load / support_width - 1.",
+    "current_sweep_structuring_gate": [
+      "support motion requires both generator and shifted-fill endpoint release",
+      "endpoint release load exceeds the current support width",
+      "fixed primitive depth identities fail by the same total load",
+      "same-orientation moving-key source rematerialization is absent",
+      "therefore the positive local critical error is routed to EndpointReleaseCoupling-PDEC rather than kept as anonymous error"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "EndpointReleaseCoupling-PDEC exclusion",
+      "OrientationChangingPrimitiveKey-PDEC/SAE",
+      "SourceRematerialization-PDEC/SAE",
+      "MovingPrimitiveKeyNonPersistence"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-support-motion-depth-ledger.json": "0e2786c4a32ee35a38c027a4cadfe59cda82e09b51939d935fb476762c9700c7",
+    "data/prime-matrix-affine-twin-support-motion-primitive-defect-ledger.json": "7c63e2c3bd443a430ef7f633d1359f88c65ead388b69f34a0e0f9d72ccb32ef4",
+    "data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json": "b7d9016b2e43da9d390efdde3012739d24305e4843ed29efc8c295d16dc52fd6"
+  }
+}

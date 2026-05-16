@@ -513,3 +513,37 @@ moving_key_source_rematerialization_closed_current_sweep=true
 最窄 depth atom `19:12` 给出候选 `q=111` 与 `q=61`。其中 `111` 为合数；`61` 虽与 `59` 同为素数，但 `61≡1 mod 4`，使 AffineTwin 期望延迟 `(11q-21)/4` 非整数，且当前没有 gap `q=61` 的 matching source。最接近的已物化 source 是 gap `59`，角色为 `generator=61, fill=59, sides=minus->minus, p_delay=70`，不是 `q=61` 期望的 `generator=59, fill=61, sides=minus->plus`。
 
 因此当前同向 moving-key source-rematerialization 通道也关闭。全局剩余继续压成方向改变、source 重物化的非持久性证明，或进入 `OrientationChangingPrimitiveKey-PDEC/SAE`、`SourceRematerialization-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`。
+
+## 12. PM endpoint-release critical-error 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-critical-error-audit.md
+data/prime-matrix-affine-twin-endpoint-release-critical-error-ledger.json
+```
+
+把剩余 support-motion 逃逸接入“临界误差必须结构化”的统一原则。定义当前局部端点释放临界误差为：
+
+```text
+endpoint critical error = actual endpoint-release load / support width - 1
+```
+
+其中 support width 是 primitive 双槽共同支撑窗口宽度 `20`，actual endpoint-release load 是把空窗 CRT 代表拉入窗口所需的 generator 与 shifted-fill 双端点同步释放总量。当前证书给出：
+
+```text
+support_motion_candidate_count=11
+critical_capacity_support_width=20
+total_endpoint_release_load=4929
+total_window_capacity_budget=220
+total_endpoint_release_critical_error=21.4045454545
+min_endpoint_release_critical_error=2.5
+max_endpoint_release_critical_error=42.15
+all_endpoint_release_loads_supercritical=true
+all_same_orientation_rematerialization_absent=true
+endpoint_release_critical_error_structured_current_sweep=true
+```
+
+最窄显式超界点仍是 `19:12`：端点释放负载为 `70`，窗口容量为 `20`，临界误差为 `50/20=2.5`。它的 moving q 候选 `[61,111]` 已在上一节证明不能同向重物化为 AffineTwin source。因此这个正临界误差不能保留为匿名波动，只能显化为 `EndpointReleaseCoupling-PDEC`。
+
+本步关闭的是当前 sweep 的“匿名端点释放超界”解释，而不是全局行/列命题。全局剩余继续是排斥 `EndpointReleaseCoupling-PDEC` 持久复现，或处理方向改变/source 重物化出口。
