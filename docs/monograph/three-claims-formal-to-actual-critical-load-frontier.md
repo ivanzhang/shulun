@@ -380,3 +380,39 @@ RH: actual final-load controlled-exit table
 ```
 
 这些仍是未闭合的数学义务，但它们已经比之前的表述更窄、更可审稿，并且直接围绕临界密度与临界误差的终端矛盾。下一步应优先对 PM 的 actual packet 账本生成机器可审计枚举，再同步推进 TP 的 denominator floor 和 RH 的 controlled-exit actual-load 表格化。
+
+## 8. actual-load 闭合合同更新
+
+后续文件
+
+```text
+docs/monograph/three-claims-actual-load-closure-contracts.md
+```
+
+把本文的 formal-to-actual 原则落成三个闭合合同：
+
+```text
+PM-ALC: Prime Matrix actual packet critical-load contract
+TP-ALC: Two-point actual ratio denominator-floor contract
+RH-ALC: RH final-load controlled-exit contract
+```
+
+其中 PM 合同已生成当前 sweep 机器证书：
+
+```text
+experiments/prime_matrix_affine_twin_actual_packet_contract.py
+data/prime-matrix-affine-twin-actual-packet-contract-ledger.json
+docs/monograph/prime-matrix-affine-twin-actual-packet-contract.md
+```
+
+当前结果为：
+
+```text
+candidate_q_values=[31, 43, 103]
+total_formal_product_upper=40
+total_actual_packet_count_current=1
+total_formal_to_actual_gap=39
+all_actual_packets_pass_sqrt_gate_current=true
+```
+
+这把 PM 前沿进一步具体化：当前 sweep 的真实负载非常小，形式包络与 actual load 的差额必须进入 `ProductAccountingTightening`，不能被用作真实临界矛盾。TP 与 RH 的合同则分别固定了 denominator floor 与 source-deleted final load 的下一步审稿格式。

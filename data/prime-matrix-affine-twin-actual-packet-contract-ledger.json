@@ -1,0 +1,116 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_actual_packet_contract",
+  "status": "current_sweep_actual_packet_contract_closed_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "slot_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json",
+    "sqrt_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-ledger.json",
+    "pressure_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-paired-side-pressure-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "actual_q_values_current": [
+      31
+    ],
+    "total_formal_product_upper": 40,
+    "total_actual_packet_count_current": 1,
+    "total_formal_to_actual_gap": 39,
+    "all_actual_packets_in_primitive_support_current": true,
+    "all_actual_packets_pass_sqrt_gate_current": true,
+    "projection_collision_pdec_count_current": 0,
+    "formal_overcount_q_count_current": 3,
+    "max_actual_load_ratio_current": 0.0011123470522803114,
+    "max_formal_load_ratio_current": 0.16017797552836485,
+    "product_accounting_tightening_needed_globally": true,
+    "primitive_twin_slot_support_exhaustion_proved_globally": false,
+    "primitive_support_escape_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "actual_packet_rows": [
+    {
+      "q": 31,
+      "capacity_q_q_minus_2": 899,
+      "primitive_support_width": 20,
+      "formal_product_upper_M_form": 12,
+      "formal_square_load": 144,
+      "actual_packet_count_N_q_current": 1,
+      "actual_square_load": 1,
+      "formal_to_actual_gap": 11,
+      "support_injection_passed_current": true,
+      "actual_sqrt_gate_passed_current": true,
+      "formal_sqrt_gate_passed_current": true,
+      "projection_collision_pdec_current": false,
+      "formal_overcounts_actual_current": true,
+      "actual_load_ratio": 0.0011123470522803114,
+      "formal_load_ratio": 0.16017797552836485,
+      "paired_pressure_product": 0.16017797552836485,
+      "realized_current_sweep": true,
+      "route_current": "ActualPrimitiveSupportAbsorbed+ProductAccountingTightening",
+      "actual_packet_keys": [
+        "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11"
+      ]
+    },
+    {
+      "q": 43,
+      "capacity_q_q_minus_2": 1763,
+      "primitive_support_width": 26,
+      "formal_product_upper_M_form": 16,
+      "formal_square_load": 256,
+      "actual_packet_count_N_q_current": 0,
+      "actual_square_load": 0,
+      "formal_to_actual_gap": 16,
+      "support_injection_passed_current": true,
+      "actual_sqrt_gate_passed_current": true,
+      "formal_sqrt_gate_passed_current": true,
+      "projection_collision_pdec_current": false,
+      "formal_overcounts_actual_current": true,
+      "actual_load_ratio": 0.0,
+      "formal_load_ratio": 0.1452070334656835,
+      "paired_pressure_product": 0.1452070334656835,
+      "realized_current_sweep": false,
+      "route_current": "NoActualPacketCurrentSweep+ProductAccountingTightening",
+      "actual_packet_keys": []
+    },
+    {
+      "q": 103,
+      "capacity_q_q_minus_2": 10403,
+      "primitive_support_width": 56,
+      "formal_product_upper_M_form": 12,
+      "formal_square_load": 144,
+      "actual_packet_count_N_q_current": 0,
+      "actual_square_load": 0,
+      "formal_to_actual_gap": 12,
+      "support_injection_passed_current": true,
+      "actual_sqrt_gate_passed_current": true,
+      "formal_sqrt_gate_passed_current": true,
+      "projection_collision_pdec_current": false,
+      "formal_overcounts_actual_current": true,
+      "actual_load_ratio": 0.0,
+      "formal_load_ratio": 0.013842160915120638,
+      "paired_pressure_product": 0.013842160915120638,
+      "realized_current_sweep": false,
+      "route_current": "NoActualPacketCurrentSweep+ProductAccountingTightening",
+      "actual_packet_keys": []
+    }
+  ],
+  "theorem_contract": {
+    "name": "PM-ActualPacketCriticalLoadContract",
+    "actual_load": "N_q^2",
+    "formal_envelope": "(A_g A_f)^2",
+    "critical_capacity": "q(q-2)",
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "ProductAccountingTightening",
+      "PrimitiveTwinSlotSupportExhaustion",
+      "PrimitiveTwinSlotSupportEscape-PDEC/SAE"
+    ]
+  },
+  "dependency_hashes": {
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json": "a8048685a2c6449b42ed5d2190aa47e75b20abf36a18e18c4d1ddb223cba033f",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-ledger.json": "44e048bbb9be8b3e2fa427090bf3bfa613575035385807986c0b7a3c664ff50a",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-paired-side-pressure-ledger.json": "3260f7bb9020052ca7362859c608c3ed7508238ae927c79a4a42712ba09a41a2"
+  }
+}
