@@ -1072,3 +1072,32 @@ nearjump_carrier_exhausted_current_sweep=true
 因此 near-jump carrier 全部耗尽：`61,65` 近 source 但 source gate 断裂；其余七个 q 缺 source，最近 source 也超出 support width。并且所有 target 侧 near-jump 都需要新增侧残基。
 
 本步把当前 sweep 的 target-side near-jump 分支整体关闭。全局仍需证明 `NearJumpCarrierGlobalNoGo`，或将失败路由到 source-rematerialization、unused-target arrival、ColumnCRT/PDEC 或 moving-family 出口。
+
+## 28. PM endpoint-release carrier-arrival routing 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-carrier-arrival-routing-audit.md
+data/prime-matrix-affine-twin-endpoint-release-carrier-arrival-routing-ledger.json
+```
+
+继续检查 near-jump carrier target 侧是否还有未登记的匿名承载通道。审计把 9 个 carrier 产生的 27 个 target 近邻事件逐个匹配到 unused-target arrival 账本。
+
+当前读数为：
+
+```text
+carrier_event_count=27
+unique_arrival_atom_count_used_by_carriers=9
+missing_unused_target_arrival_match_count=0
+carrier_event_new_side_residue_requirement_total=50
+required_new_generator_residues=[10, 16, 17, 18, 20]
+required_new_fill_residues=[5, 6, 7, 30]
+exact_zero_phase_event_count=1
+all_carrier_events_match_closed_unused_target_arrival=true
+carrier_arrival_routed_current_sweep=true
+```
+
+因此 target 侧近邻没有匿名吸收：所有 carrier 事件都已经落到 closed unused-target arrival 原子。唯一 exact zero phase 事件 `q=61,q-2=59,jump=59` 也仍然需要新增 generator residue `20`，并且 source gate 已在 `61/59` phase-fracture 中失败。
+
+本步把当前 sweep 的 near-jump target 侧全部回收到“新侧残基到达”账本。全局剩余进一步压成 `GlobalUnusedTargetResidueArrivalBound`，或命名 `NewGeneratorResidueArrival-PDEC/SAE`、`NewFillResidueArrival-PDEC/SAE`、`ColumnCRT/PDEC` 与 moving-family 出口。

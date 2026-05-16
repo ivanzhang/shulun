@@ -1215,3 +1215,31 @@ nearjump_carrier_exhausted_current_sweep=true
 分解是无剩余的：`61,65` 是 near source and jump，但一个是 `PrimeButNotTwinAffine`，一个是合数；七个 orphan 只近 target，不近 source。所有 carrier 的 unused-target jump 事件还都需要新增侧残基。因此 target 侧相位近邻无法单独承载 actual load。
 
 这把当前局部反例链的 near-target 尝试压成明确选择：要么补 source，进入 `SourceRematerialization-PDEC/SAE` 或 moving-family；要么补 target 侧残基，进入 `UnusedTargetResidueArrival-PDEC`；要么固定相位复现，进入 `ColumnCRT/PDEC`。当前 primitive support 内没有匿名 near-jump carrier。
+
+## 35. PM endpoint-release carrier-arrival routing 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-carrier-arrival-routing-audit.md
+data/prime-matrix-affine-twin-endpoint-release-carrier-arrival-routing-ledger.json
+```
+
+本节把 near-jump carrier 的 target 侧近邻全部接回 unused-target arrival 账本，测试是否存在“靠近 jump 但不用新增残基”的隐藏 actual load。
+
+结果显示：
+
+```text
+carrier_event_count=27
+unique_arrival_atom_count_used_by_carriers=9
+target_pair_histogram={'10:30': 9, '16:5': 5, '17:6': 7, '18:7': 2, '20:9': 4}
+carrier_event_new_side_residue_requirement_total=50
+carrier_event_new_side_residue_histogram={1: 4, 2: 23}
+missing_unused_target_arrival_match_count=0
+all_carrier_targets_outside_current_formal_product=true
+all_carrier_targets_not_supported_actual_current_sweep=true
+```
+
+这说明 target 近邻只是 unused-target arrival 的重复投影，不是新的 actual packet。特别是唯一 exact zero phase `q=61,q-2=59,jump=59` 仍落在 `19:12 -> 20:9`，需要新增 generator residue `20`；相位精确贴合并没有消除 target 侧新残基成本。
+
+所以当前局部矛盾场又压窄一层：若反例链继续要求这些 target 近邻真实出现，就必须给出新侧残基的全局到达机制；若该机制持久复现，则登记为 `NewGeneratorResidueArrival-PDEC/SAE`、`NewFillResidueArrival-PDEC/SAE` 或 `ColumnCRT/PDEC`，不能留作未命名吸收。
