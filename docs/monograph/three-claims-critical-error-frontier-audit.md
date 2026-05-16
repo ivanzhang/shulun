@@ -483,3 +483,68 @@ RH:
 ```
 
 这三个接口是同一个矛盾场的三个投影：反例必须制造超临界误差，而真实结构链要求超临界误差显化为固定相位、移动质量、解析平均或受控出口。若每个出口都被排除或吸收，反例链即与真实链直接矛盾。
+
+## 10. Prime Matrix 本轮续钻更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-nonpdec-sqrt-phase-support-reduction.md
+```
+
+把第一项 `NonPDECSquareRootPhaseSupportBound` 再压窄为 actual packet 版本。
+
+关键修正是区分：
+
+```text
+M_q^{form}=A_g A_f   形式 residue 配对上界
+N_q                  实际非 PDEC pressure packet 数
+```
+
+临界误差应使用 actual load：
+
+\[
+\mathcal E_q={N_q^2\over q(q-2)}-1,
+\]
+
+而不是自动使用可能过粗的 `M_q^{form}`。对 primitive AffineTwin 双槽，已有相位锁给出
+
+\[
+W_q={q+9\over2}.
+\]
+
+且对 `q>=13`，
+
+\[
+W_q\le\sqrt{q(q-2)}.
+\]
+
+因此只要证明每个 actual non-PDEC packet 都落入 primitive 双槽支撑，并且同一投影复现已经路由为 PDEC/ColumnCRT，就得到：
+
+\[
+N_q\le W_q\le\sqrt{q(q-2)}.
+\]
+
+于是形式 SuperSqrt 失败只剩三种解释：
+
+```text
+ProductAccountingTightening       形式上界过粗，不是实际负载；
+ProjectionCollision-PDEC          actual packets 投影碰撞；
+PrimitiveTwinSlotSupportEscape    actual packet 逃出 primitive 支撑。
+```
+
+所以 Prime Matrix 最新最窄硬点从
+
+```text
+NonPDECSquareRootPhaseSupportBound
+```
+
+进一步变成：
+
+```text
+PrimitiveTwinSlotSupportExhaustion
++ ProductAccountingTightening
++ PrimitiveTwinSlotSupportEscape-PDEC/SAE routing.
+```
+
+这仍未闭合行/列命题，但它把超平方根压力从“抽象乘积过大”压成了“实际包是否全部落在可注入相位支撑内”的更窄问题。

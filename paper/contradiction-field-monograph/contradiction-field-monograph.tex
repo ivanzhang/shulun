@@ -263,6 +263,51 @@ denominator-floor check for the two-point BMD-to-TLI transfer, and a common
 baseline-subtracted load convention for every RH controlled exit.
 \end{proof}
 
+\begin{reductionstatement}[Actual-packet square-root phase support]
+In the prime-matrix AffineTwin branch, distinguish the formal product
+\[
+  M_q^{\rm form}=A_gA_f
+\]
+from the actual non-PDEC packet count $N_q$.  The latter counts only
+generator--fill packets whose two slot conditions are compatible, whose common
+phase support is nonempty, and which have not already become a reset or
+ColumnCRT/PDEC event.  For a primitive AffineTwin slot pair with $q\ge13$, the
+recorded depth identities give common support width
+\[
+  W_q=\frac{q+9}{2}.
+\]
+Since
+\[
+  W_q\le \sqrt{q(q-2)}
+\]
+for all $q\ge13$, and since a repeated actual packet projection inside this
+support is by definition a PDEC/ColumnCRT event, every non-PDEC primitive packet
+family satisfies
+\[
+  N_q\le W_q\le \sqrt{q(q-2)}.
+\]
+Thus the square-root gate is closed for actual primitive packets.  A remaining
+formal SuperSqrt failure must be either product-accounting looseness
+($M_q^{\rm form}$ overcounts $N_q$), a projection-collision PDEC, or a primitive
+support escape.
+\end{reductionstatement}
+\begin{proof}[Status and reference]
+The inequality follows by squaring:
+\[
+  4q(q-2)-(q+9)^2=3q^2-26q-81\ge0
+\]
+for $q\ge13$.  The injection of actual packets into the primitive support is the
+non-PDEC projection rule: two actual packets with the same primitive projection
+would be a repeated fixed CRT phase and therefore a reset/ColumnCRT/PDEC event.
+The detailed audit is archived in
+\[
+  \texttt{docs/monograph/prime-matrix-nonpdec-sqrt-phase-support-reduction.md}.
+\]
+This does not yet prove the row/column theorem.  It reduces the remaining
+Prime-Matrix obligation to product-accounting tightening and to excluding or
+routing primitive-support escape packets.
+\end{proof}
+
 \chapter{Prime-Matrix Contradiction Fields}
 
 Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
