@@ -548,3 +548,43 @@ PrimitiveTwinSlotSupportExhaustion
 ```
 
 这仍未闭合行/列命题，但它把超平方根压力从“抽象乘积过大”压成了“实际包是否全部落在可注入相位支撑内”的更窄问题。
+
+## 11. formal-to-actual 负载纪律
+
+后续文件
+
+```text
+docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md
+```
+
+把上面的 Prime Matrix actual packet 修正提升为三命题共同纪律：
+
+\[
+0\le A\le F,
+\]
+
+其中 `F` 是 formal envelope，`A` 是 actual load，`C` 是 critical capacity。
+
+闭合逻辑必须分三种：
+
+```text
+F<=C      : 通道直接吸收；
+F>C,A<=C : 只是 formal envelope 过粗，必须 tightening；
+A>C      : 才能触发 PDEC/SAE/KLS/controlled exit。
+```
+
+三条线对应为：
+
+```text
+PM: (A_g A_f)^2  vs  N_q^2
+TP: model numerator/denominator  vs  actual TLI ratio
+RH: routed atom envelope  vs  source-deleted final load
+```
+
+这条纪律防止把粗包络超界误写成真实矛盾，也防止把实验或形式估计直接升级为无条件证明。下一步的真正硬攻接口因此同步变成：
+
+```text
+PM: actual packet enumeration and primitive support exhaustion
+TP: actual denominator floor for BMD=>TLI
+RH: actual final-load controlled-exit table
+```

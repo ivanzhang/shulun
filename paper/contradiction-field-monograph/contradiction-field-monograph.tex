@@ -308,6 +308,38 @@ Prime-Matrix obligation to product-accounting tightening and to excluding or
 routing primitive-support escape packets.
 \end{proof}
 
+\begin{reductionstatement}[Formal envelope versus actual load]
+Across the three programs, a critical contradiction can only be triggered by
+actual load, not by a formal envelope.  If $F$ is a formal upper envelope, $A$ is
+the actual load, and $C$ is the critical capacity, then
+\[
+  0\le A\le F.
+\]
+The case $F\le C$ is absorbed.  The case $F>C$ but $A\le C$ is only an
+accounting issue and requires tightening the envelope to the actual load.  Only
+the case $A>C$ can force a structural exit.  In the prime-matrix AffineTwin
+branch this is the distinction between $(A_gA_f)^2$ and $N_q^2$; in the
+two-point sieve it is the distinction between model numerator/denominator
+envelopes and the actual ratio
+\[
+  |U_Y(I)|^{-1}\sum_{x\in U_Y(I)}D_Y^P(x);
+\]
+in the RH branch it is the distinction between routed atom envelopes and
+source-deleted final loads in the GEE ledger.
+\end{reductionstatement}
+\begin{proof}[Status and reference]
+This is a status-discipline and reduction rule.  It prevents any of the three
+frontiers from closing by a coarse upper envelope alone.  The detailed
+cross-program audit is recorded in
+\[
+  \texttt{docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md}.
+\]
+The resulting active interfaces are actual packet enumeration for the
+prime-matrix branch, actual denominator-floor control for the two-point
+BMD-to-TLI transfer, and actual final-load normalization for the RH controlled
+exits.
+\end{proof}
+
 \chapter{Prime-Matrix Contradiction Fields}
 
 Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
