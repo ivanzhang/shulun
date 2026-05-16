@@ -199,6 +199,39 @@ WindowEdgeCollision-PDEC
 SupportMotionEscape-PDEC/SAE
 ```
 
+### 1.7 window edge-collision 更新
+
+后续审计
+
+```text
+experiments/prime_matrix_affine_twin_window_edge_collision_audit.py
+data/prime-matrix-affine-twin-window-edge-collision-ledger.json
+docs/monograph/prime-matrix-affine-twin-window-edge-collision-audit.md
+```
+
+把 `CRTWindowGap` 的下一失败形态写成 residue 网格位移：
+
+```text
+target_window_pair_count=20
+edge_collision_candidate_count_current=11
+min_empty_l1_residue_displacement=1
+max_empty_l1_residue_displacement=11
+empty_pairs_target_existing_actual_count=2
+empty_pairs_target_unused_residue_arrival_count=9
+window_edge_collision_displacement_closed_current_sweep=true
+```
+
+共同窗口 `[2669,2688]` 诱导 `20` 个可命中的 target residue pairs。当前 `11` 个空窗 formal pairs 要变成 actual packet，必须移动到这些 target 之一；最近的单点为 `(19,9)->(19,8)`，只需 fill residue 位移 `-1`，因此成为下一轮最窄 atom。其余 `9` 个最近目标不在当前 actual pair 上，需要新的 target residue arrival。
+
+全局最窄剩余继续压成：
+
+```text
+GlobalWindowEdgeCollisionDisplacementBound
+ExistingActualResidueCollision-PDEC
+UnusedTargetResidueArrival-PDEC/SAE
+SupportMotionEscape-PDEC/SAE
+```
+
 ## 2. TP-ALC：二点筛 actual ratio 合同
 
 ### 2.1 actual ratio
@@ -318,7 +351,7 @@ ControlledExitCriticalLoadNormalization
 
 | 合同 | actual load | critical capacity | 当前可证状态 | 剩余硬点 |
 |---|---:|---:|---|---|
-| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate 与 CRT window gap 闭合 | 全局 actual packet exhaustion |
+| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate、CRT gap 与 edge-collision 位移闭合 | 全局 actual packet exhaustion |
 | TP-ALC | actual `sum D / |U_Y|` | `1` with Buchstab `K(alpha)` | 分子 BMD 外部版可用 | denominator floor / parity gap |
 | RH-ALC | source-deleted final load | exit capacity | verification ledger 已有 | controlled exits 逐项归一化 |
 
@@ -326,7 +359,7 @@ ControlledExitCriticalLoadNormalization
 
 最直接的继续硬攻顺序是：
 
-1. **PM：** 把 current sweep 的 source gate 与 CRT window gap 升级成全局门控定理：缺 source 的 formal product 进入 `SameGapWrongSource/NoGapSource-PDEC/SAE`；有 source 但无窗口代表的 product 必有正 `CRTWindowGap`，或触发 `WindowEdgeCollision-PDEC` / `SupportMotionEscape-PDEC/SAE`。
+1. **PM：** 主攻 `(19,9)->(19,8)` 的单 fill-residue edge collision atom；若它可持续复现，则必须与 existing actual residue collision 或 repeated residue/ColumnCRT 机制相交，否则所有未命中 pair 留在 `UnusedTargetResidueArrival-PDEC/SAE` 或 `SupportMotionEscape-PDEC/SAE`。
 2. **TP：** 写出 denominator floor 的 beta/Buchstab 下筛合同，明确 `delta(alpha)` 的可接受上限。
 3. **RH：** 生成 controlled-exit 四列表，先不证明 RH，只把每个 exit 的 actual-load 输入、闭合机制和未闭合项固定。
 

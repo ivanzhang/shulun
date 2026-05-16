@@ -525,3 +525,32 @@ formal residue product
 ```
 
 全局硬点相应压成 `GlobalCRTWindowGapBound`：若未来有 source 已物化但空窗不成立，则它必须表现为 `WindowEdgeCollision-PDEC` 或 `SupportMotionEscape-PDEC/SAE`，不能作为未登记 actual load 混入临界负载。
+
+## 12. PM window edge-collision 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-window-edge-collision-audit.md
+data/prime-matrix-affine-twin-window-edge-collision-ledger.json
+```
+
+继续把 `WindowEdgeCollision` 从命名出口压成 residue 网格位移。当前结果为：
+
+```text
+target_window_pair_count=20
+edge_collision_candidate_count_current=11
+min_empty_l1_residue_displacement=1
+max_empty_l1_residue_displacement=11
+empty_pairs_target_existing_actual_count=2
+empty_pairs_target_unused_residue_arrival_count=9
+```
+
+窗口 `[2669,2688]` 对应 `20` 个 target residue pairs。空窗 formal pair 若要变成 actual packet，必须移动到这些目标点之一。当前最近 atom 是
+
+```text
+(generator residue, fill residue) = (19,9) -> (19,8),
+delta_g=0, delta_f=-1.
+```
+
+这不是全局矛盾，但它把下一步主攻点从“窗口边界可能碰撞”压成一个明确单点：若这种单 fill-residue edge collision 可持续复现，它必须与已有 actual pair `(19,8)` 发生 residue collision，或暴露 repeated residue / ColumnCRT / target-arrival 结构缺陷。
