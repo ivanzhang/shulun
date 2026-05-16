@@ -1,0 +1,96 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_remaining_frontier_bridge_audit",
+  "status": "remaining_frontier_bridge_current_sweep_closed_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "transport_frontier_integration_closed_current_sweep": true,
+    "transport_cell_count": 12,
+    "unique_transport_cell_count": 12,
+    "transport_reset_pdec_atom_count": 0,
+    "singleton_residue_packet_count": 300,
+    "singleton_count_matches_partition": true,
+    "singleton_rankin_mass_total": 4.328474445644406,
+    "one_slot_mass": 4.291749690880195,
+    "two_slot_mass_share": 0.008484456873983595,
+    "rankin_profile_identity_closed_current_sweep": true,
+    "active_one_slot_epoch_count": 40,
+    "total_residue_capacity": 2674,
+    "total_used_residue_count": 257,
+    "total_unused_residue_count": 2417,
+    "max_one_slot_occupancy_ratio": 0.30985915492957744,
+    "min_one_slot_spare_ratio": 0.6901408450704225,
+    "one_slot_capacity_bridge_closed_current_sweep": true,
+    "distinct_active_ell_count": 21,
+    "active_band_min": 23,
+    "active_band_max": 109,
+    "active_band_prime_count": 21,
+    "both_side_band_min": 29,
+    "both_side_band_max": 107,
+    "both_side_prime_count": 19,
+    "minus_only_ell_values": [
+      23,
+      109
+    ],
+    "plus_only_ell_values": [],
+    "active_band_bridge_closed_current_sweep": true,
+    "candidate_epoch_pair_count": 3,
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "candidate_product_mass_upper_sum": 0.023577117628562343,
+    "eta": 0.025,
+    "candidate_total_eta_slack": 0.0014228823714376587,
+    "high_density_epoch_pair_count": 0,
+    "epoch_pair_sparse_closed_current_sweep": true,
+    "remaining_frontier_bridge_closed_current_sweep": true,
+    "active_ell_band_endpoint_growth_bound_proved": false,
+    "endpoint_reset_pdec_excluded_globally": false,
+    "transport_reset_pdec_excluded_globally": false,
+    "singleton_residue_sae_rankin_bound_proved_globally": false,
+    "global_epoch_pair_multiplicity_bound_proved": false,
+    "moving_residue_shape_sae_rankin_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "remaining_frontier_route_rows": [
+    {
+      "gate": "TransportFrontierCurrentBridge",
+      "closed_current_sweep": true,
+      "evidence": "transport cells=12; unique=12; reset atoms=0",
+      "global_remaining": "TransportResetPDECExclusion"
+    },
+    {
+      "gate": "SingletonResidueToActiveEllBand",
+      "closed_current_sweep": true,
+      "evidence": "singleton packets=300; one-slot mass=4.291749690880195; active band=23..109; minus-only endpoints=[23, 109]",
+      "global_remaining": "ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC"
+    },
+    {
+      "gate": "AffineTwinEpochPairSparseGate",
+      "closed_current_sweep": true,
+      "evidence": "candidate q=[31, 43, 103]; occupancy sum=0.023577117628562343; eta=0.025; high-density rows=0",
+      "global_remaining": "GlobalEpochPairMultiplicityBound"
+    }
+  ],
+  "global_remaining": [
+    "ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC",
+    "TransportResetPDECExclusion",
+    "GlobalEpochPairMultiplicityBound",
+    "MovingResidueShapeSAE/Rankin"
+  ],
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-endpoint-release-transport-frontier-integration-ledger.json": "65b4bd29a72f28ad8bbef86a7f35c452445c66892770a3a6069d87627c92a5fc",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-singleton-residue-sae-profile-ledger.json": "2b7ba1295e2d498da7265aa73d7e39b6a5add3a31ae60f947b4fbc4cf212b373",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-singleton-rankin-budget-ledger.json": "60a85b991523e1af0bdb40c950945b3db3163d1132d1ff441e8ccbc46ade0ac6",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-one-slot-residue-epoch-capacity-ledger.json": "fd9f2939f94e6cbdc92892d6b59a86392b4bd71d4b478c501b870974211f6c4e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-active-one-slot-epoch-source-ledger.json": "2f86d0b8f43e35626243749be133068f651966d90c31896795c984d5801d0991",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-active-ell-interval-band-ledger.json": "f2876c431b7c4ff762deb76e26f43d974388fab22a1ee854f64fa39944ce280e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-ledger.json": "8323447f703d339a1ff63e35f0dcaff4d697b295ea79241f67c23d2ecd5c00d3"
+  }
+}

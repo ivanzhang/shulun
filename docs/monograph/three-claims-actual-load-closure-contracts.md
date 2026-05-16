@@ -1421,3 +1421,38 @@ transport_frontier_integration_closed_current_sweep=true
 ```
 
 因此 `FixedResidueSlotDriftColumnCRT` 在当前 sweep 内不再是匿名容量出口，而被压成 `TransportResetPDECExclusion` 与 `SingletonResidueSAE/Rankin` 两个更底层义务。全局最窄剩余现在是 `TransportResetPDECExclusion`、`SingletonResidueSAE/Rankin` 与 `GlobalEpochPairMultiplicityBound`，并保留 `MovingResidueShapeSAE/Rankin` 作为移动残基形状出口；行/列命题仍未无条件闭合。
+
+## 39. PM endpoint-release remaining-frontier bridge 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-remaining-frontier-bridge-audit.md
+data/prime-matrix-affine-twin-endpoint-release-remaining-frontier-bridge-ledger.json
+```
+
+本节把 transport-frontier 集成后的三条剩余接入既有 singleton/active-ell/epoch-pair 账本，形成当前最新前沿读数：
+
+```text
+transport_reset_pdec_atom_count=0
+singleton_residue_packet_count=300
+one_slot_mass=4.291749690880195
+two_slot_mass_share=0.008484456873983595
+active_band=23..109
+minus_only_ell_values=[23,109]
+candidate_product_mass_upper_sum=0.023577117628562343
+eta=0.025
+high_density_epoch_pair_count=0
+remaining_frontier_bridge_closed_current_sweep=true
+```
+
+桥接后的精确主攻面是：
+
+```text
+transport reset: 当前 atom 为 0，但全局 reset-PDEC 仍未排斥；
+singleton SAE: 300 个 singleton packet 已定位到 one-slot/active-ell 带端点增长；
+epoch-pair: 当前候选 q=[31,43,103] 低于 eta 门，但 global multiplicity 仍未证明；
+moving residue shape: 仍保留 SAE/Rankin 出口。
+```
+
+因此最新可攻接口不再是泛化的 `SingletonResidueSAE/Rankin`，而是更窄的 `ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC`，并与 `TransportResetPDECExclusion`、`GlobalEpochPairMultiplicityBound`、`MovingResidueShapeSAE/Rankin` 并列为全局剩余。当前 bridge 只关闭 current sweep 的路由连接，不关闭行/列命题。

@@ -1595,3 +1595,33 @@ unclassified_physical_record_count=0
 ```
 
 所以 current sweep 中的 `FixedResidueSlotDriftColumnCRT` 已被拆成可检查的 transport-frontier 路由，不再是未分类 ColumnCRT 容量来源。最新全局剩余是 `TransportResetPDECExclusion`、`SingletonResidueSAE/Rankin`、`GlobalEpochPairMultiplicityBound` 与 `MovingResidueShapeSAE/Rankin`；它们仍是全局义务，不能据此宣称行/列命题已经无条件闭合。
+
+## 46. PM endpoint-release remaining-frontier bridge 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-remaining-frontier-bridge-audit.md
+data/prime-matrix-affine-twin-endpoint-release-remaining-frontier-bridge-ledger.json
+```
+
+本节把上一节四个全局剩余中的三个可计算分支接到已有深层账本：transport reset、singleton residue SAE、AffineTwin epoch-pair multiplicity。当前 bridge 证书给出：
+
+```text
+TransportFrontierCurrentBridge=true
+SingletonResidueToActiveEllBand=true
+AffineTwinEpochPairSparseGate=true
+remaining_frontier_bridge_closed_current_sweep=true
+```
+
+其显式含义是：
+
+```text
+1. transport reset 分支当前没有 reset atom；
+2. singleton residue 分支中 300 个 packet 的 Rankin 质量主要来自 one-slot mass；
+3. one-slot 分支有 40 个 active epochs，max occupancy 约 0.30986，spare ratio 至少约 0.69014；
+4. active ell 来源精确为素数带 23..109，双侧核心为 29..107，端点不对称只在 [23,109]；
+5. epoch-pair 候选 q=[31,43,103] 的总占用上界为 0.023577117628562343<eta=0.025。
+```
+
+这把反例链与真实链的最新交叉点继续压窄：若反例链要求 singleton SAE 质量持续失控，真实链必须让活跃素数带端点无限外推，或触发 endpoint reset-PDEC/SAE；若反例链改走 moving AffineTwin epoch-pair，真实链当前只允许低于 eta 的稀疏门，全球仍需 multiplicity bound。最新主攻硬点为 `ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC`、`TransportResetPDECExclusion`、`GlobalEpochPairMultiplicityBound` 与 `MovingResidueShapeSAE/Rankin`。
