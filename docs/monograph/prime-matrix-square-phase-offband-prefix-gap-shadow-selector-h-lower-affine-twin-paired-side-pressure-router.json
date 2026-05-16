@@ -1,0 +1,211 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_paired_side_pressure_router",
+  "status": "affine_twin_sqrt_gate_rewritten_as_paired_side_pressure_product_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "sqrt_product_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "all_sqrt_product_pressure_equivalences_closed": true,
+    "all_current_rows_pass_paired_pressure_gate": true,
+    "pressure_product_pdec_count_current_sweep": 0,
+    "one_sided_pressure_without_pair_collision_count": 2,
+    "one_sided_pressure_q_values": [
+      43,
+      103
+    ],
+    "max_paired_side_pressure_product": {
+      "numerator": 144,
+      "denominator": 899,
+      "decimal": 0.16017797552836485
+    },
+    "min_pressure_product_slack": {
+      "numerator": 755,
+      "denominator": 899,
+      "decimal": 0.8398220244716351
+    },
+    "paired_pressure_product_bound_proved_globally": false,
+    "pressure_product_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "paired_side_pressure_rows": [
+    {
+      "q": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "generator_used_residue_count": 3,
+      "fill_used_residue_count": 4,
+      "generator_side_pressure": {
+        "numerator": 9,
+        "denominator": 29,
+        "decimal": 0.3103448275862069
+      },
+      "fill_side_pressure": {
+        "numerator": 16,
+        "denominator": 31,
+        "decimal": 0.5161290322580645
+      },
+      "paired_side_pressure_product": {
+        "numerator": 144,
+        "denominator": 899,
+        "decimal": 0.16017797552836485
+      },
+      "paired_pressure_gate_passed_current_sweep": true,
+      "pressure_product_pdec_trigger_current_sweep": false,
+      "generator_side_pressure_above_one": false,
+      "fill_side_pressure_above_one": false,
+      "one_sided_pressure_without_pair_collision": false,
+      "paired_pressure_bottleneck": "generator",
+      "sqrt_product_gate_equivalent": true,
+      "source_sqrt_product_ratio": 0.40022240757904204,
+      "realized_current_sweep": true,
+      "realized_pair_count": 1
+    },
+    {
+      "q": 43,
+      "generator_ell": 41,
+      "fill_ell": 43,
+      "generator_used_residue_count": 8,
+      "fill_used_residue_count": 2,
+      "generator_side_pressure": {
+        "numerator": 64,
+        "denominator": 41,
+        "decimal": 1.5609756097560976
+      },
+      "fill_side_pressure": {
+        "numerator": 4,
+        "denominator": 43,
+        "decimal": 0.09302325581395349
+      },
+      "paired_side_pressure_product": {
+        "numerator": 256,
+        "denominator": 1763,
+        "decimal": 0.1452070334656835
+      },
+      "paired_pressure_gate_passed_current_sweep": true,
+      "pressure_product_pdec_trigger_current_sweep": false,
+      "generator_side_pressure_above_one": true,
+      "fill_side_pressure_above_one": false,
+      "one_sided_pressure_without_pair_collision": true,
+      "paired_pressure_bottleneck": "fill",
+      "sqrt_product_gate_equivalent": true,
+      "source_sqrt_product_ratio": 0.38106040658363277,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0
+    },
+    {
+      "q": 103,
+      "generator_ell": 101,
+      "fill_ell": 103,
+      "generator_used_residue_count": 12,
+      "fill_used_residue_count": 1,
+      "generator_side_pressure": {
+        "numerator": 144,
+        "denominator": 101,
+        "decimal": 1.4257425742574257
+      },
+      "fill_side_pressure": {
+        "numerator": 1,
+        "denominator": 103,
+        "decimal": 0.009708737864077669
+      },
+      "paired_side_pressure_product": {
+        "numerator": 144,
+        "denominator": 10403,
+        "decimal": 0.013842160915120638
+      },
+      "paired_pressure_gate_passed_current_sweep": true,
+      "pressure_product_pdec_trigger_current_sweep": false,
+      "generator_side_pressure_above_one": true,
+      "fill_side_pressure_above_one": false,
+      "one_sided_pressure_without_pair_collision": true,
+      "paired_pressure_bottleneck": "fill",
+      "sqrt_product_gate_equivalent": true,
+      "source_sqrt_product_ratio": 0.11765271316514822,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0
+    }
+  ],
+  "pressure_product_pdec_rows_current_sweep": [],
+  "paired_pressure_product_bound_proved_globally": false,
+  "pressure_product_pdec_excluded_globally": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion",
+  "hardpoint_after_router": "AffineTwinPairedSidePressureBoundOrPressureProductPDECExclusion",
+  "next_direct_attack_target": "AffineTwinPairedSidePressureBoundOrPressureProductPDECExclusion",
+  "theorem_rows": [
+    {
+      "name": "sqrt_gate_equals_paired_side_pressure_gate",
+      "status": "closed",
+      "statement": "M_q^2<=q(q-2) is exactly (g_used^2/(q-2))*(f_used^2/q)<=1, so the hardpoint is a two-side synchronized residue-pressure product, not a raw atom count."
+    },
+    {
+      "name": "current_one_sided_pressure_does_not_collide",
+      "status": "closed_current_sweep",
+      "statement": "The current sweep has generator-side pressure above one for q=43 and q=103, but the paired fill-side pressure is small enough that no q violates the product gate."
+    },
+    {
+      "name": "pressure_product_pdec_routing",
+      "status": "closed_routing",
+      "statement": "If the paired product exceeds one, the failure is a named PressureProduct-PDEC/ColumnCRT object: adjacent twin epochs simultaneously carry too much compatible residue pressure."
+    },
+    {
+      "name": "global_paired_pressure_bound",
+      "status": "open",
+      "statement": "A self-contained proof still must show this paired pressure product is always <=1 for persistent AffineTwin atoms, or exclude the named PDEC family."
+    }
+  ],
+  "plain_conclusion": "本步把平方根乘积门进一步内化为两侧 residue 压力乘积：令 `g=q-2`、`f=q`，`A_g,A_f` 为两侧已用 residue 数，则 `M_q^2<=q(q-2)` 等价于 `(A_g^2/g)*(A_f^2/f)<=1`。当前最大压力乘积为 0.160177975528，单侧高压但未同步碰撞的 q 为 [43, 103]。因此新的最窄硬点不是单侧 residue 多，而是相邻 twin epochs 两侧压力同步超过 1；若出现则登记为 `PressureProduct-PDEC/ColumnCRT`。",
+  "decision_rows": [
+    {
+      "gate": "SqrtGatePressureEquivalenceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "平方根乘积门已精确改写为两侧 residue 压力乘积不超过 1。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "CurrentPressureProductGateClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前候选 q 没有两侧压力同步碰撞；最大压力乘积低于 1。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "OneSidedPressureExplained",
+      "closed": true,
+      "proved": false,
+      "meaning": "样本中的高 generator 压力不是终端矛盾，因相邻 fill 压力不足以同步。",
+      "remaining": "finite structural diagnosis"
+    },
+    {
+      "gate": "PressureProductPDECRouted",
+      "closed": true,
+      "proved": true,
+      "meaning": "若两侧压力乘积超过 1，失败形态已命名为相邻 twin epoch 的同步 residue 压力碰撞。",
+      "remaining": "exclusion still separate"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只把平方根门压成压力乘积门，不关闭全局行/列命题。",
+      "remaining": "AffineTwinPairedSidePressureBoundOrPressureProductPDECExclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_paired_side_pressure_router.py": "87bf672718d01270b1fad08d735ff55e9220b11e397998ada1a5835eb51bc4cf",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-ledger.json": "44e048bbb9be8b3e2fa427090bf3bfa613575035385807986c0b7a3c664ff50a",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-paired-side-pressure-ledger.json": "3260f7bb9020052ca7362859c608c3ed7508238ae927c79a4a42712ba09a41a2",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-paired-side-pressure-router.md": "ef7d85a1c6a9c15b854ba25610ccaf1675760490809484a5631a44d21f5394c9"
+  }
+}
