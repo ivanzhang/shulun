@@ -351,7 +351,7 @@ ControlledExitCriticalLoadNormalization
 
 | 合同 | actual load | critical capacity | 当前可证状态 | 剩余硬点 |
 |---|---:|---:|---|---|
-| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate、CRT gap、edge-collision 位移与 existing-actual CRT 跳跃闭合 | 全局 actual packet exhaustion / moving support nonpersistence |
+| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate、CRT gap、edge-collision 位移、existing-actual CRT 跳跃与 unused-target arrival 闭合 | 全局 actual packet exhaustion / moving support nonpersistence |
 | TP-ALC | actual `sum D / |U_Y|` | `1` with Buchstab `K(alpha)` | 分子 BMD 外部版可用 | denominator floor / parity gap |
 | RH-ALC | source-deleted final load | exit capacity | verification ledger 已有 | controlled exits 逐项归一化 |
 
@@ -359,7 +359,7 @@ ControlledExitCriticalLoadNormalization
 
 最直接的继续硬攻顺序是：
 
-1. **PM：** existing-actual 分支当前已压成 CRT 跳跃账本；继续主攻 `UnusedTargetResidueArrival` 与 `SupportMotionEscape`，并把持久复现失败形态登记为 `RepeatedResidue-ColumnCRT-PDEC`。
+1. **PM：** existing-actual 与 unused-target 分支当前都已压成 CRT 跳跃/新残基账本；继续主攻 `SupportMotionEscape`，并把持久复现失败形态登记为 `RepeatedResidue-ColumnCRT-PDEC` 或新 generator/fill residue arrival 的 PDEC/SAE。
 2. **TP：** 写出 denominator floor 的 beta/Buchstab 下筛合同，明确 `delta(alpha)` 的可接受上限。
 3. **RH：** 生成 controlled-exit 四列表，先不证明 RH，只把每个 exit 的 actual-load 输入、闭合机制和未闭合项固定。
 
@@ -389,3 +389,29 @@ existing_actual_collision_jump_closed_current_sweep=true
 双模 CRT 单位步长为 `generator_unit=465`、`fill_unit=435`。因此最窄 atom `19:9 -> 19:8` 虽然只有 `L1=1`，但相位上必须跳 `435`，远大于共同支撑宽度 `20`；另一个 existing-actual 候选 `15:12 -> 19:8` 也要跳 `120`。
 
 这一步把 existing-actual 分支的当前 sweep 关闭为：它不是窗口边缘微小滑入，而是完整 CRT 相位跳跃。全局剩余仍是证明这种跳跃不能随支撑移动持久复现，或把复现登记为 `RepeatedResidue-ColumnCRT-PDEC` / `SupportMotionEscape-PDEC/SAE`。
+
+## 7. PM unused-target arrival 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-unused-target-arrival-audit.md
+data/prime-matrix-affine-twin-unused-target-arrival-ledger.json
+```
+
+继续把 `WindowEdgeCollision` 中另一个分支压成新侧残基到达账本。当前结果为：
+
+```text
+unused_target_arrival_candidate_count=9
+unique_unused_target_pair_count=5
+required_unique_side_residue_arrival_count=9
+occurrence_new_side_residue_requirement_total=17
+min_abs_crt_jump_to_unused_target=59
+max_abs_crt_jump_to_unused_target=375
+support_width_current=20
+unused_target_arrival_closed_current_sweep=true
+```
+
+`9` 个候选只落到 `5` 个唯一 target pairs：`10:30`、`16:5`、`17:6`、`18:7`、`20:9`。它们全部不在当前形式积中；要让这些 target 变成 actual，必须新增 generator residues `[10,16,17,18,20]` 和 fill residues `[5,6,7,30]`，合计 `9` 个新侧残基。
+
+最窄 unused-target atom 是 `19:12 -> 20:9`，只需一个新 generator residue，但 CRT 跳跃仍为 `59`，大于共同窗口宽度 `20`。因此当前 unused-target 分支也不是 hidden actual load，而是明确的新残基到达/支撑移动义务。

@@ -584,3 +584,34 @@ max_abs_crt_jump_to_existing_actual=435
 因此最窄 atom `19:9 -> 19:8` 不是微小边界误差。它固定 generator residue，只把 fill residue 改一格，但 CRT 代表从 `3122` 跳到 actual 点 `2687`，相位差为 `435`。另一个 `15:12 -> 19:8` 的相位差为 `120`，仍然超过支撑宽度 `20`。
 
 本步关闭当前 sweep 的 existing-actual collision jump 账本；全局仍需证明这种 CRT 跳跃不能被 moving support 持久重置，或把失败形态登记为 `RepeatedResidue-ColumnCRT-PDEC` / `SupportMotionEscape-PDEC/SAE`。
+
+## 14. PM unused-target arrival 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-unused-target-arrival-audit.md
+data/prime-matrix-affine-twin-unused-target-arrival-ledger.json
+```
+
+继续下钻 `WindowEdgeCollision` 的 unused-target 分支。当前有 `9` 个空窗 formal pairs 的最近目标不是已有 actual pair，而是当前未使用的 target pair；它们压缩到 `5` 个唯一目标：
+
+```text
+10:30  multiplicity 3
+16:5   multiplicity 2
+17:6   multiplicity 2
+18:7   multiplicity 1
+20:9   multiplicity 1
+```
+
+这些 target 全部不在当前形式积中。当前形式 generator residues 为 `[13,15,19]`，fill residues 为 `[8,9,12,28]`；要让这些 unused target 进入形式积，至少需要新增 generator residues `[10,16,17,18,20]` 和 fill residues `[5,6,7,30]`，合计 `9` 个新侧残基。
+
+审计同时记录 CRT 跳跃：
+
+```text
+min_abs_crt_jump_to_unused_target=59
+max_abs_crt_jump_to_unused_target=375
+support_width_current=20
+```
+
+最窄 unused-target atom 是 `19:12 -> 20:9`。它复用 fill residue `9`，但仍需新增 generator residue `20`，并且 CRT 相位跳跃为 `59`。这把 unused-target 分支从“可能补入目标点”压成明确的新 generator/fill residue arrival 或 support-motion 义务；全局仍需证明这些到达不能持久供给，或把失败登记为 `NewGeneratorResidueArrival-PDEC/SAE`、`NewFillResidueArrival-PDEC/SAE`、`SupportMotionEscape-PDEC/SAE`。
