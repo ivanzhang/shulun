@@ -1136,3 +1136,31 @@ full_square_excess_over_modulus_product=3197
 ```
 
 所以当前 carrier-arrival packet 若真实物化，不再是普通 arrival 义务，而是立即触发 `SuperSqrt/PressureProduct-PDEC`。若该 PDEC 被排斥，则当前 carrier-arrival packet 不能复现；若不排斥，它就是显式命名出口。
+
+## 30. PM endpoint-release carrier-arrival projection-deficit 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-carrier-arrival-projection-deficit-audit.md
+data/prime-matrix-affine-twin-endpoint-release-carrier-arrival-projection-deficit-ledger.json
+```
+
+继续检查上一步的 `SuperSqrt` crossing 是否真是 actual overload。审计把形式侧乘积投影回共同支撑窗口，得到：
+
+```text
+sqrt_floor=29
+target_window_pair_count=20
+minimal_crossing_formal_product_count=30
+minimal_crossing_projection_hit_count=3
+minimal_crossing_projection_deficit_count=27
+minimal_crossing_actual_sqrt_slack=26
+full_formal_product_count=64
+full_projection_hit_count=6
+full_projection_deficit_count=58
+full_actual_sqrt_slack=23
+```
+
+因此最小 crossing 的 `30` 个形式 pair 只有 `3` 个投影为 actual hits：实际锚点 `19:8` 加两个 selected target atoms。完整 carrier packet 的 `64` 个形式 pair 也只有 `6` 个 actual hits。
+
+本步把当前 sweep 的 `SuperSqrt` actual-overload 解释关闭：这里的超界来自形式侧笛卡尔积过粗，而非真实链 actual 负载超平方根。全局剩余转成 `ProductAccountingTightening`、`ProjectionCollision-PDEC` 或 `PrimitiveTwinSlotSupportEscape-PDEC/SAE` 的族级证明。

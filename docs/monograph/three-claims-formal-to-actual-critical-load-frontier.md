@@ -1281,3 +1281,40 @@ new fill=[5,6,7,30]
 ```
 
 这个 `+1` 是当前反例链和真实链之间最窄的压力断点：反例链为了把 target arrival 变成 actual load，必须越过平方根临界面；真实链的账本纪律则要求这一步被登记为 `SuperSqrt/PressureProduct-PDEC`。因此最新剩余不再是匿名 arrival，而是 `SuperSqrtPressureProductPDECExclusion` 的全局排斥，或把该族作为命名 PDEC 出口保留。
+
+## 37. PM endpoint-release carrier-arrival projection-deficit 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-carrier-arrival-projection-deficit-audit.md
+data/prime-matrix-affine-twin-endpoint-release-carrier-arrival-projection-deficit-ledger.json
+```
+
+本节把 pressure product 的形式乘积与 actual projection 分开。最小 crossing 的形式账本是：
+
+```text
+formal_product=30
+sqrt_floor=29
+formal_excess=1
+```
+
+但投影到当前共同窗口后，每个最小 crossing 只剩：
+
+```text
+projection_hits=3
+hits=actual anchor 19:8 + two selected target atoms
+projection_deficit=27
+actual_sqrt_slack=26
+```
+
+完整 packet 同样显示：
+
+```text
+formal_product=64
+projection_hits=6
+projection_deficit=58
+actual_sqrt_slack=23
+```
+
+这给出更精确的反例链/真实链矛盾点：反例链的 `SuperSqrt` 来自把侧残基笛卡尔积当作 actual load；真实链只允许落入共同支撑窗口的 residue pairs 计入 actual load。当前 packet 的真实投影远低于平方根门。因此当前 `SuperSqrt` 分支不是 actual overload，而是 `ProductAccountingTightening` 问题；若未来投影 hits 也超界，则已经是命名 `ProjectionCollision/SupportEscape-PDEC`。
