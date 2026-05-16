@@ -1,0 +1,993 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_support_width_nearscale_fracture_audit",
+  "status": "current_sweep_support_width_nearscale_fractured_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "actual_anchor_replacement_ledger": "data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json",
+    "moving_key_source_rematerialization_ledger": "data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json",
+    "unused_target_arrival_ledger": "data/prime-matrix-affine-twin-unused-target-arrival-ledger.json",
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "phase_scale_bridge_exhaustion_ledger": "data/prime-matrix-affine-twin-endpoint-release-phase-scale-bridge-exhaustion-ledger.json",
+    "support_width": 20,
+    "moving_q_candidate_count": 19,
+    "support_width_near_source_q_values": [
+      61,
+      65
+    ],
+    "support_width_near_unused_jump_q_values": [
+      61,
+      65,
+      96,
+      111,
+      154,
+      293,
+      297,
+      355,
+      386
+    ],
+    "support_width_near_source_and_jump_q_values": [
+      61,
+      65
+    ],
+    "viable_support_width_nearscale_bridge_q_values": [],
+    "route_histogram": {
+      "NearJumpOnly": 7,
+      "NearSourceAndJumpButGateFractured": 2,
+      "NoSupportWidthNearScale": 10
+    },
+    "near_source_and_jump_moving_route_histogram": {
+      "CompositeQ": 1,
+      "PrimeButNotTwinAffine": 1
+    },
+    "phase_scale_exact_or_offset_bridges_fractured_current_sweep": true,
+    "all_support_width_nearscale_bridges_fractured_current_sweep": true,
+    "global_support_width_nearscale_bridge_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "q_nearscale_rows": [
+    {
+      "q": 61,
+      "route": "NearSourceAndJumpButGateFractured",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_pair_keys": [
+        "19:12"
+      ],
+      "prime_gate": {
+        "q_is_prime": true,
+        "q_minus_2_is_prime": true,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "expected_p_delay_integral",
+        "gap_source_absent",
+        "q_mod4_eq3"
+      ],
+      "source_nearscale_event_count": 4,
+      "unused_jump_nearscale_event_count": 4,
+      "common_scale_kinds": [
+        "q",
+        "q_minus_2"
+      ],
+      "source_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 61,
+          "source_gap": 43,
+          "signed_delta": -18,
+          "abs_delta": 18,
+          "source_signature": {
+            "gap_ell": 43,
+            "generator_ell": 47,
+            "fill_ell": 43,
+            "generator_side": "plus",
+            "fill_side": "minus",
+            "p_delay": 74,
+            "gap_fill_pair_key": "dir=upper|gen=47|gap=43|fill=43|sides=plus->minus|dp=74|db=21|du=8|dr=-12"
+          }
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 59,
+          "source_gap": 43,
+          "signed_delta": -16,
+          "abs_delta": 16,
+          "source_signature": {
+            "gap_ell": 43,
+            "generator_ell": 47,
+            "fill_ell": 43,
+            "generator_side": "plus",
+            "fill_side": "minus",
+            "p_delay": 74,
+            "gap_fill_pair_key": "dir=upper|gen=47|gap=43|fill=43|sides=plus->minus|dp=74|db=21|du=8|dr=-12"
+          }
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 61,
+          "source_gap": 59,
+          "signed_delta": -2,
+          "abs_delta": 2,
+          "source_signature": {
+            "gap_ell": 59,
+            "generator_ell": 61,
+            "fill_ell": 59,
+            "generator_side": "minus",
+            "fill_side": "minus",
+            "p_delay": 70,
+            "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+          }
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 59,
+          "source_gap": 59,
+          "signed_delta": 0,
+          "abs_delta": 0,
+          "source_signature": {
+            "gap_ell": 59,
+            "generator_ell": 61,
+            "fill_ell": 59,
+            "generator_side": "minus",
+            "fill_side": "minus",
+            "p_delay": 70,
+            "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+          }
+        }
+      ],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 61,
+          "unused_jump": 60,
+          "signed_delta": -1,
+          "abs_delta": 1,
+          "source_pair_key": "15:8",
+          "target_unused_pair_key": "17:6",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 59,
+          "unused_jump": 60,
+          "signed_delta": 1,
+          "abs_delta": 1,
+          "source_pair_key": "15:8",
+          "target_unused_pair_key": "17:6",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 61,
+          "unused_jump": 59,
+          "signed_delta": -2,
+          "abs_delta": 2,
+          "source_pair_key": "19:12",
+          "target_unused_pair_key": "20:9",
+          "new_side_residue_count": 1
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 59,
+          "unused_jump": 59,
+          "signed_delta": 0,
+          "abs_delta": 0,
+          "source_pair_key": "19:12",
+          "target_unused_pair_key": "20:9",
+          "new_side_residue_count": 1
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 65,
+      "route": "NearSourceAndJumpButGateFractured",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "15:8"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 3,
+      "unused_jump_nearscale_event_count": 4,
+      "common_scale_kinds": [
+        "q",
+        "q_minus_2"
+      ],
+      "source_nearscale_events": [
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 63,
+          "source_gap": 43,
+          "signed_delta": -20,
+          "abs_delta": 20,
+          "source_signature": {
+            "gap_ell": 43,
+            "generator_ell": 47,
+            "fill_ell": 43,
+            "generator_side": "plus",
+            "fill_side": "minus",
+            "p_delay": 74,
+            "gap_fill_pair_key": "dir=upper|gen=47|gap=43|fill=43|sides=plus->minus|dp=74|db=21|du=8|dr=-12"
+          }
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 65,
+          "source_gap": 59,
+          "signed_delta": -6,
+          "abs_delta": 6,
+          "source_signature": {
+            "gap_ell": 59,
+            "generator_ell": 61,
+            "fill_ell": 59,
+            "generator_side": "minus",
+            "fill_side": "minus",
+            "p_delay": 70,
+            "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+          }
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 63,
+          "source_gap": 59,
+          "signed_delta": -4,
+          "abs_delta": 4,
+          "source_signature": {
+            "gap_ell": 59,
+            "generator_ell": 61,
+            "fill_ell": 59,
+            "generator_side": "minus",
+            "fill_side": "minus",
+            "p_delay": 70,
+            "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+          }
+        }
+      ],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 65,
+          "unused_jump": 60,
+          "signed_delta": -5,
+          "abs_delta": 5,
+          "source_pair_key": "15:8",
+          "target_unused_pair_key": "17:6",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 63,
+          "unused_jump": 60,
+          "signed_delta": -3,
+          "abs_delta": 3,
+          "source_pair_key": "15:8",
+          "target_unused_pair_key": "17:6",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 65,
+          "unused_jump": 59,
+          "signed_delta": -6,
+          "abs_delta": 6,
+          "source_pair_key": "19:12",
+          "target_unused_pair_key": "20:9",
+          "new_side_residue_count": 1
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 63,
+          "unused_jump": 59,
+          "signed_delta": -4,
+          "abs_delta": 4,
+          "source_pair_key": "19:12",
+          "target_unused_pair_key": "20:9",
+          "new_side_residue_count": 1
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 96,
+      "route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "13:8"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 2,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 96,
+          "unused_jump": 90,
+          "signed_delta": -6,
+          "abs_delta": 6,
+          "source_pair_key": "13:8",
+          "target_unused_pair_key": "16:5",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 94,
+          "unused_jump": 90,
+          "signed_delta": -4,
+          "abs_delta": 4,
+          "source_pair_key": "13:8",
+          "target_unused_pair_key": "16:5",
+          "new_side_residue_count": 2
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 111,
+      "route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "19:12"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": true,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 1,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 109,
+          "unused_jump": 90,
+          "signed_delta": -19,
+          "abs_delta": 19,
+          "source_pair_key": "13:8",
+          "target_unused_pair_key": "16:5",
+          "new_side_residue_count": 2
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 119,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "15:8"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 123,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "15:12"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 154,
+      "route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "13:12"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 2,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 154,
+          "unused_jump": 150,
+          "signed_delta": -4,
+          "abs_delta": 4,
+          "source_pair_key": "13:12",
+          "target_unused_pair_key": "18:7",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 152,
+          "unused_jump": 150,
+          "signed_delta": -2,
+          "abs_delta": 2,
+          "source_pair_key": "13:12",
+          "target_unused_pair_key": "18:7",
+          "new_side_residue_count": 2
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 181,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_pair_keys": [
+        "13:8"
+      ],
+      "prime_gate": {
+        "q_is_prime": true,
+        "q_minus_2_is_prime": true,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "expected_p_delay_integral",
+        "gap_source_absent",
+        "q_mod4_eq3"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 235,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "15:12"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": true,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 293,
+      "route": "NearJumpOnly",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_pair_keys": [
+        "19:28"
+      ],
+      "prime_gate": {
+        "q_is_prime": true,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "expected_p_delay_integral",
+        "gap_source_absent",
+        "q_minus_2_is_prime",
+        "q_mod4_eq3"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 2,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 293,
+          "unused_jump": 281,
+          "signed_delta": -12,
+          "abs_delta": 12,
+          "source_pair_key": "19:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 291,
+          "unused_jump": 281,
+          "signed_delta": -10,
+          "abs_delta": 10,
+          "source_pair_key": "19:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 297,
+      "route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "13:12"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 2,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 297,
+          "unused_jump": 281,
+          "signed_delta": -16,
+          "abs_delta": 16,
+          "source_pair_key": "19:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 295,
+          "unused_jump": 281,
+          "signed_delta": -14,
+          "abs_delta": 14,
+          "source_pair_key": "19:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 355,
+      "route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "15:28"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": true,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 6,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 355,
+          "unused_jump": 345,
+          "signed_delta": -10,
+          "abs_delta": 10,
+          "source_pair_key": "13:9",
+          "target_unused_pair_key": "16:5",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 353,
+          "unused_jump": 345,
+          "signed_delta": -8,
+          "abs_delta": 8,
+          "source_pair_key": "13:9",
+          "target_unused_pair_key": "16:5",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 355,
+          "unused_jump": 374,
+          "signed_delta": 19,
+          "abs_delta": 19,
+          "source_pair_key": "13:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 355,
+          "unused_jump": 375,
+          "signed_delta": 20,
+          "abs_delta": 20,
+          "source_pair_key": "15:9",
+          "target_unused_pair_key": "17:6",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 355,
+          "unused_jump": 343,
+          "signed_delta": -12,
+          "abs_delta": 12,
+          "source_pair_key": "15:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 353,
+          "unused_jump": 343,
+          "signed_delta": -10,
+          "abs_delta": 10,
+          "source_pair_key": "15:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 386,
+      "route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "13:28"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 4,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [
+        {
+          "scale_kind": "q",
+          "scale_value": 386,
+          "unused_jump": 374,
+          "signed_delta": -12,
+          "abs_delta": 12,
+          "source_pair_key": "13:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 384,
+          "unused_jump": 374,
+          "signed_delta": -10,
+          "abs_delta": 10,
+          "source_pair_key": "13:28",
+          "target_unused_pair_key": "10:30",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q",
+          "scale_value": 386,
+          "unused_jump": 375,
+          "signed_delta": -11,
+          "abs_delta": 11,
+          "source_pair_key": "15:9",
+          "target_unused_pair_key": "17:6",
+          "new_side_residue_count": 2
+        },
+        {
+          "scale_kind": "q_minus_2",
+          "scale_value": 384,
+          "unused_jump": 375,
+          "signed_delta": -9,
+          "abs_delta": 9,
+          "source_pair_key": "15:9",
+          "target_unused_pair_key": "17:6",
+          "new_side_residue_count": 2
+        }
+      ],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 575,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "19:28"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 699,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "15:28"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 761,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_pair_keys": [
+        "13:28"
+      ],
+      "prime_gate": {
+        "q_is_prime": true,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": false,
+        "expected_p_delay_integral": false,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "expected_p_delay_integral",
+        "gap_source_absent",
+        "q_minus_2_is_prime",
+        "q_mod4_eq3"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 1375,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "CompositeQ",
+      "source_pair_keys": [
+        "13:9"
+      ],
+      "prime_gate": {
+        "q_is_prime": false,
+        "q_minus_2_is_prime": true,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 1499,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_pair_keys": [
+        "15:9"
+      ],
+      "prime_gate": {
+        "q_is_prime": true,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_minus_2_is_prime"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    },
+    {
+      "q": 1747,
+      "route": "NoSupportWidthNearScale",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_pair_keys": [
+        "19:9"
+      ],
+      "prime_gate": {
+        "q_is_prime": true,
+        "q_minus_2_is_prime": false,
+        "q_mod4_eq3": true,
+        "expected_p_delay_integral": true,
+        "affine_twin_prime_gate_passed": false
+      },
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_minus_2_is_prime"
+      ],
+      "source_nearscale_event_count": 0,
+      "unused_jump_nearscale_event_count": 0,
+      "common_scale_kinds": [],
+      "source_nearscale_events": [],
+      "unused_jump_nearscale_events": [],
+      "exact_source_signature_match": false,
+      "exact_jump_without_new_side_residue": false,
+      "viable_support_width_nearscale_bridge_current": false
+    }
+  ],
+  "contract": {
+    "support_width_nearscale_gate": [
+      "near equality within support width is not an exact source or CRT identity",
+      "a candidate must still pass the AffineTwin prime/source gate",
+      "an exact source event must match gap/generator/fill/orientation/delay",
+      "an exact unused jump event must avoid new side-residue arrival",
+      "otherwise near-scale proximity is only a named phase fracture"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "SupportWidthNearScaleGlobalNoGo",
+      "PhaseScaleBridgeGlobalNoGo",
+      "SourceRematerialization-PDEC/SAE",
+      "UnusedTargetResidueArrival-PDEC",
+      "ColumnCRT/PDEC",
+      "MovingFamilySAEColumnCRT"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json": "2422c8aa6737da977b23027242f682ada1bcaa60bb71cd0dc1fdecfd4b6e2e93",
+    "data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json": "b7d9016b2e43da9d390efdde3012739d24305e4843ed29efc8c295d16dc52fd6",
+    "data/prime-matrix-affine-twin-unused-target-arrival-ledger.json": "cc69729e33a77e2389eb185ee4e5fb959e4fe3087549bb31f6cba497f0b0caa3",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json": "abfda31e733d7c1e274ded997056cf5e55d39d555a72f4f8ca35ac689c62ae1e",
+    "data/prime-matrix-affine-twin-endpoint-release-phase-scale-bridge-exhaustion-ledger.json": "07c46be7e85eb5e4fd1ecdccea3ae78bc78687664be46db43c16f1bbc722f98f"
+  }
+}

@@ -1142,3 +1142,32 @@ viable_exact_scale_bridge_q_values=[]
 这说明所有 exact-q 桥全部为空；唯一 exact-offset 桥就是 `q=61` 的 `q-2=59`，而它已经在上一节失败于源签名、方向、delay 与新侧残基条件。最近 unused jump 到 `q=61` 的差只有 `1`，但该 jump 是 `60` 而不是 AffineTwin key 或 gap source；真正同时落在 gap/source 与 unused-target 的整数仍是 `59=q-2`，不是 `q`。
 
 因此当前可攻接口从“是否还有另一个近失配桥”压成：证明任意持久族的 exact/offset phase-scale bridge 都必须满足相同源签名门控；若不能满足，则进入 `PhaseScaleBridgeGlobalNoGo` 或命名 `PDEC/SAE` 出口。当前 sweep 内没有剩余匿名相位桥，但全局行/列命题仍未无条件闭合。
+
+## 32. PM endpoint-release support-width near-scale fracture 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-support-width-nearscale-fracture-audit.md
+data/prime-matrix-affine-twin-endpoint-release-support-width-nearscale-fracture-ledger.json
+```
+
+本节继续测试一个更弱逃逸：即使 exact/offset 桥不成立，反例链是否能利用 primitive support width `20` 把“近似相等”的尺度当作同一相位桥。审计枚举所有满足
+
+```text
+|gap_source - q| <= 20, |gap_source - (q-2)| <= 20,
+|unused_jump - q| <= 20, |unused_jump - (q-2)| <= 20
+```
+
+的事件。结果显示：
+
+```text
+support_width_near_source_q_values=[61, 65]
+support_width_near_unused_jump_q_values=[61, 65, 96, 111, 154, 293, 297, 355, 386]
+support_width_near_source_and_jump_q_values=[61, 65]
+viable_support_width_nearscale_bridge_q_values=[]
+```
+
+同时靠近 source 与 unused jump 的 `q=61` 已是上一层 phase-fracture，`q=65` 则为合数。`q=96,111,154,293,297,355,386` 只靠近 unused jump，不靠近 source；这些不能形成 moving-key、source、unused-target 三方同相位闭环。
+
+这把当前最窄接口进一步压成：support-width 邻域本身不能替代 CRT/source 精确签名。非零尺度差若要被修正，必然移动 key、source 或 target，从而回到 `SourceRematerialization-PDEC/SAE`、`UnusedTargetResidueArrival-PDEC`、`ColumnCRT/PDEC` 或 moving-family 出口。当前 sweep 仍未给出全局无条件证明，但匿名 near-scale 吸收通道已关闭。
