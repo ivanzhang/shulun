@@ -1528,3 +1528,35 @@ W^2<=q(q-2) <=> 3q^2-26q-81>=0.
 ```
 
 这把“generator coarrival 是否补齐容量”的问题推进为“所有持久 AffineTwin family 是否都遵守固定图像投影 schema，或其失败是否必定进入命名 PDEC/SAE/ColumnCRT 出口”。当前 sweep 已闭合该 schema；全局行/列命题仍需族级推广和出口排斥。
+
+## 44. PM endpoint-release persistent-family promotion 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-persistent-family-promotion-audit.md
+data/prime-matrix-affine-twin-endpoint-release-persistent-family-promotion-ledger.json
+```
+
+本节把族级推广义务继续压成 promotion 路由。固定图像分支已经由 `W<=sqrt(q(q-2))` 关闭；剩下的持久 family 只能通过固定 q/残基复现或 moving q/残基复现进入真实链。当前证书给出：
+
+```text
+candidate_q_values=[31,43,103]
+realized_q_values=[31]
+candidate_product_mass_upper_sum=0.023577117628562343 < eta=0.025
+high_density_epoch_pair_count=0
+fixed_slot_recurrence_count=0
+fixed_residue_slot_drift_pair_count=12
+source_gate_blocked_formal_pairs=28
+```
+
+由此得到更窄的反例链/真实链冲突：
+
+```text
+反例链需要 persistent family 反复提供新容量；
+真实链若固定 q/残基，则变成固定模 ColumnCRT/PDEC；
+真实链若移动 q/残基，则进入 epoch-pair SAE/Rankin；
+当前 sweep 中 moving epoch-pair 稀疏、无 high-density，fixed-slot 复现为 0。
+```
+
+最新未闭合硬点不再是匿名 `GeneratorCoarrivalFamilyBound`，而是 `GlobalEpochPairMultiplicityBound` 与 `FixedResidueSlotDriftColumnCRT`：要么证明 moving epoch-pair 总 multiplicity 可求和，要么把固定残基槽漂移族升级为明确 ColumnCRT/PDEC 并排斥。

@@ -1348,3 +1348,38 @@ W 始终低于 sqrt(q(q-2))；
 当前 sweep 中，破坏固定图像的出口也都被路由：support motion 最窄释放 `70>20`，source gate 阻断 `28` 个 formal pairs，固定 actual anchor 压成 `P≡889 mod 899` 的单个 ColumnCRT 原子，moving-family persistence 仍只剩命名出口。
 
 本步关闭当前 sweep 的匿名 generator-coarrival family schema。全局仍需把该 schema 推广到所有持久 AffineTwin family，并排斥 `MovingSlotFamilyPersistenceNoGo`、`SourceRematerialization-PDEC/SAE`、`ColumnCRT/PDEC` 与 `ProductAccountingTighteningGlobal`。
+
+## 37. PM endpoint-release persistent-family promotion 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-persistent-family-promotion-audit.md
+data/prime-matrix-affine-twin-endpoint-release-persistent-family-promotion-ledger.json
+```
+
+本节继续把“推广到所有持久 AffineTwin family”的义务拆成独立账本。当前 promotion 路由给出：
+
+```text
+candidate_q_values=[31,43,103]
+realized_q_values=[31]
+candidate_product_mass_upper_sum=0.023577117628562343
+eta=0.025
+candidate_total_eta_slack=0.0014228823714376587
+high_density_epoch_pair_count=0
+fixed_slot_recurrence_count=0
+fixed_residue_slot_drift_pair_count=12
+source_gate_blocked_formal_pairs=28
+persistent_family_promotion_closed_current_sweep=true
+```
+
+其结构含义是：
+
+```text
+固定图像: 由 W<=sqrt(q(q-2)) 阻断 actual overload；
+固定 q/残基复现: 进入固定模 ColumnCRT/PDEC，当前 fixed-slot 复现为 0；
+moving q/残基: 进入 epoch-pair SAE，当前 occupancy 上界低于 eta；
+source/pressure/fill: 当前 source 阻断 28 个 formal pairs，paired pressure 未超界，fill 到达进入 new-fill/reset 二分。
+```
+
+因此当前 sweep 中，persistent family 不能作为匿名容量来源。全局最窄剩余进一步压成 `GlobalEpochPairMultiplicityBound` 与 `FixedResidueSlotDriftColumnCRT`，并保留 `MovingResidueShapeSAE/Rankin`、`HighDensityEpochPair-PDEC/ColumnCRT` 与 source-rematerialization 出口。
