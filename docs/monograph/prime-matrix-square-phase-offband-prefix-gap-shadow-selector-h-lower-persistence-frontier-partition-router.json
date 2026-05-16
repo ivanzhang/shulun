@@ -1,0 +1,111 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_persistence_frontier_partition_router",
+  "status": "persistence_frontier_partition_closed_global_exclusion_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "split_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-unique-representative-persistence-split-ledger.json",
+    "transport_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-fixed-residue-transport-cell-ledger.json",
+    "physical_record_count": 324,
+    "residue_packet_count": 312,
+    "recurrent_fixed_residue_packet_count": 12,
+    "max_physical_multiplicity_per_residue_packet": 2,
+    "transport_cell_count": 12,
+    "unique_transport_cell_count": 12,
+    "transport_cell_recurrence_count": 0,
+    "transport_cell_physical_record_count": 24,
+    "singleton_residue_packet_count": 300,
+    "singleton_residue_physical_record_count": 300,
+    "partition_total_physical_record_count": 324,
+    "unclassified_physical_record_count": 0,
+    "partition_identity_closed": true,
+    "transport_cell_persistence_excluded_globally": false,
+    "singleton_residue_sae_rankin_bound_proved": false,
+    "global_residual_prime_margin_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "partition_rows": [
+    {
+      "class": "transport_cell_pairs",
+      "packet_count": 12,
+      "physical_record_count": 24,
+      "global_status": "open_transport_cell_pdec_or_columncrt"
+    },
+    {
+      "class": "singleton_residue_packets",
+      "packet_count": 300,
+      "physical_record_count": 300,
+      "global_status": "open_singleton_residue_sae_rankin"
+    }
+  ],
+  "transport_cell_persistence_excluded_globally": false,
+  "singleton_residue_sae_rankin_bound_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "FixedResidueTransportCellPDECOrMovingResidueShapeSAE",
+  "hardpoint_after_router": "TransportCellNonPersistenceOrSingletonResidueSAESummability",
+  "next_direct_attack_target": "TransportCellNonPersistenceOrSingletonResidueSAESummability",
+  "theorem_rows": [
+    {
+      "name": "frontier_partition_identity",
+      "status": "closed",
+      "statement": "Physical unique-representative events split into recurrent fixed-residue transport-cell records and singleton residue packets."
+    },
+    {
+      "name": "current_sweep_no_unclassified_persistence",
+      "status": "closed_on_current_sweep",
+      "statement": "On the current sweep every physical event is accounted for by either a transport cell pair or a singleton residue packet."
+    },
+    {
+      "name": "global_transport_or_singleton_sae_open",
+      "status": "open",
+      "statement": "A global proof must exclude transport-cell persistence or prove singleton-residue SAE/Rankin summability."
+    }
+  ],
+  "plain_conclusion": "本步把唯一代表前沿做成完整分区：324 个物理事件中，24 个来自 12 个固定残基 transport-cell 对，剩余 300 个都是 singleton residue packet，没有第三类未登记持久性。因此最新硬点只剩两门：排斥 transport-cell 全局持久复现，或证明 singleton residue 的 SAE/Rankin 可求和。",
+  "decision_rows": [
+    {
+      "gate": "FrontierPartitionIdentityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "324 个物理事件被 24 个 transport-cell 事件与 300 个 singleton residue 事件精确分割。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "NoUnclassifiedPersistenceCurrentSweep",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前扫描没有第三类未登记持久性。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "TransportCellPersistenceExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "12 个互异 transport cell 仍需全局非持久证明。",
+      "remaining": "TransportCellPDEC/ColumnCRT"
+    },
+    {
+      "gate": "SingletonResidueSAESummabilityProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "300 个 singleton residue packet 仍需 SAE/Rankin 可求和输入。",
+      "remaining": "SingletonResidueSAE/Rankin"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步完成前沿分区，不关闭全局行/列命题。",
+      "remaining": "TransportCellNonPersistenceOrSingletonResidueSAESummability"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_persistence_frontier_partition_router.py": "878b2206a4530bc18ac529f01dde2a968bcf9cdd475636c8cb25ae8e591b3271",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-unique-representative-persistence-split-ledger.json": "d1e5ac2f12b542edc86559cbbb8b75f862f1ee02df351a024bc302a4af01427b",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-fixed-residue-transport-cell-ledger.json": "7a6af4c73819b3e86322f0b0e40032dc0e98a3f114eab5b163284c85e2b6f23b",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-persistence-frontier-partition-ledger.json": "1f61cb91bbabc3fdccfee381045187a294f0483a73834491189b8d636e585745",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-persistence-frontier-partition-router.md": "8a1b6266a0c8104bb168cee76611a300752039ddda3f17cf6dc50e73636bf128"
+  }
+}
