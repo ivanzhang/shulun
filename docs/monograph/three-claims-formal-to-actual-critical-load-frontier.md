@@ -1500,3 +1500,31 @@ full_projection_deficit_count=58
 ```
 
 这说明 generator coarrival 不是新的真实容量来源，而是 ProductAccounting 必须投影化的对象。若未来族级失败，失败形态不能再匿名称为 fill/generator 到达；它必须给出 support graph 逃逸、projection collision、source rematerialization、ColumnCRT/PDEC 或 moving-family persistence 证书。
+
+## 43. PM endpoint-release generator-coarrival family schema 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-generator-coarrival-family-schema-audit.md
+data/prime-matrix-affine-twin-endpoint-release-generator-coarrival-family-schema-ledger.json
+```
+
+本节把 `GeneratorCoarrivalFamilyBound` 的当前可攻部分写成一个明确的族级 schema。固定 AffineTwin 支撑图像的容量公式为：
+
+```text
+W=(q+9)/2,
+W^2<=q(q-2) <=> 3q^2-26q-81>=0.
+```
+
+`q=13` 时 margin 为 `88`，且 margin 在 `q>=13` 单调递增，所以任意固定 AffineTwin 图像内的 actual projection 都不能越过平方根门。当前候选 `q=[31,43,103]` 全部通过该门控；当前 realized packet 的形式读数仍是 `formal_super_sqrt_subset_count=22`、`actual_overload_subset_count=0`、完整 packet `64 -> 6 hits`。
+
+于是本轮前沿的显式容量/相位矛盾变为：
+
+```text
+若反例链停留在固定函数图像内，则 actual load <= W <= sqrt(q(q-2))；
+若 actual load 真超界，则必须移动/破坏支撑图像；
+而当前 sweep 的移动支撑、source 重物化、固定残基 ColumnCRT、moving family persistence 均已路由为命名出口。
+```
+
+这把“generator coarrival 是否补齐容量”的问题推进为“所有持久 AffineTwin family 是否都遵守固定图像投影 schema，或其失败是否必定进入命名 PDEC/SAE/ColumnCRT 出口”。当前 sweep 已闭合该 schema；全局行/列命题仍需族级推广和出口排斥。

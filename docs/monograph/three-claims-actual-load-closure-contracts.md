@@ -1306,3 +1306,45 @@ generator_coarrival_projection_accounting_closed_current_sweep=true
 因此，本轮最窄显式矛盾点已经从“fill 侧追赶”压到“generator/fill 共到达后的投影账本”：反例链可把侧残基笛卡尔积推过平方根门，但真实链只把共同支撑图像上的点计入 actual load。所有 22 个形式超界子集投影后仍低于平方根门，且投影 hits 精确等于 actual anchor `19:8` 加所选 target atoms。
 
 本步关闭当前 sweep 中 generator coarrival 作为匿名 actual overload 的解释。全局行/列命题仍未闭合；最新剩余是把该投影账本升格为族级 `GeneratorCoarrivalFamilyBound`，或把失败形态登记为 `ProductAccountingTighteningGlobal`、`SourceRematerialization-PDEC/SAE`、`ColumnCRT/PDEC` 与 moving-family persistence 出口。
+
+## 36. PM endpoint-release generator-coarrival family schema 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-generator-coarrival-family-schema-audit.md
+data/prime-matrix-affine-twin-endpoint-release-generator-coarrival-family-schema-ledger.json
+```
+
+本节把上一轮 `q=31` 的 coarrival 子集枚举提升成族级门控格式。固定 AffineTwin 槽的 actual load 由共同支撑函数图像控制，而不是由 generator/fill 侧残基笛卡尔积控制。图像宽度为
+
+```text
+W=(q+9)/2.
+```
+
+对所有 `q>=13`，
+
+```text
+W^2<=q(q-2)  <=>  3q^2-26q-81>=0.
+```
+
+由于 `q=13` 时右端为 `88>0`，且导数 `6q-26` 在 `q>=13` 为正，固定图像族级不等式闭合。当前候选 `q=[31,43,103]` 的读数为：
+
+```text
+q=31: W=20, sqrt_floor=29, q(q-2)-W^2=499
+q=43: W=26, sqrt_floor=41, q(q-2)-W^2=1087
+q=103: W=56, sqrt_floor=101, q(q-2)-W^2=7267
+```
+
+因此当前最窄矛盾进一步写成：
+
+```text
+反例链需要 coarrival 后的形式笛卡尔积作为容量；
+真实链固定支撑图像只允许 W 个 actual hits；
+W 始终低于 sqrt(q(q-2))；
+所以 actual overload 必须破坏固定图像假设。
+```
+
+当前 sweep 中，破坏固定图像的出口也都被路由：support motion 最窄释放 `70>20`，source gate 阻断 `28` 个 formal pairs，固定 actual anchor 压成 `P≡889 mod 899` 的单个 ColumnCRT 原子，moving-family persistence 仍只剩命名出口。
+
+本步关闭当前 sweep 的匿名 generator-coarrival family schema。全局仍需把该 schema 推广到所有持久 AffineTwin family，并排斥 `MovingSlotFamilyPersistenceNoGo`、`SourceRematerialization-PDEC/SAE`、`ColumnCRT/PDEC` 与 `ProductAccountingTighteningGlobal`。
