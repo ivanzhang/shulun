@@ -1,0 +1,159 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_source_materialization_gate_audit",
+  "status": "current_sweep_source_materialization_gate_classified_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "moving_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json",
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "slot_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json",
+    "pruning_ledger": "data/prime-matrix-affine-twin-formal-pair-pruning-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "source_gate_pass_q_values": [
+      31
+    ],
+    "source_gate_fail_q_values": [
+      43,
+      103
+    ],
+    "exact_source_match_count": 1,
+    "same_gap_wrong_source_count": 1,
+    "no_gap_source_count": 1,
+    "formal_pairs_blocked_by_source_gate": 28,
+    "same_gap_wrong_source_formal_pair_count": 16,
+    "no_gap_source_formal_pair_count": 12,
+    "unresolved_source_failure_count_current": 0,
+    "all_source_failures_classified_current": true,
+    "source_materialization_gate_closed_current_sweep": true,
+    "global_source_materialization_gate_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "source_gate_rows": [
+    {
+      "q": 31,
+      "route": "ExactSourceMaterialized",
+      "source_gate_passed_current": true,
+      "expected_signature": {
+        "gap_ell": 31,
+        "generator_ell": 29,
+        "fill_ell": 31,
+        "generator_side": "minus",
+        "fill_side": "plus",
+        "expected_p_delay": 80
+      },
+      "same_gap_source_row_count": 1,
+      "exact_matching_source_row_count": 1,
+      "formal_pair_count": 12,
+      "formal_pairs_blocked_by_source_gate": 0,
+      "actual_packet_count_current": 1,
+      "slot_lock_source_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11",
+      "exact_source_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11",
+      "slot_lock_source_key_matches": true,
+      "best_source_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11",
+      "best_source_match_vector": {
+        "gap_ell_match": true,
+        "generator_ell_match": true,
+        "fill_ell_match": true,
+        "generator_side_match": true,
+        "fill_side_match": true,
+        "p_delay_match": true,
+        "actual_p_delay": 80,
+        "expected_p_delay": 80,
+        "p_delay_delta": 0
+      },
+      "failed_invariants": []
+    },
+    {
+      "q": 43,
+      "route": "SameGapWrongSource-MaterializationGate",
+      "source_gate_passed_current": false,
+      "expected_signature": {
+        "gap_ell": 43,
+        "generator_ell": 41,
+        "fill_ell": 43,
+        "generator_side": "minus",
+        "fill_side": "plus",
+        "expected_p_delay": 113
+      },
+      "same_gap_source_row_count": 1,
+      "exact_matching_source_row_count": 0,
+      "formal_pair_count": 16,
+      "formal_pairs_blocked_by_source_gate": 16,
+      "actual_packet_count_current": 0,
+      "slot_lock_source_key": null,
+      "exact_source_key": null,
+      "slot_lock_source_key_matches": false,
+      "best_source_key": "dir=upper|gen=47|gap=43|fill=43|sides=plus->minus|dp=74|db=21|du=8|dr=-12",
+      "best_source_match_vector": {
+        "gap_ell_match": true,
+        "generator_ell_match": false,
+        "fill_ell_match": true,
+        "generator_side_match": false,
+        "fill_side_match": false,
+        "p_delay_match": false,
+        "actual_p_delay": 74,
+        "expected_p_delay": 113,
+        "p_delay_delta": -39
+      },
+      "failed_invariants": [
+        "generator_ell_match",
+        "generator_side_match",
+        "fill_side_match",
+        "p_delay_match"
+      ]
+    },
+    {
+      "q": 103,
+      "route": "NoGapSource-MaterializationGate",
+      "source_gate_passed_current": false,
+      "expected_signature": {
+        "gap_ell": 103,
+        "generator_ell": 101,
+        "fill_ell": 103,
+        "generator_side": "minus",
+        "fill_side": "plus",
+        "expected_p_delay": 278
+      },
+      "same_gap_source_row_count": 0,
+      "exact_matching_source_row_count": 0,
+      "formal_pair_count": 12,
+      "formal_pairs_blocked_by_source_gate": 12,
+      "actual_packet_count_current": 0,
+      "slot_lock_source_key": null,
+      "exact_source_key": null,
+      "slot_lock_source_key_matches": false,
+      "best_source_key": null,
+      "best_source_match_vector": null,
+      "failed_invariants": [
+        "gap_source_absent"
+      ]
+    }
+  ],
+  "contract": {
+    "source_gate": [
+      "gap_ell=q",
+      "generator_ell=q-2",
+      "fill_ell=q",
+      "generator/fill sides match the AffineTwin orientation",
+      "p_delay=(11q-21)/4",
+      "slot-lock source key agrees when a slot-lock exists"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "GlobalSourceMaterializationGate",
+      "SameGapWrongSource-PDEC/SAE",
+      "NoGapSource-PDEC/SAE",
+      "PrimitiveTwinSlotSupportEscape-PDEC/SAE"
+    ]
+  },
+  "dependency_hashes": {
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json": "2e401269ab68cb196babfb74e6f7b63c946ee9de37bc6ab5d502f49deaa7bf28",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json": "abfda31e733d7c1e274ded997056cf5e55d39d555a72f4f8ca35ac689c62ae1e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json": "a8048685a2c6449b42ed5d2190aa47e75b20abf36a18e18c4d1ddb223cba033f",
+    "data/prime-matrix-affine-twin-formal-pair-pruning-ledger.json": "ed8532ade7e13ad9fe14068c545d961ba90a47895b395673cf69169c0967ac38"
+  }
+}

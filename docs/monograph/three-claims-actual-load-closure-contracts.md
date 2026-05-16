@@ -123,6 +123,49 @@ CRTWindowEmptyGlobalSupportBound
 PrimitiveTwinSlotSupportEscape-PDEC/SAE
 ```
 
+### 1.5 source materialization gate 更新
+
+后续审计
+
+```text
+experiments/prime_matrix_affine_twin_source_materialization_gate_audit.py
+data/prime-matrix-affine-twin-source-materialization-gate-ledger.json
+docs/monograph/prime-matrix-affine-twin-source-materialization-gate-audit.md
+```
+
+把 `SourceMaterializationFailure` 继续拆成源门控不变量：
+
+```text
+source_gate_pass_q_values=[31]
+source_gate_fail_q_values=[43, 103]
+formal_pairs_blocked_by_source_gate=28
+same_gap_wrong_source_formal_pair_count=16
+no_gap_source_formal_pair_count=12
+all_source_failures_classified_current=true
+```
+
+源门控要求：
+
+```text
+gap=q,
+generator=q-2,
+fill=q,
+sides match AffineTwin orientation,
+p_delay=(11q-21)/4,
+slot-lock source key agrees when present.
+```
+
+当前 `q=43` 有同 gap source，但实际为 `generator=47, fill=43, sides=plus->minus, p_delay=74`，而 AffineTwin 期望 `generator=41, fill=43, sides=minus->plus, p_delay=113`，故阻断 `16` 个 formal products。`q=103` 当前无任何 gap-fill source，阻断 `12` 个 formal products。
+
+全局最窄剩余进一步压成：
+
+```text
+GlobalSourceMaterializationGate
+SameGapWrongSource-PDEC/SAE
+NoGapSource-PDEC/SAE
+CRTWindowEmptyGlobalSupportBound
+```
+
 ## 2. TP-ALC：二点筛 actual ratio 合同
 
 ### 2.1 actual ratio
@@ -242,7 +285,7 @@ ControlledExitCriticalLoadNormalization
 
 | 合同 | actual load | critical capacity | 当前可证状态 | 剩余硬点 |
 |---|---:|---:|---|---|
-| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet 与 formal-pair pruning 闭合 | 全局 actual packet exhaustion |
+| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、formal-pair pruning 与 source gate 闭合 | 全局 actual packet exhaustion |
 | TP-ALC | actual `sum D / |U_Y|` | `1` with Buchstab `K(alpha)` | 分子 BMD 外部版可用 | denominator floor / parity gap |
 | RH-ALC | source-deleted final load | exit capacity | verification ledger 已有 | controlled exits 逐项归一化 |
 
@@ -250,7 +293,7 @@ ControlledExitCriticalLoadNormalization
 
 最直接的继续硬攻顺序是：
 
-1. **PM：** 把 current sweep 的 `CRTWindowEmpty` 与 `SourceMaterializationFailure` 删除机制升级成全局分类定理，证明所有 future formal residue 配对若不能生成 actual packet，必进入这两个出口或 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
+1. **PM：** 把 current sweep 的 source gate 失败分类升级成全局门控定理，证明 future formal residue product 若缺少 matching source，必进入 `SameGapWrongSource-PDEC/SAE` 或 `NoGapSource-PDEC/SAE`；若有 source，再由 `CRTWindowEmptyGlobalSupportBound` 控制窗口代表。
 2. **TP：** 写出 denominator floor 的 beta/Buchstab 下筛合同，明确 `delta(alpha)` 的可接受上限。
 3. **RH：** 生成 controlled-exit 四列表，先不证明 RH，只把每个 exit 的 actual-load 输入、闭合机制和未闭合项固定。
 

@@ -449,3 +449,45 @@ SourceMaterializationFailure:
 ```
 
 这一步把 PM 的全局硬点进一步收窄为：证明所有形式配对若不能成为 actual packet，必进入 `CRTWindowEmpty`、`SourceMaterializationFailure-PDEC/SAE` 或 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。若该分类失败，失败形态本身就是新的反例链/真实链交叉点。
+
+## 10. PM source materialization gate 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-source-materialization-gate-audit.md
+data/prime-matrix-affine-twin-source-materialization-gate-ledger.json
+```
+
+继续把 `SourceMaterializationFailure` 从泛称失败压成源门控不变量。当前结果为：
+
+```text
+source_gate_pass_q_values=[31]
+source_gate_fail_q_values=[43, 103]
+formal_pairs_blocked_by_source_gate=28
+same_gap_wrong_source_formal_pair_count=16
+no_gap_source_formal_pair_count=12
+unresolved_source_failure_count_current=0
+```
+
+源门控是 actual packet 的必要输入：
+
+```text
+gap=q,
+generator=q-2,
+fill=q,
+sides match,
+p_delay=(11q-21)/4.
+```
+
+`q=43` 的同 gap source 失败在四个不变量上：`generator_ell`、两侧方向、`p_delay`。`q=103` 则完全没有 gap-fill source。于是前一步的 `28` 个 source 未物化 formal products 已全部解释。
+
+全局硬点相应压缩为：
+
+```text
+GlobalSourceMaterializationGate
+SameGapWrongSource-PDEC/SAE
+NoGapSource-PDEC/SAE
+```
+
+也就是说，未来若某个 formal product 试图绕过 source gate，它必须显式破坏端点运动/生成填充二元组的结构，而不是作为 hidden actual load 留在账本中。
