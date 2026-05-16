@@ -1,0 +1,53 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_margin_slot_absorption_normal_form_router",
+  "status": "margin_slot_absorption_normal_form_closed_current_sweep_global_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "source_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-ledger.json",
+    "normal_form_row_count": 1,
+    "unique_normal_form_key_count": 1,
+    "repeated_normal_form_key_count": 0,
+    "all_absorbing_spare_identities_closed": true,
+    "all_post_absorption_slack_equals_abs_delta_b": true,
+    "all_right_spare_decompositions_closed": true,
+    "margin_slot_absorption_normal_form_bound_proved": false,
+    "normal_form_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "normal_form_rows": [
+    {
+      "gap_ell": 31,
+      "endpoint_direction": "lower",
+      "generator_margin": 15,
+      "delta_b": -13,
+      "delta_u": -7,
+      "rho_jump": 5,
+      "absorbing_depth_spare": 28,
+      "margin_plus_abs_delta_b": 28,
+      "absorbing_spare_identity_closed": true,
+      "post_absorption_slack": 13,
+      "post_absorption_slack_equals_abs_delta_b": true,
+      "generator_right_depth_spare": 25,
+      "fill_left_depth_spare": 3,
+      "right_spare_decomposition": 25,
+      "right_spare_decomposition_closed": true,
+      "normal_form_key": "gap=31|margin=15|db=-13|du=-7|rho=5",
+      "source_key": "dir=lower|gap=31|rho=5|gm=15|db=-13|slack=13"
+    }
+  ],
+  "margin_slot_absorption_normal_form_bound_proved": false,
+  "normal_form_pdec_excluded_globally": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "GeneratorMarginRhoSlotAbsorptionBoundOrSourcePDECExclusion",
+  "hardpoint_after_router": "MarginSlotAbsorptionNormalFormBoundOrNormalFormPDECExclusion",
+  "next_direct_attack_target": "MarginSlotAbsorptionNormalFormBoundOrNormalFormPDECExclusion",
+  "plain_conclusion": "本步把 phase bridge 超标吸收写成 margin/slot 正规形：`absorbing_depth_spare = generator_margin + |delta_b|`，且 `generator_right_spare = generator_margin + |delta_u| + fill_left_spare`。当前唯一行两个身份均闭合。全局剩余是证明该正规形预算界，或排斥持久 NormalForm-PDEC/SAE。",
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_margin_slot_absorption_normal_form_router.py": "d67989b01e842a19286a018c9dbd1afb8c1e703bac04e5c1ddb54dd54edf3141",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-ledger.json": "3db447d1c8fc9bfb346b90cd809f88f0e21999c6618937f7b798ca17091787bf",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-absorption-normal-form-ledger.json": "10ab00402bb2f21ca1c5e4d7fc089a1a098571b340741e8605bae44968dbbc8c",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-absorption-normal-form-router.md": "b3fdfb308495fa2c575c941da4d9df55c78386def49c73e2d8d318c054fd3a06"
+  }
+}
