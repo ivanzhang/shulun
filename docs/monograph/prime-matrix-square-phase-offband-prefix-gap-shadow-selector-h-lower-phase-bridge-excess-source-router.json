@@ -1,0 +1,62 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_phase_bridge_excess_source_router",
+  "status": "phase_bridge_excess_source_identity_closed_current_sweep_global_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "excess_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-atom-ledger.json",
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "phase_bridge_excess_source_count": 1,
+    "unique_phase_bridge_excess_source_key_count": 1,
+    "repeated_phase_bridge_excess_source_key_count": 0,
+    "all_excess_equals_generator_margin": true,
+    "all_excess_equals_three_rho_jump": true,
+    "all_post_absorption_slack_equals_abs_delta_b": true,
+    "generator_margin_rho_slot_absorption_bound_proved": false,
+    "phase_bridge_excess_source_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "phase_bridge_excess_source_rows": [
+    {
+      "gap_ell": 31,
+      "endpoint_direction": "lower",
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "phase_bridge_gap": 46,
+      "phase_bridge_gap_excess": 15,
+      "generator_margin": 15,
+      "fill_margin": 27,
+      "generator_rho": 2,
+      "fill_rho": 7,
+      "rho_jump": 5,
+      "three_rho_jump": 15,
+      "delta_b": -13,
+      "delta_u": -7,
+      "delta_residue": -11,
+      "absorbing_spare_after_bridge_excess": 13,
+      "generator_right_depth_spare": 25,
+      "fill_left_depth_spare": 3,
+      "excess_equals_generator_margin": true,
+      "excess_equals_three_rho_jump": true,
+      "post_absorption_slack_equals_abs_delta_b": true,
+      "source_phase_bridge_excess_atom_key": "dir=lower|gap=31|gen=29|fill=31|bridge=46|excess=15|gr=6|fl=28|slack=13",
+      "source_gap_fill_pair_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11",
+      "phase_bridge_excess_source_key": "dir=lower|gap=31|rho=5|gm=15|db=-13|slack=13"
+    }
+  ],
+  "generator_margin_rho_slot_absorption_bound_proved": false,
+  "phase_bridge_excess_source_pdec_excluded_globally": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "PhaseBridgeExcessAbsorptionBoundOrExcessPDECExclusion",
+  "hardpoint_after_router": "GeneratorMarginRhoSlotAbsorptionBoundOrSourcePDECExclusion",
+  "next_direct_attack_target": "GeneratorMarginRhoSlotAbsorptionBoundOrSourcePDECExclusion",
+  "plain_conclusion": "本步把唯一 phase bridge 超标的来源继续压缩：超标量等于生成端 margin，也等于 `3*rho_jump`；超标被吸收后的剩余 slack 等于 `|delta_b|`。因此当前超标不是自由相位漂移，而是由 margin、rho 翻转和 b 槽位移锁定的单原子。全局剩余是证明该来源身份的吸收界，或排斥持久 Source-PDEC/SAE。",
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_phase_bridge_excess_source_router.py": "70d38598ac67b953da835e93fd2badce00a748489034cb578f9d06a4a026f52e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-atom-ledger.json": "67ab0cebcf763917e8d47ad1da598e9a836d7b7138a56e100e84d9f9a0c11218",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json": "abfda31e733d7c1e274ded997056cf5e55d39d555a72f4f8ca35ac689c62ae1e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-ledger.json": "3db447d1c8fc9bfb346b90cd809f88f0e21999c6618937f7b798ca17091787bf",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-router.md": "7e010958eee32022412106375f2042990d5de7db04b554c7a77c80d100a8b9c9"
+  }
+}
