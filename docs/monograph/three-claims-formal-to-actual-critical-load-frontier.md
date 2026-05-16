@@ -912,3 +912,36 @@ hull_complement_equals_affine_p_delay=true
 这把局部超界自反馈波动改写成一个更尖锐的相位矛盾：反例链要求 near-full-period 的双向壳层；真实链只有宽度 `20` 的 primitive 支撑，且单侧 skew-growth 已无法解释 below/above 两侧同时超界。壳层互补宽度正好等于 `p_delay`，说明这不是随机距离误差，而是 AffineTwin 双槽 CRT 与延迟相位共同锁出的结构缺口。
 
 最新剩余接口相应压成：排斥 `BidirectionalSkewHull-PDEC`，或证明持久 near-full-period 壳层必进入 `ColumnCRT/PDEC`、`SAE` 或 `AffineTwinEpochPairMultiplicityBoundOrColumnCRTPDECExclusion`。
+
+## 24. PM endpoint-release circular-aperture 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-circular-aperture-audit.md
+data/prime-matrix-affine-twin-endpoint-release-circular-aperture-ledger.json
+```
+
+把上一层的线性壳层读数放回模 `q(q-2)=899` 的圆周相位空间。线性 hull `[2304,3122]` 宽 `819`，依赖当前切口；圆周最小弧要删除最大 open gap 后再计。
+
+当前读数为：
+
+```text
+support_width=20
+linear_hull_width_from_previous_audit=819
+largest_circular_open_gap_width=341
+largest_gap_from_pair=19:8
+largest_gap_to_pair=13:9
+minimal_circular_alignment_arc=[3029,3586]
+minimal_circular_alignment_arc_width=558
+optimal_shifted_support_interval=[3568,3587]
+optimal_total_extension_required=539
+conservative_extra_after_best_single_side_feedback=509
+p_delay_open_gap_present=true
+p_delay_open_gap_is_largest_gap=false
+p_delay_gap_rank_by_width=3
+```
+
+这给出更严格的审计边界：`p_delay=80` 子缝存在，但不是最大圆周空弧；真正最优切口删除的是 `19:8 -> 13:9` 的 `341` 宽 open gap。删除后剩余圆弧仍宽 `558`，远超真实链当前宽 `20` 的 primitive 支撑。反例链若试图通过支撑平移和单侧 feedback 吸收全部 formal pair，仍至少缺 `509` 的圆周 aperture 扩张。
+
+因此当前接口从 `BidirectionalSkewHull-PDEC` 精炼为 `CircularAperture-PDEC/ColumnCRT`：若该圆弧形态持久复现，必须证明它进入 ColumnCRT/PDEC、SAE 或 moving-family multiplicity 出口；若不能证明持久复现排斥，则不能宣称行/列命题无条件闭合。

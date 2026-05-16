@@ -704,3 +704,42 @@ one_sided_skew_growth_absorption_closed_current_sweep=true
 这给出比逐行缺口更全局的局部刚性：反例链若要把 `q=31` 的 `12` 个 formal pair 同时塞回一个支撑壳层，壳层宽度必须达到 `819`，已经占 `899` 周期的约 `91.10%`，只留下 affine `p_delay=80` 大小的互补缝。真实链当前 primitive 支撑宽度只有 `20`，扣除 feedback horizon 后仍要双向额外增长 `335+409=744`。
 
 本步关闭当前 sweep 的单侧 skew-growth 吸收解释，并把剩余压成 `BidirectionalSkewHull-PDEC/ColumnCRT` 或 moving-family multiplicity 出口。全局行/列命题仍需排斥该壳层持久复现或把它吸收到 `SAE/ColumnCRT/PDEC`。
+
+## 17. PM endpoint-release circular-aperture 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-circular-aperture-audit.md
+data/prime-matrix-affine-twin-endpoint-release-circular-aperture-ledger.json
+```
+
+修正上一张线性壳层证书的口径：`[2304,3122]` 是当前周期切口下的线性 hull，不是模 `q(q-2)` 圆周上的最小弧。圆周口径应先在 `899` 周期上删除最大空弧，再取覆盖全部 formal alignment 代表的最小 circular arc。
+
+当前证书给出：
+
+```text
+formal_alignment_row_count=12
+combined_crt_modulus=899
+support_width=20
+linear_hull_width_from_previous_audit=819
+largest_circular_open_gap_width=341
+largest_gap_from_pair=19:8
+largest_gap_to_pair=13:9
+minimal_circular_alignment_arc=[3029,3586]
+minimal_circular_alignment_arc_width=558
+minimal_circular_arc_width_to_modulus_ratio=0.620689655172
+optimal_shifted_support_interval=[3568,3587]
+optimal_total_extension_required=539
+conservative_extra_after_best_single_side_feedback=509
+p_delay_open_gap_present=true
+p_delay_open_gap_is_largest_gap=false
+p_delay_gap_rank_by_width=3
+one_sided_circular_absorption_closed_current_sweep=true
+```
+
+因此最新容量/相位矛盾点更精确：不是“圆周最小壳层近全周期”，而是“即使删去最大空弧后，最小圆弧仍宽 `558`，是 primitive support width `20` 的 `27.9` 倍”。把 support 最优平移到 `[3568,3587]` 后仍需总扩张 `539`；即使给最有利单侧 feedback horizon 信用，仍缺 `509`。
+
+`p_delay=80` 空缝确实存在，但它只排第 `3` 大，不是最大圆周切口。上一层 `modulus_minus_hull_width=80` 的线性读数仍有结构意义，但不能再被表述为圆周最小弧的互补长度。
+
+本步关闭当前 sweep 的单侧 circular-aperture/skew-growth 吸收解释。全局行/列命题仍未闭合；最新剩余是排斥 `CircularAperture-PDEC`，或证明持久圆弧复现进入 `ColumnCRT/PDEC`、`SAE` 或 moving-family multiplicity 出口。
