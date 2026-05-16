@@ -772,3 +772,36 @@ all_positive_endpoint_release_errors_structured_current=true
 最窄 atom `19:12` 的端点释放负载为 `70`，临界容量为 `20`，已给出显式正临界误差 `2.5`。固定 primitive key 缺陷总量也正好是 `70`，并且同向 moving-key source-rematerialization 已缺席。这说明当前局部超界不是形式账本误差，也不是普通密度波动；它被迫显化为 `EndpointReleaseCoupling-PDEC`。
 
 因此当前 actual-load 前沿进一步压窄：若反例链还要推进，就必须给出 `EndpointReleaseCoupling-PDEC` 的持久复现机制，或者转入方向改变/source 重物化的已命名出口。否则当前支撑逃逸在真实链中没有匿名承载通道。
+
+## 20. PM endpoint-release feedback-loss 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-feedback-loss-audit.md
+data/prime-matrix-affine-twin-endpoint-release-feedback-loss-ledger.json
+```
+
+上一节仍按总端点释放负载计量临界误差。本节给 support motion 最有利的自反馈解释：把较大端点移动量全部当作几何支撑扩张信用，只追踪剩余的第二端点同步损耗：
+
+```text
+feedback loss = endpoint release load - max(generator release, fill release)
+              = min(generator release, fill release)
+post-credit feedback error = feedback loss / support width - 1
+```
+
+即使这样，当前 sweep 仍全部超界：
+
+```text
+total_endpoint_release_load=4929
+total_geometric_support_gain_credit=2512
+total_coupled_second_endpoint_feedback_loss=2417
+total_support_width_budget=220
+total_post_credit_feedback_error=9.98636363636
+min_post_credit_feedback_error=0.5
+all_feedback_losses_exceed_support_width=true
+```
+
+最窄 `19:12` 的 `70` 负载中，`40` 可记作支撑扩张信用，剩余反馈损耗 `30` 仍大于 support width `20`。这正是局部超界自反馈的显式残差：反例链试图移动支撑来吸收误差，但真实链要求两个端点同步释放；几何扩张最多回收一个端点，第二端点损耗仍形成正临界误差。
+
+因此当前最窄硬点进一步变成：排斥 `EndpointReleaseFeedbackLoss-PDEC` 持久复现，或证明这种损耗必回流到方向改变/source 重物化/SAE 出口。

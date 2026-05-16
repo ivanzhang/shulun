@@ -547,3 +547,40 @@ endpoint_release_critical_error_structured_current_sweep=true
 最窄显式超界点仍是 `19:12`：端点释放负载为 `70`，窗口容量为 `20`，临界误差为 `50/20=2.5`。它的 moving q 候选 `[61,111]` 已在上一节证明不能同向重物化为 AffineTwin source。因此这个正临界误差不能保留为匿名波动，只能显化为 `EndpointReleaseCoupling-PDEC`。
 
 本步关闭的是当前 sweep 的“匿名端点释放超界”解释，而不是全局行/列命题。全局剩余继续是排斥 `EndpointReleaseCoupling-PDEC` 持久复现，或处理方向改变/source 重物化出口。
+
+## 13. PM endpoint-release feedback-loss 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-feedback-loss-audit.md
+data/prime-matrix-affine-twin-endpoint-release-feedback-loss-ledger.json
+```
+
+继续把端点释放临界误差拆成“几何支撑回补”和“第二端点反馈损耗”。即使把较大端点移动量全部记作支撑扩张信用，仍剩：
+
+```text
+feedback loss = endpoint release load - geometric support gain credit
+              = min(generator release, fill release)
+post-credit feedback error = feedback loss / support width - 1
+```
+
+当前证书给出：
+
+```text
+support_motion_candidate_count=11
+support_width=20
+total_endpoint_release_load=4929
+total_geometric_support_gain_credit=2512
+total_coupled_second_endpoint_feedback_loss=2417
+total_post_credit_feedback_error=9.98636363636
+min_feedback_loss=30
+max_feedback_loss=429
+min_post_credit_feedback_error=0.5
+all_feedback_losses_exceed_support_width=true
+endpoint_release_feedback_loss_structured_current_sweep=true
+```
+
+最窄 atom 仍是 `19:12`：负载 `70` 中最多 `40` 可解释为几何支撑扩张，剩余反馈损耗 `30` 仍超过原支撑宽度 `20`，post-credit feedback error 为 `0.5`。因此即便允许局部超界通过支撑移动做自反馈回补，当前 sweep 仍留下不可匿名化的 `EndpointReleaseFeedbackLoss-PDEC`。
+
+本步不证明全局不可能出现持久端点反馈；它把剩余硬点从 `EndpointReleaseCoupling-PDEC` 压窄为 `EndpointReleaseFeedbackLoss-PDEC` 的全局排斥或路由。
