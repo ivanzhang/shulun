@@ -1,0 +1,62 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_primitive_affine_collapse_router",
+  "status": "primitive_affine_collapse_closed_current_sweep_global_bound_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "primitive_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-ledger.json",
+    "affine_row_count": 1,
+    "unique_affine_key_count": 1,
+    "repeated_affine_key_count": 0,
+    "all_affine_collapse_identities_closed": true,
+    "affine_identity_flags": [
+      "gap_equals_fill_ell",
+      "generator_ell_equals_gap_minus_2",
+      "margin_equals_gap_minus_1_over_2",
+      "abs_delta_b_equals_gap_minus_5_over_2",
+      "abs_delta_u_equals_gap_minus_3_over_4",
+      "rho_jump_equals_2_ell_step_plus_1",
+      "margin_equals_2_abs_delta_u_plus_1",
+      "abs_delta_b_equals_2_abs_delta_u_minus_1"
+    ],
+    "primitive_affine_collapse_global_bound_proved": false,
+    "affine_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "affine_rows": [
+    {
+      "gap_ell": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "ell_step": 2,
+      "generator_margin": 15,
+      "abs_delta_b": 13,
+      "abs_delta_u": 7,
+      "rho_jump": 5,
+      "gap_equals_fill_ell": true,
+      "generator_ell_equals_gap_minus_2": true,
+      "margin_equals_gap_minus_1_over_2": true,
+      "abs_delta_b_equals_gap_minus_5_over_2": true,
+      "abs_delta_u_equals_gap_minus_3_over_4": true,
+      "rho_jump_equals_2_ell_step_plus_1": true,
+      "margin_equals_2_abs_delta_u_plus_1": true,
+      "abs_delta_b_equals_2_abs_delta_u_minus_1": true,
+      "affine_key": "gap=31|ell=29->31|m=15|db=13|du=7",
+      "source_primitive_key": "gap=31|eg=29->31|gm=15|db=-13|du=-7|fls=3"
+    }
+  ],
+  "primitive_affine_collapse_global_bound_proved": false,
+  "affine_pdec_excluded_globally": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "SlotDepthPrimitiveIdentityBoundOrPrimitivePDECExclusion",
+  "hardpoint_after_router": "PrimitiveAffineCollapseGlobalBoundOrAffinePDECExclusion",
+  "next_direct_attack_target": "PrimitiveAffineCollapseGlobalBoundOrAffinePDECExclusion",
+  "plain_conclusion": "本步把当前唯一 primitive 身份组压成仿射整数型：`fill_ell=gap`、`generator_ell=gap-2`、`margin=(gap-1)/2`、`|delta_b|=(gap-5)/2`、`|delta_u|=(gap-3)/4`。当前行全部闭合。全局剩余是证明此类仿射塌缩受全局约束，或排斥持久 Affine-PDEC/SAE。",
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_primitive_affine_collapse_router.py": "260ccacab0d4d426ba5097cc63aacf39fd731c0236ab55c32fe3e003c0b29938",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-ledger.json": "c4a2bfa9e30b4444723f339d4501c3ea14b97fc62954ac659095bacc80c2d5f1",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-primitive-affine-collapse-ledger.json": "ffe10c92b29452a7e91fee637f355909cbbf890e61a75c270f82b7bf913722ec",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-primitive-affine-collapse-router.md": "5b0f230009b080d34287fcfcb0365f636570dca91c5daf186ae2d777f99be5e8"
+  }
+}
