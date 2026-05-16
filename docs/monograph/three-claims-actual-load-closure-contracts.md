@@ -852,3 +852,37 @@ cut_anchor_sweep_closed_current_sweep=true
 因此换切口不能释放当前矛盾：最优 cut 是之前的 `[3029,3586]` 圆弧，actual 位于右端并落入 left `D=557` 的 parity no-go；另一个 endpoint cut 让 actual 位于左端，但要求 right `D=841`，被 above-side `D=1` fixed-fill 条件排斥。其余十个 interior cut 更强，因为 actual 在圆弧内部，必须同时支付左右两侧端点释放；所有同向 moving-key 公式均无共同解。
 
 本步关闭当前 sweep 的 actual-retained same-orientation cut-anchor absorption。全局行/列命题仍未闭合；剩余是把 `CutAnchorSweepGlobalFamilyNoGo` 升格为全局族定理，或处理方向改变 key、`ColumnCRT/PDEC`、`SAE`、moving-family multiplicity 出口。
+
+## 21. PM endpoint-release cut-anchor ColumnCRT compression 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-cut-anchor-columncrt-compression-audit.md
+data/prime-matrix-affine-twin-endpoint-release-cut-anchor-columncrt-compression-ledger.json
+```
+
+继续下钻 cut-anchor sweep 的容量出口：圆周 cut 是分析切口，不是新的 actual residue 自由度。若保留同一个 actual packet，全部 cut 都压回同一个 `P mod q(q-2)` 的 ColumnCRT 原子。
+
+当前读数为：
+
+```text
+cut_count=12
+combined_crt_modulus=899
+actual_anchor_pair=19:8
+actual_representatives_used_by_cuts=[2687, 3586]
+actual_crt_residue=889
+unique_actual_crt_residue_count=1
+cut_to_actual_residue_compression_factor=12.0
+fixed_actual_columncrt_mass=1/899
+naive_cut_counting_mass=12/899
+mass_saved_by_cut_compression=11/899
+same_orientation_cut_anchor_closed_current_sweep=true
+fixed_q_fixed_residue_columncrt_registered=true
+moving_family_candidate_q_values=[31, 43, 103]
+cut_anchor_columncrt_compression_closed_current_sweep=true
+```
+
+因此，换 cut 不能把容量从一个固定相位原子放大成十二个原子。所有 cut 中 actual representative 只是在 `2687` 与 `3586=2687+899` 两个 lift 之间切换，同余类始终是 `889 mod 899`。同向 cut-anchor 已关闭后，固定 `q=31` 固定残基的方向改变逃逸只能作为 `CutAnchorColumnCRT-PDEC` 输入对象登记；若 `q` 或残基移动，则回到既有 AffineTwin moving-family SAE/ColumnCRT 账本。
+
+本步关闭当前 sweep 中“切口多重性作为容量来源”的解释。全局行/列命题仍未闭合；剩余是排斥 `CutAnchorColumnCRT-PDEC`、方向改变 key、或 closing moving-family multiplicity。

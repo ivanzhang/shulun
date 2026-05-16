@@ -1,0 +1,257 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_cut_anchor_columncrt_compression_audit",
+  "status": "current_sweep_cut_anchor_columncrt_compression_closed_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "cut_anchor_sweep_ledger": "data/prime-matrix-affine-twin-endpoint-release-cut-anchor-sweep-ledger.json",
+    "slot_lock_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json",
+    "moving_family_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json",
+    "sparse_sae_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json",
+    "combined_crt_modulus": 899,
+    "actual_anchor_pair": "19:8",
+    "actual_representatives_used_by_cuts": [
+      2687,
+      3586
+    ],
+    "actual_crt_residue": 889,
+    "cut_count": 12,
+    "unique_actual_crt_residue_count": 1,
+    "cut_to_actual_residue_compression_factor": 12.0,
+    "fixed_actual_columncrt_mass": {
+      "numerator": 1,
+      "denominator": 899,
+      "decimal": 0.0011123470522803114
+    },
+    "naive_cut_counting_mass": {
+      "numerator": 12,
+      "denominator": 899,
+      "decimal": 0.013348164627363738
+    },
+    "mass_saved_by_cut_compression": {
+      "numerator": 11,
+      "denominator": 899,
+      "decimal": 0.012235817575083427
+    },
+    "cut_multiplicity_capacity_overcount_factor": 12,
+    "cut_multiplicity_capacity_source_closed_current_sweep": true,
+    "fixed_q_fixed_residue_columncrt_registered": true,
+    "same_orientation_cut_anchor_closed_current_sweep": true,
+    "moving_family_candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "moving_family_realized_q_values": [
+      31
+    ],
+    "fixed_residue_slot_drift_pair_count": 12,
+    "fixed_q_fixed_residue_columncrt_routing_closed": true,
+    "current_realized_sae_mass": {
+      "numerator": 1,
+      "denominator": 899,
+      "decimal": 0.0011123470522803114
+    },
+    "candidate_single_pair_sae_mass_sum": {
+      "numerator": 29277723,
+      "denominator": 16488099611,
+      "decimal": 0.0017756881442217531
+    },
+    "frontier_single_atom_tail_from_min_candidate_q": {
+      "numerator": 1,
+      "denominator": 58,
+      "decimal": 0.017241379310344827
+    },
+    "cut_anchor_columncrt_compression_closed_current_sweep": true,
+    "global_cut_anchor_columncrt_pdec_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "pdec_object": {
+    "schema": "CutAnchorColumnCRT-PDEC",
+    "X": "current q=31 actual-retained cut-anchor formal cut set",
+    "tau": {
+      "P_congruence": "P == 889 mod 899",
+      "generator_slot": "P == 19 mod 29",
+      "shifted_fill_slot": "P == 21 mod 31",
+      "q": 31,
+      "q_minus_2": 29
+    },
+    "S": "prime P in tau whose counterexample chain tries to persist after same-orientation cut-anchor absorption is closed",
+    "registered_mass": {
+      "numerator": 1,
+      "denominator": 899,
+      "decimal": 0.0011123470522803114
+    },
+    "cut_labels": [
+      "13:9->15:9",
+      "15:9->19:9",
+      "19:9->13:28",
+      "13:28->15:28",
+      "15:28->19:28",
+      "19:28->13:12",
+      "13:12->15:12",
+      "15:12->13:8",
+      "13:8->15:8",
+      "15:8->19:12",
+      "19:12->19:8",
+      "19:8->13:9"
+    ]
+  },
+  "compression_rows": [
+    {
+      "cut": "13:9->15:9",
+      "actual_anchor_representative": 3586,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 869,
+      "total_endpoint_release_required": 1683,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "15:9->19:9",
+      "actual_anchor_representative": 3586,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 838,
+      "total_endpoint_release_required": 1621,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "19:9->13:28",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 819,
+      "total_endpoint_release_required": 1583,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "13:28->15:28",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 869,
+      "total_endpoint_release_required": 1683,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "15:28->19:28",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 838,
+      "total_endpoint_release_required": 1621,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "19:28->13:12",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 761,
+      "total_endpoint_release_required": 1467,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "13:12->15:12",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 869,
+      "total_endpoint_release_required": 1683,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "15:12->13:8",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 873,
+      "total_endpoint_release_required": 1691,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "13:8->15:8",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 869,
+      "total_endpoint_release_required": 1683,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "15:8->19:12",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_interior",
+      "arc_width": 896,
+      "total_endpoint_release_required": 1737,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "19:12->19:8",
+      "actual_anchor_representative": 2687,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_start",
+      "arc_width": 842,
+      "total_endpoint_release_required": 1675,
+      "same_orientation_absorption_closed": true
+    },
+    {
+      "cut": "19:8->13:9",
+      "actual_anchor_representative": 3586,
+      "actual_crt_residue": 889,
+      "actual_anchor_position": "arc_end",
+      "arc_width": 558,
+      "total_endpoint_release_required": 1068,
+      "same_orientation_absorption_closed": true
+    }
+  ],
+  "escape_rows": [
+    {
+      "escape": "same_orientation_actual_retained_cut_anchor",
+      "status": "closed_current_sweep",
+      "capacity_object": "none",
+      "reason": "all cuts fail left D=8 or right D=1 formula gates"
+    },
+    {
+      "escape": "fixed_q_fixed_actual_residue_orientation_changing",
+      "status": "registered_columncrt_pdec",
+      "capacity_object": "P == 889 mod 899",
+      "reason": "changing orientation cannot create new cut mass while q and the actual slot residue stay fixed"
+    },
+    {
+      "escape": "moving_q_or_moving_residue",
+      "status": "routed_existing_moving_family_sae_columncrt",
+      "capacity_object": "[31, 43, 103]",
+      "reason": "moving q leaves the fixed cut ledger and enters the existing AffineTwin moving-family ledger"
+    },
+    {
+      "escape": "cut_multiplicity_as_capacity_source",
+      "status": "closed_current_sweep",
+      "capacity_object": "1/899 not 12/899",
+      "reason": "all cuts share the same actual CRT residue"
+    }
+  ],
+  "contract": {
+    "cut_anchor_columncrt_compression_gate": [
+      "do not count circular cuts as independent actual-P residue classes",
+      "compress every actual-retained cut to the same fixed CRT atom",
+      "register orientation-changing persistence as CutAnchorColumnCRT-PDEC",
+      "route moving q or moving residues to the existing AffineTwin moving-family SAE/ColumnCRT ledger"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "CutAnchorColumnCRTPDECExclusion",
+      "OrientationChangingPrimitiveKey-PDEC/SAE",
+      "AffineTwinEpochPairMultiplicityBoundOrColumnCRTPDECExclusion",
+      "CutAnchorSweepGlobalFamilyNoGo"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-endpoint-release-cut-anchor-sweep-ledger.json": "f1332cd35239182d09c025cba138653c105c0e5566ad4682f85860923dccd946",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-ledger.json": "a8048685a2c6449b42ed5d2190aa47e75b20abf36a18e18c4d1ddb223cba033f",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json": "2e401269ab68cb196babfb74e6f7b63c946ee9de37bc6ab5d502f49deaa7bf28",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json": "18a67505beef2a1ba7ec53a6088bb26da6a3955e2f63c02f5e215cfe171a8063"
+  }
+}
