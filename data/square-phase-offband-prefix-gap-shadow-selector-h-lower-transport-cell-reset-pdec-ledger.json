@@ -1,0 +1,33 @@
+{
+  "aggregate": {
+    "transport_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-fixed-residue-transport-cell-ledger.json",
+    "drift_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-transport-cell-iteration-drift-ledger.json",
+    "transport_cell_count": 12,
+    "unique_transport_cell_key_count": 12,
+    "repeated_transport_cell_key_count": 0,
+    "reset_pdec_atom_count": 0,
+    "max_transport_cell_key_multiplicity": 1,
+    "chained_transport_persistence_excluded_current_sweep": true,
+    "current_sweep_transport_reset_atoms_empty": true,
+    "transport_reset_pdec_excluded_globally": false,
+    "transport_reset_sae_rankin_bound_proved": false,
+    "singleton_residue_sae_rankin_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "reset_pdec_atoms": [],
+  "formal_unit_contract": {
+    "required_repeated_fields": [
+      "side",
+      "ell",
+      "crt_residue",
+      "p_lift",
+      "slot_sum_lift",
+      "b_residue_step",
+      "lo_translate_defect",
+      "hi_translate_defect",
+      "common_lower_active",
+      "common_upper_active"
+    ],
+    "meaning": "Any non-chained recurrence must repeat this full key; otherwise it belongs to singleton/SAE drift."
+  }
+}
