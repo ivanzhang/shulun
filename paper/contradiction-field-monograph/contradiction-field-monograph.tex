@@ -53,6 +53,104 @@ The common rigidities used throughout this manuscript are:
   \item no-cycle potentials for internal escape mechanisms.
 \end{enumerate}
 
+\chapter{Critical-Density Feedback Bridge}
+
+This chapter records the critical-density principle used to organize the current
+frontier.  It is a bridge from heuristic insight to proof obligations, not a
+replacement for the remaining row/column, two-point, or RH exit proofs.
+
+\begin{definition}[Self-sieving density model]
+Let a self-sieving set have local density
+\[
+  \rho(x)\sim \frac{C}{(\log x)^\alpha}.
+\]
+Its previous elements impose a first-order one-residue sieve intensity
+\[
+  S(x)=\sum_{a\le x,\ a\in A}\frac{1}{a}
+      \sim \int_2^x \frac{\rho(t)}{t}\,dt .
+\]
+The associated model survivor density is $\exp(-S(x))$.
+\end{definition}
+
+\begin{lemma}[Critical fixed point]
+Inside the self-sieving density model, the only logarithmic fixed-point exponent is
+\[
+  \rho(x)\asymp \frac{1}{\log x}.
+\]
+More precisely, if $\rho(x)\sim C/(\log x)^\alpha$ and the model survivor density
+is required to have the same logarithmic order as $\rho(x)$, then $\alpha=1$; at
+that layer, exponent matching gives $C=1$.
+\end{lemma}
+\begin{proof}
+If $\alpha>1$, then
+\[
+  \int_2^x \frac{C\,dt}{t(\log t)^\alpha}
+\]
+converges, so the model survivor density stays bounded away from zero while
+$C/(\log x)^\alpha$ tends to zero.  This is not self-consistent.
+
+If $\alpha<1$, then the same integral is
+\[
+  \frac{C}{1-\alpha}(\log x)^{1-\alpha}+O(1),
+\]
+so the survivor density is
+\[
+  \exp\{-c(\log x)^{1-\alpha}+O(1)\},
+\]
+which is smaller than any fixed negative power of $\log x$.  This is again not
+of order $C/(\log x)^\alpha$.
+
+Thus $\alpha=1$.  Then $S(x)\sim C\log\log x$, and the survivor density is
+$(\log x)^{-C+o(1)}$.  Matching the logarithmic exponent with $C/\log x$
+forces $C=1$ at the model level.
+\end{proof}
+
+\begin{remark}[Proof boundary]
+The lemma is a fixed-point calculation for the self-sieving model.  It does not
+by itself prove a short-interval prime, a prime pair, or RH.  To become a theorem,
+the fixed-point pressure must be upgraded into local lower bounds, new-modulus
+anti-concentration estimates, or controlled-exit inequalities.
+\end{remark}
+
+\begin{reductionstatement}[Critical feedback bridge for the three programs]
+The critical-density principle routes the three current frontiers as follows.
+\begin{enumerate}
+  \item For the prime-matrix row/column program, a fully covered row or column is
+  a local collapse below the $1/\log x$ fixed point.  Such a collapse must be
+  explained by fixed CRT concentration, by moving high-factor slots that pay
+  Rankin/SAE mass, or by a failure of the local survivor lower bound.  The active
+  narrow gate is
+  \[
+    \texttt{AffineTwinFillResidueArrivalBoundOrFillCatchUpMassPDECExclusion}.
+  \]
+  \item For the two-point secondary sieve, the corresponding fixed point is the
+  two-residue product
+  \[
+    \prod_{q\le y}\left(1-\frac{\nu_q(w)}{q}\right)
+    \asymp \frac{\mathfrak S(w)}{(\log y)^2}.
+  \]
+  The remaining theorem-level input is not a one-point density estimate but the
+  true-residual new-modulus correlation bound in the I3-Core/TRC package.
+  \item For the RH contradiction field, an off-critical zero creates a smooth
+  prime anomaly relative to the same $1/\log x$ fixed point.  The anomaly must
+  pass through the recorded sparse, dense, tail, internal, and global exits; the
+  manuscript can be promoted only after those controlled exits are independently
+  verified under one load convention.
+\end{enumerate}
+\end{reductionstatement}
+\begin{proof}[Status and reference]
+This is a routing statement.  The detailed version is archived as
+\[
+  \texttt{docs/monograph/three-claims-critical-density-feedback-frontier.md}.
+\]
+It identifies the next prime-matrix input as a critical fill-arrival
+anti-overfilling theorem: persistent AffineTwin threshold crossing must either
+reuse a residue and become a reset/ColumnCRT/PDEC certificate, or introduce new
+fill residues whose Rankin/SAE mass exceeds the critical-density carrying
+capacity.  That final carrying-capacity inequality is the new proof obligation;
+it is not asserted here as already proved.
+\end{proof}
+
 \chapter{Prime-Matrix Contradiction Fields}
 
 Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
