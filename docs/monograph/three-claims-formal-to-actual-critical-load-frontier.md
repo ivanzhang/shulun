@@ -805,3 +805,44 @@ all_feedback_losses_exceed_support_width=true
 最窄 `19:12` 的 `70` 负载中，`40` 可记作支撑扩张信用，剩余反馈损耗 `30` 仍大于 support width `20`。这正是局部超界自反馈的显式残差：反例链试图移动支撑来吸收误差，但真实链要求两个端点同步释放；几何扩张最多回收一个端点，第二端点损耗仍形成正临界误差。
 
 因此当前最窄硬点进一步变成：排斥 `EndpointReleaseFeedbackLoss-PDEC` 持久复现，或证明这种损耗必回流到方向改变/source 重物化/SAE 出口。
+
+## 21. PM endpoint-release feedback-horizon 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-feedback-horizon-audit.md
+data/prime-matrix-affine-twin-endpoint-release-feedback-horizon-ledger.json
+```
+
+把上一节的 feedback loss 再写成相位地平线：
+
+```text
+feedback horizon = support width + side depth skew
+side depth skew = |current generator side depth - current fill side depth|
+phase horizon surplus = window distance - feedback horizon
+```
+
+这一步直接把“局部超界的自反馈波动”转成 CRT 代表距离与自反馈吸收半径的比较。当前读数为：
+
+```text
+total_window_distance=2512
+total_feedback_horizon_width=315
+total_phase_horizon_surplus=2197
+min_phase_horizon_surplus=10
+all_feedback_loss_formulas_hold=true
+all_phase_surpluses_match_post_credit_units=true
+all_representatives_outside_feedback_horizon=true
+```
+
+最窄 `19:12` 的相位数据是：
+
+```text
+window distance = 40
+support width = 20
+side depth skew = 10
+feedback horizon = 30
+phase horizon surplus = 10
+```
+
+这就是目前最精确的显式矛盾交叉点：反例链需要通过端点自反馈吞掉距离 `40` 的 CRT 代表；真实链在当前 primitive 双槽结构下最多给出 `30` 的反馈地平线。差额 `10` 不能再解释为 formal envelope、几何支撑回补或同向 source 重物化，只能登记为 `EndpointReleaseFeedbackHorizon-PDEC`，或进入方向改变/source 重物化/SAE 出口。

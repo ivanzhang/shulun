@@ -584,3 +584,44 @@ endpoint_release_feedback_loss_structured_current_sweep=true
 最窄 atom 仍是 `19:12`：负载 `70` 中最多 `40` 可解释为几何支撑扩张，剩余反馈损耗 `30` 仍超过原支撑宽度 `20`，post-credit feedback error 为 `0.5`。因此即便允许局部超界通过支撑移动做自反馈回补，当前 sweep 仍留下不可匿名化的 `EndpointReleaseFeedbackLoss-PDEC`。
 
 本步不证明全局不可能出现持久端点反馈；它把剩余硬点从 `EndpointReleaseCoupling-PDEC` 压窄为 `EndpointReleaseFeedbackLoss-PDEC` 的全局排斥或路由。
+
+## 14. PM endpoint-release feedback-horizon 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-feedback-horizon-audit.md
+data/prime-matrix-affine-twin-endpoint-release-feedback-horizon-ledger.json
+```
+
+继续把 feedback loss 改写成纯相位地平线判据：
+
+```text
+feedback horizon = support width + |generator side depth - fill side depth|
+phase horizon surplus = window distance - feedback horizon
+```
+
+当前证书给出：
+
+```text
+support_motion_candidate_count=11
+support_motion_side_histogram={above:3,below:8}
+support_width=20
+total_window_distance=2512
+total_feedback_horizon_width=315
+total_phase_horizon_surplus=2197
+min_phase_horizon_surplus=10
+max_phase_horizon_surplus=409
+all_feedback_loss_formulas_hold=true
+all_representatives_outside_feedback_horizon=true
+endpoint_release_feedback_horizon_structured_current_sweep=true
+```
+
+最窄 atom `19:12` 的 CRT 代表距窗口 `40`，当前 support width 为 `20`，两端点侧深度差为 `10`，所以 feedback horizon 为 `30`，相位地平线缺口为 `10`。这把局部超界自反馈的显式矛盾点压成：
+
+```text
+反例链要求支撑移动吸收距离 40 的代表；
+真实链最大自反馈吸收地平线只有 30。
+```
+
+本步关闭当前 sweep 的端点自反馈吸收通道，并把剩余硬点压成 `EndpointReleaseFeedbackHorizon-PDEC` 的全局排斥或路由。
