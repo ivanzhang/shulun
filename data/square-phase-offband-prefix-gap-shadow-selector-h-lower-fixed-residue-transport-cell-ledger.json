@@ -1,0 +1,972 @@
+{
+  "aggregate": {
+    "slot_drift_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-fixed-residue-slot-drift-ledger.json",
+    "transport_cell_count": 12,
+    "unique_transport_cell_count": 12,
+    "transport_cell_recurrence_count": 0,
+    "all_transport_cells_unique_current_sweep": true,
+    "all_slot_sum_lifts_integral": true,
+    "all_residue_steps_sum_zero": true,
+    "all_active_interval_matches_record": true,
+    "all_active_edge_modes_intersect": true,
+    "exact_phase_translate_count": 0,
+    "all_edge_defects_strictly_below_ell": true,
+    "max_abs_edge_defect": 30,
+    "min_abs_nonzero_edge_defect": 1,
+    "p_lift_histogram": {
+      "6": 1,
+      "10": 1,
+      "20": 1,
+      "30": 5,
+      "60": 2,
+      "80": 1,
+      "100": 1
+    },
+    "slot_sum_lift_histogram": {
+      "-2": 1,
+      "1": 1,
+      "2": 1,
+      "3": 4,
+      "4": 1,
+      "6": 1,
+      "8": 1,
+      "9": 1,
+      "14": 1
+    },
+    "lower_active_histogram": {
+      "lo_diag": 9,
+      "lo_diag,lo_div_u": 3
+    },
+    "upper_active_histogram": {
+      "hi_diag": 4,
+      "hi_diag,hi_div_u": 8
+    },
+    "transport_cell_persistence_excluded_globally": false,
+    "moving_residue_sae_rankin_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "transport_cells": [
+    {
+      "transport_cell_key": "side=minus|ell=43|residue=16|p_lift=10|sum_lift=1|b_step=36|lo_defect=1|hi_defect=1|lower=lo_diag|upper=hi_diag",
+      "residue_packet_key": "size=1|side=minus|ells=43|mod=43|residue=16",
+      "side": "minus",
+      "ell": 43,
+      "crt_residue": 16,
+      "p_values": [
+        2467,
+        2897
+      ],
+      "p_lift": 10,
+      "left_slot_key": "237:56:43",
+      "right_slot_key": "273:63:43",
+      "b_gap": 36,
+      "u_gap": 7,
+      "slot_sum_gap": 43,
+      "slot_sum_lift": 1,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 36,
+      "u_residue_step": 7,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        2459,
+        2480
+      ],
+      "right_active_interval": [
+        2890,
+        2911
+      ],
+      "recorded_left_phase": [
+        2459,
+        2480
+      ],
+      "recorded_right_phase": [
+        2890,
+        2911
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": 1,
+      "hi_translate_defect": 1,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 1,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        8,
+        13
+      ],
+      "depth_right": [
+        7,
+        14
+      ],
+      "same_depth_signature": false,
+      "min_margin": 0,
+      "min_crt_minus_phase_width": 21
+    },
+    {
+      "transport_cell_key": "side=plus|ell=43|residue=20|p_lift=30|sum_lift=2|b_step=35|lo_defect=-14|hi_defect=-7|lower=lo_diag,lo_div_u|upper=hi_diag",
+      "residue_packet_key": "size=1|side=plus|ells=43|mod=43|residue=20",
+      "side": "plus",
+      "ell": 43,
+      "crt_residue": 20,
+      "p_values": [
+        2557,
+        3847
+      ],
+      "p_lift": 30,
+      "left_slot_key": "237:54:43",
+      "right_slot_key": "315:62:43",
+      "b_gap": 78,
+      "u_gap": 8,
+      "slot_sum_gap": 86,
+      "slot_sum_lift": 2,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 35,
+      "u_residue_step": 8,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_div_u",
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_div_u",
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag",
+        "lo_div_u"
+      ],
+      "left_upper_active": [
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        2555,
+        2578
+      ],
+      "right_active_interval": [
+        3831,
+        3861
+      ],
+      "recorded_left_phase": [
+        2555,
+        2578
+      ],
+      "recorded_right_phase": [
+        3831,
+        3861
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": -14,
+      "hi_translate_defect": -7,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 14,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        2,
+        21
+      ],
+      "depth_right": [
+        16,
+        14
+      ],
+      "same_depth_signature": false,
+      "min_margin": 16,
+      "min_crt_minus_phase_width": 12
+    },
+    {
+      "transport_cell_key": "side=minus|ell=53|residue=45|p_lift=60|sum_lift=9|b_step=1|lo_defect=15|hi_defect=-1|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=53|mod=53|residue=45",
+      "side": "minus",
+      "ell": 53,
+      "crt_residue": 45,
+      "p_values": [
+        2377,
+        5557
+      ],
+      "p_lift": 60,
+      "left_slot_key": "183:33:53",
+      "right_slot_key": "555:138:53",
+      "b_gap": 372,
+      "u_gap": 105,
+      "slot_sum_gap": 477,
+      "slot_sum_lift": 9,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 1,
+      "u_residue_step": 52,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        2360,
+        2395
+      ],
+      "right_active_interval": [
+        5555,
+        5574
+      ],
+      "recorded_left_phase": [
+        2360,
+        2395
+      ],
+      "recorded_right_phase": [
+        5555,
+        5574
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": 15,
+      "hi_translate_defect": -1,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 15,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        17,
+        18
+      ],
+      "depth_right": [
+        2,
+        17
+      ],
+      "same_depth_signature": false,
+      "min_margin": 17,
+      "min_crt_minus_phase_width": 17
+    },
+    {
+      "transport_cell_key": "side=minus|ell=43|residue=37|p_lift=100|sum_lift=14|b_step=3|lo_defect=15|hi_defect=-5|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=43|mod=43|residue=37",
+      "side": "minus",
+      "ell": 43,
+      "crt_residue": 37,
+      "p_values": [
+        2617,
+        6917
+      ],
+      "p_lift": 100,
+      "left_slot_key": "187:31:43",
+      "right_slot_key": "663:157:43",
+      "b_gap": 476,
+      "u_gap": 126,
+      "slot_sum_gap": 602,
+      "slot_sum_lift": 14,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 3,
+      "u_residue_step": 40,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        2589,
+        2630
+      ],
+      "right_active_interval": [
+        6904,
+        6925
+      ],
+      "recorded_left_phase": [
+        2589,
+        2630
+      ],
+      "recorded_right_phase": [
+        6904,
+        6925
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": 15,
+      "hi_translate_defect": -5,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 15,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        28,
+        13
+      ],
+      "depth_right": [
+        13,
+        8
+      ],
+      "same_depth_signature": false,
+      "min_margin": 20,
+      "min_crt_minus_phase_width": 1
+    },
+    {
+      "transport_cell_key": "side=minus|ell=53|residue=25|p_lift=80|sum_lift=8|b_step=36|lo_defect=12|hi_defect=16|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=53|mod=53|residue=25",
+      "side": "minus",
+      "ell": 53,
+      "crt_residue": 25,
+      "p_values": [
+        2887,
+        7127
+      ],
+      "p_lift": 80,
+      "left_slot_key": "270:62:53",
+      "right_slot_key": "624:132:53",
+      "b_gap": 354,
+      "u_gap": 70,
+      "slot_sum_gap": 424,
+      "slot_sum_lift": 8,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 36,
+      "u_residue_step": 17,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        2869,
+        2891
+      ],
+      "right_active_interval": [
+        7121,
+        7147
+      ],
+      "recorded_left_phase": [
+        2869,
+        2891
+      ],
+      "recorded_right_phase": [
+        7121,
+        7147
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": 12,
+      "hi_translate_defect": 16,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 16,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        18,
+        4
+      ],
+      "depth_right": [
+        6,
+        20
+      ],
+      "same_depth_signature": false,
+      "min_margin": 24,
+      "min_crt_minus_phase_width": 26
+    },
+    {
+      "transport_cell_key": "side=minus|ell=53|residue=31|p_lift=30|sum_lift=4|b_step=9|lo_defect=9|hi_defect=7|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=53|mod=53|residue=31",
+      "side": "minus",
+      "ell": 53,
+      "crt_residue": 31,
+      "p_values": [
+        3847,
+        5437
+      ],
+      "p_lift": 30,
+      "left_slot_key": "355:80:53",
+      "right_slot_key": "523:124:53",
+      "b_gap": 168,
+      "u_gap": 44,
+      "slot_sum_gap": 212,
+      "slot_sum_lift": 4,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 9,
+      "u_residue_step": 44,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        3837,
+        3860
+      ],
+      "right_active_interval": [
+        5436,
+        5457
+      ],
+      "recorded_left_phase": [
+        3837,
+        3860
+      ],
+      "recorded_right_phase": [
+        5436,
+        5457
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": 9,
+      "hi_translate_defect": 7,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 9,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        10,
+        13
+      ],
+      "depth_right": [
+        1,
+        20
+      ],
+      "same_depth_signature": false,
+      "min_margin": 25,
+      "min_crt_minus_phase_width": 29
+    },
+    {
+      "transport_cell_key": "side=minus|ell=37|residue=14|p_lift=60|sum_lift=6|b_step=0|lo_defect=-10|hi_defect=-8|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=37|mod=37|residue=14",
+      "side": "minus",
+      "ell": 37,
+      "crt_residue": 14,
+      "p_values": [
+        3307,
+        5527
+      ],
+      "p_lift": 60,
+      "left_slot_key": "298:65:37",
+      "right_slot_key": "483:102:37",
+      "b_gap": 185,
+      "u_gap": 37,
+      "slot_sum_gap": 222,
+      "slot_sum_lift": 6,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 0,
+      "u_residue_step": 0,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        3304,
+        3328
+      ],
+      "right_active_interval": [
+        5514,
+        5540
+      ],
+      "recorded_left_phase": [
+        3304,
+        3328
+      ],
+      "recorded_right_phase": [
+        5514,
+        5540
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": -10,
+      "hi_translate_defect": -8,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 10,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        3,
+        21
+      ],
+      "depth_right": [
+        13,
+        13
+      ],
+      "same_depth_signature": false,
+      "min_margin": 26,
+      "min_crt_minus_phase_width": 10
+    },
+    {
+      "transport_cell_key": "side=minus|ell=59|residue=42|p_lift=30|sum_lift=3|b_step=30|lo_defect=30|hi_defect=28|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=59|mod=59|residue=42",
+      "side": "minus",
+      "ell": 59,
+      "crt_residue": 42,
+      "p_values": [
+        5647,
+        7417
+      ],
+      "p_lift": 30,
+      "left_slot_key": "432:78:59",
+      "right_slot_key": "580:107:59",
+      "b_gap": 148,
+      "u_gap": 29,
+      "slot_sum_gap": 177,
+      "slot_sum_lift": 3,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 30,
+      "u_residue_step": 29,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        5614,
+        5649
+      ],
+      "right_active_interval": [
+        7414,
+        7447
+      ],
+      "recorded_left_phase": [
+        5614,
+        5649
+      ],
+      "recorded_right_phase": [
+        7414,
+        7447
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": 30,
+      "hi_translate_defect": 28,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 30,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        33,
+        2
+      ],
+      "depth_right": [
+        3,
+        30
+      ],
+      "same_depth_signature": false,
+      "min_margin": 34,
+      "min_crt_minus_phase_width": 23
+    },
+    {
+      "transport_cell_key": "side=minus|ell=89|residue=88|p_lift=30|sum_lift=3|b_step=45|lo_defect=-3|hi_defect=-2|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=89|mod=89|residue=88",
+      "side": "minus",
+      "ell": 89,
+      "crt_residue": 88,
+      "p_values": [
+        7297,
+        9967
+      ],
+      "p_lift": 30,
+      "left_slot_key": "687:159:89",
+      "right_slot_key": "910:203:89",
+      "b_gap": 223,
+      "u_gap": 44,
+      "slot_sum_gap": 267,
+      "slot_sum_lift": 3,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 45,
+      "u_residue_step": 44,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        7288,
+        7310
+      ],
+      "right_active_interval": [
+        9955,
+        9978
+      ],
+      "recorded_left_phase": [
+        7288,
+        7310
+      ],
+      "recorded_right_phase": [
+        9955,
+        9978
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": -3,
+      "hi_translate_defect": -2,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 3,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        9,
+        13
+      ],
+      "depth_right": [
+        12,
+        11
+      ],
+      "same_depth_signature": false,
+      "min_margin": 44,
+      "min_crt_minus_phase_width": 65
+    },
+    {
+      "transport_cell_key": "side=minus|ell=29|residue=24|p_lift=30|sum_lift=3|b_step=15|lo_defect=5|hi_defect=6|lower=lo_diag|upper=hi_diag,hi_div_u",
+      "residue_packet_key": "size=1|side=minus|ells=29|mod=29|residue=24",
+      "side": "minus",
+      "ell": 29,
+      "crt_residue": 24,
+      "p_values": [
+        6317,
+        7187
+      ],
+      "p_lift": 30,
+      "left_slot_key": "620:151:29",
+      "right_slot_key": "693:165:29",
+      "b_gap": 73,
+      "u_gap": 14,
+      "slot_sum_gap": 87,
+      "slot_sum_lift": 3,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 15,
+      "u_residue_step": 14,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag"
+      ],
+      "left_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_div_u",
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag",
+        "hi_div_u"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        6311,
+        6331
+      ],
+      "right_active_interval": [
+        7186,
+        7207
+      ],
+      "recorded_left_phase": [
+        6311,
+        6331
+      ],
+      "recorded_right_phase": [
+        7186,
+        7207
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": 5,
+      "hi_translate_defect": 6,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 6,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        6,
+        14
+      ],
+      "depth_right": [
+        1,
+        20
+      ],
+      "same_depth_signature": false,
+      "min_margin": 56,
+      "min_crt_minus_phase_width": 7
+    },
+    {
+      "transport_cell_key": "side=plus|ell=79|residue=39|p_lift=20|sum_lift=3|b_step=26|lo_defect=-18|hi_defect=-21|lower=lo_diag,lo_div_u|upper=hi_diag",
+      "residue_packet_key": "size=1|side=plus|ells=79|mod=79|residue=39",
+      "side": "plus",
+      "ell": 79,
+      "crt_residue": 39,
+      "p_values": [
+        7307,
+        8887
+      ],
+      "p_lift": 20,
+      "left_slot_key": "663:147:79",
+      "right_slot_key": "847:200:79",
+      "b_gap": 184,
+      "u_gap": 53,
+      "slot_sum_gap": 237,
+      "slot_sum_lift": 3,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 26,
+      "u_residue_step": 53,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_div_u",
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_div_u",
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag",
+        "lo_div_u"
+      ],
+      "left_upper_active": [
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        7307,
+        7331
+      ],
+      "right_active_interval": [
+        8869,
+        8890
+      ],
+      "recorded_left_phase": [
+        7307,
+        7331
+      ],
+      "recorded_right_phase": [
+        8869,
+        8890
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": -18,
+      "hi_translate_defect": -21,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 21,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        0,
+        24
+      ],
+      "depth_right": [
+        18,
+        3
+      ],
+      "same_depth_signature": false,
+      "min_margin": 60,
+      "min_crt_minus_phase_width": 54
+    },
+    {
+      "transport_cell_key": "side=plus|ell=103|residue=64|p_lift=6|sum_lift=-2|b_step=77|lo_defect=-23|hi_defect=-10|lower=lo_diag,lo_div_u|upper=hi_diag",
+      "residue_packet_key": "size=1|side=plus|ells=103|mod=103|residue=64",
+      "side": "plus",
+      "ell": 103,
+      "crt_residue": 64,
+      "p_values": [
+        8819,
+        9437
+      ],
+      "p_lift": 6,
+      "left_slot_key": "881:220:103",
+      "right_slot_key": "752:143:103",
+      "b_gap": -129,
+      "u_gap": -77,
+      "slot_sum_gap": -206,
+      "slot_sum_lift": -2,
+      "slot_sum_lift_integral": true,
+      "b_residue_step": 77,
+      "u_residue_step": 26,
+      "residue_step_sum_mod_ell": 0,
+      "left_lower_active": [
+        "lo_div_u",
+        "lo_diag"
+      ],
+      "right_lower_active": [
+        "lo_div_u",
+        "lo_diag"
+      ],
+      "common_lower_active": [
+        "lo_diag",
+        "lo_div_u"
+      ],
+      "left_upper_active": [
+        "hi_diag"
+      ],
+      "right_upper_active": [
+        "hi_diag"
+      ],
+      "common_upper_active": [
+        "hi_diag"
+      ],
+      "active_edge_mode_intersects": true,
+      "left_active_interval": [
+        8819,
+        8838
+      ],
+      "right_active_interval": [
+        9414,
+        9446
+      ],
+      "recorded_left_phase": [
+        8819,
+        8838
+      ],
+      "recorded_right_phase": [
+        9414,
+        9446
+      ],
+      "active_interval_matches_record": true,
+      "lo_translate_defect": -23,
+      "hi_translate_defect": -10,
+      "exact_phase_translate": false,
+      "max_abs_edge_defect": 23,
+      "edge_defect_strictly_below_ell": true,
+      "depth_left": [
+        0,
+        19
+      ],
+      "depth_right": [
+        23,
+        9
+      ],
+      "same_depth_signature": false,
+      "min_margin": 67,
+      "min_crt_minus_phase_width": 70
+    }
+  ]
+}
