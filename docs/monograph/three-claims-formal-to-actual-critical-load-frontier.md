@@ -846,3 +846,38 @@ phase horizon surplus = 10
 ```
 
 这就是目前最精确的显式矛盾交叉点：反例链需要通过端点自反馈吞掉距离 `40` 的 CRT 代表；真实链在当前 primitive 双槽结构下最多给出 `30` 的反馈地平线。差额 `10` 不能再解释为 formal envelope、几何支撑回补或同向 source 重物化，只能登记为 `EndpointReleaseFeedbackHorizon-PDEC`，或进入方向改变/source 重物化/SAE 出口。
+
+## 22. PM endpoint-release feedback-horizon slack 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-feedback-horizon-slack-audit.md
+data/prime-matrix-affine-twin-endpoint-release-feedback-horizon-slack-ledger.json
+```
+
+把 `EndpointReleaseFeedbackHorizon-PDEC` 的最小剩余再写成 skew 缺口：
+
+```text
+required total skew = max(0, window distance - support width)
+required extra skew = required total skew - current side-depth skew
+required extra skew = phase horizon surplus
+```
+
+当前读数为：
+
+```text
+total_required_absorption_skew=2292
+total_current_side_depth_skew=95
+total_required_extra_skew=2197
+current_skew_coverage_ratio=0.0414485165794
+extra_skew_deficit_ratio=0.958551483421
+min_required_extra_skew=10
+max_required_extra_skew=409
+all_pure_orientation_flips_fail_absorption=true
+same_orientation_source_rematerialization_absent=true
+```
+
+这说明当前真实链中的侧深度差只支付了所需 skew 的约 `4.14%`，剩余约 `95.86%` 必须由新的 skew-growth 或方向改变 primitive key 供给。最窄 `19:12` 需要新增 skew `10`；纯方向翻转不改变绝对 skew，同向 source 重物化也为空，所以该缺口不能再由上一层自反馈解释吸收。
+
+因此最新可攻接口变成：排斥 `EndpointSkewGrowth-PDEC`，或证明任何方向改变/source 重物化都必须进入可求和 `SAE` 或 `ColumnCRT/PDEC`。这仍是行/列命题内部同一条 actual-load 主线，不是命题转换。

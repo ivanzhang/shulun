@@ -625,3 +625,41 @@ endpoint_release_feedback_horizon_structured_current_sweep=true
 ```
 
 本步关闭当前 sweep 的端点自反馈吸收通道，并把剩余硬点压成 `EndpointReleaseFeedbackHorizon-PDEC` 的全局排斥或路由。
+
+## 15. PM endpoint-release feedback-horizon slack 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-feedback-horizon-slack-audit.md
+data/prime-matrix-affine-twin-endpoint-release-feedback-horizon-slack-ledger.json
+```
+
+把上一层 `phase horizon surplus` 再压成“必须新增的 side-depth skew”：
+
+```text
+required total skew = max(0, window distance - support width)
+required extra skew = required total skew - current side-depth skew
+required extra skew = phase horizon surplus
+```
+
+当前证书给出：
+
+```text
+support_motion_candidate_count=11
+support_width=20
+total_required_absorption_skew=2292
+total_current_side_depth_skew=95
+total_required_extra_skew=2197
+current_skew_coverage_ratio=0.0414485165794
+extra_skew_deficit_ratio=0.958551483421
+min_required_extra_skew=10
+all_required_extra_skews_equal_phase_surpluses=true
+all_pure_orientation_flips_fail_absorption=true
+same_orientation_source_rematerialization_absent=true
+feedback_horizon_slack_structured_current_sweep=true
+```
+
+最窄 atom 仍是 `19:12`：CRT 代表距离 `40`，support width `20`，吸收所需总 skew 为 `20`；当前 skew 为 `10`，必须额外增长 `10`。纯方向翻转保持绝对 skew，因此不能缩短该缺口；同向 moving-key 候选 `[61,111]` 继承 source-rematerialization 账本后仍无精确重物化。
+
+本步把当前最窄剩余从“地平线缺口”进一步压成 `EndpointSkewGrowth-PDEC/OrientationChangingPrimitiveKey-SAE`：若反例链要继续吸收该缺口，就必须提供新的 skew-growth 机制、方向改变 primitive key，或进入 source 重物化/SAE 出口。全局行/列命题仍未无条件闭合。
