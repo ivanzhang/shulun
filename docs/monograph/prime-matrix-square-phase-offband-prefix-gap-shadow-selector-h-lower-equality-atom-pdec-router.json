@@ -11,7 +11,7 @@
     "margin_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-residual-prime-margin-ledger.json",
     "equality_atom_count": 1,
     "equality_atom_pdec_registration_closed": true,
-    "partition_identity_closed": false,
+    "partition_identity_closed": true,
     "residual_prime_pair_count": 6,
     "highfactor_absorber_count": 8,
     "low357_composite_count": 20,
@@ -373,11 +373,11 @@
     }
   ],
   "source_hashes": {
-    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_equality_atom_pdec_router.py": "2ef7c1f621c75ed1481abf97c7e6b1e8b9095b0ed34390432e656e705b1e5e75",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_equality_atom_pdec_router.py": "e288308e960c368193aa855951daaa07ce0afbdf7854da0d0971a560458f1f43",
     "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_companion_composite_loss_router.py": "1e559ec00bf764d861c0ad5a4bde7c3563c27d511a9d9ba2dd46170ae16badc7",
     "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-residual-prime-margin-ledger.json": "299142fca047a22e5c7b50dded1c01b6330bf08143b01609e2b90387b67d6330",
-    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-equality-atom-pdec-ledger.json": "631a87ae9131deabfaadb40928de4a26de1b647a7b7d7accd35093ef6d5bb7ae",
-    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-equality-atom-pdec-router.md": "720a8da533422d8a6123908cafd405fd1b4db32fde7f0b6a915e06d7762abc16"
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-equality-atom-pdec-ledger.json": "8c8ff584751f4c6af83ee0c176dc5ba85e18ffe2d9e408457042f4395f786305",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-equality-atom-pdec-router.md": "6623a0796814a21cde84749cd00d1bb1f0bc5a750802326fed4eb75c216612e4"
   },
   "plain_conclusion": "本步把唯一 residual-prime 等号原子登记为 formal-unit PDEC 候选。该原子为 `P=2467, minus, rho=7`，cap 分区为 low357=20、highfactor=8、prime_pairs=6；其中 residual prime pairs 恰等于 `Bcrit-1`，所以 margin=0。这仍不是全局闭合；下一步必须排斥该等号相位持久复现，或证明全局正 margin。",
   "decision_rows": [
@@ -390,7 +390,7 @@
     },
     {
       "gate": "EqualityAtomPartitionIdentityClosed",
-      "closed": false,
+      "closed": true,
       "proved": true,
       "meaning": "等号原子的 cap 分区与 margin=0 身份闭合。",
       "remaining": "closed"

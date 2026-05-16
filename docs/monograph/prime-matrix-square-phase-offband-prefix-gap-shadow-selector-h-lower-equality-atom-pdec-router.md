@@ -11,7 +11,7 @@ low357_composite_count=20
 highfactor_absorber_count=8
 residual_prime_pair_count=6
 total_cap_count=34
-partition_identity_closed=false
+partition_identity_closed=true
 row_column_unconditional_closed=false
 ```
 
@@ -74,7 +74,7 @@ row_column_unconditional_closed=false
 | gate | closed | proved | meaning | remaining |
 | --- | ---: | ---: | --- | --- |
 | `EqualityAtomPDECRegistrationClosed` | `true` | `true` | 唯一等号原子已登记为 formal-unit PDEC 候选。 | closed |
-| `EqualityAtomPartitionIdentityClosed` | `false` | `true` | 等号原子的 cap 分区与 margin=0 身份闭合。 | closed |
+| `EqualityAtomPartitionIdentityClosed` | `true` | `true` | 等号原子的 cap 分区与 margin=0 身份闭合。 | closed |
 | `EqualityAtomPDECExcluded` | `false` | `false` | 仍需排斥该等号 formal unit 的持久复现。 | ResidualPrimeEqualityAtomPDECExclusionOrGlobalMarginJump |
 | `GlobalMarginJumpProved` | `false` | `false` | 仍需证明全局正 margin 或 12 跳跃余量。 | ResidualPrimeEqualityAtomPDECExclusionOrGlobalMarginJump |
 | `RowColumnUnconditionalClosureReached` | `false` | `false` | 本步只登记等号原子，不关闭全局命题。 | ResidualPrimeEqualityAtomPDECExclusionOrGlobalMarginJump |
@@ -88,7 +88,7 @@ row_column_unconditional_closed=false
 
 | file | sha256 |
 | --- | --- |
-| `experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_equality_atom_pdec_router.py` | `2ef7c1f621c75ed1481abf97c7e6b1e8b9095b0ed34390432e656e705b1e5e75` |
+| `experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_equality_atom_pdec_router.py` | `e288308e960c368193aa855951daaa07ce0afbdf7854da0d0971a560458f1f43` |
 | `experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_companion_composite_loss_router.py` | `1e559ec00bf764d861c0ad5a4bde7c3563c27d511a9d9ba2dd46170ae16badc7` |
 | `data/square-phase-offband-prefix-gap-shadow-selector-h-lower-residual-prime-margin-ledger.json` | `299142fca047a22e5c7b50dded1c01b6330bf08143b01609e2b90387b67d6330` |
-| `data/square-phase-offband-prefix-gap-shadow-selector-h-lower-equality-atom-pdec-ledger.json` | `631a87ae9131deabfaadb40928de4a26de1b647a7b7d7accd35093ef6d5bb7ae` |
+| `data/square-phase-offband-prefix-gap-shadow-selector-h-lower-equality-atom-pdec-ledger.json` | `8c8ff584751f4c6af83ee0c176dc5ba85e18ffe2d9e408457042f4395f786305` |

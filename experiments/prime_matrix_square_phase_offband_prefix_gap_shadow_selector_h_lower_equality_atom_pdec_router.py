@@ -207,8 +207,10 @@ def build_result(margin_ledger: Path) -> dict[str, Any]:
     slots = classify_slots(p_value, side)
     partition = slots["partition_counts"]
     bcrit = int(atom["failure_loaded_b_breakpoint"])
+    residual_cap_count = int(atom["small_sieve_357_residual_cap_count"])
     partition_identity = (
-        partition["total_cap"] == int(atom["small_sieve_357_residual_cap_count"])
+        partition["highfactor_composite"] + partition["residual_prime_pair"] == residual_cap_count
+        and partition["total_cap"] == partition["low357_composite"] + residual_cap_count
         and partition["residual_prime_pair"] == int(atom["residual_prime_pair_count"])
         and partition["residual_prime_pair"] == bcrit - 1
     )
