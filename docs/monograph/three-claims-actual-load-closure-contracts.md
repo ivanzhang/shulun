@@ -1019,3 +1019,29 @@ all_support_width_nearscale_bridges_fractured_current_sweep=true
 因此即使把 exact equality 放宽到支撑宽度邻域，同时靠近 source 与 unused jump 的也只有两个 q：`61` 和 `65`。`61` 仍失败于 AffineTwin 同向 prime/source gate；`65` 是合数。其余近 unused jump 的 q 没有近 source，不能组成 actual 相位桥。
 
 本步关闭当前 sweep 的 support-width near-scale 偷渡解释。全局仍需把 `SupportWidthNearScaleGlobalNoGo` 升格为族定理，或继续处理 source-rematerialization、unused-target arrival、ColumnCRT/PDEC 与 moving-family 出口。
+
+## 26. PM endpoint-release orphan near-jump source-deficit 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-orphan-nearjump-source-deficit-audit.md
+data/prime-matrix-affine-twin-endpoint-release-orphan-nearjump-source-deficit-ledger.json
+```
+
+继续处理 support-width near-scale 中只靠近 unused-target jump、但不靠近 source 的 orphan 候选。它们是：
+
+```text
+orphan_nearjump_q_values=[96, 111, 154, 293, 297, 355, 386]
+orphan_nearjump_moving_route_histogram={'CompositeQ': 6, 'PrimeButNotTwinAffine': 1}
+min_source_gap_abs_delta=35
+min_source_gap_abs_delta_minus_support_width=15
+min_source_gap_deficit_q=96
+all_orphan_nearjump_source_gaps_exceed_support_width=true
+all_orphan_nearjump_events_need_new_side_residue=true
+orphan_nearjump_source_deficit_closed_current_sweep=true
+```
+
+因此这些 orphan 候选虽然靠近 unused-target jump，但最近 source scale 也至少距离 `35`，已经超过 support width `20`。同时所有 unused-target 事件都需要新增侧残基，moving source 均未物化，候选本身也全部失败于合数或 AffineTwin prime/source gate。
+
+本步给出的显式矛盾点是：近 target 不等于近 source；反例链若想把 orphan near-jump 变成真实链桥，必须额外移动 source 超过支撑宽度，并且还要支付新侧残基 arrival。当前 sweep 中这条吸收解释关闭；全局仍需证明 `OrphanNearJumpSourceDeficitGlobalNoGo` 或转入命名 PDEC/SAE 出口。
