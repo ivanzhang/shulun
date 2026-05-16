@@ -1,0 +1,163 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_epoch_pair_multiplicity_router",
+  "status": "affine_twin_epoch_pair_sparse_eta_gate_passes_current_sweep_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "moving_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json",
+    "eta_numerator": 1,
+    "eta_denominator": 40,
+    "eta": 0.025,
+    "candidate_epoch_pair_count": 3,
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "candidate_product_mass_upper_sum": 0.023577117628562343,
+    "candidate_product_mass_upper_sum_below_eta": true,
+    "candidate_total_eta_slack": 0.0014228823714376587,
+    "realized_affine_twin_sae_mass_sum": 0.0011123470522803114,
+    "all_candidate_epoch_pair_occupancy_below_eta": true,
+    "min_eta_slack_numerator": 419,
+    "max_occupancy_upper_ratio": 0.013348164627363738,
+    "high_density_epoch_pair_count": 0,
+    "current_sparse_acceptance_closed": true,
+    "global_sparse_sae_bound_proved": false,
+    "high_density_epoch_pair_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "affine_twin_epoch_pair_multiplicity_rows": [
+    {
+      "q": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "epoch_pair_capacity": 899,
+      "epoch_pair_product_used_upper": 12,
+      "occupancy_upper_ratio": 0.013348164627363738,
+      "eta": 0.025,
+      "eta_slack_numerator": 419,
+      "eta_slack_denominator": 35960,
+      "occupancy_below_eta": true,
+      "high_density_epoch_pair_pdec_trigger": false,
+      "realized_current_sweep": true,
+      "realized_pair_count": 1,
+      "realized_sae_mass": 0.0011123470522803114,
+      "single_pair_sae_mass": 0.0011123470522803114,
+      "fixed_pair_modulus_margin": 879,
+      "source_realized_key": "dir=lower|gen=29|gap=31|fill=31|sides=minus->plus|dp=80|db=-13|du=-7|dr=-11"
+    },
+    {
+      "q": 43,
+      "generator_ell": 41,
+      "fill_ell": 43,
+      "epoch_pair_capacity": 1763,
+      "epoch_pair_product_used_upper": 16,
+      "occupancy_upper_ratio": 0.009075439591605219,
+      "eta": 0.025,
+      "eta_slack_numerator": 1123,
+      "eta_slack_denominator": 70520,
+      "occupancy_below_eta": true,
+      "high_density_epoch_pair_pdec_trigger": false,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "realized_sae_mass": 0.0,
+      "single_pair_sae_mass": 0.0005672149744753262,
+      "fixed_pair_modulus_margin": 1737,
+      "source_realized_key": null
+    },
+    {
+      "q": 103,
+      "generator_ell": 101,
+      "fill_ell": 103,
+      "epoch_pair_capacity": 10403,
+      "epoch_pair_product_used_upper": 12,
+      "occupancy_upper_ratio": 0.0011535134095933864,
+      "eta": 0.025,
+      "eta_slack_numerator": 9923,
+      "eta_slack_denominator": 416120,
+      "occupancy_below_eta": true,
+      "high_density_epoch_pair_pdec_trigger": false,
+      "realized_current_sweep": false,
+      "realized_pair_count": 0,
+      "realized_sae_mass": 0.0,
+      "single_pair_sae_mass": 9.612611746611554e-05,
+      "fixed_pair_modulus_margin": 10347,
+      "source_realized_key": null
+    }
+  ],
+  "high_density_epoch_pair_pdec_rows": [],
+  "current_sparse_acceptance_closed": true,
+  "global_sparse_sae_bound_proved": false,
+  "high_density_epoch_pair_pdec_excluded_globally": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "AffineTwinEpochPairMultiplicityBoundOrColumnCRTPDECExclusion",
+  "hardpoint_after_router": "AffineTwinSparseSAEGlobalBoundOrHighDensityEpochPairPDECExclusion",
+  "next_direct_attack_target": "AffineTwinSparseSAEGlobalBoundOrHighDensityEpochPairPDECExclusion",
+  "theorem_rows": [
+    {
+      "name": "current_affine_twin_epoch_pair_sparse_acceptance",
+      "status": "closed_current_sweep",
+      "statement": "For eta=1/40, every current candidate affine-twin epoch-pair has product occupancy below eta, and the total candidate product occupancy is also below eta."
+    },
+    {
+      "name": "high_density_epoch_pair_pdec_trigger",
+      "status": "closed_routing",
+      "statement": "If an affine-twin epoch-pair violates the eta sparse gate, the offending q gives a named HighDensityEpochPair-PDEC/ColumnCRT certificate."
+    },
+    {
+      "name": "global_sparse_sae_bound",
+      "status": "open",
+      "statement": "A global proof must show the sparse gate persists with summable SAE mass, or exclude the high-density epoch-pair PDEC family."
+    }
+  ],
+  "plain_conclusion": "本步把 AffineTwin epoch-pair multiplicity 压成 eta 稀疏门：取 `eta=1/40`，当前候选 `q` 的乘法占用上界逐项低于 eta，且总占用也低于 eta。当前最大占用为 0.013348164627，总占用为 0.023577117629，总 eta 余量为 0.001422882371。若全局出现 eta 门失败，失败行已被命名为 HighDensityEpochPair-PDEC/ColumnCRT；否则进入 sparse SAE 账本。",
+  "decision_rows": [
+    {
+      "gate": "CurrentEpochPairSparseEtaGateClosed",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前候选 twin epoch-pair 全部低于 eta=1/40。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "CurrentTotalCandidateMassBelowEta",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前候选乘法占用总质量也低于 eta=1/40。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "HighDensityEpochPairPDECRouted",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 eta 门失败，失败行已命名为 HighDensityEpochPair-PDEC/ColumnCRT。",
+      "remaining": "exclusion still separate"
+    },
+    {
+      "gate": "GlobalSparseSAEBoundProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需证明全局稀疏 SAE 质量可求和并足以吸收反例链。",
+      "remaining": "AffineTwinSparseSAEGlobalBoundOrHighDensityEpochPairPDECExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只完成当前候选稀疏验收与高密度出口命名，不关闭全局行/列命题。",
+      "remaining": "AffineTwinSparseSAEGlobalBoundOrHighDensityEpochPairPDECExclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_epoch_pair_multiplicity_router.py": "cadb393015006e2c3b7126fb7677607f23328ad1f3d42198729d0cb78d088288",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-ledger.json": "2e401269ab68cb196babfb74e6f7b63c946ee9de37bc6ab5d502f49deaa7bf28",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-ledger.json": "8323447f703d339a1ff63e35f0dcaff4d697b295ea79241f67c23d2ecd5c00d3",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-router.md": "34bb92a4726864926e8f63fd41b79fbb36f69c71853cbd673397509eb7329d13"
+  }
+}
