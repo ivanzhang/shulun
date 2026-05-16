@@ -1,0 +1,231 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_threshold_route_classifier",
+  "status": "affine_twin_threshold_crossing_routes_classified_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "threshold_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-integer-threshold-deficit-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "route_class_histogram": {
+      "MixedCoaccumulationOnly": 1,
+      "FillCatchUpOrMixed": 2
+    },
+    "all_minimal_routes_require_fill_increment": true,
+    "fill_only_route_q_values": [],
+    "mixed_only_route_q_values": [
+      31
+    ],
+    "composite_route_q_values": [
+      43,
+      103
+    ],
+    "max_fill_catchup_multiplier_upper": 9.0,
+    "min_fill_delay_per_required_fill_increment": 80.0,
+    "route_classifier_closed_current_sweep": true,
+    "fill_catchup_or_mixed_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "threshold_route_rows": [
+    {
+      "q": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "current_generator_used": 3,
+      "current_fill_used": 4,
+      "current_residue_product": 12,
+      "integer_safe_product_threshold": 29,
+      "integer_product_slack": 17,
+      "min_total_extra_residues_to_cross": 4,
+      "route_class": "MixedCoaccumulationOnly",
+      "minimal_route_requires_fill_increment": true,
+      "minimal_route_can_be_fill_only": false,
+      "minimal_route_can_be_mixed": true,
+      "minimal_route_can_be_generator_only": false,
+      "min_extra_fill_in_minimal_routes": 1,
+      "min_extra_generator_in_minimal_routes": 2,
+      "max_new_fill_in_minimal_routes": 6,
+      "max_new_generator_in_minimal_routes": 6,
+      "fill_catchup_multiplier_upper": 1.5,
+      "generator_catchup_multiplier_upper": 2.0,
+      "fill_activation_delay_over_generator": 80,
+      "fill_delay_per_required_fill_increment": 80.0,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 2,
+          "extra_fill_residues": 2,
+          "new_generator_used": 5,
+          "new_fill_used": 6,
+          "new_product": 30
+        },
+        {
+          "extra_generator_residues": 3,
+          "extra_fill_residues": 1,
+          "new_generator_used": 6,
+          "new_fill_used": 5,
+          "new_product": 30
+        }
+      ],
+      "threshold_crossing_pdec_name": "AffineTwin-MixedCoaccumulationOnly-ThresholdCrossing-PDEC",
+      "realized_current_sweep": true
+    },
+    {
+      "q": 43,
+      "generator_ell": 41,
+      "fill_ell": 43,
+      "current_generator_used": 8,
+      "current_fill_used": 2,
+      "current_residue_product": 16,
+      "integer_safe_product_threshold": 41,
+      "integer_product_slack": 25,
+      "min_total_extra_residues_to_cross": 4,
+      "route_class": "FillCatchUpOrMixed",
+      "minimal_route_requires_fill_increment": true,
+      "minimal_route_can_be_fill_only": true,
+      "minimal_route_can_be_mixed": true,
+      "minimal_route_can_be_generator_only": false,
+      "min_extra_fill_in_minimal_routes": 3,
+      "min_extra_generator_in_minimal_routes": 0,
+      "max_new_fill_in_minimal_routes": 6,
+      "max_new_generator_in_minimal_routes": 9,
+      "fill_catchup_multiplier_upper": 3.0,
+      "generator_catchup_multiplier_upper": 1.125,
+      "fill_activation_delay_over_generator": 1610,
+      "fill_delay_per_required_fill_increment": 536.6666666666666,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 0,
+          "extra_fill_residues": 4,
+          "new_generator_used": 8,
+          "new_fill_used": 6,
+          "new_product": 48
+        },
+        {
+          "extra_generator_residues": 1,
+          "extra_fill_residues": 3,
+          "new_generator_used": 9,
+          "new_fill_used": 5,
+          "new_product": 45
+        }
+      ],
+      "threshold_crossing_pdec_name": "AffineTwin-FillCatchUpOrMixed-ThresholdCrossing-PDEC",
+      "realized_current_sweep": false
+    },
+    {
+      "q": 103,
+      "generator_ell": 101,
+      "fill_ell": 103,
+      "current_generator_used": 12,
+      "current_fill_used": 1,
+      "current_residue_product": 12,
+      "integer_safe_product_threshold": 101,
+      "integer_product_slack": 89,
+      "min_total_extra_residues_to_cross": 8,
+      "route_class": "FillCatchUpOrMixed",
+      "minimal_route_requires_fill_increment": true,
+      "minimal_route_can_be_fill_only": true,
+      "minimal_route_can_be_mixed": true,
+      "minimal_route_can_be_generator_only": false,
+      "min_extra_fill_in_minimal_routes": 7,
+      "min_extra_generator_in_minimal_routes": 0,
+      "max_new_fill_in_minimal_routes": 9,
+      "max_new_generator_in_minimal_routes": 13,
+      "fill_catchup_multiplier_upper": 9.0,
+      "generator_catchup_multiplier_upper": 1.0833333333333333,
+      "fill_activation_delay_over_generator": 1074,
+      "fill_delay_per_required_fill_increment": 153.42857142857142,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 0,
+          "extra_fill_residues": 8,
+          "new_generator_used": 12,
+          "new_fill_used": 9,
+          "new_product": 108
+        },
+        {
+          "extra_generator_residues": 1,
+          "extra_fill_residues": 7,
+          "new_generator_used": 13,
+          "new_fill_used": 8,
+          "new_product": 104
+        }
+      ],
+      "threshold_crossing_pdec_name": "AffineTwin-FillCatchUpOrMixed-ThresholdCrossing-PDEC",
+      "realized_current_sweep": false
+    }
+  ],
+  "fill_catchup_or_mixed_pdec_excluded_globally": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_before_router": "AffineTwinThresholdDeficitBoundOrThresholdCrossingPDECExclusion",
+  "hardpoint_after_router": "AffineTwinFillCatchUpOrMixedCoaccumulationPDECExclusion",
+  "next_direct_attack_target": "AffineTwinFillCatchUpOrMixedCoaccumulationPDECExclusion",
+  "theorem_rows": [
+    {
+      "name": "minimal_threshold_crossing_routes_classified",
+      "status": "closed_current_sweep",
+      "statement": "Every current q has an explicit minimal crossing route; all minimal routes require fill-side residue growth."
+    },
+    {
+      "name": "fill_catchup_and_mixed_routes_split",
+      "status": "closed_routing",
+      "statement": "Threshold crossing splits into FillCatchUp-only, MixedCoaccumulation-only, or composite route classes with named PDEC labels."
+    },
+    {
+      "name": "global_fill_catchup_or_mixed_exclusion",
+      "status": "open",
+      "statement": "A self-contained proof must exclude persistent fill-side catch-up or mixed coaccumulation, or close the named PDEC/ColumnCRT families."
+    }
+  ],
+  "plain_conclusion": "本步把整数阈值穿越缺口继续拆成最小补齐路线。当前所有最小穿越路线都需要 fill 侧新增 residue；`q=31` 是 mixed coaccumulation-only，`q=43,103` 允许 fill-catchup 或 mixed 两种最小补齐，且没有 generator-only 最小路线。最大 fill catch-up 倍率上界为 9.000000，最小 fill 延迟/所需新增 fill 为 80.000000。因此最新硬点从总阈值穿越压成：排斥 fill 侧持久追赶或 mixed 双侧同步补齐。",
+  "decision_rows": [
+    {
+      "gate": "MinimalRoutesClassified",
+      "closed": true,
+      "proved": true,
+      "meaning": "阈值穿越的最小补齐路线已逐 q 分类。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "AllMinimalRoutesRequireFillIncrement",
+      "closed": true,
+      "proved": false,
+      "meaning": "当前所有最小穿越路线都必须增加 fill 侧 residue。",
+      "remaining": "finite evidence only"
+    },
+    {
+      "gate": "RoutePDECsNamed",
+      "closed": true,
+      "proved": true,
+      "meaning": "fill-only 与 mixed 补齐失败形态已命名为具体 PDEC。",
+      "remaining": "exclusion still separate"
+    },
+    {
+      "gate": "GlobalFillCatchupExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "仍需全局证明 fill 侧不能持久追赶到阈值，或排斥对应 PDEC。",
+      "remaining": "AffineTwinFillCatchUpOrMixedCoaccumulationPDECExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只完成阈值穿越路线分类，不关闭全局行/列命题。",
+      "remaining": "AffineTwinFillCatchUpOrMixedCoaccumulationPDECExclusion"
+    }
+  ],
+  "source_hashes": {
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_affine_twin_threshold_route_classifier.py": "9e67ac8c3accdda041bde7e1b2c678ef3bd5f234a3ad29d6f7530195a69ba817",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-integer-threshold-deficit-ledger.json": "4585a4af4e66518873bf3edf31e8b868db6baeaf6d7d9466ad3abafbd8283e0e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-threshold-route-classifier-ledger.json": "af447a26eec5e39236b523897a32afba579de755c400d642fe6ae18e3a27ac71",
+    "docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-threshold-route-classifier.md": "34f3196cf3c09a21eaaf85b8fb1a4714f97bbccd65b5284800d96c018ecb4f8a"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "aggregate": {
+    "threshold_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-integer-threshold-deficit-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "realized_q_values": [
+      31
+    ],
+    "route_class_histogram": {
+      "MixedCoaccumulationOnly": 1,
+      "FillCatchUpOrMixed": 2
+    },
+    "all_minimal_routes_require_fill_increment": true,
+    "fill_only_route_q_values": [],
+    "mixed_only_route_q_values": [
+      31
+    ],
+    "composite_route_q_values": [
+      43,
+      103
+    ],
+    "max_fill_catchup_multiplier_upper": 9.0,
+    "min_fill_delay_per_required_fill_increment": 80.0,
+    "route_classifier_closed_current_sweep": true,
+    "fill_catchup_or_mixed_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "threshold_route_rows": [
+    {
+      "q": 31,
+      "generator_ell": 29,
+      "fill_ell": 31,
+      "current_generator_used": 3,
+      "current_fill_used": 4,
+      "current_residue_product": 12,
+      "integer_safe_product_threshold": 29,
+      "integer_product_slack": 17,
+      "min_total_extra_residues_to_cross": 4,
+      "route_class": "MixedCoaccumulationOnly",
+      "minimal_route_requires_fill_increment": true,
+      "minimal_route_can_be_fill_only": false,
+      "minimal_route_can_be_mixed": true,
+      "minimal_route_can_be_generator_only": false,
+      "min_extra_fill_in_minimal_routes": 1,
+      "min_extra_generator_in_minimal_routes": 2,
+      "max_new_fill_in_minimal_routes": 6,
+      "max_new_generator_in_minimal_routes": 6,
+      "fill_catchup_multiplier_upper": 1.5,
+      "generator_catchup_multiplier_upper": 2.0,
+      "fill_activation_delay_over_generator": 80,
+      "fill_delay_per_required_fill_increment": 80.0,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 2,
+          "extra_fill_residues": 2,
+          "new_generator_used": 5,
+          "new_fill_used": 6,
+          "new_product": 30
+        },
+        {
+          "extra_generator_residues": 3,
+          "extra_fill_residues": 1,
+          "new_generator_used": 6,
+          "new_fill_used": 5,
+          "new_product": 30
+        }
+      ],
+      "threshold_crossing_pdec_name": "AffineTwin-MixedCoaccumulationOnly-ThresholdCrossing-PDEC",
+      "realized_current_sweep": true
+    },
+    {
+      "q": 43,
+      "generator_ell": 41,
+      "fill_ell": 43,
+      "current_generator_used": 8,
+      "current_fill_used": 2,
+      "current_residue_product": 16,
+      "integer_safe_product_threshold": 41,
+      "integer_product_slack": 25,
+      "min_total_extra_residues_to_cross": 4,
+      "route_class": "FillCatchUpOrMixed",
+      "minimal_route_requires_fill_increment": true,
+      "minimal_route_can_be_fill_only": true,
+      "minimal_route_can_be_mixed": true,
+      "minimal_route_can_be_generator_only": false,
+      "min_extra_fill_in_minimal_routes": 3,
+      "min_extra_generator_in_minimal_routes": 0,
+      "max_new_fill_in_minimal_routes": 6,
+      "max_new_generator_in_minimal_routes": 9,
+      "fill_catchup_multiplier_upper": 3.0,
+      "generator_catchup_multiplier_upper": 1.125,
+      "fill_activation_delay_over_generator": 1610,
+      "fill_delay_per_required_fill_increment": 536.6666666666666,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 0,
+          "extra_fill_residues": 4,
+          "new_generator_used": 8,
+          "new_fill_used": 6,
+          "new_product": 48
+        },
+        {
+          "extra_generator_residues": 1,
+          "extra_fill_residues": 3,
+          "new_generator_used": 9,
+          "new_fill_used": 5,
+          "new_product": 45
+        }
+      ],
+      "threshold_crossing_pdec_name": "AffineTwin-FillCatchUpOrMixed-ThresholdCrossing-PDEC",
+      "realized_current_sweep": false
+    },
+    {
+      "q": 103,
+      "generator_ell": 101,
+      "fill_ell": 103,
+      "current_generator_used": 12,
+      "current_fill_used": 1,
+      "current_residue_product": 12,
+      "integer_safe_product_threshold": 101,
+      "integer_product_slack": 89,
+      "min_total_extra_residues_to_cross": 8,
+      "route_class": "FillCatchUpOrMixed",
+      "minimal_route_requires_fill_increment": true,
+      "minimal_route_can_be_fill_only": true,
+      "minimal_route_can_be_mixed": true,
+      "minimal_route_can_be_generator_only": false,
+      "min_extra_fill_in_minimal_routes": 7,
+      "min_extra_generator_in_minimal_routes": 0,
+      "max_new_fill_in_minimal_routes": 9,
+      "max_new_generator_in_minimal_routes": 13,
+      "fill_catchup_multiplier_upper": 9.0,
+      "generator_catchup_multiplier_upper": 1.0833333333333333,
+      "fill_activation_delay_over_generator": 1074,
+      "fill_delay_per_required_fill_increment": 153.42857142857142,
+      "min_crossing_witnesses": [
+        {
+          "extra_generator_residues": 0,
+          "extra_fill_residues": 8,
+          "new_generator_used": 12,
+          "new_fill_used": 9,
+          "new_product": 108
+        },
+        {
+          "extra_generator_residues": 1,
+          "extra_fill_residues": 7,
+          "new_generator_used": 13,
+          "new_fill_used": 8,
+          "new_product": 104
+        }
+      ],
+      "threshold_crossing_pdec_name": "AffineTwin-FillCatchUpOrMixed-ThresholdCrossing-PDEC",
+      "realized_current_sweep": false
+    }
+  ]
+}
