@@ -1243,3 +1243,41 @@ all_carrier_targets_not_supported_actual_current_sweep=true
 这说明 target 近邻只是 unused-target arrival 的重复投影，不是新的 actual packet。特别是唯一 exact zero phase `q=61,q-2=59,jump=59` 仍落在 `19:12 -> 20:9`，需要新增 generator residue `20`；相位精确贴合并没有消除 target 侧新残基成本。
 
 所以当前局部矛盾场又压窄一层：若反例链继续要求这些 target 近邻真实出现，就必须给出新侧残基的全局到达机制；若该机制持久复现，则登记为 `NewGeneratorResidueArrival-PDEC/SAE`、`NewFillResidueArrival-PDEC/SAE` 或 `ColumnCRT/PDEC`，不能留作未命名吸收。
+
+## 36. PM endpoint-release carrier-arrival pressure-product 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-carrier-arrival-pressure-product-audit.md
+data/prime-matrix-affine-twin-endpoint-release-carrier-arrival-pressure-product-ledger.json
+```
+
+本节把上一步的 arrival 义务翻译成 actual-load 压力乘积。基础 formal side sets 为：
+
+```text
+generator residues=[13,15,19], count=3
+fill residues=[8,9,12,28], count=4
+side_product=12
+```
+
+carrier-arrival packet 需要的新侧残基为：
+
+```text
+new generator=[10,16,17,18,20]
+new fill=[5,6,7,30]
+```
+
+如果这些 target atoms 被真实物化，则侧计数变成 `(8,8)`，于是：
+
+```text
+64^2 > 29*31, with excess 3197.
+```
+
+最精确的本地 crossing 更强：任意两个双侧 target atoms 就产生 `(5,6)`，乘积 `30`，而
+
+```text
+30^2-29*31=1.
+```
+
+这个 `+1` 是当前反例链和真实链之间最窄的压力断点：反例链为了把 target arrival 变成 actual load，必须越过平方根临界面；真实链的账本纪律则要求这一步被登记为 `SuperSqrt/PressureProduct-PDEC`。因此最新剩余不再是匿名 arrival，而是 `SuperSqrtPressureProductPDECExclusion` 的全局排斥，或把该族作为命名 PDEC 出口保留。

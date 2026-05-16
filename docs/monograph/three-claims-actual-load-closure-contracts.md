@@ -1101,3 +1101,38 @@ carrier_arrival_routed_current_sweep=true
 因此 target 侧近邻没有匿名吸收：所有 carrier 事件都已经落到 closed unused-target arrival 原子。唯一 exact zero phase 事件 `q=61,q-2=59,jump=59` 也仍然需要新增 generator residue `20`，并且 source gate 已在 `61/59` phase-fracture 中失败。
 
 本步把当前 sweep 的 near-jump target 侧全部回收到“新侧残基到达”账本。全局剩余进一步压成 `GlobalUnusedTargetResidueArrivalBound`，或命名 `NewGeneratorResidueArrival-PDEC/SAE`、`NewFillResidueArrival-PDEC/SAE`、`ColumnCRT/PDEC` 与 moving-family 出口。
+
+## 29. PM endpoint-release carrier-arrival pressure-product 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-carrier-arrival-pressure-product-audit.md
+data/prime-matrix-affine-twin-endpoint-release-carrier-arrival-pressure-product-ledger.json
+```
+
+继续把 carrier-arrival 从“新残基到达”推进到压力乘积门。当前 AffineTwin slot 为 `g=29,f=31`，所以平方根门为：
+
+```text
+sqrt_floor=floor(sqrt(29*31))=29
+base_counts=(3,4)
+base_side_product=12
+```
+
+若物化 carrier-arrival 使用的全部新残基：
+
+```text
+carrier_required_new_generator_residues=[10, 16, 17, 18, 20]
+carrier_required_new_fill_residues=[5, 6, 7, 30]
+full_counts_after_carrier_arrival=(8,8)
+full_side_product_after_carrier_arrival=64
+full_square_excess_over_modulus_product=3197
+```
+
+更窄的断点是：任意两个双侧 target atoms 已经把侧计数推到 `(5,6)`，乘积 `30`，并且
+
+```text
+30^2-29*31=1.
+```
+
+所以当前 carrier-arrival packet 若真实物化，不再是普通 arrival 义务，而是立即触发 `SuperSqrt/PressureProduct-PDEC`。若该 PDEC 被排斥，则当前 carrier-arrival packet 不能复现；若不排斥，它就是显式命名出口。
