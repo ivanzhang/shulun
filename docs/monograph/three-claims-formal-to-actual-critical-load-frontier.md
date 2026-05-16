@@ -881,3 +881,34 @@ same_orientation_source_rematerialization_absent=true
 这说明当前真实链中的侧深度差只支付了所需 skew 的约 `4.14%`，剩余约 `95.86%` 必须由新的 skew-growth 或方向改变 primitive key 供给。最窄 `19:12` 需要新增 skew `10`；纯方向翻转不改变绝对 skew，同向 source 重物化也为空，所以该缺口不能再由上一层自反馈解释吸收。
 
 因此最新可攻接口变成：排斥 `EndpointSkewGrowth-PDEC`，或证明任何方向改变/source 重物化都必须进入可求和 `SAE` 或 `ColumnCRT/PDEC`。这仍是行/列命题内部同一条 actual-load 主线，不是命题转换。
+
+## 23. PM endpoint-release bidirectional skew-hull 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-bidirectional-skew-hull-audit.md
+data/prime-matrix-affine-twin-endpoint-release-bidirectional-skew-hull-ledger.json
+```
+
+将逆元最小对齐解的思想局部化到当前 AffineTwin 原子：旧路线中每个 `r,q` 给出 `x` 的同余类；这里每个 generator/fill residue pair 给出 `P` 的同余类。于是 formal pair 全集的“最小对齐”就是包含全部最近 CRT 代表的最短相位壳层。
+
+当前读数为：
+
+```text
+combined_crt_modulus=899
+support_width=20
+alignment_hull_width=819
+hull_width_to_modulus_ratio=0.911012235818
+left_extension_required=365
+right_extension_required=434
+left_extra_skew_after_feedback_horizon=335
+right_extra_skew_after_feedback_horizon=409
+modulus_minus_hull_width=80
+affine_p_delay=80
+hull_complement_equals_affine_p_delay=true
+```
+
+这把局部超界自反馈波动改写成一个更尖锐的相位矛盾：反例链要求 near-full-period 的双向壳层；真实链只有宽度 `20` 的 primitive 支撑，且单侧 skew-growth 已无法解释 below/above 两侧同时超界。壳层互补宽度正好等于 `p_delay`，说明这不是随机距离误差，而是 AffineTwin 双槽 CRT 与延迟相位共同锁出的结构缺口。
+
+最新剩余接口相应压成：排斥 `BidirectionalSkewHull-PDEC`，或证明持久 near-full-period 壳层必进入 `ColumnCRT/PDEC`、`SAE` 或 `AffineTwinEpochPairMultiplicityBoundOrColumnCRTPDECExclusion`。

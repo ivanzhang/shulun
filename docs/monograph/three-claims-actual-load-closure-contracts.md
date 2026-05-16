@@ -663,3 +663,44 @@ feedback_horizon_slack_structured_current_sweep=true
 最窄 atom 仍是 `19:12`：CRT 代表距离 `40`，support width `20`，吸收所需总 skew 为 `20`；当前 skew 为 `10`，必须额外增长 `10`。纯方向翻转保持绝对 skew，因此不能缩短该缺口；同向 moving-key 候选 `[61,111]` 继承 source-rematerialization 账本后仍无精确重物化。
 
 本步把当前最窄剩余从“地平线缺口”进一步压成 `EndpointSkewGrowth-PDEC/OrientationChangingPrimitiveKey-SAE`：若反例链要继续吸收该缺口，就必须提供新的 skew-growth 机制、方向改变 primitive key，或进入 source 重物化/SAE 出口。全局行/列命题仍未无条件闭合。
+
+## 16. PM endpoint-release bidirectional skew-hull 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-bidirectional-skew-hull-audit.md
+data/prime-matrix-affine-twin-endpoint-release-bidirectional-skew-hull-ledger.json
+```
+
+把上一层逐行 slack 放回局部逆元对齐框架：每个 formal pair 给出一个关于 `P` 的 CRT 类
+
+```text
+P = generator_residue (mod q-2)
+P = shifted_fill_residue (mod q)
+```
+
+然后求当前周期中同时包含全部 formal pair 最近代表的最小相位壳层。当前证书给出：
+
+```text
+formal_alignment_row_count=12
+empty_alignment_row_count=11
+combined_crt_modulus=899
+support_interval=[2669,2688]
+support_width=20
+alignment_hull_interval=[2304,3122]
+alignment_hull_width=819
+left_extension_required=365
+right_extension_required=434
+left_extra_skew_after_feedback_horizon=335
+right_extra_skew_after_feedback_horizon=409
+bidirectional_extra_skew_after_shared_hull=744
+modulus_minus_hull_width=80
+affine_p_delay=80
+hull_complement_equals_affine_p_delay=true
+one_sided_skew_growth_absorption_closed_current_sweep=true
+```
+
+这给出比逐行缺口更全局的局部刚性：反例链若要把 `q=31` 的 `12` 个 formal pair 同时塞回一个支撑壳层，壳层宽度必须达到 `819`，已经占 `899` 周期的约 `91.10%`，只留下 affine `p_delay=80` 大小的互补缝。真实链当前 primitive 支撑宽度只有 `20`，扣除 feedback horizon 后仍要双向额外增长 `335+409=744`。
+
+本步关闭当前 sweep 的单侧 skew-growth 吸收解释，并把剩余压成 `BidirectionalSkewHull-PDEC/ColumnCRT` 或 moving-family multiplicity 出口。全局行/列命题仍需排斥该壳层持久复现或把它吸收到 `SAE/ColumnCRT/PDEC`。
