@@ -923,3 +923,41 @@ actual_anchor_replacement_closed_current_sweep=true
 因此 actual anchor 替换不能绕开容量/相位压力：现有 formal pair 替换的最窄跳跃 `58` 已超过 support width `20`，且最小双端点释放 `70` 是支撑宽度的 `3.5` 倍；未使用 target 替换的最窄跳跃 `59` 也超过支撑，并且至少新增一个侧残基。
 
 本步关闭当前 sweep 的 actual-anchor replacement 吸收解释。全局行/列命题仍未闭合；剩余是把 replacement no-go 升格为全局族定理，或排斥 support-motion、unused-target arrival、ColumnCRT/PDEC 与 moving-family 出口。
+
+## 23. PM endpoint-release 61/59 near-miss phase-fracture 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-near-miss-61-59-phase-fracture-audit.md
+data/prime-matrix-affine-twin-endpoint-release-near-miss-61-59-phase-fracture-ledger.json
+```
+
+继续下钻 actual-anchor replacement 后的最窄近失配。最窄 formal 替换 atom 仍是 `19:12`，它给出 CRT 跳跃 `58`、共同侧深度 `58` 和端点释放 `70`；同一 atom 的 moving-key 深度公式给出候选 `q=61` 与 `q=111`。同时 unused-target 最窄路线 `19:12 -> 20:9` 的 CRT 跳跃为 `59`，最近可用 gap source 也为 `59`。表面上这形成一个 `61/59` 近邻桥。
+
+审计读数为：
+
+```text
+support_width=20
+formal_min_pair=19:12
+formal_min_abs_crt_jump=58
+formal_min_required_common_side_depth=58
+formal_min_endpoint_release=70
+moving_narrowest_candidate_q_values=[61, 111]
+q61_route=PrimeButNotTwinAffine
+q61_failed_invariants=['expected_p_delay_integral', 'gap_source_absent', 'q_mod4_eq3']
+q111_route=CompositeQ
+q111_failed_invariants=['gap_source_absent', 'q_composite']
+q59_is_moving_candidate=false
+gap59_source_signature=gap=59, generator=61, fill=59, sides=minus->minus, p_delay=70
+unused_min_target_pair=20:9
+unused_min_abs_crt_jump=59
+unused_min_new_side_residue_count=1
+near_miss_61_59_phase_fracture_closed_current_sweep=true
+```
+
+关键相位裂缝是：`q=61` 的同向 AffineTwin 源期望 `gap=61, generator=59, fill=61, sides=minus->plus`，且 `p_delay=(11q-21)/4` 必须为整数；但 `61≡1 mod 4`，delay 非整数，并且当前没有 gap `61` source。最近的 gap `59` source 实际为 `generator=61, fill=59, sides=minus->minus`，不是 `q=61` 的重物化源。
+
+因此整数 `59` 的两次出现不能桥接反例链：它一边只是 `q=61` 的邻近源，另一边只是 unused-target 的新侧残基到达尺度。二者都没有给出 current primitive support 内的合法 actual anchor 替换。
+
+本步关闭当前 sweep 中 `61/59` 近失配作为隐藏吸收通道的解释。全局行/列命题仍未闭合；剩余是把 `NearMiss6159GlobalFamilyNoGo` 升格为族定理，或继续排斥 source-rematerialization、unused-target arrival、ColumnCRT/PDEC 与 moving-family 出口。

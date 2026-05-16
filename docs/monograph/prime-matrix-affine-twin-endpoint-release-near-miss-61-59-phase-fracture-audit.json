@@ -1,0 +1,266 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_near_miss_61_59_phase_fracture_audit",
+  "status": "current_sweep_near_miss_61_59_phase_fracture_closed_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "actual_anchor_replacement_ledger": "data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json",
+    "moving_key_source_rematerialization_ledger": "data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json",
+    "unused_target_arrival_ledger": "data/prime-matrix-affine-twin-unused-target-arrival-ledger.json",
+    "pair_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json",
+    "combined_crt_modulus": 899,
+    "support_width": 20,
+    "actual_anchor_pair": "19:8",
+    "actual_crt_residue": 889,
+    "formal_min_pair": "19:12",
+    "formal_min_abs_crt_jump": 58,
+    "formal_min_required_common_side_depth": 58,
+    "formal_min_endpoint_release": 70,
+    "moving_narrowest_source_pair": "19:12",
+    "moving_narrowest_candidate_q_values": [
+      61,
+      111
+    ],
+    "q61_route": "PrimeButNotTwinAffine",
+    "q61_failed_invariants": [
+      "expected_p_delay_integral",
+      "gap_source_absent",
+      "q_mod4_eq3"
+    ],
+    "q61_nearest_available_gap_source": {
+      "gap_ell": 59,
+      "abs_delta": 2,
+      "signed_delta": -2
+    },
+    "q61_expected_signature": {
+      "gap_ell": 61,
+      "generator_ell": 59,
+      "fill_ell": 61,
+      "generator_side": "minus",
+      "fill_side": "plus",
+      "expected_p_delay": null
+    },
+    "q111_route": "CompositeQ",
+    "q111_failed_invariants": [
+      "gap_source_absent",
+      "q_composite"
+    ],
+    "q59_is_moving_candidate": false,
+    "gap59_source_signature": {
+      "gap_ell": 59,
+      "generator_ell": 61,
+      "fill_ell": 59,
+      "generator_side": "minus",
+      "fill_side": "minus",
+      "p_delay": 70,
+      "generator_residue": 15,
+      "fill_residue": 12,
+      "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+    },
+    "unused_min_source_pair": "19:12",
+    "unused_min_target_pair": "20:9",
+    "unused_min_abs_crt_jump": 59,
+    "unused_min_new_side_residue_count": 1,
+    "q61_nearest_is_gap59_delta_minus_2": true,
+    "unused_jump_matches_gap59_scale": true,
+    "q61_expected_signature_differs_from_gap59_source": true,
+    "same_narrow_source_pair_for_formal_and_unused_minima": true,
+    "near_miss_61_59_phase_fracture_closed_current_sweep": true,
+    "global_near_miss_family_excluded": false,
+    "row_column_unconditional_closed": false
+  },
+  "bridge_rows": [
+    {
+      "atom": "formal_replacement_minimum",
+      "role": "existing formal pair would replace actual anchor",
+      "source_or_pair": "19:12",
+      "integer_scale": 58,
+      "phase_status": "jump_exceeds_support_and_requires_endpoint_release",
+      "blocking_invariant": "abs_crt_jump=58 > support_width=20; endpoint_release=70"
+    },
+    {
+      "atom": "moving_key_fill_candidate",
+      "role": "fill-depth formula candidate for the same formal atom",
+      "source_or_pair": "q=61",
+      "integer_scale": 61,
+      "phase_status": "PrimeButNotTwinAffine",
+      "blocking_invariant": "expected_p_delay_integral,gap_source_absent,q_mod4_eq3"
+    },
+    {
+      "atom": "moving_key_generator_candidate",
+      "role": "generator-depth formula candidate for the same formal atom",
+      "source_or_pair": "q=111",
+      "integer_scale": 111,
+      "phase_status": "CompositeQ",
+      "blocking_invariant": "gap_source_absent,q_composite"
+    },
+    {
+      "atom": "nearest_available_gap_source",
+      "role": "nearest source to q=61 in the current source ledger",
+      "source_or_pair": "gap=59",
+      "integer_scale": 59,
+      "phase_status": "wrong_gap_role_for_q61",
+      "blocking_invariant": "gap=59 source has generator=61, fill=59, sides=minus->minus"
+    },
+    {
+      "atom": "unused_target_minimum",
+      "role": "unused target replacement from the same formal atom",
+      "source_or_pair": "19:12->20:9",
+      "integer_scale": 59,
+      "phase_status": "new_side_residue_required",
+      "blocking_invariant": "jump=59 > support_width=20; new_generator_residue=20"
+    }
+  ],
+  "formal_replacement_minimum": {
+    "target_pair_key": "19:12",
+    "target_residue": 831,
+    "window_side": "below",
+    "nearest_representative": 2629,
+    "signed_crt_jump_from_actual": -58,
+    "abs_crt_jump_from_actual": 58,
+    "nearest_representative_delta_from_actual": -58,
+    "jump_minus_support_width": 38,
+    "required_common_side_depth": 58,
+    "endpoint_release_total_required": 70,
+    "requires_both_endpoint_release": true,
+    "replacement_route": "existing_formal_pair_support_motion"
+  },
+  "moving_q61_row": {
+    "q": 61,
+    "route": "PrimeButNotTwinAffine",
+    "occurrence_count": 1,
+    "occurrence_roles": [
+      [
+        "fill_depth_formula",
+        1
+      ]
+    ],
+    "source_pair_keys": [
+      "19:12"
+    ],
+    "min_required_common_side_depth": 58,
+    "prime_gate": {
+      "q_is_prime": true,
+      "q_minus_2_is_prime": true,
+      "q_mod4_eq3": false,
+      "expected_p_delay_integral": false,
+      "affine_twin_prime_gate_passed": false
+    },
+    "expected_signature": {
+      "gap_ell": 61,
+      "generator_ell": 59,
+      "fill_ell": 61,
+      "generator_side": "minus",
+      "fill_side": "plus",
+      "expected_p_delay": null
+    },
+    "same_gap_source_row_count": 0,
+    "exact_matching_source_row_count": 0,
+    "best_source_key": null,
+    "best_source_match_vector": null,
+    "nearest_available_gap_source": {
+      "gap_ell": 59,
+      "abs_delta": 2,
+      "signed_delta": -2
+    },
+    "present_in_current_source_gate_candidates": false,
+    "present_in_current_moving_family_candidates": false,
+    "moving_key_source_rematerialized_current": false,
+    "failed_invariants": [
+      "expected_p_delay_integral",
+      "gap_source_absent",
+      "q_mod4_eq3"
+    ]
+  },
+  "moving_q111_row": {
+    "q": 111,
+    "route": "CompositeQ",
+    "occurrence_count": 1,
+    "occurrence_roles": [
+      [
+        "generator_depth_formula",
+        1
+      ]
+    ],
+    "source_pair_keys": [
+      "19:12"
+    ],
+    "min_required_common_side_depth": 58,
+    "prime_gate": {
+      "q_is_prime": false,
+      "q_minus_2_is_prime": true,
+      "q_mod4_eq3": true,
+      "expected_p_delay_integral": true,
+      "affine_twin_prime_gate_passed": false
+    },
+    "expected_signature": {
+      "gap_ell": 111,
+      "generator_ell": 109,
+      "fill_ell": 111,
+      "generator_side": "minus",
+      "fill_side": "plus",
+      "expected_p_delay": 300
+    },
+    "same_gap_source_row_count": 0,
+    "exact_matching_source_row_count": 0,
+    "best_source_key": null,
+    "best_source_match_vector": null,
+    "nearest_available_gap_source": {
+      "gap_ell": 59,
+      "abs_delta": 52,
+      "signed_delta": -52
+    },
+    "present_in_current_source_gate_candidates": false,
+    "present_in_current_moving_family_candidates": false,
+    "moving_key_source_rematerialized_current": false,
+    "failed_invariants": [
+      "gap_source_absent",
+      "q_composite"
+    ]
+  },
+  "gap59_source_row": {
+    "gap_ell": 59,
+    "generator_ell": 61,
+    "fill_ell": 59,
+    "generator_side": "minus",
+    "fill_side": "minus",
+    "p_delay": 70,
+    "generator_residue": 15,
+    "fill_residue": 12,
+    "gap_fill_pair_key": "dir=upper|gen=61|gap=59|fill=59|sides=minus->minus|dp=70|db=58|du=23|dr=-3"
+  },
+  "unused_target_minimum": {
+    "source_pair_key": "19:12",
+    "target_unused_pair_key": "20:9",
+    "source_window_side": "below",
+    "abs_crt_jump_to_unused_target": 59,
+    "jump_minus_support_width": 39,
+    "new_side_residue_count": 1,
+    "needs_new_generator_residue": true,
+    "needs_new_fill_residue": false,
+    "replacement_route": "unused_target_residue_arrival"
+  },
+  "contract": {
+    "near_miss_bridge_gate": [
+      "the formal replacement minimum and unused-target minimum must refer to the same support atom",
+      "the moving q=61 candidate must pass AffineTwin prime/source gates",
+      "the nearest available gap=59 source must match the expected q=61 source signature",
+      "the unused-target jump scale 59 must not require a new side residue",
+      "otherwise the same integer scales 61 and 59 are only a phase near-miss, not a bridge"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "NearMiss6159GlobalFamilyNoGo",
+      "SourceRematerialization-PDEC/SAE",
+      "UnusedTargetResidueArrival-PDEC",
+      "ColumnCRT/PDEC",
+      "MovingFamilySAEColumnCRT"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json": "2422c8aa6737da977b23027242f682ada1bcaa60bb71cd0dc1fdecfd4b6e2e93",
+    "data/prime-matrix-affine-twin-moving-key-source-rematerialization-ledger.json": "b7d9016b2e43da9d390efdde3012739d24305e4843ed29efc8c295d16dc52fd6",
+    "data/prime-matrix-affine-twin-unused-target-arrival-ledger.json": "cc69729e33a77e2389eb185ee4e5fb959e4fe3087549bb31f6cba497f0b0caa3",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json": "abfda31e733d7c1e274ded997056cf5e55d39d555a72f4f8ca35ac689c62ae1e"
+  }
+}
