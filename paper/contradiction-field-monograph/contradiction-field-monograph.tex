@@ -187,6 +187,50 @@ carrying ceiling, recorded in
 \]
 \end{proof}
 
+\begin{reductionstatement}[Pressure-packet carrying ceiling]
+Let $M_q=A_gA_f$ be the pressure-packet multiplicity for an AffineTwin modulus
+$q$, so that $q$ and $q-2$ are prime.  The packet SAE mass is
+\[
+  \mu_q=\frac{M_q}{q(q-2)}.
+\]
+If the square-root packet gate
+\[
+  M_q^2\le q(q-2)
+\]
+holds, then
+\[
+  \mu_q\le \frac{1}{\sqrt{q(q-2)}}\le \frac{1}{q-2}.
+\]
+Consequently, any standard Brun--Selberg upper-bound sieve of the form
+\[
+  \Pi_2(X):=\#\{q\le X:q,\ q-2\ {\rm prime}\}
+  \le C\frac{X}{(\log X)^2}
+\]
+implies by partial summation that the moving pressure-packet tail is summable.
+If the square-root packet gate fails, then
+\[
+  M_q^2>q(q-2),
+\]
+which is exactly the named SuperSqrt/PressureProduct PDEC exit.
+\end{reductionstatement}
+\begin{proof}[Status and reference]
+The first inequalities are immediate from the square-root gate.  The Brun--Selberg
+bound gives
+\[
+  \sum_{\substack{q\ge Q\\ q,\ q-2\ {\rm prime}}}\frac{1}{q}
+  \le \frac{\Pi_2(Q)}{Q}+\int_Q^\infty\frac{\Pi_2(t)}{t^2}\,dt
+  \ll \frac{1}{(\log Q)^2}+\frac{1}{\log Q},
+\]
+and $1/(q-2)\ll 1/q$ for $q\ge5$.  Thus all packets satisfying the square-root
+gate are absorbed by the reciprocal ceiling.  The complementary case is the
+previous pressure-product inequality with product $>1$, hence the registered
+PDEC/ColumnCRT exit.  The detailed route is recorded in the pressure-packet
+carrying-ceiling router under \path{docs/monograph/}.
+This still leaves two explicit tasks before final row/column promotion.  First,
+internalize or cite the Brun--Selberg reciprocal ceiling under the monograph's
+convention.  Second, exclude the SuperSqrt/PressureProduct PDEC family.
+\end{proof}
+
 \chapter{Prime-Matrix Contradiction Fields}
 
 Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
