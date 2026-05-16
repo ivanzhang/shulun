@@ -615,3 +615,37 @@ support_width_current=20
 ```
 
 最窄 unused-target atom 是 `19:12 -> 20:9`。它复用 fill residue `9`，但仍需新增 generator residue `20`，并且 CRT 相位跳跃为 `59`。这把 unused-target 分支从“可能补入目标点”压成明确的新 generator/fill residue arrival 或 support-motion 义务；全局仍需证明这些到达不能持久供给，或把失败登记为 `NewGeneratorResidueArrival-PDEC/SAE`、`NewFillResidueArrival-PDEC/SAE`、`SupportMotionEscape-PDEC/SAE`。
+
+## 15. PM support-motion depth 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-support-motion-depth-audit.md
+data/prime-matrix-affine-twin-support-motion-depth-ledger.json
+```
+
+继续下钻 `SupportMotionEscape` 本身。当前共同支撑来自两个相位区间：
+
+```text
+generator_phase=[2669,2693]
+shifted_fill_phase=[2659,2688]
+pair_phase_support=[2669,2688]
+```
+
+左端要同时受 generator lower 与 shifted-fill lower 约束，右端要同时受 generator upper 与 shifted-fill upper 约束。因此若一个空窗 CRT representative 要通过“移动支撑”进入窗口，必须释放同侧两个端点，而不是只释放当前钉住窗口边界的一个端点。
+
+审计对 `11` 个空窗行逐项计算：
+
+```text
+min_required_common_side_depth=58
+max_required_common_side_depth=435
+min_generator_depth_increment_required=40
+min_fill_depth_increment_required=30
+min_endpoint_release_total_required=70
+max_endpoint_release_total_required=863
+```
+
+最窄 atom 仍来自 `19:12`，nearest representative 为 `2629`。为了让它进入支撑，generator 左深度需从 `18` 增至 `58`，fill 左深度需从 `28` 增至 `58`；总端点释放为 `70`，比原 window gap `40` 还多 `30`。
+
+本步关闭当前 sweep 的 support-motion depth 账本；全局剩余被压成同步深度膨胀的非持久性证明，或路由到 `MovingSupportDepthInflation-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`、`PrimitiveTwinSlotSupportEscape-PDEC/SAE`。

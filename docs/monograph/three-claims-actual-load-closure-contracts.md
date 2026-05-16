@@ -351,7 +351,7 @@ ControlledExitCriticalLoadNormalization
 
 | 合同 | actual load | critical capacity | 当前可证状态 | 剩余硬点 |
 |---|---:|---:|---|---|
-| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate、CRT gap、edge-collision 位移、existing-actual CRT 跳跃与 unused-target arrival 闭合 | 全局 actual packet exhaustion / moving support nonpersistence |
+| PM-ALC | `N_q^2` | `q(q-2)` | 当前 sweep actual packet、source gate、CRT gap、edge-collision 位移、existing-actual CRT 跳跃、unused-target arrival 与 support-motion depth 闭合 | 全局 actual packet exhaustion / moving support nonpersistence |
 | TP-ALC | actual `sum D / |U_Y|` | `1` with Buchstab `K(alpha)` | 分子 BMD 外部版可用 | denominator floor / parity gap |
 | RH-ALC | source-deleted final load | exit capacity | verification ledger 已有 | controlled exits 逐项归一化 |
 
@@ -359,7 +359,7 @@ ControlledExitCriticalLoadNormalization
 
 最直接的继续硬攻顺序是：
 
-1. **PM：** existing-actual 与 unused-target 分支当前都已压成 CRT 跳跃/新残基账本；继续主攻 `SupportMotionEscape`，并把持久复现失败形态登记为 `RepeatedResidue-ColumnCRT-PDEC` 或新 generator/fill residue arrival 的 PDEC/SAE。
+1. **PM：** `WindowEdgeCollision` 的三个当前分支都已压成账本：existing-actual CRT jump、unused-target arrival、support-motion depth。下一步主攻全局 moving support nonpersistence，或把同步深度膨胀登记为 `MovingSupportDepthInflation-PDEC/SAE`。
 2. **TP：** 写出 denominator floor 的 beta/Buchstab 下筛合同，明确 `delta(alpha)` 的可接受上限。
 3. **RH：** 生成 controlled-exit 四列表，先不证明 RH，只把每个 exit 的 actual-load 输入、闭合机制和未闭合项固定。
 
@@ -415,3 +415,29 @@ unused_target_arrival_closed_current_sweep=true
 `9` 个候选只落到 `5` 个唯一 target pairs：`10:30`、`16:5`、`17:6`、`18:7`、`20:9`。它们全部不在当前形式积中；要让这些 target 变成 actual，必须新增 generator residues `[10,16,17,18,20]` 和 fill residues `[5,6,7,30]`，合计 `9` 个新侧残基。
 
 最窄 unused-target atom 是 `19:12 -> 20:9`，只需一个新 generator residue，但 CRT 跳跃仍为 `59`，大于共同窗口宽度 `20`。因此当前 unused-target 分支也不是 hidden actual load，而是明确的新残基到达/支撑移动义务。
+
+## 8. PM support-motion depth 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-support-motion-depth-audit.md
+data/prime-matrix-affine-twin-support-motion-depth-ledger.json
+```
+
+继续把剩余的 `SupportMotionEscape` 分支压成端点释放与深度膨胀账本。当前结果为：
+
+```text
+support_motion_candidate_count=11
+support_motion_side_histogram={'above': 3, 'below': 8}
+support_width_current=20
+min_required_common_side_depth=58
+max_required_common_side_depth=435
+min_endpoint_release_total_required=70
+max_endpoint_release_total_required=863
+support_motion_depth_closed_current_sweep=true
+```
+
+当前 generator phase 为 `[2669,2693]`，shifted-fill phase 为 `[2659,2688]`，共同支撑为 `[2669,2688]`。因此要靠移动支撑吞掉空窗 CRT 代表，不能只移动一个端点；同侧的 generator 端点和 shifted-fill 端点都必须释放，并且两侧深度必须同步膨胀到同一个代表距离。
+
+最窄 support-motion atom 是 `19:12`，nearest representative 为 `2629`：它需要共同侧深度 `58`，即 generator 深度额外 `40`、fill 深度额外 `30`，总端点释放 `70`。这把 support-motion 从泛称逃逸压成可审计的同步深度膨胀义务。
