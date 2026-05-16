@@ -1459,3 +1459,44 @@ q=103: formal fill-only possible, but no gap source blocks actualization.
 这给出更窄的容量/相位矛盾：反例链希望用 fill 侧追赶补齐 moving-family 阈值；真实链中唯一已物化候选不能单靠 fill 侧补齐，未物化候选没有 source 相位，而实际共到达投影仍低于平方根门。
 
 本步关闭当前 sweep 的匿名 fill-arrival actual overload。全局剩余相应变成 `GeneratorCoarrivalBound`、`ProductAccountingTighteningGlobal`、`SourceRematerialization-PDEC/SAE` 与 `ColumnCRT/PDEC` 的族级排斥或控制。
+
+## 42. PM endpoint-release generator-coarrival projection accounting 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-generator-coarrival-projection-accounting-audit.md
+data/prime-matrix-affine-twin-endpoint-release-generator-coarrival-projection-accounting-ledger.json
+```
+
+本节把 `GeneratorCoarrivalBound` 当前可攻部分压成全枚举投影账本。realized `q=31` 的 base packet 有 `(3,4)` 个侧残基，形式乘积 `12`，actual 支撑 hits 只有 anchor `19:8`。unused-target 层有 5 个候选 target atoms，其中 4 个同时新增 generator/fill，1 个只新增 generator；所有带 fill arrival 的子集都不是 fill-only。
+
+当前证书给出：
+
+```text
+actual_anchor_pair=19:8
+base_formal_product_count=12
+base_projection_hit_count=1
+subset_count=31
+fill_arrival_subset_count=30
+fill_only_subset_count=0
+formal_super_sqrt_subset_count=22
+actual_overload_subset_count=0
+minimal_coarrival_formal_product_count=30
+minimal_coarrival_projection_hit_count=3
+minimal_coarrival_projection_deficit_count=27
+full_formal_product_count=64
+full_projection_hit_count=6
+full_projection_deficit_count=58
+```
+
+因此当前最精确的容量/相位矛盾读数是：
+
+```text
+反例链：coarrival 后形式侧乘积可从 12 提升到 30 或 64；
+真实链：actual projection 只从 1 提升到 3 或 6；
+平方根门：sqrt_floor=29；
+结论：形式 SuperSqrt 子集 22 个，actual overload 子集 0 个。
+```
+
+这说明 generator coarrival 不是新的真实容量来源，而是 ProductAccounting 必须投影化的对象。若未来族级失败，失败形态不能再匿名称为 fill/generator 到达；它必须给出 support graph 逃逸、projection collision、source rematerialization、ColumnCRT/PDEC 或 moving-family persistence 证书。

@@ -1276,3 +1276,33 @@ anonymous_fill_arrival_actual_overload_closed_current_sweep=true
 若把这种 generator/fill 共到达按形式乘积计到最小 crossing `30`，actual projection 也只有 `3` 个 hits，仍有 `26` 个平方根余量。另一方面，`q=43,103` 的 fill-only 形式路线先被 source gate 阻断，不能进入真实链。
 
 所以当前 sweep 内没有匿名 fill-arrival actual overload。最新剩余进一步压成 `GeneratorCoarrivalBound`、`ProductAccountingTighteningGlobal`、`SourceRematerialization-PDEC/SAE` 与 `ColumnCRT/PDEC`。
+
+## 35. PM endpoint-release generator-coarrival projection accounting 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-generator-coarrival-projection-accounting-audit.md
+data/prime-matrix-affine-twin-endpoint-release-generator-coarrival-projection-accounting-ledger.json
+```
+
+继续下钻上一节留下的 `GeneratorCoarrivalBound`。当 realized `q=31` 的 fill 到达被迫携带 generator 共到达时，必须区分形式侧乘积和 actual 支撑投影。当前全枚举 5 个 unused-target 原子的所有非空子集得到：
+
+```text
+subset_count=31
+fill_arrival_subset_count=30
+fill_only_subset_count=0
+formal_super_sqrt_subset_count=22
+actual_overload_subset_count=0
+minimal_coarrival_formal_product_count=30
+minimal_coarrival_projection_hit_count=3
+minimal_coarrival_actual_sqrt_slack=26
+full_formal_product_count=64
+full_projection_hit_count=6
+full_actual_sqrt_slack=23
+generator_coarrival_projection_accounting_closed_current_sweep=true
+```
+
+因此，本轮最窄显式矛盾点已经从“fill 侧追赶”压到“generator/fill 共到达后的投影账本”：反例链可把侧残基笛卡尔积推过平方根门，但真实链只把共同支撑图像上的点计入 actual load。所有 22 个形式超界子集投影后仍低于平方根门，且投影 hits 精确等于 actual anchor `19:8` 加所选 target atoms。
+
+本步关闭当前 sweep 中 generator coarrival 作为匿名 actual overload 的解释。全局行/列命题仍未闭合；最新剩余是把该投影账本升格为族级 `GeneratorCoarrivalFamilyBound`，或把失败形态登记为 `ProductAccountingTighteningGlobal`、`SourceRematerialization-PDEC/SAE`、`ColumnCRT/PDEC` 与 moving-family persistence 出口。
