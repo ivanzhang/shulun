@@ -1045,3 +1045,30 @@ orphan_nearjump_source_deficit_closed_current_sweep=true
 因此这些 orphan 候选虽然靠近 unused-target jump，但最近 source scale 也至少距离 `35`，已经超过 support width `20`。同时所有 unused-target 事件都需要新增侧残基，moving source 均未物化，候选本身也全部失败于合数或 AffineTwin prime/source gate。
 
 本步给出的显式矛盾点是：近 target 不等于近 source；反例链若想把 orphan near-jump 变成真实链桥，必须额外移动 source 超过支撑宽度，并且还要支付新侧残基 arrival。当前 sweep 中这条吸收解释关闭；全局仍需证明 `OrphanNearJumpSourceDeficitGlobalNoGo` 或转入命名 PDEC/SAE 出口。
+
+## 27. PM endpoint-release near-jump carrier exhaustion 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-endpoint-release-nearjump-carrier-exhaustion-audit.md
+data/prime-matrix-affine-twin-endpoint-release-nearjump-carrier-exhaustion-ledger.json
+```
+
+把 support-width 内所有 near-jump 候选统一分解，检查 target 侧近邻是否还有匿名承载通道。当前读数为：
+
+```text
+nearjump_carrier_q_values=[61, 65, 96, 111, 154, 293, 297, 355, 386]
+near_source_gate_fractured_q_values=[61, 65]
+orphan_source_deficit_q_values=[96, 111, 154, 293, 297, 355, 386]
+source_status_histogram={'near_source_gate_fractured': 2, 'orphan_source_deficit': 7}
+moving_route_histogram={'CompositeQ': 7, 'PrimeButNotTwinAffine': 2}
+min_orphan_source_gap_abs_delta=35
+min_orphan_source_gap_abs_delta_minus_support_width=15
+all_carrier_jump_events_need_new_side_residue=true
+nearjump_carrier_exhausted_current_sweep=true
+```
+
+因此 near-jump carrier 全部耗尽：`61,65` 近 source 但 source gate 断裂；其余七个 q 缺 source，最近 source 也超出 support width。并且所有 target 侧 near-jump 都需要新增侧残基。
+
+本步把当前 sweep 的 target-side near-jump 分支整体关闭。全局仍需证明 `NearJumpCarrierGlobalNoGo`，或将失败路由到 source-rematerialization、unused-target arrival、ColumnCRT/PDEC 或 moving-family 出口。

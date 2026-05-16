@@ -1,0 +1,322 @@
+{
+  "certificate_type": "prime_matrix_affine_twin_endpoint_release_nearjump_carrier_exhaustion_audit",
+  "status": "current_sweep_nearjump_carrier_exhausted_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "aggregate": {
+    "actual_anchor_replacement_ledger": "data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json",
+    "support_width_nearscale_fracture_ledger": "data/prime-matrix-affine-twin-endpoint-release-support-width-nearscale-fracture-ledger.json",
+    "orphan_nearjump_source_deficit_ledger": "data/prime-matrix-affine-twin-endpoint-release-orphan-nearjump-source-deficit-ledger.json",
+    "support_width": 20,
+    "nearjump_carrier_q_values": [
+      61,
+      65,
+      96,
+      111,
+      154,
+      293,
+      297,
+      355,
+      386
+    ],
+    "nearjump_carrier_count": 9,
+    "near_source_gate_fractured_q_values": [
+      61,
+      65
+    ],
+    "orphan_source_deficit_q_values": [
+      96,
+      111,
+      154,
+      293,
+      297,
+      355,
+      386
+    ],
+    "carrier_route_histogram": {
+      "NearJumpOnly": 7,
+      "NearSourceAndJumpButGateFractured": 2
+    },
+    "source_status_histogram": {
+      "near_source_gate_fractured": 2,
+      "orphan_source_deficit": 7
+    },
+    "moving_route_histogram": {
+      "CompositeQ": 7,
+      "PrimeButNotTwinAffine": 2
+    },
+    "min_near_jump_abs_delta": 0,
+    "min_near_jump_q": 61,
+    "min_orphan_source_gap_abs_delta": 35,
+    "min_orphan_source_gap_abs_delta_minus_support_width": 15,
+    "min_orphan_source_deficit_q": 96,
+    "all_carrier_jump_events_need_new_side_residue": true,
+    "support_width_nearscale_fractured_current_sweep": true,
+    "orphan_nearjump_source_deficit_closed_current_sweep": true,
+    "nearjump_carrier_exhausted_current_sweep": true,
+    "global_nearjump_carrier_exhausted": false,
+    "row_column_unconditional_closed": false
+  },
+  "nearjump_carrier_rows": [
+    {
+      "q": 61,
+      "carrier_route": "NearSourceAndJumpButGateFractured",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_status": "near_source_gate_fractured",
+      "near_source_event_count": 4,
+      "near_jump_event_count": 4,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 59,
+        "unused_jump": 59,
+        "signed_delta": 0,
+        "abs_delta": 0,
+        "source_pair_key": "19:12",
+        "target_unused_pair_key": "20:9",
+        "new_side_residue_count": 1
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": null,
+      "source_gap_abs_delta_minus_support_width": null,
+      "failed_invariants": [
+        "expected_p_delay_integral",
+        "gap_source_absent",
+        "q_mod4_eq3"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 65,
+      "carrier_route": "NearSourceAndJumpButGateFractured",
+      "moving_route": "CompositeQ",
+      "source_status": "near_source_gate_fractured",
+      "near_source_event_count": 3,
+      "near_jump_event_count": 4,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 63,
+        "unused_jump": 60,
+        "signed_delta": -3,
+        "abs_delta": 3,
+        "source_pair_key": "15:8",
+        "target_unused_pair_key": "17:6",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": null,
+      "source_gap_abs_delta_minus_support_width": null,
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 96,
+      "carrier_route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_status": "orphan_source_deficit",
+      "near_source_event_count": 0,
+      "near_jump_event_count": 2,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 94,
+        "unused_jump": 90,
+        "signed_delta": -4,
+        "abs_delta": 4,
+        "source_pair_key": "13:8",
+        "target_unused_pair_key": "16:5",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": 35,
+      "source_gap_abs_delta_minus_support_width": 15,
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 111,
+      "carrier_route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_status": "orphan_source_deficit",
+      "near_source_event_count": 0,
+      "near_jump_event_count": 1,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 109,
+        "unused_jump": 90,
+        "signed_delta": -19,
+        "abs_delta": 19,
+        "source_pair_key": "13:8",
+        "target_unused_pair_key": "16:5",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": 50,
+      "source_gap_abs_delta_minus_support_width": 30,
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 154,
+      "carrier_route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_status": "orphan_source_deficit",
+      "near_source_event_count": 0,
+      "near_jump_event_count": 2,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 152,
+        "unused_jump": 150,
+        "signed_delta": -2,
+        "abs_delta": 2,
+        "source_pair_key": "13:12",
+        "target_unused_pair_key": "18:7",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": 93,
+      "source_gap_abs_delta_minus_support_width": 73,
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 293,
+      "carrier_route": "NearJumpOnly",
+      "moving_route": "PrimeButNotTwinAffine",
+      "source_status": "orphan_source_deficit",
+      "near_source_event_count": 0,
+      "near_jump_event_count": 2,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 291,
+        "unused_jump": 281,
+        "signed_delta": -10,
+        "abs_delta": 10,
+        "source_pair_key": "19:28",
+        "target_unused_pair_key": "10:30",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": 232,
+      "source_gap_abs_delta_minus_support_width": 212,
+      "failed_invariants": [
+        "expected_p_delay_integral",
+        "gap_source_absent",
+        "q_minus_2_is_prime",
+        "q_mod4_eq3"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 297,
+      "carrier_route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_status": "orphan_source_deficit",
+      "near_source_event_count": 0,
+      "near_jump_event_count": 2,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 295,
+        "unused_jump": 281,
+        "signed_delta": -14,
+        "abs_delta": 14,
+        "source_pair_key": "19:28",
+        "target_unused_pair_key": "10:30",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": 236,
+      "source_gap_abs_delta_minus_support_width": 216,
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 355,
+      "carrier_route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_status": "orphan_source_deficit",
+      "near_source_event_count": 0,
+      "near_jump_event_count": 6,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 353,
+        "unused_jump": 345,
+        "signed_delta": -8,
+        "abs_delta": 8,
+        "source_pair_key": "13:9",
+        "target_unused_pair_key": "16:5",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": 294,
+      "source_gap_abs_delta_minus_support_width": 274,
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "nearjump_carrier_closed_current": true
+    },
+    {
+      "q": 386,
+      "carrier_route": "NearJumpOnly",
+      "moving_route": "CompositeQ",
+      "source_status": "orphan_source_deficit",
+      "near_source_event_count": 0,
+      "near_jump_event_count": 4,
+      "nearest_unused_jump_event": {
+        "scale_kind": "q_minus_2",
+        "scale_value": 384,
+        "unused_jump": 375,
+        "signed_delta": -9,
+        "abs_delta": 9,
+        "source_pair_key": "15:9",
+        "target_unused_pair_key": "17:6",
+        "new_side_residue_count": 2
+      },
+      "all_jump_events_need_new_side_residue": true,
+      "source_gap_abs_delta": 325,
+      "source_gap_abs_delta_minus_support_width": 305,
+      "failed_invariants": [
+        "gap_source_absent",
+        "q_composite"
+      ],
+      "nearjump_carrier_closed_current": true
+    }
+  ],
+  "contract": {
+    "nearjump_carrier_gate": [
+      "every support-width near-jump candidate must have a source-side carrier",
+      "near-source carriers must pass the AffineTwin prime/source gate",
+      "orphan carriers must have source distance within support width",
+      "target-side near-jump must not require new side-residue arrival",
+      "otherwise the near-jump carrier is exhausted and routes to named exits"
+    ],
+    "closed_current_sweep": true,
+    "global_remaining": [
+      "NearJumpCarrierGlobalNoGo",
+      "OrphanNearJumpSourceDeficitGlobalNoGo",
+      "SupportWidthNearScaleGlobalNoGo",
+      "SourceRematerialization-PDEC/SAE",
+      "UnusedTargetResidueArrival-PDEC",
+      "MovingFamilySAEColumnCRT"
+    ]
+  },
+  "dependency_hashes": {
+    "data/prime-matrix-affine-twin-endpoint-release-actual-anchor-replacement-ledger.json": "2422c8aa6737da977b23027242f682ada1bcaa60bb71cd0dc1fdecfd4b6e2e93",
+    "data/prime-matrix-affine-twin-endpoint-release-support-width-nearscale-fracture-ledger.json": "979b19f46c602de6e5e43d5e4f48231b62a7fae2495470e8ee25c741a71dbe5e",
+    "data/prime-matrix-affine-twin-endpoint-release-orphan-nearjump-source-deficit-ledger.json": "fb281989e4409d649eb8162c3155152ec56f226bcdfc66e4dc16e454fc67bffa"
+  }
+}
