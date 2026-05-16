@@ -1,0 +1,124 @@
+{
+  "aggregate": {
+    "route_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-threshold-route-classifier-ledger.json",
+    "epoch_capacity_ledger": "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-one-slot-residue-epoch-capacity-ledger.json",
+    "candidate_q_values": [
+      31,
+      43,
+      103
+    ],
+    "all_routes_require_fill_increment": true,
+    "all_current_fill_epochs_can_absorb_minimal_catchup": true,
+    "min_extra_fill_required": 1,
+    "max_extra_fill_required": 8,
+    "total_min_new_fill_rankin_mass_required_if_all_candidates_cross": {
+      "numerator": 23339,
+      "denominator": 137299,
+      "decimal": 0.16998667142513785
+    },
+    "max_single_candidate_minimal_route_fill_rankin_mass": {
+      "numerator": 4,
+      "denominator": 43,
+      "decimal": 0.09302325581395349
+    },
+    "min_fill_epoch_spare_ratio": 0.8709677419354839,
+    "new_fill_or_reset_dichotomy_closed": true,
+    "fill_catchup_mass_pdec_excluded_globally": false,
+    "row_column_unconditional_closed": false
+  },
+  "fill_catchup_mass_budget_rows": [
+    {
+      "q": 31,
+      "route_class": "MixedCoaccumulationOnly",
+      "fill_side": "plus",
+      "fill_ell": 31,
+      "current_fill_used": 4,
+      "fill_epoch_capacity": 31,
+      "fill_epoch_unused_residue_count": 27,
+      "fill_epoch_spare_ratio": 0.8709677419354839,
+      "min_extra_fill_in_minimal_routes": 1,
+      "max_extra_fill_in_minimal_routes": 2,
+      "min_new_fill_rankin_mass_required": {
+        "numerator": 1,
+        "denominator": 31,
+        "decimal": 0.03225806451612903
+      },
+      "max_minimal_route_fill_rankin_mass_required": {
+        "numerator": 2,
+        "denominator": 31,
+        "decimal": 0.06451612903225806
+      },
+      "fill_capacity_can_absorb_minimal_catchup_current_sweep": true,
+      "fill_duplicate_would_trigger_reset_pdec": true,
+      "new_fill_or_reset_dichotomy_closed": true,
+      "fill_catchup_multiplier_upper": 1.5,
+      "fill_activation_delay_over_generator": 80,
+      "fill_delay_per_required_fill_increment": 80.0,
+      "threshold_crossing_pdec_name": "AffineTwin-MixedCoaccumulationOnly-ThresholdCrossing-PDEC",
+      "mass_pdec_name": "AffineTwinFillCatchUpMass-q31-PDEC",
+      "realized_current_sweep": true
+    },
+    {
+      "q": 43,
+      "route_class": "FillCatchUpOrMixed",
+      "fill_side": "plus",
+      "fill_ell": 43,
+      "current_fill_used": 2,
+      "fill_epoch_capacity": 43,
+      "fill_epoch_unused_residue_count": 41,
+      "fill_epoch_spare_ratio": 0.9534883720930233,
+      "min_extra_fill_in_minimal_routes": 3,
+      "max_extra_fill_in_minimal_routes": 4,
+      "min_new_fill_rankin_mass_required": {
+        "numerator": 3,
+        "denominator": 43,
+        "decimal": 0.06976744186046512
+      },
+      "max_minimal_route_fill_rankin_mass_required": {
+        "numerator": 4,
+        "denominator": 43,
+        "decimal": 0.09302325581395349
+      },
+      "fill_capacity_can_absorb_minimal_catchup_current_sweep": true,
+      "fill_duplicate_would_trigger_reset_pdec": true,
+      "new_fill_or_reset_dichotomy_closed": true,
+      "fill_catchup_multiplier_upper": 3.0,
+      "fill_activation_delay_over_generator": 1610,
+      "fill_delay_per_required_fill_increment": 536.6666666666666,
+      "threshold_crossing_pdec_name": "AffineTwin-FillCatchUpOrMixed-ThresholdCrossing-PDEC",
+      "mass_pdec_name": "AffineTwinFillCatchUpMass-q43-PDEC",
+      "realized_current_sweep": false
+    },
+    {
+      "q": 103,
+      "route_class": "FillCatchUpOrMixed",
+      "fill_side": "plus",
+      "fill_ell": 103,
+      "current_fill_used": 1,
+      "fill_epoch_capacity": 103,
+      "fill_epoch_unused_residue_count": 102,
+      "fill_epoch_spare_ratio": 0.9902912621359223,
+      "min_extra_fill_in_minimal_routes": 7,
+      "max_extra_fill_in_minimal_routes": 8,
+      "min_new_fill_rankin_mass_required": {
+        "numerator": 7,
+        "denominator": 103,
+        "decimal": 0.06796116504854369
+      },
+      "max_minimal_route_fill_rankin_mass_required": {
+        "numerator": 8,
+        "denominator": 103,
+        "decimal": 0.07766990291262135
+      },
+      "fill_capacity_can_absorb_minimal_catchup_current_sweep": true,
+      "fill_duplicate_would_trigger_reset_pdec": true,
+      "new_fill_or_reset_dichotomy_closed": true,
+      "fill_catchup_multiplier_upper": 9.0,
+      "fill_activation_delay_over_generator": 1074,
+      "fill_delay_per_required_fill_increment": 153.42857142857142,
+      "threshold_crossing_pdec_name": "AffineTwin-FillCatchUpOrMixed-ThresholdCrossing-PDEC",
+      "mass_pdec_name": "AffineTwinFillCatchUpMass-q103-PDEC",
+      "realized_current_sweep": false
+    }
+  ]
+}
