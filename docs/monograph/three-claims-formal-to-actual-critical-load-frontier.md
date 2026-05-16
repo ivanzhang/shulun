@@ -680,3 +680,39 @@ all_support_motion_breaks_both_depth_identities=true
 最窄 atom `19:12` 要把左侧共同深度提升到 `58`。这同时打破 `generator_left_depth=18` 与 `fill_left_depth=28`，缺陷分别为 `40` 与 `30`，总缺陷 `70`。
 
 因此当前固定 primitive key 下的 support motion 已关闭；全局剩余进一步压成 primitive key 迁移的非持久性证明，或路由到 `MovingPrimitiveKey-PDEC/SAE`、`MovingSupportDepthInflation-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`。
+
+## 17. PM moving-key depth formula 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-moving-key-depth-formula-audit.md
+data/prime-matrix-affine-twin-moving-key-depth-formula-ledger.json
+```
+
+继续检查 primitive key 迁移的最直接吸收方式：允许 `q` 移动，但保持同一 AffineTwin 深度公式和同侧吸收。此时 lower-side support motion 需要同一个深度 `D` 同时满足：
+
+```text
+(q+5)/2 = D
+q-3 = D
+```
+
+也就是 `q=2D-5` 与 `q=D+3` 必须相等，只在 `D=8` 可能。当前最窄 lower atom `19:12` 有 `D=58`，所以 generator 公式给 `q=111`，fill 公式给 `q=61`，两者差 `50`。
+
+above-side 则需要：
+
+```text
+(q-7)/4 = D
+fill_right_depth = 1 = D
+```
+
+但当前 above depths 为 `342,373,435`，全部远离 `1`。审计结果：
+
+```text
+moving_key_depth_formula_candidate_count=11
+min_lower_q_candidate_gap=50
+min_above_fill_right_depth_residual=341
+same_orientation_moving_key_depth_absorption_closed_current_sweep=true
+```
+
+因此当前 support motion 不仅不能由固定 key 吸收，也不能由同向 moving AffineTwin key 的深度公式吸收。全局剩余进一步压成方向改变、source 重物化或 key 迁移的非持久性证明，或路由到 `OrientationChangingPrimitiveKey-PDEC/SAE`、`SourceRematerialization-PDEC/SAE`、`EndpointReleaseCoupling-PDEC`。
