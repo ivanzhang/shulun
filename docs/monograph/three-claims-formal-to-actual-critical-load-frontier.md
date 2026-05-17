@@ -3293,3 +3293,47 @@ EightPrimeEntryWallPostWallCRTExclusionOrBranchExclusiveCRTLoadExclusion
 ```
 
 这一步仍不关闭全局行/列命题；它把 switch-arrival 的匿名 ColumnCRT 侧物化为入口素数墙与 post-wall CRT-load 的持久排斥问题。
+
+## 89. cycle-debt coupled branch entry-wall
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_coupled_branch_entry_wall_router.py
+docs/monograph/prime-matrix-cycle-debt-coupled-branch-entry-wall-router.md
+data/prime-matrix-cycle-debt-coupled-branch-entry-wall-ledger.json
+```
+
+本步把 `EightPrimeEntryWallPostWallCRTExclusionOrBranchExclusiveCRTLoadExclusion` 的两个出口重新按终端分支归类。K14 的 entry-wall/post-wall 载荷和 branch-exclusive 载荷不是相互独立的逃逸路线；它们同属 K14 终端分支。
+
+```text
+k13_branch_exclusive_width=73
+k13_branch_exclusive_lcm_log10=36.678
+k14_branch_exclusive_width=70
+k14_arrival_assigned_width=29
+k14_arrival_branch_overlap_width=21
+k14_branch_arrival_union_width=78
+k14_branch_plus_entry_plus_postwall_lcm_log10=85.024
+both_branches_plus_k14_entry_postwall_lcm_log10=99.349
+```
+
+结论：
+
+- K14 侧 arrival 与 branch-exclusive 有 `21` 宽度重叠，但联合仍强制 `78` 宽度 actual load；
+- K14 侧 `branch+entry+全部 post-wall` 的 CRT lcm 约 `10^85.024`，与 `5680` 互素；
+- K13 侧则剩下 `73` 宽度 branch-exclusive 载荷，lcm 约 `10^36.678`。
+
+当前 actual-load 前沿收窄为：
+
+```text
+K13 branch-exclusive CRT-load exclusion
+OR K14 coupled entry-branch CRT wall exclusion
+```
+
+最新接口为：
+
+```text
+K13BranchExclusiveCRTLoadExclusionOrK14CoupledEntryBranchCRTWallExclusion
+```
+
+这一步仍不关闭全局行/列命题；它把松散并列出口压成按 K13/K14 终端分支区分的两个明确 CRT-load 排斥问题。

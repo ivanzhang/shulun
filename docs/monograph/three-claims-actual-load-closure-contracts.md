@@ -3226,3 +3226,46 @@ EightPrimeEntryWallPostWallCRTExclusionOrBranchExclusiveCRTLoadExclusion
 ```
 
 本步关闭的是“fresh-arrival 是匿名平滑容量”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥八素数入口墙加 post-wall CRT-load 的持久复现，或排斥 branch-exclusive CRT-load。
+
+## 82. cycle-debt coupled branch entry-wall 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_coupled_branch_entry_wall_router.py
+docs/monograph/prime-matrix-cycle-debt-coupled-branch-entry-wall-router.md
+docs/monograph/prime-matrix-cycle-debt-coupled-branch-entry-wall-router.json
+data/prime-matrix-cycle-debt-coupled-branch-entry-wall-ledger.json
+```
+
+本证书继续攻击 `EightPrimeEntryWallPostWallCRTExclusionOrBranchExclusiveCRTLoadExclusion`。它把 K14 的 entry-wall/post-wall 与 branch-exclusive 载荷放回同一个终端分支中，而不是保留成两个松散并列出口。
+
+```text
+k13_branch_exclusive_width=73
+k13_branch_exclusive_lcm_log10=36.678
+k14_branch_exclusive_width=70
+k14_arrival_assigned_width=29
+k14_arrival_branch_overlap_width=21
+k14_branch_arrival_union_width=78
+k14_branch_plus_entry_lcm_log10=72.064
+k14_branch_plus_entry_plus_assigned_lcm_log10=76.351
+k14_branch_plus_entry_plus_postwall_lcm_log10=85.024
+both_branches_plus_k14_entry_postwall_lcm_log10=99.349
+entry_wall_disjoint_from_branch_and_postwall=true
+all_coupled_lcms_coprime_to_period=true
+```
+
+结构读数：
+
+- 若终端走 K14，`70` 宽度 branch-exclusive 载荷与 `29` 宽度 arrival 载荷有 `21` 宽度重叠，但联合仍强制 `78` 宽度 actual load。
+- K14 的 entry-wall 因子与 branch/post-wall 因子不相交；耦合后 `branch+entry+全部 post-wall` 的 lcm 约 `10^85.024`。
+- 若终端走 K13，则剩余是 `73` 宽度 K13 branch-exclusive CRT-load，lcm 约 `10^36.678`。
+- 若把 K13/K14 branch-exclusive 与 K14 entry/post-wall 全部合并，联合 lcm 约 `10^99.349`，仍与本地周期 `5680` 互素。
+
+最新最窄剩余接口为：
+
+```text
+K13BranchExclusiveCRTLoadExclusionOrK14CoupledEntryBranchCRTWallExclusion
+```
+
+本步关闭的是“entry-wall 与 branch-exclusive 是两个无关松散出口”的解释。全局行/列命题仍未无条件闭合；下一步必须分别排斥 K13 branch-exclusive 持久载荷，或 K14 coupled entry-branch CRT wall。
