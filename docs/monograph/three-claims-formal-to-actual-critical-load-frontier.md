@@ -5382,3 +5382,51 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“超近实零多载体族可作为稳定 CRT 复现通道”的误出口。剩余必须排斥 Page moving singleton、给出自足 `1/P` 级 beta-gap，或证明非实零包/端点残差低于大分裂 slack。
+
+## 131. Terminal-row CRT atom router
+
+新增文件
+
+```text
+experiments/prime_matrix_terminal_row_crt_atom_router.py
+docs/monograph/prime-matrix-terminal-row-crt-atom-router.md
+docs/monograph/prime-matrix-terminal-row-crt-atom-router.json
+data/prime-matrix-terminal-row-crt-atom-ledger.json
+```
+
+本步把 `P=5` 的 `23,29` 与 `P=7` 的 `43,47,53` 例子写成终端 CRT 原子证书：
+
+```text
+P=5:  last_row_units=[23], next_row_units=[29]
+P=7:  last_row_units=[43,47], next_row_units=[53]
+```
+
+这些数在所有 `q<=P` 的小素数模下均非零，所以假设它们由 `<=P` 小素数整除会直接矛盾。
+同时它们都位于下一素数平方之前，因此 reduced atom 一旦出现就由平方根门强制为素数。
+
+一般引理：
+
+```text
+1<n<p_next^2 and gcd(n,M_{<=P})=1  =>  n prime.
+```
+
+这给出一个可复用的反例链/真实链交叉点：反例链若声称指定终端原子被小素覆盖，真实 CRT
+向量立即反驳；但若要排除所有大 `P` 的零行类缺漏，还必须证明短行中存在 reduced atom。
+完整 `M_{<=P}` 周期的对称性和周期性只给全周期单位残基均匀，不给这个短行局部化。
+
+最新硬点改写为：
+
+```text
+TerminalRowReducedResidueExistenceOrLocalizedPCRTTransfer
+```
+
+并回流到：
+
+```text
+PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2OrAPZeroPacketFrontier
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
+AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+```
+
+该证书关闭的是指定终端原子的“小素吸收”误出口，不是全局行/列命题证明。

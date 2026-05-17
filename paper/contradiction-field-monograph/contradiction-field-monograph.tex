@@ -8534,6 +8534,54 @@ DStructure/Rankin gates.  Hence this is a barrier identification, not an
 unconditional proof.
 \end{proof}
 
+\begin{theorem}[Terminal-row CRT atoms and the square-root gate]
+For \(P=5\), the terminal-row and next-row atoms \(23\) and \(29\) are units
+modulo \(M_{\le5}=2\cdot3\cdot5\).  For \(P=7\), the atoms \(43,47\) and
+\(53\) are units modulo \(M_{\le7}=2\cdot3\cdot5\cdot7\).  Hence none of
+these atoms can be absorbed by a prime factor \(\le P\).  More generally, if
+\(p_+\) is the next prime after \(P\) and
+\[
+1<n<p_+^2,\qquad (n,M_{\le P})=1,
+\]
+then \(n\) is prime.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-terminal-row-crt-atom-router.md.
+\end{quote}
+For \(P=5\),
+\[
+23\equiv(1,2,3)\pmod{(2,3,5)},\qquad
+29\equiv(1,2,4)\pmod{(2,3,5)}.
+\]
+For \(P=7\),
+\[
+\begin{aligned}
+43&\equiv(1,1,3,1)\pmod{(2,3,5,7)},\\
+47&\equiv(1,2,2,5)\pmod{(2,3,5,7)},\\
+53&\equiv(1,2,3,4)\pmod{(2,3,5,7)}.
+\end{aligned}
+\]
+Every displayed coordinate is nonzero, so the hypothesis that any of these
+numbers is divisible by a prime \(\le P\) contradicts its CRT vector.
+
+For the general square-root gate, suppose \(n\) is composite and
+\((n,M_{\le P})=1\).  Then the least prime factor of \(n\) is strictly larger
+than \(P\), hence at least \(p_+\).  A composite integer all of whose prime
+factors are at least \(p_+\) is at least \(p_+^2\), contradicting
+\(n<p_+^2\).  Thus \(n\) is prime.
+
+This proves an atom-level principle: a reduced CRT atom in the terminal row or
+the immediate post-square row is automatically a true prime.  It does not prove
+that every prime \(P\) has such an atom in a prescribed short row.  Complete
+CRT-period symmetry supplies full-period uniformity and reflection, but not the
+local pointwise existence needed in the initial square.  The remaining global
+input is therefore a terminal-row reduced-residue existence theorem, the
+localized \(P\)-CRT/Linnik--2 route, or the already registered AP zero-packet,
+Page-sparsity, signed-payload, or PDEC frontiers.
+\end{proof}
+
 \begin{theorem}[Linnik--2 defects and nonprincipal character obstruction]
 For a prime modulus \(P\), put
 \[

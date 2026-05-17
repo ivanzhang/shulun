@@ -5471,3 +5471,67 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“多载体 Page 例外零可以按固定 CRT 周期稳定复现”的误出口。它没有内化 Page 常数，也没有排斥每个尺度一个的 moving singleton 例外载体，更没有证明非实零包/端点残差低于大分裂 slack。行/列命题仍未无条件闭合。
+
+## 120. Terminal-row CRT atom router
+
+新增文件
+
+```text
+experiments/prime_matrix_terminal_row_crt_atom_router.py
+docs/monograph/prime-matrix-terminal-row-crt-atom-router.md
+docs/monograph/prime-matrix-terminal-row-crt-atom-router.json
+data/prime-matrix-terminal-row-crt-atom-ledger.json
+```
+
+本步吸收用户给出的 `P=5,7` 终端例子。对 `P=5`：
+
+```text
+M_{<=5}=30
+last_row_units=[23]
+next_row_units=[29]
+23 mod (2,3,5) = (1,2,3)
+29 mod (2,3,5) = (1,2,4)
+```
+
+对 `P=7`：
+
+```text
+M_{<=7}=210
+last_row_units=[43,47]
+next_row_units=[53]
+```
+
+`43,47,53` 在 `(2,3,5,7)` 下也全为非零坐标。因此“它们是假合数并被 `<=P`
+小素数整除”的假设直接与 CRT 坐标矛盾。
+
+可推广的原子级引理为：
+
+```text
+若 1<n<p_next^2 且 gcd(n,M_{<=P})=1，则 n 为素数。
+```
+
+因为若 `n` 合成而无 `<=P` 素因子，其最小素因子至少是下一素数 `p_next`，从而
+`n>=p_next^2`，矛盾。
+
+当前读数：
+
+```text
+specified_terminal_atoms_small_factor_absorption_impossible=true
+terminal_sqrt_gate=true
+complete_wheel_symmetry_identity=true
+full_wheel_symmetry_localizes_to_terminal_rows=false
+global_terminal_row_no_missing_prime_proved=false
+row_column_unconditional_closed=false
+```
+
+这一步关闭的是“指定终端原子可被小素数吸收”的误出口。真正全局化仍需证明目标短行中必有
+`gcd(n,M_{<=P})=1` 的 reduced atom；完整 CRT 周期均匀和反射不自动给这个局部存在性。
+最新剩余回到：
+
+```text
+TerminalRowReducedResidueExistenceOrLocalizedPCRTTransfer
+PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2OrAPZeroPacketFrontier
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
+```
+
+行/列命题仍未无条件闭合。
