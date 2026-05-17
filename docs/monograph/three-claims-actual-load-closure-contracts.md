@@ -2710,3 +2710,46 @@ FreshMovingCoverPDECOrGlobalSupportMotionSAE
 ```
 
 本步关闭的是“moving 分支只是旧 CRT cover 的近程滑动复用”的解释；全局仍需排斥 fresh moving cover PDEC，或证明它只能形成 global support-motion SAE。
+
+## 70. cycle-debt fresh-cover prime-obstacle 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_cover_prime_obstacle_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-cover-prime-obstacle-router.md
+docs/monograph/prime-matrix-cycle-debt-fresh-cover-prime-obstacle-router.json
+data/prime-matrix-cycle-debt-fresh-cover-prime-obstacle-ledger.json
+```
+
+本证书把 fresh moving cover 在同一 27 个正债务 residue 支撑行上的真实障碍直接数出。对每个 `K=1..16`，取与原 debt 长度相同的 shifted window；若 fresh cover 仍想在同一支撑行上重建全合数词，这些窗口必须全部为 composite。但真实审计为：
+
+```text
+positive_cycle_debt_residue_count=27
+total_cycle_debt_mass_per_shift=101
+tested_shift_count=16
+total_tested_same_support_slots=1616
+total_prime_obstacles_all_near_shifts=364
+total_new_prime_obstacles_all_near_shifts=263
+all_near_shift_same_support_windows_have_prime_obstacles=true
+min_prime_obstacle_count_per_shift=17
+min_prime_obstacle_shift=5
+min_prime_obstacle_rows_per_shift=12
+max_prime_obstacle_count_per_shift=28
+max_prime_obstacle_shift=14
+shift_1_prime_obstacle_count=27
+shift_near_limit_prime_obstacle_count=27
+shift_near_limit_new_prime_obstacle_count=27
+same_support_fresh_cover_closed_current_certificate=true
+support_row_replacement_or_prime_obstacle_pdec_required=true
+```
+
+也就是说，同一支撑行的任意近程 fresh window 都含 actual prime obstacles。最轻的 `K=5` 仍有 `17` 个素数障碍；完全越过旧前缀的 `K=16` 仍有 `27` 个素数障碍，且全部是新素数障碍。因此 same-support fresh cover 已被真实链阻断。
+
+最新最窄剩余接口为：
+
+```text
+FreshCoverPrimeObstaclePDECOrSupportRowReplacementSAE
+```
+
+本步关闭的是“fresh moving cover 可在同一支撑行上重建全合数词”的解释；全局仍需排斥删除实际素数障碍的 PDEC，或证明支撑行替换只能形成可求和的 support-row replacement SAE/PDEC。

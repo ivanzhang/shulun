@@ -2770,3 +2770,46 @@ FreshMovingCoverPDECOrGlobalSupportMotionSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“moving 分支可由旧 CRT cover 近程滑动复用”的解释。
+
+## 77. cycle-debt fresh-cover prime-obstacle
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_cover_prime_obstacle_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-cover-prime-obstacle-router.md
+data/prime-matrix-cycle-debt-fresh-cover-prime-obstacle-ledger.json
+```
+
+本步检查 fresh moving cover 是否能在同一 27 行支撑上重建。对 `K=1..16` 的每个平移窗口，逐槽判定真实素数锚：
+
+```text
+total_cycle_debt_mass_per_shift=101
+tested_shift_count=16
+total_tested_same_support_slots=1616
+total_prime_obstacles_all_near_shifts=364
+total_new_prime_obstacles_all_near_shifts=263
+all_near_shift_same_support_windows_have_prime_obstacles=true
+min_prime_obstacle_count_per_shift=17
+min_prime_obstacle_shift=5
+shift_near_limit_prime_obstacle_count=27
+shift_near_limit_new_prime_obstacle_count=27
+same_support_fresh_cover_closed_current_certificate=true
+support_row_replacement_or_prime_obstacle_pdec_required=true
+```
+
+所以同一支撑行的 fresh cover 不只是需要新 CRT 条件，而是直接撞上实际素数锚。若反例链继续坚持全合数词，必须删除这些 actual primes，形成 prime-obstacle PDEC；否则只能更换支撑行，进入 support-row replacement SAE/PDEC。
+
+当前 actual-load 前沿收窄为：
+
+```text
+prime-obstacle PDEC  OR  support-row replacement SAE/PDEC
+```
+
+最新接口为：
+
+```text
+FreshCoverPrimeObstaclePDECOrSupportRowReplacementSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“same-support fresh moving cover”的解释。
