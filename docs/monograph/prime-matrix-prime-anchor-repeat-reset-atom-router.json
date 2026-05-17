@@ -1,0 +1,147 @@
+{
+  "certificate_type": "prime_matrix_prime_anchor_repeat_reset_atom_router",
+  "status": "one_slot_prime_anchor_repeat_reset_atom_instantiated",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "row_column_unconditional_closed": false,
+    "previous_hardpoint": "ImmediatePrimeAnchorRepeatTransportResetPDECOrEndpointMotionSAE",
+    "ell": 71,
+    "repeat_residue": 18,
+    "original_record_p": 7757,
+    "repeat_prime_anchor_p": 9887,
+    "repeat_prime_anchor_step": 90,
+    "p_delta": 2130,
+    "p_delta_over_ell": 30,
+    "p_delta_remainder_mod_ell": 0,
+    "exact_same_residue_ell_translate": true,
+    "reset_atom_instantiated": true,
+    "new_prime_anchor_count_before_first_repeat": 0,
+    "missing_nonzero_remaining_at_reset_atom": 35,
+    "endpoint_cut_required_to_avoid_reset": true,
+    "endpoint_cut": {
+      "must_cut_before_step": 90,
+      "must_cut_before_p": 9887,
+      "last_admitted_step": 82,
+      "last_epoch_p_max": 9257,
+      "step_gap_after_admitted_band": 8,
+      "p_extension_beyond_epoch_p_max": 630,
+      "p_extension_beyond_admitted_lattice_p_max": 640,
+      "composite_buffer_step_count": 7,
+      "composite_buffer_steps": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "composite_buffer_p_values": [
+        9327,
+        9407,
+        9487,
+        9567,
+        9647,
+        9727,
+        9807
+      ]
+    },
+    "hardpoint_after_router": "OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE",
+    "next_direct_attack_target": "OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE"
+  },
+  "reset_atom": {
+    "side": "minus",
+    "ell": 71,
+    "residue": 18,
+    "original_p": 7757,
+    "repeat_p": 9887,
+    "original_lift": 109,
+    "repeat_lift": 139,
+    "lift_delta": 30,
+    "p_delta": 2130,
+    "slot_keys": [
+      "644:128:71"
+    ],
+    "residue_packet_key": "size=1|side=minus|ells=71|mod=71|residue=18",
+    "formal_unit": "one-slot-repeat-reset|side=minus|ell=71|residue=18|lift_delta=30|p=7757->9887"
+  },
+  "original_record": {
+    "p": 7757,
+    "crt_residue": 18,
+    "slot_keys": [
+      "644:128:71"
+    ]
+  },
+  "composite_buffer_before_reset": [
+    {
+      "step": 83,
+      "p": 9327,
+      "residue": 26,
+      "is_prime_p": false,
+      "smallest_factor": 3,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 84,
+      "p": 9407,
+      "residue": 35,
+      "is_prime_p": false,
+      "smallest_factor": 23,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 85,
+      "p": 9487,
+      "residue": 44,
+      "is_prime_p": false,
+      "smallest_factor": 53,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 86,
+      "p": 9567,
+      "residue": 53,
+      "is_prime_p": false,
+      "smallest_factor": 3,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 87,
+      "p": 9647,
+      "residue": 62,
+      "is_prime_p": false,
+      "smallest_factor": 11,
+      "already_in_prime_filtered_union": false,
+      "already_in_original_used_residues": false
+    },
+    {
+      "step": 88,
+      "p": 9727,
+      "residue": 0,
+      "is_prime_p": false,
+      "smallest_factor": 71,
+      "already_in_prime_filtered_union": false,
+      "already_in_original_used_residues": false
+    },
+    {
+      "step": 89,
+      "p": 9807,
+      "residue": 9,
+      "is_prime_p": false,
+      "smallest_factor": 3,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    }
+  ],
+  "plain_conclusion": "首个 post-band 素数锚 P=9887 与原始 singleton 记录 P=7757 具有同一 minus:71 residue=18，且差值为 2130=30*71。这不是新的 residue 覆盖，而是一个已实例化的一槽 repeat-reset 原子。若同一 epoch 延伸到该点，必须进入 reset-PDEC；若反例链拒绝 reset，端点必须在首个 post-band 素数锚之前切断，转入 endpoint motion/SAE。",
+  "dependency_hashes": {
+    "data/prime-matrix-prime-anchor-postband-immediate-repeat-ledger.json": "29b4a6143fb6056fa230d88c0bf015b440922b463fea68b12c02adf5149f2051",
+    "data/prime-matrix-cross-carrier-fifty-unit-residue-saturation-ledger.json": "700cecf965360332bed795ea9148abdf80d2b5ad99a658bbe06695da41e5b9cb"
+  }
+}

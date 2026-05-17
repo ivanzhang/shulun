@@ -2254,3 +2254,54 @@ ImmediatePrimeAnchorRepeatTransportResetPDECOrEndpointMotionSAE
 ```
 
 这一步关闭了 `PrimeAnchorFilteredNonzeroResidueCoverage` 分支在当前 primitive epoch 内的 reset-free 实现。全局行/列命题仍需排斥 transport reset-PDEC 或 endpoint motion/SAE 的持久复现。
+
+## 59. prime-anchor repeat reset atom 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_prime_anchor_repeat_reset_atom_router.py
+docs/monograph/prime-matrix-prime-anchor-repeat-reset-atom-router.md
+docs/monograph/prime-matrix-prime-anchor-repeat-reset-atom-router.json
+data/prime-matrix-prime-anchor-repeat-reset-atom-ledger.json
+```
+
+本证书把上一节的 immediate repeat 从“旧 residue”提升为一个明确的一槽 reset 原子。原始 singleton 记录中，`minus:71` 的 `residue=18` 来自：
+
+```text
+original_record_p=7757
+slot_keys=['644:128:71']
+```
+
+而 admitted 带后首个素数锚为：
+
+```text
+repeat_prime_anchor_p=9887
+repeat_residue=18
+p_delta=2130=30*71
+original_lift=109
+repeat_lift=139
+lift_delta=30
+exact_same_residue_ell_translate=true
+reset_atom_instantiated=true
+new_prime_anchor_count_before_first_repeat=0
+missing_nonzero_remaining_at_reset_atom=35
+```
+
+因此 `P=9887` 不是新的覆盖相位，而是 `P=7757` 同一个 residue packet 的 30 个 `ell` 周期平移。若保持同一无 reset epoch，`one-slot-repeat-reset|side=minus|ell=71|residue=18|lift_delta=30|p=7757->9887` 已经实例化；若反例链拒绝 reset，则必须在首个 post-band 素数锚之前切断端点：
+
+```text
+must_cut_before_step=90
+must_cut_before_p=9887
+step_gap_after_admitted_band=8
+p_extension_beyond_epoch_p_max=630
+composite_buffer_steps=[83,84,85,86,87,88,89]
+```
+
+最新最窄剩余接口为：
+
+```text
+OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE
+```
+
+本步把“是否会 repeat”转成“已实例化的 repeat-reset 原子是否可全局排斥，或端点运动是否可 SAE/Rankin 吸收”。全局行/列命题仍未无条件闭合。

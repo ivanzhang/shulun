@@ -2303,3 +2303,53 @@ ImmediatePrimeAnchorRepeatTransportResetPDECOrEndpointMotionSAE
 ```
 
 含义是：若 epoch 延伸到 `P=9887`，则必须登记 transport reset-PDEC；若不延伸，则必须解释 endpoint motion/SAE。当前仍未完成全局无条件证明，但反例链的“长 AP 覆盖”出口已经被压成 immediate repeat/reset。
+
+## 66. prime-anchor repeat reset atom
+
+后续文件
+
+```text
+experiments/prime_matrix_prime_anchor_repeat_reset_atom_router.py
+docs/monograph/prime-matrix-prime-anchor-repeat-reset-atom-router.md
+data/prime-matrix-prime-anchor-repeat-reset-atom-ledger.json
+```
+
+本步把 immediate repeat 实例化为完整的一槽 repeat-reset 原子。原始 `minus:71` singleton 记录为
+
+```text
+P=7757
+residue=18
+slot_keys=['644:128:71']
+```
+
+post-band 首个素数锚为
+
+```text
+P=9887
+residue=18
+```
+
+二者满足精确整周期平移：
+
+```text
+9887 - 7757 = 2130 = 30 * 71
+original_lift=109
+repeat_lift=139
+lift_delta=30
+reset_atom_instantiated=true
+```
+
+所以这不是一个新的 coverage packet，而是同一 residue packet 的 reset-PDEC 原子。避免该原子的唯一当前出口是端点在 `step=90, P=9887` 前切断；这个切断只剩 7 个合数步号缓冲：
+
+```text
+composite_buffer_steps=[83,84,85,86,87,88,89]
+composite_buffer_p_values=[9327,9407,9487,9567,9647,9727,9807]
+```
+
+最新接口改写为：
+
+```text
+OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE
+```
+
+即下一步只能继续排斥该已实例化的一槽 repeat-reset PDEC，或证明端点运动进入 SAE/Rankin 吸收。
