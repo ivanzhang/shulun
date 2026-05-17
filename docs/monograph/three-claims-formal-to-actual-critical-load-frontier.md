@@ -3594,3 +3594,34 @@ FreshLayerPDECColumnCRTExclusion
 ```
 
 这是一次同步型推进：它不新增全局定理，只删除已经由后续 strict 证书吸收的旧 tail-sieve 解析粗原子。真正下一步是证明 fresh layer 的相位复用、投影碰撞、moving support 逃逸或 ColumnCRT 缺陷不能在无限反例链中持续存在。
+
+## 97. cycle-debt fresh-layer 本地投影碰撞排除
+
+新增文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_layer_local_collision_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-layer-local-collision-router.md
+data/prime-matrix-cycle-debt-fresh-layer-local-collision-ledger.json
+```
+
+本步对 `FreshLayerPDECColumnCRTExclusion` 继续下钻：registered branch replay 的本地支撑窗口已经太短，无法在 fresh prime 层产生投影碰撞。
+
+```text
+period_p=5680
+registered_block_count=6
+all_sample_fresh_primes_coprime_to_period_p=true
+all_registered_samples_injective_on_local_windows=true
+minimum_first_fresh_minus_support_width=178
+minimum_first_fresh_minus_audit_slots=178
+```
+
+理由是若 `gcd(5680,ell)=1` 且窗口长度小于 `ell`，则 `a+j*5680 mod ell` 对窗口内槽位 `j` 单射。当前所有登记 block 的 fresh prime sample 都满足该条件。
+
+actual-load 前沿继续收缩为：
+
+```text
+FreshLayerSupportMotionEscapeOrRemoteColumnCRTPDECExclusion
+```
+
+剩余已不是本地相位碰撞，而是支撑运动逃逸、远程 P-space ColumnCRT/PDEC 复现或未登记 moving family。

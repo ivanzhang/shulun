@@ -3564,3 +3564,45 @@ FreshLayerPDECColumnCRTExclusion
 ```
 
 这一步仍不宣称行/列命题闭合；它只把 tail-sieve stability 出口从 branch-replay 子分支中移除，下一步必须直接排斥 fresh-layer PDEC/ColumnCRT。
+
+## 90. cycle-debt fresh-layer 本地投影碰撞回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_layer_local_collision_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-layer-local-collision-router.md
+docs/monograph/prime-matrix-cycle-debt-fresh-layer-local-collision-router.json
+data/prime-matrix-cycle-debt-fresh-layer-local-collision-ledger.json
+```
+
+本证书继续攻击
+
+```text
+FreshLayerPDECColumnCRTExclusion
+```
+
+并排除其中的本地投影碰撞子类。设本地周期步长为 `M=5680`，fresh prime 为 `ell`。若 `gcd(M,ell)=1` 且局部窗口长度 `W<ell`，则 `j -> a+jM mod ell` 在该窗口内单射，因此同一 registered support 内不能产生 fresh-layer 投影碰撞。
+
+当前读数：
+
+```text
+registered_block_count=6
+all_sample_fresh_primes_coprime_to_period_p=true
+all_first_fresh_primes_exceed_support_width=true
+all_first_fresh_primes_exceed_audit_slots=true
+all_registered_samples_injective_on_local_windows=true
+minimum_first_fresh_minus_support_width=178
+minimum_first_fresh_minus_audit_slots=178
+local_fresh_layer_projection_collision_excluded=true
+fresh_layer_pdec_fully_excluded=false
+row_column_unconditional_closed=false
+```
+
+因此 branch-replay 最新剩余接口收缩为：
+
+```text
+FreshLayerSupportMotionEscapeOrRemoteColumnCRTPDECExclusion
+```
+
+这一步仍不宣称行/列命题闭合；它只说明 fresh-layer PDEC 若持续，不能是 registered primitive support 内的本地相位碰撞，必须是支撑运动逃逸、远程 P-space ColumnCRT/PDEC 或未登记 moving family。
