@@ -4091,3 +4091,49 @@ Q2ApertureExplosionCurrentSchemaFirewall;GlobalFinalInputsStillOpen
 ```
 
 这一步只是当前语料的 schema 防火墙同步；它不证明未来显式 moving-family/PDEC schema 不存在，也不关闭全局最终输入。
+
+## 109. Q2 CRT ladder to final exact-source alignment router
+
+新增文件
+
+```text
+experiments/prime_matrix_q2_to_final_exact_source_alignment_router.py
+docs/monograph/prime-matrix-q2-to-final-exact-source-alignment-router.md
+docs/monograph/prime-matrix-q2-to-final-exact-source-alignment-router.json
+data/prime-matrix-q2-to-final-exact-source-alignment-ledger.json
+```
+
+本步把 Q2 阶 CRT 梯的剩余与最终 exact-source 原子精确对齐。Q2 路线已证明：
+
+```text
+cover block replay != prime endpoint replay
+controlled fresh tail => SAE
+unnamed aperture explosion => schema firewall
+```
+
+因此当前 Q2 局部没有可保留的无名终端。关键边界是：CRT/轮筛刚性只控制位置和相位，不生成
+Cauchy/dispersion 前 actual source 在 exact `(u,v)` fiber 上的质量分散。故 Q2 路线若要继续全局化，
+必须回到最终 exact-source 原子或外部谱输入。
+
+当前读数：
+
+```text
+q2_current_local_terminal_removed=true
+q2_position_rigidity_controls_source_mass=false
+active_final_inputs_imported=true
+current_final_attack_imported=true
+preterminal_exact_uv_fiber_aperiodicity_imported=true
+source_domain_rank_atom_package_imported=true
+dstructure_promotion_boundary_imported=true
+dstructure_independently_accepted=false
+row_column_unconditional_closed=false
+```
+
+actual-load 前沿更新为：
+
+```text
+NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource OR ExternalDIBFIKuznetsovDispersionTheoremMatch; DStructureRankinPromotionIndependentAcceptanceOpen
+```
+
+这一步不是最终证明；它把 Q2/CRT 方向的全局剩余精确回接到 actual-source fiber 非集中、
+外部谱输入与 DStructure/Rankin 晋级验收。

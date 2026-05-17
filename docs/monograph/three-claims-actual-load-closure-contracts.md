@@ -4130,3 +4130,47 @@ Q2ApertureExplosionCurrentSchemaFirewall;GlobalFinalInputsStillOpen
 ```
 
 本步仍不是行/列命题全局闭合；它只把当前无名孔径爆炸口径删除，未来显式 schema 与全局最终输入仍开。
+
+## 102. Q2 CRT ladder 到最终 exact-source 原子对齐回接
+
+后续文件
+
+```text
+experiments/prime_matrix_q2_to_final_exact_source_alignment_router.py
+docs/monograph/prime-matrix-q2-to-final-exact-source-alignment-router.md
+docs/monograph/prime-matrix-q2-to-final-exact-source-alignment-router.json
+data/prime-matrix-q2-to-final-exact-source-alignment-ledger.json
+```
+
+本证书把 Q2 阶 CRT 梯对齐到最终开放输入。受控尾量已入 `SAE`，无名孔径爆炸已被 schema 防火墙删除；
+因此当前 Q2 局部不再含活动终端。Q2/CRT 的位置刚性不能替代 actual pre-Cauchy source 的 exact `(u,v)`
+fiber 质量非集中估计；若要把反例链与真实链的容量/相位矛盾推成最终矛盾，必须证明 source 侧的
+nonterminal exact-UV fiber 非集中，或接受/证明外部 DI/BFI/Kuznetsov 谱输入，并通过 DStructure/Rankin
+独立晋级验收。
+
+当前读数：
+
+```text
+q2_current_local_terminal_removed=true
+q2_position_rigidity_controls_source_mass=false
+preterminal_exact_uv_fiber_aperiodicity_imported=true
+source_domain_rank_atom_package_imported=true
+dstructure_independently_accepted=false
+row_column_unconditional_closed=false
+```
+
+最新三分流为：
+
+```text
+Q2 local CRT ladder => current unnamed terminal removed
+strict self-contained lane => NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource
+external/promotion lane => ExternalDIBFIKuznetsovDispersionTheoremMatch plus DStructureRankinPromotion
+```
+
+最新剩余为：
+
+```text
+NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource OR ExternalDIBFIKuznetsovDispersionTheoremMatch; DStructureRankinPromotionIndependentAcceptanceOpen
+```
+
+本步关闭的是 Q2 局部残余与最终输入之间的对齐缺口；它没有证明 fiber 非集中、外部谱定理或独立晋级验收。
