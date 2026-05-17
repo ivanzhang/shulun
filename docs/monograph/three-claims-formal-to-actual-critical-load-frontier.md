@@ -2854,3 +2854,48 @@ K13K14SupportReplacementSurvivorPDECOrGlobalSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“多数相位可通过支撑行替换重建”的解释。
+
+## 79. cycle-debt K13/K14 survivor rigidity
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k13_k14_survivor_rigidity_router.py
+docs/monograph/prime-matrix-cycle-debt-k13-k14-survivor-rigidity-router.md
+data/prime-matrix-cycle-debt-k13-k14-survivor-rigidity-ledger.json
+```
+
+本步把 `K=13,14` 两个 survivor 从“存在 Hall assignment”继续压成 tight-Hall 刚性岛。每个 zero-slack 阈值都是一个精确 Hall cut：该层 supply set 必须整层进入匹配，任一 supply 行容量损失都会立刻造成阈值失败。
+
+```text
+k13_zero_slack_thresholds=[1,4,7,8]
+k14_zero_slack_thresholds=[7,8,13,15]
+k13_minimum_replacement_count=20
+k14_minimum_replacement_count=19
+k13_minimum_immediate_relief_rows=6
+k14_minimum_immediate_relief_rows=6
+k13_minimum_overstretch_units=61
+k14_minimum_overstretch_units=65
+all_tight_layers_have_transverse_lcm_exceeding_period=true
+survivor_island_has_adjacent_hall_failures=true
+```
+
+forced-shell 读数显示：
+
+- `K=13` 的 `>=8` shell 中 supply residues `[1,13,19,30]` 与 demand residues `[17,23,58,67]` 完全错位，立即给出 4 个强制替换；`7..7` shell 又强制 `31 -> 15`。
+- `K=14` 的 `>=15` shell 强制 `13 -> 67`，`13..14` shell 强制 `19 -> 23`，`7..7` shell 强制 `70 -> 15`。
+- `K=12` 左邻已在 `t=1` 缺 1 行，`K=15` 右邻在 `t=6,7` 缺行，所以幸存相位只能是孤立两点岛。
+
+当前 actual-load 前沿收窄为：
+
+```text
+tight-Hall CRT island PDEC  OR  moving-support SAE
+```
+
+最新接口为：
+
+```text
+K13K14TightHallCRTIslandPDECOrMovingSupportSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“两个 survivor 相位可自由推广成平滑替换族”的解释。

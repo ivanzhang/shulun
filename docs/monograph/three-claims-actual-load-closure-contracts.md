@@ -2797,3 +2797,48 @@ K13K14SupportReplacementSurvivorPDECOrGlobalSAE
 ```
 
 本步关闭的是“support-row replacement 可在大多数近程相位自由实现”的解释；全局仍需排斥 `K=13,14` 两个幸存相位，或证明它们只能形成 global SAE/PDEC。
+
+## 72. cycle-debt K13/K14 survivor rigidity 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k13_k14_survivor_rigidity_router.py
+docs/monograph/prime-matrix-cycle-debt-k13-k14-survivor-rigidity-router.md
+docs/monograph/prime-matrix-cycle-debt-k13-k14-survivor-rigidity-router.json
+data/prime-matrix-cycle-debt-k13-k14-survivor-rigidity-ledger.json
+```
+
+本证书继续下钻 `K=13,14` 两个 survivor。此前 Hall router 给出一份贪心 assignment；本步改用 exact min-cost matching，抽取所有 zero-slack Hall cut，并把 tight cut 的强制合数槽转成横向 CRT 阻断模数。
+
+```text
+survivor_shifts=[13,14]
+k13_zero_slack_thresholds=[1,4,7,8]
+k14_zero_slack_thresholds=[7,8,13,15]
+k13_minimum_replacement_count=20
+k14_minimum_replacement_count=19
+k13_minimum_immediate_relief_rows=6
+k14_minimum_immediate_relief_rows=6
+k13_minimum_overstretch_units=61
+k14_minimum_overstretch_units=65
+all_tight_layers_have_transverse_lcm_exceeding_period=true
+k13_same_support_prime_obstacles=27
+k14_same_support_prime_obstacles=28
+survivor_island_has_adjacent_hall_failures=true
+```
+
+核心结构不是局部个例，而是一个两点 survivor island：
+
+- `K=13` 的零 slack 阈值为 `1,4,7,8`。特别是 `t=1` 层使全部 27 个正容量候选行都不可丢失；`t=8` 层强制 4 个高层候选支撑 4 个高需求行。
+- `K=14` 的零 slack 阈值为 `7,8,13,15`。`t=15` 与 `t=13` 层把最高两层需求压成强制 shell，`t=7` 层还强制引入 immediate-relief residue `70`。
+- 相邻 `K=12` 与 `K=15` 均 Hall 失败，因此 `K=13,14` 不是可连续滑动的 replacement family。
+- 即便优化匹配，`K=13/14` 仍至少需要 `20/19` 个行替换、至少 `6/6` 个 immediate-relief 行，并分别产生至少 `61/65` 个超出原 debt 的支撑单元。
+- 每个 tight Hall 层的强制合数槽都有横向 CRT lcm 超过本地周期 `5680`，所以短周期内不能作为自由容量被吸收。
+
+最新最窄剩余接口为：
+
+```text
+K13K14TightHallCRTIslandPDECOrMovingSupportSAE
+```
+
+本步关闭的是“`K=13,14` survivor 只是普通支撑替换自由度”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥该 tight-Hall CRT island 的 PDEC，或证明它进入可求和的 moving-support SAE。
