@@ -2342,3 +2342,40 @@ ZeroGainEndpointCutSAEOrOneSlotResetPDECExclusion
 ```
 
 本步关闭的是当前 epoch 的“端点切断可获得真实覆盖收益”解释。全局行/列命题仍需排斥 one-slot reset-PDEC 的持久复现，或证明 zero-gain endpoint cut 的 SAE/Rankin 可吸收。
+
+## 61. endpoint cut no-payload SAE 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_endpoint_cut_no_payload_sae_router.py
+docs/monograph/prime-matrix-endpoint-cut-no-payload-sae-router.md
+docs/monograph/prime-matrix-endpoint-cut-no-payload-sae-router.json
+data/prime-matrix-endpoint-cut-no-payload-sae-ledger.json
+```
+
+本证书把上一节的 zero-gain endpoint cut 进一步提升为“空 actual payload”。端点切断缓冲 `step=83..89` 中：
+
+```text
+actual_prime_anchor_count_before_reset=0
+actual_new_prime_anchor_count_before_reset=0
+filtered_repeat_prime_anchor_count_before_reset=0
+actual_payload_empty=true
+actual_payload_mass=0
+formal_gap_composite_residues=[0,62]
+missing_nonzero_before_cut=35
+missing_nonzero_after_cut=35
+missing_nonzero_set_preserved_by_cut=true
+endpoint_cut_routes_to_no_payload_sae=true
+reset_atom_at_first_prime_anchor=true
+```
+
+也就是说，端点切断不只是没有新增 coverage；它完全没有 actual prime-anchor payload，且缺失非零 residue 集不变。形式缺口 `62,0` 被素数锚过滤掉后不留下任何实际支撑。因此 endpoint 分支不能提供反例链所需容量，只能登记为 no-payload endpoint SAE；若不走该 SAE，首个素数锚已经是一槽 reset-PDEC。
+
+最新最窄剩余接口为：
+
+```text
+OneSlotResetPDECExclusionOrNoPayloadEndpointSAESummability
+```
+
+本步关闭的是当前 primitive epoch 的 endpoint cut actual-load 出口；全局仍需排斥 one-slot reset-PDEC 持久复现，或证明 no-payload endpoint SAE 的全局可求和/可吸收。

@@ -2400,3 +2400,45 @@ ZeroGainEndpointCutSAEOrOneSlotResetPDECExclusion
 ```
 
 这一步不关闭全局命题；它把 endpoint-motion 分支从“可能有新实际覆盖”压成零收益端点 SAE。
+
+## 68. endpoint cut no-payload SAE
+
+后续文件
+
+```text
+experiments/prime_matrix_endpoint_cut_no_payload_sae_router.py
+docs/monograph/prime-matrix-endpoint-cut-no-payload-sae-router.md
+data/prime-matrix-endpoint-cut-no-payload-sae-ledger.json
+```
+
+本步把 zero-gain endpoint cut 再压成空 actual payload。缓冲表中没有任何 actual prime-anchor 行：
+
+```text
+actual_prime_anchor_count_before_reset=0
+actual_new_prime_anchor_count_before_reset=0
+filtered_repeat_prime_anchor_count_before_reset=0
+actual_payload_empty=true
+actual_payload_mass=0
+```
+
+并且切断不改变当前缺失非零 residue 集：
+
+```text
+missing_nonzero_before_cut=35
+missing_nonzero_after_cut=35
+missing_nonzero_set_preserved_by_cut=true
+```
+
+因此 endpoint cut 分支不能作为容量来源；它只是一个 no-payload SAE。当前 epoch 的实际二分收窄为：
+
+```text
+one-slot reset-PDEC  OR  no-payload endpoint SAE
+```
+
+最新接口为：
+
+```text
+OneSlotResetPDECExclusionOrNoPayloadEndpointSAESummability
+```
+
+这一步关闭的是当前 endpoint cut 的 actual payload；全局仍需处理 reset-PDEC 排斥或 no-payload SAE 的全局吸收。
