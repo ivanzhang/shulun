@@ -2753,3 +2753,47 @@ FreshCoverPrimeObstaclePDECOrSupportRowReplacementSAE
 ```
 
 本步关闭的是“fresh moving cover 可在同一支撑行上重建全合数词”的解释；全局仍需排斥删除实际素数障碍的 PDEC，或证明支撑行替换只能形成可求和的 support-row replacement SAE/PDEC。
+
+## 71. cycle-debt support-row replacement Hall 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_support_row_replacement_hall_router.py
+docs/monograph/prime-matrix-cycle-debt-support-row-replacement-hall-router.md
+docs/monograph/prime-matrix-cycle-debt-support-row-replacement-hall-router.json
+data/prime-matrix-cycle-debt-support-row-replacement-hall-ledger.json
+```
+
+本证书把 support-row replacement 写成全局容量匹配问题：35 个缺失 residue 候选行，对 27 个正债务需求行。对每个近程相位 `K`，候选行容量定义为从 `K` 开始最长连续 composite 段；需求是原正债务行的 debt 长度。Hall 阈值条件为：
+
+```text
+candidate rows with capacity>=t >= demand rows with debt>=t
+```
+
+审计结果：
+
+```text
+candidate_missing_residue_count=35
+needed_positive_debt_row_count=27
+total_demand_width=101
+max_required_width=15
+hall_fail_shift_count=14
+hall_fail_shifts=[1,2,3,4,5,6,7,8,9,10,11,12,15,16]
+hall_survivor_shift_count=2
+hall_survivor_shifts=[13,14]
+all_but_k13_k14_fail_hall_capacity=true
+k13_assigned_immediate_relief_rows=6
+k14_assigned_immediate_relief_rows=8
+support_row_replacement_closed_except_k13_k14_current_certificate=true
+```
+
+因此，16 个近程相位中有 14 个不只是含素数障碍，而是即便允许换到任意缺失 residue 行，也在阈值 Hall 容量上不足。仅 `K=13,14` 通过容量测试；但二者都必须调用原本 immediate-relief 的行，并且需要大规模替换：`K=13` 替换 26 行，`K=14` 替换 27 行。
+
+最新最窄剩余接口为：
+
+```text
+K13K14SupportReplacementSurvivorPDECOrGlobalSAE
+```
+
+本步关闭的是“support-row replacement 可在大多数近程相位自由实现”的解释；全局仍需排斥 `K=13,14` 两个幸存相位，或证明它们只能形成 global SAE/PDEC。

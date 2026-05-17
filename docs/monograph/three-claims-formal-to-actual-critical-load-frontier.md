@@ -2813,3 +2813,44 @@ FreshCoverPrimeObstaclePDECOrSupportRowReplacementSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“same-support fresh moving cover”的解释。
+
+## 78. cycle-debt support-row replacement Hall
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_support_row_replacement_hall_router.py
+docs/monograph/prime-matrix-cycle-debt-support-row-replacement-hall-router.md
+data/prime-matrix-cycle-debt-support-row-replacement-hall-ledger.json
+```
+
+本步把支撑行替换变成 35 个缺失 residue 候选行与 27 个正债务需求行之间的 Hall 容量判定。对阈值 `t`，要求候选中 `capacity>=t` 的行数不少于需求中 `debt>=t` 的行数。
+
+```text
+candidate_missing_residue_count=35
+needed_positive_debt_row_count=27
+total_demand_width=101
+hall_fail_shift_count=14
+hall_fail_shifts=[1,2,3,4,5,6,7,8,9,10,11,12,15,16]
+hall_survivor_shift_count=2
+hall_survivor_shifts=[13,14]
+all_but_k13_k14_fail_hall_capacity=true
+k13_assigned_immediate_relief_rows=6
+k14_assigned_immediate_relief_rows=8
+```
+
+所以 fresh replacement 分支被压缩到两个相位原子：`K=13` 与 `K=14`。它们不是轻微替换，分别需要调用 `6` 和 `8` 个 immediate-relief 行，并进行 `26/27` 行替换。
+
+当前 actual-load 前沿收窄为：
+
+```text
+K=13/14 support replacement survivor PDEC  OR  global SAE
+```
+
+最新接口为：
+
+```text
+K13K14SupportReplacementSurvivorPDECOrGlobalSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“多数相位可通过支撑行替换重建”的解释。
