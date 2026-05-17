@@ -2727,3 +2727,46 @@ SparseReplaySAEOrMovingTransverseCoverPDEC
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“同一 transverse CRT cover 可在 CRT 周期中高频复现”的解释。
+
+## 76. cycle-debt near-shift exit-boundary
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_near_shift_exit_boundary_router.py
+docs/monograph/prime-matrix-cycle-debt-near-shift-exit-boundary-router.md
+data/prime-matrix-cycle-debt-near-shift-exit-boundary-ledger.json
+```
+
+本步把 moving transverse cover 的近程滑动尝试转成 exit-prime 边界冲突：
+
+```text
+near_shift_limit_cycles=16
+positive_cycle_debt_residue_count=27
+total_cycle_debt_mass=101
+max_cycle_debt=15
+all_near_shifts_close_old_prefix_reuse=true
+shift_1_exit_prime_collision_row_count=27
+shift_1_exit_prime_collision_debt_mass=101
+shift_max_cycle_debt_exit_prime_collision_row_count=1
+shift_max_cycle_debt_exit_prime_collision_debt_mass=15
+shift_near_limit_fresh_cover_required_row_count=27
+shift_near_limit_fresh_cover_required_debt_mass=101
+moving_branch_must_replace_some_or_all_support_rows=true
+```
+
+每个正债务行都满足：旧合数前缀结束处紧接该行首个 relief prime。于是 `K=1` 平移会把 27 行的 exit prime 全部拉入词内；`1<=K<=15` 时至少有一行发生 exit-prime 碰撞；`K=16` 时则没有任何旧前缀可复用，27 行都需要 fresh cover。
+
+当前 actual-load 前沿收窄为：
+
+```text
+fresh moving cover PDEC  OR  global support-motion SAE
+```
+
+最新接口为：
+
+```text
+FreshMovingCoverPDECOrGlobalSupportMotionSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“moving 分支可由旧 CRT cover 近程滑动复用”的解释。

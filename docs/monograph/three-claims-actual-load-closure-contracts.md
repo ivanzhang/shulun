@@ -2670,3 +2670,43 @@ SparseReplaySAEOrMovingTransverseCoverPDEC
 ```
 
 本步关闭的是“保持同一 transverse CRT cover 即可高频补偿容量”的解释；全局仍需排斥 moving transverse cover PDEC，或把 exact sparse replay 的 SAE 求和完全接入。
+
+## 69. cycle-debt near-shift exit-boundary 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_near_shift_exit_boundary_router.py
+docs/monograph/prime-matrix-cycle-debt-near-shift-exit-boundary-router.md
+docs/monograph/prime-matrix-cycle-debt-near-shift-exit-boundary-router.json
+data/prime-matrix-cycle-debt-near-shift-exit-boundary-ledger.json
+```
+
+本证书继续攻击 moving transverse cover 分支：若不是 exact 稀疏复现，而是试图做近程移动，那么旧 debt 前缀会被每行的首个 relief prime 边界撕裂。当前审计取 near-shift 窗口为上一节 full-relief 周期跨度上取整：
+
+```text
+near_shift_limit_cycles=16
+near_shift_limit_p=90880
+positive_cycle_debt_residue_count=27
+total_cycle_debt_mass=101
+max_cycle_debt=15
+tested_nonzero_near_shift_count=16
+all_near_shifts_close_old_prefix_reuse=true
+shift_1_exit_prime_collision_row_count=27
+shift_1_exit_prime_collision_debt_mass=101
+shift_max_cycle_debt_exit_prime_collision_row_count=1
+shift_max_cycle_debt_exit_prime_collision_debt_mass=15
+shift_near_limit_fresh_cover_required_row_count=27
+shift_near_limit_fresh_cover_required_debt_mass=101
+moving_branch_must_replace_some_or_all_support_rows=true
+```
+
+对任一正债务行，原始 composite prefix 的第 `debt` 个周期正是该行首个素数 relief。因此平移量 `1<=K<=debt` 会把这个 exit prime 拉入平移后的 debt word；而 `K>debt` 时，旧 composite prefix 已完全不能为该行提供复用支撑。结果是：`K=1` 时 27 行全部撞上 exit prime；`1<=K<=15` 时所有 `debt>=K` 的行被撕裂；`K=16` 时 27 行全都必须 fresh cover。
+
+最新最窄剩余接口为：
+
+```text
+FreshMovingCoverPDECOrGlobalSupportMotionSAE
+```
+
+本步关闭的是“moving 分支只是旧 CRT cover 的近程滑动复用”的解释；全局仍需排斥 fresh moving cover PDEC，或证明它只能形成 global support-motion SAE。
