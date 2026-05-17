@@ -1,0 +1,510 @@
+{
+  "certificate_type": "prime_matrix_nonreal_halfclass_simplex_phase_router",
+  "status": "nonreal_zero_packet_routed_to_halfclass_simplex_rankone_phase_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "previous_nonreal_branch": "NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2",
+  "next_direct_attack_target": "NonrealHalfClassSimplexRankOneProjectionExclusionAtP2",
+  "quadratic_margin_still_required": "QuadraticHalfClassSquareScaleBiasMarginTheorem",
+  "formula_ledger": [
+    {
+      "item": "nonreal residual packet",
+      "formula": "R_a=(P-1)theta_a(P)-T0(P)-chi_2(a)T_2(P)"
+    },
+    {
+      "item": "zero-column requirement after quadratic removal",
+      "formula": "theta_a=0 implies R_a=-T0(P)-chi_2(a)T_2(P)"
+    },
+    {
+      "item": "minimum required nonreal projection",
+      "formula": "min_a |T0+chi_2(a)T_2|/T0 = 1-|T_2|/T0"
+    },
+    {
+      "item": "nonreal evaluation norm",
+      "formula": "||w_a||^2=P-3 after removing principal and quadratic characters"
+    },
+    {
+      "item": "halfclass simplex inner product",
+      "formula": "<w_a,w_b>=P-3 if a=b; -2 if a!=b and chi_2(a)=chi_2(b); 0 if chi_2(a)!=chi_2(b)"
+    },
+    {
+      "item": "capacity floor after quadratic removal",
+      "formula": "zero column forces E_nonreal >= T0^2*(1-|T_2|/T0)^2/(P-3)"
+    }
+  ],
+  "branch_ledger": [
+    {
+      "branch": "NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2",
+      "route": "NonrealHalfClassSimplexRankOneProjectionExclusionAtP2",
+      "status": "open",
+      "meaning": "非实零包不是无结构残差；它是两个正交二次半类 simplex 上的 rank-one 投影问题。"
+    },
+    {
+      "branch": "capacity-only after quadratic removal",
+      "route": "nonreal energy below floor would exclude zero columns",
+      "status": "insufficient in current frontier",
+      "meaning": "能量超过地板仍不迫使能量集中到某个 residue evaluation 方向。"
+    },
+    {
+      "branch": "NonrealHalfClassSimplexRankOneProjectionExclusionAtP2",
+      "route": "exclude rank-one negative projection of size at least (1-r_quad)T0 in both halfclass simplexes",
+      "status": "not proved in corpus",
+      "meaning": "这是当前解析 AP 路线的非实相位硬点。"
+    }
+  ],
+  "finite_diagnostic": {
+    "min_p": 7,
+    "max_p": 1000,
+    "prime_moduli_checked": 165,
+    "capacity_false_positive_after_quadratic_removal_count": 161,
+    "max_actual_negative_nonreal_projection_ratio": 0.68968303124307,
+    "max_negative_ratio_modulus": 73,
+    "max_nonreal_energy_to_zero_floor_ratio": 4.868669254524807,
+    "max_energy_ratio_modulus": 877,
+    "top_negative_projection_records": [
+      {
+        "P": 73,
+        "T0": 5215.133140522448,
+        "T_quadratic": 15.62016224813717,
+        "quadratic_ratio": 0.0029951607806070995,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9970048392193929,
+        "max_actual_negative_nonreal_projection_ratio": 0.68968303124307,
+        "worst_residue": 72,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.3133121295375372,
+        "nonreal_energy": 924334.7663913253,
+        "nonreal_zero_floor": 386213.3601606142,
+        "nonreal_energy_to_zero_floor_ratio": 2.3933267508066605,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 19,
+        "T0": 332.12870717365246,
+        "T_quadratic": -8.22557322811751,
+        "quadratic_ratio": 0.024766221800323916,
+        "min_required_nonreal_projection_ratio_to_zero": 0.975233778199676,
+        "max_actual_negative_nonreal_projection_ratio": 0.5854103770652535,
+        "worst_residue": 12,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.4393558447350705,
+        "nonreal_energy": 9179.582047359148,
+        "nonreal_zero_floor": 6557.077511233697,
+        "nonreal_energy_to_zero_floor_ratio": 1.399950211299551,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 43,
+        "T0": 1784.814910452861,
+        "T_quadratic": -83.89628836625197,
+        "quadratic_ratio": 0.04700559586033767,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9529944041396623,
+        "max_actual_negative_nonreal_projection_ratio": 0.5547575355068689,
+        "worst_residue": 15,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.3982368686327934,
+        "nonreal_energy": 112549.63590530654,
+        "nonreal_zero_floor": 72328.10397402522,
+        "nonreal_energy_to_zero_floor_ratio": 1.556098248417045,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 31,
+        "T0": 911.4801918753474,
+        "T_quadratic": -93.4926538286081,
+        "quadratic_ratio": 0.1025723374594124,
+        "min_required_nonreal_projection_ratio_to_zero": 0.8974276625405876,
+        "max_actual_negative_nonreal_projection_ratio": 0.540062658337228,
+        "worst_residue": 24,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.5465402020743618,
+        "nonreal_energy": 32637.15653394197,
+        "nonreal_zero_floor": 23896.55758570592,
+        "nonreal_energy_to_zero_floor_ratio": 1.3657681202360448,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 7,
+        "T0": 39.014309282297646,
+        "T_quadratic": -5.082408227074191,
+        "quadratic_ratio": 0.1302703628635118,
+        "min_required_nonreal_projection_ratio_to_zero": 0.8697296371364882,
+        "max_actual_negative_nonreal_projection_ratio": 0.5009579761367547,
+        "worst_residue": 4,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.36877166099973346,
+        "nonreal_energy": 109.34313750862192,
+        "nonreal_zero_floor": 287.84347730536865,
+        "nonreal_energy_to_zero_floor_ratio": 0.3798701243197583,
+        "capacity_false_positive_after_quadratic_removal": false
+      },
+      {
+        "P": 13,
+        "T0": 149.36791031202745,
+        "T_quadratic": -19.354710850207738,
+        "quadratic_ratio": 0.1295774360756338,
+        "min_required_nonreal_projection_ratio_to_zero": 0.8704225639243662,
+        "max_actual_negative_nonreal_projection_ratio": 0.49807519866650707,
+        "worst_residue": 12,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.37234736525785916,
+        "nonreal_energy": 2047.1451544062638,
+        "nonreal_zero_floor": 1690.343203429892,
+        "nonreal_energy_to_zero_floor_ratio": 1.2110825483560863,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 131,
+        "T0": 16989.521610726177,
+        "T_quadratic": -488.5314327323588,
+        "quadratic_ratio": 0.028754866907136984,
+        "min_required_nonreal_projection_ratio_to_zero": 0.971245133092863,
+        "max_actual_negative_nonreal_projection_ratio": 0.4821445080882956,
+        "worst_residue": 31,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.5466103588188413,
+        "nonreal_energy": 5318179.805206642,
+        "nonreal_zero_floor": 2127208.412923816,
+        "nonreal_energy_to_zero_floor_ratio": 2.5000746390885524,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 199,
+        "T0": 39351.34506977007,
+        "T_quadratic": -657.2341307766345,
+        "quadratic_ratio": 0.016701694176180157,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9832983058238198,
+        "max_actual_negative_nonreal_projection_ratio": 0.47752863849532434,
+        "worst_residue": 9,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.5057696673284955,
+        "nonreal_energy": 25707889.73317979,
+        "nonreal_zero_floor": 7638950.10897516,
+        "nonreal_energy_to_zero_floor_ratio": 3.3653695031958724,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 101,
+        "T0": 10103.459536852786,
+        "T_quadratic": -47.81799275817287,
+        "quadratic_ratio": 0.004732833598605979,
+        "min_required_nonreal_projection_ratio_to_zero": 0.995267166401394,
+        "max_actual_negative_nonreal_projection_ratio": 0.45435617594837363,
+        "worst_residue": 30,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.5409109904530204,
+        "nonreal_energy": 2875469.2742398293,
+        "nonreal_zero_floor": 1031795.1720747093,
+        "nonreal_energy_to_zero_floor_ratio": 2.786860563088218,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 97,
+        "T0": 9285.63879812195,
+        "T_quadratic": -120.76737985272308,
+        "quadratic_ratio": 0.013005823560264767,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9869941764397352,
+        "max_actual_negative_nonreal_projection_ratio": 0.4520949110761732,
+        "worst_residue": 14,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.5609109124840916,
+        "nonreal_energy": 2506151.204644807,
+        "nonreal_zero_floor": 893562.426738385,
+        "nonreal_energy_to_zero_floor_ratio": 2.804673886963414,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 139,
+        "T0": 19088.560187710296,
+        "T_quadratic": 64.70319718711451,
+        "quadratic_ratio": 0.0033896321435899646,
+        "min_required_nonreal_projection_ratio_to_zero": 0.99661036785641,
+        "max_actual_negative_nonreal_projection_ratio": 0.4450305367586416,
+        "worst_residue": 34,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.5583590953849484,
+        "nonreal_energy": 5952048.47200266,
+        "nonreal_zero_floor": 2661081.8734991006,
+        "nonreal_energy_to_zero_floor_ratio": 2.236702497310319,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 71,
+        "T0": 4958.556977158093,
+        "T_quadratic": -120.0281719146258,
+        "quadratic_ratio": 0.024206270587903533,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9757937294120964,
+        "max_actual_negative_nonreal_projection_ratio": 0.44326618240105664,
+        "worst_residue": 48,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.5325275470110398,
+        "nonreal_energy": 699917.0692181763,
+        "nonreal_zero_floor": 344284.7205760408,
+        "nonreal_energy_to_zero_floor_ratio": 2.032960010676943,
+        "capacity_false_positive_after_quadratic_removal": true
+      }
+    ],
+    "top_energy_records": [
+      {
+        "P": 877,
+        "T0": 768114.5880452754,
+        "T_quadratic": -695.903910829024,
+        "quadratic_ratio": 0.0009059897073429947,
+        "min_required_nonreal_projection_ratio_to_zero": 0.999094010292657,
+        "max_actual_negative_nonreal_projection_ratio": 0.24692139451394898,
+        "worst_residue": 605,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7539845951933939,
+        "nonreal_energy": 3280677779.3706365,
+        "nonreal_zero_floor": 673834595.83369,
+        "nonreal_energy_to_zero_floor_ratio": 4.868669254524807,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 857,
+        "T0": 733517.6243027763,
+        "T_quadratic": 564.0296066678853,
+        "quadratic_ratio": 0.0007689380431779089,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9992310619568221,
+        "max_actual_negative_nonreal_projection_ratio": 0.21697203390348282,
+        "worst_residue": 462,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7822590280533392,
+        "nonreal_energy": 2970219352.0756483,
+        "nonreal_zero_floor": 629064369.9975963,
+        "nonreal_energy_to_zero_floor_ratio": 4.721646136288085,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 991,
+        "T0": 980749.6971365388,
+        "T_quadratic": -455.68705967778715,
+        "quadratic_ratio": 0.0004646313539614042,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9995353686460386,
+        "max_actual_negative_nonreal_projection_ratio": 0.2300294786652173,
+        "worst_residue": 388,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7704351526887441,
+        "nonreal_energy": 4498358793.562847,
+        "nonreal_zero_floor": 972648123.6766933,
+        "nonreal_energy_to_zero_floor_ratio": 4.624857318964093,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 701,
+        "T0": 490604.0247654661,
+        "T_quadratic": -1650.8105444096914,
+        "quadratic_ratio": 0.0033648532443223706,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9966351467556777,
+        "max_actual_negative_nonreal_projection_ratio": 0.25977072329109735,
+        "worst_residue": 619,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7435941299532252,
+        "nonreal_energy": 1583155059.9234822,
+        "nonreal_zero_floor": 342514678.6491437,
+        "nonreal_energy_to_zero_floor_ratio": 4.622152446626071,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 661,
+        "T0": 436326.1381415196,
+        "T_quadratic": -316.1931622216796,
+        "quadratic_ratio": 0.0007246716036047429,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9992753283963952,
+        "max_actual_negative_nonreal_projection_ratio": 0.3139926672301111,
+        "worst_residue": 12,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.6852826611662841,
+        "nonreal_energy": 1324518429.8181007,
+        "nonreal_zero_floor": 288912875.56360245,
+        "nonreal_energy_to_zero_floor_ratio": 4.584490833903717,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 809,
+        "T0": 653394.3677811256,
+        "T_quadratic": -1731.4610586234112,
+        "quadratic_ratio": 0.002649947939562615,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9973500520604374,
+        "max_actual_negative_nonreal_projection_ratio": 0.2815868813480177,
+        "worst_residue": 775,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7210630665915448,
+        "nonreal_energy": 2408722687.5091276,
+        "nonreal_zero_floor": 526879086.84617937,
+        "nonreal_energy_to_zero_floor_ratio": 4.571680196925991,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 947,
+        "T0": 896006.5388351151,
+        "T_quadratic": 2307.6900614775514,
+        "quadratic_ratio": 0.002575528147905868,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9974244718520942,
+        "max_actual_negative_nonreal_projection_ratio": 0.2443227823816482,
+        "worst_residue": 202,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.7582527457662577,
+        "nonreal_energy": 3867271729.0581074,
+        "nonreal_zero_floor": 846078000.3170818,
+        "nonreal_energy_to_zero_floor_ratio": 4.57082175356029,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 911,
+        "T0": 829086.1731256489,
+        "T_quadratic": -1443.7358052729946,
+        "quadratic_ratio": 0.001741357957798429,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9982586420422016,
+        "max_actual_negative_nonreal_projection_ratio": 0.2808587077274612,
+        "worst_residue": 182,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7208826502303374,
+        "nonreal_energy": 3441429671.4520183,
+        "nonreal_zero_floor": 754396480.235256,
+        "nonreal_energy_to_zero_floor_ratio": 4.561831558889061,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 881,
+        "T0": 775056.0271924152,
+        "T_quadratic": 979.5020976694364,
+        "quadratic_ratio": 0.0012637823116060556,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9987362176883939,
+        "max_actual_negative_nonreal_projection_ratio": 0.24138463208852096,
+        "worst_residue": 62,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7573515855998729,
+        "nonreal_energy": 3089569041.3354154,
+        "nonreal_zero_floor": 682453834.5133902,
+        "nonreal_energy_to_zero_floor_ratio": 4.527147310320807,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 757,
+        "T0": 572210.6051183549,
+        "T_quadratic": -972.245672359155,
+        "quadratic_ratio": 0.0016991046018066333,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9983008953981933,
+        "max_actual_negative_nonreal_projection_ratio": 0.21420137305323594,
+        "worst_residue": 439,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.7874977315485707,
+        "nonreal_energy": 1954400910.90504,
+        "nonreal_zero_floor": 432776211.276595,
+        "nonreal_energy_to_zero_floor_ratio": 4.515961968288381,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 907,
+        "T0": 821728.9080440039,
+        "T_quadratic": 250.62900311989608,
+        "quadratic_ratio": 0.0003050020519741467,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9996949979480259,
+        "max_actual_negative_nonreal_projection_ratio": 0.197680321002308,
+        "worst_residue": 70,
+        "worst_residue_legendre": -1,
+        "min_actual_slack_ratio": 0.8020146769457178,
+        "nonreal_energy": 3362588898.858524,
+        "nonreal_zero_floor": 746489560.7698811,
+        "nonreal_energy_to_zero_floor_ratio": 4.504535730399989,
+        "capacity_false_positive_after_quadratic_removal": true
+      },
+      {
+        "P": 743,
+        "T0": 551251.1196048189,
+        "T_quadratic": -1255.5734133618366,
+        "quadratic_ratio": 0.0022776795705411585,
+        "min_required_nonreal_projection_ratio_to_zero": 0.9977223204294589,
+        "max_actual_negative_nonreal_projection_ratio": 0.2616430453028393,
+        "worst_residue": 400,
+        "worst_residue_legendre": 1,
+        "min_actual_slack_ratio": 0.7360792751266195,
+        "nonreal_energy": 1841096613.7049534,
+        "nonreal_zero_floor": 408777163.2843772,
+        "nonreal_energy_to_zero_floor_ratio": 4.503912593630245,
+        "capacity_false_positive_after_quadratic_removal": true
+      }
+    ]
+  },
+  "halfclass_simplex_geometry_closed": true,
+  "zero_requirement_after_quadratic_removal_closed": true,
+  "nonreal_energy_floor_closed": true,
+  "nonreal_rankone_projection_exclusion_proved": false,
+  "row_column_unconditional_closed": false,
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale) AND NonrealHalfClassSimplexRankOneProjectionExclusionAtP2)) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "NonrealBranchImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层确认二次半类余量之后仍必须处理非实零包相位。",
+      "remaining": "NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2"
+    },
+    {
+      "gate": "HalfclassSimplexGeometryClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "删除主角色和二次角色后，evaluation 向量分裂为两个正交半类 simplex。",
+      "remaining": "none"
+    },
+    {
+      "gate": "ZeroRequirementAfterQuadraticRemovalClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "零列要求非实残差在对应半类方向提供至少 (1-r_quad)T0 的负投影。",
+      "remaining": "NonrealHalfClassSimplexRankOneProjectionExclusionAtP2"
+    },
+    {
+      "gate": "NonrealEnergyFloorNecessaryConditionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "Cauchy 给出删除二次角色后的非实能量必要地板。",
+      "remaining": "none"
+    },
+    {
+      "gate": "NonrealCapacityAloneSufficient",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有证明非实能量低于地板；能量高于地板也不是相位矛盾。",
+      "remaining": "NonrealHalfClassSimplexRankOneProjectionExclusionAtP2"
+    },
+    {
+      "gate": "NonrealRankOneProjectionExclusionProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有排斥两个半类 simplex 中的单方向同相负投影。",
+      "remaining": "NonrealHalfClassSimplexRankOneProjectionExclusionAtP2"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只闭合非实残差的几何和容量地板，不证明行/列命题。",
+      "remaining": "global final inputs remain open"
+    }
+  ],
+  "closed_gates": [
+    "NonrealBranchImported",
+    "HalfclassSimplexGeometryClosed",
+    "ZeroRequirementAfterQuadraticRemovalClosed",
+    "NonrealEnergyFloorNecessaryConditionClosed"
+  ],
+  "open_gates": [
+    "NonrealBranchImported",
+    "NonrealCapacityAloneSufficient",
+    "NonrealRankOneProjectionExclusionProved",
+    "RowColumnUnconditionalClosed"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.json": "11a035a79778851ceb5e852bb80587a455411b199bd6ec33208ce7b022aed2c4",
+    "docs/monograph/prime-matrix-explicit-ap-zero-packet-siegel-split-router.json": "5c277929e4739d9e6829a9137d4115f974fc1df3260c7f31e57f6a7f3bc879db",
+    "docs/monograph/prime-matrix-linnik2-rankone-phase-capacity-router.json": "5c1a653d7367788f233fb0ca0eee1147b75a2c1ae8c614919bb0a78be7e0a2c4",
+    "docs/monograph/claim-status-table.md": "d625d9d62da1d4d3987df7b468639fee85c396671bc6601d4e67030a00553055",
+    "docs/final-proof-draft.md": "c8958bc1f15441975c2f7c2b206609eb88fa43adc21313e26742b3bb1addea9b",
+    "docs/prime-density-waves-VIII.md": "b7f072df8c7b33babe19ca00bc5a795030148041c1051ee884a2bdfc01e37988",
+    "docs/prime-density-waves-X.md": "512245acdfc1bf8085de9e6de6580f41acdb1c05d9039ea44f84cf82751626fe",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "8b72afec82e32a8e92e07e65c01e9ab01ae48c54c451de834e48d5779d25d337"
+  },
+  "plain_conclusion": "本步继续下钻 `NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2`。删除主角色和二次角色后，非实 evaluation 向量不再是一个未解析残差，而是分裂为两个正交的二次半类 simplex。零列若存在，非实包必须在对应半类的单个 rank-one 方向提供至少 `(1-r_quad)T0` 的负投影。Cauchy 能量地板只是必要条件；真正剩余是 `NonrealHalfClassSimplexRankOneProjectionExclusionAtP2`。"
+}

@@ -4719,3 +4719,60 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书的实质进展是：Siegel 分支的容量/相位矛盾不再停留在“实零可能危险”，而是变成一个明确的二次半类余量命题；但该命题仍未在当前语料中证明。
+
+## 121. Nonreal half-class simplex phase router
+
+新增文件
+
+```text
+experiments/prime_matrix_nonreal_halfclass_simplex_phase_router.py
+docs/monograph/prime-matrix-nonreal-halfclass-simplex-phase-router.md
+docs/monograph/prime-matrix-nonreal-halfclass-simplex-phase-router.json
+data/prime-matrix-nonreal-halfclass-simplex-phase-ledger.json
+```
+
+本步把非实零点包硬点压成半类 simplex 的 rank-one 投影问题。删除主角色与二次角色后：
+
+```text
+R_a=(P-1)theta_a(P)-T0(P)-chi_2(a)T_2(P)
+```
+
+且 evaluation 向量分裂为两个正交的二次半类 simplex：
+
+```text
+<w_a,w_b>=P-3, -2, 0
+```
+
+其中 `-2` 只发生在同一二次半类的不同 residue，`0` 发生在相反二次半类之间。零列要求非实残差在某个半类单方向提供至少
+
+```text
+(1-|T_2|/T0)T0
+```
+
+的负投影。
+
+当前读数：
+
+```text
+halfclass_simplex_geometry_closed=true
+zero_requirement_after_quadratic_removal_closed=true
+nonreal_energy_floor_closed=true
+nonreal_rankone_projection_exclusion_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND NonrealHalfClassSimplexRankOneProjectionExclusionAtP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“非实零包无结构残差”的误出口；剩余仍是点态相位排斥，而不是总能量容量。

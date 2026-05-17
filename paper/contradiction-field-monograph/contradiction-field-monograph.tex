@@ -8790,6 +8790,61 @@ target for the real branch.  The nonreal zero-packet phase-cancellation branch
 and the structural PDEC/signed-payload/ExactUV/D-structure inputs remain open.
 \end{proof}
 
+\begin{theorem}[Nonreal packet as two half-class simplexes]
+After removing the principal character and the quadratic character, define
+\[
+R_a=(P-1)\theta(P^2;P,a)-T_0(P)-\chi_P(a)T_{\chi}(P).
+\]
+Let \(w_a\) be the evaluation vector over the remaining nonreal characters.
+Then
+\[
+\langle w_a,w_b\rangle=
+\begin{cases}
+P-3,&a=b,\\
+-2,&a\ne b\ {\rm and}\ \chi_P(a)=\chi_P(b),\\
+0,&\chi_P(a)\ne\chi_P(b).
+\end{cases}
+\]
+Thus the nonreal packet splits into two orthogonal regular simplexes indexed by
+the quadratic-residue and quadratic-nonresidue half-classes.  A zero column in
+class \(a\) would force
+\[
+R_a=-T_0(P)-\chi_P(a)T_{\chi}(P),
+\]
+so the nonreal packet must supply a rank-one negative projection of size at
+least
+\[
+  (1-|T_{\chi}(P)|/T_0(P))T_0(P).
+\]
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-nonreal-halfclass-simplex-phase-router.md.
+\end{quote}
+The character orthogonality relation over \({\mathbb F}_P^\ast\) gives
+\(\sum_{\chi}\overline{\chi(a)}\chi(b)=P-1\) if \(a=b\), and \(0\)
+otherwise.  Removing the principal character subtracts \(1\), and removing the
+quadratic character subtracts \(\chi_P(a)\chi_P(b)\).  This gives the displayed
+inner products.  The identity for \(R_a\) is the inverse character expansion
+with those two components removed.  Setting \(\theta(P^2;P,a)=0\) gives the
+displayed zero-column requirement.
+
+Cauchy's inequality gives a necessary energy floor
+\[
+E_{\rm nonreal}\ge
+\frac{T_0(P)^2(1-|T_{\chi}(P)|/T_0(P))^2}{P-3},
+\]
+but this is still only a capacity condition.  The archived scan
+\(7\le P\le1000\) records many cases where the nonreal energy is above this
+floor while no zero column occurs.  Hence the remaining analytic AP input is
+not an energy statement, but
+\begin{quote}\footnotesize\ttfamily
+NonrealHalfClassSimplexRankOneProjectionExclusionAtP2.
+\end{quote}
+No unconditional row/column theorem is claimed.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

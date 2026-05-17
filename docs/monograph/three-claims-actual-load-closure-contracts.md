@@ -4755,3 +4755,70 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步仍不是闭合；它把 Siegel 实零偏置从口头风险变为可审计的二次角色投影余量定理，或等价地需要足够强的外部无 Siegel 零点/`beta` 间隙输入。
+
+## 114. 非实零包的二次半类 simplex 相位门回接
+
+后续文件
+
+```text
+experiments/prime_matrix_nonreal_halfclass_simplex_phase_router.py
+docs/monograph/prime-matrix-nonreal-halfclass-simplex-phase-router.md
+docs/monograph/prime-matrix-nonreal-halfclass-simplex-phase-router.json
+data/prime-matrix-nonreal-halfclass-simplex-phase-ledger.json
+```
+
+本证书继续下钻
+
+```text
+NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2
+```
+
+删除主角色和二次角色后，非实残差为
+
+```text
+R_a=(P-1)theta_a(P)-T0(P)-chi_2(a)T_2(P)
+```
+
+相应 evaluation 向量 `w_a` 满足精确内积：
+
+```text
+<w_a,w_b>=P-3  if a=b
+<w_a,w_b>=-2   if a!=b and chi_2(a)=chi_2(b)
+<w_a,w_b>=0    if chi_2(a)!=chi_2(b)
+```
+
+也就是说，非实零包不是无结构残差，而是两个正交二次半类 simplex 上的 rank-one 投影问题。零列若存在，则
+
+```text
+R_a=-T0(P)-chi_2(a)T_2(P)
+```
+
+所以非实包必须在对应半类的单方向提供至少 `(1-|T_2|/T0)T0` 的负投影。
+
+当前读数：
+
+```text
+halfclass_simplex_geometry_closed=true
+zero_requirement_after_quadratic_removal_closed=true
+nonreal_energy_floor_closed=true
+nonreal_rankone_projection_exclusion_proved=false
+row_column_unconditional_closed=false
+```
+
+有限诊断 `7<=P<=1000` 中，删除二次角色后仍有 `161` 个样本的非实能量超过零列必要地板但无零列；最大非实能量/地板比为 `4.868669254524807`。这继续说明容量地板不能替代相位排斥。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND NonrealHalfClassSimplexRankOneProjectionExclusionAtP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步仍不是闭合；它把非实残差的全局相位硬点从“零包抵消”压成两个半类 simplex 中的 rank-one 负投影排斥。
