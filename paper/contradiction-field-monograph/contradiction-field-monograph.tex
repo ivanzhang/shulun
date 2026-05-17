@@ -8123,6 +8123,52 @@ infinite cascade.  The only remaining possibilities are the named PDEC,
 SAE, or tail-sieve/H3 exits.
 \end{proof}
 
+\begin{theorem}[Fresh-layer tail-mass dichotomy]
+In the non-PDEC branch of the fresh endpoint layer cascade, assume the local
+aperture at stage \(j\) is \(W_j\) and the fresh endpoint prime is \(B_j\).
+If the fresh layer does not create a persistent ColumnCRT/PDEC correlation,
+then its local one-residue contribution is bounded by
+\[
+  \frac{W_j}{B_j}.
+\]
+Under the controlled-aperture condition \(\log W_j=o(\log B_j)\), and in
+particular under the endpoint-replacement model \(W_j=W_0+2j\), the total
+fresh-tail mass is summable:
+\[
+  \sum_j \frac{W_j}{B_j}<\infty .
+\]
+Thus the controlled non-PDEC fresh-tail branch is SAE.  If instead the
+aperture repeatedly grows fast enough to track the fresh modulus, the branch
+is no longer local endpoint replacement; it is aperture explosion or global
+support motion and must be routed to H3-DSB or moving-support PDEC.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-q2-fresh-layer-tail-mass-dichotomy-router.md.
+\end{quote}
+The previous cascade theorem gives \(L_{j+1}>2L_j\), where
+\(L_j=\log M_j\) is the logarithm of the full-wheel modulus, and also gives
+\(B_{j+1}>M_j\).  Hence the denominators \(B_{j+1}\) have lower bounds
+\(\exp(L_j)\) whose logarithms grow at least double-exponentially in the
+stage index.
+If \(\log W_j=o(\log B_j)\), then for all sufficiently large \(j\) one has
+\(W_j\le B_j^{1/2}\), so
+\[
+  \frac{W_j}{B_j}\le B_j^{-1/2},
+\]
+and the right-hand series converges by the same double-exponential lower
+growth.  The linear endpoint-replacement aperture \(W_j=W_0+2j\) is a special
+case.
+
+The only ways to avoid this SAE absorption are exactly the two named failures
+of the hypotheses.  A persistent concentration of fresh-layer hits is, by
+definition, a ColumnCRT/PDEC formal unit.  A failure of controlled aperture is
+an aperture explosion or support-motion event, not the local endpoint replay
+branch.  Therefore the router closes the controlled fresh-tail outlet but not
+the global row/column theorem.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

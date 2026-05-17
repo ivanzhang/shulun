@@ -4035,3 +4035,54 @@ FreshEndpointLayerCascadeNoFiniteCRTPeriodOrPDECSAEH3TailSieve;GlobalFinalInputs
 
 本步排除固定有限 CRT 周期终端；全局行/列命题仍需排斥 fresh-layer PDEC/ColumnCRT、SAE 与
 tail-sieve/H3 出口。
+
+## 100. Q2 fresh-layer tail-mass 二分回接
+
+后续文件
+
+```text
+experiments/prime_matrix_q2_fresh_layer_tail_mass_dichotomy_router.py
+docs/monograph/prime-matrix-q2-fresh-layer-tail-mass-dichotomy-router.md
+docs/monograph/prime-matrix-q2-fresh-layer-tail-mass-dichotomy-router.json
+data/prime-matrix-q2-fresh-layer-tail-mass-dichotomy-ledger.json
+```
+
+本证书把上一节留下的 non-PDEC 无界 fresh-layer 级联压成“受控孔径 SAE / 孔径爆炸支撑运动”二分。
+若 fresh-layer 没有形成持久相关集中，则每个新素层只贡献一个禁相位；在孔径 `W_j` 内的形式质量至多为
+`W_j/B_j`。由上一节的 fresh modulus `M_j` 对数至少倍增、且 `B_{j+1}>M_j`，以及端点替换给出的线性孔径模型 `W_j=W0+2j`，得到
+
+```text
+sum_j W_j/B_j < infinity
+```
+
+所以受控孔径、无 PDEC 的 fresh-tail 只能进入可求和 `SAE`。若孔径增长到反复追赶 fresh modulus，
+则该分支已经变成全局支撑运动或孔径爆炸，回到 `H3-DSB`、moving-support `PDEC` 或显式支撑运动账本。
+
+当前读数：
+
+```text
+one_residue_fresh_layer_mass_model=true
+linear_aperture_fresh_mass_summable=true
+subexponential_controlled_aperture_summable=true
+aperture_explosion_dichotomy=true
+persistent_fresh_layer_correlation_routes_to_pdec=true
+controlled_non_pdec_fresh_tail_routes_to_sae=true
+row_column_unconditional_closed=false
+```
+
+最新三分流为：
+
+```text
+controlled non-PDEC fresh-tail => SAE
+persistent fresh-layer correlation => ColumnCRT/PDEC
+aperture explosion/support motion => H3-DSB or moving-support PDEC
+```
+
+最新剩余为：
+
+```text
+ControlledFreshLayerTailMassSAEOrApertureExplosionH3PDEC;GlobalFinalInputsStillOpen
+```
+
+本步只关闭受控孔径尾质量；它仍不排斥孔径爆炸、moving-support H3/DSB 或 fresh-layer PDEC，
+因此不是行/列命题的全局无条件证明。
