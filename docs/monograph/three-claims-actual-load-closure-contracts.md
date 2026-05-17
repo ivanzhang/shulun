@@ -4219,3 +4219,49 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 这一步关闭的是“纯 CRT 全局相位矛盾”作为最终证明的误出口；它把剩余推进到 actual-source exact-UV
 与逐 primitive alpha/delta 核表前沿，但没有证明行/列命题无条件闭合。
+
+## 104. Global CRT 到 strict 终端饱和前沿同步
+
+后续文件
+
+```text
+experiments/prime_matrix_global_crt_terminal_saturation_sync_router.py
+docs/monograph/prime-matrix-global-crt-terminal-saturation-sync-router.md
+docs/monograph/prime-matrix-global-crt-terminal-saturation-sync-router.json
+data/prime-matrix-global-crt-terminal-saturation-sync-ledger.json
+```
+
+本证书继续利用既有 alpha-row 与终端家族下钻结果，把上一节的 `AlphaRowAnchorPhaseEmissionFormulaLedger`
+继续同步到当前 strict 饱和前沿。结论是：global CRT/Q1-Q2 路线不应停在 alpha row 粗硬点；
+alpha row 局部前沿已回到 `PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve` 与模型账本，PDEC/CleanKLS
+终端门又被当前内部语料攻成饱和循环。CleanKLS/Kuznetsov/DLS 手臂回到终端家族，nonrecursive
+破环包回到 signed 坐标-来源闭环，seed-cycle-cut 分支也已饱和。
+
+当前读数：
+
+```text
+pure_crt_homogeneity_firewall_imported=true
+alpha_row_local_frontier_terminal_synced=true
+pdec_cap_clean_kls_terminal_split_imported=true
+kuznetsov_dls_route_returns_to_terminal_family=true
+pdec_scope_branch_saturated=true
+nonrecursive_breaker_cycle_detected=true
+seed_cycle_cut_branch_saturated=true
+acyclic_same_set_scope_match_proved=false
+new_explicit_joint_constructor_formula_artifact_present=false
+row_column_unconditional_closed=false
+```
+
+最新 strict 活动基压成：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact)
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步继续推进了全局 CRT 路线的对齐深度：纯 CRT 相位矛盾、alpha row 局部公式、CleanKLS/DLS
+和 seed-cycle-cut 都不是当前已证闭合出口。剩余真正非循环候选是 PDEC same-set 作用域匹配或新的显式
+joint alpha/delta 构造公式。
