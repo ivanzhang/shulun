@@ -2987,3 +2987,46 @@ MultiDeltaCoreCRTLoadPDECOrLowShellFullResidueSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“multi-delta support 只是轻量相位碎裂”的解释。
+
+## 82. cycle-debt low-shell delta skeleton
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_low_shell_delta_skeleton_router.py
+docs/monograph/prime-matrix-cycle-debt-low-shell-delta-skeleton-router.md
+data/prime-matrix-cycle-debt-low-shell-delta-skeleton-ledger.json
+```
+
+本步专攻上一层留下的 `K=13` 低层 `1..3` shell。它的 possible delta 是全 `0..70`，但这只是“可出现相位”而不是“必须全相位扩散”。整数规划精确给出最小 delta 骨架：
+
+```text
+low_shell_possible_delta_count=71
+low_shell_minimum_delta_count=6
+low_shell_minimum_delta_witness=[23,35,38,58,68,70]
+low_shell_new_delta_count_over_core=2
+low_shell_new_deltas_over_core=[0,66]
+full_k13_delta_count_after_low_shell=9
+full_k13_total_required_width=101
+full_k13_global_lcm_log10=42.095
+```
+
+结论：
+
+- low shell 单独最少需要 `6` 个 delta；
+- 若沿用 `K=13` 刚性核心的 `7` 个 delta，则 low shell 只需新增 `0,66`；
+- 补齐后 `K=13` 覆盖全部 `101` 需求宽度，形成 `9` lane CRT 载荷。
+
+当前 actual-load 前沿收窄为：
+
+```text
+K=13 full-debt nine-lane CRT-load PDEC  OR  residual slack-tail SAE
+```
+
+最新接口为：
+
+```text
+K13FullDebtNineLaneCRTLoadPDECOrResidualSlackTailSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“low shell 必须作为 full-residue 自由逃逸”的解释。

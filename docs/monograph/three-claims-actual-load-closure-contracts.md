@@ -2923,3 +2923,44 @@ MultiDeltaCoreCRTLoadPDECOrLowShellFullResidueSAE
 ```
 
 本步关闭的是“多相位碎裂只是轻量局部相位噪声”的解释。剩余要么排斥这个重 CRT 核心载荷形成的 PDEC，要么把 `K=13` 低层 full-residue shell 作为可求和 SAE 处理。
+
+## 75. cycle-debt low-shell delta skeleton 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_low_shell_delta_skeleton_router.py
+docs/monograph/prime-matrix-cycle-debt-low-shell-delta-skeleton-router.md
+docs/monograph/prime-matrix-cycle-debt-low-shell-delta-skeleton-router.json
+data/prime-matrix-cycle-debt-low-shell-delta-skeleton-ledger.json
+```
+
+本证书继续攻击 `K=13` 的低层 `1..3` shell。上一层保留了 low-shell full-residue SAE，因为该 shell 的 possible delta 覆盖 `0..70` 全部 residue；本步用整数规划精确求最小 delta 骨架，并把低层补齐后的 `K=13` 全需求载荷重新汇总。
+
+```text
+low_shell_possible_delta_count=71
+low_shell_minimum_delta_count=6
+low_shell_minimum_delta_witness=[23,35,38,58,68,70]
+core_delta_count_before_low_shell=7
+low_shell_new_delta_count_over_core=2
+low_shell_new_deltas_over_core=[0,66]
+full_k13_delta_count_after_low_shell=9
+full_k13_total_required_width=101
+full_k13_global_lcm_log10=42.095
+full_k13_lcm_exceeds_period=true
+```
+
+因此，低层并不需要真的扩散成 `71` 个 delta；但它也不是自由出口。相对已有 `K=13` 刚性核心的 `7` 个 delta，低层只新增 `0` 与 `66` 两条 lane，最终形成：
+
+- `9` 个 delta lane；
+- 全部 `101` 个 demand width；
+- `25` 个不同阻断素因子；
+- 全局 CRT lcm 约 `10^42.095`，远超本地周期 `5680`。
+
+最新最窄剩余接口为：
+
+```text
+K13FullDebtNineLaneCRTLoadPDECOrResidualSlackTailSAE
+```
+
+本步关闭的是“`K=13` 低层必须作为 full-residue SAE 逃逸”的解释。剩余变为九 lane 全债务 CRT-load PDEC，或尚未完全命名的 residual slack-tail SAE。
