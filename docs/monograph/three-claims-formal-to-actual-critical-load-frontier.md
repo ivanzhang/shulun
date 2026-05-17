@@ -1930,3 +1930,30 @@ epoch_pair_mass=0.023577117628562343<eta=0.025
 ```
 
 所以当前最新的最窄接口不是再寻找一个隐藏的 actual packet，而是证明这个 cutset 可全局晋级：任意持久反例链若沿 formal-to-actual 管道推进，必然落入上述命名出口之一；若试图避开所有出口，就必须同时给出 source 物化、CRT 短窗命中、primitive 支撑命中、非复用投影与低于平方根门的 actual 负载，这与反例链所需的超容量相冲突。未闭合部分是出口的全局排斥/求和吸收，而不是 current sweep 的未分类容量。
+
+## 58. cutset completeness 确定性晋级
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-formal-to-actual-cutset-completeness-lemma.md
+```
+
+上一节 cutset 的分类完备性可以不依赖有限扫描直接证明。对任意 AffineTwin formal pair `a in F_q=G_q x H_q`，按 `source -> CRT -> primitive` 三道门定义：
+
+```text
+S_q = source gate fails
+C_q = source holds, CRT window fails
+P_q = source holds, CRT holds, primitive actual holds
+E_q = all remaining source+CRT hits whose primitive actual condition fails
+```
+
+这是由首个失败门给出的互斥完备分割：
+
+```text
+F_q=S_q disjoint_union C_q disjoint_union P_q disjoint_union E_q
+M_q^form=|S_q|+|C_q|+|P_q|+|E_q|
+N_q=|P_q|
+```
+
+所以 `M_q^form-N_q` 不能作为未登记 actual load：它要么是 `SourceMaterializationFailure-PDEC/SAE`，要么是 `CRTWindowEmpty/WindowEdgeCollision/SupportMotion`，要么是 `ProjectionCollision/ColumnCRT/PDEC` 或 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。确定性分类已经闭合；剩余最窄硬点变为 `NamedExitExclusionOrSummabilityAfterCutsetCompleteness`，即全局排斥或求和吸收这些命名出口。

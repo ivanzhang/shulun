@@ -1872,3 +1872,38 @@ EndpointAtom: 活跃带端点 [23,109] 只有 2 个 minus-only 单原子。
 ```
 
 因此 current sweep 已无匿名 actual-load 缺口。全局主攻点被压成 `GlobalFormalToActualCutsetPromotionOrNamedExitExclusion`：把上述 cutset 推广到所有持久反例族，并逐一排斥或求和吸收 `GlobalProductAccountingTightening`、`SourceMaterializationFailure-PDEC/SAE`、`CRTWindowEmptyGlobalSupportBound`、`PrimitiveTwinSlotSupportEscape-PDEC/SAE`、端点增长/reset、transport reset、epoch-pair multiplicity 与 moving-residue SAE/Rankin。
+
+## 51. formal-to-actual cutset completeness lemma
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-formal-to-actual-cutset-completeness-lemma.md
+```
+
+本引理把上一节 `GlobalFormalToActualCutsetPromotion` 中的确定性部分从有限扫描中剥离出来。固定 `q>=13`，令 `F_q=G_q x H_q` 为形式 residue product。对任意 `a in F_q` 按三道门检查：
+
+```text
+Source_q(a): matching gap-fill source 是否物化；
+CRT_q(a): 合成 CRT class 是否命中 primitive pair support；
+Primitive_q(a): 是否保持 primitive depth identities、非复用投影、非 ColumnCRT/PDEC。
+```
+
+于是得到互斥完备分割：
+
+```text
+F_q = S_q disjoint_union C_q disjoint_union P_q disjoint_union E_q
+S_q: SourceMaterializationFailure-PDEC/SAE
+C_q: CRTWindowEmpty / WindowEdgeCollision / SupportMotion exits
+P_q: actual primitive-supported packet
+E_q: ProjectionCollision/ColumnCRT/PDEC or PrimitiveTwinSlotSupportEscape-PDEC/SAE
+```
+
+因此
+
+```text
+M_q^form=|F_q|=|S_q|+|C_q|+|P_q|+|E_q|
+N_q=|P_q|
+```
+
+这证明“形式负载差额必须进入命名出口”不是 current sweep 的偶然性，而是 actual-load 管道的确定性分类律。当前 `40=28+11+1+0` 只是该分割的一个实例。最新硬点随之从 `GlobalFormalToActualCutsetPromotion` 进一步收缩为 `NamedExitExclusionOrSummabilityAfterCutsetCompleteness`。

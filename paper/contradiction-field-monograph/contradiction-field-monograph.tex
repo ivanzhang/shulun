@@ -1961,6 +1961,44 @@ epoch-pair multiplicity, and moving-residue SAE/Rankin.  This is still a
 reduction boundary, not a global unconditional row/column proof.
 \end{proof}
 
+\begin{reductionstatement}[Cutset completeness]
+The formal-to-actual cutset has a deterministic completeness law.  For a fixed
+AffineTwin modulus \(q\ge13\), let
+\[
+  F_q=G_q\times H_q
+\]
+be the formal generator/fill residue product.  Then \(F_q\) is the disjoint
+union of source failures, CRT-window failures, primitive actual packets, and
+named primitive-support or projection escapes:
+\[
+  F_q=S_q\sqcup C_q\sqcup P_q\sqcup E_q.
+\]
+Consequently
+\[
+  M_q^{\rm form}=|S_q|+|C_q|+|P_q|+|E_q|,\qquad N_q=|P_q|.
+\]
+\end{reductionstatement}
+\begin{proof}[Status and reference]
+The deterministic lemma is archived at
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime\_matrix\_formal\_to\_actual\_cutset\_\\
+completeness\_lemma.md.
+\end{quote}
+For a formal pair \(a\in F_q\), first test whether the matching gap-fill source
+exists with the required gap, generator, fill, orientation, delay, and slot-lock
+key.  If not, \(a\in S_q\).  If the source exists, combine the generator and
+shifted-fill congruences modulo \(q(q-2)\).  If no representative lies in the
+primitive pair support, \(a\in C_q\).  If the representative exists and the
+primitive depth identities, non-reuse, and non-ColumnCRT conditions all hold,
+then \(a\in P_q\).  The remaining cases are precisely source-and-CRT hits that
+fail the primitive actual conditions; they form \(E_q\), routed to
+ProjectionCollision/ColumnCRT/PDEC or PrimitiveTwinSlotSupportEscape-PDEC/SAE.
+The four alternatives are selected by the first failed gate, hence are
+disjoint and exhaustive.  Thus formal overcount is never hidden actual load.
+What remains open is not classification, but global exclusion or summable
+absorption of the named exits.
+\end{proof}
+
 \chapter{Prime-Matrix Contradiction Fields}
 
 Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
