@@ -4281,3 +4281,60 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 这一步不是最终证明；它把“新 joint 公式”硬点压到 exact atomic branch trace signed coefficient
 公式，并保留 PDEC same-set 作用域匹配作为独立可攻证书。
+
+## 113. Global CRT signed payload sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_global_crt_signed_payload_sync_router.py
+docs/monograph/prime-matrix-global-crt-signed-payload-sync-router.md
+docs/monograph/prime-matrix-global-crt-signed-payload-sync-router.json
+data/prime-matrix-global-crt-signed-payload-sync-ledger.json
+```
+
+本步把 global CRT/Q1-Q2 最新前沿继续同步到 signed payload 层。
+`ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn` 已由 strict payload 前沿压成
+`AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn`。另一方面，PDEC same-set 手臂在当前内部自足语料中
+已饱和到新 joint 公式线；而新 joint 公式线已通过 branch-trace 链回到 signed payload。
+
+这给出一个更清楚的全局断点：有限 CRT 周期扩张能复制零同余类和可见坐标 trace，却不能生成
+orientation、local factor、signed coefficient 这些 payload 字段。因此纯 CRT 全局相位矛盾仍不能作为
+最终闭合；若不引入新的外部或 scope-PDEC 证书，内部自足路线的最窄硬点就是 signed payload constructor。
+
+当前读数：
+
+```text
+exact_atomic_trace_reduced_to_signed_payload=true
+finite_crt_cannot_generate_signed_payload=true
+pdec_internal_arm_saturated_to_new_joint=true
+external_or_new_pdec_scope_still_open=true
+strict_internal_self_contained_basis_sharpened=true
+atomic_signed_payload_constructor_proved=false
+acyclic_same_set_scope_match_proved=false
+row_column_unconditional_closed=false
+```
+
+内部自足 actual-load 前沿更新为：
+
+```text
+AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+保留新 scope/PDEC 输入的总活动基为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步不是最终证明；它关闭的是“branch trace 作为未拆原子”这一粗口径，并把全局主攻点压到
+pre-assignment signed payload 或新的 PDEC scope 证书。

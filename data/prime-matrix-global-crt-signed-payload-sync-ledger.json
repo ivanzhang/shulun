@@ -1,0 +1,157 @@
+{
+  "certificate_type": "prime_matrix_global_crt_signed_payload_sync_router",
+  "status": "global_crt_internal_route_reduced_to_signed_payload_with_external_pdec_retained",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "global_crt_branch_trace_basis_imported": true,
+  "exact_atomic_trace_reduced_to_signed_payload": true,
+  "finite_crt_cannot_generate_signed_payload": true,
+  "pdec_internal_arm_saturated_to_new_joint": true,
+  "external_or_new_pdec_scope_still_open": true,
+  "strict_internal_self_contained_basis_sharpened": true,
+  "atomic_signed_payload_constructor_proved": false,
+  "acyclic_same_set_scope_match_proved": false,
+  "actual_emitter_exact_uv_bounded_multiplicity_incidence_proved": false,
+  "direct_unconditional_contradiction_found": false,
+  "row_column_unconditional_closed": false,
+  "terminal_gap_before_router": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "strict_internal_basis_after_router": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "scope_retained_basis_after_router": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "external_or_new_scope_basis_after_router": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "next_direct_attack_target": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn",
+  "next_scope_attack_target": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate",
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "sync_chain": [
+    {
+      "from": "global CRT branch trace frontier",
+      "to": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "from": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn",
+      "to": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "from": "internal PDEC same-set arm",
+      "to": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "from": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact",
+      "to": "ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn then AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "from": "external/new PDEC scope certificate",
+      "to": "retained as independent unproved input"
+    }
+  ],
+  "rows": [
+    {
+      "gate": "GlobalCRTBranchTraceBasisImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把 global CRT/Q1-Q2 路线压成 PDEC scope 或 exact atomic branch trace。",
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn"
+    },
+    {
+      "gate": "ExactAtomicTraceReducedToSignedPayload",
+      "closed": true,
+      "proved": false,
+      "meaning": "branch trace 一侧已被 strict payload 前沿压到 pre-assignment signed payload constructor。",
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "gate": "FiniteCRTCannotGenerateSignedPayload",
+      "closed": true,
+      "proved": true,
+      "meaning": "CRT 周期扩张只复制零同余类和可见坐标 trace；orientation、local factor 和 signed coefficient 不是纯位置相位数据。",
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "gate": "PDECInternalArmSaturatedToNewJoint",
+      "closed": true,
+      "proved": false,
+      "meaning": "PDEC same-set 手臂在当前内部语料中已饱和；若不提交新 scope 证书，它回到新 joint 公式线。",
+      "remaining": "NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact"
+    },
+    {
+      "gate": "InternalNewJointLineAlsoReturnsToPayload",
+      "closed": true,
+      "proved": false,
+      "meaning": "内部自足线中，PDEC 饱和后的新 joint 公式已经经 branch-trace 链压到 signed payload。",
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "gate": "ExternalOrNewPDECScopeStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "新 acyclic same-set scope 证书或外部 DI/BFI 无投影窗口证书仍可作为独立输入，但当前未证。",
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY"
+    },
+    {
+      "gate": "StrictInternalSelfContainedBasisSharpened",
+      "closed": true,
+      "proved": false,
+      "meaning": "若不引入新的外部/scope PDEC 输入，global CRT 路线的内部自足硬点已经只剩 signed payload。",
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    },
+    {
+      "gate": "ActualEmitterExactUVStillParallel",
+      "closed": true,
+      "proved": false,
+      "meaning": "payload 可登记 exact UV/key，但 bounded multiplicity incidence 仍是并行未证门。",
+      "remaining": "ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem"
+    },
+    {
+      "gate": "AtomicSignedPayloadConstructorCurrentCorpusProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前材料没有给出不经 assignment/origin 环的 atomic signed payload 正向构造公式。",
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "gate": "GlobalStructuralCRTContradictionCurrentCorpusFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步识别了 CRT 坐标层与 signed payload 层的结构断点，但尚未从中推出终端矛盾。",
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR new AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "缺少 signed payload 或新 PDEC scope 证书，同时 ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍未合取闭合。",
+      "remaining": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "closed_gates": [
+    "GlobalCRTBranchTraceBasisImported",
+    "ExactAtomicTraceReducedToSignedPayload",
+    "FiniteCRTCannotGenerateSignedPayload",
+    "PDECInternalArmSaturatedToNewJoint",
+    "InternalNewJointLineAlsoReturnsToPayload",
+    "ExternalOrNewPDECScopeStillOpen",
+    "StrictInternalSelfContainedBasisSharpened",
+    "ActualEmitterExactUVStillParallel"
+  ],
+  "open_gates": [
+    "GlobalCRTBranchTraceBasisImported",
+    "ExactAtomicTraceReducedToSignedPayload",
+    "PDECInternalArmSaturatedToNewJoint",
+    "InternalNewJointLineAlsoReturnsToPayload",
+    "ExternalOrNewPDECScopeStillOpen",
+    "StrictInternalSelfContainedBasisSharpened",
+    "ActualEmitterExactUVStillParallel",
+    "AtomicSignedPayloadConstructorCurrentCorpusProved",
+    "GlobalStructuralCRTContradictionCurrentCorpusFound",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-global-crt-branch-trace-frontier-router.json": "6437fc285617d3a363361ed354cbba400ab588ee7ea6f3cd8cbb07582d196084",
+    "docs/monograph/prime-matrix-strict-atomic-branch-trace-payload-frontier-router.json": "fe1d86442d7936662a55cd5b8279e339f5bfd21142bd079ec80280c06423df92",
+    "docs/monograph/prime-matrix-strict-pdec-scope-branch-saturation-frontier-router.json": "3c7602bf11d29d837d1a05964368f085de2c10dc5e786bd518b55a85b4ce3cbf",
+    "docs/monograph/prime-matrix-strict-direct-acyclic-same-set-pdec-dual-router.json": "7a72bed5901b1c6b5575db7161c23108f5f4fc17e1848d75cb00b20fd1e6c993"
+  },
+  "missing_sources": [],
+  "plain_conclusion": "本步把 global CRT/Q1-Q2 最新前沿继续同步到 signed payload 层。`ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn` 已由 strict payload 前沿压成 `AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn`。同时，PDEC same-set 手臂在当前内部自足语料中已饱和到新 joint 公式线，而该线也已回到 branch-trace/payload。因此，在不引入新的外部或 scope-PDEC 证书时，内部自足路线的最新最窄硬点是 signed payload。但新 acyclic same-set scope 证书和外部 DI/BFI 输入仍保留为独立未证入口；ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 也仍需合取闭合。行/列命题尚未无条件闭合。"
+}

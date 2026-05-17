@@ -4311,3 +4311,58 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 这一步把“新 joint 公式”继续精确到 signed coefficient 的奇取向数据来源。PDEC scope 与 atomic
 branch trace 二者均未证明，因此行/列命题仍未无条件闭合。
+
+## 106. Global CRT signed payload 同步回接
+
+后续文件
+
+```text
+experiments/prime_matrix_global_crt_signed_payload_sync_router.py
+docs/monograph/prime-matrix-global-crt-signed-payload-sync-router.md
+docs/monograph/prime-matrix-global-crt-signed-payload-sync-router.json
+data/prime-matrix-global-crt-signed-payload-sync-ledger.json
+```
+
+本证书把上一节的 exact atomic branch trace 一侧继续与 strict payload 前沿同步：
+`ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn` 已压成
+`AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn`。同时，PDEC same-set 手臂在当前内部自足语料中
+已饱和到新 joint 公式线，而新 joint 公式线又经 branch-trace 链回到 signed payload。
+
+当前读数：
+
+```text
+global_crt_branch_trace_basis_imported=true
+exact_atomic_trace_reduced_to_signed_payload=true
+finite_crt_cannot_generate_signed_payload=true
+pdec_internal_arm_saturated_to_new_joint=true
+external_or_new_pdec_scope_still_open=true
+strict_internal_self_contained_basis_sharpened=true
+atomic_signed_payload_constructor_proved=false
+acyclic_same_set_scope_match_proved=false
+row_column_unconditional_closed=false
+```
+
+内部自足线的最新硬点为：
+
+```text
+AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+若保留新 scope/PDEC 输入，总活动基为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步识别的全局结构断点是：CRT 周期扩张只复制零同余类和可见坐标 trace，不能生成 orientation、
+local factor 与 signed coefficient 的 payload。它仍不是最终证明；signed payload constructor、
+新 PDEC scope、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍未合取闭合。
