@@ -3093,3 +3093,49 @@ K13FixedGateProfilePDECOrK14FullDebtEightLaneCRTLoadPDEC
 ```
 
 本步关闭的是“K14 高门漂移可以作为未登记自由族继续逃逸”的解释。剩余变成固定 K13 gate-profile PDEC，或 K14 全债务八 lane CRT-load PDEC。
+
+## 79. cycle-debt two-survivor terminal CRT bifurcation 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_two_survivor_terminal_crt_bifurcation_router.py
+docs/monograph/prime-matrix-cycle-debt-two-survivor-terminal-crt-bifurcation-router.md
+docs/monograph/prime-matrix-cycle-debt-two-survivor-terminal-crt-bifurcation-router.json
+data/prime-matrix-cycle-debt-two-survivor-terminal-crt-bifurcation-ledger.json
+```
+
+本证书把 K13 与 K14 两个 survivor 终端分支放到同一 CRT 账本中比较。两者都覆盖同一 `27` 个 target 需求，但实际支撑运动并不是同一个图样的小扰动。
+
+```text
+k13_delta_count=9
+k14_delta_count=8
+common_deltas=[54,58]
+delta_union_count=15
+delta_symmetric_difference_count=13
+source_intersection_count=19
+source_symmetric_difference_count=16
+target_intersection_count=27
+pair_intersection_count=1
+pair_intersection=[13->67]
+k13_lcm_log10=42.095
+k14_lcm_log10=48.508
+union_factor_count=32
+union_lcm_log10=57.156
+tail_union_lcm_log10=24.632
+```
+
+结构读数：
+
+- target 需求完全相同，但 source 支撑只重合 `19` 行，source 对称差为 `16`。
+- 实际匹配边只重合 `13->67` 一条，说明 K13/K14 不是同一支撑图样的局部相位移动。
+- lane 交集只有 `54,58`，其余 `13` 条 lane 位于对称差。
+- 两分支联合 CRT lcm 约 `10^57.156`，tail 因子联合 lcm 约 `10^24.632`，均远超本地周期 `5680`。
+
+最新最窄剩余接口为：
+
+```text
+TwoSurvivorTerminalCRTBifurcationPDECExclusion
+```
+
+本步关闭的是“K13/K14 两个终端 survivor 可以互相吸收为同一未命名 SAE”的解释。剩余变成明确的 two-survivor terminal CRT bifurcation PDEC 排斥问题。

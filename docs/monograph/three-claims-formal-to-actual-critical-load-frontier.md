@@ -3159,3 +3159,47 @@ K13FixedGateProfilePDECOrK14FullDebtEightLaneCRTLoadPDEC
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“K14 high-gate drift 是未登记自由 SAE”的解释。
+
+## 86. cycle-debt two-survivor terminal CRT bifurcation
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_two_survivor_terminal_crt_bifurcation_router.py
+docs/monograph/prime-matrix-cycle-debt-two-survivor-terminal-crt-bifurcation-router.md
+data/prime-matrix-cycle-debt-two-survivor-terminal-crt-bifurcation-ledger.json
+```
+
+本步把 K13 固定 gate-profile 分支与 K14 八 lane full-debt 分支合并审查。两条分支不是同一支撑运动的两个近邻相位，而是终端 CRT 分叉。
+
+```text
+common_deltas=[54,58]
+delta_union_count=15
+delta_symmetric_difference_count=13
+source_intersection_count=19
+source_symmetric_difference_count=16
+target_intersection_count=27
+pair_intersection_count=1
+union_lcm_log10=57.156
+tail_union_lcm_log10=24.632
+```
+
+结论：
+
+- 两分支 target 需求完全相同，但 source 支撑与 edge matching 大幅分叉；
+- 实际 source-target 边仅 `13->67` 重合；
+- lane 对称差有 `13` 条，联合 CRT lcm 约 `10^57.156`。
+
+当前 actual-load 前沿收窄为：
+
+```text
+two-survivor terminal CRT bifurcation PDEC exclusion
+```
+
+最新接口为：
+
+```text
+TwoSurvivorTerminalCRTBifurcationPDECExclusion
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“K13/K14 可以互相吸收为同一未命名 SAE”的解释。
