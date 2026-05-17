@@ -1764,3 +1764,36 @@ N_q <= |Omega_q| <= W_q <= sqrt(q(q-2))
 ```
 
 这把最新硬点从抽象 `SuperSqrtPressureProductPDECExclusion` 进一步压成 actual load 口径：证明所有未触发 PDEC/ColumnCRT 的 actual packets 都满足 primitive depth identities 并落入宽度 `(q+9)/2` 的共同相位支撑；否则把逃逸对象登记为 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。最新最窄主攻点为 `PrimitiveTwinSlotSupportExhaustion`，并行需要把现有 SAE/Rankin 账本从 `M_q^form` 口径收紧到 `N_q` 口径。
+
+## 48. H-lower actual-packet critical-load 合同回接
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-actual-packet-contract.md
+docs/monograph/prime-matrix-affine-twin-actual-packet-contract.json
+data/prime-matrix-affine-twin-actual-packet-contract-ledger.json
+```
+
+actual-packet 合同给出当前 sweep 的精确账本口径：
+
+```text
+candidate_q_values=[31,43,103]
+actual_q_values_current=[31]
+total_formal_product_upper=40
+total_actual_packet_count_current=1
+total_formal_to_actual_gap=39
+all_actual_packets_in_primitive_support_current=true
+all_actual_packets_pass_sqrt_gate_current=true
+projection_collision_pdec_count_current=0
+```
+
+逐 `q` 的实际负载为：
+
+```text
+q=31:  M_form=12, N_q=1, W=20, capacity=899, route=ActualPrimitiveSupportAbsorbed+ProductAccountingTightening
+q=43:  M_form=16, N_q=0, W=26, capacity=1763, route=NoActualPacketCurrentSweep+ProductAccountingTightening
+q=103: M_form=12, N_q=0, W=56, capacity=10403, route=NoActualPacketCurrentSweep+ProductAccountingTightening
+```
+
+因此当前反例链的形式压力并没有变成真实负载：最大形式负载比为 `0.160177975528`，最大 actual 负载比仅为 `0.001112347052`。这把 current sweep 中的 `SuperSqrt/PressureProduct` 全部转成 `ProductAccountingTightening`；全局仍需证明这个 `M_q^form -> N_q` 收紧在所有持久 AffineTwin 家族中成立，并排斥 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。

@@ -1845,3 +1845,24 @@ N_q <= |Omega_q| <= W_q <= sqrt(q(q-2))
 ```
 
 因此真正的超平方根分支不应再停留在形式 `M_q` 上，而只可能是三种明确对象：账本上界过粗，需要 `ProductAccountingTightening`；实际投影碰撞，进入 `ProjectionCollision-PDEC/ColumnCRT`；或 actual packet 逃出 primitive 双槽支撑，进入 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。最新主攻点由此变成 `PrimitiveTwinSlotSupportExhaustion`：证明所有能承担反例补洞负载且未触发 PDEC/ColumnCRT 的 generator-fill packet，都满足 primitive depth identities 并落入宽度 `(q+9)/2` 的共同相位支撑。
+
+## 55. H-lower actual-packet critical-load 合同回接
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-actual-packet-contract.md
+docs/monograph/prime-matrix-affine-twin-actual-packet-contract.json
+data/prime-matrix-affine-twin-actual-packet-contract-ledger.json
+```
+
+当前合同把 `M_q^form` 和 `N_q` 的差距直接列出：
+
+```text
+total_formal_product_upper=40
+total_actual_packet_count_current=1
+total_formal_to_actual_gap=39
+projection_collision_pdec_count_current=0
+```
+
+三条候选中，只有 `q=31` 有一个 actual packet；`q=43,103` 当前实际为 0。三条均通过 `N_q<=W_q<=sqrt(q(q-2))`。所以当前前沿的容量/相位显式矛盾是：反例链按侧残基笛卡尔积看到 40 个形式 packet，真实链按双槽 source、CRT 与共同支撑只承认 1 个 actual packet。最新主攻保持为 `PrimitiveTwinSlotSupportExhaustion + ProductAccountingTightening`；若未来 `N_q>W_q`，进入 `ProjectionCollision-PDEC/ColumnCRT`，若 packet 逃出 primitive 支撑，进入 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
