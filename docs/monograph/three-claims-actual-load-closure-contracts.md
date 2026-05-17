@@ -3517,3 +3517,50 @@ FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure
 ```
 
 本步仍不宣称行/列命题闭合；它把无界新素数层扩模出口压成 tail-sieve/PDEC 双出口。
+
+## 89. cycle-debt fresh-modulus tail-sieve strict 自足同步回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_modulus_tail_self_contained_sync_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-modulus-tail-self-contained-sync-router.md
+docs/monograph/prime-matrix-cycle-debt-fresh-modulus-tail-self-contained-sync-router.json
+data/prime-matrix-cycle-debt-fresh-modulus-tail-self-contained-sync-ledger.json
+```
+
+上一节把无界 fresh-modulus 分支压成：
+
+```text
+FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure
+```
+
+其中 strict tail-sieve 出口仍登记为旧粗原子 `SelfContainedDusartReciprocalPrimeProofAppendixXGe10372`。后续 strict 速率尾段同步证书已经将该粗原子展开并关闭；终端预算同步也确认 B3-TV 自足同步完成。因此在 branch-replay 子分支内，tail-sieve stability 出口可从剩余基移除。
+
+当前读数：
+
+```text
+previous_tail_object_interface_closed=true
+previous_non_pdec_unbounded_fresh_layers_force_tail_rough_object=true
+previous_conditional_external_tail_sieve_closed=true
+previous_strict_tail_sieve_closed=false
+strict_self_contained_mertens_tail_proved_latest=true
+b3_tv_strict_self_contained_synchronized_latest=true
+strict_self_contained_tail_sieve_closed_for_branch_replay=true
+fresh_layer_pdec_excluded=false
+row_column_unconditional_closed=false
+```
+
+branch-replay strict 剩余基由
+
+```text
+FreshLayerPDECColumnCRTExclusion AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372
+```
+
+收缩为
+
+```text
+FreshLayerPDECColumnCRTExclusion
+```
+
+这一步仍不宣称行/列命题闭合；它只把 tail-sieve stability 出口从 branch-replay 子分支中移除，下一步必须直接排斥 fresh-layer PDEC/ColumnCRT。

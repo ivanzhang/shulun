@@ -3562,3 +3562,35 @@ FreshLayerPDECColumnCRTExclusion AND SelfContainedDusartReciprocalPrimeProofAppe
 ```
 
 接受外部或标准筛输入时，tail-sieve 分支可从该 branch-replay 接口移除，只剩 fresh-layer PDEC/ColumnCRT 排斥。该结论仍不是行/列命题的全局无条件闭合，因为它尚未排斥 fresh-layer PDEC，也尚未给出 strict 自足 Mertens/PNT/Dusart 尾段证明。
+
+## 96. cycle-debt fresh-modulus tail-sieve strict 自足同步
+
+新增文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_modulus_tail_self_contained_sync_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-modulus-tail-self-contained-sync-router.md
+data/prime-matrix-cycle-debt-fresh-modulus-tail-self-contained-sync-ledger.json
+```
+
+本步同步后续 strict 解析证书到 branch-replay fresh-modulus 分支。上一桥接中 strict tail-sieve 仍开放，是因为旧 B3 桥接证书尚未导入后续的 theta/PNT+B1 自足闭合。现在读取最新证书：
+
+```text
+strict_self_contained_mertens_tail_proved_latest=true
+b3_tv_strict_self_contained_synchronized_latest=true
+strict_self_contained_tail_sieve_closed_for_branch_replay=true
+```
+
+因此 actual-load 前沿从二选一
+
+```text
+FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure
+```
+
+继续收缩为单一 branch-replay 出口：
+
+```text
+FreshLayerPDECColumnCRTExclusion
+```
+
+这是一次同步型推进：它不新增全局定理，只删除已经由后续 strict 证书吸收的旧 tail-sieve 解析粗原子。真正下一步是证明 fresh layer 的相位复用、投影碰撞、moving support 逃逸或 ColumnCRT 缺陷不能在无限反例链中持续存在。

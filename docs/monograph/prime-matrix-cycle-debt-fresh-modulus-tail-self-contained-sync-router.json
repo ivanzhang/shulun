@@ -1,0 +1,90 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_fresh_modulus_tail_self_contained_sync_router",
+  "status": "fresh_modulus_tail_sieve_strict_self_contained_synced_fresh_layer_pdec_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "previous_hardpoint": "FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure",
+  "previous_tail_object_interface_closed": true,
+  "previous_non_pdec_unbounded_fresh_layers_force_tail_rough_object": true,
+  "previous_conditional_external_tail_sieve_closed": true,
+  "previous_strict_tail_sieve_closed": false,
+  "strict_self_contained_mertens_tail_proved_latest": true,
+  "b3_tv_strict_self_contained_synchronized_latest": true,
+  "strict_self_contained_tail_sieve_closed_for_branch_replay": true,
+  "fresh_layer_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "old_branch_replay_strict_remaining_basis": "FreshLayerPDECColumnCRTExclusion AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+  "new_branch_replay_strict_remaining_basis": "FreshLayerPDECColumnCRTExclusion",
+  "hardpoint_after_router": "FreshLayerPDECColumnCRTExclusion",
+  "next_direct_attack_target": "FreshLayerPDECColumnCRTExclusion",
+  "inherited_global_strict_remaining_basis_after_mertens_sync": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "inherited_terminal_budget_latest_target": "ExplicitPositiveTerminalBudgetMarginInequality",
+  "gates": [
+    {
+      "gate": "PreviousFreshTailBridgeImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已把 non-PDEC 无界 fresh layers 接到 B3 避单余类 tail rough object。",
+      "remaining": "FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure"
+    },
+    {
+      "gate": "OldSelfContainedDusartAtomWasOpenInBridge",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一桥接中 strict tail-sieve 的唯一解析粗原子仍登记为 SelfContainedDusart...",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "gate": "StrictMertensTailClosedByLatestSync",
+      "closed": true,
+      "proved": true,
+      "meaning": "后续 strict 速率尾段同步已导入 theta/PNT 包络与 B1 区间，Mertens 尾段解析包从活动剩余移出。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "B3TVStrictSelfContainedSynchronized",
+      "closed": true,
+      "proved": true,
+      "meaning": "终端预算最新同步确认 B3-TV 的 Stieltjes 边界结构、20000 锚点预算与自足 Mertens 尾段已合并。",
+      "remaining": "closed for tail-sieve branch"
+    },
+    {
+      "gate": "StrictTailSieveStabilityBranchClosedForBranchReplay",
+      "closed": true,
+      "proved": true,
+      "meaning": "在上一桥接对象接口、B3-TV 同步和 Mertens 尾段自足闭合同时成立后，branch-replay 的 tail-sieve stability 出口移出剩余基。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FreshLayerPDECExitStillRequiresExclusion",
+      "closed": false,
+      "proved": false,
+      "meaning": "剩余反例链只能在某个 fresh layer 产生相位复用、投影碰撞、moving support 逃逸或 ColumnCRT 缺陷；该 PDEC/ColumnCRT 出口尚未排斥。",
+      "remaining": "FreshLayerPDECColumnCRTExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步关闭的是 branch-replay 的 strict tail-sieve stability 出口；行/列全局还需 fresh-layer PDEC 排斥及其它全局终端门。",
+      "remaining": "FreshLayerPDECColumnCRTExclusion"
+    }
+  ],
+  "closed_gates": [
+    "PreviousFreshTailBridgeImported",
+    "OldSelfContainedDusartAtomWasOpenInBridge",
+    "StrictMertensTailClosedByLatestSync",
+    "B3TVStrictSelfContainedSynchronized",
+    "StrictTailSieveStabilityBranchClosedForBranchReplay"
+  ],
+  "open_gates": [
+    "FreshLayerPDECExitStillRequiresExclusion",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "本步把 branch-replay fresh-modulus 分支中旧的 strict tail-sieve 开口同步到最新解析前沿。上一桥接已把 non-PDEC 无界 fresh layers 接到 B3 避单余类粗筛对象；后续 strict Mertens/PNT+B1 证书与 B3-TV 同步证书已关闭该尾段解析出口。因此 branch-replay 的最新剩余不再是 tail-sieve stability，而是 fresh-layer PDEC/ColumnCRT 排斥。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-fresh-modulus-tail-sieve-bridge-ledger.json": "8f3ccb352887f8f95a3b670393db3993fa68495ba482d727309eca2e6cebc459",
+    "docs/monograph/prime-matrix-strict-rate-bearing-tail-mertens-latest-sync-router.json": "41ecd4cfd58beb65c2ec5e1b5fdf2119ec46954e790ed0f036f92b66bfc282d4",
+    "docs/monograph/prime-matrix-strict-terminal-budget-frontier-latest-sync-router.json": "81ec38d8b42838b270454600184d385487f3c5453b7c4758920d3e0c8a5c22fa"
+  }
+}
