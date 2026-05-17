@@ -1,0 +1,661 @@
+{
+  "certificate_type": "prime_matrix_predecessor_gap_pcrt_uniformity_router",
+  "status": "predecessor_gap_pcrt_uniformity_routed_to_local_transfer_or_signed_payload_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "max_p_sample": 5000,
+  "top_gap_sample_size": 12,
+  "complete_p_wheel_identity": {
+    "period": "M_{<=P}=P*M_{<P}",
+    "before_adding_P": "在完整 M_{<=P} 周期中，对每个 c mod P，与 M_{<P} 互素的交集数均为 phi(M_{<P})。",
+    "after_adding_P": "加入 P 的零类后，c=0 列全部删除；每个 c in F_P^* 仍精确保留 phi(M_{<P}) 个非零同余类交集元素。",
+    "reflection": "n -> -n mod M_{<=P} 给出 c <-> P-c 的精确全周期对称。",
+    "gap_dependence": "前素数间隙 P-p^- 不改变上述全周期恒等式；它只说明第一行的若干实际素数原子缺失。"
+  },
+  "top_predecessor_gap_records": [
+    {
+      "P": 1361,
+      "previous_prime": 1327,
+      "gap": 34,
+      "first_row_gap_columns": 33,
+      "gap_over_log_p": 4.711767985269753,
+      "gap_over_sqrt_p": 0.9216156786975583
+    },
+    {
+      "P": 4861,
+      "previous_prime": 4831,
+      "gap": 30,
+      "first_row_gap_columns": 29,
+      "gap_over_log_p": 3.5339853832952555,
+      "gap_over_sqrt_p": 0.43028721695667627
+    },
+    {
+      "P": 4327,
+      "previous_prime": 4297,
+      "gap": 30,
+      "first_row_gap_columns": 29,
+      "gap_over_log_p": 3.5831036282268727,
+      "gap_over_sqrt_p": 0.4560661161366401
+    },
+    {
+      "P": 3299,
+      "previous_prime": 3271,
+      "gap": 28,
+      "first_row_gap_columns": 27,
+      "gap_over_log_p": 3.456203562518825,
+      "gap_over_sqrt_p": 0.4874913045913096
+    },
+    {
+      "P": 2999,
+      "previous_prime": 2971,
+      "gap": 28,
+      "first_row_gap_columns": 27,
+      "gap_over_log_p": 3.4973620365401894,
+      "gap_over_sqrt_p": 0.5112929429311183
+    },
+    {
+      "P": 3163,
+      "previous_prime": 3137,
+      "gap": 26,
+      "first_row_gap_columns": 25,
+      "gap_over_log_p": 3.2260961505220207,
+      "gap_over_sqrt_p": 0.4622998494550876
+    },
+    {
+      "P": 2503,
+      "previous_prime": 2477,
+      "gap": 26,
+      "first_row_gap_columns": 25,
+      "gap_over_log_p": 3.3225795526778708,
+      "gap_over_sqrt_p": 0.5196882805194944
+    },
+    {
+      "P": 4783,
+      "previous_prime": 4759,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "gap_over_log_p": 2.8325859409260192,
+      "gap_over_sqrt_p": 0.3470252304346574
+    },
+    {
+      "P": 4547,
+      "previous_prime": 4523,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "gap_over_log_p": 2.849603974102851,
+      "gap_over_sqrt_p": 0.3559170266281919
+    },
+    {
+      "P": 4201,
+      "previous_prime": 4177,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "gap_over_log_p": 2.8766362211403056,
+      "gap_over_sqrt_p": 0.370283961108661
+    },
+    {
+      "P": 2203,
+      "previous_prime": 2179,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "gap_over_log_p": 3.117864901441967,
+      "gap_over_sqrt_p": 0.5113332017518513
+    },
+    {
+      "P": 1693,
+      "previous_prime": 1669,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "gap_over_log_p": 3.2282982369805446,
+      "gap_over_sqrt_p": 0.5832876251324083
+    }
+  ],
+  "local_square_samples": [
+    {
+      "P": 1361,
+      "previous_prime": 1327,
+      "gap": 34,
+      "first_row_gap_columns": 33,
+      "prime_count_in_initial_square": 138708,
+      "non_p_column_min": 82,
+      "non_p_column_max": 121,
+      "non_p_column_mean": 101.99117647058823,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 29,
+      "max_reflection_pair": [
+        184,
+        1177
+      ],
+      "l1_reflection_pair_asymmetry": 4916,
+      "gap_columns_repaired_in_square": 33,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 25,
+      "gap_repair_row_sample": [
+        2,
+        3,
+        4,
+        7,
+        2,
+        25,
+        4,
+        3,
+        4,
+        5,
+        2,
+        9
+      ]
+    },
+    {
+      "P": 4861,
+      "previous_prime": 4831,
+      "gap": 30,
+      "first_row_gap_columns": 29,
+      "prime_count_in_initial_square": 1485340,
+      "non_p_column_min": 267,
+      "non_p_column_max": 345,
+      "non_p_column_mean": 305.6255144032922,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 52,
+      "max_reflection_pair": [
+        2023,
+        2838
+      ],
+      "l1_reflection_pair_asymmetry": 31010,
+      "gap_columns_repaired_in_square": 29,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 28,
+      "gap_repair_row_sample": [
+        6,
+        9,
+        4,
+        3,
+        2,
+        5,
+        4,
+        3,
+        4,
+        3,
+        6,
+        11
+      ]
+    },
+    {
+      "P": 4327,
+      "previous_prime": 4297,
+      "gap": 30,
+      "first_row_gap_columns": 29,
+      "prime_count_in_initial_square": 1194473,
+      "non_p_column_min": 240,
+      "non_p_column_max": 314,
+      "non_p_column_mean": 276.1148867313916,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 52,
+      "max_reflection_pair": [
+        487,
+        3840
+      ],
+      "l1_reflection_pair_asymmetry": 25941,
+      "gap_columns_repaired_in_square": 29,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 26,
+      "gap_repair_row_sample": [
+        6,
+        3,
+        2,
+        9,
+        2,
+        5,
+        6,
+        3,
+        26,
+        7,
+        6,
+        5
+      ]
+    },
+    {
+      "P": 3299,
+      "previous_prime": 3271,
+      "gap": 28,
+      "first_row_gap_columns": 27,
+      "prime_count_in_initial_square": 719299,
+      "non_p_column_min": 190,
+      "non_p_column_max": 251,
+      "non_p_column_mean": 218.1015767131595,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 47,
+      "max_reflection_pair": [
+        1486,
+        1813
+      ],
+      "l1_reflection_pair_asymmetry": 18503,
+      "gap_columns_repaired_in_square": 27,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 32,
+      "gap_repair_row_sample": [
+        2,
+        3,
+        4,
+        13,
+        18,
+        7,
+        2,
+        9,
+        4,
+        5,
+        2,
+        21
+      ]
+    },
+    {
+      "P": 2999,
+      "previous_prime": 2971,
+      "gap": 28,
+      "first_row_gap_columns": 27,
+      "prime_count_in_initial_square": 602107,
+      "non_p_column_min": 172,
+      "non_p_column_max": 232,
+      "non_p_column_mean": 200.83622414943295,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 42,
+      "max_reflection_pair": [
+        1221,
+        1778
+      ],
+      "l1_reflection_pair_asymmetry": 15601,
+      "gap_columns_repaired_in_square": 27,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 21,
+      "gap_repair_row_sample": [
+        4,
+        3,
+        4,
+        19,
+        6,
+        15,
+        8,
+        11,
+        12,
+        11,
+        2,
+        13
+      ]
+    },
+    {
+      "P": 3163,
+      "previous_prime": 3137,
+      "gap": 26,
+      "first_row_gap_columns": 25,
+      "prime_count_in_initial_square": 664860,
+      "non_p_column_min": 176,
+      "non_p_column_max": 241,
+      "non_p_column_mean": 210.26565464895637,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 49,
+      "max_reflection_pair": [
+        1033,
+        2130
+      ],
+      "l1_reflection_pair_asymmetry": 16984,
+      "gap_columns_repaired_in_square": 25,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 26,
+      "gap_repair_row_sample": [
+        2,
+        5,
+        10,
+        3,
+        16,
+        9,
+        6,
+        5,
+        16,
+        3,
+        2,
+        15
+      ]
+    },
+    {
+      "P": 2503,
+      "previous_prime": 2477,
+      "gap": 26,
+      "first_row_gap_columns": 25,
+      "prime_count_in_initial_square": 429798,
+      "non_p_column_min": 147,
+      "non_p_column_max": 203,
+      "non_p_column_mean": 171.78177458033574,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 42,
+      "max_reflection_pair": [
+        965,
+        1538
+      ],
+      "l1_reflection_pair_asymmetry": 11870,
+      "gap_columns_repaired_in_square": 25,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 34,
+      "gap_repair_row_sample": [
+        12,
+        5,
+        12,
+        3,
+        34,
+        3,
+        2,
+        5,
+        10,
+        9,
+        14,
+        19
+      ]
+    },
+    {
+      "P": 4783,
+      "previous_prime": 4759,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "prime_count_in_initial_square": 1440969,
+      "non_p_column_min": 262,
+      "non_p_column_max": 339,
+      "non_p_column_mean": 301.331869510665,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 57,
+      "max_reflection_pair": [
+        1055,
+        3728
+      ],
+      "l1_reflection_pair_asymmetry": 29703,
+      "gap_columns_repaired_in_square": 23,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 28,
+      "gap_repair_row_sample": [
+        10,
+        3,
+        10,
+        7,
+        2,
+        17,
+        16,
+        5,
+        2,
+        19,
+        12,
+        7
+      ]
+    },
+    {
+      "P": 4547,
+      "previous_prime": 4523,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "prime_count_in_initial_square": 1310667,
+      "non_p_column_min": 253,
+      "non_p_column_max": 322,
+      "non_p_column_mean": 288.31214254289483,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 53,
+      "max_reflection_pair": [
+        1898,
+        2649
+      ],
+      "l1_reflection_pair_asymmetry": 27753,
+      "gap_columns_repaired_in_square": 23,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 62,
+      "gap_repair_row_sample": [
+        6,
+        3,
+        62,
+        9,
+        4,
+        5,
+        12,
+        21,
+        22,
+        3,
+        16,
+        7
+      ]
+    },
+    {
+      "P": 4201,
+      "previous_prime": 4177,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "prime_count_in_initial_square": 1130309,
+      "non_p_column_min": 231,
+      "non_p_column_max": 306,
+      "non_p_column_mean": 269.12119047619046,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 57,
+      "max_reflection_pair": [
+        1682,
+        2519
+      ],
+      "l1_reflection_pair_asymmetry": 25247,
+      "gap_columns_repaired_in_square": 23,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 33,
+      "gap_repair_row_sample": [
+        6,
+        5,
+        8,
+        3,
+        8,
+        7,
+        4,
+        33,
+        2,
+        3,
+        2,
+        11
+      ]
+    },
+    {
+      "P": 2203,
+      "previous_prime": 2179,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "prime_count_in_initial_square": 338912,
+      "non_p_column_min": 129,
+      "non_p_column_max": 180,
+      "non_p_column_mean": 153.91099000908264,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 34,
+      "max_reflection_pair": [
+        449,
+        1754
+      ],
+      "l1_reflection_pair_asymmetry": 9660,
+      "gap_columns_repaired_in_square": 23,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 24,
+      "gap_repair_row_sample": [
+        18,
+        5,
+        16,
+        7,
+        12,
+        13,
+        10,
+        15,
+        2,
+        9,
+        12,
+        5
+      ]
+    },
+    {
+      "P": 1693,
+      "previous_prime": 1669,
+      "gap": 24,
+      "first_row_gap_columns": 23,
+      "prime_count_in_initial_square": 207871,
+      "non_p_column_min": 104,
+      "non_p_column_max": 145,
+      "non_p_column_mean": 122.85520094562648,
+      "non_p_column_zero_count": 0,
+      "zero_columns_sample": [],
+      "max_reflection_pair_difference": 30,
+      "max_reflection_pair": [
+        620,
+        1073
+      ],
+      "l1_reflection_pair_asymmetry": 6665,
+      "gap_columns_repaired_in_square": 23,
+      "gap_columns_unrepaired_in_square": 0,
+      "gap_unrepaired_columns_sample": [],
+      "gap_repair_row_min": 2,
+      "gap_repair_row_max": 27,
+      "gap_repair_row_sample": [
+        22,
+        5,
+        8,
+        3,
+        6,
+        5,
+        6,
+        21,
+        2,
+        27,
+        2,
+        7
+      ]
+    }
+  ],
+  "sample_non_p_column_zero_total": 0,
+  "sample_gap_unrepaired_column_total": 0,
+  "complete_wheel_non_p_uniformity_proved": true,
+  "complete_wheel_reflection_symmetry_proved": true,
+  "localized_transfer_to_initial_square_proved": false,
+  "large_predecessor_gap_symmetry_contradiction_found": false,
+  "non_p_column_uniformity_contradiction_found": false,
+  "atomic_signed_payload_constructor_proved": false,
+  "acyclic_same_set_scope_match_proved": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "LocalizedPCRTColumnUniformityTransferToInitialPxPSquare",
+  "fallback_to_latest_frontier": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn",
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "ExactCompletePWheelNonPColumnUniformity",
+      "closed": true,
+      "proved": true,
+      "meaning": "完整 M_{<=P} 周期中，所有非 P 列的非零 CRT 交集元素数精确相等。",
+      "remaining": "closed as full-period identity"
+    },
+    {
+      "gate": "ExactCompletePWheelReflectionSymmetry",
+      "closed": true,
+      "proved": true,
+      "meaning": "映射 n -> -n mod M_{<=P} 精确配对 c 与 P-c 两个非零列。",
+      "remaining": "closed as full-period identity"
+    },
+    {
+      "gate": "PredecessorGapOnlyCreatesFirstRowLocalDeficit",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 p^-<P 为前一素数，则第一行列 p^-+1,...,P-1 没有实际素数；这不是全周期 CRT 失衡。",
+      "remaining": "LocalizedPCRTColumnUniformityTransferToInitialPxPSquare"
+    },
+    {
+      "gate": "FullWheelUniformityDoesNotLocalizeByItself",
+      "closed": true,
+      "proved": true,
+      "meaning": "完整周期均匀性不能自动推出初始 P x P 短弧的列均匀或补偿位置。",
+      "remaining": "LocalizedPCRTColumnUniformityTransferToInitialPxPSquare OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "gate": "LargePredecessorGapSymmetryContradictionFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "大前素数间隙没有改变完整 P-wheel 的精确均匀恒等式，也没有单独推出局部反例矛盾。",
+      "remaining": "LocalizedPCRTColumnUniformityTransferToInitialPxPSquare"
+    },
+    {
+      "gate": "NonPColumnUniformityContradictionFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "非 P 列全周期均匀性是真恒等式；局部非 P 列分布需要额外 actual-source 转移定理。",
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "gate": "LatestSignedPayloadFrontierImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "最新 global CRT 路线已压到 signed payload；局部化转移若要自足，必须给出 payload 或新 PDEC scope。",
+      "remaining": "AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn"
+    },
+    {
+      "gate": "PDECScopeStillExternalOrNewInput",
+      "closed": true,
+      "proved": false,
+      "meaning": "PDEC same-set 作用域仍可作为新证书输入，但当前内部语料未证。",
+      "remaining": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate"
+    },
+    {
+      "gate": "PredecessorGapPCRTCurrentCorpusClosesRowColumn",
+      "closed": false,
+      "proved": false,
+      "meaning": "本证书关闭的是把大前素数间隙和完整 P-wheel 均匀性误当成最终矛盾的跳步。",
+      "remaining": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "closed_gates": [
+    "ExactCompletePWheelNonPColumnUniformity",
+    "ExactCompletePWheelReflectionSymmetry",
+    "PredecessorGapOnlyCreatesFirstRowLocalDeficit",
+    "FullWheelUniformityDoesNotLocalizeByItself",
+    "LatestSignedPayloadFrontierImported",
+    "PDECScopeStillExternalOrNewInput"
+  ],
+  "open_gates": [
+    "LargePredecessorGapSymmetryContradictionFound",
+    "NonPColumnUniformityContradictionFound",
+    "LatestSignedPayloadFrontierImported",
+    "PDECScopeStillExternalOrNewInput",
+    "PredecessorGapPCRTCurrentCorpusClosesRowColumn"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-global-crt-signed-payload-sync-router.json": "969459391db184ef4250b42c88f9947e1884ac92523320b47f887f729e8c6c56",
+    "docs/monograph/prime-matrix-global-crt-homogeneity-frontier-router.json": "0c48c47fe0fbf1853cc8ade6d61967081693bdcc8e1fad1068452ef163a68351",
+    "docs/monograph/prime-matrix-early-zero-gap-crt-asymmetry-router.json": "9f10be0a0445eef5185d4e9d03dab884b330a0ae06b9ff9c7a0ffb910086a804",
+    "docs/monograph/prime-matrix-strict-pdec-scope-branch-saturation-frontier-router.json": "3c7602bf11d29d837d1a05964368f085de2c10dc5e786bd518b55a85b4ce3cbf"
+  },
+  "plain_conclusion": "大前素数间隙路线给出的核心事实是局部第一行实际素数缺口，而不是完整 P-wheel 的失衡。完整 M_{<=P} 周期内，CRT 交集在每个非 P 列精确等量，并且 c 与 P-c 精确反射对称；这些恒等式与 P 的前素数间隙无关。若要从该全周期均匀性推出初始 P x P 方阵内的补偿、非 P 列均匀或相位矛盾，必须新增局部化转移定理。当前语料没有该转移定理；该路线回流到 PDEC same-set scope 或 signed payload/ExactUV 前沿。行/列命题仍未无条件闭合。"
+}

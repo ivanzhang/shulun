@@ -4366,3 +4366,50 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 这一步识别的全局结构断点是：CRT 周期扩张只复制零同余类和可见坐标 trace，不能生成 orientation、
 local factor 与 signed coefficient 的 payload。它仍不是最终证明；signed payload constructor、
 新 PDEC scope、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 仍未合取闭合。
+
+## 107. 前素数间隙 P-CRT 均匀性路由回接
+
+后续文件
+
+```text
+experiments/prime_matrix_predecessor_gap_pcrt_uniformity_router.py
+docs/monograph/prime-matrix-predecessor-gap-pcrt-uniformity-router.md
+docs/monograph/prime-matrix-predecessor-gap-pcrt-uniformity-router.json
+data/prime-matrix-predecessor-gap-pcrt-uniformity-ledger.json
+```
+
+本证书专门审计“若 `P` 与前一素数 `p^-` 的间隙较大，是否在 `P` 阶 CRT 周期中产生非 P 列均匀性
+或 `c <-> P-c` 对称性矛盾”这一接口。结论是：完整 `M_{\le P}=P M_{<P}` 周期内，CRT 交集在每个
+非 P 列精确等量，反射 `n -> -n` 也精确配对 `c` 与 `P-c`；这些是全周期恒等式，且与前素数间隙无关。
+
+前素数间隙真正给出的只是第一行局部缺口：列 `p^-+1,...,P-1` 在第一行没有实际素数。若要把完整
+P-wheel 的列均匀性转化为初始 `P x P` 方阵内的补偿或相位矛盾，必须新增局部化转移定理。
+
+当前读数：
+
+```text
+complete_wheel_non_p_uniformity_proved=true
+complete_wheel_reflection_symmetry_proved=true
+localized_transfer_to_initial_square_proved=false
+large_predecessor_gap_symmetry_contradiction_found=false
+non_p_column_uniformity_contradiction_found=false
+row_column_unconditional_closed=false
+```
+
+`P<=5000` 最大前素数间隙样本中，非 P 零列总数为 `0`，最大样本 `P=1361,p^-=1327,gap=34` 的
+33 个第一行缺口列都在后续行被实际素数补上；但这只是风险形态定位，不是证明。
+
+最新活动基保持为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步关闭的是“完整 P-wheel 均匀性自动给出局部非 P 列矛盾”的跳步。真正新接口是
+`LocalizedPCRTColumnUniformityTransferToInitialPxPSquare`，它若无法自足证明，就回流到 PDEC scope 或
+signed payload/ExactUV 前沿。

@@ -8449,6 +8449,46 @@ a frontier sharpening rather than unconditional closure.
 \end{proof}
 
 
+\begin{theorem}[Predecessor-gap P-CRT uniformity route]
+Let \(p^{-}<P\) be consecutive primes.  A large gap \(P-p^{-}\) creates a
+local first-row actual-prime deficit in the columns \(p^{-}+1,\ldots,P-1\),
+but it does not create an imbalance in the complete \(P\)-level CRT wheel.  In
+the full period \(M_{\le P}=P M_{<P}\), before imposing the \(P\)-zero class,
+each residue class modulo \(P\) contains exactly \(\varphi(M_{<P})\) residues
+coprime to \(M_{<P}\).  After imposing the \(P\)-zero class, the \(P\)-column is
+deleted and every nonzero column \(c\in{\mathbb F}_P^\ast\) still contains
+exactly \(\varphi(M_{<P})\) surviving CRT classes.  The reflection
+\(n\mapsto -n\pmod {M_{\le P}}\) also pairs \(c\) with \(P-c\) exactly.
+Therefore a predecessor-gap argument can close the row/column theorem only if
+it supplies a localization transfer from this complete-wheel identity to the
+initial \(P\times P\) square, or else a new PDEC scope or signed-payload input.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-predecessor-gap-pcrt-uniformity-router.md.
+\end{quote}
+The complete-wheel count is a direct CRT bijection.  For every unit
+\(a\bmod M_{<P}\) and every \(c\bmod P\), there is a unique residue
+\(n\bmod P M_{<P}\) satisfying \(n\equiv a\bmod M_{<P}\) and
+\(n\equiv c\bmod P\).  Hence each \(P\)-column has \(\varphi(M_{<P})\) such
+classes before the \(P\)-sieve.  The \(P\)-sieve removes exactly the class
+\(c=0\), leaving all nonzero columns equal.  Negation gives the stated
+reflection symmetry.
+
+The gap \(P-p^{-}\) is different in kind.  It says that several first-row
+columns contain no prime atom, not that the full wheel has unequal nonzero
+columns.  Passing from the full-period identity to the initial \(P\times P\)
+arc is precisely a short localization problem.  The archived scan for
+\(P\le5000\) records the largest predecessor gaps and observes that the
+first-row missing columns are repaired later in those finite squares, but this
+empirical repair is not used as proof.  Without a localization transfer, the
+route returns to the current frontier: same-set PDEC scope, signed payload,
+ExactUV, model, rate and DStructure/Rankin gates.  Thus this theorem closes a
+false shortcut, not the row/column theorem.
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}
