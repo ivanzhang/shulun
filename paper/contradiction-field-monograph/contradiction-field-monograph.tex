@@ -8845,6 +8845,73 @@ NonrealHalfClassSimplexRankOneProjectionExclusionAtP2.
 No unconditional row/column theorem is claimed.
 \end{proof}
 
+\begin{theorem}[Half-class compensation variance for the nonreal packet]
+Keep the notation of the preceding theorem and fix \(s\in\{+1,-1\}\).  Let
+\[
+H_s=\{a\in{\mathbb F}_P^\ast:\chi_P(a)=s\},\qquad
+h=|H_s|=\frac{P-1}{2},
+\]
+and define the half-class mean
+\[
+\mu_s=\frac{T_0(P)+sT_{\chi}(P)}{P-1}.
+\]
+For \(a\in H_s\) the nonreal residual is exactly
+\[
+R_a=(P-1)\bigl(\theta(P^2;P,a)-\mu_s\bigr),
+\]
+and therefore
+\[
+\sum_{a\in H_s}R_a=0.
+\]
+If a zero column occurs at \(a_0\in H_s\), then
+\[
+R_{a_0}=-(P-1)\mu_s,\qquad
+\sum_{\substack{a\in H_s\\a\ne a_0}}R_a=(P-1)\mu_s.
+\]
+Consequently the sharp one-hole variance floor is
+\[
+\sum_{a\in H_s}R_a^2
+\ge ((P-1)\mu_s)^2\frac{h}{h-1}.
+\]
+Equality is attained, at the level of the centered half-class geometry, by the
+flat compensator in which the non-hole residues all have
+\[
+\theta(P^2;P,a)=\mu_s\frac{h}{h-1}.
+\]
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-nonreal-halfclass-compensation-variance-router.md.
+\end{quote}
+Since \(T_0+sT_{\chi}=2\sum_{a\in H_s}\theta(P^2;P,a)\), the mean over
+\(H_s\) is \(\mu_s\).  Substituting this identity into the previous residual
+formula gives \(R_a=(P-1)(\theta_a-\mu_s)\), and summing over \(H_s\) gives
+the centering identity.
+
+If \(\theta_{a_0}=0\), then the displayed value of \(R_{a_0}\) follows
+immediately, and the compensation identity follows from centering.  Cauchy's
+inequality applied to the remaining \(h-1\) residues gives
+\[
+\sum_{\substack{a\in H_s\\a\ne a_0}}R_a^2
+\ge \frac{((P-1)\mu_s)^2}{h-1},
+\]
+so adding \(R_{a_0}^2\) gives the stated floor.  Equality requires all
+remaining residuals to be equal, i.e. the flat compensator above.
+
+Thus the previous energy floor is not only necessary but convexly sharp.
+It cannot by itself exclude a zero column, because the flat compensator is a
+nonnegative centered half-class vector.  The remaining self-contained
+obligation is therefore the actual prime-phase input
+\begin{quote}\footnotesize\ttfamily
+HalfClassCompensationMassNonconcentrationOrColumnCRTPDEC,
+\end{quote}
+which must either rule out such flat or near-flat compensation for the true
+prime-induced vector at \(x=P^2\), or route persistent compensation phases to a
+registered ColumnCRT/PDEC or moving-family return.  No unconditional
+row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

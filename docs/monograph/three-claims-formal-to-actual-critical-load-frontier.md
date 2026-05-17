@@ -4776,3 +4776,63 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“非实零包无结构残差”的误出口；剩余仍是点态相位排斥，而不是总能量容量。
+
+## 122. Nonreal half-class compensation variance router
+
+新增文件
+
+```text
+experiments/prime_matrix_nonreal_halfclass_compensation_variance_router.py
+docs/monograph/prime-matrix-nonreal-halfclass-compensation-variance-router.md
+docs/monograph/prime-matrix-nonreal-halfclass-compensation-variance-router.json
+data/prime-matrix-nonreal-halfclass-compensation-variance-ledger.json
+```
+
+本步把上一层的 rank-one 负投影继续拆成同半类补偿恒等式。对 `H_s={a:chi_2(a)=s}`，
+
+```text
+mu_s=(T0+sT2)/(P-1),
+R_a=(P-1)(theta_a-mu_s),
+sum_{a in H_s} R_a=0.
+```
+
+因此零列不是单独的负尖峰，而是
+
+```text
+one missing coordinate + same-halfclass positive compensation.
+```
+
+Cauchy 给出的尖孔地板
+
+```text
+sum R_a^2 >= ((P-1)mu_s)^2*h/(h-1)
+```
+
+是锐的：等号态由平铺补偿达到。这说明 formal energy envelope 超过地板不等于 actual contradiction；必须证明 actual prime-induced compensation 不能长期平铺，或把持久平铺相位送入 ColumnCRT/PDEC。
+
+当前读数：
+
+```text
+halfclass_centering_identity_closed=true
+zero_column_compensation_mass_closed=true
+sharp_one_hole_variance_floor_closed=true
+capacity_only_sufficiency_rejected=true
+actual_prime_compensation_nonconcentration_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND HalfClassCompensationMassNonconcentrationOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书的实质进展是：非实分支的剩余不再是抽象相位集中，而是同半类补偿质量的非平铺/持久 ColumnCRT 二分。行/列命题仍未无条件闭合。

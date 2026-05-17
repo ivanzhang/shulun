@@ -4822,3 +4822,76 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步仍不是闭合；它把非实残差的全局相位硬点从“零包抵消”压成两个半类 simplex 中的 rank-one 负投影排斥。
+
+## 111. Nonreal half-class compensation variance router
+
+新增文件
+
+```text
+experiments/prime_matrix_nonreal_halfclass_compensation_variance_router.py
+docs/monograph/prime-matrix-nonreal-halfclass-compensation-variance-router.md
+docs/monograph/prime-matrix-nonreal-halfclass-compensation-variance-router.json
+data/prime-matrix-nonreal-halfclass-compensation-variance-ledger.json
+```
+
+本步继续下钻
+
+```text
+NonrealHalfClassSimplexRankOneProjectionExclusionAtP2
+```
+
+对每个二次半类 `H_s={a:chi_2(a)=s}`，令
+
+```text
+mu_s=(T0+sT2)/(P-1).
+```
+
+则非实残差不是任意 simplex 坐标，而是严格中心化：
+
+```text
+R_a=(P-1)(theta_a-mu_s),    sum_{a in H_s} R_a=0.
+```
+
+若零列发生在 `a0 in H_s`，则同半类其它 residue 必须承担等量正补偿：
+
+```text
+R_a0=-(P-1)mu_s
+sum_{a!=a0, a in H_s} R_a=(P-1)mu_s.
+```
+
+尖孔方差地板为
+
+```text
+sum_{a in H_s} R_a^2 >= ((P-1)mu_s)^2 * h/(h-1),  h=(P-1)/2,
+```
+
+且等号态是非孔 residue 全部取 `theta=mu_s*h/(h-1)` 的平铺补偿。因此容量/方差地板是锐的必要条件，不是排斥零列的充分条件。
+
+当前读数：
+
+```text
+halfclass_centering_identity_closed=true
+zero_column_compensation_mass_closed=true
+sharp_one_hole_variance_floor_closed=true
+capacity_only_sufficiency_rejected=true
+actual_prime_compensation_nonconcentration_proved=false
+row_column_unconditional_closed=false
+```
+
+有限诊断 `7<=P<=1000` 中，半类方差超过零列尖孔地板的样本半类数为 `297`，但这并不产生零列；最大实际缺孔/零列所需缺孔比为 `0.6876234883389729`，发生在 `P=73` 的二次剩余半类。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND HalfClassCompensationMassNonconcentrationOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“半类容量足够即可矛盾”的误出口。剩余硬点更窄：证明真实素数诱导的补偿质量不能在同半类近似平铺，或者把持久平铺相位登记并排斥为 ColumnCRT/PDEC/moving-family 出口。
