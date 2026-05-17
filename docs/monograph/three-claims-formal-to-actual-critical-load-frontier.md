@@ -5430,3 +5430,47 @@ AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
 ```
 
 该证书关闭的是指定终端原子的“小素吸收”误出口，不是全局行/列命题证明。
+
+## 132. Terminal-row square-phase bridge router
+
+新增文件
+
+```text
+experiments/prime_matrix_terminal_row_square_phase_bridge_router.py
+docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.md
+docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.json
+data/prime-matrix-terminal-row-square-phase-bridge-ledger.json
+```
+
+本步把
+
+```text
+TerminalRowReducedResidueExistenceOrLocalizedPCRTTransfer
+```
+
+收窄到平方锚特殊相位 Jacobsthal/PDEC 接口。末行缺失等价于
+
+```text
+P^2-(1..P-1)
+```
+
+被 `q<P` 全覆盖；下一行缺失等价于
+
+```text
+P^2+(1..P-1)
+```
+
+被 `q<P` 全覆盖。任一侧全覆盖都会使 `P^2` 在 `M_<P` 周期中落入长度 `P-1`
+覆盖块的起点深处。
+
+由于既有审计已经发现全周期长覆盖块存在，不能再试图证明普通 Jacobsthal 最大块 `<P-1`。
+下一步必须攻击特殊相位：
+
+```text
+SquarePhaseSpecialPhaseLongBlockPDECExclusion
+```
+
+即证明 `P^2` 这个具体相位不能持续对齐长覆盖块；若能对齐，则把它登记为固定相位
+`PDEC/SAE/ColumnCRT` 并排斥或吸收。
+
+该证书是接口合流，不是行/列命题无条件闭合。

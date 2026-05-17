@@ -8582,6 +8582,50 @@ localized \(P\)-CRT/Linnik--2 route, or the already registered AP zero-packet,
 Page-sparsity, signed-payload, or PDEC frontiers.
 \end{proof}
 
+\begin{theorem}[Terminal rows as square-phase Jacobsthal special phases]
+For \(1\le r<P\), the next-row and last-row reduced atoms are exactly
+\[
+(P^2+r,M_{<P})=1,\qquad (P^2-r,M_{<P})=1.
+\]
+Equivalently, the next-row full-cover failure is the covering of
+\(r=1,\ldots,P-1\) by the forbidden classes
+\[
+r\equiv -P^2\pmod q,\qquad q<P,
+\]
+and the last-row full-cover failure is the covering by
+\[
+r\equiv P^2\pmod q,\qquad q<P.
+\]
+Thus either full cover forces the square phase \(P^2\) to start a covered
+block of length \(P-1\) in the primorial period \(M_{<P}\).
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.md.
+\end{quote}
+For every prime \(q<P\), since \(P\) is a unit modulo \(q\),
+\[
+q\mid P^2+r \quad\Longleftrightarrow\quad r\equiv -P^2\pmod q,
+\]
+and
+\[
+q\mid P^2-r \quad\Longleftrightarrow\quad r\equiv P^2\pmod q.
+\]
+Therefore the absence of a reduced atom on one side is exactly the statement
+that these one-residue-per-\(q\) forbidden classes cover the whole interval
+\([1,P-1]\).  In the primorial period this is precisely a consecutive
+covered block of length \(P-1\) beginning at the corresponding square phase.
+
+The full-period Jacobsthal shortcut is not available in the present corpus:
+known and archived finite data already show primorial periods with covered
+blocks of length at least \(P-1\).  The useful remaining target is not a
+uniform period-wide maximum-run bound, but the special-phase assertion that
+the particular phase \(P^2\) cannot align with such a long block, or that such
+alignment is a PDEC/SAE/ColumnCRT defect.  Hence this is a route sharpening,
+not an unconditional row/column proof.
+\end{proof}
+
 \begin{theorem}[Linnik--2 defects and nonprincipal character obstruction]
 For a prime modulus \(P\), put
 \[

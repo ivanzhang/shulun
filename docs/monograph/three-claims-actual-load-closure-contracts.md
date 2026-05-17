@@ -5535,3 +5535,52 @@ PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
 ```
 
 行/列命题仍未无条件闭合。
+
+## 121. Terminal-row square-phase bridge router
+
+新增文件
+
+```text
+experiments/prime_matrix_terminal_row_square_phase_bridge_router.py
+docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.md
+docs/monograph/prime-matrix-terminal-row-square-phase-bridge-router.json
+data/prime-matrix-terminal-row-square-phase-bridge-ledger.json
+```
+
+本步把上一节的终端行 reduced atom 存在性并入既有平方锚特殊相位线。对 `1<=r<P`：
+
+```text
+plus survivor  <=> gcd(P^2+r, M_<P)=1
+minus survivor <=> gcd(P^2-r, M_<P)=1
+plus full cover  <=> r=-P^2 mod q 的禁类覆盖 r=1..P-1
+minus full cover <=> r= P^2 mod q 的禁类覆盖 r=1..P-1
+```
+
+因此末行或下一行的全缺失不是普通 CRT 全周期不均匀，而是 `P^2` 特殊相位启动长度 `P-1`
+低筛覆盖块。既有 `square-phase Jacobsthal` 证书已经显示：全周期最大覆盖块 `<P-1`
+的强路线失效，真正硬点是特殊相位避让，或把特殊相位命中登记为 `PDEC/SAE/ColumnCRT`。
+
+当前读数：
+
+```text
+terminal_reduced_atom_equivalent_to_square_phase_survivor=true
+terminal_full_cover_implies_special_long_block=true
+uniform_jacobsthal_bound_suffices_but_rejected=true
+global_special_phase_avoidance_proved=false
+row_column_unconditional_closed=false
+```
+
+最新剩余：
+
+```text
+SquarePhaseSpecialPhaseLongBlockPDECExclusion
+```
+
+备选仍为：
+
+```text
+TwoSidedSquarePhaseLayeredWheelSurvivorLowerBound
+PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2OrAPZeroPacketFrontier
+```
+
+本步关闭的是“从完整 CRT 周期对称性直接推出终端行局部矛盾”的跳步；行/列命题仍未无条件闭合。
