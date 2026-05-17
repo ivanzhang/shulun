@@ -5299,3 +5299,86 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“继续在普通 CRT 容量语言中寻找闭合”的误出口。剩余必须是有效 `1/P` 级 beta-gap、非实零包残差预算，或显式超近实零/相干零包 PDEC。
+
+## 130. Beta-gap Page sparsity router
+
+新增文件
+
+```text
+experiments/prime_matrix_beta_gap_page_sparsity_router.py
+docs/monograph/prime-matrix-beta-gap-page-sparsity-router.md
+docs/monograph/prime-matrix-beta-gap-page-sparsity-router.json
+data/prime-matrix-beta-gap-page-sparsity-ledger.json
+```
+
+本步把
+
+```text
+SquareScaleQuadraticBetaGapAndZeroPacketResidualBudgetAtP2
+```
+
+中的实零失败分支继续压缩。上一层已说明无剩余零包时临界形态是
+
+```text
+beta_P > 1 - C(P)/P.
+```
+
+Page/Landau 唯一例外零区域是
+
+```text
+beta > 1 - c_Page/logQ.
+```
+
+只要
+
+```text
+P > C(P)logQ/c_Page,  P<=Q,
+```
+
+超近实零载体就落入 Page 区域。因此在接受 Page 唯一性与常数适配后，同一 `Q`
+盒中至多有一个这样的实零载体。若存在固定周期或正密度的 CRT 载体复现，它会在同一
+`Q` 范围内产生多个超近实零载体，从而与 Page 唯一性冲突。
+
+这把剩余硬点压成：
+
+```text
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
+```
+
+失败出口命名为：
+
+```text
+MovingPageSingletonCarrierPDECOrCoherentZeroPacket
+```
+
+当前读数：
+
+```text
+page_region_inclusion_algebra_closed=true
+page_uniqueness_constants_internalized=false
+moving_singleton_carrier_excluded=false
+nonreal_zero_packet_residual_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR ((LandauPageExceptionalZeroUniquenessWithAdaptedConstants
+                AND PageExceptionalSingletonCarrierExclusionOrMovingFamilyPDEC)
+               AND NonrealZeroPacketResidualBelowLargeSplittingSlackAtP2)
+           OR (SelfContainedEffectivePrimeModulusQuadraticBetaGapAtScaleOneOverP
+               AND NonrealZeroPacketResidualBelowLargeSplittingSlackAtP2)
+           OR MovingPageSingletonCarrierPDECOrCoherentZeroPacket))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“超近实零多载体族可作为稳定 CRT 复现通道”的误出口。剩余必须排斥 Page moving singleton、给出自足 `1/P` 级 beta-gap，或证明非实零包/端点残差低于大分裂 slack。

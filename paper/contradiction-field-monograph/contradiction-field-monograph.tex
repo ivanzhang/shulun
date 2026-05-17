@@ -9353,6 +9353,59 @@ UltraCloseRealZeroOrCoherentZeroPacketLargeSplittingPDEC.
 No unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Page sparsity for ultra-close beta-gap carriers]
+Assume the Landau--Page uniqueness input in the following form: for primitive
+real characters of conductor \(q\le Q\), at most one character has a real zero
+\[
+\beta>1-\frac{c_{\rm Page}}{\log Q}.
+\]
+Let \(E(Q)\) be the set of prime moduli \(P\le Q\) for which the
+large-splitting beta-gap failure produces a real-zero carrier
+\[
+\beta_P>1-\frac{C(P)}{P},
+\qquad C(P)\le C_*.
+\]
+Then
+\[
+\bigl|E(Q)\cap ((C_*/c_{\rm Page})\log Q,Q]\bigr|\le 1.
+\]
+In particular, after this external Page input and its constant matching are
+accepted, a positive-density or fixed-period CRT family of such ultra-close
+real-zero carriers cannot be the persistent obstruction.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-beta-gap-page-sparsity-router.md.
+\end{quote}
+If \(P>(C_*/c_{\rm Page})\log Q\), then
+\[
+\frac{C(P)}{P}\le\frac{C_*}{P}
+   <\frac{c_{\rm Page}}{\log Q}.
+\]
+Hence every zero counted by \(E(Q)\) in this range satisfies
+\[
+\beta_P>1-\frac{C(P)}{P}
+      >1-\frac{c_{\rm Page}}{\log Q},
+\]
+and so lies in the Page uniqueness region for conductors \(q\le Q\).  The
+Page input allows at most one such real-zero carrier.  Therefore the high
+part of \(E(Q)\) has cardinality at most one.
+
+This eliminates only the multi-carrier CRT reproduction shape.  It does not
+internalize the Page constant, exclude a moving singleton exceptional carrier,
+or control non-real zero packets, endpoint terms, or prime-power residuals.
+The remaining target is
+\begin{quote}\footnotesize\ttfamily
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget,
+\end{quote}
+with fallback
+\begin{quote}\footnotesize\ttfamily
+MovingPageSingletonCarrierPDECOrCoherentZeroPacket.
+\end{quote}
+No unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -466,3 +466,36 @@ DIBFIOriginalDispersionCurrentWindowHypothesisMatch.
 
 也就是说，下一步不再是寻找定理号，而是把当前未中心化 `KE-13/WFD-core` 窗口逐项放进
 `BFI1986-Theorem10 + DI1982-Theorem12` 的假设中。
+
+## Landau-Page 例外零唯一性输入
+
+行/列命题的 `SquareScaleQuadraticBetaGapAndZeroPacketResidualBudgetAtP2`
+接口新增一个外部输入名：
+
+```text
+LandauPageExceptionalZeroUniquenessWithAdaptedConstants
+```
+
+所需内容是标准 Page/Landau 例外零唯一性形态：对导子 `q<=Q` 的 primitive 实角色，
+在区域
+
+```text
+beta > 1 - c_Page/log Q
+```
+
+内至多存在一个例外实零载体。当前仓库只使用它来排除“同一 `Q` 范围中出现多个
+`beta>1-C/P` 超近实零载体”的固定周期/正密度 CRT 复现形态。
+
+边界：
+
+1. 本仓库尚未内化 `c_Page` 的显式常数，也未把该常数适配到 `P^2` 高区间二次角色投影预算。
+2. Page 稀疏性只能排除多载体族，不能排除每个尺度一个的 moving singleton 例外载体。
+3. 该输入不处理非实零包、端点项或素数幂残差的同向相干。
+
+因此它只能把当前最窄口压成
+
+```text
+PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
+```
+
+不能单独闭合行/列命题。

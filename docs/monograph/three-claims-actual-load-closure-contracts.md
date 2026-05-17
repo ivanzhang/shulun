@@ -5387,3 +5387,87 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“普通低轮或常数级二次偏置分析仍能继续压缩”的误出口。剩余最窄接口是有效 `1/P` 级 beta-gap 与非实零包残差预算，或把长期失败登记为超近实零/相干零包 PDEC/Siegel 出口。行/列命题仍未无条件闭合。
+
+## 119. Beta-gap Page sparsity router
+
+新增文件
+
+```text
+experiments/prime_matrix_beta_gap_page_sparsity_router.py
+docs/monograph/prime-matrix-beta-gap-page-sparsity-router.md
+docs/monograph/prime-matrix-beta-gap-page-sparsity-router.json
+data/prime-matrix-beta-gap-page-sparsity-ledger.json
+```
+
+本步继续下钻
+
+```text
+SquareScaleQuadraticBetaGapAndZeroPacketResidualBudgetAtP2
+```
+
+上一层把实零失败压到
+
+```text
+beta_P > 1 - C(P)/P
+```
+
+的超近区域。若接受 Page/Landau 例外零唯一性输入
+
+```text
+LandauPageExceptionalZeroUniquenessWithAdaptedConstants:
+  q<=Q 中至多一个 primitive 实角色零点满足 beta>1-c_Page/logQ,
+```
+
+并且在某个范围内 `C(P)<=C_*`，则当
+
+```text
+P > C_* logQ / c_Page,  P<=Q
+```
+
+时有
+
+```text
+1-C(P)/P > 1-c_Page/logQ.
+```
+
+因此这些 `1/P` 级超近实零载体全部落入同一个 Page 唯一性区域，任意 `q<=Q`
+范围中至多出现一个。结论是：
+
+```text
+|E(Q) cap ((C_*/c_Page)logQ,Q]| <= 1
+|E(Q)|/pi(Q) <= (1+pi((C_*/c_Page)logQ))/pi(Q)=o(1)
+```
+
+这排除了固定周期或正密度 CRT 反例族靠“多实零载体复现”维持大分裂失败的形态。
+
+当前读数：
+
+```text
+page_region_inclusion_algebra_closed=true
+page_uniqueness_constants_internalized=false
+moving_singleton_carrier_excluded=false
+nonreal_zero_packet_residual_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR ((LandauPageExceptionalZeroUniquenessWithAdaptedConstants
+                AND PageExceptionalSingletonCarrierExclusionOrMovingFamilyPDEC)
+               AND NonrealZeroPacketResidualBelowLargeSplittingSlackAtP2)
+           OR (SelfContainedEffectivePrimeModulusQuadraticBetaGapAtScaleOneOverP
+               AND NonrealZeroPacketResidualBelowLargeSplittingSlackAtP2)
+           OR MovingPageSingletonCarrierPDECOrCoherentZeroPacket))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“多载体 Page 例外零可以按固定 CRT 周期稳定复现”的误出口。它没有内化 Page 常数，也没有排斥每个尺度一个的 moving singleton 例外载体，更没有证明非实零包/端点残差低于大分裂 slack。行/列命题仍未无条件闭合。
