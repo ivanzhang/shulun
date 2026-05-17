@@ -1,0 +1,200 @@
+{
+  "certificate_type": "prime_matrix_q2_endpoint_replacement_aperture_growth_router",
+  "status": "endpoint_replacement_aperture_growth_routed_not_global_proof",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "previous_hardpoint": "Q2StageEndpointInversionRoutedToColumnCRTPDECOrSparseSAEOrMovingEndpointH3DSB;GlobalFinalInputsStillOpen",
+  "previous_router_status": "q2_carrier_stage_endpoint_inversion_routed_not_global_proof",
+  "corrected_endpoint_bound": "Q1<=kP-P, with equality possible at k=2; Q2>kP",
+  "full_q2_replay_makes_closed_carrier_composite": true,
+  "endpoint_replacement_gap_growth_per_replay_at_least": 2,
+  "same_aperture_replay_impossible": true,
+  "bounded_aperture_replay_finite": true,
+  "persistent_moving_aperture_routes_to_pdec_columncrt": true,
+  "sparse_replacement_routes_to_sae": true,
+  "unbounded_replacement_routes_to_h3_dsb": true,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "EndpointReplacementApertureGrowthNoBoundedReplayOrMovingSupportPDECSAEH3DSB;GlobalFinalInputsStillOpen",
+  "sample_reports": [
+    {
+      "p": 13,
+      "x0": 168,
+      "interval": [
+        2185,
+        2197
+      ],
+      "q1": 2179,
+      "q2": 2203,
+      "initial_gap": 24,
+      "initial_closed_carrier_width": 25,
+      "first_replay_gap_lower_bound": 26,
+      "first_replay_closed_width_lower_bound": 27,
+      "first_replay_exceeds_original_closed_aperture": true,
+      "same_aperture_endpoint_replay_possible": false,
+      "log_modulus_le_q2_minus_log_first_replacement_support": 2127.706271,
+      "aperture_budget_max_replays": {
+        "same_closed_carrier_aperture": 0,
+        "one_replacement_aperture": 1,
+        "ten_replacement_aperture": 10,
+        "double_closed_carrier_aperture": 12
+      }
+    },
+    {
+      "p": 17,
+      "x0": 1210,
+      "interval": [
+        20571,
+        20587
+      ],
+      "q1": 20563,
+      "q2": 20593,
+      "initial_gap": 30,
+      "initial_closed_carrier_width": 31,
+      "first_replay_gap_lower_bound": 32,
+      "first_replay_closed_width_lower_bound": 33,
+      "first_replay_exceeds_original_closed_aperture": true,
+      "same_aperture_endpoint_replay_possible": false,
+      "log_modulus_le_q2_minus_log_first_replacement_support": 20396.874489,
+      "aperture_budget_max_replays": {
+        "same_closed_carrier_aperture": 0,
+        "one_replacement_aperture": 1,
+        "ten_replacement_aperture": 10,
+        "double_closed_carrier_aperture": 15
+      }
+    },
+    {
+      "p": 19,
+      "x0": 3658,
+      "interval": [
+        69503,
+        69521
+      ],
+      "q1": 69499,
+      "q2": 69539,
+      "initial_gap": 40,
+      "initial_closed_carrier_width": 41,
+      "first_replay_gap_lower_bound": 42,
+      "first_replay_closed_width_lower_bound": 43,
+      "first_replay_exceeds_original_closed_aperture": true,
+      "same_aperture_endpoint_replay_possible": false,
+      "log_modulus_le_q2_minus_log_first_replacement_support": 69184.7438,
+      "aperture_budget_max_replays": {
+        "same_closed_carrier_aperture": 0,
+        "one_replacement_aperture": 1,
+        "ten_replacement_aperture": 10,
+        "double_closed_carrier_aperture": 20
+      }
+    },
+    {
+      "p": 23,
+      "x0": 58,
+      "interval": [
+        1335,
+        1357
+      ],
+      "q1": 1327,
+      "q2": 1361,
+      "initial_gap": 34,
+      "initial_closed_carrier_width": 35,
+      "first_replay_gap_lower_bound": 36,
+      "first_replay_closed_width_lower_bound": 37,
+      "first_replay_exceeds_original_closed_aperture": true,
+      "same_aperture_endpoint_replay_possible": false,
+      "log_modulus_le_q2_minus_log_first_replacement_support": 1305.78147,
+      "aperture_budget_max_replays": {
+        "same_closed_carrier_aperture": 0,
+        "one_replacement_aperture": 1,
+        "ten_replacement_aperture": 10,
+        "double_closed_carrier_aperture": 17
+      }
+    }
+  ],
+  "sample_count": 4,
+  "all_sample_first_replay_exceeds_original_closed_aperture": true,
+  "all_sample_same_aperture_endpoint_replay_impossible": true,
+  "gates": [
+    {
+      "gate": "CorrectEarlyZeroCarrierEndpointBounds",
+      "closed": true,
+      "proved": true,
+      "meaning": "早期零行 [(k-1)P+1,kP] 无素数时，左端相邻素数满足 Q1<=kP-P，除 k=2 可有 Q1=P 外通常为严格小于；右端满足 Q2>kP。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FullQ2ReplayMakesClosedCarrierComposite",
+      "closed": true,
+      "proved": true,
+      "meaning": "在 Q2<P^2 主分支中，开间隙由小于 P 的素因子覆盖；全 Q2 轮又杀掉 Q1,Q2，故 [Q1,Q2]+tM_{<=Q2} 对 t>=1 是闭复合块。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "EndpointReplacementDebtPlusTwo",
+      "closed": true,
+      "proved": true,
+      "meaning": "闭复合块的真实相邻素数端点必须落在块外，因此新相邻素数间隙至少为旧间隙加 2。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "SameApertureReplayImpossible",
+      "closed": true,
+      "proved": true,
+      "meaning": "第一次全 Q2 复现后闭载体宽度已至少增加 2，不能仍占用原同一有限孔径。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "BoundedApertureReplayFinite",
+      "closed": true,
+      "proved": true,
+      "meaning": "若孔径宽度被固定为 W，则最多 floor((W-W0)/2) 次端点替换；无限链必须移动或扩孔。",
+      "remaining": "closed as bounded-aperture no-go"
+    },
+    {
+      "gate": "PersistentMovingApertureRoutesToPDECColumnCRT",
+      "closed": true,
+      "proved": true,
+      "meaning": "若扩孔/移动以固定有限相位规则持久复现，则形成 moving aperture 的 ColumnCRT/PDEC formal unit。",
+      "remaining": "closed as router"
+    },
+    {
+      "gate": "SparseReplacementRoutesToSAE",
+      "closed": true,
+      "proved": true,
+      "meaning": "若端点替换只在孤立窗口发生，则为 SAE 单窗原子。",
+      "remaining": "closed as router"
+    },
+    {
+      "gate": "UnboundedReplacementRoutesToH3DSB",
+      "closed": true,
+      "proved": true,
+      "meaning": "若孔径持续无界增长而不固定相位，则回到 tail filler、H3-DSB/KLS、Rankin 或外部 DI/BFI 分支。",
+      "remaining": "H3-DSB-NCBLK or moving-family global input"
+    },
+    {
+      "gate": "GlobalRowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步排除固定有界孔径复现，不排斥所有 moving aperture、PDEC、SAE 与 H3-DSB 出口。",
+      "remaining": "EndpointReplacementApertureGrowthNoBoundedReplayOrMovingSupportPDECSAEH3DSB;GlobalFinalInputsStillOpen"
+    }
+  ],
+  "closed_gates": [
+    "CorrectEarlyZeroCarrierEndpointBounds",
+    "FullQ2ReplayMakesClosedCarrierComposite",
+    "EndpointReplacementDebtPlusTwo",
+    "SameApertureReplayImpossible",
+    "BoundedApertureReplayFinite",
+    "PersistentMovingApertureRoutesToPDECColumnCRT",
+    "SparseReplacementRoutesToSAE",
+    "UnboundedReplacementRoutesToH3DSB"
+  ],
+  "open_gates": [
+    "GlobalRowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "Q2 阶全轮复制不只是杀掉原素端点；它把 [Q1,Q2] 复制为闭复合块。因此真实相邻素数端点必须替换到块外，下一载体间隙至少增加 2。同一有限孔径的端点稳定复现被排除；无限反例链若继续，只能扩孔/移动，并被路由到 moving-aperture PDEC/ColumnCRT、SAE 或 H3-DSB/KLS 出口。",
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-q2-carrier-stage-crt-asymmetry-router.json": "6f8c7992da2fcdc0925902c500eb5f568601db52cda061b8c21b38d87becf914",
+    "docs/monograph/prime-matrix-early-zero-gap-crt-asymmetry-router.json": "9f10be0a0445eef5185d4e9d03dab884b330a0ae06b9ff9c7a0ffb910086a804",
+    "docs/monograph/prime-matrix-early-zero-period-lift-carrier-drift-router.json": "937d22f5dc0bbd7d7c0e6caf3cf7740ed4f0e0f5ca5cc28d6edcf8a42222af2c",
+    "docs/monograph/prime-matrix-zero-row-full-crt-diagonal-minrep.md": "8fed996d49bd3da39370eb919cac7601759d12152d44d2a39854f3fd236515ab"
+  }
+}

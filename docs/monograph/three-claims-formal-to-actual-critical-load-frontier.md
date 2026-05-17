@@ -3897,3 +3897,52 @@ Q2StageEndpointInversionRoutedToColumnCRTPDECOrSparseSAEOrMovingEndpointH3DSB;Gl
 ```
 
 这一步仍不是行/列全局无条件证明；它关闭的是 `Q2` 阶端点稳定复现这一最窄跳步。
+
+## 105. Q2 endpoint replacement aperture-growth router
+
+新增文件
+
+```text
+experiments/prime_matrix_q2_endpoint_replacement_aperture_growth_router.py
+docs/monograph/prime-matrix-q2-endpoint-replacement-aperture-growth-router.md
+data/prime-matrix-q2-endpoint-replacement-aperture-growth-ledger.json
+```
+
+本步继续把 `Q2` 阶端点反转推进为真实链的孔径增长债务。早期零行端点边界精确为：
+
+```text
+Q1<=kP-P, with equality possible at k=2
+Q2>kP
+```
+
+在 `Q2<P^2` 主分支中，开间隙 `(Q1,Q2)` 内每个合数有小于 `P` 的素因子；完整 `Q2` 阶轮又包含
+`Q1,Q2`，所以 `[Q1,Q2]+t*M_{<=Q2}` 对 `t>=1` 是闭复合块。真实相邻素数端点必须落在块外，故新间隙满足
+
+```text
+new_gap >= old_gap + 2
+```
+
+当前读数：
+
+```text
+full_q2_replay_makes_closed_carrier_composite=true
+endpoint_replacement_gap_growth_per_replay_at_least=2
+same_aperture_replay_impossible=true
+bounded_aperture_replay_finite=true
+persistent_moving_aperture_routes_to_pdec_columncrt=true
+sparse_replacement_routes_to_sae=true
+unbounded_replacement_routes_to_h3_dsb=true
+row_column_unconditional_closed=false
+```
+
+因此固定有界孔径的无限 CRT 复现被排除：若原闭载体宽度为 `W0`，固定孔径 `W` 最多容纳
+`floor((W-W0)/2)` 次端点替换。无限反例链若继续，只能扩孔或移动支撑；固定有限规则的扩孔进入
+`ColumnCRT/PDEC`，孤立替换进入 `SAE`，无界移动回到 `H3-DSB/KLS` 与 moving-family 出口。
+
+actual-load 前沿更新为：
+
+```text
+EndpointReplacementApertureGrowthNoBoundedReplayOrMovingSupportPDECSAEH3DSB;GlobalFinalInputsStillOpen
+```
+
+这一步不是全局闭合；它把 `Q2` 阶之后的真实链压力从端点反转推进到有界孔径 no-go。

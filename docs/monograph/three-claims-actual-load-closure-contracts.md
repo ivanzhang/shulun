@@ -3939,3 +3939,52 @@ Q2StageEndpointInversionRoutedToColumnCRTPDECOrSparseSAEOrMovingEndpointH3DSB;Gl
 
 本步只关闭 `Q2` 阶端点稳定复现的跳步；全局行/列命题仍需排斥持久 `ColumnCRT/PDEC`、`SAE`
 与 moving-family 出口。
+
+## 98. Q2 endpoint replacement aperture-growth 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_q2_endpoint_replacement_aperture_growth_router.py
+docs/monograph/prime-matrix-q2-endpoint-replacement-aperture-growth-router.md
+docs/monograph/prime-matrix-q2-endpoint-replacement-aperture-growth-router.json
+data/prime-matrix-q2-endpoint-replacement-aperture-growth-ledger.json
+```
+
+本证书把 `Q2` 阶端点反转转成孔径增长账本。完整 `Q2` 阶轮复制后，闭区间
+`[Q1+tM_{<=Q2}, Q2+tM_{<=Q2}]` 全部为复合点，因此真实相邻素数端点必须替换到闭块外：
+
+```text
+new_gap >= old_gap + 2
+```
+
+当前读数：
+
+```text
+corrected_endpoint_bound=Q1<=kP-P, with equality possible at k=2; Q2>kP
+full_q2_replay_makes_closed_carrier_composite=true
+endpoint_replacement_gap_growth_per_replay_at_least=2
+same_aperture_replay_impossible=true
+bounded_aperture_replay_finite=true
+persistent_moving_aperture_routes_to_pdec_columncrt=true
+sparse_replacement_routes_to_sae=true
+unbounded_replacement_routes_to_h3_dsb=true
+row_column_unconditional_closed=false
+```
+
+最新三分流为：
+
+```text
+same bounded aperture replay => impossible
+persistent moving aperture => ColumnCRT/PDEC
+sparse replacement => SAE
+unbounded moving support => H3-DSB/KLS or moving-family global input
+```
+
+最新剩余为：
+
+```text
+EndpointReplacementApertureGrowthNoBoundedReplayOrMovingSupportPDECSAEH3DSB;GlobalFinalInputsStillOpen
+```
+
+本步排除固定有界孔径复现；它仍不排斥全部 moving aperture、PDEC/ColumnCRT、SAE 与 H3-DSB/KLS 出口。

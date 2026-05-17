@@ -8048,6 +8048,46 @@ precisely one of the named ColumnCRT/PDEC, SAE, or moving-family exits.  Hence
 the router is closed, but the global row/column theorem is not.
 \end{proof}
 
+\begin{theorem}[Q2 endpoint replacement and aperture growth]
+In the \(Q_2\)-stage of the preceding theorem, full-wheel replay creates a
+replacement debt for the true adjacent-prime endpoints.  More precisely, in
+the below-square branch the full \(Q_2\)-wheel copy of \([Q_1,Q_2]\) is a
+closed composite block.  Hence if \(A_t<B_t\) are the adjacent primes
+straddling that copied block, then
+\[
+  B_t-A_t\ge Q_2-Q_1+2.
+\]
+Consequently a fixed bounded carrier aperture cannot support infinitely many
+endpoint-stable replays.  A fixed aperture of width \(W\), starting from closed
+carrier width \(W_0=Q_2-Q_1+1\), permits at most
+\[
+  \left\lfloor \frac{W-W_0}{2}\right\rfloor
+\]
+such replacements.  Any infinite continuation must move or enlarge the
+aperture and is therefore routed to moving-aperture ColumnCRT/PDEC, SAE, or
+the H3-DSB/KLS moving-family branch.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-q2-endpoint-replacement-aperture-growth-router.md.
+\end{quote}
+For an early zero row \([(k-1)P+1,kP]\), the left endpoint satisfies
+\(Q_1\le(k-1)P=kP-P\), with equality possible only in the \(k=2\) boundary
+case \(Q_1=P\); the right endpoint satisfies \(Q_2>kP\).  In the
+\(Q_2<P^2\) branch, every composite in the open gap has least prime factor
+below \(P\), and the full \(Q_2\)-wheel kills \(Q_1\) and \(Q_2\) themselves.
+Thus every point of the copied closed interval
+\[
+  [Q_1+tM_{\le Q_2},Q_2+tM_{\le Q_2}]
+\]
+is composite for \(t\ge1\).  The nearest true primes around this copied block
+must lie outside it, giving the displayed \(+2\) lower bound.  Iterating this
+lower bound inside a fixed aperture gives the finite bound
+\(\lfloor(W-W_0)/2\rfloor\).  Therefore the bounded-aperture branch is closed;
+the remaining branches are exactly the named moving, PDEC, SAE, and H3 exits.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
