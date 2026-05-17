@@ -2570,3 +2570,43 @@ LongReliefCycleDebtPDECExclusionOrSupportMotionSAESummability
 ```
 
 这一步仍不关闭全局行/列命题；它把 long-relief 分支的相位代价材料化为周期债务账本。
+
+## 72. one-period relief deficit
+
+后续文件
+
+```text
+experiments/prime_matrix_one_period_relief_deficit_router.py
+docs/monograph/prime-matrix-one-period-relief-deficit-router.md
+data/prime-matrix-one-period-relief-deficit-ledger.json
+```
+
+本步回到 reset 后第一个完整 residue 周期，直接测量 actual relief 容量。`step=90..160` 覆盖全部 `71` 个 residue，因此每个缺失非零 residue 都形式出现一次；但素数锚过滤后只剩：
+
+```text
+actual_relief_count_in_one_period=8
+composite_missing_count_in_one_period=27
+repeat_prime_anchor_count_in_one_period=10
+relief_deficit_after_one_period=27
+```
+
+其中：
+
+```text
+formal_missing_hit_count=35
+composite_missing_matches_positive_cycle_debt_residues=true
+```
+
+所以当前 actual-load 前沿进一步压成：
+
+```text
+one-period relief deficit  =>  cycle-debt PDEC or support-motion SAE
+```
+
+最新接口为：
+
+```text
+OnePeriodReliefDeficitForcesCycleDebtPDECOrSupportMotionSAE
+```
+
+这一步仍不关闭全局命题；它把首个完整周期内的容量缺口固定为 `27` 个未获 actual relief 的缺失 residue。

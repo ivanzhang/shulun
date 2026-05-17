@@ -2496,3 +2496,40 @@ LongReliefCycleDebtPDECExclusionOrSupportMotionSAESummability
 ```
 
 本步关闭的是“long relief 只是远端但无结构代价”的解释；全局仍需排斥这种周期债务族的 PDEC 复现，或证明其 support-motion/SAE 可全局求和吸收。
+
+## 65. one-period relief deficit 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_one_period_relief_deficit_router.py
+docs/monograph/prime-matrix-one-period-relief-deficit-router.md
+docs/monograph/prime-matrix-one-period-relief-deficit-router.json
+data/prime-matrix-one-period-relief-deficit-ledger.json
+```
+
+本证书把上一节的周期债务压成一个更局部的容量-相位交叉点：reset 后第一个完整 `ell=71` 周期为 `step=90..160`，对应 `P=9887..15487`。这个周期已经遍历全部 `71` 个 residue，因此 35 个缺失非零 residue 都各自形式命中一次。
+
+精确读数为：
+
+```text
+previous_hardpoint=LongReliefCycleDebtPDECExclusionOrSupportMotionSAESummability
+period_is_complete_residue_cycle=true
+missing_nonzero_required=35
+formal_missing_hit_count=35
+actual_relief_count_in_one_period=8
+composite_missing_count_in_one_period=27
+repeat_prime_anchor_count_in_one_period=10
+relief_deficit_after_one_period=27
+composite_missing_matches_positive_cycle_debt_residues=true
+```
+
+也就是说，一个 reset-local 完整周期已经给了所有缺失 residue 一次机会，但真实链只得到 `8` 个 actual relief；另外 `27` 个机会全是合数形式命中，正好就是 cycle-debt 证书中的正周期债务 residue。与此同时，同周期还产生 `10` 个 repeat prime-anchor，继续施加 reset/旧容量压力。
+
+最新最窄剩余接口为：
+
+```text
+OnePeriodReliefDeficitForcesCycleDebtPDECOrSupportMotionSAE
+```
+
+本步关闭的是“一个 reset-local 周期即可提供足够 actual relief”的解释；全局仍需排斥由该缺口强制出的周期债务 PDEC，或证明后续 support-motion/SAE 可吸收。
