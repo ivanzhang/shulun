@@ -1592,3 +1592,54 @@ gap=59: gen_right=31, bridge=31, fill_left=8, total=70, 3gap slack=107
 ```
 
 因此当前短走廊最紧张处不是总预算失效，而是 `gap_ell=31` 的单分量 phase bridge 超过一个 `gap_ell`；该超标量 `15` 被左右深度余量吸收后仍保留 `13` 的总余量。最新全局硬点压成 `CorridorPhaseBudgetBoundOrPhaseBridgePDECExclusion`：要么证明相位桥三分量预算在全局持久成立，要么把不可吸收的 phase-bridge 超标登记并排斥为 PhaseBridge-PDEC/SAE。
+
+## 44. H-lower phase-bridge excess 回流到 AffineTwin/ColumnCRT 主线
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-atom-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-absorption-normal-form-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-primitive-affine-collapse-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-prime-gate-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-router.md
+```
+
+这一串账本说明上一节唯一 phase-bridge 超标并不是新型匿名容量，而是回流到既有 AffineTwin/ColumnCRT 主线：
+
+```text
+phase_bridge_excess_atom_count=1
+excess=15
+absorbing_spare=28
+spare_after_excess=13
+excess = generator_margin = 3*rho_jump
+slack_after_absorption = |delta_b| = 13
+absorbing_depth_spare = generator_margin + |delta_b|
+phase_bridge_gap = gap_ell + generator_margin
+```
+
+primitive 身份组进一步塌缩为单个仿射整数型：
+
+```text
+fill_ell=gap_ell=31
+generator_ell=gap_ell-2=29
+generator_margin=(gap_ell-1)/2=15
+|delta_b|=(gap_ell-5)/2=13
+|delta_u|=(gap_ell-3)/4=7
+rho_jump=2*(fill_ell-generator_ell)+1=5
+```
+
+因此当前唯一原子满足 AffineTwin 必要门：`q=31`、`q-2=29` 同为素数，且 `q≡3 mod 4`。双槽相位锁给出：
+
+```text
+P≡19 mod 29
+P≡21 mod 31
+combined_modulus=29*31=899
+pair_support_width=20
+unique_representative=P=2687
+```
+
+这把 corridor phase budget 线接回既有主线：固定 `q=31` 双槽原子被 `899>20` 的 CRT 相位支撑差孤立；若固定 `q` 与固定残基复现，则进入固定模 ColumnCRT/PDEC；若 `q` 或残基移动，则进入 AffineTwin epoch-pair SAE/Rankin 和 moving-family 出口。当前回流桥关闭的是 current sweep 的新匿名 hardpoint，不关闭全局行/列命题；全局仍需沿已登记的 `AffineTwinEpochPairMultiplicityBoundOrColumnCRTPDECExclusion`、`ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC`、`TransportResetPDECExclusion` 与 `MovingResidueShapeSAE/Rankin` 继续排斥或吸收。

@@ -1722,3 +1722,49 @@ p_delay = generator_right_depth + phase_bridge_gap + fill_left_depth
 ```
 
 唯一单分量超标为 `gap_ell=31` 的 phase bridge：`46-31=15`。但这一超标不是自由相位漂移，因为左右深度余量合计 `28`，吸收后仍余 `13`。所以反例链若想把短走廊破坏成持久缺口，必须制造不能被相邻深度余量吸收的相位桥超标；真实链的下一接口就是 `PhaseBridge-PDEC/SAE`。最新主攻硬点为 `CorridorPhaseBudgetBoundOrPhaseBridgePDECExclusion`。
+
+## 51. H-lower phase-bridge excess 回流到 AffineTwin/ColumnCRT 主线
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-atom-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-phase-bridge-excess-source-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-absorption-normal-form-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-margin-slot-primitive-identity-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-primitive-affine-collapse-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-slot-phase-lock-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-moving-family-sae-columncrt-router.md
+```
+
+本节把 phase bridge 超标的失败形态继续压缩。唯一超标原子满足：
+
+```text
+excess=15
+absorbing_spare=28
+spare_after_excess=13
+excess=generator_margin=3*rho_jump
+slack_after_absorption=|delta_b|=13
+```
+
+margin/slot 正规形与 primitive 身份组把它强制成：
+
+```text
+gap_ell=31
+generator_ell=29
+fill_ell=31
+generator_margin=15
+|delta_b|=13
+|delta_u|=7
+phase_bridge_gap=31+15=46
+```
+
+所以真实链中所谓“相位桥超标”不是任意可移动槽，而是 `q=31, q-2=29` 的 AffineTwin 原子。双槽 CRT 条件为：
+
+```text
+P=19 mod 29
+P=21 mod 31
+29*31=899 > support width 20
+```
+
+当前固定原子因此只有一个代表 `P=2687`，并已归入既有 `P≡889 mod 899` 的 ColumnCRT/actual-anchor 线。反例链若要继续复现，只能固定同一模类形成 ColumnCRT/PDEC，或让 `q`/残基移动并进入 AffineTwin epoch-pair SAE/Rankin。由此 corridor phase budget 的新剩余已经回流到既有主线，而不是新增第三条匿名容量出口；全局仍未闭合，最新剩余仍是移动族 multiplicity、endpoint-growth/reset、transport-reset 与 moving-residue SAE/Rankin 的全局排斥或吸收。
