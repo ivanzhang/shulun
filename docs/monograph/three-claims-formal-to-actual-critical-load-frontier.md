@@ -2442,3 +2442,47 @@ OneSlotResetPDECExclusionOrNoPayloadEndpointSAESummability
 ```
 
 这一步关闭的是当前 endpoint cut 的 actual payload；全局仍需处理 reset-PDEC 排斥或 no-payload SAE 的全局吸收。
+
+## 69. one-slot reset prefix no-relief
+
+后续文件
+
+```text
+experiments/prime_matrix_one_slot_reset_prefix_no_relief_router.py
+docs/monograph/prime-matrix-one-slot-reset-prefix-no-relief-router.md
+data/prime-matrix-one-slot-reset-prefix-no-relief-ledger.json
+```
+
+本步检查另一边：若不采用 no-payload endpoint SAE，而让同步线经过 `P=9887`，则一槽 reset 先于任何新增缺失非零 residue relief 出现。reset 后首个 relief 前缀的读数是：
+
+```text
+reset_step=90
+reset_p=9887
+reset_residue=18
+prefix_prime_anchor_count_before_first_relief=7
+prefix_new_missing_nonzero_count_before_first_relief=0
+prefix_repeat_prime_anchor_count_before_first_relief=7
+first_relief_step_gap_after_reset=25
+first_relief_p_gap_after_reset=2000
+first_relief_requires_accepted_reset_pdec=true
+```
+
+首个真正新增缺失非零 residue 的素数锚为：
+
+```text
+step=115, P=11887, residue=30
+```
+
+所以当前 actual-load 前沿被压成：
+
+```text
+accepted reset-PDEC before relief  OR  no-payload endpoint SAE
+```
+
+最新接口为：
+
+```text
+AcceptedResetPDECExclusionOrDelayedReliefSupportMotionSAE
+```
+
+这一步不排斥全局 reset；它关闭的是 reset 后立即获得新容量的解释，并把剩余交给 accepted reset-PDEC 排斥或延迟 relief 所需的 support-motion/SAE 吸收。

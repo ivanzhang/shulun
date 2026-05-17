@@ -2379,3 +2379,40 @@ OneSlotResetPDECExclusionOrNoPayloadEndpointSAESummability
 ```
 
 本步关闭的是当前 primitive epoch 的 endpoint cut actual-load 出口；全局仍需排斥 one-slot reset-PDEC 持久复现，或证明 no-payload endpoint SAE 的全局可求和/可吸收。
+
+## 62. one-slot reset prefix no-relief 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_one_slot_reset_prefix_no_relief_router.py
+docs/monograph/prime-matrix-one-slot-reset-prefix-no-relief-router.md
+docs/monograph/prime-matrix-one-slot-reset-prefix-no-relief-router.json
+data/prime-matrix-one-slot-reset-prefix-no-relief-ledger.json
+```
+
+本证书继续攻击上一节剩余的 reset 端：若不走 no-payload endpoint SAE，而接受 `step=90,P=9887,residue=18` 的一槽 reset，则该 reset 之后不会立刻产生新缺失非零 residue relief。精确读数为：
+
+```text
+previous_hardpoint=OneSlotResetPDECExclusionOrNoPayloadEndpointSAESummability
+reset_step=90
+reset_p=9887
+reset_residue=18
+endpoint_cut_actual_payload_empty=true
+prefix_step_count_before_first_relief=25
+prefix_prime_anchor_count_before_first_relief=7
+prefix_new_missing_nonzero_count_before_first_relief=0
+prefix_repeat_prime_anchor_count_before_first_relief=7
+first_missing_nonzero_relief=(step=115,P=11887,residue=30)
+first_relief_requires_accepted_reset_pdec=true
+```
+
+因此当前反例链若要从这条同步线上取得新的实际容量，必须先越过已经材料化的一槽 reset-PDEC；在 reset 到首个 relief 之间，所有实际素数锚都是已见 residue，不能减少 `35` 个缺失非零 residue。若拒绝 reset，则剩余端点分支已经是 no-payload endpoint SAE。
+
+最新最窄剩余接口为：
+
+```text
+AcceptedResetPDECExclusionOrDelayedReliefSupportMotionSAE
+```
+
+本步关闭的是“接受 reset 后立即获得新容量”的解释；全局仍需排斥 accepted reset-PDEC 的持久复现，或证明延迟 relief 所要求的 support motion/SAE 可全局吸收。
