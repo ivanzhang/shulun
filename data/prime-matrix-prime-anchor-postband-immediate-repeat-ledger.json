@@ -1,0 +1,178 @@
+{
+  "certificate_type": "prime_matrix_prime_anchor_postband_immediate_repeat_router",
+  "status": "prime_anchor_nonzero_coverage_preempted_by_first_postband_repeat",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "row_column_unconditional_closed": false,
+    "previous_hardpoint": "PrimeAnchorFilteredNonzeroResidueCoverageOrTransportResetPDEC",
+    "ell": 71,
+    "support_anchor_p": 2687,
+    "support_delay": 80,
+    "admitted_step_range": [
+      19,
+      82
+    ],
+    "current_epoch_p_range": [
+      4177,
+      9257
+    ],
+    "current_prime_filtered_union_size": 35,
+    "current_prime_filtered_nonzero_seen": 35,
+    "current_prime_filtered_nonzero_spare": 35,
+    "first_postband_prime_anchor": {
+      "step": 90,
+      "p": 9887,
+      "residue": 18,
+      "is_prime_p": true,
+      "smallest_factor": null,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    "first_postband_prime_is_repeat": true,
+    "first_postband_prime_is_original_used_repeat": true,
+    "first_new_prime_anchor_before_repeat": null,
+    "new_prime_anchor_count_before_first_repeat": 0,
+    "new_prime_rows_before_first_repeat": [],
+    "first_repeat_prime_anchor": {
+      "step": 90,
+      "p": 9887,
+      "residue": 18,
+      "is_prime_p": true,
+      "smallest_factor": null,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    "repeat_residue": 18,
+    "repeat_in_original_used_residues": true,
+    "missing_nonzero_remaining_at_first_repeat": 35,
+    "missing_nonzero_residues_remaining_at_first_repeat": [
+      1,
+      2,
+      6,
+      8,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      20,
+      23,
+      24,
+      25,
+      29,
+      30,
+      31,
+      33,
+      41,
+      42,
+      43,
+      47,
+      49,
+      50,
+      52,
+      54,
+      57,
+      58,
+      60,
+      62,
+      63,
+      64,
+      67,
+      68,
+      70
+    ],
+    "coverage_before_reset_possible_in_same_epoch": false,
+    "repeat_step_gap_after_admitted_band": 8,
+    "repeat_p_extension_beyond_epoch_p_max": 630,
+    "repeat_p_extension_beyond_admitted_lattice_p_max": 640,
+    "repeat_extension_over_epoch_width": 0.12399134028734501,
+    "near_endpoint_candidate_steps_checked": [
+      83,
+      90
+    ],
+    "hardpoint_after_router": "ImmediatePrimeAnchorRepeatTransportResetPDECOrEndpointMotionSAE",
+    "next_direct_attack_target": "ImmediatePrimeAnchorRepeatTransportResetPDECOrEndpointMotionSAE"
+  },
+  "post_band_rows_until_first_prime_window": [
+    {
+      "step": 83,
+      "p": 9327,
+      "residue": 26,
+      "is_prime_p": false,
+      "smallest_factor": 3,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 84,
+      "p": 9407,
+      "residue": 35,
+      "is_prime_p": false,
+      "smallest_factor": 23,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 85,
+      "p": 9487,
+      "residue": 44,
+      "is_prime_p": false,
+      "smallest_factor": 53,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 86,
+      "p": 9567,
+      "residue": 53,
+      "is_prime_p": false,
+      "smallest_factor": 3,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 87,
+      "p": 9647,
+      "residue": 62,
+      "is_prime_p": false,
+      "smallest_factor": 11,
+      "already_in_prime_filtered_union": false,
+      "already_in_original_used_residues": false
+    },
+    {
+      "step": 88,
+      "p": 9727,
+      "residue": 0,
+      "is_prime_p": false,
+      "smallest_factor": 71,
+      "already_in_prime_filtered_union": false,
+      "already_in_original_used_residues": false
+    },
+    {
+      "step": 89,
+      "p": 9807,
+      "residue": 9,
+      "is_prime_p": false,
+      "smallest_factor": 3,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    },
+    {
+      "step": 90,
+      "p": 9887,
+      "residue": 18,
+      "is_prime_p": true,
+      "smallest_factor": null,
+      "already_in_prime_filtered_union": true,
+      "already_in_original_used_residues": true
+    }
+  ],
+  "plain_conclusion": "在 prime-anchor 过滤后，长 AP 非零 residue 覆盖分支被更早截断：当前 admitted 带后的第一个素数锚就是 P=9887，residue=18，而 18 已在原始 minus:71 已用 residue 集中。因此在同一无 reset epoch 中，反例链无法先补入任何新缺失非零 residue；若 epoch 延伸到该点，立即进入 transport reset-PDEC；若不延伸，则回到 endpoint motion/SAE。",
+  "dependency_hashes": {
+    "data/prime-matrix-two-residue-spare-prime-anchor-filter-ledger.json": "d3d3ef44e7f59396feb07cbbc0baddda7b986c1fcdee64f403bae838d7e5284b",
+    "data/prime-matrix-cross-carrier-fifty-unit-residue-saturation-ledger.json": "700cecf965360332bed795ea9148abdf80d2b5ad99a658bbe06695da41e5b9cb"
+  }
+}

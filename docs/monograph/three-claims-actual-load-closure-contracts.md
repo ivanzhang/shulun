@@ -2212,3 +2212,45 @@ PrimeAnchorFilteredNonzeroResidueCoverageOrTransportResetPDEC
 ```
 
 这一步关闭了“两空位近端端点外延即可填满”的真实链解释，并把剩余压成长 AP 素数锚覆盖全部非零 residue 或 transport reset-PDEC。全局行/列命题仍未无条件闭合。
+
+## 58. prime-anchor post-band immediate repeat 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_prime_anchor_postband_immediate_repeat_router.py
+docs/monograph/prime-matrix-prime-anchor-postband-immediate-repeat-router.md
+docs/monograph/prime-matrix-prime-anchor-postband-immediate-repeat-router.json
+data/prime-matrix-prime-anchor-postband-immediate-repeat-ledger.json
+```
+
+本证书继续攻击上一节留下的长 AP 非零 residue 覆盖分支。关键发现是：覆盖并不是只被推迟，而是在 admitted 带后第一个素数锚处就被旧 residue 抢先截断。
+
+```text
+previous_hardpoint=PrimeAnchorFilteredNonzeroResidueCoverageOrTransportResetPDEC
+current_prime_filtered_union_size=35
+current_prime_filtered_nonzero_spare=35
+first_postband_prime_anchor={step:90,p:9887,residue:18}
+first_postband_prime_is_repeat=true
+first_postband_prime_is_original_used_repeat=true
+new_prime_anchor_count_before_first_repeat=0
+missing_nonzero_remaining_at_first_repeat=35
+repeat_p_extension_beyond_epoch_p_max=630
+coverage_before_reset_possible_in_same_epoch=false
+```
+
+具体地，admitted 带结束于步号 `82`；之后步号 `83..89` 的候选都不是素数锚，其中 `9647`、`9727`、`9807` 正是上一节的近端候选。步号 `90` 给出第一个素数锚 `P=9887`，其 `minus:71` residue 为 `18`。而 `18` 已在原始已用 residue 集
+
+```text
+[3,9,10,12,18,21,22,26,27,28,34,35,36,37,39,40,44,46,53,59,65,66]
+```
+
+中，不只是 prime-filtered 合并后才出现的 residue。因此如果同一无 reset epoch 延伸到 `P=9887`，它在补入任何新缺失非零 residue 之前已经触发旧 residue repeat，必须进入 transport reset-PDEC；如果该 epoch 不能延伸到此点，则出口是 endpoint motion/SAE。
+
+最新最窄剩余接口因此改写为：
+
+```text
+ImmediatePrimeAnchorRepeatTransportResetPDECOrEndpointMotionSAE
+```
+
+这一步关闭了 `PrimeAnchorFilteredNonzeroResidueCoverage` 分支在当前 primitive epoch 内的 reset-free 实现。全局行/列命题仍需排斥 transport reset-PDEC 或 endpoint motion/SAE 的持久复现。

@@ -2266,3 +2266,40 @@ PrimeAnchorFilteredNonzeroResidueCoverageOrTransportResetPDEC
 ```
 
 即要么证明这种长 AP 素数锚非零 residue 覆盖不能作为持久反例链复现，要么把覆盖后的重复素数锚登记为 transport reset-PDEC。本步关闭的是 two-residue near-fill 捷径，仍不是全局无条件证明。
+
+## 65. prime-anchor post-band immediate repeat
+
+后续文件
+
+```text
+experiments/prime_matrix_prime_anchor_postband_immediate_repeat_router.py
+docs/monograph/prime-matrix-prime-anchor-postband-immediate-repeat-router.md
+data/prime-matrix-prime-anchor-postband-immediate-repeat-ledger.json
+```
+
+本步继续攻击 `PrimeAnchorFilteredNonzeroResidueCoverageOrTransportResetPDEC`：检查 admitted 带后真正第一个素数锚是否会先补入新缺失 residue。结果更窄：
+
+```text
+first_postband_prime_anchor={step:90,p:9887,residue:18}
+first_postband_prime_is_repeat=true
+first_postband_prime_is_original_used_repeat=true
+new_prime_anchor_count_before_first_repeat=0
+missing_nonzero_remaining_at_first_repeat=35
+coverage_before_reset_possible_in_same_epoch=false
+```
+
+步号 `83..89` 的候选均为合数：
+
+```text
+9327, 9407, 9487, 9567, 9647, 9727, 9807
+```
+
+随后步号 `90` 的 `P=9887` 是素数，但 residue 为 `18`，已经属于原始 `minus:71` 已用 residue 集。因此当前真实链不可能在同一无 reset epoch 中先完成任何新缺失非零 residue 的覆盖；第一次可用素数锚已经是 repeat。
+
+于是上一接口的 coverage 分支在当前 primitive epoch 内关闭，剩余变为：
+
+```text
+ImmediatePrimeAnchorRepeatTransportResetPDECOrEndpointMotionSAE
+```
+
+含义是：若 epoch 延伸到 `P=9887`，则必须登记 transport reset-PDEC；若不延伸，则必须解释 endpoint motion/SAE。当前仍未完成全局无条件证明，但反例链的“长 AP 覆盖”出口已经被压成 immediate repeat/reset。
