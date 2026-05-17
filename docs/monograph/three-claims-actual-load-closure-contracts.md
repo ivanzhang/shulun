@@ -4639,3 +4639,61 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步仍不是无条件闭合；它关闭的是将三个命题状态混用、将 GRH/BV/CRT 平均误用为 `P^2` 点态 AP 正性的路线。
+
+## 112. 显式 AP 零点包的 Siegel/非实相位二分回接
+
+后续文件
+
+```text
+experiments/prime_matrix_explicit_ap_zero_packet_siegel_split_router.py
+docs/monograph/prime-matrix-explicit-ap-zero-packet-siegel-split-router.md
+docs/monograph/prime-matrix-explicit-ap-zero-packet-siegel-split-router.json
+data/prime-matrix-explicit-ap-zero-packet-siegel-split-ledger.json
+```
+
+本证书继续攻击上一节的
+
+```text
+ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2
+```
+
+并把它拆成两个真正硬分支：
+
+```text
+SiegelExceptionalBiasExclusionAtSquareScale
+NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2
+```
+
+实零分支的尺度读数为：若 `beta=1-lambda/log P`，则 square-scale 贡献约为
+
+```text
+P^(2*beta-1)/beta = P*exp(-2*lambda)/beta
+```
+
+仍可与 `P` 级主项同阶；因此不能靠平均、容量或完整 CRT 均匀性自动排除。剥离实零后，非实零点包还需要逐
+`residue` 的相位抵消，排除单个 evaluation simplex 方向上的同向集中。
+
+当前读数：
+
+```text
+siegel_branch_closed=false
+nonreal_branch_closed=false
+trivial_terms_isolated=true
+classical_inputs_sufficient=false
+row_column_unconditional_closed=false
+```
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR (SiegelExceptionalBiasExclusionAtSquareScale
+     AND NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步仍不是行/列命题无条件闭合；它关闭的是“无名零点包”出口，把解析 AP 分支压成 Siegel 偏置排斥与非实零包相位抵消两个可审计目标。

@@ -4613,3 +4613,53 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书说明：继续走解析 AP 路线时，目标已不是平均密度或总能量，而是 `x=P^2, q=P` 的逐类显式零点包强界。
+
+## 119. Explicit AP zero-packet Siegel split router
+
+新增文件
+
+```text
+experiments/prime_matrix_explicit_ap_zero_packet_siegel_split_router.py
+docs/monograph/prime-matrix-explicit-ap-zero-packet-siegel-split-router.md
+docs/monograph/prime-matrix-explicit-ap-zero-packet-siegel-split-router.json
+data/prime-matrix-explicit-ap-zero-packet-siegel-split-ledger.json
+```
+
+本步把最新 AP 零包硬点
+
+```text
+ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2
+```
+
+拆成：
+
+| 分支 | 当前状态 |
+| --- | --- |
+| `SiegelExceptionalBiasExclusionAtSquareScale` | 未证；无 Siegel 零点不是已认证无条件输入，且实零项在 `P^2` 尺度可与主项同阶 |
+| `NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2` | 未证；需要逐剩余类相位抵消，平均定理和总能量不能排除单方向集中 |
+| `TrivialAndFiniteExplicitFormulaTermsBelowMainMarginAtP2` | 已从主硬点分离；待前两项给出余量后由显式常数账本吸收 |
+
+当前读数：
+
+```text
+siegel_branch_closed=false
+nonreal_branch_closed=false
+trivial_terms_isolated=true
+classical_inputs_sufficient=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR (SiegelExceptionalBiasExclusionAtSquareScale
+     AND NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书说明：若继续走解析 AP 路线，不能只说“零点包小”；必须分别证明实例外/Siegel 偏置不能制造危险半类，以及非实零点包不能在单个 `residue` 方向上相位同向集中。

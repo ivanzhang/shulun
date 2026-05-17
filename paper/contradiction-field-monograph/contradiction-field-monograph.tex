@@ -8696,6 +8696,57 @@ Thus this theorem is a frontier separation and barrier identification, not a
 promotion of any of the three claims to final unconditional theorem status.
 \end{proof}
 
+\begin{theorem}[Explicit AP zero-packet Siegel split]
+The remaining row/column AP input
+\[
+\texttt{ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2}
+\]
+splits into two genuine analytic branches.  First, any exceptional real zero
+\(\beta\) of a real nonprincipal character modulo \(P\) contributes at
+\(x=P^2\) on the scale
+\[
+  P^{2\beta-1}/\beta.
+\]
+If \(\beta=1-\lambda/\log P\), this is \(P\exp(-2\lambda)/\beta\), hence
+still of the same order as the principal term for bounded \(\lambda\).  This
+is the square-scale Siegel-bias branch.  Second, after extracting any real
+exceptional packet, the nonreal zeros leave a signed residue packet; closing it
+requires pointwise phase cancellation in every evaluation direction
+\(a\bmod P\), not just average energy or complete CRT uniformity.
+
+Consequently the current AP branch is not a single unnamed zero-packet error.
+It is the conjunction
+\begin{quote}\footnotesize\ttfamily
+SiegelExceptionalBiasExclusionAtSquareScale\\
+AND NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2,
+\end{quote}
+with the trivial and finite explicit-formula terms kept as a downstream
+constant ledger once a positive main-term margin is available.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-explicit-ap-zero-packet-siegel-split-router.md.
+\end{quote}
+The character explicit formula for \(\theta(P^2;P,a)\) has a principal term
+of size \(P\) and a signed sum of nonprincipal zero terms.  A real zero close
+to \(1\) cannot be dismissed by a mean theorem, because its square-scale
+contribution remains comparable to the main term on one of the two real
+character half-classes.  Deuring--Heilbronn repulsion organizes the remaining
+zeros but does not itself prove that this biased half-class is positive before
+\(P^2\).
+
+After this real branch is separated, the nonreal packet is still pointwise in
+the residue \(a\).  Bombieri--Vinogradov, complete CRT identities, total
+nonprincipal energy bounds, and GRH-shape estimates do not exclude a single
+rank-one evaluation direction from carrying too much signed mass at the square
+barrier.  Therefore the latest analytic AP route remains open and must either
+prove the two displayed branches or return to the already named structural
+inputs: same-set PDEC scope, atomic signed payload, exact-\((u,v)\)
+multiplicity, model/rate preservation, and the D-structure Rankin promotion
+gate.  No unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

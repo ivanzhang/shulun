@@ -1,0 +1,172 @@
+{
+  "certificate_type": "prime_matrix_explicit_ap_zero_packet_siegel_split_router",
+  "status": "explicit_ap_zero_packet_split_into_siegel_and_nonreal_phase_branches_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "previous_target": "ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2",
+  "next_direct_attack_target": "ExplicitAPZeroPacketSiegelNonrealDichotomyAtP2",
+  "siegel_branch_target": "SiegelExceptionalBiasExclusionAtSquareScale",
+  "nonreal_branch_target": "NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2",
+  "trivial_branch_target": "TrivialAndFiniteExplicitFormulaTermsBelowMainMarginAtP2",
+  "explicit_formula_split": [
+    {
+      "component": "principal main term",
+      "scale_at_x_p2": "P",
+      "role": "必须被所有误差包严格小于，才能推出 theta(P^2;P,a)>0。"
+    },
+    {
+      "component": "real exceptional / Siegel zero",
+      "scale_at_x_p2": "P^(2 beta-1)/beta = P exp(-2 lambda)/beta when beta=1-lambda/log P",
+      "role": "若 beta 距 1 只有 O(1/log P)，该项与主项同阶；危险半类不能靠平均或容量自动排除。"
+    },
+    {
+      "component": "nonreal zero packet",
+      "scale_at_x_p2": "signed sum of P^(2 rho-1)/rho over characters and ordinates",
+      "role": "总绝对值或 L2 能量不足以闭合；需要逐 residue 的相位抵消，排除同向集中。"
+    },
+    {
+      "component": "trivial zeros / imprimitive / finite terms",
+      "scale_at_x_p2": "lower-order once the two genuine zero packets are controlled",
+      "role": "不是当前主障碍，但必须保留在最终显式常数账本中。"
+    }
+  ],
+  "branch_ledger": [
+    {
+      "branch": "SiegelExceptionalBiasExclusionAtSquareScale",
+      "needed_input": "排除 square-scale 危险半类中的实零偏置，或接受已认证的无 Siegel 零点/强 Linnik-2 型输入。",
+      "current_status": "not proved in corpus; no peer-accepted unconditional no-Siegel-zero theorem is available",
+      "why_hard": "实零项在 x=P^2 仍可与主项同阶，Deuring-Heilbronn 排斥其它零点但不直接删除该偏置。"
+    },
+    {
+      "branch": "NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2",
+      "needed_input": "证明所有非实零点包在每个 a mod P 上不能相位同向吃掉主项。",
+      "current_status": "not proved in corpus; GRH-shape, BV, full CRT average, and energy capacity are insufficient",
+      "why_hard": "点态 residue 方向是 character simplex 的 rank-one evaluation；平均估计可留下单个异常方向。"
+    },
+    {
+      "branch": "TrivialAndFiniteExplicitFormulaTermsBelowMainMarginAtP2",
+      "needed_input": "在前两项给出主项余量后，用显式公式常数账本吸收低阶项。",
+      "current_status": "isolated as bookkeeping, not the frontier blocker",
+      "why_hard": "没有前两项的正余量时，低阶项账本无法单独产生正性。"
+    },
+    {
+      "branch": "structural fallback",
+      "needed_input": "若解析零包分裂失败，反例链必须回到 PDEC scope、signed payload、ExactUV、RatePreservation 或 DStructure。",
+      "current_status": "named fallback only; not a proof of row/column theorem",
+      "why_hard": "有限 CRT 周期只给位置相位约束，不能生成角色零点相位或 actual signed payload 的全局抵消。"
+    }
+  ],
+  "accepted_input_status": [
+    {
+      "input": "Dirichlet character explicit formula",
+      "status": "standard external theorem",
+      "effect_here": "提供零点包分解，但不自动给 P^2 阈值正性。"
+    },
+    {
+      "input": "classical zero-free region and Deuring-Heilbronn repulsion",
+      "status": "standard external theorem family",
+      "effect_here": "可组织 Siegel 分裂，但常数尺度仍不足以证明每个 residue 在 P^2 前命中。"
+    },
+    {
+      "input": "Bombieri-Vinogradov / complete CRT uniformity",
+      "status": "standard external theorem or identity",
+      "effect_here": "平均控制，不排除单个 rank-one residue evaluation 方向。"
+    },
+    {
+      "input": "GRH",
+      "status": "unproved conjecture",
+      "effect_here": "即便使用 GRH-shape O(P log^2 P)，仍大于 P 级主项，不能直接闭合 sharp P^2 正性。"
+    },
+    {
+      "input": "No Siegel zero for all prime moduli",
+      "status": "open; not peer-certified as an unconditional theorem",
+      "effect_here": "若加上强常数量化，能删除实例外偏置分支的一大部分，但仍需处理非实零包。"
+    },
+    {
+      "input": "Linnik exponent 2 / pointwise least prime <= P^2",
+      "status": "open-level target in this corpus",
+      "effect_here": "等价闭合列侧 AP 分支；不能作为已证引理回用。"
+    }
+  ],
+  "siegel_branch_closed": false,
+  "nonreal_branch_closed": false,
+  "trivial_terms_isolated": true,
+  "classical_inputs_sufficient": false,
+  "row_column_unconditional_closed": false,
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR (SiegelExceptionalBiasExclusionAtSquareScale AND NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2)) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "PreviousZeroPacketHardPointImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把 rank-one AP 正性压成显式零点包小于主项。",
+      "remaining": "ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2"
+    },
+    {
+      "gate": "ZeroPacketSiegelNonrealSplitClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "零点包被拆成实例外/Siegel 偏置、非实相位集中和低阶项三块；没有保留无名误差。",
+      "remaining": "ExplicitAPZeroPacketSiegelNonrealDichotomyAtP2"
+    },
+    {
+      "gate": "SiegelExceptionalBiasBranchClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有证明 square-scale 危险半类的实零偏置不可能吃掉主项。",
+      "remaining": "SiegelExceptionalBiasExclusionAtSquareScale"
+    },
+    {
+      "gate": "NonrealZeroPacketPhaseBranchClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有证明非实零点包在每个 residue 上必有足够相位抵消。",
+      "remaining": "NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2"
+    },
+    {
+      "gate": "TrivialFiniteTermBookkeepingIsolated",
+      "closed": true,
+      "proved": true,
+      "meaning": "低阶项已从主硬点分离；它依赖前两块给出正余量后再由显式常数账本吸收。",
+      "remaining": "TrivialAndFiniteExplicitFormulaTermsBelowMainMarginAtP2"
+    },
+    {
+      "gate": "ClassicalAverageOrGRHShapeInputsSufficient",
+      "closed": false,
+      "proved": false,
+      "meaning": "BV、完整 CRT 平均、能量容量和 GRH 形状误差均不足以推出 x=P^2 的逐类正性。",
+      "remaining": "SiegelExceptionalBiasExclusionAtSquareScale AND NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步没有完成行/列命题无条件闭合；只把解析 AP 分支的剩余接口精确化。",
+      "remaining": "global final inputs remain open"
+    }
+  ],
+  "closed_gates": [
+    "PreviousZeroPacketHardPointImported",
+    "ZeroPacketSiegelNonrealSplitClosed",
+    "TrivialFiniteTermBookkeepingIsolated"
+  ],
+  "open_gates": [
+    "PreviousZeroPacketHardPointImported",
+    "SiegelExceptionalBiasBranchClosed",
+    "NonrealZeroPacketPhaseBranchClosed",
+    "ClassicalAverageOrGRHShapeInputsSufficient",
+    "RowColumnUnconditionalClosed"
+  ],
+  "source_hashes": {
+    "docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json": "8634e16e1bcf7cd0d4ef6342b61bc73055246991c64d1940efb981f4c88c0390",
+    "docs/monograph/prime-matrix-linnik2-rankone-phase-capacity-router.json": "5c1a653d7367788f233fb0ca0eee1147b75a2c1ae8c614919bb0a78be7e0a2c4",
+    "docs/monograph/prime-matrix-linnik2-nonprincipal-character-obstruction-router.json": "9923c5fda90f30ef0bd67ada6e63fe8eaf0feaa88e07b6f557792bec22a1befe",
+    "docs/monograph/claim-status-table.md": "371d885a0cc892988851d99342e474a511499c86f7dfdcc229aee3598dda7f4a",
+    "docs/final-proof-draft.md": "c8958bc1f15441975c2f7c2b206609eb88fa43adc21313e26742b3bb1addea9b",
+    "docs/prime-density-waves-VIII.md": "b7f072df8c7b33babe19ca00bc5a795030148041c1051ee884a2bdfc01e37988",
+    "docs/prime-density-waves-X.md": "512245acdfc1bf8085de9e6de6580f41acdb1c05d9039ea44f84cf82751626fe",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "5d47b56e881c44d6717aaf3ed5ce002e7aa37e594581745e4dcc633d6736167a"
+  },
+  "plain_conclusion": "本步继续攻击 `ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2`，把它拆成两个不可混淆的解析硬分支：实例外/Siegel 零点在 square-scale 的危险半类偏置，以及非实零点包在单个 residue evaluation 方向上的相位同向集中。低阶项已被分离为后续显式常数账本。当前没有证明这两条主分支，因此行/列命题仍未无条件闭合；但无名零包出口已被替换为可审计的 Siegel/非实相位二分。"
+}
