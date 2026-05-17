@@ -2051,3 +2051,42 @@ TerminalChokeSetGlobalExclusionOrSummability
 ```
 
 也就是对五个终端 choke 建立全局排斥或可求和吸收。
+
+## 61. terminal choke amplification barrier
+
+后续文件
+
+```text
+experiments/prime_matrix_terminal_choke_amplification_barrier_router.py
+docs/monograph/prime-matrix-terminal-choke-amplification-barrier-router.md
+data/prime-matrix-terminal-choke-amplification-barrier-ledger.json
+```
+
+本步把五个终端 choke 改写为可比较的放大门槛：
+
+```text
+CRTWindowPhaseJump: factor=2, additive=40
+OneSlotTransportOverflow: factor=71/22, additive=50
+SupportEndpointRelease: factor=70/20, additive=50
+EpochPairPairedPressure: factor=899/144, fill additive=1..8
+FixedMovingSlotCRT: factor=731/104, additive=703
+```
+
+这里最窄 raw barrier 是 CRT 空窗的 `2*support_width` 相位跳，但它会立刻转入 edge/unused-target 出口，不是终端自由逃逸。真正终端最窄点是：
+
+```text
+tight_epoch=minus:71
+used=22
+capacity=71
+unused=49
+new residues to overflow=50
+support extra endpoint release=50
+```
+
+这给出当前反例链与真实链的最新容量/相位交叉点：`50-unit cross-lock`。要让终端 choke 持久复现，真实链必须同时解释一个 50 单位级别的 endpoint release 或 residue arrival；若该到达是新 residue，则进入 SAE/Rankin 质量账本；若不是新 residue，则触发 reset/ColumnCRT-PDEC；若移动支撑试图吸收，则破坏 primitive depth identity 或进入 moving-slot ColumnCRT。
+
+新的精确主攻点为：
+
+```text
+FiftyUnitCrossLockOrTerminalPDECExclusion
+```

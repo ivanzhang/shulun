@@ -2017,3 +2017,55 @@ TerminalChokeSetGlobalExclusionOrSummability
 ```
 
 即排斥这五个终端 choke 的持久复现，或证明它们的总质量可求和吸收。
+
+## 54. terminal choke amplification barrier 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_terminal_choke_amplification_barrier_router.py
+docs/monograph/prime-matrix-terminal-choke-amplification-barrier-router.md
+docs/monograph/prime-matrix-terminal-choke-amplification-barrier-router.json
+data/prime-matrix-terminal-choke-amplification-barrier-ledger.json
+```
+
+本证书把五个终端 choke 的“复现需要多大放大”量化为放大屏障。当前排序为：
+
+```text
+CRTWindowPhaseJump
+ -> OneSlotTransportOverflow
+ -> SupportEndpointRelease
+ -> EpochPairPairedPressure
+ -> FixedMovingSlotCRT
+```
+
+核心读数为：
+
+```text
+narrowest_barrier=CRTWindowPhaseJump
+narrowest_barrier_factor=2.000000000000
+narrowest_terminal_barrier=OneSlotTransportOverflow
+narrowest_terminal_factor=3.227272727273
+tight_epoch_key=minus:71
+tight_epoch_used=22
+tight_epoch_capacity=71
+tight_epoch_unused=49
+tight_epoch_overflow_new_units=50
+support_endpoint_release_extra_units=50
+fifty_unit_cross_lock=true
+support_release_factor=3.500000000000
+moving_slot_crt_factor=7.028846153846
+pressure_amplification_to_failure=6.243055555556
+fill_total_min_rankin_mass_if_all_cross=0.169986671425
+transport_reset_pdec_atom_count=0
+```
+
+解释如下。CRT 空窗到最近支撑窗只需 `40=2*20` 的相位跳，但它不是独立终端；该跳动会立即进入 `UnusedTargetArrival` 或 `WindowEdgeCollision-PDEC/SAE`。真正终端侧的最窄门槛是 singleton/transport 一槽溢出：最拥挤 epoch 为 `minus:71`，当前只用 `22/71`，还要新增 `50` 个 residue 才会越界；另一方面 support motion 若要移动支撑，最小端点释放为 `70`，相对支撑宽度 `20` 的额外释放也正好是 `50`。
+
+因此最新显式交叉点变成：
+
+```text
+FiftyUnitCrossLockOrTerminalPDECExclusion
+```
+
+即全局反例链若继续沿真实链复现，必须支付同一个 `50-unit` release/residue 包；若不能支付，则容量不足；若通过重复 residue 或移动槽图样支付，则进入 reset/PDEC/SAE/ColumnCRT 终端。
