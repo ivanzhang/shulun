@@ -1558,3 +1558,37 @@ gap=59: 61 -> 59, dp=70, key sides=minus->minus
 ```
 
 因此当前缺口填充不是任意等待，而是 rank-delay `1` 的 immediate repair，并且全部处在 `3*gap_ell` 短走廊内。最新全局硬点进一步压成 `ShortGapRepairCorridorBoundOrCorridorPDECExclusion`：要么证明端点缺口修复始终有短走廊包络，要么把走廊失效登记并排斥为 Corridor-PDEC/SAE。
+
+## 43. H-lower corridor phase budget 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-router.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-ledger.json
+```
+
+本节把短走廊延迟进一步分解为精确三分量预算身份：
+
+```text
+p_delay = generator_right_depth + phase_bridge_gap + fill_left_depth
+phase_budget_row_count=3
+all_phase_budget_identities_closed=true
+all_corridor_3gap_slack_positive=true
+min_corridor_3gap_slack=13
+max_phase_bridge_gap_over_gap=1.483870967742
+all_phase_bridges_within_2gap=true
+component_excess_row_count=1
+min_other_component_spare_after_excess=13
+```
+
+三条预算行为：
+
+```text
+gap=43: gen_right=12, bridge=40, fill_left=22, total=74, 3gap slack=55
+gap=31: gen_right=6, bridge=46, fill_left=28, total=80, 3gap slack=13, excess=15
+gap=59: gen_right=31, bridge=31, fill_left=8, total=70, 3gap slack=107
+```
+
+因此当前短走廊最紧张处不是总预算失效，而是 `gap_ell=31` 的单分量 phase bridge 超过一个 `gap_ell`；该超标量 `15` 被左右深度余量吸收后仍保留 `13` 的总余量。最新全局硬点压成 `CorridorPhaseBudgetBoundOrPhaseBridgePDECExclusion`：要么证明相位桥三分量预算在全局持久成立，要么把不可吸收的 phase-bridge 超标登记并排斥为 PhaseBridge-PDEC/SAE。

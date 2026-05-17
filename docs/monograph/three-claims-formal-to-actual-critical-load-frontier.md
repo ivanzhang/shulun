@@ -1696,3 +1696,29 @@ fill_p - generator_p <= 3*gap_ell
 ```
 
 其中最紧的是 `gap_ell=31`：`80 <= 93`，余量 `13`；`2*gap_ell` 已被这一行破坏，所以当前最小整数倍统一包络为 `3`。于是反例链若要保持持久缺口，必须破坏 immediate-repair 或短走廊包络；真实链把这两种失败分别登记为 `GapFillPair-PDEC/SAE` 或 `Corridor-PDEC/SAE`。最新主攻硬点为 `ShortGapRepairCorridorBoundOrCorridorPDECExclusion`。
+
+## 50. H-lower corridor phase budget 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-router.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-corridor-phase-budget-ledger.json
+```
+
+本节把走廊约束改写成三段相位预算身份：
+
+```text
+p_delay = generator_right_depth + phase_bridge_gap + fill_left_depth
+```
+
+当前三条缺口修复全部满足该身份，且均仍在 `3*gap_ell` 包络内：
+
+```text
+43: 12 + 40 + 22 = 74, slack 55
+31: 6 + 46 + 28 = 80, slack 13
+59: 31 + 31 + 8 = 70, slack 107
+```
+
+唯一单分量超标为 `gap_ell=31` 的 phase bridge：`46-31=15`。但这一超标不是自由相位漂移，因为左右深度余量合计 `28`，吸收后仍余 `13`。所以反例链若想把短走廊破坏成持久缺口，必须制造不能被相邻深度余量吸收的相位桥超标；真实链的下一接口就是 `PhaseBridge-PDEC/SAE`。最新主攻硬点为 `CorridorPhaseBudgetBoundOrPhaseBridgePDECExclusion`。
