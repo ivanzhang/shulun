@@ -3075,3 +3075,45 @@ K13LayerSlackTailCRTInvariantPDECOrMovingFamilySAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“residual slack-tail 是匹配伪影或无 CRT 成本尾部”的解释。
+
+## 84. cycle-debt K13 tail gate drift
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k13_tail_gate_drift_router.py
+docs/monograph/prime-matrix-cycle-debt-k13-tail-gate-drift-router.md
+data/prime-matrix-cycle-debt-k13-tail-gate-drift-ledger.json
+```
+
+本步把 moving-family 出口进一步拆开：如果移动后仍保留 K=13 层门形状，则应在 near-shift 窗口中看到相同 slack 向量或相同 zero-gate 集合；实际没有。
+
+```text
+hall_pass_shifts=[13,14]
+same_slack_vector_shifts=[13]
+same_zero_gate_set_shifts=[13]
+k13_zero_slack_layers=[1,4,7,8]
+k14_zero_slack_layers=[7,8,13,15]
+k14_tail_increase_over_k13=13
+k14_slack_l1_distance_from_k13=19
+```
+
+结论：
+
+- `K=13` 层形状在 `K=1..16` 中唯一；
+- 仅有的可动 survivor `K=14` 已发生 gate drift；
+- 该 drift 丢失低门 `1,4`，新增高门 `13,15`，并额外带来 13 个 tail 槽。
+
+当前 actual-load 前沿收窄为：
+
+```text
+K=13 gate-profile no-near-replay PDEC  OR  K14 high-gate drift SAE
+```
+
+最新接口为：
+
+```text
+K13GateProfileNoNearReplayPDECOrK14HighGateDriftSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“K=13 layer-tail 可以近程同形移动复现”的解释。

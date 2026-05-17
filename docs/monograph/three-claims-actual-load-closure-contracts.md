@@ -3007,3 +3007,46 @@ K13LayerSlackTailCRTInvariantPDECOrMovingFamilySAE
 ```
 
 本步关闭的是“residual slack-tail 只是匹配 artifact”的解释。剩余变成层不变量 tail-CRT PDEC，或真正随 P 漂移的 moving-family SAE。
+
+## 77. cycle-debt K13 tail gate drift 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k13_tail_gate_drift_router.py
+docs/monograph/prime-matrix-cycle-debt-k13-tail-gate-drift-router.md
+docs/monograph/prime-matrix-cycle-debt-k13-tail-gate-drift-router.json
+data/prime-matrix-cycle-debt-k13-tail-gate-drift-ledger.json
+```
+
+本证书继续攻击 `K13LayerSlackTailCRTInvariantPDECOrMovingFamilySAE`。它不再问 K=13 tail 本身有多重，而是问这个层门形状能否在 near-shift 窗口中无漂移复现。
+
+```text
+hall_pass_shifts=[13,14]
+same_slack_vector_shifts=[13]
+same_zero_gate_set_shifts=[13]
+passing_same_slack_vector_shifts=[13]
+k13_tail_balance=18
+k13_zero_slack_layers=[1,4,7,8]
+k14_tail_balance=31
+k14_tail_increase_over_k13=13
+k14_zero_slack_layers=[7,8,13,15]
+k14_slack_l1_distance_from_k13=19
+k14_zero_gate_lost_from_k13=[1,4]
+k14_zero_gate_gained_over_k13=[13,15]
+```
+
+结构读数：
+
+- 在 `K=1..16` 的 near-shift 窗口内，K=13 的完整 slack 向量只在 `K=13` 自身复现。
+- 通过 Hall 的相位只有 `K=13,14`；因此若要在 near-shift 中移动，唯一去向是 `K=14`。
+- `K=14` 不是 K=13 tail 的同形复本：低门 `1,4` 消失，高门 `13,15` 出现，tail balance 增加 `13`。
+- 所以 K=13 layer-tail 无法近程无漂移重播；移动分支必须改名为 K14 high-gate drift SAE/PDEC。
+
+最新最窄剩余接口为：
+
+```text
+K13GateProfileNoNearReplayPDECOrK14HighGateDriftSAE
+```
+
+本步关闭的是“K=13 层不变量 tail 可以在 near-shift 内保持同形移动”的解释。剩余变成固定 K13 gate-profile PDEC，或 K14 高门漂移族的 SAE/PDEC。
