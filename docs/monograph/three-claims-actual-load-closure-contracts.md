@@ -2576,3 +2576,59 @@ CycleDebtCRTCoverPressurePDECOrGlobalSupportMotionSAE
 ```
 
 本步关闭的是“周期债务可作为无结构局部漂移复现”的解释；全局仍需排斥这种大 CRT cover family 的 PDEC，或证明相应 global support-motion SAE 可求和吸收。
+
+## 67. cycle-debt transverse CRT independence 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_transverse_crt_independence_router.py
+docs/monograph/prime-matrix-cycle-debt-transverse-crt-independence-router.md
+docs/monograph/prime-matrix-cycle-debt-transverse-crt-independence-router.json
+data/prime-matrix-cycle-debt-transverse-crt-independence-ledger.json
+```
+
+本证书把上一节的 CRT cover pressure 继续压到本地周期与横向 CRT 相位的交叉点。当前本地周期为
+
+```text
+period_p=5680=2^4*5*71
+```
+
+而上一节出现的 `24` 个阻断素因子全部与 `5680` 互素：
+
+```text
+global_unique_blocker_factor_count=24
+transverse_blocker_factor_count=24
+all_blocker_factors_coprime_to_period_p=true
+gcd_global_blocker_lcm_with_period_p=1
+combined_period_equals_product=true
+global_blocker_lcm=337212073559813724487421695331234639247
+global_lcm_over_period_p_floor=59368322809826359944968608332963844
+global_lcm_over_period_p_remainder=5327
+all_row_shift_replay_crt_consistent=true
+all_row_shift_replay_classes_zero=true
+all_row_lcm_exceeds_phase_support_width=true
+local_period_absorption_closed_current_certificate=true
+```
+
+解释如下：固定一个缺失 residue 的同 residue 列
+
+```text
+P(k)=P0+5680*k
+```
+
+若第 `c` 个等待被阻断素因子 `q` 覆盖，则 `q` 与 `5680` 互素，因而复现同一阻断等待的平移量 `K` 必须满足 `K=0 mod q`。一行合并为 `K=0 mod row_lcm`，27 行合并为
+
+```text
+K=0 mod 337212073559813724487421695331234639247.
+```
+
+这个模数与本地周期 `5680` 互素，所以它不是周期自身的因子、不是同一槽内的局部漂移，也不能由本地周期平移吸收。最大压力行仍是 `residue=67`，`cycle_debt=15`，但单行复现模数已为 `55140500775337593`。
+
+最新最窄剩余接口为：
+
+```text
+TransverseCRTCoverPDECExclusionOrGlobalSupportMotionSAE
+```
+
+本步关闭的是“cycle-debt CRT cover 可由本地周期/局部槽移动自然复现”的解释；全局仍需排斥 transverse CRT cover PDEC，或证明真正 global support-motion SAE 可求和吸收。

@@ -2648,3 +2648,43 @@ CycleDebtCRTCoverPressurePDECOrGlobalSupportMotionSAE
 ```
 
 这一步仍不关闭全局行/列命题；它把局部缺口提升为全局族必须承担的 CRT cover pressure。
+
+## 74. cycle-debt transverse CRT independence
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_transverse_crt_independence_router.py
+docs/monograph/prime-matrix-cycle-debt-transverse-crt-independence-router.md
+data/prime-matrix-cycle-debt-transverse-crt-independence-ledger.json
+```
+
+本步检查 CRT cover 是否可能只是 `5680` 周期自身的局部吸收。结论是否定的：
+
+```text
+period_p=5680=2^4*5*71
+transverse_blocker_factor_count=24
+all_blocker_factors_coprime_to_period_p=true
+gcd_global_blocker_lcm_with_period_p=1
+combined_period_equals_product=true
+global_blocker_lcm=337212073559813724487421695331234639247
+all_row_shift_replay_classes_zero=true
+all_row_lcm_exceeds_phase_support_width=true
+local_period_absorption_closed_current_certificate=true
+```
+
+对同 residue 列 `P(k)=P0+5680*k`，每个合数等待的阻断素因子 `q` 都是横向单位。若把同一等待前缀平移复现，平移量 `K` 必须满足 `K=0 mod q`；合并全部等待后必须满足 `K=0 mod global_lcm`。由于 `gcd(global_lcm,5680)=1`，该包不是局部周期因子，而是独立横向 CRT 相位包。
+
+当前 actual-load 前沿收窄为：
+
+```text
+transverse CRT cover PDEC exclusion  OR  global support-motion SAE
+```
+
+最新接口为：
+
+```text
+TransverseCRTCoverPDECExclusionOrGlobalSupportMotionSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“CRT cover 可以由本地周期平移吸收”的解释。
