@@ -4836,3 +4836,67 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书的实质进展是：非实分支的剩余不再是抽象相位集中，而是同半类补偿质量的非平铺/持久 ColumnCRT 二分。行/列命题仍未无条件闭合。
+
+## 123. Half-class ratio Fourier lock router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_ratio_fourier_lock_router.py
+docs/monograph/prime-matrix-halfclass-ratio-fourier-lock-router.md
+docs/monograph/prime-matrix-halfclass-ratio-fourier-lock-router.json
+data/prime-matrix-halfclass-ratio-fourier-lock-ledger.json
+```
+
+本步把同半类补偿的“平铺/非平铺”接口进一步转成 multiplicative ratio 坐标。固定假想缺孔 `a0` 后，同半类通过 `u=a0^{-1}a` 变成二次剩余子群 `Q`。若
+
+```text
+f_a0(u)=theta(P^2;P,a0*u),
+c_a0=sum_{u!=1}f_a0(u)/(h-1),
+```
+
+则有精确恒等式：
+
+```text
+one-point variance excess
+= (P-1)^2 * punctured flatness.
+```
+
+更关键的是，平铺补偿等价于所有 `Q` 上非平凡 Fourier 系数同时满足
+
+```text
+F_psi=theta_a0-c_a0.
+```
+
+因此全局 CRT 结构硬点不再只是“容量是否够”，而是：
+
+```text
+HalfClassRatioFourierLockExclusionOrColumnCRTPDEC.
+```
+
+当前读数：
+
+```text
+ratio_normalization_closed=true
+one_point_variance_excess_identity_closed=true
+flat_compensator_fourier_lock_equivalence_closed=true
+capacity_or_variance_only_sufficiency_rejected=true
+persistent_ratio_fourier_lock_excluded=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND HalfClassRatioFourierLockExclusionOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“半类补偿平铺没有结构”的误出口。剩余是排斥持久全频率 ratio 锁，或把它作为 ColumnCRT/PDEC/moving-family 终端缺陷处理。

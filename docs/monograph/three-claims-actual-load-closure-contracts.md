@@ -4895,3 +4895,82 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“半类容量足够即可矛盾”的误出口。剩余硬点更窄：证明真实素数诱导的补偿质量不能在同半类近似平铺，或者把持久平铺相位登记并排斥为 ColumnCRT/PDEC/moving-family 出口。
+
+## 112. Half-class ratio Fourier lock router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_ratio_fourier_lock_router.py
+docs/monograph/prime-matrix-halfclass-ratio-fourier-lock-router.md
+docs/monograph/prime-matrix-halfclass-ratio-fourier-lock-router.json
+data/prime-matrix-halfclass-ratio-fourier-lock-ledger.json
+```
+
+本步继续下钻
+
+```text
+HalfClassCompensationMassNonconcentrationOrColumnCRTPDEC
+```
+
+固定假想缺孔 `a0` 后，用 ratio 坐标
+
+```text
+u=a0^{-1}a
+```
+
+把同一二次半类归一化为二次剩余子群 `Q`。令
+
+```text
+f_a0(u)=theta(P^2;P,a0*u)
+c_a0=sum_{u!=1} f_a0(u)/(h-1).
+```
+
+则半类方差超过单点地板的部分精确等于 punctured flatness：
+
+```text
+sum R_a^2 - (P-1)^2(theta_a0-mu)^2*h/(h-1)
+= (P-1)^2 * sum_{u!=1}(f_a0(u)-c_a0)^2.
+```
+
+并且平铺补偿等价于二次剩余子群上的所有非平凡 Fourier 系数同时锁定：
+
+```text
+F_psi = theta_a0 - c_a0    for every nontrivial psi on Q.
+```
+
+Parseval 形式为
+
+```text
+sum_{psi!=1}|F_psi-(theta_a0-c_a0)|^2
+= h * sum_{u!=1}(f_a0(u)-c_a0)^2.
+```
+
+当前读数：
+
+```text
+ratio_normalization_closed=true
+one_point_variance_excess_identity_closed=true
+flat_compensator_fourier_lock_equivalence_closed=true
+capacity_or_variance_only_sufficiency_rejected=true
+persistent_ratio_fourier_lock_excluded=false
+row_column_unconditional_closed=false
+```
+
+有限诊断 `7<=P<=1000` 中，最小 residue puncture 的最佳平铺误差相对能量最小值为 `0.00045571844422404815`；大量大素数样本接近平铺，说明“接近平铺”本身不是矛盾。真正剩余是排斥零列条件下的持久全频率锁，或将其登记并排斥为 ColumnCRT/PDEC/moving-family。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND HalfClassRatioFourierLockExclusionOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“补偿平铺只是局部容量现象”的误出口：若零列平铺补偿持久存在，它必须表现为二次剩余 ratio 子群上的全非平凡频率同步锁相。行/列命题仍未无条件闭合。

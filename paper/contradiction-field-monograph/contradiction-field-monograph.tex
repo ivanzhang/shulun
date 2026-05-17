@@ -8912,6 +8912,81 @@ registered ColumnCRT/PDEC or moving-family return.  No unconditional
 row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Ratio-Fourier lock for half-class compensation]
+Let \(Q\subset{\mathbb F}_P^\ast\) be the subgroup of quadratic residues and
+fix a candidate puncture \(a_0\in H_s\).  Put
+\[
+f_{a_0}(u)=\theta(P^2;P,a_0u),\qquad u\in Q,
+\]
+so that \(u=1\) is the punctured coordinate.  Let
+\[
+z=f_{a_0}(1),\qquad
+c_{a_0}=\frac{\sum_{u\in Q,\ u\ne1}f_{a_0}(u)}{h-1},
+\qquad
+\mu_s=\frac{z+(h-1)c_{a_0}}{h}.
+\]
+Then the excess over the one-point variance floor is exactly
+\[
+\sum_{a\in H_s}R_a^2
+-(P-1)^2(z-\mu_s)^2\frac{h}{h-1}
+=(P-1)^2\sum_{\substack{u\in Q\\u\ne1}}
+  \bigl(f_{a_0}(u)-c_{a_0}\bigr)^2.
+\]
+If \(\widehat f(\psi)=\sum_{u\in Q}f_{a_0}(u)\overline{\psi(u)}\), where
+\(\psi\) ranges over the characters of \(Q\), then the flat compensator
+\[
+f_{a_0}(u)=c_{a_0}\qquad (u\ne1)
+\]
+is equivalent to the simultaneous lock
+\[
+\widehat f(\psi)=z-c_{a_0}\qquad(\psi\ne1).
+\]
+Moreover,
+\[
+\sum_{\psi\ne1}\left|\widehat f(\psi)-(z-c_{a_0})\right|^2
+=h\sum_{\substack{u\in Q\\u\ne1}}
+  \bigl(f_{a_0}(u)-c_{a_0}\bigr)^2.
+\]
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-halfclass-ratio-fourier-lock-router.md.
+\end{quote}
+The normalization by \(a_0^{-1}\) maps the half-class \(H_s\) bijectively to
+\(Q\), because \(a_0\) has the same quadratic character as every element of
+\(H_s\).  Write
+\[
+f_{a_0}(u)=
+\begin{cases}
+z,&u=1,\\
+c_{a_0}+d_u,&u\ne1,
+\end{cases}
+\qquad
+\sum_{u\ne1}d_u=0.
+\]
+Substituting this decomposition into
+\(\sum_{a\in H_s}R_a^2=(P-1)^2\sum_{u\in Q}(f_{a_0}(u)-\mu_s)^2\) gives the
+displayed one-point excess identity; the cross term vanishes because the
+\(d_u\) sum to zero.
+
+For the Fourier statement, if \(d_u=0\) for all \(u\ne1\), then for every
+nontrivial \(\psi\)
+\[
+\widehat f(\psi)=z+c_{a_0}\sum_{u\ne1}\overline{\psi(u)}=z-c_{a_0}.
+\]
+Conversely, if all nontrivial coefficients equal \(z-c_{a_0}\), Fourier
+inversion on the finite abelian group \(Q\) gives \(d_u=0\) for every
+\(u\ne1\).  Applying Parseval to the function \(d_1=0\), \(d_u=f_{a_0}(u)-
+c_{a_0}\) for \(u\ne1\), gives the final identity.
+
+Thus a flat zero-column compensator is not merely a low-variance event: after
+normalization by the missing residue it is an all-frequency lock on the
+quadratic-residue subgroup.  The remaining input is the exclusion of persistent
+locks of this kind, or their registration as ColumnCRT/PDEC or moving-family
+returns.  No unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
