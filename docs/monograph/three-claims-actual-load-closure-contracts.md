@@ -1717,3 +1717,50 @@ super_sqrt_epoch_pair_pdec_excluded_globally=false
 ```
 
 因此本步只关闭“外部 Brun 输入 + 全局平方根门”条件下的 SAE 出口，并证明当前有限候选没有 SuperSqrtEpochPair。作者侧自足线的最新硬点更精确地变成：证明所有持久 AffineTwin epoch-pair 满足 `M_q^2<=q(q-2)`，或把违反者登记并排斥为 `SuperSqrtEpochPair-PDEC/ColumnCRT`。最新最窄硬点为 `AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion`。
+
+## 47. H-lower sqrt-product 回流到 actual-packet 支撑耗尽
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-pressure-packet-carrying-ceiling-brun-selberg-router.md
+docs/monograph/prime-matrix-nonpdec-sqrt-phase-support-reduction.md
+```
+
+这两份已归档文件把上一节的平方根乘积门再压低一层。关键修正是区分形式侧乘积与真实包数：
+
+```text
+M_q^form = A_g*A_f          # generator/fill 侧残基笛卡尔积上界
+N_q      = |Pi_q|           # 真正通过双槽、CRT、相位支撑和非复用门的 actual packets
+N_q <= M_q^form
+```
+
+非 PDEC actual packet 若都落入 primitive AffineTwin 双槽支撑，则共同相位支撑宽度为：
+
+```text
+W_q=(q+9)/2
+```
+
+并且对所有 `q>=13` 有：
+
+```text
+W_q <= sqrt(q(q-2))
+<=> 3q^2-26q-81 >= 0
+```
+
+同一 primitive 投影若复现，则不再是两个自由 packets，而是 repeated-residue/reset 或 fixed projection ColumnCRT/PDEC。因此排除 PDEC/ColumnCRT 后有注入：
+
+```text
+Pi_q -> Omega_q
+N_q <= |Omega_q| <= W_q <= sqrt(q(q-2))
+```
+
+于是 `SuperSqrt` 失败只剩三分：
+
+```text
+1. ProductAccountingTightening: M_q^form 超界但 N_q 未超界；
+2. ProjectionCollision-PDEC/ColumnCRT: N_q 超界且仍声称在 primitive 支撑内；
+3. PrimitiveTwinSlotSupportEscape-PDEC/SAE: actual packet 逃出 primitive 双槽支撑。
+```
+
+这把最新硬点从抽象 `SuperSqrtPressureProductPDECExclusion` 进一步压成 actual load 口径：证明所有未触发 PDEC/ColumnCRT 的 actual packets 都满足 primitive depth identities 并落入宽度 `(q+9)/2` 的共同相位支撑；否则把逃逸对象登记为 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。最新最窄主攻点为 `PrimitiveTwinSlotSupportExhaustion`，并行需要把现有 SAE/Rankin 账本从 `M_q^form` 口径收紧到 `N_q` 口径。

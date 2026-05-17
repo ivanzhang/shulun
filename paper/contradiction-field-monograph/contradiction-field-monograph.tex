@@ -1800,6 +1800,49 @@ latest self-contained obstruction is sharper: prove
 violation to a SuperSqrtEpochPair PDEC/ColumnCRT exit.
 \end{proof}
 
+\begin{reductionstatement}[Return to actual-packet support]
+The square-root product hard point is an actual-packet question, not merely a
+formal product question.  Let \(M_q^{\rm form}=A_gA_f\) be the side-residue
+Cartesian product upper bound, and let \(N_q=|\Pi_q|\) be the number of actual
+non-PDEC packets passing the two slots, CRT compatibility, common phase
+support, and non-reuse gates.  If every such packet lies in the primitive
+AffineTwin two-slot support, then
+\[
+  N_q\le \frac{q+9}{2}\le \sqrt{q(q-2)}
+  \qquad(q\ge13).
+\]
+\end{reductionstatement}
+\begin{proof}[Status and reference]
+The reduction is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-nonpdec-sqrt-phase-support-reduction.md
+\end{quote}
+and is compatible with the pressure-packet carrying ceiling file.  The
+primitive support width is \(W_q=(q+9)/2\).  For \(q\ge13\),
+\[
+  W_q\le\sqrt{q(q-2)}
+  \quad\Longleftrightarrow\quad
+  3q^2-26q-81\ge0,
+\]
+and the right side is positive at \(q=13\) and then increasing.  A non-PDEC
+packet has a primitive phase projection into the common support set
+\(\Omega_q\).  If two distinct actual packets had the same primitive
+projection, the recurrence would be a repeated-residue/reset event or a fixed
+projection ColumnCRT/PDEC event.  After those named exits are removed, the
+projection is injective:
+\[
+  \Pi_q\hookrightarrow\Omega_q,\qquad
+  N_q\le|\Omega_q|\le W_q.
+\]
+Thus a formal SuperSqrt row has only three interpretations: product accounting
+used \(M_q^{\rm form}\) where \(N_q\) is required; an actual projection
+collision gives a PDEC/ColumnCRT certificate; or an actual packet escaped the
+primitive two-slot support.  The latest narrow task is therefore
+PrimitiveTwinSlotSupportExhaustion, together with replacing remaining SAE and
+Rankin ledgers by the actual-packet count \(N_q\) where they still use the
+formal product upper bound.
+\end{proof}
+
 \chapter{Prime-Matrix Contradiction Fields}
 
 Let $P$ be an odd prime and write the $P\times P$ prime matrix entries as
