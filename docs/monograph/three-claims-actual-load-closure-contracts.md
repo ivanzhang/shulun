@@ -1643,3 +1643,38 @@ unique_representative=P=2687
 ```
 
 这把 corridor phase budget 线接回既有主线：固定 `q=31` 双槽原子被 `899>20` 的 CRT 相位支撑差孤立；若固定 `q` 与固定残基复现，则进入固定模 ColumnCRT/PDEC；若 `q` 或残基移动，则进入 AffineTwin epoch-pair SAE/Rankin 和 moving-family 出口。当前回流桥关闭的是 current sweep 的新匿名 hardpoint，不关闭全局行/列命题；全局仍需沿已登记的 `AffineTwinEpochPairMultiplicityBoundOrColumnCRTPDECExclusion`、`ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC`、`TransportResetPDECExclusion` 与 `MovingResidueShapeSAE/Rankin` 继续排斥或吸收。
+
+## 45. H-lower AffineTwin epoch-pair sparse SAE 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-router.md
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-ledger.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json
+```
+
+回流到 AffineTwin moving-family 后，已有账本先给出 `eta=1/40` 稀疏门：
+
+```text
+candidate_q_values=[31,43,103]
+realized_q_values=[31]
+candidate_product_mass_upper_sum=0.023577117629
+candidate_total_eta_slack=0.001422882371
+max_occupancy_upper_ratio=0.013348164627
+high_density_epoch_pair_count=0
+```
+
+因此当前 sweep 没有 HighDensityEpochPair，失败若出现则已经命名为 HighDensityEpochPair-PDEC/ColumnCRT。更深一层，SparseSAE 的真正可求和部分是单固定双槽原子质量：
+
+```text
+1/(q(q-2)) = (1/2)*(1/(q-2)-1/q)
+sum_{odd q>=Q} 1/(q(q-2)) <= 1/(2(Q-2))
+Q=31 gives tail <= 1/58 = 0.017241379310
+current_realized_sae_mass = 1/899 = 0.001112347052
+```
+
+这关闭了“单原子 SAE 尾和”这一全局恒等式，不依赖孪生素数猜想或有限扫描。但账本也给出必要诊断：`eta` 稀疏门本身不能推出全局可求和，因为每个 `q` 若允许 `O(eta*q(q-2))` 个原子，则每个 `q` 都可贡献约 `eta`，无穷求和会发散。
+
+因此反例链与真实链的最新显式交叉点不再是单原子质量，而是每个 `q` 的 AffineTwin 原子 multiplicity：要么证明每 `q` 只有 `O(1)` 个或有额外衰减的可实现原子，要么 multiplicity 超额必须回流为 HighDensityEpochPair-PDEC/ColumnCRT。最新最窄硬点为 `AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion`。

@@ -1768,3 +1768,31 @@ P=21 mod 31
 ```
 
 当前固定原子因此只有一个代表 `P=2687`，并已归入既有 `P≡889 mod 899` 的 ColumnCRT/actual-anchor 线。反例链若要继续复现，只能固定同一模类形成 ColumnCRT/PDEC，或让 `q`/残基移动并进入 AffineTwin epoch-pair SAE/Rankin。由此 corridor phase budget 的新剩余已经回流到既有主线，而不是新增第三条匿名容量出口；全局仍未闭合，最新剩余仍是移动族 multiplicity、endpoint-growth/reset、transport-reset 与 moving-residue SAE/Rankin 的全局排斥或吸收。
+
+## 52. H-lower AffineTwin epoch-pair sparse SAE 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-router.md
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-epoch-pair-multiplicity-ledger.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sparse-sae-global-envelope-ledger.json
+```
+
+AffineTwin moving family 的当前候选 `q=[31,43,103]` 通过 `eta=1/40` 稀疏门：
+
+```text
+total occupancy upper = 0.023577117629 < 0.025
+max single occupancy = 0.013348164627
+high_density_epoch_pair_count=0
+```
+
+若这个稀疏门失败，失败行已经是 HighDensityEpochPair-PDEC/ColumnCRT；若稀疏门成立，则进入 SAE 求和。这里已闭合的全局恒等式是单原子望远镜尾和：
+
+```text
+1/(q(q-2)) = 1/2*(1/(q-2)-1/q)
+sum_{odd q>=31} 1/(q(q-2)) <= 1/58
+```
+
+当前实际实现的 `q=31` 原子质量为 `1/899`，处在该尾和包络内。关键诊断是：`eta` 稀疏不等于全局求和；如果每个 `q` 都允许正比例多个 AffineTwin 原子，则总量仍可发散。因此真正剩余已经精确化为 per-q multiplicity 控制，而不是再寻找单原子质量估计。最新主攻硬点为 `AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion`。
