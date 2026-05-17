@@ -3269,3 +3269,45 @@ K13BranchExclusiveCRTLoadExclusionOrK14CoupledEntryBranchCRTWallExclusion
 ```
 
 本步关闭的是“entry-wall 与 branch-exclusive 是两个无关松散出口”的解释。全局行/列命题仍未无条件闭合；下一步必须分别排斥 K13 branch-exclusive 持久载荷，或 K14 coupled entry-branch CRT wall。
+
+## 83. cycle-debt branch replay support-gap 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_branch_replay_support_gap_router.py
+docs/monograph/prime-matrix-cycle-debt-branch-replay-support-gap-router.md
+docs/monograph/prime-matrix-cycle-debt-branch-replay-support-gap-router.json
+data/prime-matrix-cycle-debt-branch-replay-support-gap-ledger.json
+```
+
+本证书继续攻击 `K13BranchExclusiveCRTLoadExclusionOrK14CoupledEntryBranchCRTWallExclusion`。它把“高因子吸收槽能否随本地 support motion 平滑移动并复现”写成周期坐标中的 replay lemma：若同一阻断素因子包在平移 `T` 个本地周期后复现，则每个阻断因子 `q` 都给出 `T=0 mod q`，所以非零复现周期至少是该包的 CRT lcm。
+
+```text
+period_p=5680
+near_shift_limit_cycles=16
+k13_branch_exclusive_width=73
+k14_branch_arrival_union_width=78
+k14_coupled_audit_slot_count_all_postwall=117
+smallest_log10_margin_over_support_width=30.737
+smallest_log10_margin_over_audit_slots=30.737
+all_blocks_coprime_to_period=true
+all_nonzero_replay_moduli_exceed_support_width=true
+all_nonzero_replay_moduli_exceed_audit_slots=true
+local_moving_slot_replay_excluded_for_registered_blocks=true
+far_replay_still_requires_columncrt_pdec=true
+```
+
+结构读数：
+
+- K13 branch-exclusive 的复现模数约 `10^36.678`，比 `73` 宽度支撑大约 `10^34.814` 倍。
+- K14 `branch+entry+postwall` 的复现模数约 `10^85.024`，比 `78` 宽度 actual 支撑大约 `10^83.132` 倍，也远超 `117` 个审计槽。
+- 因此当前登记的高因子吸收槽不能通过本地 moving-slot 运动复现；一旦移动，必须换成新的阻断包并回流 `ColumnCRT/PDEC/SAE`。
+
+最新最窄剩余接口为：
+
+```text
+BranchReplayColumnCRTPDECExclusionOrIsolatedTerminalAtomAbsorption
+```
+
+本步关闭的是“终端载荷可由本地 moving-slot 平滑复现”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥远程 branch replay ColumnCRT/PDEC，或证明所有剩余只是可吸收的孤立有限原子。

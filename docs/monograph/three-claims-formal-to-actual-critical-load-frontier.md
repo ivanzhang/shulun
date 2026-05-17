@@ -3337,3 +3337,40 @@ K13BranchExclusiveCRTLoadExclusionOrK14CoupledEntryBranchCRTWallExclusion
 ```
 
 这一步仍不关闭全局行/列命题；它把松散并列出口压成按 K13/K14 终端分支区分的两个明确 CRT-load 排斥问题。
+
+## 90. cycle-debt branch replay support-gap
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_branch_replay_support_gap_router.py
+docs/monograph/prime-matrix-cycle-debt-branch-replay-support-gap-router.md
+data/prime-matrix-cycle-debt-branch-replay-support-gap-ledger.json
+```
+
+本步把 `K13BranchExclusiveCRTLoadExclusionOrK14CoupledEntryBranchCRTWallExclusion` 的 moving-slot 复现解释形式化。若一个已登记阻断包 `B` 在周期坐标中平移 `T` 个本地周期后仍由同一素因子包复现，则对每个 `q in B` 有 `T=0 mod q`；因此最小非零复现周期是 `lcm(B)`。
+
+```text
+k13_branch_exclusive_width=73
+k14_branch_arrival_union_width=78
+k14_coupled_audit_slot_count_all_postwall=117
+smallest_log10_margin_over_support_width=30.737
+all_nonzero_replay_moduli_exceed_support_width=true
+all_nonzero_replay_moduli_exceed_audit_slots=true
+local_moving_slot_replay_excluded_for_registered_blocks=true
+far_replay_still_requires_columncrt_pdec=true
+```
+
+结论：
+
+- K13 branch-exclusive 的最小复现模数约 `10^36.678`，远超 `73` 宽度支撑；
+- K14 `branch+entry+postwall` 的最小复现模数约 `10^85.024`，远超 `78` 宽度 actual 支撑和 `117` 个审计槽；
+- 本地 moving-slot 复现被关闭；若终端载荷在远处复现，它不再是自由支撑运动，而是明确的 ColumnCRT/PDEC 复现包。
+
+当前 actual-load 前沿收窄为：
+
+```text
+BranchReplayColumnCRTPDECExclusionOrIsolatedTerminalAtomAbsorption
+```
+
+这一步仍不关闭全局行/列命题；它关闭本地复现解释，并把剩余压成远程 ColumnCRT/PDEC 排斥或孤立原子吸收。
