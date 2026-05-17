@@ -3848,3 +3848,52 @@ PeriodLiftCarrierDriftRoutedToPersistentPDECOrSparseSAEOrH3DSBNCBLK;GlobalFinalI
 ```
 
 这一步继续保持诚实边界：行/列全局无条件证明尚未闭合。
+
+## 104. Q2 carrier-stage endpoint inversion router
+
+新增文件
+
+```text
+experiments/prime_matrix_q2_carrier_stage_crt_asymmetry_router.py
+docs/monograph/prime-matrix-q2-carrier-stage-crt-asymmetry-router.md
+data/prime-matrix-q2-carrier-stage-crt-asymmetry-ledger.json
+```
+
+本步继续处理用户提示中的“早期零行相邻素数 `Q1<Q2` 在之后 `Q2` 阶 CRT 周期中产生什么不对称”接口。
+若早期第 `k` 行 `[(k-1)P+1,kP]` 无素数并由相邻素数 `Q1<Q2` 跨越，则在 `Q2<P^2`
+的主分支中，开间隙 `(Q1,Q2)` 内每个合数都有小于 `P` 的素因子；若 `Q2>=P^2`，则进入平方锚/对角端点分支。
+
+关键新增观察是端点反转：令 `M_{<=Q2}=prod_{\ell<=Q2}\ell`，则对任意 `t>=1`
+
+```text
+Q1+t*M_{<=Q2} == 0 mod Q1
+Q2+t*M_{<=Q2} == 0 mod Q2
+```
+
+所以完整 `Q2` 阶轮不会复制“两个端点仍为素数”的真实链，而会把两个素端点复制成被自身整除的复合端点。
+若只用 `M_{<Q2}`，左端 `Q1` 已被自身零类杀掉，右端 `Q2` 的素性仍不由 CRT 强制。
+
+当前读数：
+
+```text
+q2_full_wheel_endpoint_inversion_proved=true
+q2_less_wheel_one_sided_endpoint_break_proved=true
+all_sample_full_q2_endpoint_prime_replay_impossible=true
+all_sample_q2_stage_modulus_exceeds_support_width=true
+persistent_q2_carrier_block_routes_to_columncrt_pdec=true
+sparse_q2_carrier_block_routes_to_sae=true
+moving_endpoint_or_fresh_support_routes_to_h3_dsb=true
+row_column_unconditional_closed=false
+```
+
+因此 `Q2` 阶不对称确实给出一个显式矛盾点，但只排除了“全轮 CRT 同时复现覆盖块和素端点”的跳步。
+若放弃素端点，只让闭覆盖块持久复现，则进入 `ColumnCRT/PDEC`；若孤立出现，则进入 `SAE`；
+若通过移动端点、素层或支撑逃避反转，则回到 `moving-family/H3-DSB/KLS`。
+
+actual-load 前沿更新为：
+
+```text
+Q2StageEndpointInversionRoutedToColumnCRTPDECOrSparseSAEOrMovingEndpointH3DSB;GlobalFinalInputsStillOpen
+```
+
+这一步仍不是行/列全局无条件证明；它关闭的是 `Q2` 阶端点稳定复现这一最窄跳步。

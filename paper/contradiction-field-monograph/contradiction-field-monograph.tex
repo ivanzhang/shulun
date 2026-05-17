@@ -8011,6 +8011,43 @@ NC-BLK or external DI/BFI as the remaining input.  This proves the router but
 not the final row/column theorem.
 \end{proof}
 
+\begin{theorem}[Q2-stage endpoint inversion router]
+Let an early zero row be straddled by adjacent primes \(Q_1<Q_2\).
+If \(Q_2<P^2\), then every composite in the open carrier gap
+\((Q_1,Q_2)\) already has a prime factor below \(P\); otherwise the branch
+enters the square-anchor endpoint problem.  At the \(Q_2\)-stage, the full
+wheel
+\[
+  M_{\le Q_2}=\prod_{\substack{\ell\le Q_2\\ \ell\ {\rm prime}}}\ell
+\]
+does not reproduce the two prime endpoints.  For every \(t\ge1\),
+\[
+  Q_1+tM_{\le Q_2}\equiv0\pmod{Q_1},\qquad
+  Q_2+tM_{\le Q_2}\equiv0\pmod{Q_2},
+\]
+so the endpoint-stable full-wheel replay is impossible.  The surviving
+branches are: a persistent closed carrier block, which is a ColumnCRT/PDEC
+object; a sparse carrier block, which is SAE; or moving endpoints/support,
+which returns to the moving-family H3-DSB/KLS branch.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-q2-carrier-stage-crt-asymmetry-router.md.
+\end{quote}
+The below-square assertion follows because a composite \(n<Q_2<P^2\) has a
+least prime factor at most \(\sqrt n<P\), while adjacency of \(Q_1,Q_2\)
+excludes primes in the open gap.  The endpoint inversion is the displayed
+congruence: both endpoints divide the full \(Q_2\)-wheel modulus, so any
+positive full-wheel copy of either endpoint is composite.  If one uses only
+\(M_{<Q_2}\), the left endpoint \(Q_1\) is still killed by its own zero class,
+and the right endpoint \(Q_2\) is not forced to remain prime by CRT data.
+Thus the full \(Q_2\)-stage gives a genuine local contradiction only to
+endpoint-stable replay.  Without endpoint-stable replay, the obstruction is
+precisely one of the named ColumnCRT/PDEC, SAE, or moving-family exits.  Hence
+the router is closed, but the global row/column theorem is not.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

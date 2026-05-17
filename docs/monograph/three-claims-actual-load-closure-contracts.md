@@ -3893,3 +3893,49 @@ PeriodLiftCarrierDriftRoutedToPersistentPDECOrSparseSAEOrH3DSBNCBLK;GlobalFinalI
 
 本步不证明行/列命题全局闭合；它把“CRT 周期复现会在后续周期制造不对称矛盾”的说法精确化为
 端点漂移三分流。
+
+## 97. Q2 carrier-stage endpoint inversion 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_q2_carrier_stage_crt_asymmetry_router.py
+docs/monograph/prime-matrix-q2-carrier-stage-crt-asymmetry-router.md
+docs/monograph/prime-matrix-q2-carrier-stage-crt-asymmetry-router.json
+data/prime-matrix-q2-carrier-stage-crt-asymmetry-ledger.json
+```
+
+本证书把相邻素数载体推进到 `Q2` 阶轮。设早期零行由相邻素数 `Q1<Q2` 跨越。
+若 `Q2<P^2`，开间隙中每个合数都有小于 `P` 的素因子；若 `Q2>=P^2`，则进入平方锚/对角端点分支。
+在完整 `Q2` 阶轮 `M_{<=Q2}` 下，两个端点复制后分别被 `Q1,Q2` 整除，因而不可能同时复现素端点。
+
+当前读数：
+
+```text
+q2_full_wheel_endpoint_inversion_proved=true
+q2_less_wheel_one_sided_endpoint_break_proved=true
+all_sample_full_q2_endpoint_prime_replay_impossible=true
+all_sample_q2_stage_modulus_exceeds_support_width=true
+persistent_q2_carrier_block_routes_to_columncrt_pdec=true
+sparse_q2_carrier_block_routes_to_sae=true
+moving_endpoint_or_fresh_support_routes_to_h3_dsb=true
+row_column_unconditional_closed=false
+```
+
+最新三分流为：
+
+```text
+full Q2 endpoint-prime replay => impossible
+persistent closed carrier block => ColumnCRT/PDEC
+sparse closed carrier block => SAE
+moving endpoint/support => moving-family/H3-DSB/KLS
+```
+
+最新剩余为：
+
+```text
+Q2StageEndpointInversionRoutedToColumnCRTPDECOrSparseSAEOrMovingEndpointH3DSB;GlobalFinalInputsStillOpen
+```
+
+本步只关闭 `Q2` 阶端点稳定复现的跳步；全局行/列命题仍需排斥持久 `ColumnCRT/PDEC`、`SAE`
+与 moving-family 出口。
