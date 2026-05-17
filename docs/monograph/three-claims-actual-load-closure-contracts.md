@@ -3428,3 +3428,41 @@ BranchReplayColumnCRTPDECExclusion
 ```
 
 本步只关闭当前登记有限原子分支，不排斥全局持久 ColumnCRT/PDEC；全局行/列命题仍未无条件闭合。
+
+## 87. cycle-debt branch replay fresh-modulus escalation 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_branch_replay_fresh_modulus_escalation_router.py
+docs/monograph/prime-matrix-cycle-debt-branch-replay-fresh-modulus-escalation-router.md
+docs/monograph/prime-matrix-cycle-debt-branch-replay-fresh-modulus-escalation-router.json
+data/prime-matrix-cycle-debt-branch-replay-fresh-modulus-escalation-ledger.json
+```
+
+本证书继续攻击 `BranchReplayColumnCRTPDECExclusion`。在有限原子分支关闭后，它把“固定有限 ColumnCRT replay 类是否可以作为终端稳定结构”形式化为 fresh-modulus escalation：任意登记 replay block 的模数都是有限的；当未登记新素数层进入后续筛层时，该新素数与旧模数互素，给出新的 CRT 坐标。
+
+```text
+finite_atom_branch_closed_for_registered_atoms=true
+registered_replay_block_count=6
+fresh_prime_sample_count_per_block=8
+all_registered_blocks_have_coprime_fresh_layers=true
+minimum_first_fresh_log10_gain=2.400
+minimum_sample_log10_gain=19.435
+finite_crt_terminal_description_excluded=true
+persistent_family_requires_unbounded_modulus_or_pdec=true
+```
+
+结构读数：
+
+- 任一登记 replay block 仍只是有限 CRT 类；它不能控制后续无限素数层。
+- 对每个 block 加入首个 fresh prime，模数至少增加 `10^2.400`；加入 8 个 fresh prime 样本，至少增加 `10^19.435`。
+- 因此无限反例链不能在固定有限模数上稳定；它必须不断扩模、触发 PDEC/ColumnCRT 缺陷，或进入尾段筛稳定矛盾。
+
+最新最窄剩余接口为：
+
+```text
+UnboundedFreshModulusEscalationPDECOrTailSieveStabilityContradiction
+```
+
+本步不宣称行/列命题闭合；它把最后固定 ColumnCRT 类排斥推进到无界 fresh-modulus escalation 与尾段筛稳定矛盾。

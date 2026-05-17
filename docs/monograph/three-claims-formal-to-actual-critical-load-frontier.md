@@ -3481,3 +3481,38 @@ BranchReplayColumnCRTPDECExclusion
 ```
 
 这一步仍不关闭全局行/列命题；它把 finite atom 出口移除，留下单一结构性 ColumnCRT/PDEC 接口。
+
+## 94. cycle-debt branch replay fresh-modulus escalation
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_branch_replay_fresh_modulus_escalation_router.py
+docs/monograph/prime-matrix-cycle-debt-branch-replay-fresh-modulus-escalation-router.md
+data/prime-matrix-cycle-debt-branch-replay-fresh-modulus-escalation-ledger.json
+```
+
+本步把 `BranchReplayColumnCRTPDECExclusion` 的固定有限 CRT 类解释继续下钻。有限原子分支已关闭；剩余若是一条持久 replay family，则它不能停留在任何登记有限模数上，因为所有后续未登记素数层都与旧模数互素，并形成新的 CRT 坐标。
+
+```text
+registered_replay_block_count=6
+all_registered_blocks_have_coprime_fresh_layers=true
+minimum_first_fresh_log10_gain=2.400
+minimum_sample_log10_gain=19.435
+finite_crt_terminal_description_excluded=true
+persistent_family_requires_unbounded_modulus_or_pdec=true
+```
+
+结论：
+
+- 固定有限 ColumnCRT 类不再是终端稳定结构；
+- 持久 replay 必须无界扩模，或在某个新素数层触发 PDEC/ColumnCRT 缺陷；
+- 若扩模被尾段筛吸收，则剩余转为 tail-sieve stability contradiction。
+
+当前 actual-load 前沿收窄为：
+
+```text
+UnboundedFreshModulusEscalationPDECOrTailSieveStabilityContradiction
+```
+
+这一步仍不关闭全局行/列命题；它把固定有限 CRT 接口推进为无穷新素数层的扩模/筛稳定接口。
