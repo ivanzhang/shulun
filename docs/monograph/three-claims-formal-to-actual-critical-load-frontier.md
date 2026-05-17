@@ -3203,3 +3203,48 @@ TwoSurvivorTerminalCRTBifurcationPDECExclusion
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“K13/K14 可以互相吸收为同一未命名 SAE”的解释。
+
+## 87. cycle-debt two-survivor PDEC exclusion
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_two_survivor_pdec_exclusion_router.py
+docs/monograph/prime-matrix-cycle-debt-two-survivor-pdec-exclusion-router.md
+data/prime-matrix-cycle-debt-two-survivor-pdec-exclusion-ledger.json
+```
+
+本步继续压缩 `TwoSurvivorTerminalCRTBifurcationPDECExclusion`。two-survivor 的真正剩余不是“两个候选相位相差多少”，而是若反例链要在两个终端 survivor 之间切换，真实链必须重写多少 actual load。
+
+```text
+common_pair_width=15
+forced_rematched_target_width=86
+minimum_branch_exclusive_delta_width=70
+minimum_branch_exclusive_delta_lcm_log10=32.582
+k14_only_assigned_width=29
+k14_only_capacity_at_k13=0
+k14_only_capacity_at_k14=39
+k14_arrival_lcm_log10=20.205
+common_source_changed_count=18
+```
+
+结论：
+
+- 共同实际边只有 `13->67`，因此共同 anchor 最多解释 `15` 宽度；
+- 剩余 `86` 宽度必须重路由，且每个分支至少 `70` 宽度落在 branch-exclusive delta 上；
+- K14 侧的 `29` 宽度来自 K13 时容量全为 `0` 的 fresh-arrival source，不能被解释为原支撑平滑拖动；
+- branch-exclusive CRT lcm 与 arrival lcm 均远超本地周期 `5680`。
+
+当前 actual-load 前沿收窄为：
+
+```text
+terminal switch-arrival ColumnCRT/PDEC  OR  branch-exclusive CRT-load exclusion
+```
+
+最新接口为：
+
+```text
+TerminalSwitchArrivalColumnCRTPDECOrBranchExclusiveCRTLoadExclusion
+```
+
+这一步仍不关闭全局行/列命题；它把 two-survivor 分叉的下一阻塞点压成 fresh-arrival ColumnCRT/PDEC 与 branch-exclusive CRT-load 的排斥。

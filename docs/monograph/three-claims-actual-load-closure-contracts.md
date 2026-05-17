@@ -3139,3 +3139,46 @@ TwoSurvivorTerminalCRTBifurcationPDECExclusion
 ```
 
 本步关闭的是“K13/K14 两个终端 survivor 可以互相吸收为同一未命名 SAE”的解释。剩余变成明确的 two-survivor terminal CRT bifurcation PDEC 排斥问题。
+
+## 80. cycle-debt two-survivor PDEC exclusion 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_two_survivor_pdec_exclusion_router.py
+docs/monograph/prime-matrix-cycle-debt-two-survivor-pdec-exclusion-router.md
+docs/monograph/prime-matrix-cycle-debt-two-survivor-pdec-exclusion-router.json
+data/prime-matrix-cycle-debt-two-survivor-pdec-exclusion-ledger.json
+```
+
+本证书继续攻击 `TwoSurvivorTerminalCRTBifurcationPDECExclusion`。它不再只登记 K13/K14 终端分支不同，而是把终端切换必须支付的容量和相位代价逐项量化。
+
+```text
+common_pair_count=1
+common_pair_width=15
+forced_rematched_target_count=26
+forced_rematched_target_width=86
+minimum_branch_exclusive_delta_width=70
+minimum_branch_exclusive_delta_lcm_log10=32.582
+k14_only_assigned_width=29
+k14_only_capacity_at_k13=0
+k14_only_capacity_at_k14=39
+k14_arrival_lcm_log10=20.205
+k13_same_support_capacity_deficit_at_k14=8
+common_source_changed_count=18
+```
+
+结构读数：
+
+- 唯一共同实际边 `13->67` 只承载 target `67` 的宽度 `15`，其余 `26` 个 target 合计宽度 `86` 必须重路由。
+- 共同 delta `54,58` 不能吸收全部重路由；每个分支仍至少有 `70` 宽度落在 branch-exclusive delta 上。
+- 若从 K13 切到 K14，K14 必须调用 `8` 个在 K13 时容量为 `0` 的新 source；这些 fresh-arrival source 到 K14 才出现 `39` 容量并实际承载 `29` 宽度。
+- K13 原支撑若直接拖到 K14，只剩 `93` 容量，距离 `101` 需求有 `8` 宽度缺口，正好对应 K13-only source 的容量流失。
+
+最新最窄剩余接口为：
+
+```text
+TerminalSwitchArrivalColumnCRTPDECOrBranchExclusiveCRTLoadExclusion
+```
+
+本步关闭的是“two-survivor PDEC 可以由共同 anchor/共同 delta 局部吸收”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥 terminal switch-arrival ColumnCRT/PDEC，或排斥 branch-exclusive CRT-load 的持久复现。
