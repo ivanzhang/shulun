@@ -3946,3 +3946,54 @@ EndpointReplacementApertureGrowthNoBoundedReplayOrMovingSupportPDECSAEH3DSB;Glob
 ```
 
 这一步不是全局闭合；它把 `Q2` 阶之后的真实链压力从端点反转推进到有界孔径 no-go。
+
+## 106. Q2 endpoint fresh-layer cascade router
+
+新增文件
+
+```text
+experiments/prime_matrix_q2_endpoint_fresh_layer_cascade_router.py
+docs/monograph/prime-matrix-q2-endpoint-fresh-layer-cascade-router.md
+data/prime-matrix-q2-endpoint-fresh-layer-cascade-ledger.json
+```
+
+本步把上一节留下的“扩孔/移动”继续压成新素层级联。若第 `j` 阶全轮模数为 `M_j`，复现后的
+闭复合块右侧真实相邻素数为 `B_{j+1}`，则
+
+```text
+B_{j+1} > copied block right edge >= M_j
+```
+
+所以 `B_{j+1}` 是旧有限端点层之外的新素数层。一旦下一阶全轮纳入 `B_{j+1}`，下一次复现又会把
+`B_{j+1}` 的复制点变成被自身整除的复合点。令 `L_j=log M_j`，得到级联下界：
+
+```text
+L_{j+1} >= L_j + log(B_{j+1}) > 2 L_j
+```
+
+当前读数：
+
+```text
+fresh_endpoint_after_each_replacement=true
+next_full_wheel_kills_fresh_endpoint=true
+log_modulus_at_least_doubles_per_endpoint_cascade=true
+aperture_lower_bound_growth_linear_plus_two=true
+finite_crt_period_terminal_possible=false
+persistent_fresh_endpoint_pattern_routes_to_pdec_columncrt=true
+sparse_fresh_endpoint_cascade_routes_to_sae=true
+non_pdec_fresh_layer_cascade_routes_to_tail_sieve_h3=true
+row_column_unconditional_closed=false
+```
+
+结论：有界孔径 no-go 之后，任何无限延续若仍沿全轮端点复现推进，就不能停在固定有限 CRT 周期；
+它必须无界加入 fresh endpoint primes。若这些新素层以固定相位模板持久复现，则进入
+`ColumnCRT/PDEC`；若孤立，则进入 `SAE`；若无 PDEC 地无界加入，则成为每个新素层禁一个相位的
+`tail-sieve/H3-DSB/KLS` 对象。
+
+actual-load 前沿更新为：
+
+```text
+FreshEndpointLayerCascadeNoFiniteCRTPeriodOrPDECSAEH3TailSieve;GlobalFinalInputsStillOpen
+```
+
+这一步排除了固定有限 CRT 周期终端，但仍不是行/列全局无条件证明。

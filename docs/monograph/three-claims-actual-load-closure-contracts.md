@@ -3988,3 +3988,50 @@ EndpointReplacementApertureGrowthNoBoundedReplayOrMovingSupportPDECSAEH3DSB;Glob
 ```
 
 本步排除固定有界孔径复现；它仍不排斥全部 moving aperture、PDEC/ColumnCRT、SAE 与 H3-DSB/KLS 出口。
+
+## 99. Q2 endpoint fresh-layer cascade 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_q2_endpoint_fresh_layer_cascade_router.py
+docs/monograph/prime-matrix-q2-endpoint-fresh-layer-cascade-router.md
+docs/monograph/prime-matrix-q2-endpoint-fresh-layer-cascade-router.json
+data/prime-matrix-q2-endpoint-fresh-layer-cascade-ledger.json
+```
+
+本证书把扩孔/移动分支继续转成新素层扩模级联。端点替换后的新右端素数 `B_new` 位于闭复合块外，
+且大于旧全轮平移边界；它进入下一阶全轮后，下一次复现又被自身零类杀掉。于是每一阶都必须引入
+旧有限端点层之外的新素数。
+
+当前读数：
+
+```text
+fresh_endpoint_after_each_replacement=true
+next_full_wheel_kills_fresh_endpoint=true
+log_modulus_at_least_doubles_per_endpoint_cascade=true
+aperture_lower_bound_growth_linear_plus_two=true
+finite_crt_period_terminal_possible=false
+persistent_fresh_endpoint_pattern_routes_to_pdec_columncrt=true
+sparse_fresh_endpoint_cascade_routes_to_sae=true
+non_pdec_fresh_layer_cascade_routes_to_tail_sieve_h3=true
+row_column_unconditional_closed=false
+```
+
+最新三分流为：
+
+```text
+fixed finite CRT period terminal => impossible
+persistent fresh endpoint phase => ColumnCRT/PDEC
+sparse fresh endpoint cascade => SAE
+non-PDEC unbounded fresh layers => tail-sieve/H3-DSB/KLS
+```
+
+最新剩余为：
+
+```text
+FreshEndpointLayerCascadeNoFiniteCRTPeriodOrPDECSAEH3TailSieve;GlobalFinalInputsStillOpen
+```
+
+本步排除固定有限 CRT 周期终端；全局行/列命题仍需排斥 fresh-layer PDEC/ColumnCRT、SAE 与
+tail-sieve/H3 出口。

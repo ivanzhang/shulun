@@ -8088,6 +8088,41 @@ lower bound inside a fixed aperture gives the finite bound
 the remaining branches are exactly the named moving, PDEC, SAE, and H3 exits.
 \end{proof}
 
+\begin{theorem}[Fresh endpoint layer cascade]
+After the bounded-aperture branch is removed, any continued full-wheel
+endpoint replay must introduce an unbounded sequence of fresh endpoint prime
+layers.  Let \(M_j\) be the full-wheel modulus at stage \(j\), and let
+\(B_{j+1}\) be the new right adjacent-prime endpoint forced after the copied
+closed composite block.  Then
+\[
+  B_{j+1}>M_j.
+\]
+If \(L_j=\log M_j\), the next full wheel satisfies
+\[
+  L_{j+1}\ge L_j+\log B_{j+1}>2L_j.
+\]
+Thus the endpoint cascade cannot terminate in a fixed finite CRT period.  A
+persistent fresh endpoint phase is a ColumnCRT/PDEC object; a sparse cascade is
+SAE; and a non-PDEC unbounded fresh-layer cascade is routed to the one-residue
+per fresh prime tail-sieve/H3-DSB/KLS branch.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-q2-endpoint-fresh-layer-cascade-router.md.
+\end{quote}
+At stage \(j\), full-wheel replay moves the current closed carrier by at least
+\(M_j\) and turns it into a closed composite block.  The true right adjacent
+prime around that copied block must therefore lie to the right of the copied
+block, hence beyond \(M_j\).  This prime is not contained in any fixed finite
+endpoint layer below the old bound.  When the next wheel includes it, its next
+copy is divisible by itself, so the same replacement mechanism repeats.  The
+displayed logarithmic inequality follows immediately.  Since a finite CRT
+period contains only finitely many prime layers, it cannot support this
+infinite cascade.  The only remaining possibilities are the named PDEC,
+SAE, or tail-sieve/H3 exits.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
