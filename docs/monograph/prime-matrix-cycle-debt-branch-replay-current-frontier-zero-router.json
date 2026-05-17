@@ -1,0 +1,125 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_branch_replay_current_frontier_zero_router",
+  "status": "cycle_debt_branch_replay_current_materialized_frontier_zero_future_schema_firewall_global_inputs_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "previous_hardpoint": "FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter",
+  "current_fresh_layer_pdec_frontier_closed": true,
+  "future_explicit_primitive_fresh_layer_pdec_schema_submitted": false,
+  "unregistered_moving_family_schema_submitted": false,
+  "future_pdec_schema_admission_discipline_closed": true,
+  "future_sparse_schema_admission_discipline_closed": true,
+  "pdec_family_explicit_input_boundary_closed": true,
+  "future_sparse_packet_schema_boundary_closed": true,
+  "final_input_firewall_boundary_closed": true,
+  "no_hidden_terminal_remaining": true,
+  "future_schema_firewall_closed_for_current_branch_replay": true,
+  "cycle_debt_branch_replay_current_materialized_frontier_zero": true,
+  "future_explicit_schema_global_nonexistence_proved": false,
+  "unregistered_moving_family_excluded": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_after_router": "CycleDebtBranchReplayCurrentMaterializedFrontierZeroWithFutureSchemaFirewall;GlobalFinalInputsStillOpen",
+  "next_direct_attack_target": "CycleDebtBranchReplayCurrentMaterializedFrontierZeroWithFutureSchemaFirewall;GlobalFinalInputsStillOpen",
+  "future_moving_family_schema_required": [
+    "source_family_id 与 formal_unit_id",
+    "blocker_package、shape_key、phase_map 与去重规则",
+    "支撑窗口、candidate set 与 exact bad-window count function",
+    "同签名持久性测试；若持久则回流 PDEC/ColumnCRT",
+    "签名漂移测试；若漂移则回流 SAE/CleanKLS/DLS 或 noncanonical final input",
+    "可复现实验或证明账本、哈希与 open_obligation_count=0"
+  ],
+  "gates": [
+    {
+      "gate": "FreshLayerPDECCurrentCorpusClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已关闭当前 cycle-debt 语料中的无名材料化 fresh-layer PDEC/ColumnCRT。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "FutureFreshPDECSchemaNotSubmitted",
+      "closed": true,
+      "proved": true,
+      "meaning": "未来 fresh-layer PDEC schema 尚未提交；它是准入纪律，不是当前已出现的数学障碍。",
+      "remaining": "future schema firewall"
+    },
+    {
+      "gate": "UnregisteredMovingFamilySchemaNotSubmitted",
+      "closed": true,
+      "proved": true,
+      "meaning": "未登记 moving family 没有提交完整 source/shape/phase/persistence schema；不能作为当前终端保留。",
+      "remaining": "future moving-family schema firewall"
+    },
+    {
+      "gate": "FuturePDECSchemaAdmissionDisciplineClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "未来 PDEC family 若新增，必须通过显式 primitive same-formal-unit schema 边界。",
+      "remaining": "reopen only with explicit schema"
+    },
+    {
+      "gate": "FutureSparseMovingPacketDisciplineClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "未来 sparse/local-survivor 型 moving packet 若新增，必须提交有限 packet extractor schema。",
+      "remaining": "reopen only with explicit extractor"
+    },
+    {
+      "gate": "NoHiddenTerminalBoundaryImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "最终输入防火墙已说明当前语料无隐藏终端；未来输入只能按命名 schema 重开。",
+      "remaining": "global final inputs remain"
+    },
+    {
+      "gate": "CycleDebtBranchReplayCurrentFrontierZero",
+      "closed": true,
+      "proved": true,
+      "meaning": "在当前已物化 cycle-debt branch-replay 语料内，PDEC/ColumnCRT/future-schema/moving-family 均无活动终端实例。",
+      "remaining": "closed for current materialized branch-replay corpus"
+    },
+    {
+      "gate": "FutureSchemaMayReopen",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步不证明未来 primitive fresh-layer PDEC schema 或 moving-family schema 永不存在。",
+      "remaining": "FutureExplicitPrimitivePDECSchema or FutureExplicitMovingFamilySchema if submitted"
+    },
+    {
+      "gate": "GlobalFinalInputsStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "行/列命题仍受全局最终输入约束，尤其 noncanonical 合法闭合模式与 DStructure/Rankin 晋级门。",
+      "remaining": "NoncanonicalFullSComplementLegalClosureMode and DStructureRankinPromotion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只清零当前 cycle-debt branch-replay 物化前沿，不关闭完整行/列无条件定理。",
+      "remaining": "CycleDebtBranchReplayCurrentMaterializedFrontierZeroWithFutureSchemaFirewall;GlobalFinalInputsStillOpen"
+    }
+  ],
+  "closed_gates": [
+    "FreshLayerPDECCurrentCorpusClosed",
+    "FutureFreshPDECSchemaNotSubmitted",
+    "UnregisteredMovingFamilySchemaNotSubmitted",
+    "FuturePDECSchemaAdmissionDisciplineClosed",
+    "FutureSparseMovingPacketDisciplineClosed",
+    "NoHiddenTerminalBoundaryImported",
+    "CycleDebtBranchReplayCurrentFrontierZero"
+  ],
+  "open_gates": [
+    "FutureSchemaMayReopen",
+    "GlobalFinalInputsStillOpen",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "cycle-debt branch-replay 的当前物化前沿已清零：fresh-layer PDEC/ColumnCRT 当前实例已关闭，FutureExplicitPrimitiveFreshLayerPDECSchema 与 unregistered moving family 均未提交具体 schema，只能作为未来准入纪律保留。该结论不证明未来 schema 永不存在，也不关闭行/列全局无条件定理；全局仍需处理最终输入防火墙后的 noncanonical 与 DStructure/Rankin 门。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-fresh-layer-pdec-admission-firewall-ledger.json": "4a7ab680dc2d9419b4973c5401d7627e0febef0686510b1e116d7d878692f695",
+    "docs/monograph/prime-matrix-final-input-firewall-boundary-router.json": "b8db63a47643fdf9b98e860c8e81eec6de92377e87118b274f9ccf63f0008b7b",
+    "docs/monograph/prime-matrix-strict-terminal-leaf-firewall-current-instance-router.json": "3323fe284f3293bb2a9fb18f739c41ffb64a5bebb44b847ae97d2d6074568f3f",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3"
+  }
+}

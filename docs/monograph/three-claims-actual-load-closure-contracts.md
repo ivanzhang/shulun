@@ -3746,3 +3746,51 @@ FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter
 ```
 
 本步仍不宣称行/列命题闭合；它只关闭当前语料中的无名材料化 PDEC/ColumnCRT 口径，不证明未来 primitive fresh-layer PDEC schema 不存在，也不排斥未登记 moving family。
+
+## 94. cycle-debt branch-replay 当前物化前沿清零回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_branch_replay_current_frontier_zero_router.py
+docs/monograph/prime-matrix-cycle-debt-branch-replay-current-frontier-zero-router.md
+docs/monograph/prime-matrix-cycle-debt-branch-replay-current-frontier-zero-router.json
+data/prime-matrix-cycle-debt-branch-replay-current-frontier-zero-ledger.json
+```
+
+上一节剩余为
+
+```text
+FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter
+```
+
+本证书把“当前实例”与“未来准入”分开：`FutureExplicitPrimitiveFreshLayerPDECSchemaIfNew` 不是当前已出现的反例对象，而是未来新增 PDEC family 的准入纪律；未登记 moving family 若没有提交 source、shape、phase 与 persistence schema，也不能作为当前终端保留。
+
+当前读数：
+
+```text
+current_fresh_layer_pdec_frontier_closed=true
+future_explicit_primitive_fresh_layer_pdec_schema_submitted=false
+unregistered_moving_family_schema_submitted=false
+future_pdec_schema_admission_discipline_closed=true
+future_sparse_schema_admission_discipline_closed=true
+final_input_firewall_boundary_closed=true
+no_hidden_terminal_remaining=true
+cycle_debt_branch_replay_current_materialized_frontier_zero=true
+future_explicit_schema_global_nonexistence_proved=false
+row_column_unconditional_closed=false
+```
+
+因此 cycle-debt branch-replay 的当前物化前沿已经清零：
+
+```text
+CycleDebtBranchReplayCurrentMaterializedFrontierZeroWithFutureSchemaFirewall
+```
+
+但全局行/列命题仍未闭合；剩余转回最终输入防火墙后的全局门：
+
+```text
+GlobalFinalInputsStillOpen
+```
+
+本步不证明未来 primitive fresh-layer PDEC schema 或 moving-family schema 永不存在；若未来提交显式 schema，需要按防火墙重新审查。
