@@ -2882,3 +2882,44 @@ NonAffineShellPhaseFragmentPDECOrMultiDeltaSupportSAE
 ```
 
 本步关闭的是“tight-Hall 岛可由单一平移 support motion 吸收”的解释。全局行/列命题仍未无条件闭合；下一步要攻击的是多相位碎裂本身是否可求和，或是否强制产生新的 PDEC/ColumnCRT。
+
+## 74. cycle-debt multi-delta core CRT load 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_multi_delta_core_crt_load_router.py
+docs/monograph/prime-matrix-cycle-debt-multi-delta-core-crt-load-router.md
+docs/monograph/prime-matrix-cycle-debt-multi-delta-core-crt-load-router.json
+data/prime-matrix-cycle-debt-multi-delta-core-crt-load-ledger.json
+```
+
+本证书继续把 multi-delta support SAE 的核心匹配展开成实际合数槽和阻断素因子。每条 `source -> target` 边按目标 demand width 展开 source 行从对应 `K` 开始的实际 composite slots，再按 delta lane 汇总 CRT lcm。
+
+```text
+period_p=5680
+k13_enumerated_core_matching_count=96
+k13_minimum_delta_count=7
+k13_minimum_delta_matching_count=2
+k13_best_min_delta_global_lcm_log10=36.165
+k13_excluded_large_shell_labels=['1..3']
+k14_enumerated_core_matching_count=2
+k14_minimum_delta_count=4
+k14_minimum_delta_matching_count=1
+k14_best_min_delta_global_lcm_log10=31.716
+all_min_delta_lcms_exceed_period=true
+```
+
+核心读数：
+
+- `K=14` 的最小多相位核心唯一，4 个 delta lane 分别为 `4,16,28,54`，总需求宽度 `52`，全局 CRT lcm 约为 `10^31.716`。
+- `K=13` 的可枚举刚性核心有 `96` 个匹配，其中只有 `2` 个达到最少 `7` 个 delta；最优全局 CRT lcm 约为 `10^36.165`，核心需求宽度为 `71`。
+- `K=13` 的低层 `1..3` shell 尚未作为闭合证明使用；它匹配数巨大、可产生全 residue delta，因此被保留为独立的 full-residue SAE/PDEC 出口。
+
+最新最窄剩余接口为：
+
+```text
+MultiDeltaCoreCRTLoadPDECOrLowShellFullResidueSAE
+```
+
+本步关闭的是“多相位碎裂只是轻量局部相位噪声”的解释。剩余要么排斥这个重 CRT 核心载荷形成的 PDEC，要么把 `K=13` 低层 full-residue shell 作为可求和 SAE 处理。

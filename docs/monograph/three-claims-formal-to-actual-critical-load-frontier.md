@@ -2943,3 +2943,47 @@ NonAffineShellPhaseFragmentPDECOrMultiDeltaSupportSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“剩余可由单一 CRT 平移相位解释”的出口。
+
+## 81. cycle-debt multi-delta core CRT load
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_multi_delta_core_crt_load_router.py
+docs/monograph/prime-matrix-cycle-debt-multi-delta-core-crt-load-router.md
+data/prime-matrix-cycle-debt-multi-delta-core-crt-load-ledger.json
+```
+
+本步把多相位核心的每条相位边展开成实际 composite slots 与阻断素因子。也就是说，multi-delta 不再只是“至少几个 delta”的抽象计数，而是每个 delta lane 上实际要承载多少需求宽度、多少小/中素因子 CRT 条件。
+
+```text
+k13_enumerated_core_matching_count=96
+k13_minimum_delta_count=7
+k13_minimum_delta_matching_count=2
+k13_best_min_delta_global_lcm_log10=36.165
+k14_enumerated_core_matching_count=2
+k14_minimum_delta_count=4
+k14_minimum_delta_matching_count=1
+k14_best_min_delta_global_lcm_log10=31.716
+all_min_delta_lcms_exceed_period=true
+```
+
+结果：
+
+- `K=14` 的最小多相位核心唯一，需求宽度 `52`，全局 lcm 约 `10^31.716`。
+- `K=13` 的可枚举刚性核心需求宽度 `71`，最小 delta 方案只有 `2` 个，全局 lcm 约 `10^36.165`。
+- 两者的最小 delta 核心 lcm 都远超本地周期 `5680`。
+
+当前 actual-load 前沿收窄为：
+
+```text
+multi-delta core CRT-load PDEC  OR  K=13 low-shell full-residue SAE
+```
+
+最新接口为：
+
+```text
+MultiDeltaCoreCRTLoadPDECOrLowShellFullResidueSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“multi-delta support 只是轻量相位碎裂”的解释。
