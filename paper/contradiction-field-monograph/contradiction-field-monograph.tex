@@ -9273,6 +9273,86 @@ Siegel/ColumnCRT/PDEC exit.  No unconditional row/column theorem is claimed
 here.
 \end{proof}
 
+\begin{theorem}[Large splitting as a beta-gap and zero-packet budget]
+Let
+\[
+G_s(P)=\sum_{\substack{P<\ell\le P^2\\ \chi_P(\ell)=s}}\log \ell,\qquad
+H_0(P)=G_+(P)+G_-(P),\qquad
+H_{\chi}(P)=G_+(P)-G_-(P).
+\]
+Then the large-splitting gate
+\[
+\min_s G_s(P)>2P\log P
+\]
+is equivalent to
+\[
+1-\frac{|H_{\chi}(P)|}{H_0(P)}
+  > \frac{4P\log P}{H_0(P)}.
+\]
+Consequently, any explicit-formula estimate of the form
+\[
+\frac{|H_{\chi}(P)|}{H_0(P)}\le R_{\beta}(P)+E_{\rm zero}(P)
+\]
+closes the large-splitting gate whenever
+\[
+R_{\beta}(P)+E_{\rm zero}(P)
+  <1-\frac{4P\log P}{H_0(P)}.
+\]
+For the real-zero shadow model
+\[
+R_{\beta}(P)=\frac{P^{2\beta}-P^{\beta}}{\beta H_0(P)},\qquad
+\beta=1-\delta,
+\]
+the critical no-residual value of \(\delta\) is asymptotic to \(2/P\) when
+\(H_0(P)\sim P^2\).
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-large-splitting-beta-gap-router.md.
+\end{quote}
+The first equivalence is the identity
+\[
+\min_s G_s(P)=\frac{H_0(P)-|H_{\chi}(P)|}{2}.
+\]
+Thus \(\min_sG_s(P)>2P\log P\) is exactly
+\[
+H_0(P)-|H_{\chi}(P)|>4P\log P,
+\]
+and division by \(H_0(P)>0\) gives the stated projection-gap form.
+
+The explicit-formula budget statement is purely algebraic: if the normalized
+character projection is bounded by \(R_{\beta}+E_{\rm zero}\), then it is
+enough for that upper bound to be below the allowed ratio
+\(1-4P\log P/H_0(P)\).
+
+For the scale calculation, put \(x=P^2\), \(\beta=1-\delta\), and
+\(H_0(P)\sim P^2\).  Near \(\delta=0\),
+\[
+\frac{P^{2\beta}-P^{\beta}}{\beta H_0(P)}
+  =1-\delta(2\log P-1)+o(\delta\log P)+o(1/P).
+\]
+The required missing ratio is
+\[
+\frac{4P\log P}{H_0(P)}\sim \frac{4\log P}{P}.
+\]
+Equating these first-order quantities gives
+\[
+\delta\sim \frac{4\log P/P}{2\log P-1}\sim \frac{2}{P}.
+\]
+Hence a persistent failure must come either from a real zero within the
+\(1/P\) scale, or from a non-real zero packet, endpoint, or prime-power
+residual consuming the same slack.  The remaining self-contained target is
+\begin{quote}\footnotesize\ttfamily
+SquareScaleQuadraticBetaGapAndZeroPacketResidualBudgetAtP2,
+\end{quote}
+or the named exit
+\begin{quote}\footnotesize\ttfamily
+UltraCloseRealZeroOrCoherentZeroPacketLargeSplittingPDEC.
+\end{quote}
+No unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

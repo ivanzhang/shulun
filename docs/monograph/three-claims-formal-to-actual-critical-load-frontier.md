@@ -5212,3 +5212,90 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“继续在 `ell<P` 低 CRT 周期中寻找全局投影矛盾”的误出口。剩余必须攻击大素数二次分裂质量，或把极端分裂荒漠作为显式 PDEC/Siegel 包处理。
+
+## 129. Large splitting beta-gap router
+
+新增文件
+
+```text
+experiments/prime_matrix_large_splitting_beta_gap_router.py
+docs/monograph/prime-matrix-large-splitting-beta-gap-router.md
+docs/monograph/prime-matrix-large-splitting-beta-gap-router.json
+data/prime-matrix-large-splitting-beta-gap-ledger.json
+```
+
+本步把 `LargePrimeQuadraticSplittingMinorityMassBeatsTwoPLogPAtSquareScale` 改写成高区间二次角色投影和显式公式预算。令：
+
+```text
+G_s(P)=sum_{P<ell<=P^2, chi_P(ell)=s} log ell,
+H0=G_++G_-,
+Hchi=G_+-G_-.
+```
+
+则
+
+```text
+min_s G_s(P)>2P log P
+<=> 1-|Hchi|/H0 > 4P log P/H0.
+```
+
+若显式公式预算为
+
+```text
+|Hchi|/H0 <= R_beta(P)+E_zero(P),
+R_beta(P)=(P^(2 beta)-P^beta)/(beta H0),
+```
+
+则闭合条件是
+
+```text
+R_beta(P)+E_zero(P)<1-4P log P/H0.
+```
+
+无剩余零包时，实零临界 gap `delta=1-beta` 由
+
+```text
+R_(1-delta)(P)=1-4P log P/H0
+```
+
+确定，渐近尺度为 `delta_crit~2/P`。所以持久失败必须是 `beta=1-O(1/P)` 的超近实零，或非实零/端点/素数幂残差同向相干。
+
+这把剩余硬点压成：
+
+```text
+SquareScaleQuadraticBetaGapAndZeroPacketResidualBudgetAtP2
+```
+
+失败出口命名为：
+
+```text
+UltraCloseRealZeroOrCoherentZeroPacketLargeSplittingPDEC
+```
+
+当前读数：
+
+```text
+high_projection_equivalence_closed=true
+beta_gap_critical_scale_identified=true
+beta_gap_and_zero_packet_budget_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR (SelfContainedEffectivePrimeModulusQuadraticBetaGapAtScaleOneOverP
+               AND NonrealZeroPacketResidualBelowLargeSplittingSlackAtP2)
+           OR UltraCloseRealZeroOrCoherentZeroPacketLargeSplittingPDEC))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“继续在普通 CRT 容量语言中寻找闭合”的误出口。剩余必须是有效 `1/P` 级 beta-gap、非实零包残差预算，或显式超近实零/相干零包 PDEC。

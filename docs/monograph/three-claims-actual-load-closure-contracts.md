@@ -5304,3 +5304,86 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“低 CRT 周期结构本身足以排斥 ultra-near-one 投影”的误出口。剩余最窄接口是证明大素数二次分裂少数半类质量超过 `2P log P`，或把长期失败登记为大分裂荒漠/Siegel/ColumnCRT-PDEC 出口。行/列命题仍未无条件闭合。
+
+## 118. Large splitting beta-gap router
+
+新增文件
+
+```text
+experiments/prime_matrix_large_splitting_beta_gap_router.py
+docs/monograph/prime-matrix-large-splitting-beta-gap-router.md
+docs/monograph/prime-matrix-large-splitting-beta-gap-router.json
+data/prime-matrix-large-splitting-beta-gap-ledger.json
+```
+
+本步继续下钻
+
+```text
+LargePrimeQuadraticSplittingMinorityMassBeatsTwoPLogPAtSquareScale
+```
+
+定义高区间半类质量与投影：
+
+```text
+G_s(P)=sum_{P<ell<=P^2, chi_P(ell)=s} log ell,
+H0=G_+(P)+G_-(P),
+Hchi=G_+(P)-G_-(P).
+```
+
+大分裂门等价于
+
+```text
+min_s G_s(P)>2P log P
+<=> 1-|Hchi|/H0 > 4P log P/H0.
+```
+
+若显式公式给出预算
+
+```text
+|Hchi|/H0 <= R_beta(P)+E_zero(P),
+R_beta(P)=(P^(2 beta)-P^beta)/(beta H0),
+```
+
+则足以证明
+
+```text
+R_beta(P)+E_zero(P)<1-4P log P/H0.
+```
+
+无剩余零包的实零模型中，临界 `delta=1-beta` 满足
+
+```text
+R_(1-delta)(P)=1-4P log P/H0,
+```
+
+且在 `H0~P^2` 下为 `delta_crit~2/P`。因此持久失败不再是普通二次半类偏置，而是实零贴近到 `1/P` 级，或非实零/端点/素数幂残差同向相干吃掉同一 slack。
+
+当前读数：
+
+```text
+high_projection_equivalence_closed=true
+beta_gap_critical_scale_identified=true
+beta_gap_and_zero_packet_budget_proved=false
+row_column_unconditional_closed=false
+```
+
+有限诊断 `7<=P<=1000` 中，大分裂门失败模数仍为 `P=7,11,13`；从 `P>=17` 开始，高区间少数质量/所需质量最小比值为 `1.2504140082035853`；从 `P>=101` 开始，临界 `P(1-beta)` 约在 `2.2492763319844737` 到 `2.7065999766476923` 之间。该读数只用于定位，不作为无限证明输入。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR (SelfContainedEffectivePrimeModulusQuadraticBetaGapAtScaleOneOverP
+               AND NonrealZeroPacketResidualBelowLargeSplittingSlackAtP2)
+           OR UltraCloseRealZeroOrCoherentZeroPacketLargeSplittingPDEC))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“普通低轮或常数级二次偏置分析仍能继续压缩”的误出口。剩余最窄接口是有效 `1/P` 级 beta-gap 与非实零包残差预算，或把长期失败登记为超近实零/相干零包 PDEC/Siegel 出口。行/列命题仍未无条件闭合。
