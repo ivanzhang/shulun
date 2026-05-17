@@ -8534,6 +8534,68 @@ DStructure/Rankin gates.  Hence this is a barrier identification, not an
 unconditional proof.
 \end{proof}
 
+\begin{theorem}[Linnik--2 defects and nonprincipal character obstruction]
+For a prime modulus \(P\), put
+\[
+\vartheta_a(P)=\sum_{\substack{\ell\le P^2\\ \ell\ {\rm prime}\\
+\ell\equiv a\pmod P}}\log \ell,\qquad a\in{\mathbb F}_P^\ast,
+\]
+and for each Dirichlet character \(\chi\bmod P\) put
+\[
+T_\chi(P)=\sum_{a\in{\mathbb F}_P^\ast}\chi(a)\vartheta_a(P).
+\]
+Let \(T_0(P)\) denote the principal-character mass and let
+\[
+N_a(P)=\sum_{\chi\ne\chi_0}\overline{\chi(a)}T_\chi(P)
+\]
+be the nonprincipal projection at the class \(a\).  Then
+\[
+\vartheta_a(P)=\frac{T_0(P)+N_a(P)}{P-1}.
+\]
+Consequently a Linnik--2 zero-column defect, namely
+\(\vartheta_a(P)=0\) for some \(a\in{\mathbb F}_P^\ast\), forces the exact
+negative phase alignment
+\[
+N_a(P)=-T_0(P)
+\]
+and hence
+\[
+\sum_{\chi\ne\chi_0}|T_\chi(P)|^2\ge \frac{T_0(P)^2}{P-2}.
+\]
+Thus the remaining AP route is equivalent to excluding this pointwise
+nonprincipal negative projection at \(x=P^2\), or else returning to the
+same-set PDEC scope or signed-payload structural frontier.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-linnik2-nonprincipal-character-obstruction-router.md.
+\end{quote}
+All identities are finite orthogonality identities on the group
+\({\mathbb F}_P^\ast\).  Since
+\[
+T_\chi(P)=\sum_{b\in{\mathbb F}_P^\ast}\chi(b)\vartheta_b(P),
+\]
+character inversion gives the displayed formula for \(\vartheta_a(P)\).
+If a nonzero column has no prime below \(P^2\), then
+\(\vartheta_a(P)=0\), so the nonprincipal projection must cancel the entire
+principal mass.  Applying Cauchy's inequality to
+\[
+T_0(P)=\left|\sum_{\chi\ne\chi_0}\overline{\chi(a)}T_\chi(P)\right|
+\]
+and using \(\sum_{\chi\ne\chi_0}|\chi(a)|^2=P-2\) gives the stated energy
+lower bound.
+
+The archived finite scan up to \(P\le3000\) finds no theta-zero residue class,
+with largest normalized negative theta deficit about \(0.686688\) at \(P=73\),
+but this empirical fact is not used in the proof.  The theorem only sharpens
+the hard point: complete CRT symmetry and averaged AP estimates do not by
+themselves exclude the required negative nonprincipal projection.  No
+pointwise projection bound, PDEC scope certificate, signed-payload constructor,
+ExactUV incidence theorem, model-gap ledger, rate-preservation ledger, or
+DStructure/Rankin promotion is proved here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

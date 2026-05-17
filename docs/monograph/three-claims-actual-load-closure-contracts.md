@@ -4459,3 +4459,65 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 这一步把“局部化 P-CRT 列均匀转移”压成一个清晰的 AP 点态屏障。完整 CRT 均匀性、BV/平均 AP
 均匀性和有限样本均不能替代这个点态断言；若不引入新的 AP 定理，路线必须回到 PDEC scope 或
 signed payload/ExactUV 前沿。
+
+## 109. Linnik=2 非主角色障碍回接
+
+后续文件
+
+```text
+experiments/prime_matrix_linnik2_nonprincipal_character_obstruction_router.py
+docs/monograph/prime-matrix-linnik2-nonprincipal-character-obstruction-router.md
+docs/monograph/prime-matrix-linnik2-nonprincipal-character-obstruction-router.json
+data/prime-matrix-linnik2-nonprincipal-character-obstruction-ledger.json
+```
+
+本证书继续攻击 `PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2`。对每个非零剩余类定义
+
+```text
+theta_a(P)=sum_{ell<=P^2, ell prime, ell=a mod P} log ell
+T_chi(P)=sum_{a in F_P^*} chi(a) theta_a(P)
+N_a(P)=sum_{chi!=chi0} conjugate(chi(a)) T_chi(P)
+```
+
+有限群角色正交给出精确恒等式：
+
+```text
+theta_a(P)=(T_0(P)+N_a(P))/(P-1)
+```
+
+因此若某个非 P 列在 `P^2` 前没有素数，则 `theta_a(P)=0`，从而
+
+```text
+N_a(P)=-T_0(P)
+sum_{chi!=chi0}|T_chi(P)|^2 >= T_0(P)^2/(P-2)
+```
+
+这一步把零列缺陷压成显式的非主角色负相位投影/能量尖峰。下一步只需排斥所有 `a` 上
+`N_a(P)` 到达 `-T_0(P)` 的极端负相位对齐。
+
+当前读数：
+
+```text
+theta_character_expansion_exact=true
+zero_column_forces_negative_projection=true
+zero_column_forces_energy_spike=true
+pointwise_projection_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+有限样本 `P<=3000` 检查 `429` 个素数模数，theta 零剩余类总数为 `0`，最大负缺口比例为
+`0.686688`（`P=73`）。这只作为风险定位，不作为证明。
+
+最新活动基收缩为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步仍不是无条件闭合；当前语料尚未证明点态非主投影界，也未排除 Siegel/大偏差型负相位集中。

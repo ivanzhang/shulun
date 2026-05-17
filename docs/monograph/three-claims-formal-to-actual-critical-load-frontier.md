@@ -4435,3 +4435,63 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 因此局部化 P-CRT 路线没有给出新的无条件闭合；它要么提交新的点态 AP 定理，要么回流到结构前沿。
+
+## 116. Linnik=2 nonprincipal character obstruction router
+
+新增文件
+
+```text
+experiments/prime_matrix_linnik2_nonprincipal_character_obstruction_router.py
+docs/monograph/prime-matrix-linnik2-nonprincipal-character-obstruction-router.md
+docs/monograph/prime-matrix-linnik2-nonprincipal-character-obstruction-router.json
+data/prime-matrix-linnik2-nonprincipal-character-obstruction-ledger.json
+```
+
+本步把 `PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2` 的失败形态写成有限角色正交的精确障碍。
+设
+
+```text
+theta_a(P)=sum_{ell<=P^2, ell prime, ell=a mod P} log ell
+T_chi(P)=sum_{a in F_P^*} chi(a) theta_a(P)
+N_a(P)=sum_{chi!=chi0} conjugate(chi(a)) T_chi(P)
+```
+
+则
+
+```text
+theta_a(P)=(T_0(P)+N_a(P))/(P-1)
+```
+
+所以零列缺陷 `theta_a(P)=0` 等价于非主投影精确命中 `N_a(P)=-T_0(P)`，并强制
+
+```text
+sum_{chi!=chi0}|T_chi(P)|^2 >= T_0(P)^2/(P-2)
+```
+
+当前读数：
+
+```text
+theta_character_expansion_exact=true
+zero_column_forces_negative_projection=true
+zero_column_forces_energy_spike=true
+pointwise_projection_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+有限样本 `P<=3000` 中 theta 零剩余类总数为 `0`，最大负缺口比例为 `0.686688`，发生于 `P=73`；
+该样本不作为证明输入。
+
+最新活动基变为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步关闭的是“只靠完整 CRT 平均或 AP 平均即可推出每个短列命中”的误出口；真正剩余是逐剩余类的
+非主负相位投影界，或回流到 PDEC scope / signed payload / ExactUV 结构前沿。

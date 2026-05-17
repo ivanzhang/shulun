@@ -1,0 +1,315 @@
+{
+  "certificate_type": "prime_matrix_linnik2_nonprincipal_character_obstruction_router",
+  "status": "linnik2_zero_column_reduced_to_nonprincipal_character_projection_barrier_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "empirical_absence_not_used": true,
+  "theta_character_expansion_exact": true,
+  "zero_column_forces_negative_projection": true,
+  "zero_column_forces_energy_spike": true,
+  "nonprincipal_spike_contradiction_found": false,
+  "pointwise_projection_bound_proved": false,
+  "pointwise_linnik2_ap_theorem_proved": false,
+  "row_column_unconditional_closed": false,
+  "target_input_before_router": "PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2",
+  "next_direct_attack_target": "PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2",
+  "structural_fallback_target": "AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate_OR_AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn",
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "formula_ledger": {
+    "theta_class": "theta_a(P)=sum_{ell<=P^2, ell prime, ell=a mod P} log ell",
+    "character_sum": "T_chi(P)=sum_{a in F_P^*} chi(a) theta_a(P)=sum_{ell<=P^2, ell!=P} chi(ell) log ell",
+    "orthogonality": "theta_a(P)=(1/(P-1))*sum_chi conjugate(chi(a))*T_chi(P)",
+    "principal_mass": "T_0(P)=sum_{a in F_P^*} theta_a(P)",
+    "nonprincipal_projection": "N_a(P)=sum_{chi!=chi0} conjugate(chi(a))*T_chi(P)=(P-1)theta_a(P)-T_0(P)",
+    "zero_column_implication": "theta_a(P)=0 => N_a(P)=-T_0(P)",
+    "energy_floor": "theta_a(P)=0 => sum_{chi!=chi0}|T_chi(P)|^2 >= T_0(P)^2/(P-2)",
+    "pointwise_sufficient_exclusion": "if N_a(P)>-T_0(P) for every a, then every nonzero column has a prime <=P^2"
+  },
+  "exact_character_chain": [
+    {
+      "from": "PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2",
+      "to": "not Linnik2ZeroColumnDefect"
+    },
+    {
+      "from": "Linnik2ZeroColumnDefect",
+      "to": "theta_a(P)=0 for some a in F_P^*"
+    },
+    {
+      "from": "theta_a=(T_0+N_a)/(P-1)",
+      "to": "N_a=(P-1)theta_a-T_0"
+    },
+    {
+      "from": "theta_a=0",
+      "to": "N_a=-T_0 exact negative nonprincipal projection"
+    },
+    {
+      "from": "N_a=-T_0",
+      "to": "sum_{chi!=chi0}|T_chi|^2 >= T_0^2/(P-2)"
+    },
+    {
+      "from": "exclude zero column",
+      "to": "PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2"
+    }
+  ],
+  "sample_character_obstruction": {
+    "max_p": 3000,
+    "prime_moduli_checked": 429,
+    "zero_theta_residue_total": 0,
+    "worst_deficit_ratio": 0.6866878704624628,
+    "worst_deficit_modulus": 73,
+    "top_records": [
+      {
+        "P": 73,
+        "theta0": 5215.133140522448,
+        "average_theta_per_nonzero_class": 72.43240472947845,
+        "min_theta_residue": 72,
+        "min_theta": 22.69395097331767,
+        "max_negative_deficit": 49.73845375616078,
+        "max_negative_deficit_ratio_to_average": 0.6866878704624628,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 924578.7558599835,
+        "zero_defect_nonprincipal_energy_floor": 383064.98131514835,
+        "energy_to_zero_defect_floor_ratio": 2.413634242121784,
+        "zero_defect_max_character_floor": 73.45257944397814
+      },
+      {
+        "P": 7,
+        "theta0": 39.014309282297646,
+        "average_theta_per_nonzero_class": 6.502384880382941,
+        "min_theta_residue": 4,
+        "min_theta": 2.3978952727983707,
+        "max_negative_deficit": 4.10448960758457,
+        "max_negative_deficit_ratio_to_average": 0.6312283390002665,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 135.17401089525333,
+        "zero_defect_nonprincipal_energy_floor": 304.42326575495525,
+        "energy_to_zero_defect_floor_ratio": 0.444033114749059,
+        "zero_defect_max_character_floor": 7.802861856459529
+      },
+      {
+        "P": 13,
+        "theta0": 149.36791031202745,
+        "average_theta_per_nonzero_class": 12.44732585933562,
+        "min_theta_residue": 12,
+        "min_theta": 4.634728988229636,
+        "max_negative_deficit": 7.812596871105985,
+        "max_negative_deficit_ratio_to_average": 0.6276526347421408,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 2421.749986501413,
+        "zero_defect_nonprincipal_energy_floor": 2028.2520573619886,
+        "energy_to_zero_defect_floor_ratio": 1.1940083963978425,
+        "zero_defect_max_character_floor": 13.57890093745704
+      },
+      {
+        "P": 43,
+        "theta0": 1784.814910452861,
+        "average_theta_per_nonzero_class": 42.4955931060205,
+        "min_theta_residue": 15,
+        "min_theta": 16.923311929234927,
+        "max_negative_deficit": 25.572281176785573,
+        "max_negative_deficit_ratio_to_average": 0.6017631313672066,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 119588.22310693987,
+        "zero_defect_nonprincipal_energy_floor": 77696.6893798745,
+        "energy_to_zero_defect_floor_ratio": 1.5391675509139053,
+        "zero_defect_max_character_floor": 43.53207098665515
+      },
+      {
+        "P": 19,
+        "theta0": 332.12870717365246,
+        "average_theta_per_nonzero_class": 18.451594842980693,
+        "min_theta_residue": 12,
+        "min_theta": 8.106816038947052,
+        "max_negative_deficit": 10.344778804033641,
+        "max_negative_deficit_ratio_to_average": 0.5606441552649295,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 9247.242102290273,
+        "zero_defect_nonprincipal_energy_floor": 6488.792831108341,
+        "energy_to_zero_defect_floor_ratio": 1.4251097766532894,
+        "zero_defect_max_character_floor": 19.536982774920734
+      },
+      {
+        "P": 199,
+        "theta0": 39351.34506977007,
+        "average_theta_per_nonzero_class": 198.74416701904076,
+        "min_theta_residue": 9,
+        "min_theta": 100.5187712366992,
+        "max_negative_deficit": 98.22539578234156,
+        "max_negative_deficit_ratio_to_average": 0.4942303326715045,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 26139846.43583751,
+        "zero_defect_nonprincipal_energy_floor": 7860550.044670645,
+        "energy_to_zero_defect_floor_ratio": 3.325447492514853,
+        "zero_defect_max_character_floor": 199.75302065873132
+      },
+      {
+        "P": 71,
+        "theta0": 4958.556977158093,
+        "average_theta_per_nonzero_class": 70.83652824511562,
+        "min_theta_residue": 48,
+        "min_theta": 37.722402625149655,
+        "max_negative_deficit": 33.11412561996596,
+        "max_negative_deficit_ratio_to_average": 0.4674724529889602,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 714323.8312713432,
+        "zero_defect_nonprincipal_energy_floor": 356337.49703946675,
+        "energy_to_zero_defect_floor_ratio": 2.0046271784645415,
+        "zero_defect_max_character_floor": 71.86314459649411
+      },
+      {
+        "P": 101,
+        "theta0": 10103.459536852786,
+        "average_theta_per_nonzero_class": 101.03459536852786,
+        "min_theta_residue": 30,
+        "min_theta": 54.65072305081055,
+        "max_negative_deficit": 46.38387231771731,
+        "max_negative_deficit_ratio_to_average": 0.4590890095469796,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 2877755.834671249,
+        "zero_defect_nonprincipal_energy_floor": 1031110.0465941568,
+        "energy_to_zero_defect_floor_ratio": 2.790929876182197,
+        "zero_defect_max_character_floor": 102.05514683689682
+      },
+      {
+        "P": 5,
+        "theta0": 17.613660787695082,
+        "average_theta_per_nonzero_class": 4.4034151969237705,
+        "min_theta_residue": 1,
+        "min_theta": 2.3978952727983707,
+        "max_negative_deficit": 2.0055199241254,
+        "max_negative_deficit_ratio_to_average": 0.45544647380207476,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 52.12907198667033,
+        "zero_defect_nonprincipal_energy_floor": 103.41368211466244,
+        "energy_to_zero_defect_floor_ratio": 0.5040829310078231,
+        "zero_defect_max_character_floor": 5.871220262565028
+      },
+      {
+        "P": 31,
+        "theta0": 911.4801918753474,
+        "average_theta_per_nonzero_class": 30.38267306251158,
+        "min_theta_residue": 4,
+        "min_theta": 16.605352275144348,
+        "max_negative_deficit": 13.77732078736723,
+        "max_negative_deficit_ratio_to_average": 0.4534597979256382,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 41378.03285385792,
+        "zero_defect_nonprincipal_energy_floor": 28648.142764866207,
+        "energy_to_zero_defect_floor_ratio": 1.4443530665660995,
+        "zero_defect_max_character_floor": 31.430351443977496
+      },
+      {
+        "P": 131,
+        "theta0": 16989.521610726177,
+        "average_theta_per_nonzero_class": 130.68862777481675,
+        "min_theta_residue": 31,
+        "min_theta": 71.43575772153459,
+        "max_negative_deficit": 59.252870053282166,
+        "max_negative_deficit_ratio_to_average": 0.4533896411811586,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 5556842.765974174,
+        "zero_defect_nonprincipal_energy_floor": 2237549.182645983,
+        "energy_to_zero_defect_floor_ratio": 2.483450557901483,
+        "zero_defect_max_character_floor": 131.70171791260603
+      },
+      {
+        "P": 139,
+        "theta0": 19088.560187710296,
+        "average_theta_per_nonzero_class": 138.3228999109442,
+        "min_theta_residue": 34,
+        "min_theta": 77.23384926529754,
+        "max_negative_deficit": 61.08905064564665,
+        "max_negative_deficit_ratio_to_average": 0.44164090461505173,
+        "zero_theta_residue_count": 0,
+        "zero_theta_residue_sample": [],
+        "nonprincipal_character_energy": 5956234.9757288955,
+        "zero_defect_nonprincipal_energy_floor": 2659657.8835024713,
+        "energy_to_zero_defect_floor_ratio": 2.2394741115670116,
+        "zero_defect_max_character_floor": 139.3325561146737
+      }
+    ]
+  },
+  "rows": [
+    {
+      "gate": "Linnik2BarrierImported",
+      "closed": true,
+      "proved": false,
+      "meaning": "上一层已把局部化 P-CRT 列转移压成 prime-modulus 点态 AP/Linnik=2 屏障。",
+      "remaining": "PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2"
+    },
+    {
+      "gate": "ThetaCharacterExpansionExact",
+      "closed": true,
+      "proved": true,
+      "meaning": "对 F_P^* 上的 theta residue vector 使用 Dirichlet 角色正交展开，公式完全有限且不依赖渐近。",
+      "remaining": "none"
+    },
+    {
+      "gate": "ZeroColumnForcesNegativeProjection",
+      "closed": true,
+      "proved": true,
+      "meaning": "若某非零列在 P^2 前无素数，则该列非主角色投影必须精确等于 -T_0。",
+      "remaining": "NonprincipalCharacterEnergySpikeForLinnik2Defect"
+    },
+    {
+      "gate": "ZeroColumnForcesEnergySpike",
+      "closed": true,
+      "proved": true,
+      "meaning": "由 Cauchy，零列缺陷迫使非主角色总能量至少达到 T_0^2/(P-2)，且至少一个非主角色大小达到 T_0/(P-2)。",
+      "remaining": "NonprincipalCharacterEnergySpikeForLinnik2Defect"
+    },
+    {
+      "gate": "AverageCRTStillInsufficient",
+      "closed": true,
+      "proved": true,
+      "meaning": "完整 CRT 均匀性对应 principal mass；零列排斥需要控制每个 a 的非主投影负相位。",
+      "remaining": "PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2"
+    },
+    {
+      "gate": "NonprincipalSpikeContradictionFound",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料没有证明所有非主投影都严格高于 -T_0，也没有给出排斥 Siegel/大偏差相位的无条件点态界。",
+      "remaining": "PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只把 Linnik=2 缺陷转写为精确角色相位/能量障碍，尚未排斥该障碍。",
+      "remaining": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance"
+    }
+  ],
+  "closed_gates": [
+    "Linnik2BarrierImported",
+    "ThetaCharacterExpansionExact",
+    "ZeroColumnForcesNegativeProjection",
+    "ZeroColumnForcesEnergySpike",
+    "AverageCRTStillInsufficient"
+  ],
+  "open_gates": [
+    "Linnik2BarrierImported",
+    "NonprincipalSpikeContradictionFound",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-localized-pcrt-transfer-linnik2-barrier-router.json": "98232747aaf27a93f4cc68cc5bc8d29d80c5d0786bfeead635a6b42293ba6107",
+    "docs/final-proof-draft.md": "c8958bc1f15441975c2f7c2b206609eb88fa43adc21313e26742b3bb1addea9b",
+    "docs/prime-density-waves-V.md": "78f11a07a2894ee935f18a8a87baf914cad1c75a82282266ff2ba909092c7589",
+    "docs/prime-density-waves-VIII.md": "b7f072df8c7b33babe19ca00bc5a795030148041c1051ee884a2bdfc01e37988",
+    "docs/prime-density-waves-X.md": "512245acdfc1bf8085de9e6de6580f41acdb1c05d9039ea44f84cf82751626fe"
+  },
+  "plain_conclusion": "Linnik=2 零列缺陷可以精确改写为非主 Dirichlet 角色的负相位投影障碍：若某个非零 residue class `a mod P` 在 `P^2` 前没有素数，则 theta 权 `theta_a(P)=0`，从而非主投影 `N_a(P)` 必须等于 `-T_0(P)`。这迫使非主角色能量达到显式下界，但该能量/相位尖峰本身并未在当前语料中被排斥。因此本步把点态 AP 屏障压成 `PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2`，不是行/列命题的无条件闭合。"
+}
