@@ -4574,3 +4574,68 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“用总能量容量直接制造矛盾”的误出口；剩余是逐 residue 的 rank-one 相位极化排斥。
+
+## 111. 三命题前沿与 rank-one 显式公式屏障回接
+
+后续文件
+
+```text
+experiments/three_claims_frontier_rankone_explicit_formula_router.py
+docs/monograph/three-claims-frontier-rankone-explicit-formula-router.md
+docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json
+data/three-claims-frontier-rankone-explicit-formula-ledger.json
+```
+
+本证书重新梳理三个命题的最前沿：
+
+```text
+row/column latest open:
+  RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2
+
+two-point / quadratic secondary sieve latest open:
+  I3CoreTrueResidualTotalLargeIncidenceOrExternalDIBFIKLSWindow
+
+RH latest open:
+  IndependentRefereeAcceptanceOfAllRHControlledExits
+```
+
+对行/列最新硬点继续下钻：
+
+```text
+rho_a(P)=1-theta(P^2;P,a)/(T_0(P)/(P-1))
+rho_a(P)<1  iff  theta(P^2;P,a)>0
+```
+
+因此 rank-one 相位排斥不是一个新的弱命题，而是 sharp pointwise AP positivity：
+
+```text
+SharpPointwiseThetaAPPositivityAtXEqualsP2ForPrimeModuli
+```
+
+显式公式口径为：主项约为 `P`，必须逐个 residue 证明带符号非主零点包和 trivial 项严格小于主项。
+当前 GRH 形状误差 `O(P log^2 P)`、BV 平均、完整 CRT 均匀性、标准 Linnik 均不能推出阈值正性。
+
+当前读数：
+
+```text
+rankone_equivalent_to_theta_ap_positivity=true
+explicit_formula_barrier_identified=true
+current_classical_inputs_sufficient=false
+row_column_unconditional_closed=false
+two_point_unconditional_closed=false
+rh_unconditional_closed=false
+```
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步仍不是无条件闭合；它关闭的是将三个命题状态混用、将 GRH/BV/CRT 平均误用为 `P^2` 点态 AP 正性的路线。

@@ -4554,3 +4554,62 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 因此当前最窄接口已经不是 L2 容量，而是 evaluation simplex 的点态负相位极化。
+
+## 118. Three-claims frontier / rank-one explicit formula router
+
+新增文件
+
+```text
+experiments/three_claims_frontier_rankone_explicit_formula_router.py
+docs/monograph/three-claims-frontier-rankone-explicit-formula-router.md
+docs/monograph/three-claims-frontier-rankone-explicit-formula-router.json
+data/three-claims-frontier-rankone-explicit-formula-ledger.json
+```
+
+本步先把合著稿三个命题的前沿拆开：
+
+| 命题 | 最新剩余 |
+| --- | --- |
+| 行/列 | `RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2` |
+| 二次筛/two-point | `I3CoreTrueResidualTotalLargeIncidenceOrExternalDIBFIKLSWindow` |
+| RH | `IndependentRefereeAcceptanceOfAllRHControlledExits` |
+
+然后继续攻击行/列最新硬点。由上一层公式，
+
+```text
+rho_a(P)=1-theta(P^2;P,a)/(T_0(P)/(P-1))
+```
+
+所以 `rho_a(P)<1` 对所有 `a` 成立，等价于
+
+```text
+theta(P^2;P,a)>0    for every a in F_P^*
+```
+
+这正是 prime modulus 下每个非零 AP 类在 `P^2` 前有素数的 sharp positivity。显式公式把它压成：
+每个 residue 的带符号非主零点包必须小于约 `P` 的主项。
+
+当前读数：
+
+```text
+rankone_equivalent_to_theta_ap_positivity=true
+explicit_formula_barrier_identified=true
+current_classical_inputs_sufficient=false
+row_column_unconditional_closed=false
+two_point_unconditional_closed=false
+rh_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ExplicitAPZeroPacketBoundBeatingMainTermAtXEqualsP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书说明：继续走解析 AP 路线时，目标已不是平均密度或总能量，而是 `x=P^2, q=P` 的逐类显式零点包强界。

@@ -8645,6 +8645,57 @@ evaluation projection exclusion at \(x=P^2\), or else a return to same-set
 PDEC scope or signed payload.
 \end{proof}
 
+\begin{theorem}[Three-claim frontier and the sharp AP zero-packet barrier]
+The three main claims currently have distinct frontiers.  The row/column chain
+has been sharpened to the rank-one condition
+\[
+\rho_a(P)<1\qquad(a\in{\mathbb F}_P^\ast),
+\]
+which is equivalent to
+\[
+\vartheta_a(P)>0\qquad(a\in{\mathbb F}_P^\ast).
+\]
+The two-point secondary-sieve chain remains conditional on the I3-Core true
+residual total-incidence input, or on the external DI/BFI--Kloosterman
+large-sieve route.  The RH contradiction-field chain remains a verification
+package awaiting independent acceptance of its controlled exits.
+
+For the row/column AP branch, the rank-one condition is therefore precisely
+the sharp positivity statement
+\[
+\theta(P^2;P,a)>0\quad\text{for every }a\in{\mathbb F}_P^\ast.
+\]
+In explicit-formula language this requires the signed nonprincipal zero packet
+in each residue class to be strictly smaller than the main term, which is of
+order \(P\).  Complete CRT averages, Bombieri--Vinogradov type mean estimates,
+standard Linnik bounds with exponent \(>2\), and GRH-shape errors
+\(O(P\log^2P)\) do not by themselves imply this \(x=P^2\) pointwise
+positivity.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/three-claims-frontier-rankone-explicit-formula-router.md.
+\end{quote}
+The equivalence \(\rho_a(P)<1\iff\vartheta_a(P)>0\) follows from the identity
+\[
+\rho_a(P)=1-\frac{\vartheta_a(P)}{T_0(P)/(P-1)}
+\]
+proved in the preceding theorem.  Since \(\vartheta_a(P)\) is exactly the
+Chebyshev prime weight in the class \(a\bmod P\) up to \(P^2\), positivity is
+equivalent to a prime in that nonzero class below the square barrier.
+
+The explicit formula for \(\theta(P^2;P,a)\) has a principal term of size
+about \(P\), plus signed nonprincipal zero packets and controlled trivial
+terms.  Therefore the sharp remaining analytic input is a pointwise bound on
+those signed packets for every \(a\).  Mean estimates and full-period CRT
+identities only control averages, not a single exceptional simplex direction.
+GRH-shape errors at \(x=P^2\) are of size \(P\log^2P\), too large to beat a
+main term of size \(P\) without additional sharp constants or cancellation.
+Thus this theorem is a frontier separation and barrier identification, not a
+promotion of any of the three claims to final unconditional theorem status.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
