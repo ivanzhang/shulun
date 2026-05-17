@@ -2169,3 +2169,46 @@ TwoResidueSpareEndpointExtensionOrTransportResetPDEC
 ```
 
 具体地，若端点外延到 `P=9647` 和 `P=9727`，两个空位会依次被填满；再到 `P=9807`，同步 residue 已是旧 residue，必须触发 transport reset-PDEC，或提前回到 SAE、unused-target、moving-carrier 出口。本节仍未关闭全局行/列命题；它排除了当前带内的直接溢出捷径，并把剩余压成显式的两空位端点外延问题。
+
+## 57. two-residue spare prime-anchor filter 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_two_residue_spare_prime_anchor_filter_router.py
+docs/monograph/prime-matrix-two-residue-spare-prime-anchor-filter-router.md
+docs/monograph/prime-matrix-two-residue-spare-prime-anchor-filter-router.json
+data/prime-matrix-two-residue-spare-prime-anchor-filter-ledger.json
+```
+
+本证书把上一节的两空位端点外延再加上一条真实链必要条件：外延锚 `P` 必须为奇素数。核心读数为：
+
+```text
+previous_hardpoint=TwoResidueSpareEndpointExtensionOrTransportResetPDEC
+admitted_step_range=[19,82]
+admitted_lattice_step_count=64
+admitted_prime_anchor_count=17
+admitted_composite_anchor_count=47
+admitted_prime_anchor_new_residue_count=13
+prime_filtered_union_size=35
+prime_filtered_nonzero_spare=35
+residue_zero_prime_anchor_impossible=true
+residue_zero_p_class_mod_5680=4047
+residue_zero_gcd_class_modulus=71
+predicted_two_spare_rows_are_prime=false
+first_prime_hit_for_residue_62={step:300,p:26687,residue:62}
+first_full_nonzero_capacity_row={residue:67,step:1192,p:98047}
+first_repeat_after_full_nonzero_capacity={step:1194,p:98207,residue:14}
+```
+
+解释如下。上一节的近端外延给出 `P=9647 -> residue 62`、`P=9727 -> residue 0`、`P=9807 -> residue 9`，但这三个 `P` 都不是素数锚；尤其 `residue 0` 的整条 AP 类满足 `P≡4047 (mod 5680)`，与模数的 gcd 为 `71`，因此在 `P>71` 时结构性不可能为素数锚。`residue 62` 虽结构上可行，但首个素数锚推迟到 `P=26687`。
+
+所以 near-fill 并不是一条真实链。把当前 admitted lattice 的 64 个步号按素数锚过滤后，只剩 17 个素数锚，新增 residue 仅 13 个；与既有 22 个 residue 合并后只有 `35/70` 个非零 residue 被覆盖，仍有 35 个非零空位。若反例链仍要通过 `minus:71` 的长 AP 素数锚到达填满所有非零 residue，当前扫描中最后一个缺失非零 residue 到 `P=98047` 才出现，随后首个素数锚重复在 `P=98207`，才会进入 transport reset-PDEC。
+
+因此最新最窄剩余接口被改写为：
+
+```text
+PrimeAnchorFilteredNonzeroResidueCoverageOrTransportResetPDEC
+```
+
+这一步关闭了“两空位近端端点外延即可填满”的真实链解释，并把剩余压成长 AP 素数锚覆盖全部非零 residue 或 transport reset-PDEC。全局行/列命题仍未无条件闭合。

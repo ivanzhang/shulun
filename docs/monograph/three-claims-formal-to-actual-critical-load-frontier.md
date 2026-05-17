@@ -2207,3 +2207,62 @@ TwoResidueSpareEndpointExtensionOrTransportResetPDEC
 ```
 
 要么证明当前端点无法合法外延到填满两个空位；要么一旦端点外延成功，再下一步持久同步必须进入 transport reset-PDEC；若同步在外延前失败，则回到 SAE、unused-target 或 moving-carrier ColumnCRT 出口。本步是对旧 residue 吸收能力的精确核算，不是全局无条件闭合。
+
+## 64. two-residue spare prime-anchor filter
+
+后续文件
+
+```text
+experiments/prime_matrix_two_residue_spare_prime_anchor_filter_router.py
+docs/monograph/prime-matrix-two-residue-spare-prime-anchor-filter-router.md
+data/prime-matrix-two-residue-spare-prime-anchor-filter-ledger.json
+```
+
+本步攻击 `TwoResidueSpareEndpointExtensionOrTransportResetPDEC` 中最窄的“两个空位近端外延”解释，并把 `P` 必须为素数锚的真实链条件加入。当前 admitted lattice 仍为步号 `19..82`，但 64 个步号中只有 17 个 `P=2687+80t` 是素数锚，新增 residue 只有 13 个：
+
+```text
+admitted_lattice_step_count=64
+admitted_prime_anchor_count=17
+admitted_prime_anchor_new_residue_count=13
+prime_filtered_union_size=35
+prime_filtered_nonzero_spare=35
+```
+
+上一节的两个近端空位外延不是合法真实链：
+
+```text
+P=9647 -> residue 62 -> composite P
+P=9727 -> residue 0  -> divisible by 71
+P=9807 -> residue 9  -> composite P
+```
+
+其中 `residue 0` 更强：其 AP 类为 `P≡4047 (mod 5680)`，`gcd(4047,5680)=71`，所以除 `P=71` 本身外不能出现素数锚。`residue 62` 的首个素数锚为
+
+```text
+step=300
+P=26687
+```
+
+这说明当前 near-fill 被素数锚条件打断。若反例链仍要靠 `minus:71` 填满全部非零 residue 并触发 reset，必须沿长 AP 等待素数锚覆盖所有缺失非零 residue；当前扫描的最后一个缺失非零 residue 到
+
+```text
+residue=67
+step=1192
+P=98047
+```
+
+才出现，随后首个素数锚重复为
+
+```text
+step=1194
+P=98207
+residue=14
+```
+
+于是最新接口为：
+
+```text
+PrimeAnchorFilteredNonzeroResidueCoverageOrTransportResetPDEC
+```
+
+即要么证明这种长 AP 素数锚非零 residue 覆盖不能作为持久反例链复现，要么把覆盖后的重复素数锚登记为 transport reset-PDEC。本步关闭的是 two-residue near-fill 捷径，仍不是全局无条件证明。
