@@ -2899,3 +2899,47 @@ K13K14TightHallCRTIslandPDECOrMovingSupportSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“两个 survivor 相位可自由推广成平滑替换族”的解释。
+
+## 80. cycle-debt shell phase graph
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_shell_phase_graph_router.py
+docs/monograph/prime-matrix-cycle-debt-shell-phase-graph-router.md
+data/prime-matrix-cycle-debt-shell-phase-graph-ledger.json
+```
+
+本步把 tight-Hall survivor 岛的 forced shell 继续写成供给 residue 到需求 residue 的相位边图。若支撑运动只是一个普通 CRT 周期平移，则所有 forced shell 必须共享同一个 delta；实际审计结果否定这一点。
+
+```text
+k13_forced_shell_matching_product=252829237248000
+k14_forced_shell_matching_product=2
+k13_forced_edge_count=1
+k14_forced_edge_count=3
+k13_single_translation_support_possible=false
+k14_single_translation_support_possible=false
+all_survivors_close_single_translation_support=true
+k13_core_min_distinct_delta_lower_bound=7
+k14_core_min_distinct_delta_lower_bound=4
+```
+
+相位读数：
+
+- `K=14` 的强制边为 `13->67`、`19->23`、`70->15`，对应 delta `54,4,16`，已经排斥公共单平移。
+- `K=14` 整个 forced core 最少仍需 `4` 个不同 delta。
+- `K=13` 的刚性核心 `>=8`、`7..7`、`4..6` 最少需要 `7` 个不同 delta；低层大 shell 未参与最小化，但它只能增加或保持这个下界。
+
+当前 actual-load 前沿收窄为：
+
+```text
+non-affine shell phase fragmentation PDEC  OR  multi-delta support SAE
+```
+
+最新接口为：
+
+```text
+NonAffineShellPhaseFragmentPDECOrMultiDeltaSupportSAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“剩余可由单一 CRT 平移相位解释”的出口。

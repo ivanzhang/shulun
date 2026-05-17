@@ -2842,3 +2842,43 @@ K13K14TightHallCRTIslandPDECOrMovingSupportSAE
 ```
 
 本步关闭的是“`K=13,14` survivor 只是普通支撑替换自由度”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥该 tight-Hall CRT island 的 PDEC，或证明它进入可求和的 moving-support SAE。
+
+## 73. cycle-debt shell phase graph 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_shell_phase_graph_router.py
+docs/monograph/prime-matrix-cycle-debt-shell-phase-graph-router.md
+docs/monograph/prime-matrix-cycle-debt-shell-phase-graph-router.json
+data/prime-matrix-cycle-debt-shell-phase-graph-ledger.json
+```
+
+本证书继续把 `K=13,14` 的 tight-Hall 岛拆成 forced shell 内的 bipartite phase graph。每个 shell 的供给 residue 到需求 residue 的边，必须同时满足容量阈值与 shell 平衡；若剩余支撑运动只是一个普通 residue 平移，则所有 forced shell 应存在公共单一相位差。
+
+```text
+k13_forced_shell_matching_product=252829237248000
+k14_forced_shell_matching_product=2
+k13_forced_edge_count=1
+k14_forced_edge_count=3
+k13_single_translation_support_possible=false
+k14_single_translation_support_possible=false
+all_survivors_close_single_translation_support=true
+k13_core_min_distinct_delta_lower_bound=7
+k14_core_min_distinct_delta_lower_bound=4
+```
+
+具体结构：
+
+- `K=14` 的高层 forced shell 乘积只有 `2` 个匹配，且三条边强制出现：`13 -> 67 (delta 54)`、`19 -> 23 (delta 4)`、`70 -> 15 (delta 16)`。这些强制相位已互不相同，所以单一平移支撑运动不可能。
+- `K=14` 剩余的 `8..12` shell 只有两种匹配；最少也要形成 `4` 个不同相位差。
+- `K=13` 的 forced edge 为 `31 -> 15 (delta 55)`；仅枚举 `>=8`、`7..7`、`4..6` 三个刚性核心 shell，就至少需要 `7` 个不同相位差。低层 `1..3` shell 匹配数巨大，但加入它只会保持或增加相位差数，不会降低该下界。
+- 因此，两个 survivor 都不能解释为同一 CRT 周期中的普通单平移支撑运动；若反例链继续保留这些 shell，必须进入非仿射、多相位的支撑重物化。
+
+最新最窄剩余接口为：
+
+```text
+NonAffineShellPhaseFragmentPDECOrMultiDeltaSupportSAE
+```
+
+本步关闭的是“tight-Hall 岛可由单一平移 support motion 吸收”的解释。全局行/列命题仍未无条件闭合；下一步要攻击的是多相位碎裂本身是否可求和，或是否强制产生新的 PDEC/ColumnCRT。
