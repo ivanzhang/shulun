@@ -1957,3 +1957,52 @@ N_q=|P_q|
 ```
 
 所以 `M_q^form-N_q` 不能作为未登记 actual load：它要么是 `SourceMaterializationFailure-PDEC/SAE`，要么是 `CRTWindowEmpty/WindowEdgeCollision/SupportMotion`，要么是 `ProjectionCollision/ColumnCRT/PDEC` 或 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。确定性分类已经闭合；剩余最窄硬点变为 `NamedExitExclusionOrSummabilityAfterCutsetCompleteness`，即全局排斥或求和吸收这些命名出口。
+
+## 59. after-cutset named-exit frontier 收束
+
+后续文件
+
+```text
+experiments/prime_matrix_after_cutset_named_exit_frontier_router.py
+docs/monograph/prime-matrix-after-cutset-named-exit-frontier-router.md
+data/prime-matrix-after-cutset-named-exit-frontier-ledger.json
+```
+
+cutset 完备分割之后，当前前沿已经不需要再寻找隐藏 actual packet，而是把所有后续分支压成命名出口清单。合成读数为：
+
+```text
+40 formal pairs = 1 actual packet + 28 source failures + 11 CRT-window empty pairs
+unresolved_formal_pair_total_current=0
+edge_collision_candidate_count_current=11
+support_motion_candidate_count=11
+min_endpoint_release_total_required=70
+min_total_affine_depth_defect=70
+fixed_highfactor_slot_pattern_isolation_failure_count_at_p0=0
+transport_reset_pdec_atom_count=0
+candidate_product_mass_upper_sum=0.023577117628562343<eta=0.025
+current_sweep_frontier_closed=true
+row_column_unconditional_closed=false
+```
+
+这把 after-cutset 前沿压成以下十个全局接口：
+
+```text
+SourceMaterializationFailure-PDEC/SAE
+CRTWindowEmptyGlobalSupportBound
+WindowEdgeCollisionOrUnusedTargetArrivalBound
+SupportMotionNonpersistenceOrEndpointReleaseBound
+PrimitiveIdentityShiftExclusion
+MovingSlotFamily-PDEC/ColumnCRT
+TransportResetPDECExclusion
+GlobalEpochPairMultiplicityBound
+MovingResidueShapeSAE/Rankin
+SingletonResidueSAE/Rankin
+```
+
+当前 sweep 已经关闭这些出口的匿名解释：空窗边缘有正位移，支撑移动要双端点释放，固定 primitive identity 无法吸收，固定 highfactor slot 图样被 CRT 模数/相位宽度隔离，transport reset atom 为空，epoch-pair 低于 eta 稀疏门。全局证明剩余随之精确改写为：
+
+```text
+GlobalNamedExitExclusionOrSummability
+```
+
+也就是证明上述出口在持久反例链中不能无限复现，或它们的总质量可被 SAE/Rankin/PDEC 账本吸收。

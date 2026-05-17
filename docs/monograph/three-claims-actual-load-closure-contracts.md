@@ -1907,3 +1907,60 @@ N_q=|P_q|
 ```
 
 这证明“形式负载差额必须进入命名出口”不是 current sweep 的偶然性，而是 actual-load 管道的确定性分类律。当前 `40=28+11+1+0` 只是该分割的一个实例。最新硬点随之从 `GlobalFormalToActualCutsetPromotion` 进一步收缩为 `NamedExitExclusionOrSummabilityAfterCutsetCompleteness`。
+
+## 52. after-cutset named-exit frontier 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_after_cutset_named_exit_frontier_router.py
+docs/monograph/prime-matrix-after-cutset-named-exit-frontier-router.md
+docs/monograph/prime-matrix-after-cutset-named-exit-frontier-router.json
+data/prime-matrix-after-cutset-named-exit-frontier-ledger.json
+```
+
+本证书接在 cutset completeness 之后，把 `S_q/C_q/E_q` 后续出口统一成一张命名出口前沿表。当前读数为：
+
+```text
+formal_pair_total=40
+actual_packet_total_current=1
+formal_to_actual_gap=39
+source_unmaterialized_pair_total_current=28
+crt_window_empty_pair_total_current=11
+unresolved_formal_pair_total_current=0
+edge_collision_candidate_count_current=11
+support_motion_candidate_count=11
+min_endpoint_release_total_required=70
+min_endpoint_release_over_support_width=3.500000
+min_total_affine_depth_defect=70
+fixed_highfactor_slot_pattern_isolation_failure_count_at_p0=0
+transport_reset_pdec_atom_count=0
+candidate_product_mass_upper_sum=0.023577117628562343<eta=0.025
+high_density_epoch_pair_count=0
+moving_residue_shape_count=37
+singleton_residue_packet_count=300
+current_sweep_frontier_closed=true
+row_column_unconditional_closed=false
+```
+
+解释如下：
+
+```text
+SourceMaterializationFailure: 28 个 formal pairs；
+CRTWindowEmpty: 11 个 formal pairs，主模数 899，支撑宽度 20，最小空窗距离 40；
+WindowEdge/UnusedTarget: 11 个空窗边缘候选拆成 2 个 existing-actual collision 需要和 9 个 unused-target arrival 需要；
+SupportMotion: 11 个支撑移动候选都需要双端点释放，最小释放 70=3.5*20；
+PrimitiveIdentityShift: 固定 primitive key 不能吸收支撑移动，最小 affine depth defect 为 70；
+MovingSlotFamily: 固定高因子槽图样当前隔离失败数为 0，剩余只能是 moving-slot family；
+TransportReset: 12 个 transport cells 全为唯一 key，reset atom=0；
+EpochPairMultiplicity: 当前候选总质量 0.023577117628562343<1/40，高密度行 0；
+MovingResidue/SingletonSAE: 37 个 moving residue shapes 和 300 个 singleton packets 进入 SAE/Rankin 接口。
+```
+
+因此 cutset 后不再存在匿名容量或相位逃逸。新的精确硬点是
+
+```text
+GlobalNamedExitExclusionOrSummability
+```
+
+即证明这些命名出口在全局持久反例族中全被排斥，或总质量可求和吸收。本节仍不是行/列命题无条件证明；它把剩余从“分类是否完备”推进到“命名出口是否可全局吸收”。
