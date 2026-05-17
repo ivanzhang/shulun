@@ -2455,3 +2455,44 @@ AcceptedResetPDECExclusionOrLongReliefHorizonSupportMotionSAE
 ```
 
 本步关闭的是“accepted reset 后局部补完全部 actual relief”的解释；全局仍需排斥 accepted reset-PDEC，或证明这种长程 relief horizon 的 support-motion/SAE 可吸收。
+
+## 64. long relief cycle-debt 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_long_relief_cycle_debt_router.py
+docs/monograph/prime-matrix-long-relief-cycle-debt-router.md
+docs/monograph/prime-matrix-long-relief-cycle-debt-router.json
+data/prime-matrix-long-relief-cycle-debt-ledger.json
+```
+
+本证书把 long-relief horizon 进一步分解为固定 `ell=71` 周期上的相位等待债务。由于同步线的 residue 周期为 `71` 步、P 周期为 `5680`，每个缺失 residue 在 reset 后都有一个首次形式命中；若该命中为合数，就必须等待下一个完整 `71` 周期。
+
+核心读数为：
+
+```text
+previous_hardpoint=AcceptedResetPDECExclusionOrLongReliefHorizonSupportMotionSAE
+ell=71
+period_p=5680
+missing_nonzero_count=35
+zero_cycle_relief_count=8
+positive_cycle_debt_residue_count=27
+total_cycle_debt=101
+total_composite_wait_count=101
+matches_full_horizon_composite_missing_count=true
+max_cycle_debt=15
+max_cycle_debt_residue=67
+max_cycle_debt_p_delay=85200
+periods_touched_until_full_relief=16
+```
+
+这说明上一节的 `101` 个合数形式命中并非噪声，而是精确等于所有缺失 residue 的周期相位债务总和。最大硬点是 `residue=67`：首次形式命中在 `P=12847`，但真实素数锚要等到 `P=98047`，中间跨 `15` 个完整 `71` 周期。
+
+最新最窄剩余接口为：
+
+```text
+LongReliefCycleDebtPDECExclusionOrSupportMotionSAESummability
+```
+
+本步关闭的是“long relief 只是远端但无结构代价”的解释；全局仍需排斥这种周期债务族的 PDEC 复现，或证明其 support-motion/SAE 可全局求和吸收。

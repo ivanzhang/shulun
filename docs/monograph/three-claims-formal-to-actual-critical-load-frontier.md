@@ -2528,3 +2528,45 @@ AcceptedResetPDECExclusionOrLongReliefHorizonSupportMotionSAE
 ```
 
 这一步仍不关闭全局行/列命题；它把 delayed relief 明确量化成长期 horizon，而不是局部容量收益。
+
+## 71. long relief cycle-debt
+
+后续文件
+
+```text
+experiments/prime_matrix_long_relief_cycle_debt_router.py
+docs/monograph/prime-matrix-long-relief-cycle-debt-router.md
+data/prime-matrix-long-relief-cycle-debt-ledger.json
+```
+
+本步把完整 relief horizon 的长距离解释为 `ell=71` 周期相位债务。每个缺失非零 residue 在 reset 后第一次相位命中时，若对应 P 为合数，则必须等待下一次同 residue 相位，也就是一个完整 `71` 步周期。
+
+精确读数为：
+
+```text
+ell=71
+period_p=5680
+zero_cycle_relief_count=8
+positive_cycle_debt_residue_count=27
+total_cycle_debt=101
+total_composite_wait_count=101
+matches_full_horizon_composite_missing_count=true
+max_cycle_debt=15
+max_cycle_debt_residue=67
+max_cycle_debt_p_delay=85200
+periods_touched_until_full_relief=16
+```
+
+因此 full relief 的 `101` 个合数形式命中不是外部误差，而是每个缺失 residue 的周期等待债务之和。当前 actual-load 前沿进一步压成：
+
+```text
+long-relief cycle-debt PDEC  OR  support-motion SAE summability
+```
+
+最新接口为：
+
+```text
+LongReliefCycleDebtPDECExclusionOrSupportMotionSAESummability
+```
+
+这一步仍不关闭全局行/列命题；它把 long-relief 分支的相位代价材料化为周期债务账本。
