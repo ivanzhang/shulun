@@ -1521,3 +1521,40 @@ p=3187 activates ell=61, missing [59], filled after 70
 ```
 
 因此当前 sweep 中，端点扩张只产生短暂内部素数缺口，且所有千级 `P` 前缀快照已经恢复为连续素数带。最新全局硬点为 `EndpointMotionGapFillBoundOrGapPDECExclusion`：要么证明端点扩张造成的缺口有统一填充界，要么把持久缺口登记并排斥为 Gap-PDEC/SAE。
+
+## 42. H-lower gap-fill pair / repair corridor 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-repair-corridor-router.md
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-repair-corridor-ledger.json
+```
+
+本节把三次内部缺口继续压成生成-填充二元组和短 `P` 走廊：
+
+```text
+gap_pair_count=3
+unique_gap_fill_pair_key_count=3
+repeated_gap_fill_pair_key_count=0
+all_gaps_are_next_activation_repairs=true
+all_repairs_restore_exact_interval=true
+max_activation_rank_delay=1
+max_p_delay=80
+all_repairs_within_3_gap_ell_current_sweep=true
+all_repairs_within_2_gap_ell_current_sweep=false
+max_p_delay_over_gap_ell=2.580645161290
+min_corridor_defect_against_3_gap_ell=13
+```
+
+三条二元组为：
+
+```text
+gap=43: 47 -> 43, dp=74, key sides=plus->minus
+gap=31: 29 -> 31, dp=80, key sides=minus->plus
+gap=59: 61 -> 59, dp=70, key sides=minus->minus
+```
+
+因此当前缺口填充不是任意等待，而是 rank-delay `1` 的 immediate repair，并且全部处在 `3*gap_ell` 短走廊内。最新全局硬点进一步压成 `ShortGapRepairCorridorBoundOrCorridorPDECExclusion`：要么证明端点缺口修复始终有短走廊包络，要么把走廊失效登记并排斥为 Corridor-PDEC/SAE。

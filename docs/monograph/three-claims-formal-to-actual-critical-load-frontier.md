@@ -1669,3 +1669,30 @@ ell=59, delay=70
 ```
 
 并且所有缺口均在当前 sweep 内填回；按 `P=3000,4000,...,10000` 的千级前缀看，每个前缀的活跃 `ell` 集合已经是完整素数带。反例链若要利用端点运动制造持续容量缺口，就必须让某个内部素数缺口长期不填；真实链则把这种失败登记为 `Gap-PDEC/SAE`。最新主攻硬点为 `EndpointMotionGapFillBoundOrGapPDECExclusion`。
+
+## 49. H-lower gap-fill pair / repair corridor 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-repair-corridor-router.md
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-fill-pair-ledger.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-gap-repair-corridor-ledger.json
+```
+
+本节把“缺口会填回”进一步转成二元组和走廊不等式。三次缺口都由下一次 `ell` 首次激活修复，且修复后立即恢复连续素数带：
+
+```text
+43: generator ell=47, filler ell=43, P delay=74
+31: generator ell=29, filler ell=31, P delay=80
+59: generator ell=61, filler ell=59, P delay=70
+```
+
+三个完整 GapFillPair key 互异，没有当前复现。更窄地，三次修复均满足：
+
+```text
+fill_p - generator_p <= 3*gap_ell
+```
+
+其中最紧的是 `gap_ell=31`：`80 <= 93`，余量 `13`；`2*gap_ell` 已被这一行破坏，所以当前最小整数倍统一包络为 `3`。于是反例链若要保持持久缺口，必须破坏 immediate-repair 或短走廊包络；真实链把这两种失败分别登记为 `GapFillPair-PDEC/SAE` 或 `Corridor-PDEC/SAE`。最新主攻硬点为 `ShortGapRepairCorridorBoundOrCorridorPDECExclusion`。
