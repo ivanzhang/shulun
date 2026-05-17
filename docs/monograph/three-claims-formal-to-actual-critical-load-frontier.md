@@ -1650,3 +1650,22 @@ data/square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-motion-ste
 ```
 
 这给出新的显式相位/容量分叉：反例链若要求端点继续外推，真实链必须生成新的外向端点到达；但当前外邻为零。反例链若让端点向内合并，真实链立即进入双侧核心支撑，不再是端点单原子。于是端点增长剩余被压成 `EndpointOutwardArrivalBoundOrEndpointAtomPDECExclusion`，内侧另留 `CoreEdgeAbsorptionMultiplicityBound`。
+
+## 48. H-lower endpoint-motion gap 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-motion-gap-router.md
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-motion-gap-ledger.json
+```
+
+本节把端点外推造成的相位风险具体化为“内部素数缺口”。按首次激活顺序，活跃带不是任意散列，而是最多带短暂缺口的素数区间运动。当前只出现三次缺口：
+
+```text
+ell=43, delay=74
+ell=31, delay=80
+ell=59, delay=70
+```
+
+并且所有缺口均在当前 sweep 内填回；按 `P=3000,4000,...,10000` 的千级前缀看，每个前缀的活跃 `ell` 集合已经是完整素数带。反例链若要利用端点运动制造持续容量缺口，就必须让某个内部素数缺口长期不填；真实链则把这种失败登记为 `Gap-PDEC/SAE`。最新主攻硬点为 `EndpointMotionGapFillBoundOrGapPDECExclusion`。

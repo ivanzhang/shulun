@@ -1490,3 +1490,34 @@ ell=113: empty
 ```
 
 所以当前 sweep 中端点运动不能再作为未分类容量来源：外向一步没有物化，端点自身只有两个 minus-only 单原子，内向一步已经进入核心吸收带。最新全局硬点压成 `EndpointOutwardArrivalBoundOrEndpointAtomPDECExclusion`，并保留 `CoreEdgeAbsorptionMultiplicityBound` 作为内侧核心吸收的 multiplicity 义务。
+
+## 41. H-lower endpoint-motion gap 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-motion-gap-router.md
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-motion-gap-ledger.json
+```
+
+本节把端点运动从相邻模板继续压成“内部缺口填充”义务。按一槽 `ell` 的首次激活顺序，当前证书给出：
+
+```text
+activation_count=21
+gap_snapshot_count=3
+gap_ells=[31,43,59]
+max_known_gap_fill_delay=80
+all_activation_gaps_filled_in_current_sweep=true
+all_1000_prefix_snapshots_exact_intervals=true
+final_active_band=[23,109]
+```
+
+三次缺口具体为：
+
+```text
+p=2063 activates ell=47, missing [43], filled after 74
+p=2687 activates ell=29, missing [31], filled after 80
+p=3187 activates ell=61, missing [59], filled after 70
+```
+
+因此当前 sweep 中，端点扩张只产生短暂内部素数缺口，且所有千级 `P` 前缀快照已经恢复为连续素数带。最新全局硬点为 `EndpointMotionGapFillBoundOrGapPDECExclusion`：要么证明端点扩张造成的缺口有统一填充界，要么把持久缺口登记并排斥为 Gap-PDEC/SAE。
