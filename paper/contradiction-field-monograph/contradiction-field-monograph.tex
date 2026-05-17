@@ -9213,6 +9213,66 @@ ColumnCRT/PDEC/moving-family exit.  No unconditional row/column theorem is
 claimed here.
 \end{proof}
 
+\begin{theorem}[Low CRT insufficiency and the large splitting residual]
+Let
+\[
+\Theta_s(P)=\sum_{\substack{\ell\le P^2,\ \ell\ne P\\ \chi_P(\ell)=s}}\log \ell,
+\qquad s\in\{+1,-1\},
+\]
+where \(\chi_P(\ell)=(\ell/P)\).  Split
+\[
+L_s(P)=\sum_{\substack{\ell<P\\ \chi_P(\ell)=s}}\log \ell,
+\qquad
+G_s(P)=\sum_{\substack{P<\ell\le P^2\\ \chi_P(\ell)=s}}\log \ell.
+\]
+Then \(\Theta_s(P)=L_s(P)+G_s(P)\), and the projection-gap capacity
+gate is equivalent to
+\[
+\min_s\Theta_s(P)>2P\log P.
+\]
+Moreover the complete low CRT layer satisfies the elementary bound
+\[
+L_{+}(P)+L_{-}(P)=\vartheta(P-1)\le P\log P<2P\log P.
+\]
+Consequently the low CRT layer alone cannot close the capacity gate.  If the
+capacity gate fails, then for some sign \(s\)
+\[
+G_s(P)\le 2P\log P.
+\]
+Conversely, the large-splitting lower bound
+\[
+\min_s G_s(P)>2P\log P
+\]
+is sufficient to close the capacity gate.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-quadratic-projection-large-splitting-router.md.
+\end{quote}
+The decomposition \(\Theta_s=L_s+G_s\) is only the partition of the prime
+sum at the modulus \(P\).  The equivalence between the projection-gap gate and
+\(\min_s\Theta_s(P)>2P\log P\) is the preceding theorem.
+
+For the low layer, every prime counted in \(L_{+}+L_{-}\) is \(<P\), hence
+there are fewer than \(P\) summands and each summand is at most \(\log P\).
+Thus \(L_{+}+L_{-}\le P\log P\).  This is strictly below the minority-mass
+threshold \(2P\log P\), so the low CRT period can be entirely absorbed by the
+failure allowance and cannot by itself force the required contradiction.
+
+If the capacity gate fails, choose \(s\) with
+\(\Theta_s(P)=\min_{t}\Theta_t(P)\le 2P\log P\).  Since \(L_s(P)\ge0\),
+we have \(G_s(P)\le 2P\log P\).  Conversely, if both large layers satisfy
+\(G_s(P)>2P\log P\), then \(\Theta_s(P)\ge G_s(P)>2P\log P\) for both signs,
+which closes the capacity gate.  Thus the remaining self-contained attack is
+\begin{quote}\footnotesize\ttfamily
+LargePrimeQuadraticSplittingMinorityMassBeatsTwoPLogPAtSquareScale,
+\end{quote}
+or the registration of a persistent large-splitting desert as a
+Siegel/ColumnCRT/PDEC exit.  No unconditional row/column theorem is claimed
+here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

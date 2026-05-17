@@ -5139,3 +5139,76 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“容量失败没有相位尺度”的误出口。剩余是自足排斥 `|T_chi|/T0 >= 1-O(logP/P)` 的 ultra-near-one 二次投影缺陷，或把它作为显式 ColumnCRT/PDEC/moving-family 终端缺陷处理。
+
+## 128. Quadratic projection large splitting router
+
+新增文件
+
+```text
+experiments/prime_matrix_quadratic_projection_large_splitting_router.py
+docs/monograph/prime-matrix-quadratic-projection-large-splitting-router.md
+docs/monograph/prime-matrix-quadratic-projection-large-splitting-router.json
+data/prime-matrix-quadratic-projection-large-splitting-ledger.json
+```
+
+本步将 `QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale` 拆成少数半类质量阈值与低/高素数层。精确等价式为：
+
+```text
+1-|T_chi(P)|/T0(P) > 4P log P/T0(P)
+<=> min_s Theta_s(P)>2P log P.
+```
+
+写
+
+```text
+Theta_s(P)=L_s(P)+G_s(P),
+L_s(P)=sum_{ell<P, chi_P(ell)=s} log ell,
+G_s(P)=sum_{P<ell<=P^2, chi_P(ell)=s} log ell.
+```
+
+则低 CRT 层整体只有
+
+```text
+L_+(P)+L_-(P)=theta(P-1)<=P log P,
+```
+
+不超过少数半类阈值 `2P log P` 的一半。因此低模 CRT 层不能单独闭合该接口；任何持久反例必须表现为某个大素数二次半类分裂层 `G_s(P)<=2P log P`。
+
+这把剩余硬点压成：
+
+```text
+LargePrimeQuadraticSplittingMinorityMassBeatsTwoPLogPAtSquareScale
+```
+
+失败出口命名为：
+
+```text
+UltraNearOneQuadraticProjectionDefectToLargeSplittingPDECOrSiegelPacket
+```
+
+当前读数：
+
+```text
+minority_mass_equivalence_closed=true
+low_crt_capacity_insufficiency_closed=true
+large_prime_quadratic_splitting_mass_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR LargePrimeQuadraticSplittingMinorityMassBeatsTwoPLogPAtSquareScale
+           OR UltraNearOneQuadraticProjectionDefectToLargeSplittingPDECOrSiegelPacket))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“继续在 `ell<P` 低 CRT 周期中寻找全局投影矛盾”的误出口。剩余必须攻击大素数二次分裂质量，或把极端分裂荒漠作为显式 PDEC/Siegel 包处理。

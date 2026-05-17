@@ -5235,3 +5235,72 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“容量门仍是总质量语言”的误出口。剩余最窄接口是证明二次投影缺口击穿 `4P log P/T0`，或将 ultra-near-one 二次投影缺陷登记并排斥为 ColumnCRT/PDEC/moving-family 出口。行/列命题仍未无条件闭合。
+
+## 117. Quadratic projection large splitting router
+
+新增文件
+
+```text
+experiments/prime_matrix_quadratic_projection_large_splitting_router.py
+docs/monograph/prime-matrix-quadratic-projection-large-splitting-router.md
+docs/monograph/prime-matrix-quadratic-projection-large-splitting-router.json
+data/prime-matrix-quadratic-projection-large-splitting-ledger.json
+```
+
+本步继续下钻
+
+```text
+QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale
+```
+
+把二次投影缺口阈值改写为少数半类质量门：
+
+```text
+1-|T_chi(P)|/T0(P) > 4P log P/T0(P)
+<=> min_s Theta_s(P)>2P log P.
+```
+
+再精确拆分
+
+```text
+Theta_s(P)=L_s(P)+G_s(P),
+L_s(P)=sum_{ell<P, chi_P(ell)=s} log ell,
+G_s(P)=sum_{P<ell<=P^2, chi_P(ell)=s} log ell.
+```
+
+低 CRT 层满足平凡上界
+
+```text
+L_+(P)+L_-(P)=theta(P-1)<=P log P<2P log P.
+```
+
+所以低轮/有限 CRT 相位层可以被反例允许的 `2P log P` 少数质量预算完全吸收，不能单独推出全局矛盾。若容量门失败，则某个半类在大素数层已经满足 `G_s(P)<=2P log P`；反过来，若证明 `min_s G_s(P)>2P log P`，容量门立即闭合。
+
+当前读数：
+
+```text
+minority_mass_equivalence_closed=true
+low_crt_capacity_insufficiency_closed=true
+large_prime_quadratic_splitting_mass_proved=false
+row_column_unconditional_closed=false
+```
+
+有限诊断 `7<=P<=1000` 中，容量门和大分裂门失败模数均为 `P=7,11,13`；从 `P>=17` 开始，大素数层少数质量/所需质量最小比值为 `1.2504140082035853`。该有限读数只用于定位，不作为无限证明输入。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR LargePrimeQuadraticSplittingMinorityMassBeatsTwoPLogPAtSquareScale
+           OR UltraNearOneQuadraticProjectionDefectToLargeSplittingPDECOrSiegelPacket))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“低 CRT 周期结构本身足以排斥 ultra-near-one 投影”的误出口。剩余最窄接口是证明大素数二次分裂少数半类质量超过 `2P log P`，或把长期失败登记为大分裂荒漠/Siegel/ColumnCRT-PDEC 出口。行/列命题仍未无条件闭合。
