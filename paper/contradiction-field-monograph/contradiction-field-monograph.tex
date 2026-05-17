@@ -9096,6 +9096,62 @@ prime arrivals up to \(P^2\).  This theorem does not exclude that degeneracy
 and does not prove the row/column theorem unconditionally.
 \end{proof}
 
+\begin{theorem}[Half-class mass versus single-residue capacity]
+Let
+\[
+\Theta_s(P)=\sum_{\chi_P(a)=s}\theta(P^2;P,a)
+        =\frac{T_0(P)+sT_{\chi}(P)}{2},
+\qquad s\in\{\pm1\}.
+\]
+For every \(a\in{\mathbb F}_P^\ast\),
+\[
+\theta(P^2;P,a)\le P\log(P^2)=2P\log P.
+\]
+Consequently a punctured half-class zero-support degeneracy can occur only if
+\[
+\min_{s=\pm1}\Theta_s(P)\le 2P\log P.
+\]
+Equivalently, the sufficient exclusion gate is
+\[
+T_0(P)\left(1-\frac{|T_{\chi}(P)|}{T_0(P)}\right)>4P\log P.
+\]
+Thus the latest exact-lock exit is routed to
+\begin{quote}\footnotesize\ttfamily
+QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2,
+\end{quote}
+or else to a named ColumnCRT/PDEC capacity-failure registration.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-halfclass-single-residue-capacity-router.md.
+\end{quote}
+In a fixed nonzero residue \(a\bmod P\), the integers not exceeding \(P^2\)
+have the form \(a+kP\), \(0\le k\le P-1\).  Hence at most \(P\) prime terms
+can occur in this residue before the square barrier, and each carries weight at
+most \(\log(P^2)\).  This gives the displayed single-residue capacity bound.
+
+If a punctured half-class zero-support degeneracy occurs in \(H_s\), then all
+prime weight in that half-class is concentrated in the single unpunctured
+residue \(a_0\).  Therefore
+\[
+\Theta_s(P)=\theta(P^2;P,a_0)\le2P\log P.
+\]
+Taking the contrapositive gives the half-class capacity exclusion.  Finally,
+since
+\[
+\min_s\Theta_s(P)=\frac{T_0(P)-|T_{\chi}(P)|}{2},
+\]
+the condition is exactly
+\[
+T_0(P)\left(1-\frac{|T_{\chi}(P)|}{T_0(P)}\right)>4P\log P.
+\]
+
+This is a strict narrowing of the previous support-degeneracy exit, but it is
+not yet a proof of the required global half-class mass lower bound.  No
+unconditional row/column theorem is claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -1,0 +1,1576 @@
+{
+  "certificate_type": "prime_matrix_halfclass_single_residue_capacity_router",
+  "status": "zero_support_degeneracy_routed_to_halfclass_single_residue_capacity_gap_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "previous_target": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC",
+  "next_direct_attack_target": "QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2",
+  "quadratic_margin_still_required": "QuadraticHalfClassSquareScaleBiasMarginTheorem",
+  "formula_ledger": [
+    {
+      "item": "half-class mass",
+      "formula": "Theta_s(P)=sum_{chi_P(a)=s} theta(P^2;P,a)=(T0+s*T_chi)/2"
+    },
+    {
+      "item": "single residue deterministic capacity",
+      "formula": "theta(P^2;P,a)<=P*log(P^2)=2P log P"
+    },
+    {
+      "item": "zero-support degeneracy implication",
+      "formula": "punctured half-class zero support implies Theta_s(P)=theta(P^2;P,a0)<=2P log P"
+    },
+    {
+      "item": "capacity exclusion gate",
+      "formula": "min_s Theta_s(P)>2P log P excludes punctured half-class zero-support degeneracy"
+    },
+    {
+      "item": "quadratic projection form",
+      "formula": "T0(P)*(1-|T_chi(P)|/T0(P))>4P log P"
+    },
+    {
+      "item": "new hardpoint",
+      "formula": "prove QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2 or route capacity failure to ColumnCRT/PDEC"
+    }
+  ],
+  "branch_ledger": [
+    {
+      "branch": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC",
+      "route": "QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2",
+      "status": "sharpened but open",
+      "meaning": "半类全零支撑若存在，则对应半类质量不能超过单 residue 的确定性容量。"
+    },
+    {
+      "branch": "single-residue capacity",
+      "route": "theta(P^2;P,a)<=2P log P",
+      "status": "closed as counting bound",
+      "meaning": "一个 residue 在 P^2 前至多有 P 个候选位置，每个素数权重至多 2 log P。"
+    },
+    {
+      "branch": "QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2",
+      "route": "T0(P)*(1-|T_chi|/T0)>4P log P",
+      "status": "not proved in corpus",
+      "meaning": "剩余是二次半类总 Chebyshev 质量必须击穿单 residue 容量。"
+    },
+    {
+      "branch": "capacity failure",
+      "route": "ColumnCRT/PDEC/moving-family registration",
+      "status": "not proved in corpus",
+      "meaning": "若容量门失败，则反例链已被压成半类总质量过低的显式二次角色缺陷。"
+    }
+  ],
+  "finite_diagnostic": {
+    "min_p": 7,
+    "max_p": 1000,
+    "prime_moduli_checked": 165,
+    "min_mass_to_capacity_ratio": 0.6227695609190617,
+    "min_mass_to_capacity_modulus": 7,
+    "min_mass_to_capacity_ratio_for_P_ge_17": 1.284236511887034,
+    "deterministic_capacity_failures_found": 3,
+    "deterministic_capacity_failure_moduli": [
+      7,
+      11,
+      13
+    ],
+    "actual_support_degeneracies_found": 0,
+    "top_low_capacity_records": [
+      {
+        "P": 7,
+        "T0": 39.014309282297646,
+        "Tchi": -5.082408227074191,
+        "abs_quadratic_projection_ratio": 0.1302703628635118,
+        "actual_halfclass_margin_ratio": 0.8697296371364882,
+        "required_margin_ratio_for_single_residue_capacity": 1.3965512955594221,
+        "margin_ratio_surplus": -0.5268216584229339,
+        "deterministic_single_residue_capacity": 27.242742086774385,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 16.965950527611724,
+        "min_mass_to_capacity_ratio": 0.6227695609190617,
+        "min_capacity_surplus": -10.27679155916266,
+        "min_actual_support_surplus": 9.526391218478405,
+        "capacity_gate_passes": false,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 16.965950527611724,
+            "active_residue_count": 3,
+            "max_actual_single_residue_weight": 7.439559309133319,
+            "actual_support_surplus": 9.526391218478405,
+            "deterministic_single_residue_capacity": 27.242742086774385,
+            "capacity_surplus": -10.27679155916266,
+            "mass_to_capacity_ratio": 0.6227695609190617,
+            "first_active_residues": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 22.048358754685918,
+            "active_residue_count": 3,
+            "max_actual_single_residue_weight": 8.4040244933106,
+            "actual_support_surplus": 13.644334261375318,
+            "deterministic_single_residue_capacity": 27.242742086774385,
+            "capacity_surplus": -5.194383332088467,
+            "mass_to_capacity_ratio": 0.8093296440004767,
+            "first_active_residues": [
+              3,
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "P": 13,
+        "T0": 149.36791031202745,
+        "Tchi": -19.354710850207738,
+        "abs_quadratic_projection_ratio": 0.1295774360756338,
+        "actual_halfclass_margin_ratio": 0.8704225639243662,
+        "required_margin_ratio_for_single_residue_capacity": 0.8929452538324764,
+        "margin_ratio_surplus": -0.022522689908110127,
+        "deterministic_single_residue_capacity": 66.68868329399996,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 65.00659973090985,
+        "min_mass_to_capacity_ratio": 0.9747770764092828,
+        "min_capacity_surplus": -1.682083563090103,
+        "min_actual_support_surplus": 46.73541683634125,
+        "capacity_gate_passes": false,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 65.00659973090985,
+            "active_residue_count": 6,
+            "max_actual_single_residue_weight": 18.271182894568604,
+            "actual_support_surplus": 46.73541683634125,
+            "deterministic_single_residue_capacity": 66.68868329399996,
+            "capacity_surplus": -1.682083563090103,
+            "mass_to_capacity_ratio": 0.9747770764092828,
+            "first_active_residues": [
+              1,
+              3,
+              4,
+              9,
+              10,
+              12
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 84.36131058111759,
+            "active_residue_count": 6,
+            "max_actual_single_residue_weight": 16.785776140656598,
+            "actual_support_surplus": 67.575534440461,
+            "deterministic_single_residue_capacity": 66.68868329399996,
+            "capacity_surplus": 17.672627287117635,
+            "mass_to_capacity_ratio": 1.2650018925880886,
+            "first_active_residues": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "P": 11,
+        "T0": 104.67190916673984,
+        "Tchi": -1.3133828768630167,
+        "abs_quadratic_projection_ratio": 0.012547615566759457,
+        "actual_halfclass_margin_ratio": 0.9874523844332406,
+        "required_margin_ratio_for_single_residue_capacity": 1.0079819202978095,
+        "margin_ratio_surplus": -0.02052953586456896,
+        "deterministic_single_residue_capacity": 52.75369600156415,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 51.67926314493841,
+        "min_mass_to_capacity_ratio": 0.979633031653481,
+        "min_capacity_surplus": -1.0744328566257408,
+        "min_actual_support_surplus": 39.356078800158826,
+        "capacity_gate_passes": false,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 51.67926314493841,
+            "active_residue_count": 5,
+            "max_actual_single_residue_weight": 12.32318434477958,
+            "actual_support_surplus": 39.356078800158826,
+            "deterministic_single_residue_capacity": 52.75369600156415,
+            "capacity_surplus": -1.0744328566257408,
+            "mass_to_capacity_ratio": 0.979633031653481,
+            "first_active_residues": [
+              1,
+              3,
+              4,
+              5,
+              9
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 52.99264602180143,
+            "active_residue_count": 5,
+            "max_actual_single_residue_weight": 12.242664907329765,
+            "actual_support_surplus": 40.749981114471666,
+            "deterministic_single_residue_capacity": 52.75369600156415,
+            "capacity_surplus": 0.23895002023727585,
+            "mass_to_capacity_ratio": 1.0045295408350192,
+            "first_active_residues": [
+              2,
+              6,
+              7,
+              8,
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "P": 17,
+        "T0": 268.5116261222614,
+        "Tchi": -21.092536598887726,
+        "abs_quadratic_projection_ratio": 0.07855353194011666,
+        "actual_halfclass_margin_ratio": 0.9214464680598833,
+        "required_margin_ratio_for_single_residue_capacity": 0.7175052722227361,
+        "margin_ratio_surplus": 0.2039411958371472,
+        "deterministic_single_residue_capacity": 96.32925369791135,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 123.70954476168686,
+        "min_mass_to_capacity_ratio": 1.284236511887034,
+        "min_capacity_surplus": 27.380291063775502,
+        "min_actual_support_surplus": 103.78194419559054,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 123.70954476168686,
+            "active_residue_count": 8,
+            "max_actual_single_residue_weight": 19.927600566096316,
+            "actual_support_surplus": 103.78194419559054,
+            "deterministic_single_residue_capacity": 96.32925369791135,
+            "capacity_surplus": 27.380291063775502,
+            "mass_to_capacity_ratio": 1.284236511887034,
+            "first_active_residues": [
+              1,
+              2,
+              4,
+              8,
+              9,
+              13,
+              15,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 144.8020813605746,
+            "active_residue_count": 8,
+            "max_actual_single_residue_weight": 24.544772539472774,
+            "actual_support_surplus": 120.25730882110182,
+            "deterministic_single_residue_capacity": 96.32925369791135,
+            "capacity_surplus": 48.472827662663235,
+            "mass_to_capacity_ratio": 1.5031994518993583,
+            "first_active_residues": [
+              3,
+              5,
+              6,
+              7,
+              10,
+              11,
+              12,
+              14
+            ]
+          }
+        ]
+      },
+      {
+        "P": 19,
+        "T0": 332.12870717365246,
+        "Tchi": -8.22557322811751,
+        "abs_quadratic_projection_ratio": 0.024766221800323916,
+        "actual_halfclass_margin_ratio": 0.975233778199676,
+        "required_margin_ratio_for_single_residue_capacity": 0.6737669993086389,
+        "margin_ratio_surplus": 0.3014667788910371,
+        "deterministic_single_residue_capacity": 111.88868120832473,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 161.95156697276747,
+        "min_mass_to_capacity_ratio": 1.4474347648376604,
+        "min_capacity_surplus": 50.06288576444274,
+        "min_actual_support_surplus": 134.62220108489925,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 161.95156697276747,
+            "active_residue_count": 9,
+            "max_actual_single_residue_weight": 27.32936588786823,
+            "actual_support_surplus": 134.62220108489925,
+            "deterministic_single_residue_capacity": 111.88868120832473,
+            "capacity_surplus": 50.06288576444274,
+            "mass_to_capacity_ratio": 1.4474347648376604,
+            "first_active_residues": [
+              1,
+              4,
+              5,
+              6,
+              7,
+              9,
+              11,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 170.17714020088496,
+            "active_residue_count": 9,
+            "max_actual_single_residue_weight": 25.76588152393336,
+            "actual_support_surplus": 144.4112586769516,
+            "deterministic_single_residue_capacity": 111.88868120832473,
+            "capacity_surplus": 58.28845899256024,
+            "mass_to_capacity_ratio": 1.520950451494136,
+            "first_active_residues": [
+              2,
+              3,
+              8,
+              10,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "P": 23,
+        "T0": 496.3873196312336,
+        "Tchi": -18.836170516677612,
+        "abs_quadratic_projection_ratio": 0.037946518316928426,
+        "actual_halfclass_margin_ratio": 0.9620534816830716,
+        "required_margin_ratio_for_single_residue_capacity": 0.581129808230764,
+        "margin_ratio_surplus": 0.3809236734523076,
+        "deterministic_single_residue_capacity": 144.23273393274087,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 238.775574557278,
+        "min_mass_to_capacity_ratio": 1.6554880993147136,
+        "min_capacity_surplus": 94.54284062453712,
+        "min_actual_support_surplus": 211.5408448524733,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 238.775574557278,
+            "active_residue_count": 11,
+            "max_actual_single_residue_weight": 27.234729704804693,
+            "actual_support_surplus": 211.5408448524733,
+            "deterministic_single_residue_capacity": 144.23273393274087,
+            "capacity_surplus": 94.54284062453712,
+            "mass_to_capacity_ratio": 1.6554880993147136,
+            "first_active_residues": [
+              1,
+              2,
+              3,
+              4,
+              6,
+              8,
+              9,
+              12
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 257.6117450739556,
+            "active_residue_count": 11,
+            "max_actual_single_residue_weight": 32.10087548464608,
+            "actual_support_surplus": 225.51086958930952,
+            "deterministic_single_residue_capacity": 144.23273393274087,
+            "capacity_surplus": 113.37901114121473,
+            "mass_to_capacity_ratio": 1.7860837692647915,
+            "first_active_residues": [
+              5,
+              7,
+              10,
+              11,
+              14,
+              15,
+              17,
+              19
+            ]
+          }
+        ]
+      },
+      {
+        "P": 31,
+        "T0": 911.4801918753474,
+        "Tchi": -93.4926538286081,
+        "abs_quadratic_projection_ratio": 0.1025723374594124,
+        "actual_halfclass_margin_ratio": 0.8974276625405876,
+        "required_margin_ratio_for_single_residue_capacity": 0.46716803848480326,
+        "margin_ratio_surplus": 0.43025962405578433,
+        "deterministic_single_residue_capacity": 212.90720667807906,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 408.9937690233696,
+        "min_mass_to_capacity_ratio": 1.9209954205156534,
+        "min_capacity_surplus": 196.08656234529056,
+        "min_actual_support_surplus": 365.5288542791463,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 408.9937690233696,
+            "active_residue_count": 15,
+            "max_actual_single_residue_weight": 43.46491474422335,
+            "actual_support_surplus": 365.5288542791463,
+            "deterministic_single_residue_capacity": 212.90720667807906,
+            "capacity_surplus": 196.08656234529056,
+            "mass_to_capacity_ratio": 1.9209954205156534,
+            "first_active_residues": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 502.4864228519777,
+            "active_residue_count": 15,
+            "max_actual_single_residue_weight": 40.75518046499403,
+            "actual_support_surplus": 461.7312423869837,
+            "deterministic_single_residue_capacity": 212.90720667807906,
+            "capacity_surplus": 289.57921617389866,
+            "mass_to_capacity_ratio": 2.360119371683597,
+            "first_active_residues": [
+              3,
+              6,
+              11,
+              12,
+              13,
+              15,
+              17,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "P": 29,
+        "T0": 802.7151467422583,
+        "Tchi": -44.99845490507208,
+        "abs_quadratic_projection_ratio": 0.05605781214879768,
+        "actual_halfclass_margin_ratio": 0.9439421878512023,
+        "required_margin_ratio_for_single_residue_capacity": 0.48660638566952286,
+        "margin_ratio_surplus": 0.45733580218167946,
+        "deterministic_single_residue_capacity": 195.3031581392155,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 378.8583459185931,
+        "min_mass_to_capacity_ratio": 1.9398475146445726,
+        "min_capacity_surplus": 183.5551877793776,
+        "min_actual_support_surplus": 340.4990915295998,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 378.8583459185931,
+            "active_residue_count": 14,
+            "max_actual_single_residue_weight": 38.35925438899331,
+            "actual_support_surplus": 340.4990915295998,
+            "deterministic_single_residue_capacity": 195.3031581392155,
+            "capacity_surplus": 183.5551877793776,
+            "mass_to_capacity_ratio": 1.9398475146445726,
+            "first_active_residues": [
+              1,
+              4,
+              5,
+              6,
+              7,
+              9,
+              13,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 423.85680082366514,
+            "active_residue_count": 14,
+            "max_actual_single_residue_weight": 41.22446298924861,
+            "actual_support_surplus": 382.63233783441655,
+            "deterministic_single_residue_capacity": 195.3031581392155,
+            "capacity_surplus": 228.55364268444964,
+            "mass_to_capacity_ratio": 2.1702506240146544,
+            "first_active_residues": [
+              2,
+              3,
+              8,
+              10,
+              11,
+              12,
+              14,
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "P": 37,
+        "T0": 1313.0018439714236,
+        "Tchi": -77.88477893363711,
+        "abs_quadratic_projection_ratio": 0.05931810323895646,
+        "actual_halfclass_margin_ratio": 0.9406818967610435,
+        "required_margin_ratio_for_single_residue_capacity": 0.40701835532454617,
+        "margin_ratio_surplus": 0.5336635414364974,
+        "deterministic_single_residue_capacity": 267.2079255356726,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 617.5585325188932,
+        "min_mass_to_capacity_ratio": 2.311153500708752,
+        "min_capacity_surplus": 350.35060698322064,
+        "min_actual_support_surplus": 568.9375853648065,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 617.5585325188932,
+            "active_residue_count": 18,
+            "max_actual_single_residue_weight": 48.620947154086736,
+            "actual_support_surplus": 568.9375853648065,
+            "deterministic_single_residue_capacity": 267.2079255356726,
+            "capacity_surplus": 350.35060698322064,
+            "mass_to_capacity_ratio": 2.311153500708752,
+            "first_active_residues": [
+              1,
+              3,
+              4,
+              7,
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 695.4433114525303,
+            "active_residue_count": 18,
+            "max_actual_single_residue_weight": 50.14350943532051,
+            "actual_support_surplus": 645.2998020172098,
+            "deterministic_single_residue_capacity": 267.2079255356726,
+            "capacity_surplus": 428.23538591685775,
+            "mass_to_capacity_ratio": 2.6026298062019415,
+            "first_active_residues": [
+              2,
+              5,
+              6,
+              8,
+              13,
+              14,
+              15,
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "P": 43,
+        "T0": 1784.814910452861,
+        "Tchi": -83.89628836625197,
+        "abs_quadratic_projection_ratio": 0.04700559586033767,
+        "actual_halfclass_margin_ratio": 0.9529944041396623,
+        "required_margin_ratio_for_single_residue_capacity": 0.3624613488550183,
+        "margin_ratio_surplus": 0.590533055284644,
+        "deterministic_single_residue_capacity": 323.46320994964634,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 850.4593110433046,
+        "min_mass_to_capacity_ratio": 2.629230419050426,
+        "min_capacity_surplus": 526.9961010936584,
+        "min_actual_support_surplus": 792.2970444889779,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 850.4593110433046,
+            "active_residue_count": 21,
+            "max_actual_single_residue_weight": 58.162266554326706,
+            "actual_support_surplus": 792.2970444889779,
+            "deterministic_single_residue_capacity": 323.46320994964634,
+            "capacity_surplus": 526.9961010936584,
+            "mass_to_capacity_ratio": 2.629230419050426,
+            "first_active_residues": [
+              1,
+              4,
+              6,
+              9,
+              10,
+              11,
+              13,
+              14
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 934.3555994095566,
+            "active_residue_count": 21,
+            "max_actual_single_residue_weight": 54.804843088807,
+            "actual_support_surplus": 879.5507563207495,
+            "deterministic_single_residue_capacity": 323.46320994964634,
+            "capacity_surplus": 610.8923894599102,
+            "mass_to_capacity_ratio": 2.888599292497617,
+            "first_active_residues": [
+              2,
+              3,
+              5,
+              7,
+              8,
+              12,
+              18,
+              19
+            ]
+          }
+        ]
+      },
+      {
+        "P": 41,
+        "T0": 1635.3943117003816,
+        "Tchi": -24.07969296122385,
+        "abs_quadratic_projection_ratio": 0.014724089957355468,
+        "actual_halfclass_margin_ratio": 0.9852759100426445,
+        "required_margin_ratio_for_single_residue_capacity": 0.37240304346312614,
+        "margin_ratio_surplus": 0.6128728665795183,
+        "deterministic_single_residue_capacity": 304.51290946975325,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 805.6573093695789,
+        "min_mass_to_capacity_ratio": 2.645724645212795,
+        "min_capacity_surplus": 501.14439989982566,
+        "min_actual_support_surplus": 751.9012556656234,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 805.6573093695789,
+            "active_residue_count": 20,
+            "max_actual_single_residue_weight": 53.75605370395553,
+            "actual_support_surplus": 751.9012556656234,
+            "deterministic_single_residue_capacity": 304.51290946975325,
+            "capacity_surplus": 501.14439989982566,
+            "mass_to_capacity_ratio": 2.645724645212795,
+            "first_active_residues": [
+              1,
+              2,
+              4,
+              5,
+              8,
+              9,
+              10,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 829.7370023308027,
+            "active_residue_count": 20,
+            "max_actual_single_residue_weight": 57.697626714623524,
+            "actual_support_surplus": 772.0393756161792,
+            "deterministic_single_residue_capacity": 304.51290946975325,
+            "capacity_surplus": 525.2240928610495,
+            "mass_to_capacity_ratio": 2.724800744164244,
+            "first_active_residues": [
+              3,
+              6,
+              7,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "P": 47,
+        "T0": 2134.8513499287546,
+        "Tchi": -17.77530766687526,
+        "abs_quadratic_projection_ratio": 0.00832625075627325,
+        "actual_halfclass_margin_ratio": 0.9916737492437268,
+        "required_margin_ratio_for_single_residue_capacity": 0.33905299736473316,
+        "margin_ratio_surplus": 0.6526207518789936,
+        "deterministic_single_residue_capacity": 361.9138745607455,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 1058.5380211309396,
+        "min_mass_to_capacity_ratio": 2.924834043501886,
+        "min_capacity_surplus": 696.6241465701941,
+        "min_actual_support_surplus": 1000.4555521827851,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 1058.5380211309396,
+            "active_residue_count": 23,
+            "max_actual_single_residue_weight": 58.08246894815447,
+            "actual_support_surplus": 1000.4555521827851,
+            "deterministic_single_residue_capacity": 361.9138745607455,
+            "capacity_surplus": 696.6241465701941,
+            "mass_to_capacity_ratio": 2.924834043501886,
+            "first_active_residues": [
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 1076.3133287978148,
+            "active_residue_count": 23,
+            "max_actual_single_residue_weight": 67.68896314071918,
+            "actual_support_surplus": 1008.6243656570957,
+            "deterministic_single_residue_capacity": 361.9138745607455,
+            "capacity_surplus": 714.3994542370693,
+            "mass_to_capacity_ratio": 2.9739487885180838,
+            "first_active_residues": [
+              5,
+              10,
+              11,
+              13,
+              15,
+              19,
+              20,
+              22
+            ]
+          }
+        ]
+      }
+    ],
+    "top_low_margin_surplus_records": [
+      {
+        "P": 7,
+        "T0": 39.014309282297646,
+        "Tchi": -5.082408227074191,
+        "abs_quadratic_projection_ratio": 0.1302703628635118,
+        "actual_halfclass_margin_ratio": 0.8697296371364882,
+        "required_margin_ratio_for_single_residue_capacity": 1.3965512955594221,
+        "margin_ratio_surplus": -0.5268216584229339,
+        "deterministic_single_residue_capacity": 27.242742086774385,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 16.965950527611724,
+        "min_mass_to_capacity_ratio": 0.6227695609190617,
+        "min_capacity_surplus": -10.27679155916266,
+        "min_actual_support_surplus": 9.526391218478405,
+        "capacity_gate_passes": false,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 16.965950527611724,
+            "active_residue_count": 3,
+            "max_actual_single_residue_weight": 7.439559309133319,
+            "actual_support_surplus": 9.526391218478405,
+            "deterministic_single_residue_capacity": 27.242742086774385,
+            "capacity_surplus": -10.27679155916266,
+            "mass_to_capacity_ratio": 0.6227695609190617,
+            "first_active_residues": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 22.048358754685918,
+            "active_residue_count": 3,
+            "max_actual_single_residue_weight": 8.4040244933106,
+            "actual_support_surplus": 13.644334261375318,
+            "deterministic_single_residue_capacity": 27.242742086774385,
+            "capacity_surplus": -5.194383332088467,
+            "mass_to_capacity_ratio": 0.8093296440004767,
+            "first_active_residues": [
+              3,
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "P": 13,
+        "T0": 149.36791031202745,
+        "Tchi": -19.354710850207738,
+        "abs_quadratic_projection_ratio": 0.1295774360756338,
+        "actual_halfclass_margin_ratio": 0.8704225639243662,
+        "required_margin_ratio_for_single_residue_capacity": 0.8929452538324764,
+        "margin_ratio_surplus": -0.022522689908110127,
+        "deterministic_single_residue_capacity": 66.68868329399996,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 65.00659973090985,
+        "min_mass_to_capacity_ratio": 0.9747770764092828,
+        "min_capacity_surplus": -1.682083563090103,
+        "min_actual_support_surplus": 46.73541683634125,
+        "capacity_gate_passes": false,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 65.00659973090985,
+            "active_residue_count": 6,
+            "max_actual_single_residue_weight": 18.271182894568604,
+            "actual_support_surplus": 46.73541683634125,
+            "deterministic_single_residue_capacity": 66.68868329399996,
+            "capacity_surplus": -1.682083563090103,
+            "mass_to_capacity_ratio": 0.9747770764092828,
+            "first_active_residues": [
+              1,
+              3,
+              4,
+              9,
+              10,
+              12
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 84.36131058111759,
+            "active_residue_count": 6,
+            "max_actual_single_residue_weight": 16.785776140656598,
+            "actual_support_surplus": 67.575534440461,
+            "deterministic_single_residue_capacity": 66.68868329399996,
+            "capacity_surplus": 17.672627287117635,
+            "mass_to_capacity_ratio": 1.2650018925880886,
+            "first_active_residues": [
+              2,
+              5,
+              6,
+              7,
+              8,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "P": 11,
+        "T0": 104.67190916673984,
+        "Tchi": -1.3133828768630167,
+        "abs_quadratic_projection_ratio": 0.012547615566759457,
+        "actual_halfclass_margin_ratio": 0.9874523844332406,
+        "required_margin_ratio_for_single_residue_capacity": 1.0079819202978095,
+        "margin_ratio_surplus": -0.02052953586456896,
+        "deterministic_single_residue_capacity": 52.75369600156415,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 51.67926314493841,
+        "min_mass_to_capacity_ratio": 0.979633031653481,
+        "min_capacity_surplus": -1.0744328566257408,
+        "min_actual_support_surplus": 39.356078800158826,
+        "capacity_gate_passes": false,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 51.67926314493841,
+            "active_residue_count": 5,
+            "max_actual_single_residue_weight": 12.32318434477958,
+            "actual_support_surplus": 39.356078800158826,
+            "deterministic_single_residue_capacity": 52.75369600156415,
+            "capacity_surplus": -1.0744328566257408,
+            "mass_to_capacity_ratio": 0.979633031653481,
+            "first_active_residues": [
+              1,
+              3,
+              4,
+              5,
+              9
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 52.99264602180143,
+            "active_residue_count": 5,
+            "max_actual_single_residue_weight": 12.242664907329765,
+            "actual_support_surplus": 40.749981114471666,
+            "deterministic_single_residue_capacity": 52.75369600156415,
+            "capacity_surplus": 0.23895002023727585,
+            "mass_to_capacity_ratio": 1.0045295408350192,
+            "first_active_residues": [
+              2,
+              6,
+              7,
+              8,
+              10
+            ]
+          }
+        ]
+      },
+      {
+        "P": 17,
+        "T0": 268.5116261222614,
+        "Tchi": -21.092536598887726,
+        "abs_quadratic_projection_ratio": 0.07855353194011666,
+        "actual_halfclass_margin_ratio": 0.9214464680598833,
+        "required_margin_ratio_for_single_residue_capacity": 0.7175052722227361,
+        "margin_ratio_surplus": 0.2039411958371472,
+        "deterministic_single_residue_capacity": 96.32925369791135,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 123.70954476168686,
+        "min_mass_to_capacity_ratio": 1.284236511887034,
+        "min_capacity_surplus": 27.380291063775502,
+        "min_actual_support_surplus": 103.78194419559054,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 123.70954476168686,
+            "active_residue_count": 8,
+            "max_actual_single_residue_weight": 19.927600566096316,
+            "actual_support_surplus": 103.78194419559054,
+            "deterministic_single_residue_capacity": 96.32925369791135,
+            "capacity_surplus": 27.380291063775502,
+            "mass_to_capacity_ratio": 1.284236511887034,
+            "first_active_residues": [
+              1,
+              2,
+              4,
+              8,
+              9,
+              13,
+              15,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 144.8020813605746,
+            "active_residue_count": 8,
+            "max_actual_single_residue_weight": 24.544772539472774,
+            "actual_support_surplus": 120.25730882110182,
+            "deterministic_single_residue_capacity": 96.32925369791135,
+            "capacity_surplus": 48.472827662663235,
+            "mass_to_capacity_ratio": 1.5031994518993583,
+            "first_active_residues": [
+              3,
+              5,
+              6,
+              7,
+              10,
+              11,
+              12,
+              14
+            ]
+          }
+        ]
+      },
+      {
+        "P": 19,
+        "T0": 332.12870717365246,
+        "Tchi": -8.22557322811751,
+        "abs_quadratic_projection_ratio": 0.024766221800323916,
+        "actual_halfclass_margin_ratio": 0.975233778199676,
+        "required_margin_ratio_for_single_residue_capacity": 0.6737669993086389,
+        "margin_ratio_surplus": 0.3014667788910371,
+        "deterministic_single_residue_capacity": 111.88868120832473,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 161.95156697276747,
+        "min_mass_to_capacity_ratio": 1.4474347648376604,
+        "min_capacity_surplus": 50.06288576444274,
+        "min_actual_support_surplus": 134.62220108489925,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 161.95156697276747,
+            "active_residue_count": 9,
+            "max_actual_single_residue_weight": 27.32936588786823,
+            "actual_support_surplus": 134.62220108489925,
+            "deterministic_single_residue_capacity": 111.88868120832473,
+            "capacity_surplus": 50.06288576444274,
+            "mass_to_capacity_ratio": 1.4474347648376604,
+            "first_active_residues": [
+              1,
+              4,
+              5,
+              6,
+              7,
+              9,
+              11,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 170.17714020088496,
+            "active_residue_count": 9,
+            "max_actual_single_residue_weight": 25.76588152393336,
+            "actual_support_surplus": 144.4112586769516,
+            "deterministic_single_residue_capacity": 111.88868120832473,
+            "capacity_surplus": 58.28845899256024,
+            "mass_to_capacity_ratio": 1.520950451494136,
+            "first_active_residues": [
+              2,
+              3,
+              8,
+              10,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "P": 23,
+        "T0": 496.3873196312336,
+        "Tchi": -18.836170516677612,
+        "abs_quadratic_projection_ratio": 0.037946518316928426,
+        "actual_halfclass_margin_ratio": 0.9620534816830716,
+        "required_margin_ratio_for_single_residue_capacity": 0.581129808230764,
+        "margin_ratio_surplus": 0.3809236734523076,
+        "deterministic_single_residue_capacity": 144.23273393274087,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 238.775574557278,
+        "min_mass_to_capacity_ratio": 1.6554880993147136,
+        "min_capacity_surplus": 94.54284062453712,
+        "min_actual_support_surplus": 211.5408448524733,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 238.775574557278,
+            "active_residue_count": 11,
+            "max_actual_single_residue_weight": 27.234729704804693,
+            "actual_support_surplus": 211.5408448524733,
+            "deterministic_single_residue_capacity": 144.23273393274087,
+            "capacity_surplus": 94.54284062453712,
+            "mass_to_capacity_ratio": 1.6554880993147136,
+            "first_active_residues": [
+              1,
+              2,
+              3,
+              4,
+              6,
+              8,
+              9,
+              12
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 257.6117450739556,
+            "active_residue_count": 11,
+            "max_actual_single_residue_weight": 32.10087548464608,
+            "actual_support_surplus": 225.51086958930952,
+            "deterministic_single_residue_capacity": 144.23273393274087,
+            "capacity_surplus": 113.37901114121473,
+            "mass_to_capacity_ratio": 1.7860837692647915,
+            "first_active_residues": [
+              5,
+              7,
+              10,
+              11,
+              14,
+              15,
+              17,
+              19
+            ]
+          }
+        ]
+      },
+      {
+        "P": 31,
+        "T0": 911.4801918753474,
+        "Tchi": -93.4926538286081,
+        "abs_quadratic_projection_ratio": 0.1025723374594124,
+        "actual_halfclass_margin_ratio": 0.8974276625405876,
+        "required_margin_ratio_for_single_residue_capacity": 0.46716803848480326,
+        "margin_ratio_surplus": 0.43025962405578433,
+        "deterministic_single_residue_capacity": 212.90720667807906,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 408.9937690233696,
+        "min_mass_to_capacity_ratio": 1.9209954205156534,
+        "min_capacity_surplus": 196.08656234529056,
+        "min_actual_support_surplus": 365.5288542791463,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 408.9937690233696,
+            "active_residue_count": 15,
+            "max_actual_single_residue_weight": 43.46491474422335,
+            "actual_support_surplus": 365.5288542791463,
+            "deterministic_single_residue_capacity": 212.90720667807906,
+            "capacity_surplus": 196.08656234529056,
+            "mass_to_capacity_ratio": 1.9209954205156534,
+            "first_active_residues": [
+              1,
+              2,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 502.4864228519777,
+            "active_residue_count": 15,
+            "max_actual_single_residue_weight": 40.75518046499403,
+            "actual_support_surplus": 461.7312423869837,
+            "deterministic_single_residue_capacity": 212.90720667807906,
+            "capacity_surplus": 289.57921617389866,
+            "mass_to_capacity_ratio": 2.360119371683597,
+            "first_active_residues": [
+              3,
+              6,
+              11,
+              12,
+              13,
+              15,
+              17,
+              21
+            ]
+          }
+        ]
+      },
+      {
+        "P": 29,
+        "T0": 802.7151467422583,
+        "Tchi": -44.99845490507208,
+        "abs_quadratic_projection_ratio": 0.05605781214879768,
+        "actual_halfclass_margin_ratio": 0.9439421878512023,
+        "required_margin_ratio_for_single_residue_capacity": 0.48660638566952286,
+        "margin_ratio_surplus": 0.45733580218167946,
+        "deterministic_single_residue_capacity": 195.3031581392155,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 378.8583459185931,
+        "min_mass_to_capacity_ratio": 1.9398475146445726,
+        "min_capacity_surplus": 183.5551877793776,
+        "min_actual_support_surplus": 340.4990915295998,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 378.8583459185931,
+            "active_residue_count": 14,
+            "max_actual_single_residue_weight": 38.35925438899331,
+            "actual_support_surplus": 340.4990915295998,
+            "deterministic_single_residue_capacity": 195.3031581392155,
+            "capacity_surplus": 183.5551877793776,
+            "mass_to_capacity_ratio": 1.9398475146445726,
+            "first_active_residues": [
+              1,
+              4,
+              5,
+              6,
+              7,
+              9,
+              13,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 423.85680082366514,
+            "active_residue_count": 14,
+            "max_actual_single_residue_weight": 41.22446298924861,
+            "actual_support_surplus": 382.63233783441655,
+            "deterministic_single_residue_capacity": 195.3031581392155,
+            "capacity_surplus": 228.55364268444964,
+            "mass_to_capacity_ratio": 2.1702506240146544,
+            "first_active_residues": [
+              2,
+              3,
+              8,
+              10,
+              11,
+              12,
+              14,
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "P": 37,
+        "T0": 1313.0018439714236,
+        "Tchi": -77.88477893363711,
+        "abs_quadratic_projection_ratio": 0.05931810323895646,
+        "actual_halfclass_margin_ratio": 0.9406818967610435,
+        "required_margin_ratio_for_single_residue_capacity": 0.40701835532454617,
+        "margin_ratio_surplus": 0.5336635414364974,
+        "deterministic_single_residue_capacity": 267.2079255356726,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 617.5585325188932,
+        "min_mass_to_capacity_ratio": 2.311153500708752,
+        "min_capacity_surplus": 350.35060698322064,
+        "min_actual_support_surplus": 568.9375853648065,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 617.5585325188932,
+            "active_residue_count": 18,
+            "max_actual_single_residue_weight": 48.620947154086736,
+            "actual_support_surplus": 568.9375853648065,
+            "deterministic_single_residue_capacity": 267.2079255356726,
+            "capacity_surplus": 350.35060698322064,
+            "mass_to_capacity_ratio": 2.311153500708752,
+            "first_active_residues": [
+              1,
+              3,
+              4,
+              7,
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 695.4433114525303,
+            "active_residue_count": 18,
+            "max_actual_single_residue_weight": 50.14350943532051,
+            "actual_support_surplus": 645.2998020172098,
+            "deterministic_single_residue_capacity": 267.2079255356726,
+            "capacity_surplus": 428.23538591685775,
+            "mass_to_capacity_ratio": 2.6026298062019415,
+            "first_active_residues": [
+              2,
+              5,
+              6,
+              8,
+              13,
+              14,
+              15,
+              17
+            ]
+          }
+        ]
+      },
+      {
+        "P": 43,
+        "T0": 1784.814910452861,
+        "Tchi": -83.89628836625197,
+        "abs_quadratic_projection_ratio": 0.04700559586033767,
+        "actual_halfclass_margin_ratio": 0.9529944041396623,
+        "required_margin_ratio_for_single_residue_capacity": 0.3624613488550183,
+        "margin_ratio_surplus": 0.590533055284644,
+        "deterministic_single_residue_capacity": 323.46320994964634,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 850.4593110433046,
+        "min_mass_to_capacity_ratio": 2.629230419050426,
+        "min_capacity_surplus": 526.9961010936584,
+        "min_actual_support_surplus": 792.2970444889779,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 850.4593110433046,
+            "active_residue_count": 21,
+            "max_actual_single_residue_weight": 58.162266554326706,
+            "actual_support_surplus": 792.2970444889779,
+            "deterministic_single_residue_capacity": 323.46320994964634,
+            "capacity_surplus": 526.9961010936584,
+            "mass_to_capacity_ratio": 2.629230419050426,
+            "first_active_residues": [
+              1,
+              4,
+              6,
+              9,
+              10,
+              11,
+              13,
+              14
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 934.3555994095566,
+            "active_residue_count": 21,
+            "max_actual_single_residue_weight": 54.804843088807,
+            "actual_support_surplus": 879.5507563207495,
+            "deterministic_single_residue_capacity": 323.46320994964634,
+            "capacity_surplus": 610.8923894599102,
+            "mass_to_capacity_ratio": 2.888599292497617,
+            "first_active_residues": [
+              2,
+              3,
+              5,
+              7,
+              8,
+              12,
+              18,
+              19
+            ]
+          }
+        ]
+      },
+      {
+        "P": 41,
+        "T0": 1635.3943117003816,
+        "Tchi": -24.07969296122385,
+        "abs_quadratic_projection_ratio": 0.014724089957355468,
+        "actual_halfclass_margin_ratio": 0.9852759100426445,
+        "required_margin_ratio_for_single_residue_capacity": 0.37240304346312614,
+        "margin_ratio_surplus": 0.6128728665795183,
+        "deterministic_single_residue_capacity": 304.51290946975325,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 805.6573093695789,
+        "min_mass_to_capacity_ratio": 2.645724645212795,
+        "min_capacity_surplus": 501.14439989982566,
+        "min_actual_support_surplus": 751.9012556656234,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 805.6573093695789,
+            "active_residue_count": 20,
+            "max_actual_single_residue_weight": 53.75605370395553,
+            "actual_support_surplus": 751.9012556656234,
+            "deterministic_single_residue_capacity": 304.51290946975325,
+            "capacity_surplus": 501.14439989982566,
+            "mass_to_capacity_ratio": 2.645724645212795,
+            "first_active_residues": [
+              1,
+              2,
+              4,
+              5,
+              8,
+              9,
+              10,
+              16
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 829.7370023308027,
+            "active_residue_count": 20,
+            "max_actual_single_residue_weight": 57.697626714623524,
+            "actual_support_surplus": 772.0393756161792,
+            "deterministic_single_residue_capacity": 304.51290946975325,
+            "capacity_surplus": 525.2240928610495,
+            "mass_to_capacity_ratio": 2.724800744164244,
+            "first_active_residues": [
+              3,
+              6,
+              7,
+              11,
+              12,
+              13,
+              14,
+              15
+            ]
+          }
+        ]
+      },
+      {
+        "P": 47,
+        "T0": 2134.8513499287546,
+        "Tchi": -17.77530766687526,
+        "abs_quadratic_projection_ratio": 0.00832625075627325,
+        "actual_halfclass_margin_ratio": 0.9916737492437268,
+        "required_margin_ratio_for_single_residue_capacity": 0.33905299736473316,
+        "margin_ratio_surplus": 0.6526207518789936,
+        "deterministic_single_residue_capacity": 361.9138745607455,
+        "dangerous_halfclass": "quadratic_residue",
+        "min_halfclass_mass": 1058.5380211309396,
+        "min_mass_to_capacity_ratio": 2.924834043501886,
+        "min_capacity_surplus": 696.6241465701941,
+        "min_actual_support_surplus": 1000.4555521827851,
+        "capacity_gate_passes": true,
+        "actual_support_degeneracy_absent": true,
+        "halfclass_records": [
+          {
+            "halfclass": "quadratic_residue",
+            "legendre_sign": 1,
+            "halfclass_mass": 1058.5380211309396,
+            "active_residue_count": 23,
+            "max_actual_single_residue_weight": 58.08246894815447,
+            "actual_support_surplus": 1000.4555521827851,
+            "deterministic_single_residue_capacity": 361.9138745607455,
+            "capacity_surplus": 696.6241465701941,
+            "mass_to_capacity_ratio": 2.924834043501886,
+            "first_active_residues": [
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          {
+            "halfclass": "quadratic_nonresidue",
+            "legendre_sign": -1,
+            "halfclass_mass": 1076.3133287978148,
+            "active_residue_count": 23,
+            "max_actual_single_residue_weight": 67.68896314071918,
+            "actual_support_surplus": 1008.6243656570957,
+            "deterministic_single_residue_capacity": 361.9138745607455,
+            "capacity_surplus": 714.3994542370693,
+            "mass_to_capacity_ratio": 2.9739487885180838,
+            "first_active_residues": [
+              5,
+              10,
+              11,
+              13,
+              15,
+              19,
+              20,
+              22
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "single_residue_deterministic_capacity_closed": true,
+  "zero_support_degeneracy_implies_capacity_failure_closed": true,
+  "quadratic_halfclass_mass_beats_single_residue_capacity_proved": false,
+  "row_column_unconditional_closed": false,
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale) AND QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2)) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "PreviousZeroSupportDegeneracyImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层把精确轨道锁压成 punctured 半类全零支撑退化。",
+      "remaining": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC"
+    },
+    {
+      "gate": "SingleResidueDeterministicCapacityClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "固定 residue 在 P^2 前的 theta 权重至多 2P log P。",
+      "remaining": "none"
+    },
+    {
+      "gate": "ZeroSupportDegeneracyImpliesCapacityFailureClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若同半类除缺孔外全零，则该半类总质量必须不超过单 residue 容量。",
+      "remaining": "none"
+    },
+    {
+      "gate": "FiniteBaseSupportDegeneracyAbsentInDiagnostic",
+      "closed": true,
+      "proved": false,
+      "meaning": "有限诊断中 P<=13 的确定性容量门不全通过，但实际支撑退化为零；有限读数不替代无限证明。",
+      "remaining": "none"
+    },
+    {
+      "gate": "QuadraticHalfClassMassBeatsSingleResidueCapacityProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料尚未自足证明每个二次半类总质量都超过 2P log P。",
+      "remaining": "QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只把零支撑退化压成半类质量容量门，不证明行/列命题。",
+      "remaining": "global final inputs remain open"
+    }
+  ],
+  "closed_gates": [
+    "PreviousZeroSupportDegeneracyImported",
+    "SingleResidueDeterministicCapacityClosed",
+    "ZeroSupportDegeneracyImpliesCapacityFailureClosed",
+    "FiniteBaseSupportDegeneracyAbsentInDiagnostic"
+  ],
+  "open_gates": [
+    "FiniteBaseSupportDegeneracyAbsentInDiagnostic",
+    "QuadraticHalfClassMassBeatsSingleResidueCapacityProved",
+    "RowColumnUnconditionalClosed"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-halfclass-log-independence-degeneracy-router.json": "f5f9e260d66b4da8b5de66b54b045389f41dd67a74b887f3bea1d3b726c4dc58",
+    "docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.json": "11a035a79778851ceb5e852bb80587a455411b199bd6ec33208ce7b022aed2c4",
+    "docs/monograph/claim-status-table.md": "96af5955bdee717dfee8e348a6eac1943e23bcde9b50e062b515a2b54f43a1a5",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "0fabac34925098950b599baaf5a441732589fe8ce38d28cfeb4530f783d61c53",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "ac306e4e6cdc72a802e891ae34f905da5456731c823bd47b4d48cb45f15e1756",
+    "docs/final-proof-draft.md": "c8958bc1f15441975c2f7c2b206609eb88fa43adc21313e26742b3bb1addea9b",
+    "docs/prime-density-waves-X.md": "512245acdfc1bf8085de9e6de6580f41acdb1c05d9039ea44f84cf82751626fe",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "71803c9b02f87a33b262a0caf245a4efa29bb16c99c7a728884c89d2d711b31f"
+  },
+  "plain_conclusion": "本步继续下钻 `PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC`。若同一二次半类除缺孔外全无 `P^2` 内素数到达，则该半类全部 Chebyshev 质量只能落在一个 residue。而单个 residue 在 `P^2` 前至多有 `P` 个候选位置，因此权重不超过 `2P log P`。所以只要证明 `min_s Theta_s(P)>2P log P`，即 `T0(P)*(1-|T_chi(P)|/T0(P))>4P log P`，就排除该退化。最新硬点压成 `QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2`。"
+}

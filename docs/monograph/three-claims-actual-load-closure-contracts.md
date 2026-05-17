@@ -5099,3 +5099,68 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“精确全配对轨道锁还能保持正平铺”的误出口。剩余最窄接口是排斥 punctured 半类全零支撑退化，或将它登记并排斥为 ColumnCRT/PDEC/moving-family 出口。行/列命题仍未无条件闭合。
+
+## 115. Half-class single-residue capacity router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_single_residue_capacity_router.py
+docs/monograph/prime-matrix-halfclass-single-residue-capacity-router.md
+docs/monograph/prime-matrix-halfclass-single-residue-capacity-router.json
+data/prime-matrix-halfclass-single-residue-capacity-ledger.json
+```
+
+本步继续下钻
+
+```text
+PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC
+```
+
+若同一二次半类 `H_s` 除缺孔外全无 `P^2` 内素数到达，则该半类全部 Chebyshev 质量只能落在一个 residue。固定 residue 在 `P^2` 前至多有 `P` 个候选位置，故
+
+```text
+theta(P^2;P,a) <= 2P log P.
+```
+
+因此该退化只能发生在
+
+```text
+Theta_s(P) <= 2P log P
+```
+
+的容量失败情形。用二次角色投影写为：
+
+```text
+min_s Theta_s(P)=(T0(P)-|T_chi(P)|)/2,
+T0(P)*(1-|T_chi(P)|/T0(P)) > 4P log P
+```
+
+即可排除该退化。
+
+当前读数：
+
+```text
+single_residue_deterministic_capacity_closed=true
+zero_support_degeneracy_implies_capacity_failure_closed=true
+quadratic_halfclass_mass_beats_single_residue_capacity_proved=false
+row_column_unconditional_closed=false
+```
+
+有限诊断 `7<=P<=1000` 中，粗容量门只在 `P=7,11,13` 不通过；从 `P>=17` 开始最小半类质量/单 residue 容量比为 `1.284236511887034`。实际支撑退化数为 `0`。该有限读数只用于定位，不作为无限证明输入。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“punctured 半类全零支撑仍是纯支撑语言”的误出口。剩余最窄接口是证明二次半类总 Chebyshev 质量击穿单 residue 容量，或将容量失败登记并排斥为 ColumnCRT/PDEC/moving-family 出口。行/列命题仍未无条件闭合。

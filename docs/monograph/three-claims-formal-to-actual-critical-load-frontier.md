@@ -5017,3 +5017,63 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“精确轨道锁仍可能以正质量平铺存在”的误出口。剩余不是对数独立问题，而是必须证明同半类除缺孔外不可能全部没有 `P^2` 内素数到达，或把这种极端支撑退化纳入 ColumnCRT/PDEC/moving-family 终端缺陷链。
+
+## 126. Half-class single-residue capacity router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_single_residue_capacity_router.py
+docs/monograph/prime-matrix-halfclass-single-residue-capacity-router.md
+docs/monograph/prime-matrix-halfclass-single-residue-capacity-router.json
+data/prime-matrix-halfclass-single-residue-capacity-ledger.json
+```
+
+本步把 punctured 半类全零支撑继续压到容量不等式。若退化存在，则某个半类全部质量都集中在单个 residue；而单个 residue 在 `P^2` 前最多贡献
+
+```text
+2P log P.
+```
+
+因此只要证明
+
+```text
+min_s Theta_s(P)>2P log P
+```
+
+即可排除退化。等价二次投影形式为：
+
+```text
+T0(P)*(1-|T_chi(P)|/T0(P))>4P log P.
+```
+
+这把剩余硬点压成：
+
+```text
+QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2
+```
+
+当前读数：
+
+```text
+single_residue_deterministic_capacity_closed=true
+zero_support_degeneracy_implies_capacity_failure_closed=true
+quadratic_halfclass_mass_beats_single_residue_capacity_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“支撑退化不能与总质量账本对接”的误出口。剩余是自足证明二次半类质量在 square scale 下超过单 residue 容量，或把容量失败作为显式二次角色/ColumnCRT/PDEC 终端缺陷处理。

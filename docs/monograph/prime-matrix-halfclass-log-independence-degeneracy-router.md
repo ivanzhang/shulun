@@ -85,11 +85,11 @@ degenerate_instances_found=0
 
 | file | sha256 |
 | --- | --- |
-| `docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.json` | `7bbb273f91e774b561791f52bf3ed36aa1b4e537bba97f67364f47b3d718546f` |
+| `docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.json` | `18ea3995fdd039330b05c89ffaaa19861df97f2f8b30497e664c4f8d44ad7f76` |
 | `docs/monograph/prime-matrix-halfclass-ratio-fourier-lock-router.json` | `59af5b66fc0a0beec9168743d20a95339e546f96aed9185a2fed627ac137f184` |
-| `docs/monograph/claim-status-table.md` | `46e354c13973286f6530ccbf5604d797bc03d41ca611b91822f1079dbdbd22a8` |
-| `docs/monograph/three-claims-actual-load-closure-contracts.md` | `c1c4d5dfd96d34b1d2b37bbcd3266049643b60ccb0339f697241abfa6c89876a` |
-| `docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md` | `3492c9a36ad2f7ea20c8f56e5c135c9dfc471ef1d06d53858ce672363aba0ad7` |
+| `docs/monograph/claim-status-table.md` | `96af5955bdee717dfee8e348a6eac1943e23bcde9b50e062b515a2b54f43a1a5` |
+| `docs/monograph/three-claims-actual-load-closure-contracts.md` | `0fabac34925098950b599baaf5a441732589fe8ce38d28cfeb4530f783d61c53` |
+| `docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md` | `ac306e4e6cdc72a802e891ae34f905da5456731c823bd47b4d48cb45f15e1756` |
 | `docs/final-proof-draft.md` | `c8958bc1f15441975c2f7c2b206609eb88fa43adc21313e26742b3bb1addea9b` |
 | `docs/prime-density-waves-X.md` | `512245acdfc1bf8085de9e6de6580f41acdb1c05d9039ea44f84cf82751626fe` |
-| `paper/contradiction-field-monograph/contradiction-field-monograph.tex` | `e9a8dfcfc7d001b13aa635be5f23e9dee8851c2bf9281c743d670659aa10d963` |
+| `paper/contradiction-field-monograph/contradiction-field-monograph.tex` | `71803c9b02f87a33b262a0caf245a4efa29bb16c99c7a728884c89d2d711b31f` |
