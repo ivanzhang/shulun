@@ -3801,3 +3801,50 @@ EarlyZeroGapCarrierAsymmetryRoutedToH3DSBNCBLKOrExternalDIBFI;GlobalFinalInputsS
 ```
 
 这一步是路由闭合，不是全局行/列无条件证明闭合。
+
+## 103. early-zero period-lift carrier drift router
+
+新增文件
+
+```text
+experiments/prime_matrix_early_zero_period_lift_carrier_drift_router.py
+docs/monograph/prime-matrix-early-zero-period-lift-carrier-drift-router.md
+data/prime-matrix-early-zero-period-lift-carrier-drift-ledger.json
+```
+
+本步把 `P,k` 行 CRT 周期复现后的不对称问题继续压实。若 `x` 是 `P` 零行乘数，则对
+`L_P=prod_{q<P}q` 和任意 `t>=0`，`x+tL_P` 仍为零行乘数；整数区间平移量为 `P L_P`。
+这是反例链在 CRT 行周期中的精确复现。
+
+但相邻素数载体端点不是小素因子覆盖对象。令 `a_t,b_t` 为提升后零行区间的左右最近素数，
+则 CRT 周期不推出
+
+```text
+a_t=a_0+tP L_P
+b_t=b_0+tP L_P
+```
+
+关键读数：
+
+```text
+zero_row_period_lift_exact=true
+carrier_endpoint_periodic_translation_forced=false
+all_sample_lifts_zero=true
+sample_endpoint_translate_match_total_after_t0=1
+persistent_drift_routes_to_pdec_columncrt=true
+sparse_drift_routes_to_sae=true
+nonperiodic_drift_routes_to_h3_dsb=true
+row_column_unconditional_closed=false
+```
+
+因此后续 CRT 周期中的“不对称矛盾”不是一个裸矛盾，而是命名三分流：持久端点漂移进入
+`PDEC/ColumnCRT`，孤立漂移进入 `SAE`，非周期漂移但覆盖压力持续则回到 `H3-DSB/KLS`
+的 `NC-BLK` 或外部 `DI/BFI` 分支。
+
+actual-load 前沿更新为：
+
+```text
+PeriodLiftCarrierDriftRoutedToPersistentPDECOrSparseSAEOrH3DSBNCBLK;GlobalFinalInputsStillOpen
+```
+
+这一步继续保持诚实边界：行/列全局无条件证明尚未闭合。

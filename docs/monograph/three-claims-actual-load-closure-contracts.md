@@ -3839,3 +3839,57 @@ EarlyZeroGapCarrierAsymmetryRoutedToH3DSBNCBLKOrExternalDIBFI;GlobalFinalInputsS
 
 本步仍不宣称行/列命题闭合；它只把相邻素数大间隙/CRT 非对称提示严格接入当前最终硬核，并排除
 “单个 gap carrier 自动形成全局 CRT 矛盾”的跳步。
+
+## 96. early-zero period-lift carrier drift 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_early_zero_period_lift_carrier_drift_router.py
+docs/monograph/prime-matrix-early-zero-period-lift-carrier-drift-router.md
+docs/monograph/prime-matrix-early-zero-period-lift-carrier-drift-router.json
+data/prime-matrix-early-zero-period-lift-carrier-drift-ledger.json
+```
+
+本证书进一步处理 `P,k` 行 CRT 周期问题。令
+
+```text
+L_P=prod_{q<P} q.
+```
+
+若 `x` 是 `P` 的零行乘数，则 `x+tL_P` 仍为零行乘数，因为每个覆盖同余
+`q | Px+c` 在 `q | P(x+tL_P)+c` 下保持不变。这说明反例覆盖链会在 CRT 行周期中精确复现。
+但跨越该零行的左右相邻素数端点不由该周期控制；`a_t,b_t` 不必等于 `a_0+tPL_P,b_0+tPL_P`。
+
+当前读数：
+
+```text
+zero_row_period_lift_exact=true
+carrier_endpoint_periodic_translation_forced=false
+all_sample_lifts_zero=true
+sample_endpoint_translate_match_total_after_t0=1
+persistent_drift_routes_to_pdec_columncrt=true
+sparse_drift_routes_to_sae=true
+nonperiodic_drift_routes_to_h3_dsb=true
+row_column_unconditional_closed=false
+```
+
+已登记零行样本在 `12` 次周期提升中全部保持零行覆盖；端点 slack/gap 大量漂移，整体端点平移只
+偶然出现 `1` 次，不能作为 CRT 推论使用。
+
+最新三分流为：
+
+```text
+persistent carrier drift => PDEC/ColumnCRT
+sparse carrier drift => SAE
+nonperiodic carrier drift with persistent cover pressure => H3-DSB/KLS -> NC-BLK or external DI/BFI
+```
+
+最新剩余为：
+
+```text
+PeriodLiftCarrierDriftRoutedToPersistentPDECOrSparseSAEOrH3DSBNCBLK;GlobalFinalInputsStillOpen
+```
+
+本步不证明行/列命题全局闭合；它把“CRT 周期复现会在后续周期制造不对称矛盾”的说法精确化为
+端点漂移三分流。

@@ -7972,6 +7972,45 @@ has not replaced it by an accepted external DI/BFI theorem, so the global
 row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Period-lift carrier drift router]
+Let
+\[
+  L_P=\prod_{\substack{q<P\\q\ {\rm prime}}}q.
+\]
+If \(x\) is a \(P\)-zero-row multiplier, then \(x+tL_P\) is again a
+\(P\)-zero-row multiplier for every \(t\ge0\).  The corresponding intervals
+are shifted by \(PL_P\).  However, the adjacent prime carriers around these
+intervals are not forced to translate by \(PL_P\).  Thus the period-lifted
+counterexample cover and the true adjacent-prime endpoint chain have an
+intrinsic asymmetry: persistent endpoint drift is a PDEC/ColumnCRT object,
+sparse drift is SAE, and non-periodic drift with persistent covering pressure
+returns to the H3-DSB/KLS NC-BLK or external DI/BFI branch.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-early-zero-period-lift-carrier-drift-router.md.
+\end{quote}
+For each non-trivial column \(1\le c<P\), the zero-row hypothesis gives a
+prime \(q<P\) with \(q\mid Px+c\).  Since \(q\mid L_P\),
+\[
+  P(x+tL_P)+c\equiv Px+c\pmod q,
+\]
+so the same small prime \(q\) covers the lifted entry.  This proves exact
+period lift of the covering chain.
+
+Let \(a_t,b_t\) be the adjacent primes immediately outside the lifted interval
+\([P(x+tL_P)+1,P(x+tL_P)+P]\).  The congruence calculation above contains no
+condition forcing \(a_t=a_0+tPL_P\) or \(b_t=b_0+tPL_P\).  It only proves
+absence of primes inside the lifted interval.  Hence endpoint translation is
+not a CRT consequence.  Any infinite structured use of the endpoint drift must
+therefore be named: fixed recurring drift gives a PDEC/ColumnCRT formal unit;
+isolated drift gives SAE; and non-periodic endpoint drift leaves the tail
+filler/short-window dispersion problem already registered as H3-DSB/KLS with
+NC-BLK or external DI/BFI as the remaining input.  This proves the router but
+not the final row/column theorem.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
