@@ -1,0 +1,183 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_remote_columncrt_feedback_router",
+  "status": "bare_remote_pspace_columncrt_terminal_closed_materialized_fresh_layer_pdec_or_unregistered_moving_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "previous_hardpoint": "RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter",
+  "registered_remote_block_count": 6,
+  "minimum_remote_pspace_columncrt_modulus_log10": 36.33656668086215,
+  "maximum_remote_pspace_columncrt_modulus_log10": 103.10337197992303,
+  "minimum_first_fresh_log10_gain": 2.3996737214810366,
+  "minimum_sample_fresh_log10_gain": 19.435256688672716,
+  "remote_pspace_columncrt_imported": true,
+  "registered_finite_atoms_absorbed": true,
+  "fixed_finite_remote_crt_not_terminal": true,
+  "persistent_remote_requires_unbounded_fresh_modulus_or_pdec": true,
+  "non_pdec_fresh_tail_sieve_closed": true,
+  "local_support_motion_closed": true,
+  "bare_remote_pspace_columncrt_terminal_closed": true,
+  "materialized_fresh_layer_pdec_columncrt_excluded": false,
+  "unregistered_moving_family_excluded": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_after_router": "MaterializedFreshLayerPDECColumnCRTExclusionOrUnregisteredMovingFamilyRouter",
+  "next_direct_attack_target": "MaterializedFreshLayerPDECColumnCRTExclusionOrUnregisteredMovingFamilyRouter",
+  "remote_blocks": [
+    {
+      "label": "k13_branch_exclusive",
+      "support_width": 73,
+      "audit_slot_count": 73,
+      "p_space_columncrt_modulus_log10": 40.431920579953356,
+      "log10_p_space_margin_over_support_width": 38.5685977198329,
+      "first_fresh_prime": 251,
+      "first_fresh_log10_gain": 2.3996737214810366,
+      "sample_fresh_log10_gain": 19.435256688672716,
+      "remote_plus_first_fresh_log10": 42.83159430143439,
+      "remote_plus_sample_fresh_log10": 59.86717726862607
+    },
+    {
+      "label": "k14_branch_exclusive",
+      "support_width": 70,
+      "audit_slot_count": 70,
+      "p_space_columncrt_modulus_log10": 36.33656668086215,
+      "log10_p_space_margin_over_support_width": 34.49146864084789,
+      "first_fresh_prime": 293,
+      "first_fresh_log10_gain": 2.4668676203541082,
+      "sample_fresh_log10_gain": 20.03115735406027,
+      "remote_plus_first_fresh_log10": 38.80343430121626,
+      "remote_plus_sample_fresh_log10": 56.36772403492242
+    },
+    {
+      "label": "k14_branch_plus_entry",
+      "support_width": 78,
+      "audit_slot_count": 78,
+      "p_space_columncrt_modulus_log10": 75.81866019414488,
+      "log10_p_space_margin_over_support_width": 73.9265655914544,
+      "first_fresh_prime": 88609,
+      "first_fresh_log10_gain": 4.947477835338859,
+      "sample_fresh_log10_gain": 39.58158659507981,
+      "remote_plus_first_fresh_log10": 80.76613802948374,
+      "remote_plus_sample_fresh_log10": 115.4002467892247
+    },
+    {
+      "label": "k14_branch_plus_entry_plus_assigned",
+      "support_width": 78,
+      "audit_slot_count": 107,
+      "p_space_columncrt_modulus_log10": 80.10504929137339,
+      "log10_p_space_margin_over_support_width": 78.21295468868291,
+      "first_fresh_prime": 88609,
+      "first_fresh_log10_gain": 4.947477835338859,
+      "sample_fresh_log10_gain": 39.58158659507981,
+      "remote_plus_first_fresh_log10": 85.05252712671225,
+      "remote_plus_sample_fresh_log10": 119.6866358864532
+    },
+    {
+      "label": "k14_branch_plus_entry_plus_postwall",
+      "support_width": 78,
+      "audit_slot_count": 117,
+      "p_space_columncrt_modulus_log10": 88.77831757722745,
+      "log10_p_space_margin_over_support_width": 86.88622297453698,
+      "first_fresh_prime": 88609,
+      "first_fresh_log10_gain": 4.947477835338859,
+      "sample_fresh_log10_gain": 39.58158659507981,
+      "remote_plus_first_fresh_log10": 93.72579541256631,
+      "remote_plus_sample_fresh_log10": 128.35990417230727
+    },
+    {
+      "label": "both_branches_plus_k14_entry_postwall",
+      "support_width": 151,
+      "audit_slot_count": 190,
+      "p_space_columncrt_modulus_log10": 103.10337197992303,
+      "log10_p_space_margin_over_support_width": 100.92439503262986,
+      "first_fresh_prime": 88609,
+      "first_fresh_log10_gain": 4.947477835338859,
+      "sample_fresh_log10_gain": 39.58158659507983,
+      "remote_plus_first_fresh_log10": 108.05084981526188,
+      "remote_plus_sample_fresh_log10": 142.68495857500284
+    }
+  ],
+  "gates": [
+    {
+      "gate": "RemotePspaceColumnCRTImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已证明 registered block 若无限复现，只能提升为远程 P-space ColumnCRT/PDEC 类。",
+      "remaining": "remote registered P-space ColumnCRT"
+    },
+    {
+      "gate": "RegisteredFiniteAtomsAlreadyAbsorbed",
+      "closed": true,
+      "proved": true,
+      "meaning": "post-100000 exact runner 已关闭当前登记有限原子分支；孤立远程原子不能作为全局逃逸。",
+      "remaining": "closed for registered finite atoms"
+    },
+    {
+      "gate": "FixedFiniteRemoteCRTNotTerminal",
+      "closed": true,
+      "proved": true,
+      "meaning": "fresh-modulus escalation 证书已证明固定有限 CRT replay 类不是无限反例链的终端稳定结构。",
+      "remaining": "unbounded fresh modulus or PDEC"
+    },
+    {
+      "gate": "NonPDECFreshTailSieveClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若无 fresh-layer PDEC/ColumnCRT，则无界 fresh layers 已接入 B3 tail-sieve 对象并由 strict 同步关闭。",
+      "remaining": "closed unless fresh-layer PDEC materializes"
+    },
+    {
+      "gate": "LocalSupportMotionAlreadyClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "本地投影碰撞和本地 support-motion 逃逸均已关闭；剩余不再是本地漂移。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "BareRemotePspaceColumnCRTTerminalClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "远程 P-space ColumnCRT 若只是裸固定周期类，则被有限原子、固定有限 CRT 非终端和 non-PDEC tail-sieve 闭合链吸收。",
+      "remaining": "materialized fresh-layer PDEC/ColumnCRT or unregistered moving family"
+    },
+    {
+      "gate": "MaterializedFreshLayerPDECColumnCRTStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "若远程类在某个新素数层实际产生相位复用/碰撞/PDEC 载荷，本证书尚未排斥该材料化 PDEC/ColumnCRT。",
+      "remaining": "MaterializedFreshLayerPDECColumnCRTExclusion"
+    },
+    {
+      "gate": "UnregisteredMovingFamilyStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "若阻断包、shape 或来源签名改变，则它不是 registered remote ColumnCRT，而是未登记 moving family。",
+      "remaining": "UnregisteredMovingFamilyRouter"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步关闭裸远程周期终端解释，但不排斥材料化 fresh-layer PDEC 或未登记 moving family。",
+      "remaining": "MaterializedFreshLayerPDECColumnCRTExclusionOrUnregisteredMovingFamilyRouter"
+    }
+  ],
+  "closed_gates": [
+    "RemotePspaceColumnCRTImported",
+    "RegisteredFiniteAtomsAlreadyAbsorbed",
+    "FixedFiniteRemoteCRTNotTerminal",
+    "NonPDECFreshTailSieveClosed",
+    "LocalSupportMotionAlreadyClosed",
+    "BareRemotePspaceColumnCRTTerminalClosed"
+  ],
+  "open_gates": [
+    "MaterializedFreshLayerPDECColumnCRTStillOpen",
+    "UnregisteredMovingFamilyStillOpen",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "remote P-space ColumnCRT 不能再作为裸固定周期终端保留：孤立有限原子已由 exact runner 吸收，固定有限 CRT 类已由 fresh-modulus escalation 证明为非终端，且 non-PDEC 无界 fresh layers 已由 tail-sieve strict 同步关闭。因此剩余必须是某个新素数层已经材料化的 PDEC/ColumnCRT，或阻断包改变后的未登记 moving family。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-fresh-support-motion-global-ledger.json": "eab025e80b600786d209394402a8e64114b4b8f8a847a53eb07f0da5747c7662",
+    "data/prime-matrix-cycle-debt-post100000-tail-atom-exact-ledger.json": "97b0a494818031721eb7076903f70ede95727b387828197def9d14efeb9a50e9",
+    "data/prime-matrix-cycle-debt-branch-replay-fresh-modulus-escalation-ledger.json": "bfc13d727a480ee6bb358d5f01a826b5e14b0a2bdef7dd8961c4f58c5ba116d9",
+    "data/prime-matrix-cycle-debt-fresh-modulus-tail-self-contained-sync-ledger.json": "99d31e9d86f0802049d5640413f3913f393f76bf62dcccab82f844ce2ff91cb4"
+  }
+}

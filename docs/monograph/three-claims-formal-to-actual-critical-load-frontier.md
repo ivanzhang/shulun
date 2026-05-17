@@ -3653,3 +3653,37 @@ RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter
 ```
 
 这一步不排斥远程 ColumnCRT，也不排斥未登记 moving family；它只把 registered support-motion escape 从剩余接口中删除。
+
+## 99. cycle-debt remote ColumnCRT feedback
+
+新增文件
+
+```text
+experiments/prime_matrix_cycle_debt_remote_columncrt_feedback_router.py
+docs/monograph/prime-matrix-cycle-debt-remote-columncrt-feedback-router.md
+data/prime-matrix-cycle-debt-remote-columncrt-feedback-ledger.json
+```
+
+本步继续压缩上一节的远程 ColumnCRT 出口。远程 P-space ColumnCRT 若只是裸固定周期类，则并不是新的终端结构：孤立有限原子已由 post-100000 exact runner 吸收；固定有限 CRT replay 类已由 fresh-modulus escalation 证明为非终端；若无 fresh-layer PDEC/ColumnCRT，则 non-PDEC 无界 fresh layers 已接入 B3 tail-sieve 对象并由 strict 同步关闭。
+
+关键读数：
+
+```text
+registered_remote_block_count=6
+minimum_remote_pspace_columncrt_modulus_log10=36.337
+maximum_remote_pspace_columncrt_modulus_log10=103.103
+minimum_first_fresh_log10_gain=2.400
+minimum_sample_fresh_log10_gain=19.435
+bare_remote_pspace_columncrt_terminal_closed=true
+materialized_fresh_layer_pdec_columncrt_excluded=false
+unregistered_moving_family_excluded=false
+row_column_unconditional_closed=false
+```
+
+actual-load 前沿继续收缩为：
+
+```text
+MaterializedFreshLayerPDECColumnCRTExclusionOrUnregisteredMovingFamilyRouter
+```
+
+这一步不排斥材料化 fresh-layer PDEC/ColumnCRT，也不排斥未登记 moving family；它只把裸 remote P-space ColumnCRT 终端解释从剩余接口中删除。
