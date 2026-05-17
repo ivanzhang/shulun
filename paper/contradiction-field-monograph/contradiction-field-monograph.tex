@@ -8489,6 +8489,52 @@ false shortcut, not the row/column theorem.
 \end{proof}
 
 
+\begin{theorem}[Localized P-CRT transfer and the Linnik--2 barrier]
+The column side of
+\[
+\text{LocalizedPCRTColumnUniformityTransferToInitialPxPSquare}
+\]
+is equivalent to the following pointwise least-prime-in-progressions assertion
+for prime moduli:
+\[
+\forall c\in{\mathbb F}_P^\ast\quad \exists\ \ell\le P^2
+\quad\text{prime with}\quad \ell\equiv c\pmod P.
+\]
+Thus any proof that localizes complete \(P\)-wheel nonzero-column uniformity to
+the initial \(P\times P\) square must either prove this Linnik--2 type pointwise
+AP assertion, or else introduce a genuinely new structural input such as a
+same-set PDEC scope certificate or a signed-payload constructor.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-localized-pcrt-transfer-linnik2-barrier-router.md.
+\end{quote}
+The \(c\)-th non-\(P\) column of the initial square is exactly the finite
+progression
+\[
+c,\ c+P,\ c+2P,\ldots,c+(P-1)P,
+\]
+intersected with the prime numbers.  Since \(1\le c<P\), every term is
+congruent to \(c\bmod P\) and is at most \(P^2\).  Therefore the column has a
+prime if and only if the displayed pointwise AP assertion holds for that
+residue \(c\).  Requiring this for every nonzero column gives the asserted
+equivalence.
+
+The complete CRT wheel does not contain this pointwise first-prime information.
+It says that the nonzero columns have equal total mass over a full period
+\(M_{\le P}\), while the column theorem asks for a hit in the first \(P\)
+terms of each residue class.  Mean AP estimates or complete-period symmetry
+can at best control averaged exceptions; they do not remove a single bad
+residue class.  The archived finite scan up to \(P\le3000\) records no missing
+class and a largest first-prime row \(108\), but this is only diagnostic.  In
+the absence of a new pointwise AP theorem, the route returns to the active
+frontier consisting of PDEC scope, signed payload, ExactUV, model, rate and
+DStructure/Rankin gates.  Hence this is a barrier identification, not an
+unconditional proof.
+\end{proof}
+
+
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
 \end{theorem}

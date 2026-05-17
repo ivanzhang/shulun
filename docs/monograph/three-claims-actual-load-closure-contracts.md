@@ -4413,3 +4413,49 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 这一步关闭的是“完整 P-wheel 均匀性自动给出局部非 P 列矛盾”的跳步。真正新接口是
 `LocalizedPCRTColumnUniformityTransferToInitialPxPSquare`，它若无法自足证明，就回流到 PDEC scope 或
 signed payload/ExactUV 前沿。
+
+## 108. Localized P-CRT / Linnik=2 屏障回接
+
+后续文件
+
+```text
+experiments/prime_matrix_localized_pcrt_transfer_linnik2_barrier_router.py
+docs/monograph/prime-matrix-localized-pcrt-transfer-linnik2-barrier-router.md
+docs/monograph/prime-matrix-localized-pcrt-transfer-linnik2-barrier-router.json
+data/prime-matrix-localized-pcrt-transfer-linnik2-barrier-ledger.json
+```
+
+本证书继续攻击上一节的 `LocalizedPCRTColumnUniformityTransferToInitialPxPSquare`。列侧内容可完全精确化：
+非 P 列 `c` 在初始 `P x P` 方阵中有素数，当且仅当存在素数
+`ell<=P^2` 且 `ell≡c mod P`。因此对所有非零 `c mod P` 完成该局部化转移，等价于 prime-modulus
+点态最小 AP 素数指数 `2`。
+
+当前读数：
+
+```text
+localized_pcrt_transfer_active=true
+column_occupancy_equivalent_to_least_prime_ap=true
+linnik2_barrier_identified=true
+localized_transfer_current_corpus_proved=false
+pointwise_linnik2_ap_theorem_proved=false
+row_column_unconditional_closed=false
+```
+
+有限样本 `P<=3000` 检查了 `429` 个素数模数，缺失剩余类总数为 `0`，最大首素数行号为 `108`
+（`P=2861`）。这继续说明有限现象稳定，但不作为证明。
+
+最新活动基扩展为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步把“局部化 P-CRT 列均匀转移”压成一个清晰的 AP 点态屏障。完整 CRT 均匀性、BV/平均 AP
+均匀性和有限样本均不能替代这个点态断言；若不引入新的 AP 定理，路线必须回到 PDEC scope 或
+signed payload/ExactUV 前沿。

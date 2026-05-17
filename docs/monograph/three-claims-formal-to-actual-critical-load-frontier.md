@@ -4387,3 +4387,51 @@ AND ExplicitModelGapAndFiniteDPRCLedger
 AND RatePreservationLedger_FOR_moving_atom_packet
 AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
+
+## 115. Localized P-CRT transfer / Linnik=2 barrier router
+
+新增文件
+
+```text
+experiments/prime_matrix_localized_pcrt_transfer_linnik2_barrier_router.py
+docs/monograph/prime-matrix-localized-pcrt-transfer-linnik2-barrier-router.md
+docs/monograph/prime-matrix-localized-pcrt-transfer-linnik2-barrier-router.json
+data/prime-matrix-localized-pcrt-transfer-linnik2-barrier-ledger.json
+```
+
+本步把 `LocalizedPCRTColumnUniformityTransferToInitialPxPSquare` 的列侧内容压成精确的点态 AP 屏障：
+
+```text
+PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2
+```
+
+即对每个非零 `c mod P` 都要证明存在素数 `ell<=P^2` 且 `ell≡c mod P`。这正是 prime-modulus
+least-prime-in-AP 的 Linnik 指数 `2` 型断言。完整 `P`-wheel 的非 P 列均匀性只是一条全周期平均恒等式；
+BV/平均 AP 均匀性也只控制几乎所有列，不能给出每个初始短 AP 的点态首素数。
+
+当前读数：
+
+```text
+localized_pcrt_transfer_active=true
+column_occupancy_equivalent_to_least_prime_ap=true
+linnik2_barrier_identified=true
+localized_transfer_current_corpus_proved=false
+pointwise_linnik2_ap_theorem_proved=false
+row_column_unconditional_closed=false
+```
+
+样本扫描 `P<=3000` 中，`429` 个素数模数无缺失剩余类，最大首素数行号 `108`；这只是风险定位。
+
+最新活动基为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR PointwiseLeastPrimeInEveryNonzeroClassModPBelowP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+因此局部化 P-CRT 路线没有给出新的无条件闭合；它要么提交新的点态 AP 定理，要么回流到结构前沿。
