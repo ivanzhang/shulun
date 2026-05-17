@@ -1797,3 +1797,37 @@ q=103: M_form=12, N_q=0, W=56, capacity=10403, route=NoActualPacketCurrentSweep+
 ```
 
 因此当前反例链的形式压力并没有变成真实负载：最大形式负载比为 `0.160177975528`，最大 actual 负载比仅为 `0.001112347052`。这把 current sweep 中的 `SuperSqrt/PressureProduct` 全部转成 `ProductAccountingTightening`；全局仍需证明这个 `M_q^form -> N_q` 收紧在所有持久 AffineTwin 家族中成立，并排斥 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
+
+## 49. H-lower formal-pair pruning 合同回接
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-formal-pair-pruning-audit.md
+docs/monograph/prime-matrix-affine-twin-formal-pair-pruning-audit.json
+data/prime-matrix-affine-twin-formal-pair-pruning-ledger.json
+```
+
+`formal-pair-pruning` 把上一节的 `formal_to_actual_gap=39` 完全拆开：
+
+```text
+formal_pair_total=40
+actual_packet_total_current=1
+formal_to_actual_gap=39
+crt_window_empty_pair_total_current=11
+source_unmaterialized_pair_total_current=28
+unresolved_formal_pair_total_current=0
+product_accounting_tightening_closed_current_sweep=true
+```
+
+逐 `q` 的删除机制为：
+
+```text
+q=31:  M_form=12, actual=1, CRTWindowEmpty=11, source_unmaterialized=0
+q=43:  M_form=16, actual=0, CRTWindowEmpty=0,  source_unmaterialized=16
+q=103: M_form=12, actual=0, CRTWindowEmpty=0,  source_unmaterialized=12
+```
+
+其中 `q=31` 的唯一 actual packet 为 `(generator residue, fill residue)=(19,8)`，shifted fill residue 为 `21`，合成 CRT residue 为 `889 mod 899`，在 pair support `[2669,2688]` 中的代表为 `2687`；其余 11 个形式配对都没有短窗代表。`q=43` 有同 gap 但错源：期望 `generator=41, fill=43, sides=minus->plus, p_delay=113`，实际源为 `generator=47, fill=43, sides=plus->minus, p_delay=74`。`q=103` 当前无 gap-fill source。
+
+因此当前 sweep 的容量/相位矛盾已经不是“40 个形式 packet 与平方根门冲突”，而是“39 个形式 packet 无法物化”：11 个被 CRT 短窗排空，28 个被 source materialization gate 删除。最新剩余接口随之收窄为 `GlobalProductAccountingTightening` 的统一化证明：任意持久 AffineTwin 形式配对若不能成为 actual packet，必须进入 `CRTWindowEmptyGlobalSupportBound` 或 `SourceMaterializationFailure-PDEC/SAE`；若它能绕过二者，则只能作为 `PrimitiveTwinSlotSupportEscape-PDEC/SAE` 登记。

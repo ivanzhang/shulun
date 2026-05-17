@@ -1866,3 +1866,36 @@ projection_collision_pdec_count_current=0
 ```
 
 三条候选中，只有 `q=31` 有一个 actual packet；`q=43,103` 当前实际为 0。三条均通过 `N_q<=W_q<=sqrt(q(q-2))`。所以当前前沿的容量/相位显式矛盾是：反例链按侧残基笛卡尔积看到 40 个形式 packet，真实链按双槽 source、CRT 与共同支撑只承认 1 个 actual packet。最新主攻保持为 `PrimitiveTwinSlotSupportExhaustion + ProductAccountingTightening`；若未来 `N_q>W_q`，进入 `ProjectionCollision-PDEC/ColumnCRT`，若 packet 逃出 primitive 支撑，进入 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。
+
+## 56. H-lower formal-pair pruning 收紧
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-affine-twin-formal-pair-pruning-audit.md
+docs/monograph/prime-matrix-affine-twin-formal-pair-pruning-audit.json
+data/prime-matrix-affine-twin-formal-pair-pruning-ledger.json
+```
+
+该审计把 `ProductAccountingTightening` 在当前 sweep 内完全实例化：
+
+```text
+formal_pair_total=40
+actual_packet_total_current=1
+formal_to_actual_gap=39
+crt_window_empty_pair_total_current=11
+source_unmaterialized_pair_total_current=28
+unresolved_formal_pair_total_current=0
+```
+
+`q=31` 的 12 个形式 residue pair 中，只有 `(19,8)` 经过 fill shift 后合成 `889 mod 899`，并在共同支撑窗 `[2669,2688]` 中命中代表 `2687`；其余 11 个都是 `CRTWindowEmpty`。`q=43` 的 16 个形式配对有同 gap 但源身份错误，`q=103` 的 12 个形式配对没有 gap-fill source，因此二者全为 `SourceMaterializationFailure`。
+
+所以当前前沿的真正单点已经变成：把这个有限账本分解提升为全局引理。形式上，需要证明任意持久 AffineTwin formal pair 都满足三分：
+
+```text
+actual packet in primitive support
+or CRTWindowEmptyGlobalSupportBound
+or SourceMaterializationFailure-PDEC/SAE
+```
+
+若出现第四种，即 source 与 CRT 都物化但不落入 primitive 支撑，则它正是 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。这一节关闭 current-sweep 的 `ProductAccountingTightening`，但仍不关闭全局行/列命题。
