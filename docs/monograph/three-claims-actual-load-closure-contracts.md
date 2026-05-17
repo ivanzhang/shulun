@@ -3182,3 +3182,47 @@ TerminalSwitchArrivalColumnCRTPDECOrBranchExclusiveCRTLoadExclusion
 ```
 
 本步关闭的是“two-survivor PDEC 可以由共同 anchor/共同 delta 局部吸收”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥 terminal switch-arrival ColumnCRT/PDEC，或排斥 branch-exclusive CRT-load 的持久复现。
+
+## 81. cycle-debt terminal switch arrival wall 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_terminal_switch_arrival_wall_router.py
+docs/monograph/prime-matrix-cycle-debt-terminal-switch-arrival-wall-router.md
+docs/monograph/prime-matrix-cycle-debt-terminal-switch-arrival-wall-router.json
+data/prime-matrix-cycle-debt-terminal-switch-arrival-wall-ledger.json
+```
+
+本证书继续攻击 `TerminalSwitchArrivalColumnCRTPDECOrBranchExclusiveCRTLoadExclusion` 中的 terminal switch-arrival 分支。核心结论是：K14 的 fresh-arrival 容量不是平滑打开，而是越过一个同步入口素数墙后才出现。
+
+```text
+arrival_source_count=8
+all_arrival_sources_zero_capacity_at_k13=true
+all_entry_wall_cycles_equal_13=true
+all_entry_wall_positions_zero_at_k13=true
+entry_wall_lcm_log10=39.482
+postwall_capacity_total=39
+postwall_assigned_width_total=29
+postwall_tail_slot_total=10
+postwall_assigned_lcm_log10=20.205
+entry_plus_assigned_lcm_log10=59.687
+entry_plus_postwall_lcm_log10=68.361
+entry_plus_postwall_coprime_to_period=true
+arrival_width_by_delta={2:5,16:7,28:7,48:2,54:3,58:5}
+```
+
+结构读数：
+
+- `8` 个 K14-only source 在 K13 时容量全部为 `0`，并且全部在 `window_position=0` 撞到真实素数入口墙。
+- 入口素数墙由 `8` 个互素素数构成，lcm 约 `10^39.482`，且与本地周期 `5680` 互素。
+- 越过入口墙后 K14 才得到 `39` 个 post-wall 容量槽，其中 `29` 槽实际分配，tail 为 `10`。
+- `entry+assigned` 联合 lcm 约 `10^59.687`；`entry+全部 post-wall` 联合 lcm 约 `10^68.361`，说明持久复现不是本地周期微调。
+
+最新最窄剩余接口为：
+
+```text
+EightPrimeEntryWallPostWallCRTExclusionOrBranchExclusiveCRTLoadExclusion
+```
+
+本步关闭的是“fresh-arrival 是匿名平滑容量”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥八素数入口墙加 post-wall CRT-load 的持久复现，或排斥 branch-exclusive CRT-load。

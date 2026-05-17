@@ -3248,3 +3248,48 @@ TerminalSwitchArrivalColumnCRTPDECOrBranchExclusiveCRTLoadExclusion
 ```
 
 这一步仍不关闭全局行/列命题；它把 two-survivor 分叉的下一阻塞点压成 fresh-arrival ColumnCRT/PDEC 与 branch-exclusive CRT-load 的排斥。
+
+## 88. cycle-debt terminal switch arrival wall
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_terminal_switch_arrival_wall_router.py
+docs/monograph/prime-matrix-cycle-debt-terminal-switch-arrival-wall-router.md
+data/prime-matrix-cycle-debt-terminal-switch-arrival-wall-ledger.json
+```
+
+本步把 `TerminalSwitchArrivalColumnCRTPDECOrBranchExclusiveCRTLoadExclusion` 的 fresh-arrival 侧继续下钻。K14 的新 source 不是从 K13 的支撑连续变形而来；它们在 K13 全部被入口素数墙切断，到 K14 才出现 post-wall 合数槽。
+
+```text
+arrival_source_count=8
+all_arrival_sources_zero_capacity_at_k13=true
+entry_wall_lcm_log10=39.482
+postwall_capacity_total=39
+postwall_assigned_width_total=29
+postwall_assigned_lcm_log10=20.205
+entry_plus_assigned_lcm_log10=59.687
+entry_plus_postwall_lcm_log10=68.361
+entry_plus_postwall_coprime_to_period=true
+```
+
+结论：
+
+- `8` 个 arrival source 在 K13 全部 `capacity=0`，且全部由 `K=13` 的 `window_position=0` 素数入口墙解释；
+- K14 的 `39` 个 post-wall 槽中 `29` 槽进入实际分配；
+- 入口墙与 post-wall CRT 因子都与 `5680` 互素，联合模数远超本地周期。
+
+当前 actual-load 前沿收窄为：
+
+```text
+eight-prime entry-wall post-wall CRT exclusion
+OR branch-exclusive CRT-load exclusion
+```
+
+最新接口为：
+
+```text
+EightPrimeEntryWallPostWallCRTExclusionOrBranchExclusiveCRTLoadExclusion
+```
+
+这一步仍不关闭全局行/列命题；它把 switch-arrival 的匿名 ColumnCRT 侧物化为入口素数墙与 post-wall CRT-load 的持久排斥问题。
