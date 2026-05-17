@@ -2610,3 +2610,41 @@ OnePeriodReliefDeficitForcesCycleDebtPDECOrSupportMotionSAE
 ```
 
 这一步仍不关闭全局命题；它把首个完整周期内的容量缺口固定为 `27` 个未获 actual relief 的缺失 residue。
+
+## 73. cycle-debt CRT cover pressure
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_crt_cover_pressure_router.py
+docs/monograph/prime-matrix-cycle-debt-crt-cover-pressure-router.md
+data/prime-matrix-cycle-debt-crt-cover-pressure-ledger.json
+```
+
+本步把一周期 relief 缺口的后续等待写成周期坐标上的 CRT cover。每个合数等待都对应一个最小素因子阻断类，合并 `27` 个正债务 residue 后：
+
+```text
+positive_cycle_debt_residue_count=27
+total_composite_waits=101
+global_unique_blocker_factor_count=24
+global_blocker_lcm=337212073559813724487421695331234639247
+global_blocker_product_log10=38.527903115735
+max_row_residue=67
+max_row_cycle_debt=15
+max_row_blocker_lcm=55140500775337593
+crt_cover_modulus_exceeds_local_period=true
+```
+
+因此，反例链若要全局复现这种 cycle-debt，就不是在一个局部自由参数里滑动，而是要复现大 CRT cover 相位包。当前 actual-load 前沿收窄为：
+
+```text
+cycle-debt CRT cover PDEC  OR  global support-motion SAE
+```
+
+最新接口为：
+
+```text
+CycleDebtCRTCoverPressurePDECOrGlobalSupportMotionSAE
+```
+
+这一步仍不关闭全局行/列命题；它把局部缺口提升为全局族必须承担的 CRT cover pressure。

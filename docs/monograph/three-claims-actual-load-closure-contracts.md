@@ -2533,3 +2533,46 @@ OnePeriodReliefDeficitForcesCycleDebtPDECOrSupportMotionSAE
 ```
 
 本步关闭的是“一个 reset-local 周期即可提供足够 actual relief”的解释；全局仍需排斥由该缺口强制出的周期债务 PDEC，或证明后续 support-motion/SAE 可吸收。
+
+## 66. cycle-debt CRT cover pressure 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_crt_cover_pressure_router.py
+docs/monograph/prime-matrix-cycle-debt-crt-cover-pressure-router.md
+docs/monograph/prime-matrix-cycle-debt-crt-cover-pressure-router.json
+data/prime-matrix-cycle-debt-crt-cover-pressure-ledger.json
+```
+
+本证书把 `27` 个正周期债务 residue 的合数等待写成周期坐标 `k` 上的 CRT 阻断覆盖。对每个同 residue 周期列
+
+```text
+P(k)=P0+5680*k
+```
+
+若第 `k` 个形式命中为合数，最小素因子 `q` 给出一个周期坐标同余类 `k mod q`。合并所有正债务 residue 后得到：
+
+```text
+previous_hardpoint=OnePeriodReliefDeficitForcesCycleDebtPDECOrSupportMotionSAE
+positive_cycle_debt_residue_count=27
+total_composite_waits=101
+global_unique_blocker_factor_count=24
+global_blocker_lcm=337212073559813724487421695331234639247
+global_blocker_product_log10=38.527903115735
+max_row_residue=67
+max_row_cycle_debt=15
+max_row_unique_blocker_factor_count=11
+max_row_blocker_lcm=55140500775337593
+crt_cover_modulus_exceeds_local_period=true
+```
+
+这说明周期债务不是单一小模数反复造成的局部偶然。若反例链要把这种 debt pattern 作为全局族复现，它必须携带 `24` 个不同阻断素因子组成的 CRT 相位包；其 lcm 已远大于本地 P 周期 `5680`。最大压力行 `residue=67` 单独就需要 `11` 个不同阻断素因子，单行 lcm 达 `55140500775337593`。
+
+最新最窄剩余接口为：
+
+```text
+CycleDebtCRTCoverPressurePDECOrGlobalSupportMotionSAE
+```
+
+本步关闭的是“周期债务可作为无结构局部漂移复现”的解释；全局仍需排斥这种大 CRT cover family 的 PDEC，或证明相应 global support-motion SAE 可求和吸收。
