@@ -3606,3 +3606,51 @@ FreshLayerSupportMotionEscapeOrRemoteColumnCRTPDECExclusion
 ```
 
 这一步仍不宣称行/列命题闭合；它只说明 fresh-layer PDEC 若持续，不能是 registered primitive support 内的本地相位碰撞，必须是支撑运动逃逸、远程 P-space ColumnCRT/PDEC 或未登记 moving family。
+
+## 91. cycle-debt fresh support-motion 全局路由回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_support_motion_global_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-support-motion-global-router.md
+docs/monograph/prime-matrix-cycle-debt-fresh-support-motion-global-router.json
+data/prime-matrix-cycle-debt-fresh-support-motion-global-ledger.json
+```
+
+上一节剩余为
+
+```text
+FreshLayerSupportMotionEscapeOrRemoteColumnCRTPDECExclusion
+```
+
+本证书同步两条已有刚性：
+
+1. fresh-layer 本地投影碰撞已由单射引理排除；
+2. 同一 registered 阻断包的本地支撑漂移已由 support-gap `lcm(B)` 屏障排除。
+
+因此 registered support-motion escape 不再是活动出口。若 registered block 仍在全局反例链中无限复现，只能提升为固定 P-space ColumnCRT 类；若阻断包改变，则它已不是 registered support motion，而是未登记 moving family。
+
+当前读数：
+
+```text
+registered_block_count=6
+local_fresh_layer_projection_collision_excluded=true
+registered_local_support_motion_excluded=true
+persistent_registered_replay_routes_to_columncrt_pdec=true
+isolated_registered_atoms_cannot_form_global_escape=true
+registered_support_motion_escape_closed=true
+minimum_cycle_log10_margin_over_support_width=30.737
+minimum_p_space_columncrt_modulus_log10=36.337
+remote_pspace_columncrt_excluded=false
+unregistered_moving_family_excluded=false
+row_column_unconditional_closed=false
+```
+
+branch-replay 最新剩余接口为：
+
+```text
+RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter
+```
+
+本步仍不宣称行/列命题闭合；它只删除 registered support-motion escape 这个本地出口。

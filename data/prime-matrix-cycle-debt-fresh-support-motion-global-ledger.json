@@ -1,0 +1,169 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_fresh_support_motion_global_router",
+  "status": "registered_support_motion_escape_closed_remote_columncrt_or_unregistered_moving_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "previous_hardpoint": "FreshLayerSupportMotionEscapeOrRemoteColumnCRTPDECExclusion",
+  "period_p": 5680,
+  "registered_block_count": 6,
+  "local_fresh_layer_projection_collision_excluded": true,
+  "registered_local_support_motion_excluded": true,
+  "far_replay_still_requires_columncrt_pdec": true,
+  "persistent_registered_replay_routes_to_columncrt_pdec": true,
+  "isolated_registered_atoms_cannot_form_global_escape": true,
+  "new_blocker_package_routes_to_pdec_sae_or_new_router": true,
+  "registered_support_motion_escape_closed": true,
+  "minimum_cycle_log10_margin_over_support_width": 30.73712030513687,
+  "minimum_cycle_log10_margin_over_audit_slots": 30.73712030513687,
+  "minimum_p_space_columncrt_modulus_log10": 36.33656668086215,
+  "maximum_p_space_columncrt_modulus_log10": 103.10337197992303,
+  "remote_pspace_columncrt_excluded": false,
+  "unregistered_moving_family_excluded": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_after_router": "RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter",
+  "next_direct_attack_target": "RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter",
+  "blocks": [
+    {
+      "label": "k13_branch_exclusive",
+      "support_width": 73,
+      "audit_slot_count": 73,
+      "cycle_replay_modulus_log10": 36.67757224424234,
+      "p_space_columncrt_modulus_log10": 40.431920579953356,
+      "log10_margin_over_support_width": 34.81424938412189,
+      "log10_p_space_margin_over_support_width": 38.5685977198329,
+      "local_support_motion_excluded": true,
+      "persistent_remote_routes_to_columncrt": true
+    },
+    {
+      "label": "k14_branch_exclusive",
+      "support_width": 70,
+      "audit_slot_count": 70,
+      "cycle_replay_modulus_log10": 32.58221834515113,
+      "p_space_columncrt_modulus_log10": 36.33656668086215,
+      "log10_margin_over_support_width": 30.73712030513687,
+      "log10_p_space_margin_over_support_width": 34.49146864084789,
+      "local_support_motion_excluded": true,
+      "persistent_remote_routes_to_columncrt": true
+    },
+    {
+      "label": "k14_branch_plus_entry",
+      "support_width": 78,
+      "audit_slot_count": 78,
+      "cycle_replay_modulus_log10": 72.06431185843385,
+      "p_space_columncrt_modulus_log10": 75.81866019414488,
+      "log10_margin_over_support_width": 70.17221725574338,
+      "log10_p_space_margin_over_support_width": 73.9265655914544,
+      "local_support_motion_excluded": true,
+      "persistent_remote_routes_to_columncrt": true
+    },
+    {
+      "label": "k14_branch_plus_entry_plus_assigned",
+      "support_width": 78,
+      "audit_slot_count": 107,
+      "cycle_replay_modulus_log10": 76.35070095566238,
+      "p_space_columncrt_modulus_log10": 80.10504929137339,
+      "log10_margin_over_support_width": 74.4586063529719,
+      "log10_p_space_margin_over_support_width": 78.21295468868291,
+      "local_support_motion_excluded": true,
+      "persistent_remote_routes_to_columncrt": true
+    },
+    {
+      "label": "k14_branch_plus_entry_plus_postwall",
+      "support_width": 78,
+      "audit_slot_count": 117,
+      "cycle_replay_modulus_log10": 85.02396924151643,
+      "p_space_columncrt_modulus_log10": 88.77831757722745,
+      "log10_margin_over_support_width": 83.13187463882595,
+      "log10_p_space_margin_over_support_width": 86.88622297453698,
+      "local_support_motion_excluded": true,
+      "persistent_remote_routes_to_columncrt": true
+    },
+    {
+      "label": "both_branches_plus_k14_entry_postwall",
+      "support_width": 151,
+      "audit_slot_count": 190,
+      "cycle_replay_modulus_log10": 99.34902364421201,
+      "p_space_columncrt_modulus_log10": 103.10337197992303,
+      "log10_margin_over_support_width": 97.17004669691885,
+      "log10_p_space_margin_over_support_width": 100.92439503262986,
+      "local_support_motion_excluded": true,
+      "persistent_remote_routes_to_columncrt": true
+    }
+  ],
+  "gates": [
+    {
+      "gate": "FreshLocalCollisionAlreadyExcluded",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已排除 registered fresh layer 在本地 primitive support 内的投影碰撞。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "RegisteredLocalSupportMotionExcluded",
+      "closed": true,
+      "proved": true,
+      "meaning": "support-gap replay lemma 已证明同一阻断包本地非零复现周期至少为 lcm(B)，且远超支撑宽度。",
+      "remaining": "closed for registered blocks"
+    },
+    {
+      "gate": "PersistentRegisteredRemoteReplayRoutesToPspaceColumnCRT",
+      "closed": true,
+      "proved": true,
+      "meaning": "全局二分已证明若某个 registered block 无限复现，则提升为固定 P-space ColumnCRT 类。",
+      "remaining": "RemotePspaceColumnCRTExclusion"
+    },
+    {
+      "gate": "IsolatedRegisteredAtomsNotGlobalEscape",
+      "closed": true,
+      "proved": true,
+      "meaning": "若没有 registered block 无限复现，则登记原子只是有限项，不能构成全局结构逃逸。",
+      "remaining": "closed as global escape"
+    },
+    {
+      "gate": "NewBlockerPackageRoutesToMovingFamily",
+      "closed": true,
+      "proved": false,
+      "meaning": "若阻断包改变，则不再是 registered support motion，而是未登记 moving family，须另建 PDEC/SAE/ColumnCRT 路由。",
+      "remaining": "UnregisteredMovingFamilyRouter"
+    },
+    {
+      "gate": "RegisteredSupportMotionEscapeClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "本地碰撞和本地支撑漂移均已排除；registered 无限复现只能是远程 P-space ColumnCRT。",
+      "remaining": "closed except remote ColumnCRT"
+    },
+    {
+      "gate": "RemoteColumnCRTOrUnregisteredMovingFamilyStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "剩余不是本地支撑运动，而是远程 P-space ColumnCRT 排斥或未登记 moving family 的新路由。",
+      "remaining": "RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只关闭 registered support-motion escape，不排斥远程 ColumnCRT 或未登记 moving-family。",
+      "remaining": "RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter"
+    }
+  ],
+  "closed_gates": [
+    "FreshLocalCollisionAlreadyExcluded",
+    "RegisteredLocalSupportMotionExcluded",
+    "PersistentRegisteredRemoteReplayRoutesToPspaceColumnCRT",
+    "IsolatedRegisteredAtomsNotGlobalEscape",
+    "NewBlockerPackageRoutesToMovingFamily",
+    "RegisteredSupportMotionEscapeClosed"
+  ],
+  "open_gates": [
+    "RemoteColumnCRTOrUnregisteredMovingFamilyStillOpen",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "registered branch-replay 的 support-motion escape 已被同步关闭：本地 fresh-layer 投影碰撞已排除，同一阻断包本地非零支撑漂移又被 support-gap lcm 屏障排除；若 registered block 仍在全局无限复现，只能提升为远程 P-space ColumnCRT 类。剩余为 RemotePspaceColumnCRT 排斥或未登记 moving family 路由。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-fresh-layer-local-collision-ledger.json": "07582cef6e5a7620516ace08f9477edcc3fa0ac2549c74078a965dd510e84870",
+    "data/prime-matrix-cycle-debt-branch-replay-support-gap-ledger.json": "5c2b502fbc787652b7d07f25d4886746cb64500f280b0128d131869f6b769105",
+    "data/prime-matrix-cycle-debt-branch-replay-global-dichotomy-ledger.json": "b25a9e5083355f5495156d61b9cf924af55843966d0efe0b7492075cdd811bc4"
+  }
+}

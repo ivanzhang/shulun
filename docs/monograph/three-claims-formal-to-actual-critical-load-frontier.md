@@ -3625,3 +3625,31 @@ FreshLayerSupportMotionEscapeOrRemoteColumnCRTPDECExclusion
 ```
 
 剩余已不是本地相位碰撞，而是支撑运动逃逸、远程 P-space ColumnCRT/PDEC 复现或未登记 moving family。
+
+## 98. cycle-debt fresh support-motion 全局路由
+
+新增文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_support_motion_global_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-support-motion-global-router.md
+data/prime-matrix-cycle-debt-fresh-support-motion-global-ledger.json
+```
+
+本步把上一节剩余中的 `SupportMotionEscape` 再下钻。registered support motion 的两个本地机制均已关闭：
+
+```text
+local_fresh_layer_projection_collision_excluded=true
+registered_local_support_motion_excluded=true
+registered_support_motion_escape_closed=true
+```
+
+其中第二项来自同一阻断包的 `lcm(B)` 复现屏障；最小 cycle replay 对支撑宽度的十进对数余量为 `30.737`。若 registered block 无限复现，既然不能本地漂移，就只能进入全局二分中的固定 P-space ColumnCRT 类，最小 P-space 模数约 `10^36.337`。
+
+actual-load 前沿继续收缩为：
+
+```text
+RemotePspaceColumnCRTExclusionOrUnregisteredMovingFamilyRouter
+```
+
+这一步不排斥远程 ColumnCRT，也不排斥未登记 moving family；它只把 registered support-motion escape 从剩余接口中删除。
