@@ -9152,6 +9152,67 @@ not yet a proof of the required global half-class mass lower bound.  No
 unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Capacity margin as a logarithmic-over-linear projection gap]
+The half-class single-residue capacity gate
+\[
+\min_{s=\pm1}\Theta_s(P)>2P\log P
+\]
+is equivalent to
+\[
+1-\frac{|T_{\chi}(P)|}{T_0(P)}>\frac{4P\log P}{T_0(P)}.
+\]
+In particular, if a principal Chebyshev lower bound
+\[
+T_0(P)\ge c_0(P)P^2
+\]
+is available, then it is enough to prove
+\[
+1-\frac{|T_{\chi}(P)|}{T_0(P)}
+   > \frac{4\log P}{c_0(P)P}.
+\]
+Thus any persistent failure of the capacity gate, in the presence of a
+\(P^2\)-scale principal mass lower bound, forces an ultra-near-one quadratic
+projection defect
+\[
+\frac{|T_{\chi}(P)|}{T_0(P)}
+\ge 1-O\!\left(\frac{\log P}{P}\right).
+\]
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-halfclass-capacity-margin-factorization-router.md.
+\end{quote}
+The identity
+\[
+\min_s\Theta_s(P)=\frac{T_0(P)-|T_{\chi}(P)|}{2}
+\]
+was proved in the preceding theorem.  Therefore
+\[
+\min_s\Theta_s(P)>2P\log P
+\]
+is equivalent to
+\[
+\frac{T_0(P)-|T_{\chi}(P)|}{2}>2P\log P,
+\]
+and division by \(T_0(P)>0\) gives the stated projection-gap threshold.
+Substituting \(T_0(P)\ge c_0(P)P^2\) gives the logarithmic-over-linear
+sufficient threshold.
+
+This reformulation exposes the scale of the remaining obstruction.  The
+capacity gate does not need a fixed-size half-class margin: a gap of order
+\(\log P/P\), after the principal Chebyshev lower bound is in place, is already
+enough.  Conversely, a counterexample surviving this gate must make the
+quadratic projection almost equal to the principal mass.  The remaining input
+is
+\begin{quote}\footnotesize\ttfamily
+QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale,
+\end{quote}
+or a named registration of the ultra-near-one projection defect as a
+ColumnCRT/PDEC/moving-family exit.  No unconditional row/column theorem is
+claimed here.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

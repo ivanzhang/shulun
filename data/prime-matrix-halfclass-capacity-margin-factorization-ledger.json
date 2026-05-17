@@ -1,0 +1,513 @@
+{
+  "certificate_type": "prime_matrix_halfclass_capacity_margin_factorization_router",
+  "status": "halfclass_capacity_gate_factored_to_log_over_p_quadratic_projection_gap_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "previous_target": "QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2",
+  "next_direct_attack_target": "QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale",
+  "chebyshev_lower_atom": "ChebyshevPrincipalMassLowerBoundAtP2",
+  "quadratic_margin_still_sufficient": "QuadraticHalfClassSquareScaleBiasMarginTheorem",
+  "formula_ledger": [
+    {
+      "item": "capacity gate",
+      "formula": "min_s Theta_s(P)>2P log P"
+    },
+    {
+      "item": "projection gap form",
+      "formula": "1-|T_chi(P)|/T0(P) > 4P log P / T0(P)"
+    },
+    {
+      "item": "principal mass factorization",
+      "formula": "if T0(P)>=c0(P)P^2 then it suffices that 1-|T_chi|/T0 > 4 log P/(c0(P)P)"
+    },
+    {
+      "item": "failure shape",
+      "formula": "capacity failure plus T0 lower bound forces |T_chi|/T0 >= 1-O(log P/P)"
+    },
+    {
+      "item": "stronger existing input",
+      "formula": "QuadraticHalfClassSquareScaleBiasMarginTheorem gives this gate if its eta(P) beats 4P log P/T0(P)"
+    },
+    {
+      "item": "new hardpoint",
+      "formula": "prove QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale or register ultra-near-one quadratic projection as ColumnCRT/PDEC"
+    }
+  ],
+  "branch_ledger": [
+    {
+      "branch": "QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2",
+      "route": "QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale",
+      "status": "equivalent reformulation",
+      "meaning": "半类质量击穿单 residue 容量等价于二次投影缺口击穿显式阈值。"
+    },
+    {
+      "branch": "ChebyshevPrincipalMassLowerBoundAtP2",
+      "route": "turn threshold into O(log P/P)",
+      "status": "standard but not re-proved in this certificate",
+      "meaning": "一旦主质量 T0 有 P^2 级下界，容量门所需二次缺口只有 logP/P 级。"
+    },
+    {
+      "branch": "QuadraticHalfClassSquareScaleBiasMarginTheorem",
+      "route": "QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale",
+      "status": "stronger than needed for this gate if eta(P)>4PlogP/T0(P)",
+      "meaning": "原 Siegel 半类余量门可作为更强输入，但本步暴露所需余量其实很小。"
+    },
+    {
+      "branch": "capacity failure",
+      "route": "ultra-near-one quadratic projection defect",
+      "status": "not excluded in corpus",
+      "meaning": "若反例链持久，则二次角色投影必须接近主质量到 logP/P 级别。"
+    }
+  ],
+  "finite_diagnostic": {
+    "min_p": 7,
+    "max_p": 1000,
+    "prime_moduli_checked": 165,
+    "min_actual_gap_to_required_gap_ratio": 0.6227695609190618,
+    "min_ratio_modulus": 7,
+    "min_actual_gap_to_required_gap_ratio_for_P_ge_17": 1.2842365118870342,
+    "max_required_projection_gap": 1.3965512955594221,
+    "max_required_projection_gap_modulus": 7,
+    "max_required_projection_gap_for_P_ge_17": 0.717505272222736,
+    "capacity_gate_failure_moduli": [
+      7,
+      11,
+      13
+    ],
+    "top_low_gap_ratio_records": [
+      {
+        "P": 7,
+        "T0": 39.014309282297646,
+        "Tchi": -5.082408227074188,
+        "principal_mass_scale_T0_over_P2": 0.7962103935162785,
+        "abs_quadratic_projection_ratio": 0.13027036286351173,
+        "actual_projection_gap": 0.8697296371364882,
+        "required_projection_gap": 1.3965512955594221,
+        "actual_gap_to_required_gap_ratio": 0.6227695609190618,
+        "equivalent_min_halfclass_mass": 16.965950527611728,
+        "single_residue_capacity": 27.242742086774385,
+        "capacity_gate_passes": false,
+        "log_over_p": 0.277987164150759,
+        "required_gap_div_log_over_p": 5.023797770756204
+      },
+      {
+        "P": 13,
+        "T0": 149.36791031202748,
+        "Tchi": -19.35471085020775,
+        "principal_mass_scale_T0_over_P2": 0.8838337888285649,
+        "abs_quadratic_projection_ratio": 0.12957743607563385,
+        "actual_projection_gap": 0.8704225639243661,
+        "required_projection_gap": 0.8929452538324762,
+        "actual_gap_to_required_gap_ratio": 0.9747770764092828,
+        "equivalent_min_halfclass_mass": 65.00659973090987,
+        "single_residue_capacity": 66.68868329399996,
+        "capacity_gate_passes": false,
+        "log_over_p": 0.1973037967278105,
+        "required_gap_div_log_over_p": 4.525737814687543
+      },
+      {
+        "P": 11,
+        "T0": 104.67190916673985,
+        "Tchi": -1.3133828768630176,
+        "principal_mass_scale_T0_over_P2": 0.865057100551569,
+        "abs_quadratic_projection_ratio": 0.012547615566759464,
+        "actual_projection_gap": 0.9874523844332406,
+        "required_projection_gap": 1.0079819202978093,
+        "actual_gap_to_required_gap_ratio": 0.9796330316534811,
+        "equivalent_min_halfclass_mass": 51.67926314493842,
+        "single_residue_capacity": 52.75369600156415,
+        "capacity_gate_passes": false,
+        "log_over_p": 0.21799047934530644,
+        "required_gap_div_log_over_p": 4.623972218076194
+      },
+      {
+        "P": 17,
+        "T0": 268.5116261222615,
+        "Tchi": -21.09253659888772,
+        "principal_mass_scale_T0_over_P2": 0.9291059727413892,
+        "abs_quadratic_projection_ratio": 0.07855353194011662,
+        "actual_projection_gap": 0.9214464680598834,
+        "required_projection_gap": 0.717505272222736,
+        "actual_gap_to_required_gap_ratio": 1.2842365118870342,
+        "equivalent_min_halfclass_mass": 123.70954476168689,
+        "single_residue_capacity": 96.32925369791135,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.16665960847389508,
+        "required_gap_div_log_over_p": 4.305213955516542
+      },
+      {
+        "P": 19,
+        "T0": 332.1287071736525,
+        "Tchi": -8.225573228117508,
+        "principal_mass_scale_T0_over_P2": 0.9200241195946053,
+        "abs_quadratic_projection_ratio": 0.024766221800323906,
+        "actual_projection_gap": 0.975233778199676,
+        "required_projection_gap": 0.6737669993086388,
+        "actual_gap_to_required_gap_ratio": 1.4474347648376609,
+        "equivalent_min_halfclass_mass": 161.9515669727675,
+        "single_residue_capacity": 111.88868120832473,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.15497047258770738,
+        "required_gap_div_log_over_p": 4.347712103202837
+      },
+      {
+        "P": 23,
+        "T0": 496.38731963123354,
+        "Tchi": -18.836170516677605,
+        "principal_mass_scale_T0_over_P2": 0.9383503206639575,
+        "abs_quadratic_projection_ratio": 0.03794651831692842,
+        "actual_projection_gap": 0.9620534816830716,
+        "required_projection_gap": 0.5811298082307641,
+        "actual_gap_to_required_gap_ratio": 1.6554880993147134,
+        "equivalent_min_halfclass_mass": 238.77557455727796,
+        "single_residue_capacity": 144.23273393274087,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.13632583547518043,
+        "required_gap_div_log_over_p": 4.262800269700639
+      },
+      {
+        "P": 31,
+        "T0": 911.4801918753475,
+        "Tchi": -93.49265382860808,
+        "principal_mass_scale_T0_over_P2": 0.9484705430544719,
+        "abs_quadratic_projection_ratio": 0.10257233745941237,
+        "actual_projection_gap": 0.8974276625405876,
+        "required_projection_gap": 0.4671680384848032,
+        "actual_gap_to_required_gap_ratio": 1.9209954205156536,
+        "equivalent_min_halfclass_mass": 408.9937690233697,
+        "single_residue_capacity": 212.90720667807906,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.11077378078984343,
+        "required_gap_div_log_over_p": 4.217316003424131
+      },
+      {
+        "P": 29,
+        "T0": 802.7151467422583,
+        "Tchi": -44.998454905072066,
+        "principal_mass_scale_T0_over_P2": 0.9544769878029231,
+        "abs_quadratic_projection_ratio": 0.05605781214879766,
+        "actual_projection_gap": 0.9439421878512023,
+        "required_projection_gap": 0.48660638566952286,
+        "actual_gap_to_required_gap_ratio": 1.9398475146445726,
+        "equivalent_min_halfclass_mass": 378.8583459185931,
+        "single_residue_capacity": 195.3031581392155,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.11611364930987841,
+        "required_gap_div_log_over_p": 4.190776782589027
+      },
+      {
+        "P": 37,
+        "T0": 1313.0018439714245,
+        "Tchi": -77.88477893363711,
+        "principal_mass_scale_T0_over_P2": 0.9590955763122165,
+        "abs_quadratic_projection_ratio": 0.05931810323895642,
+        "actual_projection_gap": 0.9406818967610435,
+        "required_projection_gap": 0.4070183553245459,
+        "actual_gap_to_required_gap_ratio": 2.3111535007087536,
+        "equivalent_min_halfclass_mass": 617.5585325188937,
+        "single_residue_capacity": 267.2079255356726,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.09759237601741147,
+        "required_gap_div_log_over_p": 4.170595818385749
+      },
+      {
+        "P": 43,
+        "T0": 1784.814910452862,
+        "Tchi": -83.896288366252,
+        "principal_mass_scale_T0_over_P2": 0.9652865929977621,
+        "abs_quadratic_projection_ratio": 0.047005595860337666,
+        "actual_projection_gap": 0.9529944041396623,
+        "required_projection_gap": 0.3624613488550181,
+        "actual_gap_to_required_gap_ratio": 2.6292304190504274,
+        "equivalent_min_halfclass_mass": 850.459311043305,
+        "single_residue_capacity": 323.46320994964634,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.08746977013240843,
+        "required_gap_div_log_over_p": 4.1438470491729635
+      },
+      {
+        "P": 41,
+        "T0": 1635.394311700382,
+        "Tchi": -24.079692961223856,
+        "principal_mass_scale_T0_over_P2": 0.9728699058300905,
+        "abs_quadratic_projection_ratio": 0.014724089957355468,
+        "actual_projection_gap": 0.9852759100426445,
+        "required_projection_gap": 0.372403043463126,
+        "actual_gap_to_required_gap_ratio": 2.6457246452127956,
+        "equivalent_min_halfclass_mass": 805.6573093695791,
+        "single_residue_capacity": 304.51290946975325,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.09057492845620263,
+        "required_gap_div_log_over_p": 4.111546647737082
+      },
+      {
+        "P": 47,
+        "T0": 2134.851349928754,
+        "Tchi": -17.77530766687528,
+        "principal_mass_scale_T0_over_P2": 0.9664333861153256,
+        "abs_quadratic_projection_ratio": 0.00832625075627326,
+        "actual_projection_gap": 0.9916737492437268,
+        "required_projection_gap": 0.3390529973647332,
+        "actual_gap_to_required_gap_ratio": 2.9248340435018854,
+        "equivalent_min_halfclass_mass": 1058.5380211309393,
+        "single_residue_capacity": 361.9138745607455,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.08191803407893741,
+        "required_gap_div_log_over_p": 4.138929860523957
+      }
+    ],
+    "top_high_required_gap_records": [
+      {
+        "P": 7,
+        "T0": 39.014309282297646,
+        "Tchi": -5.082408227074188,
+        "principal_mass_scale_T0_over_P2": 0.7962103935162785,
+        "abs_quadratic_projection_ratio": 0.13027036286351173,
+        "actual_projection_gap": 0.8697296371364882,
+        "required_projection_gap": 1.3965512955594221,
+        "actual_gap_to_required_gap_ratio": 0.6227695609190618,
+        "equivalent_min_halfclass_mass": 16.965950527611728,
+        "single_residue_capacity": 27.242742086774385,
+        "capacity_gate_passes": false,
+        "log_over_p": 0.277987164150759,
+        "required_gap_div_log_over_p": 5.023797770756204
+      },
+      {
+        "P": 11,
+        "T0": 104.67190916673985,
+        "Tchi": -1.3133828768630176,
+        "principal_mass_scale_T0_over_P2": 0.865057100551569,
+        "abs_quadratic_projection_ratio": 0.012547615566759464,
+        "actual_projection_gap": 0.9874523844332406,
+        "required_projection_gap": 1.0079819202978093,
+        "actual_gap_to_required_gap_ratio": 0.9796330316534811,
+        "equivalent_min_halfclass_mass": 51.67926314493842,
+        "single_residue_capacity": 52.75369600156415,
+        "capacity_gate_passes": false,
+        "log_over_p": 0.21799047934530644,
+        "required_gap_div_log_over_p": 4.623972218076194
+      },
+      {
+        "P": 13,
+        "T0": 149.36791031202748,
+        "Tchi": -19.35471085020775,
+        "principal_mass_scale_T0_over_P2": 0.8838337888285649,
+        "abs_quadratic_projection_ratio": 0.12957743607563385,
+        "actual_projection_gap": 0.8704225639243661,
+        "required_projection_gap": 0.8929452538324762,
+        "actual_gap_to_required_gap_ratio": 0.9747770764092828,
+        "equivalent_min_halfclass_mass": 65.00659973090987,
+        "single_residue_capacity": 66.68868329399996,
+        "capacity_gate_passes": false,
+        "log_over_p": 0.1973037967278105,
+        "required_gap_div_log_over_p": 4.525737814687543
+      },
+      {
+        "P": 17,
+        "T0": 268.5116261222615,
+        "Tchi": -21.09253659888772,
+        "principal_mass_scale_T0_over_P2": 0.9291059727413892,
+        "abs_quadratic_projection_ratio": 0.07855353194011662,
+        "actual_projection_gap": 0.9214464680598834,
+        "required_projection_gap": 0.717505272222736,
+        "actual_gap_to_required_gap_ratio": 1.2842365118870342,
+        "equivalent_min_halfclass_mass": 123.70954476168689,
+        "single_residue_capacity": 96.32925369791135,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.16665960847389508,
+        "required_gap_div_log_over_p": 4.305213955516542
+      },
+      {
+        "P": 19,
+        "T0": 332.1287071736525,
+        "Tchi": -8.225573228117508,
+        "principal_mass_scale_T0_over_P2": 0.9200241195946053,
+        "abs_quadratic_projection_ratio": 0.024766221800323906,
+        "actual_projection_gap": 0.975233778199676,
+        "required_projection_gap": 0.6737669993086388,
+        "actual_gap_to_required_gap_ratio": 1.4474347648376609,
+        "equivalent_min_halfclass_mass": 161.9515669727675,
+        "single_residue_capacity": 111.88868120832473,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.15497047258770738,
+        "required_gap_div_log_over_p": 4.347712103202837
+      },
+      {
+        "P": 23,
+        "T0": 496.38731963123354,
+        "Tchi": -18.836170516677605,
+        "principal_mass_scale_T0_over_P2": 0.9383503206639575,
+        "abs_quadratic_projection_ratio": 0.03794651831692842,
+        "actual_projection_gap": 0.9620534816830716,
+        "required_projection_gap": 0.5811298082307641,
+        "actual_gap_to_required_gap_ratio": 1.6554880993147134,
+        "equivalent_min_halfclass_mass": 238.77557455727796,
+        "single_residue_capacity": 144.23273393274087,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.13632583547518043,
+        "required_gap_div_log_over_p": 4.262800269700639
+      },
+      {
+        "P": 29,
+        "T0": 802.7151467422583,
+        "Tchi": -44.998454905072066,
+        "principal_mass_scale_T0_over_P2": 0.9544769878029231,
+        "abs_quadratic_projection_ratio": 0.05605781214879766,
+        "actual_projection_gap": 0.9439421878512023,
+        "required_projection_gap": 0.48660638566952286,
+        "actual_gap_to_required_gap_ratio": 1.9398475146445726,
+        "equivalent_min_halfclass_mass": 378.8583459185931,
+        "single_residue_capacity": 195.3031581392155,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.11611364930987841,
+        "required_gap_div_log_over_p": 4.190776782589027
+      },
+      {
+        "P": 31,
+        "T0": 911.4801918753475,
+        "Tchi": -93.49265382860808,
+        "principal_mass_scale_T0_over_P2": 0.9484705430544719,
+        "abs_quadratic_projection_ratio": 0.10257233745941237,
+        "actual_projection_gap": 0.8974276625405876,
+        "required_projection_gap": 0.4671680384848032,
+        "actual_gap_to_required_gap_ratio": 1.9209954205156536,
+        "equivalent_min_halfclass_mass": 408.9937690233697,
+        "single_residue_capacity": 212.90720667807906,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.11077378078984343,
+        "required_gap_div_log_over_p": 4.217316003424131
+      },
+      {
+        "P": 37,
+        "T0": 1313.0018439714245,
+        "Tchi": -77.88477893363711,
+        "principal_mass_scale_T0_over_P2": 0.9590955763122165,
+        "abs_quadratic_projection_ratio": 0.05931810323895642,
+        "actual_projection_gap": 0.9406818967610435,
+        "required_projection_gap": 0.4070183553245459,
+        "actual_gap_to_required_gap_ratio": 2.3111535007087536,
+        "equivalent_min_halfclass_mass": 617.5585325188937,
+        "single_residue_capacity": 267.2079255356726,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.09759237601741147,
+        "required_gap_div_log_over_p": 4.170595818385749
+      },
+      {
+        "P": 41,
+        "T0": 1635.394311700382,
+        "Tchi": -24.079692961223856,
+        "principal_mass_scale_T0_over_P2": 0.9728699058300905,
+        "abs_quadratic_projection_ratio": 0.014724089957355468,
+        "actual_projection_gap": 0.9852759100426445,
+        "required_projection_gap": 0.372403043463126,
+        "actual_gap_to_required_gap_ratio": 2.6457246452127956,
+        "equivalent_min_halfclass_mass": 805.6573093695791,
+        "single_residue_capacity": 304.51290946975325,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.09057492845620263,
+        "required_gap_div_log_over_p": 4.111546647737082
+      },
+      {
+        "P": 43,
+        "T0": 1784.814910452862,
+        "Tchi": -83.896288366252,
+        "principal_mass_scale_T0_over_P2": 0.9652865929977621,
+        "abs_quadratic_projection_ratio": 0.047005595860337666,
+        "actual_projection_gap": 0.9529944041396623,
+        "required_projection_gap": 0.3624613488550181,
+        "actual_gap_to_required_gap_ratio": 2.6292304190504274,
+        "equivalent_min_halfclass_mass": 850.459311043305,
+        "single_residue_capacity": 323.46320994964634,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.08746977013240843,
+        "required_gap_div_log_over_p": 4.1438470491729635
+      },
+      {
+        "P": 47,
+        "T0": 2134.851349928754,
+        "Tchi": -17.77530766687528,
+        "principal_mass_scale_T0_over_P2": 0.9664333861153256,
+        "abs_quadratic_projection_ratio": 0.00832625075627326,
+        "actual_projection_gap": 0.9916737492437268,
+        "required_projection_gap": 0.3390529973647332,
+        "actual_gap_to_required_gap_ratio": 2.9248340435018854,
+        "equivalent_min_halfclass_mass": 1058.5380211309393,
+        "single_residue_capacity": 361.9138745607455,
+        "capacity_gate_passes": true,
+        "log_over_p": 0.08191803407893741,
+        "required_gap_div_log_over_p": 4.138929860523957
+      }
+    ]
+  },
+  "projection_gap_equivalence_closed": true,
+  "log_over_p_threshold_reduction_closed": true,
+  "quadratic_projection_gap_beats_threshold_proved": false,
+  "row_column_unconditional_closed": false,
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR ((ChebyshevPrincipalMassLowerBoundAtP2 AND (QuadraticHalfClassSquareScaleBiasMarginTheorem OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale OR QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale)))) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "PreviousCapacityGateImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层把零支撑退化压成半类总质量超过单 residue 容量。",
+      "remaining": "QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2"
+    },
+    {
+      "gate": "ProjectionGapEquivalenceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "容量门等价于 1-|T_chi|/T0 > 4PlogP/T0。",
+      "remaining": "none"
+    },
+    {
+      "gate": "LogOverPThresholdReductionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "给定任意 T0>=c0(P)P^2，下游阈值就是 4logP/(c0(P)P)。",
+      "remaining": "ChebyshevPrincipalMassLowerBoundAtP2"
+    },
+    {
+      "gate": "FixedPositiveQuadraticMarginSufficesEventually",
+      "closed": true,
+      "proved": true,
+      "meaning": "任意固定正二次投影缺口都会在大 P 上远强于容量门。",
+      "remaining": "finite base plus ChebyshevPrincipalMassLowerBoundAtP2"
+    },
+    {
+      "gate": "QuadraticProjectionGapBeatsThresholdProved",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料尚未自足证明二次投影缺口击穿 4PlogP/T0。",
+      "remaining": "QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只做等价分解与阈值缩小，不证明行/列命题。",
+      "remaining": "global final inputs remain open"
+    }
+  ],
+  "closed_gates": [
+    "PreviousCapacityGateImported",
+    "ProjectionGapEquivalenceClosed",
+    "LogOverPThresholdReductionClosed",
+    "FixedPositiveQuadraticMarginSufficesEventually"
+  ],
+  "open_gates": [
+    "QuadraticProjectionGapBeatsThresholdProved",
+    "RowColumnUnconditionalClosed"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-halfclass-single-residue-capacity-router.json": "361e53166d6e76a3f47cd32b3085772db0aa75156883bb6dde9bf06042e0d31a",
+    "docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.json": "11a035a79778851ceb5e852bb80587a455411b199bd6ec33208ce7b022aed2c4",
+    "docs/monograph/claim-status-table.md": "f705e7704b696438d9184061dcf0de261bf4639cdbd8302e0a9c005bea3bef96",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "7c4df6d956e7df9940dedcc073679f1c91a10d9f55827cf14c7a8070fe03f62a",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "85a1684e29348f69ad6d8e968acc63fb75cfb61a7343abfd3a1032d5323ab8d1",
+    "docs/final-proof-draft.md": "c8958bc1f15441975c2f7c2b206609eb88fa43adc21313e26742b3bb1addea9b",
+    "docs/prime-density-waves-X.md": "512245acdfc1bf8085de9e6de6580f41acdb1c05d9039ea44f84cf82751626fe",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "5afc3f1b4c1a3fc08457ce17071b0f233d25d93107b08cbbe15cbd09d5eaa502"
+  },
+  "plain_conclusion": "本步继续下钻 `QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2`。半类容量门等价于二次投影缺口 `1-|T_chi|/T0` 大于显式阈值 `4P log P/T0`。一旦主质量有 `T0>=c0(P)P^2` 的 Chebyshev 级下界，所需缺口只有 `4 log P/(c0(P)P)`。因此持久失败不再是普通半类偏置，而是二次投影接近主质量到 `logP/P` 级的极端异常。最新硬点压成 `QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale`。"
+}

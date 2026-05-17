@@ -5164,3 +5164,74 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“punctured 半类全零支撑仍是纯支撑语言”的误出口。剩余最窄接口是证明二次半类总 Chebyshev 质量击穿单 residue 容量，或将容量失败登记并排斥为 ColumnCRT/PDEC/moving-family 出口。行/列命题仍未无条件闭合。
+
+## 116. Half-class capacity margin factorization router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_capacity_margin_factorization_router.py
+docs/monograph/prime-matrix-halfclass-capacity-margin-factorization-router.md
+docs/monograph/prime-matrix-halfclass-capacity-margin-factorization-router.json
+data/prime-matrix-halfclass-capacity-margin-factorization-ledger.json
+```
+
+本步继续下钻
+
+```text
+QuadraticHalfClassMassBeatsSingleResidueCapacityAtP2
+```
+
+半类容量门
+
+```text
+min_s Theta_s(P)>2P log P
+```
+
+等价于二次投影缺口门：
+
+```text
+1-|T_chi(P)|/T0(P) > 4P log P / T0(P).
+```
+
+若同时有主质量下界
+
+```text
+T0(P)>=c0(P)P^2,
+```
+
+则足以证明
+
+```text
+1-|T_chi(P)|/T0(P) > 4 log P/(c0(P)P).
+```
+
+所以持久失败不再是普通半类偏置，而是二次投影接近主质量到 `logP/P` 级的极端异常。
+
+当前读数：
+
+```text
+projection_gap_equivalence_closed=true
+log_over_p_threshold_reduction_closed=true
+quadratic_projection_gap_beats_threshold_proved=false
+row_column_unconditional_closed=false
+```
+
+有限诊断 `7<=P<=1000` 中，容量门失败模数仍为 `P=7,11,13`；从 `P>=17` 开始，实际缺口/所需缺口最小比值为 `1.2842365118870342`。该有限读数只用于定位，不作为无限证明输入。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“容量门仍是总质量语言”的误出口。剩余最窄接口是证明二次投影缺口击穿 `4P log P/T0`，或将 ultra-near-one 二次投影缺陷登记并排斥为 ColumnCRT/PDEC/moving-family 出口。行/列命题仍未无条件闭合。

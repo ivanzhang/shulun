@@ -5077,3 +5077,65 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“支撑退化不能与总质量账本对接”的误出口。剩余是自足证明二次半类质量在 square scale 下超过单 residue 容量，或把容量失败作为显式二次角色/ColumnCRT/PDEC 终端缺陷处理。
+
+## 127. Half-class capacity margin factorization router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_capacity_margin_factorization_router.py
+docs/monograph/prime-matrix-halfclass-capacity-margin-factorization-router.md
+docs/monograph/prime-matrix-halfclass-capacity-margin-factorization-router.json
+data/prime-matrix-halfclass-capacity-margin-factorization-ledger.json
+```
+
+本步把半类容量门分解为主质量因子与二次投影缺口。精确等价式为：
+
+```text
+min_s Theta_s(P)>2P log P
+<=> 1-|T_chi(P)|/T0(P) > 4P log P/T0(P).
+```
+
+若有 Chebyshev 级主质量下界
+
+```text
+T0(P)>=c0(P)P^2,
+```
+
+则所需二次投影缺口只有
+
+```text
+4 log P/(c0(P)P).
+```
+
+这把剩余硬点压成：
+
+```text
+QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale
+```
+
+当前读数：
+
+```text
+projection_gap_equivalence_closed=true
+log_over_p_threshold_reduction_closed=true
+quadratic_projection_gap_beats_threshold_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((ChebyshevPrincipalMassLowerBoundAtP2
+      AND (QuadraticHalfClassSquareScaleBiasMarginTheorem
+           OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+           OR QuadraticProjectionGapBeatsLogOverPThresholdAtSquareScale))))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“容量失败没有相位尺度”的误出口。剩余是自足排斥 `|T_chi|/T0 >= 1-O(logP/P)` 的 ultra-near-one 二次投影缺陷，或把它作为显式 ColumnCRT/PDEC/moving-family 终端缺陷处理。
