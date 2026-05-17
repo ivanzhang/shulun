@@ -3311,3 +3311,40 @@ BranchReplayColumnCRTPDECExclusionOrIsolatedTerminalAtomAbsorption
 ```
 
 本步关闭的是“终端载荷可由本地 moving-slot 平滑复现”的解释。全局行/列命题仍未无条件闭合；下一步必须排斥远程 branch replay ColumnCRT/PDEC，或证明所有剩余只是可吸收的孤立有限原子。
+
+## 84. cycle-debt branch replay global dichotomy 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_branch_replay_global_dichotomy_router.py
+docs/monograph/prime-matrix-cycle-debt-branch-replay-global-dichotomy-router.md
+docs/monograph/prime-matrix-cycle-debt-branch-replay-global-dichotomy-router.json
+data/prime-matrix-cycle-debt-branch-replay-global-dichotomy-ledger.json
+```
+
+本证书继续攻击 `BranchReplayColumnCRTPDECExclusionOrIsolatedTerminalAtomAbsorption`。它把上一证书中的“孤立有限原子”从全局结构出口中剥离：登记的终端 replay block 只有有限个；若某个登记 block 在全局反例链中无限复现，则周期坐标 replay 立即提升为 `P` 坐标中的固定 ColumnCRT 类。
+
+```text
+registered_replay_block_count=6
+minimum_cycle_replay_modulus_log10=32.582
+minimum_p_space_columncrt_modulus_log10=36.337
+maximum_p_space_columncrt_modulus_log10=103.103
+persistent_registered_replay_routes_to_columncrt_pdec=true
+isolated_atoms_cannot_form_infinite_registered_family=true
+finite_atom_base_check_required=true
+```
+
+结构读数：
+
+- 无限复现的登记终端包必须落入 `period_p*lcm(B)` 的 P-space ColumnCRT 类；最小 P-space 模数已约 `10^36.337`。
+- 若没有任何登记包无限复现，则登记原子只剩有限项，不能作为全局反例链的结构逃逸。
+- 若阻断包改变，则不属于同一 replay block，回流 `PDEC/SAE` 或新的命名 router。
+
+最新最窄剩余接口为：
+
+```text
+BranchReplayColumnCRTPDECExclusionOrFiniteAtomBaseCheck
+```
+
+本步不排斥远程 ColumnCRT/PDEC，也不替代有限基例检查；它关闭的是“孤立原子可支撑全局反例链”的解释。

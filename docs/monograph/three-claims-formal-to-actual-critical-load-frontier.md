@@ -3374,3 +3374,38 @@ BranchReplayColumnCRTPDECExclusionOrIsolatedTerminalAtomAbsorption
 ```
 
 这一步仍不关闭全局行/列命题；它关闭本地复现解释，并把剩余压成远程 ColumnCRT/PDEC 排斥或孤立原子吸收。
+
+## 91. cycle-debt branch replay global dichotomy
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_branch_replay_global_dichotomy_router.py
+docs/monograph/prime-matrix-cycle-debt-branch-replay-global-dichotomy-router.md
+data/prime-matrix-cycle-debt-branch-replay-global-dichotomy-ledger.json
+```
+
+本步把 `BranchReplayColumnCRTPDECExclusionOrIsolatedTerminalAtomAbsorption` 的孤立原子出口分解为全局二分。登记 replay block 是有限集合；若其中某一类无限复现，则它被上一 replay lemma 提升为 P-space ColumnCRT/PDEC；若没有任何登记类无限复现，则它们只是有限原子，不能作为全局结构逃逸。
+
+```text
+registered_replay_block_count=6
+minimum_p_space_columncrt_modulus_log10=36.337
+maximum_p_space_columncrt_modulus_log10=103.103
+persistent_registered_replay_routes_to_columncrt_pdec=true
+isolated_atoms_cannot_form_infinite_registered_family=true
+finite_atom_base_check_required=true
+```
+
+结论：
+
+- 持久登记 replay 只能走 ColumnCRT/PDEC；
+- 非持久登记 replay 只剩有限基例检查；
+- 变更阻断包则回流 PDEC/SAE 或新 router。
+
+当前 actual-load 前沿收窄为：
+
+```text
+BranchReplayColumnCRTPDECExclusionOrFiniteAtomBaseCheck
+```
+
+这一步仍不关闭全局行/列命题；它把孤立原子从全局结构出口中剥离，保留远程 ColumnCRT/PDEC 排斥和有限基例检查。
