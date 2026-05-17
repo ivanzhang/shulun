@@ -1,0 +1,342 @@
+{
+  "certificate_type": "prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_endpoint_motion_stencil_audit",
+  "status": "endpoint_motion_stencil_closed_current_sweep_global_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "parameters": {
+      "max_p": 10000,
+      "p0": 2001,
+      "target_h_coeff": 0.43,
+      "max_certificate_size": 2,
+      "shell_width": 1000,
+      "limit": 40
+    },
+    "active_band_endpoints": [
+      23,
+      109
+    ],
+    "outward_neighbor_primes": [
+      19,
+      113
+    ],
+    "inward_core_edge_primes": [
+      29,
+      107
+    ],
+    "outward_neighbors_empty_current_sweep": true,
+    "endpoints_are_minus_singletons_current_sweep": true,
+    "inward_edges_are_core_absorption_current_sweep": true,
+    "endpoint_atom_count": 2,
+    "endpoint_atom_keys": [
+      "p=4987|side=minus|ell=23|residue=19|slot=484:116:23",
+      "p=9817|side=minus|ell=109|residue=7|slot=853:179:109"
+    ],
+    "endpoint_motion_stencil_closed_current_sweep": true,
+    "endpoint_outward_arrival_bound_proved": false,
+    "endpoint_atom_pdec_excluded_globally": false,
+    "core_edge_absorption_multiplicity_bound_proved": false,
+    "row_column_unconditional_closed": false
+  },
+  "stencil_rows": [
+    {
+      "label": "lower_outward_neighbor",
+      "ell": 19,
+      "total_record_count": 0,
+      "total_distinct_residue_count": 0,
+      "total_distinct_slot_count": 0,
+      "nonempty_sides": [],
+      "is_empty": true,
+      "is_minus_only_singleton": false,
+      "is_core_absorption": false,
+      "side_rows": [
+        {
+          "side": "minus",
+          "ell": 19,
+          "record_count": 0,
+          "distinct_residue_count": 0,
+          "distinct_slot_count": 0,
+          "rankin_mass": 0.0,
+          "p_min": null,
+          "p_max": null,
+          "residue_values": [],
+          "slot_values": []
+        },
+        {
+          "side": "plus",
+          "ell": 19,
+          "record_count": 0,
+          "distinct_residue_count": 0,
+          "distinct_slot_count": 0,
+          "rankin_mass": 0.0,
+          "p_min": null,
+          "p_max": null,
+          "residue_values": [],
+          "slot_values": []
+        }
+      ]
+    },
+    {
+      "label": "lower_endpoint_atom",
+      "ell": 23,
+      "total_record_count": 1,
+      "total_distinct_residue_count": 1,
+      "total_distinct_slot_count": 1,
+      "nonempty_sides": [
+        "minus"
+      ],
+      "is_empty": false,
+      "is_minus_only_singleton": true,
+      "is_core_absorption": false,
+      "side_rows": [
+        {
+          "side": "minus",
+          "ell": 23,
+          "record_count": 1,
+          "distinct_residue_count": 1,
+          "distinct_slot_count": 1,
+          "rankin_mass": 0.043478260869565216,
+          "p_min": 4987,
+          "p_max": 4987,
+          "residue_values": [
+            19
+          ],
+          "slot_values": [
+            "484:116:23"
+          ]
+        },
+        {
+          "side": "plus",
+          "ell": 23,
+          "record_count": 0,
+          "distinct_residue_count": 0,
+          "distinct_slot_count": 0,
+          "rankin_mass": 0.0,
+          "p_min": null,
+          "p_max": null,
+          "residue_values": [],
+          "slot_values": []
+        }
+      ]
+    },
+    {
+      "label": "lower_inward_core_edge",
+      "ell": 29,
+      "total_record_count": 4,
+      "total_distinct_residue_count": 4,
+      "total_distinct_slot_count": 4,
+      "nonempty_sides": [
+        "minus",
+        "plus"
+      ],
+      "is_empty": false,
+      "is_minus_only_singleton": false,
+      "is_core_absorption": true,
+      "side_rows": [
+        {
+          "side": "minus",
+          "ell": 29,
+          "record_count": 3,
+          "distinct_residue_count": 3,
+          "distinct_slot_count": 3,
+          "rankin_mass": 0.10344827586206896,
+          "p_min": 2687,
+          "p_max": 6337,
+          "residue_values": [
+            13,
+            15,
+            19
+          ],
+          "slot_values": [
+            "242:53:29",
+            "483:105:29",
+            "595:137:29"
+          ]
+        },
+        {
+          "side": "plus",
+          "ell": 29,
+          "record_count": 1,
+          "distinct_residue_count": 1,
+          "distinct_slot_count": 1,
+          "rankin_mass": 0.034482758620689655,
+          "p_min": 3187,
+          "p_max": 3187,
+          "residue_values": [
+            26
+          ],
+          "slot_values": [
+            "315:78:29"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "upper_inward_core_edge",
+      "ell": 107,
+      "total_record_count": 6,
+      "total_distinct_residue_count": 6,
+      "total_distinct_slot_count": 6,
+      "nonempty_sides": [
+        "minus",
+        "plus"
+      ],
+      "is_empty": false,
+      "is_minus_only_singleton": false,
+      "is_core_absorption": true,
+      "side_rows": [
+        {
+          "side": "minus",
+          "ell": 107,
+          "record_count": 5,
+          "distinct_residue_count": 5,
+          "distinct_slot_count": 5,
+          "rankin_mass": 0.04672897196261682,
+          "p_min": 9277,
+          "p_max": 9907,
+          "residue_values": [
+            30,
+            47,
+            63,
+            75,
+            81
+          ],
+          "slot_values": [
+            "749:137:107",
+            "794:154:107",
+            "810:166:107",
+            "880:206:107",
+            "895:197:107"
+          ]
+        },
+        {
+          "side": "plus",
+          "ell": 107,
+          "record_count": 1,
+          "distinct_residue_count": 1,
+          "distinct_slot_count": 1,
+          "rankin_mass": 0.009345794392523364,
+          "p_min": 9419,
+          "p_max": 9419,
+          "residue_values": [
+            3
+          ],
+          "slot_values": [
+            "906:216:107"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "upper_endpoint_atom",
+      "ell": 109,
+      "total_record_count": 1,
+      "total_distinct_residue_count": 1,
+      "total_distinct_slot_count": 1,
+      "nonempty_sides": [
+        "minus"
+      ],
+      "is_empty": false,
+      "is_minus_only_singleton": true,
+      "is_core_absorption": false,
+      "side_rows": [
+        {
+          "side": "minus",
+          "ell": 109,
+          "record_count": 1,
+          "distinct_residue_count": 1,
+          "distinct_slot_count": 1,
+          "rankin_mass": 0.009174311926605505,
+          "p_min": 9817,
+          "p_max": 9817,
+          "residue_values": [
+            7
+          ],
+          "slot_values": [
+            "853:179:109"
+          ]
+        },
+        {
+          "side": "plus",
+          "ell": 109,
+          "record_count": 0,
+          "distinct_residue_count": 0,
+          "distinct_slot_count": 0,
+          "rankin_mass": 0.0,
+          "p_min": null,
+          "p_max": null,
+          "residue_values": [],
+          "slot_values": []
+        }
+      ]
+    },
+    {
+      "label": "upper_outward_neighbor",
+      "ell": 113,
+      "total_record_count": 0,
+      "total_distinct_residue_count": 0,
+      "total_distinct_slot_count": 0,
+      "nonempty_sides": [],
+      "is_empty": true,
+      "is_minus_only_singleton": false,
+      "is_core_absorption": false,
+      "side_rows": [
+        {
+          "side": "minus",
+          "ell": 113,
+          "record_count": 0,
+          "distinct_residue_count": 0,
+          "distinct_slot_count": 0,
+          "rankin_mass": 0.0,
+          "p_min": null,
+          "p_max": null,
+          "residue_values": [],
+          "slot_values": []
+        },
+        {
+          "side": "plus",
+          "ell": 113,
+          "record_count": 0,
+          "distinct_residue_count": 0,
+          "distinct_slot_count": 0,
+          "rankin_mass": 0.0,
+          "p_min": null,
+          "p_max": null,
+          "residue_values": [],
+          "slot_values": []
+        }
+      ]
+    }
+  ],
+  "route_rows": [
+    {
+      "gate": "OutwardNeighborNoArrival",
+      "closed_current_sweep": true,
+      "evidence": "outside primes 19,113 have total records [0, 0]",
+      "global_remaining": "EndpointOutwardArrivalBound"
+    },
+    {
+      "gate": "EndpointAtomsMinusSingleton",
+      "closed_current_sweep": true,
+      "evidence": "endpoint primes 23,109 are minus-only singletons",
+      "global_remaining": "EndpointAtomPDEC/SAE"
+    },
+    {
+      "gate": "InwardMotionBecomesCoreAbsorption",
+      "closed_current_sweep": true,
+      "evidence": "core edge primes 29,107 have both-side support",
+      "global_remaining": "CoreEdgeAbsorptionMultiplicityBound"
+    }
+  ],
+  "hardpoint_before_audit": "EndpointBandMotionBoundOrEndpointAtomPDECExclusion",
+  "hardpoint_after_audit": "EndpointOutwardArrivalBoundOrEndpointAtomPDECExclusion",
+  "next_direct_attack_target": "EndpointOutwardArrivalBoundOrEndpointAtomPDECExclusion",
+  "dependency_hashes": {
+    "data/square-phase-offband-prefix-gap-shadow-selector-template-provenance-ledger.json": "c01101b66f6cdfbff4a7895ac71b81af50423460b957518ecdea7d775bfcddf5",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-singleton-rankin-budget-ledger.json": "60a85b991523e1af0bdb40c950945b3db3163d1132d1ff441e8ccbc46ade0ac6",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-active-ell-interval-band-ledger.json": "f2876c431b7c4ff762deb76e26f43d974388fab22a1ee854f64fa39944ce280e",
+    "data/square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-band-atom-ledger.json": "6103b7e8cd2e58cc533135f4fec5d489fa28e6eb6bc9b9c378c748635ecb901d",
+    "experiments/prime_matrix_square_phase_offband_prefix_gap_shadow_selector_h_lower_endpoint_band_atom_router.py": "5ab1848bb4339c189c302b2d6add9cde64c94d26eb0185b2d106393aad1845bb"
+  }
+}

@@ -1456,3 +1456,37 @@ moving residue shape: 仍保留 SAE/Rankin 出口。
 ```
 
 因此最新可攻接口不再是泛化的 `SingletonResidueSAE/Rankin`，而是更窄的 `ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC`，并与 `TransportResetPDECExclusion`、`GlobalEpochPairMultiplicityBound`、`MovingResidueShapeSAE/Rankin` 并列为全局剩余。当前 bridge 只关闭 current sweep 的路由连接，不关闭行/列命题。
+
+## 40. H-lower endpoint-motion stencil 更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-motion-stencil-audit.md
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-motion-stencil-ledger.json
+```
+
+本节继续下钻 `ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC`。端点运动被拆成外向邻素数、端点自身、内向核心边缘三类模板：
+
+```text
+outward_neighbor_primes=[19,113]
+active_band_endpoints=[23,109]
+inward_core_edge_primes=[29,107]
+outward_neighbors_empty_current_sweep=true
+endpoints_are_minus_singletons_current_sweep=true
+inward_edges_are_core_absorption_current_sweep=true
+endpoint_motion_stencil_closed_current_sweep=true
+```
+
+具体形态为：
+
+```text
+ell=19: empty
+ell=23: minus-only singleton
+ell=29: both-side core, 4 records
+ell=107: both-side core, 6 records
+ell=109: minus-only singleton
+ell=113: empty
+```
+
+所以当前 sweep 中端点运动不能再作为未分类容量来源：外向一步没有物化，端点自身只有两个 minus-only 单原子，内向一步已经进入核心吸收带。最新全局硬点压成 `EndpointOutwardArrivalBoundOrEndpointAtomPDECExclusion`，并保留 `CoreEdgeAbsorptionMultiplicityBound` 作为内侧核心吸收的 multiplicity 义务。
