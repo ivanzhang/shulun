@@ -2069,3 +2069,57 @@ FiftyUnitCrossLockOrTerminalPDECExclusion
 ```
 
 即全局反例链若继续沿真实链复现，必须支付同一个 `50-unit` release/residue 包；若不能支付，则容量不足；若通过重复 residue 或移动槽图样支付，则进入 reset/PDEC/SAE/ColumnCRT 终端。
+
+## 55. fifty-unit cross-lock carrier separation 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_fifty_unit_cross_lock_carrier_separation_router.py
+docs/monograph/prime-matrix-fifty-unit-cross-lock-carrier-separation-router.md
+docs/monograph/prime-matrix-fifty-unit-cross-lock-carrier-separation-router.json
+data/prime-matrix-fifty-unit-cross-lock-carrier-separation-ledger.json
+```
+
+本证书继续下钻上一节的 `50-unit cross-lock`。关键结论是：这个 `50` 不是同一载体上的即时矛盾，而是两个互素载体之间的同步门。
+
+```text
+support_atom_key=19:12
+support_q=31
+support_generator_residue=19
+support_fill_residue=12
+support_generator_p=2687
+support_endpoint_release_extra_units=50
+tight_epoch_key=minus:71
+tight_epoch_used=22
+tight_epoch_capacity=71
+tight_epoch_overflow_new_units=50
+same_q_or_ell=false
+same_side_taxonomy=false
+same_p_band=false
+direct_same_carrier_contradiction=false
+cross_carrier_sync_required=true
+combined_carrier_modulus=2201
+combined_modulus_over_fifty_units=44.02
+p_delay_mod_tight_epoch=9
+p_delay_gcd_tight_epoch=1
+fifty_distinct_residue_count=50
+fifty_step_ramp_is_reset_free=true
+first_enter_epoch_p=4207
+last_fifty_block_p=8127
+fifty_step_block_can_fit_current_epoch_p_range=true
+if_fifty_new_residues_sync_then_one_slot_overflow=true
+newness_against_existing_epoch_residues_proved=false
+```
+
+解释如下。支撑移动最窄原子在 `q=31/source_pair=19:12`，当前 `P` 带约为 `2629..2687`；最拥挤 singleton epoch 是 `minus:71`，当前 `P` 区间为 `4177..9257`。因此二者不构成同载体直接矛盾，必须通过互素模数 `31*71=2201` 的跨载体 CRT 门同步。
+
+固定 `p_delay=80` 在模 `71` 上等于 `9`，且 `gcd(80,71)=1`，所以前 `50` 步给出 `50` 个互异 residue；从 `P=4207` 到 `8127` 的 50 步块可以放入当前 `minus:71` 的 P 区间。这说明“重复 residue 立刻触发 PDEC”的短路路线不能免费使用。反过来，若这 50 个跨载体到达都作为新 residue 同步进入 `minus:71`，则 `22+50>71`，立即越过 one-slot 容量。
+
+因此最新最窄剩余接口被精确改写为：
+
+```text
+CrossCarrierFiftyUnitSynchronizationPDECOrSAE
+```
+
+也就是证明 50 个跨载体到达若持久同步则必须为新 residue 并越界，或把非新/不同步形态登记为 `TransportReset-PDEC`、`SingletonResidue-SAE`、`SupportMotion/UnusedTarget` 或 `MovingCarrier-ColumnCRT`。本节仍不是全局行/列命题证明；它关闭的是同载体直接矛盾路线，并把剩余压成跨载体同步的新硬点。

@@ -2090,3 +2090,66 @@ support extra endpoint release=50
 ```text
 FiftyUnitCrossLockOrTerminalPDECExclusion
 ```
+
+## 62. fifty-unit cross-lock carrier separation
+
+后续文件
+
+```text
+experiments/prime_matrix_fifty_unit_cross_lock_carrier_separation_router.py
+docs/monograph/prime-matrix-fifty-unit-cross-lock-carrier-separation-router.md
+data/prime-matrix-fifty-unit-cross-lock-carrier-separation-ledger.json
+```
+
+本步把 `FiftyUnitCrossLock` 的直接矛盾尝试拆开。支撑端的最窄原子是
+
+```text
+q=31
+source_pair_key=19:12
+generator_residue=19
+fill_residue=12
+generator_p=2687
+endpoint_release_total=70
+endpoint_release_extra_over_width=50
+p_delay=80
+```
+
+而一槽容量端的最紧 epoch 是
+
+```text
+side=minus
+ell=71
+used=22
+capacity=71
+unused=49
+overflow_new_units=50
+p_range=4177..9257
+```
+
+所以两端不是同一 carrier：
+
+```text
+same_q_or_ell=false
+same_side_taxonomy=false
+same_p_band=false
+direct_same_carrier_contradiction=false
+combined_carrier_modulus=31*71=2201
+combined_modulus_over_fifty_units=44.02
+```
+
+进一步，固定 `p_delay=80` 在 `mod 71` 上给出增量 `9`，且 `gcd(80,71)=1`。因此前 `50` 步 residue 全互异；从进入 `minus:71` P 区间的第一步 `P=4207` 开始，50 步块到 `P=8127` 仍在 `4177..9257` 内。于是当前真正卡点不是短路的重复 residue，而是跨载体同步的新旧 residue 判定：
+
+```text
+fifty_step_ramp_is_reset_free=true
+fifty_step_block_can_fit_current_epoch_p_range=true
+if_fifty_new_residues_sync_then_one_slot_overflow=true
+newness_against_existing_epoch_residues_proved=false
+```
+
+这给出新的前沿等价形态。若 50 个跨载体到达全为新 residue，则 `22+50>71`，一槽容量必爆；若其中有旧 residue 或不能保持同步，则对应形态必须进入 `TransportReset-PDEC`、`SingletonResidue-SAE`、`SupportMotion/UnusedTarget` 或 `MovingCarrier-ColumnCRT`。因此下一最窄接口为：
+
+```text
+CrossCarrierFiftyUnitSynchronizationPDECOrSAE
+```
+
+这一步关闭了 `50-unit cross-lock` 的同载体直接矛盾路线，但全局行/列命题仍未无条件闭合。
