@@ -1,0 +1,1923 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_k14_high_gate_low_shell_skeleton_router",
+  "status": "k14_high_gate_drift_compressed_to_full_debt_eight_lane_crt_load",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "row_column_unconditional_closed": false,
+    "previous_hardpoint": "K13GateProfileNoNearReplayPDECOrK14HighGateDriftSAE",
+    "period_p": 5680,
+    "shift_cycles": 14,
+    "k13_previous_gate_hardpoint": "K13GateProfileNoNearReplayPDECOrK14HighGateDriftSAE",
+    "k14_zero_slack_layers": [
+      7,
+      8,
+      13,
+      15
+    ],
+    "k14_high_gate_core_alternative_count": 2,
+    "k14_best_core_deltas": [
+      4,
+      16,
+      28,
+      54
+    ],
+    "k14_low_shell_minimum_delta_count": 6,
+    "k14_low_shell_new_delta_count_over_core": 4,
+    "k14_low_shell_new_deltas_over_core": [
+      2,
+      48,
+      58,
+      70
+    ],
+    "k14_full_delta_count_after_low_shell": 8,
+    "k14_full_deltas_after_low_shell": [
+      2,
+      4,
+      16,
+      28,
+      48,
+      54,
+      58,
+      70
+    ],
+    "k14_full_total_required_width": 101,
+    "k14_full_global_lcm_log10": 48.5077897778948,
+    "k14_full_unique_blocker_factor_count": 28,
+    "k14_full_lcm_exceeds_period": true,
+    "k14_full_used_tail_slots": 28,
+    "k14_tail_lcm_log10": 17.956335089032265,
+    "hardpoint_after_router": "K13FixedGateProfilePDECOrK14FullDebtEightLaneCRTLoadPDEC",
+    "next_direct_attack_target": "K13FixedGateProfilePDECOrK14FullDebtEightLaneCRTLoadPDEC"
+  },
+  "candidate_summaries": [
+    {
+      "core_edges": [
+        {
+          "source_residue": 19,
+          "target_residue": 23,
+          "delta": 4,
+          "shell_label": "13..14"
+        },
+        {
+          "source_residue": 70,
+          "target_residue": 15,
+          "delta": 16,
+          "shell_label": "7..7"
+        },
+        {
+          "source_residue": 1,
+          "target_residue": 17,
+          "delta": 16,
+          "shell_label": "8..12"
+        },
+        {
+          "source_residue": 30,
+          "target_residue": 58,
+          "delta": 28,
+          "shell_label": "8..12"
+        },
+        {
+          "source_residue": 13,
+          "target_residue": 67,
+          "delta": 54,
+          "shell_label": ">=15"
+        }
+      ],
+      "core_delta_count": 4,
+      "core_deltas": [
+        4,
+        16,
+        28,
+        54
+      ],
+      "low_shell_min_delta_solution": {
+        "objective": "unit",
+        "remaining_source_count": 24,
+        "remaining_demand_count": 22,
+        "candidate_edge_count": 389,
+        "used_delta_count": 6,
+        "used_deltas": [
+          19,
+          41,
+          43,
+          46,
+          58,
+          60
+        ],
+        "new_delta_count_over_core": 6,
+        "new_deltas_over_core": [
+          19,
+          41,
+          43,
+          46,
+          58,
+          60
+        ],
+        "matching": [
+          {
+            "source_residue": 23,
+            "target_residue": 42,
+            "delta": 19
+          },
+          {
+            "source_residue": 43,
+            "target_residue": 62,
+            "delta": 19
+          },
+          {
+            "source_residue": 68,
+            "target_residue": 16,
+            "delta": 19
+          },
+          {
+            "source_residue": 8,
+            "target_residue": 49,
+            "delta": 41
+          },
+          {
+            "source_residue": 16,
+            "target_residue": 57,
+            "delta": 41
+          },
+          {
+            "source_residue": 20,
+            "target_residue": 63,
+            "delta": 43
+          },
+          {
+            "source_residue": 29,
+            "target_residue": 1,
+            "delta": 43
+          },
+          {
+            "source_residue": 47,
+            "target_residue": 19,
+            "delta": 43
+          },
+          {
+            "source_residue": 57,
+            "target_residue": 29,
+            "delta": 43
+          },
+          {
+            "source_residue": 14,
+            "target_residue": 60,
+            "delta": 46
+          },
+          {
+            "source_residue": 33,
+            "target_residue": 8,
+            "delta": 46
+          },
+          {
+            "source_residue": 49,
+            "target_residue": 24,
+            "delta": 46
+          },
+          {
+            "source_residue": 50,
+            "target_residue": 25,
+            "delta": 46
+          },
+          {
+            "source_residue": 6,
+            "target_residue": 64,
+            "delta": 58
+          },
+          {
+            "source_residue": 15,
+            "target_residue": 2,
+            "delta": 58
+          },
+          {
+            "source_residue": 60,
+            "target_residue": 47,
+            "delta": 58
+          },
+          {
+            "source_residue": 67,
+            "target_residue": 54,
+            "delta": 58
+          },
+          {
+            "source_residue": 24,
+            "target_residue": 13,
+            "delta": 60
+          },
+          {
+            "source_residue": 31,
+            "target_residue": 20,
+            "delta": 60
+          },
+          {
+            "source_residue": 52,
+            "target_residue": 41,
+            "delta": 60
+          },
+          {
+            "source_residue": 54,
+            "target_residue": 43,
+            "delta": 60
+          },
+          {
+            "source_residue": 63,
+            "target_residue": 52,
+            "delta": 60
+          }
+        ]
+      },
+      "low_shell_extra_over_core_solution": {
+        "objective": "extra_over_core",
+        "remaining_source_count": 24,
+        "remaining_demand_count": 22,
+        "candidate_edge_count": 389,
+        "used_delta_count": 8,
+        "used_deltas": [
+          2,
+          4,
+          16,
+          28,
+          48,
+          54,
+          58,
+          70
+        ],
+        "new_delta_count_over_core": 4,
+        "new_deltas_over_core": [
+          2,
+          48,
+          58,
+          70
+        ],
+        "matching": [
+          {
+            "source_residue": 6,
+            "target_residue": 8,
+            "delta": 2
+          },
+          {
+            "source_residue": 23,
+            "target_residue": 25,
+            "delta": 2
+          },
+          {
+            "source_residue": 58,
+            "target_residue": 60,
+            "delta": 2
+          },
+          {
+            "source_residue": 68,
+            "target_residue": 1,
+            "delta": 4
+          },
+          {
+            "source_residue": 31,
+            "target_residue": 47,
+            "delta": 16
+          },
+          {
+            "source_residue": 24,
+            "target_residue": 52,
+            "delta": 28
+          },
+          {
+            "source_residue": 29,
+            "target_residue": 57,
+            "delta": 28
+          },
+          {
+            "source_residue": 63,
+            "target_residue": 20,
+            "delta": 28
+          },
+          {
+            "source_residue": 16,
+            "target_residue": 64,
+            "delta": 48
+          },
+          {
+            "source_residue": 47,
+            "target_residue": 24,
+            "delta": 48
+          },
+          {
+            "source_residue": 52,
+            "target_residue": 29,
+            "delta": 48
+          },
+          {
+            "source_residue": 8,
+            "target_residue": 62,
+            "delta": 54
+          },
+          {
+            "source_residue": 33,
+            "target_residue": 16,
+            "delta": 54
+          },
+          {
+            "source_residue": 60,
+            "target_residue": 43,
+            "delta": 54
+          },
+          {
+            "source_residue": 15,
+            "target_residue": 2,
+            "delta": 58
+          },
+          {
+            "source_residue": 54,
+            "target_residue": 41,
+            "delta": 58
+          },
+          {
+            "source_residue": 67,
+            "target_residue": 54,
+            "delta": 58
+          },
+          {
+            "source_residue": 14,
+            "target_residue": 13,
+            "delta": 70
+          },
+          {
+            "source_residue": 20,
+            "target_residue": 19,
+            "delta": 70
+          },
+          {
+            "source_residue": 43,
+            "target_residue": 42,
+            "delta": 70
+          },
+          {
+            "source_residue": 50,
+            "target_residue": 49,
+            "delta": 70
+          },
+          {
+            "source_residue": 64,
+            "target_residue": 63,
+            "delta": 70
+          }
+        ]
+      },
+      "full_load_summary": {
+        "edge_count": 27,
+        "total_required_width": 101,
+        "used_capacity": 129,
+        "used_tail_slots": 28,
+        "delta_count": 8,
+        "deltas": [
+          2,
+          4,
+          16,
+          28,
+          48,
+          54,
+          58,
+          70
+        ],
+        "unique_blocker_factor_count": 28,
+        "global_lcm": 3219509996431722307700006149789434284190253031859,
+        "global_lcm_log10": 48.5077897778948,
+        "global_lcm_exceeds_period_p": true,
+        "tail_factor_count": 11,
+        "tail_lcm": 904346972510217159,
+        "tail_lcm_log10": 17.956335089032265,
+        "tail_lcm_exceeds_period_p": true,
+        "lanes": [
+          {
+            "delta": 2,
+            "edge_count": 3,
+            "total_required_width": 6,
+            "tail_slots": 1,
+            "unique_blocker_factor_count": 4,
+            "lane_lcm_log10": 4.887949082565046,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 6,
+                "target_residue": 8,
+                "required_width": 4,
+                "source_capacity": 4,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 23,
+                "target_residue": 25,
+                "required_width": 1,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 58,
+                "target_residue": 60,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 4,
+            "edge_count": 2,
+            "total_required_width": 15,
+            "tail_slots": 3,
+            "unique_blocker_factor_count": 11,
+            "lane_lcm_log10": 14.877009382132174,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 19,
+                "target_residue": 23,
+                "required_width": 13,
+                "source_capacity": 14,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 68,
+                "target_residue": 1,
+                "required_width": 2,
+                "source_capacity": 4,
+                "source_origin": "immediate_relief"
+              }
+            ]
+          },
+          {
+            "delta": 16,
+            "edge_count": 3,
+            "total_required_width": 19,
+            "tail_slots": 6,
+            "unique_blocker_factor_count": 9,
+            "lane_lcm_log10": 13.08474472426912,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 1,
+                "target_residue": 17,
+                "required_width": 9,
+                "source_capacity": 12,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 70,
+                "target_residue": 15,
+                "required_width": 7,
+                "source_capacity": 7,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 31,
+                "target_residue": 47,
+                "required_width": 3,
+                "source_capacity": 6,
+                "source_origin": "immediate_relief"
+              }
+            ]
+          },
+          {
+            "delta": 28,
+            "edge_count": 4,
+            "total_required_width": 16,
+            "tail_slots": 7,
+            "unique_blocker_factor_count": 10,
+            "lane_lcm_log10": 12.799975037161758,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 30,
+                "target_residue": 58,
+                "required_width": 8,
+                "source_capacity": 10,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 24,
+                "target_residue": 52,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 29,
+                "target_residue": 57,
+                "required_width": 1,
+                "source_capacity": 6,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 63,
+                "target_residue": 20,
+                "required_width": 6,
+                "source_capacity": 6,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 48,
+            "edge_count": 3,
+            "total_required_width": 4,
+            "tail_slots": 6,
+            "unique_blocker_factor_count": 3,
+            "lane_lcm_log10": 2.3636119798921444,
+            "lane_lcm_exceeds_period_p": false,
+            "edges": [
+              {
+                "source_residue": 16,
+                "target_residue": 64,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 47,
+                "target_residue": 24,
+                "required_width": 2,
+                "source_capacity": 4,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 52,
+                "target_residue": 29,
+                "required_width": 1,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 54,
+            "edge_count": 4,
+            "total_required_width": 23,
+            "tail_slots": 3,
+            "unique_blocker_factor_count": 14,
+            "lane_lcm_log10": 22.059162448673053,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 13,
+                "target_residue": 67,
+                "required_width": 15,
+                "source_capacity": 15,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 8,
+                "target_residue": 62,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 33,
+                "target_residue": 16,
+                "required_width": 3,
+                "source_capacity": 4,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 60,
+                "target_residue": 43,
+                "required_width": 3,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 58,
+            "edge_count": 3,
+            "total_required_width": 8,
+            "tail_slots": 0,
+            "unique_blocker_factor_count": 5,
+            "lane_lcm_log10": 5.976867430351518,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 15,
+                "target_residue": 2,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 54,
+                "target_residue": 41,
+                "required_width": 5,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 67,
+                "target_residue": 54,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 70,
+            "edge_count": 5,
+            "total_required_width": 10,
+            "tail_slots": 2,
+            "unique_blocker_factor_count": 6,
+            "lane_lcm_log10": 8.285120168578187,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 14,
+                "target_residue": 13,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 20,
+                "target_residue": 19,
+                "required_width": 4,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 43,
+                "target_residue": 42,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 50,
+                "target_residue": 49,
+                "required_width": 1,
+                "source_capacity": 2,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 64,
+                "target_residue": 63,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "core_edges": [
+        {
+          "source_residue": 19,
+          "target_residue": 23,
+          "delta": 4,
+          "shell_label": "13..14"
+        },
+        {
+          "source_residue": 70,
+          "target_residue": 15,
+          "delta": 16,
+          "shell_label": "7..7"
+        },
+        {
+          "source_residue": 1,
+          "target_residue": 58,
+          "delta": 57,
+          "shell_label": "8..12"
+        },
+        {
+          "source_residue": 30,
+          "target_residue": 17,
+          "delta": 58,
+          "shell_label": "8..12"
+        },
+        {
+          "source_residue": 13,
+          "target_residue": 67,
+          "delta": 54,
+          "shell_label": ">=15"
+        }
+      ],
+      "core_delta_count": 5,
+      "core_deltas": [
+        4,
+        16,
+        54,
+        57,
+        58
+      ],
+      "low_shell_min_delta_solution": {
+        "objective": "unit",
+        "remaining_source_count": 24,
+        "remaining_demand_count": 22,
+        "candidate_edge_count": 389,
+        "used_delta_count": 6,
+        "used_deltas": [
+          19,
+          41,
+          43,
+          46,
+          58,
+          60
+        ],
+        "new_delta_count_over_core": 5,
+        "new_deltas_over_core": [
+          19,
+          41,
+          43,
+          46,
+          60
+        ],
+        "matching": [
+          {
+            "source_residue": 23,
+            "target_residue": 42,
+            "delta": 19
+          },
+          {
+            "source_residue": 43,
+            "target_residue": 62,
+            "delta": 19
+          },
+          {
+            "source_residue": 68,
+            "target_residue": 16,
+            "delta": 19
+          },
+          {
+            "source_residue": 8,
+            "target_residue": 49,
+            "delta": 41
+          },
+          {
+            "source_residue": 16,
+            "target_residue": 57,
+            "delta": 41
+          },
+          {
+            "source_residue": 20,
+            "target_residue": 63,
+            "delta": 43
+          },
+          {
+            "source_residue": 29,
+            "target_residue": 1,
+            "delta": 43
+          },
+          {
+            "source_residue": 47,
+            "target_residue": 19,
+            "delta": 43
+          },
+          {
+            "source_residue": 57,
+            "target_residue": 29,
+            "delta": 43
+          },
+          {
+            "source_residue": 14,
+            "target_residue": 60,
+            "delta": 46
+          },
+          {
+            "source_residue": 33,
+            "target_residue": 8,
+            "delta": 46
+          },
+          {
+            "source_residue": 49,
+            "target_residue": 24,
+            "delta": 46
+          },
+          {
+            "source_residue": 50,
+            "target_residue": 25,
+            "delta": 46
+          },
+          {
+            "source_residue": 6,
+            "target_residue": 64,
+            "delta": 58
+          },
+          {
+            "source_residue": 15,
+            "target_residue": 2,
+            "delta": 58
+          },
+          {
+            "source_residue": 60,
+            "target_residue": 47,
+            "delta": 58
+          },
+          {
+            "source_residue": 67,
+            "target_residue": 54,
+            "delta": 58
+          },
+          {
+            "source_residue": 24,
+            "target_residue": 13,
+            "delta": 60
+          },
+          {
+            "source_residue": 31,
+            "target_residue": 20,
+            "delta": 60
+          },
+          {
+            "source_residue": 52,
+            "target_residue": 41,
+            "delta": 60
+          },
+          {
+            "source_residue": 54,
+            "target_residue": 43,
+            "delta": 60
+          },
+          {
+            "source_residue": 63,
+            "target_residue": 52,
+            "delta": 60
+          }
+        ]
+      },
+      "low_shell_extra_over_core_solution": {
+        "objective": "extra_over_core",
+        "remaining_source_count": 24,
+        "remaining_demand_count": 22,
+        "candidate_edge_count": 389,
+        "used_delta_count": 6,
+        "used_deltas": [
+          16,
+          36,
+          39,
+          58,
+          60,
+          70
+        ],
+        "new_delta_count_over_core": 4,
+        "new_deltas_over_core": [
+          36,
+          39,
+          60,
+          70
+        ],
+        "matching": [
+          {
+            "source_residue": 8,
+            "target_residue": 24,
+            "delta": 16
+          },
+          {
+            "source_residue": 47,
+            "target_residue": 63,
+            "delta": 16
+          },
+          {
+            "source_residue": 63,
+            "target_residue": 8,
+            "delta": 16
+          },
+          {
+            "source_residue": 16,
+            "target_residue": 52,
+            "delta": 36
+          },
+          {
+            "source_residue": 24,
+            "target_residue": 60,
+            "delta": 36
+          },
+          {
+            "source_residue": 64,
+            "target_residue": 29,
+            "delta": 36
+          },
+          {
+            "source_residue": 23,
+            "target_residue": 62,
+            "delta": 39
+          },
+          {
+            "source_residue": 33,
+            "target_residue": 1,
+            "delta": 39
+          },
+          {
+            "source_residue": 57,
+            "target_residue": 25,
+            "delta": 39
+          },
+          {
+            "source_residue": 6,
+            "target_residue": 64,
+            "delta": 58
+          },
+          {
+            "source_residue": 15,
+            "target_residue": 2,
+            "delta": 58
+          },
+          {
+            "source_residue": 29,
+            "target_residue": 16,
+            "delta": 58
+          },
+          {
+            "source_residue": 60,
+            "target_residue": 47,
+            "delta": 58
+          },
+          {
+            "source_residue": 67,
+            "target_residue": 54,
+            "delta": 58
+          },
+          {
+            "source_residue": 31,
+            "target_residue": 20,
+            "delta": 60
+          },
+          {
+            "source_residue": 52,
+            "target_residue": 41,
+            "delta": 60
+          },
+          {
+            "source_residue": 54,
+            "target_residue": 43,
+            "delta": 60
+          },
+          {
+            "source_residue": 14,
+            "target_residue": 13,
+            "delta": 70
+          },
+          {
+            "source_residue": 20,
+            "target_residue": 19,
+            "delta": 70
+          },
+          {
+            "source_residue": 43,
+            "target_residue": 42,
+            "delta": 70
+          },
+          {
+            "source_residue": 50,
+            "target_residue": 49,
+            "delta": 70
+          },
+          {
+            "source_residue": 58,
+            "target_residue": 57,
+            "delta": 70
+          }
+        ]
+      },
+      "full_load_summary": {
+        "edge_count": 27,
+        "total_required_width": 101,
+        "used_capacity": 126,
+        "used_tail_slots": 25,
+        "delta_count": 9,
+        "deltas": [
+          4,
+          16,
+          36,
+          39,
+          54,
+          57,
+          58,
+          60,
+          70
+        ],
+        "unique_blocker_factor_count": 28,
+        "global_lcm": 2405807021849984324718597725060313484812744907017,
+        "global_lcm_log10": 48.3812607881298,
+        "global_lcm_exceeds_period_p": true,
+        "tail_factor_count": 12,
+        "tail_lcm": 70406288196615097881,
+        "tail_lcm_log10": 19.84761144901617,
+        "tail_lcm_exceeds_period_p": true,
+        "lanes": [
+          {
+            "delta": 4,
+            "edge_count": 1,
+            "total_required_width": 13,
+            "tail_slots": 1,
+            "unique_blocker_factor_count": 9,
+            "lane_lcm_log10": 12.184162462854944,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 19,
+                "target_residue": 23,
+                "required_width": 13,
+                "source_capacity": 14,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 16,
+            "edge_count": 4,
+            "total_required_width": 15,
+            "tail_slots": 4,
+            "unique_blocker_factor_count": 7,
+            "lane_lcm_log10": 8.32894211522265,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 70,
+                "target_residue": 15,
+                "required_width": 7,
+                "source_capacity": 7,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 8,
+                "target_residue": 24,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 47,
+                "target_residue": 63,
+                "required_width": 2,
+                "source_capacity": 4,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 63,
+                "target_residue": 8,
+                "required_width": 4,
+                "source_capacity": 6,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 36,
+            "edge_count": 3,
+            "total_required_width": 3,
+            "tail_slots": 1,
+            "unique_blocker_factor_count": 2,
+            "lane_lcm_log10": 1.3222192947339193,
+            "lane_lcm_exceeds_period_p": false,
+            "edges": [
+              {
+                "source_residue": 16,
+                "target_residue": 52,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 24,
+                "target_residue": 60,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 64,
+                "target_residue": 29,
+                "required_width": 1,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 39,
+            "edge_count": 3,
+            "total_required_width": 5,
+            "tail_slots": 2,
+            "unique_blocker_factor_count": 3,
+            "lane_lcm_log10": 3.5798978696031036,
+            "lane_lcm_exceeds_period_p": false,
+            "edges": [
+              {
+                "source_residue": 23,
+                "target_residue": 62,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 33,
+                "target_residue": 1,
+                "required_width": 2,
+                "source_capacity": 4,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 57,
+                "target_residue": 25,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 54,
+            "edge_count": 1,
+            "total_required_width": 15,
+            "tail_slots": 0,
+            "unique_blocker_factor_count": 11,
+            "lane_lcm_log10": 16.73138066628631,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 13,
+                "target_residue": 67,
+                "required_width": 15,
+                "source_capacity": 15,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 57,
+            "edge_count": 1,
+            "total_required_width": 8,
+            "tail_slots": 4,
+            "unique_blocker_factor_count": 6,
+            "lane_lcm_log10": 7.805641542703649,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 1,
+                "target_residue": 58,
+                "required_width": 8,
+                "source_capacity": 12,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 58,
+            "edge_count": 6,
+            "total_required_width": 19,
+            "tail_slots": 9,
+            "unique_blocker_factor_count": 12,
+            "lane_lcm_log10": 19.411147427136896,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 30,
+                "target_residue": 17,
+                "required_width": 9,
+                "source_capacity": 10,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 6,
+                "target_residue": 64,
+                "required_width": 1,
+                "source_capacity": 4,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 15,
+                "target_residue": 2,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 29,
+                "target_residue": 16,
+                "required_width": 3,
+                "source_capacity": 6,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 60,
+                "target_residue": 47,
+                "required_width": 3,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 67,
+                "target_residue": 54,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 60,
+            "edge_count": 3,
+            "total_required_width": 14,
+            "tail_slots": 2,
+            "unique_blocker_factor_count": 7,
+            "lane_lcm_log10": 8.195284070020325,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 31,
+                "target_residue": 20,
+                "required_width": 6,
+                "source_capacity": 6,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 52,
+                "target_residue": 41,
+                "required_width": 5,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 54,
+                "target_residue": 43,
+                "required_width": 3,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              }
+            ]
+          },
+          {
+            "delta": 70,
+            "edge_count": 5,
+            "total_required_width": 9,
+            "tail_slots": 2,
+            "unique_blocker_factor_count": 6,
+            "lane_lcm_log10": 7.41229178661878,
+            "lane_lcm_exceeds_period_p": true,
+            "edges": [
+              {
+                "source_residue": 14,
+                "target_residue": 13,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 20,
+                "target_residue": 19,
+                "required_width": 4,
+                "source_capacity": 5,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 43,
+                "target_residue": 42,
+                "required_width": 2,
+                "source_capacity": 2,
+                "source_origin": "positive_debt"
+              },
+              {
+                "source_residue": 50,
+                "target_residue": 49,
+                "required_width": 1,
+                "source_capacity": 2,
+                "source_origin": "immediate_relief"
+              },
+              {
+                "source_residue": 58,
+                "target_residue": 57,
+                "required_width": 1,
+                "source_capacity": 1,
+                "source_origin": "positive_debt"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "best_candidate": {
+    "core_edges": [
+      {
+        "source_residue": 19,
+        "target_residue": 23,
+        "delta": 4,
+        "shell_label": "13..14"
+      },
+      {
+        "source_residue": 70,
+        "target_residue": 15,
+        "delta": 16,
+        "shell_label": "7..7"
+      },
+      {
+        "source_residue": 1,
+        "target_residue": 17,
+        "delta": 16,
+        "shell_label": "8..12"
+      },
+      {
+        "source_residue": 30,
+        "target_residue": 58,
+        "delta": 28,
+        "shell_label": "8..12"
+      },
+      {
+        "source_residue": 13,
+        "target_residue": 67,
+        "delta": 54,
+        "shell_label": ">=15"
+      }
+    ],
+    "core_delta_count": 4,
+    "core_deltas": [
+      4,
+      16,
+      28,
+      54
+    ],
+    "low_shell_min_delta_solution": {
+      "objective": "unit",
+      "remaining_source_count": 24,
+      "remaining_demand_count": 22,
+      "candidate_edge_count": 389,
+      "used_delta_count": 6,
+      "used_deltas": [
+        19,
+        41,
+        43,
+        46,
+        58,
+        60
+      ],
+      "new_delta_count_over_core": 6,
+      "new_deltas_over_core": [
+        19,
+        41,
+        43,
+        46,
+        58,
+        60
+      ],
+      "matching": [
+        {
+          "source_residue": 23,
+          "target_residue": 42,
+          "delta": 19
+        },
+        {
+          "source_residue": 43,
+          "target_residue": 62,
+          "delta": 19
+        },
+        {
+          "source_residue": 68,
+          "target_residue": 16,
+          "delta": 19
+        },
+        {
+          "source_residue": 8,
+          "target_residue": 49,
+          "delta": 41
+        },
+        {
+          "source_residue": 16,
+          "target_residue": 57,
+          "delta": 41
+        },
+        {
+          "source_residue": 20,
+          "target_residue": 63,
+          "delta": 43
+        },
+        {
+          "source_residue": 29,
+          "target_residue": 1,
+          "delta": 43
+        },
+        {
+          "source_residue": 47,
+          "target_residue": 19,
+          "delta": 43
+        },
+        {
+          "source_residue": 57,
+          "target_residue": 29,
+          "delta": 43
+        },
+        {
+          "source_residue": 14,
+          "target_residue": 60,
+          "delta": 46
+        },
+        {
+          "source_residue": 33,
+          "target_residue": 8,
+          "delta": 46
+        },
+        {
+          "source_residue": 49,
+          "target_residue": 24,
+          "delta": 46
+        },
+        {
+          "source_residue": 50,
+          "target_residue": 25,
+          "delta": 46
+        },
+        {
+          "source_residue": 6,
+          "target_residue": 64,
+          "delta": 58
+        },
+        {
+          "source_residue": 15,
+          "target_residue": 2,
+          "delta": 58
+        },
+        {
+          "source_residue": 60,
+          "target_residue": 47,
+          "delta": 58
+        },
+        {
+          "source_residue": 67,
+          "target_residue": 54,
+          "delta": 58
+        },
+        {
+          "source_residue": 24,
+          "target_residue": 13,
+          "delta": 60
+        },
+        {
+          "source_residue": 31,
+          "target_residue": 20,
+          "delta": 60
+        },
+        {
+          "source_residue": 52,
+          "target_residue": 41,
+          "delta": 60
+        },
+        {
+          "source_residue": 54,
+          "target_residue": 43,
+          "delta": 60
+        },
+        {
+          "source_residue": 63,
+          "target_residue": 52,
+          "delta": 60
+        }
+      ]
+    },
+    "low_shell_extra_over_core_solution": {
+      "objective": "extra_over_core",
+      "remaining_source_count": 24,
+      "remaining_demand_count": 22,
+      "candidate_edge_count": 389,
+      "used_delta_count": 8,
+      "used_deltas": [
+        2,
+        4,
+        16,
+        28,
+        48,
+        54,
+        58,
+        70
+      ],
+      "new_delta_count_over_core": 4,
+      "new_deltas_over_core": [
+        2,
+        48,
+        58,
+        70
+      ],
+      "matching": [
+        {
+          "source_residue": 6,
+          "target_residue": 8,
+          "delta": 2
+        },
+        {
+          "source_residue": 23,
+          "target_residue": 25,
+          "delta": 2
+        },
+        {
+          "source_residue": 58,
+          "target_residue": 60,
+          "delta": 2
+        },
+        {
+          "source_residue": 68,
+          "target_residue": 1,
+          "delta": 4
+        },
+        {
+          "source_residue": 31,
+          "target_residue": 47,
+          "delta": 16
+        },
+        {
+          "source_residue": 24,
+          "target_residue": 52,
+          "delta": 28
+        },
+        {
+          "source_residue": 29,
+          "target_residue": 57,
+          "delta": 28
+        },
+        {
+          "source_residue": 63,
+          "target_residue": 20,
+          "delta": 28
+        },
+        {
+          "source_residue": 16,
+          "target_residue": 64,
+          "delta": 48
+        },
+        {
+          "source_residue": 47,
+          "target_residue": 24,
+          "delta": 48
+        },
+        {
+          "source_residue": 52,
+          "target_residue": 29,
+          "delta": 48
+        },
+        {
+          "source_residue": 8,
+          "target_residue": 62,
+          "delta": 54
+        },
+        {
+          "source_residue": 33,
+          "target_residue": 16,
+          "delta": 54
+        },
+        {
+          "source_residue": 60,
+          "target_residue": 43,
+          "delta": 54
+        },
+        {
+          "source_residue": 15,
+          "target_residue": 2,
+          "delta": 58
+        },
+        {
+          "source_residue": 54,
+          "target_residue": 41,
+          "delta": 58
+        },
+        {
+          "source_residue": 67,
+          "target_residue": 54,
+          "delta": 58
+        },
+        {
+          "source_residue": 14,
+          "target_residue": 13,
+          "delta": 70
+        },
+        {
+          "source_residue": 20,
+          "target_residue": 19,
+          "delta": 70
+        },
+        {
+          "source_residue": 43,
+          "target_residue": 42,
+          "delta": 70
+        },
+        {
+          "source_residue": 50,
+          "target_residue": 49,
+          "delta": 70
+        },
+        {
+          "source_residue": 64,
+          "target_residue": 63,
+          "delta": 70
+        }
+      ]
+    },
+    "full_load_summary": {
+      "edge_count": 27,
+      "total_required_width": 101,
+      "used_capacity": 129,
+      "used_tail_slots": 28,
+      "delta_count": 8,
+      "deltas": [
+        2,
+        4,
+        16,
+        28,
+        48,
+        54,
+        58,
+        70
+      ],
+      "unique_blocker_factor_count": 28,
+      "global_lcm": 3219509996431722307700006149789434284190253031859,
+      "global_lcm_log10": 48.5077897778948,
+      "global_lcm_exceeds_period_p": true,
+      "tail_factor_count": 11,
+      "tail_lcm": 904346972510217159,
+      "tail_lcm_log10": 17.956335089032265,
+      "tail_lcm_exceeds_period_p": true,
+      "lanes": [
+        {
+          "delta": 2,
+          "edge_count": 3,
+          "total_required_width": 6,
+          "tail_slots": 1,
+          "unique_blocker_factor_count": 4,
+          "lane_lcm_log10": 4.887949082565046,
+          "lane_lcm_exceeds_period_p": true,
+          "edges": [
+            {
+              "source_residue": 6,
+              "target_residue": 8,
+              "required_width": 4,
+              "source_capacity": 4,
+              "source_origin": "immediate_relief"
+            },
+            {
+              "source_residue": 23,
+              "target_residue": 25,
+              "required_width": 1,
+              "source_capacity": 2,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 58,
+              "target_residue": 60,
+              "required_width": 1,
+              "source_capacity": 1,
+              "source_origin": "positive_debt"
+            }
+          ]
+        },
+        {
+          "delta": 4,
+          "edge_count": 2,
+          "total_required_width": 15,
+          "tail_slots": 3,
+          "unique_blocker_factor_count": 11,
+          "lane_lcm_log10": 14.877009382132174,
+          "lane_lcm_exceeds_period_p": true,
+          "edges": [
+            {
+              "source_residue": 19,
+              "target_residue": 23,
+              "required_width": 13,
+              "source_capacity": 14,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 68,
+              "target_residue": 1,
+              "required_width": 2,
+              "source_capacity": 4,
+              "source_origin": "immediate_relief"
+            }
+          ]
+        },
+        {
+          "delta": 16,
+          "edge_count": 3,
+          "total_required_width": 19,
+          "tail_slots": 6,
+          "unique_blocker_factor_count": 9,
+          "lane_lcm_log10": 13.08474472426912,
+          "lane_lcm_exceeds_period_p": true,
+          "edges": [
+            {
+              "source_residue": 1,
+              "target_residue": 17,
+              "required_width": 9,
+              "source_capacity": 12,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 70,
+              "target_residue": 15,
+              "required_width": 7,
+              "source_capacity": 7,
+              "source_origin": "immediate_relief"
+            },
+            {
+              "source_residue": 31,
+              "target_residue": 47,
+              "required_width": 3,
+              "source_capacity": 6,
+              "source_origin": "immediate_relief"
+            }
+          ]
+        },
+        {
+          "delta": 28,
+          "edge_count": 4,
+          "total_required_width": 16,
+          "tail_slots": 7,
+          "unique_blocker_factor_count": 10,
+          "lane_lcm_log10": 12.799975037161758,
+          "lane_lcm_exceeds_period_p": true,
+          "edges": [
+            {
+              "source_residue": 30,
+              "target_residue": 58,
+              "required_width": 8,
+              "source_capacity": 10,
+              "source_origin": "immediate_relief"
+            },
+            {
+              "source_residue": 24,
+              "target_residue": 52,
+              "required_width": 1,
+              "source_capacity": 1,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 29,
+              "target_residue": 57,
+              "required_width": 1,
+              "source_capacity": 6,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 63,
+              "target_residue": 20,
+              "required_width": 6,
+              "source_capacity": 6,
+              "source_origin": "positive_debt"
+            }
+          ]
+        },
+        {
+          "delta": 48,
+          "edge_count": 3,
+          "total_required_width": 4,
+          "tail_slots": 6,
+          "unique_blocker_factor_count": 3,
+          "lane_lcm_log10": 2.3636119798921444,
+          "lane_lcm_exceeds_period_p": false,
+          "edges": [
+            {
+              "source_residue": 16,
+              "target_residue": 64,
+              "required_width": 1,
+              "source_capacity": 1,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 47,
+              "target_residue": 24,
+              "required_width": 2,
+              "source_capacity": 4,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 52,
+              "target_residue": 29,
+              "required_width": 1,
+              "source_capacity": 5,
+              "source_origin": "positive_debt"
+            }
+          ]
+        },
+        {
+          "delta": 54,
+          "edge_count": 4,
+          "total_required_width": 23,
+          "tail_slots": 3,
+          "unique_blocker_factor_count": 14,
+          "lane_lcm_log10": 22.059162448673053,
+          "lane_lcm_exceeds_period_p": true,
+          "edges": [
+            {
+              "source_residue": 13,
+              "target_residue": 67,
+              "required_width": 15,
+              "source_capacity": 15,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 8,
+              "target_residue": 62,
+              "required_width": 2,
+              "source_capacity": 2,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 33,
+              "target_residue": 16,
+              "required_width": 3,
+              "source_capacity": 4,
+              "source_origin": "immediate_relief"
+            },
+            {
+              "source_residue": 60,
+              "target_residue": 43,
+              "required_width": 3,
+              "source_capacity": 5,
+              "source_origin": "positive_debt"
+            }
+          ]
+        },
+        {
+          "delta": 58,
+          "edge_count": 3,
+          "total_required_width": 8,
+          "tail_slots": 0,
+          "unique_blocker_factor_count": 5,
+          "lane_lcm_log10": 5.976867430351518,
+          "lane_lcm_exceeds_period_p": true,
+          "edges": [
+            {
+              "source_residue": 15,
+              "target_residue": 2,
+              "required_width": 2,
+              "source_capacity": 2,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 54,
+              "target_residue": 41,
+              "required_width": 5,
+              "source_capacity": 5,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 67,
+              "target_residue": 54,
+              "required_width": 1,
+              "source_capacity": 1,
+              "source_origin": "positive_debt"
+            }
+          ]
+        },
+        {
+          "delta": 70,
+          "edge_count": 5,
+          "total_required_width": 10,
+          "tail_slots": 2,
+          "unique_blocker_factor_count": 6,
+          "lane_lcm_log10": 8.285120168578187,
+          "lane_lcm_exceeds_period_p": true,
+          "edges": [
+            {
+              "source_residue": 14,
+              "target_residue": 13,
+              "required_width": 1,
+              "source_capacity": 1,
+              "source_origin": "immediate_relief"
+            },
+            {
+              "source_residue": 20,
+              "target_residue": 19,
+              "required_width": 4,
+              "source_capacity": 5,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 43,
+              "target_residue": 42,
+              "required_width": 2,
+              "source_capacity": 2,
+              "source_origin": "positive_debt"
+            },
+            {
+              "source_residue": 50,
+              "target_residue": 49,
+              "required_width": 1,
+              "source_capacity": 2,
+              "source_origin": "immediate_relief"
+            },
+            {
+              "source_residue": 64,
+              "target_residue": 63,
+              "required_width": 2,
+              "source_capacity": 2,
+              "source_origin": "positive_debt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "plain_conclusion": "K=14 high-gate drift 不是新的未登记自由族。K=14 的 tight shell 只有 2 个 high-core 匹配；选择最优 core 后，剩余低层用整数规划补齐，low shell 单独最少 6 个 delta，相对 core 只需新增 2,48,58,70 四条 lane。于是 K=14 全 101 宽度被压成 8-lane CRT 载荷，全局 lcm 约 10^48.508，超过本地周期 5680。K14 moving 分支回到 full-debt CRT-load PDEC。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-support-row-replacement-hall-ledger.json": "a7b03048e67a16e4ab08f7a6fb7b8d757da9eb24b9ed598d61c01ae351799335",
+    "data/prime-matrix-cycle-debt-shell-phase-graph-ledger.json": "b575245854e1f1a72d715a468d40fd484bbb3b4f27f1a90728923966785d412f",
+    "data/prime-matrix-cycle-debt-k13-tail-gate-drift-ledger.json": "eb05e53effefd940c094aaf1be6e07996773e331aa39e5edab878d3fdf6fcc8b"
+  }
+}

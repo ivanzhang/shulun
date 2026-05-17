@@ -3117,3 +3117,45 @@ K13GateProfileNoNearReplayPDECOrK14HighGateDriftSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“K=13 layer-tail 可以近程同形移动复现”的解释。
+
+## 85. cycle-debt K14 high-gate low-shell skeleton
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k14_high_gate_low_shell_skeleton_router.py
+docs/monograph/prime-matrix-cycle-debt-k14-high-gate-low-shell-skeleton-router.md
+data/prime-matrix-cycle-debt-k14-high-gate-low-shell-skeleton-ledger.json
+```
+
+本步处理上一接口中的 K14 high-gate drift 分支。K14 漂移不是无结构 SAE：高门 shell 已把 core 压成两个候选，低层再经整数规划补齐。
+
+```text
+k14_high_gate_core_alternative_count=2
+k14_best_core_deltas=[4,16,28,54]
+k14_low_shell_minimum_delta_count=6
+k14_low_shell_new_deltas_over_core=[2,48,58,70]
+k14_full_delta_count_after_low_shell=8
+k14_full_total_required_width=101
+k14_full_global_lcm_log10=48.508
+```
+
+结论：
+
+- K14 high-core 不是连续 moving family，只剩两个二分匹配候选；
+- 低层 possible motion 被压成有限 delta skeleton；
+- 最佳补齐后 K14 全债务载荷占 `8` lane，CRT lcm 约 `10^48.508`。
+
+当前 actual-load 前沿收窄为：
+
+```text
+fixed K13 gate-profile PDEC  OR  K14 full-debt eight-lane CRT-load PDEC
+```
+
+最新接口为：
+
+```text
+K13FixedGateProfilePDECOrK14FullDebtEightLaneCRTLoadPDEC
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“K14 high-gate drift 是未登记自由 SAE”的解释。

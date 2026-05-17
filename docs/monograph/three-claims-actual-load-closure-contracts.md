@@ -3050,3 +3050,46 @@ K13GateProfileNoNearReplayPDECOrK14HighGateDriftSAE
 ```
 
 本步关闭的是“K=13 层不变量 tail 可以在 near-shift 内保持同形移动”的解释。剩余变成固定 K13 gate-profile PDEC，或 K14 高门漂移族的 SAE/PDEC。
+
+## 78. cycle-debt K14 high-gate low-shell skeleton 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k14_high_gate_low_shell_skeleton_router.py
+docs/monograph/prime-matrix-cycle-debt-k14-high-gate-low-shell-skeleton-router.md
+docs/monograph/prime-matrix-cycle-debt-k14-high-gate-low-shell-skeleton-router.json
+data/prime-matrix-cycle-debt-k14-high-gate-low-shell-skeleton-ledger.json
+```
+
+本证书继续攻击 `K13GateProfileNoNearReplayPDECOrK14HighGateDriftSAE` 中的 K14 moving 分支。K14 的高门漂移不是一个未登记自由 SAE；高门 tight shell 只产生两个 core 匹配，低层剩余可以继续用 delta skeleton 精确压缩。
+
+```text
+k14_zero_slack_layers=[7,8,13,15]
+k14_high_gate_core_alternative_count=2
+k14_best_core_deltas=[4,16,28,54]
+k14_low_shell_minimum_delta_count=6
+k14_low_shell_new_delta_count_over_core=4
+k14_low_shell_new_deltas_over_core=[2,48,58,70]
+k14_full_delta_count_after_low_shell=8
+k14_full_deltas_after_low_shell=[2,4,16,28,48,54,58,70]
+k14_full_total_required_width=101
+k14_full_global_lcm_log10=48.508
+k14_full_used_tail_slots=28
+k14_tail_lcm_log10=17.956
+```
+
+结构读数：
+
+- K14 high-core 的两个候选分别来自 `8..12` shell 的两个二分匹配。
+- 选择 lane 数最小的 core 后，低层补齐单独最少 `6` 个 delta；相对 core 只需新增 `2,48,58,70`。
+- 补齐后 K14 全部 `101` demand width 落在 `8` 条 lane 上，整体 CRT lcm 约 `10^48.508`，远超本地周期 `5680`。
+- 因此 K14 high-gate drift 分支返回 full-debt CRT-load PDEC，而不是保留未命名 moving SAE。
+
+最新最窄剩余接口为：
+
+```text
+K13FixedGateProfilePDECOrK14FullDebtEightLaneCRTLoadPDEC
+```
+
+本步关闭的是“K14 高门漂移可以作为未登记自由族继续逃逸”的解释。剩余变成固定 K13 gate-profile PDEC，或 K14 全债务八 lane CRT-load PDEC。
