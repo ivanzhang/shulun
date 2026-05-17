@@ -2416,3 +2416,42 @@ AcceptedResetPDECExclusionOrDelayedReliefSupportMotionSAE
 ```
 
 本步关闭的是“接受 reset 后立即获得新容量”的解释；全局仍需排斥 accepted reset-PDEC 的持久复现，或证明延迟 relief 所要求的 support motion/SAE 可全局吸收。
+
+## 63. accepted reset full relief horizon 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_accepted_reset_full_relief_horizon_router.py
+docs/monograph/prime-matrix-accepted-reset-full-relief-horizon-router.md
+docs/monograph/prime-matrix-accepted-reset-full-relief-horizon-router.json
+data/prime-matrix-accepted-reset-full-relief-horizon-ledger.json
+```
+
+本证书继续推进上一节的 delayed relief：若接受一槽 reset 后沿同一同步线等待所有 `35` 个缺失非零 residue 都被真实素数锚补到，则完整 relief horizon 远离当前 primitive epoch：
+
+```text
+previous_hardpoint=AcceptedResetPDECExclusionOrDelayedReliefSupportMotionSAE
+missing_nonzero_count_at_reset=35
+reset_step=90
+reset_p=9887
+first_relief=(step=115,P=11887,residue=30)
+full_relief=(step=1192,P=98047,residue=67)
+full_relief_step_gap_after_reset=1102
+full_relief_p_gap_after_reset=88160
+full_relief_extension_over_epoch_width=17.474906514466
+prime_anchor_count_until_full_relief=260
+new_relief_prime_anchor_count_until_full_relief=35
+repeat_prime_anchor_count_until_full_relief=225
+composite_missing_candidate_count_until_full_relief=101
+```
+
+因此，完整 relief 不是当前局部结构内的即时容量修补；它需要在 reset 之后进行长程 support motion。中间 `225` 个 repeat prime-anchor 不减少缺失非零 residue，`101` 个形式缺失命中又被合数过滤掉。
+
+最新最窄剩余接口为：
+
+```text
+AcceptedResetPDECExclusionOrLongReliefHorizonSupportMotionSAE
+```
+
+本步关闭的是“accepted reset 后局部补完全部 actual relief”的解释；全局仍需排斥 accepted reset-PDEC，或证明这种长程 relief horizon 的 support-motion/SAE 可吸收。

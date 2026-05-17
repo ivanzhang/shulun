@@ -2486,3 +2486,45 @@ AcceptedResetPDECExclusionOrDelayedReliefSupportMotionSAE
 ```
 
 这一步不排斥全局 reset；它关闭的是 reset 后立即获得新容量的解释，并把剩余交给 accepted reset-PDEC 排斥或延迟 relief 所需的 support-motion/SAE 吸收。
+
+## 70. accepted reset full relief horizon
+
+后续文件
+
+```text
+experiments/prime_matrix_accepted_reset_full_relief_horizon_router.py
+docs/monograph/prime-matrix-accepted-reset-full-relief-horizon-router.md
+data/prime-matrix-accepted-reset-full-relief-horizon-ledger.json
+```
+
+本步把 delayed relief 从首个 relief 推到完整 relief。若从 `P=9887` 的 accepted reset 出发，要让当前 `35` 个缺失非零 residue 全部由真实素数锚补齐，最末一个 relief 是：
+
+```text
+step=1192, P=98047, residue=67
+```
+
+核心读数为：
+
+```text
+full_relief_step_gap_after_reset=1102
+full_relief_p_gap_after_reset=88160
+full_relief_extension_over_epoch_width=17.474906514466
+prime_anchor_count_until_full_relief=260
+new_relief_prime_anchor_count_until_full_relief=35
+repeat_prime_anchor_count_until_full_relief=225
+composite_missing_candidate_count_until_full_relief=101
+```
+
+因此 full relief 不能作为当前 primitive epoch 的局部补救；它已经是长程 support-motion 义务。当前 actual-load 前沿收窄为：
+
+```text
+accepted reset-PDEC  OR  long-relief-horizon support-motion SAE
+```
+
+最新接口为：
+
+```text
+AcceptedResetPDECExclusionOrLongReliefHorizonSupportMotionSAE
+```
+
+这一步仍不关闭全局行/列命题；它把 delayed relief 明确量化成长期 horizon，而不是局部容量收益。
