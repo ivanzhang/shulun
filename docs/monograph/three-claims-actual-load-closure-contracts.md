@@ -3388,3 +3388,43 @@ BranchReplayColumnCRTPDECExclusionOrPost100000TailAtomRunner
 ```
 
 本步关闭的是“当前有限原子可被旧 P<=5000 直接验证整体吸收”的误解，并吸收了 `P<100000` 前缀原子；全局行/列命题仍未无条件闭合。
+
+## 86. cycle-debt post-100000 tail atom exact runner 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_post100000_tail_atom_exact_runner.py
+docs/monograph/prime-matrix-cycle-debt-post100000-tail-atom-exact-runner.md
+docs/monograph/prime-matrix-cycle-debt-post100000-tail-atom-exact-runner.json
+data/prime-matrix-cycle-debt-post100000-tail-atom-exact-ledger.json
+```
+
+本证书继续攻击 `BranchReplayColumnCRTPDECExclusionOrPost100000TailAtomRunner`。它对上一层剩余的 `31` 个 post-100000 tail atoms 做逐点精确审计：合数槽验证记录小因子，first-prime 槽验证素性，并检查每个 arrival row 的 first prime 之前槽位全为合数。
+
+```text
+tail_atom_count=31
+tail_atom_p_range=[101087,134047]
+kind_counts={'assigned_slot': 15, 'postwall_first_prime': 8, 'tail_slot': 8}
+composite_atom_count=23
+postwall_first_prime_count=8
+all_composite_atoms_divisible_by_recorded_factor=true
+all_composite_recorded_factors_are_smallest=true
+all_postwall_first_primes_verified=true
+all_preprime_slots_composite_in_arrival_rows=true
+finite_atom_branch_closed_for_registered_atoms=true
+```
+
+结构读数：
+
+- `23` 个 post-100000 合数槽全部由记录因子整除，且记录因子均为最小因子。
+- `8` 个 post-wall first prime 全部经独立素性检查确认。
+- 八个 arrival row 的 first-prime 边界均精确闭合，有限尾段原子不再作为并列出口。
+
+最新最窄剩余接口为：
+
+```text
+BranchReplayColumnCRTPDECExclusion
+```
+
+本步只关闭当前登记有限原子分支，不排斥全局持久 ColumnCRT/PDEC；全局行/列命题仍未无条件闭合。

@@ -3445,3 +3445,39 @@ BranchReplayColumnCRTPDECExclusionOrPost100000TailAtomRunner
 ```
 
 这一步仍不关闭全局行/列命题；它只完成 finite atom 出口的边界分段。
+
+## 93. cycle-debt post-100000 tail atom exact runner
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_post100000_tail_atom_exact_runner.py
+docs/monograph/prime-matrix-cycle-debt-post100000-tail-atom-exact-runner.md
+data/prime-matrix-cycle-debt-post100000-tail-atom-exact-ledger.json
+```
+
+本步把 `BranchReplayColumnCRTPDECExclusionOrPost100000TailAtomRunner` 的 post-100000 tail runner 逐点关闭。对 `31` 个尾段原子，runner 验证 `23` 个合数槽的记录因子均为最小因子，并验证 `8` 个 post-wall first prime 为真素数；同时每个 arrival row 的 first-prime 之前槽位全为合数。
+
+```text
+tail_atom_count=31
+tail_atom_p_range=[101087,134047]
+all_composite_atoms_divisible_by_recorded_factor=true
+all_composite_recorded_factors_are_smallest=true
+all_postwall_first_primes_verified=true
+all_preprime_slots_composite_in_arrival_rows=true
+finite_atom_branch_closed_for_registered_atoms=true
+```
+
+结论：
+
+- post-100000 有限原子分支对当前登记对象已闭合；
+- 它不排斥无限反例链中的持久 replay；
+- 最新实际前沿只剩 branch replay ColumnCRT/PDEC 排斥。
+
+当前 actual-load 前沿收窄为：
+
+```text
+BranchReplayColumnCRTPDECExclusion
+```
+
+这一步仍不关闭全局行/列命题；它把 finite atom 出口移除，留下单一结构性 ColumnCRT/PDEC 接口。
