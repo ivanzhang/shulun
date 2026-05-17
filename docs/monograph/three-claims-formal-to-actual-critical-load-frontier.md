@@ -4047,3 +4047,47 @@ ControlledFreshLayerTailMassSAEOrApertureExplosionH3PDEC;GlobalFinalInputsStillO
 
 这一步关闭受控 fresh-tail 尾质量出口；全局无条件证明仍需要排斥孔径爆炸、moving-support H3/DSB
 与 fresh-layer PDEC。
+
+## 108. Q2 aperture-explosion schema-firewall router
+
+新增文件
+
+```text
+experiments/prime_matrix_q2_aperture_explosion_schema_firewall_router.py
+docs/monograph/prime-matrix-q2-aperture-explosion-schema-firewall-router.md
+docs/monograph/prime-matrix-q2-aperture-explosion-schema-firewall-router.json
+data/prime-matrix-q2-aperture-explosion-schema-firewall-ledger.json
+```
+
+本步把上一节剩下的孔径爆炸/支撑运动口径同步到既有防火墙。受控 fresh-tail 已进入 `SAE`；
+若孔径增长仍要追赶 fresh modulus，则它已经不是局部端点替换，而必须材料化为以下显式对象之一：
+
+```text
+support motion
+blocker-package change
+fresh-layer PDEC/ColumnCRT
+explicit moving-family schema
+```
+
+已有链条提供三个同步输入：registered support-motion 本地漂移已关闭；当前材料化 fresh-layer PDEC/ColumnCRT
+已被 admission firewall 关闭；当前 branch-replay 物化前沿已清零。因此当前无名 aperture-explosion 终端不可保留。
+
+当前读数：
+
+```text
+controlled_fresh_tail_imported=true
+registered_support_motion_imported_closed=true
+current_materialized_fresh_pdec_imported_closed=true
+current_branch_replay_frontier_zero_imported=true
+future_explicit_aperture_explosion_schema_submitted=false
+unnamed_aperture_explosion_terminal_allowed=false
+row_column_unconditional_closed=false
+```
+
+actual-load 前沿更新为：
+
+```text
+Q2ApertureExplosionCurrentSchemaFirewall;GlobalFinalInputsStillOpen
+```
+
+这一步只是当前语料的 schema 防火墙同步；它不证明未来显式 moving-family/PDEC schema 不存在，也不关闭全局最终输入。

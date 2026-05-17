@@ -4086,3 +4086,47 @@ ControlledFreshLayerTailMassSAEOrApertureExplosionH3PDEC;GlobalFinalInputsStillO
 
 本步只关闭受控孔径尾质量；它仍不排斥孔径爆炸、moving-support H3/DSB 或 fresh-layer PDEC，
 因此不是行/列命题的全局无条件证明。
+
+## 101. Q2 aperture-explosion schema-firewall 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_q2_aperture_explosion_schema_firewall_router.py
+docs/monograph/prime-matrix-q2-aperture-explosion-schema-firewall-router.md
+docs/monograph/prime-matrix-q2-aperture-explosion-schema-firewall-router.json
+data/prime-matrix-q2-aperture-explosion-schema-firewall-ledger.json
+```
+
+本证书把孔径爆炸剩余口径同步到已有支撑运动与 PDEC 防火墙。受控孔径 fresh-tail 已由上一证书压入 `SAE`；
+若剩余反例链要求 `log W_j` 反复追赶 `log M_j`，则必须提交支撑运动、阻断包变化、fresh-layer PDEC
+或 moving-family 的显式 schema。当前 registered support-motion、本轮材料化 fresh-layer PDEC 与 branch-replay
+current frontier 已有防火墙同步，故无名 aperture-explosion 终端不能作为活动剩余保留。
+
+当前读数：
+
+```text
+controlled_fresh_tail_imported=true
+registered_support_motion_imported_closed=true
+current_materialized_fresh_pdec_imported_closed=true
+current_branch_replay_frontier_zero_imported=true
+future_explicit_aperture_explosion_schema_submitted=false
+unnamed_aperture_explosion_terminal_allowed=false
+row_column_unconditional_closed=false
+```
+
+最新三分流为：
+
+```text
+controlled fresh-tail => SAE
+current unnamed aperture explosion => forbidden by schema firewall
+future explicit moving-family/PDEC schema => reopen under firewall
+```
+
+最新剩余为：
+
+```text
+Q2ApertureExplosionCurrentSchemaFirewall;GlobalFinalInputsStillOpen
+```
+
+本步仍不是行/列命题全局闭合；它只把当前无名孔径爆炸口径删除，未来显式 schema 与全局最终输入仍开。
