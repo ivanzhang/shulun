@@ -3030,3 +3030,48 @@ K13FullDebtNineLaneCRTLoadPDECOrResidualSlackTailSAE
 ```
 
 这一步仍不关闭全局行/列命题；它关闭的是“low shell 必须作为 full-residue 自由逃逸”的解释。
+
+## 83. cycle-debt K13 full-debt nine-lane tail
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k13_full_debt_nine_lane_tail_router.py
+docs/monograph/prime-matrix-cycle-debt-k13-full-debt-nine-lane-tail-router.md
+data/prime-matrix-cycle-debt-k13-full-debt-nine-lane-tail-ledger.json
+```
+
+本步把上一接口中的 residual slack-tail 具体化。K=13 九 lane 全债务分支不是“已用需求 101 之外还有一些可忽略尾部”，而是被 Hall 层账本强制留下固定的 18 槽 tail。
+
+```text
+capacity_row_count=27
+demand_row_count=27
+all_capacity_rows_mandatory=true
+total_capacity=119
+total_demand_width=101
+unavoidable_tail_slot_count=18
+zero_slack_layers=[1,4,7,8]
+min_tail_factor_count=8
+min_tail_lcm_log10=11.488
+```
+
+结论：
+
+- 第 1 层 Hall 贴边使 27 个正容量行全部强制入局；
+- 总容量与总需求差为 `18`，等于层 slack 总和，因此 tail 槽数不依赖当前匹配；
+- 零 slack 层 `1,4,7,8` 让槽移动无法无成本穿过临界层；
+- 在固定九 lane 的可行匹配族内，tail 至少携带 8 个互素 blocker，其 lcm 已超过本地周期。
+
+当前 actual-load 前沿收窄为：
+
+```text
+K=13 layer-slack tail-CRT invariant PDEC  OR  moving-family SAE
+```
+
+最新接口为：
+
+```text
+K13LayerSlackTailCRTInvariantPDECOrMovingFamilySAE
+```
+
+这一步仍不关闭全局行/列命题；它关闭的是“residual slack-tail 是匹配伪影或无 CRT 成本尾部”的解释。

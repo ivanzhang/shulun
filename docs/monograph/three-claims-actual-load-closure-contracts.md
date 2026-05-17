@@ -2964,3 +2964,46 @@ K13FullDebtNineLaneCRTLoadPDECOrResidualSlackTailSAE
 ```
 
 本步关闭的是“`K=13` 低层必须作为 full-residue SAE 逃逸”的解释。剩余变为九 lane 全债务 CRT-load PDEC，或尚未完全命名的 residual slack-tail SAE。
+
+## 76. cycle-debt K13 full-debt nine-lane tail 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_k13_full_debt_nine_lane_tail_router.py
+docs/monograph/prime-matrix-cycle-debt-k13-full-debt-nine-lane-tail-router.md
+docs/monograph/prime-matrix-cycle-debt-k13-full-debt-nine-lane-tail-router.json
+data/prime-matrix-cycle-debt-k13-full-debt-nine-lane-tail-ledger.json
+```
+
+本证书继续攻击 `K13FullDebtNineLaneCRTLoadPDECOrResidualSlackTailSAE`。关键转折是把 residual slack-tail 从“可能是匹配选择造成的剩余尾巴”改写成 K=13 层 Hall 账本不变量。
+
+```text
+capacity_row_count=27
+demand_row_count=27
+all_capacity_rows_mandatory=true
+total_capacity=119
+total_demand_width=101
+unavoidable_tail_slot_count=18
+zero_slack_layers=[1,4,7,8]
+allowed_deltas=[0,8,22,39,54,55,58,59,66]
+allowed_edge_count=71
+min_tail_factor_count=8
+min_tail_lcm_log10=11.488
+min_tail_lcm_exceeds_period=true
+```
+
+结构读数：
+
+- 第 1 层 Hall slack 为 `0`，因此所有 27 个正容量行都必须被任意 full-debt 匹配使用。
+- `119-101=18`，且 `sum layer_slack=18`，所以 residual tail 的 18 个槽不是当前匹配见证的伪影。
+- 零 slack 层 `1,4,7,8` 是移动槽的刚性门；这些层若损失一行容量，Hall 条件立即失败，除非同时产生新的 arrival/PDEC。
+- 在固定九 lane 的所有可行匹配中，MILP 优化后 tail 仍至少激活 8 个阻断素因子，最小 tail lcm 约 `10^11.488`，已经超过本地周期 `5680`。
+
+最新最窄剩余接口为：
+
+```text
+K13LayerSlackTailCRTInvariantPDECOrMovingFamilySAE
+```
+
+本步关闭的是“residual slack-tail 只是匹配 artifact”的解释。剩余变成层不变量 tail-CRT PDEC，或真正随 P 漂移的 moving-family SAE。
