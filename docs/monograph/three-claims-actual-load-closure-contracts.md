@@ -1831,3 +1831,44 @@ q=103: M_form=12, actual=0, CRTWindowEmpty=0,  source_unmaterialized=12
 其中 `q=31` 的唯一 actual packet 为 `(generator residue, fill residue)=(19,8)`，shifted fill residue 为 `21`，合成 CRT residue 为 `889 mod 899`，在 pair support `[2669,2688]` 中的代表为 `2687`；其余 11 个形式配对都没有短窗代表。`q=43` 有同 gap 但错源：期望 `generator=41, fill=43, sides=minus->plus, p_delay=113`，实际源为 `generator=47, fill=43, sides=plus->minus, p_delay=74`。`q=103` 当前无 gap-fill source。
 
 因此当前 sweep 的容量/相位矛盾已经不是“40 个形式 packet 与平方根门冲突”，而是“39 个形式 packet 无法物化”：11 个被 CRT 短窗排空，28 个被 source materialization gate 删除。最新剩余接口随之收窄为 `GlobalProductAccountingTightening` 的统一化证明：任意持久 AffineTwin 形式配对若不能成为 actual packet，必须进入 `CRTWindowEmptyGlobalSupportBound` 或 `SourceMaterializationFailure-PDEC/SAE`；若它能绕过二者，则只能作为 `PrimitiveTwinSlotSupportEscape-PDEC/SAE` 登记。
+
+## 50. PM formal-to-actual global cutset 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_formal_to_actual_global_cutset_router.py
+docs/monograph/prime-matrix-formal-to-actual-global-cutset-router.md
+docs/monograph/prime-matrix-formal-to-actual-global-cutset-router.json
+data/prime-matrix-formal-to-actual-global-cutset-ledger.json
+```
+
+本证书把 actual-packet、formal pruning、source gate、CRT window、moving-slot graph cap、remaining-frontier bridge 与 endpoint atom 账本合成同一个 cutset。当前读数为：
+
+```text
+formal_pair_total=40
+actual_packet_total_current=1
+formal_to_actual_gap=39
+crt_window_empty_pair_total_current=11
+source_unmaterialized_pair_total_current=28
+unresolved_formal_pair_total_current=0
+combined_modulus_current=899
+support_width_current=20
+min_empty_window_distance=40
+endpoint_atom_count=2
+current_sweep_cutset_closed=true
+row_column_unconditional_closed=false
+```
+
+这给出当前反例链/真实链的显式冲突切面：
+
+```text
+ProductAccounting: 40 个形式配对只有 1 个 actual packet；
+SourceGate: q=43 的 16 个配对错源，q=103 的 12 个配对无源；
+CRTWindow: 899 模数远大于 20 窗宽，空窗最小距离为 40；
+PrimitiveSupport: 固定支撑宽度 20 低于 sqrt floor 29，支撑逃逸已回流到 moving-slot/source/ColumnCRT 出口；
+RemainingBridge: transport reset atom=0，singleton packets=300，epoch-pair mass=0.023577117628562343<eta=0.025；
+EndpointAtom: 活跃带端点 [23,109] 只有 2 个 minus-only 单原子。
+```
+
+因此 current sweep 已无匿名 actual-load 缺口。全局主攻点被压成 `GlobalFormalToActualCutsetPromotionOrNamedExitExclusion`：把上述 cutset 推广到所有持久反例族，并逐一排斥或求和吸收 `GlobalProductAccountingTightening`、`SourceMaterializationFailure-PDEC/SAE`、`CRTWindowEmptyGlobalSupportBound`、`PrimitiveTwinSlotSupportEscape-PDEC/SAE`、端点增长/reset、transport reset、epoch-pair multiplicity 与 moving-residue SAE/Rankin。

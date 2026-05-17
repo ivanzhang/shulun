@@ -1899,3 +1899,34 @@ or SourceMaterializationFailure-PDEC/SAE
 ```
 
 若出现第四种，即 source 与 CRT 都物化但不落入 primitive 支撑，则它正是 `PrimitiveTwinSlotSupportEscape-PDEC/SAE`。这一节关闭 current-sweep 的 `ProductAccountingTightening`，但仍不关闭全局行/列命题。
+
+## 57. PM formal-to-actual global cutset 收束
+
+后续文件
+
+```text
+experiments/prime_matrix_formal_to_actual_global_cutset_router.py
+docs/monograph/prime-matrix-formal-to-actual-global-cutset-router.md
+data/prime-matrix-formal-to-actual-global-cutset-ledger.json
+```
+
+本节把当前前沿从若干局部账本收束成一个 cutset。输入账本包括 actual-packet 合同、formal-pair pruning、source materialization gate、CRT window gap、moving-slot graph cap、remaining-frontier bridge 与 endpoint band atom。合成结论为：
+
+```text
+current_sweep_cutset_closed=true
+row_column_unconditional_closed=false
+```
+
+具体容量/相位读数如下：
+
+```text
+formal=40, actual=1, gap=39=11 CRTWindowEmpty + 28 SourceMaterializationFailure
+source pass=[31], fail=[43,103]
+CRT modulus=899, support_width=20, min_empty_window_distance=40
+primitive support_width=20, sqrt_floor=29, exact_rematerialized_q=[]
+transport_reset_atoms=0, singleton_packets=300
+active_band=23..109, endpoint_atom_count=2
+epoch_pair_mass=0.023577117628562343<eta=0.025
+```
+
+所以当前最新的最窄接口不是再寻找一个隐藏的 actual packet，而是证明这个 cutset 可全局晋级：任意持久反例链若沿 formal-to-actual 管道推进，必然落入上述命名出口之一；若试图避开所有出口，就必须同时给出 source 物化、CRT 短窗命中、primitive 支撑命中、非复用投影与低于平方根门的 actual 负载，这与反例链所需的超容量相冲突。未闭合部分是出口的全局排斥/求和吸收，而不是 current sweep 的未分类容量。

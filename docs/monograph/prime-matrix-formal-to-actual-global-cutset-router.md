@@ -1,0 +1,61 @@
+# Prime Matrix formal-to-actual global cutset router
+
+**状态：** `current_sweep_cutset_closed_global_unconditional_open`
+
+当前 sweep 的 formal-to-actual 容量差已经切成命名出口：40 个形式配对只有 1 个 actual packet，39 个差额由 11 个 CRT 空窗和 28 个源未物化解释；CRT 主原子满足 899>20 且空窗最小距离为 40；固定 primitive 支撑内 actual load 低于平方根门，支撑逃逸已回流到 moving-slot、endpoint、transport 与 epoch-pair 出口。这关闭 current-sweep cutset，但全局行/列命题仍需把这些出口逐一全局排斥或求和吸收。
+
+```text
+candidate_q_values=[31, 43, 103]
+formal_pair_total=40
+actual_packet_total_current=1
+formal_to_actual_gap=39
+crt_window_empty_pair_total_current=11
+source_unmaterialized_pair_total_current=28
+unresolved_formal_pair_total_current=0
+combined_modulus_current=899
+support_width_current=20
+min_empty_window_distance=40
+endpoint_atom_count=2
+current_sweep_cutset_closed=true
+row_column_unconditional_closed=false
+```
+
+## 1. cutset rows
+
+| gate | current status | capacity/phase readout | global remaining |
+| --- | --- | --- | --- |
+| `ProductAccountingTighteningCurrent` | `closed_current_sweep` | formal=40, actual=1, gap=39=11 CRTWindowEmpty + 28 SourceMaterializationFailure | `GlobalProductAccountingTightening` |
+| `SourceMaterializationGate` | `closed_current_sweep` | pass=[31], fail=[43, 103], same_gap_wrong_source=16, no_gap_source=12 | `SameGapWrongSource-PDEC/SAE + NoGapSource-PDEC/SAE` |
+| `CRTWindowGap` | `closed_current_sweep` | modulus=899, support_width=20, modulus_minus_width=879, empty_pairs=11, min_distance=40 | `GlobalCRTWindowGapBound + WindowEdgeCollision/SupportMotion exits` |
+| `PrimitiveSupportEscapeRouting` | `closed_current_sweep` | support_width=20, sqrt_floor=29, narrowest_release_over_width=3.5, exact_rematerialized_q=[] | `MovingSlotFamilyPersistenceNoGo + SourceRematerialization/ColumnCRT exits` |
+| `RemainingFrontierBridge` | `closed_current_sweep` | transport_reset_atoms=0, singleton_packets=300, active_band=23..109, epoch_pair_mass=0.023577117628562343<eta=0.025 | `ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC, TransportResetPDECExclusion, GlobalEpochPairMultiplicityBound, MovingResidueShapeSAE/Rankin` |
+| `EndpointAtomIsolation` | `closed_current_sweep` | endpoints=[23, 109], endpoint_atom_count=2, minus_only=True | `EndpointBandMotionBoundOrEndpointAtomPDECExclusion` |
+
+## 2. 最新剩余切面
+
+- `GlobalProductAccountingTightening promotion`
+- `SourceMaterializationFailure-PDEC/SAE exclusion`
+- `CRTWindowEmptyGlobalSupportBound promotion`
+- `PrimitiveTwinSlotSupportEscape-PDEC/SAE exclusion`
+- `ActiveEllBandEndpointGrowthBoundOrEndpointResetPDEC`
+- `TransportResetPDECExclusion`
+- `GlobalEpochPairMultiplicityBound`
+- `MovingResidueShapeSAE/Rankin`
+
+## 3. 结论边界
+
+- 本证书关闭的是 current-sweep cutset：当前反例链容量读数无法作为匿名 actual load 保留。
+- 它没有证明全局行/列命题；全局证明仍需把上述出口提升为无条件排斥或可求和吸收。
+- 下一主攻点：`GlobalFormalToActualCutsetPromotionOrNamedExitExclusion`。
+
+## 4. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `data/prime-matrix-affine-twin-actual-packet-contract-ledger.json` | `245368f75f2d1d0b9ad59fd7e2d6242cf3944985cc0b23e8de483f2ff70bd86d` |
+| `data/prime-matrix-affine-twin-formal-pair-pruning-ledger.json` | `ed8532ade7e13ad9fe14068c545d961ba90a47895b395673cf69169c0967ac38` |
+| `data/prime-matrix-affine-twin-source-materialization-gate-ledger.json` | `aaaee80eaba6130fa016758509513449beff23eaefa41fcc79a174e183c5e385` |
+| `data/prime-matrix-affine-twin-crt-window-gap-ledger.json` | `4822729687dfb1818e8d917ca278f2eeda8d167825456f1dc1dd0456e142f71f` |
+| `data/prime-matrix-affine-twin-endpoint-release-moving-slot-graph-cap-route-ledger.json` | `3a12613953c6eb9a61f7865f232f4aabf9fa56048ea7047aada4d957b58ba15a` |
+| `data/prime-matrix-affine-twin-endpoint-release-remaining-frontier-bridge-ledger.json` | `86f491451df1d88f88cfdbba59ee38197ae9126844e9701401c6eab6a5a22fdd` |
+| `data/square-phase-offband-prefix-gap-shadow-selector-h-lower-endpoint-band-atom-ledger.json` | `6103b7e8cd2e58cc533135f4fec5d489fa28e6eb6bc9b9c378c748635ecb901d` |
