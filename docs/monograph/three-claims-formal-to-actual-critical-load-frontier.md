@@ -3516,3 +3516,49 @@ UnboundedFreshModulusEscalationPDECOrTailSieveStabilityContradiction
 ```
 
 这一步仍不关闭全局行/列命题；它把固定有限 CRT 接口推进为无穷新素数层的扩模/筛稳定接口。
+
+## 95. cycle-debt fresh-modulus 到 tail-sieve 桥接
+
+新增文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_modulus_tail_sieve_bridge_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-modulus-tail-sieve-bridge-router.md
+data/prime-matrix-cycle-debt-fresh-modulus-tail-sieve-bridge-ledger.json
+```
+
+本步把上一节的无界 fresh-modulus 接口转成 actual-load 可审查对象。逻辑是：
+
+```text
+fixed finite ColumnCRT terminal excluded
+and no fresh-layer PDEC/ColumnCRT
+=> one forbidden residue class per fresh prime
+=> B3 tail rough object
+=> external/standard tail sieve conditional closure
+```
+
+关键读数：
+
+```text
+registered_replay_block_count=6
+minimum_first_fresh_log10_gain=2.400
+minimum_sample_log10_gain=19.435
+tail_object_interface_closed=true
+conditional_external_tail_sieve_closed=true
+strict_self_contained_tail_sieve_closed=false
+fresh_layer_pdec_excluded=false
+```
+
+actual-load 前沿因此改写为：
+
+```text
+FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure
+```
+
+严格自足 branch-replay 剩余基：
+
+```text
+FreshLayerPDECColumnCRTExclusion AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372
+```
+
+接受外部或标准筛输入时，tail-sieve 分支可从该 branch-replay 接口移除，只剩 fresh-layer PDEC/ColumnCRT 排斥。该结论仍不是行/列命题的全局无条件闭合，因为它尚未排斥 fresh-layer PDEC，也尚未给出 strict 自足 Mertens/PNT/Dusart 尾段证明。

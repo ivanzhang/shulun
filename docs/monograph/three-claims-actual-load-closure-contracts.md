@@ -3466,3 +3466,54 @@ UnboundedFreshModulusEscalationPDECOrTailSieveStabilityContradiction
 ```
 
 本步不宣称行/列命题闭合；它把最后固定 ColumnCRT 类排斥推进到无界 fresh-modulus escalation 与尾段筛稳定矛盾。
+
+## 88. cycle-debt fresh-modulus 到 tail-sieve 桥接回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_modulus_tail_sieve_bridge_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-modulus-tail-sieve-bridge-router.md
+docs/monograph/prime-matrix-cycle-debt-fresh-modulus-tail-sieve-bridge-router.json
+data/prime-matrix-cycle-debt-fresh-modulus-tail-sieve-bridge-ledger.json
+```
+
+本证书直接承接最新接口：
+
+```text
+UnboundedFreshModulusEscalationPDECOrTailSieveStabilityContradiction
+```
+
+固定有限 ColumnCRT 终端已经被排除后，持久 branch replay 若不在 fresh layer 触发 PDEC/ColumnCRT，则每个新素数层都只能作为一个禁相位进入 CRT 周期。对无界多个 fresh primes 重复该过程，得到的正是尾段对象：
+
+```text
+S(P)=#{1<=k<P: k avoids one prescribed residue class modulo every prime q<=P^0.43}.
+```
+
+当前读数：
+
+```text
+fresh_modulus_escalation_registered=true
+finite_columncrt_terminal_excluded=true
+non_pdec_unbounded_fresh_layers_force_tail_rough_object=true
+tail_object_interface_closed=true
+conditional_external_tail_sieve_closed=true
+strict_self_contained_tail_sieve_closed=false
+fresh_layer_pdec_excluded=false
+row_column_unconditional_closed=false
+```
+
+结构判定：
+
+- 无界扩模不能再停留为抽象出口；若无 fresh-layer PDEC，它必须进入避单余类尾段粗筛对象。
+- 该对象已与 B3 lower-sieve 账本同口径，`P=100000` 处模型主项约 `4896.256004`，10% 主项仍比 `401` 多 `88.625600`。
+- 接受外部显式 Mertens/Dusart 或标准 beta-sieve 输入时，tail-sieve stability 分支条件关闭。
+- 严格自足路线仍剩 `SelfContainedDusartReciprocalPrimeProofAppendixXGe10372`，且 fresh-layer PDEC/ColumnCRT 仍需排斥。
+
+最新最窄剩余接口为：
+
+```text
+FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure
+```
+
+本步仍不宣称行/列命题闭合；它把无界新素数层扩模出口压成 tail-sieve/PDEC 双出口。

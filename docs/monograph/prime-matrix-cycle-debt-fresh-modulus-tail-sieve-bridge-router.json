@@ -1,0 +1,103 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_fresh_modulus_tail_sieve_bridge_router",
+  "status": "fresh_modulus_escalation_routed_to_tail_sieve_interface_strict_self_contained_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "previous_hardpoint": "UnboundedFreshModulusEscalationPDECOrTailSieveStabilityContradiction",
+  "fresh_modulus_escalation_registered": true,
+  "finite_columncrt_terminal_excluded": true,
+  "non_pdec_unbounded_fresh_layers_force_tail_rough_object": true,
+  "tail_object_interface_closed": true,
+  "conditional_external_tail_sieve_closed": true,
+  "strict_self_contained_tail_sieve_closed": false,
+  "fresh_layer_pdec_excluded": false,
+  "row_column_unconditional_closed": false,
+  "registered_replay_block_count": 6,
+  "minimum_first_fresh_log10_gain": 2.3996737214810366,
+  "minimum_sample_log10_gain": 19.435256688672716,
+  "tail_sieve_alpha": 0.43,
+  "tail_sieve_model_main_at_100000": 4896.256003716197,
+  "tail_sieve_ten_percent_surplus_over_401": 88.62560037161967,
+  "strict_branch_remaining_basis": "FreshLayerPDECColumnCRTExclusion AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372",
+  "external_or_standard_branch_remaining_basis": "FreshLayerPDECColumnCRTExclusion",
+  "inherited_global_strict_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND SelfContainedDusartReciprocalPrimeProofAppendixXGe10372 AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "inherited_global_external_remaining_basis": "PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve_FOR_rate_bearing_packet AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "hardpoint_after_router": "FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure",
+  "next_direct_attack_target": "FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure",
+  "gates": [
+    {
+      "gate": "FreshModulusEscalationImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书已证明固定有限 ColumnCRT replay 类不能成为无限反例链的终端稳定结构。",
+      "remaining": "UnboundedFreshModulusEscalationPDECOrTailSieveStabilityContradiction"
+    },
+    {
+      "gate": "FiniteColumnCRTTerminalExcluded",
+      "closed": true,
+      "proved": true,
+      "meaning": "有限原子分支已关闭，且固定登记模数在新素数层下必被互素 CRT 坐标继续扩张。",
+      "remaining": "closed for registered finite terminal classes"
+    },
+    {
+      "gate": "NonPDECUnboundedFreshLayersForceRoughObject",
+      "closed": true,
+      "proved": false,
+      "meaning": "若每个 fresh layer 都不触发 PDEC/ColumnCRT，则每个新素数层只留下一个被禁止的相位，持久族必须落入一维避单余类粗筛对象。",
+      "remaining": "one-residue-per-prime tail rough object"
+    },
+    {
+      "gate": "TailObjectInterfaceMatchedToB3",
+      "closed": true,
+      "proved": true,
+      "meaning": "该避单余类对象与既有 B3 lower-sieve 账本同口径：squarefree d 的计数为 (P-1)/d 加端点误差。",
+      "remaining": "B3 lower-sieve rough-object interface"
+    },
+    {
+      "gate": "ExternalOrStandardTailSieveClosesStabilityBranch",
+      "closed": true,
+      "proved": false,
+      "meaning": "若允许外部显式 Mertens/Dusart 或标准 beta-sieve 输入，tail-sieve stability 分支可条件关闭。",
+      "remaining": "external/standard beta-sieve input"
+    },
+    {
+      "gate": "StrictSelfContainedTailSieveStillOpen",
+      "closed": true,
+      "proved": false,
+      "meaning": "严格自足路线不能借用外部筛定理；仍需内联 Mertens/PNT/Dusart 倒素数尾段证明。",
+      "remaining": "SelfContainedDusartReciprocalPrimeProofAppendixXGe10372"
+    },
+    {
+      "gate": "FreshLayerPDECExitStillRequiresExclusion",
+      "closed": false,
+      "proved": false,
+      "meaning": "若 fresh layer 中出现相位复用、投影碰撞、moving support 逃逸或 ColumnCRT 缺陷，还必须给出 PDEC 排斥证书。",
+      "remaining": "FreshLayerPDECColumnCRTExclusion"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只把无界扩模分支接到尾段筛稳定接口；尚未完成严格自足尾段证明和 fresh-layer PDEC 排斥。",
+      "remaining": "FreshLayerPDECColumnCRTExclusionOrSelfContainedTailSieveStabilityClosure"
+    }
+  ],
+  "closed_gates": [
+    "FreshModulusEscalationImported",
+    "FiniteColumnCRTTerminalExcluded",
+    "NonPDECUnboundedFreshLayersForceRoughObject",
+    "TailObjectInterfaceMatchedToB3",
+    "ExternalOrStandardTailSieveClosesStabilityBranch",
+    "StrictSelfContainedTailSieveStillOpen"
+  ],
+  "open_gates": [
+    "FreshLayerPDECExitStillRequiresExclusion",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "固定有限 ColumnCRT 终端已经被排除后，持久 branch replay 若不在新素数层触发 PDEC/ColumnCRT，就必须把每个 fresh prime 变成一个被禁止的相位条件；这正是 B3 尾段避单余类粗筛对象。因此无界扩模分支被路由到 tail-sieve stability 接口。接受外部或标准 beta-sieve 输入时该尾段分支条件关闭；严格自足路线仍剩 Mertens/PNT/Dusart 尾段内联证明与 fresh-layer PDEC 排斥。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-branch-replay-fresh-modulus-escalation-ledger.json": "bfc13d727a480ee6bb358d5f01a826b5e14b0a2bdef7dd8961c4f58c5ba116d9",
+    "docs/monograph/prime-matrix-strict-dynamic-skeleton-tail-b3-bridge-router.json": "dad9b5f3f5f1d66df613a270f14e4608e99b511c22efa597075061bfc528f55e"
+  }
+}
