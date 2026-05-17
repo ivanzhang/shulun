@@ -8596,6 +8596,55 @@ ExactUV incidence theorem, model-gap ledger, rate-preservation ledger, or
 DStructure/Rankin promotion is proved here.
 \end{proof}
 
+\begin{theorem}[Energy capacity and rank-one phase for the Linnik--2 defect]
+In the notation of the preceding theorem, set
+\[
+\rho_a(P)=-\frac{N_a(P)}{T_0(P)}.
+\]
+Then
+\[
+\rho_a(P)=1-\frac{\vartheta_a(P)}{T_0(P)/(P-1)}.
+\]
+Thus a zero-column defect is exactly the rank-one condition
+\(\rho_a(P)=1\).  The energy condition
+\[
+\sum_{\chi\ne\chi_0}|T_\chi(P)|^2\ge \frac{T_0(P)^2}{P-2}
+\]
+is only a necessary condition for such a defect.  Therefore an \(L^2\)
+capacity argument can close this route only if it proves the strict reverse
+inequality.  Otherwise the remaining obligation is a pointwise phase statement:
+exclude a negative projection of size \(T_0(P)\) in one evaluation direction.
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-linnik2-rankone-phase-capacity-router.md.
+\end{quote}
+The first identity follows directly from
+\(\vartheta_a(P)=(T_0(P)+N_a(P))/(P-1)\).  Hence
+\(\vartheta_a(P)=0\) if and only if \(\rho_a(P)=1\).  The displayed energy
+lower bound is exactly the Cauchy consequence proved in the preceding theorem.
+Its converse is false as a matter of logic: total nonprincipal energy above
+the floor does not force the energy to point in the single evaluation direction
+attached to \(a\).
+
+The evaluation vectors \(v_a=(\overline{\chi(a)})_{\chi\ne\chi_0}\) satisfy
+\[
+\langle v_a,v_b\rangle =
+\begin{cases}
+P-2,&a=b,\\
+-1,&a\ne b,
+\end{cases}
+\]
+so the residue tests are simplex directions in the nonprincipal character
+space.  The archived scan up to \(P\le3000\) records \(423\) prime moduli for
+which the total-energy floor is already exceeded while no zero residue class
+exists.  This diagnostic is not a proof input; it identifies why the capacity
+route is too coarse.  The remaining named input is the rank-one negative
+evaluation projection exclusion at \(x=P^2\), or else a return to same-set
+PDEC scope or signed payload.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

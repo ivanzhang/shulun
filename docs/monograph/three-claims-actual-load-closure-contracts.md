@@ -4521,3 +4521,56 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步仍不是无条件闭合；当前语料尚未证明点态非主投影界，也未排除 Siegel/大偏差型负相位集中。
+
+## 110. Linnik=2 rank-one 相位容量回接
+
+后续文件
+
+```text
+experiments/prime_matrix_linnik2_rankone_phase_capacity_router.py
+docs/monograph/prime-matrix-linnik2-rankone-phase-capacity-router.md
+docs/monograph/prime-matrix-linnik2-rankone-phase-capacity-router.json
+data/prime-matrix-linnik2-rankone-phase-capacity-ledger.json
+```
+
+本证书继续攻击 `PointwiseNonprincipalProjectionBoundBelowPrincipalMassAtXEqualsP2`。关键分解为：
+
+```text
+rho_a(P)=-N_a(P)/T_0(P)=1-theta_a(P)/average_theta(P)
+theta_a(P)=0  iff  rho_a(P)=1
+```
+
+零列确实推出容量必要条件：
+
+```text
+||T_nonprincipal||_2^2 >= T_0(P)^2/(P-2)
+```
+
+但这个条件不是矛盾。有限样本 `P<=3000` 中，`429` 个素数模数没有 theta 零列；其中 `423` 个已经满足
+非主总能量超过零列必要地板，说明容量-only 线路不能作为最终闭合。最大总能量/零列地板比例为
+`5.751979`（`P=2953`），但对应最大负投影比例只有 `0.139565`。真正危险的是某个 residue evaluation
+simplex 方向上的 rank-one 负投影，而不是总能量大小。
+
+当前读数：
+
+```text
+energy_floor_necessary_condition_closed=true
+energy_capacity_only_route_not_enough=true
+evaluation_vector_simplex_geometry_closed=true
+rankone_phase_coherence_exclusion_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基进一步收缩为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“用总能量容量直接制造矛盾”的误出口；剩余是逐 residue 的 rank-one 相位极化排斥。

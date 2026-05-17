@@ -4495,3 +4495,62 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 这一步关闭的是“只靠完整 CRT 平均或 AP 平均即可推出每个短列命中”的误出口；真正剩余是逐剩余类的
 非主负相位投影界，或回流到 PDEC scope / signed payload / ExactUV 结构前沿。
+
+## 117. Linnik=2 rank-one phase capacity router
+
+新增文件
+
+```text
+experiments/prime_matrix_linnik2_rankone_phase_capacity_router.py
+docs/monograph/prime-matrix-linnik2-rankone-phase-capacity-router.md
+docs/monograph/prime-matrix-linnik2-rankone-phase-capacity-router.json
+data/prime-matrix-linnik2-rankone-phase-capacity-ledger.json
+```
+
+本步将上一节的点态投影障碍拆成容量与相位两部分。零列给出 Cauchy 必要条件
+
+```text
+||T_nonprincipal||_2^2 >= T_0(P)^2/(P-2)
+```
+
+但总能量超过该地板并非矛盾；要排斥的是
+
+```text
+rho_a(P)=-N_a(P)/T_0(P)=1
+```
+
+也就是某个 residue evaluation 向量 `v_a` 方向上的 rank-one 负投影达到主项。各 `v_a` 满足 simplex
+内积规则：
+
+```text
+<v_a,v_b>=P-2  (a=b)
+<v_a,v_b>=-1   (a!=b)
+```
+
+有限样本 `P<=3000` 中，容量-only 不能排除的样本数为 `423/429`，最大总能量/零列地板比例为
+`5.751979`（`P=2953`），但最大负投影比例只在 `P=73` 达到 `0.686688`，仍离 `1` 有 `0.313312`
+余量。样本不作为证明，只用于定位容量路线的假阳性。
+
+当前读数：
+
+```text
+energy_floor_necessary_condition_closed=true
+energy_capacity_only_route_not_enough=true
+evaluation_vector_simplex_geometry_closed=true
+rankone_phase_coherence_exclusion_proved=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR RankOneNegativeEvaluationProjectionPhaseCoherenceExclusionAtP2)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+因此当前最窄接口已经不是 L2 容量，而是 evaluation simplex 的点态负相位极化。
