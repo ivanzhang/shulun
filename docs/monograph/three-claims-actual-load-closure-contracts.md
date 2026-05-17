@@ -2123,3 +2123,49 @@ CrossCarrierFiftyUnitSynchronizationPDECOrSAE
 ```
 
 也就是证明 50 个跨载体到达若持久同步则必须为新 residue 并越界，或把非新/不同步形态登记为 `TransportReset-PDEC`、`SingletonResidue-SAE`、`SupportMotion/UnusedTarget` 或 `MovingCarrier-ColumnCRT`。本节仍不是全局行/列命题证明；它关闭的是同载体直接矛盾路线，并把剩余压成跨载体同步的新硬点。
+
+## 56. cross-carrier fifty-unit residue saturation 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cross_carrier_fifty_unit_residue_saturation_router.py
+docs/monograph/prime-matrix-cross-carrier-fifty-unit-residue-saturation-router.md
+docs/monograph/prime-matrix-cross-carrier-fifty-unit-residue-saturation-router.json
+data/prime-matrix-cross-carrier-fifty-unit-residue-saturation-ledger.json
+```
+
+本证书重建 `minus:71` 的完整 singleton 物理记录，而不是继续使用 sample。核心读数为：
+
+```text
+shape_key=size=1|side=minus|ells=71
+used_residue_count_reconstructed=22
+exact_used_matches_capacity_ledger=true
+used_residues=[3,9,10,12,18,21,22,26,27,28,34,35,36,37,39,40,44,46,53,59,65,66]
+admitted_step_range=[19,82]
+admitted_p_range_on_support_lattice=[4207,9247]
+admitted_distinct_residue_count=64
+admitted_intersection_existing_count=17
+admitted_new_residue_count=47
+union_size_after_admitted_band=69
+spare_after_admitted_band=2
+missing_residues_after_admitted_band=[0,62]
+direct_fifty_overflow_current_blocks=false
+min_block_new_residue_count=34
+max_block_new_residue_count=40
+max_block_union_size=62
+min_block_spare_after=9
+p_extension_to_first_missing_residue=390
+p_extension_to_full_capacity=470
+p_extension_to_post_full_repeat=550
+```
+
+这一步修正了上一接口中的潜在捷径：50 步同步块不是 50 个全新 residue。当前可进入 `minus:71` 的 15 个连续 50 步块，最多只新增 40 个 residue，并集最大为 `62/71`，不能直接溢出。若把整个当前可进入的 support lattice 带都算上，它有 64 个互异 residue，其中 17 个已在既有 singleton 集中，新增 47 个；合并后为 `69/71`，只剩 `0` 与 `62` 两个空位。
+
+当前最窄剩余因此从“50 新 residue 溢出”改写为“两空位端点外延/重置”：
+
+```text
+TwoResidueSpareEndpointExtensionOrTransportResetPDEC
+```
+
+具体地，若端点外延到 `P=9647` 和 `P=9727`，两个空位会依次被填满；再到 `P=9807`，同步 residue 已是旧 residue，必须触发 transport reset-PDEC，或提前回到 SAE、unused-target、moving-carrier 出口。本节仍未关闭全局行/列命题；它排除了当前带内的直接溢出捷径，并把剩余压成显式的两空位端点外延问题。

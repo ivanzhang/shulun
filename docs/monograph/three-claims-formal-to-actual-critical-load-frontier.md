@@ -2153,3 +2153,57 @@ CrossCarrierFiftyUnitSynchronizationPDECOrSAE
 ```
 
 这一步关闭了 `50-unit cross-lock` 的同载体直接矛盾路线，但全局行/列命题仍未无条件闭合。
+
+## 63. cross-carrier fifty-unit residue saturation
+
+后续文件
+
+```text
+experiments/prime_matrix_cross_carrier_fifty_unit_residue_saturation_router.py
+docs/monograph/prime-matrix-cross-carrier-fifty-unit-residue-saturation-router.md
+data/prime-matrix-cross-carrier-fifty-unit-residue-saturation-ledger.json
+```
+
+本步攻击 `CrossCarrierFiftyUnitSynchronizationPDECOrSAE` 中最窄的新旧 residue 判定。重建完整 singleton 物理记录后，`minus:71` 的已用 residue 集为
+
+```text
+{3,9,10,12,18,21,22,26,27,28,34,35,36,37,39,40,44,46,53,59,65,66}
+```
+
+其大小为 `22`，与一槽容量账本完全一致。跨载体 support lattice 的当前可进入步号为 `19..82`，即 `P=4207..9247`，共 `64` 个互异 residue。与既有 `22` 个 residue 相交 `17` 个，新增 `47` 个，因此合并后为
+
+```text
+22 + 47 = 69 < 71.
+```
+
+所以当前带内没有直接溢出。逐个 50 步块扫描也确认：
+
+```text
+direct_fifty_overflow_current_blocks=false
+min_block_new_residue_count=34
+max_block_new_residue_count=40
+max_block_union_size=62
+min_block_spare_after=9
+```
+
+因此上一层“50 个到达全为新 residue 则溢出”的分支，在当前真实链上不能直接使用。真实链只留下两个空 residue：
+
+```text
+missing_residues_after_admitted_band=[0,62]
+```
+
+后续到达的精确相位为：
+
+```text
+P=9647 -> residue 62 -> union 70/71
+P=9727 -> residue 0  -> union 71/71
+P=9807 -> residue 9  -> old residue, reset/PDEC
+```
+
+于是新的最窄接口为：
+
+```text
+TwoResidueSpareEndpointExtensionOrTransportResetPDEC
+```
+
+要么证明当前端点无法合法外延到填满两个空位；要么一旦端点外延成功，再下一步持久同步必须进入 transport reset-PDEC；若同步在外延前失败，则回到 SAE、unused-target 或 moving-carrier ColumnCRT 出口。本步是对旧 residue 吸收能力的精确核算，不是全局无条件闭合。
