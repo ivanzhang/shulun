@@ -1796,3 +1796,27 @@ sum_{odd q>=31} 1/(q(q-2)) <= 1/58
 ```
 
 当前实际实现的 `q=31` 原子质量为 `1/899`，处在该尾和包络内。关键诊断是：`eta` 稀疏不等于全局求和；如果每个 `q` 都允许正比例多个 AffineTwin 原子，则总量仍可发散。因此真正剩余已经精确化为 per-q multiplicity 控制，而不是再寻找单原子质量估计。最新主攻硬点为 `AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion`。
+
+## 53. H-lower AffineTwin sqrt-product / Brun 条件出口更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-router.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-ledger.json
+```
+
+本节把 per-`q` multiplicity 控制改写为更弱也更结构化的平方根乘积门。若 `M_q` 是同一 AffineTwin `q` 的候选双残基乘积上界，则只需：
+
+```text
+M_q^2 <= q(q-2)
+```
+
+此时该 `q` 的 SAE 贡献满足：
+
+```text
+M_q/(q(q-2)) <= 1/sqrt(q(q-2)) <= 1/(q-2)
+```
+
+当前候选 `q=[31,43,103]` 全部通过该门，最大比值约 `0.400222407579`，最小平方余量为 `755`，当前没有 SuperSqrtEpochPair 行。若外部接受 Brun 孪生素数倒数收敛，则 AffineTwin `q` 的 `1/(q-2)` 尾和可求和；但作者侧自足线尚未接受该外部输入，也尚未证明全局平方根门。最新主攻硬点因此压成 `AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion`：全局证明 `M_q^2<=q(q-2)`，或把失败 q 的超平方根侧残基积登记并排斥为 PDEC/ColumnCRT。

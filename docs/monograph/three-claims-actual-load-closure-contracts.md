@@ -1678,3 +1678,42 @@ current_realized_sae_mass = 1/899 = 0.001112347052
 这关闭了“单原子 SAE 尾和”这一全局恒等式，不依赖孪生素数猜想或有限扫描。但账本也给出必要诊断：`eta` 稀疏门本身不能推出全局可求和，因为每个 `q` 若允许 `O(eta*q(q-2))` 个原子，则每个 `q` 都可贡献约 `eta`，无穷求和会发散。
 
 因此反例链与真实链的最新显式交叉点不再是单原子质量，而是每个 `q` 的 AffineTwin 原子 multiplicity：要么证明每 `q` 只有 `O(1)` 个或有额外衰减的可实现原子，要么 multiplicity 超额必须回流为 HighDensityEpochPair-PDEC/ColumnCRT。最新最窄硬点为 `AffineTwinPerQMultiplicityBoundOrHighDensityEpochPairPDECExclusion`。
+
+## 46. H-lower AffineTwin sqrt-product / Brun 条件出口更新
+
+后续文件
+
+```text
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-router.md
+docs/monograph/prime-matrix-square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-router.json
+data/square-phase-offband-prefix-gap-shadow-selector-h-lower-affine-twin-sqrt-product-brun-ledger.json
+```
+
+本节把上一节的 per-`q` multiplicity 目标继续收窄。令 `M_q` 为同一 AffineTwin `q` 的候选双残基乘积上界；当前候选全部满足平方根乘积门：
+
+```text
+candidate_q_values=[31,43,103]
+all_current_rows_pass_sqrt_product_gate=true
+max_product_over_sqrt_capacity=0.400222407579
+min_sqrt_product_gate_slack_squared=755
+current_product_sae_mass_upper_sum=0.023577117629
+current_sqrt_gate_envelope_sum=0.066972535473
+```
+
+平方根乘积门的含义是：
+
+```text
+M_q^2 <= q(q-2)
+=> M_q/(q(q-2)) <= 1/sqrt(q(q-2)) <= 1/(q-2)
+```
+
+由于 AffineTwin `q` 满足 `q` 与 `q-2` 同为素数，若接受经典 Brun 孪生素数倒数收敛，则满足平方根门的 moving packets 进入可求和 SAE 尾和。账本明确标注：
+
+```text
+external_brun_input=ClassicalBrunTwinPrimeReciprocalConvergence
+external_brun_input_accepted_in_author_side=false
+internal_sqrt_product_bound_proved=false
+super_sqrt_epoch_pair_pdec_excluded_globally=false
+```
+
+因此本步只关闭“外部 Brun 输入 + 全局平方根门”条件下的 SAE 出口，并证明当前有限候选没有 SuperSqrtEpochPair。作者侧自足线的最新硬点更精确地变成：证明所有持久 AffineTwin epoch-pair 满足 `M_q^2<=q(q-2)`，或把违反者登记并排斥为 `SuperSqrtEpochPair-PDEC/ColumnCRT`。最新最窄硬点为 `AffineTwinSqrtProductBoundOrSuperSqrtEpochPairPDECExclusion`。
