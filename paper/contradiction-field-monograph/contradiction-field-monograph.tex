@@ -8747,6 +8747,49 @@ multiplicity, model/rate preservation, and the D-structure Rankin promotion
 gate.  No unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Siegel branch as a quadratic half-class margin]
+For prime modulus \(P\), let \(\chi_P\) be the quadratic character and define
+\[
+T_{\chi}(P)=
+\sum_{\substack{\ell\le P^2\\ \ell\ {\rm prime},\ \ell\ne P}}
+\chi_P(\ell)\log \ell,\qquad
+T_0(P)=
+\sum_{\substack{\ell\le P^2\\ \ell\ {\rm prime},\ \ell\ne P}}\log \ell .
+\]
+Then the real-character part of the Siegel branch is measured by
+\[
+  r_{\rm quad}(P)=\frac{|T_{\chi}(P)|}{T_0(P)}.
+\]
+The dangerous quadratic half-class retains an average main-term margin
+proportional to \(1-r_{\rm quad}(P)\).  Thus the square-scale Siegel branch is
+reduced to either proving the margin theorem
+\begin{quote}\footnotesize\ttfamily
+QuadraticHalfClassSquareScaleBiasMarginTheorem,
+\end{quote}
+or accepting an independently certified effective no-Siegel-zero or
+\(\beta\)-gap input strong enough at \(x=P^2\).
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.md.
+\end{quote}
+The identity is the specialization of the nonprincipal character expansion to
+the unique real quadratic character modulo \(P\).  The sum \(T_{\chi}\) is the
+difference between the Chebyshev weights falling in the quadratic-residue and
+quadratic-nonresidue half-classes.  If the real projection almost equals the
+principal mass in magnitude, one half-class may have only a small average
+margin left before the nonreal packet and finite terms are charged.  Conversely,
+any explicit bound \(r_{\rm quad}(P)\le 1-\eta(P)\) supplies exactly that
+half-class margin.
+
+The archived finite scan \(7\le P\le1000\) records a maximum diagnostic ratio
+about \(0.13027\), attained at \(P=7\).  This scan is not used as an
+infinite proof.  The theorem only identifies the exact remaining self-contained
+target for the real branch.  The nonreal zero-packet phase-cancellation branch
+and the structural PDEC/signed-payload/ExactUV/D-structure inputs remain open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -4697,3 +4697,61 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步仍不是行/列命题无条件闭合；它关闭的是“无名零点包”出口，把解析 AP 分支压成 Siegel 偏置排斥与非实零包相位抵消两个可审计目标。
+
+## 113. Siegel 分支的二次半类余量门回接
+
+后续文件
+
+```text
+experiments/prime_matrix_siegel_quadratic_halfclass_margin_router.py
+docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.md
+docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.json
+data/prime-matrix-siegel-quadratic-halfclass-margin-ledger.json
+```
+
+本证书继续下钻上一节的
+
+```text
+SiegelExceptionalBiasExclusionAtSquareScale
+```
+
+对素模 `P` 的二次角色 `chi_P`，定义
+
+```text
+T_chi(P)=sum_{ell<=P^2, ell prime, ell!=P} chi_P(ell) log ell
+T0(P)=sum_{ell<=P^2, ell prime, ell!=P} log ell
+r_quad(P)=|T_chi(P)|/T0(P)
+```
+
+实零偏置分支被压成二次半类余量门：危险半类平均主项余量正比于 `1-r_quad(P)`。若
+`beta=1-lambda/log P`，则 square-scale 下该比例的危险尺度约为 `exp(-2*lambda)/beta`，所以没有有效
+`beta` 间隙时不能自动排除。
+
+当前读数：
+
+```text
+quadratic_projection_identity_closed=true
+halfclass_margin_theorem_proved=false
+effective_no_siegel_input_accepted=false
+siegel_branch_closed=false
+row_column_unconditional_closed=false
+```
+
+有限诊断口径 `7<=P<=1000` 中最大 `r_quad(P)=0.13027036286351173` 出现在 `P=7`；该扫描只用于定位风险，
+不是无限证明输入。
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步仍不是闭合；它把 Siegel 实零偏置从口头风险变为可审计的二次角色投影余量定理，或等价地需要足够强的外部无 Siegel 零点/`beta` 间隙输入。

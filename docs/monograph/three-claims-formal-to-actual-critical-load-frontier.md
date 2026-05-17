@@ -4663,3 +4663,59 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书说明：若继续走解析 AP 路线，不能只说“零点包小”；必须分别证明实例外/Siegel 偏置不能制造危险半类，以及非实零点包不能在单个 `residue` 方向上相位同向集中。
+
+## 120. Siegel quadratic half-class margin router
+
+新增文件
+
+```text
+experiments/prime_matrix_siegel_quadratic_halfclass_margin_router.py
+docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.md
+docs/monograph/prime-matrix-siegel-quadratic-halfclass-margin-router.json
+data/prime-matrix-siegel-quadratic-halfclass-margin-ledger.json
+```
+
+本步把 `SiegelExceptionalBiasExclusionAtSquareScale` 压成二次角色半类投影余量：
+
+```text
+r_quad(P)=|T_chi(P)|/T0(P)
+T_chi(P)=sum_{ell<=P^2} chi_P(ell) log ell
+```
+
+危险半类的平均主项余量正比于 `1-r_quad(P)`。因此该分支的自足闭合目标不再是泛泛的“无 Siegel 偏置”，而是：
+
+```text
+QuadraticHalfClassSquareScaleBiasMarginTheorem
+```
+
+或外部接受足够强的
+
+```text
+EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale
+```
+
+当前读数：
+
+```text
+quadratic_projection_identity_closed=true
+halfclass_margin_theorem_proved=false
+effective_no_siegel_input_accepted=false
+siegel_branch_closed=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND NonrealZeroPacketResiduePhaseCancellationAtXEqualsP2))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书的实质进展是：Siegel 分支的容量/相位矛盾不再停留在“实零可能危险”，而是变成一个明确的二次半类余量命题；但该命题仍未在当前语料中证明。
