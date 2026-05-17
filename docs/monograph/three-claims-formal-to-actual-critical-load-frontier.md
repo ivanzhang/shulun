@@ -2353,3 +2353,50 @@ OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE
 ```
 
 即下一步只能继续排斥该已实例化的一槽 repeat-reset PDEC，或证明端点运动进入 SAE/Rankin 吸收。
+
+## 67. endpoint cut zero-gain
+
+后续文件
+
+```text
+experiments/prime_matrix_endpoint_cut_zero_gain_router.py
+docs/monograph/prime-matrix-endpoint-cut-zero-gain-router.md
+data/prime-matrix-endpoint-cut-zero-gain-ledger.json
+```
+
+本步检查 `OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE` 中的 endpoint-motion 出口是否能在 reset 前带来实际素数锚收益。端点切断前唯一缓冲为：
+
+```text
+step=83..89
+P=[9327,9407,9487,9567,9647,9727,9807]
+```
+
+其中没有任何素数锚：
+
+```text
+actual_prime_anchor_count_before_reset=0
+actual_new_prime_anchor_count_before_reset=0
+```
+
+形式上看似补到两个缺口：
+
+```text
+residue 62 at P=9647
+residue 0  at P=9727
+```
+
+但二者分别被最小因子 `11` 与 `71` 排除；所以它们不是真实覆盖。随后第一个素数锚 `P=9887` 已经是 `residue=18` 的 repeat-reset。
+
+因此当前 primitive epoch 内的二分闭合为：
+
+```text
+reset-PDEC  OR  zero-gain endpoint cut SAE
+```
+
+最新接口为：
+
+```text
+ZeroGainEndpointCutSAEOrOneSlotResetPDECExclusion
+```
+
+这一步不关闭全局命题；它把 endpoint-motion 分支从“可能有新实际覆盖”压成零收益端点 SAE。

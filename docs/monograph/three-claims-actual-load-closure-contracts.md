@@ -2305,3 +2305,40 @@ OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE
 ```
 
 本步把“是否会 repeat”转成“已实例化的 repeat-reset 原子是否可全局排斥，或端点运动是否可 SAE/Rankin 吸收”。全局行/列命题仍未无条件闭合。
+
+## 60. endpoint cut zero-gain 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_endpoint_cut_zero_gain_router.py
+docs/monograph/prime-matrix-endpoint-cut-zero-gain-router.md
+docs/monograph/prime-matrix-endpoint-cut-zero-gain-router.json
+data/prime-matrix-endpoint-cut-zero-gain-ledger.json
+```
+
+本证书攻击上一节剩余的 endpoint-motion 逃逸：若为了避免 `P=9887` 的 repeat-reset 而切断端点，那么从当前 epoch 上界到首个 post-band 素数锚之前是否有任何实际素数锚收益。结果为零：
+
+```text
+previous_hardpoint=OneSlotPrimeAnchorRepeatResetPDECExclusionOrEndpointMotionSAE
+cut_buffer_step_count=7
+cut_buffer_steps=[83,84,85,86,87,88,89]
+cut_buffer_p_values=[9327,9407,9487,9567,9647,9727,9807]
+formal_gap_composite_row_count=2
+formal_gap_composite_residues=[62,0]
+actual_prime_anchor_count_before_reset=0
+actual_new_prime_anchor_count_before_reset=0
+endpoint_cut_actual_gain_zero=true
+reset_atom_instantiated_at_first_prime_anchor=true
+reset_or_zero_gain_endpoint_dichotomy_closed_current_epoch=true
+```
+
+这里 `residue 62` 与 `residue 0` 是形式缺口，但对应的 `P=9647` 与 `P=9727` 分别为合数和 `71` 的倍数；其余缓冲步号也都是旧 residue 的合数锚。因此端点切断在当前 primitive epoch 内不能获得任何实际素数锚容量，只是一个 zero-gain endpoint SAE 形态。若不切断，`step=90,P=9887` 立即进入上一节已实例化的一槽 repeat-reset PDEC。
+
+最新最窄剩余接口为：
+
+```text
+ZeroGainEndpointCutSAEOrOneSlotResetPDECExclusion
+```
+
+本步关闭的是当前 epoch 的“端点切断可获得真实覆盖收益”解释。全局行/列命题仍需排斥 one-slot reset-PDEC 的持久复现，或证明 zero-gain endpoint cut 的 SAE/Rankin 可吸收。
