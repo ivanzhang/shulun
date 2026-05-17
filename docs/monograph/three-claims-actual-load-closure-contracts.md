@@ -3794,3 +3794,48 @@ GlobalFinalInputsStillOpen
 ```
 
 本步不证明未来 primitive fresh-layer PDEC schema 或 moving-family schema 永不存在；若未来提交显式 schema，需要按防火墙重新审查。
+
+## 95. early-zero gap CRT asymmetry 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_early_zero_gap_crt_asymmetry_router.py
+docs/monograph/prime-matrix-early-zero-gap-crt-asymmetry-router.md
+docs/monograph/prime-matrix-early-zero-gap-crt-asymmetry-router.json
+data/prime-matrix-early-zero-gap-crt-asymmetry-ledger.json
+```
+
+本证书吸收用户提出的早期零行相邻素数载体提示。若第 `k` 行
+`[(k-1)P+1,kP]` 无素数，则左右最近素数构成跨越该行的相邻素数对，间隙严格大于 `P`。
+这给出真实链与反例链的强接口；但 CRT 周期只复制小素因子覆盖图案，不复制素数端点。
+
+当前读数：
+
+```text
+early_zero_gap_lemma_proved=true
+crt_gap_asymmetry_standalone_contradiction_proved=false
+persistent_phase_routes_to_pdec_columncrt=true
+sparse_phase_routes_to_sae=true
+nonperiodic_endpoint_routes_to_h3_dsb_kls=true
+nc_blk_or_external_dibfi_closed=false
+row_column_unconditional_closed=false
+```
+
+因此该提示不再作为孤立启发保留，而是路由为三分支：
+
+```text
+persistent carrier phase => PDEC/ColumnCRT
+sparse carrier phase => SAE
+nonperiodic prime endpoint => H3-DSB/KLS -> NC-BLK or external DI/BFI
+```
+
+有限核查 `P<=5000` 的 `1547466` 条早期非第一行未发现零行；这只是证书核查，不替代全局证明。
+最新剩余为：
+
+```text
+EarlyZeroGapCarrierAsymmetryRoutedToH3DSBNCBLKOrExternalDIBFI;GlobalFinalInputsStillOpen
+```
+
+本步仍不宣称行/列命题闭合；它只把相邻素数大间隙/CRT 非对称提示严格接入当前最终硬核，并排除
+“单个 gap carrier 自动形成全局 CRT 矛盾”的跳步。

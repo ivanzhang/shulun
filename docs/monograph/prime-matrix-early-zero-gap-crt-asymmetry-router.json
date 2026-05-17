@@ -1,0 +1,220 @@
+{
+  "certificate_type": "prime_matrix_early_zero_gap_crt_asymmetry_router",
+  "status": "early_zero_gap_carrier_asymmetry_routed_not_global_proof",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "previous_hardpoint": "CycleDebtBranchReplayCurrentMaterializedFrontierZeroWithFutureSchemaFirewall;GlobalFinalInputsStillOpen",
+  "current_frontier_status": "cycle_debt_branch_replay_current_materialized_frontier_zero_future_schema_firewall_global_inputs_open",
+  "finite_audit": {
+    "max_p": 5000,
+    "sieve_limit": 26010000,
+    "prime_layers_checked": 668,
+    "row_windows_checked": 1547466,
+    "early_zero_rows_found": 0,
+    "early_zero_rows": [],
+    "min_prime_count_in_checked_rows": 1,
+    "min_prime_count_samples": [
+      {
+        "p": 3,
+        "row": 2,
+        "interval": [
+          4,
+          6
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          5
+        ]
+      },
+      {
+        "p": 3,
+        "row": 3,
+        "interval": [
+          7,
+          9
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          7
+        ]
+      },
+      {
+        "p": 5,
+        "row": 2,
+        "interval": [
+          6,
+          10
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          7
+        ]
+      },
+      {
+        "p": 5,
+        "row": 5,
+        "interval": [
+          21,
+          25
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          23
+        ]
+      },
+      {
+        "p": 7,
+        "row": 4,
+        "interval": [
+          22,
+          28
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          23
+        ]
+      },
+      {
+        "p": 11,
+        "row": 11,
+        "interval": [
+          111,
+          121
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          113
+        ]
+      },
+      {
+        "p": 13,
+        "row": 10,
+        "interval": [
+          118,
+          130
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          127
+        ]
+      },
+      {
+        "p": 17,
+        "row": 13,
+        "interval": [
+          205,
+          221
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          211
+        ]
+      },
+      {
+        "p": 19,
+        "row": 16,
+        "interval": [
+          286,
+          304
+        ],
+        "prime_count": 1,
+        "primes_in_row": [
+          293
+        ]
+      }
+    ],
+    "max_adjacent_prime_gap_below_max_p_square": 210
+  },
+  "early_zero_gap_lemma_proved": true,
+  "crt_gap_asymmetry_standalone_contradiction_proved": false,
+  "persistent_phase_routes_to_pdec_columncrt": true,
+  "sparse_phase_routes_to_sae": true,
+  "nonperiodic_endpoint_routes_to_h3_dsb_kls": true,
+  "nc_blk_or_external_dibfi_closed": false,
+  "row_column_unconditional_closed": false,
+  "next_direct_attack_target": "EarlyZeroGapCarrierAsymmetryRoutedToH3DSBNCBLKOrExternalDIBFI;GlobalFinalInputsStillOpen",
+  "gates": [
+    {
+      "gate": "EarlyZeroToStraddlingAdjacentPrimeGap",
+      "closed": true,
+      "proved": true,
+      "meaning": "若第 k 行 [(k-1)P+1,kP] 无素数，则其左右最近素数构成跨越该行的相邻素数对，间隙严格大于 P。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "GapCarrierBelowSquareForEarlyRows",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 1<k<P，则被跨越的行窗口完全位于 P^2 之前；若右侧素数越过 P^2，则反而进入更强的平方锚/对角分支。",
+      "remaining": "closed with square-anchor escape"
+    },
+    {
+      "gate": "CRTPeriodicityOnlyForSmallFactorCover",
+      "closed": true,
+      "proved": true,
+      "meaning": "小素因子覆盖按 M_P 周期重复，但相邻素数端点本身不是 CRT 周期对象。",
+      "remaining": "closed"
+    },
+    {
+      "gate": "StandaloneGapAsymmetryContradiction",
+      "closed": false,
+      "proved": false,
+      "meaning": "单个相邻素数大间隙只重述平方根长度短区间素数问题，不能单独推出全局矛盾。",
+      "remaining": "routes to H3/DSB or named exits"
+    },
+    {
+      "gate": "PersistentCarrierPhaseRoutesToPDECColumnCRT",
+      "closed": true,
+      "proved": true,
+      "meaning": "若相邻素数载体的端点相位在 CRT 周期中持久复现，则形成固定相位/列位移缺陷，进入 PDEC/ColumnCRT。",
+      "remaining": "closed as router"
+    },
+    {
+      "gate": "SparseCarrierPhaseRoutesToSAE",
+      "closed": true,
+      "proved": true,
+      "meaning": "若载体相位只孤立出现，则它是单窗逃逸而非无限结构，进入 SAE。",
+      "remaining": "closed as router"
+    },
+    {
+      "gate": "NonperiodicPrimeEndpointRoutesToH3DSBKLS",
+      "closed": true,
+      "proved": true,
+      "meaning": "若端点素性不能周期化，只能回到 H3 六轮尾补洞、DSB/KLS 与 NC-BLK 或外部 DI/BFI 分支。",
+      "remaining": "H3-DSB-NCBLK-or-external-DIBFI"
+    },
+    {
+      "gate": "NCBLKOrExternalDIBFIClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前仓库最新完全自足硬核仍是 NC-BLK；若不内证，只能调用外部 DI/BFI dispersion。",
+      "remaining": "NC-BLK or external DI/BFI"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步把用户的相邻素数/CRT 非对称提示接入现有最终硬核，不关闭全局行/列命题。",
+      "remaining": "EarlyZeroGapCarrierAsymmetryRoutedToH3DSBNCBLKOrExternalDIBFI;GlobalFinalInputsStillOpen"
+    }
+  ],
+  "closed_gates": [
+    "EarlyZeroToStraddlingAdjacentPrimeGap",
+    "GapCarrierBelowSquareForEarlyRows",
+    "CRTPeriodicityOnlyForSmallFactorCover",
+    "PersistentCarrierPhaseRoutesToPDECColumnCRT",
+    "SparseCarrierPhaseRoutesToSAE",
+    "NonperiodicPrimeEndpointRoutesToH3DSBKLS"
+  ],
+  "open_gates": [
+    "StandaloneGapAsymmetryContradiction",
+    "NCBLKOrExternalDIBFIClosed",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "早期零行确实会强制一个跨越该行的相邻素数大间隙载体；但 CRT 周期只复制小素因子覆盖，不复制素数端点。因此该非对称提示本身不是完整矛盾，而是一个路由器：持久相位进入 PDEC/ColumnCRT，孤立相位进入 SAE，非周期素端点回到 H3-DSB/KLS 的 NC-BLK 或外部 DI/BFI 最终硬核。",
+  "dependency_hashes": {
+    "docs/monograph/prime-matrix-cycle-debt-branch-replay-current-frontier-zero-router.json": "fb6ba535d8c13abd69c7238539049a64161b6e1e19595fc403a0394b7a56029a",
+    "docs/monograph/prime-matrix-h3-unified-defect-criterion.md": "a63a4826397ea9089df238960ed69f677a98d54446d6e6a8b51bab281ba05088",
+    "docs/monograph/prime-matrix-h3-dsb-hlc-blk-energy-core-obstruction.md": "c424b1aed6378b1e476c86e238dfe7e02cf59f983efffcb6a8b9b7bf18715ca7"
+  }
+}

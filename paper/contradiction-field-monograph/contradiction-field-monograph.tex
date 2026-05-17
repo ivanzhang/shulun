@@ -7932,6 +7932,46 @@ The remaining obstruction is formal PDEC admission for the sliced cap: the same
 cap-stable, and its lower and upper budgets must be computed in that same formal unit.
 \end{proof}
 
+\begin{theorem}[Early-zero gap carrier and CRT-asymmetry router]
+The early-zero gap-carrier observation is a valid entrance reduction but not by
+itself a final contradiction.  If the \(k\)-th \(P\)-row
+\[
+  I_{P,k}=[(k-1)P+1,kP]
+\]
+contains no prime, and if \(a\) and \(b\) are the nearest primes respectively
+to the left and to the right of \(I_{P,k}\), then \(a,b\) are adjacent primes
+and \(b-a>P\).  The CRT period \(M_P\) repeats the small-factor covering
+pattern, but it does not repeat the primality of the carrier endpoints.
+Consequently a persistent endpoint phase is a PDEC/ColumnCRT object, an
+isolated endpoint phase is an SAE object, and the non-periodic prime endpoint
+case returns to the H3-DSB/KLS branch, whose current self-contained hard core
+is NC-BLK unless an external DI/BFI dispersion input is accepted.
+\end{theorem}
+\begin{proof}
+The finite certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-early-zero-gap-crt-asymmetry-router.md.
+\end{quote}
+If \(I_{P,k}\) contains no prime, then every prime between \(a\) and \(b\)
+would have to lie inside \(I_{P,k}\), contradicting the hypothesis.  Hence
+\(a,b\) are adjacent.  Since \(a\le (k-1)P\) and \(b\ge kP+1\),
+\[
+  b-a\ge (kP+1)-(k-1)P=P+1>P.
+\]
+This proves the carrier-gap lemma.
+
+The second assertion is a boundary statement.  Small-factor coverage of a row
+is periodic modulo \(M_P\); primality of the carrier endpoints is not periodic
+modulo \(M_P\).  Therefore the carrier cannot be used as a naked CRT-period
+contradiction.  If its endpoint phase recurs as a fixed formal unit, it is a
+PDEC/ColumnCRT candidate.  If it is isolated, it is SAE.  If the endpoint
+primality cannot be made periodic while the covering pressure persists, the
+already established H3 singleton-tail reduction sends the obstruction to the
+H3-DSB/KLS chain.  The present document has not closed NC-BLK internally and
+has not replaced it by an accepted external DI/BFI theorem, so the global
+row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

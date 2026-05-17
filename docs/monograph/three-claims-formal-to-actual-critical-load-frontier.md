@@ -3762,3 +3762,42 @@ GlobalFinalInputsStillOpen
 ```
 
 这一步不证明未来 schema 永不存在，也不关闭完整行/列无条件命题。
+
+## 102. early-zero gap CRT asymmetry router
+
+新增文件
+
+```text
+experiments/prime_matrix_early_zero_gap_crt_asymmetry_router.py
+docs/monograph/prime-matrix-early-zero-gap-crt-asymmetry-router.md
+data/prime-matrix-early-zero-gap-crt-asymmetry-ledger.json
+```
+
+本步处理最新用户提示中的“早期零行必产生跨行相邻素数大间隙”接口。严格引理如下：若
+第 `k` 行 `[(k-1)P+1,kP]` 没有素数，则左侧最近素数 `a` 与右侧最近素数 `b` 相邻，且
+`b-a>P`。若 `1<k<P`，被跨越的行窗口完全位于 `P^2` 之前；若右端素数越过 `P^2`，则进入
+更强的平方锚/对角分支。
+
+关键读数：
+
+```text
+early_zero_gap_lemma_proved=true
+crt_gap_asymmetry_standalone_contradiction_proved=false
+persistent_phase_routes_to_pdec_columncrt=true
+sparse_phase_routes_to_sae=true
+nonperiodic_endpoint_routes_to_h3_dsb_kls=true
+nc_blk_or_external_dibfi_closed=false
+row_column_unconditional_closed=false
+```
+
+这说明 CRT 非对称的精确边界已经确定：`M_P` 周期复制小素因子覆盖，不复制相邻素数端点。
+若端点相位持久复现，则进入 `PDEC/ColumnCRT`；若孤立出现，则进入 `SAE`；若覆盖持续但素端点
+不能周期化，则回到 `H3-DSB/KLS` 的 `NC-BLK` 或外部 `DI/BFI` 分支。
+
+actual-load 前沿更新为：
+
+```text
+EarlyZeroGapCarrierAsymmetryRoutedToH3DSBNCBLKOrExternalDIBFI;GlobalFinalInputsStillOpen
+```
+
+这一步是路由闭合，不是全局行/列无条件证明闭合。
