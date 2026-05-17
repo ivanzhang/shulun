@@ -8987,6 +8987,115 @@ locks of this kind, or their registration as ColumnCRT/PDEC or moving-family
 returns.  No unconditional row/column theorem is claimed here.
 \end{proof}
 
+\begin{theorem}[Quadratic-twist pair character orbit lock]
+Let \(\psi\ne1\) be a character of the quadratic-residue subgroup \(Q\), and
+let \(\chi\) be either extension of \(\psi\) to \({\mathbb F}_P^\ast\).  The
+other extension is \(\chi\chi_P\).  For \(a_0\in H_s\), define
+\[
+T_\chi(P)=\sum_{a\in{\mathbb F}_P^\ast}\theta(P^2;P,a)\overline{\chi(a)}.
+\]
+Then the \(Q\)-Fourier coefficient in the preceding theorem satisfies
+\[
+\widehat f(\psi)
+=\chi(a_0)\frac{T_\chi(P)+sT_{\chi\chi_P}(P)}{2}.
+\]
+Consequently the flat compensator condition is equivalent to the simultaneous
+orbit lock
+\[
+\chi(a_0)\frac{T_\chi(P)+sT_{\chi\chi_P}(P)}{2}
+=\theta(P^2;P,a_0)-c_{a_0}
+\qquad(\psi\ne1).
+\]
+Equivalently,
+\[
+\sum_{\psi\ne1}\left|
+\chi(a_0)\frac{T_\chi(P)+sT_{\chi\chi_P}(P)}{2}
+-(\theta(P^2;P,a_0)-c_{a_0})
+\right|^2
+=h\sum_{\substack{u\in Q\\u\ne1}}
+  \bigl(f_{a_0}(u)-c_{a_0}\bigr)^2.
+\]
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.md.
+\end{quote}
+Since \(\chi\) restricts to \(\psi\) on \(Q\), for \(a=a_0u\) with \(u\in Q\)
+we have \(\overline{\psi(u)}=\chi(a_0)\overline{\chi(a)}\).  Also the
+indicator of \(H_s\) is \((1+s\chi_P(a))/2\).  Therefore
+\[
+\widehat f(\psi)
+=\chi(a_0)\sum_{a\in H_s}\theta(P^2;P,a)\overline{\chi(a)}
+=\chi(a_0)\frac{T_\chi(P)+sT_{\chi\chi_P}(P)}{2}.
+\]
+Substituting this identity into the ratio-Fourier lock theorem gives the orbit
+lock and Parseval identity.
+
+This reformulation is important for the global route: the obstruction is not a
+single exceptional character and not a scalar energy excess.  A persistent
+zero-column compensator must synchronize every nontrivial character of \(Q\),
+or equivalently every quadratic-twist pair of Dirichlet characters modulo
+\(P\), onto the same \(a_0\)-dependent phase orbit.  The remaining input is
+\begin{quote}\footnotesize\ttfamily
+QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC.
+\end{quote}
+No unconditional row/column theorem is claimed here.
+\end{proof}
+
+
+\begin{theorem}[Log-prime degeneration of exact half-class orbit locks]
+For \(a\in{\mathbb F}_P^\ast\), put
+\[
+S_a(P)=\{\ell\le P^2:\ell\hbox{ prime},\ \ell\ne P,\ \ell\equiv a\bmod P\}
+\]
+and \(\theta_a=\sum_{\ell\in S_a(P)}\log\ell\).  If \(a\ne b\) and
+\(\theta_a=\theta_b\), then \(S_a(P)=S_b(P)=\varnothing\).
+
+Consequently, for \(P\ge7\), an exact punctured half-class flatness condition
+\[
+\theta(P^2;P,a_0u)=c\qquad(u\in Q,\ u\ne1)
+\]
+can hold only in the degenerate case \(c=0\) and
+\[
+S_{a_0u}(P)=\varnothing\qquad(u\in Q,\ u\ne1).
+\]
+Thus the exact quadratic-twist pair orbit lock from the preceding theorem is
+routed to
+\begin{quote}\footnotesize\ttfamily
+PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}
+The certificate is recorded in
+\begin{quote}\footnotesize\ttfamily
+docs/monograph/prime-matrix-halfclass-log-independence-degeneracy-router.md.
+\end{quote}
+If \(\theta_a=\theta_b\), then
+\[
+\sum_{\ell\in S_a(P)}\log\ell-\sum_{\ell\in S_b(P)}\log\ell=0.
+\]
+Equivalently,
+\[
+\prod_{\ell\in S_a(P)}\ell=\prod_{\ell\in S_b(P)}\ell.
+\]
+Unique factorization forces the two prime multisets to be identical.  Distinct
+nonzero residues modulo \(P\) are disjoint prime supports, so both supports
+must be empty.
+
+For \(P\ge7\), the punctured set \(\{u\in Q:u\ne1\}\) contains at least two
+elements.  Exact flatness makes all corresponding \(\theta\)-values equal.
+Applying the first paragraph to any pair and then to a fixed representative
+against every other punctured residue gives empty support throughout the
+punctured half-class and \(c=0\).
+
+Therefore a positive exact flat compensator cannot be the persistent
+obstruction.  The only remaining exact-lock exit is the much sharper
+zero-support degeneracy: after removing \(a_0\), the same half-class has no
+prime arrivals up to \(P^2\).  This theorem does not exclude that degeneracy
+and does not prove the row/column theorem unconditionally.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

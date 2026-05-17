@@ -1,0 +1,356 @@
+{
+  "certificate_type": "prime_matrix_halfclass_log_independence_degeneracy_router",
+  "status": "twist_pair_orbit_lock_routed_to_log_independence_zero_support_degeneracy_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "counterexample_assumption_only": true,
+  "previous_target": "QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC",
+  "next_direct_attack_target": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC",
+  "quadratic_margin_still_required": "QuadraticHalfClassSquareScaleBiasMarginTheorem",
+  "formula_ledger": [
+    {
+      "item": "residue prime support",
+      "formula": "S_a(P)={ell prime: ell<=P^2, ell!=P, ell=a mod P}"
+    },
+    {
+      "item": "theta support product",
+      "formula": "theta_a=log(prod_{ell in S_a(P)} ell)"
+    },
+    {
+      "item": "log-prime independence",
+      "formula": "theta_a=theta_b and a!=b imply S_a(P)=S_b(P)=empty"
+    },
+    {
+      "item": "exact punctured flatness degeneration",
+      "formula": "P>=7 and theta_{a0u}=c for all u!=1 in Q imply c=0 and S_{a0u}=empty for every u!=1"
+    },
+    {
+      "item": "new hardpoint",
+      "formula": "exclude punctured half-class zero-support degeneracy or register ColumnCRT/PDEC/moving-family"
+    }
+  ],
+  "branch_ledger": [
+    {
+      "branch": "QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC",
+      "route": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC",
+      "status": "sharpened but open",
+      "meaning": "全配对角色轨道锁若是精确平铺，则正平铺由素数对数独立性排除，只剩 punctured 半类全零支撑退化。"
+    },
+    {
+      "branch": "positive exact half-class flatness",
+      "route": "log-prime product independence",
+      "status": "closed as algebraic identity",
+      "meaning": "不同 residue 的素数支撑互不相交，两个正 theta 值不可能完全相等。"
+    },
+    {
+      "branch": "all-pair orbit lock",
+      "route": "punctured zero-support degeneracy",
+      "status": "not excluded in corpus",
+      "meaning": "剩余出口要求同半类除缺孔外没有任何 P^2 内素数到达。"
+    },
+    {
+      "branch": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC",
+      "route": "exclude zero-support degeneracy or route to ColumnCRT/PDEC/moving-family",
+      "status": "not proved in corpus",
+      "meaning": "这是当前非实 AP 分支的最新最窄接口。"
+    }
+  ],
+  "finite_diagnostic": {
+    "min_p": 7,
+    "max_p": 1000,
+    "prime_moduli_checked": 165,
+    "punctured_halfclass_instances_checked": 75952,
+    "min_active_punctured_support_count": 2,
+    "degenerate_instances_found": 0,
+    "degenerate_instances": [],
+    "top_low_activity_records": [
+      {
+        "P": 7,
+        "halfclass": "quadratic_residue",
+        "legendre_sign": 1,
+        "halfclass_size": 3,
+        "puncture_residue": 1,
+        "puncture_support_count": 2,
+        "active_halfclass_support_count": 3,
+        "active_punctured_support_count": 2,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          2,
+          4
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 7,
+        "halfclass": "quadratic_residue",
+        "legendre_sign": 1,
+        "halfclass_size": 3,
+        "puncture_residue": 2,
+        "puncture_support_count": 3,
+        "active_halfclass_support_count": 3,
+        "active_punctured_support_count": 2,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          1,
+          4
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 7,
+        "halfclass": "quadratic_nonresidue",
+        "legendre_sign": -1,
+        "halfclass_size": 3,
+        "puncture_residue": 3,
+        "puncture_support_count": 3,
+        "active_halfclass_support_count": 3,
+        "active_punctured_support_count": 2,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          5,
+          6
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 7,
+        "halfclass": "quadratic_residue",
+        "legendre_sign": 1,
+        "halfclass_size": 3,
+        "puncture_residue": 4,
+        "puncture_support_count": 1,
+        "active_halfclass_support_count": 3,
+        "active_punctured_support_count": 2,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          1,
+          2
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 7,
+        "halfclass": "quadratic_nonresidue",
+        "legendre_sign": -1,
+        "halfclass_size": 3,
+        "puncture_residue": 5,
+        "puncture_support_count": 3,
+        "active_halfclass_support_count": 3,
+        "active_punctured_support_count": 2,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          3,
+          6
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 7,
+        "halfclass": "quadratic_nonresidue",
+        "legendre_sign": -1,
+        "halfclass_size": 3,
+        "puncture_residue": 6,
+        "puncture_support_count": 2,
+        "active_halfclass_support_count": 3,
+        "active_punctured_support_count": 2,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          3,
+          5
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 11,
+        "halfclass": "quadratic_residue",
+        "legendre_sign": 1,
+        "halfclass_size": 5,
+        "puncture_residue": 1,
+        "puncture_support_count": 3,
+        "active_halfclass_support_count": 5,
+        "active_punctured_support_count": 4,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          3,
+          4,
+          5,
+          9
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 11,
+        "halfclass": "quadratic_nonresidue",
+        "legendre_sign": -1,
+        "halfclass_size": 5,
+        "puncture_residue": 2,
+        "puncture_support_count": 4,
+        "active_halfclass_support_count": 5,
+        "active_punctured_support_count": 4,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          6,
+          7,
+          8,
+          10
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 11,
+        "halfclass": "quadratic_residue",
+        "legendre_sign": 1,
+        "halfclass_size": 5,
+        "puncture_residue": 3,
+        "puncture_support_count": 3,
+        "active_halfclass_support_count": 5,
+        "active_punctured_support_count": 4,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          1,
+          4,
+          5,
+          9
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 11,
+        "halfclass": "quadratic_residue",
+        "legendre_sign": 1,
+        "halfclass_size": 5,
+        "puncture_residue": 4,
+        "puncture_support_count": 3,
+        "active_halfclass_support_count": 5,
+        "active_punctured_support_count": 4,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          1,
+          3,
+          5,
+          9
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 11,
+        "halfclass": "quadratic_residue",
+        "legendre_sign": 1,
+        "halfclass_size": 5,
+        "puncture_residue": 5,
+        "puncture_support_count": 2,
+        "active_halfclass_support_count": 5,
+        "active_punctured_support_count": 4,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          1,
+          3,
+          4,
+          9
+        ],
+        "first_zero_punctured_residues": []
+      },
+      {
+        "P": 11,
+        "halfclass": "quadratic_nonresidue",
+        "legendre_sign": -1,
+        "halfclass_size": 5,
+        "puncture_residue": 6,
+        "puncture_support_count": 3,
+        "active_halfclass_support_count": 5,
+        "active_punctured_support_count": 4,
+        "zero_punctured_support_count": 0,
+        "punctured_zero_support_degeneracy": false,
+        "first_active_punctured_residues": [
+          2,
+          7,
+          8,
+          10
+        ],
+        "first_zero_punctured_residues": []
+      }
+    ]
+  },
+  "log_prime_product_independence_closed": true,
+  "positive_exact_punctured_flatness_excluded": true,
+  "orbit_lock_routed_to_zero_support_degeneracy": true,
+  "punctured_halfclass_zero_support_degeneracy_excluded": false,
+  "row_column_unconditional_closed": false,
+  "latest_strict_activity_basis": "(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale) AND PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC)) AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem AND ExplicitModelGapAndFiniteDPRCLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "rows": [
+    {
+      "gate": "PreviousTwistPairTargetImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一层把 ratio-Fourier 锁压成二次扭曲角色配对轨道锁。",
+      "remaining": "QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC"
+    },
+    {
+      "gate": "LogPrimeProductIndependenceClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "不同 residue 的 theta 精确相等只能同时为空支撑。",
+      "remaining": "none"
+    },
+    {
+      "gate": "PositiveExactPuncturedFlatnessExcluded",
+      "closed": true,
+      "proved": true,
+      "meaning": "P>=7 时，punctured 半类的正精确平铺与唯一分解矛盾。",
+      "remaining": "none"
+    },
+    {
+      "gate": "OrbitLockRoutedToZeroSupportDegeneracy",
+      "closed": true,
+      "proved": true,
+      "meaning": "精确轨道锁若持久，只能退化为 punctured 半类全零支撑。",
+      "remaining": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC"
+    },
+    {
+      "gate": "PuncturedHalfClassZeroSupportDegeneracyExcluded",
+      "closed": false,
+      "proved": false,
+      "meaning": "当前语料尚未自足排斥同半类除缺孔外全无 P^2 内素数到达。",
+      "remaining": "PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosed",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只排除正精确平铺，不证明行/列命题。",
+      "remaining": "global final inputs remain open"
+    }
+  ],
+  "closed_gates": [
+    "PreviousTwistPairTargetImported",
+    "LogPrimeProductIndependenceClosed",
+    "PositiveExactPuncturedFlatnessExcluded",
+    "OrbitLockRoutedToZeroSupportDegeneracy"
+  ],
+  "open_gates": [
+    "PuncturedHalfClassZeroSupportDegeneracyExcluded",
+    "RowColumnUnconditionalClosed"
+  ],
+  "source_hashes": {
+    "docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.json": "7bbb273f91e774b561791f52bf3ed36aa1b4e537bba97f67364f47b3d718546f",
+    "docs/monograph/prime-matrix-halfclass-ratio-fourier-lock-router.json": "59af5b66fc0a0beec9168743d20a95339e546f96aed9185a2fed627ac137f184",
+    "docs/monograph/claim-status-table.md": "46e354c13973286f6530ccbf5604d797bc03d41ca611b91822f1079dbdbd22a8",
+    "docs/monograph/three-claims-actual-load-closure-contracts.md": "c1c4d5dfd96d34b1d2b37bbcd3266049643b60ccb0339f697241abfa6c89876a",
+    "docs/monograph/three-claims-formal-to-actual-critical-load-frontier.md": "3492c9a36ad2f7ea20c8f56e5c135c9dfc471ef1d06d53858ce672363aba0ad7",
+    "docs/final-proof-draft.md": "c8958bc1f15441975c2f7c2b206609eb88fa43adc21313e26742b3bb1addea9b",
+    "docs/prime-density-waves-X.md": "512245acdfc1bf8085de9e6de6580f41acdb1c05d9039ea44f84cf82751626fe",
+    "paper/contradiction-field-monograph/contradiction-field-monograph.tex": "e9a8dfcfc7d001b13aa635be5f23e9dee8851c2bf9281c743d670659aa10d963"
+  },
+  "plain_conclusion": "本步继续下钻 `QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC`。若 punctured 半类出现精确平铺，则任意两个不同 residue 的 theta 值相等。但 theta 是对应素数集合乘积的对数；唯一分解给出不同 residue 的正 theta 值不可能精确相等。因此精确轨道锁只能退化为 `c=0` 且同半类除缺孔外全部 residue 在 `P^2` 内无素数到达。最新硬点压成 `PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC`。"
+}

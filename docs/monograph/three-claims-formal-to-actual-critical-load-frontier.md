@@ -4900,3 +4900,120 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 该证书关闭的是“半类补偿平铺没有结构”的误出口。剩余是排斥持久全频率 ratio 锁，或把它作为 ColumnCRT/PDEC/moving-family 终端缺陷处理。
+
+## 124. Half-class twist-pair character lock router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_twist_pair_character_lock_router.py
+docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.md
+docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.json
+data/prime-matrix-halfclass-twist-pair-character-lock-ledger.json
+```
+
+本步把上一节的二次剩余 ratio-Fourier 锁接回标准 Dirichlet 角色投影。若 `psi` 是 `Q` 上的非平凡角色，`chi` 是它到 `F_P^*` 的任一扩张，则另一扩张为 `chi*chi_2`。对 `a0 in H_s` 有精确恒等式：
+
+```text
+F_psi(a0)=chi(a0)*(T_chi+s*T_{chi chi_2})/2.
+```
+
+所以持久零列补偿必须使所有配对角色投影同时满足：
+
+```text
+chi(a0)*(T_chi+s*T_{chi chi_2})/2 = theta(P^2;P,a0)-c_a0.
+```
+
+这把剩余硬点压成：
+
+```text
+QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC
+```
+
+当前读数：
+
+```text
+subgroup_character_extension_closed=true
+twist_pair_projection_identity_closed=true
+orbit_lock_reformulation_closed=true
+single_character_or_capacity_sufficiency_rejected=true
+persistent_twist_pair_orbit_lock_excluded=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“全频率锁仍可能只是坐标表象”的误出口。剩余不是有限扫描可替代的命题，而是必须自足排斥全配对角色同步相位轨道锁，或把它纳入 ColumnCRT/PDEC/moving-family 终端缺陷链。
+
+## 125. Half-class log independence degeneracy router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_log_independence_degeneracy_router.py
+docs/monograph/prime-matrix-halfclass-log-independence-degeneracy-router.md
+docs/monograph/prime-matrix-halfclass-log-independence-degeneracy-router.json
+data/prime-matrix-halfclass-log-independence-degeneracy-ledger.json
+```
+
+本步把精确轨道锁继续压到素数支撑层。对不同非零 residue `a,b`，
+
+```text
+theta_a=theta_b
+```
+
+等价于对应素数乘积相等。由唯一分解和 residue 支撑互斥，若 `a!=b` 则只能
+
+```text
+S_a(P)=S_b(P)=empty.
+```
+
+因此 `P>=7` 时，punctured 半类精确平铺不可能是正平铺；它只能退化为：
+
+```text
+c=0 and S_{a0*u}(P)=empty for every u in Q, u!=1.
+```
+
+这把剩余硬点压成：
+
+```text
+PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC
+```
+
+当前读数：
+
+```text
+log_prime_product_independence_closed=true
+positive_exact_punctured_flatness_excluded=true
+orbit_lock_routed_to_zero_support_degeneracy=true
+punctured_halfclass_zero_support_degeneracy_excluded=false
+row_column_unconditional_closed=false
+```
+
+最新活动基：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+该证书关闭的是“精确轨道锁仍可能以正质量平铺存在”的误出口。剩余不是对数独立问题，而是必须证明同半类除缺孔外不可能全部没有 `P^2` 内素数到达，或把这种极端支撑退化纳入 ColumnCRT/PDEC/moving-family 终端缺陷链。

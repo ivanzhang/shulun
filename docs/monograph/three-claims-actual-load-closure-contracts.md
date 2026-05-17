@@ -4974,3 +4974,128 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步关闭的是“补偿平铺只是局部容量现象”的误出口：若零列平铺补偿持久存在，它必须表现为二次剩余 ratio 子群上的全非平凡频率同步锁相。行/列命题仍未无条件闭合。
+
+## 113. Half-class twist-pair character lock router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_twist_pair_character_lock_router.py
+docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.md
+docs/monograph/prime-matrix-halfclass-twist-pair-character-lock-router.json
+data/prime-matrix-halfclass-twist-pair-character-lock-ledger.json
+```
+
+本步继续下钻
+
+```text
+HalfClassRatioFourierLockExclusionOrColumnCRTPDEC
+```
+
+令 `Q` 为模 `P` 的二次剩余子群。`Q` 上每个非平凡频率 `psi` 都有模 `P` 的两条 Dirichlet 扩张 `chi` 与 `chi*chi_2`。对假想缺孔 `a0 in H_s`，上一节的 ratio-Fourier 系数满足精确配对公式：
+
+```text
+F_psi(a0)=chi(a0)*(T_chi+s*T_{chi chi_2})/2.
+```
+
+因此零列平铺补偿不是单个角色异常，也不是单纯容量问题；它要求所有二次扭曲角色对同步落到同一个 `a0` 相位轨道：
+
+```text
+chi(a0)*(T_chi+s*T_{chi chi_2})/2 = theta(P^2;P,a0)-c_a0
+```
+
+当前读数：
+
+```text
+subgroup_character_extension_closed=true
+twist_pair_projection_identity_closed=true
+orbit_lock_reformulation_closed=true
+single_character_or_capacity_sufficiency_rejected=true
+persistent_twist_pair_orbit_lock_excluded=false
+row_column_unconditional_closed=false
+```
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“ratio-Fourier 全频率锁仍停留在抽象子群语言”的误出口。剩余最窄接口是排斥持久二次扭曲配对角色轨道锁，或将其登记并排斥为 ColumnCRT/PDEC/moving-family 出口。行/列命题仍未无条件闭合。
+
+## 114. Half-class log independence degeneracy router
+
+新增文件
+
+```text
+experiments/prime_matrix_halfclass_log_independence_degeneracy_router.py
+docs/monograph/prime-matrix-halfclass-log-independence-degeneracy-router.md
+docs/monograph/prime-matrix-halfclass-log-independence-degeneracy-router.json
+data/prime-matrix-halfclass-log-independence-degeneracy-ledger.json
+```
+
+本步继续下钻
+
+```text
+QuadraticTwistPairCharacterOrbitLockExclusionOrColumnCRTPDEC
+```
+
+对非零 residue `a` 记
+
+```text
+S_a(P)={ell prime: ell<=P^2, ell!=P, ell=a mod P},
+theta_a=sum_{ell in S_a(P)} log ell.
+```
+
+若 `a!=b` 且 `theta_a=theta_b`，则
+
+```text
+prod_{ell in S_a(P)} ell = prod_{ell in S_b(P)} ell.
+```
+
+唯一分解强迫两个素数支撑完全相同；但不同 residue 支撑互不相交，所以只能同时为空。于是 `P>=7` 时，punctured 半类精确平铺
+
+```text
+theta(P^2;P,a0*u)=c  for all u in Q, u!=1
+```
+
+只能退化为
+
+```text
+c=0
+S_{a0*u}(P)=empty  for all u in Q, u!=1.
+```
+
+当前读数：
+
+```text
+log_prime_product_independence_closed=true
+positive_exact_punctured_flatness_excluded=true
+orbit_lock_routed_to_zero_support_degeneracy=true
+punctured_halfclass_zero_support_degeneracy_excluded=false
+row_column_unconditional_closed=false
+```
+
+最新活动基更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR AtomicSignedPayloadTraceConstructorBeforeAssignmentOrReturn
+ OR ((QuadraticHalfClassSquareScaleBiasMarginTheorem
+      OR EffectivePrimeModulusNoSiegelZeroOrBetaGapAtSquareScale)
+     AND PuncturedHalfClassZeroSupportDegeneracyExclusionOrColumnCRTPDEC))
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步关闭的是“精确全配对轨道锁还能保持正平铺”的误出口。剩余最窄接口是排斥 punctured 半类全零支撑退化，或将它登记并排斥为 ColumnCRT/PDEC/moving-family 出口。行/列命题仍未无条件闭合。
