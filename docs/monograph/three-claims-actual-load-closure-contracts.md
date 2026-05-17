@@ -1964,3 +1964,56 @@ GlobalNamedExitExclusionOrSummability
 ```
 
 即证明这些命名出口在全局持久反例族中全被排斥，或总质量可求和吸收。本节仍不是行/列命题无条件证明；它把剩余从“分类是否完备”推进到“命名出口是否可全局吸收”。
+
+## 53. global named-exit terminal choke 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_global_named_exit_terminal_choke_router.py
+docs/monograph/prime-matrix-global-named-exit-terminal-choke-router.md
+docs/monograph/prime-matrix-global-named-exit-terminal-choke-router.json
+data/prime-matrix-global-named-exit-terminal-choke-ledger.json
+```
+
+本证书把上一节 after-cutset 的十个命名出口继续压缩为五个终端 choke：
+
+```text
+SourceAndCRTMaterialization
+SupportMotionPrimitiveIdentity
+TransportSingletonActiveEll
+EpochPairPairedPressure
+MovingResidueShapeSAE
+```
+
+当前显式容量/相位读数为：
+
+```text
+terminal_choke_count=5
+all_terminal_chokes_closed_current_sweep=true
+row_column_unconditional_closed=false
+formal_pair_total=40
+formal_to_actual_gap=39
+unresolved_formal_pair_total_current=0
+crt_phase_margin=879
+min_endpoint_release_total_required=70
+endpoint_release_extra_over_support_width=50
+transport_reset_pdec_atom_count=0
+one_slot_epoch_spare_ratio=0.9038893044128646
+one_slot_epoch_min_spare_ratio=0.6901408450704225
+active_ell_band=23..109
+endpoint_gap_count=3
+max_known_gap_fill_delay=80
+candidate_single_pair_sae_mass_sum=0.0017756881442217531
+max_paired_side_pressure_product=0.16017797552836485
+paired_pressure_slack=0.8398220244716351
+moving_residue_shape_count=37
+```
+
+所以当前反例链与真实链的最新显式冲突不是单个局部容量过载：固定 CRT 窗有大相位余量，支撑移动要付出双端点释放和 primitive depth defect，transport reset 原子为空，singleton 一槽 epoch 有大量剩余容量，AffineTwin epoch-pair 的两侧压力乘积也远低于 1。若全局反例链仍要复现，只能让这些余量沿持久族同步复现；这会进入对应的 PDEC/SAE/ColumnCRT 终端。最新主攻点因此改写为：
+
+```text
+TerminalChokeSetGlobalExclusionOrSummability
+```
+
+即排斥这五个终端 choke 的持久复现，或证明它们的总质量可求和吸收。

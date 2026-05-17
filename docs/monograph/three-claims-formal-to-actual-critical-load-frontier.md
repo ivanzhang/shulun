@@ -2006,3 +2006,48 @@ GlobalNamedExitExclusionOrSummability
 ```
 
 也就是证明上述出口在持久反例链中不能无限复现，或它们的总质量可被 SAE/Rankin/PDEC 账本吸收。
+
+## 60. global named-exit terminal choke 收束
+
+后续文件
+
+```text
+experiments/prime_matrix_global_named_exit_terminal_choke_router.py
+docs/monograph/prime-matrix-global-named-exit-terminal-choke-router.md
+data/prime-matrix-global-named-exit-terminal-choke-ledger.json
+```
+
+after-cutset 的十个全局接口现在可合并为五个终端 choke：
+
+```text
+SourceAndCRTMaterialization:
+  source failure + CRT empty + window-edge/unused-target
+SupportMotionPrimitiveIdentity:
+  support motion + primitive identity shift + moving-slot family
+TransportSingletonActiveEll:
+  transport reset + singleton Rankin + active ell endpoint/gap
+EpochPairPairedPressure:
+  epoch-pair multiplicity + high-density/PressureProduct PDEC
+MovingResidueShapeSAE:
+  moving residue SAE + fixed residue ColumnCRT
+```
+
+当前所有终端 choke 都在 finite sweep 内闭合，关键余量如下：
+
+```text
+unresolved_formal_pair_total_current=0
+crt_phase_margin=879
+endpoint_release_extra_over_support_width=50
+transport_reset_pdec_atom_count=0
+one_slot_epoch_spare_ratio=0.9038893044128646
+one_slot_epoch_min_spare_ratio=0.6901408450704225
+paired_pressure_slack=0.8398220244716351
+```
+
+这说明最新前沿已经不是“找到另一个 actual packet”或“修补一个局部容量不等式”。若存在全局反例族，它必须在 source/CRT、support/primitive、transport/singleton/endpoint、epoch-pair pressure、moving-residue 五个终端 choke 中至少一个方向持久复现；而每个方向已经有对应的 PDEC/SAE/ColumnCRT 验收接口。下一硬点是：
+
+```text
+TerminalChokeSetGlobalExclusionOrSummability
+```
+
+也就是对五个终端 choke 建立全局排斥或可求和吸收。
