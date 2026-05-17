@@ -3687,3 +3687,38 @@ MaterializedFreshLayerPDECColumnCRTExclusionOrUnregisteredMovingFamilyRouter
 ```
 
 这一步不排斥材料化 fresh-layer PDEC/ColumnCRT，也不排斥未登记 moving family；它只把裸 remote P-space ColumnCRT 终端解释从剩余接口中删除。
+
+## 100. cycle-debt fresh-layer PDEC admission firewall
+
+新增文件
+
+```text
+experiments/prime_matrix_cycle_debt_fresh_layer_pdec_admission_firewall_router.py
+docs/monograph/prime-matrix-cycle-debt-fresh-layer-pdec-admission-firewall-router.md
+data/prime-matrix-cycle-debt-fresh-layer-pdec-admission-firewall-ledger.json
+```
+
+本步继续压缩上一节的材料化 fresh-layer PDEC/ColumnCRT 出口。registered support 内 fresh prime 投影在窗口内单射，不能形成本地材料化 PDEC；远程材料化若要成为 PDEC，必须通过 PDEC family 显式准入边界。该边界要求同一 formal unit、固定 phase map、去重后三物理 primitive atoms 以上、非二点 tautology、二秩以上且 cap-stable；否则回流 ColumnCRT/SAE/refined PDEC/sparse extractor/multiplicity。
+
+关键读数：
+
+```text
+registered_block_count=6
+minimum_first_fresh_minus_max_window=178
+minimum_remote_plus_first_fresh_log10=38.803
+local_registered_materialized_pdec_closed=true
+current_materialized_pdec_frontier_closed=true
+pdec_family_explicit_input_boundary_closed=true
+newlayer_schema_admission_closed=true
+newlayer_ranktwo_budget_independent_gate_removed=true
+current_corpus_materialized_fresh_layer_pdec_closed=true
+row_column_unconditional_closed=false
+```
+
+actual-load 前沿继续收缩为：
+
+```text
+FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter
+```
+
+这一步不证明未来 primitive fresh-layer PDEC schema 不存在，也不排斥未登记 moving family；它只关闭当前语料中的无名材料化 PDEC/ColumnCRT 口径。

@@ -1,0 +1,210 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_fresh_layer_pdec_admission_firewall_router",
+  "status": "current_materialized_fresh_layer_pdec_frontier_closed_future_schema_or_unregistered_moving_open",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "previous_hardpoint": "MaterializedFreshLayerPDECColumnCRTExclusionOrUnregisteredMovingFamilyRouter",
+  "registered_block_count": 6,
+  "minimum_first_fresh_minus_max_window": 178,
+  "minimum_remote_plus_first_fresh_log10": 38.80343430121626,
+  "local_registered_materialized_pdec_closed": true,
+  "current_materialized_pdec_frontier_closed": true,
+  "pdec_family_explicit_input_boundary_closed": true,
+  "newlayer_schema_admission_closed": true,
+  "newlayer_ranktwo_budget_independent_gate_removed": true,
+  "future_sparse_packet_schema_boundary_closed": true,
+  "current_corpus_materialized_fresh_layer_pdec_closed": true,
+  "future_explicit_primitive_fresh_layer_pdec_schema_submitted": false,
+  "future_explicit_primitive_fresh_layer_pdec_schema_excluded": false,
+  "unregistered_moving_family_excluded": false,
+  "row_column_unconditional_closed": false,
+  "hardpoint_after_router": "FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter",
+  "next_direct_attack_target": "FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter",
+  "blocks": [
+    {
+      "label": "both_branches_plus_k14_entry_postwall",
+      "support_width": 151,
+      "audit_slot_count": 190,
+      "first_fresh_prime": 88609,
+      "first_fresh_minus_max_window": 88419,
+      "local_affine_projection_injective": true,
+      "local_materialized_pdec_forbidden": true,
+      "remote_pspace_columncrt_modulus_log10": 103.10337197992303,
+      "remote_plus_first_fresh_log10": 108.05084981526188,
+      "future_schema_required_if_materialized": true
+    },
+    {
+      "label": "k13_branch_exclusive",
+      "support_width": 73,
+      "audit_slot_count": 73,
+      "first_fresh_prime": 251,
+      "first_fresh_minus_max_window": 178,
+      "local_affine_projection_injective": true,
+      "local_materialized_pdec_forbidden": true,
+      "remote_pspace_columncrt_modulus_log10": 40.431920579953356,
+      "remote_plus_first_fresh_log10": 42.83159430143439,
+      "future_schema_required_if_materialized": true
+    },
+    {
+      "label": "k14_branch_exclusive",
+      "support_width": 70,
+      "audit_slot_count": 70,
+      "first_fresh_prime": 293,
+      "first_fresh_minus_max_window": 223,
+      "local_affine_projection_injective": true,
+      "local_materialized_pdec_forbidden": true,
+      "remote_pspace_columncrt_modulus_log10": 36.33656668086215,
+      "remote_plus_first_fresh_log10": 38.80343430121626,
+      "future_schema_required_if_materialized": true
+    },
+    {
+      "label": "k14_branch_plus_entry",
+      "support_width": 78,
+      "audit_slot_count": 78,
+      "first_fresh_prime": 88609,
+      "first_fresh_minus_max_window": 88531,
+      "local_affine_projection_injective": true,
+      "local_materialized_pdec_forbidden": true,
+      "remote_pspace_columncrt_modulus_log10": 75.81866019414488,
+      "remote_plus_first_fresh_log10": 80.76613802948374,
+      "future_schema_required_if_materialized": true
+    },
+    {
+      "label": "k14_branch_plus_entry_plus_assigned",
+      "support_width": 78,
+      "audit_slot_count": 107,
+      "first_fresh_prime": 88609,
+      "first_fresh_minus_max_window": 88502,
+      "local_affine_projection_injective": true,
+      "local_materialized_pdec_forbidden": true,
+      "remote_pspace_columncrt_modulus_log10": 80.10504929137339,
+      "remote_plus_first_fresh_log10": 85.05252712671225,
+      "future_schema_required_if_materialized": true
+    },
+    {
+      "label": "k14_branch_plus_entry_plus_postwall",
+      "support_width": 78,
+      "audit_slot_count": 117,
+      "first_fresh_prime": 88609,
+      "first_fresh_minus_max_window": 88492,
+      "local_affine_projection_injective": true,
+      "local_materialized_pdec_forbidden": true,
+      "remote_pspace_columncrt_modulus_log10": 88.77831757722745,
+      "remote_plus_first_fresh_log10": 93.72579541256631,
+      "future_schema_required_if_materialized": true
+    }
+  ],
+  "required_future_schema_fields": [
+    "同一个 formal_unit_id 与一个固定 phase map",
+    "全部去重后至少三个物理 primitive atoms",
+    "不是二点 Fourier tautology 或单列 displacement",
+    "商去 shell/column 退化后相位秩至少为 2",
+    "对每个有限循环弧 localization 均 cap-stable",
+    "若 cap 失败，必须回流 SAE/refined PDEC/ColumnCRT/multiplicity",
+    "若转成 sparse/local survivor，必须提交有限 packet extractor schema",
+    "给出全集账本、哈希、open_obligation_count=0"
+  ],
+  "gates": [
+    {
+      "gate": "MaterializedFreshLayerBranchImported",
+      "closed": true,
+      "proved": true,
+      "meaning": "上一证书把裸 remote ColumnCRT 删除后，只留下材料化 fresh-layer PDEC/ColumnCRT 或未登记 moving family。",
+      "remaining": "MaterializedFreshLayerPDECColumnCRTExclusionOrUnregisteredMovingFamilyRouter"
+    },
+    {
+      "gate": "RegisteredLocalFreshMaterializationForbidden",
+      "closed": true,
+      "proved": true,
+      "meaning": "registered support 内 fresh prime 均大于窗口，且仿射投影单射；本地相位复用不能材料化为 PDEC。",
+      "remaining": "closed for registered blocks"
+    },
+    {
+      "gate": "CurrentMaterializedPDECFrontierClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "广义 PDEC 边界证书记录当前已物化合法非二点 primitive PDEC 候选为零。",
+      "remaining": "future explicit primitive schema only"
+    },
+    {
+      "gate": "ColumnCRTAbsorbedBeforeAdmission",
+      "closed": true,
+      "proved": true,
+      "meaning": "PDEC family 边界规定 ColumnCRT/位移不能直接准入；必须先转成 displacement/refined PDEC 或 SAE。",
+      "remaining": "closed as unnamed ColumnCRT terminal"
+    },
+    {
+      "gate": "NewLayerSchemaAdmissionClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若 fresh-layer PDEC 真正作为 new-layer 候选出现，其 formal-unit schema 准入层已闭合。",
+      "remaining": "rank-two cap-stable or named return"
+    },
+    {
+      "gate": "NewLayerRankTwoIndependentGateRemoved",
+      "closed": true,
+      "proved": true,
+      "meaning": "new-layer 二秩预算失败不再是独立输入；它会材料化为有限弧 cap 并回流命名出口或 flat gate。",
+      "remaining": "NewLayerNoConcentrationImpliesFlatAdmission if a future schema reaches it"
+    },
+    {
+      "gate": "SparseFallbackSchemaBoundaryClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "若所谓材料化只是 sparse packet 或局部幸存者失败，则未来 sparse schema 边界已要求完整 extractor。",
+      "remaining": "future sparse schema if new"
+    },
+    {
+      "gate": "CurrentCorpusMaterializedFreshPDECClosed",
+      "closed": true,
+      "proved": true,
+      "meaning": "当前 cycle-debt 语料中没有可准入的材料化 fresh-layer PDEC/ColumnCRT；无名材料化口径被删除。",
+      "remaining": "FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter"
+    },
+    {
+      "gate": "FutureExplicitPrimitiveFreshLayerPDECSchemaIfNew",
+      "closed": false,
+      "proved": false,
+      "meaning": "未来若真新增 fresh-layer PDEC family，必须提交同 formal unit、三物理原子以上、二秩 cap-stable 的全集 schema。",
+      "remaining": "FutureExplicitPrimitiveFreshLayerPDECSchema"
+    },
+    {
+      "gate": "UnregisteredMovingFamilyStillOpen",
+      "closed": false,
+      "proved": false,
+      "meaning": "阻断包、shape、source family 或 phase map 变化仍需单独 moving-family 路由。",
+      "remaining": "UnregisteredMovingFamilyRouter"
+    },
+    {
+      "gate": "RowColumnUnconditionalClosureReached",
+      "closed": false,
+      "proved": false,
+      "meaning": "本步只关闭当前语料中的无名材料化 PDEC 口径；没有证明未来 schema 不存在，也没有排斥 moving family。",
+      "remaining": "FutureExplicitPrimitiveFreshLayerPDECSchemaIfNewOrUnregisteredMovingFamilyRouter"
+    }
+  ],
+  "closed_gates": [
+    "MaterializedFreshLayerBranchImported",
+    "RegisteredLocalFreshMaterializationForbidden",
+    "CurrentMaterializedPDECFrontierClosed",
+    "ColumnCRTAbsorbedBeforeAdmission",
+    "NewLayerSchemaAdmissionClosed",
+    "NewLayerRankTwoIndependentGateRemoved",
+    "SparseFallbackSchemaBoundaryClosed",
+    "CurrentCorpusMaterializedFreshPDECClosed"
+  ],
+  "open_gates": [
+    "FutureExplicitPrimitiveFreshLayerPDECSchemaIfNew",
+    "UnregisteredMovingFamilyStillOpen",
+    "RowColumnUnconditionalClosureReached"
+  ],
+  "plain_conclusion": "当前 cycle-debt fresh-layer PDEC/ColumnCRT 没有可保留的无名材料化实例：registered 本地投影单射排除本地材料化，广义 PDEC 边界记录当前合法 primitive 候选为零，ColumnCRT 必须先被吸收到 PDEC/SAE，new-layer schema 与二秩预算独立门也已给出准入/回流纪律。因此剩余只能是未来新增的显式 primitive fresh-layer PDEC schema，或阻断包变化形成的未登记 moving family。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-remote-columncrt-feedback-ledger.json": "bb3b1891e79742dbf1b00792545f5cce080d64ffbfa6520f131a0711d49083ce",
+    "data/prime-matrix-cycle-debt-fresh-layer-local-collision-ledger.json": "07582cef6e5a7620516ace08f9477edcc3fa0ac2549c74078a965dd510e84870",
+    "docs/monograph/prime-matrix-pdec-family-explicit-input-boundary-router.json": "33273fb11ffbd8b1e4e5970d8f65f222da7c045263517e2b12f0145dff7d1bfa",
+    "docs/monograph/prime-matrix-newlayer-pdec-schema-admission-router.json": "448ce2b5e20fa5fa6d14a1a7e4c0272d64718721b7755d1d7390f377cee04f94",
+    "docs/monograph/prime-matrix-newlayer-ranktwo-budget-ledger-router.json": "73b82f49af3060e74bd08d8c15030b02197c1a14a63b9ddf62a81334097684a8",
+    "docs/monograph/prime-matrix-future-sparse-packet-extractor-schema-boundary-router.json": "1ea554698813752d96b91df8e1f5055b68b619aaeae536ec1a6ccc1861ed3ba3"
+  }
+}
