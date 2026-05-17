@@ -3348,3 +3348,43 @@ BranchReplayColumnCRTPDECExclusionOrFiniteAtomBaseCheck
 ```
 
 本步不排斥远程 ColumnCRT/PDEC，也不替代有限基例检查；它关闭的是“孤立原子可支撑全局反例链”的解释。
+
+## 85. cycle-debt finite atom boundary bridge 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_finite_atom_boundary_bridge_router.py
+docs/monograph/prime-matrix-cycle-debt-finite-atom-boundary-bridge-router.md
+docs/monograph/prime-matrix-cycle-debt-finite-atom-boundary-bridge-router.json
+data/prime-matrix-cycle-debt-finite-atom-boundary-bridge-ledger.json
+```
+
+本证书继续攻击 `BranchReplayColumnCRTPDECExclusionOrFiniteAtomBaseCheck`。它把有限原子基例检查与仓库中已有的有限桥分段对齐，避免把 `P<=5000` 的直接方阵验证误用到当前 cycle-debt 终端原子上。
+
+```text
+direct_grid_verified_max_p=5000
+dynamic_finite_bridge_range=[3001,99991]
+dynamic_finite_bridge_closed=true
+cover_pressure_atom_count=155
+cover_pressure_all_atoms_in_dynamic_finite_bridge=true
+arrival_wall_atom_count=55
+arrival_wall_tail_atom_count=31
+total_post100000_tail_atom_count=31
+tail_atom_p_range=[101087,134047]
+finite_atom_base_check_fully_closed=false
+```
+
+结构读数：
+
+- cycle-debt cover pressure 的 `155` 个 P 坐标全落在已关闭的 `3001<=P<100000` 动态有限桥内。
+- terminal arrival/post-wall 的 `55` 个坐标中，`24` 个在动态有限桥内，`31` 个进入 `P>=100000` 尾段。
+- 尾段原子由 `15` 个 assigned slot、`8` 个 postwall first prime、`8` 个 tail slot 构成，范围为 `101087..134047`。
+
+最新最窄剩余接口为：
+
+```text
+BranchReplayColumnCRTPDECExclusionOrPost100000TailAtomRunner
+```
+
+本步关闭的是“当前有限原子可被旧 P<=5000 直接验证整体吸收”的误解，并吸收了 `P<100000` 前缀原子；全局行/列命题仍未无条件闭合。

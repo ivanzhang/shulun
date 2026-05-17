@@ -3409,3 +3409,39 @@ BranchReplayColumnCRTPDECExclusionOrFiniteAtomBaseCheck
 ```
 
 这一步仍不关闭全局行/列命题；它把孤立原子从全局结构出口中剥离，保留远程 ColumnCRT/PDEC 排斥和有限基例检查。
+
+## 92. cycle-debt finite atom boundary bridge
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_finite_atom_boundary_bridge_router.py
+docs/monograph/prime-matrix-cycle-debt-finite-atom-boundary-bridge-router.md
+data/prime-matrix-cycle-debt-finite-atom-boundary-bridge-ledger.json
+```
+
+本步把 `BranchReplayColumnCRTPDECExclusionOrFiniteAtomBaseCheck` 中的有限基例检查拆成已覆盖前缀和尾段原子。旧直接方阵验证只覆盖 `P<=5000`，不能直接吸收当前 cycle-debt 原子；可用的是已归档的 `3001<=P<100000` 动态有限桥。
+
+```text
+cover_pressure_atom_count=155
+cover_pressure_all_atoms_in_dynamic_finite_bridge=true
+arrival_wall_atom_count=55
+arrival_wall_tail_atom_count=31
+total_dynamic_bridge_atom_count=179
+total_post100000_tail_atom_count=31
+tail_atom_p_range=[101087,134047]
+```
+
+结论：
+
+- 前缀 `P<100000` 的当前登记原子已由动态有限桥吸收；
+- 仍有 `31` 个 post-100000 tail atoms，不能由有限前缀证明关闭；
+- 这些尾段原子必须进入 post-100000 runner、tail lower-sieve 或 ColumnCRT/PDEC。
+
+当前 actual-load 前沿收窄为：
+
+```text
+BranchReplayColumnCRTPDECExclusionOrPost100000TailAtomRunner
+```
+
+这一步仍不关闭全局行/列命题；它只完成 finite atom 出口的边界分段。
