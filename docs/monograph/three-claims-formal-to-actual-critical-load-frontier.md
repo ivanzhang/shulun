@@ -4137,3 +4137,54 @@ NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource OR ExternalD
 
 这一步不是最终证明；它把 Q2/CRT 方向的全局剩余精确回接到 actual-source fiber 非集中、
 外部谱输入与 DStructure/Rankin 晋级验收。
+
+## 110. Global CRT homogeneity frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_global_crt_homogeneity_frontier_router.py
+docs/monograph/prime-matrix-global-crt-homogeneity-frontier-router.md
+docs/monograph/prime-matrix-global-crt-homogeneity-frontier-router.json
+data/prime-matrix-global-crt-homogeneity-frontier-ledger.json
+```
+
+本步专门审计“全局 CRT 周期中是否存在本质相位矛盾”这一最新剩余接口。Q1/Q2 端点不对称的强结论仍然保留：
+完整 `Q2` 阶轮会把相邻素数端点复制为被自身整除的复合点，所以同端点稳定 replay 不可能。
+但若端点移动，进入的是 fresh endpoint/source 问题；受控 non-PDEC 尾量被 `SAE` 吸收，持久相关进入
+`PDEC/ColumnCRT`，孔径失控必须提交 explicit moving-family schema。
+
+关键同步是 CRT 同质性：
+
+```text
+M_Y squarefree, r∤M_Y prime
+{a+tM_Y: 0<=t<r} mod r = all residue classes
+=> exactly one lift is deleted by r
+```
+
+所以有限 CRT 前缀本身是均匀删相位，不是全局矛盾。Euler 乘积给出临界密度直觉，
+但不是长度 `P` 短区间的 actual occupancy 证明。要把容量/相位矛盾升级为定理，必须提供
+actual-source exact-UV 非集中，或外部谱输入；strict 内部链条已经把前者同步到逐 primitive
+alpha/delta 核表。
+
+当前读数：
+
+```text
+pure_finite_crt_global_phase_contradiction_found=false
+global_crt_homogeneity_blocks_pure_phase_contradiction=true
+q2_crt_position_rigidity_routed_to_exact_source=true
+source_rank_package_synced_to_pointwise_kernel=true
+alpha_row_anchor_phase_emission_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 前沿更新为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步不是最终证明；它关闭纯 CRT 全局相位矛盾的误出口，并把主攻硬点压到 source/kernel 表的第一发射公式。

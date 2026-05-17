@@ -4174,3 +4174,48 @@ NonterminalExactUVFiberAperiodicityEstimateForActualPreCauchySource OR ExternalD
 ```
 
 本步关闭的是 Q2 局部残余与最终输入之间的对齐缺口；它没有证明 fiber 非集中、外部谱定理或独立晋级验收。
+
+## 103. Global CRT homogeneity 前沿同步回接
+
+后续文件
+
+```text
+experiments/prime_matrix_global_crt_homogeneity_frontier_router.py
+docs/monograph/prime-matrix-global-crt-homogeneity-frontier-router.md
+docs/monograph/prime-matrix-global-crt-homogeneity-frontier-router.json
+data/prime-matrix-global-crt-homogeneity-frontier-ledger.json
+```
+
+本证书把用户提出的 Q1/Q2 相邻素数不对称与全局 CRT 周期路线放在同一防火墙中。结论是：
+全 `Q2` 轮确实不能同时复现覆盖块和两个素端点；端点稳定 replay 已闭合。但纯有限 CRT 前缀具有同质提升结构：
+若 `r` 是新素数且 `r` 不整除旧轮模 `M_Y`，则每个旧余类 `a` 的 `r` 个提升 `a+tM_Y`
+在模 `r` 下遍历全部余类，恰删一个相位。因此无穷轮筛解释临界密度，却不自动给出长度 `P`
+移动区间的 actual occupancy 下界；除非相位方程形成已登记的 `PDEC/ColumnCRT`，否则不能从 CRT
+位置刚性直接推出全局矛盾。
+
+当前读数：
+
+```text
+full_q2_wheel_endpoint_stable_replay_impossible=true
+finite_crt_period_terminal_removed=true
+controlled_fresh_layer_tail_sae_imported=true
+unnamed_aperture_explosion_forbidden=true
+pure_finite_crt_global_phase_contradiction_found=false
+global_crt_homogeneity_blocks_pure_phase_contradiction=true
+q2_crt_position_rigidity_routed_to_exact_source=true
+source_rank_package_synced_to_pointwise_kernel=true
+alpha_row_anchor_phase_emission_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+最新剩余被同步为：
+
+```text
+AlphaRowAnchorPhaseEmissionFormulaLedger
+AND IndependentNoncanonicalPreCauchyArithmeticIdentityStatementLedger
+AND SameUnitExactUVRankMultiplicityCertificateForPrimitiveKernelRows
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步关闭的是“纯 CRT 全局相位矛盾”作为最终证明的误出口；它把剩余推进到 actual-source exact-UV
+与逐 primitive alpha/delta 核表前沿，但没有证明行/列命题无条件闭合。
