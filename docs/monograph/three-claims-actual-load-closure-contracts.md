@@ -2632,3 +2632,41 @@ TransverseCRTCoverPDECExclusionOrGlobalSupportMotionSAE
 ```
 
 本步关闭的是“cycle-debt CRT cover 可由本地周期/局部槽移动自然复现”的解释；全局仍需排斥 transverse CRT cover PDEC，或证明真正 global support-motion SAE 可求和吸收。
+
+## 68. cycle-debt sparse replay barrier 回接
+
+后续文件
+
+```text
+experiments/prime_matrix_cycle_debt_sparse_replay_barrier_router.py
+docs/monograph/prime-matrix-cycle-debt-sparse-replay-barrier-router.md
+docs/monograph/prime-matrix-cycle-debt-sparse-replay-barrier-router.json
+data/prime-matrix-cycle-debt-sparse-replay-barrier-ledger.json
+```
+
+本证书把横向 CRT cover 的 exact replay 复现间距显式化。若保持同一阻断图和同一阻断相位类，则完整 debt word 的平移量必须是全局横向 lcm 的倍数：
+
+```text
+global_exact_replay_cycle_modulus=337212073559813724487421695331234639247
+global_exact_replay_p_gap=1915364577819741955088555229481412750922960
+global_exact_replay_density_log10=-38.527903115735
+max_cycle_debt_support_width=15
+total_composite_wait_width=101
+full_relief_cycle_span=1102/71
+full_relief_cycle_span_ceiling=16
+global_modulus_over_full_cycle_span_ceiling_floor=21075754597488357780463855958202164952
+single_full_debt_copy_per_full_relief_horizon=true
+rows_with_replay_modulus_exceeding_own_debt=27
+exact_replay_branch_is_sae_sparse_current_certificate=true
+non_sparse_persistence_forces_moving_blocker_map=true
+```
+
+因此，在任意短于 `global_lcm` 的局部/中程 support-motion 窗口中，完整 transverse CRT debt word 至多出现一份 exact 复本。当前 full-relief 可见跨度只有 `ceil(1102/71)=16` 个 residue 周期，远小于完整复现间距；若坚持 exact replay，该分支只能作为孤立低密度原子进入 SAE 账本。若反例链要求正密度或短窗口内持续复现，就必须改变阻断素因子、相位类或行组合，这正是 moving transverse cover PDEC。
+
+最新最窄剩余接口为：
+
+```text
+SparseReplaySAEOrMovingTransverseCoverPDEC
+```
+
+本步关闭的是“保持同一 transverse CRT cover 即可高频补偿容量”的解释；全局仍需排斥 moving transverse cover PDEC，或把 exact sparse replay 的 SAE 求和完全接入。

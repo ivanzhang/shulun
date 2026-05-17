@@ -1,0 +1,754 @@
+{
+  "certificate_type": "prime_matrix_cycle_debt_sparse_replay_barrier_router",
+  "status": "exact_transverse_crt_replay_is_sparse_or_moving_pdec",
+  "same_theorem_target_preserved": true,
+  "no_theorem_switch": true,
+  "finite_sweep_not_used_as_global_proof": true,
+  "aggregate": {
+    "row_column_unconditional_closed": false,
+    "previous_hardpoint": "TransverseCRTCoverPDECExclusionOrGlobalSupportMotionSAE",
+    "period_p": 5680,
+    "ell": 71,
+    "global_exact_replay_cycle_modulus": 337212073559813724487421695331234639247,
+    "global_exact_replay_p_gap": 1915364577819741955088555229481412750922960,
+    "global_exact_replay_density_log10": -38.52790311573484,
+    "max_cycle_debt_support_width": 15,
+    "total_composite_wait_width": 101,
+    "full_relief_step_gap_after_reset": 1102,
+    "full_relief_cycle_span_exact": {
+      "numerator": 1102,
+      "denominator": 71,
+      "floor": 15,
+      "remainder": 37,
+      "ceiling": 16
+    },
+    "full_relief_p_gap_after_reset": 88160,
+    "global_dead_gap_cycles_after_debt_word": 337212073559813724487421695331234639232,
+    "global_dead_gap_p_after_debt_word": 1915364577819741955088555229481412750837760,
+    "global_modulus_over_max_debt_width": {
+      "numerator": 337212073559813724487421695331234639247,
+      "denominator": 15,
+      "floor": 22480804903987581632494779688748975949,
+      "remainder": 12,
+      "is_integer": false,
+      "log10_ratio": 37.351811856679156
+    },
+    "global_modulus_over_total_wait_width": {
+      "numerator": 337212073559813724487421695331234639247,
+      "denominator": 101,
+      "floor": 3338733401582314103835858369616184547,
+      "remainder": 0,
+      "is_integer": true,
+      "log10_ratio": 36.52358174195219
+    },
+    "global_modulus_over_full_cycle_span_ceiling": {
+      "numerator": 337212073559813724487421695331234639247,
+      "denominator": 16,
+      "floor": 21075754597488357780463855958202164952,
+      "remainder": 15,
+      "is_integer": false,
+      "log10_ratio": 37.32378313307891
+    },
+    "global_p_gap_over_full_relief_p_gap": {
+      "numerator": 1915364577819741955088555229481412750922960,
+      "denominator": 88160,
+      "floor": 21726004739334641051367459499562304343,
+      "remainder": 44080,
+      "is_integer": false,
+      "log10_ratio": 37.33697986993814
+    },
+    "single_full_debt_copy_per_full_relief_horizon": true,
+    "single_full_debt_copy_per_any_window_shorter_than_global_modulus": true,
+    "rows_with_replay_modulus_exceeding_own_debt": 27,
+    "rows_with_replay_modulus_exceeding_total_waits": 12,
+    "rows_with_single_copy_in_full_horizon": 21,
+    "positive_cycle_debt_residue_count": 27,
+    "exact_replay_branch_is_sae_sparse_current_certificate": true,
+    "non_sparse_persistence_forces_moving_blocker_map": true,
+    "hardpoint_after_router": "SparseReplaySAEOrMovingTransverseCoverPDEC",
+    "next_direct_attack_target": "SparseReplaySAEOrMovingTransverseCoverPDEC"
+  },
+  "row_replay_audits": [
+    {
+      "residue": 67,
+      "cycle_debt": 15,
+      "row_exact_replay_cycle_modulus": 55140500775337593,
+      "row_dead_gap_cycles_after_support": 55140500775337578,
+      "row_exact_replay_p_gap": 313198044403917528240,
+      "row_dead_gap_p_after_support": 313198044403917443040,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 55140500775337593,
+        "denominator": 15,
+        "floor": 3676033385022506,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 15.56537944691027
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 55140500775337593,
+        "denominator": 16,
+        "floor": 3446281298458599,
+        "remainder": 9,
+        "is_integer": false,
+        "log10_ratio": 15.537350723310027
+      }
+    },
+    {
+      "residue": 23,
+      "cycle_debt": 13,
+      "row_exact_replay_cycle_modulus": 127082193713013,
+      "row_dead_gap_cycles_after_support": 127082193713000,
+      "row_exact_replay_p_gap": 721826860289913840,
+      "row_dead_gap_p_after_support": 721826860289840000,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 127082193713013,
+        "denominator": 13,
+        "floor": 9775553362539,
+        "remainder": 6,
+        "is_integer": false,
+        "log10_ratio": 12.990141350773307
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 127082193713013,
+        "denominator": 16,
+        "floor": 7942637107063,
+        "remainder": 5,
+        "is_integer": false,
+        "log10_ratio": 12.899964720424219
+      }
+    },
+    {
+      "residue": 17,
+      "cycle_debt": 9,
+      "row_exact_replay_cycle_modulus": 183222039,
+      "row_dead_gap_cycles_after_support": 183222030,
+      "row_exact_replay_p_gap": 1040701181520,
+      "row_dead_gap_p_after_support": 1040701130400,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 183222039,
+        "denominator": 9,
+        "floor": 20358004,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 7.308735202471169
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 183222039,
+        "denominator": 16,
+        "floor": 11451377,
+        "remainder": 7,
+        "is_integer": false,
+        "log10_ratio": 7.058857729254569
+      }
+    },
+    {
+      "residue": 58,
+      "cycle_debt": 8,
+      "row_exact_replay_cycle_modulus": 26595429,
+      "row_dead_gap_cycles_after_support": 26595421,
+      "row_exact_replay_p_gap": 151062036720,
+      "row_dead_gap_p_after_support": 151061991280,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 26595429,
+        "denominator": 8,
+        "floor": 3324428,
+        "remainder": 5,
+        "is_integer": false,
+        "log10_ratio": 6.521717013148019
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 26595429,
+        "denominator": 16,
+        "floor": 1662214,
+        "remainder": 5,
+        "is_integer": false,
+        "log10_ratio": 6.220687017484038
+      }
+    },
+    {
+      "residue": 20,
+      "cycle_debt": 6,
+      "row_exact_replay_cycle_modulus": 310947,
+      "row_dead_gap_cycles_after_support": 310941,
+      "row_exact_replay_p_gap": 1766178960,
+      "row_dead_gap_p_after_support": 1766144880,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 310947,
+        "denominator": 6,
+        "floor": 51824,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 4.714535120736213
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 310947,
+        "denominator": 16,
+        "floor": 19434,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 4.288566388463932
+      }
+    },
+    {
+      "residue": 15,
+      "cycle_debt": 7,
+      "row_exact_replay_cycle_modulus": 278103,
+      "row_dead_gap_cycles_after_support": 278096,
+      "row_exact_replay_p_gap": 1579625040,
+      "row_dead_gap_p_after_support": 1579585280,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 278103,
+        "denominator": 7,
+        "floor": 39729,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 4.599107633770501
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 278103,
+        "denominator": 16,
+        "floor": 17381,
+        "remainder": 7,
+        "is_integer": false,
+        "log10_ratio": 4.240085691128833
+      }
+    },
+    {
+      "residue": 41,
+      "cycle_debt": 5,
+      "row_exact_replay_cycle_modulus": 13299,
+      "row_dead_gap_cycles_after_support": 13294,
+      "row_exact_replay_p_gap": 75538320,
+      "row_dead_gap_p_after_support": 75509920,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 13299,
+        "denominator": 5,
+        "floor": 2659,
+        "remainder": 4,
+        "is_integer": false,
+        "log10_ratio": 3.4248489816829784
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 13299,
+        "denominator": 16,
+        "floor": 831,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 2.919699003363072
+      }
+    },
+    {
+      "residue": 8,
+      "cycle_debt": 4,
+      "row_exact_replay_cycle_modulus": 2847,
+      "row_dead_gap_cycles_after_support": 2843,
+      "row_exact_replay_p_gap": 16170960,
+      "row_dead_gap_p_after_support": 16148240,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 2847,
+        "denominator": 4,
+        "floor": 711,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 2.8523274758189925
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 2847,
+        "denominator": 16,
+        "floor": 177,
+        "remainder": 15,
+        "is_integer": false,
+        "log10_ratio": 2.2502674844910304
+      }
+    },
+    {
+      "residue": 19,
+      "cycle_debt": 4,
+      "row_exact_replay_cycle_modulus": 2451,
+      "row_dead_gap_cycles_after_support": 2447,
+      "row_exact_replay_p_gap": 13921680,
+      "row_dead_gap_p_after_support": 13898960,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 2451,
+        "denominator": 4,
+        "floor": 612,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 2.7872833199241156
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 2451,
+        "denominator": 16,
+        "floor": 153,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 2.1852233285961535
+      }
+    },
+    {
+      "residue": 43,
+      "cycle_debt": 3,
+      "row_exact_replay_cycle_modulus": 2409,
+      "row_dead_gap_cycles_after_support": 2406,
+      "row_exact_replay_p_gap": 13683120,
+      "row_dead_gap_p_after_support": 13666080,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 2409,
+        "denominator": 3,
+        "floor": 803,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 2.904715545278681
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 2409,
+        "denominator": 16,
+        "floor": 150,
+        "remainder": 9,
+        "is_integer": false,
+        "log10_ratio": 2.177716817342419
+      }
+    },
+    {
+      "residue": 16,
+      "cycle_debt": 3,
+      "row_exact_replay_cycle_modulus": 861,
+      "row_dead_gap_cycles_after_support": 858,
+      "row_exact_replay_p_gap": 4890480,
+      "row_dead_gap_p_after_support": 4873440,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 861,
+        "denominator": 3,
+        "floor": 287,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 2.4578818967339924
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 861,
+        "denominator": 16,
+        "floor": 53,
+        "remainder": 13,
+        "is_integer": false,
+        "log10_ratio": 1.7308831687977302
+      }
+    },
+    {
+      "residue": 47,
+      "cycle_debt": 3,
+      "row_exact_replay_cycle_modulus": 231,
+      "row_dead_gap_cycles_after_support": 228,
+      "row_exact_replay_p_gap": 1312080,
+      "row_dead_gap_p_after_support": 1295040,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 231,
+        "denominator": 3,
+        "floor": 77,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 1.886490725172482
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 231,
+        "denominator": 16,
+        "floor": 14,
+        "remainder": 7,
+        "is_integer": false,
+        "log10_ratio": 1.1594919972362197
+      }
+    },
+    {
+      "residue": 13,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 83,
+      "row_dead_gap_cycles_after_support": 82,
+      "row_exact_replay_p_gap": 471440,
+      "row_dead_gap_p_after_support": 465760,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 83,
+        "denominator": 1,
+        "floor": 83,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 1.919078092376074
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 83,
+        "denominator": 16,
+        "floor": 5,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 0.7149581097201492
+      }
+    },
+    {
+      "residue": 57,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 67,
+      "row_dead_gap_cycles_after_support": 66,
+      "row_exact_replay_p_gap": 380560,
+      "row_dead_gap_p_after_support": 374880,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 67,
+        "denominator": 1,
+        "floor": 67,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 1.8260748027008264
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 67,
+        "denominator": 16,
+        "floor": 4,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 0.6219548200449017
+      }
+    },
+    {
+      "residue": 54,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 59,
+      "row_dead_gap_cycles_after_support": 58,
+      "row_exact_replay_p_gap": 335120,
+      "row_dead_gap_p_after_support": 329440,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 59,
+        "denominator": 1,
+        "floor": 59,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 1.7708520116421442
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 59,
+        "denominator": 16,
+        "floor": 3,
+        "remainder": 11,
+        "is_integer": false,
+        "log10_ratio": 0.5667320289862194
+      }
+    },
+    {
+      "residue": 42,
+      "cycle_debt": 2,
+      "row_exact_replay_cycle_modulus": 51,
+      "row_dead_gap_cycles_after_support": 49,
+      "row_exact_replay_p_gap": 289680,
+      "row_dead_gap_p_after_support": 278320,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 51,
+        "denominator": 2,
+        "floor": 25,
+        "remainder": 1,
+        "is_integer": false,
+        "log10_ratio": 1.406540180433955
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 51,
+        "denominator": 16,
+        "floor": 3,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": 0.5034501934420115
+      }
+    },
+    {
+      "residue": 2,
+      "cycle_debt": 2,
+      "row_exact_replay_cycle_modulus": 33,
+      "row_dead_gap_cycles_after_support": 31,
+      "row_exact_replay_p_gap": 187440,
+      "row_dead_gap_p_after_support": 176080,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 33,
+        "denominator": 2,
+        "floor": 16,
+        "remainder": 1,
+        "is_integer": false,
+        "log10_ratio": 1.2174839442139063
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 33,
+        "denominator": 16,
+        "floor": 2,
+        "remainder": 1,
+        "is_integer": false,
+        "log10_ratio": 0.3143939572219627
+      }
+    },
+    {
+      "residue": 1,
+      "cycle_debt": 2,
+      "row_exact_replay_cycle_modulus": 21,
+      "row_dead_gap_cycles_after_support": 19,
+      "row_exact_replay_p_gap": 119280,
+      "row_dead_gap_p_after_support": 107920,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 21,
+        "denominator": 2,
+        "floor": 10,
+        "remainder": 1,
+        "is_integer": false,
+        "log10_ratio": 1.021189299069938
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 21,
+        "denominator": 16,
+        "floor": 1,
+        "remainder": 5,
+        "is_integer": false,
+        "log10_ratio": 0.11809931207799451
+      }
+    },
+    {
+      "residue": 24,
+      "cycle_debt": 2,
+      "row_exact_replay_cycle_modulus": 21,
+      "row_dead_gap_cycles_after_support": 19,
+      "row_exact_replay_p_gap": 119280,
+      "row_dead_gap_p_after_support": 107920,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 21,
+        "denominator": 2,
+        "floor": 10,
+        "remainder": 1,
+        "is_integer": false,
+        "log10_ratio": 1.021189299069938
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 21,
+        "denominator": 16,
+        "floor": 1,
+        "remainder": 5,
+        "is_integer": false,
+        "log10_ratio": 0.11809931207799451
+      }
+    },
+    {
+      "residue": 62,
+      "cycle_debt": 2,
+      "row_exact_replay_cycle_modulus": 21,
+      "row_dead_gap_cycles_after_support": 19,
+      "row_exact_replay_p_gap": 119280,
+      "row_dead_gap_p_after_support": 107920,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 21,
+        "denominator": 2,
+        "floor": 10,
+        "remainder": 1,
+        "is_integer": false,
+        "log10_ratio": 1.021189299069938
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 21,
+        "denominator": 16,
+        "floor": 1,
+        "remainder": 5,
+        "is_integer": false,
+        "log10_ratio": 0.11809931207799451
+      }
+    },
+    {
+      "residue": 63,
+      "cycle_debt": 2,
+      "row_exact_replay_cycle_modulus": 21,
+      "row_dead_gap_cycles_after_support": 19,
+      "row_exact_replay_p_gap": 119280,
+      "row_dead_gap_p_after_support": 107920,
+      "single_copy_in_full_relief_horizon": true,
+      "row_modulus_over_own_debt": {
+        "numerator": 21,
+        "denominator": 2,
+        "floor": 10,
+        "remainder": 1,
+        "is_integer": false,
+        "log10_ratio": 1.021189299069938
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 21,
+        "denominator": 16,
+        "floor": 1,
+        "remainder": 5,
+        "is_integer": false,
+        "log10_ratio": 0.11809931207799451
+      }
+    },
+    {
+      "residue": 60,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 11,
+      "row_dead_gap_cycles_after_support": 10,
+      "row_exact_replay_p_gap": 62480,
+      "row_dead_gap_p_after_support": 56800,
+      "single_copy_in_full_relief_horizon": false,
+      "row_modulus_over_own_debt": {
+        "numerator": 11,
+        "denominator": 1,
+        "floor": 11,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 1.041392685158225
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 11,
+        "denominator": 16,
+        "floor": 0,
+        "remainder": 11,
+        "is_integer": false,
+        "log10_ratio": -0.16272729749769987
+      }
+    },
+    {
+      "residue": 64,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 7,
+      "row_dead_gap_cycles_after_support": 6,
+      "row_exact_replay_p_gap": 39760,
+      "row_dead_gap_p_after_support": 34080,
+      "single_copy_in_full_relief_horizon": false,
+      "row_modulus_over_own_debt": {
+        "numerator": 7,
+        "denominator": 1,
+        "floor": 7,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 0.8450980400142568
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 7,
+        "denominator": 16,
+        "floor": 0,
+        "remainder": 7,
+        "is_integer": false,
+        "log10_ratio": -0.359021942641668
+      }
+    },
+    {
+      "residue": 25,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 3,
+      "row_dead_gap_cycles_after_support": 2,
+      "row_exact_replay_p_gap": 17040,
+      "row_dead_gap_p_after_support": 11360,
+      "single_copy_in_full_relief_horizon": false,
+      "row_modulus_over_own_debt": {
+        "numerator": 3,
+        "denominator": 1,
+        "floor": 3,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 0.47712125471966244
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 3,
+        "denominator": 16,
+        "floor": 0,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": -0.7269987279362624
+      }
+    },
+    {
+      "residue": 29,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 3,
+      "row_dead_gap_cycles_after_support": 2,
+      "row_exact_replay_p_gap": 17040,
+      "row_dead_gap_p_after_support": 11360,
+      "single_copy_in_full_relief_horizon": false,
+      "row_modulus_over_own_debt": {
+        "numerator": 3,
+        "denominator": 1,
+        "floor": 3,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 0.47712125471966244
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 3,
+        "denominator": 16,
+        "floor": 0,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": -0.7269987279362624
+      }
+    },
+    {
+      "residue": 49,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 3,
+      "row_dead_gap_cycles_after_support": 2,
+      "row_exact_replay_p_gap": 17040,
+      "row_dead_gap_p_after_support": 11360,
+      "single_copy_in_full_relief_horizon": false,
+      "row_modulus_over_own_debt": {
+        "numerator": 3,
+        "denominator": 1,
+        "floor": 3,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 0.47712125471966244
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 3,
+        "denominator": 16,
+        "floor": 0,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": -0.7269987279362624
+      }
+    },
+    {
+      "residue": 52,
+      "cycle_debt": 1,
+      "row_exact_replay_cycle_modulus": 3,
+      "row_dead_gap_cycles_after_support": 2,
+      "row_exact_replay_p_gap": 17040,
+      "row_dead_gap_p_after_support": 11360,
+      "single_copy_in_full_relief_horizon": false,
+      "row_modulus_over_own_debt": {
+        "numerator": 3,
+        "denominator": 1,
+        "floor": 3,
+        "remainder": 0,
+        "is_integer": true,
+        "log10_ratio": 0.47712125471966244
+      },
+      "row_modulus_over_full_cycle_span_ceiling": {
+        "numerator": 3,
+        "denominator": 16,
+        "floor": 0,
+        "remainder": 3,
+        "is_integer": false,
+        "log10_ratio": -0.7269987279362624
+      }
+    }
+  ],
+  "plain_conclusion": "横向 CRT cover 若保持同一阻断图 exact replay，则完整 debt word 的下一次复现必须相隔 337212073559813724487421695331234639247 个 residue 周期，即 P 距离 1915364577819741955088555229481412750922960。而当前 full-relief 可见跨度只有 1102/71 个周期，向上取整为 16。因此任意短于 global_lcm 的局部/中程 support-motion 窗口至多包含一份完整复本；exact 分支是稀疏 SAE 型。若反例链需要高频复现，就不能保持同一 CRT cover，而必须移动阻断素因子或相位类，进入 moving transverse cover PDEC。",
+  "dependency_hashes": {
+    "data/prime-matrix-cycle-debt-transverse-crt-independence-ledger.json": "f8fa7ddd7e2c0c3388c086e85ffd5ae3db449c27102a47ad1bb0ebe0292f4de9",
+    "data/prime-matrix-cycle-debt-crt-cover-pressure-ledger.json": "e2731895ab36398581674261c359b074ef71dba80c47601be4992723de15ddd8",
+    "data/prime-matrix-accepted-reset-full-relief-horizon-ledger.json": "52c01ff7e8af247a37b25f5d3266debadd3bdc4ae79ad5cc604fb920fa5d108c"
+  }
+}
