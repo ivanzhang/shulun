@@ -4236,3 +4236,48 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 
 这一步不是最终证明；它把 global CRT 路线与当前 strict 饱和前沿对齐，并明确剩余只有 PDEC 作用域新证书
 或新的显式 joint alpha/delta 构造公式能破环。
+
+## 112. Global CRT branch trace frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_global_crt_branch_trace_frontier_router.py
+docs/monograph/prime-matrix-global-crt-branch-trace-frontier-router.md
+docs/monograph/prime-matrix-global-crt-branch-trace-frontier-router.json
+data/prime-matrix-global-crt-branch-trace-frontier-ledger.json
+```
+
+本步把 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 进一步压缩。若新公式沿旧路线分裂为
+alpha-side、same-row、row-level、signed-source，则只形成已登记固定点；反分裂公式又要求原子 joint rows
+声明；原子声明又压到内置 signed coefficient/pairing 闭式；该闭式最终需要
+`ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn`。
+
+这正是 Q1/Q2-CRT 全局路线与真实链之间的最新显式交叉点：CRT 和 unsigned skeleton 只给位置与相位，
+不能决定 signed coefficient 的取向/local-factor 奇数据。若要形成真正容量/相位矛盾，必须在同一
+formal unit 的 Cauchy 前 branch trace 中同时给出 word、coefficient、alpha/delta pairing、exact UV
+和失败回流。
+
+当前读数：
+
+```text
+pdec_scope_branch_still_open=true
+builtin_pairing_reduced_to_exact_branch_trace=true
+acyclic_same_set_scope_match_proved=false
+exact_atomic_joint_branch_trace_signed_coefficient_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+actual-load 前沿更新为：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步不是最终证明；它把“新 joint 公式”硬点压到 exact atomic branch trace signed coefficient
+公式，并保留 PDEC same-set 作用域匹配作为独立可攻证书。

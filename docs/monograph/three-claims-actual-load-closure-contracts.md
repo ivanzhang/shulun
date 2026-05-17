@@ -4265,3 +4265,49 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 这一步继续推进了全局 CRT 路线的对齐深度：纯 CRT 相位矛盾、alpha row 局部公式、CleanKLS/DLS
 和 seed-cycle-cut 都不是当前已证闭合出口。剩余真正非循环候选是 PDEC same-set 作用域匹配或新的显式
 joint alpha/delta 构造公式。
+
+## 105. Global CRT branch trace 前沿回接
+
+后续文件
+
+```text
+experiments/prime_matrix_global_crt_branch_trace_frontier_router.py
+docs/monograph/prime-matrix-global-crt-branch-trace-frontier-router.md
+docs/monograph/prime-matrix-global-crt-branch-trace-frontier-router.json
+data/prime-matrix-global-crt-branch-trace-frontier-ledger.json
+```
+
+本证书把上一节的 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact` 继续沿已有 strict
+反分裂/原子 joint row/内置 pairing 链下钻。旧分裂路线会回到 row-level/signed-source 固定点，
+所以真正需要的是 atomic branch trace：对每条 atomic joint row，在同一 formal unit 和
+Cauchy/Phi/payment 前完整列出 branch trace，同时同步给出 basis word、signed coefficient、
+alpha/delta pairing、orientation/local factor、exact UV 和命名回流。
+
+当前读数：
+
+```text
+global_crt_terminal_saturation_imported=true
+pdec_scope_branch_still_open=true
+new_joint_formula_terminal_obligation_imported=true
+new_joint_reduced_to_antisplit_formula=true
+antisplit_reduced_to_atomic_declaration=true
+atomic_declaration_reduced_to_builtin_pairing=true
+builtin_pairing_reduced_to_exact_branch_trace=true
+acyclic_same_set_scope_match_proved=false
+exact_atomic_joint_branch_trace_signed_coefficient_formula_proved=false
+row_column_unconditional_closed=false
+```
+
+最新 strict 活动基压成：
+
+```text
+(AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+这一步把“新 joint 公式”继续精确到 signed coefficient 的奇取向数据来源。PDEC scope 与 atomic
+branch trace 二者均未证明，因此行/列命题仍未无条件闭合。
