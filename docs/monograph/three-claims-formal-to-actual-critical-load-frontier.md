@@ -9248,3 +9248,64 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientSh
 本步没有证明 short-arc cluster cap、phase-cycle actual-mean cap、孤立
 singleton 求和或 sparse SAE 求和；它只把 quotient phase cycle 拆成短弧和
 完整周期均值/尾弧。
+
+## 204. Stable-ladder quotient arc Fourier frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_quotient_arc_fourier_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-arc-fourier-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-arc-fourier-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-arc-fourier-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap`。
+同步结果：
+
+```text
+short_arc_or_mean_imported=true
+isolated_singleton_carried_forward=true
+quotient_circle_group_closed=true
+actual_phase_load_measure_closed=true
+arc_discrepancy_functional_closed=true
+dirichlet_kernel_identity_closed=true
+nontrivial_frequency_lower_bound_closed=true
+phase_mean_as_point_arc_closed=true
+anonymous_short_arc_or_mean_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+quotient_arc_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：short-arc cluster 与 phase-cycle mean 不是两个出口；
+它们都是 `C_R=Z/RZ` 上中心化 actual phase load `nu` 与区间指标 `1_A`
+的相关：
+
+```text
+Delta(A)=sum_{r in A}nu(r).
+```
+
+由于 `sum nu=0`，平凡频率消失，Dirichlet kernel 恒等式给出：
+
+```text
+Delta(A)=(1/R) sum_{h=1}^{R-1} hat nu(h) hat 1_A(-h).
+```
+
+因此 `Delta(A)>0` 强制存在非平凡频率：
+
+```text
+|hat nu(h)| >= R*Delta(A)/sum_{h=1}^{R-1}|hat 1_A(h)|.
+```
+
+新的直接主攻为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap
+```
+
+本步没有证明 quotient arc Fourier/PDEC cap、孤立 singleton 求和或 sparse
+SAE 求和；它只把 short-arc/phase-mean 剩余桥接为显式非平凡频率证书。

@@ -13430,6 +13430,82 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Stable-ladder quotient arc Fourier reduction]
+The quotient short-arc cluster and the phase-cycle actual-mean outlet have a
+single finite Fourier form.  The open hard point
+\begin{quote}\scriptsize\ttfamily
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+StableLadderQuotientShortArcOrMeanImportedLedger\\
+AND StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourierLedger\\
+AND StableLadderQuotientCircleGroupLedger\\
+AND StableLadderQuotientActualPhaseLoadMeasureLedger\\
+AND StableLadderQuotientArcDiscrepancyFunctionalLedger\\
+AND StableLadderQuotientDirichletKernelIdentityLedger\\
+AND StableLadderQuotientNontrivialFrequencyLowerBoundLedger\\
+AND StableLadderPhaseMeanCapAsPointArcLedger\\
+AND NoAnonymousShortArcOrPhaseMeanExitLedger\\
+AND SparseScaleLadderSAECarriedForwardAfterQuotientFourierLedger\\
+AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap.
+\end{quote}
+\end{theorem}
+\begin{proof}[Quotient arc Fourier ledger]
+Let
+\[
+  C_R=\mathbf Z/R\mathbf Z,\qquad R=q_j/\gcd(q_j,B),
+  \qquad d=n_2-n_1=tB .
+\]
+All pivot phases of the quotient-pair witnesses are determined by
+\(t\bmod R\).  Let \(\mu(r)\) be the number of actual quotient witnesses with
+\(t\equiv r\pmod R\).  Subtract the relevant actual-load model or complete
+cycle mean and write
+\[
+  \nu(r)=\mu(r)-\operatorname {model}(r),\qquad \sum_{r\in C_R}\nu(r)=0 .
+\]
+This centering is the formal-to-actual guard: the model is not used as actual
+load unless the actual-counting ledger has supplied it.
+
+For any arc \(A\subset C_R\), set
+\[
+  \Delta(A)=\sum_{r\in A}\nu(r).
+\]
+A quotient short-arc cluster is exactly a proper arc with \(\Delta(A)>0\).
+The phase-cycle actual-mean cap is the point-arc case \(A=\{r_0\}\).
+
+Use the Fourier transform
+\[
+  \widehat f(h)=\sum_{r\in C_R} f(r)e^{-2\pi ihr/R}.
+\]
+Since \(\widehat \nu(0)=0\), Fourier inversion gives the exact identity
+\[
+  \Delta(A)=\frac1R\sum_{h=1}^{R-1}\widehat\nu(h)
+             \widehat{\mathbf 1_A}(-h).
+\]
+Let
+\[
+  \Lambda_R(A)=\sum_{h=1}^{R-1}\left|\widehat{\mathbf 1_A}(h)\right|.
+\]
+If \(\Delta(A)>0\), the triangle inequality forces a non-trivial frequency
+\[
+  \left|\widehat\nu(h)\right|
+  \ge \frac{R\Delta(A)}{\Lambda_R(A)}
+  \qquad (1\le h\le R-1).
+\]
+For \(A=\{r_0\}\), one has \(\Lambda_R(A)=R-1\).  Thus both the short-arc
+cluster and the phase-cycle actual-mean outlet are no longer anonymous: they
+are quotient arc Fourier/PDEC inputs.
+
+This theorem does not prove the quotient arc Fourier/PDEC cap, it does not
+prove summability of isolated singletons, and it does not prove global
+summability of the sparse scale-ladder SAE outlet.  The row/column theorem
+remains open.  The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-arc-fourier-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

@@ -1,0 +1,143 @@
+# Prime Matrix stable-ladder quotient arc Fourier 证书
+
+**状态：** `short_arc_or_phase_mean_reduced_to_quotient_arc_fourier_open`
+
+short-arc cluster 与 phase-cycle actual-mean cap 可统一为 C_R=Z/RZ 上的零均值 actual phase load 与区间指标的相关。对任意弧 A，Delta(A)=sum_A nu=(1/R)sum_{h!=0}hat nu(h)hat 1_A(-h)。若 Delta(A)>0，则某个非平凡频率满足显式 Dirichlet-kernel 下界。因此剩余压成 quotient arc Fourier/PDEC cap。
+
+```text
+short_arc_or_mean_imported=true
+isolated_singleton_carried_forward=true
+quotient_circle_group_closed=true
+actual_phase_load_measure_closed=true
+arc_discrepancy_functional_closed=true
+dirichlet_kernel_identity_closed=true
+nontrivial_frequency_lower_bound_closed=true
+phase_mean_as_point_arc_closed=true
+anonymous_short_arc_or_mean_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+quotient_arc_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+## 1. quotient 相位圆
+
+沿用上一层记号：
+
+```text
+B=W_-j, R=q_j/gcd(q_j,B), d=n2-n1=tB.
+```
+
+所有 pair 的 pivot 相位只依赖 `t mod R`，因此相位空间是有限循环群：
+
+```text
+C_R=Z/RZ.
+```
+
+## 2. actual phase load
+
+令 `mu(r)` 是 actual quotient witnesses 中 `t congruent r mod R` 的个数。按对应分支的 expected/formal mean 中心化：
+
+```text
+nu(r)=mu(r)-model(r),
+sum_{r mod R}nu(r)=0.
+```
+
+`model(r)` 可以是完整周期均值 `a`，也可以是 short-arc cap 使用的同一 actual-load 口径期望；本证书只要求中心化后的零总量，不把 formal envelope 当成 actual load。
+
+## 3. 短弧偏差
+
+对任意弧 `A subset C_R`，定义：
+
+```text
+Delta(A)=sum_{r in A}nu(r).
+```
+
+short-arc cluster 是某个真短弧 `A` 上的 `Delta(A)>0`；phase-cycle actual-mean cap 是点弧 `A={r0}` 的同一情形。
+
+## 4. Dirichlet-kernel Fourier 证书
+
+取 Fourier 变换：
+
+```text
+hat f(h)=sum_{r mod R} f(r) exp(-2*pi*i*h*r/R).
+```
+
+由于 `sum nu=0`，平凡频率消失，故：
+
+```text
+Delta(A)=(1/R) sum_{h=1}^{R-1} hat nu(h) * hat 1_A(-h).
+```
+
+记：
+
+```text
+Lambda_R(A)=sum_{h=1}^{R-1}|hat 1_A(h)|.
+```
+
+若 `Delta(A)>0`，则存在非平凡频率 `h` 满足：
+
+```text
+|hat nu(h)| >= R*Delta(A)/Lambda_R(A).
+```
+
+当 `A={r0}` 时，`Lambda_R(A)=R-1`，得到点相位均值偏差的显式下界。
+
+## 5. 新硬点
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap
+  -> StableLadderQuotientShortArcOrMeanImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourierLedger
+  AND StableLadderQuotientCircleGroupLedger
+  AND StableLadderQuotientActualPhaseLoadMeasureLedger
+  AND StableLadderQuotientArcDiscrepancyFunctionalLedger
+  AND StableLadderQuotientDirichletKernelIdentityLedger
+  AND StableLadderQuotientNontrivialFrequencyLowerBoundLedger
+  AND StableLadderPhaseMeanCapAsPointArcLedger
+  AND NoAnonymousShortArcOrPhaseMeanExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterQuotientFourierLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap
+```
+
+剩余从 short-arc/phase-mean 黑箱变成 quotient arc Fourier/PDEC cap，外加孤立 singleton 与 sparse scale-ladder SAE 全局求和问题。
+
+## 6. 判定表
+
+| gate | closed | proved | meaning | remaining |
+| --- | --- | --- | --- | --- |
+| StableLadderQuotientShortArcOrMeanImported | `true` | `false` | 上一层剩余为孤立 singleton、quotient short-arc cluster、phase-cycle actual-mean cap 或 sparse SAE。 | SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap |
+| StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourier | `true` | `false` | 孤立 singleton atom 继续作为单独 summability/cap 出口；本步不证明其全局可求和。 | StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourierLedger |
+| StableLadderQuotientCircleGroupClosed | `true` | `true` | quotient 相位生活在有限循环群 C_R=Z/RZ，其中 R=q_j/gcd(q_j,B)。 | StableLadderQuotientCircleGroupLedger |
+| StableLadderQuotientActualPhaseLoadMeasureClosed | `true` | `true` | 把 actual quotient witnesses 按 t mod R 计数为 mu(r)，并以 expected/formal mean 中心化为零总量 nu(r)。 | StableLadderQuotientActualPhaseLoadMeasureLedger |
+| StableLadderQuotientArcDiscrepancyFunctionalClosed | `true` | `true` | 任意短弧 A 的过载是 Delta(A)=sum_{r in A}nu(r)>0。 | StableLadderQuotientArcDiscrepancyFunctionalLedger |
+| StableLadderQuotientDirichletKernelIdentityClosed | `true` | `true` | Delta(A)=(1/R) sum_{h!=0} hat nu(h) hat 1_A(-h)，其中 hat 1_A 是显式 Dirichlet kernel。 | StableLadderQuotientDirichletKernelIdentityLedger |
+| StableLadderQuotientNontrivialFrequencyLowerBoundClosed | `true` | `true` | 若 Delta(A)>0，则存在 h!=0 使 \|hat nu(h)\| >= R*Delta(A)/sum_{h!=0}\|hat 1_A(h)\|。 | StableLadderQuotientNontrivialFrequencyLowerBoundLedger |
+| StableLadderPhaseMeanCapAsPointArcClosed | `true` | `true` | phase-cycle actual-mean 偏差是 A={r0} 的点弧情形，故同样进入非平凡频率证书。 | StableLadderPhaseMeanCapAsPointArcLedger |
+| NoAnonymousShortArcOrPhaseMeanExit | `true` | `true` | short-arc cluster 与 phase-cycle mean cap 被统一为 quotient arc Fourier/PDEC 输入。 | NoAnonymousShortArcOrPhaseMeanExitLedger |
+| SparseScaleLadderSAECarriedForwardAfterQuotientFourier | `true` | `false` | sparse scale-ladder SAE 继续前传；本步不证明全局求和。 | SparseScaleLadderSAECarriedForwardAfterQuotientFourierLedger |
+| QuotientArcFourierCapStillOpen | `false` | `false` | 仍未排斥 quotient arc Fourier/PDEC 下界，也未证明孤立 singleton 或 sparse SAE 可求和。 | SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap |
+| RowColumnUnconditionalClosureReached | `false` | `false` | 行/列命题仍需关闭孤立 singleton、quotient arc Fourier/PDEC cap 或 sparse SAE。 | SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap |
+
+## 7. 新活动基
+
+```text
+((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND DyadicLPFDeletionLayerPartitionLedger AND DyadicDebtLocalizationForAnyBudgetVectorLedger AND RampSaturatedTailWeightSplitLedger AND QuotientLayerCofactorIntervalLedger AND CofactorIntervalEndpointFormulaLedger AND RoughCofactorIntervalCRTSupportLedger AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC AND CofactorCellWeightedEnvelopeLedger AND RoughSupportQuotaCriterionLedger AND CofactorLeastPrimeFactorPartitionLedger AND CofactorLPFCRTCellLedger AND CofactorCoverPrimeProductWidthLedger AND LocalCofactorLPFCoverDebtOrFiniteAtomPDEC AND CofactorCoverExcessThresholdLedger AND ActiveCofactorPrimeProductDichotomyLedger AND DyadicCofactorPrimePressurePartitionLedger AND OverfullDyadicRLayerLocalizationLedger AND FixedRToMIntervalEndpointLedger AND RLayerRoughMCRTSupportLedger AND SmallProductActiveCoverConcentrationPDEC AND ActivePrimeCardinalityFromProductLedger AND SmallZFiniteAtomBoundaryLedger AND SingleCofactorPrimePressureLocalizationLedger AND FixedRSourceEllPartitionLedger AND FixedREllRoughMCRTCellLedger AND FixedPairProductWidthColumnCRTExitLedger AND SingleRSmallProductPressurePDEC AND FixedPairPressureImportedLedger AND FixedPairMSupportStrictDescentLedger AND MEqualsOneFiniteAtomLedger AND SecondCofactorLeastPrimeFactorPartitionLedger AND SecondLPFRoughTCRTCellLedger AND SecondLPFProductWidthColumnCRTExitLedger AND ResidualSupportWidthStrictDecreaseNoCycleLedger AND SecondLPFTriplePressureImportedLedger AND IteratedLPFOrderedRoughResidualChainLedger AND LPFSupportProductReciprocityInvariantLedger AND LPFDepthRankBudgetLedger AND IteratedLPFCRTWordCellLedger AND IteratedLPFProductWidthColumnCRTExitLedger AND TerminalResidualFiniteAtomLedger AND IteratedLPFWellFoundedNoCycleLedger AND RankBudgetedMovingFamilyImportedLedger AND IteratedLPFWordSignaturePartitionLedger AND LPFWordEntropyFiniteCapLedger AND AggregatePressureToSingleLPFWordLedger AND FixedLPFWordColumnCRTExitLedger AND FirstMovingLPFCoordinateLedger AND MovingCoordinateSupportReciprocityLedger AND NoAnonymousRankBudgetedMovingFamilyLedger AND FirstMovingLPFCoordinatePressureImportedLedger AND StablePrefixProductSupportLedger AND FirstMovingCoordinateEffectiveWidthLedger AND LowMovingCoordinateFiniteAtomLedger AND FirstMovingCoordinateDyadicPartitionLedger AND MovingCoordinateActiveProductWidthExitLedger AND MovingCoordinateActiveCountBoundLedger AND SingleMovingCoordinatePressureLocalizationLedger AND FixedMovingCoordinateDegeneratesToColumnCRTLedger AND NoAnonymousFirstMovingCoordinatePoolLedger AND SingleMovingLPFCoordinateDriftImportedLedger AND SingleMovingCoordinateStablePrefixLedger AND SingleMovingCoordinateDyadicScaleLedger AND BoundedScaleDriftDegeneratesToFixedCoordinateLedger AND UnboundedCoordinateScaleEscapeLedger AND PostMovingCoordinateSupportDescentLedger AND SameScaleCoordinateCycleExcludedLedger AND SparseCoordinateDriftSAERegistrationLedger AND NoAnonymousSingleCoordinateDriftLedger AND ScaleEscapingSingleCoordinateDescentImportedLedger AND ScaleEscapeIntegerSupportClockLedger AND ScaleEscapeHalvingClockDescentLedger AND FiniteDepthScaleEscapePerFiberLedger AND TerminalWidthOneFiniteAtomLedger AND ScaleLadderProductWidthColumnCRTExitLedger AND PersistentScaleLadderSignatureRegistrationLedger AND SparseScaleLadderSAERegistrationLedger AND NoCyclicScaleEscapeDescentLedger AND NoAnonymousScaleEscapeDescentLedger AND PersistentScaleLadderSignatureImportedLedger AND ScaleLadderDyadicWordPartitionLedger AND ScaleLadderProductBudgetLedger AND ScaleLadderWordEntropyFiniteCapLedger AND AggregatePersistentPressureToSingleScaleWordLedger AND FixedScaleLadderMCRTColumnCRTExitLedger AND FirstMovingScaleLadderPhaseCoordinateLedger AND SparseScaleLadderSAECarriedForwardLedger AND NoAnonymousPersistentScaleLadderSignatureLedger AND FirstMovingScaleLadderPhaseDriftImportedLedger AND FixedScaleWordSlotLedger AND FinitePrimeChoicesPerScaleSlotLedger AND FiniteResidueChoicesPerPrimeSlotLedger AND FiniteActualScaleLadderAtomSetLedger AND InfinitePigeonholeStableActualScaleLadderLedger AND NoPersistentFirstMovingScaleLadderPhaseDriftLedger AND StableActualScaleLadderMCRTColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFiniteSlotLockLedger AND NoAnonymousFirstMovingScaleLadderPhaseDriftLedger AND StableActualLadderOrSparseSAEImportedLedger AND StableActualLadderFiniteGroupLedger AND StableActualLadderZeroMeanCellFunctionLedger AND StableActualLadderExactExcessIdentityLedger AND StableActualLadderFourierPDECBridgeLedger AND StableActualLadderNontrivialCharacterLowerBoundLedger AND NoAnonymousStableActualLadderColumnCRTExitLedger AND SparseScaleLadderSAECarriedForwardAfterFourierBridgeLedger AND StableActualLadderFourierCapImportedLedger AND StableLadderCharacterFactorizationLedger AND StableLadderNontrivialPivotCoordinateLedger AND StableLadderComplementFiberPartitionLedger AND StableLadderGlobalCharacterToPivotFiberLocalizationLedger AND StableLadderPrimitivePivotCharacterCorrelationLedger AND NoAnonymousStableLadderFourierCapLedger AND SparseScaleLadderSAECarriedForwardAfterPivotFiberLedger AND StableActualLadderPrimitiveFiberPDECImportedLedger AND StableLadderPivotFiberResidueCountVectorLedger AND StableLadderPivotFiberZeroMeanDeviationLedger AND StableLadderPivotFiberCharacterToResidueDeviationLedger AND StableLadderPivotFiberResidueImbalanceLocalizationLedger AND StableLadderPivotFiberResidueImbalanceThresholdLedger AND NoAnonymousPrimitiveFiberCharacterPDECExitLedger AND SparseScaleLadderSAECarriedForwardAfterResidueCountLedger AND StableActualLadderResidueCountPDECImportedLedger AND StableLadderResidueDeviationSignDichotomyLedger AND StableLadderResidueDeviationZeroSumTransferLedger AND StableLadderPositiveResidueSurplusLocalizationLedger AND StableLadderPositiveResidueSurplusThresholdLedger AND NoAnonymousSignedResidueImbalanceExitLedger AND SparseScaleLadderSAECarriedForwardAfterPositiveSurplusLedger AND StableActualLadderPositiveResidueSurplusImportedLedger AND StableLadderOverloadedCellIntegerOccupancyLedger AND StableLadderPositiveSurplusSingletonOrPairDichotomyLedger AND StableLadderSingletonSurplusAtomRegistrationLedger AND StableLadderSameCellPairCongruenceLedger AND StableLadderSameCellPairPeriodMultipleLedger AND NoAnonymousPositiveResidueSurplusExitLedger AND SparseScaleLadderSAECarriedForwardAfterOccupancyDichotomyLedger AND StableActualLadderSingletonOrPairPeriodImportedLedger AND StableLadderSingletonSurplusLowFiberQuotaLedger AND StableLadderSameCellPairSupportWidthDichotomyLedger AND StableLadderShortSupportPairExclusionLedger AND StableLadderLongWidthSameCellPeriodPairRegistrationLedger AND NoAnonymousSingletonOrPairPeriodExitLedger AND SparseScaleLadderSAECarriedForwardAfterSingletonPairWidthLedger AND StableActualLadderLowFiberSingletonOrLongPairImportedLedger AND StableLadderLowFiberOccupancyOneOrMultiDichotomyLedger AND StableLadderFiberIsolatedSingletonAtomLedger AND StableLadderRepeatedPivotModulusForcesIsolationLedger AND StableLadderComplementFiberAntiPivotPairLedger AND StableLadderComplementFiberPeriodAndAntiPivotPhaseLedger AND StableLadderComplementFiberPairWidthDichotomyLedger AND StableLadderLongFullCellPairCarriedForwardLedger AND NoAnonymousLowFiberSingletonExitLedger AND SparseScaleLadderSAECarriedForwardAfterLowFiberPhaseLedger AND StableActualLadderIsolatedSingletonOrPairImportedLedger AND StableLadderIsolatedSingletonCarriedForwardLedger AND StableLadderComplementBasePeriodLedger AND StableLadderPairDifferenceQuotientNormalizationLedger AND StableLadderPivotPhaseQuotientPeriodLedger AND StableLadderAntiPivotPairNonzeroQuotientPhaseLedger AND StableLadderFullCellPairZeroQuotientPhaseLedger AND StableLadderPairQuotientWidthEnvelopeLedger AND StableLadderQuotientNoWrapOrFullPeriodDichotomyLedger AND NoAnonymousAntiPivotOrFullPairExitLedger AND SparseScaleLadderSAECarriedForwardAfterPairQuotientPhaseLedger AND StableActualLadderQuotientPhaseCycleImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterArcMeanLedger AND StableLadderQuotientSpanParameterLedger AND StableLadderQuotientNoWrapZeroPhaseExclusionLedger AND StableLadderQuotientShortArcClusterLedger AND StableLadderFullCycleEuclideanDecompositionLedger AND StableLadderFullCycleFormalPhaseMeanLedger AND StableLadderFullCycleResidualTailArcLedger AND NoAnonymousQuotientPhaseCycleExitLedger AND SparseScaleLadderSAECarriedForwardAfterArcMeanLedger AND StableLadderQuotientShortArcOrMeanImportedLedger AND StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourierLedger AND StableLadderQuotientCircleGroupLedger AND StableLadderQuotientActualPhaseLoadMeasureLedger AND StableLadderQuotientArcDiscrepancyFunctionalLedger AND StableLadderQuotientDirichletKernelIdentityLedger AND StableLadderQuotientNontrivialFrequencyLowerBoundLedger AND StableLadderPhaseMeanCapAsPointArcLedger AND NoAnonymousShortArcOrPhaseMeanExitLedger AND SparseScaleLadderSAECarriedForwardAfterQuotientFourierLedger AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+## 8. 诚实边界
+
+- 本证书没有证明孤立 singleton atom 全局可求和。
+- 本证书没有证明 quotient arc Fourier/PDEC cap。
+- 本证书没有证明 sparse scale-ladder SAE 全局可求和。
+- 本证书只把 short-arc cluster 与 phase-cycle actual-mean cap 统一为相位圆上的非平凡 Fourier 证书。
+- `SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap` 仍未闭合。
+- 行/列命题仍未无条件闭合。
+
+## 9. 依赖哈希
+
+| file | sha256 |
+| --- | --- |
+| `experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_quotient_arc_fourier_router.py` | `6b73b993175e1a0c8a5f387964525a25b701b9b59fa4050a530933f8a0f1fc21` |
+| `docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-phase-arc-mean-router.json` | `2e379159653881218131467a8dd0857c4e54f5ffab307b73d35de95c53679f11` |

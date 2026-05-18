@@ -10190,3 +10190,105 @@ SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrPairQuotie
 周期 formal mean 与尾弧。剩余集中为孤立 singleton 全局求和、
 quotient short-arc cluster cap、phase-cycle actual-mean cap，或 sparse
 scale-ladder SAE 全局求和。行/列命题仍未无条件闭合。
+
+## 204. stable-ladder quotient arc Fourier 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_stable_ladder_quotient_arc_fourier_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-arc-fourier-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-arc-fourier-router.json
+data/prime-matrix-firstbreak-tail-gap-stable-ladder-quotient-arc-fourier-ledger.json
+```
+
+本步继续攻击
+`SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap`。
+同步读数为：
+
+```text
+short_arc_or_mean_imported=true
+isolated_singleton_carried_forward=true
+quotient_circle_group_closed=true
+actual_phase_load_measure_closed=true
+arc_discrepancy_functional_closed=true
+dirichlet_kernel_identity_closed=true
+nontrivial_frequency_lower_bound_closed=true
+phase_mean_as_point_arc_closed=true
+anonymous_short_arc_or_mean_removed=true
+sparse_scale_ladder_sae_carried_forward=true
+isolated_singleton_summability_proved=false
+quotient_arc_fourier_pdec_cap_proved=false
+sparse_scale_ladder_sae_summability_proved=false
+row_column_unconditional_closed=false
+```
+
+沿用 quotient 相位记号：
+
+```text
+C_R=Z/RZ,
+R=q_j/gcd(q_j,B),
+d=n2-n1=tB.
+```
+
+把 actual quotient witnesses 按相位计数：
+
+```text
+mu(r)=#{actual witnesses: t congruent r mod R}.
+```
+
+按完整周期均值或同一 actual-load 口径期望中心化：
+
+```text
+nu(r)=mu(r)-model(r),
+sum_{r mod R}nu(r)=0.
+```
+
+对任意弧 `A subset C_R`，定义短弧/点弧偏差：
+
+```text
+Delta(A)=sum_{r in A}nu(r).
+```
+
+short-arc cluster 是真短弧的 `Delta(A)>0`；phase-cycle actual-mean cap 是
+点弧 `A={r0}` 的同一情形。Fourier 变换给出：
+
+```text
+Delta(A)=(1/R) sum_{h=1}^{R-1} hat nu(h) hat 1_A(-h).
+```
+
+令：
+
+```text
+Lambda_R(A)=sum_{h=1}^{R-1}|hat 1_A(h)|.
+```
+
+若 `Delta(A)>0`，则存在非平凡频率满足：
+
+```text
+|hat nu(h)| >= R*Delta(A)/Lambda_R(A).
+```
+
+这把 short-arc cluster 与 phase-cycle actual-mean cap 统一为 quotient arc
+Fourier/PDEC cap。
+
+硬点更新为：
+
+```text
+SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientShortArcClusterOrPhaseCycleMeanPDECCap
+  -> StableLadderQuotientShortArcOrMeanImportedLedger
+  AND StableLadderIsolatedSingletonCarriedForwardAfterQuotientFourierLedger
+  AND StableLadderQuotientCircleGroupLedger
+  AND StableLadderQuotientActualPhaseLoadMeasureLedger
+  AND StableLadderQuotientArcDiscrepancyFunctionalLedger
+  AND StableLadderQuotientDirichletKernelIdentityLedger
+  AND StableLadderQuotientNontrivialFrequencyLowerBoundLedger
+  AND StableLadderPhaseMeanCapAsPointArcLedger
+  AND NoAnonymousShortArcOrPhaseMeanExitLedger
+  AND SparseScaleLadderSAECarriedForwardAfterQuotientFourierLedger
+  AND SparseScaleLadderSAESummabilityOrStableActualLadderIsolatedSingletonOrQuotientArcFourierPDECCap
+```
+
+本步关闭的是匿名 short-arc/phase-mean 口径。剩余集中为孤立 singleton 全局
+求和、quotient arc Fourier/PDEC cap，或 sparse scale-ladder SAE 全局求和。
+行/列命题仍未无条件闭合。
