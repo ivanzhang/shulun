@@ -5536,6 +5536,46 @@ PageExceptionalSingletonCarrierOrNonrealZeroPacketResidualBudget
 
 行/列命题仍未无条件闭合。
 
+## 132. Strict post-alpha terminal leaf latest noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_alpha_terminal_leaf_latest_noncycle_sync_router.py
+docs/monograph/prime-matrix-strict-post-alpha-terminal-leaf-latest-noncycle-sync-router.md
+docs/monograph/prime-matrix-strict-post-alpha-terminal-leaf-latest-noncycle-sync-router.json
+data/prime-matrix-strict-post-alpha-terminal-leaf-latest-noncycle-sync-ledger.json
+```
+
+本步把 post-alpha terminal leaf 的二选一继续同步到仓库已有更深前沿：
+
+```text
+AcyclicTerminalCanonicalLockToCanonicalSourceBoundary OR NoncanonicalFullSComplementLegalClosureMode
+-> AcyclicTerminalCanonicalLockToCanonicalSourceBoundary
+   OR (AcyclicPreCauchyNoncanonicalPrimitiveSourceSeedAndReturn
+       AND IndependentExactPairL2EnergyOrMaxAtomBoundForAcyclicSeed)
+-> pair-energy/rate-packet/source-entropy fixed point
+-> ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+-> NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+   OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+-> TERMINAL-SOURCE-PAIR-JOINT macrocycle
+```
+
+因此 `NoncanonicalFullSComplementLegalClosureMode` 不再作为最深活动标签；普通 pair-energy、joint constructor 与 terminal descent 路线均不能作为非循环证明。当前严格内部非循环基为：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+OR FullSNonAPStrengthenedSourceAntiAtomForActualSource
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻为 `NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact`；并行保留 actual-source 外环桥、PDEC same-set 作用域、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin。行/列命题仍未无条件闭合。
+
 ## 132. Strict post-antisplit alpha terminal leaf sync router
 
 新增文件

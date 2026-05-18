@@ -6019,3 +6019,40 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步只完成前沿同步：alpha 单腿、weight 单腿、rank 单腿和旧 joint constructor 展开均不能作为非循环闭合。下一步必须攻 canonical-lock 或 noncanonical legal mode，并同时保留 ExactUV、RatePreservation 与 DStructure/Rankin。
+
+## 144. Strict post-alpha terminal leaf latest noncycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_alpha_terminal_leaf_latest_noncycle_sync_router.py
+docs/monograph/prime-matrix-strict-post-alpha-terminal-leaf-latest-noncycle-sync-router.md
+docs/monograph/prime-matrix-strict-post-alpha-terminal-leaf-latest-noncycle-sync-router.json
+data/prime-matrix-strict-post-alpha-terminal-leaf-latest-noncycle-sync-ledger.json
+```
+
+本步继续把 post-alpha terminal leaf 与历史更深 strict 前沿合并。同步链确认：
+
+```text
+NoncanonicalFullSComplementLegalClosureMode
+-> latest self-contained source-entropy / seed+pair-energy input
+-> pair-energy old spine rejected as recursive
+-> ExplicitJointAlphaDeltaPrimitiveWordCoefficientConstructorRuleForActualNoncanonicalSourceTuple
+-> signed-source fixed point or terminal descent
+-> TERMINAL-SOURCE-PAIR-JOINT macrocycle
+```
+
+因此当前最深 strict 内部非循环前沿不再停在 canonical/noncanonical 叶子，而是：
+
+```text
+(NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact
+OR ProveActualFullSNonAPSourceIsCanonicalRIWBuchstab
+OR FullSNonAPStrengthenedSourceAntiAtomForActualSource
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND ActualEmitterExactUVBoundedMultiplicityIncidenceTheorem
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+条件外部线可额外接受 `DIBFIQuantifiedNoProjectionWindowCertificate_FOR_GENERIC_EXTERNAL_BRANCH_ONLY`。本步只完成前沿同步和循环审查；新 joint 公式、actual-source 外环桥、PDEC same-set 作用域、ExactUV、模型余量、RatePreservation 与 DStructure/Rankin 均未证明，所以行/列命题仍未无条件闭合。
