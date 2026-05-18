@@ -8413,3 +8413,100 @@ SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC
 本步关闭的是 LPF 唯一分区、前缀删除 telescoping 与 CRT 删除单元。
 剩余集中为：dyadic 最小素因子层删除质量不足，或命名 return 吃掉这些删除。
 行/列命题仍未无条件闭合。
+
+## 183. LPF 删除债务 dyadic cofactor 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_lpf_dyadic_cofactor_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-router.json
+data/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-ledger.json
+```
+
+本步继续攻击 `LPFDeletionDebtOrRoughPrefixOverdensityPDEC`。同步读数为：
+
+```text
+lpf_debt_imported=true
+dyadic_layer_partition_closed=true
+debt_localization_closed=true
+ramp_saturated_weight_split_closed=true
+quotient_layer_cofactor_interval_closed=true
+cofactor_interval_endpoint_formula_closed=true
+rough_cofactor_interval_crt_support_closed=true
+dyadic_rough_cofactor_interval_debt_excluded=false
+row_column_unconditional_closed=false
+```
+
+把 LPF 删除层
+
+```text
+B_ell=sum_{z<q<P, ell=lpf(q)}w(q)
+```
+
+按 dyadic 最小素因子层重组为
+
+```text
+B_Y=sum_{Y<ell<=2Y, ell prime}B_ell,
+B_tot=sum_Y B_Y.
+```
+
+若 `B_tot<=T<sum_Y A_Y`，则至少有一层 `B_Y<A_Y`。这不是额外平均假设，
+而是纯粹的有限分层定位：总删除债务不能支付候选预算时，债务必落在某个
+dyadic 局部层。
+
+层内再写
+
+```text
+w(q)=u(q)v(q),
+u(q)=min(L,q-H),
+v(q)=ceil((P-1)/q).
+```
+
+于是支撑分成 ramp 层 `H<q<H+L` 与 saturated 层 `q>=H+L`。再按
+
+```text
+Q_j={q: ceil((P-1)/q)=j}
+```
+
+分块。令 `A=P-1`，则
+
+```text
+q_j_min=floor(A/j)+1,
+q_j_max=A              if j=1,
+q_j_max=floor(A/(j-1)) if j>=2.
+```
+
+与 tail、ramp/saturated 边界相交后，固定 `ell` 的 cofactor 区间端点为：
+
+```text
+ramp:      q_min=max(z+1,H+1,q_j_min),   q_max=min(P-1,H+L-1,q_j_max),
+saturated: q_min=max(z+1,H+L,q_j_min),   q_max=min(P-1,q_j_max),
+n_min=ceil(q_min/ell),                   n_max=floor(q_max/ell).
+```
+
+因此每个局部单元具有显式 CRT 支撑：
+
+```text
+B_{Y,sigma,j}=
+sum_{Y<ell<=2Y} sum_{n_min<=n<=n_max, gcd(n,W_<ell)=1} u(ell*n)j.
+```
+
+硬点更新为：
+
+```text
+LPFDeletionDebtOrRoughPrefixOverdensityPDEC
+  -> DyadicLPFDeletionLayerPartitionLedger
+  AND DyadicDebtLocalizationForAnyBudgetVectorLedger
+  AND RampSaturatedTailWeightSplitLedger
+  AND QuotientLayerCofactorIntervalLedger
+  AND CofactorIntervalEndpointFormulaLedger
+  AND RoughCofactorIntervalCRTSupportLedger
+  AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC
+  AND DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC
+```
+
+本步关闭的是 dyadic 分层、预算定位、权重分裂、quotient 分块与 cofactor 区间端点公式。
+剩余集中为：某个 dyadic/quotient/cofactor interval 的 rough CRT 支撑仍可能删除质量不足，
+或其失败必须进一步登记为 ColumnCRT/PDEC/SAE。行/列命题仍未无条件闭合。

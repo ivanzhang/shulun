@@ -12004,6 +12004,93 @@ prove that the resulting dyadic deletion layers always pay the gap.  The
 row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[LPF dyadic cofactor interval reduction]
+The remaining least-prime-factor deletion debt can be localized to explicit
+dyadic/quotient/cofactor CRT cells.  More precisely, the open hard point
+\begin{quote}\scriptsize\ttfamily
+LPFDeletionDebtOrRoughPrefixOverdensityPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+DyadicLPFDeletionLayerPartitionLedger\\
+AND DyadicDebtLocalizationForAnyBudgetVectorLedger\\
+AND RampSaturatedTailWeightSplitLedger\\
+AND QuotientLayerCofactorIntervalLedger\\
+AND CofactorIntervalEndpointFormulaLedger\\
+AND RoughCofactorIntervalCRTSupportLedger\\
+AND DyadicRoughCofactorIntervalDebtOrNamedReturnPDEC\\
+AND DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Reduction ledger]
+For each dyadic least-prime-factor layer let
+\[
+  B_Y=\sum_{\substack{Y<\ell\le 2Y\\ \ell\ {\rm prime}}}B_\ell,\qquad
+  B_{\rm tot}=\sum_Y B_Y.
+\]
+Thus, for any proposed layer budget vector \(A_Y\), if
+\[
+  B_{\rm tot}\le T<\sum_Y A_Y,
+\]
+then some layer satisfies \(B_Y<A_Y\).  This is only finite
+localization; it is not an analytic lower bound.
+
+Within one layer write
+\[
+  w(q)=u(q)v(q),\qquad
+  u(q)=\min(L,q-H),\qquad
+  v(q)=\Big\lceil \frac{P-1}{q}\Big\rceil .
+\]
+The \(u\)-factor splits the support into the ramp region \(H<q<H+L\)
+and the saturated region \(q\ge H+L\).  Next decompose by
+\[
+  Q_j=\{q:\lceil(P-1)/q\rceil=j\}.
+\]
+Put \(A=P-1\).  Then
+\[
+  q_{j,\min}=\lfloor A/j\rfloor+1,\qquad
+  q_{j,\max}=
+  \begin{cases}
+    A,&j=1,\\
+    \lfloor A/(j-1)\rfloor,&j\ge2.
+  \end{cases}
+\]
+After intersecting with \(z<q<P\), the ramp cell has
+\[
+  q_{\min}=\max(z+1,H+1,q_{j,\min}),\qquad
+  q_{\max}=\min(P-1,H+L-1,q_{j,\max}),
+\]
+and the saturated cell has
+\[
+  q_{\min}=\max(z+1,H+L,q_{j,\min}),\qquad
+  q_{\max}=\min(P-1,q_{j,\max}).
+\]
+For fixed \(\ell\) and \(q=\ell n\), this gives the integer cofactor interval
+\[
+  n_{\min}=\lceil q_{\min}/\ell\rceil,\qquad
+  n_{\max}=\lfloor q_{\max}/\ell\rfloor .
+\]
+The LPF condition becomes \((n,W_{<\ell})=1\).  Hence each cell has the
+explicit CRT form
+\[
+  B_{Y,\sigma,j}
+  =\sum_{\substack{Y<\ell\le2Y\\ \ell\ {\rm prime}}}
+    \sum_{\substack{n_{\min}\le n\le n_{\max}\\(n,W_{<\ell})=1}}
+      u(\ell n)j,
+\]
+and the dyadic layer reassembles exactly as
+\[
+  B_Y=\sum_{\sigma\in\{{\rm ramp},{\rm sat}\}}\sum_j B_{Y,\sigma,j}.
+\]
+The remaining open task is to exclude insufficient rough-cofactor support in
+these cells, or to route that insufficiency to a named ColumnCRT/PDEC/SAE
+exit.  The row/column theorem is therefore still not unconditionally closed.
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

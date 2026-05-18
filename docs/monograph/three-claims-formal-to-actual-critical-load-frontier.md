@@ -8012,3 +8012,70 @@ LPFDeletionDebtOrRoughPrefixOverdensityPDEC
 
 本步没有证明 LPF 删除层总能支付 gap；它把 rough over-density 压成互不重叠的
 dyadic 最小素因子 CRT 删除债务。
+
+## 183. LPF dyadic cofactor interval frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_lpf_dyadic_cofactor_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-router.json
+data/prime-matrix-firstbreak-tail-gap-lpf-dyadic-cofactor-ledger.json
+```
+
+本步继续攻击 `LPFDeletionDebtOrRoughPrefixOverdensityPDEC`。同步结果：
+
+```text
+dyadic_layer_partition_closed=true
+debt_localization_closed=true
+ramp_saturated_weight_split_closed=true
+quotient_layer_cofactor_interval_closed=true
+cofactor_interval_endpoint_formula_closed=true
+rough_cofactor_interval_crt_support_closed=true
+dyadic_rough_cofactor_interval_debt_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：LPF 删除债务不再只以总量
+
+```text
+sum_{ell<=z}B_ell
+```
+
+出现，而是被定位到可检查的短 cofactor CRT 单元。先按 dyadic 层：
+
+```text
+B_Y=sum_{Y<ell<=2Y, ell prime}B_ell,
+B_tot=sum_Y B_Y.
+```
+
+若总债务小于某个全局预算阈值，而候选预算向量总和超过该阈值，则至少一个
+dyadic 层短缺。层内再按
+
+```text
+w(q)=min(L,q-H)ceil((P-1)/q)
+```
+
+拆成 ramp/saturated 权重，并按 `j=ceil((P-1)/q)` 分块。固定 `ell` 与 `j`
+后，`q=ell*n` 且 `gcd(n,W_<ell)=1`。令 `A=P-1`，quotient 层的整数端点为：
+
+```text
+q_j_min=floor(A/j)+1,
+q_j_max=A if j=1, else floor(A/(j-1)).
+```
+
+再与 `z<q<P` 和 ramp/saturated 边界相交，得到：
+
+```text
+n_min=ceil(q_min/ell),  n_max=floor(q_max/ell).
+```
+
+新的直接主攻为：
+
+```text
+DyadicRoughCofactorIntervalDebtOrColumnCRTPDEC
+```
+
+本步没有证明每个局部 rough cofactor 区间必给出足够删除质量；它把剩余从
+全局 LPF 债务压成 dyadic/quotient/cofactor interval 上的局部 CRT 支撑债务。
