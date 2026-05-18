@@ -7848,3 +7848,68 @@ LowStepStableHistoryMassLowerBoundOrLargeStepTailEscapePDEC
 本步关闭的是 `q>H` terminal tail 的 row-window/column-multiplicity envelope。
 尚未证明 `|S|-C_tail` 已超过需求阈值；若不超过，必须把 tail 近饱和、重复支付或逃逸登记为 PDEC/SAE。
 行/列命题仍未无条件闭合。
+
+## 176. Stable tail gap functional
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_stable_tail_gap_router.py
+docs/monograph/prime-matrix-firstbreak-stable-tail-gap-router.md
+docs/monograph/prime-matrix-firstbreak-stable-tail-gap-router.json
+data/prime-matrix-firstbreak-stable-tail-gap-ledger.json
+```
+
+本步继续攻击 `StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC`。同步读数为：
+
+```text
+tail_gap_imported=true
+zero_block_obligation_mass_imported=true
+no_loss_accounting_imported=true
+stable_total_after_named_returns_closed=true
+tail_envelope_imported=true
+explicit_tail_gap_functional_closed=true
+positive_stable_tail_gap_proved=false
+named_return_mass_pdec_excluded=false
+stable_total_minus_tail_envelope_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+零块覆盖义务域为：
+
+```text
+O_B={(t,c): x0<=t<y, 1<=c<P},
+|O_B|=L(P-1).
+```
+
+no-loss 账本给出：
+
+```text
+O_B = StableSourceRecords disjoint_union NamedReturnRecords.
+```
+
+记命名 return 质量为 `R_named`。上一层已给出：
+
+```text
+C_tail = sum_{H<q<P} |B ∩ [P-q,y-1]| ceil((P-1)/q).
+```
+
+因此：
+
+```text
+|S_{q<=H}| >= L(P-1)-R_named-C_tail.
+```
+
+硬点更新为：
+
+```text
+StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC
+  -> ZeroBlockCoverObligationMassLedger
+  AND StableSourceTotalAfterNamedReturnsLedger
+  AND ExplicitStableTailGapFunctionalLedger
+  AND PositiveStableTailGapOrNamedReturnMassPDEC
+```
+
+本步关闭的是低步长稳定质量的显式 gap functional。尚未证明该 gap 足够大；
+若不够大，必须由 `R_named`、tail saturation、history switch、duplicate/collision 或 PDEC/SAE 账本承载。
+行/列命题仍未无条件闭合。

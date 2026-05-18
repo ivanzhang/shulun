@@ -11510,6 +11510,58 @@ and it does not exclude tail saturation PDEC/SAE.  The row/column theorem
 remains open.
 \end{proof}
 
+\begin{theorem}[Stable tail gap functional]
+Let \(O_B=\{(t,c):x_0\le t<y,\ 1\le c<P\}\) be the zero-block obligation
+domain.  Then
+\[
+  |O_B|=L(P-1).
+\]
+By no-loss accounting, after history-switch and duplicate returns are named,
+\[
+  O_B=S\sqcup R_{\rm named},
+\]
+where \(S\) is the stable source layer and \(R_{\rm named}\) is the named
+return layer.  Hence
+\[
+  |S|\ge L(P-1)-R_{\rm named}.
+\]
+Combining this with the tail envelope \(C_{\rm tail}\) from the preceding
+theorem gives the explicit low-step lower bound
+\[
+  |S_{\le H}|\ge L(P-1)-R_{\rm named}-C_{\rm tail}.
+\]
+Thus
+\begin{quote}\scriptsize\ttfamily
+StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC\\
+\(\rightarrow\) ZeroBlockCoverObligationMassLedger\\
+AND StableSourceTotalAfterNamedReturnsLedger\\
+AND ExplicitStableTailGapFunctionalLedger\\
+AND PositiveStableTailGapOrNamedReturnMassPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-stable-tail-gap-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+tail\_gap\_imported=true\\
+zero\_block\_obligation\_mass\_imported=true\\
+no\_loss\_accounting\_imported=true\\
+stable\_total\_after\_named\_returns\_closed=true\\
+tail\_envelope\_imported=true\\
+explicit\_tail\_gap\_functional\_closed=true\\
+positive\_stable\_tail\_gap\_proved=false\\
+named\_return\_mass\_pdec\_excluded=false\\
+stable\_total\_minus\_tail\_envelope\_gap\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step closes only the explicit gap functional.  It does not prove that
+the gap is positive or sufficient, and it does not exclude named return mass
+or tail saturation PDEC/SAE.  The row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

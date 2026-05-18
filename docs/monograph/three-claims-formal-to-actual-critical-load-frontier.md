@@ -7576,3 +7576,62 @@ StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC
 
 本步没有证明 `|S|-C_tail` 已足够大；它把剩余硬点压成显式差额问题：
 证明稳定总源质量超过 tail envelope，或证明 tail 近饱和/重复就是 PDEC/SAE。
+
+## 176. Stable tail gap functional
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_stable_tail_gap_router.py
+docs/monograph/prime-matrix-firstbreak-stable-tail-gap-router.md
+docs/monograph/prime-matrix-firstbreak-stable-tail-gap-router.json
+data/prime-matrix-firstbreak-stable-tail-gap-ledger.json
+```
+
+本步继续攻击 `StableTotalMinusTailEnvelopeGapOrLargeStepTailSaturationPDEC`。同步结果：
+
+```text
+tail_gap_imported=true
+zero_block_obligation_mass_imported=true
+no_loss_accounting_imported=true
+stable_total_after_named_returns_closed=true
+tail_envelope_imported=true
+explicit_tail_gap_functional_closed=true
+positive_stable_tail_gap_proved=false
+named_return_mass_pdec_excluded=false
+stable_total_minus_tail_envelope_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：零块覆盖义务域满足
+
+```text
+|O_B|=L(P-1).
+```
+
+no-loss 账本给出
+
+```text
+O_B = StableSourceRecords disjoint_union NamedReturnRecords.
+```
+
+记命名 return 质量为 `R_named`，上一层 tail envelope 为
+
+```text
+C_tail = sum_{H<q<P} |B ∩ [P-q,y-1]| ceil((P-1)/q).
+```
+
+于是低步长稳定质量下界改写为：
+
+```text
+|S_{q<=H}| >= L(P-1)-R_named-C_tail.
+```
+
+新的直接主攻为：
+
+```text
+PositiveStableTailGapOrNamedReturnMassPDEC
+```
+
+本步没有证明该 gap 已经为正或足够大；它把剩余压成显式不等式：
+证明 `L(P-1)-R_named-C_tail` 足够，或证明 `R_named`/tail saturation 已形成 PDEC/SAE。
