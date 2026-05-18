@@ -6592,3 +6592,57 @@ A1CleanBranchCanonicalSourceAdmission
 
 因此当前前沿进一步从“直接 KZ-E dispersion log-saving”压到“actual clean A1 分支的
 canonical source admission”，并显式保留外部 no-projection 条件线。
+
+## 156. Strict post-source-admission macrocycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_source_admission_macrocycle_sync_router.py
+docs/monograph/prime-matrix-strict-post-source-admission-macrocycle-sync-router.md
+docs/monograph/prime-matrix-strict-post-source-admission-macrocycle-sync-router.json
+data/prime-matrix-strict-post-source-admission-macrocycle-sync-ledger.json
+```
+
+本步把 `A1CleanBranchCanonicalSourceAdmission` 接回已有的 A1/T1/signed-lift/PDEC/KZ
+深层链。同步结果显示：
+
+```text
+post_kze_source_admission_active=true
+a1_source_admission_scoped_not_global=true
+t1_mismatch_no_silent_exit_imported=true
+signed_lift_failure_return_only_registers=true
+alpha_weight_downstream_returns_to_terminal=true
+internal_pdec_clean_kls_cycle_imported=true
+nonrecursive_breaker_hits_seed_cycle=true
+new_joint_and_kz_return_to_a1_gate=true
+a1_pdec_kz_macrocycle_detected=true
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：source-admission 的 canonical case 只能 scoped 吸收；非 canonical
+mismatch 经 signed-lift 登记和 alpha weight law 下游同步后，会回到
+`PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve`，再经 new-joint/KZ/KZ-E 回到 A1。
+因此它不是新的单向下降链，而是一条已识别的宏循环。
+
+最新非循环剩余为：
+
+```text
+(AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+ OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+```
+
+所以当前前沿已从“证明 A1 source-admission”转为“提供循环外 seed cycle-cut primitive
+source 或同集 PDEC 作用域匹配/真正新 primitive/外部 no-projection KZ 证书”。宏循环同步本身
+不是行/列命题无条件闭合。

@@ -6579,3 +6579,69 @@ A1CleanBranchCanonicalSourceAdmission
 本步不是行/列命题无条件闭合；它只把 KZ-E direct 门压到 actual source admission。不能把
 canonical 分支闭合偷渡为 generic/noncanonical 分支闭合；高段模型、RatePreservation 与
 DStructure/Rankin 仍未闭合。
+
+## 156. Strict post-source-admission macrocycle sync router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_post_source_admission_macrocycle_sync_router.py
+docs/monograph/prime-matrix-strict-post-source-admission-macrocycle-sync-router.md
+docs/monograph/prime-matrix-strict-post-source-admission-macrocycle-sync-router.json
+data/prime-matrix-strict-post-source-admission-macrocycle-sync-ledger.json
+```
+
+本步继续攻击上一节留下的 `A1CleanBranchCanonicalSourceAdmission`，并把它接入
+仓库已有的 A1/T1/signed-lift/PDEC/KZ 深层链。关键读数为：
+
+```text
+post_kze_source_admission_active=true
+a1_source_admission_scoped_not_global=true
+t1_mismatch_no_silent_exit_imported=true
+signed_lift_failure_return_only_registers=true
+alpha_weight_downstream_returns_to_terminal=true
+internal_pdec_clean_kls_cycle_imported=true
+nonrecursive_breaker_hits_seed_cycle=true
+new_joint_and_kz_return_to_a1_gate=true
+a1_pdec_kz_macrocycle_detected=true
+row_column_unconditional_closed=false
+```
+
+结论是：A1 source-admission 不是尚未展开的孤立证明点。canonical 等式 case 只被
+scoped 吸收；mismatch case 经 signed lift 登记、alpha weight law、PDEC/CleanKLS、
+new-joint 与 KZ no-cycle 后回到 KZ-E/A1 门。因此当前内部路线形成非证明宏循环：
+
+```text
+A1CleanBranchCanonicalSourceAdmission
+  -> T1 canonical equality classifier
+  -> mismatch forcing / signed lift failure registration
+  -> alpha signed weight downstream
+  -> PDEC_CAP_OR_INTERNAL_CleanKLS_LargeSieve
+  -> self-contained terminal cycle / nonrecursive breaker
+  -> new-joint saturation
+  -> non-circular KZ/DLS gate
+  -> KZ-E direct source bridge
+  -> A1CleanBranchCanonicalSourceAdmission
+```
+
+最新非循环破环基为：
+
+```text
+(AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+ OR NewPrimitiveJointPayloadArtifactOutsideSignedLaneCycle
+ OR ExactExternalDIBFIKuznetsovNoProjectionCertificate_FOR_NONCIRCULAR_KZ_ONLY)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+```
+
+本步不证明 A1 source-admission 的全局排斥，也不证明 PDEC/CleanKLS、外部 KZ/DI/BFI、
+高段模型、RatePreservation 或 DStructure/Rankin；它只关闭一条当前内部路线的非循环性审查：
+该路线回到自身，不能作为无条件证明。
