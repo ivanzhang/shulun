@@ -7876,3 +7876,69 @@ SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC
 
 本步没有排斥自镜像 collar，也没有排斥 quotient core 层集中或 `R_named` 吃掉 margin；
 它把剩余压成几何 self-mirror 分支和显式 quotient-layer 消耗分支。
+
+## 181. Self-mirror tail-gap sieved-defect frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_sieved_defect_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-sieved-defect-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-sieved-defect-router.json
+data/prime-matrix-firstbreak-tail-gap-sieved-defect-ledger.json
+```
+
+本步继续攻击 `SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC`。同步结果：
+
+```text
+nonprime_defect_exact_closed=true
+sqrt_rough_prime_tail_identity_closed=true
+endpoint_parity_defect_lower_bound_closed=true
+sieved_margin_functional_closed=true
+sieved_positive_gap_criterion_closed=true
+weighted_rough_crt_defect_excluded=false
+self_mirror_sieved_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：令
+
+```text
+w(q)=min(L,q-H)ceil((P-1)/q).
+```
+
+真实 prime tail 不再用整数包络粗替，而是满足：
+
+```text
+C_tail=C_all-D_np,
+D_np=sum_{H<q<P, q not prime}w(q).
+```
+
+取 `z=floor(sqrt(P-1))`、`W_z=prod_{ell<=z}ell` 后，`z<q<P` 中的
+`gcd(q,W_z)=1` 与 `q prime` 等价。因此 tail 失败必须表现为：
+
+```text
+C_tail=sum_{H<q<=z, q prime}w(q)
+      +sum_{z<q<P, gcd(q,W_z)=1}w(q)
+```
+
+过大，即 weighted sqrt-rough CRT 支撑过密。筛后真实 gap 为：
+
+```text
+G=L(L-D)+min(L,y-1)-X_core+D_np-R_named.
+```
+
+self-mirror 分支中：
+
+```text
+G=L(L-D)+L-X_core+D_np-R_named.
+```
+
+新的直接主攻为：
+
+```text
+SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC
+```
+
+本步没有证明 weighted rough 支撑不能过密；它把“整数 tail 可饱和”替换为
+真实素数筛后的 CRT 过密/PDEC 接口。

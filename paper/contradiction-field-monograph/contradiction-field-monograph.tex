@@ -11830,6 +11830,90 @@ It does not exclude the self-mirror collar branch or quotient core-layer
 concentration.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Sieved defect form of the self-mirror tail gap]
+Let
+\[
+  w(q)=\min(L,q-H)\Big\lceil \frac{P-1}{q}\Big\rceil,\qquad H<q<P.
+\]
+Write
+\[
+  C_{\rm all}=\sum_{H<q<P}w(q),\qquad
+  C_{\rm tail}=\sum_{\substack{H<q<P\\ q\ {\rm prime}}}w(q),
+\]
+and
+\[
+  D_{\rm np}=\sum_{\substack{H<q<P\\ q\ {\rm not\ prime}}}w(q).
+\]
+Then
+\[
+  C_{\rm tail}=C_{\rm all}-D_{\rm np}.
+\]
+Let \(z=\lfloor\sqrt{P-1}\rfloor\) and
+\[
+  W_z=\prod_{\ell\le z,\ \ell\ {\rm prime}}\ell .
+\]
+For \(z<q<P\),
+\[
+  q\ {\rm prime}\quad\Longleftrightarrow\quad (q,W_z)=1.
+\]
+Therefore
+\[
+  C_{\rm tail}
+  =
+  \sum_{\substack{H<q\le z\\q\ {\rm prime}}}w(q)
+  +
+  \sum_{\substack{z<q<P\\(q,W_z)=1}}w(q).
+\]
+Combining this with the late-collar formula gives the true sieved gap
+\[
+  G
+  =
+  L(L-D)+\min(L,y-1)-X_{\rm core}+D_{\rm np}-R_{\rm named}.
+\]
+In the self-mirror branch \(L\le D\), this becomes
+\[
+  G=L(L-D)+L-X_{\rm core}+D_{\rm np}-R_{\rm named}.
+\]
+Consequently, if
+\[
+  L(L-D)+\min(L,y-1)-X_{\rm core}+D_{\rm np}>R_{\rm named},
+\]
+then the positive gap is closed.  If not, the remaining obstruction is a
+weighted \(\sqrt P\)-rough CRT over-density or named-return mass:
+\begin{quote}\scriptsize\ttfamily
+SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC\\
+\(\rightarrow\) PrimeTailNonprimeDefectExactLedger\\
+AND SqrtRoughPrimeTailIdentityLedger\\
+AND EndpointParityNonprimeDefectLowerBoundLedger\\
+AND SievedTailGapMarginFunctionalLedger\\
+AND SievedPositiveGapCriterionLedger\\
+AND WeightedRoughTailCRTDefectOrNamedReturnPDEC\\
+AND SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-sieved-defect-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+self\_mirror\_imported=true\\
+nonprime\_defect\_exact\_closed=true\\
+sqrt\_rough\_prime\_tail\_identity\_closed=true\\
+endpoint\_parity\_defect\_lower\_bound\_closed=true\\
+sieved\_margin\_functional\_closed=true\\
+sieved\_positive\_gap\_criterion\_closed=true\\
+weighted\_rough\_crt\_defect\_excluded=false\\
+self\_mirror\_sieved\_gap\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step removes the purely integer-tail saturation interpretation.  It
+does not yet prove that \(D_{\rm np}\) always dominates \(X_{\rm core}\) and
+\(R_{\rm named}\).  The remaining branch is the weighted rough CRT defect,
+and the row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

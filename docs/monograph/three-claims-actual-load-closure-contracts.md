@@ -8212,3 +8212,103 @@ DeepLateShortCollarOrCoreExcessNamedReturnPDEC
 本步关闭的是 deep-late 的几何等价和 core quotient 层分解。剩余集中为：
 自镜像 collar 内部相位，或 quotient core 层/命名 return 对 margin 的显式消耗。
 行/列命题仍未无条件闭合。
+
+## 181. Self-mirror tail-gap 筛缺陷回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_sieved_defect_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-sieved-defect-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-sieved-defect-router.json
+data/prime-matrix-firstbreak-tail-gap-sieved-defect-ledger.json
+```
+
+本步继续攻击 `SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC`。同步读数为：
+
+```text
+self_mirror_imported=true
+nonprime_defect_exact_closed=true
+sqrt_rough_prime_tail_identity_closed=true
+endpoint_parity_defect_lower_bound_closed=true
+sieved_margin_functional_closed=true
+sieved_positive_gap_criterion_closed=true
+weighted_rough_crt_defect_excluded=false
+self_mirror_sieved_gap_proved=false
+row_column_unconditional_closed=false
+```
+
+令：
+
+```text
+w(q)=min(L,q-H)ceil((P-1)/q), H<q<P.
+```
+
+则真实 prime tail 与整数 tail 的差额为精确非素数缺陷：
+
+```text
+C_tail=C_all-D_np,
+D_np=sum_{H<q<P, q not prime}w(q).
+```
+
+取：
+
+```text
+z=floor(sqrt(P-1)), W_z=prod_{ell prime, ell<=z} ell.
+```
+
+则对 `z<q<P` 有：
+
+```text
+q prime <=> gcd(q,W_z)=1.
+```
+
+所以 prime tail 精确拆成小素数部分与 sqrt-rough CRT 支撑：
+
+```text
+C_tail=sum_{H<q<=z, q prime}w(q)
+      +sum_{z<q<P, gcd(q,W_z)=1}w(q).
+```
+
+上一层 late collar 公式给出：
+
+```text
+G_int=L(L-D)+min(L,y-1)-X_core.
+```
+
+加入非素数缺陷后：
+
+```text
+G=G_int+D_np-R_named
+ =L(L-D)+min(L,y-1)-X_core+D_np-R_named.
+```
+
+在 self-mirror 分支 `L<=D` 中：
+
+```text
+G=L(L-D)+L-X_core+D_np-R_named.
+```
+
+因此若
+
+```text
+L(L-D)+min(L,y-1)-X_core+D_np>R_named,
+```
+
+则正 gap 已成立。若失败仍存在，则必须是 weighted sqrt-rough CRT 支撑过密，
+或 `R_named` 吃掉筛缺陷。硬点更新为：
+
+```text
+SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC
+  -> PrimeTailNonprimeDefectExactLedger
+  AND SqrtRoughPrimeTailIdentityLedger
+  AND EndpointParityNonprimeDefectLowerBoundLedger
+  AND SievedTailGapMarginFunctionalLedger
+  AND SievedPositiveGapCriterionLedger
+  AND WeightedRoughTailCRTDefectOrNamedReturnPDEC
+  AND SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC
+```
+
+本步关闭的是素/非素数缺陷恒等式、sqrt-rough 精确身份和筛后 margin。
+剩余集中为：weighted rough tail 的 CRT 过密或命名 return 质量过大。
+行/列命题仍未无条件闭合。
