@@ -8312,3 +8312,104 @@ SelfMirrorDeepLateCollarOrCoreLayerExcessNamedReturnPDEC
 本步关闭的是素/非素数缺陷恒等式、sqrt-rough 精确身份和筛后 margin。
 剩余集中为：weighted rough tail 的 CRT 过密或命名 return 质量过大。
 行/列命题仍未无条件闭合。
+
+## 182. Weighted rough tail LPF 删除债务回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_lpf_deletion_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-deletion-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-deletion-router.json
+data/prime-matrix-firstbreak-tail-gap-lpf-deletion-ledger.json
+```
+
+本步继续攻击 `SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC`。同步读数为：
+
+```text
+weighted_rough_target_imported=true
+small_tail_finite_nonprime_defect_closed=true
+large_tail_lpf_partition_closed=true
+rough_prefix_deletion_telescoping_closed=true
+lpf_crt_deletion_cell_closed=true
+lpf_sieved_gap_functional_closed=true
+dyadic_lpf_deletion_debt_excluded=false
+lpf_deletion_debt_proved_impossible=false
+row_column_unconditional_closed=false
+```
+
+沿用：
+
+```text
+w(q)=min(L,q-H)ceil((P-1)/q),
+z=floor(sqrt(P-1)).
+```
+
+先扣出小端非素数质量：
+
+```text
+D_small=sum_{H<q<=z, q not prime}w(q).
+```
+
+对大端 `z<q<P`，每个非素数都有唯一最小素因子 `ell<=z`，故：
+
+```text
+B_ell=sum_{z<q<P, ell=lpf(q)}w(q),
+D_large=sum_{ell<=z}B_ell,
+D_np=D_small+D_large.
+```
+
+每个删除层有 CRT 形式：
+
+```text
+B_ell=sum_{z/ell<n<P/ell, gcd(n,W_<ell)=1}w(ell*n),
+W_<ell=prod_{p<ell}p.
+```
+
+令 `W_u=prod_{p<=u}p` 与：
+
+```text
+S_u=sum_{z<q<P, gcd(q,W_u)=1}w(q).
+```
+
+按素数 `ell` 递增筛时：
+
+```text
+S_{ell^-}-S_ell=B_ell,
+S_0-S_z=sum_{ell<=z}B_ell.
+```
+
+设：
+
+```text
+Phi=L(L-D)+min(L,y-1)-X_core.
+```
+
+则真实 gap 为：
+
+```text
+G=Phi+D_small+sum_{ell<=z}B_ell-R_named.
+```
+
+若反例仍存在，则必须满足：
+
+```text
+sum B_ell<=R_named-Phi-D_small.
+```
+
+硬点更新为：
+
+```text
+SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC
+  -> SmallTailFiniteNonprimeDefectLedger
+  AND LargeTailLeastPrimeFactorPartitionLedger
+  AND RoughPrefixDeletionTelescopingLedger
+  AND LeastPrimeFactorCRTDeletionCellLedger
+  AND SievedGapLPFDeletionFunctionalLedger
+  AND DyadicLPFDeletionDebtOrNamedReturnPDEC
+  AND LPFDeletionDebtOrRoughPrefixOverdensityPDEC
+```
+
+本步关闭的是 LPF 唯一分区、前缀删除 telescoping 与 CRT 删除单元。
+剩余集中为：dyadic 最小素因子层删除质量不足，或命名 return 吃掉这些删除。
+行/列命题仍未无条件闭合。

@@ -7942,3 +7942,73 @@ SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC
 
 本步没有证明 weighted rough 支撑不能过密；它把“整数 tail 可饱和”替换为
 真实素数筛后的 CRT 过密/PDEC 接口。
+
+## 182. Weighted rough tail LPF deletion frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_lpf_deletion_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-deletion-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-deletion-router.json
+data/prime-matrix-firstbreak-tail-gap-lpf-deletion-ledger.json
+```
+
+本步继续攻击 `SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC`。同步结果：
+
+```text
+small_tail_finite_nonprime_defect_closed=true
+large_tail_lpf_partition_closed=true
+rough_prefix_deletion_telescoping_closed=true
+lpf_crt_deletion_cell_closed=true
+lpf_sieved_gap_functional_closed=true
+dyadic_lpf_deletion_debt_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：weighted rough tail 的失败不再写成重叠包含-排除。
+令
+
+```text
+D_small=sum_{H<q<=z, q not prime}w(q).
+```
+
+对大端 `z<q<P`，每个非素数有唯一最小素因子 `ell<=z`，所以：
+
+```text
+D_np=D_small+sum_{ell<=z}B_ell,
+B_ell=sum_{z<q<P, ell=lpf(q)}w(q).
+```
+
+并且
+
+```text
+B_ell=sum_{z/ell<n<P/ell, gcd(n,W_<ell)=1}w(ell*n).
+```
+
+这是 disjoint CRT 删除层。若
+
+```text
+S_u=sum_{z<q<P, gcd(q,W_u)=1}w(q),
+```
+
+则递增筛满足：
+
+```text
+S_{ell^-}-S_ell=B_ell.
+```
+
+真实 gap 改写为：
+
+```text
+G=Phi+D_small+sum_{ell<=z}B_ell-R_named.
+```
+
+新的直接主攻为：
+
+```text
+LPFDeletionDebtOrRoughPrefixOverdensityPDEC
+```
+
+本步没有证明 LPF 删除层总能支付 gap；它把 rough over-density 压成互不重叠的
+dyadic 最小素因子 CRT 删除债务。

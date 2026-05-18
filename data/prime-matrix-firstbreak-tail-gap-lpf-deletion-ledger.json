@@ -1,0 +1,116 @@
+{
+  "certificate_type": "prime_matrix_firstbreak_tail_gap_lpf_deletion_router",
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "WeightedRoughTargetImported",
+      "meaning": "上一层把 self-mirror 剩余压成筛后 gap，失败时必须是 weighted sqrt-rough CRT 支撑过密或命名 return 过大。",
+      "proved": false,
+      "remaining": "SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "SmallTailFiniteDefectClosed",
+      "meaning": "q<=z 的非素数 tail 是有限小端，直接作为 D_small 精确扣回；q=1 边界自动包含在内。",
+      "proved": true,
+      "remaining": "SmallTailFiniteNonprimeDefectLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LargeTailLPFPartitionClosed",
+      "meaning": "对 z<q<P 的非素数，最小素因子 ell<=z 唯一存在，故大 tail 非素数缺陷按 ell 唯一分块。",
+      "proved": true,
+      "remaining": "LargeTailLeastPrimeFactorPartitionLedger"
+    },
+    {
+      "closed": true,
+      "gate": "RoughPrefixTelescopingClosed",
+      "meaning": "按素数 ell 递增筛去 q≡0 mod ell；前缀 rough 质量的每一步降幅正是对应 LPF 删除块 B_ell。",
+      "proved": true,
+      "remaining": "RoughPrefixDeletionTelescopingLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LPFCRTDeletionCellClosed",
+      "meaning": "每个 B_ell 可写为 q=ell*n、z/ell<n<P/ell、gcd(n,W_<ell)=1 的 CRT 删除单元。",
+      "proved": true,
+      "remaining": "LeastPrimeFactorCRTDeletionCellLedger"
+    },
+    {
+      "closed": true,
+      "gate": "LPFSievedGapFunctionalClosed",
+      "meaning": "真实 gap 改写为 Phi + D_small + sum_ell B_ell - R_named，其中 Phi=L(L-D)+min(L,y-1)-X_core。",
+      "proved": true,
+      "remaining": "SievedGapLPFDeletionFunctionalLedger"
+    },
+    {
+      "closed": false,
+      "gate": "DyadicLPFDebtStillOpen",
+      "meaning": "若 gap 失败，则 LPF 删除总量未能超过 R_named-Phi-D_small；必须定位到某些 dyadic ell 层的删除债务或命名 return。",
+      "proved": false,
+      "remaining": "DyadicLPFDeletionDebtOrNamedReturnPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "WeightedRoughReduced",
+      "meaning": "SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC 被压成小端非素数缺陷、large-tail LPF 唯一分区、前缀删除 telescoping、CRT 删除单元和 dyadic 删除债务。",
+      "proved": false,
+      "remaining": "SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND LPFDeletionDebtOrRoughPrefixOverdensityPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "LPFDeletionDebtExcluded",
+      "meaning": "本步没有证明所有 LPF 删除层给出足够质量；只把 rough over-density 变成 disjoint CRT 删除债务。",
+      "proved": false,
+      "remaining": "LPFDeletionDebtOrRoughPrefixOverdensityPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需排斥 dyadic LPF 删除债务，或证明该债务必回流为 PDEC/SAE/ColumnCRT。",
+      "proved": false,
+      "remaining": "LPFDeletionDebtOrRoughPrefixOverdensityPDEC"
+    }
+  ],
+  "dyadic_lpf_deletion_debt_excluded": false,
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND LPFDeletionDebtOrRoughPrefixOverdensityPDEC",
+  "hardpoint_before_router": "SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC",
+  "large_tail_lpf_partition_closed": true,
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND ZeroBlockHistoryProjectionNoLossLedger AND StableLowCarrierPaymentTableOrHistorySwitchPDEC AND StableHistoryAPSuccessorDichotomyLedger AND SourceTaggedArrivalUnitIncidenceLedger AND ArrivalQuotientFiberMultiplicityEnvelopeLedger AND ArrivalNonarrivalSourceLayerBalanceLedger AND LowStepStableHistoryAlwaysArrivesLedger AND RawArrivalMassLowerBoundFromLowStepHistory AND StableHistoryLowTailMassPartitionLedger AND LargeStepTailTerminalWindowEnvelopeLedger AND LowStepStableMassLowerBoundFromTotalMinusTailEnvelope AND ZeroBlockCoverObligationMassLedger AND StableSourceTotalAfterNamedReturnsLedger AND ExplicitStableTailGapFunctionalLedger AND TailIndexChangeOfVariablesLedger AND ExactPrimeTailEnvelopeOneDimensionalLedger AND StableTailGapNamedReturnSeparationLedger AND NormalizedIntegerTailMarginFunctionalLedger AND PrimeTailDominatedByIntegerTailEnvelopeLedger AND EarlyHalfSupportTailCannotSaturateLemma AND IntegerMarginPositiveBranchCriterionLedger AND LateSupportExcessCoordinateLedger AND RegularTailTwoUnitEndpointDefectLedger AND LateCoreExcessFunctionalLedger AND LateCollarMarginExactFormulaLedger AND DeepLateCollarMirrorContainmentLedger AND CrossCollarPositiveMarginCriterionLedger AND CoreExcessQuotientLayerDecompositionLedger AND CoreExcessLayerConcentrationOrNamedReturnPDEC AND PrimeTailNonprimeDefectExactLedger AND SqrtRoughPrimeTailIdentityLedger AND EndpointParityNonprimeDefectLowerBoundLedger AND SievedTailGapMarginFunctionalLedger AND SievedPositiveGapCriterionLedger AND WeightedRoughTailCRTDefectOrNamedReturnPDEC AND SmallTailFiniteNonprimeDefectLedger AND LargeTailLeastPrimeFactorPartitionLedger AND RoughPrefixDeletionTelescopingLedger AND LeastPrimeFactorCRTDeletionCellLedger AND SievedGapLPFDeletionFunctionalLedger AND DyadicLPFDeletionDebtOrNamedReturnPDEC AND LPFDeletionDebtOrRoughPrefixOverdensityPDEC AND WeightedArrivalImageLowerBoundFromFiberEnvelope AND HighFiberArrivalCollisionPDECOrDenseLowCarrierReturn AND ArrivalCollisionOrDuplicatePaymentReturnLedger AND TerminalNonarrivalLargeStepEscapePDECOrSAE AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "lpf_crt_deletion_cell_closed": true,
+  "lpf_deletion_debt_proved_impossible": false,
+  "lpf_deletion_formulas": {
+    "dyadic_partition": "sum_{ell<=z}B_ell=sum_Y sum_{Y<ell<=2Y}B_ell",
+    "failure_branch": "G<=0 => sum B_ell<=R_named-Phi-D_small",
+    "gap": "G=Phi+D_small+sum_{ell<=z}B_ell-R_named",
+    "large_defect": "D_large=sum_{ell<=z} B_ell",
+    "lpf_cell": "B_ell=sum_{z<q<P, ell=lpf(q)} w(q)",
+    "lpf_crt_cell": "B_ell=sum_{z/ell<n<P/ell, gcd(n,W_<ell)=1} w(ell*n)",
+    "nonprime_defect": "D_np=D_small+D_large",
+    "phi": "Phi=L(L-D)+min(L,y-1)-X_core",
+    "positive_branch": "Phi+D_small+sum B_ell>R_named => G>0",
+    "prefix_rough": "S_u=sum_{z<q<P, gcd(q,W_u)=1} w(q)",
+    "small_defect": "D_small=sum_{H<q<=z, q not prime} w(q)",
+    "tail_weight": "w(q)=min(L,q-H)ceil((P-1)/q)",
+    "telescoping": "S_{ell^-}-S_ell=B_ell and S_0-S_z=sum_{ell<=z}B_ell",
+    "z": "z=floor(sqrt(P-1))"
+  },
+  "lpf_sieved_gap_functional_closed": true,
+  "next_direct_attack_target": "LPFDeletionDebtOrRoughPrefixOverdensityPDEC",
+  "no_theorem_switch": true,
+  "plain_conclusion": "weighted rough tail 的失败形态被改写为最小素因子删除债务。小端 q<=z 的非素数质量先精确扣出为 D_small；大端 z<q<P 中，每个非素数有唯一最小素因子 ell<=z，于是 D_large=sum B_ell。按 ell 递增筛时，前缀 rough 质量的 telescoping 降幅正是 B_ell，且每个 B_ell 是 q=ell*n、gcd(n,W_<ell)=1 的 CRT 删除单元。若真实 gap 仍失败，则不是 rough 集合抽象过密，而是某些 dyadic 最小素因子层删除质量不足，或命名 return 吃掉这些删除。",
+  "rough_prefix_deletion_telescoping_closed": true,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "small_tail_finite_nonprime_defect_closed": true,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-deep-collar-layer-router.json": "17ee16b69406b0f1a4f9f932ceb56af5de0ccaf634d2c7f092a15f71da8d72d2",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-late-collar-router.json": "496714585ada926f0875418c4d1b5ce1e3d3fa6a5d5074537069120a48b594e3",
+    "docs/monograph/prime-matrix-firstbreak-tail-gap-sieved-defect-router.json": "0a036df32f9e79916aa6bae21031a046974501d74b9679a93fdca81b08d48e38",
+    "experiments/prime_matrix_firstbreak_tail_gap_lpf_deletion_router.py": "3e44426badfdce2ed4e6ece6768a10a60df278f93d28b0047acecf601c93d272"
+  },
+  "status": "weighted_rough_tail_reduced_to_lpf_deletion_debt_open",
+  "weighted_rough_target_imported": true
+}

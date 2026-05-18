@@ -11914,6 +11914,96 @@ does not yet prove that \(D_{\rm np}\) always dominates \(X_{\rm core}\) and
 and the row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[Least-prime-factor deletion form of the weighted rough tail]
+Keep
+\[
+  w(q)=\min(L,q-H)\Big\lceil\frac{P-1}{q}\Big\rceil,\qquad
+  z=\lfloor\sqrt{P-1}\rfloor .
+\]
+Separate the finite small tail
+\[
+  D_{\rm small}=\sum_{\substack{H<q\le z\\q\ {\rm not\ prime}}}w(q).
+\]
+For \(z<q<P\), every non-prime \(q\) has a unique least prime factor
+\(\ell\le z\).  Hence the large non-prime defect has the disjoint
+decomposition
+\[
+  D_{\rm large}=\sum_{\ell\le z}B_\ell,\qquad
+  B_\ell=\sum_{\substack{z<q<P\\ \ell={\rm lpf}(q)}}w(q),
+\]
+and
+\[
+  D_{\rm np}=D_{\rm small}+D_{\rm large}.
+\]
+If
+\[
+  W_{<\ell}=\prod_{p<\ell,\ p\ {\rm prime}}p,
+\]
+then each cell has the CRT form
+\[
+  B_\ell=
+  \sum_{\substack{z/\ell<n<P/\ell\\(n,W_{<\ell})=1}}w(\ell n).
+\]
+Equivalently, with \(W_u=\prod_{p\le u}p\) and
+\[
+  S_u=\sum_{\substack{z<q<P\\(q,W_u)=1}}w(q),
+\]
+the prefix sieve telescopes by
+\[
+  S_{\ell^-}-S_\ell=B_\ell,\qquad
+  S_0-S_z=\sum_{\ell\le z}B_\ell.
+\]
+Let
+\[
+  \Phi=L(L-D)+\min(L,y-1)-X_{\rm core}.
+\]
+The true gap is therefore
+\[
+  G=\Phi+D_{\rm small}+\sum_{\ell\le z}B_\ell-R_{\rm named}.
+\]
+Thus \(G>0\) follows from
+\[
+  \Phi+D_{\rm small}+\sum_{\ell\le z}B_\ell>R_{\rm named}.
+\]
+If a counterexample remains, then
+\[
+  \sum_{\ell\le z}B_\ell\le R_{\rm named}-\Phi-D_{\rm small},
+\]
+which is a disjoint least-prime-factor deletion debt.  Hence
+\begin{quote}\scriptsize\ttfamily
+SelfMirrorSievedTailGapOrWeightedRoughCRTDefectPDEC\\
+\(\rightarrow\) SmallTailFiniteNonprimeDefectLedger\\
+AND LargeTailLeastPrimeFactorPartitionLedger\\
+AND RoughPrefixDeletionTelescopingLedger\\
+AND LeastPrimeFactorCRTDeletionCellLedger\\
+AND SievedGapLPFDeletionFunctionalLedger\\
+AND DyadicLPFDeletionDebtOrNamedReturnPDEC\\
+AND LPFDeletionDebtOrRoughPrefixOverdensityPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-lpf-deletion-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+weighted\_rough\_target\_imported=true\\
+small\_tail\_finite\_nonprime\_defect\_closed=true\\
+large\_tail\_lpf\_partition\_closed=true\\
+rough\_prefix\_deletion\_telescoping\_closed=true\\
+lpf\_crt\_deletion\_cell\_closed=true\\
+lpf\_sieved\_gap\_functional\_closed=true\\
+dyadic\_lpf\_deletion\_debt\_excluded=false\\
+lpf\_deletion\_debt\_proved\_impossible=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step removes overlap ambiguity from the weighted rough branch by assigning
+each large non-prime tail point to its unique least prime factor.  It does not
+prove that the resulting dyadic deletion layers always pay the gap.  The
+row/column theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.
