@@ -6697,3 +6697,49 @@ UniformLowRootSiftedResidueDeficitAfterNearRootSlots
 ```
 
 所以当前前沿从宏循环破环进一步落到一个具体 row-gap 筛余下界：低根覆盖后，近根槽不能吞掉全部剩余列。
+
+## 158. Low-root sifted deficit frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_lowroot_sifted_deficit_frontier_router.py
+docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.md
+docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.json
+data/prime-matrix-lowroot-sifted-deficit-frontier-ledger.json
+```
+
+本步把 `UniformLowRootSiftedResidueDeficitAfterNearRootSlots` 继续拆解。同步结果显示：
+
+```text
+exact_deficit_identity_closed=true
+near_root_slot_upper_bound_elementary=true
+mertens_heuristic_not_proof=true
+jacobsthal_barrier_identified=true
+noncircular_short_interval_rough_residue_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：`full_uncovered_slots>0` 与 row 内存在素数等价；近根槽容量可初等控制，
+但低根筛余的逐行正下界仍是核心。不能用 Mertens 平均密度替代该短区间下界，因为那会重新引入
+待证行命题。
+
+最新非循环剩余为：
+
+```text
+(NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP
+ OR AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP
+```
+
+所以当前前沿已压到一个标准但很硬的非循环筛论输入：指定相位短区间 rough residue 下界。

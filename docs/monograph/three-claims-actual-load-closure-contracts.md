@@ -6721,3 +6721,64 @@ UniformLowRootSiftedResidueDeficitAfterNearRootSlots
 
 本步没有证明所有 row-gap 不可能；它把具体反例的供需/相位矛盾压成统一低根筛余缺口或
 `Q1/Q2` CRT 传输矛盾。
+
+## 158. Low-root sifted deficit frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_lowroot_sifted_deficit_frontier_router.py
+docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.md
+docs/monograph/prime-matrix-lowroot-sifted-deficit-frontier-router.json
+data/prime-matrix-lowroot-sifted-deficit-frontier-ledger.json
+```
+
+本步继续攻击上一节留下的 `UniformLowRootSiftedResidueDeficitAfterNearRootSlots`。同步读数为：
+
+```text
+exact_deficit_identity_closed=true
+near_root_slot_upper_bound_elementary=true
+mertens_heuristic_not_proof=true
+jacobsthal_barrier_identified=true
+noncircular_short_interval_rough_residue_lower_bound_proved=false
+row_column_unconditional_closed=false
+```
+
+精确等价已经闭合：在 `I_k={kP+a:1<=a<P}` 中，`kP+a<P^2`。因此
+
+```text
+full_uncovered_slots > 0  <=>  row contains a prime.
+```
+
+近根槽只来自
+
+```text
+sqrt(kP) < q <= sqrt(kP+P-1)
+```
+
+每个这样的 `q` 在 row 内只给一个 residue class，容量有初等上界；它不是主要未知。真正硬点是：
+
+```text
+NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP
+```
+
+即在长度 `P` 的指定相位短区间中，筛到 `sqrt(kP)` 后仍保留足够 rough residue，使近根槽不能全部吞掉。
+Mertens 密度只能给启发，不能替代逐行下界；否则会把行命题循环写回自身。
+
+最新非循环基为：
+
+```text
+(NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP
+ OR AdjacentPrimeQ1Q2CRTTransportDefectOrStableShortReturn
+ OR AcyclicSeedCycleCutPrimitiveBasisAndCoefficientSourceInput
+ OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate)
+AND HighSegmentModelGapAlpha043C3AnalyticLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+下一直接主攻：
+
+```text
+NonCircularShortIntervalRoughResidueLowerBoundLengthPLevelSqrtkP
+```
