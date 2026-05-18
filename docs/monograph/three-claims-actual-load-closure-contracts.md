@@ -8691,3 +8691,92 @@ CofactorLPFCoverDebtOrProductWidthColumnCRTPDEC
 本步关闭的是 excess 阈值、active product-width 二分、dyadic `r` 压力定位和 fixed-r
 rough-m CRT 端点。剩余集中为：dyadic `r` 层过载，或 small-product active cover
 的 ColumnCRT/PDEC。行/列命题仍未无条件闭合。
+
+## 186. cofactor-LPF single-r pressure 回接
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_cofactor_lpf_single_r_pressure_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-router.json
+data/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-ledger.json
+```
+
+本步继续攻击 `DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC`。同步读数为：
+
+```text
+dyadic_pressure_imported=true
+active_prime_cardinality_closed=true
+small_z_finite_atom_boundary_closed=true
+single_r_pressure_localization_closed=true
+fixed_r_source_ell_partition_closed=true
+fixed_r_ell_rough_m_crt_cell_closed=true
+fixed_pair_product_width_closed=true
+single_r_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+在 dyadic 层 `Z<r<=2Z` 中，活动集合为：
+
+```text
+R_Z(C)={r: Z<r<=2Z, E_r(C)>0}.
+```
+
+`Z<2` 的最低层作为有限小素因子原子边界单独登记。对 `Z>=2`，若仍处于 small-product 分支：
+
+```text
+M_Z=prod_{r in R_Z(C)}r <= W_C=width(C),
+```
+
+则每个活动 `r>Z` 给出活动个数界：
+
+```text
+|R_Z(C)| <= K_Z=floor(log W_C/log Z).
+```
+
+若 dyadic 层仍超预算：
+
+```text
+E_Z(C)>U_Z,
+```
+
+则必存在单个活动素因子：
+
+```text
+E_r(C)>U_Z/K_Z.
+```
+
+固定 `r` 后按源 `ell` 分区：
+
+```text
+E_r(C)=sum_{ell in Y, ell>r}E_{r<-ell}(C).
+```
+
+于是超预算继续落到固定 `(r,ell)`，其单元为：
+
+```text
+q=ell*r*m,
+m_min=ceil(n_min/r),
+m_max=floor(n_max/r),
+gcd(m,W_<r)=1,
+alpha_{ell,r*m}=j*u(ell*r*m).
+```
+
+硬点更新为：
+
+```text
+DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC
+  -> ActivePrimeCardinalityFromProductLedger
+  AND SmallZFiniteAtomBoundaryLedger
+  AND SingleCofactorPrimePressureLocalizationLedger
+  AND FixedRSourceEllPartitionLedger
+  AND FixedREllRoughMCRTCellLedger
+  AND FixedPairProductWidthColumnCRTExitLedger
+  AND SingleRSmallProductPressurePDEC
+  AND SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC
+```
+
+本步关闭的是 small-product 活动个数界、低层有限原子边界、single-r 压力定位与
+fixed-pair rough-m CRT 形式。剩余集中为：single-r/fixed-pair pressure，或 fixed-pair
+ColumnCRT/PDEC。行/列命题仍未无条件闭合。

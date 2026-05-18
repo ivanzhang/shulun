@@ -12239,6 +12239,72 @@ docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-dyadic-pressure-rou
 \end{quote}
 \end{proof}
 
+\begin{theorem}[Cofactor-LPF single-\(r\) pressure reduction]
+The small-product dyadic \(r\)-pressure branch can be localized to a single
+cofactor prime and then to a fixed \((r,\ell)\) rough-\(m\) CRT cell.  The open
+hard point
+\begin{quote}\scriptsize\ttfamily
+DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC
+\end{quote}
+is reduced to
+\begin{quote}\scriptsize\ttfamily
+ActivePrimeCardinalityFromProductLedger\\
+AND SmallZFiniteAtomBoundaryLedger\\
+AND SingleCofactorPrimePressureLocalizationLedger\\
+AND FixedRSourceEllPartitionLedger\\
+AND FixedREllRoughMCRTCellLedger\\
+AND FixedPairProductWidthColumnCRTExitLedger\\
+AND SingleRSmallProductPressurePDEC\\
+AND SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Reduction ledger]
+In a dyadic \(r\)-layer \(Z<r\le2Z\), let
+\[
+  R_Z(C)=\{r:Z<r\le2Z,\ E_r(C)>0\},\qquad
+  M_Z=\prod_{r\in R_Z(C)}r.
+\]
+The boundary \(Z<2\) is a finite small-prime atom.  For \(Z\ge2\), if the
+small-product branch gives \(M_Z\le W_C\), where \(W_C\) is the cell support
+width, then each active \(r\) is \(>Z\), hence
+\[
+  |R_Z(C)|\le K_Z:=\lfloor\log W_C/\log Z\rfloor .
+\]
+If the dyadic layer is over budget,
+\[
+  E_Z(C)>U_Z,
+\]
+then some active cofactor prime satisfies
+\[
+  E_r(C)>U_Z/K_Z.
+\]
+Thus the pressure is not merely a layer total; it localizes to a single \(r\).
+
+For fixed \(r\),
+\[
+  E_r(C)=\sum_{\substack{\ell\in Y\\ \ell>r}}E_{r\leftarrow\ell}(C).
+\]
+Applying the same finite localization to the \(\ell\)-sources sends any
+remaining overpressure to one fixed pair \((r,\ell)\).  On this pair,
+\[
+  q=\ell r m,\qquad
+  m_{\min}=\lceil n_{\min}/r\rceil,\qquad
+  m_{\max}=\lfloor n_{\max}/r\rfloor,
+\]
+and
+\[
+  (m,W_{<r})=1,\qquad
+  \alpha_{\ell,rm}=j\,u(\ell r m).
+\]
+This is a fixed-pair rough-\(m\) CRT cell.  The reduction does not exclude
+single-\(r\) or fixed-pair pressure; it only removes the remaining
+small-product dyadic ambiguity.  The row/column theorem remains open.  The
+certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-router.md.
+\end{quote}
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

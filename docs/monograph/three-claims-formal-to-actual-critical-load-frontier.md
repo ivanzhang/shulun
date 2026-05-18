@@ -8212,3 +8212,64 @@ DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC
 
 本步没有证明 dyadic `r` 层过载不可能；它把最新剩余压到 product-width 二分和更低阶
 rough-m CRT 支撑压力。
+
+## 186. Cofactor-LPF single-r pressure frontier
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_tail_gap_cofactor_lpf_single_r_pressure_router.py
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-router.md
+docs/monograph/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-router.json
+data/prime-matrix-firstbreak-tail-gap-cofactor-lpf-single-r-pressure-ledger.json
+```
+
+本步继续攻击 `DyadicCofactorLPFPressureOrSmallProductColumnCRTPDEC`。同步结果：
+
+```text
+active_prime_cardinality_closed=true
+small_z_finite_atom_boundary_closed=true
+single_r_pressure_localization_closed=true
+fixed_r_source_ell_partition_closed=true
+fixed_r_ell_rough_m_crt_cell_closed=true
+fixed_pair_product_width_closed=true
+single_r_pressure_excluded=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：small-product active cover 不再作为整体保留。对 `Z<r<=2Z`
+的活动集合 `R_Z(C)`，`Z<2` 作为有限原子边界。对 `Z>=2`，若：
+
+```text
+M_Z=prod_{r in R_Z(C)}r <= W_C=width(C),
+```
+
+则：
+
+```text
+|R_Z(C)| <= floor(log W_C/log Z).
+```
+
+若同时 `E_Z(C)>U_Z`，则存在单个 `r` 满足：
+
+```text
+E_r(C)>U_Z/K_Z.
+```
+
+固定 `r` 后按 `ell` 分区，继续落到固定 `(r,ell)`：
+
+```text
+q=ell*r*m,
+m_min=ceil(n_min/r),
+m_max=floor(n_max/r),
+gcd(m,W_<r)=1.
+```
+
+新的直接主攻为：
+
+```text
+SingleCofactorPrimePressureOrFixedPairMCRTColumnCRTPDEC
+```
+
+本步没有证明 single-r/fixed-pair pressure 不可能；它把 small-product dyadic 压力压成
+单个 cofactor prime 和固定 pair 的 rough-m CRT 单元。
