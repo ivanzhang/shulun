@@ -5894,3 +5894,38 @@ BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
 ```text
 ActualEmitterSourceDomainEntropyLedger AND ExactUVMapFixedPairPolylogFiberBoundLedger
 ```
+
+## 130. Strict antisplit trace-cycle / ExactUV atomized frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_antisplit_trace_exactuv_atomized_frontier_router.py
+docs/monograph/prime-matrix-strict-antisplit-trace-exactuv-atomized-frontier-router.md
+docs/monograph/prime-matrix-strict-antisplit-trace-exactuv-atomized-frontier-router.json
+data/prime-matrix-strict-antisplit-trace-exactuv-atomized-frontier-ledger.json
+```
+
+本步继续同步 built-in pairing 与 ExactUV 两侧。signed 侧：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+-> signed-lane dependency cycle
+```
+
+所以 trace 本身不能自证，非循环出口回到：
+
+```text
+NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+```
+
+并行 ExactUV 侧进一步拆成：
+
+```text
+AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+当前三项均未证明，行/列命题仍保持开放。

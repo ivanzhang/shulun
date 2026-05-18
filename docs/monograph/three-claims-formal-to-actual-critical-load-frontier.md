@@ -5821,3 +5821,74 @@ AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
 ```
 
 本步删除的是“普通 joint declaration 可直接闭合”的误出口。若不提交内置 signed coefficient/pairing 闭式，ordinary constructor 只会回到 signed-source 固定点；若不证明 ExactUV entropy/fiber，则 source lane 也不能晋级。行/列命题仍未无条件闭合。
+
+## 141. Strict antisplit trace-cycle / ExactUV atomized frontier router
+
+新增文件
+
+```text
+experiments/prime_matrix_strict_antisplit_trace_exactuv_atomized_frontier_router.py
+docs/monograph/prime-matrix-strict-antisplit-trace-exactuv-atomized-frontier-router.md
+docs/monograph/prime-matrix-strict-antisplit-trace-exactuv-atomized-frontier-router.json
+data/prime-matrix-strict-antisplit-trace-exactuv-atomized-frontier-ledger.json
+```
+
+本步把上一节的 built-in pairing 和 ExactUV 并行门继续原子化：
+
+```text
+BuiltInSignedCoefficientPairingClosedFormForAtomicJointRows
+-> ExactAtomicJointBranchTraceSignedCoefficientFormulaOrReturn
+-> signed-lane dependency cycle
+-> NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact OR terminal/PDEC
+
+ActualEmitterSourceDomainEntropyLedger
+-> ActualPreCauchySourceDomainEntropyFromSignedRowsAndRowMassLedger
+-> AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+
+ExactUVMapFixedPairPolylogFiberBoundLedger
+-> RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+   AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+导入结果：
+
+```text
+built_in_pairing_reduced_to_branch_trace=true
+signed_lane_trace_cycle_imported=true
+new_primitive_payload_or_trace_artifact_present=false
+emitter_entropy_atomized_to_signed_row_mass=true
+fixed_pair_fiber_atomized=true
+acyclic_seed_primitive_row_signed_coefficient_law_proved=false
+registered_complete_primitive_emitter_key_partition_polylog_proved=false
+fixed_key_exact_uv_local_multiplicity_o1_proved=false
+row_column_unconditional_closed=false
+```
+
+细原子基为：
+
+```text
+(NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger
+```
+
+统一保留剩余基为：
+
+```text
+((NewPrimitiveAtomicSignedPayloadOrTraceFormulaArtifact
+OR AcyclicNoncanonicalTerminalReturnWellFoundedDescentCertificate
+OR AcyclicSameSetScopeMatchForDirectPDECCapDualCertificate
+OR ExternalDIBFIKuznetsovDispersionTheoremMatch)
+AND AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward
+AND RegisteredCompletePrimitiveEmitterKeyPartitionPolylogLedger
+AND FixedKeyExactUVLocalMultiplicityO1Ledger)
+AND ExplicitModelGapAndFiniteDPRCLedger
+AND RatePreservationLedger_FOR_moving_atom_packet
+AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance
+```
+
+本步的关键边界是：exact atomic branch trace 已经落入 signed-lane 闭环，不能作为 built-in pairing 的自足证明；ExactUV 也不能由 signed pairing 推出，而必须单独证明 signed row law、complete key 分区和 fixed-key 局部重数。行/列命题仍未无条件闭合。
