@@ -7213,3 +7213,38 @@ AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse
 
 第一步从零行/首破裂源侧证明释放质量会沿反例链放大；若不放大，则事件是 singleton/sparse SAE。
 第二步证明这些放大的压力确实注入低 carrier AP table，且证明过程不借用 AP envelope 饱和本身。
+
+## 169. First-break release mass 零行块阶梯
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_release_mass_zero_block_ladder_router.py
+docs/monograph/prime-matrix-firstbreak-release-mass-zero-block-ladder-router.md
+docs/monograph/prime-matrix-firstbreak-release-mass-zero-block-ladder-router.json
+data/prime-matrix-firstbreak-release-mass-zero-block-ladder-ledger.json
+```
+
+本步把 `FirstBreakReleaseMassAmplificationOrSingletonSAE` 的可能来源定位到首破裂前零行块。同步结果：
+
+```text
+contiguous_zero_block_imported=true
+boundary_only_amplification_blocked=true
+zero_block_cover_obligation_mass_closed=true
+block_length_dichotomy_closed=true
+short_zero_block_singleton_sae_proved=false
+long_zero_block_mass_transfer_proved=false
+release_mass_amplification_proved=false
+row_column_unconditional_closed=false
+```
+
+formal-to-actual 含义是：首破裂释放列只是边界单位事件，不可能单独给出 `Ω(H)` 需求。若 `[x0,y-1]`
+是首破裂前连续零行块，长度 `L=y-x0`，则块内覆盖义务总量为精确的 `L(P-1)`。所以真正的需求放大只能来自：
+
+```text
+ShortZeroBlockSingletonSAESummability
+AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC
+```
+
+短块必须由 singleton/sparse SAE 或局部短块证书吸收；长块必须证明覆盖义务能非循环地转移成 post-break
+AP demand，或者证明转移失败形成持续覆盖历史 PDEC/ColumnCRT/SAE。

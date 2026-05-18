@@ -7403,3 +7403,59 @@ ActualLowCarrierRowIncidenceDemandLowerBound
 也就是说，下一步必须证明首破裂释放沿反例链放大到可与 `H=P-y` 比较；若不放大，则只能作为
 singleton/sparse SAE 计费。同时还要证明放大的压力确实非循环地注入同一低 carrier AP table；若不能注入，
 则回流到高秩、moving-carrier、PDEC 或 SAE 出口。
+
+## 169. First-break release mass 零行块阶梯
+
+新增文件
+
+```text
+experiments/prime_matrix_firstbreak_release_mass_zero_block_ladder_router.py
+docs/monograph/prime-matrix-firstbreak-release-mass-zero-block-ladder-router.md
+docs/monograph/prime-matrix-firstbreak-release-mass-zero-block-ladder-router.json
+data/prime-matrix-firstbreak-release-mass-zero-block-ladder-ledger.json
+```
+
+本步继续攻击 `FirstBreakReleaseMassAmplificationOrSingletonSAE`。同步读数为：
+
+```text
+contiguous_zero_block_imported=true
+boundary_only_amplification_blocked=true
+zero_block_cover_obligation_mass_closed=true
+block_length_dichotomy_closed=true
+short_zero_block_singleton_sae_proved=false
+long_zero_block_mass_transfer_proved=false
+release_mass_amplification_proved=false
+row_column_unconditional_closed=false
+```
+
+首破裂边界释放本身只给单位事件；若要得到可与 `H=P-y` 比较的源侧质量，唯一来源是首破裂前的连续零行块。
+设 `[x0,y-1]` 为零行块，长度
+
+```text
+L = y - x0.
+```
+
+则对每个 `t in [x0,y-1]` 和每个 `1<=c<P`，都有某个 `q<P` 覆盖 `tP+c`。因此源侧覆盖义务总量精确为：
+
+```text
+L(P-1).
+```
+
+对任意阈值 `A>=1`，出现长短二分：
+
+```text
+L < A   -> ShortZeroBlockSingletonSAESummability
+L >= A  -> LongZeroBlockCoverMassTransferToAPDemandOrPDEC
+```
+
+该硬点更新为：
+
+```text
+FirstBreakReleaseMassAmplificationOrSingletonSAE
+  -> ShortZeroBlockSingletonSAESummability
+  AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC
+```
+
+本步关闭的是“放大源头定位”：放大不能来自首破裂单位释放，只能来自前置零行块覆盖账本。尚未证明短块
+singleton/sparse SAE 可求和，也未证明长块覆盖义务必能非循环转移为 post-break AP demand；若转移失败，
+应进入持续覆盖历史 PDEC/ColumnCRT/SAE。

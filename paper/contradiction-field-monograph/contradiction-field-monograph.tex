@@ -11134,6 +11134,49 @@ injected into the low-carrier AP table, it returns to the high-rank,
 moving-carrier, PDEC, or SAE exits.  The row/column theorem remains open.
 \end{proof}
 
+\begin{theorem}[First-break release mass zero-block ladder]
+Assume the square-anchor branch does not take over and let \(y\) be the first
+nonzero row after an early zero row \(x_0<P\).  Then
+\([x_0,y-1]\) is a zero-row block of length \(L=y-x_0\).  For every
+\(t\in[x_0,y-1]\) and every \(1\le c<P\), there is a carrier \(q<P\) with
+\[
+  q\mid tP+c .
+\]
+Hence the source-side cover-obligation mass in the block is exactly
+\[
+  L(P-1).
+\]
+The boundary release at row \(y\) only gives a unit event; any amplification
+must therefore come from this zero-block cover ledger.  For any threshold
+\(A\ge1\), the branch is reduced to the two obligations
+\begin{quote}\scriptsize\ttfamily
+ShortZeroBlockSingletonSAESummability\\
+AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC.
+\end{quote}
+\end{theorem}
+\begin{proof}[Status and reference]
+The certificate is recorded in
+\begin{quote}\scriptsize\ttfamily
+docs/monograph/prime-matrix-firstbreak-release-mass-zero-block-ladder-router.md.
+\end{quote}
+It records
+\begin{quote}\scriptsize\ttfamily
+contiguous\_zero\_block\_imported=true\\
+boundary\_only\_amplification\_blocked=true\\
+zero\_block\_cover\_obligation\_mass\_closed=true\\
+block\_length\_dichotomy\_closed=true\\
+short\_zero\_block\_singleton\_sae\_proved=false\\
+long\_zero\_block\_mass\_transfer\_proved=false\\
+release\_mass\_amplification\_proved=false\\
+row\_column\_unconditional\_closed=false.
+\end{quote}
+This step localizes the only possible amplification source.  It does not
+prove short-block SAE summability, and it does not prove that long-block cover
+obligations transfer noncircularly into post-break AP demand; failed transfer
+is routed to persistent cover-history PDEC/ColumnCRT/SAE.  The row/column
+theorem remains open.
+\end{proof}
+
 
 \begin{theorem}[Internal line-by-line audit]
 The author-side line-by-line audit has found no new item classified as a mathematical block.  The remaining blocks are referee blocks: Prime Matrix final promotion requires independent acceptance of the D-structure/Tail-log4/finite-verification interface, and RH final promotion requires independent acceptance of all controlled exits in the RH contradiction-field manuscript.

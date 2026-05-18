@@ -1,0 +1,114 @@
+{
+  "block_length_dichotomy_closed": true,
+  "boundary_only_amplification_blocked": true,
+  "certificate_type": "prime_matrix_firstbreak_release_mass_zero_block_ladder_router",
+  "contiguous_zero_block_imported": true,
+  "counterexample_assumption_only": true,
+  "decision_rows": [
+    {
+      "closed": true,
+      "gate": "ReleaseMassAmplificationImported",
+      "meaning": "上一层把 actual demand 的第一主攻压到首破裂释放质量放大或 singleton SAE。",
+      "proved": false,
+      "remaining": "FirstBreakReleaseMassAmplificationOrSingletonSAE"
+    },
+    {
+      "closed": true,
+      "gate": "ContiguousZeroBlockImported",
+      "meaning": "early-to-square 分裂已给出：若 square-anchor 不接管，则有零行块 [x0,y-1] 和首破裂行 y。",
+      "proved": true,
+      "remaining": "zero block [x0,y-1]"
+    },
+    {
+      "closed": true,
+      "gate": "BoundaryOnlyAmplificationBlocked",
+      "meaning": "首破裂释放列非空只给 D_y>=1；边界释放本身不能产生 Ω(H) 需求。",
+      "proved": true,
+      "remaining": "NoBoundaryOnlyReleaseAmplificationGuard"
+    },
+    {
+      "closed": true,
+      "gate": "ZeroBlockCoverObligationMassClosed",
+      "meaning": "若零行块长度 L=y-x0，则块内每个 (t,c) 都有某 q<P 覆盖，源侧覆盖义务总数精确为 L(P-1)。",
+      "proved": true,
+      "remaining": "ZeroBlockCoverObligationMassLedger"
+    },
+    {
+      "closed": true,
+      "gate": "BlockLengthDichotomyClosed",
+      "meaning": "对任意阈值 A>=1，L<A 为短块 singleton/SAE 分支，L>=A 为长块覆盖质量转移或 PDEC 分支。",
+      "proved": true,
+      "remaining": "ShortZeroBlockSingletonSAESummability OR LongZeroBlockCoverMassTransferToAPDemandOrPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "ShortBlockRoutedToSingletonSAE",
+      "meaning": "短零块没有足够行向质量自动超过 AP envelope；它必须作为 singleton/sparse SAE 或局部短块证书处理。",
+      "proved": false,
+      "remaining": "ShortZeroBlockSingletonSAESummability"
+    },
+    {
+      "closed": true,
+      "gate": "LongBlockNeedsMassTransfer",
+      "meaning": "长零块有 L(P-1) 覆盖义务，但仍需证明这些义务能非循环转移为 post-break AP demand；若转移失败，失败形态是持续覆盖历史 PDEC/ColumnCRT/SAE。",
+      "proved": false,
+      "remaining": "LongZeroBlockCoverMassTransferToAPDemandOrPDEC"
+    },
+    {
+      "closed": true,
+      "gate": "AmplificationReduced",
+      "meaning": "FirstBreakReleaseMassAmplificationOrSingletonSAE 被压成短块 SAE 排斥与长块覆盖质量转移/PDEC 二项。",
+      "proved": false,
+      "remaining": "ShortZeroBlockSingletonSAESummability AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "AmplificationProved",
+      "meaning": "本步没有证明释放质量已经放大到超过 envelope；只定位了唯一可放大的源头是前置零行块覆盖账本。",
+      "proved": false,
+      "remaining": "ShortZeroBlockSingletonSAESummability AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC"
+    },
+    {
+      "closed": false,
+      "gate": "RowColumnUnconditionalClosureReached",
+      "meaning": "行/列命题仍需 square-anchor 输入、短块 SAE、长块质量转移、低 carrier 支付注入、strict-gap/PDEC/SAE 与 signed/source 前沿。",
+      "proved": false,
+      "remaining": "(NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch"
+    }
+  ],
+  "empirical_absence_not_used_as_proof": true,
+  "hardpoint_after_router": "ShortZeroBlockSingletonSAESummability AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC",
+  "hardpoint_before_router": "FirstBreakReleaseMassAmplificationOrSingletonSAE",
+  "latest_noncycle_basis_after_router": "((NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion) OR (AcyclicSeedPrimitiveRowSignedCoefficientLawBeforePushforward AND ActualNoncanonicalPrimitiveEmitterSourceTableLedger AND FixedKeyExactUVLocalMultiplicityO1Ledger) OR NewExplicitActualJointAlphaDeltaConstructorFormulaArtifact OR ExternalDIBFIKuznetsovDispersionTheoremMatch) AND HighSegmentModelGapAlpha043C3AnalyticLedger AND RatePreservationLedger_FOR_moving_atom_packet AND DStructureTailLog4FiniteRankinFullLedgerIndependentAcceptance",
+  "long_zero_block_mass_transfer_proved": false,
+  "next_direct_attack_target": "LongZeroBlockCoverMassTransferToAPDemandOrPDEC",
+  "no_theorem_switch": true,
+  "parallel_attack_targets": [
+    "ShortZeroBlockSingletonSAESummability",
+    "LowCarrierActualPaymentInjectionWithoutEnvelopeReuse",
+    "LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC",
+    "DenseLowCarrierResidueTablePDECExclusion",
+    "SparseLowCarrierResidueCellSAESummability",
+    "LowCarrierNonpersistentSparseSAESummability",
+    "HighCarrierRankDeficitCapacityBoundOrSingletonSAE",
+    "NonreplaySparseFirstBreakSAESummability",
+    "MovingCarrierPhaseSlipPDECExclusion"
+  ],
+  "plain_conclusion": "释放质量放大的源头被定位到首破裂前的连续零行块。边界释放只给单位需求；若零行块长度为 L，则源侧覆盖义务总量精确为 L(P-1)。因此短块必须进入 singleton/sparse SAE，长块则必须证明覆盖质量能非循环转移为 post-break AP demand；若转移失败，失败形态进入持续覆盖历史 PDEC/ColumnCRT/SAE。",
+  "reduced_inverse_alignment_branch": "NoZeroRowAtXEqualsP_PlusOneRowAfterSquare AND ShortZeroBlockSingletonSAESummability AND LongZeroBlockCoverMassTransferToAPDemandOrPDEC AND LowCarrierActualPaymentInjectionWithoutEnvelopeReuse AND LowCarrierAPEnvelopeStrictGapOrDenseTablePDEC AND DenseLowCarrierResidueTablePDECExclusion AND SparseLowCarrierResidueCellSAESummability AND LowCarrierNonpersistentSparseSAESummability AND HighCarrierRankDeficitCapacityBoundOrSingletonSAE AND NonreplaySparseFirstBreakSAESummability AND MovingCarrierPhaseSlipPDECExclusion",
+  "release_mass_amplification_proved": false,
+  "row_column_unconditional_closed": false,
+  "same_theorem_target_preserved": true,
+  "short_zero_block_singleton_sae_proved": false,
+  "source_hashes": {
+    "docs/monograph/prime-matrix-bad-window-source-family-extraction-router.md": "6230a1418722ca91ea34a35069258b84592cb193170af95df7847ec855427c3c",
+    "docs/monograph/prime-matrix-bpn-bk-selberg-route.md": "377e0c33124ac43a187c69652174aba917da18e179a0e9be2f59590e7a9c2dbf",
+    "docs/monograph/prime-matrix-early-to-square-phase-transfer-split-router.json": "54575ef141b22648dd85608f8db9144e24ef013b69df9a130147857c28840c2f",
+    "docs/monograph/prime-matrix-firstbreak-actual-demand-source-cut-router.json": "c6166b673207c6fdc19307de71a6fe1f5b7ed887130b6c5e7e8ad28e030bd5f2",
+    "docs/monograph/prime-matrix-firstbreak-phase-slip-lcm-barrier-router.json": "5bd12e6d5f2553e041f20f2b0c1b86ba145c05425b0aa89d973f7707ac4925e2",
+    "docs/monograph/prime-matrix-sparse-terminal-forced-load-lower-bound-from-early-zero-row.md": "bbd0af50c2dab533dfbd143f2ee0c987201597c15a4881fb6ef2d4196ceaa7cd",
+    "experiments/prime_matrix_firstbreak_release_mass_zero_block_ladder_router.py": "e5581944be189edc35836ed2cb4e7da4a76c7e6c4680c08681ee7a3eaf194465"
+  },
+  "status": "firstbreak_release_mass_reduced_to_zero_block_ladder_open",
+  "zero_block_cover_obligation_mass_closed": true
+}
